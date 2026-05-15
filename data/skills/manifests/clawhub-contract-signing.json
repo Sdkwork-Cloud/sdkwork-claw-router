@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38881,
+  "uuid": "skill-clawhub-contract-signing",
+  "skillKey": "clawhub-contract-signing",
+  "name": "Contract Signing Workflow Assistant",
+  "summary": "Design a practical contract-signing workflow with Nota Sign. Use this skill when the user needs steps for approvals, signer roles, signing order, recipient v...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contract_signing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "notasign",
+      "features": [
+        "Design a practical contract-signing workflow with Nota Sign",
+        "Use this skill when the user needs steps for approvals, signer roles, signing order, recipient."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contract-signing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268593162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contract-signing",
+      "url": "https://clawhub.ai/skills/contract-signing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contract-signing",
+    "url": "https://clawhub.ai/skills/contract-signing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contract-signing-ffe0eb5a0a53a560.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contract-signing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-contract-signing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a49f94d02f2deb5f21df1eb3cb1c88a9d5db20c05d23ff355f87ac1df3b1f242",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:58:46.633Z"
+}

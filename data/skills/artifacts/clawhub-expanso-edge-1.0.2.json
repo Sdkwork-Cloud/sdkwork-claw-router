@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expanso-edge@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_edge",
+  "skill": {
+    "id": 11135,
+    "skillKey": "clawhub-expanso-edge",
+    "name": "expanso"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-edge",
+    "url": "https://clawhub.ai/skills/expanso-edge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-edge-9cec9f2682b60812.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data processing pipelines for OpenClaw. Deploy skills from the Expanso marketplace to transform, analyze, and process data locally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aronchick",
+      "userId": "publishers:aronchick",
+      "displayName": "Expanso",
+      "image": "https://avatars.githubusercontent.com/u/51317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770088885941,
+      "changelog": "- Switched required environment variables from EXPANSO_CLI_ENDPOINT to EXPANSO_EDGE_BOOTSTRAP_URL and EXPANSO_EDGE_BOOTSTRAP_TOKEN for improved Edge node bootstrapping.\n- Simplified setup: Edge now registers automatically when started with the new environment variables.\n- Updated documentation to guide users on providing both Bootstrap URL and Token, instead of just a Cloud Endpoint URL.\n- Metadata and config sections now reflect the new connection workflow for registering Edge nodes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd973e7f43ad42bc5a09d5770061d50de9858e04c1fd666f630e8294da4be46a"
+}

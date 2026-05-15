@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28235,
+  "uuid": "skill-clawhub-winguictl",
+  "skillKey": "clawhub-winguictl",
+  "name": "Windows Desktop Automation CLI",
+  "summary": "Windows desktop automation CLI. Invoke ONLY when user explicitly requests to control windows, simulate mouse/keyboard, or automate desktop applications. Do N...",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.winguictl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fusion future",
+      "features": [
+        "Windows desktop automation CLI",
+        "Invoke ONLY when user explicitly requests to control windows, simulate mouse/keyboard, or autom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/winguictl@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23738961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "winguictl",
+      "url": "https://clawhub.ai/skills/winguictl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "winguictl",
+    "url": "https://clawhub.ai/skills/winguictl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/winguictl-5807e48db51ad8c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/winguictl@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-winguictl-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fdc5a52314dc9504b9451066c427b354ca55ff086164cadfd9828a224a1da79",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T16:20:09.878Z"
+}

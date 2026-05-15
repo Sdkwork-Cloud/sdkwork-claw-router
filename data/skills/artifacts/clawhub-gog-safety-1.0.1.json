@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gog-safety@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog_safety",
+  "skill": {
+    "id": 50581,
+    "skillKey": "clawhub-gog-safety",
+    "name": "gog-safety"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog-safety",
+    "url": "https://clawhub.ai/skills/gog-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog-safety-749f1b87344de02a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and deploy safety-profiled gogcli binaries with compile-time command removal. Use when setting up gog for an AI agent with restricted permissions — cho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brennerspear",
+      "userId": "s17ebpr0c7y6bpmzatrjw5rdt583fggy",
+      "displayName": "BrennerSpear",
+      "image": "https://avatars.githubusercontent.com/u/12127609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 492,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772769069708,
+      "changelog": "Remove Tycho branding from profile names and references",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a57be578000ef7858f713762e6bff66f5b9052cfd970b10246987dc28ea636c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manager@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manager",
+  "skill": {
+    "id": 50544,
+    "skillKey": "clawhub-manager",
+    "name": "Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manager",
+    "url": "https://clawhub.ai/skills/manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manager-6ee4a469cd4e9105.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Manager concepts, best practices, and implementation patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1774313103661,
+      "changelog": "Fix description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbf3dd86025f95d702697af73c54349851f66834e84842066479c3a2da74aacd"
+}

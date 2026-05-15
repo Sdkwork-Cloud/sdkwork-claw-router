@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdauth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdauth",
+  "skill": {
+    "id": 11831,
+    "skillKey": "clawhub-pdauth",
+    "name": "Pdauth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdauth",
+    "url": "https://clawhub.ai/skills/pdauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdauth-5fded7cf6595605d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dynamic OAuth for AI agents via Pipedream. Generate OAuth links for 2500+ APIs, let users authorize, then call MCP tools on their behalf."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1857,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770175099117,
+      "changelog": "Initial release of pdauth — Dynamic OAuth for AI agents\n\n- Enables AI agents to generate OAuth links for 2500+ APIs using Pipedream and authorize users.\n- Provides commands to connect apps, check user connection status, list tools, and call API tools on behalf of users.\n- Supports popular apps (Slack, Spotify, Notion, Google Sheets, Gmail, GitHub, etc.) with simple CLI commands.\n- Offers a workflow for user authorization and clear strategies for managing user identities.\n- Includes error handling guidance and usage tips for seamless integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab2f2b3bce6936b142d94b0dd0d3abc658baf4c045bbbf88e17985e01e2cb36f"
+}

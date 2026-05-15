@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25332,
+  "uuid": "skill-clawhub-meshy-3d-agent",
+  "skillKey": "clawhub-meshy-3d-agent",
+  "name": "Meshy 3D Agent",
+  "summary": "Generate 3D models, textures, images, rig characters, animate them, and prepare for 3D printing using the Meshy AI API. Handles API key detection, task creat...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meshy_3d_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arlie Du",
+      "features": [
+        "Generate 3D models, textures, images, rig characters, animate them, and prepare for 3D printing.",
+        "Handles API key detection, task creat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meshy-3d-agent@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149051712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meshy-3d-agent",
+      "url": "https://clawhub.ai/skills/meshy-3d-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meshy-3d-agent",
+    "url": "https://clawhub.ai/skills/meshy-3d-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meshy-3d-agent-f9cbac6cf127ada5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meshy-3d-agent@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meshy-3d-agent-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37e1b387fe82ef23562790a64b33ad4de8bd72c92d816df3d5baa6a10cd04485",
+      "artifactSizeBytes": 4180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T04:19:39.000Z"
+}

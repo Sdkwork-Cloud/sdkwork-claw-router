@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10241,
+  "uuid": "skill-clawhub-gamma-presentations",
+  "skillKey": "clawhub-gamma-presentations",
+  "name": "Gamma Presentations",
+  "summary": "Create presentations, documents, social posts, and websites using Gamma's AI API. Use when asked to create slides, presentations, decks, documents, or web content via Gamma.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamma_presentations",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrGoodB",
+      "features": [
+        "Create presentations, documents, social posts, and websites using Gamma's AI API",
+        "Use when asked to create slides, presentations, decks, documents, or web content via Gamma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamma-presentations@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105007315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamma-presentations",
+      "url": "https://clawhub.ai/skills/gamma-presentations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamma-presentations",
+    "url": "https://clawhub.ai/skills/gamma-presentations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamma-presentations-fc47d2bf9669fcc6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamma-presentations@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamma-presentations-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3824618fcf90493a76d1e3b13170f20106f8eb833bd18a347a73bf8c9d46c3f",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T11:26:46.381Z"
+}

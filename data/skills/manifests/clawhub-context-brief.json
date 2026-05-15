@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26634,
+  "uuid": "skill-clawhub-context-brief",
+  "skillKey": "clawhub-context-brief",
+  "name": "Context Brief",
+  "summary": "Persistent context survival for OpenClaw. Writes file-based anchors to memory/anchors/ to preserve critical context across sessions. Reads MEMORY.md and dail...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TommoT2",
+      "features": [
+        "Persistent context survival for OpenClaw",
+        "Writes file-based anchors to memory/anchors/ to preserve critical context across sessions",
+        "Reads MEMORY.md and dail..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-brief@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106430507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-brief",
+      "url": "https://clawhub.ai/skills/context-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-brief",
+    "url": "https://clawhub.ai/skills/context-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-brief-fc9b2a08cb650c1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-brief@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-brief-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1450b84be328213e091f3f6f721ab0eb5b0b28e387f15c78ee64a6630665fb76",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:48:35.780Z"
+}

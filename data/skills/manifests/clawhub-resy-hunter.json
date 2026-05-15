@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23558,
+  "uuid": "skill-clawhub-resy-hunter",
+  "skillKey": "clawhub-resy-hunter",
+  "name": "Resy Hunter",
+  "summary": "Monitor hard-to-get restaurant reservations on Resy, OpenTable, and Tock. Check availability, manage a watchlist, and get Telegram alerts when tables open up.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resy_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shahedkhan30",
+      "features": [
+        "Monitor hard-to-get restaurant reservations on Resy, OpenTable, and Tock",
+        "Check availability, manage a watchlist, and get Telegram alerts when tables open up."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resy-hunter@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1299634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resy-hunter",
+      "url": "https://clawhub.ai/skills/resy-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resy-hunter",
+    "url": "https://clawhub.ai/skills/resy-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resy-hunter-d4f9b4b7288f0d73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resy-hunter@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resy-hunter-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3493483720fb1c35ba52e04033798ae329f942b5aa85f8ec08b5d79ffbd6f4e5",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:56:46.033Z"
+}

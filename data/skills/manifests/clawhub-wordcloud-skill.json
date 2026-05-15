@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30964,
+  "uuid": "skill-clawhub-wordcloud-skill",
+  "skillKey": "clawhub-wordcloud-skill",
+  "name": "wordcloud-skill",
+  "summary": "this skill is for generate a word cloud from text/file/directory and save it to a picture, you can use it visualize the text",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordcloud_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lijiahao885",
+      "features": [
+        "this skill is for generate a word cloud from text/file/directory and save it to a picture, you."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wordcloud-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64883692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wordcloud-skill",
+      "url": "https://clawhub.ai/skills/wordcloud-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordcloud-skill",
+    "url": "https://clawhub.ai/skills/wordcloud-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordcloud-skill-20c8970aacb4b9a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wordcloud-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wordcloud-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7b8ed1353bf324ae09b2aee0c5acb45a4f1096050e588584a9a4b73ce52c267",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:12:21.359Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hl-privateer-fund@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hl_privateer_fund",
+  "skill": {
+    "id": 17540,
+    "skillKey": "clawhub-hl-privateer-fund",
+    "name": "HL Privateer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hl-privateer-fund",
+    "url": "https://clawhub.ai/skills/hl-privateer-fund",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hl-privateer-fund-277dda86de23fefd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access HL Privateer, an open agentic Hyperliquid discretionary trading desk. Read live positions, AI analysis, copy-trade signals, and risk state via x402 pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adwilkinson",
+      "userId": "s174fe36rtrfqd7e9875rxexn9847mfz",
+      "displayName": "Andrew Wilkinson",
+      "image": "https://avatars.githubusercontent.com/u/29403976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 768,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771240350399,
+      "changelog": "Version 1.0.1 Changelog\n\n- Corrected agent crew: 7 roles (added strategist, scribe, scout)                                                                                                                                                \n  - Documented all 12 risk engine gates with denial codes                                                                                                                                                          \n  - Added missing API endpoints (login, refresh, replay export, floor-tape)                                                                                                                                        \n  - Updated StrategyProposal and RiskConfig schemas to match live contracts\n  - Updated WebSocket protocol to match typed message schemas\n  - Removed unimplemented features from docs (volatility breaker, per-symbol exposure cap)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b1ee7d418f9284f099acc36ec3e782a93e93da6e8d4f6e01b618731b97ed43e"
+}

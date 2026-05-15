@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71193,
+  "uuid": "skill-clawhub-cn-content-factory",
+  "skillKey": "clawhub-cn-content-factory",
+  "name": "中文自媒体内容工厂",
+  "summary": "中文自媒体内容工厂：一键生成适配小红书/公众号/抖音/知乎的高质量内容。 支持热点选题、爆款标题、多平台风格适配、去AI味润色、SEO优化。 当用户提到\"写文案\"、\"内容创作\"、\"发小红书\"、\"公众号文章\"、\"抖音脚本\"、 \"知乎回答\"、\"批量内容\"、\"内容矩阵\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_content_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "l1379703917-del",
+      "features": [
+        "中文自媒体内容工厂：一键生成适配小红书/公众号/抖音/知乎的高质量内容。 支持热点选题、爆款标题、多平台风格适配、去AI味润色、SEO优化。 当用户提到\"写文案\"、\"内容创作\"、\"发小红书\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-content-factory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267249091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-content-factory",
+      "url": "https://clawhub.ai/skills/cn-content-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-content-factory",
+    "url": "https://clawhub.ai/skills/cn-content-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-content-factory-96c180302950b25b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-content-factory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-content-factory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4812cc38f4820fc3aac5b5f7e336d9615f4ea01ec48f6cb844ed935338d1d1b",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:36:59.468Z"
+}

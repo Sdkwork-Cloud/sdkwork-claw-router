@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59705,
+  "uuid": "skill-clawhub-trade-qualifier",
+  "skillKey": "clawhub-trade-qualifier",
+  "name": "Trade Qualifier",
+  "summary": "B2B外贸客户筛选技能 - 6维度深度评估 + A/B/C/D智能分级",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_qualifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "B2B外贸客户筛选技能",
+        "6维度深度评估 + A/B/C/D智能分级"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-qualifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-qualifier",
+      "url": "https://clawhub.ai/skills/trade-qualifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-qualifier",
+    "url": "https://clawhub.ai/skills/trade-qualifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-qualifier-f2c903db6eff44cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-qualifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-qualifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9f029fa32cca9ebec29a247ad4ba8f9c173b6fde822dbe18e349665cf19ab1b",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:30:30.892Z"
+}

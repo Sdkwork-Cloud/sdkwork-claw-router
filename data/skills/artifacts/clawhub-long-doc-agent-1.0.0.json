@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-doc-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_doc_agent",
+  "skill": {
+    "id": 55746,
+    "skillKey": "clawhub-long-doc-agent",
+    "name": "long-doc-agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-doc-agent",
+    "url": "https://clawhub.ai/skills/long-doc-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-doc-agent-148fee8e4aa30548.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-Agent collaborative system for writing ultra-long feasibility study reports. Phase 0 Requirements → Phase 1 Planner Outline → Phase 2 Parallel Sub-Agen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinqiu193",
+      "userId": "s177dt00a16v9fm9px52kx8951843ven",
+      "displayName": "jinqiu193",
+      "image": "https://avatars.githubusercontent.com/u/130821904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777283311928,
+      "changelog": "long-doc-agent v3.3.0 – Major document formatting, workflow enhancements, and stability fixes\n\n- Table parsing fully fixed to prevent character-by-character splits.\n- Launched colorful chapter headings and styled tables for improved document aesthetics.\n- Introduced key callout boxes (【关键】【注意】【优势】【风险】【数据】) as color-coded cards.\n- Enhanced cover style with tech-themed options and colored bars for cover, contents, and executive summary.\n- Improved system robustness: fixed cover-style comparison issue and type errors in color parsing.\n- Streamlined multi-agent workflow with incremental updates, parallel writing, consistency checking, and Feishu RAG support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98179728e9c59fb93edceade625ad68efd59b9715b6a97392e511350b6a1affa"
+}

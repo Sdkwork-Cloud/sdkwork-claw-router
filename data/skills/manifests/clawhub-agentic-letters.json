@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22203,
+  "uuid": "skill-clawhub-agentic-letters",
+  "skillKey": "clawhub-agentic-letters",
+  "name": "Agentic Letters",
+  "summary": "Send physical letters anywhere in Germany with a single command. Use when: user wants to send a physical letter. Requires an API key from agentic-letters.com.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_letters",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Moritz Eigenauer",
+      "features": [
+        "Send physical letters anywhere in Germany with a single command",
+        "Use when: user wants to send a physical letter",
+        "Requires an API key from agentic-letters.com."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-letters@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55756696?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-letters",
+      "url": "https://clawhub.ai/skills/agentic-letters"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-letters",
+    "url": "https://clawhub.ai/skills/agentic-letters",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-letters-224e0144820c8a7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-letters@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-letters-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62d6c9e233ef2cdbf451e949fe707ba64c1124f5b4f93c9ed79620e830065fe2",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T15:56:12.977Z"
+}

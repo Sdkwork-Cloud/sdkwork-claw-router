@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nba-basketball@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nba_basketball",
+  "skill": {
+    "id": 66545,
+    "skillKey": "clawhub-nba-basketball",
+    "name": "Nba Basketball"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nba-basketball",
+    "url": "https://clawhub.ai/skills/nba-basketball",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nba-basketball-90db5af25fcff230.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供NBA球队、球员、赛程、比分及新闻资讯，实时掌握美国职业篮球联赛信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295472679,
+      "changelog": "- 更新了技能描述文本，更突出“nba-basketball”行业影响力及信息模块\n- 优化应用场景表述，适用范围扩展至商业、研究、教学等\n- 加入历史沿革、业务范围、全球布局及最新动态信息点\n- 移除球队、球员等具体篮球赛事与比分相关说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5b114ba528c8b73251adfa0a6b375dcc1173385c6957c44d5e3134657b0870b"
+}

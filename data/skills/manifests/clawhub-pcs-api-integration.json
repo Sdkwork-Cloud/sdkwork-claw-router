@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43573,
+  "uuid": "skill-clawhub-pcs-api-integration",
+  "skillKey": "clawhub-pcs-api-integration",
+  "name": "Hub Api Integration",
+  "summary": "Help apps and distribution channels integrate PCS Hub into their frontend. Use when user says \"/hub-api-integration\", \"integrate PCS Hub\", \"embed PCS Hub swa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pcs_api_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pcs-bot",
+      "features": [
+        "Help apps and distribution channels integrate PCS Hub into their frontend",
+        "Use when user says \"/hub-api-integration\", \"integrate PCS Hub\", \"embed PCS Hub swa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pcs-api-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227519168?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pcs-api-integration",
+      "url": "https://clawhub.ai/skills/pcs-api-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pcs-api-integration",
+    "url": "https://clawhub.ai/skills/pcs-api-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pcs-api-integration-0e001b8eadba235c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pcs-api-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pcs-api-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d966320d38be10b06070826b7b77f1b70f10a3ec854ef0b36a59380f88ea0df",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:44:40.098Z"
+}

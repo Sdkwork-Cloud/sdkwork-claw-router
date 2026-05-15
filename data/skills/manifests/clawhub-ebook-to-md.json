@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58059,
+  "uuid": "skill-clawhub-ebook-to-md",
+  "skillKey": "clawhub-ebook-to-md",
+  "name": "ebook-to-md",
+  "summary": "Convert PDF/PNG/JPEG/MOBI/EPUB to Markdown. Uses Baidu OCR only. Use when 扫描PDF转Markdown、pdf ocr、图像识别、电子书转Markdown、ebook to markdown.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebook_to_md",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whille",
+      "features": [
+        "Convert PDF/PNG/JPEG/MOBI/EPUB to Markdown",
+        "Uses Baidu OCR only",
+        "Use when 扫描PDF转Markdown、pdf ocr、图像识别、电子书转Markdown、ebook to markdown."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ebook-to-md@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1240846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ebook-to-md",
+      "url": "https://clawhub.ai/skills/ebook-to-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebook-to-md",
+    "url": "https://clawhub.ai/skills/ebook-to-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebook-to-md-bef788393ff14f12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ebook-to-md@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ebook-to-md-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2db8ba9f6382336d0688a32be4fada3cda3d1d1dbd8aca99ad4f5b61dd95d56",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T11:09:03.383Z"
+}

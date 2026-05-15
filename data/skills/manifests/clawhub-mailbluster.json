@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32113,
+  "uuid": "skill-clawhub-mailbluster",
+  "skillKey": "clawhub-mailbluster",
+  "name": "Mailbluster",
+  "summary": "Mailbluster integration. Manage Campaigns, Templates. Use when the user wants to interact with Mailbluster data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailbluster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mailbluster integration",
+        "Manage Campaigns, Templates",
+        "Use when the user wants to interact with Mailbluster data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailbluster@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailbluster",
+      "url": "https://clawhub.ai/skills/mailbluster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailbluster",
+    "url": "https://clawhub.ai/skills/mailbluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailbluster-571fd0343a5f89a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailbluster@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailbluster-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1a4ec1c7ed841b29f38b5c2a393a9d5286662dee4ec1a038c47aacfe0284c81",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:10:09.327Z"
+}

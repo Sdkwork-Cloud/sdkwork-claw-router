@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17661,
+  "uuid": "skill-clawhub-codifica",
+  "skillKey": "clawhub-codifica",
+  "name": "Codifica",
+  "summary": "Keep context when work moves between agents or between you and a human. Uses the Codifica protocol to give every agent a shared, persistent memory of tasks,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codifica",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Davide Di Cillo",
+      "features": [
+        "Keep context when work moves between agents or between you and a human",
+        "Uses the Codifica protocol to give every agent a shared, persistent memory of tasks,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codifica@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codifica",
+      "url": "https://clawhub.ai/skills/codifica"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codifica",
+    "url": "https://clawhub.ai/skills/codifica",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codifica-020a5507ac471893.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codifica@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-codifica-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:104f32e6bbcd20a509e2ab8a875b40c3c78067953fd577c880cb7a69d7ebc106",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:11:20.248Z"
+}

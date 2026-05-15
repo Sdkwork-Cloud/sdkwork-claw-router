@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26789,
+  "uuid": "skill-clawhub-github-actions-pr-gate-health-audit",
+  "skillKey": "clawhub-github-actions-pr-gate-health-audit",
+  "name": "GitHub Actions PR Gate Health Audit",
+  "summary": "Audit pull-request and merge-queue GitHub Actions reliability by scoring failure rate, queue latency, and stale-success risk for merge gates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_pr_gate_health_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit pull-request and merge-queue GitHub Actions reliability by scoring failure rate, queue la."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-pr-gate-health-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-pr-gate-health-audit",
+      "url": "https://clawhub.ai/skills/github-actions-pr-gate-health-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-pr-gate-health-audit",
+    "url": "https://clawhub.ai/skills/github-actions-pr-gate-health-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-pr-gate-health-audit-5a5f1f87a977438b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-pr-gate-health-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-pr-gate-health-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0d176daa1e93a2c8f4445b38a733e72f27270e5324024b51e337eb0925894de",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T23:19:46.924Z"
+}

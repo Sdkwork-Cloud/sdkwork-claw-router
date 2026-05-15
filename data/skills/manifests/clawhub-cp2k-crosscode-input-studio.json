@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30516,
+  "uuid": "skill-clawhub-cp2k-crosscode-input-studio",
+  "skillKey": "clawhub-cp2k-crosscode-input-studio",
+  "name": "CP2K Cross-Code Input Studio",
+  "summary": "Generate, refine, explain, and cross-convert CP2K-centered input drafts for computational chemistry and materials workflows. Use when a user wants a CP2K .in...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cp2k_crosscode_input_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lemon1044",
+      "features": [
+        "Generate, refine, explain, and cross-convert CP2K-centered input drafts for computational chemi.",
+        "Use when a user wants a CP2K .in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cp2k-crosscode-input-studio@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186657349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cp2k-crosscode-input-studio",
+      "url": "https://clawhub.ai/skills/cp2k-crosscode-input-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cp2k-crosscode-input-studio",
+    "url": "https://clawhub.ai/skills/cp2k-crosscode-input-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cp2k-crosscode-input-studio-704b38f6877810b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cp2k-crosscode-input-studio@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cp2k-crosscode-input-studio-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dac98b50a52b358bc08a56550643c2fa6070d9bfbf5c6f0e6cb1b11d4693a82",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:13:18.009Z"
+}

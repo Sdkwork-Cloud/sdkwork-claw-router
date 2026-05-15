@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdos@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdos",
+  "skill": {
+    "id": 18661,
+    "skillKey": "clawhub-clawdos",
+    "name": "Windows Execution Interface for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdos",
+    "url": "https://clawhub.ai/skills/clawdos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdos-25b28ef03f8f6f7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows automation via Clawdos API: screen capture, mouse/keyboard input, window management, file-system operations, and shell command execution. Standalone..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danzig233",
+      "userId": "s170a1acsp2td6gq9wexm7qsfh84s2pm",
+      "displayName": "danzig233",
+      "image": "https://avatars.githubusercontent.com/u/54832537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 570,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773371244665,
+      "changelog": "Added comprehensive security warnings and sandbox documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab30e25a6e688269a747876be090d87ef49ff344fba5f0a794fd6cb8efa8545f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61511,
+  "uuid": "skill-clawhub-wechat-video-search",
+  "skillKey": "clawhub-wechat-video-search",
+  "name": "WeChat Channels Video Search",
+  "summary": "(已验证) 通过 TikHub API 搜索微信视频号视频(需要翻墙)，支持关键词搜索，返回视频下载链接和分析数据。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_video_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "an",
+      "features": [
+        "(已验证) 通过 TikHub API 搜索微信视频号视频(需要翻墙)，支持关键词搜索，返回视频下载链接和分析数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-video-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208153467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-video-search",
+      "url": "https://clawhub.ai/skills/wechat-video-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-video-search",
+    "url": "https://clawhub.ai/skills/wechat-video-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-video-search-d0fbedf71cda3276.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-video-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-video-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffba0933aa0e197f8187e16b8e79c6b5183d48bf04f54a07c31f24f31de450af",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:06:04.511Z"
+}

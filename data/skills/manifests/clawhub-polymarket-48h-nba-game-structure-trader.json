@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31868,
+  "uuid": "skill-clawhub-polymarket-48h-nba-game-structure-trader",
+  "skillKey": "clawhub-polymarket-48h-nba-game-structure-trader",
+  "name": "Polymarket 48h Nba Game Structure Trader",
+  "summary": "Trades structural inconsistencies across correlated NBA game markets on Polymarket by grouping moneyline, spread, O/U (full-game and 1H), and 1H moneyline ma...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_48h_nba_game_structure_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades structural inconsistencies across correlated NBA game markets on Polymarket by grouping."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-48h-nba-game-structure-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-48h-nba-game-structure-trader",
+      "url": "https://clawhub.ai/skills/polymarket-48h-nba-game-structure-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-48h-nba-game-structure-trader",
+    "url": "https://clawhub.ai/skills/polymarket-48h-nba-game-structure-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-48h-nba-game-structure-trader-6afd542d70205511.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-48h-nba-game-structure-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-48h-nba-game-structure-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fdcc1a1e91a6d176229fab3283bcb9f0a4b33aba53b7831c2676b3ae97d4120",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:23:18.820Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmail-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmail_2",
+  "skill": {
+    "id": 23325,
+    "skillKey": "clawhub-agentmail-2",
+    "name": "Agentmail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmail-2",
+    "url": "https://clawhub.ai/skills/agentmail-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmail-2-38a52782c02b5d76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give the agent its own dedicated email inbox via AgentMail. Send, receive, and manage email autonomously using agent-owned email addresses (e.g. hermes-agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agungprabowo123",
+      "userId": "publishers:agungprabowo123",
+      "displayName": "Agung Prabowo",
+      "image": "https://avatars.githubusercontent.com/u/100983377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773414292096,
+      "changelog": "No changes detected in this version.\n\n- No file changes were made.\n- Documentation and features remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31450ea408043a6eea349f282b6cbd87ad12e558fef88ca13d57e14dbc05ff16"
+}

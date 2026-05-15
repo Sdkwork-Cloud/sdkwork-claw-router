@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27275,
+  "uuid": "skill-clawhub-aport-complete",
+  "skillKey": "clawhub-aport-complete",
+  "name": "Aport Complete",
+  "summary": "Verify a completed task against your APort passport's deliverable contract before marking it done. Enforces acceptance criteria, summary requirements, test s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aport_complete",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Uchi Uchibeke",
+      "features": [
+        "Verify a completed task against your APort passport's deliverable contract before marking it do.",
+        "Enforces acceptance criteria, summary requirements, test s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aport-complete@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5677552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aport-complete",
+      "url": "https://clawhub.ai/skills/aport-complete"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aport-complete",
+    "url": "https://clawhub.ai/skills/aport-complete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aport-complete-1189982b3f7b3f52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aport-complete@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aport-complete-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d86267876b6b72da5bf73166a24148f5fb9d5d053c9b17132e814cf15f8468c7",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:23:42.267Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27007,
+  "uuid": "skill-clawhub-sst-simple",
+  "skillKey": "clawhub-sst-simple",
+  "name": "Simple sound-to-text skill locally",
+  "summary": "Local speech-to-text using OpenAI Whisper. Use when the user needs to: (1) transcribe audio files to text, (2) convert voice messages to written content, (3)...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sst_simple",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kuikui",
+      "features": [
+        "Local speech-to-text using OpenAI Whisper",
+        "Use when the user needs to: (1) transcribe audio files to text, (2) convert voice messages to w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sst-simple@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2712885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sst-simple",
+      "url": "https://clawhub.ai/skills/sst-simple"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sst-simple",
+    "url": "https://clawhub.ai/skills/sst-simple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sst-simple-ad5a7e86504615ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sst-simple@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sst-simple-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7209cccd53b054dc26b9ff3ac928bda625fe929826359c3d50c39e024a137dc9",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:43:52.366Z"
+}

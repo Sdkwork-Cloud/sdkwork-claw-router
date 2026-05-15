@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73473,
+  "uuid": "skill-clawhub-tianlong-analyst",
+  "skillKey": "clawhub-tianlong-analyst",
+  "name": "天龙需求分析专家",
+  "summary": "基于天龙引擎，提供需求本质挖掘、复杂度评估和结构化分析报告，助力产品和决策高效落地。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianlong_analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guilinleolee",
+      "features": [
+        "基于天龙引擎，提供需求本质挖掘、复杂度评估和结构化分析报告，助力产品和决策高效落地。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianlong-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190466955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianlong-analyst",
+      "url": "https://clawhub.ai/skills/tianlong-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianlong-analyst",
+    "url": "https://clawhub.ai/skills/tianlong-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianlong-analyst-51568c084782ea3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianlong-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianlong-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9ba8e81167c7e89b18de62c698d139a59c89ba6063d465ef61bf18d96d7f070",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T01:29:55.280Z"
+}

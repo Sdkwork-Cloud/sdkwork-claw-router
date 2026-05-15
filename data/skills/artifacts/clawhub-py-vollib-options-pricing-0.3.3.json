@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/py-vollib-options-pricing@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.py_vollib_options_pricing",
+  "skill": {
+    "id": 60193,
+    "skillKey": "clawhub-py-vollib-options-pricing",
+    "name": "Py Vollib Options Pricing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "py-vollib-options-pricing",
+    "url": "https://clawhub.ai/skills/py-vollib-options-pricing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/py-vollib-options-pricing-8a932d647ac814e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 BSM 和 Black 模型对欧式期权进行定价和 Greeks 计算，支持连续股息收益率调整。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1776954543461,
+      "changelog": "v0.3.3: bilingual metadata injected. H1 shows 期权 BSM 定价; tagline replaced with skill-specific Chinese hook; tags upgraded to Level 1-4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e966fecf557f960ac1c2ee5e1d162647814c79a49a0ce1882ff9732960eb0ea"
+}

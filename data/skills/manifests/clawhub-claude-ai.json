@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58817,
+  "uuid": "skill-clawhub-claude-ai",
+  "skillKey": "clawhub-claude-ai",
+  "name": "claude-ai",
+  "summary": "Anthropic开发的安全AI助手",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Anthropic开发的安全AI助手"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-ai",
+      "url": "https://clawhub.ai/skills/claude-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-ai",
+    "url": "https://clawhub.ai/skills/claude-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-ai-2e6a9951c593a64b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9196b29a46a53a1d44496b3d8f4b42a32d30879f1224fd9b4e8e9d2a719abcd8",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T08:06:07.643Z"
+}

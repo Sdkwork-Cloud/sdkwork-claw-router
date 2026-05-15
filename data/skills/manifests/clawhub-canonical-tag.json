@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41908,
+  "uuid": "skill-clawhub-canonical-tag",
+  "skillKey": "clawhub-canonical-tag",
+  "name": "canonical-tag",
+  "summary": "When the user wants to configure canonical URLs, fix duplicate content, or consolidate URL signals. Also use when the user mentions \"canonical,\" \"canonical U...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canonical_tag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to configure canonical URLs, fix duplicate content, or consolidate URL sign.",
+        "Also use when the user mentions \"canonical,\" \"canonical U..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canonical-tag@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canonical-tag",
+      "url": "https://clawhub.ai/skills/canonical-tag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canonical-tag",
+    "url": "https://clawhub.ai/skills/canonical-tag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canonical-tag-b2aec85f598a0ba9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canonical-tag@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-canonical-tag-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12c197a7a0dc2ee6f46aa530b0f7043bffb1583f3ba1904153483105451509fa",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:42:29.138Z"
+}

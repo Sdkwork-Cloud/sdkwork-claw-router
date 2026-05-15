@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-docs-search-exa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_docs_search_exa",
+  "skill": {
+    "id": 10874,
+    "skillKey": "clawhub-code-docs-search-exa",
+    "name": "Code Docs Search by Exa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-docs-search-exa",
+    "url": "https://clawhub.ai/skills/code-docs-search-exa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-docs-search-exa-f7a70f452a0826c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search real code snippets and documentation from GitHub, docs sites, and Stack Overflow for accurate syntax and usage examples."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theishangoswami",
+      "userId": "publishers:theishangoswami",
+      "displayName": "Ishan Goswami",
+      "image": "https://avatars.githubusercontent.com/u/26306586?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769448477597,
+      "changelog": "Initial release of Code Docs Search by Exa.\n\n- Search real code snippets and documentation from GitHub, docs sites, and Stack Overflow.\n\n- Supports detailed context queries with flexible output length via the tokensNum parameter.\n\n- No API key required; connect to Exa MCP server for setup. Super easy setup.\n\n- Useful for finding syntax, setup guides, and library usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37ac449a4891b57988fe15e73aa9337f9c8387264da77cd5a1aa353d1820c5ea"
+}

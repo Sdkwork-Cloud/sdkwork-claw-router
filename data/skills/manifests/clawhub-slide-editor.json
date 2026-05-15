@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58295,
+  "uuid": "skill-clawhub-slide-editor",
+  "skillKey": "clawhub-slide-editor",
+  "name": "Slide Editor",
+  "summary": "Visual editor for HTML presentations. Self-contained, offline-capable, designed for AI agent control. HTML 演示文稿可视化编辑器，自包含可离线，支持 AI Agent 控制。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slide_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DTacheng",
+      "features": [
+        "Visual editor for HTML presentations",
+        "Self-contained, offline-capable, designed for AI agent control",
+        "HTML 演示文稿可视化编辑器，自包含可离线，支持 AI Agent 控制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slide-editor@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191015020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slide-editor",
+      "url": "https://clawhub.ai/skills/slide-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slide-editor",
+    "url": "https://clawhub.ai/skills/slide-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slide-editor-5320ae0d8a311021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slide-editor@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slide-editor-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdab75853d917be7a543ee5e1a87e1dc7704a9c0ba3ae88709c6f9279ba50a41",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:58:04.910Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49685,
+  "uuid": "skill-clawhub-okx-payments",
+  "skillKey": "clawhub-okx-payments",
+  "name": "Okx Payments",
+  "summary": "Interactive setup guide for x402 payment-gated APIs. Trigger when user mentions \"402\", \"x402\", \"payment-gated\", or \"OKX payments\". Asks buyer vs seller, then...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_payments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ok-james-01",
+      "features": [
+        "Interactive setup guide for x402 payment-gated APIs",
+        "Trigger when user mentions \"402\", \"x402\", \"payment-gated\", or \"OKX payments\"",
+        "Asks buyer vs seller, then..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-payments@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144679206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-payments",
+      "url": "https://clawhub.ai/skills/okx-payments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-payments",
+    "url": "https://clawhub.ai/skills/okx-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-payments-6cfd61a1a0cf2009.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-payments@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-payments-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:add23516707d847542e2b838f821cf249f64dc77274a136ac83450244a1da19b",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:44:26.074Z"
+}

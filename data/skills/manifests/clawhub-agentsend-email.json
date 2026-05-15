@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24451,
+  "uuid": "skill-clawhub-agentsend-email",
+  "skillKey": "clawhub-agentsend-email",
+  "name": "AgentSend Email",
+  "summary": "Give your OpenClaw agent its own email inbox. Use AgentSend to create inboxes, send and receive email, inspect threads, and register webhooks.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsend_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luv005",
+      "features": [
+        "Give your OpenClaw agent its own email inbox",
+        "Use AgentSend to create inboxes, send and receive email, inspect threads, and register webhooks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentsend-email@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179096862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentsend-email",
+      "url": "https://clawhub.ai/skills/agentsend-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsend-email",
+    "url": "https://clawhub.ai/skills/agentsend-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsend-email-e975adb1994fcdaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentsend-email@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentsend-email-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0db1c9b76a7c43344e899dbb28f8d7edee3975a15e0f86f12596e19ccd761b70",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T12:05:27.405Z"
+}

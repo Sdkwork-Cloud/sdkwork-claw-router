@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10482,
+  "uuid": "skill-clawhub-microsoft-docs",
+  "skillKey": "clawhub-microsoft-docs",
+  "name": "Microsoft Learn documentation",
+  "summary": "Query official Microsoft documentation to understand concepts, find tutorials, and learn how services work. Use for Azure, .NET, Microsoft 365, Windows, Power Platform, and all Microsoft technologies. Get accurate, current information from.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pieter de Bruin",
+      "features": [
+        "Query official Microsoft documentation to understand concepts, find tutorials, and learn how se.",
+        "Use for Azure, .NET, Microsoft 365, Windows, Power Platform, and all Microsoft technologies",
+        "Get accurate, current information from learn.microsoft.com and other official Microsoft website."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4709852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-docs",
+      "url": "https://clawhub.ai/skills/microsoft-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-docs",
+    "url": "https://clawhub.ai/skills/microsoft-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-docs-ebb84dd7bdbacacb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a51eb0d1e284b01d43d1f6f3aa4b46634e843cd1a9965c3e15cec7c7d58358e",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T08:23:21.350Z"
+}

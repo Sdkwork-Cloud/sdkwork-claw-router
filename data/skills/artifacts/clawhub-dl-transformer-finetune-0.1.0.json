@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dl-transformer-finetune@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dl_transformer_finetune",
+  "skill": {
+    "id": 19265,
+    "skillKey": "clawhub-dl-transformer-finetune",
+    "name": "Dl Transformer Finetune"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dl-transformer-finetune",
+    "url": "https://clawhub.ai/skills/dl-transformer-finetune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dl-transformer-finetune-2eca912d3d1bb095.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build transformer fine-tuning run plans with task settings, hyperparameters, and model-card outputs. Use for repeatable Hugging Face or PyTorch finetuning wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x-professor",
+      "userId": "s17bg4xm5b50d70ncct7b9shxh83n6jb",
+      "displayName": "Muhammad Mazhar Saeed",
+      "image": "https://avatars.githubusercontent.com/u/160357695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772136391248,
+      "changelog": "- Initial release of dl-transformer-finetune.\n- Generate reproducible fine-tuning run plans for transformer models.\n- Configure task settings, training hyperparameters, and evaluation cadence.\n- Output ready-to-use plans and model card templates for Hugging Face or PyTorch workflows.\n- Includes scripts and baseline guides to streamline fine-tuning setup and reproducibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:679bee73b3af4cced3b99d6429baa6f6a36374b444b8d2fd29a43db211fb2f12"
+}

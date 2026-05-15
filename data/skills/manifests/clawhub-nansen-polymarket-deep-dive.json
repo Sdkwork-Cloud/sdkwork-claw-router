@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50897,
+  "uuid": "skill-clawhub-nansen-polymarket-deep-dive",
+  "skillKey": "clawhub-nansen-polymarket-deep-dive",
+  "name": "Nansen Polymarket Deep Dive",
+  "summary": "Deep dive on a Polymarket market — OHLCV, orderbook, top holders, positions, trades, and PnL leaderboard. Use when analysing a specific prediction market.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_polymarket_deep_dive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Deep dive on a Polymarket market — OHLCV, orderbook, top holders, positions, trades, and PnL le.",
+        "Use when analysing a specific prediction market."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-polymarket-deep-dive@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-polymarket-deep-dive",
+      "url": "https://clawhub.ai/skills/nansen-polymarket-deep-dive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-polymarket-deep-dive",
+    "url": "https://clawhub.ai/skills/nansen-polymarket-deep-dive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-polymarket-deep-dive-0f8f8c70c368bd3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-polymarket-deep-dive@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-polymarket-deep-dive-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0107a919741a31ca5b73ffeba3c99bc8c34873cf6b432be6bbda7bf41d5fe8bc",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:20:07.518Z"
+}

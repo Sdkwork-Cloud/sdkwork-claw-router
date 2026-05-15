@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59155,
+  "uuid": "skill-clawhub-vidu-generation",
+  "skillKey": "clawhub-vidu-generation",
+  "name": "Input prompts and generate images, videos, effects, speech synthesis, voice cloning, etc., using a single API key.",
+  "summary": "Vidu AI 视频/图片/音频生成。支持文生视频、图生视频、参考生视频、图片生成、TTS语音合成、声音复刻。对话式调用，自动识别意图。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vidu AI",
+      "features": [
+        "Vidu AI 视频/图片/音频生成。支持文生视频、图生视频、参考生视频、图片生成、TTS语音合成、声音复刻。对话式调用，自动识别意图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vidu-generation@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25274975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vidu-generation",
+      "url": "https://clawhub.ai/skills/vidu-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-generation",
+    "url": "https://clawhub.ai/skills/vidu-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-generation-513288e1884a49ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vidu-generation@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vidu-generation-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3510debf331582e79b9dc4649247d0db16acd3759893dcec531858ee0feddda",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:08:31.012Z"
+}

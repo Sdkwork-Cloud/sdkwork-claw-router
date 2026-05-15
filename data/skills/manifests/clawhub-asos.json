@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70389,
+  "uuid": "skill-clawhub-asos",
+  "skillKey": "clawhub-asos",
+  "name": "Asos",
+  "summary": "提供关于asos品牌历史、产品服务、市场表现及最新动态的全面信息查询。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于asos品牌历史、产品服务、市场表现及最新动态的全面信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asos@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asos",
+      "url": "https://clawhub.ai/skills/asos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asos",
+    "url": "https://clawhub.ai/skills/asos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asos-bcc668c9308ed513.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asos@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-asos-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:470e86d8d0b229de55731e53ec9ee914115090ab2a86da1a7711d44ee909d57d",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:01:11.898Z"
+}

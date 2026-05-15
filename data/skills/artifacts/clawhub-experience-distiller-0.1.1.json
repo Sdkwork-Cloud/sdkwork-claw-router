@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/experience-distiller@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experience_distiller",
+  "skill": {
+    "id": 31918,
+    "skillKey": "clawhub-experience-distiller",
+    "name": "Experience Distiller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experience-distiller",
+    "url": "https://clawhub.ai/skills/experience-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experience-distiller-b0c57784b3edbdf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Distill finished work into the right OpenClaw knowledge layer. Use when a task, fix, setup, integration, cron/report workflow, repeated operation, or output-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "traceme",
+      "userId": "publishers:traceme",
+      "displayName": "jimmyhe",
+      "image": "https://avatars.githubusercontent.com/u/378019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774008321651,
+      "changelog": "Polish release: bundled invocation template + examples, stronger positioning, and improved post-task routing guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6550a9a04dd8bbb5f38bcbc13988d2bb3712f684aa9505d757c7672c02df99e5"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51044,
+  "uuid": "skill-clawhub-cogdx-bias-scan",
+  "skillKey": "clawhub-cogdx-bias-scan",
+  "name": "CogDx Bias Scan",
+  "summary": "Detect systematic inference-level biases in an AI agent's reasoning via Cerebratech CogDx API ($0.10 per call, credits accepted). Use when an agent keeps mak...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogdx_bias_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr Amanda Kavner",
+      "features": [
+        "Detect systematic inference-level biases in an AI agent's reasoning via Cerebratech CogDx API (.",
+        "Use when an agent keeps mak..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogdx-bias-scan@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78941808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogdx-bias-scan",
+      "url": "https://clawhub.ai/skills/cogdx-bias-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogdx-bias-scan",
+    "url": "https://clawhub.ai/skills/cogdx-bias-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogdx-bias-scan-8fed4f0bf93b76f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogdx-bias-scan@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogdx-bias-scan-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8547b3bce612bbb7c220d68b16cd2bd4b8bf5aca741d62d4520090d07e01368d",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:04:15.574Z"
+}

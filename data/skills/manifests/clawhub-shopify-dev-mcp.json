@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42882,
+  "uuid": "skill-clawhub-shopify-dev-mcp",
+  "skillKey": "clawhub-shopify-dev-mcp",
+  "name": "Shopify Dev Mcp",
+  "summary": "Use when user wants to work with Shopify Admin API, Storefront API, validate Liquid code, explore GraphQL schemas, build Shopify apps, or inspect Shopify doc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_dev_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simoncai519",
+      "features": [
+        "Use when user wants to work with Shopify Admin API, Storefront API, validate Liquid code, explo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-dev-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57803232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-dev-mcp",
+      "url": "https://clawhub.ai/skills/shopify-dev-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-dev-mcp",
+    "url": "https://clawhub.ai/skills/shopify-dev-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-dev-mcp-e15cb731db40e6c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-dev-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-dev-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad932c05062aed5c5a8cd29d7f6e99b5fc3df2db5a6310d1a2d5d36f154bc804",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T06:50:06.867Z"
+}

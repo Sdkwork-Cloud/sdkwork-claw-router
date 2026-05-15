@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/localsend@3.4.0",
+  "version": "3.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.localsend",
+  "skill": {
+    "id": 16688,
+    "skillKey": "clawhub-localsend",
+    "name": "Localsend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "localsend",
+    "url": "https://clawhub.ai/skills/localsend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/localsend-a81b836768a25e55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive files to/from nearby devices using the LocalSend protocol. Trigger with /localsend to get an interactive Telegram menu with real inline butt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chordlini",
+      "userId": "publishers:chordlini",
+      "displayName": "Chordlini",
+      "image": "https://avatars.githubusercontent.com/u/251679722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 859,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "3.4.0",
+      "createdAt": 1771568156647,
+      "changelog": "- Updated install instructions: now uses direct download from the GitHub repo for the latest `localsend-cli`.\n- Referenced official CLI documentation link for further help.\n- Clarified that `localsend-cli` is a zero-dependency Python CLI, not just a bundled script.\n- No changes to flows, buttons, or state logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2127ade2256bd0cc0125b07b1a036f5245c4f805bdce81103adb51a9d894919a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17860,
+  "uuid": "skill-clawhub-uv-priority",
+  "skillKey": "clawhub-uv-priority",
+  "name": "Prioritize uv",
+  "summary": "Prioritize uv over pip for all Python package management and execution. When running ANY Python command or CLI tool (python, dbt, pytest, etc.), MUST wrap wi...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uv_priority",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marco Borges",
+      "features": [
+        "Prioritize uv over pip for all Python package management and execution",
+        "When running ANY Python command or CLI tool (python, dbt, pytest, etc.), MUST wrap wi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uv-priority@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1200004?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uv-priority",
+      "url": "https://clawhub.ai/skills/uv-priority"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uv-priority",
+    "url": "https://clawhub.ai/skills/uv-priority",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uv-priority-18b5b90b67880954.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uv-priority@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uv-priority-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f45ea8e3fe4761d9289d04312e9dbd20717d43b6f8e2de936b7f4d3c029f736f",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T18:58:58.301Z"
+}

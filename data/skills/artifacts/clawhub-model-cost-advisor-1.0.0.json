@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-cost-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_cost_advisor",
+  "skill": {
+    "id": 53558,
+    "skillKey": "clawhub-model-cost-advisor",
+    "name": "Model Cost Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-cost-advisor",
+    "url": "https://clawhub.ai/skills/model-cost-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-cost-advisor-542101f62dab19dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze any task and recommend the most cost-effective LLM — with live pricing data from 30+ models, tier analysis, token estimation, and projected cost. Per..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minirr890112-byte",
+      "userId": "s17427ed5npn3ajarmrt3mmbvx85k73p",
+      "displayName": "Maya Tao",
+      "image": "https://avatars.githubusercontent.com/u/226037090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777188563332,
+      "changelog": "Initial release: live pricing for 30+ LLMs across 4 tiers, task complexity analysis, token estimation, cost projection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e274838a8149638d2436b2a896f05430fe1fccc3528f422863344cabf0f1fb75"
+}

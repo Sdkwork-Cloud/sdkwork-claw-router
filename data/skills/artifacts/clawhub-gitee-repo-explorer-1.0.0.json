@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitee-repo-explorer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitee_repo_explorer",
+  "skill": {
+    "id": 24232,
+    "skillKey": "clawhub-gitee-repo-explorer",
+    "name": "Repo Explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitee-repo-explorer",
+    "url": "https://clawhub.ai/skills/gitee-repo-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitee-repo-explorer-b6e7e9a42c847706.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks to explore a repository, get familiar with a project, \"repo explorer\", \"tell me about this repo\", \"repo-explorer\", \"what do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oschina",
+      "userId": "publishers:oschina",
+      "displayName": "开源中国",
+      "image": "https://avatars.githubusercontent.com/u/1540855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773037586470,
+      "changelog": "Initial release of Gitee Repo Explorer.\n\n- Allows users to explore and generate overview reports for Gitee repositories.\n- Fetches and summarizes core documentation files (README, CONTRIBUTING, CHANGELOG, dependencies).\n- Provides project structure insight by analyzing directory tree and common patterns.\n- Identifies and summarizes core modules and technologies used.\n- Supports targeted exploration based on user interest (e.g., authentication, database).\n- Requires Gitee MCP Server configuration and repository details from the user.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64ab8c970b9f92691dc29dc74c2c4ec7a58ae7f9c40678000466b94c92833a2c"
+}

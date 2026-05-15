@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-fill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_fill",
+  "skill": {
+    "id": 64931,
+    "skillKey": "clawhub-auto-fill",
+    "name": "auto-fill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-fill",
+    "url": "https://clawhub.ai/skills/auto-fill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-fill-73351039fadb155d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Chrome Debug 模式（CDP）读取当前页面的表单结构并自动填写。由用户显式调用（/auto-fill），不自动触发。用户负责导航和点击，Agent 负责识别字段、填写内容、截图确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottliu007",
+      "userId": "publishers:scottliu007",
+      "displayName": "fanzhuo",
+      "image": "https://avatars.githubusercontent.com/u/128193289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773970725019,
+      "changelog": "auto-fill 1.0.0 - Initial release\n\n- Introduces a form auto-fill feature leveraging Chrome Debug Protocol (CDP) via `playwright-cdp`.\n- Users manually navigate and click; the agent identifies, matches, and fills form fields based on user input.\n- Includes explicit steps: check/start Chrome debug, auto-navigate by intent, extract fields, semantic matching, fill, and screenshot confirmation.\n- Enforces use of `playwright-cdp` tools only; prohibits use of `cursor-ide-browser`.\n- Provides clear boundaries—agent fills, user navigates/clicks/handles CAPTCHAs.\n- Lists first-time setup instructions for browser tooling and environment configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b978f12820858aaf5198ce403f3f90228f7a67c99f36a2610848feef63c8b0e9"
+}

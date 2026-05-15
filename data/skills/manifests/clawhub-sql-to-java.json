@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34433,
+  "uuid": "skill-clawhub-sql-to-java",
+  "skillKey": "clawhub-sql-to-java",
+  "name": "SQL-To-JAVA",
+  "summary": "Convert MySQL CREATE TABLE statements to Java entity classes following framework conventions. Use when converting SQL DDL to Java entity definitions, generat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_to_java",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Coder-MYJ",
+      "features": [
+        "Convert MySQL CREATE TABLE statements to Java entity classes following framework conventions",
+        "Use when converting SQL DDL to Java entity definitions, generat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-to-java@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237692648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-to-java",
+      "url": "https://clawhub.ai/skills/sql-to-java"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-to-java",
+    "url": "https://clawhub.ai/skills/sql-to-java",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-to-java-b5647eac18c0ceb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-to-java@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-to-java-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50e3714dce5e85f90a2c9b84f9eccf96540a18b46bfbb1fcf6df412ff75ba674",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:22:15.550Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gen-test-plan@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gen_test_plan",
+  "skill": {
+    "id": 39211,
+    "skillKey": "clawhub-gen-test-plan",
+    "name": "Gen Test Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gen-test-plan",
+    "url": "https://clawhub.ai/skills/gen-test-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gen-test-plan-bb3f71a2e43967f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze repo, detect stack, trace changes to user-facing entry points, generate E2E YAML test plan"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776831394591,
+      "changelog": "- Introduced a new \"Hard gates\" section outlining mandatory checkpoints that must be passed in order, covering branch diffing, entry point trace, YAML plan validity, prohibition of automated test duplication, and behavioral coverage.\n- Detailed the pass conditions and verification steps for each hard gate, ensuring stricter E2E plan quality and reproducibility.\n- Clarified diff and base branch resolution logic in Step 1 and updated all related example commands for consistency.\n- Specified where in the workflow each hard gate occurs and the expected evidence to retain after passing each.\n- Tightened requirements for YAML output: plan file must have specific keys and parse without error.\n- Added explicit procedural safeguards against generating non-E2E or duplicate test-runner steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccbf8208a28386ea4936538ac05aa5363b24b8210f5c5dbcb654efd354a7b560"
+}

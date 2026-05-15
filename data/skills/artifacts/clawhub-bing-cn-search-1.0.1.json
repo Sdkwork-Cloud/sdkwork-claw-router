@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bing-cn-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bing_cn_search",
+  "skill": {
+    "id": 66716,
+    "skillKey": "clawhub-bing-cn-search",
+    "name": "Bing CN Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bing-cn-search",
+    "url": "https://clawhub.ai/skills/bing-cn-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bing-cn-search-f593989235237819.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用必应中文搜索(Bing CN)获取互联网信息。当用户询问新闻、时事、需要搜索互联网内容、或提到\"搜索一下\"、\"查一下\"、\"网上说\"等场景时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evensix66",
+      "userId": "s1703xrpyp3rk1539c6kr5k9g184cy8s",
+      "displayName": "EvenSix66",
+      "image": "https://avatars.githubusercontent.com/u/108226339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 596,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773993154277,
+      "changelog": "Simplified documentation, removed optimization details and location-specific examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0738ada0ac9a41522e696aa9383b9f9ee2760c61e6d7cbefa615438178753b7a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitbit-health@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitbit_health",
+  "skill": {
+    "id": 11160,
+    "skillKey": "clawhub-fitbit-health",
+    "name": "Fitbit Health Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitbit-health",
+    "url": "https://clawhub.ai/skills/fitbit-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitbit-health-1d647dbc23232c86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Fitbit health data (activity, sleep, heart rate, weight) via CLI. Use when answering health/fitness questions that require Fitbit data, or when the user asks about their steps, sleep, heart rate, or weight from Fitbit."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pb3975",
+      "userId": "publishers:pb3975",
+      "displayName": "pb3975",
+      "image": "https://avatars.githubusercontent.com/u/21221952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1865,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1769481244805,
+      "changelog": "Initial release: OAuth PKCE auth, activity/profile/summary commands",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb48b6e87535304634a5b474625bd2bf19e4377e7e562d0cab8a285366a38043"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shipping-price-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipping_price_monitor",
+  "skill": {
+    "id": 33088,
+    "skillKey": "clawhub-shipping-price-monitor",
+    "name": "shipping-price-monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipping-price-monitor",
+    "url": "https://clawhub.ai/skills/shipping-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipping-price-monitor-2005bcbb1e840f36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor shipping carrier prices from Excel files and send alerts when prices drop below thresholds. Invoke when user mentions shipping price monitoring, pric..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "start-ll04",
+      "userId": "s17f2knejk6ezfzdgtgcb0d5r583gp7a",
+      "displayName": "start-LL04",
+      "image": "https://avatars.githubusercontent.com/u/204228168?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774258760645,
+      "changelog": "shipping-price-monitor v1.0.0 - Initial Release\n\n- Real-time monitoring of shipping carrier Excel price files with configurable watch directory.\n- Flexible price alert rules: filtered by threshold, port, carrier, box type, and validity period.\n- Multi-channel notification: prioritizes OpenClaw persistent connection, with automatic fallback to Webhook; supports WeCom and Feishu.\n- Duplicate alert prevention, multi-rule management, and detailed status/error reporting.\n- Simple command set for starting, stopping, rule management, and status checking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb002a0d86a53b733421972593409ac239ae67b70ca2699950c128fb5df40c3b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10334,
+  "uuid": "skill-clawhub-webchat-audio-notifications",
+  "skillKey": "clawhub-webchat-audio-notifications",
+  "name": "Webchat Audio Notifications",
+  "summary": "Add browser audio notifications to Moltbot/Clawdbot webchat with 5 intensity levels - from whisper to impossible-to-miss (only when tab is backgrounded).",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webchat_audio_notifications",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brokemac79",
+      "features": [
+        "Add browser audio notifications to Moltbot/Clawdbot webchat with 5 intensity levels",
+        "from whisper to impossible-to-miss (only when tab is backgrounded)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webchat-audio-notifications@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255583030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webchat-audio-notifications",
+      "url": "https://clawhub.ai/skills/webchat-audio-notifications"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webchat-audio-notifications",
+    "url": "https://clawhub.ai/skills/webchat-audio-notifications",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webchat-audio-notifications-76976f31a6398938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webchat-audio-notifications@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-webchat-audio-notifications-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdcd10f3b80ce132f100712e362dfb0bbf459e0e2c51d87ee5724dc0d67a2155",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T23:03:39.795Z"
+}

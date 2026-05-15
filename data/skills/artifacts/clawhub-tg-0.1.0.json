@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tg@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg",
+  "skill": {
+    "id": 9324,
+    "skillKey": "clawhub-tg",
+    "name": "Telegram CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg",
+    "url": "https://clawhub.ai/skills/tg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-e9ed69a6ea08507e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Telegram CLI for reading, searching, and sending messages. Use when the user asks about Telegram messages, wants to check inbox, search chats, send messages, or look up contacts and groups."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arein",
+      "userId": "publishers:arein",
+      "displayName": "arein",
+      "image": "https://avatars.githubusercontent.com/u/966091?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 4015,
+      "installsAllTime": 20,
+      "installsCurrent": 20,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769589070226,
+      "changelog": "Version 0.1.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:453f761c44a8a5a0672a6b73433e59ff40f65ae2aff229e15dac1a56efebb59a"
+}

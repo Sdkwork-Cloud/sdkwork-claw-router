@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10728,
+  "uuid": "skill-clawhub-zentao",
+  "skillKey": "clawhub-zentao",
+  "name": "zentao",
+  "summary": "Use the zentao CLI to login and query ZenTao products and bugs. ZENTAO_URL usually includes /zentao.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zentao",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "郭立lee",
+      "features": [
+        "Use the zentao CLI to login and query ZenTao products and bugs",
+        "ZENTAO_URL usually includes /zentao."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zentao@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9278645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zentao",
+      "url": "https://clawhub.ai/skills/zentao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zentao",
+    "url": "https://clawhub.ai/skills/zentao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zentao-ea3543fd9e275eb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zentao@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zentao-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7036d89585b29dc624f573c7eb3dd46d1b97174c0c78d9da37efbcf321a5e420",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T05:11:31.298Z"
+}

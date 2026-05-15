@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astroapi-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astroapi_skill",
+  "skill": {
+    "id": 17433,
+    "skillKey": "clawhub-astroapi-skill",
+    "name": "Astrology API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astroapi-skill",
+    "url": "https://clawhub.ai/skills/astroapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astroapi-skill-a68ea8ae030db79f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Astrology API: generate natal charts, synastry, composite, transits, solar/lunar returns, progressions, directions, planetary positions, house cusps, aspects..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "serslon",
+      "userId": "publishers:serslon",
+      "displayName": "Sergii Solonyna",
+      "image": "https://avatars.githubusercontent.com/u/4667761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771931416296,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe02fb1cc3953a4240b7cc13056509af9fde5281aca19a314fb0550060834eef"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-agentmemo@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_agentmemo",
+  "skill": {
+    "id": 39131,
+    "skillKey": "clawhub-memory-agentmemo",
+    "name": "Memory (AgentMemo)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-agentmemo",
+    "url": "https://clawhub.ai/skills/memory-agentmemo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-agentmemo-124e904cf12372a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw external memory plugin for AgentMemo. Enables semantic memory search and auto-capture via a self-hosted AgentMemo server. Install to use AgentMemo a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yxjsxy",
+      "userId": "s17dtjmwsg1vgzp3gpwpxgttts83kjbr",
+      "displayName": "Karl Yang",
+      "image": "https://avatars.githubusercontent.com/u/34668252?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775260130768,
+      "changelog": "Initial release: AgentMemo external memory plugin for OpenClaw. Supports semantic search and auto-capture via self-hosted AgentMemo server.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f794a8fa1e730aaf983ce6efca2a0cb93042fecf4591c6c1c2e458fe42022b5a"
+}

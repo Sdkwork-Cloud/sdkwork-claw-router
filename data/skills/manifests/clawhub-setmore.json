@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35074,
+  "uuid": "skill-clawhub-setmore",
+  "skillKey": "clawhub-setmore",
+  "name": "Setmore",
+  "summary": "Setmore integration. Manage data, records, and automate workflows. Use when the user wants to interact with Setmore data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setmore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Setmore integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Setmore data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/setmore@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "setmore",
+      "url": "https://clawhub.ai/skills/setmore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setmore",
+    "url": "https://clawhub.ai/skills/setmore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setmore-d0bcd413e0e1e575.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/setmore@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-setmore-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a20236d454186455949dcbb41260fbea2ac6ccf0fa801738b734f95867401bc",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:20.781Z"
+}

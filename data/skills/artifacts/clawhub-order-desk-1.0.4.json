@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/order-desk@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.order_desk",
+  "skill": {
+    "id": 23617,
+    "skillKey": "clawhub-order-desk",
+    "name": "Order Desk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "order-desk",
+    "url": "https://clawhub.ai/skills/order-desk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/order-desk-70ff6acfe6e830b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Order Desk integration. Manage Orders. Use when the user wants to interact with Order Desk data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "membranedev",
+      "userId": "s17ejzcy4w0v2h2tf7xa3y1mw583eedz",
+      "displayName": "Membrane Dev",
+      "image": "https://avatars.githubusercontent.com/u/147116108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777564142722,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53cc7b2c32e1f234b15687ae5ba76e07cd55d5b1c807cee2cf845f04cb193da8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13821,
+  "uuid": "skill-clawhub-ifc-to-excel",
+  "skillKey": "clawhub-ifc-to-excel",
+  "name": "Ifc To Excel",
+  "summary": "Convert IFC files (2x3, 4x1, 4x3) to Excel databases using IfcExporter CLI. Extract BIM data, properties, and geometry without proprietary software.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifc_to_excel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Convert IFC files (2x3, 4x1, 4x3) to Excel databases using IfcExporter CLI",
+        "Extract BIM data, properties, and geometry without proprietary software."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifc-to-excel@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifc-to-excel",
+      "url": "https://clawhub.ai/skills/ifc-to-excel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifc-to-excel",
+    "url": "https://clawhub.ai/skills/ifc-to-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifc-to-excel-663f6378d6bb601b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifc-to-excel@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifc-to-excel-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a84a1422d6e63d9f0d397a51af0a810691616dfb9006f31ea4c95434e84d8a7",
+      "artifactSizeBytes": 2583
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T16:29:20.772Z"
+}

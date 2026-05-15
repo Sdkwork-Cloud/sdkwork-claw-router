@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69183,
+  "uuid": "skill-clawhub-a-stock-watcher",
+  "skillKey": "clawhub-a-stock-watcher",
+  "name": "A Stock Watcher",
+  "summary": "提供基于多数据源的A股实时行情查询、价格预警、技术分析及智能投顾服务，含自动化报告和风险评估功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_watcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenjianghua117",
+      "features": [
+        "提供基于多数据源的A股实时行情查询、价格预警、技术分析及智能投顾服务，含自动化报告和风险评估功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224196840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-watcher",
+      "url": "https://clawhub.ai/skills/a-stock-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-watcher",
+    "url": "https://clawhub.ai/skills/a-stock-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-watcher-fb8ad4a9f98b5883.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c44a0bf495815da460ec36725867adc5748f663061f44b5fbe3c71c055da0bd7",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T08:56:41.183Z"
+}

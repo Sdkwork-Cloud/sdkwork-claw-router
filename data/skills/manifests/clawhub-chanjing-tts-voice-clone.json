@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29178,
+  "uuid": "skill-clawhub-chanjing-tts-voice-clone",
+  "skillKey": "clawhub-chanjing-tts-voice-clone",
+  "name": "Chanjing Tts Voice Clone",
+  "summary": "Use Chanjing TTS API to synthesize speech from text, using user-provided voice. Primary credential: credentials.json (app_id/secret_key; access_token and exp...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanjing_tts_voice_clone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IAMZn",
+      "features": [
+        "Use Chanjing TTS API to synthesize speech from text, using user-provided voice",
+        "Primary credential: credentials.json (app_id/secret_key",
+        "access_token and exp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chanjing-tts-voice-clone@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24623176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chanjing-tts-voice-clone",
+      "url": "https://clawhub.ai/skills/chanjing-tts-voice-clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanjing-tts-voice-clone",
+    "url": "https://clawhub.ai/skills/chanjing-tts-voice-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanjing-tts-voice-clone-f89ebbf04b57511d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chanjing-tts-voice-clone@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-chanjing-tts-voice-clone-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:240f41ee744720d75aa99e0c7b1d2952f491fa51dce1d36fc371358ade5b2f61",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:25:09.058Z"
+}

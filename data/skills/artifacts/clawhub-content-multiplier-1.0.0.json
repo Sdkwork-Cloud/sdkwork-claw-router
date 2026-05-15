@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-multiplier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_multiplier",
+  "skill": {
+    "id": 57840,
+    "skillKey": "clawhub-content-multiplier",
+    "name": "Content Multiplier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-multiplier",
+    "url": "https://clawhub.ai/skills/content-multiplier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-multiplier-2e156093f9a30aec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform one piece of content into multiple formats for different platforms. Use when: \"内容放大\", \"一鱼多吃\", \" repurposing content\", \"content distribution\", \"多平台分..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wulaosiji",
+      "userId": "s17eezdvd6bej1zyj145fpj30184r2mb",
+      "displayName": "Delta Wu",
+      "image": "https://avatars.githubusercontent.com/u/177007457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776085225665,
+      "changelog": "Initial release - Content Multiplier skill from UniqueClub founder toolkit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:320af2159c4f2e873ec07e2e24f35c1c6822bcbecd31d99e736381a69309e261"
+}

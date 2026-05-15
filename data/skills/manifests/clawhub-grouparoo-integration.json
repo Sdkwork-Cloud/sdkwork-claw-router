@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43255,
+  "uuid": "skill-clawhub-grouparoo-integration",
+  "skillKey": "clawhub-grouparoo-integration",
+  "name": "Grouparoo",
+  "summary": "Grouparoo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Grouparoo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grouparoo_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Grouparoo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Grouparoo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grouparoo-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grouparoo-integration",
+      "url": "https://clawhub.ai/skills/grouparoo-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grouparoo-integration",
+    "url": "https://clawhub.ai/skills/grouparoo-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grouparoo-integration-114d77221b80bc10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grouparoo-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-grouparoo-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abe569069fbbb05b7c03d882eb960c6dc97fa64a7abc283cc8db95a919f5251c",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:31:57.465Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akshare-stock-analyzer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_stock_analyzer",
+  "skill": {
+    "id": 58118,
+    "skillKey": "clawhub-akshare-stock-analyzer",
+    "name": "akshare-stock-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-stock-analyzer",
+    "url": "https://clawhub.ai/skills/akshare-stock-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-stock-analyzer-28536a47fd4af9ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用本 skill 自带的 fetch.py 和 analyze.py，对 A 股个股做短期趋势分析。 Use this skill whenever the user asks to analyze A-share stocks, ETFs (like A500/159339), check short-ter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuanfuc",
+      "userId": "s171pngr7ssckb1hem50fthwax83h02h",
+      "displayName": "Yuanfu",
+      "image": "https://avatars.githubusercontent.com/u/32120946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774261603844,
+      "changelog": "- 新增 analyze_result.md，详细说明 AnalysisResult 字段含义及下游解读方法。\n- analyze.py 输出结构更丰富，覆盖均线结构、趋势强度、风险提示等字段。\n- 推荐结合 analyze_result.md 作为自然语言解读/自动化生成模板的参考。\n- SKILL.md 文档同步更新，增加新字段用途指导及自动化解读建议。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4177f191b2fb58dc960d538d5f60e474b71177ef8f1962460a3e35e72c16deb"
+}

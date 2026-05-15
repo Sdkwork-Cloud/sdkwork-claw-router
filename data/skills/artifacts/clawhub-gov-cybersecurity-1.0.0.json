@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gov-cybersecurity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_cybersecurity",
+  "skill": {
+    "id": 17615,
+    "skillKey": "clawhub-gov-cybersecurity",
+    "name": "Government Cybersecurity Vulnerability Intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-cybersecurity",
+    "url": "https://clawhub.ai/skills/gov-cybersecurity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-cybersecurity-a1fef7da3667c1a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CVE vulnerability lookup via NIST NVD, CISA KEV, EPSS scores, and MITRE ATT&CK. 7 tools for real-time cybersecurity intelligence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "martc03",
+      "userId": "publishers:martc03",
+      "displayName": "Martin",
+      "image": "https://avatars.githubusercontent.com/u/138740843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 731,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772183761504,
+      "changelog": "Initial release of gov-cybersecurity skill.\n\n- Provides real-time CVE vulnerability lookup and intelligence from NIST NVD, CISA KEV, EPSS, and MITRE ATT&CK.\n- Includes 7 tools for searching, trending, and enriched vulnerability data.\n- No API keys required; uses only free US government data sources.\n- Supports use cases like compliance tracking, risk assessment, and patch management.\n- Simple setup with `mcporter` and OpenClaw MCP integration.\n- Useful for cybersecurity professionals needing authoritative vulnerability info.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bdbeca6a32f0d7e248791ac7c463e81fc8d5100033bd8df212df53464ebb45a"
+}

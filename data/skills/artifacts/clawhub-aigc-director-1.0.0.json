@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aigc-director@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc_director",
+  "skill": {
+    "id": 69690,
+    "skillKey": "clawhub-aigc-director",
+    "name": "aigc-director"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc-director",
+    "url": "https://clawhub.ai/skills/aigc-director",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-director-b7d61b110d422bba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 视频生成全流程：通过 6 个阶段（剧本→角色/场景设计→分镜→参考图→视频生成→后期剪辑）将用户想法转化为完整视频。支持临时工作台（单独调用 LLM、VLM、文生图、图生图、视频生成）。触发词：视频生成、AI视频、AIGC、创作视频、制作视频、AI画图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hit-cxf",
+      "userId": "s17e94p31qny6jmzcyw5gfpmp583xpv6",
+      "displayName": "Xinfan Chen",
+      "image": "https://avatars.githubusercontent.com/u/228212877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774859828280,
+      "changelog": "AIGC-Director 1.0.0 — 首发版本\n\n- 实现 AI 视频生成完整工作流（剧本、角色/场景设计、分镜、参考图、视频生成、后期剪辑），全流程分9个关键停点，需用户逐步确认。\n- 支持本地部署，所有后端、前端及API调用均限定在本地环境。\n- 提供临时工作台，可单独调用 LLM/VLM、文生图、图生图、短视频等功能。\n- 严格规范每阶段产物需展示和用户确认，避免自动跳过关键步骤。\n- 集成 API Key 配置检测和具体模型适配的指导。\n- 内含详细目录说明与阶段操作参考文档，便于用户查阅和遵循。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0e6e2468ce4b15beba4541ce40030776bcaf8cfce3d5bbc5a9891df6cbedad1"
+}

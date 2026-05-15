@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67286,
+  "uuid": "skill-clawhub-cn-resume-optimizer",
+  "skillKey": "clawhub-cn-resume-optimizer",
+  "name": "CN Resume Optimizer 简历优化师",
+  "summary": "简历优化师，专为职场人士提供简历优化、求职文案、面试准备全流程支持。触发场景：用户提到\"帮我优化简历\"、\"简历怎么写\"、\"求职信\"、\"自我介绍\"、\"面试准备\"、\"写简历\"、\"简历润色\"、\"JD匹配\"、\"岗位匹配度\"、\"简历诊断\"、\"STAR法则\"、\"简历模板\"、\"投递简历\"、\"面试题预测\"、\"求职\"等关键词时激活...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_resume_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanlee-gemini",
+      "features": [
+        "简历优化师，专为职场人士提供简历优化、求职文案、面试准备全流程支持。触发场景：用户提到\"帮我优化简历\"、\"简历怎么写\"、\"求职信\"、\"自我介绍\"、\"面试准备\"、\"写简历\"、\"简历润色\"、\"J."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-resume-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181323138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-resume-optimizer",
+      "url": "https://clawhub.ai/skills/cn-resume-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-resume-optimizer",
+    "url": "https://clawhub.ai/skills/cn-resume-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-resume-optimizer-de6cbb1f414d56dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-resume-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-resume-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c71c162776af6f097338584685f4f8fa7cd0c4fb0bc85eeade35dfe319845c5",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:38:06.932Z"
+}

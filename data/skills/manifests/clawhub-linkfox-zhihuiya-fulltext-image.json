@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62060,
+  "uuid": "skill-clawhub-linkfox-zhihuiya-fulltext-image",
+  "skillKey": "clawhub-linkfox-zhihuiya-fulltext-image",
+  "name": "Zhihuiya Fulltext Image",
+  "summary": "通过专利ID或公开号获取专利文件中的全文附图（图纸、示意图、图表）。当用户询问专利图片、专利图纸、专利示意图、专利插图、全文附图、专利图表、专利技术图或想查看、下载专利文件中的嵌入图片、patent fulltext drawings, patent diagrams, technical drawings, p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_zhihuiya_fulltext_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "通过专利ID或公开号获取专利文件中的全文附图（图纸、示意图、图表）。当用户询问专利图片、专利图纸、专利示意图、专利插图、全文附图、专利图表、专利技术图或想查看、下载专利文件中的嵌入图片、pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-zhihuiya-fulltext-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-zhihuiya-fulltext-image",
+      "url": "https://clawhub.ai/skills/linkfox-zhihuiya-fulltext-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-zhihuiya-fulltext-image",
+    "url": "https://clawhub.ai/skills/linkfox-zhihuiya-fulltext-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-zhihuiya-fulltext-image-53fc77e6cc82b821.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-zhihuiya-fulltext-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-zhihuiya-fulltext-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f62d0d894cd2eec7fff45751ec38ab1840c5b01a1faf429fe46847cafdb471c1",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:11:03.815Z"
+}

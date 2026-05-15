@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43449,
+  "uuid": "skill-clawhub-video-audio-replace-online",
+  "skillKey": "clawhub-video-audio-replace-online",
+  "name": "Video Audio Replace Online",
+  "summary": "Get re-audioed MP4 ready to post, without touching a single slider. Upload your video with audio (MP4, MOV, AVI, WebM, up to 500MB), say something like \"repl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_audio_replace_online",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "Get re-audioed MP4 ready to post, without touching a single slider",
+        "Upload your video with audio (MP4, MOV, AVI, WebM, up to 500MB), say something like \"repl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-audio-replace-online@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-audio-replace-online",
+      "url": "https://clawhub.ai/skills/video-audio-replace-online"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-audio-replace-online",
+    "url": "https://clawhub.ai/skills/video-audio-replace-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-audio-replace-online-bb24eae876f05de6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-audio-replace-online@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-audio-replace-online-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0daf025f1bbd132d5c3a9db83298ed46ac0eb756cc4623b18714233ba6f213c",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:58:15.572Z"
+}

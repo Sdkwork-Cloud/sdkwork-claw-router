@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56946,
+  "uuid": "skill-clawhub-concept-decoder",
+  "skillKey": "clawhub-concept-decoder",
+  "name": "Concept Decoder",
+  "summary": "Deconstructs complex concepts with a layered, intuition-first pipeline (prereqs → motivation → analogies → math → connections → tests). Use when user asks 'w...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.concept_decoder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xin Xiong",
+      "features": [
+        "Deconstructs complex concepts with a layered, intuition-first pipeline (prereqs → motivation →.",
+        "Use when user asks 'w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/concept-decoder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16537617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "concept-decoder",
+      "url": "https://clawhub.ai/skills/concept-decoder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "concept-decoder",
+    "url": "https://clawhub.ai/skills/concept-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/concept-decoder-26d16d5e8efcf284.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/concept-decoder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-concept-decoder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da7fe02754ac9850bff4d0d6ef76d5ac98ecfd27e8ad3bb48d715764953e9d8e",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:21:36.519Z"
+}

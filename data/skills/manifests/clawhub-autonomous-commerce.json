@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14911,
+  "uuid": "skill-clawhub-autonomous-commerce",
+  "skillKey": "clawhub-autonomous-commerce",
+  "name": "Autonomous Commerce",
+  "summary": "Execute real-world e-commerce purchases autonomously with escrow protection and cryptographic proof. Use when: User requests a physical purchase (Amazon, retail), budget is specified, escrow funds are available. Don't use when: Just browsi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_commerce",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pandeyaby",
+      "features": [
+        "Execute real-world e-commerce purchases autonomously with escrow protection and cryptographic p.",
+        "Use when: User requests a physical purchase (Amazon, retail), budget is specified, escrow funds.",
+        "Don't use when: Just browsing/researching products, no budget specified, user wants price compa.",
+        "Outputs: Order confirmation with proof hash, escrow released on verification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-commerce@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8624924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-commerce",
+      "url": "https://clawhub.ai/skills/autonomous-commerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-commerce",
+    "url": "https://clawhub.ai/skills/autonomous-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-commerce-e6a12e8e3d4390fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-commerce@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-commerce-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee0d0b76aabffedcdd42ce678c8963754817472f666a1c32e8f514ac60614cc7",
+      "artifactSizeBytes": 2699
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T06:21:28.053Z"
+}

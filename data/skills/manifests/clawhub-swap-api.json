@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29776,
+  "uuid": "skill-clawhub-swap-api",
+  "skillKey": "clawhub-swap-api",
+  "name": "KYC.RIP Swap API",
+  "summary": "Exchange cryptocurrencies via kyc.rip aggregator API. Use when swapping, converting, or exchanging crypto assets. Supports 700+ coins, no KYC, best rates acr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swap_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XBToshi",
+      "features": [
+        "Exchange cryptocurrencies via kyc.rip aggregator API",
+        "Use when swapping, converting, or exchanging crypto assets",
+        "Supports 700+ coins, no KYC, best rates acr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swap-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256925101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swap-api",
+      "url": "https://clawhub.ai/skills/swap-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swap-api",
+    "url": "https://clawhub.ai/skills/swap-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swap-api-89f42c6d915b5593.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swap-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swap-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48d650364bcc90301bd01ea08b9135d4176f975537a4e27ebba51f6c23a4ba07",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:40:21.095Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-interview@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_interview",
+  "skill": {
+    "id": 20342,
+    "skillKey": "clawhub-ai-interview",
+    "name": "AI Interview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-interview",
+    "url": "https://clawhub.ai/skills/ai-interview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-interview-c62366738cbb8bae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run AI-powered mock interviews using Fuku.ai's free public service."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangdong",
+      "userId": "s17d3a3fftbwk1e8wz70qm6q2n842dhq",
+      "displayName": "Dong",
+      "image": "https://avatars.githubusercontent.com/u/1252748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772245619614,
+      "changelog": "Clarify Fuku.ai-specific design: free public service, shared anonymous credentials, no user auth required",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb24243fb1d0ebc12e96e1a09e21b4f7ed96616e386230edd9902296416a7eaa"
+}

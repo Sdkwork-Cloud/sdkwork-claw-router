@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memex@0.5.12",
+  "version": "0.5.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memex",
+  "skill": {
+    "id": 54417,
+    "skillKey": "clawhub-memex",
+    "name": "Memex Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memex",
+    "url": "https://clawhub.ai/skills/memex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memex-22e09db18c613508.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified memory plugin for OpenClaw — conversation memory + document search in a single SQLite database. 90% E2E accuracy on LongMemEval (ICLR 2025) with GPT-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ofan",
+      "userId": "s179mh12ng1k819b3jsng2cd6x83f91s",
+      "displayName": "ofan",
+      "image": "https://avatars.githubusercontent.com/u/319679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.5.12",
+      "createdAt": 1775617326587,
+      "changelog": "memex v0.5.12\n\n- Added health check endpoint and supporting code for monitoring plugin status.\n- Introduced a new flush plan feature for managing memory/index state.\n- Added recall-query functionality for improved memory retrieval handling.\n- Updated documentation to clarify retrieval accuracy (now “Memory E2E Accuracy”) and enhance clarity.\n- Made internal improvements to memory, retrieval, and telemetry modules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4b8d882260fee50a08929081868ad3558caef1e66cf942219b005d9d4c570d7"
+}

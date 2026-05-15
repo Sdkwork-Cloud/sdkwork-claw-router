@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9249,
+  "uuid": "skill-clawhub-container-debug",
+  "skillKey": "clawhub-container-debug",
+  "name": "Container Debug",
+  "summary": "Debug running Docker containers and Compose services. Use when inspecting container logs, exec-ing into running containers, diagnosing networking issues, checking resource usage, debugging multi-stage builds, troubleshooting health checks,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.container_debug",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gitgoodordietrying",
+      "features": [
+        "Debug running Docker containers and Compose services",
+        "Use when inspecting container logs, exec-ing into running containers, diagnosing networking iss."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/container-debug@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116975874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "container-debug",
+      "url": "https://clawhub.ai/skills/container-debug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "container-debug",
+    "url": "https://clawhub.ai/skills/container-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/container-debug-2bc252109a3c2dba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/container-debug@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-container-debug-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80a28e1c8b9075714e06cf1c0b25bae0973588aac4d638a23447857824ecd00b",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T22:43:04.219Z"
+}

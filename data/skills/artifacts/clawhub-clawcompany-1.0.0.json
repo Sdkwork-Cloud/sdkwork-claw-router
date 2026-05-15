@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcompany@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcompany",
+  "skill": {
+    "id": 30379,
+    "skillKey": "clawhub-clawcompany",
+    "name": "ClawCompany"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcompany",
+    "url": "https://clawhub.ai/skills/clawcompany",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcompany-5cad9efce3303026.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI virtual team collaboration system with PM/Dev/Review agents for automated software development. Use when users request creating, building, or implementing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felix-miao",
+      "userId": "publishers:felix-miao",
+      "displayName": "felix-miao",
+      "image": "https://avatars.githubusercontent.com/u/258185580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774018865858,
+      "changelog": "- Initial release of ClawCompany: an AI virtual team collaboration system for automated software development.\n- Features three built-in roles: PM Agent (analysis & task breakdown), Dev Agent (code implementation), and Review Agent (code review).\n- Automatically triggers on phrases like “create a...”, “build a...”, “implement a...”, and similar rapid prototyping needs.\n- Integrates with GLM-5 (for agents) and OpenCode (for development) via sessions_spawn and sessions_history.\n- Provides a full example workflow for creating features from user request to review and delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc2a7a6f372eb00e47ab396b1e6c96d85a3b50360d4aa9e3d5e4bd98dbb1a549"
+}

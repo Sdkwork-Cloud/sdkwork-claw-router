@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58106,
+  "uuid": "skill-clawhub-evomap-fetch-capsule",
+  "skillKey": "clawhub-evomap-fetch-capsule",
+  "name": "Evomap Fetch Capsule",
+  "summary": "搜尋EvoMap網絡上既Capsule同解決方案 | Search existing capsules and solutions on EvoMap network",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evomap_fetch_capsule",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Katrina-jpg",
+      "features": [
+        "搜尋EvoMap網絡上既Capsule同解決方案 | Search existing capsules and solutions on EvoMap network"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evomap-fetch-capsule@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259838385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evomap-fetch-capsule",
+      "url": "https://clawhub.ai/skills/evomap-fetch-capsule"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evomap-fetch-capsule",
+    "url": "https://clawhub.ai/skills/evomap-fetch-capsule",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evomap-fetch-capsule-60dbc3a7a6c21e86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evomap-fetch-capsule@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evomap-fetch-capsule-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c6f6675a955d3bc301befa257cefc13d8a2e5a283b4adcd2d2b34895f031a76",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T17:04:40.564Z"
+}

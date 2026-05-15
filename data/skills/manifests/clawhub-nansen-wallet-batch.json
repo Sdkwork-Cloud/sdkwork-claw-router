@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33311,
+  "uuid": "skill-clawhub-nansen-wallet-batch",
+  "skillKey": "clawhub-nansen-wallet-batch",
+  "name": "Nansen Wallet Batch",
+  "summary": "Which of these addresses are smart money? Batch-profile a list in one call.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_wallet_batch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Which of these addresses are smart money? Batch-profile a list in one call."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-wallet-batch@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-wallet-batch",
+      "url": "https://clawhub.ai/skills/nansen-wallet-batch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-wallet-batch",
+    "url": "https://clawhub.ai/skills/nansen-wallet-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-wallet-batch-d64cd7707e04ffb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-wallet-batch@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-wallet-batch-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f815ba9b8dd214f7b671a47fe73605556c2a8c57bf6e3cff0cbd0ef089a7e305",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:34:31.033Z"
+}

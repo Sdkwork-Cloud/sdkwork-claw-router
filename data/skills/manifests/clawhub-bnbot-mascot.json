@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24147,
+  "uuid": "skill-clawhub-bnbot-mascot",
+  "skillKey": "clawhub-bnbot-mascot",
+  "name": "BNBOT Mascot",
+  "summary": "Generate BNBOT lobster-bot mascot images in consistent style using reference images. Use when the user asks to generate mascot illustrations, character poses...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bnbot_mascot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Lee",
+      "features": [
+        "Generate BNBOT lobster-bot mascot images in consistent style using reference images",
+        "Use when the user asks to generate mascot illustrations, character poses..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bnbot-mascot@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20477587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bnbot-mascot",
+      "url": "https://clawhub.ai/skills/bnbot-mascot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bnbot-mascot",
+    "url": "https://clawhub.ai/skills/bnbot-mascot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bnbot-mascot-018215509fdf41f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bnbot-mascot@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bnbot-mascot-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41ea325c73fab0939c25da9dcba25190edf741b5c398bd8d1126712a9ac00617",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:11:29.054Z"
+}

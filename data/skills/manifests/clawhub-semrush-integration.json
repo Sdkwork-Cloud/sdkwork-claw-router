@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35963,
+  "uuid": "skill-clawhub-semrush-integration",
+  "skillKey": "clawhub-semrush-integration",
+  "name": "Semrush",
+  "summary": "SEMrush integration. Manage Projects, Keywords, Domains, Competitors. Use when the user wants to interact with SEMrush data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semrush_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SEMrush integration",
+        "Manage Projects, Keywords, Domains, Competitors",
+        "Use when the user wants to interact with SEMrush data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semrush-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semrush-integration",
+      "url": "https://clawhub.ai/skills/semrush-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semrush-integration",
+    "url": "https://clawhub.ai/skills/semrush-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semrush-integration-1b3752fb1fcf665f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semrush-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-semrush-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1fcd0c3a711d1df8ad9f28046bdf76a724f7fa3c8d56fec013705481b504fb8",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:31.295Z"
+}

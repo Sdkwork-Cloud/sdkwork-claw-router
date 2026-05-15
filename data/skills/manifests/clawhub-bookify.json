@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36444,
+  "uuid": "skill-clawhub-bookify",
+  "skillKey": "clawhub-bookify",
+  "name": "Bookify - Convert Markdown to PDF or EPUB",
+  "summary": "Convert Markdown files to styled PDF or EPUB ebook using md-bookify. Use when the user wants to generate a PDF document or EPUB ebook from markdown content o...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dan",
+      "features": [
+        "Convert Markdown files to styled PDF or EPUB ebook using md-bookify",
+        "Use when the user wants to generate a PDF document or EPUB ebook from markdown content o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookify@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7241290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookify",
+      "url": "https://clawhub.ai/skills/bookify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookify",
+    "url": "https://clawhub.ai/skills/bookify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookify-196fabbbefd26098.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookify@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookify-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:512a9214fdd4d7ad4790543a8e86e0c42b79758e14fbd58d5ff25a3e59235bab",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T05:41:24.399Z"
+}

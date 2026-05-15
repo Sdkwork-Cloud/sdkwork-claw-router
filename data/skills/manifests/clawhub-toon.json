@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39821,
+  "uuid": "skill-clawhub-toon",
+  "skillKey": "clawhub-toon",
+  "name": "Toon",
+  "summary": "Compress JSON data to TOON format for ~40% context savings. Use when fetching APIs, reading JSON files, or any task outputting structured data. Pipe any output through `toon` - JSON gets compressed, non-JSON passes through unchanged.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bonk-moltbot",
+      "features": [
+        "Compress JSON data to TOON format for ~40% context savings",
+        "Use when fetching APIs, reading JSON files, or any task outputting structured data",
+        "Pipe any output through `toon`",
+        "JSON gets compressed, non-JSON passes through unchanged."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257937320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toon",
+      "url": "https://clawhub.ai/skills/toon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toon",
+    "url": "https://clawhub.ai/skills/toon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toon-b16f173eaf978090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2291ee6edb1938c05234433396e45d0022ca481840b7b5da07f3c9254b42fd7c",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T15:53:58.706Z"
+}

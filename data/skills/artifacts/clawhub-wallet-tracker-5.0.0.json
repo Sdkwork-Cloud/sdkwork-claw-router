@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallet-tracker@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_tracker",
+  "skill": {
+    "id": 48150,
+    "skillKey": "clawhub-wallet-tracker",
+    "name": "Wallet Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-tracker",
+    "url": "https://clawhub.ai/skills/wallet-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-tracker-8ad1c01d309d0d94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto wallet analytics reference — address formats, on-chain analytics, transaction tracing, hardware wallets, and approval revocation"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 710,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1774226694556,
+      "changelog": "Clean package with matching SKILL.md and script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e25a82874b2b7697a890f57b5478e754acfddc0be488857f31f422f617677c0b"
+}

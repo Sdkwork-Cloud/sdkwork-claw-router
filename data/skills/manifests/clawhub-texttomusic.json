@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27852,
+  "uuid": "skill-clawhub-texttomusic",
+  "skillKey": "clawhub-texttomusic",
+  "name": "Text to Music",
+  "summary": "AI music generation assistant powered by MakebestMusic. Use when user wants to create AI-generated music, songs, or audio tracks. Perfect for content creator...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.texttomusic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MakeBestMusic",
+      "features": [
+        "AI music generation assistant powered by MakebestMusic",
+        "Use when user wants to create AI-generated music, songs, or audio tracks",
+        "Perfect for content creator..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/texttomusic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219227592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "texttomusic",
+      "url": "https://clawhub.ai/skills/texttomusic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "texttomusic",
+    "url": "https://clawhub.ai/skills/texttomusic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/texttomusic-efdc619de066621d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/texttomusic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-texttomusic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6337b5d9832d9e38e8c49c73d05fe594abadc0fab9ee5d8b8188715c249ea6c",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:16:27.076Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sweden@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sweden",
+  "skill": {
+    "id": 27656,
+    "skillKey": "clawhub-sweden",
+    "name": "Sweden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sweden",
+    "url": "https://clawhub.ai/skills/sweden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sweden-295099c764e64396.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan Sweden trips with verified entry rules, region-specific routing, rail-ferry logistics, and practical seasonal safety."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773057750822,
+      "changelog": "Added verified Sweden entry rules, regional playbooks, rail and road logistics, and practical seasonal travel guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd1edc948c39fd41d39688da73fc83c34c1a089ad05b015e095ecec681ac4b32"
+}

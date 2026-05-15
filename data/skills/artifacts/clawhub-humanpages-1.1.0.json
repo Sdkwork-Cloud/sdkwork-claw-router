@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanpages@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanpages",
+  "skill": {
+    "id": 54024,
+    "skillKey": "clawhub-humanpages",
+    "name": "Humanpages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanpages",
+    "url": "https://clawhub.ai/skills/humanpages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanpages-56edc72802156dbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and hire real humans for tasks — photography, delivery, research, and more"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "human-pages-ai",
+      "userId": "publishers:human-pages-ai",
+      "displayName": "human-pages-ai",
+      "image": "https://avatars.githubusercontent.com/u/260388610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773119909527,
+      "changelog": "- Agents now auto-activate on PRO tier (free during launch); no manual activation required.\n- Registration workflow simplified—agents are ready to use immediately after registration.\n- Social and payment verification are now optional and only add trust badges (do not affect access or rate limits).\n- Support for webhooks added at agent registration for event notifications.\n- Documentation updated for clarity and to reflect the new onboarding process.\n- License field added (MIT).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ea47a1c8bb20f627d0bbe143b84c2a0a92f63d748cc12347dd26c36ca62610d"
+}

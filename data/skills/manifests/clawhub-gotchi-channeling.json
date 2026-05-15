@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17664,
+  "uuid": "skill-clawhub-gotchi-channeling",
+  "skillKey": "clawhub-gotchi-channeling",
+  "name": "Gotchi Channeling",
+  "summary": "Channel Aavegotchis on Base via Bankr. Checks cooldown, builds calldata, and submits channel txs safely.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gotchi_channeling",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaigotchi",
+      "features": [
+        "Channel Aavegotchis on Base via Bankr",
+        "Checks cooldown, builds calldata, and submits channel txs safely."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gotchi-channeling@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258886199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gotchi-channeling",
+      "url": "https://clawhub.ai/skills/gotchi-channeling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gotchi-channeling",
+    "url": "https://clawhub.ai/skills/gotchi-channeling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gotchi-channeling-69f88bbb66cb32ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gotchi-channeling@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gotchi-channeling-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6d0aa379f7b39a2508071cfe456d5eeaaadcb5ef66a8c79a73860e5a64e75e2",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:53:58.966Z"
+}

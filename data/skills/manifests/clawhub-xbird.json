@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16124,
+  "uuid": "skill-clawhub-xbird",
+  "skillKey": "clawhub-xbird",
+  "name": "xbird",
+  "summary": "Use when the user asks to tweet, post threads, read tweets, search Twitter/X, check mentions, manage engagement (like/retweet/bookmark), update profile (bio, avatar, banner), upload media, or interact with Twitter accounts. Triggers: twitt.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xbird",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "checkra1neth",
+      "features": [
+        "Use when the user asks to tweet, post threads, read tweets, search Twitter/X, check mentions, m.",
+        "Triggers: twitter, tweet, post, thread, timeline, mentions, followers, following, likes, retwee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xbird@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228963998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xbird",
+      "url": "https://clawhub.ai/skills/xbird"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xbird",
+    "url": "https://clawhub.ai/skills/xbird",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xbird-96fcfef5dd75282b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xbird@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xbird-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f3f848b1c90d16d801be79b650240549828ed518682976a90dfd5ee13fd4023",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T13:08:10.606Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-highlight@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_highlight",
+  "skill": {
+    "id": 47482,
+    "skillKey": "clawhub-editor-highlight",
+    "name": "Editor Highlight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-highlight",
+    "url": "https://clawhub.ai/skills/editor-highlight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-highlight-748493c494b4f910.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 30-minute interview recording into 1080p highlight reel clips just by typing what you need. Whether it's automatically cutting the best moments from l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777310489652,
+      "changelog": "editor-highlight 1.0.0 — Initial Release\n\n- Instantly extract key moments from raw video footage (e.g., interviews) using AI-powered highlight detection.\n- Upload your video, describe the result you want, and receive a 1080p highlight reel or custom export in about 1–2 minutes.\n- No timeline editing or export setting adjustments needed—just type your instructions.\n- Supports common video (MP4, MOV, AVI, WebM) and audio formats.\n- Sessions retain your editing state for quick iterative improvements.\n- Includes status feedback, error handling, and free usage tier (with token system).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbcbe7919fc316f0c2cb4bbe4b97f507d056c3aed613bb587d248b200e6f9c44"
+}

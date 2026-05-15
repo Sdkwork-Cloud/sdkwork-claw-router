@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54587,
+  "uuid": "skill-clawhub-neonous",
+  "skillKey": "clawhub-neonous",
+  "name": "Neonous",
+  "summary": "Operate the Neonous AI agent platform — create agents, chat, manage tools, run workflows.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neonous",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chesterchou",
+      "features": [
+        "Operate the Neonous AI agent platform — create agents, chat, manage tools, run workflows."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neonous@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37654969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neonous",
+      "url": "https://clawhub.ai/skills/neonous"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neonous",
+    "url": "https://clawhub.ai/skills/neonous",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neonous-49d6b929020dfce8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neonous@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-neonous-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a89df0f31956f1158ac68dae07a75e388d883e50d645c335a12145e693819c6",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:00:15.234Z"
+}

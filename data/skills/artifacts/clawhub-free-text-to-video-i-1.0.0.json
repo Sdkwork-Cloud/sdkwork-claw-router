@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-to-video-i@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_to_video_i",
+  "skill": {
+    "id": 46822,
+    "skillKey": "clawhub-free-text-to-video-i",
+    "name": "Free Text To Video I"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-to-video-i",
+    "url": "https://clawhub.ai/skills/free-text-to-video-i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-to-video-i-3aa99c1c50ce484c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert text prompts into AI-generated videos with this skill. Works with TXT, DOCX, PDF, plain text files up to 500MB. marketers, content creators, educator..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776074107646,
+      "changelog": "Initial release of Free Text to Video — Convert Text Into Generated Videos.\n\n- Convert text prompts or documents (TXT, DOCX, PDF, up to 500MB) into AI-generated 1080p MP4 videos in 1–2 minutes.\n- Supports roles for content creators, marketers, educators, and more.\n- Includes automated cloud setup, session, and authentication workflow with free credits for new users.\n- Allows exporting, credits checking, uploading, and timeline preview actions via natural language prompts.\n- Provides detailed error handling and guidance for common scenarios.\n- Supports a variety of file formats (video, audio, image) and batch or iterative workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f3882d95fdb48af887d1256acb865118ebde9e2e5502951d946a415e142e29d"
+}

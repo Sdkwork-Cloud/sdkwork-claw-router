@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-price-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_price_tracker",
+  "skill": {
+    "id": 69685,
+    "skillKey": "clawhub-product-price-tracker",
+    "name": "Product Price Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-price-tracker",
+    "url": "https://clawhub.ai/skills/product-price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-price-tracker-2015779e5fb1c4ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "监控产品价格变化，自动对比历史价格并生成报告。支持价格搜索、历史追踪、变动提醒，适合竞品价格监控、商品降价提醒、价格趋势分析等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rf-ai-wh",
+      "userId": "s1709sczjh4ahvc5v0c3e2gth183nwb4",
+      "displayName": "rf-AI-WH",
+      "image": "https://avatars.githubusercontent.com/u/265223072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774500597780,
+      "changelog": "Initial release: product price monitoring with kimi_search integration, history tracking, and report generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98c61145d795b58c6224b91f5195fbcd6fa0ff7b51d48438a08e7c71e3036c86"
+}

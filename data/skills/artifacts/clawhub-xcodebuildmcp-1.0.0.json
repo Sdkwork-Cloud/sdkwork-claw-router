@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xcodebuildmcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xcodebuildmcp",
+  "skill": {
+    "id": 10193,
+    "skillKey": "clawhub-xcodebuildmcp",
+    "name": "xcodebuildmcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xcodebuildmcp",
+    "url": "https://clawhub.ai/skills/xcodebuildmcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xcodebuildmcp-9d6238228c6b4f7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user needs Xcode build/test/run workflows, simulator or device control, UI automation, screenshots/video, logs, or LLDB debugging through XcodeBuildMCP tools. Includes discovery of projects/schemes, session defaults, and commo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ipavlidakis",
+      "userId": "publishers:ipavlidakis",
+      "displayName": "ipavlidakis",
+      "image": "https://avatars.githubusercontent.com/u/472467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2635,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769854425506,
+      "changelog": "Initial release of the xcodebuildmcp skill.\n\n- Provides tools for Xcode build, test, run, and automation workflows via XcodeBuildMCP.\n- Supports simulator/device management, project/scheme discovery, UI automation, screenshots/video, and logging.\n- Introduces commands for building/running apps, testing, managing simulators, capturing media, and gathering logs/debug data.\n- Includes recommendations for repeatable workflows and best practices in multi-step automation tasks.\n- Offers guidance on session defaults, safe operations, and target selection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e010698d4187b41db0e865ad141ade589d398f426bc1e13f5e08a4deed45a2e5"
+}

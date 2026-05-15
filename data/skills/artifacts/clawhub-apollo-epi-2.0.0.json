@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-epi@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_epi",
+  "skill": {
+    "id": 68251,
+    "skillKey": "clawhub-apollo-epi",
+    "name": "Apollo Epi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-epi",
+    "url": "https://clawhub.ai/skills/apollo-epi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-epi-64c339a6484c1135.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "像表观遗传一样传承知识：让AI的学习经验能够跨代积累，不从零开始。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775568198218,
+      "changelog": "v2.0.0: epi-check.sh脚本实现，知识传承检测",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70a58f6588f4c0bd0d0630e0128b9545ae775ab3fe9793e2d825f089d7a3600e"
+}

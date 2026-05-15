@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55032,
+  "uuid": "skill-clawhub-kansodata-airflow-readonly",
+  "skillKey": "clawhub-kansodata-airflow-readonly",
+  "name": "Airflow Read-Only Skill",
+  "summary": "Consulta y lista DAGs, ejecuciones y tareas en Apache Airflow usando la API REST `/api/v2` en modo solo lectura, sin modificaciones ni escrituras.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kansodata_airflow_readonly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos CF.",
+      "features": [
+        "Consulta y lista DAGs, ejecuciones y tareas en Apache Airflow usando la API REST `/api/v2` en m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kansodata-airflow-readonly@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225288021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kansodata-airflow-readonly",
+      "url": "https://clawhub.ai/skills/kansodata-airflow-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kansodata-airflow-readonly",
+    "url": "https://clawhub.ai/skills/kansodata-airflow-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kansodata-airflow-readonly-476d3aa4c4addaef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kansodata-airflow-readonly@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kansodata-airflow-readonly-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b83dc82fe064619a461870795cea48c1607fe3dc38d6ea654696495e0af2b6df",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:11:25.775Z"
+}

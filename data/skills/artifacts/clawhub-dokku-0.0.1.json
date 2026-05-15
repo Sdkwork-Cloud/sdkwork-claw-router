@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dokku@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dokku",
+  "skill": {
+    "id": 11459,
+    "skillKey": "clawhub-dokku",
+    "name": "dokku"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dokku",
+    "url": "https://clawhub.ai/skills/dokku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dokku-c903a60c5340f58b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Installs, upgrades, and manages Dokku apps, deploys code or images, runs tasks, and cleans up containers on Dokku hosts via CLI commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akhil-naidu",
+      "userId": "publishers:akhil-naidu",
+      "displayName": "dFlow",
+      "image": "https://avatars.githubusercontent.com/u/11688537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1769901387508,
+      "changelog": "Initial release of the Dokku skill.\n\n- Installs and upgrades Dokku; \n- covers app creation, deployment, background tasks, and container cleanup.\n- Organized command sections for apps, config, domains, git/deploy, run, logs, process, plugins, certs, nginx, storage, network, install, upgrade, and cleanup.\n- Quick reference included for common workflows like app creation and deployment.\n- Designed to trigger on key terms: dokku, install/upgrade dokku, deploy, cleanup, containers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7cdeecd304c69348d54e42517c41982b4cea92036373c9cc9ebca5a8d6ccbbdb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gougoubi-create-prediction@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_create_prediction",
+  "skill": {
+    "id": 20627,
+    "skillKey": "clawhub-gougoubi-create-prediction",
+    "name": "Gougoubi Create Prediction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-create-prediction",
+    "url": "https://clawhub.ai/skills/gougoubi-create-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-create-prediction-cd296d5411b7026a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create public Gougoubi prediction proposals from minimal input with deterministic enrichment, group creation, approval handling, and transaction submission...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasong",
+      "userId": "s179eagqs31pt739p6fnw6sd1983hwvg",
+      "displayName": "chinasong",
+      "image": "https://avatars.githubusercontent.com/u/7566395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774239839247,
+      "changelog": "- Updated INSTALL.md and README.md.\n- Documentation improvements; no changes to core functionality.\n- Clarified usage and workflow steps for creating predictions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:099c248060eb82e4e8eec89ded4bfcc0067fe9f79b51e3c4fbfe2b622e67870b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/up-skill-to-clawhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.up_skill_to_clawhub",
+  "skill": {
+    "id": 38216,
+    "skillKey": "clawhub-up-skill-to-clawhub",
+    "name": "Up Skill To Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "up-skill-to-clawhub",
+    "url": "https://clawhub.ai/skills/up-skill-to-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/up-skill-to-clawhub-1d7fec26dd56a2e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Package and publish OpenClaw skills to ClawHub registry. Use when user wants to upload, publish, or update a skill to ClawHub. Triggers on phrases like \"uplo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonakic",
+      "userId": "s1719p3brh7n4bejrxksh7az5n83gj6q",
+      "displayName": "tonakic",
+      "image": "https://avatars.githubusercontent.com/u/183658957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774502590360,
+      "changelog": "Initial release. Bilingual workflow guide for publishing OpenClaw skills to ClawHub with sensitive data sanitization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81858d92a1810e8e5edefd16b45f46f358e80078e0b138c5586e8b876c711e81"
+}

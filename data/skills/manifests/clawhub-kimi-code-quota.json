@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32181,
+  "uuid": "skill-clawhub-kimi-code-quota",
+  "skillKey": "clawhub-kimi-code-quota",
+  "name": "Kimi Code Quota",
+  "summary": "Query Kimi Code Plan quota and usage information. Use when the user wants to check their Kimi Code subscription quota, usage percentage, reset time, or API k...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_code_quota",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doraohm1",
+      "features": [
+        "Query Kimi Code Plan quota and usage information",
+        "Use when the user wants to check their Kimi Code subscription quota, usage percentage, reset ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kimi-code-quota@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220819121?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kimi-code-quota",
+      "url": "https://clawhub.ai/skills/kimi-code-quota"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-code-quota",
+    "url": "https://clawhub.ai/skills/kimi-code-quota",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-code-quota-591ebd661fb792f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kimi-code-quota@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kimi-code-quota-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0cf52d23a37a119b371c812721c7b87828efe20893e287955a6a9fb746ffae1",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:27:41.142Z"
+}

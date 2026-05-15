@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40540,
+  "uuid": "skill-clawhub-forgerock-integration",
+  "skillKey": "clawhub-forgerock-integration",
+  "name": "Forgerock",
+  "summary": "ForgeRock integration. Manage data, records, and automate workflows. Use when the user wants to interact with ForgeRock data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forgerock_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ForgeRock integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ForgeRock data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/forgerock-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "forgerock-integration",
+      "url": "https://clawhub.ai/skills/forgerock-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forgerock-integration",
+    "url": "https://clawhub.ai/skills/forgerock-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forgerock-integration-814735585f5426eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/forgerock-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-forgerock-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb38c441b0bd254d2730ca059328d5452b2fcd7675913940642a782d2cf3507f",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:28:50.890Z"
+}

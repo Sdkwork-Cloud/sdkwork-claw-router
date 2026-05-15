@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19754,
+  "uuid": "skill-clawhub-meerkat-governance",
+  "skillKey": "clawhub-meerkat-governance",
+  "name": "Meerkat Governance",
+  "summary": "AI governance API with two endpoints. Shield scans untrusted content for prompt injection and threats. Verify checks AI output for hallucinations, numerical...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meerkat_governance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "7789996399",
+      "features": [
+        "AI governance API with two endpoints",
+        "Shield scans untrusted content for prompt injection and threats",
+        "Verify checks AI output for hallucinations, numerical..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meerkat-governance@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86802692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meerkat-governance",
+      "url": "https://clawhub.ai/skills/meerkat-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meerkat-governance",
+    "url": "https://clawhub.ai/skills/meerkat-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meerkat-governance-f1c41e6599409180.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meerkat-governance@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-meerkat-governance-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c8a02ba7ae35b325574e2538628341c3e829ba191676ea00a54f9bffeba4193",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:12:00.937Z"
+}

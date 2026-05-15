@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slack-thread-export@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_thread_export",
+  "skill": {
+    "id": 24211,
+    "skillKey": "clawhub-slack-thread-export",
+    "name": "Slack Thread Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-thread-export",
+    "url": "https://clawhub.ai/skills/slack-thread-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-thread-export-7b6d8974bee294fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export Slack thread messages from a logged-in Slack web tab into CSV using an attached Chrome Browser Relay tab. Use when the user wants to collect Slack con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devdha",
+      "userId": "s176kswh9f07tnndxewnnk4x1183gye7",
+      "displayName": "DongHun Ha",
+      "image": "https://avatars.githubusercontent.com/u/46529663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773423650683,
+      "changelog": "Add resumable exports, failed-channel retry helper, preflight estimation, mode selection, operational guidance, and validation notes for Browser Relay-based Slack thread export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15d9c105a3d2814c9a04481b317330820ead834fc99ec844952d8f28a0096582"
+}

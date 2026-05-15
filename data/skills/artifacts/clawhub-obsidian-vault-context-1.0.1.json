@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-vault-context@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_vault_context",
+  "skill": {
+    "id": 33997,
+    "skillKey": "clawhub-obsidian-vault-context",
+    "name": "Obsidian Vault Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-vault-context",
+    "url": "https://clawhub.ai/skills/obsidian-vault-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-vault-context-b9f722bbb0120ed4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Teach Claude to use an Obsidian vault as a shared workspace with persistent state across sessions. Covers vault navigation, orchestration file management, ou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tesfandiari1",
+      "userId": "s179yera5pfpj6tnjja8h51fcn83m0fz",
+      "displayName": "Tristin E",
+      "image": "https://avatars.githubusercontent.com/u/146785768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774507364183,
+      "changelog": "obsidian-vault-context 1.0.1\n\n- Added a new **Boundaries** section, clarifying safe file access and modification practices:\n  - Only read/write within the vault directory.\n  - Do not modify skill/config/workflow files unless instructed.\n  - Treat `company/legal/` as strictly read-only.\n  - Do not store or log credentials; defer authentication to the user.\n- No changes to functionality or code; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:922a9786416f969e3ce724eb65037f2550f07c60839d0b0e2a514d0b6340ce10"
+}

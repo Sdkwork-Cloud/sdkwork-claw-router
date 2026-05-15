@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-download-archive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_download_archive",
+  "skill": {
+    "id": 17591,
+    "skillKey": "clawhub-video-download-archive",
+    "name": "Video Download Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-download-archive",
+    "url": "https://clawhub.ai/skills/video-download-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-download-archive-6f38fb60859e6603.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate single video URLs, download highest-quality files with yt-dlp, and archive results into a Feishu Bitable using platform tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiernk",
+      "userId": "s179y1z29eaf4yq8yh3jke14wh83gz9q",
+      "displayName": "feiernk",
+      "image": "https://avatars.githubusercontent.com/u/43094524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 744,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773624836054,
+      "changelog": "Initial release of 视频下载归档助手.\n\n- Validates and downloads individual video links (not playlists or multiple links).\n- Archives highest-quality video downloads using yt-dlp, following strict file and metadata rules.\n- Supports results archival into Feishu Bitable via platform tools.\n- Prevents redundant downloads by checking for existing files and completing or updating records as needed.\n- Includes specific error-handling and user consultation rules for Feishu table field issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce8f4d95818a5aab16a4759fcfcd219831be7012832e27ccdb71bc4012827e9f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65436,
+  "uuid": "skill-clawhub-yuyonghao-rag-retriever",
+  "skillKey": "clawhub-yuyonghao-rag-retriever",
+  "name": "Rag Retriever",
+  "summary": "RAG 2.0 检索系统，支持中文分词，混合向量与关键词搜索，智能文档分块与加权重排，自动生成 RAG 格式输出。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_rag_retriever",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "RAG 2.0 检索系统，支持中文分词，混合向量与关键词搜索，智能文档分块与加权重排，自动生成 RAG 格式输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuyonghao-rag-retriever@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuyonghao-rag-retriever",
+      "url": "https://clawhub.ai/skills/yuyonghao-rag-retriever"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-rag-retriever",
+    "url": "https://clawhub.ai/skills/yuyonghao-rag-retriever",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-rag-retriever-089bafade1f91492.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuyonghao-rag-retriever@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuyonghao-rag-retriever-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbda7149e11a2a01ded1de557e6707c4c57a214ef7e6a457f5fddde47c9b8d49",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:28:03.235Z"
+}

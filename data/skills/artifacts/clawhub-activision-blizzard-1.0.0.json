@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/activision-blizzard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activision_blizzard",
+  "skill": {
+    "id": 66601,
+    "skillKey": "clawhub-activision-blizzard",
+    "name": "Activision Blizzard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activision-blizzard",
+    "url": "https://clawhub.ai/skills/activision-blizzard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activision-blizzard-40bbad19da866c7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供动视暴雪游戏及电竞信息，涵盖使命召唤、魔兽世界及微软收购等行业发展动态。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776530719291,
+      "changelog": "- 首次发布 Activision Blizzard 技能，涵盖公司发展历程与关键事件。\n- 详细整理重要游戏（使命召唤、魔兽世界、Candy Crush）与电竞布局。\n- 收录微软 690 亿美元收购及其行业地位变化。\n- 提供年营收、销量等关键数据。\n- 简要总结公司核心优势和行业影响力。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:695e9141b01b3227cd0950ffa6abde95c5bdf8477a865a858b168955fa02192f"
+}

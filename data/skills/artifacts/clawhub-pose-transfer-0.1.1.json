@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pose-transfer@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pose_transfer",
+  "skill": {
+    "id": 31126,
+    "skillKey": "clawhub-pose-transfer",
+    "name": "Pose Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pose-transfer",
+    "url": "https://clawhub.ai/skills/pose-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pose-transfer-c4d0b3ea5678e51c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered fashion model pose transfer tool. Generate pose variations of a model/product image using reference pose images while keeping clothing and backgro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "3cpj",
+      "userId": "s17bf3r17dcytw8a3epgx3g3x983rdme",
+      "displayName": "CAIPEIJUN",
+      "image": "https://avatars.githubusercontent.com/u/87758101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774006628561,
+      "changelog": "- Added initial script: scripts/generate.py for pose transfer functionality.\n- Enables generating pose variations of model images using reference pose images via command line.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:145ed75deef5ab1144c921b59ad59f1adf604b8304af79a6cf3ae811e97e25a7"
+}

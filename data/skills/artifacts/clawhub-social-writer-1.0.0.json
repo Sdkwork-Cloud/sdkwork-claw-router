@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_writer",
+  "skill": {
+    "id": 18113,
+    "skillKey": "clawhub-social-writer",
+    "name": "social-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-writer",
+    "url": "https://clawhub.ai/skills/social-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-writer-ed2e963aaa1f994a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social media copywriting and distillation skill. Transforms any news, dev logs, or external articles into high-engagement, opinionated tech posts with authen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hacksing",
+      "userId": "s176ztvkqj8425kmfx7pqg716s83h4n5",
+      "displayName": "AIWareTop",
+      "image": "https://avatars.githubusercontent.com/u/13587279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772292246795,
+      "changelog": "- Initial release of the Social Writer skill.\n- Converts news, dev logs, and tech articles into opinionated, high-engagement social posts.\n- Strictly enforces bold hooks, conversational tone, ultra-short sentences, and minimal summary.\n- Hard rules: under 250 words, 1–2 emoji max, no hashtags, no bland motivational endings.\n- Includes ready-to-use system prompt and Python usage example.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bb7383c0df2802953321dccc2964ca187d30eb55fa6a07b72dad475f27e924b"
+}

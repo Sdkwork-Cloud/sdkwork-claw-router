@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14006,
+  "uuid": "skill-clawhub-ai-ugc",
+  "skillKey": "clawhub-ai-ugc",
+  "name": "AI UGC",
+  "summary": "Call the RawUGC API to generate AI videos/images/music, manage content (personas, products, styles, characters), schedule social media posts, research TikTok...",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ugc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CoderBot",
+      "features": [
+        "Call the RawUGC API to generate AI videos/images/music, manage content (personas, products, sty."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-ugc@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104033609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-ugc",
+      "url": "https://clawhub.ai/skills/ai-ugc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ugc",
+    "url": "https://clawhub.ai/skills/ai-ugc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ugc-55a3328742a96c5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-ugc@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-ugc-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f19c89a783a33340eb527005ecd75d4914e01da83cc9ea3e74423832607138e",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T22:29:18.389Z"
+}

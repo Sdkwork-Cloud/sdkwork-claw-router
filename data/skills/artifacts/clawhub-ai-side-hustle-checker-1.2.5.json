@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-side-hustle-checker@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_side_hustle_checker",
+  "skill": {
+    "id": 66535,
+    "skillKey": "clawhub-ai-side-hustle-checker",
+    "name": "AI副业鉴别器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-side-hustle-checker",
+    "url": "https://clawhub.ai/skills/ai-side-hustle-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-side-hustle-checker-a9ac70c0a616b437.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI副业真伪鉴别工具。帮你识别AI副业项目/课程/机会到底是真是假。 当用户说\"AI副业靠谱吗\"、\"这个课值不值\"、\"AI赚钱是不是骗人的\"、\"帮我看看这个副业\"时触发。 Keywords: AI副业, 副业, 赚钱, 割韭菜, 骗局, 识别骗术, 副业真伪, 副业避坑."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697407740,
+      "changelog": "- Updated metadata in SKILL.md: added slug and author fields.\n- Changed the skill name from “ai-side-hustle-checker” to “AI副业真假鉴别器”.\n- Reordered and reformatted the SKILL.md front matter for clarity and consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff91a1b84fac65d2a39f8c950244b0f8b3c32a91fca02bd7052616ebdfefc7ea"
+}

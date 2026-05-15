@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16068,
+  "uuid": "skill-clawhub-auto-ai-web",
+  "skillKey": "clawhub-auto-ai-web",
+  "name": "Auto-AI Web Bridge",
+  "summary": "Skill per generare codice e immagini tramite interfaccia web di Claude AI e Gemini quando le API non sono disponibili. Si attiva automaticamente quando l'ute...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_ai_web",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "metiu1",
+      "features": [
+        "Skill per generare codice e immagini tramite interfaccia web di Claude AI e Gemini quando le AP.",
+        "Si attiva automaticamente quando l'ute..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-ai-web@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165402511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-ai-web",
+      "url": "https://clawhub.ai/skills/auto-ai-web"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-ai-web",
+    "url": "https://clawhub.ai/skills/auto-ai-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-ai-web-caeee9ed5dd90e91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-ai-web@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-ai-web-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6c9c71448640e6472fc95df0757a2fd6ab6d795472bb6fdc5f6ca3eb35a6e53",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T16:48:03.133Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sequential-thinking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sequential_thinking",
+  "skill": {
+    "id": 12046,
+    "skillKey": "clawhub-sequential-thinking",
+    "name": "Sequential Thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sequential-thinking",
+    "url": "https://clawhub.ai/skills/sequential-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sequential-thinking-6310b933216066cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured reasoning through sequential thinking — break complex problems into steps, solve each independently, verify consistency, synthesize conclusions wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2210,
+      "installsAllTime": 28,
+      "installsCurrent": 27,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772823214029,
+      "changelog": "- Initial release of the Sequential Thinking skill.\n- Enables structured step-by-step breakdown of complex problems, with independent reasoning and verification for each step.\n- Includes confidence scoring and synthesis of a final answer.\n- Supports multiple flags for model choice, JSON output, step limits, self-verification, and verbose logs.\n- Requires Python 3.10+ and an OpenRouter API key.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa3fefc01fda9fac1d5ebbbaf8cc02102941adc74ecec555cc91ab63afee9cb3"
+}

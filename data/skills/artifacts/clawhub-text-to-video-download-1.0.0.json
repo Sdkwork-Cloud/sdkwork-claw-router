@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_download",
+  "skill": {
+    "id": 48020,
+    "skillKey": "clawhub-text-to-video-download",
+    "name": "Text To Video Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-download",
+    "url": "https://clawhub.ai/skills/text-to-video-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-download-ec1bb055590b28d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 150-word product description paragraph into 1080p downloadable MP4 videos just by typing what you need. Whether it's turning written content into down..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777221633251,
+      "changelog": "Text-to-Video-Download v1.0.0 — Initial Release\n\n- Instantly turn up to 150-word text prompts into downloadable 1080p MP4 videos via cloud rendering.\n- Supports quick uploads, timeline previews, credits checking, and direct video downloads — all triggered with simple keywords.\n- Automated session creation and anonymous token handling for hassle-free setup (no manual account needed).\n- All video editing and export tasks run via fast GPU-backed pipeline, with status updates and session management.\n- Export supports multiple formats (MP4, MOV, AVI, WEBM, etc.), with error handling for common user issues.\n- Designed for simple, fast, text-driven AI video creation without manual editing or complex settings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a3d4e22657e54ea88a76512f8eff3284fdd3bd2ca0c6c9803c2dd371be5a17f"
+}

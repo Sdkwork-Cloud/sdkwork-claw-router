@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillhub-manager@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillhub_manager",
+  "skill": {
+    "id": 30116,
+    "skillKey": "clawhub-skillhub-manager",
+    "name": "SkillHub Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillhub-manager",
+    "url": "https://clawhub.ai/skills/skillhub-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillhub-manager-235fc592c1a6a074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and publish agent skills on SkillHub and ClawHub. Best for developers and operators who need a repeatable workflow to search skills, inspect packages,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeblackhole1024",
+      "userId": "s177mgnzkjxtm73sg9mgwxwc9n83nygc",
+      "displayName": "codeblackhole",
+      "image": "https://avatars.githubusercontent.com/u/39405686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776589408581,
+      "changelog": "Add strict ask-confirm-execute SkillHub address workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d13e2909e482a68273dd174747440273b308cb9d5bda8cbd07a28a368971f617"
+}

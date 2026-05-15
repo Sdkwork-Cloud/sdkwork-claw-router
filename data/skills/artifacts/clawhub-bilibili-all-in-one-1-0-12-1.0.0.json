@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-all-in-one-1-0-12@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_all_in_one_1_0_12",
+  "skill": {
+    "id": 24897,
+    "skillKey": "clawhub-bilibili-all-in-one-1-0-12",
+    "name": "Bilibili All In One 1.0.12"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-all-in-one-1-0-12",
+    "url": "https://clawhub.ai/skills/bilibili-all-in-one-1-0-12",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-all-in-one-1-0-12-46fbf0c80244ef23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive Bilibili toolkit that integrates hot trending monitoring, video downloading, video watching/playback, subtitle downloading, and video publish..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hollowings",
+      "userId": "s170q5rx6w1x3cvhh2v3q76r7s83xfey",
+      "displayName": "hollowings",
+      "image": "https://avatars.githubusercontent.com/u/31428496?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773938120290,
+      "changelog": "Bilibili All-in-One skill v1.0.12\n\n- Integrates hot trending monitoring, video downloading, playback, subtitle downloading, and video publishing for Bilibili in one unified tool.\n- Supports both command-line and API interfaces; works in Chinese and English.\n- Allows authenticated publishing and high-quality downloads using Bilibili session cookies.\n- Offers hot list monitoring, batch/multi-format downloads, danmaku and stats viewing, subtitle handling, and YouTube video stats via oEmbed.\n- Includes detailed setup, security, and credential usage instructions for safe operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a77b711949acdddd9e74512730e15aa063d72ee697a0fa938bc844954dd65f77"
+}

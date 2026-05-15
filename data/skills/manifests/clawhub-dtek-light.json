@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69059,
+  "uuid": "skill-clawhub-dtek-light",
+  "skillKey": "clawhub-dtek-light",
+  "name": "DTEK Light",
+  "summary": "Проверка наличия электроэнергии через сайт ДТЭК Одесские электросети (Одеса, вул. Чикаленка Євгена, 43)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dtek_light",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kapishdima",
+      "features": [
+        "Проверка наличия электроэнергии через сайт ДТЭК Одесские электросети (Одеса, вул",
+        "Чикаленка Євгена, 43)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dtek-light@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23422228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dtek-light",
+      "url": "https://clawhub.ai/skills/dtek-light"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dtek-light",
+    "url": "https://clawhub.ai/skills/dtek-light",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dtek-light-88c952a7abb1f8e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dtek-light@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dtek-light-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c726629747b858f98bb601b4e6759e6a7c21951f87bcc34cc086c5e85b52e50",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T17:36:41.484Z"
+}

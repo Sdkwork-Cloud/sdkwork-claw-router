@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/totalreclaw@3.3.12-rc.7",
+  "version": "3.3.12-rc.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.totalreclaw",
+  "skill": {
+    "id": 12808,
+    "skillKey": "clawhub-totalreclaw",
+    "name": "Plugin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "totalreclaw",
+    "url": "https://clawhub.ai/skills/totalreclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/totalreclaw-22de17d4f0adc138.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end encrypted, decentralized memory for OpenClaw. Set up an account once, then call totalreclaw_remember / totalreclaw_recall (or the tr CLI under hyb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "p-diogo",
+      "userId": "s17d1n7qrz60cjgcwwwh9egv7x83mwjd",
+      "displayName": "Pedro Diogo",
+      "image": "https://avatars.githubusercontent.com/u/8688948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1657,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 97
+    },
+    "latestVersion": {
+      "version": "3.3.12-rc.7",
+      "createdAt": 1778367259485,
+      "changelog": "Release candidate 3.3.12-rc.7 -- testing build, not recommended for production. See https://github.com/p-diogo/totalreclaw/releases",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08372428de73f4cdd74a9d88d121346c8f53dfae3c83a6db85bf23486672f0d0"
+}

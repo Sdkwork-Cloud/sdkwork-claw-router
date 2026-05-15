@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snu-canvas-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snu_canvas_cli",
+  "skill": {
+    "id": 23144,
+    "skillKey": "clawhub-snu-canvas-cli",
+    "name": "Snu Canvas Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snu-canvas-cli",
+    "url": "https://clawhub.ai/skills/snu-canvas-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snu-canvas-cli-b5c169ebc7e95c8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate SNU's Canvas LMS (etl.snu.ac.kr) through CLI commands. Use when you need to inspect config, list courses/assignments/files/announcements, run bot/ser..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guzus",
+      "userId": "publishers:guzus",
+      "displayName": "guzus",
+      "image": "https://avatars.githubusercontent.com/u/50664161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772625574513,
+      "changelog": "Initial publish: SNU Canvas LMS CLI with strict security rules — CLI-only access, no token exposure, 401 error handling, domain guardrails",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5341ea0de2340796c8a6ca54583d5b708d722fc441d7867d7cb39ca5ea31bed4"
+}

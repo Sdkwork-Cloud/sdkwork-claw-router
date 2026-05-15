@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pl-meeting-prep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pl_meeting_prep",
+  "skill": {
+    "id": 26563,
+    "skillKey": "clawhub-pl-meeting-prep",
+    "name": "Meeting Prep Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pl-meeting-prep",
+    "url": "https://clawhub.ai/skills/pl-meeting-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pl-meeting-prep-158f00b15ddc3857.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates pre-meeting research, agenda creation, talking points, and post-meeting action tracking for informed and efficient client, board, or vendor meetings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773573250570,
+      "changelog": "Initial release: pre-meeting research, agenda generation, talking points, post-meeting action items",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a7ec690425c91d3cea0ae1b18914bc8fb5ac4bc98d8d3fc00c66a372f663d8a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fuzzy-agent-daily-driver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fuzzy_agent_daily_driver",
+  "skill": {
+    "id": 52309,
+    "skillKey": "clawhub-fuzzy-agent-daily-driver",
+    "name": "Fuzzy Agent Daily Driver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fuzzy-agent-daily-driver",
+    "url": "https://clawhub.ai/skills/fuzzy-agent-daily-driver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fuzzy-agent-daily-driver-79159a486ffa9460.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The 6 core workflows every OpenClaw agent uses every day — recall, spawn, schedule, research, delegate, monitor-update. A pattern reference for building reli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuzzyb33s",
+      "userId": "s171y86qx1dr1xnbf5etrq3ke984dt9a",
+      "displayName": "Fuzzyb33s",
+      "image": "https://avatars.githubusercontent.com/u/221636957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775909980959,
+      "changelog": "Initial release of fuzzy-agent-daily-driver – a reference for the 6 essential workflows in OpenClaw agents:\n\n- Details recall, spawn, schedule, research, delegate, and monitor-update patterns with code examples and best practices.\n- Provides triggers, tool frequency guide, session templates, and workspace file recommendations.\n- Includes anti-patterns to avoid for reliable agent operation.\n- Serves as a foundation for building robust daily-driver agent skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a39d7f2811f700a4fe22745a66aa196e0229ce9a5829ddcfd3bd2d0be5cc10c"
+}

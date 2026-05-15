@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pref0@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pref0",
+  "skill": {
+    "id": 14514,
+    "skillKey": "clawhub-pref0",
+    "name": "pref0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pref0",
+    "url": "https://clawhub.ai/skills/pref0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pref0-75176d7ef2d17fc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learn user preferences from conversations and personalize responses automatically. Preferences compound over time — corrections like \"use TypeScript, not JavaScript\" are captured and injected into future sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fliellerjulian",
+      "userId": "publishers:fliellerjulian",
+      "displayName": "fliellerjulian",
+      "image": "https://avatars.githubusercontent.com/u/50804667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1644,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770639994303,
+      "changelog": "pref0 1.0.1\n\n- Improved API documentation to clarify track and profile endpoints, including more detailed response fields for conversation tracking.\n- Added a ready-to-use prompt field to the profile API response for easier system prompt integration.\n- Now, the profile endpoint (`GET /v1/profiles/:userId`) returns the `prompt` directly alongside learned preferences and patterns.\n- Created notes.txt file (contents not specified in this changelog).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57ddcce98a5613ae3f561c6e4ab0c068f891b338ca3940d93b4458d24ff5b2f2"
+}

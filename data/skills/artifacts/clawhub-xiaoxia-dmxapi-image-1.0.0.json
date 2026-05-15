@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoxia-dmxapi-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoxia_dmxapi_image",
+  "skill": {
+    "id": 61689,
+    "skillKey": "clawhub-xiaoxia-dmxapi-image",
+    "name": "dmxapi-image-generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoxia-dmxapi-image",
+    "url": "https://clawhub.ai/skills/xiaoxia-dmxapi-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoxia-dmxapi-image-b1828809993c96a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 MiniMax (image-01) 和其他模型生成图片。支持文生图、图片编辑。当用户需要生成图片、AI绘图时使用此技能。使用方法：用户需要配置 MINIMAX_API_KEY 环境变量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoliang1319-cloud",
+      "userId": "s170rxzm26q76m70z8d6sa2nwh83kpbm",
+      "displayName": "xiaoliang1319-cloud",
+      "image": "https://avatars.githubusercontent.com/u/247145506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774697160508,
+      "changelog": "Initial release for dmxapi-image-generation skill.\n\n- Added support for image generation using MiniMax (image-01) and other models.\n- Allows text-to-image and basic image editing.\n- Users must configure the MINIMAX_API_KEY environment variable.\n- Includes API usage instructions and example prompts.\n- Supports various aspect ratios and output formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ec0c946c30819a02c2dd2ce98c7f7bedc224f32f3015026d51e61d8bb37a2cb"
+}

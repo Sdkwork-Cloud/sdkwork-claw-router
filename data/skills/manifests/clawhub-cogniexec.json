@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72254,
+  "uuid": "skill-clawhub-cogniexec",
+  "skillKey": "clawhub-cogniexec",
+  "name": "Cogniexec",
+  "summary": "认知执行技能 — 整合认知套件与执行框架两大能力层，并配备编排引擎。 认知层：四种思维操作码（直用/改进/迁移/构建）覆盖所有思考任务； 执行层：大语言模型 + 命令执行工具，自动化代码生成与脚本执行； 编排引擎：将所有操作统一为基元，自由组合为任意复杂度的执行链条。 此技能应用于认知与代码执行类任务。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogniexec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "波动几何",
+      "features": [
+        "认知执行技能 — 整合认知套件与执行框架两大能力层，并配备编排引擎。 认知层：四种思维操作码（直用/改进/迁移/构建）覆盖所有思考任务； 执行层：大语言模型 + 命令执行工具，自动化代码生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cogniexec@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25478397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cogniexec",
+      "url": "https://clawhub.ai/skills/cogniexec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogniexec",
+    "url": "https://clawhub.ai/skills/cogniexec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogniexec-01ca09a4e95010db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cogniexec@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cogniexec-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c5ecc1adc6f803932298bacd85305bd1e18240c01f875127a6581a5d21a206b",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:19:38.789Z"
+}

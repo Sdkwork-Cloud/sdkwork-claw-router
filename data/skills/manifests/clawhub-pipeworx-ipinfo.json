@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55581,
+  "uuid": "skill-clawhub-pipeworx-ipinfo",
+  "skillKey": "clawhub-pipeworx-ipinfo",
+  "name": "Pipeworx ipinfo",
+  "summary": "IPInfo MCP — wraps ipinfo.io (free tier, no auth required for basic usage)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_ipinfo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "IPInfo MCP — wraps ipinfo.io (free tier, no auth required for basic usage)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-ipinfo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-ipinfo",
+      "url": "https://clawhub.ai/skills/pipeworx-ipinfo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-ipinfo",
+    "url": "https://clawhub.ai/skills/pipeworx-ipinfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-ipinfo-d164e9635f91c834.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-ipinfo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-ipinfo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da79a097e38ffa5b6707d3bc4bd972c059f9666c3427a32e4f7df6b5344f16f3",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:15:46.525Z"
+}

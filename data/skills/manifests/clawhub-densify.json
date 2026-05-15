@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34542,
+  "uuid": "skill-clawhub-densify",
+  "skillKey": "clawhub-densify",
+  "name": "Densify",
+  "summary": "Densify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Densify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.densify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Densify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Densify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/densify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "densify",
+      "url": "https://clawhub.ai/skills/densify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "densify",
+    "url": "https://clawhub.ai/skills/densify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/densify-4e1dcefe5c9d3fe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/densify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-densify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cbbc5442fa8840c98731a3d29211364e5172766a7385fd1e05acb6add3685db",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:23:34.214Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plant-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plant_tracker",
+  "skill": {
+    "id": 13463,
+    "skillKey": "clawhub-plant-tracker",
+    "name": "Plant Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plant-tracker",
+    "url": "https://clawhub.ai/skills/plant-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plant-tracker-6fb48b6e2987c272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and track your plants and garden with care schedules, growth monitoring, and detailed records for watering, fertilizing, pruning, harvesting, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johstracke",
+      "userId": "publishers:johstracke",
+      "displayName": "johstracke",
+      "image": "https://avatars.githubusercontent.com/u/63787617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1207,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770548107791,
+      "changelog": "Initial release - Track plants, care schedules, and growth. Zero competition category!",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c46b6dbad180fc74b4d48183c46f87bc5d0a49cdde17a4988bc4a5f745aff4c5"
+}

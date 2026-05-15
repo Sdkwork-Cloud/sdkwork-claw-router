@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31876,
+  "uuid": "skill-clawhub-slicktext",
+  "skillKey": "clawhub-slicktext",
+  "name": "Slicktext",
+  "summary": "SlickText integration. Manage Accounts. Use when the user wants to interact with SlickText data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slicktext",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SlickText integration",
+        "Manage Accounts",
+        "Use when the user wants to interact with SlickText data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slicktext@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slicktext",
+      "url": "https://clawhub.ai/skills/slicktext"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slicktext",
+    "url": "https://clawhub.ai/skills/slicktext",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slicktext-3093d1ee16feb209.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slicktext@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-slicktext-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8710e0643102f697f6e6fa45f19dd5357240081c6651cef7ad43cbf050edb9d0",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:43:06.505Z"
+}

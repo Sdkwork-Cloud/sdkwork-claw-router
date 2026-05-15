@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_builder",
+  "skill": {
+    "id": 14318,
+    "skillKey": "clawhub-n8n-builder",
+    "name": "n8n Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-builder",
+    "url": "https://clawhub.ai/skills/n8n-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-builder-26246a9730458418.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert n8n workflow builder that creates, deploys, and manages n8n workflows programmatically via the n8n REST API. Use when asked to create n8n workflows, automate n8n tasks, build automations, design workflow pipelines, connect services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kassimisai",
+      "userId": "publishers:kassimisai",
+      "displayName": "kassimisai",
+      "image": "https://avatars.githubusercontent.com/u/183769921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1213,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770812330216,
+      "changelog": "Initial release: expert n8n workflow builder with API automation, schema reference, 5 workflow patterns, and real estate templates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:60b52f3ee99cf93f7d3d9c0d9be60dc048edfc2998e2b8d4b487f7f0574e9408"
+}

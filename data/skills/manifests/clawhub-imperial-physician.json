@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71365,
+  "uuid": "skill-clawhub-imperial-physician",
+  "skillKey": "clawhub-imperial-physician",
+  "name": "御医",
+  "summary": "用于长期记录、整理、分析用户的全部健康信息、身体状态信息、心理状态信息、 生理变化信息、生活方式信息，以及与健康相关的个人背景信息。 适用于 Apple Watch / HealthKit 数据解读、体检报告解读、医疗记录整理、 慢病管理、亚健康调理、睡眠分析、营养补剂管理、中医养生分析、 长期趋势跟踪与健康决策支持。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imperial_physician",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI ist",
+      "features": [
+        "用于长期记录、整理、分析用户的全部健康信息、身体状态信息、心理状态信息、 生理变化信息、生活方式信息，以及与健康相关的个人背景信息。 适用于 Apple Watch / HealthKit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imperial-physician@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3692401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imperial-physician",
+      "url": "https://clawhub.ai/skills/imperial-physician"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imperial-physician",
+    "url": "https://clawhub.ai/skills/imperial-physician",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imperial-physician-851560738a05976f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imperial-physician@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imperial-physician-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e167a03f0ab195d328aefbcd8611c1ebce8508350d9587c4db01bedf1956053",
+      "artifactSizeBytes": 3013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T04:58:22.568Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64698,
+  "uuid": "skill-clawhub-wechat-article-reader",
+  "skillKey": "clawhub-wechat-article-reader",
+  "name": "微信公众号文章导出",
+  "summary": "将微信公众号文章导出为 Markdown 格式。当用户提供微信公众号链接 (mp.weixin.qq.com) 或要求下载/导出/保存微信文章时触发。默认保存到工作空间的 source 目录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "8421bit",
+      "features": [
+        "将微信公众号文章导出为 Markdown 格式。当用户提供微信公众号链接 (mp.weixin.qq.com) 或要求下载/导出/保存微信文章时触发。默认保存到工作空间的 source 目录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61646827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-reader",
+      "url": "https://clawhub.ai/skills/wechat-article-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-reader",
+    "url": "https://clawhub.ai/skills/wechat-article-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-reader-bebea1049eaa296c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:332ebb316ab4c6a01bcc13813b5760c047aca63b4b065289ad307242a69d4932",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:02:03.356Z"
+}

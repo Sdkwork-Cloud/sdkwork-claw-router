@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tools-litiao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tools_litiao",
+  "skill": {
+    "id": 26361,
+    "skillKey": "clawhub-tools-litiao",
+    "name": "Tools Litiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tools-litiao",
+    "url": "https://clawhub.ai/skills/tools-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tools-litiao-2fc0bd1ae789081a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learns your tool preferences while staying capable of using anything. Adapts to your stack."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litiao1224",
+      "userId": "publishers:litiao1224",
+      "displayName": "litiao1224",
+      "image": "https://avatars.githubusercontent.com/u/183017089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773734914370,
+      "changelog": "Bug fixes and improvements with -litiao suffix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59cfe1ed7ed3d32583b6909ac1d4e43546a3046a31879ec767f03d54d0fa24f9"
+}

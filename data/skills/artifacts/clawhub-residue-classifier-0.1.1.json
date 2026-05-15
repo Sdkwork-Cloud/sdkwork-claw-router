@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/residue-classifier@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.residue_classifier",
+  "skill": {
+    "id": 48865,
+    "skillKey": "clawhub-residue-classifier",
+    "name": "Residue Classifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "residue-classifier",
+    "url": "https://clawhub.ai/skills/residue-classifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/residue-classifier-155b9632b876a41e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Classify workspace residue into governance buckets with explicit reasons and next-action guidance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prettybusysolutions-eng",
+      "userId": "s17a930r0ass2ng6ad9jmdkzsd83zqvg",
+      "displayName": "prettybusysolutions-eng",
+      "image": "https://avatars.githubusercontent.com/u/262936889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778036869556,
+      "changelog": "Replace legacy Gumroad/BMC upsell residue with live Stripe checkout; add critical-only Pro escalation for unresolved residue anomalies; preserve disciplined non-destructive output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc350edcb6fe599867606e307977467cacedcfced0da87875d8f2f6e363a6d80"
+}

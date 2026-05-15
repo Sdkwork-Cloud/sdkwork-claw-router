@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/octomail@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octomail",
+  "skill": {
+    "id": 19945,
+    "skillKey": "clawhub-octomail",
+    "name": "OctoMail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octomail",
+    "url": "https://clawhub.ai/skills/octomail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octomail-56c783499b647930.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent email via JSON API. Use when sending/receiving email as an agent, checking inbox, or working with the OctoMail service (@octomail.ai addresses)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasonz-ncc42",
+      "userId": "s173921hd51gm7684qezyy5kp183g0b4",
+      "displayName": "Jason Zhu",
+      "image": "https://avatars.githubusercontent.com/u/13504067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 582,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1772534761082,
+      "changelog": "Add invite and link endpoints",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ffa09e330fa6010c0c25e66fe0d1d5cf2753656b2064387727e52018d01056a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12449,
+  "uuid": "skill-clawhub-amazon-data",
+  "skillKey": "clawhub-amazon-data",
+  "name": "Real-time Amazon Data",
+  "summary": "Retrieve Amazon product data including pricing, reviews, sales estimates, stock levels, search results, deals, and more via the Canopy API REST endpoints usi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rhino88",
+      "features": [
+        "Retrieve Amazon product data including pricing, reviews, sales estimates, stock levels, search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1299507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-data",
+      "url": "https://clawhub.ai/skills/amazon-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-data",
+    "url": "https://clawhub.ai/skills/amazon-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-data-f1244fb5519d4f1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0813e49e367a73a76c87ab56149476b3bd25f1fd49ee42f5f0296c236e9baaca",
+      "artifactSizeBytes": 2286
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T21:17:28.365Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69580,
+  "uuid": "skill-clawhub-complaint-drafting",
+  "skillKey": "clawhub-complaint-drafting",
+  "name": "complaint drafting",
+  "summary": "从聊天记录中提取案情要素和证据材料，生成规范的民事起诉状；当用户需要制作起诉状、梳理诉讼材料、整理案件事实时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.complaint_drafting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "小与",
+      "features": [
+        "从聊天记录中提取案情要素和证据材料，生成规范的民事起诉状；当用户需要制作起诉状、梳理诉讼材料、整理案件事实时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/complaint-drafting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130162389?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "complaint-drafting",
+      "url": "https://clawhub.ai/skills/complaint-drafting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "complaint-drafting",
+    "url": "https://clawhub.ai/skills/complaint-drafting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/complaint-drafting-cecdf1a2b6f40ca0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/complaint-drafting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-complaint-drafting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b677892379e5eadabbb4be824f4d62b2091b1c1cd580eb6b6295f9f0352990f",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:07:39.697Z"
+}

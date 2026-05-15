@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30509,
+  "uuid": "skill-clawhub-ascora",
+  "skillKey": "clawhub-ascora",
+  "name": "Ascora",
+  "summary": "Ascora integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ascora data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ascora",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ascora integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ascora data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ascora@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ascora",
+      "url": "https://clawhub.ai/skills/ascora"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ascora",
+    "url": "https://clawhub.ai/skills/ascora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ascora-d3408207989d2522.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ascora@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ascora-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d43b17434c7560168a1c18722b6799d67485eb0f10d4588d4c11b93b3766e463",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:20:59.245Z"
+}

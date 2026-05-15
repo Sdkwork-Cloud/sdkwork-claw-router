@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11788,
+  "uuid": "skill-clawhub-cold-email-writer",
+  "skillKey": "clawhub-cold-email-writer",
+  "name": "Cold Email Writer",
+  "summary": "Writes personalized cold emails that actually get replies",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cold_email_writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Writes personalized cold emails that actually get replies"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cold-email-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cold-email-writer",
+      "url": "https://clawhub.ai/skills/cold-email-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cold-email-writer",
+    "url": "https://clawhub.ai/skills/cold-email-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cold-email-writer-f01b876a4733bff8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cold-email-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cold-email-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75ddb8de1cf444a4ce29a6287a2a3cc22ca79a78ebac03093f6208d69d5d89ee",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T02:38:41.217Z"
+}

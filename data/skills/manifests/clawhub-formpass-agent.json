@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24504,
+  "uuid": "skill-clawhub-formpass-agent",
+  "skillKey": "clawhub-formpass-agent",
+  "name": "FormPass Agent",
+  "summary": "Register as a verified AI agent on the FormPass network. Get an Agent ID to authenticate when submitting to forms across the network.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formpass_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeremy A",
+      "features": [
+        "Register as a verified AI agent on the FormPass network",
+        "Get an Agent ID to authenticate when submitting to forms across the network."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formpass-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25457422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formpass-agent",
+      "url": "https://clawhub.ai/skills/formpass-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formpass-agent",
+    "url": "https://clawhub.ai/skills/formpass-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formpass-agent-6c4b47dbf6beae0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formpass-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-formpass-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a7ef30a82b2839d2a4a638270b1ccaa7f1d62cbb538207d081b08f743785653",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T14:14:17.825Z"
+}

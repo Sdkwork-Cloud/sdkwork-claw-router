@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arena-council@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arena_council",
+  "skill": {
+    "id": 45582,
+    "skillKey": "clawhub-arena-council",
+    "name": "Arena Council"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arena-council",
+    "url": "https://clawhub.ai/skills/arena-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arena-council-49214b2abd4be349.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-Model Council - parallel execution of multiple LLMs with voting/consensus."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerua1",
+      "userId": "s178f4bnw35dnxc3ymhvgf114983yzer",
+      "displayName": "nerua1",
+      "image": "https://avatars.githubusercontent.com/u/271220546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776073400435,
+      "changelog": "- Initial release of arena-council: parallel execution of multiple local LLMs with a voting/consensus engine.\n- Supports majority and weighted voting strategies to combine model responses for higher answer quality and diversity.\n- Simple Python API for council-based queries; examples provided for basic, custom, and raw usages.\n- Easy integration with OpenClaw and “god-mode” augmentation for censorship bypass.\n- Designed to work with any model accessible via LM Studio; includes performance benchmarks and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf60eabc99d706c24ce37cbb06a4341c4c79ee37bd4f9651dd4e0927cf6f7c6a"
+}

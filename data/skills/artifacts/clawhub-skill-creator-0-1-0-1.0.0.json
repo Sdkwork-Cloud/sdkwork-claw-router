@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-0-1-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_0_1_0",
+  "skill": {
+    "id": 13935,
+    "skillKey": "clawhub-skill-creator-0-1-0",
+    "name": "Skill Creator 0.1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-0-1-0",
+    "url": "https://clawhub.ai/skills/skill-creator-0-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-0-1-0-c40b5be9ad224107.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "86293073",
+      "userId": "publishers:86293073",
+      "displayName": "86293073",
+      "image": "https://avatars.githubusercontent.com/u/256910398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 80,
+      "installsCurrent": 71,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772541569584,
+      "changelog": "Initial release of the skill-creator guide.\n\n- Introduces clear principles for creating effective Claude skills, emphasizing conciseness and context efficiency.\n- Defines the required anatomy and structure of a skill, including SKILL.md, scripts, references, and assets.\n- Explains when to use bundled resources and how to avoid unnecessary context bloat.\n- Lays out best practices for splitting documentation and progressive disclosure design.\n- Clarifies what should not be included in a skill (e.g., extraneous documentation files).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:627e71ad4be62094e7788b8daaeb1ad3d94e8d8a179630c5e53923c8b05586ca"
+}

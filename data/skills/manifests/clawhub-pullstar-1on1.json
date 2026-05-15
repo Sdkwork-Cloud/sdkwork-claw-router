@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52456,
+  "uuid": "skill-clawhub-pullstar-1on1",
+  "skillKey": "clawhub-pullstar-1on1",
+  "name": "Engineering manager 1-on-1 meeting brief generator",
+  "summary": "Generate a ready-to-use 1-on-1 brief for any engineer on your team — from their GitHub activity, in seconds. Spots patterns like high output but low review p...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pullstar_1on1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jacksync",
+      "features": [
+        "Generate a ready-to-use 1-on-1 brief for any engineer on your team — from their GitHub activity.",
+        "Spots patterns like high output but low review p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pullstar-1on1@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9632126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pullstar-1on1",
+      "url": "https://clawhub.ai/skills/pullstar-1on1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pullstar-1on1",
+    "url": "https://clawhub.ai/skills/pullstar-1on1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pullstar-1on1-ec08eb901108c910.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pullstar-1on1@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pullstar-1on1-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab7418d3192e58178c47eac03e43272b6381e6bfc9b5651a4a3e89d868ecd7eb",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T20:45:25.878Z"
+}

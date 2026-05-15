@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67398,
+  "uuid": "skill-clawhub-trip-planner-0to1",
+  "skillKey": "clawhub-trip-planner-0to1",
+  "name": "Trip Planner 0→1",
+  "summary": "从 0 到 1 制作一份完整的自由行出行攻略，覆盖需求采集、多源资源调研（小红书 MCP + 地图 + Web 搜索）、方案决策、Markdown 行程书产出、交互式 Todo 网页（本地存储 + 可选云端同步）、一键部署到静态托管的端到端工作流。适用于东南亚海岛、日本、欧洲自驾、美洲公路旅行等任何自由行场景。触...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_planner_0to1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dengjiawei1226",
+      "features": [
+        "从 0 到 1 制作一份完整的自由行出行攻略，覆盖需求采集、多源资源调研（小红书 MCP + 地图 + Web 搜索）、方案决策、Markdown 行程书产出、交互式 Todo 网页（本地存."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-planner-0to1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61135759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-planner-0to1",
+      "url": "https://clawhub.ai/skills/trip-planner-0to1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-planner-0to1",
+    "url": "https://clawhub.ai/skills/trip-planner-0to1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-planner-0to1-ed980a3b9fbee4d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-planner-0to1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-planner-0to1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f64210596a0bd06d714c6b5ef97992804b0987fa5ad5f3cd4f7c1b78e752cd6",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T13:39:00.630Z"
+}

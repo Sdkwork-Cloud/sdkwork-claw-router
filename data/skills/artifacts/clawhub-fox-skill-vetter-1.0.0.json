@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fox-skill-vetter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fox_skill_vetter",
+  "skill": {
+    "id": 34931,
+    "skillKey": "clawhub-fox-skill-vetter",
+    "name": "Fox Skill Vetter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fox-skill-vetter",
+    "url": "https://clawhub.ai/skills/fox-skill-vetter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fox-skill-vetter-c6edc0d2de288e0c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qinthqod",
+      "userId": "s1798ek8ptp1yg5kdh772pq5bh83r4kg",
+      "displayName": "GarfieldQin",
+      "image": "https://avatars.githubusercontent.com/u/12707224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774828849469,
+      "changelog": "- Initial release of fox-skill-vetter, a security-first protocol for vetting AI agent skills.\n- Provides a step-by-step vetting process: source check, mandatory code review (with detailed red flags), permission scope evaluation, and risk classification.\n- Includes a standardized SKILL VETTING REPORT template for documenting findings.\n- Offers quick vetting commands for GitHub-hosted skills.\n- Outlines a trust hierarchy and critical security reminders to minimize risk when installing new skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b2565ca108fd5b6c8eff37fae92f2a72d127308170464d7f3a5d7e4bb249805"
+}

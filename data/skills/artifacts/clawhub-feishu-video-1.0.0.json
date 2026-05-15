@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_video",
+  "skill": {
+    "id": 26696,
+    "skillKey": "clawhub-feishu-video",
+    "name": "feishu-video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-video",
+    "url": "https://clawhub.ai/skills/feishu-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-video-3c69a7d294010d61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send voice/audio messages to Feishu (Lark) users. Converts audio files to OPUS format and sends as voice message, not file attachment. create by Alex"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangmiok",
+      "userId": "publishers:yangmiok",
+      "displayName": "yangmiok",
+      "image": "https://avatars.githubusercontent.com/u/7039266?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773550444262,
+      "changelog": "Initial release of Feishu Audio Message skill.\n\n- Send voice/audio messages to Feishu (Lark) users as actual voice messages, not file attachments.\n- Automatically converts MP3, WAV, and other audio to OPUS format (requires ffmpeg).\n- Requires Feishu app credentials and target user's Open ID.\n- Includes step-by-step instructions for converting audio and sending messages.\n- Provides troubleshooting tips for common errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fff5f61c7d21598c40d6510986a909076e945491c4ad168572bdd8d51ddcce3e"
+}

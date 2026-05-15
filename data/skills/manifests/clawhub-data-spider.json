@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16775,
+  "uuid": "skill-clawhub-data-spider",
+  "skillKey": "clawhub-data-spider",
+  "name": "Data Spider",
+  "summary": "Scrape any webpage and extract structured data as JSON, table, or list. Supports schema-guided extraction.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_spider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "Scrape any webpage and extract structured data as JSON, table, or list",
+        "Supports schema-guided extraction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-spider@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-spider",
+      "url": "https://clawhub.ai/skills/data-spider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-spider",
+    "url": "https://clawhub.ai/skills/data-spider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-spider-e465a7439e81f4ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-spider@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-spider-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:849bba3eebbe9d98b431e252fce30311dfde0c2c8f0e49284e79c1800c85894a",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:35:12.158Z"
+}

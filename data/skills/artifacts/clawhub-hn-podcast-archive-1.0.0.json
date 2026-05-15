@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hn-podcast-archive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hn_podcast_archive",
+  "skill": {
+    "id": 40701,
+    "skillKey": "clawhub-hn-podcast-archive",
+    "name": "HN Podcast Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hn-podcast-archive",
+    "url": "https://clawhub.ai/skills/hn-podcast-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hn-podcast-archive-fcf120ec14a49eeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate podcast archiving by detecting new HN episodes from RSS, downloading audio, transcribing locally with Whisper, and generating markdown archives with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775672591735,
+      "changelog": "Initial release: RSS-driven download, Whisper transcription, markdown archive, state/index management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b6ac4f9a58c3411362e4647089c44c2169a18d239458f3a5e8e062432799715"
+}

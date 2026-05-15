@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48551,
+  "uuid": "skill-clawhub-norman-expense-report",
+  "skillKey": "clawhub-norman-expense-report",
+  "name": "Norman: Expense report",
+  "summary": "Generate a detailed expense breakdown by category for a given period. Use when the user asks for an expense report, spending summary, Ausgabenübersicht, cost...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_expense_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stan Kharlap",
+      "features": [
+        "Generate a detailed expense breakdown by category for a given period",
+        "Use when the user asks for an expense report, spending summary, Ausgabenübersicht, cost..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/norman-expense-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117379032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "norman-expense-report",
+      "url": "https://clawhub.ai/skills/norman-expense-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-expense-report",
+    "url": "https://clawhub.ai/skills/norman-expense-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-expense-report-fa73e9b30de440b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/norman-expense-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-norman-expense-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7380ef692c87fffd5e1884391c2c341d5aa79a21f59e6318b7514253a759b651",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T09:59:55.149Z"
+}

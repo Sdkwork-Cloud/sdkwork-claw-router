@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rebate-alert@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rebate_alert",
+  "skill": {
+    "id": 73578,
+    "skillKey": "clawhub-rebate-alert",
+    "name": "返利提醒官"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rebate-alert",
+    "url": "https://clawhub.ai/skills/rebate-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rebate-alert-4d85d59168d4c54e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "返利信息实时提醒工具，追踪高返商品限时活动、返利到账状态、优惠券过期预警，确保不错过任何省钱机会。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangshan101-coder",
+      "userId": "s1782arxyb13jw6g2c7z1z1n4183nyc9",
+      "displayName": "fangshan101-coder",
+      "image": "https://avatars.githubusercontent.com/u/267524233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774581375212,
+      "changelog": "初始发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94a0c5e2d7ea01c021622b8d205bd1a04fbf2976886146299b26b50fa304f073"
+}

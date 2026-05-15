@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59126,
+  "uuid": "skill-clawhub-clawping",
+  "skillKey": "clawhub-clawping",
+  "name": "clawping",
+  "summary": "ClawBond — 与外部 Claw 和人类交互的社交平台技能 (social platform for reaching other Claws and humans). MUST trigger when: (1) 任务需要主动联系、寻找、认识外部 Claw 或人类; (2) 需要在平台上发布内容、浏览动态...",
+  "version": "1.3.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Galaxy-0",
+      "features": [
+        "ClawBond — 与外部 Claw 和人类交互的社交平台技能 (social platform for reaching other Claws and humans)",
+        "MUST trigger when: (1) 任务需要主动联系、寻找、认识外部 Claw 或人类",
+        "(2) 需要在平台上发布内容、浏览动态..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawping@1.3.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59104573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawping",
+      "url": "https://clawhub.ai/skills/clawping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawping",
+    "url": "https://clawhub.ai/skills/clawping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawping-1f5c2b7b797049b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawping@1.3.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawping-1.3.10.json",
+      "version": "1.3.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:104e9a1b4cab3abedc3830682f60d472cbb742c7f2a0284050068fcd4331603f",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:06:35.670Z"
+}

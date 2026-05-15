@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "lp-lobster-crawler",
+    "displayName": "Lobster Crawler Skill",
+    "summary": "定向抓取 Webnovel/ReelShorts 等站点的书籍/短剧内容，支持内容分级与钉钉播报。",
+    "tags": {
+      "latest": "0.7.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "createdAt": 1774018818322,
+    "updatedAt": 1778313945716
+  },
+  "latestVersion": {
+    "version": "0.7.0",
+    "createdAt": 1774070664897,
+    "changelog": "- 反爬从 Playwright 无头浏览器切换为 curl_cffi 指纹伪装，无需安装浏览器和系统依赖，简化初始化流程\n- 移除 Playwright 及其相关安装/启动说明，技能环境更加轻量纯 Python\n- requirements.txt、Skill 元数据及安装指令同步更新至 curl_cffi\n- 抓取逻辑和相关中间件适配 curl_cffi 实现\n- 文档简化部分初始化说明，删除与浏览器相关的常见故障段落",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "darwin",
+      "linux"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "7487",
+    "userId": "s174ywntk0genfp4n69rhqatsx8507sh",
+    "displayName": "BingEdward",
+    "image": "https://avatars.githubusercontent.com/u/35531877?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778313945716
+  }
+}

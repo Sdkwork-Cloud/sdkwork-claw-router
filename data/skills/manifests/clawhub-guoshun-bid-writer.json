@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73513,
+  "uuid": "skill-clawhub-guoshun-bid-writer",
+  "skillKey": "clawhub-guoshun-bid-writer",
+  "name": "国顺投标助手",
+  "summary": "根据招标文件自动生成施工组织设计初稿、技术偏离表、资质自检和项目组织架构等投标核心资料。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guoshun_bid_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimmygx",
+      "features": [
+        "根据招标文件自动生成施工组织设计初稿、技术偏离表、资质自检和项目组织架构等投标核心资料。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guoshun-bid-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27848299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guoshun-bid-writer",
+      "url": "https://clawhub.ai/skills/guoshun-bid-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guoshun-bid-writer",
+    "url": "https://clawhub.ai/skills/guoshun-bid-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guoshun-bid-writer-565456bb85f9384b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guoshun-bid-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guoshun-bid-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b88d511f4f5ad31eae6d22094b317dda615c25f09841a99d5c92f79c8c9ad98",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:06:55.014Z"
+}

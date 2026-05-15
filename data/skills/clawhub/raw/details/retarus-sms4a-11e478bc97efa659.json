@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "retarus-sms4a",
+    "displayName": "retarus-sms4a",
+    "summary": "Send SMS jobs and check SMS delivery status through the Retarus SMS for Applications REST API. Use when Codex or OpenClaw needs to create SMS jobs, inspect p...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774041609071,
+    "updatedAt": 1778314090133
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774041609071,
+    "changelog": "retarus-sms4a 1.0.0\n\n- Initial release of the skill for sending SMS jobs and checking delivery status via the Retarus SMS for Applications REST API.\n- Includes helper script `scripts/sms4a_api.py` for job submission, payload validation, status lookup, and datacenter selection with fallback logic.\n- Supports credential resolution from environment variables, secret files, or local secret paths.\n- Implements automatic status query fallback from EU to both German datacenters for reliability.\n- Provides simple command-line workflows for sending messages and retrieving per-recipient status, supporting both basic and advanced use cases.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "aeggerd",
+    "userId": "s177y8cghk7h3qa80gqz3e9f4583k3ap",
+    "displayName": "aeggerd",
+    "image": "https://avatars.githubusercontent.com/u/40333528?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778314090133
+  }
+}

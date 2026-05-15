@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-child-dangerous-behavior-recognition-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_child_dangerous_behavior_recognition_analysis",
+  "skill": {
+    "id": 57828,
+    "skillKey": "clawhub-smyx-child-dangerous-behavior-recognition-analysis",
+    "name": "儿童危险行为识别分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-child-dangerous-behavior-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-child-dangerous-behavior-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-child-dangerous-behavior-recognition-analysis-577fda679f253e27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects climbing, playing with fire, touching power sources, and dangerous actions near windows, providing real-time alerts. It is suitable for child safety..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778327079749,
+      "changelog": "## v1.0.2 Changelog\n\n- Internal updates to scripts in face_analysis and smyx_common modules\n- No user-facing feature or documentation changes\n- SKILL.md remains unchanged (version and description not updated)\n- Infrastructure or dependency preparations may have been improved",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60dba69efe827ded771b4c60fc03a7f5c7fec2e08d9d1717b30d593932b62442"
+}

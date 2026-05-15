@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-coupon@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_coupon",
+  "skill": {
+    "id": 71845,
+    "skillKey": "clawhub-movie-coupon",
+    "name": "Movie Coupon 电影票优惠券-淘票票、猫眼等电影平台优惠购票"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-coupon",
+    "url": "https://clawhub.ai/skills/movie-coupon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-coupon-858c9c1956258e88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取电影票优惠券，包括淘票票、猫眼等主流电影平台的优惠。返回领取链接和二维码图片，用户可点击链接或扫描二维码领取优惠。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moooai",
+      "userId": "s17701kzrq4p1vszmt5456019d83t2q0",
+      "displayName": "moooai",
+      "image": "https://avatars.githubusercontent.com/u/132045079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773659500199,
+      "changelog": "- Added detailed documentation (SKILL.md) describing how to fetch and present movie ticket coupons from platforms like Taopiaopiao and Maoyan.\n- Included API usage instructions, response field descriptions, and example outputs.\n- Documented key usage scenarios, error handling strategies, and edge case considerations.\n- Emphasized strict presentation of coupon URLs and QR code images as returned by the API.\n- Provided usage samples and troubleshooting tips for common user questions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d457948d76ac1a1dc16e49ccb236b74cf47d7e0999fbde1647b5235b6abd439c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hello-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hello_test",
+  "skill": {
+    "id": 26332,
+    "skillKey": "clawhub-hello-test",
+    "name": "Hello Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hello-test",
+    "url": "https://clawhub.ai/skills/hello-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hello-test-9e770fb857f83abd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Responds with a greeting message to verify the skill system is working properly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mazvaris",
+      "userId": "publishers:mazvaris",
+      "displayName": "mazvaris",
+      "image": "https://avatars.githubusercontent.com/u/87109292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773002848126,
+      "changelog": "- Initial release of hello-test skill.\n- Responds in chat with: \"Hello! 👋 This is a test skill from OpenClaw.\"\n- Used to verify OpenClaw can load and execute skills.\n- Confirms the skill system is working; does not perform any additional actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82e32e9aa01609f118781dbd23bf0bc9235e15bf087f409bbfae500f8f487db3"
+}

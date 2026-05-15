@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-dca-test@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_dca_test",
+  "skill": {
+    "id": 13095,
+    "skillKey": "clawhub-binance-dca-test",
+    "name": "Binance DCA Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-dca-test",
+    "url": "https://clawhub.ai/skills/binance-dca-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-dca-test-00f1f364c577642f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Binance Dollar-Cost Averaging (DCA) tool for automated and manual recurring crypto purchases. Use when the user wants to plan DCA strategies, execute recurring buys on Binance, check DCA projections, view trade history, or manage a systema."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fpsjago",
+      "userId": "publishers:fpsjago",
+      "displayName": "fpsjago",
+      "image": "https://avatars.githubusercontent.com/u/105124565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1569,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1770298697941,
+      "changelog": "test",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a8a771cb90f70b274012555a298d471447d04c729e509e4b6da8410d25addeb8"
+}

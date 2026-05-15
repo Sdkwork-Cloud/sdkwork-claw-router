@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v0-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v0_cli",
+  "skill": {
+    "id": 32390,
+    "skillKey": "clawhub-v0-cli",
+    "name": "v0-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v0-cli",
+    "url": "https://clawhub.ai/skills/v0-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v0-cli-fe47db16625c39a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool for creating, refining, and listing AI-generated websites using v0.dev API without interactive prompts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hlongvu",
+      "userId": "s173evhxy5fj46qybxrkzfc8qs840903",
+      "displayName": "hlongvu",
+      "image": "https://avatars.githubusercontent.com/u/1598865?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775184623903,
+      "changelog": "- Added instructions and warnings about potential timeouts with the `v0 create` command.\n- Updated agent workflow section to include guidance on recovering from create command timeouts, advising users to check with `v0 list` before retrying.\n- No code changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb07b6d9e04be9322731b9f0d660bc8dcc4b3c6531b815dc5b4c7d1d810a6af8"
+}

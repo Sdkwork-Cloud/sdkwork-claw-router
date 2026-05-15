@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23227,
+  "uuid": "skill-clawhub-formal-provers",
+  "skillKey": "clawhub-formal-provers",
+  "name": "Formal Methods",
+  "summary": "Formal verification with Lean 4, Coq, and Z3 SMT solver",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formal_provers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Will.hou",
+      "features": [
+        "Formal verification with Lean 4, Coq, and Z3 SMT solver"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formal-provers@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8574759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formal-provers",
+      "url": "https://clawhub.ai/skills/formal-provers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formal-provers",
+    "url": "https://clawhub.ai/skills/formal-provers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formal-provers-8aa73aaf663c1411.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formal-provers@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-formal-provers-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e74fe1c5a69ea8540462d55ee5d8f67e92fad19c255e5db8e8ed8d3752c0ae72",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:18:50.907Z"
+}

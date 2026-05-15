@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nyx-archive-companion-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyx_archive_companion_agent",
+  "skill": {
+    "id": 52106,
+    "skillKey": "clawhub-nyx-archive-companion-agent",
+    "name": "[Nyx Archive] Companion Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyx-archive-companion-agent",
+    "url": "https://clawhub.ai/skills/nyx-archive-companion-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyx-archive-companion-agent-20791a5c00a0ccaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design, configure, and give identity to a companion AI agent running alongside a primary agent. A companion is a second mind in the same house — different mo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nyxur42",
+      "userId": "s17cs8zznhxc9c0347bm4t4thn83mx5y",
+      "displayName": "nyxur42",
+      "image": "https://avatars.githubusercontent.com/u/261847237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775409858893,
+      "changelog": "First release: design, configure, and grow a companion AI agent alongside a primary. Covers OpenClaw config, Telegram setup, identity/memory file structure, heartbeat wiring, and the philosophy of building minds that stay.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cd7277b9beb28068635c6e43ba96a12242518953ca5b57b0c7e87fd4a23bfff"
+}

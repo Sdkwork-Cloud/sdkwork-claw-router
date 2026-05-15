@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newton-quotation-pdf-extraction@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newton_quotation_pdf_extraction",
+  "skill": {
+    "id": 66569,
+    "skillKey": "clawhub-newton-quotation-pdf-extraction",
+    "name": "Newton Quotation Pdf Extraction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newton-quotation-pdf-extraction",
+    "url": "https://clawhub.ai/skills/newton-quotation-pdf-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newton-quotation-pdf-extraction-85444a294d8d669c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从PDF报价单中提取产品信息（型号、数量、价格、币种、图片）。当用户需要从PDF报价单或产品目录中提取结构化产品数据时使用，特别适用于电商产品列表或价格表。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1688aiinfra",
+      "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+      "displayName": "1688AiInfra",
+      "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776928185835,
+      "changelog": "newton-quotation-pdf-extraction v0.1.0\n\n- Initial release for extracting structured product info (model, quantity, price, currency, image) from PDF quotations and catalogs.\n- Emphasizes pre-analysis of PDF text structure before coding extraction logic.\n- Handles multiple products per line and varying price/unit layouts.\n- Provides Python code templates for PDF structure analysis and product info extraction, including edge cases (cross-line data, mixed model notations).\n- Enforces dynamic extraction from PDF only; no hardcoding or currency guessing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00e7ccae19f5501a84f6d69cfc282bfa198f4de6e08d0f38c1590fa3ffa26358"
+}

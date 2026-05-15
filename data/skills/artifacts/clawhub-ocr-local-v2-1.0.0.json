@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-local-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_local_v2",
+  "skill": {
+    "id": 23187,
+    "skillKey": "clawhub-ocr-local-v2",
+    "name": "OCR Local V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-local-v2",
+    "url": "https://clawhub.ai/skills/ocr-local-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-local-v2-7b1a2c92b492dbda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from images using Tesseract.js OCR (100% local, no API key required). Supports Chinese (simplified/traditional) and English."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "15914355527",
+      "userId": "s179nh9sbfxbd6ve2kghnkq4vn83vv89",
+      "displayName": "15914355527",
+      "image": "https://avatars.githubusercontent.com/u/51820137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1106,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774094835426,
+      "changelog": "- Initial release of ocr-local skill using Tesseract.js for OCR.\n- Performs text extraction from images 100% locally—no API key required.\n- Supports Simplified Chinese, Traditional Chinese, and English.\n- Offers language selection and JSON output options.\n- First run downloads language data; later runs use cached files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3341bdd3aba3e41ce6bef13415c6071fdee3beb6780a9a87dff9c93d82a6ce71"
+}

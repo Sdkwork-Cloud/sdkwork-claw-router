@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40154,
+  "uuid": "skill-clawhub-medcrypt",
+  "skillKey": "clawhub-medcrypt",
+  "name": "MedCrypt: End-to-End Encryption for Medical Messaging",
+  "summary": "Encrypts medical data client-side with AES-256-GCM for secure messaging on Telegram/WhatsApp, ensuring HIPAA, GDPR, and LFPDPPP compliance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medcrypt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CryptoReuMD",
+      "features": [
+        "Encrypts medical data client-side with AES-256-GCM for secure messaging on Telegram/WhatsApp, e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medcrypt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106553699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medcrypt",
+      "url": "https://clawhub.ai/skills/medcrypt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medcrypt",
+    "url": "https://clawhub.ai/skills/medcrypt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medcrypt-c5ee2ab8e7932e98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medcrypt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medcrypt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b51f3685a777ca5b91e843ba6fe6bfb67f950f2fbfb70aedbf4e8d254fbf49d8",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:48:07.600Z"
+}

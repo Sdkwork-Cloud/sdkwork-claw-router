@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69815,
+  "uuid": "skill-clawhub-automation-workflow-builder",
+  "skillKey": "clawhub-automation-workflow-builder",
+  "name": "automation-workflow-builder（自动化工作流构建器，设计并执行跨平台自动化流程，支持定时触发、文件监控、多步骤操作。适用于数据同步、内容发布、报告生成。）",
+  "summary": "自动化工作流构建器，设计并执行跨平台自动化流程，支持触发器、条件判断、多步骤操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automation_workflow_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "careytian",
+      "features": [
+        "自动化工作流构建器，设计并执行跨平台自动化流程，支持触发器、条件判断、多步骤操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automation-workflow-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264030747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automation-workflow-builder",
+      "url": "https://clawhub.ai/skills/automation-workflow-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automation-workflow-builder",
+    "url": "https://clawhub.ai/skills/automation-workflow-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automation-workflow-builder-cbf652d61a93d698.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automation-workflow-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-automation-workflow-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bf312a13c380c9838fc35b7ba5f958a26dfffd2fc14791ee0ecb8d08268480a",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:32:51.984Z"
+}

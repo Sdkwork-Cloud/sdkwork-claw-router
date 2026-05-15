@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10719,
+  "uuid": "skill-clawhub-runware",
+  "skillKey": "clawhub-runware",
+  "name": "Runware Image & Video generation",
+  "summary": "Generate images and videos via Runware API. Access to FLUX, Stable Diffusion, Kling AI, and other top models. Supports text-to-image, image-to-image, upscaling, text-to-video, and image-to-video. Use when generating images, creating videos.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runware",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "26medias",
+      "features": [
+        "Generate images and videos via Runware API",
+        "Access to FLUX, Stable Diffusion, Kling AI, and other top models",
+        "Supports text-to-image, image-to-image, upscaling, text-to-video, and image-to-video",
+        "Use when generating images, creating videos from prompts or images, upscaling images, or doing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runware@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1769824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runware",
+      "url": "https://clawhub.ai/skills/runware"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runware",
+    "url": "https://clawhub.ai/skills/runware",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runware-e470d891c0bda7d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runware@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runware-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9487340f9758ac21ff0bfd552cb32b3df64a7d9ebb7bbb82202135281136d923",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T02:10:26.159Z"
+}

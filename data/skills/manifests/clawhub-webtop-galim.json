@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40077,
+  "uuid": "skill-clawhub-webtop-galim",
+  "skillKey": "clawhub-webtop-galim",
+  "name": "Webtop Galim",
+  "summary": "Check, monitor, and summarize student homework/tasks from Webtop (SmartSchool), Galim Pro, and Ofek. Use when the user asks to inspect homework, pending task...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webtop_galim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaike1",
+      "features": [
+        "Check, monitor, and summarize student homework/tasks from Webtop (SmartSchool), Galim Pro, and.",
+        "Use when the user asks to inspect homework, pending task..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webtop-galim@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72298764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webtop-galim",
+      "url": "https://clawhub.ai/skills/webtop-galim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webtop-galim",
+    "url": "https://clawhub.ai/skills/webtop-galim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webtop-galim-4feab9b587a5a747.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webtop-galim@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-webtop-galim-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13f87a35ade6ed5333e171f71df885a603e54ed1dbdc5cc5ad4003852780c217",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T10:22:44.617Z"
+}

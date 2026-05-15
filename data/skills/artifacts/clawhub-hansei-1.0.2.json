@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hansei@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hansei",
+  "skill": {
+    "id": 26699,
+    "skillKey": "clawhub-hansei",
+    "name": "Hansei"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hansei",
+    "url": "https://clawhub.ai/skills/hansei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hansei-3022679bfb24e6ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hansei integration. Manage Organizations, Pipelines, Projects, Users, Filters. Use when the user wants to interact with Hansei data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "membranedev",
+      "userId": "s17ejzcy4w0v2h2tf7xa3y1mw583eedz",
+      "displayName": "Membrane Dev",
+      "image": "https://avatars.githubusercontent.com/u/147116108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775163570905,
+      "changelog": "Revert refresh marker",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8efa9266e65e65521d65cc05be5438a544648af10296fc7fee9149371e5a06e2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73529,
+  "uuid": "skill-clawhub-legal-document-generator",
+  "skillKey": "clawhub-legal-document-generator",
+  "name": "法律文书生成器",
+  "summary": "提供多版本法律文书模板生成服务，支持债务、婚姻、劳动、商务及房产等多场景合同与协议。",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_document_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hjfl888",
+      "features": [
+        "提供多版本法律文书模板生成服务，支持债务、婚姻、劳动、商务及房产等多场景合同与协议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-document-generator@3.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269153769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-document-generator",
+      "url": "https://clawhub.ai/skills/legal-document-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-document-generator",
+    "url": "https://clawhub.ai/skills/legal-document-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-document-generator-b971abd3213764d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-document-generator@3.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-document-generator-3.0.3.json",
+      "version": "3.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8dd45924d13face0ff822770d7b82fa498184384ea0f80a3d08a0a5603255571",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:03:30.281Z"
+}

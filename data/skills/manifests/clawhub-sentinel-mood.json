@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23651,
+  "uuid": "skill-clawhub-sentinel-mood",
+  "skillKey": "clawhub-sentinel-mood",
+  "name": "Sentinel Mood",
+  "summary": "Analyze the sentiment and emotional tone of text using NLTK and VADER. Use this to gauge user mood, detect urgency, or analyze content tone.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentinel_mood",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "splicer scorn",
+      "features": [
+        "Analyze the sentiment and emotional tone of text using NLTK and VADER",
+        "Use this to gauge user mood, detect urgency, or analyze content tone."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentinel-mood@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146873484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentinel-mood",
+      "url": "https://clawhub.ai/skills/sentinel-mood"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentinel-mood",
+    "url": "https://clawhub.ai/skills/sentinel-mood",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentinel-mood-47d4c8f6fd2e4f66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentinel-mood@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentinel-mood-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de3dda7a53193a3f7fcce9e8df9f7f5cb2283eb7f3e9f44e62bcef3dcc3b069f",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T02:27:03.422Z"
+}

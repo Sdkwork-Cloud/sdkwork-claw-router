@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38707,
+  "uuid": "skill-clawhub-spotify-download",
+  "skillKey": "clawhub-spotify-download",
+  "name": "spotify-download",
+  "summary": "Download MP3s from Spotify playlists by fetching metadata, searching YouTube for tracks, and converting audio using ffmpeg with optional Spotify API credenti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spotify_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wang Zesong",
+      "features": [
+        "Download MP3s from Spotify playlists by fetching metadata, searching YouTube for tracks, and co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spotify-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53573749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spotify-download",
+      "url": "https://clawhub.ai/skills/spotify-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spotify-download",
+    "url": "https://clawhub.ai/skills/spotify-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spotify-download-778a439b708eeb0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spotify-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spotify-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1efa170819b6a8116616867293e0ae2c5b317a449cd5fbce6bf61b2d3463b2b4",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T02:52:57.938Z"
+}

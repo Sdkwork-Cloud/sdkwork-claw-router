@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/admet-pkpd@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.admet_pkpd",
+  "skill": {
+    "id": 17120,
+    "skillKey": "clawhub-admet-pkpd",
+    "name": "ADMET PK/PD Predict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "admet-pkpd",
+    "url": "https://clawhub.ai/skills/admet-pkpd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/admet-pkpd-caebaa7e2c43a285.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ADMET and pharmacokinetic/pharmacodynamic property prediction workflows using ADMET Predictor, AOMP, OBA, Graph-pKa, DeepEsol, and Molecular Descriptors thro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sciminer",
+      "userId": "s170qp1q4twz35wa85ppa8894h83w461",
+      "displayName": "SciMiner",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778083225561,
+      "changelog": "- Designated admet-pkpd/scripts/sciminer_registry.py as the authoritative source for all provider_name, tool_name, allowed parameters, and file_params.\n- Updated instructions: agents must construct invocation payloads strictly using the registry (never from memory or OpenAPI), and should filter user parameters against the registry before every API call.\n- Added detailed invocation example and usage pattern for build_payload_from_registry from the registry.\n- Clarified file upload field requirements and mapping per tool as recorded in the registry.\n- Specified error handling and user messaging if user input parameters do not match the registry for a selected tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea012a96d00f5845031ff01500cae1d680bd9b6c8689f6b591c05f0d2858844a"
+}

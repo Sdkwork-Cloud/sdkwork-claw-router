@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insight-song@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_song",
+  "skill": {
+    "id": 22704,
+    "skillKey": "clawhub-insight-song",
+    "name": "Insight Song"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-song",
+    "url": "https://clawhub.ai/skills/insight-song",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-song-aae758a92c3c4ea0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform technical insights into Suno-ready songs with lyrics, style tags, and emotional arc"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771985770345,
+      "changelog": "- Security model updated: The skill no longer reads or writes workspace files; it only uses user input or conversation context and returns results directly to the invoking agent.\n- Documentation clarified to reflect new data handling, specifying no direct access to project artifacts or files.\n- Output behavior described: agent now controls how to use (save, display, or route) the generated song.\n- \"Workspace Files\" section removed to reflect no file system interaction.\n- Acceptance criteria and checklists updated for new return-based design.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68c88e00eb45174389c43c9cf862b8a9e1b16d3fed86901e31a6d4eb264a0d5d"
+}

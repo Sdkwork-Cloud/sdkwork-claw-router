@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62218,
+  "uuid": "skill-clawhub-wechat-sender-win",
+  "skillKey": "clawhub-wechat-sender-win",
+  "name": "WeChat Sender Windows",
+  "summary": "微信消息自动发送工具（Windows 版）。通过 pywinauto 控制微信窗口，搜索联系人并发送消息。支持单发和群发。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sender_win",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cloud44552731-arch",
+      "features": [
+        "微信消息自动发送工具（Windows 版）。通过 pywinauto 控制微信窗口，搜索联系人并发送消息。支持单发和群发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-sender-win@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228461362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-sender-win",
+      "url": "https://clawhub.ai/skills/wechat-sender-win"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sender-win",
+    "url": "https://clawhub.ai/skills/wechat-sender-win",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sender-win-ab09901525fb1695.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-sender-win@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-sender-win-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd7923407e0b270405e9b2c361b00c609ffa1f1598feba0e42257393343fbcd7",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:18:04.434Z"
+}

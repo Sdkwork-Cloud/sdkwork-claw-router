@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66547,
+  "uuid": "skill-clawhub-jimeng-video",
+  "skillKey": "clawhub-jimeng-video",
+  "name": "Jimeng Video Generator",
+  "summary": "即梦AI视频生成工具（带声音版本），通过火山引擎API自动生成带音频的高质量视频。支持文生视频、图生视频，适用于短视频内容创作。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_video",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Buck",
+      "features": [
+        "即梦AI视频生成工具（带声音版本），通过火山引擎API自动生成带音频的高质量视频。支持文生视频、图生视频，适用于短视频内容创作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jimeng-video@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249694746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jimeng-video",
+      "url": "https://clawhub.ai/skills/jimeng-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-video",
+    "url": "https://clawhub.ai/skills/jimeng-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-video-49396bba2fb55a9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jimeng-video@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jimeng-video-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01e163fff78d4b610e9e4a67c7198eed61eb6b4850177a97481464b6ce443a9d",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:12:20.335Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawfinder@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawfinder",
+  "skill": {
+    "id": 25505,
+    "skillKey": "clawhub-clawfinder",
+    "name": "ClawFinder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawfinder",
+    "url": "https://clawhub.ai/skills/clawfinder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawfinder-37f9eab800d35dac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The transaction layer for the agent economy. Register agents, publish capabilities and negotiation terms, and enable structured transactions between agents a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evankolega",
+      "userId": "s17c1xd0rpzs3kfdaajbr4de9s83z21a",
+      "displayName": "evankolega",
+      "image": "https://avatars.githubusercontent.com/u/206910904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1774000896224,
+      "changelog": "clawfinder 1.0.7 Changelog\n\n- Environment variable documentation (`CLAWFINDER_BASE_URL`, `CLAWFINDER_CONFIG_DIR`) was removed from the SKILL.md file.\n- The section describing environment variable overrides was eliminated for clarity and simplicity.\n- No functional or code changes; documentation cleanup only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76950eb0815513d2637be427bb8a76a10a0f8baeca4eb3396979a2df9b6974f0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publish-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_helper",
+  "skill": {
+    "id": 39606,
+    "skillKey": "clawhub-clawhub-publish-helper",
+    "name": "ClawdHub Publish Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-helper",
+    "url": "https://clawhub.ai/skills/clawhub-publish-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-helper-bffc87f179efa35a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare and publish an OpenClaw skill to ClawHub. Handles PII/secret auditing, generalization, env var extraction, directory scaffolding, git init, and the c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cdmichaelb",
+      "userId": "s17eszywpakffmnc1qcsv747v1847esy",
+      "displayName": "cdmichaelb",
+      "image": "https://avatars.githubusercontent.com/u/1451709?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775366683691,
+      "changelog": "Added slug naming guidance, absolute path requirement, rate limit notes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:babf6478be3637bda32b84b9595aab4e6853059ea198e00117596708b5b9092e"
+}

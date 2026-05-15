@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29192,
+  "uuid": "skill-clawhub-growsurf",
+  "skillKey": "clawhub-growsurf",
+  "name": "Growsurf",
+  "summary": "Growsurf integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Growsurf data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.growsurf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Growsurf integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Growsurf data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/growsurf@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "growsurf",
+      "url": "https://clawhub.ai/skills/growsurf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "growsurf",
+    "url": "https://clawhub.ai/skills/growsurf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/growsurf-baa210ae86c30554.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/growsurf@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-growsurf-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd7d3bb687084bf4e0b3a9bb52d83a79c4668ce6d0be2ee51bf5b8957de536be",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:32:06.533Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-edge-tts-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_edge_tts_voice",
+  "skill": {
+    "id": 64633,
+    "skillKey": "clawhub-feishu-edge-tts-voice",
+    "name": "Feishu Edge TTS Voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-edge-tts-voice",
+    "url": "https://clawhub.ai/skills/feishu-edge-tts-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-edge-tts-voice-8e0b558fdbf3a7af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书语音消息发送技能。使用 Edge TTS（微软，免费无限次）生成语音并以飞书语音气泡形式发送。当用户要求用语音回复、发语音消息、TTS 朗读内容时触发。默认音色：云希（zh-CN-YunxiNeural，活泼阳光男声）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dadaniya99",
+      "userId": "s178e9wg39md2mzzgdd57zvhyd83y6sg",
+      "displayName": "dadaniya99",
+      "image": "https://avatars.githubusercontent.com/u/254098635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1712,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772545932009,
+      "changelog": "用微软 Edge TTS 发送飞书语音气泡。免费无限次，支持中文男/女声，默认云希音色。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:afbe3f4f3423143dae5d0941222bcd020779c2616a9fc66457108241b43946ae"
+}

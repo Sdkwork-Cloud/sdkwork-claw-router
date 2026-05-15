@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-instagram-search-hashtag-posts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_instagram_search_hashtag_posts",
+  "skill": {
+    "id": 48755,
+    "skillKey": "clawhub-justoneapi-instagram-search-hashtag-posts",
+    "name": "Instagram Hashtag Posts Search API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-instagram-search-hashtag-posts",
+    "url": "https://clawhub.ai/skills/justoneapi-instagram-search-hashtag-posts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-instagram-search-hashtag-posts-cfb40ce67f9b8e3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/instagram/search-hashtag-posts/v1 for Instagram Hashtag Posts Search through JustOneAPI with hashtag."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777421534377,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:723b41eb3abe08ebddc8f3e79db11c830fc43b84b6cf09925514633aefd722e7"
+}

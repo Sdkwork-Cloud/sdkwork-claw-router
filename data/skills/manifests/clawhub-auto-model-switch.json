@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66641,
+  "uuid": "skill-clawhub-auto-model-switch",
+  "skillKey": "clawhub-auto-model-switch",
+  "name": "Auto Model Switch",
+  "summary": "自动切换模型 - 当模型token用完或限流时，自动切换到备用模型，并通知用户。支持配置多个备用模型，智能切换策略。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_model_switch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei-wei-zhao",
+      "features": [
+        "当模型token用完或限流时，自动切换到备用模型，并通知用户。支持配置多个备用模型，智能切换策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-model-switch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54010856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-model-switch",
+      "url": "https://clawhub.ai/skills/auto-model-switch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-model-switch",
+    "url": "https://clawhub.ai/skills/auto-model-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-model-switch-d6217232e79d714d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-model-switch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-model-switch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0b7f486795dbcc80ef9c1df2f9e68e7c937340c1742e16f21dfce446c43ed49",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:46:46.700Z"
+}

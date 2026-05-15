@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70974,
+  "uuid": "skill-clawhub-yida-dev",
+  "skillKey": "clawhub-yida-dev",
+  "name": "钉钉宜搭开发助手",
+  "summary": "钉钉宜搭低代码开发助手。用于创建表单和自定义页面、编写 JS 动作面板、使用 JS-API、配置数据源、设计流程自动化。适用于宜搭表单开发、JS 代码调试、API 集成等场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yida_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kuma",
+      "features": [
+        "钉钉宜搭低代码开发助手。用于创建表单和自定义页面、编写 JS 动作面板、使用 JS-API、配置数据源、设计流程自动化。适用于宜搭表单开发、JS 代码调试、API 集成等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yida-dev@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1578814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yida-dev",
+      "url": "https://clawhub.ai/skills/yida-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yida-dev",
+    "url": "https://clawhub.ai/skills/yida-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yida-dev-586aa78af00c8eb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yida-dev@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yida-dev-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39c5a98ac4b3bd77e6d4517d14665cd6f968abd67586110b225aebeb52749b47",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T12:54:21.658Z"
+}

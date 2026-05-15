@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44140,
+  "uuid": "skill-clawhub-kaspacom-defi-mcp",
+  "skillKey": "clawhub-kaspacom-defi-mcp",
+  "name": "KaspaCom DeFi MCP",
+  "summary": "Use KaspaCom DeFi MCP or CLI to query and transact across KaspaCom DEX, Lending, and LFG Launchpad on IGRA and Kasplex mainnet/testnet. Trigger when the user...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaspacom_defi_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marciano147",
+      "features": [
+        "Use KaspaCom DeFi MCP or CLI to query and transact across KaspaCom DEX, Lending, and LFG Launch.",
+        "Trigger when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kaspacom-defi-mcp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89093969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kaspacom-defi-mcp",
+      "url": "https://clawhub.ai/skills/kaspacom-defi-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaspacom-defi-mcp",
+    "url": "https://clawhub.ai/skills/kaspacom-defi-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaspacom-defi-mcp-e31facefca88f080.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kaspacom-defi-mcp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kaspacom-defi-mcp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f880cd67adf285de8f3fb9a21784035ee0b9cb6b1188e4ecc22947258d7a5b7",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:28:33.994Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-overview@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_overview",
+  "skill": {
+    "id": 13588,
+    "skillKey": "clawhub-financial-overview",
+    "name": "Financial Overview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-overview",
+    "url": "https://clawhub.ai/skills/financial-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-overview-6d72758db32cb758.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get a complete financial overview of the business including balance, recent transactions, outstanding invoices, and upcoming tax obligations. Use when the us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanlee000",
+      "userId": "s17cbmkhac7cryh3kwmg7jc0ch83qty9",
+      "displayName": "Stan Kharlap",
+      "image": "https://avatars.githubusercontent.com/u/117379032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1356,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771526186906,
+      "changelog": "Initial release. Pulls balance, transactions, invoices, and tax deadlines into a single summary.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b8f9f2d4cba8d32e721cdbd9cc19b1d38b19720f4a28986607c9349697aac8a"
+}

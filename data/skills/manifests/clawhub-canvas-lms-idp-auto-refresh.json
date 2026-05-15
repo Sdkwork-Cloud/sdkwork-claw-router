@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42509,
+  "uuid": "skill-clawhub-canvas-lms-idp-auto-refresh",
+  "skillKey": "clawhub-canvas-lms-idp-auto-refresh",
+  "name": "Canvas LMS IDP Auto Token Refresh",
+  "summary": "Automatically refresh Canvas LMS API tokens via institutional CAS/SAML IDP login using RSA-encrypted credentials and manage token lifecycle.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_lms_idp_auto_refresh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheSumSt",
+      "features": [
+        "Automatically refresh Canvas LMS API tokens via institutional CAS/SAML IDP login using RSA-encr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canvas-lms-idp-auto-refresh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37763040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canvas-lms-idp-auto-refresh",
+      "url": "https://clawhub.ai/skills/canvas-lms-idp-auto-refresh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-lms-idp-auto-refresh",
+    "url": "https://clawhub.ai/skills/canvas-lms-idp-auto-refresh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-lms-idp-auto-refresh-ab7db3e350b50567.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canvas-lms-idp-auto-refresh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canvas-lms-idp-auto-refresh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c8cff48b1fdd467f059d8b276cb8e4095e03e124643c0db15361bbe7ca9182c",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T07:19:36.688Z"
+}

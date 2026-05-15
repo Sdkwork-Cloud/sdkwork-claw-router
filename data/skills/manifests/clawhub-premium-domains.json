@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10695,
+  "uuid": "skill-clawhub-premium-domains",
+  "skillKey": "clawhub-premium-domains",
+  "name": "Premium Domain Search",
+  "summary": "Search for premium domains for sale across Afternic, Sedo, Atom, Dynadot, Namecheap, NameSilo, and Unstoppable Domains.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.premium_domains",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "julianengel",
+      "features": [
+        "Search for premium domains for sale across Afternic, Sedo, Atom, Dynadot, Namecheap, NameSilo,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/premium-domains@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10634231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "premium-domains",
+      "url": "https://clawhub.ai/skills/premium-domains"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "premium-domains",
+    "url": "https://clawhub.ai/skills/premium-domains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/premium-domains-4b9297976b024665.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/premium-domains@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-premium-domains-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8714d58427e333411917d514c21d093035ef6c1556a80f81d4856b5d8c4c26ff",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T08:23:52.421Z"
+}

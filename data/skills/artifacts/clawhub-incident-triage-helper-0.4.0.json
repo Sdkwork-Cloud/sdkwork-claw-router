@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/incident-triage-helper@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_triage_helper",
+  "skill": {
+    "id": 49444,
+    "skillKey": "clawhub-incident-triage-helper",
+    "name": "Incident Triage Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-triage-helper",
+    "url": "https://clawhub.ai/skills/incident-triage-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-triage-helper-f34371a42e8070cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete local skill package to assess and potentially publish."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "li-chi",
+      "userId": "s17c2cf7j0t6s1wvbkabgk5eys83n8yr",
+      "displayName": "Chi Li",
+      "image": "https://avatars.githubusercontent.com/u/10106088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 79,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1777528268228,
+      "changelog": "Add escalation note drafting prompt; Refine severity classification instructions; Update README examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21045c21bd63a3e4bc8f2ab73a00e7e5e9461ce523a40fed41ea2592a87aca2e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reivo@0.4.4",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reivo",
+  "skill": {
+    "id": 50983,
+    "skillKey": "clawhub-reivo",
+    "name": "Reivo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reivo",
+    "url": "https://clawhub.ai/skills/reivo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reivo-ee5babd9d451ca34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track AI agent costs in real-time, set budget limits, and auto-detect runaway loops. Smart routing reduces costs 40-60%. Works with OpenAI, Anthropic, and Go..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tazsat0512",
+      "userId": "s17b5z04vwqxmvgs7z6t9qebcd83mz2q",
+      "displayName": "tazsat0512",
+      "image": "https://avatars.githubusercontent.com/u/267075792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.4.4",
+      "createdAt": 1775205720664,
+      "changelog": "Fix required binaries (add node, remove jq/python3), move provider key management to dashboard for security",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8a05e98fcf9467775745cd33c7cb1bb65c82ca120aec9dea87f3c59c8d4f18c"
+}

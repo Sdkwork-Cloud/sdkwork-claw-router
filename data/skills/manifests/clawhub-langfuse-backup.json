@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21495,
+  "uuid": "skill-clawhub-langfuse-backup",
+  "skillKey": "clawhub-langfuse-backup",
+  "name": "Langfuse Backup",
+  "summary": "Docker volume backup and restore for self-hosted Langfuse. Use when: backing up a self-hosted Langfuse instance, restoring Langfuse after a crash or migratio...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langfuse_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Docker volume backup and restore for self-hosted Langfuse",
+        "Use when: backing up a self-hosted Langfuse instance, restoring Langfuse after a crash or migra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/langfuse-backup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "langfuse-backup",
+      "url": "https://clawhub.ai/skills/langfuse-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langfuse-backup",
+    "url": "https://clawhub.ai/skills/langfuse-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langfuse-backup-5f3efd1b78bf19ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/langfuse-backup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-langfuse-backup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4556b935f4a4b908c6bbf52796cfe794b8691b5b6da41b71c892ca3d396a6f1b",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:25:09.440Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-minutes-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_minutes_ai",
+  "skill": {
+    "id": 57905,
+    "skillKey": "clawhub-meeting-minutes-ai",
+    "name": "Meeting Minutes AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-minutes-ai",
+    "url": "https://clawhub.ai/skills/meeting-minutes-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-minutes-ai-72b10303ce4ef701.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract action items, decisions, and key insights from meeting transcripts or recordings. Use when: \"会议纪要\", \"meeting minutes\", \"提取行动项\", \"action items\", \"会议总结..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wulaosiji",
+      "userId": "s17eezdvd6bej1zyj145fpj30184r2mb",
+      "displayName": "Delta Wu",
+      "image": "https://avatars.githubusercontent.com/u/177007457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776085514100,
+      "changelog": "Initial release of Meeting Minutes AI.\n\n- Transforms meeting transcripts or notes into structured, shareable minutes with action items, decisions, and key insights.\n- Supports multiple output formats: concise, standard, and detailed, with customizable language preference.\n- Includes a clear workflow for collecting meeting context and generating actionable summaries.\n- Provides strict extraction rules for action items and decisions, prioritizing specificity and ownership.\n- Features quality checklist and guardrails to ensure accuracy, neutrality, and confidentiality.\n- Integrates with UniqueClub founder toolkit for further productivity enhancements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d692dc2c7bfc85f7318eb96ca793b48b1f32f3156d901cf2beb7bb074249a1cc"
+}

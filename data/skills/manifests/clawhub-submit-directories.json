@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22537,
+  "uuid": "skill-clawhub-submit-directories",
+  "skillKey": "clawhub-submit-directories",
+  "name": "Submit Directories",
+  "summary": "Use when submitting a product to AI/startup directories - covers the full pipeline from collecting product info, analyzing directories, discovering forms, au...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.submit_directories",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "man0l",
+      "features": [
+        "Use when submitting a product to AI/startup directories",
+        "covers the full pipeline from collecting product info, analyzing directories, discovering forms."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/submit-directories@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1413216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "submit-directories",
+      "url": "https://clawhub.ai/skills/submit-directories"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "submit-directories",
+    "url": "https://clawhub.ai/skills/submit-directories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/submit-directories-2ce3d18a7c361dbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/submit-directories@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-submit-directories-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bc976a2edfea14fa045d789696f19dc7318a289bfc3186bd95b0e5033f83612",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:02:22.745Z"
+}

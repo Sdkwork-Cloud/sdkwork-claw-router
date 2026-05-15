@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18510,
+  "uuid": "skill-clawhub-agentwallet-sdk",
+  "skillKey": "clawhub-agentwallet-sdk",
+  "name": "Agentwallet Sdk",
+  "summary": "Manage on-chain spend limits for AI agents with ERC-6551 wallets, enforcing per-tx and daily token budgets, scoped operator access, and approval queues on Base.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentwallet_sdk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "up2itnow",
+      "features": [
+        "Manage on-chain spend limits for AI agents with ERC-6551 wallets, enforcing per-tx and daily to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentwallet-sdk@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80590273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentwallet-sdk",
+      "url": "https://clawhub.ai/skills/agentwallet-sdk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentwallet-sdk",
+    "url": "https://clawhub.ai/skills/agentwallet-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentwallet-sdk-a4f6a1decd82b493.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentwallet-sdk@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentwallet-sdk-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de9657def6be6ad20e3c9f93b2b726d882c4c8b92c247d4805924f7bffcebec7",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T07:33:05.082Z"
+}

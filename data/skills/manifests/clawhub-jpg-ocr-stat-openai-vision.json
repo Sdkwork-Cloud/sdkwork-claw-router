@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46450,
+  "uuid": "skill-clawhub-jpg-ocr-stat-openai-vision",
+  "skillKey": "clawhub-jpg-ocr-stat-openai-vision",
+  "name": "openai-vision",
+  "summary": "Analyze images and multi-frame sequences using OpenAI GPT vision models",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpg_ocr_stat_openai_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Analyze images and multi-frame sequences using OpenAI GPT vision models"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpg-ocr-stat-openai-vision@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpg-ocr-stat-openai-vision",
+      "url": "https://clawhub.ai/skills/jpg-ocr-stat-openai-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpg-ocr-stat-openai-vision",
+    "url": "https://clawhub.ai/skills/jpg-ocr-stat-openai-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpg-ocr-stat-openai-vision-56670119d9ed56f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpg-ocr-stat-openai-vision@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpg-ocr-stat-openai-vision-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3178693ae93f88e18dcb63e81386b28594adb4ff7470dcdbaad17d60ea20f1b3",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T18:41:18.836Z"
+}

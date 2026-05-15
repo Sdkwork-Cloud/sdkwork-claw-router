@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-studio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_studio",
+  "skill": {
+    "id": 36807,
+    "skillKey": "clawhub-markdown-studio",
+    "name": "Markdown Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-studio",
+    "url": "https://clawhub.ai/skills/markdown-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-studio-2b9df33054113c56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional Markdown document generator. Use when user needs to create technical docs, README, wikis, reports, or any structured document. Supports image em..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774350306749,
+      "changelog": "明确多语言和跨平台支持：Unicode原生支持，Windows/macOS/Linux兼容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ffca3645190e171208c02985af0dcb1fa64198e13a82fd0f4e33ef833d4c606"
+}

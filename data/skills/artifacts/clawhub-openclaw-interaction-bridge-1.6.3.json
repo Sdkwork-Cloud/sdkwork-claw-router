@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-interaction-bridge@1.6.3",
+  "version": "1.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_interaction_bridge",
+  "skill": {
+    "id": 34073,
+    "skillKey": "clawhub-openclaw-interaction-bridge",
+    "name": "Openclaw Interaction Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-interaction-bridge",
+    "url": "https://clawhub.ai/skills/openclaw-interaction-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-interaction-bridge-a1bfa550bd1eb8cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge OpenClaw agent interactions to any external program! The Snarling demo, for example, shows what the agent is doing and lets you approve or reject acti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snarflakes",
+      "userId": "s17dsemk2xq9cm55abjy24gxqd84vvn5",
+      "displayName": "snarflakes",
+      "image": "https://avatars.githubusercontent.com/u/75555569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.6.3",
+      "createdAt": 1777262024211,
+      "changelog": "Broader description: bridges to any external program (Snarling as demo). Added README to skills dir, synced SKILL.md content across both copies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e09c45bd0096cd13e2729406162c622a3813dc06027d992a3b11e29539d88876"
+}

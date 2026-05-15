@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-explosive-content-detector@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_explosive_content_detector",
+  "skill": {
+    "id": 69367,
+    "skillKey": "clawhub-xhs-explosive-content-detector",
+    "name": "xhs-explosive-content-detector（小红书爆款雷达）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-explosive-content-detector",
+    "url": "https://clawhub.ai/skills/xhs-explosive-content-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-explosive-content-detector-8811ad37d114e18a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当品牌方、MCN、创作者与增长团队要把小红书「爆款信号」沉淀为可复盘的对标样本与选题情报时使用： 支持按赛道关键词与时间窗口，检索低粉高赞、周期高赞、单日爆发与持续增长等多维笔记，日更 2000+ 条收录维度、25 类主流赛道、意图分层匹配输出粒度、个性化推荐理由。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "if530770",
+      "userId": "s17dj64hf08x3mak1j99vesphd84gs9c",
+      "displayName": "if530770",
+      "image": "https://avatars.githubusercontent.com/u/46310539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778243835183,
+      "changelog": "No code or file changes detected in this version.\n\n- No updates or modifications were made to this skill in version 1.0.2.\n- Functionality and configuration remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f60646fd629245524f5af2dd3382bb35abc01fc346591a08c27ba31fcfa3c902"
+}

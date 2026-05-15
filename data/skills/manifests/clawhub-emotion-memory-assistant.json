@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73479,
+  "uuid": "skill-clawhub-emotion-memory-assistant",
+  "skillKey": "clawhub-emotion-memory-assistant",
+  "name": "情感记忆助手",
+  "summary": "自动追踪用户情绪变化，在合适的时机关心用户。检测对话情绪、记忆历史、主动关心、周报生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emotion_memory_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "786793119",
+      "features": [
+        "自动追踪用户情绪变化，在合适的时机关心用户。检测对话情绪、记忆历史、主动关心、周报生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emotion-memory-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87558407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emotion-memory-assistant",
+      "url": "https://clawhub.ai/skills/emotion-memory-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emotion-memory-assistant",
+    "url": "https://clawhub.ai/skills/emotion-memory-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emotion-memory-assistant-49d019dce7b7e953.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emotion-memory-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emotion-memory-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a11f0657cfaf77d9c12a8ee692edff58fa5aaeeb29d3aeeed7aa784efba5b152",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:25:23.522Z"
+}

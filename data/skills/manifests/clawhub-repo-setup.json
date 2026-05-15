@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40444,
+  "uuid": "skill-clawhub-repo-setup",
+  "skillKey": "clawhub-repo-setup",
+  "name": "repo-setup",
+  "summary": "Fork, clone, and set up a GitHub repository for development or contribution. Handles fork creation, clone with authentication, upstream remote configuration,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bijin",
+      "features": [
+        "Fork, clone, and set up a GitHub repository for development or contribution",
+        "Handles fork creation, clone with authentication, upstream remote configuration,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repo-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38134380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repo-setup",
+      "url": "https://clawhub.ai/skills/repo-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-setup",
+    "url": "https://clawhub.ai/skills/repo-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-setup-9a57e888ce932e10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repo-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-repo-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:831ba6c4a571c6f96c8f23f43c7d409c2cf8f6d846733c1192fbf6f981176518",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:24:44.044Z"
+}

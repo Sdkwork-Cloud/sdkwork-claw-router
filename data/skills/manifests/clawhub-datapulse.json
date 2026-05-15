@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22607,
+  "uuid": "skill-clawhub-datapulse",
+  "skillKey": "clawhub-datapulse",
+  "name": "DataPulse",
+  "summary": "Cross-platform content collection, web search, trending topics, confidence scoring, and watch/triage workflows for assistant and agent usage.",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datapulse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincent.sun",
+      "features": [
+        "Cross-platform content collection, web search, trending topics, confidence scoring, and watch/t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datapulse@0.8.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4455967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datapulse",
+      "url": "https://clawhub.ai/skills/datapulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datapulse",
+    "url": "https://clawhub.ai/skills/datapulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datapulse-7cbfef7507d823c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datapulse@0.8.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-datapulse-0.8.1.json",
+      "version": "0.8.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f70193126084e3ea9eba793425359e323cb9a7216972e7d1a19a26c19bb6de5a",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T12:58:45.234Z"
+}

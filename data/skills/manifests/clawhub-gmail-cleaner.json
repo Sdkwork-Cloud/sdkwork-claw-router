@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18790,
+  "uuid": "skill-clawhub-gmail-cleaner",
+  "skillKey": "clawhub-gmail-cleaner",
+  "name": "Gmail Cleaner",
+  "summary": "Clean and organize Gmail accounts in bulk. Use when asked to clean Gmail, remove spam, trash newsletters/promotional emails, bulk-delete emails by sender, cr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cedarscy",
+      "features": [
+        "Clean and organize Gmail accounts in bulk",
+        "Use when asked to clean Gmail, remove spam, trash newsletters/promotional emails, bulk-delete e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-cleaner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258847519?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-cleaner",
+      "url": "https://clawhub.ai/skills/gmail-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-cleaner",
+    "url": "https://clawhub.ai/skills/gmail-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-cleaner-fd8fc987d083a81f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-cleaner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-cleaner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dc92ec8e5cc17ee68cd008b3312cd172d84a2d8d37faddcbd7b48326df75e1f",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:35:35.810Z"
+}

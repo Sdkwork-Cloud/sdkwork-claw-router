@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53046,
+  "uuid": "skill-clawhub-mova-user-contract-setup",
+  "skillKey": "clawhub-mova-user-contract-setup",
+  "name": "Mova User Contract Setup",
+  "summary": "Walk the user through registering their own MOVA contract — from source_url to first successful run. Trigger when the user says \"register my contract\", \"add...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_user_contract_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergii Miasoiedov",
+      "features": [
+        "Walk the user through registering their own MOVA contract — from source_url to first successful.",
+        "Trigger when the user says \"register my contract\", \"add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mova-user-contract-setup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258828376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mova-user-contract-setup",
+      "url": "https://clawhub.ai/skills/mova-user-contract-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-user-contract-setup",
+    "url": "https://clawhub.ai/skills/mova-user-contract-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-user-contract-setup-4295a731edbfb7bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mova-user-contract-setup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mova-user-contract-setup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20991bf4927c78df60b18d72493eb60bb557bd68ca5fbc602e0bc8bcbb82651d",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:50:54.688Z"
+}

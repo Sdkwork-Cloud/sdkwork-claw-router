@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45286,
+  "uuid": "skill-clawhub-hihired-resume",
+  "skillKey": "clawhub-hihired-resume",
+  "name": "HiHired Resume",
+  "summary": "Turn HiHired (hihired.org) into a resume copilot workflow. Use when a user wants help building, importing, rewriting, tailoring, or improving a resume, gener...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hihired_resume",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flychicken",
+      "features": [
+        "Turn HiHired (hihired.org) into a resume copilot workflow",
+        "Use when a user wants help building, importing, rewriting, tailoring, or improving a resume, ge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hihired-resume@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37197214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hihired-resume",
+      "url": "https://clawhub.ai/skills/hihired-resume"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hihired-resume",
+    "url": "https://clawhub.ai/skills/hihired-resume",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hihired-resume-c1d470d87ba2ef4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hihired-resume@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hihired-resume-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da7da72f91d05d2d5dacd628572c537da13b73206dad5646904e32cb6a033b22",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T20:34:32.225Z"
+}

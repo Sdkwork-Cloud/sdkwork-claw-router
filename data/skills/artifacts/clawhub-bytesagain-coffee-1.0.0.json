@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bytesagain-coffee@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_coffee",
+  "skill": {
+    "id": 58273,
+    "skillKey": "clawhub-bytesagain-coffee",
+    "name": "Bytesagain Coffee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-coffee",
+    "url": "https://clawhub.ai/skills/bytesagain-coffee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-coffee-e39c8bdc04b5561b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional reference for specialty coffee brewing, bean origins, and ratios. 支持专业咖啡冲泡指南、粉水比计算及产地风味百科。100% technical documentation, no external dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774633422805,
+      "changelog": "Initial branded launch with clean content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed8ba46c8fe4f8f07159ad091e5483080bf21e8d4c2b70931f65d4445d2998cb"
+}

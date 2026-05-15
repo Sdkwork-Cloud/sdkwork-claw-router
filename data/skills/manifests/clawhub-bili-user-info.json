@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68195,
+  "uuid": "skill-clawhub-bili-user-info",
+  "skillKey": "clawhub-bili-user-info",
+  "name": "bili-user-info",
+  "summary": "查询B站用户的粉丝数、关注数和用户名；当用户需要查询B站UP主信息、分析B站账号数据或获取B站用户基本信息时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bili_user_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "末心",
+      "features": [
+        "查询B站用户的粉丝数、关注数和用户名；当用户需要查询B站UP主信息、分析B站账号数据或获取B站用户基本信息时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bili-user-info@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59173630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bili-user-info",
+      "url": "https://clawhub.ai/skills/bili-user-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bili-user-info",
+    "url": "https://clawhub.ai/skills/bili-user-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bili-user-info-dbfe78a2d1a02f35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bili-user-info@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bili-user-info-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f8952de0788cfb739f38fee938c7f5a046aec3bbc2ee3f8cac5b053fb27178e",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:07:01.195Z"
+}

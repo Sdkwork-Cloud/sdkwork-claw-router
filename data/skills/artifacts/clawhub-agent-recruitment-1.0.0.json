@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-recruitment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_recruitment",
+  "skill": {
+    "id": 64414,
+    "skillKey": "clawhub-agent-recruitment",
+    "name": "Agent Recruitment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-recruitment",
+    "url": "https://clawhub.ai/skills/agent-recruitment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-recruitment-1e84cddc287e67f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能体招聘技能。完整覆盖新Agent从需求确认、创建隔离工作区、模型配置、路由绑定到交付清单的全流程，适用于OpenClaw agent造册与HR管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "usewild2026",
+      "userId": "s17e9kcnx37zyfkrwch5mwxmyn869xyg",
+      "displayName": "YvesG",
+      "image": "https://avatars.githubusercontent.com/u/253240496?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778124033956,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72628dce27223840bb5a85f1623fa6f8f343468a9e068fec4b610247f2c52e7a"
+}

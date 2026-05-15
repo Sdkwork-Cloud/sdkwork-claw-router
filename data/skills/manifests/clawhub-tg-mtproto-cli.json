@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18152,
+  "uuid": "skill-clawhub-tg-mtproto-cli",
+  "skillKey": "clawhub-tg-mtproto-cli",
+  "name": "Telegram MTPROTO CLI",
+  "summary": "Read-only Telegram CLI via MTProto. Lists chats, fetches messages, downloads media, manages local accounts/sessions. Does not send messages or modify Telegra...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_mtproto_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyberash-dev",
+      "features": [
+        "Read-only Telegram CLI via MTProto",
+        "Lists chats, fetches messages, downloads media, manages local accounts/sessions",
+        "Does not send messages or modify Telegra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tg-mtproto-cli@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20923684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tg-mtproto-cli",
+      "url": "https://clawhub.ai/skills/tg-mtproto-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-mtproto-cli",
+    "url": "https://clawhub.ai/skills/tg-mtproto-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-mtproto-cli-63f5e33f4855aaad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tg-mtproto-cli@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tg-mtproto-cli-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fae9d0e1c8c09fe3c4c2911f40251c155cdad1cf16c3114b93e6dc7f568bf8a6",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T01:06:59.793Z"
+}

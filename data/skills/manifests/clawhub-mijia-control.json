@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54820,
+  "uuid": "skill-clawhub-mijia-control",
+  "skillKey": "clawhub-mijia-control",
+  "name": "Mijia Control",
+  "summary": "Control Xiaomi Mi Home (米家) smart devices via Xiaomi Cloud API. Use when: user wants to control smart home devices (lights, AC, heater, bath heater, switches...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mijia_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PL Uncle",
+      "features": [
+        "Control Xiaomi Mi Home (米家) smart devices via Xiaomi Cloud API",
+        "Use when: user wants to control smart home devices (lights, AC, heater, bath heater, switches..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mijia-control@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10780985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mijia-control",
+      "url": "https://clawhub.ai/skills/mijia-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mijia-control",
+    "url": "https://clawhub.ai/skills/mijia-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mijia-control-61ec68e0b747ffdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mijia-control@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mijia-control-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d74b877c04f476a6eaee926168932df1eb677ae929e6c8d1a4e8e7ab74d39b7",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:22:37.205Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plan-c@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plan_c",
+  "skill": {
+    "id": 72228,
+    "skillKey": "clawhub-plan-c",
+    "name": "Plan C"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plan-c",
+    "url": "https://clawhub.ai/skills/plan-c",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plan-c-c6d8b30b8cc1ba87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "于已有规划文件继续对话：智能识别“显式文件加载”意图，优先提供状态总结，支持按需深度迭代。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "9talk",
+      "userId": "publishers:9talk",
+      "displayName": "Xin Ding",
+      "image": "https://avatars.githubusercontent.com/u/74651863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1772795477377,
+      "changelog": "plan-c 1.0.9 更新日志\n\n- 优化“模式二”下的规划文件更新，强调根据文件结构和内容灵活增量更新\n- 补充约束：新增“安全红线”，再次强调禁止自动生成代码，只有在用户明确指令并规划就绪时才允许编码\n- 路由规则增强：路径判定时，支持用户输入或上下文中携带路径皆触发快速加载模式\n- 精简“规划迭代”流程，不再强制要求更新 TODO 列表，强调移除已解决关键点\n- 文档表述更清晰，流程和约束描述更加准确",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc19bf6fec391f8f04a26d850ff7467bc171bb19426bbbe320657893bb8deedd"
+}

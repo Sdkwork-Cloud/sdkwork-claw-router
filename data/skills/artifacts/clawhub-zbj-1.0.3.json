@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zbj@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zbj",
+  "skill": {
+    "id": 70401,
+    "skillKey": "clawhub-zbj",
+    "name": "猪八戒网官方技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zbj",
+    "url": "https://clawhub.ai/skills/zbj",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zbj-d1e6afadeb0a4a1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "猪八戒网(ZBJ) MCP服务器 - AI智能需求发布、订单管理、服务搜索、类目匹配，连接百万服务商的一站式威客平台"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nylk",
+      "userId": "s17dag29mmnhw1tsfdy5rseaa983g7nn",
+      "displayName": "nylk",
+      "image": "https://avatars.githubusercontent.com/u/22463933?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774592980575,
+      "changelog": "zbj v1.0.3\n\n- 增加自动依赖安装命令（install 字段）和 npm 支持，无需手动 npm install\n- 增加 npm 作为运行时必需二进制要求\n- 强化沙箱隔离及声明 autonomous: false，限制自动化运行\n- 文档中新增了安全说明、API Key 使用建议和权限详细说明\n- 添加故障排查与常见问题解答\n- 优化环境变量和 API Key 配置方法展示\n- 其他细节文本优化，提高易用性和安全性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:370b879084e2cd2e79dbc76e00e48b4ed4e7f317930ddef6ea92cb3c74068771"
+}

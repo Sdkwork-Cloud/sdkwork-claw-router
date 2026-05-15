@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49645,
+  "uuid": "skill-clawhub-autoskill-local-skill-manager",
+  "skillKey": "clawhub-autoskill-local-skill-manager",
+  "name": "AutoSkill Local Skill Manager",
+  "summary": "Manage local Agent Skill files as an installable skill manager. Proactively and periodically detect reusable skill material during or after meaningful sessio...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoskill_local_skill_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jie Zhou",
+      "features": [
+        "Manage local Agent Skill files as an installable skill manager",
+        "Proactively and periodically detect reusable skill material during or after meaningful sessio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autoskill-local-skill-manager@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17310840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autoskill-local-skill-manager",
+      "url": "https://clawhub.ai/skills/autoskill-local-skill-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoskill-local-skill-manager",
+    "url": "https://clawhub.ai/skills/autoskill-local-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoskill-local-skill-manager-1d501fd3b483d891.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autoskill-local-skill-manager@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-autoskill-local-skill-manager-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79c2c06dc47bd1cbd87f3c47a6df7fd41d2ef5ba57bf258e8a172bed3c3cd6c0",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:39:34.545Z"
+}

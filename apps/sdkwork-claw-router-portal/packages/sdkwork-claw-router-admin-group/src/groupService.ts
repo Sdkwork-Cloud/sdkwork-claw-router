@@ -52,33 +52,33 @@ export type GroupUpdateInput = {
 
 export class GroupService {
   static async fetchGroups(): Promise<GroupData[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchGroups();
+    const result = await getClawRouterBackendSdkClient().iam.accessGroups.list();
     ensurePlusApiSuccess(result, 'Failed to fetch groups');
     return readRequiredApiItems(result, 'Failed to fetch groups')
       .map(normalizeGroup);
   }
 
   static async addGroup(group: GroupCreateInput): Promise<GroupData> {
-    const result = await getClawRouterBackendSdkClient().router.addGroup(
+    const result = await getClawRouterBackendSdkClient().iam.accessGroups.create(
       toCreateGroupRequest(group),
-      requestToken('admin-group-create'),
+      requestParams('admin-group-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add group');
     return normalizeGroup(readRequiredApiItem(result, 'Created group response is missing data'));
   }
 
   static async updateGroup(id: string, updates: GroupUpdateInput): Promise<GroupData> {
-    const result = await getClawRouterBackendSdkClient().router.updateGroup(
+    const result = await getClawRouterBackendSdkClient().iam.accessGroups.update(
       requiredSafePathSegment(id, 'groupId'),
       toUpdateGroupRequest(updates),
-      requestToken('admin-group-update'),
+      requestParams('admin-group-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update group');
     return normalizeGroup(readRequiredApiItem(result, 'Updated group response is missing data'));
   }
 
   static async deleteGroup(id: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().router.deleteGroup(
+    const result = await getClawRouterBackendSdkClient().iam.accessGroups.delete(
       requiredSafePathSegment(id, 'groupId'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete group');
@@ -170,8 +170,8 @@ function pruneUndefined<T extends Record<string, unknown>>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
 }
 
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
+function requestParams(scope: string): { xRequestId: string } {
+  return { xRequestId: createRequestToken(scope) };
 }
 
 function normalizeGroup(value: unknown): GroupData {

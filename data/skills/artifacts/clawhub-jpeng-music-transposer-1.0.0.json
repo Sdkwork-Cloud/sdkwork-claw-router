@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-music-transposer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_music_transposer",
+  "skill": {
+    "id": 40558,
+    "skillKey": "clawhub-jpeng-music-transposer",
+    "name": "music-transposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-music-transposer",
+    "url": "https://clawhub.ai/skills/jpeng-music-transposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-music-transposer-a93d68d2e52de7cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transpose music keys"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774411375572,
+      "changelog": "- Initial release of jpeng-music-transposer.\n- Allows users to transpose music keys.\n- Provides command-line interface for processing input and output files.\n- Supports automation of music transpose tasks.\n- Outputs results in JSON format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25555d250c5d90af2136db85b0bfe821560056cd4655d8a54860d42aefd250bb"
+}

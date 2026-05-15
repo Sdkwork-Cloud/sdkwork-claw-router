@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wander-monitor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wander_monitor",
+  "skill": {
+    "id": 24178,
+    "skillKey": "clawhub-wander-monitor",
+    "name": "Wander Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wander-monitor",
+    "url": "https://clawhub.ai/skills/wander-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wander-monitor-5eb831c1b89e4c0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides use of Wander to monitor GitHub Actions without polling. Use when the user pushes code and wants CI notifications, asks how to watch workflows, avoid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erergb",
+      "userId": "s170n6kt6mnj23cdj5tfd84tmx83qdqq",
+      "displayName": "ERerGB",
+      "image": "https://avatars.githubusercontent.com/u/98926814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774170270170,
+      "changelog": "CD: eba8a91ba7bd65cc6b6a81c6119bcdbc66b0b14c",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98c483b28028af77de2720f9c99167ed61c05820c078cf96feb563ca5ec4a94e"
+}

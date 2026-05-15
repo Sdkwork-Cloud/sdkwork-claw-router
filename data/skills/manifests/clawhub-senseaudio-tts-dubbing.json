@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71427,
+  "uuid": "skill-clawhub-senseaudio-tts-dubbing",
+  "skillKey": "clawhub-senseaudio-tts-dubbing",
+  "name": "senseaudio的tts工具，根据用户需求生成文案完成配音",
+  "summary": "Use when: 用户说“文本转语音”“生成配音”“朗读文案”“生成短视频旁白”时触发。 适用于营销内容与短视频配音场景：将文案快速转换为可直接用于剪辑的软件配音文件，并支持音色、语速、音调、音量和输出格式控制。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.senseaudio_tts_dubbing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KLilyZ",
+      "features": [
+        "Use when: 用户说“文本转语音”“生成配音”“朗读文案”“生成短视频旁白”时触发。 适用于营销内容与短视频配音场景：将文案快速转换为可直接用于剪辑的软件配音文件，并支持音色、语速、音."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/senseaudio-tts-dubbing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106950436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "senseaudio-tts-dubbing",
+      "url": "https://clawhub.ai/skills/senseaudio-tts-dubbing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "senseaudio-tts-dubbing",
+    "url": "https://clawhub.ai/skills/senseaudio-tts-dubbing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/senseaudio-tts-dubbing-1760f47b4d26df80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/senseaudio-tts-dubbing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-senseaudio-tts-dubbing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac8d04c2e92381f4f36cf9d8f69e365562c7a364e3c8284db11d6c41fea1b9d9",
+      "artifactSizeBytes": 2740
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:22:56.198Z"
+}

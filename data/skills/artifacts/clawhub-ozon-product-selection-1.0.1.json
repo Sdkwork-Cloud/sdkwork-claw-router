@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ozon-product-selection@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ozon_product_selection",
+  "skill": {
+    "id": 65652,
+    "skillKey": "clawhub-ozon-product-selection",
+    "name": "ozon-product-selection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ozon-product-selection",
+    "url": "https://clawhub.ai/skills/ozon-product-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ozon-product-selection-9a1ed4a5decc06ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ozon电商选品工具：根据用户指定的品类，自动搜索市场趋势、提取热门细分关键词、 调用1688搜索API逐一选品，按筛选条件过滤后输出每个细分市场的最优商品推荐。 触发词：寻找Ozon蓝海商品、Ozon潜力爆品、Ozon可铺货商品、Ozon可卖的货盘、 Ozon选品、帮我选品、找Ozon能卖的商品、Ozon热门商..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1688aiinfra",
+      "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+      "displayName": "1688AiInfra",
+      "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774260396244,
+      "changelog": "- 增加了详细的使用说明，包括环境变量配置、前置条件与异常（欠费）处理\n- 完善了工作流程的每一步，从意图解析、市场趋势搜索、关键词提取到API调用与最终输出展示\n- 明确商品输出格式模板，要求SKU明细完整渲染并给出汇总表\n- 补充无结果处理方式与筛选参数说明\n- 强调API密钥必填、API欠费的流程中断提示，以及用户品类/密钥缺失时的交互规定",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7dbf91955c21dc7e9f0a692f3a092a35dc6f2af3e4dd9c5b5f48a1ad068df9c"
+}

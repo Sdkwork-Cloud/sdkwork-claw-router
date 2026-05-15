@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34447,
+  "uuid": "skill-clawhub-2chat",
+  "skillKey": "clawhub-2chat",
+  "name": "2Chat",
+  "summary": "2Chat integration. Manage data, records, and automate workflows. Use when the user wants to interact with 2Chat data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.2chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "2Chat integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with 2Chat data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/2chat@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "2chat",
+      "url": "https://clawhub.ai/skills/2chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "2chat",
+    "url": "https://clawhub.ai/skills/2chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/2chat-cabae1e22ee58221.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/2chat@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-2chat-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c9f85e48d50661e5ae263326e1918bc583b9ffcc0abc336884382de06fca1ad",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:06:51.755Z"
+}

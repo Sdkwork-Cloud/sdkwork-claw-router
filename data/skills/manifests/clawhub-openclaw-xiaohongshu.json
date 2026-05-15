@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73430,
+  "uuid": "skill-clawhub-openclaw-xiaohongshu",
+  "skillKey": "clawhub-openclaw-xiaohongshu",
+  "name": "开源小红书技能",
+  "summary": "个人小红书内容与账号管理技能。提供发布笔记、编辑笔记、获取数据、账号管理等核心功能。适用于发布图文/视频笔记、管理评论互动、查询数据分析、管理账号信息、批量处理小红书内容等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_xiaohongshu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "吴佳浩",
+      "features": [
+        "个人小红书内容与账号管理技能。提供发布笔记、编辑笔记、获取数据、账号管理等核心功能。适用于发布图文/视频笔记、管理评论互动、查询数据分析、管理账号信息、批量处理小红书内容等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-xiaohongshu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35291372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-xiaohongshu",
+      "url": "https://clawhub.ai/skills/openclaw-xiaohongshu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-xiaohongshu",
+    "url": "https://clawhub.ai/skills/openclaw-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-xiaohongshu-a08ceffeb4cd0968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-xiaohongshu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-xiaohongshu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dc8b1399af49150a8a33ea8e3dc6de5e6328d2a7b4e62cd2e6af982b7e7512e",
+      "artifactSizeBytes": 2565
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:56:55.797Z"
+}

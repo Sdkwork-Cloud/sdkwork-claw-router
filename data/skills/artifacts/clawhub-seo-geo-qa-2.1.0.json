@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-geo-qa@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_geo_qa",
+  "skill": {
+    "id": 27168,
+    "skillKey": "clawhub-seo-geo-qa",
+    "name": "Seo Geo Qa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-geo-qa",
+    "url": "https://clawhub.ai/skills/seo-geo-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-geo-qa-a4d00b208fee02cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check blog posts and articles before publishing. Finds broken links, weak sources, missing SEO elements, and citation problems. Use when: reviewing a draft,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justinbao19",
+      "userId": "s17ebpn7t4t159b4p4hdpajeah83n85q",
+      "displayName": "justinbao19",
+      "image": "https://avatars.githubusercontent.com/u/97433668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775194682509,
+      "changelog": "Add Jina Reader fallback for SERP search and competitor page fetching — bypasses Cloudflare and anti-bot protection without any API key. Expand STOPWORDS to filter Jina metadata noise from missing-concepts report. Fix FAQ detection to recognize **Q:** bold format (not just headings). Add --no-jina flag to opt out of Jina for restricted/private network environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62235552ece30422a94b81ec282596745ef63a4d4cc80ffae01f19fffc71789f"
+}

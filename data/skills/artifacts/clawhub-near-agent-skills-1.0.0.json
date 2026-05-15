@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/near-agent-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_agent_skills",
+  "skill": {
+    "id": 18912,
+    "skillKey": "clawhub-near-agent-skills",
+    "name": "NEAR Agent Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-agent-skills",
+    "url": "https://clawhub.ai/skills/near-agent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-agent-skills-16fc58fa5fdeb38e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive agentic skills for NEAR Protocol, including gas optimization and on-chain analytics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mastrophot",
+      "userId": "publishers:mastrophot",
+      "displayName": "mastrophot",
+      "image": "https://avatars.githubusercontent.com/u/97950920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 652,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771299026196,
+      "changelog": "Initial release of Gas Optimizer and On-Chain Analytics skills for NEAR Protocol.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:473ef223b1e57dbcde5cd85c737f3f30b8c9a836f0cd7cd1261909fe33075fba"
+}

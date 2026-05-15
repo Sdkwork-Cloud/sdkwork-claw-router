@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gnview-script-extraction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gnview_script_extraction",
+  "skill": {
+    "id": 68372,
+    "skillKey": "clawhub-gnview-script-extraction",
+    "name": "gnview-script-extraction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gnview-script-extraction",
+    "url": "https://clawhub.ai/skills/gnview-script-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gnview-script-extraction-815a5bab86a45a97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本工具实现本地视频文件的上传与脚本分析，使用大模型支持对视频进行分析，同时支持自定义分析提示词，适配多种抖音/视频数据分析场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gnview",
+      "userId": "s17e6dwjqbqzw48xnfxcne8d8x84hatt",
+      "displayName": "gnview",
+      "image": "https://avatars.githubusercontent.com/u/271757886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775914851419,
+      "changelog": "- Major update: the skill now provides local video upload and script analysis using a large model, supporting custom prompts for various Douyin/video data analysis scenarios.\n- Added script scripts/script-extraction.py for uploading and analyzing local MP4 video files with API key authentication.\n- Removed legacy files: config.json and return-data/api/douyin/web/fetch_user_post_videos.json.\n- Updated documentation to describe new CLI usage for uploading and analyzing videos, prompt customization, and output formats.\n- Dependency requirements updated: Python 3.7+ and requests library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d40595500abbdae458abc7357c09090744c1a5bce3b8af767fd35869cdba7400"
+}

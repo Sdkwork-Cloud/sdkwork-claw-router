@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40084,
+  "uuid": "skill-clawhub-vmware-storage",
+  "skillKey": "clawhub-vmware-storage",
+  "name": "Vmware Storage",
+  "summary": "Use this skill whenever the user needs to manage VMware storage — datastores, iSCSI targets, and vSAN clusters. Directly handles: browse datastores, scan for...",
+  "version": "1.5.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_storage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zw008",
+      "features": [
+        "Use this skill whenever the user needs to manage VMware storage — datastores, iSCSI targets, an.",
+        "Directly handles: browse datastores, scan for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vmware-storage@1.5.22",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10613299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vmware-storage",
+      "url": "https://clawhub.ai/skills/vmware-storage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-storage",
+    "url": "https://clawhub.ai/skills/vmware-storage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-storage-a366dc10ce4990ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vmware-storage@1.5.22",
+      "artifactUrl": "data/skills/artifacts/clawhub-vmware-storage-1.5.22.json",
+      "version": "1.5.22",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3518b168b46eb78508768a92c2df412755c1c92da42bd68b6ced8d1710b8d5d",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T23:25:04.215Z"
+}

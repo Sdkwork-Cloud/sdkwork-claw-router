@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26830,
+  "uuid": "skill-clawhub-agent-paddleocr-vision",
+  "skillKey": "clawhub-agent-paddleocr-vision",
+  "name": "Agent Paddleocr Vision",
+  "summary": "Multi-language document understanding with PaddleOCR",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_paddleocr_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Allen Niu",
+      "features": [
+        "Multi-language document understanding with PaddleOCR"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-paddleocr-vision@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130979060?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-paddleocr-vision",
+      "url": "https://clawhub.ai/skills/agent-paddleocr-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-paddleocr-vision",
+    "url": "https://clawhub.ai/skills/agent-paddleocr-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-paddleocr-vision-4ea459be618b2514.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-paddleocr-vision@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-paddleocr-vision-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc8e69c78bd7787eb4d1cfca6cfe37f986c7e8bb0855d9717a553fbb39fc9bc9",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:07:26.148Z"
+}

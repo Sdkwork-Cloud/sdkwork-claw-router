@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-framework-azure-ai-py@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_framework_azure_ai_py",
+  "skill": {
+    "id": 10938,
+    "skillKey": "clawhub-agent-framework-azure-ai-py",
+    "name": "Agent Framework Azure Ai Py"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-framework-azure-ai-py",
+    "url": "https://clawhub.ai/skills/agent-framework-azure-ai-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-framework-azure-ai-py-f360c21a522fbd4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (agent-framework-azure-ai). Use when creating persistent agents with AzureAIAgentsProvider, using hosted tools (code interpreter, file search, web search), integr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thegovind",
+      "userId": "publishers:thegovind",
+      "displayName": "thegovind",
+      "image": "https://avatars.githubusercontent.com/u/18152044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769835739571,
+      "changelog": "Initial release — Build Azure AI Foundry agents with Microsoft Agent Framework (Python) and rich Azure-hosted tools.\n\n- Enables creation of persistent Azure AI agents using Python SDK.\n- Supports hosted tools: code interpreter, file search, and web search.\n- Integrates with MCP servers and manages conversation threads for persistent chat.\n- Provides streaming response support and structured output formats.\n- Includes comprehensive usage instructions and implementation examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f1b17a50343e106bbe9527a8dc2b45c2cce73f2096d794010cda7f12f386986"
+}

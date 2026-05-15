@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cli-qr-refiner@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_qr_refiner",
+  "skill": {
+    "id": 56753,
+    "skillKey": "clawhub-cli-qr-refiner",
+    "name": "Cli Qr Refiner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-qr-refiner",
+    "url": "https://clawhub.ai/skills/cli-qr-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-qr-refiner-9fc4e0f190e272f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional utility to refine terminal-based ASCII QR code blocks (█, ▀, ▄) into high-definition PNG images."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jdchi",
+      "userId": "s17fheex2s1vvmq5zvezbkds0x83gnpr",
+      "displayName": "JDChi",
+      "image": "https://avatars.githubusercontent.com/u/14227606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774586881202,
+      "changelog": "Version 2.0.0 — Major update: Migration from Node.js/JavaScript to Python for improved simplicity and compatibility.\n\n- Switched implementation from JavaScript (Node.js) to Python 3, removing external dependencies.\n- New script: `cli_qr_refiner.py` replaces the old `.js` version.\n- Now uses the Pillow (PIL) library—commonly pre-installed with Python—for image generation.\n- Updated documentation and usage instructions for the new Python-based workflow.\n- Node.js and npm dependencies are no longer required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd5b059425e1580c64020c423d617d589af90650d6eae6fe67374c7426250d70"
+}

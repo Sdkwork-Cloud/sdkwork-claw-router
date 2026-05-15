@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32438,
+  "uuid": "skill-clawhub-section",
+  "skillKey": "clawhub-section",
+  "name": "Section",
+  "summary": "Section integration. Manage data, records, and automate workflows. Use when the user wants to interact with Section data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.section",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Section integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Section data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/section@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "section",
+      "url": "https://clawhub.ai/skills/section"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "section",
+    "url": "https://clawhub.ai/skills/section",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/section-3fb45623cb3075a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/section@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-section-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b36a5804e38189665bb6adb301cdbe35fb4c4c8d718ef6d6d6daf7974ed43a6b",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:38:45.250Z"
+}

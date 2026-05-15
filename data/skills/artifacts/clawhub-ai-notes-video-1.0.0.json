@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-notes-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_notes_video",
+  "skill": {
+    "id": 9995,
+    "skillKey": "clawhub-ai-notes-video",
+    "name": "AI Notes Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-notes-video",
+    "url": "https://clawhub.ai/skills/ai-notes-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-notes-video-0d82973087e0260f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate detailed AI notes including document, outline, and image-text formats from a user-provided video URL using Baidu's video AI notes tool."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baiduqianfangroup",
+      "userId": "s17bw36gp41wr28y5qgqmsbj29842pe2",
+      "displayName": "baidu_qianfan",
+      "image": "https://avatars.githubusercontent.com/u/41750260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2773,
+      "installsAllTime": 16,
+      "installsCurrent": 13,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770276286011,
+      "changelog": "- Initial release of ai-notes-of-video.\n- Enables generation of AI notes (document, outline, and image-text) from a user-provided video URL using Baidu's API.\n- Supports task creation and status/result querying via dedicated Python scripts and API calls.\n- Requires a valid BAIDU_API_KEY environment variable for operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:36150328d35814493a6ff848401cc5707fadcc461a3d8e23bc435f013bebf257"
+}

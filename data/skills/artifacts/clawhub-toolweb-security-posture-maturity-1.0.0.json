@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-security-posture-maturity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_security_posture_maturity",
+  "skill": {
+    "id": 42020,
+    "skillKey": "clawhub-toolweb-security-posture-maturity",
+    "name": "Security Posture Maturity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-security-posture-maturity",
+    "url": "https://clawhub.ai/skills/toolweb-security-posture-maturity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-security-posture-maturity-0f2758e38ce1627b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional multi-dimensional security maturity evaluation platform that assesses organizational security across eight critical domains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774885677489,
+      "changelog": "Initial release of the Security Posture Maturity Assessment API.\n\n- Provides comprehensive maturity assessment across eight key security domains.\n- Returns detailed domain scores, overall maturity level, and improvement recommendations.\n- Includes endpoints for assessment submission, domain definitions, and maturity level descriptions.\n- Designed for security audits, compliance preparation, and ongoing security benchmarking.\n- Tiered pricing plans for a range of organizational needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a041d96ca5756488c107f56666c45743f550fb4ff4658c5905cffb6b3438dc88"
+}

@@ -23,7 +23,7 @@ async fn app_skills_catalog_route_returns_sdk_contract_items() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/skills?keyword=router&pageNo=1&pageSize=20")
+                .uri("/app/v3/api/ecosystem/skills?search_query=router&page=1&page_size=20")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -64,7 +64,7 @@ async fn app_skills_detail_route_returns_direct_item_data() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/skills/routing-skill")
+                .uri("/app/v3/api/ecosystem/skills/routing-skill")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -93,7 +93,7 @@ async fn app_skills_categories_route_returns_string_items() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/skills/categories")
+                .uri("/app/v3/api/ecosystem/skills/categories")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -122,7 +122,7 @@ async fn app_skills_my_route_returns_user_installations() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/skills/my")
+                .uri("/app/v3/api/ecosystem/skills/mine")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -158,7 +158,7 @@ async fn app_skills_enable_route_installs_or_reenables_skill() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/app/v3/api/skills/routing-skill/enable")
+                .uri("/app/v3/api/ecosystem/skills/routing-skill/enable")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -190,7 +190,7 @@ async fn app_skills_disable_route_disables_existing_installation() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/app/v3/api/skills/routing-skill/disable")
+                .uri("/app/v3/api/ecosystem/skills/routing-skill/disable")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -220,7 +220,7 @@ async fn app_skills_config_route_rejects_non_object_config() {
         .oneshot(
             Request::builder()
                 .method("PUT")
-                .uri("/app/v3/api/skills/routing-skill/config")
+                .uri("/app/v3/api/ecosystem/skills/routing-skill/config")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -248,7 +248,7 @@ async fn app_skills_config_route_rejects_reserved_portal_metadata() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/app/v3/api/skills/routing-skill/enable")
+                .uri("/app/v3/api/ecosystem/skills/routing-skill/enable")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -280,7 +280,7 @@ async fn app_skills_config_route_rejects_reserved_portal_metadata_inside_arrays(
         .oneshot(
             Request::builder()
                 .method("PUT")
-                .uri("/app/v3/api/skills/routing-skill/config")
+                .uri("/app/v3/api/ecosystem/skills/routing-skill/config")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -314,7 +314,7 @@ async fn app_skills_config_route_updates_existing_installation_config() {
         .oneshot(
             Request::builder()
                 .method("PUT")
-                .uri("/app/v3/api/skills/routing-skill/config")
+                .uri("/app/v3/api/ecosystem/skills/routing-skill/config")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -339,7 +339,7 @@ async fn app_skills_detail_route_reports_missing_skill_as_not_found() {
     let response = router
         .oneshot(
             Request::builder()
-                .uri("/app/v3/api/skills/missing-skill")
+                .uri("/app/v3/api/ecosystem/skills/missing-skill")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")

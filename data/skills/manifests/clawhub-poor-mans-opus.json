@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33082,
+  "uuid": "skill-clawhub-poor-mans-opus",
+  "skillKey": "clawhub-poor-mans-opus",
+  "name": "Poor Mans Opus",
+  "summary": "Give your AI agent a personality. Complete behavioral profile via I-Lang ::GENE{} protocol. Six gene blocks: identity, security, communication, capability, m...",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poor_mans_opus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mtmpss",
+      "features": [
+        "Give your AI agent a personality",
+        "Complete behavioral profile via I-Lang ::GENE{} protocol",
+        "Six gene blocks: identity, security, communication, capability, m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poor-mans-opus@2.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118411498?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poor-mans-opus",
+      "url": "https://clawhub.ai/skills/poor-mans-opus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poor-mans-opus",
+    "url": "https://clawhub.ai/skills/poor-mans-opus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poor-mans-opus-05b3cc6cfa48c09b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poor-mans-opus@2.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-poor-mans-opus-2.0.8.json",
+      "version": "2.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:546a31bafba3b026ac79ca9136993ddf014fc43cf63f7a5e56236a2b2bd83f99",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T21:02:00.973Z"
+}

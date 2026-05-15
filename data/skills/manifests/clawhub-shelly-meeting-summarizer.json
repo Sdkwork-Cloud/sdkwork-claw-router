@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18386,
+  "uuid": "skill-clawhub-shelly-meeting-summarizer",
+  "skillKey": "clawhub-shelly-meeting-summarizer",
+  "name": "Meeting Notes Summarizer",
+  "summary": "Generates concise meeting summaries highlighting key decisions, action items with owners, follow-up dates, and a brief 3-sentence overview.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_meeting_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claudiodrusus",
+      "features": [
+        "Generates concise meeting summaries highlighting key decisions, action items with owners, follo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shelly-meeting-summarizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258132540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shelly-meeting-summarizer",
+      "url": "https://clawhub.ai/skills/shelly-meeting-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-meeting-summarizer",
+    "url": "https://clawhub.ai/skills/shelly-meeting-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-meeting-summarizer-e4bd0b4e64a97abc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shelly-meeting-summarizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shelly-meeting-summarizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a6735e19e5b304351d267321869eba7f74508c5d13b1e59dd91eccf038372e2",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:35:11.873Z"
+}

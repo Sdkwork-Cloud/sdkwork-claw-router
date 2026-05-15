@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66302,
+  "uuid": "skill-clawhub-feishu-send-files",
+  "skillKey": "clawhub-feishu-send-files",
+  "name": "Feishu Send Files",
+  "summary": "飞书文件批量发送技能，支持机器人触发和命令行调用，自动配置，零依赖",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_send_files",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangxusong637",
+      "features": [
+        "飞书文件批量发送技能，支持机器人触发和命令行调用，自动配置，零依赖"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-send-files@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252850179?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-send-files",
+      "url": "https://clawhub.ai/skills/feishu-send-files"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-send-files",
+    "url": "https://clawhub.ai/skills/feishu-send-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-send-files-dd4cf941783ea13a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-send-files@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-send-files-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d601bff928b6cc32a4e7d66f1e1e804338b346098303d9becc33c8fa7d69999e",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:45:14.484Z"
+}

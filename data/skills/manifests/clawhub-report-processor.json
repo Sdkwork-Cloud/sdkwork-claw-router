@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26955,
+  "uuid": "skill-clawhub-report-processor",
+  "skillKey": "clawhub-report-processor",
+  "name": "Report Processor",
+  "summary": "Automatically parse PDF/TXT research reports to extract key viewpoints, data, investment advice, risks, and generate summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_processor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangq0687",
+      "features": [
+        "Automatically parse PDF/TXT research reports to extract key viewpoints, data, investment advice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/report-processor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259998041?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "report-processor",
+      "url": "https://clawhub.ai/skills/report-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-processor",
+    "url": "https://clawhub.ai/skills/report-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-processor-af4469b827495295.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/report-processor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-report-processor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b3dc5b572b24aebf8c3f47f660d95132365883c5928e243816cda99e43cccc0",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T00:06:14.341Z"
+}

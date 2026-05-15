@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70093,
+  "uuid": "skill-clawhub-art-of-questioning",
+  "skillKey": "clawhub-art-of-questioning",
+  "name": "Art Of Questioning",
+  "summary": "培养洞察力和深度提问能力的双模式 Skill。 实战模式：分析用户正在学习/听/读的内容，自适应匹配 15+ 跨学科提问方法论， 生成 5 个关键环节的深度问题清单，每个问题标注方法论和认知层次。 训练模式：构造仿真场景，分环节教学讲解最佳提问方式，支持定时任务自动触发。 当用户需要深度理解内容、准备提问、练习批...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.art_of_questioning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangshan101-coder",
+      "features": [
+        "培养洞察力和深度提问能力的双模式 Skill。 实战模式：分析用户正在学习/听/读的内容，自适应匹配 15+ 跨学科提问方法论， 生成 5 个关键环节的深度问题清单，每个问题标注方法论和认知."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/art-of-questioning@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267524233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "art-of-questioning",
+      "url": "https://clawhub.ai/skills/art-of-questioning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "art-of-questioning",
+    "url": "https://clawhub.ai/skills/art-of-questioning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/art-of-questioning-f553aa5cdbb0c7a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/art-of-questioning@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-art-of-questioning-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:740d626c9b0a94a1d3761cb7a34a7a6544ef4bed041b29fc78e5a3bcd39e1253",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:05:08.673Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68296,
+  "uuid": "skill-clawhub-tianshu-xhs-note",
+  "skillKey": "clawhub-tianshu-xhs-note",
+  "name": "Tianshu XHS Note",
+  "summary": "把素材整理成小红书笔记结构：标题建议、正文分段、字数统计、话题标签草稿、合规小提示。 Use when: 用户要写小红书、排版笔记、加话题标签、控制字数；用户说「小红书文案」「笔记结构」「XHS」。 NOT for: 自动生成需深度创意的全文代写（可配合模型润色后再用本 skill 结构化）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_xhs_note",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianshu",
+      "features": [
+        "把素材整理成小红书笔记结构：标题建议、正文分段、字数统计、话题标签草稿、合规小提示。 Use when: 用户要写小红书、排版笔记、加话题标签、控制字数；用户说「小红书文案」「笔记结构」「X."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianshu-xhs-note@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100948785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianshu-xhs-note",
+      "url": "https://clawhub.ai/skills/tianshu-xhs-note"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-xhs-note",
+    "url": "https://clawhub.ai/skills/tianshu-xhs-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-xhs-note-dca15974de20f0fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianshu-xhs-note@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianshu-xhs-note-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b46588ab2abe7782a15fca56f6b9c91ea3387f6f2ac14107c1d438c729528b29",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:29:19.012Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15480,
+  "uuid": "skill-clawhub-mm-music-maker",
+  "skillKey": "clawhub-mm-music-maker",
+  "name": "mmMusicMaker",
+  "summary": "Create music with MiniMax music models (e.g., music-2.5). Use when generating songs or instrumental tracks from lyrics and style prompts, or when integrating...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm_music_maker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haolan He",
+      "features": [
+        "Create music with MiniMax music models (e.g., music-2.5)",
+        "Use when generating songs or instrumental tracks from lyrics and style prompts, or when integra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mm-music-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61172629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mm-music-maker",
+      "url": "https://clawhub.ai/skills/mm-music-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm-music-maker",
+    "url": "https://clawhub.ai/skills/mm-music-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-music-maker-54a63cef4574b70c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mm-music-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mm-music-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d03dba695292ce672d5cf7af16b59d430d7d693db99239d4854388fc407d3ce",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T11:10:21.221Z"
+}

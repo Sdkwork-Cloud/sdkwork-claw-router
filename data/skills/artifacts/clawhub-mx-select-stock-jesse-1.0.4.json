@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mx-select-stock-jesse@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_select_stock_jesse",
+  "skill": {
+    "id": 68038,
+    "skillKey": "clawhub-mx-select-stock-jesse",
+    "name": "Mx Select Stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-select-stock-jesse",
+    "url": "https://clawhub.ai/skills/mx-select-stock-jesse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-select-stock-jesse-41195e4e5d03ac27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于东方财富数据库的智能选股工具，支持按行情指标、财务指标等条件筛选股票。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessecq1995",
+      "userId": "s17fe78e4sg7hnt93xmyj48mc183hn4w",
+      "displayName": "Jessecq1995",
+      "image": "https://avatars.githubusercontent.com/u/185338792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774738169631,
+      "changelog": "妙想智能选股 (mx_select_stock) 1.0.4\n\n- 新增官方文档 SKILL.md，详细介绍了功能、配置方法与输出格式\n- 明确说明支持按行情与财务多维条件筛选股票\n- 增加官方主页、作者、API Key 使用说明\n- 规范输出文件目录与文件命名方式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e674701980dd00ede14e610c583c44ebb6f49c67340c9d3f8e4518681c1ed318"
+}

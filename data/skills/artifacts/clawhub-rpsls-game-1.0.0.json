@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rpsls-game@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rpsls_game",
+  "skill": {
+    "id": 29539,
+    "skillKey": "clawhub-rpsls-game",
+    "name": "Rock Paper Scissors Lizard Spock Game"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rpsls-game",
+    "url": "https://clawhub.ai/skills/rpsls-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rpsls-game-01aea55aebdbf554.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play the classic Rock Paper Scissors Lizard Spock game (popularized by The Big Bang Theory) with an AI opponent. Includes both decorated terminal and interac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akhmittra",
+      "userId": "s17deafs7w08t68k6mby7atcf9844e8c",
+      "displayName": "AM",
+      "image": "https://avatars.githubusercontent.com/u/42378320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775208570716,
+      "changelog": "Rock Paper Scissors Lizard Spock 1.0.0 – Initial Release\n\n- Play Rock Paper Scissors Lizard Spock with an AI opponent.\n- Offers decorated terminal UI (with ASCII art, colors, and animations) and interactive GUI modes.\n- Tracks scores and statistics across sessions.\n- Includes quick play commands and displays rules or stats on request.\n- Features best-of series for tournaments and persistent statistics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17c323516c45053370d0089eaadbb097aeb662bd24bce5e7e21d1ee9f5fc76ff"
+}

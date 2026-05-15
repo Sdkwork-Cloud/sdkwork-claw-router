@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54751,
+  "uuid": "skill-clawhub-ttf-converter",
+  "skillKey": "clawhub-ttf-converter",
+  "name": "Vertical Font Conversion （CHINESE）",
+  "summary": "Local-only skill for converting horizontal Chinese fonts into high-quality vertical-reading TTF fonts with a preview-first workflow, grouped glyph rules, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ttf_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aster-copilot",
+      "features": [
+        "Local-only skill for converting horizontal Chinese fonts into high-quality vertical-reading TTF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ttf-converter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270255916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ttf-converter",
+      "url": "https://clawhub.ai/skills/ttf-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ttf-converter",
+    "url": "https://clawhub.ai/skills/ttf-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ttf-converter-9975cd78e6b1cff2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ttf-converter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ttf-converter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:384ac407a1ae4b2e81b716900d23191fcc9d0869e779c1eed22852776330b1eb",
+      "artifactSizeBytes": 2337
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:56:10.238Z"
+}

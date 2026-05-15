@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26743,
+  "uuid": "skill-clawhub-imap-smtp-email-disabled",
+  "skillKey": "clawhub-imap-smtp-email-disabled",
+  "name": "Imap Smtp Email.Disabled",
+  "summary": "Read and send email via IMAP/SMTP. Check for new/unread messages, fetch content, search mailboxes, mark as read/unread, and send emails with attachments. Wor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imap_smtp_email_disabled",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "welderjustin",
+      "features": [
+        "Read and send email via IMAP/SMTP",
+        "Check for new/unread messages, fetch content, search mailboxes, mark as read/unread, and send e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imap-smtp-email-disabled@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24983613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imap-smtp-email-disabled",
+      "url": "https://clawhub.ai/skills/imap-smtp-email-disabled"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imap-smtp-email-disabled",
+    "url": "https://clawhub.ai/skills/imap-smtp-email-disabled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imap-smtp-email-disabled-5b6e11cf7d74bb36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imap-smtp-email-disabled@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imap-smtp-email-disabled-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c23262efde7366cb6dc152c4507838932f04a98a5073b2d1413a54692c9b6344",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T19:07:43.507Z"
+}

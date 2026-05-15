@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xdoc-translation@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xdoc_translation",
+  "skill": {
+    "id": 67566,
+    "skillKey": "clawhub-xdoc-translation",
+    "name": "xdoc-translation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xdoc-translation",
+    "url": "https://clawhub.ai/skills/xdoc-translation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xdoc-translation-8fa819d4c41ce830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供文档和文本翻译服务，支持多种文件格式、高质量翻译及术语库和记忆库管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangsongbai1",
+      "userId": "s177j0941n2y72pyertp05tvgs83kqat",
+      "displayName": "yangsongbai1",
+      "image": "https://avatars.githubusercontent.com/u/37282474?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773742589210,
+      "changelog": "- Added manifest.json to the skill.\n- No existing files were changed or removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a16bb0c62c6321c7b3751391539d61c02d60c448226832fa936488c6bf9638f5"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9600,
+  "uuid": "skill-clawhub-causal-inference",
+  "skillKey": "clawhub-causal-inference",
+  "name": "Causal Inference",
+  "summary": "Add causal reasoning to agent actions. Trigger on ANY high-level action with observable outcomes - emails, messages, calendar changes, file operations, API calls, notifications, reminders, purchases, deployments. Use for planning intervent.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.causal_inference",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oswalpalash",
+      "features": [
+        "Add causal reasoning to agent actions",
+        "Trigger on ANY high-level action with observable outcomes",
+        "emails, messages, calendar changes, file operations, API calls, notifications, reminders, purch.",
+        "Use for planning interventions, debugging failures, predicting outcomes, backfilling historical."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/causal-inference@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6431196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "causal-inference",
+      "url": "https://clawhub.ai/skills/causal-inference"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "causal-inference",
+    "url": "https://clawhub.ai/skills/causal-inference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/causal-inference-098f6d2a85519179.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/causal-inference@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-causal-inference-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:875b16957ccf090d7aa7fb9d70a1cfeb49e7704aaae939bb2f2246c3e3388c8a",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T07:56:32.860Z"
+}

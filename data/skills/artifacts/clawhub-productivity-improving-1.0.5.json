@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/productivity-improving@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productivity_improving",
+  "skill": {
+    "id": 14888,
+    "skillKey": "clawhub-productivity-improving",
+    "name": "Productivity Improving"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productivity-improving",
+    "url": "https://clawhub.ai/skills/productivity-improving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productivity-improving-f5232e488063526a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal productivity tracking and analysis skill. Records work and life activities via voice/text input, tracks time, categorizes tasks, and generates daily..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 980,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775129096808,
+      "changelog": "Replace the mispublished update manager with the intended productivity tracker skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5656ebe67be1178d9cb84b4e1597b5a1ed6ee1fb6e7ae70fbf2bc9619074d38"
+}

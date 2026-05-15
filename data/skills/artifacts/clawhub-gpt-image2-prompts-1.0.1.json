@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-image2-prompts@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image2_prompts",
+  "skill": {
+    "id": 66108,
+    "skillKey": "clawhub-gpt-image2-prompts",
+    "name": "GPT Image 2 Prompts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image2-prompts",
+    "url": "https://clawhub.ai/skills/gpt-image2-prompts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image2-prompts-a966bc7bfd0e26ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将用户需求转化为结构化高质量 GPT Image 2 提示词；支持专业/新手双模式、场景预设、多风格方案生成、迭代优化反馈；用于海报、人像、UI、插画等视觉创作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qomob",
+      "userId": "s1712hx0t1qgg41g18p2bb0d6583ms02",
+      "displayName": "qomob",
+      "image": "https://avatars.githubusercontent.com/u/194083399?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777764421034,
+      "changelog": "- 文档更新：将版本号和最新日期从 2024 更新为 2026，内容结构与功能保持不变。\n- 其余功能说明、预设、示例、使用说明无改动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c51d36ab307de3fd629c204d073e994a17935397006cf3ec2b45650ad709eb89"
+}

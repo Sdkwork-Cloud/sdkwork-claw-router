@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopee-to-notion-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopee_to_notion_sync",
+  "skill": {
+    "id": 44559,
+    "skillKey": "clawhub-shopee-to-notion-sync",
+    "name": "Shopee to Notion Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopee-to-notion-sync",
+    "url": "https://clawhub.ai/skills/shopee-to-notion-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopee-to-notion-sync-dbdb9e056b14659e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync Shopee products into Notion using the local Node.js workflow only."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cbbathaglini",
+      "userId": "s172pz7s3wpxyc37p0x7vjnkfh84cvnf",
+      "displayName": "Carine Bertagnolli Bathaglini",
+      "image": "https://avatars.githubusercontent.com/u/29007904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775604575072,
+      "changelog": "Initial release of Shopee-Notion Sync skill:\n\n- Enables syncing Shopee products into Notion using a local Node.js workflow.\n- Supports searching, saving, updating, and syncing Shopee product data directly to Notion tables.\n- Enforces use of a single Node.js command; prohibits use of web, browser, curl, Python, shell scripts, scraping, or generated data.\n- Sets default target as `shopee_produtos` and default limit as `10`.\n- Response includes only: keyword used, target used, created, updated, and failed counts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d0d0e81ffabad8570823b61258ccaacc077002b234027435891376031be6681"
+}

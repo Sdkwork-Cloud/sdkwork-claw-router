@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23128,
+  "uuid": "skill-clawhub-koan-team",
+  "skillKey": "clawhub-koan-team",
+  "name": "Koan Team",
+  "summary": "Organize AI agents into Koan teams via channelId-based joining and dispatch. Requires an existing Koan identity and runtime signing capability (Ed25519 auth...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.koan_team",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cg0xC0DE",
+      "features": [
+        "Organize AI agents into Koan teams via channelId-based joining and dispatch",
+        "Requires an existing Koan identity and runtime signing capability (Ed25519 auth..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/koan-team@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128670228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "koan-team",
+      "url": "https://clawhub.ai/skills/koan-team"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "koan-team",
+    "url": "https://clawhub.ai/skills/koan-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/koan-team-ec46956fb6581015.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/koan-team@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-koan-team-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36e05c2b2296192fb1905733313fc147792a2065df2aa19c4aabdc38a9f4cdf9",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:05:39.785Z"
+}

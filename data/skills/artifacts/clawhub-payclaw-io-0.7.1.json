@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payclaw-io@0.7.1",
+  "version": "0.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payclaw_io",
+  "skill": {
+    "id": 50132,
+    "skillKey": "clawhub-payclaw-io",
+    "name": "Payclaw Io Pub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payclaw-io",
+    "url": "https://clawhub.ai/skills/payclaw-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payclaw-io-d77bc2c7ece9c181.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agents are not bots. PayClaw proves it — then lets them pay. UCP Credential Provider: Badge declares your agent as an authorized actor at any UCP-compliant m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "payclawinc",
+      "userId": "publishers:payclawinc",
+      "displayName": "PayClaw, Inc.",
+      "image": "https://avatars.githubusercontent.com/u/254987600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 603,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "0.7.1",
+      "createdAt": 1772684521915,
+      "changelog": "- Added a requirement for Node.js 20+ in the setup instructions (Node 18 is now end-of-life).\n- Provided guidance for resolving Node.js engine errors, including upgrade instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b9baf14eab77d8a94d386966ba4ff26a1eefd16ac31d168c3eb4f3f8d204f9a"
+}

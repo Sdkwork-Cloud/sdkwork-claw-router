@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent1@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent1",
+  "skill": {
+    "id": 35855,
+    "skillKey": "clawhub-self-improving-agent1",
+    "name": "Learning Capture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent1",
+    "url": "https://clawhub.ai/skills/self-improving-agent1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent1-f1e1415a5d016822.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture user corrections, failed tool runs, recurring gotchas, and useful lessons as short structured notes. Use when a mistake or workflow learning should b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brasco05",
+      "userId": "s177sz08tyrpncx75y5y4em2rn83v35v",
+      "displayName": "brasco05",
+      "image": "https://avatars.githubusercontent.com/u/256532966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778142154820,
+      "changelog": "Rework as conservative learning capture: remove hooks/scripts/templates, avoid autonomous wording, and keep notes redacted and approval-based.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:502bdc9d9a37cbc8674d95b3842d9c063743fc56fd3cd4ecc4897be61040ac49"
+}

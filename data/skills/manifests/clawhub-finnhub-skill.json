@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37506,
+  "uuid": "skill-clawhub-finnhub-skill",
+  "skillKey": "clawhub-finnhub-skill",
+  "name": "Finnhub Skill",
+  "summary": "Read-only market data skill for Finnhub. Use when the user wants stock, forex, crypto, company profile, candles/K-lines, news, earnings, or economic calendar...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finnhub_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samlin425",
+      "features": [
+        "Read-only market data skill for Finnhub",
+        "Use when the user wants stock, forex, crypto, company profile, candles/K-lines, news, earnings,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finnhub-skill@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1579210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finnhub-skill",
+      "url": "https://clawhub.ai/skills/finnhub-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finnhub-skill",
+    "url": "https://clawhub.ai/skills/finnhub-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finnhub-skill-20b300b158045177.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finnhub-skill@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finnhub-skill-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0658c384ad858b088891f1a5cdb48692f7b5a03448a290ad5532ac1f78796dcb",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:01:22.986Z"
+}

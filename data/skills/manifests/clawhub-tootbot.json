@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10258,
+  "uuid": "skill-clawhub-tootbot",
+  "skillKey": "clawhub-tootbot",
+  "name": "Tootbot",
+  "summary": "Publish content to Mastodon. Use when you need to post a Mastodon status.",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tootbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "behrangsa",
+      "features": [
+        "Publish content to Mastodon",
+        "Use when you need to post a Mastodon status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tootbot@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tootbot",
+      "url": "https://clawhub.ai/skills/tootbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tootbot",
+    "url": "https://clawhub.ai/skills/tootbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tootbot-c4366c5f30d5f379.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tootbot@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tootbot-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81b4ec442172211276b8c2b0eb3620038cf66d0e49f2f5390b1577d5bc1d5aae",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T08:58:04.945Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62718,
+  "uuid": "skill-clawhub-korean-invoice",
+  "skillKey": "clawhub-korean-invoice",
+  "name": "Korean Invoice",
+  "summary": "한국형 견적서/세금계산서 자동 생성 (사업자등록번호, 부가세 자동 계산)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korean_invoice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mupengi-bot",
+      "features": [
+        "한국형 견적서/세금계산서 자동 생성 (사업자등록번호, 부가세 자동 계산)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/korean-invoice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259087580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "korean-invoice",
+      "url": "https://clawhub.ai/skills/korean-invoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korean-invoice",
+    "url": "https://clawhub.ai/skills/korean-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korean-invoice-2f8d984d268f1090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/korean-invoice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-korean-invoice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be435ec9f095a71c312d5f325de5bb904fbcd906f113441cc958372c617eb7f6",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T15:38:29.980Z"
+}

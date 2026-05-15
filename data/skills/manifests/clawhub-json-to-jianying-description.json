@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61314,
+  "uuid": "skill-clawhub-json-to-jianying-description",
+  "skillKey": "clawhub-json-to-jianying-description",
+  "name": "Json To Jianying Description",
+  "summary": "将特定的JSON视频素材格式（包含oralBroadcastingList、materialList、bgmInfo等字段）转换为剪映API可用的自然语言视频描述。用于根据素材JSON生成视频制作指令，包括素材匹配、时间轴计算、字幕时间同步、特殊效果处理等。当用户发送包含oralBroadcastingList和...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_to_jianying_description",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2719040953",
+      "features": [
+        "将特定的JSON视频素材格式（包含oralBroadcastingList、materialList、bgmInfo等字段）转换为剪映API可用的自然语言视频描述。用于根据素材JSON生成视."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-to-jianying-description@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136092094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-to-jianying-description",
+      "url": "https://clawhub.ai/skills/json-to-jianying-description"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-to-jianying-description",
+    "url": "https://clawhub.ai/skills/json-to-jianying-description",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-to-jianying-description-11ef3cbc711303a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-to-jianying-description@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-to-jianying-description-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2901a882fbb04ae3589ebc29c6a3df9d9623c32ef4803541d5b725c5e5e3f817",
+      "artifactSizeBytes": 2676
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:41:02.334Z"
+}

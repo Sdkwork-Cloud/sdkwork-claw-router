@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15214,
+  "uuid": "skill-clawhub-web-mcp",
+  "skillKey": "clawhub-web-mcp",
+  "name": "WebMCP",
+  "summary": "WebMCP - Enable AI agents to interact with your web applications through structured tools. Implements the WebMCP standard for Next.js/React apps with tool re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "slemo54",
+      "features": [
+        "Enable AI agents to interact with your web applications through structured tools",
+        "Implements the WebMCP standard for Next.js/React apps with tool re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77224018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-mcp",
+      "url": "https://clawhub.ai/skills/web-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-mcp",
+    "url": "https://clawhub.ai/skills/web-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-mcp-a5d89e058c992abb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27c082931657b6fc0f177b80b814ca0db715598bff892ebafb4872d08e67c733",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T09:42:12.075Z"
+}

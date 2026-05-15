@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patek-philippe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patek_philippe",
+  "skill": {
+    "id": 43007,
+    "skillKey": "clawhub-patek-philippe",
+    "name": "Patek Philippe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patek-philippe",
+    "url": "https://clawhub.ai/skills/patek-philippe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patek-philippe-6917c3c9e96543b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information and analysis of Patek Philippe, covering its history, iconic collections, craftsmanship, and market positioning as a top Swiss..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776368840378,
+      "changelog": "- Initial release of the Patek Philippe brand knowledge skill.\n- Covers brand history, iconic series (Nautilus, Calatrava, Grand Complications), and key innovations.\n- Includes detailed explanations of craftsmanship, certification standards, and family-led independence.\n- Provides a comprehensive brand overview table with essential facts.\n- Designed for quick reference on Patek Philippe's legacy, signature models, and industry influence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:491822ecc4481595e3d863fd593ae82a33a756aed58968013db708980a32cffc"
+}

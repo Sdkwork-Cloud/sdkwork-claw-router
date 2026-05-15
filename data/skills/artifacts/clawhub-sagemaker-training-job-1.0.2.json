@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sagemaker-training-job@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sagemaker_training_job",
+  "skill": {
+    "id": 51629,
+    "skillKey": "clawhub-sagemaker-training-job",
+    "name": "SageMaker Training Job"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sagemaker-training-job",
+    "url": "https://clawhub.ai/skills/sagemaker-training-job",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sagemaker-training-job-71f7c5a335095616.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Submit ML training jobs to AWS SageMaker — package code, upload to S3, launch on GPU/CPU instances, poll status, download artifacts. Use when training machin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zyyhhxx",
+      "userId": "s17f73xb1ag98dkgxg2a1kewys849tg6",
+      "displayName": "zyyhhxx",
+      "image": "https://avatars.githubusercontent.com/u/11704130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775383247967,
+      "changelog": "Add homepage link to GitHub repo in skill metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49890b4de2dd2b5f7efa4a00a5ce6bacfa6eb7e5dbefd16630620c687ce49a42"
+}

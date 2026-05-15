@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-dual-staging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_dual_staging",
+  "skill": {
+    "id": 42387,
+    "skillKey": "clawhub-gate-exchange-dual-staging",
+    "name": "Gate Exchange Dual Investment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-dual-staging",
+    "url": "https://clawhub.ai/skills/gate-exchange-dual-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-dual-staging-782246f77aef533f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate dual investment skill. Use when the user asks about dual currency products, target price settlement, or placing dual orders. Triggers on 'dual investmen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaixianggeng",
+      "userId": "s17edzcx6za5g00fwmgwmkhrgd83yw5a",
+      "displayName": "gaixg",
+      "image": "https://avatars.githubusercontent.com/u/12163126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775473113107,
+      "changelog": "Initial release of Gate Exchange Dual Investment Skill.\n\n- Supports discovery, settlement simulation, and subscription to Gate's dual investment products.\n- Includes MCP tool integration for browsing dual plans, checking dual balances, listing dual orders, and placing dual investment orders.\n- Implements precise routing based on user intent keywords (e.g., sell-high, buy-low, dual orders).\n- Requires API key authentication and \"Earn:Write\" permission.\n- Includes product-specific risk and compliance safeguards in all workflow responses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:459b2478d1e687a4fc21ab9479e111621c9a753ff02eb279b07016d598b8e045"
+}

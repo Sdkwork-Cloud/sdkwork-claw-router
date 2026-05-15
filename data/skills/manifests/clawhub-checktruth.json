@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59270,
+  "uuid": "skill-clawhub-checktruth",
+  "skillKey": "clawhub-checktruth",
+  "name": "别瞎说 - AI事实核查器/Checktruth - AI Fact-Checker",
+  "summary": "零配置 AI 事实核查工具。支持问答验证和文章/论点核查，自动分解事实、检索证据、输出可信度评分。基于 FActScore、xVerify 等学术论文设计。 Zero-config AI fact-checking tool. Supports Q&A verification and article/argum...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checktruth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NLMakes",
+      "features": [
+        "零配置 AI 事实核查工具。支持问答验证和文章/论点核查，自动分解事实、检索证据、输出可信度评分。基于 FActScore、xVerify 等学术论文设计。 Zero-config AI f.",
+        "Supports Q&A verification and article/argum..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/checktruth@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266310996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "checktruth",
+      "url": "https://clawhub.ai/skills/checktruth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checktruth",
+    "url": "https://clawhub.ai/skills/checktruth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checktruth-c49594389f6a8042.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/checktruth@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-checktruth-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1806cb387eb70ce7c9c25f81e556c62128c59b7004551ee08080ef27778b03c",
+      "artifactSizeBytes": 2866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T16:33:34.976Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51173,
+  "uuid": "skill-clawhub-level5",
+  "skillKey": "clawhub-level5",
+  "name": "Level5 - Your Agent Can Pay For Itself",
+  "summary": "Budget Management for AI Agents — USDC billing gateway. Deposit USDC on Solana; pay for LLM compute per token.",
+  "version": "1.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.level5",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chris Gilbert",
+      "features": [
+        "Budget Management for AI Agents — USDC billing gateway",
+        "Deposit USDC on Solana",
+        "pay for LLM compute per token."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/level5@1.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3208589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "level5",
+      "url": "https://clawhub.ai/skills/level5"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "level5",
+    "url": "https://clawhub.ai/skills/level5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/level5-7b48a89633f05f62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/level5@1.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-level5-1.6.2.json",
+      "version": "1.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40c647af0361e27110128f5421227d4d04cbc5b9485adfa281aa8193750c418d",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T00:40:01.732Z"
+}

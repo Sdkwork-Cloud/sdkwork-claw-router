@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32146,
+  "uuid": "skill-clawhub-webinarfuel",
+  "skillKey": "clawhub-webinarfuel",
+  "name": "Webinarfuel",
+  "summary": "WebinarFuel integration. Manage data, records, and automate workflows. Use when the user wants to interact with WebinarFuel data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webinarfuel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WebinarFuel integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WebinarFuel data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webinarfuel@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webinarfuel",
+      "url": "https://clawhub.ai/skills/webinarfuel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webinarfuel",
+    "url": "https://clawhub.ai/skills/webinarfuel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webinarfuel-6a6f4004d51d0eb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webinarfuel@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-webinarfuel-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c256552caca16886ae1a2c13afbed7fd16e779440a2870046c0453bbb3320d69",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:00:57.088Z"
+}

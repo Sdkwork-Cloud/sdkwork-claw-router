@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24294,
+  "uuid": "skill-clawhub-apify-runner",
+  "skillKey": "clawhub-apify-runner",
+  "name": "Apify Runner",
+  "summary": "Run any Apify Actor to scrape web data (Instagram, TikTok, Reddit, Twitter, etc). Handles Actor discovery, quality filtering, probe testing, batched executio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apify_runner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "duxj4520",
+      "features": [
+        "Run any Apify Actor to scrape web data (Instagram, TikTok, Reddit, Twitter, etc)",
+        "Handles Actor discovery, quality filtering, probe testing, batched executio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apify-runner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32354539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apify-runner",
+      "url": "https://clawhub.ai/skills/apify-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apify-runner",
+    "url": "https://clawhub.ai/skills/apify-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apify-runner-da3a8fc2fad31a1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apify-runner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apify-runner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd65e44317186ce25233d85a4b09d87fea3b058a71c324df89a7e9fe1a545c7f",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:41:33.851Z"
+}

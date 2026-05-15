@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dynamic-model-selector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_model_selector",
+  "skill": {
+    "id": 14110,
+    "skillKey": "clawhub-dynamic-model-selector",
+    "name": "Dynamic Model Selector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-model-selector",
+    "url": "https://clawhub.ai/skills/dynamic-model-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-model-selector-36208e6ddc95ade4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dynamically select the best AI model for a task based on complexity, cost, and availability in GitHub Copilot. Use when deciding between free/paid models, or when you want automatic model routing based on query analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mpelissari",
+      "userId": "publishers:mpelissari",
+      "displayName": "mpelissari",
+      "image": "https://avatars.githubusercontent.com/u/2828049?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1265,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770556724726,
+      "changelog": "Initial release with model classification based on query analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:96eaff448dafeb71619fccc66112e204da96d04dcf5820bcf4fd69b141b1610f"
+}

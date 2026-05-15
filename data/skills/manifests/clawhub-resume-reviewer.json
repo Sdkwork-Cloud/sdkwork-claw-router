@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25763,
+  "uuid": "skill-clawhub-resume-reviewer",
+  "skillKey": "clawhub-resume-reviewer",
+  "name": "ANDG",
+  "summary": "Analyze resumes for target roles, identify weak bullets, missing keywords, ATS gaps, and provide actionable rewrite suggestions.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew",
+      "features": [
+        "Analyze resumes for target roles, identify weak bullets, missing keywords, ATS gaps, and provid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-reviewer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98487831?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-reviewer",
+      "url": "https://clawhub.ai/skills/resume-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-reviewer",
+    "url": "https://clawhub.ai/skills/resume-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-reviewer-fe3c2fe543f59ed7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-reviewer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-reviewer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65f3de4f661ce1183aba0002447036148d19ab273161745261224b6b8a584bb8",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:10:32.162Z"
+}

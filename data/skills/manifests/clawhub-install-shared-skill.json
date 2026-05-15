@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22237,
+  "uuid": "skill-clawhub-install-shared-skill",
+  "skillKey": "clawhub-install-shared-skill",
+  "name": "Install Shared Skill",
+  "summary": "Install OpenClaw skills at the local/system level so they are shared by all agents. Uses the clawhub CLI to fetch and install skills into the global OpenClaw...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_shared_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ssshhh",
+      "features": [
+        "Install OpenClaw skills at the local/system level so they are shared by all agents",
+        "Uses the clawhub CLI to fetch and install skills into the global OpenClaw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/install-shared-skill@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41514916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "install-shared-skill",
+      "url": "https://clawhub.ai/skills/install-shared-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-shared-skill",
+    "url": "https://clawhub.ai/skills/install-shared-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-shared-skill-0258d2edbc460957.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/install-shared-skill@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-install-shared-skill-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:39124375e8463e5058a4461218ab9a8dfdb26c6573b16396d993d67b77d03d41",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T01:54:37.573Z"
+}

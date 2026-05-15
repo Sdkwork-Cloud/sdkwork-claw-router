@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shellphone-gateway@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shellphone_gateway",
+  "skill": {
+    "id": 12981,
+    "skillKey": "clawhub-shellphone-gateway",
+    "name": "Shellphone Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shellphone-gateway",
+    "url": "https://clawhub.ai/skills/shellphone-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shellphone-gateway-f81c9f738dff0237.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Private WebSocket gateway enabling direct, encrypted communication between iOS devices and self-hosted AI bots with no third-party servers involved."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loserbcc",
+      "userId": "publishers:loserbcc",
+      "displayName": "loserbcc",
+      "image": "https://avatars.githubusercontent.com/u/5151274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1504,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770281726442,
+      "changelog": "shellphone-gateway 1.0.0\n\n- Initial release of a private WebSocket gateway for connecting iOS devices directly to self-hosted AI bots.\n- Enables encrypted communication between your iPhone and local AI agents without third-party platforms.\n- Auto-detects locally running ollama models for zero-configuration setup.\n- Integrated free text-to-speech (TTS) and automatic speech recognition (ASR) via ScrappyLabs, no account required.\n- Quick setup with Docker or Python; easy iOS app connection via TestFlight and QR code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c0b4c6f86c9db79d90ba5af11a8dee15e25f646d6d452cbf7823b7f216937b5"
+}

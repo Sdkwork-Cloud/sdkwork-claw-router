@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42944,
+  "uuid": "skill-clawhub-citation-check-citation-management",
+  "skillKey": "clawhub-citation-check-citation-management",
+  "name": "citation-management",
+  "summary": "Comprehensive citation management for academic research. Search Google Scholar and PubMed for papers, extract accurate metadata, validate citations, and gene...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_check_citation_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Comprehensive citation management for academic research",
+        "Search Google Scholar and PubMed for papers, extract accurate metadata, validate citations, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citation-check-citation-management@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citation-check-citation-management",
+      "url": "https://clawhub.ai/skills/citation-check-citation-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-check-citation-management",
+    "url": "https://clawhub.ai/skills/citation-check-citation-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-check-citation-management-1c4ec68f176806f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citation-check-citation-management@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citation-check-citation-management-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67c8428200dffd4ed4e7a4e256b2a4c1d8eb17e375b38e0eed2be309b8477a67",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:24:57.050Z"
+}

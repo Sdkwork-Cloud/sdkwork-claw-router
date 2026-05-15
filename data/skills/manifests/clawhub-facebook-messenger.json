@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40972,
+  "uuid": "skill-clawhub-facebook-messenger",
+  "skillKey": "clawhub-facebook-messenger",
+  "name": "Facebook Messenger",
+  "summary": "Facebook Messenger integration. Manage Users, Contacts, Stories, Reactions. Use when the user wants to interact with Facebook Messenger data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_messenger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Facebook Messenger integration",
+        "Manage Users, Contacts, Stories, Reactions",
+        "Use when the user wants to interact with Facebook Messenger data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facebook-messenger@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facebook-messenger",
+      "url": "https://clawhub.ai/skills/facebook-messenger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-messenger",
+    "url": "https://clawhub.ai/skills/facebook-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-messenger-e8fc5e6ae5e2b554.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facebook-messenger@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-facebook-messenger-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b456270a658ee37e7a3eb1cf49731b5eacde8f33fb87543870a976194a5816e2",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:26:43.972Z"
+}

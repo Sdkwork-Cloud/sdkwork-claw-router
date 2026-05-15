@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15404,
+  "uuid": "skill-clawhub-json-linter",
+  "skillKey": "clawhub-json-linter",
+  "name": "Json Linter",
+  "summary": "Validates JSON syntax across the workspace. Use this skill to check for syntax errors in configuration files, memory files, or data assets.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_linter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WANGJUNJIE",
+      "features": [
+        "Validates JSON syntax across the workspace",
+        "Use this skill to check for syntax errors in configuration files, memory files, or data assets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-linter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32323900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-linter",
+      "url": "https://clawhub.ai/skills/json-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-linter",
+    "url": "https://clawhub.ai/skills/json-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-linter-defd8532a694a8b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-linter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-linter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6a5064fcd615e655217c4045d9f32d676b08165cad25b3ce589ec42f05ca220",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:36:37.224Z"
+}

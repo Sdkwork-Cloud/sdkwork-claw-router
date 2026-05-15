@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/m365-spam-manager@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m365_spam_manager",
+  "skill": {
+    "id": 17603,
+    "skillKey": "clawhub-m365-spam-manager",
+    "name": "M365 Spam Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m365-spam-manager",
+    "url": "https://clawhub.ai/skills/m365-spam-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m365-spam-manager-67f71beb3987ddd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages Microsoft 365 junk mail by analyzing spam patterns, scoring suspicious emails, and assisting with review or automatic cleanup of Outlook/Exchange spa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tradmangh",
+      "userId": "s17aaegq3rafytyraeyc72bkjx83twpg",
+      "displayName": "Thomas J. Radman",
+      "image": "https://avatars.githubusercontent.com/u/4415781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 742,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771461192865,
+      "changelog": "Major scoring improvement: known spammers (Temu, Lowes, kaballeros) now auto-score 90+, plus suspicious TLDs, free email providers, urgency/money/scam keywords, legit company check to reduce false positives.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07aa1338dc062989fbafdcedc2fee45f12482f72accdc38ed52a86cefc2f5896"
+}

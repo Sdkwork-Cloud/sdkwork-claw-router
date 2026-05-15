@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/background-music-to@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.background_music_to",
+  "skill": {
+    "id": 45824,
+    "skillKey": "clawhub-background-music-to",
+    "name": "Background Music To"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "background-music-to",
+    "url": "https://clawhub.ai/skills/background-music-to",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/background-music-to-add78fe5aa0f73e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute travel montage video into 1080p music-backed videos just by typing what you need. Whether it's adding background music to videos automaticall..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776489258840,
+      "changelog": "- Initial release of \"Background Music To\" — add background music to videos automatically in seconds.\n- Upload video clips and describe the result you want; no timeline fiddling or export settings required.\n- Supports instant connection and authentication, including auto token acquisition with 100 free credits.\n- All processing, editing, and exporting happens via a cloud API with 1080p MP4 exports in 30–90 seconds.\n- Clear error handling, session management, and user-friendly text responses for common actions (upload, export, check credits, etc).\n- Designed for content creators seeking fast, AI-assisted video music workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed71ee896bbf669c9b76579989e3dcf87919024e9f8ef653ea70a72b7c9d4e16"
+}

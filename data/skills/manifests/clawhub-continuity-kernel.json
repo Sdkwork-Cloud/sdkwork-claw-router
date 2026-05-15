@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21542,
+  "uuid": "skill-clawhub-continuity-kernel",
+  "skillKey": "clawhub-continuity-kernel",
+  "name": "continuity-kernel",
+  "summary": "OpenClaw continuity kernel for fail-open llm_input injection, deterministic runtime contracts, and shadow-mode eval receipts.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.continuity_kernel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Todd Kuehnl",
+      "features": [
+        "OpenClaw continuity kernel for fail-open llm_input injection, deterministic runtime contracts,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/continuity-kernel@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25701510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "continuity-kernel",
+      "url": "https://clawhub.ai/skills/continuity-kernel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "continuity-kernel",
+    "url": "https://clawhub.ai/skills/continuity-kernel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/continuity-kernel-b1b12b2cf349bd07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/continuity-kernel@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-continuity-kernel-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ded890a15a19e99048f2f61ee14d262cd7c27a9e657f45e3b6cc6edab1a6ce04",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:26:13.319Z"
+}

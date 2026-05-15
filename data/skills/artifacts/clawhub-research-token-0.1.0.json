@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-token@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_token",
+  "skill": {
+    "id": 16231,
+    "skillKey": "clawhub-research-token",
+    "name": "Uniswap Research Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-token",
+    "url": "https://clawhub.ai/skills/research-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-token-3f09f03b16950a75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research a token's Uniswap liquidity, volume profile, pool distribution, and risk factors. Use when the user asks about a token's tradability, liquidity depth, or wants due diligence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 902,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745814049,
+      "changelog": "Initial release — provides due diligence for tokens on Uniswap protocol.\n\n- Analyzes token liquidity, volume trends, pool distribution, and risk factors via the token-analyst agent.\n- Supports user queries about tradability, liquidity depth, and pool details for any token.\n- Accepts parameters for token symbol/address, optional chain, and focus area (liquidity, volume, or risk).\n- Formats findings in a clear, user-friendly summary highlighting TVL, trading depth, volume, and risks.\n- Handles missing tokens, pools, or data with concise error messages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:73a0b41042e31bd06c887fef9e7978fe81906cf84e1d8ab3b0ab5a8dfe078280"
+}

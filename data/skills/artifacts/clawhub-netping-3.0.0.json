@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/netping@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netping",
+  "skill": {
+    "id": 24834,
+    "skillKey": "clawhub-netping",
+    "name": "Netping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netping",
+    "url": "https://clawhub.ai/skills/netping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netping-324a91f7de3b0ad1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check connectivity with ping, port scan, and DNS lookup in one fast tool. Use when testing reachability, scanning ports, resolving DNS records quickly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773917083526,
+      "changelog": "v3.0.0: rewrite",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90b1d49216bc4a0c3d55ed90ce1275a5d1376d7f2d04e388fab98fd01406d209"
+}

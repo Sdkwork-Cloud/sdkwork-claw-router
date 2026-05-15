@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22382,
+  "uuid": "skill-clawhub-convertagent",
+  "skillKey": "clawhub-convertagent",
+  "name": "ConvertAgent",
+  "summary": "Use ConvertAgent for file format conversions through the local CLI. Trigger for any request to convert files (documents, images, audio, video, spreadsheets,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convertagent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Senthil",
+      "features": [
+        "Use ConvertAgent for file format conversions through the local CLI",
+        "Trigger for any request to convert files (documents, images, audio, video, spreadsheets,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/convertagent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224040528?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "convertagent",
+      "url": "https://clawhub.ai/skills/convertagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convertagent",
+    "url": "https://clawhub.ai/skills/convertagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convertagent-4249b9bf7cc0f99d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/convertagent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-convertagent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df74c1306dea670f6e2ef5bf968c38ef2fe44be11b8983b9f98ff53decc6d85e",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:08:49.824Z"
+}

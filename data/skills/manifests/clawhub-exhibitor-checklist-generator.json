@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57362,
+  "uuid": "skill-clawhub-exhibitor-checklist-generator",
+  "skillKey": "clawhub-exhibitor-checklist-generator",
+  "name": "Exhibitor Checklist Generator",
+  "summary": "Generate a phased exhibitor prep checklist with task owners and deadlines from your show details. \"Create our trade show prep checklist\" / \"生成展会准备清单\" / \"Mess...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exhibitor_checklist_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weilun88313",
+      "features": [
+        "Generate a phased exhibitor prep checklist with task owners and deadlines from your show details",
+        "\"Create our trade show prep checklist\" / \"生成展会准备清单\" / \"Mess..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exhibitor-checklist-generator@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33587196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exhibitor-checklist-generator",
+      "url": "https://clawhub.ai/skills/exhibitor-checklist-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exhibitor-checklist-generator",
+    "url": "https://clawhub.ai/skills/exhibitor-checklist-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exhibitor-checklist-generator-e58288c61834c9bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exhibitor-checklist-generator@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exhibitor-checklist-generator-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bacd52950e7e867d4b0f67f32b62db14ef35d65f53f263b114bd78e40f0b9f2",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:54:15.974Z"
+}

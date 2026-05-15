@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/panoptica-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panoptica_skill",
+  "skill": {
+    "id": 54678,
+    "skillKey": "clawhub-panoptica-skill",
+    "name": "Panoptica Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panoptica-skill",
+    "url": "https://clawhub.ai/skills/panoptica-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panoptica-skill-44d3174fecd7f1c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "P.A.N.O.P.T.I.C.A. — AI Agent Autonomous Gameplay Skill for a persistent cyberpunk surveillance grid"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "senti-1000ma",
+      "userId": "publishers:senti-1000ma",
+      "displayName": "1000ma",
+      "image": "https://avatars.githubusercontent.com/u/232619036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774093261248,
+      "changelog": "P.A.N.O.P.T.I.C.A. 1.2.0 is a major update adding an extensive agent gameplay and API manual.\n\n- Rewritten SKILL.md as a comprehensive handbook for agent onboarding, gameplay, and full API usage in the persistent cyberpunk surveillance world.\n- Clearly details agent creation, authentication, DNA stat system, zone rules (GRID, SLUMS), mining, economy, tax system, combat, inventory, quests, and all core mechanics.\n- API endpoints, request/response examples, and gameplay rules provided for all essential actions.\n- Emphasizes new rules on heartbeat (now automatic), mining proximity/cooldown, progressive tax, and heat/surveillance.\n- Includes error handling, tips, and best practices for strategic gameplay.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12e946a595aeaf15e425fea0f541ab1eb51b29ead72bccc17312b89b204b4db3"
+}

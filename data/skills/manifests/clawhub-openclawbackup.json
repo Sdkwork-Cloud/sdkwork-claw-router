@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55783,
+  "uuid": "skill-clawhub-openclawbackup",
+  "skillKey": "clawhub-openclawbackup",
+  "name": "OpenClaw Backup",
+  "summary": "Backup OpenClaw workspace, config, and state using the built-in `openclaw backup create` command. Also handles cleanup of old backups and health verification...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclawbackup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "larryjoe",
+      "features": [
+        "Backup OpenClaw workspace, config, and state using the built-in `openclaw backup create` command",
+        "Also handles cleanup of old backups and health verification..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclawbackup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25060936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclawbackup",
+      "url": "https://clawhub.ai/skills/openclawbackup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclawbackup",
+    "url": "https://clawhub.ai/skills/openclawbackup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclawbackup-e52f65566f0aa353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclawbackup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclawbackup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fcf6ee4fbcb3f814df9089b1daa4f78d394a1aade87aa7c843d0fe687ab2a94",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:51:11.547Z"
+}

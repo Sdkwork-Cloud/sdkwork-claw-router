@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12142,
+  "uuid": "skill-clawhub-home-assistant-agent-secure",
+  "skillKey": "clawhub-home-assistant-agent-secure",
+  "name": "Home Assistant Agent (Secure)",
+  "summary": "Control Home Assistant smart home devices securely using the Assist (Conversation) API. Passes natural language to Home Assistant's built-in NLU for safe, to...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_assistant_agent_secure",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "szafranski",
+      "features": [
+        "Control Home Assistant smart home devices securely using the Assist (Conversation) API",
+        "Passes natural language to Home Assistant's built-in NLU for safe, to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-assistant-agent-secure@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23621888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-assistant-agent-secure",
+      "url": "https://clawhub.ai/skills/home-assistant-agent-secure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-assistant-agent-secure",
+    "url": "https://clawhub.ai/skills/home-assistant-agent-secure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-assistant-agent-secure-618127f2259d3c3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-assistant-agent-secure@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-assistant-agent-secure-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b35b8f995432c64fb9816e389319a01e7befd0ad6334f337806fcad87ea4b9a",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T10:42:31.873Z"
+}

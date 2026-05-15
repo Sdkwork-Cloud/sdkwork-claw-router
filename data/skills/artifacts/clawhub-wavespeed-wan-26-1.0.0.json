@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wavespeed-wan-26@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wavespeed_wan_26",
+  "skill": {
+    "id": 19413,
+    "skillKey": "clawhub-wavespeed-wan-26",
+    "name": "WaveSpeedAI Wan 2.6 Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wavespeed-wan-26",
+    "url": "https://clawhub.ai/skills/wavespeed-wan-26",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wavespeed-wan-26-2280e9d6f869bb98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos using Alibaba's Wan 2.6 model via WaveSpeed AI. Supports text-to-video and image-to-video generation with up to 15 seconds duration at 720p o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengzeyi",
+      "userId": "publishers:chengzeyi",
+      "displayName": "C",
+      "image": "https://avatars.githubusercontent.com/u/23494160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 614,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772421953712,
+      "changelog": "Initial release of wavespeed-wan-26 – Generate videos using Alibaba's Wan 2.6 model via WaveSpeed AI.\n\n- Supports text-to-video and image-to-video generation, up to 15 seconds per video, 720p or 1080p.\n- Includes audio-guided generation, prompt expansion, multi-shot mode, and configurable seeds.\n- API covers prompt, negative prompt, size/resolution, duration, shot type, and more.\n- Example code and advanced usage provided for both JavaScript and custom clients.\n- Security, pricing, and prompt writing tips included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:69aa6f0faac5f6a7f692d05fe93eac8a900e4e3ed6ddb8263873a9d5db279c5e"
+}

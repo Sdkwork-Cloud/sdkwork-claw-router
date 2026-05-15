@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10171,
+  "uuid": "skill-clawhub-gcal-pro",
+  "skillKey": "clawhub-gcal-pro",
+  "name": "gcal-pro - Google Calendar",
+  "summary": "Google Calendar integration for viewing, creating, and managing calendar events. Use when the user asks about their schedule, wants to add/edit/delete events, check availability, or needs a morning brief. Supports natural language like \"Wh.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcal_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bilalmohamed187-cpu",
+      "features": [
+        "Google Calendar integration for viewing, creating, and managing calendar events",
+        "Use when the user asks about their schedule, wants to add/edit/delete events, check availabilit.",
+        "Supports natural language like \"What's on my calendar tomorrow?\" or \"Schedule lunch with Alex a.",
+        "Pro tier ($12) adds create/edit/delete and morning briefs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gcal-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257391889?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gcal-pro",
+      "url": "https://clawhub.ai/skills/gcal-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcal-pro",
+    "url": "https://clawhub.ai/skills/gcal-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcal-pro-092c7415bc8106ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gcal-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gcal-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a91c3e8167488dd2bc307e453c079989bf7197aec17e61471c04162827cfcd67",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T21:24:01.485Z"
+}

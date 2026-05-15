@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62252,
+  "uuid": "skill-clawhub-code-dev",
+  "skillKey": "clawhub-code-dev",
+  "name": "Code Dev",
+  "summary": "规范的 Git 开发流程：分支管理 → 开发 → PR → Review → 合并。 支持新 feature 开发和 bug 修复，强制禁止直接推送到 main。 **触发条件（需同时满足）**： 1. 用户要求\"开发\"、\"实现\"、\"新功能\"、\"修复\"、\"提交 PR\" 2. 预估工作量 > 30 分钟 **或**...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucius.C",
+      "features": [
+        "规范的 Git 开发流程：分支管理 → 开发 → PR → Review → 合并。 支持新 feature 开发和 bug 修复，强制禁止直接推送到 main。 **触发条件（需同时满足）.",
+        "用户要求\"开发\"、\"实现\"、\"新功能\"、\"修复\"、\"提交 PR\" 2",
+        "预估工作量 > 30 分钟 **或**..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-dev@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15772264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-dev",
+      "url": "https://clawhub.ai/skills/code-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-dev",
+    "url": "https://clawhub.ai/skills/code-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-dev-79115016de5a7ff6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-dev@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-dev-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4873a58d9ecd4df17396bd64d83c711f16c877d3e905bd76a2b58e0774bc54b9",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:04:42.827Z"
+}

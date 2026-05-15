@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28240,
+  "uuid": "skill-clawhub-abm-exa-company-research",
+  "skillKey": "clawhub-abm-exa-company-research",
+  "name": "Exa Company Research",
+  "summary": "When the user wants to research a company using web search -- company overview, products, funding, team, and recent news. Also use when the user mentions 'co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_exa_company_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mario Karras",
+      "features": [
+        "When the user wants to research a company using web search -",
+        "company overview, products, funding, team, and recent news",
+        "Also use when the user mentions 'co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abm-exa-company-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199292356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abm-exa-company-research",
+      "url": "https://clawhub.ai/skills/abm-exa-company-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-exa-company-research",
+    "url": "https://clawhub.ai/skills/abm-exa-company-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-exa-company-research-c547481875c85931.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abm-exa-company-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abm-exa-company-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1b6b0b0326203442c74b8c5111a924c8fbc5661a7f1307fcebe67918b1985cf",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:55:14.762Z"
+}

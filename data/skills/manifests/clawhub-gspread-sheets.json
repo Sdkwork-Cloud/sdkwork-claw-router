@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49398,
+  "uuid": "skill-clawhub-gspread-sheets",
+  "skillKey": "clawhub-gspread-sheets",
+  "name": "gspread-sheets",
+  "summary": "Batch read/write Google Sheets using the gspread Python library with service account authentication. Use when the user needs to: (1) read/write/update/clear...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gspread_sheets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nuokunkeji",
+      "features": [
+        "Batch read/write Google Sheets using the gspread Python library with service account authentica.",
+        "Use when the user needs to: (1) read/write/update/clear..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gspread-sheets@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272966214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gspread-sheets",
+      "url": "https://clawhub.ai/skills/gspread-sheets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gspread-sheets",
+    "url": "https://clawhub.ai/skills/gspread-sheets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gspread-sheets-6ddd8b04e57478e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gspread-sheets@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gspread-sheets-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:873f82a13cbffbcb88de191ddaf0923096db545d1a6224b183f126a63fa24654",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:15:47.873Z"
+}

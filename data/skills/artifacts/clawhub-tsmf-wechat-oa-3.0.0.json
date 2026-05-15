@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tsmf-wechat-oa@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsmf_wechat_oa",
+  "skill": {
+    "id": 66534,
+    "skillKey": "clawhub-tsmf-wechat-oa",
+    "name": "Wechat Allauto Gzh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsmf-wechat-oa",
+    "url": "https://clawhub.ai/skills/tsmf-wechat-oa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsmf-wechat-oa-d37b5284ad4cabc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号全自动写作系统。支持 20 种精美主题，自动生成封面，一键推送草稿箱。 适用场景： - 用户需要生成公众号文章草稿 - 用户想要切换多种排版主题 - 用户需要自动化内容生产流程 - 用户想要批量生成主题演示文章 <example>用户: \"帮我写一篇关于人工智能的公众号文章\"</example> <ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onegrown",
+      "userId": "s179rdmx4t9pmhfykw075v877x83hdxm",
+      "displayName": "onegrown",
+      "image": "https://avatars.githubusercontent.com/u/4463263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774261301888,
+      "changelog": "Major update: Version 3.0.0 completely restructures the skill as an OpenClaw指向型 Skill with expanded features and new workflows.\n\n- Rebuilt the skill into an instructional guide for OpenClaw, focusing on autonomous and interactive WeChat official account article generation.\n- Expanded to support 20+ beautifully designed themes across two series (classic & macaron), with theme recommendations and detailed style selection.\n- Introduced a fully guided user interaction process covering topic, audience, type, style, and publishing method selection.\n- Added support for automated outline generation, writing, layout conversion, cover creation, draft pushing, and content validation (Tavily integration).\n- Designed for high configurability: customizable themes, publishing automation, and clear error handling/output structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:422f554b64e29e4c6f2e051f57e4182a93f065c7cc2c88f4bf0083af9fe632ee"
+}

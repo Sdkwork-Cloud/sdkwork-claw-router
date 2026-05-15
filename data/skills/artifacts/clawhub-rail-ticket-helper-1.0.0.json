@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rail-ticket-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rail_ticket_helper",
+  "skill": {
+    "id": 58798,
+    "skillKey": "clawhub-rail-ticket-helper",
+    "name": "Rail Ticket Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rail-ticket-helper",
+    "url": "https://clawhub.ai/skills/rail-ticket-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rail-ticket-helper-f1ee771491f746fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分贝通火车预订助手，实时查询火车票、展示车次列表、预订火车票、查看订单、取消订单。Invoke when user wants to search trains, book train tickets, check train orders, or cancel train bookings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaogao605",
+      "userId": "s17cxwwzm94v9ntkczkmq0r2x983km1s",
+      "displayName": "fenbeitong-trip",
+      "image": "https://avatars.githubusercontent.com/u/265222913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774864043884,
+      "changelog": "fb-train-skill 1.0.0 — Initial release\n\n- Launches 分贝通火车预订助手 for real-time train ticket search, booking, order inquiry, and cancellation.\n- Provides user-friendly workflows for viewing train lists, checking seat availability, booking, and managing orders.\n- Integrates with 分贝通 OpenAPI for all ticket, order, and payment operations.\n- Enforces strict data sourcing from API responses; prohibits generating or modifying ticket data.\n- Includes clear examples of user prompts and display formats for each function.\n- Supports payment and order status checks via generated links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05e113c21a7fad96fdea69c9f8c527123eb2637d363719771be2f5b399c59488"
+}

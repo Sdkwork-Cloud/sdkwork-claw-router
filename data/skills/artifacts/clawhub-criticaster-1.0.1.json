@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/criticaster@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.criticaster",
+  "skill": {
+    "id": 19693,
+    "skillKey": "clawhub-criticaster",
+    "name": "Criticaster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "criticaster",
+    "url": "https://clawhub.ai/skills/criticaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/criticaster-70b313b24c5ef04d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Criticaster's aggregated product reviews to quickly find the best products. Use when the user needs trustworthy product recommendations, reviews, comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gglucass",
+      "userId": "publishers:gglucass",
+      "displayName": "gglucass",
+      "image": "https://avatars.githubusercontent.com/u/1226415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 598,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771434604605,
+      "changelog": "- Clarified the skill description to include reviews along with recommendations, comparisons, and purchase advice.\n- Fixed minor typos and improved description readability.\n- No changes to API or functionality—documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:812941f4ebcd8f38524eed327bc2d66ec6085f0d56148049e0613719b21d52df"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9941,
+  "uuid": "skill-clawhub-resend",
+  "skillKey": "clawhub-resend",
+  "name": "Resend",
+  "summary": "Manage received (inbound) emails and attachments via Resend API. Use when user asks about their emails, received messages, or email attachments.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Russell",
+      "features": [
+        "Manage received (inbound) emails and attachments via Resend API",
+        "Use when user asks about their emails, received messages, or email attachments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resend@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1641895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resend",
+      "url": "https://clawhub.ai/skills/resend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend",
+    "url": "https://clawhub.ai/skills/resend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-6de1be36afd7a16d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resend@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resend-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4621b27339ca9e6eb218b5155a58207bc623003bb1718603cc4b568d60503639",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-11T05:19:10.664Z"
+}

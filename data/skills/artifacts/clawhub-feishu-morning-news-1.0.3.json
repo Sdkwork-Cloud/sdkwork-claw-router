@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-morning-news@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_morning_news",
+  "skill": {
+    "id": 73031,
+    "skillKey": "clawhub-feishu-morning-news",
+    "name": "飞书每日早报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-morning-news",
+    "url": "https://clawhub.ai/skills/feishu-morning-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-morning-news-c04249f079f63b76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书每日早报配置Skill。封装了每日早报的完整配置流程，包含数据源获取、格式整理、深圳天气查询、生活建议整合。触发关键词：早报配置、创建早报、生成早报、每日早报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "easyhoov",
+      "userId": "s17ahkzbq9vrbkbvg3gwy7m8n183gz2j",
+      "displayName": "Easyhoov",
+      "image": "https://avatars.githubusercontent.com/u/137068518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775553706715,
+      "changelog": "支持自定义城市配置，增强通用性，非深圳用户也可使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38462a4a66bc61ed207571c2f0204e58af1cd30f569a24e387b684820c44b1b7"
+}

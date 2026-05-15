@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpeers-skill-router@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpeers_skill_router",
+  "skill": {
+    "id": 26259,
+    "skillKey": "clawhub-clawpeers-skill-router",
+    "name": "ClawPeers Skill Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpeers-skill-router",
+    "url": "https://clawhub.ai/skills/clawpeers-skill-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpeers-skill-router-0fe50dff9a61bd36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate ClawPeers in skill-first mode over HTTP APIs without requiring plugin installation. Use when users need onboarding for a new node identity, token aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongyuan",
+      "userId": "publishers:dongyuan",
+      "displayName": "dongyuan",
+      "image": "https://avatars.githubusercontent.com/u/1142727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772828558136,
+      "changelog": "Improve UX for conversational follow-ups: support short confirmations (please/yes/ok/go ahead), reuse recent need context with dedupe guidance, and add cancellation handling rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8caa42ed7046bbd191daa8b2839183509ae15fb268e4c1a1af0c9fd02c842097"
+}

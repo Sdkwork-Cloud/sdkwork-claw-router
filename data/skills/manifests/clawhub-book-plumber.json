@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13075,
+  "uuid": "skill-clawhub-book-plumber",
+  "skillKey": "clawhub-book-plumber",
+  "name": "Book Plumber",
+  "summary": "Book plumber services through Lokuli MCP. Use when user needs to find and book plumber. Triggers on requests like \"book a plumber\", \"find plumber near me\", or any plumber service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_plumber",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book plumber services through Lokuli MCP",
+        "Use when user needs to find and book plumber",
+        "Triggers on requests like \"book a plumber\", \"find plumber near me\", or any plumber service requ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-plumber@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-plumber",
+      "url": "https://clawhub.ai/skills/book-plumber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-plumber",
+    "url": "https://clawhub.ai/skills/book-plumber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-plumber-69ba8c5321532ea0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-plumber@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-plumber-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25e73b39f58cb2d536d3ad4a8d80a4ea31eeb4d57a6193c215616f523ea8dd1c",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:04.896Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40242,
+  "uuid": "skill-clawhub-bank-credit-memo",
+  "skillKey": "clawhub-bank-credit-memo",
+  "name": "Bank Credit Memo Writer",
+  "summary": "AI-powered bank credit memo and credit analysis report writer - generate structured credit analysis reports, credit ratings, and facility recommendations",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_credit_memo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingfeng-19",
+      "features": [
+        "AI-powered bank credit memo and credit analysis report writer",
+        "generate structured credit analysis reports, credit ratings, and facility recommendations"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bank-credit-memo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8140166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bank-credit-memo",
+      "url": "https://clawhub.ai/skills/bank-credit-memo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-credit-memo",
+    "url": "https://clawhub.ai/skills/bank-credit-memo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-credit-memo-a93e8aa294b78e8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bank-credit-memo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bank-credit-memo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e973558d5e00e9e58cbb72ea7cf8e9404e7a2b79c9b4f14dfbac0bd8149a3b15",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:58:41.867Z"
+}

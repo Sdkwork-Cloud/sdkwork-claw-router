@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "maoyan-ticket-booking",
+    "displayName": "猫眼电影票购票助手",
+    "summary": "猫眼电影票全自动购票助手。支持影片搜索、热映查询、影院查找、场次选择、智能选座、支付引导、出票查询、取票二维码展示等完整购票流程。使用场景：用户说\"买电影票\"、\"购票\"、\"用猫眼购票\"、\"帮我买电影票\"、\"我想看电影\"、\"最近有什么电影\"、\"附近有什么影院\"、\"选座\"、\"查场次\"时触发。关键词：电影票、猫眼、购票...",
+    "tags": {
+      "latest": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 5
+    },
+    "createdAt": 1775043180636,
+    "updatedAt": 1777527027704
+  },
+  "latestVersion": {
+    "version": "1.0.4",
+    "createdAt": 1776220749097,
+    "changelog": "## [1.0.4] - 2026-04-14\n\n### 修复\n- 修复 `get-seat-map.mjs` 文件头多余注释结束符导致的语法问题\n\n### 优化\n- `send-qr.mjs` 改为返回 `execCommand` 供上层执行，不再在脚本内直接发送消息\n- `send-qr.mjs` 增强返回信息，补充二维码地址与兜底链接信息\n- 更新 `SKILL.md` 对 `send-qr.mjs` 返回结构的说明，明确 `execCommand` 执行流程",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "maoyan-tech",
+    "userId": "s173p89rckfrfvw6631vqxy0dx840kc5",
+    "displayName": "MaoyanTech",
+    "image": null
+  },
+  "moderation": null
+}

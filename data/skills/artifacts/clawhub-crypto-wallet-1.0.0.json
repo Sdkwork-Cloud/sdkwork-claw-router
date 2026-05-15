@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_wallet",
+  "skill": {
+    "id": 16049,
+    "skillKey": "clawhub-crypto-wallet",
+    "name": "Crypto Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-wallet",
+    "url": "https://clawhub.ai/skills/crypto-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-wallet-f3719e8b9969748d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-chain cryptocurrency wallet management. Check balances, send tokens, view transaction history across Ethereum, Solana, Bitcoin and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nvmmonkey",
+      "userId": "s17bmxdy5e2kvj4c4ys7q5t9an83gne9",
+      "displayName": "nvmmonkey",
+      "image": "https://avatars.githubusercontent.com/u/100928742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 833,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772514353450,
+      "changelog": "Initial release of crypto-wallet: a multi-chain cryptocurrency wallet manager.\n\n- Supports Ethereum, Solana, Bitcoin, Polygon, Arbitrum, and Base networks\n- Check wallet balances and view transaction history\n- Send tokens with confirmation and recipient verification\n- Lookup token prices and get a portfolio overview\n- Includes important safety rules for secure usage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c0774eebdb5f9ec8592bff993a4f6f66548abda52aac138ef508ca53e8f93484"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49490,
+  "uuid": "skill-clawhub-pain-pattern-journal",
+  "skillKey": "clawhub-pain-pattern-journal",
+  "name": "Pain Pattern Journal",
+  "summary": "A neutral pain and symptom journaling framework to help you describe your experience accurately to clinicians.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pain_pattern_journal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "A neutral pain and symptom journaling framework to help you describe your experience accurately."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pain-pattern-journal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pain-pattern-journal",
+      "url": "https://clawhub.ai/skills/pain-pattern-journal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pain-pattern-journal",
+    "url": "https://clawhub.ai/skills/pain-pattern-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pain-pattern-journal-e823a3ed9ffbb7a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pain-pattern-journal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pain-pattern-journal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b891aa0232f14365b70eef0c3cbc3fe4dc2f005b8ffea94a974010470976cda",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:03:18.222Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawarena@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawarena",
+  "skill": {
+    "id": 9525,
+    "skillKey": "clawhub-clawarena",
+    "name": "ClawArena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawarena",
+    "url": "https://clawhub.ai/skills/clawarena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawarena-485d2c3425f347dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent Prediction Arena - Predict Kalshi market outcomes, compete for accuracy"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xrikt",
+      "userId": "publishers:0xrikt",
+      "displayName": "0xrikt",
+      "image": "https://avatars.githubusercontent.com/u/172246952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3819,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1771667903846,
+      "changelog": "Fix display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e753bb45e56d0ab3f375f305fb0f34caa405e69b65e9428f73c361150b16a37"
+}

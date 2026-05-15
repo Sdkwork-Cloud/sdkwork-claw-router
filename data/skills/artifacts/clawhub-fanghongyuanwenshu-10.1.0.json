@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fanghongyuanwenshu@10.1.0",
+  "version": "10.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanghongyuanwenshu",
+  "skill": {
+    "id": 68701,
+    "skillKey": "clawhub-fanghongyuanwenshu",
+    "name": "Wenshu Search - 裁判文书网搜索通用技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanghongyuanwenshu",
+    "url": "https://clawhub.ai/skills/fanghongyuanwenshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanghongyuanwenshu-627cd61ceb639df8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过裁判文书网账户登录，按案由、地区、年份、审判程序等条件搜索并提取判决书全文，支持Excel导出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fong12368",
+      "userId": "s17f0vdzzm4e2w4w8dd2a3fnth83yjxf",
+      "displayName": "Fong12368",
+      "image": "https://avatars.githubusercontent.com/u/272555405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "10.1.0",
+      "createdAt": 1776264026900,
+      "changelog": "v10.1.0: 首次公开发布，通用版脱敏处理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a178b71bdea0f51e791f66ee5a8f7b34779689467610143ce65cc72a26b9c3ce"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45766,
+  "uuid": "skill-clawhub-onestep-aegis",
+  "skillKey": "clawhub-onestep-aegis",
+  "name": "Aegis Bridge",
+  "summary": "Orchestrate Claude Code sessions via Aegis HTTP/MCP bridge. Use when spawning CC sessions for coding tasks, implementing issues, reviewing PRs, fixing CI, ba...",
+  "version": "0.6.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onestep_aegis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emanuele",
+      "features": [
+        "Orchestrate Claude Code sessions via Aegis HTTP/MCP bridge",
+        "Use when spawning CC sessions for coding tasks, implementing issues, reviewing PRs, fixing CI,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onestep-aegis@0.6.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106186915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onestep-aegis",
+      "url": "https://clawhub.ai/skills/onestep-aegis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onestep-aegis",
+    "url": "https://clawhub.ai/skills/onestep-aegis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onestep-aegis-9eb682d7f33b654d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onestep-aegis@0.6.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-onestep-aegis-0.6.6.json",
+      "version": "0.6.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:376dd0b1673510190c84399ea7bc16f91576009362274b07c6ec5e08c6b0048f",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T05:55:13.889Z"
+}

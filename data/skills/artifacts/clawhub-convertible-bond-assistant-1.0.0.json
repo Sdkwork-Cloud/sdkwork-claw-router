@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/convertible-bond-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convertible_bond_assistant",
+  "skill": {
+    "id": 72726,
+    "skillKey": "clawhub-convertible-bond-assistant",
+    "name": "可转债打新助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convertible-bond-assistant",
+    "url": "https://clawhub.ai/skills/convertible-bond-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convertible-bond-assistant-e24e8231b63446a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "可转债打新助手 - 免费工具。提供可转债申购日历、新债分析、上市溢价预测、中签率查询、强赎下修提醒。适用于 A 股可转债投资者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaoteng-qd",
+      "userId": "s17377kcbghv46z7ny7bgc1njh84m3pf",
+      "displayName": "zhaoteng-qd",
+      "image": "https://avatars.githubusercontent.com/u/8800119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772965500295,
+      "changelog": "Convertible Bond Assistant v1.0.0\n\n- Initial release of the convertible-bond-assistant skill.\n免费可转债投资工具 - 申购日历、新债分析、溢价预测、强赎提醒",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89fd08a3beb9a1d071c144f3c156f077aa8bb24572cefa555222d68a1021851c"
+}

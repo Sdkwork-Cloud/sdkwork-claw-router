@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dianping@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dianping",
+  "skill": {
+    "id": 69211,
+    "skillKey": "clawhub-openclaw-dianping",
+    "name": "OpenClaw大众点评"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dianping",
+    "url": "https://clawhub.ai/skills/openclaw-dianping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dianping-ba471768fbf10736.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询大众点评餐厅信息。使用场景：(1) 用户要查询某家餐厅的评分、人均消费、地址 (2) 用户要搜索特定菜系或区域的餐厅推荐 (3) 用户要获取附近美食推荐。登录账号：一定S。重要：搜索时URL需包含城市ID（如hangzhou页面），账号定位北京时需使用URL参数方式绕过。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newaiguy",
+      "userId": "s176zqcw03n2wnp2q2g7rbn4rs83g8kh",
+      "displayName": "Newaiguy",
+      "image": "https://avatars.githubusercontent.com/u/97015274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504331209,
+      "changelog": "Initial release of dianping-query.\n\n- Enables querying Dianping for restaurant info including ratings, average cost, and address.\n- Supports searching by restaurant name, cuisine, or regional recommendations.\n- Provides solutions for city location issues (e.g., stuck in Beijing) by recommending city-specific URLs and URL parameter techniques.\n- Extracts results from AI search pages, including restaurant highlights and user review summaries.\n- Includes city ID reference for major cities and offers step-by-step usage guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c6d92f056f4be4512742ad391b933ee1b5cbee4a6b0889dc8bbf153d851c472"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8857,
+  "uuid": "skill-clawhub-lancedb-memory",
+  "skillKey": "clawhub-lancedb-memory",
+  "name": "Lancedb Memory",
+  "summary": "Manage and retrieve long-term memories with LanceDB using semantic vector search, category filtering, and detailed metadata storage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lancedb_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pntrivedy",
+      "features": [
+        "Manage and retrieve long-term memories with LanceDB using semantic vector search, category filt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lancedb-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/848537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lancedb-memory",
+      "url": "https://clawhub.ai/skills/lancedb-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lancedb-memory",
+    "url": "https://clawhub.ai/skills/lancedb-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lancedb-memory-1b4d0ed09d111324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lancedb-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lancedb-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97818d9b58f3a57dee5287170843f80ef03f8b83cb77b2912ccde821b6b51d5f",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T14:37:54.054Z"
+}

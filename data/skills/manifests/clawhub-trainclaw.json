@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57510,
+  "uuid": "skill-clawhub-trainclaw",
+  "skillKey": "clawhub-trainclaw",
+  "name": "TrainClaw",
+  "summary": "3-in-1 China 12306 query — tickets, route stops, transfer plans. Zero login. Filter 高铁/动车/火车 by type, time, duration. Pure Python, text/json/csv output. 火车票/...",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trainclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI4MSE",
+      "features": [
+        "3-in-1 China 12306 query — tickets, route stops, transfer plans",
+        "Zero login",
+        "Filter 高铁/动车/火车 by type, time, duration",
+        "Pure Python, text/json/csv output"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trainclaw@0.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199689343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trainclaw",
+      "url": "https://clawhub.ai/skills/trainclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trainclaw",
+    "url": "https://clawhub.ai/skills/trainclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trainclaw-59801f35d7af5483.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trainclaw@0.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-trainclaw-0.0.7.json",
+      "version": "0.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6da49a5537db803b4a7f83de1d878b4170708d2389abb28dd1a6261108f40e0",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:27:22.284Z"
+}

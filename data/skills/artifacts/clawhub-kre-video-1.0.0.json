@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kre-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kre_video",
+  "skill": {
+    "id": 48269,
+    "skillKey": "clawhub-kre-video",
+    "name": "Kre Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kre-video",
+    "url": "https://clawhub.ai/skills/kre-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kre-video-4db1b7db402d0519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second raw phone recording into 1080p edited video clips just by typing what you need. Whether it's creating polished videos from raw footage or qu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777335344061,
+      "changelog": "Initial public release of Kre Video.\n\n- Instantly create and export polished 1080p videos from raw phone recordings by simply describing your desired outcome—no timeline or manual export settings required.\n- Seamless upload and rendering pipeline: videos are processed on remote GPU nodes and returned within 30–90 seconds.\n- Automatic onboarding: handles authentication, token management, and session setup transparently.\n- Supports video editing, text overlays, background music, aspect ratio adjustments, and more via natural language prompts.\n- Track your credits, session status, and manage uploads/exports directly through chat commands.\n- Wide format support: mp4, mov, avi, webm, gif, png, jpg, mp3, and more. Max input file size: 500MB.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1380b9bc5004ef9c45b7325931fa3080175048588b8800b6f4ed11ffcf7368ba"
+}

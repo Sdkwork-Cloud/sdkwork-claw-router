@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vertexai-memory-bank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vertexai_memory_bank",
+  "skill": {
+    "id": 26363,
+    "skillKey": "clawhub-vertexai-memory-bank",
+    "name": "Google Vertex AI Memory Bank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vertexai-memory-bank",
+    "url": "https://clawhub.ai/skills/vertexai-memory-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vertexai-memory-bank-e4961c26d32a94e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the OpenClaw Vertex AI Memory Bank plugin for persistent, cross-agent memory. Use when the user wants long-term memory, cross-session r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shubhamsaboo",
+      "userId": "s176jey2ys9ggehnmve29zyq3x83gqtj",
+      "displayName": "Shubham Saboo",
+      "image": "https://avatars.githubusercontent.com/u/31396011?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773641982302,
+      "changelog": "Vertex AI Memory Bank Plugin v1.0.0 initial release\n\n- Adds OpenClaw integration for Google's Vertex AI Memory Bank, enabling persistent, cross-agent memory.\n- Provides auto-recall/capture, workspace file sync, and shared memory features.\n- Includes guided setup via script: automates GCP, Vertex AI, and plugin configuration.\n- Supports manual installation and configuration for advanced users.\n- Adds CLI commands for searching, managing, and syncing memories.\n- Requires Node.js, npm, Google Cloud SDK, and a Vertex AI-enabled GCP project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:281089df597cc48c81714ffea43d24772f589d86d6931eda1f95119a42fd9102"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35726,
+  "uuid": "skill-clawhub-pa-eval",
+  "skillKey": "clawhub-pa-eval",
+  "name": "Pa Eval",
+  "summary": "Evaluate PA performance through structured scoring, owner feedback analysis, and behavioral benchmarking. Use when: conducting a weekly/monthly PA performanc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pa_eval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "Evaluate PA performance through structured scoring, owner feedback analysis, and behavioral ben.",
+        "Use when: conducting a weekly/monthly PA performanc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pa-eval@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pa-eval",
+      "url": "https://clawhub.ai/skills/pa-eval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pa-eval",
+    "url": "https://clawhub.ai/skills/pa-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pa-eval-74e920486b839a11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pa-eval@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pa-eval-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:292ab33c8b7822193e8b40ee2370524fb56798e6aad4a050667da88fb66acd05",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:36:31.212Z"
+}

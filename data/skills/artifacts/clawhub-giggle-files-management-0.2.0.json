@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/giggle-files-management@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giggle_files_management",
+  "skill": {
+    "id": 24077,
+    "skillKey": "clawhub-giggle-files-management",
+    "name": "Giggle Files Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giggle-files-management",
+    "url": "https://clawhub.ai/skills/giggle-files-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giggle-files-management-ad154dc4f1778ebd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload files to Giggle asset service and get public/download URLs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1773226236496,
+      "changelog": "- Added MIT license to documentation.\n- Bumped version to 0.2.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0295ec235323b0d80106e3b596f2008c231b670bf531d2f206f7e115e5b2fdb8"
+}

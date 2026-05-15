@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46008,
+  "uuid": "skill-clawhub-skill-garden",
+  "skillKey": "clawhub-skill-garden",
+  "name": "Skill Garden",
+  "summary": "Automatically improves installed skills through passive usage observation and periodic batch analysis. Activates after any skill is used, or when you say gro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_garden",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yjin94606-art",
+      "features": [
+        "Automatically improves installed skills through passive usage observation and periodic batch an.",
+        "Activates after any skill is used, or when you say gro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-garden@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237404437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-garden",
+      "url": "https://clawhub.ai/skills/skill-garden"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-garden",
+    "url": "https://clawhub.ai/skills/skill-garden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-garden-64c9a26fae3d0c65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-garden@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-garden-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6448751e770e958fd0a1c3c3ce8b07b694740804ffa79575e4ebf6f7a708df8",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:53:41.976Z"
+}

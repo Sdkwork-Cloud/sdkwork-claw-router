@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-screenshot@1.1.3",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_screenshot",
+  "skill": {
+    "id": 64950,
+    "skillKey": "clawhub-web-screenshot",
+    "name": "web-screenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-screenshot",
+    "url": "https://clawhub.ai/skills/web-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-screenshot-23a566f11c60eb9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiaonvmo-maker",
+      "userId": "publishers:jiaonvmo-maker",
+      "displayName": "jiaonvmo-maker",
+      "image": "https://avatars.githubusercontent.com/u/247651203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1720,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.3",
+      "createdAt": 1774066980705,
+      "changelog": "v1.1.3: 优化描述为功能导向，提升搜索排名；增加中文使用场景示例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69bbe94fdd200008e77064812474c930e6c3d6e737e13a3eba98081112c9483c"
+}

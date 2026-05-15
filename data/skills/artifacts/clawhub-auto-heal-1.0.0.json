@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-heal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_heal",
+  "skill": {
+    "id": 65967,
+    "skillKey": "clawhub-auto-heal",
+    "name": "Auto-Heal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-heal",
+    "url": "https://clawhub.ai/skills/auto-heal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-heal-426580aa5c719abb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动监控 OpenClaw 状态，每60秒检测并自动修复卡死、无响应和内存超限问题，确保服务稳定运行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zacharyzax",
+      "userId": "publishers:zacharyzax",
+      "displayName": "zacharyzax",
+      "image": "https://avatars.githubusercontent.com/u/203719033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773404535889,
+      "changelog": "Initial release: 7x24 monitoring and auto-fix for OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0d336704b1c1c2de56f26100e33f94ba1131fd108e425a0e478009619b52d7c"
+}

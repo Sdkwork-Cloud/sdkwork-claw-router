@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-marshal@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_marshal",
+  "skill": {
+    "id": 13427,
+    "skillKey": "clawhub-openclaw-marshal",
+    "name": "Openclaw Marshal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-marshal",
+    "url": "https://clawhub.ai/skills/openclaw-marshal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-marshal-7e9a63f04587ebc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compliance and policy enforcement for agent workspaces. Define security policies, audit compliance, check command restrictions, and generate audit-ready reports. Free alert layer — upgrade to openclaw-marshal-pro for active enforcement, bl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atlaspa",
+      "userId": "publishers:atlaspa",
+      "displayName": "AtlasPA",
+      "image": "https://avatars.githubusercontent.com/u/231540010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1673,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770891986082,
+      "changelog": "- Removed references to \"openclaw-marshal-pro\" and the free/upgrade alert layer.\n- Generalized the description by omitting upsell language.\n- No changes to command structure, functionality, or usage examples.\n- Documentation now presents the open-source version on its own.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d3f5c96dc982907a60fa04b566259dcf42428567aae0cea266e359039956d40"
+}

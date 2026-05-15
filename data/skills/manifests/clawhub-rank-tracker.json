@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56681,
+  "uuid": "skill-clawhub-rank-tracker",
+  "skillKey": "clawhub-rank-tracker",
+  "name": "Rank Tracker",
+  "summary": "Track keyword rankings and SERP feature changes in traditional search and AI responses over time. 排名追踪/SERP监控",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rank_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Zhu",
+      "features": [
+        "Track keyword rankings and SERP feature changes in traditional search and AI responses over time",
+        "排名追踪/SERP监控"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rank-tracker@9.9.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139607425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rank-tracker",
+      "url": "https://clawhub.ai/skills/rank-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rank-tracker",
+    "url": "https://clawhub.ai/skills/rank-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rank-tracker-e56dba0f9447503f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rank-tracker@9.9.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-rank-tracker-9.9.5.json",
+      "version": "9.9.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41e58fef57bc78bd1887f4265894bd7cde62f85e859a4c02076df165c7433b4c",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:05:40.456Z"
+}

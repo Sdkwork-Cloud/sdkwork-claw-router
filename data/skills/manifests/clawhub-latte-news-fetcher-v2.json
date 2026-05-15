@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64062,
+  "uuid": "skill-clawhub-latte-news-fetcher-v2",
+  "skillKey": "clawhub-latte-news-fetcher-v2",
+  "name": "Latte News Fetcher",
+  "summary": "新闻获取与RSS订阅工具。从免费信源获取新闻，支持RSS订阅和Tavily搜索。 触发词：新闻、今日新闻、RSS、订阅、阅读。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.latte_news_fetcher_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luogao2333",
+      "features": [
+        "新闻获取与RSS订阅工具。从免费信源获取新闻，支持RSS订阅和Tavily搜索。 触发词：新闻、今日新闻、RSS、订阅、阅读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/latte-news-fetcher-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244123296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "latte-news-fetcher-v2",
+      "url": "https://clawhub.ai/skills/latte-news-fetcher-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "latte-news-fetcher-v2",
+    "url": "https://clawhub.ai/skills/latte-news-fetcher-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/latte-news-fetcher-v2-0cdaaa5d17064d32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/latte-news-fetcher-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-latte-news-fetcher-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a49942e3d2e1c88cf036c7317d090efe81cb05cee1c660de701805ec3bd7245",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:26:24.879Z"
+}

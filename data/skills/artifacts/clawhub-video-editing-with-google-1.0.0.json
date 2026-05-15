@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-google@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_google",
+  "skill": {
+    "id": 43178,
+    "skillKey": "clawhub-video-editing-with-google",
+    "name": "Video Editing With Google"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-google",
+    "url": "https://clawhub.ai/skills/video-editing-with-google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-google-808b097eb735ff21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute screen recording from Google Meet into 1080p edited MP4 clips just by typing what you need. Whether it's editing and polishing videos to shar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776775492176,
+      "changelog": "Initial release — AI-powered video editing tool for Google Meet recordings and other clips.\n\n- Upload video clips, describe edits in plain language, and download polished 1080p MP4s in 1–2 minutes.\n- No manual timeline work or export settings required; supports trimming, captions, aspect ratio, BGM, overlays, and more.\n- Automatic backend connection with easy anonymous authentication (100 free credits, valid for 7 days).\n- Simple commands for exporting videos, checking credits, previewing state, and uploading files.\n- Cloud GPU rendering pipeline with support for MP4, MOV, WebM, AVI, and common audio/image formats.\n- Clear error handling and workflow tips for Google Drive and YouTube sharing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a474fdcd22d670fd54c7d1a8e33dcb19ef62c7933853651f05af51d1011d86ec"
+}

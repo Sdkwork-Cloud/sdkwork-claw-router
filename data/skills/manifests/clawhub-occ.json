@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25997,
+  "uuid": "skill-clawhub-occ",
+  "skillKey": "clawhub-occ",
+  "name": "occ",
+  "summary": "Control OpenCode to execute development tasks. Provides session management and task execution capabilities.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.occ",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gongxh13",
+      "features": [
+        "Control OpenCode to execute development tasks",
+        "Provides session management and task execution capabilities."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/occ@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44743148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "occ",
+      "url": "https://clawhub.ai/skills/occ"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "occ",
+    "url": "https://clawhub.ai/skills/occ",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/occ-5db2b9c0d7a494a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/occ@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-occ-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:051d289ce08a16274e77ef11bc985096f716de810b6aebbcb29c18445b55c156",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:57:59.104Z"
+}

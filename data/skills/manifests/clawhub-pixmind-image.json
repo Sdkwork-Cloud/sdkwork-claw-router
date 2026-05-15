@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30999,
+  "uuid": "skill-clawhub-pixmind-image",
+  "skillKey": "clawhub-pixmind-image",
+  "name": "Pixmind Image",
+  "summary": "Generate or edit AI images via Pixmind API (text-to-image and image-to-image)",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixmind_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pixmind",
+      "features": [
+        "Generate or edit AI images via Pixmind API (text-to-image and image-to-image)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pixmind-image@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19215394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pixmind-image",
+      "url": "https://clawhub.ai/skills/pixmind-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixmind-image",
+    "url": "https://clawhub.ai/skills/pixmind-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixmind-image-0bc44f3a17d1e5a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pixmind-image@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pixmind-image-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89a8cd2244c7783c492c8b5b0c72945886d1be5454f9e85d077c36f37b1bcce5",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:39:47.176Z"
+}

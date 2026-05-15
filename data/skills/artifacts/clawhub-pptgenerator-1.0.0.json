@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pptgenerator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptgenerator",
+  "skill": {
+    "id": 69828,
+    "skillKey": "clawhub-pptgenerator",
+    "name": "pptgenerator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptgenerator",
+    "url": "https://clawhub.ai/skills/pptgenerator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptgenerator-8bb656958efd6e35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持HTML格式PPT的智能生成与编辑，涵盖通用演示、总结汇报、教学课件、公众演讲等场景，提供换风格、换语种、文本润色、信息核验等功能；当用户需要生成PPT/演示文稿/幻灯片，或对现有PPT执行换风格/换语种/润色/核验时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yyc529",
+      "userId": "s177h4yr1tc9dems5z8af784v183pcne",
+      "displayName": "yyc529",
+      "image": "https://avatars.githubusercontent.com/u/4270801?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774600449803,
+      "changelog": "Initial release of pptultra.\n\n- 支持PPT智能生成与编辑\n-支持AI生成PPT：适用于通用演示、总结汇报、教学课件、公众演讲等多种场景\n- 支持AI编辑HTML格式的PPT：提供一键换风格、换语种、文本润色、信息核验等编辑功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11b18fec6501d86d994b4bfc726e430342b417f5f3431ecbbae13ea767d365cd"
+}

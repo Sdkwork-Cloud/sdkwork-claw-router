@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9130,
+  "uuid": "skill-clawhub-expense-tracker-pro",
+  "skillKey": "clawhub-expense-tracker-pro",
+  "name": "Expense Tracker Pro",
+  "summary": "Track expenses via natural language, get spending summaries, set budgets",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_tracker_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Track expenses via natural language, get spending summaries, set budgets"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expense-tracker-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expense-tracker-pro",
+      "url": "https://clawhub.ai/skills/expense-tracker-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-tracker-pro",
+    "url": "https://clawhub.ai/skills/expense-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-tracker-pro-89e349bb90a24826.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expense-tracker-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expense-tracker-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4777921ff8aba8006ae66ed98b750bd7d93d2110add364698144d0d3335747f3",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:33:50.224Z"
+}

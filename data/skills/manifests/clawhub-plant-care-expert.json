@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68450,
+  "uuid": "skill-clawhub-plant-care-expert",
+  "skillKey": "clawhub-plant-care-expert",
+  "name": "Plant Care Expert",
+  "summary": "植物识别与养护专家技能。当用户发送植物图片或询问植物名称时触发。支持：1) 识别植物种类 2) 评估养护难度 3) 提供详细养护指南 4) 诊断植物问题 5) 给出急救建议。适用于室内外绿植、花卉、多肉植物等的养护咨询。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plant_care_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Phal studio",
+      "features": [
+        "植物识别与养护专家技能。当用户发送植物图片或询问植物名称时触发。支持：1) 识别植物种类 2) 评估养护难度 3) 提供详细养护指南 4) 诊断植物问题 5) 给出急救建议。适用于室内外绿植."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plant-care-expert@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212455601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plant-care-expert",
+      "url": "https://clawhub.ai/skills/plant-care-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plant-care-expert",
+    "url": "https://clawhub.ai/skills/plant-care-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plant-care-expert-1cbcfc76323c59ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plant-care-expert@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-plant-care-expert-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e8037b8b8f044f016bbec751fa047534184ef6254772a84c78652bdf5841209",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:25:51.080Z"
+}

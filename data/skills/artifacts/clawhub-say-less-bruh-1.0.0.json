@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/say-less-bruh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.say_less_bruh",
+  "skill": {
+    "id": 55619,
+    "skillKey": "clawhub-say-less-bruh",
+    "name": "Say Less Bruh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "say-less-bruh",
+    "url": "https://clawhub.ai/skills/say-less-bruh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/say-less-bruh-1e1f6d3089fccb11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user explicitly asks for shorter, more human responses with minimal formatting, usually by saying “Say Less Bruh” or asking for shorter replies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jakeacp",
+      "userId": "s176gw277mpftx07d1y8fmxgbh83ht4r",
+      "displayName": "jakeACP",
+      "image": "https://avatars.githubusercontent.com/u/264512793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776814040813,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be7eccf5f05824ae12b9e864e522d0e0a307c8c5d0859312deab1e99aa986e7b"
+}

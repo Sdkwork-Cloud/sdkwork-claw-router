@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fha-va-usda-mortgage-rate-watch@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fha_va_usda_mortgage_rate_watch",
+  "skill": {
+    "id": 46719,
+    "skillKey": "clawhub-fha-va-usda-mortgage-rate-watch",
+    "name": "FHA, VA & USDA Mortgage Rate Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fha-va-usda-mortgage-rate-watch",
+    "url": "https://clawhub.ai/skills/fha-va-usda-mortgage-rate-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fha-va-usda-mortgage-rate-watch-2b9fb2fe65709add.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily FHA, VA, and USDA government-backed mortgage rate monitoring, comparison, and newsletter-style summaries. Use when the user asks about current FHA mort..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "li-chi",
+      "userId": "s17c2cf7j0t6s1wvbkabgk5eys83n8yr",
+      "displayName": "Chi Li",
+      "image": "https://avatars.githubusercontent.com/u/10106088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777246291825,
+      "changelog": "Refined headline formatting for daily rate summaries. Updated marketplace keywords to better match FHA, VA, and USDA rate-intent searches. Clarified display name to align with publication branding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7be5be83a041d24c702817e7ba1e4305009c3d017ba8a861cd50c8d94dfd2fe5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nihao@0.12.3",
+  "version": "0.12.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nihao",
+  "skill": {
+    "id": 16002,
+    "skillKey": "clawhub-nihao",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nihao",
+    "url": "https://clawhub.ai/skills/nihao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nihao-5e793a946e316b58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Nostr identity setup and health-check CLI. Creates a complete Nostr identity (keypair, profile, relay list, lightning address, Cashu wallet) in one command...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dergigi",
+      "userId": "publishers:dergigi",
+      "displayName": "dergigi",
+      "image": "https://avatars.githubusercontent.com/u/109058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 840,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.12.3",
+      "createdAt": 1772666454174,
+      "changelog": "Updated skill documentation to reflect nip17.com DM relay defaults",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e89ef9343b3884c8b77ddb439bdbb886cf4fd5f50cf80ee9d7f89493a87b846"
+}

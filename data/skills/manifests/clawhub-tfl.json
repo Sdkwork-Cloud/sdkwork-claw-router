@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48741,
+  "uuid": "skill-clawhub-tfl",
+  "skillKey": "clawhub-tfl",
+  "name": "TfL London Transit",
+  "summary": "London TfL transit — real-time Tube arrivals, bus predictions, line status, service disruptions, journey planning, and route info for the London Underground,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tfl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Leach",
+      "features": [
+        "London TfL transit — real-time Tube arrivals, bus predictions, line status, service disruptions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tfl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1900805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tfl",
+      "url": "https://clawhub.ai/skills/tfl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tfl",
+    "url": "https://clawhub.ai/skills/tfl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tfl-da5435de0c60ba69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tfl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tfl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2de77a97f10b17d924c9289d567d09b1d6a5a1a09a5c3132eece19182c6af4a1",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T01:03:04.408Z"
+}

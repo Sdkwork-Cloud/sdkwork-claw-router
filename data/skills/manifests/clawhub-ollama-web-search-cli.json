@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58629,
+  "uuid": "skill-clawhub-ollama-web-search-cli",
+  "skillKey": "clawhub-ollama-web-search-cli",
+  "name": "Ollama Web Search CLI",
+  "summary": "使用 Ollama Web Search API 进行网络搜索和网页抓取",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_web_search_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SunnyDoy",
+      "features": [
+        "使用 Ollama Web Search API 进行网络搜索和网页抓取"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-web-search-cli@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13936154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-web-search-cli",
+      "url": "https://clawhub.ai/skills/ollama-web-search-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-web-search-cli",
+    "url": "https://clawhub.ai/skills/ollama-web-search-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-web-search-cli-7d507ff2e9fa880c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-web-search-cli@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-web-search-cli-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cf4be6e3bcef99ab4da6fee1797082906a2338a8d748416a1062270dcb0ec9f",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:20:55.300Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19887,
+  "uuid": "skill-clawhub-sleep-snooze",
+  "skillKey": "clawhub-sleep-snooze",
+  "name": "Sleep Snooze",
+  "summary": "Snooze incoming notifications during your sleep window and receive a morning digest when you wake up. Supports Telegram, WhatsApp, and any provider OpenClaw...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sleep_snooze",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hardik500",
+      "features": [
+        "Snooze incoming notifications during your sleep window and receive a morning digest when you wa.",
+        "Supports Telegram, WhatsApp, and any provider OpenClaw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sleep-snooze@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28431356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sleep-snooze",
+      "url": "https://clawhub.ai/skills/sleep-snooze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sleep-snooze",
+    "url": "https://clawhub.ai/skills/sleep-snooze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sleep-snooze-c8a25b0f59f50344.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sleep-snooze@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sleep-snooze-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08a67344e3ac2056ebd6ec66d22532aeaed5a780ad7b6143110ec7d8aa47fb96",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:00:15.866Z"
+}

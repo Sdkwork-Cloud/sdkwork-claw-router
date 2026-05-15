@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65045,
+  "uuid": "skill-clawhub-08-growth-record",
+  "skillKey": "clawhub-08-growth-record",
+  "name": "08 Growth Record",
+  "summary": "Miki成长档案 · 记录0-3岁发育数据，生成长期曲线，与同龄基准对比，生成可分享的家庭成长报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.08_growth_record",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "Miki成长档案 · 记录0-3岁发育数据，生成长期曲线，与同龄基准对比，生成可分享的家庭成长报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/08-growth-record@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "08-growth-record",
+      "url": "https://clawhub.ai/skills/08-growth-record"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "08-growth-record",
+    "url": "https://clawhub.ai/skills/08-growth-record",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/08-growth-record-1a27e5b6ed449c77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/08-growth-record@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-08-growth-record-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ee2b63a56dabf5381cb4a610585ba5a30fe14635fd0fc7c6de30c932a6f2577",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T16:43:58.065Z"
+}

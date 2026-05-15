@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lingxi-watchlist-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lingxi_watchlist_skill",
+  "skill": {
+    "id": 72129,
+    "skillKey": "clawhub-lingxi-watchlist-skill",
+    "name": "国泰海通证券-灵犀自选股管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lingxi-watchlist-skill",
+    "url": "https://clawhub.ai/skills/lingxi-watchlist-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lingxi-watchlist-skill-e114672f54084c6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国泰海通证券-灵犀自选管理 skill，支持查询自选股行情、添加、删除自选股。**本期仅支持管理【我的自选】分组中的自选股，其他分组中的自选股管理仍在开发中。** 当用户表达查看自选股、查看自选股行情、关注某只股票、从自选股中移除某只股票等意图时，必须使用本 Skill。**Agent 只需读取此文件，无需读取其..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gtht-tech",
+      "userId": "s17392radw7ghrj3rb101hqj5x85f74n",
+      "displayName": "gtht",
+      "image": "https://avatars.githubusercontent.com/u/5830484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778035156639,
+      "changelog": "lingxi-watchlist-skill v1.0.1\n\n- 更新描述字段，增加“国泰海通证券”字样。\n- 新增触发关键词说明：“自选股，我的自选，添加自选，删除自选，加自选，移出自选”。\n- 其他功能和逻辑保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4601c4f912c6419ad254809a66ca5475c143ef56f447b9ebc4d1a3d45c48fcbc"
+}

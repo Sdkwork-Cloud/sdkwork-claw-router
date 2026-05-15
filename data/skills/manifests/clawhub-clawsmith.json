@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18183,
+  "uuid": "skill-clawhub-clawsmith",
+  "skillKey": "clawhub-clawsmith",
+  "name": "Clawsmith",
+  "summary": "Create, audit and publish production-ready OpenClaw skills with one command. 10 modes included.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsmith",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manish Pareek",
+      "features": [
+        "Create, audit and publish production-ready OpenClaw skills with one command",
+        "10 modes included."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsmith@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71243646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsmith",
+      "url": "https://clawhub.ai/skills/clawsmith"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsmith",
+    "url": "https://clawhub.ai/skills/clawsmith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsmith-68ea1ce1d2c0b8e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsmith@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsmith-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a26a50bbf537af2043d06b16f0319cb9af3861f099b42ed68dbde64c669c6977",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T11:42:00.437Z"
+}

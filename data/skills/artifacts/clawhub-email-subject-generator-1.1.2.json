@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-subject-generator@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_subject_generator",
+  "skill": {
+    "id": 22959,
+    "skillKey": "clawhub-email-subject-generator",
+    "name": "Email Subject Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-subject-generator",
+    "url": "https://clawhub.ai/skills/email-subject-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-subject-generator-37ca5c6b8d5d9dc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered email subject line generator. Create subject lines that get opened."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icepopma",
+      "userId": "publishers:icepopma",
+      "displayName": "icepopma",
+      "image": "https://avatars.githubusercontent.com/u/259024160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772728445255,
+      "changelog": "- Dependency versions updated in package.json and package-lock.json.\n- No visible user-facing changes or feature additions.\n- Internal updates only; functionality and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1899f5bfb657fcd5864ef2a47ad4c46adebb0f7cf702e50556062b053b0e441b"
+}

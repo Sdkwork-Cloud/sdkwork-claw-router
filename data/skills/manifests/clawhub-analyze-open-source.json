@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31151,
+  "uuid": "skill-clawhub-analyze-open-source",
+  "skillKey": "clawhub-analyze-open-source",
+  "name": "Analyze Open Source",
+  "summary": "Analyze and explain open-source project code logic, architecture, data flows, APIs, and algorithms. Use when the user asks to analyze a project, understand c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyze_open_source",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ttet",
+      "features": [
+        "Analyze and explain open-source project code logic, architecture, data flows, APIs, and algorit.",
+        "Use when the user asks to analyze a project, understand c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analyze-open-source@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7819606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analyze-open-source",
+      "url": "https://clawhub.ai/skills/analyze-open-source"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyze-open-source",
+    "url": "https://clawhub.ai/skills/analyze-open-source",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyze-open-source-5395bd48cff16757.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analyze-open-source@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-analyze-open-source-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb42163151c30fd093356bbc099cf21d748e512061403c534946944b6877c71f",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:08:20.048Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34676,
+  "uuid": "skill-clawhub-openclaw-prompt-shield",
+  "skillKey": "clawhub-openclaw-prompt-shield",
+  "name": "Openclaw Prompt Shield",
+  "summary": "Local input-hardening scanner for OpenClaw agents. Pattern-based detection across 9 categories of LLM input risks, with combined-signal scoring and caller-su...",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_prompt_shield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gopendrasharma89-tech",
+      "features": [
+        "Local input-hardening scanner for OpenClaw agents",
+        "Pattern-based detection across 9 categories of LLM input risks, with combined-signal scoring an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-prompt-shield@0.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226691732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-prompt-shield",
+      "url": "https://clawhub.ai/skills/openclaw-prompt-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-prompt-shield",
+    "url": "https://clawhub.ai/skills/openclaw-prompt-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-prompt-shield-972615122c713db5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-prompt-shield@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-prompt-shield-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9ec48f33c37e3ceb63290831539371a4fbf94b695ae51697997e99426898fa6",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:32:31.438Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-panner-validator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_panner_validator",
+  "skill": {
+    "id": 16428,
+    "skillKey": "clawhub-task-panner-validator",
+    "name": "Task Panner Validator for Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-panner-validator",
+    "url": "https://clawhub.ai/skills/task-panner-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-panner-validator-49ed5eeee64ae1d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides secure task planning, validation, approval, and execution for AI agents with safety checks, rollback, dry runs, and error handling using pure Python."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cerbug45",
+      "userId": "s170r0ajc2x7b9pyqmvrajgtxx85hz4r",
+      "displayName": "cerbug45",
+      "image": "https://avatars.githubusercontent.com/u/43820349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 887,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771182801511,
+      "changelog": "Initial public release with robust Python-native task planning and validation.\n\n- Introduces a step-by-step task management system using only the Python standard library.\n- Supports defining custom execution logic via executor functions.\n- Includes plan validation, manual or automatic approval, and safe/dry-run execution modes.\n- Detects and warns about dangerous actions with built-in safety validation.\n- Allows plan persistence (save/load) and provides execution summaries and error handling.\n- Features guidance for common use cases, best practices, and advanced automation options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43695c35c89862590b7e4922ae43da567538243cd2a93fb831114ed1002392a5"
+}

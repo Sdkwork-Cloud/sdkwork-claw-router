@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxymock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxymock",
+  "skill": {
+    "id": 17790,
+    "skillKey": "clawhub-proxymock",
+    "name": "proxymock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxymock",
+    "url": "https://clawhub.ai/skills/proxymock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxymock-4362a196722238ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record, inspect, mock, replay, and generate API traffic using the proxymock CLI. Use when the user wants to capture HTTP/gRPC/database traffic, create mocks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mleray24",
+      "userId": "publishers:mleray24",
+      "displayName": "Matthew LeRay",
+      "image": "https://avatars.githubusercontent.com/u/30029105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 746,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771440357680,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6821aa26f334c940a1aa4bd2487433d1939c09935c12a8d21553a76f618c074"
+}

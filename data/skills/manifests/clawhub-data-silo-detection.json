@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15032,
+  "uuid": "skill-clawhub-data-silo-detection",
+  "skillKey": "clawhub-data-silo-detection",
+  "name": "Data Silo Detection",
+  "summary": "Detect and map data silos in construction organizations. Identify disconnected data sources and integration opportunities",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_silo_detection",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Detect and map data silos in construction organizations",
+        "Identify disconnected data sources and integration opportunities"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-silo-detection@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-silo-detection",
+      "url": "https://clawhub.ai/skills/data-silo-detection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-silo-detection",
+    "url": "https://clawhub.ai/skills/data-silo-detection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-silo-detection-8ea8e767571bf70d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-silo-detection@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-silo-detection-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:076a4490b77d0ea346125dcd55f15e267af4c3ebc9d3c38ffd50552d82f7694e",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:09:45.264Z"
+}

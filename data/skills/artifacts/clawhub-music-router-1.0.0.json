@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_router",
+  "skill": {
+    "id": 25275,
+    "skillKey": "clawhub-music-router",
+    "name": "MusicRouter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-router",
+    "url": "https://clawhub.ai/skills/music-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-router-eb0f6ba6f13486db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically converts music sharing links across Chinese and major international platforms, extracting song details and album artwork for seamless multi-pla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leo7723",
+      "userId": "s17ervnsym33n15q4sxg6cd599847w25",
+      "displayName": "leo7723",
+      "image": "https://avatars.githubusercontent.com/u/16860032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773071846902,
+      "changelog": "- Initial release of the Music Router Skill.\n- Automatically identifies the source platform of music sharing links.\n- Extracts song name, artist, and album artwork.\n- Provides direct conversion for Netease Cloud Music and QQ Music.\n- Resolves international links using the Odesli (song.link) API, covering Spotify, Apple Music, YouTube, Amazon Music, Tidal, Deezer, and SoundCloud.\n- Optional logging feature via command-line flag for conversion records.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9b9b29f0abeb400f8a53fe4aaef13bf3930961faeeeaec2902f38b81837a511"
+}

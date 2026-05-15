@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67925,
+  "uuid": "skill-clawhub-apitestcreate",
+  "skillKey": "clawhub-apitestcreate",
+  "name": "API Test Create",
+  "summary": "当用户需要根据接口规格生成API测试分析文档时使用此技能。接受OpenAPI/Swagger文档、简化接口定义或自然语言描述，基于140个常见API测试陷阱输出全面的测试分析文档，涵盖参数校验、业务逻辑、响应验证和安全测试分析点。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apitestcreate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "autotestlite",
+      "features": [
+        "当用户需要根据接口规格生成API测试分析文档时使用此技能。接受OpenAPI/Swagger文档、简化接口定义或自然语言描述，基于140个常见API测试陷阱输出全面的测试分析文档，涵盖参数校."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apitestcreate@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17597471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apitestcreate",
+      "url": "https://clawhub.ai/skills/apitestcreate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apitestcreate",
+    "url": "https://clawhub.ai/skills/apitestcreate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apitestcreate-00bad831f6de37b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apitestcreate@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-apitestcreate-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dd0cb0c8c1154f307b9754e94afec5f42bcf1b12c1329b31ab6b0c617f8cd9b",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T00:37:43.036Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oosmetrics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oosmetrics",
+  "skill": {
+    "id": 30466,
+    "skillKey": "clawhub-oosmetrics",
+    "name": "Oosmetrics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oosmetrics",
+    "url": "https://clawhub.ai/skills/oosmetrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oosmetrics-15b9beefc8d6b046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, compare, and analyze 330K+ open-source GitHub repos by growth rate, acceleration, and originality. Discover trending projects, find alternatives, che..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alessandroflati",
+      "userId": "s17ap3q4pjbv92sfp93j7xzaqd845dh2",
+      "displayName": "Alessandro Flati",
+      "image": "https://avatars.githubusercontent.com/u/12647648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775200127009,
+      "changelog": "- Updated MCP server install to use @oosmetrics/mcp@1.0.1 for improved reliability and version clarity.\n- Added detailed section on how the MCP server works, including communication method and privacy assurances.\n- Clarified API key handling and install steps in the setup section.\n- Noted that available tools now fetch dynamically from the oosmetrics API, reflecting user subscription tier.\n- Minor text improvements for clarity and transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:309d585b7291583e2b83a47459bc124ea4b97f2e51ea2cef52be921604454255"
+}

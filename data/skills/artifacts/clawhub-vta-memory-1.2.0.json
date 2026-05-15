@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vta-memory@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vta_memory",
+  "skill": {
+    "id": 9447,
+    "skillKey": "clawhub-vta-memory",
+    "name": "Vta Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vta-memory",
+    "url": "https://clawhub.ai/skills/vta-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vta-memory-ffeab50d2837be47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reward and motivation system for AI agents. Dopamine-like wanting, not just doing. Part of the AI Brain series."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "impkind",
+      "userId": "s17a6jgq93ckexmb6qdvze637s84538n",
+      "displayName": "ImpKind",
+      "image": "https://avatars.githubusercontent.com/u/54905270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3062,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 9,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770799612610,
+      "changelog": "feat: add event logging for brain analytics",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eecb9cb20916a1f4a1a3ce7b910ca4ba1e2153a433638fea6506b74091b1cbe0"
+}

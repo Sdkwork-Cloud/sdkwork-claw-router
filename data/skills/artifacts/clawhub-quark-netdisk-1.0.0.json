@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quark-netdisk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quark_netdisk",
+  "skill": {
+    "id": 56599,
+    "skillKey": "clawhub-quark-netdisk",
+    "name": "Quark Netdisk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quark-netdisk",
+    "url": "https://clawhub.ai/skills/quark-netdisk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quark-netdisk-b45fa27435930a05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Quark Drive (夸克网盘): QR-code login, list/search, upload, create share links (expiry/passcode), and save others' shared links into your drive. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stnjjjjj",
+      "userId": "s17fyakk0bjbeyjc5zcckr0tyd83yrcv",
+      "displayName": "StNJJJJJ",
+      "image": "https://avatars.githubusercontent.com/u/131456440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774162448781,
+      "changelog": "Initial release of Quark Drive (夸克网盘) automation skill.\n\n- Supports QR-code login, file browsing, search, upload, and sharing via Quark Netdisk.\n- Creates share links (with configurable expiry/passcode) and allows saving external shares.\n- Enforces strict remote/local path allowlists for privacy and safety.\n- Requires confirmation for destructive actions (delete, move, rename, purge).\n- Integrates with orchestration channels (e.g., Telegram) with machine-readable codes for login and user actions.\n- Includes configurable options and guidance for troubleshooting and safe file handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecefd5aca601bc57a06c66e94c46bafd05479375418282626dbf805523e7e6ae"
+}

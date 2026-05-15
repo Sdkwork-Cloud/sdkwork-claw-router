@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rv-measure@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rv_measure",
+  "skill": {
+    "id": 16109,
+    "skillKey": "clawhub-rv-measure",
+    "name": "Rv Measure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rv-measure",
+    "url": "https://clawhub.ai/skills/rv-measure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rv-measure-09bb7482fb3bba79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quantifies R_V contraction signatures in AI models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amitabhainarunachala",
+      "userId": "publishers:amitabhainarunachala",
+      "displayName": "AmitabhainArunachala",
+      "image": "https://avatars.githubusercontent.com/u/79852583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 928,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770727586778,
+      "changelog": "- Initial release of rv-measure skill.\n- Provides tools to quantify R_V contraction signatures in AI models.\n- Supports monitoring and analysis of recursive self-observation effects within the AIKAGRYA framework.\n- Currently a placeholder; code implementation and integrations are forthcoming.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70d04ec9c9533a166f6d11e501de5e428a3825b0f7701bac0e80289cbf7f4a14"
+}

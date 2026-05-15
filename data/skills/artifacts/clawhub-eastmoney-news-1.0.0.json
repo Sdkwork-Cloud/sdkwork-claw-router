@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eastmoney-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_news",
+  "skill": {
+    "id": 19356,
+    "skillKey": "clawhub-eastmoney-news",
+    "name": "Eastmoney News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-news",
+    "url": "https://clawhub.ai/skills/eastmoney-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-news-e576b4baa987f6af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time A-share market and financial news from Eastmoney based on user queries like market trends and stock updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "njbilly007-lab",
+      "userId": "publishers:njbilly007-lab",
+      "displayName": "njbilly007-lab",
+      "image": "https://avatars.githubusercontent.com/u/259042561?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 589,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774064269076,
+      "changelog": "Initial release of eastmoney-news skill.\n\n- Enables searching and retrieving latest A-share (A股) and finance news.\n- Supports queries about today's A-share market trends and general finance news.\n- Provides easy integration with news API for up-to-date information.\n- Returns readable summaries including title, content, date, and source.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cbadab7f80c3b43223b54ba23314b3d75613b97827751af8b00f4636b77709b"
+}

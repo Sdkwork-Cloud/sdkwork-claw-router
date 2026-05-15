@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awl-academic-rewriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awl_academic_rewriter",
+  "skill": {
+    "id": 41259,
+    "skillKey": "clawhub-awl-academic-rewriter",
+    "name": "awl-academic-rewriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awl-academic-rewriter",
+    "url": "https://clawhub.ai/skills/awl-academic-rewriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awl-academic-rewriter-a295fb6f448bbded.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rewrite English prose sentence by sentence into a more academic version using the bundled AWL/NAWL vocabulary list. Use when the user asks to academicize, po..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776798647466,
+      "changelog": "- Initial release of AWL Academic Rewriter.\n- Rewrites English prose sentence by sentence using AWL/NAWL vocabulary for increased academic tone.\n- Generates two Markdown outputs: a detailed sentence-level change report and a fully revised document.\n- Ensures meaning, tense, claims, and structure remain unchanged; only appropriate academic terms from the supplied headword list are substituted.\n- Utilizes provided scripts for headword verification and reference but relies on model judgment for semantic fit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea0049e6f652fa5cdd15d32a981c1599cb5d06580ee2a3490a947c8e3169a35b"
+}

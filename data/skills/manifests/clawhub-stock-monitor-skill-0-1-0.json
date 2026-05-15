@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67977,
+  "uuid": "skill-clawhub-stock-monitor-skill-0-1-0",
+  "skillKey": "clawhub-stock-monitor-skill-0-1-0",
+  "name": "Stock Monitor Skill 0.1.0",
+  "summary": "全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_monitor_skill_0_1_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiahl0910",
+      "features": [
+        "全功能智能股票监控预警系统。支持成本百分比、均线金叉死叉、RSI超买超卖、成交量异动、跳空缺口、动态止盈等7大预警规则。符合中国投资者习惯（红涨绿跌）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-monitor-skill-0-1-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12733107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-monitor-skill-0-1-0",
+      "url": "https://clawhub.ai/skills/stock-monitor-skill-0-1-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-monitor-skill-0-1-0",
+    "url": "https://clawhub.ai/skills/stock-monitor-skill-0-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-monitor-skill-0-1-0-7f46656f846995a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-monitor-skill-0-1-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-monitor-skill-0-1-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5b698342c36c34bca4366f7065c4ca50cc5f7dab0f52341bb2d04b0cc58cb5a",
+      "artifactSizeBytes": 2586
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T08:13:23.986Z"
+}

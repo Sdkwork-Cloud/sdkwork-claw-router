@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_image_gen",
+  "skill": {
+    "id": 16585,
+    "skillKey": "clawhub-azure-image-gen",
+    "name": "Azure Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-image-gen",
+    "url": "https://clawhub.ai/skills/azure-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-image-gen-afeef68bd8b7089b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using Azure OpenAI DALL-E. Supports batch generation, custom prompts, and outputs a gallery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abhibavishi",
+      "userId": "publishers:abhibavishi",
+      "displayName": "abhibavishi",
+      "image": "https://avatars.githubusercontent.com/u/7823146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 858,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771233177299,
+      "changelog": "Initial release: Azure OpenAI DALL-E image generation with batch support and HTML gallery output",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0dec7e98bf2c8907f2a8e875e2b9170ee0b5f376a6fb8bd9bf14368865510631"
+}

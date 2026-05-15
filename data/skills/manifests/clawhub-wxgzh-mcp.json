@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64847,
+  "uuid": "skill-clawhub-wxgzh-mcp",
+  "skillKey": "clawhub-wxgzh-mcp",
+  "name": "wxgzh-mcp",
+  "summary": "微信公众号草稿创建与管理技能，支持图片上传、创建草稿、发布等操作。需配置 AppID、AppSecret、白名单 IP。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wxgzh_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaohuozi",
+      "features": [
+        "微信公众号草稿创建与管理技能，支持图片上传、创建草稿、发布等操作。需配置 AppID、AppSecret、白名单 IP。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wxgzh-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79885733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wxgzh-mcp",
+      "url": "https://clawhub.ai/skills/wxgzh-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wxgzh-mcp",
+    "url": "https://clawhub.ai/skills/wxgzh-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wxgzh-mcp-84a13534ba187a7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wxgzh-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wxgzh-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25b0d15388236ae8317fc55708112ea00546319584ee03518e0ec0741a1cdeb2",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:37:37.177Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19765,
+  "uuid": "skill-clawhub-hadoop",
+  "skillKey": "clawhub-hadoop",
+  "name": "Hadoop",
+  "summary": "Manage Hadoop clusters with HDFS operations, YARN job tuning, and distributed processing diagnostics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hadoop",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Manage Hadoop clusters with HDFS operations, YARN job tuning, and distributed processing diagno."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hadoop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hadoop",
+      "url": "https://clawhub.ai/skills/hadoop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hadoop",
+    "url": "https://clawhub.ai/skills/hadoop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hadoop-e11cf22916d69f8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hadoop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hadoop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbf5bbdd931ee167e7d1d3b3061e01bd69fc351f4074918e667af644375cc90f",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T16:11:36.718Z"
+}

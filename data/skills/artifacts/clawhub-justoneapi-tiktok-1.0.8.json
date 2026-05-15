@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-tiktok@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_tiktok",
+  "skill": {
+    "id": 31179,
+    "skillKey": "clawhub-justoneapi-tiktok",
+    "name": "TikTok API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-tiktok",
+    "url": "https://clawhub.ai/skills/justoneapi-tiktok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-tiktok-7dcc66a30400a348.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze TikTok workflows with JustOneAPI, including user Published Posts, post Details, and user Profile across 7 operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776924482669,
+      "changelog": "- Updated operation IDs: `getPostDetailV1` and `getUserDetailV1` are now named `getTiktokPostDetailV1` and `getTiktokUserDetailV1`.\n- Documentation in SKILL.md and generated files updated to reflect the new operation names.\n- All API usage instructions and examples now reference the updated operation IDs.\n- No changes to endpoints or core functionality; update is limited to naming and documentation consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a968d9d85f90f3bec12ce3916b60557e7802dc57306f95d040f59afe83fe8e50"
+}

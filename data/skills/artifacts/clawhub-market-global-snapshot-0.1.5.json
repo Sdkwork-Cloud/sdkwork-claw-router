@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-global-snapshot@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_global_snapshot",
+  "skill": {
+    "id": 18019,
+    "skillKey": "clawhub-market-global-snapshot",
+    "name": "Global Market Snapshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-global-snapshot",
+    "url": "https://clawhub.ai/skills/market-global-snapshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-global-snapshot-9b816126d52b6826.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a structured global market snapshot report including major stock indices and commodities. Use when user asks for market data, stock market report, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiediking",
+      "userId": "s175qh0c0ha5jp8mgxjj2fsmgx84p0c3",
+      "displayName": "Jimmy Botman",
+      "image": "https://avatars.githubusercontent.com/u/39128100?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 665,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1773583583608,
+      "changelog": "Updated to use Yahoo Finance API with proper close price calculations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:930825e0fdf40e70afaa56d7f0fb4ed3c42c5dc035f381fb132f145bb677a4d6"
+}

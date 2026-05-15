@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63958,
+  "uuid": "skill-clawhub-ezviz-open-picture",
+  "skillKey": "clawhub-ezviz-open-picture",
+  "name": "Ezviz Open Picture",
+  "summary": "萤石设备批量抓图技能。支持多设备同时抓图，自动管理 Token 并可选下载图片到本地。 Use when: 需要获取多个摄像头实时画面、批量抓图存档、监控画面采集、定时抓图任务。 ⚠️ 安全要求：必须设置 EZVIZ_APP_KEY 和 EZVIZ_APP_SECRET 环境变量，使用最小权限凭证。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_picture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EzvizOpenTeam",
+      "features": [
+        "萤石设备批量抓图技能。支持多设备同时抓图，自动管理 Token 并可选下载图片到本地。 Use when: 需要获取多个摄像头实时画面、批量抓图存档、监控画面采集、定时抓图任务。 ⚠️ 安全."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezviz-open-picture@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16202450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezviz-open-picture",
+      "url": "https://clawhub.ai/skills/ezviz-open-picture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-picture",
+    "url": "https://clawhub.ai/skills/ezviz-open-picture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-picture-720ae8ea18c5a672.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezviz-open-picture@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezviz-open-picture-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70112de1e2b59de35c2c81deb10b4e7f92cd5830447bbc00afc6ec4b058c3971",
+      "artifactSizeBytes": 2826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:34:35.718Z"
+}

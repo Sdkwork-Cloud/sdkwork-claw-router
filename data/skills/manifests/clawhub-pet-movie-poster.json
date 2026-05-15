@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33778,
+  "uuid": "skill-clawhub-pet-movie-poster",
+  "skillKey": "clawhub-pet-movie-poster",
+  "name": "Turn pet photos into cinematic character posters.",
+  "summary": "Say \"Help me install this skill from https://clawhub.ai/shuminliu026/pet-movie-poster\" to your local agent, then turn pet photos into cinematic character pos...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet_movie_poster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuliu026",
+      "features": [
+        "Say \"Help me install this skill from https://clawhub.ai/shuminliu026/pet-movie-poster\" to your."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pet-movie-poster@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271687535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pet-movie-poster",
+      "url": "https://clawhub.ai/skills/pet-movie-poster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet-movie-poster",
+    "url": "https://clawhub.ai/skills/pet-movie-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-movie-poster-2f73d2c33c2e9c92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pet-movie-poster@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pet-movie-poster-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:584843e635ba0da61f227eadd191ed13084ba155506e192222e463521a739c66",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T14:03:16.200Z"
+}

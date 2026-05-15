@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/protocol-deviation-classifier-1@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protocol_deviation_classifier_1",
+  "skill": {
+    "id": 40595,
+    "skillKey": "clawhub-protocol-deviation-classifier-1",
+    "name": "Protocol Deviation Classifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protocol-deviation-classifier-1",
+    "url": "https://clawhub.ai/skills/protocol-deviation-classifier-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protocol-deviation-classifier-1-2768ef1250a921dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Determine whether an incident in a clinical trial is a \"major deviation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775094905419,
+      "changelog": "Initial release with workflow, audit, and reference improvements.\n\n- Added audit result sample and a runtime checklist for reference and validation.\n- Updated SKILL.md with clarified execution workflow, commands, and input/output handling.\n- Emphasized reproducible outputs, fallback paths for missing inputs, and explicit parameter controls.\n- Retained structured classification rules and CLI/API documentation.\n- No third-party dependencies; Python standard library only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9399b9618d95a2c9fa000594f2e26a2dd99ae3b8e4f50953e4d72dbe1aebbd2b"
+}

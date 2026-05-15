@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18670,
+  "uuid": "skill-clawhub-watchdog",
+  "skillKey": "clawhub-watchdog",
+  "name": "watchdog",
+  "summary": "Monitors websites, APIs, and cron jobs (watchdogs) using Watch.dog. Use it when the user asks to \"check the status of my monitors\", \"check uptime\", \"review w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Watch.Dog",
+      "features": [
+        "Monitors websites, APIs, and cron jobs (watchdogs) using Watch.dog",
+        "Use it when the user asks to \"check the status of my monitors\", \"check uptime\", \"review w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/watchdog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6574493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "watchdog",
+      "url": "https://clawhub.ai/skills/watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "watchdog",
+    "url": "https://clawhub.ai/skills/watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/watchdog-422718fe17b063bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/watchdog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-watchdog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:274b9d913641e03a09953cf2ac1057e1733fdcfc9dc6aa315489847dd20802ce",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T09:52:11.279Z"
+}

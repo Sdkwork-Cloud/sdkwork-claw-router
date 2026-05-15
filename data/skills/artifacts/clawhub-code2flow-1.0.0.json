@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code2flow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code2flow",
+  "skill": {
+    "id": 45598,
+    "skillKey": "clawhub-code2flow",
+    "name": "Code2Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code2flow",
+    "url": "https://clawhub.ai/skills/code2flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code2flow-4cd665a98eb8f301.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze codebase structures and source files to generate clear, accurate Mermaid.js diagrams that visualize system architecture and workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "radenwahid",
+      "userId": "s17dypv9dvz632n9260s0503y184mz6r",
+      "displayName": "raden wahid",
+      "image": "https://avatars.githubusercontent.com/u/61126583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777179525798,
+      "changelog": "Initial release of Auto Architect & Diagrammer.\n\n- Provides code analysis and architectural explanations based on user-supplied directories and source files.\n- Automatically generates accurate Mermaid.js diagrams (flowchart, sequence, class, or ER diagrams) for clear visual documentation.\n- Ensures each response includes a structured summary and at least one valid Mermaid code block.\n- Enforces strict Mermaid syntax validity for reliable rendering.\n- Outputs are formatted with headings, bullet points, and concise system overviews before diagrams.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5adbd862b759944af9170ad0758bb5b8060923b905425e3c829ad3942e4e89e"
+}

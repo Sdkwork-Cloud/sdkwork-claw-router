@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-skill@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_skill",
+  "skill": {
+    "id": 30351,
+    "skillKey": "clawhub-persona-skill",
+    "name": "Persona Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-skill",
+    "url": "https://clawhub.ai/skills/persona-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-skill-9be37c70e7b65dc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handles persona lifecycle management. Use it to (1) Initialize or reinitialize an OpenClaw persona after human-MTBI interview, or (2) Perform incremental pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tower1229",
+      "userId": "s177y2shktbe20tdkv2w0kd6gh83gp2x",
+      "displayName": "🦄9527",
+      "image": "https://avatars.githubusercontent.com/u/4016839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775127592263,
+      "changelog": "Release 1.2.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c4ba2773c4651af205af334b1f66e9da4cb99b717cb26cc9477f186c2b54a46"
+}

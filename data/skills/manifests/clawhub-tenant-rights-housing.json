@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37870,
+  "uuid": "skill-clawhub-tenant-rights-housing",
+  "skillKey": "clawhub-tenant-rights-housing",
+  "name": "Tenant Rights Housing",
+  "summary": "Tenant rights knowledge and actionable defense templates. Use when someone has a landlord refusing repairs, is facing eviction, wants to recover a security d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tenant_rights_housing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Tenant rights knowledge and actionable defense templates",
+        "Use when someone has a landlord refusing repairs, is facing eviction, wants to recover a securi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tenant-rights-housing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tenant-rights-housing",
+      "url": "https://clawhub.ai/skills/tenant-rights-housing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tenant-rights-housing",
+    "url": "https://clawhub.ai/skills/tenant-rights-housing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tenant-rights-housing-4a105d27a35984da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tenant-rights-housing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tenant-rights-housing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15a0ca7a772d5ce53b7a558f1a95ab80078751a961fd2eab0162440ef1acbbe2",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:02:00.949Z"
+}

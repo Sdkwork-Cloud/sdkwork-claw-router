@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14764,
+  "uuid": "skill-clawhub-volcengine-ai-search-rag",
+  "skillKey": "clawhub-volcengine-ai-search-rag",
+  "name": "Volcengine Ai Search Rag",
+  "summary": "Retrieval and RAG workflow on Volcengine AI stack. Use when users need embedding search, document indexing, top-k retrieval, grounding prompts, or search relevance tuning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_ai_search_rag",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Retrieval and RAG workflow on Volcengine AI stack",
+        "Use when users need embedding search, document indexing, top-k retrieval, grounding prompts, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-ai-search-rag@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-ai-search-rag",
+      "url": "https://clawhub.ai/skills/volcengine-ai-search-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-ai-search-rag",
+    "url": "https://clawhub.ai/skills/volcengine-ai-search-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-ai-search-rag-d55ff2291e8fe6bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-ai-search-rag@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-ai-search-rag-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ad360cd0cefc74624fe8935e3c0badc659c7191362366f0c2d08c1195306bcf",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:24:12.913Z"
+}

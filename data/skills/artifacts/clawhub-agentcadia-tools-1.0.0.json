@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcadia-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcadia_tools",
+  "skill": {
+    "id": 45568,
+    "skillKey": "clawhub-agentcadia-tools",
+    "name": "agentcadia-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcadia-tools",
+    "url": "https://clawhub.ai/skills/agentcadia-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcadia-tools-9748c31115cc4f5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload or download Agentcadia agent workspaces with metadata writeback and detailed reporting using explicit upload and download commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ideaforceai-sys",
+      "userId": "s1777vysw8ga6aqvzy40s6e05x845j13",
+      "displayName": "ideaforceai-sys",
+      "image": "https://avatars.githubusercontent.com/u/249946194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775415497560,
+      "changelog": "Initial release of agentcadia-tools: unified upload and download workflows for Agentcadia agent workspaces.\n\n- Provides two main commands: `upload` (sync local workspace to Agentcadia) and `download` (fetch Agentcadia agent package locally).\n- Enforces full metadata writeback and reporting for uploads, including synthesized agent metadata and owner-facing summaries.\n- Requires explicit user approval before overwriting files on download.\n- Mandates that share images are delivered as separate image messages when available.\n- Offers deterministic, script-driven file transfer and metadata management for Agentcadia automation tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ca578429e80486a3fc4f68100cb961e01f02ee2a390ca8a1605a604ea680347"
+}

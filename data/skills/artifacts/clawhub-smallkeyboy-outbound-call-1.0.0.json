@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smallkeyboy-outbound-call@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smallkeyboy_outbound_call",
+  "skill": {
+    "id": 58208,
+    "skillKey": "clawhub-smallkeyboy-outbound-call",
+    "name": "电话外呼与自动通知"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smallkeyboy-outbound-call",
+    "url": "https://clawhub.ai/skills/smallkeyboy-outbound-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smallkeyboy-outbound-call-5237643c9aea5991.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make outbound phone calls via ElevenLabs voice agent and Twilio"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallkeyboy",
+      "userId": "s170nr6nxfsrk9n96c9r21ydcx83j5pf",
+      "displayName": "smallKeyboy",
+      "image": "https://avatars.githubusercontent.com/u/68474019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778054048660,
+      "changelog": "初始发布：支持即时/延时外呼、通讯录匹配、Python脚本执行",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d96cb7ac63aa4c0fda05bb662bea152023ed7172658b0734308acbc5599294c1"
+}

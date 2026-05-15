@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10876,
+  "uuid": "skill-clawhub-project-router",
+  "skillKey": "clawhub-project-router",
+  "name": "Project Router",
+  "summary": "Terminal-first project bootstrapper and workspace context manager. Use when the user asks for /project-style workflows: detect current project, read project context/brief, run standardized targets (build/test/lint/deploy), init a .project.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_router",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SafaTinaztepe",
+      "features": [
+        "Terminal-first project bootstrapper and workspace context manager",
+        "Use when the user asks for /project-style workflows: detect current project, read project conte."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8147022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-router",
+      "url": "https://clawhub.ai/skills/project-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-router",
+    "url": "https://clawhub.ai/skills/project-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-router-b4a13590b5941865.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e655704d7e8621ce6a983d49977dff118421f44027a0ac15d64e9210f0a37099",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T21:41:08.677Z"
+}

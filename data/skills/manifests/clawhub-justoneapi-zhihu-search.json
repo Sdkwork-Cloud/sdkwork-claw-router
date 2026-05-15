@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48518,
+  "uuid": "skill-clawhub-justoneapi-zhihu-search",
+  "skillKey": "clawhub-justoneapi-zhihu-search",
+  "name": "Zhihu Keyword Search API",
+  "summary": "Call GET /api/zhihu/search/v1 for Zhihu Keyword Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_zhihu_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/zhihu/search/v1 for Zhihu Keyword Search through JustOneAPI with keyword."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-zhihu-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-zhihu-search",
+      "url": "https://clawhub.ai/skills/justoneapi-zhihu-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-zhihu-search",
+    "url": "https://clawhub.ai/skills/justoneapi-zhihu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-zhihu-search-39619e00570131b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-zhihu-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-zhihu-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f157d7bb814452420704348b0be1446825d2779193ce7c978356ecae568cfb8",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T13:53:49.456Z"
+}

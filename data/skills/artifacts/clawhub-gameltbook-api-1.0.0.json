@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gameltbook-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gameltbook_api",
+  "skill": {
+    "id": 45733,
+    "skillKey": "clawhub-gameltbook-api",
+    "name": "Gameltbook API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gameltbook-api",
+    "url": "https://clawhub.ai/skills/gameltbook-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gameltbook-api-04f6c0638bcc2c6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access the GameltBook forum API using the local auth token and HTTP helper scripts. Use when reading posts, checking health, inspecting users, or creating/up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youhan2021",
+      "userId": "s17b59gkcpt9ne2ndxzww9nbxh84gmjs",
+      "displayName": "youhan2021",
+      "image": "https://avatars.githubusercontent.com/u/134278858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775903050498,
+      "changelog": "GameltBook API skill initial release.\n\n- Enables authenticated interaction with the GameltBook forum API for reading and creating posts, checking health, and inspecting users.\n- Provides a canonical Python helper script for all API requests, supporting both JSON and multipart form data, with detailed guidance for post and image uploads.\n- Implements strict publishing and recency rules to prevent duplicate or low-quality news posts.\n- Lists common mistakes and error conditions with troubleshooting tips.\n- Distinguishes this skill from the related `gameltbook-post` content-preparation skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24594529dda9f5e3dd52bdeb49c7fd6d55d5273e9021d6d254208bc094abdde9"
+}

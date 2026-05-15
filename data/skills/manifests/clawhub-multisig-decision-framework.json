@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49778,
+  "uuid": "skill-clawhub-multisig-decision-framework",
+  "skillKey": "clawhub-multisig-decision-framework",
+  "name": "Multisig Decision Framework",
+  "summary": "Helps users understand multisig wallets, decide when multisig is appropriate, and design signer configurations for personal, family, or small-organization use.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multisig_decision_framework",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Helps users understand multisig wallets, decide when multisig is appropriate, and design signer."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multisig-decision-framework@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multisig-decision-framework",
+      "url": "https://clawhub.ai/skills/multisig-decision-framework"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multisig-decision-framework",
+    "url": "https://clawhub.ai/skills/multisig-decision-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multisig-decision-framework-52442bb1c1e332a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multisig-decision-framework@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multisig-decision-framework-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:144f56489ddf787880c3e88a3d1c2dfb7eab8150d35ea4b2926cf5dfcc849b4d",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T05:40:41.620Z"
+}

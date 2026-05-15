@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34513,
+  "uuid": "skill-clawhub-skill-creater",
+  "skillKey": "clawhub-skill-creater",
+  "name": "skill-creater",
+  "summary": "Generate complete AgentSkills from user requirements. Creates SKILL.md, scripts, references, assets folders, and packages them into a ready-to-upload archive...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "timyljob2011-sudo",
+      "features": [
+        "Generate complete AgentSkills from user requirements",
+        "Creates SKILL.md, scripts, references, assets folders, and packages them into a ready-to-upload."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-creater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253444946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-creater",
+      "url": "https://clawhub.ai/skills/skill-creater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creater",
+    "url": "https://clawhub.ai/skills/skill-creater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creater-707c651d04063507.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-creater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-creater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da9863aee92703c9d7777f9b4caaff9d59029c03ed49654f3fdeca9ac484e818",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:52:31.422Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45517,
+  "uuid": "skill-clawhub-openclaw-skill-parallel-tasks",
+  "skillKey": "clawhub-openclaw-skill-parallel-tasks",
+  "name": "Openclaw Skill Parallel Tasks",
+  "summary": "Execute multiple tasks in parallel with timeout protection, error isolation, and real-time progress feedback. Use when user says \"run these in parallel\", \"pa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_parallel_tasks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiukui666",
+      "features": [
+        "Execute multiple tasks in parallel with timeout protection, error isolation, and real-time prog.",
+        "Use when user says \"run these in parallel\", \"pa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-parallel-tasks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169086124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-parallel-tasks",
+      "url": "https://clawhub.ai/skills/openclaw-skill-parallel-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-parallel-tasks",
+    "url": "https://clawhub.ai/skills/openclaw-skill-parallel-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-parallel-tasks-cdbb1be0f8787c3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-parallel-tasks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-parallel-tasks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16f1e3b8b5f68b5ed961f88192335ccffd688491643ed4d5fedddf140b521277",
+      "artifactSizeBytes": 2614
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:05:03.771Z"
+}

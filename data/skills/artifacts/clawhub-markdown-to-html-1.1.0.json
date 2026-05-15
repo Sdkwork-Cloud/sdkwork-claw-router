@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-to-html@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_to_html",
+  "skill": {
+    "id": 12759,
+    "skillKey": "clawhub-markdown-to-html",
+    "name": "Markdown to HTML"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-to-html",
+    "url": "https://clawhub.ai/skills/markdown-to-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-to-html-f6989c001ebe9631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown text to beautifully styled, self-contained HTML with embedded CSS. Perfect for newsletters, documentation, reports, and email templates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1501,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771785228757,
+      "changelog": "No visible changes in this release.\n\n- Version bumped to 1.1.0.\n- No updates detected in documentation or files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:93bb621b6e4e9d2751392258dea2d5b33fb2927cc14b665568856c87aac268d0"
+}

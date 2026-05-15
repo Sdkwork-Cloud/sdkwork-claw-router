@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-builder-ai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_builder_ai",
+  "skill": {
+    "id": 20030,
+    "skillKey": "clawhub-resume-builder-ai",
+    "name": "Resume Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-builder-ai",
+    "url": "https://clawhub.ai/skills/resume-builder-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-builder-ai-1cff2538a83b0498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When user asks to create a resume, build CV, update resume, generate cover letter, optimize resume for ATS, tailor resume for a job, format resume, add work..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkpareek0315",
+      "userId": "s177xftdngf7e244bg15634m5x83yz4j",
+      "displayName": "Manish Pareek",
+      "image": "https://avatars.githubusercontent.com/u/71243646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771762090042,
+      "changelog": "v1.1.0 — Removed exec permission",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a1706702e85030c4fc12b97c88ef045003a2165c00a4d5b719e89ccd8853f62a"
+}

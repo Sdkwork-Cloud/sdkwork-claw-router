@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52720,
+  "uuid": "skill-clawhub-symptom-checker-triage",
+  "skillKey": "clawhub-symptom-checker-triage",
+  "name": "Symptom Checker Triage",
+  "summary": "Suggest triage levels (Emergency, Urgent, Outpatient) based on red flag symptoms using a rule-based engine. For AI-assisted decision support only — not a sub...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.symptom_checker_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Suggest triage levels (Emergency, Urgent, Outpatient) based on red flag symptoms using a rule-b.",
+        "For AI-assisted decision support only — not a sub..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/symptom-checker-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "symptom-checker-triage",
+      "url": "https://clawhub.ai/skills/symptom-checker-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "symptom-checker-triage",
+    "url": "https://clawhub.ai/skills/symptom-checker-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/symptom-checker-triage-2780b17b4ef01814.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/symptom-checker-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-symptom-checker-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04006b39d2d51532f8df0061439dc4dff476161e1b357aa501c050f215c1bf0e",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:21:03.187Z"
+}

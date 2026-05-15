@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38193,
+  "uuid": "skill-clawhub-pte-heatmap-analyze",
+  "skillKey": "clawhub-pte-heatmap-analyze",
+  "name": "Ptengine Heatmap Analyze",
+  "summary": "Ptengine Heatmap end-to-end analysis skill. Fetches real heatmap data via ptengine-cli and runs AI-powered CRO behavior analysis using a 4-stage psychology m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pte_heatmap_analyze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaichen",
+      "features": [
+        "Ptengine Heatmap end-to-end analysis skill",
+        "Fetches real heatmap data via ptengine-cli and runs AI-powered CRO behavior analysis using a 4-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pte-heatmap-analyze@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5540196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pte-heatmap-analyze",
+      "url": "https://clawhub.ai/skills/pte-heatmap-analyze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pte-heatmap-analyze",
+    "url": "https://clawhub.ai/skills/pte-heatmap-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pte-heatmap-analyze-1bd16989857c6880.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pte-heatmap-analyze@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pte-heatmap-analyze-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f6830f89a2198a4d260d24b0d6f0547f0edb0f2b26e4d5f8badb7444a396ba1",
+      "artifactSizeBytes": 2615
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T03:40:44.547Z"
+}

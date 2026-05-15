@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/theshort-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theshort_news",
+  "skill": {
+    "id": 29779,
+    "skillKey": "clawhub-theshort-news",
+    "name": "The Short News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theshort-news",
+    "url": "https://clawhub.ai/skills/theshort-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theshort-news-87479065f11c7247.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time news intelligence from theshort.ai. Search topic- and tag-scoped news feeds, fetch article details with summaries, list available topics and tags...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sssemil",
+      "userId": "s174tqn3xhpp0er1brvz4v74dh856fr9",
+      "displayName": "sssemil",
+      "image": "https://avatars.githubusercontent.com/u/3113308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776679469101,
+      "changelog": "Initial release of theshort-news skill, enabling real-time, scoped news searches and summaries.\n\n- Provides authenticated access to theshort.ai’s curated news via API.\n- Supports topic- and tag-based news feed searches and article detail retrieval.\n- Returns succinct article summaries with attribution links.\n- Includes free endpoints to list available topics and tags for each API key.\n- Designed for grounding responses in recent, authoritative news—suitable for current events, summaries, and trending topics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7be4d32293d25ebf12794d5a58c869d50e2af3c96b848d4d46e3a18a24597f4"
+}

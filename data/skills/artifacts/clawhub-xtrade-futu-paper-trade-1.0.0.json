@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xtrade-futu-paper-trade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xtrade_futu_paper_trade",
+  "skill": {
+    "id": 60221,
+    "skillKey": "clawhub-xtrade-futu-paper-trade",
+    "name": "XTrade Futu Paper Trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xtrade-futu-paper-trade",
+    "url": "https://clawhub.ai/skills/xtrade-futu-paper-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xtrade-futu-paper-trade-c56ccdb4ed973bef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用富途纸面交易API查询行情、持仓并下单"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xxxwang",
+      "userId": "publishers:xxxwang",
+      "displayName": "XXXWANG",
+      "image": "https://avatars.githubusercontent.com/u/107034160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772895780580,
+      "changelog": "Initial release - 港股模拟交易工具",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e01024c2ca363b649f191e32cec6be7a387e3d186ab7f2ed0f6b16ffbfdd7b7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stripe-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_setup",
+  "skill": {
+    "id": 42159,
+    "skillKey": "clawhub-stripe-setup",
+    "name": "Stripe Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-setup",
+    "url": "https://clawhub.ai/skills/stripe-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-setup-cc6da795f2e66d90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add Stripe payments to any agent-built app. Covers checkout sessions, subscription billing, webhook handling, customer portal, and test-mode validation. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ferrentinomj-dev",
+      "userId": "s17bxt9epae8w45j1yznq2wdbn84ffjv",
+      "displayName": "ferrentinomj-dev",
+      "image": "https://avatars.githubusercontent.com/u/257645185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775670101720,
+      "changelog": "Initial release of stripe-setup: Easily add Stripe payments to any Python Flask-based app.\n\n- Offers full payment flows: one-time and subscription checkouts, webhook handling, and customer portal integration.\n- Provides step-by-step setup instructions, including API key and environment variable management.\n- Includes ready-to-use code snippets for checkout sessions, webhook endpoints, and billing portal in Flask.\n- Guides testing and local development using the Stripe CLI.\n- No prior Stripe experience required; clear setup steps and sample code provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d6a30d2009f2b505b354fb0632d4ba219bfea14cd22fce2caa38db210462ed8"
+}

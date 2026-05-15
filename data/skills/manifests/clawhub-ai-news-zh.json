@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61259,
+  "uuid": "skill-clawhub-ai-news-zh",
+  "skillKey": "clawhub-ai-news-zh",
+  "name": "AI News ZH - 中文AI科技日报",
+  "summary": "中文AI科技日报自动采集与推送。从The Verge、Wired、TechCrunch等英文源抓取最新AI资讯，自动翻译整理为中文，按分类推送到飞书/Telegram/Discord等渠道。适合关注AI行业动态的中文用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_zh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "子豪",
+      "features": [
+        "中文AI科技日报自动采集与推送。从The Verge、Wired、TechCrunch等英文源抓取最新AI资讯，自动翻译整理为中文，按分类推送到飞书/Telegram/Discord等渠道。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17040353?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-zh",
+      "url": "https://clawhub.ai/skills/ai-news-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-zh",
+    "url": "https://clawhub.ai/skills/ai-news-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-zh-b3ca8042237e7f13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7c3a96107c723f4e833c289ded9b2c3ff6dffd7957cd571d3eba2f9d19dc24d",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T04:29:08.204Z"
+}

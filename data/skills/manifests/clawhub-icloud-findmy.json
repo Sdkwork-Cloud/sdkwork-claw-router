@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9545,
+  "uuid": "skill-clawhub-icloud-findmy",
+  "skillKey": "clawhub-icloud-findmy",
+  "name": "iCloud Find My",
+  "summary": "Query Find My locations and battery status for family devices via iCloud.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icloud_findmy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liamnichols",
+      "features": [
+        "Query Find My locations and battery status for family devices via iCloud."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icloud-findmy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/482871?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icloud-findmy",
+      "url": "https://clawhub.ai/skills/icloud-findmy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icloud-findmy",
+    "url": "https://clawhub.ai/skills/icloud-findmy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icloud-findmy-85c0dc41f499152e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icloud-findmy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-icloud-findmy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c704ffa0ce28e6e4675a3c3bc55f6a24e27f96ffd23f1ea271e9e452172d005",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-07T21:57:19.547Z"
+}

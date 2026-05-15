@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitbucket@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitbucket",
+  "skill": {
+    "id": 18445,
+    "skillKey": "clawhub-bitbucket",
+    "name": "Bitbucket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitbucket",
+    "url": "https://clawhub.ai/skills/bitbucket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitbucket-490414ac86e4c55e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bitbucket integration. Manage Repositories, Users, Teams. Use when the user wants to interact with Bitbucket data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "membranedev",
+      "userId": "s17ejzcy4w0v2h2tf7xa3y1mw583eedz",
+      "displayName": "Membrane Dev",
+      "image": "https://avatars.githubusercontent.com/u/147116108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 660,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777562036348,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fd9507169df986df88bb52979930220b0f2543c97d911c0052f380d47739890"
+}

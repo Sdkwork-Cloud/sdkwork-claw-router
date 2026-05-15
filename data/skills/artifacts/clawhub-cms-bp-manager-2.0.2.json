@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cms-bp-manager@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_bp_manager",
+  "skill": {
+    "id": 63237,
+    "skillKey": "clawhub-cms-bp-manager",
+    "name": "Cms Bp Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-bp-manager",
+    "url": "https://clawhub.ai/skills/cms-bp-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-bp-manager-2befdf6258308e18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BP管理助手 — 查看/管理自己与下级的BP（目标/关键成果/关键举措）、AI质量检查。触发词：bp/BP/BP管理/BP目标/BP成果/BP举措/衡量标准/对齐/关键任务/关键成果/上级BP/下级BP/承接/目标管理/OKR/KR/我的目标/我的成果/查看BP/查看目标/检查BP/审计BP。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spzwin",
+      "userId": "s174w40rh23bjb4hmnxn9p1fa983gsch",
+      "displayName": "spzwin",
+      "image": "https://avatars.githubusercontent.com/u/48741773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1775634456164,
+      "changelog": "cms-bp-manager 2.1.0\n\n- 增加自动更新检查相关说明及环境变量配置（BP_MANAGER_SKIP_UPDATE_CHECK、BP_MANAGER_PROMPT_UPDATE、BP_MANAGER_AUTO_UPDATE）。\n- 默认在运行 commands.py 时自动检测技能新版本，并可根据环境变量自动或手动更新。\n- SKILL.md 文档同步更新，详细列出自动更新机制及相关操作指引。\n- 其余功能未变，保持只读/审计核心能力。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:055a9d2dae70c93f9318545871a0519e480f82c66a678ef18dd4fd9d3ca7427f"
+}

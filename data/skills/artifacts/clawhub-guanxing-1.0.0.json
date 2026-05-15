@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guanxing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guanxing",
+  "skill": {
+    "id": 56920,
+    "skillKey": "clawhub-guanxing",
+    "name": "GuanXing 观星"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guanxing",
+    "url": "https://clawhub.ai/skills/guanxing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guanxing-8c83aaaf5dccefe5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chinese metaphysics AI — BaZi (八字), daily fortune, crypto fortune, Feng Shui, Tarot, I-Ching divination, dream interpretation, name scoring, compatibility ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doggychip",
+      "userId": "s17dqgw8qkh90j7tyfs8d27n5583ghf2",
+      "displayName": "doggychip",
+      "image": "https://avatars.githubusercontent.com/u/142707835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773808264013,
+      "changelog": "Initial release: 11 Chinese metaphysics AI actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d77e6cea43fceacba08a4ceade402f74397090f169069857aa1ed47d5d841657"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57564,
+  "uuid": "skill-clawhub-mjolnir-shadow",
+  "skillKey": "clawhub-mjolnir-shadow",
+  "name": "雷神之影 Mjolnir Shadow",
+  "summary": "Mjolnir Shadow (雷神之影) — Automated rotating backup system for OpenClaw workspaces. Creates GPG-encrypted, rotating backups of workspace files, configs, and da...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjolnir_shadow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "king6381",
+      "features": [
+        "Mjolnir Shadow (雷神之影) — Automated rotating backup system for OpenClaw workspaces",
+        "Creates GPG-encrypted, rotating backups of workspace files, configs, and da..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mjolnir-shadow@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127765961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mjolnir-shadow",
+      "url": "https://clawhub.ai/skills/mjolnir-shadow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjolnir-shadow",
+    "url": "https://clawhub.ai/skills/mjolnir-shadow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjolnir-shadow-80226d2f5f3fdbf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mjolnir-shadow@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mjolnir-shadow-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8fbd837447accf981fb747ec81b2e11d5afe005f578902395eaba6c6dbb9d04",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:03:00.918Z"
+}

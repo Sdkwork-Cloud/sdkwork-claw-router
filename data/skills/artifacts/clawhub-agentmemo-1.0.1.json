@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentmemo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmemo",
+  "skill": {
+    "id": 51944,
+    "skillKey": "clawhub-agentmemo",
+    "name": "Agentmemo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmemo",
+    "url": "https://clawhub.ai/skills/agentmemo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmemo-055a1796d5076712.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent persistent memory and human-in-the-loop approval — across sessions, across models. AgentMemo is a cloud API + MCP server that lets agents..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iiamit",
+      "userId": "s17858z13gnjp1gdxqk1hy5eqs83exrp",
+      "displayName": "Iftach Ian Amit",
+      "image": "https://avatars.githubusercontent.com/u/1219407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773686666514,
+      "changelog": "agentmemo 1.0.1\n\n- Clarified in the skill description and metadata that AgentMemo requires a free API key from agentmemo.net (no credit card needed).\n- Added a warning about memory content being sent to and stored by AgentMemo's cloud servers; provided information on privacy, data retention, and data ownership.\n- Updated metadata to specify required environment variables, network access, credential configuration, and installation instructions for optional MCP server.\n- Made privacy and third-party data handling details explicit, with links to AgentMemo's privacy policy.\n- Provided clearer guidance on when the skill is (and is not) appropriate for local-only memory use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adb5d7f987d4b0b412d541fbacc6dea8dcf616c34994dc02290fa96d844a44ab"
+}

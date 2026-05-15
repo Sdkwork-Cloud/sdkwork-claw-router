@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/makeovern@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.makeovern",
+  "skill": {
+    "id": 13059,
+    "skillKey": "clawhub-makeovern",
+    "name": "make a recipe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "makeovern",
+    "url": "https://clawhub.ai/skills/makeovern",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/makeovern-f94b6acdf5e36478.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a user wants to run timed focus sessions (Pomodoro technique) from the terminal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeljseba",
+      "userId": "publishers:abeljseba",
+      "displayName": "AbelJSeba",
+      "image": "https://avatars.githubusercontent.com/u/74651681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770449102523,
+      "changelog": "Initial release of the Pomodoro skill.\n\n- Start a 25-minute focus session with terminal notifications and breaks.\n- Option to customize session duration using bash.\n- Simple bash command to log completed sessions to a file.\n- Review today’s session log from the terminal.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f2d94a451e04b3115cdbe6ea2e8d7f1232a1e7406724ebf77fd95f2ec31d4789"
+}

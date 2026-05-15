@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawguard-auditor@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_auditor",
+  "skill": {
+    "id": 61520,
+    "skillKey": "clawhub-clawguard-auditor",
+    "name": "ClawGuard-Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-auditor",
+    "url": "https://clawhub.ai/skills/clawguard-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-auditor-247ea418b39f1e2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawGuard v3 Auditor - 企业级 Skill 安全审计器，支持意图偏离检测、SAST、供应链安全、ML 异常检测。当用户要求审计、检测、安装前检查一个 Skill 的安全性时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stardreaming",
+      "userId": "s17861a46gwzndpth03w6nvv4d845chj",
+      "displayName": "stardreaming",
+      "image": "https://avatars.githubusercontent.com/u/160408334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775293706892,
+      "changelog": "Initial release of ClawGuard Auditor skill.\n\n- Implements a CLI entry point and core modules for auditing (cli.js, auditor, intent-drift-detector, sast-analyzer, supply-chain-analyzer).\n- Performs static application security testing (SAST), supply chain analysis, and semantic intent drift detection for OpenClaw Skills.\n- Scans both code files and code blocks within SKILL.md before Skill installation.\n- Reports critical/high-risk code patterns, dependency risks, and intent mismatches.\n- Outputs an approval, conditional review, or rejection decision based on findings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41b6debe31c8387d211e5a71dbe9f6559cf3710dc3bf81d71aa9214e2ca22aa1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32421,
+  "uuid": "skill-clawhub-html-ocr",
+  "skillKey": "clawhub-html-ocr",
+  "name": "HTML OCR",
+  "summary": "OCR for HTML pages containing image-embedded or scanned content. Uses MinerU to extract text from images within HTML files and web pages. Features: OCR extra...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzlzyCA",
+      "features": [
+        "OCR for HTML pages containing image-embedded or scanned content",
+        "Uses MinerU to extract text from images within HTML files and web pages",
+        "Features: OCR extra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/html-ocr@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87289074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "html-ocr",
+      "url": "https://clawhub.ai/skills/html-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-ocr",
+    "url": "https://clawhub.ai/skills/html-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-ocr-7a7886f7b40e1df2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/html-ocr@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-html-ocr-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7028077001faaf4de4e5d39d2dc39c333452b4db1b2bdbf2edd4b6cda515e698",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:58:29.309Z"
+}

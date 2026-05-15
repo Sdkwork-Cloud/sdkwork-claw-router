@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lj22503-estj-coach@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lj22503_estj_coach",
+  "skill": {
+    "id": 66386,
+    "skillKey": "clawhub-lj22503-estj-coach",
+    "name": "Estj Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lj22503-estj-coach",
+    "url": "https://clawhub.ai/skills/lj22503-estj-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lj22503-estj-coach-ac245462a3910db0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当 ESTJ 用户需要成长指导时，特别是处理僵化固执、忽视情感、控制倾向等 ESTJ 专属卡点。触发场景：\"我是 ESTJ，团队说我太强势\"、\"ESTJ 如何提升情感智商\"、\"ESTJ 领导力进阶\"。ESTJ 是\"总经理\"类型，组织力强但可能忽视他人感受。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1776422448112,
+      "changelog": "- Major documentation overhaul: SKILL.md has been fully rewritten with detailed use cases, dual-mode (coach/advisor) logic, response templates, user-type boundaries, and error handling.\n- Added clear boundaries, success metrics, error examples, and troubleshooting guidelines to improve user experience.\n- Outlined structured response flows for both coach mode (question-driven) and advisor mode (direct solutions), including when and how to switch modes based on user input.\n- Defined concise response length standards and clarified knowledge usage rules (user-focused, not theory dumps).\n- Implemented user record and session archive flow, improving continuity for returning users.\n- Provided comprehensive sample dialogues, action strategies, and specific templates for edge cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb74b9107ed3135912b90f8489de78a053c8eabbc9686bb536423ffbb36706f4"
+}

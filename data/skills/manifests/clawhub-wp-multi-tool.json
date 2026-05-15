@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10479,
+  "uuid": "skill-clawhub-wp-multi-tool",
+  "skillKey": "clawhub-wp-multi-tool",
+  "name": "WP Multitool — WordPress Optimization Toolkit",
+  "summary": "WordPress site health audit, performance optimization, database cleanup, autoload tuning, slow query detection, wp-config management, image size control, fro...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wp_multi_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcin Dudek",
+      "features": [
+        "WordPress site health audit, performance optimization, database cleanup, autoload tuning, slow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wp-multi-tool@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109857699?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wp-multi-tool",
+      "url": "https://clawhub.ai/skills/wp-multi-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wp-multi-tool",
+    "url": "https://clawhub.ai/skills/wp-multi-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wp-multi-tool-e379720c2295eeae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wp-multi-tool@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wp-multi-tool-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a5db81b9f84c71b66fb78d786dde973ab16f055df76d33e3add8bd31ab2c919",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T13:57:45.370Z"
+}

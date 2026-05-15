@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawjection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawjection",
+  "skill": {
+    "id": 42515,
+    "skillKey": "clawhub-clawjection",
+    "name": "ClawJection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawjection",
+    "url": "https://clawhub.ai/skills/clawjection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawjection-de8b4642e525bed0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and apply ClawJection bundles when a user asks to install a ClawJection, run a ClawJection, or configure an OpenClaw instance from a ClawJection repo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nmadeleidev",
+      "userId": "s1750ew1ttxt7tdcp7qj670vk983m28d",
+      "displayName": "Gregory Potemkin",
+      "image": "https://avatars.githubusercontent.com/u/57456890?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774535548101,
+      "changelog": "- Initial release of the clawjection skill.\n- Supports installing and applying ClawJection bundles from Git repositories, archives, or local directories.\n- Handles ClawJection install flow, including discovering the bundle, running the entrypoint, and processing results.\n- Ensures safety by notifying users about changes to core files and requiring verification of installations.\n- Executes ordered follow-up actions based on the bundle output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8e573cafb3e6e52fab81fc4169a2e0c50cbbc0a874124217ee6d0c2bcada093"
+}

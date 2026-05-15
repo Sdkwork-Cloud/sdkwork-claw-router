@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25925,
+  "uuid": "skill-clawhub-story-biographer",
+  "skillKey": "clawhub-story-biographer",
+  "name": "Story Biographer",
+  "summary": "Turn reminiscence, oral-history, or life-review transcripts into clear narrative biography drafts while preserving the speaker's voice, keeping to evidence i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_biographer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OiiOAI",
+      "features": [
+        "Turn reminiscence, oral-history, or life-review transcripts into clear narrative biography draf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-biographer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128959966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-biographer",
+      "url": "https://clawhub.ai/skills/story-biographer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-biographer",
+    "url": "https://clawhub.ai/skills/story-biographer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-biographer-e7e8a3bc4155ee2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-biographer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-biographer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37057f79aa4e12821cfc42edb102a4bc3d86ca8b68488f57a7eb33964f02a2c9",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T10:24:42.681Z"
+}

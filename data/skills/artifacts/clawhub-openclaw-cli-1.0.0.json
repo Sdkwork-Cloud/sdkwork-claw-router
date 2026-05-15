@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cli",
+  "skill": {
+    "id": 8675,
+    "skillKey": "clawhub-openclaw-cli",
+    "name": "OpenClaw CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cli",
+    "url": "https://clawhub.ai/skills/openclaw-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cli-c00dba6977af0040.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate and troubleshoot the OpenClaw CLI across setup, gateway/node lifecycle, channel login, messaging, agent turns, models, plugins, and system health. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ramensushi2026",
+      "userId": "publishers:ramensushi2026",
+      "displayName": "Ramen",
+      "image": "https://avatars.githubusercontent.com/u/261311559?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7538,
+      "installsAllTime": 88,
+      "installsCurrent": 84,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771600704235,
+      "changelog": "Initial release of openclaw-cli skill.\n\n- Enables guided usage and troubleshooting of the OpenClaw CLI, covering setup, gateway/node lifecycle, channel login, messaging, agent turns, models, plugins, and system health.\n- Details an execution workflow for safe and efficient command operation: clarify target, set runtime scope, choose command family, confirm details, prefer machine-readable output, and verify outcomes.\n- Introduces strict safety rules for destructive actions and profile consistency.\n- Provides a triage sequence for diagnosing general issues with OpenClaw functionality.\n- References included for quick command family routing and troubleshooting recipes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83a2ee82c56e60085ec7566e866c5e8e29893e4ed88f716f6cec0d25ad9a254a"
+}

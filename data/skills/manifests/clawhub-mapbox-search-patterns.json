@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39020,
+  "uuid": "skill-clawhub-mapbox-search-patterns",
+  "skillKey": "clawhub-mapbox-search-patterns",
+  "name": "Mapbox Search Patterns",
+  "summary": "Expert guidance on choosing the right Mapbox search tool and parameters for geocoding, POI search, and location discovery",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mapbox_search_patterns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mapbox",
+      "features": [
+        "Expert guidance on choosing the right Mapbox search tool and parameters for geocoding, POI sear."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mapbox-search-patterns@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/mapbox-search-patterns/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mapbox-search-patterns",
+      "url": "https://clawhub.ai/skills/mapbox-search-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mapbox-search-patterns",
+    "url": "https://clawhub.ai/skills/mapbox-search-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mapbox-search-patterns-13cb10c8c1659099.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mapbox-search-patterns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mapbox-search-patterns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b404c04fa91adc1b8dba79df927d16ab00346fc84baef1388d555457c47f8f10",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:07:09.867Z"
+}

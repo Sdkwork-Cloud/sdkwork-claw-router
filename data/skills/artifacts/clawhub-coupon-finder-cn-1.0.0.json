@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coupon-finder-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coupon_finder_cn",
+  "skill": {
+    "id": 66980,
+    "skillKey": "clawhub-coupon-finder-cn",
+    "name": "Coupon Finder Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coupon-finder-cn",
+    "url": "https://clawhub.ai/skills/coupon-finder-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coupon-finder-cn-7d293c6dc98fccd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动发现和领取电商优惠券，支持淘宝/京东/拼多多/美团。购物前查券，省下的就是赚到的。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "275254cl-hash",
+      "userId": "s17bgvrh57w97t0z4ajg11mdrx83gcqc",
+      "displayName": "275254cl-hash",
+      "image": "https://avatars.githubusercontent.com/u/246240596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370069889,
+      "changelog": "Initial release! Automatically discovers and claims e-commerce coupons for Taobao, JD, Pinduoduo, and Meituan.\n\n- Supports auto-search and claiming of available coupons by product link.\n- Finds hidden store coupons and calculates best coupon combinations.\n- Reminds users before coupons expire; compares historical coupon deals.\n- Free tier offers 5 queries/day; paid tiers unlock unlimited queries, auto-claiming, and reminders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdb6046481dc77187d77a8cff53ba549ae90f13a14d1494ed09167fdf6981d41"
+}

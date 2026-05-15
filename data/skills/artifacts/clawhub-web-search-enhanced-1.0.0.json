@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search-enhanced@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_enhanced",
+  "skill": {
+    "id": 26675,
+    "skillKey": "clawhub-web-search-enhanced",
+    "name": "Web Search Enhanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-enhanced",
+    "url": "https://clawhub.ai/skills/web-search-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-enhanced-7e7e4c087bad8d97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically performs paged web searches with progress updates, saves intermediate results, supports resuming, and merges all findings into a final report."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaokkkl",
+      "userId": "s178y901mpqavjvcdxa0gjr8nx85pycx",
+      "displayName": "zhaokkkl",
+      "image": "https://avatars.githubusercontent.com/u/267694864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777367114813,
+      "changelog": "自动分页搜索 + 结果合并",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67855ac200d46b33e761ea7d1b717f44eba6560019b0a8afbd3ad5479fc04496"
+}

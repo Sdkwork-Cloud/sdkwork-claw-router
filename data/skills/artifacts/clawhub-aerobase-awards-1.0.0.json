@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aerobase-awards@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_awards",
+  "skill": {
+    "id": 23025,
+    "skillKey": "clawhub-aerobase-awards",
+    "name": "Aerobase Awards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-awards",
+    "url": "https://clawhub.ai/skills/aerobase-awards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-awards-da88f477923fef85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search 24+ airline loyalty programs for award space with miles cost, seat availability, and jetlag scores"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurosh87",
+      "userId": "s172tbyj9m7964rvsde9cacb2s83yxjr",
+      "displayName": "Aerobase",
+      "image": "https://avatars.githubusercontent.com/u/95127236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772935225507,
+      "changelog": "- Initial release of aerobase-awards skill.\n- Search over 24 major airline loyalty programs for award seats with miles cost, seat availability, and jetlag scores.\n- View saved award trip searches and set up personalized award alerts (requires Pro tier for continuous monitoring).\n- See price breakdowns in miles/points, automatic jetlag scoring, warning for fuel surcharges, and cents-per-point (cpp) value calculations using real cash prices from Google Flights via Scrapling.\n- User rate limits: max 20 searches/hr, 10 alerts/user; award monitoring every 4 hours.\n- Secure workflow for airline website access; credentials never stored or logged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a85d90263f1c891ae4ff99d221f4e64ad3c7600febbebc61655a8d72f445f26b"
+}

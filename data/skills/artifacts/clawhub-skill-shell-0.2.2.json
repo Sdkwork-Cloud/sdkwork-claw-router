@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-shell@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_shell",
+  "skill": {
+    "id": 18796,
+    "skillKey": "clawhub-skill-shell",
+    "name": "Skill Shell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-shell",
+    "url": "https://clawhub.ai/skills/skill-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-shell-950eafd918161e01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate external skills before installation and decide whether to install, reject, or absorb only the useful ideas. Use when a user shares a ClawHub/GitHub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g-hanasq",
+      "userId": "publishers:g-hanasq",
+      "displayName": "G-Hanasq",
+      "image": "https://avatars.githubusercontent.com/u/74138794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1773335957643,
+      "changelog": "Test publish using the new clawhub-publish-flow local script. No behavior change beyond validating the release workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96e3311be540b65a1d85c7704b863f2d52a1c3260d5c167004c185319c1f770e"
+}

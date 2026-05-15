@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9002,
+  "uuid": "skill-clawhub-rss-reader",
+  "skillKey": "clawhub-rss-reader",
+  "name": "RSS Reader",
+  "summary": "Monitor RSS and Atom feeds for content research. Track blogs, news sites, newsletters, and any feed source. Use when monitoring competitors, tracking industr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DimitriPantzos",
+      "features": [
+        "Monitor RSS and Atom feeds for content research",
+        "Track blogs, news sites, newsletters, and any feed source",
+        "Use when monitoring competitors, tracking industr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rss-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6476893?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rss-reader",
+      "url": "https://clawhub.ai/skills/rss-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-reader",
+    "url": "https://clawhub.ai/skills/rss-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-reader-d25d979c051e169e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rss-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rss-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f79ae4edb74c4485e33f0b2aadd0b2f2e01110888380a7cc54ffdd0def9022b2",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T01:29:05.290Z"
+}

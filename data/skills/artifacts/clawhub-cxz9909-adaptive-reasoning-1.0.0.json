@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cxz9909-adaptive-reasoning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cxz9909_adaptive_reasoning",
+  "skill": {
+    "id": 46087,
+    "skillKey": "clawhub-cxz9909-adaptive-reasoning",
+    "name": "Cxz9909 Adaptive Reasoning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cxz9909-adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/cxz9909-adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cxz9909-adaptive-reasoning-d79be30417edc55f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically assess task complexity and adjust reasoning level. Triggers on every user message to evaluate whether extended thinking (reasoning mode) would..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cxz9909",
+      "userId": "s17dd3xdqxcywypcka7dd0tkn585k6g3",
+      "displayName": "cxz9909",
+      "image": "https://avatars.githubusercontent.com/u/243978543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777165139225,
+      "changelog": "- Initial release of adaptive-reasoning skill.\n- Automatically evaluates each user message for complexity and adjusts reasoning depth before responding.\n- Assigns a complexity score based on factors like multi-step logic, ambiguity, code architecture, and more.\n- Activates advanced reasoning modes for complex problems and indicates activation with 🧠 (thinking) or 🧠🔥 (deep thinking) icons.\n- Includes clear guidelines for auto-activation, visual indicators, and when not to escalate reasoning.\n- Supports explicit control via commands to enable or disable extended reasoning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a36b5ce7c4b10d24efd840dd8759a9457100490d217f7d1e4224366336e8a64"
+}

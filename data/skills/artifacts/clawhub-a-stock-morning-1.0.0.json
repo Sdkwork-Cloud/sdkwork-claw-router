@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-morning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_morning",
+  "skill": {
+    "id": 45691,
+    "skillKey": "clawhub-a-stock-morning",
+    "name": "A Stock Morning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-morning",
+    "url": "https://clawhub.ai/skills/a-stock-morning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-morning-ad893022ebd295dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sends a daily 9:45 AM summary of the A-share market open, including key indices, top sectors, volume, and trading suggestions via Feishu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrislzg",
+      "userId": "s1775ta84t9jdb63yj6sjybbb183hsfp",
+      "displayName": "chrislzg",
+      "image": "https://avatars.githubusercontent.com/u/18321213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776153431309,
+      "changelog": "A股早盘提醒技能首发，自动发送每日开盘信息。\n\n- 每交易日 9:45 推送A股主要指数、板块和成交额总结\n- 统计涨跌分布与热门板块前五\n- 支持生成报告或自动发送到飞书\n- 基于腾讯股票API获取实时数据\n- 可与OpenClaw定时任务自动集成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f9488f0d50db0f4c7bf6f859276657b1c841b2b14ad125cf9f14101ff17e55e"
+}

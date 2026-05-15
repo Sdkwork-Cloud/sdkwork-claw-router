@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lj22503-istp-coach@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lj22503_istp_coach",
+  "skill": {
+    "id": 66615,
+    "skillKey": "clawhub-lj22503-istp-coach",
+    "name": "Istp Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lj22503-istp-coach",
+    "url": "https://clawhub.ai/skills/lj22503-istp-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lj22503-istp-coach-d4967b41e51f2e94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当 ISTP 用户需要成长指导时，特别是处理情感疏离、承诺困难、社交回避等 ISTP 专属卡点。触发场景：\"我是 ISTP，不知道如何处理人际关系\"、\"ISTP 如何提升情感表达\"、\"ISTP 职业方向\"。ISTP 是\"鉴赏家\"类型，擅长动手操作但情感表达较弱。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1776422437722,
+      "changelog": "- Added comprehensive documentation (SKILL.md) detailing ISTP Coach’s modes, workflows, and handling of edge scenarios.\n- Outlined dual-mode interaction: coach mode (dialogue-driven, question-based) and consultant mode (direct action plans).\n- Specified boundaries, functionality, and output guidelines (e.g., output length limits, user archive).\n- Included common errors, troubleshooting steps, and success criteria for ISTP Coach.\n- Provided user interaction templates for typical scenarios, including non-ISTP users and test inputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:712775eb96aee748bfbeea6acf65a61c9a5897706dd81a649ae16a4404616ba1"
+}

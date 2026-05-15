@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-disk-cleaner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_disk_cleaner",
+  "skill": {
+    "id": 26892,
+    "skillKey": "clawhub-macos-disk-cleaner",
+    "name": "macOS Disk Cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-disk-cleaner",
+    "url": "https://clawhub.ai/skills/macos-disk-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-disk-cleaner-e4d2e1b55651cd17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and reclaim macOS disk space through intelligent cleanup recommendations. This skill should be used when users report disk space issues, need to clea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wusuiling-if",
+      "userId": "publishers:wusuiling-if",
+      "displayName": "wusuiling-if",
+      "image": "https://avatars.githubusercontent.com/u/221723439?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773282828995,
+      "changelog": "Initial release: intelligent macOS disk analysis and cleanup with safety-first philosophy",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d736276c051fa6d31ff464bc725a2faab7c8bfc59f03051ba78bce78970e009"
+}

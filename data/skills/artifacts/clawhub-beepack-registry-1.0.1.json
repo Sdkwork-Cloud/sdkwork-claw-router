@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beepack-registry@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beepack_registry",
+  "skill": {
+    "id": 30022,
+    "skillKey": "clawhub-beepack-registry",
+    "name": "Beepack API Registry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beepack-registry",
+    "url": "https://clawhub.ai/skills/beepack-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beepack-registry-bbf76423a8233093.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Beepack for reusable API packages before coding. Saves tokens and time by reusing production-tested code instead of writing from scratch."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "actabi",
+      "userId": "s17e9y3vk3kf5nfhfrc3x5nw6583s1pa",
+      "displayName": "Guillaume De Laroque",
+      "image": "https://avatars.githubusercontent.com/u/4301546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775130154985,
+      "changelog": "- Added new feedback and suggestion submission endpoints, allowing users to rate, review, and suggest improvements for packages.\n- Introduced guidance for publishing, encouraging users to avoid duplicates and to suggest improvements for existing packages.\n- Expanded API reference with new endpoints, including feedback retrieval, suggestions, and reporting.\n- Updated usage instructions to include checking and submitting package feedback.\n- Changed primary domain reference from beepack.dev to beepack.ai.\n- Added security and publishing guidelines, clarifying best practices and package requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60b4b5a80942ac360b576516fbb09c12fcdcd06115cb87bc57e5867c9891d437"
+}

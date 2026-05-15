@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57764,
+  "uuid": "skill-clawhub-official-document",
+  "skillKey": "clawhub-official-document",
+  "name": "一键转换为机关公文标准格式",
+  "summary": "Generate official government documents formatted strictly by GB/T 9704-2012 standards, including titles, body, headings, footers, attachments, and contacts.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_document",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangxue1985122219",
+      "features": [
+        "Generate official government documents formatted strictly by GB/T 9704-2012 standards, includin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/official-document@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54266548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "official-document",
+      "url": "https://clawhub.ai/skills/official-document"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-document",
+    "url": "https://clawhub.ai/skills/official-document",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-document-3769d105dd581545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/official-document@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-official-document-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebbd182f932a106625d0ca07b98e27e8724455634222612d4cc018ed37949ec6",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T08:05:59.928Z"
+}

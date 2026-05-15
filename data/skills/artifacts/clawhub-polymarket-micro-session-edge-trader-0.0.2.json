@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-micro-session-edge-trader@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_micro_session_edge_trader",
+  "skill": {
+    "id": 36170,
+    "skillKey": "clawhub-polymarket-micro-session-edge-trader",
+    "name": "Polymarket Micro Session Edge Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-micro-session-edge-trader",
+    "url": "https://clawhub.ai/skills/polymarket-micro-session-edge-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-micro-session-edge-trader-b503660f3dcd1545.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades session-transition mean-reversion in 5-minute crypto \"Up or Down\" markets on Polymarket, fading directional bursts that occur during US, Asia, and Eur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776513511829,
+      "changelog": "fix: add _client.live=True so --live actually routes to polymarket-venue for real USDC trades",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b7fb25c5a78da26015c5190ff06e4bedec49c4b4638b041f37a678ec6d5708d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-daily-review@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_daily_review",
+  "skill": {
+    "id": 65859,
+    "skillKey": "clawhub-a-stock-daily-review",
+    "name": "A Stock Daily Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-daily-review",
+    "url": "https://clawhub.ai/skills/a-stock-daily-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-daily-review-63d30b3ec833e15f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每天晚上自动推送A股市场全面分析和持仓技术点评，助力短线投资者制定明日操作计划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lkx161",
+      "userId": "s176aag2fvx9c0vm9h73enzz6n83t5es",
+      "displayName": "lkx161",
+      "image": "https://avatars.githubusercontent.com/u/77651677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 809,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775398067371,
+      "changelog": "v2.0：股票三档位分类体系-PE估值方法-弹性型成长型波段型股票池-持仓格式更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4ae6911a1a65ff5d1b2392ebf51d4bdd28f547bb337f35724828f868f44df6b"
+}

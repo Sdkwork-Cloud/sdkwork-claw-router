@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_test",
+  "skill": {
+    "id": 47056,
+    "skillKey": "clawhub-video-test",
+    "name": "Video Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-test",
+    "url": "https://clawhub.ai/skills/video-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-test-de75ec3806f2e753.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 30-second MP4 clip from a phone into 1080p tested video report just by typing what you need. Whether it's checking video files for playback and qualit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776227632948,
+      "changelog": "video-test 1.0.0 — Initial Release\n\n- Instantly analyze, test, and upgrade 30s MP4 video clips via chat; auto-1080p output.\n- Automatic session management and free token granting (100 credits, 7-day validity) on first use.\n- Upload video, check for playback/quality issues, get quick downloadable MP4 reports (20–40s typical).\n- All core functions (upload, process, export, credits, session state) documented with API workflow.\n- Requires NEMO_TOKEN and attribution headers for seamless cloud GPU processing.\n- Guides on supported formats, error handling, tips, and common workflows included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c63d6ce730999a2e6def657c1edde9270b4463eb70372ba7e39922e475baffb6"
+}

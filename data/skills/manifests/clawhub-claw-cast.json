@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24945,
+  "uuid": "skill-clawhub-claw-cast",
+  "skillKey": "clawhub-claw-cast",
+  "name": "ClawCast",
+  "summary": "Bootstrap and automate OBS scenes for local or remote instances via agentic-obs + mcporter. Includes optional explicit target-switch step that writes agentic...",
+  "version": "0.2.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_cast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ironystock",
+      "features": [
+        "Bootstrap and automate OBS scenes for local or remote instances via agentic-obs + mcporter",
+        "Includes optional explicit target-switch step that writes agentic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-cast@0.2.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43087795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-cast",
+      "url": "https://clawhub.ai/skills/claw-cast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-cast",
+    "url": "https://clawhub.ai/skills/claw-cast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-cast-8be50d52b4f9b050.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-cast@0.2.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-cast-0.2.6.json",
+      "version": "0.2.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce9c4ea4571b3d9a9870a3f8a1dc090267c33f80301f084d9ad57eea5b93dc8f",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:01:18.291Z"
+}

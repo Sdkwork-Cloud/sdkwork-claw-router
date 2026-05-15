@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46960,
+  "uuid": "skill-clawhub-research-review-skill-factory",
+  "skillKey": "clawhub-research-review-skill-factory",
+  "name": "Research Review Skill Factory",
+  "summary": "Build custom peer-review skills for specific research areas, problem families, and method combinations using OpenReview evidence. Use when Codex needs a comp...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_review_skill_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c-narcissus",
+      "features": [
+        "Build custom peer-review skills for specific research areas, problem families, and method combi.",
+        "Use when Codex needs a comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-review-skill-factory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168325551?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-review-skill-factory",
+      "url": "https://clawhub.ai/skills/research-review-skill-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-review-skill-factory",
+    "url": "https://clawhub.ai/skills/research-review-skill-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-review-skill-factory-b2a584cffad79da4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-review-skill-factory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-review-skill-factory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f65244fe16df4790ef11bcc07f42429f32dfb56133b23e93e6e4addd5082457b",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T19:33:08.692Z"
+}

@@ -26,7 +26,7 @@ async fn admin_access_group_route_creates_lists_updates_and_soft_deletes_groups(
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/access-groups")
+                .uri("/backend/v3/api/router/access_groups")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -58,7 +58,7 @@ async fn admin_access_group_route_creates_lists_updates_and_soft_deletes_groups(
         .oneshot(
             Request::builder()
                 .method("PATCH")
-                .uri("/backend/v3/api/router/access-groups/1")
+                .uri("/backend/v3/api/router/access_groups/1")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -83,7 +83,7 @@ async fn admin_access_group_route_creates_lists_updates_and_soft_deletes_groups(
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/access-groups")
+                .uri("/backend/v3/api/router/access_groups")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -103,7 +103,7 @@ async fn admin_access_group_route_creates_lists_updates_and_soft_deletes_groups(
         .oneshot(
             Request::builder()
                 .method("DELETE")
-                .uri("/backend/v3/api/router/access-groups/1")
+                .uri("/backend/v3/api/router/access_groups/1")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -121,7 +121,7 @@ async fn admin_access_group_route_creates_lists_updates_and_soft_deletes_groups(
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/access-groups")
+                .uri("/backend/v3/api/router/access_groups")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -148,7 +148,7 @@ async fn admin_access_group_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/access-groups")
+                .uri("/backend/v3/api/router/access_groups")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -172,7 +172,7 @@ async fn admin_access_group_route_rejects_invalid_multiplier_without_calling_sto
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/access-groups")
+                .uri("/backend/v3/api/router/access_groups")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")

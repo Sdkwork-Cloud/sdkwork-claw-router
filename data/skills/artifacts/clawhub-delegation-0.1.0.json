@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delegation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delegation",
+  "skill": {
+    "id": 11600,
+    "skillKey": "clawhub-delegation",
+    "name": "Delegation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delegation",
+    "url": "https://clawhub.ai/skills/delegation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delegation-5214bf637717ddb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Architecture-first workflow for delegating complex projects to AI coding agents. Ensures code fits the system before it's written."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelmonetized",
+      "userId": "publishers:michaelmonetized",
+      "displayName": "michaelmonetized",
+      "image": "https://avatars.githubusercontent.com/u/162010215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1791,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770862527513,
+      "changelog": "Initial release of the delegation skill for architecture-first coding workflows.\n\n- Enforces that all code changes fit strict architectural guidelines before implementation.\n- Introduces a structured workflow: analyze architecture, declare filepath, list dependencies/consumers, check for conflicts.\n- Standardizes response format for code generation and documentation.\n- Adds a rigorous compliance checklist for production readiness.\n- Outlines key architectural principles and references related skills for UI and PR processes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:392aadcca5787695b9c9ae81f35e3cd91fa79f3b84134cfd5f735a9504363d87"
+}

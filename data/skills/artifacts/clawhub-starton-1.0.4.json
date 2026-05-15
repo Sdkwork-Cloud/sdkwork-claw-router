@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/starton@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.starton",
+  "skill": {
+    "id": 31734,
+    "skillKey": "clawhub-starton",
+    "name": "Starton"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "starton",
+    "url": "https://clawhub.ai/skills/starton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/starton-0690a0a74c4205a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Starton integration. Manage Projects, Users, Roles. Use when the user wants to interact with Starton data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "membranedev",
+      "userId": "s17ejzcy4w0v2h2tf7xa3y1mw583eedz",
+      "displayName": "Membrane Dev",
+      "image": "https://avatars.githubusercontent.com/u/147116108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777564979790,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86b8540c9bbc85e9c30e295442c0f0e7b0ca85dcad798d70a7fd046d0a342c83"
+}

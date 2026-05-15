@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14870,
+  "uuid": "skill-clawhub-meal-planner",
+  "skillKey": "clawhub-meal-planner",
+  "name": "Meal Planner",
+  "summary": "Plan meals with weekly menus, shopping lists, batch cooking, budget tracking, dietary preferences, and recipe management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meal_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Plan meals with weekly menus, shopping lists, batch cooking, budget tracking, dietary preferenc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meal-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meal-planner",
+      "url": "https://clawhub.ai/skills/meal-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meal-planner",
+    "url": "https://clawhub.ai/skills/meal-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meal-planner-2464ba56c22143eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meal-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meal-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a99745021333af742da78f70f6123beb2cc6b796ab729efc77b8310286a1e298",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T19:52:40.716Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20711,
+  "uuid": "skill-clawhub-foxcode-openclaw",
+  "skillKey": "clawhub-foxcode-openclaw",
+  "name": "Foxcode OpenClaw",
+  "summary": "Configure and manage Foxcode AI models in OpenClaw. Guides users through API setup, endpoint selection, primary/fallback model configuration, and status moni...",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foxcode_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clarezoe",
+      "features": [
+        "Configure and manage Foxcode AI models in OpenClaw",
+        "Guides users through API setup, endpoint selection, primary/fallback model configuration, and s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foxcode-openclaw@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/460084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foxcode-openclaw",
+      "url": "https://clawhub.ai/skills/foxcode-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foxcode-openclaw",
+    "url": "https://clawhub.ai/skills/foxcode-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foxcode-openclaw-fcf1df5a0793326d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foxcode-openclaw@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-foxcode-openclaw-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6137dba3c45d3f2652d0541ba43272f8de66966e3a96cdbb3c6bee75e222131d",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T23:21:30.904Z"
+}

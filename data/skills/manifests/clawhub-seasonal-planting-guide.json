@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14692,
+  "uuid": "skill-clawhub-seasonal-planting-guide",
+  "skillKey": "clawhub-seasonal-planting-guide",
+  "name": "Seasonal Planting Guide",
+  "summary": "Provides monthly, zone-specific planting schedules, plant details, and custom entries to help gardeners plan seasonal crops year-round.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seasonal_planting_guide",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johstracke",
+      "features": [
+        "Provides monthly, zone-specific planting schedules, plant details, and custom entries to help g."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seasonal-planting-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63787617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seasonal-planting-guide",
+      "url": "https://clawhub.ai/skills/seasonal-planting-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seasonal-planting-guide",
+    "url": "https://clawhub.ai/skills/seasonal-planting-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seasonal-planting-guide-ed29a1818b371ef9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seasonal-planting-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seasonal-planting-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c07250456a73ddbd80d0e9b6683a668a0d512ad0011bed0f54a27b050a3f4336",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T11:52:36.732Z"
+}

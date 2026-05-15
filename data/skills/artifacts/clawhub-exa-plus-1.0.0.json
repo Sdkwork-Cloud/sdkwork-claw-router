@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exa-plus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa_plus",
+  "skill": {
+    "id": 9417,
+    "skillKey": "clawhub-exa-plus",
+    "name": "Exa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa-plus",
+    "url": "https://clawhub.ai/skills/exa-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-plus-7873fb3c8324adc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Neural web search via Exa AI. Search people, companies, news, research, code. Supports deep search, domain filters, date ranges."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jordyvandomselaar",
+      "userId": "publishers:jordyvandomselaar",
+      "displayName": "jordyvandomselaar",
+      "image": "https://avatars.githubusercontent.com/u/12712484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3732,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767860116973,
+      "changelog": "- Initial release of exa-plus, version 1.0.0.\n- Provides neural web search via Exa AI, supporting queries across people, companies, news, research papers, code, and more.\n- Allows advanced search options: deep search, domain filters, category selection, date ranges, and location setting.\n- Includes scripts for general search and full-text content extraction.\n- Setup requires API key configuration in a JSON file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1feac99d92e2b1a8862a259e8ce304a1e16d9e60061724cc1cd2ad040f246728"
+}

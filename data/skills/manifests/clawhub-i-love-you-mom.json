@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18504,
+  "uuid": "skill-clawhub-i-love-you-mom",
+  "skillKey": "clawhub-i-love-you-mom",
+  "name": "I Love You Mom",
+  "summary": "Automated monthly photo-to-Mixtiles pipeline. Collects photos from a WhatsApp group, curates the best ones using vision, builds a multi-photo Mixtiles cart l...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.i_love_you_mom",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SaharCarmel",
+      "features": [
+        "Automated monthly photo-to-Mixtiles pipeline",
+        "Collects photos from a WhatsApp group, curates the best ones using vision, builds a multi-photo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/i-love-you-mom@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20318027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "i-love-you-mom",
+      "url": "https://clawhub.ai/skills/i-love-you-mom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "i-love-you-mom",
+    "url": "https://clawhub.ai/skills/i-love-you-mom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/i-love-you-mom-c2cc9a2e11f51e29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/i-love-you-mom@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-i-love-you-mom-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:776e0741a084a2ad0da5260043e332d2e90b63541ca76d814a216f7865dd813c",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T20:52:17.805Z"
+}

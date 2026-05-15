@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-build-customer-support-faq-page@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_build_customer_support_faq_page",
+  "skill": {
+    "id": 43316,
+    "skillKey": "clawhub-toby-build-customer-support-faq-page",
+    "name": "build-customer-support-faq-page"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-build-customer-support-faq-page",
+    "url": "https://clawhub.ai/skills/toby-build-customer-support-faq-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-build-customer-support-faq-page-3cefc86e69e93dd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate customer-facing answers for common customer support questions. Use when working on FAQ content for support teams, customer success managers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776917010268,
+      "changelog": "Initial release of the Build Customer Support FAQ Page skill.\n\n- Generate customer-facing answers to common customer support questions.\n- Designed for support teams and customer success managers creating FAQ content.\n- Includes a workflow for clarifying requirements, drafting, enriching, and refining FAQs.\n- Integrates with chat and web search APIs for data and research.\n- Optimized for primary SEO keywords like \"FAQ generator AI\" and \"customer support FAQ writer.\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1513fe3c4de234d8414c53c92f8396f44e467766a34d5d36304d1016ff4dccb8"
+}

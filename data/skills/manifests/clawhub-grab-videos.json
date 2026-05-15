@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56622,
+  "uuid": "skill-clawhub-grab-videos",
+  "skillKey": "clawhub-grab-videos",
+  "name": "Grab Videos and Frames from Youtube and other sites",
+  "summary": "Download videos and extract frames using yt-dlp and ffmpeg. Use when: - Download YouTube videos/Shorts: `yt-dlp <url>` - Extract frames from video: `ffmpeg -...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grab_videos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christo",
+      "features": [
+        "Download videos and extract frames using yt-dlp and ffmpeg",
+        "Use when:",
+        "Download YouTube videos/Shorts: `yt-dlp <url>`",
+        "Extract frames from video: `ffmpeg -..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grab-videos@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1757861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grab-videos",
+      "url": "https://clawhub.ai/skills/grab-videos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grab-videos",
+    "url": "https://clawhub.ai/skills/grab-videos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grab-videos-26b4131657251729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grab-videos@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grab-videos-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:089e2f9b4705fde6fb5b3b2a725132efaab89371f0b73586461681afc2d4a44b",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:38:04.411Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69671,
+  "uuid": "skill-clawhub-disease-investigation-zhcn",
+  "skillKey": "clawhub-disease-investigation-zhcn",
+  "name": "Disease Investigation Zhcn",
+  "summary": "综合学术文献、流行病学数据、临床指南、药物情报及临床试验报告，开展全面的疾病调研。 用户可能询问疾病发病机制、症状、药物干预、治疗方案、专利格局及商业发展机会。 当查询涉及以下内容时加载本技能： - 疾病病理与分子机制 - 疾病地区发病率与亚型 - 临床症状与诊断指标 - 治疗格局与药物研发管线 - 治疗领域的专...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disease_investigation_zhcn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XK",
+      "features": [
+        "综合学术文献、流行病学数据、临床指南、药物情报及临床试验报告，开展全面的疾病调研。 用户可能询问疾病发病机制、症状、药物干预、治疗方案、专利格局及商业发展机会。 当查询涉及以下内容时加载本技.",
+        "疾病病理与分子机制",
+        "疾病地区发病率与亚型",
+        "临床症状与诊断指标"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disease-investigation-zhcn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275897758?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disease-investigation-zhcn",
+      "url": "https://clawhub.ai/skills/disease-investigation-zhcn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disease-investigation-zhcn",
+    "url": "https://clawhub.ai/skills/disease-investigation-zhcn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disease-investigation-zhcn-88660c44b631c088.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disease-investigation-zhcn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-disease-investigation-zhcn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d19e99eab3b8fb1e2391b4dced7ce1ad56caa84af8172757fe826a9ee8f1c27",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T09:16:43.931Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scrapefun@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrapefun",
+  "skill": {
+    "id": 51502,
+    "skillKey": "clawhub-scrapefun",
+    "name": "ScrapeFun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrapefun",
+    "url": "https://clawhub.ai/skills/scrapefun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrapefun-a163aecb2c7081c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when OpenClaw needs to operate a scrapefun server through the dedicated OpenClaw-facing APIs. Prefer /api/openclaw/* query and download endpoi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haoweili97",
+      "userId": "s1792c3vg6zvg9xzfwrk03j5v183fgn6",
+      "displayName": "Haowei Li",
+      "image": "https://avatars.githubusercontent.com/u/160501785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1773645502016,
+      "changelog": "**Summary: Major authentication and endpoint policy update. Now strictly favors OpenClaw-facing APIs; legacy fallbacks tightly restricted.**\n\n- Prefers dedicated `/api/openclaw/*` endpoints for all main operations (listing, download, scan, media state).\n- Only uses generic scrapefun APIs in rare, clearly listed fallback cases—never as silent replacements.\n- Explicitly details required OpenClaw permissions for each endpoint; halts if a permission or endpoint is missing.\n- Strictly prohibits previously allowed legacy endpoints for media browsing, download, and status checks.\n- Response style and examples rewritten to highlight new API order, fallback restrictions, and blockers.\n- Updates overview, workflow, and examples for clarity on allowed/disallowed behaviors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:679be12089ced589e723c8c7978f2a17fec5fd75f60a8eb8438dfe36d9600452"
+}

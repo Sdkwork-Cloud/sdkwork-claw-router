@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27076,
+  "uuid": "skill-clawhub-taizi-agent-browser",
+  "skillKey": "clawhub-taizi-agent-browser",
+  "name": "Taizi Agent Browser",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fresh3",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taizi-agent-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23310067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taizi-agent-browser",
+      "url": "https://clawhub.ai/skills/taizi-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-agent-browser",
+    "url": "https://clawhub.ai/skills/taizi-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-agent-browser-af19accfea96f969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taizi-agent-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taizi-agent-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ef66a16638c7088f23eecee21013d6882dd215f28f49ebc7cfbb0c37a13133f",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:02:32.181Z"
+}

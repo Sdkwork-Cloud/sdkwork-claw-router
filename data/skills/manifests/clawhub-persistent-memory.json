@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13319,
+  "uuid": "skill-clawhub-persistent-memory",
+  "skillKey": "clawhub-persistent-memory",
+  "name": "Persistent Memory",
+  "summary": "Three-layer persistent memory system (Markdown + ChromaDB vectors + NetworkX knowledge graph) for long-term agent recall across sessions. One-command setup w...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persistent_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jakebot-ops",
+      "features": [
+        "Three-layer persistent memory system (Markdown + ChromaDB vectors + NetworkX knowledge graph) f.",
+        "One-command setup w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persistent-memory@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259498883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persistent-memory",
+      "url": "https://clawhub.ai/skills/persistent-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persistent-memory",
+    "url": "https://clawhub.ai/skills/persistent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persistent-memory-fd17c61e940869df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persistent-memory@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-persistent-memory-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebcb5caab08278caa9490e9beb108fa3f17e6f3d42f29026597b7a2d09362c7a",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T06:33:21.676Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mi-habilidad-nueva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mi_habilidad_nueva",
+  "skill": {
+    "id": 18382,
+    "skillKey": "clawhub-mi-habilidad-nueva",
+    "name": "Mi Habilidad Nueva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mi-habilidad-nueva",
+    "url": "https://clawhub.ai/skills/mi-habilidad-nueva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mi-habilidad-nueva-9dc8746c08df5206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Asistente personalizado de bienvenida y pruebas de sistema para el servidor de Santi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "santi-patic",
+      "userId": "publishers:santi-patic",
+      "displayName": "santi-patic",
+      "image": "https://avatars.githubusercontent.com/u/233917823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 695,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771407063683,
+      "changelog": "mi-habilidad-nueva 1.0.0\n\n- Asistente personalizado de bienvenida para el servidor de Santi.\n- Presentación y respuestas adaptadas a saludos y preguntas sobre capacidades.\n- Explica la ejecución en un servidor Ubuntu dedicado.\n- Responde “¿Estás listo?” con un resumen de funciones (clima, resúmenes, gestión de archivos).\n- Mantiene un tono amable, profesional y eficiente en todas las interacciones.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dee620d43ca23496beedf09479bba397d0fec28e5898a7b8f80b67215c949cff"
+}

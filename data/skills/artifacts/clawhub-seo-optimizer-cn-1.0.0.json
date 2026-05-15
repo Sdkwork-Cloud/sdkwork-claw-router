@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-optimizer-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_optimizer_cn",
+  "skill": {
+    "id": 57640,
+    "skillKey": "clawhub-seo-optimizer-cn",
+    "name": "SEO Optimizer 违禁词检查"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-optimizer-cn",
+    "url": "https://clawhub.ai/skills/seo-optimizer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-optimizer-cn-af58b0e2bcec99f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SEO optimizer and compliance checker for Chinese social media. Optimizes titles, keyword density, hashtags, and scans for advertising-law banned words (广告法违禁词)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexandrali1989-cell",
+      "userId": "publishers:alexandrali1989-cell",
+      "displayName": "alexandrali1989-cell",
+      "image": "https://avatars.githubusercontent.com/u/239550352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 847,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772694860793,
+      "changelog": "- Initial release of seo-optimizer-cn (v1.0.0)\n- Optimizes content for Chinese social media SEO: titles, keyword density, hashtags\n- Scans for advertising-law banned words (广告法违禁词) ensuring compliance\n- Provides keyword analysis, tailored title and body recommendations, and hashtag suggestions\n- Supports activation on relevant SEO and compliance check triggers\n- Outputs structured optimization and compliance reports",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a14c3d02fee385afcfe1b7c78b9a393c999bfd4bfc524139256343ecf6db9b4"
+}

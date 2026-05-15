@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aerisweather@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerisweather",
+  "skill": {
+    "id": 26017,
+    "skillKey": "clawhub-aerisweather",
+    "name": "Aerisweather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerisweather",
+    "url": "https://clawhub.ai/skills/aerisweather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerisweather-4d6a559d313bb5dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AerisWeather integration. Manage data, records, and automate workflows. Use when the user wants to interact with AerisWeather data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777565784799,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eade40a0297051d6a3bcf8e66ba1ab502a848b01193d89c21ccd82f8ba5d7c6a"
+}

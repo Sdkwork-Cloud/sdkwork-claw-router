@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trimmer-in-between@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trimmer_in_between",
+  "skill": {
+    "id": 47800,
+    "skillKey": "clawhub-trimmer-in-between",
+    "name": "Trimmer In Between"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trimmer-in-between",
+    "url": "https://clawhub.ai/skills/trimmer-in-between",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trimmer-in-between-4daf6479cad16466.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into trimmed joined clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for removing unwanted m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777335800678,
+      "changelog": "Initial release of Trimmer In Between — edit and join trimmed video segments in the cloud.\n\n- Allows users to remove unwanted middle sections from video clips and seamlessly join the remaining parts.\n- Supports MP4, MOV, AVI, WebM files up to 500MB; outputs high-quality 1080p MP4 videos in about 20-40 seconds per job.\n- Runs on cloud GPUs—no installation required, credentials handled automatically with a free 7-day token.\n- Provides clear workflows for trimming, batch editing, session management, and exporting videos.\n- Includes robust error handling, format support, and user-friendly instructions for common use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e08601354f11da17a39954d53503e72e0c934fff5de9605c1ccfe7dc48126a03"
+}

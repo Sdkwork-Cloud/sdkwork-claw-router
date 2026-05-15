@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14217,
+  "uuid": "skill-clawhub-unifuncs-deep-search",
+  "skillKey": "clawhub-unifuncs-deep-search",
+  "name": "UniFuncs Deep Search",
+  "summary": "Use UniFuncs Deep Search API for fast, comprehensive information gathering. Use this skill when users ask for deep search, broad investigation, or in-depth t...",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifuncs_deep_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "UniFuncs",
+      "features": [
+        "Use UniFuncs Deep Search API for fast, comprehensive information gathering",
+        "Use this skill when users ask for deep search, broad investigation, or in-depth t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unifuncs-deep-search@0.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20235341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unifuncs-deep-search",
+      "url": "https://clawhub.ai/skills/unifuncs-deep-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifuncs-deep-search",
+    "url": "https://clawhub.ai/skills/unifuncs-deep-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifuncs-deep-search-9fcffc5b58c9f0bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unifuncs-deep-search@0.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-unifuncs-deep-search-0.0.5.json",
+      "version": "0.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:023c394721a1e8b024a15f19c7874da1b6fa8ec80c88c8f2ca55da356c1bfb2c",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T17:45:25.990Z"
+}

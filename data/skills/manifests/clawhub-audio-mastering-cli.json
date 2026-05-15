@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15852,
+  "uuid": "skill-clawhub-audio-mastering-cli",
+  "skillKey": "clawhub-audio-mastering-cli",
+  "name": "Audio Mastering CLI",
+  "summary": "CLI audio mastering without a reference track using ffmpeg; accepts audio or video inputs and outputs mastered WAV/MP3 or remuxed MP4.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_mastering_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rolf",
+      "features": [
+        "CLI audio mastering without a reference track using ffmpeg",
+        "accepts audio or video inputs and outputs mastered WAV/MP3 or remuxed MP4."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-mastering-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1956781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-mastering-cli",
+      "url": "https://clawhub.ai/skills/audio-mastering-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-mastering-cli",
+    "url": "https://clawhub.ai/skills/audio-mastering-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-mastering-cli-6518011fc07c0f8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-mastering-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-mastering-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d7be14309f2f25e24b56930f1fad030efad885e50012dc44bad682b83916c2c",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T00:20:12.620Z"
+}

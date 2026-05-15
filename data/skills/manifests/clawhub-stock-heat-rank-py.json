@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71922,
+  "uuid": "skill-clawhub-stock-heat-rank-py",
+  "skillKey": "clawhub-stock-heat-rank-py",
+  "name": "A股实时热度排名TOP50",
+  "summary": "[Python版本] 获取A股股票实时热度排名TOP50。聚合问财、雪球、东方财富三大平台人气榜单。适用场景：用户询问A股热门股票、股票热度排名、股票人气排名、市场关注度排行、热门股票榜单、最受关注股票、实时股票排名、今日热门股。关键词：A股热度、股票热度排名、人气排名、热门股票、股票人气榜、关注度排行、热门股、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_heat_rank_py",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "n1e",
+      "features": [
+        "[Python版本] 获取A股股票实时热度排名TOP50。聚合问财、雪球、东方财富三大平台人气榜单。适用场景：用户询问A股热门股票、股票热度排名、股票人气排名、市场关注度排行、热门股票榜单、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-heat-rank-py@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26928453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-heat-rank-py",
+      "url": "https://clawhub.ai/skills/stock-heat-rank-py"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-heat-rank-py",
+    "url": "https://clawhub.ai/skills/stock-heat-rank-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-heat-rank-py-9b9edc825f62e07f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-heat-rank-py@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-heat-rank-py-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe3451f7fd1819f7673b8cd3ed32737b461fdbb0eb42d9a6aa0a04d36441c447",
+      "artifactSizeBytes": 2637
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:04:06.868Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67494,
+  "uuid": "skill-clawhub-liyou-setting-skill",
+  "skillKey": "clawhub-liyou-setting-skill",
+  "name": "Liyou Setting Skill",
+  "summary": "支持查询、修改、新增璃幽世界观设定及小说内容，自动保存章节并同步人物及设定到界面显示。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liyou_setting_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jay0609",
+      "features": [
+        "支持查询、修改、新增璃幽世界观设定及小说内容，自动保存章节并同步人物及设定到界面显示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liyou-setting-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41465287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liyou-setting-skill",
+      "url": "https://clawhub.ai/skills/liyou-setting-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liyou-setting-skill",
+    "url": "https://clawhub.ai/skills/liyou-setting-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liyou-setting-skill-caab647c83077c27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liyou-setting-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liyou-setting-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b178451b2039eafa8cd0f90523f337a275281915129236857c79a0e8a162e96b",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:13:42.310Z"
+}

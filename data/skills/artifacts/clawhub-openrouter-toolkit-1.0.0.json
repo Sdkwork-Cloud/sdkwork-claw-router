@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_toolkit",
+  "skill": {
+    "id": 34353,
+    "skillKey": "clawhub-openrouter-toolkit",
+    "name": "Openrouter Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-toolkit",
+    "url": "https://clawhub.ai/skills/openrouter-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-toolkit-c00ffdd5b762cde0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The definitive OpenRouter skill — intelligent model routing by task type, cost tracking with budget alerts, automatic fallback chains, side-by-side model com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 634,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772758350748,
+      "changelog": "openrouter-toolkit 1.0.0\n\n- Initial release of the definitive OpenRouter skill for OpenClaw agents.\n- Supports intelligent model routing by task (code, reasoning, creative, fast, cheap).\n- Includes cost tracking, budget alerts, and automatic fallback chains.\n- Enables side-by-side model comparison and provides savings recommendations.\n- Fetches live pricing and capabilities from the OpenRouter API.\n- Requires Python 3.10+ and an OpenRouter API key.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78680ad4fd56f7f042fc7782b002abaae6333d0321e9878d872142d1002ac823"
+}

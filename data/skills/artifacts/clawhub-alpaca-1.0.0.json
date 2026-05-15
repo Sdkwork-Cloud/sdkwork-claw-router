@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alpaca@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alpaca",
+  "skill": {
+    "id": 10538,
+    "skillKey": "clawhub-alpaca",
+    "name": "Alpaca Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alpaca",
+    "url": "https://clawhub.ai/skills/alpaca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alpaca-4de6702c739d8c9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade stocks and crypto via Alpaca API. Use for market data (quotes, bars, news), placing orders (market, limit, stop), checking positions, portfolio management, and account info. Supports both paper and live trading. Use when user asks ab."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vamzi",
+      "userId": "publishers:vamzi",
+      "displayName": "vamzi",
+      "image": "https://avatars.githubusercontent.com/u/9899519?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2264,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770520153866,
+      "changelog": "Initial release: quotes, orders, positions, watchlists, streaming, alerts, guardrails",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:51bad64891e07acbaf27807d50b05badc8d7721730ed0d16bb5ef72b75852681"
+}

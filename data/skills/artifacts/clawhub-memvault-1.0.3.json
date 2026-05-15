@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memvault@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memvault",
+  "skill": {
+    "id": 21227,
+    "skillKey": "clawhub-memvault",
+    "name": "MemVault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memvault",
+    "url": "https://clawhub.ai/skills/memvault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memvault-bc58e9223e0a3556.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-ready long-term memory server for AI agents with Ebbinghaus decay and strength-weighted retrieval. Use when you need persistent memory across agen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wjy9902",
+      "userId": "publishers:wjy9902",
+      "displayName": "wjy9902",
+      "image": "https://avatars.githubusercontent.com/u/49051666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772422737633,
+      "changelog": "Fix: rename extensionless files (Dockerfile.txt, memvault.sh, env.example.txt) for clawhub packaging",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0fab689e7f4d0dbde84335e6d661438f5ff5ed7ce196bb8c5b91fe7b0df9cb01"
+}

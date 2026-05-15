@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65215,
+  "uuid": "skill-clawhub-btc-price-tracker",
+  "skillKey": "clawhub-btc-price-tracker",
+  "name": "Btc Price Tracker",
+  "summary": "实时获取比特币价格，支持多货币显示，设置价格警报并通过 Telegram 收到通知，附带命令行操作和本地存储。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_price_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meng",
+      "features": [
+        "实时获取比特币价格，支持多货币显示，设置价格警报并通过 Telegram 收到通知，附带命令行操作和本地存储。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc-price-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35720406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc-price-tracker",
+      "url": "https://clawhub.ai/skills/btc-price-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-price-tracker",
+    "url": "https://clawhub.ai/skills/btc-price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-price-tracker-83769fd32d7c1f0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc-price-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-price-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c2249698f20ac3f527bdae484cc2c631bf6e6dc551adc64219c9902e4af12e0",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:38:43.417Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kre-video-translator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kre_video_translator",
+  "skill": {
+    "id": 27399,
+    "skillKey": "clawhub-kre-video-translator",
+    "name": "Kre Video Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kre-video-translator",
+    "url": "https://clawhub.ai/skills/kre-video-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kre-video-translator-afe529cceb2ee04d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate local audio or video files into multilingual .srt subtitles with KreTrans. Use when a user wants audio/video translation, subtitle generation, tran..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skz7s",
+      "userId": "s177hqnrgn80gbbnkhssnc281s83qqdy",
+      "displayName": "skz7s",
+      "image": "https://avatars.githubusercontent.com/u/37951723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775728818449,
+      "changelog": "kre-video-translator 1.0.3 Changelog\n\n- Documentation and usage rules in SKILL.md have been streamlined and clarified.\n- Repetitive and overly detailed guidance on OS-specific behaviors was removed for brevity.\n- Workflow, default strategies, and reply patterns are now presented in a more concise and user-focused manner.\n- No logic or code changes; this is a documentation and contract simplification update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eed7636820b3e62fdd01e2d2695dee582660a9422309023726cf374128ecdc16"
+}

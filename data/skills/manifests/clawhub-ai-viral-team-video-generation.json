@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61424,
+  "uuid": "skill-clawhub-ai-viral-team-video-generation",
+  "skillKey": "clawhub-ai-viral-team-video-generation",
+  "name": "Ai Viral Team Video Generation",
+  "summary": "视频生成 - AI视频生成与后期剪辑制作 职责：调用Vidu生成视频、模型选择、Prompt调优、视频拼接、质量检测",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_viral_team_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "junhongzhang77-ui",
+      "features": [
+        "AI视频生成与后期剪辑制作 职责：调用Vidu生成视频、模型选择、Prompt调优、视频拼接、质量检测"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-viral-team-video-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228699128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-viral-team-video-generation",
+      "url": "https://clawhub.ai/skills/ai-viral-team-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-viral-team-video-generation",
+    "url": "https://clawhub.ai/skills/ai-viral-team-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-viral-team-video-generation-c378cff9041cacf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-viral-team-video-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-viral-team-video-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:837981f0c8252ffd1ec0fbbdd2ba74ed6ab4656c107da94087ced667048af15b",
+      "artifactSizeBytes": 2547
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:01:17.777Z"
+}

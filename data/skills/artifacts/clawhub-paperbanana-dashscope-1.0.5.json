@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paperbanana-dashscope@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperbanana_dashscope",
+  "skill": {
+    "id": 36705,
+    "skillKey": "clawhub-paperbanana-dashscope",
+    "name": "Clawhub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperbanana-dashscope",
+    "url": "https://clawhub.ai/skills/paperbanana-dashscope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperbanana-dashscope-864b5ff4e7377915.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate academic figures and scientific diagrams from paper text using a multi-agent pipeline powered by Alibaba Cloud DashScope (Qwen-VL + Wanxiang/Qwen-Im..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zdywrnm",
+      "userId": "s17fjfw3g14aaj6avqnd6rpgm583ghdf",
+      "displayName": "yrjm",
+      "image": "https://avatars.githubusercontent.com/u/177990668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775573502904,
+      "changelog": "新增 wan2.7-image 和 wan2.7-image-pro 支持。wan2.7-image 与 wan2.6 同价但提示词容量提升至 5000 字符，wan2.7-image-pro 支持 4K 输出。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1073836a72b79ab3e1110b96135c45629cecd8db4a21b85abdace139ad1f13d4"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67099,
+  "uuid": "skill-clawhub-jt-daily-report",
+  "skillKey": "clawhub-jt-daily-report",
+  "name": "news-daily-report",
+  "summary": "获取每日日报，通过 API 获取用户新闻推荐信息，支持用户兴趣偏好和查询关键词排序，获取个性化每日日报，并生成精美 H5 页面。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jt_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yxcoder1997",
+      "features": [
+        "获取每日日报，通过 API 获取用户新闻推荐信息，支持用户兴趣偏好和查询关键词排序，获取个性化每日日报，并生成精美 H5 页面。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jt-daily-report@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20298579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jt-daily-report",
+      "url": "https://clawhub.ai/skills/jt-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jt-daily-report",
+    "url": "https://clawhub.ai/skills/jt-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jt-daily-report-97c1a8fce1907a50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jt-daily-report@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-jt-daily-report-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de8555a04e52c9d77b6a63b23decc0e0dd6fb6c439e46b832ec72faaa5bfd0b6",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:26:48.887Z"
+}

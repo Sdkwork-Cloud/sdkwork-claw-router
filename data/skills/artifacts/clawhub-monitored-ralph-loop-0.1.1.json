@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monitored-ralph-loop@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monitored_ralph_loop",
+  "skill": {
+    "id": 13569,
+    "skillKey": "clawhub-monitored-ralph-loop",
+    "name": "Monitored Ralph Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monitored-ralph-loop",
+    "url": "https://clawhub.ai/skills/monitored-ralph-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monitored-ralph-loop-e834ea6d3955a84c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate copy-paste bash scripts for Ralph Wiggum/AI agent loops (Codex, Claude Code, OpenCode, Goose). Use when asked for a \"Ralph loop\", \"Ralph Wiggum loop\", or an AI loop to plan/build code via PROMPT.md + AGENTS.md, SPECS, and IMPLEMEN."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "endogen",
+      "userId": "publishers:endogen",
+      "displayName": "Endogen",
+      "image": "https://avatars.githubusercontent.com/u/226475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1399,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770590764834,
+      "changelog": "- Notify openClaw via cron job\n- Let claw decide if issue has to be surfaced to human or can be handled by itself",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0892805aa0c7fec455f240afd36546101f6c78ad9a28976645d496c45fa0dfc3"
+}

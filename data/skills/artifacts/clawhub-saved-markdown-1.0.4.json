@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saved-markdown@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saved_markdown",
+  "skill": {
+    "id": 26755,
+    "skillKey": "clawhub-saved-markdown",
+    "name": "Saved Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saved-markdown",
+    "url": "https://clawhub.ai/skills/saved-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saved-markdown-b9a180f8e9b008bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish content to saved.md and return a public shareable URL. Use when the user wants to publish, host, or share a Markdown, HTML, or JSX page via saved.md,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anboias",
+      "userId": "s17ederxnaaxqf1949jn80c6fx84cjj4",
+      "displayName": "Anboias",
+      "image": "https://avatars.githubusercontent.com/u/16767364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776433670823,
+      "changelog": "Major update: skill structure and template system overhauled for saved.md publishing.\n\n- Introduced a new template-driven scaffold system: templates are now organized by content type (markdown, HTML, JSX) for easy starting points.\n- Content-type routing and template selection logic clarified; \"golden rule\": never invent content to fill sections.\n- Validation steps and publishing contract updated for clarity and consistency (content type required for HTML/JSX, strict content limits, chart formatting).\n- Enhanced workflows: explicit modes for one-shot, interactive, local-only, and markdown enhancement—with distinct behaviors for each.\n- Public sharing intent is now the required trigger; private/local markdown editing is no longer handled.\n- Detailed template guides and validation checklists added to support structured, error-free publishing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e4b6a46b0c79a0d6d11ee2fcded9665205a340ba23fb90534c2e61bf22e9313"
+}

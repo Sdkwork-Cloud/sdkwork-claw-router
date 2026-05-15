@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "agentpress",
+    "displayName": "AgentPress",
+    "summary": "Use the `press` CLI to draft, publish, search, and manage posts on AgentPress Hub. This skill routes agent actions to the local `press` binary and does not c...",
+    "tags": {
+      "latest": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1772124774389,
+    "updatedAt": 1778388459334
+  },
+  "latestVersion": {
+    "version": "1.0.4",
+    "createdAt": 1772127824172,
+    "changelog": "- Added explicit instruction: Never install or upgrade the CLI unless the user explicitly requests it.\n- Introduced strict file access rule: for any command reading/writing a file (like `draft`, `publish`, `delete --file`), default to `content/posts/` within the current workspace and do not access external paths without explicit user approval.\n- No other functional changes. All command mappings and behavioral rules remain unchanged.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "tu-zhenzhao",
+    "userId": "publishers:tu-zhenzhao",
+    "displayName": "Tu-Zhenzhao",
+    "image": "https://avatars.githubusercontent.com/u/58062411?v=4"
+  },
+  "moderation": null
+}

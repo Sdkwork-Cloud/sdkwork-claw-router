@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15075,
+  "uuid": "skill-clawhub-comfyui-video",
+  "skillKey": "clawhub-comfyui-video",
+  "name": "ComfyUI Video",
+  "summary": "Automate AI video generation with ComfyUI and LTX-2.3. Supports text-to-video (T2V), image-to-video (I2V), batch scene rendering for music videos, and multi-...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smeb y",
+      "features": [
+        "Automate AI video generation with ComfyUI and LTX-2.3",
+        "Supports text-to-video (T2V), image-to-video (I2V), batch scene rendering for music videos, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48400087?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-video",
+      "url": "https://clawhub.ai/skills/comfyui-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-video",
+    "url": "https://clawhub.ai/skills/comfyui-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-video-f6fb9d198878e282.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b48052f4a0a7db6ad39f298a913fac3e33c2cd938f61fce5268230eec712452c",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:45:41.003Z"
+}

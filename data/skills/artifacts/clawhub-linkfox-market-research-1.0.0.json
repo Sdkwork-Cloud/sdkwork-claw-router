@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-market-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_market_research",
+  "skill": {
+    "id": 63742,
+    "skillKey": "clawhub-linkfox-market-research",
+    "name": "LinkFox Market Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-market-research",
+    "url": "https://clawhub.ai/skills/linkfox-market-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-market-research-54d2be04f6d1bc1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "亚马逊市场调研报告。用户给出类目名称和节点 ID，自动生成完整 HTML 报告（市场概览、价格、REVIEW、品牌、卖家、竞品 8 个维度）。触发词：市场调研、市调、market research、分析这个类目。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiafar",
+      "userId": "s171dacsa9hkrd446pra6ma8sd83q3hc",
+      "displayName": "jiafar",
+      "image": "https://avatars.githubusercontent.com/u/94378558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774592204723,
+      "changelog": "One command to generate Amazon market research report. Input category node ID, get 8-dimension HTML report in 3-5 minutes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53e053159eaeb030a7f1b1e0ad289293f502751051e9a80ba2ed046602d68018"
+}

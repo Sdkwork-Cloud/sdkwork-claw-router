@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-compact-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_compact_summary",
+  "skill": {
+    "id": 34240,
+    "skillKey": "clawhub-openclaw-compact-summary",
+    "name": "OpenClaw Compact Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-compact-summary",
+    "url": "https://clawhub.ai/skills/openclaw-compact-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-compact-summary-9904474a044d91f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a structured markdown summary of conversation memory flush with key stats, tools, user requests, tasks, files, and timeline details."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxiao-bot",
+      "userId": "s177wn48nxdm9a73g3sj4awv1583gddz",
+      "displayName": "hanxiao-bot",
+      "image": "https://avatars.githubusercontent.com/u/262316041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775059573806,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cbb1e240958e52ed14e03f8cf702e3f8ea9907ae466a62c3af96547b7858bd0"
+}

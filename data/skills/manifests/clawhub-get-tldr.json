@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9179,
+  "uuid": "skill-clawhub-get-tldr",
+  "skillKey": "clawhub-get-tldr",
+  "name": "get-tldr",
+  "summary": "Provide the summary returned by the get-tldr.com summarize API without further summarization; the skill should format the API output for readability but must not change its content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_tldr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itobey",
+      "features": [
+        "Provide the summary returned by the get-tldr.com summarize API without further summarization",
+        "the skill should format the API output for readability but must not change its content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-tldr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22119845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-tldr",
+      "url": "https://clawhub.ai/skills/get-tldr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-tldr",
+    "url": "https://clawhub.ai/skills/get-tldr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-tldr-a0c8dec740658c61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-tldr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-tldr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f128927c9ee30869c2b87ad53eae11aa969bd83779e2d95645b14edd1359d803",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T11:08:38.875Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-jiaodian-lin-demo@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_jiaodian_lin_demo",
+  "skill": {
+    "id": 60500,
+    "skillKey": "clawhub-test-jiaodian-lin-demo",
+    "name": "test-jiaodian-lin-demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-jiaodian-lin-demo",
+    "url": "https://clawhub.ai/skills/test-jiaodian-lin-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-jiaodian-lin-demo-d71025e3dfd8cb18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "收费技能示例模板 - 带授权验证，演示如何在 ClawHub 发布付费技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lintqiu",
+      "userId": "s174myt0xj0pzg9avrs802w1yd83gycy",
+      "displayName": "lintqiu",
+      "image": "https://avatars.githubusercontent.com/u/18586721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773740961295,
+      "changelog": "- 初始发布：发布 test-jiaodian-lin-demo 技能示例模板\n- 展示如何在 ClawHub 发布带授权验证的收费技能\n- 提供基于授权码的核心功能访问方式\n- 支持环境变量配置授权码，便于用户集成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9984d3047cdea6e0f1c45a7992b46dccbf008adc2dcd638fb7a72f00a8c9abcc"
+}

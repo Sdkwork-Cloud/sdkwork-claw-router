@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16016,
+  "uuid": "skill-clawhub-agent-guardrails",
+  "skillKey": "clawhub-agent-guardrails",
+  "name": "Agent Guardrails",
+  "summary": "Stop AI agents from secretly bypassing your rules. Mechanical enforcement with git hooks, secret detection, deployment verification, and import registries. B...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_guardrails",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "olmmlo-cmd",
+      "features": [
+        "Stop AI agents from secretly bypassing your rules",
+        "Mechanical enforcement with git hooks, secret detection, deployment verification, and import re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-guardrails@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256234782?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-guardrails",
+      "url": "https://clawhub.ai/skills/agent-guardrails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-guardrails",
+    "url": "https://clawhub.ai/skills/agent-guardrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-guardrails-7939873ff7009dd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-guardrails@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-guardrails-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8fedceef27dd2756e55311be147c7cf94bb0084a67d8dea7d3219e47e9e0cd2",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T03:09:39.316Z"
+}

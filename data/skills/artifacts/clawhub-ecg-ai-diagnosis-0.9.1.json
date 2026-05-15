@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecg-ai-diagnosis@0.9.1",
+  "version": "0.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecg_ai_diagnosis",
+  "skill": {
+    "id": 56471,
+    "skillKey": "clawhub-ecg-ai-diagnosis",
+    "name": "ECG-AI-Diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecg-ai-diagnosis",
+    "url": "https://clawhub.ai/skills/ecg-ai-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecg-ai-diagnosis-5cb671a622850f38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze ECG signals via heartvoice (心之声) API — single-lead and 12-lead. Automatically selects endpoint based on user intent and responds in the user's langua..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujiecharles",
+      "userId": "s17a3ezzrvd3gb8s93g3960kjn83xefz",
+      "displayName": "yujiecharles",
+      "image": "https://avatars.githubusercontent.com/u/8253858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.9.1",
+      "createdAt": 1774946018422,
+      "changelog": "- Clarified that all endpoint and language auto-detection logic should be implemented in the agent, not the CLI script.\n- Updated and expanded JSON input format documentation to distinguish integer and float sample values and provide explicit conversion examples.\n- Adjusted terminology from \"ADC value\" to \"sample value\" for input data to reflect varying device output types.\n- Explicitly documented that the CLI script requires explicit arguments for mode and language; there is no internal auto-detection.\n- Clarified and updated the field naming conventions for script output (snake_case) for integration consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5e48409de4c86de167e30a991837a99480f0fbfcf4e599ec3992b4785385c4b"
+}

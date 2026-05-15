@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27118,
+  "uuid": "skill-clawhub-quality-gates",
+  "skillKey": "clawhub-quality-gates",
+  "name": "Quality Gates",
+  "summary": "Quality checkpoints at every development stage — pre-commit through post-deploy — with configuration examples, threshold tables, bypass protocols, and CI/CD integration. Use when setting up quality automation, configuring CI pipelines, est.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quality_gates",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Quality checkpoints at every development stage — pre-commit through post-deploy — with configur.",
+        "Use when setting up quality automation, configuring CI pipelines, establishing coverage thresho."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quality-gates@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quality-gates",
+      "url": "https://clawhub.ai/skills/quality-gates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quality-gates",
+    "url": "https://clawhub.ai/skills/quality-gates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quality-gates-23bf448c2a4f691e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quality-gates@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quality-gates-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10d8d478834b0cc7e8e8bc189e27607613b4817f1522c3da5ea9e54c8ec8ed4b",
+      "artifactSizeBytes": 2606
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:25:54.347Z"
+}

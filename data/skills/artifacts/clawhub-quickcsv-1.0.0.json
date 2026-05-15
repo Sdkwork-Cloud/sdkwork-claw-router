@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quickcsv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quickcsv",
+  "skill": {
+    "id": 44297,
+    "skillKey": "clawhub-quickcsv",
+    "name": "Quickcsv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quickcsv",
+    "url": "https://clawhub.ai/skills/quickcsv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quickcsv-4b3b0dc90b30706b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert JSON, YAML, or TSV files to standardized CSV format with automatic header detection and consistent output for easy data analysis and processing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776429342487,
+      "changelog": "Initial release of QuickCSV.\n\n- Convert JSON, YAML, or TSV files into standardized CSV format.\n- Automatic header detection and consistent output formatting.\n- Supports output to file or stdout.\n- Option to suppress the header row.\n- Simple command-line interface for fast, reliable data conversion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c0ca541d9a689db5ac930d8e5f81e402057cc92b235c84196a093bb28d8202f"
+}

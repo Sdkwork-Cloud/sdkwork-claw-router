@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59015,
+  "uuid": "skill-clawhub-upbit-trading-skill",
+  "skillKey": "clawhub-upbit-trading-skill",
+  "name": "Upbit Trading Skill",
+  "summary": "Upbit 실시간 트레이딩 봇 - GLM AI 분석, 기술지표, 자동매매",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upbit_trading_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smeuse-dev",
+      "features": [
+        "Upbit 실시간 트레이딩 봇",
+        "GLM AI 분석, 기술지표, 자동매매"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upbit-trading-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252588471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upbit-trading-skill",
+      "url": "https://clawhub.ai/skills/upbit-trading-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upbit-trading-skill",
+    "url": "https://clawhub.ai/skills/upbit-trading-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upbit-trading-skill-e93f8e4363fe8143.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upbit-trading-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upbit-trading-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71e7c332129bc15d7c4018b22f7645f1fd0d517985f0afadee7655827176d2e1",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T13:30:36.134Z"
+}

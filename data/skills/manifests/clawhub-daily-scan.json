@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37921,
+  "uuid": "skill-clawhub-daily-scan",
+  "skillKey": "clawhub-daily-scan",
+  "name": "daily-scan",
+  "summary": "Scan photographed documents into searchable PDFs with OCR and stable file naming. Use when the user sends document photos and asks to scan, save, archive, OC...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kimjoohyeon-wq",
+      "features": [
+        "Scan photographed documents into searchable PDFs with OCR and stable file naming",
+        "Use when the user sends document photos and asks to scan, save, archive, OC..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-scan@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261753983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-scan",
+      "url": "https://clawhub.ai/skills/daily-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-scan",
+    "url": "https://clawhub.ai/skills/daily-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-scan-20b08cac92110fe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-scan@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-scan-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf58932d62e017b6b67830cb7be58446cc16e5d7710e666c607f1d2ba74a1063",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:25:27.057Z"
+}

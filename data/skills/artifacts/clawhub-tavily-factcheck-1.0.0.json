@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-factcheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_factcheck",
+  "skill": {
+    "id": 40196,
+    "skillKey": "clawhub-tavily-factcheck",
+    "name": "Tavily Fact-Check Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-factcheck",
+    "url": "https://clawhub.ai/skills/tavily-factcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-factcheck-d8d218f3523c0fb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhanced Tavily web search for fact-checking and cross-verification. Aligned with official Tavily API (2026-03). Supports time_range, exact_match, domain fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kkkkane84727",
+      "userId": "s173w8954tfge3ka5m9mv1sbq183jqgk",
+      "displayName": "KKKKane84727",
+      "image": "https://avatars.githubusercontent.com/u/240415254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774437066683,
+      "changelog": "AI agent fact-checking search via Tavily API (2026-03 spec). Full official parameter support: time_range, exact_match, domain filtering, finance topic, country boost, images, JSON output. Zero dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e58bbd297b2eeb4b366af1c8009b8e65222e2790d19f06cea29c2249f774acf4"
+}

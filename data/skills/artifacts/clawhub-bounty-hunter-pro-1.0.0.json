@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bounty-hunter-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bounty_hunter_pro",
+  "skill": {
+    "id": 19250,
+    "skillKey": "clawhub-bounty-hunter-pro",
+    "name": "Bounty Hunter Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bounty-hunter-pro",
+    "url": "https://clawhub.ai/skills/bounty-hunter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bounty-hunter-pro-e52f76cf8348607a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous bug bounty hunting with scope safety. Scans targets for subdomains, secrets, vulnerabilities. Uses Certificate Transparency logs, JS analysis, ent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lugave11",
+      "userId": "s172ndky2c0kwjj78fmjz939ex83ng14",
+      "displayName": "Lugave11",
+      "image": "https://avatars.githubusercontent.com/u/127201420?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 606,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772623379830,
+      "changelog": "- Initial release of Bounty Hunter Pro, an autonomous bug bounty hunting tool with strict scope safety.\n- Scans authorized targets for subdomains, exposed secrets in JavaScript, misconfigurations, and known vulnerabilities.\n- Uses Certificate Transparency logs, entropy-based secret detection, and LLM-powered two-stage vulnerability analysis for results filtering and prioritization.\n- Includes automated alerting for critical findings and structured report generation.\n- Enforces authorization checks before scanning any target to ensure compliance with program scope.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc00edf43045f7057990632d9b96be2e0194f3c0255d7b814a6681c9eaa6b894"
+}

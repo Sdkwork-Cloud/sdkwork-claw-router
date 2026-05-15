@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insided@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insided",
+  "skill": {
+    "id": 35268,
+    "skillKey": "clawhub-insided",
+    "name": "Insided"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insided",
+    "url": "https://clawhub.ai/skills/insided",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insided-39c6fc9d2a144649.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "InSided integration. Manage data, records, and automate workflows. Use when the user wants to interact with InSided data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "membranedev",
+      "userId": "s17ejzcy4w0v2h2tf7xa3y1mw583eedz",
+      "displayName": "Membrane Dev",
+      "image": "https://avatars.githubusercontent.com/u/147116108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777563324893,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fa7b69d39f4900092067ed8b77eac7085e6fed4e21444455ee8ceb35e8a5a47"
+}

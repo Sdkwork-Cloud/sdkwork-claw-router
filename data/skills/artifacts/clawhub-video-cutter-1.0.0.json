@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-cutter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_cutter",
+  "skill": {
+    "id": 48032,
+    "skillKey": "clawhub-video-cutter",
+    "name": "Video Cutter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-cutter",
+    "url": "https://clawhub.ai/skills/video-cutter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-cutter-7395eb4969d1da3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim video clips into trimmed video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for cutting long videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777229936926,
+      "changelog": "Initial release of Video Cutter — quickly trim and export edited video clips with cloud GPU processing.\n\n- Trim videos (MP4, MOV, AVI, WebM up to 500MB) and export as 1080p MP4 in ~20-40 seconds.\n- Seamless onboarding: auto token acquisition with 100 free credits, 7-day validity.\n- Upload, cut, and manage videos directly—actions triggered by natural language prompts.\n- Access credits balance, export status, and session information via simple commands.\n- Exports handled in the cloud; download links provided after processing.\n- Handles common errors transparently and guides next steps for smooth editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f79816172aac55f4f37d325fc4d1f20b24844ef35d554775b67ced929e79637"
+}

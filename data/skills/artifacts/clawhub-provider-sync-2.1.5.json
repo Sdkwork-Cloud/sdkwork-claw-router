@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/provider-sync@2.1.5",
+  "version": "2.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.provider_sync",
+  "skill": {
+    "id": 54565,
+    "skillKey": "clawhub-provider-sync",
+    "name": "Provider Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "provider-sync",
+    "url": "https://clawhub.ai/skills/provider-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/provider-sync-241e3921278669d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync provider model lists into OpenClaw config (dry-run preview → confirm → apply). Trigger: /provider_sync"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c-joey",
+      "userId": "s178ay2k7851fer4psk2swm5bn83g91r",
+      "displayName": "Joey-Chen",
+      "image": "https://avatars.githubusercontent.com/u/48274987?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 743,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "2.1.5",
+      "createdAt": 1774161236032,
+      "changelog": "Make auto normalization provider-agnostic: infer generic/gemini/gpt from model family instead of hardcoded provider IDs; scrub environment-specific examples from docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e0faf5986f00baac2cfc9a8eea2181948820270d8f06ccce58a0d13dc737d74"
+}

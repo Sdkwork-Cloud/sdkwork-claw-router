@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "looplink",
+    "displayName": "looplink.app",
+    "summary": "Interact with looplink (looplink.app) - A social content organizer / bookmarking app",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772240438590,
+    "updatedAt": 1778302500860
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772240438590,
+    "changelog": "Initial release of the Looplink skill, enabling dynamic integration with the Looplink social content organizer.\n\n- Dynamically loads and registers Looplink tools via the MCP manifest endpoint.\n- Securely creates and manages a permanent agent apiKey using the createAgent tool.\n- Handles raw Authorization headers only for tools requiring authentication, as specified by the manifest.\n- Executes any available Looplink MCP tool by validating input and calling the standard tool execution endpoint.\n- Ensures secure, persistent authentication without session-scoped credentials.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sleep9",
+    "userId": "publishers:sleep9",
+    "displayName": "Jojo Bizzare",
+    "image": "https://avatars.githubusercontent.com/u/60583270?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778302500860
+  }
+}

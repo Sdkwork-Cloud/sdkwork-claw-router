@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34324,
+  "uuid": "skill-clawhub-openclaw-version-bug-hunter",
+  "skillKey": "clawhub-openclaw-version-bug-hunter",
+  "name": "Openclaw Version Bug Hunter",
+  "summary": "Query version-specific GitHub bug reports with quality assessment markers; agent combines output with user config for contextual upgrade evaluation.",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_version_bug_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Neo Shi",
+      "features": [
+        "Query version-specific GitHub bug reports with quality assessment markers",
+        "agent combines output with user config for contextual upgrade evaluation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-version-bug-hunter@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34770064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-version-bug-hunter",
+      "url": "https://clawhub.ai/skills/openclaw-version-bug-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-version-bug-hunter",
+    "url": "https://clawhub.ai/skills/openclaw-version-bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-version-bug-hunter-17dd80b7d7fdfadd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-version-bug-hunter@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-version-bug-hunter-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ff8fa1deec58eaaef9b47b8d59d354b8f30f3f0eff6e892536efb502322a77e",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T17:21:38.299Z"
+}

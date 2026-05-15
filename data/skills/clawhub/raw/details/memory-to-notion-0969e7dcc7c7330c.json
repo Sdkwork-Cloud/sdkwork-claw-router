@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "memory-to-notion",
+    "displayName": "memory-to-notion",
+    "summary": "Summarize and archive conversation memories to Notion. Trigger when the user says \"summarize memory\", \"archive conversation\", \"save memories\", \"sync memories...",
+    "tags": {
+      "latest": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "createdAt": 1772456478409,
+    "updatedAt": 1778303298467
+  },
+  "latestVersion": {
+    "version": "1.0.4",
+    "createdAt": 1772634983072,
+    "changelog": "Version 1.0.3\n\n- Updated deduplication instructions: clarified that on MCP platforms, multiple `notion-search` calls against the same `data_source_url` must be run sequentially (not in parallel) to prevent errors.\n- Added guidance to deduplicate results by page id before fetching with `notion-fetch`.\n- No changes to code; documentation improvements for safety and correctness.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "smilelight",
+    "userId": "s17bt93a83ag9heaxp81ya4fy986608s",
+    "displayName": "Defang Li",
+    "image": "https://avatars.githubusercontent.com/u/17498154?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778303298467
+  }
+}

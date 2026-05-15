@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtime@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtime",
+  "skill": {
+    "id": 50987,
+    "skillKey": "clawhub-clawtime",
+    "name": "ClawTime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtime",
+    "url": "https://clawhub.ai/skills/clawtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtime-1898487c9dcd5e72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate ClawTime — webchat widgets, task panel, and avatar creation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youngkent",
+      "userId": "publishers:youngkent",
+      "displayName": "youngkent",
+      "image": "https://avatars.githubusercontent.com/u/1106275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1104,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771392550521,
+      "changelog": "Summary: Documentation restructured and simplified for users; detailed setup moved to INSTALL.md; operational guide and widget documentation improved.\n\n- Removed the readme file (README.md) and consolidated its key content.\n- SKILL.md rewritten to focus on operations, widgets, tasks, and avatar creation, minimizing install/setup details.\n- Installation and setup instructions moved out (referenced as INSTALL.md) for clarity.\n- Widget markup and usage guide expanded with syntax, options, and best practices.\n- Task panel and avatar creation sections streamlined for easier reference.\n- All in-depth technical setup and edge cases omitted for a cleaner, more user-friendly update.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ede1508bc5df6b7fa25580f92e90fd0a101f81eed700742ce0502fb5a4510bd"
+}

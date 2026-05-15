@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bring-list@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bring_list",
+  "skill": {
+    "id": 20377,
+    "skillKey": "clawhub-bring-list",
+    "name": "Bring! Shopping List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bring-list",
+    "url": "https://clawhub.ai/skills/bring-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bring-list-6e42c5caa88f9e27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Bring! shopping lists (Einkaufsliste / grocery list) — add, remove, check off items, batch ops, default list support. Use when: user wants to set up B..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maikimolto",
+      "userId": "s173b3b2rn5zmhn72zw5y2qwhn83feb5",
+      "displayName": "MaikiMolto",
+      "image": "https://avatars.githubusercontent.com/u/150596096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 900,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1771688260169,
+      "changelog": "Security fix: replaced unsafe cat<<EOF credential writing with jq --arg for proper JSON escaping (prevents injection). Improved urlencode sed fallback coverage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f12bbe41fd3cd4d8c54a964314f83d37a609af53392d8a1e2973ae332164a1f"
+}

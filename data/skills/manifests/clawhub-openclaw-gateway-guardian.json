@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25862,
+  "uuid": "skill-clawhub-openclaw-gateway-guardian",
+  "skillKey": "clawhub-openclaw-gateway-guardian",
+  "name": "Openclaw Gateway Guardian",
+  "summary": "OpenClaw Gateway Guardian - Automatic monitoring, protection, and restart of OpenClaw Gateway service. Prevents gateway from stopping, crashing, or disappear...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gateway_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidme6",
+      "features": [
+        "OpenClaw Gateway Guardian",
+        "Automatic monitoring, protection, and restart of OpenClaw Gateway service",
+        "Prevents gateway from stopping, crashing, or disappear..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-gateway-guardian@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198009354?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-gateway-guardian",
+      "url": "https://clawhub.ai/skills/openclaw-gateway-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gateway-guardian",
+    "url": "https://clawhub.ai/skills/openclaw-gateway-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gateway-guardian-343a11cc53b13cf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-gateway-guardian@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gateway-guardian-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88466a5d62652fcb6322a84ecd6da53c310b9350559146223319960c9ab9e907",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:27:00.076Z"
+}

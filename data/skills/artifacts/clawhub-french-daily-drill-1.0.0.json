@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/french-daily-drill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.french_daily_drill",
+  "skill": {
+    "id": 36790,
+    "skillKey": "clawhub-french-daily-drill",
+    "name": "French Daily Drill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "french-daily-drill",
+    "url": "https://clawhub.ai/skills/french-daily-drill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/french-daily-drill-6a93ea3f167f50ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates a personalised French language practice session based on CEFR/DELF level. Covers vocabulary, grammar, verb conjugation, gender, reading, and speaki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tetsuakira-vk",
+      "userId": "s17ce2krnhsxnx05jzy8ndtk9983gjkm",
+      "displayName": "tetsuakira-vk",
+      "image": "https://avatars.githubusercontent.com/u/209894468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425229852,
+      "changelog": "French Daily Drill 1.0.0\n\n- Initial release.\n- Generates personalized daily French language practice sessions tailored to user’s CEFR/DELF level.\n- Covers vocabulary (with examples and tips), grammar patterns, verb conjugation, gender/agreement drills, reading passages, and speaking prompts.\n- Includes a quick quiz with answers and ends every session with a cultural note.\n- Ensures content is fresh for each session and adapts based on user’s level.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80b34390f61b1883fa127ed567b22a9a35b3f621d75c9d9f0ebf626576918b56"
+}

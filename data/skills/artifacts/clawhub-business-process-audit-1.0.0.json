@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-process-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_process_audit",
+  "skill": {
+    "id": 16919,
+    "skillKey": "clawhub-business-process-audit",
+    "name": "Business Process Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-process-audit",
+    "url": "https://clawhub.ai/skills/business-process-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-process-audit-3f60ef19269272b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluates business workflows across 8 areas to identify automation opportunities, estimate time and cost savings, and prioritize processes by ROI for digital..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 777,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771797359667,
+      "changelog": "Initial release of the business-process-audit skill.\n\n- Provides a structured audit framework to identify and prioritize business process automation opportunities.\n- Covers 8 key workflow categories, with example processes and average time allocations.\n- Outputs a detailed audit report template including estimated time/cost savings and automation ROI.\n- Includes an automation roadmap (quick wins, medium complexity, complex workflows).\n- Offers calculation assumptions/tips for precise, business-specific recommendations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a5ab0c9737fb24589355b875aa2566c2a7a82984dd57dfd58560ff6aebacfadd"
+}

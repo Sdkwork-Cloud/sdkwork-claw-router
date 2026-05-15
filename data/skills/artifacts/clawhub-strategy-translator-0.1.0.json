@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strategy-translator@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategy_translator",
+  "skill": {
+    "id": 20199,
+    "skillKey": "clawhub-strategy-translator",
+    "name": "Strategy Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategy-translator",
+    "url": "https://clawhub.ai/skills/strategy-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategy-translator-35edb701197551f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate trading strategies between different frameworks and languages. Use when converting Pine Script to Python, porting strategies to NautilusTrader, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahuserious",
+      "userId": "publishers:ahuserious",
+      "displayName": "Dan Repaci",
+      "image": "https://avatars.githubusercontent.com/u/99930580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 558,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772214165476,
+      "changelog": "Initial release of the strategy-translator skill.\n\n- Enables translation of trading strategies between frameworks and languages (e.g., Pine Script ⇄ Python, NautilusTrader, cross-platform).\n- Designed for use within trading research workflows, supporting repeatable and version-controlled outputs.\n- Guides users by clarifying objectives, data requirements, and constraints for successful translation.\n- Produces actionable plans, implementation sketches, and risk checklists to ensure robust migration.\n- Outlines a structured workflow for measurable tasks, artifact tracking, validation, and deliverable creation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c2348d1223380a0c6dac919f2e5e562c84a0318be9d3272240f7d755bd75d39"
+}

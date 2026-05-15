@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cli-notion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_notion",
+  "skill": {
+    "id": 43639,
+    "skillKey": "clawhub-cli-notion",
+    "name": "Cli Notion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-notion",
+    "url": "https://clawhub.ai/skills/cli-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-notion-e7f717a3f5d63e5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool to create, list, and retrieve Notion pages using Notion API with JSON input and output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775023537519,
+      "changelog": "Initial release of CLI-Notion:\n\n- Provides a command-line interface to interact with Notion, including page creation, listing, and retrieval.\n- Supports integration with Notion via an API key set as an environment variable.\n- Offers basic commands: create-page, list-pages, get-page, and status check.\n- Commercial license available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd6feed14ff257211818099d202db7842265b377ab4a7cc921ad3649be95b3ba"
+}

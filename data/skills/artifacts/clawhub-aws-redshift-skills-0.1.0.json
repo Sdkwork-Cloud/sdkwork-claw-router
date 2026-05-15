@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-redshift-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_redshift_skills",
+  "skill": {
+    "id": 30279,
+    "skillKey": "clawhub-aws-redshift-skills",
+    "name": "AWS Redshift Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-redshift-skills",
+    "url": "https://clawhub.ai/skills/aws-redshift-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-redshift-skills-7306c91dc018abda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AWS Redshift interaction skill for managing Redshift Provisioned, Redshift Serverless, and executing SQL queries via the Redshift Data API. Manage clusters,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danjin",
+      "userId": "publishers:danjin",
+      "displayName": "danjin",
+      "image": "https://avatars.githubusercontent.com/u/4327905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773873775692,
+      "changelog": "Initial release: 37 tools covering Redshift Provisioned, Serverless, and Data API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a09b7c7f328e191d9796fcdec5f613fafe71a0c5dba0351ced5bb0774b55c990"
+}

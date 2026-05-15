@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67879,
+  "uuid": "skill-clawhub-feishu-docs-v2",
+  "skillKey": "clawhub-feishu-docs-v2",
+  "name": "Feishu Docs",
+  "summary": "飞书文档管理工具，支持读取、创建、更新、删除飞书文档，导入本地文件为飞书文档，以及列出文件夹内容。用于在 Claude Code 中管理飞书云文档。",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_docs_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "upupc",
+      "features": [
+        "飞书文档管理工具，支持读取、创建、更新、删除飞书文档，导入本地文件为飞书文档，以及列出文件夹内容。用于在 Claude Code 中管理飞书云文档。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-docs-v2@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12829489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-docs-v2",
+      "url": "https://clawhub.ai/skills/feishu-docs-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-docs-v2",
+    "url": "https://clawhub.ai/skills/feishu-docs-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-docs-v2-7d344ffd450996d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-docs-v2@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-docs-v2-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:052517c30ee425b8487f6b9442d8d295806c46804dbff6f64a121c25631d8528",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:28:59.722Z"
+}

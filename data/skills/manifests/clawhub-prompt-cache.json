@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50257,
+  "uuid": "skill-clawhub-prompt-cache",
+  "skillKey": "clawhub-prompt-cache",
+  "name": "Prompt Cache",
+  "summary": "SHA-256 prompt deduplication for LLM and TTS calls — hash normalize prompts, check cache before calling APIs, store results for instant replay. Use when maki...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_cache",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "SHA-256 prompt deduplication for LLM and TTS calls — hash normalize prompts, check cache before.",
+        "Use when maki..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-cache@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-cache",
+      "url": "https://clawhub.ai/skills/prompt-cache"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-cache",
+    "url": "https://clawhub.ai/skills/prompt-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-cache-88bd90fd33ce248a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-cache@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-cache-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89fc40cebfe721249bfc62364926c4647af6a2a48ac8e24fc80b01f9b5f58249",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T19:28:44.720Z"
+}

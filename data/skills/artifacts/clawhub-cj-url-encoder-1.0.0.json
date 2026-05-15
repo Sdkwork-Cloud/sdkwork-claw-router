@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cj-url-encoder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cj_url_encoder",
+  "skill": {
+    "id": 62894,
+    "skillKey": "clawhub-cj-url-encoder",
+    "name": "url编解码"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cj-url-encoder",
+    "url": "https://clawhub.ai/skills/cj-url-encoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cj-url-encoder-534263b151ba5ff1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速对文本或 URL 进行 Encode (编码) 和 Decode (解码) 操作，解决中文乱码和特殊字符传输问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lapidcj",
+      "userId": "publishers:lapidcj",
+      "displayName": "mark.cj",
+      "image": "https://avatars.githubusercontent.com/u/22016345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773381434176,
+      "changelog": "cj-url-encoder 1.0.0 – Initial Release\n\n- Enables fast, reliable URL and text encoding/decoding to solve issues with Chinese characters and special symbols.\n- Automatically detects whether to encode or decode based on the text content and user phrasing.\n- Uses the built-in Python libraries only; no external dependencies required.\n- Clearly displays original and processed results, with copy-paste tips and concise character conversion explanations.\n- Handles errors gracefully and provides helpful feedback if decoding fails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c78ff706545e07371ed60068d1f70b12508b00c0c5caeafaded1b987f4f06587"
+}

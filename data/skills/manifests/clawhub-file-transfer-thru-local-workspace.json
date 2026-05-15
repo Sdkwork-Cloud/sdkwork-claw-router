@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62088,
+  "uuid": "skill-clawhub-file-transfer-thru-local-workspace",
+  "skillKey": "clawhub-file-transfer-thru-local-workspace",
+  "name": "file-transfer-thru-local-workspace",
+  "summary": "通过网页上传下载文件至本地 workspace，支持智能认证、文件管理及技能包浏览下载，文件不离开本地服务器。",
+  "version": "3.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_transfer_thru_local_workspace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chengwang86",
+      "features": [
+        "通过网页上传下载文件至本地 workspace，支持智能认证、文件管理及技能包浏览下载，文件不离开本地服务器。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-transfer-thru-local-workspace@3.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22303971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-transfer-thru-local-workspace",
+      "url": "https://clawhub.ai/skills/file-transfer-thru-local-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-transfer-thru-local-workspace",
+    "url": "https://clawhub.ai/skills/file-transfer-thru-local-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-transfer-thru-local-workspace-e016a789cab31c7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-transfer-thru-local-workspace@3.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-transfer-thru-local-workspace-3.1.1.json",
+      "version": "3.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9f5c1508e67820a93bcd78cf7f3d6764aff20465488ad50d60d6e9948568331",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:42:22.240Z"
+}

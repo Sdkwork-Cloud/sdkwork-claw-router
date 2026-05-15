@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62260,
+  "uuid": "skill-clawhub-music-manager",
+  "skillKey": "clawhub-music-manager",
+  "name": "music-manager",
+  "summary": "通用音乐下载管理器。支持从YouTube/Bilibili搜索下载音乐，自动转MP3，按分类存入本地音乐库",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thou",
+      "features": [
+        "通用音乐下载管理器。支持从YouTube/Bilibili搜索下载音乐，自动转MP3，按分类存入本地音乐库"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/music-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70137317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "music-manager",
+      "url": "https://clawhub.ai/skills/music-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-manager",
+    "url": "https://clawhub.ai/skills/music-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-manager-eaac8782e243c0f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/music-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-music-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a1fe57f888439ae5a2e86045037e41bd7cd3ba540c4536c37f2bb3716232737",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T07:43:27.427Z"
+}

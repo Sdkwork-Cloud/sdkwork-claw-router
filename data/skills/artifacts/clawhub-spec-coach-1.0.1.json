@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-coach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_coach",
+  "skill": {
+    "id": 49161,
+    "skillKey": "clawhub-spec-coach",
+    "name": "Spec Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-coach",
+    "url": "https://clawhub.ai/skills/spec-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-coach-a7c76962dd0df051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Strict specification interviewer for features, products, automations, or systems. Use when the user asks to define, write, refine, or clarify a spec before i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brasco05",
+      "userId": "s177sz08tyrpncx75y5y4em2rn83v35v",
+      "displayName": "brasco05",
+      "image": "https://avatars.githubusercontent.com/u/256532966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778140718556,
+      "changelog": "Polish concise spec interview positioning, add mini example, clarify output and pre-implementation use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82109841c9c0bcdd902d1103780251e0a000a193a8981e10f50616793789b89a"
+}

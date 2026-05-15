@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/med-critical-disease-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.med_critical_disease_review",
+  "skill": {
+    "id": 64283,
+    "skillKey": "clawhub-med-critical-disease-review",
+    "name": "med-critical-disease-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "med-critical-disease-review",
+    "url": "https://clawhub.ai/skills/med-critical-disease-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/med-critical-disease-review-ce5771f07823c32a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "重大疾病理赔智能评估（支持 28 种病种）。输入住院病历结构化数据，调用内网评估接口，输出原始 JSON 与自然语言结论（结论 + 证据）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unisound-llm",
+      "userId": "s1770nyybxj4gn0vk38n6wr6k584x8ea",
+      "displayName": "Unisound-LLM",
+      "image": "https://avatars.githubusercontent.com/u/269350907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777001295734,
+      "changelog": "- 新增统一入口脚本 `scripts/run.py`，支持直接处理多种主流文件格式（pdf/doc/docx/xls/xlsx/csv/txt/json）。\n- SKILL.md 增加输入多格式自动归一化与统一运行入口说明。\n- 更新依赖与外部工具说明，覆盖新格式支持（如 openpyxl、pypdf、LibreOffice、pdftotext、tesseract）。\n- 兼容原有 `medicalRecord` JSON 入口，功能无迁移门槛。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:765a21472cbfb7e26751c2436b2075e7e616057208af594545eaca021942de99"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33036,
+  "uuid": "skill-clawhub-yugabyte",
+  "skillKey": "clawhub-yugabyte",
+  "name": "Yugabyte",
+  "summary": "Yugabyte integration. Manage data, records, and automate workflows. Use when the user wants to interact with Yugabyte data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yugabyte",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Yugabyte integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Yugabyte data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yugabyte@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yugabyte",
+      "url": "https://clawhub.ai/skills/yugabyte"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yugabyte",
+    "url": "https://clawhub.ai/skills/yugabyte",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yugabyte-1e1c59f402939ecf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yugabyte@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yugabyte-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4ad437a3e1482a33f564dbb74fc5740b274f572d1236ac869bda4b74a830c93",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:12:31.622Z"
+}

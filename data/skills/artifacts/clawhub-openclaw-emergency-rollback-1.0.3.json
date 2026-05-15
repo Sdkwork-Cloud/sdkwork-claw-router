@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-emergency-rollback@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_emergency_rollback",
+  "skill": {
+    "id": 51573,
+    "skillKey": "clawhub-openclaw-emergency-rollback",
+    "name": "OpenClaw Emergency Rollback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-emergency-rollback",
+    "url": "https://clawhub.ai/skills/openclaw-emergency-rollback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-emergency-rollback-aed7c26d34bbfc36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Emergency Config Rollback — dead man's switch system for safely making risky changes to OpenClaw configuration. Use this skill whenever the user men..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "encryptshawn",
+      "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+      "displayName": "EncryptShawn",
+      "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776924046203,
+      "changelog": "openclaw-emergency-rollback v1.0.3\n\n- trying to fix that its stil flagged suspicious even though my current version shows clean, seems to be a bug in clawhub that uses old versions to cast shade on new versions.\n- Cleaned up metadata by removing unnecessary files: .clawhub/origin.json and _meta.json\n- No changes to end-user commands or rollback functionality\n- Overall package footprint reduced by eliminating redundant metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21decffa2191e24d6e6074b9850403540a3f5539200ebffd95a82dd3cb4af23c"
+}

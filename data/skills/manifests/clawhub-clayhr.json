@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36558,
+  "uuid": "skill-clawhub-clayhr",
+  "skillKey": "clawhub-clayhr",
+  "name": "Clayhr",
+  "summary": "ClayHR integration. Manage data, records, and automate workflows. Use when the user wants to interact with ClayHR data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clayhr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ClayHR integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ClayHR data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clayhr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clayhr",
+      "url": "https://clawhub.ai/skills/clayhr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clayhr",
+    "url": "https://clawhub.ai/skills/clayhr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clayhr-f1fc9f1a7dc6dc7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clayhr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clayhr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6f6e4964bd9086243710b86e4bc8f71728537334ec9b008cb636a13664e646d",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:22.418Z"
+}

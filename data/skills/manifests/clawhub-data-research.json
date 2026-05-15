@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71722,
+  "uuid": "skill-clawhub-data-research",
+  "skillKey": "clawhub-data-research",
+  "name": "Research",
+  "summary": "在开始任何分析报告前使用。通过结构化对话理清研究目标、范围、受众和关键问题，形成研究大纲。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingginwan",
+      "features": [
+        "在开始任何分析报告前使用。通过结构化对话理清研究目标、范围、受众和关键问题，形成研究大纲。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91401222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-research",
+      "url": "https://clawhub.ai/skills/data-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-research",
+    "url": "https://clawhub.ai/skills/data-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-research-6a86aeec4e7a59e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46f77750edca8dd890a7df044514af2c536842fcc87137d6e10d92084f179dac",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:15:02.526Z"
+}

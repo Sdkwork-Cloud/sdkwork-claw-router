@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12476,
+  "uuid": "skill-clawhub-spacescan",
+  "skillKey": "clawhub-spacescan",
+  "name": "Spacescan",
+  "summary": "Access Chia blockchain data including blocks, transactions, addresses, CAT tokens, NFTs, network stats, and XCH price via Spacescan.io API with an API key.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spacescan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koba42Corp",
+      "features": [
+        "Access Chia blockchain data including blocks, transactions, addresses, CAT tokens, NFTs, networ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spacescan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76798369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spacescan",
+      "url": "https://clawhub.ai/skills/spacescan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spacescan",
+    "url": "https://clawhub.ai/skills/spacescan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spacescan-d4bc03b644de247b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spacescan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spacescan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a16e6f1121cb988ef5f4ba23791705e6b9bb2a52d0187b93bd4f0e31a6b85058",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T19:48:18.063Z"
+}

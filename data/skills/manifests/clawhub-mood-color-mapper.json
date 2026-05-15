@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43560,
+  "uuid": "skill-clawhub-mood-color-mapper",
+  "skillKey": "clawhub-mood-color-mapper",
+  "name": "Mood Color Mapper",
+  "summary": "Translate a user's felt state into a color-based mood map with body cues, possible emotion words, likely needs, and one gentle next step under 10 minutes. Us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mood_color_mapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Translate a user's felt state into a color-based mood map with body cues, possible emotion word."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mood-color-mapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mood-color-mapper",
+      "url": "https://clawhub.ai/skills/mood-color-mapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mood-color-mapper",
+    "url": "https://clawhub.ai/skills/mood-color-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mood-color-mapper-c5bca007c3de7152.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mood-color-mapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mood-color-mapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11a5eee033eda42d327301da83a4eb3be1ea3223c3036bad314c07e91b0c9b3e",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T00:00:57.739Z"
+}

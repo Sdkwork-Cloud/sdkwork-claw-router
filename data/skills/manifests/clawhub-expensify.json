@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35683,
+  "uuid": "skill-clawhub-expensify",
+  "skillKey": "clawhub-expensify",
+  "name": "Expensify",
+  "summary": "Expensify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Expensify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expensify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Expensify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Expensify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expensify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expensify",
+      "url": "https://clawhub.ai/skills/expensify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expensify",
+    "url": "https://clawhub.ai/skills/expensify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expensify-1084761231934e15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expensify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-expensify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3af8a3f67ea56eaa11b38d1f46ada400ffa317cbe67792478d8fa71db12a1f4d",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:45:27.296Z"
+}

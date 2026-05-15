@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiadong-assembly-large-audio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiadong_assembly_large_audio",
+  "skill": {
+    "id": 35701,
+    "skillKey": "clawhub-jiadong-assembly-large-audio",
+    "name": "Assembly Large Audio Transcriber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiadong-assembly-large-audio",
+    "url": "https://clawhub.ai/skills/jiadong-assembly-large-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiadong-assembly-large-audio-5d69f57c7b827938.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe large audio files (100MB+, up to 1GB/12 hours) with speaker diarization. Uses AssemblyAI API with direct HTTP calls. Supports MP3, WAV, M4A, FLAC,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiadong0723",
+      "userId": "s171evqrw320fst1p7x7dqf9hs84gww5",
+      "displayName": "jiadong0723",
+      "image": "https://avatars.githubusercontent.com/u/267246555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775745783363,
+      "changelog": "- Initial release of assembly-large-audio-transcriber skill.\n- Transcribes large audio files (100MB–1GB, up to 12 hours) with speaker diarization using AssemblyAI API via HTTP calls.\n- Supports MP3, WAV, M4A, FLAC, OGG, and WEBM formats with no SDK dependencies (only requires `requests`).\n- Provides word-level timestamps, multi-language support (auto-detection), and detailed output including speaker and time segmentation.\n- Includes robust error handling and guidance for API limits and file splitting.\n- Output can be archived to a specified directory with structured Markdown or JSON formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6be595e103e8f6f0398b0ceb5dda6d6498400a070342237615b2c5352be6f1f7"
+}

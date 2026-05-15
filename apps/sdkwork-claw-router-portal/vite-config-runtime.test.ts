@@ -20,6 +20,35 @@ async function resolvePortalViteConfig(): Promise<UserConfig> {
   }) as UserConfig | Promise<UserConfig>;
 }
 
+async function callResolveId(
+  resolveId: unknown,
+  source: string,
+  importer: string,
+): Promise<unknown> {
+  if (typeof resolveId === "function") {
+    return resolveId.call({}, source, importer, {});
+  }
+  if (
+    typeof resolveId === "object"
+    && resolveId !== null
+    && "handler" in resolveId
+    && typeof resolveId.handler === "function"
+  ) {
+    return resolveId.handler.call({}, source, importer, {});
+  }
+  throw new TypeError("resolveId hook is not callable");
+}
+
+function hasPluginName(plugin: unknown, name: string): plugin is { name: string; resolveId?: unknown } {
+  return (
+    typeof plugin === "object"
+    && plugin !== null
+    && !Array.isArray(plugin)
+    && "name" in plugin
+    && plugin.name === name
+  );
+}
+
 test("dependency optimizer compiles workspace TSX with automatic React runtime", async () => {
   const config = await resolvePortalViteConfig();
 
@@ -27,11 +56,20 @@ test("dependency optimizer compiles workspace TSX with automatic React runtime",
   assert.equal(config.optimizeDeps?.esbuildOptions?.jsxImportSource, "react");
 });
 
+test("dev server enables React Fast Refresh and HMR by default", async () => {
+  const config = await resolvePortalViteConfig();
+  const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
+
+  assert.ok(plugins.some((plugin) => hasPluginName(plugin, "vite:react-babel")));
+  assert.ok(plugins.some((plugin) => hasPluginName(plugin, "vite:react-refresh")));
+  assert.equal(config.server?.hmr, true);
+});
+
 test("dependency optimizer pre-bundles recharts instead of serving its mixed ESM and CommonJS sources", async () => {
   const config = await resolvePortalViteConfig();
 
   assert.ok(config.optimizeDeps?.include?.includes("recharts"));
-  assert.ok(config.optimizeDeps?.needsInterop?.includes("es-toolkit/compat/get"));
+  assert.equal(config.optimizeDeps?.needsInterop?.includes("es-toolkit/compat/get"), false);
 });
 
 test("API reference workspace package is not served from stale dependency optimizer cache", async () => {
@@ -46,6 +84,37 @@ test("SDK reference workspace package is not served from stale dependency optimi
   assert.ok(config.optimizeDeps?.exclude?.includes("sdkwork-claw-router-sdk-reference"));
 });
 
+test("portal workspace packages resolve to source files outside node_modules in dev", async () => {
+  const config = await resolvePortalViteConfig();
+  const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
+  const resolver = plugins.find((plugin) => hasPluginName(plugin, "clawrouter-portal-local-package-resolver"));
+
+  assert.ok(resolver && typeof resolver === "object");
+  assert.ok("resolveId" in resolver);
+
+  const resolvedRoot = await callResolveId(
+    resolver.resolveId,
+    "sdkwork-claw-router-api-reference",
+    new URL("./src/App.tsx", import.meta.url).pathname,
+  );
+  const resolvedSubpath = await callResolveId(
+    resolver.resolveId,
+    "sdkwork-claw-router-commons/runtime",
+    new URL("./packages/sdkwork-claw-router-api-reference/src/codeSnippetClient.ts", import.meta.url).pathname,
+  );
+
+  assert.equal(
+    resolvedRoot,
+    path.resolve(import.meta.dirname, "packages/sdkwork-claw-router-api-reference/src/index.ts"),
+  );
+  assert.equal(
+    resolvedSubpath,
+    path.resolve(import.meta.dirname, "packages/sdkwork-claw-router-commons/src/runtime.ts"),
+  );
+  assert.ok(!String(resolvedRoot).includes(`${path.sep}node_modules${path.sep}`));
+  assert.ok(!String(resolvedSubpath).includes(`${path.sep}node_modules${path.sep}`));
+});
+
 test("portal dev server may serve workspace SDK sources resolved by aliases", async () => {
   const config = await resolvePortalViteConfig();
   const workspaceRoot = path.resolve(import.meta.dirname, "../..");
@@ -56,6 +125,11 @@ test("portal dev server may serve workspace SDK sources resolved by aliases", as
 test("workspace package imports resolve to one React and router runtime instance", async () => {
   const config = await resolvePortalViteConfig();
 
+  assert.equal(
+    config.resolve?.preserveSymlinks,
+    undefined,
+    "third-party pnpm packages should resolve through their real package roots",
+  );
   assert.deepEqual(config.resolve?.dedupe, [
     "react",
     "react/jsx-runtime",
@@ -68,68 +142,124 @@ test("workspace package imports resolve to one React and router runtime instance
   ]);
 });
 
-test("react i18next parser dependencies resolve through explicit aliases under symlink preservation", async () => {
+test("third-party runtime dependencies are direct dependencies instead of Vite aliases", async () => {
   const config = await resolvePortalViteConfig();
   const aliases = config.resolve?.alias;
+  const portalPackage = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8"));
+  const dependencies = portalPackage.dependencies as Record<string, string>;
+  const directRuntimeDependencies = [
+    "clsx",
+    "cookie",
+    "decimal.js-light",
+    "es-toolkit",
+    "framer-motion",
+    "html-parse-stringify",
+    "motion",
+    "motion-dom",
+    "motion-utils",
+    "react-hook-form",
+    "react-router",
+    "react-router-dom",
+    "recharts",
+    "scheduler",
+    "set-cookie-parser",
+    "use-sync-external-store",
+    "victory-vendor",
+    "void-elements",
+  ];
+  const forbiddenAliasFinds = [
+    "clsx",
+    "cookie",
+    "decimal.js-light",
+    "framer-motion",
+    "html-parse-stringify",
+    "motion",
+    "motion-dom",
+    "motion-utils",
+    "react-hook-form",
+    "react-router",
+    "react-router-dom",
+    "recharts",
+    "scheduler",
+    "set-cookie-parser",
+    "victory-vendor",
+    "void-elements",
+  ];
 
   assert.ok(Array.isArray(aliases));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find === "html-parse-stringify"
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find instanceof RegExp
-    && alias.find.source === "^recharts$"
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find === "void-elements"
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find === "clsx"
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find === "cookie"
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find === "decimal.js-light"
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find === "set-cookie-parser"
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find instanceof RegExp
-    && alias.find.source.includes("es-toolkit")
-  )));
-  assert.ok(aliases.some((alias) => (
-    typeof alias === "object"
-    && alias !== null
-    && "find" in alias
-    && alias.find instanceof RegExp
-    && alias.find.source.includes("victory-vendor")
-  )));
+  for (const dependency of directRuntimeDependencies) {
+    assert.ok(dependencies[dependency], `${dependency} must be declared by the portal package`);
+  }
+  for (const forbidden of forbiddenAliasFinds) {
+    assert.equal(
+      aliases.some((alias) => (
+        typeof alias === "object"
+        && alias !== null
+        && "find" in alias
+        && (
+          alias.find === forbidden
+          || (alias.find instanceof RegExp && alias.find.source.includes(forbidden.replaceAll("-", "\\-")))
+        )
+      )),
+      false,
+      `${forbidden} should resolve through package.json and package exports, not Vite aliases`,
+    );
+  }
+  assert.equal(
+    aliases.some((alias) => (
+      typeof alias === "object"
+      && alias !== null
+      && "find" in alias
+      && alias.find instanceof RegExp
+      && (alias.find.source.includes("es-toolkit") || alias.find.source.includes("victory-vendor"))
+    )),
+    false,
+    "nested recharts dependencies should not be remapped through Vite aliases",
+  );
+});
+
+test("portal scripts run dependency preflight before Vite entrypoints", () => {
+  const portalPackage = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8"));
+
+  assert.equal(portalPackage.scripts["deps:check"], "node scripts/check-portal-deps.mjs");
+  assert.equal(portalPackage.scripts.dev, "pnpm deps:check && vite --configLoader native");
+  assert.equal(portalPackage.scripts["browser:dev"], "pnpm deps:check && vite --configLoader native");
+  assert.equal(portalPackage.scripts.build, "pnpm deps:check && node scripts/build-portal.mjs");
+});
+
+test("motion React entrypoint has browser-visible named exports after dependency optimization", async () => {
+  const config = await resolvePortalViteConfig();
+  const include = config.optimizeDeps?.include ?? [];
+
+  assert.ok(include.includes("motion/react"));
+  assert.ok(include.includes("framer-motion"));
+});
+
+test("react-i18next HTML parser interop dependencies are served through dependency optimization", async () => {
+  const config = await resolvePortalViteConfig();
+  const include = config.optimizeDeps?.include ?? [];
+  const plugins: unknown[] = Array.isArray(config.plugins) ? config.plugins.flat() : [];
+  const resolver = plugins.find((plugin) => hasPluginName(plugin, "clawrouter-portal-workspace-dependency-resolver"));
+  const externalWorkspaceImporter = path.resolve(
+    import.meta.dirname,
+    "../../../sdkwork-appbase/packages/pc-react/fake/src/index.tsx",
+  );
+
+  assert.ok(resolver && typeof resolver === "object");
+  assert.ok("resolveId" in resolver);
+  for (const dependency of [
+    "react-i18next",
+    "i18next",
+    "html-parse-stringify",
+    "void-elements",
+  ]) {
+    assert.ok(include.includes(dependency), `${dependency} must be pre-bundled by Vite`);
+    assert.equal(
+      await callResolveId(resolver.resolveId, dependency, externalWorkspaceImporter),
+      null,
+      `${dependency} must remain a bare import so Vite can rewrite it to .vite/deps`,
+    );
+  }
 });
 
 test("production TypeScript transform does not allocate source maps when build sourcemaps are disabled", () => {

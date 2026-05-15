@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64328,
+  "uuid": "skill-clawhub-arch-optimization",
+  "skillKey": "clawhub-arch-optimization",
+  "name": "arch-optimization",
+  "summary": "OpenClaw通信协议架构优化技能包 - 提供高性能、可靠的agent间通信框架。实现大消息59%性能提升，MessagePack 35%体积减少，统一传输层架构，智能路由算法，完整错误恢复和监控体系。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "木南",
+      "features": [
+        "OpenClaw通信协议架构优化技能包",
+        "提供高性能、可靠的agent间通信框架。实现大消息59%性能提升，MessagePack 35%体积减少，统一传输层架构，智能路由算法，完整错误恢复和监控体系。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arch-optimization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251600494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arch-optimization",
+      "url": "https://clawhub.ai/skills/arch-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-optimization",
+    "url": "https://clawhub.ai/skills/arch-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-optimization-2ec51a229ddc1748.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arch-optimization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arch-optimization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f561ad96b9a9f13f146867ebec56e928610b59acfae1a33b9d907d16f9bef6b4",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T11:48:02.941Z"
+}

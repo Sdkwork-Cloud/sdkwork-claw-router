@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradingviewscanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradingviewscanner",
+  "skill": {
+    "id": 62461,
+    "skillKey": "clawhub-tradingviewscanner",
+    "name": "scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradingviewscanner",
+    "url": "https://clawhub.ai/skills/tradingviewscanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradingviewscanner-9148b01a8ec5e9c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨市场股票技术指标扫描系统。数据来源 TradingView，支持 A股/港股/美股/日股。 从用户 Obsidian vault 中的 watchlist 读取 ticker 列表，运行14项技术信号扫描 （MA交叉、RSI、MACD、BOLL、放量突破、缩量回调、量价背离、周K共振、综合评分等）， 并将扫描报..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sarahwang94712",
+      "userId": "s172p8q4ssp7g66bq3qv8xa45984fcb4",
+      "displayName": "sarahwang94712",
+      "image": "https://avatars.githubusercontent.com/u/67869404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775711039558,
+      "changelog": "stock-scanner 1.0.0: Initial release\n\n- New cross-market stock technical indicator scanner using TradingView data.\n- Reads watchlist from user's Obsidian vault and scans 14 technical signals for A-shares, HK, US, and Japan stocks.\n- Saves Markdown (and optional Excel) scan reports back to Obsidian.\n- Triggered by related keywords or on user request (e.g., \"跑一下扫描\", \"stock scanner\").\n- Designed for daily scheduled or on-demand use; provides setup and usage instructions within documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a432415d1b07601961f35550168aea801bef9f9df6abacdfd174650a5e4cd85d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caching",
+  "skill": {
+    "id": 14393,
+    "skillKey": "clawhub-caching",
+    "name": "caching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caching",
+    "url": "https://clawhub.ai/skills/caching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caching-6fe78deb222783bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Caching strategies, invalidation, eviction policies, HTTP caching, distributed caching, and anti-patterns. Use when designing cache layers, choosing eviction policies, debugging stale data, or optimizing read-heavy workloads."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1130,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770725284077,
+      "changelog": "Initial release of the caching skill.\n\n- Covers core caching strategies: cache-aside, read-through, write-through, write-behind, refresh-ahead.\n- Details cache invalidation methods, TTL guidelines, and HTTP caching best practices.\n- Summarizes common application caching solutions: in-memory, Redis, Memcached, SQLite.\n- Explains distributed cache concepts, eviction policies, and cache layer design.\n- Includes anti-patterns, stampede prevention, cache warming, and monitoring recommendations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f40b2f9c38e8360b62f2548acb37fbecfb5c402560cceccae275f5c53a57a7dc"
+}

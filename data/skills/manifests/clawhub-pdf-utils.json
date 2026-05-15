@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30258,
+  "uuid": "skill-clawhub-pdf-utils",
+  "skillKey": "clawhub-pdf-utils",
+  "name": "PDF Utils",
+  "summary": "PDF Utils enables OCR of image-based PDFs, extraction of arXiv IDs from text or OCR output, and scriptable PDF tasks like merging, splitting, and rendering.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_utils",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lu Wang",
+      "features": [
+        "PDF Utils enables OCR of image-based PDFs, extraction of arXiv IDs from text or OCR output, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-utils@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7668944?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-utils",
+      "url": "https://clawhub.ai/skills/pdf-utils"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-utils",
+    "url": "https://clawhub.ai/skills/pdf-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-utils-11ac90310b44e379.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-utils@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-utils-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06cdd21bc30144eb7ee101d3c61ea7b5c5ddc53d841934d227d7fa9361be7c76",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T07:06:18.698Z"
+}

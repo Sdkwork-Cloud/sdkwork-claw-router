@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-telecom@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_telecom",
+  "skill": {
+    "id": 57691,
+    "skillKey": "clawhub-china-telecom",
+    "name": "china-telecom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-telecom",
+    "url": "https://clawhub.ai/skills/china-telecom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-telecom-242ccab7f15e9df4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for 中国电信 China Telecom. Search products, news, financials, and official resources for 中国电信 China Telecom."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775176361271,
+      "changelog": "Initial release of the China Telecom information assistant.\n\n- Search for 中国电信 China Telecom products, pricing, and availability\n- Access latest news, press releases, and financial information\n- Get official resources and support links\n- Compare China Telecom with industry competitors\n- Utilizes web search to provide real-time, structured information from official and authoritative sources",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01551fdbbeb927943c296b90712cbe18a51582040128457561501acb75096215"
+}

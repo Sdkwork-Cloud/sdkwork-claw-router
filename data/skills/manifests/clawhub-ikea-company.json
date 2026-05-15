@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48753,
+  "uuid": "skill-clawhub-ikea-company",
+  "skillKey": "clawhub-ikea-company",
+  "name": "Ikea Company",
+  "summary": "Provides detailed insights into IKEA's business model, history, store design, sustainability initiatives, and corporate structure.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ikea_company",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed insights into IKEA's business model, history, store design, sustainability in."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ikea-company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ikea-company",
+      "url": "https://clawhub.ai/skills/ikea-company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ikea-company",
+    "url": "https://clawhub.ai/skills/ikea-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ikea-company-f57aabc38063ea65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ikea-company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ikea-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcd59681a69380f3a229851066f0f9cbef65de95fe09effab3f8cbba09847f28",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T19:05:44.769Z"
+}

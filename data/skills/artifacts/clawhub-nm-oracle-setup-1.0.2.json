@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nm-oracle-setup@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_oracle_setup",
+  "skill": {
+    "id": 37753,
+    "skillKey": "clawhub-nm-oracle-setup",
+    "name": "Nm Oracle Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-oracle-setup",
+    "url": "https://clawhub.ai/skills/nm-oracle-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-oracle-setup-bbeb26066c6dda42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provision the oracle inference daemon with Python 3.11+ and onnxruntime via uv"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "athola",
+      "userId": "s17emme0e2m3cpf7k2jvp3a84984b8z9",
+      "displayName": "athola",
+      "image": "https://avatars.githubusercontent.com/u/9769290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778293129970,
+      "changelog": "Release v1.9.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3aadd417ae1cdfd3e5d52489864deadb77273d54ba3107c9523cfc648a4e3c69"
+}

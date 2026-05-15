@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72190,
+  "uuid": "skill-clawhub-ad-production-review-quality",
+  "skillKey": "clawhub-ad-production-review-quality",
+  "name": "审核质检",
+  "summary": "审核质检技能 - 自动化质量评估和人工审核工作流",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_production_review_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JEyeshield",
+      "features": [
+        "自动化质量评估和人工审核工作流"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-production-review-quality@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25786840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-production-review-quality",
+      "url": "https://clawhub.ai/skills/ad-production-review-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-production-review-quality",
+    "url": "https://clawhub.ai/skills/ad-production-review-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-production-review-quality-1ce173c90fbea1b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-production-review-quality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-production-review-quality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4c7f4de26f86a295b9b8d6d617b1a634c59c419e5a5bbe46471bc80a9b727e7",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:55:18.660Z"
+}

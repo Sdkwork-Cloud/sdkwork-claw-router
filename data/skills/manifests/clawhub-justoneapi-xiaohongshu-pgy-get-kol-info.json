@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48649,
+  "uuid": "skill-clawhub-justoneapi-xiaohongshu-pgy-get-kol-info",
+  "skillKey": "clawhub-justoneapi-xiaohongshu-pgy-get-kol-info",
+  "name": "Xiaohongshu Creator Marketplace (Pugongying) Creator Profile API",
+  "summary": "Call GET /api/xiaohongshu-pgy/get-kol-info/v1 for Xiaohongshu Creator Marketplace (Pugongying) Creator Profile through JustOneAPI with kolId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_xiaohongshu_pgy_get_kol_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/xiaohongshu-pgy/get-kol-info/v1 for Xiaohongshu Creator Marketplace (Pugongying)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-xiaohongshu-pgy-get-kol-info@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-xiaohongshu-pgy-get-kol-info",
+      "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-pgy-get-kol-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-xiaohongshu-pgy-get-kol-info",
+    "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-pgy-get-kol-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-xiaohongshu-pgy-get-kol-info-bafde4f6d0ee5311.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-xiaohongshu-pgy-get-kol-info@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-xiaohongshu-pgy-get-kol-info-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d913020c0e7a43288ff4febdee55cd2bd65b500b7df04f7bf1f0da15f669effd",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T10:19:30.290Z"
+}

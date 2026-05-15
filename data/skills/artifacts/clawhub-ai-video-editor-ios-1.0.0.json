@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-ios@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_ios",
+  "skill": {
+    "id": 44212,
+    "skillKey": "clawhub-ai-video-editor-ios",
+    "name": "Ai Video Editor Ios"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-ios",
+    "url": "https://clawhub.ai/skills/ai-video-editor-ios",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-ios-07458bac267d520e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second iPhone recording into 1080p edited video clips just by typing what you need. Whether it's editing iPhone videos quickly without a desktop ap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776274310414,
+      "changelog": "Initial release of AI Video Editor iOS.\n\n- Instantly edit and export iPhone video clips to 1080p MP4 just by describing what you want.\n- No desktop app or timeline required; upload raw footage, type instructions, and receive edited video in under a minute.\n- Automatic backend connection and authentication with free token for new users (100 credits, 7-day validity).\n- Fast cloud GPU processing; supports trimming, transitions, aspect ratio, text overlays, audio tracks, and more.\n- Clear user prompts and streamlined workflow—upload, describe edit, download result.\n- Handles errors, credit balance, and common export formats (mp4, mov, avi, gif, etc).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e6e6544e01f318e3cb96987dc3ec605528a2fb6499d3953b337b8288805609c"
+}

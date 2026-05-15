@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -64,8 +64,8 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("CopyButton", account_view)
         self.assertNotIn("<button", account_view)
         for unsupported_label in [
-            "修改企业资质",
-            "安全策略与访问控制",
+            "淇敼浼佷笟璧勮川",
+            "瀹夊叏绛栫暐涓庤闂帶鍒?",
             "Edit",
             "Save",
             "Update",
@@ -107,7 +107,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("mod app_account;", product_api_mod)
         self.assertIn("app_account_summary_router", product_api_mod)
         self.assertIn("app_account_summary_router_with_read_store", product_api_mod)
-        self.assertIn("/app/v3/api/account/summary", app_account)
+        self.assertIn("/app/v3/api/billing/account/summary", app_account)
         self.assertIn("TrustedRequestSubject", app_account)
         self.assertIn("require_subject", app_account)
         self.assertIn("AccountSummaryReadStore", app_account)
@@ -282,7 +282,7 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        operation_marker = "api_path: /app/v3/api/account/summary"
+        operation_marker = "api_path: /app/v3/api/billing/account/summary"
         operation_index = contract.index(operation_marker)
         schema_index = contract.index("name: AccountSummaryResponse", operation_index)
         self.assertLess(schema_index - operation_index, 1200)
@@ -312,19 +312,20 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_account = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "account.ts"
+        sdk_billing = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts"
         ).read_text(encoding="utf-8")
         account_response_path = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "account-summary-response.ts"
         )
         login_log_path = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "account-login-log.ts"
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "account-login-log.ts"
         )
         frontend = (
             ROOT
@@ -343,6 +344,17 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn('"$ref": "#/components/schemas/AccountSummaryResponse"', openapi)
         self.assertTrue(account_response_path.exists())
         self.assertTrue(login_log_path.exists())
+        self.assertFalse(
+            (
+                ROOT
+                / "sdks"
+                / "clawrouter-app-sdk"
+                / "clawrouter-app-sdk-typescript"
+                / "src"
+                / "api"
+                / "account.ts"
+            ).exists()
+        )
 
         account_response = account_response_path.read_text(encoding="utf-8")
         login_log = login_log_path.read_text(encoding="utf-8")
@@ -352,9 +364,10 @@ class ConsoleAccountBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("ip: string;", login_log)
         self.assertIn("status: 'success' | 'warning';", login_log)
         self.assertIn(
-            "async fetchAccountDetails(params?: QueryParams): Promise<FetchAccountDetailsResult>",
-            sdk_account,
+            "async retrieve(): Promise<AccountSummaryRetrieveResult>",
+            sdk_billing,
         )
+        self.assertIn("public readonly summary: BillingAccountSummaryApi;", sdk_billing)
 
         self.assertIn("AccountSummaryResponse as SdkAccountSummaryResponse", frontend)
         self.assertIn("export interface AccountStats", frontend)

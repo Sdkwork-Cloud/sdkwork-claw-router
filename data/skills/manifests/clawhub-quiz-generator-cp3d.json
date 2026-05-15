@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66731,
+  "uuid": "skill-clawhub-quiz-generator-cp3d",
+  "skillKey": "clawhub-quiz-generator-cp3d",
+  "name": "Quiz Generator",
+  "summary": "测试问卷生成器。支持心理测试、性格测试、问卷调查自动生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiz_generator_cp3d",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "测试问卷生成器。支持心理测试、性格测试、问卷调查自动生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quiz-generator-cp3d@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quiz-generator-cp3d",
+      "url": "https://clawhub.ai/skills/quiz-generator-cp3d"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiz-generator-cp3d",
+    "url": "https://clawhub.ai/skills/quiz-generator-cp3d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiz-generator-cp3d-e11b109d878089ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quiz-generator-cp3d@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quiz-generator-cp3d-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5245194e14a503065ab8e7784f7b1695aaf47e32ffd995abb2c1363d8398bf92",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:08:37.505Z"
+}

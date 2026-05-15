@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-agenda-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_agenda_tool",
+  "skill": {
+    "id": 57528,
+    "skillKey": "clawhub-meeting-agenda-tool",
+    "name": "会议议程生成助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-agenda-tool",
+    "url": "https://clawhub.ai/skills/meeting-agenda-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-agenda-tool-fa10ef70bd7e9ddf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user provides meeting-related information (title, venue, time, agenda items, participants, etc.) and wants to generate a f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ywwzzsgit",
+      "userId": "s17fz7fcwzmfgx539gw8vg6rh983gdwv",
+      "displayName": "YWWZZsgit",
+      "image": "https://avatars.githubusercontent.com/u/215634836?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775178371536,
+      "changelog": "- Major update: skill refocused to generate standardized Chinese meeting agenda documents in Word and PDF formats based on user-provided meeting details.\n- Removed shell scripts and tips; now uses a new Python script (generate_agenda.py) to handle document generation.\n- Added clear workflow: collect meeting info, format as JSON (following new template), run the Python script, and deliver both .docx and .pdf files.\n- Updated documentation with detailed input fields, example JSON, step-by-step usage, font/style requirements, and error handling notes.\n- The skill strictly follows Chinese government/enterprise meeting document standards for layout and typography.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45431ff1bb1eae5f71cd9fa89d2c14e61f4bbddea64e842d5156296eb4c64b03"
+}

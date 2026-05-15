@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/install-chinese-fonts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_chinese_fonts",
+  "skill": {
+    "id": 29280,
+    "skillKey": "clawhub-install-chinese-fonts",
+    "name": "Install Chinese Fonts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-chinese-fonts",
+    "url": "https://clawhub.ai/skills/install-chinese-fonts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-chinese-fonts-888398be492f48ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install Chinese/CJK fonts on Linux hosts using distro packages and fontconfig verification. Use when Chinese text renders as tofu / missing glyphs, or when a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "totongf",
+      "userId": "publishers:totongf",
+      "displayName": "Fan",
+      "image": "https://avatars.githubusercontent.com/u/7427551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773552815507,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c21e8b8a94dbcb1f0e3bbcdb39bab051cd1eb797859307f6b9b1ee3f1fbc449"
+}

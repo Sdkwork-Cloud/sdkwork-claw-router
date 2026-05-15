@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onkos@1.6.3",
+  "version": "1.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onkos",
+  "skill": {
+    "id": 58125,
+    "skillKey": "clawhub-onkos",
+    "name": "Onkos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onkos",
+    "url": "https://clawhub.ai/skills/onkos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onkos-accc6f43c493546e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MANDATORY novel engine; LLM CANNOT maintain cross-chapter consistency or track facts/hooks. Activate when user says 写小说/构思故事/续写/改章节/检查连贯性 or similar."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallroya",
+      "userId": "s17aey8rv6b658ncwxxnc44feh84hm11",
+      "displayName": "smallroya",
+      "image": "https://avatars.githubusercontent.com/u/155703158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.6.3",
+      "createdAt": 1776310913590,
+      "changelog": "版本号对齐；移除降级硬编码；COS地址更新；示例模板脱敏",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43cf345e85a078d44156632336ead644f61288c321c0ba3f218b1be6db4ecac7"
+}

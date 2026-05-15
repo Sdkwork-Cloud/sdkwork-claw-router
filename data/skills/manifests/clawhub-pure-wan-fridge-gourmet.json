@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70203,
+  "uuid": "skill-clawhub-pure-wan-fridge-gourmet",
+  "skillKey": "clawhub-pure-wan-fridge-gourmet",
+  "name": "纯血万相冰箱盲盒",
+  "summary": "纯血万相冰箱盲盒 - 基于 Wan2.7/Wan2.1 视觉大模型的烹饪灵感触发器。用户上传冰箱内部照片，Skill 利用万相图像生图像能力，将杂乱冰箱场景语义化提炼并重组为精致创意料理概念图。支持多种菜系（中餐/西餐/日料/法餐/意餐/韩式/泰式/融合）、难易程度（简单/适中/挑战）、烹饪时间（快手/适中/慢炖...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pure_wan_fridge_gourmet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laojun",
+      "features": [
+        "纯血万相冰箱盲盒",
+        "基于 Wan2.7/Wan2.1 视觉大模型的烹饪灵感触发器。用户上传冰箱内部照片，Skill 利用万相图像生图像能力，将杂乱冰箱场景语义化提炼并重组为精致创意料理概念图。支持多种菜系（中餐."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pure-wan-fridge-gourmet@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26532654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pure-wan-fridge-gourmet",
+      "url": "https://clawhub.ai/skills/pure-wan-fridge-gourmet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pure-wan-fridge-gourmet",
+    "url": "https://clawhub.ai/skills/pure-wan-fridge-gourmet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pure-wan-fridge-gourmet-0230175c175a597a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pure-wan-fridge-gourmet@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pure-wan-fridge-gourmet-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25e9dc4746f1f2cff101213ff02a43135c1f947104a10f668e60478121238e4f",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:39:35.661Z"
+}

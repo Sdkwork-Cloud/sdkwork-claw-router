@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-online@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_online",
+  "skill": {
+    "id": 51142,
+    "skillKey": "clawhub-video-editor-online",
+    "name": "Video Editor Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-online",
+    "url": "https://clawhub.ai/skills/video-editor-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-online-4864163401d21475.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "From raw footage to polished video in seconds — this skill powers your video-editor-online workflow by helping you cut clips, add captions, apply transitions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775710161496,
+      "changelog": "**v1.0.3 is a major SKILL.md rewrite for clearer guidance and improved connection/usage instructions.**\n\n- Overhauled documentation to focus on a workflow-centric, plain language approach for users.\n- Detailed new connection/setup instructions, including how to obtain starter tokens and session management.\n- Expanded routing, API reference, and backend event handling sections to clarify supported actions and error handling.\n- Updated metadata (emoji 🎬, explicit NEMO_TOKEN env requirement, “control” variant).\n- Removed lengthy application examples and technical jargon from main sections; replaced with actionable guidance and concise, real-world examples.\n- Added clear mapping from user instructions to API actions, including export, upload, status, and credits flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9411d697b1962c7638a8af4b1290328d751ec23699d84aa74d3eb7d46857156e"
+}

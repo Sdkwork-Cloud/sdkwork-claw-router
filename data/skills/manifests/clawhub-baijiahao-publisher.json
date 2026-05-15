@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63464,
+  "uuid": "skill-clawhub-baijiahao-publisher",
+  "skillKey": "clawhub-baijiahao-publisher",
+  "name": "baijiahao-publisher",
+  "summary": "基于 OpenClaw 内置浏览器的百家号发布技能。打开发布页、扫码登录、填标题/正文、上传封面图、发布，全自动。零依赖 Python，任意 OpenClaw 环境均可运行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baijiahao_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaohuozi",
+      "features": [
+        "基于 OpenClaw 内置浏览器的百家号发布技能。打开发布页、扫码登录、填标题/正文、上传封面图、发布，全自动。零依赖 Python，任意 OpenClaw 环境均可运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baijiahao-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79885733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baijiahao-publisher",
+      "url": "https://clawhub.ai/skills/baijiahao-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baijiahao-publisher",
+    "url": "https://clawhub.ai/skills/baijiahao-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baijiahao-publisher-7c58ff6d97a5071e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baijiahao-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baijiahao-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad55a093ec7639630b1cc081c11a68f9368cf4acfb42c971265b3463b75484bd",
+      "artifactSizeBytes": 2669
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T07:53:17.319Z"
+}

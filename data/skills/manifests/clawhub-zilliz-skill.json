@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33412,
+  "uuid": "skill-clawhub-zilliz-skill",
+  "skillKey": "clawhub-zilliz-skill",
+  "name": "Zilliz Skill",
+  "summary": "Manage Zilliz Cloud vector databases via zilliz-cli. Use when the user wants to: (1) set up zilliz-cli (install, login, configure), (2) manage clusters (crea...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zilliz_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shuyoou",
+      "features": [
+        "Manage Zilliz Cloud vector databases via zilliz-cli",
+        "Use when the user wants to: (1) set up zilliz-cli (install, login, configure), (2) manage clust."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zilliz-skill@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7420640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zilliz-skill",
+      "url": "https://clawhub.ai/skills/zilliz-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zilliz-skill",
+    "url": "https://clawhub.ai/skills/zilliz-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zilliz-skill-30428f49a3a27715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zilliz-skill@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zilliz-skill-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e13532f86cb3a62740527b8e85f8b3ead3138ba3ec4834db5991ecb98175ba1",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:58:59.827Z"
+}

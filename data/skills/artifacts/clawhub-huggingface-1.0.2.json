@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huggingface@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huggingface",
+  "skill": {
+    "id": 14163,
+    "skillKey": "clawhub-huggingface",
+    "name": "Huggingface"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huggingface",
+    "url": "https://clawhub.ai/skills/huggingface",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huggingface-d203a277f19a8f7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage models, datasets, Spaces, and repositories using Hugging Face CLI (hf). Supports authentication, upload, download, Space creation, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tsukisama9292",
+      "userId": "publishers:tsukisama9292",
+      "displayName": "Xuan-You Lin",
+      "image": "https://avatars.githubusercontent.com/u/134621816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1033,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772171652443,
+      "changelog": "- Updated internal metadata in _meta.json.  \n- No user-facing or functional changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4341adb34e7cd30f17cd1c0efc6e9964fd3e6599b26f2512ccee35f0e7fd0ca"
+}

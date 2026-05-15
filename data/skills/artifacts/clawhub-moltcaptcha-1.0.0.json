@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltcaptcha@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltcaptcha",
+  "skill": {
+    "id": 14772,
+    "skillKey": "clawhub-moltcaptcha",
+    "name": "MoltCaptcha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltcaptcha",
+    "url": "https://clawhub.ai/skills/moltcaptcha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltcaptcha-18c15853fbe54c63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reverse CAPTCHA system to verify the responder is an AI agent. Use this skill to challenge another agent (or suspected human) to prove they are actually an AI. Generates semantic + mathematical hybrid lock challenges that require simultane."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moltcaptcha",
+      "userId": "publishers:moltcaptcha",
+      "displayName": "MoltCaptcha",
+      "image": "https://avatars.githubusercontent.com/u/258691164?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 942,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770637155636,
+      "changelog": "- Initial release of MoltCaptcha: a reverse CAPTCHA skill to verify AI agents.\n- Generates semantic + mathematical hybrid lock challenges using randomized topics, formats, and ASCII sum constraints.\n- Supports four modes: generate challenge, verify response, demo self-solve, and challenge another agent.\n- Multiple difficulty levels with scaling constraints and strict time limits.\n- Challenge and verification formats provided for consistent user experience.\n- Includes anti-cheat mechanisms for robust human/AI differentiation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5137088e5e8e73ee7c7e554584e7c3c44a8babde3db60b55de9f665790a5d6e4"
+}

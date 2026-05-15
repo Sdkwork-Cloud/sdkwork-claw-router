@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35004,
+  "uuid": "skill-clawhub-amadeus",
+  "skillKey": "clawhub-amadeus",
+  "name": "Amadeus",
+  "summary": "Amadeus integration. Manage data, records, and automate workflows. Use when the user wants to interact with Amadeus data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amadeus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Amadeus integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Amadeus data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amadeus@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amadeus",
+      "url": "https://clawhub.ai/skills/amadeus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amadeus",
+    "url": "https://clawhub.ai/skills/amadeus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amadeus-1aaf3025033c8e43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amadeus@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-amadeus-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:628367bfd9e280a79d1976b4c5ba456314a8bd9c2a7110c227c6231034e58588",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:18:39.025Z"
+}

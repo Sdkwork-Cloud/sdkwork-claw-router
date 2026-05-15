@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65763,
+  "uuid": "skill-clawhub-llm-key-pool",
+  "skillKey": "clawhub-llm-key-pool",
+  "name": "llm-key-pool",
+  "summary": "多平台API Key分层轮询与智能故障转移；当用户需要绕过单一API Key速率限制、实现高可用大模型调用或管理多厂商API密钥池时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_key_pool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "River",
+      "features": [
+        "多平台API Key分层轮询与智能故障转移；当用户需要绕过单一API Key速率限制、实现高可用大模型调用或管理多厂商API密钥池时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-key-pool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45059134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-key-pool",
+      "url": "https://clawhub.ai/skills/llm-key-pool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-key-pool",
+    "url": "https://clawhub.ai/skills/llm-key-pool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-key-pool-011705b6d5acb27a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-key-pool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-key-pool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29c1e68f47621b98e489b528b4e03b70987f0d899f3da910c25f7f6ff03f938a",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T04:02:14.234Z"
+}

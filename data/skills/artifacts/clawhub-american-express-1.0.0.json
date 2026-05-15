@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/american-express@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.american_express",
+  "skill": {
+    "id": 68496,
+    "skillKey": "clawhub-american-express",
+    "name": "American Express"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "american-express",
+    "url": "https://clawhub.ai/skills/american-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/american-express-85d25f6ec11f6d92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美国运通提供高端信用卡、旅行支票及会员制金融服务，聚焦高净值用户和优质旅行生活体验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776531365916,
+      "changelog": "American Express (美国运通) skill released!\n\n- 提供美国运通 (Amex) 发展历程、核心特点、优势及关键数据\n- 适合查询 Amex 相关信息与行业背景\n- 详列百年传承、关键创新产品、会员制服务亮点\n- 包含高端卡种（如黑卡）介绍和持卡人数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:920d8a2923d4aa65cbd050a689b23852ebd246803bf74817ec826f3cda0587ce"
+}

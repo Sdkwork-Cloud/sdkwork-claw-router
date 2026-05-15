@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62355,
+  "uuid": "skill-clawhub-03-milestone-tracker",
+  "skillKey": "clawhub-03-milestone-tracker",
+  "name": "03 Milestone Tracker",
+  "summary": "Miki发育里程碑追踪 · 输入月龄+当前行为，对比WHO标准，输出发育评估+预警+促进方案",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.03_milestone_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "Miki发育里程碑追踪 · 输入月龄+当前行为，对比WHO标准，输出发育评估+预警+促进方案"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/03-milestone-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "03-milestone-tracker",
+      "url": "https://clawhub.ai/skills/03-milestone-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "03-milestone-tracker",
+    "url": "https://clawhub.ai/skills/03-milestone-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/03-milestone-tracker-c574edf9652bb92d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/03-milestone-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-03-milestone-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b75f3a6420ad28560fc8cb95eb2a63e5ed58c5fd701de4effdf63901d48f6b93",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T16:43:32.331Z"
+}

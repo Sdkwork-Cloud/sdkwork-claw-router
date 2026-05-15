@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-seller-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_seller_video",
+  "skill": {
+    "id": 35651,
+    "skillKey": "clawhub-amazon-seller-video",
+    "name": "Amazon Seller Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-seller-video",
+    "url": "https://clawhub.ai/skills/amazon-seller-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-seller-video-678e6c88413d4152.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create 45-60 second Amazon product demo or A+ content videos showcasing key features, use cases, and brand story to boost buyer confidence and reduce returns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775090161287,
+      "changelog": "Initial release of Amazon Seller Video skill.\n\n- Create product demo and A+ content videos for Amazon listings.\n- Guides users through information gathering: video type, product details, key features, target customer, competitor weaknesses, and reasons for returns.\n- Generates 45–60 second scripts optimized for Amazon video guidelines.\n- Suggests effective b-roll ideas, such as unboxing, real-use scenarios, and clear feature demonstrations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f5aabc8cd52419162437fed5a1e1a304d857f766aa2dfd4d65be8ec1e6485f0"
+}

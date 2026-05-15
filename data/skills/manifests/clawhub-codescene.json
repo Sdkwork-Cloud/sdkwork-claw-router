@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24543,
+  "uuid": "skill-clawhub-codescene",
+  "skillKey": "clawhub-codescene",
+  "name": "Codescene",
+  "summary": "CodeScene integration. Manage Projects. Use when the user wants to interact with CodeScene data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codescene",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "CodeScene integration",
+        "Manage Projects",
+        "Use when the user wants to interact with CodeScene data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codescene@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codescene",
+      "url": "https://clawhub.ai/skills/codescene"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codescene",
+    "url": "https://clawhub.ai/skills/codescene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codescene-b923cb8416d286f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codescene@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-codescene-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:974b82a3744281e433f54a8bad0b261b1c584e7886b1d8a7b521ec6acd3eebde",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:19:59.094Z"
+}

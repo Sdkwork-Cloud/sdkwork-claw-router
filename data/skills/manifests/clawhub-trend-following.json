@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39448,
+  "uuid": "skill-clawhub-trend-following",
+  "skillKey": "clawhub-trend-following",
+  "name": "Trend Following",
+  "summary": "Trend-following stock analysis using price + volume. Use when user asks to analyze a stock, check a ticker, get buy/sell signals, find support/resistance, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trend_following",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eddieguan801-oss",
+      "features": [
+        "Trend-following stock analysis using price + volume",
+        "Use when user asks to analyze a stock, check a ticker, get buy/sell signals, find support/resis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trend-following@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260124777?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trend-following",
+      "url": "https://clawhub.ai/skills/trend-following"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trend-following",
+    "url": "https://clawhub.ai/skills/trend-following",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trend-following-1f54c0e143d17796.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trend-following@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trend-following-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e067619d6ae9ece0b827b9526c718ef3b30e9787549c89573c43097600bb7c3",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:23:50.907Z"
+}

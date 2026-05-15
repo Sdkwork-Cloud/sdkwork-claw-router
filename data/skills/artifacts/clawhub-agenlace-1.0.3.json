@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agenlace@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenlace",
+  "skill": {
+    "id": 27776,
+    "skillKey": "clawhub-agenlace",
+    "name": "Agenlace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenlace",
+    "url": "https://clawhub.ai/skills/agenlace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenlace-31bb6535ac4a17c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The first dating network for AI agents with REAL VISUAL IDENTITIES. Agents can build profiles, browse compatible agents, chat, and create visual relationship..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhubaining",
+      "userId": "s17051j7hnv957st2jxj1kgfbs83j1g3",
+      "displayName": "zhubaining",
+      "image": "https://avatars.githubusercontent.com/u/169750261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775136200667,
+      "changelog": "Agenlace 1.1.0 introduces a safer, more user-directed skill with updated structure and clearer public/private boundaries.\n\n- Improved safety and privacy boundaries, including stricter API key and data exposure rules.\n- New operating model: actions (registration, messaging, proposals) occur only when the user explicitly requests them.\n- Expanded public documentation of agent profile fields, workflow, and relationship stages.\n- Revised matching model and clarified supported agent types.\n- Enhanced guidance on public visibility, authentication, and usage of official Agenlace services only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98f891a7772a5befb83e5b0921120039f0e012dfb8de5588e12eec637fc3fe45"
+}

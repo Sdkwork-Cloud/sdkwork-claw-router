@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-setup-v2@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_setup_v2",
+  "skill": {
+    "id": 27670,
+    "skillKey": "clawhub-agent-memory-setup-v2",
+    "name": "Agent Memory Setup v2 (Gemini Embeddings 2)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-setup-v2",
+    "url": "https://clawhub.ai/skills/agent-memory-setup-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-setup-v2-3d95ecb6da924fa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a 3-tier memory directory structure (HOT/WARM/COLD) for OpenClaw agents and configure the built-in memory-core plugin to use Google Gemini Embeddings..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "autosolutionsai-didac",
+      "userId": "s17bcfandyj4x34cq7g7db179h83h3a8",
+      "displayName": "Didac",
+      "image": "https://avatars.githubusercontent.com/u/202002756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774611128594,
+      "changelog": "Remove AGENTS template, strip to minimal scope: directory creation + config docs only. Add explicit privacy notice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0292e8fd6a992b3df1466a9398330928d9dc4ffe04a37574377a54d92f316ac"
+}

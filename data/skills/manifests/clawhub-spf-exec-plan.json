@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25924,
+  "uuid": "skill-clawhub-spf-exec-plan",
+  "skillKey": "clawhub-spf-exec-plan",
+  "name": "SPF Exec Plan",
+  "summary": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spf_exec_plan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mok888",
+      "features": [
+        "Use when you have a written implementation plan to execute in a separate session with review ch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spf-exec-plan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82868581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spf-exec-plan",
+      "url": "https://clawhub.ai/skills/spf-exec-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spf-exec-plan",
+    "url": "https://clawhub.ai/skills/spf-exec-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spf-exec-plan-e279c65f536463d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spf-exec-plan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spf-exec-plan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6c4bebd68937680ae3b27f62b801a4cc5d4abd779e05628b789198625edf1bd",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T07:11:42.064Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lego-pixel-art@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lego_pixel_art",
+  "skill": {
+    "id": 48273,
+    "skillKey": "clawhub-lego-pixel-art",
+    "name": "LEGO Pixel Art Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lego-pixel-art",
+    "url": "https://clawhub.ai/skills/lego-pixel-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lego-pixel-art-51dd02194282286a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert any image into LEGO brick pixel art, generating a complete building plan and material purchase list. Built-in standard LEGO color system, supports cu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777687847216,
+      "changelog": "LEGO Pixel Art Generator v1.0.0\n\n- Launch of a tool to convert any image into LEGO brick pixel art with a custom building plan and purchase list.\n- Supports standard LEGO color system (36 colors), custom build sizes (10–200 studs), and adjustable color precision.\n- Generates a row-by-row building guide and complete material list, ready for export or copying.\n- Pure frontend, dependency-free, out-of-the-box solution for enthusiasts, creators, and educators.\n- Includes an interactive tool for easy upload, live parameter adjustment, and real-time preview.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1992987ca7423f2512b2a77396358d8a0f47ee3b6bcff968b323556cfb2a8702"
+}

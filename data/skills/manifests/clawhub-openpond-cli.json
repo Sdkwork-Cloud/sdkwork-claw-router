@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15204,
+  "uuid": "skill-clawhub-openpond-cli",
+  "skillKey": "clawhub-openpond-cli",
+  "name": "Openpond Cli",
+  "summary": "Use the OpenPond CLI to create repos, watch deployments, and run tools without the web UI.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openpond_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "glucrypto",
+      "features": [
+        "Use the OpenPond CLI to create repos, watch deployments, and run tools without the web UI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openpond-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61569650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openpond-cli",
+      "url": "https://clawhub.ai/skills/openpond-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openpond-cli",
+    "url": "https://clawhub.ai/skills/openpond-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openpond-cli-3ac85ed9536715e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openpond-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openpond-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dba4b19625468a79c8bf53bc81947f52a2a4f65b86d40d1ae076372b387d749d",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:32:47.045Z"
+}

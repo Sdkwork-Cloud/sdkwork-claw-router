@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/risk-matrix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_matrix",
+  "skill": {
+    "id": 33021,
+    "skillKey": "clawhub-risk-matrix",
+    "name": "Risk Matrix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-matrix",
+    "url": "https://clawhub.ai/skills/risk-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-matrix-ef4a96c00134a33f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify and prioritize risks by impact and controllability. Use for risk management, project planning, and strategic decision support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774137920717,
+      "changelog": "Initial release of the risk-matrix skill:\n\n- Provides a framework for identifying, assessing, and prioritizing risks by impact and controllability.\n- Includes sample risk categories, detailed risk matrix, and structured templates for risk identification, assessment, and mitigation.\n- Offers clear output formats for visual matrix, risk register, response actions, and early warning indicators.\n- Aligned with industry standards (ISO 31000, COSO) for project planning and strategic decision support.\n- Includes practical tips for effective risk management and ongoing process updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f95e4b3d3b6befde8fc0673a77b8f2f259114ee7acaddae0ecd376e8652ba6b"
+}

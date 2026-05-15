@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-search-engine@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_engine",
+  "skill": {
+    "id": 37581,
+    "skillKey": "clawhub-baidu-search-engine",
+    "name": "Baidu Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-engine",
+    "url": "https://clawhub.ai/skills/baidu-search-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-engine-04444ce3dbf072ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cgxxxxxxxxxxxx",
+      "userId": "s17fhwcmxm1yrzr2venv8wjah984a1fg",
+      "displayName": "cgxxxxxxxxxxxx",
+      "image": "https://avatars.githubusercontent.com/u/109221124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1775450910931,
+      "changelog": "- Improved documentation with clear usage instructions and parameter descriptions\n- Added detailed examples for various search options (basic, freshness, and count)\n- Clarified request parameter formats and usage scenarios\n- Stated current status: fully functional",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bc7762ae285ac0bf59ead548d5f8a9a6e8dc1cfc7429f3e9e0cc455b2e54765"
+}

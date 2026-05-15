@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-manager@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_manager",
+  "skill": {
+    "id": 12339,
+    "skillKey": "clawhub-test-manager",
+    "name": "Test Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-manager",
+    "url": "https://clawhub.ai/skills/test-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-manager-6c50035a050881ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage ClickUp tasks by listing, creating, updating statuses, and retrieving details via ClickUp API using provided workspace and API token."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "savelieve",
+      "userId": "publishers:savelieve",
+      "displayName": "Random",
+      "image": "https://avatars.githubusercontent.com/u/137111673?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1726,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770227878864,
+      "changelog": "- Added integration documentation for the ClickUp API, including authentication, common API actions, and endpoints.\n- Provided clear guidance for task assignment between humans, AI, and collaborative work.\n- Included example API requests for listing, creating, updating, and retrieving tasks.\n- Documented required request headers and common status values.\n- Outlined error handling for common issues such as authentication, missing resources, and rate limiting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83e4a759a0080643fc0868ea6532a4977b781d81920142349f9670c6a7a9ee94"
+}

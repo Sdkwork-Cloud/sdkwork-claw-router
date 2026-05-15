@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25475,
+  "uuid": "skill-clawhub-openclaw-config-guardian",
+  "skillKey": "clawhub-openclaw-config-guardian",
+  "name": "config-guardian",
+  "summary": "Protect openclaw.json with automatic rollback, lock mode, multi-version baseline snapshots, audit log, and SIGUSR1 gateway hot-reload. Use when you need to s...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xbcvv",
+      "features": [
+        "Protect openclaw.json with automatic rollback, lock mode, multi-version baseline snapshots, aud.",
+        "Use when you need to s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-config-guardian@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55967978?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-config-guardian",
+      "url": "https://clawhub.ai/skills/openclaw-config-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-guardian",
+    "url": "https://clawhub.ai/skills/openclaw-config-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-guardian-047c47bce2a1693b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-config-guardian@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-config-guardian-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51e81640ba83e08e54bfb4b6417322a94ba65e84464cf9b91f01037bcedef9bf",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:36:10.486Z"
+}

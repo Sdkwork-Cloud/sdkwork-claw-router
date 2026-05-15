@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/systemd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.systemd",
+  "skill": {
+    "id": 27768,
+    "skillKey": "clawhub-systemd",
+    "name": "Systemd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "systemd",
+    "url": "https://clawhub.ai/skills/systemd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/systemd-e0031c189e34e10d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systemd reference tool. Use when working with systemd in sysops contexts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774304288156,
+      "changelog": "publish v1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41c1332443524d92a389864e87ce143f7d1813ef37d130cc4cf5333f6696b42e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ci@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci",
+  "skill": {
+    "id": 58047,
+    "skillKey": "clawhub-ci",
+    "name": "CI发布工程师 环境兼容与命令安全"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci",
+    "url": "https://clawhub.ai/skills/ci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-1b158839f8aa339e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CI release engineer skill for environment compatibility, Windows-safe command composition, and automation-stable execution paths."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiweline",
+      "userId": "s172136s34q2fy2f6r88gdpzm985z150",
+      "displayName": "Aiweline",
+      "image": "https://avatars.githubusercontent.com/u/32635766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777700592491,
+      "changelog": "Initial release of the CI发布工程师-环境兼容与命令安全 skill.\n\n- Provides guidelines for ensuring environment compatibility and command safety in CI automation, with special focus on Windows and PHP.\n- Outlines when to use the skill, key responsibilities, recommended workflow, and strict validation requirements.\n- Includes explicit rules for shell quoting, command composition, and framework command usage.\n- Details required inputs and the expected safe output format for automation paths.\n- Emphasizes portable, reproducible, and automation-safe practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2a2febe457ad97b0ef80b1912f5d900b0bf537f2ff63067b98024a501f865f2"
+}

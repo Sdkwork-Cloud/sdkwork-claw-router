@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14678,
+  "uuid": "skill-clawhub-mobile-app-builder-ai",
+  "skillKey": "clawhub-mobile-app-builder-ai",
+  "name": "mobile app builder with live link, publishes to app store, create ai apps",
+  "summary": "Build full-stack web and mobile apps from a text description. Creates projects, plans features, and starts Quick Start builds for background execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobile_app_builder_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VersaceXcodes",
+      "features": [
+        "Build full-stack web and mobile apps from a text description",
+        "Creates projects, plans features, and starts Quick Start builds for background execution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mobile-app-builder-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95313545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mobile-app-builder-ai",
+      "url": "https://clawhub.ai/skills/mobile-app-builder-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobile-app-builder-ai",
+    "url": "https://clawhub.ai/skills/mobile-app-builder-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobile-app-builder-ai-e2e9ef2a92082a1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mobile-app-builder-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mobile-app-builder-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3972e9361ff32646e436c4fa9ea95baaa0fe35c115b092cd999ac631a03abed4",
+      "artifactSizeBytes": 2613
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:08:58.370Z"
+}

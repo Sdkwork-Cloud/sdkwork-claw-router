@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65393,
+  "uuid": "skill-clawhub-core-capabilities",
+  "skillKey": "clawhub-core-capabilities",
+  "name": "Core Capabilities",
+  "summary": "工作助手核心能力集成 - 包含 Obsidian/Git 同步、记忆数据库、自然语言查询、监控页面等完整能力套件。当用户需要查询系统能力、使用 Obsidian、管理记忆、查看状态时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.core_capabilities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awublack",
+      "features": [
+        "工作助手核心能力集成",
+        "包含 Obsidian/Git 同步、记忆数据库、自然语言查询、监控页面等完整能力套件。当用户需要查询系统能力、使用 Obsidian、管理记忆、查看状态时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/core-capabilities@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22994037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "core-capabilities",
+      "url": "https://clawhub.ai/skills/core-capabilities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "core-capabilities",
+    "url": "https://clawhub.ai/skills/core-capabilities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/core-capabilities-3d4fb9abba822fa9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/core-capabilities@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-core-capabilities-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbc9f5324208cebfc7999a55ac3a586ef5c14845dc61dbc273b10809dcad4a64",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T03:33:13.189Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regex-playground@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_playground",
+  "skill": {
+    "id": 27894,
+    "skillKey": "clawhub-regex-playground",
+    "name": "Regex Playground"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-playground",
+    "url": "https://clawhub.ai/skills/regex-playground",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-playground-0fba6d406aab87a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Learn, test, and debug regular expressions with real-time matching, explanations, and common patterns. Perfect for developers learning regex or debugging com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenxuyaun",
+      "userId": "s170sev8f4p6yqhyvrbgxk3hj985tx6f",
+      "displayName": "沭河见闻",
+      "image": "https://avatars.githubusercontent.com/u/38125955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773369651778,
+      "changelog": "Initial release of regex-playground.\n\n- Learn, test, and debug regular expressions interactively.\n- Real-time matching and match group extraction.\n- Plain English explanations for any regex.\n- Library of common regex patterns.\n- Generate test cases for common data types (email, URL, phone, etc.).\n- Useful commands for explaining, testing, and learning regex.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54fb953a08bb39c35d99cb1a702b4f591bb21468c9a801e41ef86120cd8e4411"
+}

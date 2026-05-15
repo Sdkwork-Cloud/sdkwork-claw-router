@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31259,
+  "uuid": "skill-clawhub-mindverse-secondme",
+  "skillKey": "clawhub-mindverse-secondme",
+  "name": "SecondMe",
+  "summary": "Use when the user wants to log in to SecondMe from OpenClaw, re-login, logout, get the auth URL, manage their SecondMe profile, use Plaza, redeem an invitati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindverse_secondme",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mindverse",
+      "features": [
+        "Use when the user wants to log in to SecondMe from OpenClaw, re-login, logout, get the auth URL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mindverse-secondme@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249059989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mindverse-secondme",
+      "url": "https://clawhub.ai/skills/mindverse-secondme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindverse-secondme",
+    "url": "https://clawhub.ai/skills/mindverse-secondme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindverse-secondme-5e129abb3c6caec8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mindverse-secondme@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mindverse-secondme-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8122d636f586ff19908a9fc8601391ee2f5f58b6e7dd7dccf7f4ab67f29a4f49",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:49:21.358Z"
+}

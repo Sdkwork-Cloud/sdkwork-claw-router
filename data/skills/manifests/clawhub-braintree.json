@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25306,
+  "uuid": "skill-clawhub-braintree",
+  "skillKey": "clawhub-braintree",
+  "name": "Braintree",
+  "summary": "Braintree integration. Manage data, records, and automate workflows. Use when the user wants to interact with Braintree data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.braintree",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Braintree integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Braintree data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/braintree@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "braintree",
+      "url": "https://clawhub.ai/skills/braintree"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "braintree",
+    "url": "https://clawhub.ai/skills/braintree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/braintree-e2d67f41fee239d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/braintree@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-braintree-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:271594d4fc8c1556603fbbc81983cd37c5a028e627e602e2c3ba3e3bf0294dfc",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:15:05.785Z"
+}

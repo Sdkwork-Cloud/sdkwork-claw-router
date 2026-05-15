@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-manager-pop3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_manager_pop3",
+  "skill": {
+    "id": 60094,
+    "skillKey": "clawhub-email-manager-pop3",
+    "name": "email-manager-pop3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-manager-pop3",
+    "url": "https://clawhub.ai/skills/email-manager-pop3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-manager-pop3-49a0d9827a64f403.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询和发送邮件，支持 POP3 协议收件、SMTP 协议发件"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hpw03210",
+      "userId": "s170yv0rr61cqkv151t7y272rs84rkj3",
+      "displayName": "hpw03210",
+      "image": "https://avatars.githubusercontent.com/u/243696305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776042643964,
+      "changelog": "Major refactor: switched to POP3/SMTP, simplified codebase, and reworked configuration.\n\n- Rewrote email management to use POP3 (for receiving) and SMTP (for sending)\n- Added new configuration format using YAML (config.yaml example provided)\n- Removed legacy scripts and detailed CLI usage instructions\n- Updated documentation to reflect new supported features and setup steps\n- Security tips added for handling credentials securely",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecc481a660b76498589ed34ecfdb2eaab42d8cece79535664ccb3f87927b9ef9"
+}

@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "geo-fix-schema",
+    "displayName": "Geo Fix Schema",
+    "summary": "Analyze a website's structured data and generate ready-to-use JSON-LD schema markup to improve AI discoverability. Use when the user asks to fix schema, add...",
+    "tags": {
+      "ai-visibility": "1.2.0",
+      "geo": "1.2.0",
+      "latest": "1.2.0",
+      "seo": "1.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775407672702,
+    "updatedAt": 1777527201614
+  },
+  "latestVersion": {
+    "version": "1.2.0",
+    "createdAt": 1775411186265,
+    "changelog": "**Security enhancements and schema analysis update.**\n\n- Added a new \"Security: Untrusted Content Handling\" section detailing safe processing of user-supplied/fetched website content.\n- Now explicitly warns against following any agent or prompt injection instructions found in fetched sites; such attempts are flagged as \"Prompt Injection Attempt Detected.\"\n- Core functionality for schema discovery, auditing, and JSON-LD generation remains unchanged.\n- Documentation improved to highlight stronger safeguards when analyzing third-party HTML and data.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "enzyme2013",
+    "userId": "s1769p76b5b6v79bsajk42ash9840ed9",
+    "displayName": "Eugene Liu",
+    "image": "https://avatars.githubusercontent.com/u/11206822?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527201614
+  }
+}

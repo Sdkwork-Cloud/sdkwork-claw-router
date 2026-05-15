@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molt-mouse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_mouse",
+  "skill": {
+    "id": 10087,
+    "skillKey": "clawhub-molt-mouse",
+    "name": "desktop mouse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-mouse",
+    "url": "https://clawhub.ai/skills/molt-mouse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-mouse-53c0de447818084f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local mouse control via ydotool wrapper"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oguzhaslak",
+      "userId": "publishers:oguzhaslak",
+      "displayName": "Oğuz Haşlak",
+      "image": "https://avatars.githubusercontent.com/u/29095394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2709,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769851916789,
+      "changelog": "- Initial release: Enables local mouse control on Linux via molt-mouse.\n- Supports mouse movement (relative and absolute) and mouse clicks (left, right, middle, button hold/release).\n- Only executes secure commands prefixed with molt-mouse.\n- Will prompt users for missing or unclear numerical coordinates.\n- Not user-invocable directly; triggered by related skill requests.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bdde42b33edec8b6b3bc89190025a57b94c3d2455c33c36a6b3ae67da8c50525"
+}

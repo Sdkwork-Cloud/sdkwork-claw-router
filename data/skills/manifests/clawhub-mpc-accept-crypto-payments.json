@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11954,
+  "uuid": "skill-clawhub-mpc-accept-crypto-payments",
+  "skillKey": "clawhub-mpc-accept-crypto-payments",
+  "name": "MoonPay Commerce (Helio) Accept Crypto Payments",
+  "summary": "Accept crypto payments on Solana via MoonPay Commerce (formerly Helio). Create Pay Links, generate checkout URLs, check transactions, and list supported currencies. Use when the user wants to accept crypto payments, create payment links, c.",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mpc_accept_crypto_payments",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mavagio",
+      "features": [
+        "Accept crypto payments on Solana via MoonPay Commerce (formerly Helio)",
+        "Create Pay Links, generate checkout URLs, check transactions, and list supported currencies",
+        "Use when the user wants to accept crypto payments, create payment links, charge for products/se.",
+        "Requires a MoonPay Commerce account with API key and secret."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mpc-accept-crypto-payments@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7386708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mpc-accept-crypto-payments",
+      "url": "https://clawhub.ai/skills/mpc-accept-crypto-payments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mpc-accept-crypto-payments",
+    "url": "https://clawhub.ai/skills/mpc-accept-crypto-payments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mpc-accept-crypto-payments-f3415582117debe2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mpc-accept-crypto-payments@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mpc-accept-crypto-payments-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe4b497ab9d11d378319151396c0c720374a9f131ca381c78ab74e8c7d6eb0d9",
+      "artifactSizeBytes": 2744
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:09:23.040Z"
+}

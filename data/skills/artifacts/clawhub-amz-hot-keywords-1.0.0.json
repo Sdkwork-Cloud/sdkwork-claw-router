@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amz-hot-keywords@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amz_hot_keywords",
+  "skill": {
+    "id": 34456,
+    "skillKey": "clawhub-amz-hot-keywords",
+    "name": "Amz Hot Keywords"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amz-hot-keywords",
+    "url": "https://clawhub.ai/skills/amz-hot-keywords",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amz-hot-keywords-2fedcb23c2563657.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape Amazon Brand Analytics (ABA) weekly hot keyword rankings from AMZ123 and return structured keyword trend data. Use when the user asks about Amazon key..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simoncai519",
+      "userId": "s173dng2k1aa2nm91ggjy3sx5984hyga",
+      "displayName": "simoncai519",
+      "image": "https://avatars.githubusercontent.com/u/57803232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776063029764,
+      "changelog": "- Added a version field (1.0.0) to the skill metadata.\n- Included author attribution and links to Simon Cai’s GitHub and related e-commerce skills at the end of the document.\n- No changes to core functionality or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21aa82690a4e05b845a0dd3175c06371f3937d028e6fc0d22678a2916997ebcd"
+}

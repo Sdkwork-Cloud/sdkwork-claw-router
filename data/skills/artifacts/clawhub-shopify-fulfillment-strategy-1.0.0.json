@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-fulfillment-strategy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_fulfillment_strategy",
+  "skill": {
+    "id": 41500,
+    "skillKey": "clawhub-shopify-fulfillment-strategy",
+    "name": "Shopify Fulfillment Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-fulfillment-strategy",
+    "url": "https://clawhub.ai/skills/shopify-fulfillment-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-fulfillment-strategy-8b70507cb3e41e8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Choose and optimize between 3PL, in-house, and hybrid fulfillment models for Shopify stores based on volume, cost, and growth stage. Triggers: fulfillment st..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774560551868,
+      "changelog": "- Initial release of the Shopify Fulfillment Strategy Optimizer skill.\n- Provides guidance on choosing and optimizing between in-house, 3PL, and hybrid fulfillment models for Shopify stores.\n- Includes tools for fulfillment model comparison, decision triggers, and transition planning.\n- Offers frameworks for 3PL selection, contract negotiation, onboarding, and performance monitoring.\n- Supports capacity scaling strategies for growth and peak seasons.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc221f298e83298e6a3e6444f1321fd5528e1269019a373ac0d60d47ab37124d"
+}

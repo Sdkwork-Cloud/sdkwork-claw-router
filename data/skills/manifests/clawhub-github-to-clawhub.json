@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59492,
+  "uuid": "skill-clawhub-github-to-clawhub",
+  "skillKey": "clawhub-github-to-clawhub",
+  "name": "GitHub → ClawHub 一键转化发布",
+  "summary": "将 GitHub 开源项目转化为 OpenClaw skill 并发布到 clawhub 的完整流程助手。 当用户说\"把这个 GitHub 项目做成 skill\"、\"把 XX 发布到 clawhub\"、\"把这个项目封装成 skill\"、 \"把 GitHub 链接转成 skill 上传\"、\"GitHub 转 ski...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_to_clawhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "将 GitHub 开源项目转化为 OpenClaw skill 并发布到 clawhub 的完整流程助手。 当用户说\"把这个 GitHub 项目做成 skill\"、\"把 XX 发布到 cla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-to-clawhub@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-to-clawhub",
+      "url": "https://clawhub.ai/skills/github-to-clawhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-to-clawhub",
+    "url": "https://clawhub.ai/skills/github-to-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-to-clawhub-9fabcffd017016b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-to-clawhub@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-to-clawhub-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbd1d4c5799295ba34f9bb6220c9622c301a26de59124c807dbdcd6805a8d3a9",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:21:02.190Z"
+}

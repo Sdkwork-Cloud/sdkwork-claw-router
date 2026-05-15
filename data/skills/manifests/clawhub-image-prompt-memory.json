@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40001,
+  "uuid": "skill-clawhub-image-prompt-memory",
+  "skillKey": "clawhub-image-prompt-memory",
+  "name": "Image Prompt Memory",
+  "summary": "Stores and retrieves successful image generation prompts by category, style, and keywords for quick reuse and recommendation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_prompt_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acilgit",
+      "features": [
+        "Stores and retrieves successful image generation prompts by category, style, and keywords for q."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-prompt-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7995638?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-prompt-memory",
+      "url": "https://clawhub.ai/skills/image-prompt-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-prompt-memory",
+    "url": "https://clawhub.ai/skills/image-prompt-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-prompt-memory-dbf43ba79dc9a7de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-prompt-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-prompt-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:201666b880f379ed3ab9c1c181bd4c619893a5061294ceedfe5579d912b15e58",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:55:52.933Z"
+}

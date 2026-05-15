@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22860,
+  "uuid": "skill-clawhub-feishu-notify",
+  "skillKey": "clawhub-feishu-notify",
+  "name": "Feishu Notify",
+  "summary": "This skill should be used when users need to send notifications to Feishu (Lark) via webhook. It supports multiple message types including text, rich text, i...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex098929",
+      "features": [
+        "This skill should be used when users need to send notifications to Feishu (Lark) via webhook",
+        "It supports multiple message types including text, rich text, i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-notify@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217886385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-notify",
+      "url": "https://clawhub.ai/skills/feishu-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-notify",
+    "url": "https://clawhub.ai/skills/feishu-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-notify-475c3f5c5f5cfe1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-notify@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-notify-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eb28a3340b07bd33bcd18205eaf4e50b3a3472446cf99b005f7bef4c99f354f",
+      "artifactSizeBytes": 2541
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:03:39.700Z"
+}

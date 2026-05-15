@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39571,
+  "uuid": "skill-clawhub-undo",
+  "skillKey": "clawhub-undo",
+  "name": "Undo",
+  "summary": "File edit time machine for AI agents. Automatically snapshot file changes after every Write, Edit, or Shell operation, and provide undo/revert capabilities t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.undo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xguang",
+      "features": [
+        "File edit time machine for AI agents",
+        "Automatically snapshot file changes after every Write, Edit, or Shell operation, and provide un."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/undo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42057530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "undo",
+      "url": "https://clawhub.ai/skills/undo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "undo",
+    "url": "https://clawhub.ai/skills/undo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/undo-f015346ae3563d83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/undo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-undo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e02855ecc63f16b18ff9bf1780db110ee3644d38c74c005f36b3623883c0c05",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T15:37:17.457Z"
+}

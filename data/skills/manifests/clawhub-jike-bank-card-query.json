@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72507,
+  "uuid": "skill-clawhub-jike-bank-card-query",
+  "skillKey": "clawhub-jike-bank-card-query",
+  "name": "银行卡类型及真伪查询 - 即刻数据",
+  "summary": "银行卡类型及真伪查询。输入银行卡号，查询卡类型、卡名称、卡 BIN、发卡行、银行官网和客服电话，也支持查询银行列表。适用场景：用户说“查一下这个银行卡是什么银行”“这个卡号是信用卡还是借记卡”“查询工商银行列表”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_bank_card_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "银行卡类型及真伪查询。输入银行卡号，查询卡类型、卡名称、卡 BIN、发卡行、银行官网和客服电话，也支持查询银行列表。适用场景：用户说“查一下这个银行卡是什么银行”“这个卡号是信用卡还是借记卡."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-bank-card-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-bank-card-query",
+      "url": "https://clawhub.ai/skills/jike-bank-card-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-bank-card-query",
+    "url": "https://clawhub.ai/skills/jike-bank-card-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-bank-card-query-f9e37556f3091273.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-bank-card-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-bank-card-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79d369cafd5a12691124002bb3c2ed6b0dfeb14847ba81ed8b8063cfd2ea5a15",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:21:29.216Z"
+}

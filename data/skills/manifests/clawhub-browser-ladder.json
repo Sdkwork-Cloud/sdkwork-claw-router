@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16774,
+  "uuid": "skill-clawhub-browser-ladder",
+  "skillKey": "clawhub-browser-ladder",
+  "name": "Browser Ladder",
+  "summary": "Climb the browser ladder — start free, escalate only when needed. L1 (fetch) → L2 (local Playwright) → L3 (BrowserCat) → L4 (Browserless.io for CAPTCHA/bot bypass).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_ladder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ktpriyatham",
+      "features": [
+        "Climb the browser ladder — start free, escalate only when needed",
+        "L1 (fetch) → L2 (local Playwright) → L3 (BrowserCat) → L4 (Browserless.io for CAPTCHA/bot bypas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-ladder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4175700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-ladder",
+      "url": "https://clawhub.ai/skills/browser-ladder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-ladder",
+    "url": "https://clawhub.ai/skills/browser-ladder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-ladder-d4325a4ecb265972.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-ladder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-ladder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81770ca665366f91d34888d271dda230a6e98d4a0be56a2d1169c23beed24596",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T04:54:52.629Z"
+}

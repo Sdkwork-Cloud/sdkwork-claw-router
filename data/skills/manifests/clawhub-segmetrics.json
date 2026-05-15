@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30224,
+  "uuid": "skill-clawhub-segmetrics",
+  "skillKey": "clawhub-segmetrics",
+  "name": "Segmetrics",
+  "summary": "SegMetrics integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with SegMetrics data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.segmetrics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SegMetrics integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with SegMetrics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/segmetrics@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "segmetrics",
+      "url": "https://clawhub.ai/skills/segmetrics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "segmetrics",
+    "url": "https://clawhub.ai/skills/segmetrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/segmetrics-0b66437cdf07510e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/segmetrics@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-segmetrics-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7f14af37d010e9c5684e43782116a8037ef17caf7d1934c6e3d9a44aed42509",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:39:02.821Z"
+}

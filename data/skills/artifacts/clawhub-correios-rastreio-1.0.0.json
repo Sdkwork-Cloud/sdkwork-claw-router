@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/correios-rastreio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.correios_rastreio",
+  "skill": {
+    "id": 55219,
+    "skillKey": "clawhub-correios-rastreio",
+    "name": "Correios Rastreio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "correios-rastreio",
+    "url": "https://clawhub.ai/skills/correios-rastreio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/correios-rastreio-09e86169a4ab502d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rastreie pacotes e encomendas dos Correios usando a API oficial com consultas por código, histórico e favoritos via comandos simples."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runawaydevil",
+      "userId": "publishers:runawaydevil",
+      "displayName": "runawaydevil",
+      "image": "https://avatars.githubusercontent.com/u/8763225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772662794631,
+      "changelog": "Initial release: Rastreie pacotes dos Correios via API oficial. Suporta múltiplos códigos, histórico local e favoritos.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97764dde1819f599a0ef39a619fd9b60abcd670482d00ace0d7ae1a3eeebe834"
+}

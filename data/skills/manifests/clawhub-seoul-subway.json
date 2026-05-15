@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9181,
+  "uuid": "skill-clawhub-seoul-subway",
+  "skillKey": "clawhub-seoul-subway",
+  "name": "Seoul Subway",
+  "summary": "Seoul Subway assistant for real-time arrivals, route planning, and service alerts (Korean/English)",
+  "version": "0.1.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seoul_subway",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dukbong",
+      "features": [
+        "Seoul Subway assistant for real-time arrivals, route planning, and service alerts (Korean/Engli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seoul-subway@0.1.19",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37864182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seoul-subway",
+      "url": "https://clawhub.ai/skills/seoul-subway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seoul-subway",
+    "url": "https://clawhub.ai/skills/seoul-subway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seoul-subway-d021793ba2e39d45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seoul-subway@0.1.19",
+      "artifactUrl": "data/skills/artifacts/clawhub-seoul-subway-0.1.19.json",
+      "version": "0.1.19",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92ba9412f3d28044bc841695ccc05532d3baaf9a7a0d1dced04e59547d06bfaa",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T02:34:00.033Z"
+}

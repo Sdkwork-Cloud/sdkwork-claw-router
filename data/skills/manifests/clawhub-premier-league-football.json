@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65032,
+  "uuid": "skill-clawhub-premier-league-football",
+  "skillKey": "clawhub-premier-league-football",
+  "name": "Premier League Football",
+  "summary": "提供英超球队、球员、赛程、比分、积分榜及相关新闻动态的实时查询与统计服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.premier_league_football",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供英超球队、球员、赛程、比分、积分榜及相关新闻动态的实时查询与统计服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/premier-league-football@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "premier-league-football",
+      "url": "https://clawhub.ai/skills/premier-league-football"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "premier-league-football",
+    "url": "https://clawhub.ai/skills/premier-league-football",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/premier-league-football-04caab9e395d3f4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/premier-league-football@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-premier-league-football-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a62d40bde6ce397a8eb42e9743331b243047b704afbd87cd48261689f22e7d3",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:08:35.699Z"
+}

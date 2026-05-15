@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_workflow",
+  "skill": {
+    "id": 43766,
+    "skillKey": "clawhub-video-workflow",
+    "name": "Video Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-workflow",
+    "url": "https://clawhub.ai/skills/video-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-workflow-c6c846e6576739c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video clips into polished edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775951512271,
+      "changelog": "Initial release with streamlined cloud-based video editing and export.\n\n- Edit raw MP4, MOV, AVI, or WebM clips (up to 500MB) into polished videos using cloud GPUs.\n- Simple setup: automatic anonymous account creation with free credits and session management.\n- Supports upload, batch process, timeline edits, and export to 1080p MP4.\n- User instructions mapped to backend actions; status and error handling built in.\n- Export, credits, status, and uploads supported via keyword routing for quick workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:529a3ba35ab31471b3d1d981de21f4f391edd794da0885ec03b22c546cc274db"
+}

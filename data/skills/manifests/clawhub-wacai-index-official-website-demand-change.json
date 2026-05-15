@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63397,
+  "uuid": "skill-clawhub-wacai-index-official-website-demand-change",
+  "skillKey": "clawhub-wacai-index-official-website-demand-change",
+  "name": "wacai-index-official-website-demand-change",
+  "summary": "一键执行官网项目需求变更。用于用户粘贴一大段新需求并同时提供项目路径后，自动在指定项目目录上完成：检查目标分支工作区是否干净、拉取最新代码、把需求写入 productdemand.md 并做小时级备份、根据需求修改代码、运行必要检查、git commit、push，并在 push 成功后通过企业微信 webhoo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wacai_index_official_website_demand_change",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shidengyun",
+      "features": [
+        "一键执行官网项目需求变更。用于用户粘贴一大段新需求并同时提供项目路径后，自动在指定项目目录上完成：检查目标分支工作区是否干净、拉取最新代码、把需求写入 productdemand.md 并做."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wacai-index-official-website-demand-change@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7777003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wacai-index-official-website-demand-change",
+      "url": "https://clawhub.ai/skills/wacai-index-official-website-demand-change"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wacai-index-official-website-demand-change",
+    "url": "https://clawhub.ai/skills/wacai-index-official-website-demand-change",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wacai-index-official-website-demand-change-a2d276ee37c358a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wacai-index-official-website-demand-change@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wacai-index-official-website-demand-change-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26ef113ab1aae26c3b0799d8a9c388143bb951d96bbe4f98a0f97c99b5a6fa70",
+      "artifactSizeBytes": 3066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:23:55.369Z"
+}

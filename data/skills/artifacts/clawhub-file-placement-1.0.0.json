@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-placement@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_placement",
+  "skill": {
+    "id": 40537,
+    "skillKey": "clawhub-file-placement",
+    "name": "File Placement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-placement",
+    "url": "https://clawhub.ai/skills/file-placement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-placement-a2c256d3ef732b70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforces ZERO TOLERANCE file placement rules for documentation and scripts. Use when (1) Creating any .md file, (2) Creating any .sh script, (3) Organizing d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urbantech",
+      "userId": "s1705vnaxvfmy5a3t55qeprr4d83hnbz",
+      "displayName": "Toby Morning",
+      "image": "https://avatars.githubusercontent.com/u/2746731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774330646482,
+      "changelog": "- Initial release of the file-placement skill.\n- Enforces zero tolerance file placement rules for documentation (.md) and scripts (.sh).\n- Strictly prohibits .md files in root directories (except README.md, CLAUDE.md) and .sh scripts in backend (except start.sh).\n- Mandates all documentation be placed in organized docs/ subfolders, and all scripts in scripts/ folder, with detailed breakdowns by type.\n- Includes an enforcement workflow and explains consequences for violations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9318f97a72c4c4ad47ad3ceb265807fa845b9b3ac9b016ce95a12ca22f686523"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50324,
+  "uuid": "skill-clawhub-raphael-solana",
+  "skillKey": "clawhub-raphael-solana",
+  "name": "Solana + Polymarket + X Wallet Agent",
+  "summary": "Manage Solana and Polygon wallets, run Polymarket weather arbitrage, post to X/Twitter, and execute Raydium swaps — all from natural language.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raphael_solana",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inspiration_gx",
+      "features": [
+        "Manage Solana and Polygon wallets, run Polymarket weather arbitrage, post to X/Twitter, and exe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raphael-solana@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94226358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raphael-solana",
+      "url": "https://clawhub.ai/skills/raphael-solana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raphael-solana",
+    "url": "https://clawhub.ai/skills/raphael-solana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raphael-solana-b6a29c30102f9faa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raphael-solana@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-raphael-solana-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9844bce624e7435c603db9e696a2e6c556f26715f4af1e0915cbf5dfad477321",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T13:26:00.379Z"
+}

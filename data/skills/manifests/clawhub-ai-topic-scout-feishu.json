@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63594,
+  "uuid": "skill-clawhub-ai-topic-scout-feishu",
+  "skillKey": "clawhub-ai-topic-scout-feishu",
+  "name": "ai-topic-scout-feishu",
+  "summary": "自动抓取指定YouTube频道和Twitter账号内容，分析聚合跨平台AI热门话题，生成带热度评分的选题报告并写入飞书多维表格。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_topic_scout_feishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xdimtech",
+      "features": [
+        "自动抓取指定YouTube频道和Twitter账号内容，分析聚合跨平台AI热门话题，生成带热度评分的选题报告并写入飞书多维表格。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-topic-scout-feishu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188283513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-topic-scout-feishu",
+      "url": "https://clawhub.ai/skills/ai-topic-scout-feishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-topic-scout-feishu",
+    "url": "https://clawhub.ai/skills/ai-topic-scout-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-topic-scout-feishu-223d9476107b8e36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-topic-scout-feishu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-topic-scout-feishu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81a385e8f6c74495245dd9bd508fe4861184d15096b28581d279d15950185fb7",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:13:33.942Z"
+}

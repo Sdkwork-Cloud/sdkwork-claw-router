@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23497,
+  "uuid": "skill-clawhub-brainx",
+  "skillKey": "clawhub-brainx",
+  "name": "BrainX V5 — The First Brain for OpenClaw",
+  "summary": "Vector memory engine with PostgreSQL + pgvector + OpenAI embeddings. Stores, searches, and injects contextual memories into LLM prompts. Includes auto-inject...",
+  "version": "0.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcelo Cedeno",
+      "features": [
+        "Vector memory engine with PostgreSQL + pgvector + OpenAI embeddings",
+        "Stores, searches, and injects contextual memories into LLM prompts",
+        "Includes auto-inject..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brainx@0.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181967107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brainx",
+      "url": "https://clawhub.ai/skills/brainx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainx",
+    "url": "https://clawhub.ai/skills/brainx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainx-793ac94a01fb7513.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brainx@0.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-brainx-0.3.5.json",
+      "version": "0.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9323fbb914f872fc959f0e2f4f5284d16ff4f7583b932b32c8e0272320fdf0e1",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:59:01.816Z"
+}

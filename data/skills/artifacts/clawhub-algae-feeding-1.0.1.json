@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/algae-feeding@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.algae_feeding",
+  "skill": {
+    "id": 70252,
+    "skillKey": "clawhub-algae-feeding",
+    "name": "Algae Feeding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "algae-feeding",
+    "url": "https://clawhub.ai/skills/algae-feeding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/algae-feeding-7ed93ac42be8b9a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "藻类投喂计算技能。根据日报中的车间、池号范围、品系，查询藻类投喂标准，计算并生成投藻量。支持小池（24m²）和大池（40m²），T/SR/M/YR四种品系，第1-4天上午/下午的投喂量计算。超过4天的幼体不投藻。当用户提供藻类投喂日报数据时，触发此技能进行投藻量计算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheney87",
+      "userId": "s1721v9kkm8rbbnvkq7q5pajyx83jyt6",
+      "displayName": "cheney",
+      "image": "https://avatars.githubusercontent.com/u/246393767?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775864512683,
+      "changelog": "更新投喂标准：SR、M、YR品系投藻量调整；优化输出格式：小海链藻和大海链藻都显示统计；修复日期解析问题；优化排序逻辑",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db175ad627e6fa7f21037bae65bea6bff22e941778c66f608c76c28e5e7653c0"
+}

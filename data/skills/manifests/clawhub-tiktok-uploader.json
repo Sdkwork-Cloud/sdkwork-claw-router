@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10440,
+  "uuid": "skill-clawhub-tiktok-uploader",
+  "skillKey": "clawhub-tiktok-uploader",
+  "name": "TikTok Uploader",
+  "summary": "Upload, schedule, and batch-manage TikTok videos via browser automation. Use when: user wants to upload a video to TikTok, schedule a TikTok post, batch uplo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_uploader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Li Wei",
+      "features": [
+        "Upload, schedule, and batch-manage TikTok videos via browser automation",
+        "Use when: user wants to upload a video to TikTok, schedule a TikTok post, batch uplo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-uploader@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/930445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-uploader",
+      "url": "https://clawhub.ai/skills/tiktok-uploader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-uploader",
+    "url": "https://clawhub.ai/skills/tiktok-uploader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-uploader-210160322efcc1e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-uploader@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-uploader-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d438c326e5d37919ffbee1eeeabc969e0fd58a6c88a125471aa82297175d54a6",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:33:06.409Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-ai-for-instagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_ai_for_instagram",
+  "skill": {
+    "id": 45145,
+    "skillKey": "clawhub-video-editing-ai-for-instagram",
+    "name": "Video Editing Ai For Instagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-ai-for-instagram",
+    "url": "https://clawhub.ai/skills/video-editing-ai-for-instagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-ai-for-instagram-1a4accafc2171683.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get Instagram-ready clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776363110288,
+      "changelog": "Initial release — edit and export videos for Instagram using AI.\n\n- Upload raw clips and describe edits (cut, captions, resize) in natural language, no manual settings required.\n- Handles major video/audio/image formats up to 500MB; optimized for vertical 9:16 Instagram Reels and Stories.\n- Automated session setup and authentication with 100 free credits for new users.\n- Fast cloud GPU rendering with 1080p MP4 downloads ready in under 2 minutes.\n- Query credits, check project status, and export videos—all via simple chat commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dd6afe35004ea15cdbcd0a3f9ba098def08c84820df3f68f52640972f6d27d2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72803,
+  "uuid": "skill-clawhub-lobster-zhouyi",
+  "skillKey": "clawhub-lobster-zhouyi",
+  "name": "龙虾命理学习",
+  "summary": "龙虾角色，专业学习周易与传统命理知识。每日19:00定时推送一个知识点，以严谨、学术化、非迷信的方式解读传统文化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_zhouyi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "112297720",
+      "features": [
+        "龙虾角色，专业学习周易与传统命理知识。每日19:00定时推送一个知识点，以严谨、学术化、非迷信的方式解读传统文化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-zhouyi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39222232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-zhouyi",
+      "url": "https://clawhub.ai/skills/lobster-zhouyi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-zhouyi",
+    "url": "https://clawhub.ai/skills/lobster-zhouyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-zhouyi-3d2c304b8d044eac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-zhouyi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-zhouyi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed30ea7f34bd5dad077b0a3a6367bf072bfb5323782cb15d204d6c4c7234688c",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:27:54.739Z"
+}

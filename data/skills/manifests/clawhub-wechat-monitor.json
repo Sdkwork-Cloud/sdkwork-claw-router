@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71734,
+  "uuid": "skill-clawhub-wechat-monitor",
+  "skillKey": "clawhub-wechat-monitor",
+  "name": "微信公众号监控",
+  "summary": "微信公众号调研 + 监控 + 报告推送。每个产品独立目录，互不影响。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a1003916989-blip",
+      "features": [
+        "微信公众号调研 + 监控 + 报告推送。每个产品独立目录，互不影响。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251089126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-monitor",
+      "url": "https://clawhub.ai/skills/wechat-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-monitor",
+    "url": "https://clawhub.ai/skills/wechat-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-monitor-2e175c1353a03848.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e07594892ab5abedb6755c55b2c7eedbaeef5af41175b79a103c236a37ec1107",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T01:51:25.985Z"
+}

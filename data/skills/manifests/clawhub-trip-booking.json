@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58475,
+  "uuid": "skill-clawhub-trip-booking",
+  "skillKey": "clawhub-trip-booking",
+  "name": "Trip Booking",
+  "summary": "Booking.com国际酒店预订助手，支持全球酒店搜索、房型查询、价格对比、预订管理。Invoke when user wants to search international hotels, book hotels on Booking.com, or manage Booking.com reservat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_booking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "Booking.com国际酒店预订助手，支持全球酒店搜索、房型查询、价格对比、预订管理。Invoke when user wants to search international hote."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-booking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-booking",
+      "url": "https://clawhub.ai/skills/trip-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-booking",
+    "url": "https://clawhub.ai/skills/trip-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-booking-25b87c501b413143.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-booking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-booking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:700303453dad3767f2548543902286bd4572a51e6a8b2b1f69d771e29e279d40",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:49:43.575Z"
+}

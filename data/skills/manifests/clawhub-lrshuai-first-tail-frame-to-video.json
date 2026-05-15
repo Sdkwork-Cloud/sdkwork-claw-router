@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63658,
+  "uuid": "skill-clawhub-lrshuai-first-tail-frame-to-video",
+  "skillKey": "clawhub-lrshuai-first-tail-frame-to-video",
+  "name": "LrshuAI First Tail Frame To Video",
+  "summary": "首尾帧生视频技能。当你需要提供首帧图片和尾帧图片来控制视频的起止画面并生成视频时调用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lrshuai_first_tail_frame_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazyAI",
+      "features": [
+        "首尾帧生视频技能。当你需要提供首帧图片和尾帧图片来控制视频的起止画面并生成视频时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lrshuai-first-tail-frame-to-video@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153581534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lrshuai-first-tail-frame-to-video",
+      "url": "https://clawhub.ai/skills/lrshuai-first-tail-frame-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lrshuai-first-tail-frame-to-video",
+    "url": "https://clawhub.ai/skills/lrshuai-first-tail-frame-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lrshuai-first-tail-frame-to-video-f35473a2f7f40ca8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lrshuai-first-tail-frame-to-video@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lrshuai-first-tail-frame-to-video-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac641ad4a0efc4ae3342c3b2031e379875a54237512e5da61a03b5b6979f4135",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:13:18.764Z"
+}

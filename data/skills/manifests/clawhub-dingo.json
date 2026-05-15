@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19876,
+  "uuid": "skill-clawhub-dingo",
+  "skillKey": "clawhub-dingo",
+  "name": "dingo data quality",
+  "summary": "Evaluate AI training and RAG data quality using rule-based or LLM-based metrics with Dingo's flexible, multi-format assessment framework and CLI/SDK support.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chupei",
+      "features": [
+        "Evaluate AI training and RAG data quality using rule-based or LLM-based metrics with Dingo's fl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24450527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingo",
+      "url": "https://clawhub.ai/skills/dingo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingo",
+    "url": "https://clawhub.ai/skills/dingo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingo-20896337b687f102.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03179aebd3598c6dd3585944b1481f94414459f0b1ecde0d6130187c76dcc1e4",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:00:19.404Z"
+}

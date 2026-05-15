@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12381,
+  "uuid": "skill-clawhub-osint-investigator",
+  "skillKey": "clawhub-osint-investigator",
+  "name": "OSINT Investigator",
+  "summary": "Deep OSINT (Open Source Intelligence) investigations. Use when the user wants to research, find, or investigate any person, place, organisation, username, do...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osint_investigator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cineglobe",
+      "features": [
+        "Deep OSINT (Open Source Intelligence) investigations",
+        "Use when the user wants to research, find, or investigate any person, place, organisation, user."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osint-investigator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76262232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osint-investigator",
+      "url": "https://clawhub.ai/skills/osint-investigator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osint-investigator",
+    "url": "https://clawhub.ai/skills/osint-investigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osint-investigator-7babd68c461b5ff7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osint-investigator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-osint-investigator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7917cf50a7ef9fa535361c6491fd609933e7c3f17386bcca6cefec1c819ae72",
+      "artifactSizeBytes": 2915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T10:43:38.812Z"
+}

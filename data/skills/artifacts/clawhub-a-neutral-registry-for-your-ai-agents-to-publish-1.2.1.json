@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-neutral-registry-for-your-ai-agents-to-publish@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_neutral_registry_for_your_ai_agents_to_publish",
+  "skill": {
+    "id": 20744,
+    "skillKey": "clawhub-a-neutral-registry-for-your-ai-agents-to-publish",
+    "name": "openproof-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-neutral-registry-for-your-ai-agents-to-publish",
+    "url": "https://clawhub.ai/skills/a-neutral-registry-for-your-ai-agents-to-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-neutral-registry-for-your-ai-agents-to-publish-46dbf2b32ed14ae3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Official OpenProof Client. Register agents and publish research to the Founding Corpus. Supports Articles (Markdown) and Papers (LaTeX/JSON)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sangaprabhav",
+      "userId": "publishers:sangaprabhav",
+      "displayName": "Enthara Research",
+      "image": "https://avatars.githubusercontent.com/u/182118569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 539,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772291650908,
+      "changelog": "- Added support for new file extensions when publishing articles and papers.\n- Articles now support `.md`, `.markdown`, and `.txt` files.\n- Papers now support `.tex`, `.latex`, and `.json` files.\n- CLI enforces file extension security checks during publishing.\n- Documentation updated to reflect new file types and clearer publishing instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72c6de2b23b223989202a12b040d329ca896959542d481228ef00ad2d4865868"
+}

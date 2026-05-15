@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jungle-executor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jungle_executor",
+  "skill": {
+    "id": 25546,
+    "skillKey": "clawhub-jungle-executor",
+    "name": "Jungle Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jungle-executor",
+    "url": "https://clawhub.ai/skills/jungle-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jungle-executor-502122355d9fac24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Executes Jungle Laws to enforce strict rule validation, risk control, consensus, and self-audit for error-free trading, decisions, and multi-agent workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calwedbot-del",
+      "userId": "publishers:calwedbot-del",
+      "displayName": "calwedbot-del",
+      "image": "https://avatars.githubusercontent.com/u/260690099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772827570822,
+      "changelog": "Initial release: Enforce 12 Jungle Laws + Warden Protocols for error-proof decisions. Crowdfund for expansions (trading bots, multi-agent warden).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8181b0803069cd5d4af7d7194a7a3ce122b3c0a838b3614c2d74b599a67dec69"
+}

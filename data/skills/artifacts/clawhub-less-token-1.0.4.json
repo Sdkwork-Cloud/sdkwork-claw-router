@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/less-token@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.less_token",
+  "skill": {
+    "id": 54651,
+    "skillKey": "clawhub-less-token",
+    "name": "Less Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "less-token",
+    "url": "https://clawhub.ai/skills/less-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/less-token-6304a5d036f79d66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save 40-65% tokens on summarization tasks. Compress verbose summary prompts into structured one-line instructions. Text-to-text translator only — no CLI, no..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adsorgcn",
+      "userId": "s174ws33yarjdkckstm6tb61vx83n3dp",
+      "displayName": "静水流深",
+      "image": "https://avatars.githubusercontent.com/u/58931545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773827896000,
+      "changelog": "- Version bump to 1.0.4\n- Updated SKILL.md version number to 1.0.4  \n- No other user-facing or functional changes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64729f0bd3ac815ad7b78c5603cba5f7f25e903923d1fc383c26e78be3596704"
+}

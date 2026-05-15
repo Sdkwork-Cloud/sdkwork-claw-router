@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14938,
+  "uuid": "skill-clawhub-email-tool",
+  "skillKey": "clawhub-email-tool",
+  "name": "Email Tool",
+  "summary": "Send and search emails via Zoho using specified recipients, subject, body, and search queries with optional CC, BCC, and read marking.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chowardcode",
+      "features": [
+        "Send and search emails via Zoho using specified recipients, subject, body, and search queries w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-tool@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129228835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-tool",
+      "url": "https://clawhub.ai/skills/email-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-tool",
+    "url": "https://clawhub.ai/skills/email-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-tool-b50b81d20977a638.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-tool@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-tool-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebab6f1459ea05cfe2cc2cd2e00e182cae9c52d7abe74a429a177e48a0081095",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T13:51:21.690Z"
+}

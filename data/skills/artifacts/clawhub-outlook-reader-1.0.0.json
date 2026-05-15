@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_reader",
+  "skill": {
+    "id": 65271,
+    "skillKey": "clawhub-outlook-reader",
+    "name": "Outlook Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-reader",
+    "url": "https://clawhub.ai/skills/outlook-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-reader-922e858ea0470509.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动连接Outlook读取指定主题邮件，支持跨文件夹搜索并下载或解压附件到指定目录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "die0921",
+      "userId": "s170hf5h2r7dhfehgcc81js1q583mqvs",
+      "displayName": "die0921",
+      "image": "https://avatars.githubusercontent.com/u/34653780?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774511675475,
+      "changelog": "Initial release of the Outlook 邮件读取技能.\n\n- Automatically reads Outlook emails, searches for specified subjects, and downloads attachments.\n- Supports searching by multiple keywords and across all email folders.\n- Provides attachment handling, including file type checks and ZIP extraction.\n- Includes sample scripts, automation suggestions, and troubleshooting tips.\n- Offers documentation for folder IDs and potential usage scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d31aaeeda1b7280dbd310080f32c0d9e0f7f07393f8a4b3992b0d9ecb2fbade1"
+}

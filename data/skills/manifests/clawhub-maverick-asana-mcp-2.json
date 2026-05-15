@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41796,
+  "uuid": "skill-clawhub-maverick-asana-mcp-2",
+  "skillKey": "clawhub-maverick-asana-mcp-2",
+  "name": "Asana mcp",
+  "summary": "Manage Asana tasks, projects, portfolios, goals, and team workspaces via Asana's hosted MCP server (https://mcp.asana.com/v2/mcp). Use when the user asks abo...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_asana_mcp_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maverick",
+      "features": [
+        "Manage Asana tasks, projects, portfolios, goals, and team workspaces via Asana's hosted MCP ser.",
+        "Use when the user asks abo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maverick-asana-mcp-2@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261420589"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maverick-asana-mcp-2",
+      "url": "https://clawhub.ai/skills/maverick-asana-mcp-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-asana-mcp-2",
+    "url": "https://clawhub.ai/skills/maverick-asana-mcp-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-asana-mcp-2-212d67b82ac51190.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maverick-asana-mcp-2@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-maverick-asana-mcp-2-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:faba350940eb633d9884ec106cd3dc8416004e2953153aa56e568c2ab192da19",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T09:53:49.421Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1crm@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1crm",
+  "skill": {
+    "id": 29446,
+    "skillKey": "clawhub-1crm",
+    "name": "1Crm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1crm",
+    "url": "https://clawhub.ai/skills/1crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1crm-4f75c0dfa73b58ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1CRM integration. Manage data, records, and automate workflows. Use when the user wants to interact with 1CRM data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777565652437,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da6e51f32119ee251dd8de3dfd8baa05c09a6c4c2efa67428118b6aca9655291"
+}

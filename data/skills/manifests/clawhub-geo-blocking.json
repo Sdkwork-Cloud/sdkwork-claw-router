@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20067,
+  "uuid": "skill-clawhub-geo-blocking",
+  "skillKey": "clawhub-geo-blocking",
+  "name": "Geo Blocking",
+  "summary": "Implement geographic content restrictions with IP geolocation, VPN/Tor detection, and regional law compliance for tailored geo-blocking rules.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_blocking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raghulpasupathi",
+      "features": [
+        "Implement geographic content restrictions with IP geolocation, VPN/Tor detection, and regional."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-blocking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15859053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-blocking",
+      "url": "https://clawhub.ai/skills/geo-blocking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-blocking",
+    "url": "https://clawhub.ai/skills/geo-blocking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-blocking-55a6307c4f22b1ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-blocking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-blocking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9147016a2aabc5848816f70a8f3d248d371ed0af6bb8a1d8eea38cce67d52f61",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:32:36.335Z"
+}

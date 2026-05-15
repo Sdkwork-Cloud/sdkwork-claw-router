@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10984,
+  "uuid": "skill-clawhub-recraft",
+  "skillKey": "clawhub-recraft",
+  "name": "Recraft AI",
+  "summary": "Generate, vectorize, upscale, replace background, variate, remove background, and transform images via Recraft API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recraft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nkrcrft",
+      "features": [
+        "Generate, vectorize, upscale, replace background, variate, remove background, and transform ima."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recraft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169680506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recraft",
+      "url": "https://clawhub.ai/skills/recraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recraft",
+    "url": "https://clawhub.ai/skills/recraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recraft-9e365138bc2227d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recraft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-recraft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26b9c6e554976933a2dba8aab358aa996af3f6f6488944fc85968851701e4335",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T03:39:53.012Z"
+}

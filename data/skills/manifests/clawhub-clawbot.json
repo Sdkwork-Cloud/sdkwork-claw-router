@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21000,
+  "uuid": "skill-clawhub-clawbot",
+  "skillKey": "clawhub-clawbot",
+  "name": "Imperial8629",
+  "summary": "Credit line service for AI agents to access x402 services without upfront payment. Use when (1) you need to call x402-enabled APIs or services but lack crypt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "goddieian47-boop",
+      "features": [
+        "Credit line service for AI agents to access x402 services without upfront payment",
+        "Use when (1) you need to call x402-enabled APIs or services but lack crypt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222941689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbot",
+      "url": "https://clawhub.ai/skills/clawbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbot",
+    "url": "https://clawhub.ai/skills/clawbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbot-3acd8d4d9cc1f3c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b3fc28bb99395533ef1e9e1b3687308c708f5433cad4d9942a2ec1721b0904e",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:19:21.978Z"
+}

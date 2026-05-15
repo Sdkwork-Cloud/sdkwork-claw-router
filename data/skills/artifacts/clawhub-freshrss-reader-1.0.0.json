@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freshrss-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freshrss_reader",
+  "skill": {
+    "id": 10151,
+    "skillKey": "clawhub-freshrss-reader",
+    "name": "FreshRSS Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freshrss-reader",
+    "url": "https://clawhub.ai/skills/freshrss-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freshrss-reader-a3e9b7065fb22abb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query headlines and articles from a self-hosted FreshRSS instance. Use when the user asks for RSS news, latest headlines, feed updates, or wants to browse articles from their FreshRSS reader. Supports filtering by category, time range, and."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickian",
+      "userId": "publishers:nickian",
+      "displayName": "nickian",
+      "image": "https://avatars.githubusercontent.com/u/590678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2584,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769623051422,
+      "changelog": "Initial release - query headlines from self-hosted FreshRSS with category, time, and count filters",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:30780b32580357c47060f90dfe1d036f819905d50b85cd602e72a6ce641a37a6"
+}

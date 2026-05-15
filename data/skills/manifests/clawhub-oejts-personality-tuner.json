@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25711,
+  "uuid": "skill-clawhub-oejts-personality-tuner",
+  "skillKey": "clawhub-oejts-personality-tuner",
+  "name": "Oejts Personality Tuner",
+  "summary": "Administer and score the Open Extended Jungian Type Scales (OEJTS 1.2), map results to MBTI-style interaction preferences, and propose/apply personality-awar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oejts_personality_tuner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "salvagedeck",
+      "features": [
+        "Administer and score the Open Extended Jungian Type Scales (OEJTS 1.2), map results to MBTI-sty."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oejts-personality-tuner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254569927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oejts-personality-tuner",
+      "url": "https://clawhub.ai/skills/oejts-personality-tuner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oejts-personality-tuner",
+    "url": "https://clawhub.ai/skills/oejts-personality-tuner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oejts-personality-tuner-09ed2521164b9edf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oejts-personality-tuner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oejts-personality-tuner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:012972fe1d57ff0f505ed6e7895db66b3a4f710725cefdd9561ea96d9b740ab9",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:25:19.097Z"
+}

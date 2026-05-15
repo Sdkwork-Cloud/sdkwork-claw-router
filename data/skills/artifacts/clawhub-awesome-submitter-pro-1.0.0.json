@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awesome-submitter-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_submitter_pro",
+  "skill": {
+    "id": 35995,
+    "skillKey": "clawhub-awesome-submitter-pro",
+    "name": "Awesome Submitter Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-submitter-pro",
+    "url": "https://clawhub.ai/skills/awesome-submitter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-submitter-pro-5783b19957c59724.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate submission issues for GitHub awesome-lists. Auto-creates formatted Issue content for awesome-indie, awesome-privacy, awesome-cloudflare, and 7 more..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain1",
+      "userId": "s17214ddq2ph75r81trqngwmtn83exsy",
+      "displayName": "bytesagain1",
+      "image": "https://avatars.githubusercontent.com/u/261107384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774316675850,
+      "changelog": "Initial release - GitHub awesome-list submission generator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60c4ce41b34d6b116799649ef5400d703165dc3b61cbbd4c6c13c0f621f36787"
+}

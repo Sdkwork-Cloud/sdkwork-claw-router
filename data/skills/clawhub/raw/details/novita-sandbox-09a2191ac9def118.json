@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "novita-sandbox",
+    "displayName": "Novita Sandbox",
+    "summary": "Run browser operations and untrusted code in a secure Novita cloud sandbox (Firecracker VM). Use when: (1) browsing any external URL or website, (2) executin...",
+    "tags": {
+      "latest": "0.1.8"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "createdAt": 1773283731028,
+    "updatedAt": 1778307176608
+  },
+  "latestVersion": {
+    "version": "0.1.8",
+    "createdAt": 1773298902755,
+    "changelog": "Completely disable CDP mode. OpenClaw bug confirmed: config.patch unconditionally sends SIGUSR1 even with gateway.reload=hot (SIGUSR1 bypasses reload mode via separate restart-C7ane9OU.js code path). Removed all CDP sections. All browsing now via Exec mode only (curl/puppeteer/playwright). Added interactive page example with puppeteer script pattern. Rule 10: NEVER call config.patch for any reason.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "piston4711",
+    "userId": "s17045x0jmnah4egteyecb56y183jnvf",
+    "displayName": "piston4711",
+    "image": "https://avatars.githubusercontent.com/u/257291435?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778307176608
+  }
+}

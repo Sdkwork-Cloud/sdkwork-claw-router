@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21164,
+  "uuid": "skill-clawhub-tronscan-block-info",
+  "skillKey": "clawhub-tronscan-block-info",
+  "name": "TronScan Block Info",
+  "summary": "Query TRON latest block, block reward, block time, producer, burned TRX, resource use, transaction count. Use when user asks \"latest block\", \"block height\",...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tronscan_block_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BigFrog",
+      "features": [
+        "Query TRON latest block, block reward, block time, producer, burned TRX, resource use, transact.",
+        "Use when user asks \"latest block\", \"block height\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tronscan-block-info@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142767282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tronscan-block-info",
+      "url": "https://clawhub.ai/skills/tronscan-block-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tronscan-block-info",
+    "url": "https://clawhub.ai/skills/tronscan-block-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tronscan-block-info-7ee7fc554d8c5224.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tronscan-block-info@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tronscan-block-info-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:405bed71d6651a4189ed45ae6ffec987c0fbdad259dd6122e21046258387a0ea",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:22:58.953Z"
+}

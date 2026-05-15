@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38462,
+  "uuid": "skill-clawhub-claude-code-claude-settings-editor",
+  "skillKey": "clawhub-claude-code-claude-settings-editor",
+  "name": "Claude Settings Editor",
+  "summary": "Use when the user wants to update Claude settings, hooks, permissions, MCP server toggles, or other JSON config safely and with scope awareness.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_claude_settings_editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when the user wants to update Claude settings, hooks, permissions, MCP server toggles, or o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-claude-settings-editor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-claude-settings-editor",
+      "url": "https://clawhub.ai/skills/claude-code-claude-settings-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-claude-settings-editor",
+    "url": "https://clawhub.ai/skills/claude-code-claude-settings-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-claude-settings-editor-7ed894b2c5263a9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-claude-settings-editor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-claude-settings-editor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f939b01b7a1dc74678f3ad3fe7f40f71da75c9396b5b609af4e038eb2fc13a6",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:17:45.447Z"
+}

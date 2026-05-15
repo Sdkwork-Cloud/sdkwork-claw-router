@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32539,
+  "uuid": "skill-clawhub-defastra",
+  "skillKey": "clawhub-defastra",
+  "name": "Defastra",
+  "summary": "Defastra integration. Manage Organizations, Leads, Projects, Users, Goals, Filters. Use when the user wants to interact with Defastra data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defastra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Defastra integration",
+        "Manage Organizations, Leads, Projects, Users, Goals, Filters",
+        "Use when the user wants to interact with Defastra data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/defastra@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "defastra",
+      "url": "https://clawhub.ai/skills/defastra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defastra",
+    "url": "https://clawhub.ai/skills/defastra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defastra-ec35ea6e14b66380.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/defastra@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-defastra-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dfdace381ad891a2a6acf5f1ace4e9b14c1686a51a54a162b3f5195bad54ef5",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:38:15.048Z"
+}

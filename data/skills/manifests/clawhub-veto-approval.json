@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40617,
+  "uuid": "skill-clawhub-veto-approval",
+  "skillKey": "clawhub-veto-approval",
+  "name": "Veto Approval (Human-in-the-Loop)",
+  "summary": "Pause your agent for human approval before high-risk actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veto_approval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrChop",
+      "features": [
+        "Pause your agent for human approval before high-risk actions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veto-approval@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15650552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veto-approval",
+      "url": "https://clawhub.ai/skills/veto-approval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veto-approval",
+    "url": "https://clawhub.ai/skills/veto-approval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veto-approval-690c0848e0b107ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veto-approval@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-veto-approval-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79eb48d7c9f735954195d9fbfd1d0f04bd576d4d22ec970af31b6107799129b4",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T19:36:22.919Z"
+}

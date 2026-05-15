@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10954,
+  "uuid": "skill-clawhub-video-download",
+  "skillKey": "clawhub-video-download",
+  "name": "video-download",
+  "summary": "Download videos from 1800+ websites and generate subtitles using Faster Whisper AI. Use when user wants to download videos from YouTube, Bilibili, Twitter, T...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_download",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "upupc",
+      "features": [
+        "Download videos from 1800+ websites and generate subtitles using Faster Whisper AI",
+        "Use when user wants to download videos from YouTube, Bilibili, Twitter, T..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-download@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12829489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-download",
+      "url": "https://clawhub.ai/skills/video-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-download",
+    "url": "https://clawhub.ai/skills/video-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-download-c125841e4a34b2b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-download@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-download-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2f0659bacaf34330366daae58e3fefd8bbfa3c09fd8bef4a2de08d0e2da3784",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:50:21.596Z"
+}

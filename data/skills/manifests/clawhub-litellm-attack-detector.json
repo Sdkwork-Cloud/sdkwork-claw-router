@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35490,
+  "uuid": "skill-clawhub-litellm-attack-detector",
+  "skillKey": "clawhub-litellm-attack-detector",
+  "name": "litellm attack detector",
+  "summary": "Detect the LiteLLM supply chain attack (v1.82.7/1.82.8). Scans for compromised packages, malicious .pth files, backdoor persistence, suspicious network conne...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.litellm_attack_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff",
+      "features": [
+        "Detect the LiteLLM supply chain attack (v1.82.7/1.82.8)",
+        "Scans for compromised packages, malicious .pth files, backdoor persistence, suspicious network."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/litellm-attack-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2939233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "litellm-attack-detector",
+      "url": "https://clawhub.ai/skills/litellm-attack-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "litellm-attack-detector",
+    "url": "https://clawhub.ai/skills/litellm-attack-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/litellm-attack-detector-495a901478e8ff14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/litellm-attack-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-litellm-attack-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67fdc11014548e53c6bc573b1c7c2f712e28da05d42c85ab1cfd2712a3e589eb",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:34:33.400Z"
+}

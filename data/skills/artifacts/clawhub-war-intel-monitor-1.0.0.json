@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/war-intel-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.war_intel_monitor",
+  "skill": {
+    "id": 18784,
+    "skillKey": "clawhub-war-intel-monitor",
+    "name": "War Intelligence Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "war-intel-monitor",
+    "url": "https://clawhub.ai/skills/war-intel-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/war-intel-monitor-b3ee703dfc10606e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time war intelligence monitoring and emergency alert system for conflict zones. Use when user needs to track military conflicts, receive emergency alert..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oliviapp8",
+      "userId": "publishers:oliviapp8",
+      "displayName": "Olivia_Pp",
+      "image": "https://avatars.githubusercontent.com/u/51184967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 651,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772392551919,
+      "changelog": "Initial release: Real-time conflict monitoring system with location-based threat assessment, emergency alerts, and evacuation tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7949a1c8ea661107153fcc9e33bb34d5358a30008772d00ce5ae0fe6fa12a9d0"
+}

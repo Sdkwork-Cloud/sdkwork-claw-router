@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/second-order-effects@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_order_effects",
+  "skill": {
+    "id": 19854,
+    "skillKey": "clawhub-second-order-effects",
+    "name": "Second Order Effects"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-order-effects",
+    "url": "https://clawhub.ai/skills/second-order-effects",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-order-effects-793b4a0bd74ce8b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze decisions by tracing consequences beyond immediate outcomes to second and third-order effects."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771622813509,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:427c7c6b3d6749e9b3b21176e69e4c513180dff61a60f84288e646a99fa8d641"
+}

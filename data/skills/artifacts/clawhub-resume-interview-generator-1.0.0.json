@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-interview-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_interview_generator",
+  "skill": {
+    "id": 73011,
+    "skillKey": "clawhub-resume-interview-generator",
+    "name": "简历面试题生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-interview-generator",
+    "url": "https://clawhub.ai/skills/resume-interview-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-interview-generator-45400e0cd1c4211b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于候选人简历自动生成面试题、笔试题、追问路径和评分标准的 AI Skill。当用户需要准备技术面试、生成笔试题目、评估候选人简历、或设计面试评估方案时使用。输入简历内容和岗位信息后，自动输出结构化的题目与评估内容，支持面试题模式、笔试题模式、综合评估模式等多种输出形式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangchao228",
+      "userId": "s17cxs692g9xb5kx8rt4snej7183xms3",
+      "displayName": "Sundy Yang",
+      "image": "https://avatars.githubusercontent.com/u/2383724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775916314722,
+      "changelog": "resume-interview-generator 1.0.0 – 初始版本发布\n\n- 自动解析候选人简历，生成结构化的面试题、笔试题、追问路径和评分标准\n- 支持多种出题模式（面试题、笔试题、综合评估等），适配不同岗位及难度需求\n- 按项目经历、基础能力、场景设计、代码能力四大核心维度制定问题\n- 每道题目配有三个版本（标准/深入/基础），含评估标准与回答质量判断\n- 强化隐私保护，敏感信息不纳入评估重点\n- 鼓励出题维度覆盖、岗位适配、难度分层和包装风险识别",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c978d9b3f2edfbcead667481d72ee23c26afd1c536e44c50e7eba262c4f3376c"
+}

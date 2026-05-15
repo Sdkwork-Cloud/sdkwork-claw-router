@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-review-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_review_ai",
+  "skill": {
+    "id": 62393,
+    "skillKey": "clawhub-skill-review-ai",
+    "name": "skill审查"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-review-ai",
+    "url": "https://clawhub.ai/skills/skill-review-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-review-ai-90d235e7668f5801.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "审查 Agent Skills 的规范性、完整性和代码质量。在安装或发布 skills 时使用，验证 SKILL.md 格式、目录结构、脚本代码和文件引用是否符合 Agent Skills 规范。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hwl1413520",
+      "userId": "s17ekarx3p1e6dgdk3qfb20tbx84q8v4",
+      "displayName": "rumu14",
+      "image": "https://avatars.githubusercontent.com/u/116565375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776001777953,
+      "changelog": "Initial release of skill-review-ai\n\n- Provides a comprehensive checklist for reviewing Agent Skills for specification, completeness, and code quality.\n- Details requirements and best practices for SKILL.md format, directory structure, scripts, and file references.\n- Outlines report formats (Markdown and JSON) and scoring standards.\n- Provides usage instructions for both CLI and Python API.\n- Includes example issues and common problems to aid in troubleshooting.\n- Lists references and best practices for continuous integration and manual review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f06acf766335794fa8a3dedd3741fbac347755fc4c2d99114fc20fb87098dff7"
+}

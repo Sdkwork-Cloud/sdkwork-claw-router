@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/appointment-booking-system@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appointment_booking_system",
+  "skill": {
+    "id": 20108,
+    "skillKey": "clawhub-appointment-booking-system",
+    "name": "Appointment Booking System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appointment-booking-system",
+    "url": "https://clawhub.ai/skills/appointment-booking-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appointment-booking-system-f895ea90dea43959.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generic appointment booking and management system for service businesses. Booking intake, confirmation, automated reminders (24h, 2h), no-show followup, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhmalvi",
+      "userId": "publishers:mhmalvi",
+      "displayName": "Muhammad H.M. Alvi",
+      "image": "https://avatars.githubusercontent.com/u/74125579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772560373439,
+      "changelog": "Fix: declare all env vars used in workflows in requires.env metadata for security scan compliance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:22f907db46d1080a73c2934c03e1de243ab8a47985c82dfdb62a2714aee734e4"
+}

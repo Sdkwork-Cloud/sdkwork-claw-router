@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/halaoluan-openclaw-restore@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halaoluan_openclaw_restore",
+  "skill": {
+    "id": 64124,
+    "skillKey": "clawhub-halaoluan-openclaw-restore",
+    "name": "Openclaw Restore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halaoluan-openclaw-restore",
+    "url": "https://clawhub.ai/skills/halaoluan-openclaw-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halaoluan-openclaw-restore-df150decc3a5d475.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键恢复 OpenClaw 数据，支持加密和未加密备份，自动备份旧数据并重启服务确保恢复成功。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halaoluan",
+      "userId": "publishers:halaoluan",
+      "displayName": "halaoluan",
+      "image": "https://avatars.githubusercontent.com/u/145438585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773424926009,
+      "changelog": "Initial release: One-click restore, encrypted backup support, disaster recovery guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68e0abc681c6fee37f5de43cda0863a46e589dd06cc8c731e7b873ee17601b8b"
+}

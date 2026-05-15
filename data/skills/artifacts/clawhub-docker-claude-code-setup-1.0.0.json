@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-claude-code-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_claude_code_setup",
+  "skill": {
+    "id": 39102,
+    "skillKey": "clawhub-docker-claude-code-setup",
+    "name": "Docker Claude Code Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-claude-code-setup",
+    "url": "https://clawhub.ai/skills/docker-claude-code-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-claude-code-setup-eef782c5bb8503be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for setting up Claude Code in Docker containers with ttyd web terminal, tmux session persistence, acpx multi-agent tool, and API configuration. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonakic",
+      "userId": "s1719p3brh7n4bejrxksh7az5n83gj6q",
+      "displayName": "tonakic",
+      "image": "https://avatars.githubusercontent.com/u/183658957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775307119496,
+      "changelog": "Initial release: Complete guide for setting up Claude Code in Docker with persistent, web-accessible terminal and multi-agent workflows.\n\n- Provides step-by-step setup for Claude Code in Docker containers, including quick start instructions.\n- Integrates ttyd (web terminal) and tmux (session persistence) for browser-based shell access.\n- Offers optional acpx installation for multi-agent development workflows.\n- Details environment variable setup for configuring API keys and providers.\n- Includes instructions for Docker directory persistence and clear architecture overview.\n- Documentation is fully bilingual (English and Chinese).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1594b04bd26743bb8ba856e97417deccafc657e6088a3a16ba1502206633f2a1"
+}

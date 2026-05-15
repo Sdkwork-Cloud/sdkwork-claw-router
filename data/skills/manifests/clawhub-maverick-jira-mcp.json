@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39883,
+  "uuid": "skill-clawhub-maverick-jira-mcp",
+  "skillKey": "clawhub-maverick-jira-mcp",
+  "name": "Jira mcp",
+  "summary": "Work with Jira issue tracking and project workflow state through Atlassian Rovo's hosted MCP server. Thin pass-through to Atlassian's official MCP; the live...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_jira_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maverick",
+      "features": [
+        "Work with Jira issue tracking and project workflow state through Atlassian Rovo's hosted MCP se.",
+        "Thin pass-through to Atlassian's official MCP",
+        "the live..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maverick-jira-mcp@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261420589"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maverick-jira-mcp",
+      "url": "https://clawhub.ai/skills/maverick-jira-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-jira-mcp",
+    "url": "https://clawhub.ai/skills/maverick-jira-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-jira-mcp-6430f53692d41772.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maverick-jira-mcp@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-maverick-jira-mcp-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5372d26173dc2e656da1df96fa129b9fbc82753b9a899418c415614bde6f133b",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:38:11.246Z"
+}

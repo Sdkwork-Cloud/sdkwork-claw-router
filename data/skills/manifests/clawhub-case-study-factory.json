@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59359,
+  "uuid": "skill-clawhub-case-study-factory",
+  "skillKey": "clawhub-case-study-factory",
+  "name": "Case Study Factory",
+  "summary": "把项目材料转成案例文章，提炼起点、动作、结果和复用价值。；use for case-study, content, storytelling workflows；do not use for 伪造客户背书, 公开敏感数据.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.case_study_factory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把项目材料转成案例文章，提炼起点、动作、结果和复用价值。；use for case-study, content, storytelling workflows；do not use for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/case-study-factory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "case-study-factory",
+      "url": "https://clawhub.ai/skills/case-study-factory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "case-study-factory",
+    "url": "https://clawhub.ai/skills/case-study-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/case-study-factory-1d8a3a377cc3646c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/case-study-factory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-case-study-factory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd9922c385de6bcd5add6e18d0dd4ab19a5beb049fc2807f73f183dc87b95ef9",
+      "artifactSizeBytes": 2106
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:03:14.131Z"
+}

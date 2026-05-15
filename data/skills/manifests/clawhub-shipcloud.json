@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29736,
+  "uuid": "skill-clawhub-shipcloud",
+  "skillKey": "clawhub-shipcloud",
+  "name": "Shipcloud",
+  "summary": "Shipcloud integration. Manage Shipments, Trackings, Carriers, Services, Labels, Pickups and more. Use when the user wants to interact with Shipcloud data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shipcloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Shipcloud integration",
+        "Manage Shipments, Trackings, Carriers, Services, Labels, Pickups and more",
+        "Use when the user wants to interact with Shipcloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shipcloud@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shipcloud",
+      "url": "https://clawhub.ai/skills/shipcloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shipcloud",
+    "url": "https://clawhub.ai/skills/shipcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shipcloud-7ab23b82f36ec420.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shipcloud@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shipcloud-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f087597d0cc5ca5f1a1bc8424d3b167968139890721b7021a84b6bc04bfa9baa",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:43.555Z"
+}

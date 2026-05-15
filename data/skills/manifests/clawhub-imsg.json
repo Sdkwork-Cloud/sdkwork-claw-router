@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8330,
+  "uuid": "skill-clawhub-imsg",
+  "skillKey": "clawhub-imsg",
+  "name": "Imsg",
+  "summary": "iMessage/SMS CLI for listing chats, history, watch, and sending.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imsg",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "iMessage/SMS CLI for listing chats, history, watch, and sending."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imsg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imsg",
+      "url": "https://clawhub.ai/skills/imsg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imsg",
+    "url": "https://clawhub.ai/skills/imsg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imsg-e50c53defd01eb15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imsg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-imsg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13c4ff7857c166919aa2b5aba8e6557830513dfe7a542bc345e2cdd784dbf41c",
+      "artifactSizeBytes": 1715
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:49:08.833Z"
+}

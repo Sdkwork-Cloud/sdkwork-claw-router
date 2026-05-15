@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18677,
+  "uuid": "skill-clawhub-new-agent-task-tracker",
+  "skillKey": "clawhub-new-agent-task-tracker",
+  "name": "agent-task-tracker",
+  "summary": "Proactive task state management. Use on EVERY task start, progress update, completion, or failure. Tracks what was requested, what's running (background proc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_agent_task_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Proactive task state management",
+        "Use on EVERY task start, progress update, completion, or failure",
+        "Tracks what was requested, what's running (background proc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-agent-task-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-agent-task-tracker",
+      "url": "https://clawhub.ai/skills/new-agent-task-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-agent-task-tracker",
+    "url": "https://clawhub.ai/skills/new-agent-task-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-agent-task-tracker-624df32cc6e0b429.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-agent-task-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-agent-task-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b6be75869f77f5deb76b696b92d27349ee1b46e8ce74cf8d4d080f3f9d41524",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T14:53:33.505Z"
+}

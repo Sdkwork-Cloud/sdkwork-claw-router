@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13510,
+  "uuid": "skill-clawhub-epstein",
+  "skillKey": "clawhub-epstein",
+  "name": "Epstein Files Search",
+  "summary": "Search 44,886+ DOJ-released Jeffrey Epstein documents (Jan 2026 release). Free, no payment required. Search by name, topic, location, or keyword across the full DugganUSA index of declassified Epstein files. Returns document previews, peop.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epstein",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChuXo",
+      "features": [
+        "Search 44,886+ DOJ-released Jeffrey Epstein documents (Jan 2026 release)",
+        "Free, no payment required",
+        "Search by name, topic, location, or keyword across the full DugganUSA index of declassified Eps.",
+        "Returns document previews, people mentioned, locations, aircraft, evidence types, and source re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/epstein@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15310912?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "epstein",
+      "url": "https://clawhub.ai/skills/epstein"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epstein",
+    "url": "https://clawhub.ai/skills/epstein",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epstein-21b5d62444736672.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/epstein@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-epstein-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdebffb5b78da209f55967d9a049985197d55a3a7b59dbd17b8441383bbbd615",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T19:32:52.232Z"
+}

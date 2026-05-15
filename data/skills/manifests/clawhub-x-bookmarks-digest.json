@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33653,
+  "uuid": "skill-clawhub-x-bookmarks-digest",
+  "skillKey": "clawhub-x-bookmarks-digest",
+  "name": "X Bookmarks Digest",
+  "summary": "Automatically review X/Twitter bookmarks for useful tools, projects, repos, products, and ideas. Fetches via xurl, analyses for value, and outputs an actiona...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_bookmarks_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BEARLY_HODLING",
+      "features": [
+        "Automatically review X/Twitter bookmarks for useful tools, projects, repos, products, and ideas",
+        "Fetches via xurl, analyses for value, and outputs an actiona..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-bookmarks-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165153024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-bookmarks-digest",
+      "url": "https://clawhub.ai/skills/x-bookmarks-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-bookmarks-digest",
+    "url": "https://clawhub.ai/skills/x-bookmarks-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-bookmarks-digest-8f208ba5d9569a06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-bookmarks-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-bookmarks-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bce7d4e7f51b99f080deec57202a81c8b59e523d2c4860103b671a5f5b91f0b",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:43:44.562Z"
+}

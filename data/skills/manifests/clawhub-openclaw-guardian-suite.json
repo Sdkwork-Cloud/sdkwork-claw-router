@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63075,
+  "uuid": "skill-clawhub-openclaw-guardian-suite",
+  "skillKey": "clawhub-openclaw-guardian-suite",
+  "name": "Openclaw Guardian",
+  "summary": "一键安装包含配置安全、容灾、监控和上下文优化的 OpenClaw 系统全链路守护套件。",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guardian_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "一键安装包含配置安全、容灾、监控和上下文优化的 OpenClaw 系统全链路守护套件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-guardian-suite@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-guardian-suite",
+      "url": "https://clawhub.ai/skills/openclaw-guardian-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guardian-suite",
+    "url": "https://clawhub.ai/skills/openclaw-guardian-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guardian-suite-dac16788341c94d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-guardian-suite@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-guardian-suite-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a46443b78c293b2b5a967618e0dc8d4d03e6591cac757d3c5e2c800cfa6189b8",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:11:25.259Z"
+}

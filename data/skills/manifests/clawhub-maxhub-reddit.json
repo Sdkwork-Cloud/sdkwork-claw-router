@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60325,
+  "uuid": "skill-clawhub-maxhub-reddit",
+  "skillKey": "clawhub-maxhub-reddit",
+  "name": "Maxhub Reddit",
+  "summary": "Reddit/Reddit平台Reddit社区帖子搜索、评论与Subreddit数据采集。当用户提到reddit、社区、帖子、评论、subreddit等相关需求时激活此Skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_reddit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xie Hao",
+      "features": [
+        "Reddit/Reddit平台Reddit社区帖子搜索、评论与Subreddit数据采集。当用户提到reddit、社区、帖子、评论、subreddit等相关需求时激活此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxhub-reddit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128963651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxhub-reddit",
+      "url": "https://clawhub.ai/skills/maxhub-reddit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-reddit",
+    "url": "https://clawhub.ai/skills/maxhub-reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-reddit-24352884d1cb78b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxhub-reddit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxhub-reddit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a42a1f8a2b53b884b85c7ef04dbcb564b3ab0e3cc2de296095b6bcd029aece1",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:51:15.873Z"
+}

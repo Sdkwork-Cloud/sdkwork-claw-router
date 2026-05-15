@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inkroam-topic-expert@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inkroam_topic_expert",
+  "skill": {
+    "id": 60864,
+    "skillKey": "clawhub-inkroam-topic-expert",
+    "name": "Topic Selection Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inkroam-topic-expert",
+    "url": "https://clawhub.ai/skills/inkroam-topic-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inkroam-topic-expert-9459a9ee73c2a1f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "选题专家：全网热点监控 → 筛选打分 → 初步三要素 → 写入飞书选题库 → 推送Telegram。Use when user asks to 启动选题专家 / 获取选题推荐 / 查看热点 / 帮我选题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytearch1990-beep",
+      "userId": "s1760p8hp19rz5hre8dtd31hkx83ppms",
+      "displayName": "inkroam",
+      "image": "https://avatars.githubusercontent.com/u/252960819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773112295426,
+      "changelog": "Initial release. Real-time trending topic monitoring from 20+ platforms via tophub.today. 5-dimension intelligent scoring (popularity/relevance/timeliness/writability/differentiation). Auto-generates preliminary three-elements, writes to Feishu topic database and pushes to Telegram. Supports scheduled and manual trigger modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98f3de6f99b723587780eed79a50b8339ea3293da7ff4b1ed68dc7a56b1458ef"
+}

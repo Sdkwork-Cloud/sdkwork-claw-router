@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71432,
+  "uuid": "skill-clawhub-btc-data-api",
+  "skillKey": "clawhub-btc-data-api",
+  "name": "btc数据",
+  "summary": "查询比特币链上结构数据（UTXO、大额流出、筹码分布、持仓结构、链上指标等）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_data_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengcheche-0",
+      "features": [
+        "查询比特币链上结构数据（UTXO、大额流出、筹码分布、持仓结构、链上指标等）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc-data-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270554624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc-data-api",
+      "url": "https://clawhub.ai/skills/btc-data-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-data-api",
+    "url": "https://clawhub.ai/skills/btc-data-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-data-api-4ddd36d7f27a5cc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc-data-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-data-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fd4521b8c982b7346d5374445951ace8d2ca3ee8bd5aa8dbc6e8d4a24a2ad5b",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:41:24.073Z"
+}

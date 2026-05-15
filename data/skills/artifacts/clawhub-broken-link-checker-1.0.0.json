@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/broken-link-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broken_link_checker",
+  "skill": {
+    "id": 14476,
+    "skillKey": "clawhub-broken-link-checker",
+    "name": "Broken Link Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broken-link-checker",
+    "url": "https://clawhub.ai/skills/broken-link-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broken-link-checker-6ddf2022d373b959.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "verify external URLs (http/https) for availability (200-399 status code)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanng-ide",
+      "userId": "s176gjsdvgc0ce9sr8b6s9yzmx84mv9j",
+      "displayName": "WANGJUNJIE",
+      "image": "https://avatars.githubusercontent.com/u/32323900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1145,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771173062451,
+      "changelog": "Initial release of broken-link-checker.\n\n- Checks external URLs for availability (HTTP status 200–399).\n- Accepts one or more URLs via command line.\n- Outputs a JSON array indicating URL status and validity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16e23f27a2c8d45ff260f3765e9694d4b5de3619d12ca4d0f3065a1fbdf1d0f1"
+}

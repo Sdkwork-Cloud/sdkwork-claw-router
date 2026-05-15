@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62086,
+  "uuid": "skill-clawhub-ai-copywriter",
+  "skillKey": "clawhub-ai-copywriter",
+  "name": "Ai Copywriter",
+  "summary": "AI 文案改写、润色、生成（小红书风格）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_copywriter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangfeng1995",
+      "features": [
+        "AI 文案改写、润色、生成（小红书风格）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-copywriter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113488508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-copywriter",
+      "url": "https://clawhub.ai/skills/ai-copywriter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-copywriter",
+    "url": "https://clawhub.ai/skills/ai-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-copywriter-8aaa12d30b5d4601.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-copywriter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-copywriter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ed2e1fdcde6087cad3669a2285cb4c76a06a05b19cb1319ba5d925fcb52aac0",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:12:28.897Z"
+}

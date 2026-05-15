@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-brief-v1@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_brief_v1",
+  "skill": {
+    "id": 37743,
+    "skillKey": "clawhub-morning-brief-v1",
+    "name": "Morning Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-brief-v1",
+    "url": "https://clawhub.ai/skills/morning-brief-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-brief-v1-7d690bb5f3826c7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches and presents the latest international news headlines from trusted RSS feeds as a concise morning briefing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amadeus9169",
+      "userId": "s179vmcqpeenxy7g7p68davvcx83m5ty",
+      "displayName": "Amadeus9169",
+      "image": "https://avatars.githubusercontent.com/u/157386633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774934733480,
+      "changelog": "Initial release of Morning Brief skill.\n\n- Fetches the latest international news headlines from selected RSS feeds.\n- Presents a concise, clickable list of news titles, preserving original Markdown links.\n- Automatically translates all headlines into Chinese in the brief.\n- Easy command-line usage with a Python script and an optional headline limit.\n- Requires Python 3.8+ with requests and beautifulsoup4 packages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:832c8a0652de923cbaf1304463ad6b5e02c4c7d5d5b2c39fc28fd96fa5d77ea4"
+}

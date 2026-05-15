@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60421,
+  "uuid": "skill-clawhub-nautilus-algo-trading",
+  "skillKey": "clawhub-nautilus-algo-trading",
+  "name": "Nautilus Algo Trading",
+  "summary": "使用 NautilusTrader 配置驱动的 BacktestNode 运行高性能多市场回测，支持 Parquet 数据目录和外部 CSV 数据导入，策略可直接过渡到实盘交易。。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nautilus_algo_trading",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "使用 NautilusTrader 配置驱动的 BacktestNode 运行高性能多市场回测，支持 Parquet 数据目录和外部 CSV 数据导入，策略可直接过渡到实盘交易。。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nautilus-algo-trading@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nautilus-algo-trading",
+      "url": "https://clawhub.ai/skills/nautilus-algo-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nautilus-algo-trading",
+    "url": "https://clawhub.ai/skills/nautilus-algo-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nautilus-algo-trading-294ac9dd04f3156b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nautilus-algo-trading@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-nautilus-algo-trading-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5a8b047b62500b7a574ded39b25503fc5d24c84ca3efaaaefa483fc098ea933",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:28:25.226Z"
+}

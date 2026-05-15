@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70719,
+  "uuid": "skill-clawhub-dada",
+  "skillKey": "clawhub-dada",
+  "name": "Dada",
+  "summary": "达达快送开发助手，精通即时配送API、订单管理、运力调度、数据对接",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dada",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "达达快送开发助手，精通即时配送API、订单管理、运力调度、数据对接"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dada@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dada",
+      "url": "https://clawhub.ai/skills/dada"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dada",
+    "url": "https://clawhub.ai/skills/dada",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dada-47c7ef39cfa6b7bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dada@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dada-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2ba1044fc7df36419e9282cfcd8a72eae9f3f7d4f47d02b81463054152f9f15",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:19:32.736Z"
+}

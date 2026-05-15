@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8738,
+  "uuid": "skill-clawhub-executing-plans",
+  "skillKey": "clawhub-executing-plans",
+  "name": "Executing Plans",
+  "summary": "Use when you have a written implementation plan to execute in a separate session with review checkpoints",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.executing_plans",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenleiyanquan",
+      "features": [
+        "Use when you have a written implementation plan to execute in a separate session with review ch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/executing-plans@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6234184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "executing-plans",
+      "url": "https://clawhub.ai/skills/executing-plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "executing-plans",
+    "url": "https://clawhub.ai/skills/executing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/executing-plans-4e45800cb6cf72ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/executing-plans@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-executing-plans-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67c559765f467466738848dd655360deb33f33d8e5b0cab57dedad74e37da1d0",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T06:09:59.462Z"
+}

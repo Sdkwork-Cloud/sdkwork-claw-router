@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-soul-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_soul_system",
+  "skill": {
+    "id": 41243,
+    "skillKey": "clawhub-agent-soul-system",
+    "name": "Agent Soul System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-soul-system",
+    "url": "https://clawhub.ai/skills/agent-soul-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-soul-system-525a63e5637169b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, manage, and validate SOUL.md personality files for multi-agent systems. Provides a standardized soul architecture where each agent has a distinct per..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamwgp",
+      "userId": "s17a6b94d07gacsckv64vzhg6183s1ht",
+      "displayName": "Adam",
+      "image": "https://avatars.githubusercontent.com/u/198090187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775399811726,
+      "changelog": "Initial release of agent-soul-system: a standardized personality and collaboration framework for multi-agent systems.\n\n- Provides tools to create, manage, and validate SOUL.md files defining agent personalities.\n- Includes directory and file structure conventions for agent setup and long-term memory.\n- Supplies a SOUL.md template covering personality, traits, collaboration protocols, and output standards.\n- Features quick commands for agent creation, auditing, and listing via command-line scripts.\n- References a curated personality library for assigning historical or philosophical personas to agents.\n- Supports personality-driven team building and protocol validation for effective multi-agent collaboration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89e781e60de7dd442dd96ae8005876c3147ab781f4aeb85d5388f278a9d83a8e"
+}

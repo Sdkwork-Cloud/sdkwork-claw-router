@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20818,
+  "uuid": "skill-clawhub-openclaw-copilot-cli",
+  "skillKey": "clawhub-openclaw-copilot-cli",
+  "name": "OpenClaw Copilot CLI Wrapper",
+  "summary": "Run GitHub Copilot CLI via exec to generate code, edit files, or automate shell tasks using advanced AI models like Claude or GPT-5.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_copilot_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "binotaliu",
+      "features": [
+        "Run GitHub Copilot CLI via exec to generate code, edit files, or automate shell tasks using adv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-copilot-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67255597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-copilot-cli",
+      "url": "https://clawhub.ai/skills/openclaw-copilot-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-copilot-cli",
+    "url": "https://clawhub.ai/skills/openclaw-copilot-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-copilot-cli-40dd5b3a35b1394a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-copilot-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-copilot-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92f1020a41ccf3da6a5a4f2a0a38c608151f2c50f62540b2c43e3e4874cc96ea",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:32:09.083Z"
+}

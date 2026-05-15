@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-cache@1.1.9",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_cache",
+  "skill": {
+    "id": 11809,
+    "skillKey": "clawhub-memory-cache",
+    "name": "Memory Cache"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-cache",
+    "url": "https://clawhub.ai/skills/memory-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-cache-bd59cf0e7ea5faaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-performance temporary storage system using Redis. Supports namespaced keys (mema:*), TTL management, and JSON serialization for session context and API..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1999azzar",
+      "userId": "publishers:1999azzar",
+      "displayName": "azzar budiyanto",
+      "image": "https://avatars.githubusercontent.com/u/48999412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2404,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.9",
+      "createdAt": 1771264297872,
+      "changelog": "Simplified implementation: removed wrapper script, declared dependencies clearly in metadata, and ensured full manifest inclusion. Addressed all audit flags.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49dd71a70a3187a43724c9064a97ee650746baa64baf3120ed368ac555a2a18e"
+}

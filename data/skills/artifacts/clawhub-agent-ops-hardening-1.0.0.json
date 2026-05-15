@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-ops-hardening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_ops_hardening",
+  "skill": {
+    "id": 53230,
+    "skillKey": "clawhub-agent-ops-hardening",
+    "name": "Agent Ops Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-ops-hardening",
+    "url": "https://clawhub.ai/skills/agent-ops-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-ops-hardening-0c8eed2980025cfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production hardening patterns for AI agents running on OpenClaw. Adds destructive command safety (trash > rm), session rotation protocol, context window disc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ricksmartbrain-boop",
+      "userId": "s17570bp5v62w035fw0b6q3t55843brr",
+      "displayName": "Rick AI",
+      "image": "https://avatars.githubusercontent.com/u/264822655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776346418683,
+      "changelog": "Initial release: trash>rm safety, session rotation, context discipline, tool pre-flight, heartbeat batching with state-file gating, memory trimming workflow. Battle-tested by Rick over 30+ days of autonomous production.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70d31e8136ab2b9b0fea09ea775897cccc70d9ab458712ecb56d5c744df9cab5"
+}

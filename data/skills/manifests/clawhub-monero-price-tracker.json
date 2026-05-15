@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32760,
+  "uuid": "skill-clawhub-monero-price-tracker",
+  "skillKey": "clawhub-monero-price-tracker",
+  "name": "Monero Price Tracker",
+  "summary": "Fetches current Monero (XMR) prices in USD, EUR, GBP with 24h change, volume, market cap, rank, and chart links using CoinGecko data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero_price_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liumaimiao",
+      "features": [
+        "Fetches current Monero (XMR) prices in USD, EUR, GBP with 24h change, volume, market cap, rank,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monero-price-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131150921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monero-price-tracker",
+      "url": "https://clawhub.ai/skills/monero-price-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero-price-tracker",
+    "url": "https://clawhub.ai/skills/monero-price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-price-tracker-cd83416b2d9df6d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monero-price-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monero-price-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65d29cc28ac415041dff252b06accf8e625660001d017e6dea45394afa79d0c6",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:30:11.723Z"
+}

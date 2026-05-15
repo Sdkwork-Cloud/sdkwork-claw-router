@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firefly-iii-published@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firefly_iii_published",
+  "skill": {
+    "id": 29364,
+    "skillKey": "clawhub-firefly-iii-published",
+    "name": "Firefly III API Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firefly-iii-published",
+    "url": "https://clawhub.ai/skills/firefly-iii-published",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firefly-iii-published-2a943607cb79df36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and manage Firefly III finance data programmatically, including transactions, accounts, recurring rules, and automation via the API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "josetseph",
+      "userId": "s17738fd3fb2hqeee67pk7jp6984bzc2",
+      "displayName": "josetseph",
+      "image": "https://avatars.githubusercontent.com/u/55252590?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775519885334,
+      "changelog": "- Maintenance release with internal code changes in src/api.py.\n- No user-facing features or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc233fff879bbfc905a5b3b1c8cd006eedcbf6c87165b0b2e46b3413399115b2"
+}

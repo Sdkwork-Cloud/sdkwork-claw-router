@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69498,
+  "uuid": "skill-clawhub-umeng-app-analysis",
+  "skillKey": "clawhub-umeng-app-analysis",
+  "name": "umeng-app-analysis",
+  "summary": "友盟+ App 数据分析工具，通过友盟 Open API 查询移动应用统计数据。支持全部应用统计（App列表、数量、汇总数据）和单个应用详细分析（活跃/新增用户、启动次数、留存率、使用时长、渠道/版本维度、自定义事件及参数分析）。当用户需要查询友盟App统计数据、分析应用指标、获取用户行为数据时使用。认证信息从环...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.umeng_app_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Wing",
+      "features": [
+        "友盟+ App 数据分析工具，通过友盟 Open API 查询移动应用统计数据。支持全部应用统计（App列表、数量、汇总数据）和单个应用详细分析（活跃/新增用户、启动次数、留存率、使用时长、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/umeng-app-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6308474?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "umeng-app-analysis",
+      "url": "https://clawhub.ai/skills/umeng-app-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "umeng-app-analysis",
+    "url": "https://clawhub.ai/skills/umeng-app-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/umeng-app-analysis-c1ba5f9c5bb44002.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/umeng-app-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-umeng-app-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be0e4826291154a03f24be845933ba3cbc7ea1fcf612119d50d0c0da7202b0b7",
+      "artifactSizeBytes": 2707
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:53:18.965Z"
+}

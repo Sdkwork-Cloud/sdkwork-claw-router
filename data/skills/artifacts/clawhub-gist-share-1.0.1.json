@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gist-share@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gist_share",
+  "skill": {
+    "id": 42682,
+    "skillKey": "clawhub-gist-share",
+    "name": "Gist Share"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gist-share",
+    "url": "https://clawhub.ai/skills/gist-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gist-share-793cf023d6978834.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post content to GitHub Gist and get back a shareable URL. Rich context sharing between agents, operators, and humans."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ragesaq",
+      "userId": "s17a03cntbkgqmcgnfy82jdwyh83pade",
+      "displayName": "ragesaq",
+      "image": "https://avatars.githubusercontent.com/u/11304287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775061618454,
+      "changelog": "Added README, homepage now points to PsiClawOps/gist-share",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80a2b6311768afd0e719275a6261783791dc7ace22dc9d4c828d292b1a54f838"
+}

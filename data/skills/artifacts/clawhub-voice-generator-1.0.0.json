@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_generator",
+  "skill": {
+    "id": 55814,
+    "skillKey": "clawhub-voice-generator",
+    "name": "Voice Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-generator",
+    "url": "https://clawhub.ai/skills/voice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-generator-a6dc9b33f63d78aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a natural male voiceover in English for my product demo video — a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777866760195,
+      "changelog": "- Initial release of Voice Generator, enabling fast AI voiceover generation for videos.\n- Upload TXT, DOCX, PDF, or MP4 files up to 200MB and receive a natural-sounding male English voiceover in 20–40 seconds.\n- Designed for content creators, marketers, and educators to skip complex editing software and get instant, professional-quality results.\n- Supports easy export to multiple formats including MP4, MOV, AVI, WEBM, MP3, and WAV.\n- Includes backend API token management with automatic session creation and error handling for credits, file types, and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e711b3b790129f8c8c87ce177dc58ccd9cf698e935956e5344d578233d41c6c"
+}

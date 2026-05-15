@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20115,
+  "uuid": "skill-clawhub-sglang-diffusion",
+  "skillKey": "clawhub-sglang-diffusion",
+  "name": "SGLang-Diffusion Image Generation",
+  "summary": "Generate images using a local SGLang-Diffusion server (FLUX, Stable Diffusion, Qwen-Image, etc.). Use when: user asks to generate, create, draw, or render an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sglang_diffusion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangyukunok",
+      "features": [
+        "Generate images using a local SGLang-Diffusion server (FLUX, Stable Diffusion, Qwen-Image, etc.)",
+        "Use when: user asks to generate, create, draw, or render an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sglang-diffusion@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7341895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sglang-diffusion",
+      "url": "https://clawhub.ai/skills/sglang-diffusion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sglang-diffusion",
+    "url": "https://clawhub.ai/skills/sglang-diffusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sglang-diffusion-105c39018798df33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sglang-diffusion@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sglang-diffusion-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2babc15c1893bdeb48ed873d4060b0b669f4ad93883300174b900302038f3197",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T05:54:54.176Z"
+}

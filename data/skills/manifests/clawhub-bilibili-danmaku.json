@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18378,
+  "uuid": "skill-clawhub-bilibili-danmaku",
+  "skillKey": "clawhub-bilibili-danmaku",
+  "name": "Bilibili Danmaku",
+  "summary": "Fetch and analyze Bilibili video danmaku (bullet comments) from a Bilibili video URL/BVID, then output keyword frequency, SVG word cloud, sentiment distribut...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_danmaku",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "陈希瑞",
+      "features": [
+        "Fetch and analyze Bilibili video danmaku (bullet comments) from a Bilibili video URL/BVID, then."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-danmaku@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61683267?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-danmaku",
+      "url": "https://clawhub.ai/skills/bilibili-danmaku"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-danmaku",
+    "url": "https://clawhub.ai/skills/bilibili-danmaku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-danmaku-25e2c1062f34f9a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-danmaku@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-danmaku-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6986fe59168e831bc1a2abeb97e3154a0f0aed27411161b3984bc83068bab1b5",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T18:38:48.960Z"
+}

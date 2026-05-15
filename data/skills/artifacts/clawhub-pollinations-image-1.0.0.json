@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pollinations-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pollinations_image",
+  "skill": {
+    "id": 14500,
+    "skillKey": "clawhub-pollinations-image",
+    "name": "Pollinations Image Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pollinations-image",
+    "url": "https://clawhub.ai/skills/pollinations-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pollinations-image-349581e80feb4307.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate detailed images from text prompts using Pollinations.ai models with optional configuration, model selection, and advanced settings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aprilox",
+      "userId": "publishers:aprilox",
+      "displayName": "Aprilox",
+      "image": "https://avatars.githubusercontent.com/u/51274917?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1090,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771677117063,
+      "changelog": "- Initial release of the Pollinations Image Generation Skill.\n- Generate images easily from the command line using Pollinations.ai.\n- Supports model switching, persistent user configuration, and model comparison by quality, speed, and cost.\n- Offers 5,000 free images per month via pollen grants.\n- Modular and extensible design with simple setup and clear documentation.\n- Includes scripts and examples for generating images, configuring defaults, and adding new models.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e6453b63e20c7fb614d516bce4d42b82e79276815f0c02ed9a5998ab5d8d312"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/formula1@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formula1",
+  "skill": {
+    "id": 68513,
+    "skillKey": "clawhub-formula1",
+    "name": "Formula1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formula1",
+    "url": "https://clawhub.ai/skills/formula1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formula1-4d11818aece66817.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于formula1品牌的创立背景、核心业务、市场分布、行业地位及最新动态的结构化信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776238665453,
+      "changelog": "- 更新了内容结构与表述，使信息介绍更加简洁明了\n- 明确列出「你将了解到」的具体要素（发展历程、核心特色等）\n- 新增推荐用途，突出市场调研、竞品分析和背景调查等实用场景\n- 强调官方和权威媒体作为最新信息来源",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:339962efeed4b022d43948748009fc1accee2463598d1338e6096715d4e79e78"
+}

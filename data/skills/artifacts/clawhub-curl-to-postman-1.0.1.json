@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/curl-to-postman@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.curl_to_postman",
+  "skill": {
+    "id": 48795,
+    "skillKey": "clawhub-curl-to-postman",
+    "name": "curl-to-postman"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "curl-to-postman",
+    "url": "https://clawhub.ai/skills/curl-to-postman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/curl-to-postman-bf48137b16326cfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert curl commands to Postman Collection v2.1 importable JSON"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuliwanzi",
+      "userId": "s179z078xqbwaxm5mr7qtmkvfh83q9wq",
+      "displayName": "liuliwanzi",
+      "image": "https://avatars.githubusercontent.com/u/15521408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777528533470,
+      "changelog": "- Updated example curl command in documentation to redact the bearer token for privacy.\n- No functional or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60cb0a84bdd851c7b6bf926105a5b5c9f7a4d5a8819fbd7fc0d0e11ded85b464"
+}

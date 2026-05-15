@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21521,
+  "uuid": "skill-clawhub-ohif-deploy",
+  "skillKey": "clawhub-ohif-deploy",
+  "name": "Ohif Deploy",
+  "summary": "Deploy OHIF medical imaging viewer with Docker, configure DICOMweb sources, SSL, and integrate servers like tbidea, orthanc, and DCM4CHEE.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohif_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Deploy OHIF medical imaging viewer with Docker, configure DICOMweb sources, SSL, and integrate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ohif-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ohif-deploy",
+      "url": "https://clawhub.ai/skills/ohif-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohif-deploy",
+    "url": "https://clawhub.ai/skills/ohif-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohif-deploy-1152f925c7628191.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ohif-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ohif-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5a0c27daf773bd0dda91a85983fd6303f03671552c0aa80f254fdb9d9cc45e8",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T15:47:21.423Z"
+}

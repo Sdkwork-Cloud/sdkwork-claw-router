@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40493,
+  "uuid": "skill-clawhub-auto-caption-online",
+  "skillKey": "clawhub-auto-caption-online",
+  "name": "Auto Caption Online",
+  "summary": "content creators and marketers add video files into captioned video files using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs at...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_caption_online",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "content creators and marketers add video files into captioned video files using this skill",
+        "Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs at..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-caption-online@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-caption-online",
+      "url": "https://clawhub.ai/skills/auto-caption-online"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-caption-online",
+    "url": "https://clawhub.ai/skills/auto-caption-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-caption-online-038552d9c287b307.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-caption-online@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-caption-online-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27ea9403dbaa4b6123f60fdbdb0f0fe5b55f77add62b7915e0a381adbcd54fd7",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T07:58:37.234Z"
+}

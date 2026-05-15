@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51964,
+  "uuid": "skill-clawhub-agentrank",
+  "skillKey": "clawhub-agentrank",
+  "name": "AgentRank",
+  "summary": "Your tool recommendations are only as good as your data. Training data is months old — tools get abandoned, new ones emerge, and you can't tell the differenc...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentrank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superlowburn",
+      "features": [
+        "Your tool recommendations are only as good as your data",
+        "Training data is months old — tools get abandoned, new ones emerge, and you can't tell the diff."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentrank@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24779772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentrank",
+      "url": "https://clawhub.ai/skills/agentrank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentrank",
+    "url": "https://clawhub.ai/skills/agentrank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentrank-990a0f058aefeeab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentrank@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentrank-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c49a6567a19825a4955330dfc868b9577996716422aef74dd335db745686d7b",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:16:01.312Z"
+}

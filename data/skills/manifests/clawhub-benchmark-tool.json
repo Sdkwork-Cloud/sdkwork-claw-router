@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20570,
+  "uuid": "skill-clawhub-benchmark-tool",
+  "skillKey": "clawhub-benchmark-tool",
+  "name": "Benchmark Tool",
+  "summary": "Benchmark CPU, memory, disk I/O, and network on your system. Use when measuring server performance.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.benchmark_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Benchmark CPU, memory, disk I/O, and network on your system",
+        "Use when measuring server performance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/benchmark-tool@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "benchmark-tool",
+      "url": "https://clawhub.ai/skills/benchmark-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "benchmark-tool",
+    "url": "https://clawhub.ai/skills/benchmark-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/benchmark-tool-94b7ef547417478b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/benchmark-tool@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-benchmark-tool-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5905767d904102547cb35a820766dbec74fc29b14950fc24d1b11abecba903fc",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:08:28.680Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-generator-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_generator_text",
+  "skill": {
+    "id": 55224,
+    "skillKey": "clawhub-free-generator-text",
+    "name": "Free Generator Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-generator-text",
+    "url": "https://clawhub.ai/skills/free-generator-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-generator-text-ba9ce6f74107f501.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a 30-second video from this product description text — and get te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776742931757,
+      "changelog": "Initial release: Generate videos from text prompts using a cloud-based AI pipeline.\n\n- Instantly turn text (TXT, DOCX, PDF, up to 500MB) into 30-second 1080p MP4 videos.\n- Simple onboarding: auto-sets up free 7-day session and credits with anonymous token.\n- Clear, concise commands for video export, credits, upload, and state/status checks.\n- Cloud GPU backend: 30–90 seconds per render, supports multiple video and audio formats.\n- Translates backend GUI-driven responses into streamlined chat actions.\n- Full error handling for setup, upload, and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e4c4ea8a6a05df7aa030456706c51bc08ba0f4b893adc75a2c5bff1d4e023c5"
+}

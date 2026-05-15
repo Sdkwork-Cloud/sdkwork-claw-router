@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55638,
+  "uuid": "skill-clawhub-picnow",
+  "skillKey": "clawhub-picnow",
+  "name": "Picnow — Image Generation",
+  "summary": "Generate high-quality images via Picnow (api.letmego.top). Activate when the user wants to create, generate, draw, or design images — including product photo...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picnow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeek",
+      "features": [
+        "Generate high-quality images via Picnow (api.letmego.top)",
+        "Activate when the user wants to create, generate, draw, or design images — including product ph."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/picnow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1102076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "picnow",
+      "url": "https://clawhub.ai/skills/picnow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picnow",
+    "url": "https://clawhub.ai/skills/picnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picnow-9afd6b62e9c60321.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/picnow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-picnow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77909f1484a52ac8417a8214d14d7431062e68b3256ef4e17f426bea058e2788",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T16:08:45.243Z"
+}

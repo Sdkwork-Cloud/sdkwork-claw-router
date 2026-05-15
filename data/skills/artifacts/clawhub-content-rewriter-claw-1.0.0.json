@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-rewriter-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_rewriter_claw",
+  "skill": {
+    "id": 71711,
+    "skillKey": "clawhub-content-rewriter-claw",
+    "name": "流量重组洗稿虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-rewriter-claw",
+    "url": "https://clawhub.ai/skills/content-rewriter-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-rewriter-claw-c32de90ca8456532.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "流量重组洗稿虾 — 基于爆款逻辑的深度内容改写专家。保留爆款基因，规避重复风险，快速产出高质量原创内容。 **当以下情况时使用此 Skill**： (1) 需要将爆款内容改写为符合自己账号风格的原创版本 (2) 需要跨平台内容迁移（长文→短视频脚本、视频→图文） (3) 需要基于同一核心观点生成多个不同角度的内容..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775720343516,
+      "changelog": "Initial release: 基于爆款逻辑的深度内容改写专家，支持4种改写深度，含爆款基因提炼模型和合规检查规则",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3283b01e91782d873264966817bb4c11ac9e17f7ecdc01f93ee4bc10e82b79e"
+}

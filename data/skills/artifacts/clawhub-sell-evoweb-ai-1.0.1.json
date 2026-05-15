@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sell-evoweb-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sell_evoweb_ai",
+  "skill": {
+    "id": 12675,
+    "skillKey": "clawhub-sell-evoweb-ai",
+    "name": "Create a Self-Selling Website"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sell-evoweb-ai",
+    "url": "https://clawhub.ai/skills/sell-evoweb-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sell-evoweb-ai-207d31f10ffd362b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create AI-First Website with GEO (Generative Engine Optimization) and marketing rules to convert visitors into leads"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "galizki",
+      "userId": "s17byxwhjg8dn0f62ys0r1jca183qh6e",
+      "displayName": "galizki",
+      "image": "https://avatars.githubusercontent.com/u/67021003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1491,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770874464880,
+      "changelog": "- Updated service API base URL from web.oto.dev to evoweb.ai.\n- Adjusted registration link to point directly to evoweb.ai.\n- Replaced \"Gnrative Engine Optimization\" with corrected term \"Generative Engine Optimization (GEO)\" in the description.\n- No changes to endpoints, workflow, or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd905b4129968e2ccc1f28dea6289fdf9d5085e2ef7c625da29f8f65ac470b3c"
+}

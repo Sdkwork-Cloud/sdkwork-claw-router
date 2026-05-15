@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/think-cog@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.think_cog",
+  "skill": {
+    "id": 9848,
+    "skillKey": "clawhub-think-cog",
+    "name": "Think Cog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "think-cog",
+    "url": "https://clawhub.ai/skills/think-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/think-cog-183c3f375d2e06df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI brainstorming and strategic thinking powered by CellCog. Reasoning, problem-solving, ideation, strategic planning — then execution across every modality:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitishgargiitd",
+      "userId": "s1766yx1dct3dffeec508gjrz983fce7",
+      "displayName": "CellCog",
+      "image": "https://avatars.githubusercontent.com/u/14193431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3034,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 7,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1776925180770,
+      "changelog": "- Added required Python binary (`python3`) and `CELLCOG_API_KEY` environment variable to skill metadata\n- No changes to the skill's logic or usage instructions\n- Documentation update for clearer dependency requirements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b225201f2756ba8e1bbdf7e62c034384ccbd92f857c585c0f25babec43f3bf0"
+}

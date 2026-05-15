@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interior-auto-budget@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interior_auto_budget",
+  "skill": {
+    "id": 72053,
+    "skillKey": "clawhub-interior-auto-budget",
+    "name": "室内设计自动预算生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interior-auto-budget",
+    "url": "https://clawhub.ai/skills/interior-auto-budget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interior-auto-budget-3f116e8273753b27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动从DXF提取户型信息，结合设计师历史报价生成符合原模板的家装或工装预算Excel，快速准确。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "137984917-cyber",
+      "userId": "s1790hfws72axnnhfbnfe3gkb183j1qr",
+      "displayName": "137984917-cyber",
+      "image": "https://avatars.githubusercontent.com/u/270913925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777373505673,
+      "changelog": "室内设计自动预算生成器 v1.0.0 — 自动从户型DXF生成本地化预算表\n\n- 自动提取DXF户型信息（楼层、面积等）\n- 利用历史报价自动建立标准项目库，精准分配工程量\n- 一键生成完全匹配原模板的Excel预算，支持家装/工装\n- 保留本地报价体系，防止漏项，数据仅本地存储\n- 显著提高预算效率，半小时出全稿",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d7e2dd11ed0dff6f7bbfe62c5d826e4798b8df9f6f7136b1f83180ae2e77e42"
+}

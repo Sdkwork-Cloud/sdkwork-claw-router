@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cn-installer-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cn_installer_v2",
+  "skill": {
+    "id": 60534,
+    "skillKey": "clawhub-openclaw-cn-installer-v2",
+    "name": "Openclaw Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cn-installer-v2",
+    "url": "https://clawhub.ai/skills/openclaw-cn-installer-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cn-installer-v2-a359332759edd68b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 安装服务助手 - 帮助用户快速配置 OpenClaw，支持国产 AI 模型（DeepSeek/智谱/通义）。适合：想使用 OpenClaw 但不熟悉安装配置的用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774762104025,
+      "changelog": "openclaw-installer v1.0.0 初始版本发布：\n\n- 提供 OpenClaw 一键安装及环境检测指南\n- 支持 DeepSeek、智谱 GLM-5、通义千问等国产 AI 模型配置\n- 提供基础、高级、企业定制三类安装服务\n- 集成常见问题答疑与联系方式\n- 支持 macOS、Windows、Linux 多平台",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2352acf8becfa8d0a14444f38f6b0dfa981b718f762badcb733b30aa67a2652"
+}

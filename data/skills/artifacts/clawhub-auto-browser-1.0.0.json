@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_browser",
+  "skill": {
+    "id": 64635,
+    "skillKey": "clawhub-auto-browser",
+    "name": "auto-browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-browser",
+    "url": "https://clawhub.ai/skills/auto-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-browser-f556d92e88ca7b21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Chrome Debug 模式（CDP）自动化操作真实浏览器——导航、点击、填表、提取数据、截图、执行多步流程。当用户说\"帮我在网页上操作\"、\"打开浏览器\"、\"帮我点\"、\"帮我填\"、\"帮我抓取\"、\"帮我截图\"、\"auto-browser\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottliu007",
+      "userId": "publishers:scottliu007",
+      "displayName": "fanzhuo",
+      "image": "https://avatars.githubusercontent.com/u/128193289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773970643874,
+      "changelog": "auto-browser 1.0.0 - 首个版本上线，支持通过 Chrome 调试协议自动化真实浏览器操作。\n\n- 支持自然语言描述一键完成导航、点击、填表、抓取数据、截图等多步网页操作\n- 所有操作基于 Playwright-CDP 工具，保持真实浏览器登录态，禁止用沙盒环境\n- 自动检测并启动 Chrome Debug 模式，无需用户干预\n- 每步操作前自动获取页面快照，实现稳健的元素定位与结果确认\n- 内置多步流程编排、安全边界控制和常见错误处理机制\n- 提供详细中文使用说明和环境初次配置指引",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af31580a94ebbb66cb05e161aea7985ed4b51084aee761fbe3d2962384f299c6"
+}

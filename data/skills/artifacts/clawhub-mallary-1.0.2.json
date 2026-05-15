@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mallary@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mallary",
+  "skill": {
+    "id": 39312,
+    "skillKey": "clawhub-mallary",
+    "name": "Mallary Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mallary",
+    "url": "https://clawhub.ai/skills/mallary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mallary-c0ec1b7988a266eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mallary is a multi-platform social media publishing tool for X, Facebook, Instagram, LinkedIn, YouTube, TikTok, Pinterest, Reddit, Threads, and Snapchat. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sammydigits",
+      "userId": "s1772rrgd00r595atcvfwnk6qd84rkdg",
+      "displayName": "Sam T",
+      "image": "https://avatars.githubusercontent.com/u/1637993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776177898283,
+      "changelog": "Add ability to list connected platforms",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fda08c3fa5b3d76b87703aa24a1e6692eae49104a229a68892da4e8e647629c"
+}

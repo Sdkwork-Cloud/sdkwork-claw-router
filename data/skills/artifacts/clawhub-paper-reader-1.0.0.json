@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_reader",
+  "skill": {
+    "id": 24352,
+    "skillKey": "clawhub-paper-reader",
+    "name": "Paper Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-reader",
+    "url": "https://clawhub.ai/skills/paper-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-reader-bd764838b4a469c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive PDF paper reader for academic research. Extracts text, figures, tables, and structured content from research papers with support for multimodal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "changer-changer",
+      "userId": "s17a1mefv9pez7cqx2pp5bz16184j3tp",
+      "displayName": "崔之行",
+      "image": "https://avatars.githubusercontent.com/u/126934792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773798567409,
+      "changelog": "Initial release of paper-reader, a comprehensive PDF tool for academic research.\n\n- Extracts full text, figures, tables, and structured content from research papers.\n- Supports metadata extraction: title, authors, abstract, keywords.\n- Recognizes and organizes text by academic sections (e.g., Introduction, Methods).\n- Batch processes entire folders of papers for large-scale workflows.\n- Offers both command-line tool and Python API for flexible usage.\n- Outputs organized files: plain text, images, tables (CSV), sectioned chapters, and metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4ae6738264fcd979d5d4715557094a072df3319d5b8719a047c4a48dd4833f8"
+}

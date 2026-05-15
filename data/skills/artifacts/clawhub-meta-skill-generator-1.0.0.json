@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-skill-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_skill_generator",
+  "skill": {
+    "id": 64504,
+    "skillKey": "clawhub-meta-skill-generator",
+    "name": "skills creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-skill-generator",
+    "url": "https://clawhub.ai/skills/meta-skill-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-skill-generator-ec34e35351a2d570.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 技能自动生成框架。用于自动扫描、注册、检索、生成、评估、测试、优化技能。 触发场景： 1. 用户要求创建\"技能工厂\" 2. 需要检索/生成/评估技能 3. 需要测试/优化技能代码 状态：核心功能已完成 ⚠️ 注意：首次使用需运行 `python scripts/embed_skill.py` 重建向量搜索库"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xjxjdnsnak-cell",
+      "userId": "s175g412xdrx30ajj04x20fz6183hgnt",
+      "displayName": "xjxjdnsnak-cell",
+      "image": "https://avatars.githubusercontent.com/u/256383799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773135571682,
+      "changelog": "Initial release: provides a full framework for automatic AI skill generation, management, and optimization.\n\n- Supports scanning, storage, search, generation, evaluation, testing, and automatic optimization of skills.\n- Implements a scoring formula across five key dimensions, including success rate and code quality.\n- Includes process flow for skill reuse or generation based on user needs.\n- Offers built-in optimization strategies and recommendations for best coding practices.\n- Organizes scripts for each core function and maintains databases for skills, scores, and optimizations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d325f70dd44d58ca867249023aa1568118768575f1898bb1e998e562a45f1a67"
+}

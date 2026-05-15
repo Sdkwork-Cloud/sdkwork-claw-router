@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xmtp-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmtp_cli",
+  "skill": {
+    "id": 12214,
+    "skillKey": "clawhub-xmtp-cli",
+    "name": "XMTP CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmtp-cli",
+    "url": "https://clawhub.ai/skills/xmtp-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmtp-cli-68206522051ef276.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run and script the XMTP CLI for testing, debugging, and interacting with XMTP conversations, groups, and messages. Use when the user needs init, send, list, groups, debug, sync, permissions, or content commands from the CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "humanagent",
+      "userId": "publishers:humanagent",
+      "displayName": "humanagent",
+      "image": "https://avatars.githubusercontent.com/u/1447073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1762,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769993827831,
+      "changelog": "Initial release of xmtp-cli skill\n\n- Provides a command-line interface for testing, debugging, and interacting with XMTP conversations, groups, and messages.\n- Supports commands for init, send, list, groups, debug, sync, permissions, and content demonstrations.\n- Includes sub-skills for specialized tasks (setup, groups, send, list, debug, sync, permissions, content, debugging).\n- Installation instructions and usage guidance are provided.\n- Links to full documentation for additional help.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b6ef3d0f65ea856d708fec36a0ecd5efb282015c6879fc943de7c64c67b944d"
+}

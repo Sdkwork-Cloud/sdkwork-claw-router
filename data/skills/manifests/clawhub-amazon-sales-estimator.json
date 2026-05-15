@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33350,
+  "uuid": "skill-clawhub-amazon-sales-estimator",
+  "skillKey": "clawhub-amazon-sales-estimator",
+  "name": "Amazon Sales Estimator",
+  "summary": "Amazon sales volume estimator for sellers and product researchers. Estimate monthly sales and revenue from BSR (Best Seller Rank), ASIN, or keyword. Three mo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_sales_estimator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Henk Nie",
+      "features": [
+        "Amazon sales volume estimator for sellers and product researchers",
+        "Estimate monthly sales and revenue from BSR (Best Seller Rank), ASIN, or keyword",
+        "Three mo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-sales-estimator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44972754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-sales-estimator",
+      "url": "https://clawhub.ai/skills/amazon-sales-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-sales-estimator",
+    "url": "https://clawhub.ai/skills/amazon-sales-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-sales-estimator-ac1304e2cbf5003c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-sales-estimator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-sales-estimator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7c25cb28927370cf169f7335d7c5c4993e3b4ddb1fdf75a8a357faaa63f17a4",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:36:37.189Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payment-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payment_skill",
+  "skill": {
+    "id": 62111,
+    "skillKey": "clawhub-payment-skill",
+    "name": "Payment Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payment-skill",
+    "url": "https://clawhub.ai/skills/payment-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payment-skill-2710bcf5c3111f98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 原生支付解决方案 - 提供安全、可靠的支付功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neversatrabbit",
+      "userId": "s174tmk7dh1h6p3rtgwpht0qq584ty1j",
+      "displayName": "neverSatRabbit",
+      "image": "https://avatars.githubusercontent.com/u/27465824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773974832677,
+      "changelog": "- Updated documentation with detailed usage instructions, tool descriptions, and setup guides.\n- SKILL.md now includes clear examples for all tools: create_payment, query_payment, and refund_payment.\n- Expanded environment variable details, listing both required and optional fields.\n- Outlined security features and technical requirements for deployment.\n- Added support and contact information for technical help and issue reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b925d70a9c72efda1fd2b72efe1c5727fa85437fb5698b0d7752974b3bf6059a"
+}

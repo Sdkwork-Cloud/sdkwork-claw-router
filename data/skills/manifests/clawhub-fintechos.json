@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36023,
+  "uuid": "skill-clawhub-fintechos",
+  "skillKey": "clawhub-fintechos",
+  "name": "Fintechos",
+  "summary": "FintechOS integration. Manage data, records, and automate workflows. Use when the user wants to interact with FintechOS data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fintechos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "FintechOS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with FintechOS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fintechos@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fintechos",
+      "url": "https://clawhub.ai/skills/fintechos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fintechos",
+    "url": "https://clawhub.ai/skills/fintechos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fintechos-5dd3b777303686d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fintechos@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fintechos-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b44a580acf06c7c8520761972b8184941b10c8bc7d61b506519508a72893df7",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:27:40.149Z"
+}

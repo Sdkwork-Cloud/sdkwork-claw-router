@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58621,
+  "uuid": "skill-clawhub-cli-anything-wrapper",
+  "skillKey": "clawhub-cli-anything-wrapper",
+  "name": "CLI Anything Wrapper",
+  "summary": "包装 CLI-Anything，让 OpenClaw 能调用任意软件的 CLI 功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_anything_wrapper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntaffffff",
+      "features": [
+        "包装 CLI-Anything，让 OpenClaw 能调用任意软件的 CLI 功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cli-anything-wrapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186145692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cli-anything-wrapper",
+      "url": "https://clawhub.ai/skills/cli-anything-wrapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-anything-wrapper",
+    "url": "https://clawhub.ai/skills/cli-anything-wrapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-anything-wrapper-ad1d59876d582875.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cli-anything-wrapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cli-anything-wrapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cbc08c3e15e8f4301a30ada4cf83f5fb4fd92340d7cbfe204d03837b51dc269",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T00:20:19.307Z"
+}

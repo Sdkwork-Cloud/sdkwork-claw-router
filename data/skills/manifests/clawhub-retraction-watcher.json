@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42444,
+  "uuid": "skill-clawhub-retraction-watcher",
+  "skillKey": "clawhub-retraction-watcher",
+  "name": "Retraction Watcher",
+  "summary": "Automatically scan document reference lists and check against Retraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retraction_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Automatically scan document reference lists and check against Retraction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retraction-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retraction-watcher",
+      "url": "https://clawhub.ai/skills/retraction-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retraction-watcher",
+    "url": "https://clawhub.ai/skills/retraction-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retraction-watcher-c95dfca50f5866cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retraction-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retraction-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1700baa2513635b12314d61e586ce7e0bb8166490bc58470a874f1107b6e2226",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:17:36.899Z"
+}

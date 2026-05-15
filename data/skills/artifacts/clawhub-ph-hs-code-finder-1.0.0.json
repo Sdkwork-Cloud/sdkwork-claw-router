@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ph-hs-code-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ph_hs_code_finder",
+  "skill": {
+    "id": 58634,
+    "skillKey": "clawhub-ph-hs-code-finder",
+    "name": "一个自动化的菲律宾海关编码（HS Code）查询工具，帮助出口商快速找到正确的商品分类编码。｜"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ph-hs-code-finder",
+    "url": "https://clawhub.ai/skills/ph-hs-code-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ph-hs-code-finder-08b9590995f28baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Philippines customs HS codes for products exported to the Philippines. Use when user asks about \"菲律宾海关编码\", \"HS code Philippines\", \"tariff code\", \"custo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wumaohua233",
+      "userId": "s17c5qmbskh9awcpc6t84spkqn83h82y",
+      "displayName": "wumaohua233",
+      "image": "https://avatars.githubusercontent.com/u/29728050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773455845728,
+      "changelog": "Initial release v1.0.0:\n\n🎯 核心功能\n- 智能商品分类建议：200+ 商品关键词自动匹配 HS 章节\n- 自动化浏览器操作：使用 Playwright 自动获取 Google Drive PDF 链接\n- PDF 内容搜索：在菲律宾关税书中快速查找准确的 HS 编码\n- 一键查询：单命令完成分类、下载、搜索全流程\n\n🔑 重要发现\n菲律宾关税委员会 2022 年关税书 PDF 实际存储在 Google Drive，本 Skill 通过自动化浏览器操作获取真实下载链接。\n\n📦 包含脚本\n- query_hs_code.py: 统一查询入口（一键完成）\n- suggest_chapter.py: 智能商品分类建议\n- get_chapter_pdf.py: 自动获取 Google Drive 链接并下载\n- search_hs_code.py: PDF 内容搜索 HS 编码\n\n📖 使用示例\npython scripts/query_hs_code.py \"hair dryer\"\npython scripts/query_hs_code.py \"mobile phone charger\"\n\n🔗 开源仓库\nhttps://github.com/wumaohua233/PH_HSCODE_Search_Skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e95786f2b14197ecbab95d27db9e3fbea2cd8266d29e4c41a45f71803e793f53"
+}

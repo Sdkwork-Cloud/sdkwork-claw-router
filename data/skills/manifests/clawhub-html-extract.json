@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30988,
+  "uuid": "skill-clawhub-html-extract",
+  "skillKey": "clawhub-html-extract",
+  "name": "HTML Extract",
+  "summary": "Extract content from HTML pages and files using MinerU. Converts HTML to clean, structured Markdown preserving headings, lists, tables, and text hierarchy. F...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_extract",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzlzyCA",
+      "features": [
+        "Extract content from HTML pages and files using MinerU",
+        "Converts HTML to clean, structured Markdown preserving headings, lists, tables, and text hierar."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/html-extract@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87289074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "html-extract",
+      "url": "https://clawhub.ai/skills/html-extract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-extract",
+    "url": "https://clawhub.ai/skills/html-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-extract-8c569e30ba1b8cff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/html-extract@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-html-extract-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49a9fe3f4fa512fd3af5aea34d2ce52ad2227098267ae84acd13a6e194651f66",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:58:24.974Z"
+}

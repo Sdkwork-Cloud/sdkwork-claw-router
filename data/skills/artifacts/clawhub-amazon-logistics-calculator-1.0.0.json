@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-logistics-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_logistics_calculator",
+  "skill": {
+    "id": 29003,
+    "skillKey": "clawhub-amazon-logistics-calculator",
+    "name": "Amazon Logistics Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-logistics-calculator",
+    "url": "https://clawhub.ai/skills/amazon-logistics-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-logistics-calculator-95ab4a190afdd77a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon FBA logistics cost calculator and shipping optimizer. Compare sea freight, air freight, and express courier costs. Calculate total landed cost includi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774072579912,
+      "changelog": "- Initial release of Amazon FBA logistics cost calculator.\n- Allows comparison of sea freight, air freight, and express courier shipping costs.\n- Calculates total landed cost, including duties, VAT, customs fees, and all FBA-related charges.\n- Provides breakdowns for different shipping scenarios and product types.\n- Guides users in selecting optimal shipping methods and freight forwarders.\n- Includes commands for cost comparison, timeline planning, carton optimization, and duty calculation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb938537730578fdd9d4156f708f80f591fc3c9bd1bfe543e82f4b7b907f9f9e"
+}

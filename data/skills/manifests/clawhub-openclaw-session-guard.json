@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60889,
+  "uuid": "skill-clawhub-openclaw-session-guard",
+  "skillKey": "clawhub-openclaw-session-guard",
+  "name": "OpenClaw Session Guard",
+  "summary": "管理 OpenClaw 长会话防爆机制（80%自动归档、自动轮换新会话、低 token 交接）及定时任务安装。用户提到 compacting context、会话过长、自动总结归档、session 轮换、LaunchAgent 定时任务时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Buck",
+      "features": [
+        "管理 OpenClaw 长会话防爆机制（80%自动归档、自动轮换新会话、低 token 交接）及定时任务安装。用户提到 compacting context、会话过长、自动总结归档、sess."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-session-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249694746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-session-guard",
+      "url": "https://clawhub.ai/skills/openclaw-session-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-guard",
+    "url": "https://clawhub.ai/skills/openclaw-session-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-guard-8ea4a988453bd392.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-session-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcd396fd1421f0746dc15c4a9559693be5a6e1bdde48fce7578cb63d98a0a40c",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T08:20:21.730Z"
+}

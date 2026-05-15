@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73212,
+  "uuid": "skill-clawhub-warm-talk",
+  "skillKey": "clawhub-warm-talk",
+  "name": "聊天助理",
+  "summary": "聊天助理技能。当用户不知道怎么回复女生、不知道怎么说开场白、想知道女生某句话什么意思、聊天卡壳了、不知道怎么约女生出来时触发。功能：分析女生回复的情绪和意图，给出3-5个幽默风趣又有梗的回复选项，附带分析思路和踩雷提示。关键词：怎么回复、怎么回、她说什么意思、不知道怎么聊、聊天卡壳、怎么约她出来、怎么开场白、聊天...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warm_talk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahaodl",
+      "features": [
+        "聊天助理技能。当用户不知道怎么回复女生、不知道怎么说开场白、想知道女生某句话什么意思、聊天卡壳了、不知道怎么约女生出来时触发。功能：分析女生回复的情绪和意图，给出3-5个幽默风趣又有梗的回复."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warm-talk@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264941686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warm-talk",
+      "url": "https://clawhub.ai/skills/warm-talk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warm-talk",
+    "url": "https://clawhub.ai/skills/warm-talk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warm-talk-ca8c09fe9db357ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warm-talk@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-warm-talk-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ab286e34336d66a0aa944d34f1cc841a08014f2da9e7c42574c070f51c6942b",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:33:04.194Z"
+}

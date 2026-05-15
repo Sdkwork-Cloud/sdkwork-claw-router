@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24710,
+  "uuid": "skill-clawhub-consensus-persona-engine",
+  "skillKey": "clawhub-consensus-persona-engine",
+  "name": "consensus-persona-engine",
+  "summary": "Deterministic persona reputation engine that applies guard decision effects to persona_set state and emits explicit reputation_delta artifacts.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_persona_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kai Cianflone",
+      "features": [
+        "Deterministic persona reputation engine that applies guard decision effects to persona_set stat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consensus-persona-engine@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30943151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consensus-persona-engine",
+      "url": "https://clawhub.ai/skills/consensus-persona-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-persona-engine",
+    "url": "https://clawhub.ai/skills/consensus-persona-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-persona-engine-f4b62b25c22ca4b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consensus-persona-engine@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-consensus-persona-engine-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acf7b1297edf6dabc67d133b34ffcf0539ad8250b3bba1bab048090ca4916b7d",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T04:47:07.778Z"
+}

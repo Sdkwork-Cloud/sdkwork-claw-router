@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-requirement-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_requirement_analyzer",
+  "skill": {
+    "id": 62364,
+    "skillKey": "clawhub-agent-requirement-analyzer",
+    "name": "Agent Requirement Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-requirement-analyzer",
+    "url": "https://clawhub.ai/skills/agent-requirement-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-requirement-analyzer-cefa51bb7369b830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析 AI 智能体平台的需求文档，提取测试需求、功能点、交互场景、边界条件。专注智能体创建、配置、发布、调用全生命周期。 Use when: 用户说\"分析需求\"、\"需求解析\"、\"智能体需求分析\"、\"PRD 分析\"。 NOT for: 生成测试用例（用 agent-testcase-generator）、生成测试方..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luiciferyi",
+      "userId": "s1709mjz8g1wqx9v1j33fryyj583pcxx",
+      "displayName": "LuiciferYi",
+      "image": "https://avatars.githubusercontent.com/u/24913493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776065505701,
+      "changelog": "- Initial release of the agent-requirement-analyzer skill.\n- Analyzes AI agent platform requirement documents to extract test requirements, features, interaction scenarios, and boundary conditions.\n- Highlights and outputs a list of unclear, missing, or conflicting requirements needing confirmation.\n- Focuses on the full lifecycle: agent creation, configuration, publishing, invocation, and monitoring.\n- Generates a structured requirements analysis report for documentation and review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24fe1e976eeb8d5cb2ddb97ff2b9439ddd3dc9dc14d94bc868bb957431e52f17"
+}

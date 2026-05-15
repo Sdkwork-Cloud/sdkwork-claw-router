@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60891,
+  "uuid": "skill-clawhub-skill-readme-writer",
+  "skillKey": "clawhub-skill-readme-writer",
+  "name": "skill-README-writer",
+  "summary": "为本地项目或 GitHub 项目生成专业的 README.md 文档。**触发词：\"写 README\"、\"生成 README\"、\"README.md\"、\"项目文档\"、\"GitHub 文档\"、\"readme\"、\"项目介绍\"、\"文档生成\"**。支持自动收集项目信息、交互式确认、中英双语。根据项目类型（Python/前...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_readme_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZeroX",
+      "features": [
+        "为本地项目或 GitHub 项目生成专业的 README.md 文档。**触发词：\"写 README\"、\"生成 README\"、\"README.md\"、\"项目文档\"、\"GitHub 文档\"、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-readme-writer@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7137280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-readme-writer",
+      "url": "https://clawhub.ai/skills/skill-readme-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-readme-writer",
+    "url": "https://clawhub.ai/skills/skill-readme-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-readme-writer-b3417fb4ca511812.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-readme-writer@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-readme-writer-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a81f9ff7553a51ea7a1e094a5fa06e7f712241dee87c830142c53f53f58a6136",
+      "artifactSizeBytes": 2779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T14:32:32.877Z"
+}

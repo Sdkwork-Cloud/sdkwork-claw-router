@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-talent-scout@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_talent_scout",
+  "skill": {
+    "id": 37029,
+    "skillKey": "clawhub-chinese-talent-scout",
+    "name": "Chinese Talent Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-talent-scout",
+    "url": "https://clawhub.ai/skills/chinese-talent-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-talent-scout-ff1b6c15b6de611b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, score, and monitor Chinese GitHub developers with GitHub signals, rule-based processing, optional OpenClaw AI evaluation, shortlist queries, cron m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huandu",
+      "userId": "s17556rr90bd9g7dhwhpv2yq4583m9nf",
+      "displayName": "Huan Du",
+      "image": "https://avatars.githubusercontent.com/u/239739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774547497975,
+      "changelog": "Major update: improved security, credential handling, and documentation.\n\n- Renamed skill to \"chinese-talent-scout\"; updated metadata and entrypoint.\n- Added explicit safety, credential, and security guidance in documentation.\n- Introduced dedicated security and credential reference files.\n- Switched commands to be driven through a shell script, improving compatibility.\n- Removed README, test, build, and pipeline scripts for a simpler, leaner package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a3edcb2d295ad676839400fb2989e2a5b691ed573b0c62889dd0389161638ad"
+}

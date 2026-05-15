@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-adyen-binlookup-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_adyen_binlookup_api",
+  "skill": {
+    "id": 40010,
+    "skillKey": "clawhub-lap-adyen-binlookup-api",
+    "name": "Lap Adyen Binlookup Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-adyen-binlookup-api",
+    "url": "https://clawhub.ai/skills/lap-adyen-binlookup-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-adyen-binlookup-api-8273336aa1379139.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adyen BinLookup API skill. Use when working with Adyen BinLookup for get3dsAvailability, getCostEstimate. Covers 2 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775466742272,
+      "changelog": "Initial release of the Adyen BinLookup API skill.\n\n- Provides access to Adyen BinLookup API version 54.\n- Supports two endpoints: get3dsAvailability and getCostEstimate.\n- Requires ADYEN_BINLOOKUP_API_KEY for authentication.\n- Includes setup instructions, endpoint details, and response tips.\n- Offers CLI commands for updating and searching API specifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbdff0a8d4f8674771d675e647161f2f1b480978b40847aab52c0a62e892f29c"
+}

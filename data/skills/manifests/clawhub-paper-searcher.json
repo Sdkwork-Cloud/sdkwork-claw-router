@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59979,
+  "uuid": "skill-clawhub-paper-searcher",
+  "skillKey": "clawhub-paper-searcher",
+  "name": "Paper Searcher | 文献搜索器",
+  "summary": "Paper search and Zotero workflow. 文献搜索与 Zotero 管理助手；支持多源检索、候选清单评审，并在用户确认后导入 Zotero。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_searcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morois",
+      "features": [
+        "Paper search and Zotero workflow",
+        "文献搜索与 Zotero 管理助手；支持多源检索、候选清单评审，并在用户确认后导入 Zotero。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-searcher@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98001108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-searcher",
+      "url": "https://clawhub.ai/skills/paper-searcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-searcher",
+    "url": "https://clawhub.ai/skills/paper-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-searcher-775b10fa2e7c46c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-searcher@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-searcher-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73743c97affca59f385db054a210025c2a793da39b1f4d526da2b12fe0d546cc",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:02:19.029Z"
+}

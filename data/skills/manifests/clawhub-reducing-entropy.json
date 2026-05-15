@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16410,
+  "uuid": "skill-clawhub-reducing-entropy",
+  "skillKey": "clawhub-reducing-entropy",
+  "name": "Reducing Entropy",
+  "summary": "Minimize total codebase size through ruthless simplification. Measure success by final code amount, not effort. Bias toward deletion.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reducing_entropy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Minimize total codebase size through ruthless simplification",
+        "Measure success by final code amount, not effort",
+        "Bias toward deletion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reducing-entropy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reducing-entropy",
+      "url": "https://clawhub.ai/skills/reducing-entropy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reducing-entropy",
+    "url": "https://clawhub.ai/skills/reducing-entropy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reducing-entropy-1c79e2f1e62e0f3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reducing-entropy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reducing-entropy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6acaf39e0c4a5ad5eada219af761d21908d416634bfbb365f2aa4f8ee8107c8a",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:26:29.918Z"
+}

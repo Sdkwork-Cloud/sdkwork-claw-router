@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22819,
+  "uuid": "skill-clawhub-aeroleads",
+  "skillKey": "clawhub-aeroleads",
+  "name": "Aeroleads",
+  "summary": "AeroLeads integration. Manage Leads, Persons, Organizations. Use when the user wants to interact with AeroLeads data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aeroleads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "AeroLeads integration",
+        "Manage Leads, Persons, Organizations",
+        "Use when the user wants to interact with AeroLeads data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aeroleads@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aeroleads",
+      "url": "https://clawhub.ai/skills/aeroleads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aeroleads",
+    "url": "https://clawhub.ai/skills/aeroleads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aeroleads-c2cec98927adb67c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aeroleads@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aeroleads-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a18077966e85871e2dcfc9dd752acf630bec6e982533923b53ae46d94b8ab632",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:21.617Z"
+}

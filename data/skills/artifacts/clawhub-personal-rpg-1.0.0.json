@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-rpg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_rpg",
+  "skill": {
+    "id": 69865,
+    "skillKey": "clawhub-personal-rpg",
+    "name": "个人RPG"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-rpg",
+    "url": "https://clawhub.ai/skills/personal-rpg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-rpg-ad59a90e7355e2ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "个人RPG系统 - 将日常变成游戏，完成任务获得经验值，升级解锁新能力"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yansocool",
+      "userId": "publishers:yansocool",
+      "displayName": "yansocool",
+      "image": "https://avatars.githubusercontent.com/u/200768971?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774236163870,
+      "changelog": "初始发布：角色系统、任务系统、成就系统",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f6d844638b789ef5ec23d0df1f05b0c900ce4d21421df861c77e671145dc5ef"
+}

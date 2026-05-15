@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gated-alpha@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gated_alpha",
+  "skill": {
+    "id": 20626,
+    "skillKey": "clawhub-gated-alpha",
+    "name": "Gated Alpha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gated-alpha",
+    "url": "https://clawhub.ai/skills/gated-alpha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gated-alpha-c658164d18b39e14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, filter, and purchase structured crypto alpha calls from Gated Alpha. Supports push delivery via webhooks (recommended) or direct polling. Pay-per-c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zich-agent",
+      "userId": "publishers:zich-agent",
+      "displayName": "zich-agent",
+      "image": "https://avatars.githubusercontent.com/u/259471452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772115674991,
+      "changelog": "v3: webhook push subscriptions, crystal-clear agent integration guide, trial-url discovery, returning buyer flow, full webhook handler example",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:53806b90c406aee53a1dd78a3e632be7bf8b1df3bab84dc639bd8a5887637bae"
+}

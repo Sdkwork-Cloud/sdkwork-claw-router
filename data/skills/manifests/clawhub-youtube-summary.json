@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14224,
+  "uuid": "skill-clawhub-youtube-summary",
+  "skillKey": "clawhub-youtube-summary",
+  "name": "YouTube Summary",
+  "summary": "Summarize YouTube videos into structured Markdown with youtube2md, including chaptered notes, timestamp links, and key takeaways. Use when the user provides...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_summary",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunghyo Chung",
+      "features": [
+        "Summarize YouTube videos into structured Markdown with youtube2md, including chaptered notes, t.",
+        "Use when the user provides..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-summary@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7691845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-summary",
+      "url": "https://clawhub.ai/skills/youtube-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-summary",
+    "url": "https://clawhub.ai/skills/youtube-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-summary-307d27d2d1a644e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-summary@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-summary-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fed25783fb588e47475163ab8fbe573fad69465dd15eb700764b65d240316411",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T14:03:27.540Z"
+}

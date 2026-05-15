@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-bug-submission@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bug_submission",
+  "skill": {
+    "id": 64019,
+    "skillKey": "clawhub-agent-bug-submission",
+    "name": "Agent Bug Submission"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bug-submission",
+    "url": "https://clawhub.ai/skills/agent-bug-submission",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bug-submission-3a903030f8c7f3e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提交缺陷信息到TeamCycle平台，支持缺陷全生命周期管理，含飞书多维表格和文档记录与查询功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luiciferyi",
+      "userId": "s1709mjz8g1wqx9v1j33fryyj583pcxx",
+      "displayName": "LuiciferYi",
+      "image": "https://avatars.githubusercontent.com/u/24913493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776065476937,
+      "changelog": "Initial release of agent-bug-submission skill.\n\n- Submit and track defects on TeamCycle with full lifecycle management.\n- Supports logging defect info to Feishu Docs and Feishu Bitable.\n- Triggers on keywords like \"提交缺陷\", \"创建缺陷单\", \"提bug\", \"记录缺陷\".\n- Relies on the bug-reporter skill for integration with TeamCycle API.\n- Includes detailed templates, parameter instructions, and workflows for defect submission and tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d85b2711167905d963a4c7147970a0bc99ace40f87c806de26a5f06c0c07c0d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-patent-validator@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_patent_validator",
+  "skill": {
+    "id": 9992,
+    "skillKey": "clawhub-code-patent-validator",
+    "name": "Code Patent Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-patent-validator",
+    "url": "https://clawhub.ai/skills/code-patent-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-patent-validator-bd3e8c7323317c4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your code scan findings into search queries — research existing implementations before consulting an attorney. NOT legal advice."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leegitw",
+      "userId": "s179srg0a58h1v79wy2w7g9ymh83jxhd",
+      "displayName": "Lee Brown",
+      "image": "https://avatars.githubusercontent.com/u/1395866?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2345,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 14,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1771829523619,
+      "changelog": "- Version bumped to 1.4.0 with no functional or content changes.\n- No file changes detected; skill behavior and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:193389074286e345d1d9bd997b3da662006785a393c9e7d26374665aad4bec8d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moondream-vision-zc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moondream_vision_zc",
+  "skill": {
+    "id": 62924,
+    "skillKey": "clawhub-moondream-vision-zc",
+    "name": "moondream-vision-zc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moondream-vision-zc",
+    "url": "https://clawhub.ai/skills/moondream-vision-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moondream-vision-zc-bfe9e3a6177ad151.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "利用本地 Ollama 运行 Moondream 模型对图像进行理解，返回自然语言描述，可直接在聊天中发送图片或文件路径调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openclawzhangchong",
+      "userId": "s178cqx9kma3mpnvqe8evteyr983hvb4",
+      "displayName": "张翀",
+      "image": "https://avatars.githubusercontent.com/u/270544860?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776485973325,
+      "changelog": "Moondream Vision by zhangchong  Skill 1.0.0 - Initial Release\n\n- 支持在本地通过 Ollama 部署 Moondream 模型进行图像理解，并返回自然语言描述。\n- 完全适配 OpenClaw 2026 版本多模态插件机制，支持在聊天中发送图片或本地文件路径。\n- 提供 Python 脚本调用 Ollama API，支持自定义 prompt，响应文本输出。\n- 原生注册命令，可通过 `!moondream <image_path> [prompt]` 方式集成并调用。\n- 文档包含详细环境准备、常见问题、与 GPT‑OSS‑120B 的集成和使用示例。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a859d29c27070db9f9bf61714397110e6ce015b3d56d61a8b61cecebe6f15f0f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18002,
+  "uuid": "skill-clawhub-space-autonomy-skill",
+  "skillKey": "clawhub-space-autonomy-skill",
+  "name": "Pydaqua SpaceAutonomySkill",
+  "summary": "Autonomous space navigation agent using optical quantum kernels for terrain classification.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.space_autonomy_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Krishna Aditya",
+      "features": [
+        "Autonomous space navigation agent using optical quantum kernels for terrain classification."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/space-autonomy-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12190815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "space-autonomy-skill",
+      "url": "https://clawhub.ai/skills/space-autonomy-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "space-autonomy-skill",
+    "url": "https://clawhub.ai/skills/space-autonomy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/space-autonomy-skill-819cb2c4c2ad1d2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/space-autonomy-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-space-autonomy-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4346b505074c991907d086e2f186d1e62db9a5906ac0123e45e9bef9619980a",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T06:01:02.001Z"
+}

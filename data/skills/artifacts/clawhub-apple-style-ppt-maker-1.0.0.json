@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-style-ppt-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_style_ppt_maker",
+  "skill": {
+    "id": 34909,
+    "skillKey": "clawhub-apple-style-ppt-maker",
+    "name": "Apple Style PPT Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-style-ppt-maker",
+    "url": "https://clawhub.ai/skills/apple-style-ppt-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-style-ppt-maker-3b3cc943dc013559.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create Apple-style minimalist presentation slides through a strict JSON-first workflow. Use when an agent must clarify user requirements, lock topic/content/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "herve-clawd",
+      "userId": "s17591mer44cbrw1wazk80spsh83nn6d",
+      "displayName": "HerveClawd",
+      "image": "https://avatars.githubusercontent.com/u/261343483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774602191108,
+      "changelog": "Initial release: Apple-style PPT JSON-first workflow + image render + PPTX export",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fcfd8556f195d7ce09baa81d6b2c44bb7533ab159460b336d2741c10c6cf565"
+}

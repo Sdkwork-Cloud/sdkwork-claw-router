@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teacher-prep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teacher_prep",
+  "skill": {
+    "id": 70174,
+    "skillKey": "clawhub-teacher-prep",
+    "name": "teacher-prep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teacher-prep",
+    "url": "https://clawhub.ai/skills/teacher-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teacher-prep-2e30590968810e7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "教师备课助手，用于小学语文教学备课。支持古诗、现代文、寓言、童话等各类课文。当用户提出备课需求时，自动执行：(1)搜索课文相关资料（原文、作者、背景、生字词、段落分析等），生成markdown备课资料；(2)生成教案PPT；(3)生成Word格式课后练习题及参考答案。适用于小学各年级语文备课场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "870021840",
+      "userId": "s17cw3576x40841mk8zwq25n4183nte0",
+      "displayName": "870021840",
+      "image": "https://avatars.githubusercontent.com/u/6219712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773193905051,
+      "changelog": "- 初始版本发布：teacher-prep 1.0.0\n- 实现小学语文备课全流程自动化，支持古诗、现代文、寓言、童话等课文类型\n- 自动生成三类文件：Markdown备课资料、PPT教案、Word格式课后练习题（含答案）\n- 智能识别课文类型，分步获取相关资料（原文、作者、生字词、解析等）\n- 集成Tavily搜索、python-pptx、python-docx等依赖工具\n- 支持分层设计练习题，适用于所有小学年级语文课堂",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c20d7af94bf973cfbba31aa2576e10e7038bcce69a13963a1f607923a1d451a"
+}

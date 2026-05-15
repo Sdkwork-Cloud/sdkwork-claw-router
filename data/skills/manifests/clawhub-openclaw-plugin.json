@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31710,
+  "uuid": "skill-clawhub-openclaw-plugin",
+  "skillKey": "clawhub-openclaw-plugin",
+  "name": "Openclaw Plugin",
+  "summary": "Precision decisioning, agentic trust, and verifiable identity for autonomous agents",
+  "version": "0.3.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "knuckles-stack",
+      "features": [
+        "Precision decisioning, agentic trust, and verifiable identity for autonomous agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-plugin@0.3.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243669404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-plugin",
+      "url": "https://clawhub.ai/skills/openclaw-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-plugin",
+    "url": "https://clawhub.ai/skills/openclaw-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-plugin-98dc3ee06a017beb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-plugin@0.3.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-plugin-0.3.9.json",
+      "version": "0.3.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ede6abda70bfa49bc9e03077eee11aab6a7e3185af3ea0dcaead572b988be77",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:22:21.417Z"
+}

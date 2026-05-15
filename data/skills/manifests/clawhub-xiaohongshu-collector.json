@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39692,
+  "uuid": "skill-clawhub-xiaohongshu-collector",
+  "skillKey": "clawhub-xiaohongshu-collector",
+  "name": "Xiaohongshu Collector",
+  "summary": "Work on Xiaohongshu post/comment collection, cookie handling, refresh flows, and browser plugin integration in the forbidden_company repo.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack.L.P",
+      "features": [
+        "Work on Xiaohongshu post/comment collection, cookie handling, refresh flows, and browser plugin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41465413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-collector",
+      "url": "https://clawhub.ai/skills/xiaohongshu-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-collector",
+    "url": "https://clawhub.ai/skills/xiaohongshu-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-collector-8c4f9b1fd8b1c4d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78bf52e27b57a19975556b614988544e352fa54a8202da0c7b9d81d91b83f8c5",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:05:35.680Z"
+}

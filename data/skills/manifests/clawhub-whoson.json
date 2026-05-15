@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36863,
+  "uuid": "skill-clawhub-whoson",
+  "skillKey": "clawhub-whoson",
+  "name": "Whoson",
+  "summary": "WhosOn integration. Manage data, records, and automate workflows. Use when the user wants to interact with WhosOn data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoson",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WhosOn integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WhosOn data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoson@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoson",
+      "url": "https://clawhub.ai/skills/whoson"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoson",
+    "url": "https://clawhub.ai/skills/whoson",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoson-1c0c03bd9a5e21a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoson@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoson-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0f4abbc28678dce70cbc85d801287c86905bb2ff045e724f3b78fdd6464d1e8",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:11.426Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66688,
+  "uuid": "skill-clawhub-news-aggregator-skill-news-daily",
+  "skillKey": "clawhub-news-aggregator-skill-news-daily",
+  "name": "每日综合新闻（基于news-aggregator-skill并发送至飞书文档）",
+  "summary": "每日综合新闻简报 - 自动抓取并生成包含科技、财经、热点的综合报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_aggregator_skill_news_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arsoooo",
+      "features": [
+        "每日综合新闻简报",
+        "自动抓取并生成包含科技、财经、热点的综合报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-aggregator-skill-news-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41410134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-aggregator-skill-news-daily",
+      "url": "https://clawhub.ai/skills/news-aggregator-skill-news-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-aggregator-skill-news-daily",
+    "url": "https://clawhub.ai/skills/news-aggregator-skill-news-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-aggregator-skill-news-daily-1ce92b037d8c41ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-aggregator-skill-news-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-aggregator-skill-news-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4c1869ed964c1e0423126f5a1d0fe062da364b7b8134026ac75f65ec866d4d0",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T15:13:35.723Z"
+}

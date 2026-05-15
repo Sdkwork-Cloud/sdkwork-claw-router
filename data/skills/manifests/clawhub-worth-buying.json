@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57023,
+  "uuid": "skill-clawhub-worth-buying",
+  "skillKey": "clawhub-worth-buying",
+  "name": "什么值得买",
+  "summary": "Shopping decision skill for finding the lowest real price, the best value option, or the strongest discount across products and categories. Use when the user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worth_buying",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Shopping decision skill for finding the lowest real price, the best value option, or the strong.",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/worth-buying@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "worth-buying",
+      "url": "https://clawhub.ai/skills/worth-buying"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worth-buying",
+    "url": "https://clawhub.ai/skills/worth-buying",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worth-buying-4e0f7ed9e7a79e86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/worth-buying@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-worth-buying-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fda4c3854fff557bca8a3fad362aad2a014e294332e33771715733eefb9f47c6",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:32:07.548Z"
+}

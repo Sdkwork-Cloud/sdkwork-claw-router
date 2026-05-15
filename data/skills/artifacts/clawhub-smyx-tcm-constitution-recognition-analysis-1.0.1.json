@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-tcm-constitution-recognition-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_tcm_constitution_recognition_analysis",
+  "skill": {
+    "id": 57646,
+    "skillKey": "clawhub-smyx-tcm-constitution-recognition-analysis",
+    "name": "中医体质识别分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-tcm-constitution-recognition-analysis",
+    "url": "https://clawhub.ai/skills/smyx-tcm-constitution-recognition-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-tcm-constitution-recognition-analysis-c208a4d49ee2bb5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Determines nine TCM constitution types including Yin deficiency, Yang deficiency, Qi deficiency, phlegm-dampness, and blood stasis through facial features an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778349942186,
+      "changelog": "- Improved handling of configuration files for environment selection, including dev, test, and production.\n- Enhanced logic for loading and prioritizing config sources in scripts/config.py and related utility modules.\n- Refined open-id retrieval process to better align with mandatory user identification workflow.\n- Updated documentation and usage examples to clarify behavior and strengthen compliance with data access restrictions.\n- Minor code organization and bugfixes in scripts and config for more robust operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ba650db4b15d7f4f3560f521bb2e0d40cb9f0c631ec9799d0f5b94e329b6802"
+}

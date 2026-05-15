@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44198,
+  "uuid": "skill-clawhub-web-ui-test",
+  "skillKey": "clawhub-web-ui-test",
+  "name": "UI Test",
+  "summary": "Register Playwright MCP via UTCP and perform web UI testing and verification. Analyze browser snapshots, click elements, fill forms, and return summarized re...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_ui_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "es6kr",
+      "features": [
+        "Register Playwright MCP via UTCP and perform web UI testing and verification",
+        "Analyze browser snapshots, click elements, fill forms, and return summarized re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-ui-test@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/819969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-ui-test",
+      "url": "https://clawhub.ai/skills/web-ui-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-ui-test",
+    "url": "https://clawhub.ai/skills/web-ui-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-ui-test-a7b39ea33afd7ed8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-ui-test@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-ui-test-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8831ab4938b3c1be30f056d1d5b44793b83913594425568e8e92a6f3336ed1c",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:28:30.106Z"
+}

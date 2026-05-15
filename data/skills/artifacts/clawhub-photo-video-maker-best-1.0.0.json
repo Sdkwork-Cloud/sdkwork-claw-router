@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-video-maker-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_video_maker_best",
+  "skill": {
+    "id": 44546,
+    "skillKey": "clawhub-photo-video-maker-best",
+    "name": "Photo Video Maker Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-video-maker-best",
+    "url": "https://clawhub.ai/skills/photo-video-maker-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-video-maker-best-7d16fabfd3fd62f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based photo-video-maker-best tool that handles turning photo collections into shareable videos. Upload JPG, PNG, HEIC, WebP files (up to 200MB), descri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775866034059,
+      "changelog": "Photo Video Maker — v1.0.0\n\n- Initial release of a cloud-based tool to turn photo collections into shareable 1080p MP4 videos within 30–60 seconds.\n- Supports uploads of JPG, PNG, HEIC, WebP up to 200MB; designed for social media creators.\n- Simple API-driven workflow: authenticate, upload, describe your video, and download the result.\n- Features credits management, session handling, and clear error messaging.\n- Provides example prompts and tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee57c35d1c0e4fc570402414041179fe3aefb58d382e42158676a31cfbd30d60"
+}

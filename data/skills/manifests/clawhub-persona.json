@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29107,
+  "uuid": "skill-clawhub-persona",
+  "skillKey": "clawhub-persona",
+  "name": "Persona",
+  "summary": "Persona integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Persona data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Persona integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Persona data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/persona@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "persona",
+      "url": "https://clawhub.ai/skills/persona"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona",
+    "url": "https://clawhub.ai/skills/persona",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-5e815286bca59445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/persona@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-persona-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73df16574810ec8857e0bcaf7614eb71c43e083d4a0438963fb22dfcf7265559",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:23:43.709Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14835,
+  "uuid": "skill-clawhub-powerdrill-skills",
+  "skillKey": "clawhub-powerdrill-skills",
+  "name": "Powerdrill Data Analysis",
+  "summary": "This skill should be used when the user wants to analyze, explore, visualize, or query data using Powerdrill. Covers listing, creating, and deleting datasets; uploading local files as data sources; creating analysis sessions; running natur.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.powerdrill_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "javainthinking",
+      "features": [
+        "This skill should be used when the user wants to analyze, explore, visualize, or query data usi.",
+        "Covers listing, creating, and deleting datasets",
+        "uploading local files as data sources",
+        "creating analysis sessions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/powerdrill-skills@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2844583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "powerdrill-skills",
+      "url": "https://clawhub.ai/skills/powerdrill-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "powerdrill-skills",
+    "url": "https://clawhub.ai/skills/powerdrill-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/powerdrill-skills-865824c51ed0864d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/powerdrill-skills@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-powerdrill-skills-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2b13755f448663ad9c41c76b4910459fcad24465189fa936f25464b02480a76",
+      "artifactSizeBytes": 2623
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T09:03:17.704Z"
+}

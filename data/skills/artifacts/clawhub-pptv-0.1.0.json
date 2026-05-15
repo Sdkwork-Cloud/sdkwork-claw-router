@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pptv@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptv",
+  "skill": {
+    "id": 71362,
+    "skillKey": "clawhub-pptv",
+    "name": "PPTV"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptv",
+    "url": "https://clawhub.ai/skills/pptv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptv-ebbbb558a823e878.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供PPTV短剧频道及剧集的公开目录、更新状态、主演和评论摘要，支持榜单和题材统计分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773854809270,
+      "changelog": "PPTV短剧技能 v0.1.0 初始发布\n\n- 支持提取和展示 PPTV 短剧频道与剧集页面的基本信息和摘要。\n- 实现短剧剧集目录、榜单分布、主演与评论信息的抓取与统计。\n- 严格限制为公开页面的轻量摘要分析；无下载、接口逆向等功能。\n- 设计用于合规分析与提醒，遵守平台规则与数据请求频率。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4eb1fda0a044b38987cf133d8e1a10df46403eca73e244c28226d78da9451af4"
+}

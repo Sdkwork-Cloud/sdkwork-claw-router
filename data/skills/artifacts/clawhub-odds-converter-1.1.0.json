@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/odds-converter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odds_converter",
+  "skill": {
+    "id": 38399,
+    "skillKey": "clawhub-odds-converter",
+    "name": "Odds Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odds-converter",
+    "url": "https://clawhub.ai/skills/odds-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odds-converter-841482150fa9d2d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert between American odds, decimal odds, fractional odds, implied probability, and Kalshi contract prices. Use when asked to convert odds formats, explai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rsquaredsolutions2026",
+      "userId": "s174852n66eyjcz2m5p9yd4wbd83hvhf",
+      "displayName": "rsquaredsolutions2026",
+      "image": "https://avatars.githubusercontent.com/u/217474775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774401774474,
+      "changelog": "Add attribution links to agentbets.ai guides",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cbf0f73c9bae3614a79e962fee11c3aa9ac18127443b53113f8ec322fc8cde5"
+}

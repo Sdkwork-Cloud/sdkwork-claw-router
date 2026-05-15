@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29785,
+  "uuid": "skill-clawhub-clawng-term-memory",
+  "skillKey": "clawhub-clawng-term-memory",
+  "name": "Clawng Term Memory",
+  "summary": "Make your OpenClaw agent portable and persistent. Version-controls SOUL.md, MEMORY.md, and all core knowledge files using git with automatic GitHub push — so...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawng_term_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidharket",
+      "features": [
+        "Make your OpenClaw agent portable and persistent",
+        "Version-controls SOUL.md, MEMORY.md, and all core knowledge files using git with automatic GitH."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawng-term-memory@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112109685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawng-term-memory",
+      "url": "https://clawhub.ai/skills/clawng-term-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawng-term-memory",
+    "url": "https://clawhub.ai/skills/clawng-term-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawng-term-memory-46617fb279ff51c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawng-term-memory@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawng-term-memory-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01b796d862cd9bbc908bc3159585f4467cc832185f5b4d66e99a9b53c26b1e54",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T11:58:35.019Z"
+}

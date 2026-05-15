@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22212,
+  "uuid": "skill-clawhub-helpcenter",
+  "skillKey": "clawhub-helpcenter",
+  "name": "Help.Center Article Management",
+  "summary": "When the user wants to create, update, read, or manage help center articles via the Help.Center API. Use when the user says \"write a help article\", \"update t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helpcenter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shyjal",
+      "features": [
+        "When the user wants to create, update, read, or manage help center articles via the Help.Center.",
+        "Use when the user says \"write a help article\", \"update t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/helpcenter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1215425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "helpcenter",
+      "url": "https://clawhub.ai/skills/helpcenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helpcenter",
+    "url": "https://clawhub.ai/skills/helpcenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helpcenter-a87d201119094a59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/helpcenter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-helpcenter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:307b201ea75ac5986936dc8239ae461f89eda6636f9f96ef4f92b85d17979f19",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:19:22.346Z"
+}

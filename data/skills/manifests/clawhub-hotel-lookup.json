@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57625,
+  "uuid": "skill-clawhub-hotel-lookup",
+  "skillKey": "clawhub-hotel-lookup",
+  "name": "Intelligent Hotel Lookup",
+  "summary": "Hotel discovery, shortlist comparison, and booking handoff using **FlyAI `search-hotel`** on **Fliggy MCP** (structured filters: destination, stay dates, POI...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_lookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mocker",
+      "features": [
+        "Hotel discovery, shortlist comparison, and booking handoff using **FlyAI `search-hotel`** on **."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-lookup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/988858?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-lookup",
+      "url": "https://clawhub.ai/skills/hotel-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-lookup",
+    "url": "https://clawhub.ai/skills/hotel-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-lookup-dc21ebe680f4199b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-lookup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-lookup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4874af219c8c01dc616be9eb611103c252afb046bffd3a26added84051c5c4a",
+      "artifactSizeBytes": 2730
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:48:27.096Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73346,
+  "uuid": "skill-clawhub-food-health-manager",
+  "skillKey": "clawhub-food-health-manager",
+  "name": "食品健康管家",
+  "summary": "食品健康管家。识别食品配料表，分析成分健康程度，给出打分和建议。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_health_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liny2046",
+      "features": [
+        "食品健康管家。识别食品配料表，分析成分健康程度，给出打分和建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/food-health-manager@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265679697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "food-health-manager",
+      "url": "https://clawhub.ai/skills/food-health-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-health-manager",
+    "url": "https://clawhub.ai/skills/food-health-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-health-manager-ecbc81aaad0bfacb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/food-health-manager@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-food-health-manager-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:600cf2c44b0c4e154ae004aaeb8a60d7fb9bdee3eea2cdb6c762fc1283bb4808",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:00:42.300Z"
+}

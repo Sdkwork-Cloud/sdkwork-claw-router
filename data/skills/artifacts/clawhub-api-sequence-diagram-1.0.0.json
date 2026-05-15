@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-sequence-diagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_sequence_diagram",
+  "skill": {
+    "id": 66649,
+    "skillKey": "clawhub-api-sequence-diagram",
+    "name": "api-sequence-diagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-sequence-diagram",
+    "url": "https://clawhub.ai/skills/api-sequence-diagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-sequence-diagram-e4ec62fd0eedb93b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据指定的Java接口（Controller方法/API路径）分析完整调用链路，生成Mermaid时序图，标注关键判断节点、异常处理分支和业务逻辑。当用户要求分析接口调用链路、生成时序图、分析接口流程、查看接口调用关系时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijie012",
+      "userId": "s17ctvvz1bnxf21p3r6cbd0p5h84dnn2",
+      "displayName": "L",
+      "image": "https://avatars.githubusercontent.com/u/150664619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775535023207,
+      "changelog": "根据指定的Java接口（Controller方法/API路径）分析完整调用链路，生成Mermaid时序图，标注关键判断节点、异常处理分支和业务逻辑。当用户要求分析接口调用链路、生成时序图、分析接口流程、查看接口调用关系时使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69532f1b33525eac02341763323d46c97836ed05296350a92542457b83baae5d"
+}

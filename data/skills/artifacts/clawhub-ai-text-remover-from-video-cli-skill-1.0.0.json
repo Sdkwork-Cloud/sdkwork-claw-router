@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-text-remover-from-video-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_text_remover_from_video_cli_skill",
+  "skill": {
+    "id": 56440,
+    "skillKey": "clawhub-ai-text-remover-from-video-cli-skill",
+    "name": "AI Text Remover from Video – Remove Text from Video Online Free – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-text-remover-from-video-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-text-remover-from-video-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-text-remover-from-video-cli-skill-3384bdd9baecb8fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI text remover from video — remove text overlays or watermarks from a video"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776579157213,
+      "changelog": "Initial release of AI Text Remover from Video CLI skill.\n\n- Allows removal of text overlays or watermarks from videos via the `weshop` CLI.\n- Requires the `weshop-cli` and a `WESHOP_API_KEY` environment variable.\n- Accepts video URLs (local files not supported).\n- Provides clear security guidelines to protect API keys.\n- Outputs processed video URLs and status for each video.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e23e5e9f05b4277d600067a8989844635578a27578a3bfc36bf4372d2987d477"
+}

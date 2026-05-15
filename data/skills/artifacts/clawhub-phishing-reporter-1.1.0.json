@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phishing-reporter@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phishing_reporter",
+  "skill": {
+    "id": 27501,
+    "skillKey": "clawhub-phishing-reporter",
+    "name": "Phishing Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phishing-reporter",
+    "url": "https://clawhub.ai/skills/phishing-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phishing-reporter-eb20b4ea684116b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Report phishing, malware, and scam URLs to Google Safe Browsing, NCSC (Swiss Cyber Security), and other abuse reporting services. Use when a user shares a su..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xenofex7",
+      "userId": "publishers:xenofex7",
+      "displayName": "xenofex7",
+      "image": "https://avatars.githubusercontent.com/u/41230096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773351754345,
+      "changelog": "Added NCSC Switzerland (chat wizard workflow + direct path URLs), domain registrar reporting, expanded services reference",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3145c68d7b7c798c8d0a48522b422e6811cb76196e3b32dc10d536d6b5dbe1e7"
+}

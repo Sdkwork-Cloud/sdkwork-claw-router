@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-task-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_task_manager",
+  "skill": {
+    "id": 9864,
+    "skillKey": "clawhub-agent-task-manager",
+    "name": "Agent Task Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-task-manager",
+    "url": "https://clawhub.ai/skills/agent-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-task-manager-ef6298bf6fbc3b80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages and orchestrates multi-step, stateful agent workflows; handles task dependencies, persistent state, error recovery, and external rate-limiting. Use for creating new multi-agent systems, improving sequential workflows, or managing t."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dobbybud",
+      "userId": "publishers:dobbybud",
+      "displayName": "dobbybud",
+      "image": "https://avatars.githubusercontent.com/u/258559218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3119,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769967101965,
+      "changelog": "Initial launch of the multi-agent orchestration and rate-limit management skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:830b42e4b43b99d945bdf1593e1f676a67b630b3800b966aa2ac7fc4d8448c20"
+}

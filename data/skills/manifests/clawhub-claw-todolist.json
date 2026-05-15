@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13948,
+  "uuid": "skill-clawhub-claw-todolist",
+  "skillKey": "clawhub-claw-todolist",
+  "name": "Text Based - Todo List Agent Manager",
+  "summary": "A structured, conversational task management system based on GTD and Eisenhower (V3.2 Protocol). This skill strictly confines persistence to its own skill di...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_todolist",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mtyatno",
+      "features": [
+        "A structured, conversational task management system based on GTD and Eisenhower (V3.2 Protocol)",
+        "This skill strictly confines persistence to its own skill di..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-todolist@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260545562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-todolist",
+      "url": "https://clawhub.ai/skills/claw-todolist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-todolist",
+    "url": "https://clawhub.ai/skills/claw-todolist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-todolist-e51717e13b0e3413.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-todolist@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-todolist-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60368d87dadc199e22d71cd9868872c047aef9629c671b5ebe879836fa8fc096",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T06:20:56.958Z"
+}

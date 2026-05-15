@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portland-oregon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portland_oregon",
+  "skill": {
+    "id": 69923,
+    "skillKey": "clawhub-portland-oregon",
+    "name": "Portland Oregon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portland-oregon",
+    "url": "https://clawhub.ai/skills/portland-oregon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portland-oregon-bc1a63693628775e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "波特兰是俄勒冈州最大城市，以科技制造、运动品牌、精酿啤酒和独立文化著称，实行无销售税和城市增长边界。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777483194922,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efe4ead2bfcca667755dea58ac689449ed19fb8c0fcced95b0cd3f19e496d20e"
+}

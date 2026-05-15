@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50774,
+  "uuid": "skill-clawhub-agent-to-merchant",
+  "skillKey": "clawhub-agent-to-merchant",
+  "name": "Agent ToMerchant",
+  "summary": "SynapseAI Merchant — AI agent payment receiving layer. Register as merchant, create wallets, generate payment links & QR codes, receive on-chain payments, an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_to_merchant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pandagg110",
+      "features": [
+        "SynapseAI Merchant — AI agent payment receiving layer",
+        "Register as merchant, create wallets, generate payment links & QR codes, receive on-chain payme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-to-merchant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161546697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-to-merchant",
+      "url": "https://clawhub.ai/skills/agent-to-merchant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-to-merchant",
+    "url": "https://clawhub.ai/skills/agent-to-merchant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-to-merchant-f9b58acb4390ac52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-to-merchant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-to-merchant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b24f5b8b4288654bbba3f8ba1fb63a5c8456ee7530e5885d8654898aff68910a",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T20:03:03.273Z"
+}

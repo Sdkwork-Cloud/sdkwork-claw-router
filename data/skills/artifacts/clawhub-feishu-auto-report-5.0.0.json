@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-auto-report@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_auto_report",
+  "skill": {
+    "id": 61979,
+    "skillKey": "clawhub-feishu-auto-report",
+    "name": "Feishu Send Message"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-auto-report",
+    "url": "https://clawhub.ai/skills/feishu-auto-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-auto-report-e5d82d3118196233.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动从本地配置获取飞书凭证，支持多Agent独立身份向指定open_id或chat_id发送文本消息汇报任务结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pikaqiuyaya",
+      "userId": "s176wweqb7cav4zhkbsred489d83nmt8",
+      "displayName": "pikaqiuyaya",
+      "image": "https://avatars.githubusercontent.com/u/146065672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1773974729202,
+      "changelog": "更新 SKILL.md 为官方版本，包含完整的 frontmatter 元数据和技术文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b29690a332b30e86ddc6d4dfc9d6baaa86dbd513066a2a719e8905679d5bea3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-opus-clip@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_opus_clip",
+  "skill": {
+    "id": 47934,
+    "skillKey": "clawhub-ai-video-editor-opus-clip",
+    "name": "Ai Video Editor Opus Clip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-opus-clip",
+    "url": "https://clawhub.ai/skills/ai-video-editor-opus-clip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-opus-clip-ee7aadea703c9b6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert long-form video into short viral clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and podcasters use it for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777939995450,
+      "changelog": "Initial release of AI Video Editor Opus Clip (version 1.0.0):\n\n- Allows users to convert long-form videos (MP4, MOV, AVI, WebM up to 500MB) into short, shareable clips using cloud GPU processing.\n- Simple setup: Generates or accepts an API token, establishes a session automatically, and confirms readiness to the user.\n- Supports video uploads, clip extraction, timeline previews, export to 1080p MP4, and management of credits and session status.\n- Provides clear actions based on user prompts (export, upload, credits, status, editing commands).\n- Error handling for issues such as token expiry, file limits, and unsupported formats.\n- No local installation required—processing and rendering are performed on remote servers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6a25d70856bf35330ebf38921cf46ef95d64bc5c7b48b4e89b68478b06e9caa"
+}

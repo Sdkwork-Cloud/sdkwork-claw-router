@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psyclaw-intake-5clinic@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psyclaw_intake_5clinic",
+  "skill": {
+    "id": 41986,
+    "skillKey": "clawhub-psyclaw-intake-5clinic",
+    "name": "PsyClaw Intake 5Clinic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psyclaw-intake-5clinic",
+    "url": "https://clawhub.ai/skills/psyclaw-intake-5clinic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psyclaw-intake-5clinic-cd33c91fd9ed06d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Facilitates initial five-clinic assessments for new agent integration, submitting structured intake results to the PsyClaw platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anctro",
+      "userId": "s170yhxddnkyp0bq3y90new7wx83qfr1",
+      "displayName": "Anctro",
+      "image": "https://avatars.githubusercontent.com/u/124227053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774597710331,
+      "changelog": "Initial standalone intake skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83a4fb1bdcb3cd33227a3ac75d13fbea22e9e188ae7feb5adec0647c18ee23e6"
+}

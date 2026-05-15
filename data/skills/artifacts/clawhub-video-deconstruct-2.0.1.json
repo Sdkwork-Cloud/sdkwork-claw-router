@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-deconstruct@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_deconstruct",
+  "skill": {
+    "id": 70962,
+    "skillKey": "clawhub-video-deconstruct",
+    "name": "短视频爆款拆解（叙事式）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-deconstruct",
+    "url": "https://clawhub.ai/skills/video-deconstruct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-deconstruct-e3162054e3de82ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把一段抖音/小红书短视频拆成「故事 + 心理学」式爆款拆解报告——选题/一句话总结/内容描述/视频结构(开头-中间-结尾)/事件推进/落幕文案/受众启示/核心爆点/节奏/BGM。给运营拍同款、写脚本、做分镜时直接当弹药。当用户说\"拆解视频\"\"分析这条视频\"\"帮我看这段抖音\"\"短视频结构\"\"卡点在哪\"\"这条爆款怎么..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jack-yang-ai",
+      "userId": "s17fy463zpx7rzw9znpvr534m183htbb",
+      "displayName": "Jack-Yang-ai",
+      "image": "https://avatars.githubusercontent.com/u/224765952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1777371063418,
+      "changelog": "Publish cleaned release: 128MB direct upload, safer packaging, updated docs and ASR/BGM wording.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:581515bcfefc2ccc545c8a68c61ddbcb057c6d259c51691c9a4989d5a9194f73"
+}

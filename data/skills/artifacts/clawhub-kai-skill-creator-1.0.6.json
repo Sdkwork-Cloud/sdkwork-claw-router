@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kai-skill-creator@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kai_skill_creator",
+  "skill": {
+    "id": 27490,
+    "skillKey": "clawhub-kai-skill-creator",
+    "name": "Kai Skill Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kai-skill-creator",
+    "url": "https://clawhub.ai/skills/kai-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kai-skill-creator-43e478e448a834d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create new OpenClaw skills that pass ClawHub validation on first attempt. Use when building a new skill for OpenClaw. Teaches the complete process from templ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ogdegenblaze",
+      "userId": "publishers:ogdegenblaze",
+      "displayName": "Blaze🔥",
+      "image": "https://avatars.githubusercontent.com/u/9932412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774000172849,
+      "changelog": "- Major SKILL.md rewrite for clarity and concise guidance\n- Added stricter instructions to avoid hardcoding API keys, loading .env files, or mentioning external URLs (to avoid ClawHub scanner flags)\n- Provided a step-by-step, streamlined workflow for creating, validating, and publishing skills\n- Expanded \"What NOT to Do\" with more scanner red flags and best practices\n- Updated pre-publish checklist and troubleshooting table for faster validation and issue resolution\n- Improved examples and file location references throughout",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2a44b136af79c2a8ce542140c1c97e520ad3e689193e5d84083724a3155b784"
+}

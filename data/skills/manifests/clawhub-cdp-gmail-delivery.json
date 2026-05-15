@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34636,
+  "uuid": "skill-clawhub-cdp-gmail-delivery",
+  "skillKey": "clawhub-cdp-gmail-delivery",
+  "name": "CDP Gmail Delivery",
+  "summary": "Send Gmail messages from an operator-controlled Chrome debug session using Gmail CDP automation. Use when the user asks to send email from the local machine,...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cdp_gmail_delivery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jouston Huang",
+      "features": [
+        "Send Gmail messages from an operator-controlled Chrome debug session using Gmail CDP automation",
+        "Use when the user asks to send email from the local machine,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cdp-gmail-delivery@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115980414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cdp-gmail-delivery",
+      "url": "https://clawhub.ai/skills/cdp-gmail-delivery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cdp-gmail-delivery",
+    "url": "https://clawhub.ai/skills/cdp-gmail-delivery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cdp-gmail-delivery-4fc38145aab53cef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cdp-gmail-delivery@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-cdp-gmail-delivery-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd48794d0e829e0a7ae3f65bcff4a62d435ffd8df5e452fd745006d90f0ca0aa",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T11:34:10.777Z"
+}

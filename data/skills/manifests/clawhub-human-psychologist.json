@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51319,
+  "uuid": "skill-clawhub-human-psychologist",
+  "skillKey": "clawhub-human-psychologist",
+  "name": "Human Psychologist for AI Agents",
+  "summary": "Connect to a real human psychologist through a REST API. First message free, then $0.50 USDC per message. English and Spanish. Response time 5 min to 10 hours.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_psychologist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alexis",
+      "features": [
+        "Connect to a real human psychologist through a REST API",
+        "First message free, then $0.50 USDC per message",
+        "English and Spanish",
+        "Response time 5 min to 10 hours."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/human-psychologist@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38927675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "human-psychologist",
+      "url": "https://clawhub.ai/skills/human-psychologist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-psychologist",
+    "url": "https://clawhub.ai/skills/human-psychologist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-psychologist-7bde69ea6e667b98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/human-psychologist@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-human-psychologist-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe32fa82c5079b5c85f53abc4de3ce02e61856f8f12e005dfd562728834b734",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:58:08.453Z"
+}

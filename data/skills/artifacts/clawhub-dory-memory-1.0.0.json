@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dory-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dory_memory",
+  "skill": {
+    "id": 10160,
+    "skillKey": "clawhub-dory-memory",
+    "name": "Dory-Proof Memory System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dory-memory",
+    "url": "https://clawhub.ai/skills/dory-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dory-memory-e8900bc88659fe62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "File-based memory system for AI agents that forget between sessions. Implements the \"Dory-Proof\" pattern for continuity across context resets. Use when setting up agent memory, building workspace structure, implementing task tracking, or p."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justinhartbiz",
+      "userId": "publishers:justinhartbiz",
+      "displayName": "justinhartbiz",
+      "image": "https://avatars.githubusercontent.com/u/27245787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2439,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770515052867,
+      "changelog": "Initial release: file-based memory for AI agents that forget",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20fadc72346d85121257a005e7a80aa57c94bd17db9629265cd8f7729589f8d0"
+}

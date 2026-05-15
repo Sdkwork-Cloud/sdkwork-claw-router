@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-gameinfomer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_gameinfomer",
+  "skill": {
+    "id": 53326,
+    "skillKey": "clawhub-news-gameinfomer",
+    "name": "Gameinformer News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-gameinfomer",
+    "url": "https://clawhub.ai/skills/news-gameinfomer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-gameinfomer-10629640bfcc08c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Game Informer — section RSS (news/reviews/previews/features). Fetch per section; English reply; only ### headings for sections with at least one item from th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maximedogawa",
+      "userId": "s173tmqazafef4732wqe47rcyd84trs1",
+      "displayName": "Maxim Edogawa",
+      "image": "https://avatars.githubusercontent.com/u/118206726?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776451217009,
+      "changelog": "Initial release — fetches and displays recent Game Informer headlines by section.\n\n- Supports fetching separate RSS feeds for News, Reviews, Previews, and Features sections.\n- Outputs only non-empty sections, each limited to 3–5 latest items by default.\n- Lists stories in order: News, then Reviews, Previews, and Features, with titles as markdown links.\n- Combined feed available when requested (all-in-one view).\n- Omits empty sections and avoids outputting placeholders for unavailable data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62aebed13345fb90a3f178190ba12b654e7f9bdc47124d994ebd08511a81706d"
+}

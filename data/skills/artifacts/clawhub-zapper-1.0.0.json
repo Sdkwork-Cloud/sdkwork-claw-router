@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zapper",
+  "skill": {
+    "id": 11055,
+    "skillKey": "clawhub-zapper",
+    "name": "Zapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zapper",
+    "url": "https://clawhub.ai/skills/zapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zapper-ac83a1c781d58e84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query DeFi portfolio data across 50+ chains via Zapper's GraphQL API. Use when the user wants to check wallet balances, DeFi positions, NFT holdings, token prices, or transaction history. Supports Base, Ethereum, Polygon, Arbitrum, Optimis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spirosrap",
+      "userId": "publishers:spirosrap",
+      "displayName": "Spiros Raptis",
+      "image": "https://avatars.githubusercontent.com/u/1444577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2129,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770046871523,
+      "changelog": "DeFi portfolio tracking across 50+ chains",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e6b5324a8b35fce278f4e527e54fe8d619ce573af2879d4a49cd516f9fc25e04"
+}

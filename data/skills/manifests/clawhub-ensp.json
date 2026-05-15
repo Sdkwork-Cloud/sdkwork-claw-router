@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36022,
+  "uuid": "skill-clawhub-ensp",
+  "skillKey": "clawhub-ensp",
+  "name": "eNSP",
+  "summary": "Always use when user asks to create, generate, or design a network topology diagram for eNSP (Enterprise Network Simulation Platform), or mentions creating e...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ensp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "forealmy",
+      "features": [
+        "Always use when user asks to create, generate, or design a network topology diagram for eNSP (E."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ensp@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34614792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ensp",
+      "url": "https://clawhub.ai/skills/ensp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ensp",
+    "url": "https://clawhub.ai/skills/ensp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ensp-fc318d13f7eab1bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ensp@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ensp-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27a8913139289757f3f121d521fc2da0457272ba44ca6b7000eea635a96ec21c",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:49:47.872Z"
+}

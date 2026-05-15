@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65394,
+  "uuid": "skill-clawhub-truecaller",
+  "skillKey": "clawhub-truecaller",
+  "name": "Truecaller",
+  "summary": "整理Truecaller公开官网的功能介绍、版本信息、下载入口、权限说明及帮助文档内容。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truecaller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "整理Truecaller公开官网的功能介绍、版本信息、下载入口、权限说明及帮助文档内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/truecaller@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "truecaller",
+      "url": "https://clawhub.ai/skills/truecaller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truecaller",
+    "url": "https://clawhub.ai/skills/truecaller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truecaller-c92f0a55ddf68fe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/truecaller@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-truecaller-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df6639400d1f03b1682fdf23690f14f373de51177305febdbd6742bab570bd28",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:58:21.511Z"
+}

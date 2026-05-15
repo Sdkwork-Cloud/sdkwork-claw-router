@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16267,
+  "uuid": "skill-clawhub-clawdocs-improved",
+  "skillKey": "clawhub-clawdocs-improved",
+  "name": "Clawdocs Improved",
+  "summary": "OpenClaw documentation expert with config references, errata tracking, search scripts, and decision tree navigation",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdocs_improved",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Frank",
+      "features": [
+        "OpenClaw documentation expert with config references, errata tracking, search scripts, and deci."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdocs-improved@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171521906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdocs-improved",
+      "url": "https://clawhub.ai/skills/clawdocs-improved"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdocs-improved",
+    "url": "https://clawhub.ai/skills/clawdocs-improved",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdocs-improved-87eae531545c8b96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdocs-improved@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdocs-improved-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:028d5898920d75d86596f23aec7e26f222dcc5a2c70b63a297403f48ababa38c",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:46:18.484Z"
+}

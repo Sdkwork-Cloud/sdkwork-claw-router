@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65482,
+  "uuid": "skill-clawhub-baidu-scholar-helper",
+  "skillKey": "clawhub-baidu-scholar-helper",
+  "name": "百度学术助手 (Baidu Scholar Helper)",
+  "summary": "一键搜索学术论文，自动下载PDF，智能总结核心工作与创新点。支持百度学术+arXiv，按引用量排序，科研必备工具。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_scholar_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "swy",
+      "features": [
+        "一键搜索学术论文，自动下载PDF，智能总结核心工作与创新点。支持百度学术+arXiv，按引用量排序，科研必备工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-scholar-helper@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88260763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-scholar-helper",
+      "url": "https://clawhub.ai/skills/baidu-scholar-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-scholar-helper",
+    "url": "https://clawhub.ai/skills/baidu-scholar-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-scholar-helper-175201654e39aae9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-scholar-helper@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-scholar-helper-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38be72d760cf109d86004815c6103e2bc2915c970fcedb155e01a842363849de",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T07:47:29.247Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intellectia-stock-screener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intellectia_stock_screener",
+  "skill": {
+    "id": 10738,
+    "skillKey": "clawhub-intellectia-stock-screener",
+    "name": "Stock Screener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intellectia-stock-screener",
+    "url": "https://clawhub.ai/skills/intellectia-stock-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intellectia-stock-screener-ce4498f2fb88326c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get stock screener list data from Intellectia API (no auth) and summarize results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "intellectiaai",
+      "userId": "publishers:intellectiaai",
+      "displayName": "intellectiaAI",
+      "image": "https://avatars.githubusercontent.com/u/258763693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2336,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770019907492,
+      "changelog": "- Initial release of intellectia-stock-screener.\n- Provides detailed documentation on fetching and filtering stock screener data from the Intellectia API.\n- Lists all query parameters, response fields, and example usage in both cURL and Python.\n- Specifies no authentication is required to use the API.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5a71d6430fb531a60cb8c9b283908f699044b624bd8041af95c2843ff6afe1e"
+}

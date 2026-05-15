@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/new-tag@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_tag",
+  "skill": {
+    "id": 27496,
+    "skillKey": "clawhub-new-tag",
+    "name": "New Tag"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-tag",
+    "url": "https://clawhub.ai/skills/new-tag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-tag-3601ef7106c35760.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare and publish a git release tag by inspecting the repo's release convention, bumping affected package versions, validating release builds, committing t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "femto",
+      "userId": "publishers:femto",
+      "displayName": "femto",
+      "image": "https://avatars.githubusercontent.com/u/6938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773228287161,
+      "changelog": "- Initial release with version 0.1.1.\n- Added agents/openai.yaml configuration file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd0caba8b72af269486f13a374e5fb4302b4feb2395c593168e474bfd46f73bc"
+}

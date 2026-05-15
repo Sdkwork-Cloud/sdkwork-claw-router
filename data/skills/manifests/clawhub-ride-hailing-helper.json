@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59802,
+  "uuid": "skill-clawhub-ride-hailing-helper",
+  "skillKey": "clawhub-ride-hailing-helper",
+  "name": "打车助手",
+  "summary": "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ride_hailing_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cs200809",
+      "features": [
+        "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, sc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ride-hailing-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185908023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ride-hailing-helper",
+      "url": "https://clawhub.ai/skills/ride-hailing-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ride-hailing-helper",
+    "url": "https://clawhub.ai/skills/ride-hailing-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ride-hailing-helper-fa8470469759176c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ride-hailing-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ride-hailing-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3959f54260a23329777e1a1b7ce26026b41e130335730572ce5780ca2c86a774",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:54:20.033Z"
+}

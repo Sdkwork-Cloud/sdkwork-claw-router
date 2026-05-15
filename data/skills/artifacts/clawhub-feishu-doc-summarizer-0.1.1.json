@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-summarizer@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_summarizer",
+  "skill": {
+    "id": 14562,
+    "skillKey": "clawhub-feishu-doc-summarizer",
+    "name": "Feishu Doc Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-summarizer",
+    "url": "https://clawhub.ai/skills/feishu-doc-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-summarizer-36c1d8adf78bf1b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically read and summarize Feishu/Lark docx or wiki links in chat using the user's fixed summary schema from MEMORY.md."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "victor-thu",
+      "userId": "publishers:victor-thu",
+      "displayName": "Victor Wang",
+      "image": "https://avatars.githubusercontent.com/u/75624637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1116,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772280528906,
+      "changelog": "- Initial release of Feishu Doc Summarizer.\n- Added basic functionality description and workflow documentation.\n- Included support for docx and wiki Feishu/Lark document links.\n- Published metadata file (_meta.json) for skill registration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5b37614027005c315f074c20e273cff1d120b5f5fda13e38798c0804d56d3934"
+}

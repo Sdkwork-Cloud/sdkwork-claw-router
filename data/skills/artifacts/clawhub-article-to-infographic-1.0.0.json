@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-to-infographic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_to_infographic",
+  "skill": {
+    "id": 14334,
+    "skillKey": "clawhub-article-to-infographic",
+    "name": "Article to Infographic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-to-infographic",
+    "url": "https://clawhub.ai/skills/article-to-infographic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-to-infographic-20e1860b43a4bef7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform articles, blog posts, reports, or any text content into visually stunning, self-contained HTML infographics. Use when the user wants to convert tex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengsh0923",
+      "userId": "s174v73s1wnfwgvc0v7czftvvh83ezgx",
+      "displayName": "Frank Shen",
+      "image": "https://avatars.githubusercontent.com/u/169961090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1201,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771936036689,
+      "changelog": "Initial release – transform any article or text into a fully self-contained HTML infographic with strict user-controlled workflow.\n\n- Converts articles, reports, blog posts, or pasted text into visually engaging infographics (timeline, statistics, comparison, etc.)\n- Enforces a strict, multi-step confirmation process: outline, layout, style, illustrations, and output format must each be confirmed separately.\n- Automatically analyzes content and recommends the most suitable infographic type.\n- Produces distinctive, non-generic infographic designs with zero external dependencies and print-ready formatting.\n- Supports optional SVG illustrations and flexible output (HTML and PNG).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:60a2ace5d0f9d6475eadf3e8c658d765bfffb8cc957761a6c80e43d4962e13a0"
+}

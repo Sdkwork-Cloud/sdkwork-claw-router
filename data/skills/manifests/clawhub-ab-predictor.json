@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52290,
+  "uuid": "skill-clawhub-ab-predictor",
+  "skillKey": "clawhub-ab-predictor",
+  "name": "Ab Predictor",
+  "summary": "Predict which ad hook, email subject, or social post wins before you spend a dollar. Depth 3 — confidence intervals on every prediction, rewrite surgery with...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_predictor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drivenautoplex1",
+      "features": [
+        "Predict which ad hook, email subject, or social post wins before you spend a dollar",
+        "Depth 3 — confidence intervals on every prediction, rewrite surgery with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ab-predictor@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186228539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ab-predictor",
+      "url": "https://clawhub.ai/skills/ab-predictor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-predictor",
+    "url": "https://clawhub.ai/skills/ab-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-predictor-029a590818543841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ab-predictor@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ab-predictor-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7e53b1d2f080897ca35350cae036fb6f701cf3dcbea59edd8457edaccf36282",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T18:46:17.594Z"
+}

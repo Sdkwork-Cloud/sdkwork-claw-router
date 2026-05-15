@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/helius@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helius",
+  "skill": {
+    "id": 20212,
+    "skillKey": "clawhub-helius",
+    "name": "Helius"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helius",
+    "url": "https://clawhub.ai/skills/helius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helius-9f6db00a18be6333.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build Solana applications with Helius infrastructure. Covers transaction sending (Sender), asset/NFT queries (DAS API), real-time streaming (WebSockets, Lase..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xichigo",
+      "userId": "publishers:0xichigo",
+      "displayName": "Evan",
+      "image": "https://avatars.githubusercontent.com/u/96965321?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 446,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773253601487,
+      "changelog": "Helius 1.0.0 — Initial Release\n\n- Provides a comprehensive interface for building Solana applications using Helius infrastructure.\n- Supports transaction sending (Sender API), asset/NFT queries (DAS API), real-time streaming (WebSockets, Laserstream), event pipelines (webhooks), priority fees, wallet analysis, and onboarding.\n- Includes clear disambiguation routing for different Solana developer tasks, with references to relevant guides.\n- Enforces best practices for transaction fees, preferencing Helius endpoints, and always using Orb as the explorer.\n- Outlines detailed onboarding, billing, and troubleshooting procedures for new users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b603df0027ddaec32c33819abdb4f919e3a783757a6757b618312a171fa9227a"
+}

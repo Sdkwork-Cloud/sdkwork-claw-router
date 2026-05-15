@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-editor-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_editor_text",
+  "skill": {
+    "id": 47196,
+    "skillKey": "clawhub-free-editor-text",
+    "name": "Free Editor Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-editor-text",
+    "url": "https://clawhub.ai/skills/free-editor-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-editor-text-e0926f8867eaadb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get text-overlaid videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776405883574,
+      "changelog": "Initial release of Free Editor Text skill — add AI-powered text overlays and captions to your videos, free.\n\n- Upload MP4, MOV, AVI, or WebM clips up to 500MB; add on-screen text and captions with a single prompt.\n- No manual editing needed — just describe what you want.\n- Automatic backend authentication and cloud GPU rendering.\n- Download your finished 1080p MP4 in seconds; quick turnaround for short clips.\n- Supports batch processing, timeline-based preview, and free usage for up to 100 credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecaa758358325d4a63e61fe5fac707c9ff8be7533038c661d9c57345a1494c32"
+}

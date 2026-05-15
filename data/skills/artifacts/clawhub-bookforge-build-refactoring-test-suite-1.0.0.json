@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-build-refactoring-test-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_build_refactoring_test_suite",
+  "skill": {
+    "id": 54981,
+    "skillKey": "clawhub-bookforge-build-refactoring-test-suite",
+    "name": "Build Refactoring Test Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-build-refactoring-test-suite",
+    "url": "https://clawhub.ai/skills/bookforge-build-refactoring-test-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-build-refactoring-test-suite-9623619ecb4a525a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a sufficient automated test suite before refactoring existing code by applying a 6-step sequential construction workflow (test class → fixture → normal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776622242712,
+      "changelog": "Initial release – provides a step-by-step workflow for building automated test suites before refactoring.\n\n- Guides users through creating a test file, setting up fixtures, and covering normal behavior, boundaries, and error conditions.\n- Describes a \"green-suite gate\" to ensure all tests pass before any refactoring begins.\n- Includes a bug-fix variant workflow (failing test → reproduce → fix → verify).\n- Lists assessment and sufficiency guidelines for existing codebases.\n- Designed primarily for developers preparing code for safe, reversible refactoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4e6789da78fd353703d44957175d1085d350c2d6237b29759c7d977f9d19248"
+}

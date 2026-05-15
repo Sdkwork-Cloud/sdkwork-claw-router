@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/policy-delta-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.policy_delta_watcher",
+  "skill": {
+    "id": 60009,
+    "skillKey": "clawhub-policy-delta-watcher",
+    "name": "Policy Delta Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "policy-delta-watcher",
+    "url": "https://clawhub.ai/skills/policy-delta-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/policy-delta-watcher-dfd7068d0ca94ab3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "比较新旧制度或政策差异，指出业务影响、流程影响和需更新的操作手册。；use for policy, diff, governance workflows；do not use for 给法律定性结论, 忽略边缘影响人群."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773891108213,
+      "changelog": "Initial release of policy-delta-watcher.\n\n- Provides structured comparison between old and new policies or procedures, highlighting key differences.\n- Identifies business and process impacts, as well as required manual/documentation updates.\n- Explicitly lists pending questions when input information is incomplete.\n- Output includes: main changes, business impact, process impact, documents to update, training suggestions, and items needing clarification.\n- Incorporates strong guardrails for security, compliance, and appropriate usage scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7ebb71f3ab34208824f8aba644dea22d01585283553775286321e10e269012d"
+}

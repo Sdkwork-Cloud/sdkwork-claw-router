@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27417,
+  "uuid": "skill-clawhub-uplo-healthcare",
+  "skillKey": "clawhub-uplo-healthcare",
+  "name": "Uplo Healthcare",
+  "summary": "AI-powered healthcare knowledge management. Search clinical notes, care plans, lab results, prescriptions, and patient pathways with structured extraction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_healthcare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RooJenkins",
+      "features": [
+        "AI-powered healthcare knowledge management",
+        "Search clinical notes, care plans, lab results, prescriptions, and patient pathways with struct."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uplo-healthcare@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47111622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uplo-healthcare",
+      "url": "https://clawhub.ai/skills/uplo-healthcare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-healthcare",
+    "url": "https://clawhub.ai/skills/uplo-healthcare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-healthcare-626edca79f6609d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uplo-healthcare@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uplo-healthcare-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c599a0f59ae24362e529f6fe2138d807d41ab8039abff71f0bd77451f3a1902",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:09:00.620Z"
+}

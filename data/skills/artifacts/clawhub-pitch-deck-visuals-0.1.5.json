@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pitch-deck-visuals@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pitch_deck_visuals",
+  "skill": {
+    "id": 15152,
+    "skillKey": "clawhub-pitch-deck-visuals",
+    "name": "Pitch Deck Visuals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pitch-deck-visuals",
+    "url": "https://clawhub.ai/skills/pitch-deck-visuals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pitch-deck-visuals-f6fce8d3671eadeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Investor pitch deck structure with slide-by-slide framework, visual design rules, and data presentation. Covers the 12-slide framework, chart types, team sli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1022,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403283276,
+      "changelog": "pitch-deck-visuals 0.1.5\n\n- Added detailed slide-by-slide templates for a 12-slide investor pitch deck framework.\n- Included visual design rules covering typography, color, and layout best practices.\n- Provided CLI-based code samples for generating professional slide backgrounds and charts (e.g., market size, traction).\n- Clarified best practices for data presentation and cautions against common investor turn-offs.\n- Expanded slide-specific guidance (e.g., Problem, Market Size, Traction, Competition) for startup fundraising presentations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:50d201daa46e47ecd5d053c3a6d4bd2ed6cce4a8a3156ef3bbe147d6b8e1236a"
+}

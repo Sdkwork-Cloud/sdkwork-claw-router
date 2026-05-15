@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67198,
+  "uuid": "skill-clawhub-claw-stock",
+  "skillKey": "clawhub-claw-stock",
+  "name": "Claw Stock",
+  "summary": "个股分析师。当用户提到任何 A 股、港股、美股股票名称或代码，或说出\"分析一下\"、\"看看这只\"、\"打个分\"、\"值得买吗\"、\"怎么看\"等意图时，调用本 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoborlon-alpha",
+      "features": [
+        "个股分析师。当用户提到任何 A 股、港股、美股股票名称或代码，或说出\"分析一下\"、\"看看这只\"、\"打个分\"、\"值得买吗\"、\"怎么看\"等意图时，调用本 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-stock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235118954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-stock",
+      "url": "https://clawhub.ai/skills/claw-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-stock",
+    "url": "https://clawhub.ai/skills/claw-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-stock-d371d3888b67d6ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-stock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-stock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a45a93ec79d001252476aecb74ff0164a68e5a37f93a7f9ae3bd629ed6334135",
+      "artifactSizeBytes": 2679
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:50:59.400Z"
+}

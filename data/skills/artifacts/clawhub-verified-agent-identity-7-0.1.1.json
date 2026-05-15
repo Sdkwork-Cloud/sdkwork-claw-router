@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/verified-agent-identity-7@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verified_agent_identity_7",
+  "skill": {
+    "id": 27717,
+    "skillKey": "clawhub-verified-agent-identity-7",
+    "name": "Verified Agent Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verified-agent-identity-7",
+    "url": "https://clawhub.ai/skills/verified-agent-identity-7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verified-agent-identity-7-56bba1fae5fba399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Billions decentralized identity for agents. Link agents to human identities using Billions ERC-8004 and Attestation Registries. Verify and generate authentic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "armanma0100",
+      "userId": "publishers:armanma0100",
+      "displayName": "ARMANMA0100",
+      "image": "https://avatars.githubusercontent.com/u/192688905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773803872957,
+      "changelog": "Initial public release with full agent identity functionality:\n\n- Implements creation and management of decentralized agent identities using Billions ERC-8004 and iden3 protocols.\n- Provides scripts to create identities, generate and verify authentication challenges, and link agents to human owners.\n- Includes strict guardrails to enforce secure key/identity handling and prevent unauthorized/manual cryptographic operations.\n- Stores all sensitive identity data in `$HOME/.openclaw/billions` for compatibility and security.\n- Offers example flows and usage instructions for identity linking and verification between agents and humans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03434638dbf489b230ea40eee9fd1b3a200d24ac0aa7045bf2857b70562c1fd6"
+}

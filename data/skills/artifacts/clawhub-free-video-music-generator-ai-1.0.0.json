@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-music-generator-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_music_generator_ai",
+  "skill": {
+    "id": 43381,
+    "skillKey": "clawhub-free-video-music-generator-ai",
+    "name": "Free Video Music Generator Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-music-generator-ai",
+    "url": "https://clawhub.ai/skills/free-video-music-generator-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-music-generator-ai-b9b3e7a2a3ad8feb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate video clips into music-backed videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding AI-genera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776359493249,
+      "changelog": "Initial release of Free Video Music Generator AI.\n\n- Generate AI-powered background music for your uploaded video clips.\n- Supports MP4, MOV, AVI, WebM files up to 500MB; exports in 1080p MP4.\n- Automated cloud processing completes in 30–60 seconds per video.\n- Handles uploads, music generation, preview, and export within the same session.\n- Anonymous users receive 100 free credits, valid for 7 days.\n- Includes guidance for common workflows and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9178ef21cfdaea90aed842f9878efe939d01279332425bfee8e76e41bd97452"
+}

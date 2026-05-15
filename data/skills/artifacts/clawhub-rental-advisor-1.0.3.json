@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rental-advisor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rental_advisor",
+  "skill": {
+    "id": 45224,
+    "skillKey": "clawhub-rental-advisor",
+    "name": "Rental Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rental-advisor",
+    "url": "https://clawhub.ai/skills/rental-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rental-advisor-e8e830980db0a9dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI rental advisor skill to help users make rental decisions. Triggers when users ask for rental area recommendations, property search, rent price estimation,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanghou2025",
+      "userId": "s175drvhejh1jc4eddtqwcqtb185je78",
+      "displayName": "Frank2025",
+      "image": "https://avatars.githubusercontent.com/u/229275613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777193244872,
+      "changelog": "v1.0.3: Split area reference into city-specific files (shanghai.md, beijing.md, shenzhen.md, guangzhou.md). Updated SKILL.md to reference new city file structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b768c2c48ba31bb62043455e98d509fa773339a1cf17ea73ea50ae6e53f42a6"
+}

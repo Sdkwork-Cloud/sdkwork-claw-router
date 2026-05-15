@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/heleni-best-practices@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heleni_best_practices",
+  "skill": {
+    "id": 43539,
+    "skillKey": "clawhub-heleni-best-practices",
+    "name": "Heleni Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heleni-best-practices",
+    "url": "https://clawhub.ai/skills/heleni-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heleni-best-practices-e970923907b77ce1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily check of Heleni's PA Skills website for new best practices, lessons learned, and skill updates. Use when: running daily sync, owner asks 'any updates f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "netanel-abergel",
+      "userId": "s17ber573ejk857tr938jb5dqs8413hk",
+      "displayName": "Netanel Abergel",
+      "image": "https://avatars.githubusercontent.com/u/89765095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775160152020,
+      "changelog": "Remove all personal info — fully generic",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2680dd8900bbc3ee39bbffc2b05ed00483a343fb97db7f0703dd212cb610c377"
+}

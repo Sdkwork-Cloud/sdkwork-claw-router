@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_editor",
+  "skill": {
+    "id": 46746,
+    "skillKey": "clawhub-markdown-editor",
+    "name": "Markdown Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-editor",
+    "url": "https://clawhub.ai/skills/markdown-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-editor-38791fc05ed94f67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 300-word markdown document with headers and bullet points into 1080p formatted video slides just by typing what you need. Whether it's turning markdow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777590184181,
+      "changelog": "- Initial release of the Markdown Editor skill (v1.0.0).\n- Instantly converts markdown documents (with headers and bullet points) into 1080p formatted video slides.\n- Simple workflow: upload your markdown or script and describe your desired video; receive a downloadable video in 1–2 minutes.\n- Automates setup with session and token management (including free anonymous access).\n- Supports key commands for export, credits, status, upload, and general editing—mapped by user prompt.\n- All video rendering happens in the cloud—no installation or local GPU required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a9c16fb5d324b86bd21fbd0e742dfec77b91b484b7e17c94dfa21d48ed14cad"
+}

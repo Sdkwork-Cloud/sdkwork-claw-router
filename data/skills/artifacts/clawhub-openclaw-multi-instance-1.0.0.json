@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-multi-instance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_multi_instance",
+  "skill": {
+    "id": 65207,
+    "skillKey": "clawhub-openclaw-multi-instance",
+    "name": "OpenClaw Multi-Instance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-multi-instance",
+    "url": "https://clawhub.ai/skills/openclaw-multi-instance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-multi-instance-5073c54f127cd270.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 多实例互联。当用户有多台机器运行 OpenClaw，想让它们互相通信、传文件、共享记忆时使用。触发词：多实例、互联、另一台服务器、同步记忆、实例通信。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "milkteawithsoybeanmilktast",
+      "userId": "s17f0cpqs3je8b9vrsc1b3808585ncqv",
+      "displayName": "MilkTeawithSoybeanMilkTast",
+      "image": "https://avatars.githubusercontent.com/u/53138363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777297107432,
+      "changelog": "首个版本：多实例互联、文件传输、记忆同步",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a7ca7054afbc66bcdd0c3bc00703e04e1ee767c8295b50e03488dc86506aa17"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28674,
+  "uuid": "skill-clawhub-pearl-habit-tracker",
+  "skillKey": "clawhub-pearl-habit-tracker",
+  "name": "Habit Tracker",
+  "summary": "Track habits, log completions, and analyze progress with CLI commands. Use when user wants to build habits, track daily/weekly/monthly routines, log habit co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pearl_habit_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Track habits, log completions, and analyze progress with CLI commands",
+        "Use when user wants to build habits, track daily/weekly/monthly routines, log habit co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pearl-habit-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pearl-habit-tracker",
+      "url": "https://clawhub.ai/skills/pearl-habit-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pearl-habit-tracker",
+    "url": "https://clawhub.ai/skills/pearl-habit-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pearl-habit-tracker-702802d892fd0295.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pearl-habit-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pearl-habit-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6c4a13c32efc4a57ce4709b271621958e7363e102d171c7c2bed24609ed3e86",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T01:36:02.098Z"
+}

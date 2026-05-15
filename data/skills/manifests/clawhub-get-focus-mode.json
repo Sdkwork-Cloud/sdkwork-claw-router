@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10878,
+  "uuid": "skill-clawhub-get-focus-mode",
+  "skillKey": "clawhub-get-focus-mode",
+  "name": "Get Focus Mode",
+  "summary": "Get the current macOS Focus mode",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_focus_mode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NickChristensen",
+      "features": [
+        "Get the current macOS Focus mode"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-focus-mode@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/613826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-focus-mode",
+      "url": "https://clawhub.ai/skills/get-focus-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-focus-mode",
+    "url": "https://clawhub.ai/skills/get-focus-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-focus-mode-d9f525865022beb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-focus-mode@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-focus-mode-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd1e6082ae43c23cdec24884793551926b2b0aca9dfd70e98d1e8d2cb3015676",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-13T21:12:44.637Z"
+}

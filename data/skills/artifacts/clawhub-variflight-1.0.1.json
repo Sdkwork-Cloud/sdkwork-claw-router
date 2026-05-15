@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/variflight@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.variflight",
+  "skill": {
+    "id": 21446,
+    "skillKey": "clawhub-variflight",
+    "name": "Variflight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "variflight",
+    "url": "https://clawhub.ai/skills/variflight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/variflight-3e755391d25e5ecd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query flight information, train tickets, and travel data using Variflight (飞常准) HTTP API. Use when the user needs to (1) search flights by route or flight number, (2) check flight status and punctuality, (3) find train tickets, (4) get air."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyz1990",
+      "userId": "publishers:lyz1990",
+      "displayName": "Variflight",
+      "image": "https://avatars.githubusercontent.com/u/3955656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1251,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770792791930,
+      "changelog": "Added OpenClaw support and improved documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3911efe223887ab8c787bac28de205ddb335a5a7913298f1407e6e85d149cc68"
+}

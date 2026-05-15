@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43092,
+  "uuid": "skill-clawhub-dropbox-download",
+  "skillKey": "clawhub-dropbox-download",
+  "name": "Dropbox Download",
+  "summary": "Download a file from Dropbox by providing its file path, returning the file content as binary data.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "foundergraph",
+      "features": [
+        "Download a file from Dropbox by providing its file path, returning the file content as binary d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dropbox-download@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215341799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dropbox-download",
+      "url": "https://clawhub.ai/skills/dropbox-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox-download",
+    "url": "https://clawhub.ai/skills/dropbox-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-download-04636d421b69ad67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dropbox-download@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dropbox-download-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46ceb90338246031acf8b5138b8ed396253ac5cea968fc68b7121a8ee9242bf9",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:30:00.004Z"
+}

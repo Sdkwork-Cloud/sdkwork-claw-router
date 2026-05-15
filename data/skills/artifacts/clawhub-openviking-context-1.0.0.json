@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openviking-context@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openviking_context",
+  "skill": {
+    "id": 57266,
+    "skillKey": "clawhub-openviking-context",
+    "name": "OpenViking 上下文数据库"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openviking-context",
+    "url": "https://clawhub.ai/skills/openviking-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openviking-context-7b0633a56ea95681.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenViking context database for AI agents — layered context loading (L0/L1/L2), semantic search, file-system memory management. Use when setting up OpenVikin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlyonepice",
+      "userId": "publishers:onlyonepice",
+      "displayName": "onlyonepice",
+      "image": "https://avatars.githubusercontent.com/u/41139949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773923857266,
+      "changelog": "Initial release of openviking-context.\n\n- Provides layered context loading (L0/L1/L2) for AI agents, significantly reducing token consumption.\n- Supports semantic search, file-system style context management, and persistent agent memory across sessions.\n- Integrates with OpenClaw; simple installation and configuration scripts included.\n- Tracks and reports token usage compared to traditional RAG approaches.\n- Includes troubleshooting guide and model provider compatibility notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f08c3df06a40c46eb26a35d893465408354688a42277efae24209d212d78a235"
+}

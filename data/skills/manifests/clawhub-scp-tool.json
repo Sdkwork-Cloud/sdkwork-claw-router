@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48002,
+  "uuid": "skill-clawhub-scp-tool",
+  "skillKey": "clawhub-scp-tool",
+  "name": "Scp Tool",
+  "summary": "Securely copy files between local and remote hosts over SSH. Use for file transfers, remote backups, and deployment tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scp_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Securely copy files between local and remote hosts over SSH",
+        "Use for file transfers, remote backups, and deployment tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scp-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scp-tool",
+      "url": "https://clawhub.ai/skills/scp-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scp-tool",
+    "url": "https://clawhub.ai/skills/scp-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scp-tool-c6d2531e2e4ee69b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scp-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scp-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a30cc6fadd853ba729448894cc6acd01e8a3b69b095faa54974d30e7555a5c61",
+      "artifactSizeBytes": 1801
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T16:55:10.353Z"
+}

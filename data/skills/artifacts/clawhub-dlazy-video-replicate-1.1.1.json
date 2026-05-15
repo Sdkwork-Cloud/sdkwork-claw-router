@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-video-replicate@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_video_replicate",
+  "skill": {
+    "id": 16705,
+    "skillKey": "clawhub-dlazy-video-replicate",
+    "name": "Dlazy Video Replicate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-video-replicate",
+    "url": "https://clawhub.ai/skills/dlazy-video-replicate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-video-replicate-96d0115ce6b7e0dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts the first frame and audio from a video, analyzes it with a prompt, and returns a Seedance 2.0 replicate bundle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 848,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076698596,
+      "changelog": "- Bumped version to 1.1.1.\n- Documentation updates in SKILL.md and SKILL-cn.md; no functional changes to tool behavior or API.\n- No changes to usage, features, or output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d07feb3d7620e2606b495a18fe02ff3e7c8994c2c9e298e0776c4810b4c22648"
+}

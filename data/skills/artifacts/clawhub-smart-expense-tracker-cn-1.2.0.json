@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-expense-tracker-cn@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_expense_tracker_cn",
+  "skill": {
+    "id": 62796,
+    "skillKey": "clawhub-smart-expense-tracker-cn",
+    "name": "Smart Expense Tracker Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-expense-tracker-cn",
+    "url": "https://clawhub.ai/skills/smart-expense-tracker-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-expense-tracker-cn-cb8c6fcf47d9bd1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能记账助手 v2.1 | AI Expense Tracker. 支持语音记账、OCR发票识别、预算提醒、周月报推送、智能分类、多账本管理、数据导出。触发词：记账、花了、消费、支出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyong2023",
+      "userId": "s17agxwnrg48cpbrsngxqb6eg183yzy9",
+      "displayName": "huyong2023",
+      "image": "https://avatars.githubusercontent.com/u/138767654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 603,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772709523341,
+      "changelog": "**smart-expense-tracker-cn v1.2.0 Changelog**\n\n- Major refactor: streamlined project structure, removing 12 scripts and metadata files.\n- Documentation update: new SKILL.md with enhanced feature descriptions and usage guidance.\n- Added backup of previous SKILL.md as SKILL_v1.1.md.\n- System requirements updated (now also lists tesseract for OCR).\n- No changes to core functionality—focus is on documentation and structure cleanup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a23c2c1ff58baa1b1281ea3143acbde1d12c004f41087a71bf2f4c58aaf2e85"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memprocessor@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memprocessor",
+  "skill": {
+    "id": 24961,
+    "skillKey": "clawhub-memprocessor",
+    "name": "Memory Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memprocessor",
+    "url": "https://clawhub.ai/skills/memprocessor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memprocessor-1b39ffecfd262955.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents to develop independent, evolving personas through organic memory growth, self-reflection, and layered memory management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zfanmy",
+      "userId": "s17a9n0kykchma2r1hmwr1dheh83hyv2",
+      "displayName": "zfanmy",
+      "image": "https://avatars.githubusercontent.com/u/33675069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773241857974,
+      "changelog": "DreamMoon-MemProcessor 0.1.1 introduces a pioneering memory system focused on organic persona generation for AI agents.\n\n- Enables AI agents to grow personas organically through experience and reflection\n- Features a 10-dimensional persona model (Big Five + AI traits)\n- Employs a four-layer memory architecture for efficient information management\n- Supports automatic persistence and semantic search\n- Provides quick start instructions for easy setup and persona generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83bb84f3e43ada54ec6164dc216b4efd184ea6001f48abbe257e891ff56cdf1e"
+}

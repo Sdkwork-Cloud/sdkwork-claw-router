@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14594,
+  "uuid": "skill-clawhub-sergei-mikhailov-tg-channel-reader",
+  "skillKey": "clawhub-sergei-mikhailov-tg-channel-reader",
+  "name": "Telegram Channel Reader",
+  "summary": "Read posts and comments from Telegram channels via MTProto (Pyrogram or Telethon). Fetch recent messages and discussion replies from public or private channe...",
+  "version": "0.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sergei_mikhailov_tg_channel_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Mikhaylov",
+      "features": [
+        "Read posts and comments from Telegram channels via MTProto (Pyrogram or Telethon)",
+        "Fetch recent messages and discussion replies from public or private channe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sergei-mikhailov-tg-channel-reader@0.9.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/825538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sergei-mikhailov-tg-channel-reader",
+      "url": "https://clawhub.ai/skills/sergei-mikhailov-tg-channel-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sergei-mikhailov-tg-channel-reader",
+    "url": "https://clawhub.ai/skills/sergei-mikhailov-tg-channel-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sergei-mikhailov-tg-channel-reader-ac94661cbc26fbb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sergei-mikhailov-tg-channel-reader@0.9.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sergei-mikhailov-tg-channel-reader-0.9.2.json",
+      "version": "0.9.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1186c0cfb94672e7c37cda015aada983fcbec789d23065ea75abf4e70df450d",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T19:33:39.252Z"
+}

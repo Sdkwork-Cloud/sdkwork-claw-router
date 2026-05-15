@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67295,
+  "uuid": "skill-clawhub-expense-tracker-daily",
+  "skillKey": "clawhub-expense-tracker-daily",
+  "name": "Expense Tracker Daily",
+  "summary": "智能记账助手。当用户提到记账、花钱、支出、消费、花费、记录开销、查账、统计支出、账单等意图时触发。 支持自然语言输入（\"午饭花了35\"、\"打车25块\"、\"昨天买衣服200\"），自动分类，多维度统计分析。 关键词：记账, 花钱, 支出, 消费, 花费, 账单, 查账, 统计支出, 记录开销, 钱花哪了, 月度统计.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_tracker_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GlorySunshine",
+      "features": [
+        "智能记账助手。当用户提到记账、花钱、支出、消费、花费、记录开销、查账、统计支出、账单等意图时触发。 支持自然语言输入（\"午饭花了35\"、\"打车25块\"、\"昨天买衣服200\"），自动分类，多维."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expense-tracker-daily@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28593913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expense-tracker-daily",
+      "url": "https://clawhub.ai/skills/expense-tracker-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-tracker-daily",
+    "url": "https://clawhub.ai/skills/expense-tracker-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-tracker-daily-71ac01885fc8c927.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expense-tracker-daily@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-expense-tracker-daily-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b542bb3da6d4e1db09cada1bc72072908d26ac7be47137d753fca9e68c67f1a",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:29:55.096Z"
+}

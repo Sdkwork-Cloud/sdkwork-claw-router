@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daum-trends@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daum_trends",
+  "skill": {
+    "id": 58820,
+    "skillKey": "clawhub-daum-trends",
+    "name": "Daum Trends"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daum-trends",
+    "url": "https://clawhub.ai/skills/daum-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daum-trends-5127d91975050b9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daum 실시간 트렌드 TOP10 브리핑. 다음 메인 실시간 검색어 + 대표 뉴스 제목 추출. 크론/텔레그램/디스코드 알림용. Use when user asks for Korean real-time search trends, Daum trending keywords, or 실시간..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garibong-labs",
+      "userId": "s17erq91vaqjxyyx47mr6hkq2183hwed",
+      "displayName": "garibong-labs",
+      "image": "https://avatars.githubusercontent.com/u/258610216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772899202762,
+      "changelog": "Initial release: Daum 실시간 트렌드 TOP10 브리핑. Python rewrite with --format plain/markdown/html. Telegram hyperlink tested.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d02cdbf1442d80550d7b072735986db21810419a88d6d45781f1fe946ecb0b11"
+}

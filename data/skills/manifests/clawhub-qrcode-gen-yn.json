@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18992,
+  "uuid": "skill-clawhub-qrcode-gen-yn",
+  "skillKey": "clawhub-qrcode-gen-yn",
+  "name": "Generate Qrcode",
+  "summary": "Generate QR codes from URLs or text using a pre-built Python script with qrcode library",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcode_gen_yn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whubbt",
+      "features": [
+        "Generate QR codes from URLs or text using a pre-built Python script with qrcode library"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qrcode-gen-yn@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8663469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qrcode-gen-yn",
+      "url": "https://clawhub.ai/skills/qrcode-gen-yn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcode-gen-yn",
+    "url": "https://clawhub.ai/skills/qrcode-gen-yn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcode-gen-yn-45c6cf2be2e432db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qrcode-gen-yn@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qrcode-gen-yn-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73ef9b8d269711324a3cddf254516a478b1d743280d05405d19067a64a726b91",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T06:26:27.044Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9272,
+  "uuid": "skill-clawhub-resume-builder",
+  "skillKey": "clawhub-resume-builder",
+  "name": "Resume Builder",
+  "summary": "Generate professional resumes that conform to the Reactive Resume schema. Use when the user wants to create, build, or generate a resume through conversational AI, or asks about resume structure, sections, or content. This skill guides the.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amruthpillai",
+      "features": [
+        "Generate professional resumes that conform to the Reactive Resume schema",
+        "Use when the user wants to create, build, or generate a resume through conversational AI, or as.",
+        "This skill guides the agent to ask clarifying questions, avoid hallucination, and produce valid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1134738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-builder",
+      "url": "https://clawhub.ai/skills/resume-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-builder",
+    "url": "https://clawhub.ai/skills/resume-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-builder-0e52b71d7f92bad0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d5d7718366a87c115ab5d40bc90dcb7f240b32a579cce3a402af080b0dbf239",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T09:10:41.053Z"
+}

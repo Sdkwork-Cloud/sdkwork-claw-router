@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69039,
+  "uuid": "skill-clawhub-fuxi-skill",
+  "skillKey": "clawhub-fuxi-skill",
+  "name": "Fuxi Skill",
+  "summary": "伏羲.skill - 专家级认知操作系统生成器。 用于自动化生成特定人物的「正面专家级认知操作系统」Skill。 当用户要求「提炼一个XXX的精华」「帮我创建一个XXX的商业版Skill」「蒸馏XXX的最优一面」时触发。 通过网络调研（主）与用户素材（辅），采用「六爻画卦」方法论， 仅从互联网公开资料中搜集和提炼...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fuxi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yewubin-jpg",
+      "features": [
+        "伏羲.skill",
+        "专家级认知操作系统生成器。 用于自动化生成特定人物的「正面专家级认知操作系统」Skill。 当用户要求「提炼一个XXX的精华」「帮我创建一个XXX的商业版Skill」「蒸馏XXX的最优一面」."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fuxi-skill@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258250987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fuxi-skill",
+      "url": "https://clawhub.ai/skills/fuxi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fuxi-skill",
+    "url": "https://clawhub.ai/skills/fuxi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fuxi-skill-4da242525277a780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fuxi-skill@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fuxi-skill-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23e69233dd0d914ccee9c181003874b6c47bbcbd265d657b25074ba96ee75ca3",
+      "artifactSizeBytes": 2729
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T14:24:56.547Z"
+}

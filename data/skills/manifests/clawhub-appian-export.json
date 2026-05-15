@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36884,
+  "uuid": "skill-clawhub-appian-export",
+  "skillKey": "clawhub-appian-export",
+  "name": "Appian Export",
+  "summary": "Export an Appian application or package to a ZIP file by UUID. Use when the user wants to export, download, or back up an Appian application or package from...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solarspiker",
+      "features": [
+        "Export an Appian application or package to a ZIP file by UUID",
+        "Use when the user wants to export, download, or back up an Appian application or package from..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appian-export@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235690575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appian-export",
+      "url": "https://clawhub.ai/skills/appian-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-export",
+    "url": "https://clawhub.ai/skills/appian-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-export-0ec8821466df0da6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appian-export@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appian-export-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:077906d5f45914c263b39fedc714f5f72c0c231f1dffe4188259018668f979f8",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:21:55.921Z"
+}

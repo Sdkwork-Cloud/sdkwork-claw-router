@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markitdown-file-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markitdown_file_converter",
+  "skill": {
+    "id": 58673,
+    "skillKey": "clawhub-markitdown-file-converter",
+    "name": "Markitdown File Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markitdown-file-converter",
+    "url": "https://clawhub.ai/skills/markitdown-file-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markitdown-file-converter-342c560f2ba7d55c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 PDF、Word (docx/doc)、Excel (xlsx/xls)、PPT (pptx/ppt)、图片等文件一键转换为 Markdown 或 JSON。 内置三大引擎：pandoc（DOCX 表格/Emoji/公式最强）、markitdown（微软开源，Excel/PPT/图片 OCR）、mammoth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sqlskills",
+      "userId": "s1774kyr593ezfy7qtq3g4k9t983g3a1",
+      "displayName": "SQLSkills",
+      "image": "https://avatars.githubusercontent.com/u/199218417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775746438596,
+      "changelog": "markitdown-file-converter 1.0.0\n\n- 首次发布，支持将 PDF、Word、Excel、PPT、图片等主流文件一键转换成 Markdown 或 JSON。\n- 集成三大引擎（pandoc、markitdown、mammoth），可自动安装和检测依赖，无需手动配置。\n- 支持数学公式转 LaTeX、表格转标准 Markdown 表格、图片自动提取与 OCR 文字/公式识别、base64 图片自动解码。\n- 提供批量转换、按标题结构化 JSON 输出、超时控制、详细进度反馈等增强功能。\n- 支持命令行一键转换、目录批量处理，并自动为不同文件类型选择最优后端。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5eb90644c484a5e42fa2275877308003a05c37a4cfdc366a9b81068d239f6c5b"
+}

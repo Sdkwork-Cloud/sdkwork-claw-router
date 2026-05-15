@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amap-memory-map@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_memory_map",
+  "skill": {
+    "id": 71743,
+    "skillKey": "clawhub-amap-memory-map",
+    "name": "Amap Memory Map"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-memory-map",
+    "url": "https://clawhub.ai/skills/amap-memory-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-memory-map-24fd1fbc9521ac8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把你的生活记忆标记在地图上。告诉我你去过的地方、发生过的故事，我会通过高德地图自动定位、标注，生成可探索的记忆地图。支持时间轴回放、区域聚合、天气还原和分享导出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "770600682-cyber",
+      "userId": "s170hh1asz5mp3w3w80qd7y0b584wcq6",
+      "displayName": "SmartVicky",
+      "image": "https://avatars.githubusercontent.com/u/270828245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776256872236,
+      "changelog": "- Change summary: Updated the configuration section to clarify setup requirements and simplify integration.\n\n- 前置配置改为直接通过高德 Web 服务 API（HTTP接口）获取数据，无需本地服务或二进制依赖\n- 配置高德地图 API Key 更简明，只需设置环境变量 AMAP_API_KEY\n- 移除了对 \"amap-mcp-server\" 的依赖说明\n- 细化了 API Key 配置步骤，突出仅需 HTTP 接口调用\n- 其余功能、用法、示例和隐私声明保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd859879e6f56130b9c1e4872df9c5edeeb0e4b2141d09e64e3f856e880a6d03"
+}

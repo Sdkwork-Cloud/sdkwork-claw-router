@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-weather-helper@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_weather_helper",
+  "skill": {
+    "id": 72531,
+    "skillKey": "clawhub-my-weather-helper",
+    "name": "JACK"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-weather-helper",
+    "url": "https://clawhub.ai/skills/my-weather-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-weather-helper-11d298e45987bfdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供指定城市实时天气、气温和穿衣建议，如无城市则询问位置，数据来源真实可靠。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanglingchao-2025",
+      "userId": "s17ex9frt8m69tb9wygmk34jph84x4jx",
+      "displayName": "wanglingchao-2025",
+      "image": "https://avatars.githubusercontent.com/u/235682901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776244416615,
+      "changelog": "Version 1.0.1\n\n- Removed the file weather_executor.txt.\n- No changes to workflow or features; core functionality remains the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9f69dd2d12f43081472d98a1760caecbd06ba2bcda15af4860fa1afe32e3811"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysteel-infosearch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysteel_infosearch",
+  "skill": {
+    "id": 69464,
+    "skillKey": "clawhub-mysteel-infosearch",
+    "name": "Mysteel_InfoSearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysteel-infosearch",
+    "url": "https://clawhub.ai/skills/mysteel-infosearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysteel-infosearch-f9357bfed8a59698.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "大宗商品行业资讯查询技能。用于查询钢铁、有色、能源化工等行业的动态新闻、市场快讯、政策变化、企业消息、价格异动分析、供需事件等资讯信息。当用户需要：(1) 了解行业最新动态和新闻；(2) 查询政策法规变化；(3) 获取企业生产经营消息；(4) 分析价格异动原因；(5) 跟踪供需事件；(6) 进行市场跟踪和研究支持..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyb92",
+      "userId": "s17d21gfp0r1h8zzn0syb7f90583gsct",
+      "displayName": "mysteel",
+      "image": "https://avatars.githubusercontent.com/u/49762508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774351879447,
+      "changelog": "- Initial release of Mysteel_InfoSearch skill for commodity industry information search.\n- Supports intelligent retrieval of news, market alerts, policy changes, company updates, price analysis, and supply-demand events in steel, non-ferrous metals, and petrochemical sectors.\n- Provides both semantic understanding and intelligent screening/classification for queries.\n- Features API key management for secured access.\n- Includes command-line script for quick and flexible information querying.\n- Offers detailed query results with titles, summaries, source details, entity tags, sentiment analysis, and data links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7aa2f9bc08b958bd08ba9acfc6c536cb65268c36f0e41d5e6ff139f4db0dcd52"
+}

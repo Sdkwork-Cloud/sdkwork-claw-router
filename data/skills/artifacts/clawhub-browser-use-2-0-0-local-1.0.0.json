@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-use-2-0-0-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use_2_0_0_local",
+  "skill": {
+    "id": 34286,
+    "skillKey": "clawhub-browser-use-2-0-0-local",
+    "name": "Browser Use 2.0.0 Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use-2-0-0-local",
+    "url": "https://clawhub.ai/skills/browser-use-2-0-0-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-2-0-0-local-fb754e0577fe77ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wings229",
+      "userId": "s17f8z8ey46swj47mhrsb1ts21844b4n",
+      "displayName": "Wings229",
+      "image": "https://avatars.githubusercontent.com/u/20513319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775231648283,
+      "changelog": "Initial release of browser-use-2-0-0-local\n\n- Automates browser tasks: navigation, form filling, screenshots, and data extraction.\n- Provides fast, persistent browser control using a background daemon for low-latency automation.\n- Supports multiple browser modes including headless Chromium, headed Chrome with real user profiles, and remote debugging connections.\n- Includes commands for web interactions, state inspection, file uploads, cookie management, and Python scripting within the same browser session.\n- Adds cloud browser provisioning, session handling, and easy tunneling for local development.\n- Workflow documentation and usage examples provided in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f540649ee89e32fb301f4df088bc035010ff50c25a2da0c9ff84c54cb01e0537"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_monitor",
+  "skill": {
+    "id": 67172,
+    "skillKey": "clawhub-session-monitor",
+    "name": "Session Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-monitor",
+    "url": "https://clawhub.ai/skills/session-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-monitor-d8c73e1ee22b6a1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动监控和显示会话状态信息，包括token消耗、模型信息和功能状态。支持开关控制和自定义显示格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangdaowan",
+      "userId": "publishers:yangdaowan",
+      "displayName": "DaYu",
+      "image": "https://avatars.githubusercontent.com/u/30426257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 665,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772287586628,
+      "changelog": "Auto-display token usage and session status with toggle control",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:71dedab542c697d19377c62f3127e86250aeb4288ea345ebc3c5447afd410950"
+}

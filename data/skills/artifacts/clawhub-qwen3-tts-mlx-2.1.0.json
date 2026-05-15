@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen3-tts-mlx@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen3_tts_mlx",
+  "skill": {
+    "id": 25558,
+    "skillKey": "clawhub-qwen3-tts-mlx",
+    "name": "Qwen3 Tts Mlx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen3-tts-mlx",
+    "url": "https://clawhub.ai/skills/qwen3-tts-mlx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen3-tts-mlx-9740196f8c4b7ee9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local Qwen3-TTS speech synthesis on Apple Silicon via MLX. Use for offline narration, audiobooks, video voiceovers, and multilingual TTS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h1bomb",
+      "userId": "s17374y1qzmey0dqkt8xae780583k6b3",
+      "displayName": "h1bomb",
+      "image": "https://avatars.githubusercontent.com/u/641828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1772242843232,
+      "changelog": "- Major update with expanded documentation and feature explanations for Qwen3-TTS MLX use on Apple Silicon.\n- Details modes for built-in voices with style control, voice design from text, and voice cloning.\n- Provides step-by-step quick start, install, and usage instructions for both CLI and Python API.\n- Lists supported languages, built-in voices, model variants, and recommended scenarios.\n- Adds guides for batch processing, troubleshooting, and performance benchmarks.\n- Includes in-depth parameter explanations and practical command examples for all features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c66193cde171a61dd243c339788b24389f04ccdfdb976c197553d7b075be1dc"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56110,
+  "uuid": "skill-clawhub-tosr-test-skill-1778050405",
+  "skillKey": "clawhub-tosr-test-skill-1778050405",
+  "name": "TOSR Test Skill",
+  "summary": "Automates end-to-end testing of skill lifecycle operations—create, inspect, update, and delete—via the clawhub REST API.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tosr_test_skill_1778050405",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuangui",
+      "features": [
+        "Automates end-to-end testing of skill lifecycle operations—create, inspect, update, and delete—."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tosr-test-skill-1778050405@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5061317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tosr-test-skill-1778050405",
+      "url": "https://clawhub.ai/skills/tosr-test-skill-1778050405"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tosr-test-skill-1778050405",
+    "url": "https://clawhub.ai/skills/tosr-test-skill-1778050405",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tosr-test-skill-1778050405-9d288ebb1c9d12bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tosr-test-skill-1778050405@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tosr-test-skill-1778050405-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:139993f28f78545443186c64bbc4261f1777a09b9fc94898944275d12fe9a88e",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:53:30.986Z"
+}

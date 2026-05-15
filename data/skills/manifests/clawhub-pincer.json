@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19951,
+  "uuid": "skill-clawhub-pincer",
+  "skillKey": "clawhub-pincer",
+  "name": "Pincer",
+  "summary": "Security-first wrapper for installing agent skills. Scans for malware, prompt injection, and suspicious patterns before installation. Use instead of `clawhub install` for safer skill management.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "panzacoder",
+      "features": [
+        "Security-first wrapper for installing agent skills",
+        "Scans for malware, prompt injection, and suspicious patterns before installation",
+        "Use instead of `clawhub install` for safer skill management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pincer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29257545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pincer",
+      "url": "https://clawhub.ai/skills/pincer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincer",
+    "url": "https://clawhub.ai/skills/pincer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincer-d0483d17291a57ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pincer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pincer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a5f35e4f7da956a559d9879972ef11fc8ff528b71611db6a2291595d87b885f",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T21:25:26.366Z"
+}

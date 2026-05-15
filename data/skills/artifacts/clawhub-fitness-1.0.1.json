@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitness@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitness",
+  "skill": {
+    "id": 10184,
+    "skillKey": "clawhub-fitness",
+    "name": "Fitness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitness",
+    "url": "https://clawhub.ai/skills/fitness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitness-9ebf9b5978e6d486.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-learns your fitness patterns. Absorbs data from wearables, conversations, and achievements."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2465,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771181955577,
+      "changelog": "1.0.1: Preferences now persist across skill updates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88724225daec41c4ecad56a2b3a0a4b3464d30920fab395b66ceef741f430f29"
+}

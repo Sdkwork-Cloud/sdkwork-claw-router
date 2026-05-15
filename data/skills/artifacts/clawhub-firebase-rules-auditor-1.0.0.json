@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firebase-rules-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firebase_rules_auditor",
+  "skill": {
+    "id": 48846,
+    "skillKey": "clawhub-firebase-rules-auditor",
+    "name": "Firebase Rules Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firebase-rules-auditor",
+    "url": "https://clawhub.ai/skills/firebase-rules-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firebase-rules-auditor-dc3abc918ef18e6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Firebase Security Rules for vulnerabilities, data exposure, performance issues, and best practices across Firestore, Realtime Database, and Storage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777613933311,
+      "changelog": "Initial release.\n\n- Audits Firebase Security Rules for Firestore, Realtime Database, and Storage.\n- Scans for critical vulnerabilities, data exposure, and performance issues.\n- Provides detailed output with specific findings, warnings, and examples.\n- Recommends best practices and rule improvements.\n- Supports use cases for pre-deployment review, incident analysis, and security audits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c094828573edcdf2dd3fa54edbd93817759a4de1ef1f147da86b9a5ceb496740"
+}

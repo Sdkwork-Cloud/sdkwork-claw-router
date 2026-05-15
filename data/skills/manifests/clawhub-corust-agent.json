@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52643,
+  "uuid": "skill-clawhub-corust-agent",
+  "skillKey": "clawhub-corust-agent",
+  "name": "Corust Agent Configure",
+  "summary": "Install, configure, and use Corust Agent (corust-agent-acp) — an ACP-compatible coding agent. Use when: the user wants to install, configure, set up, or use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corust_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Phoenix",
+      "features": [
+        "Install, configure, and use Corust Agent (corust-agent-acp) — an ACP-compatible coding agent",
+        "Use when: the user wants to install, configure, set up, or use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/corust-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9337239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "corust-agent",
+      "url": "https://clawhub.ai/skills/corust-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corust-agent",
+    "url": "https://clawhub.ai/skills/corust-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corust-agent-e9bf0ab3ff10dafd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/corust-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-corust-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f6c023cf989eaca96e719b2b193fe5fe5f6022cb798a71d8f48672197606bd",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T15:05:13.472Z"
+}

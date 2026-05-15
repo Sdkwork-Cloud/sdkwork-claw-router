@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23545,
+  "uuid": "skill-clawhub-gov-environment",
+  "skillKey": "clawhub-gov-environment",
+  "name": "Gov Environment",
+  "summary": "EPA air quality data and HUD foreclosure listings. 2 tools for environmental and housing intelligence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_environment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin",
+      "features": [
+        "EPA air quality data and HUD foreclosure listings",
+        "2 tools for environmental and housing intelligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gov-environment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138740843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gov-environment",
+      "url": "https://clawhub.ai/skills/gov-environment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-environment",
+    "url": "https://clawhub.ai/skills/gov-environment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-environment-e964ba3f79945a92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gov-environment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gov-environment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c84879cafb0ccebcac52f9bd83673900c8dfa6a3bd10768575d3543b6c49167",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T16:54:52.268Z"
+}

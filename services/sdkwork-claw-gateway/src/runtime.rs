@@ -3,7 +3,7 @@ use std::sync::Arc;
 use axum::Router;
 use sdkwork_claw_config::{
     ApiKeySecurityConfig, DatabaseConfig, DatabaseEngine, ProviderRelayConfig,
-    ProviderSecretMapConfig,
+    ProviderSecretMapConfig, StartupInstallMode,
 };
 use sdkwork_claw_product::application::{
     ApiKeySecretHasher, UsageSettlementWorker, UsageSettlementWorkerConfig,
@@ -69,6 +69,7 @@ where
         OpenAiRuntimeRelays::default(),
         None,
         None,
+        None,
     )
 }
 
@@ -90,6 +91,7 @@ where
             embeddings: None,
             responses: None,
         },
+        None,
         None,
         None,
     )
@@ -115,6 +117,7 @@ where
         },
         None,
         None,
+        None,
     )
 }
 
@@ -136,6 +139,7 @@ where
             embeddings: Some(embeddings_relay),
             responses: None,
         },
+        None,
         None,
         None,
     )
@@ -161,6 +165,7 @@ where
         },
         None,
         None,
+        None,
     )
 }
 
@@ -171,19 +176,25 @@ fn router_with_openai_runtime_routes<C>(
     relays: OpenAiRuntimeRelays,
     usage_recorder: Option<UsageRecorder>,
     provider_passthrough_config: Option<ProviderRelayConfig>,
+    provider_secret_resolver: Option<Arc<ProviderSecretMapResolver>>,
 ) -> Router
 where
     C: PricingCatalog + Send + Sync + 'static,
 {
-    let base_router = match provider_passthrough_config.clone() {
-        Some(config) => base_router.merge(
-            crate::passthrough::authenticated_stored_chat_completion_passthrough_router(
-                config,
-                Arc::clone(&catalog),
-                Arc::clone(&api_key_hasher),
+    let has_route_scoped_openai_passthrough = provider_secret_resolver.is_some();
+    let base_router = if !has_route_scoped_openai_passthrough {
+        match provider_passthrough_config.clone() {
+            Some(config) => base_router.merge(
+                crate::passthrough::authenticated_stored_chat_completion_passthrough_router(
+                    config,
+                    Arc::clone(&catalog),
+                    Arc::clone(&api_key_hasher),
+                ),
             ),
-        ),
-        None => base_router,
+            None => base_router,
+        }
+    } else {
+        base_router
     };
     let chat_router = match (relays.chat, relays.chat_stream) {
         (Some(relay), Some(stream_relay)) => {
@@ -264,15 +275,36 @@ where
         .merge(responses_router)
         .merge(chat_router);
 
-    match provider_passthrough_config {
-        Some(config) => router.merge(
-            crate::passthrough::authenticated_gateway_passthrough_router(
-                config,
-                catalog,
-                api_key_hasher,
-            ),
-        ),
-        None => router,
+    let router = if let Some(secret_resolver) = provider_secret_resolver.clone() {
+        router.merge(crate::passthrough::route_scoped_openai_passthrough_router(
+            Arc::clone(&catalog),
+            Arc::clone(&api_key_hasher),
+            secret_resolver,
+        ))
+    } else {
+        router
+    };
+
+    if let Some(config) = provider_passthrough_config {
+        if has_route_scoped_openai_passthrough {
+            router.merge(
+                crate::passthrough::authenticated_provider_native_passthrough_router(
+                    config,
+                    catalog,
+                    api_key_hasher,
+                ),
+            )
+        } else {
+            router.merge(
+                crate::passthrough::authenticated_gateway_passthrough_router(
+                    config,
+                    catalog,
+                    api_key_hasher,
+                ),
+            )
+        }
+    } else {
+        router
     }
 }
 
@@ -320,9 +352,31 @@ pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_
     provider_secret_map_config: Option<ProviderSecretMapConfig>,
     usage_settlement_worker_config: UsageSettlementWorkerConfig,
 ) -> Result<Router, GatewayRouterError> {
+    router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
+        config,
+        api_key_config,
+        provider_relay_config,
+        provider_secret_map_config,
+        usage_settlement_worker_config,
+        StartupInstallMode::Ensure,
+    )
+    .await
+}
+
+async fn router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
+    config: DatabaseConfig,
+    api_key_config: Option<ApiKeySecurityConfig>,
+    provider_relay_config: Option<ProviderRelayConfig>,
+    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    usage_settlement_worker_config: UsageSettlementWorkerConfig,
+    startup_install_mode: StartupInstallMode,
+) -> Result<Router, GatewayRouterError> {
     let api_key_hasher = build_api_key_hasher(api_key_config)?;
     let provider_passthrough_config = provider_relay_config.clone();
-    let relays = build_openai_runtime_relays(provider_relay_config, provider_secret_map_config)?;
+    let provider_secret_resolver = provider_secret_map_config
+        .map(|config| Arc::new(ProviderSecretMapResolver::from_config(config)));
+    let relays =
+        build_openai_runtime_relays(provider_relay_config, provider_secret_resolver.clone())?;
     match config.engine {
         DatabaseEngine::Sqlite => {
             let sqlite_options = SqliteConnectOptions::from_str(config.url.as_str())
@@ -335,10 +389,12 @@ pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_
                 .map_err(|error| {
                     GatewayRouterError::Sqlite(SqlCatalogLoadError::Database(error))
                 })?;
-            DatabaseInstaller::for_sqlite(pool.clone())
-                .with_env_options()?
-                .ensure_installed()
-                .await?;
+            if startup_install_mode.should_ensure() {
+                DatabaseInstaller::for_sqlite(pool.clone())
+                    .with_env_options()?
+                    .ensure_installed()
+                    .await?;
+            }
             let snapshot = SqlitePricingCatalogLoader::new(pool.clone())
                 .load_snapshot()
                 .await?;
@@ -349,13 +405,14 @@ pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_
             Ok(router_with_openai_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(
                     Some(&config),
-                    provider_passthrough_config.is_none(),
+                    provider_passthrough_config.is_none() && provider_secret_resolver.is_none(),
                 ),
                 Arc::new(snapshot),
                 api_key_hasher,
                 relays,
                 Some(usage_recorder),
                 provider_passthrough_config,
+                provider_secret_resolver.clone(),
             ))
         }
         DatabaseEngine::Postgres => {
@@ -366,10 +423,12 @@ pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_
                 .map_err(|error| {
                     GatewayRouterError::Postgres(PostgresCatalogLoadError::Database(error))
                 })?;
-            DatabaseInstaller::for_postgres(pool.clone())
-                .with_env_options()?
-                .ensure_installed()
-                .await?;
+            if startup_install_mode.should_ensure() {
+                DatabaseInstaller::for_postgres(pool.clone())
+                    .with_env_options()?
+                    .ensure_installed()
+                    .await?;
+            }
             let snapshot = PostgresPricingCatalogLoader::new(pool.clone())
                 .load_snapshot()
                 .await?;
@@ -380,13 +439,14 @@ pub async fn router_with_database_api_key_provider_configs_and_usage_settlement_
             Ok(router_with_openai_runtime_routes(
                 router_with_database_status_and_passthrough_placeholder(
                     Some(&config),
-                    provider_passthrough_config.is_none(),
+                    provider_passthrough_config.is_none() && provider_secret_resolver.is_none(),
                 ),
                 Arc::new(snapshot),
                 api_key_hasher,
                 relays,
                 Some(usage_recorder),
                 provider_passthrough_config,
+                provider_secret_resolver.clone(),
             ))
         }
     }
@@ -443,14 +503,17 @@ pub async fn router_from_env() -> Result<Router, GatewayRouterError> {
         ProviderSecretMapConfig::from_env().map_err(GatewayRouterError::Config)?;
     let usage_settlement_worker_config =
         usage_settlement_worker_config_from_env().map_err(GatewayRouterError::Config)?;
+    let startup_install_mode =
+        StartupInstallMode::from_env().map_err(GatewayRouterError::Config)?;
     match config {
         Some(config) => {
-            router_with_database_api_key_provider_configs_and_usage_settlement_worker_config(
+            router_with_database_api_key_provider_configs_usage_settlement_worker_config_and_startup_install_mode(
                 config,
                 api_key_config,
                 provider_relay_config,
                 provider_secret_map_config,
                 usage_settlement_worker_config,
+                startup_install_mode,
             )
             .await
         }
@@ -662,12 +725,9 @@ fn build_api_key_hasher(
 
 fn build_openai_runtime_relays(
     config: Option<ProviderRelayConfig>,
-    provider_secret_map_config: Option<ProviderSecretMapConfig>,
+    provider_secret_resolver: Option<Arc<ProviderSecretMapResolver>>,
 ) -> Result<OpenAiRuntimeRelays, GatewayRouterError> {
-    if let Some(provider_secret_map_config) = provider_secret_map_config {
-        let resolver = Arc::new(ProviderSecretMapResolver::from_config(
-            provider_secret_map_config,
-        ));
+    if let Some(resolver) = provider_secret_resolver {
         return Ok(OpenAiRuntimeRelays {
             chat: Some(Arc::new(SecretRefOpenAiCompatibleChatCompletionRelay::new(
                 resolver.clone(),

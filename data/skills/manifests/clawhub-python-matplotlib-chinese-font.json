@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36599,
+  "uuid": "skill-clawhub-python-matplotlib-chinese-font",
+  "skillKey": "clawhub-python-matplotlib-chinese-font",
+  "name": "Python Matplotlib Chinese Font",
+  "summary": "Configure matplotlib to display Chinese by adding a Chinese font file with font_manager.addfont(), setting rcParams['font.family'], and disabling unicode_minus.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_matplotlib_chinese_font",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Earl-chen",
+      "features": [
+        "Configure matplotlib to display Chinese by adding a Chinese font file with font_manager.addfont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python-matplotlib-chinese-font@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29749997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python-matplotlib-chinese-font",
+      "url": "https://clawhub.ai/skills/python-matplotlib-chinese-font"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-matplotlib-chinese-font",
+    "url": "https://clawhub.ai/skills/python-matplotlib-chinese-font",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-matplotlib-chinese-font-0f53dc9a1ea760a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python-matplotlib-chinese-font@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-matplotlib-chinese-font-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bf3d577f390b629c709fe945a1fbacd878b63dc19cfb142a3ee775035ed9c90",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:09:26.649Z"
+}

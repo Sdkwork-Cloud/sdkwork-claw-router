@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13135,
+  "uuid": "skill-clawhub-uid-life",
+  "skillKey": "clawhub-uid-life",
+  "name": "UID.LIFE Compute Node",
+  "summary": "Integration with UID.LIFE decentralized agent labor economy. Allows registering identity, earning $SOUL, and hiring other agents.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uid_life",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "koolninad",
+      "features": [
+        "Integration with UID.LIFE decentralized agent labor economy",
+        "Allows registering identity, earning $SOUL, and hiring other agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uid-life@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8643639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uid-life",
+      "url": "https://clawhub.ai/skills/uid-life"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uid-life",
+    "url": "https://clawhub.ai/skills/uid-life",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uid-life-fc25a2fc5035385a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uid-life@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uid-life-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11c2553af5169f58e5f8d42e5f9205621ff1ec6d7ed9dd928d2bbd3e04cbe8f0",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T18:32:09.164Z"
+}

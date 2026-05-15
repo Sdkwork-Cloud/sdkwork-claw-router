@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49826,
+  "uuid": "skill-clawhub-relationship-compass",
+  "skillKey": "clawhub-relationship-compass",
+  "name": "Relationship Compass",
+  "summary": "Provides psychological insights and communication tools based on attachment theory and Gottman Method to improve intimacy and resolve relationship conflicts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relationship_compass",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Provides psychological insights and communication tools based on attachment theory and Gottman."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/relationship-compass@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "relationship-compass",
+      "url": "https://clawhub.ai/skills/relationship-compass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relationship-compass",
+    "url": "https://clawhub.ai/skills/relationship-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relationship-compass-d00839b88032245c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/relationship-compass@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-relationship-compass-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66cc56ccc4f1f8fdcece7aae6879795d5825d4fdde16b533a97122b5440fe534",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T14:57:13.287Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31213,
+  "uuid": "skill-clawhub-weglot",
+  "skillKey": "clawhub-weglot",
+  "name": "Weglot",
+  "summary": "Weglot integration. Manage data, records, and automate workflows. Use when the user wants to interact with Weglot data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weglot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Weglot integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Weglot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weglot@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weglot",
+      "url": "https://clawhub.ai/skills/weglot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weglot",
+    "url": "https://clawhub.ai/skills/weglot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weglot-f00a14a7eb1db2bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weglot@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weglot-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba9f9ef6093680f6d79bcc62aa4c6d0113ea6d22bbb9f6622d0cb53cc9923b0a",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:01:26.214Z"
+}

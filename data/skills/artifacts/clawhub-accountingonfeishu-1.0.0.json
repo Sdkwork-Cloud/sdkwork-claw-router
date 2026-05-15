@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accountingonfeishu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountingonfeishu",
+  "skill": {
+    "id": 69007,
+    "skillKey": "clawhub-accountingonfeishu",
+    "name": "AccountingOnFeishu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountingonfeishu",
+    "url": "https://clawhub.ai/skills/accountingonfeishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountingonfeishu-c5d2ed191cc5ac2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮用户快速记录日常支出和收入到飞书多维表格。支持文字记账和图片小票 OCR 解析。首次使用时会学习用户已有的记账本习惯，或引导新建记账本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haojie0114-lang",
+      "userId": "s17fw8wavckncmzvwp4kawwrsh85n2wf",
+      "displayName": "haojie0114-lang",
+      "image": "https://avatars.githubusercontent.com/u/264591413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777306098369,
+      "changelog": "AccountingOnFeishu 1.0.0 - 初始版本\n\n- 支持飞书多维表格中的日常支出和收入快速记账，支持文字和图片小票 OCR 解析。\n- 首次使用可识别并学习用户已有记账结构，也可引导新建自定义分类的记账本。\n- 记账内容智能解析分类、金额表达式并自动填表，所有配置信息本地持久化。\n- 图片小票可逐项 OCR，批量写入账本。\n- 用户使用体验全程引导，按自然语言输入灵活记账。\n- 所有字段名和类型均自动适配用户表结构，支持多种分类体系。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6ce5c398ed63c0c2cfa56ca62f44c98085448653bb05a88aa2f4ee33ec5570f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-oracle-oke-hardening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_oracle_oke_hardening",
+  "skill": {
+    "id": 38324,
+    "skillKey": "clawhub-toolweb-oracle-oke-hardening",
+    "name": "Oracle OKE Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-oracle-oke-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-oracle-oke-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-oracle-oke-hardening-ff663ee0c0234146.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional OKE security configuration generator based on CIS Benchmark standards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774989224383,
+      "changelog": "Initial release of the Oracle OKE Security Hardening Tool.\n\n- Provides an API to generate security-hardened Oracle Kubernetes Engine (OKE) configurations based on CIS Kubernetes Benchmark standards.\n- Supports customizable hardening measures for RBAC, pod security, audit logging, secrets, and networking.\n- Includes endpoints for configuration generation, option discovery, and service health checks.\n- Returns comprehensive reports, compliance scores, and recommended security actions with each configuration.\n- Offers tiered pricing plans to suit various usage levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30298727b035561c8d37d581d9f5289dc245ffaf876214361e2059cc09b79bc8"
+}

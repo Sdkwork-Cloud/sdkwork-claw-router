@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16616,
+  "uuid": "skill-clawhub-solo-build",
+  "skillKey": "clawhub-solo-build",
+  "name": "Build",
+  "summary": "Execute implementation plan tasks with TDD workflow, auto-commit, and phase gates. Use when user says \"build it\", \"start building\", \"execute plan\", \"implemen...",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_build",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Execute implementation plan tasks with TDD workflow, auto-commit, and phase gates",
+        "Use when user says \"build it\", \"start building\", \"execute plan\", \"implemen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-build@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-build",
+      "url": "https://clawhub.ai/skills/solo-build"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-build",
+    "url": "https://clawhub.ai/skills/solo-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-build-4bb94f3a18ab33cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-build@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-build-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b8e2032f976b6e65228449a0ded71f557825b4a085216e5679fddb07a96be64",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T22:05:47.889Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35200,
+  "uuid": "skill-clawhub-sw-agent-team-orch",
+  "skillKey": "clawhub-sw-agent-team-orch",
+  "name": "Agent Team Orchestration",
+  "summary": "Set up and coordinate multi-agent teams with defined roles, task workflows, handoff protocols, and quality review checkpoints.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_agent_team_orch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amdf01-debug",
+      "features": [
+        "Set up and coordinate multi-agent teams with defined roles, task workflows, handoff protocols,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sw-agent-team-orch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252609374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sw-agent-team-orch",
+      "url": "https://clawhub.ai/skills/sw-agent-team-orch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-agent-team-orch",
+    "url": "https://clawhub.ai/skills/sw-agent-team-orch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-agent-team-orch-e0a1bc2681f3ded3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sw-agent-team-orch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sw-agent-team-orch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e35fc994bb90a012654e9a0be554e31cc45a0ca8718e3244accb966f3210ea6",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:02:27.292Z"
+}

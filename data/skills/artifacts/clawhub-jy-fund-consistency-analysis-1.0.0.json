@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-fund-consistency-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_fund_consistency_analysis",
+  "skill": {
+    "id": 66732,
+    "skillKey": "clawhub-jy-fund-consistency-analysis",
+    "name": "jy-fund-consistency-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-fund-consistency-analysis",
+    "url": "https://clawhub.ai/skills/jy-fund-consistency-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-fund-consistency-analysis-858c1d8144137e35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于聚源数据库分析基金经理观点与持仓一致性，提供行业配置、投资风格、选股逻辑和风险控制的多维度评分及标准化报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775179083716,
+      "changelog": "- Initial release of jy-fund-consistency-analysis skill, providing a professional tool for analyzing the consistency between fund managers' stated views and actual fund holdings using GILData MCP API data.\n- Supports viewpoint extraction, holdings analysis, and multi-dimensional consistency scoring across industry allocation, investment style, stock selection logic, and risk control.\n- Generates standardized, objective Markdown analysis reports for each fund managed by a given fund manager.\n- Ensures all data is sourced exclusively from MCP API with real-time data verification features.\n- Includes full setup and integration instructions for mcporter and MCP service configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b64208d294dae037d3259f6721783b02965cb298f9f5288cac87c0a0a41a2dd8"
+}

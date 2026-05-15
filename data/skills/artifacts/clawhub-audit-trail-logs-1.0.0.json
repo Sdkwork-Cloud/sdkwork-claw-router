@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audit-trail-logs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audit_trail_logs",
+  "skill": {
+    "id": 25930,
+    "skillKey": "clawhub-audit-trail-logs",
+    "name": "Audit Trail Logs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audit-trail-logs",
+    "url": "https://clawhub.ai/skills/audit-trail-logs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audit-trail-logs-77355851d462099e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implement Audit Trail Logs using OrbCafe UI (CStandardPage). Enterprise-grade React component with built-in best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenruiyang",
+      "userId": "s17e6bmx11wm3tn9bxz60qc4fh83gew1",
+      "displayName": "SHENRUIYANG",
+      "image": "https://avatars.githubusercontent.com/u/47732614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773488852577,
+      "changelog": "Initial release of audit-trail-logs skill.\n\n- Implements Audit Trail Logs using the OrbCafe UI library.\n- Utilizes the CStandardPage component for consistent enterprise-grade design.\n- Supports React & Next.js projects.\n- Features TypeScript support and follows best practices for accessibility, theming, and i18n.\n- Includes quick installation and example usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9de87e238a818ba9c00cc1f8f5917088481b9bb696ee9305888c54a12402a78b"
+}

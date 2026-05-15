@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-video@2.23.0",
+  "version": "2.23.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_video",
+  "skill": {
+    "id": 50394,
+    "skillKey": "clawhub-create-video",
+    "name": "Create Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-video",
+    "url": "https://clawhub.ai/skills/create-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-video-0eb6d82d042bd323.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create videos from a text prompt using HeyGen's Video Agent (POST /v3/video-agents). The default for most video requests — AI handles script, avatar, visuals..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelwang11394",
+      "userId": "s171q3psxz493p60wc3kveddjx848c5x",
+      "displayName": "Michael Wang",
+      "image": "https://avatars.githubusercontent.com/u/11284232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.23.0",
+      "createdAt": 1776103915674,
+      "changelog": "Auto-publish from commit 5a8486fef06c1fe3040b66b15652b2f16da6bff9",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:134725e3277c017ed4a44bcf7d5612f5d8b8b39a51ec1658453bcbaee0dbf54b"
+}

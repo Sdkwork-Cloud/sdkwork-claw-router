@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28284,
+  "uuid": "skill-clawhub-algorithmia",
+  "skillKey": "clawhub-algorithmia",
+  "name": "Algorithmia",
+  "summary": "Algorithmia integration. Manage data, records, and automate workflows. Use when the user wants to interact with Algorithmia data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.algorithmia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Algorithmia integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Algorithmia data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/algorithmia@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "algorithmia",
+      "url": "https://clawhub.ai/skills/algorithmia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "algorithmia",
+    "url": "https://clawhub.ai/skills/algorithmia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/algorithmia-b6b892cfb702ba26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/algorithmia@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-algorithmia-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9d3f3184c3af05ecd86676d76db66000428cc37684eecefc5e932dbd93e9a1d",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:32:08.313Z"
+}

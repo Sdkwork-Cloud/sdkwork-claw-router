@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47042,
+  "uuid": "skill-clawhub-skylv-system-health-watch",
+  "skillKey": "clawhub-skylv-system-health-watch",
+  "name": "Skylv System Health Watch",
+  "summary": "Real-time monitoring of agent memory, API calls, and errors",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_system_health_watch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Real-time monitoring of agent memory, API calls, and errors"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-system-health-watch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-system-health-watch",
+      "url": "https://clawhub.ai/skills/skylv-system-health-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-system-health-watch",
+    "url": "https://clawhub.ai/skills/skylv-system-health-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-system-health-watch-ad3d3acd3419f598.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-system-health-watch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-system-health-watch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dd8a5000852cf924e3c7679a83e740b595a9b549c9cfb0ddd9de62c8ebdbbeb",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T00:52:22.278Z"
+}

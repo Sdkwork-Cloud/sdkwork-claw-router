@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72511,
+  "uuid": "skill-clawhub-stock-mx",
+  "skillKey": "clawhub-stock-mx",
+  "name": "stock",
+  "summary": "基于东方财富权威数据库，提供股票选股、行情、财务及关联关系等金融数据的智能查询与筛选服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_mx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jade-srgb",
+      "features": [
+        "基于东方财富权威数据库，提供股票选股、行情、财务及关联关系等金融数据的智能查询与筛选服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-mx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134922000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-mx",
+      "url": "https://clawhub.ai/skills/stock-mx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-mx",
+    "url": "https://clawhub.ai/skills/stock-mx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-mx-2f4533131decd816.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-mx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-mx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25be561b70b80151990a3e9445a487d26bbf2456fc6acb3613b5555381140108",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:42:02.286Z"
+}

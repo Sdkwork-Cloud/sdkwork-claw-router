@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61786,
+  "uuid": "skill-clawhub-ai-zidong-tibug",
+  "skillKey": "clawhub-ai-zidong-tibug",
+  "name": "ai-zidong-tibug",
+  "summary": "将零散、口语化或评审纪要中的缺陷描述，规范化为可执行、可复现、可验收的“一句话 Bug”，并且每次都按禅道提单格式输出（未指明平台时默认安卓），自动登录禅道并逐条提交缺陷。Use when users ask to normalize bug wording, write bug titles, batch整理评...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_zidong_tibug",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kent",
+      "features": [
+        "将零散、口语化或评审纪要中的缺陷描述，规范化为可执行、可复现、可验收的“一句话 Bug”，并且每次都按禅道提单格式输出（未指明平台时默认安卓），自动登录禅道并逐条提交缺陷。Use when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-zidong-tibug@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27260959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-zidong-tibug",
+      "url": "https://clawhub.ai/skills/ai-zidong-tibug"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-zidong-tibug",
+    "url": "https://clawhub.ai/skills/ai-zidong-tibug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-zidong-tibug-c2dec5cab662210a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-zidong-tibug@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-zidong-tibug-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0be32ab2578e37a7b75380fe3a1e461f22e6fcf0610f0bc986d6d2eecff3dc5",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T04:54:55.664Z"
+}

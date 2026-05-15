@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16546,
+  "uuid": "skill-clawhub-solo-community-outreach",
+  "skillKey": "clawhub-solo-community-outreach",
+  "name": "Community Outreach",
+  "summary": "Find relevant Reddit, HN, and ProductHunt threads and draft value-first community responses with launch checklist. Use when user says \"find communities\", \"dr...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_community_outreach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rust",
+      "features": [
+        "Find relevant Reddit, HN, and ProductHunt threads and draft value-first community responses wit.",
+        "Use when user says \"find communities\", \"dr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solo-community-outreach@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1236751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solo-community-outreach",
+      "url": "https://clawhub.ai/skills/solo-community-outreach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-community-outreach",
+    "url": "https://clawhub.ai/skills/solo-community-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-community-outreach-511e043ad5e94b6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solo-community-outreach@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solo-community-outreach-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f819cbcd4697b0a4b1d23133c981ff67b42950041f9ae88dfd41e0e0e7f3dea9",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T22:05:56.961Z"
+}

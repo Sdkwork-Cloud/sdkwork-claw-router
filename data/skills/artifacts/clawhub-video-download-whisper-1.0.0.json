@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-download-whisper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_download_whisper",
+  "skill": {
+    "id": 70585,
+    "skillKey": "clawhub-video-download-whisper",
+    "name": "视频下载与转录(Whisper)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-download-whisper",
+    "url": "https://clawhub.ai/skills/video-download-whisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-download-whisper-5e7ac85bbc747357.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "下载无法直接访问的视频网站内容（如B站、YouTube等），提取音频后用Whisper转录成文字。适用场景：用户要求分析某个视频内容，但链接被封锁无法直接访问；需要获取视频完整文字稿进行深度分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haohanyang92",
+      "userId": "s176etfsvd0m1zsmf70wyypkyx83ggvw",
+      "displayName": "haohanyang92",
+      "image": "https://avatars.githubusercontent.com/u/61062925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774635269654,
+      "changelog": "初始版本：支持B站、YouTube等1858+平台视频下载与Whisper转录",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74a9877905f9206c565d445da338a4b7d5cb11529df3c70fa3b56d7dd12e42a6"
+}

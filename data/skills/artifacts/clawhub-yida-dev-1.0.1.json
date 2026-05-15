@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yida-dev@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yida_dev",
+  "skill": {
+    "id": 70974,
+    "skillKey": "clawhub-yida-dev",
+    "name": "钉钉宜搭开发助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yida-dev",
+    "url": "https://clawhub.ai/skills/yida-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yida-dev-586aa78af00c8eb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "钉钉宜搭低代码开发助手。用于创建表单和自定义页面、编写 JS 动作面板、使用 JS-API、配置数据源、设计流程自动化。适用于宜搭表单开发、JS 代码调试、API 集成等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yize",
+      "userId": "publishers:yize",
+      "displayName": "kuma",
+      "image": "https://avatars.githubusercontent.com/u/1578814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772715261658,
+      "changelog": "yida-dev 1.0.1\n\n- 精简和重写了 SKILL.md，聚焦宜搭开发核心规范与常用场景，内容更清晰易查。\n- 移除了 jsx、服务端 API 及脚本示例等与宜搭当前开发模式无关的文档。\n- 新增 references/todomvc.md，优化入门教程结构。\n- 更新和扩充 JS-API（references/js-api.md）文档内容。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:39c5a98ac4b3bd77e6d4517d14665cd6f968abd67586110b225aebeb52749b47"
+}

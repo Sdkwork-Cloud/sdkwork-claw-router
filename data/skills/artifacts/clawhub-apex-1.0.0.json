@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apex@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apex",
+  "skill": {
+    "id": 25116,
+    "skillKey": "clawhub-apex",
+    "name": "APEX Binary Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apex",
+    "url": "https://clawhub.ai/skills/apex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apex-846be5fc541c5039.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent agent trading Kalshi 15-min binary crypto markets by analyzing RSI, momentum, volume, and AI signals to place limit orders on BTC, ETH, SOL, XRP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leejoe411-creator",
+      "userId": "publishers:leejoe411-creator",
+      "displayName": "leejoe411-creator",
+      "image": "https://avatars.githubusercontent.com/u/225958882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773517333462,
+      "changelog": "APEX 1.0.0 - Initial Release\n\n- Launches as a binary options trading agent for Kalshi 15-minute crypto markets.\n- Monitors BTC, ETH, SOL, and XRP markets every 15 minutes and places trades based on technical signals and AI confirmation.\n- Provides status, trade log, and manual scan/trade commands via CLI scripts.\n- Integrates with Coinbase for market data, and uses GPT-4o-mini for trade decisions and sizing.\n- Supports Telegram notifications and requires configurable API credentials via environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25b7e372d0f5a19305509d411d964c6e976695930dd2f532b341930009c4263a"
+}

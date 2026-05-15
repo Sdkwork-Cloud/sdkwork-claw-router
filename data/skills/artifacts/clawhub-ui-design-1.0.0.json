@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ui-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ui_design",
+  "skill": {
+    "id": 11713,
+    "skillKey": "clawhub-ui-design",
+    "name": "UI Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ui-design",
+    "url": "https://clawhub.ai/skills/ui-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ui-design-ff0a8b967872439e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive UI design skill covering fundamentals, patterns, and anti-patterns. Layout, typography, color, spacing, accessibility, motion, and component design. Use when building any web interface, reviewing design quality, or creating d."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1869,
+      "installsAllTime": 18,
+      "installsCurrent": 17,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770726331187,
+      "changelog": "- Initial release of the UI Design skill, providing a comprehensive guide to web interface design.\n- Covers fundamentals: layout, typography, color, spacing, accessibility, motion, and component design.\n- Includes practical design philosophies, patterns, and common anti-patterns for high-quality, distinctive UIs.\n- Offers clear guidelines and code examples for implementing grids, responsive design, typography scales, palette building, and spacing systems.\n- Emphasizes accessibility and visual hierarchy for production-ready web projects.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee3264da54aa2f7f01fef93a658248c3f81b6f10c69cb8064222dde6b4c69794"
+}

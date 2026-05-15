@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-market-arbitrage-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_arbitrage_api",
+  "skill": {
+    "id": 37236,
+    "skillKey": "clawhub-prediction-market-arbitrage-api",
+    "name": "Prediction Market Arbitrage Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-arbitrage-api",
+    "url": "https://clawhub.ai/skills/prediction-market-arbitrage-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-arbitrage-api-bb7e4c3d3bc0fbe6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find arbitrage opportunities across Polymarket and Kalshi prediction markets via AIsa API. Scan sports markets for cross-platform price discrepancies, compar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775135201047,
+      "changelog": "Initial release: scan and analyze prediction market arbitrage.\n\n- Find arbitrage opportunities across Polymarket and Kalshi prediction markets using the AIsa API.\n- Scan sports markets for cross-platform price discrepancies and compare real-time odds.\n- Automatically calculate spreads and provide detailed liquidity checks via orderbook review.\n- Includes sample commands for bulk scanning or targeted analysis by market slug/ticker.\n- Read-only, requires AISA_API_KEY; no trades executed or personal info shared.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e8c326f7575345411e86db561b462154083c50e795905c013274ca2733dcda2"
+}

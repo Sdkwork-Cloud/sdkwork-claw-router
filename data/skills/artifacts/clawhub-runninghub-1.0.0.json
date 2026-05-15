@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runninghub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runninghub",
+  "skill": {
+    "id": 59859,
+    "skillKey": "clawhub-runninghub",
+    "name": "Runninghub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runninghub",
+    "url": "https://clawhub.ai/skills/runninghub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runninghub-1bc7326d38e0e31b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RunningHub - 云端 ComfyUI 平台，用于创建 AI 应用和工作流。支持文生图、文生视频、AI 视频合成等。国内版 runninghub.cn，国际版 runninghub.ai。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yfy-ai",
+      "userId": "s17364zrqawyw8kd5jr4htb13983jndm",
+      "displayName": "YFY-AI",
+      "image": "https://avatars.githubusercontent.com/u/125375737?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 726,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773464199092,
+      "changelog": "Initial release of RunningHub skill.\n\n- Provides integration with RunningHub cloud ComfyUI platform for AI workflows.\n- Supports text-to-image, text-to-video, video synthesis, and face-swapping tasks.\n- Allows workflow execution, status query, and management via API.\n- Offers endpoints and platform versions for both China (runninghub.cn) and international (runninghub.ai) users.\n- Includes instructions for obtaining API keys and example API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19a0361aa7fd13ce2e2996cdd1a0ea28277d9f6801a4c8b1b9745974ae069e67"
+}

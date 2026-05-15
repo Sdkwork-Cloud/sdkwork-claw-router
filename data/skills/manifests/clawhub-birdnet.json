@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12183,
+  "uuid": "skill-clawhub-birdnet",
+  "skillKey": "clawhub-birdnet",
+  "name": "Birdnet",
+  "summary": "Query BirdNET-Go bird detections. View recent birds, search by species, get detection details.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.birdnet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rappo",
+      "features": [
+        "Query BirdNET-Go bird detections",
+        "View recent birds, search by species, get detection details."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/birdnet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2245234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "birdnet",
+      "url": "https://clawhub.ai/skills/birdnet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "birdnet",
+    "url": "https://clawhub.ai/skills/birdnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/birdnet-43c0dc0d20a9f38d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/birdnet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-birdnet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c616c0173385e38fd6f114d6096b35e2510f71a892af4abfb69b636c77a1f82d",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T02:02:17.165Z"
+}

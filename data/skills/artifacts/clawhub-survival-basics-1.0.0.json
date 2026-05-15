@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/survival-basics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.survival_basics",
+  "skill": {
+    "id": 39438,
+    "skillKey": "clawhub-survival-basics",
+    "name": "Survival Basics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "survival-basics",
+    "url": "https://clawhub.ai/skills/survival-basics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/survival-basics-6e9ab6b481d7a836.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Combined home repair, plumbing, and cooking survival skills. Covers the 15 most common home fixes, detailed plumbing troubleshooting, weekly budget meal prep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774674107156,
+      "changelog": "Initial release of survival-basics: a starter guide for home repair, plumbing, and affordable cooking.\n\n- Provides instructions for 15 common home fixes with a $30 toolkit.\n- Includes detailed step-by-step plumbing troubleshooting and safety notes.\n- Offers weekly meal prep plans and essential cooking techniques for $50/week.\n- Compiles advice and cost-saving tips from trusted home, plumbing, and food safety sources.\n- Designed for anyone seeking self-sufficiency in home maintenance and food.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:906d6cf66f68ca70861fba3204bcef21998519f64b7cbb2c8e4583d79066a5ef"
+}

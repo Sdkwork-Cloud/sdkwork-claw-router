@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-mtr-next-train@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_mtr_next_train",
+  "skill": {
+    "id": 57439,
+    "skillKey": "clawhub-hk-mtr-next-train",
+    "name": "Hong Kong MTR Next-Train ETA | 港鐵實時到站預報"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-mtr-next-train",
+    "url": "https://clawhub.ai/skills/hk-mtr-next-train",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-mtr-next-train-7b191262393f524d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast, reliable, and token-efficient Hong Kong MTR next-train ETA lookup with fuzzy station matching and bilingual output (zh-HK/en). Use for queries like nex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomfong",
+      "userId": "s174bz62x9vysjk1fdewm65yd183hybm",
+      "displayName": "Tom FONG",
+      "image": "https://avatars.githubusercontent.com/u/43058990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774153606057,
+      "changelog": "- Documentation updated in SKILL.md and README.md for clarity and accuracy.\n- No code logic or functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dcc6870a7d4bf689a6e6de6e4cbe5243e8b192deefd26f85bae6b55ce4d526b"
+}

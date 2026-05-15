@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nai-homelab-assets@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_homelab_assets",
+  "skill": {
+    "id": 36148,
+    "skillKey": "clawhub-nai-homelab-assets",
+    "name": "Homelab Assets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-homelab-assets",
+    "url": "https://clawhub.ai/skills/nai-homelab-assets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-homelab-assets-d60c8e4d69ba5004.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track, manage, and report on homelab hardware inventory with details on purchase, warranty, power use, location, and generate insurance-ready reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774534485829,
+      "changelog": "Initial release of homelab-assets skill.\n\n- Track and manage homelab hardware inventory, including details like purchase info, warranty, power draw, and location.\n- Scripts included for adding, updating, listing, searching, and reporting on assets.\n- Reports generate insurance-ready Markdown files with spend totals, depreciation, power costs, and warranty alerts.\n- Data stored in a local JSON file; configurable via environment variable.\n- Includes example inventory and reference power estimates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:258874adadbf25211f0971f81977329f6c9594534664e20aaafdf147deeb369f"
+}

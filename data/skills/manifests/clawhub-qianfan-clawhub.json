@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25484,
+  "uuid": "skill-clawhub-qianfan-clawhub",
+  "skillKey": "clawhub-qianfan-clawhub",
+  "name": "qianfan clawhub",
+  "summary": "Search and install Baidu Qianfan ecosystem skills with fuzzy matching across slug, name, and description fields",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qianfan_clawhub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu_qianfan",
+      "features": [
+        "Search and install Baidu Qianfan ecosystem skills with fuzzy matching across slug, name, and de."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qianfan-clawhub@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41750260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qianfan-clawhub",
+      "url": "https://clawhub.ai/skills/qianfan-clawhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qianfan-clawhub",
+    "url": "https://clawhub.ai/skills/qianfan-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qianfan-clawhub-bf76796413ba7a87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qianfan-clawhub@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qianfan-clawhub-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8671dab6a7e8a30c2ae6cd7354778b8a4b9518302b7d6739c82004eac9eb8321",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:13:19.537Z"
+}

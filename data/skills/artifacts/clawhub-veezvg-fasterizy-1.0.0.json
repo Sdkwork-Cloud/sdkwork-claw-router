@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veezvg-fasterizy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veezvg_fasterizy",
+  "skill": {
+    "id": 41221,
+    "skillKey": "clawhub-veezvg-fasterizy",
+    "name": "Fasterizy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veezvg-fasterizy",
+    "url": "https://clawhub.ai/skills/veezvg-fasterizy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veezvg-fasterizy-f9ec77c572f02435.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Faster and direct, answer-first prose for coding-agent Q&A, planning, and technical docs. Use whenever the user asks for terser, faster, less verbose, or les..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veezvg",
+      "userId": "s17852ervbnpeg1e5sf8abe7gs857gbr",
+      "displayName": "veezVg",
+      "image": "https://avatars.githubusercontent.com/u/97422187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776655369402,
+      "changelog": "Initial release—faster, answer-first prose for coding-agent Q&A, planning, and technical docs.\n\n- Strips filler, empty hedges, and meta-preambles for concise responses.\n- Keeps professional tone, clarity, and exact identifiers or error messages.\n- Uses answer-first structure; no question restatement or closing wrap-up.\n- Allows normal, non-compressed prose for handoff artifacts, plan files, and code.\n- Expands detail on user request; confirmation and comparisons have clear format rules.\n- Designed to speed up turn time without losing accuracy or context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71ebe478e89ba3bcd5d26ab99e0e70c140a723dab3e64eb9051926db6dbd625d"
+}

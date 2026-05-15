@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bmad-brainstorming-coach@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bmad_brainstorming_coach",
+  "skill": {
+    "id": 62668,
+    "skillKey": "clawhub-bmad-brainstorming-coach",
+    "name": "Bmad Brainstorming Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bmad-brainstorming-coach",
+    "url": "https://clawhub.ai/skills/bmad-brainstorming-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bmad-brainstorming-coach-c725db8834ae4f8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "激活 BMad 系统的 \"Brainstorming Coach\" 代理（Carson），用于引导创新工作坊、头脑风暴会议和创意激发。适用于需要打破常规思维、生成大量创意、或者进行系统性创新探索的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "airclear",
+      "userId": "publishers:airclear",
+      "displayName": "Airclear",
+      "image": "https://avatars.githubusercontent.com/u/4103690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 534,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772532580422,
+      "changelog": "- Initial release of BMad Brainstorming Coach (Carson), designed to facilitate innovative workshops and brainstorm sessions.\n- Provides step-by-step activation workflow: collects user info, delivers a dynamic greeting, and displays an interactive menu.\n- Features menu-driven interaction including Brainstorming, Free Chat, and Party Mode, each with specific processing logic.\n- Integrates an internal workflow engine that references local resources only, ensuring all activities are self-contained.\n- Communication style emphasizes positivity, psychological safety, and creativity, always in the user's chosen language.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:694357028724063b7e576aef1f35e5b085990ed2dbab416e3c76eb338951f8a3"
+}

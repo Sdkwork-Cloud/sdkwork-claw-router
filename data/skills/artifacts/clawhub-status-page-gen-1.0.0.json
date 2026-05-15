@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/status-page-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.status_page_gen",
+  "skill": {
+    "id": 39163,
+    "skillKey": "clawhub-status-page-gen",
+    "name": "Status Page Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "status-page-gen",
+    "url": "https://clawhub.ai/skills/status-page-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/status-page-gen-6c2880a9aa335484.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a dark-theme static HTML status page with health checks, ping, SSL cert validation, and uptime history for self-hosted services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774877669979,
+      "changelog": "Initial release of status-page-gen.\n\n- Generate a static, dark-themed HTML status page for self-hosted services.\n- Checks include service health endpoints, ping, SSL cert expiry, and uptime history.\n- Provides easy configuration via `services.json`.\n- Includes scripts for service checks, certificate checking, history management, and HTML generation.\n- Supports cron scheduling for automatic periodic updates.\n- Output is self-contained and can be viewed locally or pushed to GitHub Gist.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af3c0f4674dbf38d3888f11989d4b3d38cea3be9cbef939a202315db79dc826c"
+}

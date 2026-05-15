@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-andon@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_andon",
+  "skill": {
+    "id": 71688,
+    "skillKey": "clawhub-tencent-andon",
+    "name": "AndonQ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-andon",
+    "url": "https://clawhub.ai/skills/tencent-andon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-andon-61f8f851b32f7002.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云 AndonQ 工单与智能客服助手 — 不切窗口、不排队，即刻获得腾讯云全产品线专业解答。支持工单查询（列表/详情/流水）、集团工单与需求单管理，以及腾讯云全产品线智能问答。当用户查询工单、查看工单详情、咨询腾讯云产品问题（如 CVM、轻量应用服务器、COS 等）、查询集团工单/需求单，或要求找人工客服时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "llm-pm",
+      "userId": "s1709w4j2j7kb30fn9n3ky157x83pgrr",
+      "displayName": "AutoClaw",
+      "image": "https://avatars.githubusercontent.com/u/145959662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774595303718,
+      "changelog": "- 移除 tccli API 通用云资源管理与工单创建相关内容，简化为工单与智能问答核心场景。\n- 精简和合并说明文档结构，删除部分细节与内部接口描述。\n- 删除 references/tccli-api-discovery.md 和 references/tccli-install.md，移除与 tccli 相关操作和说明。\n- 更新功能概述和接口列表，将支持接口精简为 9 个。\n- 所有现有主要接口（工单查询/详情、智能问答、集团工单/需求单）功能保留不变。\n- 新增并统一接口输出格式与错误码说明，使用统一 JSON 响应结构。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29ee7715f45e0c79131e29309b168181bbfd7179e86e8e6d48ad7089c49bd5de"
+}

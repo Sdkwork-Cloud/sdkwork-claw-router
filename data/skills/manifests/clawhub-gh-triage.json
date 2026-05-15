@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21579,
+  "uuid": "skill-clawhub-gh-triage",
+  "skillKey": "clawhub-gh-triage",
+  "name": "GH Triage",
+  "summary": "Automatically scans GitHub repos to label, comment, assign, and fix issues and PRs for efficient triage and reporting.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_triage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gruted",
+      "features": [
+        "Automatically scans GitHub repos to label, comment, assign, and fix issues and PRs for efficien."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-triage@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262255360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-triage",
+      "url": "https://clawhub.ai/skills/gh-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-triage",
+    "url": "https://clawhub.ai/skills/gh-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-triage-28fcd74d2f97df2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-triage@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-triage-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:564d13f563f4be785e265d399963b64cf7a6f12f6e3a61276bafeeda689a0c9c",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T02:25:16.394Z"
+}

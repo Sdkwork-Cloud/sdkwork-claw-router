@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-self-assessment@2.3.3",
+  "version": "2.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_self_assessment",
+  "skill": {
+    "id": 14042,
+    "skillKey": "clawhub-agent-self-assessment",
+    "name": "Agent Compliance & Security Assessment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-self-assessment",
+    "url": "https://clawhub.ai/skills/agent-self-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-self-assessment-e8410030ec035ea1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive compliance and security self-assessment for AI agents. 14-check framework producing a structured threat model + compliance report with RED/AMBE..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roosch269",
+      "userId": "s177h8y1kddnjj28j50dph6c3983gbsv",
+      "displayName": "Justin",
+      "image": "https://avatars.githubusercontent.com/u/179031035?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1141,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.3.3",
+      "createdAt": 1774813153837,
+      "changelog": "Fixed remaining contradictions caught by OpenClaw scanner: removed 'Use file reads and tool introspection' and 'Inspect actual files' from How to Run and Important Notes. Pure questionnaire — zero file-access language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48389628e41e6127c76c43733a4046de4b5210734ebac2135e3f08baae152ea2"
+}

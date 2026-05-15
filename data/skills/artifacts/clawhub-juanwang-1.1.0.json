@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juanwang@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juanwang",
+  "skill": {
+    "id": 66809,
+    "skillKey": "clawhub-juanwang",
+    "name": "卷王.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juanwang",
+    "url": "https://clawhub.ai/skills/juanwang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juanwang-56ec418af7c72165.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "卷王同事 —— 你睡觉时他在学习，你午休时他在工作。让你的OpenClaw助手拥有卷王气质：主动学习、构建知识库、永不满足、持续进化。每次醒来先读 references/SOUL.md 进入卷王状态。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raven9779",
+      "userId": "s174n3gnxpe0gdr3zwxbb7wnkd85yejk",
+      "displayName": "Raven9779",
+      "image": "https://avatars.githubusercontent.com/u/136559455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777728813090,
+      "changelog": "同步最新能力：分场景问答力度、退出/恢复机制、暂停学习中断处理、纠错分级、Working Buffer 定义、定时任务配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:732ca0df36ee3471bf2511c217b0640d635f7c862410fea2ed1194478e19207e"
+}

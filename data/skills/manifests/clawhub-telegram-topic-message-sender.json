@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38098,
+  "uuid": "skill-clawhub-telegram-topic-message-sender",
+  "skillKey": "clawhub-telegram-topic-message-sender",
+  "name": "Telegram Topic Message Sender",
+  "summary": "Wrap sending a Telegram message to a fixed topic into one script call. Use when user wants to quickly send notifications/messages to a specific Telegram topi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_topic_message_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shing19",
+      "features": [
+        "Wrap sending a Telegram message to a fixed topic into one script call",
+        "Use when user wants to quickly send notifications/messages to a specific Telegram topi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-topic-message-sender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38907754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-topic-message-sender",
+      "url": "https://clawhub.ai/skills/telegram-topic-message-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-topic-message-sender",
+    "url": "https://clawhub.ai/skills/telegram-topic-message-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-topic-message-sender-068c708d295742f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-topic-message-sender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-topic-message-sender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b981c6fa7c580bb7599068fa35f05bd4a0d2c8d1f00ab1f24e45bf319ce924db",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:45:51.359Z"
+}

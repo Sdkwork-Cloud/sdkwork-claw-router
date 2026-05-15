@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-skill01@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_skill01",
+  "skill": {
+    "id": 38364,
+    "skillKey": "clawhub-excel-skill01",
+    "name": "6skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-skill01",
+    "url": "https://clawhub.ai/skills/excel-skill01",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-skill01-9cc7e5f5062ee118.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage Product Requirements Documents (PRDs) with structured user stories, acceptance criteria, and task prioritization for feature development."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhao202404",
+      "userId": "s17d1nh129x40dx4qfzwbkgtk183g2tz",
+      "displayName": "zhao202404",
+      "image": "https://avatars.githubusercontent.com/u/167392827?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774494897392,
+      "changelog": "Initial release of the PRD skill for structured Product Requirements Documents.\n\n- Enables creation and management of PRDs with user stories and acceptance criteria\n- Defines a clear JSON schema for PRD tracking (`agents/prd.json`)\n- Includes guidance on story sizing, ordering, and acceptance criteria\n- Provides quick command references for status checks and workflow integration\n- Adds documentation references for agent usage and workflow patterns",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4a43e7d2704b222ec177f2668eeea77ad27f3a591932baf95ec4e5eb4f607f3"
+}

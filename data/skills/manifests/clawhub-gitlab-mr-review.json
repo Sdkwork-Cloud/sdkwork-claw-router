@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23067,
+  "uuid": "skill-clawhub-gitlab-mr-review",
+  "skillKey": "clawhub-gitlab-mr-review",
+  "name": "Gitlab Mr Review",
+  "summary": "Automatically fetches and reviews GitLab merge requests using a template to identify issues and post detailed, actionable review comments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_mr_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zachary.wu",
+      "features": [
+        "Automatically fetches and reviews GitLab merge requests using a template to identify issues and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitlab-mr-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/635435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitlab-mr-review",
+      "url": "https://clawhub.ai/skills/gitlab-mr-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-mr-review",
+    "url": "https://clawhub.ai/skills/gitlab-mr-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-mr-review-74b81cdd5683b408.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitlab-mr-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitlab-mr-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:798aa437d93b2d71da73ce855221d6fc57f08a3fcfe7884ddcdcd02b8e4a979d",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:44:45.626Z"
+}

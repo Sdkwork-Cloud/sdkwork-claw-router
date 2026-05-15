@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67684,
+  "uuid": "skill-clawhub-arxiv-paper-searcher",
+  "skillKey": "clawhub-arxiv-paper-searcher",
+  "name": "arxiv-paper-searcher",
+  "summary": "搜索并分析 arXiv 学术论文。默认执行“搜索 + 摘要分析 + 热点统计 + 趋势判断”的完整流程，并立即返回结构化报告。用户确认后，可基于同一检索条件创建定时监控任务，定期推送最新论文分析。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_paper_searcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Song Xianfeng",
+      "features": [
+        "搜索并分析 arXiv 学术论文。默认执行“搜索 + 摘要分析 + 热点统计 + 趋势判断”的完整流程，并立即返回结构化报告。用户确认后，可基于同一检索条件创建定时监控任务，定期推送最新论文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-paper-searcher@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111047002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-paper-searcher",
+      "url": "https://clawhub.ai/skills/arxiv-paper-searcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-paper-searcher",
+    "url": "https://clawhub.ai/skills/arxiv-paper-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-paper-searcher-133f9800645c1a5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-paper-searcher@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-paper-searcher-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1c79cabd796e102465a9ff4b3dd8bcfcd0e2b1d6bc885200bca9db13c3aeda3",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T18:59:24.620Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-confluence-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_confluence_skill",
+  "skill": {
+    "id": 11427,
+    "skillKey": "clawhub-openclaw-confluence-skill",
+    "name": "OpenClaw confluence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-confluence-skill",
+    "url": "https://clawhub.ai/skills/openclaw-confluence-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-confluence-skill-d52e444f59ab8cc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full Confluence Cloud REST API v2 skill (pages, spaces, folders, databases, whiteboards, comments, labels, tasks, properties, etc.) with basic/OAuth auth, pagination, and migration from confluence-cli."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pangin",
+      "userId": "publishers:pangin",
+      "displayName": "Kim Seong Uk",
+      "image": "https://avatars.githubusercontent.com/u/22514003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769959204474,
+      "changelog": "- Initial release of full Confluence Cloud REST API v2 skill.\n- Supports all major API groups: pages, spaces, folders, whiteboards, databases, comments, tasks, and more.\n- Compatible with both Basic (email + API token) and OAuth authentication methods.\n- Includes helpers for pagination, admin key header, and easy migration from confluence-cli configurations.\n- Provides command-line scripts for listing, retrieving, and calling endpoints directly.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1825fe3dc42c188cb8a013a20ae63b3ed8997bfe8bdd1a93ddbf986adfd31cd"
+}

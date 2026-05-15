@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "neckr0ik-security-fixer",
+    "displayName": "Neckr0ik Security Fixer",
+    "summary": "Auto-fix security vulnerabilities in OpenClaw skills. Works with neckr0ik-security-scanner to automatically remediate hardcoded secrets, shell injection risk...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772829990371,
+    "updatedAt": 1778305032958
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772829990371,
+    "changelog": "Initial release of neckr0ik-security-fixer.\n\n- Automatically remediates hardcoded secrets, shell injection, prompt injection, and path traversal vulnerabilities in OpenClaw skills.\n- Integrates with neckr0ik-security-scanner for seamless vulnerability detection and fixing.\n- Generates secure code replacements and .env.example templates, updating .gitignore as needed.\n- Supports auto-fix, interactive fixes, dry-run mode, and backup file creation.\n- Outputs detailed reports and flags issues needing manual review.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "neckr0ik",
+    "userId": "s1743ver4v9fjtabxtnwrxe1ms83n31n",
+    "displayName": "Neckr0ik",
+    "image": "https://avatars.githubusercontent.com/u/96146149?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dynamic_code_execution",
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dynamic_code_execution, suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305032958
+  }
+}

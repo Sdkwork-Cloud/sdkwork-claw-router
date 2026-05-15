@@ -1,4 +1,5 @@
 import {
+  createRequestParams,
   ensurePlusApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
@@ -14,21 +15,22 @@ export interface RechargePackage {
   id: SdkRechargePackagesResponse[number]['id'];
   rmb: string & SdkRechargePackagesResponse[number]['rmb'];
   bonus: SdkRechargePackagesResponse[number]['bonus'];
+  points: SdkRechargePackagesResponse[number]['points'];
 }
 
 export class RechargeService {
   static async fetchPackages(): Promise<RechargePackage[]> {
-    const result = await getClawRouterAppSdkClient().vip.fetchPackages();
+    const result = await getClawRouterAppSdkClient().billing.account.points.recharges.packages.list();
     ensurePlusApiSuccess(result, 'Failed to fetch recharge packages');
     return readRequiredApiItems(result, 'Failed to fetch recharge packages')
       .map(normalizeRechargePackage);
   }
 
   static async submitRecharge(amount: string, method: string): Promise<{ success: boolean; orderNo: string }> {
-    const result = await getClawRouterAppSdkClient().account.submitRecharge({
+    const result = await getClawRouterAppSdkClient().billing.account.points.recharges.create({
       amount: moneyAmount(amount, 'amount'),
       method: requiredText(method, 'method'),
-    });
+    }, createRequestParams('commerce-points-recharge'));
     ensurePlusApiSuccess(result, 'Failed to submit recharge');
     const data = readApiRecord(result);
     const success = readRequiredBoolean(data, 'success', 'Recharge success flag is required');
@@ -57,6 +59,7 @@ function normalizeRechargePackage(value: unknown): RechargePackage {
       'Recharge package money amount must be a money string',
     ),
     bonus: readRequiredNonNegativeNumber(item, 'bonus', 'Recharge package bonus is required'),
+    points: readRequiredNonNegativeNumber(item, 'points', 'Recharge package points are required'),
   };
 }
 

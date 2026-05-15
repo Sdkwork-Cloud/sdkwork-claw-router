@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69196,
+  "uuid": "skill-clawhub-method-repository",
+  "skillKey": "clawhub-method-repository",
+  "name": "Method Repository",
+  "summary": "将论文分析中提取的流行病学研究设计和统计方法存入本地知识库数据库，支持去重。当用户说\"存入数据库\"、\"保存到知识库\"、\"记一下这个方法\"时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.method_repository",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chircken891",
+      "features": [
+        "将论文分析中提取的流行病学研究设计和统计方法存入本地知识库数据库，支持去重。当用户说\"存入数据库\"、\"保存到知识库\"、\"记一下这个方法\"时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/method-repository@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192669311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "method-repository",
+      "url": "https://clawhub.ai/skills/method-repository"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "method-repository",
+    "url": "https://clawhub.ai/skills/method-repository",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/method-repository-fb0970559770f9be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/method-repository@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-method-repository-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fde35c3a6439bdbe37361d67988f70b9ab7442a2cceee94c8cddd56117ecf2c7",
+      "artifactSizeBytes": 2614
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:27:07.806Z"
+}

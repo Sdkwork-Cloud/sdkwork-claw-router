@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35652,
+  "uuid": "skill-clawhub-api-diff",
+  "skillKey": "clawhub-api-diff",
+  "name": "API Diff",
+  "summary": "Compare two OpenAPI 3.x or Swagger 2.0 specs and generate a changelog of breaking and non-breaking changes. Detect removed endpoints, new required parameters...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_diff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Compare two OpenAPI 3.x or Swagger 2.0 specs and generate a changelog of breaking and non-break.",
+        "Detect removed endpoints, new required parameters..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-diff@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-diff",
+      "url": "https://clawhub.ai/skills/api-diff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-diff",
+    "url": "https://clawhub.ai/skills/api-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-diff-f831af5dbd51cbfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-diff@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-diff-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4f9b2cc37d72e16563eff7dac7a48a47b14e02bb64ec91120311bbc8a7b9c16",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:59:37.071Z"
+}

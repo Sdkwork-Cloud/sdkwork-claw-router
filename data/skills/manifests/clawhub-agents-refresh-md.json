@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50474,
+  "uuid": "skill-clawhub-agents-refresh-md",
+  "skillKey": "clawhub-agents-refresh-md",
+  "name": "Agents Refresh MD v1.1.2 🐾",
+  "summary": "AGENTS.md/IDENTITY/SOUL/USER periodic reload skill to keep context fresh (.md-only v1.1.2). Prevents confusion and forgetting in long sessions. Edit HEARTBEA...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_refresh_md",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kentaroid-bot",
+      "features": [
+        "AGENTS.md/IDENTITY/SOUL/USER periodic reload skill to keep context fresh (.md-only v1.1.2)",
+        "Prevents confusion and forgetting in long sessions",
+        "Edit HEARTBEA..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agents-refresh-md@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261070559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agents-refresh-md",
+      "url": "https://clawhub.ai/skills/agents-refresh-md"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-refresh-md",
+    "url": "https://clawhub.ai/skills/agents-refresh-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-refresh-md-bf6685477fa93a62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agents-refresh-md@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agents-refresh-md-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e8854824f47e263be6f59111a96a848e37ad61383599cfa8134e7fcd60ee55d",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T06:09:43.407Z"
+}

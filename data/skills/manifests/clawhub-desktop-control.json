@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8241,
+  "uuid": "skill-clawhub-desktop-control",
+  "skillKey": "clawhub-desktop-control",
+  "name": "Desktop Control",
+  "summary": "Advanced desktop automation with mouse, keyboard, and screen control",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "matagul",
+      "features": [
+        "Advanced desktop automation with mouse, keyboard, and screen control"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desktop-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94160728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desktop-control",
+      "url": "https://clawhub.ai/skills/desktop-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-control",
+    "url": "https://clawhub.ai/skills/desktop-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-control-f49bec4239fa518e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desktop-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-desktop-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e822a5421f54aa983eec1827578286028539e901547b0a4f8686abcfdcec18d4",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T01:33:20.863Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-0-2-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_0_2_0_1",
+  "skill": {
+    "id": 44714,
+    "skillKey": "clawhub-agent-browser-0-2-0-1",
+    "name": "Agent Browser 0.2.0 (1)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-0-2-0-1",
+    "url": "https://clawhub.ai/skills/agent-browser-0-2-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-0-2-0-1-e3a34ff43f50f744.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liu-zaa",
+      "userId": "s175bywvgbfq8p679ms822vp1x846611",
+      "displayName": "liu-zaa",
+      "image": "https://avatars.githubusercontent.com/u/267046648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775752524709,
+      "changelog": "- Initial release of Agent Browser: a fast Rust-based headless browser automation CLI with Node.js fallback.\n- Enables navigation, clicking, typing, and page snapshots through structured CLI commands.\n- Comprehensive command set for web automation: form filling, UI testing, screenshots, video recording, and data extraction.\n- Supports semantic locators, cookies/storage management, network interception, tabs/windows, frames, dialogs, and JavaScript execution.\n- Designed for easy scripting and robust automation of web interactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37eca3972656c16c7abb79164cd72f0ad69bd5555180ff14468d6fd3ca5b0b54"
+}

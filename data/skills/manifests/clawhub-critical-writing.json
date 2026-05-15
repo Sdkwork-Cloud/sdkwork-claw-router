@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70537,
+  "uuid": "skill-clawhub-critical-writing",
+  "skillKey": "clawhub-critical-writing",
+  "name": "critical-writing",
+  "summary": "多角色辩论写作工作流。通过\"前置三问 → 规划 → 分步写作 → 辩论法庭 → 综合改写\" 的闭环流程，让多个批评者角色互相对抗，在争论中打磨出高质量内容。 核心差异：不是单个名人单向批评，而是 2-3 个批评者就同一篇稿子展开辩论—— 一方指出问题，另一方反驳或补充，最终从争论中提炼出真正有价值的改写方向。 触...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.critical_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boboy-j",
+      "features": [
+        "多角色辩论写作工作流。通过\"前置三问 → 规划 → 分步写作 → 辩论法庭 → 综合改写\" 的闭环流程，让多个批评者角色互相对抗，在争论中打磨出高质量内容。 核心差异：不是单个名人单向批评，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/critical-writing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257822985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "critical-writing",
+      "url": "https://clawhub.ai/skills/critical-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "critical-writing",
+    "url": "https://clawhub.ai/skills/critical-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/critical-writing-50b5c13b21325f89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/critical-writing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-critical-writing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f25c9ae3f608b17cf7c11f26d18d50869f731bcb460e08589ff02575eef23e1",
+      "artifactSizeBytes": 2807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:29:45.578Z"
+}

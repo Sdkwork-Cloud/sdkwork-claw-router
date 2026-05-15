@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s2-light-perception@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_light_perception",
+  "skill": {
+    "id": 58284,
+    "skillKey": "clawhub-s2-light-perception",
+    "name": "S2 Light Perception"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-light-perception",
+    "url": "https://clawhub.ai/skills/s2-light-perception",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-light-perception-5e0284749fda08f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "S2-SP-OS Light Radar. Real LAN UDP discovery and local API calls (Hue/Wiz) to create a 4sqm voxel light memzero. / S2-SP-OS 光之雷达。真实的局域网UDP发现与本地API调用，逆向推算4平米光..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spacesq",
+      "userId": "s17c8pmv1e8tb2mcc5aset88e183hq1t",
+      "displayName": "MilesXiang",
+      "image": "https://avatars.githubusercontent.com/u/259359437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774157957174,
+      "changelog": "Version 1.0.2 of s2-light-perception is a major update focused on real network-based light discovery and control.\n\n- Switched from simulated to 100% real network-active radar using true UDP Broadcast (Port 38899) and SSDP Multicast (Port 1900).\n- Introduced zero-dependency, native Python implementation for device discovery and state reading (no third-party libraries).\n- Clarified instructions: device scanning and state fetching now require real network communication.\n- Added robustness: estimated_lux defaults safely if real network access to a device fails.\n- Updated documentation to emphasize real network interaction and provide clearer sample usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:803cb5e99b3e5f2bc4b36577d5f0126ecc2820588f80a533c11a284a2745a8fd"
+}

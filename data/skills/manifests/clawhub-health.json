@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9313,
+  "uuid": "skill-clawhub-health",
+  "skillKey": "clawhub-health",
+  "name": "Health",
+  "summary": "Provide personalized wellness guidance while maintaining strict safety boundaries.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Provide personalized wellness guidance while maintaining strict safety boundaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health",
+      "url": "https://clawhub.ai/skills/health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health",
+    "url": "https://clawhub.ai/skills/health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-62484e22a6a5ade1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c34da44bd312b87cd86aad1a4e67877e1eecafdfc9f1a473f4df4c50d235a6f",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T19:55:05.896Z"
+}

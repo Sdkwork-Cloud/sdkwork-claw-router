@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67161,
+  "uuid": "skill-clawhub-investment-reports",
+  "skillKey": "clawhub-investment-reports",
+  "name": "Investage Temp",
+  "summary": "價值投資每日追蹤系統 - 整合估值、技術分析、情緒分析，輸出綜合評分報告並發送 Email。適用於個人投資組合追蹤。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_reports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arbiger",
+      "features": [
+        "價值投資每日追蹤系統",
+        "整合估值、技術分析、情緒分析，輸出綜合評分報告並發送 Email。適用於個人投資組合追蹤。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-reports@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4034191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-reports",
+      "url": "https://clawhub.ai/skills/investment-reports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-reports",
+    "url": "https://clawhub.ai/skills/investment-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-reports-e6fce8eba646a8f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-reports@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-reports-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ee46958ce8f82f8fe70df22b7eadda45cfd4a9c56531c82bed398c1bfdd57b0",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:43:58.994Z"
+}

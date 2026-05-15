@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63853,
+  "uuid": "skill-clawhub-arxiv-paper-recommender",
+  "skillKey": "clawhub-arxiv-paper-recommender",
+  "name": "arXiv 论文推荐器",
+  "summary": "推荐高质量的 Agent/RAG 论文。当用户提到\"推荐论文\"、\"arxiv论文\"、\"Agent论文\"、\"RAG论文\"、\"论文推荐\"、\"看论文\"、\"找论文\"、\"最近有什么好论文\"时触发此技能。支持主题：Agent测评、RAG测评、Agent架构、RAG架构。自动验证 GitHub 代码，生成结构化报告。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_paper_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeviosLang",
+      "features": [
+        "推荐高质量的 Agent/RAG 论文。当用户提到\"推荐论文\"、\"arxiv论文\"、\"Agent论文\"、\"RAG论文\"、\"论文推荐\"、\"看论文\"、\"找论文\"、\"最近有什么好论文\"时触发此技能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-paper-recommender@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5735268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-paper-recommender",
+      "url": "https://clawhub.ai/skills/arxiv-paper-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-paper-recommender",
+    "url": "https://clawhub.ai/skills/arxiv-paper-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-paper-recommender-9a0ee1dae433aefd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-paper-recommender@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-paper-recommender-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4197c25754a38eec074d2cecd88d57269f3f3447b9eb86ad3cbd689811379487",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:17:30.263Z"
+}

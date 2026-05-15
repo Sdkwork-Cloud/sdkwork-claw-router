@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73331,
+  "uuid": "skill-clawhub-memo-teller",
+  "skillKey": "clawhub-memo-teller",
+  "name": "回忆录制作",
+  "summary": "引导老人回忆口述历史，结构化记录故事，并自动生成短视频或短剧脚本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memo_teller",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shawcc",
+      "features": [
+        "引导老人回忆口述历史，结构化记录故事，并自动生成短视频或短剧脚本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memo-teller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48096838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memo-teller",
+      "url": "https://clawhub.ai/skills/memo-teller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memo-teller",
+    "url": "https://clawhub.ai/skills/memo-teller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memo-teller-dcc39d18a59561b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memo-teller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memo-teller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6660b16772fb52a6ef95f07b7f487326aae49c85cd40b44a0da6f877ca5d07cd",
+      "artifactSizeBytes": 1781
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:31:43.405Z"
+}

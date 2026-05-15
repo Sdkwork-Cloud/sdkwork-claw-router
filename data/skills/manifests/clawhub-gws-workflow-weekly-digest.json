@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18979,
+  "uuid": "skill-clawhub-gws-workflow-weekly-digest",
+  "skillKey": "clawhub-gws-workflow-weekly-digest",
+  "name": "Gws Workflow Weekly Digest",
+  "summary": "Google Workflow: Weekly summary: this week's meetings + unread email count.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_workflow_weekly_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workflow: Weekly summary: this week's meetings + unread email count."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-workflow-weekly-digest@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-workflow-weekly-digest",
+      "url": "https://clawhub.ai/skills/gws-workflow-weekly-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-workflow-weekly-digest",
+    "url": "https://clawhub.ai/skills/gws-workflow-weekly-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-workflow-weekly-digest-c4b22efd4e736f31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-workflow-weekly-digest@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-workflow-weekly-digest-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3be91fd626557147737ea47d7de789048ce16722ec6c88e50dbe5fdfa4a7b2ba",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:35:12.163Z"
+}

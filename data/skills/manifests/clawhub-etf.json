@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24683,
+  "uuid": "skill-clawhub-etf",
+  "skillKey": "clawhub-etf",
+  "name": "Etf",
+  "summary": "Analyze ETF holdings, compare fund metrics, and review sector allocation data. Use when screening ETFs, comparing ratios, or tracking allocations.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Analyze ETF holdings, compare fund metrics, and review sector allocation data",
+        "Use when screening ETFs, comparing ratios, or tracking allocations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etf@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etf",
+      "url": "https://clawhub.ai/skills/etf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etf",
+    "url": "https://clawhub.ai/skills/etf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etf-58c35f0cffaa2510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etf@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etf-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:897a0bb316a9a86122b19382b6aa7e633e2a5b0b7c82eb74c6d0f189282c9902",
+      "artifactSizeBytes": 1809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:50:19.478Z"
+}

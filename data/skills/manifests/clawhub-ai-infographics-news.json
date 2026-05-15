@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60632,
+  "uuid": "skill-clawhub-ai-infographics-news",
+  "skillKey": "clawhub-ai-infographics-news",
+  "name": "ai-infographics-news",
+  "summary": "搜索近30天内热门AI产品、工具和新闻，优先OpenClaw/MaxClaw，生成高质时效性AI资讯信息图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_infographics_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeahLiang",
+      "features": [
+        "搜索近30天内热门AI产品、工具和新闻，优先OpenClaw/MaxClaw，生成高质时效性AI资讯信息图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-infographics-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40543830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-infographics-news",
+      "url": "https://clawhub.ai/skills/ai-infographics-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-infographics-news",
+    "url": "https://clawhub.ai/skills/ai-infographics-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-infographics-news-379f000687a6f32a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-infographics-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-infographics-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c03121cf75510eb2c63c72a975c523c0e48c99f9856d1f7adb38eac9da3ef2fe",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:56:11.958Z"
+}

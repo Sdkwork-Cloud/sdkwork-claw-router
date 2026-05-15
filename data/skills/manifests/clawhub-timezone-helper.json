@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28688,
+  "uuid": "skill-clawhub-timezone-helper",
+  "skillKey": "clawhub-timezone-helper",
+  "name": "Timezone Helper",
+  "summary": "Time zone conversion, world clock, and meeting planner. Use when the user asks about current time in a city, needs to convert time between zones, wants to sc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timezone_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "Time zone conversion, world clock, and meeting planner",
+        "Use when the user asks about current time in a city, needs to convert time between zones, wants."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timezone-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timezone-helper",
+      "url": "https://clawhub.ai/skills/timezone-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timezone-helper",
+    "url": "https://clawhub.ai/skills/timezone-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timezone-helper-7aa10686ff173b76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timezone-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-timezone-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5688b1cb0a21c6b0f842e11cc0306e1ebf152bf195165020073dad8a157f1efd",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:33:41.739Z"
+}

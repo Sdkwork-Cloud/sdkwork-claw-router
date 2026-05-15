@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dialectical-analysis@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dialectical_analysis",
+  "skill": {
+    "id": 73350,
+    "skillKey": "clawhub-dialectical-analysis",
+    "name": "辩证分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dialectical-analysis",
+    "url": "https://clawhub.ai/skills/dialectical-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dialectical-analysis-acff2a0841ea933d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过多代理辩论，结合知识增强和多维度评分，生成高质量、经考验的商业分析与可行性评估报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "philonis",
+      "userId": "s17590jb1j9fp2b74f3p7he73n83kfvc",
+      "displayName": "philonis",
+      "image": "https://avatars.githubusercontent.com/u/3388405?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1773382164439,
+      "changelog": "## Changelog for dialectical-analysis v3.0.1\n\n- Removed two files: input.json and state.json, likely related to temporary or intermediate process data.\n- No changes to core logic, interfaces, or features.\n- The skill’s documented usage, configuration, and capabilities remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6adeb19dd9177a9a3909d62c646327a18f056c861c16f897357a2a9a0e4f87c"
+}

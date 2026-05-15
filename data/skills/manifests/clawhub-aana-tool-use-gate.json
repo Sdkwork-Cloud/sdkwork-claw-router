@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35223,
+  "uuid": "skill-clawhub-aana-tool-use-gate",
+  "skillKey": "clawhub-aana-tool-use-gate",
+  "name": "AANA Tool Use Gate Skill",
+  "summary": "Controls and reviews external tool use for necessary, scoped, authorized, data-minimized, and safe operations that may affect state or reveal private data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_tool_use_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Controls and reviews external tool use for necessary, scoped, authorized, data-minimized, and s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-tool-use-gate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-tool-use-gate",
+      "url": "https://clawhub.ai/skills/aana-tool-use-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-tool-use-gate",
+    "url": "https://clawhub.ai/skills/aana-tool-use-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-tool-use-gate-06b0f26e16db663b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-tool-use-gate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-tool-use-gate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b95448f8053506f4424a3741f9934509e630d0a0f3264901a654673d03dfc51c",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:15:13.880Z"
+}

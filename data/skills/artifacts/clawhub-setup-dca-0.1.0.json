@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/setup-dca@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_dca",
+  "skill": {
+    "id": 17033,
+    "skillKey": "clawhub-setup-dca",
+    "name": "Uniswap Setup DCA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-dca",
+    "url": "https://clawhub.ai/skills/setup-dca",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-dca-cfa95f3f6fdd0a30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up a non-custodial dollar-cost averaging strategy on Uniswap. Use when user wants to create recurring swaps, auto-buy ETH/BTC/SOL with USDC on a schedule, or build a DCA bot. Covers USDC approval, swap path selection, frequency configu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 824,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745941376,
+      "changelog": "setup-dca v0.1.0 – Initial release\n\n- Introduces a workflow to set up non-custodial dollar-cost averaging on Uniswap.\n- Supports automated, recurring swaps with optimal route selection, slippage guards, and balance checks.\n- Handles USDC approval (Permit2), swap frequency, and automation via self-execute or Gelato keeper modes.\n- Provides up-front cost projections and a detailed confirmation step before execution.\n- Designed for both local testnet (development) and mainnet (production) environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:34cfa1f16059ba0acf60da24ba34cef3bca1e6ba95341698af8aefffee18fc92"
+}

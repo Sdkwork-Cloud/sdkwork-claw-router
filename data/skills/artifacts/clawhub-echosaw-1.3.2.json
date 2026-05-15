@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/echosaw@1.3.2",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.echosaw",
+  "skill": {
+    "id": 28886,
+    "skillKey": "clawhub-echosaw",
+    "name": "Echosaw Media Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "echosaw",
+    "url": "https://clawhub.ai/skills/echosaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/echosaw-9d04e02151414d6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze video, audio, and image files using AI. Produces structured intelligence reports including transcripts, content moderation signals, sentiment analysi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "echosaw",
+      "userId": "s177nr9jp1kqzvebc27zp6sbqs83gsvq",
+      "displayName": "Echosaw",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.2",
+      "createdAt": 1775860913089,
+      "changelog": "Echosaw 1.3.2 adds new media management and account tools, and updates installation and authentication instructions.\n\n- Added `echosaw_search_media` for semantic search across your analyzed media library.\n- Added `echosaw_list_media` to list items in your media library.\n- Added `echosaw_get_profile` to retrieve account and subscription info.\n- Updated install instructions to use the remote server at https://mcp.echosaw.com.\n- Updated authentication section with recommended OAuth 2.0 flow for remote server; local server/API key method marked as deprecated.\n- Expanded workflow and example conversation to include new features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6efd03a1ecf7b6901e44e035f270906dc8c2d4be85d35ee05fbdedbe50e1307"
+}

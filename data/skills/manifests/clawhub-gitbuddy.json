@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30294,
+  "uuid": "skill-clawhub-gitbuddy",
+  "skillKey": "clawhub-gitbuddy",
+  "name": "Gitbuddy",
+  "summary": "Extend Git with utilities for changelogs, branch cleanup, and repo stats. Use when generating changelogs, squashing branches, or viewing repo statistics.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitbuddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Extend Git with utilities for changelogs, branch cleanup, and repo stats",
+        "Use when generating changelogs, squashing branches, or viewing repo statistics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitbuddy@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitbuddy",
+      "url": "https://clawhub.ai/skills/gitbuddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitbuddy",
+    "url": "https://clawhub.ai/skills/gitbuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitbuddy-a95ba2fe5935bad6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitbuddy@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitbuddy-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67ef7e599884e253fd2aab9a1226c1ca97f313d08273664913edca58e2599a73",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:29:47.108Z"
+}

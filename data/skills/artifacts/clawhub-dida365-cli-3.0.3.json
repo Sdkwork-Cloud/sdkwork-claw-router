@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dida365-cli@3.0.3",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dida365_cli",
+  "skill": {
+    "id": 66708,
+    "skillKey": "clawhub-dida365-cli",
+    "name": "Dida365 Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dida365-cli",
+    "url": "https://clawhub.ai/skills/dida365-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dida365-cli-6de948f4c79b27c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Node.js CLI 管理滴答清单（Dida365）的任务、项目、标签等，支持已完成任务按日期查询、全量同步、标签管理、批量操作等，适用于日常任务管理与自动化场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oymy",
+      "userId": "publishers:oymy",
+      "displayName": "oymy",
+      "image": "https://avatars.githubusercontent.com/u/4515125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1127,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.3",
+      "createdAt": 1771138287090,
+      "changelog": "MCP 与 CLI 功能对齐：新增 task update CLI、completed yesterday MCP、get timezone MCP",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:caee0ff82a92b81e61babb81fbddadededcf62d2b98968e6096a3cc8820bd421"
+}

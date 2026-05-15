@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66909,
+  "uuid": "skill-clawhub-tencentcloud-tione-skill",
+  "skillKey": "clawhub-tencentcloud-tione-skill",
+  "name": "Tencent Cloud TIONE",
+  "summary": "腾讯云 TI-ONE 训推平台查询工具集，支持训练任务、在线服务、开发机、资源组、模型仓库、数据集、日志、事件等模块的查询操作。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_tione_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alger-Z",
+      "features": [
+        "腾讯云 TI-ONE 训推平台查询工具集，支持训练任务、在线服务、开发机、资源组、模型仓库、数据集、日志、事件等模块的查询操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-tione-skill@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33279281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-tione-skill",
+      "url": "https://clawhub.ai/skills/tencentcloud-tione-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-tione-skill",
+    "url": "https://clawhub.ai/skills/tencentcloud-tione-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-tione-skill-6de78e7cc54cd886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-tione-skill@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-tione-skill-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23495b2a3f380506f6f6e26f1fde33b9ee164dfc111ca74eceb1551e6f330e0f",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:32:29.039Z"
+}

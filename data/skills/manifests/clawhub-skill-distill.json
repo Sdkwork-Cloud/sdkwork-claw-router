@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58468,
+  "uuid": "skill-clawhub-skill-distill",
+  "skillKey": "clawhub-skill-distill",
+  "name": "Skill Distill",
+  "summary": "当需要把多个功能重叠的 skill 合并为一个蒸馏版 skill 时使用。 不适用于从 skills 提取 rules（rules extraction is a separate capability from ECC's rules-distill skill, not part of this repo）或...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_distill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当需要把多个功能重叠的 skill 合并为一个蒸馏版 skill 时使用。 不适用于从 skills 提取 rules（rules extraction is a separate capa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-distill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-distill",
+      "url": "https://clawhub.ai/skills/skill-distill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-distill",
+    "url": "https://clawhub.ai/skills/skill-distill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-distill-ee0b4338bd6e90db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-distill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-distill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0270470f924b1738e9afbfaf98b27332734e32ec5ef4b0e9fb368a54060ded87",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:31:30.578Z"
+}

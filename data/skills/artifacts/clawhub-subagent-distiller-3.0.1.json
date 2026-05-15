@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subagent-distiller@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_distiller",
+  "skill": {
+    "id": 68248,
+    "skillKey": "clawhub-subagent-distiller",
+    "name": "Subagent Distiller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-distiller",
+    "url": "https://clawhub.ai/skills/subagent-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-distiller-b1734069cfd5388c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动增量提取对话中的结构化知识，智能过滤无用信息，动态聚类主题，支持状态追踪和长期价值沉淀。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mashirops",
+      "userId": "publishers:mashirops",
+      "displayName": "Peng Shu",
+      "image": "https://avatars.githubusercontent.com/u/58142289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1772799682089,
+      "changelog": "- Update version to 3.0.1\n- Documentation cleanup in SKILL.md; no user-facing feature changes\n- No change in core functions or configuration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:840bba5ceb43214d5b85376b677161c97adcd1d93f152afcb10aceb6538bbe93"
+}

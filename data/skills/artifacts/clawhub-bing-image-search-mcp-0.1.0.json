@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bing-image-search-mcp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bing_image_search_mcp",
+  "skill": {
+    "id": 34285,
+    "skillKey": "clawhub-bing-image-search-mcp",
+    "name": "Bing Image Search Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bing-image-search-mcp",
+    "url": "https://clawhub.ai/skills/bing-image-search-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bing-image-search-mcp-c76b5d2636839e99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generated skill for bing-image-search-mcp tools via OneKey Gateway."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774175168920,
+      "changelog": "Initial release of bing-image-search-mcp skill.\n\n- Provides access to Bing image search via OneKey Gateway.\n- Includes tools for both single and batch image search queries.\n- Supports CLI and Python script usage.\n- Documentation covers environment setup, dependencies, and usage examples.\n- Allows fallback to a demo API key if no custom key is provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c0a706993a2f33683d7d1c96ddcd8cda8152ce377258750a21a0f4e0ff20a40"
+}

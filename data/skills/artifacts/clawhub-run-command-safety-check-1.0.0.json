@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/run-command-safety-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.run_command_safety_check",
+  "skill": {
+    "id": 59159,
+    "skillKey": "clawhub-run-command-safety-check",
+    "name": "Run Command Safety Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "run-command-safety-check",
+    "url": "https://clawhub.ai/skills/run-command-safety-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/run-command-safety-check-fa0c3cb2cc203ee6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在执行 shell 方案前检查危险模式，如 pipe-to-shell、覆盖式删除、危险重定向或混淆执行。；use for shell, security, command-review workflows；do not use for 提供攻击性命令, 帮用户绕过限制."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773902162901,
+      "changelog": "Initial release of run-command-safety-check skill:\n\n- Checks shell commands for dangerous patterns such as pipe-to-shell, destructive delete, risky redirection, or obfuscated execution before running.\n- Gives structured output: dangerous patterns, medium-risk patterns, background notes, alternative suggestions, manual review points, and final recommendations.\n- Prioritizes readable, audit-friendly, and dry-run approaches; avoids executing or suggesting aggressive, attack, or privilege-escalation commands.\n- Clearly states requirements and safe usage boundaries.\n- Supports review workflows for shell, security, and command-review scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:403d9c0b69a440d2f50b558a54d238f30bfba93ab76ae637d27fd7f8706f2ce6"
+}

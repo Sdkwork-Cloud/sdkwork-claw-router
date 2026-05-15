@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deepresearchpro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepresearchpro",
+  "skill": {
+    "id": 67626,
+    "skillKey": "clawhub-deepresearchpro",
+    "name": "deepresearchpro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepresearchpro",
+    "url": "https://clawhub.ai/skills/deepresearchpro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepresearchpro-1c8514d7ce2158ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专注跨语言、多平台深度检索，产出含多维视角和严格引用的可追溯调研报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aptjason",
+      "userId": "s17f0mmgf5vyd38tcfz3dpym4n84jt9g",
+      "displayName": "Jason Abbott",
+      "image": "https://avatars.githubusercontent.com/u/92967246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773742482352,
+      "changelog": "Initial release of deepresearchpro: an advanced research agent for deep, multi-source information gathering and report generation.\n\n- Performs comprehensive cross-language, cross-platform searches on news, academic sources, and social media.\n- Rigorously verifies facts with cross-referencing and tracks all conclusions to specific web sources.\n- Supports strict citation formatting and provides a structured, multi-part analytical report.\n- Adapts search strategies and keywords depending on platform and language.\n- Includes step-wise, tool-specific instructions and best practices for maximizing research thoroughness and citation reliability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b05a51eb4a4725f1f1365879dd9a0b9749cc5f92067672a0b4113994daec180"
+}

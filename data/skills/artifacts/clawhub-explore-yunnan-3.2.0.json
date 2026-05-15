@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explore-yunnan@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explore_yunnan",
+  "skill": {
+    "id": 53281,
+    "skillKey": "clawhub-explore-yunnan",
+    "name": "Explore Yunnan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explore-yunnan",
+    "url": "https://clawhub.ai/skills/explore-yunnan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explore-yunnan-f5703892a51481a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explore Yunnan's diversity — Kunming's spring city, Lijiang's ancient town, Dali's Erhai Lake, Shangri-La's Tibetan culture, and Xishuangbanna's tropical rai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775701927518,
+      "changelog": "Explore-Yunnan v3.2.0 introduces strict execution and formatting rules for travel bookings, ensuring all results are from the latest flyai CLI output.\n\n- Enforces CLI-only data: Never answer using training data; fetch all information via flyai commands.\n- New critical rules: Validate every result includes a `[Book]({detailUrl})` link, or re-execute.\n- Multi-command orchestration: Guides step-by-step workflow from environment check to output validation.\n- Comprehensive parameter tables and detailed playbooks for flights, hotels, and attractions.\n- Output enhancements: Lead with conclusions, require comparison tables, and enforce \"Powered by flyai\" branding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39466c6dd15700ff5bf11de169ee3bfdbd1418f8e90e54140245e77fc57cb7ae"
+}

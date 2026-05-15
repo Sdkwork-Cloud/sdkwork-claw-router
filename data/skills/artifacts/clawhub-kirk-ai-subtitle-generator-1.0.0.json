@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kirk-ai-subtitle-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_ai_subtitle_generator",
+  "skill": {
+    "id": 54118,
+    "skillKey": "clawhub-kirk-ai-subtitle-generator",
+    "name": "ai-subtitle-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-ai-subtitle-generator",
+    "url": "https://clawhub.ai/skills/kirk-ai-subtitle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-ai-subtitle-generator-f7ab9fa33efee20b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "USE THIS for ai subtitles. Generate subtitles from audio/video. Choose the best model for your task. 0% markup. Powered by SkillBoss."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777012447378,
+      "changelog": "Initial release: Easily generate AI subtitles from audio or video with multiple top-tier models and no markup.\n\n- Supports generating subtitles using over 100 AI models via SkillBoss\n- Allows users to select models based on speed, cost, or quality\n- Simple setup with one command; API key required\n- Transparent, pay-as-you-go pricing—no markups\n- OpenAI-compatible API endpoint for easy integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2911a96d2b7b0f51b60b7a512c051584a80f93537809407b2007bd8353490981"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/216medsearch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.216medsearch",
+  "skill": {
+    "id": 65609,
+    "skillKey": "clawhub-216medsearch",
+    "name": "216medsearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "216medsearch",
+    "url": "https://clawhub.ai/skills/216medsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/216medsearch-558e8706cd3e8d2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过内部 API 模糊查询药品名称并返回其通用名，支持准确或模糊匹配。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dddwinter",
+      "userId": "s17fg9dr39d18g2d49zpzg8apd83g5mn",
+      "displayName": "DDDWinter",
+      "image": "https://avatars.githubusercontent.com/u/75260795?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775348230482,
+      "changelog": "216medsearch v1.0.0\n\n- 新技能发布：支持通过内部 API 查询药品通用名\n- 支持模糊查询药品名称，返回查询结果的 JSON 数据\n- 查询失败时返回错误信息\n- 无需手动提供 API token，已内置\n- 提供详细使用说明和返回格式示例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c49034e7acc3d472f0335f3306f6f204c6f2d5fcb592bd9c59c5c58ece0f4722"
+}

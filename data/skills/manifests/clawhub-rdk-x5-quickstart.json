@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59241,
+  "uuid": "skill-clawhub-rdk-x5-quickstart",
+  "skillKey": "clawhub-rdk-x5-quickstart",
+  "name": "Rdk X5 Quickstart",
+  "summary": "RDK X5 新手快速入门：从开箱到第一个 AI 应用的完整流程，包括首次烧录镜像、首次启动、首次连接网络、运行第一个 YOLO 检测 demo。Use when the user is a beginner, first-time user, just unboxed the board, asks '怎么开始...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdk_x5_quickstart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiaolongli",
+      "features": [
+        "RDK X5 新手快速入门：从开箱到第一个 AI 应用的完整流程，包括首次烧录镜像、首次启动、首次连接网络、运行第一个 YOLO 检测 demo。Use when the user is a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rdk-x5-quickstart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262944264?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rdk-x5-quickstart",
+      "url": "https://clawhub.ai/skills/rdk-x5-quickstart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdk-x5-quickstart",
+    "url": "https://clawhub.ai/skills/rdk-x5-quickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdk-x5-quickstart-fd2430f7a41d63d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rdk-x5-quickstart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rdk-x5-quickstart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a23d6b94deef804092fbd6ae846e8e8dcae37b51e298d4df73fbbafda18786b7",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:12:31.979Z"
+}

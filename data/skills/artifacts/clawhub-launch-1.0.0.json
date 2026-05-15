@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/launch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.launch",
+  "skill": {
+    "id": 22552,
+    "skillKey": "clawhub-launch",
+    "name": "Launch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "launch",
+    "url": "https://clawhub.ai/skills/launch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/launch-abfc412ce6e530df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI agent skill for founders, creators, and makers launching anything. Builds your launch strategy, prepares your messaging, sequences your pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ethagent",
+      "userId": "publishers:ethagent",
+      "displayName": "EthAgent",
+      "image": "https://avatars.githubusercontent.com/u/216467966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772978414052,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d4dbaba5d5654437c381183c10b1cdd4f6e9644793a13a56410fda39ac910f8"
+}

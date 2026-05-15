@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30424,
+  "uuid": "skill-clawhub-arxiv-paper-reader",
+  "skillKey": "clawhub-arxiv-paper-reader",
+  "name": "Arxiv Paper Reader",
+  "summary": "Search arXiv by keyword, filter by submitted date range, fetch arXiv papers from an arXiv ID or URL, convert papers into Markdown and PDF files in the worksp...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_paper_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elio040208",
+      "features": [
+        "Search arXiv by keyword, filter by submitted date range, fetch arXiv papers from an arXiv ID or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-paper-reader@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215843197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-paper-reader",
+      "url": "https://clawhub.ai/skills/arxiv-paper-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-paper-reader",
+    "url": "https://clawhub.ai/skills/arxiv-paper-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-paper-reader-5a9e73ca6cda811f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-paper-reader@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-paper-reader-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75f833b298749d40d8a1efe4a332e7aec4b7fd354100fa4a1835e6d8860f6558",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:55:27.658Z"
+}

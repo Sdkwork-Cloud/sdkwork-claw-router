@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11158,
+  "uuid": "skill-clawhub-voicenotes",
+  "skillKey": "clawhub-voicenotes",
+  "name": "Voicenotes",
+  "summary": "Sync and access voice notes from Voicenotes.com. Use when the user wants to retrieve their voice recordings, transcripts, and AI summaries from Voicenotes. Supports fetching notes, syncing to markdown, and searching transcripts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voicenotes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn Hansen",
+      "features": [
+        "Sync and access voice notes from Voicenotes.com",
+        "Use when the user wants to retrieve their voice recordings, transcripts, and AI summaries from.",
+        "Supports fetching notes, syncing to markdown, and searching transcripts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voicenotes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2096717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voicenotes",
+      "url": "https://clawhub.ai/skills/voicenotes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voicenotes",
+    "url": "https://clawhub.ai/skills/voicenotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voicenotes-14ca5ad5c648a049.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voicenotes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voicenotes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fccc482178fce6980f0cbf680ca3730ce36e8e74b82546db5108056d06bd9d95",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T00:46:11.201Z"
+}

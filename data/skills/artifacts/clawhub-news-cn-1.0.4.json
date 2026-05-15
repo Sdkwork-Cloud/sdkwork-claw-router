@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-cn@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_cn",
+  "skill": {
+    "id": 65902,
+    "skillKey": "clawhub-news-cn",
+    "name": "News Brief - 新闻简报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-cn",
+    "url": "https://clawhub.ai/skills/news-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-cn-5792daa830401c1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文新闻门户列表抓取，可输出 Markdown 简报或 JSON/RSS，无需新闻类 API Key。当用户说：给我一份今日要闻链接简报、抓一下门户新闻标题，或类似中文新闻聚合时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 5,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775208048847,
+      "changelog": "- Skill名称和描述更精炼、突出中文新闻门户抓取与输出Markdown/JSON/RSS简报，无需API Key，面向聚合场景。\n- metadata部分优化，名称更易懂（News Brief - 新闻简报）。\n- 其余功能、参数和用法无变更，仅文档优化与表达调整。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7178bea316bfd151dea49397c4b745d56c9d392e4b73cfb12f29f8caaf167f57"
+}

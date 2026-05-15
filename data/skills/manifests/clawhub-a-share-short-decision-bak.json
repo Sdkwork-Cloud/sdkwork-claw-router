@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28820,
+  "uuid": "skill-clawhub-a-share-short-decision-bak",
+  "skillKey": "clawhub-a-share-short-decision-bak",
+  "name": "A Share Short Decision.Bak",
+  "summary": "A-share short-term trading decision skill for 1-5 day horizon. Use when you need real-data market sentiment, sector rotation, strong stock scanning, capital...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_short_decision_bak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wu-XiaoLin",
+      "features": [
+        "A-share short-term trading decision skill for 1-5 day horizon",
+        "Use when you need real-data market sentiment, sector rotation, strong stock scanning, capital..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-short-decision-bak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40012676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-short-decision-bak",
+      "url": "https://clawhub.ai/skills/a-share-short-decision-bak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-short-decision-bak",
+    "url": "https://clawhub.ai/skills/a-share-short-decision-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-short-decision-bak-a7ca0b358bcf8ff8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-short-decision-bak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-short-decision-bak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0835b37e4d0bab442d81a1fc502405d844b320cdc9c9c9b8c5c07f6884915c08",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T20:07:02.858Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50278,
+  "uuid": "skill-clawhub-myopenclaw-backup-restore",
+  "skillKey": "clawhub-myopenclaw-backup-restore",
+  "name": "MyOpenClaw Backup Restore",
+  "summary": "Cross-platform backup and restore for OpenClaw. Works on Windows, macOS, and Linux — backups created on any OS can be restored on any other OS. Use when user...",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myopenclaw_backup_restore",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "beyound87",
+      "features": [
+        "Cross-platform backup and restore for OpenClaw",
+        "Works on Windows, macOS, and Linux — backups created on any OS can be restored on any other OS",
+        "Use when user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myopenclaw-backup-restore@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3038772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myopenclaw-backup-restore",
+      "url": "https://clawhub.ai/skills/myopenclaw-backup-restore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myopenclaw-backup-restore",
+    "url": "https://clawhub.ai/skills/myopenclaw-backup-restore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myopenclaw-backup-restore-4f3c5263c9c52d14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myopenclaw-backup-restore@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-myopenclaw-backup-restore-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7bb9aa67a775d0dd7895a1b073dfdcd1eafe0f30884a6f351448f92f7df2ded",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:46:31.025Z"
+}

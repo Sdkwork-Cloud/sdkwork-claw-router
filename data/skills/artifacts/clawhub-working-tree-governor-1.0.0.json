@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/working-tree-governor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.working_tree_governor",
+  "skill": {
+    "id": 44580,
+    "skillKey": "clawhub-working-tree-governor",
+    "name": "Working Tree Governor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "working-tree-governor",
+    "url": "https://clawhub.ai/skills/working-tree-governor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/working-tree-governor-d92811523794ca5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Govern dirty git working trees by classifying runtime noise vs real source changes, defaulting to selective staging, verifying staged scope, and asking the o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lobsterquant",
+      "userId": "s1702tt9d760swvcg43ey7edhs84zy3e",
+      "displayName": "LobsterQuant",
+      "image": "https://avatars.githubusercontent.com/u/261473916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776352550087,
+      "changelog": "Initial release of working-tree-governor.\n\n- Classifies dirty git working trees into buckets: code/tests, docs, runtime state, generated outputs, logs, caches, forensics, unknown.\n- Defaults to selective staging of only relevant source/test files; excludes runtime noise, logs, caches, and artifacts.\n- Provides a clear discovery workflow to inspect and categorize all changes before staging.\n- Verifies staged files against intended commit scope and prompts for operator approval if scope is ambiguous or risky.\n- Enforces conventional commit message prefixes and recommends corrections if missing.\n- Includes tailored policies for risk levels (low to critical), and edge-case handling for noisy directories and test fixtures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9777a5c3e08b66aa1bbb3265ec3ee785ca7d33df5c12989cbce9a77971ab67f"
+}

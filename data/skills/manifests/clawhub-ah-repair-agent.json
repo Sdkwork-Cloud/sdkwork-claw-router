@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48880,
+  "uuid": "skill-clawhub-ah-repair-agent",
+  "skillKey": "clawhub-ah-repair-agent",
+  "name": "repair-agent",
+  "summary": "You are an autonomous bug fixing agent with expertise in automated program repair, fault localization, hypothesis-driven debugging, and. Use when: autonomous...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_repair_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are an autonomous bug fixing agent with expertise in automated program repair, fault locali.",
+        "Use when: autonomous..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ah-repair-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ah-repair-agent",
+      "url": "https://clawhub.ai/skills/ah-repair-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-repair-agent",
+    "url": "https://clawhub.ai/skills/ah-repair-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-repair-agent-0b1b81d5b8fce436.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ah-repair-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ah-repair-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a72e93df1be078e2860aa16f3ef6866cd30b834c884171aee14c941e88e679fe",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T17:38:51.424Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-generator-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_generator_ai",
+  "skill": {
+    "id": 38595,
+    "skillKey": "clawhub-video-editing-generator-ai",
+    "name": "Video Editing Generator Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-generator-ai",
+    "url": "https://clawhub.ai/skills/video-editing-generator-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-generator-ai-79c15c3c74364e8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776754747114,
+      "changelog": "Initial release of Video Editing Generator AI — fast, guided video editing in the cloud.\n\n- Upload raw video footage (up to 500MB) and describe edits in plain language.\n- Automated cloud-based editing: trim pauses, add transitions, generate title cards, and more.\n- Download professional 1080p MP4 clips, ready to post.\n- No need for complex software or manual editing.\n- Tracks session state, shows job progress, and handles errors directly in chat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a32ca0fa987aa4fc4d769e92c6a544018695b8481daf1ae86860769120621bae"
+}

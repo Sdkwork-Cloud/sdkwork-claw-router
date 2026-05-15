@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boggle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boggle",
+  "skill": {
+    "id": 12666,
+    "skillKey": "clawhub-boggle",
+    "name": "Boggle Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boggle",
+    "url": "https://clawhub.ai/skills/boggle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boggle-37b04a755787208f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solve Boggle boards — find all valid words (German + English) on a 4x4 letter grid. Use when the user shares a Boggle photo, asks for words on a grid, or plays word games. Includes 1.7M word dictionaries (DE+EN)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "christianhaberl",
+      "userId": "publishers:christianhaberl",
+      "displayName": "christianhaberl",
+      "image": "https://avatars.githubusercontent.com/u/116439789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2027,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769882702822,
+      "changelog": "Initial release: trie-based DFS, 1.7M words (DE+EN), Qu-tile support, <5ms solve. Dictionaries auto-download from GitHub.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e0dce38e9041ab5c5ce12eaa9fceee314e21d306af4207881c1b5bc53841ae15"
+}

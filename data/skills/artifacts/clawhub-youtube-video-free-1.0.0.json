@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_free",
+  "skill": {
+    "id": 34992,
+    "skillKey": "clawhub-youtube-video-free",
+    "name": "Youtube Video Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-free",
+    "url": "https://clawhub.ai/skills/youtube-video-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-free-defefbe7eb7deab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into YouTube-ready videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers use it for editing and exporting free..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776602946898,
+      "changelog": "Initial public release of YouTube Video Free skill.\n\n- Edit and export YouTube-ready videos up to 500MB (MP4, MOV, AVI, WebM).\n- Cloud AI video editing with simple prompts—no paid software needed.\n- Automatic handling of authentication, session setup, and API connection.\n- Supports trimming, subtitles, aspect ratio, text overlays, BGM, and more via intent detection.\n- Delivers processed 1080p MP4 videos via download link in about 1–2 minutes per clip.\n- Tracks credits and session status; provides error messages and helpful tips for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8860ccf9850f1aa2dbfda38440e56208d82dda6d14a404c8d5b0d2cd4465de13"
+}

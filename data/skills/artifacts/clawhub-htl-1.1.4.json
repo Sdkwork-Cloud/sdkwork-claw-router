@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/htl@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.htl",
+  "skill": {
+    "id": 36130,
+    "skillKey": "clawhub-htl",
+    "name": "Human Traits Learning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "htl",
+    "url": "https://clawhub.ai/skills/htl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/htl-c13d35852f6c00ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI to learn and model professional human traits through structured corporate training with real-time user feedback and adaptive growth collaboration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "savior-li",
+      "userId": "s178y3exs8bfb0gjz5v2tgkt9d846bmm",
+      "displayName": "AISavior",
+      "image": "https://avatars.githubusercontent.com/u/266409577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1775520179331,
+      "changelog": "- Removed language pack files (Arabic, English, Spanish, Chinese) and package.json, reducing multi-language support via bundled files.\n- Added RELEASE_NOTES.md for improved release transparency.\n- Updated SECURITY.md.\n- Core instructional frameworks and usage instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71a22fbcff85712008e4cc772da4160ecaa56a8f7a1c5b1e74b14e0fe4e7717e"
+}

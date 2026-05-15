@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60477,
+  "uuid": "skill-clawhub-dingtalk-channel-install",
+  "skillKey": "clawhub-dingtalk-channel-install",
+  "name": "DingTalk Channel Install",
+  "summary": "安装和配置 OpenClaw 钉钉通道。使用当用户需要：(1) 安装 @soimy/dingtalk 插件，(2) 配置钉钉通道（Client ID/Secret 等），(3) 设置钉钉机器人连接。提供一键安装脚本和完整配置流程。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_channel_install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Diamond Zhou",
+      "features": [
+        "安装和配置 OpenClaw 钉钉通道。使用当用户需要：(1) 安装 @soimy/dingtalk 插件，(2) 配置钉钉通道（Client ID/Secret 等），(3) 设置钉钉机器."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-channel-install@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4620878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-channel-install",
+      "url": "https://clawhub.ai/skills/dingtalk-channel-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-channel-install",
+    "url": "https://clawhub.ai/skills/dingtalk-channel-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-channel-install-5e8aa33014622cee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-channel-install@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-channel-install-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9899b5bd8f3600028a4ab179f2c15c9e8c8fcbb08e83a235f668e29888c63437",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:19:58.799Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62477,
+  "uuid": "skill-clawhub-nintendo-switch-daily-report",
+  "skillKey": "clawhub-nintendo-switch-daily-report",
+  "name": "Nintendo Switch Daily Report",
+  "summary": "自动抓取任天堂官方资讯，提供前36小时内Switch游戏新闻、新作发售列表和主机系统更新公告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nintendo_switch_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benzking",
+      "features": [
+        "自动抓取任天堂官方资讯，提供前36小时内Switch游戏新闻、新作发售列表和主机系统更新公告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nintendo-switch-daily-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2979921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nintendo-switch-daily-report",
+      "url": "https://clawhub.ai/skills/nintendo-switch-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nintendo-switch-daily-report",
+    "url": "https://clawhub.ai/skills/nintendo-switch-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nintendo-switch-daily-report-d6dd3c36fb823314.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nintendo-switch-daily-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nintendo-switch-daily-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99535ef4491f8bc03135a216c6ea3465fe1645b0de5e38847879ae6d052dde87",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T12:49:17.436Z"
+}

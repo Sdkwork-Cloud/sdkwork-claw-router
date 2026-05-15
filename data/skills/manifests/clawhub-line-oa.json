@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15436,
+  "uuid": "skill-clawhub-line-oa",
+  "skillKey": "clawhub-line-oa",
+  "name": "LINE Chat for Official Account",
+  "summary": "Operate LINE Official Account Manager (chat.line.biz) via browser automation. Use when asked to check LINE messages, reply to LINE customers, or manage LINE...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.line_oa",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PicSee Inc.",
+      "features": [
+        "Operate LINE Official Account Manager (chat.line.biz) via browser automation",
+        "Use when asked to check LINE messages, reply to LINE customers, or manage LINE..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/line-oa@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23622185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "line-oa",
+      "url": "https://clawhub.ai/skills/line-oa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "line-oa",
+    "url": "https://clawhub.ai/skills/line-oa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/line-oa-bc3bd5ea2f1a40a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/line-oa@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-line-oa-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:038f1034600f4a246794396d23e95527764a2fe90fd5bcd9bc1e4d99736a8422",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T11:17:23.233Z"
+}

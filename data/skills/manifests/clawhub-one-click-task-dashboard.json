@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59446,
+  "uuid": "skill-clawhub-one-click-task-dashboard",
+  "skillKey": "clawhub-one-click-task-dashboard",
+  "name": "One-Click Task Dashboard",
+  "summary": "一键生成并常驻刷新任务数据大屏（index.html + data.json + 本地服务）。适合 OpenClaw + launchctl 自动化任务可视化与巡检。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_click_task_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "williandong0305-max",
+      "features": [
+        "一键生成并常驻刷新任务数据大屏（index.html + data.json + 本地服务）。适合 OpenClaw + launchctl 自动化任务可视化与巡检。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/one-click-task-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233064721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "one-click-task-dashboard",
+      "url": "https://clawhub.ai/skills/one-click-task-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-click-task-dashboard",
+    "url": "https://clawhub.ai/skills/one-click-task-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-click-task-dashboard-01e8dc28211ba7d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/one-click-task-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-one-click-task-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c321bdb58b1a2477d3dab224ada83600c85efce47285ad435fbaf26500307400",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T08:26:44.983Z"
+}

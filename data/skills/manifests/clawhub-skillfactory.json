@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39555,
+  "uuid": "skill-clawhub-skillfactory",
+  "skillKey": "clawhub-skillfactory",
+  "name": "Skill Factory",
+  "summary": "A meta-skill for creating, iterating, and publishing OpenClaw skills from scratch. Use this skill when the user wants to: build a new skill from an idea or U...",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillfactory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhelunSun",
+      "features": [
+        "A meta-skill for creating, iterating, and publishing OpenClaw skills from scratch",
+        "Use this skill when the user wants to: build a new skill from an idea or U..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillfactory@2.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202214845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillfactory",
+      "url": "https://clawhub.ai/skills/skillfactory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillfactory",
+    "url": "https://clawhub.ai/skills/skillfactory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillfactory-4890fd8b43b34779.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillfactory@2.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillfactory-2.2.2.json",
+      "version": "2.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5571b4c87582bd5334a04abdd72a83d78236762b4804176013345e9bbab8f168",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:16:17.359Z"
+}

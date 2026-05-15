@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16286,
+  "uuid": "skill-clawhub-plex-ctl",
+  "skillKey": "clawhub-plex-ctl",
+  "name": "PLEX-CTL",
+  "summary": "Command-line tool for searching, playing, and controlling Plex Media Server and clients via the Plex API on your local network.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plex_ctl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "akivasolutions",
+      "features": [
+        "Command-line tool for searching, playing, and controlling Plex Media Server and clients via the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plex-ctl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259251553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plex-ctl",
+      "url": "https://clawhub.ai/skills/plex-ctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plex-ctl",
+    "url": "https://clawhub.ai/skills/plex-ctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plex-ctl-a18044a424177c8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plex-ctl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plex-ctl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:043fd653cf86b1a3827fbb68224a25a06f39087f31009b66408a2fcff2961f48",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T05:15:04.704Z"
+}

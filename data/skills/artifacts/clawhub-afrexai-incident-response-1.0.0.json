@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-incident-response@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_incident_response",
+  "skill": {
+    "id": 16415,
+    "skillKey": "clawhub-afrexai-incident-response",
+    "name": "Incident Response Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-incident-response",
+    "url": "https://clawhub.ai/skills/afrexai-incident-response",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-incident-response-c96373fd65d5c273.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides business and IT teams through incident detection, severity classification, containment, resolution, communication, and post-mortem with automated time..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 859,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770964986759,
+      "changelog": "Initial release: Launches a comprehensive, structured playbook for business and IT incident response.\n\n- Automatic severity classification and tailored response checklists for common incident types\n- Step-by-step guidance for detection, triage, containment, resolution, and post-mortem\n- Auto-generates communication plans, real-time incident timelines, and post-mortem templates\n- Compatible with standard monitoring tools (e.g., PagerDuty, Datadog, Grafana) and manual alerts\n- Supports incidents like outages, security breaches, data loss, vendor failures, and performance issues",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dfc071ce27a310f81aeb45ad12396313985b0e3ff2ed32814feb7838be2c53f6"
+}

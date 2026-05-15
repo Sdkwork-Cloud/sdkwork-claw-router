@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newapi-banana@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newapi_banana",
+  "skill": {
+    "id": 27497,
+    "skillKey": "clawhub-newapi-banana",
+    "name": "banana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newapi-banana",
+    "url": "https://clawhub.ai/skills/newapi-banana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newapi-banana-2dcc843c41190cc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via NewAPI Banana API (nano-banana, Gemini). Supports text-to-image and image-to-image."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loobayn",
+      "userId": "publishers:loobayn",
+      "displayName": "loobayn",
+      "image": "https://avatars.githubusercontent.com/u/168698083?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773551451982,
+      "changelog": "Initial release – generate images via NewAPI Banana API (nano-banana, Gemini) with strong persona and execution rules.\n\n- Supports text-to-image and image-to-image generation across multiple models.\n- Enforces friendly, lively Chinese responses with natural cost display.\n- Always delivers images using the message tool, never raw file paths or markdown previews.\n- Introduces strict workflow: model menu, output naming, and API key handling.\n- Full script usage guidance and critical compliance rules provided in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5535b908e691238204f8e6b20f4f864a274ba1c3f44cebcac6803ad5ba3c2cf9"
+}

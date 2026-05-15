@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bloomfilter@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bloomfilter",
+  "skill": {
+    "id": 20652,
+    "skillKey": "clawhub-bloomfilter",
+    "name": "Bloomfilter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bloomfilter",
+    "url": "https://clawhub.ai/skills/bloomfilter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bloomfilter-24b152d919908ddd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, register, and manage domains via Bloomfilter x402 API - pay with USDC on Base"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eronmmer",
+      "userId": "publishers:eronmmer",
+      "displayName": "Erons",
+      "image": "https://avatars.githubusercontent.com/u/37238033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772070157923,
+      "changelog": "Fix security scan: removed unnecessary curl dependency, added cryptographic signing implementation details",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc78b557ec92f3f67503cbb86a356ecd491b2436f805eb4a1c53d891b916b17c"
+}

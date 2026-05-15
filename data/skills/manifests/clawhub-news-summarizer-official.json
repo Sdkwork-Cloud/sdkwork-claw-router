@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43708,
+  "uuid": "skill-clawhub-news-summarizer-official",
+  "skillKey": "clawhub-news-summarizer-official",
+  "name": "News Summarizer Official",
+  "summary": "Fetch and summarize global news from BBC, Reuters, NPR RSS feeds into concise text or voice briefings covering major current events.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_summarizer_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Fetch and summarize global news from BBC, Reuters, NPR RSS feeds into concise text or voice bri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-summarizer-official@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-summarizer-official",
+      "url": "https://clawhub.ai/skills/news-summarizer-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-summarizer-official",
+    "url": "https://clawhub.ai/skills/news-summarizer-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-summarizer-official-9aa43811423df02a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-summarizer-official@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-summarizer-official-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a67981ff4845f7cfe1576ea7c9c80324faa64e0b182bf09ce1d280e476d7612d",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:22:11.572Z"
+}

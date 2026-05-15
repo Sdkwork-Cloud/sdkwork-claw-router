@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daf-intent-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daf_intent_guard",
+  "skill": {
+    "id": 57282,
+    "skillKey": "clawhub-daf-intent-guard",
+    "name": "DAF Intent Guard — 意图漂移检测"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daf-intent-guard",
+    "url": "https://clawhub.ai/skills/daf-intent-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daf-intent-guard-3081f17e87786190.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks intent drift across multi-turn tasks. Before executing any multi-step task, call this to detect if the user's new instruction is a small patch, requir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deepseek609609-collab",
+      "userId": "s17aehz6dfzd8m1ep3mt41ngj183hbnd",
+      "displayName": "deepseek609609-collab",
+      "image": "https://avatars.githubusercontent.com/u/264004242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774259828457,
+      "changelog": "首次发布。支持多步任务中的意图漂移检测，自动判断patch/replan/abort",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fa5a5cb9268327317fd27373baeea122e4a0dcd344907cc6da67711956d3ad4"
+}

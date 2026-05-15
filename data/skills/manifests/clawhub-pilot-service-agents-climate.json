@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53252,
+  "uuid": "skill-clawhub-pilot-service-agents-climate",
+  "skillKey": "clawhub-pilot-service-agents-climate",
+  "name": "Pilot Service Agents Climate",
+  "summary": "Climate and energy-grid data — UK carbon intensity, Electricity Maps zones, Open-Meteo climate. Use this skill when: 1. Real-time grid carbon intensity by re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_service_agents_climate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Climate and energy-grid data — UK carbon intensity, Electricity Maps zones, Open-Meteo climate",
+        "Use this skill when: 1",
+        "Real-time grid carbon intensity by re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-service-agents-climate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-service-agents-climate",
+      "url": "https://clawhub.ai/skills/pilot-service-agents-climate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-service-agents-climate",
+    "url": "https://clawhub.ai/skills/pilot-service-agents-climate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-service-agents-climate-4e05e58779a0eab0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-service-agents-climate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-service-agents-climate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4857b8d6f83a02ee3a1ec210a67ee3225f57968193ee1438e7db03b5fc67b66",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:23:41.631Z"
+}

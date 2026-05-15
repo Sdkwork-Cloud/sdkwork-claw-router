@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67974,
+  "uuid": "skill-clawhub-slide-creator",
+  "skillKey": "clawhub-slide-creator",
+  "name": "AIスライド作成ワークフロー",
+  "summary": "AIを使った資料作成ワークフロー。Gemini Gem × Claude Code × Slidevでプロ級スライドを作る。AI感を徹底排除するための鉄則を含む。コムギさんが「資料を作りたい」「スライド作って」と言ったら必ずこのスキルを使う。GemのURLを先に案内してからSTEP1に入ること。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slide_creator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lastone3939",
+      "features": [
+        "AIを使った資料作成ワークフロー。Gemini Gem × Claude Code × Slidevでプロ級スライドを作る。AI感を徹底排除するための鉄則を含む。コムギさんが「資料を作りたい."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slide-creator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192384076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slide-creator",
+      "url": "https://clawhub.ai/skills/slide-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slide-creator",
+    "url": "https://clawhub.ai/skills/slide-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slide-creator-b3ee253e4b8eab23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slide-creator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slide-creator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27efaacfe9a667a5fb8f5c1661a7855da539c6787ebe74a455fdc6a74ed8b6b2",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:16:00.722Z"
+}

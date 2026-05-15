@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-voice-profile@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_voice_profile",
+  "skill": {
+    "id": 13596,
+    "skillKey": "clawhub-brand-voice-profile",
+    "name": "Brand Voice Profile"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-voice-profile",
+    "url": "https://clawhub.ai/skills/brand-voice-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-voice-profile-66ff8b89570061f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Define and store your brand voice profile for consistent content generation. Captures writing style, vocabulary patterns, tone preferences, and content rules..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dimitripantzos",
+      "userId": "publishers:dimitripantzos",
+      "displayName": "DimitriPantzos",
+      "image": "https://avatars.githubusercontent.com/u/6476893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1392,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771723760086,
+      "changelog": "Initial release: Store writing style for consistent content generation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:94d6c1f11fdaeab2db5aa2530ac4bb224383b0ef723c567d26f2ee24d0bff710"
+}

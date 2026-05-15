@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/name-change-admin-map@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.name_change_admin_map",
+  "skill": {
+    "id": 50221,
+    "skillKey": "clawhub-name-change-admin-map",
+    "name": "Name Change Admin Map"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "name-change-admin-map",
+    "url": "https://clawhub.ai/skills/name-change-admin-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/name-change-admin-map-f8f829b5c876ed01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates a detailed, ordered checklist with scripts and proof requirements to manage updating all key documents, accounts, and notifications after a legal nam..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778380742024,
+      "changelog": "Initial release: creates a streamlined admin process for legal name changes.\n\n- Generates an ordered action map covering all key documents, accounts, and notifications.\n- Includes tailored notification scripts for each institution.\n- Provides a checklist of \"who to notify first\" based on user situation.\n- Details proof requirements and dependencies for each step.\n- Covers government IDs, financial, utilities, medical, and digital profiles.\n- Safety boundaries: educational only, never requests sensitive credentials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30c774a770943ef8badf5c7a9c1cbd5d50dec3f05357e15279bb3b635d1c19b2"
+}

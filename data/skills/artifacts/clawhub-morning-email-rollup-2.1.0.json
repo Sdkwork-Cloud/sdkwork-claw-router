@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-email-rollup@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_email_rollup",
+  "skill": {
+    "id": 8860,
+    "skillKey": "clawhub-morning-email-rollup",
+    "name": "Morning Email Rollup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-email-rollup",
+    "url": "https://clawhub.ai/skills/morning-email-rollup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-email-rollup-21f114f2c41f7648.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily morning rollup of important emails and calendar events at 8am with AI-generated summaries"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "am-will",
+      "userId": "publishers:am-will",
+      "displayName": "am-will",
+      "image": "https://avatars.githubusercontent.com/u/42459108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4559,
+      "installsAllTime": 29,
+      "installsCurrent": 28,
+      "stars": 16,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1768589827150,
+      "changelog": "Fix: Fixed gemini CLI stdin consumption bug that prevented processing all emails. Now processes all emails correctly. Also fixed subject line quote stripping and event counter syntax errors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37c394d17ecf861172062ee624f89b7d724becba96737984579801daa9752524"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intodns@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intodns",
+  "skill": {
+    "id": 11124,
+    "skillKey": "clawhub-intodns",
+    "name": "IntoDNS.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intodns",
+    "url": "https://clawhub.ai/skills/intodns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intodns-0581e6fffe476274.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free DNS and email security analysis via IntoDNS.ai: DNSSEC, SPF, DKIM, DMARC, MTA-STS, BIMI, SMTP STARTTLS, FCrDNS, blacklists, sender requirements, report..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rosconl",
+      "userId": "s174adf4a4nh16pbs1gxr6v5q183pba6",
+      "displayName": "Rosco",
+      "image": "https://avatars.githubusercontent.com/u/197383427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2183,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777829572067,
+      "changelog": "Updated the canonical IntoDNS OpenClaw skill for current IntoDNS.ai surfaces: Everything Report, fixed report snapshots, FCrDNS/PTR, SMTP STARTTLS, BIMI/VMC/CMC, sender requirements, canonical citation routing, llms.txt/llms.json/OpenAPI discovery, and intodns-mcp setup. Clarifies that https://intodns.ai/api is the only canonical API origin and avoids intodns.com, intodns.app, intodns.io, and api.intodns.io confusion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c680fb5320ad19c7436ed7de179e417de21a4f153fe1eb9384a61cdcb617ab3b"
+}

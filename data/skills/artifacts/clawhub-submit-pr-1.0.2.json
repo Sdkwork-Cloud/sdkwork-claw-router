@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/submit-pr@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.submit_pr",
+  "skill": {
+    "id": 64780,
+    "skillKey": "clawhub-submit-pr",
+    "name": "submit pr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "submit-pr",
+    "url": "https://clawhub.ai/skills/submit-pr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/submit-pr-2c5c87220bbe2639.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "规范化 PR 提交工作流。当用户需要提交 PR 时使用，自动完成敏感信息扫描、文件范围确认、规范 commit 生成和 PR 创建"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mykelio1001",
+      "userId": "publishers:mykelio1001",
+      "displayName": "mykelio1001",
+      "image": "https://avatars.githubusercontent.com/u/242119628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773040204159,
+      "changelog": "- 移除了 skill 描述和 PR 模板结尾的多余标点，实现文本格式统一\n- 优化 PR 模板的注释部分，去除无内容的注释行\n- 其他内容与上一版本保持一致，无功能及流程变更",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8e836c7ec59c003083a569af5fa59dc6a89d48286d8da9ea5bde11e9f0ad495"
+}

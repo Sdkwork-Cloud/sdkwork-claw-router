@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63428,
+  "uuid": "skill-clawhub-convertible-bond-trading-bot",
+  "skillKey": "clawhub-convertible-bond-trading-bot",
+  "name": "Convertible Bond Trading Bot",
+  "summary": "可转债自动交易机器人，止跌企稳智能选股，上涨趋势自动高抛低吸，自带回测功能，年化收益30%+。每次调用0.01USDT。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convertible_bond_trading_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baolige2023",
+      "features": [
+        "可转债自动交易机器人，止跌企稳智能选股，上涨趋势自动高抛低吸，自带回测功能，年化收益30%+。每次调用0.01USDT。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/convertible-bond-trading-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166877406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "convertible-bond-trading-bot",
+      "url": "https://clawhub.ai/skills/convertible-bond-trading-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convertible-bond-trading-bot",
+    "url": "https://clawhub.ai/skills/convertible-bond-trading-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convertible-bond-trading-bot-c3fd0499bdfac4e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/convertible-bond-trading-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-convertible-bond-trading-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:735bc6a6cadfefa40b27c0037ba6576f7136f816fb8445098e3efcf8e4834005",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:47:25.798Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuaishou-genius-actual@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaishou_genius_actual",
+  "skill": {
+    "id": 57627,
+    "skillKey": "clawhub-kuaishou-genius-actual",
+    "name": "Kuaishou Genius Actual"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaishou-genius-actual",
+    "url": "https://clawhub.ai/skills/kuaishou-genius-actual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaishou-genius-actual-dc4cdb7118c9143e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user asks to analyze, verify, debug, reverse-engineer, or automate Kuaishou Genius「预算/预测/实际」页面 data flow (especially management-y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangpei03",
+      "userId": "publishers:zhangpei03",
+      "displayName": "zhangpei03",
+      "image": "https://avatars.githubusercontent.com/u/56824878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773950680334,
+      "changelog": "Initial release: Genius API client and export workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c37796582a5b143f0b26910f0c79e11560df73f0b061221ec793f23b05b2a62"
+}

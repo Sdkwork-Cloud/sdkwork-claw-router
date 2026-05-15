@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawd-migrate@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_migrate",
+  "skill": {
+    "id": 17134,
+    "skillKey": "clawhub-clawd-migrate",
+    "name": "clawd-migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-migrate",
+    "url": "https://clawhub.ai/skills/clawd-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-migrate-3b5baab75731eca6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrates moltbot or clawdbot data to openclaw by backing up, transferring config, memory, and clawdbook data with verification and automatic setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calabiyauman",
+      "userId": "publishers:calabiyauman",
+      "displayName": "calabiyauman",
+      "image": "https://avatars.githubusercontent.com/u/8000533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 801,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1771009216479,
+      "changelog": "v0.2.1: Initial ClawHub publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:121dd792b96f81fbeb400fc2587e5d2eb4df336d476a7e0fa02c75ff56700116"
+}

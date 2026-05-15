@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35053,
+  "uuid": "skill-clawhub-nocodb-skills",
+  "skillKey": "clawhub-nocodb-skills",
+  "name": "Nocodb",
+  "summary": "Access and manage NocoDB databases via v3 REST API. Use for managing workspaces, bases, tables, fields, views, records, and more. Supports filtering, sorting...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nocodb_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Transfen",
+      "features": [
+        "Access and manage NocoDB databases via v3 REST API",
+        "Use for managing workspaces, bases, tables, fields, views, records, and more",
+        "Supports filtering, sorting..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nocodb-skills@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3047745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nocodb-skills",
+      "url": "https://clawhub.ai/skills/nocodb-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nocodb-skills",
+    "url": "https://clawhub.ai/skills/nocodb-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nocodb-skills-3b8afe741f2f5570.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nocodb-skills@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nocodb-skills-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da75a2f322dfe2d4e19b1ebe357a3e408c33b881591b651dcdd42e0d9fbbe73b",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:57:09.250Z"
+}

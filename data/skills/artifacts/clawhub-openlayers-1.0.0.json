@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openlayers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openlayers",
+  "skill": {
+    "id": 33627,
+    "skillKey": "clawhub-openlayers",
+    "name": "openlayers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openlayers",
+    "url": "https://clawhub.ai/skills/openlayers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openlayers-6f1417e51f882815.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, debug, and integrate OpenLayers web maps, including map/view setup, XYZ and OSM base layers, vector sources, GeoJSON overlays, Web Mercator and WGS84..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvy",
+      "userId": "s17drhqvqmrfz94tm5320kfgj983kf7m",
+      "displayName": "jvy",
+      "image": "https://avatars.githubusercontent.com/u/5337221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774095619488,
+      "changelog": "- Initial release of the OpenLayers skill.\n- Provides guidance and practical patterns for building, debugging, and integrating OpenLayers web maps.\n- Covers map/view setup, vector and raster sources, GeoJSON overlays, projections, feature styling, map interactions, and integration with various frontend frameworks.\n- Includes troubleshooting tips for common OpenLayers issues.\n- Offers commands to scaffold minimal and GeoJSON-ready OpenLayers demo pages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f92529aedc8426ad2f4846ce3c6458a2f6122967c9f6aa61856e114e453f6628"
+}

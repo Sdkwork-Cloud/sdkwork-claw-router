@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhiliang-zongjian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhiliang_zongjian",
+  "skill": {
+    "id": 73648,
+    "skillKey": "clawhub-zhiliang-zongjian",
+    "name": "质量总监技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhiliang-zongjian",
+    "url": "https://clawhub.ai/skills/zhiliang-zongjian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhiliang-zongjian-5cea5e77cf165271.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于现场纪要和照片自动分析，生成符合某电商平台及多行业标准的完整工厂审核报告，提供问题定级与评分结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mxp0125-rgb",
+      "userId": "s17fq2s1jwgpmbqd7ekmf4d34d85a7ws",
+      "displayName": "mxp0126",
+      "image": "https://avatars.githubusercontent.com/u/236555697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778378316377,
+      "changelog": "v1.0.0: 质量总监技能正式发布。覆盖工厂审核报告生成、FCM法规（GB4806/EU/美国FDA）、IATF五大工具（APQP/FMEA/PPAP/SPC/MSA）、全球8大市场FCM法规对比、医疗器械/航空航天/通信设备行业质量管理、质量术语词典（职业篇/企业篇/部门篇/作业篇）等。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40d4a9dcc2865fcfc0b3fa473061eaab50bfe6710652de74ba0a9fe8423508c8"
+}

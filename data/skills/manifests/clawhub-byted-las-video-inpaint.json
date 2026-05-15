@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39090,
+  "uuid": "skill-clawhub-byted-las-video-inpaint",
+  "skillKey": "clawhub-byted-las-video-inpaint",
+  "name": "Byted Las Video Inpaint",
+  "summary": "Removes unwanted visual elements from videos using AI-powered inpainting via Volcengine LAS. Video watermark removal, subtitle removal, logo removal, and tex...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_las_video_inpaint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "Removes unwanted visual elements from videos using AI-powered inpainting via Volcengine LAS",
+        "Video watermark removal, subtitle removal, logo removal, and tex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-las-video-inpaint@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-las-video-inpaint",
+      "url": "https://clawhub.ai/skills/byted-las-video-inpaint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-las-video-inpaint",
+    "url": "https://clawhub.ai/skills/byted-las-video-inpaint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-las-video-inpaint-ebaa96336c681def.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-las-video-inpaint@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-las-video-inpaint-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:555140445c91a15ebda6d55304d22c1b8637b410fc8f26df6d73330bb535425b",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:31:03.228Z"
+}

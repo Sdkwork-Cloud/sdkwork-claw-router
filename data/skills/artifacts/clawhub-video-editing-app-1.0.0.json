@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_app",
+  "skill": {
+    "id": 28691,
+    "skillKey": "clawhub-video-editing-app",
+    "name": "Video Editing App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-app",
+    "url": "https://clawhub.ai/skills/video-editing-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-app-1660e17de67321ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tell me what you need and I'll help you get the most out of your video-editing-app experience. Whether you're trimming raw footage, adding captions, syncing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133276238,
+      "changelog": "Initial release of the Video Editing App Assistant skill:\n\n- Provides step-by-step guidance for editing, trimming, captioning, syncing, and exporting videos.\n- Automatic setup of cloud backend connection, with simple token and session management.\n- Supports upload, export, credits check, and live state/status queries.\n- All editing actions are routed to appropriate API calls, with real-time feedback and user-friendly summaries.\n- Error handling and troubleshooting guidance for common issues like token expiry, export limits, and file compatibility.\n- Designed for creators of all skill levels—just describe your video project to get started.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c0f577fafdf91fa58be0e8c7e58af619d1df46c0000299b273cc541b1406819"
+}

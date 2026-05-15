@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15137,
+  "uuid": "skill-clawhub-openvid",
+  "skillKey": "clawhub-openvid",
+  "name": "OpenVid",
+  "summary": "Generate branded 15-180 second HD motion graphics explainer videos by providing a prompt with brand info and URL via OpenVid on Base network.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openvid",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aklo360",
+      "features": [
+        "Generate branded 15-180 second HD motion graphics explainer videos by providing a prompt with b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openvid@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39361388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openvid",
+      "url": "https://clawhub.ai/skills/openvid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openvid",
+    "url": "https://clawhub.ai/skills/openvid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openvid-a563a511672c4e7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openvid@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-openvid-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa4ed3e170d52f854fac3b1598f7e240eba2afe8a62e3af2d16f8dbeeba40d1a",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T21:03:50.896Z"
+}

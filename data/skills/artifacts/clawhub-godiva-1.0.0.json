@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/godiva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godiva",
+  "skill": {
+    "id": 42831,
+    "skillKey": "clawhub-godiva",
+    "name": "Godiva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godiva",
+    "url": "https://clawhub.ai/skills/godiva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godiva-ae55246d96623727.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Godiva is a Belgian luxury chocolatier known for premium gold-foil truffles, luxury gifting experience, and a mix of boutique and licensed grocery sales."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776855770883,
+      "changelog": "Godiva skill v1.0.0 - Initial Release\n\n- Provides a comprehensive company summary, brand history, and key milestones.\n- Covers luxury positioning, premium pricing strategies, and global expansion.\n- Includes a business model overview and moat analysis for understanding competitive advantages.\n- Lists significant historical events and ownership changes impacting the brand.\n- Shares key facts, figures, and notable trivia about Godiva's heritage and products.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8781881afcb76a000c041fdda4797bd3f744d4f48b57211d9442b927520c42b"
+}

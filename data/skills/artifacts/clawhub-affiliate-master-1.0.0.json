@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/affiliate-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.affiliate_master",
+  "skill": {
+    "id": 9642,
+    "skillKey": "clawhub-affiliate-master",
+    "name": "AffiliateMaster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "affiliate-master",
+    "url": "https://clawhub.ai/skills/affiliate-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/affiliate-master-9c9db4165a445d9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-stack affiliate marketing automation for OpenClaw agents. Generate, track, and optimize affiliate links with FTC-compliant disclosures and multi-network support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-laffin",
+      "userId": "s172763bq8hk878ptgz2a77cqn83j1f6",
+      "displayName": "Michael-laffin",
+      "image": "https://avatars.githubusercontent.com/u/133843289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3424,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770192819614,
+      "changelog": "Initial release - Full-stack affiliate marketing automation with FTC compliance. Multi-network support (Amazon, ShareASale, CJ, Impact). Built for autonomous revenue generation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f2b42eac8a1ebf2b4fe05bbe4d656e89079770ca919a9995a4237f0e665f66b"
+}

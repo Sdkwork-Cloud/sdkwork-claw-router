@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-stargazing@1.4.2",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_stargazing",
+  "skill": {
+    "id": 71851,
+    "skillKey": "clawhub-go-stargazing",
+    "name": "Go Stargazing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-stargazing",
+    "url": "https://clawhub.ai/skills/go-stargazing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-stargazing-95096ea611cfd662.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "轻量版区域级拍星推荐技能，适用于今晚或指定日期的全国、省市级拍星条件筛选。默认全国扫描，先按云量粗筛，再结合真实天气细筛，输出逐晚推荐和完整气象信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clhwbd",
+      "userId": "s17fdj4z7py17fphwjd64ztr8583n451",
+      "displayName": "clhwbd",
+      "image": "https://avatars.githubusercontent.com/u/13960127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "1.4.2",
+      "createdAt": 1776098343238,
+      "changelog": "Tighten skill copy and streamline Go Stargazing description for ClawHub display.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2abf98d420f25f89715cb3794cfc4f256427c231739e75228513f82cf96e5e55"
+}

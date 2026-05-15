@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yt-assemblyai-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_assemblyai_monitor",
+  "skill": {
+    "id": 52288,
+    "skillKey": "clawhub-yt-assemblyai-monitor",
+    "name": "Yt Assemblyai Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-assemblyai-monitor",
+    "url": "https://clawhub.ai/skills/yt-assemblyai-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-assemblyai-monitor-0d8ba8ca8c4c4777.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube channel monitor and video transcription using AssemblyAI cloud API. Pure Python + requests only — no ffmpeg, no Whisper, no extra tools needed. Monit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azazlf09",
+      "userId": "s170sfhg13bcdm027nqnn5kdxs83j1hp",
+      "displayName": "大佬的鼠DonRat",
+      "image": "https://avatars.githubusercontent.com/u/134839692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774442600029,
+      "changelog": "v1.0.1: Remove yt-dlp references from docs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4522777ff78315de5ce41ff786b761d12ef5dcfaac73c79bdd5a2ee5c62a091f"
+}

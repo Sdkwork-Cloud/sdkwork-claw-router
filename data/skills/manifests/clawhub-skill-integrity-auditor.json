@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36973,
+  "uuid": "skill-clawhub-skill-integrity-auditor",
+  "skillKey": "clawhub-skill-integrity-auditor",
+  "name": "Skill Auditor",
+  "summary": "Audit core: a classification taxonomy and a severity scoring function, kept orthogonal. Operates on the whole skill bundle (SKILL.md plus any referenced scri...",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_integrity_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ambarion",
+      "features": [
+        "Audit core: a classification taxonomy and a severity scoring function, kept orthogonal",
+        "Operates on the whole skill bundle (SKILL.md plus any referenced scri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-integrity-auditor@0.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48558592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-integrity-auditor",
+      "url": "https://clawhub.ai/skills/skill-integrity-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-integrity-auditor",
+    "url": "https://clawhub.ai/skills/skill-integrity-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-integrity-auditor-f5937055c32ccaa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-integrity-auditor@0.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-integrity-auditor-0.1.9.json",
+      "version": "0.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54b96cd2abe3c11d6fea4531b870214b761aeaecd0309f108551881673cc7881",
+      "artifactSizeBytes": 2646
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:39:03.051Z"
+}

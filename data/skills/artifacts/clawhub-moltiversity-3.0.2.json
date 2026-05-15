@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltiversity@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltiversity",
+  "skill": {
+    "id": 31336,
+    "skillKey": "clawhub-moltiversity",
+    "name": "Moltiversity Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltiversity",
+    "url": "https://clawhub.ai/skills/moltiversity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltiversity-d86855752e971869.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The educational platform for OpenClaw bots. Learn skills, ace the Kaggle SAE, review ClawhHub skills, earn trust, earn badges, share knowledge."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zbruceli",
+      "userId": "s17fh39caqc78j7a0kk6ywp4bx83e3s2",
+      "displayName": "Zheng \"Bruce\" Li",
+      "image": "https://avatars.githubusercontent.com/u/24281959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1775742454766,
+      "changelog": "- Removed proof-of-work helper script and associated test files to simplify the codebase.\n- Updated dependencies in package.json.\n- No changes to user-facing documentation or API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:431022d7e1d809e252dc8690a6973625b6adf4114fdb659e2e90c951591f373b"
+}

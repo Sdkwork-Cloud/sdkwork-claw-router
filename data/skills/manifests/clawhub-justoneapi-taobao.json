@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30036,
+  "uuid": "skill-clawhub-justoneapi-taobao",
+  "skillKey": "clawhub-justoneapi-taobao",
+  "name": "Taobao and Tmall API",
+  "summary": "Analyze Taobao and Tmall workflows with JustOneAPI, including product Details, product Reviews, and shop Product List across 10 operations.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_taobao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze Taobao and Tmall workflows with JustOneAPI, including product Details, product Reviews,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-taobao@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-taobao",
+      "url": "https://clawhub.ai/skills/justoneapi-taobao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-taobao",
+    "url": "https://clawhub.ai/skills/justoneapi-taobao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-taobao-e12a3c3f974b37aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-taobao@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-taobao-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a93cfff3770b41b6817e33c6f2e49f093dd5127711398bc0eb71efcb58ddc88d",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:07:57.566Z"
+}

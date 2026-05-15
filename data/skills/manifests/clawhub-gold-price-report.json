@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58590,
+  "uuid": "skill-clawhub-gold-price-report",
+  "skillKey": "clawhub-gold-price-report",
+  "name": "Gold Price Report",
+  "summary": "Gold/silver price lookup and market brief. Use when the user asks things like 查金价, 黄金多少钱, 今日金价, 白银价格, 品牌金价, 老凤祥/周大福/周生生金价, 沪金/沪银/comex黄金/comex白银, or wants a...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "plabzzxx",
+      "features": [
+        "Gold/silver price lookup and market brief",
+        "Use when the user asks things like 查金价, 黄金多少钱, 今日金价, 白银价格, 品牌金价, 老凤祥/周大福/周生生金价, 沪金/沪银/comex黄金/c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gold-price-report@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172346891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gold-price-report",
+      "url": "https://clawhub.ai/skills/gold-price-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-report",
+    "url": "https://clawhub.ai/skills/gold-price-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-report-722f22fbea9927c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gold-price-report@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gold-price-report-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93c8194fa5c93d2b38b4f7bb518d0d20cee9b2b03850aa2f8e8348efb323dfe4",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T10:25:29.778Z"
+}

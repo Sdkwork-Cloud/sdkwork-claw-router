@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bolt@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bolt",
+  "skill": {
+    "id": 36644,
+    "skillKey": "clawhub-bolt",
+    "name": "Bolt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bolt",
+    "url": "https://clawhub.ai/skills/bolt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bolt-d0b3cba71f725563.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bolt integration. Manage data, records, and automate workflows. Use when the user wants to interact with Bolt data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775170201999,
+      "changelog": "Revert refresh marker",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a5b41e8ec6595d7df38597102a8b44b6ed0059889d8593fe40939205d9f5ed7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12684,
+  "uuid": "skill-clawhub-gif-whatsapp",
+  "skillKey": "clawhub-gif-whatsapp",
+  "name": "Gif Whatsapp",
+  "summary": "Search and send GIFs on WhatsApp. Handles the Tenor→MP4 conversion required for WhatsApp.",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gif_whatsapp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaharsh",
+      "features": [
+        "Search and send GIFs on WhatsApp",
+        "Handles the Tenor→MP4 conversion required for WhatsApp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gif-whatsapp@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11346965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gif-whatsapp",
+      "url": "https://clawhub.ai/skills/gif-whatsapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gif-whatsapp",
+    "url": "https://clawhub.ai/skills/gif-whatsapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gif-whatsapp-8b35e65a238b1815.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gif-whatsapp@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gif-whatsapp-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7a44f6d7a868d5ed49fe55aca2945191bb1b3d796bd29f45daf0b648ddf4a4a",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:46:55.189Z"
+}

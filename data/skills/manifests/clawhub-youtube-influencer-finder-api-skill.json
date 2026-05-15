@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33957,
+  "uuid": "skill-clawhub-youtube-influencer-finder-api-skill",
+  "skillKey": "clawhub-youtube-influencer-finder-api-skill",
+  "name": "youtube-influencer-finder-api-skill",
+  "summary": "This skill helps users extract YouTube influencer profiles including social links, subscriber counts, and channel stats via the BrowserAct API. Agent should...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_influencer_finder_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "browser-act",
+      "features": [
+        "This skill helps users extract YouTube influencer profiles including social links, subscriber c.",
+        "Agent should..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-influencer-finder-api-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209727774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-influencer-finder-api-skill",
+      "url": "https://clawhub.ai/skills/youtube-influencer-finder-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-influencer-finder-api-skill",
+    "url": "https://clawhub.ai/skills/youtube-influencer-finder-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-influencer-finder-api-skill-fcc428e6833ed5de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-influencer-finder-api-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-influencer-finder-api-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e1c2436523cba533e9c305f4ae3cf66edc60c026d33a2c5fc9600664c3e64ac",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:16:02.584Z"
+}

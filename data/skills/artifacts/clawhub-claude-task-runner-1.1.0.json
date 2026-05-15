@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-task-runner@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_task_runner",
+  "skill": {
+    "id": 56653,
+    "skillKey": "clawhub-claude-task-runner",
+    "name": "Claude Task Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-task-runner",
+    "url": "https://clawhub.ai/skills/claude-task-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-task-runner-9108a6c36df8a7ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run Claude Code tasks in headless mode with `claude -p` through the local `cc-task-runner.sh` wrapper, including model switching, JSON output capture, struct..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zwd0313",
+      "userId": "s1743p08rjzb0z7erjtvseq8j183vhtj",
+      "displayName": "zwd0313",
+      "image": "https://avatars.githubusercontent.com/u/159164983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774779430697,
+      "changelog": "v1.1: multi-file validation, glob matching, retry/fallback, permission-mode, subshell stability fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5509ac9014dae7a6c59dd6a81f8658f67b1d97445107af6b2f8d92ac06d1197"
+}

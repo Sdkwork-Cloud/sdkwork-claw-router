@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33309,
+  "uuid": "skill-clawhub-misra-automotive-c",
+  "skillKey": "clawhub-misra-automotive-c",
+  "name": "misra-automotive-c",
+  "summary": "Review automotive Embedded C code against MISRA C:2012 rules. Flags violations with rule numbers, ASIL classification, and provides a MISRA-compliant replace...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.misra_automotive_c",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "budhadityarano",
+      "features": [
+        "Review automotive Embedded C code against MISRA C:2012 rules",
+        "Flags violations with rule numbers, ASIL classification, and provides a MISRA-compliant replace."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/misra-automotive-c@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43707290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "misra-automotive-c",
+      "url": "https://clawhub.ai/skills/misra-automotive-c"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "misra-automotive-c",
+    "url": "https://clawhub.ai/skills/misra-automotive-c",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/misra-automotive-c-328b09acce9ca054.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/misra-automotive-c@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-misra-automotive-c-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2bd9c7a94d8a37250abd4aa17cd9a2cf2646d06aa07f4247aa0fdd556a65b3a",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T20:18:22.578Z"
+}

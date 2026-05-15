@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66684,
+  "uuid": "skill-clawhub-alv-ai-news-collector",
+  "skillKey": "clawhub-alv-ai-news-collector",
+  "name": "Ai News Collector",
+  "summary": "AI 新闻聚合与热度排序工具。当用户询问 AI 领域最新动态时触发，如：\"今天有什么 AI 新闻？\"\"总结一下这周的 AI 动态\"\"最近有什么火的 AI 产品？\"\"AI 圈最近在讨论什么？\"。覆盖：新产品发布、研究论文、行业动态、融资新闻、开源项目更新、社区病毒传播现象、AI 工具/Agent 热门项目。输出中文...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alv_ai_news_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "AI 新闻聚合与热度排序工具。当用户询问 AI 领域最新动态时触发，如：\"今天有什么 AI 新闻？\"\"总结一下这周的 AI 动态\"\"最近有什么火的 AI 产品？\"\"AI 圈最近在讨论什么？\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alv-ai-news-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alv-ai-news-collector",
+      "url": "https://clawhub.ai/skills/alv-ai-news-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alv-ai-news-collector",
+    "url": "https://clawhub.ai/skills/alv-ai-news-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alv-ai-news-collector-3027c2a367f7ae75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alv-ai-news-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alv-ai-news-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f01d8e450a0c0e39ec78846a3df8208d7c08536c23f3b28e73ee0fef333f71a",
+      "artifactSizeBytes": 2661
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:48:21.161Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61578,
+  "uuid": "skill-clawhub-whatsapp-private-domain-ops",
+  "skillKey": "clawhub-whatsapp-private-domain-ops",
+  "name": "Whatsapp Private Domain Ops",
+  "summary": "提供Meta合规框架下的WhatsApp私域账号健康诊断、分层用户管理和三层自适应运营策略支持。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_private_domain_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "提供Meta合规框架下的WhatsApp私域账号健康诊断、分层用户管理和三层自适应运营策略支持。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-private-domain-ops@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-private-domain-ops",
+      "url": "https://clawhub.ai/skills/whatsapp-private-domain-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-private-domain-ops",
+    "url": "https://clawhub.ai/skills/whatsapp-private-domain-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-private-domain-ops-0d5afd43d5eb33ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-private-domain-ops@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-private-domain-ops-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c0de67b22653ebb9bda39af485898a47fe5b3f030b997afbae635761eae8fd9",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T01:15:43.841Z"
+}

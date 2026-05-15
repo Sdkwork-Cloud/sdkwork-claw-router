@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/save-secure-keys@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_secure_keys",
+  "skill": {
+    "id": 58413,
+    "skillKey": "clawhub-save-secure-keys",
+    "name": "Securely store OpenClaw configuration and key information. Back up the configuration file from its default location to the secu."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-secure-keys",
+    "url": "https://clawhub.ai/skills/save-secure-keys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-secure-keys-9a3f75e1182f746e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全保存 OpenClaw 的配置和密钥信息。将配置文件从默认位置备份到安全的文件路径 keys.txt 中。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yegou777",
+      "userId": "s17d1gszsn2e8qrtq2xqf6s6e583nz4n",
+      "displayName": "yegou777",
+      "image": "https://avatars.githubusercontent.com/u/38967433?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774578051299,
+      "changelog": "- Initial release of **save-secure-keys**.\n- Safely backs up OpenClaw configuration and sensitive keys from the default path to a secure file (`keys.txt`).\n- Command triggers include \"备份我的密钥到 \" and \"安全保存 OpenClaw 配置\".\n- Backup process uses a Python script and supports custom source and target paths.\n- Requires Python 3; ensure required permissions for access to protected directories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4979b4cecfc4cb2c0f26229b4d66642533f46233be5a835a0be79acd2af0fc7b"
+}

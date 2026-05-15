@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73121,
+  "uuid": "skill-clawhub-video-prompt-generation-system-v1",
+  "skillKey": "clawhub-video-prompt-generation-system-v1",
+  "name": "视频提示词生成系统V1，可将视频内容拆解为分镜表、角色设定、画面提示词，支持二次创作生成新分镜",
+  "summary": "视频提示词生成系统V1，可将视频内容拆解为分镜表、角色设定、画面提示词，支持二次创作生成新分镜",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_prompt_generation_system_v1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "看海听风",
+      "features": [
+        "视频提示词生成系统V1，可将视频内容拆解为分镜表、角色设定、画面提示词，支持二次创作生成新分镜"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-prompt-generation-system-v1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3961517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-prompt-generation-system-v1",
+      "url": "https://clawhub.ai/skills/video-prompt-generation-system-v1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-prompt-generation-system-v1",
+    "url": "https://clawhub.ai/skills/video-prompt-generation-system-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-prompt-generation-system-v1-2ca5483c11dd9a2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-prompt-generation-system-v1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-prompt-generation-system-v1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc9c67e11a8f7ad6f28b49aa07f5f1e2ee7a016785b04376cefaaf65a9601e62",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T09:33:23.494Z"
+}

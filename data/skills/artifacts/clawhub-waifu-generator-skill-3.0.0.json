@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/waifu-generator-skill@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waifu_generator_skill",
+  "skill": {
+    "id": 29691,
+    "skillKey": "clawhub-waifu-generator-skill",
+    "name": "Waifu Generator Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waifu-generator-skill",
+    "url": "https://clawhub.ai/skills/waifu-generator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waifu-generator-skill-13d4f2efaa4960c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate waifu generator ai image generator images with AI via the Neta AI image generation API (free trial at neta.art/open)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomcarranzaem",
+      "userId": "s17dj34gn7t1cyn0dpjt859hws83hghq",
+      "displayName": "TomCarranzaem",
+      "image": "https://avatars.githubusercontent.com/u/260766787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774584432242,
+      "changelog": "Remove env var access for security compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fdf1c292e05b7c04895939d9f4bf8e20c5554a82b3eb62f2d43e660e4c4e25c"
+}

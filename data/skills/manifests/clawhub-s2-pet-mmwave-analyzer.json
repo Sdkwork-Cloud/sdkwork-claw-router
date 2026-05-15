@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35069,
+  "uuid": "skill-clawhub-s2-pet-mmwave-analyzer",
+  "skillKey": "clawhub-s2-pet-mmwave-analyzer",
+  "name": "Multimodal Pet Health Engine",
+  "summary": "Transforms mmWave radar data into pet health metrics by detecting micro-movements, fusing environmental data, and enabling automatic spatial adjustments.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_pet_mmwave_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MilesXiang",
+      "features": [
+        "Transforms mmWave radar data into pet health metrics by detecting micro-movements, fusing envir."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2-pet-mmwave-analyzer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259359437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2-pet-mmwave-analyzer",
+      "url": "https://clawhub.ai/skills/s2-pet-mmwave-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-pet-mmwave-analyzer",
+    "url": "https://clawhub.ai/skills/s2-pet-mmwave-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-pet-mmwave-analyzer-d1d2565046682fa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2-pet-mmwave-analyzer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2-pet-mmwave-analyzer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c1f23101b50b9e3ae0b3d40524b9a575fead79ea03ab7be4d98d2958f13aa71",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:15:07.499Z"
+}

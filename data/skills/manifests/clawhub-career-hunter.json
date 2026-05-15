@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33201,
+  "uuid": "skill-clawhub-career-hunter",
+  "skillKey": "clawhub-career-hunter",
+  "name": "Career Hunter",
+  "summary": "Job search assistant. Generate and polish resumes, write cover letters, track applications, prepare for interviews, and search for jobs. Use when the user as...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.career_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ha Le",
+      "features": [
+        "Job search assistant",
+        "Generate and polish resumes, write cover letters, track applications, prepare for interviews, a.",
+        "Use when the user as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/career-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156477898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "career-hunter",
+      "url": "https://clawhub.ai/skills/career-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "career-hunter",
+    "url": "https://clawhub.ai/skills/career-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/career-hunter-b6f44063eded4c17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/career-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-career-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b364742eafdc33368d69ecb6de9542823803d32c5a595722fe5087dc1c4a9301",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:52:00.640Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debridge-mcp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debridge_mcp",
+  "skill": {
+    "id": 18767,
+    "skillKey": "clawhub-debridge-mcp",
+    "name": "Debridge Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debridge-mcp",
+    "url": "https://clawhub.ai/skills/debridge-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debridge-mcp-e4107a909236d62a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable non-custodial cross-chain crypto swaps and transfers with optimized routing, fee estimation, and order tracking via the deBridge protocol."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aviclaw",
+      "userId": "publishers:aviclaw",
+      "displayName": "aviclaw",
+      "image": "https://avatars.githubusercontent.com/u/260149483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 632,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771292532768,
+      "changelog": "- Initial release of deBridge MCP Skill.\n- Enables AI agents to perform non-custodial cross-chain swaps and transfers using the deBridge protocol.\n- Supports optimal route finding, fee estimation, and cross-chain order management across 20+ blockchains.\n- Includes tools for getting swap quotes, creating orders, checking order status, and listing supported chains.\n- Provides installation, configuration, and usage instructions for integration with OpenClaw.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:396b92d391c3ea0fb31803dc7dcc28cb96e50844dbc0d25d999e97d6110f4bdc"
+}

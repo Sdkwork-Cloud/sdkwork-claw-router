@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22815,
+  "uuid": "skill-clawhub-solidity-audit-precheck",
+  "skillKey": "clawhub-solidity-audit-precheck",
+  "name": "Solidity Audit Precheck",
+  "summary": "Automated pre-audit checklist for Solidity smart contracts. Runs SWC registry scan, OpenZeppelin pattern validation, gas optimization suggestions, and common...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solidity_audit_precheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Automated pre-audit checklist for Solidity smart contracts",
+        "Runs SWC registry scan, OpenZeppelin pattern validation, gas optimization suggestions, and comm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solidity-audit-precheck@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solidity-audit-precheck",
+      "url": "https://clawhub.ai/skills/solidity-audit-precheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solidity-audit-precheck",
+    "url": "https://clawhub.ai/skills/solidity-audit-precheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solidity-audit-precheck-7d57a943a8ee92dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solidity-audit-precheck@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solidity-audit-precheck-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3e638f995ec24cfc56dfb25a1abd1f52b447b4732493ce45fa0122ff64ac9af",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:16:32.451Z"
+}

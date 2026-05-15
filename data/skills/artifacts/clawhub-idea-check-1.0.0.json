@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_check",
+  "skill": {
+    "id": 22433,
+    "skillKey": "clawhub-idea-check",
+    "name": "Idea Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-check",
+    "url": "https://clawhub.ai/skills/idea-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-check-b00b8c233745078d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-build reality check before starting any new project or tool. Use when the user discusses a new idea, asks about competition, wants to know if something a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spideystreet",
+      "userId": "publishers:spideystreet",
+      "displayName": "𝑠𝑝𝑖𝑑𝑒𝑦",
+      "image": "https://avatars.githubusercontent.com/u/146075220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772721993762,
+      "changelog": "Initial release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5fa32165920de1e2c25c3df3f14b899ed579ec86cb2586201306a6a100221bde"
+}

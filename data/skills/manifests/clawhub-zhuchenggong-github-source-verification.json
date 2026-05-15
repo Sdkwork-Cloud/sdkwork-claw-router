@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70625,
+  "uuid": "skill-clawhub-zhuchenggong-github-source-verification",
+  "skillKey": "clawhub-zhuchenggong-github-source-verification",
+  "name": "GitHub可信来源验证",
+  "summary": "验证GitHub中国开发者身份，搜索并核实其B站、抖音、小红书、知乎等平台账号和粉丝活跃度以判断可信度。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhuchenggong_github_source_verification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuchenggong19851114-design",
+      "features": [
+        "验证GitHub中国开发者身份，搜索并核实其B站、抖音、小红书、知乎等平台账号和粉丝活跃度以判断可信度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhuchenggong-github-source-verification@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266258234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhuchenggong-github-source-verification",
+      "url": "https://clawhub.ai/skills/zhuchenggong-github-source-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhuchenggong-github-source-verification",
+    "url": "https://clawhub.ai/skills/zhuchenggong-github-source-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhuchenggong-github-source-verification-97db4823c492a32b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhuchenggong-github-source-verification@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhuchenggong-github-source-verification-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c3e3cf02ce5c1eb43bc609e50b1204477928d7f5d055a8e564f1e9005b4ed85",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T23:24:38.094Z"
+}

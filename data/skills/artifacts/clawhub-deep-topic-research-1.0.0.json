@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-topic-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_topic_research",
+  "skill": {
+    "id": 69418,
+    "skillKey": "clawhub-deep-topic-research",
+    "name": "深度话题调研工作流"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-topic-research",
+    "url": "https://clawhub.ai/skills/deep-topic-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-topic-research-759eef0b5e56e59d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对用户提出的具体话题/课题/行业进行深度调研，输出结构化报告。结合多智能体并行搜索（借鉴女娲Nuwa）和克制调用原则（借鉴AutoGLM DeepResearch），先展示中间发现再决策。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "realpda",
+      "userId": "s17aspeya65fa14fe9v237r5qd863x8n",
+      "displayName": "RealGhost",
+      "image": "https://avatars.githubusercontent.com/u/60616432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777895678174,
+      "changelog": "deep-topic-research v1.0.0\n\n- Initial release of a structured deep topic/industry research workflow.\n- Implements parallel multi-agent search, controlled information collection, and staged discovery-feedback loops.\n- Focuses on 2-4 key research dimensions, prioritizing credible sources and avoiding unreliable platforms (e.g., Zhihu, Baidu Knows).\n- Requires presentation of interim findings before proceeding, allowing user involvement in research direction.\n- Enforces rigorous source citation, balanced perspectives, and actionable recommendations in final reports.\n- Built-in self-check for data support, coverage, and efficiency before report delivery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:131c0138b9dc87d35dc05e44a900863340fed0c0363d06c2abcd50aec48cb182"
+}

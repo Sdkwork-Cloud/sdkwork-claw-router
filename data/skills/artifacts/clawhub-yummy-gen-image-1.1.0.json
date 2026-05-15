@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yummy-gen-image@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yummy_gen_image",
+  "skill": {
+    "id": 28650,
+    "skillKey": "clawhub-yummy-gen-image",
+    "name": "Yummy Gen Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yummy-gen-image",
+    "url": "https://clawhub.ai/skills/yummy-gen-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yummy-gen-image-7ea44dd5c0ee3dc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to generate or edit raster images with Gemini through yummycli, including prompt-only generation, single-image editing, and multi-ima..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yummysource",
+      "userId": "s171xbx4pasz0j8j5j3nct0cs984p697",
+      "displayName": "yummysource",
+      "image": "https://avatars.githubusercontent.com/u/260192779?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776412431731,
+      "changelog": "- Version bumped to 1.1.0 with no user-visible changes.\n- No updates to files or functionality detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa6ccd6e00479585b37327dd6c7c8f1ec5b7f2c66156ce6f8ba53075ffdbb03c"
+}

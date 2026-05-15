@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-happybday@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_happybday",
+  "skill": {
+    "id": 41864,
+    "skillKey": "clawhub-whatsapp-happybday",
+    "name": "WhatsApp HappyBDay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-happybday",
+    "url": "https://clawhub.ai/skills/whatsapp-happybday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-happybday-a1d12c1f977555eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor WhatsApp groups to dynamically detect people who should be congratulated. It identifies keywords (e.g., \"birthday\", \"congratulations\") and the person..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero-astro",
+      "userId": "s17fxw32j3pta8a8amwjtavjhs83wsab",
+      "displayName": "zero-astro",
+      "image": "https://avatars.githubusercontent.com/u/269814814?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775519576173,
+      "changelog": "Fixed primaryEnv metadata (removed misleading BIRTHDAY_SKIP_LIST), unified silence response to HEARTBEAT_OK across all documentation, added default values for env vars",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:051c2b608fbc3d1d4220fd3cb66f9e94ecda6f8af41f17b095c134138bbacc3e"
+}

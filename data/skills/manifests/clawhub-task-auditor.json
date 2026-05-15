@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65308,
+  "uuid": "skill-clawhub-task-auditor",
+  "skillKey": "clawhub-task-auditor",
+  "name": "Task Auditor",
+  "summary": "独立第三方审计auto-iterator任务质量，按执行日志、迭代次数、报告质量等指标评分防止偷懒并自动警报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_auditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zenmejiang-commits",
+      "features": [
+        "独立第三方审计auto-iterator任务质量，按执行日志、迭代次数、报告质量等指标评分防止偷懒并自动警报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231708860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-auditor",
+      "url": "https://clawhub.ai/skills/task-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-auditor",
+    "url": "https://clawhub.ai/skills/task-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-auditor-f9b2351c307ebbc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb43d89d52b6f49f3e7c043af7a26389bae194621e5d4cb4c492b1471554d3f0",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:33:52.905Z"
+}

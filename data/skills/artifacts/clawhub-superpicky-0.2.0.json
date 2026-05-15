@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/superpicky@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpicky",
+  "skill": {
+    "id": 35862,
+    "skillKey": "clawhub-superpicky",
+    "name": "Superpicky Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpicky",
+    "url": "https://clawhub.ai/skills/superpicky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpicky-4bb7202a6394a174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SuperPicky CLI skill: use absolute paths to scripts/install.sh and scripts/run.sh for automation; run.sh three entries (superpicky_cli, birdid_cli, --region-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoshino-s",
+      "userId": "s176tahf2fpvg7aass1txah18183jkmn",
+      "displayName": "yoshino-s",
+      "image": "https://avatars.githubusercontent.com/u/28624661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774433230553,
+      "changelog": "superpicky 0.2.0\n\n- Added initial README.md to the repository.\n- No changes to code or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a335f56de4f16d66f1c3af5088213b6b4f2c12aede5b3797af501b5f4ff3dd2"
+}

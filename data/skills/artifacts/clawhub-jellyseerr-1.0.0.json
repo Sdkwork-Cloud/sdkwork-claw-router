@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jellyseerr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jellyseerr",
+  "skill": {
+    "id": 10735,
+    "skillKey": "clawhub-jellyseerr",
+    "name": "Jellyseerr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jellyseerr",
+    "url": "https://clawhub.ai/skills/jellyseerr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jellyseerr-8b9cd453f2ffc616.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Request movies and TV shows through Jellyseerr. Use when the user wants to add media to their Plex/Jellyfin server, search for content availability, or manage media requests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericrosenberg",
+      "userId": "publishers:ericrosenberg",
+      "displayName": "EricRosenberg",
+      "image": "https://avatars.githubusercontent.com/u/1305877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2377,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769385410166,
+      "changelog": "Initial release: Request movies/TV shows through Jellyseerr with instant webhook notifications. Includes interactive CLI, automated tracking, and smart notification delivery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67e7dbad64aace70a024a8c08cc0f7f893141fa8669aaf16ef1be94a90f7a2e9"
+}

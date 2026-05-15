@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63175,
+  "uuid": "skill-clawhub-sp-global",
+  "skillKey": "clawhub-sp-global",
+  "name": "Sp Global",
+  "summary": "标普500指数的运营方，14.5万亿美元被动资产的基准",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sp_global",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "标普500指数的运营方，14.5万亿美元被动资产的基准"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sp-global@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sp-global",
+      "url": "https://clawhub.ai/skills/sp-global"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sp-global",
+    "url": "https://clawhub.ai/skills/sp-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sp-global-ad8fd37075520c0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sp-global@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sp-global-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43682b5a7192fcafba9742094962499a87dab25c8cbd6db625df864923b4828f",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T22:06:24.257Z"
+}

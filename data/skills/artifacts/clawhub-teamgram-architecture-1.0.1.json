@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teamgram-architecture@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamgram_architecture",
+  "skill": {
+    "id": 28948,
+    "skillKey": "clawhub-teamgram-architecture",
+    "name": "Teamgram Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamgram-architecture",
+    "url": "https://clawhub.ai/skills/teamgram-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamgram-architecture-3ea2837a32f0b1cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Overview of Teamgram Server's 6-layer microservice architecture with 11 services, gRPC/Kafka communication, and etcd service discovery for Telegram-compatibl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhihang9978",
+      "userId": "s172je8v58fh44rr2hyzjrejen84qsq9",
+      "displayName": "zhihang9978",
+      "image": "https://avatars.githubusercontent.com/u/217701803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773546132381,
+      "changelog": "Added security metadata, source references, and credential declarations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92ea55da775ce7eab80559f6269a6ce90da806d3bf2fd5b635e7b5d722c4d7a2"
+}

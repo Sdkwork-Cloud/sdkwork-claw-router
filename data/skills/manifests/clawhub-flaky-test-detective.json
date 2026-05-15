@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45080,
+  "uuid": "skill-clawhub-flaky-test-detective",
+  "skillKey": "clawhub-flaky-test-detective",
+  "name": "Flaky Test Detective",
+  "summary": "Detect, diagnose, and fix flaky tests. Identify tests with non-deterministic outcomes by analyzing CI history, test timing, shared state, race conditions, an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flaky_test_detective",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Detect, diagnose, and fix flaky tests",
+        "Identify tests with non-deterministic outcomes by analyzing CI history, test timing, shared sta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flaky-test-detective@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flaky-test-detective",
+      "url": "https://clawhub.ai/skills/flaky-test-detective"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flaky-test-detective",
+    "url": "https://clawhub.ai/skills/flaky-test-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flaky-test-detective-4bce97e9fe6f620b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flaky-test-detective@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flaky-test-detective-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a190b7c1009686ce2b7eb858e8460093df774122d5fe735d9da9f0aec38720b7",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:29.257Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/riskshield@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.riskshield",
+  "skill": {
+    "id": 60674,
+    "skillKey": "clawhub-riskshield",
+    "name": "RiskShield案件审批自动化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "riskshield",
+    "url": "https://clawhub.ai/skills/riskshield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/riskshield-689b3ecbe4fe5bfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RiskShield 案件审批自动化。使用 Playwright 浏览器自动化完成审批，支持 Pass/Refuse 两种操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haoleizhang",
+      "userId": "s1753xgyjd09ey1t41pf6xfa6n84ggh8",
+      "displayName": "haoleizhang",
+      "image": "https://avatars.githubusercontent.com/u/42247327?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776331246332,
+      "changelog": "Initial release of RiskShield approval automation skill.\n\n- Automates RiskShield case approval using Playwright for browser automation.\n- Supports both \"Pass\" (with customizable credit amount) and \"Refuse\" (with selectable refuse code) actions.\n- Automatically verifies approval results and updates case status.\n- Runs in headless (background) mode without affecting other work.\n- Command-line usage with parameter options for case number, operation, refuse code, and approval amount.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74c8454cbaf2cccaa4f5cd565e59741df7cc212af9203c865c14ce119e0c8115"
+}

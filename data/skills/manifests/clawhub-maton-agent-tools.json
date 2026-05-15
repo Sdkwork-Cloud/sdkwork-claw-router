@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12987,
+  "uuid": "skill-clawhub-maton-agent-tools",
+  "skillKey": "clawhub-maton-agent-tools",
+  "name": "Maton MCP Tools",
+  "summary": "Connect to SaaS tools via Maton AI. Includes full UI integration for Clawdbot Gateway dashboard. Use when setting up Maton integration, connecting apps (Gmai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maton_agent_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Connect to SaaS tools via Maton AI",
+        "Includes full UI integration for Clawdbot Gateway dashboard",
+        "Use when setting up Maton integration, connecting apps (Gmai..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maton-agent-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maton-agent-tools",
+      "url": "https://clawhub.ai/skills/maton-agent-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maton-agent-tools",
+    "url": "https://clawhub.ai/skills/maton-agent-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maton-agent-tools-71d8faeaf53475ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maton-agent-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maton-agent-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:392e3be7060988c6e106ec06aea7974693645f655f68a6a8d2c395d8012e73d7",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:38:17.798Z"
+}

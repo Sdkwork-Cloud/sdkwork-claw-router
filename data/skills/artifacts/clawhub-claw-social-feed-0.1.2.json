@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-social-feed@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_social_feed",
+  "skill": {
+    "id": 34725,
+    "skillKey": "clawhub-claw-social-feed",
+    "name": "Website Content Scraped into Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-social-feed",
+    "url": "https://clawhub.ai/skills/claw-social-feed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-social-feed-d8751ad61425d91d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch social media content and save to Obsidian. Supports Twitter/X, Reddit, GitHub, HackerNews, Bilibili, Weibo, Xiaohongshu and 30+ platforms via bb-browse..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "glassmarbles",
+      "userId": "s172mhs8zjb6nendte62kg091h83ky1n",
+      "displayName": "Glassmarbles",
+      "image": "https://avatars.githubusercontent.com/u/129828609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774597290990,
+      "changelog": "claw-social-feed 0.1.2\n\n- Updated skill description and documentation to English for broader accessibility.\n- Expanded platform list to explicitly include HackerNews, Bilibili, Weibo, Xiaohongshu, and 30+ others via bb-browser.\n- Simplified setup instructions and configuration examples for clarity.\n- Improved config reference, workflow overview, and troubleshooting sections.\n- No code or logic changes in this version; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:979a592ef2e7efd3a46f7cb12fb9d67fc5df2cd46b999c32324f812dba8f8889"
+}

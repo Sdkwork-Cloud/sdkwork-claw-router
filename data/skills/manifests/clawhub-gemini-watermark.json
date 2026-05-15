@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23931,
+  "uuid": "skill-clawhub-gemini-watermark",
+  "skillKey": "clawhub-gemini-watermark",
+  "name": "Gemini Watermark",
+  "summary": "Remove visible Gemini AI watermarks from images via reverse alpha blending. Use for cleaning Gemini-generated images, removing the star/sparkle logo watermar...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_watermark",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "h1bomb",
+      "features": [
+        "Remove visible Gemini AI watermarks from images via reverse alpha blending",
+        "Use for cleaning Gemini-generated images, removing the star/sparkle logo watermar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-watermark@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/641828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-watermark",
+      "url": "https://clawhub.ai/skills/gemini-watermark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-watermark",
+    "url": "https://clawhub.ai/skills/gemini-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-watermark-1ccc42761c6b829e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-watermark@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-watermark-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f240987fce33f2b1b2e0e49fffe40419c2eeeca59c0e50282eec3cc1ac83687e",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T01:39:03.955Z"
+}

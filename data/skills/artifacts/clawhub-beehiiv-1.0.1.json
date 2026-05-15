@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beehiiv@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beehiiv",
+  "skill": {
+    "id": 10308,
+    "skillKey": "clawhub-beehiiv",
+    "name": "beehiiv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beehiiv",
+    "url": "https://clawhub.ai/skills/beehiiv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beehiiv-61eba8388a75829a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "beehiiv API integration with managed OAuth. Manage newsletter publications, subscriptions, posts, custom fields, segments, and automations. Use this skill wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2170,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777588937218,
+      "changelog": "- Changed API base URL from gateway.maton.ai to api.maton.ai throughout documentation and usage examples.\n- Updated connection management instructions to use https://api.maton.ai instead of previous control URLs.\n- Clarified the need to specify the `Maton-Connection` header when multiple beehiiv connections are present.\n- Added a Security & Permissions section noting explicit user approval is required for all write operations.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:416c7f92685c6366137b9d607eb877139912b30bc192adbf0189f1d6061b50d5"
+}

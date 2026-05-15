@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/painpoint-discovery@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.painpoint_discovery",
+  "skill": {
+    "id": 24662,
+    "skillKey": "clawhub-painpoint-discovery",
+    "name": "Painpoint Discovery Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "painpoint-discovery",
+    "url": "https://clawhub.ai/skills/painpoint-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/painpoint-discovery-9e805c90e2528e51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Painpoint discovery expert. Helps users discover, analyze, and evaluate startup painpoints in specific domains. Use when user says \"find painpoints in X\", \"a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyuxing",
+      "userId": "publishers:lyuxing",
+      "displayName": "DZ_2026",
+      "image": "https://avatars.githubusercontent.com/u/41491904?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772736588504,
+      "changelog": "English version + all docs translated",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05c36c20af3b882e37973ffc3268977be6e45520d16f9fb92d39b86326d4d106"
+}

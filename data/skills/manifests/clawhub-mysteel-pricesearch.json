@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67884,
+  "uuid": "skill-clawhub-mysteel-pricesearch",
+  "skillKey": "clawhub-mysteel-pricesearch",
+  "name": "Mysteel_PriceSearch",
+  "summary": "大宗商品价格数据查询技能。用于查询大宗商品期现货价格、宏观经济指标、产业链供需数据、进出口库存数据、金融市场数据等。当用户询问：(1) 期货/现货价格查询，如\"螺纹钢价格\"、\"铜期货收盘价\"； (2) 历史行情或趋势分析；(3) 区域或企业价格对比；(4) 宏观经济指标，如GDP、CPI；(5) 产业链上下游数据...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysteel_pricesearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mysteel",
+      "features": [
+        "大宗商品价格数据查询技能。用于查询大宗商品期现货价格、宏观经济指标、产业链供需数据、进出口库存数据、金融市场数据等。当用户询问：(1) 期货/现货价格查询，如\"螺纹钢价格\"、\"铜期货收盘价\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysteel-pricesearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49762508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysteel-pricesearch",
+      "url": "https://clawhub.ai/skills/mysteel-pricesearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysteel-pricesearch",
+    "url": "https://clawhub.ai/skills/mysteel-pricesearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysteel-pricesearch-43ceb3f4d7d060ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysteel-pricesearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysteel-pricesearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e59b131e3c53cdb037bc56f7a6e26ac1c431495c7d0b8e65d66e0eedc87d5c2b",
+      "artifactSizeBytes": 2896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:34:55.943Z"
+}

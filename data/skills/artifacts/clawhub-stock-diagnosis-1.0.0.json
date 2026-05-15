@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-diagnosis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_diagnosis",
+  "skill": {
+    "id": 70483,
+    "skillKey": "clawhub-stock-diagnosis",
+    "name": "stock-diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-diagnosis",
+    "url": "https://clawhub.ai/skills/stock-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-diagnosis-f4f09174d8d26826.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向沪深京A股的单票综合诊断能力。适用于用户提出“这只股票整体怎么样”“是否值得继续持有/加仓/减仓”“当前风险和机会如何”等泛化问题时，返回结构化的Markdown诊断报告。每次仅分析一只股票，不处理港股/美股及多标的对比。触发核心条件：用户问法为概括性诊断，未指定某个单一技术指标或财务指标（如MACD、RSI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "financial-ai-analyst",
+      "userId": "s172qfps754dhtdynwv0gwshes83mtd4",
+      "displayName": "Financial AI Analyst",
+      "image": "https://avatars.githubusercontent.com/u/41098207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 666,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776424768071,
+      "changelog": "Publish 1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23b7623cdf8de802787fb480ea720dea7e347f4bead21ae01b13ed6bcf63dd9a"
+}

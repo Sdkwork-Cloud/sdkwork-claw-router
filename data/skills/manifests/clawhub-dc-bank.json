@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37038,
+  "uuid": "skill-clawhub-dc-bank",
+  "skillKey": "clawhub-dc-bank",
+  "name": "Dc Bank",
+  "summary": "DC Bank integration. Manage data, records, and automate workflows. Use when the user wants to interact with DC Bank data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dc_bank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "DC Bank integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with DC Bank data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dc-bank@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dc-bank",
+      "url": "https://clawhub.ai/skills/dc-bank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dc-bank",
+    "url": "https://clawhub.ai/skills/dc-bank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dc-bank-e7fd31566e0818a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dc-bank@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dc-bank-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4a0091184ff248683fc57920dcfe6604e2ff963b6dfb9a248bedeb91a714f08",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:23:02.418Z"
+}

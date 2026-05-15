@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34675,
+  "uuid": "skill-clawhub-nm-pensive-tiered-audit",
+  "skillKey": "clawhub-nm-pensive-tiered-audit",
+  "name": "Nm Pensive Tiered Audit",
+  "summary": "Audit a codebase using three escalation tiers: git history analysis, targeted deep-dives, and full codebase review with gating",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_pensive_tiered_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Audit a codebase using three escalation tiers: git history analysis, targeted deep-dives, and f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-pensive-tiered-audit@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-pensive-tiered-audit",
+      "url": "https://clawhub.ai/skills/nm-pensive-tiered-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-pensive-tiered-audit",
+    "url": "https://clawhub.ai/skills/nm-pensive-tiered-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-pensive-tiered-audit-bd2363a2a0ecf2cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-pensive-tiered-audit@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-pensive-tiered-audit-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c77aba3acd3e162fad136de390c379935fa48be198879b4fe31c00c4a1c0dd12",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:19:34.401Z"
+}

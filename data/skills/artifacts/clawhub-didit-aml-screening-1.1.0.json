@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/didit-aml-screening@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_aml_screening",
+  "skill": {
+    "id": 20271,
+    "skillKey": "clawhub-didit-aml-screening",
+    "name": "Didit Aml Screening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-aml-screening",
+    "url": "https://clawhub.ai/skills/didit-aml-screening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-aml-screening-36e29dfbcb44df09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Didit AML Screening standalone API to screen individuals or companies against global watchlists. Use when the user wants to perform AML checks, scr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rosasalberto",
+      "userId": "publishers:rosasalberto",
+      "displayName": "Didit",
+      "image": "https://avatars.githubusercontent.com/u/47662054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772514904139,
+      "changelog": "AML screening against 1300+ databases with risk scoring, updated API refs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1e3ce0a740de124e30db8d24f9980d024ee5c80867b30368b7cc57234b6fde4e"
+}

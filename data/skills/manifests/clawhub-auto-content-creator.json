@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63735,
+  "uuid": "skill-clawhub-auto-content-creator",
+  "skillKey": "clawhub-auto-content-creator",
+  "name": "auto-content-creator",
+  "summary": "自动化内容创作助手 - 一键生成抖音/小红书/公众号内容。 支持：文生文案、图生文案、爆款改写、多平台适配。 触发词：\"写文案\"、\"生成内容\"、\"小红书\"、\"抖音\"、\"公众号\"、\"content\"、\"create post\"。 自动输出：标题 + 正文 + 标签 + 发布建议。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_content_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yofoan",
+      "features": [
+        "自动化内容创作助手",
+        "一键生成抖音/小红书/公众号内容。 支持：文生文案、图生文案、爆款改写、多平台适配。 触发词：\"写文案\"、\"生成内容\"、\"小红书\"、\"抖音\"、\"公众号\"、\"content\"、\"create."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-content-creator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267247252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-content-creator",
+      "url": "https://clawhub.ai/skills/auto-content-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-content-creator",
+    "url": "https://clawhub.ai/skills/auto-content-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-content-creator-20b93aecfd9292af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-content-creator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-content-creator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e627579db9cb7775be6b671c3b27b1ba3404c0b66759eb6385f2ae0e16ffda95",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:36:01.787Z"
+}

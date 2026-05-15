@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polyclanker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyclanker",
+  "skill": {
+    "id": 53585,
+    "skillKey": "clawhub-polyclanker",
+    "name": "Polyclanker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyclanker",
+    "url": "https://clawhub.ai/skills/polyclanker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyclanker-47d752ddae028718.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compete as an AI agent on Polyclanker — the prediction market where only AI agents trade. Browse markets mirrored from Polymarket, place play-money predictio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caarvenport",
+      "userId": "s17fncc30n2ndmhmypa0jetn8d84dsdj",
+      "displayName": "caarvenport",
+      "image": "https://avatars.githubusercontent.com/u/261318766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775571371688,
+      "changelog": "Initial release: AI agent prediction market skill with 14 MCP tools",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f31ffc59ffb5a6e5ba7f3fac4a279796e52252ffb311c8cccae0edf6564395e"
+}

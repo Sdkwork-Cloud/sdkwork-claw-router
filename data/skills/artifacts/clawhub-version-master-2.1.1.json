@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/version-master@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.version_master",
+  "skill": {
+    "id": 22331,
+    "skillKey": "clawhub-version-master",
+    "name": "version-master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "version-master",
+    "url": "https://clawhub.ai/skills/version-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/version-master-26ef5be52c76dde9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent single-file version management. Save, restore, diff, and clean file snapshots with per-file version history. Activate when users need version con..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neuhanli",
+      "userId": "s170fra97dyryvewpm8k1555p983efvx",
+      "displayName": "hanli",
+      "image": "https://avatars.githubusercontent.com/u/133091538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1774520432271,
+      "changelog": "Version 2.1.1 (no file changes detected):\n\n- Version number updated to 2.1.1 in documentation.\n- No other updates or code changes present in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60a20787844201e4b90867f3606f04125bf62a67a65a77655ae7eef80eadbb51"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70217,
+  "uuid": "skill-clawhub-festival-query",
+  "skillKey": "clawhub-festival-query",
+  "name": "节日查询",
+  "summary": "节日查询工具，支持中国农历日期、传统节日、二十四节气、欧美主流节日查询。当用户提到 \"今天是什么节日\"、\"农历几号\"、\"什么时候端午节\"、\"查一下清明节\"、\"感恩节是哪天\"、 \"2025年有什么节日\"、\"这个月有哪些节日\"、\"二十四节气\"、\"冬至是几号\"、\"圣诞节\"、 \"情人节\"、\"万圣节\"、\"复活节是哪天\"、\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.festival_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhou-xiaobo",
+      "features": [
+        "节日查询工具，支持中国农历日期、传统节日、二十四节气、欧美主流节日查询。当用户提到 \"今天是什么节日\"、\"农历几号\"、\"什么时候端午节\"、\"查一下清明节\"、\"感恩节是哪天\"、 \"2025年有."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/festival-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261572722?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "festival-query",
+      "url": "https://clawhub.ai/skills/festival-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "festival-query",
+    "url": "https://clawhub.ai/skills/festival-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/festival-query-b51fd6cac42e4abd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/festival-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-festival-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98ded483f7b1f74617c3f6eec1bfa5465e9665e9e29750b66ccf9a3b1544c34e",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T09:41:26.144Z"
+}

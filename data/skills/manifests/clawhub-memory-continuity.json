@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13110,
+  "uuid": "skill-clawhub-memory-continuity",
+  "skillKey": "clawhub-memory-continuity",
+  "name": "Real Memory Continuity",
+  "summary": "Asynchronous reflection and memory integration for genuine AI development. Use on heartbeat to reflect on recent sessions, extract structured memories with confidence scores, generate follow-up questions, and surface those questions when t.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_continuity",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Riley-Coyote",
+      "features": [
+        "Asynchronous reflection and memory integration for genuine AI development",
+        "Use on heartbeat to reflect on recent sessions, extract structured memories with confidence sco.",
+        "Transforms passive logging into active development."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-continuity@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130717859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-continuity",
+      "url": "https://clawhub.ai/skills/memory-continuity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-continuity",
+    "url": "https://clawhub.ai/skills/memory-continuity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-continuity-89f7df8b24c362e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-continuity@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-continuity-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bee9b85ce898b56ec8274af5a388d165730480b50a47577fc93e3b5329284123",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T06:19:23.172Z"
+}

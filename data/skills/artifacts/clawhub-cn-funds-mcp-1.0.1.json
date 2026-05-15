@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-funds-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_funds_mcp",
+  "skill": {
+    "id": 21089,
+    "skillKey": "clawhub-cn-funds-mcp",
+    "name": "cn-funds-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-funds-mcp",
+    "url": "https://clawhub.ai/skills/cn-funds-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-funds-mcp-25e350bf6b1a82ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "China fund & stock data assistant (free API, no API key required). Query fund valuation, NAV, holdings, manager info, stock/index quotes, market capital flow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smallke",
+      "userId": "s17fhjr3kd2sc7s220ppywny0x83m01r",
+      "displayName": "smallke",
+      "image": "https://avatars.githubusercontent.com/u/3949187?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 413,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773812372823,
+      "changelog": "- Added support for portfolio screenshot import and OCR recognition workflow.\n- Users can now upload fund holding screenshots (e.g. from fund apps) for automatic portfolio extraction and batch import.\n- Documentation updated to describe the screenshot-based import process and related AI image recognition steps.\n- Clarified that the skill uses a free API with no API key required.\n- Added 3 sample screenshots to illustrate the new functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:090cb4be22a05b6bd0343b0a79fccef019a75caa48dcd3180eb743325578dfc2"
+}

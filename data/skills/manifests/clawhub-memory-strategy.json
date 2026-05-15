@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66295,
+  "uuid": "skill-clawhub-memory-strategy",
+  "skillKey": "clawhub-memory-strategy",
+  "name": "Memory Strategy",
+  "summary": "当用户需要管理对话记忆时应使用此skill。 触发条件包括： - 用户说\"记下来\"、\"记住这个\"、\"别忘了\"、\"永久保存\"、\"这是一个重点\" - 用户查询历史信息：\"之前是怎么做的\"、\"查找关于...的记录\"、\"回忆一下...\" - 会话结束需要自动整理归档 - 需要评估信息重要性并决定存储位置 - 需要更新记忆...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hugoiku",
+      "features": [
+        "当用户需要管理对话记忆时应使用此skill。 触发条件包括：",
+        "用户说\"记下来\"、\"记住这个\"、\"别忘了\"、\"永久保存\"、\"这是一个重点\"",
+        "用户查询历史信息：\"之前是怎么做的\"、\"查找关于...的记录\"、\"回忆一下...\"",
+        "会话结束需要自动整理归档"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-strategy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128440105?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-strategy",
+      "url": "https://clawhub.ai/skills/memory-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-strategy",
+    "url": "https://clawhub.ai/skills/memory-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-strategy-04cbf955c6f3f5d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-strategy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-strategy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbd5533cdcf96f617ceb2bec695c27993fb5d3254330324c24e3f51d0c28a506",
+      "artifactSizeBytes": 2794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:02:29.288Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-bitable@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_bitable",
+  "skill": {
+    "id": 58243,
+    "skillKey": "clawhub-dingtalk-bitable",
+    "name": "Dingtalk Bitable"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-bitable",
+    "url": "https://clawhub.ai/skills/dingtalk-bitable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-bitable-c06a4e48c975ee1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "钉钉多维表格 API 集成 - 表格管理、数据 CRUD。Use when: user asks about DingTalk bitable, table, database, spreadsheet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cxwos",
+      "userId": "publishers:cxwos",
+      "displayName": "码丁",
+      "image": "https://avatars.githubusercontent.com/u/35951017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773885328727,
+      "changelog": "- Initial release of DingTalk Bitable API integration skill.\n- Supports table management (list, create, get structure, delete).\n- Enables record CRUD: query, add, update, delete (with batch operations).\n- Includes field management and view management tools.\n- Provides clear usage examples and error handling instructions.\n- Requires DingTalk Bitable and app access permissions; credentials auto-read from configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cc99631050b41d933515f7883d40bc2448ad7be460f4443cbc97aa8bbc776f9"
+}

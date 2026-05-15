@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiugong-feixing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiugong_feixing",
+  "skill": {
+    "id": 65563,
+    "skillKey": "clawhub-jiugong-feixing",
+    "name": "Jiugong Feixing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiugong-feixing",
+    "url": "https://clawhub.ai/skills/jiugong-feixing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiugong-feixing-f90cf40cdeed6793.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "九宫飞星理气风水，根据流年/流月/流日推算九星位置，判断方位吉凶"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingo-318",
+      "userId": "s174azpqkfzaht4rsrns8gsy4983gadk",
+      "displayName": "Mingo_318",
+      "image": "https://avatars.githubusercontent.com/u/62329898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772787464292,
+      "changelog": "Initial release of jiugong-feixing skill.\n\n- Provides 九宫飞星 (Nine Stars Feng Shui) for yearly, monthly, or daily calculations.\n- Determines auspicious and inauspicious directions based on 九星飞布 principles.\n- Supports command-line usage to specify year, month, or day.\n- Outputs formatted result with detailed 吉凶 interpretation for each direction.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dcc66ffc17440787cfad2ddee5d868d8548f3ca5916e6c2ed81d49d79df41421"
+}

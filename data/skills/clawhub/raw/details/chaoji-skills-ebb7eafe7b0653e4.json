@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "chaoji-skills",
+    "displayName": "Chaoji Skills",
+    "summary": "Routes requests to appropriate Chaoji AI scene skills for virtual try-on, image cutout, image-to-image generation, or direct command execution.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775207065330,
+    "updatedAt": 1777527130887
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775207065330,
+    "changelog": "chaoji-skills 1.0.0\n\n- Initial release providing root routing for ChaoJi AI skills.\n- Routes user requests to scene-specific skills: chaoji-tryon, chaoji-tryon-fast, chaoji-tryon-shoes, chaoji-cutout, chaoji-img2img, and chaoji-tools.\n- Enforces minimal, routing-only permissions at the root level; scene skills handle their own broader permissions.\n- Implements detailed intent routing rules, explicit clarification questions for ambiguous \"try on\" requests, and method selection based on natural language.\n- Built-in security and instruction safety rules to prevent misuse or unauthorized disclosures.\n- Error handling offers actionable user guidance for credential or authorization problems.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "matabear-wyx",
+    "userId": "s1726rj4vnmwpf548xxa093dps83p0wh",
+    "displayName": "matabear-wyx",
+    "image": "https://avatars.githubusercontent.com/u/128615473?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527130887
+  }
+}

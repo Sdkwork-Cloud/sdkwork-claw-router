@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67627,
+  "uuid": "skill-clawhub-news-daily",
+  "skillKey": "clawhub-news-daily",
+  "name": "news-daily",
+  "summary": "获取新闻热榜（国内、国际、科技、AI）并发送到飞书。不依赖本地工程，直接从 RSS 获取数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_daily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HeGangSZ",
+      "features": [
+        "获取新闻热榜（国内、国际、科技、AI）并发送到飞书。不依赖本地工程，直接从 RSS 获取数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15183304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-daily",
+      "url": "https://clawhub.ai/skills/news-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-daily",
+    "url": "https://clawhub.ai/skills/news-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-daily-8f9367199e68b82c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59b3ac2416808dfd5d987818d0475abc3c89805a436f3903cfc21782273750a3",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:45:26.001Z"
+}

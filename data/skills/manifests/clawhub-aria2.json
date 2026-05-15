@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62041,
+  "uuid": "skill-clawhub-aria2",
+  "skillKey": "clawhub-aria2",
+  "name": "Aria2 Downloader",
+  "summary": "使用 aria2 下载磁力链接、种子、HTTP 文件。下载完成后自动转存到 115 网盘并删除本地文件。当用户发送磁力链接(magnet:)、种子文件(.torrent)、或要求下载文件时触发此 skill。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aria2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahiven",
+      "features": [
+        "使用 aria2 下载磁力链接、种子、HTTP 文件。下载完成后自动转存到 115 网盘并删除本地文件。当用户发送磁力链接(magnet:)、种子文件(.torrent)、或要求下载文件时触."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aria2@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50262154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aria2",
+      "url": "https://clawhub.ai/skills/aria2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aria2",
+    "url": "https://clawhub.ai/skills/aria2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aria2-f83f271ae773dc6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aria2@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aria2-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72a6a62fc477b17fe1ed3ff50a8351d9972c8bc45fbc7cb2ae5ed4f57a368a28",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T20:06:09.962Z"
+}

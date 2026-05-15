@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-vuln-info-disclosure@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_vuln_info_disclosure",
+  "skill": {
+    "id": 29944,
+    "skillKey": "clawhub-go-vuln-info-disclosure",
+    "name": "Go Vuln Info Disclosure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-vuln-info-disclosure",
+    "url": "https://clawhub.ai/skills/go-vuln-info-disclosure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-vuln-info-disclosure-d220877d1235f207.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when auditing Go code involving logging, error handling, HTTP response data, Kubernetes Secret management, or credential storage. Covers CWE-200/532/522/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yhy0",
+      "userId": "s172p34p6emz34m9wrf8241gp983hjhz",
+      "displayName": "yhy",
+      "image": "https://avatars.githubusercontent.com/u/31311038?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773476230229,
+      "changelog": "Initial release of go-vuln-info-disclosure, a Go information disclosure auditing guide.\n\n- Provides detection strategies and grep patterns for finding CWE-200/532/522/312/552 in Go code.\n- Includes a comprehensive checklist for auditing logs, API responses, struct serialization, K8s Secret handling, and error messages.\n- Offers guidance on excluding common false positives and highlights real-world risk cases (e.g., Argo CD/Rancher secrets).\n- Suggests protective measures, including redaction, proper struct tagging, and response DTO usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62ffe832d230cb2c3b3ecf29f642dfe306cea214fb41f5006f75b517b0734d19"
+}

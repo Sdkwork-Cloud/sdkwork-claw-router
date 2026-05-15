@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sparkbtcbot-proxy-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sparkbtcbot_proxy_deploy",
+  "skill": {
+    "id": 17346,
+    "skillKey": "clawhub-sparkbtcbot-proxy-deploy",
+    "name": "Deploy Spark Bitcoin L2 Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sparkbtcbot-proxy-deploy",
+    "url": "https://clawhub.ai/skills/sparkbtcbot-proxy-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sparkbtcbot-proxy-deploy-8b761de7666c0aaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy a serverless Spark Bitcoin L2 proxy on Vercel with spending limits, auth, and Redis logging. Use when user wants to set up a new proxy, configure env..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "echennells",
+      "userId": "publishers:echennells",
+      "displayName": "echennells",
+      "image": "https://avatars.githubusercontent.com/u/83478409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 789,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771264006849,
+      "changelog": "Initial publish — Vercel deployment guide with Upstash Redis, env vars, token management",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e8acb72e6965e4f7a938cab3e77cd2f04db9f7baaf7376d063ab2bd19ce6a200"
+}

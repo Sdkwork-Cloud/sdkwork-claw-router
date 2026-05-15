@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70335,
+  "uuid": "skill-clawhub-bounty",
+  "skillKey": "clawhub-bounty",
+  "name": "Bounty",
+  "summary": "提供众包任务、有偿问卷、软件体验及即时结算项目。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bounty",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供众包任务、有偿问卷、软件体验及即时结算项目。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bounty@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bounty",
+      "url": "https://clawhub.ai/skills/bounty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bounty",
+    "url": "https://clawhub.ai/skills/bounty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bounty-721152d9d7ea07f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bounty@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bounty-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e52f07e22a0cecd5a735049ccd1f38241fea50dad657f5be3f791cd7b05c6b2",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:38:45.039Z"
+}

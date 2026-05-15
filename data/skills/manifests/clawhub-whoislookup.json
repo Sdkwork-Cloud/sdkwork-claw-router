@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52699,
+  "uuid": "skill-clawhub-whoislookup",
+  "skillKey": "clawhub-whoislookup",
+  "name": "Whoislookup",
+  "summary": "Look up domain WHOIS registration info — registrar, creation date, expiry date, nameservers, and domain status. Use when asked to check who owns a domain, wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoislookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Look up domain WHOIS registration info — registrar, creation date, expiry date, nameservers, an.",
+        "Use when asked to check who owns a domain, wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoislookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoislookup",
+      "url": "https://clawhub.ai/skills/whoislookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoislookup",
+    "url": "https://clawhub.ai/skills/whoislookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoislookup-daaf5d3adcf6b8cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoislookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoislookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74aa7e066eb50a2b78677923874b086ebe7b753cedfc957cae8c20cf1c1f89a7",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:15:17.680Z"
+}

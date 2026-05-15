@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41061,
+  "uuid": "skill-clawhub-x-is",
+  "skillKey": "clawhub-x-is",
+  "name": "Value & Environment Validator",
+  "summary": "Value validation and environment detection tool for Shell scripts. Validates input types (integers, floats, IPs), compares file ages, detects runtime environ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_is",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lunrenyi",
+      "features": [
+        "Value validation and environment detection tool for Shell scripts",
+        "Validates input types (integers, floats, IPs), compares file ages, detects runtime environ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-is@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87307989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-is",
+      "url": "https://clawhub.ai/skills/x-is"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-is",
+    "url": "https://clawhub.ai/skills/x-is",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-is-2dcfd2ae5e14e0cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-is@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-is-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f15241ae7a2c5905ec83f2d5c44f304bc8c25707d38115e28490d87d61a4ccca",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T12:29:40.726Z"
+}

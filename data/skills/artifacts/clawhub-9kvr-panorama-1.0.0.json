@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/9kvr-panorama@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.9kvr_panorama",
+  "skill": {
+    "id": 72181,
+    "skillKey": "clawhub-9kvr-panorama",
+    "name": "芊云VR全景运营小助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "9kvr-panorama",
+    "url": "https://clawhub.ai/skills/9kvr-panorama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/9kvr-panorama-954a73e94a4298dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全景 VR 作品管理技能，覆盖账号登录配置（uid/token）、作品、素材、场景、热点、配乐、语音讲解、评分查询与接入指引。用户提出“配置登录信息”、“创建/修改/查看 VR 作品”、“上传素材”、“配置场景与热点”、“给作品加音乐或配音”、“查看评分”、“生成接入代码”等需求时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianming3",
+      "userId": "s17chdt943v4nnwtq3g06923t583t3wx",
+      "displayName": "tianming",
+      "image": "https://avatars.githubusercontent.com/u/10571546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774807967785,
+      "changelog": "Initial release of 9kvr-panorama:\n\n- Provides management for VR panorama works, including account configuration, works, media, scenes, hotspots, music, voiceovers, and ratings.\n- Supports core actions: login setup, create/view/update works, upload/manage media, configure scenes and hotspots, add music/voice, check ratings, and generate integration guides/code.\n- Organized by business workflow for easier onboarding and reuse, with principles enforcing safe and efficient task execution.\n- Documentation guides users from action routing to command examples and SOPs.\n- Focuses on management/configuration; not for frontend rendering development.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fcac8de7a5323a8650ccf54c2ebb6ee233fa41aa542890d91c281c54391840f"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38426,
+  "uuid": "skill-clawhub-testimio",
+  "skillKey": "clawhub-testimio",
+  "name": "Testimio",
+  "summary": "Testim.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Testim.io data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testimio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Testim.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Testim.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testimio@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testimio",
+      "url": "https://clawhub.ai/skills/testimio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testimio",
+    "url": "https://clawhub.ai/skills/testimio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testimio-f3ce1498f72c03f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testimio@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-testimio-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4025ae2d375471ce3e8aa2e8bd4a42d3871b499caf56779275c8b7b3c2508971",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:51:56.448Z"
+}

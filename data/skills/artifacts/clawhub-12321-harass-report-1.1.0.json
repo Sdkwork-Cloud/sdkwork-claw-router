@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/12321-harass-report@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12321_harass_report",
+  "skill": {
+    "id": 69636,
+    "skillKey": "clawhub-12321-harass-report",
+    "name": "12321 骚扰电话举报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12321-harass-report",
+    "url": "https://clawhub.ai/skills/12321-harass-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12321-harass-report-9facf0da4ae725cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "12321网络不良与垃圾信息举报受理中心 - 骚扰电话举报自动化。 当用户说\"举报骚扰电话\"、\"12321举报\"、\"投诉骚扰电话\"、\"填写举报表单\"、\"打开12321\"时触发。 支持完整的交互式举报流程：绕过倒计时→验证码识别→信息确认→短信验证码→填表→校验→提交。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnqxu",
+      "userId": "s17f8wrwhg7z9bc2bse9mh3zvs84frt4",
+      "displayName": "johnqxu",
+      "image": "https://avatars.githubusercontent.com/u/10542712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776736634502,
+      "changelog": "更新：验证码图片保存+发送流程、关闭浏览器、踩坑记录完善",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df81ea9046cbcfd4c827e807ff8d7f963a5d288980642e7fe1916d003dbed1f8"
+}

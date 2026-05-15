@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16419,
+  "uuid": "skill-clawhub-esp32",
+  "skillKey": "clawhub-esp32",
+  "name": "ESP32",
+  "summary": "Avoid common ESP32 mistakes — GPIO conflicts, WiFi+ADC2 trap, deep sleep gotchas, and FreeRTOS pitfalls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esp32",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common ESP32 mistakes — GPIO conflicts, WiFi+ADC2 trap, deep sleep gotchas, and FreeRTOS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esp32@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esp32",
+      "url": "https://clawhub.ai/skills/esp32"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esp32",
+    "url": "https://clawhub.ai/skills/esp32",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esp32-e2952694dec272e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esp32@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-esp32-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e65ee0c5c9bd8310dc8863368f010fde8a8f3af77e7e6a0c8739d596df9541b",
+      "artifactSizeBytes": 1766
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T00:03:43.358Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ebrun-original-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebrun_original_news",
+  "skill": {
+    "id": 66671,
+    "skillKey": "clawhub-ebrun-original-news",
+    "name": "Ebrun Original News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebrun-original-news",
+    "url": "https://clawhub.ai/skills/ebrun-original-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebrun-original-news-5dc907cd074cdf38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取亿邦动力网最新电商新闻报道。 当用户说\"查亿邦最新文章\"、\"查跨境最新文章\"、\"产业最新报道\"、\"零售最新报道\"、\"今日电商新闻\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ebrun-developer",
+      "userId": "s1799vvnb7hp0z6bc1e2rn68kn84ea9q",
+      "displayName": "Ebrun-Developer",
+      "image": "https://avatars.githubusercontent.com/u/274437784?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776905612379,
+      "changelog": "Initial release of ebrun-original-news skill:\n\n- Provides latest original e-commerce news from 亿邦动力网 by channel or topic.\n- Supports natural language triggering, auto-matching main/sub-channels from user input.\n- Returns up to 10 latest articles with title, author, summary, publish time, and link.\n- Includes robust fallback to \"推荐\" channel if unable to match input.\n- Version update check runs in the background with clear user prompts if new versions are available.\n- Includes Python and shell scripts for data fetching and version updates; handles errors gracefully.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f60f24074de308ef7776df3363ee39508764f5471fa319b162ca0eecdf11112"
+}

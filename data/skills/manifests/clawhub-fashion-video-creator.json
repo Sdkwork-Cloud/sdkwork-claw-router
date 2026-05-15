@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59099,
+  "uuid": "skill-clawhub-fashion-video-creator",
+  "skillKey": "clawhub-fashion-video-creator",
+  "name": "Fashion Video Creator",
+  "summary": "穿搭视频创作 — 生成虚拟模特图(Seedream 4.5/5.0) + Seedance 2.0 视频Prompt + 操作手册(SOP)。支持单条和批量模式。Use when: '帮我做穿搭视频', '生成模特图', 'generate outfit video', '批量生成穿搭prompt', '穿搭创作...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fashion_video_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "穿搭视频创作 — 生成虚拟模特图(Seedream 4.5/5.0) + Seedance 2.0 视频Prompt + 操作手册(SOP)。支持单条和批量模式。Use when: '帮我做."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fashion-video-creator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fashion-video-creator",
+      "url": "https://clawhub.ai/skills/fashion-video-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fashion-video-creator",
+    "url": "https://clawhub.ai/skills/fashion-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fashion-video-creator-7a7ca798a4c6a59b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fashion-video-creator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fashion-video-creator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de9c45143744117dbe7afab804b87b5ea2d061f308568f40bf4bfdb33f409b3e",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:12:13.861Z"
+}

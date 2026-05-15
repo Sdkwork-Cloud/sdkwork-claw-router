@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62093,
+  "uuid": "skill-clawhub-iclick-skill",
+  "skillKey": "clawhub-iclick-skill",
+  "name": "iClick Automation",
+  "summary": "爱触云(iClick)IOS免越狱自动化技能，提供设备监控、设备状态检查、RPA自动化等功能",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iclick_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Undefined-Token",
+      "features": [
+        "爱触云(iClick)IOS免越狱自动化技能，提供设备监控、设备状态检查、RPA自动化等功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iclick-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193717697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iclick-skill",
+      "url": "https://clawhub.ai/skills/iclick-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iclick-skill",
+    "url": "https://clawhub.ai/skills/iclick-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iclick-skill-a59954be9b23cfba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iclick-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iclick-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4649f572d49229b371d1b6f76b8de6dcf5f00b0a2ee65bbc9018d9356865f4da",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:38:56.270Z"
+}

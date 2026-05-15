@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17234,
+  "uuid": "skill-clawhub-telnyx-bot-signup",
+  "skillKey": "clawhub-telnyx-bot-signup",
+  "name": "Telnyx Bot Signup",
+  "summary": "Automated Telnyx bot account signup via Proof of Work challenge",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_bot_signup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Automated Telnyx bot account signup via Proof of Work challenge"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-bot-signup@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-bot-signup",
+      "url": "https://clawhub.ai/skills/telnyx-bot-signup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-bot-signup",
+    "url": "https://clawhub.ai/skills/telnyx-bot-signup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-bot-signup-51a57147b76de0f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-bot-signup@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-bot-signup-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bb8131cd420ddc247cd88cbcf706117adb3e50c05748c4ca16e14dbf0b9ebe3",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:32:18.140Z"
+}

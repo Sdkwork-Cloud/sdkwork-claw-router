@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tokio-async-code-review@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokio_async_code_review",
+  "skill": {
+    "id": 27809,
+    "skillKey": "clawhub-tokio-async-code-review",
+    "name": "Tokio Async Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokio-async-code-review",
+    "url": "https://clawhub.ai/skills/tokio-async-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokio-async-code-review-575215f9258ea5b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews tokio async runtime usage for task management, sync primitives, channel patterns, and runtime configuration. Covers Rust 2024 edition changes includi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831388756,
+      "changelog": "**Summary:** Adds objective \"Gates\" that must be completed before issuing findings and clarifies reporting order.\n\n- Introduced a \"Gates\" section: requires concrete dependency, runtime, and blocking inventory notes before asserting Critical or Major findings.\n- Outlines the stepwise, evidence-based review process and reporting format.\n- Tightened instructions: findings must be backed by protocol and gate evidence.\n- Checklist, severity, and valid patterns are unchanged.\n- Updated the \"Before Submitting Findings\" section to require running verification after completing the gates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17e5c28b0e0681e56a8233cd8145a52225e0d18053d31538b3636f16016f415c"
+}

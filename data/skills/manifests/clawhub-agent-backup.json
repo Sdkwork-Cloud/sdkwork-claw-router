@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26146,
+  "uuid": "skill-clawhub-agent-backup",
+  "skillKey": "clawhub-agent-backup",
+  "name": "Openclaw Backup",
+  "summary": "Encrypted backup and restore for OpenClaw agents. Two-tier archives: operational data safe for cloud storage, secrets encrypted with age for local recovery....",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "Encrypted backup and restore for OpenClaw agents",
+        "Two-tier archives: operational data safe for cloud storage, secrets encrypted with age for loca."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-backup@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-backup",
+      "url": "https://clawhub.ai/skills/agent-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-backup",
+    "url": "https://clawhub.ai/skills/agent-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-backup-289269ebfd288777.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-backup@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-backup-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9acc51ba42fd6d2039ab25af3c8db7c1fe9e90581acbee30e7b3da93c069641e",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:34:12.735Z"
+}

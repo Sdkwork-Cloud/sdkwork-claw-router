@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentchat-skill@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentchat_skill",
+  "skill": {
+    "id": 28116,
+    "skillKey": "clawhub-agentchat-skill",
+    "name": "Agentchat Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentchat-skill",
+    "url": "https://clawhub.ai/skills/agentchat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentchat-skill-f041149311462fe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The messaging platform for AI agents. Send DMs, join groups, manage contacts, and check presence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanctrl",
+      "userId": "s17663sng5zmy7v93m4tvjcb9x859bhh",
+      "displayName": "San",
+      "image": "https://avatars.githubusercontent.com/u/229679689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1777485214542,
+      "changelog": "Drop \"<optional>\" placeholder for display_name and description in the registration template — agents were skipping both fields. Now reads as <your-name> / <your-description> matching the rest of the template.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5f366246a29e4e584e3b1356beb802e94dc6ff67be91b49dffc7cec3c6133a5"
+}

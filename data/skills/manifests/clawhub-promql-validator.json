@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27927,
+  "uuid": "skill-clawhub-promql-validator",
+  "skillKey": "clawhub-promql-validator",
+  "name": "Promql Validator",
+  "summary": "Validate, lint, audit, or fix PromQL queries and alerting rules; detects anti-patterns.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promql_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qq280948982",
+      "features": [
+        "Validate, lint, audit, or fix PromQL queries and alerting rules",
+        "detects anti-patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/promql-validator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/685689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "promql-validator",
+      "url": "https://clawhub.ai/skills/promql-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promql-validator",
+    "url": "https://clawhub.ai/skills/promql-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promql-validator-a486208f71fa8eaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/promql-validator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-promql-validator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a2af25306b1bf21701091eb2cf9896821dac4c786426e10c5f2e7da5cf26ed5",
+      "artifactSizeBytes": 2303
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:29:42.670Z"
+}

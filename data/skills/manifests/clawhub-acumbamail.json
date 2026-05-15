@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25623,
+  "uuid": "skill-clawhub-acumbamail",
+  "skillKey": "clawhub-acumbamail",
+  "name": "Acumbamail",
+  "summary": "Acumbamail integration. Manage data, records, and automate workflows. Use when the user wants to interact with Acumbamail data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acumbamail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Acumbamail integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Acumbamail data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acumbamail@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acumbamail",
+      "url": "https://clawhub.ai/skills/acumbamail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acumbamail",
+    "url": "https://clawhub.ai/skills/acumbamail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acumbamail-79f9e3b806ecba54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acumbamail@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-acumbamail-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:945762b308971b9ce06697a7222cd93db71bcb9f2a7b972551ba67fba196173e",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:15:26.247Z"
+}

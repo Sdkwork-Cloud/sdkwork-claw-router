@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27344,
+  "uuid": "skill-clawhub-meta-ads-collector-adarsh",
+  "skillKey": "clawhub-meta-ads-collector-adarsh",
+  "name": "Meta Ads Collector Adarsh",
+  "summary": "Collects active Meta ads for a brand, reporting total ads, formats, ad types, longest-running ad duration, and estimated spend if available.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_collector_adarsh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adarsh More",
+      "features": [
+        "Collects active Meta ads for a brand, reporting total ads, formats, ad types, longest-running a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta-ads-collector-adarsh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103880462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta-ads-collector-adarsh",
+      "url": "https://clawhub.ai/skills/meta-ads-collector-adarsh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-collector-adarsh",
+    "url": "https://clawhub.ai/skills/meta-ads-collector-adarsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-collector-adarsh-4767b3a13a8a4db6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta-ads-collector-adarsh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-ads-collector-adarsh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5538a085fc2a8b11018db4b0b01217a016d95f00726dd22bad3ed5546ff3f3d5",
+      "artifactSizeBytes": 2391
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:40:15.129Z"
+}

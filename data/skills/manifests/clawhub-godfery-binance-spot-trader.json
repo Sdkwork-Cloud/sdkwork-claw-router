@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44249,
+  "uuid": "skill-clawhub-godfery-binance-spot-trader",
+  "skillKey": "clawhub-godfery-binance-spot-trader",
+  "name": "binance-spot-trader",
+  "summary": "Autonomous Binance spot trading bot with LLM-powered market analysis. Supports momentum trading, mean reversion, and DCA strategies on any Binance spot pair....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godfery_binance_spot_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Autonomous Binance spot trading bot with LLM-powered market analysis",
+        "Supports momentum trading, mean reversion, and DCA strategies on any Binance spot pair...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/godfery-binance-spot-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "godfery-binance-spot-trader",
+      "url": "https://clawhub.ai/skills/godfery-binance-spot-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godfery-binance-spot-trader",
+    "url": "https://clawhub.ai/skills/godfery-binance-spot-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godfery-binance-spot-trader-3b546c6b9d5b050d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/godfery-binance-spot-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-godfery-binance-spot-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a1b82cb5e5fbf1a34f6e9154b5b73137e481d19fbfbf13f90a4e237f73d4cc3",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:17:26.427Z"
+}

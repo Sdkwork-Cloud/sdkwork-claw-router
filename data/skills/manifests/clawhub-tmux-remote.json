@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26815,
+  "uuid": "skill-clawhub-tmux-remote",
+  "skillKey": "clawhub-tmux-remote",
+  "name": "Tmux Remote",
+  "summary": "Automation skill for Tmux Remote.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmux_remote",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangzhifeng",
+      "features": [
+        "Automation skill for Tmux Remote."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tmux-remote@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84281124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tmux-remote",
+      "url": "https://clawhub.ai/skills/tmux-remote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmux-remote",
+    "url": "https://clawhub.ai/skills/tmux-remote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmux-remote-c959dca1d9107652.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tmux-remote@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tmux-remote-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:573acfbd8a92d5dbf271e0398fcc507512918ada4f4885b5120b3aec393bb6ef",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:34:02.632Z"
+}

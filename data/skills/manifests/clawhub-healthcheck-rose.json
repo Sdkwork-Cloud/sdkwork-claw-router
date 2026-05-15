@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40980,
+  "uuid": "skill-clawhub-healthcheck-rose",
+  "skillKey": "clawhub-healthcheck-rose",
+  "name": "Healthcheck Rose",
+  "summary": "Track water and sleep with JSON file storage",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthcheck_rose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "roseknife520",
+      "features": [
+        "Track water and sleep with JSON file storage"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthcheck-rose@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242541187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthcheck-rose",
+      "url": "https://clawhub.ai/skills/healthcheck-rose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthcheck-rose",
+    "url": "https://clawhub.ai/skills/healthcheck-rose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthcheck-rose-bbfda984ab0e6268.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthcheck-rose@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthcheck-rose-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e81e9f236d29e04983090f9e69b9fc80deef004fd66ae9e446c3fa395c5bb7c5",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:03:03.976Z"
+}

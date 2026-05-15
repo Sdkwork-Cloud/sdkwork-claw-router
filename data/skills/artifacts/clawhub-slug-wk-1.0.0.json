@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slug-wk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slug_wk",
+  "skill": {
+    "id": 31878,
+    "skillKey": "clawhub-slug-wk",
+    "name": "displayname-wk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slug-wk",
+    "url": "https://clawhub.ai/skills/slug-wk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slug-wk-25c3f605ed4ec466.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangkang5",
+      "userId": "s177c2ychjqgv6xmb5ntsr88q983h5fm",
+      "displayName": "wangkang5",
+      "image": "https://avatars.githubusercontent.com/u/10346955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773803554815,
+      "changelog": "Initial release of the Skill Creator guide.\n\n- Introduces structured instructions for creating effective skills to extend Claude's capabilities.\n- Details the anatomy of a skill, including required SKILL.md structure and optional bundled resources (scripts, references, assets).\n- Provides principles for concise context usage and progressive disclosure to minimize context window bloat.\n- Outlines content inclusion guidelines and best practices for splitting detailed information into references.\n- Explains degrees of freedom for workflows, with examples for high, medium, and low specificity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5bd5f08bee0fbaedf3754e908ad036c5643bb9463383fe0f92469b8386618da"
+}

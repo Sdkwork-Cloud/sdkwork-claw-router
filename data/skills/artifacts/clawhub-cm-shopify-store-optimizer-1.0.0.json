@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-shopify-store-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_shopify_store_optimizer",
+  "skill": {
+    "id": 47622,
+    "skillKey": "clawhub-cm-shopify-store-optimizer",
+    "name": "Shopify Store Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-shopify-store-optimizer",
+    "url": "https://clawhub.ai/skills/cm-shopify-store-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-shopify-store-optimizer-7b2b798cac9f4d5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Shopify stores end-to-end and produce a prioritized fix list to lift conversion rate, AOV, and SEO traffic. Diagnoses theme speed, product page anatomy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777679676245,
+      "changelog": "Shopify Store Optimizer skill, initial release:\n\n- Audits Shopify stores end-to-end and produces a prioritized fix list to optimize conversion rate, AOV, and SEO.\n- Diagnoses theme speed, product page structure, collections, cart/checkout friction, app bloat, mobile UX, and pricing/discount strategy.\n- Provides a five-layer audit covering speed, navigation, PDP, cart/checkout, and retention, with implementation notes specific to Shopify features and 2026 OS 2.0 patterns.\n- Triggered by common Shopify optimization and audit requests.\n- Delivers actionable, ranked recommendations with expected lift and effort estimates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48c9d7d3f851e8cf13f5852be8901f0cc1a510dc9ef9cb8c5b53ffb145dcdeaf"
+}

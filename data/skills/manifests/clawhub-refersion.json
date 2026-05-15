@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30545,
+  "uuid": "skill-clawhub-refersion",
+  "skillKey": "clawhub-refersion",
+  "name": "Refersion",
+  "summary": "Refersion integration. Manage Affiliates, Products, Offers. Use when the user wants to interact with Refersion data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.refersion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Refersion integration",
+        "Manage Affiliates, Products, Offers",
+        "Use when the user wants to interact with Refersion data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/refersion@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "refersion",
+      "url": "https://clawhub.ai/skills/refersion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "refersion",
+    "url": "https://clawhub.ai/skills/refersion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/refersion-c8c0da910becd9e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/refersion@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-refersion-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46e05c9bbb4e335ac5220ea66771edb4ccbfcf255de5c0f9a055da6dfb700d9b",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:32:51.366Z"
+}

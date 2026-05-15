@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18387,
+  "uuid": "skill-clawhub-slack-automator",
+  "skillKey": "clawhub-slack-automator",
+  "name": "Slack Automator",
+  "summary": "Automate Slack messaging, channels, and search with Block Kit. Use when sending scheduled messages, syncing channels, monitoring chats, notifying teams.",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_automator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Automate Slack messaging, channels, and search with Block Kit",
+        "Use when sending scheduled messages, syncing channels, monitoring chats, notifying teams."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-automator@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-automator",
+      "url": "https://clawhub.ai/skills/slack-automator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-automator",
+    "url": "https://clawhub.ai/skills/slack-automator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-automator-d652d0f5f1187c7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-automator@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-automator-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46778fce3929e3bfcbe3d91f8ee26764d4a734205f64ced47c543bf291b91f8b",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:24:50.391Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-cli-coding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_cli_coding",
+  "skill": {
+    "id": 52377,
+    "skillKey": "clawhub-agentic-cli-coding",
+    "name": "Agentic CLI Coding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-cli-coding",
+    "url": "https://clawhub.ai/skills/agentic-cli-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-cli-coding-59fe7951aed7acf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for any task that involves reading, understanding, searching, or modifying source code in a project — across JavaScript, TypeScript, Vue, Reac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "encryptshawn",
+      "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+      "displayName": "EncryptShawn",
+      "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777319691240,
+      "changelog": "- Initial release of agentic_cli_coding.\n- Provides the oce command: a safe, transaction-capable code editing toolkit supporting major languages.\n- Enables reading, searching, editing, refactoring, and multi-file changes across codebases.\n- Automatically validates syntax after edits and rolls back on failure.\n- Includes workflows for discovery, reading, editing, verification, and recovery.\n- Designed to safely replace raw sed/awk/perl-i for persistent codebase edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bebb3641947d246c9d0932b79c4bac4f5d8c944a2b387d88a1f453390a19b62"
+}

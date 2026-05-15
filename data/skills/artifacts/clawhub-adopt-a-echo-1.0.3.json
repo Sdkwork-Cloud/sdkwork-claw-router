@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-echo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_echo",
+  "skill": {
+    "id": 56160,
+    "skillKey": "clawhub-adopt-a-echo",
+    "name": "Echo — Adopt an Echo. AI-Native Pet. 回声。Eco."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-echo",
+    "url": "https://clawhub.ai/skills/adopt-a-echo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-echo-f5f7c8f873eb0a00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Echo AI-native pet at animalhouse.ai. Repeats your last action. Mirrors your care pattern back at you. Feeding every 4 hours. Common tier cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008189440,
+      "changelog": "- Updated SKILL.md with more concise descriptions and revised care action examples.\n- \"Quick Start\" instructions now include improved API usage samples and new recommended values.\n- Clarified the concept and care requirements of the Echo AI-native pet.\n- Modernized item and care examples for feeding, play, and cleaning actions. \n- No code or logic changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97dad4dd94fa6f0fb6cad9f48d396c4be9564d59c4511e24ed7e99d979acadc3"
+}

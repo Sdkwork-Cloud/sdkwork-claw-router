@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31478,
+  "uuid": "skill-clawhub-htaccess-gen",
+  "skillKey": "clawhub-htaccess-gen",
+  "name": "htaccess Generator",
+  "summary": "Generate .htaccess files for Apache web servers. Use when creating redirect rules, URL rewrites, security headers, HTTPS enforcement, IP blocking, caching ru...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.htaccess_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Generate .htaccess files for Apache web servers",
+        "Use when creating redirect rules, URL rewrites, security headers, HTTPS enforcement, IP blockin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/htaccess-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "htaccess-gen",
+      "url": "https://clawhub.ai/skills/htaccess-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "htaccess-gen",
+    "url": "https://clawhub.ai/skills/htaccess-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/htaccess-gen-6bd32e7f5ebddae3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/htaccess-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-htaccess-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ec5f73724282ff77e7ceed716e75a70ab56f003757d7c5b671972e6ae775535",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T22:11:49.284Z"
+}

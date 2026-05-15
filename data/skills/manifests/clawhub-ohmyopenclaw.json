@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21182,
+  "uuid": "skill-clawhub-ohmyopenclaw",
+  "skillKey": "clawhub-ohmyopenclaw",
+  "name": "ohmyopenclaw",
+  "summary": "AI-native configuration and setup guides for OpenClaw",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ohmyopenclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Z.Y. Ma",
+      "features": [
+        "AI-native configuration and setup guides for OpenClaw"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ohmyopenclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3449998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ohmyopenclaw",
+      "url": "https://clawhub.ai/skills/ohmyopenclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ohmyopenclaw",
+    "url": "https://clawhub.ai/skills/ohmyopenclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ohmyopenclaw-716b60b3d39c67b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ohmyopenclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ohmyopenclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97c94f565c10498ab0677006a242fcb30eed558438eb23ce0a0b3480a745e745",
+      "artifactSizeBytes": 1789
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:04:17.171Z"
+}

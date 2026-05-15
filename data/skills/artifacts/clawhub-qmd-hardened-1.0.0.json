@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmd-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_hardened",
+  "skill": {
+    "id": 49030,
+    "skillKey": "clawhub-qmd-hardened",
+    "name": "Qmd Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-hardened",
+    "url": "https://clawhub.ai/skills/qmd-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-hardened-234386cdd4293466.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local search/indexing CLI (BM25 + vectors + rerank) with MCP mode."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776945612909,
+      "changelog": "Initial release of qmd-hardened.\n\n- Provides a local search and indexing CLI for documents with BM25, vector, and hybrid search modes.\n- Features MCP mode for specialized operations.\n- Utilizes Ollama for embedding and rerank operations (local endpoint required).\n- Storage, index management, and search commands documented.\n- Enhanced with security guardrails: prevents leaking data, unsafe output handling, destructive actions without confirmation, and redacts sensitive content from search results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aaf0bb67b14e7b78cefe42bce72f17bb099b54c7784732a1d1996e9e78888dac"
+}

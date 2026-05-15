@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45371,
+  "uuid": "skill-clawhub-build-sentinel",
+  "skillKey": "clawhub-build-sentinel",
+  "name": "Sentinel",
+  "summary": "Security scanning and transaction simulation for Solana AI agents",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "buildsentinel-dev",
+      "features": [
+        "Security scanning and transaction simulation for Solana AI agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/build-sentinel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251857478?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "build-sentinel",
+      "url": "https://clawhub.ai/skills/build-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-sentinel",
+    "url": "https://clawhub.ai/skills/build-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-sentinel-cdcca8c58077ecb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/build-sentinel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-build-sentinel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4053dd6b33cf9a594c30815bb2695f6a8a5f3b53faaa30a70eaecabb240a6ed1",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T15:54:02.974Z"
+}

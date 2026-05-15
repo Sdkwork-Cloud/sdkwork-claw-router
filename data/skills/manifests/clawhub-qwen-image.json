@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8593,
+  "uuid": "skill-clawhub-qwen-image",
+  "skillKey": "clawhub-qwen-image",
+  "name": "Qwen Image",
+  "summary": "Generate images using Qwen Image API (Alibaba Cloud DashScope). Use when users request image generation with Chinese prompts or need high-quality AI-generated images from text descriptions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_image",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robin797860",
+      "features": [
+        "Generate images using Qwen Image API (Alibaba Cloud DashScope)",
+        "Use when users request image generation with Chinese prompts or need high-quality AI-generated."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwen-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199881117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwen-image",
+      "url": "https://clawhub.ai/skills/qwen-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-image",
+    "url": "https://clawhub.ai/skills/qwen-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-image-f38da3f9e2f1161a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwen-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwen-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d31e8508d75c8c164560c1eab00afd8921017405c5111ef92512c1e29d36845",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:25:38.231Z"
+}

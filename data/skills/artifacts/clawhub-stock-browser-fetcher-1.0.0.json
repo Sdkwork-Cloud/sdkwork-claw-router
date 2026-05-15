@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-browser-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_browser_fetcher",
+  "skill": {
+    "id": 69378,
+    "skillKey": "clawhub-stock-browser-fetcher",
+    "name": "Stock Browser Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-browser-fetcher",
+    "url": "https://clawhub.ai/skills/stock-browser-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-browser-fetcher-90317ed2c9cafdab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过浏览器控制实时抓取A股市场数据，支持东方财富、新浪财经等金融网站，绕过反爬机制。输出：上证/深证/创业板指数、北向资金、涨跌家数、涨停跌停数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774358486036,
+      "changelog": "Initial release – real-time A-share market data fetcher.\n\n- Real-time retrieval of Shanghai, Shenzhen, and ChiNext indices.\n- Bypasses anti-crawling mechanisms by controlling a browser.\n- Supports data sources: Eastmoney and Sina Finance.\n- Provides northbound capital flow, number of advancing/declining stocks, and limit-up/limit-down stats.\n- Outputs data in a structured JSON format for easy use in analysis and monitoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51819bc3bcbe180b2a20c6099fba9c08dadbd2b0e9e09fca9a10e8e0ac828395"
+}

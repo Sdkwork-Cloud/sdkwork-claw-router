@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feature-specification@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feature_specification",
+  "skill": {
+    "id": 14505,
+    "skillKey": "clawhub-feature-specification",
+    "name": "Feature Specification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feature-specification",
+    "url": "https://clawhub.ai/skills/feature-specification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feature-specification-d8eb8ea4acb5d1cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert persona docs into detailed feature specifications with acceptance criteria. Use when translating user needs into implementable specs, writing user stories, defining acceptance criteria, or preparing features for development."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770728642599,
+      "changelog": "- Initial release of the feature-specification skill.\n- Converts persona documentation into detailed, actionable feature specifications.\n- Provides a clear template for feature specs including user stories, acceptance criteria, dependencies, and scope.\n- Offers guidance on writing strong user stories and acceptance test patterns.\n- Introduces prioritization (MoSCoW) and highlights common specification anti-patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a0fae9c7d854f4c6a05abff662cedd183ee22a05feee16b0f04a41e6544bb98"
+}

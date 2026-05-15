@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content3@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content3",
+  "skill": {
+    "id": 15245,
+    "skillKey": "clawhub-content3",
+    "name": "Use the Content3 Agent API to create short-form videos, manage content libraries, submit reviews for human approval, and draft."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content3",
+    "url": "https://clawhub.ai/skills/content3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content3-3edb4af0a0f7c03b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Content3 API for creating videos, managing content, submitting reviews, and posting to social media."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dimitriharding",
+      "userId": "publishers:dimitriharding",
+      "displayName": "dimitriharding",
+      "image": "https://avatars.githubusercontent.com/u/12203794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1049,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771387436269,
+      "changelog": "- Version bumped from 1.0.3 to 1.0.4.\n  - Description — now reflects the full flow: generate, review, promote, draft, publish\n  - \"When To Use\" — added promote, publish, and review submission bullets                                               \n  - Missing endpoints — added POST /reviews, GET /reviews, GET /reviews/{id}, POST /reviews/{id}/comments\n  - Required Scopes — added reviews:read and reviews:write\n  - cURL Examples — added publish draft example",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:31e939a13ec1918c624a26acb8289d7391a4544ea5749b4d8a3c7366d9ebdecd"
+}

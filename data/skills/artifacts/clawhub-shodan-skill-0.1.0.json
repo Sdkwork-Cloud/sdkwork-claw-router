@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shodan-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shodan_skill",
+  "skill": {
+    "id": 26713,
+    "skillKey": "clawhub-shodan-skill",
+    "name": "Shodan Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shodan-skill",
+    "url": "https://clawhub.ai/skills/shodan-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shodan-skill-cbebb1e189d871f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced Shodan API interactions including search, scan, alerts, and DNS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dmcmurrin4617",
+      "userId": "publishers:dmcmurrin4617",
+      "displayName": "dmcmurrin4617",
+      "image": "https://avatars.githubusercontent.com/u/264227089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773470186354,
+      "changelog": "Initial release with advanced Shodan API usage and management tools.\n\n- Supports advanced search, scan, host details, and count queries, including facets/statistics.\n- Enables creation and management of network alerts and notifiers.\n- Provides DNS/domain lookups, exploit search, and access to account/profile tools.\n- Offers streaming of real-time Shodan data and directory (saved query) utilities.\n- Includes helper commands for search filters and data fields reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae6e79849bd64d87b2dda3235cb8739389515b54adffa4cd1e478923d095b241"
+}

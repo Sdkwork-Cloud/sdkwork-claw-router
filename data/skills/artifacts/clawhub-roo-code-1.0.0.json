@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roo-code@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roo_code",
+  "skill": {
+    "id": 59035,
+    "skillKey": "clawhub-roo-code",
+    "name": "Roo Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roo-code",
+    "url": "https://clawhub.ai/skills/roo-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roo-code-0d03cdda543c216d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Roo Code AI 编程助手，精通 VS Code 内 AI Agent、多模式切换、MCP 集成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774159013310,
+      "changelog": "Version 1.0.0 — Initial Release\n\n- Introduced Roo Code: a powerful AI programming agent inside VS Code, supporting autonomous multi-step workflows.\n- Supports file reading/writing with diff previews, terminal command execution, browser integration, and MCP server extension.\n- Features multiple work modes (Code, Architect, Ask, Debug) for different development tasks.\n- Allows teams to define custom roles and permissions via `.roomodes` files.\n- Integrates with multiple LLM providers (Anthropic, OpenAI, Google, DeepSeek, Ollama, OpenRouter).\n- Strong open-source alternative to tools like Copilot, Cursor, and Cline, with advanced agent capabilities and high extensibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7febde49da3ee6b71391c112436ca7b37626cf3fc06b48d34b7bbbf62f95514b"
+}

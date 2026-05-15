@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/karpathy-principles@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karpathy_principles",
+  "skill": {
+    "id": 61858,
+    "skillKey": "clawhub-karpathy-principles",
+    "name": "Karpathy编程四大原则"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karpathy-principles",
+    "url": "https://clawhub.ai/skills/karpathy-principles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karpathy-principles-afa96965b0065746.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI编程四大原则 - 源自Karpathy法则 (forrestchang/andrej-karpathy-skills 94.2k⭐)。用于在AI编程时强制执行先思考、保持简单、精准修改、目标驱动四大原则。适用于AI代码审查、代码生成、修复bug等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "534422530",
+      "userId": "s170k9770tgh0506hw0dwtb6pd83kwyq",
+      "displayName": "534422530",
+      "image": "https://avatars.githubusercontent.com/u/82763531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777346596935,
+      "changelog": "初始版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25d04a3569208b9999d11fe92b69d4b22172e510cdf714fc12f415c2dee8b83b"
+}

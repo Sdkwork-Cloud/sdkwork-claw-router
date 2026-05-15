@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-paper-citation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_paper_citation",
+  "skill": {
+    "id": 68675,
+    "skillKey": "clawhub-academic-paper-citation",
+    "name": "academic-paper-citation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-paper-citation",
+    "url": "https://clawhub.ai/skills/academic-paper-citation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-paper-citation-8210a7c45969d59b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学术论文引用自动化处理工具。用于处理中文学术论文（特别是硕士/博士论文）的引用管理工作，包括从Word文档提取内容并转换为Markdown、自动识别和提取参考文献列表、在论文正文中智能插入引用标记、将处理后的Markdown转换回Word格式、扩充论文字数以满足字数要求。适用于需要批量处理引用格式、整理参考文献、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codhealer",
+      "userId": "publishers:codhealer",
+      "displayName": "codhealer",
+      "image": "https://avatars.githubusercontent.com/u/12847644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774188571855,
+      "changelog": "Initial release of academic-paper-citation:\n\n- Automates citation management for Chinese academic papers (especially theses).\n- Supports conversion between Word (.docx) and Markdown formats.\n- Extracts and organizes reference lists from manuscripts.\n- Intelligently inserts citation markers into the main text.\n- Offers automated word count expansion to meet length requirements.\n- Provides command-line scripts for each core function and a step-by-step usage flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7823c74fab6d5940b20c87123a36023edcf597552cc053dc29669276f22f012f"
+}

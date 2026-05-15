@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19965,
+  "uuid": "skill-clawhub-recipe-save-email-attachments",
+  "skillKey": "clawhub-recipe-save-email-attachments",
+  "name": "Recipe Save Email Attachments",
+  "summary": "Find Gmail messages with attachments and save them to a Google Drive folder.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_save_email_attachments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Find Gmail messages with attachments and save them to a Google Drive folder."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-save-email-attachments@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-save-email-attachments",
+      "url": "https://clawhub.ai/skills/recipe-save-email-attachments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-save-email-attachments",
+    "url": "https://clawhub.ai/skills/recipe-save-email-attachments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-save-email-attachments-ac79efe01202ad87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-save-email-attachments@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-save-email-attachments-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3daf0f5b73323d3b729b9a8a6491a244864a555a0a820c562c4febf848c1ed56",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:56.396Z"
+}

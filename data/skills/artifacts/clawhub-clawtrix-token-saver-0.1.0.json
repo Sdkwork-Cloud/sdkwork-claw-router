@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtrix-token-saver@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrix_token_saver",
+  "skill": {
+    "id": 40954,
+    "skillKey": "clawhub-clawtrix-token-saver",
+    "name": "Token Saver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrix-token-saver",
+    "url": "https://clawhub.ai/skills/clawtrix-token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrix-token-saver-a4254b75c8a7d090.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reduce Claude API token consumption and track spending. Diagnoses waste patterns, recommends optimizations, and generates cost reports. Use when: (1) User as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicope",
+      "userId": "s179fztawqzy7eg8wde9vfe06n83v6g4",
+      "displayName": "nicobot",
+      "image": "https://avatars.githubusercontent.com/u/16653864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774987702204,
+      "changelog": "token-saver v0.1.0 (Initial release)\n\n- Introduces waste detection for Claude API usage, identifying costly patterns in agent configs and workflows.\n- Provides ranked, actionable cost-saving recommendations based on detected inefficiencies.\n- Adds safe configuration editing: always shows diffs and prompts for confirmation before applying file changes.\n- Offers quick, privacy-friendly cost reports using Anthropic usage data or local estimates.\n- Documentation includes detailed step-by-step instructions and model configuration tips for maximum savings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6abf3cc764bfbca9b23d0b7cda9582bee9a84cc10608a41519eb2b7fa998d7e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29022,
+  "uuid": "skill-clawhub-northbase",
+  "skillKey": "clawhub-northbase",
+  "name": "Northbase",
+  "summary": "Access and manage your persistent notes and workspace files via the Northbase CLI when you explicitly request reading, writing, listing, or syncing them.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.northbase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ethanbernheim-maker",
+      "features": [
+        "Access and manage your persistent notes and workspace files via the Northbase CLI when you expl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/northbase@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263874572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "northbase",
+      "url": "https://clawhub.ai/skills/northbase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "northbase",
+    "url": "https://clawhub.ai/skills/northbase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/northbase-9b217c5a11652b64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/northbase@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-northbase-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17d848125d7f31411523aaeaf60d66f869beb45721a117d75c282770c7f0dead",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:04:32.568Z"
+}

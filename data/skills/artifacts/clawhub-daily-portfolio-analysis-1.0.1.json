@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-portfolio-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_portfolio_analysis",
+  "skill": {
+    "id": 69218,
+    "skillKey": "clawhub-daily-portfolio-analysis",
+    "name": "Daily Portfolio Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-portfolio-analysis",
+    "url": "https://clawhub.ai/skills/daily-portfolio-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-portfolio-analysis-9321ef45342f4baf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日持仓分析技能。自动合并多个券商账户持仓，获取实时股价和汇率，生成包含仓位占比、当日涨跌、国籍/行业分类的完整分析报告。支持定时推送和对话式查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shengbinxu",
+      "userId": "publishers:shengbinxu",
+      "displayName": "大斌",
+      "image": "https://avatars.githubusercontent.com/u/3232275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773558736280,
+      "changelog": "- 文档简化，大幅精简了 SKILL.md，移除了详细安装、配置和常见问题说明。\n- 删除了 README.md 文件，所有说明合并至 SKILL.md。\n- SKILL.md 仅保留核心功能简介、主要步骤、示例报告等关键信息，去除了冗余指导和配置项说明。\n- 适用于希望快速了解和入门该技能的用户。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:987e574649885100298cc9b6acaa78acba2bb05e364dbb54943bc490e731776f"
+}

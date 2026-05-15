@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18127,
+  "uuid": "skill-clawhub-video-clip",
+  "skillKey": "clawhub-video-clip",
+  "name": "Video Clip",
+  "summary": "Use when the user wants to trim, cut, or extract a specific segment from a video by time range — e.g. \"cut from 1:30 to 3:00\", \"trim the first 2 minutes\", \"e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_clip",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BoShen",
+      "features": [
+        "Use when the user wants to trim, cut, or extract a specific segment from a video by time range.",
+        "\"cut from 1:30 to 3:00\", \"trim the first 2 minutes\", \"e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-clip@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14107297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-clip",
+      "url": "https://clawhub.ai/skills/video-clip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-clip",
+    "url": "https://clawhub.ai/skills/video-clip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-clip-5c8eaf7ea40df93a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-clip@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-clip-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97523394312b73d49296e86114c8089ceabf0719752d1a40058fdc36af9fbce4",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T08:10:10.025Z"
+}

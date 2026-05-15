@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_company",
+  "skill": {
+    "id": 70889,
+    "skillKey": "clawhub-apple-company",
+    "name": "Apple Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-company",
+    "url": "https://clawhub.ai/skills/apple-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-company-24bcb64b97ba3955.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球市值最高消费科技公司，凭借硬件高毛利和封闭生态驱动持续增长，服务业务贡献显著，品牌溢价及供应链优势显著。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 41,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778364263680,
+      "changelog": "- 首发版本，简介与定位清晰，覆盖苹果公司的基本信息与核心分析框架。\n- 增加详细历史时间线，突出关键产品及商业里程碑。\n- 分析苹果商业模式、生态护城河，揭示其盈利核心和竞争优势。\n- 提供2024年前后最新数据与有趣事实，便于一线研究和讨论使用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fad6a201c665dbb136e1fc7ff2792acfba12ea48edcfe134ca644a7093db125"
+}

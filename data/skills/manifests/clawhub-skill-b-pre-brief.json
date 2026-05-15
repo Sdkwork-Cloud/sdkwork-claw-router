@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67619,
+  "uuid": "skill-clawhub-skill-b-pre-brief",
+  "skillKey": "clawhub-skill-b-pre-brief",
+  "name": "skill-b-pre-brief",
+  "summary": "【会前简报定时任务】每15分钟由 OpenClaw cron 触发一次。负责在会议开始前15分钟至6小时内自动生成并发送会前进度简报。不处理会议创建、会议修改、取消会议、会后纪要等场景。触发关键词：会前简报、pre_brief、发简报、会前准备报告。cron 场景下自动触发，无需用户主动输入。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_b_pre_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myd2002",
+      "features": [
+        "【会前简报定时任务】每15分钟由 OpenClaw cron 触发一次。负责在会议开始前15分钟至6小时内自动生成并发送会前进度简报。不处理会议创建、会议修改、取消会议、会后纪要等场景。触发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-b-pre-brief@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165788146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-b-pre-brief",
+      "url": "https://clawhub.ai/skills/skill-b-pre-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-b-pre-brief",
+    "url": "https://clawhub.ai/skills/skill-b-pre-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-b-pre-brief-08f5f4c3833e78ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-b-pre-brief@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-b-pre-brief-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63000dfdb703313598fc018f4457d8de33557925d6341892799878376a6ec0d5",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T05:59:43.277Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41072,
+  "uuid": "skill-clawhub-agent-rule-pilot",
+  "skillKey": "clawhub-agent-rule-pilot",
+  "name": "Agent Rule Pilot",
+  "summary": "Say 'sync my agent configs' to write coding rules once and sync to Claude Code, Cursor, Copilot, Windsurf, and 4 more agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_rule_pilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SingYee",
+      "features": [
+        "Say 'sync my agent configs' to write coding rules once and sync to Claude Code, Cursor, Copilot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-rule-pilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266048725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-rule-pilot",
+      "url": "https://clawhub.ai/skills/agent-rule-pilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-rule-pilot",
+    "url": "https://clawhub.ai/skills/agent-rule-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-rule-pilot-23d9c11fbde2ccbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-rule-pilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-rule-pilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d21269fe25da3477acb2f1e28201a7ad88dfa9e4ab796062b19151f6576a3410",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T20:46:23.321Z"
+}

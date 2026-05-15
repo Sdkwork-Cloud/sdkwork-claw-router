@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openeuler-rpm@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openeuler_rpm",
+  "skill": {
+    "id": 60299,
+    "skillKey": "clawhub-openeuler-rpm",
+    "name": "openEuler RPM Packaging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openeuler-rpm",
+    "url": "https://clawhub.ai/skills/openeuler-rpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openeuler-rpm-7442f4bd33fa57cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🚨 openEuler 专项 RPM 打包规范。任何涉及 openEuler 打包的场景，都必须读取此技能。**openEuler 规则与通用 RPM 不同**：5 包拆分规则、专用 changelog 格式（Type/ID/SUG/DESC）、openEuler 专用宏、检视原则。不适用于其他发行版。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1777341462095,
+      "changelog": "Optimized SKILL.md: added trigger rules, skill selection guide, self-check mechanism",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa29e31cd9ce66a3b15e8278c5184465197a82d114e930b07d55640193062911"
+}

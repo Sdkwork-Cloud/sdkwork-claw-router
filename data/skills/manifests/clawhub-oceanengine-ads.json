@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67469,
+  "uuid": "skill-clawhub-oceanengine-ads",
+  "skillKey": "clawhub-oceanengine-ads",
+  "name": "巨量广告自动化投放技能 - LemClaw Skills",
+  "summary": "集成巨量引擎广告API，实现智能自动投放、预算优化、创意测试及实时监控，助力广告ROI最大化。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oceanengine_ads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AQzzzQA",
+      "features": [
+        "集成巨量引擎广告API，实现智能自动投放、预算优化、创意测试及实时监控，助力广告ROI最大化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oceanengine-ads@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19198855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oceanengine-ads",
+      "url": "https://clawhub.ai/skills/oceanengine-ads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oceanengine-ads",
+    "url": "https://clawhub.ai/skills/oceanengine-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oceanengine-ads-4895aaa570d034bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oceanengine-ads@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-oceanengine-ads-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:013dc7dd079a03d7bca12e18bcce10b129797b058b1a176ed4869ebe9faefdb1",
+      "artifactSizeBytes": 4914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T12:29:48.867Z"
+}

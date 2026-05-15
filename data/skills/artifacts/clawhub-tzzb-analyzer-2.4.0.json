@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tzzb-analyzer@2.4.0",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tzzb_analyzer",
+  "skill": {
+    "id": 64781,
+    "skillKey": "clawhub-tzzb-analyzer",
+    "name": "TZZB Analyzer - Tonghuashun Portfolio Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tzzb-analyzer",
+    "url": "https://clawhub.ai/skills/tzzb-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tzzb-analyzer-b59acf0c0b6246c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同花顺投资账本持仓分析工具。自动从同花顺投资账本读取持仓、自选股、交易记录，结合市场行情生成深度分析报告，支持板块分布、风险监控和阈值报警。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qcrcherry",
+      "userId": "s171a64rjrnwdmcr4p0yx4ygcn83kc2p",
+      "displayName": "qcrcherry",
+      "image": "https://avatars.githubusercontent.com/u/30142062?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.4.0",
+      "createdAt": 1774448800563,
+      "changelog": "v2.4.0: 报告重写——结论优先（买\\/持有\\/减\\/止损明确）、成本可视化、止损价透明、次日操作含具体价格、纪律自检清单",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f66e42487a5be04bc8672fc3dbeccae1ad80d02da07c8617effbeedf034b0f4"
+}

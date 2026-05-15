@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21289,
+  "uuid": "skill-clawhub-felo-web-extract",
+  "skillKey": "clawhub-felo-web-extract",
+  "name": "Felo Web Extract",
+  "summary": "Extract web page content from a URL using Felo Web Extract API. Use when users ask to scrape/capture/fetch webpage content, extract article text from URL, co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo_web_extract",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhiming",
+      "features": [
+        "Extract web page content from a URL using Felo Web Extract API",
+        "Use when users ask to scrape/capture/fetch webpage content, extract article text from URL, co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/felo-web-extract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48944224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "felo-web-extract",
+      "url": "https://clawhub.ai/skills/felo-web-extract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo-web-extract",
+    "url": "https://clawhub.ai/skills/felo-web-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-web-extract-da12037b2e2d48e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/felo-web-extract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-felo-web-extract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a81c99e919d4ba1a4943c8d28cf8715de1d24ed9af858e20c755bda09fa9b57d",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:19:54.715Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30091,
+  "uuid": "skill-clawhub-justoneapi-jd",
+  "skillKey": "clawhub-justoneapi-jd",
+  "name": "JD.com API",
+  "summary": "Analyze JD.com workflows with JustOneAPI, including product Details, product Comments, and shop Product List.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_jd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze JD.com workflows with JustOneAPI, including product Details, product Comments, and shop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-jd@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-jd",
+      "url": "https://clawhub.ai/skills/justoneapi-jd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-jd",
+    "url": "https://clawhub.ai/skills/justoneapi-jd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-jd-a3f0132a1ebdc132.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-jd@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-jd-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56359e9339faef9273bcc3c7d98be9c0a973aac5efb889d5c8b58c9ddc026983",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:07:39.316Z"
+}

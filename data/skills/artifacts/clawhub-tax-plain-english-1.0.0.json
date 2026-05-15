@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tax-plain-english@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tax_plain_english",
+  "skill": {
+    "id": 51830,
+    "skillKey": "clawhub-tax-plain-english",
+    "name": "Ask a Tax Nerd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tax-plain-english",
+    "url": "https://clawhub.ai/skills/tax-plain-english",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tax-plain-english-2f53f4d08cd64336.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user asks a tax question — even casual ones. Triggers include: questions about deductions, filing status, deadlines, refunds, W-2..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgereat",
+      "userId": "s17cebeyxd1598vfxm8vf1qgnn83zrpa",
+      "displayName": "HGereat",
+      "image": "https://avatars.githubusercontent.com/u/102898481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774970044337,
+      "changelog": "Initial release of tax-plain-english\n\n- Answers US federal tax questions in clear, direct language with minimal disclaimers.\n- Detects question type (concept, procedural, calculation, complex situation, or panic/problem) and formats the response for actionable help.\n- Covers common personal and small business tax issues (deductions, credits, self-employment, reporting, IRS notices, etc.).\n- Includes practical examples, relevant 2024 numbers, and specific action steps.\n- Always highlights the most important next step and flags when professional help is recommended.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cff60296b7f7827799b965b63bfe1ba4e961921d5feb61d79a0267564193685b"
+}

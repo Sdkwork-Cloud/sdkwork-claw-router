@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-alchemy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_alchemy",
+  "skill": {
+    "id": 33539,
+    "skillKey": "clawhub-content-alchemy",
+    "name": "Content Alchemy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-alchemy",
+    "url": "https://clawhub.ai/skills/content-alchemy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-alchemy-2d9fb2578825af17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn articles, web pages, PDFs, and excerpts into structured notes, key insights, practical actions, and reusable takeaways."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inf-lucas",
+      "userId": "s175mmm7vyds4m7sckts11fygs83m6qw",
+      "displayName": "INF-Lucas",
+      "image": "https://avatars.githubusercontent.com/u/179494206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774494000082,
+      "changelog": "Initial release of the Content Alchemy skill.\n\n- Transform articles, web pages, and PDFs into structured notes, insights, and actionable takeaways, going beyond plain summarization.\n- Supports three input types: plain text, web URLs, and PDF files, each with dedicated processing routes.\n- Introduces PDF reading session management with state handling, segmented reading, and checkpointing for long documents.\n- Provides clear instructions for handling text extraction failures and routing based on PDF page count.\n- Ensures all outputs are structured for reuse, retention, and practical action, rather than generic summaries.\n- English-source release published for both GitHub and ClawHub.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de8e1fe586c8364ec9f1fe4066997a880e0770d8d60bca775f7f3a950ad35c95"
+}

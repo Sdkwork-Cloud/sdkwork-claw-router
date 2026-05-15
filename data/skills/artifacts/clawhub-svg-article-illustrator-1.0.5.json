@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/svg-article-illustrator@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.svg_article_illustrator",
+  "skill": {
+    "id": 64379,
+    "skillKey": "clawhub-svg-article-illustrator",
+    "name": "Svg Article Illustrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "svg-article-illustrator",
+    "url": "https://clawhub.ai/skills/svg-article-illustrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/svg-article-illustrator-77ad024cb72b86e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI驱动的SVG文章配图生成工具，支持动态SVG、静态SVG和PNG导出三种输出模式。当用户需要为文章生成配图、创建SVG插图、将SVG转换为PNG，或提到\"为文章配图\"、\"生成插图\"时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cat-xierluo",
+      "userId": "s179ghx665dhgcsrdzyss2am0x83g7nf",
+      "displayName": "xierluo",
+      "image": "https://avatars.githubusercontent.com/u/66555304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774355294350,
+      "changelog": "AI驱动的SVG文章配图生成工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b16da0649c38e122748a0cd4e5f65ed0a0e9eb2815c9c5acb4eeec5a7cd3186"
+}

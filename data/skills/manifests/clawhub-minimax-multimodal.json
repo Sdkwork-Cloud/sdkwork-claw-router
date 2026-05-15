@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8909,
+  "uuid": "skill-clawhub-minimax-multimodal",
+  "skillKey": "clawhub-minimax-multimodal",
+  "name": "Minimax-Multimodal-Toolkit",
+  "summary": "Use mmx to generate text, images, video, speech, and music via the MiniMax AI platform. Use when the user wants to create media content, chat with MiniMax mo...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_multimodal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MiniMax-AI",
+      "features": [
+        "Use mmx to generate text, images, video, speech, and music via the MiniMax AI platform",
+        "Use when the user wants to create media content, chat with MiniMax mo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-multimodal@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192945411?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-multimodal",
+      "url": "https://clawhub.ai/skills/minimax-multimodal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-multimodal",
+    "url": "https://clawhub.ai/skills/minimax-multimodal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-multimodal-0ae7d05163d2f1ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-multimodal@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-multimodal-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:accaf599a98290768c23a71c64bf358bfc1f899a1318c2ffd4ea156efd295d2a",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:01:58.739Z"
+}

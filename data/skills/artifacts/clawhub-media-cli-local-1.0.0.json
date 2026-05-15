@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/media-cli-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_cli_local",
+  "skill": {
+    "id": 52848,
+    "skillKey": "clawhub-media-cli-local",
+    "name": "Media Cli Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-cli-local",
+    "url": "https://clawhub.ai/skills/media-cli-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-cli-local-a7da1a9bc9854e09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Single-file bash CLI for the *arr media stack. Manage Sonarr, Radarr, Prowlarr, qBittorrent, Bazarr, Jellyseerr, and Tdarr from the terminal or via AI agents..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "solomonneas",
+      "userId": "s175vcq9b774xbehtq2py4r5vn83f1k2",
+      "displayName": "Solomon Neas",
+      "image": "https://avatars.githubusercontent.com/u/41877493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774097334142,
+      "changelog": "Initial release of media-cli-local — a single-file Bash CLI for managing the *arr media stack locally:\n\n- Manage Sonarr, Radarr, Prowlarr, qBittorrent, Bazarr, Jellyseerr, and Tdarr from the terminal.\n- Local-only: All API calls to services on the same machine (no Docker, Node, or Python packages needed).\n- Quick setup via interactive wizard; config saved with secure permissions.\n- Clean, parseable output for seamless AI agent integration.\n- Bash and curl based, with standard Python3 used only for JSON parsing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55b5ae5bf923d32c95a3f725a71baa9f5ec654a3cd5535c47884b77adc20e461"
+}

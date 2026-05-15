@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11120,
+  "uuid": "skill-clawhub-clonev",
+  "skillKey": "clawhub-clonev",
+  "name": "Clonev",
+  "summary": "Clone any voice and generate speech using Coqui XTTS v2. SUPER SIMPLE - provide a voice sample (6-30 sec WAV) and text, get cloned voice audio. Supports 14+ languages. Use when the user wants to (1) Clone their voice or someone else's voic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clonev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "instant-picture",
+      "features": [
+        "Clone any voice and generate speech using Coqui XTTS v2",
+        "SUPER SIMPLE",
+        "provide a voice sample (6-30 sec WAV) and text, get cloned voice audio",
+        "Supports 14+ languages"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clonev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27382780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clonev",
+      "url": "https://clawhub.ai/skills/clonev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clonev",
+    "url": "https://clawhub.ai/skills/clonev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clonev-8b92629be00b0131.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clonev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clonev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61a8f7b5e2b43749c7c5b7f46d468ca0252ca0c7da55ef2fcf2e6dcf59efa296",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:42:37.606Z"
+}

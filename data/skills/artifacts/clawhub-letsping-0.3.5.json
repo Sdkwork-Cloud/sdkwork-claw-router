@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/letsping@0.3.5",
+  "version": "0.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.letsping",
+  "skill": {
+    "id": 23796,
+    "skillKey": "clawhub-letsping",
+    "name": "letsping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "letsping",
+    "url": "https://clawhub.ai/skills/letsping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/letsping-bec5bcc2c177cb3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Human-in-the-loop approval for high-risk agent actions (sudo protocol). Agent must call letsping_ask before destructive/financial/social/infra changes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cordialabsio",
+      "userId": "publishers:cordialabsio",
+      "displayName": "Cordia Maintainer",
+      "image": "https://avatars.githubusercontent.com/u/258105077?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.5",
+      "createdAt": 1772663452982,
+      "changelog": "- This version is now instruction only, no code or implementation is included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3487c5e3575cb53f5cb07a2f5a64273e039d09f6b2bc5ecb395e398276d7dcc7"
+}

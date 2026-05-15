@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14584,
+  "uuid": "skill-clawhub-scihub-paper-downloader",
+  "skillKey": "clawhub-scihub-paper-downloader",
+  "name": "Scihub Paper Downloader",
+  "summary": "Get a PDF link from Sci-Hub for a DOI.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scihub_paper_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "海雀",
+      "features": [
+        "Get a PDF link from Sci-Hub for a DOI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scihub-paper-downloader@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87893880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scihub-paper-downloader",
+      "url": "https://clawhub.ai/skills/scihub-paper-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scihub-paper-downloader",
+    "url": "https://clawhub.ai/skills/scihub-paper-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scihub-paper-downloader-032a66b85580ee99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scihub-paper-downloader@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-scihub-paper-downloader-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5ff0904e0690d6da51dc9fa0a211fc7bcd0301c917e8731c0e69b8facc6de6b",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T20:03:58.941Z"
+}

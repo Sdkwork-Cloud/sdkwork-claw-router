@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30109,
+  "uuid": "skill-clawhub-repo-guardian",
+  "skillKey": "clawhub-repo-guardian",
+  "name": "Repo Guardian",
+  "summary": "Automated GitHub PR review governance and repository maintenance automation. Use when reviewing pull requests with dual-model consensus, enforcing merge gate...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Corbin Breton",
+      "features": [
+        "Automated GitHub PR review governance and repository maintenance automation",
+        "Use when reviewing pull requests with dual-model consensus, enforcing merge gate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repo-guardian@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4294018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repo-guardian",
+      "url": "https://clawhub.ai/skills/repo-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-guardian",
+    "url": "https://clawhub.ai/skills/repo-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-guardian-5f5da8f02859e617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repo-guardian@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-repo-guardian-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4e9f14d7e66727ea23e6e72961c2ef9d433df6f6eb49f86c9fdaf756172a5d6",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:26:08.946Z"
+}

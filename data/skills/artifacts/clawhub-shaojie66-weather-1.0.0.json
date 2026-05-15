@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shaojie66-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shaojie66_weather",
+  "skill": {
+    "id": 41996,
+    "skillKey": "clawhub-shaojie66-weather",
+    "name": "Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shaojie66-weather",
+    "url": "https://clawhub.ai/skills/shaojie66-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shaojie66-weather-04341a69dfb03f43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaojie66",
+      "userId": "s17ehdnye7wd71cvdv60myvdws840w6c",
+      "displayName": "Shaojie66",
+      "image": "https://avatars.githubusercontent.com/u/73728610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775129925686,
+      "changelog": "- Initial release of the weather skill.\n- Provides current weather and forecasts for any location using wttr.in or Open-Meteo (no API key required).\n- Includes clear guidance on when to use and not use the skill.\n- Supports various output formats (one-liner, detailed, JSON, PNG).\n- Usage examples and format codes provided for quick integration.\n- Requires curl to function.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5de7a06c5464a49600018b11dae6b60c169028970a26819b34d2746fadfe98c"
+}

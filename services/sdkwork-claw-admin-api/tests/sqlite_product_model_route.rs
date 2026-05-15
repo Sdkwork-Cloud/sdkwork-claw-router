@@ -14,12 +14,9 @@ async fn sqlite_product_catalog_route_serves_real_backend_model_list() {
     let response = router
         .oneshot(
             Request::builder()
-                .method("POST")
-                .uri("/backend/v3/api/model/list")
-                .header("content-type", "application/json")
-                .body(Body::from(
-                    r#"{"apiKeyId":100,"billingMeter":"llm_input_token","vendorCode":"openai"}"#,
-                ))
+                .method("GET")
+                .uri("/backend/v3/api/ai/models?api_key_id=100&billing_meter=llm_input_token&vendor_code=openai")
+                .body(Body::empty())
                 .unwrap(),
         )
         .await

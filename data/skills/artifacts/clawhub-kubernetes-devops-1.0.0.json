@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kubernetes-devops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_devops",
+  "skill": {
+    "id": 9904,
+    "skillKey": "clawhub-kubernetes-devops",
+    "name": "Kubernetes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-devops",
+    "url": "https://clawhub.ai/skills/kubernetes-devops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-devops-24474de287672205.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WHAT: Kubernetes manifest generation - Deployments, StatefulSets, CronJobs, Services, Ingresses, ConfigMaps, Secrets, and PVCs with production-grade security and health checks. WHEN: User needs to create K8s manifests, deploy containers, c."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2912,
+      "installsAllTime": 23,
+      "installsCurrent": 22,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770727420945,
+      "changelog": "Initial release – production-ready Kubernetes manifest generation for DevOps workflows.\n\n- Supports generation for Deployments, StatefulSets, CronJobs, Services, Ingresses, ConfigMaps, Secrets, and PersistentVolumeClaims.\n- Built-in guidance for selecting appropriate workload/resource types and organization (Kustomize, file structure).\n- Production-focused security (securityContext, probes, resource limits) and health checks included in all samples.\n- Includes configuration for both internal (ClusterIP) and external (LoadBalancer, Ingress) service exposure.\n- Provides manifest examples, best practices, labels, and validation steps.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e66e22194ac2b6b6dd75c5c3bbb83ddbcdae1414e9917d2a42609fce2426f962"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52474,
+  "uuid": "skill-clawhub-agent-health-diagnostics",
+  "skillKey": "clawhub-agent-health-diagnostics",
+  "name": "Agent Health Diagnostics",
+  "summary": "Diagnose and fix the 4 most common OpenClaw agent failures — heartbeat spam, API rate limit cascades, channel death loops, and memory/embedding errors. Battl...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_health_diagnostics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agenthyjack",
+      "features": [
+        "Diagnose and fix the 4 most common OpenClaw agent failures — heartbeat spam, API rate limit cas.",
+        "Battl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-health-diagnostics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268943245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-health-diagnostics",
+      "url": "https://clawhub.ai/skills/agent-health-diagnostics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-health-diagnostics",
+    "url": "https://clawhub.ai/skills/agent-health-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-health-diagnostics-19ba036aa824d78f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-health-diagnostics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-health-diagnostics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:460fcdb6ef89f14002046260fcb1425b9ccb05524d76fbfb7cd90e739e9241ed",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:41:33.437Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30274,
+  "uuid": "skill-clawhub-tophant-clawvault-installer",
+  "skillKey": "clawhub-tophant-clawvault-installer",
+  "name": "Tophant Clawvault Installer",
+  "summary": "Install, configure, test, and uninstall ClawVault AI security proxy",
+  "version": "0.2.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tophant_clawvault_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ali0th",
+      "features": [
+        "Install, configure, test, and uninstall ClawVault AI security proxy"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tophant-clawvault-installer@0.2.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26109420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tophant-clawvault-installer",
+      "url": "https://clawhub.ai/skills/tophant-clawvault-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tophant-clawvault-installer",
+    "url": "https://clawhub.ai/skills/tophant-clawvault-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tophant-clawvault-installer-670660365e87ef28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tophant-clawvault-installer@0.2.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-tophant-clawvault-installer-0.2.12.json",
+      "version": "0.2.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b0eba1c16c64fd97d1f48a2acbae07651352785126dc6f3df56bba3f60d0eea",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:40:56.987Z"
+}

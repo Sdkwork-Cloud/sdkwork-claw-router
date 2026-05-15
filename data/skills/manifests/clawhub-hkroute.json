@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37314,
+  "uuid": "skill-clawhub-hkroute",
+  "skillKey": "clawhub-hkroute",
+  "name": "hkroute",
+  "summary": "Smart public transport routing for Hong Kong with real-time bus ETAs. Queries Google Maps for transit alternatives, enriches bus legs with live arrival times...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hkroute",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "7ito",
+      "features": [
+        "Smart public transport routing for Hong Kong with real-time bus ETAs",
+        "Queries Google Maps for transit alternatives, enriches bus legs with live arrival times..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hkroute@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41003728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hkroute",
+      "url": "https://clawhub.ai/skills/hkroute"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hkroute",
+    "url": "https://clawhub.ai/skills/hkroute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hkroute-bae57d0b849dc558.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hkroute@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hkroute-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a2d9f67cfc49ea96f2bd40787c23c37ced22f836ca340718ba27905ff282251",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:35:32.255Z"
+}

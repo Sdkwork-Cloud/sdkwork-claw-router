@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39511,
+  "uuid": "skill-clawhub-justoneapi-amazon-get-product-top-reviews",
+  "skillKey": "clawhub-justoneapi-amazon-get-product-top-reviews",
+  "name": "Amazon Product Top Reviews API",
+  "summary": "Call GET /api/amazon/get-product-top-reviews/v1 for Amazon Product Top Reviews through JustOneAPI with asin.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_amazon_get_product_top_reviews",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/amazon/get-product-top-reviews/v1 for Amazon Product Top Reviews through JustOneA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-amazon-get-product-top-reviews@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-amazon-get-product-top-reviews",
+      "url": "https://clawhub.ai/skills/justoneapi-amazon-get-product-top-reviews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-amazon-get-product-top-reviews",
+    "url": "https://clawhub.ai/skills/justoneapi-amazon-get-product-top-reviews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-amazon-get-product-top-reviews-38bff1c64a2fb97d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-amazon-get-product-top-reviews@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-amazon-get-product-top-reviews-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64f7621b0b92b2efb2587de1cd77e0f4fd213ee1ed09f0c77a15f00f20fe628a",
+      "artifactSizeBytes": 2575
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T15:12:01.699Z"
+}

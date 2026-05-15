@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cc-connect-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_connect_manager",
+  "skill": {
+    "id": 50604,
+    "skillKey": "clawhub-cc-connect-manager",
+    "name": "cc-connect-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-connect-manager",
+    "url": "https://clawhub.ai/skills/cc-connect-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-connect-manager-f6014606dee66153.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage cc-connect projects: add new projects to ~/.cc-connect/config.toml, set up multi-agent relay bindings, and restart cc-connect in tmux. Use when the us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zgq233333",
+      "userId": "publishers:zgq233333",
+      "displayName": "zgq233333",
+      "image": "https://avatars.githubusercontent.com/u/188547126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773215898582,
+      "changelog": "No changes detected in this version.\n\n- No file changes or updates to functionality. \n- Documentation and workflow remain consistent with the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c1f0f887e4521b7b087b67bcc844f90a36fbd992d3d31c7cabf88ed912c2098"
+}

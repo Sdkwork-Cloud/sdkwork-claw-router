@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36979,
+  "uuid": "skill-clawhub-ssa-word-docx",
+  "skillKey": "clawhub-ssa-word-docx",
+  "name": "Word Handler",
+  "summary": "Create, read, and edit Word documents (.docx) with support for templates, tables, and styling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_word_docx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "Create, read, and edit Word documents (.docx) with support for templates, tables, and styling."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssa-word-docx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssa-word-docx",
+      "url": "https://clawhub.ai/skills/ssa-word-docx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-word-docx",
+    "url": "https://clawhub.ai/skills/ssa-word-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-word-docx-e024b70344914d17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssa-word-docx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssa-word-docx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7469b44f3c2114afde169ddd658434bc3c11593d0ad54df269f0187427f694fa",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:44:14.423Z"
+}

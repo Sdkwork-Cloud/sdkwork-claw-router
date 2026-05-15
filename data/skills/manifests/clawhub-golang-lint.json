@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49011,
+  "uuid": "skill-clawhub-golang-lint",
+  "skillKey": "clawhub-golang-lint",
+  "name": "Golang Lint",
+  "summary": "Provides linting best practices and golangci-lint configuration for Go projects. Covers running linters, configuring .golangci.yml, suppressing warnings with...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_lint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samuel Berthe",
+      "features": [
+        "Provides linting best practices and golangci-lint configuration for Go projects",
+        "Covers running linters, configuring .golangci.yml, suppressing warnings with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golang-lint@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2951285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golang-lint",
+      "url": "https://clawhub.ai/skills/golang-lint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-lint",
+    "url": "https://clawhub.ai/skills/golang-lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-lint-d7a2b333e6998adb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golang-lint@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-golang-lint-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad7df905aeecf207ee418d779a42d2a797bbbaea1181090dac3685f3162b43fe",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T13:05:13.202Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-aggregators-api-service@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_aggregators_api_service",
+  "skill": {
+    "id": 30093,
+    "skillKey": "clawhub-lap-aggregators-api-service",
+    "name": "Lap Aggregators Api Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-aggregators-api-service",
+    "url": "https://clawhub.ai/skills/lap-aggregators-api-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-aggregators-api-service-b949310b4fba0b31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregators API Service API skill. Use when working with Aggregators API Service for podcast-bot, api, stats. Covers 61 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777888081191,
+      "changelog": "- Updated API authentication header to use X-Auth-Token instead of x-zeno-api-key or Bearer.\n- Updated API version reference from 0.78-ddd79bd to 0.80-ffcc0de.\n- Revised setup instructions to match new API key authentication method.\n- No changes to endpoints or endpoint coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5560c613ffa1f17f4b93cb0ab87d6e18b0cecc0783685ec11ba65aefa6753b58"
+}

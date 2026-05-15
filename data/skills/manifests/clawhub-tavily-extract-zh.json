@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63447,
+  "uuid": "skill-clawhub-tavily-extract-zh",
+  "skillKey": "clawhub-tavily-extract-zh",
+  "name": "tavily-extract-zh",
+  "summary": "通过 AISA Tavily 抽取接口从 URL 获取干净正文。触发条件：当用户已经有 URL，需要读取页面正文做总结、对比或证据审查时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_extract_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "通过 AISA Tavily 抽取接口从 URL 获取干净正文。触发条件：当用户已经有 URL，需要读取页面正文做总结、对比或证据审查时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-extract-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-extract-zh",
+      "url": "https://clawhub.ai/skills/tavily-extract-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-extract-zh",
+    "url": "https://clawhub.ai/skills/tavily-extract-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-extract-zh-dfd74071264b2ca3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-extract-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-extract-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5822e36b55921b57ad9681b8c7e2e9c468b10d3bb5de0c485a4afeb5fc12c4e",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T09:32:16.718Z"
+}

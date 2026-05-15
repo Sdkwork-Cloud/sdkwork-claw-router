@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-security-audit@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_security_audit",
+  "skill": {
+    "id": 22204,
+    "skillKey": "clawhub-ai-security-audit",
+    "name": "Ai Security Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-security-audit",
+    "url": "https://clawhub.ai/skills/ai-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-security-audit-1cf526ded3556427.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform a security audit on exposed AI service endpoints using OpenClaw threat intelligence. Trigger when the user says \"security audit\", \"audit my AI servic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leek-w",
+      "userId": "publishers:leek-w",
+      "displayName": "Leek-w",
+      "image": "https://avatars.githubusercontent.com/u/113423118?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773042970347,
+      "changelog": "- Initial release of ai-security-audit skill.\n- Performs structured security audits of exposed AI service endpoints leveraging OpenClaw threat intelligence.\n- Assesses six risk dimensions: authentication, credential exposure, data breach history, threat actor association, known CVEs, and network exposure.\n- Provides a detailed, structured security report and targeted remediation guidance.\n- Supports English and Chinese triggers for accessibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b16c812f124b6f5b0584cb163d7b6eb46911a515430ae070cb2ae98d8d03749"
+}

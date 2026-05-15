@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20803,
+  "uuid": "skill-clawhub-usage-tracker-clawhub",
+  "skillKey": "clawhub-usage-tracker-clawhub",
+  "name": "Usage Tracker",
+  "summary": "AI Agent usage tracking and billing verification tool",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usage_tracker_clawhub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeterWang",
+      "features": [
+        "AI Agent usage tracking and billing verification tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usage-tracker-clawhub@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194473111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usage-tracker-clawhub",
+      "url": "https://clawhub.ai/skills/usage-tracker-clawhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usage-tracker-clawhub",
+    "url": "https://clawhub.ai/skills/usage-tracker-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usage-tracker-clawhub-26525ed02e0d2a1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usage-tracker-clawhub@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-usage-tracker-clawhub-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:865ba711f114db96066dee900ac18ec84a2125a8808b1916890f1c2b5137fcd0",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:09:00.524Z"
+}

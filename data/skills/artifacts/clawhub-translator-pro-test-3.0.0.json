@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/translator-pro-test@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translator_pro_test",
+  "skill": {
+    "id": 20117,
+    "skillKey": "clawhub-translator-pro-test",
+    "name": "Translator Pro Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translator-pro-test",
+    "url": "https://clawhub.ai/skills/translator-pro-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translator-pro-test-b51c36d6499bc420.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test translation quality with built-in dictionaries and comparison tools. Use when evaluating translations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773930215487,
+      "changelog": "v3.0.0: rewrite",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bb5a2ed5a2dc4266cf7001c508fcd8a0416c80884882fa78a31101dee28d72e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72922,
+  "uuid": "skill-clawhub-cntrain-outline",
+  "skillKey": "clawhub-cntrain-outline",
+  "name": "编写企业客户培训大纲并生成DOCX文档",
+  "summary": "编写企业客户培训大纲并生成DOCX文档。触发关键词：编写培训大纲、写大纲、写课程大纲、编写培训大纲、写培训方案、写课程方案、课程大纲、培训课纲。当用户需要为商业培训、企业内训、公开课等场景撰写课程大纲/培训方案时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cntrain_outline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingyw",
+      "features": [
+        "编写企业客户培训大纲并生成DOCX文档。触发关键词：编写培训大纲、写大纲、写课程大纲、编写培训大纲、写培训方案、写课程方案、课程大纲、培训课纲。当用户需要为商业培训、企业内训、公开课等场景撰."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cntrain-outline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269189300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cntrain-outline",
+      "url": "https://clawhub.ai/skills/cntrain-outline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cntrain-outline",
+    "url": "https://clawhub.ai/skills/cntrain-outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cntrain-outline-00f04f75865ff3da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cntrain-outline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cntrain-outline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da3938da776ca4c701d1e4c809d338f7c4841d6fe9f3cc3b9c30becfc3193def",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:57:33.519Z"
+}

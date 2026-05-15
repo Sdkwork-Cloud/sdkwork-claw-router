@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62174,
+  "uuid": "skill-clawhub-byted-bytehouse-hybrid-search",
+  "skillKey": "clawhub-byted-bytehouse-hybrid-search",
+  "name": "Byted Bytehouse Hybrid Search",
+  "summary": "ByteHouse 混合检索 Skill，支持全文检索 + 向量检索，结合 RRF 重排算法实现更精准的检索结果。当用户需要在ByteHouse数据库中进行全文检索 + 向量检索，结合 RRF 重排算法实现更精准的检索结果时，使用此Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_bytehouse_hybrid_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "ByteHouse 混合检索 Skill，支持全文检索 + 向量检索，结合 RRF 重排算法实现更精准的检索结果。当用户需要在ByteHouse数据库中进行全文检索 + 向量检索，结合 RR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-bytehouse-hybrid-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-bytehouse-hybrid-search",
+      "url": "https://clawhub.ai/skills/byted-bytehouse-hybrid-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-bytehouse-hybrid-search",
+    "url": "https://clawhub.ai/skills/byted-bytehouse-hybrid-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-bytehouse-hybrid-search-6d93c967dc34de18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-bytehouse-hybrid-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-bytehouse-hybrid-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b96c9ae20dc16e20f546697c5747d7e92e3097a2386ce6c002ad7d8355c948ea",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:06:56.662Z"
+}

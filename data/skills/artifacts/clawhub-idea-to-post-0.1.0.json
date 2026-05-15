@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-to-post@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_to_post",
+  "skill": {
+    "id": 33219,
+    "skillKey": "clawhub-idea-to-post",
+    "name": "Idea To Post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-to-post",
+    "url": "https://clawhub.ai/skills/idea-to-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-to-post-fcbd73682fff642f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expand scattered ideas into in-depth posts. Use this skill when users need to \"expand ideas,\" \"generate posts,\" \"brainstorm content,\" \"writing assistance,\" \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akira82-ai",
+      "userId": "s17cs934n4xhqcyyw0dvsda7r183gxa2",
+      "displayName": "akira82-ai",
+      "image": "https://avatars.githubusercontent.com/u/201185414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773715421009,
+      "changelog": "Initial public release of the idea-to-post skill.\n\n- Expands scattered ideas into high-quality social media posts (90+ point standard)\n- Guides users through 7–10 rounds of progressive questioning (direction, deep dive, case studies, emotions, uniqueness)\n- Integrates automatic web searching to enrich ideas with background, data, and examples\n- Internalizes thinking frameworks for natural, guided questions (no jargon exposed)\n- Outputs content tailored for multiple social media platforms with structured formatting\n- Includes iterative polishing and optimization after content generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c287005a4b17cdfc888e4f760024d36d0f12ba6fe2eb3c4873843870bc86968"
+}

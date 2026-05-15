@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13368,
+  "uuid": "skill-clawhub-xml",
+  "skillKey": "clawhub-xml",
+  "name": "XML",
+  "summary": "Parse, generate, and transform XML with correct namespace handling and encoding.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xml",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Parse, generate, and transform XML with correct namespace handling and encoding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xml@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xml",
+      "url": "https://clawhub.ai/skills/xml"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xml",
+    "url": "https://clawhub.ai/skills/xml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xml-bf92a04e60b4b236.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xml@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xml-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68023432d389935661f56199c64d002f8c982ded530ce6fcf90fd9c3f5e9bb08",
+      "artifactSizeBytes": 1726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T01:12:31.777Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13544,
+  "uuid": "skill-clawhub-spend-pulse",
+  "skillKey": "clawhub-spend-pulse",
+  "name": "Spend Pulse",
+  "summary": "Proactive spending alerts via Plaid. Track credit card spending against a monthly budget with pace-based alerts.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spend_pulse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jbornhorst1524",
+      "features": [
+        "Proactive spending alerts via Plaid",
+        "Track credit card spending against a monthly budget with pace-based alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spend-pulse@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203846750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spend-pulse",
+      "url": "https://clawhub.ai/skills/spend-pulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spend-pulse",
+    "url": "https://clawhub.ai/skills/spend-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spend-pulse-f347315539f8b185.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spend-pulse@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-spend-pulse-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8ded40ff7f360f483053fcbc0ebbfde605d86eed48afacbe51306ae977569a36",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T17:16:23.348Z"
+}

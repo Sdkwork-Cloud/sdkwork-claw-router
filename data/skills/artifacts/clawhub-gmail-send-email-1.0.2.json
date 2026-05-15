@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gmail-send-email@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_send_email",
+  "skill": {
+    "id": 38259,
+    "skillKey": "clawhub-gmail-send-email",
+    "name": "Gmail Send Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-send-email",
+    "url": "https://clawhub.ai/skills/gmail-send-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-send-email-db2334d41350639e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atomic node skill to send an email via Gmail using the gog CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777263317333,
+      "changelog": "- Updated skill to use the gog CLI for sending emails via Gmail, instead of the GoogleWorkspace plugin.\n- Changed dependency from a plugin to the 'gog' binary.\n- Updated examples, usage, and expected output to reflect CLI-based email sending.\n- Revised description and schema to document the new approach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba9c2ea813a104c078e1f91944f7ac40579da28ffedd6df72e9f18a0b615a35d"
+}

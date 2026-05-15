@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15064,
+  "uuid": "skill-clawhub-twitter-api",
+  "skillKey": "clawhub-twitter-api",
+  "name": "Twitter API Integration (Web Reversed )",
+  "summary": "Cookie-based Twitter/X automation toolkit (timeline, notifications, posting, follow ops) for OpenClaw agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GAN12003",
+      "features": [
+        "Cookie-based Twitter/X automation toolkit (timeline, notifications, posting, follow ops) for Op."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twitter-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44467942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twitter-api",
+      "url": "https://clawhub.ai/skills/twitter-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-api",
+    "url": "https://clawhub.ai/skills/twitter-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-api-cbc8f5884b5c2440.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twitter-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twitter-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83527c4d630aee7bb95aeedfa34cac8ba331494d5df64102ddc81be653452162",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T20:05:54.892Z"
+}

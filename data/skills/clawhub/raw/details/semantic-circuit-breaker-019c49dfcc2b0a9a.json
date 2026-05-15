@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "semantic-circuit-breaker",
+    "displayName": "Semantic Circuit Breaker",
+    "summary": "Protect downstream services by monitoring semantic content quality and triggering circuit breaks based on semantic drift, inconsistency, factual errors, or t...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775082091301,
+    "updatedAt": 1777527054615
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775082091301,
+    "changelog": "Semantic Circuit Breaker 1.0.0\n\n- Initial release introducing a semantic-based circuit breaker for service protection.\n- Detects and reacts to issues like hallucinations, semantic drift, factual errors, and toxicity in API responses.\n- Utilizes \"semantic distance\" metrics (embedding comparison, variance, factuality) instead of traditional error rates.\n- Implements an extended three-state model (Closed, Open, Half-Open) driven by semantic quality, not just HTTP status codes.\n- Designed as a quality safeguard layer for LLM APIs and similar services.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "kingofzhao",
+    "userId": "s170jhyhajh4wd5e20y7r5mw2n83yyy9",
+    "displayName": "KingOfZhao",
+    "image": "https://avatars.githubusercontent.com/u/46547091?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527054615
+  }
+}

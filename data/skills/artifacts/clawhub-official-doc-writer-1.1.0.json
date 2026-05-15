@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/official-doc-writer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_doc_writer",
+  "skill": {
+    "id": 71670,
+    "skillKey": "clawhub-official-doc-writer",
+    "name": "中文公文写作技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-doc-writer",
+    "url": "https://clawhub.ai/skills/official-doc-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-doc-writer-81fc40de8019f515.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "党政机关公文生成技能，支持通知、报告、请示、函等公文类型，符合GB/T 9704-2012标准。当用户需要生成党政机关公文、创建正式文件、导出Word格式公文时调用。无论用户使用何种表述方式（如'帮我写个报告'、'生成一份通知'、'制作公文'等），只要涉及公文文档生成，都应使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wonderslife",
+      "userId": "publishers:wonderslife",
+      "displayName": "wonderslife",
+      "image": "https://avatars.githubusercontent.com/u/175682789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773583727349,
+      "changelog": "official-doc-writer v1.1.0 更新日志\n\n- 新增官方详细文档（SKILL.md），全面介绍功能、使用指南和技术细节。\n- 明确覆盖GB/T 9704-2012标准，支持通知、报告、请示、函等多种党政机关公文类型。\n- 强化对话引导模式，详细列出交互示范和智能提示系统。\n- 提供字体安装与验证的完整流程说明，确保生成公文页面规范。\n- 补充技术集成方法与公文格式规范，便于用户快速配置和使用本技能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5eed1916b8b04d88ef8e9461df73462a85aa1b906f73bd51c4476fce7d4a028"
+}

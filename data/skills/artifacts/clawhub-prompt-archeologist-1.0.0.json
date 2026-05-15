@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-archeologist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_archeologist",
+  "skill": {
+    "id": 35395,
+    "skillKey": "clawhub-prompt-archeologist",
+    "name": "Propmt Archeologist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-archeologist",
+    "url": "https://clawhub.ai/skills/prompt-archeologist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-archeologist-5c262448e27647d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reverse-engineers high-quality, reusable prompts from messy conversations, vague requests, or rough user descriptions. Use this skill whenever a user: wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goutham-nekkalapu",
+      "userId": "publishers:goutham-nekkalapu",
+      "displayName": "gn",
+      "image": "https://avatars.githubusercontent.com/u/15257214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773975750632,
+      "changelog": "Initial release of Prompt Archeologist — a skill for extracting high-quality reusable prompts from messy conversations or vague task descriptions.\n\n- Reverse-engineers clear prompts from unstructured user input or chat history.\n- Follows a workflow: excavate intent, clarify if needed, draft a portable/parameterized prompt, and explain reasoning in concise notes.\n- Always responds to cues like “make this a prompt”, “save this workflow”, or similar, even if “prompt” isn’t mentioned.\n- Provides prompts in a copy-friendly format with placeholders and best-use tips.\n- Includes excavation notes explaining signals used, any assumptions, and what to customize.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e8af26f54e7d871033305099760ef5e790e66ff1465347796690ff6ca5621d7"
+}

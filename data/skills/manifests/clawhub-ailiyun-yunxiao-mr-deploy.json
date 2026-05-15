@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72501,
+  "uuid": "skill-clawhub-ailiyun-yunxiao-mr-deploy",
+  "skillKey": "clawhub-ailiyun-yunxiao-mr-deploy",
+  "name": "阿里云云效创建MR+发布+通知（全可配置）",
+  "summary": "支持自定义分支/代码库创建MR、查询MR合并状态、按代码库+环境关键字触发发布流水线，并自动推送通知。支持自然语言输入，由大模型自动识别意图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ailiyun_yunxiao_mr_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FarbKuo",
+      "features": [
+        "支持自定义分支/代码库创建MR、查询MR合并状态、按代码库+环境关键字触发发布流水线，并自动推送通知。支持自然语言输入，由大模型自动识别意图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ailiyun-yunxiao-mr-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7587900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ailiyun-yunxiao-mr-deploy",
+      "url": "https://clawhub.ai/skills/ailiyun-yunxiao-mr-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ailiyun-yunxiao-mr-deploy",
+    "url": "https://clawhub.ai/skills/ailiyun-yunxiao-mr-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ailiyun-yunxiao-mr-deploy-2359e718be428a93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ailiyun-yunxiao-mr-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ailiyun-yunxiao-mr-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a49b229ab6d8b32fa9e28da2407567f5dad8c829499227c521408bbf85cdced",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:04:23.401Z"
+}

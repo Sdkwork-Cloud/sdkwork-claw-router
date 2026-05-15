@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asta-skill@0.2.7",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asta_skill",
+  "skill": {
+    "id": 27676,
+    "skillKey": "clawhub-asta-skill",
+    "name": "Asta Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asta-skill",
+    "url": "https://clawhub.ai/skills/asta-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asta-skill-bdd5528733ce4eb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Domain expertise for Ai2 Asta MCP tools (Semantic Scholar corpus). Intent-to-tool routing, safe defaults, workflow patterns, and pitfall warnings for academi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agents365-ai",
+      "userId": "s177ks88grnjrm2y5799tcjned83g880",
+      "displayName": "Agents365.ai",
+      "image": "https://avatars.githubusercontent.com/u/221161299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.7",
+      "createdAt": 1777005985942,
+      "changelog": "fix: use publication_date_range (was year=); condense update-notification block",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a85d5a6609aad96a6a687b0c9ecad46eec895d1cf07022f362146be10e832e1"
+}

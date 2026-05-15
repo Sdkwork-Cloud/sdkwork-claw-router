@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28650,
+  "uuid": "skill-clawhub-yummy-gen-image",
+  "skillKey": "clawhub-yummy-gen-image",
+  "name": "Yummy Gen Image",
+  "summary": "Use when the user wants to generate or edit raster images with Gemini through yummycli, including prompt-only generation, single-image editing, and multi-ima...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yummy_gen_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yummysource",
+      "features": [
+        "Use when the user wants to generate or edit raster images with Gemini through yummycli, includi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yummy-gen-image@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260192779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yummy-gen-image",
+      "url": "https://clawhub.ai/skills/yummy-gen-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yummy-gen-image",
+    "url": "https://clawhub.ai/skills/yummy-gen-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yummy-gen-image-7ea44dd5c0ee3dc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yummy-gen-image@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yummy-gen-image-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa6ccd6e00479585b37327dd6c7c8f1ec5b7f2c66156ce6f8ba53075ffdbb03c",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:53:51.731Z"
+}

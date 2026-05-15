@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-ipad@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_ipad",
+  "skill": {
+    "id": 43204,
+    "skillKey": "clawhub-ai-video-editor-ipad",
+    "name": "Ai Video Editor Ipad"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-ipad",
+    "url": "https://clawhub.ai/skills/ai-video-editor-ipad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-ipad-67818ebc7327e260.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute iPhone video clip into 1080p edited MP4 videos just by typing what you need. Whether it's editing iPhone and iPad footage into polished video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776101176102,
+      "changelog": "AI Video Editor for iPad — Version 1.0.0\n\n- Initial launch: instantly edit and export iPad/iPhone video clips with typed instructions, no timeline or export settings needed.\n- Seamless onboarding: free credits with anonymous token, automatic session creation, connection status updates.\n- Supports uploads of common video, audio, and image formats (mp4, mov, avi, mp3, png, etc.).\n- Exports 1080p MP4 videos rendered remotely on GPU, with typical turnaround in 1–2 minutes.\n- Natural language prompt handling for common actions: upload, export, balance, timeline state, and editing commands.\n- Clear feedback and error handling, automatic troubleshooting for credits, token expiration, or export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8dc5dc3c90a32cf7b534eff899af46267a0dd73c3879a08a5b85f7911adb8c9"
+}

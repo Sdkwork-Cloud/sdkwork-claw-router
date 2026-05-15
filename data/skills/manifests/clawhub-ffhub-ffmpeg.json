@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23225,
+  "uuid": "skill-clawhub-ffhub-ffmpeg",
+  "skillKey": "clawhub-ffhub-ffmpeg",
+  "name": "FFHub FFmpeg Skill",
+  "summary": "Process video/audio files using FFHub.io cloud FFmpeg API. Use when the user wants to convert, compress, trim, resize, extract audio, generate thumbnails, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffhub_ffmpeg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gangbo",
+      "features": [
+        "Process video/audio files using FFHub.io cloud FFmpeg API",
+        "Use when the user wants to convert, compress, trim, resize, extract audio, generate thumbnails,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ffhub-ffmpeg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1749700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ffhub-ffmpeg",
+      "url": "https://clawhub.ai/skills/ffhub-ffmpeg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffhub-ffmpeg",
+    "url": "https://clawhub.ai/skills/ffhub-ffmpeg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffhub-ffmpeg-c0176882b393fa7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ffhub-ffmpeg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ffhub-ffmpeg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c724a144a41ad27f22b6af9bd2069da0769306e0aa494581559b916a86893d0",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T02:31:16.978Z"
+}

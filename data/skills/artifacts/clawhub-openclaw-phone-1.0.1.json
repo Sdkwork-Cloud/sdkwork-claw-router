@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-phone@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_phone",
+  "skill": {
+    "id": 18533,
+    "skillKey": "clawhub-openclaw-phone",
+    "name": "Openclaw phone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-phone",
+    "url": "https://clawhub.ai/skills/openclaw-phone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-phone-c57f8c414dc0a750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use CallMyCall API to start, end, and check AI phone calls, and return results in chat. Use when the user asks to call someone, plan a future call, end a cal..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benjaminwaye",
+      "userId": "publishers:benjaminwaye",
+      "displayName": "Benjamin Waye",
+      "image": "https://avatars.githubusercontent.com/u/10989487?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 583,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773219925758,
+      "changelog": "**Changelog for openclaw-phone 1.0.1**\n\n- Clarified API key handling, emphasizing session-limited use and prohibiting automatic user config writes.\n- Added explicit section for `from_number` validation, requiring preflight verification with relevant endpoints.\n- Updated scheduling workflow to prohibit creating system schedulers (cron, launchd, etc) or background turns; skill may only prepare call plans for in-session execution.\n- Modified call results flow to treat transcripts and recordings as sensitive—display excerpts only upon explicit request, and warn about the sensitivity of recording URLs.\n- Added new metadata fields to SKILL.md (`primary_credential`, `required_env_vars`, `stores_credentials_in_user_config`, `requires_system_scheduler`).\n- Added `agents/openai.yaml` (details not included).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d43ea9665220dfe4be271875f720100a5947d6b5ba67c4bd00a4c2211dea25f"
+}

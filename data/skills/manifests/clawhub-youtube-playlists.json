@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11478,
+  "uuid": "skill-clawhub-youtube-playlists",
+  "skillKey": "clawhub-youtube-playlists",
+  "name": "Youtube Playlist Handler",
+  "summary": "Create and manage YouTube playlists. Use when user wants to create a playlist, add videos to playlists, or manage their YouTube playlists.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_playlists",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "matejmicek",
+      "features": [
+        "Create and manage YouTube playlists",
+        "Use when user wants to create a playlist, add videos to playlists, or manage their YouTube play."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-playlists@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35835815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-playlists",
+      "url": "https://clawhub.ai/skills/youtube-playlists"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-playlists",
+    "url": "https://clawhub.ai/skills/youtube-playlists",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-playlists-cf8ded37493d079b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-playlists@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-playlists-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b4dd52dfc8ab838547381f5ba49d124f579dff80952c176d89a5b9151b99f00",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T11:20:51.676Z"
+}

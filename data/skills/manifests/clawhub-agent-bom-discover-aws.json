@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28698,
+  "uuid": "skill-clawhub-agent-bom-discover-aws",
+  "skillKey": "clawhub-agent-bom-discover-aws",
+  "name": "agent-bom discover aws",
+  "summary": "Discover AWS-hosted AI agent and MCP-relevant assets from the operator's environment, emit canonical agent-bom inventory JSON, and scan it without giving age...",
+  "version": "0.86.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bom_discover_aws",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agent Bom",
+      "features": [
+        "Discover AWS-hosted AI agent and MCP-relevant assets from the operator's environment, emit cano."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-bom-discover-aws@0.86.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34316639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-bom-discover-aws",
+      "url": "https://clawhub.ai/skills/agent-bom-discover-aws"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bom-discover-aws",
+    "url": "https://clawhub.ai/skills/agent-bom-discover-aws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bom-discover-aws-1729c625f3801a0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-bom-discover-aws@0.86.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-bom-discover-aws-0.86.2.json",
+      "version": "0.86.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ee65f3c0b851fb5ff8f2dc4cf597bb15db3088b0c0b9d675c6a231cfda6d639",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:45:26.805Z"
+}

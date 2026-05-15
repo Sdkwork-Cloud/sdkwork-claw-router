@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prospect@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prospect",
+  "skill": {
+    "id": 24245,
+    "skillKey": "clawhub-prospect",
+    "name": "Prospect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prospect",
+    "url": "https://clawhub.ai/skills/prospect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prospect-40542f7e6b9ec165.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Filter raw target lists into prioritized prospects worth pursuing. Score fit, timing, value, and access. Route each target to pursue, research, watch, or drop."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "depinhq",
+      "userId": "publishers:depinhq",
+      "displayName": "depinHQ",
+      "image": "https://avatars.githubusercontent.com/u/216470578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773161446594,
+      "changelog": "Minor update for clarity and integration.\n\n- Clarified the workflow by specifying that after engagement, the `/lead` skill is used, and `/pipeline` manages active opportunities.\n- Updated documentation in the \"Prospect vs Lead\" section to reflect these workflow steps.\n- No changes to functionality or output format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51ab431cf9c9ef91f20424bb0d218c426708324cb75867e85a3779d2328de9a8"
+}

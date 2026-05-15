@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-art@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_art",
+  "skill": {
+    "id": 33336,
+    "skillKey": "clawhub-text-art",
+    "name": "Supports generating classic ASCII art and colorful emoji pixel art in various themes and styles."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-art",
+    "url": "https://clawhub.ai/skills/text-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-art-6ded9a69764300af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create text-based art (ASCII art) and emoji pixel art in various styles and themes. Use when user requests creating text art, ASCII art, emoji pixel illustra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roryyu",
+      "userId": "s1758ajva3qvv26wd3sh4da2p583gv5a",
+      "displayName": "Rory",
+      "image": "https://avatars.githubusercontent.com/u/740817?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775524155571,
+      "changelog": "- Initial release of the text-art skill.\n- Supports generating classic ASCII art and colorful emoji pixel art in various themes and styles.\n- Provides detailed usage guidelines and style selection tips.\n- Includes output standards ensuring all emoji art maintains consistent grid alignment.\n- Demonstrates multiple examples for animals, objects, and scenes for both ASCII and emoji pixel modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:060cc69533e0df6d464e7e1d0e7dd5cf210aa1edbc43d68526eb228725efe89e"
+}

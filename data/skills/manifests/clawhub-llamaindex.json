@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62597,
+  "uuid": "skill-clawhub-llamaindex",
+  "skillKey": "clawhub-llamaindex",
+  "name": "Llamaindex",
+  "summary": "LlamaIndex RAG 框架助手，精通文档索引、检索增强生成、向量存储、查询引擎",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llamaindex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "LlamaIndex RAG 框架助手，精通文档索引、检索增强生成、向量存储、查询引擎"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llamaindex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llamaindex",
+      "url": "https://clawhub.ai/skills/llamaindex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llamaindex",
+    "url": "https://clawhub.ai/skills/llamaindex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llamaindex-2086d0f715be4a4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llamaindex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llamaindex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c77eedbcf5f773ee36e4cfd24249444426b4febb19c4e17707da829448589c56",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:57:18.726Z"
+}

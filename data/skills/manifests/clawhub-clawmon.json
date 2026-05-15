@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20596,
+  "uuid": "skill-clawhub-clawmon",
+  "skillKey": "clawhub-clawmon",
+  "name": "ClawMon",
+  "summary": "Checks MCP skills for multi-tier trust scores, staking, sybil resistance, and attestation to guide secure skill usage decisions.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drewM33",
+      "features": [
+        "Checks MCP skills for multi-tier trust scores, staking, sybil resistance, and attestation to gu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmon@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149414976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmon",
+      "url": "https://clawhub.ai/skills/clawmon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmon",
+    "url": "https://clawhub.ai/skills/clawmon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmon-770602c532778fdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmon@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmon-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84988acd73d44dfa6b8cbcd846345b3d5fb8142d87b8082b8c2e7387aef572f8",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T12:12:52.843Z"
+}

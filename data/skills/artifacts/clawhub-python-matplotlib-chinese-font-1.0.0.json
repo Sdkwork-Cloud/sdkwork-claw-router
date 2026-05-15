@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python-matplotlib-chinese-font@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_matplotlib_chinese_font",
+  "skill": {
+    "id": 36599,
+    "skillKey": "clawhub-python-matplotlib-chinese-font",
+    "name": "Python Matplotlib Chinese Font"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-matplotlib-chinese-font",
+    "url": "https://clawhub.ai/skills/python-matplotlib-chinese-font",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-matplotlib-chinese-font-0f53dc9a1ea760a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure matplotlib to display Chinese by adding a Chinese font file with font_manager.addfont(), setting rcParams['font.family'], and disabling unicode_minus."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earl-chen",
+      "userId": "s170etqe9p9tr24vfks1skpdw5842ey0",
+      "displayName": "Earl-chen",
+      "image": "https://avatars.githubusercontent.com/u/29749997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775120966649,
+      "changelog": "初始发布 - 解决 matplotlib 中文显示问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bf3d577f390b629c709fe945a1fbacd878b63dc19cfb142a3ee775035ed9c90"
+}

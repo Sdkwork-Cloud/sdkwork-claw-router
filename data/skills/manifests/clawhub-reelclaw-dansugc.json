@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41029,
+  "uuid": "skill-clawhub-reelclaw-dansugc",
+  "skillKey": "clawhub-reelclaw-dansugc",
+  "name": "ReelClaw",
+  "summary": "Create, produce, and publish UGC-style short-form video reels at scale. Full pipeline: source UGC reaction hooks from DanSUGC, analyze app demos with Gemini...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reelclaw_dansugc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Hangan",
+      "features": [
+        "Create, produce, and publish UGC-style short-form video reels at scale",
+        "Full pipeline: source UGC reaction hooks from DanSUGC, analyze app demos with Gemini..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reelclaw-dansugc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42680899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reelclaw-dansugc",
+      "url": "https://clawhub.ai/skills/reelclaw-dansugc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reelclaw-dansugc",
+    "url": "https://clawhub.ai/skills/reelclaw-dansugc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reelclaw-dansugc-14d75751f8e615fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reelclaw-dansugc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reelclaw-dansugc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b2b8c0b0a8c2bc24a9924862762c7b649d864de38dcff9b3da2b00427fab55f",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T17:57:54.691Z"
+}

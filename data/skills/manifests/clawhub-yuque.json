@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54749,
+  "uuid": "skill-clawhub-yuque",
+  "skillKey": "clawhub-yuque",
+  "name": "Yuque",
+  "summary": "Manage Yuque (语雀) knowledge base documents and repositories. Use when users need to interact with Yuque for document operations including reading documents,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuque",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a6590072",
+      "features": [
+        "Manage Yuque (语雀) knowledge base documents and repositories",
+        "Use when users need to interact with Yuque for document operations including reading documents,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuque@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54519099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuque",
+      "url": "https://clawhub.ai/skills/yuque"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuque",
+    "url": "https://clawhub.ai/skills/yuque",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuque-756d35a74692c29a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuque@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuque-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7665a19435048f91ede6414e9fecb742dc72994ebe39edabd1117a8ef51f7da",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:35:30.795Z"
+}

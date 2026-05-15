@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-paper-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_paper_digest",
+  "skill": {
+    "id": 59655,
+    "skillKey": "clawhub-daily-paper-digest",
+    "name": "Daily Paper Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-paper-digest",
+    "url": "https://clawhub.ai/skills/daily-paper-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-paper-digest-0f308c1e3d638cb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日 AI 论文速递，自动聚合 arXiv 和 HuggingFace 的最新论文并推送到聊天应用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qjymary",
+      "userId": "publishers:qjymary",
+      "displayName": "QIN JIAYUE",
+      "image": "https://avatars.githubusercontent.com/u/83147133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1738,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771587246433,
+      "changelog": "- Initial release of daily-paper-digest.\n- Automatically aggregates the latest AI papers from arXiv and HuggingFace.\n- Supports formatted daily paper digests delivered to chat applications (Feishu, Slack, Discord, etc).\n- Includes tools for fetching daily papers, searching arXiv by topic, and getting top HuggingFace papers.\n- Provides customizable sources and filtering via config/sources.json.\n- Easy setup with clear installation and usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:775edb12033560af173e740cf965d1b197a5716c20d21551bd1dcc994374e098"
+}

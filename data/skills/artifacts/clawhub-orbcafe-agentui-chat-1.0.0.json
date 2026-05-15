@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orbcafe-agentui-chat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orbcafe_agentui_chat",
+  "skill": {
+    "id": 29682,
+    "skillKey": "clawhub-orbcafe-agentui-chat",
+    "name": "orbcafe-agentui-chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orbcafe-agentui-chat",
+    "url": "https://clawhub.ai/skills/orbcafe-agentui-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orbcafe-agentui-chat-62ddac2488b1056b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build ORBCAFE chat and copilot experiences with AgentPanel, StdChat, CopilotChat, ChatMessage typing flow, and AgentUICardHooks using official examples patte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenruiyang",
+      "userId": "s17e6bmx11wm3tn9bxz60qc4fh83gew1",
+      "displayName": "SHENRUIYANG",
+      "image": "https://avatars.githubusercontent.com/u/47732614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773581981762,
+      "changelog": "Skill scope updated to focus on AgentUI chat and copilot features using official example patterns.\n\n- Dedicated to building ORBCAFE chat and copilot UIs with components such as AgentPanel, StdChat, CopilotChat, and relevant hooks.\n- Old general integration and routing references removed; new, focused guides and recipes added for chat experiences.\n- Output contract redefined: requires explicit mode, guided component selection, minimal code, state shape, verification steps, and troubleshooting for chat interactions.\n- Examples and workflows clarified for streaming, card actions, and copilot behaviors, emphasizing observable process and debugging steps.\n- Installation baseline and example references updated for easier onboarding and validation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba63e3caa1e933d9a822c56407c3547a0d9d76c1a02821af4120b9daed414b8f"
+}

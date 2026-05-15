@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-quality-check@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_quality_check",
+  "skill": {
+    "id": 28110,
+    "skillKey": "clawhub-skill-quality-check",
+    "name": "Skill Quality Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-quality-check",
+    "url": "https://clawhub.ai/skills/skill-quality-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-quality-check-89d3c696d46a06a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quality audit for AI Agent Skills. Use before installing or after writing any SKILL.md. Scores 5 dimensions with actionable improvements. Works for skills wr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webkong",
+      "userId": "s179xn9kww2sjen2b82thk5rx183t79q",
+      "displayName": "Denny",
+      "image": "https://avatars.githubusercontent.com/u/10398591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774799863636,
+      "changelog": "v1.0.4: Unify naming - all references use Skill Quality Check consistently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dec520f4864fe8284768adcfd47290b8fe6938b2bfa8b48b49a6ff3e4b53323"
+}

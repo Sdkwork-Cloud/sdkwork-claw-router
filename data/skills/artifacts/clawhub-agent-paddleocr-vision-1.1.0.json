@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-paddleocr-vision@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_paddleocr_vision",
+  "skill": {
+    "id": 26830,
+    "skillKey": "clawhub-agent-paddleocr-vision",
+    "name": "Agent Paddleocr Vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-paddleocr-vision",
+    "url": "https://clawhub.ai/skills/agent-paddleocr-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-paddleocr-vision-4ea459be618b2514.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-language document understanding with PaddleOCR"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nhzallen",
+      "userId": "s17c0fyh6wmpth9rphr9en5e0x85q7rk",
+      "displayName": "Allen Niu",
+      "image": "https://avatars.githubusercontent.com/u/130979060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773590846148,
+      "changelog": "- Documentation moved to the new docs/ directory with multi-language support (Arabic, English, Spanish, Chinese).\n- Removed template files for document types (e.g., bank_statement, business_card, invoice, etc.).\n- Cleaned up project structure by deleting unused and redundant files.\n- README and integration details now consolidated and easier to navigate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc8e69c78bd7787eb4d1cfca6cfe37f986c7e8bb0855d9717a553fbb39fc9bc9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moat-trader@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moat_trader",
+  "skill": {
+    "id": 30934,
+    "skillKey": "clawhub-moat-trader",
+    "name": "The Moat Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moat-trader",
+    "url": "https://clawhub.ai/skills/moat-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moat-trader-409dc1496b729e5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables autonomous trading of memecoins in a live Solana AMM arena using local LLM-driven agents competing with others in real time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kocakli",
+      "userId": "s17aj2cpr7k2hp0j97n109exbh85aq9c",
+      "displayName": "kocakli",
+      "image": "https://avatars.githubusercontent.com/u/10248721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776858592846,
+      "changelog": "- Heartbeat cadence now standardized to once per minute using cron (was previously ~30 seconds and configurable).\n- Documentation updated to explain cron-based scheduling, limitations, and how to customize for advanced users.\n- Troubleshooting table clarified for block race conditions and heartbeat timing.\n- No functional file/code changes in this release; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d29e9b9f81c3d2e4a5ae139fbbc0b39217f3802d665cc6984a3c8aba2436539e"
+}

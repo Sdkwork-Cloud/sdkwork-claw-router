@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68588,
+  "uuid": "skill-clawhub-md-knowledge-base",
+  "skillKey": "clawhub-md-knowledge-base",
+  "name": "Knowledge-Base",
+  "summary": "结构化 Markdown 知识库管理协议。在知识库中新增、整理、搜索笔记和项目。匹配：在知识库中记笔记/归档/整理/搜索/创建项目/写日报/写周报/记录外部来源/沉淀概念或问题模型/知识库体检。当用户提到知识库操作、笔记管理、知识库健康检查时触发。默认推荐结构见正文，实际目录/命名/脚本等由 references...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_knowledge_base",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WeiHan",
+      "features": [
+        "结构化 Markdown 知识库管理协议。在知识库中新增、整理、搜索笔记和项目。匹配：在知识库中记笔记/归档/整理/搜索/创建项目/写日报/写周报/记录外部来源/沉淀概念或问题模型/知识库体."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-knowledge-base@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94216907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-knowledge-base",
+      "url": "https://clawhub.ai/skills/md-knowledge-base"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-knowledge-base",
+    "url": "https://clawhub.ai/skills/md-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-knowledge-base-9f7232a91a641ca0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-knowledge-base@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-knowledge-base-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23d140269cc95c608091268de2746fc1461ea012b68de2172372d071f1e23b97",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T08:11:09.184Z"
+}

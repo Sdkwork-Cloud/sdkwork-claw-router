@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screen-vision@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_vision",
+  "skill": {
+    "id": 15969,
+    "skillKey": "clawhub-screen-vision",
+    "name": "Screen Vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-vision",
+    "url": "https://clawhub.ai/skills/screen-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-vision-e17111956c6f6759.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "macOS screen OCR & click automation via Apple Vision + ScreenCaptureKit. Capture any window or screen region, extract text with coordinates, find text, and c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackyun1024",
+      "userId": "publishers:jackyun1024",
+      "displayName": "Jack Yun",
+      "image": "https://avatars.githubusercontent.com/u/8231268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 895,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773995639524,
+      "changelog": "setup.sh now downloads pre-built binary on Apple Silicon (no Xcode/brew required)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e33b9d67135358fa8a0f7ad40ba32c800963e28156c77a1d15e00c5ca540d58"
+}

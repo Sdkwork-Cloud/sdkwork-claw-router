@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36008,
+  "uuid": "skill-clawhub-clawhub-plugin-packager",
+  "skillKey": "clawhub-clawhub-plugin-packager",
+  "name": "ClawHub Plugin Packager",
+  "summary": "Generate, repair, or audit publish-ready native OpenClaw/ClawHub plugin packages from rough, partial, or inconsistent requirements while keeping the plugin z...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_plugin_packager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christopher L Haynes",
+      "features": [
+        "Generate, repair, or audit publish-ready native OpenClaw/ClawHub plugin packages from rough, pa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-plugin-packager@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130129909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-plugin-packager",
+      "url": "https://clawhub.ai/skills/clawhub-plugin-packager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-plugin-packager",
+    "url": "https://clawhub.ai/skills/clawhub-plugin-packager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-plugin-packager-3d5c3dc1ffe2d1ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-plugin-packager@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-plugin-packager-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a7227d42d687b8b495af1ee202b838b3010d38634a987fa2abbdc00c03a1038",
+      "artifactSizeBytes": 2658
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T15:47:52.025Z"
+}

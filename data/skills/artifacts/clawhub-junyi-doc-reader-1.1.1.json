@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/junyi-doc-reader@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junyi_doc_reader",
+  "skill": {
+    "id": 61217,
+    "skillKey": "clawhub-junyi-doc-reader",
+    "name": "Junyi Doc Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junyi-doc-reader",
+    "url": "https://clawhub.ai/skills/junyi-doc-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junyi-doc-reader-69535c9cb0c43ebf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "大文档归档与检索管线（v5）。支持本地文件（Word/PDF/TXT/Markdown）和飞书云文档，转换、分块、可选 LLM 增强，输出结构化 Markdown 和索引，存入 Obsidian。触发词：读大文档、归档文档、junyi-doc-reader、doc-reader、文档索引、帮我读这个PDF、把文档..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuanranc",
+      "userId": "s17af5873bwadys51t8kxprvwh8572s7",
+      "displayName": "XuanranC",
+      "image": "https://avatars.githubusercontent.com/u/263349330?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778124115607,
+      "changelog": "v1.1.1: Security & Privacy documentation (no functional changes)\nThis release adds explicit security and privacy disclosures to address how the\nSkill handles two capabilities flagged as high-risk by automated security scans:\nlocal credential access (Feishu) and optional external LLM communication.\nWhat's new:\n- scripts/feishu_fetcher.py: Added SECURITY & PRIVACY DISCLOSURE block\n  explaining credential scope (only channels.feishu.accounts[].appId/appSecret),\n  in-memory-only usage, and the network egress allowlist (open.feishu.cn only).\n- scripts/enricher.py: Added SECURITY & PRIVACY DISCLOSURE block clarifying\n  that LLM enrichment is OPT-IN and OFF BY DEFAULT, requires four explicit\n  env vars to activate, has no hardcoded production endpoint, and that the\n  base archive+index pipeline runs entirely offline.\n- SKILL.md: Added a new \"Security & Privacy\" section documenting the three\n  capability classes (local credential access / external LLM egress / file\n  system writes) with a summary table of default behaviors and how to enable\n  each one.\nWhat did NOT change:\n- No code logic changes. No new dependencies. No new network endpoints.\n- All existing CLI arguments, env vars, output formats, and behavior are\n  preserved. v1.1.1 is a drop-in replacement for v1.1.0.\nBackward compatibility: 100%. Users on v1.1.0 can upgrade safely.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e463d1db14fb4a43725ebda9a5a6af30c17186f88049eb0ed24ad3d4132892d"
+}

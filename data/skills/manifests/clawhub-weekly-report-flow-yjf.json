@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40621,
+  "uuid": "skill-clawhub-weekly-report-flow-yjf",
+  "skillKey": "clawhub-weekly-report-flow-yjf",
+  "name": "Weekly Report Flow Yjf",
+  "summary": "Generate and submit weekly reports from Aliyun DevOps workitems via EMOP API. Use when asked to run the weekly report flow, backfill missing weeks, or explai...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_flow_yjf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaojiangfeng",
+      "features": [
+        "Generate and submit weekly reports from Aliyun DevOps workitems via EMOP API",
+        "Use when asked to run the weekly report flow, backfill missing weeks, or explai..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-report-flow-yjf@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67375195?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-report-flow-yjf",
+      "url": "https://clawhub.ai/skills/weekly-report-flow-yjf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-flow-yjf",
+    "url": "https://clawhub.ai/skills/weekly-report-flow-yjf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-flow-yjf-386ff1b0e905b6e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-report-flow-yjf@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-report-flow-yjf-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed4ba078ff29f9f5a27549d49041a053b99cc1abbbcd5fece217a6979e474bea",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:41:55.977Z"
+}

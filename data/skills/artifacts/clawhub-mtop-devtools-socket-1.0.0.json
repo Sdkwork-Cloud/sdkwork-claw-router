@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mtop-devtools-socket@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mtop_devtools_socket",
+  "skill": {
+    "id": 60240,
+    "skillKey": "clawhub-mtop-devtools-socket",
+    "name": "mtop-devtools-socket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mtop-devtools-socket",
+    "url": "https://clawhub.ai/skills/mtop-devtools-socket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mtop-devtools-socket-bc717bb6b9029e54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过本地 socket 调用 Mtop DevTools 浏览器插件能力（获取请求/日志/埋点、设置 mock、获取 API schema、代理 HTTP 请求、浏览器操作与页面感知）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "f-loat",
+      "userId": "s17dt1mc3zwj71wjep4tdjwbnn84r74s",
+      "displayName": "徒言",
+      "image": "https://avatars.githubusercontent.com/u/16759376?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776061882346,
+      "changelog": "- Initial release of mtop-devtools-socket skill.\n- Enables local socket integration with Mtop DevTools browser extension: fetch requests/logs/events, set mocks, manage API schemas, proxy HTTP requests, and perform browser interactions.\n- Provides detailed usage guidance, supported commands, and example operations for API debugging, mocking, request rules, page actions, and browser context awareness.\n- Includes references for usage examples, API parameters, and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e1c5b425d56d18c4d87815214be12c6e481c1ca81b8e316b41d708984cae8f8"
+}

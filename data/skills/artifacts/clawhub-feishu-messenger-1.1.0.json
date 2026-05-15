@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-messenger@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_messenger",
+  "skill": {
+    "id": 68743,
+    "skillKey": "clawhub-feishu-messenger",
+    "name": "Feishu Messenger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-messenger",
+    "url": "https://clawhub.ai/skills/feishu-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-messenger-4dc01d1a7639b177.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过飞书频道发送文本、图片和多格式文件消息，支持私聊和群聊，需使用相对路径提供媒体文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanl754",
+      "userId": "s173k30k9pte387kbb0b8e16ad83rvn8",
+      "displayName": "hanl754",
+      "image": "https://avatars.githubusercontent.com/u/8143555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773460696769,
+      "changelog": "Complete guide for sending messages/images/files to Feishu with relative path support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2f2c88dc6e144bc34e5e6843cfd46d93eb4b5f45a64fd07ff0e8c7bb421a655"
+}

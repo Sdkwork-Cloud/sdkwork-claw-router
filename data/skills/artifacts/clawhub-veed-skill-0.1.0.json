@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/veed-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veed_skill",
+  "skill": {
+    "id": 29443,
+    "skillKey": "clawhub-veed-skill",
+    "name": "Veed Fabric"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veed-skill",
+    "url": "https://clawhub.ai/skills/veed-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veed-skill-d39800a5a830a406.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate talking head videos from a photo using VEED Fabric 1.0. Triggers on mentions of \"veed\", \"fabric\", or \"talking video\". Turns a headshot + audio or te..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattdotroberts",
+      "userId": "publishers:mattdotroberts",
+      "displayName": "mattdotroberts",
+      "image": "https://avatars.githubusercontent.com/u/6546988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773668461183,
+      "changelog": "veed-fabric 0.1.0 — Initial release\n\n- Generate lip-synced talking head videos from a single photo using VEED Fabric and fal.ai.\n- Activates on trigger phrases like \"veed\", \"fabric\", \"talking video\", or \"animate my photo\".\n- Supports both photo + audio lip-sync and photo + text-to-speech video generation workflows.\n- Requires FAL_KEY environment variable for API access, with clear instructions if missing.\n- Modular documentation: detailed guides for lip-sync, text-to-video, file uploads, queue management, output handling, and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35ab9dada339a7958df3b155e5e252b8000ca783abcb813055d6126a2f203c2d"
+}

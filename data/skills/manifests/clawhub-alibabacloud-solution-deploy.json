@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40367,
+  "uuid": "skill-clawhub-alibabacloud-solution-deploy",
+  "skillKey": "clawhub-alibabacloud-solution-deploy",
+  "name": "Alibabacloud Solution Deploy",
+  "summary": "Deploy Alibaba Cloud official tech solutions. Trigger when the user mentions an Alibaba Cloud solution, pastes a solution URL (aliyun.com/solution/tech-solut...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_solution_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Deploy Alibaba Cloud official tech solutions",
+        "Trigger when the user mentions an Alibaba Cloud solution, pastes a solution URL (aliyun.com/sol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-solution-deploy@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-solution-deploy",
+      "url": "https://clawhub.ai/skills/alibabacloud-solution-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-solution-deploy",
+    "url": "https://clawhub.ai/skills/alibabacloud-solution-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-solution-deploy-5ba3882f7e7c8daa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-solution-deploy@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-solution-deploy-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:286b4219f0382985c6faeaf84b697c4b10aa11b57aaf1cf093cf86b5c2abe90f",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T05:42:33.949Z"
+}

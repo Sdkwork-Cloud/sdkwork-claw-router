@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clickup-api@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickup_api",
+  "skill": {
+    "id": 8412,
+    "skillKey": "clawhub-clickup-api",
+    "name": "ClickUp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickup-api",
+    "url": "https://clawhub.ai/skills/clickup-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickup-api-d8b21c151b42a878.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClickUp API integration with managed OAuth. Access tasks, lists, folders, spaces, workspaces, users, and manage webhooks. Use this skill when users want to m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 17163,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 11,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777593970005,
+      "changelog": "No changes detected in this version.\n\n- Version updated to 1.0.5, but no file or documentation changes are present.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d5561367358a1b185387398b13616ae79dd50e005b50bb360cfde2420becea8"
+}

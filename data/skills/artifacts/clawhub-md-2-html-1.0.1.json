@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-2-html@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_2_html",
+  "skill": {
+    "id": 44149,
+    "skillKey": "clawhub-md-2-html",
+    "name": "Markdown to HTML Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-2-html",
+    "url": "https://clawhub.ai/skills/md-2-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-2-html-37a8d9d677b1bc79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown files to formatted HTML. Use when the user asks to convert, export, or save a Markdown file as HTML format. Triggers on phrases like \"conver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankxpj",
+      "userId": "s177gvj0kgrw0065af9q2kh2v583hxm9",
+      "displayName": "frankxpj",
+      "image": "https://avatars.githubusercontent.com/u/100115985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777123811318,
+      "changelog": "Fix: removed lookbehind regex for Node.js v12 compatibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:543c874f020e202187632f11e93c78a08feb6871bf1a36e09e52db4da88c5a96"
+}

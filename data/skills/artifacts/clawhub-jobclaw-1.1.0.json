@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jobclaw@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobclaw",
+  "skill": {
+    "id": 30389,
+    "skillKey": "clawhub-jobclaw",
+    "name": "Job Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobclaw",
+    "url": "https://clawhub.ai/skills/jobclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobclaw-3bd7977c67cd61cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LinkedIn job search assistant that scrapes listings, filters by technologies and countries, and scores matches with AI. Use when the user wants to find jobs,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keepfit44",
+      "userId": "publishers:keepfit44",
+      "displayName": "Joe",
+      "image": "https://avatars.githubusercontent.com/u/191857142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774108475655,
+      "changelog": "Python best practices: type hints, docstrings, named constants, specific exceptions, logging, input validation, __all__",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0056ed734b1485fdb46546bf2e021a4ec1ab3df4ab121abfe02b862e24df38f9"
+}

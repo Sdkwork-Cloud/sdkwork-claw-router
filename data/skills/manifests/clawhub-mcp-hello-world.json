@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58913,
+  "uuid": "skill-clawhub-mcp-hello-world",
+  "skillKey": "clawhub-mcp-hello-world",
+  "name": "Mcp Hello World",
+  "summary": "最小可行 MCP 服务器示例 - 在 OpenClaw 中调用 MCP 工具（add 计算 + hello_world 问候）",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_hello_world",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Crystaria",
+      "features": [
+        "最小可行 MCP 服务器示例",
+        "在 OpenClaw 中调用 MCP 工具（add 计算 + hello_world 问候）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-hello-world@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105076136?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-hello-world",
+      "url": "https://clawhub.ai/skills/mcp-hello-world"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-hello-world",
+    "url": "https://clawhub.ai/skills/mcp-hello-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-hello-world-4a097ddfce0f1fc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-hello-world@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-hello-world-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c27ddbc7db55a4df55256188c7b729a1f823ed5669996748f8e3a2418fb31827",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:28:04.384Z"
+}

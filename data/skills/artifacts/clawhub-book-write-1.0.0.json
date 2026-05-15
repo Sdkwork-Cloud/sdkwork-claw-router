@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-write@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_write",
+  "skill": {
+    "id": 72764,
+    "skillKey": "clawhub-book-write",
+    "name": "book-write"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-write",
+    "url": "https://clawhub.ai/skills/book-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-write-4221312514304d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全流程小说创作工程化助手。专业、严谨、可落地的小说创作管理与内容生成系统，帮助用户从零到一完成高质量、强逻辑、人设稳定、剧情闭环的小说创作。当用户要求写小说、创作故事、构思情节、塑造人物、撰写章节时激活此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thincher",
+      "userId": "s170vv9kmhtyc5hywwmkq5cf51845fxf",
+      "displayName": "要啥自行车",
+      "image": "https://avatars.githubusercontent.com/u/54308220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772848236432,
+      "changelog": "init",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09db197367ada2ecb722ba3bc010fd98cf5910af341cb7be056b39897c8e6801"
+}

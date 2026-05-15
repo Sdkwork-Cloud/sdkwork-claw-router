@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyfceph@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyfceph",
+  "skill": {
+    "id": 29099,
+    "skillKey": "clawhub-hyfceph",
+    "name": "HYFCeph"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyfceph",
+    "url": "https://clawhub.ai/skills/hyfceph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyfceph-86ddc516d8e23081.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run the HYFCeph cephalometric workflow through the HYFCeph portal with an API key by uploading one or two local lateral ceph images. The public user only sen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyuanfeng45",
+      "userId": "s17062qq60z92hjdyrfsy3cn0s83h42c",
+      "displayName": "huyuanfeng45",
+      "image": "https://avatars.githubusercontent.com/u/137370265?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1775235974647,
+      "changelog": "Sync latest HYFCeph skill bundle and prompt updates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c47d25edb479bb2ecfa9fc6e0c37a9a58d5196a87977398a1ff067d0e137e29f"
+}

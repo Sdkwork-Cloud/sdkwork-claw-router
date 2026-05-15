@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "national-day-flight",
+    "displayName": "national-day-flight",
+    "summary": "Book National Day holiday flights for October 1st Golden Week travel. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, it...",
+    "tags": {
+      "latest": "3.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777059110458,
+    "updatedAt": 1777527931852
+  },
+  "latestVersion": {
+    "version": "3.2.0",
+    "createdAt": 1777059110458,
+    "changelog": "Version 3.2.0 — Major rules and structure update, focused on CLI integrity and strict travel data source enforcement.\n\n- Clearly mandates all results must originate from flyai CLI (never training data), with strict enforcement and self-validation rules.\n- Adds robust mandatory CLI environment checks; requires flyai-cli installation if absent.\n- Enforces booking link presence ([Book]({detailUrl})) in all replies; missing link triggers workflow halt and correction.\n- Expands multi-modal booking: supports flights, hotels, trains, attractions, visas, travel insurance, and car rental for Golden Week.\n- Defines specialized CLI playbooks for different user intents (cheapest, fastest, direct flights, etc.).\n- Improved multilingual support (auto-detected Chinese/English response).\n- Enhanced output rules: summary-first format, tips for National Day, comparison table, strict Markdown layout.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xiejinsong",
+    "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+    "displayName": "xiejinsong",
+    "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527931852
+  }
+}

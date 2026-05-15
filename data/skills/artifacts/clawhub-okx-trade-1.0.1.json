@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/okx-trade@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_trade",
+  "skill": {
+    "id": 50252,
+    "skillKey": "clawhub-okx-trade",
+    "name": "OKX Trade Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-trade",
+    "url": "https://clawhub.ai/skills/okx-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-trade-7a85b1a66597a304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Setup, install, and use OKX Agent Trade Kit — the official OKX toolkit for AI-powered trading. Use this skill whenever the user mentions: OKX trading, agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chingchiu169",
+      "userId": "s17171pjtbb9j0vq0knmk2avqx83k868",
+      "displayName": "chingchiu169",
+      "image": "https://avatars.githubusercontent.com/u/1352835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 574,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775802596783,
+      "changelog": "v1.0.0 - 2026-04-10 \nInitial release.\nv1.1.0 -2026-04-10\nSkills table: added package name column and aligned feature descriptions with official docs\nSafety: documented two new built-in protection layers - Smart Registration (API permission check on startup) and Risk Labels ( [CAUTION] tag on money-moving tools)\nSafety: noted that withdrawal permission should not be granted to sub-account API\nkeys\n• MCP setup reference: added Windsurf client support\n• MCP setup reference: added 4-layer safety quick-reference tablen",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f3c21a63bdfd554eef5c04a9f9004631db72c3f45388244ee5069cd5fbde74a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fortune-career@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_career",
+  "skill": {
+    "id": 73419,
+    "skillKey": "clawhub-fortune-career",
+    "name": "职业与健康命理分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-career",
+    "url": "https://clawhub.ai/skills/fortune-career",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-career-4bec89ed47a93780.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于八字和紫微斗数为用户提供职业方向和健康状况的命理分析及具体建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devioslang",
+      "userId": "s17echkxjatbs69t4zqwem78px83ht0r",
+      "displayName": "DeviosLang",
+      "image": "https://avatars.githubusercontent.com/u/5735268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774493000621,
+      "changelog": "新增一句话摘要模式（5句版），说「摘要」触发，微信快速阅读",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f93f55e6deac566d99f3bb05d1d9fb36d66b1597eb800708aca1dfb2c3edcf75"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31801,
+  "uuid": "skill-clawhub-supplier-scorecard",
+  "skillKey": "clawhub-supplier-scorecard",
+  "name": "Supplier Scorecard",
+  "summary": "Track and score supplier reliability, quality consistency, lead time accuracy, and communication to make sourcing decisions based on evidence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supplier_scorecard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Track and score supplier reliability, quality consistency, lead time accuracy, and communicatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supplier-scorecard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supplier-scorecard",
+      "url": "https://clawhub.ai/skills/supplier-scorecard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supplier-scorecard",
+    "url": "https://clawhub.ai/skills/supplier-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supplier-scorecard-5dfc1fff3c1c84eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supplier-scorecard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supplier-scorecard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15f3d42bf0cc4d8843c00d9d6952c23aa0c53efbfa9374e9ee6568329bcdd606",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:14:32.304Z"
+}

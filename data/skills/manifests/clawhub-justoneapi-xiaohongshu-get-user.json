@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48644,
+  "uuid": "skill-clawhub-justoneapi-xiaohongshu-get-user",
+  "skillKey": "clawhub-justoneapi-xiaohongshu-get-user",
+  "name": "Xiaohongshu (RedNote) User Profile API",
+  "summary": "Call 2 get-user versions for Xiaohongshu (RedNote) User Profile through JustOneAPI with userId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_xiaohongshu_get_user",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call 2 get-user versions for Xiaohongshu (RedNote) User Profile through JustOneAPI with userId."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-xiaohongshu-get-user@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-xiaohongshu-get-user",
+      "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-get-user"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-xiaohongshu-get-user",
+    "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-get-user",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-xiaohongshu-get-user-04f2f551b500010d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-xiaohongshu-get-user@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-xiaohongshu-get-user-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4b6d0c227fe94ba7bbce6b1c3e3fe0d053aec135b04bd91adc71ba3fd09d785",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T13:53:18.621Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fireant-stock@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireant_stock",
+  "skill": {
+    "id": 18590,
+    "skillKey": "clawhub-fireant-stock",
+    "name": "FireAnt Stock Price Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireant-stock",
+    "url": "https://clawhub.ai/skills/fireant-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireant-stock-729c2391800bcb0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated Vietnamese stock price and index checking on FireAnt.vn. Use when checking current stock prices, market indices, trading volumes, or financial info..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aholake",
+      "userId": "publishers:aholake",
+      "displayName": "Loc Vo",
+      "image": "https://avatars.githubusercontent.com/u/10195964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771603151531,
+      "changelog": "Refactored to use Agent Browser (Rust headless browser) instead of openclaw CLI for better performance and reliability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da3cfc278c61504a8d2ba9fb663aed0b9508c912a20d81a11072fe02c090c5dc"
+}

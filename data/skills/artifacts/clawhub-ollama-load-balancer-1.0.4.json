@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ollama-load-balancer@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_load_balancer",
+  "skill": {
+    "id": 26858,
+    "skillKey": "clawhub-ollama-load-balancer",
+    "name": "Ollama Load Balancer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-load-balancer",
+    "url": "https://clawhub.ai/skills/ollama-load-balancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-load-balancer-9607efc6985ae3f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ollama load balancer for Llama, Qwen, DeepSeek, and Mistral inference across multiple machines. Load balancing with auto-discovery via mDNS, health checks, q..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775254712073,
+      "changelog": "Cross-platform support: macOS, Linux, and Windows. Updated OS metadata, descriptions, and hardware recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f8a6b40fa83b61e511348aea1a4a3d7474d02305e4c0235271f909fb201db31"
+}

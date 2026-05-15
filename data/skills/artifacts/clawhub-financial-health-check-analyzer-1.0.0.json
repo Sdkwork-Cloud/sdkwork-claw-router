@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-health-check-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_health_check_analyzer",
+  "skill": {
+    "id": 39108,
+    "skillKey": "clawhub-financial-health-check-analyzer",
+    "name": "Financial Health Check Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-health-check-analyzer",
+    "url": "https://clawhub.ai/skills/financial-health-check-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-health-check-analyzer-ab79a8fa0b9a9633.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides structured financial health assessments with templates and actionable recommendations based on user-provided context and goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776566420154,
+      "changelog": "Initial release of Financial Health Check Analyzer.\n\n- Provides multi-dimensional financial health assessments using descriptive templates and frameworks.\n- Supports prompts for budgeting, cash flow, expense categorization, compliance, and more.\n- Generates structured outputs: analysis reports, templates, recommendations, and next-step checklists.\n- Emphasizes safety: no real transactions, API calls, or access to user accounts.\n- Clearly communicates informational-only nature and encourages consultation with financial professionals.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96a47d18ee9500907e556f0754b9a9ac7c6a2bbecb9c19586a63979c5e4be493"
+}

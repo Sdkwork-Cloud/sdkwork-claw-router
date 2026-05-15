@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airdrop-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airdrop_hunter",
+  "skill": {
+    "id": 65465,
+    "skillKey": "clawhub-airdrop-hunter",
+    "name": "Airdrop Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airdrop-hunter",
+    "url": "https://clawhub.ai/skills/airdrop-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airdrop-hunter-08bb548c465f673b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "空投猎人，自动发现潜在空投机会，追踪已参与项目状态。每次调用收费0.001 USDT。触发词：空投、airdrop、撸毛、白名单、空投查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deeplearning1993",
+      "userId": "publishers:deeplearning1993",
+      "displayName": "deeplearning1993",
+      "image": "https://avatars.githubusercontent.com/u/106026146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772761733806,
+      "changelog": "空投猎人，0.001 USDT/次",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d14326fc74432eea3fc24ddc2b6ae8f02cba6e44c3efb1eed673803a720a2769"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gas-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gas_tracker",
+  "skill": {
+    "id": 59268,
+    "skillKey": "clawhub-gas-tracker",
+    "name": "Gas Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gas-tracker",
+    "url": "https://clawhub.ai/skills/gas-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gas-tracker-56dd470771859e32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时追踪ETH、BSC、Polygon、Arbitrum、Optimism等多链Gas费用，预测最佳交易时间。每次调用收费0.001 USDT。触发词：gas费、gas price、gas tracker、gas监控、eth gas、bsc gas。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deeplearning1993",
+      "userId": "publishers:deeplearning1993",
+      "displayName": "deeplearning1993",
+      "image": "https://avatars.githubusercontent.com/u/106026146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772756831396,
+      "changelog": "多链Gas监控，0.001 USDT/次",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d8924e530dc52aab55260aa4bd25a1d70d488a20bdfc070401f3974f4c11d8b2"
+}

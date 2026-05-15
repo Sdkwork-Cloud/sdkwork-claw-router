@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emergence-video-producer@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergence_video_producer",
+  "skill": {
+    "id": 48639,
+    "skillKey": "clawhub-emergence-video-producer",
+    "name": "Emergence Video Producer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergence-video-producer",
+    "url": "https://clawhub.ai/skills/emergence-video-producer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergence-video-producer-9808a24436b66890.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated video production pipeline for product demos and academic tutorials. Uses WebReel for browser recording, DashScope/Edge-TTS for narration, and FFmpe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emergencescience",
+      "userId": "s17a35617mabw6kewbzv4z4e7x83w38h",
+      "displayName": "emergencescience",
+      "image": "https://avatars.githubusercontent.com/u/264674637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1777975759184,
+      "changelog": "Emergence Video Producer 0.1.1\n\n- Introduced an automated pipeline that converts a Markdown \"Video Script\" into a polished tutorial video.\n- Human-in-the-loop interview process added for goal, mode, tone, and content discovery.\n- Workflow divided into ideation, configuration, production, and final approval phases.\n- Supports both browser walkthroughs (WebReel) and PPT-style presentations (Slidev).\n- Integrates narration (Edge-TTS or DashScope) and video assembly (FFmpeg).\n- Designed for headless operation on cloud VMs for autonomous agent use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:847b9f0133e496fb9c9c3a110d5df697d0273074ddf6b9e5872aac3b218fde71"
+}

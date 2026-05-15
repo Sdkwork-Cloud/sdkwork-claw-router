@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/next-from-knowledge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.next_from_knowledge",
+  "skill": {
+    "id": 39143,
+    "skillKey": "clawhub-next-from-knowledge",
+    "name": "NextFromKnowledge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "next-from-knowledge",
+    "url": "https://clawhub.ai/skills/next-from-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/next-from-knowledge-abcd4a0d79774ba8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Knowledge-to-action skill that turns notes, research, meeting summaries, documents, and knowledge graph outputs into the next action, decision, plan, or expe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775092630555,
+      "changelog": "Initial release of NextFromKnowledge: turn notes, research, and knowledge graph outputs into the next action, plan, decision, or experiment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:081939cb7ef7138032412862ae16d5a3d81087c3cdb451d83e9ab0e3f1ea016a"
+}

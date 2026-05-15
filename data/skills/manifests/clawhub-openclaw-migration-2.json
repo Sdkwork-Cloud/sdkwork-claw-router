@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26659,
+  "uuid": "skill-clawhub-openclaw-migration-2",
+  "skillKey": "clawhub-openclaw-migration-2",
+  "name": "Openclaw Migration",
+  "summary": "Migrate a user's OpenClaw customization footprint into Hermes Agent. Imports Hermes-compatible memories, SOUL.md, command allowlists, user skills, and select...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_migration_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agung Prabowo",
+      "features": [
+        "Migrate a user's OpenClaw customization footprint into Hermes Agent",
+        "Imports Hermes-compatible memories, SOUL.md, command allowlists, user skills, and select..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-migration-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100983377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-migration-2",
+      "url": "https://clawhub.ai/skills/openclaw-migration-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-migration-2",
+    "url": "https://clawhub.ai/skills/openclaw-migration-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-migration-2-bfb6a134c405c876.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-migration-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-migration-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1269e141b3d5336275c0b65fff77de1572bbbf803f28ac23c975bf7220ecb6d3",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:05:15.018Z"
+}

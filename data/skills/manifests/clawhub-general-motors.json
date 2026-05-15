@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68516,
+  "uuid": "skill-clawhub-general-motors",
+  "skillKey": "clawhub-general-motors",
+  "name": "General Motors",
+  "summary": "提供通用汽车（GM）及其雪佛兰、凯迪拉克、别克品牌信息，涵盖历史、业务及电动车转型动态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.general_motors",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供通用汽车（GM）及其雪佛兰、凯迪拉克、别克品牌信息，涵盖历史、业务及电动车转型动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/general-motors@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "general-motors",
+      "url": "https://clawhub.ai/skills/general-motors"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "general-motors",
+    "url": "https://clawhub.ai/skills/general-motors",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/general-motors-a87371aa461d98fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/general-motors@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-general-motors-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83f6302db1e3b7f759ff0f31457fcd028e33e5cd4f50464dbd19f42ce7ad392d",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:01:05.985Z"
+}

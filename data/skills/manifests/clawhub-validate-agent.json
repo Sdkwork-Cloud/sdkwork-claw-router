@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63790,
+  "uuid": "skill-clawhub-validate-agent",
+  "skillKey": "clawhub-validate-agent",
+  "name": "Validate Agent",
+  "summary": "Agent验证与质量保证。减少静默系统错误，产出可重现的证据。 触发条件：(1) 完成任务时 (2) 修复问题后 (3) 提供答案前 (4) 跨会话承诺时",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validate_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack123255829",
+      "features": [
+        "Agent验证与质量保证。减少静默系统错误，产出可重现的证据。 触发条件：(1) 完成任务时 (2) 修复问题后 (3) 提供答案前 (4) 跨会话承诺时"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/validate-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56186496?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "validate-agent",
+      "url": "https://clawhub.ai/skills/validate-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validate-agent",
+    "url": "https://clawhub.ai/skills/validate-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validate-agent-20b422676cb8cdc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/validate-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-validate-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5dd9d8b139fe4f41dbc45bd4adb6a046de9a49df02d8bce709813e4f6803c04",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T01:36:13.851Z"
+}

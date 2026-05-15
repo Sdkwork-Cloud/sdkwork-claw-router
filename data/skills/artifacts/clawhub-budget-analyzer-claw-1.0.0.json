@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/budget-analyzer-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_analyzer_claw",
+  "skill": {
+    "id": 65589,
+    "skillKey": "clawhub-budget-analyzer-claw",
+    "name": "budget-analyzer-claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-analyzer-claw",
+    "url": "https://clawhub.ai/skills/budget-analyzer-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-analyzer-claw-132b5a3522f2c6ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "预算分析虾 — OpenClaw 数字员工体系的财务守门员。实时监控所有 AI 资源支出，智能控制开销，防止产生意外的巨额费用。 当以下情况时使用此 Skill： (1) 用户询问今日/本周/本月花了多少钱 (2) 用户询问哪个数字员工最费钱、成本占比 (3) 用户要求分析成本趋势、优化建议 (4) 用户要求设置..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775567159369,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:214cb8b081018ac4121fc34801ce4252c26293f433234a35793fcdcff8571c35"
+}

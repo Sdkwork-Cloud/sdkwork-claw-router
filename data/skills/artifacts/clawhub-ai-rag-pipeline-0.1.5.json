@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-rag-pipeline@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_rag_pipeline",
+  "skill": {
+    "id": 13410,
+    "skillKey": "clawhub-ai-rag-pipeline",
+    "name": "Ai Rag Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-rag-pipeline",
+    "url": "https://clawhub.ai/skills/ai-rag-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-rag-pipeline-47ad72ab6160d25a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build RAG (Retrieval Augmented Generation) pipelines with web search and LLMs. Tools: Tavily Search, Exa Search, Exa Answer, Claude, GPT-4, Gemini via OpenRo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1413,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403032049,
+      "changelog": "ai-rag-pipeline 0.1.5\n\n- Added comprehensive SKILL.md with detailed usage instructions, pipeline patterns, and best practices.\n- Clarified available tools, models, and their applications.\n- Provided multiple hands-on examples for search+LLM, multi-source research, fact-checking, and report generation.\n- Included tips for query optimization, context management, source attribution, and iterative research.\n- Offered pipeline templates and related skills for easy integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c0c7038a4c04caaabc6d7a1ef2d4b250ce50e3f134e58e6d579421b4024ac44e"
+}

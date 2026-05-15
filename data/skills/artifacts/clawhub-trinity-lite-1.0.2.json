@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trinity-lite@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trinity_lite",
+  "skill": {
+    "id": 71042,
+    "skillKey": "clawhub-trinity-lite",
+    "name": "Trinity Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trinity-lite",
+    "url": "https://clawhub.ai/skills/trinity-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trinity-lite-a5bd649bf283ac8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日自动化能力进化工具。运行后会：1）自检发现能力缺陷，2）自动阅读学习，3）生成新洞察，4）验证能力提升。适合希望持续提升AI能力的用户，，每天运行看到具体进步。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hollis9087",
+      "userId": "s177cqfxj8hyd271e27az0p2nx85tds8",
+      "displayName": "hollis9087",
+      "image": "https://avatars.githubusercontent.com/u/264116703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777540015403,
+      "changelog": "- Updated documentation to clarify local analysis functionality and add a security section.\n- Emphasized that this tool does not execute external code, download, upload, or access network resources.\n- Simplified feature descriptions to focus on local report generation and ability validation.\n- Removed the file trinity_v15.py from the project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e77f23dd8d2702c3a63efeae265cc7d803ffb94b98ce48fbc16a0ee773bd8905"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53077,
+  "uuid": "skill-clawhub-flowsery",
+  "skillKey": "clawhub-flowsery",
+  "name": "Flowsery",
+  "summary": "Query web analytics data from Flowsery Analytics — a privacy-first web analytics platform. Retrieve real-time visitors, time series, breakdowns (device, page...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowsery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Taras Shynkarenko",
+      "features": [
+        "Query web analytics data from Flowsery Analytics — a privacy-first web analytics platform",
+        "Retrieve real-time visitors, time series, breakdowns (device, page..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowsery@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67313527?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowsery",
+      "url": "https://clawhub.ai/skills/flowsery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowsery",
+    "url": "https://clawhub.ai/skills/flowsery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowsery-6e899220c9eb0efa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowsery@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowsery-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81fb5986241e718e3ce1a270b1cbccde8f8e0991b5cedac071ee03d832d219d3",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T14:52:59.206Z"
+}

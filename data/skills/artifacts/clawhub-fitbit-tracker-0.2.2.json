@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitbit-tracker@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitbit_tracker",
+  "skill": {
+    "id": 23065,
+    "skillKey": "clawhub-fitbit-tracker",
+    "name": "Fitbit Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitbit-tracker",
+    "url": "https://clawhub.ai/skills/fitbit-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitbit-tracker-a61ce62dbdaf0e54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal Fitbit integration for daily health tracking with adaptive sleep and activity reporting"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crabsticksalad",
+      "userId": "s17572r03ywk8ctcnx8amnqrhd83f232",
+      "displayName": "Crabstick",
+      "image": "https://avatars.githubusercontent.com/u/262156320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1774531061365,
+      "changelog": "v0.2.2 - Skill invocation fix, sleep field correction, date resolution\n\n### Bug Fixes\n- SKILL.md frontmatter: Added missing triggers for auto-activation on sleep/fitness queries\n- Timezone default: Was hardcoded to UTC instead of respecting FITBIT_TZ env var. Fixed.\n- Sleep field name mismatch: duration_minutes vs minutesAsleep corrected\n- Schema docs updated to reflect correct duration_minutes field name\n\n### Documentation  \n- 3-step pipeline documented (fetch → normalize → render)\n- Date rule: Use --date today for morning sleep queries (Fitbit returns last night's sleep under today's date)\n- Duration warning: Never use raw API duration field directly (includes wake time); always use normalized duration_minutes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c3f73fe9ec39ee2892208e3e715c10d967de89d367e781f267338acec14f819"
+}

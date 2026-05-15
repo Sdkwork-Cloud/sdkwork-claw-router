@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clean-my-house@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_my_house",
+  "skill": {
+    "id": 38356,
+    "skillKey": "clawhub-clean-my-house",
+    "name": "Clean My House"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-my-house",
+    "url": "https://clawhub.ai/skills/clean-my-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-my-house-72c07d96a62b2a63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps plan, organize, and guide household cleaning tasks room by room, including quick tidy-ups, deep cleaning, and recurring routines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "know-hub",
+      "userId": "s17ar5srvkda8w8p4t0s6t10ns83ktwv",
+      "displayName": "know-hub",
+      "image": "https://avatars.githubusercontent.com/u/214209974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774436200051,
+      "changelog": "Initial release of Clean My House skill.\n\n- Guides users through organizing and cleaning their home with tailored plans.\n- Supports quick tidying, deep cleaning, and recurring maintenance routines.\n- Breaks work into manageable room-by-room checklists with time estimates.\n- Prioritizes high-impact cleaning and adapts to user needs, including energy, time, pets, kids, or limited mobility.\n- Offers practical advice, supply suggestions, and encouragement to avoid overwhelm.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbf84a4985805288f3038c47d0a04b4412fb60094c025ceb68190d8c799b2be7"
+}

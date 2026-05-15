@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-politics-random-buyer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_politics_random_buyer",
+  "skill": {
+    "id": 48974,
+    "skillKey": "clawhub-polymarket-politics-random-buyer",
+    "name": "Polymarket Politics Random Buyer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-politics-random-buyer",
+    "url": "https://clawhub.ai/skills/polymarket-politics-random-buyer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-politics-random-buyer-500c7e558fee6baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Randomly finds a live Polymarket politics market, checks trading context, and buys 1 USDC by default with explicit dry-run and live modes for AION Market."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ssj124",
+      "userId": "s174p432zdjmq0szb7x7pvv8zx84s03q",
+      "displayName": "ssj124",
+      "image": "https://avatars.githubusercontent.com/u/83407521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777548574937,
+      "changelog": "Initial release of a trading skill for Polymarket politics markets.\n\n- Randomly selects and checks live politics-related markets on Polymarket.\n- Executes a 1 USDC buy on \"YES\" by default, with full dry-run/live mode support.\n- Designed for easy modification: customize market/side selection, trade size, and filters.\n- Requires API key and wallet key; defaults to dry-run for safety.\n- Includes operator-friendly output and risk guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcc09d0bb20fe9db3e58d42feed8a62cfa8e0b34b09f77dc8582c10289777527"
+}

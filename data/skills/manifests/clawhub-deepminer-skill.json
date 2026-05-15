@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59962,
+  "uuid": "skill-clawhub-deepminer-skill",
+  "skillKey": "clawhub-deepminer-skill",
+  "name": "DeepMiner Skills",
+  "summary": "通过 dm-cli 命令行工具与 DeepMiner (DM) 系统交互。**凡是涉及 DM/DeepMiner 系统的任务，必须先读此 Skill。** 触发条件：用户提到 \"使用 DM\"、\"发给 DM\"、\"用 DM 问一下\"、\"DM 帮我...\"、\"DeepMiner 执行...\" 等任何涉及 DM 系统的任...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepminer_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DMPM-Mininglamp",
+      "features": [
+        "通过 dm-cli 命令行工具与 DeepMiner (DM) 系统交互。**凡是涉及 DM/DeepMiner 系统的任务，必须先读此 Skill。** 触发条件：用户提到 \"使用 DM\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepminer-skill@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245781986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepminer-skill",
+      "url": "https://clawhub.ai/skills/deepminer-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepminer-skill",
+    "url": "https://clawhub.ai/skills/deepminer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepminer-skill-dbfafada2842c8c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepminer-skill@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepminer-skill-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99c97fb601c2e65b6480c5e06c0542e1573ef5f8911e130e82fe7ebf41712b8f",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:33:00.708Z"
+}

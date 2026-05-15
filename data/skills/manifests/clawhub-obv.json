@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34855,
+  "uuid": "skill-clawhub-obv",
+  "skillKey": "clawhub-obv",
+  "name": "Obv",
+  "summary": "Obv reference tool. Use when working with obv in finance contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Obv reference tool",
+        "Use when working with obv in finance contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obv@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obv",
+      "url": "https://clawhub.ai/skills/obv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obv",
+    "url": "https://clawhub.ai/skills/obv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obv-c232b2efef880cae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obv@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obv-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a01667e0630a4f446d054b3341b79d4a8e0c8429d8c91ef22c56e37b38fe5ca0",
+      "artifactSizeBytes": 1720
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:18:40.710Z"
+}

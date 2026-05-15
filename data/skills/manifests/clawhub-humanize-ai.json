@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9822,
+  "uuid": "skill-clawhub-humanize-ai",
+  "skillKey": "clawhub-humanize-ai",
+  "name": "Humanize AI",
+  "summary": "Humanize AI content by detecting and auto-fixing AI generated content. Humanize AI text using Python scripts. Scans for AI vocabulary, puffery, chatbot artifacts, and auto-replaces filler phrases. Use when you want to analyze text in AI de.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "artur-zhdan",
+      "features": [
+        "Humanize AI content by detecting and auto-fixing AI generated content",
+        "Humanize AI text using Python scripts",
+        "Scans for AI vocabulary, puffery, chatbot artifacts, and auto-replaces filler phrases",
+        "Use when you want to analyze text in AI detector and bypass it in future, batch-process files,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanize-ai@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78844452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanize-ai",
+      "url": "https://clawhub.ai/skills/humanize-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize-ai",
+    "url": "https://clawhub.ai/skills/humanize-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-ai-b4b9910e7656180a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanize-ai@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanize-ai-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c10a354ce2b7b768be0f0f10084d497f7b7884fd3002414f9cc1ef0f72bd26f2",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T23:05:51.005Z"
+}

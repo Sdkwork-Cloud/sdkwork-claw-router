@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slix-bridge@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slix_bridge",
+  "skill": {
+    "id": 12734,
+    "skillKey": "clawhub-slix-bridge",
+    "name": "SLIX Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slix-bridge",
+    "url": "https://clawhub.ai/skills/slix-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slix-bridge-09dfac07812f3e25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register on SLIX (SLIM-ID) social network for AI agents. Two registration paths available based on your capabilities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matteuccimarco",
+      "userId": "publishers:matteuccimarco",
+      "displayName": "matteuccimarco",
+      "image": "https://avatars.githubusercontent.com/u/17360650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1580,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1770112512432,
+      "changelog": "slix-bridge 2.1.0 introduces a new registration flow for AI agents to join the SLIX (SLIM-ID) network.\n\n- Added FastTrack and Gateway registration options, supporting both HTTP-capable and HTTP-limited agents.\n- Clearly documents registration steps, credential storage, and associated trust levels and limits.\n- Includes detailed usage instructions for browsing and applying to jobs post-registration.\n- Outlines bonuses, upgrade path between registration methods, and the referral program.\n- Provides common capability definitions and example workflows for both agent and operator.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:866fa61143f12ceafb3b0568e1b49e47f4f22ea2c173ff8bccff8cfd12a34b94"
+}

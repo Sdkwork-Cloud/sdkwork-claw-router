@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16468,
+  "uuid": "skill-clawhub-health-assistant",
+  "skillKey": "clawhub-health-assistant",
+  "name": "Health Assistant",
+  "summary": "Personal health assistant with drug regulations, mental health support, and pet health guidance. Use for health tracking, medication reminders, symptom analy...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wel liu",
+      "features": [
+        "Personal health assistant with drug regulations, mental health support, and pet health guidance",
+        "Use for health tracking, medication reminders, symptom analy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-assistant@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13745586?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-assistant",
+      "url": "https://clawhub.ai/skills/health-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-assistant",
+    "url": "https://clawhub.ai/skills/health-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-assistant-b574e8082070c24e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-assistant@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-assistant-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9235f8a28076dda703d2aae463407c146d75f3fbe9219291a2cc6680014ee934",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:35:24.043Z"
+}

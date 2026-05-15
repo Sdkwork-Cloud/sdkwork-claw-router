@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/star-office-ui-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.star_office_ui_master",
+  "skill": {
+    "id": 61235,
+    "skillKey": "clawhub-star-office-ui-master",
+    "name": "Star Office UI Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "star-office-ui-master",
+    "url": "https://clawhub.ai/skills/star-office-ui-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/star-office-ui-master-c2595b872f268097.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Star Office UI 一键化 Skill：帮主人快速部署像素办公室看板，支持多 Agent 加入、状态可视化、移动端查看与公网访问。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pinke",
+      "userId": "s172d1r6j2qc55gcavpgx6c61h83tx46",
+      "displayName": "pinke",
+      "image": "https://avatars.githubusercontent.com/u/156686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776648408573,
+      "changelog": "Star Office UI Skill 1.0.0 — Initial Release\n\n- One-click setup for a pixel-art collaborative office dashboard, supporting multiple agents, status visualization, mobile view, and public access.\n- Secure sidebar access with customizable verification code (default: 1234; strong password recommended).\n- Optional Gemini image API integration for dynamic room/asset generation and decoration flows.\n- Asset management: full customization of visual assets, clear commercial use policy (MIT for code, art assets non-commercial).\n- Multilingual support (Chinese, English, Japanese) with dynamic UI updates.\n- Enhanced stability and security: CDN caching fixes, front-end load/JS error fixes, async image gen for timeout prevention, mobile UI/UX improvements, advanced join key management.  \n- Detailed upgrade guide for existing users and clear safety/configuration reminders on deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:130d56cd7fa9a63e73913cb1e3b474c25dbd5a131907176a1255a6caf79f027f"
+}

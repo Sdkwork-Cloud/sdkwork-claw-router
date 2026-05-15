@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lg-thinq@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lg_thinq",
+  "skill": {
+    "id": 11522,
+    "skillKey": "clawhub-lg-thinq",
+    "name": "LG ThinQ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lg-thinq",
+    "url": "https://clawhub.ai/skills/lg-thinq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lg-thinq-942ca56d7390543c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control LG smart appliances via ThinQ API. Use when user asks about their fridge, washer, dryer, AC, or other LG appliances. Supports checking status, changing temperature, toggling modes (express, eco), and monitoring door status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiofreitas",
+      "userId": "publishers:kaiofreitas",
+      "displayName": "hikaio",
+      "image": "https://avatars.githubusercontent.com/u/16592010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2106,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769313591294,
+      "changelog": "Initial release: Control LG smart appliances (fridge, washer, dryer) via ThinQ API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bbf6d5e489269d51ee826471ff6039950ef4b86c6d5aece7ee7bb0c98a3ba519"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decker-hyperliquid@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decker_hyperliquid",
+  "skill": {
+    "id": 58027,
+    "skillKey": "clawhub-decker-hyperliquid",
+    "name": "Decker + Hyperliquid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decker-hyperliquid",
+    "url": "https://clawhub.ai/skills/decker-hyperliquid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decker-hyperliquid-f777fb889ceea04e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user asks about Hyperliquid DEX trading via Decker. Triggers: HL, 하이퍼리퀴드, DEX, 영구선물, HL 매수, HL 포지션, Hyperliquid 시세. Includes Safety Guidelines (posi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gigshow",
+      "userId": "publishers:gigshow",
+      "displayName": "gigshow",
+      "image": "https://avatars.githubusercontent.com/u/196129111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773759782048,
+      "changelog": "Safety Guidelines (position sizing, slippage, error handling)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cef4c8adf23e48f2c5179b6c08bff92c58e86960bd5a6121451b860d79ccd8e7"
+}

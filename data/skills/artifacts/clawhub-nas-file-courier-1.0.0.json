@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nas-file-courier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nas_file_courier",
+  "skill": {
+    "id": 57830,
+    "skillKey": "clawhub-nas-file-courier",
+    "name": "NAS File Courier Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nas-file-courier",
+    "url": "https://clawhub.ai/skills/nas-file-courier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nas-file-courier-c6a7bf1d7e7e1266.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search files on NAS (via rclone + Tailscale) and send to user via messaging API. Triggers on file search, find file, send file, 找文件, 发文件, NAS 查找, 下载文件."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tecfancy",
+      "userId": "s177ebhaemy30qzrh6senc02e185a2aa",
+      "displayName": "Randal",
+      "image": "https://avatars.githubusercontent.com/u/24548536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773304373212,
+      "changelog": "nas-file-courier 1.0.0 – Initial Release\n\n- Search files on a NAS via rclone over Tailscale based on user keywords, type, or time range.\n- Deliver files to users through supported messaging APIs (Feishu, Telegram, QQ Bot) using validated native sending methods.\n- Guides user through file selection, confirmation, and delivery verification to ensure correct receipt.\n- Implements strict temp file management in `/tmp/openclaw/nas-courier/` with mandatory cleanup after every operation.\n- Enforces security policies: read-only operations, no sudo, no exposure of credentials or private data, and sends only permitted file types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a880e5f17e11aa3d8c515a78a523f6014a2bca4ce7c4e37f0ac66854024c921"
+}

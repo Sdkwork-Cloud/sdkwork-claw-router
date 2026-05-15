@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apollo-renal@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_renal",
+  "skill": {
+    "id": 65022,
+    "skillKey": "clawhub-apollo-renal",
+    "name": "Apollo Renal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-renal",
+    "url": "https://clawhub.ai/skills/apollo-renal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-renal-4057bb238830a3cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "像肾脏一样过滤垃圾信息，保留有用的内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775567939661,
+      "changelog": "v2.0.0: renal-check.sh脚本实现，完整上下文过滤检测",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f91a1658507f39dc613d6b31f2ce1d5af5f152daa3f3a6848fdc8236c2403ba1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71757,
+  "uuid": "skill-clawhub-auto-data-analysis-claw",
+  "skillKey": "clawhub-auto-data-analysis-claw",
+  "name": "Auto Data Analysis Claw",
+  "summary": "自动化财务与业务数据分析，深度挖掘数据价值，生成专业报表。激活场景：用户提供财务报表（利润表、资产负债表、现金流量表）、业务数据（销售数据、运营数据、客户数据、成本数据），或要求进行数据分析、数据挖掘、报表生成、KPI计算、趋势分析、差异分析、同比环比分析、多维分析、数据清洗。触发关键词：分析数据、财务分析、业务...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_data_analysis_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "自动化财务与业务数据分析，深度挖掘数据价值，生成专业报表。激活场景：用户提供财务报表（利润表、资产负债表、现金流量表）、业务数据（销售数据、运营数据、客户数据、成本数据），或要求进行数据分析."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-data-analysis-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-data-analysis-claw",
+      "url": "https://clawhub.ai/skills/auto-data-analysis-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-data-analysis-claw",
+    "url": "https://clawhub.ai/skills/auto-data-analysis-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-data-analysis-claw-b91719c84f457784.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-data-analysis-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-data-analysis-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ab08371b9497078b8922c800600329135aa326a55da44bf3bd6d940538b07ee",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:58:16.288Z"
+}

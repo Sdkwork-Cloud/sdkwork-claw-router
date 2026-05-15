@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-boundary@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_boundary",
+  "skill": {
+    "id": 48840,
+    "skillKey": "clawhub-data-boundary",
+    "name": "Data Boundary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-boundary",
+    "url": "https://clawhub.ai/skills/data-boundary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-boundary-049508aefe0a0379.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DataGate parses untrusted CSV or JSON through a deterministic tool boundary before model analysis. Use for requests like \"analyze this CSV\", \"summarize this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alan-stratcraftsai",
+      "userId": "s177srkkxmx7m7nds44r8acpfd8551fd",
+      "displayName": "Alan-StratCraftsAI",
+      "image": "https://avatars.githubusercontent.com/u/252692162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1777530739540,
+      "changelog": "- Renamed skill from \"datagate\" to \"data-boundary\" and updated internal references.\n- Significantly simplified repository by removing contribution, code of conduct, and test files.\n- Updated SKILL.md: slimmed metadata, updated description, removed version/author/license/platform fields.\n- Core workflow, parser usage, output contract, and guardrails remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d86d9c3775fc780ba6cf9cb94688c604883da3cf11b0a0e2048bbebc2a6a4a04"
+}

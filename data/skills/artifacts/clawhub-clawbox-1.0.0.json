@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbox",
+  "skill": {
+    "id": 26690,
+    "skillKey": "clawhub-clawbox",
+    "name": "clawbox-link-to-docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbox",
+    "url": "https://clawhub.ai/skills/clawbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbox-538dcececb7751af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a user shared web link into two Feishu docs: (1) full original text archive with minimal loss and clear source metadata, and (2) structured analysis sum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhao0112",
+      "userId": "publishers:zhao0112",
+      "displayName": "zhao0112",
+      "image": "https://avatars.githubusercontent.com/u/128361589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772270991058,
+      "changelog": "Initial publish of clawbox skill from local workspace.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d2cddffc1d2b590da26b272e11b291ddb4428d32fcd5439c083e53ca6224d206"
+}

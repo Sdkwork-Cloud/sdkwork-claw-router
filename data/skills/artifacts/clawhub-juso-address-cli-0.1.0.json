@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juso-address-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juso_address_cli",
+  "skill": {
+    "id": 56947,
+    "skillKey": "clawhub-juso-address-cli",
+    "name": "Juso Address Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juso-address-cli",
+    "url": "https://clawhub.ai/skills/juso-address-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juso-address-cli-afac73153d2720ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and resolve Korean road addresses (도로명주소) via the official juso.go.kr OpenAPI. Keyword search with zip codes, English address lookup, and address-to-c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chloepark85",
+      "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+      "displayName": "Chloe Park",
+      "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776989342333,
+      "changelog": "Initial release of juso-address-cli — a command-line tool for Korean road address resolution using the official juso.go.kr OpenAPI:\n\n- Supports keyword search for 도로명주소/지번주소 with 우편번호, English address search, and address-to-coordinate conversion.\n- Outputs compact JSONL for streamlined CLI and automation use.\n- Includes helper scripts for direct search, English lookup, coordinate retrieval, and one-shot raw address resolution.\n- Designed for tasks requiring government-validated road addresses (checkout, shipping, registration, etc).\n- Simple environment variable configuration and minimal dependencies (bash, curl, jq, python3).\n- Not suitable for free-form place search or reverse geocoding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e00634153a7baa283c9b4192264fe1a1e23243557b818114a8791df6051b03d"
+}

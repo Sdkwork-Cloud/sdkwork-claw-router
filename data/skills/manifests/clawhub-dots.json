@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26387,
+  "uuid": "skill-clawhub-dots",
+  "skillKey": "clawhub-dots",
+  "name": "Dots",
+  "summary": "Dots! integration. Manage Organizations, Users, Filters. Use when the user wants to interact with Dots! data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dots",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Dots! integration",
+        "Manage Organizations, Users, Filters",
+        "Use when the user wants to interact with Dots! data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dots@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dots",
+      "url": "https://clawhub.ai/skills/dots"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dots",
+    "url": "https://clawhub.ai/skills/dots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dots-0517cf1abcfd20eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dots@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dots-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d74048351023f1ef01bd86dc9945b138ebdfda3cb16936baaceed5b6779c587",
+      "artifactSizeBytes": 1770
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:05:56.599Z"
+}

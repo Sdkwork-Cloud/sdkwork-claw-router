@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-ecs-gpu-diagnosis@0.0.1-beta.1",
+  "version": "0.0.1-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_ecs_gpu_diagnosis",
+  "skill": {
+    "id": 46141,
+    "skillKey": "clawhub-alibabacloud-ecs-gpu-diagnosis",
+    "name": "Alibabacloud Ecs Gpu Diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-ecs-gpu-diagnosis",
+    "url": "https://clawhub.ai/skills/alibabacloud-ecs-gpu-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-ecs-gpu-diagnosis-ee103abd333746d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose Alibaba Cloud ECS GPU instances to detect GPU device status, driver issues, and hardware failures. Use this Skill when users report GPU instance ano..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1-beta.1",
+      "createdAt": 1776305538867,
+      "changelog": "Initial beta release: Diagnose Alibaba Cloud ECS GPU instances, check device/drivers, and report hardware issues.\n\n- Guides users through checking prerequisites (Alibaba Cloud CLI, permissions) and gathering input parameters (instance ID, region).\n- Validates instance ID and region, and ensures only supported Linux OS is diagnosed.\n- Automates creation of GPU diagnostic reports and polling for results.\n- Provides clear output summarizing GPU status, discovered issues, and recommended remediation measures.\n- Includes detailed mapping of diagnostic issues to user instructions and special reminders for O&M notifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9aba851dc73f90fc169d86bbc89c8efcbe8c5ce1da98cd0805785a6e18be8488"
+}

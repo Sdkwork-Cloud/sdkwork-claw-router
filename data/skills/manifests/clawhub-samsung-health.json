@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16843,
+  "uuid": "skill-clawhub-samsung-health",
+  "skillKey": "clawhub-samsung-health",
+  "name": "Samsung Health",
+  "summary": "Analyze Samsung Health Connect data synced to Google Drive. Use for health tracking queries like sleep analysis, step counting, heart rate monitoring, SpO2 b...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.samsung_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mudgesbot",
+      "features": [
+        "Analyze Samsung Health Connect data synced to Google Drive",
+        "Use for health tracking queries like sleep analysis, step counting, heart rate monitoring, SpO2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/samsung-health@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257610508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "samsung-health",
+      "url": "https://clawhub.ai/skills/samsung-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "samsung-health",
+    "url": "https://clawhub.ai/skills/samsung-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/samsung-health-d76e6ff13d649f7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/samsung-health@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-samsung-health-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:963905570d9f757e9fbd7946ae8b5461f979fe777ee899d6daf82c6cf85d9124",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T07:56:18.563Z"
+}

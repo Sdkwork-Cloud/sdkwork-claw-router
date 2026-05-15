@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10145,
+  "uuid": "skill-clawhub-nodejs",
+  "skillKey": "clawhub-nodejs",
+  "name": "NodeJS",
+  "summary": "Avoid common Node.js mistakes — event loop blocking, async error handling, ESM gotchas, and memory leaks.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nodejs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common Node.js mistakes — event loop blocking, async error handling, ESM gotchas, and mem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nodejs@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nodejs",
+      "url": "https://clawhub.ai/skills/nodejs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nodejs",
+    "url": "https://clawhub.ai/skills/nodejs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nodejs-81df1af4ed72b1b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nodejs@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nodejs-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecaadf86064bae559f0ab761a2eef3ad909d67d08d84ef935e8c27ae2b49f495",
+      "artifactSizeBytes": 1776
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T21:07:34.214Z"
+}

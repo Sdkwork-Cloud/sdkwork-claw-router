@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69205,
+  "uuid": "skill-clawhub-baidunetdisk-skill",
+  "skillKey": "clawhub-baidunetdisk-skill",
+  "name": "baidunetdisk",
+  "summary": "支持百度网盘文件查看、搜索、分享链接提取、一键转存及目录创建的综合管理功能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidunetdisk_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxStormSpace",
+      "features": [
+        "支持百度网盘文件查看、搜索、分享链接提取、一键转存及目录创建的综合管理功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidunetdisk-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67162380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidunetdisk-skill",
+      "url": "https://clawhub.ai/skills/baidunetdisk-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidunetdisk-skill",
+    "url": "https://clawhub.ai/skills/baidunetdisk-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidunetdisk-skill-e80f5612e7796899.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidunetdisk-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidunetdisk-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:032c804b07aa7c292123d2ba4978484b3f8e02282963128ccf8f09e5d429135c",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:50:16.381Z"
+}

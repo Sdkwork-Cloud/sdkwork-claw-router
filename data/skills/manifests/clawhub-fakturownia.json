@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39498,
+  "uuid": "skill-clawhub-fakturownia",
+  "skillKey": "clawhub-fakturownia",
+  "name": "Fakturownia CLI",
+  "summary": "Fakturownia CLI bundle: shared guidance, auth, accounts, departments, issuers, users, categories, clients, payments, bank accounts, products, price lists, in...",
+  "version": "0.6.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fakturownia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sixers",
+      "features": [
+        "Fakturownia CLI bundle: shared guidance, auth, accounts, departments, issuers, users, categorie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fakturownia@0.6.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1457102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fakturownia",
+      "url": "https://clawhub.ai/skills/fakturownia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fakturownia",
+    "url": "https://clawhub.ai/skills/fakturownia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fakturownia-143e14fcd67f4e6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fakturownia@0.6.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-fakturownia-0.6.7.json",
+      "version": "0.6.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fbe72a6f0b20bca820cdffc367968acfc79d20a927b387421e13292f581294a",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T16:49:52.944Z"
+}

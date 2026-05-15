@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66602,
+  "uuid": "skill-clawhub-video-transition",
+  "skillKey": "clawhub-video-transition",
+  "name": "Video Transition",
+  "summary": "视频转场效果工具。使用 ffmpeg xfade 滤镜实现多种转场效果，包括淡入淡出、滑动、擦除、圆形展开等。 支持批量视频片段合并，自动添加转场效果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "systiger",
+      "features": [
+        "视频转场效果工具。使用 ffmpeg xfade 滤镜实现多种转场效果，包括淡入淡出、滑动、擦除、圆形展开等。 支持批量视频片段合并，自动添加转场效果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-transition@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154035099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-transition",
+      "url": "https://clawhub.ai/skills/video-transition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transition",
+    "url": "https://clawhub.ai/skills/video-transition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transition-3d9926e5f85c0763.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-transition@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-transition-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d4628b19ee18b983297fb2519f1d790e1ac42fe65dcad2ec0d60f1a159966df",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:22:41.371Z"
+}

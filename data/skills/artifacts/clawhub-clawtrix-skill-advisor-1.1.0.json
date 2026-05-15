@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtrix-skill-advisor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrix_skill_advisor",
+  "skill": {
+    "id": 51900,
+    "skillKey": "clawhub-clawtrix-skill-advisor",
+    "name": "Clawtrix Skill Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrix-skill-advisor",
+    "url": "https://clawhub.ai/skills/clawtrix-skill-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrix-skill-advisor-2ada896ac8aa81f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Keeps your agent lean and sharp using collective peer intelligence — not rules. Audits your installed skill stack for dead weight (unused, deprecated, flagge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicope",
+      "userId": "s179fztawqzy7eg8wde9vfe06n83v6g4",
+      "displayName": "nicobot",
+      "image": "https://avatars.githubusercontent.com/u/16653864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775313768415,
+      "changelog": "v1.1.0: Added social proof milestone (100+ installs, 100% keep rate) to opening section. No functional changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3e6aa25ee66923fc1c4de7f5770e2162894b51c8db6de672cccc78e51366ac3"
+}

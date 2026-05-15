@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rankforge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rankforge",
+  "skill": {
+    "id": 50656,
+    "skillKey": "clawhub-rankforge",
+    "name": "RankForge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rankforge",
+    "url": "https://clawhub.ai/skills/rankforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rankforge-24bb2513d675a27f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SEO analysis and optimization via RankForge API — site audits, keyword research, competitor analysis, ranking reports. Use when user needs SEO analysis, keyw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbennett111",
+      "userId": "publishers:jbennett111",
+      "displayName": "Jbennett111",
+      "image": "https://avatars.githubusercontent.com/u/86585533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772548653056,
+      "changelog": "Initial release — SEO analysis API client (audits, keywords, competitor analysis). Free tier: 100 req/day.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e56f189520a88a070bfaa2bf59cfe6f0dfd9cf804839d5a6a7b709671376843"
+}

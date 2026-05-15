@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50026,
+  "uuid": "skill-clawhub-cc3po-system-healthcheck",
+  "skillKey": "clawhub-cc3po-system-healthcheck",
+  "name": "CC3PO System Healthcheck",
+  "summary": "Three-tier system health monitoring (L1/L2/L3) with heartbeat mechanism. Zero external dependencies, i18n support, console output only.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc3po_system_healthcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carlos J Cabrales III",
+      "features": [
+        "Three-tier system health monitoring (L1/L2/L3) with heartbeat mechanism",
+        "Zero external dependencies, i18n support, console output only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cc3po-system-healthcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2256078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cc3po-system-healthcheck",
+      "url": "https://clawhub.ai/skills/cc3po-system-healthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc3po-system-healthcheck",
+    "url": "https://clawhub.ai/skills/cc3po-system-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc3po-system-healthcheck-3642f8ca9a99684c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cc3po-system-healthcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cc3po-system-healthcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbbcb781ac86054e654e8c4f7b62d55d3241dbc0d79edafea9423e8d9f2607ff",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T05:57:05.987Z"
+}

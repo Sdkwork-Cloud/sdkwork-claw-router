@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72142,
+  "uuid": "skill-clawhub-book-reviewer",
+  "skillKey": "clawhub-book-reviewer",
+  "name": "Book Reviewer",
+  "summary": "专为文学类书籍生成有温度、有深度的书评及微信公众号文章。聚焦文学作品的精神内核，结合真实生活体验做诗意解读，以感性与理性交织的视角呈现文学之美，适配微信公众号发布场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "三昧",
+      "features": [
+        "专为文学类书籍生成有温度、有深度的书评及微信公众号文章。聚焦文学作品的精神内核，结合真实生活体验做诗意解读，以感性与理性交织的视角呈现文学之美，适配微信公众号发布场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22470505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-reviewer",
+      "url": "https://clawhub.ai/skills/book-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-reviewer",
+    "url": "https://clawhub.ai/skills/book-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-reviewer-824dd9b954129a97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66e8a715212c3c335cd8f893680207595c68a6c90a565ac5f5da47ccb06365dd",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:07:48.711Z"
+}

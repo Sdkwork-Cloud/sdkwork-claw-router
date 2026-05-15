@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/support-flow-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.support_flow_builder",
+  "skill": {
+    "id": 42160,
+    "skillKey": "clawhub-support-flow-builder",
+    "name": "Support Flow Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "support-flow-builder",
+    "url": "https://clawhub.ai/skills/support-flow-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/support-flow-builder-1eccd40c9772136e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn ecommerce support policies, ticket patterns, and channel context into reusable support flows, agent playbooks, macros, bot handoff logic, and governance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776082558305,
+      "changelog": "support-flow-builder 1.0.0 – Initial release\n\n- Provides a documentation-first approach to building ecommerce support flows from policies and ticket patterns.\n- Generates reusable flow maps, agent playbooks, response macros, bot handoff logic, and governance notes.\n- Works with inputs like ticket summaries, support policies, and scenario goals (refunds, returns, delivery delays, etc).\n- Outputs a markdown pack including flow, macros, governance notes, and flags on policy gaps or sensitive cases.\n- Designed for CX leaders, support managers, and ops teams—does not connect to live helpdesks or production systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fe617af4e11cd336ca7045e422c17c82a87fee080333d63a664c459241ef121"
+}

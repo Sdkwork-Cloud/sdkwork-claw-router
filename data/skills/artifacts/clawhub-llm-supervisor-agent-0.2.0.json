@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-supervisor-agent@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_supervisor_agent",
+  "skill": {
+    "id": 12425,
+    "skillKey": "clawhub-llm-supervisor-agent",
+    "name": "LLM Supervisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-supervisor-agent",
+    "url": "https://clawhub.ai/skills/llm-supervisor-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-supervisor-agent-2459e4f79e5d0b9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically switches between cloud and local LLMs on rate limits, with user confirmation required for local code generation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhardie",
+      "userId": "publishers:dhardie",
+      "displayName": "dhardie",
+      "image": "https://avatars.githubusercontent.com/u/36231544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1697,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1770308721321,
+      "changelog": "Cloud/local LLM switching with rate limit detection and safety confirmation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b931b41b64147a12caca14294f998e7c9813c70e2ad690c03c056dc87301a3a"
+}

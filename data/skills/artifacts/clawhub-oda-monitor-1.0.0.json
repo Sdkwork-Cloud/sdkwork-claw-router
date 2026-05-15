@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oda-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oda_monitor",
+  "skill": {
+    "id": 22188,
+    "skillKey": "clawhub-oda-monitor",
+    "name": "Oda Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oda-monitor",
+    "url": "https://clawhub.ai/skills/oda-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oda-monitor-7fdfd7df0f1293ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors websites, APIs, and cron jobs (watchdogs) using Watch.dog. Use it when the user asks to \"check the status of my monitors\", \"check uptime\", \"review w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robinson0594",
+      "userId": "s17819v17v0gfjf3gmtp9d4abd85ncak",
+      "displayName": "Robinson",
+      "image": "https://avatars.githubusercontent.com/u/36093088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772656100052,
+      "changelog": "Initial release of oda-monitor skill.\n\n- Monitor websites, APIs, servers, and scheduled tasks using Watch.dog.\n- Check real-time status and historical uptime of your infrastructure.\n- Manage monitors and watchdogs (create, pause, resume, delete—with explicit confirmation for deletions).\n- Configure and display public status (tracker) pages.\n- Requires WATCHDOG_API_KEY and WATCHDOG_API_URL for setup; verifies connection automatically when credentials are provided or updated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b7d5410a698a2d88b315afd3ed8e83b912f2059e7dcce124edd1ec8fa7b1648"
+}

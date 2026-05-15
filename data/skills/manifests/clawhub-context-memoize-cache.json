@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40123,
+  "uuid": "skill-clawhub-context-memoize-cache",
+  "skillKey": "clawhub-context-memoize-cache",
+  "name": "Context Memoize Cache",
+  "summary": "Caches user-specified context fragments in a file to avoid redundant processing and enable reuse across sessions.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_memoize_cache",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaoxiang616",
+      "features": [
+        "Caches user-specified context fragments in a file to avoid redundant processing and enable reus."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-memoize-cache@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267339286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-memoize-cache",
+      "url": "https://clawhub.ai/skills/context-memoize-cache"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-memoize-cache",
+    "url": "https://clawhub.ai/skills/context-memoize-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-memoize-cache-8b328f4f92f661c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-memoize-cache@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-memoize-cache-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a06b68993f4212962eb775bee1434abb0931bf5e1a4c79abc29d1aebb296c77",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T05:09:37.227Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65894,
+  "uuid": "skill-clawhub-parse-video-nomark",
+  "skillKey": "clawhub-parse-video-nomark",
+  "name": "Parse Video - 视频去水印",
+  "summary": "视频去水印解析 Skill。支持 20+ 平台短视频去水印解析，包括抖音、快手、小红书、微博、西瓜视频、豆包、云雀、B站等。使用本技能时触发：解析视频、去水印、视频解析、解析链接、下载视频、去除水印、parse video、video parser、抖音解析、快手解析、小红书解析、bilibili 解析、douy...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parse_video_nomark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mackjosn",
+      "features": [
+        "视频去水印解析 Skill。支持 20+ 平台短视频去水印解析，包括抖音、快手、小红书、微博、西瓜视频、豆包、云雀、B站等。使用本技能时触发：解析视频、去水印、视频解析、解析链接、下载视频、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parse-video-nomark@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20837375?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parse-video-nomark",
+      "url": "https://clawhub.ai/skills/parse-video-nomark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parse-video-nomark",
+    "url": "https://clawhub.ai/skills/parse-video-nomark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parse-video-nomark-4cfc6f84a1761f02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parse-video-nomark@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-parse-video-nomark-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d37b2e92854fa3e743365d9e5b17d69d74ceba371a78afa7532944e9f59e6af",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T06:21:25.644Z"
+}

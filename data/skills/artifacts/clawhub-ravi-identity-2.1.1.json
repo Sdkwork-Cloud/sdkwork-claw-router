@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ravi-identity@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ravi_identity",
+  "skill": {
+    "id": 18841,
+    "skillKey": "clawhub-ravi-identity",
+    "name": "Ravi identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ravi-identity",
+    "url": "https://clawhub.ai/skills/ravi-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ravi-identity-5e99d42890ed64ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get your agent identity (email, phone, owner name) and manage identities. Do NOT use for reading messages (use ravi-inbox), sending email (use ravi-email-sen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raunaksingwi",
+      "userId": "s17c2wh3r2py8ztx3k1ks1v6yh84aak2",
+      "displayName": "Raunak Singwi",
+      "image": "https://avatars.githubusercontent.com/u/18749768?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1775627179152,
+      "changelog": "Auto-published from 19d2b7eea3e0a215bf8c5726dd9e1fb86307cdd7",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42ca1a945d736c20fc820df469b56c9adf26ca22f0887e09140379b44ef08622"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28334,
+  "uuid": "skill-clawhub-cliany-site",
+  "skillKey": "clawhub-cliany-site",
+  "name": "cliany-site",
+  "summary": "Use when the user wants to automate web workflows into CLI commands via Chrome CDP and LLM. Supports exploring pages, generating adapters, and replaying acti...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cliany_site",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shawn",
+      "features": [
+        "Use when the user wants to automate web workflows into CLI commands via Chrome CDP and LLM",
+        "Supports exploring pages, generating adapters, and replaying acti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cliany-site@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1700913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cliany-site",
+      "url": "https://clawhub.ai/skills/cliany-site"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cliany-site",
+    "url": "https://clawhub.ai/skills/cliany-site",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cliany-site-8fb2f7663798a69e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cliany-site@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cliany-site-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d5edec12ba60ac006e97a459fa74ae8cb1aa055f7bf3cbb7e95cc16d5feb459",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:35:35.510Z"
+}

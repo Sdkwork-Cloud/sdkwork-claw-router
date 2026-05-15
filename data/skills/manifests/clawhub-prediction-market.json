@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14411,
+  "uuid": "skill-clawhub-prediction-market",
+  "skillKey": "clawhub-prediction-market",
+  "name": "Garden Temp Market (GTM)",
+  "summary": "Participate in Base's GTM by betting if today's 18:00 UTC garden temperature will be higher or lower than yesterday's, sharing winnings from the pot.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Potdealer",
+      "features": [
+        "Participate in Base's GTM by betting if today's 18:00 UTC garden temperature will be higher or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-market@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172426319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-market",
+      "url": "https://clawhub.ai/skills/prediction-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market",
+    "url": "https://clawhub.ai/skills/prediction-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-cefb67b8a23a2a6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-market@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef4feaf90498a7fc51e6ca10847c8e287b3b632b68da58309b0f676b3b67e2e2",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T09:12:09.388Z"
+}

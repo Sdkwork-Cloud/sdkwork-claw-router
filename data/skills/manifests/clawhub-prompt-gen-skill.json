@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23376,
+  "uuid": "skill-clawhub-prompt-gen-skill",
+  "skillKey": "clawhub-prompt-gen-skill",
+  "name": "Prompt Gen Skill",
+  "summary": "Generate detailed, optimized AI art prompts for Midjourney, DALL-E, and Stable Diffusion, including style, lighting, and composition keywords.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_gen_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loverun321",
+      "features": [
+        "Generate detailed, optimized AI art prompts for Midjourney, DALL-E, and Stable Diffusion, inclu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-gen-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222489895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-gen-skill",
+      "url": "https://clawhub.ai/skills/prompt-gen-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-gen-skill",
+    "url": "https://clawhub.ai/skills/prompt-gen-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-gen-skill-1ed63d8ded23560c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-gen-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-gen-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:857613582d9216b227edbe3ea90902e6ef905466b714c5f015ee58f06f9c8abe",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:42:21.366Z"
+}

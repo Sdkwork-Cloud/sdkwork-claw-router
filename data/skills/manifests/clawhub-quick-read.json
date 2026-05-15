@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31004,
+  "uuid": "skill-clawhub-quick-read",
+  "skillKey": "clawhub-quick-read",
+  "name": "quick-read",
+  "summary": "Quickly extract the key points from a book or article and organize them into structured markdown notes. Use this when the user asks for a summary of a book o...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenyichu86",
+      "features": [
+        "Quickly extract the key points from a book or article and organize them into structured markdow.",
+        "Use this when the user asks for a summary of a book o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-read@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33452235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-read",
+      "url": "https://clawhub.ai/skills/quick-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-read",
+    "url": "https://clawhub.ai/skills/quick-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-read-c76428c1b6764701.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-read@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-read-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97ca58b77ff6203b63b1f0663f5f97e0fa285fbe0e2472b016920d19fb334b32",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:18:36.255Z"
+}

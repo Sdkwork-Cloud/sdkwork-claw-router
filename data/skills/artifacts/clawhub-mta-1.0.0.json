@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mta@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mta",
+  "skill": {
+    "id": 49816,
+    "skillKey": "clawhub-mta",
+    "name": "NYC MTA Transit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mta",
+    "url": "https://clawhub.ai/skills/mta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mta-f3787cb0fcafe15c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NYC MTA transit — real-time subway arrivals, bus predictions, service alerts, and route info for the New York City subway and bus system. Use when the user a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianleach",
+      "userId": "publishers:brianleach",
+      "displayName": "Brian Leach",
+      "image": "https://avatars.githubusercontent.com/u/1900805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 634,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771718547657,
+      "changelog": "- Initial release of the mta skill providing real-time NYC MTA transit information.\n- Supports subway arrivals, bus predictions (requires API key), service alerts, and route details for the New York City subway and bus system.\n- Commands cover arrivals, vehicle locations, service alerts, route and stop lookup, and GTFS data refresh.\n- Zero configuration needed for subway and alert features; bus-related features require an MTA_BUS_API_KEY.\n- Includes reference data on subway lines, key bus routes, and fare information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d66edfb0570ae9752a38e16df3382ec95ba842462644726060ede2d945228d61"
+}

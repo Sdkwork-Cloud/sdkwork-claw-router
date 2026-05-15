@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25544,
+  "uuid": "skill-clawhub-instruction-anchor-guard",
+  "skillKey": "clawhub-instruction-anchor-guard",
+  "name": "Instruction Anchor Guard",
+  "summary": "Preserve user-critical instructions across long sessions and context compaction. Use when users mark constraints as important/must/always/never/highest-prior...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instruction_anchor_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dalomeve",
+      "features": [
+        "Preserve user-critical instructions across long sessions and context compaction",
+        "Use when users mark constraints as important/must/always/never/highest-prior..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instruction-anchor-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115125037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instruction-anchor-guard",
+      "url": "https://clawhub.ai/skills/instruction-anchor-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instruction-anchor-guard",
+    "url": "https://clawhub.ai/skills/instruction-anchor-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instruction-anchor-guard-23f12350d108386a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instruction-anchor-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instruction-anchor-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f745a71a124d258e20b4a5555a3009d26e1316ab9dbc678b9d9d208ae3567e6f",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T11:29:04.646Z"
+}

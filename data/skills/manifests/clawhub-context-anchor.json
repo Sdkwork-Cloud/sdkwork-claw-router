@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9542,
+  "uuid": "skill-clawhub-context-anchor",
+  "skillKey": "clawhub-context-anchor",
+  "name": "Context Anchor",
+  "summary": "Recover from context compaction by scanning memory files and surfacing where you left off. Use when waking up fresh, after compaction, or when you feel lost about what you were doing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_anchor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Boscoeuk",
+      "features": [
+        "Recover from context compaction by scanning memory files and surfacing where you left off",
+        "Use when waking up fresh, after compaction, or when you feel lost about what you were doing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-anchor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48342769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-anchor",
+      "url": "https://clawhub.ai/skills/context-anchor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-anchor",
+    "url": "https://clawhub.ai/skills/context-anchor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-anchor-2e28ea5ea9dd5da2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-anchor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-anchor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:678a93b52fa9d6400a06fee65bd14810a76ab65fd980bf2c3215a0ea2bff9d1b",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T22:01:42.518Z"
+}

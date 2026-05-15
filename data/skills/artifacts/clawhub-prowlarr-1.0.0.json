@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prowlarr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prowlarr",
+  "skill": {
+    "id": 10953,
+    "skillKey": "clawhub-prowlarr",
+    "name": "Prowlarr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prowlarr",
+    "url": "https://clawhub.ai/skills/prowlarr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prowlarr-39a0be6d6589d78d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search indexers and manage Prowlarr. Use when the user asks to \"search for a torrent\", \"search indexers\", \"find a release\", \"check indexer status\", \"list indexers\", \"prowlarr search\", \"sync indexers\", or mentions Prowlarr/indexer managemen."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmagar",
+      "userId": "publishers:jmagar",
+      "displayName": "jmagar",
+      "image": "https://avatars.githubusercontent.com/u/38927646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2143,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769203129451,
+      "changelog": "Initial release of the Prowlarr skill.\n\n- Search across all indexers and manage Prowlarr via API commands.\n- Detailed quick reference for searching, listing, testing, and managing indexers.\n- Examples and category IDs provided for typical torrent, usenet, and release searches.\n- Guidance for syncing with Sonarr/Radarr and checking system or indexer health.\n- Full setup instructions for API credential configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d7b6b1d930f337ebb99ad03783b30019cea02a20d70d9836db4fa7eb63e4987c"
+}

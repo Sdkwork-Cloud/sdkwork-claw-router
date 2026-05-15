@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64489,
+  "uuid": "skill-clawhub-skylv-content-writer",
+  "skillKey": "clawhub-skylv-content-writer",
+  "name": "Skylv Content Writer",
+  "summary": "内容创作助手。撰写各类文案、文章、报告。使用场景：(1) 撰写技术文档，(2) 创作营销文案，(3) 写作博客文章，(4) 生成报告总结。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_content_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "内容创作助手。撰写各类文案、文章、报告。使用场景：(1) 撰写技术文档，(2) 创作营销文案，(3) 写作博客文章，(4) 生成报告总结。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-content-writer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-content-writer",
+      "url": "https://clawhub.ai/skills/skylv-content-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-content-writer",
+    "url": "https://clawhub.ai/skills/skylv-content-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-content-writer-9efc0294fd5cb7cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-content-writer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-content-writer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c4dd8b8e9eebf40346f00dc5cc05aafbe04355d3eb15ef55c6112707c96f2ad",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:26:46.202Z"
+}

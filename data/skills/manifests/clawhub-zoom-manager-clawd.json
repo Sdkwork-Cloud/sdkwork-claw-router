@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11275,
+  "uuid": "skill-clawhub-zoom-manager-clawd",
+  "skillKey": "clawhub-zoom-manager-clawd",
+  "name": "Zoom Manager",
+  "summary": "Manage Zoom meetings via OAuth API. Create, list, delete, and update events.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoom_manager_clawd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vladimir",
+      "features": [
+        "Manage Zoom meetings via OAuth API",
+        "Create, list, delete, and update events."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoom-manager-clawd@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34809769?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoom-manager-clawd",
+      "url": "https://clawhub.ai/skills/zoom-manager-clawd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoom-manager-clawd",
+    "url": "https://clawhub.ai/skills/zoom-manager-clawd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoom-manager-clawd-6010de36b8b0b48e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoom-manager-clawd@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoom-manager-clawd-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0707286c35237b9708e0cf2c24250763dd40e13ee60f0973c434011eafeb7502",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T21:45:47.659Z"
+}

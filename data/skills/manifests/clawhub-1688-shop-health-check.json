@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66744,
+  "uuid": "skill-clawhub-1688-shop-health-check",
+  "skillKey": "clawhub-1688-shop-health-check",
+  "name": "1688 Shop Health Check",
+  "summary": "1688 店铺健康分析 skill。基于店铺总盘、异常商品、优秀商品、活动效果、客户地域、头部老客六大维度，对 1688 商家店铺进行健康诊断、风险识别、增长驱动分析与可执行经营建议输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_shop_health_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "1688 店铺健康分析 skill。基于店铺总盘、异常商品、优秀商品、活动效果、客户地域、头部老客六大维度，对 1688 商家店铺进行健康诊断、风险识别、增长驱动分析与可执行经营建议输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1688-shop-health-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1688-shop-health-check",
+      "url": "https://clawhub.ai/skills/1688-shop-health-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-shop-health-check",
+    "url": "https://clawhub.ai/skills/1688-shop-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-shop-health-check-fc8ab08a726f4f02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1688-shop-health-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1688-shop-health-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46b5b0da847cf4c38d23247ebe005491e4c9e09cb8a92fa3a9bd42fe6850337d",
+      "artifactSizeBytes": 2703
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T10:21:01.355Z"
+}

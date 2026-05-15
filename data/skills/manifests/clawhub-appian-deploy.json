@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35006,
+  "uuid": "skill-clawhub-appian-deploy",
+  "skillKey": "clawhub-appian-deploy",
+  "name": "Appian Deploy",
+  "summary": "Deploy (import) an Appian package ZIP into an Appian environment. Use when the user wants to push, import, or deploy a package file to an Appian environment.",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appian_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solarspiker",
+      "features": [
+        "Deploy (import) an Appian package ZIP into an Appian environment",
+        "Use when the user wants to push, import, or deploy a package file to an Appian environment."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appian-deploy@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235690575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appian-deploy",
+      "url": "https://clawhub.ai/skills/appian-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appian-deploy",
+    "url": "https://clawhub.ai/skills/appian-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appian-deploy-1bdbbc1e6286c67a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appian-deploy@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-appian-deploy-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93b0f45db6b4b172a6d85b3b490647f260aa17ea29598033fc90695f0c3ae085",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:21:49.293Z"
+}

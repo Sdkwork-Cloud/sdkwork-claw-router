@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8792,
+  "uuid": "skill-clawhub-hubspot",
+  "skillKey": "clawhub-hubspot",
+  "name": "HubSpot",
+  "summary": "HubSpot CRM and CMS API integration for contacts, companies, deals, owners, and content management.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hubspot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Wall",
+      "features": [
+        "HubSpot CRM and CMS API integration for contacts, companies, deals, owners, and content managem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hubspot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1003247?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hubspot",
+      "url": "https://clawhub.ai/skills/hubspot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hubspot",
+    "url": "https://clawhub.ai/skills/hubspot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hubspot-91b6da07adf530f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hubspot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hubspot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94132b7fd1f5a7bb70fccdab43323f7f3e623fa39a2d1e897f9d99f07c8210f1",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T20:04:05.454Z"
+}

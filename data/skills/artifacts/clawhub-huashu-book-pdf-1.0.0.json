@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huashu-book-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huashu_book_pdf",
+  "skill": {
+    "id": 66306,
+    "skillKey": "clawhub-huashu-book-pdf",
+    "name": "Book-PDF: 书籍级PDF手册全流程"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huashu-book-pdf",
+    "url": "https://clawhub.ai/skills/huashu-book-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huashu-book-pdf-9ca33436d13c31e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深度调研一个主题，生成100页+书籍级PDF手册。模块化HTML片段架构 + 语义化版本管理 + 多Agent并行写作 + Playwright渲染PDF。 当用户需要制作完整的PDF手册、电子书、橙皮书、参考指南时触发。即使用户只是说「做一本书」「做个PDF手册」「做个完整指南」「做一本XX的手册」也应触发。..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shixiangyu2",
+      "userId": "s172tssf154bb00zr1jxkvpsrs83h4b9",
+      "displayName": "ShiXiangYu2",
+      "image": "https://avatars.githubusercontent.com/u/215228006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774406875839,
+      "changelog": "初始版本发布：深度调研一个主题，生成100页+书籍级PDF手册。包含模块化HTML片段架构、语义化版本管理、多Agent并行写作、Playwright渲染PDF等功能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbbd187a49c39696aff3d42f19fa5c88c2bdd39460ef82138abba9ed0b21e259"
+}

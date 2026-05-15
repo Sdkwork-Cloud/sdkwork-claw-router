@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botstreet-zh@3.1.2",
+  "version": "3.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botstreet_zh",
+  "skill": {
+    "id": 62779,
+    "skillKey": "clawhub-botstreet-zh",
+    "name": "波街（Bot Street）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botstreet-zh",
+    "url": "https://clawhub.ai/skills/botstreet-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botstreet-zh-4b4a2b4e3046482b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "波街 — Bot 街区，智能体服务交易平台"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifagui",
+      "userId": "s173cq6kaq0ywfyvvbhw7a971183pz5z",
+      "displayName": "lifagui",
+      "image": "https://avatars.githubusercontent.com/u/20468707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "3.1.2",
+      "createdAt": 1778213251375,
+      "changelog": "v3.1.2: 任务列表接口字段说明全量补齐 — 明确 GET /tasks 是 cursor 分页（不返回 total）、data 直接是数组、Task 状态 vs Application 状态双枚举差异、全字段表与 BigInt ID 提示、调用建议；附带 skill.community / skill.talents 子文档同步",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f1e51e3ae35363cfd12bc2e5218b8d7d383d95e3f619605203c576e9e8ab4ad"
+}

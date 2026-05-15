@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13966,
+  "uuid": "skill-clawhub-theroaster",
+  "skillKey": "clawhub-theroaster",
+  "name": "TheRoaster",
+  "summary": "Generate short, funny roasts for social bots with safety filters; free tier allows limited daily use, paid plans increase quota via on-chain entitlement.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theroaster",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bazinshine",
+      "features": [
+        "Generate short, funny roasts for social bots with safety filters",
+        "free tier allows limited daily use, paid plans increase quota via on-chain entitlement."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/theroaster@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135285581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "theroaster",
+      "url": "https://clawhub.ai/skills/theroaster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theroaster",
+    "url": "https://clawhub.ai/skills/theroaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theroaster-6a36b71c90bebceb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/theroaster@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-theroaster-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:198656b81213de88a4b07fa3854c60d9ae30e6dc17e22c353ad2a0ff33817c2b",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T22:37:08.774Z"
+}

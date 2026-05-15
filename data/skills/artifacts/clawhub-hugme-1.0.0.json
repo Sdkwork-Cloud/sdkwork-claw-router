@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hugme@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hugme",
+  "skill": {
+    "id": 21223,
+    "skillKey": "clawhub-hugme",
+    "name": "hugme"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hugme",
+    "url": "https://clawhub.ai/skills/hugme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hugme-273235de34e3b5bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Emotional reset and loop-breaking skill. Use this skill when: (1) The user expresses frustration, anger, or dissatisfaction with your responses (e.g. cursing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeahoo",
+      "userId": "publishers:zeahoo",
+      "displayName": "Hal",
+      "image": "https://avatars.githubusercontent.com/u/18182819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 507,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772370271565,
+      "changelog": "hugme 1.0.0 – Initial release\n\n- Introduces an emotional reset and loop-breaking workflow for improving user experience during stuck or negative interactions.\n- Detects frustration, repeated failed attempts, or conversational loops and triggers a structured reset protocol.\n- Analyzes and summarizes the user's emotional state using a specific keyword set.\n- Fetches tailored reset methodologies from hugllm.com based on emotion context.\n- Guides through clarifying goals, checking output formats, removing assumptions, and resuming with a fresh, improved approach.\n- Emphasizes honest acknowledgment, new strategies, and focus on quality over speed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b00c56d9b1f89dde38c9d5bb2118de0ebbb9ca918d19143410732ba0a9d68d0c"
+}

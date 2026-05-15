@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/encryptedenergy-uptime@0.2.4",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.encryptedenergy_uptime",
+  "skill": {
+    "id": 51416,
+    "skillKey": "clawhub-encryptedenergy-uptime",
+    "name": "Uptime Monitoring with Encrypted Energy - Know the second your OpenClaw agent goes silent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "encryptedenergy-uptime",
+    "url": "https://clawhub.ai/skills/encryptedenergy-uptime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/encryptedenergy-uptime-730b39ea0cfbb3b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Know the second your OpenClaw agent goes silent. Free hosted heartbeat monitor — every-minute pings, public status page, and email alerts when pings stop."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmarbach",
+      "userId": "s170f744jadd2kaqevp663x5kh85k76t",
+      "displayName": "John Marbach",
+      "image": "https://avatars.githubusercontent.com/u/935049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.2.4",
+      "createdAt": 1777259402243,
+      "changelog": "Rename listing title for clarity",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ece397123233a75e774ab63aecb4f7c306ce24b8c4a763cadc33f438b649b97"
+}

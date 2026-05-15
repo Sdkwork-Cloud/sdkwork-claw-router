@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-remotion-best-practices@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_remotion_best_practices",
+  "skill": {
+    "id": 22359,
+    "skillKey": "clawhub-abm-remotion-best-practices",
+    "name": "Remotion Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-remotion-best-practices",
+    "url": "https://clawhub.ai/skills/abm-remotion-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-remotion-best-practices-e3dcab558fa16f35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create videos programmatically with React using Remotion. Also use when the user mentions 'create video,' 'Remotion,' 'React video,' '..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773979219045,
+      "changelog": "- Initial release with best practices for creating programmatic videos using Remotion v4 and React.\n- Covers project setup, composition structure, scene animation patterns, and the full rendering pipeline.\n- Provides workflow for both new and existing Remotion projects, including CLI commands.\n- Emphasizes deterministic rendering, version pinning, 60fps by default, and proper animation techniques.\n- Clear output format: composition file, scene components, and exact render/preview commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61c16fe46756baf139b686de95cbf39454467d4806afd0fc16f5b2cd6c764443"
+}

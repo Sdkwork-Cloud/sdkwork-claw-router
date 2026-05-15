@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xueqiu-combo-report@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xueqiu_combo_report",
+  "skill": {
+    "id": 29305,
+    "skillKey": "clawhub-xueqiu-combo-report",
+    "name": "Xueqiu Combo Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xueqiu-combo-report",
+    "url": "https://clawhub.ai/skills/xueqiu-combo-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xueqiu-combo-report-fee8e2f119fe1883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end workflow for Xueqiu self-selected combo analysis from scraped or self-selected combo holdings batches through final ranking and PDF export. Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ning-kun",
+      "userId": "s1793t9ymha9akcjnvdf34p37584zr5m",
+      "displayName": "ning-kun",
+      "image": "https://avatars.githubusercontent.com/u/181131131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776821935821,
+      "changelog": "Update description from Xueqiu combo to Xueqiu self-selected combo",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:419834c1c6f297e60442571df195fec51711b0fd30a03b84aa85b245d0f16ab2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitor-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_finder",
+  "skill": {
+    "id": 27532,
+    "skillKey": "clawhub-competitor-finder",
+    "name": "Competitor Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-finder",
+    "url": "https://clawhub.ai/skills/competitor-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-finder-010c03c2f74d0d24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies 3-5 competitors for a given brand using SerpAPI, DataForSEO, or OpenAI fallback, returning names, websites, and optional reasons for competition."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adarshvmore",
+      "userId": "publishers:adarshvmore",
+      "displayName": "Adarsh More",
+      "image": "https://avatars.githubusercontent.com/u/103880462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772681997651,
+      "changelog": "Competitor Finder Skill v1.0.0\n\n- Initial release: identifies 3-5 competitors for a brand using SerpAPI, DataForSEO, and OpenAI (fallback only).\n- Returns competitor names, websites, and optional reasons; skips input brand; deduplicates by domain.\n- Three-tiered API fallback maximizes reliability and data coverage.\n- Always returns a valid result object—never throws errors; includes robust logging and graceful error handling.\n- Designed for easy pipeline integration and use in the Marketing Audit competitor landscape.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e0bd7af5685d14ea25dc89288cd96f6dbe3b5d6fee237c518dfe2d980b88311"
+}

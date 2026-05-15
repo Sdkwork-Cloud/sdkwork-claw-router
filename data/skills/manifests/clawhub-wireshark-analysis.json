@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26179,
+  "uuid": "skill-clawhub-wireshark-analysis",
+  "skillKey": "clawhub-wireshark-analysis",
+  "name": "Wireshark Analysis",
+  "summary": "Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troublesho...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wireshark_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Network traffic analysis with Wireshark and tshark",
+        "Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wireshark-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wireshark-analysis",
+      "url": "https://clawhub.ai/skills/wireshark-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wireshark-analysis",
+    "url": "https://clawhub.ai/skills/wireshark-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wireshark-analysis-2db2b1157de9e4f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wireshark-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wireshark-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:945ab3fac5f22e985e3e8d9fbf8528d3509308ffbbebe08c3f8de88f2e125571",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:16:15.114Z"
+}

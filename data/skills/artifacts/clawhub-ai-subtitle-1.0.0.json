@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle",
+  "skill": {
+    "id": 42489,
+    "skillKey": "clawhub-ai-subtitle",
+    "name": "Ai Subtitle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle",
+    "url": "https://clawhub.ai/skills/ai-subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-f15d284b6556abf3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776916669687,
+      "changelog": "Initial release of AI Subtitle — Generate and embed subtitles in your videos through a fast, cloud-based workflow.\n\n- Upload MP4, MOV, AVI, or WebM files up to 500MB for subtitle generation.\n- Supports automatic subtitle creation in multiple languages (e.g. English, Japanese).\n- Cloud-based processing: no manual installation or setup required.\n- Download finished 1080p MP4 videos with embedded subtitles in 30–90 seconds.\n- Includes session management, error handling, and export via secure API token system.\n- User-friendly prompts and detailed workflow guidance for content creators and educators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93ae3834d7414cf75ec50707711b38bd370f986b076bd33e2f75071980284d90"
+}

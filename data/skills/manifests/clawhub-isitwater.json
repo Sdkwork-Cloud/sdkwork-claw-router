@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12412,
+  "uuid": "skill-clawhub-isitwater",
+  "skillKey": "clawhub-isitwater",
+  "name": "IsItWater",
+  "summary": "Check if geographic coordinates are over water or land using the IsItWater API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.isitwater",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnnagro",
+      "features": [
+        "Check if geographic coordinates are over water or land using the IsItWater API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/isitwater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31442?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "isitwater",
+      "url": "https://clawhub.ai/skills/isitwater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "isitwater",
+    "url": "https://clawhub.ai/skills/isitwater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/isitwater-968a1151a0ed5188.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/isitwater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-isitwater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf104b3c10d4b5dc44e48bdbc6e4d171df8bce9dc7923f40fd4d2a6eb3d4eb97",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:25:10.963Z"
+}

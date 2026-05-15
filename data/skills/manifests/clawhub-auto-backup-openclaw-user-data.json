@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61568,
+  "uuid": "skill-clawhub-auto-backup-openclaw-user-data",
+  "skillKey": "clawhub-auto-backup-openclaw-user-data",
+  "name": "OpenClaw自动备份工具_auto-backup-openclaw-user-data",
+  "summary": "OpenClaw 用户数据自动备份技能。支持全量/选择性备份、定时执行、ZIP 压缩、日志记录、消息通知和保留策略管理。 **触发场景**： (1) 用户要求备份 OpenClaw 数据 (2) 用户要求设置定时备份 (3) 用户询问备份配置、状态、日志 (4) 用户执行 /backup_now、/backup_...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_backup_openclaw_user_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hjj345",
+      "features": [
+        "OpenClaw 用户数据自动备份技能。支持全量/选择性备份、定时执行、ZIP 压缩、日志记录、消息通知和保留策略管理。 **触发场景**： (1) 用户要求备份 OpenClaw 数据 (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-backup-openclaw-user-data@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127822328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-backup-openclaw-user-data",
+      "url": "https://clawhub.ai/skills/auto-backup-openclaw-user-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-backup-openclaw-user-data",
+    "url": "https://clawhub.ai/skills/auto-backup-openclaw-user-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-backup-openclaw-user-data-9cb394b90c0e9d70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-backup-openclaw-user-data@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-backup-openclaw-user-data-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:857e211ca08a56cfb6e20cd8c18e0e36bb8855dd395cfb5dbfe8127ffdcecf87",
+      "artifactSizeBytes": 3776
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:50:53.049Z"
+}

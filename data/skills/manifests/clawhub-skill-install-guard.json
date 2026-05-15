@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64426,
+  "uuid": "skill-clawhub-skill-install-guard",
+  "skillKey": "clawhub-skill-install-guard",
+  "name": "Skill Install Guard",
+  "summary": "安全拦截型技能，确保安装任何技能前都经过 skill-vetter 的安全审查，输出审查报告并要求用户明确确认，禁止私自安装。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_install_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongyulin89",
+      "features": [
+        "安全拦截型技能，确保安装任何技能前都经过 skill-vetter 的安全审查，输出审查报告并要求用户明确确认，禁止私自安装。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-install-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44680953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-install-guard",
+      "url": "https://clawhub.ai/skills/skill-install-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-install-guard",
+    "url": "https://clawhub.ai/skills/skill-install-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-install-guard-04c457ea3732f25b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-install-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-install-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bf5fc2eb0c7d5db5e6f67376f4937641a82a6f245193f976479949147e30690",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T01:49:29.412Z"
+}

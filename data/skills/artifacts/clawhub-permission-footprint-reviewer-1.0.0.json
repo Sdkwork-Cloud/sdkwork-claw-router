@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/permission-footprint-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.permission_footprint_reviewer",
+  "skill": {
+    "id": 59082,
+    "skillKey": "clawhub-permission-footprint-reviewer",
+    "name": "Permission Footprint Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "permission-footprint-reviewer",
+    "url": "https://clawhub.ai/skills/permission-footprint-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/permission-footprint-reviewer-3c11bd9a404b3cad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "梳理某个 Skill、脚本或工作流需要的权限，并提出最小权限替代方案。；use for permissions, least-privilege, security workflows；do not use for 绕过系统安全控制, 生成提权方法."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773887157461,
+      "changelog": "Initial release of permission-footprint-reviewer.\n\n- Provides a skill for auditing permissions required by scripts, skills, or workflows and suggests least-privilege alternatives.\n- Emphasizes safe boundaries: does not assist in bypassing controls or generating privilege escalation methods.\n- Offers a structured review including permission footprint, usage explanation, excessive permissions, least-privilege substitutions, isolation advice, and a review checklist.\n- Generates an explicit “review draft” before actionable checklists and flags missing information as “pending confirmation.”\n- Adheres to clearly defined audit, output, and runtime rules for safety and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83543549b7b32c109c0a29afee84245c5644f4d52e8796e0756e5f8afe5ec25f"
+}

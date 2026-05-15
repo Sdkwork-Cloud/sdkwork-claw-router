@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34626,
+  "uuid": "skill-clawhub-agent-rule-audit",
+  "skillKey": "clawhub-agent-rule-audit",
+  "name": "Agent Rule Audit",
+  "summary": "Audit an OpenClaw agent's behavior-layer rules and prompt sources to find drift, redundancy, conflict, loss of focus, and weak behavior guidance. Use when re...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_rule_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alan Wang",
+      "features": [
+        "Audit an OpenClaw agent's behavior-layer rules and prompt sources to find drift, redundancy, co.",
+        "Use when re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-rule-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/509318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-rule-audit",
+      "url": "https://clawhub.ai/skills/agent-rule-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-rule-audit",
+    "url": "https://clawhub.ai/skills/agent-rule-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-rule-audit-d38ce3b2fb31b64f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-rule-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-rule-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1df8ee8c80e2fe6c9ca0ee73f2e9b8cdc4dbca283545814d7c7ebf102be693ca",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T00:07:31.817Z"
+}

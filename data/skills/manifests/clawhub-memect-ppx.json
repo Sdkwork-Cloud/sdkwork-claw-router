@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55475,
+  "uuid": "skill-clawhub-memect-ppx",
+  "skillKey": "clawhub-memect-ppx",
+  "name": "memect-ppx",
+  "summary": "Parse PDFs and images into Markdown/JSON using the `ppx` CLI. Use when the user asks to OCR scanned PDFs or screenshots, extract tables from PDFs, convert PD...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memect_ppx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HangHang Li",
+      "features": [
+        "Parse PDFs and images into Markdown/JSON using the `ppx` CLI",
+        "Use when the user asks to OCR scanned PDFs or screenshots, extract tables from PDFs, convert PD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memect-ppx@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15344401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memect-ppx",
+      "url": "https://clawhub.ai/skills/memect-ppx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memect-ppx",
+    "url": "https://clawhub.ai/skills/memect-ppx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memect-ppx-118b2cd0e4f36b7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memect-ppx@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-memect-ppx-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5ebc26b28a37abc77b49ca1180e3f2d345591dc948ff17ce415e35a954f8a55",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T13:47:58.585Z"
+}

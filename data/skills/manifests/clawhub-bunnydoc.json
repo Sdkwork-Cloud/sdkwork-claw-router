@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31381,
+  "uuid": "skill-clawhub-bunnydoc",
+  "skillKey": "clawhub-bunnydoc",
+  "name": "Bunnydoc",
+  "summary": "BunnyDoc integration. Manage data, records, and automate workflows. Use when the user wants to interact with BunnyDoc data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bunnydoc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BunnyDoc integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BunnyDoc data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bunnydoc@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bunnydoc",
+      "url": "https://clawhub.ai/skills/bunnydoc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bunnydoc",
+    "url": "https://clawhub.ai/skills/bunnydoc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bunnydoc-efc17cdac1cfecea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bunnydoc@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bunnydoc-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b791ea143f665b6d5e7dc1e215420bdbdccc0b6b975f9618b54865313709e8b",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:45.121Z"
+}

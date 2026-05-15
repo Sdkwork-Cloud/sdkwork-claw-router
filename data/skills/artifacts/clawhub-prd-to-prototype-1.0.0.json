@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prd-to-prototype@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_to_prototype",
+  "skill": {
+    "id": 63636,
+    "skillKey": "clawhub-prd-to-prototype",
+    "name": "PRD to Prototype"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-to-prototype",
+    "url": "https://clawhub.ai/skills/prd-to-prototype",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-to-prototype-9bfda8a1948fff9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从产品需求到可交互原型的完整工作流。当用户表达产品想法（如'我想做一个...'、'帮我设计...'）时触发。支持：1) 零提问直出PRD 2) 平台选择确认 3) 生成Awwwards级别的高保真HTML/Tailwind原型（移动端/PC端）。端到端产品设计流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zengxming45",
+      "userId": "publishers:zengxming45",
+      "displayName": "zengxming45",
+      "image": "https://avatars.githubusercontent.com/u/251536130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 916,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774244605925,
+      "changelog": "PRD to Prototype — initial release:\n\n- Implements an end-to-end workflow transforming product ideas directly into full PRD documents and high-fidelity interactive HTML/Tailwind prototypes.\n- Enforces a strict two-step process: generate PRD first (with zero user questions), then confirm platform and generate prototype.\n- Delivers ready-to-browse mobile (iPhone frame) or PC (modern SaaS style) prototypes with advanced UI system, real images (Unsplash), and all content in Simplified Chinese.\n- Uses only HTML5, Tailwind CSS (CDN), and Vanilla JS; excludes any compiled frameworks.\n- Includes a built-in GenUI confirmation form after PRD, and robust self-checks for visual and content quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1edc561ce9aa486408722ca07466fb074e30f26b449f2c7106405c9b14c9f18"
+}

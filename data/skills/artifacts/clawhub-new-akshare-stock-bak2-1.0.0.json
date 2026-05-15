@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/new-akshare-stock-bak2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_akshare_stock_bak2",
+  "skill": {
+    "id": 65987,
+    "skillKey": "clawhub-new-akshare-stock-bak2",
+    "name": "New Akshare Stock.Bak2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-akshare-stock-bak2",
+    "url": "https://clawhub.ai/skills/new-akshare-stock-bak2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-akshare-stock-bak2-83d1d05b46c81413.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。用于回答关于A股股票查询、行情数据、财务分析、选股等问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "make453",
+      "userId": "s171bnm4ey1a62whjsxt9brj4d83qreq",
+      "displayName": "make453",
+      "image": "https://avatars.githubusercontent.com/u/200362598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774109248210,
+      "changelog": "Initial release of A股量化数据分析助手，基于AkShare库。\n\n- 支持A股实时行情、历史K线、财务报表、板块分析、资金流向、龙虎榜、新股、融资融券等常用数据查询\n- 提供常用股票代码和全面示例代码\n- 附带Baostock作为备选方案\n- 详细列出数据接口的注意事项与使用须知",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d41f3705d183c04a7cc471b811da6a2945ba9a5260e3610ec582f37213c26d8"
+}

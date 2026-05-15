@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28380,
+  "uuid": "skill-clawhub-identity-trust",
+  "skillKey": "clawhub-identity-trust",
+  "name": "Identity Trust",
+  "summary": "Decentralized Identity (DID) and Verifiable Credentials management for AI Agents",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identity_trust",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "Decentralized Identity (DID) and Verifiable Credentials management for AI Agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/identity-trust@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "identity-trust",
+      "url": "https://clawhub.ai/skills/identity-trust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identity-trust",
+    "url": "https://clawhub.ai/skills/identity-trust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identity-trust-ade17ca1ee2625a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/identity-trust@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-identity-trust-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e05b60deac2c7a72347ef3a71ee930d9d9de10ff3e3dc9a71c7b18f68c538382",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T22:50:33.597Z"
+}

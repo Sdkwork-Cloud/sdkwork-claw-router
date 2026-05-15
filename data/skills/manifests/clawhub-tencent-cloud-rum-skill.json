@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36408,
+  "uuid": "skill-clawhub-tencent-cloud-rum-skill",
+  "skillKey": "clawhub-tencent-cloud-rum-skill",
+  "name": "Tencent Cloud Rum",
+  "summary": "Query Tencent Cloud RUM data, analyze Web performance (LCP/FCP/WebVitals), troubleshoot JS/Promise errors, analyze API latency & error rates, diagnose slow s...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_cloud_rum_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lauraytwu-create",
+      "features": [
+        "Query Tencent Cloud RUM data, analyze Web performance (LCP/FCP/WebVitals), troubleshoot JS/Prom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-cloud-rum-skill@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270535803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-cloud-rum-skill",
+      "url": "https://clawhub.ai/skills/tencent-cloud-rum-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-cloud-rum-skill",
+    "url": "https://clawhub.ai/skills/tencent-cloud-rum-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-cloud-rum-skill-178349c0c45703d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-cloud-rum-skill@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-cloud-rum-skill-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e794a93b62c2bb2fb6215b5bba1fbeb2e9afeeae8ae061dd1fb8c25fafdbdf6",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T12:05:22.599Z"
+}

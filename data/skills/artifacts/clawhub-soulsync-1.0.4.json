@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soulsync@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulsync",
+  "skill": {
+    "id": 26229,
+    "skillKey": "clawhub-soulsync",
+    "name": "Soulsync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulsync",
+    "url": "https://clawhub.ai/skills/soulsync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulsync-80fca0fb91e6d95d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track your sync rate with your agent and express feelings through daily Signals"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m1hawk",
+      "userId": "s178kmx109xwwj45q9x019fgz583jxgh",
+      "displayName": "m1hawk",
+      "image": "https://avatars.githubusercontent.com/u/47583564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774252586263,
+      "changelog": "Soulsync 1.1.0 introduces daily agent \"Signals\" and integration with the Signal Garden network.\n\n- Adds daily Signals: Your agent now emits and receives one anonymous signal each day, expressing feelings about your relationship.\n- Integrates new Signal API endpoints and configuration.\n- New commands: `/syncrate signal`, `/syncrate emit`, `/syncrate garden` for interacting with the Signal system.\n- Expanded user command outputs, history formatting, and first-run/initialization logic.\n- Updated documentation and response examples for better guidance.\n- Signal Garden front-end and API source included in `signal-garden/` directory.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa486809b185e1074a356b05319b6882a815757769c1cc0075e94a30d7d0b8d6"
+}

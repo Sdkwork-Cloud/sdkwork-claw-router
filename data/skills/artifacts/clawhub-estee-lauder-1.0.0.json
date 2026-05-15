@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/estee-lauder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.estee_lauder",
+  "skill": {
+    "id": 54206,
+    "skillKey": "clawhub-estee-lauder",
+    "name": "Estee Lauder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "estee-lauder",
+    "url": "https://clawhub.ai/skills/estee-lauder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/estee-lauder-175372cfeedeb4e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Estée Lauder's global prestige beauty portfolio, market positioning, brand acquisitions, and consumer trends."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777313061000,
+      "changelog": "Estée Lauder Skill v1.0.0\n\n- Initial release with detailed company overview, brand portfolio, and business strategy.\n- Includes historical timeline, moat analysis, and financial highlights.\n- Provides competitive context and interesting company facts.\n- Designed to support market analysis, brand comparisons, and luxury beauty research.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:406da9ac24a71cc531b8547cd80876e0bf4681363f66025e45b55f8541dbab49"
+}

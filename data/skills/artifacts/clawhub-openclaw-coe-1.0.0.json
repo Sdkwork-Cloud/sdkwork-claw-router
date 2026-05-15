@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-coe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_coe",
+  "skill": {
+    "id": 60523,
+    "skillKey": "clawhub-openclaw-coe",
+    "name": "OpenClaw Chain of Execution (CoE)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-coe",
+    "url": "https://clawhub.ai/skills/openclaw-coe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-coe-2a0e0c9b7fd444bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 原生执行链（Chain of Execution, CoE）技能。让 OpenClaw 在处理复杂任务时，实时分步输出执行过程：拆解问题 → 选择 skill → 调用 skill → 调用模型 → 等待响应 → 拿到结果 → 最终汇总，完全贴合 OpenClaw 实际运行流程，让用户清楚看到每..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuyh17",
+      "userId": "s17b5qp77s77adr9hr3qk443hh83hrtx",
+      "displayName": "liuyh17",
+      "image": "https://avatars.githubusercontent.com/u/33861257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773998181213,
+      "changelog": "OpenClaw 原生执行链（Chain of Execution, CoE）技能首次发布。实时分步输出执行过程，贴合 OpenClaw 原生架构，让用户清楚看到每一步在做什么。\n\n- 实时分步输出 OpenClaw 执行全过程，让用户清楚看到每一步操作。\n- 自动识别与“分步执行”“过程”等关键词，智能启用。\n- 支持手动开启与关闭执行链输出。\n- 提供 API，便于其他技能集成分步过程显示。\n- 输出仅限流程文本，无额外算力消耗；不影响原有执行逻辑与兼容性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48b60979e66f481a4855630d8d02da0e244cda53a5b70e540185132c721032bb"
+}

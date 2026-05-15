@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39851,
+  "uuid": "skill-clawhub-china-commerce-copilot",
+  "skillKey": "clawhub-china-commerce-copilot",
+  "name": "China Commerce Copilot",
+  "summary": "Route shopping and ordering requests to the right China commerce skill, then frame the decision in the most useful way. Use when the user asks where to buy s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_commerce_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Route shopping and ordering requests to the right China commerce skill, then frame the decision.",
+        "Use when the user asks where to buy s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-commerce-copilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-commerce-copilot",
+      "url": "https://clawhub.ai/skills/china-commerce-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-commerce-copilot",
+    "url": "https://clawhub.ai/skills/china-commerce-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-commerce-copilot-97e94a9762c2facd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-commerce-copilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-commerce-copilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eb94760e45e989d70d756f12848054225a36ad98464d77338a35610adac4c3b",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:04:03.561Z"
+}

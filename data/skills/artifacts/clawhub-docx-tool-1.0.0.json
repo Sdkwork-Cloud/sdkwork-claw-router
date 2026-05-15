@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_tool",
+  "skill": {
+    "id": 61681,
+    "skillKey": "clawhub-docx-tool",
+    "name": "Docx Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-tool",
+    "url": "https://clawhub.ai/skills/docx-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-tool-6bf530b8ff661c17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 python-docx 库创建、读取和修改 Word 文档 (.docx)。支持文本、段落、表格、样式、图片等操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adtomato",
+      "userId": "s17ayy264ttsa44dy141wjmets84cane",
+      "displayName": "xiaodouzi",
+      "image": "https://avatars.githubusercontent.com/u/26651875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775524611100,
+      "changelog": "- Initial release of docx-tool.\n- Provides examples for creating, reading, and modifying Word (.docx) documents using python-docx.\n- Includes guides for working with text, paragraphs, tables, styles, and images.\n- Lists available table styles and paragraph alignment options.\n- Notes on file format support, compatibility, supported image types, and font usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f795592556f1ffeb354b585b044ef8aaad8e8d560fc8ff835b91b5f89483962"
+}

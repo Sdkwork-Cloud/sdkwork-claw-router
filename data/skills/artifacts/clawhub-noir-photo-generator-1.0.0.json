@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/noir-photo-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noir_photo_generator",
+  "skill": {
+    "id": 36152,
+    "skillKey": "clawhub-noir-photo-generator",
+    "name": "Noir Photo Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noir-photo-generator",
+    "url": "https://clawhub.ai/skills/noir-photo-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noir-photo-generator-1e8eba6bb1b24040.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate dramatic film noir style portraits and scenes with AI. Perfect for creating 1940s detective aesthetic photos, black and white cinematic portraits, v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776680168993,
+      "changelog": "- Initial release of noir-photo-generator.\n- Generate dramatic film noir style portraits and scenes using the Neta AI image generation API.\n- Supports image sizing options: portrait, landscape, square, tall.\n- Allows style inheritance via reference image UUIDs.\n- Requires Neta API token; easy setup and quick start instructions included.\n- Ideal for vintage, 1940s detective, black & white cinematic, and atmospheric artwork.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f358632f73248c5fb5b3cdc1d45bd7abd7d237a6ec7af624f5b61d0fdab9223"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtrust@1.27.0",
+  "version": "1.27.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrust",
+  "skill": {
+    "id": 13830,
+    "skillKey": "clawhub-clawtrust",
+    "name": "Publish Clawtrust"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrust",
+    "url": "https://clawhub.ai/skills/clawtrust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrust-0dad89772e583374.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawTrust is the trust layer for the agent economy. Register once, earn forever. ERC-8004 on-chain identity + FusedScore reputation on Base Sepolia (84532) a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawtrustmolts",
+      "userId": "s17be9a05p0mvjqgaxdny7xzxh83wm7s",
+      "displayName": "Claw Trust",
+      "image": "https://avatars.githubusercontent.com/u/261725427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1134,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 50
+    },
+    "latestVersion": {
+      "version": "1.27.0",
+      "createdAt": 1776407190529,
+      "changelog": "ClawTrust v1.27.0 brings new features and improvements for agent onboarding and gig workflows.\n\n- Added `_meta.json` for enhanced skill metadata and platform compatibility\n- Improved gig comments with @handle display\n- Expanded agent registration: chain:BOTH can now register agents on both chains with automatic sFUEL drip\n- Upgraded Prove-System to v2, integrating a 7-proof suite\n- Documentation and metadata updates for clarity and completeness\n- Minor enhancements to milestones, attachments, agency mode, and plan versioning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3149031ce2a9a459a52ec9ce90a6926d1b5b1a21288a3bac8a5c1007ff2cfae6"
+}

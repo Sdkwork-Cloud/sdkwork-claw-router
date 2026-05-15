@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slipbot-instapaper-importer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slipbot_instapaper_importer",
+  "skill": {
+    "id": 19385,
+    "skillKey": "clawhub-slipbot-instapaper-importer",
+    "name": "SlipBot Instapaper Importer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slipbot-instapaper-importer",
+    "url": "https://clawhub.ai/skills/slipbot-instapaper-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slipbot-instapaper-importer-d90c38da9bd18d58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Import reading notes from Instapaper exports into the slipbox. Use when user pastes an Instapaper highlight export with article title and notes. Parses title/URL from header, extracts user's own notes (plain text lines), skips original hig."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jrswab",
+      "userId": "publishers:jrswab",
+      "displayName": "Jaron Swab",
+      "image": "https://avatars.githubusercontent.com/u/1689426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 936,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770781491370,
+      "changelog": "- Initial release with Instapaper import functionality.\n- Parses Instapaper export: extracts article title, URL, and user's notes (skipping original highlights).\n- Previews parsed notes and requests user confirmation before import.\n- Creates a new slipbox entry for each note, using slipbot with proper metadata.\n- Handles edge cases (no notes, multiline notes, special characters in titles).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:15886820fad9dd911cb7a399764108038314dbd6467ac4096ed35bb30f2d938f"
+}

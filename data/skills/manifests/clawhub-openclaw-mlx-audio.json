@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20561,
+  "uuid": "skill-clawhub-openclaw-mlx-audio",
+  "skillKey": "clawhub-openclaw-mlx-audio",
+  "name": "Openclaw Mlx Audio",
+  "summary": "Local TTS/STT integration for OpenClaw using mlx-audio - Zero API keys, Zero cloud dependency",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mlx_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gandli-2025",
+      "features": [
+        "Local TTS/STT integration for OpenClaw using mlx-audio",
+        "Zero API keys, Zero cloud dependency"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-mlx-audio@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222068792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-mlx-audio",
+      "url": "https://clawhub.ai/skills/openclaw-mlx-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mlx-audio",
+    "url": "https://clawhub.ai/skills/openclaw-mlx-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mlx-audio-9d15ade49755a872.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-mlx-audio@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-mlx-audio-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a866ef59424ad9cb14a5542269661795d27b552c4f3d4bcec6a879c497a5d156",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:00:53.377Z"
+}

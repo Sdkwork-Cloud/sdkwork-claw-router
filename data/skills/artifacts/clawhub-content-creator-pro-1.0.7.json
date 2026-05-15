@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-creator-pro@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_creator_pro",
+  "skill": {
+    "id": 25628,
+    "skillKey": "clawhub-content-creator-pro",
+    "name": "Content Creator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-creator-pro",
+    "url": "https://clawhub.ai/skills/content-creator-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-creator-pro-b3db09ab9740488c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous content creation engine for agents. Writes platform-native posts, threads, newsletters, and long-form articles that meet the highest standards of..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georges91560",
+      "userId": "publishers:georges91560",
+      "displayName": "Wesley Armando",
+      "image": "https://avatars.githubusercontent.com/u/130360599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773701805748,
+      "changelog": "Version 1.0.7\n\n- Added hooks.md file to the project.\n- Updated required file paths in metadata to include /workspace/content/hooks.md for both reading and writing.\n- No other structural or behavior changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6547f1d61a703af537b88c005ed5b4d2e96c2df649d0271a5a15aeeb16755a09"
+}

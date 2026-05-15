@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qq-mail-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_mail_monitor",
+  "skill": {
+    "id": 68043,
+    "skillKey": "clawhub-qq-mail-monitor",
+    "name": "Qq Mail Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-mail-monitor",
+    "url": "https://clawhub.ai/skills/qq-mail-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-mail-monitor-03c15b11f74b42b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QQ 邮箱自动监控技能，支持定时检查新邮件、TTS 语音播报提醒、邮件收发功能。适用于邮件通知、验证码提取、自动回复等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ksswei",
+      "userId": "publishers:ksswei",
+      "displayName": "ksswei",
+      "image": "https://avatars.githubusercontent.com/u/186106667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 734,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772419789895,
+      "changelog": "初始发布：QQ 邮箱自动监控，定时检查新邮件，TTS 语音播报提醒",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7229eb367b4618ecca2296e03aa6c6d3c02eff2d786445e73b64354de027e08e"
+}

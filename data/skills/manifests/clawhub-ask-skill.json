@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63057,
+  "uuid": "skill-clawhub-ask-skill",
+  "skillKey": "clawhub-ask-skill",
+  "name": "Ask",
+  "summary": "小智追问框架 v6.2 — 结构化追问与深度分析引擎。 核心能力：接收模糊判断 → 通过结构化追问收敛 → 输出带置信度的清晰结论。 ## 声明的运行时权限 | 资源 | 用途 | 路径 | |------|------|------| | SQLite 存储 | 跨会话批评记忆 | /workspace/ask...",
+  "version": "6.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GloryJack",
+      "features": [
+        "小智追问框架 v6.2 — 结构化追问与深度分析引擎。 核心能力：接收模糊判断 → 通过结构化追问收敛 → 输出带置信度的清晰结论。 ## 声明的运行时权限 | 资源 | 用途 | 路径 |."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-skill@6.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13760285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-skill",
+      "url": "https://clawhub.ai/skills/ask-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-skill",
+    "url": "https://clawhub.ai/skills/ask-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-skill-c50fe13abde967f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-skill@6.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-skill-6.2.0.json",
+      "version": "6.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aa25c84d4e3c0ba31bfbfc5c3ade051b8c365a8e95ed262eb2bf762bfc9422b",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:36:44.331Z"
+}

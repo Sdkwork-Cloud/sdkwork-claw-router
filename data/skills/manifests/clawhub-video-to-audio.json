@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55679,
+  "uuid": "skill-clawhub-video-to-audio",
+  "skillKey": "clawhub-video-to-audio",
+  "name": "Video To Audio",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — extract the audio track from my video as an MP3 file — and get extracted a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — extract the audio track from my video as an MP3 file — and get extract."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-to-audio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-to-audio",
+      "url": "https://clawhub.ai/skills/video-to-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-audio",
+    "url": "https://clawhub.ai/skills/video-to-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-audio-b235ceebbe60cb83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-to-audio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-to-audio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c3cf7eaf97c8134f2e5af32df1756b33ac8d9280b52189bc2da72d650295341",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T17:33:53.501Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43270,
+  "uuid": "skill-clawhub-local-model-optimizer",
+  "skillKey": "clawhub-local-model-optimizer",
+  "name": "Local Model Optimizer",
+  "summary": "Auto-detect hardware (GPU VRAM, system RAM, CPU), recommend optimal local models from Ollama registry, configure Ollama with tuned parameters, and set up hyb...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_model_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stevojarvisai-star",
+      "features": [
+        "Auto-detect hardware (GPU VRAM, system RAM, CPU), recommend optimal local models from Ollama re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-model-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266156236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-model-optimizer",
+      "url": "https://clawhub.ai/skills/local-model-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-model-optimizer",
+    "url": "https://clawhub.ai/skills/local-model-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-model-optimizer-02a60c8097335d77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-model-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-model-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c89ca800417b17a0cce6656c07954205019c49461c4d60d3b45597a1b886e8d0",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T09:39:29.174Z"
+}

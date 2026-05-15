@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56783,
+  "uuid": "skill-clawhub-wechat-article-getter",
+  "skillKey": "clawhub-wechat-article-getter",
+  "name": "wechat-article-getter",
+  "summary": "Extract full text from WeChat Official Account (微信公众号) article URLs. Use when a user shares an mp.weixin.qq.com link and asks to read, summarize, analyze, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_getter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PPPPanda",
+      "features": [
+        "Extract full text from WeChat Official Account (微信公众号) article URLs",
+        "Use when a user shares an mp.weixin.qq.com link and asks to read, summarize, analyze, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-getter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64723462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-getter",
+      "url": "https://clawhub.ai/skills/wechat-article-getter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-getter",
+    "url": "https://clawhub.ai/skills/wechat-article-getter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-getter-0700ab43be23a3b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-getter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-getter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efd44548d3a716bb8cfd2616f4fed68342ccd2ff80629f4d89f71017c373e3d3",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:03:21.739Z"
+}

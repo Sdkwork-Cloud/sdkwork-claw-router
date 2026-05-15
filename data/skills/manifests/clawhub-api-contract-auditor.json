@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59024,
+  "uuid": "skill-clawhub-api-contract-auditor",
+  "skillKey": "clawhub-api-contract-auditor",
+  "name": "Api Contract Auditor",
+  "summary": "审查 API 文档、示例和字段定义是否一致，输出 breaking change 风险。；use for api, contract, audit workflows；do not use for 直接改线上接口, 替代契约测试平台.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_contract_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "审查 API 文档、示例和字段定义是否一致，输出 breaking change 风险。；use for api, contract, audit workflows；do not use."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-contract-auditor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-contract-auditor",
+      "url": "https://clawhub.ai/skills/api-contract-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-contract-auditor",
+    "url": "https://clawhub.ai/skills/api-contract-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-contract-auditor-ab06002f7d24bd56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-contract-auditor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-contract-auditor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14c835fbc0895f912441ef80f5dc7b2bff82781a759597689eed1b93c4231185",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:02:47.233Z"
+}

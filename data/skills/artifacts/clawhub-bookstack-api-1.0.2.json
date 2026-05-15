@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookstack-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookstack_api",
+  "skill": {
+    "id": 25117,
+    "skillKey": "clawhub-bookstack-api",
+    "name": "BookStack API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookstack-api",
+    "url": "https://clawhub.ai/skills/bookstack-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookstack-api-bceb4e555efc89ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BookStack Wiki & Documentation API integration. Manage your knowledge base programmatically: create, read, update, and delete books, chapters, pages, and she..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "f-liva",
+      "userId": "s172qzhaaqgbcj367wdz5xwjjx84m22g",
+      "displayName": "Federico Liva",
+      "image": "https://avatars.githubusercontent.com/u/346224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772803349603,
+      "changelog": "Add homepage and source URL for provenance verification",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8d6ad5e937c7fa1b1f62c2f9d61f4888dc19f4940b6ce6ebee277d1b442be134"
+}

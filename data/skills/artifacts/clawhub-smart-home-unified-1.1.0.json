@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-home-unified@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_home_unified",
+  "skill": {
+    "id": 66344,
+    "skillKey": "clawhub-smart-home-unified",
+    "name": "Smart Home Unified"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-home-unified",
+    "url": "https://clawhub.ai/skills/smart-home-unified",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-home-unified-61c2a10794551bdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "统一管理多品牌智能家居设备，支持语音控制、跨平台场景联动及AI节能优化和安全监控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvjunjie-byte",
+      "userId": "s17f7spafdf99xa1wkgwbztec183t877",
+      "displayName": "lvjunjie-byte",
+      "image": "https://avatars.githubusercontent.com/u/59714416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773575682566,
+      "changelog": "**Big update: Added real API integration and setup instructions.**\n\n- 实现了真实 API 集成，需用户自行配置设备 API 密钥\n- 新增详细的配置指南，包括依赖安装、设备 Token 获取和凭证填写步骤\n- 提供常见平台（如小米米家、Apple HomeKit）的具体配置和控制命令示例\n- 增加了使用注意事项及本地网络、端口、防火墙等环境要求\n- 公布官方文档、支持渠道及安全提示\n- 定价说明更加清晰，细分套餐类型和功能配额",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34ec83650b5384caf828c32653b2f7087abd14cb2918f3d277bc78608e6b3686"
+}

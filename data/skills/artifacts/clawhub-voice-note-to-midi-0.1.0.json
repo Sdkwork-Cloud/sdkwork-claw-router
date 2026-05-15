@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-note-to-midi@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_note_to_midi",
+  "skill": {
+    "id": 11894,
+    "skillKey": "clawhub-voice-note-to-midi",
+    "name": "Voice Note To Midi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-note-to-midi",
+    "url": "https://clawhub.ai/skills/voice-note-to-midi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-note-to-midi-80b48f15846286f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert voice notes, humming, and melodic audio recordings to quantized MIDI files using ML-based pitch detection and intelligent post-processing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danbennettuk",
+      "userId": "publishers:danbennettuk",
+      "displayName": "DanBennettUK",
+      "image": "https://avatars.githubusercontent.com/u/402224?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1973,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769722430873,
+      "changelog": "Initial release of voice-note-to-midi: Convert melodic audio (humming, singing, voice notes) to quantized MIDI using a machine-learning pipeline.\n\n- Complete audio-to-MIDI workflow: stem separation, pitch detection (Spotify Basic Pitch), key detection, quantization, and MIDI output.\n- Includes intelligent post-processing: key-aware pitch correction, octave/harmonic cleanup, note merging, and velocity normalization.\n- Command-line tool with customizable options for quantization grid, minimum note length, and processing features.\n- Supports both audio (WAV, MP3, M4A, etc.) and existing MIDI files as input.\n- Provides automated and manual installation instructions, plus troubleshooting and usage guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:579ef212eb64115ab184ba73364fbe91eaf574dd409116a1d80b366329ef8289"
+}

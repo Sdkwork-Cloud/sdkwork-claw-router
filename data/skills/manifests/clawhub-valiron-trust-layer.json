@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17849,
+  "uuid": "skill-clawhub-valiron-trust-layer",
+  "skillKey": "clawhub-valiron-trust-layer",
+  "name": "Valiron",
+  "summary": "Intercept and authorize outgoing machine-to-machine payments (x402 or similar) using @valiron/sdk trust decisions on the counterparty agent before payment ex...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.valiron_trust_layer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vatsa Shah",
+      "features": [
+        "Intercept and authorize outgoing machine-to-machine payments (x402 or similar) using @valiron/s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/valiron-trust-layer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72754751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "valiron-trust-layer",
+      "url": "https://clawhub.ai/skills/valiron-trust-layer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "valiron-trust-layer",
+    "url": "https://clawhub.ai/skills/valiron-trust-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/valiron-trust-layer-933052b8831e0171.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/valiron-trust-layer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-valiron-trust-layer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8237dedf0a20800897b257738b36bc5c58644daa37e404da1a3edc032ca72231",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T15:47:00.725Z"
+}

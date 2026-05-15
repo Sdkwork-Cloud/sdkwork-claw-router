@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inventory-risk-radar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_risk_radar",
+  "skill": {
+    "id": 42982,
+    "skillKey": "clawhub-inventory-risk-radar",
+    "name": "Inventory Risk Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-risk-radar",
+    "url": "https://clawhub.ai/skills/inventory-risk-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-risk-radar-047564b5a76f116a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan ecommerce inventory notes or CSV exports for stockout, overstock, aging, inbound-delay, and promo-readiness risk, then turn them into a ranked watchlist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776084683331,
+      "changelog": "Initial release of Inventory Risk Radar — a lightweight inventory risk detection and briefing tool.\n\n- Scans user-provided inventory notes or CSV exports for stockout, overstock, aging, inbound-delay, and promotion-readiness risks.\n- Ranks SKUs into a prioritized watchlist with days-of-cover summary, action ladder, and scenario notes.\n- Outputs a markdown operator-ready meeting brief for review and action.\n- Designed for ecommerce teams needing practical risk visibility without live system integrations.\n- Emphasizes heuristic analysis; does not connect to ERP, WMS, or automated execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b2dd147c3c6872dc778202a88d263b0527cfac2595f0b28166219a911c4df84"
+}

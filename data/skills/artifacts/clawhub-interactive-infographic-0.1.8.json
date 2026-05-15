@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interactive-infographic@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interactive_infographic",
+  "skill": {
+    "id": 69879,
+    "skillKey": "clawhub-interactive-infographic",
+    "name": "Interactive Infographic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interactive-infographic",
+    "url": "https://clawhub.ai/skills/interactive-infographic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interactive-infographic-94ba7d5c4f214d0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "强大的AI自动化绘图与复杂信息可视化工具（基于 ContextWeave）。不仅支持代码与系统架构的可视化，更广泛适用于复杂逻辑梳理、知识库转换、业务流程图、思维导图及长文本的结构化信息图生成。通过深度的语义分析与请求编排，一键将晦涩文本与复杂知识转化为清晰直观的图形表达。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qhyw99",
+      "userId": "s178pqabqrbgjdsbfthe69tykn83jdyw",
+      "displayName": "ContextWeave",
+      "image": "https://avatars.githubusercontent.com/u/44718456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1774409610144,
+      "changelog": "- 移除了环境变量 CONTEXTWEAVE_API_URL 的必需约束，仅保留了 CONTEXTWEAVE_MCP_API_KEY（如未设置将使用匿名凭据）。\n- 安全边界与隐私声明更新：明确请求会发送至官方服务器 https://pptx.chenxitech.site，支持通过 CONTEXTWEAVE_EDITOR_PROTOCOL 设置数据路由，未指定时使用内置配置。\n- 优化了凭据读取优先级和方式，防止通过本地扫描自动发现密钥。\n- 明确了默认地址、数据路由与凭据获取的行为，增强用户对数据流向和安全性的知情权。\n- 其余执行流程与接口格式保持一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abe4e92e794d5750b00a7d4a53bdc3a6e7c4c35b47d7ed705c10fa91c3d96a39"
+}

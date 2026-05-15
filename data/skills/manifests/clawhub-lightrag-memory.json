@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29238,
+  "uuid": "skill-clawhub-lightrag-memory",
+  "skillKey": "clawhub-lightrag-memory",
+  "name": "LightRAG Memory",
+  "summary": "LightRAG-based semantic memory system for AI agents. Provides efficient long-term knowledge storage and retrieval using vector embeddings and knowledge graph...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightrag_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gorikon",
+      "features": [
+        "LightRAG-based semantic memory system for AI agents",
+        "Provides efficient long-term knowledge storage and retrieval using vector embeddings and knowle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lightrag-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134961545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lightrag-memory",
+      "url": "https://clawhub.ai/skills/lightrag-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightrag-memory",
+    "url": "https://clawhub.ai/skills/lightrag-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightrag-memory-8afa4e1f8b1bacb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lightrag-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lightrag-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:033e4873b27b52857e328ca0b40290f35808a8b05f9c1fc3a0130ca6b8a9749f",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T05:50:52.920Z"
+}

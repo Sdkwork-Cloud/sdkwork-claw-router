@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elastic-datadog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elastic_datadog",
+  "skill": {
+    "id": 60386,
+    "skillKey": "clawhub-elastic-datadog",
+    "name": "Elastic Datadog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elastic-datadog",
+    "url": "https://clawhub.ai/skills/elastic-datadog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elastic-datadog-794056195276d70f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "介绍Elastic从开源搜索库到综合可观测性平台的发展，涵盖Elasticsearch、ELK Stack及其商业模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777287804683,
+      "changelog": "Initial release of elastic-datadog skill:\n\n- Introduces Elastic’s journey from open source search tool to a multi-billion dollar observability platform.\n- Summarizes key milestones and product launches, including ELK Stack and Elastic Observability.\n- Explains the open source core business model and competitive moat.\n- Provides essential data such as IPO details, revenue, major customers, and GitHub metrics.\n- Includes notable facts about Elastic’s origin and its license dispute with AWS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4b54ebbaa2afb9e11e4062415bae33d030eb1eb9866a1ab0e1ea1fe2f5dce1d"
+}

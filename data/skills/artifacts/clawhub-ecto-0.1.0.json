@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecto@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecto",
+  "skill": {
+    "id": 11474,
+    "skillKey": "clawhub-ecto",
+    "name": "Ecto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecto",
+    "url": "https://clawhub.ai/skills/ecto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecto-34531594cf2ead01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ghost.io Admin API CLI for managing blog posts, pages, tags, and content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "visionik",
+      "userId": "publishers:visionik",
+      "displayName": "visionik",
+      "image": "https://avatars.githubusercontent.com/u/52174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2025,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769419648757,
+      "changelog": "Initial release of ecto CLI for Ghost.io Admin API.\n\n- Manage Ghost blog posts, pages, tags, images, webhooks, and site data via command line.\n- Supports multiple site configurations and environment variable overrides.\n- Features markdown-to-HTML conversion, JSON output for scripting, and stdin piping for content creation.\n- Includes workflows for creating, editing, publishing, scheduling, and deleting content.\n- Limitations: No API for listing images/webhooks; member management not supported; user data is read-only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10d979ce8d3b8903b22f6ce8937469b52b0da2a34021f9306dd3bca08d81a367"
+}

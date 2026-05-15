@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sglang-diffusion@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sglang_diffusion",
+  "skill": {
+    "id": 20115,
+    "skillKey": "clawhub-sglang-diffusion",
+    "name": "SGLang-Diffusion Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sglang-diffusion",
+    "url": "https://clawhub.ai/skills/sglang-diffusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sglang-diffusion-105c39018798df33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using a local SGLang-Diffusion server (FLUX, Stable Diffusion, Qwen-Image, etc.). Use when: user asks to generate, create, draw, or render an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangyukunok",
+      "userId": "s1738rz81acbpjfjazw068c0n1848q0n",
+      "displayName": "jiangyukunok",
+      "image": "https://avatars.githubusercontent.com/u/7341895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 562,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773208494176,
+      "changelog": "- Added new script: scripts/generate.py for image generation via the SGLang-Diffusion server.\n- Updated documentation to use the new generate.py script instead of curl commands.\n- Clarified usage instructions, prerequisites, and API key handling.\n- Provided example command-line usages with common parameters.\n- Noted OpenClaw integration features and output file handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2babc15c1893bdeb48ed873d4060b0b669f4ad93883300174b900302038f3197"
+}

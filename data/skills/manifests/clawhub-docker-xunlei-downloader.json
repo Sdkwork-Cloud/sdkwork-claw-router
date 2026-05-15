@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11895,
+  "uuid": "skill-clawhub-docker-xunlei-downloader",
+  "skillKey": "clawhub-docker-xunlei-downloader",
+  "name": "Docker Xunler Downloader",
+  "summary": "Interact with Docker-deployed Xunlei to submit magnet links, monitor tasks, and prioritize main content downloads with intelligent filtering.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_xunlei_downloader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "王康",
+      "features": [
+        "Interact with Docker-deployed Xunlei to submit magnet links, monitor tasks, and prioritize main."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-xunlei-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23080519?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-xunlei-downloader",
+      "url": "https://clawhub.ai/skills/docker-xunlei-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-xunlei-downloader",
+    "url": "https://clawhub.ai/skills/docker-xunlei-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-xunlei-downloader-aabb009c3d902c53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-xunlei-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-xunlei-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08c15779da6609454f05ba89e53220be84f94848f6efb9b81affe3f5b5a82135",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T03:31:22.206Z"
+}

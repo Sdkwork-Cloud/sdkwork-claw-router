@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mock-build@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mock_build",
+  "skill": {
+    "id": 36590,
+    "skillKey": "clawhub-mock-build",
+    "name": "mock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mock-build",
+    "url": "https://clawhub.ai/skills/mock-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mock-build-989f0acbbb16706c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage RPM package builds securely and reproducibly using Mock to create clean chroot environments with configurable presets and plugins."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774229380315,
+      "changelog": "Initial release - Mock build environment support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52d4d15498c59c5f1d7c35740e38527425847cded68ed4eebc618142d68ba5c1"
+}

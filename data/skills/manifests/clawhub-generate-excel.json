@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9763,
+  "uuid": "skill-clawhub-generate-excel",
+  "skillKey": "clawhub-generate-excel",
+  "name": "Create an Excel (.xlsx) file containing formatted data.",
+  "summary": "Create a formatted Excel (.xlsx) spreadsheet from provided 2D data, applying styles, colors, alignment, and auto-adjusted column widths.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_excel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sereinZhi",
+      "features": [
+        "Create a formatted Excel (.xlsx) spreadsheet from provided 2D data, applying styles, colors, al."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-excel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179953691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-excel",
+      "url": "https://clawhub.ai/skills/generate-excel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-excel",
+    "url": "https://clawhub.ai/skills/generate-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-excel-e77ec9f24373747e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-excel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-excel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24b1f84d4c86c054e80bdb769720c63d251059fec2bcc4dbcbd0badb357626da",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:39:44.899Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ace-suno-v5@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ace_suno_v5",
+  "skill": {
+    "id": 64234,
+    "skillKey": "clawhub-ace-suno-v5",
+    "name": "Suno V5 Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ace-suno-v5",
+    "url": "https://clawhub.ai/skills/ace-suno-v5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ace-suno-v5-e9e00b5d114f4267.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🌐 完整的 AceData Suno V5 AI音乐创作Web应用，支持简易/自定义两种创作模式，包含浏览器可视化界面，自动保存音乐文件到桌面，支持在线播放和下载。使用 Suno V5 模型通过 AceData API 生成 AI 音乐，无限购买昂贵的订阅也可以创作出完美的音乐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiyunnet",
+      "userId": "s17829vbh5h7ghkadt0zctk20583jxyd",
+      "displayName": "小潴",
+      "image": "https://avatars.githubusercontent.com/u/71431953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773457986973,
+      "changelog": "- Removed the file web/generation_history.json.\n- No other user-facing changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6527603a0427b403ca2271761dd4ceecc92dbe1d77add08a7ea80b390234e4f"
+}

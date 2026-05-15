@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29936,
+  "uuid": "skill-clawhub-claw-time-machine",
+  "skillKey": "clawhub-claw-time-machine",
+  "name": "Claw Time Machine",
+  "summary": "Backup, restore, and migrate OpenClaw installations. Preserve workspace memories, credentials, custom skills, scheduled tasks, and core configuration. Use wh...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_time_machine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tacit Lab",
+      "features": [
+        "Backup, restore, and migrate OpenClaw installations",
+        "Preserve workspace memories, credentials, custom skills, scheduled tasks, and core configuration",
+        "Use wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-time-machine@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263604746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-time-machine",
+      "url": "https://clawhub.ai/skills/claw-time-machine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-time-machine",
+    "url": "https://clawhub.ai/skills/claw-time-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-time-machine-5035a12f93a1f6aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-time-machine@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-time-machine-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd803ae51a7f086c48a53a8c6c0665583c64b55a416a4f19354f2db2047cc34a",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:11:40.167Z"
+}

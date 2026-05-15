@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9681,
+  "uuid": "skill-clawhub-local-websearch",
+  "skillKey": "clawhub-local-websearch",
+  "name": "Local web search using SearXNG",
+  "summary": "Search the web using a self-hosted SearXNG metasearch engine. Aggregates Google, Brave, DuckDuckGo, and more without API keys.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_websearch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stperic",
+      "features": [
+        "Search the web using a self-hosted SearXNG metasearch engine",
+        "Aggregates Google, Brave, DuckDuckGo, and more without API keys."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-websearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3802648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-websearch",
+      "url": "https://clawhub.ai/skills/local-websearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-websearch",
+    "url": "https://clawhub.ai/skills/local-websearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-websearch-cd641f91fee857be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-websearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-websearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8122969ced3f23f9f68542968d980e33cde1721a90941127f690a09ada6639d",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T17:40:46.273Z"
+}

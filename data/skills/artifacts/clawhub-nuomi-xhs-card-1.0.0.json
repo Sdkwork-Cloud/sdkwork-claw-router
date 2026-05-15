@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nuomi-xhs-card@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nuomi_xhs_card",
+  "skill": {
+    "id": 61136,
+    "skillKey": "clawhub-nuomi-xhs-card",
+    "name": "xiaohongshu card generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nuomi-xhs-card",
+    "url": "https://clawhub.ai/skills/nuomi-xhs-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nuomi-xhs-card-8dc45a1b0e6df944.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户提及渲染 Markdown/文本 为小红书风格卡片 ,当用户提及\"生成小红书卡片\"、\"md 转图片\"、\"制作卡片\"、\"小红书图文\" ."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangyijun",
+      "userId": "publishers:tangyijun",
+      "displayName": "tangyijun",
+      "image": "https://avatars.githubusercontent.com/u/18145612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773841779705,
+      "changelog": "- Initial release of nuomi-xhs-card skill.\n- Converts Markdown/MDX to Xiaohongshu-style card images using 24 built-in templates.\n- Supports light/dark modes, intelligent pagination, and flexible CLI parameters.\n- Provides template suggestions based on content type and guides users through card creation.\n- Includes debugging and detailed output steps for clarity and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:952568caee9479b78211657a732228e1f46ec4320b2dc10a3c983f8c33e4325d"
+}

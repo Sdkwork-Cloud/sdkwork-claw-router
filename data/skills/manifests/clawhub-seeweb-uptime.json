@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21352,
+  "uuid": "skill-clawhub-seeweb-uptime",
+  "skillKey": "clawhub-seeweb-uptime",
+  "name": "SeeWeb Uptime",
+  "summary": "Monitors websites, APIs, and cron jobs (watchdogs) using Watch.dog. Use it when the user asks to \"check the status of my monitors\", \"check uptime\", \"review w...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seeweb_uptime",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robinson",
+      "features": [
+        "Monitors websites, APIs, and cron jobs (watchdogs) using Watch.dog",
+        "Use it when the user asks to \"check the status of my monitors\", \"check uptime\", \"review w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seeweb-uptime@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36093088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seeweb-uptime",
+      "url": "https://clawhub.ai/skills/seeweb-uptime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seeweb-uptime",
+    "url": "https://clawhub.ai/skills/seeweb-uptime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seeweb-uptime-f4577397bb55b6cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seeweb-uptime@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-seeweb-uptime-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8586c9773d838c7dbee9a2ea47d538c92b83cb22737a77cb72560491de787037",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T20:36:21.285Z"
+}

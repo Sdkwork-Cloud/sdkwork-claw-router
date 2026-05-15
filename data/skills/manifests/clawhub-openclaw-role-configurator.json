@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63111,
+  "uuid": "skill-clawhub-openclaw-role-configurator",
+  "skillKey": "clawhub-openclaw-role-configurator",
+  "name": "openclaw-role-configurator（角色技能配置）",
+  "summary": "OpenClaw 角色配置助手 - 帮你轻松完成 OpenClaw 的角色配置，是每个新用户的第一个 skill。 触发场景： - 刚安装 OpenClaw，需要配置角色 - 想重新配置 AI 助手的角色 - 不知道怎么设置角色名称、任务和能力 - 想要预设的角色模板快速开始 - 21 个预设角色模板，覆盖生活、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_role_configurator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuqingsonga",
+      "features": [
+        "OpenClaw 角色配置助手",
+        "帮你轻松完成 OpenClaw 的角色配置，是每个新用户的第一个 skill。 触发场景：",
+        "刚安装 OpenClaw，需要配置角色",
+        "想重新配置 AI 助手的角色"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-role-configurator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33415526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-role-configurator",
+      "url": "https://clawhub.ai/skills/openclaw-role-configurator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-role-configurator",
+    "url": "https://clawhub.ai/skills/openclaw-role-configurator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-role-configurator-a9970f39aa2a5bc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-role-configurator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-role-configurator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71fbba247104abc885bc0c4aab19c2edbb790046c7bf218dae88e57cd02fea6c",
+      "artifactSizeBytes": 2699
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T11:29:24.351Z"
+}

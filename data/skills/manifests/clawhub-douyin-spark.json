@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70008,
+  "uuid": "skill-clawhub-douyin-spark",
+  "skillKey": "clawhub-douyin-spark",
+  "name": "douyin-spark",
+  "summary": "自动识别抖音带火花联系人，批量发送自定义消息续火花，支持列表管理和重燃火花进度追踪。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_spark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bazg3452-del",
+      "features": [
+        "自动识别抖音带火花联系人，批量发送自定义消息续火花，支持列表管理和重燃火花进度追踪。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-spark@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227335748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-spark",
+      "url": "https://clawhub.ai/skills/douyin-spark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-spark",
+    "url": "https://clawhub.ai/skills/douyin-spark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-spark-12a3826af9ac2ce6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-spark@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-spark-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7672cf2a742ad3fc6714df0501c7e9d57de8e3124a7c6dbf74888b92e43553d9",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:30:11.031Z"
+}

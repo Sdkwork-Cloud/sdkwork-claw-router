@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60010,
+  "uuid": "skill-clawhub-freqtrade-crypto-bot",
+  "skillKey": "clawhub-freqtrade-crypto-bot",
+  "name": "Freqtrade Crypto Bot",
+  "summary": "使用 Freqtrade 框架加载多交易所 OHLCV 历史数据并进行策略回测分析。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freqtrade_crypto_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "使用 Freqtrade 框架加载多交易所 OHLCV 历史数据并进行策略回测分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freqtrade-crypto-bot@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freqtrade-crypto-bot",
+      "url": "https://clawhub.ai/skills/freqtrade-crypto-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freqtrade-crypto-bot",
+    "url": "https://clawhub.ai/skills/freqtrade-crypto-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freqtrade-crypto-bot-efcbd8673995a204.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freqtrade-crypto-bot@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-freqtrade-crypto-bot-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c38d5b9e7874b05af02ff64c0d432704a31122b675fcf7f2628f30faa77619e8",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:27:05.136Z"
+}

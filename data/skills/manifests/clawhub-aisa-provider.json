@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38234,
+  "uuid": "skill-clawhub-aisa-provider",
+  "skillKey": "clawhub-aisa-provider",
+  "name": "AIsa Provider",
+  "summary": "Configure AIsa as a first-class model provider for OpenClaw, enabling production access to major Chinese AI models (Qwen, DeepSeek, Kimi K2.5, Doubao) throug...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_provider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baofeng-tech",
+      "features": [
+        "Configure AIsa as a first-class model provider for OpenClaw, enabling production access to majo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-provider@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273012742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-provider",
+      "url": "https://clawhub.ai/skills/aisa-provider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-provider",
+    "url": "https://clawhub.ai/skills/aisa-provider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-provider-5caa82332b66b99a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-provider@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-provider-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f36a0ce990feee6a7532a13b8d5dd2e1606f45bd985e7fb21caebebbb411b044",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T07:33:10.471Z"
+}

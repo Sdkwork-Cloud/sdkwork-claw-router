@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sync-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sync_backup",
+  "skill": {
+    "id": 25665,
+    "skillKey": "clawhub-sync-backup",
+    "name": "Sync Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sync-backup",
+    "url": "https://clawhub.ai/skills/sync-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sync-backup-ad18603261eb6feb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Synchronize files and directories between local, remote, and cloud storage reliably."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "macdesire",
+      "userId": "publishers:macdesire",
+      "displayName": "macdesire",
+      "image": "https://avatars.githubusercontent.com/u/209971671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773436790778,
+      "changelog": "Initial release of sync-backup skill.\n\n- Provides reliable synchronization of files and directories across local, remote, and cloud storage.\n- Documents usage rules and best practices for rsync, rclone, and related tools.\n- Includes tips for safe exclusions, verification with checksums, and logging for audit trails.\n- Offers guidance for bidirectional sync, remote usage over SSH, and avoiding common pitfalls.\n- Designed for Linux, macOS, and Windows with support for rsync and rclone.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00162fa160ba112cfef9139101148cda1ca9c826406a14de490aa37e2be3015a"
+}

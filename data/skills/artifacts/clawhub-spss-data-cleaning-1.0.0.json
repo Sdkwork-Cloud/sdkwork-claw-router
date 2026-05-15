@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spss-data-cleaning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spss_data_cleaning",
+  "skill": {
+    "id": 64544,
+    "skillKey": "clawhub-spss-data-cleaning",
+    "name": "SPSS Data Cleaning Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spss-data-cleaning",
+    "url": "https://clawhub.ai/skills/spss-data-cleaning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spss-data-cleaning-ed13c5614e9f1465.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供SPSS数据缺失值检测与处理、异常值识别、数据类型诊断、变量重编码、重复值处理和验证，生成清洗报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zihaowyt5525-max",
+      "userId": "s1727t4xcxhkn1hbt09gm83cz983wx0n",
+      "displayName": "zihaowyt5525-max",
+      "image": "https://avatars.githubusercontent.com/u/237939160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774882159465,
+      "changelog": "SPSS Data Cleaning Assistant 1.0.0\n\n- Initial release of the SPSS数据清洗助手 (SPSS Data Cleaning Assistant).\n- Supports missing value detection & handling, outlier identification, data type conversion, variable recoding, duplicate detection, data validation, and cleaning reports.\n- Accepts SPSS (.sav), CSV, Excel (.xlsx/.xls), and TSV file uploads.\n- Generates SPSS-formatted cleaned data, CSV exports, and a detailed cleaning report in Markdown.\n- Provides a stepwise workflow from data upload and diagnosis to cleaning, validation, and export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b3c42cbaf8c773d1c2559ea9c8a6bd6af9b34becea3ffcb4dc0e33edc96cff3"
+}

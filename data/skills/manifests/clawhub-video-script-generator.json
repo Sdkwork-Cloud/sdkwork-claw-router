@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62659,
+  "uuid": "skill-clawhub-video-script-generator",
+  "skillKey": "clawhub-video-script-generator",
+  "name": "Video Script Generator",
+  "summary": "生成短视频脚本和分镜。输入产品/主题描述、目标受众、时长，输出完整脚本+分镜结构（JSON/YAML）。支持多种模板：痛点-解决、反转剧情、before-after。触发词：视频脚本、短视频文案、分镜、storyboard、video script。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_script_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Olivia_Pp",
+      "features": [
+        "生成短视频脚本和分镜。输入产品/主题描述、目标受众、时长，输出完整脚本+分镜结构（JSON/YAML）。支持多种模板：痛点-解决、反转剧情、before-after。触发词：视频脚本、短视频."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-script-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51184967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-script-generator",
+      "url": "https://clawhub.ai/skills/video-script-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-script-generator",
+    "url": "https://clawhub.ai/skills/video-script-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-script-generator-0538efe30aaf1b15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-script-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-script-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c8f0069984c8c190f96fb7f5c5d4e513017137df05bd97926e7643fbb447297",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:02:56.550Z"
+}

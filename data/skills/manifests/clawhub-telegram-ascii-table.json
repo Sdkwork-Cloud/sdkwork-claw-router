@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12407,
+  "uuid": "skill-clawhub-telegram-ascii-table",
+  "skillKey": "clawhub-telegram-ascii-table",
+  "name": "Telegram Ascii Table",
+  "summary": "Format tabular data as ASCII box tables for Telegram. Stdin-only input eliminates shell injection risks. Handles smart column sizing, text wrapping, and proper padding for monospace display.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_ascii_table",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NaLG",
+      "features": [
+        "Format tabular data as ASCII box tables for Telegram",
+        "Stdin-only input eliminates shell injection risks",
+        "Handles smart column sizing, text wrapping, and proper padding for monospace display."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-ascii-table@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/295770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-ascii-table",
+      "url": "https://clawhub.ai/skills/telegram-ascii-table"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-ascii-table",
+    "url": "https://clawhub.ai/skills/telegram-ascii-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-ascii-table-ba6119e238fc5853.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-ascii-table@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-ascii-table-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a1dd98474ff338fdb5247cc53ce6ac2bb9b6a129663a773655930133c59d562",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T14:47:32.241Z"
+}

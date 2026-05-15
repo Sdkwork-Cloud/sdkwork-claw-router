@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10698,
+  "uuid": "skill-clawhub-google-messages-openclaw-skill",
+  "skillKey": "clawhub-google-messages-openclaw-skill",
+  "name": "Google Messages",
+  "summary": "Send and receive SMS/RCS via Google Messages web interface (messages.google.com). Use when asked to \"send a text\", \"check texts\", \"SMS\", \"text message\", \"Google Messages\", or forward incoming texts to other channels.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_messages_openclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Send and receive SMS/RCS via Google Messages web interface (messages.google.com)",
+        "Use when asked to \"send a text\", \"check texts\", \"SMS\", \"text message\", \"Google Messages\", or fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-messages-openclaw-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-messages-openclaw-skill",
+      "url": "https://clawhub.ai/skills/google-messages-openclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-messages-openclaw-skill",
+    "url": "https://clawhub.ai/skills/google-messages-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-messages-openclaw-skill-b34bf6859d14d237.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-messages-openclaw-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-messages-openclaw-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e404ca19d042395aec81d12606916d1970fa0fa168dca3509078a229b7a09f7",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T06:50:44.580Z"
+}

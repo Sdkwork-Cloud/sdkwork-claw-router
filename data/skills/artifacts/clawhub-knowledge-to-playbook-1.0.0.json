@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-to-playbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_to_playbook",
+  "skill": {
+    "id": 59065,
+    "skillKey": "clawhub-knowledge-to-playbook",
+    "name": "Knowledge To Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-to-playbook",
+    "url": "https://clawhub.ai/skills/knowledge-to-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-to-playbook-afbf21e6b8d6659f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把 FAQ、聊天、零散笔记整理成 SOP / Playbook，补齐异常分支和回滚步骤。；use for playbook, sop, knowledge-base workflows；do not use for 直接执行危险操作, 跳过人工审批节点."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773804470565,
+      "changelog": "Initial release – knowledge-to-playbook skill version 1.0.0:\n\n- Converts FAQ, chat logs, and scattered notes into SOPs or playbooks.\n- Automatically supplements exception branches and rollback procedures.\n- Includes clear rules and boundaries for safe usage: forbids direct execution of dangerous operations and bypassing manual approvals.\n- Provides structured outputs: scenarios, steps, exceptions, rollback, upgrades, and pitfalls.\n- Highlights missing information for user confirmation instead of making assumptions.\n- Generates reviewable drafts and checklists before any execution recommendation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8e57a0163edbba1833455b038bed9baecfb4101c2f8309174080ac83da64c3e"
+}

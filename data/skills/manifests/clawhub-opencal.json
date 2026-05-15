@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35103,
+  "uuid": "skill-clawhub-opencal",
+  "skillKey": "clawhub-opencal",
+  "name": "OpenCal",
+  "summary": "Log meals, check nutrition progress, and manage calorie goals in the OpenCal app — hands-free via your AI agent. Use when the user mentions eating, food, cal...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neikfu",
+      "features": [
+        "Log meals, check nutrition progress, and manage calorie goals in the OpenCal app — hands-free v.",
+        "Use when the user mentions eating, food, cal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95280575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencal",
+      "url": "https://clawhub.ai/skills/opencal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencal",
+    "url": "https://clawhub.ai/skills/opencal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencal-6cf8fd8130672fc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd16ef0f7e774762af435c9a03d4376fcdfbd1f8365f89549a9de33b92dc62a2",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T09:28:12.292Z"
+}

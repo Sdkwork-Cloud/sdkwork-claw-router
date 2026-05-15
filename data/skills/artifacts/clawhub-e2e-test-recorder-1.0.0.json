@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/e2e-test-recorder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e2e_test_recorder",
+  "skill": {
+    "id": 44100,
+    "skillKey": "clawhub-e2e-test-recorder",
+    "name": "E2E Test Recorder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e2e-test-recorder",
+    "url": "https://clawhub.ai/skills/e2e-test-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e2e-test-recorder-432aa99a8e8f7bb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Records browser interactions for end-to-end tests and generates videos or GIFs with configurable encoding and annotations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13770626440",
+      "userId": "s1724gks5vk6trsq7pddfxh5gs83zv3f",
+      "displayName": "13770626440",
+      "image": "https://avatars.githubusercontent.com/u/264957203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775960543072,
+      "changelog": "e2e-test-recorder 1.0.0\n\n- Initial release.\n- Supports automated browser operation recording using Puppeteer.\n- Outputs recordings in MP4, GIF, and WebM formats.\n- Enables end-to-end test recording with seamless testing framework integration.\n- Includes features such as area selection, performance monitoring, video annotation, watermarking, flexible configuration, and cross-platform support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df812cde244e4fb5f85aa04d273a4407350c5e6e8cc22907a086be8f559b9906"
+}

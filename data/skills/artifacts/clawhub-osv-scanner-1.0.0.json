@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/osv-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osv_scanner",
+  "skill": {
+    "id": 15415,
+    "skillKey": "clawhub-osv-scanner",
+    "name": "OSV Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osv-scanner",
+    "url": "https://clawhub.ai/skills/osv-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osv-scanner-31082a78c0618c3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans Node.js/NPM and Linux packages for known vulnerabilities using the Google OSV API by analyzing dependencies and reporting related CVEs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moenassi",
+      "userId": "publishers:moenassi",
+      "displayName": "Nassi Mohammed",
+      "image": "https://avatars.githubusercontent.com/u/115360141?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1031,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771509965390,
+      "changelog": "- Changed ScanResult file extension from .txt to .xlsx in the template.\n- Initial release of a Node.js/NPM and Linux package vulnerability scanner using the Google OSV API.\n- Reads project dependencies, checks for CVEs, and displays results.\n- Now requires openpyxl for spreadsheet output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2003545d8714a9ca2a03434ddeddd9999422cb7449cd8c091e3a67c7c66b9c44"
+}

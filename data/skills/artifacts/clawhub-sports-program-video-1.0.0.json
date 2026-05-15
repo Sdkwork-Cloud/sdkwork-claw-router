@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sports-program-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sports_program_video",
+  "skill": {
+    "id": 48132,
+    "skillKey": "clawhub-sports-program-video",
+    "name": "Sports Program Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sports-program-video",
+    "url": "https://clawhub.ai/skills/sports-program-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sports-program-video-d96b371936daed79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished sports clips ready to post, without touching a single slider. Upload your raw footage (MP4, MOV, AVI, MTS, up to 500MB), say something like \"cut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777229356876,
+      "changelog": "Initial release of Sports Program Video — fast, cloud-powered sports highlight editing.\n\n- Upload raw sports footage (MP4, MOV, AVI, MTS, up to 500MB) and describe desired edits.\n- Automatically cut highlights, add team scores, sync background music, and export polished 1080p MP4 videos.\n- No manual editing or local software required; everything runs securely in the cloud.\n- Built-in intent and keyword detection for quick routing: upload, edit, export, check credits, and more.\n- Session-based workflow preserves project state for iterative editing and batch processing.\n- Clear feedback, error handling, and export/download links streamline the highlight creation process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d305e916364147df0304900b226d022f5289dce158bab7e1711f39c72b9bbab"
+}

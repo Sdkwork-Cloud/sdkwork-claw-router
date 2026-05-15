@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drunk-trading-analyzer@0.0.6",
+  "version": "0.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drunk_trading_analyzer",
+  "skill": {
+    "id": 14241,
+    "skillKey": "clawhub-drunk-trading-analyzer",
+    "name": "Trading Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drunk-trading-analyzer",
+    "url": "https://clawhub.ai/skills/drunk-trading-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drunk-trading-analyzer-84224af55b47675e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-source trading analyzer (`/drunk-trading-analyzer`) combining crypto data (TradingView), stock data (Alpha Vantage), and market intelligence (Yahoo Finance) into unified analysis reports with price trends, technical indicators, and s."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baoduy",
+      "userId": "publishers:baoduy",
+      "displayName": "baoduy",
+      "image": "https://avatars.githubusercontent.com/u/166953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1767,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.0.6",
+      "createdAt": 1770782652770,
+      "changelog": "- Updated MCP server names in metadata and throughout documentation for consistency (`tradingview-mcp`, `alphavantage`, `yahoo-finance-server`)\n- Revised Quick Start and usage examples to use new MCP server names in command-line calls\n- No functional changes; documentation and configuration only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:790cc1092be66ce8390d278f8cff31c0d6a68d8ea868a48729c7d2b3d760ec23"
+}

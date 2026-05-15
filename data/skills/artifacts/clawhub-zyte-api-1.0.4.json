@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zyte-api@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyte_api",
+  "skill": {
+    "id": 28787,
+    "skillKey": "clawhub-zyte-api",
+    "name": "Zyte Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyte-api",
+    "url": "https://clawhub.ai/skills/zyte-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyte-api-db8429e6272caab7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zyte API integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zyte API data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777572402524,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca9e8351e99d1b3d91c8fce6d2a50f0ff5fa91c4fb500dd55b4915a3c9155651"
+}

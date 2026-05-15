@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65035,
+  "uuid": "skill-clawhub-sketchup-ppt-generator",
+  "skillKey": "clawhub-sketchup-ppt-generator",
+  "name": "SketchUp-PPT生成",
+  "summary": "一键将SketchUp模型生成符合温州隐室15页标准的客户汇报PPT，自动预留效果图位置便于插入截图。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sketchup_ppt_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "137984917-cyber",
+      "features": [
+        "一键将SketchUp模型生成符合温州隐室15页标准的客户汇报PPT，自动预留效果图位置便于插入截图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sketchup-ppt-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270913925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sketchup-ppt-generator",
+      "url": "https://clawhub.ai/skills/sketchup-ppt-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sketchup-ppt-generator",
+    "url": "https://clawhub.ai/skills/sketchup-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sketchup-ppt-generator-f8d1ee1ebd096d95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sketchup-ppt-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sketchup-ppt-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:245b4cd5c941f7c204991be729efbec34cfc57b8a747e436f76a1b2e060f1455",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:30:11.388Z"
+}

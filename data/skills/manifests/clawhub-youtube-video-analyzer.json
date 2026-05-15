@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13431,
+  "uuid": "skill-clawhub-youtube-video-analyzer",
+  "skillKey": "clawhub-youtube-video-analyzer",
+  "name": "Youtube Video Analyzer",
+  "summary": "Analyze YouTube videos by synchronizing transcript text with visual frames to produce detailed summaries, step-by-step guides, and content understanding.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sdrabent",
+      "features": [
+        "Analyze YouTube videos by synchronizing transcript text with visual frames to produce detailed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-video-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5302548?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-video-analyzer",
+      "url": "https://clawhub.ai/skills/youtube-video-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-analyzer",
+    "url": "https://clawhub.ai/skills/youtube-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-analyzer-65dad200bc241e7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-video-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-video-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd3649a5f4d09655464afc8328f7da6598bb0382eb2be09e57678308cf9bd8a1",
+      "artifactSizeBytes": 2747
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T01:33:09.131Z"
+}

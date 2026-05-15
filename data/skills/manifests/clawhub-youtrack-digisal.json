@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11645,
+  "uuid": "skill-clawhub-youtrack-digisal",
+  "skillKey": "clawhub-youtrack-digisal",
+  "name": "YouTrack Project Management",
+  "summary": "Interact with YouTrack project management system via REST API. Read projects and issues, create tasks, generate invoices from time tracking data, and manage knowledge base articles. Use for reading projects and work items, creating or upda.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtrack_digisal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "digiSal",
+      "features": [
+        "Interact with YouTrack project management system via REST API",
+        "Read projects and issues, create tasks, generate invoices from time tracking data, and manage k.",
+        "Use for reading projects and work items, creating or updating issues, generating client invoice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtrack-digisal@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5326798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtrack-digisal",
+      "url": "https://clawhub.ai/skills/youtrack-digisal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtrack-digisal",
+    "url": "https://clawhub.ai/skills/youtrack-digisal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtrack-digisal-22db86a88b4caea2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtrack-digisal@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtrack-digisal-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04560480aa15468bf87c9fccd4b8853e3caebf34bf6a104394da01e701201ab1",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T03:52:17.862Z"
+}

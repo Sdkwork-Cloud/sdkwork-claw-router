@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gdpr-compliance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gdpr_compliance",
+  "skill": {
+    "id": 51982,
+    "skillKey": "clawhub-gdpr-compliance",
+    "name": "GDPR Compliance Document Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gdpr-compliance",
+    "url": "https://clawhub.ai/skills/gdpr-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gdpr-compliance-267b944557717480.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate UK/EU GDPR compliance documents — privacy policies, cookie policies, DPIAs, ROPA, DSAR responses, data breach notifications, and consent forms. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamespatrickthom2003-star",
+      "userId": "s175sm574s69gbqvacsbvd8n3n84fq3m",
+      "displayName": "ExternalOS",
+      "image": "https://avatars.githubusercontent.com/u/270515205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775641533410,
+      "changelog": "Initial release: Generates tailored UK and EU GDPR compliance documents for businesses.\n\n- Provides implementation-ready templates for privacy policies, cookie policies, DPIAs, ROPA, DSAR responses, data breach notifications, and consent forms.\n- Documents are customised to business type, data processing activities, and risk profile—avoids generic templates.\n- Includes a built-in lawful basis matrix and clear reference to relevant UK/EU GDPR, DPA 2018, and PECR legal obligations.\n- Includes information gathering prompts when user’s request lacks key details, ensuring documents are accurately tailored.\n- Outputs always include a clear disclaimer recommending professional legal review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91ab3c2b452f836b3e00e91d7241597105a4fdc54c07c7cf772b137ce6566040"
+}

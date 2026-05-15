@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28532,
+  "uuid": "skill-clawhub-instaparser",
+  "skillKey": "clawhub-instaparser",
+  "name": "Instaparser",
+  "summary": "Use the Instaparser API to parse articles, PDFs, and generate summaries from URLs. Trigger when users want to extract content from web pages, parse PDF docum...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instaparser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Donohue",
+      "features": [
+        "Use the Instaparser API to parse articles, PDFs, and generate summaries from URLs",
+        "Trigger when users want to extract content from web pages, parse PDF docum..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instaparser@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1069050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instaparser",
+      "url": "https://clawhub.ai/skills/instaparser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instaparser",
+    "url": "https://clawhub.ai/skills/instaparser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instaparser-5e3891f2a4dc5a86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instaparser@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-instaparser-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7496d13ef7d24a8d0ff90d193d7eb59c16aad59cc2fd2f465b846227be97bc6",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T20:03:57.390Z"
+}

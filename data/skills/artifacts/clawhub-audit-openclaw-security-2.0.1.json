@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audit-openclaw-security@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audit_openclaw_security",
+  "skill": {
+    "id": 50590,
+    "skillKey": "clawhub-audit-openclaw-security",
+    "name": "Audit OpenClaw Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audit-openclaw-security",
+    "url": "https://clawhub.ai/skills/audit-openclaw-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audit-openclaw-security-2b114a2d95553e9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and harden OpenClaw deployments and interpret `openclaw security audit` findings. Use when the user wants to secure OpenClaw, review gateway exposure/a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 972,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773269353605,
+      "changelog": "**Summary: Adds licensing and changelog files, plus compatibility and audit command updates for OpenClaw 2026.3.8**\n\n- Added `LICENSE` (MIT) and `CHANGELOG.md` files for transparency and version tracking.\n- Updated compatibility for OpenClaw 2026.3.8; referenced new agent skill guidance.\n- Expanded context establishment instructions and included new recommended audit/diagnostic commands (`gateway probe`, `status --deep`, `channels status --probe`).\n- Clarified interpretation of Gateway/Control UI exposure and DM/group access controls.\n- Improved guidance on backups and safe config handling (use of `{baseDir}` in script paths).\n- Tightened focus: no longer intended for general OS, Docker, or cloud hardening outside OpenClaw scope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12b505cc9ebd2caa1427c5de8456ba8c6375c17251b439a57cfe428ace7775e7"
+}

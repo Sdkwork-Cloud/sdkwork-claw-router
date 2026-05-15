@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-workflows-advanced@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_workflows_advanced",
+  "skill": {
+    "id": 46169,
+    "skillKey": "clawhub-git-workflows-advanced",
+    "name": "Git Workflows Advanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-workflows-advanced",
+    "url": "https://clawhub.ai/skills/git-workflows-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-workflows-advanced-09a63ccbc9533bb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced Git operations as tools: interactive rebase with autosquash, worktree management, reflog recovery, subtree/submodule handling, cherry-pick across fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neroagent",
+      "userId": "s172sfbczvqgag0zvay27m9k1d840549",
+      "displayName": "NeroAgent",
+      "image": "https://avatars.githubusercontent.com/u/217334413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775069922791,
+      "changelog": "Initial release — advanced git: interactive rebase, worktree, reflog recovery, subtree, PR creation, changelog",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ce33474480c4ccd78c7963f2da48ac48e80ddcc2e44d8a1e08f76971b33f70b"
+}

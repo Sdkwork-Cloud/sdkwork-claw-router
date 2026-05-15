@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ket@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ket",
+  "skill": {
+    "id": 11627,
+    "skillKey": "clawhub-ket",
+    "name": "ket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ket",
+    "url": "https://clawhub.ai/skills/ket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ket-ff47bb1aedd9ede5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guides development of KET (A2 Key for Schools) exam preparation and English learning applications. Supports both English beginners (Pre-A1, A1) and KET prep learners. Use when building listening, speaking, reading, or writing features, Cam."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhqinqin123run-lgtm",
+      "userId": "publishers:zhqinqin123run-lgtm",
+      "displayName": "zhqinqin123run-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/250501501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1959,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769929411881,
+      "changelog": "Initial release: Complete guide for KET (A2 Key) exam and beginner English app development.\n\n- Covers exam structure and all modules: Reading, Writing, Listening, and Speaking.\n- Provides progressive learning paths for Pre-A1, A1, and A2 (KET) learners.\n- Includes detailed recommendations on vocabulary, grammar, question types, and child-friendly design.\n- Offers practical implementation tips, UX features (progress tracking, wrong answer book, encouragement feedback), and a developer checklist.\n- Supports both English beginners and KET exam prep, with distinct learning modes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f060c963b12b0f2cd5cd7910795f633085fd1e9c22107c040e71a7d733de4666"
+}

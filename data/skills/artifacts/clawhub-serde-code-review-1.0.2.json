@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serde-code-review@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serde_code_review",
+  "skill": {
+    "id": 30705,
+    "skillKey": "clawhub-serde-code-review",
+    "name": "Serde Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serde-code-review",
+    "url": "https://clawhub.ai/skills/serde-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serde-code-review-2ba54203812cef5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews serde serialization code for derive patterns, enum representations, custom implementations, and common serialization bugs. Use when reviewing Rust co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831380172,
+      "changelog": "- Introduced a \"Gates (before reporting findings)\" section detailing step-by-step requirements to follow before submitting a finding.\n- Clarified edition- and protocol-specific preconditions for reporting findings, including Cargo.toml context and per-finding evidence from the current file tree.\n- Updated instructions to require matching category checks from `beagle-rust:review-verification-protocol` before submitting issues.\n- Emphasized correct output formatting and verification steps prior to writing any findings.\n- Added guidance to ensure that edition-specific checks are only applied when the edition is confirmed in the current project.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:449494b28b58b4ee095007014118dd4b1694b0236883f92979a7bee424200a5e"
+}

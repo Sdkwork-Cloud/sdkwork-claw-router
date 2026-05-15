@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hehe-ddc@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hehe_ddc",
+  "skill": {
+    "id": 63521,
+    "skillKey": "clawhub-hehe-ddc",
+    "name": "hehe-ddc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hehe-ddc",
+    "url": "https://clawhub.ai/skills/hehe-ddc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hehe-ddc-7a78e779347e6a39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频自动生成 - 图片 + 文案→视频，支持 Edge TTS 男女声、逐行字幕、随机 BGM、智能时长适配"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanghu66",
+      "userId": "s17aecjx5hdtpgapnb1dxk0k1n84br21",
+      "displayName": "wanghu66",
+      "image": "https://avatars.githubusercontent.com/u/136964460?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775560125493,
+      "changelog": "- Major refactor: new project structure, documentation and improved config.\n- Added config files and docs, including QUICKSTART.md and detailed usage guides.\n- Switched main scripts to scripts/generate.py; removed old generate_video.py and related scripts.\n- Enhanced configuration flexibility with config templates and default settings.\n- All usage, options, and examples are now centralized in updated docs for easier onboarding.\n- Old guides and Markdown documents consolidated or removed for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fc52f9745a035f0094914e80037172808ef579c5be4b64beebfb4c73f07d4f0"
+}

@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -167,6 +167,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         self.assertIn("amount?: string", billing_service)
         self.assertIn("readRequiredMoneyString", billing_service)
         self.assertIn("readOptionalMoneyString(data, 'amount', 'Redeem amount must be a money string')", billing_service)
+        self.assertIn("createRequestParams('commerce-coupon-redeem')", billing_service)
         self.assertIn("'Redeem history amount must be a money string'", billing_service)
         self.assertIn("'Recharge history amount must be a money string'", billing_service)
         self.assertIn("readRequiredString(item, 'date', 'Redeem history date is required')", billing_service)
@@ -184,8 +185,10 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         self.assertIn("useState<string>('')", billing_view)
         self.assertIn("selectedAmount, setSelectedAmount] = useState<string | null>", billing_view)
         self.assertIn("moneyCents(", billing_view)
-        self.assertIn("pointsForAmount(", billing_view)
+        self.assertIn("pkg.points.toLocaleString()", billing_view)
+        self.assertIn("selectedPackage.points.toLocaleString()", billing_view)
         self.assertIn("formatMoneyAmount(", billing_view)
+        self.assertNotIn("pointsForAmount(", billing_view)
         self.assertNotIn("useState<number | ''>", billing_view)
         self.assertNotIn("Number(rechargeAmount)", billing_view)
         self.assertNotIn("item.amount.toFixed", billing_view)
@@ -328,8 +331,9 @@ class BillingRuntimeStandardTest(unittest.TestCase):
             path.read_text(encoding="utf-8") for path in standalone_source_files
         )
 
-        self.assertIn("getClawRouterAppSdkClient().coupon.redeemCode", billing_service)
-        self.assertIn("getClawRouterAppSdkClient().coupon.fetchRedeemHistory", billing_service)
+        self.assertIn("getClawRouterAppSdkClient().billing.coupons.redeem.create", billing_service)
+        self.assertIn("getClawRouterAppSdkClient().billing.users.current.coupons.list", billing_service)
+        self.assertNotIn("getClawRouterAppSdkClient().coupon.", billing_service)
         self.assertNotIn("getClawRouterAppSdkClient().coupons.", billing_service)
         self.assertIn("route: /console/billing", contract)
         self.assertIn("operation: redeemCode", contract)
@@ -487,10 +491,7 @@ class BillingRuntimeStandardTest(unittest.TestCase):
         openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
             encoding="utf-8"
         )
-        coupons_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "coupon.ts").read_text(
-            encoding="utf-8"
-        )
-        payments_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "payment.ts").read_text(
+        billing_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
             encoding="utf-8"
         )
         billing_service = (
@@ -511,36 +512,36 @@ class BillingRuntimeStandardTest(unittest.TestCase):
             self.assertIn(f"name: {schema_name}", contract)
             self.assertIn(f'"{schema_name}"', openapi)
 
-        self.assertIn('"FetchRedeemHistoryResult"', openapi)
-        self.assertIn('"FetchRechargeHistoryResult"', openapi)
-        self.assertIn('"RedeemCodeResult"', openapi)
+        self.assertIn('"UsersCurrentCouponsListResult"', openapi)
+        self.assertIn('"PaymentsRecordsListResult"', openapi)
+        self.assertIn('"CouponsRedeemCreateResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/BillingRedeemHistoryResponse"', openapi)
         self.assertIn('"$ref": "#/components/schemas/BillingRechargeHistoryResponse"', openapi)
         self.assertIn('"$ref": "#/components/schemas/RedeemCodeResponse"', openapi)
 
         self.assertIn(
-            "async fetchRedeemHistory(params?: QueryParams): Promise<FetchRedeemHistoryResult>",
-            coupons_api,
+            "async list(): Promise<UsersCurrentCouponsListResult>",
+            billing_api,
         )
-        self.assertIn("get<FetchRedeemHistoryResult>", coupons_api)
-        self.assertIn("async redeemCode(body: RedeemCodeRequest): Promise<RedeemCodeResult>", coupons_api)
-        self.assertIn("post<RedeemCodeResult>", coupons_api)
+        self.assertIn("get<UsersCurrentCouponsListResult>", billing_api)
+        self.assertIn("async create(body: RedeemCodeRequest, params: BillingCouponsRedeemCreateParams): Promise<CouponsRedeemCreateResult>", billing_api)
+        self.assertIn("post<CouponsRedeemCreateResult>", billing_api)
         self.assertIn(
-            "async fetchRechargeHistory(params?: QueryParams): Promise<FetchRechargeHistoryResult>",
-            payments_api,
+            "async list(): Promise<PaymentsRecordsListResult>",
+            billing_api,
         )
-        self.assertIn("get<FetchRechargeHistoryResult>", payments_api)
-        self.assertNotIn("fetchRedeemHistory(params?: QueryParams): Promise<PlusApiResult>", coupons_api)
-        self.assertNotIn("redeemCode(body?: OperationRequest): Promise<PlusApiResult>", coupons_api)
-        self.assertNotIn("fetchRechargeHistory(params?: QueryParams): Promise<PlusApiResult>", payments_api)
+        self.assertIn("get<PaymentsRecordsListResult>", billing_api)
+        self.assertNotIn("fetchRedeemHistory(params?: QueryParams): Promise<PlusApiResult>", billing_api)
+        self.assertNotIn("redeemCode(body?: OperationRequest): Promise<PlusApiResult>", billing_api)
+        self.assertNotIn("fetchRechargeHistory(params?: QueryParams): Promise<PlusApiResult>", billing_api)
 
         result_checks = {
-            "fetch-redeem-history-result.ts": "data?: BillingRedeemHistoryResponse;",
-            "fetch-recharge-history-result.ts": "data?: BillingRechargeHistoryResponse;",
-            "redeem-code-result.ts": "data?: RedeemCodeResponse;",
+            "users-current-coupons-list-result.ts": "data?: BillingRedeemHistoryResponse;",
+            "payments-records-list-result.ts": "data?: BillingRechargeHistoryResponse;",
+            "coupons-redeem-create-result.ts": "data?: RedeemCodeResponse;",
         }
         for file_name, expected in result_checks.items():
-            result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / file_name
+            result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / file_name
             self.assertTrue(result_path.exists(), file_name)
             self.assertIn(expected, result_path.read_text(encoding="utf-8"))
 

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_docs",
+  "skill": {
+    "id": 9546,
+    "skillKey": "clawhub-apple-docs",
+    "name": "Apple Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-docs",
+    "url": "https://clawhub.ai/skills/apple-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-docs-2cb9bebf28a254a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Apple Developer Documentation, APIs, and WWDC videos (2014-2025). Search SwiftUI, UIKit, Objective-C, Swift frameworks and watch sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thesethrose",
+      "userId": "publishers:thesethrose",
+      "displayName": "Seth Rose",
+      "image": "https://avatars.githubusercontent.com/u/10383809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3371,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768680816436,
+      "changelog": "Apple Docs Skill 1.0.0 – Initial Release\n\n- Search Apple Developer Documentation, APIs, and WWDC videos (2014–2025)\n- Explore SwiftUI, UIKit, Objective-C, and Swift frameworks and symbols\n- Check API inheritance, protocol conformances, and platform compatibility\n- Browse technology guides and sample code projects\n- Find and view WWDC session details, transcripts, and categorized topics\n- Supports flexible filtering, search limits, and fast cached results",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68e5f6cb48b2e4eb8e602c02903123c781dac39fc7a1386d0c1c5069ebd5cca8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sales-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_coach",
+  "skill": {
+    "id": 52273,
+    "skillKey": "clawhub-sales-coach",
+    "name": "Real-Time Sales Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-coach",
+    "url": "https://clawhub.ai/skills/sales-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-coach-946e7ca943290f11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time sales coaching during live meetings — objection handling, talking points, buying signals, negotiation tactics. Draws from SPIN Selling, Challenger..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnshenopeninterx",
+      "userId": "s17f692n7fasjhhr39vctv6kmd83mwkn",
+      "displayName": "shawnshenopeninterx",
+      "image": "https://avatars.githubusercontent.com/u/174261186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774511367338,
+      "changelog": "Initial release: SPIN, Challenger, MEDDIC, Sandler, Gap Selling, Voss, JOLT frameworks. Real-time coaching cards, objection handling, stage-aware coaching, competitor playbooks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ad547476efaaec1a1aae571eadfbf8847ccec9b6c9bebdfe74b4a1bb2e9f2b9"
+}

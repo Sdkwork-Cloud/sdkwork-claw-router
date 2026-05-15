@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52438,
+  "uuid": "skill-clawhub-bookforge-replication-strategy-selector",
+  "skillKey": "clawhub-bookforge-replication-strategy-selector",
+  "name": "Replication Strategy Selector",
+  "summary": "Choose a replication topology (single-leader, multi-leader, or leaderless) and configure it correctly — including sync vs. async mode, quorum parameters (w +...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_replication_strategy_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hung Quoc To",
+      "features": [
+        "Choose a replication topology (single-leader, multi-leader, or leaderless) and configure it cor.",
+        "async mode, quorum parameters (w +..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookforge-replication-strategy-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88069966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookforge-replication-strategy-selector",
+      "url": "https://clawhub.ai/skills/bookforge-replication-strategy-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-replication-strategy-selector",
+    "url": "https://clawhub.ai/skills/bookforge-replication-strategy-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-replication-strategy-selector-b04e5d86e5b1baed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookforge-replication-strategy-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-replication-strategy-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6835cd463dff57a58b4789d7c21046d2fb0867f5cec60ef205177c3ce739f345",
+      "artifactSizeBytes": 2716
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T11:30:39.345Z"
+}

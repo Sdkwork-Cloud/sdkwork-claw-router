@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51541,
+  "uuid": "skill-clawhub-science-agent-compare",
+  "skillKey": "clawhub-science-agent-compare",
+  "name": "Science Agent Compare - Side-by-Side AI Tool Comparison",
+  "summary": "Compare AI science agents side by side. Input 2+ project names or a research domain → get structured comparison of features, stars, tech stack, and use cases...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.science_agent_compare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnny Chen",
+      "features": [
+        "Compare AI science agents side by side",
+        "Input 2+ project names or a research domain → get structured comparison of features, stars, tec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/science-agent-compare@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30077595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "science-agent-compare",
+      "url": "https://clawhub.ai/skills/science-agent-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "science-agent-compare",
+    "url": "https://clawhub.ai/skills/science-agent-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/science-agent-compare-0bfa3ef9c238b69c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/science-agent-compare@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-science-agent-compare-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00f9806225100b0b0812242c84f5acf5c578832ca7efb9bbaf56bd3e6d95fbf2",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T15:33:07.133Z"
+}

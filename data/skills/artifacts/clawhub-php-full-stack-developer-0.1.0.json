@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/php-full-stack-developer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.php_full_stack_developer",
+  "skill": {
+    "id": 9906,
+    "skillKey": "clawhub-php-full-stack-developer",
+    "name": "Php Full Stack Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "php-full-stack-developer",
+    "url": "https://clawhub.ai/skills/php-full-stack-developer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/php-full-stack-developer-4da96a5a38ebb432.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A senior, governance-backed PHP full-stack delivery OS for OpenClaw. Emphasizes pre-flight analysis, safe data changes, explicit contracts, and reproducible verification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sja-dev1",
+      "userId": "publishers:sja-dev1",
+      "displayName": "sja-dev1",
+      "image": "https://avatars.githubusercontent.com/u/223449448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2636,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770035057101,
+      "changelog": "- Initial release of the php-full-stack-developer skill for OpenClaw.\n- Provides a senior-level delivery OS focused on pre-flight analysis, safe data changes, and explicit API/data contracts.\n- Implements clear trigger conditions for when to apply the skill, emphasizing engineering work that affects security, data, or deployment.\n- Introduces structured prompting principles: pre-flight checks, minimum required clarifications, and always includes test instructions.\n- Enforces stop-work rules for unclear auth, risky DB/API changes, and missing rollout/rollback steps.\n- Requires governance checks before executing or logging significant work.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85a1cb493679664254a6379cc8027e7d3819cf5f7e353db95f7905bf442f88dd"
+}

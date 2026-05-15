@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29568,
+  "uuid": "skill-clawhub-document-diff",
+  "skillKey": "clawhub-document-diff",
+  "name": "Document Diff",
+  "summary": "Compare two documents (PDF, Word, images, PPT) and generate a structured diff report highlighting what changed, what was added, and what was removed. Uses So...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_diff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Soul-Code",
+      "features": [
+        "Compare two documents (PDF, Word, images, PPT) and generate a structured diff report highlighti.",
+        "Uses So..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-diff@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33421641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-diff",
+      "url": "https://clawhub.ai/skills/document-diff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-diff",
+    "url": "https://clawhub.ai/skills/document-diff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-diff-8d473c852f63add4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-diff@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-diff-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74011dc7c43d8bc88307180735936e7ba3dbd93e6cedf7d1a8028ea397d7ac7a",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:16:45.711Z"
+}

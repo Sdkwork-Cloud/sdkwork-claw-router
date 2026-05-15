@@ -1,16 +1,21 @@
 import React from 'react';
 import { AlertTriangle, BookOpen, CalendarDays, Eye, ListVideo, Share, Star, ThumbsUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import type { COURSE_CONTENT_SNAPSHOT_SOURCE, CourseInfoView } from '../../data';
+import type { CourseInfoView, CourseOverviewSource } from '../../data';
 
 export function CourseInfo({
   info,
   snapshotSource,
+  requireLoginForAction,
 }: {
   info: CourseInfoView;
-  snapshotSource: typeof COURSE_CONTENT_SNAPSHOT_SOURCE;
+  snapshotSource: CourseOverviewSource;
+  requireLoginForAction: () => boolean;
 }) {
   const { t } = useTranslation();
+  const handlePrivateAction = () => {
+    requireLoginForAction();
+  };
 
   return (
     <div className="bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-white/10 rounded-none sm:rounded-xl p-5 md:p-6 space-y-4 shadow-sm w-full">
@@ -26,22 +31,38 @@ export function CourseInfo({
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <button className="flex items-center gap-1.5 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors font-medium text-slate-700 dark:text-slate-300">
+          <button
+            type="button"
+            onClick={handlePrivateAction}
+            className="flex items-center gap-1.5 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors font-medium text-slate-700 dark:text-slate-300"
+          >
             <ThumbsUp className="w-5 h-5" />
             <span>{info.reactions.likes}</span>
           </button>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors font-medium text-slate-700 dark:text-slate-300">
+          <button
+            type="button"
+            onClick={handlePrivateAction}
+            className="flex items-center gap-1.5 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors font-medium text-slate-700 dark:text-slate-300"
+          >
             <Star className="w-5 h-5" />
             <span>{info.reactions.saves}</span>
           </button>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors font-medium text-slate-700 dark:text-slate-300">
+          <button
+            type="button"
+            onClick={handlePrivateAction}
+            className="flex items-center gap-1.5 px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors font-medium text-slate-700 dark:text-slate-300"
+          >
             <Share className="w-5 h-5" />
             <span>{info.reactions.shares}</span>
           </button>
 
           <div className="w-px h-5 bg-slate-300 dark:bg-slate-700 mx-2" />
 
-          <button className="flex items-center gap-1.5 px-2 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors text-slate-500">
+          <button
+            type="button"
+            onClick={handlePrivateAction}
+            className="flex items-center gap-1.5 px-2 py-1.5 hover:bg-slate-100 dark:hover:bg-white/5 rounded-full transition-colors text-slate-500"
+          >
             <AlertTriangle className="w-4 h-4" />
             <span className="hidden sm:inline">Report content</span>
           </button>

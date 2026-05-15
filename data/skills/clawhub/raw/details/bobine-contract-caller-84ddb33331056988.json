@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "bobine-contract-caller",
+    "displayName": "Bobine Contract Caller",
+    "summary": "Use when you need to call deployed Bobine modules with typed params or perform a signed Ed25519 call through an auth module.",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 45,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778346379964,
+    "updatedAt": 1778346708103
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1778346379964,
+    "changelog": "Initial release of bobine-contract-caller.\n\n- Enables typed Bobine contract calls via `/api/execute`\n- Supports unsigned and authenticated Ed25519-signed calls to Bobine modules\n- Provides scripts for contract interaction (`call_bobine.mjs`) and Ed25519 key generation (`keygen.mjs`)\n- Handles complex param structures and signed call nonce/signature flow\n- Outputs results as normalized tagged JSON; logs diagnostics to stderr\n- Includes robust safety practices for handling sensitive key material",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "linux",
+      "darwin",
+      "win32"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "ccamel",
+    "userId": "s177wz3n9wkq2nnskf8f6erqvx84q9cw",
+    "displayName": "Chris",
+    "image": "https://avatars.githubusercontent.com/u/9574336?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778346708103
+  }
+}

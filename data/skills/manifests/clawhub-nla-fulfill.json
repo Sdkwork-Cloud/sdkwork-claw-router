@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26410,
+  "uuid": "skill-clawhub-nla-fulfill",
+  "skillKey": "clawhub-nla-fulfill",
+  "name": "Nla Fulfill",
+  "summary": "Fulfill an existing NLA escrow and collect tokens. Use when the user wants to submit fulfillment text for an on-chain escrow, check arbitration results, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nla_fulfill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "疒奀",
+      "features": [
+        "Fulfill an existing NLA escrow and collect tokens",
+        "Use when the user wants to submit fulfillment text for an on-chain escrow, check arbitration re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nla-fulfill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46226846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nla-fulfill",
+      "url": "https://clawhub.ai/skills/nla-fulfill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nla-fulfill",
+    "url": "https://clawhub.ai/skills/nla-fulfill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nla-fulfill-1a41bd079eb5d4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nla-fulfill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nla-fulfill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2e6b328b5db4fb89f82489fcc5f830a1b7d696f34810caab51a11f196bc8925",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:27:56.698Z"
+}

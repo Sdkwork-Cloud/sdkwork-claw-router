@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-mcp-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_mcp_1_0_0",
+  "skill": {
+    "id": 16082,
+    "skillKey": "clawhub-playwright-mcp-1-0-0",
+    "name": "Playwright Mcp 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-mcp-1-0-0",
+    "url": "https://clawhub.ai/skills/playwright-mcp-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-mcp-1-0-0-835357393b13d2a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation via Playwright MCP server. Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full browser automat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itsjustfred",
+      "userId": "publishers:itsjustfred",
+      "displayName": "itsjustFred",
+      "image": "https://avatars.githubusercontent.com/u/151180638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 20,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771796180847,
+      "changelog": "- Initial release of the playwright-mcp skill for browser automation via Playwright MCP server.\n- Provides tools to navigate websites, interact with forms, click elements, extract data, and take screenshots.\n- Supports command-line options for browser selection, headless mode, viewport sizing, security controls, and output management.\n- Includes detailed quick start and usage examples for common automation workflows.\n- Security features include restricted file system access, host validation, and sandboxing by default.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:377ef1ae18a2787b68701990954a7d6201dee22aff654805b84f90c7120db638"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_mcp_skill",
+  "skill": {
+    "id": 18402,
+    "skillKey": "clawhub-playwright-mcp-skill",
+    "name": "Playwright Mcp Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-mcp-skill",
+    "url": "https://clawhub.ai/skills/playwright-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-mcp-skill-75e890dae7c93cd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run browser automation through @playwright/mcp over UXC stdio MCP, with daemon-friendly session reuse and safe action guardrails. Use when tasks need determi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 623,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772547010521,
+      "changelog": "- Initial release of playwright-mcp-skill for deterministic browser automation via @playwright/mcp over UXC stdio MCP.\n- Supports daemon-friendly session reuse and safe action guardrails.\n- Default workflow includes headless, isolated sessions; persistent shared profiles are optionally supported.\n- Provides fixed command linking with `playwright-mcp-cli` for streamlined usage.\n- Enforces JSON envelope protocol parsing and explicit guardrails for safe browser actions.\n- Designed for CLI integration with prerequisites for Node.js, npx, and uxc.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:32f4d6e3109261b2b4cfd2859643076fb66b95bf7b33d589ebc6212d7b6abf36"
+}

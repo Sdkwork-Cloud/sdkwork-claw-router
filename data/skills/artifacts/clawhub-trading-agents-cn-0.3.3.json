@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-agents-cn@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_agents_cn",
+  "skill": {
+    "id": 63171,
+    "skillKey": "clawhub-trading-agents-cn",
+    "name": "Trading Agents Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-agents-cn",
+    "url": "https://clawhub.ai/skills/trading-agents-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-agents-cn-d7d76c3c99c65709.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 LLM 的 A 股多智能体交易分析框架，支持批量选股对比、回测信号生成和因子研究，自带 OpenAI 兼容 API 适配器模板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1776954638478,
+      "changelog": "v0.3.3: bilingual metadata injected. H1 shows A 股多智能体; tagline replaced with skill-specific Chinese hook; tags upgraded to Level 1-4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2876ded8bcab268e3474e45cccfdc19075716ee6e707168153663bad00fc2ac2"
+}

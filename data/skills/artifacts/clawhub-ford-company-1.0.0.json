@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ford-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ford_company",
+  "skill": {
+    "id": 49732,
+    "skillKey": "clawhub-ford-company",
+    "name": "Ford Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ford-company",
+    "url": "https://clawhub.ai/skills/ford-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ford-company-2ff24def3f059341.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ford Motor Company is a century-old automaker transitioning from ICE vehicles to EVs, segmented into Ford Blue, Ford Model e, and Ford Pro commercial units."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 68,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778276215438,
+      "changelog": "- Initial release of the ford-company skill.\n- Provides an overview of Ford's history, business model, competitive advantages, and key data.\n- Highlights Ford’s recent organizational split into Ford Blue and Ford Model e, reflecting its transition toward electric vehicles.\n- Includes notable milestones like the F-150’s dominance and the launch of the Mustang.\n- Offers insights into Ford's commercial vehicle business and unique historical contributions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11d0e74dc6ef27c91c2b00dd6ea96f529e3858f0d390665001f8e810bc7db050"
+}

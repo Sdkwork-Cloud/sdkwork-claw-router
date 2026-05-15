@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27246,
+  "uuid": "skill-clawhub-log-scrubber",
+  "skillKey": "clawhub-log-scrubber",
+  "name": "Log Scrubber",
+  "summary": "Automatically redacts API keys, tokens, and secrets from workspace logs and memory files.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.log_scrubber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Heather-Herbert",
+      "features": [
+        "Automatically redacts API keys, tokens, and secrets from workspace logs and memory files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/log-scrubber@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/410682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "log-scrubber",
+      "url": "https://clawhub.ai/skills/log-scrubber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "log-scrubber",
+    "url": "https://clawhub.ai/skills/log-scrubber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/log-scrubber-347bb36d4a269b0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/log-scrubber@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-log-scrubber-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bece1039ba2793466991fca5bfd5401ae24f2065acfe4b6eff18e194d8c9fe6d",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:04:01.384Z"
+}

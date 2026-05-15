@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/essential-skills-installer@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.essential_skills_installer",
+  "skill": {
+    "id": 63291,
+    "skillKey": "clawhub-essential-skills-installer",
+    "name": "Essential Skills Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "essential-skills-installer",
+    "url": "https://clawhub.ai/skills/essential-skills-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/essential-skills-installer-674fd9b7542bdf34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键安装 OpenClaw 必备技能。适用于新用户入门和快速部署。触发词：安装必备技能、一键安装、初始化技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianduoduo1422608857",
+      "userId": "s17a0wrf2yndwe5z6cqae0d28n83ghjs",
+      "displayName": "qianduoduo8021",
+      "image": "https://avatars.githubusercontent.com/u/42595612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773549072223,
+      "changelog": "新增 2 个技能：skill-creator（五星）、summarize（四星）、notion（四星），共计 8 个必备技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8053ba0907ce3ab82fadf28181480dad2d70b2fa515d11894e0f22b33dc595b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/files@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.files",
+  "skill": {
+    "id": 10067,
+    "skillKey": "clawhub-files",
+    "name": "Files"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "files",
+    "url": "https://clawhub.ai/skills/files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/files-3d7db37d08f9140f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely organize, deduplicate, and analyze files with intelligent bulk operations and full undo support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2476,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770811583597,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3040ee12f881dd79666875ad35166964da35f25198d6e1f57446f93476d632c0"
+}

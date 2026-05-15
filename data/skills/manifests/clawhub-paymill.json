@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43009,
+  "uuid": "skill-clawhub-paymill",
+  "skillKey": "clawhub-paymill",
+  "name": "Paymill",
+  "summary": "PAYMILL integration. Manage data, records, and automate workflows. Use when the user wants to interact with PAYMILL data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paymill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PAYMILL integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PAYMILL data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paymill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paymill",
+      "url": "https://clawhub.ai/skills/paymill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paymill",
+    "url": "https://clawhub.ai/skills/paymill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paymill-1d3f4fe6640f055c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paymill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paymill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4aac881b7db53647496d999db59e873399232b2a72396c62332180830c30333",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:07:06.205Z"
+}

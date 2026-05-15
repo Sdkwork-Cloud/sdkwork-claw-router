@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buddy-pet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddy_pet",
+  "skill": {
+    "id": 60146,
+    "skillKey": "clawhub-buddy-pet",
+    "name": "BUDDY 宠物系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddy-pet",
+    "url": "https://clawhub.ai/skills/buddy-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddy-pet-cddd010ce301243d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BUDDY 宠物系统 - 一个虚拟宠物伴侣工具，用于生成、互动、展示 AI 宠物。当用户说\"摸摸宠物\"、\"查看宠物\"、\"孵化宠物\"、\"buddy\"、\"/buddy pet\"、\"/buddy card\"、\"/buddy hatch\"、\"/buddy mute\"、\"/buddy unmute\" 或任何与宠物互动相关的..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxiaofeng0811-lgtm",
+      "userId": "s17atqadnqpa3am0hjznmvcev583sngm",
+      "displayName": "dxiaofeng0811-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/266959010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775197237729,
+      "changelog": "初始版本 - 18种宠物/5稀有度/5维属性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdc6942ac392f231e2a21054febd22511651ee9f9b84675c9d3369c9f8ef564c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/panda-imagine@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panda_imagine",
+  "skill": {
+    "id": 59481,
+    "skillKey": "clawhub-panda-imagine",
+    "name": "panda-imagine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panda-imagine",
+    "url": "https://clawhub.ai/skills/panda-imagine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panda-imagine-bb7f9ec64d86cd12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多 Provider 图片生成引擎。支持 OpenAI、Azure、Google Gemini、OpenRouter、 通义万相(DashScope)、MiniMax、即梦(Jimeng)、豆包(Seedream)、Replicate。 支持文生图、参考图、宽高比、批量生成。 触发词：\"生成图片\"、\"画图\"、\"g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hash-panda",
+      "userId": "s170a8h7mm0ky2sr1jkvtz8std83zx62",
+      "displayName": "hash panda",
+      "image": "https://avatars.githubusercontent.com/u/110599333?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775039919118,
+      "changelog": "init",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b4f837198c2521bc8c1184bfb446078353689c4af16edba76b73363ddc7a6c2"
+}

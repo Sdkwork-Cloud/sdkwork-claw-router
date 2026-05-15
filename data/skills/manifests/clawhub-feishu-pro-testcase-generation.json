@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65559,
+  "uuid": "skill-clawhub-feishu-pro-testcase-generation",
+  "skillKey": "clawhub-feishu-pro-testcase-generation",
+  "name": "Automatic Test Case Generation Pro",
+  "summary": "将需求文档、表单字段规则、审批流程定义和 UI 说明转化为结构化测试用例，适用于表单校验、流程审批、状态流转、权限隔离和业务分支测试场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_pro_testcase_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lens-lzy",
+      "features": [
+        "将需求文档、表单字段规则、审批流程定义和 UI 说明转化为结构化测试用例，适用于表单校验、流程审批、状态流转、权限隔离和业务分支测试场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-pro-testcase-generation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60784629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-pro-testcase-generation",
+      "url": "https://clawhub.ai/skills/feishu-pro-testcase-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-pro-testcase-generation",
+    "url": "https://clawhub.ai/skills/feishu-pro-testcase-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-pro-testcase-generation-cc35cd2777f2f4d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-pro-testcase-generation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-pro-testcase-generation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebcd5c86402d71c9a5da4a290ad94e848e67259b9c7cb3ccbd499f68bbcbc09c",
+      "artifactSizeBytes": 2833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:24:34.120Z"
+}

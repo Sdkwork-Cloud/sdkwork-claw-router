@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15461,
+  "uuid": "skill-clawhub-feishu-file",
+  "skillKey": "clawhub-feishu-file",
+  "name": "Feishu File Sender",
+  "summary": "Send local files to Feishu chats. Supports uploading and sending any file type as a Feishu file message.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_file",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaofei",
+      "features": [
+        "Send local files to Feishu chats",
+        "Supports uploading and sending any file type as a Feishu file message."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-file@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236318269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-file",
+      "url": "https://clawhub.ai/skills/feishu-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-file",
+    "url": "https://clawhub.ai/skills/feishu-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-file-7bd28e20af0a4ca6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-file@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-file-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41de8bd464f2dcb81cd27b271f653209a8d073251d0c03de2cbe7b1cf800758e",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T23:35:44.898Z"
+}

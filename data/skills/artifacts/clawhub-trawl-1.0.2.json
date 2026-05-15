@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trawl@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trawl",
+  "skill": {
+    "id": 11003,
+    "skillKey": "clawhub-trawl",
+    "name": "Trawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trawl",
+    "url": "https://clawhub.ai/skills/trawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trawl-51bc9413edd625fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous lead generation through agent social networks. Your agent sweeps MoltBook using semantic search while you sleep, finds business-relevant connections, scores them against your signals, qualifies leads via DM conversations, and re."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "audsmith28",
+      "userId": "publishers:audsmith28",
+      "displayName": "audsmith28",
+      "image": "https://avatars.githubusercontent.com/u/223534942?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2130,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770842660219,
+      "changelog": "v1.0.2: Removed personal data from example config",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7ce9c0d888cd64a850e09fe4fa523191af2abca180d80f8a50f2f6cbf225491c"
+}

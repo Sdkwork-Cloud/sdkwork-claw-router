@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mzu-news-briefing@2.0.4",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mzu_news_briefing",
+  "skill": {
+    "id": 63864,
+    "skillKey": "clawhub-mzu-news-briefing",
+    "name": "Mzu 每日简报"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mzu-news-briefing",
+    "url": "https://clawhub.ai/skills/mzu-news-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mzu-news-briefing-04c84f90accff160.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多源 AI 科技新闻简报聚合器。覆盖 AI 大模型、科技、财经，按热度分级输出，来源全程可溯。AIHOT 168 信源并行覆盖。8 维度强制搜索，15-20 条精选内容。支持 Twitter/X 和 Grok API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sweesama",
+      "userId": "s17bjy1e27pf2pgarsxxz2xh7d83hsjb",
+      "displayName": "sweesama",
+      "image": "https://avatars.githubusercontent.com/u/109814964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.0.4",
+      "createdAt": 1778236422716,
+      "changelog": "v2.0.4: 新增分类（效率工具）+ 8个中文标签；displayName 改为纯中文",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8dab5c1e3dc770e3c80e90871f8f3b3624145fa85385b4c7b082ff62ac27f0e8"
+}

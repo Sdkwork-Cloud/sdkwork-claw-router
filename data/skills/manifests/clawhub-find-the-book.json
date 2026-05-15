@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70381,
+  "uuid": "skill-clawhub-find-the-book",
+  "skillKey": "clawhub-find-the-book",
+  "name": "findTheBook",
+  "summary": "搜索豆瓣书籍评分、作者和链接，并提供微信读书电子书资源，适合寻找高分书单和深入阅读需求。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_the_book",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wintersun661",
+      "features": [
+        "搜索豆瓣书籍评分、作者和链接，并提供微信读书电子书资源，适合寻找高分书单和深入阅读需求。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-the-book@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47968103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-the-book",
+      "url": "https://clawhub.ai/skills/find-the-book"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-the-book",
+    "url": "https://clawhub.ai/skills/find-the-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-the-book-abb2ff9d8e90352d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-the-book@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-the-book-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3962f4595a1c609b008d86ad6a0b57374a76302de1dba6df40dc59a7a1c5e7a",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T13:13:12.572Z"
+}

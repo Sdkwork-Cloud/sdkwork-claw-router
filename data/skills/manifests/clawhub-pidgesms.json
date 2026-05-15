@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19498,
+  "uuid": "skill-clawhub-pidgesms",
+  "skillKey": "clawhub-pidgesms",
+  "name": "pidgesms",
+  "summary": "Send and read SMS text messages via an Android phone using pidge. Use when asked to send a text, check texts, read SMS inbox, or reply to a text message.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pidgesms",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adam Malone",
+      "features": [
+        "Send and read SMS text messages via an Android phone using pidge",
+        "Use when asked to send a text, check texts, read SMS inbox, or reply to a text message."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pidgesms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3642111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pidgesms",
+      "url": "https://clawhub.ai/skills/pidgesms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pidgesms",
+    "url": "https://clawhub.ai/skills/pidgesms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pidgesms-b480f4741d91dd99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pidgesms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pidgesms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6198de66789eabd42b57232625796837e0df859f200a6b0cbe80890db17170ef",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T22:30:55.326Z"
+}

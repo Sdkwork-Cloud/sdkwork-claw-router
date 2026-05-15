@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investoday-stock-financial-analysis@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investoday_stock_financial_analysis",
+  "skill": {
+    "id": 69314,
+    "skillKey": "clawhub-investoday-stock-financial-analysis",
+    "name": "investoday-stock-financial-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investoday-stock-financial-analysis",
+    "url": "https://clawhub.ai/skills/investoday-stock-financial-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investoday-stock-financial-analysis-34b5dc1791c83016.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向A股个股财务质量分析，聚焦盈利能力、利润质量、成长持续性、现金流与财务安全性。基于今日投资金融数据接口，自动识别股票代码并输出结构化财务分析报告。触发词：财务分析、盈利能力、现金流、资产负债、偿债能力、利润质量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenneth-bro",
+      "userId": "s177j0jytadhmffa017fzg5tcs83gmm6",
+      "displayName": "investoday",
+      "image": "https://avatars.githubusercontent.com/u/19256972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 633,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774681393743,
+      "changelog": "Automated release from GitHub Actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93134f453cb8999819c5b1ef627945cfe17dc5d847ba5410aa962242ed49880e"
+}

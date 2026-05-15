@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kakao-local-cli@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kakao_local_cli",
+  "skill": {
+    "id": 44994,
+    "skillKey": "clawhub-kakao-local-cli",
+    "name": "kakao-local-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kakao-local-cli",
+    "url": "https://clawhub.ai/skills/kakao-local-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kakao-local-cli-9da1df6de5d2e06c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool for Kakao Local API supporting keyword/category place search, geocoding, and reverse geocoding with JSON output and API key authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chloepark85",
+      "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+      "displayName": "Chloe Park",
+      "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776520942460,
+      "changelog": "Fix metadata: declare required env + primary credential",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fc66885c63fa370696dcf38d5bfd6984ba3915701cd13054a152f56202c153d"
+}

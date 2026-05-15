@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45302,
+  "uuid": "skill-clawhub-mutation-test-runner",
+  "skillKey": "clawhub-mutation-test-runner",
+  "name": "Mutation Test Runner",
+  "summary": "Run mutation testing to measure real test suite effectiveness. Inject code mutations (flip conditions, remove calls, change returns), run tests against mutan...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mutation_test_runner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Run mutation testing to measure real test suite effectiveness",
+        "Inject code mutations (flip conditions, remove calls, change returns), run tests against mutan.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mutation-test-runner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mutation-test-runner",
+      "url": "https://clawhub.ai/skills/mutation-test-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mutation-test-runner",
+    "url": "https://clawhub.ai/skills/mutation-test-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mutation-test-runner-033ee193a7e87016.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mutation-test-runner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mutation-test-runner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:210ea46f3d7c0eed6990b83ea8f8d34440c58703c6660cb2f57f17117c0c6ea9",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:07.093Z"
+}

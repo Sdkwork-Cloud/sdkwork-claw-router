@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudsway-scalebox-sandbox@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudsway_scalebox_sandbox",
+  "skill": {
+    "id": 38639,
+    "skillKey": "clawhub-cloudsway-scalebox-sandbox",
+    "name": "Cloudsway ScaleBox Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudsway-scalebox-sandbox",
+    "url": "https://clawhub.ai/skills/cloudsway-scalebox-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudsway-scalebox-sandbox-568ab771921db4d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage isolated cloud sandboxes for secure, remote code execution, browser automation, and temporary development environments via CLI, API, or Pyt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gloriathepenguin",
+      "userId": "publishers:gloriathepenguin",
+      "displayName": "gloriathepenguin",
+      "image": "https://avatars.githubusercontent.com/u/260087879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774092459631,
+      "changelog": "v1.0.5 highlights improved documentation and clarity for using ScaleBox Sandbox.\n\n- Added comprehensive SKILL.md with detailed setup steps, CLI/API/SDK usage, and security notes.\n- Clarified port access mechanism—use port prefixes in URLs when connecting to sandbox services.\n- Documented available sandbox templates with specifications for CPU, memory, and use cases.\n- Expanded guidance for typical workflows, including sandbox lifecycle, file operations, and command execution.\n- Provided best-practice security advice and troubleshooting information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f08deb718661fb8aec7059e20aa3240d92285d368be2c7697acb5ab12ba16e6f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55242,
+  "uuid": "skill-clawhub-virtual-voice-ai",
+  "skillKey": "clawhub-virtual-voice-ai",
+  "name": "Virtual voice builder",
+  "summary": "Wires a real microphone through an AI brain (STT → LLM → TTS) and routes the output to a virtual audio cable so apps like Google Meet hear the processed voic...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_voice_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Suhas Rudra",
+      "features": [
+        "Wires a real microphone through an AI brain (STT → LLM → TTS) and routes the output to a virtua."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtual-voice-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265854920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtual-voice-ai",
+      "url": "https://clawhub.ai/skills/virtual-voice-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-voice-ai",
+    "url": "https://clawhub.ai/skills/virtual-voice-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-voice-ai-282066d155ff1573.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtual-voice-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtual-voice-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:628cb63c1a822f2a8694e0ce94dca8ddc9447add6754395e01e18745c5a427e7",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:08:53.175Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14941,
+  "uuid": "skill-clawhub-skill-security",
+  "skillKey": "clawhub-skill-security",
+  "name": "Skill Security Scanner",
+  "summary": "Security audit tool for OpenClaw skills. Scans for credential harvesting, code injection, network exfiltration, obfuscation. ALWAYS run before installing any...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suryast",
+      "features": [
+        "Security audit tool for OpenClaw skills",
+        "Scans for credential harvesting, code injection, network exfiltration, obfuscation",
+        "ALWAYS run before installing any..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-security@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4986994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-security",
+      "url": "https://clawhub.ai/skills/skill-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security",
+    "url": "https://clawhub.ai/skills/skill-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-9a8a523fb50caaea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-security@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aed1fd4b7f5b487af5fd00734b7c8da398e7b303464813df791081cf0ed26dd5",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:26:30.785Z"
+}

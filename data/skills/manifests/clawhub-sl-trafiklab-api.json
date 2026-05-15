@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34252,
+  "uuid": "skill-clawhub-sl-trafiklab-api",
+  "skillKey": "clawhub-sl-trafiklab-api",
+  "name": "Stockholm Public Traffic Planner",
+  "summary": "Fetch real-time SL (Stockholm public transport) departures and deviation information. Use when checking upcoming departures from stops, querying active train...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sl_trafiklab_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Patrik Ekenberg",
+      "features": [
+        "Fetch real-time SL (Stockholm public transport) departures and deviation information",
+        "Use when checking upcoming departures from stops, querying active train..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sl-trafiklab-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31476631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sl-trafiklab-api",
+      "url": "https://clawhub.ai/skills/sl-trafiklab-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sl-trafiklab-api",
+    "url": "https://clawhub.ai/skills/sl-trafiklab-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sl-trafiklab-api-31d42da66122606a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sl-trafiklab-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sl-trafiklab-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:663cee7204ca1e78ccd95ac304fd95e5ee08b16f3126158e10a6863f0f5e1303",
+      "artifactSizeBytes": 2571
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:10:17.328Z"
+}

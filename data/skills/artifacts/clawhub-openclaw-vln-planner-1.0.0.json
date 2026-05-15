@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-vln-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_vln_planner",
+  "skill": {
+    "id": 38688,
+    "skillKey": "clawhub-openclaw-vln-planner",
+    "name": "OpenClaw VLN Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-vln-planner",
+    "url": "https://clawhub.ai/skills/openclaw-vln-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-vln-planner-be2936ce3f6385bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan the next high-level navigation step for a robot from a user navigation instruction, one current image, and a sequence of historical images. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiktokdad",
+      "userId": "s179dsecf2d5pvr84n2smnqkyn83g2z0",
+      "displayName": "TIKTOKDAD",
+      "image": "https://avatars.githubusercontent.com/u/91710456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774442245231,
+      "changelog": "Initial release of OpenClaw VLN Planner.\n\n- Introduces a high-level vision-language navigation planner for robots based on visual observations and natural-language user instructions.\n- Outputs a single, validated mid-level navigation action as pure JSON (MOVE_FORWARD, TURN_LEFT, TURN_RIGHT, STOP) for each input.\n- Integrates with any OpenAI-compatible multimodal gateway for action prediction using current and historical frames.\n- Includes strict safety fallback rules—defaults to STOP on uncertainty, parse failure, or safety concerns.\n- Provides clear input requirements, output contract, and runtime configuration via external YAML.\n- Bundles schema reference, config template, and a bridge script for execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a731f819969a2464fe44c475a64cee7b3b5461b50cb98a39655d271d9913d760"
+}

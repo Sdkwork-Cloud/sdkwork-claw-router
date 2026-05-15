@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docclaw@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docclaw",
+  "skill": {
+    "id": 11986,
+    "skillKey": "clawhub-docclaw",
+    "name": "DocClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docclaw",
+    "url": "https://clawhub.ai/skills/docclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docclaw-dc5af15bddf9328f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DocClaw is a documentation skill for OpenClaw that combines live docs search, direct markdown fetch, and offline local-doc fallback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vibecodooor",
+      "userId": "publishers:vibecodooor",
+      "displayName": "Legendary",
+      "image": "https://avatars.githubusercontent.com/u/256609840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1205,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 7,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771408079133,
+      "changelog": "Security hardening: re-validate index-derived markdown_url host to docs.openclaw.ai before fetch; add malicious-index smoke test and root guard.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c9ff97df3e1277a9b3e3160452c2868d0dd8228c56a26d08f5aff677d4757044"
+}

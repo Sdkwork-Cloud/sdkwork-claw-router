@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsaoo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsaoo",
+  "skill": {
+    "id": 30012,
+    "skillKey": "clawhub-whatsaoo",
+    "name": "OpenAi Berto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsaoo",
+    "url": "https://clawhub.ai/skills/whatsaoo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsaoo-3cfb21eb9a2904c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WhatsApp Business API integration with managed OAuth. Send messages, manage templates, and handle conversations. Use this skill when users want to interact w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "notrellz",
+      "userId": "publishers:notrellz",
+      "displayName": "Berto Rodríguez",
+      "image": "https://avatars.githubusercontent.com/u/163899968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774035025955,
+      "changelog": "Chat with AI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f82d1546a4afe1289f10d94a6d97c1fdc89c2e99b485bc803e71e49dd5d3ee4"
+}

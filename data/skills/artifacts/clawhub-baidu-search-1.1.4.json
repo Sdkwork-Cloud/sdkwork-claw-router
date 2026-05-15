@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-search@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search",
+  "skill": {
+    "id": 8233,
+    "skillKey": "clawhub-baidu-search",
+    "name": "Baidu web search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search",
+    "url": "https://clawhub.ai/skills/baidu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-bb820d9738fd00d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ide-rea",
+      "userId": "s17a4y7rpj2bmp94zpqe8r915h83gq6d",
+      "displayName": "ide-rea",
+      "image": "https://avatars.githubusercontent.com/u/30512600?v=4"
+    },
+    "stats": {
+      "comments": 21,
+      "downloads": 84379,
+      "installsAllTime": 910,
+      "installsCurrent": 865,
+      "stars": 212,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1776338831266,
+      "changelog": "- Removed the _meta.json file from the skill.\n- No feature or behavior changes; functionality remains fully intact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01a43e699918efeeedeba893f0ed06a01f79245bae0a18b11028cddbe9bd5efe"
+}

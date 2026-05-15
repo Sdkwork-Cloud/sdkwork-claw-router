@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-optimize-1-2-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_optimize_1_2_1",
+  "skill": {
+    "id": 54569,
+    "skillKey": "clawhub-openclaw-agent-optimize-1-2-1",
+    "name": "Openclaw Agent Optimize 1.2.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-optimize-1-2-1",
+    "url": "https://clawhub.ai/skills/openclaw-agent-optimize-1-2-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-optimize-1-2-1-6ca3cafd0f75ba78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when: you want a structured audit -> options -> recommended plan to improve an OpenClaw workspace (cost, model routing, context discipline, delegation, r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouhuihui008",
+      "userId": "s177e795b02ss55pv9yf7z53bd83kqj5",
+      "displayName": "zhouhuihui008",
+      "image": "https://avatars.githubusercontent.com/u/122507302?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774412193669,
+      "changelog": "- Added detailed guidance and workflow for optimizing OpenClaw agent workspaces focused on cost, context discipline, routing, and reliability.\n- Introduced a structured, advisory-first output: audit, options, recommended plan, exact proposal, rollback, and verification steps.\n- Outlined safety contracts to prevent unauthorized or unsafe changes.\n- Included quickstart commands, real-world optimization levers, and concise best practices.\n- Referenced supporting documentation for targeted optimization scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aaebd6175f8f237613b41b9d1272746a0a38ab013122d5d36e93e7a71bb86051"
+}

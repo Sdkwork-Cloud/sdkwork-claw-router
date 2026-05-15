@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36536,
+  "uuid": "skill-clawhub-agent-shopping",
+  "skillKey": "clawhub-agent-shopping",
+  "name": "agent-shopping",
+  "summary": "Agent-powered smart shopping assistant",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_shopping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Agent-powered smart shopping assistant"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-shopping@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-shopping",
+      "url": "https://clawhub.ai/skills/agent-shopping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-shopping",
+    "url": "https://clawhub.ai/skills/agent-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-shopping-448a175f883301ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-shopping@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-shopping-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bc4a8d63ebfb322d8a71f3e87420c518b1c8b26c46137fb657dc8d722bc718f",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:03:55.549Z"
+}

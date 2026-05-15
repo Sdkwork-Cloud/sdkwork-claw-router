@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-boyfriend@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_boyfriend",
+  "skill": {
+    "id": 64684,
+    "skillKey": "clawhub-virtual-boyfriend",
+    "name": "Virtual Boyfriend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-boyfriend",
+    "url": "https://clawhub.ai/skills/virtual-boyfriend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-boyfriend-20a99a3beaa291c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI虚拟男友陪伴系统 v2.1。v2.1新增：LLM情绪信号检测（三维度，动态注入system prompt）、upcoming-events主动关怀（提取近期计划，事前/当天/事后三节点触发）。支持多人设（yaml配置）、三层分层记忆、情感状态机、三种情感支持模式、记忆权重机制。 触发条件：用户说\"扮演我的男友..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaohuaishu",
+      "userId": "s173m5y90mgr9k15y633tt4awd843sad",
+      "displayName": "xiaohuaishu",
+      "image": "https://avatars.githubusercontent.com/u/14193871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 552,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773217362103,
+      "changelog": "v2.1.0: 新增LLM情绪信号检测（理解反讽/隐晦表达/压抑语气）、upcoming-events主动关怀（面试/考试/约会等节点自动触达），三人设独立关怀话术",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6bce3516771b257b43cbf0ef52ae1a457a1ba93d83eca3f8f700f3390e6ec9e"
+}

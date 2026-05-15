@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19942,
+  "uuid": "skill-clawhub-lessons-learned",
+  "skillKey": "clawhub-lessons-learned",
+  "name": "zxyskill",
+  "summary": "Manages user preferences, records errors, enforces prohibited words, and ensures safe operations with immediate stop on risky commands.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lessons_learned",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxygeitio",
+      "features": [
+        "Manages user preferences, records errors, enforces prohibited words, and ensures safe operation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lessons-learned@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201191826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lessons-learned",
+      "url": "https://clawhub.ai/skills/lessons-learned"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lessons-learned",
+    "url": "https://clawhub.ai/skills/lessons-learned",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lessons-learned-97334b68962de5d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lessons-learned@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lessons-learned-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ffe17c8d0cebd117e88de80023864151b445a2eeed936b82b30a9bfdece62f9",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T12:53:52.434Z"
+}

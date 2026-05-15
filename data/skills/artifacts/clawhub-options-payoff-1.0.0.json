@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/options-payoff@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.options_payoff",
+  "skill": {
+    "id": 29023,
+    "skillKey": "clawhub-options-payoff",
+    "name": "Options Payoff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "options-payoff",
+    "url": "https://clawhub.ai/skills/options-payoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/options-payoff-46225412f48dcc06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate an interactive options payoff curve chart with dynamic parameter controls. Use this skill whenever the user shares an options position screenshot, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "himself65",
+      "userId": "publishers:himself65",
+      "displayName": "himself65",
+      "image": "https://avatars.githubusercontent.com/u/14026360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773470540052,
+      "changelog": "Initial release of the options-payoff skill:\n\n- Generates interactive options payoff charts with dynamic sliders for strikes, volatility, expiry, and more.\n- Detects and supports common multi-leg strategies including butterflies, spreads, condors, straddles, and custom positions.\n- Provides both expiry payoff and theoretical P&L curves using Black-Scholes pricing.\n- Automatically extracts as much as possible from user input, using reasonable defaults if needed.\n- Displays real-time stats: max profit/loss, breakeven points, and live P&L at spot.\n- Includes user-friendly controls and tooltips to help analyze risk and reward.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1d97e4f02c7b4964fc34b2e93e8d49c9fe1bf97e6e353163df4e3c0c1e6d27a"
+}

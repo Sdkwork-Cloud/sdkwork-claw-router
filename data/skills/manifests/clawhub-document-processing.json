@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62453,
+  "uuid": "skill-clawhub-document-processing",
+  "skillKey": "clawhub-document-processing",
+  "name": "Document Processing",
+  "summary": "支持PDF、Word、Excel、PPT格式转换、内容提取及批量处理，自动同步飞书云文档和推送处理结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_processing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiongrui-xr",
+      "features": [
+        "支持PDF、Word、Excel、PPT格式转换、内容提取及批量处理，自动同步飞书云文档和推送处理结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/document-processing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82640580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "document-processing",
+      "url": "https://clawhub.ai/skills/document-processing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-processing",
+    "url": "https://clawhub.ai/skills/document-processing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-processing-448d3fabb45e42ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/document-processing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-document-processing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:504609bd6e34941a4fda37bba5a31fd9755595f02b2d0f8a3388dff658e339c6",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:24:52.433Z"
+}

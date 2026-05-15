@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60418,
+  "uuid": "skill-clawhub-clawpaw-android-control",
+  "skillKey": "clawhub-clawpaw-android-control",
+  "name": "Clawpaw Android Control Template",
+  "summary": "Android 手机自动化控制技能。支持 Node（Gateway）和 HTTP 两种连接方式，提供点击、滑动、输入、截图、布局获取、应用打开等操作。 （需 Java 11+、Android 10+ 手机，安装 ClawPaw App 并开启无障碍服务）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpaw_android_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "klscool",
+      "features": [
+        "Android 手机自动化控制技能。支持 Node（Gateway）和 HTTP 两种连接方式，提供点击、滑动、输入、截图、布局获取、应用打开等操作。 （需 Java 11+、Android."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawpaw-android-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39289749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawpaw-android-control",
+      "url": "https://clawhub.ai/skills/clawpaw-android-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpaw-android-control",
+    "url": "https://clawhub.ai/skills/clawpaw-android-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpaw-android-control-25652ef6a24e7569.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawpaw-android-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawpaw-android-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22f0ab842ad71b8910c4c3c3e30d61b295b2491e8280d3f5083ef97dd77c4d96",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:26:52.277Z"
+}

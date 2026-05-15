@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/basename-agent@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basename_agent",
+  "skill": {
+    "id": 50560,
+    "skillKey": "clawhub-basename-agent",
+    "name": "Basename Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basename-agent",
+    "url": "https://clawhub.ai/skills/basename-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basename-agent-149f23f23e177960.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🏷️ Basename Agent - Onchain Identity + Æmail for AI. Register yourname.base.eth and get yourname@basemail.ai — via Donate Buy (recommended), free auto-regis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daaab",
+      "userId": "s1734aczwq16mt7vnhrq68bkq5841wa6",
+      "displayName": "Ju Chun Ko",
+      "image": "https://avatars.githubusercontent.com/u/1607280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771563821487,
+      "changelog": "**Basename Agent 2.1.0 Changelog**\n\n- Added new \"Donate Buy\" (recommended) flow: register and donate in one atomic on-chain transaction (15% donation supports infrastructure).\n- Updated docs to compare three registration methods: Donate Buy, Auto Register (free, worker-pays), and WalletConnect.\n- Provided complete Donate Buy JavaScript code sample using viem and contract details.\n- Improved API/documentation clarity: sectioned setup by method, updated comparison tables, added rationale for Donate Buy.\n- Security advice and contract verification info clarified throughout.\n- Existing \"Easy Mode\" (API) flow renamed to \"Auto Register\" and shown alongside other methods.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:44f1d3d898b191227b98f8736aab6a1a5f9b62f914fe0b4a899f9f49830d955b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43903,
+  "uuid": "skill-clawhub-video-ai-process",
+  "skillKey": "clawhub-video-ai-process",
+  "name": "Video Ai Process",
+  "summary": "Automatically transcribe, analyze, segment, upload, auto-compose, and generate custom-cut AI video editions with client scoring and final version selection.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_ai_process",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuchenggong19851114-design",
+      "features": [
+        "Automatically transcribe, analyze, segment, upload, auto-compose, and generate custom-cut AI vi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-ai-process@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266258234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-ai-process",
+      "url": "https://clawhub.ai/skills/video-ai-process"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-ai-process",
+    "url": "https://clawhub.ai/skills/video-ai-process",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-ai-process-6bf58226e01665da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-ai-process@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-ai-process-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7da2e33196677f7ae510a201ce22c9d7baf2d07e9651a838c705df3e483c2330",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:27:51.365Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41566,
+  "uuid": "skill-clawhub-cloudguard",
+  "skillKey": "clawhub-cloudguard",
+  "name": "cloudguard",
+  "summary": "Cloud infrastructure & IaC security scanner -- detects insecure Terraform, open S3 buckets, permissive IAM, missing encryption, exposed ports, and cloud misc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Cloud infrastructure & IaC security scanner -",
+        "detects insecure Terraform, open S3 buckets, permissive IAM, missing encryption, exposed ports,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudguard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudguard",
+      "url": "https://clawhub.ai/skills/cloudguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudguard",
+    "url": "https://clawhub.ai/skills/cloudguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudguard-640a184f68e6c88f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudguard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudguard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e769108f70b00689ad61b34e62e478421209f1c354311736e23b7ed0d2bdf72a",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:20:23.326Z"
+}

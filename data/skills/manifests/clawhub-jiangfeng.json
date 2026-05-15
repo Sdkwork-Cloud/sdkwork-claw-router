@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73629,
+  "uuid": "skill-clawhub-jiangfeng",
+  "skillKey": "clawhub-jiangfeng",
+  "name": "淘宝投放数据分析",
+  "summary": "基于淘宝直播、超级直播和财务数据，实现自动识别、编码处理、关键指标计算及跨报表多维投放数据分析与优化建议生成。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiangfeng",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "18262202398-star",
+      "features": [
+        "基于淘宝直播、超级直播和财务数据，实现自动识别、编码处理、关键指标计算及跨报表多维投放数据分析与优化建议生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiangfeng@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258665177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiangfeng",
+      "url": "https://clawhub.ai/skills/jiangfeng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiangfeng",
+    "url": "https://clawhub.ai/skills/jiangfeng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiangfeng-0b2102a313e0494d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiangfeng@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiangfeng-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1fd3cb42dced0f8d9773adb0340121d47f59c405c8095674b4bcdcc93b91302",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T21:53:20.326Z"
+}

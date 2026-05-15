@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29543,
+  "uuid": "skill-clawhub-tavily-search-openclaw",
+  "skillKey": "clawhub-tavily-search-openclaw",
+  "name": "Tavily Search",
+  "summary": "Tavily AI Search API integration for OpenClaw. Provides web search capabilities using Tavily's AI-powered search engine.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryan-wuxl",
+      "features": [
+        "Tavily AI Search API integration for OpenClaw",
+        "Provides web search capabilities using Tavily's AI-powered search engine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-search-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21093002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-search-openclaw",
+      "url": "https://clawhub.ai/skills/tavily-search-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-openclaw",
+    "url": "https://clawhub.ai/skills/tavily-search-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-openclaw-74c1b69c547ff1e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-search-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:966ce25c6a16cfbfb124879513f81093d7f4335c5fb07a4154042e2de5827019",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:38:52.505Z"
+}

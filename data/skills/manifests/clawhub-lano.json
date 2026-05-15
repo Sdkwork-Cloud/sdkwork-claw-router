@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35163,
+  "uuid": "skill-clawhub-lano",
+  "skillKey": "clawhub-lano",
+  "name": "Lano",
+  "summary": "Lano integration. Manage data, records, and automate workflows. Use when the user wants to interact with Lano data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lano",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Lano integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Lano data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lano@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lano",
+      "url": "https://clawhub.ai/skills/lano"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lano",
+    "url": "https://clawhub.ai/skills/lano",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lano-24aa6ce7c11b6873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lano@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lano-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06f7d6be7dd791ab5fadb793cb333d04c99a58ba4e76928a2103d1decd97d58f",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:05:36.496Z"
+}

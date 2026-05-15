@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69097,
+  "uuid": "skill-clawhub-dotline-art",
+  "skillKey": "clawhub-dotline-art",
+  "name": "Dotline Art",
+  "summary": "生成点线字符艺术画，在终端显示漂亮的文字点线图。当用户想要生成终端艺术字、ASCII art、命令行banner、文字转点线图、终端横幅、CLI文字艺术时触发此技能。支持中英文输入（中文自动转拼音）。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dotline_art",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaosai",
+      "features": [
+        "生成点线字符艺术画，在终端显示漂亮的文字点线图。当用户想要生成终端艺术字、ASCII art、命令行banner、文字转点线图、终端横幅、CLI文字艺术时触发此技能。支持中英文输入（中文自动."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dotline-art@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2424882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dotline-art",
+      "url": "https://clawhub.ai/skills/dotline-art"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dotline-art",
+    "url": "https://clawhub.ai/skills/dotline-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dotline-art-856865b76aa8c6bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dotline-art@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dotline-art-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0a51af69d6a1c7a2f532dd289584bd0d6e2762ba2778690ae49b6b5c34435f0",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T09:12:18.247Z"
+}

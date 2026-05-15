@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72971,
+  "uuid": "skill-clawhub-rednote-publisher",
+  "skillKey": "clawhub-rednote-publisher",
+  "name": "小红书长图文发布",
+  "summary": "自动化在小红书网页版发布长图文笔记，支持标题正文填写、一键排版及快速发布，单次耗时约2-3分钟。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rednote_publisher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RickyZhangV",
+      "features": [
+        "自动化在小红书网页版发布长图文笔记，支持标题正文填写、一键排版及快速发布，单次耗时约2-3分钟。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rednote-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2140267?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rednote-publisher",
+      "url": "https://clawhub.ai/skills/rednote-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rednote-publisher",
+    "url": "https://clawhub.ai/skills/rednote-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rednote-publisher-8bf4c6c32d0cc813.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rednote-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rednote-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d86d27a6434e7106a4f4e77cc83cb7706d1690ca6514ff4ef28942524be71e8",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:13:20.909Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18025,
+  "uuid": "skill-clawhub-weather-checker",
+  "skillKey": "clawhub-weather-checker",
+  "name": "Weather Checker",
+  "summary": "Command-line weather checker tool with global city support, temperature, precipitation, and probability display with emoji formatting",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luckisnow",
+      "features": [
+        "Command-line weather checker tool with global city support, temperature, precipitation, and pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13744924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-checker",
+      "url": "https://clawhub.ai/skills/weather-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-checker",
+    "url": "https://clawhub.ai/skills/weather-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-checker-ba75049fb06029d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2435f4b7968c1455947f02a733768cd4f442b9b5f5f52daf9c4b037ffd9da90d",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T09:59:20.535Z"
+}

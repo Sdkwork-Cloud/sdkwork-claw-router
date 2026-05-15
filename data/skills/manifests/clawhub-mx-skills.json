@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67736,
+  "uuid": "skill-clawhub-mx-skills",
+  "skillKey": "clawhub-mx-skills",
+  "name": "eastmoney skills",
+  "summary": "东方财富妙想提供的金融技能集合，涵盖金融数据查询、资讯搜索、智能选股、自选股管理和模拟组合管理，所有技能均需通过MX_APIKEY进行认证。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eastmoney_dev",
+      "features": [
+        "东方财富妙想提供的金融技能集合，涵盖金融数据查询、资讯搜索、智能选股、自选股管理和模拟组合管理，所有技能均需通过MX_APIKEY进行认证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109639273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-skills",
+      "url": "https://clawhub.ai/skills/mx-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-skills",
+    "url": "https://clawhub.ai/skills/mx-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-skills-40e624a00006da95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b1523c3838a8ae00e7ee5497021f3eb0334f6facd4ea2e58f5bf1bcff9fd55a",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:41:55.261Z"
+}

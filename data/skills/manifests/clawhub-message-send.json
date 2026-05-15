@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56944,
+  "uuid": "skill-clawhub-message-send",
+  "skillKey": "clawhub-message-send",
+  "name": "message-send",
+  "summary": "Instruções e fluxo de trabalho para o comando openclaw message send. Utilize para enviar mensagens, mídias e payloads complexos (botões/cards) para múltiplos...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RaphaCastelloes",
+      "features": [
+        "Instruções e fluxo de trabalho para o comando openclaw message send",
+        "Utilize para enviar mensagens, mídias e payloads complexos (botões/cards) para múltiplos..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86805578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message-send",
+      "url": "https://clawhub.ai/skills/message-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-send",
+    "url": "https://clawhub.ai/skills/message-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-send-4cd3caf6a9c59ca9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d2e7f5d1fc110e9c333677bb46cd22400c6b0d3af90476bc268a129eff75fd1",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:39:06.688Z"
+}

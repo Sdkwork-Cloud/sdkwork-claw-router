@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-summary-litiao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_summary_litiao",
+  "skill": {
+    "id": 29062,
+    "skillKey": "clawhub-news-summary-litiao",
+    "name": "News Summary Litiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-summary-litiao",
+    "url": "https://clawhub.ai/skills/news-summary-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-summary-litiao-bf524a00cc5cc597.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks for news updates, daily briefings, or what's happening in the world. Fetches news from trusted international RSS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litiao1224",
+      "userId": "publishers:litiao1224",
+      "displayName": "litiao1224",
+      "image": "https://avatars.githubusercontent.com/u/183017089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773727421978,
+      "changelog": "Bug fixes and improvements with -litiao suffix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc185fa0e77f7f2692205d74f0649f127cadf55e8a225f049ebf6a16c74377c2"
+}

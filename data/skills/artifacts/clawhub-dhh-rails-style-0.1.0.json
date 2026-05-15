@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dhh-rails-style@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dhh_rails_style",
+  "skill": {
+    "id": 24190,
+    "skillKey": "clawhub-dhh-rails-style",
+    "name": "Dhh Rails Style"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dhh-rails-style",
+    "url": "https://clawhub.ai/skills/dhh-rails-style",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dhh-rails-style-2cb6cc1db0f21db5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when writing Ruby and Rails code in DHH's distinctive 37signals style. It applies when writing Ruby code, Rails applications, creat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pixelxiao",
+      "userId": "s1705s5qweyxmfj1jqaywf40g183kje6",
+      "displayName": "skye",
+      "image": "https://avatars.githubusercontent.com/u/37579245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772593909207,
+      "changelog": "Initial release of dhh-rails-style skill.\n\n- Provides guidance and code review for Ruby and Rails projects in the 37signals/DHH style.\n- Includes principles: favor vanilla Rails, fat models, thin controllers, REST purity, Current attributes, Hotwire/Turbo patterns, and \"clarity over cleverness\".\n- Offers quick references for naming, REST resource mapping, Ruby idioms, and DHH-preferred patterns.\n- Outlines what to use vs avoid (no devise, sidekiq, Redis, etc.).\n- Supports architecture, testing, gems, code review, and general Rails style guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d0a1f44698894d8fdb2c525e4ea60217c0cd0e2d22071c17ab815df20b4b31c1"
+}

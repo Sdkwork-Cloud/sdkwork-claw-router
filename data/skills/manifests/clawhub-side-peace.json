@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11228,
+  "uuid": "skill-clawhub-side-peace",
+  "skillKey": "clawhub-side-peace",
+  "name": "Side Peace",
+  "summary": "Minimal secure secret handoff. Zero external deps. Human opens browser form, submits secret, agent receives it via temp file. Secret NEVER appears in stdout/logs.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.side_peace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EULOxGOS",
+      "features": [
+        "Minimal secure secret handoff",
+        "Zero external deps",
+        "Human opens browser form, submits secret, agent receives it via temp file",
+        "Secret NEVER appears in stdout/logs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/side-peace@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106397029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "side-peace",
+      "url": "https://clawhub.ai/skills/side-peace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "side-peace",
+    "url": "https://clawhub.ai/skills/side-peace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/side-peace-b40ab7f97d21bf9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/side-peace@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-side-peace-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd390591e63f9ea88c903d87e1369dd891a53854579d990f6a58692fd3cd1e74",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T04:55:50.183Z"
+}

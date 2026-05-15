@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitconverter@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitconverter",
+  "skill": {
+    "id": 64865,
+    "skillKey": "clawhub-fitconverter",
+    "name": "fitconverter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitconverter",
+    "url": "https://clawhub.ai/skills/fitconverter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitconverter-b8c70e722b9b6aee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "运动健康转换工具。华为、Zepp、小米、vivo、三星、Keep、悦跑圈、RQrun、动动、行者运动记录导出后，可通过运动健康转换工具转换成fit、tcx、gpx、kml格式文件同步导入高驰、佳明、RQrun、Strava等主流运动平。 运动记录转换工具、运动记忆、运动数据转换、fitconverter、华为运动..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daozhao",
+      "userId": "s17b6thq6gm5hnqw09wmpqqg0d84n8em",
+      "displayName": "Daozhao",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775949828167,
+      "changelog": "- Updated description keywords for improved coverage and searchability (now includes terms like “转换fit”, “转换tcx”).\n- No functional or API changes; documentation and user flow remain the same.\n- Version bump to 1.0.2 for consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51b7f918b3b833425f6bb4b87196433a7b5577bd2e5396ba6d9a4b06390d3d83"
+}

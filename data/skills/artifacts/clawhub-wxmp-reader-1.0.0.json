@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wxmp-reader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wxmp_reader",
+  "skill": {
+    "id": 57213,
+    "skillKey": "clawhub-wxmp-reader",
+    "name": "WeChat Articles Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wxmp-reader",
+    "url": "https://clawhub.ai/skills/wxmp-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wxmp-reader-82fccf2931bc488c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and summarize WeChat Official Account articles (微信公众号文章) by URL. Bypasses WeChat's anti-bot detection to extract full article text, title, author, date,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reedchan7",
+      "userId": "s17aq7acfyds4xs1hw290pw8s583jhh4",
+      "displayName": "Reed Chan",
+      "image": "https://avatars.githubusercontent.com/u/49066821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 516,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773052196815,
+      "changelog": "- feat: wechat articles reader skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:341b9adb951acf9a09774aeedc48159d3054d6dee1340e69a78368ccdc441f82"
+}

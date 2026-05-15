@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65517,
+  "uuid": "skill-clawhub-sonos-music-playback",
+  "skillKey": "clawhub-sonos-music-playback",
+  "name": "Sonos 音乐点播",
+  "summary": "面向中文用户的 Sonos 音乐点播技能。支持通过 Sonos 侧搜索加队列起播的方式播放已绑定音乐服务，当前已验证兼容 网易云音乐 和 QQ音乐。通过 SoCo 将搜索结果转成 Sonos 队列项，再从队列起播，以保留 Sonos App 中的标题、歌手、专辑和封面等 metadata。",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonos_music_playback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sengo Zhao",
+      "features": [
+        "面向中文用户的 Sonos 音乐点播技能。支持通过 Sonos 侧搜索加队列起播的方式播放已绑定音乐服务，当前已验证兼容 网易云音乐 和 QQ音乐。通过 SoCo 将搜索结果转成 Sonos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonos-music-playback@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72131616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonos-music-playback",
+      "url": "https://clawhub.ai/skills/sonos-music-playback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonos-music-playback",
+    "url": "https://clawhub.ai/skills/sonos-music-playback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonos-music-playback-e0e8ae2300824eab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonos-music-playback@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonos-music-playback-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:728cfb88b4ab31ee413be827dd1970ec876c8e445d811bb19c4e985b5dbb2b08",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:36:08.954Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autoresearch-pilot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoresearch_pilot",
+  "skill": {
+    "id": 52323,
+    "skillKey": "clawhub-autoresearch-pilot",
+    "name": "Autoresearch Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoresearch-pilot",
+    "url": "https://clawhub.ai/skills/autoresearch-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoresearch-pilot-d00a463cd041a6d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for setting up and running Karpathy's autoresearch — autonomous AI-driven LLM training experiments. Helps write program.md, interpret results, and opti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tommot2",
+      "userId": "s17fzh9kw6g9v8fg9kppsbmwt183p1kd",
+      "displayName": "TommoT2",
+      "image": "https://avatars.githubusercontent.com/u/106430507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775175752009,
+      "changelog": "Initial release. Setup guide, program.md writing, result interpretation, small GPU optimization tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:439d6f0a1c236af3034669d7ddf17d63cc2d58adc8dfae32bd9ae008e948b997"
+}

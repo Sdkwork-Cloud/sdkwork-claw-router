@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20630,
+  "uuid": "skill-clawhub-skill-maker",
+  "skillKey": "clawhub-skill-maker",
+  "name": "Skill Maker",
+  "summary": "Create new agent skills from scratch. Use when: (1) Building specific capabilities, (2) Converting workflows into reusable skills, (3) Designing skill struct...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_maker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KeXu9",
+      "features": [
+        "Create new agent skills from scratch",
+        "Use when: (1) Building specific capabilities, (2) Converting workflows into reusable skills, (3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-maker@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147953862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-maker",
+      "url": "https://clawhub.ai/skills/skill-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-maker",
+    "url": "https://clawhub.ai/skills/skill-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-maker-f3fa66bcd4b44ecd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-maker@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-maker-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85a2902667a1edd8844ac055b2d34fe4fe8c6f213cd96c903076f6e4231d7ea8",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T11:06:00.477Z"
+}

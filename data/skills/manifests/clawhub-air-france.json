@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71081,
+  "uuid": "skill-clawhub-air-france",
+  "skillKey": "clawhub-air-france",
+  "name": "Air France",
+  "summary": "提供法国航空公司介绍及航班查询，涵盖舱位等级、行李规定和预订指南，助力欧洲及法国旅行规划。",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.air_france",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供法国航空公司介绍及航班查询，涵盖舱位等级、行李规定和预订指南，助力欧洲及法国旅行规划。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/air-france@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "air-france",
+      "url": "https://clawhub.ai/skills/air-france"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "air-france",
+    "url": "https://clawhub.ai/skills/air-france",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/air-france-7d71b0204c55fc06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/air-france@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-air-france-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0cbf1b7c5345378d7b1dda3654d46e9cdc776719b94fe2f692c313e74f684d2",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:24:36.789Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23888,
+  "uuid": "skill-clawhub-threshold-keel",
+  "skillKey": "clawhub-threshold-keel",
+  "name": "Threshold Keel",
+  "summary": "Safety guardrails for autonomous agents. Intercepts destructive actions, requires structured approval before irreversible operations, with CLI-backed cryptog...",
+  "version": "0.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threshold_keel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Threshold Signalworks",
+      "features": [
+        "Safety guardrails for autonomous agents",
+        "Intercepts destructive actions, requires structured approval before irreversible operations, wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/threshold-keel@0.2.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249287132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "threshold-keel",
+      "url": "https://clawhub.ai/skills/threshold-keel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threshold-keel",
+    "url": "https://clawhub.ai/skills/threshold-keel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threshold-keel-16b6fd61fd013114.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/threshold-keel@0.2.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-threshold-keel-0.2.7.json",
+      "version": "0.2.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2654602e5c226fef1a12e76a7d78e371edb4dda78e2f5e6b1b5b8fbd0dd11d48",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:21:28.523Z"
+}

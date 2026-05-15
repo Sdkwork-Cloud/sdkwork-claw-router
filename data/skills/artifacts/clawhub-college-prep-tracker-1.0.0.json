@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/college-prep-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.college_prep_tracker",
+  "skill": {
+    "id": 38986,
+    "skillKey": "clawhub-college-prep-tracker",
+    "name": "College Prep Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "college-prep-tracker",
+    "url": "https://clawhub.ai/skills/college-prep-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/college-prep-tracker-3bfd4be7903fc851.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track college applications, essays, scholarships, financial aid, recommendation letters, test scores, and deadlines for one or more students. Built-in timeli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris-openclaw",
+      "userId": "s17f63svb641q2stekk1cmcdn183k4rq",
+      "displayName": "chris-openclaw",
+      "image": "https://avatars.githubusercontent.com/u/271059507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775873737131,
+      "changelog": "Initial release of College Prep Tracker—track all aspects of the college application process for one or more students.\n\n- Manage student profiles, including GPA, test scores, intended major, and extracurriculars.\n- Track college applications, essays (including supplementals), deadlines, and visit notes per student and school.\n- Handle scholarships, financial aid (FAFSA/CSS Profile), and per-school aid offers.\n- Monitor recommendation letter requests and statuses across all applications.\n- Built-in milestone timeline for junior and senior years to guide students step-by-step.\n- All data securely saved and updated in a single JSON file for persistence and easy management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09826d74ae0fa707351d3e4a54bc1b4bea4ccbead1fcbaa47fcb40a39e64953d"
+}

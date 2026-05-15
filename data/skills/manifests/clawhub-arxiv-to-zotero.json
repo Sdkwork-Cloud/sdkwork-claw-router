@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20142,
+  "uuid": "skill-clawhub-arxiv-to-zotero",
+  "skillKey": "clawhub-arxiv-to-zotero",
+  "name": "arXiv to Zotero",
+  "summary": "Find recent arXiv papers, skip what is already in Zotero, and save new imports with parent-item tagging and PDF attachments into a dedicated collection.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_to_zotero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "清弦.",
+      "features": [
+        "Find recent arXiv papers, skip what is already in Zotero, and save new imports with parent-item."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-to-zotero@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110468513?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-to-zotero",
+      "url": "https://clawhub.ai/skills/arxiv-to-zotero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-to-zotero",
+    "url": "https://clawhub.ai/skills/arxiv-to-zotero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-to-zotero-9fa17a7b3ebc6275.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-to-zotero@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-to-zotero-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bdf2dd3d0b71294bb7df2eff197fd85915cc11ec9297a44b7816d2f9a2a24f6",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:29:56.089Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55832,
+  "uuid": "skill-clawhub-clawallex",
+  "skillKey": "clawhub-clawallex",
+  "name": "Clawallex",
+  "summary": "Pay for anything with USDC — virtual cards for any online checkout",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawallex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clawallex",
+      "features": [
+        "Pay for anything with USDC — virtual cards for any online checkout"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawallex@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267561672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawallex",
+      "url": "https://clawhub.ai/skills/clawallex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawallex",
+    "url": "https://clawhub.ai/skills/clawallex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawallex-65d5510da5073c1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawallex@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawallex-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50b5323beb6047d98de94758ac8587ddda990fd77dcc669571cbe672f0e1c815",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:07:59.332Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24321,
+  "uuid": "skill-clawhub-whale-shark",
+  "skillKey": "clawhub-whale-shark",
+  "name": "Whale Shark",
+  "summary": "Monitor large wallet activities including holdings, transfers, smart money ranks, and set alerts to track whale movements.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whale_shark",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haha Tan",
+      "features": [
+        "Monitor large wallet activities including holdings, transfers, smart money ranks, and set alert."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whale-shark@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18513327?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whale-shark",
+      "url": "https://clawhub.ai/skills/whale-shark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whale-shark",
+    "url": "https://clawhub.ai/skills/whale-shark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whale-shark-dc19916706ff7f00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whale-shark@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whale-shark-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79d4831568ee4c73db71f2e338f86e8ffe77f5e4e71b0528947d59a8ad37bb85",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:54:39.954Z"
+}

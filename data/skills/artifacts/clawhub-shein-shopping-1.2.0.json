@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shein-shopping@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shein_shopping",
+  "skill": {
+    "id": 22102,
+    "skillKey": "clawhub-shein-shopping",
+    "name": "SHEIN Shopping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shein-shopping",
+    "url": "https://clawhub.ai/skills/shein-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shein-shopping-3e09930581680a58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users make safer SHEIN shopping decisions based on style intent, price sensitivity, fit expectations, and quality-risk awareness. Use when the user asks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773579108679,
+      "changelog": "Security-aligned public release: low-sensitivity decision-support version without runtime or account-state behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70a149bd2cb71fb28a2bc5ecfe02ac04ab9694443c3dcc27b7285db2be5a41ef"
+}

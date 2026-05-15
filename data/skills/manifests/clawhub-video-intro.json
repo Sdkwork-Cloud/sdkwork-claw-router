@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55811,
+  "uuid": "skill-clawhub-video-intro",
+  "skillKey": "clawhub-video-intro",
+  "name": "Video Intro",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — create a 5-second branded intro for my YouTube channel — and get branded i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_intro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — create a 5-second branded intro for my YouTube channel — and get brand."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-intro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-intro",
+      "url": "https://clawhub.ai/skills/video-intro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-intro",
+    "url": "https://clawhub.ai/skills/video-intro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-intro-8cc7ccc9d66c7edb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-intro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-intro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d1019708b25e2b8e7c6434c89782613ea023f2bca2d731aa325c46840c7eb5f",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T17:05:44.241Z"
+}

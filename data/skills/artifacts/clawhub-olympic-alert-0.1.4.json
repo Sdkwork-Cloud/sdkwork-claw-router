@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olympic-alert@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olympic_alert",
+  "skill": {
+    "id": 61796,
+    "skillKey": "clawhub-olympic-alert",
+    "name": "Olympic Alert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olympic-alert",
+    "url": "https://clawhub.ai/skills/olympic-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olympic-alert-786c330a34012197.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "올림픽 경기 알림. 경기 10분 전 알림 발송, 일정 관리(추가/삭제), 중계 링크 포함. 2026 밀라노 동계올림픽 한국팀 기본 설정 포함."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garibong-labs",
+      "userId": "s17erq91vaqjxyyx47mr6hkq2183hwed",
+      "displayName": "garibong-labs",
+      "image": "https://avatars.githubusercontent.com/u/258610216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1771023380435,
+      "changelog": "Fix SKILL.md timing description to match actual code (15min alert window)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df6178e538945ddd4292a6ac6ee40f1884be07c105cda727cf0792cfc33c0e4a"
+}

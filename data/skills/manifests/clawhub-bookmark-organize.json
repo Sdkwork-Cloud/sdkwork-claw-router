@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45706,
+  "uuid": "skill-clawhub-bookmark-organize",
+  "skillKey": "clawhub-bookmark-organize",
+  "name": "Bookmark Organize",
+  "summary": "Organize Chrome bookmarks through OpenClaw with preview, explicit confirmation, apply, undo, and a local Chrome executor bridge. Use for conservative Chrome...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookmark_organize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoshidefeng",
+      "features": [
+        "Organize Chrome bookmarks through OpenClaw with preview, explicit confirmation, apply, undo, an.",
+        "Use for conservative Chrome..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookmark-organize@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19591426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookmark-organize",
+      "url": "https://clawhub.ai/skills/bookmark-organize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookmark-organize",
+    "url": "https://clawhub.ai/skills/bookmark-organize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookmark-organize-1d96b86689c4d949.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookmark-organize@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookmark-organize-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ddcbdde71be6e3abffcdb0e03f22e7a76cabb623020670a34ff8d4dde1a952d",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:07:24.778Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_scout",
+  "skill": {
+    "id": 41982,
+    "skillKey": "clawhub-polymarket-scout",
+    "name": "Polymarket Scout — Hourly Edge Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-scout",
+    "url": "https://clawhub.ai/skills/polymarket-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-scout-033e9f13ce9e548f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Polymarket hourly crypto markets (BTC/ETH/SOL/XRP) for edge opportunities. Detects counter-consensus setups, freshness windows, and expected value using..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamierossouw",
+      "userId": "publishers:jamierossouw",
+      "displayName": "JamieRossouw",
+      "image": "https://avatars.githubusercontent.com/u/219507116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 640,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771685223733,
+      "changelog": "Initial release: Argus-strategy edge detection for Polymarket hourly crypto markets. L023 counter-consensus rule validated at 77.8% WR.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea56d0b78d299e26a5832cfb456db1ce940e1f1e19eddf6eb5099c615737025a"
+}

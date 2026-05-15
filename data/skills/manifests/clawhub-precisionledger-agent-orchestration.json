@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29164,
+  "uuid": "skill-clawhub-precisionledger-agent-orchestration",
+  "skillKey": "clawhub-precisionledger-agent-orchestration",
+  "name": "Agent Orchestration Patterns",
+  "summary": "Multi-agent orchestration patterns for production deployments. Covers sub-agent QC workflow, model staggering across 5+ models, cross-validation patterns, fa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.precisionledger_agent_orchestration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Multi-agent orchestration patterns for production deployments",
+        "Covers sub-agent QC workflow, model staggering across 5+ models, cross-validation patterns, fa.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/precisionledger-agent-orchestration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "precisionledger-agent-orchestration",
+      "url": "https://clawhub.ai/skills/precisionledger-agent-orchestration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "precisionledger-agent-orchestration",
+    "url": "https://clawhub.ai/skills/precisionledger-agent-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/precisionledger-agent-orchestration-0355a1f6248b158d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/precisionledger-agent-orchestration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-precisionledger-agent-orchestration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef3587d7eeb07f752289822ad4abdaef1c08beb885c760198b73998b4e093a00",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:15:42.511Z"
+}

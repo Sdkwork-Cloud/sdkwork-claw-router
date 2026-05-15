@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-pipeline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_pipeline",
+  "skill": {
+    "id": 20636,
+    "skillKey": "clawhub-agent-pipeline",
+    "name": "Agent Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-pipeline",
+    "url": "https://clawhub.ai/skills/agent-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-pipeline-850226583bf4cdae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages code task workflow by spawning sub-agents for research, coding, reviewing, security audit, testing, and committing with detailed logging and updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "curbob",
+      "userId": "publishers:curbob",
+      "displayName": "Curbob",
+      "image": "https://avatars.githubusercontent.com/u/444341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 525,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772442037187,
+      "changelog": "Initial release introducing the Agent Pipeline Skill.\n\n- Defines a modular workflow for code tasks using specialized sub-agents: Researcher, Coder, Reviewer, Security, Tester, and Commit.\n- Enforces a strict stage order and clear responsibilities for each agent.\n- Integrates board logging and planner updates throughout the workflow.\n- Standardizes branch naming and communication protocols.\n- Includes security and structural checks as core pipeline stages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2003a3ff822978e4c3266d3c6b08ec333e1b4907d7a0323552a30b52a15dba9a"
+}

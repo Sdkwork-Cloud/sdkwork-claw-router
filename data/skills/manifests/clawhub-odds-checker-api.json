@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10629,
+  "uuid": "skill-clawhub-odds-checker-api",
+  "skillKey": "clawhub-odds-checker-api",
+  "name": "Odds for sports events",
+  "summary": "Query Odds-API.io for sports events, bookmakers, and betting odds (e.g., \"what are the odds for Inter vs Arsenal\", \"get odds for Paddy the Baddie vs Gaethje\"). Use when you need to call the Odds-API.io v3 API or interpret its responses; re.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odds_checker_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diegopetrucci",
+      "features": [
+        "Query Odds-API.io for sports events, bookmakers, and betting odds (e.g., \"what are the odds for.",
+        "Use when you need to call the Odds-API.io v3 API or interpret its responses",
+        "requires a user-provided API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/odds-checker-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/773004?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "odds-checker-api",
+      "url": "https://clawhub.ai/skills/odds-checker-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odds-checker-api",
+    "url": "https://clawhub.ai/skills/odds-checker-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odds-checker-api-c442b78d61ec4019.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/odds-checker-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-odds-checker-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96c2601a1a7385cc8ce36e2dbd3916298da7412b6889d0edf91572ba9c56be2f",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T13:22:42.536Z"
+}

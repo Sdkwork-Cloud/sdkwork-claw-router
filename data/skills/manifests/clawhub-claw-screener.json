@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38001,
+  "uuid": "skill-clawhub-claw-screener",
+  "skillKey": "clawhub-claw-screener",
+  "name": "Claw Screener",
+  "summary": "Stock screener combining Williams %R oversold signals with Warren Buffett-style fundamental analysis. Supports US (S&P 500) and Thai (SET) markets.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_screener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Richard Soutar",
+      "features": [
+        "Stock screener combining Williams %R oversold signals with Warren Buffett-style fundamental ana.",
+        "Supports US (S&P 500) and Thai (SET) markets."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-screener@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13177655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-screener",
+      "url": "https://clawhub.ai/skills/claw-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-screener",
+    "url": "https://clawhub.ai/skills/claw-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-screener-fbff967412f62950.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-screener@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-screener-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5db17fba28d07089eba8ac5aa5499b3c86f054fba9c09d3a872d4d9de9d62aef",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:39:28.176Z"
+}

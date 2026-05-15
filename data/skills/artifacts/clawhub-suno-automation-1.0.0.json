@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/suno-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suno_automation",
+  "skill": {
+    "id": 11110,
+    "skillKey": "clawhub-suno-automation",
+    "name": "Suno Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suno-automation",
+    "url": "https://clawhub.ai/skills/suno-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suno-automation-3138d64dc1d3872a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Suno.com via OpenClaw browser to input lyrics, style, title, create, and play AI-generated music tracks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upstatemovingimages-cmyk",
+      "userId": "publishers:upstatemovingimages-cmyk",
+      "displayName": "upstatemovingimages-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/256867021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2060,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770423810565,
+      "changelog": "Initial release: Control Suno AI via OpenClaw managed browser.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f1b7db75acc334d583b7dfa5403e33253f7f4978841d895ec6ab53c049253919"
+}

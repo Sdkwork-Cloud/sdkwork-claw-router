@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-pick2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_pick2",
+  "skill": {
+    "id": 23163,
+    "skillKey": "clawhub-design-pick2",
+    "name": "design pick2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-pick2",
+    "url": "https://clawhub.ai/skills/design-pick2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-pick2-63d1bd4994b1a10f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates multi-themed food collages (Viral Cakes, Street Food, Smoothie Bowls, Coffee Art, Fusion Tacos). Use when user asks for a collage of specific food..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "expysf98",
+      "userId": "s173jsz34rafx95e6j9bvpjvzh842t0y",
+      "displayName": "EXPYSF98",
+      "image": "https://avatars.githubusercontent.com/u/116410084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 449,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773229104624,
+      "changelog": "- Initial release of design-pick.\n- Added script for generating themed food collages.\n- Supports multiple themes: Viral Cakes, Street Food, Smoothie Bowls, Coffee Art, and Fusion Tacos.\n- Generates 3x3 collage layouts with circular-masked images and dynamic \"PICK\" titles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8739c4c224d6fbb57e16e289c54d29a828c097f1d57353c0932c453f5e95e196"
+}

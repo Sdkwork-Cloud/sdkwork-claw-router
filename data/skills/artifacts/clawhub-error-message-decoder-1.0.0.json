@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/error-message-decoder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_message_decoder",
+  "skill": {
+    "id": 64253,
+    "skillKey": "clawhub-error-message-decoder",
+    "name": "Error Message Decoder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-message-decoder",
+    "url": "https://clawhub.ai/skills/error-message-decoder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-message-decoder-597fded737cc6263.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析常见错误代码，提供错误原因及对应解决方案，支持多语言显示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "honestqiao",
+      "userId": "publishers:honestqiao",
+      "displayName": "HonestQiao",
+      "image": "https://avatars.githubusercontent.com/u/696708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 589,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771733170707,
+      "changelog": "- Initial release of Error Message Decoder.\n- 自动解析常见错误信息，提供原因分析和中文解决建议。\n- 支持多语言关键字触发，包括中英文错误码和描述。\n- 输出包含错误内容、原因、修复建议和示例格式。\n- 覆盖文件/端口/网络/函数/服务等常见错误类型。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61745118c26958a250bcf5f2fa9b0f87dba4050462175c4c9234d25a5462831d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_cn",
+  "skill": {
+    "id": 58179,
+    "skillKey": "clawhub-docx-cn",
+    "name": "Docx Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-cn",
+    "url": "https://clawhub.ai/skills/docx-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-cn-373ef80fa61e10c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Word 文档处理 | Word Document Processing. 创建、读取、编辑 Word 文档 | Create, read, edit Word documents. 支持 .docx 格式、格式化、表格、图片 | Supports .docx format, formatting, tables..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guohongbin-git",
+      "userId": "s171qwkar0v16rk324ta5jz7wd83ts19",
+      "displayName": "Guohongbin",
+      "image": "https://avatars.githubusercontent.com/u/202475309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6215,
+      "installsAllTime": 47,
+      "installsCurrent": 41,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771571495018,
+      "changelog": "- Added _meta.json file for skill metadata management.\n- No other functionality or documentation changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59749ec1ed1edf8d1cbdcd7318fa1bf6990509e9745ef3f346937b61997c2d44"
+}

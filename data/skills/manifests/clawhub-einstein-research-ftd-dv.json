@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39738,
+  "uuid": "skill-clawhub-einstein-research-ftd-dv",
+  "skillKey": "clawhub-einstein-research-ftd-dv",
+  "name": "Follow-Through Day (FTD) Detector",
+  "summary": "Detects Follow-Through Day (FTD) signals for market bottom confirmation using William O'Neil's methodology. Dual-index tracking (S&P 500 + NASDAQ) with state...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.einstein_research_ftd_dv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Detects Follow-Through Day (FTD) signals for market bottom confirmation using William O'Neil's.",
+        "Dual-index tracking (S&P 500 + NASDAQ) with state..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/einstein-research-ftd-dv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "einstein-research-ftd-dv",
+      "url": "https://clawhub.ai/skills/einstein-research-ftd-dv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "einstein-research-ftd-dv",
+    "url": "https://clawhub.ai/skills/einstein-research-ftd-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/einstein-research-ftd-dv-82aea124064dc9c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/einstein-research-ftd-dv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-einstein-research-ftd-dv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96be8dde8813ee809b726d89cd4ed208ca070e9a05a417fac44be0fc75eeffb7",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T10:24:42.732Z"
+}

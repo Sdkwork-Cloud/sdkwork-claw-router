@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-orchestration-kit@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_orchestration_kit",
+  "skill": {
+    "id": 38440,
+    "skillKey": "clawhub-agent-orchestration-kit",
+    "name": "Agent Orchestration Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-orchestration-kit",
+    "url": "https://clawhub.ai/skills/agent-orchestration-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-orchestration-kit-c7d456fe1c782cd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and manage multi-agent task orchestration on OpenClaw with async dispatch, leader coordination, real-time tracking, and approval workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kuan0808",
+      "userId": "s17cfx27f32syvvhdns17s4swn83kcdc",
+      "displayName": "kuannnn",
+      "image": "https://avatars.githubusercontent.com/u/54230177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775252126804,
+      "changelog": "## agent-orchestration-kit v0.2.0\n\n- Replaces legacy cron-based stale task detection with native OpenClaw Heartbeat (automatic task checks every 3 minutes).\n- Removes cron job configuration and files; adds a new HEARTBEAT.md template for leader workspace.\n- Updates setup and documentation to reflect heartbeat monitoring rather than a dedicated operations channel.\n- Improves scaffold and config patch scripts for heartbeat support and more flexible instance configuration.\n- Minor adjustments to onboarding, reducing required fields and clarifying user guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d5277273993b838909a0b56e0bbb108712ea4c8f6a3b5ad51689463fa4dae77"
+}

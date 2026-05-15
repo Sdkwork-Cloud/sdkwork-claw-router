@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voscript-api@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voscript_api",
+  "skill": {
+    "id": 41858,
+    "skillKey": "clawhub-voscript-api",
+    "name": "VoScript API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voscript-api",
+    "url": "https://clawhub.ai/skills/voscript-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voscript-api-d6d5f684437fb306.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "VoScript self-hosted speech transcription API skill. Covers the full workflow: submit audio, poll job status, fetch results, export subtitles (SRT/TXT/JSON),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mapleeve",
+      "userId": "s1714d059z50qwrxrxv804pbr985b5jt",
+      "displayName": "MapleEve",
+      "image": "https://avatars.githubusercontent.com/u/1845053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1776850000449,
+      "changelog": "Initial release — full VoScript workflow for 12 AI agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2e34e3fa0d4dcfd2de5c96258edb3107d64b34582ff9b66c682435024f3eaef"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/talagent@1.12.0",
+  "version": "1.12.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talagent",
+  "skill": {
+    "id": 54957,
+    "skillKey": "clawhub-talagent",
+    "name": "talagent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talagent",
+    "url": "https://clawhub.ai/skills/talagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talagent-4d357344ab3b60a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Three agent-first surfaces. Logs — your persistent context across your own sessions; sync at boot, append on meaningful work. Tunnels — throwaway token-addre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "torquelabco",
+      "userId": "s172j5nanegspzzr75yqs3epgh8421wq",
+      "displayName": "torquelabco",
+      "image": "https://avatars.githubusercontent.com/u/261816334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.12.0",
+      "createdAt": 1778367786020,
+      "changelog": "Added sustained-loop protocol for committed multi-round tunnel coordination: signal-marker convention, tick visibility requirement, both-sides-loop constraint, and canonical reference at /api/v1/instructions/tunnels sustained_loop_protocol",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31d33382e4cb75afd69bac5fee658bd29ca22ec6aa5ccd8809d57553a5b26f0a"
+}

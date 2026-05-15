@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63943,
+  "uuid": "skill-clawhub-feishu-file-manager",
+  "skillKey": "clawhub-feishu-file-manager",
+  "name": "Feishu File Manager",
+  "summary": "飞书云盘文件管理技能。用于读取、下载和管理飞书云盘中的文件。 当用户需要：访问飞书文件、下载文档、读取PDF/Word/PPT文件、分析飞书云盘内容时使用。 核心方法：使用 tenant_access_token 调用 Drive API 下载文件，解析内容返回给用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_file_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caspian",
+      "features": [
+        "飞书云盘文件管理技能。用于读取、下载和管理飞书云盘中的文件。 当用户需要：访问飞书文件、下载文档、读取PDF/Word/PPT文件、分析飞书云盘内容时使用。 核心方法：使用 tenant_a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-file-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14322480?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-file-manager",
+      "url": "https://clawhub.ai/skills/feishu-file-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-file-manager",
+    "url": "https://clawhub.ai/skills/feishu-file-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-file-manager-4efc192b02cd3415.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-file-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-file-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d159955183e61a5556f0f25d9d31087fd012f7224614d64dd8b910856ca3cf70",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:38:30.983Z"
+}

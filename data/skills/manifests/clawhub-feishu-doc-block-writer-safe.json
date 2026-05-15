@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68218,
+  "uuid": "skill-clawhub-feishu-doc-block-writer-safe",
+  "skillKey": "clawhub-feishu-doc-block-writer-safe",
+  "name": "飞书文档 Block 拆分写入（安全版）",
+  "summary": "自动将超过500字的内容智能拆分为多个Block，逐块安全写入飞书文档，支持Mermaid图表且避免空白文档问题。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_block_writer_safe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icesumer-lgtm",
+      "features": [
+        "自动将超过500字的内容智能拆分为多个Block，逐块安全写入飞书文档，支持Mermaid图表且避免空白文档问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-doc-block-writer-safe@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262824601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-doc-block-writer-safe",
+      "url": "https://clawhub.ai/skills/feishu-doc-block-writer-safe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-block-writer-safe",
+    "url": "https://clawhub.ai/skills/feishu-doc-block-writer-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-block-writer-safe-2b0792fc1ae4079f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-doc-block-writer-safe@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-doc-block-writer-safe-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9376b82c1647a41913cc79d1e264065537412d0930815c112e30e3572f4fa30d",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:19:53.927Z"
+}

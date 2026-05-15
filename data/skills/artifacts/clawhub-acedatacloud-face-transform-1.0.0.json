@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acedatacloud-face-transform@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_face_transform",
+  "skill": {
+    "id": 37009,
+    "skillKey": "clawhub-acedatacloud-face-transform",
+    "name": "Face Transform"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-face-transform",
+    "url": "https://clawhub.ai/skills/acedatacloud-face-transform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-face-transform-68c7ad5dd4e25b55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and transform faces via AceDataCloud API. Use when detecting face keypoints, beautifying portraits, aging/de-aging faces, swapping genders, replacing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "germey",
+      "userId": "publishers:germey",
+      "displayName": "Germey",
+      "image": "https://avatars.githubusercontent.com/u/8678661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774150634195,
+      "changelog": "Initial release of face-transform skill providing extensive face analysis and transformation features via AceDataCloud API.\n\n- Supports 7 specialized face APIs: keypoint detection, beautification, age change, gender swap, face swap, cartoon avatar creation, and liveness detection.\n- Each API works synchronously and returns results immediately.\n- Requires ACEDATACLOUD_API_TOKEN environment variable for authentication.\n- Detailed documentation included for each endpoint, parameters, and use cases.\n- Alpha stage release; interfaces and feature set may evolve.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24dd272648b47a70539c967e1a253d54500942fc78d541037f182cfbf91155d6"
+}

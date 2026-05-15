@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15959,
+  "uuid": "skill-clawhub-generator",
+  "skillKey": "clawhub-generator",
+  "name": "Generator",
+  "summary": "Create placeholder data, test fixtures, and sample datasets for dev work. Use when generating mocks, building fixtures, or scaffolding content templates.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Create placeholder data, test fixtures, and sample datasets for dev work",
+        "Use when generating mocks, building fixtures, or scaffolding content templates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generator@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generator",
+      "url": "https://clawhub.ai/skills/generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator",
+    "url": "https://clawhub.ai/skills/generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-9123dcbb0b42652b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generator@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generator-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a85af318503bbdd251a9b12cff37b184cd3e737185ed9fdd5a151144d830313",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:44:12.502Z"
+}

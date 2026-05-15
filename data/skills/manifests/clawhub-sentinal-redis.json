@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47040,
+  "uuid": "skill-clawhub-sentinal-redis",
+  "skillKey": "clawhub-sentinal-redis",
+  "name": "Sentinal Redis",
+  "summary": "Monitor Redis server health, memory, performance, and BullMQ queues. Check queue depths, inspect failed jobs, analyze slow queries, and diagnose issues.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentinal_redis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mohammed Musaraf",
+      "features": [
+        "Monitor Redis server health, memory, performance, and BullMQ queues",
+        "Check queue depths, inspect failed jobs, analyze slow queries, and diagnose issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentinal-redis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59097309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentinal-redis",
+      "url": "https://clawhub.ai/skills/sentinal-redis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentinal-redis",
+    "url": "https://clawhub.ai/skills/sentinal-redis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentinal-redis-e16d2ce2f4072104.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentinal-redis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentinal-redis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:280d0fb428bd1d0461ba7d7038446bde0d711cff1574bdaad1fe88fc71eeba25",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T17:33:56.590Z"
+}

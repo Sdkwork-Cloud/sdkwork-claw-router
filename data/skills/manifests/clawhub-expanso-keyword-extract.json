@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15374,
+  "uuid": "skill-clawhub-expanso-keyword-extract",
+  "skillKey": "clawhub-expanso-keyword-extract",
+  "name": "Expanso keyword-extract",
+  "summary": "Extract keywords and key phrases from text using Expanso Edge for SEO, tagging, and indexing purposes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_keyword_extract",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Expanso",
+      "features": [
+        "Extract keywords and key phrases from text using Expanso Edge for SEO, tagging, and indexing pu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expanso-keyword-extract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expanso-keyword-extract",
+      "url": "https://clawhub.ai/skills/expanso-keyword-extract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-keyword-extract",
+    "url": "https://clawhub.ai/skills/expanso-keyword-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-keyword-extract-8db11bb7214b0d8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expanso-keyword-extract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expanso-keyword-extract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84b3ce38132f0ad7a04fa3abcd5fc7488d22ce68e04a2d3d16df7985cc3f090d",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:52:05.248Z"
+}

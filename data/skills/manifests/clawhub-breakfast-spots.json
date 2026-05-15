@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36551,
+  "uuid": "skill-clawhub-breakfast-spots",
+  "skillKey": "clawhub-breakfast-spots",
+  "name": "Nearby Breakfast Spots",
+  "summary": "Find nearby breakfast spots. Invoke when user asks for breakfast near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breakfast_spots",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Find nearby breakfast spots",
+        "Invoke when user asks for breakfast near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/breakfast-spots@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "breakfast-spots",
+      "url": "https://clawhub.ai/skills/breakfast-spots"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breakfast-spots",
+    "url": "https://clawhub.ai/skills/breakfast-spots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breakfast-spots-c49aea2b7d058a56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/breakfast-spots@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-breakfast-spots-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4105f3aed8cfdaeb4d41479118f453f1de7edb7d1dd8957962b051cfed5cfab0",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:46:39.277Z"
+}

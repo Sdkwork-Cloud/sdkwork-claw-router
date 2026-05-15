@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35452,
+  "uuid": "skill-clawhub-bytesagain-doc-summarizer",
+  "skillKey": "clawhub-bytesagain-doc-summarizer",
+  "name": "Bytesagain Doc Summarizer",
+  "summary": "Summarize and analyze text documents without external APIs. Use when extracting key points from reports, ranking bullet points, identifying keywords, checkin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_doc_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loutai0307-prog",
+      "features": [
+        "Summarize and analyze text documents without external APIs",
+        "Use when extracting key points from reports, ranking bullet points, identifying keywords, check."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bytesagain-doc-summarizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266760463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bytesagain-doc-summarizer",
+      "url": "https://clawhub.ai/skills/bytesagain-doc-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-doc-summarizer",
+    "url": "https://clawhub.ai/skills/bytesagain-doc-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-doc-summarizer-6994258fe22bc208.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bytesagain-doc-summarizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bytesagain-doc-summarizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4739f97076ccb75a6c36d78476319703108f2feb87cf9335f4559a807fd0916",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:18:49.920Z"
+}

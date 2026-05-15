@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37826,
+  "uuid": "skill-clawhub-idea-trace",
+  "skillKey": "clawhub-idea-trace",
+  "name": "Idea Trace",
+  "summary": "Don't just save ideas - trace how they mature. Use when a user wants to follow how an important idea was shaped by later conversations, work, projects, and l...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_trace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ken",
+      "features": [
+        "Don't just save ideas",
+        "trace how they mature",
+        "Use when a user wants to follow how an important idea was shaped by later conversations, work,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idea-trace@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100094170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idea-trace",
+      "url": "https://clawhub.ai/skills/idea-trace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-trace",
+    "url": "https://clawhub.ai/skills/idea-trace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-trace-641ad75e5b897d28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idea-trace@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-idea-trace-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b9291d21f79ad1a81f332d340c4ab0e30847c1c4680baf8b61660cab32c3898",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T20:35:09.669Z"
+}

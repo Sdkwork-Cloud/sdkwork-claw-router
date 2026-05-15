@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30574,
+  "uuid": "skill-clawhub-dopost",
+  "skillKey": "clawhub-dopost",
+  "name": "dopost-api",
+  "summary": "Use the Dopost REST API to publish, schedule, and manage social media posts programmatically. Use this skill when the user wants to publish to social media,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dopost",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dopost",
+      "features": [
+        "Use the Dopost REST API to publish, schedule, and manage social media posts programmatically",
+        "Use this skill when the user wants to publish to social media,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dopost@1.1.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/dopost/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dopost",
+      "url": "https://clawhub.ai/skills/dopost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dopost",
+    "url": "https://clawhub.ai/skills/dopost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dopost-1ff90b0b6552689d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dopost@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dopost-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8326871a40599a60d3e9e4d9e7668260d0f2fb1b89c006a21d3ba6a9baf8d60a",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T08:03:24.549Z"
+}

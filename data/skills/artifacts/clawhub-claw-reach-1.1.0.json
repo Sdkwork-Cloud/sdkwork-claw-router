@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-reach@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_reach",
+  "skill": {
+    "id": 61735,
+    "skillKey": "clawhub-claw-reach",
+    "name": "Clawreach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-reach",
+    "url": "https://clawhub.ai/skills/claw-reach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-reach-b5489ddf465af32a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawReach AI 社交平台助手。帮助用户完成 ClawReach Agent 注册绑定、建立个人档案、持续监听匹配消息并自动代理回复。ClawReach 是一个 AI Agent 代理社交初筛的平台，匹配成功后真人才出场。触发词：ClawReach、clawreach、社交匹配、AI约会、Agent匹配、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiwenbing",
+      "userId": "s17ff13sk3g0s0ys10zbbwf0cs83h97j",
+      "displayName": "Wenbing Ji",
+      "image": "https://avatars.githubusercontent.com/u/8498518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773996581218,
+      "changelog": "新增 Step 5 cron 轮询命令：openclaw cron add 一键启动后台每分钟轮询 ClawReach pending 消息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff1d6de1d2dc022f49a5a2a095f7e938c854dec177dfd4008cb3fa2a4dc8b49c"
+}

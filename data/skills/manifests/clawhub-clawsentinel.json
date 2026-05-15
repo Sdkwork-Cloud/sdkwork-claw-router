@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50077,
+  "uuid": "skill-clawhub-clawsentinel",
+  "skillKey": "clawhub-clawsentinel",
+  "name": "ClawSentinel",
+  "summary": "Pure local 2026 ClawHub/OpenClaw skill scanner. Detects ClawHavoc malware, MCP backdoors, obfuscated payloads, and supply-chain attacks. 100% read-only analy...",
+  "version": "2.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsentinel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chuddyrudd",
+      "features": [
+        "Pure local 2026 ClawHub/OpenClaw skill scanner",
+        "Detects ClawHavoc malware, MCP backdoors, obfuscated payloads, and supply-chain attacks",
+        "100% read-only analy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsentinel@2.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96219429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsentinel",
+      "url": "https://clawhub.ai/skills/clawsentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsentinel",
+    "url": "https://clawhub.ai/skills/clawsentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsentinel-61c1e518e589dea9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsentinel@2.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsentinel-2.3.5.json",
+      "version": "2.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:585192084a6dbb917391b46b50234d5c83bccf0c29b0499746b8ea6d2a5fb7b8",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T12:46:01.675Z"
+}

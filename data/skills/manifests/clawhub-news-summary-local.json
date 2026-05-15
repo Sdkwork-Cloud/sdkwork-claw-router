@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61260,
+  "uuid": "skill-clawhub-news-summary-local",
+  "skillKey": "clawhub-news-summary-local",
+  "name": "News Summary Local",
+  "summary": "本地新闻摘要 Skill。读取工作区内的 RSS/XML 文件，提取标题并生成简洁列表。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_summary_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fedrov2025",
+      "features": [
+        "本地新闻摘要 Skill。读取工作区内的 RSS/XML 文件，提取标题并生成简洁列表。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-summary-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198596579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-summary-local",
+      "url": "https://clawhub.ai/skills/news-summary-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-summary-local",
+    "url": "https://clawhub.ai/skills/news-summary-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-summary-local-07d2454d6183e9e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-summary-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-summary-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2485540d346fe19b6d48fc4edfd59985dfbb2b68c718303d0d50aa4772461215",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:01:06.811Z"
+}

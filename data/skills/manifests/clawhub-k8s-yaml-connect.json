@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37520,
+  "uuid": "skill-clawhub-k8s-yaml-connect",
+  "skillKey": "clawhub-k8s-yaml-connect",
+  "name": "K8s Yaml Connect",
+  "summary": "Connect to Kubernetes clusters using YAML configuration files. Use when you need to apply, validate, or manage Kubernetes resources via kubectl with YAML inp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_yaml_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JokerZeng",
+      "features": [
+        "Connect to Kubernetes clusters using YAML configuration files",
+        "Use when you need to apply, validate, or manage Kubernetes resources via kubectl with YAML inp.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-yaml-connect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37570488?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-yaml-connect",
+      "url": "https://clawhub.ai/skills/k8s-yaml-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-yaml-connect",
+    "url": "https://clawhub.ai/skills/k8s-yaml-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-yaml-connect-4b8b1528c6f6cf4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-yaml-connect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-yaml-connect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56db7320016d2ec7c13c96291fe0e0243ba6f44fca55fc2e46df21a296ff98a6",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:16:13.355Z"
+}

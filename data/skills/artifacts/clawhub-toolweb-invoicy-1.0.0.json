@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-invoicy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_invoicy",
+  "skill": {
+    "id": 45324,
+    "skillKey": "clawhub-toolweb-invoicy",
+    "name": "Invoicy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-invoicy",
+    "url": "https://clawhub.ai/skills/toolweb-invoicy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-invoicy-57eba23f4069bd75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, download, and email professional invoices with GST/IGST support and flexible payment terms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775147309768,
+      "changelog": "Invoice Generator 1.0.0 – Initial Release\n\n- Launches a comprehensive API for generating, downloading, and emailing invoices with support for GST/IGST and multi-currency.\n- Enables customization of invoices with company, customer, line items, tax calculations, payment terms, and professional formatting.\n- Supports Indian GST/IGST compliance and direct email delivery via SMTP integration.\n- Offers endpoints to generate, download (PDF), and send invoices by email.\n- Includes free and paid pricing tiers for various business needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61aef3a19d176f45a02232c62c40130df5fd5ae5963168805fc84651bdaecb11"
+}

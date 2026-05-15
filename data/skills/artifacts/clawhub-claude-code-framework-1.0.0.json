@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_framework",
+  "skill": {
+    "id": 60821,
+    "skillKey": "clawhub-claude-code-framework",
+    "name": "Claude Code Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-framework",
+    "url": "https://clawhub.ai/skills/claude-code-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-framework-22955ad72a6fb869.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供基于 Claude Code 核心架构的 Agent 执行框架，支持权限前置检查、上下文预算监控和可插拔 Hook 机制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xjhveteran199-bit",
+      "userId": "s17bhahdh632czhh9z24x8698183p7hn",
+      "displayName": "xjhveteran199-bit",
+      "image": "https://avatars.githubusercontent.com/u/269852761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775297421372,
+      "changelog": "Initial release from Claude Code leaked source analysis",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a93e9f4bab1b085c0da2bc55a08a3b615b5987a7702be5b484379e1058917b18"
+}

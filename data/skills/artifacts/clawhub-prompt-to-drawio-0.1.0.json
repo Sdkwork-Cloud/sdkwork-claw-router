@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-to-drawio@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_to_drawio",
+  "skill": {
+    "id": 51131,
+    "skillKey": "clawhub-prompt-to-drawio",
+    "name": "Prompt to Drawio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-to-drawio",
+    "url": "https://clawhub.ai/skills/prompt-to-drawio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-to-drawio-1ca6c5ae60032f3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and edit draw.io artifacts from natural-language prompts without a frontend. Use when the user asks for prompt-to-diagram workflows that need `.draw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lzfxxx",
+      "userId": "publishers:lzfxxx",
+      "displayName": "Zhaofeng",
+      "image": "https://avatars.githubusercontent.com/u/12368329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773292402286,
+      "changelog": "Initial ClawHub release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cedd683d69729331347880f588478e7e2e7fd469ca11811e7471bcaead7ff805"
+}

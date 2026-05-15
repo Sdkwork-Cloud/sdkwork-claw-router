@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57808,
+  "uuid": "skill-clawhub-logistics-watcher",
+  "skillKey": "clawhub-logistics-watcher",
+  "name": "Logistics Watcher",
+  "summary": "Monitor package logistics status and identify delivery anomalies such as delays, stalls, returns, or abnormal signing. Use when the user asks to 查物流异常、追踪快递状态...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logistics_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Monitor package logistics status and identify delivery anomalies such as delays, stalls, return.",
+        "Use when the user asks to 查物流异常、追踪快递状态..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logistics-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logistics-watcher",
+      "url": "https://clawhub.ai/skills/logistics-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logistics-watcher",
+    "url": "https://clawhub.ai/skills/logistics-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logistics-watcher-a8637c06653202eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logistics-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logistics-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd2d654c4fa89b8b48ef9d1fa3d1a5190e73766527d60f667d6227622d16d118",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:37:48.875Z"
+}

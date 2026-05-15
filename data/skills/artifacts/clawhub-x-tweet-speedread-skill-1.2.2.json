@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-tweet-speedread-skill@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_tweet_speedread_skill",
+  "skill": {
+    "id": 50899,
+    "skillKey": "clawhub-x-tweet-speedread-skill",
+    "name": "X Tweet Speedread"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-tweet-speedread-skill",
+    "url": "https://clawhub.ai/skills/x-tweet-speedread-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-tweet-speedread-skill-561186044ac3ac79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X Tweet Speedread (Premium) — instant English brief for any X post. Charge-first direct mode via SkillPay (0.001 USDT/call)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangkefeng-ai",
+      "userId": "publishers:huangkefeng-ai",
+      "displayName": "huangkefeng-ai",
+      "image": "https://avatars.githubusercontent.com/u/113394381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1772723142712,
+      "changelog": "Update top-up guidance amount to 7 USDT (payment-link fallback + topup_min_usdt).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:92c20460c7078791f222edc106e401569932e82e686d04a357f1f2ab7d52fd06"
+}

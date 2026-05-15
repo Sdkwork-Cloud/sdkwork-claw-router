@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-cycle-history-viewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_cycle_history_viewer",
+  "skill": {
+    "id": 38057,
+    "skillKey": "clawhub-jpeng-cycle-history-viewer",
+    "name": "cycle-history-viewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-cycle-history-viewer",
+    "url": "https://clawhub.ai/skills/jpeng-cycle-history-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-cycle-history-viewer-27d28d0dda0350e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Views and searches evolution cycle history with filtering capabilities for tracking progress and analyzing patterns. Use when reviewing past cycles, searchin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774591349343,
+      "changelog": "cycle-history-viewer 1.0.0\n\n- Initial release with tools to view and search evolution cycle history.\n- Supports filtering cycles by intent, result, and keyword.\n- Provides summary statistics and markdown report generation.\n- Allows exporting cycle history as JSON.\n- Reads from status log files for each evolution cycle.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ecea97195bf7ccc83c607050fd1ef7b09768bbd951cdaeb6f5cce15cb031826"
+}

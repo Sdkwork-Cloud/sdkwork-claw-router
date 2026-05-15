@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67462,
+  "uuid": "skill-clawhub-wechat-media-downloader-weixin",
+  "skillKey": "clawhub-wechat-media-downloader-weixin",
+  "name": "微信公众号媒体下载器 WeChat Media Downloader",
+  "summary": "下载微信公众号文章（mp.weixin.qq.com）中的视频、音频和音乐卡片。适用于：用户想把公众号文章里的 1 个或多个视频、多个音频/音乐保存到本地；直接抓取被微信“环境异常/去验证”拦截；需要通过可见 Chrome + 人工验证 + 远程调试抓取真实媒体地址，再自动下载、提取标题、重命名并整理输出。优先用...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_media_downloader_weixin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EwanWu",
+      "features": [
+        "下载微信公众号文章（mp.weixin.qq.com）中的视频、音频和音乐卡片。适用于：用户想把公众号文章里的 1 个或多个视频、多个音频/音乐保存到本地；直接抓取被微信“环境异常/去验证”."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-media-downloader-weixin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250950993?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-media-downloader-weixin",
+      "url": "https://clawhub.ai/skills/wechat-media-downloader-weixin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-media-downloader-weixin",
+    "url": "https://clawhub.ai/skills/wechat-media-downloader-weixin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-media-downloader-weixin-1986c7df37bf62f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-media-downloader-weixin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-media-downloader-weixin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2770364d3756511acb9bb32bc859e9bbdf9051b115b1dc26fa95a57b86320cc0",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:56:36.284Z"
+}

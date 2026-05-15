@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8384,
+  "uuid": "skill-clawhub-eightctl",
+  "skillKey": "clawhub-eightctl",
+  "name": "Eightctl",
+  "summary": "Control Eight Sleep pods (status, temperature, alarms, schedules).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eightctl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Control Eight Sleep pods (status, temperature, alarms, schedules)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eightctl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eightctl",
+      "url": "https://clawhub.ai/skills/eightctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eightctl",
+    "url": "https://clawhub.ai/skills/eightctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eightctl-c23542d037479455.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eightctl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eightctl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7d5ec48ba4093a1615a04f343f9dc986871858b3c9675faa58273f9c50ae5a5",
+      "artifactSizeBytes": 1743
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:48:32.885Z"
+}

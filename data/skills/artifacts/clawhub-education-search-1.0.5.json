@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/education-search@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.education_search",
+  "skill": {
+    "id": 71786,
+    "skillKey": "clawhub-education-search",
+    "name": "Education Search 教育学习搜索助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "education-search",
+    "url": "https://clawhub.ai/skills/education-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/education-search-6f4f7b91a92440b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学历教育与职业培训找资料工具。学历教育包括考研（公共课/专业课真题）、专升本、自考等；职业培训包括考公（行测/申论）、教师资格证、经济师、建造师、会计师、法律职业资格等。支持三种类型：找试题试卷、找教辅资料、找备考课程。当用户需要查找考试相关资料时使用此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kayy123",
+      "userId": "s17dpavwzm9rvn6h2x8s0bwae985b8jn",
+      "displayName": "Xiaoya Liu",
+      "image": "https://avatars.githubusercontent.com/u/59907326?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777582763743,
+      "changelog": "education-search v1.0.5 更新日志\n\n- 优化了技能说明文档，详细明确了支持的学历教育和职业培训类别。\n- 明确了三类资料查找子工具（找试题试卷、找教辅资料、找备考课程）的用法与关键词覆盖范围。\n- 强化了执行原则和输出格式，大幅完善用户端显示内容的条目数量准确性要求。\n- 明确了信息源充足性判定、兜底流程和API Key引导说明，用户体验更完善。\n- 优化了表格分段和输出规范，实现更友好、准确的资源展示与提示。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c510b62c25d14c49b2f33eeb418c78a56355ac9fac063dab8364402e3589391"
+}

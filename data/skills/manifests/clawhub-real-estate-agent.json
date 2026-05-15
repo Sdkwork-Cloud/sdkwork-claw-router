@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18437,
+  "uuid": "skill-clawhub-real-estate-agent",
+  "skillKey": "clawhub-real-estate-agent",
+  "name": "Real Estate Agent",
+  "summary": "Your personal real estate agent. Find properties, get alerts on deals, sell or rent your home, and navigate any property decision.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Your personal real estate agent",
+        "Find properties, get alerts on deals, sell or rent your home, and navigate any property decisio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/real-estate-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "real-estate-agent",
+      "url": "https://clawhub.ai/skills/real-estate-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-agent",
+    "url": "https://clawhub.ai/skills/real-estate-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-agent-44e9aa81b6381c58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/real-estate-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-real-estate-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90b8fd84e7572dc1817a2650ce23bf4ce0f7ce98b57aa3804a4c05c580483a31",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T14:23:46.224Z"
+}

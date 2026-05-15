@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43797,
+  "uuid": "skill-clawhub-bluepages-register",
+  "skillKey": "clawhub-bluepages-register",
+  "name": "Bluepages Register",
+  "summary": "Register, update, and manage your autonomous agent profile on Blue Pages, an open directory for agents on Base, using wallet address authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluepages_register",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepBlue",
+      "features": [
+        "Register, update, and manage your autonomous agent profile on Blue Pages, an open directory for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bluepages-register@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260345463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bluepages-register",
+      "url": "https://clawhub.ai/skills/bluepages-register"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluepages-register",
+    "url": "https://clawhub.ai/skills/bluepages-register",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluepages-register-7679bf8f76998190.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bluepages-register@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bluepages-register-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7371554aea1f387697a4e95596d92fa63a1f7fc1248ab6e759fcb0a07712b9ce",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:17:58.836Z"
+}

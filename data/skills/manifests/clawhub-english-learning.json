@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66273,
+  "uuid": "skill-clawhub-english-learning",
+  "skillKey": "clawhub-english-learning",
+  "name": "English-Learning",
+  "summary": "提供小学、专四、专八英语听力材料，支持获取材料列表和详细段落。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.english_learning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leiwonginchaozhou-netizen",
+      "features": [
+        "提供小学、专四、专八英语听力材料，支持获取材料列表和详细段落。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/english-learning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258553273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "english-learning",
+      "url": "https://clawhub.ai/skills/english-learning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "english-learning",
+    "url": "https://clawhub.ai/skills/english-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/english-learning-524a83d49be98759.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/english-learning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-english-learning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d765905dec4999243c0e53e69638b0178b6518c85228eaaddba93a1486ed010",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:00:57.362Z"
+}

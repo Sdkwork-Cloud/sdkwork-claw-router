@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw2claude@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw2claude",
+  "skill": {
+    "id": 37293,
+    "skillKey": "clawhub-claw2claude",
+    "name": "Claw2Claude"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw2claude",
+    "url": "https://clawhub.ai/skills/claw2claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw2claude-c43f59ca70da8c59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegates tasks to the local Claude Code CLI. Activate immediately when the user asks for Claude, requests a stronger model, or mentions an existing project..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "is-xins-xiaobai",
+      "userId": "s172tp4s5nf8cg185rj65rkxe984bht0",
+      "displayName": "小白",
+      "image": "https://avatars.githubusercontent.com/u/268746679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775561099017,
+      "changelog": "**Summary:**\nThis version adds full documentation of all system accesses, config requirements, and background processes to the skill's metadata for greater security transparency.\n\n- Expanded metadata to detail all files read/written, background processes, and required gateway/tool permissions.\n- Added a new \"Security & Transparency\" section explaining every file, process, and permission the skill uses.\n- Now documents the use of `--dangerously-skip-permissions`, directory access boundaries, and rationale.\n- Lists required user-side config changes for OpenClaw integration, with JSON examples.\n- No code changes detected; all updates are to documentation and metadata for transparency and user clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04f49f718f2409bf7f145cfbb2e5f980e0c9c779a99af00807f7a19b37e36bb3"
+}

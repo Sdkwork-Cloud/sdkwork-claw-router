@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ancient-town-explorer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ancient_town_explorer",
+  "skill": {
+    "id": 53358,
+    "skillKey": "clawhub-ancient-town-explorer",
+    "name": "ancient-town-explorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ancient-town-explorer",
+    "url": "https://clawhub.ai/skills/ancient-town-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ancient-town-explorer-6889f78e8cfc1315.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover preserved ancient towns, water villages, and traditional settlements — stone bridges, wooden houses, and time-frozen streetscapes. Also supports: fl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775112699617,
+      "changelog": "**Major update with stricter data sourcing, broader travel support, and improved booking workflow:**\n\n- CLI-only answers: All travel data is now sourced exclusively via the flyai CLI, never from prior knowledge.\n- Expanded features: Supports not just ancient towns but also flights, hotels, itineraries, tickets, and more—powered by Fliggy (Alibaba Group).\n- Booking requirement: Every recommended result includes a real-time booking link from flyai.\n- Strict language following: Output matches user input language (Chinese or English).\n- Detailed workflow: Clear step-by-step CLI command procedures, environment checks, and output validation included.\n- Added compatibility and critical rules: Compatible with multiple agent platforms; CLI installation and result formatting are now strictly enforced.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3aa5bbe0697498dd1e66acd5f7e7f2743e89a3fde7e04415df4f27b2e0d3af5f"
+}

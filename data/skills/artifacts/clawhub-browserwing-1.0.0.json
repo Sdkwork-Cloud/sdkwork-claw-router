@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browserwing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browserwing",
+  "skill": {
+    "id": 8900,
+    "skillKey": "clawhub-browserwing",
+    "name": "browserwing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browserwing",
+    "url": "https://clawhub.ai/skills/browserwing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browserwing-b9a3565e6bda89c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and automate browser actions via HTTP API, including navigation, element interaction, data extraction, accessibility snapshots, screenshots, JS execu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenhg5",
+      "userId": "publishers:chenhg5",
+      "displayName": "chenhg5",
+      "image": "https://avatars.githubusercontent.com/u/4344486?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5496,
+      "installsAllTime": 51,
+      "installsCurrent": 50,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770084672878,
+      "changelog": "Initial release of BrowserWing – browser automation via HTTP API.\n\n- Control page navigation, element interaction (click, type, select), and advanced operations like screenshots and JavaScript execution.\n- Extract data and analyze accessibility snapshots for structured, stable element references.\n- Supports multiple element identifier types: RefID, CSS selectors, XPath, and text.\n- Batch operations and wait-for-element functionality included for robust scripting.\n- API base URL is fully configurable via the BROWSERWING_EXECUTOR_URL environment variable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3502c1321ce6fb7a99f4c445b5f8c863a14ab980f550ac46bf13453c153de560"
+}

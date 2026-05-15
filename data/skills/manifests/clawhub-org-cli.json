@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55763,
+  "uuid": "skill-clawhub-org-cli",
+  "skillKey": "clawhub-org-cli",
+  "name": "org-cli",
+  "summary": "Task capture, scheduling, and linked knowledge in org-mode files via the `org` CLI. Query, mutate, link, and search the user's org files and org-roam database.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.org_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DCPRevere",
+      "features": [
+        "Task capture, scheduling, and linked knowledge in org-mode files via the `org` CLI",
+        "Query, mutate, link, and search the user's org files and org-roam database."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/org-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10855272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "org-cli",
+      "url": "https://clawhub.ai/skills/org-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "org-cli",
+    "url": "https://clawhub.ai/skills/org-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/org-cli-fb7390d7c719552a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/org-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-org-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f07edfd502b5155968bb530f8f1ee08090065458fa4cc8c45c5fb40f34a4351c",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:01:30.714Z"
+}

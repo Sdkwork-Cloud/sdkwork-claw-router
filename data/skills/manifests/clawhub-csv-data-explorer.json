@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23089,
+  "uuid": "skill-clawhub-csv-data-explorer",
+  "skillKey": "clawhub-csv-data-explorer",
+  "name": "CSV Data Explorer",
+  "summary": "Explore, filter, summarize, and visualize CSV data directly in terminal with interactive queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_data_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derick",
+      "features": [
+        "Explore, filter, summarize, and visualize CSV data directly in terminal with interactive querie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csv-data-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114499711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csv-data-explorer",
+      "url": "https://clawhub.ai/skills/csv-data-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-data-explorer",
+    "url": "https://clawhub.ai/skills/csv-data-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-data-explorer-a3d1302ffe1e8da2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csv-data-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csv-data-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c86fb06554bf93928addc87fb0387ea9b5faaa1974347b8e637d87a7d12392ac",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:36:43.882Z"
+}

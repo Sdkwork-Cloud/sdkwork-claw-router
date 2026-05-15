@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64360,
+  "uuid": "skill-clawhub-hanime1-search",
+  "skillKey": "clawhub-hanime1-search",
+  "name": "my skill",
+  "summary": "当作者提及hanime是否更新时，或者miuuuu是否更新时，h站是否更新，调用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hanime1_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chgy123",
+      "features": [
+        "当作者提及hanime是否更新时，或者miuuuu是否更新时，h站是否更新，调用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hanime1-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86524162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hanime1-search",
+      "url": "https://clawhub.ai/skills/hanime1-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hanime1-search",
+    "url": "https://clawhub.ai/skills/hanime1-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hanime1-search-9479a4213e56e216.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hanime1-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hanime1-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25b64bc487b88e28db4385fc9ecd0110e435607cb9b707b217ed5722472ecb04",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:14:15.401Z"
+}

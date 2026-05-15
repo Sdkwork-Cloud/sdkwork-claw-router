@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48940,
+  "uuid": "skill-clawhub-deepread-form-fill",
+  "skillKey": "clawhub-deepread-form-fill",
+  "name": "DeepRead Form Fill",
+  "summary": "AI-powered PDF form filling. Upload any PDF form and your data as JSON — AI detects fields visually, maps your data semantically, fills the form with quality...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepread_form_fill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepRead.tech",
+      "features": [
+        "AI-powered PDF form filling",
+        "Upload any PDF form and your data as JSON — AI detects fields visually, maps your data semantic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepread-form-fill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253471566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepread-form-fill",
+      "url": "https://clawhub.ai/skills/deepread-form-fill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepread-form-fill",
+    "url": "https://clawhub.ai/skills/deepread-form-fill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepread-form-fill-e0cc8854fb671969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepread-form-fill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepread-form-fill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f614db76445f3c47a0dd366ec196594bc57681b2128b78e2fab0f392e6aab211",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:16:22.601Z"
+}

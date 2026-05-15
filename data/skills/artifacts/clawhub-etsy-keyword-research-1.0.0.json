@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/etsy-keyword-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etsy_keyword_research",
+  "skill": {
+    "id": 54622,
+    "skillKey": "clawhub-etsy-keyword-research",
+    "name": "Etsy Keyword Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etsy-keyword-research",
+    "url": "https://clawhub.ai/skills/etsy-keyword-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etsy-keyword-research-50b14c729e24ee11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Etsy search optimization — long-tail keywords, tag research, competitor analysis, seasonal trends"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexscope",
+      "userId": "s17dwyzs7t74hqkesy6xh9wszx83hgt0",
+      "displayName": "nexscope-ai",
+      "image": "https://avatars.githubusercontent.com/u/265748176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131350577,
+      "changelog": "- Initial release of Etsy Keyword Research skill (Beta).\n- Provides expert guidance on long-tail keywords, tag research, competitor analysis, and seasonal trends.\n- Analyzes your Etsy shop and suggests actionable optimization opportunities.\n- Delivers data-driven recommendations, implementation plans, and comparative strategy analysis.\n- Outputs structured assessments, priority action items, tool suggestions, and KPIs to track.\n- Does not integrate directly with the Etsy API; focuses on best-practice strategy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4be0a554c10209c757c065da933c12074138d271ff861c29d4aaf59c150e793"
+}

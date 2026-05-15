@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33019,
+  "uuid": "skill-clawhub-ratecard",
+  "skillKey": "clawhub-ratecard",
+  "name": "Ratecard",
+  "summary": "Ratecard integration. Manage Clients, Users. Use when the user wants to interact with Ratecard data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ratecard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ratecard integration",
+        "Manage Clients, Users",
+        "Use when the user wants to interact with Ratecard data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ratecard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ratecard",
+      "url": "https://clawhub.ai/skills/ratecard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ratecard",
+    "url": "https://clawhub.ai/skills/ratecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ratecard-674e2fa476b8e090.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ratecard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ratecard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:064ce87befb338ea8e29562dda3b14dc0341552544e6f04400a74e495b6445bd",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:41.305Z"
+}

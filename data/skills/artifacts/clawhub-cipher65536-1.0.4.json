@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cipher65536@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cipher65536",
+  "skill": {
+    "id": 29179,
+    "skillKey": "clawhub-cipher65536",
+    "name": "cipher65536"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cipher65536",
+    "url": "https://clawhub.ai/skills/cipher65536",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cipher65536-9e7f56a575d61e05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Base65536 file encoding and decoding tool. Encodes arbitrary binary files into Unicode text using Base65536 encoding, supports gzip compression, original fil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turinfohlen",
+      "userId": "s17fz4w553pec7mghb98bzaxsn850z9f",
+      "displayName": "TurinFohlen",
+      "image": "https://avatars.githubusercontent.com/u/208427613?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776677689752,
+      "changelog": "Version 1.0.4\n\n- Added _meta.json file for enhanced metadata management.\n- Added references/scrambleing-details.md providing additional details or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdb3722fba08ed8dee2ca208879984c6e566fe872590e0b573570a20f4db8f35"
+}

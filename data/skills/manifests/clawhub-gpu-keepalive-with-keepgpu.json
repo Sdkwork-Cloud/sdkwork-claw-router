@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22702,
+  "uuid": "skill-clawhub-gpu-keepalive-with-keepgpu",
+  "skillKey": "clawhub-gpu-keepalive-with-keepgpu",
+  "name": "GPU Keepalive with KeepGPU",
+  "summary": "Install and operate KeepGPU for GPU keep-alive with both blocking CLI and non-blocking service workflows. Use when users ask for keep-gpu command constructio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpu_keepalive_with_keepgpu",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wangmerlyn",
+      "features": [
+        "Install and operate KeepGPU for GPU keep-alive with both blocking CLI and non-blocking service.",
+        "Use when users ask for keep-gpu command constructio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gpu-keepalive-with-keepgpu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29993182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gpu-keepalive-with-keepgpu",
+      "url": "https://clawhub.ai/skills/gpu-keepalive-with-keepgpu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpu-keepalive-with-keepgpu",
+    "url": "https://clawhub.ai/skills/gpu-keepalive-with-keepgpu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpu-keepalive-with-keepgpu-b28da9b8016dff9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gpu-keepalive-with-keepgpu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gpu-keepalive-with-keepgpu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74fdad14af13be4d9bcc0d1d983772e3f9a9b45486de322c5555699afa904388",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:28:36.003Z"
+}

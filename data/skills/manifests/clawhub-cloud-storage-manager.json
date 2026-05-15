@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40120,
+  "uuid": "skill-clawhub-cloud-storage-manager",
+  "skillKey": "clawhub-cloud-storage-manager",
+  "name": "Cloud Storage Manager",
+  "summary": "Manage multiple cloud storage providers with features for file upload/download, bucket management, sync, multipart uploads, and CDN integration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_storage_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Manage multiple cloud storage providers with features for file upload/download, bucket manageme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-storage-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-storage-manager",
+      "url": "https://clawhub.ai/skills/cloud-storage-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-storage-manager",
+    "url": "https://clawhub.ai/skills/cloud-storage-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-storage-manager-70c82c8e94a0e397.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-storage-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-storage-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:585df02e1669b5f443c6b3489f6540ff3342645cfa6a32b5ae9505e1f095033b",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:41:14.260Z"
+}

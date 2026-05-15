@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30843,
+  "uuid": "skill-clawhub-archive-project",
+  "skillKey": "clawhub-archive-project",
+  "name": "Archive Project",
+  "summary": "Organize completed projects into searchable archives with session transcript backup.",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archive_project",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KaigeGao",
+      "features": [
+        "Organize completed projects into searchable archives with session transcript backup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/archive-project@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200879999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "archive-project",
+      "url": "https://clawhub.ai/skills/archive-project"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archive-project",
+    "url": "https://clawhub.ai/skills/archive-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archive-project-41b8bd021dd84e76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/archive-project@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-archive-project-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a21dd4051a2969789f8ce40518b85a6294405172a822c4a8abc281ae417b4bd",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:00:35.830Z"
+}

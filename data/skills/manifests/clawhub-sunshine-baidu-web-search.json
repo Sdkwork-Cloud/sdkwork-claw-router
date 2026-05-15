@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19653,
+  "uuid": "skill-clawhub-sunshine-baidu-web-search",
+  "skillKey": "clawhub-sunshine-baidu-web-search",
+  "name": "Baidu Web Search",
+  "summary": "Use Baidu Qianfan web search API for real-time web retrieval. Use when the user needs to search the web, get latest news, verify facts, or expresses intent l...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunshine_baidu_web_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Use Baidu Qianfan web search API for real-time web retrieval",
+        "Use when the user needs to search the web, get latest news, verify facts, or expresses intent l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sunshine-baidu-web-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sunshine-baidu-web-search",
+      "url": "https://clawhub.ai/skills/sunshine-baidu-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunshine-baidu-web-search",
+    "url": "https://clawhub.ai/skills/sunshine-baidu-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunshine-baidu-web-search-aab83aecfc2bfeb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sunshine-baidu-web-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sunshine-baidu-web-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d84feb641b695c88d984155c243cb48219aa940d999dba2db85cfa0e103d173",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T21:40:17.385Z"
+}

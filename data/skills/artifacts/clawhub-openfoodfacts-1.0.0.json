@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openfoodfacts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openfoodfacts",
+  "skill": {
+    "id": 37438,
+    "skillKey": "clawhub-openfoodfacts",
+    "name": "Open Food Facts API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openfoodfacts",
+    "url": "https://clawhub.ai/skills/openfoodfacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openfoodfacts-28d1defb03af1bc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with the Open Food Facts API to search for packaged food products by barcode and retrieve nutritional information. Use when the user asks to look up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patello",
+      "userId": "s178t29f61bmma8whfnmacavhx83eknq",
+      "displayName": "Patrik Ekenberg",
+      "image": "https://avatars.githubusercontent.com/u/31476631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774719308125,
+      "changelog": "Initial release: Look up packaged food products by barcode. Search and retrieve nutritional information from the Open Food Facts database.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e4029674cec13ccb85da32af3fe5b6292131d37cb25be5fc408ddc001b45728"
+}

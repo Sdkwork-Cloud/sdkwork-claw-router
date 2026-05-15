@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57492,
+  "uuid": "skill-clawhub-kemi-heartbeat-plugin",
+  "skillKey": "clawhub-kemi-heartbeat-plugin",
+  "name": "凯米心跳插件",
+  "summary": "Injects a visual \"heartbeat\" animation and real-time status indicator into the OpenClaw Web UI to show Kemi's active state.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kemi_heartbeat_plugin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang77160",
+      "features": [
+        "Injects a visual \"heartbeat\" animation and real-time status indicator into the OpenClaw Web UI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kemi-heartbeat-plugin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47843730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kemi-heartbeat-plugin",
+      "url": "https://clawhub.ai/skills/kemi-heartbeat-plugin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kemi-heartbeat-plugin",
+    "url": "https://clawhub.ai/skills/kemi-heartbeat-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kemi-heartbeat-plugin-c86e5130b6d62c4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kemi-heartbeat-plugin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kemi-heartbeat-plugin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dc1d0ddba6cd67971765eb55f2d737b86fa059195c26f9abe24bcf102b9f1d0",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T03:19:46.080Z"
+}

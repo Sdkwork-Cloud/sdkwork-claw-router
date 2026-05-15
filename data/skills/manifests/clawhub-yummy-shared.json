@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38111,
+  "uuid": "skill-clawhub-yummy-shared",
+  "skillKey": "clawhub-yummy-shared",
+  "name": "Yummy Shared",
+  "summary": "Use when operating yummycli for the first time, checking Gemini credential status, handling yummycli JSON command output, or applying shared CLI safety rules...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yummy_shared",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yummysource",
+      "features": [
+        "Use when operating yummycli for the first time, checking Gemini credential status, handling yum."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yummy-shared@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260192779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yummy-shared",
+      "url": "https://clawhub.ai/skills/yummy-shared"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yummy-shared",
+    "url": "https://clawhub.ai/skills/yummy-shared",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yummy-shared-c8e3ba8b95b95bc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yummy-shared@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yummy-shared-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1703213e863245bbeace001b47069b0ff6adb389058a6cddc18891c112fe8aa",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:53:30.464Z"
+}

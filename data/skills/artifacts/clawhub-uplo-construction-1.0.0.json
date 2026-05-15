@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplo-construction@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_construction",
+  "skill": {
+    "id": 27313,
+    "skillKey": "clawhub-uplo-construction",
+    "name": "Uplo Construction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-construction",
+    "url": "https://clawhub.ai/skills/uplo-construction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-construction-df2c708d36106c49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered construction knowledge management. Search project documents, safety compliance records, permits, building codes, and RFIs with structured extraction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roojenkins",
+      "userId": "publishers:roojenkins",
+      "displayName": "RooJenkins",
+      "image": "https://avatars.githubusercontent.com/u/47111622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773809986269,
+      "changelog": "UPLO Construction 1.0.0 — Initial Release\n\n- Launches AI-powered construction knowledge management for unified access to project documents, safety records, permits, building codes, and RFIs.\n- Provides role-based document search and structured information extraction to improve field and office workflows.\n- Introduces tools for searching across document types, logging interactions, flagging outdated documents, and exporting organizational context.\n- Supports workflows including change order dispute resolution and pre-pour checklist verification.\n- Includes best practices for efficient document retrieval and project record-keeping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d569b18b17fa991f0c7a35362282dbb843e884bbb0b139c04a6a4bcfee65496f"
+}

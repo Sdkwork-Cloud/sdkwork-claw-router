@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mteam-transmission0-1@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mteam_transmission0_1",
+  "skill": {
+    "id": 61967,
+    "skillKey": "clawhub-mteam-transmission0-1",
+    "name": "Mteam Transmission0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mteam-transmission0-1",
+    "url": "https://clawhub.ai/skills/mteam-transmission0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mteam-transmission0-1-b145e90efd354903.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的私人影视资源助理，帮助用户从M-Team搜索影视种子并发送到本地Transmission下载，确保观影体验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dengqijun",
+      "userId": "publishers:dengqijun",
+      "displayName": "dengqijun",
+      "image": "https://avatars.githubusercontent.com/u/23045092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773041246090,
+      "changelog": "mteam-transmission0-1 v0.1.0 – Initial skill release\n\n- 专业影视资源助理，帮助用户从 M-Team 搜索影视种子并发送到本地 Transmission 下载\n- 清晰分步流程：资源搜索、用户选择、下载执行\n- 资源列表支持 Markdown 排版，包括序号、标题、大小、做种人数\n- 带有“💖[含中字/国配]”标记的版本会高亮提示用户\n- 强调用户体验和回复规范，杜绝泄露 torrent_id",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac73514a0ce218fca38236fa9dbe8ef36f94fd5d34ab4479446adc247a6f874a"
+}

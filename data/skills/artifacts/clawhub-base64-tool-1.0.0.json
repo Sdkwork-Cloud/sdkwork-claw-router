@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/base64-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.base64_tool",
+  "skill": {
+    "id": 30076,
+    "skillKey": "clawhub-base64-tool",
+    "name": "Base64 Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "base64-tool",
+    "url": "https://clawhub.ai/skills/base64-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/base64-tool-f836719afa304d04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encode or decode strings to and from base64 format upon user request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xianghuan233-lang",
+      "userId": "publishers:xianghuan233-lang",
+      "displayName": "xianghuan233-lang",
+      "image": "https://avatars.githubusercontent.com/u/229454108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773628744097,
+      "changelog": "Initial release of base64-tool.\n\n- Encode plain text to base64.\n- Decode base64 strings to plain text.\n- Activates automatically on user requests to encode or decode base64.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3bafbb89c83a7a9b61fa742bc294e970778529eb6f1a79b6bed4f3c21c2dc10"
+}

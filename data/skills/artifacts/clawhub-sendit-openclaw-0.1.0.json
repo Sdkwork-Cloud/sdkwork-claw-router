@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sendit-openclaw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendit_openclaw",
+  "skill": {
+    "id": 26352,
+    "skillKey": "clawhub-sendit-openclaw",
+    "name": "SendIt OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendit-openclaw",
+    "url": "https://clawhub.ai/skills/sendit-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendit-openclaw-c7f827d31a592595.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute SendIt social publishing workflows in OpenClaw using the official @senditapp/openclaw plugin tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shree-git",
+      "userId": "publishers:shree-git",
+      "displayName": "Shree-git",
+      "image": "https://avatars.githubusercontent.com/u/56151022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773729529936,
+      "changelog": "Initial GA release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09d6e5d388dffa48217cc456edacadf99fe9b06840405a975e6acd3bac003302"
+}

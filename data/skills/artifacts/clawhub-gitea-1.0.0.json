@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitea@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitea",
+  "skill": {
+    "id": 56076,
+    "skillKey": "clawhub-gitea",
+    "name": "Gitea"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitea",
+    "url": "https://clawhub.ai/skills/gitea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitea-6ccce4863b70f258.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Gitea using the `tea` CLI. Use `tea issues`, `tea pulls`, `tea releases`, and other commands for issues, PRs, releases, and repository management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericxliu1990",
+      "userId": "publishers:ericxliu1990",
+      "displayName": "ericxliu1990",
+      "image": "https://avatars.githubusercontent.com/u/3407412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3148,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769899848068,
+      "changelog": "- Initial release of the gitea skill.\n- Provides comprehensive docs for managing repositories, pull requests, issues, releases, webhooks, actions, and more via the `tea` CLI.\n- Includes setup instructions and usage examples for all supported Gitea operations.\n- Details output formatting options and helpful shortcuts for efficient workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:77dc32cb7814e69db492a8612e3b23677bb5406a285498211983beca42f77645"
+}

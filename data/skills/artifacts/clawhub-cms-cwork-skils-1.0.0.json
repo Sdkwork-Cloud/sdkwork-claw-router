@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cms-cwork-skils@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_cwork_skils",
+  "skill": {
+    "id": 70209,
+    "skillKey": "clawhub-cms-cwork-skils",
+    "name": "Cms Cwork Skils"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-cwork-skils",
+    "url": "https://clawhub.ai/skills/cms-cwork-skils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-cwork-skils-3dadd4838cdd7721.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CWork 工作协同原子能力集，覆盖员工搜索、文件上传下载、发送/回复汇报、收发件箱、汇报详情、任务、待办、事项、插件聚合、新消息、已读状态与 AI 问答；适用于“汇报、待办、任务、附件、消息、已读、员工查询”等场景；仅支持 appKey 鉴权并按需加载接口执行组合调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spzwin",
+      "userId": "s174w40rh23bjb4hmnxn9p1fa983gsch",
+      "displayName": "spzwin",
+      "image": "https://avatars.githubusercontent.com/u/48741773?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775561909341,
+      "changelog": "cms-cwork-skils v1.0.0\n\n- 提供 CWork 工作协同原子能力集，涵盖员工搜索、文件上传下载、汇报、收发件箱、消息、任务、待办、事项等协同场景\n- 统一支持 appKey 鉴权模式，依赖 cms-auth-skills 组件进行安全校验\n- 每个 API 接口均有 1:1 对应的 Python 脚本，便于自动化集成与组合调用\n- 支持按需加载最小必要接口与脚本，带能力索引与详细目录结构说明\n- 已实现 27 个主要协同接口，覆盖高频办公需求\n- 附带完整示例文档和参数用法说明，方便快速使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00ee258e1373ad4bd28e2dfbbe459dc33cc393d32881c8b82d4ae6706ade4747"
+}

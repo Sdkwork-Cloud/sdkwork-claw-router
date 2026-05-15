@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23731,
+  "uuid": "skill-clawhub-fitlog",
+  "skillKey": "clawhub-fitlog",
+  "name": "Fitlog",
+  "summary": "Track workouts, log sets and reps, and build exercise streaks over time. Use when logging sessions, tracking progress, or reviewing weekly volume.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitlog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Track workouts, log sets and reps, and build exercise streaks over time",
+        "Use when logging sessions, tracking progress, or reviewing weekly volume."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitlog@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitlog",
+      "url": "https://clawhub.ai/skills/fitlog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitlog",
+    "url": "https://clawhub.ai/skills/fitlog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitlog-95970847395d20bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitlog@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitlog-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6af23563c15e2fcea003b1b499c0b98c2d88b7c7543c94e02c83cdc7ad6a7566",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:43:21.485Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit",
+  "skill": {
+    "id": 8444,
+    "skillKey": "clawhub-reddit",
+    "name": "Reddit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit",
+    "url": "https://clawhub.ai/skills/reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-2e183f2a7a70de1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, search, post, and moderate Reddit. Read-only works without auth; posting/moderation requires OAuth setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theglove44",
+      "userId": "s17eb1a89m4nxhs4yjh342fya58466q7",
+      "displayName": "theglove44",
+      "image": "https://avatars.githubusercontent.com/u/148962746?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 10250,
+      "installsAllTime": 131,
+      "installsCurrent": 125,
+      "stars": 45,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767605786690,
+      "changelog": "Initial release: browse, search, post, and moderate subreddits",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b0d7f6382530f7730618b683d1537d1d776946bc571a161e72931abf95e40de"
+}

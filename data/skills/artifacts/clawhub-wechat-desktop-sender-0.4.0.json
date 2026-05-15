@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-desktop-sender@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_desktop_sender",
+  "skill": {
+    "id": 56886,
+    "skillKey": "clawhub-wechat-desktop-sender",
+    "name": "WeChat Desktop Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-desktop-sender",
+    "url": "https://clawhub.ai/skills/wechat-desktop-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-desktop-sender-c02ce4bd14f8f378.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows WeChat desktop automation for opening chats and sending messages. Use when the user wants to open 微信桌面端, search a contact or group, send a message, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinhuadeng",
+      "userId": "s170kx8tdmb287fj3gzs4dhq3h83krvj",
+      "displayName": "Koi",
+      "image": "https://avatars.githubusercontent.com/u/135015309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1776606637970,
+      "changelog": "Add template-variable campaign workflow for CSV/JSON recipient lists plus rendered-message tracking and sample template dataset.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1a2507165f0667ea95c4a3c9aef5b66eb228e6d955db890d5ff7add3b2c59b3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51276,
+  "uuid": "skill-clawhub-openclaw-daily-brief",
+  "skillKey": "clawhub-openclaw-daily-brief",
+  "name": "Daily Brief",
+  "summary": "Send a daily operational brief from your self-hosted OpenClaw to Telegram — agent health, unresolved issues, and weekly evolution highlights, every morning.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_daily_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baobaodawang-creater",
+      "features": [
+        "Send a daily operational brief from your self-hosted OpenClaw to Telegram — agent health, unres."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-daily-brief@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200203393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-daily-brief",
+      "url": "https://clawhub.ai/skills/openclaw-daily-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-daily-brief",
+    "url": "https://clawhub.ai/skills/openclaw-daily-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-daily-brief-6218142b3f416dfa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-daily-brief@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-daily-brief-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88e316078e253b471d202a41692f6297f67bffaf79c22eb4edfe8e2c923de262",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:35:21.918Z"
+}

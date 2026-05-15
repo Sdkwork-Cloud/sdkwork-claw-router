@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44842,
+  "uuid": "skill-clawhub-clawguard-detector",
+  "skillKey": "clawhub-clawguard-detector",
+  "name": "ClawGuard-Detector",
+  "summary": "ClawGuard Threat Detector - Real-time behavioral monitoring, attack pattern detection, MITRE ATT&CK mapping, and AI-powered anomaly detection for OpenClaw ru...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stardreaming",
+      "features": [
+        "ClawGuard Threat Detector",
+        "Real-time behavioral monitoring, attack pattern detection, MITRE ATT&CK mapping, and AI-powered."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguard-detector@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160408334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguard-detector",
+      "url": "https://clawhub.ai/skills/clawguard-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-detector",
+    "url": "https://clawhub.ai/skills/clawguard-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-detector-e25ca631a0b5a724.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguard-detector@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-detector-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02170b65428cd0e7bbbce74a33de7f96a670352ba984185aaa6760ea2880e542",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T09:10:16.850Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-new-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_new_skill",
+  "skill": {
+    "id": 12058,
+    "skillKey": "clawhub-my-new-skill",
+    "name": "My New Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-new-skill",
+    "url": "https://clawhub.ai/skills/my-new-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-new-skill-c14d6a4b1e4cfa1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "My New Skill provides a customizable framework for specific tasks, enabling streamlined workflows or tool operations in defined scenarios."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enchantedmotorcycle",
+      "userId": "publishers:enchantedmotorcycle",
+      "displayName": "enchantedmotorcycle",
+      "image": "https://avatars.githubusercontent.com/u/88115702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1582,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770320145202,
+      "changelog": "my-new-skill 1.0.0\n\n- Initial release with a SKILL.md template, outlining guidance for structuring workflow-based, task-based, reference, or capabilities-based skills.\n- Includes placeholders for an overview, main sections, and resource directories (scripts, references, assets).\n- Provides detailed instructional content to assist in building out the skill documentation and organization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:feb3d9e0d834324dab52308ac4f8325b2da85330c03cbfd11cb2fcc007aa7483"
+}

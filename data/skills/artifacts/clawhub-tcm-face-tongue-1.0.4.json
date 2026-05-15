@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tcm-face-tongue@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcm_face_tongue",
+  "skill": {
+    "id": 60318,
+    "skillKey": "clawhub-tcm-face-tongue",
+    "name": "Tcm Face Tongue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcm-face-tongue",
+    "url": "https://clawhub.ai/skills/tcm-face-tongue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcm-face-tongue-22c2ecf08fdef399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中医面舌辨证。调用 RageHealth 开放接口，对人脸 / 舌头图片做中医辨证。包含「望面」(`face-tcm-analyse`)、「望舌」(`tongue-diagnosis`)、「面舌辨证」(`comprehensive-interpretation`) 三个子接口，输出体质（平和/气虚/阳虚/阴虚/痰..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianchen94",
+      "userId": "s171yt7cn3hnxnz753rsh9b9yd86b5rb",
+      "displayName": "qianchen94",
+      "image": "https://avatars.githubusercontent.com/u/29780385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1778235764950,
+      "changelog": "No changes detected since the previous version (1.0.0).  \nVersion bumped to 1.0.4 with no code or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d79165ec944a0e6deba966ffc1555a35f71a229e86ac0ef9d58e7d19ccdb68d7"
+}

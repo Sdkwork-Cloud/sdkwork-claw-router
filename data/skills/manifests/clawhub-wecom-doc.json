@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71910,
+  "uuid": "skill-clawhub-wecom-doc",
+  "skillKey": "clawhub-wecom-doc",
+  "name": "wecom-doc",
+  "summary": "文档与智能表格操作。当用户提到企业微信文档、创建文档、编辑文档、新建文档、写文档、智能表格时激活。支持文档创建/写入和智能表格的创建及子表/字段/记录写入。注意：所有文档创建和编辑请求都应使用此 skill，不要尝试用其他方式处理文档操作。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wecom",
+      "features": [
+        "文档与智能表格操作。当用户提到企业微信文档、创建文档、编辑文档、新建文档、写文档、智能表格时激活。支持文档创建/写入和智能表格的创建及子表/字段/记录写入。注意：所有文档创建和编辑请求都应使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-doc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8417095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-doc",
+      "url": "https://clawhub.ai/skills/wecom-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-doc",
+    "url": "https://clawhub.ai/skills/wecom-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-doc-a7d0d244b58e9a1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-doc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-doc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6d3a33088b64b9a4083b0553812b49e34d47b92fa93dd18cc4433009ea2a842",
+      "artifactSizeBytes": 2817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:15:01.223Z"
+}

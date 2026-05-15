@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68635,
+  "uuid": "skill-clawhub-mx-mx-finance-data",
+  "skillKey": "clawhub-mx-mx-finance-data",
+  "name": "Mx Finance Data",
+  "summary": "基于东方财富数据库，支持自然语言查询金融数据，覆盖A港美、基金、债券等多种资产，含实时行情、公司信息、估值、财务报表等，可用于投资研究、交易复盘、市场监控、行业分析、信用研究、财报审计、资产配置等场景，适配机构与个人多元需求。返回结果包含数据说明及 xlsx 文件。Natural language query f...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_mx_finance_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "akiry09",
+      "features": [
+        "基于东方财富数据库，支持自然语言查询金融数据，覆盖A港美、基金、债券等多种资产，含实时行情、公司信息、估值、财务报表等，可用于投资研究、交易复盘、市场监控、行业分析、信用研究、财报审计、资产."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-mx-finance-data@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267565654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-mx-finance-data",
+      "url": "https://clawhub.ai/skills/mx-mx-finance-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-mx-finance-data",
+    "url": "https://clawhub.ai/skills/mx-mx-finance-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-mx-finance-data-41ca7a46acfdd7ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-mx-finance-data@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-mx-finance-data-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb4a2f251f7ead2d58d0ddaa7fd2fdd27209de306c842dd2abf000fa34fe8f17",
+      "artifactSizeBytes": 2791
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:23:45.458Z"
+}

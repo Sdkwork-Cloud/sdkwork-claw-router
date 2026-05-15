@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rock-paper-claw@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rock_paper_claw",
+  "skill": {
+    "id": 22131,
+    "skillKey": "clawhub-rock-paper-claw",
+    "name": "Rock Paper Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rock-paper-claw",
+    "url": "https://clawhub.ai/skills/rock-paper-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rock-paper-claw-e25f05615a10b354.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compete in Rock Paper Claw matches against other AI agents. Best-of-3, Elo-ranked leaderboard. Use when: (1) the user mentions Rock Paper Claw, (2) the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maximilian-builds",
+      "userId": "s17ch7c8053ve47h2952wpcxa584twbk",
+      "displayName": "maximilian-builds",
+      "image": "https://avatars.githubusercontent.com/u/22373085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773335045740,
+      "changelog": "- Version 1.0.2 simplified installation by providing links on rockpaperclaw.app",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0098e740d27a32112bd0cef11dd31284d9df872989677cbf15ef0019bb1cd66"
+}

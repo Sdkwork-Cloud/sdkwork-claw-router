@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14027,
+  "uuid": "skill-clawhub-my-skill",
+  "skillKey": "clawhub-my-skill",
+  "name": "MY News",
+  "summary": "Provides a concise summary of today's top technology news in bullet points upon request.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "batype",
+      "features": [
+        "Provides a concise summary of today's top technology news in bullet points upon request."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37270997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-skill",
+      "url": "https://clawhub.ai/skills/my-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-skill",
+    "url": "https://clawhub.ai/skills/my-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-skill-830fad2258ad7faa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe4a10e00d84f1919a2cc5fca16ec2ccfb19a60d7b5f80edcb4de823083bc53b",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T15:50:37.934Z"
+}

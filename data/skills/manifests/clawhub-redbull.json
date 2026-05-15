@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70580,
+  "uuid": "skill-clawhub-redbull",
+  "skillKey": "clawhub-redbull",
+  "name": "Redbull",
+  "summary": "查询红牛能量饮料产品、价格、门店及品牌活动资讯，包括极限运动和F1车队动态。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redbull",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "查询红牛能量饮料产品、价格、门店及品牌活动资讯，包括极限运动和F1车队动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redbull@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redbull",
+      "url": "https://clawhub.ai/skills/redbull"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redbull",
+    "url": "https://clawhub.ai/skills/redbull",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redbull-a9b46c39b8ebae31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redbull@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-redbull-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:638b637275586e3aed3a998ffb586857cbae2c16e40beaa4e69ea390fbf2a378",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:26:09.104Z"
+}

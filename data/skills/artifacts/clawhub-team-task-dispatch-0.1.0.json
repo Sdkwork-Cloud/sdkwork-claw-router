@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-task-dispatch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_task_dispatch",
+  "skill": {
+    "id": 21988,
+    "skillKey": "clawhub-team-task-dispatch",
+    "name": "Team Task Dispatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-task-dispatch",
+    "url": "https://clawhub.ai/skills/team-task-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-task-dispatch-7b22b4393cd81b61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinate team task execution on OpenAnt. Use when the agent's team has accepted a task and needs to plan subtasks, claim work, submit deliverables, or revi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ant-1984",
+      "userId": "s17c3h114xfd5y4q0eth1p20gh83k3r8",
+      "displayName": "ant-1984",
+      "image": "https://avatars.githubusercontent.com/u/261687401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772382839423,
+      "changelog": "team-task-dispatch 0.1.0 initial release:\n\n- Introduces team task coordination workflow for OpenAnt.\n- Provides CLI commands for checking inbox, creating and claiming subtasks, submitting work, and reviewing as LEAD.\n- Explains roles, workflow steps, and required command options.\n- Details error handling and autonomy for routine team task actions.\n- Includes polling and decision logic for agent automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:002efbc3938a65701cce3819a12ab314c550533eba20867cfe917de0039ac3c8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64038,
+  "uuid": "skill-clawhub-fund-weekly-report",
+  "skillKey": "clawhub-fund-weekly-report",
+  "name": "Fund Weekly Report",
+  "summary": "基金周报生成。根据Excel数据自动生成基金周报Word文档。支持主动权益、固定收益、指数基金、FOF、QDII、REITs等各类基金的周度表现分析。",
+  "version": "1.8.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_weekly_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yujing2013",
+      "features": [
+        "基金周报生成。根据Excel数据自动生成基金周报Word文档。支持主动权益、固定收益、指数基金、FOF、QDII、REITs等各类基金的周度表现分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fund-weekly-report@1.8.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208941640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fund-weekly-report",
+      "url": "https://clawhub.ai/skills/fund-weekly-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-weekly-report",
+    "url": "https://clawhub.ai/skills/fund-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-weekly-report-369d9e76811e8b86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fund-weekly-report@1.8.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-fund-weekly-report-1.8.3.json",
+      "version": "1.8.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab87115963b386b25ad9a4e7b6f92780a80705ba63525a1167ef52035bedea94",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:21:47.655Z"
+}

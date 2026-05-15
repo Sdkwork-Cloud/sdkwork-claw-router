@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/samsung-health@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.samsung_health",
+  "skill": {
+    "id": 16843,
+    "skillKey": "clawhub-samsung-health",
+    "name": "Samsung Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "samsung-health",
+    "url": "https://clawhub.ai/skills/samsung-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/samsung-health-d76e6ff13d649f7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Samsung Health Connect data synced to Google Drive. Use for health tracking queries like sleep analysis, step counting, heart rate monitoring, SpO2 b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mudgesbot",
+      "userId": "publishers:mudgesbot",
+      "displayName": "mudgesbot",
+      "image": "https://avatars.githubusercontent.com/u/257610508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 843,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771574178563,
+      "changelog": "- No user-visible changes; documentation and features remain the same.\n- Version bump to 1.0.1 with no updates to files or skill description.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:963905570d9f757e9fbd7946ae8b5461f979fe777ee899d6daf82c6cf85d9124"
+}

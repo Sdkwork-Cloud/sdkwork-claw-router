@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12330,
+  "uuid": "skill-clawhub-archon-nostr",
+  "skillKey": "clawhub-archon-nostr",
+  "name": "Archon Nostr",
+  "summary": "Derive Nostr identity (npub/nsec) from Archon DID. Use when unifying DID and Nostr identities so both use the same secp256k1 key. Requires existing Archon wallet with ARCHON_PASSPHRASE set.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archon_nostr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "macterra",
+      "features": [
+        "Derive Nostr identity (npub/nsec) from Archon DID",
+        "Use when unifying DID and Nostr identities so both use the same secp256k1 key",
+        "Requires existing Archon wallet with ARCHON_PASSPHRASE set."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/archon-nostr@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/434644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "archon-nostr",
+      "url": "https://clawhub.ai/skills/archon-nostr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archon-nostr",
+    "url": "https://clawhub.ai/skills/archon-nostr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archon-nostr-0fd11a75e6b042cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/archon-nostr@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-archon-nostr-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:481236c35249830e06d92f93bb51e43f6538ebb086be723e55091ef1f395cda6",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T01:15:13.880Z"
+}

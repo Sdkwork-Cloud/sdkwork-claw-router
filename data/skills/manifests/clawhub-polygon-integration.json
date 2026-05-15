@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35292,
+  "uuid": "skill-clawhub-polygon-integration",
+  "skillKey": "clawhub-polygon-integration",
+  "name": "Polygon",
+  "summary": "Polygon integration. Manage Organizations. Use when the user wants to interact with Polygon data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polygon_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Polygon integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Polygon data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polygon-integration@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polygon-integration",
+      "url": "https://clawhub.ai/skills/polygon-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polygon-integration",
+    "url": "https://clawhub.ai/skills/polygon-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polygon-integration-2d49b1e0e3527732.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polygon-integration@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polygon-integration-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05b28cfdd1056e33d8cf3e8d995ec954b37b8f6c6165c1dd7964eda9838c384a",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T12:13:04.713Z"
+}

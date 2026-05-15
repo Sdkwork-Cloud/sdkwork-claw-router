@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44913,
+  "uuid": "skill-clawhub-ragret-search",
+  "skillKey": "clawhub-ragret-search",
+  "name": "ragret-search",
+  "summary": "Search, retrieval, or knowledge-base intent when the user does not clearly mean local files only or the open web: curl a remote RAGret API for semantic retri...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragret_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SugarSong404",
+      "features": [
+        "Search, retrieval, or knowledge-base intent when the user does not clearly mean local files onl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ragret-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131441711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ragret-search",
+      "url": "https://clawhub.ai/skills/ragret-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragret-search",
+    "url": "https://clawhub.ai/skills/ragret-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragret-search-63cc52c8835ed484.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ragret-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ragret-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:541bf24e5f9d91a40879d50740d44d16bcc0e6becfdeaafe499ff3b73af6b188",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T16:26:15.056Z"
+}

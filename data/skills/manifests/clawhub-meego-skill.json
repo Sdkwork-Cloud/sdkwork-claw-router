@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72381,
+  "uuid": "skill-clawhub-meego-skill",
+  "skillKey": "clawhub-meego-skill",
+  "name": "meego-skill",
+  "summary": "飞书项目（Meego）全能力技能。提供工作项查询、状态流转、团队管理、工时统计、评论协作等全部能力。当用户提到以下场景时激活：查询在途工作项、查缺陷/任务/需求详情、查团队成员、查工时记录、添加评论、创建工作项、修改工作项字段、查询工作项流转状态、查成员排期、查询视图和图表、查询工作项字段配置、查询项目空间信息、...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meego_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LONGSASASASASA",
+      "features": [
+        "飞书项目（Meego）全能力技能。提供工作项查询、状态流转、团队管理、工时统计、评论协作等全部能力。当用户提到以下场景时激活：查询在途工作项、查缺陷/任务/需求详情、查团队成员、查工时记录、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meego-skill@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110541123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meego-skill",
+      "url": "https://clawhub.ai/skills/meego-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meego-skill",
+    "url": "https://clawhub.ai/skills/meego-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meego-skill-dde5e0dfc81ba808.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meego-skill@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meego-skill-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e84eb59b9f7eac2df3f4696c8beeca92ff5db225966b7a85e6def683fdccc621",
+      "artifactSizeBytes": 2811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:08:54.036Z"
+}

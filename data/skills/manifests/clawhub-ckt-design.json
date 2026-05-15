@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72425,
+  "uuid": "skill-clawhub-ckt-design",
+  "skillKey": "clawhub-ckt-design",
+  "name": "创客贴智能海报设计",
+  "summary": "根据用户的海报平面设计需求，调用创客贴智能设计API生成设计缩略图。擅长制作邀请函、日签、小红书配图、商品海报、Banner等平面设计。当用户提到需要做海报、设计、邀请函、日签、小红书图、商品图、Banner，或提及平面设计、创客贴相关需求时使用此技能。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ckt_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hitlmt",
+      "features": [
+        "根据用户的海报平面设计需求，调用创客贴智能设计API生成设计缩略图。擅长制作邀请函、日签、小红书配图、商品海报、Banner等平面设计。当用户提到需要做海报、设计、邀请函、日签、小红书图、商."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ckt-design@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24528188?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ckt-design",
+      "url": "https://clawhub.ai/skills/ckt-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ckt-design",
+    "url": "https://clawhub.ai/skills/ckt-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ckt-design-5753cd7947452810.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ckt-design@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ckt-design-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a106e13d2af85dd900126f7cb3b252c73c44b1402edc5d2775afbc5f27d633c",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:51:36.944Z"
+}

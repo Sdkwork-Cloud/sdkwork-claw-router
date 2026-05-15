@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68234,
+  "uuid": "skill-clawhub-cyber-iching-master",
+  "skillKey": "clawhub-cyber-iching-master",
+  "name": "🔮 赛博易经大师 | Cyber I Ching Master",
+  "summary": "基于周易六十四卦，支持多种起卦法及三层义理解读，提供数字占卜和八字排盘服务，助用户洞察趋势与自省。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_iching_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agent4quant",
+      "features": [
+        "基于周易六十四卦，支持多种起卦法及三层义理解读，提供数字占卜和八字排盘服务，助用户洞察趋势与自省。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cyber-iching-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271207309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cyber-iching-master",
+      "url": "https://clawhub.ai/skills/cyber-iching-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-iching-master",
+    "url": "https://clawhub.ai/skills/cyber-iching-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-iching-master-931a30680d3f1cb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cyber-iching-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cyber-iching-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7db8f2db4191a0a261aa3b7ea900fe2592bdedf6c710b18ac2ac6fa3183e14a7",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T02:10:34.323Z"
+}

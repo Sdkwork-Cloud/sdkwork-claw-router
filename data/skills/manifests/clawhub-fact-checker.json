@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13512,
+  "uuid": "skill-clawhub-fact-checker",
+  "skillKey": "clawhub-fact-checker",
+  "name": "Fact Checker",
+  "summary": "Verify claims, numbers, and facts in markdown drafts against source data. Use when: reviewing blog posts, reports, or documentation for accuracy before publi...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fact_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Verify claims, numbers, and facts in markdown drafts against source data",
+        "Use when: reviewing blog posts, reports, or documentation for accuracy before publi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fact-checker@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fact-checker",
+      "url": "https://clawhub.ai/skills/fact-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fact-checker",
+    "url": "https://clawhub.ai/skills/fact-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fact-checker-93c2a122a8110acc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fact-checker@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fact-checker-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d521b6f81dcdd638171f9ae59effdaf358ccd84a208fc099399bb53d85b97e3",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:42:10.049Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-tesla@0.1.64",
+  "version": "0.1.64",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_tesla",
+  "skill": {
+    "id": 8589,
+    "skillKey": "clawhub-my-tesla",
+    "name": "My Tesla"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-tesla",
+    "url": "https://clawhub.ai/skills/my-tesla",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-tesla-24e4911def649213.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Tesla vehicles from macOS via the Tesla Owner API using teslapy (auth, list cars, status, lock/unlock, climate, charging, location, and extras). Use when you want to check your car state or run safe remote commands. Designed for Pa."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "officialpm",
+      "userId": "publishers:officialpm",
+      "displayName": "officialpm",
+      "image": "https://avatars.githubusercontent.com/u/45627498?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 9809,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 7,
+      "versions": 65
+    },
+    "latestVersion": {
+      "version": "0.1.64",
+      "createdAt": 1769735093493,
+      "changelog": "charge status shows usable battery + charging power details",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5b39de29b0f28e5bec9fd496df3474b8ef0f2697cd3c30821d4bb6a8241b7a8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ops-maintenance@2.1.2",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_maintenance",
+  "skill": {
+    "id": 63968,
+    "skillKey": "clawhub-ops-maintenance",
+    "name": "ops-maintenance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-maintenance",
+    "url": "https://clawhub.ai/skills/ops-maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-maintenance-06a325f6305e53ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "运维助手 v2.1 - 支持本地、远程、多服务器集群监控 (安全增强版，密码加密、命令白名单)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fish1981bimmer",
+      "userId": "s17dzz5rp1x5wrb7s33vv04cb984wjf8",
+      "displayName": "fish1981bimmer",
+      "image": "https://avatars.githubusercontent.com/u/271533977?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.1.2",
+      "createdAt": 1777867697560,
+      "changelog": "运维助手 v2.1 - 安全增强版，密码加密、命令白名单",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c4f74f34b6a46f2b4503aa65cad41a25844f1d83095b9114cb1e22e3ed34dc9"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27921,
+  "uuid": "skill-clawhub-memclawz-connect",
+  "skillKey": "clawhub-memclawz-connect",
+  "name": "MemClawz Connect",
+  "summary": "Connect any AI agent to the MemClawz shared memory bus. Gives agents read-before-act and write-after-complete patterns via a simple HTTP API. Use when an age...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memclawz_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yoni",
+      "features": [
+        "Connect any AI agent to the MemClawz shared memory bus",
+        "Gives agents read-before-act and write-after-complete patterns via a simple HTTP API",
+        "Use when an age..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memclawz-connect@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2175033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memclawz-connect",
+      "url": "https://clawhub.ai/skills/memclawz-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memclawz-connect",
+    "url": "https://clawhub.ai/skills/memclawz-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memclawz-connect-5cc7e67c3b051775.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memclawz-connect@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memclawz-connect-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9ed0ef3f97985cdcefaac91f8290ca37fc84bb22a9b11b7ad0c7e9b9c44469d",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:16:35.924Z"
+}

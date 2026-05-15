@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8937,
+  "uuid": "skill-clawhub-local-web-search-skill",
+  "skillKey": "clawhub-local-web-search-skill",
+  "name": "Local Web Search",
+  "summary": "Free local web search via DuckDuckGo HTML scraping with no API key. Use when web_search tool is unavailable or missing API keys, and you need fast query resu...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_web_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mes",
+      "features": [
+        "Free local web search via DuckDuckGo HTML scraping with no API key",
+        "Use when web_search tool is unavailable or missing API keys, and you need fast query resu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-web-search-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106491563?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-web-search-skill",
+      "url": "https://clawhub.ai/skills/local-web-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-web-search-skill",
+    "url": "https://clawhub.ai/skills/local-web-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-web-search-skill-a743bdcc69e5400a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-web-search-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-web-search-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecdaa1f283c51a8ed74d4c04ca479b2bf2eddcb1706497848bf90894cd8c1727",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T23:50:23.783Z"
+}

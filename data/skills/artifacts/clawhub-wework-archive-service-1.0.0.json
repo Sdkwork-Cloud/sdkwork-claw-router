@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wework-archive-service@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wework_archive_service",
+  "skill": {
+    "id": 72587,
+    "skillKey": "clawhub-wework-archive-service",
+    "name": "企业微信存档服务"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wework-archive-service",
+    "url": "https://clawhub.ai/skills/wework-archive-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wework-archive-service-d46f40cc254d52dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业微信整合服务技能 - 包含普通回调和会话内容存档功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyl2835",
+      "userId": "publishers:cyl2835",
+      "displayName": "cyl2835",
+      "image": "https://avatars.githubusercontent.com/u/32183498?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772683815156,
+      "changelog": "初始版本，包含企业微信普通回调、会话内容存档、线程安全存储、数据查询接口、Cloudflare Tunnel完整配置指引、全流程部署文档",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52647e03b376f46dc95c8ab1ac1410a5a6438732dfdc8b007bb8d3845bea0f35"
+}

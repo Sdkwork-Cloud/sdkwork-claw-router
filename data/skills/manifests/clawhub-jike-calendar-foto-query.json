@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72140,
+  "uuid": "skill-clawhub-jike-calendar-foto-query",
+  "skillKey": "clawhub-jike-calendar-foto-query",
+  "name": "佛历查询 - 即刻数据",
+  "summary": "输入阳历日期，查询佛历日期、完整说明、佛教节日、斋日、星宿和吉凶等信息。 适用场景：用户询问相关数据查询、日期查询或行情查询时使用。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_calendar_foto_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "输入阳历日期，查询佛历日期、完整说明、佛教节日、斋日、星宿和吉凶等信息。 适用场景：用户询问相关数据查询、日期查询或行情查询时使用。数据由即刻数据（jikeapi.cn）开放接口提供。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-calendar-foto-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-calendar-foto-query",
+      "url": "https://clawhub.ai/skills/jike-calendar-foto-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-calendar-foto-query",
+    "url": "https://clawhub.ai/skills/jike-calendar-foto-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-calendar-foto-query-7e3486389c32db19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-calendar-foto-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-calendar-foto-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6758c162816a081eb222b03fecb2506f81f2e0776bfecdc43a85449b701add7",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T05:35:59.643Z"
+}

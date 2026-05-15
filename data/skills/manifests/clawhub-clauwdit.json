@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22448,
+  "uuid": "skill-clawhub-clauwdit",
+  "skillKey": "clawhub-clauwdit",
+  "name": "clauwdit",
+  "summary": "Security auditor for AI agent skills. Scans SKILL.md files for prompt injection, data exfiltration, obfuscation, and dangerous capability combinations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clauwdit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "4worlds4w-svg",
+      "features": [
+        "Security auditor for AI agent skills",
+        "Scans SKILL.md files for prompt injection, data exfiltration, obfuscation, and dangerous capabi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clauwdit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259966125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clauwdit",
+      "url": "https://clawhub.ai/skills/clauwdit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clauwdit",
+    "url": "https://clawhub.ai/skills/clauwdit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clauwdit-dbbd657466a6cb71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clauwdit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clauwdit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19f8e19207b0fbed025866d6f0b0156580fa57adad35e52af4f628ebac2a9535",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T17:11:04.820Z"
+}

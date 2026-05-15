@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olares-market@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olares_market",
+  "skill": {
+    "id": 48456,
+    "skillKey": "clawhub-olares-market",
+    "name": "Olares Market (olares-cli market)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olares-market",
+    "url": "https://clawhub.ai/skills/olares-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olares-market-f6de7e30b0dddc30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "olares-cli market command tree against the per-user Market app-store v2 API: list / get / categories for catalog browsing; install / uninstall / upgrade / cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengpeng",
+      "userId": "s174507xmb894228wwnc0z209s85vcfx",
+      "displayName": "Peng Peng",
+      "image": "https://avatars.githubusercontent.com/u/921131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777555397179,
+      "changelog": "Automated publish from cli/skills/publish.sh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:467cc809382d579e956e3c33e2b1941d9401b3935a39723ce7dcecae7cb920ef"
+}

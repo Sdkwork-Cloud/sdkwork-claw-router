@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38823,
+  "uuid": "skill-clawhub-strongdm",
+  "skillKey": "clawhub-strongdm",
+  "name": "Strongdm",
+  "summary": "StrongDM integration. Manage data, records, and automate workflows. Use when the user wants to interact with StrongDM data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strongdm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "StrongDM integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with StrongDM data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/strongdm@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "strongdm",
+      "url": "https://clawhub.ai/skills/strongdm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strongdm",
+    "url": "https://clawhub.ai/skills/strongdm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strongdm-e74a46765a896bbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/strongdm@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-strongdm-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:877ce8706c8e43f83a84ef25f3bccad5c0bb9964754947028a48407064e810de",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:47:58.592Z"
+}

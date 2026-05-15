@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-business-latam@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_business_latam",
+  "skill": {
+    "id": 54828,
+    "skillKey": "clawhub-whatsapp-business-latam",
+    "name": "WhatsApp Business LATAM (Cloud API)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-business-latam",
+    "url": "https://clawhub.ai/skills/whatsapp-business-latam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-business-latam-69fef335cb14813f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configuración completa de WhatsApp Business API (oficial Meta) para PyMEs de Argentina y LATAM. Actívate cuando el usuario mencione: WhatsApp Business, WA AP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "centriqs",
+      "userId": "s174ymg23j2jq1ftcba5rm6qxs83jd18",
+      "displayName": "Centriqs",
+      "image": "https://avatars.githubusercontent.com/u/270963711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776486072385,
+      "changelog": "Initial public release. End-to-end setup for Meta's WhatsApp Business Platform (Cloud API) targeted at SMBs in Argentina and LATAM. Fully updated to Meta's per-message pricing model (July 2025). Includes 6 HSM templates in Argentine Spanish (appointments, reminders, payments, ARCA deadlines, order pickup, onboarding), Graph API v23.0 curl examples, opt-in compliance, 24-hour service window rules, Free Entry Points (72h CTWA window), messaging tiers, and anti-ban checklist. Strict Meta-official-API-only policy — no Baileys, no third-party BSPs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:573d1e20fd6a9cdc34c39f201857e691c33181912c5d20af5cbfc7a057269112"
+}

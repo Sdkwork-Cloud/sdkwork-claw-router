@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64912,
+  "uuid": "skill-clawhub-dictation-audio",
+  "skillKey": "clawhub-dictation-audio",
+  "name": "Dictation Audio",
+  "summary": "根据英语单词生成听写音频，每个单词读两遍，中间停顿1秒",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dictation_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "effeceee",
+      "features": [
+        "根据英语单词生成听写音频，每个单词读两遍，中间停顿1秒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dictation-audio@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195583691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dictation-audio",
+      "url": "https://clawhub.ai/skills/dictation-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dictation-audio",
+    "url": "https://clawhub.ai/skills/dictation-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dictation-audio-100cc8f75c5a168f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dictation-audio@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dictation-audio-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d6c00e84730310806fd1080695d31a5178ad4ea441ccbe6af3edf16ab5b3400",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T16:14:14.137Z"
+}

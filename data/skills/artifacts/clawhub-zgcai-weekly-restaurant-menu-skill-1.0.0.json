@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zgcai-weekly-restaurant-menu-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zgcai_weekly_restaurant_menu_skill",
+  "skill": {
+    "id": 57787,
+    "skillKey": "clawhub-zgcai-weekly-restaurant-menu-skill",
+    "name": "中关村两院每周菜单识别"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zgcai-weekly-restaurant-menu-skill",
+    "url": "https://clawhub.ai/skills/zgcai-weekly-restaurant-menu-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zgcai-weekly-restaurant-menu-skill-211c8f2ace168136.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts structured weekly menu content (breakfast, lunch, snacks by day) from a cafeteria menu image using a VLM via OpenRouter. Use when the user provides..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ihainan",
+      "userId": "s178whf4gjw8yqnqg6d2cj4bj983qqkw",
+      "displayName": "Jigao Fu",
+      "image": "https://avatars.githubusercontent.com/u/3169221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774602472331,
+      "changelog": "Initial release of zgcai-weekly-restaurant-menu-skill:\n\n- Extracts structured weekly cafeteria menus from images (PNG/JPG), including breakfast, lunch, and snack stall items by day.\n- Utilizes VLM via OpenRouter; requires a MENU_OPENROUTER_API_KEY for access.\n- Outputs the week’s date range and dish lists in organized Markdown.\n- Supports images up to 5 MB without compression.\n- Snack stall items are listed separately and joined by \"+\" in output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33d2507da311437ef81638cf2fe720aacb8496b3f85403d259089b07980df9e8"
+}

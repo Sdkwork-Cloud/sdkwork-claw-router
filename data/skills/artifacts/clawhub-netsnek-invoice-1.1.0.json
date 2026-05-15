@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/netsnek-invoice@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netsnek_invoice",
+  "skill": {
+    "id": 18095,
+    "skillKey": "clawhub-netsnek-invoice",
+    "name": "Invoice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netsnek-invoice",
+    "url": "https://clawhub.ai/skills/netsnek-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netsnek-invoice-8cd5cd184eefe1f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates and manages invoices as JSON files on GitHub with sequential numbering, preview, and upload."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kleberbaum",
+      "userId": "s179y7p0xkfm2kf6ncqxegwrzd84dvzm",
+      "displayName": "kleberbaum",
+      "image": "https://avatars.githubusercontent.com/u/26285351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771366091946,
+      "changelog": "Invoice and offer management with calc-preview.sh for accurate Telegram previews. No LLM math needed. Supports discounts, German formatting, sequential numbering.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f147cdf1633ec2440431f416e76d42630e29125e6ddab48eee275328268603cb"
+}

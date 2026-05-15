@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72363,
+  "uuid": "skill-clawhub-hook",
+  "skillKey": "clawhub-hook",
+  "name": "Hook",
+  "summary": "诊断和优化文章开头的吸引力，针对标题和首段的8个关键维度给出具体改进建议和改写方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shing19",
+      "features": [
+        "诊断和优化文章开头的吸引力，针对标题和首段的8个关键维度给出具体改进建议和改写方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38907754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hook",
+      "url": "https://clawhub.ai/skills/hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hook",
+    "url": "https://clawhub.ai/skills/hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hook-0648298b48be0319.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ba8a05f93908c9d287762a905f60e71ef1a7c0fe7a6e71acbc32aff6d2688de",
+      "artifactSizeBytes": 1777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:47:21.986Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-dance-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_dance_generator",
+  "skill": {
+    "id": 42825,
+    "skillKey": "clawhub-free-video-dance-generator",
+    "name": "Free Video Dance Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-dance-generator",
+    "url": "https://clawhub.ai/skills/free-video-dance-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-dance-generator-c56936899627d8fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated dance videos ready to post, without touching a single slider. Upload your images or audio (MP4, MOV, JPG, PNG, up to 200MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776130530378,
+      "changelog": "Initial release of Free Video Dance Generator.\n\n- Instantly generate AI-powered dance videos from your uploaded photos or audio in 1080p MP4 format.\n- Simple setup: get started with a free session and 100 credits, no login required.\n- Upload images or audio files (up to 200MB); supports formats like MP4, MOV, JPG, PNG, MP3, WAV, and more.\n- Quick cloud rendering delivers downloadable videos within 1–2 minutes.\n- Designed for TikTok creators to create, edit, and export dance videos without filming themselves.\n- Includes clear error handling and prompt-based workflow for easy, no-code operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ed9366710f208abfc762e13b3690513932256e70b9e8652848789fd007a7753"
+}

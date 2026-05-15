@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-hot-monitor@1.0.21",
+  "version": "1.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_hot_monitor",
+  "skill": {
+    "id": 63077,
+    "skillKey": "clawhub-bilibili-hot-monitor",
+    "name": "B站 (bilibili) 热门视频监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-hot-monitor",
+    "url": "https://clawhub.ai/skills/bilibili-hot-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-hot-monitor-fa1e9c01bb83aa96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成B站热门视频日报并发送邮件。触发词：B站热门、bilibili日报、视频日报、热门视频"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacobzwj",
+      "userId": "s175a2m3jsmxabg4nszbe62azx83kjwh",
+      "displayName": "Jacob_code",
+      "image": "https://avatars.githubusercontent.com/u/60833574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7519,
+      "installsAllTime": 38,
+      "installsCurrent": 38,
+      "stars": 22,
+      "versions": 22
+    },
+    "latestVersion": {
+      "version": "1.0.21",
+      "createdAt": 1770536492731,
+      "changelog": "修复进度条",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84e94774699091c6753a8209fc602c1fecf2c387296f1af9525e8e6ffa651bf3"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36292,
+  "uuid": "skill-clawhub-skill-vetter-bak",
+  "skillKey": "clawhub-skill-vetter-bak",
+  "name": "Skill Vetter.Bak",
+  "summary": "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_bak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aysun168",
+      "features": [
+        "Security-first skill vetting for AI agents",
+        "Use before installing any skill from ClawdHub, GitHub, or other sources",
+        "Checks for red flags, permission scope,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-vetter-bak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17974169?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-vetter-bak",
+      "url": "https://clawhub.ai/skills/skill-vetter-bak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-bak",
+    "url": "https://clawhub.ai/skills/skill-vetter-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-bak-197fd034dcf53bff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-vetter-bak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-vetter-bak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d82918f1a7bdebabc979e529f3f8a53cc32ae7a067a98f88afa92c51dfc99495",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:05:05.661Z"
+}

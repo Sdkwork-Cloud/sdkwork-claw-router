@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-openclaw-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_openclaw_bridge",
+  "skill": {
+    "id": 35828,
+    "skillKey": "clawhub-n8n-openclaw-bridge",
+    "name": "N8n Openclaw Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-openclaw-bridge",
+    "url": "https://clawhub.ai/skills/n8n-openclaw-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-openclaw-bridge-0cc9a85e0fe7b4f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your OpenClaw agent to n8n to create, trigger, manage, and monitor workflows, enabling natural language automation and execution control without the UI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marlowne12",
+      "userId": "s1701k29cpn53cjpxqp33amsah83qftd",
+      "displayName": "marlowne12",
+      "image": "https://avatars.githubusercontent.com/u/173687138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774621641149,
+      "changelog": "n8n + OpenClaw integration framework for marketing automation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36bcba2857dd2b4164f27b94961810a9f453bf14e71cfd0f0a9f71ce54988433"
+}

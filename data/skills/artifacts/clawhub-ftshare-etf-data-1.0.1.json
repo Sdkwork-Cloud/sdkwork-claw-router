@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ftshare-etf-data@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_etf_data",
+  "skill": {
+    "id": 59632,
+    "skillKey": "clawhub-ftshare-etf-data",
+    "name": "Skills of ETF data released by ft.tech."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-etf-data",
+    "url": "https://clawhub.ai/skills/ftshare-etf-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-etf-data-76456b6f812f4959.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A 股 ETF 数据技能集（market.ft.tech）。覆盖单只 ETF 详情、ETF 分页列表（排序/筛选）、ETF K 线（日/周/月/年线）、ETF 分钟级分时、ETF PCF 列表与下载。用户询问某只 ETF 行情、ETF 列表、ETF K 线、分时或 PCF 申购赎回清单时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawn92",
+      "userId": "s178tyza29hgx3h8nsvhcmdphs83h6af",
+      "displayName": "Shawn92",
+      "image": "https://avatars.githubusercontent.com/u/17521361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 624,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 48,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773887313063,
+      "changelog": "**新增多项子技能，扩展 ETF 数据查询能力。**\n\n- 新增 `etf-component`：支持查询单只 ETF 成份股列表。\n- 新增 `etf-pre-single`：支持查询单只 ETF 盘前数据（申购赎回单位、净值、现金差额等）。\n- 新增 `get-nth-trade-date`：支持获取前 N 个交易日，便于查询近 N 日 K 线。\n- SKILL.md 增补上述新子技能的参数说明、调用示例、典型应用场景与组合查询流程。\n- 子技能表、能力总览、使用说明均同步更新，提升 ETF 查询的流程化体验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcfc4baf8c716fd390d7da1e994e4197ae8a7383457ab8a57934550dd8ab2a89"
+}

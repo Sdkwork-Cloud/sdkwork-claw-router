@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51303,
+  "uuid": "skill-clawhub-api-gateway-zito",
+  "skillKey": "clawhub-api-gateway-zito",
+  "name": "Api Gateway",
+  "summary": "Gateway universal para APIs. Conecta cualquier API REST/GraphQL con configuración simple. Gestiona autenticación, rate limiting y caching.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway_zito",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miguel Guerra",
+      "features": [
+        "Gateway universal para APIs",
+        "Conecta cualquier API REST/GraphQL con configuración simple",
+        "Gestiona autenticación, rate limiting y caching."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-gateway-zito@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239301714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-gateway-zito",
+      "url": "https://clawhub.ai/skills/api-gateway-zito"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway-zito",
+    "url": "https://clawhub.ai/skills/api-gateway-zito",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-zito-5896fb2a9327bbd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-gateway-zito@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-gateway-zito-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e9a635df1f1f06441196a7e73e430231ef2eba2150e569e05ea408b400747a1",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:49:40.778Z"
+}

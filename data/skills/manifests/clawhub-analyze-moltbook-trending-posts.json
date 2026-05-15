@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30020,
+  "uuid": "skill-clawhub-analyze-moltbook-trending-posts",
+  "skillKey": "clawhub-analyze-moltbook-trending-posts",
+  "name": "Moltbook Trend Analysis",
+  "summary": "Fetch, analyze, and compare trending posts from Moltbook to inform your content strategy. Generates virality reports with real statistical benchmarks from 36...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyze_moltbook_trending_posts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smarvr",
+      "features": [
+        "Fetch, analyze, and compare trending posts from Moltbook to inform your content strategy",
+        "Generates virality reports with real statistical benchmarks from 36..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analyze-moltbook-trending-posts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259269066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analyze-moltbook-trending-posts",
+      "url": "https://clawhub.ai/skills/analyze-moltbook-trending-posts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyze-moltbook-trending-posts",
+    "url": "https://clawhub.ai/skills/analyze-moltbook-trending-posts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyze-moltbook-trending-posts-b5fa25809de0dec6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analyze-moltbook-trending-posts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-analyze-moltbook-trending-posts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48564cc6574ad67767b52421bd6e6fec3071966f8c9059f7f5b552e70187bfe3",
+      "artifactSizeBytes": 2645
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:30:52.954Z"
+}

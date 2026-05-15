@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_openapi_skill",
+  "skill": {
+    "id": 56134,
+    "skillKey": "clawhub-seedance-openapi-skill",
+    "name": "Seedance 2.0 – A Multi-Modal AI Video Creative Engine for Cinematic Storytelling – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-openapi-skill",
+    "url": "https://clawhub.ai/skills/seedance-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-openapi-skill-9f42da911ede8503.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Seedance video generator — create cinematic AI videos using Seedance 2.0 by ByteDance"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776717403236,
+      "changelog": "seedance-openapi-skill 1.0.0\n\n- Initial release: Generate cinematic AI videos with Seedance 2.0 by ByteDance.\n- Supports starting video runs, polling run status, and uploading images for video input.\n- Secure authentication via environment variable WESHOP_API_KEY (no Bearer prefix required).\n- Multiple configurable parameters: model version, duration, aspect ratio, audio, batch size.\n- Requires HTTPS access to openapi.weshop.ai for all API interactions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac00a71f178aa4e59516315af586aa131f52280cf2b31d996bf2b69c76ed89fb"
+}

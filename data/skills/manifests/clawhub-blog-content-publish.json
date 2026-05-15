@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13851,
+  "uuid": "skill-clawhub-blog-content-publish",
+  "skillKey": "clawhub-blog-content-publish",
+  "name": "Blog Content Publish",
+  "summary": "Publish editorial and dynamic section content with blog-publish, enforce quality gates for hot/news/ai_news, and sync repository skills to ClawHub via clawhu...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blog_content_publish",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "郭立lee",
+      "features": [
+        "Publish editorial and dynamic section content with blog-publish, enforce quality gates for hot/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blog-content-publish@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9278645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blog-content-publish",
+      "url": "https://clawhub.ai/skills/blog-content-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blog-content-publish",
+    "url": "https://clawhub.ai/skills/blog-content-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blog-content-publish-dc6e4061415dc968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blog-content-publish@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-blog-content-publish-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d0107822d08aa94d712debe236cf62eceaa365dcf0f32f69360c2558a298cce",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T01:16:35.636Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-custom@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_custom",
+  "skill": {
+    "id": 19845,
+    "skillKey": "clawhub-coding-custom",
+    "name": "Coding Custom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-custom",
+    "url": "https://clawhub.ai/skills/coding-custom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-custom-bc8eae46d90a065e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coding style memory that adapts to your preferences, conventions, and patterns for consistent coding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexbingquanxu-cpu",
+      "userId": "publishers:alexbingquanxu-cpu",
+      "displayName": "alexbingquanxu-cpu",
+      "image": "https://avatars.githubusercontent.com/u/264552701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774153198624,
+      "changelog": "- Added homepage link and feedback section to improve discoverability.\n- Updated description for clarity on coding style memory.\n- Enhanced documentation for preference storage, confirmation process, and privacy/security scope.\n- Clarified rules for learning only from explicit user feedback and never from observation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94780410a626ea14e3063655ae611e1bf0cec4f43bae8e760374cea5fab30d72"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55537,
+  "uuid": "skill-clawhub-topic-research",
+  "skillKey": "clawhub-topic-research",
+  "name": "Topic Research",
+  "summary": "Run a second-hop deep research pass through the Tavily CLI after an initial scan, then normalize the result into a local `research.md` contract. Use when Cod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.topic_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abigale-cyber",
+      "features": [
+        "Run a second-hop deep research pass through the Tavily CLI after an initial scan, then normaliz.",
+        "Use when Cod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/topic-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237663252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "topic-research",
+      "url": "https://clawhub.ai/skills/topic-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "topic-research",
+    "url": "https://clawhub.ai/skills/topic-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/topic-research-571c188e21a6725c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/topic-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-topic-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b2e88fb6b2802b458954c61082844987e8b75f2056f4cacc02884375ccbf4f9",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:18:59.546Z"
+}

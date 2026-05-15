@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57409,
+  "uuid": "skill-clawhub-zai-coding-plan-usage",
+  "skillKey": "clawhub-zai-coding-plan-usage",
+  "name": "ZAI Coding Plan Usage",
+  "summary": "Query Z.ai (智谱) Coding Plan usage and quota limits. Track token consumption, MCP usage, and subscription status. Use when user asks about \"智谱用量\"、\"ZAI usage\"、...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zai_coding_plan_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hyizhou",
+      "features": [
+        "Query Z.ai (智谱) Coding Plan usage and quota limits",
+        "Track token consumption, MCP usage, and subscription status",
+        "Use when user asks about \"智谱用量\"、\"ZAI usage\"、..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zai-coding-plan-usage@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34365809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zai-coding-plan-usage",
+      "url": "https://clawhub.ai/skills/zai-coding-plan-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zai-coding-plan-usage",
+    "url": "https://clawhub.ai/skills/zai-coding-plan-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zai-coding-plan-usage-36a55527dfe08f98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zai-coding-plan-usage@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zai-coding-plan-usage-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87cd239d3cf22e2f8d47e3302fc80c9d203ce7d1f04a44e34b2280fcff6b1f6b",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:28:07.508Z"
+}

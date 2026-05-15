@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32061,
+  "uuid": "skill-clawhub-memos-oneclick-install",
+  "skillKey": "clawhub-memos-oneclick-install",
+  "name": "MemOS Plugin One-Click Installer",
+  "summary": "Persistent local memory for OpenClaw agents. Use when users say: - \"install memos\" - \"install MemOS\" - \"setup memory\" - \"add memory plugin\" - \"openclaw memor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos_oneclick_install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mathematics-Yang",
+      "features": [
+        "Persistent local memory for OpenClaw agents",
+        "Use when users say:",
+        "\"install memos\"",
+        "\"setup memory\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memos-oneclick-install@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80611740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memos-oneclick-install",
+      "url": "https://clawhub.ai/skills/memos-oneclick-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos-oneclick-install",
+    "url": "https://clawhub.ai/skills/memos-oneclick-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-oneclick-install-f05b7614bba92bec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memos-oneclick-install@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memos-oneclick-install-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9ce1f2e3931fa878794368b492de5a85344ee9575f962963ca99037c190c78b",
+      "artifactSizeBytes": 2862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:34:43.243Z"
+}

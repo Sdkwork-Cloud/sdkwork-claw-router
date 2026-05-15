@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14450,
+  "uuid": "skill-clawhub-outbound-prospecting",
+  "skillKey": "clawhub-outbound-prospecting",
+  "name": "Outbound Prospecting Workflow",
+  "summary": "Provides a structured workflow to research a target company, identify decision-makers, and draft personalized outreach emails using company-specific insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outbound_prospecting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "strouddustinn-bot",
+      "features": [
+        "Provides a structured workflow to research a target company, identify decision-makers, and draf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/outbound-prospecting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230357906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "outbound-prospecting",
+      "url": "https://clawhub.ai/skills/outbound-prospecting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outbound-prospecting",
+    "url": "https://clawhub.ai/skills/outbound-prospecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outbound-prospecting-c5eb9f1641c90a86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/outbound-prospecting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-outbound-prospecting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c6c101912b861e1ed54333af7cdb0cc3594b173e78e5b9c6e4b178b71a554db",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T08:50:19.249Z"
+}

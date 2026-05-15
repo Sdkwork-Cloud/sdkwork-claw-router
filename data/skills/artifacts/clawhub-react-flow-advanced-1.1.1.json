@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/react-flow-advanced@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.react_flow_advanced",
+  "skill": {
+    "id": 31349,
+    "skillKey": "clawhub-react-flow-advanced",
+    "name": "React Flow Advanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "react-flow-advanced",
+    "url": "https://clawhub.ai/skills/react-flow-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/react-flow-advanced-d5f36aba676632df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced React Flow patterns for complex use cases. Use when implementing sub-flows, custom connection lines, programmatic layouts, drag-and-drop, undo/redo,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776831297015,
+      "changelog": "**Adds a checklist of gate/test criteria for all advanced React Flow patterns.**\n\n- Introduced a \"Gates (check before shipping)\" section detailing pass/fail criteria for core patterns (sub-flows, custom connection lines, drag-and-drop, undo/redo, layouts, connect-on-drop, selectors).\n- No changes to code, just improved documentation with explicit validations for each advanced use case.\n- Helps ensure correct implementation and prevents common mistakes in usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d911ab5a95e4277cb0d7532815ab7b399388952f436312c3312c5498339d8fb7"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64528,
+  "uuid": "skill-clawhub-codropshipping",
+  "skillKey": "clawhub-codropshipping",
+  "name": "codropshipping查看商品",
+  "summary": "帮助在CoDropshipping平台查询商品信息、库存、价格、规格等，自动抓取搜索结果并以表格形式展示",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codropshipping",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dwooaa",
+      "features": [
+        "帮助在CoDropshipping平台查询商品信息、库存、价格、规格等，自动抓取搜索结果并以表格形式展示"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codropshipping@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115220771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codropshipping",
+      "url": "https://clawhub.ai/skills/codropshipping"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codropshipping",
+    "url": "https://clawhub.ai/skills/codropshipping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codropshipping-80736c94c736ee60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codropshipping@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-codropshipping-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef8b93afee96a9ae877665a1226c5438f26acfe025ca7b18ecc09caf0577f6b2",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:35:49.330Z"
+}

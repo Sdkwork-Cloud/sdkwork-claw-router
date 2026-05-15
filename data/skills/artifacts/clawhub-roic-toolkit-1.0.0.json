@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roic-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roic_toolkit",
+  "skill": {
+    "id": 70141,
+    "skillKey": "clawhub-roic-toolkit",
+    "name": "ROIC 核心穿透分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roic-toolkit",
+    "url": "https://clawhub.ai/skills/roic-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roic-toolkit-0d74fe153b94bf0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "核心ROIC（投入资本回报率）深度分析助手。当用户提到 ROIC、投入资本回报率、资本效率、核心盈利能力、资本回报率分析、穿透ROIC、NOPAT、投入资本计算时自动使用。支持A股、港股、美股上市公司的ROIC精确计算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cgxxxxxxxxxxxx",
+      "userId": "s17fhwcmxm1yrzr2venv8wjah984a1fg",
+      "displayName": "cgxxxxxxxxxxxx",
+      "image": "https://avatars.githubusercontent.com/u/109221124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776388947486,
+      "changelog": "初始发布 - ROIC V2.0 穿透模式分析工具，支持A股/港股/美股核心ROIC计算",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d11fdfd0d54d5fbf72f3ca537d7d76438291f2cf25561427367d9f78ad31f1f"
+}

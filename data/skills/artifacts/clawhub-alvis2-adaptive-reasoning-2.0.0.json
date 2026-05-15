@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis2-adaptive-reasoning@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis2_adaptive_reasoning",
+  "skill": {
+    "id": 44341,
+    "skillKey": "clawhub-alvis2-adaptive-reasoning",
+    "name": "Adaptive Reasoning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis2-adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/alvis2-adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis2-adaptive-reasoning-bfa211a9480ab74e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically assess task complexity and adjust reasoning level. Triggers on every user message to evaluate whether extended thinking (reasoning mode) would..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776237385794,
+      "changelog": "Fixed API to api.skillboss.co",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5b77e99a4fd74a58bba9dd946c4f55deba50d87e6773a86bfe5497780fbf21d"
+}

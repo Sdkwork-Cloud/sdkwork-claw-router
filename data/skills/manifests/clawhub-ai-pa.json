@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38611,
+  "uuid": "skill-clawhub-ai-pa",
+  "skillKey": "clawhub-ai-pa",
+  "name": "Ai Pa",
+  "summary": "AI Personal Assistant network skill for multi-agent PA coordination. Use when: contacting another PA, coordinating with peer agents, scheduling meetings betw...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_pa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Netanel Abergel",
+      "features": [
+        "AI Personal Assistant network skill for multi-agent PA coordination",
+        "Use when: contacting another PA, coordinating with peer agents, scheduling meetings betw..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-pa@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89765095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-pa",
+      "url": "https://clawhub.ai/skills/ai-pa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-pa",
+    "url": "https://clawhub.ai/skills/ai-pa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-pa-b4cd813ec5796ca3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-pa@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-pa-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4479d545c5d2aff0b9bd14d2b287ba65563cf75e662b9950da4c4bfbf0c7e36e",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T19:51:05.064Z"
+}

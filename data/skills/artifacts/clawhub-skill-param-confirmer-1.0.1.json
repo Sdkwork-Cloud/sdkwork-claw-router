@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-param-confirmer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_param_confirmer",
+  "skill": {
+    "id": 40051,
+    "skillKey": "clawhub-skill-param-confirmer",
+    "name": "Skill Param Confirmer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-param-confirmer",
+    "url": "https://clawhub.ai/skills/skill-param-confirmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-param-confirmer-f056403bfcabf7de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Downstream skill execution preflight layer. It inspects a target skill, extracts explicit and implicit confirmation fields, normalizes candidate parameters,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pm-geeker",
+      "userId": "s176yq39wt8b4zanepe8smvr69847wff",
+      "displayName": "AGI2Go",
+      "image": "https://avatars.githubusercontent.com/u/143123392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775371609424,
+      "changelog": "Skill Update: Optimization & Refactor\n\n- Structured parameter model and confirmation flow\n- Improved risk control and validation\n- Standardized parsing, blocking, and output",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:388f0cc83224b15aca6a25f2e6c21f3cc081daf5303c6c91e83856ea88248fba"
+}

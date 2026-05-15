@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67149,
+  "uuid": "skill-clawhub-task-killer",
+  "skillKey": "clawhub-task-killer",
+  "name": "task killer",
+  "summary": "快速识别并立即中断当前执行任务，清理所有相关资源，节省 token 和时间，准备执行新任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_killer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiker",
+      "features": [
+        "快速识别并立即中断当前执行任务，清理所有相关资源，节省 token 和时间，准备执行新任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-killer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32234876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-killer",
+      "url": "https://clawhub.ai/skills/task-killer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-killer",
+    "url": "https://clawhub.ai/skills/task-killer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-killer-8c429d477a58d0c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-killer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-killer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26db352bfadeb4abff61607d574f5cd1f7151472b74f2abaeba194d84c62cd42",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:49:47.725Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63738,
+  "uuid": "skill-clawhub-laosi-rss",
+  "skillKey": "clawhub-laosi-rss",
+  "name": "RSS监控",
+  "summary": "RSS监控技能 - 监控RSS/Atom订阅源，检测更新，获取新内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_rss",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "监控RSS/Atom订阅源，检测更新，获取新内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-rss@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-rss",
+      "url": "https://clawhub.ai/skills/laosi-rss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-rss",
+    "url": "https://clawhub.ai/skills/laosi-rss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-rss-640e65a8ba7856ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-rss@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-rss-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dfce2250eebcce4ed79fb19da46541454e4a5d57abea453e67d86ab6f2382ca",
+      "artifactSizeBytes": 1775
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:47:54.191Z"
+}

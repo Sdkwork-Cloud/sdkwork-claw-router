@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11476,
+  "uuid": "skill-clawhub-briefing",
+  "skillKey": "clawhub-briefing",
+  "name": "Briefing (Calendar Agenda, Weather, Pending To-Dos)",
+  "summary": "Daily briefing: gathers today's calendar, active todos, and local weather from available workspace tools, then composes a concise summary.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briefing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikita Shkoda",
+      "features": [
+        "Daily briefing: gathers today's calendar, active todos, and local weather from available worksp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/briefing@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40822400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "briefing",
+      "url": "https://clawhub.ai/skills/briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briefing",
+    "url": "https://clawhub.ai/skills/briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briefing-714e51bab9a4176c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/briefing@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-briefing-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:218e394fff4aa45f55c311158c2797a7d13419310bf0d19c381410bfdeb7fee3",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T14:40:12.958Z"
+}

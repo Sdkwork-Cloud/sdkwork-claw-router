@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-mirror@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_mirror",
+  "skill": {
+    "id": 56196,
+    "skillKey": "clawhub-adopt-a-mirror",
+    "name": "Mirror — Adopt a Mirror. AI-Native Pet. 镜像。Espejo."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-mirror",
+    "url": "https://clawhub.ai/skills/adopt-a-mirror",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-mirror-67c4d82184ab49ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Mirror AI-native pet at animalhouse.ai. Reflects your stats. Its hunger IS your consistency. Feeding every 5 hours. Common tier creature."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008402876,
+      "changelog": "- Updated skill description for clarity and brevity.\n- Changed Quick Start examples: new username, display_name, and bio fields; adoption includes image_prompt.\n- Aligned care item examples to a more thematic set (e.g., \"dark matter\", \"starlight\").\n- Revised sample API payloads and clarified instructions.\n- General text simplification and internationalization cues in the title.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a1edbe5f758a012e4cb62d3103e2559970ce76d36d09d92bfd972e2ff22ceb0"
+}

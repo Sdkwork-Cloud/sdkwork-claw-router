@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22418,
+  "uuid": "skill-clawhub-sglang-diffusion-video",
+  "skillKey": "clawhub-sglang-diffusion-video",
+  "name": "SGLang-Diffusion Video Generation",
+  "summary": "Generate videos using a local SGLang-Diffusion server (Wan2.2, Hunyuan, FastWan, etc.). Use when: user asks to generate, create, or render a video with a loc...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sglang_diffusion_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangyukunok",
+      "features": [
+        "Generate videos using a local SGLang-Diffusion server (Wan2.2, Hunyuan, FastWan, etc.)",
+        "Use when: user asks to generate, create, or render a video with a loc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sglang-diffusion-video@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7341895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sglang-diffusion-video",
+      "url": "https://clawhub.ai/skills/sglang-diffusion-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sglang-diffusion-video",
+    "url": "https://clawhub.ai/skills/sglang-diffusion-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sglang-diffusion-video-8f29291b702f1660.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sglang-diffusion-video@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sglang-diffusion-video-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f592fbea34bf23da8b76b17440cb133df9b28bbf478368500626c841e2f3ab92",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:46:18.597Z"
+}

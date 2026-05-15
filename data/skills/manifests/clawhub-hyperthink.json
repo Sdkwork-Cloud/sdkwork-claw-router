@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48680,
+  "uuid": "skill-clawhub-hyperthink",
+  "skillKey": "clawhub-hyperthink",
+  "name": "Hyperthink",
+  "summary": "Triple-perspective deep research engine. Triggered by /hyperthink. Runs an interrogate flow to narrow scope, then executes a 6-stage fully automatic pipeline...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperthink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inxan3",
+      "features": [
+        "Triple-perspective deep research engine",
+        "Triggered by /hyperthink",
+        "Runs an interrogate flow to narrow scope, then executes a 6-stage fully automatic pipeline..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hyperthink@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208640470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hyperthink",
+      "url": "https://clawhub.ai/skills/hyperthink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperthink",
+    "url": "https://clawhub.ai/skills/hyperthink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperthink-571550fbc8bda7a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hyperthink@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hyperthink-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa13f12d60562d2e967e17fa786a73c51b13795d0031693efd20d3e684dbdc5f",
+      "artifactSizeBytes": 2694
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T05:39:52.460Z"
+}

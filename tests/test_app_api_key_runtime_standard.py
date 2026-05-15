@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -77,7 +77,7 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
         sdk = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "router.ts"
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "iam.ts"
         ).read_text(encoding="utf-8")
         frontend = (
             ROOT
@@ -94,15 +94,15 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         self.assertIn('"required": true', openapi)
         self.assertIn('"name": "X-Request-Id"', openapi)
         self.assertIn("CreateApiKeyRequest", sdk)
-        self.assertIn("CreateKeyResult", sdk)
-        self.assertIn("createKey(body: CreateApiKeyRequest, idempotencyKey: string, xRequestId?: string)", sdk)
-        self.assertIn("post<CreateKeyResult>", sdk)
+        self.assertIn("ApiKeysCreateResult", sdk)
+        self.assertIn("create(body: CreateApiKeyRequest, params: IamApiKeysCreateParams)", sdk)
+        self.assertIn("post<ApiKeysCreateResult>", sdk)
         self.assertIn("createRequestToken", frontend)
         self.assertIn("from 'sdkwork-claw-router-commons/runtime'", frontend)
         self.assertNotIn("function createRequestToken", frontend)
         self.assertIn("const idempotencyKey = createRequestToken('create-api-key');", frontend)
         self.assertIn("const requestId = createRequestToken('request');", frontend)
-        self.assertIn("idempotencyKey,\n        requestId,", frontend)
+        self.assertIn("{ idempotencyKey, xRequestId: requestId }", frontend)
         self.assertNotIn("x-sdkwork-tenant-id", frontend.lower())
         self.assertNotIn("x-sdkwork-organization-id", frontend.lower())
         self.assertNotIn("x-sdkwork-user-id", frontend.lower())
@@ -156,8 +156,8 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_router = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "router.ts"
+        sdk_iam = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "iam.ts"
         ).read_text(encoding="utf-8")
         frontend = (
             ROOT
@@ -171,15 +171,15 @@ class AppApiKeyRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("name: AppApiKeyListResponse", contract)
         self.assertIn('"AppApiKeyListResponse"', openapi)
-        self.assertIn('"FetchKeysResult"', openapi)
+        self.assertIn('"ApiKeysListResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/AppApiKeyListResponse"', openapi)
-        self.assertIn("async fetchKeys(pageNo?: number, pageSize?: number, keyword?: string, status?: string, startTime?: string, endTime?: string): Promise<FetchKeysResult>", sdk_router)
-        self.assertIn("appendQueryString(appApiPath(`/router/api-keys`), query)", sdk_router)
-        self.assertIn("get<FetchKeysResult>", sdk_router)
+        self.assertIn("async list(): Promise<ApiKeysListResult>", sdk_iam)
+        self.assertIn("appApiPath(`/iam/api_keys`)", sdk_iam)
+        self.assertIn("get<ApiKeysListResult>", sdk_iam)
 
-        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "app-api-key-list-response.ts"
-        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "fetch-keys-result.ts"
-        group_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "app-api-key-group.ts"
+        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "app-api-key-list-response.ts"
+        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "api-keys-list-result.ts"
+        group_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "app-api-key-group.ts"
         self.assertTrue(response_path.exists())
         self.assertTrue(result_path.exists())
         self.assertTrue(group_path.exists())

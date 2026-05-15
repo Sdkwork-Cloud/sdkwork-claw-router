@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amc",
+  "skill": {
+    "id": 48743,
+    "skillKey": "clawhub-amc",
+    "name": "Amc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amc",
+    "url": "https://clawhub.ai/skills/amc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amc-c7f623bf946e4657.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on AMC's cinema operations, AMC Networks content strategy, and impacts of streaming and meme stock trends on the entertainment ind..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777583127772,
+      "changelog": "Initial release of the \"amc\" skill:\n\n- 提供AMC作为美国最大院线及AMC Networks母体的历史、商业模式与转型概览\n- 收录主要历史节点（包括meme stock事件、分拆、收购等）\n- 梳理两大实体（影院与传媒）的盈利与护城河分析\n- 展示关键数据及有趣事实（如会员计划、CEO互动梗）\n- 适合研究院线流媒体时代转型、娱乐产业渠道变革及资本市场话题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59de2ba9833275bdc8395b77b286eb21671f3618ee07b72322be493968cfd32c"
+}

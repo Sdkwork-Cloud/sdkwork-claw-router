@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18488,
+  "uuid": "skill-clawhub-briefed",
+  "skillKey": "clawhub-briefed",
+  "name": "Briefed",
+  "summary": "Set up and run a personal AI newsletter intelligence system called Briefed. Fetches Gmail newsletters daily, uses Claude Haiku to extract article summaries,...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.briefed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jamesnation",
+      "features": [
+        "Set up and run a personal AI newsletter intelligence system called Briefed",
+        "Fetches Gmail newsletters daily, uses Claude Haiku to extract article summaries,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/briefed@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1721085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "briefed",
+      "url": "https://clawhub.ai/skills/briefed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "briefed",
+    "url": "https://clawhub.ai/skills/briefed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/briefed-33985fc966078daf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/briefed@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-briefed-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abc24df4847fedd8a930be70122a5ed1b00ab9eb02ca971ae30fb3eb0b6ea7a6",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T09:17:01.038Z"
+}

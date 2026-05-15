@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idfm-journey-navitia@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idfm_journey_navitia",
+  "skill": {
+    "id": 46592,
+    "skillKey": "clawhub-idfm-journey-navitia",
+    "name": "IDFM Journey (PRIM/Navitia)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idfm-journey-navitia",
+    "url": "https://clawhub.ai/skills/idfm-journey-navitia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idfm-journey-navitia-d7465ae6b173d414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Île-de-France Mobilités (IDFM) PRIM/Navitia for place resolution, journey planning, and disruptions/incident checks. Use when asked to find routes in Île-de-France (e.g., \"itinéraire de X à Y\"), resolve station/stop ids, or check RER."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anthonymq",
+      "userId": "publishers:anthonymq",
+      "displayName": "anthonymq",
+      "image": "https://avatars.githubusercontent.com/u/1382637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1557,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770284747697,
+      "changelog": "Publish under alternative slug to validate registry visibility",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd202c2b6d3411219b48954f938f5a18e7bb21d79a45eaed023c3e2a7220ebd3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rental-property-manager@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rental_property_manager",
+  "skill": {
+    "id": 51466,
+    "skillKey": "clawhub-rental-property-manager",
+    "name": "Rental Property Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rental-property-manager",
+    "url": "https://clawhub.ai/skills/rental-property-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rental-property-manager-c2b4b4eb4913b06c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage residential rental properties — tenant screening, lease tracking, maintenance coordination, rent collection monitoring, vacancy optimization, and comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joshbuildswithdoit",
+      "userId": "s17edtqqt1eg6d7k18sc0gt76n83wzcc",
+      "displayName": "joshbuildswithDoIt",
+      "image": "https://avatars.githubusercontent.com/u/267924972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775391064077,
+      "changelog": "Added ClawReady setup link for users who need help getting OpenClaw configured",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76bb9b3bf6a298e872b2a9462ae36345dead72665b679c641f395763a1b56eeb"
+}

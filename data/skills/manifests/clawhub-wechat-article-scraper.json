@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72812,
+  "uuid": "skill-clawhub-wechat-article-scraper",
+  "skillKey": "clawhub-wechat-article-scraper",
+  "name": "微信公众号文章抓取",
+  "summary": "在搜狗微信搜索指定关键词，抓取相关文章（标题、摘要、发布日期、来源公众号），生成PDF报告。触发场景：用户要求\"搜索微信文章 关键字 数量",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "StruggleJia",
+      "features": [
+        "在搜狗微信搜索指定关键词，抓取相关文章（标题、摘要、发布日期、来源公众号），生成PDF报告。触发场景：用户要求\"搜索微信文章 关键字 数量"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-scraper@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33543179?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-scraper",
+      "url": "https://clawhub.ai/skills/wechat-article-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-scraper",
+    "url": "https://clawhub.ai/skills/wechat-article-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-scraper-9788721320e8f98b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-scraper@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-scraper-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68bd16a81b5f7a3d6e1e82fa76d6e76f70184787941d960fe06f7ecc155cb07f",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:14:12.241Z"
+}

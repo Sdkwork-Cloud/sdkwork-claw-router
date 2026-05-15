@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35347,
+  "uuid": "skill-clawhub-commbox",
+  "skillKey": "clawhub-commbox",
+  "name": "Commbox",
+  "summary": "CommBox integration. Manage data, records, and automate workflows. Use when the user wants to interact with CommBox data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "CommBox integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CommBox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commbox@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commbox",
+      "url": "https://clawhub.ai/skills/commbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commbox",
+    "url": "https://clawhub.ai/skills/commbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commbox-e1375d1391b4b011.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commbox@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-commbox-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:463c7b1a5b31fb0666fb8a7153a3a101555d351a9174c51a273093bffa14c953",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:20:17.857Z"
+}

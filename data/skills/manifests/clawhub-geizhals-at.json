@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18743,
+  "uuid": "skill-clawhub-geizhals-at",
+  "skillKey": "clawhub-geizhals-at",
+  "name": "Geizhals.at",
+  "summary": "Search Geizhals.at (Austria) with HTTP-only autocomplete + detail-page parsing (no browser automation). Use when users want quick price checks from Geizhals....",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geizhals_at",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roland Kákonyi",
+      "features": [
+        "Search Geizhals.at (Austria) with HTTP-only autocomplete + detail-page parsing (no browser auto.",
+        "Use when users want quick price checks from Geizhals...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geizhals-at@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2691371?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geizhals-at",
+      "url": "https://clawhub.ai/skills/geizhals-at"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geizhals-at",
+    "url": "https://clawhub.ai/skills/geizhals-at",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geizhals-at-f41de6ff6f7763bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geizhals-at@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-geizhals-at-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23ca89b8457e3270ee97bc2a68a8947e588bf574cd45dc5ac1bd65a503174e0c",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T20:52:43.543Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-parking-meter-finder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_parking_meter_finder",
+  "skill": {
+    "id": 54977,
+    "skillKey": "clawhub-hk-parking-meter-finder",
+    "name": "HK Parking Meter Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-parking-meter-finder",
+    "url": "https://clawhub.ai/skills/hk-parking-meter-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-parking-meter-finder-6881f3b2bebf7be5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find Hong Kong roadside parking meter (咪錶) locations and live vacancy using official Transport Department / DATA.GOV.HK datasets. Use when the user asks in C..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimpang8",
+      "userId": "publishers:jimpang8",
+      "displayName": "jimpang8",
+      "image": "https://avatars.githubusercontent.com/u/27860553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774236468409,
+      "changelog": "Sanitize publish docs: remove local absolute path and keep usage portable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa2415e77fa38a6af67510ca8d2ebc5244958a141d7da6e1df78360885a83144"
+}

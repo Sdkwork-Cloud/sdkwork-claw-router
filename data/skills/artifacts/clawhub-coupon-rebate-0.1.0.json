@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coupon-rebate@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coupon_rebate",
+  "skill": {
+    "id": 73233,
+    "skillKey": "clawhub-coupon-rebate",
+    "name": "券返双省助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coupon-rebate",
+    "url": "https://clawhub.ai/skills/coupon-rebate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coupon-rebate-adf44a92f46def00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "优惠券+返利叠加省钱工具，自动查找可用优惠券并匹配最高返利渠道，双重叠加实现省钱最大化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangshan101-coder",
+      "userId": "s1782arxyb13jw6g2c7z1z1n4183nyc9",
+      "displayName": "fangshan101-coder",
+      "image": "https://avatars.githubusercontent.com/u/267524233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774576122539,
+      "changelog": "初始发布",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05528e0de291acabf1d9923a3bea225896fa2843e801cd9a170756267722f67d"
+}

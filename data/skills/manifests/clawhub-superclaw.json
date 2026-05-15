@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56213,
+  "uuid": "skill-clawhub-superclaw",
+  "skillKey": "clawhub-superclaw",
+  "name": "Superclaw",
+  "summary": "Complete software development workflow enforcing design → plan → execution with checkpoints",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hammad Hai",
+      "features": [
+        "Complete software development workflow enforcing design → plan → execution with checkpoints"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4690708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superclaw",
+      "url": "https://clawhub.ai/skills/superclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superclaw",
+    "url": "https://clawhub.ai/skills/superclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superclaw-be94102103b97ee8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-superclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a6e66f7d025ec0a2b73b3b62cdfc5fc14dd705c4dc7a80a4b69fad83f8afcaf",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T05:26:24.005Z"
+}

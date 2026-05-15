@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42741,
+  "uuid": "skill-clawhub-session-wrap-up-premium",
+  "skillKey": "clawhub-session-wrap-up-premium",
+  "name": "Session Wrap-Up Premium",
+  "summary": "Premium session wrap-up: flush daily log, update MEMORY, update PARA, git commit + push, generate summary. Ensures zero context loss between sessions. Includ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_wrap_up_premium",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NeroAgent",
+      "features": [
+        "Premium session wrap-up: flush daily log, update MEMORY, update PARA, git commit + push, genera.",
+        "Ensures zero context loss between sessions",
+        "Includ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-wrap-up-premium@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217334413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-wrap-up-premium",
+      "url": "https://clawhub.ai/skills/session-wrap-up-premium"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-wrap-up-premium",
+    "url": "https://clawhub.ai/skills/session-wrap-up-premium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-wrap-up-premium-bb17680479b4e6bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-wrap-up-premium@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-wrap-up-premium-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f6e1a2c4634d91a2369e0f97e6da7f62d3f670e37c3f1cfe2c7580359d8dd42",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:20:54.889Z"
+}

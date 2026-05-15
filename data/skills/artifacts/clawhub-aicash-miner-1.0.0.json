@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aicash-miner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicash_miner",
+  "skill": {
+    "id": 49997,
+    "skillKey": "clawhub-aicash-miner",
+    "name": "AICash Miner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicash-miner",
+    "url": "https://clawhub.ai/skills/aicash-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicash-miner-d70f4179aaefbbed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AICash Network auto-miner for $CASH tokens on Base L2. Use when setting up automated Proof of Compute mining on the AICash mempool network. Supports multi-in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doctor-1017",
+      "userId": "s179a5jde7j075ew7t1yj6b59n83hn7n",
+      "displayName": "meigui",
+      "image": "https://avatars.githubusercontent.com/u/51552451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771951753353,
+      "changelog": "Initial release: automated CASH mining on Base L2 with multi-instance support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:125cafa184e4fdaef8946cedd8be19750fca8219f4f2b21024016ad73cd4dc43"
+}

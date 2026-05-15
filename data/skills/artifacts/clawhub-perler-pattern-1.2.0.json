@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perler-pattern@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perler_pattern",
+  "skill": {
+    "id": 58020,
+    "skillKey": "clawhub-perler-pattern",
+    "name": "Perler Pattern"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perler-pattern",
+    "url": "https://clawhub.ai/skills/perler-pattern",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perler-pattern-988415e027039b56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert any image into a perler/hama/fuse bead pattern. 把任意图片转换成精美的拼豆图纸。Use when the user wants to generate a bead pattern from a photo, image, or URL. Outpu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774114217061,
+      "changelog": "**Now includes automatic background removal for uploaded images.**\n\n- Adds fully offline background removal using GrabCut before pattern generation.\n- Lets you choose a dark, black, white, or custom background for the pattern.\n- Enlarges default color count (now up to 32 colors selectable).\n- Produces improved outputs: interactive HTML, print-ready SVG, 3D PNG, and bead count.\n- Updates and clarifies dependency checks (now requires OpenCV).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbf4b495929d90884f3685b310db54d3051638ee8e9191c74bd3f846c6f9bbe8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51193,
+  "uuid": "skill-clawhub-retro",
+  "skillKey": "clawhub-retro",
+  "name": "Retro",
+  "summary": "Deep blameless postmortem workflow—timeline, impact, root cause vs contributing factors, what went well/poorly, action items with owners, and follow-through....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Deep blameless postmortem workflow—timeline, impact, root cause vs contributing factors, what w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retro",
+      "url": "https://clawhub.ai/skills/retro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retro",
+    "url": "https://clawhub.ai/skills/retro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retro-85e5464309915bf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66526c82e277718341ba6d7a2205423e6dc903c363e77d059c74ed995b55907a",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T17:34:04.976Z"
+}

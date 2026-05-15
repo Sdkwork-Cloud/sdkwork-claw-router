@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gi-summarize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gi_summarize",
+  "skill": {
+    "id": 16277,
+    "skillKey": "clawhub-gi-summarize",
+    "name": "GI Summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gi-summarize",
+    "url": "https://clawhub.ai/skills/gi-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gi-summarize-cc245d3354902b7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize long text, meeting notes, documents, or code into concise key points. Use when the user asks to summarize, extract key points, create meeting minut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laimiaohua",
+      "userId": "publishers:laimiaohua",
+      "displayName": "laimiaohua",
+      "image": "https://avatars.githubusercontent.com/u/36961979?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 876,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773667193947,
+      "changelog": "Initial release. Summarize long text and meeting notes. Gravitech Innovations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cba01fa77b55cebb917925b3766ea0b5ff197cc36b037f505b57460872c427b8"
+}

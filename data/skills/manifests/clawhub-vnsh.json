@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14658,
+  "uuid": "skill-clawhub-vnsh",
+  "skillKey": "clawhub-vnsh",
+  "name": "Vnsh Skill",
+  "summary": "Securely share files using encrypted, expiring vnsh.dev links with the vnsh CLI for uploading and decrypting shared content.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vnsh",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raullenchai",
+      "features": [
+        "Securely share files using encrypted, expiring vnsh.dev links with the vnsh CLI for uploading a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vnsh@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/989846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vnsh",
+      "url": "https://clawhub.ai/skills/vnsh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vnsh",
+    "url": "https://clawhub.ai/skills/vnsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vnsh-25250a64c6a9cf33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vnsh@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vnsh-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2d277a74cecd1167b33715de2db2c0d7d3daa968bd9b28a1e9f9b86a55403c0",
+      "artifactSizeBytes": 1804
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T03:37:21.953Z"
+}

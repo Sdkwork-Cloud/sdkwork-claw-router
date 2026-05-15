@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/group-logger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_logger",
+  "skill": {
+    "id": 68773,
+    "skillKey": "clawhub-group-logger",
+    "name": "Group Logger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-logger",
+    "url": "https://clawhub.ai/skills/group-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-logger-356e210cd54ec503.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "บันทึกข้อความกลุ่ม LINE ที่มีคีย์เวิร์ดเกี่ยวกับงานลง CSV อัตโนมัติและสรุปข้อมูลเมื่อต้องการผ่าน @mention"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "comphone",
+      "userId": "publishers:comphone",
+      "displayName": "comphone",
+      "image": "https://avatars.githubusercontent.com/u/217798704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774238230160,
+      "changelog": "Initial release of group-logger skill:\n\n- Automatically logs LINE group messages containing specific keywords to a CSV file.\n- Supports two modes: silent logging and summary on @mention.\n- Summaries are generated per customer or job upon request.\n- Daily automatic CSV backup included.\n- Supports multiple groups; logs separated by group_id.\n- No replies in logging mode to minimize message noise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53e1837042a6c3773f25a46ff9883d5a306a653a0a6830df79a0d33baf206f7c"
+}

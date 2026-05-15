@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cleveland-clinic@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleveland_clinic",
+  "skill": {
+    "id": 69467,
+    "skillKey": "clawhub-cleveland-clinic",
+    "name": "Cleveland Clinic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleveland-clinic",
+    "url": "https://clawhub.ai/skills/cleveland-clinic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleveland-clinic-edf6d8f1a1b5cc4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球顶尖综合医疗中心，心血管、消化、骨科、神经科实力强，设有美国及全球多地分院，拥有顶尖学术地位。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776238181553,
+      "changelog": "- Updated summary to clarify the skill provides cleveland-clinic general information.\n- Replaced previous detailed hospital background with modular information sections: history, business scope, global presence, and latest news.\n- Revised applicable scenarios for broader use, including business research and academic reference.\n- Simplified the \"read_when\" triggers for more general queries.\n- Removed specific medical rankings and individual department achievements for a concise, industry-focused overview.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bfe62a2e93440575f1d1bae7a598b4f8ea6e0e12d98c6f27d1e15949c5e42eb"
+}

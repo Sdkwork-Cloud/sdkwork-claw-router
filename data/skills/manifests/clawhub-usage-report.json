@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35540,
+  "uuid": "skill-clawhub-usage-report",
+  "skillKey": "clawhub-usage-report",
+  "name": "Usage Report",
+  "summary": "Generate cost and token usage reports from OpenClaw session logs. Use when asked about API costs, token usage, billing, spending, how much something cost, or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usage_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brice Thrower",
+      "features": [
+        "Generate cost and token usage reports from OpenClaw session logs",
+        "Use when asked about API costs, token usage, billing, spending, how much something cost, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usage-report@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6549973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usage-report",
+      "url": "https://clawhub.ai/skills/usage-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usage-report",
+    "url": "https://clawhub.ai/skills/usage-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usage-report-5e5a0627b931a442.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usage-report@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-usage-report-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cca998245b55457add742a008b5aaa2728d4f427da64e1b2e750e697ba7286a",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T19:39:18.845Z"
+}

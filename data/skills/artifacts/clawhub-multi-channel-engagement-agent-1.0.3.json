@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-channel-engagement-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_channel_engagement_agent",
+  "skill": {
+    "id": 14895,
+    "skillKey": "clawhub-multi-channel-engagement-agent",
+    "name": "Multi-Channel Engagement Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-channel-engagement-agent",
+    "url": "https://clawhub.ai/skills/multi-channel-engagement-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-channel-engagement-agent-30ee1946fabcc29c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous social media engagement across Twitter, Farcaster, and Moltbook. Fetches trending content, generates persona-driven contextual replies, and tracks state to prevent duplicates. Use when you want to engage with trending posts, rep."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "story91",
+      "userId": "publishers:story91",
+      "displayName": "Story91",
+      "image": "https://avatars.githubusercontent.com/u/86015624?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770893924720,
+      "changelog": "Removed duplicate config section. Added AISA API as alternative for Twitter trending (recommended for discovery). Cleaner setup instructions with reference to sample-config.json",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1582e4010b62c7053a7468bb32b320d638be5715528695415810a34c9549d3c"
+}

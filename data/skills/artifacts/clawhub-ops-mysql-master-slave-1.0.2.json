@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ops-mysql-master-slave@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_mysql_master_slave",
+  "skill": {
+    "id": 48457,
+    "skillKey": "clawhub-ops-mysql-master-slave",
+    "name": "Ops Mysql Master Slave"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-mysql-master-slave",
+    "url": "https://clawhub.ai/skills/ops-mysql-master-slave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-mysql-master-slave-1bf64a84e09f9518.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MySQL Master-Slave Setup & Troubleshooting SOP. Covers replication setup, Percona XtraBackup large-volume migration, replica lag investigation, and cross-clo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freepengyang",
+      "userId": "s17awhsb821pah3b7qbwfbwrm584yvyq",
+      "displayName": "freepengyang",
+      "image": "https://avatars.githubusercontent.com/u/18629902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778064161569,
+      "changelog": "- Added a warning in the Percona XtraBackup restore steps to verify target IP, database name, and backup validity before proceeding, especially in production environments.\n- No other changes to the SOP content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:325a6d54a42410706b4c1f0677b9e8fe75ef481a64f371df7fb5bfa5f64e4763"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28053,
+  "uuid": "skill-clawhub-jpeng-payment-processor",
+  "skillKey": "clawhub-jpeng-payment-processor",
+  "name": "payment-processor",
+  "summary": "Process payments",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_payment_processor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "Process payments"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpeng-payment-processor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpeng-payment-processor",
+      "url": "https://clawhub.ai/skills/jpeng-payment-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-payment-processor",
+    "url": "https://clawhub.ai/skills/jpeng-payment-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-payment-processor-d7b9dfb1dc88ccab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpeng-payment-processor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpeng-payment-processor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b28fac961b9ca615b40b761e5e5f9c92c35d124281ff2aba634952c011a7d6a",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:03:06.524Z"
+}

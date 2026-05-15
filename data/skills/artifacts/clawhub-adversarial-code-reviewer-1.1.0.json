@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adversarial-code-reviewer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversarial_code_reviewer",
+  "skill": {
+    "id": 28491,
+    "skillKey": "clawhub-adversarial-code-reviewer",
+    "name": "Code Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversarial-code-reviewer",
+    "url": "https://clawhub.ai/skills/adversarial-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversarial-code-reviewer-e783ba8322acca75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct rigorous, adversarial code reviews with zero tolerance for mediocrity. Default behavior is a single-model adversarial review that identifies security..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "corbin-breton",
+      "userId": "s17e2d7wzt9cynyq8rc1g1bem583fhdd",
+      "displayName": "Corbin Breton",
+      "image": "https://avatars.githubusercontent.com/u/4294018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774833764393,
+      "changelog": "Added structural erosion detection (P14) for iterative/agent-generated code reviews — complexity concentration, verbosity drift, abstraction decay metrics",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77684388581b0d666b153caa8818e50195c478c1ea7d2466cdf473e5b0052977"
+}

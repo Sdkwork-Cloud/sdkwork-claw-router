@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32353,
+  "uuid": "skill-clawhub-ghost-mode",
+  "skillKey": "clawhub-ghost-mode",
+  "name": "Ghost Mode",
+  "summary": "Enables incognito mode to suppress and securely erase all agent memory writes and session traces upon deactivation, leaving no persistent record.",
+  "version": "1.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghost_mode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stelloxx",
+      "features": [
+        "Enables incognito mode to suppress and securely erase all agent memory writes and session trace."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghost-mode@1.2.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41505006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghost-mode",
+      "url": "https://clawhub.ai/skills/ghost-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghost-mode",
+    "url": "https://clawhub.ai/skills/ghost-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghost-mode-c4bb86cd5e6220e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghost-mode@1.2.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghost-mode-1.2.7.json",
+      "version": "1.2.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa3eb6420790b1fb6dbd88ac6b256c1dcc508831518e1362bca2c5eff1ef77fb",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:31:37.527Z"
+}

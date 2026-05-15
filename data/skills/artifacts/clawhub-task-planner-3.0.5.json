@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-planner@3.0.5",
+  "version": "3.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_planner",
+  "skill": {
+    "id": 57962,
+    "skillKey": "clawhub-task-planner",
+    "name": "Task Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-planner",
+    "url": "https://clawhub.ai/skills/task-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-planner-1d2eb65d562f82f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage tasks, set priorities, and track deadlines locally. Supports bilingual (EN/CN) documentation. 支持个人任务管理、优先级设定及到期提醒。100% private, no cloud sync. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3601,
+      "installsAllTime": 29,
+      "installsCurrent": 28,
+      "stars": 2,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "3.0.5",
+      "createdAt": 1774628728725,
+      "changelog": "Metadata alignment and security documentation. Enhanced script stability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8beb6fa9179e3380ac999075b922f4647821628802a1ab8950b9216144520d1"
+}

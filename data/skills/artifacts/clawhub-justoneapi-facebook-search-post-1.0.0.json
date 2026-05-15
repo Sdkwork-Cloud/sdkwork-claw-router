@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-facebook-search-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_facebook_search_post",
+  "skill": {
+    "id": 47492,
+    "skillKey": "clawhub-justoneapi-facebook-search-post",
+    "name": "Facebook Post Search API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-facebook-search-post",
+    "url": "https://clawhub.ai/skills/justoneapi-facebook-search-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-facebook-search-post-8ad819ccd35f728c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/facebook/search-post/v1 for Facebook Post Search through JustOneAPI with keyword."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777272311666,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d852b8171a5d7c7e0b5e50811aa6251eb06f07c665c1e0c11bb64a3bfe26bd5b"
+}

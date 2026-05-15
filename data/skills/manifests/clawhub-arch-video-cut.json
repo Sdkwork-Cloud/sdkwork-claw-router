@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69206,
+  "uuid": "skill-clawhub-arch-video-cut",
+  "skillKey": "clawhub-arch-video-cut",
+  "name": "Arch Video Cut",
+  "summary": "自动合并建筑视频，生成字幕和背景音乐，输出横屏与竖屏双版本，支持自学习优化剪辑偏好。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_video_cut",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baushua",
+      "features": [
+        "自动合并建筑视频，生成字幕和背景音乐，输出横屏与竖屏双版本，支持自学习优化剪辑偏好。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arch-video-cut@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247081860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arch-video-cut",
+      "url": "https://clawhub.ai/skills/arch-video-cut"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-video-cut",
+    "url": "https://clawhub.ai/skills/arch-video-cut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-video-cut-18a19fd13cbdc78c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arch-video-cut@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-arch-video-cut-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b464146aeec30b48b203f16b02fa88967eb91bb25593e7454b3f8c5d0e83062",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:52:23.697Z"
+}

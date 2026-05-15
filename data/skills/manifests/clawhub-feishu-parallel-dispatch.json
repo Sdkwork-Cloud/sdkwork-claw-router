@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26984,
+  "uuid": "skill-clawhub-feishu-parallel-dispatch",
+  "skillKey": "clawhub-feishu-parallel-dispatch",
+  "name": "Feishu Parallel Dispatch",
+  "summary": "Use in Feishu chats when the assistant should stay responsive while longer work continues in the background. Creates one spawned sub-agent task per substanti...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_parallel_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Da Wei",
+      "features": [
+        "Use in Feishu chats when the assistant should stay responsive while longer work continues in th.",
+        "Creates one spawned sub-agent task per substanti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-parallel-dispatch@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258555668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-parallel-dispatch",
+      "url": "https://clawhub.ai/skills/feishu-parallel-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-parallel-dispatch",
+    "url": "https://clawhub.ai/skills/feishu-parallel-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-parallel-dispatch-8d7b57273018106b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-parallel-dispatch@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-parallel-dispatch-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb0df8ee50bd332cc3969ce915e60fb041cfe96ab91f3f6d2130dceabadbcfd1",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:14:56.884Z"
+}

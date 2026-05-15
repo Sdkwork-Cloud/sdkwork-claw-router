@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14172,
+  "uuid": "skill-clawhub-asset-allocation",
+  "skillKey": "clawhub-asset-allocation",
+  "name": "Asset Allocation",
+  "summary": "Professional investment advisory skill. Use when user asks about investing, wealth management, asset allocation, fund/etf selection, retirement planning, or...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asset_allocation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codeblackhole",
+      "features": [
+        "Professional investment advisory skill",
+        "Use when user asks about investing, wealth management, asset allocation, fund/etf selection, re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asset-allocation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39405686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asset-allocation",
+      "url": "https://clawhub.ai/skills/asset-allocation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asset-allocation",
+    "url": "https://clawhub.ai/skills/asset-allocation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asset-allocation-a90ef729ad157530.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asset-allocation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-asset-allocation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:831d935717084d6ee9c7f09c8f76797747c476f0ad69b232e00920ad38f4eae5",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:53:51.225Z"
+}

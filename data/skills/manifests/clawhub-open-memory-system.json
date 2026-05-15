@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62310,
+  "uuid": "skill-clawhub-open-memory-system",
+  "skillKey": "clawhub-open-memory-system",
+  "name": "open-memory-system",
+  "summary": "三层记忆系统 — Working/Short-Term/Long-Term Memory 管理。支持自动偏好记忆、实体记忆、事件记录、L2自动提炼、Hook自动触发、Cron定期整理。用于记忆用户偏好、跨会话积累知识、自动化记忆管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_memory_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jochen",
+      "features": [
+        "三层记忆系统 — Working/Short-Term/Long-Term Memory 管理。支持自动偏好记忆、实体记忆、事件记录、L2自动提炼、Hook自动触发、Cron定期整理。用于记."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-memory-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107936988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-memory-system",
+      "url": "https://clawhub.ai/skills/open-memory-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-memory-system",
+    "url": "https://clawhub.ai/skills/open-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-memory-system-4c0d42905e19b8e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-memory-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-memory-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f99a2d8baa566de21bc28cea56bb7113326c8c9c2e6026cee13757ba6bbdfc0b",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:25:16.860Z"
+}

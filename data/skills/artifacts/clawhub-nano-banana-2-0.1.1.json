@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-2@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_2",
+  "skill": {
+    "id": 9912,
+    "skillKey": "clawhub-nano-banana-2",
+    "name": "Nano Banana 2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-2",
+    "url": "https://clawhub.ai/skills/nano-banana-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-2-15d851fa639e9d40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images with Google Gemini 3.1 Flash Image Preview (Nano Banana 2) via inference.sh CLI. Capabilities: text-to-image, image editing, multi-image inpu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2531,
+      "installsAllTime": 20,
+      "installsCurrent": 18,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772188122046,
+      "changelog": "- Updated skill to use Google Gemini 3.1 Flash Image Preview (Nano Banana 2) via inference.sh CLI.\n- New app trigger: google/gemini-3-1-flash-image-preview.\n- Added Python SDK usage example.\n- Input options and output fields revised for Gemini 3.1 Flash Image Preview capabilities.\n- Adjusted triggers and documentation links to reflect new model and version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:872bff488a21931d32a7d3cb65536d299ef00a9bd86df3255be2391c2a8a4cf6"
+}

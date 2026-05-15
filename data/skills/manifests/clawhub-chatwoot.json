@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30849,
+  "uuid": "skill-clawhub-chatwoot",
+  "skillKey": "clawhub-chatwoot",
+  "name": "Chatwoot",
+  "summary": "Chatwoot integration. Manage data, records, and automate workflows. Use when the user wants to interact with Chatwoot data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatwoot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Chatwoot integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Chatwoot data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chatwoot@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chatwoot",
+      "url": "https://clawhub.ai/skills/chatwoot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatwoot",
+    "url": "https://clawhub.ai/skills/chatwoot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatwoot-fd71002a75f30690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chatwoot@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-chatwoot-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6d3c2d42bdf2c9cd12787158f5eb31292226ab735c626c24e27612e7bd97522",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:29:27.554Z"
+}

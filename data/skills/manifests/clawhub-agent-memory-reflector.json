@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43916,
+  "uuid": "skill-clawhub-agent-memory-reflector",
+  "skillKey": "clawhub-agent-memory-reflector",
+  "name": "Agent Memory Reflector",
+  "summary": "Enables AI agents to review past decisions, identify reasoning loops, and produce insights for self-improvement to enhance their cognitive processes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_reflector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Enables AI agents to review past decisions, identify reasoning loops, and produce insights for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-reflector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-reflector",
+      "url": "https://clawhub.ai/skills/agent-memory-reflector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-reflector",
+    "url": "https://clawhub.ai/skills/agent-memory-reflector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-reflector-e550f7b924ba11ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-reflector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-reflector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b73e8bb4ba32678ce6cfeb6c70e936f291d7e98fe5ac851246fdeee2fe41029",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T21:39:38.913Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21504,
+  "uuid": "skill-clawhub-skill-quick-index",
+  "skillKey": "clawhub-skill-quick-index",
+  "name": "Skill Quick Index",
+  "summary": "Build a wide-trigger, precise-match index for local OpenClaw skills (L1-L3), then quickly route by intent/category/keywords.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_quick_index",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "Build a wide-trigger, precise-match index for local OpenClaw skills (L1-L3), then quickly route."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-quick-index@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-quick-index",
+      "url": "https://clawhub.ai/skills/skill-quick-index"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-quick-index",
+    "url": "https://clawhub.ai/skills/skill-quick-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-quick-index-bc57002eaf771142.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-quick-index@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-quick-index-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ee136403b9ae209d377698de29b7481a8c34bb6fb7e24a615f31188e7e75a65",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:51:26.395Z"
+}

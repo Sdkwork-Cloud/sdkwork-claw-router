@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omni-x@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omni_x",
+  "skill": {
+    "id": 41173,
+    "skillKey": "clawhub-omni-x",
+    "name": "Omni-X"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omni-x",
+    "url": "https://clawhub.ai/skills/omni-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omni-x-8e13dda074085606.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract X (Twitter) data including user profiles, posts, followers, followings, media, and search results. This skill provides comprehensive Twitter data ext..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hardbrick21",
+      "userId": "s178ckmrhd827wwm86x57nh6y5849ngf",
+      "displayName": "HardBrick21",
+      "image": "https://avatars.githubusercontent.com/u/25790579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775389677005,
+      "changelog": "Initial release of omni-x-data-extractor with comprehensive Twitter (X) data extraction capabilities.\n\n- Supports extraction of user profiles, tweets, followers, followings, media, and tweet search results.\n- Provides both guest (no auth) and authenticated (auth_token) access levels, with more features available when authenticated.\n- Standardized method interface and consistent response formats for success and error handling.\n- Includes detailed usage instructions and workflow for easy integration by AI agents.\n- Built-in pagination and parameter customization support for larger data queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5abb2dc778c5c7f4a9c144d58f76df7e41ed0656b839a821cb681f274077e1dc"
+}

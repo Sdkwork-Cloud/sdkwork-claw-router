@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22541,
+  "uuid": "skill-clawhub-cmux",
+  "skillKey": "clawhub-cmux",
+  "name": "Cmux",
+  "summary": "Control cmux terminal multiplexer via its Unix socket API. Use when needing to: (1) List, create, select, or close workspaces; (2) Split panes and manage sur...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmux",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangJie",
+      "features": [
+        "Control cmux terminal multiplexer via its Unix socket API",
+        "Use when needing to: (1) List, create, select, or close workspaces",
+        "(2) Split panes and manage sur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmux@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7459652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmux",
+      "url": "https://clawhub.ai/skills/cmux"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmux",
+    "url": "https://clawhub.ai/skills/cmux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmux-548d4fabc56e7b55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmux@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmux-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcf38cd9e05db3b55c488c77b91c9b1805c848120ce15d162f9fa4cc9f0648ed",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T20:27:06.902Z"
+}

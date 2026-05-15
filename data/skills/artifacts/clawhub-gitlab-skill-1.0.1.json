@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitlab-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitlab_skill",
+  "skill": {
+    "id": 38164,
+    "skillKey": "clawhub-gitlab-skill",
+    "name": "gitlab-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitlab-skill",
+    "url": "https://clawhub.ai/skills/gitlab-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitlab-skill-b499bb3555ff86c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitLab operations including creating and cloning repositories, listing projects, managing issues, merge requests, branches, commits, and pipelines. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pickbert",
+      "userId": "s17cr5qp8y0keb6waf62mr8ce5845bn6",
+      "displayName": "Albert",
+      "image": "https://avatars.githubusercontent.com/u/239332786?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775233280160,
+      "changelog": "**Improved credential management and configuration for GitLab skill.**\n\n- Added secure, layered credential loading (environment variables, user config, deprecated legacy config, runtime prompt).\n- Introduced `scripts/credential_loader.py` to show credential source and help with troubleshooting.\n- Provided a sample config file template: `scripts/config.example.json`.\n- Updated documentation with best practices, migration instructions, and troubleshooting tips.\n- Deprecated use of `scripts/config.json` for storing real credentials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5328dbb7719d28d232621595655726cd947df7034d3c44780a8bb23623e5d847"
+}

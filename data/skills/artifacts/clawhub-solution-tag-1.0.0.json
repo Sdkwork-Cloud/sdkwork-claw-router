@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solution-tag@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solution_tag",
+  "skill": {
+    "id": 68322,
+    "skillKey": "clawhub-solution-tag",
+    "name": "匹配项目solution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solution-tag",
+    "url": "https://clawhub.ai/skills/solution-tag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solution-tag-bd7843f21c487ff6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据项目属性自动匹配最合适的Solution标签，支持字段校验、优先级匹配和特殊规则验证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luorixin",
+      "userId": "s176k0ks19mpqn8rqhmn4pbja183rrsq",
+      "displayName": "luorixin",
+      "image": "https://avatars.githubusercontent.com/u/8150260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774743703660,
+      "changelog": "项目Solution自动分类工具发布初始版本，支持项目自动分配最合适的Solution标签",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb2a0492aa7af2a84c456b0ef7c5cf0edd0f63fdec46faa7c67fe80f3afd3df7"
+}

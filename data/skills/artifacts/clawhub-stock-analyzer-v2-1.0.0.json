@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analyzer-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analyzer_v2",
+  "skill": {
+    "id": 69917,
+    "skillKey": "clawhub-stock-analyzer-v2",
+    "name": "股票实时行情分析器(安全版)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analyzer-v2",
+    "url": "https://clawhub.ai/skills/stock-analyzer-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analyzer-v2-2cf944797bb6150a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股/港股实时行情查询、基本面分析、深度报告生成与邮件发送一体化工具。触发场景：(1) 用户询问股票价格、市值、PE/PB等数据；(2) 用户要求分析某只或多只股票；(3) 用户要求生成股票分析报告；(4) 用户要求通过邮件发送股票报告。支持AkShare实时行情、聚宽基本面数据、QQ邮箱/Gmail发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hitjcl",
+      "userId": "s17fcraf4fka3zh3rs6gjkpky983gfj1",
+      "displayName": "寒武纪智能Cambrian Intelligence",
+      "image": "https://avatars.githubusercontent.com/u/17725003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777525651549,
+      "changelog": "安全修复版本：移除所有硬编码敏感信息，规范凭证环境变量管理",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:177327d2841dc40f67674e90845df50cff4c661ba98f3c10ac3ff081df9c68d6"
+}

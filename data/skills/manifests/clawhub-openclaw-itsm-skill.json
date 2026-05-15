@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65590,
+  "uuid": "skill-clawhub-openclaw-itsm-skill",
+  "skillKey": "clawhub-openclaw-itsm-skill",
+  "name": "Openclaw Itsm Skill",
+  "summary": "分析嘉为蓝鲸 ITSM 工单数据，提供新工单处理建议、趋势报表、高频问题识别及 SLA 超时风险监控，支持多流程字段自动映射。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_itsm_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MichaelJochen",
+      "features": [
+        "分析嘉为蓝鲸 ITSM 工单数据，提供新工单处理建议、趋势报表、高频问题识别及 SLA 超时风险监控，支持多流程字段自动映射。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-itsm-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47848809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-itsm-skill",
+      "url": "https://clawhub.ai/skills/openclaw-itsm-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-itsm-skill",
+    "url": "https://clawhub.ai/skills/openclaw-itsm-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-itsm-skill-821b87bea7ed2b42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-itsm-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-itsm-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64a6117fd9ddee5406cf9df4e1854ec53b8c81b502dd1a1bfdb267232a98d829",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:24:19.115Z"
+}

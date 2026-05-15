@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17828,
+  "uuid": "skill-clawhub-computer",
+  "skillKey": "clawhub-computer",
+  "name": "Computer",
+  "summary": "Universal computer skill split by operating system. Comprehensive system management, hardware diagnostics, performance monitoring, and optimization across Li...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.computer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openlang",
+      "features": [
+        "Universal computer skill split by operating system",
+        "Comprehensive system management, hardware diagnostics, performance monitoring, and optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/computer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45782174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "computer",
+      "url": "https://clawhub.ai/skills/computer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "computer",
+    "url": "https://clawhub.ai/skills/computer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/computer-aa97302150fce811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/computer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-computer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e40b10ac4b11a2d38c6e6473db355091364293e51102e3ca394b22ccc0131ad",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:42:59.736Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64953,
+  "uuid": "skill-clawhub-skill-h-meeting-sync",
+  "skillKey": "clawhub-skill-h-meeting-sync",
+  "name": "skill-h-meeting-sync",
+  "summary": "【会议状态同步后台守护任务】每25分钟由 OpenClaw cron 触发一次。负责同步腾讯会议与各 Gitea 仓库之间的会议状态一致性，处理会议取消、改期、新增三种场景，并定期归档过期会议目录。不处理会议创建（用 skill-a）、会前简报（用 skill-b）、会后纪要（用 skill-c）等场景。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_h_meeting_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myd2002",
+      "features": [
+        "【会议状态同步后台守护任务】每25分钟由 OpenClaw cron 触发一次。负责同步腾讯会议与各 Gitea 仓库之间的会议状态一致性，处理会议取消、改期、新增三种场景，并定期归档过期会."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-h-meeting-sync@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165788146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-h-meeting-sync",
+      "url": "https://clawhub.ai/skills/skill-h-meeting-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-h-meeting-sync",
+    "url": "https://clawhub.ai/skills/skill-h-meeting-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-h-meeting-sync-281c32012de607e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-h-meeting-sync@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-h-meeting-sync-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9fa7edfed20c35376021866198f13d5a091388f765526170856ceed2fb88f4f",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T05:22:40.331Z"
+}

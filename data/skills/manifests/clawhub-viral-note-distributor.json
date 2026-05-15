@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64308,
+  "uuid": "skill-clawhub-viral-note-distributor",
+  "skillKey": "clawhub-viral-note-distributor",
+  "name": "Content Adaptation for Xiaohongshu, Douyin, Bilibili, WeChat",
+  "summary": "写完一篇内容，想要发到小红书、抖音、B站、公众号还要分别适配？通过渐进式确认流程，帮助你快速生成多平台适配文案，确保每个平台的内容都符合字数和风格规范。触发词：多平台分发、发到XX平台。",
+  "version": "3.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.viral_note_distributor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JRnonr",
+      "features": [
+        "写完一篇内容，想要发到小红书、抖音、B站、公众号还要分别适配？通过渐进式确认流程，帮助你快速生成多平台适配文案，确保每个平台的内容都符合字数和风格规范。触发词：多平台分发、发到XX平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/viral-note-distributor@3.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103875921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "viral-note-distributor",
+      "url": "https://clawhub.ai/skills/viral-note-distributor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "viral-note-distributor",
+    "url": "https://clawhub.ai/skills/viral-note-distributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/viral-note-distributor-a4334c74f6dccd2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/viral-note-distributor@3.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-viral-note-distributor-3.0.3.json",
+      "version": "3.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e867b0e57815f16674609402db7a43c5ddf133988a877254649e1119b30ed23",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T13:20:39.829Z"
+}

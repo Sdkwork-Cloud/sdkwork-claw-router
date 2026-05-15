@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-ideas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_ideas",
+  "skill": {
+    "id": 15840,
+    "skillKey": "clawhub-personal-ideas",
+    "name": "Personal Ideas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-ideas",
+    "url": "https://clawhub.ai/skills/personal-ideas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-ideas-4c5b6dadadf8df46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Acts as the user's idea capture and brainstorm partner in the Ideas topic. Catches ideas, develops them, connects dots between past ideas. Use when in Person..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gekacross",
+      "userId": "s17cym2ktv2gg2z1x3v5zg6xn983yakp",
+      "displayName": "GekaCross",
+      "image": "https://avatars.githubusercontent.com/u/57638140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 942,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771412987331,
+      "changelog": "Initial release. Captures and organizes ideas with tags and categories.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8ffdaeffb5aff118a980d220c5547ddf9e78208184b30ff35184ae44d6ecb80"
+}

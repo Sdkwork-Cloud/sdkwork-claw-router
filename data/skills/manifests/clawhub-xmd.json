@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15020,
+  "uuid": "skill-clawhub-xmd",
+  "skillKey": "clawhub-xmd",
+  "name": "xpr-xmd",
+  "summary": "Interact with Metal Dollar (XMD) stablecoin to mint, redeem, check supply, collateral reserves, and oracle prices with zero fees and multi-collateral support.",
+  "version": "0.2.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paulgnz",
+      "features": [
+        "Interact with Metal Dollar (XMD) stablecoin to mint, redeem, check supply, collateral reserves,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xmd@0.2.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12118160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xmd",
+      "url": "https://clawhub.ai/skills/xmd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmd",
+    "url": "https://clawhub.ai/skills/xmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmd-196c6a4071cd0ce8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xmd@0.2.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-xmd-0.2.11.json",
+      "version": "0.2.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a24faae26ec1d531e554570c1f27bb2d9dbb35c62cd8e238ea53607fb9c40622",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T22:33:14.484Z"
+}

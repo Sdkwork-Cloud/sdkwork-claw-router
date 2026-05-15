@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43703,
+  "uuid": "skill-clawhub-moltrade-1-0-9",
+  "skillKey": "clawhub-moltrade-1-0-9",
+  "name": "Moltrade 1.0.9",
+  "summary": "Operate the Moltrade trading bot (config, backtest, test-mode runs, Nostr signal broadcast, exchange adapters, strategy integration) in OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltrade_1_0_9",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhouhuihui008",
+      "features": [
+        "Operate the Moltrade trading bot (config, backtest, test-mode runs, Nostr signal broadcast, exc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltrade-1-0-9@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122507302?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltrade-1-0-9",
+      "url": "https://clawhub.ai/skills/moltrade-1-0-9"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltrade-1-0-9",
+    "url": "https://clawhub.ai/skills/moltrade-1-0-9",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltrade-1-0-9-a2ff6180876a48ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltrade-1-0-9@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltrade-1-0-9-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da77e102f33a7aeca6c04f7a28c55b931c44e0f97b1e1f50a48cfcb41e9d7e28",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:40:55.705Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23001,
+  "uuid": "skill-clawhub-drug-team",
+  "skillKey": "clawhub-drug-team",
+  "name": "Drug Team",
+  "summary": "Coordinates specialized AI agents to design novel drug candidates with synthesis routes, inventory checks, ADMET/Tox evaluation, pharmacology scoring, and pa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drug_team",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cheminem",
+      "features": [
+        "Coordinates specialized AI agents to design novel drug candidates with synthesis routes, invent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drug-team@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260304734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drug-team",
+      "url": "https://clawhub.ai/skills/drug-team"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drug-team",
+    "url": "https://clawhub.ai/skills/drug-team",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drug-team-264e0d906ffc689b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drug-team@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drug-team-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4c5355e1739eb08a25b000e2803f66e799a19f276e7afafa72aa9c93f032c7d",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:13:18.112Z"
+}

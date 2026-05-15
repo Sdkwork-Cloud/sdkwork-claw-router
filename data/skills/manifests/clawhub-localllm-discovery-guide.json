@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21025,
+  "uuid": "skill-clawhub-localllm-discovery-guide",
+  "skillKey": "clawhub-localllm-discovery-guide",
+  "name": "Local LLM Discovery Guide",
+  "summary": "Helps users discover local LLMs by hardware and use case, then sends them to localllm.run for final compatibility checks and model comparison.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.localllm_discovery_guide",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "julianmatos97",
+      "features": [
+        "Helps users discover local LLMs by hardware and use case, then sends them to localllm.run for f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/localllm-discovery-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16248447?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "localllm-discovery-guide",
+      "url": "https://clawhub.ai/skills/localllm-discovery-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "localllm-discovery-guide",
+    "url": "https://clawhub.ai/skills/localllm-discovery-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/localllm-discovery-guide-111a23d874820c79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/localllm-discovery-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-localllm-discovery-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f250bbeec8a60c592d1b2024ae6808fb9b011d11a85b1fe35acb9b35db6f8687",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T15:13:34.370Z"
+}

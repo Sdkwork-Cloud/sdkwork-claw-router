@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64783,
+  "uuid": "skill-clawhub-scraperapi-global-access",
+  "skillKey": "clawhub-scraperapi-global-access",
+  "name": "ScraperAPI Global Access",
+  "summary": "全球多国IP访问网站，支持25+国家代理、JS渲染、用户行为模拟、性能监控、断点续传。适用于广告验证、竞品分析、SEO监控、GA测试、CDN效果对比。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scraperapi_global_access",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "126shitou",
+      "features": [
+        "全球多国IP访问网站，支持25+国家代理、JS渲染、用户行为模拟、性能监控、断点续传。适用于广告验证、竞品分析、SEO监控、GA测试、CDN效果对比。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scraperapi-global-access@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208749683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scraperapi-global-access",
+      "url": "https://clawhub.ai/skills/scraperapi-global-access"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scraperapi-global-access",
+    "url": "https://clawhub.ai/skills/scraperapi-global-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scraperapi-global-access-dc1701073b20a6ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scraperapi-global-access@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scraperapi-global-access-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1dbb8497318c2bdb3018f5be56a9b949b5cdf74736760a4fe2a521c2047c560",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:52:14.094Z"
+}

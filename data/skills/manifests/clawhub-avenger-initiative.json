@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20745,
+  "uuid": "skill-clawhub-avenger-initiative",
+  "skillKey": "clawhub-avenger-initiative",
+  "name": "Avenger Initiative",
+  "summary": "Encrypted GitHub backup and restore for any OpenClaw agent system. Creates branch-per-night backups with smart retention (7 daily, 8 weekly, 12 monthly branc...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avenger_initiative",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Asif",
+      "features": [
+        "Encrypted GitHub backup and restore for any OpenClaw agent system",
+        "Creates branch-per-night backups with smart retention (7 daily, 8 weekly, 12 monthly branc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avenger-initiative@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2099592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avenger-initiative",
+      "url": "https://clawhub.ai/skills/avenger-initiative"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avenger-initiative",
+    "url": "https://clawhub.ai/skills/avenger-initiative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avenger-initiative-83e1f31c1cd96e7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avenger-initiative@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-avenger-initiative-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d5cb517eeadf68c269994a87c595ddee038c41e5ae77c15ae31f9ae75c223e8",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:44:39.135Z"
+}

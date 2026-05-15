@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workday-music-greeting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workday_music_greeting",
+  "skill": {
+    "id": 49211,
+    "skillKey": "clawhub-workday-music-greeting",
+    "name": "Workday Music Greeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workday-music-greeting",
+    "url": "https://clawhub.ai/skills/workday-music-greeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workday-music-greeting-d2b6ea32d80245f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-switch Spotify music scenes on workdays by time-of-day and send scene-matched greeting emails with inline GIFs. Combines home-music scene logic with SMT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778101651195,
+      "changelog": "Initial release: auto-switch Spotify scenes on workdays + send scene-matched GIF greeting emails",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b5e527d472848f8d9c183efedeb752ecd5fcd34af83452c41383a6c36c67a16"
+}

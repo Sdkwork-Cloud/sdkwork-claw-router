@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-openai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_openai",
+  "skill": {
+    "id": 40759,
+    "skillKey": "clawhub-video-editor-openai",
+    "name": "Video Editor Openai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-openai",
+    "url": "https://clawhub.ai/skills/video-editor-openai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-openai-439f8391cb0adb4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776795734902,
+      "changelog": "video-editor-openai 1.0.0\n\n- Initial release of AI-powered video editing skill.\n- Upload raw video footage (MP4, MOV, AVI, WebM up to 500MB) and give editing instructions via text.\n- Automated cloud render pipeline delivers fast 1080p MP4 exports ready to download.\n- Supports editing commands like cutting pauses, adding background music, text overlays, aspect ratio changes, and more.\n- No video editing software experience required; just describe the edits you want.\n- Built-in session handling, error recovery, free limited-use token support, and real-time status updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30b4d58225ff6f9d625b2e5452160a84d155ed6119ac63d04191336db5730bac"
+}

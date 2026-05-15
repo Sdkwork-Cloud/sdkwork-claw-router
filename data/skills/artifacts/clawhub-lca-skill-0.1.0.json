@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lca-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lca_skill",
+  "skill": {
+    "id": 32305,
+    "skillKey": "clawhub-lca-skill",
+    "name": "Lca Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lca-skill",
+    "url": "https://clawhub.ai/skills/lca-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lca-skill-723fc15769d146e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-guided Life Cycle Assessment using openLCA. Connects to openLCA via IPC to help non-experts build product systems, run impact assessments, and interpret r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manmeet3591",
+      "userId": "s17brrzpye60ee8d701dj1f3nn83g9wa",
+      "displayName": "Manmeet Singh",
+      "image": "https://avatars.githubusercontent.com/u/8520638?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773938927151,
+      "changelog": "Initial release of the lca-skill: AI-guided Life Cycle Assessment using openLCA.\n\n- Guides users through environmental impact assessments, even with no LCA experience.\n- Connects to openLCA via IPC, using a Python bridge script with simple CLI commands.\n- Provides a structured workflow: goal definition, process selection, product system creation, impact method selection, calculation, and result interpretation.\n- Includes prerequisite checks and step-by-step troubleshooting for openLCA setup.\n- Explains key LCA concepts and assists with results interpretation and comparison.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cba2bdd323d7d47aaaba3db25784312d306d31a4e40fc610503811dfc3237952"
+}

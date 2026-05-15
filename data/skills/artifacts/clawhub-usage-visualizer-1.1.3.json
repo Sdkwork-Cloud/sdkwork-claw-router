@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/usage-visualizer@1.1.3",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usage_visualizer",
+  "skill": {
+    "id": 19635,
+    "skillKey": "clawhub-usage-visualizer",
+    "name": "Usage Visualizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usage-visualizer",
+    "url": "https://clawhub.ai/skills/usage-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usage-visualizer-724cfb44bfe625ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced usage statistics and high-fidelity visual reporting for OpenClaw. 100% local processing. Audit-verified privacy (No credentials stored)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vintlin",
+      "userId": "s17adgm9mk40kgfmm51yrx3bj983hymj",
+      "displayName": "Vint",
+      "image": "https://avatars.githubusercontent.com/u/26142850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 998,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.3",
+      "createdAt": 1771753339893,
+      "changelog": "v1.1.3: Privacy Clarity. Renamed all internal api_key references to source_id to avoid audit confusion. Explicitly verified no credentials are stored.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63877c413b1813db0c18277cc90c68260e23fa7cf88791af337687f26fc43dd2"
+}

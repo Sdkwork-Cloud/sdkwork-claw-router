@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68557,
+  "uuid": "skill-clawhub-stock-realtime-brief",
+  "skillKey": "clawhub-stock-realtime-brief",
+  "name": "Stock Realtime Brief",
+  "summary": "A股实时分析与可执行操作建议生成器。支持三种模式：(1) 持仓简报模式 — 针对用户持仓出盘前/盘中风险简报，含融资风险体检与重要公告检测；(2) 单股深度模式 — 针对一只股票出技术面 + 操作位 + 三档止损方案；(3) 多股对比模式 — 针对多只股票（自选股/同板块/比价）做横向对比与综合评分。触发短语：盘...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_realtime_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michaelliugh",
+      "features": [
+        "A股实时分析与可执行操作建议生成器。支持三种模式：(1) 持仓简报模式 — 针对用户持仓出盘前/盘中风险简报，含融资风险体检与重要公告检测；(2) 单股深度模式 — 针对一只股票出技术面 +."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-realtime-brief@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256581263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-realtime-brief",
+      "url": "https://clawhub.ai/skills/stock-realtime-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-realtime-brief",
+    "url": "https://clawhub.ai/skills/stock-realtime-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-realtime-brief-129b4ef311563fa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-realtime-brief@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-realtime-brief-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af7c77846e7133158bc6caa481e2a941015bc4a0df37984b6a8579afb09849bb",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T03:17:49.826Z"
+}

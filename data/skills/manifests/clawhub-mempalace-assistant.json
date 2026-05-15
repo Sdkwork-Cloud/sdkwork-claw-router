@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69569,
+  "uuid": "skill-clawhub-mempalace-assistant",
+  "skillKey": "clawhub-mempalace-assistant",
+  "name": "MemPalace记忆系统助手",
+  "summary": "MemPalace记忆系统助手 - 基于老四的AI记忆系统。提供结构化记忆存储、快速检索、记忆组织等功能。适用于需要持久化知识、跨会话记忆、语义搜索等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mempalace_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "MemPalace记忆系统助手",
+        "基于老四的AI记忆系统。提供结构化记忆存储、快速检索、记忆组织等功能。适用于需要持久化知识、跨会话记忆、语义搜索等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mempalace-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mempalace-assistant",
+      "url": "https://clawhub.ai/skills/mempalace-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mempalace-assistant",
+    "url": "https://clawhub.ai/skills/mempalace-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mempalace-assistant-74dc2845e227f26b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mempalace-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mempalace-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d76e05884062f3fbea1de928950c796557a019c46fad1b6944d29779885c551c",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T03:36:34.363Z"
+}

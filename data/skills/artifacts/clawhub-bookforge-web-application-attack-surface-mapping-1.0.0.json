@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-web-application-attack-surface-mapping@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_web_application_attack_surface_mapping",
+  "skill": {
+    "id": 47685,
+    "skillKey": "clawhub-bookforge-web-application-attack-surface-mapping",
+    "name": "Web Application Attack Surface Mapping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-web-application-attack-surface-mapping",
+    "url": "https://clawhub.ai/skills/bookforge-web-application-attack-surface-mapping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-web-application-attack-surface-mapping-58db2aa6af5ce9c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematically map a web application's content, entry points, technologies, and attack surface during authorized security testing or security-focused code re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777463027718,
+      "changelog": "Initial release — enables systematic web application attack surface mapping before active security testing.\n\n- Maps application content, functional paths, hidden directories/files, and user-input entry points via spidering, source/code analysis, and HTTP traffic review.\n- Fingerprints server-side technologies from HTTP responses, codebase artifacts, and file naming conventions.\n- Produces a structured attack surface map: enumerated URLs, entry points, technology stack details, and a prioritized vulnerability checklist.\n- Designed for authorized security assessment scenarios (penetration tests, bug bounties, secure code review).\n- Focuses on reconnaissance and mapping only — does not perform or automate active exploitation.\n- Provides clear input requirements, use cases, scope boundaries, and step-by-step methodology for practitioners.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e2118b1b2586ed655b44ad2d6c2924450c45782cc7aac9d58be0e007a83aa7f"
+}

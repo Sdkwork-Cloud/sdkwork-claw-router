@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33741,
+  "uuid": "skill-clawhub-feishu-rate-limit",
+  "skillKey": "clawhub-feishu-rate-limit",
+  "name": "Feishu Rate Limit",
+  "summary": "Feishu/Lark API rate limit handling strategy. Automatically activates during Feishu API calls to implement smart interval control and 429 error handling. Ess...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_rate_limit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dingsunrise",
+      "features": [
+        "Feishu/Lark API rate limit handling strategy",
+        "Automatically activates during Feishu API calls to implement smart interval control and 429 err."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-rate-limit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30789943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-rate-limit",
+      "url": "https://clawhub.ai/skills/feishu-rate-limit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-rate-limit",
+    "url": "https://clawhub.ai/skills/feishu-rate-limit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-rate-limit-98bb449cae07ae36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-rate-limit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-rate-limit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6306413cf9e76ee5d7971a45cdb59bbb61efb6ad7ec789399255aa2db51ec232",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:27:24.244Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/joyin-robot-control@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joyin_robot_control",
+  "skill": {
+    "id": 51404,
+    "skillKey": "clawhub-joyin-robot-control",
+    "name": "JoyIn Robot Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joyin-robot-control",
+    "url": "https://clawhub.ai/skills/joyin-robot-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joyin-robot-control-f7749ea4db0d4382.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control JoyIn AI robots (W-1 Walle / M-1 Mini) — movement, follow, photo, video, live stream, TTS, agent config, and device status via OpenAPI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanfang724",
+      "userId": "publishers:yanfang724",
+      "displayName": "yanfang724",
+      "image": "https://avatars.githubusercontent.com/u/2231008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773508498976,
+      "changelog": "Add preflight check command and state-aware agent workflow rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:208fb0c73771fd3d28d47dfd8abf825c4ea108d6e7f3ab024fe5f568a8aa2af0"
+}

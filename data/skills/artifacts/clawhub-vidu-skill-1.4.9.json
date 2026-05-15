@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vidu-skill@1.4.9",
+  "version": "1.4.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_skill",
+  "skill": {
+    "id": 13430,
+    "skillKey": "clawhub-vidu-skill",
+    "name": "Vidu official video generation. Image to video / Text to video / Reference to video / Text to image / Reference to image / Vide."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-skill",
+    "url": "https://clawhub.ai/skills/vidu-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-skill-c15ec21b73f8b0b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate video and images by calling the official Vidu API via vidu CLI. Use when the user wants text-to-image, text-to-video, image-to-video, head-tail-imag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvinzhao",
+      "userId": "s17d9w7zzc60vwegqc57jxp9ax83p3ay",
+      "displayName": "Calvin.Zhao",
+      "image": "https://avatars.githubusercontent.com/u/4846201?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 658,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 8,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.4.9",
+      "createdAt": 1777973791872,
+      "changelog": "**Expanded input support for advanced video and audio generation; adds new cost queries.**\n\n- Added support for `--video` and `--audio` inputs in `character2video` tasks with model 3.2_a (local files only; URLs not supported).\n- Introduced new commands: `task tts-cost` and `task lip-sync-cost` to estimate credit used for TTS and lip-sync tasks.\n- Updated input behavior and documentation for handling images, video, and audio, including input validation details.\n- English documentation file renamed; added Chinese README (`README.zh.md`).\n- Improved descriptions for supported model variants and advanced reference/video generation features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d21a32d3ac06773f0f077dd411e734a6cc9f7277a3ff5c9314a00ea51aca863"
+}

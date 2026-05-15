@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft-ads-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_ads_mcp",
+  "skill": {
+    "id": 10469,
+    "skillKey": "clawhub-microsoft-ads-mcp",
+    "name": "Microsoft Ads MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-ads-mcp",
+    "url": "https://clawhub.ai/skills/microsoft-ads-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-ads-mcp-5d4ba08c788d142a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage Microsoft Advertising campaigns (Bing Ads / DuckDuckGo Ads) via MCP server - campaigns, ad groups, keywords, ads, and reporting"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duartemartins",
+      "userId": "publishers:duartemartins",
+      "displayName": "Duartemartins",
+      "image": "https://avatars.githubusercontent.com/u/15674069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2363,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769449642602,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1aeec6cee03b6eca34319840e2b1824adc6e818cdf1f0d4f2f60db9cf1923846"
+}

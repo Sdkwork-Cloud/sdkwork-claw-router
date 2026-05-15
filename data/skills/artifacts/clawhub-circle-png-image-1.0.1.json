@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/circle-png-image@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.circle_png_image",
+  "skill": {
+    "id": 36654,
+    "skillKey": "clawhub-circle-png-image",
+    "name": "circle-png-image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "circle-png-image",
+    "url": "https://clawhub.ai/skills/circle-png-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/circle-png-image-40c1b8e9662e851d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PNG images into circular PNG avatars with transparent corners. Use when the user asks to crop, mask, cut out, or convert a PNG image into a circle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charmingzuo",
+      "userId": "s17c2zbswdzwygt9p5ndachbbd85zrfg",
+      "displayName": "charming.zuo",
+      "image": "https://avatars.githubusercontent.com/u/2429983?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777776053049,
+      "changelog": "No changes detected in this version.\n\n- No updates or modifications were made to the files.\n- The skill remains at version 1.0.0 with the same features and behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86903182c34b2247782b6fe03d3304440f02c561a6c0bacf80a83f818fcbaf76"
+}

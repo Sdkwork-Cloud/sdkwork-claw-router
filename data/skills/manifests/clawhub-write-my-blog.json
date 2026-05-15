@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15443,
+  "uuid": "skill-clawhub-write-my-blog",
+  "skillKey": "clawhub-write-my-blog",
+  "name": "Write My Blog",
+  "summary": "Enables the agent to create, manage, and publish a full-featured blog autonomously. The agent can write posts, upload media, switch between 10 premium design...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.write_my_blog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harsh Raj",
+      "features": [
+        "Enables the agent to create, manage, and publish a full-featured blog autonomously",
+        "The agent can write posts, upload media, switch between 10 premium design..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/write-my-blog@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55756393?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "write-my-blog",
+      "url": "https://clawhub.ai/skills/write-my-blog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "write-my-blog",
+    "url": "https://clawhub.ai/skills/write-my-blog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/write-my-blog-6588249515586ffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/write-my-blog@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-write-my-blog-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f1561549faff363bf6fe0130f717ecedddcbec117766fa9c1132179449a60ae",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T07:42:32.240Z"
+}

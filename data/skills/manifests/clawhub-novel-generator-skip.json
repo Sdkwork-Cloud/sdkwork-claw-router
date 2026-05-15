@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68525,
+  "uuid": "skill-clawhub-novel-generator-skip",
+  "skillKey": "clawhub-novel-generator-skip",
+  "name": "Novel Generator Skip",
+  "summary": "根据用户提供的内容方向自动生成提示词并创作爽文小说。适用场景：(1) 用户提供小说方向/题材/关键词，(2) 需要生成章节连贯的长篇爽文，(3) 需要维护角色、地点、情节的连续性，(4) 需要为关键情节生成图解，(5) 需要记录生成失败场景以优化后续创作。支持都市、修仙、玄幻、重生、系统流等多种题材。Use wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_generator_skip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junge",
+      "features": [
+        "根据用户提供的内容方向自动生成提示词并创作爽文小说。适用场景：(1) 用户提供小说方向/题材/关键词，(2) 需要生成章节连贯的长篇爽文，(3) 需要维护角色、地点、情节的连续性，(4) 需."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-generator-skip@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235723176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-generator-skip",
+      "url": "https://clawhub.ai/skills/novel-generator-skip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-generator-skip",
+    "url": "https://clawhub.ai/skills/novel-generator-skip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-generator-skip-7f19a8d512e2f752.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-generator-skip@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-generator-skip-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba942ae5d9c216c84ef34dd77bd95975a59abac19c7e8e3a5fcb6753dbd71ec2",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:06:42.100Z"
+}

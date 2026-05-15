@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chemistry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chemistry",
+  "skill": {
+    "id": 12830,
+    "skillKey": "clawhub-chemistry",
+    "name": "Chemistry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chemistry",
+    "url": "https://clawhub.ai/skills/chemistry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chemistry-de0152f952776f09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Support chemistry learning from kitchen experiments to molecular research."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1357,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770753503663,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:520a1549c9b673f77c3f2558772a3bb1241ec9de0c9f807726789b9a3387249f"
+}

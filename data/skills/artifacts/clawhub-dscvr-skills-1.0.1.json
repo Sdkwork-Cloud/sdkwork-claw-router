@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dscvr-skills@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dscvr_skills",
+  "skill": {
+    "id": 36339,
+    "skillKey": "clawhub-dscvr-skills",
+    "name": "DSCVR Intelligence Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dscvr-skills",
+    "url": "https://clawhub.ai/skills/dscvr-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dscvr-skills-d085e239132cc900.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query DSCVR crypto intelligence APIs for market news, event tracking, smart money analysis, prediction market data, AI-powered event discovery, market orderb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dscvr-release",
+      "userId": "s177c8g5tvfp31q437my0sp4r983q31n",
+      "displayName": "dscvr-release",
+      "image": "https://avatars.githubusercontent.com/u/258552214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776767171950,
+      "changelog": "- Added .gitignore file to the repository.\n- Updated documentation: changed API base URL default from `https://api.dscvr.one` to `https://dscvr.one`.\n- Adjusted the default `--limit` value for the \"Get Event List\" tool from 20 to 10.\n- Minor clarification in smart money trader search: `--keyword` now described as \"Fuzzy search by name or bio\".\n- No changes to skill functionality; version bump is for documentation and housekeeping only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5703ddb3db1729ad55eebb1d055dc9c48304fc05b7208fa01f637c7dafa0aee4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-with-no-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_with_no_ai",
+  "skill": {
+    "id": 47733,
+    "skillKey": "clawhub-video-editor-with-no-ai",
+    "name": "Video Editor With No Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-with-no-ai",
+    "url": "https://clawhub.ai/skills/video-editor-with-no-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-with-no-ai-eeeb4badc8552a92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute unedited screen recording into 1080p edited video clips just by typing what you need. Whether it's trimming and cutting videos without AI aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777173464403,
+      "changelog": "Initial release of Video Editor With No AI — edit and export videos manually on cloud GPUs.\n\n- Upload raw video clips and describe the edits you want (trimming, cutting, transitions, etc).\n- No timeline dragging or export settings — get a 1080p MP4 export in 1–2 minutes from upload.\n- Simple setup: free credits with anonymous token; connects automatically.\n- All video editing operations are manual, with no AI automation.\n- Supports common formats (MP4, MOV, AVI, WebM, etc); max 500MB per file.\n- Includes session handling, job status, and summary feedback in plain language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63a0822880bbcc3a022de9908d78735a352704a49e889adbe80692ec9ee7ae37"
+}

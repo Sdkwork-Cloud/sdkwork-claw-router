@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52336,
+  "uuid": "skill-clawhub-delegate-task",
+  "skillKey": "clawhub-delegate-task",
+  "name": "Delegate Task",
+  "summary": "Delegate tasks to OpenSpace — a full-stack autonomous worker for coding, DevOps, web research, and desktop automation, backed by an extensive MCP tool and sk...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delegate_task",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tcbywing",
+      "features": [
+        "Delegate tasks to OpenSpace — a full-stack autonomous worker for coding, DevOps, web research,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delegate-task@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16176083?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delegate-task",
+      "url": "https://clawhub.ai/skills/delegate-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delegate-task",
+    "url": "https://clawhub.ai/skills/delegate-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delegate-task-81de5f0fa19522d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delegate-task@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delegate-task-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:090e388cb3d9b820d01d06a19a8c47785c66438057184dfb4cf692bbe48e6cac",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T07:48:44.221Z"
+}

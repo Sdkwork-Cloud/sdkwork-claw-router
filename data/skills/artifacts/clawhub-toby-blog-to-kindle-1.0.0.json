@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-blog-to-kindle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_blog_to_kindle",
+  "skill": {
+    "id": 42894,
+    "skillKey": "clawhub-toby-blog-to-kindle",
+    "name": "blog-to-kindle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-blog-to-kindle",
+    "url": "https://clawhub.ai/skills/toby-blog-to-kindle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-blog-to-kindle-70d9e55193809081.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape blogs/essay sites and compile into Kindle-friendly EPUB with AI-generated cover. Use for requests to download blogs for Kindle, compile essays into eb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776824655156,
+      "changelog": "Initial release of blog-to-kindle skill.\n\n- Scrape supported blogs/essay sites and compile into Kindle-ready EPUB, including AI-generated cover art.\n- Supports Paul Graham, Kevin Kelly, Derek Sivers, Wait But Why, Astral Codex Ten, plus custom sites.\n- Step-by-step workflow: fetch posts, generate cover, compile EPUB, send to Kindle.\n- Requires SkillBoss API key for image generation.\n- Tracks sent/fetched articles for incremental updates.\n- Includes quickstart scripts and detailed manual workflow instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d57f84e3b0281831d4f640b613d4742561ee129bd6a9b904b67f66717ea3e87"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/j@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.j",
+  "skill": {
+    "id": 27753,
+    "skillKey": "clawhub-j",
+    "name": "J"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "j",
+    "url": "https://clawhub.ai/skills/j",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/j-189f40034be7a199.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Short alias skill for joining, merging, or combining files, data, or strings. Use when you need to concatenate or merge content from multiple sources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlang-cn",
+      "userId": "s17dqxdtqm3n7dpc7r06vmnqfd83gw7r",
+      "displayName": "openlang",
+      "image": "https://avatars.githubusercontent.com/u/45782174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773327205854,
+      "changelog": "- Initial release of the **j** skill for quickly joining, merging, or combining files, data, or strings.\n- Provides concise command examples covering file, text, JSON, CSV/TSV, code files, and URL/parameter merging.\n- Includes practical tips on sorting, deduplication, encoding, and handling large files.\n- Offers advanced techniques with common CLI tools (cat, paste, awk, jq, etc.) for robust merging operations.\n- Skill guide features clear usage scenarios and best practices for safe and efficient content merging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b04edcb1af69a5431d8354efb8ae5242e85f6a29e6188ec7f9335e189475450c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71016,
+  "uuid": "skill-clawhub-wechat-oa",
+  "skillKey": "clawhub-wechat-oa",
+  "name": "Wechat Oa",
+  "summary": "微信公众号草稿箱管理工具集。触发词（满足任一即触发）：看看草稿箱/查看草稿/草稿列表/公众号草稿/搜草稿/搜索草稿/按关键词找草稿/按标题搜/创建草稿/新建草稿/发文章到公众号/推送文章/更新草稿/删除草稿/批量删除草稿/生成封面图/上传图片到公众号/上传图片到素材库/已发布文章列表/公众号素材列表/素材管理/删...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_oa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Woody",
+      "features": [
+        "微信公众号草稿箱管理工具集。触发词（满足任一即触发）：看看草稿箱/查看草稿/草稿列表/公众号草稿/搜草稿/搜索草稿/按关键词找草稿/按标题搜/创建草稿/新建草稿/发文章到公众号/推送文章/更."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-oa@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224760128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-oa",
+      "url": "https://clawhub.ai/skills/wechat-oa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-oa",
+    "url": "https://clawhub.ai/skills/wechat-oa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-oa-eedf12dc3f782939.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-oa@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-oa-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7c97ff378eeee3a419c7915dcf2e9bd8d5d1d8669e55f21053690415d22951c",
+      "artifactSizeBytes": 2128
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T02:59:17.533Z"
+}

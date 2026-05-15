@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46393,
+  "uuid": "skill-clawhub-abel-agent-task-manager",
+  "skillKey": "clawhub-abel-agent-task-manager",
+  "name": "Agent Task Manager",
+  "summary": "Manages and orchestrates multi-step, stateful agent workflows; handles task dependencies, persistent state, error recovery, and external rate-limiting. Use f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abel_agent_task_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Manages and orchestrates multi-step, stateful agent workflows",
+        "handles task dependencies, persistent state, error recovery, and external rate-limiting",
+        "Use f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abel-agent-task-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abel-agent-task-manager",
+      "url": "https://clawhub.ai/skills/abel-agent-task-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abel-agent-task-manager",
+    "url": "https://clawhub.ai/skills/abel-agent-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abel-agent-task-manager-f4bd3c90acb3d7e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abel-agent-task-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abel-agent-task-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18bb8e0eba6e5c7344043840b2a58c0ce200a4d328e3bac5a305ec1b51ace261",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:43:27.951Z"
+}

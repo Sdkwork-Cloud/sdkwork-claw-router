@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17246,
+  "uuid": "skill-clawhub-clawcrm",
+  "skillKey": "clawhub-clawcrm",
+  "name": "Clawcrm",
+  "summary": "Agent-native CRM built for AI agents to manage sales pipelines autonomously",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcrm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "giorgallidis",
+      "features": [
+        "Agent-native CRM built for AI agents to manage sales pipelines autonomously"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawcrm@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59040520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawcrm",
+      "url": "https://clawhub.ai/skills/clawcrm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcrm",
+    "url": "https://clawhub.ai/skills/clawcrm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcrm-2a68b4fbf3f208f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawcrm@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawcrm-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f6c263156af0b7198809567f59898cfd8ab62f993784bbf058c7ce9d35a3ca9",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:57:13.121Z"
+}

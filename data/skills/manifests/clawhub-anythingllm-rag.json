@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22400,
+  "uuid": "skill-clawhub-anythingllm-rag",
+  "skillKey": "clawhub-anythingllm-rag",
+  "name": "anythingllm-rag",
+  "summary": "Query local documents via AnythingLLM RAG (Retrieval-Augmented Generation). Use when the user asks about their private/local documents, PDFs, uploaded files,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anythingllm_rag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Scott Tian",
+      "features": [
+        "Query local documents via AnythingLLM RAG (Retrieval-Augmented Generation)",
+        "Use when the user asks about their private/local documents, PDFs, uploaded files,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anythingllm-rag@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19387608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anythingllm-rag",
+      "url": "https://clawhub.ai/skills/anythingllm-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anythingllm-rag",
+    "url": "https://clawhub.ai/skills/anythingllm-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anythingllm-rag-39defd182e744dcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anythingllm-rag@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anythingllm-rag-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f221561b06153640581a69550506d050af78345871bcdeea8e0b3563b92aea3",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:57:00.129Z"
+}

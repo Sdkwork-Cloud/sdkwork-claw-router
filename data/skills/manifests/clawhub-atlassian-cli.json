@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14116,
+  "uuid": "skill-clawhub-atlassian-cli",
+  "skillKey": "clawhub-atlassian-cli",
+  "name": "Atlassian aCLI Reference Skill for Jira and Confluence",
+  "summary": "Reference guide for the Atlassian CLI (acli) - a command-line tool for interacting with Jira Cloud and Atlassian organization administration. Use this skill...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlassian_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peetzweg/",
+      "features": [
+        "Reference guide for the Atlassian CLI (acli)",
+        "a command-line tool for interacting with Jira Cloud and Atlassian organization administration",
+        "Use this skill..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atlassian-cli@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/839848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atlassian-cli",
+      "url": "https://clawhub.ai/skills/atlassian-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlassian-cli",
+    "url": "https://clawhub.ai/skills/atlassian-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlassian-cli-05838e3655a4a943.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atlassian-cli@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-atlassian-cli-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf420c90e3671fc4422813dc93565f3485e5983b1b1f72d276948479b504fd88",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T15:34:51.883Z"
+}

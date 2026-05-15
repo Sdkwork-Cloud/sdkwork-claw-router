@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68817,
+  "uuid": "skill-clawhub-mar-douyin-hot-trend",
+  "skillKey": "clawhub-mar-douyin-hot-trend",
+  "name": "mar-douyin-hot-trend",
+  "summary": "获取抖音热榜/热搜榜数据，包含热门视频、挑战赛、音乐等多领域热门内容，并输出标题、热度值、跳转链接及封面图（如有）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mar_douyin_hot_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarjorieBroad",
+      "features": [
+        "获取抖音热榜/热搜榜数据，包含热门视频、挑战赛、音乐等多领域热门内容，并输出标题、热度值、跳转链接及封面图（如有）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mar-douyin-hot-trend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260425366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mar-douyin-hot-trend",
+      "url": "https://clawhub.ai/skills/mar-douyin-hot-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mar-douyin-hot-trend",
+    "url": "https://clawhub.ai/skills/mar-douyin-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mar-douyin-hot-trend-d0bde1ddf119dbaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mar-douyin-hot-trend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mar-douyin-hot-trend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21228aaf01e28c3fb80cd0743a1380f64074bec570e2df391c1a1ad43fed28b3",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:40:15.732Z"
+}

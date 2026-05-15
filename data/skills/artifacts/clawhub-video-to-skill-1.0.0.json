@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_skill",
+  "skill": {
+    "id": 61997,
+    "skillKey": "clawhub-video-to-skill",
+    "name": "Youtube To Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-skill",
+    "url": "https://clawhub.ai/skills/video-to-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-skill-5f4f3d6a4924c96e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动从任意视频链接（YouTube、Bilibili、西瓜视频、抖音、小红书视频等）生成 OpenClaw Skill 并上传到 GitHub。用户分享任意视频链接，希望将其内容自动转化为 Skill 时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eeyan2025-art",
+      "userId": "s175sr2n8vwbqbe642v159kt1184fehy",
+      "displayName": "eeyan2025-art",
+      "image": "https://avatars.githubusercontent.com/u/259014150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775629757677,
+      "changelog": "- Initial release: Automatically converts online video content to an OpenClaw Skill and uploads it to GitHub.\n- Supports YouTube, Bilibili, Xigua, Douyin, Xiaohongshu, and more for subtitle/audio extraction.\n- Unified workflow: detects platform, extracts content, transcribes and summarizes, generates SKILL.md, and pushes to GitHub.\n- Robust fallback mechanisms for subtitle/audio extraction and error handling.\n- Outputs both the generated SKILL.md file path and the GitHub link for easy access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bec8d4f0b263fa3dec8258c8020f20ca9f845b906ba45818eb32571b0e02fbe"
+}

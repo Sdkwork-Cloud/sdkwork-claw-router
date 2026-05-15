@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unit",
+  "skill": {
+    "id": 72422,
+    "skillKey": "clawhub-unit",
+    "name": "Unit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unit",
+    "url": "https://clawhub.ai/skills/unit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unit-385cfdbc00ec3203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "单位全能换算技能，支持长度、重量、面积、体积、温度、时间、速度、数据存储、能量、功率、压力等基础单位换算，以及150+货币实时汇率换算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlang-cn",
+      "userId": "s17dqxdtqm3n7dpc7r06vmnqfd83gw7r",
+      "displayName": "openlang",
+      "image": "https://avatars.githubusercontent.com/u/45782174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773395352576,
+      "changelog": "- Reformatted SKILL.md for improved readability (fixed line breaks and spacing).\n- No changes to skill logic or functionality.\n- No file changes detected beyond formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e033f603cd3c998daf71d05c0f92d8c069edf410ecad5711751c961886d51e7"
+}

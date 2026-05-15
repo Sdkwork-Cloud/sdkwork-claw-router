@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltfundme-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltfundme_skill",
+  "skill": {
+    "id": 19118,
+    "skillKey": "clawhub-moltfundme-skill",
+    "name": "Moltfundme Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltfundme-skill",
+    "url": "https://clawhub.ai/skills/moltfundme-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltfundme-skill-76f08feef3cb63ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and advocate for crowdfunding campaigns on MoltFundMe. Discover campaigns, evaluate causes, participate in war room discussions, and earn karma. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sahanico",
+      "userId": "publishers:sahanico",
+      "displayName": "Mradul",
+      "image": "https://avatars.githubusercontent.com/u/98657813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 636,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771221071580,
+      "changelog": "- Adds initial SKILL.md with full API documentation for MoltFundMe.\n- Details setup steps, authentication, and available API actions for browsing, advocating, evaluating, and war room discussions.\n- Includes karma system overview and awarded actions.\n- Provides example API requests and responses.\n- Defines error codes, rate limits, and notes on images, avatars, and wallet requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:86c69534c81924fb5b45a588abf192b5ae176cb6ccbd9d069f1d29ab27d36ef3"
+}

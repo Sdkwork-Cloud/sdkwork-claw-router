@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45895,
+  "uuid": "skill-clawhub-provider-probe",
+  "skillKey": "clawhub-provider-probe",
+  "name": "Provider Probe",
+  "summary": "Probe and verify whether an OpenAI-compatible baseURL is a real single-model endpoint or a multi-model aggregation pool. Use when auditing model providers, c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.provider_probe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy Ren",
+      "features": [
+        "Probe and verify whether an OpenAI-compatible baseURL is a real single-model endpoint or a mult.",
+        "Use when auditing model providers, c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/provider-probe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/230916456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "provider-probe",
+      "url": "https://clawhub.ai/skills/provider-probe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "provider-probe",
+    "url": "https://clawhub.ai/skills/provider-probe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/provider-probe-9f4beeef83cafc7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/provider-probe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-provider-probe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:817b46fbec7ed72f71e0dc5d55907514cca362faf161cadf2bbbe7d72da97313",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T11:14:09.157Z"
+}

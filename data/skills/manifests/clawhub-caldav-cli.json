@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12481,
+  "uuid": "skill-clawhub-caldav-cli",
+  "skillKey": "clawhub-caldav-cli",
+  "name": "Caldav Cli",
+  "summary": "Manage CalDAV calendars (iCloud, Google, Yandex) from the command line. Supports OAuth2 and Basic auth, multi-account, table/JSON output.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caldav_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyberash-dev",
+      "features": [
+        "Manage CalDAV calendars (iCloud, Google, Yandex) from the command line",
+        "Supports OAuth2 and Basic auth, multi-account, table/JSON output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caldav-cli@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20923684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caldav-cli",
+      "url": "https://clawhub.ai/skills/caldav-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caldav-cli",
+    "url": "https://clawhub.ai/skills/caldav-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caldav-cli-d864b041931f216d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caldav-cli@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-caldav-cli-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab2c0deebee11fc30f9f1c1c78bd8907329500367c576355fd1506e9746a5e58",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T19:55:37.079Z"
+}

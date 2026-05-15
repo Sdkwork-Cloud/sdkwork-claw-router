@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50331,
+  "uuid": "skill-clawhub-crypto-executor-optimizer",
+  "skillKey": "clawhub-crypto-executor-optimizer",
+  "name": "Crypto Executor Optimizer",
+  "summary": "Autonomous optimizer skill for Wesley — reads Binance trading performance every 6 hours, analyzes win rate and strategy metrics, then safely tunes executor.p...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_executor_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Autonomous optimizer skill for Wesley — reads Binance trading performance every 6 hours, analyz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-executor-optimizer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-executor-optimizer",
+      "url": "https://clawhub.ai/skills/crypto-executor-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-executor-optimizer",
+    "url": "https://clawhub.ai/skills/crypto-executor-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-executor-optimizer-fe8effad28373e7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-executor-optimizer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-executor-optimizer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad2dc8ce590cafb3ca683fbf1cc1672d65f419c77a00f965b3d2d5cd37a6ccbb",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T02:51:09.331Z"
+}

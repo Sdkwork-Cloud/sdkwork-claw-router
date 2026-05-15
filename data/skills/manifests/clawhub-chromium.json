@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52467,
+  "uuid": "skill-clawhub-chromium",
+  "skillKey": "clawhub-chromium",
+  "name": "Chromium",
+  "summary": "Launch a persistent headless Chromium with remote debugging (CDP) for browser automation — page navigation, clicks, form filling, screenshots, and cookie imp...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromium",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "redf426",
+      "features": [
+        "Launch a persistent headless Chromium with remote debugging (CDP) for browser automation — page."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chromium@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63651057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chromium",
+      "url": "https://clawhub.ai/skills/chromium"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromium",
+    "url": "https://clawhub.ai/skills/chromium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromium-ddf8d310d2169330.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chromium@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chromium-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12aff753510b767f911006643c085e5d057a2e9ab86129c7917459e884695486",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T20:13:04.138Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-analytics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_analytics",
+  "skill": {
+    "id": 16579,
+    "skillKey": "clawhub-openrouter-analytics",
+    "name": "OpenRouter Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-analytics",
+    "url": "https://clawhub.ai/skills/openrouter-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-analytics-bcce58465506faf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Review OpenRouter usage, analytics, and troubleshooting data via API. Use when the user asks for spend/usage monitoring, activity trends, per-key management..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plgonzalezrx8",
+      "userId": "publishers:plgonzalezrx8",
+      "displayName": "Pedro Gonzalez",
+      "image": "https://avatars.githubusercontent.com/u/19900049?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 869,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771435088538,
+      "changelog": "Initial release: management analytics + request-level troubleshooting for OpenRouter",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:208b8367fc4635e5df2a121dba43c63c53b6135cafd60e5f0008d95b4a48e7bb"
+}

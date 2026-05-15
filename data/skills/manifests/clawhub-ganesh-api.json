@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39375,
+  "uuid": "skill-clawhub-ganesh-api",
+  "skillKey": "clawhub-ganesh-api",
+  "name": "Ganesh API",
+  "summary": "Ganesh Image Hosting API for image hosting. Use when user mentions \"Ganesh\", \"upload image\", \"image hosting\", or asks about image sharing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ganesh_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidbergman121",
+      "features": [
+        "Ganesh Image Hosting API for image hosting",
+        "Use when user mentions \"Ganesh\", \"upload image\", \"image hosting\", or asks about image sharing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ganesh-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270659359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ganesh-api",
+      "url": "https://clawhub.ai/skills/ganesh-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ganesh-api",
+    "url": "https://clawhub.ai/skills/ganesh-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ganesh-api-cfc5675e4354c72f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ganesh-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ganesh-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51e0a441f194fde599a5970a63fb51a3b280424673ed877a37bca249e36a7221",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T16:27:52.231Z"
+}

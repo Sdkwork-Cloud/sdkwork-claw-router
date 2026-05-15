@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nm-conjure-delegation-core@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_conjure_delegation_core",
+  "skill": {
+    "id": 33995,
+    "skillKey": "clawhub-nm-conjure-delegation-core",
+    "name": "Nm Conjure Delegation Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-conjure-delegation-core",
+    "url": "https://clawhub.ai/skills/nm-conjure-delegation-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-conjure-delegation-core-cc25bb6e49e18415.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate tasks to external LLM services (Gemini, Qwen) with quota, logging,"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "athola",
+      "userId": "s17emme0e2m3cpf7k2jvp3a84984b8z9",
+      "displayName": "athola",
+      "image": "https://avatars.githubusercontent.com/u/9769290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778292981099,
+      "changelog": "Release v1.9.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dea84e5246714dae06b119b46a4adb9074d0acf4aa18c4210151cbdb317f39ce"
+}

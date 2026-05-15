@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16986,
+  "uuid": "skill-clawhub-coupler-io",
+  "skillKey": "clawhub-coupler-io",
+  "name": "Coupler.io",
+  "summary": "Access Coupler.io data flows configured with OpenClaw destination to list flows, get schemas, and query data via OAuth-secured read-only API.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coupler_io",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nika",
+      "features": [
+        "Access Coupler.io data flows configured with OpenClaw destination to list flows, get schemas, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coupler-io@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205906945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coupler-io",
+      "url": "https://clawhub.ai/skills/coupler-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coupler-io",
+    "url": "https://clawhub.ai/skills/coupler-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coupler-io-ee2a9c695a545397.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coupler-io@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-coupler-io-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae814808aca7a2a5fbf5e776f7f9504a42c002e594a2615a582c51b6c07d4907",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T15:45:59.849Z"
+}

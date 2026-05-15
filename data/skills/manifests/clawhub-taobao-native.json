@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16255,
+  "uuid": "skill-clawhub-taobao-native",
+  "skillKey": "clawhub-taobao-native",
+  "name": "Taobao Native CLI",
+  "summary": "Shopping assistant via Taobao Desktop client. Use when the user needs to search products, view details, add to cart, place orders, check orders, request ship...",
+  "version": "1.0.41",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_native",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenbin",
+      "features": [
+        "Shopping assistant via Taobao Desktop client",
+        "Use when the user needs to search products, view details, add to cart, place orders, check orde."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobao-native@1.0.41",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/397388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobao-native",
+      "url": "https://clawhub.ai/skills/taobao-native"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-native",
+    "url": "https://clawhub.ai/skills/taobao-native",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-native-b1fe7bfb820294ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobao-native@1.0.41",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobao-native-1.0.41.json",
+      "version": "1.0.41",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3a055030262ed1fac09a6ae65731cb137873bb5d3c34a6eac93334c0a886e1c",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:46:42.884Z"
+}

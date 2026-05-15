@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/platform-api-connector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.platform_api_connector",
+  "skill": {
+    "id": 18338,
+    "skillKey": "clawhub-platform-api-connector",
+    "name": "Platform API Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "platform-api-connector",
+    "url": "https://clawhub.ai/skills/platform-api-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/platform-api-connector-6188de61d9c8911b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to social media and content platform APIs by navigating developer portals, creating apps, obtaining OAuth tokens, and storing credentials. Covers Fac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brandonwadepackard-cell",
+      "userId": "publishers:brandonwadepackard-cell",
+      "displayName": "brandonwadepackard-cell",
+      "image": "https://avatars.githubusercontent.com/u/227546078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 679,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771917485952,
+      "changelog": "Initial release: OAuth flows and credential management for Facebook, Instagram, YouTube, Twitter, TikTok",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c478d6e8b5fde8137de3eec512d438718a47af0449f20cbeb2896bbc6750e3ed"
+}

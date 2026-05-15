@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16164,
+  "uuid": "skill-clawhub-datafast-analytics",
+  "skillKey": "clawhub-datafast-analytics",
+  "name": "Datafast Analytics",
+  "summary": "Query DataFast website analytics and visitor data via the DataFast API for metrics, time series, realtime stats, breakdowns, visitor details, and goal/paymen...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datafast_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bennyqp",
+      "features": [
+        "Query DataFast website analytics and visitor data via the DataFast API for metrics, time series."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datafast-analytics@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66516706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datafast-analytics",
+      "url": "https://clawhub.ai/skills/datafast-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datafast-analytics",
+    "url": "https://clawhub.ai/skills/datafast-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datafast-analytics-0e8575d828e9f65a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datafast-analytics@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-datafast-analytics-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55bb9b501a5aa0707ecbe50e1b28c6ab93077b7b47c701356e38359711147a7a",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T17:06:51.954Z"
+}

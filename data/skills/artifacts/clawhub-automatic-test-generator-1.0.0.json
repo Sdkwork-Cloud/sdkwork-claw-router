@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/automatic-test-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automatic_test_generator",
+  "skill": {
+    "id": 48562,
+    "skillKey": "clawhub-automatic-test-generator",
+    "name": "Automatic Test Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automatic-test-generator",
+    "url": "https://clawhub.ai/skills/automatic-test-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automatic-test-generator-825c23713fc0b676.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically generate unit tests from functions with comprehensive coverage and edge cases"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelatamuk",
+      "userId": "s17bsa5qgebmtktz68h14pvm2x85tfrj",
+      "displayName": "Michael Atamuk",
+      "image": "https://avatars.githubusercontent.com/u/33700337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777538800151,
+      "changelog": "Initial release of Automatic Test Generator.\n\n- Analyzes source code to generate comprehensive unit tests, including edge cases and error scenarios\n- Supports multiple frameworks (Jest, Vitest, Mocha+Chai, Pytest, Go, JUnit)\n- Automatically mocks dependencies and external services for isolation\n- Handles both simple functions and complex classes, improving test coverage and consistency\n- Saves significant development time and helps prevent production bugs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85da8b09dbf1c96f1c671e8a40d33b45cff4a53c3af235207927a12dd79c54a4"
+}

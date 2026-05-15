@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-song-recommender@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_song_recommender",
+  "skill": {
+    "id": 68989,
+    "skillKey": "clawhub-daily-song-recommender",
+    "name": "Daily Song Recommender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-song-recommender",
+    "url": "https://clawhub.ai/skills/daily-song-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-song-recommender-36cdc74cab49f3fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日歌曲推荐技能。根据用户输入的音乐风格偏好，从多个平台综合推荐歌曲。当用户说\"推荐首歌\"、\"今天听什么\"、\"给我放首歌\"、\"随机推荐\"等时触发。用户提供喜欢的风格（流行/摇滚/爵士/古典/电子/民谣/说唱/日文/韩文/中文等），AI会综合各平台推荐合适的歌曲。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yjin94606-art",
+      "userId": "s175dphy4bwymz2xyv6jy398qh83nkxd",
+      "displayName": "yjin94606-art",
+      "image": "https://avatars.githubusercontent.com/u/237404437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775566636193,
+      "changelog": "**Major update: Now recommends fresh and trending songs by searching the web instead of a fixed built-in list.**\n\n- Replaces the static song library with AI-powered web search for up-to-date recommendations.\n- Supports all genres and provides 3-5 personalized song or album choices with links and reasons.\n- Recommendation process now includes clarifying questions to refine user preferences.\n- Outputs sources for transparency.\n- Added search query templates for each genre to improve search accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32a1facc8f86e4e1df6181a2448df411ee9cf13b994e21fd2050ba2008c033d5"
+}

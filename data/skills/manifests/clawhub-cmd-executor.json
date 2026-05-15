@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14146,
+  "uuid": "skill-clawhub-cmd-executor",
+  "skillKey": "clawhub-cmd-executor",
+  "name": "Cmd Executor",
+  "summary": "Executes Windows shell commands locally on the OpenClaw gateway, returning output and errors for automation and system management.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmd_executor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sadikjarvis",
+      "features": [
+        "Executes Windows shell commands locally on the OpenClaw gateway, returning output and errors fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmd-executor@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219712093?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmd-executor",
+      "url": "https://clawhub.ai/skills/cmd-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmd-executor",
+    "url": "https://clawhub.ai/skills/cmd-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmd-executor-32fd35425af960de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmd-executor@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmd-executor-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59c510e55e38f6dbcc301a2415710e786d82db2219fe2b530a65ef2669bc868e",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T10:20:22.441Z"
+}

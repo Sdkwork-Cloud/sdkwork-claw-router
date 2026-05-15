@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47779,
+  "uuid": "skill-clawhub-netstat-tool",
+  "skillKey": "clawhub-netstat-tool",
+  "name": "Netstat Tool",
+  "summary": "Display network connections, routing tables, and interface statistics. Use for network diagnostics and monitoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netstat_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display network connections, routing tables, and interface statistics",
+        "Use for network diagnostics and monitoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/netstat-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "netstat-tool",
+      "url": "https://clawhub.ai/skills/netstat-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netstat-tool",
+    "url": "https://clawhub.ai/skills/netstat-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netstat-tool-a03425d3d648888c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/netstat-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-netstat-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dd078456eaacbe1f77ed5740602154954cffbc423895896898b2865ced788f0",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T20:05:24.727Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iran-briefing@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iran_briefing",
+  "skill": {
+    "id": 50838,
+    "skillKey": "clawhub-iran-briefing",
+    "name": "Iran Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iran-briefing",
+    "url": "https://clawhub.ai/skills/iran-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iran-briefing-497fe8c5f176ba23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time geopolitical intelligence — Iran crisis briefing, Trump Truth Social feed, prediction markets, 800+ tracked entities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dachein",
+      "userId": "s17fhcn4jegsxjvyzv0g5fhv5983xwce",
+      "displayName": "Dachein",
+      "image": "https://avatars.githubusercontent.com/u/149984401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 456,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775630284401,
+      "changelog": "**Summary:**  \nAdds Trump Truth Social feed integration and expands entity tracking to over 800 sources.\n\n- New /trump endpoint: real-time Trump Truth Social posts, tag-filtered (e.g., iran-war, trade, energy)\n- Broadened focus: skill now covers both Iran crisis and Trump's posts/policy signals\n- Expanded entity directories: 800+ tracked sources (was 700+), with revised curation groups\n- Documentation overhaul: clearer endpoint specs, all parameters detailed, new investigation workflows\n- Minor param and structure tweaks: e.g., batch-lookup for /signals, additional feed/topic system\n\nThis version offers a broader geopolitical decision support toolkit, not just Iran-only monitoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a7df268fd57c362e38a09d11e91b9a3dd0ebf73ca87ea52c176b8c531b5d47e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-server@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_server",
+  "skill": {
+    "id": 18728,
+    "skillKey": "clawhub-mcp-server",
+    "name": "MCP Server Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-server",
+    "url": "https://clawhub.ai/skills/mcp-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-server-6c7915018034fa58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and deploy Model Context Protocol (MCP) servers for AI agents. MCP enables AI models to interact with external tools and services."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinakingkong",
+      "userId": "publishers:chinakingkong",
+      "displayName": "ChinaKingKong",
+      "image": "https://avatars.githubusercontent.com/u/6982081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 656,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773801219593,
+      "changelog": "Initial release of mcp-server.\n\n- Create Model Context Protocol (MCP) servers to extend AI capabilities.\n- Includes quick templates for weather, database, file management, and custom API servers.\n- Supports deployment to multiple platforms and connectivity with AI agents (e.g., Claude, OpenClaw).\n- Enables AI integration with external tools, services, and APIs.\n- Requires Node.js 18+ and package manager (npm or yarn).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5461dc928194aea5da82fd951e5d36660d6bd98293318cde813b18be06f26fb"
+}

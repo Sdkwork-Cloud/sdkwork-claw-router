@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34005,
+  "uuid": "skill-clawhub-pptx-ocr",
+  "skillKey": "clawhub-pptx-ocr",
+  "name": "Pptx Ocr",
+  "summary": "OCR for PowerPoint (.pptx) presentations with scanned or image-embedded slide content. Uses MinerU to extract text from image-based slides. Features: OCR ext...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptx_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mzlzyCA",
+      "features": [
+        "OCR for PowerPoint (.pptx) presentations with scanned or image-embedded slide content",
+        "Uses MinerU to extract text from image-based slides",
+        "Features: OCR ext..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pptx-ocr@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87289074?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pptx-ocr",
+      "url": "https://clawhub.ai/skills/pptx-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptx-ocr",
+    "url": "https://clawhub.ai/skills/pptx-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptx-ocr-5c24a226c2d3e3f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pptx-ocr@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pptx-ocr-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f07a699aabbb0575c45352ed4f4460a42e8b4b3580e45e85d33c32beaed7637e",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:59:03.176Z"
+}

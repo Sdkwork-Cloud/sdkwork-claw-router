@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15479,
+  "uuid": "skill-clawhub-arxiv-summarizer-orchestrator",
+  "skillKey": "clawhub-arxiv-summarizer-orchestrator",
+  "name": "Arxiv Summarizer Orchestrator",
+  "summary": "Orchestrates end-to-end arXiv paper retrieval, processing, and batch reporting with language control and parallel or serial paper handling modes.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_summarizer_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xukp20",
+      "features": [
+        "Orchestrates end-to-end arXiv paper retrieval, processing, and batch reporting with language co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-summarizer-orchestrator@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71265541?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-summarizer-orchestrator",
+      "url": "https://clawhub.ai/skills/arxiv-summarizer-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-summarizer-orchestrator",
+    "url": "https://clawhub.ai/skills/arxiv-summarizer-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-summarizer-orchestrator-92d525082c9058d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-summarizer-orchestrator@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-summarizer-orchestrator-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fc8b280f86d8a0deb447a41339ebf881882e3eed56435dbaa9a56c8123551d4",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T12:11:26.590Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16230,
+  "uuid": "skill-clawhub-reddit-marketing-geo",
+  "skillKey": "clawhub-reddit-marketing-geo",
+  "name": "Reddit Marketing and GEO Skill",
+  "summary": "Spawns a specialized sub-agent to monitor Reddit and optimize for GEO. Runs on a scheduled cron job (9 AM/6 PM default) to deliver lead drafts.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_marketing_geo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilyasy",
+      "features": [
+        "Spawns a specialized sub-agent to monitor Reddit and optimize for GEO",
+        "Runs on a scheduled cron job (9 AM/6 PM default) to deliver lead drafts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-marketing-geo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132816511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-marketing-geo",
+      "url": "https://clawhub.ai/skills/reddit-marketing-geo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-marketing-geo",
+    "url": "https://clawhub.ai/skills/reddit-marketing-geo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-marketing-geo-89a566b23cec483d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-marketing-geo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-marketing-geo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a586218d3504edb5938291c129ad3e5b3a495d4ca7bf027bd135cfccea57b687",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T04:45:24.266Z"
+}

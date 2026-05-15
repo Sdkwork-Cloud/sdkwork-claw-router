@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/volcengine-tos-vectors-skills@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_tos_vectors_skills",
+  "skill": {
+    "id": 10796,
+    "skillKey": "clawhub-volcengine-tos-vectors-skills",
+    "name": "volcengine-tos-vectors-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-tos-vectors-skills",
+    "url": "https://clawhub.ai/skills/volcengine-tos-vectors-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-tos-vectors-skills-5ce3dd8338a17194.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage vector storage and similarity search using TOS Vectors service. Use when working with embeddings, semantic search, RAG systems, recommendation engines, or when the user mentions vector databases, similarity search, or TOS Vectors op."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jneless",
+      "userId": "s1786611t2jyz8zpqr3ddjgqxd83nft0",
+      "displayName": "jneless",
+      "image": "https://avatars.githubusercontent.com/u/21362547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770191737720,
+      "changelog": "- update beta pip command",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:82e98cf45dc7e5a9d9d1d913e154ab3ad00c35c62a124c0d2b58394e52449ecd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lucky-coding-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lucky_coding_agent",
+  "skill": {
+    "id": 40417,
+    "skillKey": "clawhub-lucky-coding-agent",
+    "name": "Lucky Coding Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lucky-coding-agent",
+    "url": "https://clawhub.ai/skills/lucky-coding-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lucky-coding-agent-a06442d490994696.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rmbell09-lang",
+      "userId": "s17frvc418yasm08c8400wcxph83n0wy",
+      "displayName": "rmbell09-lang",
+      "image": "https://avatars.githubusercontent.com/u/238621327?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774505924526,
+      "changelog": "Version 1.0.1 – No code changes in this release.\n\n- Documentation and guidance remain the same as previous version.\n- No new features, bug fixes, or functionality updates detected.\n- The skill’s usage instructions and rules are unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dbf6bb0bc012d52c7e105bff973f2dfccc14929e12e6538ef9315da667ab152"
+}

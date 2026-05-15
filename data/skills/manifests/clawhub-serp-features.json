@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41199,
+  "uuid": "skill-clawhub-serp-features",
+  "skillKey": "clawhub-serp-features",
+  "name": "serp-features",
+  "summary": "When the user wants to understand or optimize for SERP feature types (PAA, sitelinks, rich results, AI Overviews). Also use when the user mentions \"SERP,\" \"S...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serp_features",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to understand or optimize for SERP feature types (PAA, sitelinks, rich resu.",
+        "Also use when the user mentions \"SERP,\" \"S..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serp-features@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serp-features",
+      "url": "https://clawhub.ai/skills/serp-features"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serp-features",
+    "url": "https://clawhub.ai/skills/serp-features",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serp-features-13a90d65de02b5f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serp-features@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-serp-features-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef93a43b02c87b45c6c826b7bd5e51ffb03f4feac827258e36c7b0f8485a090e",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T15:11:01.667Z"
+}

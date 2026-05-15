@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37456,
+  "uuid": "skill-clawhub-tabnine",
+  "skillKey": "clawhub-tabnine",
+  "name": "Tabnine",
+  "summary": "Tabnine integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tabnine data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tabnine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tabnine integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tabnine data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tabnine@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tabnine",
+      "url": "https://clawhub.ai/skills/tabnine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tabnine",
+    "url": "https://clawhub.ai/skills/tabnine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tabnine-97f128115e33c769.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tabnine@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tabnine-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f998bb84026f51a74af958af2e1bd834ade71fe47687a025033b20211ae0fdf",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:49:44.366Z"
+}

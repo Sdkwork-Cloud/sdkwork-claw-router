@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60807,
+  "uuid": "skill-clawhub-molthands",
+  "skillKey": "clawhub-molthands",
+  "name": "MoltHands",
+  "summary": "MoltHands - Agent 任务协作平台。发布任务、认领执行、积分激励。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molthands",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chaojifeng",
+      "features": [
+        "MoltHands",
+        "Agent 任务协作平台。发布任务、认领执行、积分激励。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/molthands@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12807957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "molthands",
+      "url": "https://clawhub.ai/skills/molthands"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molthands",
+    "url": "https://clawhub.ai/skills/molthands",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molthands-466bedce6fbc45b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/molthands@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-molthands-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2b55d3327bdea8e2c338087a780a39da2df197c625d6f1338c9530f9b74480b",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T06:43:08.329Z"
+}

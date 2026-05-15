@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15357,
+  "uuid": "skill-clawhub-autonomous-task-runner",
+  "skillKey": "clawhub-autonomous-task-runner",
+  "name": "Autonomous Task Runner",
+  "summary": "Persistent task queue system. Users add tasks at any time via natural language; tasks are stored in a single persistent queue file and executed asynchronousl...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_task_runner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chunhua Liao",
+      "features": [
+        "Persistent task queue system",
+        "Users add tasks at any time via natural language",
+        "tasks are stored in a single persistent queue file and executed asynchronousl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-task-runner@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1627206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-task-runner",
+      "url": "https://clawhub.ai/skills/autonomous-task-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-task-runner",
+    "url": "https://clawhub.ai/skills/autonomous-task-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-task-runner-151f2880127ed6f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-task-runner@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-task-runner-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3695522c0bedfaf46fc00e5e30c27352b30e5dc22aa03c1e503cdb7cb29d05f7",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T04:18:31.341Z"
+}

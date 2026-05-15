@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49201,
+  "uuid": "skill-clawhub-prompt-to-video-generator",
+  "skillKey": "clawhub-prompt-to-video-generator",
+  "name": "Prompt To Video Generator",
+  "summary": "Get AI-generated videos ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, PDF, plain text, up to 500MB), say something li...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_to_video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Get AI-generated videos ready to post, without touching a single slider",
+        "Upload your text prompts (TXT, DOCX, PDF, plain text, up to 500MB), say something li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-to-video-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-to-video-generator",
+      "url": "https://clawhub.ai/skills/prompt-to-video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-to-video-generator",
+    "url": "https://clawhub.ai/skills/prompt-to-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-to-video-generator-f403806f299b1e98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-to-video-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-to-video-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:064115a43b6763c308640b17b9a280b7c9cc2b6f217e4eb362c0f988b0e6d43d",
+      "artifactSizeBytes": 2658
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T10:53:31.787Z"
+}

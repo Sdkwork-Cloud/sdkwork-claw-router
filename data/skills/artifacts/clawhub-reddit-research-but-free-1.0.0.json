@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-research-but-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_research_but_free",
+  "skill": {
+    "id": 48822,
+    "skillKey": "clawhub-reddit-research-but-free",
+    "name": "Reddit Research But Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-research-but-free",
+    "url": "https://clawhub.ai/skills/reddit-research-but-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-research-but-free-1ac0975916cb18ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reddit research skill — zero auth, zero dependencies, three data providers. Search posts, read threads with comments, monitor subreddits, analyze users, trac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minilozio",
+      "userId": "publishers:minilozio",
+      "displayName": "minilozio",
+      "image": "https://avatars.githubusercontent.com/u/261203432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 622,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772491651772,
+      "changelog": "- Initial release of reddit-research: terminal-based Reddit research agent.\n- Search posts, read threads, monitor subreddits, analyze users, track cross-posts, search comments, and run watchlists.\n- Zero authentication required and zero dependencies; no npm install needed.\n- Supports three data providers: live Reddit (default), PullPush, and Arctic Shift for archived/deleted content.\n- Multiple CLI modes: query search, comment search, feed browsing, thread reading, user/subreddit info, cross-posts, caching, and automated watchlists.\n- Agentic research workflow and 15min auto-cache included for efficiency and rate limit safety.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae4f86255e0e393802de3fb8c922433e3e1c0c2cecfa1c3f8dc9f1d8ec31c4a6"
+}

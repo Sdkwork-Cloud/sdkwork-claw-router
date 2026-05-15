@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19033,
+  "uuid": "skill-clawhub-tuzi-nano-banana",
+  "skillKey": "clawhub-tuzi-nano-banana",
+  "name": "Generate/edit images via Tuzi API (default), Google Gemini, OpenAI, DashScope, Replicate. Text-to-image + image-to-image editin.",
+  "summary": "Generate/edit images via Tuzi API (default), Google Gemini, OpenAI, DashScope, Replicate. Text-to-image + image-to-image editing; 1K/2K/4K resolution. Use fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuzi_nano_banana",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ljquan",
+      "features": [
+        "Generate/edit images via Tuzi API (default), Google Gemini, OpenAI, DashScope, Replicate",
+        "Text-to-image + image-to-image editing",
+        "1K/2K/4K resolution",
+        "Use fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tuzi-nano-banana@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3754268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tuzi-nano-banana",
+      "url": "https://clawhub.ai/skills/tuzi-nano-banana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuzi-nano-banana",
+    "url": "https://clawhub.ai/skills/tuzi-nano-banana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuzi-nano-banana-e8b1718a50315549.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tuzi-nano-banana@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tuzi-nano-banana-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8940473f50990bef17f077bdd21d51ee5aa1fba31fe46ffb4cec10aee403d98d",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:38:49.084Z"
+}

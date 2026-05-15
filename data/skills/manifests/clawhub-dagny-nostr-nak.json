@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16839,
+  "uuid": "skill-clawhub-dagny-nostr-nak",
+  "skillKey": "clawhub-dagny-nostr-nak",
+  "name": "Dagny Nostr (nak)",
+  "summary": "Manage Nostr posting and engagement via the nak CLI. Use for creating notes, replying in threads, tagging npubs, checking replies/mentions, monitoring a rela...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dagny_nostr_nak",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edwardbickerton",
+      "features": [
+        "Manage Nostr posting and engagement via the nak CLI",
+        "Use for creating notes, replying in threads, tagging npubs, checking replies/mentions, monitori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dagny-nostr-nak@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71928240?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dagny-nostr-nak",
+      "url": "https://clawhub.ai/skills/dagny-nostr-nak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dagny-nostr-nak",
+    "url": "https://clawhub.ai/skills/dagny-nostr-nak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dagny-nostr-nak-43332b6ae7d8e579.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dagny-nostr-nak@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dagny-nostr-nak-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9bd93657b0715c773d1fdbc04d5fe85c9c271a86a78e6be9ebbb0db3e6fe738",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T23:41:00.562Z"
+}

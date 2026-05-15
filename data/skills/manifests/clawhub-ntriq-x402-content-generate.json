@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54535,
+  "uuid": "skill-clawhub-ntriq-x402-content-generate",
+  "skillKey": "clawhub-ntriq-x402-content-generate",
+  "name": "Ntriq X402 Content Generate",
+  "summary": "AI content generation for blogs, emails, social posts, product descriptions. $0.02 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_content_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "AI content generation for blogs, emails, social posts, product descriptions",
+        "$0.02 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-content-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-content-generate",
+      "url": "https://clawhub.ai/skills/ntriq-x402-content-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-content-generate",
+    "url": "https://clawhub.ai/skills/ntriq-x402-content-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-content-generate-4adbad7ba5b9b588.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-content-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-content-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c08f2cb4d15956c10e9c8ef586e6271fb812f113ed3c3849d04d7a0be8af09ad",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T12:00:36.541Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43579,
+  "uuid": "skill-clawhub-qui-conventional-commits",
+  "skillKey": "clawhub-qui-conventional-commits",
+  "name": "qui-conventional-commits",
+  "summary": "Format commit messages using the Conventional Commits specification. Use when creating commits, writing commit messages, or when the user mentions commits, g...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_conventional_commits",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Format commit messages using the Conventional Commits specification",
+        "Use when creating commits, writing commit messages, or when the user mentions commits, g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qui-conventional-commits@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qui-conventional-commits",
+      "url": "https://clawhub.ai/skills/qui-conventional-commits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-conventional-commits",
+    "url": "https://clawhub.ai/skills/qui-conventional-commits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-conventional-commits-0fde612ead7e762f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qui-conventional-commits@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qui-conventional-commits-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d39c15b0c5a1f594fe1d121ee6eae386a39dfe8e939dfd32dc997ea21346178c",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:58:24.106Z"
+}

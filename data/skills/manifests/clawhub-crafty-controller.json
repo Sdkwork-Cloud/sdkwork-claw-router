@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44736,
+  "uuid": "skill-clawhub-crafty-controller",
+  "skillKey": "clawhub-crafty-controller",
+  "name": "crafty-controller",
+  "summary": "Use this skill whenever the user wants to interact with a Crafty Controller instance via its REST API. Triggers include: managing Minecraft servers, starting...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crafty_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZDStudios",
+      "features": [
+        "Use this skill whenever the user wants to interact with a Crafty Controller instance via its RE.",
+        "Triggers include: managing Minecraft servers, starting..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crafty-controller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121779558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crafty-controller",
+      "url": "https://clawhub.ai/skills/crafty-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crafty-controller",
+    "url": "https://clawhub.ai/skills/crafty-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crafty-controller-5e089f58c940f8c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crafty-controller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crafty-controller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8673bba5a8df4773ee63b9860a0bb456b576fc92ac853e9f608540421b5a47d",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:49:32.640Z"
+}

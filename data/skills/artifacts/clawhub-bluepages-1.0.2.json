@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bluepages@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluepages",
+  "skill": {
+    "id": 27470,
+    "skillKey": "clawhub-bluepages",
+    "name": "Bluepages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluepages",
+    "url": "https://clawhub.ai/skills/bluepages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluepages-9c3a6869caba486a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up wallet address <> Twitter/Farcaster identity mappings via Bluepages.fyi. Use when asked who owns a wallet, finding addresses for a Twitter/Farcaster..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jesse-pallok",
+      "userId": "publishers:jesse-pallok",
+      "displayName": "jesse-pallok",
+      "image": "https://avatars.githubusercontent.com/u/258028244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1310,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771409748464,
+      "changelog": "- Added OpenClaw metadata to the manifest, including emoji, install instructions, homepage, and required env vars.\n- Bumped skill version to 1.0.2.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b49f87e61e6b41c7742191d3df1896f70246df40736b932d3db58503d0a9d1d"
+}

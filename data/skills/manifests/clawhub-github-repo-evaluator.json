@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66116,
+  "uuid": "skill-clawhub-github-repo-evaluator",
+  "skillKey": "clawhub-github-repo-evaluator",
+  "name": "GitHub项目调研器",
+  "summary": "GitHub 项目调研与对比工具。当用户要求'搜索 GitHub 项目'、'对比开源项目'、'选一个 XX 工具'、'哪个项目最受欢迎/活跃'、'评估哪个好'、'怎么选'等场景时使用。通过 GitHub API 搜索、采集数据、系统化对比，输出结构化推荐报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_evaluator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cloudyli",
+      "features": [
+        "GitHub 项目调研与对比工具。当用户要求'搜索 GitHub 项目'、'对比开源项目'、'选一个 XX 工具'、'哪个项目最受欢迎/活跃'、'评估哪个好'、'怎么选'等场景时使用。通过."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-repo-evaluator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2667609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-repo-evaluator",
+      "url": "https://clawhub.ai/skills/github-repo-evaluator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-evaluator",
+    "url": "https://clawhub.ai/skills/github-repo-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-evaluator-57c846a2f103f48b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-repo-evaluator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-repo-evaluator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ceb8bb4b3c17e457b14ed151758bc8d5b050af84f270383a1d10621eca085f33",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:38:25.246Z"
+}

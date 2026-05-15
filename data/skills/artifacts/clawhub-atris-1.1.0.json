@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atris@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atris",
+  "skill": {
+    "id": 15343,
+    "skillKey": "clawhub-atris",
+    "name": "Atris"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atris",
+    "url": "https://clawhub.ai/skills/atris",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atris-dfebf5f62f89f408.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Codebase intelligence — generates structured navigation maps with file:line references so agents stop re-scanning the same files every session. Use when exploring code, answering \"where is X?\", or onboarding to a new codebase."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keshav55",
+      "userId": "publishers:keshav55",
+      "displayName": "keshav55",
+      "image": "https://avatars.githubusercontent.com/u/3821985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1433,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770809561205,
+      "changelog": "- Clarified usage scope and MAP.md-first workflow for all code navigation tasks.\n- Expanded ignore rules to skip secrets, environment files, and credentials during scans.\n- Streamlined scanning and update instructions for clarity and concise onboarding.\n- Added an anti-patterns section to emphasize correct usage and security.\n- MAP.md structure and update procedures are now more explicit and concise.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:22b3579c6a830cd6422335625e719db7e598e753e225e89fb025cc9cacda5e6d"
+}

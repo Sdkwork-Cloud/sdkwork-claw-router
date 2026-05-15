@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65914,
+  "uuid": "skill-clawhub-news-sum-lite",
+  "skillKey": "clawhub-news-sum-lite",
+  "name": "News Sum Lite",
+  "summary": "轻量新闻日报 skill。触发条件：用户说\"今日新闻\"、\"新闻日报\"、\"生成今日新闻\"。主打快速、轻量、一气呵成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_sum_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leonard",
+      "features": [
+        "轻量新闻日报 skill。触发条件：用户说\"今日新闻\"、\"新闻日报\"、\"生成今日新闻\"。主打快速、轻量、一气呵成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-sum-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22876690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-sum-lite",
+      "url": "https://clawhub.ai/skills/news-sum-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-sum-lite",
+    "url": "https://clawhub.ai/skills/news-sum-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-sum-lite-3411e41e275317f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-sum-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-sum-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c7ebc7f3ffee82d5e4d09f0bab64c0319501832138b68a4768865ad3a38e07b",
+      "artifactSizeBytes": 2522
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T16:11:32.719Z"
+}

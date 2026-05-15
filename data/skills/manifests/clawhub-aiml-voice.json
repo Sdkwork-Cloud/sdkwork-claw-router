@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23817,
+  "uuid": "skill-clawhub-aiml-voice",
+  "skillKey": "clawhub-aiml-voice",
+  "name": "AIML Voice Transcript",
+  "summary": "Transcribe audio files (ogg, mp3, wav, etc.) using AIMLAPI. Use when the user provides audio messages or local audio files. Provides a reliable Python script...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiml_voice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI/ML API",
+      "features": [
+        "Transcribe audio files (ogg, mp3, wav, etc.) using AIMLAPI",
+        "Use when the user provides audio messages or local audio files",
+        "Provides a reliable Python script..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiml-voice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187510884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiml-voice",
+      "url": "https://clawhub.ai/skills/aiml-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiml-voice",
+    "url": "https://clawhub.ai/skills/aiml-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiml-voice-07e87e0645325847.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiml-voice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiml-voice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d05649b5e89b8fc45545df7d1052835fe0ce086b3188f6c72078f970385606f",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T15:52:36.192Z"
+}

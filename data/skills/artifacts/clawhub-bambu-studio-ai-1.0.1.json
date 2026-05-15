@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bambu-studio-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bambu_studio_ai",
+  "skill": {
+    "id": 11194,
+    "skillKey": "clawhub-bambu-studio-ai",
+    "name": "Bambu Studio Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bambu-studio-ai",
+    "url": "https://clawhub.ai/skills/bambu-studio-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bambu-studio-ai-cba4c53df31234cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bambu Lab 3D printer control and automation. Activate when user mentions: printer status, 3D printing, slice, analyze model, generate 3D, AMS filament, print..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heyixuan2",
+      "userId": "s17c3atdf0vbqgt4chx66agrp583qzgw",
+      "displayName": "TieGaier",
+      "image": "https://avatars.githubusercontent.com/u/217765131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1595,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 6,
+      "versions": 105
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773164206465,
+      "changelog": "Fix tests: parametric skip when manifold3d unavailable, oversized scoring cap",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d056b3b804605f4b2215baa1a052d708c1d2e14947ea564ffdac682485704923"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ceorater@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ceorater",
+  "skill": {
+    "id": 9703,
+    "skillKey": "clawhub-ceorater",
+    "name": "CEORater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ceorater",
+    "url": "https://clawhub.ai/skills/ceorater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ceorater-1efb496824a6b9ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get institutional-grade CEO performance analytics for S&P 500 companies. Proprietary scores: CEORaterScore (composite), AlphaScore (market outperformance), R..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ceorater-skills",
+      "userId": "s17erb4yea547yxa5ajscwjnkd83hzxf",
+      "displayName": "CEORater clawhub skills",
+      "image": "https://avatars.githubusercontent.com/u/258556130?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2892,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 6,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1771504113157,
+      "changelog": "- Clarified CEO record coverage in the description (now \"500+ CEOs\") and removed reference to February 2026.\n- Added instructions to use the GET /v1/meta endpoint for live record count and last refresh timestamp.\n- Updated API documentation to include the metadata endpoint for current data stats.\n- No functional or code changes; documentation and usage clarification only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4a72cb39ad65fb5f37df81e821b8de48e7825b2044dc2df9a46ff1c7b2eef7b"
+}

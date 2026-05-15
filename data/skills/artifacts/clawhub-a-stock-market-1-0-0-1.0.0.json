@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-market-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_market_1_0_0",
+  "skill": {
+    "id": 26917,
+    "skillKey": "clawhub-a-stock-market-1-0-0",
+    "name": "A Stock Market 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-market-1-0-0",
+    "url": "https://clawhub.ai/skills/a-stock-market-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-market-1-0-0-e4e19bee51710455.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time A-share stock market data from Sina Finance API for individual stocks and indices by code."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicenasa",
+      "userId": "publishers:nicenasa",
+      "displayName": "niceNASA",
+      "image": "https://avatars.githubusercontent.com/u/44105257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774002364938,
+      "changelog": "Initial release of A 股行情 Skill\n\n- Provides real-time A股 stock quotes via Sina Finance API.\n- Supports querying single or multiple stocks by code.\n- Can fetch major index data (e.g., 上证, 深证, 沪深300).\n- Accepts standardized stock code formats for both Shanghai and Shenzhen exchanges.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab81d5e14467a777bdc16cf6e4ccf2215183594c850f2d36c1e0d235838621b8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10150,
+  "uuid": "skill-clawhub-wienerlinien",
+  "skillKey": "clawhub-wienerlinien",
+  "name": "Wiener Linien",
+  "summary": "Vienna public transport (Wiener Linien) real-time data. Use when asking about departures, schedules, disruptions, elevator status, or directions in Vienna's public transport (U-Bahn, tram, bus, night bus). Queries stops, lines, and traffic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wienerlinien",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hjanuschka",
+      "features": [
+        "Vienna public transport (Wiener Linien) real-time data",
+        "Use when asking about departures, schedules, disruptions, elevator status, or directions in Vie.",
+        "Queries stops, lines, and traffic info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wienerlinien@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2891702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wienerlinien",
+      "url": "https://clawhub.ai/skills/wienerlinien"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wienerlinien",
+    "url": "https://clawhub.ai/skills/wienerlinien",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wienerlinien-5e856b07051b6fda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wienerlinien@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wienerlinien-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daea4268badf327bdfe995909b101f32bed33b353af58f5fb413d1fb9256f798",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T20:07:55.752Z"
+}

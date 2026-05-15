@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51900,
+  "uuid": "skill-clawhub-clawtrix-skill-advisor",
+  "skillKey": "clawhub-clawtrix-skill-advisor",
+  "name": "Clawtrix Skill Advisor",
+  "summary": "Keeps your agent lean and sharp using collective peer intelligence — not rules. Audits your installed skill stack for dead weight (unused, deprecated, flagge...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtrix_skill_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicobot",
+      "features": [
+        "Keeps your agent lean and sharp using collective peer intelligence — not rules",
+        "Audits your installed skill stack for dead weight (unused, deprecated, flagge..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtrix-skill-advisor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16653864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtrix-skill-advisor",
+      "url": "https://clawhub.ai/skills/clawtrix-skill-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtrix-skill-advisor",
+    "url": "https://clawhub.ai/skills/clawtrix-skill-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtrix-skill-advisor-2ada896ac8aa81f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtrix-skill-advisor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtrix-skill-advisor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3e6aa25ee66923fc1c4de7f5770e2162894b51c8db6de672cccc78e51366ac3",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:42:48.415Z"
+}

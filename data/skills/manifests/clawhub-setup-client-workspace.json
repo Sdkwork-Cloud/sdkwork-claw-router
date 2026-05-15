@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55137,
+  "uuid": "skill-clawhub-setup-client-workspace",
+  "skillKey": "clawhub-setup-client-workspace",
+  "name": "Setup Client Workspace (TNCG)",
+  "summary": "Mise en place d'un workspace agent dédié pour un nouveau client TNCG. Utiliser quand Erwan demande de configurer un nouvel agent client (workspace, fichiers...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_client_workspace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Erwan Lee Pesle",
+      "features": [
+        "Mise en place d'un workspace agent dédié pour un nouveau client TNCG",
+        "Utiliser quand Erwan demande de configurer un nouvel agent client (workspace, fichiers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/setup-client-workspace@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20945750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "setup-client-workspace",
+      "url": "https://clawhub.ai/skills/setup-client-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-client-workspace",
+    "url": "https://clawhub.ai/skills/setup-client-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-client-workspace-0ac4fdeaad282f55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/setup-client-workspace@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-setup-client-workspace-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9c00d24c5d9fc8cabea626c420a31cceb041e9614a84a614a0ef0d591474deb",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:04:13.959Z"
+}

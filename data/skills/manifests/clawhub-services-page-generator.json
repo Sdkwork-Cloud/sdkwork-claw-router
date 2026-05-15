@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33637,
+  "uuid": "skill-clawhub-services-page-generator",
+  "skillKey": "clawhub-services-page-generator",
+  "name": "services-page-generator",
+  "summary": "When the user wants to create, optimize, or audit a services page. Also use when the user mentions \"services page,\" \"what we offer,\" \"service offerings,\" \"co...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.services_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create, optimize, or audit a services page",
+        "Also use when the user mentions \"services page,\" \"what we offer,\" \"service offerings,\" \"co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/services-page-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "services-page-generator",
+      "url": "https://clawhub.ai/skills/services-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "services-page-generator",
+    "url": "https://clawhub.ai/skills/services-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/services-page-generator-7ed86cd1080181d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/services-page-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-services-page-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60d4fd246e7a57a99452b3d5602fa0b6165fa3a39463dd458ed78d460273675a",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:30:11.025Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52087,
+  "uuid": "skill-clawhub-inventory-source",
+  "skillKey": "clawhub-inventory-source",
+  "name": "Inventory Source",
+  "summary": "Inventory Source — dropship automation, supplier management, product feeds, inventory sync, and order routing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_source",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Inventory Source — dropship automation, supplier management, product feeds, inventory sync, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inventory-source@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inventory-source",
+      "url": "https://clawhub.ai/skills/inventory-source"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-source",
+    "url": "https://clawhub.ai/skills/inventory-source",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-source-a20b5b2c2cfebc1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inventory-source@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inventory-source-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d067c73cff829be93c6dd777e76217902fe2af811fbdf8ec9ca66e92e8d8ce88",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T22:52:39.801Z"
+}

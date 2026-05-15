@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-restaurants@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_restaurants",
+  "skill": {
+    "id": 34469,
+    "skillKey": "clawhub-chinese-restaurants",
+    "name": "Chinese Restaurants"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-restaurants",
+    "url": "https://clawhub.ai/skills/chinese-restaurants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-restaurants-f10ef2ea073095c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby Chinese restaurants. Invoke when user asks for Chinese food near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774245051940,
+      "changelog": "Nearby Chinese Restaurants v0.1.0\n\n- Initial release: helps users find Chinese restaurants near a given location.\n- Supports filters such as open now, minimum rating, price level, and keywords.\n- Returns a standardized list of POIs, with a max query radius and limit.\n- Only operates with user location permission, and uses privacy-conscious data handling.\n- Implements error codes for invalid input, provider unavailability, excessive radius, and rate limiting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9382916211bbfd1d33faefae9b28f73977943333efb13bea7f310d09821ee3d4"
+}

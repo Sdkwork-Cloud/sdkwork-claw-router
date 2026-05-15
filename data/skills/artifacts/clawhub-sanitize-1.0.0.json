@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sanitize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanitize",
+  "skill": {
+    "id": 50261,
+    "skillKey": "clawhub-sanitize",
+    "name": "AgentWard Sanitize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanitize",
+    "url": "https://clawhub.ai/skills/sanitize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanitize-af6a3bb0c72fe4a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect and redact PII from text files. Supports 15 categories including credit cards, SSNs, emails, API keys, addresses, and more — with zero dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agentward-ai",
+      "userId": "publishers:agentward-ai",
+      "displayName": "agentward-ai",
+      "image": "https://avatars.githubusercontent.com/u/262440763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772073238724,
+      "changelog": "- Initial release of the sanitize skill.\n- Detects and redacts 15 categories of PII from text files, including credit cards, SSNs, email addresses, API keys, and more.\n- No external dependencies; works using only the Python standard library.\n- Enforces strict PII safety rules: never read raw input or entity map files; only view sanitized output.\n- Supports output to file, category filtering, preview, and JSON modes (all designed to avoid exposing raw PII).\n- All processing is done locally, ensuring no PII leaves your machine.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70c9ab5f17e7b94053087ac932e5a514f225699217e3f2cea324de3cbf9d7dda"
+}

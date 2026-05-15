@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dynamic-island@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_island",
+  "skill": {
+    "id": 32978,
+    "skillKey": "clawhub-dynamic-island",
+    "name": "Dynamic Island"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-island",
+    "url": "https://clawhub.ai/skills/dynamic-island",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-island-7a45f6fdc6834206.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "macOS desktop widget showing real-time status and recent messages of multiple OpenClaw agents with a frosted glass dynamic island UI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhixiangshon-cell",
+      "userId": "s17evy03sf007zdwkv0nh9mc0985kpb2",
+      "displayName": "zhixiangshon-cell",
+      "image": "https://avatars.githubusercontent.com/u/258625231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777193008464,
+      "changelog": "- Added a setup.sh script for one-click installation, including environment checks, widget compilation, and configuration file creation.\n- Updated installation instructions in SKILL.md to use the new setup.sh, simplifying the setup process.\n- Expanded architecture section to include setup.sh and clarify its role.\n- No changes to the core functionality or configuration options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75cf59faeff098c4c61562e7d0da521fa2ba74ef4516e5778e13238f3c149078"
+}

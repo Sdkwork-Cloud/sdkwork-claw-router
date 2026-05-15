@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28618,
+  "uuid": "skill-clawhub-fox-news",
+  "skillKey": "clawhub-fox-news",
+  "name": "Fox News Monitor",
+  "summary": "Monitor Fox News sections and breaking updates with official RSS routes, live-event tracking, and optional outside verification.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fox_news",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Monitor Fox News sections and breaking updates with official RSS routes, live-event tracking, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fox-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fox-news",
+      "url": "https://clawhub.ai/skills/fox-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fox-news",
+    "url": "https://clawhub.ai/skills/fox-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fox-news-1ca9eb3ccd9325e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fox-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fox-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b23b098f9049018f477ced021afc4e8604169227937eb809be68598abe770a88",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T15:12:25.514Z"
+}

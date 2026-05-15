@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62223,
+  "uuid": "skill-clawhub-openclaw-diag",
+  "skillKey": "clawhub-openclaw-diag",
+  "name": "Openclaw Diagnostics",
+  "summary": "OpenClaw 系统诊断和性能分析工具。分析 agent 推理耗时、Token 用量、工具调用统计、 Run 时间线、Gateway 重启历史。支持多种模式：批量分析（默认）、实时跟踪（-f）、 摘要统计（-s）、高级诊断（--advanced）。支持多 Agent 过滤。 使用场景：当用户询问 OpenCla...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_diag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Garming",
+      "features": [
+        "OpenClaw 系统诊断和性能分析工具。分析 agent 推理耗时、Token 用量、工具调用统计、 Run 时间线、Gateway 重启历史。支持多种模式：批量分析（默认）、实时跟踪（-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-diag@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7887545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-diag",
+      "url": "https://clawhub.ai/skills/openclaw-diag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-diag",
+    "url": "https://clawhub.ai/skills/openclaw-diag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-diag-756e1c3f0414419d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-diag@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-diag-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6506e312bbe3aaf5e18dd80559dc6468823f6df2541031fa0a4cc0c72fb204a0",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:37:24.126Z"
+}

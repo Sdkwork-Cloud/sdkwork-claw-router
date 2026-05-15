@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-influencer-outreach@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_influencer_outreach",
+  "skill": {
+    "id": 58244,
+    "skillKey": "clawhub-douyin-influencer-outreach",
+    "name": "Douyin Influencer Outreach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-influencer-outreach",
+    "url": "https://clawhub.ai/skills/douyin-influencer-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-influencer-outreach-b9ad5c4cd2d69b5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for Douyin influencers matching criteria (followers < N, high engagement), browse their content, and send personalized DMs. 搜索符合条件的抖音达人（粉丝低于 N、高互动），浏览..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangtao19911111",
+      "userId": "s17cx352r1kj50vwepz00qf8fd863zkf",
+      "displayName": "wangtao19911111",
+      "image": "https://avatars.githubusercontent.com/u/41531065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777911225046,
+      "changelog": "Initial release with comprehensive Douyin influencer outreach automation:\n\n- Search and filter Douyin influencers by custom criteria (follower count, engagement).\n- Browse influencer profiles and latest works to ensure quality and relevance.\n- Automatically avoid sending duplicate DMs; contacted users are tracked via CSV.\n- Personalized DMs crafted based on each influencer's latest content.\n- Parameters (topic, fan count, number to contact, etc.) are always confirmed with the user before execution.\n- Full workflow and sample message templates included for efficient and compliant outreach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbe661ad76c47903cf8c02094aba6fc9a51ed19f619f3ebac6811cfc46f6bf22"
+}

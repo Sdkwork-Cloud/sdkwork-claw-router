@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ingestigate@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ingestigate",
+  "skill": {
+    "id": 51100,
+    "skillKey": "clawhub-ingestigate",
+    "name": "Ingestigate Investigative intelligence for AI agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ingestigate",
+    "url": "https://clawhub.ai/skills/ingestigate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ingestigate-aef58ee3300d92b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Investigative intelligence — document search, entity extraction, and relationship graphing. Analyze document corpuses to find connections between people, org..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aingestigate",
+      "userId": "s177167y99vj40h69k18fe1b9h83gwrr",
+      "displayName": "aingestigate",
+      "image": "https://avatars.githubusercontent.com/u/162054607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1773935423018,
+      "changelog": "- Added a homepage field to the skill configuration, linking to https://ingestigate.com.\n- No other changes to skill logic, endpoints, or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c29dd7fbf4be3afcba353f086a3d935caba51369664a7384ea2b9f64e104d4d"
+}

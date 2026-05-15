@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speckit-workflow@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speckit_workflow",
+  "skill": {
+    "id": 16471,
+    "skillKey": "clawhub-speckit-workflow",
+    "name": "Speckit Workflow for Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speckit-workflow",
+    "url": "https://clawhub.ai/skills/speckit-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speckit-workflow-58430e7582a4ba5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Spec-Driven Development (SDD) orchestrator for OpenClaw. Initializes SpecKit and manages the full engineering lifecycle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinayakv22",
+      "userId": "publishers:vinayakv22",
+      "displayName": "Vinayak Verma",
+      "image": "https://avatars.githubusercontent.com/u/75321135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 872,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771785254770,
+      "changelog": "-reverted the changes that led to suspicious tag from openclaw\n-removed constitution.md that shouldn't have been there",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e97df45adacc23cf4c77ff5151a35c18e8f2c8170e17f9cc9c799f05a195214"
+}

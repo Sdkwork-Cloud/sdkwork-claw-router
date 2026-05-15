@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36331,
+  "uuid": "skill-clawhub-cost-opt",
+  "skillKey": "clawhub-cost-opt",
+  "name": "Cost Opt",
+  "summary": "Cloud cost review: rightsizing, reservations, waste. Use when reducing infra spend.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cost_opt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Cloud cost review: rightsizing, reservations, waste",
+        "Use when reducing infra spend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cost-opt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cost-opt",
+      "url": "https://clawhub.ai/skills/cost-opt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cost-opt",
+    "url": "https://clawhub.ai/skills/cost-opt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cost-opt-29108555248f88a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cost-opt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cost-opt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88b4742e47fb6ab84ab6fa880a62a1437af2c913f7eb7d4fe3583608a6e54800",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:47:23.441Z"
+}

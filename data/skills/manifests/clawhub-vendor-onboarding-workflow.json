@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28276,
+  "uuid": "skill-clawhub-vendor-onboarding-workflow",
+  "skillKey": "clawhub-vendor-onboarding-workflow",
+  "name": "vendor-onboarding-workflow",
+  "summary": "Streamlines vendor onboarding with a 5-gate workflow to collect info, verify documents, obtain approvals, configure systems, and activate vendors efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vendor_onboarding_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flynndavid",
+      "features": [
+        "Streamlines vendor onboarding with a 5-gate workflow to collect info, verify documents, obtain."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vendor-onboarding-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11565009?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vendor-onboarding-workflow",
+      "url": "https://clawhub.ai/skills/vendor-onboarding-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vendor-onboarding-workflow",
+    "url": "https://clawhub.ai/skills/vendor-onboarding-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vendor-onboarding-workflow-47b96e97ffa6d216.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vendor-onboarding-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vendor-onboarding-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd50cfd00ef49e729e63f6dbd8c9ae609faf29bd91e35c0388aac68f045a6575",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:21:39.650Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/q-wms@1.0.73",
+  "version": "1.0.73",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.q_wms",
+  "skill": {
+    "id": 71269,
+    "skillKey": "clawhub-q-wms",
+    "name": "Q Wms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "q-wms",
+    "url": "https://clawhub.ai/skills/q-wms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/q-wms-7cfd010519a4567f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "千易 WMS 智能查询技能。当前开放的一期场景：今日仓内总览、今日待办与异常、出库积压归因、昨日问题恢复情况，以及库存、订单、任务、绩效和仓库/货主上下文查询。所有查询必须通过 q-claw。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ljqdh",
+      "userId": "s17bnqw011fkk6zgec75bstmhn83h006",
+      "displayName": "lee",
+      "image": "https://avatars.githubusercontent.com/u/3345915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.73",
+      "createdAt": 1778257300590,
+      "changelog": "- Clarified that所有业务数据、候选列表、固定交互提示、翻页提示只能来自当轮工具返回内容，禁止历史复述或推断，进一步收紧了“只输出本轮 q-claw 结果”原则。\n- 相关规则描述更加精确，避免业务结果、表格、候选列表等任何数据的历史引用或自建。\n- 其他内容无变动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c9be3ce84e764b15a472f278258aa49b8c2176cb81140ff107ae870cb0ad342"
+}

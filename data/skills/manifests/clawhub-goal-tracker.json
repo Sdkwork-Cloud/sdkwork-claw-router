@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11434,
+  "uuid": "skill-clawhub-goal-tracker",
+  "skillKey": "clawhub-goal-tracker",
+  "name": "Goal Tracker",
+  "summary": "Track and log progress on long-term goals with daily updates, milestone marking, MRR tracking, and weekly summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alti-Systems",
+      "features": [
+        "Track and log progress on long-term goals with daily updates, milestone marking, MRR tracking,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goal-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/157874759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goal-tracker",
+      "url": "https://clawhub.ai/skills/goal-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-tracker",
+    "url": "https://clawhub.ai/skills/goal-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-tracker-5002bb45830ce6b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goal-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-goal-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f836bb853a985f0775fb75fe3fb2f344274a251eb13fc23cbccdd59ab0c5026",
+      "artifactSizeBytes": 2255
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T07:53:22.400Z"
+}

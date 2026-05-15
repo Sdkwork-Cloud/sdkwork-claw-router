@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gongwen-writer@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gongwen_writer",
+  "skill": {
+    "id": 65560,
+    "skillKey": "clawhub-gongwen-writer",
+    "name": "gongwen-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gongwen-writer",
+    "url": "https://clawhub.ai/skills/gongwen-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gongwen-writer-4980f334cb031b3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "政府公文格式文档生成器。支持所有常见文档格式输入（.md .txt .docx .pdf .html .rtf），输出符合国家标准的.docx公文格式。使用场景：产业调研报告、政策分析报告、工作报告等需要严格按照政府公文格式排版的文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wisink",
+      "userId": "publishers:wisink",
+      "displayName": "Wisink",
+      "image": "https://avatars.githubusercontent.com/u/4056724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774176794622,
+      "changelog": "修复奇偶页页码：将evenAndOddHeaders同时写入sectPr和settings.xml（文档级），解决之前只在sectPr中添加不生效的问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb46e7f6a0e2fc56d0a1ec7b2973d535330154a09956f8ae991423bdbb9db10d"
+}

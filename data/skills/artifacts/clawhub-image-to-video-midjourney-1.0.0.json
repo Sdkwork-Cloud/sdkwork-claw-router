@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-midjourney@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_midjourney",
+  "skill": {
+    "id": 44256,
+    "skillKey": "clawhub-image-to-video-midjourney",
+    "name": "Image To Video Midjourney"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-midjourney",
+    "url": "https://clawhub.ai/skills/image-to-video-midjourney",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-midjourney-11259b75cd2d351f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your still images (PNG, JPG, WEBP, JPEG, up to 200MB), say something like \"a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776770011984,
+      "changelog": "Initial release of “Image to Video Midjourney — Animate Midjourney Images to Video”.  \nUsers can easily animate still Midjourney images into short, ready-to-post video clips.\n\n- Upload a PNG, JPG, WEBP, or JPEG (up to 200MB), give simple instructions, and receive a 1080p MP4 video.\n- No manual editing; just describe what you want (e.g., “animate this Midjourney image into a smooth 5-second video clip”).\n- Automatic session and token handling, with 100 free credits for new users.\n- Fast cloud rendering: get downloadable animated video in about 30–90 seconds.\n- Includes workflows for uploading, editing, previewing, exporting, and managing credits — all chat-driven.\n- Smart error handling and clear user status messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10dcff02776c01b0648af73ad4dc929a8038f1c7a0991ea7e67f075416072fd3"
+}

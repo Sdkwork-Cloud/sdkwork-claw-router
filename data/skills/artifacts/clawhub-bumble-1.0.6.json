@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bumble@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bumble",
+  "skill": {
+    "id": 26256,
+    "skillKey": "clawhub-bumble",
+    "name": "Bumble"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bumble",
+    "url": "https://clawhub.ai/skills/bumble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bumble-3845e52ac6dc3862.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bumble session, auth, matches, messages, sending, and profile-photo export via Remote Browser Service. Use to resume an existing Bumble app session, inspect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vasyaod",
+      "userId": "s1734nk0kj9x904ddtmczp26ah83nvwh",
+      "displayName": "Vasilii Vazhesov",
+      "image": "https://avatars.githubusercontent.com/u/955587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1778269695911,
+      "changelog": "send: read message from stdin (- or --stdin) or --file path to avoid bash $'…' quoting issues with URLs and newlines. Docs updated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c6432e9a7183bd1a57b984ad6571bfc1ba0a3a8b778282f047d4e0babddb1f1"
+}

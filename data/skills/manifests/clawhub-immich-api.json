@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13924,
+  "uuid": "skill-clawhub-immich-api",
+  "skillKey": "clawhub-immich-api",
+  "name": "Immich API Connector",
+  "summary": "Connect to self-hosted Immich instances to manage photos, albums, users, search media, upload/download files, and handle jobs via REST API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.immich_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Administrator",
+      "features": [
+        "Connect to self-hosted Immich instances to manage photos, albums, users, search media, upload/d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/immich-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57876954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "immich-api",
+      "url": "https://clawhub.ai/skills/immich-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "immich-api",
+    "url": "https://clawhub.ai/skills/immich-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/immich-api-f174638951350fe7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/immich-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-immich-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2d491063c2f507e7476048647b443403d7095ee34725686878df7db6ea01ac0",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T18:03:46.645Z"
+}

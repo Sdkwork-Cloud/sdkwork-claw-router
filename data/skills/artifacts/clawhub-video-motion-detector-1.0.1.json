@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-motion-detector@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_motion_detector",
+  "skill": {
+    "id": 72920,
+    "skillKey": "clawhub-video-motion-detector",
+    "name": "Na He"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-motion-detector",
+    "url": "https://clawhub.ai/skills/video-motion-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-motion-detector-3d8f81efc0573563.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频动作检测与分析。用于检测视频中的特定动作序列，如武术动作、舞蹈动作、人体姿态变化等。当用户要求检测视频中的动作、分析动作是否完成、验证特定动作序列时触发此技能。支持输入视频URL或本地视频文件，检测完成后通过飞书通知结果。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hena1985",
+      "userId": "s17a8nmjwya570sy60zdedkvsd83gykv",
+      "displayName": "hena1985",
+      "image": "https://avatars.githubusercontent.com/u/38931636?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774233811378,
+      "changelog": "Initial release of video-motion-detector.\n\n- Detects specific motion sequences in videos, such as martial arts moves, dance, or posture changes.\n- Supports input via video URL or local video files.\n- Provides detailed steps for video download, frame extraction, and motion analysis.\n- Allows detection of motion order, simultaneity, and repetition per user request.\n- Sends structured detection results via Feishu notifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47f5d8ba78b155e850f3d688513d7a499abe7df88f10c3e52b50a3addd70b37f"
+}

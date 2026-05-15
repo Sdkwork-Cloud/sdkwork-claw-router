@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calculator-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calculator_2",
+  "skill": {
+    "id": 21599,
+    "skillKey": "clawhub-calculator-2",
+    "name": "Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calculator-2",
+    "url": "https://clawhub.ai/skills/calculator-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calculator-2-e1859bcca6485e9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"calculate\", \"compute\", \"do math\", mentions arithmetic operations like \"add\", \"subtract\", \"multiply\", \"divide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cexfree",
+      "userId": "publishers:cexfree",
+      "displayName": "CexFree",
+      "image": "https://avatars.githubusercontent.com/u/205146125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773287397979,
+      "changelog": "- Initial release of the calculator skill, providing support for basic arithmetic operations: addition, subtraction, multiplication, and division.\n- Parses and evaluates user math expressions step by step, showing the calculation process.\n- Follows standard order of operations (PEMDAS) for chained and complex expressions.\n- Handles division by zero with a warning.\n- Returns results with appropriate precision, avoiding unnecessary decimal places.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b38109a44b48556e3017f9f9411b5320fe5931338dbdf347f092d28a13c3405c"
+}

@@ -36,7 +36,7 @@ export function CheckoutView() {
 
   const payableAmount = checkoutStatus?.amount || amount;
   const payableCents = moneyCents(payableAmount);
-  const points = checkoutStatus?.points || pointsForAmount(payableAmount);
+  const points = checkoutStatus?.points;
   const status = checkoutStatus?.status || 'pending';
   const terminalNotice = checkoutStatus ? checkoutStatusNotice(status) : '';
   const activePaymentMethod = normalizePaymentMethod(checkoutStatus?.paymentMethod) || paymentMethod;
@@ -238,7 +238,7 @@ export function CheckoutView() {
               <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
                 <span>获得积分</span>
                 <span className="font-mono text-blue-600 dark:text-blue-400 font-semibold">
-                  {points.toLocaleString()} 积分
+                  {points === undefined ? '创建订单后确认' : `${points.toLocaleString()} 积分`}
                 </span>
               </div>
               {checkoutStatus?.outTradeNo && (
@@ -434,11 +434,6 @@ function moneyCents(amount: string): number {
   const [whole, fraction = ''] = value.split('.');
   const cents = Number.parseInt(whole, 10) * 100 + Number.parseInt(fraction.padEnd(2, '0'), 10);
   return Number.isSafeInteger(cents) ? cents : 0;
-}
-
-function pointsForAmount(amount: string): number {
-  const cents = moneyCents(amount);
-  return cents > 0 ? Math.max(1, Math.floor((cents + 5) / 10)) : 0;
 }
 
 function formatMoneyAmount(amount: string): string {

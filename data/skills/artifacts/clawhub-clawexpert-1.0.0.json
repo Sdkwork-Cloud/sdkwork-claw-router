@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawexpert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawexpert",
+  "skill": {
+    "id": 52546,
+    "skillKey": "clawhub-clawexpert",
+    "name": "EverClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawexpert",
+    "url": "https://clawhub.ai/skills/clawexpert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawexpert-32877119d9775ccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Domain expert learning system with persistent local knowledge base. READ THIS SKILL FILE at the start of every session — learned topics are stored locally an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edgepro001",
+      "userId": "s172r9t450wgy5a4a9wcmdcbzh83yn9a",
+      "displayName": "EdgePro001",
+      "image": "https://avatars.githubusercontent.com/u/190611342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775052177420,
+      "changelog": "ClawExpert 1.0.0 — Initial release\n\n- Introduces a persistent local knowledge base for autonomous, citable domain learning.\n- Adds session start logic for auto-detecting and managing local knowledge, including proactive mode and interrupted learning detection.\n- Provides user-invocable slash commands for initialization, topic learning, and status checking.\n- Enforces use of local knowledge over model memory, with strict source citation and topic awareness.\n- Bundles deterministic scripts for filesystem operations, avoiding ad-hoc code and any git usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:153021870d92e83ed2fb2e53a26b4da43ae7fdb5cb74c6facf70688b80ede224"
+}

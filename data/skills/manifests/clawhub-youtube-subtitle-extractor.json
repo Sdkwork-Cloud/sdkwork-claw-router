@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58085,
+  "uuid": "skill-clawhub-youtube-subtitle-extractor",
+  "skillKey": "clawhub-youtube-subtitle-extractor",
+  "name": "YouTube Subtitle Extractor",
+  "summary": "Tải phụ đề (SRT/VTT/TXT) từ video YouTube bằng yt-dlp. Hỗ trợ auto-generated và manual subtitles, đa ngôn ngữ. Dùng khi user yêu cầu \"Tải phụ đề video X\", \"G...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_subtitle_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MCB AI",
+      "features": [
+        "Tải phụ đề (SRT/VTT/TXT) từ video YouTube bằng yt-dlp",
+        "Hỗ trợ auto-generated và manual subtitles, đa ngôn ngữ",
+        "Dùng khi user yêu cầu \"Tải phụ đề video X\", \"G..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-subtitle-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132585065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-subtitle-extractor",
+      "url": "https://clawhub.ai/skills/youtube-subtitle-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-subtitle-extractor",
+    "url": "https://clawhub.ai/skills/youtube-subtitle-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-subtitle-extractor-5f21c332d8fa5005.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-subtitle-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-subtitle-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5402881fd4aa8068d512e8fac8b63ebd185cafc43bd5923d7f502effbef2305c",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T07:22:38.684Z"
+}

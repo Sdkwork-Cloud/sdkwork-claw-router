@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boston-scientific@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boston_scientific",
+  "skill": {
+    "id": 68125,
+    "skillKey": "clawhub-boston-scientific",
+    "name": "Boston Scientific"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boston-scientific",
+    "url": "https://clawhub.ai/skills/boston-scientific",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boston-scientific-8a91b891de25d4f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球领先的微创介入医疗器械公司，专注心血管、消化内镜和泌尿领域的创新产品和技术研发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777035783542,
+      "changelog": "Boston Scientific skill v1.0.0 — Initial release\n\n- 提供 Boston Scientific 公司的详细介绍、发展历史和关键产品线。\n- 覆盖心血管、消化内镜、泌尿等核心业务领域及创新产品（如WATCHMAN和FARAPULSE）。\n- 包含公司商业模式、技术护城河、行业地位与市场数据。\n- 适用于分析医疗器械行业、研究微创医疗技术趋势和了解重磅新产品。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:61af1bd2ac38075239b41366401e39bfec7c0403ac861a17b0954873e2bc029c"
+}

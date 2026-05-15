@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48882,
+  "uuid": "skill-clawhub-air-france-klm",
+  "skillKey": "clawhub-air-france-klm",
+  "name": "Air France Klm",
+  "summary": "Manage bookings, check flights, explore Air France and KLM routes, and access Air France-KLM group info including hubs, fleet, and alliance details.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.air_france_klm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Manage bookings, check flights, explore Air France and KLM routes, and access Air France-KLM gr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/air-france-klm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "air-france-klm",
+      "url": "https://clawhub.ai/skills/air-france-klm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "air-france-klm",
+    "url": "https://clawhub.ai/skills/air-france-klm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/air-france-klm-9dff38862d198fa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/air-france-klm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-air-france-klm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c86d434de780dcb8a30cce91deb0a9bd947cbc27522f084bba96934ca1ec8ed0",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T17:03:27.703Z"
+}

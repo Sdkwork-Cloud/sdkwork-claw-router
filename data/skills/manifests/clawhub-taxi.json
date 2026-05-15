@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17590,
+  "uuid": "skill-clawhub-taxi",
+  "skillKey": "clawhub-taxi",
+  "name": "Taxi",
+  "summary": "Handle everything for ground transportation, from price comparison to booking, tracking, disputes, and expense management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taxi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Handle everything for ground transportation, from price comparison to booking, tracking, disput."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taxi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taxi",
+      "url": "https://clawhub.ai/skills/taxi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taxi",
+    "url": "https://clawhub.ai/skills/taxi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taxi-12796d3d5f4e1323.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taxi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taxi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c78a0b3bad1cb9f1aaad9086ffacbc50a9a5275fc9598494fd0acb619a86e2e",
+      "artifactSizeBytes": 1774
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T19:10:34.077Z"
+}

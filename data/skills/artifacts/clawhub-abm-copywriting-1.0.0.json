@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-copywriting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_copywriting",
+  "skill": {
+    "id": 51460,
+    "skillKey": "clawhub-abm-copywriting",
+    "name": "Copywriting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-copywriting",
+    "url": "https://clawhub.ai/skills/abm-copywriting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-copywriting-b91355e8acc9a56c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773806122343,
+      "changelog": "- Initial release of the copywriting skill for writing, rewriting, or improving marketing copy for any web page.\n- Includes a clear process for gathering product, audience, and context information before writing.\n- Provides detailed copywriting principles, style rules, and best practices focused on clarity, persuasion, and customer-centered language.\n- Offers structured guidance for different page types (homepage, landing, pricing, feature, about) and full-page framework (headlines, CTAs, sections).\n- Output includes organized copy, annotations for key elements, and alternative headline/CTA options.\n- Lists related skills for email, popup, editing, and page optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3a33e05020d57222942c3bb18af75ebd0c86f084494122dff75b8b0ae9c50c9"
+}

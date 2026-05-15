@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61125,
+  "uuid": "skill-clawhub-telegram-geeknews",
+  "skillKey": "clawhub-telegram-geeknews",
+  "name": "geeknews-bot",
+  "summary": "매일 GeekNews(news.hada.io)에서 오늘의 HOT 이슈 5개를 큐레이션하고, 오픈소스 출시·GitHub star 급상승 프로젝트를 우선 선정하여 텔레그램으로 전송하는 데일리 브리프 에이전트 스킬. 사용자가 \"긱뉴스 요약\", \"오늘 개발 뉴스\", \"OSS 뉴스\", \"텔...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_geeknews",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DongJuS",
+      "features": [
+        "매일 GeekNews(news.hada.io)에서 오늘의 HOT 이슈 5개를 큐레이션하고, 오픈소스 출시·GitHub star 급상승 프로젝트를 우선 선정하여 텔레그램으로.",
+        "사용자가 \"긱뉴스 요약\", \"오늘 개발 뉴스\", \"OSS 뉴스\", \"텔..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-geeknews@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83942652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-geeknews",
+      "url": "https://clawhub.ai/skills/telegram-geeknews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-geeknews",
+    "url": "https://clawhub.ai/skills/telegram-geeknews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-geeknews-38783f04930328d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-geeknews@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-geeknews-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bbaad590b8721089ade83437716b924a87388ff3494050ab994c3532c3e7a24",
+      "artifactSizeBytes": 2533
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:24:48.307Z"
+}

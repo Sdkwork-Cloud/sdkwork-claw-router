@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lean-claude-code-harness@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lean_claude_code_harness",
+  "skill": {
+    "id": 32424,
+    "skillKey": "clawhub-lean-claude-code-harness",
+    "name": "Lean Claude Code Harness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lean-claude-code-harness",
+    "url": "https://clawhub.ai/skills/lean-claude-code-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lean-claude-code-harness-4a7286d96fa30ccc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building, auditing, or simplifying an AI coding-agent harness, especially when the current runtime has unclear config precedence, weak tool permissi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aznikline",
+      "userId": "s17b7qvsrcfz751mqr4j9tgs2183jhcb",
+      "displayName": "Mason",
+      "image": "https://avatars.githubusercontent.com/u/27564626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775117379812,
+      "changelog": "Improve triggering guidance, add quick audit checklist, and include the public ClawHub link in the README.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a27df0695bd235efe3eab68035f08dd85c7db3f047c90951b9d05f8e87f8fad5"
+}

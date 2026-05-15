@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-search-free@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_free",
+  "skill": {
+    "id": 32339,
+    "skillKey": "clawhub-baidu-search-free",
+    "name": "Baidu Search (Free)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-free",
+    "url": "https://clawhub.ai/skills/baidu-search-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-free-bf8bc55542d06bef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free Baidu web search, no API key required, supports time range filtering"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoxh",
+      "userId": "s17dsvj6tbs3jy3xgjps2tqzn183jx3e",
+      "displayName": "guoxh",
+      "image": "https://avatars.githubusercontent.com/u/3035139?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777637826742,
+      "changelog": "Bug fixes: improved URL resolution, better error handling, removed false-positive anti-scraping detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0057959a2a85009a9f38acccc6237775ca6800c54aa9ff7bc38ab3c67eac3939"
+}

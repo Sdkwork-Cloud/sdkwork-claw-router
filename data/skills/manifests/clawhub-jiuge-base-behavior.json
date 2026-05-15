@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70220,
+  "uuid": "skill-clawhub-jiuge-base-behavior",
+  "skillKey": "clawhub-jiuge-base-behavior",
+  "name": "声音制作规范，Jiuge_Flow_Perfect_V1.skill",
+  "summary": "九歌传媒机器人的基础行为规范，约束文件发送、定时任务、文档生成三大核心行为。当需要发送文件时、安排定时任务时、生成文档时，必须遵循本规范。本规范优先级高于其他技能的具体指令。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiuge_base_behavior",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lzgsrbs",
+      "features": [
+        "九歌传媒机器人的基础行为规范，约束文件发送、定时任务、文档生成三大核心行为。当需要发送文件时、安排定时任务时、生成文档时，必须遵循本规范。本规范优先级高于其他技能的具体指令。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiuge-base-behavior@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167130850?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiuge-base-behavior",
+      "url": "https://clawhub.ai/skills/jiuge-base-behavior"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiuge-base-behavior",
+    "url": "https://clawhub.ai/skills/jiuge-base-behavior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiuge-base-behavior-60855053bfa2101a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiuge-base-behavior@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiuge-base-behavior-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e96f94084791f868e7af521e6b94bcd112f6b7e6e981b9fbcadc83e95bf8fb1",
+      "artifactSizeBytes": 2497
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T19:39:01.205Z"
+}

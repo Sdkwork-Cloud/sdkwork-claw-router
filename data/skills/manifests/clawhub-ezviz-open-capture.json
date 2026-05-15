@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62566,
+  "uuid": "skill-clawhub-ezviz-open-capture",
+  "skillKey": "clawhub-ezviz-open-capture",
+  "name": "Ezviz Open Capture Phone Detect",
+  "summary": "通过萤石摄像头抓拍并AI检测玩手机行为，检测到则生成语音告警并下发至设备播放。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_capture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EzvizOpenTeam",
+      "features": [
+        "通过萤石摄像头抓拍并AI检测玩手机行为，检测到则生成语音告警并下发至设备播放。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ezviz-open-capture@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16202450?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ezviz-open-capture",
+      "url": "https://clawhub.ai/skills/ezviz-open-capture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-capture",
+    "url": "https://clawhub.ai/skills/ezviz-open-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-capture-ce5a081dd15f4675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ezviz-open-capture@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-ezviz-open-capture-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a72738b432a90f43dd00b942c3f56cf9d2ac8772bbe702216ca9185af25fc625",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:06:27.544Z"
+}

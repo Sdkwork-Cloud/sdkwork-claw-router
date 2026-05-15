@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dinobase@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dinobase",
+  "skill": {
+    "id": 40394,
+    "skillKey": "clawhub-dinobase",
+    "name": "Dinobase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dinobase",
+    "url": "https://clawhub.ai/skills/dinobase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dinobase-c5b46cb37b72223b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and query business data across 100+ sources (Stripe, HubSpot, Salesforce, etc.) via SQL. Agent-driven setup, cross-source joins, mutations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kappa90",
+      "userId": "s177je6166z2w99k65erp9zt01841hs0",
+      "displayName": "Emanuele Capparelli",
+      "image": "https://avatars.githubusercontent.com/u/7335343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775061490185,
+      "changelog": "Initial public release of dinobase.\n\n- Set up and query business data from 100+ sources (Stripe, HubSpot, Salesforce, etc.) via SQL.\n- Fully agent-driven setup: initialize locally, connect sources, sync and query—all via simple CLI steps.\n- Supports cross-source joins and aggregations using shared columns across services.\n- Write data back to sources with safe preview/confirm workflow for UPDATE and INSERT statements.\n- Dinobase Cloud adds managed sync, OAuth connectors, and team sharing (invite-only for now).\n- All commands output JSON for easy automation; --pretty flag provides human-readable output when needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e9cf38658f8a8255e9102fc8a2f2291c96f5803dcb9b06c57e465854e7a1f10"
+}

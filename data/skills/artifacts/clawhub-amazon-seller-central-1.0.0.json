@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-seller-central@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_seller_central",
+  "skill": {
+    "id": 20447,
+    "skillKey": "clawhub-amazon-seller-central",
+    "name": "Amazon Seller Central Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-seller-central",
+    "url": "https://clawhub.ai/skills/amazon-seller-central",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-seller-central-9194eef8cd5ad9bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon Seller Central listing management and optimization. Use when: user wants to create product listings, apply for GTIN exemptions, set up FBA shipments,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanchez0623",
+      "userId": "s17334zr2kx90rpqjxq03dk9bx83hddh",
+      "displayName": "sanchez",
+      "image": "https://avatars.githubusercontent.com/u/45893054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773667390150,
+      "changelog": "Initial release of the Amazon Seller Central skill.\n\n- Provides a comprehensive guide for creating and managing Amazon product listings across US, UK, EU, and JP marketplaces.\n- Supports workflows including product listing creation, GTIN exemption applications, FBA shipment setup, and inventory management.\n- Includes detailed content and image guidelines for optimized listings.\n- Covers category-specific requirements and common troubleshooting tips.\n- NOT intended for other e-commerce platforms, legal/tax advice, or Amazon Advertising.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:650a2542882f1dfe3b0031bf2f16ad2554d75b2b892a6a88a1059aae35514a2e"
+}

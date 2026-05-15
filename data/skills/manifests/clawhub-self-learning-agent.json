@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50869,
+  "uuid": "skill-clawhub-self-learning-agent",
+  "skillKey": "clawhub-self-learning-agent",
+  "name": "Self Learning Agent",
+  "summary": "Knowledge card memory system with semantic search. Agents wake up fresh each session but remember everything through atomic ~350-token cards with YAML frontm...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_learning_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Knowledge card memory system with semantic search",
+        "Agents wake up fresh each session but remember everything through atomic ~350-token cards with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-learning-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-learning-agent",
+      "url": "https://clawhub.ai/skills/self-learning-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-learning-agent",
+    "url": "https://clawhub.ai/skills/self-learning-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-learning-agent-fae47a550e2ed7de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-learning-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-learning-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da185b0f5f81d6cbf0f22c646c9e80c85d8a92b205c593df5c52ad6db1f373c4",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:49:28.295Z"
+}

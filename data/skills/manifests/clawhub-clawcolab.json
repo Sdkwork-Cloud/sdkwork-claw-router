@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23288,
+  "uuid": "skill-clawhub-clawcolab",
+  "skillKey": "clawhub-clawcolab",
+  "name": "ClawColab",
+  "summary": "Coordinate multiple OpenClaw instances in a shared GitHub repository under a half-trust model with secrecy boundaries, approval gates, structured tasks, clai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcolab",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "virtual-ny",
+      "features": [
+        "Coordinate multiple OpenClaw instances in a shared GitHub repository under a half-trust model w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawcolab@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214746569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawcolab",
+      "url": "https://clawhub.ai/skills/clawcolab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcolab",
+    "url": "https://clawhub.ai/skills/clawcolab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcolab-b5dbe003b617473d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawcolab@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawcolab-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45b5b32e3f85dcc34c86316d028b3065ae89048a00ec8f4758c1cbce514cee10",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T17:21:42.950Z"
+}

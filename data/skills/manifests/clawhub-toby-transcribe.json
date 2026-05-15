@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37782,
+  "uuid": "skill-clawhub-toby-transcribe",
+  "skillKey": "clawhub-toby-transcribe",
+  "name": "transcribe",
+  "summary": "Speech-to-text via SkillBoss API Hub (STT, powered by Whisper and more).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Speech-to-text via SkillBoss API Hub (STT, powered by Whisper and more)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toby-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toby-transcribe",
+      "url": "https://clawhub.ai/skills/toby-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-transcribe",
+    "url": "https://clawhub.ai/skills/toby-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-transcribe-f432c2fc6ad95e95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toby-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toby-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4d1f7d8b4173986865d233710e6641ebcad552c750410a6bb3fdda3a7a8d60a",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T01:30:26.085Z"
+}

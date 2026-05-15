@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25551,
+  "uuid": "skill-clawhub-lookup-dns",
+  "skillKey": "clawhub-lookup-dns",
+  "name": "DNS Lookup",
+  "summary": "DNS record lookups, reverse DNS, WHOIS via RDAP, and IP geolocation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lookup_dns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CutTheMustard",
+      "features": [
+        "DNS record lookups, reverse DNS, WHOIS via RDAP, and IP geolocation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lookup-dns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63439451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lookup-dns",
+      "url": "https://clawhub.ai/skills/lookup-dns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lookup-dns",
+    "url": "https://clawhub.ai/skills/lookup-dns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lookup-dns-d83da1a782d5b820.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lookup-dns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lookup-dns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6311b1fc76d91b4112e35d0dbf5925d2d9903f35f2c9e3570fa233d7427b598",
+      "artifactSizeBytes": 2177
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T03:43:50.874Z"
+}

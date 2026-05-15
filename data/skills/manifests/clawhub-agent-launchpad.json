@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22282,
+  "uuid": "skill-clawhub-agent-launchpad",
+  "skillKey": "clawhub-agent-launchpad",
+  "name": "Agent Launchpad",
+  "summary": "Generate complete, deployable AI agent skill packages from natural language descriptions. Includes 6 templates (monitor, scraper, analyst, trader, assistant,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_launchpad",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adjusternwachukwu-bot",
+      "features": [
+        "Generate complete, deployable AI agent skill packages from natural language descriptions",
+        "Includes 6 templates (monitor, scraper, analyst, trader, assistant,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-launchpad@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261576222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-launchpad",
+      "url": "https://clawhub.ai/skills/agent-launchpad"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-launchpad",
+    "url": "https://clawhub.ai/skills/agent-launchpad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-launchpad-957e81f0f56f88c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-launchpad@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-launchpad-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c13c8854834f06e458a4733d02e78e022a2fb88607507d9c11c2ab2dfa398d1",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T18:24:57.700Z"
+}

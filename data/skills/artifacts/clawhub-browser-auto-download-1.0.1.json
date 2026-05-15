@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-auto-download@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_auto_download",
+  "skill": {
+    "id": 10995,
+    "skillKey": "clawhub-browser-auto-download",
+    "name": "browser-auto-download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-auto-download",
+    "url": "https://clawhub.ai/skills/browser-auto-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-auto-download-deeae9f2f0dc3093.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser-automated file download with enhanced features. Auto-detects platform (Windows/macOS/Linux, 64/32-bit, ARM/Intel), handles multi-step navigation (homepage to platform-specific pages), captures auto-downloads triggered on page load,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronxx",
+      "userId": "s17dynn87nr0vav2wmwpb35yn984kjh0",
+      "displayName": "Aaronxx",
+      "image": "https://avatars.githubusercontent.com/u/14012939?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2213,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770220320489,
+      "changelog": "- Initial release of browser-auto-download skill.\n- Added support for intelligent, browser-based file downloads via automated navigation and platform detection.\n- Handles multi-step download flows, auto-downloads triggered on page load, and dynamic content rendering.\n- Includes extended documentation and publishing/release notes.\n- Provides page scrolling for lazy content, extended wait times, and Golang support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aff79cf34a91cd0beca71e4d2ab0cc7758d1877931d6f60e2ef2a3f6d3c54051"
+}

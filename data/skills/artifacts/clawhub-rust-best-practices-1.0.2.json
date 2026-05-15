@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rust-best-practices@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_best_practices",
+  "skill": {
+    "id": 30404,
+    "skillKey": "clawhub-rust-best-practices",
+    "name": "Rust Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-best-practices",
+    "url": "https://clawhub.ai/skills/rust-best-practices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-best-practices-5c44a0eb4b4fb3fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Development guidance for writing idiomatic Rust. Use when: (1) writing new Rust functions or modules, (2) choosing between borrowing, cloning, or ownership p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776831360569,
+      "changelog": "- Added a new \"Gates\" section describing specific, evidence-based sequences for:\n  - Clippy Clean (lint pass conditions)\n  - Performance claim (benchmark methodology and requirements)\n  - Docs for symbols you changed (documentation build criteria)\n- No other changes to guidance or sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc12fe09583cf5907bd78821497989768ebd9be59a5fb03a9202c077a82ce752"
+}

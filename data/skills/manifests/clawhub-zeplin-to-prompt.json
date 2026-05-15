@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27856,
+  "uuid": "skill-clawhub-zeplin-to-prompt",
+  "skillKey": "clawhub-zeplin-to-prompt",
+  "name": "Zeplin to Prompt",
+  "summary": "Export one or more Zeplin screen URLs into a structured layer tree with local assets and package the result as a zip file. Use when a user shares an app.zepl...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeplin_to_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sullivangu89",
+      "features": [
+        "Export one or more Zeplin screen URLs into a structured layer tree with local assets and packag.",
+        "Use when a user shares an app.zepl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeplin-to-prompt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1876794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeplin-to-prompt",
+      "url": "https://clawhub.ai/skills/zeplin-to-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeplin-to-prompt",
+    "url": "https://clawhub.ai/skills/zeplin-to-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeplin-to-prompt-76ca4f9cb076b7a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeplin-to-prompt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeplin-to-prompt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5892456a23456c4852eb4374dcd85ca48618816fb856e52c1c99cc831f859f2c",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:19:35.882Z"
+}

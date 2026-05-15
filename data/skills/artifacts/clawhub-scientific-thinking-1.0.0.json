@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scientific-thinking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scientific_thinking",
+  "skill": {
+    "id": 28725,
+    "skillKey": "clawhub-scientific-thinking",
+    "name": "Scientific Thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scientific-thinking",
+    "url": "https://clawhub.ai/skills/scientific-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scientific-thinking-09646b5996b9eddf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when interpreting research findings, evaluating scientific evidence, analyzing mechanisms, comparing competing hypotheses, designing experiments, or cons..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agents365-ai",
+      "userId": "s177ks88grnjrm2y5799tcjned83g880",
+      "displayName": "Agents365.ai",
+      "image": "https://avatars.githubusercontent.com/u/221161299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775706878890,
+      "changelog": "Initial release of the \"scientific-thinking\" skill.\n\n- Provides a structured framework for scientific reasoning, problem framing, evidence evaluation, hypothesis comparison, and argument construction.\n- Emphasizes clear distinction between evidence types (fact, inference, hypothesis) and calibration of claim strength.\n- Outlines a stepwise methodology, including consideration of alternative explanations and explicit definition of boundaries and uncertainties.\n- Offers detailed output structure and concise style guidance for research-oriented tasks.\n- Compatible with any LLM-based agent on major platforms; no external dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73991d4e51687ea096c5ceffde13f20b2619170aa95fc2d02d825a1246e01cfe"
+}

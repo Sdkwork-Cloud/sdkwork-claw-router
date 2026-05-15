@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/incident-response-lifecycle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_response_lifecycle",
+  "skill": {
+    "id": 37198,
+    "skillKey": "clawhub-incident-response-lifecycle",
+    "name": "Incident Response Lifecycle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-response-lifecycle",
+    "url": "https://clawhub.ai/skills/incident-response-lifecycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-response-lifecycle-f148a536819ac32e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Incident response process management following the NIST 800-61 lifecycle. Covers severity classification, escalation matrices, role assignment, communication..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vahagn-madatyan",
+      "userId": "s172e0s6wm08gdxkw6pxzkwzgh841b69",
+      "displayName": "Vahagn Madatyan",
+      "image": "https://avatars.githubusercontent.com/u/74753362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774167560715,
+      "changelog": "Initial release of the incident-response-lifecycle skill for structured incident management based on the NIST 800-61 framework.\n\n- Provides end-to-end incident process management: detection, classification, escalation, coordination, communication, recovery, and post-incident review.\n- Covers severity assignment (P1–P4), role allocation (Incident Commander, Technical Lead, Communications Lead, Scribe), and escalation matrices.\n- Includes templates and guidance for stakeholder communications, post-mortems, and root cause analysis (5-whys, fishbone).\n- Focuses on process and coordination; excludes technical forensics and evidence gathering, which are handled by the incident-response-network skill.\n- Outlines prerequisites for effective incident management, including authority, contact directories, and communication channels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7c18bc89936981348c2165a2d43cf52f42f545e0280b50b3f1e68d5bc71308b"
+}

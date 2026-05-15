@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-calorie-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_calorie_tracker",
+  "skill": {
+    "id": 26862,
+    "skillKey": "clawhub-photo-calorie-tracker",
+    "name": "Photo Calorie Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-calorie-tracker",
+    "url": "https://clawhub.ai/skills/photo-calorie-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-calorie-tracker-28fe7cd0ce2e95a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Photo Calorie Tracker - Recognizes food photos, logs daily calorie intake, and analyzes any date range. Use when: the user sends food images or asks about ca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobo23456",
+      "userId": "s17091ta7kdvsacjakd6a79eb184qjp3",
+      "displayName": "bobo23456",
+      "image": "https://avatars.githubusercontent.com/u/24497084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773838403530,
+      "changelog": "- Initial release: Photo Calorie Tracker skill  \n- Recognizes food images, logs daily calorie intake, and analyzes intake over user-specified date ranges  \n- Provides formatted calorie tracking reports based on meal photos and daily records  \n- Focused on lunch, dinner, and snack logging (breakfast excluded from calculations)  \n- Includes built-in food calorie reference for common meal items  \n- Not intended for weight analysis, full nutrition breakdowns, or workout planning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec1277ab6c2ef810f38ce17d2c1abe690d59407e8413b440a6e2f9d2ed9be22e"
+}

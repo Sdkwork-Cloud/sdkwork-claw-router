@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-file-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_file_converter",
+  "skill": {
+    "id": 35272,
+    "skillKey": "clawhub-jpeng-file-converter",
+    "name": "File Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-file-converter",
+    "url": "https://clawhub.ai/skills/jpeng-file-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-file-converter-e0b8ca0523cd7698.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "File format conversion skill. Convert between PDF, DOCX, Markdown, HTML, images, audio, and video formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774359156739,
+      "changelog": "- Initial release of jpeng-file-converter.\n- Supports conversion between popular document, image, audio, and video formats.\n- Includes batch conversion, image resizing, and audio extraction from video.\n- Simple command-line usage with customizable options for format, quality, and directories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d374ce1a90188248f0731a8d38242e6aecf16f4864f5592a013cecf96f26927"
+}

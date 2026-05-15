@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10158,
+  "uuid": "skill-clawhub-dgr",
+  "skillKey": "clawhub-dgr",
+  "name": "Decision-Grade Reasoning (DGR)",
+  "summary": "Audit-ready decision artifacts for LLM outputs — assumptions, risks, recommendation, and review gating (schema-valid JSON).",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dgr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Khazretgali Sapenov",
+      "features": [
+        "Audit-ready decision artifacts for LLM outputs — assumptions, risks, recommendation, and review."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dgr@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2848029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dgr",
+      "url": "https://clawhub.ai/skills/dgr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dgr",
+    "url": "https://clawhub.ai/skills/dgr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dgr-e806d213bf5e98b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dgr@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dgr-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c96efdb9d47e63da8a9e261fe4e92e8a9b698e853321277f8d206b81be97c317",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T02:00:39.426Z"
+}

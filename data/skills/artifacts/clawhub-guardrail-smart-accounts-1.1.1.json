@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guardrail-smart-accounts@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guardrail_smart_accounts",
+  "skill": {
+    "id": 38435,
+    "skillKey": "clawhub-guardrail-smart-accounts",
+    "name": "Guardrail Agent Smart Account Wallets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guardrail-smart-accounts",
+    "url": "https://clawhub.ai/skills/guardrail-smart-accounts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guardrail-smart-accounts-e46fefc9b9684272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give AI agents on-chain spending guardrails. Deploy ERC-4337 smart accounts with policy-enforced limits — agents cannot move funds beyond what you authorize,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawnwollenberg",
+      "userId": "s17bbd3py1z9bmh2c6zv4det1583rrj8",
+      "displayName": "Shawn Wollenberg",
+      "image": "https://avatars.githubusercontent.com/u/12882820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 692,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774982940276,
+      "changelog": "guardrail-smart-accounts v1.1.1\n\n- Updated smart contract addresses for both Base Mainnet and Sepolia Testnet in the documentation.\n- No changes to code or runtime configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19915134ca5cb37510cc283e9678c4e5ad85f3fcb3c88e0d2a0010111e30401c"
+}

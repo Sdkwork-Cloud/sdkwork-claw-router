@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30976,
+  "uuid": "skill-clawhub-callfire",
+  "skillKey": "clawhub-callfire",
+  "name": "Callfire",
+  "summary": "CallFire integration. Manage data, records, and automate workflows. Use when the user wants to interact with CallFire data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.callfire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "CallFire integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CallFire data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/callfire@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "callfire",
+      "url": "https://clawhub.ai/skills/callfire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "callfire",
+    "url": "https://clawhub.ai/skills/callfire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/callfire-164dab379c5e85db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/callfire@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-callfire-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:528a557e9da81b6b0a8af9277ae44f6fba6e497323a511298a0c0e097e192d27",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:34.874Z"
+}

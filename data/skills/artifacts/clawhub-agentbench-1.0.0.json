@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentbench@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbench",
+  "skill": {
+    "id": 16837,
+    "skillKey": "clawhub-agentbench",
+    "name": "AgentBench"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbench",
+    "url": "https://clawhub.ai/skills/agentbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbench-012c41d3eb9b3a6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Benchmark your OpenClaw agent across 40 real-world tasks. Tests file creation, research, data analysis, multi-step workflows, memory, error handling, and too..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "exe215",
+      "userId": "publishers:exe215",
+      "displayName": "Exe215",
+      "image": "https://avatars.githubusercontent.com/u/23108591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 734,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771772733635,
+      "changelog": "Initial release — 40 tasks, 7 domains, 4-layer scoring, cross-platform leaderboard",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3911e975c357d61c0650256cda368f8aa6c6bccc766c93aed55cf221d93a4367"
+}

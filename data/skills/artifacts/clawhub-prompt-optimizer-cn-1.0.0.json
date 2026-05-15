@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-optimizer-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_optimizer_cn",
+  "skill": {
+    "id": 68559,
+    "skillKey": "clawhub-prompt-optimizer-cn",
+    "name": "prompt-optimizer-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-optimizer-cn",
+    "url": "https://clawhub.ai/skills/prompt-optimizer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-optimizer-cn-c987d99d55ec8ec3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "复杂任务专用迭代式提示词优化器。严格执行ACON论文的两阶段迭代优化+APE自动提示工程，仅在用户明确要求时触发，优化完主动收集反馈，支持多轮迭代直到满意。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ucsdzehualiu",
+      "userId": "s17bk47xgrxy45rkmxpwv5p1z983nsd8",
+      "displayName": "ucsdzehualiu",
+      "image": "https://avatars.githubusercontent.com/u/37421937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776307775226,
+      "changelog": "- 首个版本发布，基于ACON和APE论文提出的两阶段迭代提示词优化流程。\n- 支持解析并锁定用户任务意图，提取并全程保留关键信号。\n- 结合APE机制，多风格并行生成候选指令，自动评分选优，并严格验证信号完整性。\n- 引入阶段化冗余压缩，支持λ参数灵活控制压缩率，兼顾效果与长度。\n- 优化结果输出后主动收集用户反馈，支持多轮迭代直至满意。\n- 仅在用户明确请求时触发，严格限制自动执行。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c233e0eca97b5b27b46d7b1e52860a25f3ae343420484359cd89867204c6b7af"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/activity-control-ui@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activity_control_ui",
+  "skill": {
+    "id": 51707,
+    "skillKey": "clawhub-activity-control-ui",
+    "name": "Activity Control Ui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activity-control-ui",
+    "url": "https://clawhub.ai/skills/activity-control-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activity-control-ui-3744be35abf0cfe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎨 Anime-style real-time activity dashboard with virtual avatar for OpenClaw. Displays current agent activities, session status, token usage, and ongoing tas..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rudagebil11-jpg",
+      "userId": "s174hj2x8qgcr1bfhf1t0y4tss83rgpx",
+      "displayName": "rudagebil11-jpg",
+      "image": "https://avatars.githubusercontent.com/u/262148849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774715143991,
+      "changelog": "**Summary: Major visual and UI upgrade with anime-style theme and virtual avatar.**\n\n- Introduced a colorful anime-style dashboard, featuring a gradient starry background and floating effects.\n- Added a chibi-style virtual avatar with animated blinking and breathing glow.\n- Implemented a live speech bubble to display current agent activities in real time.\n- Enhanced context meter with dynamic color gradation for better visual feedback.\n- Expanded activity feed and task tracking; new auto-refresh functionality.\n- Updated documentation to reflect new features and usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3087fb34818cdf743bc814292bdda17fb4b2b79705b4fa24cad84de43b128038"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62638,
+  "uuid": "skill-clawhub-chongjie-skill-generator",
+  "skillKey": "clawhub-chongjie-skill-generator",
+  "name": "自然语言Skill生成器",
+  "summary": "自然语言描述需求，AI自动生成可复用的Skill。用于：(1)根据需求创建新Skill (2)生成Skill结构 (3)批量生成Skill模板。触发词：创建skill、生成skill、做一个skill",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chongjie_skill_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chongjie-ran",
+      "features": [
+        "自然语言描述需求，AI自动生成可复用的Skill。用于：(1)根据需求创建新Skill (2)生成Skill结构 (3)批量生成Skill模板。触发词：创建skill、生成skill、做一个."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chongjie-skill-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198864991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chongjie-skill-generator",
+      "url": "https://clawhub.ai/skills/chongjie-skill-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chongjie-skill-generator",
+    "url": "https://clawhub.ai/skills/chongjie-skill-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chongjie-skill-generator-1837589f8f70e887.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chongjie-skill-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chongjie-skill-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:538a012bc34e2434ac19cd27898bef7709b87e6043a4254086daf10832fcba04",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:48:52.945Z"
+}

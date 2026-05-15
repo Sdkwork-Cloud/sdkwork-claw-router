@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16174,
+  "uuid": "skill-clawhub-session-history",
+  "skillKey": "clawhub-session-history",
+  "name": "Session History",
+  "summary": "Search and browse past conversation history across all sessions. Use when recalling prior work, finding old discussions, resuming dropped threads, or when th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_history",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "@amor71",
+      "features": [
+        "Search and browse past conversation history across all sessions",
+        "Use when recalling prior work, finding old discussions, resuming dropped threads, or when th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-history@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48661380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-history",
+      "url": "https://clawhub.ai/skills/session-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-history",
+    "url": "https://clawhub.ai/skills/session-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-history-94cabfea1f1a2f3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-history@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-history-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c87c5c0f5b16b5b48f0965e8325e8bf1b3c98dbcf93379a9f7d5e83094bbab7",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:13:28.087Z"
+}

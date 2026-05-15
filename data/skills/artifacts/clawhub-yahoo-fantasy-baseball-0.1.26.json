@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yahoo-fantasy-baseball@0.1.26",
+  "version": "0.1.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoo_fantasy_baseball",
+  "skill": {
+    "id": 18088,
+    "skillKey": "clawhub-yahoo-fantasy-baseball",
+    "name": "Yahoo Fantasy Baseball"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoo-fantasy-baseball",
+    "url": "https://clawhub.ai/skills/yahoo-fantasy-baseball",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoo-fantasy-baseball-8d6da3b130020839.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query your Yahoo Fantasy Baseball league: view roster, standings, matchups, free agents, draft results, transactions, and injuries. Daily roster optimization..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "khaney64",
+      "userId": "s179ww0mv835j5w7wqfbddkea983k1sb",
+      "displayName": "Kevin Haney",
+      "image": "https://avatars.githubusercontent.com/u/13684640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 720,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 27
+    },
+    "latestVersion": {
+      "version": "0.1.26",
+      "createdAt": 1777306845113,
+      "changelog": "- Documentation formatting updated in SKILL.md for improved readability and consistency\n- No functional or user-facing changes to features or commands\n- Existing instructions, commands, and usage examples remain unchanged",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5cd807e3c7e7324ee982ccf2f2de1a4db7cb04b1666524847ab2f5fe9541227"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-personality-test@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_personality_test",
+  "skill": {
+    "id": 68196,
+    "skillKey": "clawhub-travel-personality-test",
+    "name": "Travel Personality Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-personality-test",
+    "url": "https://clawhub.ai/skills/travel-personality-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-personality-test-00cf17900dcb1069.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户想做旅行人格测试、探索自己的旅行风格、或获取基于人格的旅行推荐时使用。触发词包括\"旅行人格测试\"、\"测测我是什么旅行者\"、\"旅行风格\"、\"适合去哪玩\"、\"推荐旅行目的地\"、\"最近想出去玩\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwhite-qi",
+      "userId": "s175gbsc3z2aax67ng34w245ts8450a6",
+      "displayName": "Gwhite-qi",
+      "image": "https://avatars.githubusercontent.com/u/66064724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775637338815,
+      "changelog": "更新版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63da4a8f53f64cc9747ca051959dd6a34d58930bd4dab1054abb071e055c4bda"
+}

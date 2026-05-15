@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-profile-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_profile_audit",
+  "skill": {
+    "id": 22318,
+    "skillKey": "clawhub-linkedin-profile-audit",
+    "name": "Linkedin Profile Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-profile-audit",
+    "url": "https://clawhub.ai/skills/linkedin-profile-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-profile-audit-ba402443e47ed158.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and correct LinkedIn experience descriptions for overclaims, fabricated metrics, and inaccuracies using browser automation + LLM accuracy review. Flags..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774670746075,
+      "changelog": "Security metadata: explicit security_notes explaining CDP loopback-only connection, no credential extraction, user-owned session only. Moved ws:// into code block to prevent false-positive scanner triggers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:922f5755c14e41e13751e5429c2b306967ce793c87ce8a45f4b0b6174ee444a0"
+}

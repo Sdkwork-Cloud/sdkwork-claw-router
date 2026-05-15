@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63759,
+  "uuid": "skill-clawhub-morning-radar",
+  "skillKey": "clawhub-morning-radar",
+  "name": "morning-radar",
+  "summary": "基于百度AI搜索按自定义关键词收集资讯，生成Markdown简报并定时推送到飞书。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Diomedeak",
+      "features": [
+        "基于百度AI搜索按自定义关键词收集资讯，生成Markdown简报并定时推送到飞书。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-radar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199217088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-radar",
+      "url": "https://clawhub.ai/skills/morning-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-radar",
+    "url": "https://clawhub.ai/skills/morning-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-radar-ba51fe70d4b34aa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-radar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-radar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:460f14fd743feb6aa9ed5046611da50b4e2ea5075258bf4dae0a3d45d4e36787",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:24:02.139Z"
+}

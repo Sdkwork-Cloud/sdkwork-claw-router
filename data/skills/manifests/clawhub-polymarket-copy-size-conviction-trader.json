@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54889,
+  "uuid": "skill-clawhub-polymarket-copy-size-conviction-trader",
+  "skillKey": "clawhub-polymarket-copy-size-conviction-trader",
+  "name": "Polymarket Copy Size Conviction Trader",
+  "summary": "Weights copytrading by portfolio concentration -- a whale committing 30% of capital to one market signals far more conviction than 2% spread across many. Cop...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_copy_size_conviction_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Weights copytrading by portfolio concentration -",
+        "a whale committing 30% of capital to one market signals far more conviction than 2% spread acro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-copy-size-conviction-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-copy-size-conviction-trader",
+      "url": "https://clawhub.ai/skills/polymarket-copy-size-conviction-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-copy-size-conviction-trader",
+    "url": "https://clawhub.ai/skills/polymarket-copy-size-conviction-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-copy-size-conviction-trader-4b96d2adb884b210.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-copy-size-conviction-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-copy-size-conviction-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4239bc83613e4f08097b2c6e6bdace717e2c356561ade2005921646b0b6f57aa",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:34:04.907Z"
+}

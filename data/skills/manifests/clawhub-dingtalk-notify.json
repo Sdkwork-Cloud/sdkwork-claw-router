@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63380,
+  "uuid": "skill-clawhub-dingtalk-notify",
+  "skillKey": "clawhub-dingtalk-notify",
+  "name": "Dingtalk Notify",
+  "summary": "通过钉钉工作通知发送消息给指定用户。统一的消息推送渠道。 Use when: 需要发送钉钉工作通知、测试钉钉连通性、重试失败的钉钉消息、 发送文件到钉钉、切换钉钉机器人模型。Triggers: \"钉钉通知\", \"钉钉推送\", \"发送钉钉\", \"dingtalk notify\", \"钉钉连通性\", \"钉钉测试\",...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_notify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m646pxhjf4-dot",
+      "features": [
+        "通过钉钉工作通知发送消息给指定用户。统一的消息推送渠道。 Use when: 需要发送钉钉工作通知、测试钉钉连通性、重试失败的钉钉消息、 发送文件到钉钉、切换钉钉机器人模型。Triggers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-notify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267261318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-notify",
+      "url": "https://clawhub.ai/skills/dingtalk-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-notify",
+    "url": "https://clawhub.ai/skills/dingtalk-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-notify-b6d35fe91f44daf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-notify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-notify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8452fd1996c34e3cc9eb69f3c01ebb65a778645ff175bd0c4cfe15c7859e8d5a",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T23:56:31.761Z"
+}

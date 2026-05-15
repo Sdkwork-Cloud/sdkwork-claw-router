@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26578,
+  "uuid": "skill-clawhub-bs-quick-compare",
+  "skillKey": "clawhub-bs-quick-compare",
+  "name": "Bs Quick Compare",
+  "summary": "Period-over-period variance analysis on the Balance Sheet pulled from QuickBooks Online. Outputs a 4-tab Excel workbook: Summary, Detail, Flags, CDC Log. Cov...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bs_quick_compare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Period-over-period variance analysis on the Balance Sheet pulled from QuickBooks Online",
+        "Outputs a 4-tab Excel workbook: Summary, Detail, Flags, CDC Log"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bs-quick-compare@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bs-quick-compare",
+      "url": "https://clawhub.ai/skills/bs-quick-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bs-quick-compare",
+    "url": "https://clawhub.ai/skills/bs-quick-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bs-quick-compare-6a4c73d4e722c313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bs-quick-compare@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bs-quick-compare-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4483495f5db17ddab06f9e1398b97b737ce89ec411d4f49bfcd14dbfd0216daf",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:51:56.904Z"
+}

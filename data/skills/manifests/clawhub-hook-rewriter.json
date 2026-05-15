@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32988,
+  "uuid": "skill-clawhub-hook-rewriter",
+  "skillKey": "clawhub-hook-rewriter",
+  "name": "Hook Rewriter",
+  "summary": "Rewrite weak or generic hooks into stronger, creator-native opening lines that capture attention in the first 1-3 seconds for short-form content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hook_rewriter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Rewrite weak or generic hooks into stronger, creator-native opening lines that capture attentio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hook-rewriter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hook-rewriter",
+      "url": "https://clawhub.ai/skills/hook-rewriter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hook-rewriter",
+    "url": "https://clawhub.ai/skills/hook-rewriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hook-rewriter-322248d6b609a986.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hook-rewriter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hook-rewriter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:209307f1c7ee506f3af2ae4923a8285f37d441a560f2a808704886cf38dc40af",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:40:42.356Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doc-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_export",
+  "skill": {
+    "id": 65898,
+    "skillKey": "clawhub-doc-export",
+    "name": "doc-export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-export",
+    "url": "https://clawhub.ai/skills/doc-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-export-9ee0f4ee6e45588d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将对话中解决的问题整理成方案文档，部署到 web 服务器供用户下载"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binyuli",
+      "userId": "s17fatbbsyqydf5gs8ansxg3fh83hsz1",
+      "displayName": "binyuli",
+      "image": "https://avatars.githubusercontent.com/u/20180924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773674712594,
+      "changelog": "Initial release: Export solution documents from conversations for user download via web link.\n\n- Summarizes conversation solutions into Markdown documents with background, steps, and examples.\n- Saves documents in a designated local directory and deploys them to a web server with HTTPS.\n- Provides users with a direct download link and reminds them to confirm for file cleanup.\n- Cleans up temporary web files on user request, preserving original archives.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba18c943d586f8709fbec7db57aaf7631efc0d90b1ab2ed779084a8a2376e3dd"
+}

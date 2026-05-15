@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-slideshow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_slideshow",
+  "skill": {
+    "id": 18616,
+    "skillKey": "clawhub-tiktok-slideshow",
+    "name": "Tiktok Slideshow Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-slideshow",
+    "url": "https://clawhub.ai/skills/tiktok-slideshow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-slideshow-62d8c683787f1549.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates TikTok image carousels (slideshows with text overlays on photos) via the ViralBaby API. Use when the user wants to: create TikTok slideshows or carou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aryanbhasin",
+      "userId": "publishers:aryanbhasin",
+      "displayName": "aryanbhasin",
+      "image": "https://avatars.githubusercontent.com/u/21118039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 645,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772441319320,
+      "changelog": "- Initial release: Create TikTok image carousels (slideshows with text overlays) using the ViralBaby API.\n- Lets you search Unsplash images, build and edit slideshows, and upload directly to TikTok drafts.\n- Supports storing user preferences for business/product info and content style to simplify future sessions.\n- Offers both auto-selection of background images and manual (preview) mode for user-picked images.\n- Includes full workflow for managing image collections and editing slideshow text content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9127ad8b529a69517e62052ca5b522def6e53f12be3050abe00e300cb00eb96e"
+}

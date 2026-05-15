@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30340,
+  "uuid": "skill-clawhub-lookupmark-local-rag",
+  "skillKey": "clawhub-lookupmark-local-rag",
+  "name": "Local RAG",
+  "summary": "Semantic search over local files using all-MiniLM-L6-v2 embeddings and ms-marco-MiniLM-L-6-v2 cross-encoder reranking with ChromaDB and parent-child chunking...",
+  "version": "1.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lookupmark_local_rag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LookUpMark",
+      "features": [
+        "Semantic search over local files using all-MiniLM-L6-v2 embeddings and ms-marco-MiniLM-L-6-v2 c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lookupmark-local-rag@1.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93028124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lookupmark-local-rag",
+      "url": "https://clawhub.ai/skills/lookupmark-local-rag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lookupmark-local-rag",
+    "url": "https://clawhub.ai/skills/lookupmark-local-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lookupmark-local-rag-8e46b5e151605b5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lookupmark-local-rag@1.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lookupmark-local-rag-1.9.1.json",
+      "version": "1.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea1a0fcde1da5a9f34641b4ae456a90dd5869703dfac9fe7e7c25fd653531d34",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T09:14:10.794Z"
+}

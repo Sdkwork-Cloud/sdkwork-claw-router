@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59395,
+  "uuid": "skill-clawhub-aiznt-images",
+  "skillKey": "clawhub-aiznt-images",
+  "name": "TS Images",
+  "summary": "通用图生图（OpenAI 风格）与 Gemini generateContent 文生图。Use when: 文生图、异步出图、Gemini 图像模型。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiznt_images",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianshu",
+      "features": [
+        "通用图生图（OpenAI 风格）与 Gemini generateContent 文生图。Use when: 文生图、异步出图、Gemini 图像模型。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aiznt-images@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100948785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aiznt-images",
+      "url": "https://clawhub.ai/skills/aiznt-images"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiznt-images",
+    "url": "https://clawhub.ai/skills/aiznt-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiznt-images-18152ae29f3f384c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aiznt-images@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aiznt-images-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c48df463cb9daedaf0a39b21362ea8578fd1f4b0b927d77408b3c49455872b0e",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:23:27.955Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plans-methodology@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plans_methodology",
+  "skill": {
+    "id": 19530,
+    "skillKey": "clawhub-plans-methodology",
+    "name": "Plans Methodology"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plans-methodology",
+    "url": "https://clawhub.ai/skills/plans-methodology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plans-methodology-37d40f438b500655.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured work tracking methodology using Plans. Use when creating, managing, reviewing, or delegating plans for significant work. Covers plan lifecycle (dr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cramtek",
+      "userId": "publishers:cramtek",
+      "displayName": "cramtek",
+      "image": "https://avatars.githubusercontent.com/u/7982236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771613770975,
+      "changelog": "Initial release. Structured work tracking methodology with plan lifecycle (draft, approved, in_progress, completed, archived), folder conventions, proposal/design/tasks templates, hierarchical delegation, and approval authority for multi-agent teams.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aba0c541668f8df214906589d7ee19ef63f14287fa417bd1e7e58e4c3dcc9e26"
+}

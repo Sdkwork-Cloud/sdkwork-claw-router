@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-funding-monitor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_funding_monitor",
+  "skill": {
+    "id": 69599,
+    "skillKey": "clawhub-binance-funding-monitor",
+    "name": "币安资金费率监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-funding-monitor",
+    "url": "https://clawhub.ai/skills/binance-funding-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-funding-monitor-2bb2d5e74d866bf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "币安资金费率套利监控工具 - 查看账户、持仓、盈亏统计，SkillPay收费版"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yyu812707-wq",
+      "userId": "s171jbtn4pxb7jk713d82w19v183snkp",
+      "displayName": "yyu812707-wq",
+      "image": "https://avatars.githubusercontent.com/u/260243474?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 523,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772678095922,
+      "changelog": "Fix security issues: remove hardcoded keys, bundle dependencies, add env declarations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d33c706ec9de964136d21a32f6400c49968605bb4a58337e7dd0f98aac139e88"
+}

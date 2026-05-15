@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-writing-skills@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_writing_skills",
+  "skill": {
+    "id": 26490,
+    "skillKey": "clawhub-report-writing-skills",
+    "name": "report-writing-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-writing-skills",
+    "url": "https://clawhub.ai/skills/report-writing-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-writing-skills-94ac33ddd6491d6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates collecting, downloading, and analyzing recent research reports with customizable focus and real-time progress feedback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meidetong",
+      "userId": "s17d60pzbrvwt5frzvvwj3zahd83j125",
+      "displayName": "meidetong",
+      "image": "https://avatars.githubusercontent.com/u/40972324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773226466389,
+      "changelog": "Report-Writing Skill v1.03\n\n- 新增报告需求确认：在生成报告前暂停，并让用户确认具体需求\n- 支持自定义大纲、重点方向或写作思路，提升分析灵活性\n- 生成报告时可根据用户反馈调整分析角度和内容重点\n- 保留此前版本的进度条、步骤提示、保存路径自定义等功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6ce6bb08e9fc54b7121f3ad602ded565a3b9306b427b439bbd3fc353af14e5a"
+}

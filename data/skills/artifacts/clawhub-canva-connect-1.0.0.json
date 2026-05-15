@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canva-connect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canva_connect",
+  "skill": {
+    "id": 9430,
+    "skillKey": "clawhub-canva-connect",
+    "name": "Canva Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canva-connect",
+    "url": "https://clawhub.ai/skills/canva-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canva-connect-fe6bfd10707bf81a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Canva designs, assets, and folders via the Connect API. WHAT IT CAN DO: - List/search/organize designs and folders - Export finished designs (PNG/PDF/JPG) - Upload images to asset library - Autofill brand templates with data - Creat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolmanns",
+      "userId": "s17bmqpkzpf403h4fcvqftdmas83fc8m",
+      "displayName": "coolmanns",
+      "image": "https://avatars.githubusercontent.com/u/117685070?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3633,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769735275413,
+      "changelog": "Initial release: design management, asset uploads, folder organization, export automation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7cf7c41e662bbeb56ceec9a8e3ec9eccf19f4506b94cc7aaa2ffaa616f531133"
+}

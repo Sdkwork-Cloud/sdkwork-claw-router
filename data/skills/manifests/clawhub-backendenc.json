@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56442,
+  "uuid": "skill-clawhub-backendenc",
+  "skillKey": "clawhub-backendenc",
+  "name": "Backendenc",
+  "summary": "Backend Agent Data Encryption. High-security MK->KEK->DEK hierarchy for backend environments.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backendenc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anydefai",
+      "features": [
+        "Backend Agent Data Encryption",
+        "High-security MK->KEK->DEK hierarchy for backend environments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backendenc@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269238572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backendenc",
+      "url": "https://clawhub.ai/skills/backendenc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backendenc",
+    "url": "https://clawhub.ai/skills/backendenc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backendenc-0c7c210dcd0f4a0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backendenc@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-backendenc-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51659ac256ff7a35b20b1db549819cc2c02174170fa17e7845790a202c4c7357",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T14:33:16.451Z"
+}

@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "douyin-transcribe-api",
+    "displayName": "抖音文案解析",
+    "summary": "Call the coze-js-api Douyin transcription endpoint and return transcript-ready results from Douyin URLs or share-text. Use this skill whenever the user asks...",
+    "tags": {
+      "latest": "0.1.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773389157324,
+    "updatedAt": 1777619166149
+  },
+  "latestVersion": {
+    "version": "0.1.1",
+    "createdAt": 1773390687110,
+    "changelog": "**Now uses an external shell script for transcription requests.**\n\n- Added scripts/transcribe_douyin.sh for handling API requests via bash.\n- Updated logic to execute the bundled shell script instead of building API requests inline.\n- Response formatting and error prompts remain consistent, but requests use exec bash scripts/transcribe_douyin.sh with environment-based API key.\n- Added metadata to declare system requirements (bash, curl, python3).\n- Clarified examples and instructions to prefer the shell wrapper over manual curl commands.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kyriswu",
+    "userId": "s17adkk1pw6rdbxdzht0y1pey583gqfs",
+    "displayName": "kyris wu",
+    "image": "https://avatars.githubusercontent.com/u/5120703?v=4"
+  },
+  "moderation": null
+}

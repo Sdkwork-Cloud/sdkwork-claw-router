@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33399,
+  "uuid": "skill-clawhub-serply",
+  "skillKey": "clawhub-serply",
+  "name": "Serply",
+  "summary": "Serply integration. Manage Leads, Persons, Organizations, Deals, Projects, Pipelines and more. Use when the user wants to interact with Serply data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Serply integration",
+        "Manage Leads, Persons, Organizations, Deals, Projects, Pipelines and more",
+        "Use when the user wants to interact with Serply data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serply@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serply",
+      "url": "https://clawhub.ai/skills/serply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serply",
+    "url": "https://clawhub.ai/skills/serply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serply-b2e8bcfaa6146075.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serply@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-serply-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ca0984e02621a9e737485de7a87202e05efb280bed0650bd118b5016e8a331a",
+      "artifactSizeBytes": 1841
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:40:10.483Z"
+}

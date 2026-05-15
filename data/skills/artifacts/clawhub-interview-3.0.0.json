@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interview@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview",
+  "skill": {
+    "id": 19155,
+    "skillKey": "clawhub-interview",
+    "name": "Interview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview",
+    "url": "https://clawhub.ai/skills/interview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-02540942346fdfbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interview preparation system with company research, story building, and mock interview practice. Use when user mentions job interviews, interview prep, behav..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 594,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773122385877,
+      "changelog": "Major update: Added company research framework, STAR story building, mock interview system, salary preparation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b110b83ba8a93f0035f8ec7a2837d8cf4a7351cab5de8b777d7ade6b5a9d9f06"
+}

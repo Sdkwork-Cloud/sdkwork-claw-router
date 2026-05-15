@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clarity-clinical@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_clinical",
+  "skill": {
+    "id": 19276,
+    "skillKey": "clawhub-clarity-clinical",
+    "name": "Clarity Clinical"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-clinical",
+    "url": "https://clawhub.ai/skills/clarity-clinical",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-clinical-ef4195d3472eb705.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query clinical variant data from ClinVar and gnomAD via Clarity Protocol. Use when the user asks about ClinVar classification, clinical significance, pathoge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarityprotocol",
+      "userId": "publishers:clarityprotocol",
+      "displayName": "clarityprotocol",
+      "image": "https://avatars.githubusercontent.com/u/255743260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772051512411,
+      "changelog": "Initial release – query clinical variant data from ClinVar and gnomAD via Clarity Protocol.\n\n- Search clinical variants by gene and detailed variant annotations.\n- Fetch clinical significance, review status, and allele frequency data.\n- Supports filtering by gene or specific variant.\n- Displays variant classification, population frequency, and quality metrics.\n- Built-in error handling for missing data, rate limits, and server issues.\n- Anonymous usage allows 10 requests/min; API key increases to 100 requests/min.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ae2297631abcd2ffac32ff5037bbef76b62844fd3f485a59fabd9d342e4a5330"
+}

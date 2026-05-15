@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39436,
+  "uuid": "skill-clawhub-social-tracker",
+  "skillKey": "clawhub-social-tracker",
+  "name": "Social Tracker Clean",
+  "summary": "Track competitor social content across LinkedIn, X, and Instagram. Analyzes posting frequency, top-performing hooks, content pillars, and engagement patterns...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drivenautoplex1",
+      "features": [
+        "Track competitor social content across LinkedIn, X, and Instagram",
+        "Analyzes posting frequency, top-performing hooks, content pillars, and engagement patterns..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186228539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-tracker",
+      "url": "https://clawhub.ai/skills/social-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-tracker",
+    "url": "https://clawhub.ai/skills/social-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-tracker-04c6e7ff0c3845c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8fba37033156ecfef3f011b97323b4aa0c338873b39751db32ca205c9e0ad06",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T18:21:16.057Z"
+}

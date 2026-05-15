@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-gcalcli@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_gcalcli",
+  "skill": {
+    "id": 27504,
+    "skillKey": "clawhub-quick-gcalcli",
+    "name": "Quick Google Calendar Command Line Interface"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-gcalcli",
+    "url": "https://clawhub.ai/skills/quick-gcalcli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-gcalcli-fb3c27a94c6fd4a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Calendar via gcalcli: today-only agenda by default, bounded meaning-first lookup via agenda scans, and fast create/delete with verification--optimized..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onsra520",
+      "userId": "s177n61y31m4b8gg0x2048zkan83p84j",
+      "displayName": "onsra520",
+      "image": "https://avatars.githubusercontent.com/u/110418245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774119842930,
+      "changelog": "quick-gcalcli 1.0.2\n\n- No user-visible or functional changes in this release.\n- Documentation, code, and logic remain unchanged.\n- Only modify the README.md file. OAuth manually instead of the agent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d6d8b4ecce1011156971ce919d572a736c867e69610b76af9bd8bb96a881794"
+}

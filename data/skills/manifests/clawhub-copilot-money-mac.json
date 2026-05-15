@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17674,
+  "uuid": "skill-clawhub-copilot-money-mac",
+  "skillKey": "clawhub-copilot-money-mac",
+  "name": "Copilot Money Mac",
+  "summary": "Query and analyze personal finance data from the Copilot Money Mac app. Use when the user asks about their spending, transactions, account balances, budgets,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_money_mac",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Charlie DiGiovanna",
+      "features": [
+        "Query and analyze personal finance data from the Copilot Money Mac app",
+        "Use when the user asks about their spending, transactions, account balances, budgets,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copilot-money-mac@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8863079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copilot-money-mac",
+      "url": "https://clawhub.ai/skills/copilot-money-mac"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-money-mac",
+    "url": "https://clawhub.ai/skills/copilot-money-mac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-money-mac-51eecd5fa5198b65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copilot-money-mac@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-copilot-money-mac-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deb1ecb53cd5ee6bf9252881ec45e6ca8ee7cd10bbb0e584e3e40a212f9bcf95",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T21:29:55.252Z"
+}

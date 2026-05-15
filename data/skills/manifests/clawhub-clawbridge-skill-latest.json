@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11354,
+  "uuid": "skill-clawhub-clawbridge-skill-latest",
+  "skillKey": "clawhub-clawbridge-skill-latest",
+  "name": "Clawbridge - Find your connections",
+  "summary": "Run Clawbridge discovery from OpenClaw chat",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbridge_skill_latest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lee L",
+      "features": [
+        "Run Clawbridge discovery from OpenClaw chat"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbridge-skill-latest@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49134250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbridge-skill-latest",
+      "url": "https://clawhub.ai/skills/clawbridge-skill-latest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbridge-skill-latest",
+    "url": "https://clawhub.ai/skills/clawbridge-skill-latest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbridge-skill-latest-d8223bbcc01783be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbridge-skill-latest@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbridge-skill-latest-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae7f697ad25b33d3003f23a2aa5b267713659a0c14ffc21bc408ddd43ce63d73",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T05:10:37.392Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53883,
+  "uuid": "skill-clawhub-revid-prompt-to-video",
+  "skillKey": "clawhub-revid-prompt-to-video",
+  "name": "Prompt to Video",
+  "summary": "Turn a one-line idea into a full short video — Revid writes the script, picks visuals, and assembles the cut. Use when the user has a topic but no script.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revid_prompt_to_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "api00",
+      "features": [
+        "Turn a one-line idea into a full short video — Revid writes the script, picks visuals, and asse.",
+        "Use when the user has a topic but no script."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/revid-prompt-to-video@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57573621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "revid-prompt-to-video",
+      "url": "https://clawhub.ai/skills/revid-prompt-to-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revid-prompt-to-video",
+    "url": "https://clawhub.ai/skills/revid-prompt-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revid-prompt-to-video-0dd6db57a527431c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/revid-prompt-to-video@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-revid-prompt-to-video-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b444fe267fd03b5cec751f5efd57c9560c0b51719e0b914804a6b31b9c3d47ab",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T15:14:43.873Z"
+}

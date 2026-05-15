@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cifang-fund-data@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cifang_fund_data",
+  "skill": {
+    "id": 69410,
+    "skillKey": "clawhub-cifang-fund-data",
+    "name": "Cifang Fund Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cifang-fund-data",
+    "url": "https://clawhub.ai/skills/cifang-fund-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cifang-fund-data-98e420d64671b519.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取A股场内基金（ETF、LOF）的历史行情、实时行情和收益率排行数据。使用次方量化API（需要API Key）获取基金列表、历史行情、实时行情和场内基金排行数据。当用户需要获取中国场内基金数据、分析ETF/LOF表现、查询基金历史价格、实时行情或进行金融数据分析时，请使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianyuwu",
+      "userId": "s17c21e6xz0wnb8zjf4fd6a29x85c2ez",
+      "displayName": "tianyuwu",
+      "image": "https://avatars.githubusercontent.com/u/11482041?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776939054836,
+      "changelog": "- 新增 LICENSE 文件，补充开源和使用协议信息。\n- SKILL.md 增加 homepage 字段，指向官方API页面。\n- SKILL.md 增加 required_env_vars 字段，明确需设置 CIFANG_API_KEY。\n- 新增“安全检查清单”板块，提醒用户密钥安全、隐私和自动触发风险。\n- 快速开始部分建议优先临时注入 API Key，减少长期风险。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:303fc190a1edeadad0494cd259ce46504ff085bd51d5912551cfc236c83dc594"
+}

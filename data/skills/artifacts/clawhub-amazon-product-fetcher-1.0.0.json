@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-product-fetcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_product_fetcher",
+  "skill": {
+    "id": 11013,
+    "skillKey": "clawhub-amazon-product-fetcher",
+    "name": "Amazon Product Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-product-fetcher",
+    "url": "https://clawhub.ai/skills/amazon-product-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-product-fetcher-8bf48b16880be90a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch complete Amazon product data including title, current price, currency, star rating, review count, availability, main image, and product URL. Works from..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mysmth2003",
+      "userId": "s17a1mp7d8pxhtc5076gksxkan83gyqt",
+      "displayName": "Louis Lu",
+      "image": "https://avatars.githubusercontent.com/u/25275443?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1968,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772629999013,
+      "changelog": "Initial release. Fetch Amazon product data including price, rating, availability. No API key required, stdlib only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b490202ff848af048aa00de5d2046a9428a0b19fe92fd59f5937c2d9b2db5506"
+}

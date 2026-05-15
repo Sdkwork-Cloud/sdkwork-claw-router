@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67102,
+  "uuid": "skill-clawhub-feishu-knowledge-flow",
+  "skillKey": "clawhub-feishu-knowledge-flow",
+  "name": "一键将任意文章结构化总结到个人飞书知识库",
+  "summary": "知识管理全流程：文章链接/对话内容/文稿 → 结构化总结 → 飞书知识库归档。触发词：\"整理到飞书\"、\"帮我处理文章\"、\"/feishu-knowledge-flow\"。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_knowledge_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "黎可升",
+      "features": [
+        "知识管理全流程：文章链接/对话内容/文稿 → 结构化总结 → 飞书知识库归档。触发词：\"整理到飞书\"、\"帮我处理文章\"、\"/feishu-knowledge-flow\"。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-knowledge-flow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62740990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-knowledge-flow",
+      "url": "https://clawhub.ai/skills/feishu-knowledge-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-knowledge-flow",
+    "url": "https://clawhub.ai/skills/feishu-knowledge-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-knowledge-flow-14e89d92c406d180.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-knowledge-flow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-knowledge-flow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e002a99a01bb5f58c7dc2615d9b7fda917c2cf05d725ac6bbc03adf4c40b08e4",
+      "artifactSizeBytes": 2119
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T02:44:50.603Z"
+}

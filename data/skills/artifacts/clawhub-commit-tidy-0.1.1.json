@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/commit-tidy@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commit_tidy",
+  "skill": {
+    "id": 27871,
+    "skillKey": "clawhub-commit-tidy",
+    "name": "Commit Tidy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commit-tidy",
+    "url": "https://clawhub.ai/skills/commit-tidy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commit-tidy-813a65c4f1df38ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze staged/committed changes and recommend splitting or squashing strategy. Use when the user says \"commit split\", \"split commits\", \"should I split this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drumrobot",
+      "userId": "s17ay1v6v88r2m102pvvc44gz183qcrm",
+      "displayName": "es6kr",
+      "image": "https://avatars.githubusercontent.com/u/819969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775831135511,
+      "changelog": "Version bump with latest improvements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f20b3c4dfb3111d7fdff565763f74cff63950f47a199efe675d5651090e3949"
+}

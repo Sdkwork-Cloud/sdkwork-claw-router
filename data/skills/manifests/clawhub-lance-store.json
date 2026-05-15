@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52987,
+  "uuid": "skill-clawhub-lance-store",
+  "skillKey": "clawhub-lance-store",
+  "name": "Lance Store",
+  "summary": "Persist and retrieve structured data using the Lance columnar format. Use when you need to store, query, or analyze data across sessions — such as saving ski...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lance_store",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vitorhugoze",
+      "features": [
+        "Persist and retrieve structured data using the Lance columnar format",
+        "Use when you need to store, query, or analyze data across sessions — such as saving ski..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lance-store@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110555841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lance-store",
+      "url": "https://clawhub.ai/skills/lance-store"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lance-store",
+    "url": "https://clawhub.ai/skills/lance-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lance-store-f371aca07940c67a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lance-store@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-lance-store-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dee78418b9032f1f4f70fc46ecf4171754b72471d450c9bba984ff12610b32f1",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:02:55.764Z"
+}

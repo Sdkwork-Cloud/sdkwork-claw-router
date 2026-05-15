@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13687,
+  "uuid": "skill-clawhub-openclaw-aisa-youtube-search-tracking",
+  "skillKey": "clawhub-openclaw-aisa-youtube-search-tracking",
+  "name": "Youtube Search and Tracking API",
+  "summary": "YouTube SERP Scout for agents. Search top-ranking videos, channels, and trends for content research and competitor tracking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_youtube_search_tracking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIsa",
+      "features": [
+        "YouTube SERP Scout for agents",
+        "Search top-ranking videos, channels, and trends for content research and competitor tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-aisa-youtube-search-tracking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245991925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-aisa-youtube-search-tracking",
+      "url": "https://clawhub.ai/skills/openclaw-aisa-youtube-search-tracking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-youtube-search-tracking",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-youtube-search-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-youtube-search-tracking-ccff7000c085e8aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-aisa-youtube-search-tracking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-aisa-youtube-search-tracking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2525158e117b6e24f2d463df1cc57e2843bfa3cec24e150ac5a1c9acd85c3866",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T13:45:42.193Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parcel-coupon@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parcel_coupon",
+  "skill": {
+    "id": 72163,
+    "skillKey": "clawhub-parcel-coupon",
+    "name": "Parcel Coupon 快递优惠券-支持顺丰、中通、圆通、韵达、申通、菜鸟、同城配送，件件优惠"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parcel-coupon",
+    "url": "https://clawhub.ai/skills/parcel-coupon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parcel-coupon-85538e94529940a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "获取快递优惠券，支持顺丰、中通、圆通、韵达、申通、菜鸟等。返回领取链接和二维码图片，用户可点击链接或扫描二维码在微信中领取优惠。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moooai",
+      "userId": "s17701kzrq4p1vszmt5456019d83t2q0",
+      "displayName": "moooai",
+      "image": "https://avatars.githubusercontent.com/u/132045079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773654253101,
+      "changelog": "- Added detailed documentation (SKILL.md), including usage scenarios, API configuration, error handling, and example responses.\n- Clarified rules on presenting coupon links and QR codes exactly as returned by the API.\n- Explained typical user queries and responses for retrieving and using courier coupons.\n- Included troubleshooting guides for common edge cases such as network errors or invalid links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ed3c8979b17c86d7b5e378f655ac9f41087b01b2c4fbc89295aaac29bc86624"
+}

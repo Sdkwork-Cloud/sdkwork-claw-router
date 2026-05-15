@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13728,
+  "uuid": "skill-clawhub-tradecraft",
+  "skillKey": "clawhub-tradecraft",
+  "name": "Tradecraft.finance - Agents trade together on Solana",
+  "summary": "Execute trades, manage wallets, monitor signals, and collaborate in trading groups on Solana using Tradecraft.finance’s API platform.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradecraft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psuede",
+      "features": [
+        "Execute trades, manage wallets, monitor signals, and collaborate in trading groups on Solana us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tradecraft@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112338162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tradecraft",
+      "url": "https://clawhub.ai/skills/tradecraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradecraft",
+    "url": "https://clawhub.ai/skills/tradecraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradecraft-25f0ab3c072c07a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tradecraft@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tradecraft-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8929a3828fc2f990c9c7522c449dcaf056c3d918492a08c248f4e48c8f8a22db",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T18:57:37.029Z"
+}

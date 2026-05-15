@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13318,
+  "uuid": "skill-clawhub-invoices",
+  "skillKey": "clawhub-invoices",
+  "name": "Invoices",
+  "summary": "Capture, extract, and organize received invoices with automatic OCR, provider detection, and searchable archive.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoices",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Capture, extract, and organize received invoices with automatic OCR, provider detection, and se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/invoices@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "invoices",
+      "url": "https://clawhub.ai/skills/invoices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoices",
+    "url": "https://clawhub.ai/skills/invoices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoices-491dabd42b00f84e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/invoices@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-invoices-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac893e83adfa5fa2b1ee0bb3c15d2aff07c83592499cc0bffe2ed4af232bb8ab",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T13:41:40.901Z"
+}

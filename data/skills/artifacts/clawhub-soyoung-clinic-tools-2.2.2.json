@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soyoung-clinic-tools@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soyoung_clinic_tools",
+  "skill": {
+    "id": 58520,
+    "skillKey": "clawhub-soyoung-clinic-tools",
+    "name": "soyoung-clinic-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soyoung-clinic-tools",
+    "url": "https://clawhub.ai/skills/soyoung-clinic-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soyoung-clinic-tools-e6b0777c973f8bc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新氧青春诊所工具集，包含预约、项目查询百科、医生信息及医生排班查询等能力 | Soyoung clinic tools OpenClaw skill for the Soyoung (soyoung) clinic chain: appointment booking, store lookup, doctor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "east5ringroad-kyle",
+      "userId": "s17fztsat54aq606k8q6v0z81s83kgwd",
+      "displayName": "kyle",
+      "image": "https://avatars.githubusercontent.com/u/12547789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1775183885236,
+      "changelog": "soyoung-clinic-tools v2.2.2\n\n- Updated and expanded English-language descriptions and keywords for broader accessibility.\n- Improved SKILL.md metadata and formatting for clarity and internationalization.\n- Various documentation files updated for accuracy and consistency.\n- No breaking changes to APIs or user functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a59f8e9ac8a7733fc8a3bd181dd26a1d876aa597a5ddac906129222deb82e462"
+}

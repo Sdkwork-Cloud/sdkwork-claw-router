@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66985,
+  "uuid": "skill-clawhub-amazon-review-advisor",
+  "skillKey": "clawhub-amazon-review-advisor",
+  "name": "Amazon Review Advisor",
+  "summary": "帮助亚马逊卖家分类评论情绪，提供差评合规应对方案，优化好评邀请，提炼产品改进和运营策略。",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_review_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "帮助亚马逊卖家分类评论情绪，提供差评合规应对方案，优化好评邀请，提炼产品改进和运营策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-review-advisor@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-review-advisor",
+      "url": "https://clawhub.ai/skills/amazon-review-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-review-advisor",
+    "url": "https://clawhub.ai/skills/amazon-review-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-review-advisor-02235bae43a72fbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-review-advisor@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-review-advisor-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f5ddbe41b05065c401bc0aac89fe291a9348175efd1e6aae7847ff8ded7be59",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T15:36:29.412Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69332,
+  "uuid": "skill-clawhub-datayes-stock-data",
+  "skillKey": "clawhub-datayes-stock-data",
+  "name": "Datayes Stock Data",
+  "summary": "通过 Datayes 查询 A 股和港股的行情、分时、K 线、财务、估值、资金流向、股东持仓、分红和公司资料。用户询问个股价格、公司基本面、估值指标、资金流向、排行筛选、技术指标或其他需要实时股票数据的问题时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datayes_stock_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shermanxli",
+      "features": [
+        "通过 Datayes 查询 A 股和港股的行情、分时、K 线、财务、估值、资金流向、股东持仓、分红和公司资料。用户询问个股价格、公司基本面、估值指标、资金流向、排行筛选、技术指标或其他需要实."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datayes-stock-data@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129163739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datayes-stock-data",
+      "url": "https://clawhub.ai/skills/datayes-stock-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datayes-stock-data",
+    "url": "https://clawhub.ai/skills/datayes-stock-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datayes-stock-data-434c82f86337b159.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datayes-stock-data@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-datayes-stock-data-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d885afe2c6d21e82f29e202f8a83e1f7973b405d04637b8cc5d2a61f1ba2ca14",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:57:11.723Z"
+}

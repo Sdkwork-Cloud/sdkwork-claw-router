@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-kb@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_kb",
+  "skill": {
+    "id": 9984,
+    "skillKey": "clawhub-github-kb",
+    "name": "GitHub Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-kb",
+    "url": "https://clawhub.ai/skills/github-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-kb-92b93ac7f8703455.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a local GitHub knowledge base and provide GitHub search capabilities via gh CLI. Use when users ask about repos, PRs, issues, request to clone GitHub repositories, explore codebases, or need information about GitHub projects. Suppor."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jameschan21",
+      "userId": "publishers:jameschan21",
+      "displayName": "JamesChan21",
+      "image": "https://avatars.githubusercontent.com/u/26464017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2784,
+      "installsAllTime": 16,
+      "installsCurrent": 14,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769557272346,
+      "changelog": "- Updated GITHUB_KB.md example section for improved clarity: replaced Chinese text with English (\"This directory contains X GitHub projects covering various domains.\")\n- No functional or behavioral changes; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c31ddd45d4264fcfe4902cf9283cef22da44be74b4ba68a1d718a0bdaa324d0c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-doc-ocr@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_doc_ocr",
+  "skill": {
+    "id": 57757,
+    "skillKey": "clawhub-china-doc-ocr",
+    "name": "china-doc-ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-doc-ocr",
+    "url": "https://clawhub.ai/skills/china-doc-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-doc-ocr-f6a575d80c57c191.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能文档OCR识别与结构化提取。Use when the user has a complex document, PDF, scanned image, photo, invoice, receipt, ID card, table, or chart that needs to be recognized a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobewin",
+      "userId": "s174rz3f0862tcfw7pzfh5w8kn83hv2z",
+      "displayName": "ToBeWin",
+      "image": "https://avatars.githubusercontent.com/u/145168989?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1374,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777425575463,
+      "changelog": "v1.2.0: Security hardening - removed curl dependency, replaced with Python script (ocr.py). Uses urllib for API calls, no external network tools required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a586e83430c831917fa6f71be0cd1e2c7c15c00a42f80377acc3d2361eaa4d5"
+}

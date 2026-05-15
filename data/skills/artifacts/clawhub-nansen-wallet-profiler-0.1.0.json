@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-wallet-profiler@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_wallet_profiler",
+  "skill": {
+    "id": 51714,
+    "skillKey": "clawhub-nansen-wallet-profiler",
+    "name": "Nansen Wallet Profiler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-wallet-profiler",
+    "url": "https://clawhub.ai/skills/nansen-wallet-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-wallet-profiler-ff5a8bd748f1a274.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wallet profiler — balance, PnL, labels, transactions, counterparties, related wallets, batch, trace, compare. Use when analysing a specific wallet address or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773937029750,
+      "changelog": "- Initial release of nansen-wallet-profiler skill.\n- Supports profiling wallet addresses for balance, PnL, identity labels, transaction history, counterparties, and related wallets.\n- Includes advanced features: batch profiling, multi-hop trace, comparision of wallet counterparties/tokens.\n- Provides PnL, perps analysis, and flexible output flags (table, csv).\n- Offers docs on usage, required flags, command options, and API limitations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca25d5b94304259e939ea7b8794a3b08dd52b9c21d81fd5cf207fafa716fa802"
+}

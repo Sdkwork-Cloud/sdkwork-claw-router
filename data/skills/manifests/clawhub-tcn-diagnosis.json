@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19147,
+  "uuid": "skill-clawhub-tcn-diagnosis",
+  "skillKey": "clawhub-tcn-diagnosis",
+  "name": "TCM Diagnosis",
+  "summary": "Provides Traditional Chinese Medicine diagnosis including symptom collection, pattern differentiation, formula recommendation, and dietary health advice for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tcn_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huamu668",
+      "features": [
+        "Provides Traditional Chinese Medicine diagnosis including symptom collection, pattern different."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tcn-diagnosis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202473531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tcn-diagnosis",
+      "url": "https://clawhub.ai/skills/tcn-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tcn-diagnosis",
+    "url": "https://clawhub.ai/skills/tcn-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tcn-diagnosis-cce0eff7e0b9acb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tcn-diagnosis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tcn-diagnosis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9d4e9a10baf24cbf1765c77bc0f9ceff57ac5a0f8c12d8bfeb415581662eae0",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T13:38:18.908Z"
+}

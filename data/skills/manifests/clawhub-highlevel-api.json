@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47891,
+  "uuid": "skill-clawhub-highlevel-api",
+  "skillKey": "clawhub-highlevel-api",
+  "name": "GoHighLevel",
+  "summary": "GoHighLevel (Private Integration Token) API integration with managed auth. CRM, sales pipelines, calendars, conversations, payments, and marketing automation...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highlevel_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "GoHighLevel (Private Integration Token) API integration with managed auth",
+        "CRM, sales pipelines, calendars, conversations, payments, and marketing automation..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/highlevel-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "highlevel-api",
+      "url": "https://clawhub.ai/skills/highlevel-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highlevel-api",
+    "url": "https://clawhub.ai/skills/highlevel-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highlevel-api-d41e5570edfdcd2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/highlevel-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-highlevel-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aeca824801eb229b0db79a4c13d4c1868324c031095dc6c56a125a1ecc656cf",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:49:09.512Z"
+}

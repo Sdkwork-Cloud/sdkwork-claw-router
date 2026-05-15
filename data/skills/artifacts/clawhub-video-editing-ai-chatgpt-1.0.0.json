@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-ai-chatgpt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_ai_chatgpt",
+  "skill": {
+    "id": 43176,
+    "skillKey": "clawhub-video-editing-ai-chatgpt",
+    "name": "Video Editing Ai Chatgpt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-ai-chatgpt",
+    "url": "https://clawhub.ai/skills/video-editing-ai-chatgpt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-ai-chatgpt-7fba8348a74fd911.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video footage into AI-edited clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it for usin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776362377958,
+      "changelog": "video-editing-ai-chatgpt 1.0.0 — Initial release\n\n- Launches AI-powered video editing via chat for raw footage in MP4, MOV, AVI, WebM (max 500MB).\n- Supports text-based editing prompts for trims, transitions, captions, aspect ratio, BGM, and more.\n- Automatic setup: guides user through cloud connection and token generation for 100 free credits.\n- Handles uploads, edits, exports (1080p MP4), credit checks, and session state via a simple chat workflow.\n- Includes error handling, job queueing, and live progress updates.\n- Designed for easy use by content creators and marketers — no manual editing required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c5bfc03666bf131900f12c72d312d259cd4f2280431ab3352d1232b561a6480"
+}

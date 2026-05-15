@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41160,
+  "uuid": "skill-clawhub-just-test-skill",
+  "skillKey": "clawhub-just-test-skill",
+  "name": "just for test",
+  "summary": "Implement tasks from an OpenSpec change. Use when the user wants to start implementing, continue implementation, or work through tasks.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.just_test_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "埃克斯占",
+      "features": [
+        "Implement tasks from an OpenSpec change",
+        "Use when the user wants to start implementing, continue implementation, or work through tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/just-test-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26316766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "just-test-skill",
+      "url": "https://clawhub.ai/skills/just-test-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "just-test-skill",
+    "url": "https://clawhub.ai/skills/just-test-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/just-test-skill-5d2bdc56228dc862.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/just-test-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-just-test-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1e606db0a41ee157475e014e917ef900f162dadc2d9ecb403ada3b42c363d53",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:15:42.977Z"
+}

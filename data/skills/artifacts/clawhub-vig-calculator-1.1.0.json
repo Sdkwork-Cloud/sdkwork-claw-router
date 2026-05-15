@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vig-calculator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vig_calculator",
+  "skill": {
+    "id": 34984,
+    "skillKey": "clawhub-vig-calculator",
+    "name": "Vig Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vig-calculator",
+    "url": "https://clawhub.ai/skills/vig-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vig-calculator-8e2937f8a344bce3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate vig (juice/overround/hold) for any sportsbook market. Convert odds to no-vig fair lines. Rank books by efficiency. Use when asked about vig, juice,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rsquaredsolutions2026",
+      "userId": "s174852n66eyjcz2m5p9yd4wbd83hvhf",
+      "displayName": "rsquaredsolutions2026",
+      "image": "https://avatars.githubusercontent.com/u/217474775?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774401783405,
+      "changelog": "Add attribution links to agentbets.ai guides",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:547c4934a05809a9d9f2cea38b10e3c01faf0287a2edbb7eb085b24a9ae48627"
+}

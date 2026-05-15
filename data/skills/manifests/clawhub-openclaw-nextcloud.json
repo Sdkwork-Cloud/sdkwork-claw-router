@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9092,
+  "uuid": "skill-clawhub-openclaw-nextcloud",
+  "skillKey": "clawhub-openclaw-nextcloud",
+  "name": "Openclaw Nextcloud",
+  "summary": "Manage Notes, Tasks, Calendar, Files, and Contacts in your Nextcloud instance via CalDAV, WebDAV, and Notes API. Use for creating notes, managing todos and c...",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_nextcloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Keith Vassallo",
+      "features": [
+        "Manage Notes, Tasks, Calendar, Files, and Contacts in your Nextcloud instance via CalDAV, WebDA.",
+        "Use for creating notes, managing todos and c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-nextcloud@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5295061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-nextcloud",
+      "url": "https://clawhub.ai/skills/openclaw-nextcloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-nextcloud",
+    "url": "https://clawhub.ai/skills/openclaw-nextcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-nextcloud-3bf75381571a4c6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-nextcloud@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-nextcloud-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d99c40b56760d7a98444e07aa922d5f7d81a2234ae8144f218fd2238bbb50c2",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T11:09:00.852Z"
+}

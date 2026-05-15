@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insight-ecom-oracle@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insight_ecom_oracle",
+  "skill": {
+    "id": 64978,
+    "skillKey": "clawhub-insight-ecom-oracle",
+    "name": "insight-ecom-oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insight-ecom-oracle",
+    "url": "https://clawhub.ai/skills/insight-ecom-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insight-ecom-oracle-012a856d67f75d0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "灵犀电商专属 AI 助手，作为【Prompt 神谕武器库】的守护者， 根据用户需求精准检索并呈现高级商业视觉架构与提示词。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kinseyho",
+      "userId": "s176es1mg49zq0kjhq1tavgsw184d2jx",
+      "displayName": "kinseyho",
+      "image": "https://avatars.githubusercontent.com/u/138639860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776300294690,
+      "changelog": "insight-ecom-oracle 1.0.1 版本日志\n- 新增多维度关键词召回策略，单次检索自动组合多种变体，提升搜索命中率。\n- 返回结果支持最多 5 条提示词自动去重展示。\n- 优化消息输出格式，保证 master_prompt 完整。\n- 注册、付款、过期等账号状态的提示内容保持一致与清晰。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:765a7478bde3f2196b829bf2474b8f936f621d3c45065ca74cd4fd69f29ee9fe"
+}

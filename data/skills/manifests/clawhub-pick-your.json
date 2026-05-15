@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22712,
+  "uuid": "skill-clawhub-pick-your",
+  "skillKey": "clawhub-pick-your",
+  "name": "pick your",
+  "summary": "Generates multi-themed food collages (Burgers, Pizzas, Sushi, Salads, Desserts) with circle-masked images. Use when user asks for a collage of specific food...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pick_your",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EXPYSF98",
+      "features": [
+        "Generates multi-themed food collages (Burgers, Pizzas, Sushi, Salads, Desserts) with circle-mas.",
+        "Use when user asks for a collage of specific food..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pick-your@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116410084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pick-your",
+      "url": "https://clawhub.ai/skills/pick-your"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pick-your",
+    "url": "https://clawhub.ai/skills/pick-your",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pick-your-08096c62896f3a4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pick-your@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pick-your-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2f2764f9ec3d159f08373309d56128188fd921b684182b51fc59df275e89377",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:08:28.826Z"
+}

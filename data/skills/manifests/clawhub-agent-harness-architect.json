@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28792,
+  "uuid": "skill-clawhub-agent-harness-architect",
+  "skillKey": "clawhub-agent-harness-architect",
+  "name": "Agent Harness Architect",
+  "summary": "Diagnose and harden any long-running agent architecture. Describe your agent setup and get a complete harness optimization plan + auto-generated bridge artif...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_harness_architect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DottytheHomeless",
+      "features": [
+        "Diagnose and harden any long-running agent architecture",
+        "Describe your agent setup and get a complete harness optimization plan + auto-generated bridge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-harness-architect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118527088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-harness-architect",
+      "url": "https://clawhub.ai/skills/agent-harness-architect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-harness-architect",
+    "url": "https://clawhub.ai/skills/agent-harness-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-harness-architect-e03b46b80bbe7abc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-harness-architect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-harness-architect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75a85cb36f6e2aa75661af791acceaf38275d44154f0b407408ffa9819ec55fa",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T11:29:34.935Z"
+}

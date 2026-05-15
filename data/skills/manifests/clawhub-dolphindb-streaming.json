@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68413,
+  "uuid": "skill-clawhub-dolphindb-streaming",
+  "skillKey": "clawhub-dolphindb-streaming",
+  "name": "DolphinDB 流式计算技能",
+  "summary": "提供基于DolphinDB的金融场景流式计算能力，支持实时行情、因子计算、风控及订单簿等实时数据流处理。",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolphindb_streaming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superStupidBear",
+      "features": [
+        "提供基于DolphinDB的金融场景流式计算能力，支持实时行情、因子计算、风控及订单簿等实时数据流处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dolphindb-streaming@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6762468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dolphindb-streaming",
+      "url": "https://clawhub.ai/skills/dolphindb-streaming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolphindb-streaming",
+    "url": "https://clawhub.ai/skills/dolphindb-streaming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolphindb-streaming-1c2f7932a6756d38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dolphindb-streaming@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dolphindb-streaming-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce7adc14018d00dbd8f0482516888b1a8bd79045cfbb670cad037c820a4b6aa6",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:58:26.146Z"
+}

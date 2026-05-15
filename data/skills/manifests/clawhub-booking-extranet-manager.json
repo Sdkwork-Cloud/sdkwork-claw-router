@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52876,
+  "uuid": "skill-clawhub-booking-extranet-manager",
+  "skillKey": "clawhub-booking-extranet-manager",
+  "name": "Booking Extranet Manager",
+  "summary": "Manage Booking.com properties — download reservations, list/reply to guest messages, update rates. Wraps a Python CLI that automates the Booking.com extranet...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.booking_extranet_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matsei Ruka",
+      "features": [
+        "Manage Booking.com properties — download reservations, list/reply to guest messages, update rat.",
+        "Wraps a Python CLI that automates the Booking.com extranet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/booking-extranet-manager@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93591346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "booking-extranet-manager",
+      "url": "https://clawhub.ai/skills/booking-extranet-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "booking-extranet-manager",
+    "url": "https://clawhub.ai/skills/booking-extranet-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/booking-extranet-manager-46254172d6724b85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/booking-extranet-manager@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-booking-extranet-manager-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73ec82d29cc26abb0c61278244387a9fbd23a34b4d9c39e190c9af80e746c495",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:58:13.705Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47278,
+  "uuid": "skill-clawhub-image-metadata-cleaner",
+  "skillKey": "clawhub-image-metadata-cleaner",
+  "name": "Image Metadata Cleaner",
+  "summary": "Clean privacy-sensitive metadata (C2PA, EXIF, XMP, IPTC, GPS) from user-owned images by writing sanitized copies. For privacy hygiene and file preparation.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_metadata_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIwork4me",
+      "features": [
+        "Clean privacy-sensitive metadata (C2PA, EXIF, XMP, IPTC, GPS) from user-owned images by writing.",
+        "For privacy hygiene and file preparation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-metadata-cleaner@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261514469?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-metadata-cleaner",
+      "url": "https://clawhub.ai/skills/image-metadata-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-metadata-cleaner",
+    "url": "https://clawhub.ai/skills/image-metadata-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-metadata-cleaner-f79d040b30a81d7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-metadata-cleaner@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-metadata-cleaner-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab9361b23540b272edec1824648e5bf1e32aab89b51810de29ae98d97f7010a7",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T06:15:50.540Z"
+}

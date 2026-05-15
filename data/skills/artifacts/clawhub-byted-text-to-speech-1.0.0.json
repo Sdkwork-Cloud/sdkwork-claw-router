@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-text-to-speech@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_text_to_speech",
+  "skill": {
+    "id": 68144,
+    "skillKey": "clawhub-byted-text-to-speech",
+    "name": "Byted Text To Speech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-text-to-speech",
+    "url": "https://clawhub.ai/skills/byted-text-to-speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-text-to-speech-5c3dd9a1034587de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将文本合成为语音（TTS）。使用火山引擎豆包语音合成 API，支持流式合成、多种音色、语速/音调/音量调节、Markdown 过滤和 LaTeX 公式播报。当用户需要把文字转成语音、生成朗读音频、配音、旁白、播报，或提到「文字转语音」「TTS」「语音合成」「朗读」「配音」时使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774597063872,
+      "changelog": "byted-text-to-speech 1.0.0 初始发布\n\n- 新增通过火山引擎豆包语音合成 API 将文本转为语音的能力，支持流式合成。\n- 支持多种音色选择、语速/音调/音量调节、音频格式与采样率自定义。\n- 增加 Markdown 过滤及 LaTeX 公式播报功能。\n- 提供详细的错误提示与凭证配置指引。\n- 输出合成后音频文件的本地路径及格式信息。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd0cb2ac0f2f07ddf73df9cc5236705e6c2e563ce9ebb7e93a0d784ac06b95d6"
+}

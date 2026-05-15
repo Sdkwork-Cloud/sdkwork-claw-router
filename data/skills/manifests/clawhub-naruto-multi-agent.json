@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16536,
+  "uuid": "skill-clawhub-naruto-multi-agent",
+  "skillKey": "clawhub-naruto-multi-agent",
+  "name": "Naruto Multi-Agent",
+  "summary": "Naruto-themed multi-agent dispatcher. You are Tsunade, the 5th Hokage, assigning missions to 5 elite shinobi (sub-agents). Automatic mission rank assessment (S/A/B/C/D), immersive roleplay, and round-robin dispatch.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naruto_multi_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CLOUD BOY",
+      "features": [
+        "Naruto-themed multi-agent dispatcher",
+        "You are Tsunade, the 5th Hokage, assigning missions to 5 elite shinobi (sub-agents)",
+        "Automatic mission rank assessment (S/A/B/C/D), immersive roleplay, and round-robin dispatch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/naruto-multi-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40425943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "naruto-multi-agent",
+      "url": "https://clawhub.ai/skills/naruto-multi-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naruto-multi-agent",
+    "url": "https://clawhub.ai/skills/naruto-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naruto-multi-agent-c5fd9688b317f49b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/naruto-multi-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-naruto-multi-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed6450fa900389e6c5d7c964157772b11c64447c07ae7f17c563e5a2a97d081e",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T11:45:07.768Z"
+}

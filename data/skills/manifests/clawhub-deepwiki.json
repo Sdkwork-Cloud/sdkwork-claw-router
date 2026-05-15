@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8658,
+  "uuid": "skill-clawhub-deepwiki",
+  "skillKey": "clawhub-deepwiki",
+  "name": "DeepWiki",
+  "summary": "Query the DeepWiki MCP server for GitHub repository documentation, wiki structure, and AI-powered questions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepwiki",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arun-8687",
+      "features": [
+        "Query the DeepWiki MCP server for GitHub repository documentation, wiki structure, and AI-power."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepwiki@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147966288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepwiki",
+      "url": "https://clawhub.ai/skills/deepwiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepwiki",
+    "url": "https://clawhub.ai/skills/deepwiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepwiki-cf88db334078fbb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepwiki@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepwiki-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34595bad3475d4b259b35b0f3d4c9ae91c2784d8780cd0777ae221c5eefef3b1",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-11T18:39:17.977Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-md-auto@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_md_auto",
+  "skill": {
+    "id": 34470,
+    "skillKey": "clawhub-claude-md-auto",
+    "name": "CLAUDE.md Auto Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-md-auto",
+    "url": "https://clawhub.ai/skills/claude-md-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-md-auto-99e379e9940ebb5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically discovers and loads CLAUDE.md files from the project root, supporting @include directives and reverse loading up to 40,000 characters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaoxiang616",
+      "userId": "s17d3wwy5qdjmrgs05weftx73d83sfjs",
+      "displayName": "shaoxiang616",
+      "image": "https://avatars.githubusercontent.com/u/267339286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775436287289,
+      "changelog": "- Initial release of CLAUDE.md auto-discovery skill.\n- Automatically searches for and loads CLAUDE.md files from the project root.\n- Supports @include directives for modular file inclusion.\n- Handles files up to 40,000 characters.\n- Loads files in reverse order to prioritize later files.\n- Triggers automatically on user message—no manual activation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d37265a922bfbd5582bdb120613d44057289b28abbff95e483e349f84f336715"
+}

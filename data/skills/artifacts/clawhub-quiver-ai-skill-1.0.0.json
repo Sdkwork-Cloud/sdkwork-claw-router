@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quiver-ai-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quiver_ai_skill",
+  "skill": {
+    "id": 41645,
+    "skillKey": "clawhub-quiver-ai-skill",
+    "name": "QuiverAI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quiver-ai-skill",
+    "url": "https://clawhub.ai/skills/quiver-ai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quiver-ai-skill-53448b52a0496a42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate SVGs from text prompts and convert raster images (PNG/JPG/WebP) to SVG using QuiverAI's AI models. Use when user asks to create icons, illustrations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lolieatapple",
+      "userId": "s17cwjkczzsfcn60bss426xknn83kag8",
+      "displayName": "lolieatapple",
+      "image": "https://avatars.githubusercontent.com/u/54833180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775057072568,
+      "changelog": "- Initial release of the QuiverAI SVG Generation Skill.\n- Generate SVGs from text prompts or vectorize raster images (PNG/JPG/WebP) using the `quiver` CLI.\n- Supports commands for text-to-SVG (`generate`), image-to-SVG (`vectorize`), and listing available AI models.\n- Always saves SVG output to a file for user access and provides file details upon completion.\n- Includes configuration guidance for installing and authenticating the `quiver` CLI.\n- Offers workflow tips for optimal SVG generation and troubleshooting common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bda98131d97473077fd6f84efd814a7ddb1f60f87ac76085b504e35426cfc75"
+}

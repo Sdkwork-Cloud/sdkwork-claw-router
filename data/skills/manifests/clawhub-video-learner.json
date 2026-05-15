@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27130,
+  "uuid": "skill-clawhub-video-learner",
+  "skillKey": "clawhub-video-learner",
+  "name": "Video Learner",
+  "summary": "Analyze video content and generate a callable Skill.",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_learner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keke-skills",
+      "features": [
+        "Analyze video content and generate a callable Skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-learner@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108267569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-learner",
+      "url": "https://clawhub.ai/skills/video-learner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-learner",
+    "url": "https://clawhub.ai/skills/video-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-learner-081e697d51042171.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-learner@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-learner-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2fdc8fefa35e0a68ff80d6455696cae7357b9656ca0e6d986aafa86bcebd5b3",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:06:51.097Z"
+}

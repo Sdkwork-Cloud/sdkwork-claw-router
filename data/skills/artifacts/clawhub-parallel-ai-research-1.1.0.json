@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parallel-ai-research@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_ai_research",
+  "skill": {
+    "id": 9351,
+    "skillKey": "clawhub-parallel-ai-research",
+    "name": "Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-ai-research",
+    "url": "https://clawhub.ai/skills/parallel-ai-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-ai-research-73a31de344cb5a39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct open-ended research on a topic, building a living markdown document. Supports interactive and deep research modes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brennerspear",
+      "userId": "s17ebpr0c7y6bpmzatrjw5rdt583fggy",
+      "displayName": "BrennerSpear",
+      "image": "https://avatars.githubusercontent.com/u/12127609?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 4021,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771978283881,
+      "changelog": "Updated from agent-skills repo",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7659b2b0d651232d669a282fb7155fbad471bed608fdc147a2ac7db412d6e876"
+}

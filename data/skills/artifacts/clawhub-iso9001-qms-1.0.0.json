@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iso9001-qms@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iso9001_qms",
+  "skill": {
+    "id": 51027,
+    "skillKey": "clawhub-iso9001-qms",
+    "name": "ISO 9001:2015 QMS — Implementation, Audit & CAPA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iso9001-qms",
+    "url": "https://clawhub.ai/skills/iso9001-qms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iso9001-qms-a2f3fed5d6c3e8a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ISO 9001:2015 Quality Management System implementation, internal audit, and CAPA management. Use when implementing a QMS from scratch, conducting gap assessm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wroadd",
+      "userId": "s17ayk89b5t0ka9v0js2r78n0984b00a",
+      "displayName": "Peter Zsak",
+      "image": "https://avatars.githubusercontent.com/u/2845028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774194132546,
+      "changelog": "Complete ISO 9001:2015 toolkit: gap assessment checklists for all 10 clauses, required documents list, 4-phase implementation roadmap, internal audit question sets per clause, NC classification, CAPA trigger table, 5-Why + fishbone RCA templates, action planning, effectiveness verification, and CAPA KPIs. Suitable for any industry.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15839499ce379c1a059152f6bace9450e57bbdb0ba8affed4b68202c4df6303b"
+}

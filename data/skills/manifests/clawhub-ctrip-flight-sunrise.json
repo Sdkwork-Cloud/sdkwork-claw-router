@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37814,
+  "uuid": "skill-clawhub-ctrip-flight-sunrise",
+  "skillKey": "clawhub-ctrip-flight-sunrise",
+  "name": "ctrip-flight",
+  "summary": "Search and compare flight tickets on Ctrip by departure, arrival, date, and cabin class, returning structured flight and price information in JSON format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctrip_flight_sunrise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew-707",
+      "features": [
+        "Search and compare flight tickets on Ctrip by departure, arrival, date, and cabin class, return."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctrip-flight-sunrise@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263796089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctrip-flight-sunrise",
+      "url": "https://clawhub.ai/skills/ctrip-flight-sunrise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctrip-flight-sunrise",
+    "url": "https://clawhub.ai/skills/ctrip-flight-sunrise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctrip-flight-sunrise-7ee25002079227e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctrip-flight-sunrise@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctrip-flight-sunrise-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfb1afbdaebb9ec1c685f55199edb29ddda1ffdf8bc1c015592cffd47da1992a",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T05:40:50.520Z"
+}

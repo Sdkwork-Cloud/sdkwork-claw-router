@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47147,
+  "uuid": "skill-clawhub-text-to-video-diffusion",
+  "skillKey": "clawhub-text-to-video-diffusion",
+  "name": "Text To Video Diffusion",
+  "summary": "Turn a short descriptive sentence like 'a fox running through a snowy forest at dusk' into 1080p AI-generated video just by typing what you need. Whether it'...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_diffusion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Turn a short descriptive sentence like 'a fox running through a snowy forest at dusk' into 1080.",
+        "Whether it'..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-video-diffusion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-video-diffusion",
+      "url": "https://clawhub.ai/skills/text-to-video-diffusion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-diffusion",
+    "url": "https://clawhub.ai/skills/text-to-video-diffusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-diffusion-6ffeb55c39cd3144.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-video-diffusion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-video-diffusion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ade6035fd000d0a904a4ed98a97fd2cb1159ce161c1705e1f94c3f9b4add7f2a",
+      "artifactSizeBytes": 2608
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T20:38:55.390Z"
+}

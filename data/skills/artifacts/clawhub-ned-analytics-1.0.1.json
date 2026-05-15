@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ned-analytics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ned_analytics",
+  "skill": {
+    "id": 14864,
+    "skillKey": "clawhub-ned-analytics",
+    "name": "Ned - Shopify Profit Analytics AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ned-analytics",
+    "url": "https://clawhub.ai/skills/ned-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ned-analytics-15a0e1c72f4ef4c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query your Shopify store's sales, profitability, customers, and marketing data through Ned's API. Use when asked about profit, revenue, sales, orders, products, customers, churn, ad spend, ROAS, MER, margins, or any ecommerce analytics que."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matt998759",
+      "userId": "publishers:matt998759",
+      "displayName": "nedAI",
+      "image": "https://avatars.githubusercontent.com/u/131872692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770700426506,
+      "changelog": "Updated description.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99b9f711708d0799add33312ed2d758f0fb2653ea30ddab21df6caecd5fdfe17"
+}

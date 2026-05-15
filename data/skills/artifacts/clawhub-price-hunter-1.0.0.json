@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/price-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.price_hunter",
+  "skill": {
+    "id": 12710,
+    "skillKey": "clawhub-price-hunter",
+    "name": "Price Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "price-hunter",
+    "url": "https://clawhub.ai/skills/price-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/price-hunter-cc9bc822ff41065e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Global price comparison tool with international platform support. Compare prices across Amazon, eBay, AliExpress, Temu (international) AND JD, Taobao, Tmall,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunkinux",
+      "userId": "publishers:sunkinux",
+      "displayName": "Michael",
+      "image": "https://avatars.githubusercontent.com/u/5253294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1321,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772425931040,
+      "changelog": "Initial release: Global price comparison with international (Amazon, eBay, AliExpress, Temu) and Chinese (JD, Taobao, Tmall, Pinduoduo) platform support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d49a2728e956b4f36ee27e468fcdd600813b14b3fb1b3067a6527a6ab6c17316"
+}

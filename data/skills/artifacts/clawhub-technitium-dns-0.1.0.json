@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/technitium-dns@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technitium_dns",
+  "skill": {
+    "id": 48660,
+    "skillKey": "clawhub-technitium-dns",
+    "name": "Technitium DNS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technitium-dns",
+    "url": "https://clawhub.ai/skills/technitium-dns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technitium-dns-5b834dc76d43a269.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and inspect Technitium DNS Server via its HTTP API. Use for read-only health checks, DNS stats, zones, DHCP leases, token/session validation, and pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "naamah75",
+      "userId": "s1791qv11vxyde88z5y6792k0d83kwav",
+      "displayName": "Yngvarr_75",
+      "image": "https://avatars.githubusercontent.com/u/34965103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777576605362,
+      "changelog": "Initial read-only Technitium DNS health check skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c35563245211b86d19fd6c4992233e5bcde8d64a70e2857c6976830cd1134756"
+}

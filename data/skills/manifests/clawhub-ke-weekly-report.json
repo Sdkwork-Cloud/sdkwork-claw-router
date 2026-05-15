@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59876,
+  "uuid": "skill-clawhub-ke-weekly-report",
+  "skillKey": "clawhub-ke-weekly-report",
+  "name": "Weekly Report Generator",
+  "summary": "科特船长 - 自动生成周报/月报/工作总结，支持 Word/PPT 格式输出",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ke_weekly_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoheizp",
+      "features": [
+        "自动生成周报/月报/工作总结，支持 Word/PPT 格式输出"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ke-weekly-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132731427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ke-weekly-report",
+      "url": "https://clawhub.ai/skills/ke-weekly-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ke-weekly-report",
+    "url": "https://clawhub.ai/skills/ke-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ke-weekly-report-65126afe84c08e75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ke-weekly-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ke-weekly-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:446e043e42cc14d1bc80ee3797bda347bbc50fa666715aa8f9b06836879f2b47",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:46:38.007Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tamapet@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tamapet",
+  "skill": {
+    "id": 48698,
+    "skillKey": "clawhub-tamapet",
+    "name": "Clawpet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tamapet",
+    "url": "https://clawhub.ai/skills/tamapet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tamapet-70cdafe734e20592.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virtual pet game (Tamagotchi-style) with Telegram Mini App, social visits, friendship, playdates, mortality. When user asks for /pet or virtual pet, reply wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mturac",
+      "userId": "s17az0w5hkr8f6zk312z77zvyx85fsgv",
+      "displayName": "mturac",
+      "image": "https://avatars.githubusercontent.com/u/345446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1777462239957,
+      "changelog": "Version 0.2.0 introduces Telegram Mini App support and expands social gameplay:\n\n- Added Telegram Mini App integration with deep link sharing (auto \"Open\" button support).\n- Social features: visit, befriend, playdates, pet memorials, and pet card PNG sharing.\n- New pet lifecycle mechanics: sadness after 3 days neglect, permanent death after 7 days, memorial wall, and reincarnation.\n- Streak counter, shake/tap to hatch, custom naming, and streak bonuses.\n- Cross-platform installation for OpenClaw and Hermes with unified setup instructions.\n- Basic API endpoints and data storage outlined; Pillow required for pet card rendering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1306d991da388d22ff66f8ec5ffb1f4d77127aa10ad4e0887ed2c0799560cf2"
+}

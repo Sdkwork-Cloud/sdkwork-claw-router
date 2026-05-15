@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15832,
+  "uuid": "skill-clawhub-solpaw-skill-final",
+  "skillKey": "clawhub-solpaw-skill-final",
+  "name": "Solpaw",
+  "summary": "Launch Solana tokens on Pump.fun via the SolPaw platform. 0.1 SOL one-time fee. Your wallet is the onchain creator.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solpaw_skill_final",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LvcidPsyche",
+      "features": [
+        "Launch Solana tokens on Pump.fun via the SolPaw platform",
+        "0.1 SOL one-time fee",
+        "Your wallet is the onchain creator."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solpaw-skill-final@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160208855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solpaw-skill-final",
+      "url": "https://clawhub.ai/skills/solpaw-skill-final"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solpaw-skill-final",
+    "url": "https://clawhub.ai/skills/solpaw-skill-final",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solpaw-skill-final-cec258b466187490.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solpaw-skill-final@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solpaw-skill-final-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfce8ba3f536584005fec0e59936d99a4414433e97b82224b3220e83b58b3222",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:38:07.025Z"
+}

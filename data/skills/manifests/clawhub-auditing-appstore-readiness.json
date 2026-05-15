@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11541,
+  "uuid": "skill-clawhub-auditing-appstore-readiness",
+  "skillKey": "clawhub-auditing-appstore-readiness",
+  "name": "Audit App Store Readiness",
+  "summary": "Audit an iOS app repo (Swift/Xcode or React Native/Expo) for App Store compliance and release readiness; output a pass/warn/fail report and publish checklist.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auditing_appstore_readiness",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Audit an iOS app repo (Swift/Xcode or React Native/Expo) for App Store compliance and release r.",
+        "output a pass/warn/fail report and publish checklist."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auditing-appstore-readiness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auditing-appstore-readiness",
+      "url": "https://clawhub.ai/skills/auditing-appstore-readiness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auditing-appstore-readiness",
+    "url": "https://clawhub.ai/skills/auditing-appstore-readiness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auditing-appstore-readiness-c1622b9fa54d2a85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auditing-appstore-readiness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auditing-appstore-readiness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0069aba08d9166ac98a3ca1a335be98c1e1612b851d76f3a673f7260c6178d53",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T09:58:35.841Z"
+}

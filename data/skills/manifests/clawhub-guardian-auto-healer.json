@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53265,
+  "uuid": "skill-clawhub-guardian-auto-healer",
+  "skillKey": "clawhub-guardian-auto-healer",
+  "name": "Guardian — OpenClaw 7x24 Watchdog & Auto-Healer",
+  "summary": "OpenClaw 7x24 watchdog & auto-healer. Monitors gateway health, memory usage, zombie sessions, and disk space every 5 minutes with automatic restart when stuck.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guardian_auto_healer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "OpenClaw 7x24 watchdog & auto-healer",
+        "Monitors gateway health, memory usage, zombie sessions, and disk space every 5 minutes with aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guardian-auto-healer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guardian-auto-healer",
+      "url": "https://clawhub.ai/skills/guardian-auto-healer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guardian-auto-healer",
+    "url": "https://clawhub.ai/skills/guardian-auto-healer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guardian-auto-healer-ab8fed1355bdb6d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guardian-auto-healer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guardian-auto-healer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c97db0dee25a091b8e7173c4ebbb9bb557320664ae8a17247cd74db21cb280e4",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:36:46.445Z"
+}

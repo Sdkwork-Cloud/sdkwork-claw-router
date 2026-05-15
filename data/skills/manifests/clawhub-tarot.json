@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13378,
+  "uuid": "skill-clawhub-tarot",
+  "skillKey": "clawhub-tarot",
+  "name": "Tarot from Univoice",
+  "summary": "A reflective tarot draw for emotional support (presence-first, non-clinical, non-predictive).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tarot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shiraz",
+      "features": [
+        "A reflective tarot draw for emotional support (presence-first, non-clinical, non-predictive)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tarot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43944399?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tarot",
+      "url": "https://clawhub.ai/skills/tarot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tarot",
+    "url": "https://clawhub.ai/skills/tarot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tarot-9fab58426fbe0e5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tarot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tarot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d826fd1f5b40046782e3a70cfbd18199cb85774eb69468419e27ffc4f537fa0f",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:29:09.393Z"
+}

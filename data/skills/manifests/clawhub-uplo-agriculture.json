@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26817,
+  "uuid": "skill-clawhub-uplo-agriculture",
+  "skillKey": "clawhub-uplo-agriculture",
+  "name": "Uplo Agriculture",
+  "summary": "AI-powered agricultural knowledge management. Search crop management records, livestock data, compliance documentation, and sustainability reports with struc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_agriculture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RooJenkins",
+      "features": [
+        "AI-powered agricultural knowledge management",
+        "Search crop management records, livestock data, compliance documentation, and sustainability re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uplo-agriculture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47111622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uplo-agriculture",
+      "url": "https://clawhub.ai/skills/uplo-agriculture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-agriculture",
+    "url": "https://clawhub.ai/skills/uplo-agriculture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-agriculture-575cb4bb8a2c2ec0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uplo-agriculture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uplo-agriculture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b99409c7e62c8dda78ee9e9864338f16f5efb342fea7b3121a0326a4f3896dfb",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:36:43.258Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/official-layout-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official_layout_pro",
+  "skill": {
+    "id": 57295,
+    "skillKey": "clawhub-official-layout-pro",
+    "name": "Official Layout Pro(公文专业排版技能包 )"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official-layout-pro",
+    "url": "https://clawhub.ai/skills/official-layout-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-layout-pro-8861e8b9d7aa4646.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides professional Chinese official document formatting using specified fonts and styles for titles, red headings, body text, and alphanumeric characters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erich1566",
+      "userId": "s17amde2emhcgwty2p2w954ebn84yrw7",
+      "displayName": "Eric JIE",
+      "image": "https://avatars.githubusercontent.com/u/29330089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1026,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773389343007,
+      "changelog": "official-layout-pro 1.0.0\n\n- Initial release of \"专业公文排版专家\" skill.\n- Supports processing user-uploaded documents for official formatting based on specified templates.\n- Applies precise font and formatting rules for headers, titles, Western characters/numbers, and body text according to Chinese official document standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78a62bf35d007275761f92631be1a647741c85efb2a9ff47aa02e8a5f28ecb27"
+}

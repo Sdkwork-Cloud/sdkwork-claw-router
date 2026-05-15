@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30613,
+  "uuid": "skill-clawhub-nara",
+  "skillKey": "clawhub-nara",
+  "name": "Nara",
+  "summary": "Nara chain CLI agent — free PoMI mining, wallet, transfer, quest, on-chain skills, ZK ID, agent registry. Triggers: NARA, quest, mining, airdrop, earn/claim/...",
+  "version": "1.0.31",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nara",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "naraguy",
+      "features": [
+        "Nara chain CLI agent — free PoMI mining, wallet, transfer, quest, on-chain skills, ZK ID, agent.",
+        "Triggers: NARA, quest, mining, airdrop, earn/claim/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nara@1.0.31",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244679506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nara",
+      "url": "https://clawhub.ai/skills/nara"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nara",
+    "url": "https://clawhub.ai/skills/nara",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nara-f30fc0e061eba665.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nara@1.0.31",
+      "artifactUrl": "data/skills/artifacts/clawhub-nara-1.0.31.json",
+      "version": "1.0.31",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd88e7559536e5996c66a4fefdca1b4a6347449bf983c49699d4f40450cac95a",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:30:09.512Z"
+}

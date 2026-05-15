@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13413,
+  "uuid": "skill-clawhub-teltel-send-sms-text-message",
+  "skillKey": "clawhub-teltel-send-sms-text-message",
+  "name": "Send SMS text and bulk messages via TelTel.io API",
+  "summary": "Send SMS text messages via TelTel (teltel.io) using the REST API (api.teltel.io). Includes bulk send, delivery report, and bulk sms.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teltel_send_sms_text_message",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TelTel-call-center",
+      "features": [
+        "Send SMS text messages via TelTel (teltel.io) using the REST API (api.teltel.io)",
+        "Includes bulk send, delivery report, and bulk sms."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teltel-send-sms-text-message@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9353863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teltel-send-sms-text-message",
+      "url": "https://clawhub.ai/skills/teltel-send-sms-text-message"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teltel-send-sms-text-message",
+    "url": "https://clawhub.ai/skills/teltel-send-sms-text-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teltel-send-sms-text-message-ba6a62f0e4a8644b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teltel-send-sms-text-message@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-teltel-send-sms-text-message-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12520445fbd27c62f710c0606b1a6ec7e7593be6e575d7be0267220954a14903",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T19:34:43.306Z"
+}

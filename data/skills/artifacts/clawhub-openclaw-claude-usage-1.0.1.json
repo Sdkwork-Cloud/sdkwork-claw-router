@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-claude-usage@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_claude_usage",
+  "skill": {
+    "id": 15595,
+    "skillKey": "clawhub-openclaw-claude-usage",
+    "name": "Claude Usage Release"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-claude-usage",
+    "url": "https://clawhub.ai/skills/openclaw-claude-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-claude-usage-8210d5dd242ff039.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check Claude Max plan usage limits by launching Claude Code and running /usage. Use when the user asks about Claude plan usage, remaining quota, rate limits,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chunhualiao",
+      "userId": "s17czb50cec363y7yz4cchy9p9848424",
+      "displayName": "Chunhua Liao",
+      "image": "https://avatars.githubusercontent.com/u/1627206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 992,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771365626668,
+      "changelog": "Fixed: removed personal GitHub username from author field and README clone URL. Note: skill deprecated — superseded by native /usage command, ccusage CLI, and CC Usage MCP server.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e7ec5cf8850276a90b16a9c55158b1d3f6526d9429b3afc525c1cc374c64c1cd"
+}

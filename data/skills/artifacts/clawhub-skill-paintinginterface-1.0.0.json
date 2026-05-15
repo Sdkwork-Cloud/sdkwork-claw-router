@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-paintinginterface@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_paintinginterface",
+  "skill": {
+    "id": 27898,
+    "skillKey": "clawhub-skill-paintinginterface",
+    "name": "the ai painting interface of suichuang api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-paintinginterface",
+    "url": "https://clawhub.ai/skills/skill-paintinginterface",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-paintinginterface-9bbe44d087ef2e97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using NanaBanana 2 for daily needs or switch to NanaBanana Pro for high-quality, realistic, or final draft artwork."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "riage",
+      "userId": "publishers:riage",
+      "displayName": "Riage",
+      "image": "https://avatars.githubusercontent.com/u/149311895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773385008774,
+      "changelog": "须在第三方中转平台https://api.wuyinkeji.com/申请api key。可调用nanobanana 2和nanobanana pro。下载后放入skill目录。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f492d1da3faa5c0e21bd77807159dd0fae8a0d61fae8f90dcda515453e713bd0"
+}

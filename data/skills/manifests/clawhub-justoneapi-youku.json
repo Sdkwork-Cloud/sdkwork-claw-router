@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33300,
+  "uuid": "skill-clawhub-justoneapi-youku",
+  "skillKey": "clawhub-justoneapi-youku",
+  "name": "YOUKU API",
+  "summary": "Analyze YOUKU workflows with JustOneAPI, including video Search, video Details, and user Profile.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_youku",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze YOUKU workflows with JustOneAPI, including video Search, video Details, and user Profil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-youku@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-youku",
+      "url": "https://clawhub.ai/skills/justoneapi-youku"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-youku",
+    "url": "https://clawhub.ai/skills/justoneapi-youku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-youku-a556f0164e2a5bfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-youku@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-youku-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea8c8572ea9eb17edf381637275c4c5f91ae80f7fa32c59dc03592be0196424d",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:08:46.176Z"
+}

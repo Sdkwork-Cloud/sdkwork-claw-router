@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63226,
+  "uuid": "skill-clawhub-simple-pdf-toolkit",
+  "skillKey": "clawhub-simple-pdf-toolkit",
+  "name": "PDF 工具箱",
+  "summary": "PDF 工具箱技能。支持 PDF 合并、拆分、旋转、压缩、格式转换、文字提取、水印添加等常用操作。使用场景：(1) 合并多个 PDF，(2) 拆分 PDF 页面，(3) 旋转/调整方向，(4) 压缩 PDF 大小，(5) PDF 转图片/Word，(6) 提取 PDF 文字，(7) 添加/移除水印。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_pdf_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "changeworldy-cyber",
+      "features": [
+        "PDF 工具箱技能。支持 PDF 合并、拆分、旋转、压缩、格式转换、文字提取、水印添加等常用操作。使用场景：(1) 合并多个 PDF，(2) 拆分 PDF 页面，(3) 旋转/调整方向，(4."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simple-pdf-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253863426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simple-pdf-toolkit",
+      "url": "https://clawhub.ai/skills/simple-pdf-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-pdf-toolkit",
+    "url": "https://clawhub.ai/skills/simple-pdf-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-pdf-toolkit-638820e9da236d05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simple-pdf-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-simple-pdf-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7fa50208c27a734b1a188de807c354f086c25418721920a823df515adaae95e",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:27:05.464Z"
+}

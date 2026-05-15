@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30184,
+  "uuid": "skill-clawhub-azure-api-management",
+  "skillKey": "clawhub-azure-api-management",
+  "name": "Azure Api Management",
+  "summary": "Azure API Management integration. Manage data, records, and automate workflows. Use when the user wants to interact with Azure API Management data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_api_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Azure API Management integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Azure API Management data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azure-api-management@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azure-api-management",
+      "url": "https://clawhub.ai/skills/azure-api-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-api-management",
+    "url": "https://clawhub.ai/skills/azure-api-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-api-management-eab331f192aba74b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azure-api-management@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-azure-api-management-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11ef4859e22e6cccae532cd17ef27127e9b30719b8c9f7493fca4c03af76e497",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:22:06.705Z"
+}

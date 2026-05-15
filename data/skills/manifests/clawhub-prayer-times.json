@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14207,
+  "uuid": "skill-clawhub-prayer-times",
+  "skillKey": "clawhub-prayer-times",
+  "name": "Prayer Times, World Salah Times",
+  "summary": "Get instant, accurate Islamic prayer times for any location worldwide. Auto-detects your city or accepts any city/country name globally. Handles typos with smart fuzzy search. Shows Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha times in 12-.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prayer_times",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clinicode",
+      "features": [
+        "Get instant, accurate Islamic prayer times for any location worldwide",
+        "Auto-detects your city or accepts any city/country name globally",
+        "Handles typos with smart fuzzy search",
+        "Shows Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha times in 12-hour format"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prayer-times@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212307185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prayer-times",
+      "url": "https://clawhub.ai/skills/prayer-times"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prayer-times",
+    "url": "https://clawhub.ai/skills/prayer-times",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prayer-times-caed4d3301cd7cd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prayer-times@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prayer-times-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f7eef1aacc579adfc4e2e33f0010aa480e8f067e9c355f57f90e80ed73b02b5",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T22:52:10.166Z"
+}

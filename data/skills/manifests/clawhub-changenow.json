@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11888,
+  "uuid": "skill-clawhub-changenow",
+  "skillKey": "clawhub-changenow",
+  "name": "Changenow",
+  "summary": "Perform instant crypto swaps via ChangeNOW and earn affiliate commissions. Use when someone wants to swap tokens (e.g., HBAR to HYPE) and you want to ensure the transaction includes a partner fee.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changenow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yakelb0815",
+      "features": [
+        "Perform instant crypto swaps via ChangeNOW and earn affiliate commissions",
+        "Use when someone wants to swap tokens (e.g., HBAR to HYPE) and you want to ensure the transacti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changenow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209450754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changenow",
+      "url": "https://clawhub.ai/skills/changenow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changenow",
+    "url": "https://clawhub.ai/skills/changenow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changenow-6fc5dc837b912078.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changenow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-changenow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0ba71ae6eb01f10128a03c9bc27ac586fded95dc3eff5078e4b32aa2ebae377",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T10:10:48.699Z"
+}

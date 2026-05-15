@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12875,
+  "uuid": "skill-clawhub-github-mpc",
+  "skillKey": "clawhub-github-mpc",
+  "name": "github-mpc",
+  "summary": "Verifies and configures required MCP servers (Atlassian and GitHub) to enable Product Guide Writer integrations and guides setup if missing.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_mpc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Engineering Manager @ Trading 212",
+      "features": [
+        "Verifies and configures required MCP servers (Atlassian and GitHub) to enable Product Guide Wri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-mpc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131450933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-mpc",
+      "url": "https://clawhub.ai/skills/github-mpc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-mpc",
+    "url": "https://clawhub.ai/skills/github-mpc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-mpc-9db4f71faa009de3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-mpc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-mpc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06f9bde1700ad1aa44b5ff26a8762fa7713520ba12ab92235ca54ceeef0b8d82",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T12:49:21.355Z"
+}

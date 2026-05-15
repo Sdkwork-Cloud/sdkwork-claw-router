@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amber-hunter@1.2.41",
+  "version": "1.2.41",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amber_hunter",
+  "skill": {
+    "id": 19012,
+    "skillKey": "clawhub-amber-hunter",
+    "name": "Amber Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amber-hunter",
+    "url": "https://clawhub.ai/skills/amber-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amber-hunter-b75c726703982b38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amber-Hunter is a local AI memory engine that encrypts, stores, and summarizes OpenClaw/Claude sessions and files for instant recall and optional cloud sync."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankechenlab-node",
+      "userId": "s17b8543dq7w9kmxgky4dqy1bn83g5r4",
+      "displayName": "ankechenlab-node",
+      "image": "https://avatars.githubusercontent.com/u/260451964?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 534,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 42
+    },
+    "latestVersion": {
+      "version": "1.2.41",
+      "createdAt": 1775788477877,
+      "changelog": "BGE-M3 embedding, BM25, Cross-Encoder Reranker, HyDE, Multi-Hop retrieval, RAG evaluation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d336640f824ddffa51e38cbc9684981138ba679a7ee7784959856563a67b44f"
+}

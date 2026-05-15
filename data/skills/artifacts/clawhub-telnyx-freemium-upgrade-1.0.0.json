@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telnyx-freemium-upgrade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_freemium_upgrade",
+  "skill": {
+    "id": 17478,
+    "skillKey": "clawhub-telnyx-freemium-upgrade",
+    "name": "Telnyx Freemium Upgrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-freemium-upgrade",
+    "url": "https://clawhub.ai/skills/telnyx-freemium-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-freemium-upgrade-0defd4eac8907ecf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically upgrade Telnyx account from freemium to professional tier"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teamtelnyx",
+      "userId": "s170draq1trsnzq53cd20af77s85vr4p",
+      "displayName": "teamtelnyx",
+      "image": "https://avatars.githubusercontent.com/u/176328014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 766,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771529765035,
+      "changelog": "Initial release: upgrade Telnyx account from freemium to professional tier via GitHub or LinkedIn identity verification. Includes evaluation script, GitHub auth helpers, and notification templates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:095d55e2189f72f06d31ed2208151f2c066e597d01c2d87b2921b00d010e6c87"
+}

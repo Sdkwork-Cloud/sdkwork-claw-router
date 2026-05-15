@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42730,
+  "uuid": "skill-clawhub-rag-retrieve",
+  "skillKey": "clawhub-rag-retrieve",
+  "name": "Rag Retrieve",
+  "summary": "Performs domain- and version-aware hybrid vector+BM25+metadata search on TiDB, with multi-query expansion and optional chain-of-retrieval for multi-hop queries.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_retrieve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stephen Thorn",
+      "features": [
+        "Performs domain",
+        "and version-aware hybrid vector+BM25+metadata search on TiDB, with multi-query expansion and op."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rag-retrieve@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49094234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rag-retrieve",
+      "url": "https://clawhub.ai/skills/rag-retrieve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-retrieve",
+    "url": "https://clawhub.ai/skills/rag-retrieve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-retrieve-8276e0fb41bf4d4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rag-retrieve@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rag-retrieve-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2c60edf11c6b26a62af65b2d5602098f406ae0c75a0ddf58d6ad2bec5ae6d8e",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:46:40.697Z"
+}

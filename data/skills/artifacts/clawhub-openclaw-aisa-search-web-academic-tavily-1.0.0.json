@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-search-web-academic-tavily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_search_web_academic_tavily",
+  "skill": {
+    "id": 15662,
+    "skillKey": "clawhub-openclaw-aisa-search-web-academic-tavily",
+    "name": "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-search-web-academic-tavily",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-search-web-academic-tavily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-search-web-academic-tavily-128b63137c04a14a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent search for agents. Multi-source retrieval with confidence scoring - web, academic, and Tavily in one unified API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 992,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770628498783,
+      "changelog": "Initial release of openclaw-search—an intelligent, multi-source search tool for agents with confidence scoring.\n\n- Unified API combines web, academic, and Tavily search streams.\n- Two-phase retrieval and meta-analysis with confidence scoring and consensus evaluation.\n- Supports web, academic, hybrid (smart), and Tavily operations via API or Python client.\n- Includes endpoints for extracting, crawling, and mapping web content.\n- Detailed scoring rubric for search result reliability and confidence levels.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d388c00ef7409aad3171ebb2974014c56faf60f6ec264e4077a0bb6b11645bb5"
+}

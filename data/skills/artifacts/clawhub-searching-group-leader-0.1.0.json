@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searching-group-leader@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searching_group_leader",
+  "skill": {
+    "id": 17979,
+    "skillKey": "clawhub-searching-group-leader",
+    "name": "Searching Group Leader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searching-group-leader",
+    "url": "https://clawhub.ai/skills/searching-group-leader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searching-group-leader-ab3c2199b8a69dc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You are the leader of searching group . Break down the task into independent and complementary sub-tasks. Then describe each sub-task with natural language a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "urrrich0",
+      "userId": "publishers:urrrich0",
+      "displayName": "urrrich0",
+      "image": "https://avatars.githubusercontent.com/u/193381709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 709,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771145506933,
+      "changelog": "searching-group-leader v0.1.0\n\n- Initial release introducing the searching-group-leader skill.\n- Enables automatic breakdown of user search tasks into independent, complementary sub-tasks.\n- Ensures task assignment to the most suitable agents, always including General_Search_Agent and, when appropriate, other agents matching specific user query types.\n- Explicitly avoids Academic_Search agent for date-specific tasks.\n- Sets a maximum of 8 sub-tasks per search request.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df093e5e028aa21e9132d893d899bb26785fecf8add01ea2eb75b5dc043f6f36"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-meta@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_meta",
+  "skill": {
+    "id": 49083,
+    "skillKey": "clawhub-video-generator-meta",
+    "name": "Video Generator Meta"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-meta",
+    "url": "https://clawhub.ai/skills/video-generator-meta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-meta-14fe84c56594114d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts or clips into AI-generated videos with this skill. Works with MP4, MOV, WebM, GIF files up to 500MB. marketers and content creators use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777479776051,
+      "changelog": "- Initial release of Video Generator Meta skill.\n- Generate AI-powered videos from text prompts, scripts, or clips; supports MP4, MOV, WebM, GIF up to 500MB.\n- Handles uploads, editing, generation, and export of videos with easy API integration.\n- Cloud backend delivers 1080p MP4 videos in about 1–2 minutes per job.\n- Session management, authentication, and error handling are automated for a seamless user experience.\n- Includes built-in routing for actions like uploading, checking credits, exporting, and real-time edit workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00e02dabf5b6df500b9b61cc7101d3d1a94295ca74a290f7c53f0167fcee164a"
+}

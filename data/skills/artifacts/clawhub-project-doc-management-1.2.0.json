@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-doc-management@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_doc_management",
+  "skill": {
+    "id": 67453,
+    "skillKey": "clawhub-project-doc-management",
+    "name": "Project Doc Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-doc-management",
+    "url": "https://clawhub.ai/skills/project-doc-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-doc-management-f4edaa9ebc1c6ef6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理并规范存储项目需求文档，自动读取最新版本文件，动态更新项目概览，实现文档体系的有序管理与访问。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinqianfei",
+      "userId": "s1787cvzyf2k3w7h6mj7zy1mdx83n4ph",
+      "displayName": "jinqianfei",
+      "image": "https://avatars.githubusercontent.com/u/258724353?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775811090889,
+      "changelog": "- Version bump to 1.2.0 with no content or documentation changes.\n- No file changes detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:533ab80a809822b9812e57d124e6eec495c167a8741c2713286d5e99c9de5e98"
+}

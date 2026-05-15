@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-search-aisa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_aisa",
+  "skill": {
+    "id": 45133,
+    "skillKey": "clawhub-tavily-search-aisa",
+    "name": "tavily-search-aisa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-aisa",
+    "url": "https://clawhub.ai/skills/tavily-search-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-aisa-e2e0c1f15618b98c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run Tavily web search through AISA with filters for depth, topic, and time range. Use when: the user needs flexible web search with stronger filtering than a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776504708953,
+      "changelog": "Initial release of tavily-search skill.\n\n- Enables Tavily web search with advanced filters for depth, topic, and time range.\n- Intended for users who require more flexible and precise web searches than basic keyword search.\n- Requires AISA_API_KEY and Python 3.\n- Not suitable for accessing browser cookies, passwords, or other sensitive local credentials.\n- Provides example usage and quick start instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87ccf0beda621289e3299737df96047446da088b57ae749cc101ccc0bf4a2c0f"
+}

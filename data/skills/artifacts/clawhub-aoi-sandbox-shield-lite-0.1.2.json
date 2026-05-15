@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aoi-sandbox-shield-lite@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aoi_sandbox_shield_lite",
+  "skill": {
+    "id": 15713,
+    "skillKey": "clawhub-aoi-sandbox-shield-lite",
+    "name": "AOI Sandbox Shield (Lite)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aoi-sandbox-shield-lite",
+    "url": "https://clawhub.ai/skills/aoi-sandbox-shield-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aoi-sandbox-shield-lite-3cfafe1b55bd8027.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates snapshots of critical config files, validates JSON configs for syntax and keys, and generates audit logs without applying changes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edmonddantesj",
+      "userId": "publishers:edmonddantesj",
+      "displayName": "edmonddantesj",
+      "image": "https://avatars.githubusercontent.com/u/217761516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 981,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771138673316,
+      "changelog": "Docs: add GitHub Issues support link (aoi-skills).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9629f62cf4e2b3f9aec993b0544cdf60e7bdec368b68717067aee603d8e54952"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chief-editor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chief_editor",
+  "skill": {
+    "id": 14605,
+    "skillKey": "clawhub-chief-editor",
+    "name": "Chief Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chief-editor",
+    "url": "https://clawhub.ai/skills/chief-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chief-editor-1f0a3c10dad7ab5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional chief editor skilled in reviewing, refining, and ensuring content quality while adhering strictly to user preferences and source materials."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teamolab",
+      "userId": "publishers:teamolab",
+      "displayName": "teamolab",
+      "image": "https://avatars.githubusercontent.com/u/183573095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1127,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771144385120,
+      "changelog": "Initial release of chief-editor skill.\n\n- Introduces a workflow for professional chief editing, including gathering user attachments and knowledge base content.\n- Enforces strict adherence to user-specified personalized writing preferences.\n- Supports URL extraction and content scraping from referenced documents.\n- Allows for multi-version output when explicitly requested by users.\n- Ensures word count and reference list requirements are met before submission.\n- Designed for integration with specific agent tools and runtime template variables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63db64c70f21e1dbf0b15eb9cd2aa969121a06d5d06b66f4ecf4813057fdd431"
+}

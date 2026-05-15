@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10740,
+  "uuid": "skill-clawhub-vikunja-tasks",
+  "skillKey": "clawhub-vikunja-tasks",
+  "name": "Vikunja Tasks",
+  "summary": "Manage tasks and projects on a self-hosted Vikunja instance. Use when the user wants to create, view, complete, or manage tasks, check what's due or overdue, list projects, or get task notifications. Also use for to-do lists, reminders, an.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vikunja_tasks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickian",
+      "features": [
+        "Manage tasks and projects on a self-hosted Vikunja instance",
+        "Use when the user wants to create, view, complete, or manage tasks, check what's due or overdue.",
+        "Also use for to-do lists, reminders, and task tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vikunja-tasks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/590678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vikunja-tasks",
+      "url": "https://clawhub.ai/skills/vikunja-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vikunja-tasks",
+    "url": "https://clawhub.ai/skills/vikunja-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vikunja-tasks-a9b40f9def000f51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vikunja-tasks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vikunja-tasks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e0aad8ebfc040e7c9661fccbcdf94236012e3355cdd3ef6c002a8302594ec97",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T18:11:55.641Z"
+}

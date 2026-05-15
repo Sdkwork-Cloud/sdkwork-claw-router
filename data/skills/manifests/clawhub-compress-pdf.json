@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10997,
+  "uuid": "skill-clawhub-compress-pdf",
+  "skillKey": "clawhub-compress-pdf",
+  "name": "Compress PDF",
+  "summary": "Compress a user-provided PDF by uploading it to Cross-Service-Solutions, polling until completion, then returning a download URL for the compressed file.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compress_pdf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CrossServiceSolutions",
+      "features": [
+        "Compress a user-provided PDF by uploading it to Cross-Service-Solutions, polling until completi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compress-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201191521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compress-pdf",
+      "url": "https://clawhub.ai/skills/compress-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compress-pdf",
+    "url": "https://clawhub.ai/skills/compress-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compress-pdf-55971e9f39bc0b8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compress-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compress-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57c27a8db0dd988cbc48d85129a413a6e5a4fb8bcf58fcb4818e8b00c1728267",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T12:58:37.922Z"
+}

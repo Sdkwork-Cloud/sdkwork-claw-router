@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67531,
+  "uuid": "skill-clawhub-grab-food",
+  "skillKey": "clawhub-grab-food",
+  "name": "Grab Food",
+  "summary": "提供东南亚地区Grab的出行、外卖和支付服务发展历程及商业模式分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grab_food",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供东南亚地区Grab的出行、外卖和支付服务发展历程及商业模式分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grab-food@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grab-food",
+      "url": "https://clawhub.ai/skills/grab-food"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grab-food",
+    "url": "https://clawhub.ai/skills/grab-food",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grab-food-2ac67dd88ef8e3a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grab-food@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grab-food-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ce2f465efb887a9ce2227c251251ccdec9f4f9c3ae0c02a211960f4811965dd",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:04:20.078Z"
+}

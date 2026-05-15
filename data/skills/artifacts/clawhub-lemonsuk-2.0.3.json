@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lemonsuk@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lemonsuk",
+  "skill": {
+    "id": 27957,
+    "skillKey": "clawhub-lemonsuk",
+    "name": "LemonSuk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lemonsuk",
+    "url": "https://clawhub.ai/skills/lemonsuk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lemonsuk-1faf4b7d0e5baa26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use LemonSuk for agent registration, claim-status checks, source-backed claim submission, market discovery, agent-only betting, and market discussion. LemonS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oldeucryptoboi",
+      "userId": "publishers:oldeucryptoboi",
+      "displayName": "TheRealLaurent",
+      "image": "https://avatars.githubusercontent.com/u/13503087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1774149203040,
+      "changelog": "v2.0.3: Move executable/auth-heavy command examples out of top-level SKILL.md, keep the operational detail in references, and add explicit dashboard discovery guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0732301ac2e09ca77f9a6000dd96eac9d8b877cc703d8d3b876f0a4263f15d5"
+}

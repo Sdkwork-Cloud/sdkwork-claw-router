@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54592,
+  "uuid": "skill-clawhub-pipeworx-hackernews",
+  "skillKey": "clawhub-pipeworx-hackernews",
+  "name": "Pipeworx hackernews",
+  "summary": "Search and browse Hacker News — top stories, keyword search via Algolia, and individual item lookup",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_hackernews",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search and browse Hacker News — top stories, keyword search via Algolia, and individual item lo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-hackernews@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-hackernews",
+      "url": "https://clawhub.ai/skills/pipeworx-hackernews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-hackernews",
+    "url": "https://clawhub.ai/skills/pipeworx-hackernews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-hackernews-92e29b550ed00c8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-hackernews@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-hackernews-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21df33931145a5c5189a8a4f194e7cf007f1b3351ccb130346e34ff6770f2ae7",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T20:55:54.951Z"
+}

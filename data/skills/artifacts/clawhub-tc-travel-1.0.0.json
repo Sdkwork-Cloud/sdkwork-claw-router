@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tc-travel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tc_travel",
+  "skill": {
+    "id": 67558,
+    "skillKey": "clawhub-tc-travel",
+    "name": "travel-customizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tc-travel",
+    "url": "https://clawhub.ai/skills/tc-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tc-travel-d22647a701e53b54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能旅游定制助手，收集用户需求后自动提交飞书多维表，助力个性化行程规划与跟进。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijingxu007",
+      "userId": "publishers:lijingxu007",
+      "displayName": "lijingxu007",
+      "image": "https://avatars.githubusercontent.com/u/27415257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773242239106,
+      "changelog": "定制游1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bfc160eef6d8305e71fdf64b5ed10f7efcac87f43f48d4ec200bf9b6d8e898d"
+}

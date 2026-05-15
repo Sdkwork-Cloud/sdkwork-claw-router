@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72047,
+  "uuid": "skill-clawhub-bigyou",
+  "skillKey": "clawhub-bigyou",
+  "name": "Bigyou",
+  "summary": "比优 —— 选项比较与决策工具。 当用户面对多个选项不知道如何抉择时激活，包括：选offer、选方案、选工具、选路径、选策略等任何需要做比较和决策的场景。 激活词：帮我选、哪个好、比一比、怎么选、纠结、选哪个、几个选项、选哪个好、A还是B、好难选 核心方法：先跳出选项构建目标画像（底线否决 + 加分项量化打分），...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigyou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack-xun",
+      "features": [
+        "比优 —— 选项比较与决策工具。 当用户面对多个选项不知道如何抉择时激活，包括：选offer、选方案、选工具、选路径、选策略等任何需要做比较和决策的场景。 激活词：帮我选、哪个好、比一比、怎."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bigyou@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143464473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bigyou",
+      "url": "https://clawhub.ai/skills/bigyou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigyou",
+    "url": "https://clawhub.ai/skills/bigyou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigyou-eafa351241eb3a56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bigyou@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bigyou-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f11adffcf2c33f41de167eda917132f44f117228d7285f7cac4a297747c643b",
+      "artifactSizeBytes": 2628
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:27:30.966Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50419,
+  "uuid": "skill-clawhub-clawbird",
+  "skillKey": "clawhub-clawbird",
+  "name": "Clawbird",
+  "summary": "X/Twitter integration — post, reply, search, like, follow, DMs, and mentions via the official X API v2",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbird",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xonder",
+      "features": [
+        "X/Twitter integration — post, reply, search, like, follow, DMs, and mentions via the official X."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbird@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1221363?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbird",
+      "url": "https://clawhub.ai/skills/clawbird"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbird",
+    "url": "https://clawhub.ai/skills/clawbird",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbird-919891596684d008.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbird@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbird-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8e3c08586e85371b9ae87fc0889fd2fe5497af5ee2ef18ec9ec1121f65948a2",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:31:56.346Z"
+}

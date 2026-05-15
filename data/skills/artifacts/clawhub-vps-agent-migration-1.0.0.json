@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vps-agent-migration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vps_agent_migration",
+  "skill": {
+    "id": 59500,
+    "skillKey": "clawhub-vps-agent-migration",
+    "name": "VPS Agent Migration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vps-agent-migration",
+    "url": "https://clawhub.ai/skills/vps-agent-migration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vps-agent-migration-ea1c34226bbc4b6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将本地 OpenClaw 子 Agent 迁移到 VPS 上运行。包括：rsync 复制文件、配置 Discord Bot、添加 bindings 路由、禁用本地账号避免冲突。使用场景：当需要将本地的 creative/dev/qa/strategist/pojun 等子 Agent 迁移到远程 VPS 时使用此..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkingskin-tech",
+      "userId": "publishers:sparkingskin-tech",
+      "displayName": "sparkingskin-tech",
+      "image": "https://avatars.githubusercontent.com/u/258537883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772183537914,
+      "changelog": "Initial release - 迁移 OpenClaw 子 Agent 到 VPS",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:95870feee54b0b0b09db7fea43f8ffb9046f5df2c3fcbe433be79c13246553fd"
+}

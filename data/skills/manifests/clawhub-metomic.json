@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35382,
+  "uuid": "skill-clawhub-metomic",
+  "skillKey": "clawhub-metomic",
+  "name": "Metomic",
+  "summary": "Metomic integration. Manage data, records, and automate workflows. Use when the user wants to interact with Metomic data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metomic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Metomic integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Metomic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metomic@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metomic",
+      "url": "https://clawhub.ai/skills/metomic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metomic",
+    "url": "https://clawhub.ai/skills/metomic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metomic-22b29bd51d8b7fc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metomic@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-metomic-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70c7711c93ee7c80e3e45b5b5de709beb4290ec496866f3594c9c06fefd796da",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:44:35.983Z"
+}

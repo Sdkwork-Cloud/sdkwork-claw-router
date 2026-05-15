@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12311,
+  "uuid": "skill-clawhub-aikek",
+  "skillKey": "clawhub-aikek",
+  "name": "AIKEK API",
+  "summary": "Access AIKEK APIs for crypto/DeFi research and image generation. Authenticate with a Solana wallet, query the knowledge engine for real-time market data and...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aikek",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vladimir Sotnikov",
+      "features": [
+        "Access AIKEK APIs for crypto/DeFi research and image generation",
+        "Authenticate with a Solana wallet, query the knowledge engine for real-time market data and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aikek@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21967926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aikek",
+      "url": "https://clawhub.ai/skills/aikek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aikek",
+    "url": "https://clawhub.ai/skills/aikek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aikek-8b0be4229a293243.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aikek@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aikek-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93fb051c715fb7e67066315f5b2f38d6bb665899a343786de1ac3426eda82995",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T08:49:40.652Z"
+}

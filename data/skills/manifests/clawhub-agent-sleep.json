@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60315,
+  "uuid": "skill-clawhub-agent-sleep",
+  "skillKey": "clawhub-agent-sleep",
+  "name": "Agent Sleep",
+  "summary": "Agent 睡眠系统 - 记忆整合、日志归档、工作区清理（支持 CortexGraph）",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_sleep",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "Agent 睡眠系统",
+        "记忆整合、日志归档、工作区清理（支持 CortexGraph）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-sleep@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-sleep",
+      "url": "https://clawhub.ai/skills/agent-sleep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-sleep",
+    "url": "https://clawhub.ai/skills/agent-sleep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-sleep-281eadbcdec59e03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-sleep@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-sleep-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:befe96cfaef4237ae0013b2acb239784a965ef5bb3b308dd2ef3e402e0ab4682",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T04:58:37.145Z"
+}

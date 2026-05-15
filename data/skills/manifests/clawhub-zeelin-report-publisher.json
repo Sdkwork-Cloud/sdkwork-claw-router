@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57035,
+  "uuid": "skill-clawhub-zeelin-report-publisher",
+  "skillKey": "clawhub-zeelin-report-publisher",
+  "name": "Zeelin Report Publisher",
+  "summary": "Publish reports to the ZeeLin reports website (\"智灵报告网站\") by copying report assets, inserting a new top entry into public/reports_config.json for any category...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_report_publisher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thu-nmrc",
+      "features": [
+        "Publish reports to the ZeeLin reports website (\"智灵报告网站\") by copying report assets, inserting a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeelin-report-publisher@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227120457?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeelin-report-publisher",
+      "url": "https://clawhub.ai/skills/zeelin-report-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-report-publisher",
+    "url": "https://clawhub.ai/skills/zeelin-report-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-report-publisher-f77dc6f0edcaad9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeelin-report-publisher@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeelin-report-publisher-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e18a394f867d2c17739aa20a604213b20f7ee325bcb806fde117733b0757f824",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T07:24:06.116Z"
+}

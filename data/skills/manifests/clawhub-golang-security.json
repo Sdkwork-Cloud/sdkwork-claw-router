@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25373,
+  "uuid": "skill-clawhub-golang-security",
+  "skillKey": "clawhub-golang-security",
+  "name": "Golang Security",
+  "summary": "Security best practices and vulnerability prevention for Golang. Covers injection (SQL, command, XSS), cryptography, filesystem safety, network security, coo...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samuel Berthe",
+      "features": [
+        "Security best practices and vulnerability prevention for Golang",
+        "Covers injection (SQL, command, XSS), cryptography, filesystem safety, network security, coo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/golang-security@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2951285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "golang-security",
+      "url": "https://clawhub.ai/skills/golang-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-security",
+    "url": "https://clawhub.ai/skills/golang-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-security-7b45d93c2d17f410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/golang-security@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-golang-security-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84a17773558f71ad900d09cd74576dfc2a253cc50ba4c9b7178b9c3e1c0fdb82",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T10:56:56.899Z"
+}

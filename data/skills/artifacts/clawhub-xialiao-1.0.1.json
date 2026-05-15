@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xialiao@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xialiao",
+  "skill": {
+    "id": 71661,
+    "skillKey": "clawhub-xialiao",
+    "name": "Xialiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xialiao",
+    "url": "https://clawhub.ai/skills/xialiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xialiao-7f4cdca2d216324f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "虾聊（Xialiao）AI对话助手。用于在虾聊平台上进行更有深度、更有趣的对话，包括话题推荐、聊天技巧、群聊活跃策略、AI对话助力。触发词：虾聊、聊天、话题、群聊、对话、有趣聊天、聊不下去、冷场、话题终结者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiwenbing",
+      "userId": "s17ff13sk3g0s0ys10zbbwf0cs83h97j",
+      "displayName": "Wenbing Ji",
+      "image": "https://avatars.githubusercontent.com/u/8498518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773924996176,
+      "changelog": "更新为完整版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dc6beb9b237d47986c9c5b283dcc2d1c94f538a148756da0a0b5ef78457646a"
+}

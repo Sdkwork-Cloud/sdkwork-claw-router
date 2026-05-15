@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moss-ttsd@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_ttsd",
+  "skill": {
+    "id": 63315,
+    "skillKey": "clawhub-moss-ttsd",
+    "name": "MOSS TTSD 多人对话合成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-ttsd",
+    "url": "https://clawhub.ai/skills/moss-ttsd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-ttsd-67f8cacf3b2abb67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MOSI Studio 多人对话合成（moss-ttsd）：将多个角色的对话文本合成为 单段连续音频，多人声音自然交替。支持 1~5 个说话人。 触发词：多说话人、多人对话、对话合成、多个角色、多种声音、多个人说话、 \"multi-speaker\"、\"dialogue synthesis\"、\"多人对话\"。 在飞书..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkkb473",
+      "userId": "s174hset0mwby06c5aeehg9bp983nexw",
+      "displayName": "YYL",
+      "image": "https://avatars.githubusercontent.com/u/39012250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774593328042,
+      "changelog": "Breaking: speakers array replaces voice_id/voice_id2; supports 1~5 speakers; updated sampling params (repetition_penalty, audio_presence_penalty, max_new_tokens); snapshot moss-ttsd-20260320",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:605247d0bdefaddc1c819cd673ae00f7562511506e33caf48c7515664751fd0f"
+}

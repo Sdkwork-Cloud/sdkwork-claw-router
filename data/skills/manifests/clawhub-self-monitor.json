@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12576,
+  "uuid": "skill-clawhub-self-monitor",
+  "skillKey": "clawhub-self-monitor",
+  "name": "Self Monitor",
+  "summary": "Proactive self-monitoring of infrastructure, services, and health. Tracks disk/memory/load, service health, cron job status, recent errors. Auto-fixes safe i...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suryast",
+      "features": [
+        "Proactive self-monitoring of infrastructure, services, and health",
+        "Tracks disk/memory/load, service health, cron job status, recent errors",
+        "Auto-fixes safe i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4986994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-monitor",
+      "url": "https://clawhub.ai/skills/self-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-monitor",
+    "url": "https://clawhub.ai/skills/self-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-monitor-f627eeb129e83f26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e1ab5efcd9685ff337e98e5cce11cdbe65c216ec1280c6a08c2540462322bc0",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:25:23.217Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44369,
+  "uuid": "skill-clawhub-compliance-guardian",
+  "skillKey": "clawhub-compliance-guardian",
+  "name": "Compliance Guardian",
+  "summary": "Tool for real estate agents to screen transactions, collect required FinCEN data, and track filing deadlines for residential property entity sales under FinC...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jonbarnato",
+      "features": [
+        "Tool for real estate agents to screen transactions, collect required FinCEN data, and track fil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compliance-guardian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269982131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compliance-guardian",
+      "url": "https://clawhub.ai/skills/compliance-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-guardian",
+    "url": "https://clawhub.ai/skills/compliance-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-guardian-f94e145161b7cf16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compliance-guardian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-compliance-guardian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97ebbeb0d389ba0aefba9756bc11e800560490a3f8e2ea33fb09bea3a52741e9",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:52:16.473Z"
+}

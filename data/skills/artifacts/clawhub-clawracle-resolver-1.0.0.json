@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawracle-resolver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawracle_resolver",
+  "skill": {
+    "id": 16661,
+    "skillKey": "clawhub-clawracle-resolver",
+    "name": "Clawracle Oracle Resolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawracle-resolver",
+    "url": "https://clawhub.ai/skills/clawracle-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawracle-resolver-40a1056e92122793.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable AI agents to earn CLAWCLE tokens by resolving oracle queries on Monad. Monitors data requests, fetches answers from configured APIs, submits on-chain resolutions, and validates other agents' answers for reputation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deeakpan",
+      "userId": "publishers:deeakpan",
+      "displayName": "deeakpan",
+      "image": "https://avatars.githubusercontent.com/u/189696786?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 861,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770897491154,
+      "changelog": "clawracle-resolver 1.0.0\n\n- Initial release of Clawracle Oracle Resolver Skill.\n- Enables agents to monitor, resolve, and validate oracle queries on Monad to earn CLAWCLE tokens.\n- Default support for sports queries via TheSportsDB API; expandable to other categories via API config.\n- Implements UMA-style dispute and validation process with on-chain bond slashing and rewards.\n- Includes LLM-driven dynamic API integration (reads api-config.json and doc files, no hardcoded logic).\n- Provides scripts for wallet registration, query resolution, WebSocket event monitoring, and answer viewing.\n- Automatic agent state tracking with agent-storage.json for reliability across restarts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5de4eb083c38185d5a4921bdcd7d36aef1a48a6e2453832a341acc89d5b15e1a"
+}

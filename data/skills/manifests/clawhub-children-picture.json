@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67850,
+  "uuid": "skill-clawhub-children-picture",
+  "skillKey": "clawhub-children-picture",
+  "name": "儿童绘本生成器",
+  "summary": "基于百度ERNIE-Image-Turbo模型，将儿童故事核心画面文本转为指定分辨率的高质量绘本图像并保存为PNG文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.children_picture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "livingbody",
+      "features": [
+        "基于百度ERNIE-Image-Turbo模型，将儿童故事核心画面文本转为指定分辨率的高质量绘本图像并保存为PNG文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/children-picture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8059137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "children-picture",
+      "url": "https://clawhub.ai/skills/children-picture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "children-picture",
+    "url": "https://clawhub.ai/skills/children-picture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/children-picture-f6a46286ee09c29a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/children-picture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-children-picture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e2440c09e97ca2b35fbf852a5c9647928bfe83d76bfed7eb0c18b1ceac5f9ea",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T14:48:22.331Z"
+}

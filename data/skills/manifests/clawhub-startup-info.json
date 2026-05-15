@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21693,
+  "uuid": "skill-clawhub-startup-info",
+  "skillKey": "clawhub-startup-info",
+  "name": "Startup Info",
+  "summary": "Generate concise investor-style briefings on startups using live web searches to extract verified company info, funding, founders, traction, and competitors.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_info",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruno Pérez",
+      "features": [
+        "Generate concise investor-style briefings on startups using live web searches to extract verifi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/startup-info@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6626184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "startup-info",
+      "url": "https://clawhub.ai/skills/startup-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-info",
+    "url": "https://clawhub.ai/skills/startup-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-info-52c8a2731818f73f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/startup-info@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-startup-info-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:470f72ecf25aabaedf617505cf57c8cc588afada7d97f96e81a56cd7e9d1ce4c",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T02:07:46.504Z"
+}

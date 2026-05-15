@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17893,
+  "uuid": "skill-clawhub-minimax-usage-2",
+  "skillKey": "clawhub-minimax-usage-2",
+  "name": "Minimax Usage",
+  "summary": "Check MiniMax coding plan usage/credits remaining. Requires MINIMAX_API_KEY environment variable.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_usage_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Haney",
+      "features": [
+        "Check MiniMax coding plan usage/credits remaining",
+        "Requires MINIMAX_API_KEY environment variable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-usage-2@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13684640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-usage-2",
+      "url": "https://clawhub.ai/skills/minimax-usage-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-usage-2",
+    "url": "https://clawhub.ai/skills/minimax-usage-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-usage-2-fa5e2c1feaaf051d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-usage-2@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-usage-2-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ad905df788e4fc69d4e77905c55b776e33480e62b94703787493ac800a6e60c",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:37:05.481Z"
+}

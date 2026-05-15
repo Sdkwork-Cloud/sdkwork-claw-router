@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/surfagent-mcp-selection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surfagent_mcp_selection",
+  "skill": {
+    "id": 39677,
+    "skillKey": "clawhub-surfagent-mcp-selection",
+    "name": "SurfAgent MCP Selection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surfagent-mcp-selection",
+    "url": "https://clawhub.ai/skills/surfagent-mcp-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surfagent-mcp-selection-911427bd6ad402c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Selection guide for SurfAgent automation layers, showing when to use perception, platform adapters, MCPs, and raw browser control."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "surfagentapp",
+      "userId": "s175x2f0jxn5qzfbn2d58017f1845t3a",
+      "displayName": "surfagentapp",
+      "image": "https://avatars.githubusercontent.com/u/269739611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775798884435,
+      "changelog": "Initial SurfAgent skill release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5fa76be332634149020851954cd3d07ebfed727108226c945a49c101a1f41aa"
+}

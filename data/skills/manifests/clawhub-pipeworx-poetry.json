@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56305,
+  "uuid": "skill-clawhub-pipeworx-poetry",
+  "skillKey": "clawhub-pipeworx-poetry",
+  "name": "Pipeworx poetry",
+  "summary": "Poetry MCP — PoetryDB API (free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_poetry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Poetry MCP — PoetryDB API (free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-poetry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-poetry",
+      "url": "https://clawhub.ai/skills/pipeworx-poetry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-poetry",
+    "url": "https://clawhub.ai/skills/pipeworx-poetry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-poetry-898d8868bc9da91c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-poetry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-poetry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec3eb07eadb1bc7f0ab9435015943afc6d7852f9135404ce29ebb43d55884803",
+      "artifactSizeBytes": 1783
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T22:11:19.707Z"
+}

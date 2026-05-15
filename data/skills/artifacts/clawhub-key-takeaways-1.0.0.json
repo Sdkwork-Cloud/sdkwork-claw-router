@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/key-takeaways@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.key_takeaways",
+  "skill": {
+    "id": 42116,
+    "skillKey": "clawhub-key-takeaways",
+    "name": "Key Takeaways"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "key-takeaways",
+    "url": "https://clawhub.ai/skills/key-takeaways",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/key-takeaways-beca20dd89cd5430.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts and summarizes key takeaways from documents, meeting notes, articles, and other text content. Use when the user asks for summaries, bullet points, m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774431481225,
+      "changelog": "Initial release of the Key Takeaways skill.\n\n- Extracts and summarizes key points from documents, meeting notes, articles, and other text.\n- Supports structured outputs: numbered lists, executive summaries, action items, and JSON export.\n- Configurable output formats for different audiences and detail levels.\n- Includes batch processing, input validation, and documented fallback/error handling.\n- Provides command line and Python usage examples for quick integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:379c289ab97323affa24c8806f023cc86a8fcff98167e72b9b8a62030889260a"
+}

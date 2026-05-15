@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-ride-prefix-fix@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ride_prefix_fix",
+  "skill": {
+    "id": 38254,
+    "skillKey": "clawhub-free-ride-prefix-fix",
+    "name": "FreeRide Prefix Fix - Free AI for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ride-prefix-fix",
+    "url": "https://clawhub.ai/skills/free-ride-prefix-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ride-prefix-fix-1c54c024d1c80fe1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fixes OpenClaw's OpenRouter model prefix routing bug for reliable automatic fallback switching using free AI models with proper prefixes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rongtianhua",
+      "userId": "s179jq6es7jyjyb029sbhbjxxs83t2r3",
+      "displayName": "rongtianhua",
+      "image": "https://avatars.githubusercontent.com/u/45085618?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1775396131324,
+      "changelog": "Fix get_api_key() to also scan agent auth-profiles.json for OpenRouter API key. Automatically detects key without manual env var export.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fdcf0cc9537bdcc89bb128d72db678b28910720b260eb3df73bb88cf1a0cff2"
+}

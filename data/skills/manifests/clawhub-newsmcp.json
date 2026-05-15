@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26211,
+  "uuid": "skill-clawhub-newsmcp",
+  "skillKey": "clawhub-newsmcp",
+  "name": "newsmcp",
+  "summary": "Real-time world news briefings with AI-clustered events, topic classification, and geographic filtering. No API key needed.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsmcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pranciskus",
+      "features": [
+        "Real-time world news briefings with AI-clustered events, topic classification, and geographic f.",
+        "No API key needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newsmcp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15796823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newsmcp",
+      "url": "https://clawhub.ai/skills/newsmcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsmcp",
+    "url": "https://clawhub.ai/skills/newsmcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsmcp-81344fb99f5fd412.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newsmcp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-newsmcp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae8f79ae9764cc4b58daec049744ee08990960830aabee5458bab76773a19c1a",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:38:21.164Z"
+}

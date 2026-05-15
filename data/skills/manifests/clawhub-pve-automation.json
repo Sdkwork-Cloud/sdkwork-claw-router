@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20616,
+  "uuid": "skill-clawhub-pve-automation",
+  "skillKey": "clawhub-pve-automation",
+  "name": "Pve Automation",
+  "summary": "Automate Proxmox VE (PVE) virtual machine and container management tasks including VM lifecycle operations (create, start, stop, delete), template management...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pve_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lua",
+      "features": [
+        "Automate Proxmox VE (PVE) virtual machine and container management tasks including VM lifecycle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pve-automation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1063747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pve-automation",
+      "url": "https://clawhub.ai/skills/pve-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pve-automation",
+    "url": "https://clawhub.ai/skills/pve-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pve-automation-d88dfb7ffac5383d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pve-automation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pve-automation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1555173bcaedfc97241554d184bb7cf448cac074ab691e8a71e6116c77793ec",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T11:30:35.802Z"
+}

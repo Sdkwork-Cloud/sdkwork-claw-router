@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/avbuzz@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avbuzz",
+  "skill": {
+    "id": 26506,
+    "skillKey": "clawhub-avbuzz",
+    "name": "Avbuzz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avbuzz",
+    "url": "https://clawhub.ai/skills/avbuzz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avbuzz-984dcd3a2761cbcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query AV new releases, rankings, and actress info from FANZA GraphQL API. No authentication required. Supports direct curl queries and optional Discord/Teleg..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zxcnny930",
+      "userId": "publishers:zxcnny930",
+      "displayName": "zxcnny930",
+      "image": "https://avatars.githubusercontent.com/u/19372076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772541208442,
+      "changelog": "Add /status, /code, /digest commands + weekly digest scheduler",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:569fbd4e666bdf05345456f9a663372794dd8345c509cb9eac3931c384bcba11"
+}

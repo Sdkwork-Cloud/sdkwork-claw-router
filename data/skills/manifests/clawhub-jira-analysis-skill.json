@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61446,
+  "uuid": "skill-clawhub-jira-analysis-skill",
+  "skillKey": "clawhub-jira-analysis-skill",
+  "name": "Jira BUG Analysis Assistant[Jira-BUG分析助手]",
+  "summary": "从 Jira Server/DC 拉取 Bug 数据，进行全面的 AI 分析，并生成交互式 HTML 报表。 分析维度包括：Bug 趋势、优先级/严重程度分布、组件热点、解决时间、经办人负载、 未解决 Bug 老化等。当用户要求分析 Jira Bug、生成 Bug 报表、或查看 Bug 指标时使用此 Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_analysis_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CNtesters",
+      "features": [
+        "从 Jira Server/DC 拉取 Bug 数据，进行全面的 AI 分析，并生成交互式 HTML 报表。 分析维度包括：Bug 趋势、优先级/严重程度分布、组件热点、解决时间、经办人负载."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jira-analysis-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93900921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jira-analysis-skill",
+      "url": "https://clawhub.ai/skills/jira-analysis-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-analysis-skill",
+    "url": "https://clawhub.ai/skills/jira-analysis-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-analysis-skill-98c4bf9a67d8e30d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jira-analysis-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jira-analysis-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71b239ba4a87d2587b5bf32b999cc5bccd16edd3678227440ce46a5f204dec47",
+      "artifactSizeBytes": 2788
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:29:27.540Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60568,
+  "uuid": "skill-clawhub-memory-engine",
+  "skillKey": "clawhub-memory-engine",
+  "name": "Dist",
+  "summary": "OpenClaw 3.8+ 智能上下文管理与记忆系统插件",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lizhelong0907",
+      "features": [
+        "OpenClaw 3.8+ 智能上下文管理与记忆系统插件"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-engine@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181441896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-engine",
+      "url": "https://clawhub.ai/skills/memory-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-engine",
+    "url": "https://clawhub.ai/skills/memory-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-engine-355f5d5d86a52c25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-engine@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-engine-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06c4ddecee518708a64bc7322c92cebdaa3db3554747cabfcc7fa83b6980ea57",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:26:08.926Z"
+}

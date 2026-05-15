@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13118,
+  "uuid": "skill-clawhub-book-gutter-cleaning",
+  "skillKey": "clawhub-book-gutter-cleaning",
+  "name": "Book Gutter Cleaning",
+  "summary": "Book gutter-cleaning services through Lokuli MCP. Use when user needs to find and book gutter-cleaning. Triggers on requests like \"book a gutter-cleaning\", \"find gutter-cleaning near me\", or any gutter-cleaning service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_gutter_cleaning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book gutter-cleaning services through Lokuli MCP",
+        "Use when user needs to find and book gutter-cleaning",
+        "Triggers on requests like \"book a gutter-cleaning\", \"find gutter-cleaning near me\", or any gutt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-gutter-cleaning@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-gutter-cleaning",
+      "url": "https://clawhub.ai/skills/book-gutter-cleaning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-gutter-cleaning",
+    "url": "https://clawhub.ai/skills/book-gutter-cleaning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-gutter-cleaning-62e39123d5fa4aea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-gutter-cleaning@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-gutter-cleaning-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb93b0e34f2ad2f677af9b6eee308a7100e395950a2360c75a2302c20471adb8",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:05:30.633Z"
+}

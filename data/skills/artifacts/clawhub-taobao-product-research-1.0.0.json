@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-product-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_product_research",
+  "skill": {
+    "id": 68669,
+    "skillKey": "clawhub-taobao-product-research",
+    "name": "Taobao Product Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-product-research",
+    "url": "https://clawhub.ai/skills/taobao-product-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-product-research-b0aca96c3d4019a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "淘宝产品调研和数据采集工具。用于采集淘宝商品信息，包括主图、标题、价格、销量、评价数、店铺等，并生成包含图片的Excel报告。使用场景：(1) 市场调研和竞品分析，(2) 产品价格监控，(3) 销量数据统计，(4) 产品信息批量采集。当用户需要采集淘宝产品数据、进行电商调研、获取商品信息时触发此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "redcreen",
+      "userId": "s1715caffvt2qxvps6twh1cgyh83t3g7",
+      "displayName": "charles",
+      "image": "https://avatars.githubusercontent.com/u/657033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773839190008,
+      "changelog": "taobao-product-research 1.0.0 – Initial release\n\n- 提供淘宝产品信息采集与调研工具，可批量获取主图、标题、价格、销量、评价数、店铺和商品链接\n- 支持按关键词和价格区间筛选，自动生成带图片的Excel报告\n- 提供命令行和程序化两种调用方式\n- 内置淘宝登录处理与浏览器自动化，登录状态可复用\n- 包含常见问题排查和反爬建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a615d8eabe6a1989ef3898120d887cbae344c2a7da207109a7a1696caae9a36"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arch-sla-cloudq@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_sla_cloudq",
+  "skill": {
+    "id": 68990,
+    "skillKey": "clawhub-arch-sla-cloudq",
+    "name": "Architecture SLA Tracker by CloudQ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-sla-cloudq",
+    "url": "https://clawhub.ai/skills/arch-sla-cloudq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-sla-cloudq-a605933ec7c729ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "腾讯云智能顾问助手 — 通过 AK/SK 鉴权调用腾讯云智能顾问 API，管理云架构图（查询目录、获取架构列表和详情、获取架构评估结果）及风险评估（查询评估项、按产品/分组/风险等级筛选），支持开通智能顾问服务。当用户要求查看云架构、查询架构目录、获取架构详情、查看架构评估结果、查看风险评估项、巡检项、云资源风险..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2513483494",
+      "userId": "s17aajxmtd86aenfys6d2sp3e183gqz0",
+      "displayName": "Tencent CloudQ Team",
+      "image": "https://avatars.githubusercontent.com/u/48058550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774333605776,
+      "changelog": "cloudq-sre 1.0.0 – Initial Release\n\n- Introduces a helper for Tencent Cloud Smart Advisor, enabling authenticated API calls with AK/SK.\n- Supports cloud architecture diagram management (list/query architecture directories, get diagrams and details, view assessment results).\n- Provides risk/assessment querying, filtering by product/group/risk level.\n- Supports granting permissions (CreateAdvisorAuthorization) after explicit user consent.\n- Command-line setup covering environment detection, role/IAM configuration, and secure credential handling.\n- Data access limited to current account only; cross-account queries are blocked with user guidance about AK/SK context.\n- All operations require initializing and verifying environment through provided scripts before use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d7cb877f7f3528da3227a610b44b40d867158b72ef4cea6d66d43ac135d46a8"
+}

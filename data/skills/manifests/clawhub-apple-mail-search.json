@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9902,
+  "uuid": "skill-clawhub-apple-mail-search",
+  "skillKey": "clawhub-apple-mail-search",
+  "name": "Apple Mail Search",
+  "summary": "Fast Apple Mail search via SQLite on macOS. Search emails by subject, sender, date, attachments - results in ~50ms vs 8+ minutes with AppleScript. Use when asked to find, search, or list emails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_mail_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mneves75",
+      "features": [
+        "Fast Apple Mail search via SQLite on macOS",
+        "Search emails by subject, sender, date, attachments",
+        "results in ~50ms vs 8+ minutes with AppleScript",
+        "Use when asked to find, search, or list emails."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-mail-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2423436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-mail-search",
+      "url": "https://clawhub.ai/skills/apple-mail-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-mail-search",
+    "url": "https://clawhub.ai/skills/apple-mail-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-mail-search-84cd568d4930527c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-mail-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-mail-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1af4637548c14adf6b5dfdca57d57db2dfe829758cdb17fc5b7f2a6e898d1ce0",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T06:18:12.709Z"
+}

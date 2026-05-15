@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ci-cd-pipeline-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci_cd_pipeline_toolkit",
+  "skill": {
+    "id": 45594,
+    "skillKey": "clawhub-ci-cd-pipeline-toolkit",
+    "name": "CI/CD Pipeline Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci-cd-pipeline-toolkit",
+    "url": "https://clawhub.ai/skills/ci-cd-pipeline-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-cd-pipeline-toolkit-578bdff78b1e6d52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate CI/CD pipelines for GitHub Actions, GitLab CI, and Jenkins with build, test, deploy workflow creation and pipeline status monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776408745271,
+      "changelog": "Initial release of CI/CD Pipeline Toolkit.\n\n- Automates CI/CD pipeline management for GitHub Actions, GitLab CI, and Jenkins.\n- Provides tools to create workflows/configs, check pipeline status, and trigger deployments.\n- Includes Python examples and scripts for generating and monitoring pipelines.\n- Supports build, test, and deploy stages across multiple platforms.\n- Requires Python 3.8+ with dependencies: PyYAML, Requests, and optional python-jenkins.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d9dc736154f8edb2ef88f994a3820edfbd83ebe2905a2e9f8766618dfc68266"
+}

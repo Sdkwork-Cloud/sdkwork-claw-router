@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51405,
+  "uuid": "skill-clawhub-nansen-wallet-clustering",
+  "skillKey": "clawhub-nansen-wallet-clustering",
+  "name": "Nansen Wallet Clustering",
+  "summary": "Cluster and attribute related wallets — funding chains, shared signers, CEX deposit patterns. Use when tracing wallet ownership, comparing two wallets, findi...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_wallet_clustering",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Cluster and attribute related wallets — funding chains, shared signers, CEX deposit patterns",
+        "Use when tracing wallet ownership, comparing two wallets, findi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-wallet-clustering@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-wallet-clustering",
+      "url": "https://clawhub.ai/skills/nansen-wallet-clustering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-wallet-clustering",
+    "url": "https://clawhub.ai/skills/nansen-wallet-clustering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-wallet-clustering-ab0d865d96db2be6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-wallet-clustering@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-wallet-clustering-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e6de91fdb8ad6946fa21a4672018cd8fe678019a03fde1e556201a42e1db922",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:26:40.507Z"
+}

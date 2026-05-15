@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17066,
+  "uuid": "skill-clawhub-openclaw-migrate",
+  "skillKey": "clawhub-openclaw-migrate",
+  "name": "Openclaw Migrate",
+  "summary": "Migrate OpenClaw configs, skills, memory, tokens, environment variables, and cron jobs to a new host via SSH with setup, test, and migrate commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_migrate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glitch",
+      "features": [
+        "Migrate OpenClaw configs, skills, memory, tokens, environment variables, and cron jobs to a new."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-migrate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258746291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-migrate",
+      "url": "https://clawhub.ai/skills/openclaw-migrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-migrate",
+    "url": "https://clawhub.ai/skills/openclaw-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-migrate-d8ba61c15691d91d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-migrate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-migrate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:327724176fc6ffb656a5ab8ab90d39bca3eca2d80394095f2cb9b7e67a20a32e",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:34:34.570Z"
+}

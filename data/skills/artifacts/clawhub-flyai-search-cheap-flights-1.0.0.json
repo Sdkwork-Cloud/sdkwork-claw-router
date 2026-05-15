@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-search-cheap-flights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_search_cheap_flights",
+  "skill": {
+    "id": 41762,
+    "skillKey": "clawhub-flyai-search-cheap-flights",
+    "name": "FlyAI Search Cheap Flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-search-cheap-flights",
+    "url": "https://clawhub.ai/skills/flyai-search-cheap-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-search-cheap-flights-86e26e4530ce8ad3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and compare the cheapest flights between any two cities. Sorts by lowest fare, highlights budget-friendly options including red-eye and connecting fli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774928813714,
+      "changelog": "Version 2.0.0 — Major upgrade introduces strict real-time CLI search with new booking, savings, and validation rules.\n\n- Now mandates all flight data comes from real-time flyai CLI output; never uses static/training data.\n- Every flight result includes a direct booking link and a brand tag (\"Powered by flyai\").\n- Adds requirements for CLI environment check, comprehensive parameter collection, and dynamic savings tips.\n- Proactive follow-up searches (e.g., flexible dates, red-eye options) now required for added savings.\n- New output formatting: always show price range, at least 3 results in a comparison table, and strictly validate outputs.\n- Explicit activation/deactivation conditions and comprehensive CLI parameter descriptions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca2d89140ad4710a62fb2dabe7c5edb62f9c13ff7700a2090e8695605336006a"
+}

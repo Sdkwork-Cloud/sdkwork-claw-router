@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-time-parser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_time_parser",
+  "skill": {
+    "id": 68838,
+    "skillKey": "clawhub-cn-time-parser",
+    "name": "cn-time-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-time-parser",
+    "url": "https://clawhub.ai/skills/cn-time-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-time-parser-39c0e902fd7f3beb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能识别中文时间关键词并转换为具体日期和时间戳；使用lunisolar模块处理农历计算，chinese-workday模块处理节日和工作日判断；支持解析复杂农历日期和判断节假日；当用户需要解析自然语言中的时间信息、计算特定日期、处理农历节日转换时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "as3long",
+      "userId": "s17edcerz0qw88qswr8xhxeq9s86aaf5",
+      "displayName": "黄龙",
+      "image": "https://avatars.githubusercontent.com/u/2247238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 71,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778208588830,
+      "changelog": "Initial release: Parses Chinese natural language time expressions, supports lunar calendar and holiday/workday judgments.\n\n- Automatically extracts and parses Chinese time phrases (e.g., 今天, 去年, 农历日期).\n- Converts lunar dates and traditional festivals using lunisolar module.\n- Checks holidays and workdays using chinese-workday module.\n- Outputs precise Gregorian dates and millisecond Unix timestamps.\n- Includes command-line script for flexible integration with user queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:baf2749fc60af1181c1872136dc491c25f6c256be16ce210f9c1595d1e715a7d"
+}

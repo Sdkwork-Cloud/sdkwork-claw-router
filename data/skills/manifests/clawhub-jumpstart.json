@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38908,
+  "uuid": "skill-clawhub-jumpstart",
+  "skillKey": "clawhub-jumpstart",
+  "name": "Jumpstart",
+  "summary": "Sets up and manages a long-running agent harness for complex, multi-session coding projects. Use this skill whenever a user invokes jumpstart, jumpsession, j...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jumpstart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kzac313",
+      "features": [
+        "Sets up and manages a long-running agent harness for complex, multi-session coding projects",
+        "Use this skill whenever a user invokes jumpstart, jumpsession, j..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jumpstart@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264057881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jumpstart",
+      "url": "https://clawhub.ai/skills/jumpstart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jumpstart",
+    "url": "https://clawhub.ai/skills/jumpstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jumpstart-72fe5c6d96b2e276.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jumpstart@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jumpstart-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16a9c2bb1d66b4b45b9dee87944d18a758150583e2e0e83b8b5453a8e1bd2975",
+      "artifactSizeBytes": 2375
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:22:29.372Z"
+}

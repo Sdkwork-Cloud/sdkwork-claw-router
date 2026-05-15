@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-test-harness-entry-diagnostics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_test_harness_entry_diagnostics",
+  "skill": {
+    "id": 47684,
+    "skillKey": "clawhub-bookforge-test-harness-entry-diagnostics",
+    "name": "Test Harness Entry Diagnostics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-test-harness-entry-diagnostics",
+    "url": "https://clawhub.ai/skills/bookforge-test-harness-entry-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-test-harness-entry-diagnostics-7d3c97eb92326645.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose exactly why a class or method cannot be placed under test and route to the right dependency-breaking technique. Use whenever a developer says 'I can..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777972964715,
+      "changelog": "Initial release: systematic diagnostic tool for testability obstacles in legacy code.\n\n- Identifies why a class or method cannot be placed under test, routing to specific dependency-breaking techniques from \"Working Effectively with Legacy Code.\"\n- Guides users through construction tests, root cause classification, and obstacle identification using Feathers’ catalogs (class-level and method-level).\n- Provides task sequencing and rationale for each dependency-breaking technique.\n- Documents precise signals, classification steps, and recommended actions for both compile-time and runtime obstacles.\n- For use during dependency-breaking (Step 3) of the legacy code change process; not for test quality or new code design scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:023d65dffcf4a7a390ded40a17d6edf2681de17343ca772bb41ad2f5a59b103f"
+}

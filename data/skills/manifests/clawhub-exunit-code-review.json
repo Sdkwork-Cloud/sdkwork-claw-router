@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31551,
+  "uuid": "skill-clawhub-exunit-code-review",
+  "skillKey": "clawhub-exunit-code-review",
+  "name": "Exunit Code Review",
+  "summary": "Reviews ExUnit test code for proper patterns, boundary mocking with Mox, and test adapter usage. Use when reviewing _test.exs files or test helper configurat...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exunit_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Reviews ExUnit test code for proper patterns, boundary mocking with Mox, and test adapter usage",
+        "Use when reviewing _test.exs files or test helper configurat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exunit-code-review@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exunit-code-review",
+      "url": "https://clawhub.ai/skills/exunit-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exunit-code-review",
+    "url": "https://clawhub.ai/skills/exunit-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exunit-code-review-7b445b6d6f140f37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exunit-code-review@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-exunit-code-review-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ff98262d816db7662ccc5958497648838221cb7c003643fa97054ff8f7ac754",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:44.817Z"
+}

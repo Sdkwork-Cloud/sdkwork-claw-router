@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jw-data-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jw_data_analyst",
+  "skill": {
+    "id": 64313,
+    "skillKey": "clawhub-jw-data-analyst",
+    "name": "JW Data Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jw-data-analyst",
+    "url": "https://clawhub.ai/skills/jw-data-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jw-data-analyst-d8b82082688c5401.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数据分析助手 - 自动生成Python数据处理脚本、可视化图表、统计报告。支持Excel/CSV/JSON/数据库。觸發詞：数据分析、图表、统计、报表、可视化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a85012712",
+      "userId": "s17emcv7gga8gr5m4bdb7p383983wsa9",
+      "displayName": "a85012712",
+      "image": "https://avatars.githubusercontent.com/u/271745311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776476372862,
+      "changelog": "Initial release: Data analysis assistant for Excel/CSV/JSON/DB",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aeacbc03aa00e3a821120ff338b0af02e6d62bc78406ccc238e36800a7a41b1"
+}

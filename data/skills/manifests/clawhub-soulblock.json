@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16717,
+  "uuid": "skill-clawhub-soulblock",
+  "skillKey": "clawhub-soulblock",
+  "name": "Soul Blocks",
+  "summary": "Read, list, mint, and append Soul Block NFT identities on Base; read works without a wallet, writes use evm-wallet or fallback website links.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulblock",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hburgoyne",
+      "features": [
+        "Read, list, mint, and append Soul Block NFT identities on Base",
+        "read works without a wallet, writes use evm-wallet or fallback website links."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soulblock@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9391611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soulblock",
+      "url": "https://clawhub.ai/skills/soulblock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulblock",
+    "url": "https://clawhub.ai/skills/soulblock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulblock-df1fa5dd1d6c4196.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soulblock@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soulblock-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61b606c94b3f710e1ac4c376b24fadd016caab085f57c5eb4499e2551f2f6bb3",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T02:10:07.127Z"
+}

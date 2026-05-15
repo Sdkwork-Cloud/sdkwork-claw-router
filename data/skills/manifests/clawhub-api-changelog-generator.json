@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53045,
+  "uuid": "skill-clawhub-api-changelog-generator",
+  "skillKey": "clawhub-api-changelog-generator",
+  "name": "API Changelog Generator",
+  "summary": "Generate and maintain API changelogs from OpenAPI/Swagger specs — track endpoints added, removed, deprecated, or modified between versions. Detect breaking c...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_changelog_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Generate and maintain API changelogs from OpenAPI/Swagger specs — track endpoints added, remove.",
+        "Detect breaking c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-changelog-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-changelog-generator",
+      "url": "https://clawhub.ai/skills/api-changelog-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-changelog-generator",
+    "url": "https://clawhub.ai/skills/api-changelog-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-changelog-generator-0f21494194143ef7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-changelog-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-changelog-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:820b76e279464cb4626951c5aa6df9b6c2ccdd83a929c5294424685d37932685",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:59:35.909Z"
+}

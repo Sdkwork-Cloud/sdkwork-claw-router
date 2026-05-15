@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-video-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_video_online",
+  "skill": {
+    "id": 44306,
+    "skillKey": "clawhub-subtitle-video-online",
+    "name": "Subtitle Video Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-video-online",
+    "url": "https://clawhub.ai/skills/subtitle-video-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-video-online-708c6390f5c3d92a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute tutorial video in MP4 into 1080p captioned video files just by typing what you need. Whether it's adding subtitles to videos online without s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775903973322,
+      "changelog": "Initial release — easily add subtitles to videos online via cloud processing.\n\n- Upload video files (MP4, MOV, AVI, WebM up to 500MB) and describe desired subtitles or edits.\n- Automatic subtitle generation and cloud rendering (returns 1080p MP4 in 30–90 seconds).\n- No software or timeline editing required; works via simple chat instructions.\n- Supports multi-language subtitles (e.g., English & French), audio tracks, and text overlays.\n- Includes session management, real-time job status, and free credits for new users.\n- Exports in mp4, mov, avi, webm, mkv, and more formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7aa96849c8007d7db9e05a5cbc1b31ceb08ed96ec5212fbfa302a1188c97d40c"
+}

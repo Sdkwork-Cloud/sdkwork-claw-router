@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-fda@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_fda",
+  "skill": {
+    "id": 54512,
+    "skillKey": "clawhub-pipeworx-fda",
+    "name": "Pipeworx fda"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-fda",
+    "url": "https://clawhub.ai/skills/pipeworx-fda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-fda-ad3996a1247ebc24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "US FDA open data — adverse drug event reports, drug labeling/package inserts, and food recall enforcement actions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "b-gutman",
+      "userId": "s17de0904v925begb7h04jkph984bgct",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/270792185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775676120702,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77742a721d926523d5ae0b0fcd48863cf633a80981dae840c74cfe62ca6a9720"
+}

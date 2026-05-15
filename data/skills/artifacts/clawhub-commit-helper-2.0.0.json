@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/commit-helper@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commit_helper",
+  "skill": {
+    "id": 54724,
+    "skillKey": "clawhub-commit-helper",
+    "name": "Commit Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commit-helper",
+    "url": "https://clawhub.ai/skills/commit-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commit-helper-b315e44f1b549db6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cz Cli — Commitizen — conventional commit helper. Automated tool for cz-cli tasks. Use when you need Cz Cli capabilities. Triggers on: commit helper."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773774294541,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8e3b1b9171e319ae1d69c2824394fecc3d6e74a5554be77aa6ca9b3f6deecb1"
+}

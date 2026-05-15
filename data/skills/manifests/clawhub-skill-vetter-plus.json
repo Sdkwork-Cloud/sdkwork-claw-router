@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39243,
+  "uuid": "skill-clawhub-skill-vetter-plus",
+  "skillKey": "clawhub-skill-vetter-plus",
+  "name": "Skill Vetter Plus",
+  "summary": "Security scanner for AI agent skills. 9 built-in detection signatures. Identifies secrets, unsafe execution patterns, and prompt injection. Sub-50ms results.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CertainLogicAI",
+      "features": [
+        "Security scanner for AI agent skills",
+        "9 built-in detection signatures",
+        "Identifies secrets, unsafe execution patterns, and prompt injection",
+        "Sub-50ms results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-vetter-plus@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270056974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-vetter-plus",
+      "url": "https://clawhub.ai/skills/skill-vetter-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-plus",
+    "url": "https://clawhub.ai/skills/skill-vetter-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-plus-5c21d6a32809c203.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-vetter-plus@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-vetter-plus-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0e86ae13d08b2c0b6bca9975b9e1c2c94da5c1597e0f1de7922c5708b71aef3",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T16:27:56.449Z"
+}

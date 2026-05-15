@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_mcp",
+  "skill": {
+    "id": 27269,
+    "skillKey": "clawhub-weather-mcp",
+    "name": "weather-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-mcp",
+    "url": "https://clawhub.ai/skills/weather-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-mcp-bc96adcf965b7a16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query weather information via a local/remote MCP weather server using the SSE endpoint https://api-dev.ljyd.cn/mcp-servers/myweather/sse. Use when the user a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superproxy",
+      "userId": "s177htcdf4949yfag5h0qn6mqd83k43e",
+      "displayName": "superproxy",
+      "image": "https://avatars.githubusercontent.com/u/8399739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773148508005,
+      "changelog": "- Initial release of the weather-mcp skill.\n- Enables querying current and short-term weather forecasts via a local or remote MCP weather server using the SSE endpoint.\n- Provides detailed instructions for constructing requests, handling responses, and summarizing results for users.\n- Includes recommended request/response structures and natural language summary guidelines.\n- Supports both city names and coordinates as location input.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f90accbaeb27573c7902aa2894b56daf7013e1c2ee005c0242c80ab98f85e1b"
+}

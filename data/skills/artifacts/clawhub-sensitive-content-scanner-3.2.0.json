@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sensitive-content-scanner@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sensitive_content_scanner",
+  "skill": {
+    "id": 72397,
+    "skillKey": "clawhub-sensitive-content-scanner",
+    "name": "敏感内容扫描器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sensitive-content-scanner",
+    "url": "https://clawhub.ai/skills/sensitive-content-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sensitive-content-scanner-974c62ad628c04f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的敏感内容扫描器，支持 PII 检测（身份证/手机号/银行卡/邮箱/IP）、敏感词检测、置信度评分、多格式报告生成。适用于文档审查、安全审计、内容合规检查、隐私保护等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qinkai25",
+      "userId": "s17fb4jj1m17a708wmbehq888984tfgp",
+      "displayName": "qing",
+      "image": "https://avatars.githubusercontent.com/u/38747302?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 262,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1776847739452,
+      "changelog": "- Added compiled Python cache file: scripts/__pycache__/scan_sensitive.cpython-314.pyc\n- 修复word、excel、powerpoint内容解析失败问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14e1358c50a3ed7b443fb34b40d181cc3a35e9fb664a66a21b5ca2ae872a4d05"
+}

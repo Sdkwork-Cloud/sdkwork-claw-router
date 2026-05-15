@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dreaminterpreter@1.4.3",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dreaminterpreter",
+  "skill": {
+    "id": 71471,
+    "skillKey": "clawhub-dreaminterpreter",
+    "name": "Drema — AI Dream Interpreter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dreaminterpreter",
+    "url": "https://clawhub.ai/skills/dreaminterpreter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dreaminterpreter-d79761185c1e5413.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解梦技能（周公解梦 + 心理学双轨解读）。当用户说「解梦」「周公解梦」「帮我解梦」「我做了个梦」「我昨晚梦到」「我梦见」「梦到」「做梦」「梦境」「梦境记录」「梦境日历」「梦境报告」「梦境规律」「今日运势」「今天运势」「抽签」「梦境签」「给我一签」「梦境图」「生成梦境图」「出图」「播报」「昨晚做了个梦」「昨晚做个梦..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bonniesilva",
+      "userId": "s17cgav0th60ed4jgd918y7gdh83s7tm",
+      "displayName": "Bonniesilva",
+      "image": "https://avatars.githubusercontent.com/u/268220902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.3",
+      "createdAt": 1774783860001,
+      "changelog": "dream-interpreter 1.4.3 Changelog\n\n- Added support file clawhub.json.\n- Removed scripts/script.sh for a cleaner setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:febe1364eaf7a3f59daffdc93a357e8e1e713cb8c952b8cecd69585d55c771f9"
+}

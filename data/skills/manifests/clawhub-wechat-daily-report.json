@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66612,
+  "uuid": "skill-clawhub-wechat-daily-report",
+  "skillKey": "clawhub-wechat-daily-report",
+  "name": "wechat daily report",
+  "summary": "微信群聊天记录日报图片生成工具。分析微信群聊天记录，结合 AI 生成内容，**最终输出为手机端分辨率的日报长图（PNG）**。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justao",
+      "features": [
+        "微信群聊天记录日报图片生成工具。分析微信群聊天记录，结合 AI 生成内容，**最终输出为手机端分辨率的日报长图（PNG）**。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-daily-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8970605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-daily-report",
+      "url": "https://clawhub.ai/skills/wechat-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-daily-report",
+    "url": "https://clawhub.ai/skills/wechat-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-daily-report-466d95cb26de39d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-daily-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-daily-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2737265a285992e3ec9fae5667342ffa01d042791fce73d88c5df43bb6c28b92",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T09:30:10.081Z"
+}

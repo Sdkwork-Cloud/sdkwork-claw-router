@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61600,
+  "uuid": "skill-clawhub-wechat-forward",
+  "skillKey": "clawhub-wechat-forward",
+  "name": "Wechat Forward",
+  "summary": "按需将当前对话内容转发到用户自己的微信。仅在用户明确要求\"把这个发微信\"时才执行， 将最近的消息内容通过 wxclawbot CLI 推送到用户微信，用于手机端查看。 Trigger ONLY when explicit: 发微信, 推送到微信, 发到微信, forward to wechat, 发给我微信, 帮...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_forward",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "99go1",
+      "features": [
+        "按需将当前对话内容转发到用户自己的微信。仅在用户明确要求\"把这个发微信\"时才执行， 将最近的消息内容通过 wxclawbot CLI 推送到用户微信，用于手机端查看。 Trigger ONL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-forward@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268695578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-forward",
+      "url": "https://clawhub.ai/skills/wechat-forward"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-forward",
+    "url": "https://clawhub.ai/skills/wechat-forward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-forward-2ad83ac003b51834.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-forward@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-forward-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbc471d9a239afa6237f17fc892b76b6ef25cd65d4617c82dedbce0b35aa169b",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T14:49:38.937Z"
+}

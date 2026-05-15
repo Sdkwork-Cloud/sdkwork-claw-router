@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/campaign-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campaign_planner",
+  "skill": {
+    "id": 41736,
+    "skillKey": "clawhub-campaign-planner",
+    "name": "CraveGo Campaign Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campaign-planner",
+    "url": "https://clawhub.ai/skills/campaign-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campaign-planner-bd2cca848112673f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a 4-week marketing content calendar for CraveGo.ph focused ONLY on new user / signup promos. Use friendly & casual brand voice. Also propose safe si..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobneobux",
+      "userId": "s1708a8mc2vfza00vam9p9wyeh84e0bj",
+      "displayName": "bobneobux",
+      "image": "https://avatars.githubusercontent.com/u/29719384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775690340448,
+      "changelog": "CraveGo.ph campaign planner skill 1.0.0 – initial release:\n\n- Launches marketing planning tool for generating 4-week content calendars focused solely on new user/sign-up promotions.\n- Includes structured guidance for safe, generic promo angles (e.g., “₱ discount on first order”, weekly rotating offers).\n- Suggests friendly and casual brand voice tailored to the Philippines.\n- Provides suggested posting cadences for FB, IG, and TikTok, with concise sign-up CTAs and hook ideas.\n- Returns output in a clear, JSON-based format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b973f06a6fdb44258cf8408d0cecc4559c6a0a3de8b09fd016eb286a0ca2481"
+}

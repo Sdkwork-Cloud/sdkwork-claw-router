@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29882,
+  "uuid": "skill-clawhub-workspace-context-linter",
+  "skillKey": "clawhub-workspace-context-linter",
+  "name": "Workspace Context Linter",
+  "summary": "Diagnose always-loaded workspace context files such as AGENTS.md, SOUL.md, USER.md, MEMORY.md, and TOOLS.md. Use when you want to reduce context bloat, detec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_context_linter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lethehades",
+      "features": [
+        "Diagnose always-loaded workspace context files such as AGENTS.md, SOUL.md, USER.md, MEMORY.md,.",
+        "Use when you want to reduce context bloat, detec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-context-linter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41109318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-context-linter",
+      "url": "https://clawhub.ai/skills/workspace-context-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-context-linter",
+    "url": "https://clawhub.ai/skills/workspace-context-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-context-linter-d0dcedf59902be72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-context-linter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-context-linter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc0921786e42222e3e2409620dc44a171c0414c120d87b0b7db5458807c112d6",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:35:43.411Z"
+}

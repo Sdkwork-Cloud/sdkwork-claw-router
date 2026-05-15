@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-ads-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_ads_cli",
+  "skill": {
+    "id": 45822,
+    "skillKey": "clawhub-apple-ads-cli",
+    "name": "Apple Ads CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-ads-cli",
+    "url": "https://clawhub.ai/skills/apple-ads-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-ads-cli-bd80f365f9c35fbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apple Search Ads data analysis and reporting via apple-ads-cli. Use when the user wants to check Apple Search Ads performance, pull campaign/ad group/keyword..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bin-huang",
+      "userId": "s1739hnztbtdx615kbwmdfzz6x84d57g",
+      "displayName": "Bin-Huang",
+      "image": "https://avatars.githubusercontent.com/u/20723142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775547103319,
+      "changelog": "Initial release of apple-ads-cli skill.\n\n- Enables querying Apple Search Ads data using the apple-ads-cli tool.\n- Supports analysis of campaigns, ad groups, ads, keywords, and budget orders.\n- Includes commands for pulling various levels of performance reports.\n- Provides guidance for setup, authentication, and common queries.\n- Handles app eligibility and app details lookup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4c93aeef7c14951cb9db2d8e6ace218f0ed8218c5b7b824e56e932c5add80e2"
+}

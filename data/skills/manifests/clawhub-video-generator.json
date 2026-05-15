@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58250,
+  "uuid": "skill-clawhub-video-generator",
+  "skillKey": "clawhub-video-generator",
+  "name": "Video Generator | 视频生成器",
+  "summary": "Automated text-to-video pipeline with multi-provider TTS/ASR support - OpenAI, Azure, Aliyun, Tencent | 多厂商 TTS/ASR 支持的自动化文本转视频系统",
+  "version": "1.0.42",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "Automated text-to-video pipeline with multi-provider TTS/ASR support",
+        "OpenAI, Azure, Aliyun, Tencent | 多厂商 TTS/ASR 支持的自动化文本转视频系统"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-generator@1.0.42",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-generator",
+      "url": "https://clawhub.ai/skills/video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator",
+    "url": "https://clawhub.ai/skills/video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-7006652c2443389c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-generator@1.0.42",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-generator-1.0.42.json",
+      "version": "1.0.42",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eb46f39cd1f041e7a29ecbeebb1da99f61a435f53d837555c74ccc14ad505d0",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T12:26:40.227Z"
+}

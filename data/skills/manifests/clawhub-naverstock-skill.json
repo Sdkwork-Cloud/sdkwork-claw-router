@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11092,
+  "uuid": "skill-clawhub-naverstock-skill",
+  "skillKey": "clawhub-naverstock-skill",
+  "name": "Naver Stock",
+  "summary": "Fetch text-based real-time stock prices (KRX, Overseas) using Naver Finance.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naverstock_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seungdols",
+      "features": [
+        "Fetch text-based real-time stock prices (KRX, Overseas) using Naver Finance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/naverstock-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16032614?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "naverstock-skill",
+      "url": "https://clawhub.ai/skills/naverstock-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naverstock-skill",
+    "url": "https://clawhub.ai/skills/naverstock-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naverstock-skill-a950d53fd70b23a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/naverstock-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-naverstock-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbc869f5ffedafeb2be555bfce3583946d9e63223981d6dae8fa92ff99533ff1",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T17:22:21.532Z"
+}

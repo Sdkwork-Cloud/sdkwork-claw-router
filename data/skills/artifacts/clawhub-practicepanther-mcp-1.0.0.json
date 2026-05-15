@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/practicepanther-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.practicepanther_mcp",
+  "skill": {
+    "id": 24663,
+    "skillKey": "clawhub-practicepanther-mcp",
+    "name": "PracticePanther API MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "practicepanther-mcp",
+    "url": "https://clawhub.ai/skills/practicepanther-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/practicepanther-mcp-33745fd809a92cf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MCP server for the PracticePanther legal practice management API. Exposes PracticePanther's REST API as read-only MCP tools."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjquinlan2000",
+      "userId": "publishers:mjquinlan2000",
+      "displayName": "Mike Quinlan",
+      "image": "https://avatars.githubusercontent.com/u/1171608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773179282068,
+      "changelog": "Initial release of the PracticePanther MCP server.\n\n- Exposes PracticePanther's REST API as read-only MCP tools.\n- Supports interaction via mcporter through stdio.\n- Requires mcporter, practicepanther-mcp binaries, and NODE_MCP_SECRET_KEY environment variable.\n- Package available on npm.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a5ce575da8291cbdecdcb7cc68c59d0ff2457e25a318c7244bcc1e7b57d40d9"
+}

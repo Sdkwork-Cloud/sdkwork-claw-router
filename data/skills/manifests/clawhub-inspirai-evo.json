@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60549,
+  "uuid": "skill-clawhub-inspirai-evo",
+  "skillKey": "clawhub-inspirai-evo",
+  "name": "InspirAI Evo",
+  "summary": "技能自我进化 - 检测流程问题信号（重复试错、流程中断、代码翻动），生成分析报告，引导改进。Triggers: '流程优化', '技能进化', 'skill evolution', '自我改进', '流程问题', 'workflow analysis'.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inspirai_evo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexxiong",
+      "features": [
+        "检测流程问题信号（重复试错、流程中断、代码翻动），生成分析报告，引导改进。Triggers: '流程优化', '技能进化', 'skill evolution', '自我改进', '流程问题."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inspirai-evo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45865830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inspirai-evo",
+      "url": "https://clawhub.ai/skills/inspirai-evo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inspirai-evo",
+    "url": "https://clawhub.ai/skills/inspirai-evo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inspirai-evo-44fa60228c619770.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inspirai-evo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inspirai-evo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:865d343dc3902b063a351d0d85f8eb51b546354ee967616d53bc67413322efec",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:07:19.786Z"
+}

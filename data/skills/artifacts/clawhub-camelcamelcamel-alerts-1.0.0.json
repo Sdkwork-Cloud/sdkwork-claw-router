@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camelcamelcamel-alerts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camelcamelcamel_alerts",
+  "skill": {
+    "id": 10139,
+    "skillKey": "clawhub-camelcamelcamel-alerts",
+    "name": "CamelCamelCamel Alerts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camelcamelcamel-alerts",
+    "url": "https://clawhub.ai/skills/camelcamelcamel-alerts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camelcamelcamel-alerts-231dab8b53de86a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor CamelCamelCamel price drop alerts via RSS and send Telegram notifications when items go on sale. Use when setting up automatic price tracking for Amazon products with CamelCamelCamel price alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jgramajo4",
+      "userId": "publishers:jgramajo4",
+      "displayName": "jgramajo4",
+      "image": "https://avatars.githubusercontent.com/u/22783249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2699,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769140306264,
+      "changelog": "Initial release: Monitor Amazon price drops via CamelCamelCamel RSS feed with Telegram notifications",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25e5fde3a127fb5c549386090efd33e5cf584dd69026ab9bb552014437d7ee29"
+}

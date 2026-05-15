@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt2wechat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt2wechat",
+  "skill": {
+    "id": 71746,
+    "skillKey": "clawhub-ppt2wechat",
+    "name": "一键生成PPT截图和缩略图工具发布到微信去的工具，MAC版本"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt2wechat",
+    "url": "https://clawhub.ai/skills/ppt2wechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt2wechat-17b7760af8316203.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将指定Mac路径下的PPT按页生成截图和缩略图，并发布到微信公众号，支持自定义配置和参数调整。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaoxm8023",
+      "userId": "s174z2v7g4n6bv7byjv6zrfttn867ejf",
+      "displayName": "zhaoxm8023",
+      "image": "https://avatars.githubusercontent.com/u/5423119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 497,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772715843191,
+      "changelog": "ppt2wechat 1.0.0 – Initial Release\n\n- Automatically converts each slide of a specified PPT to a PNG screenshot and generates 3x3 thumbnails.\n- Publishes the generated images to a designated WeChat official account using user-provided credentials.\n- Customizable settings through config.json, including PPT location, output DPI, grid layout, and external tool paths.\n- Supports PPT to PDF (LibreOffice) and PDF to PNG (Ghostscript) workflow on macOS.\n- Requires prior installation of Ghostscript and Pillow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:24493528e94979ceef87b6ebd2ac4d777fbc7ecb6444aeee6f228aba35204fdb"
+}

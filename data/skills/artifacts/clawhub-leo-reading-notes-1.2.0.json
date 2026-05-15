@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leo-reading-notes@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leo_reading_notes",
+  "skill": {
+    "id": 67658,
+    "skillKey": "clawhub-leo-reading-notes",
+    "name": "Leo's Reading Notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leo-reading-notes",
+    "url": "https://clawhub.ai/skills/leo-reading-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leo-reading-notes-947cd229b38e88eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助用户将读过书中的观点结构化为系统化笔记，包含原文补充、转述、深度追问和业务关联分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leo-zzl",
+      "userId": "s1716ctfvsgdpyf6s5gm3wxcd583p8dp",
+      "displayName": "Leo-zzl",
+      "image": "https://avatars.githubusercontent.com/u/262100144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773592145894,
+      "changelog": "Structured reading notes with table formatting, 5 Whys internalization, and daily 21:00 reminders",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67dd303f4b05f1f2c84a6886c84dc2fad2f3abebc4175182441888b7b8131771"
+}

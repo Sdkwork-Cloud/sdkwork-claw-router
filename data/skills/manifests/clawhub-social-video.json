@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42454,
+  "uuid": "skill-clawhub-social-video",
+  "skillKey": "clawhub-social-video",
+  "name": "Social Video",
+  "summary": "Get shareable social clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, WebM, AVI, up to 500MB), say something lik...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Get shareable social clips ready to post, without touching a single slider",
+        "Upload your raw video clips (MP4, MOV, WebM, AVI, up to 500MB), say something lik..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-video",
+      "url": "https://clawhub.ai/skills/social-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-video",
+    "url": "https://clawhub.ai/skills/social-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-video-28210b3e2427c91b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5565f5403d0caa402de7dbbd0b9d13b9406d1dd7cf0a8d1e4e4ec4dd25d89a1",
+      "artifactSizeBytes": 2685
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T20:32:28.672Z"
+}

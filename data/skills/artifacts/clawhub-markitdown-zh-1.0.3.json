@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markitdown-zh@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markitdown_zh",
+  "skill": {
+    "id": 61058,
+    "skillKey": "clawhub-markitdown-zh",
+    "name": "MarkItDown文档转换中文版"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markitdown-zh",
+    "url": "https://clawhub.ai/skills/markitdown-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markitdown-zh-ab8b7ddaae01ec7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用微软 markitdown 库将多种文档格式（PDF、DOCX、PPTX、XLSX、XLS、CSV、JSON、TXT、EPUB、HTML等）转换为 Markdown。支持批量转换、保留格式、图片提取等功能。使用场景：(1) \"把这个 PDF 转成 Markdown\"，(2) \"批量转换这个文件夹里的文档\"，(..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mapleshadow",
+      "userId": "s172w6e7nk99p5vfzya5jngc2h83hbcd",
+      "displayName": "mapleshadow",
+      "image": "https://avatars.githubusercontent.com/u/525478?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776948163524,
+      "changelog": "- 更新描述，明确列举支持的文档格式，如 CSV、JSON、TXT、EPUB、HTML 等。\n- 移除“另请参阅”中的 USAGE-GUIDE.md 和 reference.md 说明，仅保留上游库链接。\n- 其他内容保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89c2675237590c1d98a57a54721ca04d1c1d86f17428eac601c56412fe038660"
+}

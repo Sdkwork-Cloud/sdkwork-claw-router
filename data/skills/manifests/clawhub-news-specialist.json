@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29477,
+  "uuid": "skill-clawhub-news-specialist",
+  "skillKey": "clawhub-news-specialist",
+  "name": "News Specialist",
+  "summary": "A news analysis specialist that explains, interprets, and comments on trending news and current events.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_specialist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrNquyen",
+      "features": [
+        "A news analysis specialist that explains, interprets, and comments on trending news and current."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-specialist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88378712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-specialist",
+      "url": "https://clawhub.ai/skills/news-specialist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-specialist",
+    "url": "https://clawhub.ai/skills/news-specialist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-specialist-2f46b78242123b0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-specialist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-specialist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:677a636f2ea76dafcb842a1fffdfe75bcac48a770c0c1279264cdbe802ce1b12",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:46:49.026Z"
+}

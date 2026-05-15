@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27087,
+  "uuid": "skill-clawhub-askyourpdf",
+  "skillKey": "clawhub-askyourpdf",
+  "name": "Askyourpdf",
+  "summary": "AskYourPDF integration. Manage data, records, and automate workflows. Use when the user wants to interact with AskYourPDF data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.askyourpdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AskYourPDF integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AskYourPDF data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/askyourpdf@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "askyourpdf",
+      "url": "https://clawhub.ai/skills/askyourpdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "askyourpdf",
+    "url": "https://clawhub.ai/skills/askyourpdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/askyourpdf-2c666c0a1477c25c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/askyourpdf@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-askyourpdf-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a811b914131747ccef041a0be892e547f252b0b5ed4eacae233aaca275405bec",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:21:05.353Z"
+}

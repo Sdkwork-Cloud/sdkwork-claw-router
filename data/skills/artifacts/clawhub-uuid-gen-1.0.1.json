@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uuid-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uuid_gen",
+  "skill": {
+    "id": 64465,
+    "skillKey": "clawhub-uuid-gen",
+    "name": "UUID Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uuid-gen",
+    "url": "https://clawhub.ai/skills/uuid-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uuid-gen-4e3fc83ce6a4ad84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成 UUID（通用唯一标识符）。使用场景：(1) 需要为数据库记录、API、文件生成唯一 ID，(2) 批量生成多个 UUID，(3) 需要无连字符的紧凑格式，(4) 验证字符串是否为有效 UUID格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weiwei-run",
+      "userId": "publishers:weiwei-run",
+      "displayName": "weiwei-run",
+      "image": "https://avatars.githubusercontent.com/u/51975435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773452725746,
+      "changelog": "- No changes since the previous version; this is identical to version 1.0.0.\n- No new features, bug fixes, or documentation updates detected.\n- Version number updated to 1.0.1, but content remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b3047bb88dc770b720a9fbaa532ba626a638faac01069bee9b46487750119b4"
+}

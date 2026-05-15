@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26042,
+  "uuid": "skill-clawhub-patent-novelty-search",
+  "skillKey": "clawhub-patent-novelty-search",
+  "name": "patent-novelty-search",
+  "summary": "Perform patent novelty searches by analyzing technical solutions, retrieving and ranking related patents, comparing features, and generating a detailed novel...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_novelty_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chaochaoSZ",
+      "features": [
+        "Perform patent novelty searches by analyzing technical solutions, retrieving and ranking relate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-novelty-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39897272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-novelty-search",
+      "url": "https://clawhub.ai/skills/patent-novelty-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-novelty-search",
+    "url": "https://clawhub.ai/skills/patent-novelty-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-novelty-search-d6b56037b6f4ba4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-novelty-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-novelty-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1db17ea42906f419bcdccb1aa104ecb11cbb0ae26ed8cddffab2f3b9dee64d2",
+      "artifactSizeBytes": 2621
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:05:11.995Z"
+}

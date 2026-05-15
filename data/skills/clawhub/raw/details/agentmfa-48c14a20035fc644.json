@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "agentmfa",
+    "displayName": "Agentmfa",
+    "summary": "AgentMFA — request human approval before sensitive actions. Uses MCP tools for registration, identity, and approval flows. Works in Claude Code, Cursor, Open...",
+    "tags": {
+      "latest": "1.0.14"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 11
+    },
+    "createdAt": 1776549820437,
+    "updatedAt": 1777783306550
+  },
+  "latestVersion": {
+    "version": "1.0.14",
+    "createdAt": 1777783093905,
+    "changelog": "- Simplified and clarified setup: agent registration now uses the MCP tool and no longer requires a manual CLI step.\n- Separated subcommands: Only `list` and `status` are CLI/Bash subcommands; registration is handled via tools.\n- Explicit agent control: Stressed that the agent must recognize sensitive actions and invoke approval—it is not automatic.\n- Updated tool APIs: Documented new/renamed MCP tools (`register_agent`, `agent_info`, `request_approval`, etc.) and clarified parameters/flows.\n- Expanded usage examples: Added typical risky actions and best practices for invoking approval.\n- Included guidance for OpenClaw users on proper tool names.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "leiarenee",
+    "userId": "s17fqm2a0169envyaeaa4bgce5853e6n",
+    "displayName": "Leia Renée",
+    "image": "https://avatars.githubusercontent.com/u/73590653?v=4"
+  },
+  "moderation": null
+}

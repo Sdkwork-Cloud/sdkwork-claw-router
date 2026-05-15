@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30002,
+  "uuid": "skill-clawhub-redditrank",
+  "skillKey": "clawhub-redditrank",
+  "name": "RedditRank",
+  "summary": "Find Reddit threads ranking on Google Page 1 for your keywords. AI drafts contextual replies that naturally mention your product. Copy, paste, post. Free org...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redditrank",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aces1up",
+      "features": [
+        "Find Reddit threads ranking on Google Page 1 for your keywords",
+        "AI drafts contextual replies that naturally mention your product",
+        "Copy, paste, post",
+        "Free org..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redditrank@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2554853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redditrank",
+      "url": "https://clawhub.ai/skills/redditrank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redditrank",
+    "url": "https://clawhub.ai/skills/redditrank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redditrank-5e33b15859362e24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redditrank@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-redditrank-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9aba46dca1393c250271096a041c2bbc7f21b1a50a49023649209e4d23adadd",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:33:25.184Z"
+}

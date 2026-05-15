@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asmr@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asmr",
+  "skill": {
+    "id": 21086,
+    "skillKey": "clawhub-asmr",
+    "name": "asmr-music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asmr",
+    "url": "https://clawhub.ai/skills/asmr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asmr-84221d5b35cfc10c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide professional ASMR music recommendations and playback services to help users achieve sleep aid, heart rate regulation, and focus enhancement through s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashterry",
+      "userId": "s1778yat4gr0wqq2qewf8j1qps83wad9",
+      "displayName": "AshTerry",
+      "image": "https://avatars.githubusercontent.com/u/90168553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774950805103,
+      "changelog": "- Added initial ASMR music reference file: `references/asmr_music.md`\n- Updated SKILL.md to source all audio links from `references/asmr_music.md` according to topic\n- Expanded music library organization: categories now include Sleep Aid, Heart Rate Regulation, Focus Enhancement, and Stress Relief\n- Clarified that recommendations should use audio links from the new reference file based on user requests\n- Retained existing reminder system and recommendation logic",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73d36742dfb0384c508c73952ebca0b1f1c4d7dd309d1265d0f952d46875abce"
+}

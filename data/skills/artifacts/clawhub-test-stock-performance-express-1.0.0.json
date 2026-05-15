@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-stock-performance-express@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_stock_performance_express",
+  "skill": {
+    "id": 72389,
+    "skillKey": "clawhub-test-stock-performance-express",
+    "name": "A股业绩快报查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-stock-performance-express",
+    "url": "https://clawhub.ai/skills/test-stock-performance-express",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-stock-performance-express-c779b1ca41a63f7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 A 股上市公司业绩快报数据，支持沪深京股票。当用户询问股票业绩快报、营收、净利润、EPS、ROE、同比增长、一季报、半年报、三季报、年报等财务指标时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lv19944516",
+      "userId": "publishers:lv19944516",
+      "displayName": "@FtAi",
+      "image": "https://avatars.githubusercontent.com/u/65745044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773057371054,
+      "changelog": "A股业绩快报查询",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91b2418346817a15d3aac5f6c085ae99e66161e8fd0f8e3f2153b0346f1c0def"
+}

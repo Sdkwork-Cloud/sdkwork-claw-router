@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29613,
+  "uuid": "skill-clawhub-construction-safety-checklist",
+  "skillKey": "clawhub-construction-safety-checklist",
+  "name": "Construction Safety Inspection Checklist",
+  "summary": "Guide a site supervisor through a structured safety inspection using conversational interaction, generating a completed inspection report with findings and c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.construction_safety_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nitevity",
+      "features": [
+        "Guide a site supervisor through a structured safety inspection using conversational interaction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/construction-safety-checklist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206263748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "construction-safety-checklist",
+      "url": "https://clawhub.ai/skills/construction-safety-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "construction-safety-checklist",
+    "url": "https://clawhub.ai/skills/construction-safety-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/construction-safety-checklist-08db6dc3cb1c0df0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/construction-safety-checklist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-construction-safety-checklist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0749e9ba40ff741dcf4cef89483dea7f53b9d1547338dde3d082e728abd28fc",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T19:48:43.222Z"
+}

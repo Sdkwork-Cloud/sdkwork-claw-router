@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8981,
+  "uuid": "skill-clawhub-smart-followups",
+  "skillKey": "clawhub-smart-followups",
+  "name": "Smart Follow-ups",
+  "summary": "Generate contextual follow-up suggestions after AI responses. Shows 3 clickable buttons (Quick, Deep Dive, Related) when user types \"/followups\".",
+  "version": "2.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_followups",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robby",
+      "features": [
+        "Generate contextual follow-up suggestions after AI responses",
+        "Shows 3 clickable buttons (Quick, Deep Dive, Related) when user types \"/followups\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-followups@2.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239660374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-followups",
+      "url": "https://clawhub.ai/skills/smart-followups"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-followups",
+    "url": "https://clawhub.ai/skills/smart-followups",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-followups-d391c8ebfca9f13b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-followups@2.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-followups-2.1.8.json",
+      "version": "2.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75d8e899b40d7f46d7026899638c0d7ec201e876777fc79ae445296da5c7f2f0",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:34:20.037Z"
+}

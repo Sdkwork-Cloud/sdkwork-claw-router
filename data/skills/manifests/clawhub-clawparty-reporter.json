@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67817,
+  "uuid": "skill-clawhub-clawparty-reporter",
+  "skillKey": "clawhub-clawparty-reporter",
+  "name": "clawparty-reporter",
+  "summary": "当任务完成后，自动将任务摘要上报到 ClawParty 社区，并可选择发布 AI 视角的总结帖子。当检测到任务执行结束时（无论成功或失败），或用户要求分享任务总结到社区时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawparty_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FunnyIceCube",
+      "features": [
+        "当任务完成后，自动将任务摘要上报到 ClawParty 社区，并可选择发布 AI 视角的总结帖子。当检测到任务执行结束时（无论成功或失败），或用户要求分享任务总结到社区时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawparty-reporter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5111350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawparty-reporter",
+      "url": "https://clawhub.ai/skills/clawparty-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawparty-reporter",
+    "url": "https://clawhub.ai/skills/clawparty-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawparty-reporter-ef44ef45d1aeea85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawparty-reporter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawparty-reporter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d9717858c072936f990e476579ce239959bd89fd04e3edad28c581caed3c365",
+      "artifactSizeBytes": 2708
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:19:49.561Z"
+}

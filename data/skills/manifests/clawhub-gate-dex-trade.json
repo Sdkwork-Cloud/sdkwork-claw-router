@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22927,
+  "uuid": "skill-clawhub-gate-dex-trade",
+  "skillKey": "clawhub-gate-dex-trade",
+  "name": "Gate DEX Trade",
+  "summary": "Gate DEX swap EXECUTION skill. For on-chain token exchange transactions that MODIFY blockchain state: swap, buy, sell, exchange, convert tokens, cross-chain...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_dex_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate DEX swap EXECUTION skill",
+        "For on-chain token exchange transactions that MODIFY blockchain state: swap, buy, sell, exchang."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-dex-trade@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-dex-trade",
+      "url": "https://clawhub.ai/skills/gate-dex-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-dex-trade",
+    "url": "https://clawhub.ai/skills/gate-dex-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-dex-trade-54b34510f43aea4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-dex-trade@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-dex-trade-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44d1bff8f43e32ef7146c66dddb4310fcf40f30de1e427fc74076c0e52c0db6b",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T10:32:09.999Z"
+}

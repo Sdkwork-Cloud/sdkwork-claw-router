@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaiten@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaiten",
+  "skill": {
+    "id": 36477,
+    "skillKey": "clawhub-kaiten",
+    "name": "Kaiten"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaiten",
+    "url": "https://clawhub.ai/skills/kaiten",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaiten-68ab67cf6b8b4f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Kaiten.ru project boards via REST API for creating, viewing, updating, moving cards, managing spaces, boards, columns, tags, comments, checklists, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nixprosoft",
+      "userId": "s179163wqpzgghh8vdkknytab983jm7j",
+      "displayName": "Nikita",
+      "image": "https://avatars.githubusercontent.com/u/5313478?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775600427224,
+      "changelog": "Added metadata.openclaw with requires.env and primaryEnv for KAITEN_TOKEN and KAITEN_DOMAIN. Resolves ClawHub review findings about undeclared secrets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:affb56994fc02dd9dfc6e813492aaea297a260b6e5270f9bcad31c8b5b3cca38"
+}

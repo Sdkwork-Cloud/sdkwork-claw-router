@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coordinate-meeting@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coordinate_meeting",
+  "skill": {
+    "id": 11191,
+    "skillKey": "clawhub-coordinate-meeting",
+    "name": "Coordinate a Meeting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coordinate-meeting",
+    "url": "https://clawhub.ai/skills/coordinate-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coordinate-meeting-6239cf9b07bd1a49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule a meeting for humans and their agents. Creates a scheduling poll, distributes it, collects votes, and finds the best time. Use when someone needs to find a time that works for a group. A Doodle alternative built for the age of AI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mkelk",
+      "userId": "publishers:mkelk",
+      "displayName": "mkelk",
+      "image": "https://avatars.githubusercontent.com/u/13288681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2128,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770531540622,
+      "changelog": "- Updated description and documentation to emphasize agent compatibility and AI-driven scheduling.\n- Clarified that the skill coordinates meetings for both humans and their agents.\n- Standardized terminology (e.g., \"Schedule a Meeting\" heading, consistent reference to Doodle alternative).\n- No changes to core workflow or functionality; documentation improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4730deae70fde2028d87074766d3b9b2bc9d3163ef8f55c8b943703b3842fb1"
+}

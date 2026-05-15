@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62065,
+  "uuid": "skill-clawhub-union-search-skill",
+  "skillKey": "clawhub-union-search-skill",
+  "name": "Union Search Skill",
+  "summary": "当用户需要跨多个平台搜索内容时使用此技能，包括 GitHub（仓库、代码、问题）、Reddit（帖子、子版块、用户）、小红书、抖音、Bilibili、YouTube、Twitter、微信（公众号文章）、Google、Tavily、秘塔搜索、火山引擎，以及通用搜索引擎（DuckDuckGo、Brave、Yahoo、...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.union_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZiJiE.Z",
+      "features": [
+        "当用户需要跨多个平台搜索内容时使用此技能，包括 GitHub（仓库、代码、问题）、Reddit（帖子、子版块、用户）、小红书、抖音、Bilibili、YouTube、Twitter、微信（公."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/union-search-skill@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127315512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "union-search-skill",
+      "url": "https://clawhub.ai/skills/union-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "union-search-skill",
+    "url": "https://clawhub.ai/skills/union-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/union-search-skill-3b483be06069fc6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/union-search-skill@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-union-search-skill-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f4248dbdffe3b29cccf6bc73e33356d768c1555dc0a43945bbdf18861bcbe37",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T09:35:43.282Z"
+}

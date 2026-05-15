@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27493,
+  "uuid": "skill-clawhub-mhbmissile-self-improving-agent",
+  "skillKey": "clawhub-mhbmissile-self-improving-agent",
+  "name": "Self Improving Agent",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mhbmissile_self_improving_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhbmissile",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mhbmissile-self-improving-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26531221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mhbmissile-self-improving-agent",
+      "url": "https://clawhub.ai/skills/mhbmissile-self-improving-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mhbmissile-self-improving-agent",
+    "url": "https://clawhub.ai/skills/mhbmissile-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mhbmissile-self-improving-agent-4b206472864a1042.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mhbmissile-self-improving-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mhbmissile-self-improving-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc0fd6765f07b056fbf6b32fa8602494dcac6426c55530f4f2db16b6e9a68f8b",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:09:09.243Z"
+}

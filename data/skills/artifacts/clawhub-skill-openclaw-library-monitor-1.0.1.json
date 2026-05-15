@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-openclaw-library-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_openclaw_library_monitor",
+  "skill": {
+    "id": 27357,
+    "skillKey": "clawhub-skill-openclaw-library-monitor",
+    "name": "Library Book Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-openclaw-library-monitor",
+    "url": "https://clawhub.ai/skills/skill-openclaw-library-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-openclaw-library-monitor-5f36ffa51d606967.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor library book availability and get notified when books become available for borrowing. Supports Shenzhen Library and extensible for other libraries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yszheda",
+      "userId": "s17c19kc0srj58g09ays13rh3x83p136",
+      "displayName": "Shuai YUAN",
+      "image": "https://avatars.githubusercontent.com/u/1416342?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 340,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772770603568,
+      "changelog": "Version 1.0.1\n\n- No functional or documentation changes detected in this version.\n- No file changes were made from the previous release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ff2b224ca3c62450e7ee6d4f5faeba503435916a827fef23f17b5486db2e779e"
+}

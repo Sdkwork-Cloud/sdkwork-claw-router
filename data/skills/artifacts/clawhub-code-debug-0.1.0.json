@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-debug@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_debug",
+  "skill": {
+    "id": 25939,
+    "skillKey": "clawhub-code-debug",
+    "name": "Code Debug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-debug",
+    "url": "https://clawhub.ai/skills/code-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-debug-e415bd4f34908d99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose errors or crashes in local code, identify root causes, and provide the minimal fix with verification steps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sf0799",
+      "userId": "s175a2gydqwpmq0pqjcykvhnq584b17r",
+      "displayName": "sf0799",
+      "image": "https://avatars.githubusercontent.com/u/65325612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775460016567,
+      "changelog": "initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2091440e75fb7a92dc4b64c4fde6538625a1ca52bf497b163f922fa75edf024a"
+}

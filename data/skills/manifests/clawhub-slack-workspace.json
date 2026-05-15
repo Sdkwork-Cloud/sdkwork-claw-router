@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54790,
+  "uuid": "skill-clawhub-slack-workspace",
+  "skillKey": "clawhub-slack-workspace",
+  "name": "Slack",
+  "summary": "Send and manage messages, channels, and files in Slack workspaces — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_workspace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Send and manage messages, channels, and files in Slack workspaces — powered by ClawLink."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-workspace@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-workspace",
+      "url": "https://clawhub.ai/skills/slack-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-workspace",
+    "url": "https://clawhub.ai/skills/slack-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-workspace-4645d6a77b06054e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-workspace@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-workspace-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:464c425e7b4be4fe86daebee8ddc86be161b340f6195966d8576e3a620fd9773",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:18:30.172Z"
+}

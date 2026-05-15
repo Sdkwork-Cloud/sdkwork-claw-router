@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contradiction-detector@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contradiction_detector",
+  "skill": {
+    "id": 23366,
+    "skillKey": "clawhub-contradiction-detector",
+    "name": "Contradiction Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contradiction-detector",
+    "url": "https://clawhub.ai/skills/contradiction-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contradiction-detector-0357b0bf84fe845b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects and eliminates contradictions between agent instruction files that cause hallucinations and silent misbehavior. Use when: (1) any agent behaves incon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "korengast",
+      "userId": "s17b4mr9py22emjaycp20283j984f5gh",
+      "displayName": "korengast",
+      "image": "https://avatars.githubusercontent.com/u/78529626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775708361405,
+      "changelog": "Declare required binaries (openclaw, python3, find, cat), config paths, and read access scope in registry metadata to resolve suspicious flag from security scanner.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0d6119fbba24bc157418f8ef14aeee4fe6df87956a4eeecc93a6713ab635cb0"
+}

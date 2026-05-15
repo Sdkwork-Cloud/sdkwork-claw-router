@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bb-report-template@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bb_report_template",
+  "skill": {
+    "id": 35238,
+    "skillKey": "clawhub-bb-report-template",
+    "name": "Bug Bounty Report Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bb-report-template",
+    "url": "https://clawhub.ai/skills/bb-report-template",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bb-report-template-80bf4d5bd70938b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional bug bounty reports for HackerOne, Bugcrowd, and other platforms. Pre-filled templates with CWE mapping, reproduction steps, and severit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hostilespider",
+      "userId": "s174mjwnjbtsfngcadfcshpg5d83t2r2",
+      "displayName": "HostileSpider",
+      "image": "https://avatars.githubusercontent.com/u/47485616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774811563760,
+      "changelog": "Initial release — HackerOne/Bugcrowd report generator with CWE mapping",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ade6078f87935b489a52b0ba7b974f8342d94c0bd01de8077450b1eff9bdc5d"
+}

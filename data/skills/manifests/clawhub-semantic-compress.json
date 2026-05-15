@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72903,
+  "uuid": "skill-clawhub-semantic-compress",
+  "skillKey": "clawhub-semantic-compress",
+  "name": "语义压缩",
+  "summary": "语义压缩技能，在不降低准确度的前提下大幅减少token消耗。保留完整关键信息和语义骨架，去除冗余文本，让上下文更紧凑。不损失精度，只砍掉废话。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_compress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "licool88",
+      "features": [
+        "语义压缩技能，在不降低准确度的前提下大幅减少token消耗。保留完整关键信息和语义骨架，去除冗余文本，让上下文更紧凑。不损失精度，只砍掉废话。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semantic-compress@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263567382?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semantic-compress",
+      "url": "https://clawhub.ai/skills/semantic-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-compress",
+    "url": "https://clawhub.ai/skills/semantic-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-compress-6281766868daf41b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semantic-compress@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-semantic-compress-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:766dff9e0106424c9f227f35b3cd26930d4e409a53407b37834e5798da724546",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:11:22.093Z"
+}

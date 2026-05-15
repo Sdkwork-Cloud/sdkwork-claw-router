@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemma-gemma3@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemma_gemma3",
+  "skill": {
+    "id": 51734,
+    "skillKey": "clawhub-gemma-gemma3",
+    "name": "Gemma Gemma3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemma-gemma3",
+    "url": "https://clawhub.ai/skills/gemma-gemma3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemma-gemma3-8b086327749adc88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gemma 3 by Google — run Gemma 3 (4B, 12B, 27B) across your local device fleet. Google's most capable open model with 128K context, strong coding, and multili..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775254694122,
+      "changelog": "Cross-platform support: macOS, Linux, and Windows. Updated OS metadata, descriptions, and hardware recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f319a04de92fb8abeed02820adc376d53d0b46e4c996373f4585f4416e2d537"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clean-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_code_review",
+  "skill": {
+    "id": 9053,
+    "skillKey": "clawhub-clean-code-review",
+    "name": "Clean Code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-code-review",
+    "url": "https://clawhub.ai/skills/clean-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-code-review-c4b71eddf39ec595.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pragmatic coding standards for writing clean, maintainable code — naming, functions, structure, anti-patterns, and pre-edit safety checks. Use when writing new code, refactoring existing code, reviewing code quality, or establishing coding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4695,
+      "installsAllTime": 31,
+      "installsCurrent": 27,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770729831880,
+      "changelog": "Major update: Comprehensive clean code standards, patterns, and anti-patterns guide.\n\n- Added core clean code principles (SRP, DRY, KISS, YAGNI, Boy Scout).\n- Detailed naming conventions with anti-patterns and practical examples.\n- Expanded function rules: guidelines on size, arguments, side effects, and guard clauses.\n- Introduced code structure patterns: composition, colocation, and extraction.\n- Provided anti-patterns table with actionable fixes.\n- Included a pre-edit safety checklist to prevent unintended breakage.\n- Full rewrite and significant expansion from prior versions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a71019519b0c1d2d354673fd94e3f6a7254cc90a63d3411471586b962e61fba"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bandwidth-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bandwidth_optimizer",
+  "skill": {
+    "id": 53828,
+    "skillKey": "clawhub-bandwidth-optimizer",
+    "name": "Bandwidth Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bandwidth-optimizer",
+    "url": "https://clawhub.ai/skills/bandwidth-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bandwidth-optimizer-f35cd3e50e8cdf95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify and reduce Azure bandwidth and egress costs — often the most invisible Azure cost driver"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772538245924,
+      "changelog": "azure-bandwidth-optimizer 1.0.0 – Initial release\n\n- Provides expert guidance to identify and reduce Azure bandwidth and egress costs.\n- Analyzes exported cost/usage data and network topology (read-only; no credentials required).\n- Delivers cost breakouts, heatmaps, and actionable optimization opportunities (CDN, Private Endpoints, etc.).\n- Outputs include ROI calculations and Bicep/ARM snippets for key recommendations.\n- Instruction-only: does not connect to Azure or run commands automatically.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:858af65d9cf02875c7980d4a5aed3ff0dccc53ef8a2f358c3faa097ea0b8e1e5"
+}

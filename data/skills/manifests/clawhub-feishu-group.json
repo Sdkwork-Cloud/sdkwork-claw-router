@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50727,
+  "uuid": "skill-clawhub-feishu-group",
+  "skillKey": "clawhub-feishu-group",
+  "name": "Feishu Group",
+  "summary": "Teach OpenClaw how to work in Feishu (Lark) group chats — recognize who's talking, behave properly in groups vs DMs, respect multi-user privacy, and format m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_group",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "傅洋",
+      "features": [
+        "Teach OpenClaw how to work in Feishu (Lark) group chats — recognize who's talking, behave prope."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-group@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5648066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-group",
+      "url": "https://clawhub.ai/skills/feishu-group"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-group",
+    "url": "https://clawhub.ai/skills/feishu-group",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-group-001afa0f85cd4ebe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-group@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-group-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b06145e23d77f5b39fc673d45ba901ab1526f776f7db2442e4bab8d62d60f9e",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T16:37:53.890Z"
+}

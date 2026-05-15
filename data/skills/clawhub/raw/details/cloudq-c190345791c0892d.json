@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "cloudq",
+    "displayName": "CloudQ",
+    "summary": "用户咨询腾讯云产品资源、AWS、阿里云等多云资源时，查看智能顾问架构图、架构目录、架构详情、架构评估结果、绘制架构图、开通智能顾问时、AI智能巡检、AI容量监测、AI混沌演练、AI云诊断、主动预警、架构健康度、云运维问答、云资源查询、云成本优化、安全合规、云资源盘点、闲置资源检查、云产品最佳实践等AIOps、Ch...",
+    "tags": {
+      "latest": "1.5.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 10
+    },
+    "createdAt": 1774421832734,
+    "updatedAt": 1778241812418
+  },
+  "latestVersion": {
+    "version": "1.5.6",
+    "createdAt": 1778241608026,
+    "changelog": "CloudQ v1.5.6\n\n- 强烈建议更新，重大升级\n- 移除了 references/api/CreateAdvisorAuthorization.md 文件，相关开通流程已集成在主检测脚本中\n- 环境检测流程新增智能顾问开通状态验证，未开通时必须提示用户授权并支持自动开通\n- 智能顾问开通（CreateAdvisorAuthorization）与状态查询（DescribeUserAuthorizationStatus）已集成到 check_env.py 的初始化流程\n- 免密登录角色变为可选，仅影响控制台免密，不再阻断 CloudQ 核心功能\n- IAM 权限说明和初始化引导流程同步优化，脚本文档更加简化和聚焦",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "1ncludesteven",
+    "userId": "s17egg56s9tja7zq2kzbt2mcvn83ga4x",
+    "displayName": "Tencent Cloud Smart Advisor Team",
+    "image": "https://avatars.githubusercontent.com/u/56500775?v=4"
+  },
+  "moderation": null
+}

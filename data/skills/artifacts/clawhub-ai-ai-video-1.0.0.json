@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-ai-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ai_video",
+  "skill": {
+    "id": 47742,
+    "skillKey": "clawhub-ai-ai-video",
+    "name": "Ai Ai Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ai-video",
+    "url": "https://clawhub.ai/skills/ai-ai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ai-video-2b7de5a88eb1235b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw screen recording or phone video into 1080p AI-edited videos just by typing what you need. Whether it's automatically editing and enhancin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776482315453,
+      "changelog": "AI Video Editor — Initial Release\n\n- Instantly edit and export 1080p AI-enhanced videos from raw footage by simply describing your needs—no timeline editing required.\n- Automatic session setup and free token generation for new users.\n- Supports prompt-based workflows: upload, edit, preview timeline, and export, all via chat.\n- Cloud rendering pipeline with live status updates and error handling (token, credits, supported formats).\n- Handles video, audio, and image uploads in common formats up to 500MB.\n- Clear mapping of user prompts to editing actions for streamlined experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1108e420a67fd4a64e312f9c10a47cf8bb57f857a8f8b163c37882a0e039435d"
+}

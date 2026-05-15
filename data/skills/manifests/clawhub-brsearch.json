@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58790,
+  "uuid": "skill-clawhub-brsearch",
+  "skillKey": "clawhub-brsearch",
+  "name": "Brsearch",
+  "summary": "禁用web_search,web_fetch,memory_search并使用在线大模型进行搜索",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brsearch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "siysun",
+      "features": [
+        "禁用web_search,web_fetch,memory_search并使用在线大模型进行搜索"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brsearch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17974785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brsearch",
+      "url": "https://clawhub.ai/skills/brsearch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brsearch",
+    "url": "https://clawhub.ai/skills/brsearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brsearch-cc64af24668f6ee4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brsearch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brsearch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6cfd2dfc212a675d35b817198c5862f0bc8dc563e2432388a9fce723440451c",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:57:29.165Z"
+}

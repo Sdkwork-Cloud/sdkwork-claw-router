@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30717,
+  "uuid": "skill-clawhub-zonka-feedback",
+  "skillKey": "clawhub-zonka-feedback",
+  "name": "Zonka Feedback",
+  "summary": "Zonka Feedback integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zonka Feedback data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zonka_feedback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zonka Feedback integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zonka Feedback data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zonka-feedback@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zonka-feedback",
+      "url": "https://clawhub.ai/skills/zonka-feedback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zonka-feedback",
+    "url": "https://clawhub.ai/skills/zonka-feedback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zonka-feedback-a33fc38eaf549dfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zonka-feedback@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zonka-feedback-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a0f9b0f90e445639e2b041f5ec3f691ac9d80faae082da1998af3e98f481f37",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:06:23.019Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ch-math-review-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ch_math_review_generator",
+  "skill": {
+    "id": 67530,
+    "skillKey": "clawhub-ch-math-review-generator",
+    "name": "数学复习资料生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ch-math-review-generator",
+    "url": "https://clawhub.ai/skills/ch-math-review-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ch-math-review-generator-2d2c8739bf4bcc03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为初中数学章节生成复习指南 HTML 文件（知识点 + SVG 图形 + 选择/填空/大题 + 详解）。 当用户要求\"生成数学复习资料\"、\"出一份数学练习题\"、\"帮我复习XX章节\"、\"数学辅导\"、\"生成数学学习文档\"、 \"做一份数学错题本\"、\"生成函数/几何复习指南\" 或类似意图时，应使用此 Skill。 该 S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangmange",
+      "userId": "s1745abf6p3hb8r1rcnhw8spf184epbs",
+      "displayName": "wangmange",
+      "image": "https://avatars.githubusercontent.com/u/198840631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775619251698,
+      "changelog": "Initial release of math-review-generator skill:\n\n- Generates junior high school math review guides in HTML, covering knowledge points, embedded SVG graphics, exercises, and detailed explanations.\n- Strict workflow with mandatory SVG and logic validation for all diagrams and questions using external scripts.\n- Supports chapters on geometry (parallelogram, rectangle, rhombus) and linear/inverse functions, with specification on SVG accuracy and content structure.\n- Includes exercise types: 5 multiple-choice, 5 fill-in-the-blank, 3 open-ended problems per document, all with step-by-step expand/collapse explanations.\n- Enforces template and formatting standards for consistent outputs, and logs generation details to workspace memory after each run.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a9c11ca6e70cc3ac858f5c0e880ef32b07cc6eef14174ad579d5687372ebded"
+}

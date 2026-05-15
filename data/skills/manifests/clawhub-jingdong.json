@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54090,
+  "uuid": "skill-clawhub-jingdong",
+  "skillKey": "clawhub-jingdong",
+  "name": "Jingdong Shopping",
+  "summary": "Navigate JD.com (京东) with expert shopping strategies, authenticity checks, logistics optimization, and browser-based product search, reviews, price compariso...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jingdong",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Navigate JD.com (京东) with expert shopping strategies, authenticity checks, logistics optimizati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jingdong@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jingdong",
+      "url": "https://clawhub.ai/skills/jingdong"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jingdong",
+    "url": "https://clawhub.ai/skills/jingdong",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jingdong-9abb67c3783541df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jingdong@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jingdong-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59f94fb6a5ae03177db1f2b723b0041caef35b361a3cd0a501b0ed9e4ca8b2e8",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:54:31.566Z"
+}

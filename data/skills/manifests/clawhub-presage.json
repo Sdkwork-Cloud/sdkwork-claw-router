@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14871,
+  "uuid": "skill-clawhub-presage",
+  "skillKey": "clawhub-presage",
+  "name": "Presage",
+  "summary": "Connect to Presage, the AI prediction market terminal on Solana. Trade prediction markets (YES/NO outcomes on real-world events) using paper trading. Analyze...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Seenfinity",
+      "features": [
+        "Connect to Presage, the AI prediction market terminal on Solana",
+        "Trade prediction markets (YES/NO outcomes on real-world events) using paper trading",
+        "Analyze..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/presage@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196230607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "presage",
+      "url": "https://clawhub.ai/skills/presage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presage",
+    "url": "https://clawhub.ai/skills/presage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presage-8259b63d653359c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/presage@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-presage-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:427fa8627a7b23cd1ce39d8cccac64c796f3a831e47787777387e91138aa0319",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T00:20:15.196Z"
+}

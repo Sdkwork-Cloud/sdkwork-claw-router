@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mspot-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mspot_generator",
+  "skill": {
+    "id": 11170,
+    "skillKey": "clawhub-mspot-generator",
+    "name": "MSPOT Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mspot-generator",
+    "url": "https://clawhub.ai/skills/mspot-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mspot-generator-fc2a0f2ee668798c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create one-page strategic alignment documents. Mission, Strategy, Projects, Omissions, Tracking. Forces clarity on what you WILL and WON'T do. Use when user says \"mspot\", \"strategic plan\", \"quarterly plan\", \"what are we NOT doing\", \"omissi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "artyomx33",
+      "userId": "publishers:artyomx33",
+      "displayName": "artyomx33",
+      "image": "https://avatars.githubusercontent.com/u/130623863?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2139,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769359880039,
+      "changelog": "Initial release - Create strategic alignment docs: Mission, Strategy, Projects, Omissions, Tracking. By Artem Tolmachev, Teddy Kids, TISA & Claude.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f867fe2b427cc0583dd41705a57c0ba5fb3b01aff8fa45ac0ae5e3c4fa82003e"
+}

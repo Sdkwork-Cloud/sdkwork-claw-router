@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60992,
+  "uuid": "skill-clawhub-quantaxis-data-platform",
+  "skillKey": "clawhub-quantaxis-data-platform",
+  "name": "Quantaxis Data Platform",
+  "summary": "提供 A 股市场的因子计算、存储与 tear sheet 分析能力，支持 Pandas/Polars 零拷贝数据转换和 QIFI 账户回测模拟，适用于多数据源量化研究。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantaxis_data_platform",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "提供 A 股市场的因子计算、存储与 tear sheet 分析能力，支持 Pandas/Polars 零拷贝数据转换和 QIFI 账户回测模拟，适用于多数据源量化研究。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quantaxis-data-platform@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quantaxis-data-platform",
+      "url": "https://clawhub.ai/skills/quantaxis-data-platform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantaxis-data-platform",
+    "url": "https://clawhub.ai/skills/quantaxis-data-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantaxis-data-platform-517a350192c6f8ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quantaxis-data-platform@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-quantaxis-data-platform-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:676edd3ed0fb28f46987206f38220db619b86878c43dafe9683b9283ac21dae0",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:29:11.795Z"
+}

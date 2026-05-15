@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openmaic@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmaic",
+  "skill": {
+    "id": 9329,
+    "skillKey": "clawhub-openmaic",
+    "name": "Openmaic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmaic",
+    "url": "https://clawhub.ai/skills/openmaic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmaic-7aa40494820182a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guided SOP for setting up and using OpenMAIC from OpenClaw. Use when the user wants to clone the OpenMAIC repo, choose a startup mode, configure recommended..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyuc",
+      "userId": "s177bd906czjkr4f79ahq4wj8183m0w4",
+      "displayName": "wyuc",
+      "image": "https://avatars.githubusercontent.com/u/18752201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3469,
+      "installsAllTime": 34,
+      "installsCurrent": 33,
+      "stars": 5,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1774508790928,
+      "changelog": "clarify language field accepts only zh-CN | en-US; update stale enableTTS description to reflect actual server-side TTS capability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2a4d194e4ff026aa845375b6cc3c036845fc8fc87c2c2d9584e081b0aec2e48"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-ugc@0.0.4",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ugc",
+  "skill": {
+    "id": 14006,
+    "skillKey": "clawhub-ai-ugc",
+    "name": "AI UGC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ugc",
+    "url": "https://clawhub.ai/skills/ai-ugc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ugc-55a3328742a96c5d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call the RawUGC API to generate AI videos/images/music, manage content (personas, products, styles, characters), schedule social media posts, research TikTok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tfcbot",
+      "userId": "s17ee747e56qbmkcrwys763sys83gdzz",
+      "displayName": "CoderBot",
+      "image": "https://avatars.githubusercontent.com/u/104033609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1057,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.4",
+      "createdAt": 1773095358389,
+      "changelog": "**Expanded scope: Skill now handles the entire RawUGC API, not just video generation.**\n\n- Supports generating and managing AI videos, images, and music\n- Adds endpoints for uploading media, managing personas, products, styles, and AI characters\n- New workflows for video editing: captions and overlays\n- Allows scheduling social media posts and researching TikTok content\n- Includes TikTok viral video analysis and extensive CRUD API coverage\n- Requires sending RawUGC-Version header (2026-03-06) for consistency",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f19c89a783a33340eb527005ecd75d4914e01da83cc9ea3e74423832607138e"
+}

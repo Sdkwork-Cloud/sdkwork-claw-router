@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12544,
+  "uuid": "skill-clawhub-task-runner",
+  "skillKey": "clawhub-task-runner",
+  "name": "Task Runner",
+  "summary": "Manage and track tasks and projects persistently with priorities, completion status, filtering, and secure markdown export across sessions.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_runner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johstracke",
+      "features": [
+        "Manage and track tasks and projects persistently with priorities, completion status, filtering,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-runner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63787617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-runner",
+      "url": "https://clawhub.ai/skills/task-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-runner",
+    "url": "https://clawhub.ai/skills/task-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-runner-3b0c81e749a0aa22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-runner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-runner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa2979f7e496a39dcaaf4d92e57c463694894b3333b512909c71d91e7568cc26",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T19:36:45.461Z"
+}

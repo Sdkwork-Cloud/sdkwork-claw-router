@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-send@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_send",
+  "skill": {
+    "id": 64171,
+    "skillKey": "clawhub-feishu-send",
+    "name": "Feishu Send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-send",
+    "url": "https://clawhub.ai/skills/feishu-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-send-4a087002f8f063cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书发送图片/文件/语音。用 curl 调用飞书 API 发送，比 message 工具更可靠。用于需要发送图片、文件、语音到飞书时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774244771695,
+      "changelog": "Replace hardcoded /home/axelhu/.openclaw with portable $HOME/.openclaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6dc4510e3acde5ece23fcf4beeb260754454fadf9461c77370ba42ac92e3db7"
+}

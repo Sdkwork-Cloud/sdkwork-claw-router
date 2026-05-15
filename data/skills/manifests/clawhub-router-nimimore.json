@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28944,
+  "uuid": "skill-clawhub-router-nimimore",
+  "skillKey": "clawhub-router-nimimore",
+  "name": "Router NIMIMORE",
+  "summary": "Automatically selects the best AI model for queries by analyzing complexity to optimize cost and performance across multiple providers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.router_nimimore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aichiafranco",
+      "features": [
+        "Automatically selects the best AI model for queries by analyzing complexity to optimize cost an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/router-nimimore@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248696033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "router-nimimore",
+      "url": "https://clawhub.ai/skills/router-nimimore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "router-nimimore",
+    "url": "https://clawhub.ai/skills/router-nimimore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/router-nimimore-583a138987e2614a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/router-nimimore@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-router-nimimore-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6177c6d3ef383217ffd9e41e5637f60121bb5935375d6ba1edffe8e5cdb412c2",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T13:29:00.996Z"
+}

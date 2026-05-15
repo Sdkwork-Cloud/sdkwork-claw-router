@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65925,
+  "uuid": "skill-clawhub-dagugu-tiktok-auto-reply",
+  "skillKey": "clawhub-dagugu-tiktok-auto-reply",
+  "name": "Tiktok Auto Reply",
+  "summary": "自动监控指定关键词的TikTok热门视频评论并定时发送配置的自动回复，支持频率限制和多模板切换。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dagugu_tiktok_auto_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kamiguyi",
+      "features": [
+        "自动监控指定关键词的TikTok热门视频评论并定时发送配置的自动回复，支持频率限制和多模板切换。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dagugu-tiktok-auto-reply@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179662880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dagugu-tiktok-auto-reply",
+      "url": "https://clawhub.ai/skills/dagugu-tiktok-auto-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dagugu-tiktok-auto-reply",
+    "url": "https://clawhub.ai/skills/dagugu-tiktok-auto-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dagugu-tiktok-auto-reply-82a3416485800d28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dagugu-tiktok-auto-reply@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dagugu-tiktok-auto-reply-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c0f84cddde22b99a2ec7489366072abdbf9c26efcf97fe584c7f79f7c29f713",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:31:21.366Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/popular-skill-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popular_skill_scout",
+  "skill": {
+    "id": 17857,
+    "skillKey": "clawhub-popular-skill-scout",
+    "name": "Popular Skill Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popular-skill-scout",
+    "url": "https://clawhub.ai/skills/popular-skill-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popular-skill-scout-a3bf9f86f93b9dce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find popular and practical skills across ClawHub and GitHub. Use when the user asks for hot skills, useful skills, ClawHub recommendations, GitHub skill disc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuanziwen100",
+      "userId": "s172m75rt89zpcs4kthhnqravd83nx0t",
+      "displayName": "Yuan Ziwen",
+      "image": "https://avatars.githubusercontent.com/u/126656981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773902533888,
+      "changelog": "Initial release with focused, high-quality skill recommendation and verification workflow.\n\n- Enables discovery of popular and practical skills using ClawHub and GitHub data.\n- Implements a step-by-step process: targeting the user goal, validating sources, and only recommending well-supported skills.\n- Provides clear output structure, separating top recommendations, secondary options, and candidates to skip with detailed reasoning.\n- Emphasizes maintenance, safety, and practical usefulness over simple popularity.\n- Offers to help with trial installs and live verification for shortlisted skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbd269fa85b6535b6b5ad17329be5c9411df3e921e5ca960c1624726b88b07ae"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40841,
+  "uuid": "skill-clawhub-gate-info-defianalysis-staging",
+  "skillKey": "clawhub-gate-info-defianalysis-staging",
+  "name": "gate-info-defianalysis",
+  "summary": "DeFi ecosystem analysis via Gate-Info MCP. Use this skill whenever the user wants TVL rankings, protocol metrics, yield/APY, stablecoins, bridges, exchange r...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_info_defianalysis_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "DeFi ecosystem analysis via Gate-Info MCP",
+        "Use this skill whenever the user wants TVL rankings, protocol metrics, yield/APY, stablecoins,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-info-defianalysis-staging@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-info-defianalysis-staging",
+      "url": "https://clawhub.ai/skills/gate-info-defianalysis-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-info-defianalysis-staging",
+    "url": "https://clawhub.ai/skills/gate-info-defianalysis-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-info-defianalysis-staging-798e952d6960b59f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-info-defianalysis-staging@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-info-defianalysis-staging-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bce7fdac0caebcb93894d3864dd38403181ee61bd63dfc5b7c07bc3690ccd95b",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:15:25.043Z"
+}

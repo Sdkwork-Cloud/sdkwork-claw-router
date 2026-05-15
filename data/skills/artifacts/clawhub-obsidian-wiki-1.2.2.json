@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-wiki@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_wiki",
+  "skill": {
+    "id": 25011,
+    "skillKey": "clawhub-obsidian-wiki",
+    "name": "Obsidian Wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-wiki",
+    "url": "https://clawhub.ai/skills/obsidian-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-wiki-60b1037df992cde7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and maintain a compiled LLM Wiki inside an Obsidian vault following Karpathy's pattern. Use when working with an Obsidian vault as a persistent knowled..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerome-benoit",
+      "userId": "s17f69e1qz41njbhrbnzhaddps8463ky",
+      "displayName": "Jérôme Benoit",
+      "image": "https://avatars.githubusercontent.com/u/6537332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1776532279035,
+      "changelog": "v1.2.2: Fix type double-count in lint, reject symlinks in manifest mark, bridge→articulation point terminology, multi-line %% comment handling in index summary, exclude index/log from markdownlint. Add raw/specifications/ subfolder + specification tag. Align vault. Audit score 8.17/10.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efa126ef2e95c855a245275260c1caae3292c398ba24c64e298bf1c797973b39"
+}

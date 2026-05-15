@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-research-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_research_tools",
+  "skill": {
+    "id": 72942,
+    "skillKey": "clawhub-ai-research-tools",
+    "name": "AI科研工具全景指南"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-research-tools",
+    "url": "https://clawhub.ai/skills/ai-research-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-research-tools-1757b6644adafcfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整合多智能体协作与接口标准化，实现科研数据快速获取、论文复现、审稿回复及报告自动生成，提升AI辅助学术效率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777255664927,
+      "changelog": "Initial release: Comprehensive AI research tools panorama guide for efficient academic workflows.\n\n- Covers major areas: rapid data access, paper reproduction, peer review assistance, multi-agent collaboration, and ecosystem platforms.\n- Details leading tools and protocols such as MCP, DeepAnalyze, Stata Skill (with Stata-to-Python translation), Agent Laboratory, and review-response.\n- Includes best practices, human-vs-AI workflow division, ecosystem comparisons, and quickstart instructions.\n- Lists use-case scenarios and integration with related skills for streamlined research processes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f1a0416b9f0d61b4ed3fa4f79a1711ca0376bc91a0131180e06c9523f472c24"
+}

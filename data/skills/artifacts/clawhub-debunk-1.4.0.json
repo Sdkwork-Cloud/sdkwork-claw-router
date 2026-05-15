@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debunk@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debunk",
+  "skill": {
+    "id": 72396,
+    "skillKey": "clawhub-debunk",
+    "name": "Debunk（事实核查）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debunk",
+    "url": "https://clawhub.ai/skills/debunk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debunk-8a77aadea7aa86c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "事实核查与辟谣工具。当用户提供链接/图片/视频/文字要求事实核查时触发。覆盖两类场景：自查信息真伪，或核查别人分享的内容并生成回复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tino-chen",
+      "userId": "s17fc8yt0yqfwyna24h50jpcxn847yb4",
+      "displayName": "Tino Chen",
+      "image": "https://avatars.githubusercontent.com/u/263268772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775413969823,
+      "changelog": "Display name: 添加中文名称",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28044e0e582507dcff85a97ac94ae87d9e048d2216b72369774cceeed591675d"
+}

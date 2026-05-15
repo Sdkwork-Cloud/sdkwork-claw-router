@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-form-filler@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_form_filler",
+  "skill": {
+    "id": 9058,
+    "skillKey": "clawhub-pdf-form-filler",
+    "name": "Pdf Form Filler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-form-filler",
+    "url": "https://clawhub.ai/skills/pdf-form-filler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-form-filler-09ab5b98f890365b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fill PDF forms programmatically with text values and checkboxes. Use when you need to populate fillable PDF forms (government forms, applications, surveys, etc.) with data. Supports setting text fields and checkboxes with proper appearance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raulsimpetru",
+      "userId": "publishers:raulsimpetru",
+      "displayName": "RaulSimpetru",
+      "image": "https://avatars.githubusercontent.com/u/26602941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4545,
+      "installsAllTime": 25,
+      "installsCurrent": 24,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1769279676336,
+      "changelog": "- Added `pdf_form_filler` module with `__init__.py` and core `fill_pdf_form.py` implementation.\n- Removed legacy script from `scripts/fill_pdf_form.py`.\n- Updated SKILL.md to include version metadata.\n- Improved project packaging and entry points in `setup.py`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ade958c7949da0b0b6cf6947a3ba7bd388fda647ef1aa4edbd24dfa1f07e2c29"
+}

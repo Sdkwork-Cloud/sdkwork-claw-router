@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63463,
+  "uuid": "skill-clawhub-sec-audit",
+  "skillKey": "clawhub-sec-audit",
+  "name": "sec-audit",
+  "summary": "对 OpenClaw 部署进行只读安全审计，检测环境泄露、认证配置、恶意 Skill 等已知风险和漏洞。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nx4dm1n",
+      "features": [
+        "对 OpenClaw 部署进行只读安全审计，检测环境泄露、认证配置、恶意 Skill 等已知风险和漏洞。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sec-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7656848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sec-audit",
+      "url": "https://clawhub.ai/skills/sec-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-audit",
+    "url": "https://clawhub.ai/skills/sec-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-audit-8db4dce3b1057650.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sec-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sec-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f7923f0cead789771f8ef2f2da8d111a9ac1780c37199f4f423df477d3aa0de",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T14:35:56.709Z"
+}

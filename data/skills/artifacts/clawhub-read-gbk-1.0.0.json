@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/read-gbk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.read_gbk",
+  "skill": {
+    "id": 61264,
+    "skillKey": "clawhub-read-gbk",
+    "name": "read-gbk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "read-gbk",
+    "url": "https://clawhub.ai/skills/read-gbk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/read-gbk-a0e15f4035287636.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取本地文本文件，支持 GBK/UTF-8 编码自动检测"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "delicate314",
+      "userId": "publishers:delicate314",
+      "displayName": "张辰菁",
+      "image": "https://avatars.githubusercontent.com/u/97603327?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773819850589,
+      "changelog": "- Initial release of read-gbk.\n- Reads local text files with automatic encoding detection (GBK first, fallback to UTF-8).\n- Supports multiple file types: .txt, .md, .csv, .log, .docx, .pdf (text-only), .json, .xml, .ini/.cfg.\n- Installs required dependencies automatically when reading .docx (python-docx) or .pdf (pypdf) files.\n- Outputs file content on success; outputs error and exits with code 1 on failure.\n- Large binary files not supported; very large files may be truncated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01a29cd4c57f05d76bb82a28ecef116d095f7c4b2245f9f55ad04256428c6763"
+}

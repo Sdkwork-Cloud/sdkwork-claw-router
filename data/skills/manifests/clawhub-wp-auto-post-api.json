@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57560,
+  "uuid": "skill-clawhub-wp-auto-post-api",
+  "skillKey": "clawhub-wp-auto-post-api",
+  "name": "WordPress API Auto Post 文章自动发布API",
+  "summary": "Publish SEO-optimized articles to WordPress via REST API with RankMath meta fields",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wp_auto_post_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "L1angjy",
+      "features": [
+        "Publish SEO-optimized articles to WordPress via REST API with RankMath meta fields"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wp-auto-post-api@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173944444?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wp-auto-post-api",
+      "url": "https://clawhub.ai/skills/wp-auto-post-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wp-auto-post-api",
+    "url": "https://clawhub.ai/skills/wp-auto-post-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wp-auto-post-api-02a375052e3a1148.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wp-auto-post-api@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wp-auto-post-api-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ac37a16a0ddad09554a96f7c9f7f283b57ed5fbd509f78caecdb4eaa59695de",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T15:57:53.605Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lottery-divination@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lottery_divination",
+  "skill": {
+    "id": 72757,
+    "skillKey": "clawhub-lottery-divination",
+    "name": "彩票测算器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lottery-divination",
+    "url": "https://clawhub.ai/skills/lottery-divination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lottery-divination-3621d31573db7104.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "梅花易数彩票测算器。根据用户提问时的当前时间，起出梅花易数的本卦、互卦、变卦，并将其转化为双色球(ssq)或大乐透(dlt)的推荐号码。当用户提到「算一注彩票」「帮我选号」「梅花易数选号」「双色球/大乐透推荐号码」「今天买什么号」「算卦选号」「卜一注」「来一注」或任何涉及用易学/玄学方法生成彩票号码的请求时，触发..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eamonnn101",
+      "userId": "s177wc7gzcr4219ts07cbrv8z983xk9f",
+      "displayName": "Eamonnn101",
+      "image": "https://avatars.githubusercontent.com/u/69360550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774186797775,
+      "changelog": "- 增强免责声明及提示：新增关于理性购彩和建议投入金额的说明，推荐单次购买彩票不超过10～20元。\n- 输出示例中加入💰娱乐提示，鼓励用户“中不中都开心”。\n- 免责声明文本调整，更突出购彩娱乐性与风险警示。\n- 其余核心流程、使用步骤和回复结构保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74746d077b30084fb826a94247b4b76e89dcdcd0a9fe41fe940ce15095280692"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19072,
+  "uuid": "skill-clawhub-salesforce-integration",
+  "skillKey": "clawhub-salesforce-integration",
+  "name": "Salesforce",
+  "summary": "Salesforce integration. Manage crm and marketing automation data, records, and workflows. Use when the user wants to interact with Salesforce data.",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Salesforce integration",
+        "Manage crm and marketing automation data, records, and workflows",
+        "Use when the user wants to interact with Salesforce data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-integration@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-integration",
+      "url": "https://clawhub.ai/skills/salesforce-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-integration",
+    "url": "https://clawhub.ai/skills/salesforce-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-integration-61c44a6a3859fbdd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-integration@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-integration-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c27b5e857f5a468dc1670231f98ccc317aace3294c7fd6bbb9a0d76a5ca79de8",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:57:12.535Z"
+}

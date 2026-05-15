@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18247,
+  "uuid": "skill-clawhub-norman-manage-clients",
+  "skillKey": "clawhub-norman-manage-clients",
+  "name": "Norman: Manage Clients",
+  "summary": "Manage business clients - list, search, create, or update client information. Use when the user mentions clients, contacts, customers, Kunden, or needs to ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_manage_clients",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stan Kharlap",
+      "features": [
+        "Manage business clients",
+        "list, search, create, or update client information",
+        "Use when the user mentions clients, contacts, customers, Kunden, or needs to ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/norman-manage-clients@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117379032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "norman-manage-clients",
+      "url": "https://clawhub.ai/skills/norman-manage-clients"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-manage-clients",
+    "url": "https://clawhub.ai/skills/norman-manage-clients",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-manage-clients-f83d7012ef799435.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/norman-manage-clients@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-norman-manage-clients-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7866c33ec53263f7cdf511981f6d2a4212c1e1b92bb9b35a1b7d203f910a1da",
+      "artifactSizeBytes": 2333
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T18:43:40.857Z"
+}

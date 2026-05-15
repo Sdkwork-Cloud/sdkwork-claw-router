@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promptfolio-summarize@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promptfolio_summarize",
+  "skill": {
+    "id": 22074,
+    "skillKey": "clawhub-promptfolio-summarize",
+    "name": "Promptfolio Summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promptfolio-summarize",
+    "url": "https://clawhub.ai/skills/promptfolio-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promptfolio-summarize-6f68303ac93f3461.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze AI conversation history across Claude Code, Cursor, Codex, ChatGPT, Gemini CLI, Trae, OpenCode, Antigravity, Windsurf, OpenClaw and other coding agen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "billc8128",
+      "userId": "s17dh9wwvnfhg40q722txczd0h83php4",
+      "displayName": "chenchen",
+      "image": "https://avatars.githubusercontent.com/u/11043124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773334942666,
+      "changelog": "promptfolio-summarize v0.1.0\n\n- Initial release of the promptfolio-summarize skill.\n- Analyzes local AI conversation history across multiple coding agents (Claude Code, Cursor, Codex, ChatGPT, Gemini CLI, Trae, OpenCode, Antigravity, Windsurf, OpenClaw, and others).\n- Detects user \"framework sentences\"—moments where the user teaches AI how to think, not just commands.\n- Builds a personal \"portrait\" of the user for the promptfolio platform using these framework sentences and a 30-day activity heat map.\n- Ensures user privacy: all conversation parsing is local, and only structured summaries are uploaded with user confirmation.\n- Includes robust session discovery, authentication, and session analysis steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a2752bd1fbe03de6dd7010b6f118e78b69468cdc41dafc3693b400c6d47d501"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/r4@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r4",
+  "skill": {
+    "id": 19886,
+    "skillKey": "clawhub-r4",
+    "name": "R4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r4",
+    "url": "https://clawhub.ai/skills/r4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r4-a2ec8adac7fd24b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and manage credentials, secrets, and domain registrations securely using the R4 platform with injected environment variables and API calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukezirngibl",
+      "userId": "publishers:lukezirngibl",
+      "displayName": "Luke Zirngibl",
+      "image": "https://avatars.githubusercontent.com/u/8725920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772183159406,
+      "changelog": "- fix file path",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a6f01ea45a916f3c6502ecb54f806be4febab89db6a5ebac75fba536ad62810"
+}

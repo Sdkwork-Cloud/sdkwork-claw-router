@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fitlog@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitlog",
+  "skill": {
+    "id": 23731,
+    "skillKey": "clawhub-fitlog",
+    "name": "Fitlog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitlog",
+    "url": "https://clawhub.ai/skills/fitlog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitlog-95970847395d20bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track workouts, log sets and reps, and build exercise streaks over time. Use when logging sessions, tracking progress, or reviewing weekly volume."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 421,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773830601485,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6af23563c15e2fcea003b1b499c0b98c2d88b7c7543c94e02c83cdc7ad6a7566"
+}

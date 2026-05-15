@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47874,
+  "uuid": "skill-clawhub-bookforge-big-class-responsibility-extraction",
+  "skillKey": "clawhub-bookforge-big-class-responsibility-extraction",
+  "name": "Big Class Responsibility Extraction",
+  "summary": "Identify and extract responsibilities from an oversized class using Feathers' 7 heuristics + feature sketches. Use whenever a developer faces 'this class is...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_big_class_responsibility_extraction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hung Quoc To",
+      "features": [
+        "Identify and extract responsibilities from an oversized class using Feathers' 7 heuristics + fe.",
+        "Use whenever a developer faces 'this class is..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookforge-big-class-responsibility-extraction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88069966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookforge-big-class-responsibility-extraction",
+      "url": "https://clawhub.ai/skills/bookforge-big-class-responsibility-extraction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-big-class-responsibility-extraction",
+    "url": "https://clawhub.ai/skills/bookforge-big-class-responsibility-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-big-class-responsibility-extraction-13c8c88d021757d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookforge-big-class-responsibility-extraction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-big-class-responsibility-extraction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7599eb7c828c7031d0e87c9a36074b8e903d50d3094dd7fab5f261ad8985cf3a",
+      "artifactSizeBytes": 2716
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T12:45:46.452Z"
+}

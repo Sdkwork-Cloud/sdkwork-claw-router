@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16307,
+  "uuid": "skill-clawhub-agresource",
+  "skillKey": "clawhub-agresource",
+  "name": "Agresource",
+  "summary": "Scrapes and summarizes AgResource grain newsletters with daily sales advice, price-impact sentiment analysis, trend tracking, and Telegram alerts on updates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agresource",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brianppetty",
+      "features": [
+        "Scrapes and summarizes AgResource grain newsletters with daily sales advice, price-impact senti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agresource@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26852668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agresource",
+      "url": "https://clawhub.ai/skills/agresource"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agresource",
+    "url": "https://clawhub.ai/skills/agresource",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agresource-3b5c2aaef59e2513.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agresource@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agresource-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0db8454139faba25fe6a698fae912886337fe0e227bdf09b006baafa4d985c67",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T09:04:22.979Z"
+}

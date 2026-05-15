@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/money-flow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.money_flow",
+  "skill": {
+    "id": 71949,
+    "skillKey": "clawhub-money-flow",
+    "name": "money-flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "money-flow",
+    "url": "https://clawhub.ai/skills/money-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/money-flow-0b07aff7252ed49b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "资金流分析 — 追踪主力资金、超级资金、大单净流入/流出，结合价格行为判断机构意图。当用户说「资金流」「主力资金」「大单净流入」「超级资金」「机构建仓」时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danpian1",
+      "userId": "s17c2b2kp4s4bwmymwmn3f13c984y3t4",
+      "displayName": "danpian1",
+      "image": "https://avatars.githubusercontent.com/u/87922625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776412373076,
+      "changelog": "Initial release of the money-flow skill:\n\n- Analyzes market money flow, tracking major, super, and large transaction fund movements.\n- Activates on keywords like “资金流”, “主力资金”, “大单净流入”, “超级资金”, or “机构建仓”.\n- Explains classification of fund types, core money-flow indicators (DDX, DDI), and their calculation/interpretation.\n- Outlines price-action and money-flow relationships to deduce institutional strategies.\n- Provides a step-by-step approach for practical fund flow analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a596d476fcf6f8fd0fe20a9eed39a22682be273e2533a79614d0e2261c8a6620"
+}

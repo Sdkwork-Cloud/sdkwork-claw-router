@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16726,
+  "uuid": "skill-clawhub-roundtable",
+  "skillKey": "clawhub-roundtable",
+  "name": "Roundtable",
+  "summary": "Multi-agent debate council — spawns 3 specialized sub-agents in parallel (Scholar, Engineer, Muse) for Round 1, then optional Round 2 cross-examination to ch...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roundtable",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robby",
+      "features": [
+        "Multi-agent debate council — spawns 3 specialized sub-agents in parallel (Scholar, Engineer, Mu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/roundtable@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239660374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "roundtable",
+      "url": "https://clawhub.ai/skills/roundtable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roundtable",
+    "url": "https://clawhub.ai/skills/roundtable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roundtable-f5a6025b73c6ae37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/roundtable@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-roundtable-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1322bc2cce89aa6095455340c8c615d7321946ae689007b02b1acb05f560ac77",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:34:39.166Z"
+}

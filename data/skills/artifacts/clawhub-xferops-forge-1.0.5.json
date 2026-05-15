@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xferops-forge@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xferops_forge",
+  "skill": {
+    "id": 21236,
+    "skillKey": "clawhub-xferops-forge",
+    "name": "XferOps Forge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xferops-forge",
+    "url": "https://clawhub.ai/skills/xferops-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xferops-forge-3678b0bd31885417.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage projects and tasks with the Forge project management API via MCP. Use when creating, updating, or searching tasks/tickets, managing projects and colum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parker-xferops",
+      "userId": "publishers:parker-xferops",
+      "displayName": "xferops",
+      "image": "https://avatars.githubusercontent.com/u/259154645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773721903797,
+      "changelog": "Release 1.0.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adef23292ff4fae8d5ed9ead09f4e7a53608ccf0d382ca223e58be92e4b64440"
+}

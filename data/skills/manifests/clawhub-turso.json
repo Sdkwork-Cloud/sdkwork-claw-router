@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25970,
+  "uuid": "skill-clawhub-turso",
+  "skillKey": "clawhub-turso",
+  "name": "Turso",
+  "summary": "Manage Turso SQLite databases via CLI - databases, groups, tokens, replicas. Use when user mentions 'turso', 'libsql', 'sqlite edge', or wants to manage Turs...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turso",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Melvyn",
+      "features": [
+        "Manage Turso SQLite databases via CLI",
+        "databases, groups, tokens, replicas",
+        "Use when user mentions 'turso', 'libsql', 'sqlite edge', or wants to manage Turs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turso@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56388157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turso",
+      "url": "https://clawhub.ai/skills/turso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turso",
+    "url": "https://clawhub.ai/skills/turso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turso-4170f4782823a501.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turso@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-turso-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a173f1c332fe0ca089f970626c3f301bfec49f77afe2eb4758ca1c62d86b5b1",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:37:41.561Z"
+}

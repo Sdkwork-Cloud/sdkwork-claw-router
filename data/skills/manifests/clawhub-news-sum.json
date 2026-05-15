@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70307,
+  "uuid": "skill-clawhub-news-sum",
+  "skillKey": "clawhub-news-sum",
+  "name": "News Sum",
+  "summary": "新闻汇总与邮件投递技能。当用户要求\"生成今日新闻汇总\"、\"把新闻发给邮箱\"时触发。支持：(1) 接收用户指定主题，搜索生成新闻汇总；(2) 按用户要求投递到指定邮箱。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_sum",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leonard",
+      "features": [
+        "新闻汇总与邮件投递技能。当用户要求\"生成今日新闻汇总\"、\"把新闻发给邮箱\"时触发。支持：(1) 接收用户指定主题，搜索生成新闻汇总；(2) 按用户要求投递到指定邮箱。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-sum@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22876690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-sum",
+      "url": "https://clawhub.ai/skills/news-sum"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-sum",
+    "url": "https://clawhub.ai/skills/news-sum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-sum-49e3841badbb0210.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-sum@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-sum-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4ba32e3d58fd2af0a3e602952024276616182badcbd223db46efff336b65cc2",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T17:14:58.296Z"
+}

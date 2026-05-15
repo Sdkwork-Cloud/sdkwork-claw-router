@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20999,
+  "uuid": "skill-clawhub-catalystwatch",
+  "skillKey": "clawhub-catalystwatch",
+  "name": "CatalystWatch",
+  "summary": "Monitor and analyze market-moving catalysts including earnings, FDA decisions, economic data releases, and corporate events",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catalystwatch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Collier King",
+      "features": [
+        "Monitor and analyze market-moving catalysts including earnings, FDA decisions, economic data re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/catalystwatch@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10591022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "catalystwatch",
+      "url": "https://clawhub.ai/skills/catalystwatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catalystwatch",
+    "url": "https://clawhub.ai/skills/catalystwatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catalystwatch-e89a1f360c049970.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/catalystwatch@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-catalystwatch-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61ab555fe81ee60659a9fd6afc85dc7cf26b44898451286f20fe4e57908f3617",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T09:16:05.098Z"
+}

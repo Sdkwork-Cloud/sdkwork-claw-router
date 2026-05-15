@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplo-consulting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_consulting",
+  "skill": {
+    "id": 27008,
+    "skillKey": "clawhub-uplo-consulting",
+    "name": "Uplo Consulting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-consulting",
+    "url": "https://clawhub.ai/skills/uplo-consulting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-consulting-29a1899029a8e7da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered consulting knowledge management. Search engagement records, methodology frameworks, deliverable templates, and best practices with structured extr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roojenkins",
+      "userId": "publishers:roojenkins",
+      "displayName": "RooJenkins",
+      "image": "https://avatars.githubusercontent.com/u/47111622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773809998130,
+      "changelog": "- Initial release of uplo-consulting.\n- Enables AI-powered consulting knowledge management with structured retrieval.\n- Search and extract engagement records, frameworks, templates, and best practices.\n- Provides tooling for proposal development, staffing, onboarding, and lessons learned.\n- Includes directives and reporting functions to support firm operations and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84afa10b73fb55394220e7d7af8b4f73c08bb5e5975000d3fa70fcbb71ac5ea9"
+}

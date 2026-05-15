@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25401,
+  "uuid": "skill-clawhub-alicloud-ai-audio-asr-realtime",
+  "skillKey": "clawhub-alicloud-ai-audio-asr-realtime",
+  "name": "Alicloud Ai Audio Asr Realtime",
+  "summary": "Use when low-latency realtime speech recognition is needed with Alibaba Cloud Model Studio Qwen ASR Realtime models, including streaming microphone input, li...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_ai_audio_asr_realtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when low-latency realtime speech recognition is needed with Alibaba Cloud Model Studio Qwen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-ai-audio-asr-realtime@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-ai-audio-asr-realtime",
+      "url": "https://clawhub.ai/skills/alicloud-ai-audio-asr-realtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-ai-audio-asr-realtime",
+    "url": "https://clawhub.ai/skills/alicloud-ai-audio-asr-realtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-ai-audio-asr-realtime-7c6b78138fb07a87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-ai-audio-asr-realtime@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-ai-audio-asr-realtime-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50fb6c682248965a583ebaab7970e4b67e478ba3f1d2b851e78db3c30c27e9f1",
+      "artifactSizeBytes": 2028
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:36:50.978Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-site-crawl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_site_crawl",
+  "skill": {
+    "id": 27775,
+    "skillKey": "clawhub-a-share-site-crawl",
+    "name": "A Share Site Crawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-site-crawl",
+    "url": "https://clawhub.ai/skills/a-share-site-crawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-site-crawl-b5cc105e6ef8fe72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crawl and validate A-share data from five key sites using browser or fetch methods, handling access limits and normalizing market-news for reliable summaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afengzi",
+      "userId": "publishers:afengzi",
+      "displayName": "afengzi",
+      "image": "https://avatars.githubusercontent.com/u/93957679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773644018278,
+      "changelog": "Initial release of a-share-site-crawl.\n\n- Enables crawling and validating A-share information sources from five major sites: 韭研公社, 雪球, 东方财富, 财联社, 巨潮资讯.\n- Implements browser-first and fallback fetch workflows to handle dynamic content, anti-bot measures, and login walls.\n- Provides normalized output, including source tiering, credibility, opinion-risk handling, and deduplication rules.\n- Defines detailed site roles, probe classifications, extraction modes, and downgrade logic for failed access.\n- Introduces scenario-based contracts and standard output sections for both market news and crawlability checks.\n- Prioritizes public accessibility and extraction stability, and includes clear guidance for when to escalate access requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df31776cb1758f3c22c39d9780aee8d91217ed412f622239da5ab6718ca717be"
+}

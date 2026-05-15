@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15430,
+  "uuid": "skill-clawhub-crypto-trading",
+  "skillKey": "clawhub-crypto-trading",
+  "name": "Crypto Trading",
+  "summary": "Automatically executes trading decisions every 10 minutes using dual AI analysis, technical indicators, and strict risk and position management rules for BTC...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_trading",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WuZiMaKi",
+      "features": [
+        "Automatically executes trading decisions every 10 minutes using dual AI analysis, technical ind."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-trading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17017172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-trading",
+      "url": "https://clawhub.ai/skills/crypto-trading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-trading",
+    "url": "https://clawhub.ai/skills/crypto-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-trading-99e2ed692990ace9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-trading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-trading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a45fb62a6c81645d2f6e427642967dce9d1da608691e2974188aaa6673189792",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T23:54:50.346Z"
+}

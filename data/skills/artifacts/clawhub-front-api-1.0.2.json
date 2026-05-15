@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/front-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.front_api",
+  "skill": {
+    "id": 34212,
+    "skillKey": "clawhub-front-api",
+    "name": "Front"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "front-api",
+    "url": "https://clawhub.ai/skills/front-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/front-api-3f08ce27d872260a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Front API integration with managed OAuth. Manage conversations, messages, contacts, tags, inboxes, teammates, and teams. Use this skill when users want to in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777583411748,
+      "changelog": "- Changed all API and connection management endpoints from `gateway.maton.ai`/`ctrl.maton.ai` to `api.maton.ai`\n- Updated Quick Start and code samples to use the new base URLs\n- Clarified that only listed API endpoints are supported and that Maton proxies to Front\n- Added a security & permissions section outlining write operation approval and workspace scope\n- Removed LICENSE.txt file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e83b951413a937db7e06c590b65356962e021b269e0ecea113608c3e200277e"
+}

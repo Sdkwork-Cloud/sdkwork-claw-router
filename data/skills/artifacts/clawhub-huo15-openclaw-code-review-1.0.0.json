@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huo15-openclaw-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_openclaw_code_review",
+  "skill": {
+    "id": 59775,
+    "skillKey": "clawhub-huo15-openclaw-code-review",
+    "name": "Huo15 Openclaw Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-openclaw-code-review",
+    "url": "https://clawhub.ai/skills/huo15-openclaw-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-openclaw-code-review-61209d95dd22016b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对 GitHub / cnb.cool PR 做综合代码评审（设计 / 实现 / 测试 / 安全 / 可维护五维），借 gh CLI 拉 diff，产出可粘贴到 PR 的评论 markdown。触发词：评审 PR、code review、审一下这个 PR、帮我 review、看看这个合并请求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobod1",
+      "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+      "displayName": "Job Zhao",
+      "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777041290573,
+      "changelog": "首发 — PR 五维综合评审（设计/实现/测试/安全/可维护）+ 可粘贴 markdown 评论",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:772e0a11499642400b2c60e71c4c0761377b9804eb8876e790368841e683b0e9"
+}

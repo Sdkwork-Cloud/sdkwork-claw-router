@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/identity-compass@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identity_compass",
+  "skill": {
+    "id": 31924,
+    "skillKey": "clawhub-identity-compass",
+    "name": "Identity Compass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identity-compass",
+    "url": "https://clawhub.ai/skills/identity-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identity-compass-ea5ae439c28f3c49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hyper-personalized decision compass that extracts your values and choices as vectors from everyday conversations, computes your true life direction (H vector..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ico1036",
+      "userId": "s175dtmd2q3qvcpbpqv7twz8rh83f1sq",
+      "displayName": "Jkim",
+      "image": "https://avatars.githubusercontent.com/u/13959858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1774312599334,
+      "changelog": "Identity Compass v0.5.0 Changelog\n\n- Overhauled SKILL.md description for clarity and global audience appeal (now in English, concise triggers/use-cases).\n- Core functionality and algorithms remain unchanged.\n- All key details, protocols, and technical documentation are preserved for user reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a93e2b76d77d1110dde12a1b6ee1a14596caf2f3926684c37bc57457ad286362"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopping-agent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_agent",
+  "skill": {
+    "id": 65773,
+    "skillKey": "clawhub-shopping-agent",
+    "name": "Shopping Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-agent",
+    "url": "https://clawhub.ai/skills/shopping-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-agent-c9e2dc25cc789575.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供各大海外电商代下单、转运路线配置及品质关税指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 554,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773858734180,
+      "changelog": "- Initial release of Global Shopping Agent.\n- Supports overseas e-commerce ordering, transit route configuration, and tax/guidance information.\n- Filtering options include price range, discount, delivery speed, and seller ratings.\n- Returns detailed payment, logistics, after-sales, and product review information.\n- Provides request examples and daily update guidance based on promotions and inventory.\n- Includes tips for using coupons and checking product integrity before confirming receipt.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:515f17c78998af162291dbbfce2bf14dccae70b41113504d1aba0d6554e5039a"
+}

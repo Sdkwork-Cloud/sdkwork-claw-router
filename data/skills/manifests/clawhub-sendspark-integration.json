@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44923,
+  "uuid": "skill-clawhub-sendspark-integration",
+  "skillKey": "clawhub-sendspark-integration",
+  "name": "Sendspark",
+  "summary": "Sendspark integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sendspark data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendspark_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sendspark integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sendspark data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sendspark-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sendspark-integration",
+      "url": "https://clawhub.ai/skills/sendspark-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendspark-integration",
+    "url": "https://clawhub.ai/skills/sendspark-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendspark-integration-40b96a08d5f77261.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sendspark-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sendspark-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a98a0d88a74f7ecde35a14d08e5e18f830ea454e83ede64080645647596fa5e1",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:46.654Z"
+}

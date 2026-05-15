@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27352,
+  "uuid": "skill-clawhub-phog-cli",
+  "skillKey": "clawhub-phog-cli",
+  "name": "Posthog CLI",
+  "summary": "Manage PostHog product analytics from the terminal. Use when the user asks about PostHog analytics, feature flags, experiments, surveys, dashboards, insights...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phog_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nelsongallardo",
+      "features": [
+        "Manage PostHog product analytics from the terminal",
+        "Use when the user asks about PostHog analytics, feature flags, experiments, surveys, dashboards."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phog-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2769300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phog-cli",
+      "url": "https://clawhub.ai/skills/phog-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phog-cli",
+    "url": "https://clawhub.ai/skills/phog-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phog-cli-655a1223a8a93a49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phog-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phog-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93f3488d633642ee55d4da302a2b6c258516a56ce8cb6b58dab79979c59ce456",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:19:47.935Z"
+}

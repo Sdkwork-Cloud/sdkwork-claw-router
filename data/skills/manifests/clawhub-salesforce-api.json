@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8407,
+  "uuid": "skill-clawhub-salesforce-api",
+  "skillKey": "clawhub-salesforce-api",
+  "name": "Salesforce",
+  "summary": "Salesforce CRM API integration with managed OAuth. Install only if you need Salesforce CRM administration. Connect with the narrowest Salesforce permissions...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Salesforce CRM API integration with managed OAuth",
+        "Install only if you need Salesforce CRM administration",
+        "Connect with the narrowest Salesforce permissions..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-api@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-api",
+      "url": "https://clawhub.ai/skills/salesforce-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-api",
+    "url": "https://clawhub.ai/skills/salesforce-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-api-491935cf12414c3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-api@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-api-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00efc74332128802a09201b61e6f3fa4f09eb03956f830c5af6145ead9c62615",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:08:11.432Z"
+}

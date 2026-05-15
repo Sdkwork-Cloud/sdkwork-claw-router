@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eigen-ai-terminal@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eigen_ai_terminal",
+  "skill": {
+    "id": 50565,
+    "skillKey": "clawhub-eigen-ai-terminal",
+    "name": "Eigen AI Terminal — Live Intelligence for Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eigen-ai-terminal",
+    "url": "https://clawhub.ai/skills/eigen-ai-terminal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eigen-ai-terminal-0dccc79c03606e34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily-updated intelligence on what's happening across 16 areas of AI. 12 tools your agent uses to deliver only the signals, trends, and developments that mat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shawkatdidar",
+      "userId": "s172z35wkn44cpbnecxw2fzkf584adde",
+      "displayName": "shawkatdidar",
+      "image": "https://avatars.githubusercontent.com/u/61266391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775758225877,
+      "changelog": "Fix: remove process.env references flagged by scanner",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca00de95c9306caeccda4502498a98d761716aaa7dcc67a6ab22a018297948b1"
+}

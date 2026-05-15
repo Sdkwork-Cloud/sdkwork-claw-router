@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37131,
+  "uuid": "skill-clawhub-upserve",
+  "skillKey": "clawhub-upserve",
+  "name": "Upserve",
+  "summary": "Upserve integration. Manage data, records, and automate workflows. Use when the user wants to interact with Upserve data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upserve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Upserve integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Upserve data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upserve@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upserve",
+      "url": "https://clawhub.ai/skills/upserve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upserve",
+    "url": "https://clawhub.ai/skills/upserve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upserve-31ad35710057ab3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upserve@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-upserve-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1ed4ae4fb1913c35415fe29bb87ed8bee836d834769253d8eb7f81980db0b75",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:57:39.294Z"
+}

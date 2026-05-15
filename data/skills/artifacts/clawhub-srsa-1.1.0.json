@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/srsa@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.srsa",
+  "skill": {
+    "id": 34879,
+    "skillKey": "clawhub-srsa",
+    "name": "The Spaced Repetition Systems for Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "srsa",
+    "url": "https://clawhub.ai/skills/srsa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/srsa-bece12c71b86fd6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when running Spaced Repetition Systems for AI Agents (SRSA) daily review sessions, grading cards with again/hard/good/easy, and proposing explicit memory..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheanus",
+      "userId": "s17a1mcfjb97qzhnaz2karw6c583gjzy",
+      "displayName": "cheanus",
+      "image": "https://avatars.githubusercontent.com/u/41907044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774334409731,
+      "changelog": "- Added guidance on what types of cards should be generated, including actions corrected by the user, user preferences, and hesitated decisions.\n- Clarified that new cards can also cover anything the user explicitly wants remembered.\n- No changes to workflow, commands, or reflection process.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcefd3d7b8182837cd9680fb7d85405ea5bf8b4982cbd78cee6e611da0520f4b"
+}

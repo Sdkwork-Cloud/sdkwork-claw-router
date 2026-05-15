@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-repair@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_repair",
+  "skill": {
+    "id": 69513,
+    "skillKey": "clawhub-home-repair",
+    "name": "Home Repair"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-repair",
+    "url": "https://clawhub.ai/skills/home-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-repair-0d94aaf5d9bf192d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "该技能介绍如何通过上门维修实现变现；当你计划从事或优化上门维修时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773937675870,
+      "changelog": "上门维修技能上线，提供从零到变现的标准化执行指南。\n\n- 明确上门维修赛道定位、变现模型及核心运营指标\n- 覆盖常用流量渠道与有效的客户获取方法\n- 提供30日执行计划和详细的工具&检查清单\n- 强调合规运营及常见风险规避\n- 适合有实践基础、希望跑通可复制闭环的人或团队",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6b5cd419a08a271bb99890a9a841778444170aa9b26a5a8328070c099a7c91e"
+}

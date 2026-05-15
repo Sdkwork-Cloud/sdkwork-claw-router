@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56369,
+  "uuid": "skill-clawhub-legalfrance",
+  "skillKey": "clawhub-legalfrance",
+  "name": "LegalFrance",
+  "summary": "Assistant juridique français RAG sur codes et lois consolidés (LEGI/DILA). Utiliser pour questions de droit français, recherche d'articles, explication de textes législatifs, synthèse juridique avec citations vérifiables.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legalfrance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "msgnoki",
+      "features": [
+        "Assistant juridique français RAG sur codes et lois consolidés (LEGI/DILA)",
+        "Utiliser pour questions de droit français, recherche d'articles, explication de textes législat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legalfrance@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180914307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legalfrance",
+      "url": "https://clawhub.ai/skills/legalfrance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legalfrance",
+    "url": "https://clawhub.ai/skills/legalfrance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legalfrance-e1bc313e437dc1b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legalfrance@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-legalfrance-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fe649d92b8ddcc5ce2cc1b86cf27c901292e1659697034aef7ab27420dab3e1",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T06:44:20.085Z"
+}

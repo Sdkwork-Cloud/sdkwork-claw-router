@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47600,
+  "uuid": "skill-clawhub-youtube-launch-kit",
+  "skillKey": "clawhub-youtube-launch-kit",
+  "name": "YouTube Launch Kit",
+  "summary": "Turn a video topic, rough notes, or transcript into a complete YouTube launch package. Outputs two title variants, a keyword-optimized description with times...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_launch_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zepoldani",
+      "features": [
+        "Turn a video topic, rough notes, or transcript into a complete YouTube launch package",
+        "Outputs two title variants, a keyword-optimized description with times..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-launch-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36488767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-launch-kit",
+      "url": "https://clawhub.ai/skills/youtube-launch-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-launch-kit",
+    "url": "https://clawhub.ai/skills/youtube-launch-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-launch-kit-8b7d251a7925da5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-launch-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-launch-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e91aec7c68077175aea1a91ba0bda784ceb46fd7537176a097a0a3132b56206e",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T15:06:28.678Z"
+}

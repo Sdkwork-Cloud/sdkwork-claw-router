@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73199,
+  "uuid": "skill-clawhub-a-stock-technical-analysis",
+  "skillKey": "clawhub-a-stock-technical-analysis",
+  "name": "A股技术分析报告",
+  "summary": "A股个股技术分析报告生成工具。当用户请求生成股票技术分析报告、查询A股个股行情、分析个股走势时触发。支持输入股票代码和股票名称，自动抓取东方财富实时数据并生成结构化技术分析报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_technical_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyuqi98",
+      "features": [
+        "A股个股技术分析报告生成工具。当用户请求生成股票技术分析报告、查询A股个股行情、分析个股走势时触发。支持输入股票代码和股票名称，自动抓取东方财富实时数据并生成结构化技术分析报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-technical-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74645439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-technical-analysis",
+      "url": "https://clawhub.ai/skills/a-stock-technical-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-technical-analysis",
+    "url": "https://clawhub.ai/skills/a-stock-technical-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-technical-analysis-18d31c31ab40919c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-technical-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-technical-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fea389d6417724fc6475aace6585bdd3466214bc2b2ead76046a04ba39177c8d",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:48:26.220Z"
+}

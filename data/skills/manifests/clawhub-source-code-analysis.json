@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24002,
+  "uuid": "skill-clawhub-source-code-analysis",
+  "skillKey": "clawhub-source-code-analysis",
+  "name": "source code analysis",
+  "summary": "This skill should be used when the user asks to \"analyze source code\", \"understand this codebase\", \"perform code analysis\", \"study this project\", \"explain th...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.source_code_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "river-zhanglh",
+      "features": [
+        "This skill should be used when the user asks to \"analyze source code\", \"understand this codebas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/source-code-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200566695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "source-code-analysis",
+      "url": "https://clawhub.ai/skills/source-code-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "source-code-analysis",
+    "url": "https://clawhub.ai/skills/source-code-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/source-code-analysis-15e13d79b983b56b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/source-code-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-source-code-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35b5f3fc0e3cfd4bd107a912b8983603a2e53f413c8dec025d299088e4e1f956",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:47:42.579Z"
+}

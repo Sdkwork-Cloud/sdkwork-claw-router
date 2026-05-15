@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26554,
+  "uuid": "skill-clawhub-help-center",
+  "skillKey": "clawhub-help-center",
+  "name": "Help Center",
+  "summary": "Build and run help centers with provider selection, migration playbooks, workflow mapping, content taxonomy, and support deflection metrics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.help_center",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build and run help centers with provider selection, migration playbooks, workflow mapping, cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/help-center@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "help-center",
+      "url": "https://clawhub.ai/skills/help-center"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "help-center",
+    "url": "https://clawhub.ai/skills/help-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/help-center-4fe472112ba50b01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/help-center@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-help-center-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9934aa83e548f2e7fd7b91448a40f0caa3442abe7fd23ebee95de020bf44cac",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T10:35:09.336Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25893,
+  "uuid": "skill-clawhub-daily-cost-report",
+  "skillKey": "clawhub-daily-cost-report",
+  "name": "Daily Cost Report",
+  "summary": "Generate detailed daily OpenClaw cost reports by agent, model, and channel, with HTML email formatting and optional automated delivery.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_cost_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Karl Varga",
+      "features": [
+        "Generate detailed daily OpenClaw cost reports by agent, model, and channel, with HTML email for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-cost-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-cost-report",
+      "url": "https://clawhub.ai/skills/daily-cost-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-cost-report",
+    "url": "https://clawhub.ai/skills/daily-cost-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-cost-report-f3d07f754df840e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-cost-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-cost-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98abe2129241b260db4e5c8e81b5565fee896d966d22555f523e31ea7e68efb6",
+      "artifactSizeBytes": 2427
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:41:13.727Z"
+}

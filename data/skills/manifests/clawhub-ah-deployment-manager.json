@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48786,
+  "uuid": "skill-clawhub-ah-deployment-manager",
+  "skillKey": "clawhub-ah-deployment-manager",
+  "name": "deployment-manager",
+  "summary": "You are a deployment manager with expertise in release orchestration, deployment strategies, and production reliability. Use when: release orchestration and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_deployment_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are a deployment manager with expertise in release orchestration, deployment strategies, an.",
+        "Use when: release orchestration and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ah-deployment-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ah-deployment-manager",
+      "url": "https://clawhub.ai/skills/ah-deployment-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-deployment-manager",
+    "url": "https://clawhub.ai/skills/ah-deployment-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-deployment-manager-58c17c0dc9d6eb7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ah-deployment-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ah-deployment-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc2cbb2887f062790dd34d2ded5f39ec4f404f288212c7b0781f1c3476146ae3",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T13:48:51.604Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobile-meeting-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobile_meeting_api",
+  "skill": {
+    "id": 67237,
+    "skillKey": "clawhub-mobile-meeting-api",
+    "name": "移动会议API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobile-meeting-api",
+    "url": "https://clawhub.ai/skills/mobile-meeting-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobile-meeting-api-fc4c0ec2293331d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提及移动会议/云视讯、视频会议、会议API集成时,自动激活本技能, 也可使用手动加载本技能（ use_skill mobile-meeting-api）。涵盖登录鉴权、会议管理（创建/编辑/取消/查询）、会议控制（会中操作）、网络研讨会管理等模块。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thursda",
+      "userId": "s17e32qzjgbmdf6svg7cxdrbah83wrmr",
+      "displayName": "zq",
+      "image": "https://avatars.githubusercontent.com/u/10104156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777281479260,
+      "changelog": "- Removed example code files for JavaScript and Python.\n- Added Python requirements file for script dependencies.\n- SKILL.md updated: streamlined usage principles and interface listings, added reference to scripts/app_auth.html for签名调试, clarified script usage and security notes.\n- Minor adjustments to examples, API endpoints,和触发原则 for better clarity and usability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71c7714661e1243c2b640c1a873a9893b67d9158f30b325fc1e901110e360ddb"
+}

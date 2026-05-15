@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/double-check-article@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.double_check_article",
+  "skill": {
+    "id": 68270,
+    "skillKey": "clawhub-double-check-article",
+    "name": "Double Check Article"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "double-check-article",
+    "url": "https://clawhub.ai/skills/double-check-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/double-check-article-3587e74dcd40d15f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文文章内容检查工具，用于校对和改进中文文章质量。当用户需要检查中文文章、校对中文内容、修改错别字、优化中文表达、审核中文文档时使用此技能。适用于：(1) 检查错别字和typo (2) 审核表达是否清晰合理 (3) 提供修改建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobegit3hub",
+      "userId": "publishers:tobegit3hub",
+      "displayName": "tobe",
+      "image": "https://avatars.githubusercontent.com/u/2715000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 713,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771873282366,
+      "changelog": "Initial release of double-check-article.\n\n- Provides a 3-step Chinese article review: typo correction, expression clarity check, and improvement suggestions.\n- Checks for homophone/shape errors, typos, and punctuation mistakes.\n- Reviews sentence fluency, logic, word choice, and obvious factual errors.\n- Offers specific actionable suggestions for structural and stylistic improvements.\n- Includes clear output templates for each step.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:17bdd606555c444ec497d8092f6c438d4e7420c75a68763798267342d4f075e3"
+}

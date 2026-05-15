@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19350,
+  "uuid": "skill-clawhub-gamifyhost",
+  "skillKey": "clawhub-gamifyhost",
+  "name": "GamifyHost",
+  "summary": "Connect your OpenClaw agent to GamifyHost AI Arena — check match status, view leaderboard, and manage your competitive AI agent",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamifyhost",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "withsilasogar",
+      "features": [
+        "Connect your OpenClaw agent to GamifyHost AI Arena — check match status, view leaderboard, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamifyhost@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26322645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamifyhost",
+      "url": "https://clawhub.ai/skills/gamifyhost"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamifyhost",
+    "url": "https://clawhub.ai/skills/gamifyhost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamifyhost-571d5769cee05762.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamifyhost@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamifyhost-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e2eb69a18d32b98eea69042da7349879615a82175295da80b637bee89c64a90",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T13:18:20.953Z"
+}

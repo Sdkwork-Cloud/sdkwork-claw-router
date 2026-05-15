@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anomaly-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anomaly_watcher",
+  "skill": {
+    "id": 40369,
+    "skillKey": "clawhub-anomaly-watcher",
+    "name": "Anomaly Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anomaly-watcher",
+    "url": "https://clawhub.ai/skills/anomaly-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anomaly-watcher-f5bec3dcf47a5079.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Continuous behavioral monitoring for OpenClaw agents. Detect anomalies in command patterns, resource usage, and skill invocations against established baselines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arhadnane",
+      "userId": "s17atsjv2c1a86fqvanj1x35as83yc1w",
+      "displayName": "Adnane Arharbi",
+      "image": "https://avatars.githubusercontent.com/u/14889338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775253084224,
+      "changelog": "Initial release of anomaly-watcher: Always-on behavioral monitoring for OpenClaw agents.\n\n- Establishes rolling behavioral baselines for key agent metrics (commands, files, network, skills, etc.).\n- Detects and classifies anomalies using statistical deviation from a 7-day average.\n- Alerts are logged and escalated based on severity (NORMAL, ELEVATED, ANOMALOUS, CRITICAL).\n- Monitors for known attack signatures (recon, exfiltration, supply chain, persistence).\n- Strictly read-only: never modifies agent behavior or requires network access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fcbc514c246892a111264882f2b3343b41866305842bd17d730de1f11d8e95c"
+}

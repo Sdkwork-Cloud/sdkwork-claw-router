@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54035,
+  "uuid": "skill-clawhub-railway",
+  "skillKey": "clawhub-railway",
+  "name": "Railway",
+  "summary": "Railway deployment platform — projects, services, deployments, variables. App hosting CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.railway",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Railway deployment platform — projects, services, deployments, variables",
+        "App hosting CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/railway@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "railway",
+      "url": "https://clawhub.ai/skills/railway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "railway",
+    "url": "https://clawhub.ai/skills/railway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/railway-e34d1c9011e06204.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/railway@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-railway-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d812c7b81ccb94ad31558bcfe77e0f4781f2ae846a01eaedc94cabaa25608e6",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:52:48.627Z"
+}

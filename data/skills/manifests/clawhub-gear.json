@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30031,
+  "uuid": "skill-clawhub-gear",
+  "skillKey": "clawhub-gear",
+  "name": "Gear",
+  "summary": "Use when calculating gear ratios, converting RPM between shafts, computing torque output, analyzing drivetrain configurations, or selecting motors for mechan...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gear",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Use when calculating gear ratios, converting RPM between shafts, computing torque output, analy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gear@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gear",
+      "url": "https://clawhub.ai/skills/gear"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gear",
+    "url": "https://clawhub.ai/skills/gear",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gear-70ad3de50a55e77d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gear@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gear-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9af0b0d90aeaf898d207887b859249f8b20752d32fdf783d9461c80dfb24bd97",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:55:28.769Z"
+}

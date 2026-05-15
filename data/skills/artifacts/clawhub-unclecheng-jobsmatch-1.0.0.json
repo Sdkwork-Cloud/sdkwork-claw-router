@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unclecheng-jobsmatch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unclecheng_jobsmatch",
+  "skill": {
+    "id": 65525,
+    "skillKey": "clawhub-unclecheng-jobsmatch",
+    "name": "Match jobs through resumes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unclecheng-jobsmatch",
+    "url": "https://clawhub.ai/skills/unclecheng-jobsmatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unclecheng-jobsmatch-be9d9b80e0621e78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能简历求职匹配助手，当用户上传简历文件（PDF、Word、图片等）需要进行求职岗位匹配、企业背景调查、岗位适配度评估时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unclecheng-li",
+      "userId": "s17bh56swwmbd744r9ap6pybk5841te4",
+      "displayName": "Unclecheng",
+      "image": "https://avatars.githubusercontent.com/u/55303635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775274687676,
+      "changelog": "- Initial release of the intelligent resume-job matching assistant.\n- Supports multi-format resume parsing (PDF, Word, image).\n- Automatically matches user resumes with openings on top recruitment platforms, covering both large tech companies and startups/SMEs.\n- Provides enterprise background checks, job authenticity verification, and risk identification.\n- Evaluates job fit with a scoring system and generates structured assessment reports, including application links and risk levels.\n- Enables exporting of evaluation reports in Markdown or PDF formats for easy review and archiving.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ee16e2fdbd4b5cfbc0ed1df23d0acc221d8a20d61a24c371460310d74c13b67"
+}

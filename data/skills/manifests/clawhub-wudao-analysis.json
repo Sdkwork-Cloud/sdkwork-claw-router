@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59271,
+  "uuid": "skill-clawhub-wudao-analysis",
+  "skillKey": "clawhub-wudao-analysis",
+  "name": "悟道 · A股资金分析",
+  "summary": "悟道 · A股资金分析：异动检测、资金流向、北向资金、板块轮动、股票关联、概念排行与成分股。Use when: user asks about A股, 资金, stock anomalies, capital flow, money flow, northbound capital, sector rotatio...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wudao_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wudao",
+      "features": [
+        "悟道 · A股资金分析：异动检测、资金流向、北向资金、板块轮动、股票关联、概念排行与成分股。Use when: user asks about A股, 资金, stock anomalies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wudao-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4266157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wudao-analysis",
+      "url": "https://clawhub.ai/skills/wudao-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wudao-analysis",
+    "url": "https://clawhub.ai/skills/wudao-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wudao-analysis-acc64d4a4b4cbaf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wudao-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wudao-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:048dcd45b6b182c05a4c43f0943d99b8bc9a113d7f11c89fa98a1793df7465c3",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:19:32.342Z"
+}

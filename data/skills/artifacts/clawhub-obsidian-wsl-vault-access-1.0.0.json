@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-wsl-vault-access@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_wsl_vault_access",
+  "skill": {
+    "id": 28386,
+    "skillKey": "clawhub-obsidian-wsl-vault-access",
+    "name": "obsidian-wsl-vault-access"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-wsl-vault-access",
+    "url": "https://clawhub.ai/skills/obsidian-wsl-vault-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-wsl-vault-access-2c7ea624a21b136d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with an Obsidian vault stored on Windows and accessed from WSL. Read, search, create, and edit markdown notes directly through mounted paths such as /mn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wufei-png",
+      "userId": "s17ff8qt8kgjp387vqdhv9ht3583grte",
+      "displayName": "Wu Fei",
+      "image": "https://avatars.githubusercontent.com/u/63766429?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774117590407,
+      "changelog": "Initial release of Obsidian WSL Vault Access:\n\n- Enables reading, searching, creating, and editing Obsidian markdown notes stored on Windows and accessed from WSL via /mnt/<drive> paths.\n- Provides clear guidelines for path translation and handling of vault root discovery.\n- Preserves Obsidian conventions including frontmatter, wiki-links, embeds, and folder structure.\n- Supports common note operations via direct filesystem access from WSL.\n- Includes best practices for safe editing and vault consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e22402a4c6178a9070794e9a26cbc2a748780a68eeb627677dd83fcd73e765ee"
+}

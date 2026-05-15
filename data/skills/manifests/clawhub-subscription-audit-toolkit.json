@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49888,
+  "uuid": "skill-clawhub-subscription-audit-toolkit",
+  "skillKey": "clawhub-subscription-audit-toolkit",
+  "name": "Subscription Audit Toolkit",
+  "summary": "Helps you identify unused subscriptions, evaluate their value and usage, and create a plan to reduce costs and manage recurring payments efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscription_audit_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Helps you identify unused subscriptions, evaluate their value and usage, and create a plan to r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subscription-audit-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subscription-audit-toolkit",
+      "url": "https://clawhub.ai/skills/subscription-audit-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscription-audit-toolkit",
+    "url": "https://clawhub.ai/skills/subscription-audit-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscription-audit-toolkit-815bef9bf7c47e59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subscription-audit-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subscription-audit-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7518f93d35ed78323d1ce693e127aeb0ca582df98c708a588a924eff70f5b5c6",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T23:16:43.734Z"
+}

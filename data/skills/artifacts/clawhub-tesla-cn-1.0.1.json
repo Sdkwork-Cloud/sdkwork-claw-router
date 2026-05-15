@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tesla-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tesla_cn",
+  "skill": {
+    "id": 65433,
+    "skillKey": "clawhub-tesla-cn",
+    "name": "Tesla China"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tesla-cn",
+    "url": "https://clawhub.ai/skills/tesla-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tesla-cn-ce7c50a8e8de256a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向中国特斯拉车主的远程控制技能，基于特斯拉官方车队 API（Fleet API）实现，使用简单、体验自然。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mywind2020",
+      "userId": "publishers:mywind2020",
+      "displayName": "mywind2020",
+      "image": "https://avatars.githubusercontent.com/u/64183208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773664724557,
+      "changelog": "特斯拉中国技能\n通过特斯拉官方车队 API，为中国地区的特斯拉车辆提供远程控制能力\n支持核心指令：车辆列表查询、唤醒、车门上锁/解锁、前后备箱控制、闪灯、空调控制、鸣笛、充电口控制以及远程音效等。\n提供灵活的 apiKey 配置方式：可通过用户主目录配置文件（~/.tesla_cn.json），或通过命令行参数覆盖。\n内置完整的使用说明及脚本，支持一键初始化配置文件。\n包含安全与隐私使用指引，保障使用过程中的安全性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26c188896743cb7177571be45a5120db233f19e4d01b927f5eb3ec9341ebd213"
+}

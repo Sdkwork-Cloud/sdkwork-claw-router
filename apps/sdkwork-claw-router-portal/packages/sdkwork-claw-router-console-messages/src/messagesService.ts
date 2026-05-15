@@ -20,7 +20,7 @@ export interface Message {
 
 export class MessagesService {
   static async fetchMessages(): Promise<Message[]> {
-    const result = await getClawRouterAppSdkClient().notification.fetchMessages();
+    const result = await getClawRouterAppSdkClient().communication.notifications.list();
     ensurePlusApiSuccess(result, 'Failed to fetch messages');
     return readRequiredApiItems(result, 'Failed to fetch messages').map(readMessage);
   }

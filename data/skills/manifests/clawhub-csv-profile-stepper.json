@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61001,
+  "uuid": "skill-clawhub-csv-profile-stepper",
+  "skillKey": "clawhub-csv-profile-stepper",
+  "name": "csv-profile-stepper",
+  "summary": "读取 CSV 并输出字段类型、空值率、唯一值计数。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_profile_stepper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "askjda",
+      "features": [
+        "读取 CSV 并输出字段类型、空值率、唯一值计数。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csv-profile-stepper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94748630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csv-profile-stepper",
+      "url": "https://clawhub.ai/skills/csv-profile-stepper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-profile-stepper",
+    "url": "https://clawhub.ai/skills/csv-profile-stepper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-profile-stepper-30fd1640626120aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csv-profile-stepper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csv-profile-stepper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53fa4104d7c92b31c27f8aa9034a895e77b358e6cf21483b4a9b12a115f74f9c",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:06:29.541Z"
+}

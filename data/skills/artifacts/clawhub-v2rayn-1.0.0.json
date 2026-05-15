@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v2rayn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v2rayn",
+  "skill": {
+    "id": 17348,
+    "skillKey": "clawhub-v2rayn",
+    "name": "V2rayn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v2rayn",
+    "url": "https://clawhub.ai/skills/v2rayn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v2rayn-91cb8b3d36d4b805.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage V2RayN on macOS to list nodes, test proxy connections, check current node status, view logs, and support auto-failover via scripted health checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiangwang375-wq",
+      "userId": "publishers:qiangwang375-wq",
+      "displayName": "qiangwang375-wq",
+      "image": "https://avatars.githubusercontent.com/u/227562646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771824126480,
+      "changelog": "V2RayN Skill 1.0.0 — Initial Release\n\n- Manage V2RayN proxy client on macOS with auto-failover and node health checks.\n- Provides scripts and cron job setup for automated node testing and troubleshooting.\n- Includes manual commands for checking status, listing nodes, viewing logs, and restarting V2RayN.\n- Documents config file locations and troubleshooting steps for common issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20d6520e6f0c37e3328f68f7986c929f0140496bb5772e951fe8a255ad61738b"
+}

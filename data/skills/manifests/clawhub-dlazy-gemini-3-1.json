@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49546,
+  "uuid": "skill-clawhub-dlazy-gemini-3-1",
+  "skillKey": "clawhub-dlazy-gemini-3-1",
+  "name": "Dlazy Gemini 3.1",
+  "summary": "Google's multimodal model with strong long-context and vision understanding. Suitable for document parsing, image/video understanding, and structured output.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_gemini_3_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Google's multimodal model with strong long-context and vision understanding",
+        "Suitable for document parsing, image/video understanding, and structured output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-gemini-3-1@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-gemini-3-1",
+      "url": "https://clawhub.ai/skills/dlazy-gemini-3-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-gemini-3-1",
+    "url": "https://clawhub.ai/skills/dlazy-gemini-3-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-gemini-3-1-32d5f0244a26f233.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-gemini-3-1@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-gemini-3-1-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14ee3939d0613f295ca73867698035ef762216efe241d4800b8630514cdaedb8",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:03:56.872Z"
+}

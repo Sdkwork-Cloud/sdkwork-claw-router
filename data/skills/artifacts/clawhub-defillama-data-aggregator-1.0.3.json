@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/defillama-data-aggregator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defillama_data_aggregator",
+  "skill": {
+    "id": 32976,
+    "skillKey": "clawhub-defillama-data-aggregator",
+    "name": "Defillama Data Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defillama-data-aggregator",
+    "url": "https://clawhub.ai/skills/defillama-data-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defillama-data-aggregator-8a806923cd0afd4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional DeFi data aggregator that provides unified access to TVL, protocols, chains, and yields data from DefiLlama. Supports multiple output formats (J..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deanpeng-dotcom",
+      "userId": "s17be4djsk51cp2zg7bk77n18n84n734",
+      "displayName": "deanpeng-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/271209600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775957558736,
+      "changelog": "- Added comprehensive documentation in SKILL.md, including detailed usage instructions, command references, security features, and troubleshooting guidance.\n- Clarified all supported commands, output formats, and API endpoints used.\n- Documented security measures such as input validation and error handling.\n- Provided practical examples and use cases for DeFi investors, analysts, and developers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:423a79885d4c3cae1d4d3e67ccd0eda39a394ee49e00d19c4c4a648ec12ddcab"
+}

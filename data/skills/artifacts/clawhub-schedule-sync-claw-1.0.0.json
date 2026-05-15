@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/schedule-sync-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schedule_sync_claw",
+  "skill": {
+    "id": 72211,
+    "skillKey": "clawhub-schedule-sync-claw",
+    "name": "日程协办虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schedule-sync-claw",
+    "url": "https://clawhub.ai/skills/schedule-sync-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schedule-sync-claw-12a309bac296c186.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书日历智能协作 Skill。核心能力：(1) 智能约会——查询多人空闲时间、自动创建会议并发送邀请，(2) 日程同步——监听/查询日历变更并同步，(3) 会议背景预置——会前自动拉取相关飞书文档和会议纪要。激活场景：用户提到安排会议、约人开会、查空闲时间、日程协调、会议邀请、预置背景资料、会前准备、查日历、创建..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774594711402,
+      "changelog": "首次发布：飞书日历智能协作 Skill，支持创建会议、查空闲、日程管理、邀请回复、会议背景预置，含插件模式 + API脚本双引擎",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:644bb8dc453c07076bd346e64ceb577175cf048e6befa9044884c317884488cd"
+}

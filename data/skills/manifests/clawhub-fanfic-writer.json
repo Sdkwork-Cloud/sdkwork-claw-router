@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63191,
+  "uuid": "skill-clawhub-fanfic-writer",
+  "skillKey": "clawhub-fanfic-writer",
+  "name": "Fanfic Writer",
+  "summary": "自动化小说写作助手 v2.1 - 基于证据的状态管理、多视角QC、原子I/O、每个阶段人工确认",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanfic_writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tanson515",
+      "features": [
+        "自动化小说写作助手 v2.1",
+        "基于证据的状态管理、多视角QC、原子I/O、每个阶段人工确认"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fanfic-writer@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130651415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fanfic-writer",
+      "url": "https://clawhub.ai/skills/fanfic-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanfic-writer",
+    "url": "https://clawhub.ai/skills/fanfic-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanfic-writer-fa7fa429c2853d23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fanfic-writer@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fanfic-writer-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aade834114f2cc3091655a78576affb2be00820cfca3039980378c9f74ff8723",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T19:57:03.322Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54433,
+  "uuid": "skill-clawhub-drumstick",
+  "skillKey": "clawhub-drumstick",
+  "name": "Drumstick",
+  "summary": "Provides detailed information on Nestlé's Drumstick ice cream brand, including history, flavors, market strategy, and seasonal trends.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drumstick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides detailed information on Nestlé's Drumstick ice cream brand, including history, flavors."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drumstick@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drumstick",
+      "url": "https://clawhub.ai/skills/drumstick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drumstick",
+    "url": "https://clawhub.ai/skills/drumstick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drumstick-b2e94cfafcaafef7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drumstick@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drumstick-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c39ddda32312f0bbd441edd32be9cdf738606fc5621231ecef2d4a660b890386",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T12:05:03.775Z"
+}

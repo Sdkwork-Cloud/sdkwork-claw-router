@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40929,
+  "uuid": "skill-clawhub-alibabacloud-network-eip-associate",
+  "skillKey": "clawhub-alibabacloud-network-eip-associate",
+  "name": "Alibabacloud Network Eip Associate",
+  "summary": "Allocate Elastic IP Address (EIP) and bind to existing Alibaba Cloud resources. Supports ECS instances, ENI, CLB, NAT Gateway, HAVIP, and IP addresses. Focus...",
+  "version": "0.0.1-beta.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_network_eip_associate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Allocate Elastic IP Address (EIP) and bind to existing Alibaba Cloud resources",
+        "Supports ECS instances, ENI, CLB, NAT Gateway, HAVIP, and IP addresses",
+        "Focus..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-network-eip-associate@0.0.1-beta.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-network-eip-associate",
+      "url": "https://clawhub.ai/skills/alibabacloud-network-eip-associate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-network-eip-associate",
+    "url": "https://clawhub.ai/skills/alibabacloud-network-eip-associate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-network-eip-associate-8b8108408aa875f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-network-eip-associate@0.0.1-beta.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-network-eip-associate-0.0.1-beta.2.json",
+      "version": "0.0.1-beta.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b5725d195e242ecb7223c08acb6bdd4c939cc724806984b263a3068ab7db9a4",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:16:27.491Z"
+}

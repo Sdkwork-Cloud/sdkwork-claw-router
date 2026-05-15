@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60416,
+  "uuid": "skill-clawhub-text-to-podcast",
+  "skillKey": "clawhub-text-to-podcast",
+  "name": "Text To Podcast",
+  "summary": "将文本转换为播客音频（使用 TTS）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_podcast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "将文本转换为播客音频（使用 TTS）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-podcast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-podcast",
+      "url": "https://clawhub.ai/skills/text-to-podcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-podcast",
+    "url": "https://clawhub.ai/skills/text-to-podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-podcast-83336eb19eed1bde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-podcast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-podcast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07b7c496928f7e73a2a1188802938450dd19aebf822ab00ad42460cee5a1f093",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T19:11:02.293Z"
+}

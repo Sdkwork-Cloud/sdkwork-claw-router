@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/encode@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.encode",
+  "skill": {
+    "id": 51295,
+    "skillKey": "clawhub-encode",
+    "name": "Encode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "encode",
+    "url": "https://clawhub.ai/skills/encode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/encode-b7d18e8f99d59aba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Encode concepts, best practices, and implementation patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1774314918265,
+      "changelog": "Fix description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d95e26332f21871db7ae0c04cd1a3f2ab3270eaf015c74652de85c401b9170a2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-oi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_oi",
+  "skill": {
+    "id": 39382,
+    "skillKey": "clawhub-image-to-video-oi",
+    "name": "Image To Video Oi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-oi",
+    "url": "https://clawhub.ai/skills/image-to-video-oi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-oi-5ef9045582ae340c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn three product photos in JPG format into 1080p animated image videos just by typing what you need. Whether it's converting still images into shareable vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776694556055,
+      "changelog": "Initial release of Image to Video AI — Convert Images Into Video Clips.\n\n- Instantly turn up to three JPG product images into 1080p animated video clips with simple text instructions.\n- No setup required: auto-connects to cloud GPU backend, handles authentication for free (limited credits included).\n- Supports batch uploads, text overlays, background music, and aspect ratio changes through concise prompts.\n- Exports high-quality MP4 (plus other major formats), delivered in 30–90 seconds with easy download links.\n- Clear error messages, session continuity, and status feedback for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59d645a8d93c66a8cda06564d76a5db143b6ff48c55ecd62889d748c4b73f660"
+}

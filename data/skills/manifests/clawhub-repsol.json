@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69959,
+  "uuid": "skill-clawhub-repsol",
+  "skillKey": "clawhub-repsol",
+  "name": "Repsol",
+  "summary": "提供Repsol公司概要、业务布局、能源转型策略及财务状况，支持查询西班牙及拉美能源市场信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repsol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Repsol公司概要、业务布局、能源转型策略及财务状况，支持查询西班牙及拉美能源市场信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repsol@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repsol",
+      "url": "https://clawhub.ai/skills/repsol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repsol",
+    "url": "https://clawhub.ai/skills/repsol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repsol-8569380a47798846.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repsol@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-repsol-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:776f22e807279d275a1eeb35a88d48b8e43eef38856386078e4ef9e845e4e5e4",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T01:10:30.789Z"
+}

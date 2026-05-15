@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40742,
+  "uuid": "skill-clawhub-sharp-line-detector",
+  "skillKey": "clawhub-sharp-line-detector",
+  "name": "Sharp Line Detector",
+  "summary": "Monitor line movements at sharp sportsbooks (Pinnacle, Circa, Bookmaker). Detect steam moves, reverse line movement, and significant implied probability shif...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sharp_line_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsquaredsolutions2026",
+      "features": [
+        "Monitor line movements at sharp sportsbooks (Pinnacle, Circa, Bookmaker)",
+        "Detect steam moves, reverse line movement, and significant implied probability shif..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sharp-line-detector@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217474775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sharp-line-detector",
+      "url": "https://clawhub.ai/skills/sharp-line-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sharp-line-detector",
+    "url": "https://clawhub.ai/skills/sharp-line-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sharp-line-detector-d6d8ffd92e098894.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sharp-line-detector@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sharp-line-detector-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3dd8c466ee059394dd6db8e8ef11ce602a3ecad38975ef6ff4a179478f4d6ff6",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:23:01.301Z"
+}

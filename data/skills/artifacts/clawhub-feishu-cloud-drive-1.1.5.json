@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-cloud-drive@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cloud_drive",
+  "skill": {
+    "id": 71179,
+    "skillKey": "clawhub-feishu-cloud-drive",
+    "name": "飞书云盘助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cloud-drive",
+    "url": "https://clawhub.ai/skills/feishu-cloud-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cloud-drive-d7275fecff65aec0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于飞书官方 API 的云盘管理技能，支持文件列表查询、上传、下载、文件夹创建、权限管理、文件搜索、统计信息、快捷方式、复制移动等完整功能。参考 feishu-drive 技能开发，修复了原技能中的 API 调用错误，并新增了自动化权限管理功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "han880520",
+      "userId": "s177mc8ak4z7vy4nf2syxps0bx83h9sq",
+      "displayName": "han880520",
+      "image": "https://avatars.githubusercontent.com/u/58407816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1774244058496,
+      "changelog": "feishu-cloud-drive 1.1.5\n\n- No file changes detected in this release.\n- Behavior and documentation remain unchanged from previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acf787e8398a26e703057b6e21f2095b8a299449aa15865a995e50ea3a2e287f"
+}

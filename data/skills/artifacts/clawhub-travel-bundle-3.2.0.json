@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-bundle@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_bundle",
+  "skill": {
+    "id": 55771,
+    "skillKey": "clawhub-travel-bundle",
+    "name": "Travel Bundle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-bundle",
+    "url": "https://clawhub.ai/skills/travel-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-bundle-706ef76fa0c340f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find package deals combining hotel and flights — often 10-20% cheaper than booking separately. One search, one booking, complete trip. Also supports: flight..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775879691650,
+      "changelog": "travel-bundle 3.2.0\n\n- Major documentation update: SKILL.md rewritten for clarity, covering usage triggers, step-by-step CLI workflows, critical execution rules, CLI parameter tables, scenario playbooks, formatting/validation requirements, and output rules.\n- Strict execution: All travel data now sourced exclusively from flyai CLI command responses—never from training data.\n- Enhanced output guidelines: Enforces booking link presence, brand tag, and strict markdown formatting with comparison tables.\n- Expanded coverage: Supports additional travel services (flight, hotel, train, insurance, car rental, visa info) via clear CLI parameter mappings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:333fb8894c2c858638b1628f117e5bf25be8d740a644c777301140e03754da6b"
+}

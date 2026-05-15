@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cui@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cui",
+  "skill": {
+    "id": 66983,
+    "skillKey": "clawhub-cui",
+    "name": "cui-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cui",
+    "url": "https://clawhub.ai/skills/cui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cui-75650d98e971a3fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "催skill是项目进度条最严厉的导师，催Bro+催Sis双人催活搭档，专治智能体和用户拖延症的毛病。抽卡式随机角色出场，R/SR/SSR/UR六角色全场景催命。触发：拖延或召唤。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dataelf",
+      "userId": "s176s1dhcrgkwberm0gm7wr1yh8688jh",
+      "displayName": "Eddie Zhao",
+      "image": "https://avatars.githubusercontent.com/u/45774503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778248342964,
+      "changelog": "- 引入「抽卡式」随机催人机制，六大催角（R/SR/SSR/UR稀有度）覆盖更多风格与趣味。\n- 更新催角设定：新增「催弟弟」「催老哥」「催总」「爆催哥」等角色，各有专属口吻与收尾语。\n- 支持双人出场随机彩蛋体验，催活氛围更强烈。\n- 明确同一事多次拖延自动升级催促强度，层级递进更细致。\n- 优化话术矩阵，所有主要场景均匹配不同角色招牌催促台词。\n- 禁止行为更精细化，保障人性与趣味兼备。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1521447d986fa982ae82e25f21b88b4fb57294e115181a4c45ca9872adf236f1"
+}

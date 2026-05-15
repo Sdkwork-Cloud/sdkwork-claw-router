@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-patent@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_patent",
+  "skill": {
+    "id": 66005,
+    "skillKey": "clawhub-chinese-patent",
+    "name": "Chinese Patent Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-patent",
+    "url": "https://clawhub.ai/skills/chinese-patent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-patent-c12b37be2c1dd5fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从代码或技术方案出发，撰写符合 CNIPA 规范的中国专利申请文件。核心能力：① 扫描代码提取可专利特征并抽象提炼 ② 战略性权利要求布局（洋葱式防线 + 侵权规避视角）③ 生成完整专利文件（摘要、权利要求书、说明书）。支持发明专利和实用新型。融合 code-patent-scanner 代码分析方法 + CNI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaolegao2024",
+      "userId": "s17096qr6yfs9qrty6rqd4ccdd84tk55",
+      "displayName": "gaolegao2024",
+      "image": "https://avatars.githubusercontent.com/u/153821179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776179540158,
+      "changelog": "v2.0: 完整CNIPA规范专利撰写，支持代码扫描+权利要求战略布局",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41333382b435b3cc3ddcb2012a0302169866e680076a87bc85721fd3a38c888d"
+}

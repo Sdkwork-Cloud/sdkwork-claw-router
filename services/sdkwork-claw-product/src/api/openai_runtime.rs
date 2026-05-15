@@ -5,9 +5,10 @@ use sdkwork_claw_http::ApiKeyIdentity;
 use crate::api::openai_error::openai_error;
 use crate::application::{
     ApiKeyAuthenticator, ApiKeySecretHasher, AuthenticateApiKeyQuery, AuthenticatedApiKeyContext,
-    PricingResolver, ResolveModelPriceQuery,
+    ProviderRouteSelectionError, ProviderRouteSelectionErrorKind, ProviderRouteSelector,
+    SelectProviderRouteQuery,
 };
-use crate::domain::{AiModel, BillingMeter, ModelProviderRoute};
+use crate::domain::{AiModel, BillingMeter, ModelProviderRoute, RoutingCapability};
 use crate::ports::PricingCatalog;
 
 pub(super) type OpenAiRouteError = Box<Response>;
@@ -110,6 +111,7 @@ pub(super) fn first_priced_provider_route<C>(
     catalog: &C,
     context: &AuthenticatedApiKeyContext,
     model: &str,
+    capability: RoutingCapability,
     billing_meter: BillingMeter,
 ) -> Result<ModelProviderRoute, OpenAiRouteError>
 where
@@ -117,32 +119,32 @@ where
 {
     let catalog_model = find_catalog_model(catalog, model)?;
     let catalog_key = catalog_model.catalog_key;
-    let Some(route) = catalog
-        .list_provider_routes(&catalog_key)
-        .into_iter()
-        .next()
-    else {
-        return Err(Box::new(openai_error(
+    ProviderRouteSelector::new(catalog)
+        .select(SelectProviderRouteQuery {
+            context: context.clone(),
+            catalog_key,
+            requested_model: model.to_owned(),
+            capability,
+            billing_meter,
+        })
+        .map(|selection| selection.route)
+        .map_err(provider_route_selection_error)
+}
+
+fn provider_route_selection_error(error: ProviderRouteSelectionError) -> OpenAiRouteError {
+    let message = error.to_string();
+    match error.kind() {
+        ProviderRouteSelectionErrorKind::ProviderRouteUnavailable => Box::new(openai_error(
             StatusCode::SERVICE_UNAVAILABLE,
             "provider_route_not_available",
             "server_error",
-            format!("provider route is not available for model: {catalog_key}"),
-        )));
-    };
-    PricingResolver::new(catalog)
-        .resolve(ResolveModelPriceQuery {
-            api_key_id: context.api_key_id,
-            model: catalog_key,
-            billing_meter,
-            provider_code: Some(route.provider_code.clone()),
-        })
-        .map(|_| route)
-        .map_err(|error| {
-            Box::new(openai_error(
-                StatusCode::BAD_REQUEST,
-                "pricing_unavailable",
-                "invalid_request_error",
-                error,
-            ))
-        })
+            message,
+        )),
+        ProviderRouteSelectionErrorKind::PricingUnavailable => Box::new(openai_error(
+            StatusCode::BAD_REQUEST,
+            "pricing_unavailable",
+            "invalid_request_error",
+            message,
+        )),
+    }
 }

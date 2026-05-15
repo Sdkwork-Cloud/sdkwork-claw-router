@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hotjar@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotjar",
+  "skill": {
+    "id": 29194,
+    "skillKey": "clawhub-hotjar",
+    "name": "Hotjar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotjar",
+    "url": "https://clawhub.ai/skills/hotjar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotjar-b8636af4459a4047.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hotjar integration. Manage data, records, and automate workflows. Use when the user wants to interact with Hotjar data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 308,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777568208158,
+      "changelog": "Sync latest repo update (force all run)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c63dc97cabfc690761b7a0089cc4f9f6169897fcdc6aca60986af726204b21b"
+}

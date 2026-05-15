@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24793,
+  "uuid": "skill-clawhub-happyfox-chat",
+  "skillKey": "clawhub-happyfox-chat",
+  "name": "Happyfox Chat",
+  "summary": "HappyFox Chat integration. Manage Chats, Agents, Visitors, Departments, Reports, Integrations. Use when the user wants to interact with HappyFox Chat data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.happyfox_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "HappyFox Chat integration",
+        "Manage Chats, Agents, Visitors, Departments, Reports, Integrations",
+        "Use when the user wants to interact with HappyFox Chat data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/happyfox-chat@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "happyfox-chat",
+      "url": "https://clawhub.ai/skills/happyfox-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "happyfox-chat",
+    "url": "https://clawhub.ai/skills/happyfox-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/happyfox-chat-ba26151546513750.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/happyfox-chat@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-happyfox-chat-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b882b1acd81df896fc51ef73d9e0e8006db70e5863fe6f5604dd4b433fd72ac4",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:55:14.738Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23427,
+  "uuid": "skill-clawhub-gmgn-market",
+  "skillKey": "clawhub-gmgn-market",
+  "name": "GMGN Skill Market",
+  "summary": "Get crypto and meme token price charts (K-line, candlestick, OHLCV), trending meme coin rankings by volume, and newly launched tokens on launchpads (pump.fun...",
+  "version": "1.2.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmgn_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GMGN.AI",
+      "features": [
+        "Get crypto and meme token price charts (K-line, candlestick, OHLCV), trending meme coin ranking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmgn-market@1.2.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141223802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmgn-market",
+      "url": "https://clawhub.ai/skills/gmgn-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmgn-market",
+    "url": "https://clawhub.ai/skills/gmgn-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmgn-market-879b6a62ae3c9fc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmgn-market@1.2.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmgn-market-1.2.8.json",
+      "version": "1.2.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:472a49b7be68aaa79ec520c943f35a4c32943fe0a973d2e30bb186a2c29cdb62",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:45:52.934Z"
+}

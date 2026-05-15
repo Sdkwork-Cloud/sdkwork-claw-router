@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25752,
+  "uuid": "skill-clawhub-lebevolae-x-post",
+  "skillKey": "clawhub-lebevolae-x-post",
+  "name": "Lebevolae X Post",
+  "summary": "Automatically post text or a single local image tweet to X/Twitter using provided developer credentials.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lebevolae_x_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lebevolae",
+      "features": [
+        "Automatically post text or a single local image tweet to X/Twitter using provided developer cre."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lebevolae-x-post@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67351270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lebevolae-x-post",
+      "url": "https://clawhub.ai/skills/lebevolae-x-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lebevolae-x-post",
+    "url": "https://clawhub.ai/skills/lebevolae-x-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lebevolae-x-post-cf6d5dc9bbffc926.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lebevolae-x-post@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lebevolae-x-post-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d6f2ca72e2f6887c8e5c4df1e191a68c34b20725f4ec1a020664ccbf0176d71",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T21:20:08.981Z"
+}

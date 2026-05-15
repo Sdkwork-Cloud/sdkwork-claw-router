@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/internet-lookup-verifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internet_lookup_verifier",
+  "skill": {
+    "id": 10465,
+    "skillKey": "clawhub-internet-lookup-verifier",
+    "name": "Internet Lookup Verifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internet-lookup-verifier",
+    "url": "https://clawhub.ai/skills/internet-lookup-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internet-lookup-verifier-ac4fef1a34389c11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify information by performing an internet lookup before answering questions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amangarg1999",
+      "userId": "publishers:amangarg1999",
+      "displayName": "AmanGarg1999",
+      "image": "https://avatars.githubusercontent.com/u/35924708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2326,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769681765584,
+      "changelog": "- Initial release of internet-lookup-verifier skill.\n- Verifies factual answers by performing online searches before responding.\n- Returns concise answers with supporting source URLs.\n- Handles ambiguity by reporting uncertainty if sources conflict or cannot be found.\n- Designed for extensibility, including support for guidelines and advanced credibility scoring.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fb6bbd72799576c2dba9fd0af06ae0a4572c2f96a58f33d18d2855d6df9fcffc"
+}

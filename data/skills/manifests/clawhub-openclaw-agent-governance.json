@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42857,
+  "uuid": "skill-clawhub-openclaw-agent-governance",
+  "skillKey": "clawhub-openclaw-agent-governance",
+  "name": "Openclaw Agent Governance",
+  "summary": "Set up or audit an OpenClaw agent workspace with standardized governance files. Use when: (1) creating a new agent workspace, (2) auditing existing agent fil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_governance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "u0003-yxuan",
+      "features": [
+        "Set up or audit an OpenClaw agent workspace with standardized governance files",
+        "Use when: (1) creating a new agent workspace, (2) auditing existing agent fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-agent-governance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67730072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-agent-governance",
+      "url": "https://clawhub.ai/skills/openclaw-agent-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-governance",
+    "url": "https://clawhub.ai/skills/openclaw-agent-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-governance-c12515bd5849473b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-agent-governance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-agent-governance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82da5563f1d45dc4158692718019c164c068babe45ac1bec0bc158159e411dfa",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:53:09.731Z"
+}

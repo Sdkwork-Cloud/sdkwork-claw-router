@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/base-stable-arb-radar@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.base_stable_arb_radar",
+  "skill": {
+    "id": 44083,
+    "skillKey": "clawhub-base-stable-arb-radar",
+    "name": "Base Stable Arb Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "base-stable-arb-radar",
+    "url": "https://clawhub.ai/skills/base-stable-arb-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/base-stable-arb-radar-82613c42afb6994f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only Base stablecoin arbitrage radar for Uniswap V3 and Aerodrome with gas-aware filtering, slippage haircuts, webhook alerts, state persistence, and vo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prettybusysolutions-eng",
+      "userId": "s17a930r0ass2ng6ad9jmdkzsd83zqvg",
+      "displayName": "prettybusysolutions-eng",
+      "image": "https://avatars.githubusercontent.com/u/262936889?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1777676732341,
+      "changelog": "Clarified monitoring-only scope, removed local-path assumptions, added RPC backoff handling, and tightened public install/run documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9cfe1fd26abbbbe15117e74a198618d49753d94f8fd5f7290888aecb6efbbbf"
+}

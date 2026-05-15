@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cny-rate-calculator@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cny_rate_calculator",
+  "skill": {
+    "id": 21063,
+    "skillKey": "clawhub-cny-rate-calculator",
+    "name": "Cny Skill Extracted"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cny-rate-calculator",
+    "url": "https://clawhub.ai/skills/cny-rate-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cny-rate-calculator-e39e96bcc29a1bd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch Bank of Taiwan CNY exchange rates and calculate tiered prices with discounts, sending results via configured channels on a set schedule."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "9starmax",
+      "userId": "s173bkdc1nggg72frxdhjygbjx83x2q1",
+      "displayName": "9StarMax",
+      "image": "https://avatars.githubusercontent.com/u/221298448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 524,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1773681242488,
+      "changelog": "代碼清理：DEFAULT_SCHEDULE 移至常數區、移除 confirm() 冗餘 hints、修正 Set[str] 型別標注",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85c3fc86c74ae3f95f0e2d0f9a46bbff471e1674e29c879cac0250789017056c"
+}

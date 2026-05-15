@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21858,
+  "uuid": "skill-clawhub-azion-deploy",
+  "skillKey": "clawhub-azion-deploy",
+  "name": "Azion Deploy",
+  "summary": "Deploy applications, static sites, and edge functions to Azion using Azion CLI. Use when the user asks to deploy/publish to Azion, configure link/build/deplo...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azion_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adriano Krauthein",
+      "features": [
+        "Deploy applications, static sites, and edge functions to Azion using Azion CLI",
+        "Use when the user asks to deploy/publish to Azion, configure link/build/deplo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azion-deploy@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13016684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azion-deploy",
+      "url": "https://clawhub.ai/skills/azion-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azion-deploy",
+    "url": "https://clawhub.ai/skills/azion-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azion-deploy-bdf90d49d7920ed1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azion-deploy@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-azion-deploy-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2caf1ae32e9373976dbdb983442781073a754f9c75b8d347f4cc606d83818b11",
+      "artifactSizeBytes": 1917
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:51:09.348Z"
+}

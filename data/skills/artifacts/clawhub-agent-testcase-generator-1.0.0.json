@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-testcase-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_testcase_generator",
+  "skill": {
+    "id": 66323,
+    "skillKey": "clawhub-agent-testcase-generator",
+    "name": "Agent Testcase Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-testcase-generator",
+    "url": "https://clawhub.ai/skills/agent-testcase-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-testcase-generator-2492536f02f75eca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于测试点生成标准化测试用例，含前置条件、测试步骤、预期结果、优先级。覆盖功能测试、API 测试、UI 自动化测试场景。 **⚠️ 强制要求：所有测试用例必须使用标准格式，见 [测试用例标准格式.md](测试用例标准格式.md)** Use when: 用户说\"生成测试用例\"、\"写测试用例\"、\"测试用例设计\"。..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luiciferyi",
+      "userId": "s1709mjz8g1wqx9v1j33fryyj583pcxx",
+      "displayName": "LuiciferYi",
+      "image": "https://avatars.githubusercontent.com/u/24913493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776065515657,
+      "changelog": "Initial release of agent-testcase-generator.\n\n- Generates standardized test cases from test points, supporting functional, API, and UI automation scenarios.\n- Enforces strict 14-field case format (see 测试用例标准格式.md) with detailed requirements for each field.\n- Provides clear workflow and examples for both functional and API test cases.\n- Includes format rules, boundary/exception handling, automation markers, and procedures for Feishu documentation integration.\n- Strictly prohibits missing required fields or unverifiable results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23e867928d5180c45f050c5e44c862ad9e31c9c0a6f134748fd5bc1196e92db5"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59485,
+  "uuid": "skill-clawhub-minimax-music-gyh",
+  "skillKey": "clawhub-minimax-music-gyh",
+  "name": "Minimax Music Gyh",
+  "summary": "MiniMax 音乐生成模型，支持 Music-2.5/Music-2 等模型，根据文本描述生成音乐。使用 MINIMAX_API_KEY 环境变量。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_music_gyh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skydream9527-ctrl",
+      "features": [
+        "MiniMax 音乐生成模型，支持 Music-2.5/Music-2 等模型，根据文本描述生成音乐。使用 MINIMAX_API_KEY 环境变量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-music-gyh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257976506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-music-gyh",
+      "url": "https://clawhub.ai/skills/minimax-music-gyh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-music-gyh",
+    "url": "https://clawhub.ai/skills/minimax-music-gyh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-music-gyh-3eb59752049c254c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-music-gyh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-music-gyh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:882dbcd569b5e6b7812a7bb65c4f86608325dbb4a8f383a85d1b27c5432de952",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T03:28:56.775Z"
+}

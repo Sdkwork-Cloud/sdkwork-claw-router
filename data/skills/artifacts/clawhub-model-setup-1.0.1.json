@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-setup@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_setup",
+  "skill": {
+    "id": 65434,
+    "skillKey": "clawhub-model-setup",
+    "name": "Model Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-setup",
+    "url": "https://clawhub.ai/skills/model-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-setup-119d85333b7ca8b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全地管理 OpenClaw 模型配置。用于添加、测试和配置新模型到 models.json，包括 API key 验证、模型可访问性测试、工具调用功能检测、设置默认模型和配置到特定 agent。所有操作都会自动备份配置文件以确保安全。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ykaixu",
+      "userId": "publishers:ykaixu",
+      "displayName": "YuKaiXu",
+      "image": "https://avatars.githubusercontent.com/u/30675834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772254308329,
+      "changelog": "Fix API key validation to support different formats (e.g., BigModel API keys without colon separator). Improved flexibility for various provider API key formats. All tests now pass: API key validation, model accessibility, tool calling, and streaming.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c07e964dac951344e0cb48fbcb69207e2a67e58c84a095af3c3e38b2e4cf16ec"
+}

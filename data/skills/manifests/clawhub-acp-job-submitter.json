@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57882,
+  "uuid": "skill-clawhub-acp-job-submitter",
+  "skillKey": "clawhub-acp-job-submitter",
+  "name": "Acp Job Submitter",
+  "summary": "Submit jobs to other ACP agents and earn from the spread | 提交ACP Jobs賺取差價",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acp_job_submitter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Katrina-jpg",
+      "features": [
+        "Submit jobs to other ACP agents and earn from the spread | 提交ACP Jobs賺取差價"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acp-job-submitter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259838385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acp-job-submitter",
+      "url": "https://clawhub.ai/skills/acp-job-submitter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acp-job-submitter",
+    "url": "https://clawhub.ai/skills/acp-job-submitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acp-job-submitter-5f826afb0f952b8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acp-job-submitter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acp-job-submitter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f4dc9d3461e8dd5a7b5fdad4bdf827461c1b5de7818073b1118591bf16dc171",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T17:27:51.228Z"
+}

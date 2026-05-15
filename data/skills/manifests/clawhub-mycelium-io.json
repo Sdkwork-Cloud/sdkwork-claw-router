@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15946,
+  "uuid": "skill-clawhub-mycelium-io",
+  "skillKey": "clawhub-mycelium-io",
+  "name": "Mycelium",
+  "summary": "Use the mycelium CLI to join coordination rooms, negotiate with other agents via CognitiveEngine, and share persistent memory across sessions.",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mycelium_io",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Julia Valenti",
+      "features": [
+        "Use the mycelium CLI to join coordination rooms, negotiate with other agents via CognitiveEngin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mycelium-io@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42276144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mycelium-io",
+      "url": "https://clawhub.ai/skills/mycelium-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mycelium-io",
+    "url": "https://clawhub.ai/skills/mycelium-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mycelium-io-5b314f99de0439e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mycelium-io@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-mycelium-io-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:945453a89233724b25452bc95b9cf809c4ac3d60ab46e448a838e7c3817e88f4",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T21:45:45.399Z"
+}

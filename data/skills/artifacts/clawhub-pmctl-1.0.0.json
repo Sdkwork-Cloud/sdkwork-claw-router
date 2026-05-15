@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pmctl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pmctl",
+  "skill": {
+    "id": 17401,
+    "skillKey": "clawhub-pmctl",
+    "name": "pmctl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pmctl",
+    "url": "https://clawhub.ai/skills/pmctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pmctl-4721417067059d86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and inspect Postman collections, requests, and environments from the terminal using pmctl. Use when you need to discover API endpoints, look up reques..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wbingli",
+      "userId": "s176rx76r79ang7dns06w0fhen85rd8e",
+      "displayName": "Wenbing Li",
+      "image": "https://avatars.githubusercontent.com/u/390168?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 783,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771612022424,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55d7e4816824e11382b25cb8614e342674c5d0d6d90844ed57f0badfa4eff79c"
+}

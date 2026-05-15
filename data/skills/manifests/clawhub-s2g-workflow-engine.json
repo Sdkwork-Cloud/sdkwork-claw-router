@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25352,
+  "uuid": "skill-clawhub-s2g-workflow-engine",
+  "skillKey": "clawhub-s2g-workflow-engine",
+  "name": "S2G - General Purpose Workflow Engine",
+  "summary": "Connect to S2G (s2g.run) visual workflow automation platform over WebSocket. Execute workflow nodes as tools — password generators, hash functions, date math...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2g_workflow_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Helmuts Reinis",
+      "features": [
+        "Connect to S2G (s2g.run) visual workflow automation platform over WebSocket",
+        "Execute workflow nodes as tools — password generators, hash functions, date math..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2g-workflow-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34469685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2g-workflow-engine",
+      "url": "https://clawhub.ai/skills/s2g-workflow-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2g-workflow-engine",
+    "url": "https://clawhub.ai/skills/s2g-workflow-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2g-workflow-engine-631d3ca471b34ab7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2g-workflow-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2g-workflow-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fda2b830ca7ec37ed6070620b3e7f1fe9746348692131687404115feeb8a248c",
+      "artifactSizeBytes": 2757
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T18:55:55.956Z"
+}

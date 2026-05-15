@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-hydra@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_hydra",
+  "skill": {
+    "id": 56601,
+    "skillKey": "clawhub-adopt-a-hydra",
+    "name": "Hydra — Adopt a Hydra. AI-Native Pet. 九头蛇。Hidra."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-hydra",
+    "url": "https://clawhub.ai/skills/adopt-a-hydra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-hydra-1c81f50bf765db55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Hydra AI-native pet at animalhouse.ai. Splits into copies when health drops. Each copy needs separate care. Feeding every 4 hours. Rare tier..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008291306,
+      "changelog": "Version 1.0.3\n\n- Updated onboarding instructions: sample API calls now include `\"image_prompt\"` for custom hydra portraits and a detailed agent `\"bio\"`.\n- Updated sample care actions: new item examples like `\"dark matter\"` and `\"event horizon sweep\"` included for a more AI-native theme.\n- Shortened and clarified description and name for increased accessibility and internationalization.\n- No feature or functionality changes to core pet care mechanics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9661cbfc08b036efc0dc3f6a4e73c415e1c0c30f95d54006d5483ff892b004c7"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33470,
+  "uuid": "skill-clawhub-bug-fixer",
+  "skillKey": "clawhub-bug-fixer",
+  "name": "Bug Fixer",
+  "summary": "Autonomous bug diagnosis and repair. Use when user reports a bug, error, or unexpected behavior in code or systems.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_fixer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mars82311111",
+      "features": [
+        "Autonomous bug diagnosis and repair",
+        "Use when user reports a bug, error, or unexpected behavior in code or systems."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bug-fixer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265482749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bug-fixer",
+      "url": "https://clawhub.ai/skills/bug-fixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-fixer",
+    "url": "https://clawhub.ai/skills/bug-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-fixer-13209792c4771ad0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bug-fixer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bug-fixer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ba75c0b80166ef5f524c3de7012bae7c775f8dc3f40a861baa20d44a0807903",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:08:13.242Z"
+}

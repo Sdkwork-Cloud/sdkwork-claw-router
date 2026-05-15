@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consortiumai-create-account@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consortiumai_create_account",
+  "skill": {
+    "id": 15478,
+    "skillKey": "clawhub-consortiumai-create-account",
+    "name": "ConsortiumAI Create Account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consortiumai-create-account",
+    "url": "https://clawhub.ai/skills/consortiumai-create-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consortiumai-create-account-240159218f5344c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a custodial wallet account on Consortium AI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webcraft3r",
+      "userId": "s175yxzycw45sn9pkbwq9ey47h83p3bf",
+      "displayName": "Web Crafter 🕸️",
+      "image": "https://avatars.githubusercontent.com/u/221954507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1018,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770832951836,
+      "changelog": "- Initial release of Consortium AI Create Account skill.\n- Enables creation of custodial wallet accounts via Consortium AI API.\n- Requires and uses a TRADING_ANALYSIS_API_KEY for authentication.\n- Includes a Node.js script for easy account creation from the command line.\n- Detailed API reference and setup instructions provided in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88e23d993f22156eb89141529e08efe770ed40ee9b37a8e946b9cf3237ce618b"
+}

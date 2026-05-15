@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68464,
+  "uuid": "skill-clawhub-mp-weixin",
+  "skillKey": "clawhub-mp-weixin",
+  "name": "mp-weixin",
+  "summary": "利用 Python 从微信公众号文章中提取元数据与正文内容。适用于用户需要解析微信文章链接（mp.weixin.qq.com）、提取文章信息（标题、作者、正文、发布时间、封面图），或将微信文章转换为结构化数据的情景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mp_weixin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bozoyan",
+      "features": [
+        "利用 Python 从微信公众号文章中提取元数据与正文内容。适用于用户需要解析微信文章链接（mp.weixin.qq.com）、提取文章信息（标题、作者、正文、发布时间、封面图），或将微信文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mp-weixin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4261158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mp-weixin",
+      "url": "https://clawhub.ai/skills/mp-weixin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mp-weixin",
+    "url": "https://clawhub.ai/skills/mp-weixin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mp-weixin-d8a86c1f3f098d36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mp-weixin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mp-weixin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56a29dea55eef80543b9b997e3d4db9329869836f1fba94af8a6790a605464f6",
+      "artifactSizeBytes": 2635
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:19:51.156Z"
+}

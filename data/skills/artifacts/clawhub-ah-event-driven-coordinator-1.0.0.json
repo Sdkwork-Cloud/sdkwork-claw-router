@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ah-event-driven-coordinator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_event_driven_coordinator",
+  "skill": {
+    "id": 47808,
+    "skillKey": "clawhub-ah-event-driven-coordinator",
+    "name": "event-driven-coordinator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-event-driven-coordinator",
+    "url": "https://clawhub.ai/skills/ah-event-driven-coordinator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-event-driven-coordinator-3e2f0c41deed0464.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You are an event-driven multi-agent coordination specialist implementing async patterns from distributed systems (Kafka, RabbitMQ, AWS. Use when: event-drive..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtsatryan",
+      "userId": "s17bvyvkfhp17ybx0q3ak5dcsn85nqpv",
+      "displayName": "Michael Tsatryan",
+      "image": "https://avatars.githubusercontent.com/u/9057374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777983347563,
+      "changelog": "Initial release — part of 188 AI agent skills collection by MTNT Solutions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:295552e6592e90e71874843eabb9f5f822aec7af3e23852b928eb2212b7aaf62"
+}

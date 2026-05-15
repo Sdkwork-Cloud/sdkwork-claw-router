@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-search-raise7727@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_search_raise7727",
+  "skill": {
+    "id": 38452,
+    "skillKey": "clawhub-bilibili-search-raise7727",
+    "name": "bilibili-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-search-raise7727",
+    "url": "https://clawhub.ai/skills/bilibili-search-raise7727",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-search-raise7727-ab31b2289c4ea3f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time Bilibili video search and structured extraction of top trending video titles via local Playwright API for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raise7727",
+      "userId": "s174a5d8nz41jayvfraefvktm983hef2",
+      "displayName": "raise7727",
+      "image": "https://avatars.githubusercontent.com/u/203483347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774810144379,
+      "changelog": "Version 1.0.1\n\n- Migrated API definition from openapi.json to index.js.\n- Added _meta.json file for metadata.\n- Removed openapi.json file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:939fbc9c2f2b46fc2ebeb965ab92903d8ab1ef3106b7530421374f94a4db50b5"
+}

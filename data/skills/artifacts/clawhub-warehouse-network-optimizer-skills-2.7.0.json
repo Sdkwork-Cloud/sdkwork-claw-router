@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/warehouse-network-optimizer-skills@2.7.0",
+  "version": "2.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warehouse_network_optimizer_skills",
+  "skill": {
+    "id": 72867,
+    "skillKey": "clawhub-warehouse-network-optimizer-skills",
+    "name": "仓配网络优化器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warehouse-network-optimizer-skills",
+    "url": "https://clawhub.ai/skills/warehouse-network-optimizer-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warehouse-network-optimizer-skills-3304ce8c11938373.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于整数规划（MILP）的仓配网络优化系统，支持时效计算（含等待时间）、中转链路、供应关系到区县等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinqianfei",
+      "userId": "s1787cvzyf2k3w7h6mj7zy1mdx83n4ph",
+      "displayName": "jinqianfei",
+      "image": "https://avatars.githubusercontent.com/u/258724353?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.7.0",
+      "createdAt": 1775631990656,
+      "changelog": "v2.7: 参数引导流程，支持必选/禁止仓库约束",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01b13faf96cd1db14c6ca620912b17d7a94ad2cf07c359a348b34a7faf977825"
+}

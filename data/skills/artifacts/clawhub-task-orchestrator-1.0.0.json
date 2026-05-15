@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-orchestrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_orchestrator",
+  "skill": {
+    "id": 37983,
+    "skillKey": "clawhub-task-orchestrator",
+    "name": "Task Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-orchestrator",
+    "url": "https://clawhub.ai/skills/task-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-orchestrator-8e4adaea7004c21c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent task management and execution coordination officer. Automatically generates task lists, intelligently decomposes complex tasks, matches AI agents..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776995107772,
+      "changelog": "Initial release of Task Orchestrator.\n\n- Automatically parses user goals and decomposes them into structured task trees.\n- Matches tasks to the most suitable AI agents based on capability, load, and cost.\n- Decides execution order using urgency, value, cost, and risk assessments.\n- Monitors task progress in real time, detects anomalies, and retries failed tasks intelligently.\n- Supports multi-agent collaboration and complex dependency handling.\n- Includes scripts and resources for task decomposition, priority calculation, agent matching, and reporting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e86bee1542f428c8c4685475976cbaa2ddc8b2d84e2f2166a62b5a132d8d53ed"
+}

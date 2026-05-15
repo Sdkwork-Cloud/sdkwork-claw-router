@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-sheets-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_sheets_skill",
+  "skill": {
+    "id": 8846,
+    "skillKey": "clawhub-feishu-sheets-skill",
+    "name": "Feishu Sheets Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-sheets-skill",
+    "url": "https://clawhub.ai/skills/feishu-sheets-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-sheets-skill-90cc6d66010b14bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feishu online spreadsheet (Sheets) operations including create, read, write, append data, manage worksheets. Use when user mentions Feishu Sheets, online spr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wesley138cn",
+      "userId": "s17f49qhdctdrdr3qhv871hpvd83nak7",
+      "displayName": "wesley138cn",
+      "image": "https://avatars.githubusercontent.com/u/197040006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5359,
+      "installsAllTime": 51,
+      "installsCurrent": 48,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771220240776,
+      "changelog": "Initial release: Feishu online spreadsheet operations including create, read, write, append, insert/delete rows/columns, manage worksheets",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b96b44d6da01691328b00b482f4a1a5f7cd896f6bf352b454dd1e85dd59d34a6"
+}

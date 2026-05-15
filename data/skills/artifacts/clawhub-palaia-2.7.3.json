@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/palaia@2.7.3",
+  "version": "2.7.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.palaia",
+  "skill": {
+    "id": 14655,
+    "skillKey": "clawhub-palaia",
+    "name": "Palaia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "palaia",
+    "url": "https://clawhub.ai/skills/palaia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/palaia-f25d4649d2905394.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local, crash-safe persistent memory for OpenClaw agents. SQLite-backed by default. Semantic search, projects, scopes, auto-capture. After installing or updat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iret77",
+      "userId": "s176ftypthn6982avp5jt950an83p0yt",
+      "displayName": "iret77",
+      "image": "https://avatars.githubusercontent.com/u/63622643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1038,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 65
+    },
+    "latestVersion": {
+      "version": "2.7.3",
+      "createdAt": 1775642702057,
+      "changelog": "Fixes: ContextEngine ownsCompaction flag, doctor phantom stale-task warnings, invisible entries with empty scope",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:304caa7cab4c700cb5ba7177d80ea11ad1bed96496a8ce484eafd678d523e78e"
+}

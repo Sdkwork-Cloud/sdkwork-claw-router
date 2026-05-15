@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/museum@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.museum",
+  "skill": {
+    "id": 25996,
+    "skillKey": "clawhub-museum",
+    "name": "Museum Data Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "museum",
+    "url": "https://clawhub.ai/skills/museum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/museum-4919063719e8c388.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and query museum database records, track data collection status, verify completeness, and export museum data in JSON, CSV, or SQL formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackandking",
+      "userId": "publishers:jackandking",
+      "displayName": "jackandking",
+      "image": "https://avatars.githubusercontent.com/u/4838682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773668641688,
+      "changelog": "Museum Skill 1.0.0 – Initial Release\n\n- Provides commands to list, query, and manage museum data in a MySQL database.\n- Supports checking data collection progress, validating integrity, and exporting to JSON/CSV/SQL.\n- Flexible filtering and pagination for museum lists.\n- Custom SQL query support for advanced use cases.\n- Designed for integration in data collection workflows and automated reporting.\n- Easy installation, configuration, and troubleshooting guidance included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99ad9d750c8606910080bdec559d9819c56ba018b3f6f9b0a93358e0d5c2b738"
+}

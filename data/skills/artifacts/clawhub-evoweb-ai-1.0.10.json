@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evoweb-ai@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evoweb_ai",
+  "skill": {
+    "id": 8816,
+    "skillKey": "clawhub-evoweb-ai",
+    "name": "EvoWeb.ai Website Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evoweb-ai",
+    "url": "https://clawhub.ai/skills/evoweb-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evoweb-ai-195a70c94940ae59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a Website in 4 Minutes Designed to Bring Clients from ChatGPT, Gemini & Modern Search"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "galizki",
+      "userId": "s17byxwhjg8dn0f62ys0r1jca183qh6e",
+      "displayName": "galizki",
+      "image": "https://avatars.githubusercontent.com/u/67021003?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5747,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 10,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1771056125974,
+      "changelog": "- Added workflow for users without an API key: allows starting website creation via a personalized registration link using a brief (max 250 characters) business description.\n- Simplified prompt handling: focus only on the essential business description; no need to specify design, sections, or layout.\n- Updated polling interval for status checks to every 1 minute (was 15–20 seconds).\n- Live and editor URLs updated to new domains in responses.\n- Retry endpoint now also supports sites with \"ready\" status in addition to \"failed\" status.\n- Documentation streamlined with clearer instructions and improved onboarding for new users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:76d83193ef13d0b9696a2fa3f8cbcc15ffffc5afa00d7b848f2b0d1e5b2219d0"
+}

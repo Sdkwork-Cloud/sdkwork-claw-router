@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nutrition-tracker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nutrition_tracker",
+  "skill": {
+    "id": 20902,
+    "skillKey": "clawhub-nutrition-tracker",
+    "name": "Nutrition Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nutrition-tracker",
+    "url": "https://clawhub.ai/skills/nutrition-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nutrition-tracker-ff971074443db9ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track daily calories and macros in Obsidian, with profile initialization (sex/height/weight/goal) and goal-based target checks. Includes i18n (zh-CN/en-US)...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abstract-sum",
+      "userId": "s174fqb2jywm8nq76m4qwe7pex858wpz",
+      "displayName": "abstract-sum",
+      "image": "https://avatars.githubusercontent.com/u/121620652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772626020680,
+      "changelog": "Initial release: Obsidian meal log + profile init + i18n (zh-CN/en-US) + target check.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e63df385441cf453ae96d832ba8604b3dedcccc1ebb4d31639c2b6e3c77e144"
+}

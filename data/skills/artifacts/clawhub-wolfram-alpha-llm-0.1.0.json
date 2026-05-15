@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wolfram-alpha-llm@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wolfram_alpha_llm",
+  "skill": {
+    "id": 50918,
+    "skillKey": "clawhub-wolfram-alpha-llm",
+    "name": "Wolfram Alpha (LLM API)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wolfram-alpha-llm",
+    "url": "https://clawhub.ai/skills/wolfram-alpha-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wolfram-alpha-llm-e0a90a99d9f69758.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate precise, formalizable computations and factual lookups to Wolfram|Alpha via its LLM API (HTTP) to get verified results and reduce arithmetic/modelin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "firefrog-pepe",
+      "userId": "s175qpccg0gs7h2a9tssmazb6983q1ph",
+      "displayName": "pepe",
+      "image": "https://avatars.githubusercontent.com/u/262842792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773782383861,
+      "changelog": "Initial release: Wolfram|Alpha LLM API wrapper (bearer auth default, cache ~7d, maxchars default 2500).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb39c220f7bd0c50189ea2c681d419c5d51bc06c7c289ba22c3ef8e34bd258a8"
+}

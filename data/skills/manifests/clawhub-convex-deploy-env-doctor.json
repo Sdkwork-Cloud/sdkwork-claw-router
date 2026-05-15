@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38143,
+  "uuid": "skill-clawhub-convex-deploy-env-doctor",
+  "skillKey": "clawhub-convex-deploy-env-doctor",
+  "name": "Convex Deploy Env Doctor",
+  "summary": "Validate and fix Convex deployment configuration for skills/apps. Use when debugging Convex URL/callback/env issues, OAuth callback mismatches, .site vs .clo...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convex_deploy_env_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "okikeSolutions",
+      "features": [
+        "Validate and fix Convex deployment configuration for skills/apps",
+        "Use when debugging Convex URL/callback/env issues, OAuth callback mismatches, .site vs .clo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/convex-deploy-env-doctor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176530744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "convex-deploy-env-doctor",
+      "url": "https://clawhub.ai/skills/convex-deploy-env-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convex-deploy-env-doctor",
+    "url": "https://clawhub.ai/skills/convex-deploy-env-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convex-deploy-env-doctor-953df8914bab54ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/convex-deploy-env-doctor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-convex-deploy-env-doctor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:819447d07cd4125b0fefeed5ba8e8c483c566909e54393efad3b6efd17d2c1e7",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:24:43.059Z"
+}

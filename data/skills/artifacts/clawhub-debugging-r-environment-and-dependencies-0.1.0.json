@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/debugging-r-environment-and-dependencies@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debugging_r_environment_and_dependencies",
+  "skill": {
+    "id": 19543,
+    "skillKey": "clawhub-debugging-r-environment-and-dependencies",
+    "name": "Debugging R Environment And Dependencies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debugging-r-environment-and-dependencies",
+    "url": "https://clawhub.ai/skills/debugging-r-environment-and-dependencies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debugging-r-environment-and-dependencies-e51ca1d58041d1d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and fix R environment issues, including package installation failures, dependency conflicts, system library problems, renv errors, and Bioconductor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackkuo666",
+      "userId": "publishers:jackkuo666",
+      "displayName": "JackKuo666",
+      "image": "https://avatars.githubusercontent.com/u/41313632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772099993475,
+      "changelog": "- Initial release of the R environment and dependency debugging skill.\n- Diagnose and resolve package installation failures, version conflicts, and system dependency errors.\n- Troubleshoot and repair `renv` or Bioconductor environment issues.\n- Provide guidance for missing compilers, development libraries, and PATH/permission problems.\n- Restore or rebuild working R project environments to ensure script compatibility.\n- Offer OS-specific steps for resolving common package and system-level R problems.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13ba9359749128b7c55e55aaa2099cf8ebc93b784765b0cd480a44fbbb5b2caf"
+}

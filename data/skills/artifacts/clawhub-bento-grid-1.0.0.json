@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bento-grid@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bento_grid",
+  "skill": {
+    "id": 20788,
+    "skillKey": "clawhub-bento-grid",
+    "name": "Bento Grid Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bento-grid",
+    "url": "https://clawhub.ai/skills/bento-grid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bento-grid-b47fcfc87332f3cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate beautiful bento grid layouts for social media posts. Create Instagram/Twitter cards with statistics, calendars, music visualization, and custom layo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "limoxt",
+      "userId": "publishers:limoxt",
+      "displayName": "limoxt",
+      "image": "https://avatars.githubusercontent.com/u/102217440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772280612620,
+      "changelog": "Initial release: Generate bento grid layouts for social media",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c1cb025720db41349feb2fdd9aea05fc8973465b93c132d7e17d4658abcc0db"
+}

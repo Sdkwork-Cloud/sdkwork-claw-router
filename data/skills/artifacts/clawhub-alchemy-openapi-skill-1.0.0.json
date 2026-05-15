@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alchemy-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alchemy_openapi_skill",
+  "skill": {
+    "id": 26097,
+    "skillKey": "clawhub-alchemy-openapi-skill",
+    "name": "Alchemy OpenAPI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alchemy-openapi-skill",
+    "url": "https://clawhub.ai/skills/alchemy-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alchemy-openapi-skill-cb92ebe14f549b5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Alchemy Prices API reads through UXC with a curated OpenAPI schema, path-templated API-key auth, and read-first guardrails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773626239354,
+      "changelog": "Initial release of Alchemy Prices API skill for UXC.\n\n- Provides read-only access to Alchemy Prices API via OpenAPI schema and UXC.\n- Supports single token price lookup by symbol or address and historical price queries.\n- Implements path-templated API-key authentication; guides secure credential setup.\n- Purposefully limits scope to token price data; excludes node, NFT, and portfolio APIs.\n- Enforces read-first guardrails and best practices for CLI usage and output handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e37398487053cd1dd3530726fe57e21fc40839c1af25d2f9559b906545c6efd"
+}

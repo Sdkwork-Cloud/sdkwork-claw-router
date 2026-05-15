@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fusae-watermark-remover@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fusae_watermark_remover",
+  "skill": {
+    "id": 56304,
+    "skillKey": "clawhub-fusae-watermark-remover",
+    "name": "Watermark Remover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fusae-watermark-remover",
+    "url": "https://clawhub.ai/skills/fusae-watermark-remover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fusae-watermark-remover-46e33163aca34b46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detects and removes watermarks from images using AI-powered inpainting. Use when user asks to \"remove watermark\", \"clean image\", or \"去水印\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fusae",
+      "userId": "s17b20tp8a9jcb7m3ck0yy0kvn8451dm",
+      "displayName": "fusae",
+      "image": "https://avatars.githubusercontent.com/u/11980269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775193171351,
+      "changelog": "Initial release of Watermark Remover skill.\n\n- Automatically detects and removes watermarks in image corners using AI-powered inpainting (LaMa), with fallback to OpenCV.\n- Command-line interface provided via `scripts/main.py`, supporting multiple options for detection sensitivity, masking, and output locations.\n- Includes a preview mode to visualize detected watermarks.\n- Supports common image formats: JPG, PNG, BMP, TIFF, and WEBP.\n- Recommended for use when asked to “remove watermark”, “clean image”, or “去水印”.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d777e858f94ac19aa1822e15fd9b088e30495bba5f9775b8e047a5cbf38d5cba"
+}

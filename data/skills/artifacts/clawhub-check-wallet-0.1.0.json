@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/check-wallet@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_wallet",
+  "skill": {
+    "id": 22286,
+    "skillKey": "clawhub-check-wallet",
+    "name": "Check Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-wallet",
+    "url": "https://clawhub.ai/skills/check-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-wallet-5ced4d113a432405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query wallet addresses and on-chain balances on OpenAnt. Use when the agent or user wants to check wallet address, view balance, see how much SOL or ETH they..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ant-1984",
+      "userId": "s17c3h114xfd5y4q0eth1p20gh83k3r8",
+      "displayName": "ant-1984",
+      "image": "https://avatars.githubusercontent.com/u/261687401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772360006710,
+      "changelog": "check-wallet v0.1.0\n\n- Initial release for querying wallet addresses and on-chain balances on OpenAnt.\n- Supports checking SOL, ETH, token (USDC) balances, and listing wallet addresses via CLI.\n- Handles wallet status checks and error cases (e.g., not authenticated, insufficient balance).\n- All commands are read-only and do not require user confirmation.\n- Includes options for custom Solana/EVM RPC endpoints for balance queries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf1e3e6b508bdbeecdddc5eb5cbb231bdb9d0b7bb4e318a4aadd6063e20acd36"
+}

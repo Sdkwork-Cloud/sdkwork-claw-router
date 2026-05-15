@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-pulse@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_pulse",
+  "skill": {
+    "id": 71972,
+    "skillKey": "clawhub-stock-pulse",
+    "name": "Stock Pulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-pulse",
+    "url": "https://clawhub.ai/skills/stock-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-pulse-308cd6a7ed5e0af5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股智能决策仪表盘：一条命令看今日该买卖什么。输入股票代码，AI分析技术面+筹码，输出买/卖/观望信号和精确点位、单日走势图、月/年价格预测（蒙特卡洛）、综合买入建议。当用户想分析股票、看走势、预测价格、生成选股建议时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vineindalvik",
+      "userId": "s1729q7tvd177scs0mjqr308ds84nr1c",
+      "displayName": "vine.xio",
+      "image": "https://avatars.githubusercontent.com/u/9150958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1776085306424,
+      "changelog": "- Minor changes and optimizations in handler.py.\n- No user-facing feature changes.\n- Version number updated for internal tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64b4017fa7544fc0ac55056f26fc35c8f2145e00729f0f7021704484f75a4e64"
+}

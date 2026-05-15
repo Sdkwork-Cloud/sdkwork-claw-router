@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-scout@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_scout",
+  "skill": {
+    "id": 56039,
+    "skillKey": "clawhub-deep-scout",
+    "name": "deep-scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-scout",
+    "url": "https://clawhub.ai/skills/deep-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-scout-c0579884a95c83f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-stage deep intelligence pipeline (Search → Filter → Fetch → Synthesize). Turns a query into a structured research report with full source citations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathanjing",
+      "userId": "s17aah0h06a3741dypyhe3a2xd85pgsx",
+      "displayName": "Jonathan Jing",
+      "image": "https://avatars.githubusercontent.com/u/17068507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 489,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1772584418839,
+      "changelog": "Added simplified installation instructions to SKILL.md and README.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f8799f9689d25109c030f13a4eebb680dff941f308cf03a41844789bb12f328f"
+}

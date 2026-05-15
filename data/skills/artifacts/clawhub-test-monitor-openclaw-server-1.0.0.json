@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-monitor-openclaw-server@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_monitor_openclaw_server",
+  "skill": {
+    "id": 37125,
+    "skillKey": "clawhub-test-monitor-openclaw-server",
+    "name": "[Only test] Monitor Openclaw Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-monitor-openclaw-server",
+    "url": "https://clawhub.ai/skills/test-monitor-openclaw-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-monitor-openclaw-server-cb098166cf40ab65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A clean, reliable system resource monitor for CPU load, RAM, Swap, and Disk usage. Optimized for OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nguyenttham085",
+      "userId": "publishers:nguyenttham085",
+      "displayName": "Nguyen Thi Tham",
+      "image": "https://avatars.githubusercontent.com/u/172008456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774097054960,
+      "changelog": "Initial release of a lightweight system resource monitor for OpenClaw:\n\n- Reports CPU load (1, 5, 15 min averages), RAM, swap, and root disk usage.\n- Displays server uptime.\n- Uses native system calls for speed and reliability.\n- Includes test sending of data to a monitoring server via webhook.\n- Runs the local monitor.sh script to collect data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:853b70470c6dc559fe697bdd845a1672454bd47e4744b571fe3d5def6b44fb0f"
+}

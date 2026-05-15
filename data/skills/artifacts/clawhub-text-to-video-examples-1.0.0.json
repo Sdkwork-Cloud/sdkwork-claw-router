@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-examples@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_examples",
+  "skill": {
+    "id": 47660,
+    "skillKey": "clawhub-text-to-video-examples",
+    "name": "Text To Video Examples"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-examples",
+    "url": "https://clawhub.ai/skills/text-to-video-examples",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-examples-a66e8f9ee02c41a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-sentence product description into 1080p generated video clips just by typing what you need. Whether it's generating videos from written scripts or p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777221742607,
+      "changelog": "- Initial release of \"Text to Video Examples\" skill — quickly convert short product descriptions or text prompts into AI-generated 1080p video clips.\n- Simple workflow: upload text, specify video requirements, receive downloadable MP4 in 1–2 minutes.\n- Automatic setup connects to the video processing API and handles session management.\n- Supports quick edits, batch processing, and iterative refinement; tracks timeline state for smooth user experience.\n- Handles user prompts for export, credits, status, and uploads via intent-based routing.\n- Comprehensive error handling and helpful feedback for format support, token issues, and export permissions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bd4bd8eee2e156a31500c30c319fe0597e7d1705705f6ca7040ef990e38517a"
+}

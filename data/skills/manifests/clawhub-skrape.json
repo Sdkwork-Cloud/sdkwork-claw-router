@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26812,
+  "uuid": "skill-clawhub-skrape",
+  "skillKey": "clawhub-skrape",
+  "name": "Skrape",
+  "summary": "Ethical web data extraction with robots exclusion protocol adherence, throttled scraping requests, and privacy-compliant handling (\"Scrape responsibly!\").",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skrape",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X",
+      "features": [
+        "Ethical web data extraction with robots exclusion protocol adherence, throttled scraping reques."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skrape@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2422383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skrape",
+      "url": "https://clawhub.ai/skills/skrape"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skrape",
+    "url": "https://clawhub.ai/skills/skrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skrape-7dbd5f4d81cefb4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skrape@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skrape-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb618050a3c71f00a9b934df0deaa2551af347510bc241b135fe1ea91d9eb07b",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:18:45.143Z"
+}

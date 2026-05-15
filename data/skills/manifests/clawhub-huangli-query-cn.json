@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73721,
+  "uuid": "skill-clawhub-huangli-query-cn",
+  "skillKey": "clawhub-huangli-query-cn",
+  "name": "黄历查询",
+  "summary": "黄历查询工具。按公历日期查询今日黄历、老黄历、每日宜忌、吉神凶煞、神煞、冲煞、吉日凶日。适合查询今天黄历怎么样、今天宜忌、明天适不适合搬家、结婚开业开工选哪天、最近哪些是吉日。支持单日黄历、批量区间查询、多日筛选吉日。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huangli_query_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leocdchina",
+      "features": [
+        "黄历查询工具。按公历日期查询今日黄历、老黄历、每日宜忌、吉神凶煞、神煞、冲煞、吉日凶日。适合查询今天黄历怎么样、今天宜忌、明天适不适合搬家、结婚开业开工选哪天、最近哪些是吉日。支持单日黄历、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huangli-query-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102421943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huangli-query-cn",
+      "url": "https://clawhub.ai/skills/huangli-query-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huangli-query-cn",
+    "url": "https://clawhub.ai/skills/huangli-query-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huangli-query-cn-611fd6138eb580c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huangli-query-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-huangli-query-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc32fbb4dc0b8854be36172992fae69c96eba03480f097ae14264e1dc1e1eaf7",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T04:53:25.640Z"
+}

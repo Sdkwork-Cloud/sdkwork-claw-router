@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_music",
+  "skill": {
+    "id": 55854,
+    "skillKey": "clawhub-free-music",
+    "name": "Free Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-music",
+    "url": "https://clawhub.ai/skills/free-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-music-e6143589ae2d97f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add upbeat background music to my video for free — and get music-backed vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777339241668,
+      "changelog": "Initial release of Free Music — Add Music to Videos Free\n\n- Instantly add royalty-free background music to your video clips (MP4, MOV, AVI, WebM up to 500MB)\n- Easy onboarding: automatic setup with free 7-day token for 100 credits\n- Simple prompts route actions like upload, export, credits, and track previews\n- All exports rendered in the cloud; returns high-quality 1080p MP4s in under a minute\n- Built-in error handling for file size, format, session token, and free plan limits\n- Ideal for creators seeking copyright-free music with fast turnaround",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbfc872995136d9b0b22b38fde87630393b0daa6cae02944e654e03e0d973ad8"
+}

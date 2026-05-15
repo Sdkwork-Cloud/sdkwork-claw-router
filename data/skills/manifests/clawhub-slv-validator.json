@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14420,
+  "uuid": "skill-clawhub-slv-validator",
+  "skillKey": "clawhub-slv-validator",
+  "name": "Slv Validator",
+  "summary": "Deploys and manages Solana validators on mainnet and testnet using Ansible playbooks and Jinja2 templates for multiple validator types including jito, agave,...",
+  "version": "0.13.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slv_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ELSOUL LABO B.V.",
+      "features": [
+        "Deploys and manages Solana validators on mainnet and testnet using Ansible playbooks and Jinja2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slv-validator@0.13.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23725836?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slv-validator",
+      "url": "https://clawhub.ai/skills/slv-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slv-validator",
+    "url": "https://clawhub.ai/skills/slv-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slv-validator-2d9eced7e661da22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slv-validator@0.13.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-slv-validator-0.13.15.json",
+      "version": "0.13.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dec61e1092a7e583b4814eda21ba9599531046a7b5edbcbaca9cabf779b17bd6",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T17:42:29.337Z"
+}

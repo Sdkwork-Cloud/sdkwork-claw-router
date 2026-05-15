@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61170,
+  "uuid": "skill-clawhub-bsc-dev-monitor",
+  "skillKey": "clawhub-bsc-dev-monitor",
+  "name": "Bsc Dev Monitor Skill",
+  "summary": "BSC Dev Wallet Monitor - 专为跟投 Dev 的用户设计。 监控指定 BSC 地址的代币转出（发币）行为，第一时间发现新币发布。 支持 Webhook 通知、安全检测、历史记录等功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bsc_dev_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mybusd",
+      "features": [
+        "BSC Dev Wallet Monitor",
+        "专为跟投 Dev 的用户设计。 监控指定 BSC 地址的代币转出（发币）行为，第一时间发现新币发布。 支持 Webhook 通知、安全检测、历史记录等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bsc-dev-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115344979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bsc-dev-monitor",
+      "url": "https://clawhub.ai/skills/bsc-dev-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bsc-dev-monitor",
+    "url": "https://clawhub.ai/skills/bsc-dev-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bsc-dev-monitor-4e7dfa0c6614d741.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bsc-dev-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bsc-dev-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7236a6c8880510bf562dc5e0f2040514a5171fe2344223b92629773bb74d4a6e",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:41:06.414Z"
+}

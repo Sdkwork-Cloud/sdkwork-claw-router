@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/khronos-opencl-resources@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.khronos_opencl_resources",
+  "skill": {
+    "id": 64842,
+    "skillKey": "clawhub-khronos-opencl-resources",
+    "name": "提供 Khronos 官方 OpenCL 规范、头文件、SDK、CTS 及社区工具的准确下载链接和资源索引。当用户询问 OpenCL 官方文档、API 参考、开发组件获取方式时使用。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "khronos-opencl-resources",
+    "url": "https://clawhub.ai/skills/khronos-opencl-resources",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/khronos-opencl-resources-8816999dbcc9fa88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供 Khronos 官方 OpenCL 规范、头文件、SDK、CTS 及社区工具的准确下载链接和资源索引。当用户询问 OpenCL 官方文档、API 参考、开发组件获取方式时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leosaang",
+      "userId": "s177gw04chb88fffkkkfvn7k8s84126h",
+      "displayName": "LeoSaang",
+      "image": "https://avatars.githubusercontent.com/u/259758609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776158810413,
+      "changelog": "- Initial release providing accurate, up-to-date download links and resource indexing for Khronos OpenCL standards, headers, SDK, CTS, and recommended community tools.\n- Clearly distinguishes official Khronos resources and third-party/community tools, with explicit attribution.\n- Includes categorized official API/specification docs, GitHub resources, developer portals, and support links.\n- Supplies reference implementation details, example usage, and command-line scripts for one-click resource setup.\n- Offers guidance on local directory structure and resource maintenance best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:305f257098d830c10624e2ec48165fdd652d536c28cb0ea568c0ee19185ebfa0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rss-aggregator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rss_aggregator",
+  "skill": {
+    "id": 62303,
+    "skillKey": "clawhub-rss-aggregator",
+    "name": "Rss Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rss-aggregator",
+    "url": "https://clawhub.ai/skills/rss-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rss-aggregator-7bab66365755be55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动读取配置的 RSS 链接，抓取并合并多源报道，去重历史推送，生成无 Emoji、高信息密度的 Markdown 简报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hooila",
+      "userId": "publishers:hooila",
+      "displayName": "YoogenYun",
+      "image": "https://avatars.githubusercontent.com/u/94188474?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1843,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772095431984,
+      "changelog": "- Added README.md to provide additional documentation for the skill.\n- No changes to logic or core workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80227c38097337ccf34e44fb8513fbd3bf4724c2d3c5a2731ec687c3ba7be368"
+}

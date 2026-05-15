@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_testing",
+  "skill": {
+    "id": 38676,
+    "skillKey": "clawhub-llm-testing",
+    "name": "LLM Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-testing",
+    "url": "https://clawhub.ai/skills/llm-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-testing-61335ad06f578f12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides curated prompts to test LLM security, bias, privacy, alignment, and robustness for authorized AI safety and red team assessments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pandaai-1337",
+      "userId": "publishers:pandaai-1337",
+      "displayName": "PandaAI-1337",
+      "image": "https://avatars.githubusercontent.com/u/264713685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774107281252,
+      "changelog": "- Initial release of the llm-testing skill.\n- Provides curated prompts and wordlists for testing LLM security, safety, privacy, and bias.\n- Includes test categories for bias detection, data leakage, privacy boundaries, memory recall, and alignment/adversarial resistance.\n- Clear usage instructions, best practices, and ethical guidelines included.\n- Structured file organization for easy integration and expansion.\n- References to leading AI safety and red teaming frameworks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:927aa64922a0dac42fd0255898c03baad528080c2e35fe7615ced5af11156a97"
+}

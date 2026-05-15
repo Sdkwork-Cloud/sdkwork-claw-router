@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compl",
+  "skill": {
+    "id": 33898,
+    "skillKey": "clawhub-compl",
+    "name": "Compl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compl",
+    "url": "https://clawhub.ai/skills/compl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compl-9fd02604978b70ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews ad content for compliance by identifying misleading claims, prohibited language, and improper imagery to ensure adherence to advertising standards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benchmarker77",
+      "userId": "publishers:benchmarker77",
+      "displayName": "benchmarker77",
+      "image": "https://avatars.githubusercontent.com/u/214064581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773814676310,
+      "changelog": "Ad Compliance skill initial release with clear, practical ad examples:\n\n- Provides compliant and non-compliant ad samples across product, automotive, and loan categories.\n- Each example includes specific headlines, descriptions, and image guidelines.\n- Highlights reasons for non-compliance to clarify regulatory standards.\n- Offers compliant alternatives for safer ad creation and review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45428e37fbf0f07910fbd02ba0e5ba8d9474542a6d782f8c8324990807c977b2"
+}

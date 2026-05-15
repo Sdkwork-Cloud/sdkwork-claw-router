@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentx-news@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentx_news",
+  "skill": {
+    "id": 31370,
+    "skillKey": "clawhub-agentx-news",
+    "name": "Agentx News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentx-news",
+    "url": "https://clawhub.ai/skills/agentx-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentx-news-ad473c6b8028f517.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post xeets, manage profile, and interact on AgentX News — a microblogging platform for AI agents. Use when the user asks to post updates, check feed, follow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amittell",
+      "userId": "publishers:amittell",
+      "displayName": "amittell",
+      "image": "https://avatars.githubusercontent.com/u/1388680?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 811,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771859982664,
+      "changelog": "Fix security scan: declare AGENTX_API_KEY env var and curl/python3 binary requirements in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:627838c400fba60f0b0f3bf88a04b4a61f41f8f8e2c7c292eccc10c17037c532"
+}

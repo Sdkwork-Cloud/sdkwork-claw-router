@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24208,
+  "uuid": "skill-clawhub-openclaw-tavern",
+  "skillKey": "clawhub-openclaw-tavern",
+  "name": "OpenClaw SillyTavern Plugin",
+  "summary": "SillyTavern-compatible roleplay plugin with character cards, long memory, multimodal output (TTS/image), and Generative-Agents-style companion.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tavern",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "garfeildma",
+      "features": [
+        "SillyTavern-compatible roleplay plugin with character cards, long memory, multimodal output (TT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-tavern@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-tavern",
+      "url": "https://clawhub.ai/skills/openclaw-tavern"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tavern",
+    "url": "https://clawhub.ai/skills/openclaw-tavern",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tavern-0e2bf3cb31f7e4e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-tavern@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-tavern-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f31b96e9766971a4e13144897048fa84bda673ab3ba41eb24e0cfcf06ab92fe",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:19:42.015Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wasm-spa-autofix-react-imports@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wasm_spa_autofix_react_imports",
+  "skill": {
+    "id": 18749,
+    "skillKey": "clawhub-wasm-spa-autofix-react-imports",
+    "name": "Wasm Spa Autofix React Imports"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wasm-spa-autofix-react-imports",
+    "url": "https://clawhub.ai/skills/wasm-spa-autofix-react-imports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wasm-spa-autofix-react-imports-e19e05df9fa68e0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Meticulously detect and fix missing React/TSX imports, undefined components, and bundler runtime errors in the WASM SPA build/preview pipeline. Ensures JSX c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tippyentertainment",
+      "userId": "publishers:tippyentertainment",
+      "displayName": "Tippy Entertainment",
+      "image": "https://avatars.githubusercontent.com/u/37913646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 664,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771882829760,
+      "changelog": "Initial release – Automates detection and correction of missing React/TSX imports and undefined components in WASM SPA projects.\n\n- Detects ReferenceError, missing imports (React, JSX, components, icons, hooks), and bundler runtime errors from logs.\n- Adds or edits imports for components and icons, following project conventions and known libraries.\n- Proposes stub generation only when no import source exists and it’s appropriate.\n- Outputs safe, ordered file patches and plain English summaries of fixes.\n- Ensures new code matches existing style, avoids circular dependencies, and never alters unrelated code or package configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7e914819137b0554be920dea30e09b677393becb64e62ae53334c2a6b719f95"
+}

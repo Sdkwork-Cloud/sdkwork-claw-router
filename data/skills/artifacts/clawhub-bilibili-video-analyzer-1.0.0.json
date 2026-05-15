@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-video-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_analyzer",
+  "skill": {
+    "id": 24146,
+    "skillKey": "clawhub-bilibili-video-analyzer",
+    "name": "bilibili-video-analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-analyzer",
+    "url": "https://clawhub.ai/skills/bilibili-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-analyzer-7ee7c00547a04bf6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes Bilibili academic/educational videos to extract knowledge points and generate clean-style study notes with screenshots. Use this skill when users pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "railgun9983",
+      "userId": "publishers:railgun9983",
+      "displayName": "railgun9983",
+      "image": "https://avatars.githubusercontent.com/u/57128537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772531945015,
+      "changelog": "- Initial release of bilibili-video-analyzer.\n- Analyze Bilibili academic/educational videos to extract key knowledge points and generate clean-style study notes with screenshots.\n- Automates video download, transcription, AI content analysis, screenshot capture, and professional report generation in card format.\n- Includes best practices guide, detailed quality checklist, and sample cases for quality assurance.\n- Command-line and script workflows for fast setup and usage.\n- Supports structured output with core concepts, detailed explanations, key points, and visual aids.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56204a8fef7983f5203b14c15b10833cf51417cc8eee4f15a32b5cae2536844a"
+}

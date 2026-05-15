@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conduxt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conduxt",
+  "skill": {
+    "id": 19253,
+    "skillKey": "clawhub-conduxt",
+    "name": "conduxt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conduxt",
+    "url": "https://clawhub.ai/skills/conduxt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conduxt-4b243d29a4c3da72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate full-duplex coding agent sessions via ACPX (preferred) or tmux (fallback), composing OpenClaw native tools and community Skills. Handles any codi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuezhouyang",
+      "userId": "publishers:xuezhouyang",
+      "displayName": "xuezhouyang",
+      "image": "https://avatars.githubusercontent.com/u/6263456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773160682703,
+      "changelog": "- Added homepage and metadata fields to SKILL.md, specifying project URL, required binaries (git, jq, acpx or tmux), supported OS, and an emoji.\n- No changes to core logic or implementation.  \n- Improves discoverability and compatibility with OpenClaw platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1aa6ae2c1fc7de75dbeacde4a59a1b97dfc405958bfb99f08f57a99d83852fd0"
+}

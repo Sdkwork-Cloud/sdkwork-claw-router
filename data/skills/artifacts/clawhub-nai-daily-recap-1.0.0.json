@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nai-daily-recap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_daily_recap",
+  "skill": {
+    "id": 42851,
+    "skillKey": "clawhub-nai-daily-recap",
+    "name": "Daily Recap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-daily-recap",
+    "url": "https://clawhub.ai/skills/nai-daily-recap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-daily-recap-970e177d852c5a35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a daily recap/summary of all agent activity and save it to Obsidian. Use when asked to do a daily recap, end-of-day summary, or when a cron job fire..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newageinvestments25-byte",
+      "userId": "s1750zbb4q7vnt30b4h3mhgarx83n6hn",
+      "displayName": "New Age Investments",
+      "image": "https://avatars.githubusercontent.com/u/243381911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774881322194,
+      "changelog": "- Initial release of the daily-recap skill.\n- Automatically generates a daily summary of all agent activity and saves it to Obsidian.\n- Reads today's memory log and (optionally) Discord messages to compile recaps of requests, research, builds, decisions, and notables.\n- Writes a structured journal entry with YAML frontmatter and appropriate topic tags to `vault/daily-recap/YYYY-MM-DD.md`.\n- Handles missing or empty logs gracefully by noting \"No activity logged\" in each section.\n- Prevents overwriting existing entries; appends an addendum if needed.\n- Designed for nightly, automated use via cron jobs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:908e5766e407cb2e0c1d6bec885cbf2af52f6e05331d697148a45702bda17e42"
+}

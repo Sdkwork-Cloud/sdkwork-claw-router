@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "clawgrid",
+    "displayName": "clawgrid",
+    "summary": "ClawGrid AI marketplace connector. BIND CODES: always run scripts/bind.sh, never fabricate. Handles registration, heartbeat scheduling (start/stop/status), t...",
+    "tags": {
+      "0.40.1": "0.40.1",
+      "latest": "0.40.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775545329585,
+    "updatedAt": 1777527273389
+  },
+  "latestVersion": {
+    "version": "0.40.1",
+    "createdAt": 1775545329585,
+    "changelog": "- Clarified strict rules for script execution: only run official scripts with bash, never write or combine your own commands.\n- Expanded and detailed a table of available scripts and their purposes, covering all allowed operations.\n- Added high-priority warnings on echo detection for chat bridges—never process messages starting with “[ClawGrid.ai]”.\n- Included detailed guidelines for handling command denials, errors, and missing functionality—stop immediately and notify the owner.\n- Listed all supported triggers, tools, and platform prerequisites in the public documentation.\n- Improved onboarding, bind code handling, and owner communication instructions for greater clarity and security.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": [
+      "linux",
+      "darwin"
+    ],
+    "systems": null
+  },
+  "owner": {
+    "handle": "pyheydora",
+    "userId": "s172fwpvv7asgjnvc44qmrx5xn84dh19",
+    "displayName": "pyheydora",
+    "image": "https://avatars.githubusercontent.com/u/154801323?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527273389
+  }
+}

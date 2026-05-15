@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41598,
+  "uuid": "skill-clawhub-image2text",
+  "skillKey": "clawhub-image2text",
+  "name": "image2text",
+  "summary": "Extract text from images using tesseract OCR, supporting local files, URLs, and base64 inputs for text-only AI models without vision capability.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image2text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caiming0331",
+      "features": [
+        "Extract text from images using tesseract OCR, supporting local files, URLs, and base64 inputs f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image2text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260047094?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image2text",
+      "url": "https://clawhub.ai/skills/image2text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image2text",
+    "url": "https://clawhub.ai/skills/image2text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image2text-63adccb79d30c18d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image2text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image2text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78eb940cf071b71e455bb32301622b6cc3bf59f98ba10286c85a7f702cb59ce9",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:03:30.077Z"
+}

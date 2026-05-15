@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one",
+  "skill": {
+    "id": 58530,
+    "skillKey": "clawhub-one",
+    "name": "one"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one",
+    "url": "https://clawhub.ai/skills/one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-7692c3ad3540bb80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "介绍数字 1 的文化含义和象征意义（中英文双语）。Use when users ask about the cultural meaning of number 1, \"一的文化\", \"symbolism of one\", \"为什么 1 很重要\", \"meaning of number one\" etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocryptoflow",
+      "userId": "publishers:leocryptoflow",
+      "displayName": "Leo Sheng",
+      "image": "https://avatars.githubusercontent.com/u/149644278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773999858225,
+      "changelog": "- Initial release of the \"one\" skill.\n- Provides bilingual (Chinese and English) explanations of the cultural, philosophical, and modern significance of the number 1.\n- Covers how \"one\" is viewed in Eastern and Western philosophy, religion, and modern contexts.\n- Includes example idioms, symbolic meanings, and application scenarios.\n- Designed to respond when users ask about the meaning or symbolism of the number 1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2533365f775398665759244d96fe12e56014f3cbd0e089695752565a23d73bf1"
+}

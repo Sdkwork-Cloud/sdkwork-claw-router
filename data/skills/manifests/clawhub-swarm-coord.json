@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63763,
+  "uuid": "skill-clawhub-swarm-coord",
+  "skillKey": "clawhub-swarm-coord",
+  "name": "Swarm Coord",
+  "summary": "多 Agent 协作调度。将大任务拆分为子任务，分配给多个 Agent 并行执行，自动汇总结果。Team Lead 负责拆分、分发、监控、汇总。触发词：协作、swarm、分工、团队任务、并行执行、多 Agent、team work。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_coord",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wavmson",
+      "features": [
+        "多 Agent 协作调度。将大任务拆分为子任务，分配给多个 Agent 并行执行，自动汇总结果。Team Lead 负责拆分、分发、监控、汇总。触发词：协作、swarm、分工、团队任务、并行."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swarm-coord@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127436552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swarm-coord",
+      "url": "https://clawhub.ai/skills/swarm-coord"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-coord",
+    "url": "https://clawhub.ai/skills/swarm-coord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-coord-8db834a4a92a4f3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swarm-coord@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swarm-coord-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad3a0bcabcfbd0af7b475c5067f20174d94772fd841c82d00b4fbff33a167e7b",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:58:50.819Z"
+}

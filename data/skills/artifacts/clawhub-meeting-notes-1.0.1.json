@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-notes@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_notes",
+  "skill": {
+    "id": 11349,
+    "skillKey": "clawhub-meeting-notes",
+    "name": "Meeting Notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-notes",
+    "url": "https://clawhub.ai/skills/meeting-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-notes-b1e0715b656f650a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and organize investor questions and project team answers from meeting transcripts into structured, time-sequenced notes with clear, minimal topic tit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinadu-ai",
+      "userId": "s178xc11mj68f9c018344m5xw183y7z8",
+      "displayName": "NANA",
+      "image": "https://avatars.githubusercontent.com/u/133653633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1971,
+      "installsAllTime": 22,
+      "installsCurrent": 20,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772019198923,
+      "changelog": "Make private",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6825c0c0ceda3b81cb218ac3facc72fe0586f4f0c969e592a1c26802033bfebd"
+}

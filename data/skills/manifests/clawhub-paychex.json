@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34763,
+  "uuid": "skill-clawhub-paychex",
+  "skillKey": "clawhub-paychex",
+  "name": "Paychex",
+  "summary": "Paychex integration. Manage data, records, and automate workflows. Use when the user wants to interact with Paychex data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paychex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Paychex integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Paychex data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paychex@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paychex",
+      "url": "https://clawhub.ai/skills/paychex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paychex",
+    "url": "https://clawhub.ai/skills/paychex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paychex-01e554b5222a04e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paychex@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-paychex-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b246d1c772e0f56621c335cd4f24b13e14b21a21a980bb0212d0cca72ade9ea",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:04.583Z"
+}

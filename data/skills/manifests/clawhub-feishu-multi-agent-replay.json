@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66293,
+  "uuid": "skill-clawhub-feishu-multi-agent-replay",
+  "skillKey": "clawhub-feishu-multi-agent-replay",
+  "name": "feishu-multi-agent",
+  "summary": "飞书多端机器人群聊对话中继 (Multi-Agent Relay)。通过后台轮询飞书群消息历史，监听对方机器人发言并代表本机机器人自动回复，实现多机器人在群内围绕指定话题的持续对话。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_multi_agent_replay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zz",
+      "features": [
+        "飞书多端机器人群聊对话中继 (Multi-Agent Relay)。通过后台轮询飞书群消息历史，监听对方机器人发言并代表本机机器人自动回复，实现多机器人在群内围绕指定话题的持续对话。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-multi-agent-replay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260378259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-multi-agent-replay",
+      "url": "https://clawhub.ai/skills/feishu-multi-agent-replay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-multi-agent-replay",
+    "url": "https://clawhub.ai/skills/feishu-multi-agent-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-multi-agent-replay-d22593ed037685d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-multi-agent-replay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-multi-agent-replay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bd351be0248d7c9e2609081e1dd059a6f0e3ca48c042791f165042fc8ed9ac8",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:32:49.458Z"
+}

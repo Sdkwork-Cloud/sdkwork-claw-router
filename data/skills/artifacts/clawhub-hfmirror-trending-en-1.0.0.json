@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hfmirror-trending-en@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hfmirror_trending_en",
+  "skill": {
+    "id": 40285,
+    "skillKey": "clawhub-hfmirror-trending-en",
+    "name": "Hfmirror Trending En"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hfmirror-trending-en",
+    "url": "https://clawhub.ai/skills/hfmirror-trending-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hfmirror-trending-en-eec3e664a69e51a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches real-time Hugging Face trending data via the public HF-Mirror API and generates structured Markdown reports in English. Suitable for conversational A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ddongcui",
+      "userId": "s176s67f6ncd69h8487rmhbnzh845ekp",
+      "displayName": "shunshiwei",
+      "image": "https://avatars.githubusercontent.com/u/65761809?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775230385967,
+      "changelog": "Initial release – fetches and reports trending Hugging Face models via HF-Mirror API.\n\n- Fetches real-time trending models from hf-mirror.com with no authentication required.\n- Generates clean, structured Markdown reports in English.\n- Fully cross-platform, runs with Python 3 standard libraries only (no external dependencies).\n- Designed for easy integration with conversational AI agents, featuring automated fetch and report generation.\n- Compliant with API terms via a custom User-Agent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aed6abde51708baaf3224ff619db9b5b26fd7a8e48f6caa4cf05cdaff7052976"
+}

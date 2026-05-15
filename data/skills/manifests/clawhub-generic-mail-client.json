@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15115,
+  "uuid": "skill-clawhub-generic-mail-client",
+  "skillKey": "clawhub-generic-mail-client",
+  "name": "Generic Mail Client",
+  "summary": "Send, receive, and manage emails via IMAP/POP3 and SMTP for multiple accounts supporting text, HTML, attachments, folders, and read status.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generic_mail_client",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuwenke123",
+      "features": [
+        "Send, receive, and manage emails via IMAP/POP3 and SMTP for multiple accounts supporting text,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generic-mail-client@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131440946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generic-mail-client",
+      "url": "https://clawhub.ai/skills/generic-mail-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generic-mail-client",
+    "url": "https://clawhub.ai/skills/generic-mail-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generic-mail-client-a25be4e94520cbb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generic-mail-client@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generic-mail-client-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46f7d361b9a187f8a73d48565c2ec1de0e6943525b7224f852f59fe9c5ad8260",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T03:20:53.489Z"
+}

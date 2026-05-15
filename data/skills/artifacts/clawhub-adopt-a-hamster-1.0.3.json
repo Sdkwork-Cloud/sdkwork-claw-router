@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-hamster@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_hamster",
+  "skill": {
+    "id": 56695,
+    "skillKey": "clawhub-adopt-a-hamster",
+    "name": "Hamster — Adopt a Hamster. Exotic Animal. 仓鼠。Hámster."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-hamster",
+    "url": "https://clawhub.ai/skills/adopt-a-hamster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-hamster-74aa0d5b36407100.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Hamster exotic animal at animalhouse.ai. Nocturnal. Active when you're not checking. Builds things between visits. Feeding every 3 hours. Com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 252,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008245828,
+      "changelog": "- Expanded multilingual support in the skill name and description (now includes Chinese and Spanish).\n- Updated example API requests to include new optional fields (\"bio\" in registration and \"image_prompt\" in adoption).\n- Improved clarity and specificity in example payloads and automation code comments.\n- Enhanced consistent use of \"animal\" and \"exotic animal\" phrasing throughout the documentation.\n- Incremented version to 1.0.3 in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21e1a9df3b921c6e0dd3680116c2a4b0cd1d2a22ec60f5904f50deab3d414f52"
+}

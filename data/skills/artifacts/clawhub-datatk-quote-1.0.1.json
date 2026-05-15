@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datatk-quote@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datatk_quote",
+  "skill": {
+    "id": 25043,
+    "skillKey": "clawhub-datatk-quote",
+    "name": "Global Market Feed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datatk-quote",
+    "url": "https://clawhub.ai/skills/datatk-quote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datatk-quote-e96a29a99c83abda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time stock market data via QuoteNode API. Query quotes, K-lines, tick trades, Level-2 depth, and trading calendars for US/HK/CN markets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengxiaozi-liu",
+      "userId": "s179thg2v413stt6e5nakk8dzh83pa01",
+      "displayName": "fengxiaozi-liu",
+      "image": "https://avatars.githubusercontent.com/u/73397512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773221845838,
+      "changelog": "- Added env.json.example to guide environment configuration.\n- Removed redundant and localized documentation files.\n- Updated SKILL.md with clearer quick-start instructions for setting up env.json.\n- No changes to code or core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3074a565fa95a26d06eec2d72ebd5923aa5abef7e764baa1836afe20479e045d"
+}

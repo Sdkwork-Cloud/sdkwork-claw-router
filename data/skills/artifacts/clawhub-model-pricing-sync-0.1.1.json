@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-pricing-sync@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_pricing_sync",
+  "skill": {
+    "id": 63453,
+    "skillKey": "clawhub-model-pricing-sync",
+    "name": "Model Pricing Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-pricing-sync",
+    "url": "https://clawhub.ai/skills/model-pricing-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-pricing-sync-1645b3a13bf5eafb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取模型厂商与代码工具价格页面，读取 Markdown 后补 JSON 提取文件，并同步到飞书普通电子表格。需要收集模型价格、补全价格 JSON、追踪价格变化或推送 Lark Sheets 时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sapereaude2014",
+      "userId": "s1770bpya8t0zhh70nhbrde3bx84e9e5",
+      "displayName": "sapereaude2014",
+      "image": "https://avatars.githubusercontent.com/u/66770653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776912019248,
+      "changelog": "Refine publishing package, update workflow instructions, and improve collection/build stability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:195c5770ad68284601e82a208bf1a964fc2a333fdc15adcc93c5e4ae6495de20"
+}

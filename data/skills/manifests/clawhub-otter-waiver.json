@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38805,
+  "uuid": "skill-clawhub-otter-waiver",
+  "skillKey": "clawhub-otter-waiver",
+  "name": "Otter Waiver",
+  "summary": "Otter Waiver integration. Manage data, records, and automate workflows. Use when the user wants to interact with Otter Waiver data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.otter_waiver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Otter Waiver integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Otter Waiver data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/otter-waiver@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "otter-waiver",
+      "url": "https://clawhub.ai/skills/otter-waiver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "otter-waiver",
+    "url": "https://clawhub.ai/skills/otter-waiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/otter-waiver-4bdb58df98a47c18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/otter-waiver@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-otter-waiver-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fad545250f8c66d5d1964ba7732746021445a560d60b365380669954ed6fae3c",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:20:51.475Z"
+}

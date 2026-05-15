@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/m365cli@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m365cli",
+  "skill": {
+    "id": 17030,
+    "skillKey": "clawhub-m365cli",
+    "name": "m365cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m365cli",
+    "url": "https://clawhub.ai/skills/m365cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m365cli-fb68e7bb0a7674af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Microsoft 365 work/school account services (Exchange, OneDrive for Business, SharePoint) via the m365-cli command-line tool. Use for corporate email,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrhah",
+      "userId": "s17c3k93yw7hx52y1g7wbm127d840yka",
+      "displayName": "Jason Huang",
+      "image": "https://avatars.githubusercontent.com/u/3345369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 694,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774049379136,
+      "changelog": "Trim description to concise summary",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c1b9b0bd149d863d8d4013b499e7db6b36877f59975bff40b5f632afbf7ac0c"
+}

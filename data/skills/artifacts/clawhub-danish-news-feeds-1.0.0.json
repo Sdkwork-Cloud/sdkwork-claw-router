@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/danish-news-feeds@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.danish_news_feeds",
+  "skill": {
+    "id": 22144,
+    "skillKey": "clawhub-danish-news-feeds",
+    "name": "Danish News Feeds"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "danish-news-feeds",
+    "url": "https://clawhub.ai/skills/danish-news-feeds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/danish-news-feeds-ff54be8065234731.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Danish News RSS Aggregator - combines 100+ Danish RSS feeds into category-based unified feeds. Produces 6 curated RSS feeds: - danish-all.xml (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "broedkrummen",
+      "userId": "s176tqmpjtkpkhfdzyb4m64qts83hexw",
+      "displayName": "Broedkrummen",
+      "image": "https://avatars.githubusercontent.com/u/146327287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772631878941,
+      "changelog": "- Initial release of \"danish-news-feeds\": a comprehensive Danish news RSS aggregator.\n- Combines 100+ Danish RSS sources into 7 unified, category-based feeds (national, regional, sports, business, tech, English, and all).\n- Features auto-refresh every 15 minutes, article deduplication, and ranking by source authority.\n- Outputs fully compliant, UTF-8 encoded RSS 2.0 feeds with support for images.\n- Easily configurable via feeds.json and supports both self-hosting (Docker) and cron-based refresh.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:30790402afcda53192ab1daac3fd190b7277328f4195f0d8615163ea7bb16b36"
+}

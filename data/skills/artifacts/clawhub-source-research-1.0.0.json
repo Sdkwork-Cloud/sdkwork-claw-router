@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/source-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.source_research",
+  "skill": {
+    "id": 30169,
+    "skillKey": "clawhub-source-research",
+    "name": "Source Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "source-research",
+    "url": "https://clawhub.ai/skills/source-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/source-research-93872942c24a87ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and maintain a reusable source-research system for discovering source pools, evaluating whether they are worth ongoing investment, defining efficient a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myvyang",
+      "userId": "publishers:myvyang",
+      "displayName": "kamael",
+      "image": "https://avatars.githubusercontent.com/u/2939352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773480596900,
+      "changelog": "- Initial release of the source-research skill with a reusable framework for discovering, evaluating, filtering, and managing information/source pools.\n- Defines a structured storage standard in a canonical `.source-research/` directory, with clear categories for pools, acquisition, filtering, source lists, information, rejections, and programs.\n- Outlines step-by-step workflows for discovering new pools, revisiting existing ones, manual vs. automated collection, and confirming pool value.\n- Provides default operating rules to ensure efficient and non-redundant source research.\n- Emphasizes creating and standardizing reusable artifacts for future agents, not just chat-based suggestions.\n- Includes references to support methodology, artifacts, storage, and organization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dc641162b5f1b3baa2c99dec7405950f911e62c3dd937b124b141d059cc9e4c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20086,
+  "uuid": "skill-clawhub-qq-music",
+  "skillKey": "clawhub-qq-music",
+  "name": "Qq Music",
+  "summary": "Provides summary data for public QQ Music playlists, songs, and artists including plays, favorites, and ranking trends without download or bulk scraping.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "Provides summary data for public QQ Music playlists, songs, and artists including plays, favori."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qq-music@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qq-music",
+      "url": "https://clawhub.ai/skills/qq-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-music",
+    "url": "https://clawhub.ai/skills/qq-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-music-1a38dcb2d51ddb48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qq-music@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qq-music-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f65e115c722f29050b11b1b88a85b0e0469cc0d4c711efe456b47f0802be1d72",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T01:25:15.452Z"
+}

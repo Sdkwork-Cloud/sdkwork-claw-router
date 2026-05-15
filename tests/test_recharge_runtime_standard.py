@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -18,9 +18,13 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         )
 
         self.assertIn("operation: fetchPackages", contract)
-        self.assertIn("api_path: /app/v3/api/vip/pack-groups/packs", contract)
+        self.assertIn("api_path: /app/v3/api/billing/account/points/recharges/packages", contract)
+        self.assertIn("operation_id: consoleRecharge.packages.fetch", contract)
+        self.assertIn("openapi_exposed: false", contract)
         self.assertIn("operation: submitRecharge", contract)
-        self.assertIn("api_path: /app/v3/api/account/points/recharge", contract)
+        self.assertIn("api_path: /app/v3/api/billing/account/points/recharges", contract)
+        self.assertIn("operation_id: account.points.recharges.create", contract)
+        self.assertIn("idempotency_required: true", contract)
         self.assertIn("write_tables: [plus_vip_recharge, plus_order, plus_order_item, plus_payment]", contract)
 
         self.assertTrue(
@@ -54,8 +58,8 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertIn("SubmitRechargeCommand", recharge_port)
         self.assertIn("SubmitRechargeOutcome", recharge_port)
 
-        self.assertIn('"/app/v3/api/vip/pack-groups/packs"', app_recharge)
-        self.assertIn('"/app/v3/api/account/points/recharge"', app_recharge)
+        self.assertIn('"/app/v3/api/billing/account/points/recharges/packages"', app_recharge)
+        self.assertIn('"/app/v3/api/billing/account/points/recharges"', app_recharge)
         self.assertIn("EmptyRechargeStore", app_recharge)
         self.assertIn("validate_submit_recharge_request", app_recharge)
         self.assertIn("recharge amount must be greater than zero", app_recharge)
@@ -146,11 +150,13 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("MAX_RECHARGE_AMOUNT: f64", app_recharge)
 
         for store in [sqlite_store, postgres_store]:
+            compact_store = " ".join(store.split())
             self.assertIn("DecimalValue", store)
             self.assertIn(
-                'rmb: decimal_string_cell(row, "rmb", "recharge package rmb")?',
-                store,
+                'let rmb = decimal_string_cell(row, "rmb", "recharge package rmb")?;',
+                compact_store,
             )
+            self.assertIn("rmb,", store)
             self.assertIn(
                 "fn decimal_value_string(value: &str, field_name: &str) -> Result<String, DomainError>",
                 store,
@@ -186,7 +192,8 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertIn("rmb: string", recharge_service)
         self.assertIn("submitRecharge(amount: string", recharge_service)
         self.assertIn("readRequiredMoneyString", recharge_service)
-        self.assertIn("getClawRouterAppSdkClient().account.submitRecharge", recharge_service)
+        self.assertIn("getClawRouterAppSdkClient().billing.account.points.recharges.create", recharge_service)
+        self.assertIn("createRequestParams('commerce-points-recharge')", recharge_service)
         self.assertIn("amount: moneyAmount(amount, 'amount')", recharge_service)
         self.assertIn("method: requiredText(method, 'method')", recharge_service)
         self.assertIn("function isPositiveMoneyString", recharge_service)
@@ -204,7 +211,8 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("rmb: readMoneyString(item, 'rmb')", recharge_service)
         self.assertNotIn("bonus: readNumber(item, 'bonus')", recharge_service)
         self.assertNotIn("success: readBoolean(data, 'success', true)", recharge_service)
-        self.assertIn("pointsForAmount(", recharge_view)
+        self.assertIn("const creditsReceived = selectedPackage?.points;", recharge_view)
+        self.assertIn("pkg.points.toLocaleString()", recharge_view)
         self.assertIn("formatMoneyAmount(", recharge_view)
         self.assertNotIn("pkg.rmb * EXCHANGE_RATE", recharge_view)
         self.assertNotIn("currentSelectionAmount * EXCHANGE_RATE", recharge_view)
@@ -213,7 +221,8 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertIn("Checkout amount must be a money string", checkout_service)
         self.assertNotIn("amount: number", checkout_service)
         self.assertIn("formatMoneyAmount(", checkout_view)
-        self.assertIn("pointsForAmount(", checkout_view)
+        self.assertIn("const points = checkoutStatus?.points;", checkout_view)
+        self.assertIn("points.toLocaleString()", checkout_view)
         self.assertNotIn("payableAmount * EXCHANGE_RATE", checkout_view)
         self.assertNotIn("payableAmount.toFixed", checkout_view)
         self.assertNotIn("checkoutStatus.amount.toFixed", checkout_view)
@@ -300,8 +309,8 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
             / "rechargeService.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("getClawRouterAppSdkClient().vip.fetchPackages()", service)
-        self.assertIn("getClawRouterAppSdkClient().account.submitRecharge", service)
+        self.assertIn("getClawRouterAppSdkClient().billing.account.points.recharges.packages.list()", service)
+        self.assertIn("getClawRouterAppSdkClient().billing.account.points.recharges.create", service)
         self.assertNotIn("fetch('/app/v3/api", service)
         self.assertNotIn("axios", service)
 
@@ -383,24 +392,24 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("AccountService.fetchAccountDetails().then", recharge_view)
 
     def test_console_recharge_sdk_uses_operation_specific_payloads(self) -> None:
-        account_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "account.ts").read_text(
+        billing_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
             encoding="utf-8"
         )
         type_exports = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("SubmitRechargeRequest", account_api)
-        self.assertIn("SubmitRechargeResult", account_api)
+        self.assertIn("SubmitRechargeRequest", billing_api)
+        self.assertIn("AccountPointsRechargesCreateResult", billing_api)
         self.assertIn(
-            "async submitRecharge(body: SubmitRechargeRequest): Promise<SubmitRechargeResult>",
-            account_api,
+            "async create(body: SubmitRechargeRequest, params: BillingAccountPointsRechargesCreateParams): Promise<AccountPointsRechargesCreateResult>",
+            billing_api,
         )
-        self.assertIn("this.client.post<SubmitRechargeResult>", account_api)
-        self.assertNotIn("async submitRecharge(body?: OperationRequest): Promise<PlusApiResult>", account_api)
+        self.assertIn("this.client.post<AccountPointsRechargesCreateResult>", billing_api)
+        self.assertNotIn("async submitRecharge(body?: OperationRequest): Promise<PlusApiResult>", billing_api)
         self.assertIn("export type { SubmitRechargeRequest }", type_exports)
         self.assertIn("export type { SubmitRechargeResponse }", type_exports)
-        self.assertIn("export type { SubmitRechargeResult }", type_exports)
+        self.assertIn("export type { AccountPointsRechargesCreateResult }", type_exports)
 
     def test_console_recharge_fetch_packages_uses_precise_app_sdk_response_contract(self) -> None:
         contract = (ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml").read_text(
@@ -409,7 +418,7 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
         openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
             encoding="utf-8"
         )
-        vip_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "vip.ts").read_text(
+        billing_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
             encoding="utf-8"
         )
         recharge_service = (
@@ -424,14 +433,14 @@ class RechargeRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("name: RechargePackagesResponse", contract)
         self.assertIn('"RechargePackagesResponse"', openapi)
-        self.assertIn('"FetchPackagesResult"', openapi)
+        self.assertIn('"VipPacksListResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/RechargePackagesResponse"', openapi)
-        self.assertIn("async fetchPackages(params?: QueryParams): Promise<FetchPackagesResult>", vip_api)
-        self.assertIn("get<FetchPackagesResult>", vip_api)
-        self.assertNotIn("fetchPackages(params?: QueryParams): Promise<PlusApiResult>", vip_api)
+        self.assertIn("async list(): Promise<VipPacksListResult>", billing_api)
+        self.assertIn("get<VipPacksListResult>", billing_api)
+        self.assertNotIn("fetchPackages(params?: QueryParams): Promise<PlusApiResult>", billing_api)
 
-        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "recharge-packages-response.ts"
-        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "fetch-packages-result.ts"
+        response_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "recharge-packages-response.ts"
+        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "vip-packs-list-result.ts"
         self.assertTrue(response_path.exists())
         self.assertTrue(result_path.exists())
         self.assertIn("export type RechargePackagesResponse", response_path.read_text(encoding="utf-8"))

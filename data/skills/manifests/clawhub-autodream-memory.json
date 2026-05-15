@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41416,
+  "uuid": "skill-clawhub-autodream-memory",
+  "skillKey": "clawhub-autodream-memory",
+  "name": "AutoDream Memory",
+  "summary": "AutoDream - Automatic memory consolidation sub-agent. Periodically (24h +5 sessions) organizes MEMORY.md and memory files, deduplicates, merges, removes stal...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autodream_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bigkingcn",
+      "features": [
+        "AutoDream",
+        "Automatic memory consolidation sub-agent",
+        "Periodically (24h +5 sessions) organizes MEMORY.md and memory files, deduplicates, merges, remo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autodream-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202888286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autodream-memory",
+      "url": "https://clawhub.ai/skills/autodream-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autodream-memory",
+    "url": "https://clawhub.ai/skills/autodream-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autodream-memory-f1094f64850aaf37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autodream-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autodream-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32afd5545c0a0067c3cea6dbe4263f1f6e94c1078fa6311de5494bd3e30e69e9",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:20:18.847Z"
+}

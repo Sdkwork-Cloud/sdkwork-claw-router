@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loan-calculator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loan_calculator",
+  "skill": {
+    "id": 58983,
+    "skillKey": "clawhub-loan-calculator",
+    "name": "Loan Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loan-calculator",
+    "url": "https://clawhub.ai/skills/loan-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loan-calculator-a5f9f4500a202f90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "贷款计算器。等额本息/等额本金计算、方案对比、提前还款分析、贷款能力评估、还款计划表、再融资分析。Loan calculator with equal installment/principal, comparison, prepayment analysis, affordability, schedule."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 570,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773693555,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f080bfd507f7cf86290edfd5642a737d0a3091abe6db5eafd79b147bacf893f2"
+}

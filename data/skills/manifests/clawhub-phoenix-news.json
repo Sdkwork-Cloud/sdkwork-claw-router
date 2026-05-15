@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70400,
+  "uuid": "skill-clawhub-phoenix-news",
+  "skillKey": "clawhub-phoenix-news",
+  "name": "Phoenix News",
+  "summary": "整理凤凰新闻公开频道结构、专题入口及帮助信息，提供资讯平台公开内容架构与规则说明查询服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenix_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "整理凤凰新闻公开频道结构、专题入口及帮助信息，提供资讯平台公开内容架构与规则说明查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phoenix-news@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phoenix-news",
+      "url": "https://clawhub.ai/skills/phoenix-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenix-news",
+    "url": "https://clawhub.ai/skills/phoenix-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenix-news-63c7df15bfe094b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phoenix-news@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phoenix-news-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc2df75f94a36eedca8e64708cef60a372610c4cd247f3a61a34238bd1e1acd6",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T18:02:32.827Z"
+}

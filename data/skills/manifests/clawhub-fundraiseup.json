@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11326,
+  "uuid": "skill-clawhub-fundraiseup",
+  "skillKey": "clawhub-fundraiseup",
+  "name": "Fundraise Up",
+  "summary": "Interact with FundraiseUp REST API to manage donations, recurring plans, supporters, campaigns, and donor portal access. Process online and offline donations, retrieve fundraising analytics, and integrate with nonprofit CRM systems.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fundraiseup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aamish Sohail",
+      "features": [
+        "Interact with FundraiseUp REST API to manage donations, recurring plans, supporters, campaigns,.",
+        "Process online and offline donations, retrieve fundraising analytics, and integrate with nonpro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fundraiseup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19818217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fundraiseup",
+      "url": "https://clawhub.ai/skills/fundraiseup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fundraiseup",
+    "url": "https://clawhub.ai/skills/fundraiseup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fundraiseup-488f74d371f293de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fundraiseup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fundraiseup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffdd0ced5517d7ea8e089baff169ca58612c5623bf2465d2c88550a4bf547f78",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T18:07:05.066Z"
+}

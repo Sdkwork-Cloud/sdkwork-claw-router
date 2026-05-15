@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-data-automation@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_data_automation",
+  "skill": {
+    "id": 15035,
+    "skillKey": "clawhub-llm-data-automation",
+    "name": "Llm Data Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-data-automation",
+    "url": "https://clawhub.ai/skills/llm-data-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-data-automation-a59f862d3daf56d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate construction data processing using LLM (ChatGPT, Claude, LLaMA). Generate Python/Pandas scripts, extract data from documents, and create automated p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1042,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771172635668,
+      "changelog": "llm-data-automation v2.1.0\n\n- Expanded documentation with practical examples for common construction data tasks, including PDF extraction, BIM data analysis, cost estimation, and schedule processing.\n- Added clear quick start guides for using LLMs online (ChatGPT, Claude), locally (Ollama, LM Studio), and with company documents (LlamaIndex).\n- Highlighted core concepts and best practices for non-programmers to use Python/Pandas via natural language prompts.\n- Provided IDE recommendations and setup instructions for popular development environments.\n- Updated local LLM setup instructions with supported models and use cases for offline automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:074c0319582932d64e4056d377ade76285d83c34bdf08d4b6a8704d45a871dc7"
+}

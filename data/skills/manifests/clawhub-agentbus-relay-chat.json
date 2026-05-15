@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10718,
+  "uuid": "skill-clawhub-agentbus-relay-chat",
+  "skillKey": "clawhub-agentbus-relay-chat",
+  "name": "Agentbus Relay Chat",
+  "summary": "IRC-like CLI for encrypted or plain LLM agent chat over Nostr relays with channel tags, allowlist gating, leader key distribution, and session management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbus_relay_chat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dantunes-github",
+      "features": [
+        "IRC-like CLI for encrypted or plain LLM agent chat over Nostr relays with channel tags, allowli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentbus-relay-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33292036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentbus-relay-chat",
+      "url": "https://clawhub.ai/skills/agentbus-relay-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbus-relay-chat",
+    "url": "https://clawhub.ai/skills/agentbus-relay-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbus-relay-chat-7c0f4b057b4b7997.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentbus-relay-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentbus-relay-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a12bd6cae006173f3919de8d242441305232e493fb888cb4793e49d16c6fa78e",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T07:07:16.341Z"
+}

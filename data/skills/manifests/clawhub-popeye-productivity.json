@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67951,
+  "uuid": "skill-clawhub-popeye-productivity",
+  "skillKey": "clawhub-popeye-productivity",
+  "name": "Popeye Productivity",
+  "summary": "个人生产力提升工具包 - 日程管理、目标追踪、知识整理、效率优化四大模块。触发词：日程规划、目标设定、整理笔记、效率诊断",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popeye_productivity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangtaoid",
+      "features": [
+        "个人生产力提升工具包",
+        "日程管理、目标追踪、知识整理、效率优化四大模块。触发词：日程规划、目标设定、整理笔记、效率诊断"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popeye-productivity@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62326134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popeye-productivity",
+      "url": "https://clawhub.ai/skills/popeye-productivity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popeye-productivity",
+    "url": "https://clawhub.ai/skills/popeye-productivity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popeye-productivity-9c67244ac4d5804d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popeye-productivity@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-popeye-productivity-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48c2e83356114e78df58d5fade220a14fcf694219a9d30b540511b9e44cf78bb",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:02:40.626Z"
+}

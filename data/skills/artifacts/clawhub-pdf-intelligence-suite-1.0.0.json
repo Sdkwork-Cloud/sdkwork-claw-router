@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-intelligence-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_intelligence_suite",
+  "skill": {
+    "id": 58202,
+    "skillKey": "clawhub-pdf-intelligence-suite",
+    "name": "Pdf Intelligence Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-intelligence-suite",
+    "url": "https://clawhub.ai/skills/pdf-intelligence-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-intelligence-suite-67eee691b0c2aab5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF智能处理套件 - 文本提取、表格识别、OCR、PDF转Word/Excel等 | PDF Intelligence Suite - Text extraction, table recognition, OCR, PDF to Word/Excel conversion"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773997703668,
+      "changelog": "PDF Intelligence Suite 1.0.0 initial release:\n\n- Provides text extraction, table recognition (CSV/Excel), and OCR for PDFs.\n- Supports PDF to Word/Excel/image conversion.\n- Enables PDF page merging, splitting, rotating, deletion, and security features (encryption, decryption, watermark, digital signature).\n- Includes metadata read and edit capabilities.\n- Built with PyPDF2, pdfplumber, camelot-py, pytesseract, pdf2image, reportlab, and Pillow.\n- Example code and installation instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:948fb0125af93ebef0b9ba2674509a3c1bb71d669e0a2b9e5f296bb19b341c24"
+}

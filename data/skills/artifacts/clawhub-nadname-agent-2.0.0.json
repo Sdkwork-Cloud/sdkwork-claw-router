@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nadname-agent@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nadname_agent",
+  "skill": {
+    "id": 19141,
+    "skillKey": "clawhub-nadname-agent",
+    "name": "NadName Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nadname-agent",
+    "url": "https://clawhub.ai/skills/nadname-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nadname-agent-e41f240698233870.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🌐 Register .nad names on Monad blockchain via Nad Name Service (NNS). Real API integration with registerWithSignature, dynamic gas estimation, permanent ownership."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daaab",
+      "userId": "s1734aczwq16mt7vnhrq68bkq5841wa6",
+      "displayName": "Ju Chun Ko",
+      "image": "https://avatars.githubusercontent.com/u/1607280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770603412086,
+      "changelog": "v2.0.0: Real API integration with registerWithSignature, dynamic gas estimation (2x buffer), --dry-run flag, graceful API fallback. Thanks to CloudLobster for real-world testing and improvement suggestions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6227ca4c50ae60e8956031717fc98d79a5653440a315c19b3d64cf0f6cd3457c"
+}

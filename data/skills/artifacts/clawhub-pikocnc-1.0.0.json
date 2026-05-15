@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pikocnc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pikocnc",
+  "skill": {
+    "id": 39534,
+    "skillKey": "clawhub-pikocnc",
+    "name": "pikoCNC G-CODE"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pikocnc",
+    "url": "https://clawhub.ai/skills/pikocnc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pikocnc-73ab71def4d040c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interprets and executes full PikoCNC G-code commands with modal state tracking, motion control, parameter handling, and error detection for CNC machining."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "midware",
+      "userId": "s17e5bfj25bnkpvrsy9ez62xtn83gk8t",
+      "displayName": "Kamil Szymoniak",
+      "image": "https://avatars.githubusercontent.com/u/15710106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774716609998,
+      "changelog": "v.1.0.0 - created pikoCNC G-CODE skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa1d339f78de8d955ca6d4a9dddc9ba110deb7024baf2cd0acc5d8e6a01c4e70"
+}

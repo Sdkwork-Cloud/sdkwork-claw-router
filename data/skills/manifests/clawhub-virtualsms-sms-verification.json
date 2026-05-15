@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52755,
+  "uuid": "skill-clawhub-virtualsms-sms-verification",
+  "skillKey": "clawhub-virtualsms-sms-verification",
+  "name": "VirtualSMS — Real SIM SMS Verification",
+  "summary": "Real SIM-card SMS verification for AI agents via VirtualSMS MCP server. TRIGGERS: SMS verification, OTP code, phone number, virtual number, SIM card, two-fac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtualsms_sms_verification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VirtualSMS",
+      "features": [
+        "Real SIM-card SMS verification for AI agents via VirtualSMS MCP server",
+        "TRIGGERS: SMS verification, OTP code, phone number, virtual number, SIM card, two-fac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/virtualsms-sms-verification@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/virtualsms-sms-verification/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "virtualsms-sms-verification",
+      "url": "https://clawhub.ai/skills/virtualsms-sms-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtualsms-sms-verification",
+    "url": "https://clawhub.ai/skills/virtualsms-sms-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtualsms-sms-verification-ec46f17b7979e1e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/virtualsms-sms-verification@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-virtualsms-sms-verification-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce004835ad1cd936a0035a79ac2729bfd24d4db35c845a65cc47dbf323f8c9f2",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T15:10:25.255Z"
+}

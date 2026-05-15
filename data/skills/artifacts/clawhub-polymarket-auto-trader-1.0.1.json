@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-auto-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_auto_trader",
+  "skill": {
+    "id": 9420,
+    "skillKey": "clawhub-polymarket-auto-trader",
+    "name": "Polymarket Auto-Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-auto-trader",
+    "url": "https://clawhub.ai/skills/polymarket-auto-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-auto-trader-d13a0c95aa521f00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous Polymarket prediction market trading agent. Scans markets, evaluates probabilities with LLM, sizes positions with Kelly criterion, and executes trades via CLOB API. Use when user wants to trade on Polymarket, set up automated pr."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "srikanthbellary",
+      "userId": "publishers:srikanthbellary",
+      "displayName": "srikanthbellary",
+      "image": "https://avatars.githubusercontent.com/u/204752113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2868,
+      "installsAllTime": 19,
+      "installsCurrent": 16,
+      "stars": 10,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770846838328,
+      "changelog": "Fix: added required env vars (PRIVATE_KEY, LLM_API_KEY) to metadata, pinned dependency versions, added security considerations section and homepage URL",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5f476e5b3646af03fcaf156c1067ac1fb692742249e355ca81278ff9da922cf"
+}

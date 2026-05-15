@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interactive-arch-diagram-creator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interactive_arch_diagram_creator",
+  "skill": {
+    "id": 68833,
+    "skillKey": "clawhub-interactive-arch-diagram-creator",
+    "name": "arch-diagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interactive-arch-diagram-creator",
+    "url": "https://clawhub.ai/skills/interactive-arch-diagram-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interactive-arch-diagram-creator-660bb130965f322b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成代码仓架构可视化图，输出为独立静态 HTML 网页。 仅支持在代码仓根目录下运行，自动扫描当前目录。 Claude 扫描代码文件、理解架构、生成层次思维导图和各模块子流程图， 最终输出可在浏览器直接打开的 HTML 文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panrusheng",
+      "userId": "s178hx42cv7na7ebx8qjwa65v584rbzm",
+      "displayName": "panrusheng",
+      "image": "https://avatars.githubusercontent.com/u/18457619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776168844385,
+      "changelog": "- 限制功能仅支持在代码仓根目录下运行，自动扫描当前目录，移除路径和批量配置文件支持\n- 更新用户引导和流程，去除 repos.json 批量处理相关说明\n- 精简常见错误说明，仅提示文件类型支持及是否在仓库根目录下运行\n- 保留原有架构分析及生成流程，界面和输出不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f74713bf2d16fb19486e39190f099db3f3bcc22adf4adab39fd5e36677e4a18d"
+}

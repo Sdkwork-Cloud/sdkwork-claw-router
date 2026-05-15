@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mikrotik-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mikrotik_api",
+  "skill": {
+    "id": 51038,
+    "skillKey": "clawhub-mikrotik-api",
+    "name": "MikroTik API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mikrotik-api",
+    "url": "https://clawhub.ai/skills/mikrotik-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mikrotik-api-60faec85288cf330.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages MikroTik routers via the RouterOS API (port 8728/8729). Use when the user wants to configure, monitor, or troubleshoot a MikroTik router — including..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluemeda",
+      "userId": "publishers:bluemeda",
+      "displayName": "Affif Mukhlashin",
+      "image": "https://avatars.githubusercontent.com/u/1296615?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773789003251,
+      "changelog": "Update: Added instructions to use environment variables (MIKROTIK_HOST, MIKROTIK_USERNAME, MIKROTIK_PASSWORD) for secure connection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8409c67524e1ef457a56c9b67209571fcf25951089a763217d2d404aa44afac1"
+}

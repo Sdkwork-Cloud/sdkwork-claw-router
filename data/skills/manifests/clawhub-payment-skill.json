@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62111,
+  "uuid": "skill-clawhub-payment-skill",
+  "skillKey": "clawhub-payment-skill",
+  "name": "Payment Skill",
+  "summary": "AI 原生支付解决方案 - 提供安全、可靠的支付功能",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payment_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neverSatRabbit",
+      "features": [
+        "AI 原生支付解决方案",
+        "提供安全、可靠的支付功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payment-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27465824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payment-skill",
+      "url": "https://clawhub.ai/skills/payment-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payment-skill",
+    "url": "https://clawhub.ai/skills/payment-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payment-skill-2710bcf5c3111f98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payment-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-payment-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b925d70a9c72efda1fd2b72efe1c5727fa85437fb5698b0d7752974b3bf6059a",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:47:12.677Z"
+}

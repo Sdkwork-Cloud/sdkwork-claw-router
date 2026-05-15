@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdiary@1.1.9",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdiary",
+  "skill": {
+    "id": 27029,
+    "skillKey": "clawhub-clawdiary",
+    "name": "Claw-Diary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdiary",
+    "url": "https://clawhub.ai/skills/clawdiary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdiary-ee4b0a8cb28628b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrates with ClawDiary to guard high-risk actions with human approval, audit completed actions, and sync shared diaries across devices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jetywolf",
+      "userId": "publishers:jetywolf",
+      "displayName": "Jety",
+      "image": "https://avatars.githubusercontent.com/u/198728205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.9",
+      "createdAt": 1773078085189,
+      "changelog": "- Version bump from 1.1.7 to 1.1.9.\n- No file changes detected.\n- No new features, bug fixes, or documentation updates included in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08545b7823d440131278c055ae8c2514d1fedfaac4fc4bccb7fa7567ec473c42"
+}

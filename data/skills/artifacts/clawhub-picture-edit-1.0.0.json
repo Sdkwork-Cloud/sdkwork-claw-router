@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/picture-edit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.picture_edit",
+  "skill": {
+    "id": 70161,
+    "skillKey": "clawhub-picture-edit",
+    "name": "Picture Edit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "picture-edit",
+    "url": "https://clawhub.ai/skills/picture-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/picture-edit-6f894d3585d41c9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供图片加载、编辑、增强、滤镜、拼接、背景移除和文字添加等功能，支持多格式和高效处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgta23",
+      "userId": "s176ns9wb0zkz6m56ha2rk438x843wcn",
+      "displayName": "bittao",
+      "image": "https://avatars.githubusercontent.com/u/17961407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775538574239,
+      "changelog": "picture-edit 1.0.0 初始发布\n\n- 提供图片加载、保存、格式转换、尺寸调整、裁剪等基础操作。\n- 支持智能亮度、对比度、清晰度调整和一键增强。\n- 内置多种创意滤镜（黑白、复古、模糊、轮廓、反色、像素化）。\n- 支持图片的水平、垂直及网格拼接和多种智能对齐。\n- 集成背景移除（白底/指定色）和边缘平滑功能。\n- 实现多位置、可自定义样式的图片文字添加模块。\n- 简洁 API，支持 Python 代码直接调用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0462228c7bb861bd51e6d04bec6157a28cad488d4b7d83cc6ac689cd40cc025"
+}

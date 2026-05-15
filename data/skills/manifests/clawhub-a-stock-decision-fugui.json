@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71423,
+  "uuid": "skill-clawhub-a-stock-decision-fugui",
+  "skillKey": "clawhub-a-stock-decision-fugui",
+  "name": "A 股投资决策助手",
+  "summary": "从共享记忆读取持仓，生成 A 股投资决策报告（止损/止盈/仓位管理）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_decision_fugui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "尘埃",
+      "features": [
+        "从共享记忆读取持仓，生成 A 股投资决策报告（止损/止盈/仓位管理）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-decision-fugui@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266698955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-decision-fugui",
+      "url": "https://clawhub.ai/skills/a-stock-decision-fugui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-decision-fugui",
+    "url": "https://clawhub.ai/skills/a-stock-decision-fugui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-decision-fugui-410a689df7bc67bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-decision-fugui@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-decision-fugui-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23b660b9097ec1b23bc181fd973098da657d79539c7e4b96faab8b9fb2ad7698",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:50:02.775Z"
+}

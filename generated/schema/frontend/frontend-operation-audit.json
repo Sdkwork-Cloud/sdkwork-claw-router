@@ -2,8 +2,9 @@
   "operations": [
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/announcements",
+      "api_path": "/backend/v3/api/content/announcements",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addAnnouncement",
       "read_sources": [
@@ -18,8 +19,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/router/announcements/{announcementId}",
+      "api_path": "/backend/v3/api/content/announcements/{announcementId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteAnnouncement",
       "read_sources": [
@@ -34,8 +36,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/announcements",
+      "api_path": "/backend/v3/api/content/announcements",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchAnnouncements",
       "read_sources": [
@@ -47,8 +50,9 @@
     },
     {
       "api_method": "PATCH",
-      "api_path": "/backend/v3/api/router/announcements/{announcementId}",
+      "api_path": "/backend/v3/api/content/announcements/{announcementId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateAnnouncement",
       "read_sources": [
@@ -63,8 +67,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/channel",
+      "api_path": "/backend/v3/api/integration/channels",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addChannel",
       "read_sources": [
@@ -85,8 +90,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/provider-secrets",
+      "api_path": "/backend/v3/api/integration/provider_secrets",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addProviderSecret",
       "read_sources": [
@@ -102,8 +108,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/channel/{channelId}",
+      "api_path": "/backend/v3/api/integration/channels/{channelId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteChannel",
       "read_sources": [
@@ -121,8 +128,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/provider-secrets/{secretId}",
+      "api_path": "/backend/v3/api/integration/provider_secrets/{secretId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteProviderSecret",
       "read_sources": [
@@ -137,9 +145,10 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/channel/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/integration/channels",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchChannels",
       "read_sources": [
@@ -154,9 +163,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/provider-secrets/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/integration/provider_secrets",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchProviderSecrets",
       "read_sources": [
@@ -168,8 +178,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/channel/{channelId}/test",
+      "api_path": "/backend/v3/api/integration/channels/{channelId}/verify",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "testChannel",
       "read_sources": [
@@ -189,8 +200,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/channel",
+      "api_path": "/backend/v3/api/integration/channels",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateChannel",
       "read_sources": [
@@ -211,8 +223,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/provider-secrets",
+      "api_path": "/backend/v3/api/integration/provider_secrets",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateProviderSecret",
       "read_sources": [
@@ -230,6 +243,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/dashboard/admin/overview",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchDashboardData",
       "read_sources": [
@@ -245,6 +259,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/system/installation/status",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchInstallationStatus",
       "read_sources": [
@@ -257,8 +272,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/finance/usage-statements",
+      "api_path": "/backend/v3/api/billing/finance/usage_statements",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchBilling",
       "read_sources": [
@@ -272,8 +288,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/finance/admin/ledger",
+      "api_path": "/backend/v3/api/billing/finance/ledger",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchTransactions",
       "read_sources": [
@@ -289,8 +306,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/access-groups",
+      "api_path": "/backend/v3/api/router/access_groups",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addGroup",
       "read_sources": [
@@ -307,8 +325,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/router/access-groups/{groupId}",
+      "api_path": "/backend/v3/api/router/access_groups/{groupId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteGroup",
       "read_sources": [
@@ -324,8 +343,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/access-groups",
+      "api_path": "/backend/v3/api/router/access_groups",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchGroups",
       "read_sources": [
@@ -339,8 +359,9 @@
     },
     {
       "api_method": "PATCH",
-      "api_path": "/backend/v3/api/router/access-groups/{groupId}",
+      "api_path": "/backend/v3/api/router/access_groups/{groupId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateGroup",
       "read_sources": [
@@ -357,8 +378,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/coupon",
+      "api_path": "/backend/v3/api/billing/coupons",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addCoupon",
       "read_sources": [
@@ -374,9 +396,31 @@
       ]
     },
     {
-      "api_method": "DELETE",
-      "api_path": "/backend/v3/api/coupon/{couponId}",
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/billing/recharges/packages",
       "api_surface": "backend",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createRechargePackage",
+      "read_sources": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/billing/coupons/{couponId}",
+      "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteCoupon",
       "read_sources": [
@@ -390,9 +434,29 @@
       ]
     },
     {
-      "api_method": "GET",
-      "api_path": "/backend/v3/api/router/coupon-batches",
+      "api_method": "DELETE",
+      "api_path": "/backend/v3/api/billing/recharges/packages/{packageId}",
       "api_surface": "backend",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "deleteRechargePackage",
+      "read_sources": [
+        "plus_vip_recharge_pack"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/coupon_batches",
+      "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchBatches",
       "read_sources": [
@@ -403,9 +467,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/coupon/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/coupons",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchCoupons",
       "read_sources": [
@@ -418,8 +483,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/coupon-codes",
+      "api_path": "/backend/v3/api/billing/coupon_codes",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchPromoCodes",
       "read_sources": [
@@ -431,9 +497,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/vip/recharge/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/recharges/records",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchRechargeRecords",
       "read_sources": [
@@ -447,9 +514,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/user/coupon/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/users/coupons",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchRedemptionRecords",
       "read_sources": [
@@ -464,6 +532,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/router/referrals/stats",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchReferralStats",
       "read_sources": [
@@ -475,8 +544,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/coupon-batches/generate",
+      "api_path": "/backend/v3/api/billing/coupon_batches",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "generateBatch",
       "read_sources": [
@@ -493,9 +563,91 @@
       ]
     },
     {
-      "api_method": "PATCH",
-      "api_path": "/backend/v3/api/router/coupon-codes/{promoCodeId}/status",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/exchange_rules",
       "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listExchangeRules",
+      "read_sources": [
+        "plus_account_exchange_config"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/payments/attempts",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listPaymentAttempts",
+      "read_sources": [
+        "plus_payment",
+        "plus_order"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/recharges/packages",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listRechargePackages",
+      "read_sources": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/billing/recharges/records/{orderNo}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveRechargeRecord",
+      "read_sources": [
+        "plus_vip_recharge",
+        "plus_vip_recharge_method",
+        "plus_order",
+        "plus_payment"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/billing/coupons/{couponId}",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateCoupon",
+      "read_sources": [
+        "plus_coupon",
+        "plus_coupon_template"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": [
+        "plus_coupon",
+        "plus_coupon_template",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/backend/v3/api/billing/coupon_codes/{codeId}/status",
+      "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updatePromoCodeStatus",
       "read_sources": [
@@ -511,9 +663,48 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/model",
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/billing/recharges/packages/{packageId}",
       "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateRechargePackage",
+      "read_sources": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "PUT",
+      "api_path": "/backend/v3/api/billing/exchange_rules",
+      "api_surface": "backend",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "upsertExchangeRule",
+      "read_sources": [
+        "plus_account_exchange_config"
+      ],
+      "route": "/admin/marketing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-admin-marketing/src/marketingService.ts",
+      "write_tables": [
+        "plus_account_exchange_config",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/backend/v3/api/ai/models",
+      "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addModel",
       "read_sources": [
@@ -533,8 +724,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/model-vendors",
+      "api_path": "/backend/v3/api/ai/model_vendors",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addVendor",
       "read_sources": [
@@ -549,8 +741,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/model/{modelId}",
+      "api_path": "/backend/v3/api/ai/models/{modelId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteModel",
       "read_sources": [
@@ -569,8 +762,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/model-rankings/jobs",
+      "api_path": "/backend/v3/api/ai/model_rankings/jobs",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModelRankingRefreshJobs",
       "read_sources": [
@@ -582,8 +776,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/model-rankings/status",
+      "api_path": "/backend/v3/api/ai/model_rankings/status",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModelRankingRefreshStatus",
       "read_sources": [
@@ -596,8 +791,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/model-rankings",
+      "api_path": "/backend/v3/api/ai/model_rankings",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModelRankings",
       "read_sources": [
@@ -608,9 +804,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/model/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ai/models",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModels",
       "read_sources": [
@@ -625,8 +822,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/model-vendors",
+      "api_path": "/backend/v3/api/ai/model_vendors",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchVendors",
       "read_sources": [
@@ -638,9 +836,10 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/models/sync",
+      "api_path": "/backend/v3/api/ai/models/refresh",
       "api_surface": "backend",
-      "kind": "sync",
+      "file_targets": [],
+      "kind": "action",
       "operation": "syncVendorsAndModels",
       "read_sources": [
         "ai_model_vendor",
@@ -662,8 +861,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/model-rankings/refresh",
+      "api_path": "/backend/v3/api/ai/model_rankings/refresh",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "triggerModelRankingRefresh",
       "read_sources": [
@@ -680,8 +880,9 @@
     },
     {
       "api_method": "PATCH",
-      "api_path": "/backend/v3/api/model/{modelId}",
+      "api_path": "/backend/v3/api/ai/models/{modelId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateModel",
       "read_sources": [
@@ -703,6 +904,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/router/monitor/alerts",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchAlerts",
       "read_sources": [
@@ -716,6 +918,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/router/monitor/nodes",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchNodes",
       "read_sources": [
@@ -730,6 +933,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/router/monitor/performance",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchPerformanceData",
       "read_sources": [
@@ -743,6 +947,7 @@
       "api_method": "POST",
       "api_path": "/backend/v3/api/router/firewall/rules",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addFirewall",
       "read_sources": [
@@ -757,8 +962,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/rate-limits/ip",
+      "api_path": "/backend/v3/api/router/rate_limits/ip",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addIpLimit",
       "read_sources": [
@@ -773,8 +979,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/rate-limits/models",
+      "api_path": "/backend/v3/api/router/rate_limits/models",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addModelLimit",
       "read_sources": [
@@ -790,8 +997,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/rate-limits/api-keys",
+      "api_path": "/backend/v3/api/router/rate_limits/api_keys",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addTokenLimit",
       "read_sources": [
@@ -809,6 +1017,7 @@
       "api_method": "GET",
       "api_path": "/backend/v3/api/router/firewall/rules",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchFirewalls",
       "read_sources": [
@@ -820,8 +1029,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/rate-limits/ip",
+      "api_path": "/backend/v3/api/router/rate_limits/ip",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchIpLimits",
       "read_sources": [
@@ -833,8 +1043,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/rate-limits/models",
+      "api_path": "/backend/v3/api/router/rate_limits/models",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModelLimits",
       "read_sources": [
@@ -847,8 +1058,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/router/rate-limits/api-keys",
+      "api_path": "/backend/v3/api/router/rate_limits/api_keys",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchTokenLimits",
       "read_sources": [
@@ -863,6 +1075,7 @@
       "api_method": "DELETE",
       "api_path": "/backend/v3/api/router/firewall/rules/{ruleId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "removeFirewall",
       "read_sources": [
@@ -876,9 +1089,10 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/record/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/system/records",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchLogs",
       "read_sources": [
@@ -892,8 +1106,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/review/approve",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/review/approve",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "approveSkill",
       "read_sources": [
@@ -908,8 +1123,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill",
+      "api_path": "/backend/v3/api/ecosystem/skills",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "createSkill",
       "read_sources": [
@@ -926,8 +1142,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/artifacts",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/artifacts",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "createSkillArtifact",
       "read_sources": [
@@ -945,8 +1162,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/assets",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/assets",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "createSkillAsset",
       "read_sources": [
@@ -963,8 +1181,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/categories",
+      "api_path": "/backend/v3/api/ecosystem/skills/categories",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "createSkillCategory",
       "read_sources": [
@@ -979,8 +1198,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/package",
+      "api_path": "/backend/v3/api/ecosystem/skills/package",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "createSkillPackage",
       "read_sources": [
@@ -996,8 +1216,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/skill/{skill_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteSkill",
       "read_sources": [
@@ -1014,8 +1235,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteSkillArtifact",
       "read_sources": [
@@ -1033,8 +1255,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/skill/{skill_id}/assets/{asset_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteSkillAsset",
       "read_sources": [
@@ -1050,8 +1273,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/skill/package/{package_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteSkillPackage",
       "read_sources": [
@@ -1068,8 +1292,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/disable",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/disable",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "disableSkill",
       "read_sources": [
@@ -1084,8 +1309,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/package/{package_id}/disable",
+      "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}/disable",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "disableSkillPackage",
       "read_sources": [
@@ -1100,8 +1326,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/enable",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/enable",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "enableSkill",
       "read_sources": [
@@ -1116,8 +1343,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/package/{package_id}/enable",
+      "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}/enable",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "enableSkillPackage",
       "read_sources": [
@@ -1132,8 +1360,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/skill/{skill_id}/artifacts",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/artifacts",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchSkillArtifacts",
       "read_sources": [
@@ -1147,8 +1376,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/skill/{skill_id}/assets",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/assets",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchSkillAssets",
       "read_sources": [
@@ -1162,8 +1392,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/skill/categories",
+      "api_path": "/backend/v3/api/ecosystem/skills/categories",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchSkillCategories",
       "read_sources": [
@@ -1174,9 +1405,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/package/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ecosystem/skills/package",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchSkillPackages",
       "read_sources": [
@@ -1188,9 +1420,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/ecosystem/skills",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchSkills",
       "read_sources": [
@@ -1204,8 +1437,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/skill/{skill_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "getSkill",
       "read_sources": [
@@ -1219,8 +1453,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "getSkillArtifact",
       "read_sources": [
@@ -1234,8 +1469,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/skill/{skill_id}/assets/{asset_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "getSkillAsset",
       "read_sources": [
@@ -1249,8 +1485,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/skill/package/{package_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "getSkillPackage",
       "read_sources": [
@@ -1263,8 +1500,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/offline",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/unpublish",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "offlineSkill",
       "read_sources": [
@@ -1279,8 +1517,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/publish",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/publish",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "publishSkill",
       "read_sources": [
@@ -1295,8 +1534,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/skill/{skill_id}/review/reject",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/review/reject",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "rejectSkill",
       "read_sources": [
@@ -1311,8 +1551,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/skill/{skill_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateSkill",
       "read_sources": [
@@ -1329,8 +1570,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/skill/{skill_id}/artifacts/{artifact_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/artifacts/{artifactId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateSkillArtifact",
       "read_sources": [
@@ -1348,8 +1590,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/skill/{skill_id}/assets/{asset_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/{skillId}/assets/{assetId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateSkillAsset",
       "read_sources": [
@@ -1366,8 +1609,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/skill/package/{package_id}",
+      "api_path": "/backend/v3/api/ecosystem/skills/package/{packageId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateSkillPackage",
       "read_sources": [
@@ -1385,6 +1629,7 @@
       "api_method": "POST",
       "api_path": "/backend/v3/api/user",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "addUser",
       "read_sources": [
@@ -1405,6 +1650,7 @@
       "api_method": "POST",
       "api_path": "/backend/v3/api/apikey",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "createApiKey",
       "read_sources": [
@@ -1424,6 +1670,7 @@
       "api_method": "DELETE",
       "api_path": "/backend/v3/api/apikey/{apiKeyId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteApiKey",
       "read_sources": [
@@ -1440,9 +1687,10 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/apikey/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/iam/api_keys",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchApiKeysMap",
       "read_sources": [
@@ -1454,9 +1702,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/user/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/iam/users",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchUsers",
       "read_sources": [
@@ -1472,8 +1721,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/router/users/{userId}/balance-adjustments",
+      "api_path": "/backend/v3/api/billing/users/{userId}/balance_adjustments",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "updateBalance",
       "read_sources": [
@@ -1497,6 +1747,7 @@
       "api_method": "PUT",
       "api_path": "/backend/v3/api/user",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateUser",
       "read_sources": [
@@ -1514,8 +1765,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/app",
+      "api_path": "/backend/v3/api/platform/apps",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "create",
       "operation": "createApp",
       "read_sources": [
@@ -1533,8 +1785,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/backend/v3/api/app/{appId}",
+      "api_path": "/backend/v3/api/platform/apps/{appId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteApp",
       "read_sources": [
@@ -1555,8 +1808,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/app/{appId}/disable",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/disable",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "disableApp",
       "read_sources": [
@@ -1571,8 +1825,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/app/{appId}/enable",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/enable",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "enableApp",
       "read_sources": [
@@ -1587,8 +1842,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/backend/v3/api/app/{appId}",
+      "api_path": "/backend/v3/api/platform/apps/{appId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchApp",
       "read_sources": [
@@ -1602,9 +1858,10 @@
       "write_tables": []
     },
     {
-      "api_method": "POST",
-      "api_path": "/backend/v3/api/app/list",
+      "api_method": "GET",
+      "api_path": "/backend/v3/api/platform/apps",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchApps",
       "read_sources": [
@@ -1619,8 +1876,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/app/{appId}/offline",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/unpublish",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "offlineApp",
       "read_sources": [
@@ -1635,8 +1893,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/backend/v3/api/app/{appId}/publish",
+      "api_path": "/backend/v3/api/platform/apps/{appId}/publish",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "action",
       "operation": "publishApp",
       "read_sources": [
@@ -1651,8 +1910,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/backend/v3/api/app/{appId}",
+      "api_path": "/backend/v3/api/platform/apps/{appId}",
       "api_surface": "backend",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateApp",
       "read_sources": [
@@ -1670,8 +1930,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/app/store/{appId}",
+      "api_path": "/app/v3/api/platform/apps/store/{appId}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "getAppById",
       "read_sources": [
@@ -1687,8 +1948,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/app/store",
+      "api_path": "/app/v3/api/platform/apps/store",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "getApps",
       "read_sources": [
@@ -1704,8 +1966,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/app/store/categories",
+      "api_path": "/app/v3/api/platform/apps/store/categories",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "getCategories",
       "read_sources": [
@@ -1718,24 +1981,28 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/auth/session",
+      "api_path": "/app/v3/api/auth/sessions",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "create",
       "operation": "createAppSession",
       "read_sources": [
-        "plus_user",
-        "iam_user_login_event"
+        "iam_user",
+        "iam_session"
       ],
-      "route": "/console/user",
+      "route": "/auth/login",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-commons/src/sessionService.ts",
       "write_tables": [
-        "iam_user_login_event"
+        "iam_session",
+        "iam_security_event",
+        "iam_audit_event"
       ]
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/account/summary",
+      "api_path": "/app/v3/api/billing/account/summary",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchAccountDetails",
       "read_sources": [
@@ -1753,8 +2020,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/router/api-keys",
+      "api_path": "/app/v3/api/iam/api_keys",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "create",
       "operation": "createKey",
       "read_sources": [
@@ -1771,8 +2039,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/api-keys",
+      "api_path": "/app/v3/api/iam/api_keys",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchKeys",
       "read_sources": [
@@ -1790,8 +2059,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/payments/records",
+      "api_path": "/app/v3/api/billing/payments/records",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchRechargeHistory",
       "read_sources": [
@@ -1805,8 +2075,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/coupons/my",
+      "api_path": "/app/v3/api/billing/users/current/coupons",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchRedeemHistory",
       "read_sources": [
@@ -1820,8 +2091,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/coupons/redeem",
+      "api_path": "/app/v3/api/billing/coupons/redeem",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "redeemCode",
       "read_sources": [
@@ -1841,8 +2113,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/payments/checkout/{orderNo}",
+      "api_path": "/app/v3/api/billing/payments/checkout/{orderNo}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchCheckoutStatus",
       "read_sources": [
@@ -1855,9 +2128,858 @@
       "write_tables": []
     },
     {
-      "api_method": "GET",
-      "api_path": "/app/v3/api/router/dashboard/overview",
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/account/points/recharges/orders/{orderNo}/cancel",
       "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "cancelAccountPointsRechargeOrder",
+      "read_sources": [
+        "plus_vip_recharge",
+        "plus_order",
+        "plus_payment"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_vip_recharge",
+        "plus_order",
+        "plus_payment"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/account/points/exchanges",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createAccountPointsExchange",
+      "read_sources": [
+        "plus_account",
+        "plus_account_exchange_config"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account",
+        "plus_account_history",
+        "plus_vip_point_change"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/account/points/transfers",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createAccountPointsTransfer",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account",
+        "plus_account_history",
+        "plus_vip_point_change"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/account/tokens/deductions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createAccountTokenDeduction",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account",
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/coupons/claims",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createCouponClaim",
+      "read_sources": [
+        "plus_coupon",
+        "plus_user_coupon"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_user_coupon",
+        "ops_audit_log"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/coupons/usage",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createCouponUsage",
+      "read_sources": [
+        "plus_coupon",
+        "plus_user_coupon",
+        "plus_order"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_coupon",
+        "plus_user_coupon",
+        "plus_account",
+        "plus_account_history",
+        "plus_order",
+        "plus_payment",
+        "plus_vip_point_change"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/coupons/usage_reversals",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createCouponUsageReversal",
+      "read_sources": [
+        "plus_coupon",
+        "plus_user_coupon",
+        "plus_order"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_coupon",
+        "plus_user_coupon",
+        "plus_account",
+        "plus_account_history",
+        "plus_order",
+        "plus_payment",
+        "plus_vip_point_change"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/preflight/estimates",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createPreflightEstimate",
+      "read_sources": [
+        "plus_account",
+        "plus_product",
+        "plus_sku"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/preflight/prechecks",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createPreflightPrecheck",
+      "read_sources": [
+        "plus_account",
+        "plus_product",
+        "plus_sku"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/preflight/preholds",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createPreflightPrehold",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/preflight/releases",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createPreflightRelease",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/preflight/settlements",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "createPreflightSettlement",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/vip/points/daily_rewards",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createVipDailyReward",
+      "read_sources": [
+        "plus_vip_user",
+        "plus_vip_level"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_vip_point_change"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/vip/privileges/speed_ups",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createVipPrivilegeSpeedUp",
+      "read_sources": [
+        "plus_vip_benefit_usage",
+        "plus_vip_benefit"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_vip_benefit_usage"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/vip/purchase",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createVipPurchase",
+      "read_sources": [
+        "plus_vip_pack",
+        "plus_vip_level"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_order",
+        "plus_order_item",
+        "plus_payment",
+        "plus_vip_user"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/wallet/exchanges",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createWalletExchange",
+      "read_sources": [
+        "plus_account",
+        "plus_account_exchange_config"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account",
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/wallet/topups",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createWalletTopup",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account",
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/wallet/transfers",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createWalletTransfer",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account",
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/wallet/withdrawals",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "createWalletWithdrawal",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_account",
+        "plus_account_history"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points/exchanges/rules",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listAccountPointsExchangeRules",
+      "read_sources": [
+        "plus_account_exchange_config"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points/history",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listAccountPointsHistory",
+      "read_sources": [
+        "plus_account_history",
+        "plus_vip_point_change"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points/recharges/packages",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listAccountPointsRechargePackages",
+      "read_sources": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points/recharges/records",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listAccountPointsRechargeRecords",
+      "read_sources": [
+        "plus_vip_recharge",
+        "plus_vip_recharge_method",
+        "plus_order",
+        "plus_payment"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/coupons/catalog",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listCouponCatalog",
+      "read_sources": [
+        "plus_coupon",
+        "plus_coupon_template"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/benefits",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listVipBenefits",
+      "read_sources": [
+        "plus_vip_benefit",
+        "plus_vip_level_benefit"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/levels",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listVipLevels",
+      "read_sources": [
+        "plus_vip_level"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/pack_groups/{packGroupId}/packs",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listVipPackGroupPacks",
+      "read_sources": [
+        "plus_vip_pack",
+        "plus_vip_pack_group",
+        "plus_vip_level"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/pack_groups",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listVipPackGroups",
+      "read_sources": [
+        "plus_vip_pack_group"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/packs",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listVipPacks",
+      "read_sources": [
+        "plus_vip_recharge_pack",
+        "plus_product",
+        "plus_sku"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/points/history",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listVipPointsHistory",
+      "read_sources": [
+        "plus_vip_point_change"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/wallet/accounts",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listWalletAccounts",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/wallet/transactions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "listWalletTransactions",
+      "read_sources": [
+        "plus_account_history"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/vip/purchase/renew",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "renewVipPurchase",
+      "read_sources": [
+        "plus_vip_pack",
+        "plus_vip_user"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_order",
+        "plus_order_item",
+        "plus_payment",
+        "plus_vip_user"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveAccountPoints",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points/exchanges/{exchangeNo}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveAccountPointsExchange",
+      "read_sources": [
+        "plus_account",
+        "plus_account_history",
+        "plus_vip_point_change"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points/exchange_rate",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveAccountPointsExchangeRate",
+      "read_sources": [
+        "plus_account_exchange_config"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/points/recharges/orders/{orderNo}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveAccountPointsRechargeOrder",
+      "read_sources": [
+        "plus_vip_recharge",
+        "plus_vip_recharge_method",
+        "plus_order",
+        "plus_payment"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/account/tokens",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveAccountTokens",
+      "read_sources": [
+        "plus_account"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/coupons/catalog/{couponId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveCouponCatalogItem",
+      "read_sources": [
+        "plus_coupon",
+        "plus_coupon_template"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/users/current/coupons/{userCouponId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveCurrentUserCoupon",
+      "read_sources": [
+        "plus_coupon",
+        "plus_user_coupon",
+        "plus_vip_point_change"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/payments/records/{paymentId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrievePaymentRecord",
+      "read_sources": [
+        "plus_order",
+        "plus_payment",
+        "plus_vip_recharge"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/points/daily_rewards/status",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveVipDailyRewardStatus",
+      "read_sources": [
+        "plus_vip_point_change"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/info",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveVipInfo",
+      "read_sources": [
+        "plus_vip_user",
+        "plus_vip_level"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/packs/{packId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveVipPack",
+      "read_sources": [
+        "plus_vip_pack",
+        "plus_vip_level"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/pack_groups/{packGroupId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveVipPackGroup",
+      "read_sources": [
+        "plus_vip_pack_group"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/points/balance",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveVipPointsBalance",
+      "read_sources": [
+        "plus_vip_point_change"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/privileges/usage",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveVipPrivilegeUsage",
+      "read_sources": [
+        "plus_vip_benefit_usage",
+        "plus_vip_benefit"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/vip/status",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveVipStatus",
+      "read_sources": [
+        "plus_vip_user",
+        "plus_vip_level"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/wallet/operations/{requestNo}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveWalletOperation",
+      "read_sources": [
+        "plus_account_history"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/wallet/overview",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveWalletOverview",
+      "read_sources": [
+        "plus_account",
+        "plus_account_history"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/billing/wallet/transactions/{transactionId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "retrieveWalletTransaction",
+      "read_sources": [
+        "plus_account_history"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/billing/vip/purchase/upgrade",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "action",
+      "operation": "upgradeVipPurchase",
+      "read_sources": [
+        "plus_vip_pack",
+        "plus_vip_user"
+      ],
+      "route": "/console/billing",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-billing/src/commerceFoundationService.ts",
+      "write_tables": [
+        "plus_order",
+        "plus_order_item",
+        "plus_payment",
+        "plus_vip_user"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/ai/dashboard/overview",
+      "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchDashboardOverview",
       "read_sources": [
@@ -1873,8 +2995,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/gateway/traces",
+      "api_path": "/app/v3/api/ai/gateway/traces",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchTraces",
       "read_sources": [
@@ -1887,8 +3010,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/notification",
+      "api_path": "/app/v3/api/communication/notifications",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchMessages",
       "read_sources": [
@@ -1901,8 +3025,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/providers",
+      "api_path": "/app/v3/api/ai/providers",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchProviders",
       "read_sources": [
@@ -1919,8 +3044,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/vip/pack-groups/packs",
+      "api_path": "/app/v3/api/billing/account/points/recharges/packages",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchPackages",
       "read_sources": [
@@ -1934,8 +3060,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/account/points/recharge",
+      "api_path": "/app/v3/api/billing/account/points/recharges",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "submitRecharge",
       "read_sources": [
@@ -1955,8 +3082,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/router/routing/channels",
+      "api_path": "/app/v3/api/ai/routing/channels",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "create",
       "operation": "createChannel",
       "read_sources": [
@@ -1978,8 +3106,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/app/v3/api/router/routing/channels/{channelId}",
+      "api_path": "/app/v3/api/ai/routing/channels/{channelId}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteChannel",
       "read_sources": [
@@ -1997,8 +3126,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/routing/api-keys",
+      "api_path": "/app/v3/api/ai/routing/api_keys",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchApiKeys",
       "read_sources": [
@@ -2011,8 +3141,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/routing/channels",
+      "api_path": "/app/v3/api/ai/routing/channels",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchChannels",
       "read_sources": [
@@ -2026,8 +3157,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/routing/request-traces",
+      "api_path": "/app/v3/api/ai/routing/request_traces",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchRequestTraces",
       "read_sources": [
@@ -2041,8 +3173,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/routing/strategy",
+      "api_path": "/app/v3/api/ai/routing/strategy",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchStrategy",
       "read_sources": [
@@ -2056,8 +3189,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/routing/usage",
+      "api_path": "/app/v3/api/ai/routing/usage",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchUsageData",
       "read_sources": [
@@ -2071,8 +3205,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/app/v3/api/router/routing/channels/{channelId}/status",
+      "api_path": "/app/v3/api/ai/routing/channels/{channelId}/status",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "update",
       "operation": "setChannelStatus",
       "read_sources": [
@@ -2089,8 +3224,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/router/routing/channels/{channelId}/test",
+      "api_path": "/app/v3/api/ai/routing/channels/{channelId}/verify",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "testChannel",
       "read_sources": [
@@ -2108,8 +3244,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/app/v3/api/router/routing/channels/{channelId}",
+      "api_path": "/app/v3/api/ai/routing/channels/{channelId}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateChannel",
       "read_sources": [
@@ -2131,8 +3268,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/app/v3/api/router/routing/strategy",
+      "api_path": "/app/v3/api/ai/routing/strategy",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateStrategy",
       "read_sources": [
@@ -2150,8 +3288,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/user/settings",
+      "api_path": "/app/v3/api/iam/users/settings",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchSettings",
       "read_sources": [
@@ -2165,8 +3304,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/app/v3/api/user/settings",
+      "api_path": "/app/v3/api/iam/users/settings",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateSettings",
       "read_sources": [
@@ -2184,6 +3324,7 @@
       "api_method": "GET",
       "api_path": "/app/v3/api/router/settlements/dashboard",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchDashboardData",
       "read_sources": [
@@ -2200,8 +3341,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/usage/logs",
+      "api_path": "/app/v3/api/ai/usage/logs",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchLogs",
       "read_sources": [
@@ -2215,16 +3357,15 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/user/profile",
+      "api_path": "/app/v3/api/iam/users/current",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
-      "operation": "fetchUserProfile",
+      "operation": "fetchCurrentUser",
       "read_sources": [
-        "plus_user",
-        "plus_oauth_account",
-        "iam_user_preference",
-        "iam_user_security_setting",
-        "iam_user_login_event"
+        "iam_user",
+        "iam_user_identity",
+        "iam_session"
       ],
       "route": "/console/user",
       "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-console-user/src/userService.ts",
@@ -2232,8 +3373,109 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/check-collected/{feedId}",
+      "api_path": "/app/v3/api/courses/categories",
       "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchCourseCategories",
+      "read_sources": [
+        "plus_category",
+        "content_course"
+      ],
+      "route": "/courses",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/courses/{courseId}",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchCourseDetail",
+      "read_sources": [
+        "content_course",
+        "content_course_section",
+        "content_course_lesson",
+        "content_course_relation",
+        "plus_category",
+        "plus_comments",
+        "content_reaction"
+      ],
+      "route": "/courses/:id",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/courses/overview",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchCourseOverview",
+      "read_sources": [
+        "content_course",
+        "plus_category",
+        "plus_comments",
+        "content_reaction"
+      ],
+      "route": "/courses",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/courses",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchCourses",
+      "read_sources": [
+        "content_course",
+        "content_course_relation",
+        "plus_category",
+        "plus_comments",
+        "content_reaction"
+      ],
+      "route": "/courses",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/courses/applications",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "submitCourseApplication",
+      "read_sources": [
+        "content_course_application"
+      ],
+      "route": "/courses",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts",
+      "write_tables": [
+        "content_course_application"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/courses/applications/videos",
+      "api_surface": "app",
+      "file_targets": [
+        "course_application_video_uploads"
+      ],
+      "kind": "create",
+      "operation": "uploadCourseApplicationVideo",
+      "read_sources": [],
+      "route": "/courses",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-courses/src/courseService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/content/feeds/{id}/collections/current",
+      "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "checkForumFeedCollected",
       "read_sources": [
@@ -2245,8 +3487,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/feeds/collect/{feedId}",
+      "api_path": "/app/v3/api/content/feeds/{id}/collections",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "collectForumFeed",
       "read_sources": [
@@ -2262,8 +3505,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/comments",
+      "api_path": "/app/v3/api/content/comments",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "create",
       "operation": "createForumComment",
       "read_sources": [
@@ -2277,8 +3521,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/feeds",
+      "api_path": "/app/v3/api/content/feeds",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "create",
       "operation": "createForumFeed",
       "read_sources": [
@@ -2292,8 +3537,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/app/v3/api/comments/{commentId}",
+      "api_path": "/app/v3/api/content/comments/{commentId}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteForumComment",
       "read_sources": [
@@ -2307,8 +3553,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/app/v3/api/feeds/{feedId}",
+      "api_path": "/app/v3/api/content/feeds/{id}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "delete",
       "operation": "deleteForumFeed",
       "read_sources": [
@@ -2322,8 +3569,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/category/{categoryId}",
+      "api_path": "/app/v3/api/content/feeds/category/{categoryId}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchCategoryForumFeeds",
       "read_sources": [
@@ -2337,8 +3585,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/comments/{commentId}",
+      "api_path": "/app/v3/api/content/comments/{commentId}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchForumCommentDetail",
       "read_sources": [
@@ -2351,8 +3600,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/comments/{commentId}/replies",
+      "api_path": "/app/v3/api/content/comments/{commentId}/replies",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchForumCommentReplies",
       "read_sources": [
@@ -2365,8 +3615,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/comments/statistics",
+      "api_path": "/app/v3/api/content/comments/statistics",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchForumCommentStatistics",
       "read_sources": [
@@ -2378,8 +3629,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/comments/list",
+      "api_path": "/app/v3/api/content/comments",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchForumComments",
       "read_sources": [
@@ -2392,21 +3644,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/categories",
+      "api_path": "/app/v3/api/content/feeds/{id}",
       "api_surface": "app",
-      "kind": "read",
-      "operation": "fetchForumFeedCategories",
-      "read_sources": [
-        "plus_feeds"
-      ],
-      "route": "/forum",
-      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts",
-      "write_tables": []
-    },
-    {
-      "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/detail/{feedId}",
-      "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchForumFeedDetail",
       "read_sources": [
@@ -2420,8 +3660,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/list",
+      "api_path": "/app/v3/api/content/feeds",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchForumFeeds",
       "read_sources": [
@@ -2435,8 +3676,26 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/hot",
+      "api_path": "/app/v3/api/content/feeds/overview",
       "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchForumOverview",
+      "read_sources": [
+        "plus_feeds",
+        "plus_comments",
+        "plus_content_vote",
+        "plus_favorite"
+      ],
+      "route": "/forum",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-forum/src/forumService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/content/feeds/hot",
+      "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchHotForumFeeds",
       "read_sources": [
@@ -2450,8 +3709,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/most-liked",
+      "api_path": "/app/v3/api/content/feeds/most_liked",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchMostLikedForumFeeds",
       "read_sources": [
@@ -2465,8 +3725,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/most-viewed",
+      "api_path": "/app/v3/api/content/feeds/most_viewed",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchMostViewedForumFeeds",
       "read_sources": [
@@ -2480,8 +3741,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/comments/my",
+      "api_path": "/app/v3/api/content/users/current/comments",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchMyForumComments",
       "read_sources": [
@@ -2494,8 +3756,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/recommend",
+      "api_path": "/app/v3/api/content/feeds/recommend",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchRecommendedForumFeeds",
       "read_sources": [
@@ -2509,8 +3772,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/top",
+      "api_path": "/app/v3/api/content/feeds/top",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchTopForumFeeds",
       "read_sources": [
@@ -2524,8 +3788,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/comments/{commentId}/like",
+      "api_path": "/app/v3/api/content/comments/{commentId}/likes",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "likeForumComment",
       "read_sources": [
@@ -2541,8 +3806,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/feeds/like/{feedId}",
+      "api_path": "/app/v3/api/content/feeds/{id}/likes",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "likeForumFeed",
       "read_sources": [
@@ -2558,8 +3824,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/comments/{commentId}/pin",
+      "api_path": "/app/v3/api/content/comments/{commentId}/pins",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "pinForumComment",
       "read_sources": [
@@ -2573,8 +3840,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/comments/{commentId}/reply",
+      "api_path": "/app/v3/api/content/comments/{commentId}/reply",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "create",
       "operation": "replyForumComment",
       "read_sources": [
@@ -2588,8 +3856,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/feeds/search",
+      "api_path": "/app/v3/api/content/feeds",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "searchForumFeeds",
       "read_sources": [
@@ -2603,8 +3872,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/feeds/share/{feedId}",
+      "api_path": "/app/v3/api/content/feeds/{id}/shares",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "shareForumFeed",
       "read_sources": [
@@ -2617,10 +3887,11 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/app/v3/api/feeds/uncollect/{feedId}",
+      "api_method": "DELETE",
+      "api_path": "/app/v3/api/content/feeds/{id}/collections/current",
       "api_surface": "app",
-      "kind": "action",
+      "file_targets": [],
+      "kind": "delete",
       "operation": "uncollectForumFeed",
       "read_sources": [
         "plus_feeds",
@@ -2635,8 +3906,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/app/v3/api/comments/{commentId}/like",
+      "api_path": "/app/v3/api/content/comments/{commentId}/likes/current",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "delete",
       "operation": "unlikeForumComment",
       "read_sources": [
@@ -2651,10 +3923,11 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/app/v3/api/feeds/unlike/{feedId}",
+      "api_method": "DELETE",
+      "api_path": "/app/v3/api/content/feeds/{id}/likes/current",
       "api_surface": "app",
-      "kind": "action",
+      "file_targets": [],
+      "kind": "delete",
       "operation": "unlikeForumFeed",
       "read_sources": [
         "plus_feeds",
@@ -2669,8 +3942,9 @@
     },
     {
       "api_method": "DELETE",
-      "api_path": "/app/v3/api/comments/{commentId}/pin",
+      "api_path": "/app/v3/api/content/comments/{commentId}/pins/current",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "delete",
       "operation": "unpinForumComment",
       "read_sources": [
@@ -2684,8 +3958,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/models",
+      "api_path": "/app/v3/api/ai/models",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModels",
       "read_sources": [
@@ -2700,8 +3975,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/playground/history",
+      "api_path": "/app/v3/api/ai/generations",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchGenerationHistory",
       "read_sources": [
@@ -2716,8 +3992,26 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/model-rankings",
+      "api_path": "/app/v3/api/ai/models",
       "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "fetchModelGroups",
+      "read_sources": [
+        "ai_model_vendor",
+        "ai_model",
+        "ai_model_capability",
+        "ai_model_pricing"
+      ],
+      "route": "/playground",
+      "source": "apps/sdkwork-claw-router-portal/packages/sdkwork-claw-router-playground/src/playgroundService.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/ai/model_rankings",
+      "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModelRankings",
       "read_sources": [
@@ -2729,8 +4023,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/router/model-vendors",
+      "api_path": "/app/v3/api/ai/model_vendors",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "fetchModelVendors",
       "read_sources": [
@@ -2743,8 +4038,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/skills/{skillId}/disable",
+      "api_path": "/app/v3/api/ecosystem/skills/{skillId}/disable",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "disableSkill",
       "read_sources": [
@@ -2763,8 +4059,9 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/skills/{skillId}/enable",
+      "api_path": "/app/v3/api/ecosystem/skills/{skillId}/enable",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "action",
       "operation": "enableSkill",
       "read_sources": [
@@ -2782,8 +4079,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/skills/categories",
+      "api_path": "/app/v3/api/ecosystem/skills/categories",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "getCategories",
       "read_sources": [
@@ -2795,8 +4093,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/skills/my",
+      "api_path": "/app/v3/api/ecosystem/users/current/skills",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "getMySkills",
       "read_sources": [
@@ -2813,8 +4112,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/skills/{skillId}",
+      "api_path": "/app/v3/api/ecosystem/skills/{skillId}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "getSkillById",
       "read_sources": [
@@ -2831,8 +4131,9 @@
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/skills",
+      "api_path": "/app/v3/api/ecosystem/skills",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
       "operation": "getSkills",
       "read_sources": [
@@ -2849,8 +4150,9 @@
     },
     {
       "api_method": "PUT",
-      "api_path": "/app/v3/api/skills/{skillId}/config",
+      "api_path": "/app/v3/api/ecosystem/skills/{skillId}/config",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "update",
       "operation": "updateSkillConfig",
       "read_sources": [
@@ -2868,33 +4170,31 @@
       ]
     },
     {
-      "api_method": "POST",
-      "api_path": "/app/v3/api/auth/session",
+      "api_method": "GET",
+      "api_path": "/app/v3/api/auth/sessions/current",
       "api_surface": "app",
-      "kind": "create",
-      "operation": "createSessionBridgeSession",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "bootstrap",
       "read_sources": [
-        "plus_user",
-        "iam_user_login_event"
+        "iam_session",
+        "iam_user"
       ],
       "route": "/auth/login",
       "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
-      "write_tables": [
-        "iam_user_login_event"
-      ]
+      "write_tables": []
     },
     {
       "api_method": "GET",
-      "api_path": "/app/v3/api/user/profile",
+      "api_path": "/app/v3/api/auth/qr_login_codes/{qrKey}",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "read",
-      "operation": "loadCurrentUser",
+      "operation": "checkLoginQrCodeStatus",
       "read_sources": [
-        "plus_user",
-        "plus_oauth_account",
-        "iam_user_preference",
-        "iam_user_security_setting",
-        "iam_user_login_event"
+        "iam_session",
+        "iam_user",
+        "iam_security_event"
       ],
       "route": "/auth/login",
       "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
@@ -2902,23 +4202,280 @@
     },
     {
       "api_method": "POST",
-      "api_path": "/app/v3/api/auth/login",
+      "api_path": "/app/v3/api/auth/qr_login_codes",
       "api_surface": "app",
+      "file_targets": [],
       "kind": "create",
-      "operation": "login",
+      "operation": "generateLoginQrCode",
       "read_sources": [
-        "plus_user"
+        "iam_session",
+        "iam_security_event"
       ],
       "route": "/auth/login",
       "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
       "write_tables": [
-        "iam_user_login_event"
+        "iam_security_event"
+      ]
+    },
+    {
+      "api_method": "GET",
+      "api_path": "/app/v3/api/auth/oauth_authorization_urls",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "read",
+      "operation": "getOAuthAuthorizationUrl",
+      "read_sources": [
+        "iam_user_identity"
+      ],
+      "route": "/auth/oauth/callback/:provider",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": []
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/sessions/refresh",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "refreshSession",
+      "read_sources": [
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/registrations",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "register",
+      "read_sources": [
+        "iam_user",
+        "iam_user_identity",
+        "iam_credential"
+      ],
+      "route": "/auth/register",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_user",
+        "iam_user_identity",
+        "iam_credential",
+        "iam_session",
+        "iam_security_event",
+        "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/password_reset_requests",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "requestPasswordReset",
+      "read_sources": [
+        "iam_user",
+        "iam_user_identity"
+      ],
+      "route": "/auth/forgot-password",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_security_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/password_resets",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "resetPassword",
+      "read_sources": [
+        "iam_user",
+        "iam_credential"
+      ],
+      "route": "/auth/forgot-password",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_credential",
+        "iam_security_event",
+        "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/verification_codes",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "sendVerifyCode",
+      "read_sources": [
+        "iam_user_identity"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_security_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/sessions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "signIn",
+      "read_sources": [
+        "iam_user",
+        "iam_credential",
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event",
+        "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/sessions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "signInWithEmailCode",
+      "read_sources": [
+        "iam_user",
+        "iam_credential",
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event",
+        "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/oauth_sessions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "signInWithOAuth",
+      "read_sources": [
+        "iam_user_identity",
+        "iam_user"
+      ],
+      "route": "/auth/oauth/callback/:provider",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_user_identity",
+        "iam_session",
+        "iam_security_event",
+        "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/sessions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "signInWithPhoneCode",
+      "read_sources": [
+        "iam_user",
+        "iam_credential",
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event",
+        "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/sessions",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "signInWithSessionBridge",
+      "read_sources": [
+        "iam_user",
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event",
+        "iam_audit_event"
+      ]
+    },
+    {
+      "api_method": "DELETE",
+      "api_path": "/app/v3/api/auth/sessions/current",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "delete",
+      "operation": "signOut",
+      "read_sources": [
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event"
+      ]
+    },
+    {
+      "api_method": "PATCH",
+      "api_path": "/app/v3/api/auth/sessions/current",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "update",
+      "operation": "updateCurrentSession",
+      "read_sources": [
+        "iam_session"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_session",
+        "iam_security_event"
+      ]
+    },
+    {
+      "api_method": "POST",
+      "api_path": "/app/v3/api/auth/verification_codes/verify",
+      "api_surface": "app",
+      "file_targets": [],
+      "kind": "create",
+      "operation": "verifyCode",
+      "read_sources": [
+        "iam_security_event"
+      ],
+      "route": "/auth/login",
+      "source": "apps/sdkwork-claw-router-portal/src/auth/clawRouterAuthController.ts",
+      "write_tables": [
+        "iam_security_event"
       ]
     }
   ],
   "summary": {
-    "operation_count": 178,
-    "source_file_count": 35,
-    "write_operation_count": 91
+    "operation_count": 260,
+    "source_file_count": 37,
+    "write_operation_count": 131
   }
 }

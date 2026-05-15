@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-nlp-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_nlp_toolkit",
+  "skill": {
+    "id": 22336,
+    "skillKey": "clawhub-chinese-nlp-toolkit",
+    "name": "Chinese NLP Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-nlp-toolkit",
+    "url": "https://clawhub.ai/skills/chinese-nlp-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-nlp-toolkit-7b9e53b068d44a1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Specialized natural language processing for Chinese text. Covers segmentation (jiaba), sentiment analysis, keyword extraction, text summarization, tone detec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "371166758-qq",
+      "userId": "s17ar5a7nns9zvtefny1zx0jrs83q234",
+      "displayName": "371166758-qq",
+      "image": "https://avatars.githubusercontent.com/u/267607290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774593365548,
+      "changelog": "Specialized Chinese NLP: segmentation, sentiment analysis, keyword extraction, summarization, readability scoring, format conversion (simplified/traditional/pinyin).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e174e3bd05fcc98cd06f6ce97922b2a4c6458f5ed404a56fbc99e7ec95caa2a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alvis2-gh@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis2_gh",
+  "skill": {
+    "id": 43358,
+    "skillKey": "clawhub-alvis2-gh",
+    "name": "Gh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis2-gh",
+    "url": "https://clawhub.ai/skills/alvis2-gh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis2-gh-cde243db1cdab7da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the GitHub CLI (gh) to perform core GitHub operations: auth status, repo create/clone/fork, issues, pull requests, releases, and basic repo management. T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776241250297,
+      "changelog": "Fixed API to api.skillboss.co",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:830d3aee7d63e95364dffed99f39fe99e2faaf06ba6b5a249fff45ccdcca0b54"
+}

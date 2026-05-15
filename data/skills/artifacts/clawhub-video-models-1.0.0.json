@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-models@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_models",
+  "skill": {
+    "id": 38219,
+    "skillKey": "clawhub-video-models",
+    "name": "Video Models"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-models",
+    "url": "https://clawhub.ai/skills/video-models",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-models-5943603aaa3e50f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second product demo clip into 1080p AI-processed videos just by typing what you need. Whether it's applying AI video models to transform or enhance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776709051901,
+      "changelog": "- Initial release: Effortlessly apply AI video models to your clips and generate 1080p exports in under 2 minutes.\n- Upload up to 500MB video files (mp4, mov, avi, webm, and more) and process with natural-language instructions.\n- Automatic session handling and backend API connection with free starter credits for new users.\n- Export, credits, upload, and other actions intelligently matched from user prompts.\n- Transparent status updates — see connection, ongoing processing, and timeline changes.\n- Streamlined workflow: upload → describe enhancement → download professionally processed video.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b663aac5c58b3da31f736f141eb744e98f9e95676bc27a8e3e7406fe13c6568"
+}

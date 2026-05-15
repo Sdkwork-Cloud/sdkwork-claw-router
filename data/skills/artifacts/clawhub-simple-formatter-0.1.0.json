@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simple-formatter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simple_formatter",
+  "skill": {
+    "id": 16516,
+    "skillKey": "clawhub-simple-formatter",
+    "name": "Simple Formatter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simple-formatter",
+    "url": "https://clawhub.ai/skills/simple-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simple-formatter-e4d61e8dfa387968.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Formats text according to specified style guidelines. A clean example skill with no security issues."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tjade273",
+      "userId": "publishers:tjade273",
+      "displayName": "Tjaden Hess",
+      "image": "https://avatars.githubusercontent.com/u/3936648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771457727710,
+      "changelog": "Simple-formatter 0.1.0 initial release:\n\n- Formats text per style guidelines: capitalizes sentences, fixes spacing, and applies punctuation rules.\n- Provides clear instructions and usage examples.\n- Recommends use of the included Python tool for formatting tasks.\n- Licensed under Apache-2.0.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c43ea3704e81e4a40da050c4e465750ff3c3c7816a98ebcb9bc27cc460d1c311"
+}

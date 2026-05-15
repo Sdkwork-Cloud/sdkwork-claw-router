@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxhub-hybrid@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_hybrid",
+  "skill": {
+    "id": 63803,
+    "skillKey": "clawhub-maxhub-hybrid",
+    "name": "Maxhub Hybrid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-hybrid",
+    "url": "https://clawhub.ai/skills/maxhub-hybrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-hybrid-41d397b6f6d5d376.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "混合解析/HybridParser平台多平台混合内容解析与聚合提取。当用户提到混合解析、hybrid、解析、聚合、多等相关需求时激活此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiewxx",
+      "userId": "s17364s4d8h82mf2cd7m7g71ms869c1h",
+      "displayName": "Xie Hao",
+      "image": "https://avatars.githubusercontent.com/u/128963651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778341858075,
+      "changelog": "v1.1.1 - 修复YAML元数据格式，统一repository地址",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53f48d094cf074b44f237b247b8282776a7ad7732ca65697aac2aeb4662b931d"
+}

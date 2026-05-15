@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27866,
+  "uuid": "skill-clawhub-botauth",
+  "skillKey": "clawhub-botauth",
+  "name": "botauth",
+  "summary": "Use the botauth CLI to list, search, and retrieve secrets from the user's unlocked botauth vault with per-request approval in the desktop app. Use when a tas...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botauth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EYHN",
+      "features": [
+        "Use the botauth CLI to list, search, and retrieve secrets from the user's unlocked botauth vaul.",
+        "Use when a tas..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/botauth@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13579374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "botauth",
+      "url": "https://clawhub.ai/skills/botauth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botauth",
+    "url": "https://clawhub.ai/skills/botauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botauth-d44c712f77ba2768.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/botauth@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-botauth-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b6b4265bfbbceac289b62913881445d039b511fed03573ea0e62e82941a1ef4",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:29:56.678Z"
+}

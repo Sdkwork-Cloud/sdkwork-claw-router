@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ucl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ucl",
+  "skill": {
+    "id": 71999,
+    "skillKey": "clawhub-ucl",
+    "name": "Ucl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ucl",
+    "url": "https://clawhub.ai/skills/ucl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ucl-43c34ee9af7bfacc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供ucl的创立背景、核心产品特色、全球布局及最新动态，助力市场调研和商业合作分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776470588507,
+      "changelog": "ucl 1.0.0\n\n- 新增对 ucl 品牌/组织的背景信息简介\n- 提供创立故事、发展历程、核心业务、全球布局和最新动态\n- 明确适用于市场调研、产品选型及商业合作场景\n- 建议用户参考官方及权威媒体数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7ac5a85cc366e0101368c7afe67537cbcd6351a9e80b5e2d16e46c491d2de93"
+}

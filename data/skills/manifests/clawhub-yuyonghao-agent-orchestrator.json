@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63938,
+  "uuid": "skill-clawhub-yuyonghao-agent-orchestrator",
+  "skillKey": "clawhub-yuyonghao-agent-orchestrator",
+  "name": "Agent Orchestrator",
+  "summary": "生产级 Agent 编排器，实现Agent生命周期管理、任务调度、资源限制、服务发现及多节点集群管理功能。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_agent_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "生产级 Agent 编排器，实现Agent生命周期管理、任务调度、资源限制、服务发现及多节点集群管理功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuyonghao-agent-orchestrator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuyonghao-agent-orchestrator",
+      "url": "https://clawhub.ai/skills/yuyonghao-agent-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-agent-orchestrator",
+    "url": "https://clawhub.ai/skills/yuyonghao-agent-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-agent-orchestrator-fa5a58f8302d2967.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuyonghao-agent-orchestrator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuyonghao-agent-orchestrator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94f3426016c109f2f5495bbcf135c33b490b9428156c9a85948b14752d8ed06a",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:52:33.942Z"
+}

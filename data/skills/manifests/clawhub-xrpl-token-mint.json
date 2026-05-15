@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18904,
+  "uuid": "skill-clawhub-xrpl-token-mint",
+  "skillKey": "clawhub-xrpl-token-mint",
+  "name": "XRPL Token Minting",
+  "summary": "Create and manage XRPL issued tokens and NFTs, including minting, trust lines, issuing payments, and setting NFT offers with customizable fees and flags.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xrpl_token_mint",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HarleysCodes",
+      "features": [
+        "Create and manage XRPL issued tokens and NFTs, including minting, trust lines, issuing payments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xrpl-token-mint@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116604105?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xrpl-token-mint",
+      "url": "https://clawhub.ai/skills/xrpl-token-mint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xrpl-token-mint",
+    "url": "https://clawhub.ai/skills/xrpl-token-mint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xrpl-token-mint-1de2c4513374ca07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xrpl-token-mint@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xrpl-token-mint-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c2f8d8631efaa8dffc4400819eefd8ee99465832932fd63ec2a118f9886f9bd",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T20:50:45.264Z"
+}

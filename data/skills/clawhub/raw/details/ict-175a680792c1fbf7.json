@@ -1,0 +1,53 @@
+{
+  "skill": {
+    "slug": "ict",
+    "displayName": "ict",
+    "summary": "Security audit tool for Claw Skills - NOT malicious. This tool contains detection rules (eval, exec, subprocess, etc.) for scanning skills, these are securit...",
+    "tags": {
+      "audit": "4.0.8",
+      "devtools": "4.0.8",
+      "latest": "4.0.8",
+      "security": "4.0.8"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "createdAt": 1774190069697,
+    "updatedAt": 1777622494345
+  },
+  "latestVersion": {
+    "version": "4.0.8",
+    "createdAt": 1774317400748,
+    "changelog": "- Bumped version to 4.0.8.\n- Added new rules.json file for storing or managing detection rules.\n- Updated version and documentation references across README.md and SKILL.md.\n- Revised README/usage/documentation to reflect version 4.0.8 with minor clarifications.\n- Made updates to code files (ict.py, rule_loader.py, rules.py) related to detection rules and/or rule loading logic.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "vimvem",
+    "userId": "s172kjfgkya06081qqwxap8xzn83fdd0",
+    "displayName": "vv",
+    "image": "https://avatars.githubusercontent.com/u/248705026?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dynamic_code_execution",
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious",
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.dynamic_code_execution, suspicious.exposed_secret_literal, suspicious.llm_suspicious (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622494345
+  }
+}

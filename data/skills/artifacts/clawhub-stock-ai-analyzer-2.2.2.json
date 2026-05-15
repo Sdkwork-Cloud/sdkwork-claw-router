@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-ai-analyzer@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_ai_analyzer",
+  "skill": {
+    "id": 69353,
+    "skillKey": "clawhub-stock-ai-analyzer",
+    "name": "Stock Ai Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-ai-analyzer",
+    "url": "https://clawhub.ai/skills/stock-ai-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-ai-analyzer-27b79c35d9773661.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股股票投研分析方法论。当用户要求按股票名称或代码分析中国A股、判断公司基本面/技术面/估值/财务质量/股东结构/主营业务、做专题研究（如AI、半导体、新能源关联度）、从个股推演行业趋势、做竞争格局分析或风险排查，或基于Tushare/公开市场数据生成股票分析时使用。用户提问形式包括\"帮我分析XX股票\"\"XX的基..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinfi-codex",
+      "userId": "s175ywf2hg7sy9p90712m993ah83g0p6",
+      "displayName": "chinfi-codex",
+      "image": "https://avatars.githubusercontent.com/u/260019825?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1023,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1777006914429,
+      "changelog": "Update stock research methodology, trigger patterns, and CNInfo report retrieval support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f7a6b02e2928378be88aa7c194576138aaf60022255436a8ac819e782b6272e"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51446,
+  "uuid": "skill-clawhub-monday-direct",
+  "skillKey": "clawhub-monday-direct",
+  "name": "Monday Direct",
+  "summary": "Interact directly with the monday.com GraphQL API — no third-party gateway required. Read and create boards, items, columns, updates, and users. Use when ask...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monday_direct",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonah",
+      "features": [
+        "Interact directly with the monday.com GraphQL API — no third-party gateway required",
+        "Read and create boards, items, columns, updates, and users",
+        "Use when ask..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monday-direct@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62945643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monday-direct",
+      "url": "https://clawhub.ai/skills/monday-direct"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monday-direct",
+    "url": "https://clawhub.ai/skills/monday-direct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monday-direct-8705f5be2efe8e46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monday-direct@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-monday-direct-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3173f3528ac22c18e5276be50a25cec37bee988f695043284ad17d0b2ec19638",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T22:12:35.434Z"
+}

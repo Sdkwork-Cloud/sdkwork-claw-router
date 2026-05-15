@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60850,
+  "uuid": "skill-clawhub-image-video-generator",
+  "skillKey": "clawhub-image-video-generator",
+  "name": "支持图片生成（SEEDREAM5_0/NANO_BANANA_2）和视频生成（SEEDANCE_1_5_PRO/SORA2），SORA2 支持文生视频和首尾帧图生视频",
+  "summary": "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的 API Key！ 获取 API Key：访问 https://ai.deepsop.com/ 注册登录后创建。 支持图片模...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_video_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2393970875",
+      "features": [
+        "AI 图片与视频异步生成技能，调用 AI Artist API 根据文本提示词生成图片或视频，自动轮询直到任务完成。 ⚠️ 使用前必须设置环境变量 AI_ARTIST_TOKEN 为你自己的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-video-generator@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139337194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-video-generator",
+      "url": "https://clawhub.ai/skills/image-video-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-video-generator",
+    "url": "https://clawhub.ai/skills/image-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-video-generator-79e5e5f0fed5ea60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-video-generator@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-video-generator-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2902042e4a678e0022ca5999926c361ceb9e70a26a74e62deb7fcb9676a76647",
+      "artifactSizeBytes": 3025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:30:05.223Z"
+}

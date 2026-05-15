@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24648,
+  "uuid": "skill-clawhub-gougoubi-create-condition",
+  "skillKey": "clawhub-gougoubi-create-condition",
+  "name": "Gougoubi Create Condition",
+  "summary": "Create a Gougoubi proposal condition from minimal input with deterministic defaults for deadline, trade deadline, normalization, and transaction submission....",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_create_condition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Create a Gougoubi proposal condition from minimal input with deterministic defaults for deadlin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gougoubi-create-condition@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gougoubi-create-condition",
+      "url": "https://clawhub.ai/skills/gougoubi-create-condition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-create-condition",
+    "url": "https://clawhub.ai/skills/gougoubi-create-condition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-create-condition-68181f8be5bcdeae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gougoubi-create-condition@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gougoubi-create-condition-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dae74a74a6df234f0baf7352cde52c97f37c2ddd11d7ce3c1e929f6a3670cf0",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:23:55.825Z"
+}

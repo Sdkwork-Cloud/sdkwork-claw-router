@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-marketing-videos@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_marketing_videos",
+  "skill": {
+    "id": 10883,
+    "skillKey": "clawhub-ai-marketing-videos",
+    "name": "Ai Marketing Videos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-marketing-videos",
+    "url": "https://clawhub.ai/skills/ai-marketing-videos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-marketing-videos-3cb518a6006af0c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create AI marketing videos for ads, promos, product launches, and brand content. Models: Veo, Seedance, Wan, FLUX for visuals, Kokoro for voiceover. Types: p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1849,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771402998595,
+      "changelog": "- Initial release of AI Marketing Videos (v0.1.5) skill.\n- Create AI-powered marketing videos for ads, promos, product launches, testimonials, and explainers using CLI workflows.\n- Supports major video generation and voiceover models: Veo, Seedance, Wan, FLUX, Kokoro.\n- Includes ready-to-use bash templates for creating ads tailored to platforms like YouTube, Facebook, Instagram, and TikTok.\n- Provides best practices for hooks, visual hierarchy, sound design, and A/B testing video variants.\n- No elevated permissions required; clean install instructions provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c34b6b5faf8793699107e0e09a70d53392bfb7a9cb850ec36f8d1ab61a0643ff"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15265,
+  "uuid": "skill-clawhub-qwenspeak",
+  "skillKey": "clawhub-qwenspeak",
+  "name": "qwenspeak",
+  "summary": "Text-to-speech generation via Qwen3-TTS over SSH. Preset voices, voice cloning, voice design. Use when the user wants to generate speech audio, clone voices,...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwenspeak",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ciprian Mandache",
+      "features": [
+        "Text-to-speech generation via Qwen3-TTS over SSH",
+        "Preset voices, voice cloning, voice design",
+        "Use when the user wants to generate speech audio, clone voices,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwenspeak@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12934156?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwenspeak",
+      "url": "https://clawhub.ai/skills/qwenspeak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwenspeak",
+    "url": "https://clawhub.ai/skills/qwenspeak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwenspeak-ea6d4cc409ad5b6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwenspeak@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwenspeak-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4941581a1cc94160049c48c0c64ed22eedb2717bcb55e99f2398a38c7af62c5",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T11:09:12.526Z"
+}

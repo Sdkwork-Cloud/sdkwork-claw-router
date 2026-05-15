@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56420,
+  "uuid": "skill-clawhub-fipe-carros",
+  "skillKey": "clawhub-fipe-carros",
+  "name": "Tabela FIPE",
+  "summary": "Consulta preços médios de carros, motos e caminhões na Tabela FIPE brasileira para compra, venda, seguro e financiamento.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fipe_carros",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "runawaydevil",
+      "features": [
+        "Consulta preços médios de carros, motos e caminhões na Tabela FIPE brasileira para compra, vend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fipe-carros@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8763225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fipe-carros",
+      "url": "https://clawhub.ai/skills/fipe-carros"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fipe-carros",
+    "url": "https://clawhub.ai/skills/fipe-carros",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fipe-carros-7b489e46fbb26e6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fipe-carros@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fipe-carros-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:573d8b2825d7cd36de41336bea25d49a06964dce3ca2f1464e1a44818772bdee",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T22:24:20.955Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73637,
+  "uuid": "skill-clawhub-novel-writing-assistant",
+  "skillKey": "clawhub-novel-writing-assistant",
+  "name": "小说创作助手",
+  "summary": "通过八步结构化流程，辅助作者构思灵感、构建世界观、塑造人物、制定大纲，生成章节正文并进行审核润色，提升小说创作效率和质量。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_writing_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "folhj163",
+      "features": [
+        "通过八步结构化流程，辅助作者构思灵感、构建世界观、塑造人物、制定大纲，生成章节正文并进行审核润色，提升小说创作效率和质量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-writing-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233896543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-writing-assistant",
+      "url": "https://clawhub.ai/skills/novel-writing-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-writing-assistant",
+    "url": "https://clawhub.ai/skills/novel-writing-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-writing-assistant-f3c5221d5b2eff5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-writing-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-writing-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9acc2754c6e767ed4d767bfa6022ff2b4e50c92981cbbea2ced6eef0f3134f5",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:36:16.653Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reviewer-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reviewer_agent",
+  "skill": {
+    "id": 66195,
+    "skillKey": "clawhub-reviewer-agent",
+    "name": "Reviewer Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reviewer-agent",
+    "url": "https://clawhub.ai/skills/reviewer-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reviewer-agent-396cebd4b87721b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "独立评审Agent。为每个项目提供第三方视角的评审，确保质量、可维护性和进度可控。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775569031685,
+      "changelog": "v1.0.0: 独立评审Agent，专用工作空间+.reviewer/",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f10ce435e69a9dc013cf16108fb3ea7b548ff2e09201adc9c854aa08031b8f36"
+}

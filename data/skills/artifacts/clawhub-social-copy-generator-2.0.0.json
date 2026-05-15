@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-copy-generator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_copy_generator",
+  "skill": {
+    "id": 19983,
+    "skillKey": "clawhub-social-copy-generator",
+    "name": "Social Copy Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-copy-generator",
+    "url": "https://clawhub.ai/skills/social-copy-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-copy-generator-8ea2b1b72648d89f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate platform-optimized social media copy for product launches. One input, 14 platform outputs (Twitter/X, LinkedIn, Hacker News, Reddit, Xiaohongshu, Ji..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongsheng123132",
+      "userId": "s17084bpvdzamtn12vmsse6r0d83ttn8",
+      "displayName": "dongsheng123132",
+      "image": "https://avatars.githubusercontent.com/u/90887123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 571,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772882313913,
+      "changelog": "v2.0.0: Expand to 14 platforms (add LinkedIn, HN, Reddit, Zhihu, Weibo, Bilibili, Douyin, Telegram). Stricter Twitter char rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bbf763e8d16c95adb05736757ebf6b2ecf515dfe0ce83ed72d6e2f878461e54e"
+}

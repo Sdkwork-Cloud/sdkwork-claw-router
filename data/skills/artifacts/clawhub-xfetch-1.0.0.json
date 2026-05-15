@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xfetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xfetch",
+  "skill": {
+    "id": 19776,
+    "skillKey": "clawhub-xfetch",
+    "name": "xfetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xfetch",
+    "url": "https://clawhub.ai/skills/xfetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xfetch-ed0669233a59e3f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use xfetch CLI to fetch X/Twitter data - tweets, user profiles, search results, timelines, lists, DMs, and notifications. Use this skill whenever you need to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiskyer",
+      "userId": "s174q6bx170bf0qb9wjqhqfv6x83vv3e",
+      "displayName": "Pengfei Ni",
+      "image": "https://avatars.githubusercontent.com/u/676637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772799375952,
+      "changelog": "Initial release of xfetch – a CLI tool for scraping and exporting X/Twitter data using browser cookies.\n\n- Fetch tweets, user profiles, threads, timelines, lists, DMs, and notifications via simple CLI commands.\n- Flexible authentication using browser cookie extraction or manual token entry.\n- Extensive pagination and formatting options: output as JSON, JSONL, CSV, or directly to SQLite.\n- Supports timeline, search, user lookup, likes, bookmarks, lists, followers, DMs, and notifications.\n- Includes options for proxies, request delay, color control, and error recovery via query ID refresh.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:076dc5213fdb81db5d0e3e0067204a2d1cc664a284fb5d68e1f897d18f4a35df"
+}

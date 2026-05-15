@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25983,
+  "uuid": "skill-clawhub-cae-skill",
+  "skillKey": "clawhub-cae-skill",
+  "name": "cae-skill",
+  "summary": "Control local CAE applications on Windows including launching apps, opening files, checking status, closing apps, detecting active and running apps, detectin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cae_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "solvi",
+      "features": [
+        "Control local CAE applications on Windows including launching apps, opening files, checking sta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cae-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39986255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cae-skill",
+      "url": "https://clawhub.ai/skills/cae-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cae-skill",
+    "url": "https://clawhub.ai/skills/cae-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cae-skill-c996429d2ee7fff7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cae-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cae-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:186b73bdcf818ffc75f5a73e66416a5fd5c55a06ab11cbac70d920d61765b205",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:57:23.833Z"
+}

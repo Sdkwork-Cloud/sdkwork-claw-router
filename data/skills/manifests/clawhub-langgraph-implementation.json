@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30593,
+  "uuid": "skill-clawhub-langgraph-implementation",
+  "skillKey": "clawhub-langgraph-implementation",
+  "name": "Langgraph Implementation",
+  "summary": "Implements stateful agent graphs using LangGraph. Use when building graphs, adding nodes/edges, defining state schemas, implementing checkpointing, handling...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langgraph_implementation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Implements stateful agent graphs using LangGraph",
+        "Use when building graphs, adding nodes/edges, defining state schemas, implementing checkpointin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/langgraph-implementation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "langgraph-implementation",
+      "url": "https://clawhub.ai/skills/langgraph-implementation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langgraph-implementation",
+    "url": "https://clawhub.ai/skills/langgraph-implementation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langgraph-implementation-0390fd57a05de8fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/langgraph-implementation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-langgraph-implementation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c99c1f4a0490ed7f2553a8e0ec66576b923d64eeb0e7682fd49e64984a4970b1",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:09:21.369Z"
+}

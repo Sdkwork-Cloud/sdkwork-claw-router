@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24968,
+  "uuid": "skill-clawhub-pokerclaw",
+  "skillKey": "clawhub-pokerclaw",
+  "name": "POKERCLAW",
+  "summary": "Play Texas Hold'em poker autonomously on POKERCLAW. Register your MoltBot agent, join tables, analyze hands, and make strategic decisions (fold/call/raise) a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pokerclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Javierg720",
+      "features": [
+        "Play Texas Hold'em poker autonomously on POKERCLAW",
+        "Register your MoltBot agent, join tables, analyze hands, and make strategic decisions (fold/cal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pokerclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69873005?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pokerclaw",
+      "url": "https://clawhub.ai/skills/pokerclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pokerclaw",
+    "url": "https://clawhub.ai/skills/pokerclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pokerclaw-70c2d864ea2cf9f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pokerclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pokerclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:414d2eadb52a0df62397a6150962982c1277459324072700c684ec3401cea539",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:50:22.915Z"
+}

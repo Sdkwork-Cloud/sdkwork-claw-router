@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-tailscale-remote-access@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tailscale_remote_access",
+  "skill": {
+    "id": 20613,
+    "skillKey": "clawhub-openclaw-tailscale-remote-access",
+    "name": "OpenClaw Tailscale Remote Access"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tailscale-remote-access",
+    "url": "https://clawhub.ai/skills/openclaw-tailscale-remote-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tailscale-remote-access-03fbbc93cd2ba6fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure or repair OpenClaw remote access over Tailscale with a directly executable workflow: inspect state, apply the gateway config, enable Tailscale Serv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangagentlabs",
+      "userId": "publishers:jiangagentlabs",
+      "displayName": "Jiang_AgentLabs",
+      "image": "https://avatars.githubusercontent.com/u/61495056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772945765139,
+      "changelog": "- Added metadata to SKILL.md, including version, homepage, and required dependencies.\n- Added CHANGELOG.md, README.md, and README.zh-CN.md for improved documentation.\n- Introduced agents/openai.yaml configuration file.\n- Improved skill packaging and required bin/config discovery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9cca2d87501b01cf7cc390541f921b5be52d6c977db86cbc5ea30e9cbdd5298d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillnav@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillnav",
+  "skill": {
+    "id": 53523,
+    "skillKey": "clawhub-skillnav",
+    "name": "SkillNav"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillnav",
+    "url": "https://clawhub.ai/skills/skillnav",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillnav-521c9108192e47d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search 3,900+ MCP servers with install commands, get daily AI brief, and discover trending tools — in Chinese. Data from skillnav.dev editorial team."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huiw86",
+      "userId": "s172a8p6j25w4g26nrj0hrzrsh83n4d9",
+      "displayName": "HuiW86",
+      "image": "https://avatars.githubusercontent.com/u/253177500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774781710634,
+      "changelog": "v2.0.0: unified search API, paper query, trending tools, version check, brand footer",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fda920c3b63f4d0edd435ee4a4f14c195a800a8804fc8ff1847dd0eccf38d2a0"
+}

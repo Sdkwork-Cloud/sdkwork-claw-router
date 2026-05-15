@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24364,
+  "uuid": "skill-clawhub-truth-frist",
+  "skillKey": "clawhub-truth-frist",
+  "name": "Truth first",
+  "summary": "Evidence-first verification for status, config, file contents, actions, connectivity, mounts, and model selection. Use before answering any such claim.",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.truth_frist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "royhk920",
+      "features": [
+        "Evidence-first verification for status, config, file contents, actions, connectivity, mounts, a.",
+        "Use before answering any such claim."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/truth-frist@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129730053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "truth-frist",
+      "url": "https://clawhub.ai/skills/truth-frist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "truth-frist",
+    "url": "https://clawhub.ai/skills/truth-frist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/truth-frist-540e74d9ebaf7df0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/truth-frist@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-truth-frist-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ed59151dd9fe1978cd21d47bf3458d2a7a48483cb7b83cb4869bbc304fe8f21",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:52:20.004Z"
+}

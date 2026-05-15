@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42594,
+  "uuid": "skill-clawhub-skylv-capability-growth",
+  "skillKey": "clawhub-skylv-capability-growth",
+  "name": "Skylv Capability Growth",
+  "summary": "Tracks and grows agent capabilities over time",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_capability_growth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Tracks and grows agent capabilities over time"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-capability-growth@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-capability-growth",
+      "url": "https://clawhub.ai/skills/skylv-capability-growth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-capability-growth",
+    "url": "https://clawhub.ai/skills/skylv-capability-growth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-capability-growth-5a7e1e3397a04031.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-capability-growth@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-capability-growth-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d8dd48b549c4a39d12082418d2c5231d759f29dc8faf228b23df8bf5d6c312c",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:36:35.687Z"
+}

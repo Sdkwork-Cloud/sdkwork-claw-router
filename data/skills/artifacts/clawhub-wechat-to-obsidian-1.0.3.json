@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-to-obsidian@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_to_obsidian",
+  "skill": {
+    "id": 62396,
+    "skillKey": "clawhub-wechat-to-obsidian",
+    "name": "WeChat to Obsidian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-to-obsidian",
+    "url": "https://clawhub.ai/skills/wechat-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-to-obsidian-0d17e4bcbc72e723.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将微信公众号文章剪藏到 Obsidian：使用真实无头浏览器加载页面，按原文顺序保留文字、图片和 Markdown 标题层级，图片自动下载到 attachments 目录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dw1161",
+      "userId": "s17fs1k3mbz2dmtnhv13m1npb183g3sh",
+      "displayName": "dw1161",
+      "image": "https://avatars.githubusercontent.com/u/1182165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777219974288,
+      "changelog": "SKILL.md 改为中文执行说明，面向中文用户；保留命令和关键英文术语，继续支持微信公众号标题层级保留。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b4abd332c56654a0a6e370a991698fd0072cd75e2c3dd8e736ee610f305a829"
+}

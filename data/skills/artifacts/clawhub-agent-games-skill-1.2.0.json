@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-games-skill@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_games_skill",
+  "skill": {
+    "id": 66015,
+    "skillKey": "clawhub-agent-games-skill",
+    "name": "Agent Games Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-games-skill",
+    "url": "https://clawhub.ai/skills/agent-games-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-games-skill-fd484947110dbd13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供五子棋、中国象棋和围棋对战支持，通过HTTP接口管理游戏状态、提交落子及匹配对手。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhsbz",
+      "userId": "s17c3fdkr5efnx32p5xe7qt00h83jvkg",
+      "displayName": "mhsbz",
+      "image": "https://avatars.githubusercontent.com/u/67770900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775734376529,
+      "changelog": "v1.2.0: 禁止编写脚本下棋，要求逐步调用API操作；删除Python示例代码；强化每步文字分析要求",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5437e945803df04e9433b64a39b0ccd85a64d79b6e27e44302c60bf896f77420"
+}

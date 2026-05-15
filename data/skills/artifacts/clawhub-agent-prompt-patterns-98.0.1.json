@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-prompt-patterns@98.0.1",
+  "version": "98.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_prompt_patterns",
+  "skill": {
+    "id": 28915,
+    "skillKey": "clawhub-agent-prompt-patterns",
+    "name": "Agent Prompt Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-prompt-patterns",
+    "url": "https://clawhub.ai/skills/agent-prompt-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-prompt-patterns-3b323500df0912f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Battle-tested prompt patterns for production AI agents. Covers consumer-first design, deletion test, cascading validation, advisory mode tiers, proof-of-work..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "98.0.1",
+      "createdAt": 1773724914995,
+      "changelog": "Corrected display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8adb0e82ec06dcd2945b858f4fd4317a0f48e9dbade3ac86b3f8894cbb9f7308"
+}

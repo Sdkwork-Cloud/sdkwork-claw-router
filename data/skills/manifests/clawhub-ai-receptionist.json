@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25979,
+  "uuid": "skill-clawhub-ai-receptionist",
+  "skillKey": "clawhub-ai-receptionist",
+  "name": "Ai Receptionist",
+  "summary": "Guide users to deploy an AI receptionist or AI customer service agent using Solvea. Trigger when users say things like \"deploy AI customer support\", \"I need...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_receptionist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AntiMoron",
+      "features": [
+        "Guide users to deploy an AI receptionist or AI customer service agent using Solvea",
+        "Trigger when users say things like \"deploy AI customer support\", \"I need..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-receptionist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6587734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-receptionist",
+      "url": "https://clawhub.ai/skills/ai-receptionist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-receptionist",
+    "url": "https://clawhub.ai/skills/ai-receptionist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-receptionist-34eaf2cdca5a6e47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-receptionist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-receptionist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28776762847c31d3b66af91658e24e3f9e7d20b00d10d3362d70f5f510291ba9",
+      "artifactSizeBytes": 2569
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:48:22.568Z"
+}

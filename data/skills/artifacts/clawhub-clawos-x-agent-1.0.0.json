@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawos-x-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawos_x_agent",
+  "skill": {
+    "id": 27279,
+    "skillKey": "clawhub-clawos-x-agent",
+    "name": "ClawOS X Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawos-x-agent",
+    "url": "https://clawhub.ai/skills/clawos-x-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawos-x-agent-89a4dc9280ade22b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate the ClawOS automated X (Twitter) account. Use when posting tweets, replying to mentions/questions, engaging with the crypto/AI community, or managing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "synergysize",
+      "userId": "publishers:synergysize",
+      "displayName": "synergysize",
+      "image": "https://avatars.githubusercontent.com/u/173307316?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773294809980,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1da4f0a02970c1c0f0321398db7dfbc618cec4f84dd5d6ffc8b712a925646942"
+}

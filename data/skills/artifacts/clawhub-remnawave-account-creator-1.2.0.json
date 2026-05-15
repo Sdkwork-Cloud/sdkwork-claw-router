@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remnawave-account-creator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remnawave_account_creator",
+  "skill": {
+    "id": 62529,
+    "skillKey": "clawhub-remnawave-account-creator",
+    "name": "Remnawave Account Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remnawave-account-creator",
+    "url": "https://clawhub.ai/skills/remnawave-account-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remnawave-account-creator-d5db5fff6da217a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动调用 Remnawave API 创建用户账号，获取订阅信息，并使用模板自动发送开通邮件，支持抄送和内部分组配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uepuer",
+      "userId": "publishers:uepuer",
+      "displayName": "uepuer",
+      "image": "https://avatars.githubusercontent.com/u/139662266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 460,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774174940834,
+      "changelog": "v1.2.0 - CI/CD 操作流建立：版本号管理机制、标准化操作流程、操作前后自动验证、邮件通知集成、日志归档规范",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5195d5a4d80a1ebae02984d798659a935f8f4f4b64b6630b9acf0b618d0cd203"
+}

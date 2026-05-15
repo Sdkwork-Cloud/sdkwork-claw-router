@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailjet@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailjet",
+  "skill": {
+    "id": 25468,
+    "skillKey": "clawhub-mailjet",
+    "name": "Mailjet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailjet",
+    "url": "https://clawhub.ai/skills/mailjet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailjet-da4890730d9438c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mailjet integration. Manage Campaigns, Templates, Senders. Use when the user wants to interact with Mailjet data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775163603701,
+      "changelog": "Revert refresh marker",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78bcb3627285df6506d0138b9d367dae0ee1b320222a60b752f0f2ec053fdc0a"
+}

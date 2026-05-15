@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24876,
+  "uuid": "skill-clawhub-openclaw-user-data-pack",
+  "skillKey": "clawhub-openclaw-user-data-pack",
+  "name": "Openclaw User Data Pack",
+  "summary": "Agent instructions: pack/apply OpenClaw user data via scripts; overwrite-by-path only. You dry-run first, read EXPORT_MANIFEST.txt, gate optional layers, res...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_user_data_pack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhaobudaoyuema",
+      "features": [
+        "Agent instructions: pack/apply OpenClaw user data via scripts",
+        "overwrite-by-path only",
+        "You dry-run first, read EXPORT_MANIFEST.txt, gate optional layers, res..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-user-data-pack@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66905526?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-user-data-pack",
+      "url": "https://clawhub.ai/skills/openclaw-user-data-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-user-data-pack",
+    "url": "https://clawhub.ai/skills/openclaw-user-data-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-user-data-pack-5723b703a1bc96d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-user-data-pack@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-user-data-pack-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad3d18bf91fed221fc2222f16356425a7e3973490641892ac88b2f666a9e0154",
+      "artifactSizeBytes": 2706
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:28:53.194Z"
+}

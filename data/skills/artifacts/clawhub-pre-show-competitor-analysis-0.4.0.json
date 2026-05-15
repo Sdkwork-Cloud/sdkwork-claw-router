@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pre-show-competitor-analysis@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_show_competitor_analysis",
+  "skill": {
+    "id": 57359,
+    "skillKey": "clawhub-pre-show-competitor-analysis",
+    "name": "Pre Show Competitor Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-show-competitor-analysis",
+    "url": "https://clawhub.ai/skills/pre-show-competitor-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-show-competitor-analysis-e79c0c7f97b6b752.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze competitor exhibitor presence, booth positioning, and messaging before the show. \"Who are my competitors at this show?\" / \"分析展会竞争对手\" / \"Messekonkurre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775030069600,
+      "changelog": "- Added multilingual description keywords to improve discoverability for non-English users.\n- No workflow or logic changes; content and output remain the same.\n- Version update to 0.4.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:243448470fb5e26e946949454de9a4b646f7783266c283e70b5f2c1824692d03"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70981,
+  "uuid": "skill-clawhub-legal-rights-drafter-claw",
+  "skillKey": "clawhub-legal-rights-drafter-claw",
+  "name": "法律维权草拟虾",
+  "summary": "法律维权草拟虾。识别违约行为并自动起草维权通知函。当用户提到违约、维权、发函、催告、索赔、侵权、律师函、催款函、警告函、追责等场景时使用。输入可以是自然语言描述或结构化数据（Excel/CSV），输出标准化法律函件（Markdown/PDF/Word）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_rights_drafter_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "法律维权草拟虾。识别违约行为并自动起草维权通知函。当用户提到违约、维权、发函、催告、索赔、侵权、律师函、催款函、警告函、追责等场景时使用。输入可以是自然语言描述或结构化数据（Excel/CS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-rights-drafter-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-rights-drafter-claw",
+      "url": "https://clawhub.ai/skills/legal-rights-drafter-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-rights-drafter-claw",
+    "url": "https://clawhub.ai/skills/legal-rights-drafter-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-rights-drafter-claw-a0363b9611e36057.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-rights-drafter-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-rights-drafter-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e80e0abaabec27cb97ee49bfd40d0680f94292cf0b2fd7601e054180ae15aa0",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:31:20.956Z"
+}

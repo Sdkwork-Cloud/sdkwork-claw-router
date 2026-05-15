@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31574,
+  "uuid": "skill-clawhub-modernize-move",
+  "skillKey": "clawhub-modernize-move",
+  "name": "Modernize Move",
+  "summary": "Detects and modernizes outdated Move V1 syntax, patterns, and APIs to Move V2+. Use when upgrading legacy contracts, migrating to modern syntax, or convertin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modernize_move",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iskysun96",
+      "features": [
+        "Detects and modernizes outdated Move V1 syntax, patterns, and APIs to Move V2+",
+        "Use when upgrading legacy contracts, migrating to modern syntax, or convertin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modernize-move@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52557585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modernize-move",
+      "url": "https://clawhub.ai/skills/modernize-move"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modernize-move",
+    "url": "https://clawhub.ai/skills/modernize-move",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modernize-move-9eb70d0d785966f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modernize-move@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-modernize-move-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3193da4a27c11fca540a9d9b837db96afd38ba2e00cfe675c24b3edbdf9dcbc4",
+      "artifactSizeBytes": 2578
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:35:11.700Z"
+}

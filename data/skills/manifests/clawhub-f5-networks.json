@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31465,
+  "uuid": "skill-clawhub-f5-networks",
+  "skillKey": "clawhub-f5-networks",
+  "name": "F5 Networks",
+  "summary": "F5 Networks integration. Manage data, records, and automate workflows. Use when the user wants to interact with F5 Networks data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.f5_networks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "F5 Networks integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with F5 Networks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/f5-networks@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "f5-networks",
+      "url": "https://clawhub.ai/skills/f5-networks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "f5-networks",
+    "url": "https://clawhub.ai/skills/f5-networks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/f5-networks-dcaab6c275f50412.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/f5-networks@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-f5-networks-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e285a5cc2ee032e4590ec38c9df31fdd0aadc0ae96383850b11c3fae78cefba",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:45:49.607Z"
+}

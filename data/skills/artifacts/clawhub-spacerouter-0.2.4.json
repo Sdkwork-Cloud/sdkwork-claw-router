@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spacerouter@0.2.4",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spacerouter",
+  "skill": {
+    "id": 27461,
+    "skillKey": "clawhub-spacerouter",
+    "name": "SpaceRouter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spacerouter",
+    "url": "https://clawhub.ai/skills/spacerouter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spacerouter-45b61cbaf69ab3ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route HTTP traffic through Space Router residential IP proxy network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taelimoh",
+      "userId": "s17bfdk5vkh0mqb0kc564jae4984khkg",
+      "displayName": "taelimoh",
+      "image": "https://avatars.githubusercontent.com/u/19301255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.4",
+      "createdAt": 1775786434287,
+      "changelog": "Version 0.2.4 introduces SDKs, new gateway defaults, region/IP filtering, SOCKS5 support, and enhanced error handling.\n\n- Added official Python and JavaScript SDK usage examples and installation instructions\n- Updated default gateway URL to https://gateway.spacerouter.org (port 443)\n- Documented support for region targeting and IP type filtering in SDKs and curl via headers\n- Added sections for SOCKS5 protocol usage in both SDKs\n- Enhanced error handling with specific error types and retry examples in Python and JS\n- Expanded CLI usage documentation with install and example commands\n- Clarified required Python (>=3.10) and Node.js (>=18) versions for SDKs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c2a6d1959ea93db77d465eae37be5405c0ce3bf5d5f183b5cab32775055c399"
+}

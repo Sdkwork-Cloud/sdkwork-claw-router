@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docs-skill-index@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docs_skill_index",
+  "skill": {
+    "id": 58102,
+    "skillKey": "clawhub-docs-skill-index",
+    "name": "文档知识库工程师 技能索引与知识库"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docs-skill-index",
+    "url": "https://clawhub.ai/skills/docs-skill-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docs-skill-index-584f11a0754dec8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Documentation engineer skill for skill indexing, routing references, migration catalogs, and maintainable repository knowledge structure."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiweline",
+      "userId": "s172136s34q2fy2f6r88gdpzm985z150",
+      "displayName": "Aiweline",
+      "image": "https://avatars.githubusercontent.com/u/32635766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778210453276,
+      "changelog": "Publish_WelineFramework_Multica_role_skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9c142ab4faa470d93cf0a4b842232e05f84fa4be07d5a2bd4c359db4e9dc9a7"
+}

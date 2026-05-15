@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57189,
+  "uuid": "skill-clawhub-goods-images",
+  "skillKey": "clawhub-goods-images",
+  "name": "goods-images",
+  "summary": "Use when the user wants to generate product detail images or carousel/main images for e-commerce platforms like Taobao. Triggers on keywords like 商品图, 详情图, 产...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goods_images",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "briefness",
+      "features": [
+        "Use when the user wants to generate product detail images or carousel/main images for e-commerc.",
+        "Triggers on keywords like 商品图, 详情图, 产..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goods-images@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25975388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goods-images",
+      "url": "https://clawhub.ai/skills/goods-images"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goods-images",
+    "url": "https://clawhub.ai/skills/goods-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goods-images-03ad49c2a874ab5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goods-images@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-goods-images-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19c225802bc88f25ac809b5f3f9302be34be5bd13bc86f0acb495895fb513a29",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T10:55:04.698Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eb-software-architect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_software_architect",
+  "skill": {
+    "id": 37716,
+    "skillKey": "clawhub-eb-software-architect",
+    "name": "Software Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-software-architect",
+    "url": "https://clawhub.ai/skills/eb-software-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-software-architect-172e0511c2e4842f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design high-level software architecture and system structure. Use this skill when the user mentions: architecture, system design, tech stack, draw the struct..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonbraun",
+      "userId": "s17et1m19hdc751hkgrqtzjf6184b55r",
+      "displayName": "Emerson Braun",
+      "image": "https://avatars.githubusercontent.com/u/25778027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775536817121,
+      "changelog": "- Initial release of the \"software-architect\" skill for high-level system and architecture design.\n- Provides a structured process for understanding requirements, selecting architecture style, choosing tech stack, designing C4 diagrams, and documenting key decisions.\n- Emphasizes pragmatic, scalable, and team-appropriate solutions with core principles and anti-patterns.\n- Delivers clear output format for architecture reviews, including requirements, diagrams, tech stack, ADRs, risks, and next steps.\n- Focused on helping solo founders and small teams make informed design choices before starting implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b43453d2ed2e54b69254e9aca2fc872106833ad7b3a208d3b8873cff3f4ea13"
+}

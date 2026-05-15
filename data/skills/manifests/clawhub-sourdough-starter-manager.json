@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15042,
+  "uuid": "skill-clawhub-sourdough-starter-manager",
+  "skillKey": "clawhub-sourdough-starter-manager",
+  "name": "Sourdough Starter Manager",
+  "summary": "Manage sourdough starters with feeding schedules, hydration calculations, health tracking, and baking preparation. Use when the user wants to maintain a sourdough starter, plan feedings, calculate ratios, troubleshoot starter problems, or.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sourdough_starter_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AM",
+      "features": [
+        "Manage sourdough starters with feeding schedules, hydration calculations, health tracking, and.",
+        "Use when the user wants to maintain a sourdough starter, plan feedings, calculate ratios, troub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sourdough-starter-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42378320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sourdough-starter-manager",
+      "url": "https://clawhub.ai/skills/sourdough-starter-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sourdough-starter-manager",
+    "url": "https://clawhub.ai/skills/sourdough-starter-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sourdough-starter-manager-dda65711a0687839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sourdough-starter-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sourdough-starter-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fe2ef21bcf8c53a12954af42312b5d7625b673c10b9f214504cced2c58cb596",
+      "artifactSizeBytes": 2629
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T07:56:33.501Z"
+}

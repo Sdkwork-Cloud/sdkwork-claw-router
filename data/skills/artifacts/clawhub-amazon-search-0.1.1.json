@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-search@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_search",
+  "skill": {
+    "id": 31965,
+    "skillKey": "clawhub-amazon-search",
+    "name": "Amazon Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-search",
+    "url": "https://clawhub.ai/skills/amazon-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-search-001bc2159cc28264.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Amazon product listings for a keyword and return structured JSON results. Results are cached by ASIN/uuid for incremental searches and saved automatic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikehankk",
+      "userId": "s17740h3taw84fgmg8d1t4m07n83g6y3",
+      "displayName": "Wei Han",
+      "image": "https://avatars.githubusercontent.com/u/123093985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775472648518,
+      "changelog": "- Initial release of amazon-search skill for structured Amazon product searches.\n- Supports keyword queries, price filters, paging, proxy configuration, image downloading, and incremental result output.\n- Provides output as structured JSON and saves results automatically to the results directory.\n- Includes robust caching, cache clearing commands, and deduplication for incremental searches.\n- Full documentation for installation, configuration, usage examples, and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d49986ea3f0933d5f16b5f4671397f20a3a625a9a2daec0043d4650aa8cd1f6"
+}

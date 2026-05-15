@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/navimem@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.navimem",
+  "skill": {
+    "id": 51510,
+    "skillKey": "clawhub-navimem",
+    "name": "NaviMem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "navimem",
+    "url": "https://clawhub.ai/skills/navimem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/navimem-1b681af727e40ae4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shared web task memory for AI agents. Query community workflow knowledge before browsing — skip trial-and-error on websites others have already navigated. Re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yourens",
+      "userId": "publishers:yourens",
+      "displayName": "Yourens",
+      "image": "https://avatars.githubusercontent.com/u/5778943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1773728952958,
+      "changelog": "- Major workflow rules added: planning is now mandatory before any browser action, and reporting (learning) after task completion is required.\n- Expanded documentation covers planning, querying, and learning API endpoints with detailed sample requests and responses.\n- Added integration guides for AriseBrowser, including instructions to export and share execution traces.\n- Authentication and privacy options clarified; anonymous access now documented.\n- Tips and best practices included to maximize efficiency and avoid redundant exploration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b1ac59e13dee9b29b12d06ddcad96085c537cb0db44511f055bd84f318d2a88"
+}

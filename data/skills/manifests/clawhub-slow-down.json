@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28589,
+  "uuid": "skill-clawhub-slow-down",
+  "skillKey": "clawhub-slow-down",
+  "name": "slow-down",
+  "summary": "Human-connection-preserving pacing and intervention guidance for agent behavior. Use when a user asks to \"slow down\", \"not rush\", or add relational awareness...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slow_down",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meaningmean",
+      "features": [
+        "Human-connection-preserving pacing and intervention guidance for agent behavior",
+        "Use when a user asks to \"slow down\", \"not rush\", or add relational awareness..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slow-down@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16155802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slow-down",
+      "url": "https://clawhub.ai/skills/slow-down"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slow-down",
+    "url": "https://clawhub.ai/skills/slow-down",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slow-down-aafb2de2d5ca6958.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slow-down@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slow-down-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47b84e497ac80e1b66f6252a1e2e00fa9842b276a9f588677297fa6e231661b2",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T10:35:35.535Z"
+}

@@ -115,6 +115,7 @@ class FrontendFieldAudit:
             "interface": name,
             "route": contract.get("route"),
             "data_sources": contract.get("data_sources", []),
+            "file_targets": contract.get("file_targets", []),
             "fields": fields,
         }
 
@@ -186,10 +187,22 @@ class FrontendFieldAudit:
             if not isinstance(fields, list) or not all(isinstance(field, str) for field in fields):
                 messages.append(f"frontend model {key} fields must be a string list")
                 continue
-            data_sources = entry.get("data_sources")
-            if not isinstance(data_sources, list) or not data_sources or not all(isinstance(source, str) for source in data_sources):
-                messages.append(f"frontend model {key} must declare non-empty data_sources")
-            elif isinstance(route, str) and route in route_tables:
+            raw_data_sources = entry.get("data_sources")
+            raw_file_targets = entry.get("file_targets")
+            data_sources = raw_data_sources if raw_data_sources is not None else []
+            file_targets = raw_file_targets if raw_file_targets is not None else []
+            valid_data_sources = isinstance(data_sources, list) and all(isinstance(source, str) for source in data_sources)
+            valid_file_targets = isinstance(file_targets, list) and all(isinstance(target, str) for target in file_targets)
+            if not valid_data_sources:
+                messages.append(f"frontend model {key} must declare data_sources as a string list")
+            if not valid_file_targets:
+                messages.append(f"frontend model {key} must declare file_targets as a string list")
+            if valid_data_sources and valid_file_targets and not data_sources and not file_targets:
+                if raw_data_sources is None and raw_file_targets is None:
+                    messages.append(f"frontend model {key} must declare non-empty data_sources")
+                else:
+                    messages.append(f"frontend model {key} must declare non-empty data_sources or file_targets")
+            elif valid_data_sources and data_sources and isinstance(route, str) and route in route_tables:
                 for data_source in data_sources:
                     if data_source not in route_tables[route]:
                         messages.append(

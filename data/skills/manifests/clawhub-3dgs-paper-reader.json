@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30374,
+  "uuid": "skill-clawhub-3dgs-paper-reader",
+  "skillKey": "clawhub-3dgs-paper-reader",
+  "name": "3dgs Paper Reader",
+  "summary": "Read and summarize 3D Gaussian Splatting research papers. Extracts method architecture, core innovations, experimental results, and key findings from arXiv p...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3dgs_paper_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaccen",
+      "features": [
+        "Read and summarize 3D Gaussian Splatting research papers",
+        "Extracts method architecture, core innovations, experimental results, and key findings from arX."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/3dgs-paper-reader@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11365494?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "3dgs-paper-reader",
+      "url": "https://clawhub.ai/skills/3dgs-paper-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3dgs-paper-reader",
+    "url": "https://clawhub.ai/skills/3dgs-paper-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3dgs-paper-reader-71b1bf4ea3519d5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/3dgs-paper-reader@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-3dgs-paper-reader-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfbaba34b9eefb2ad5d8f0ff8f9c1991e816a45f095be0e230ab258b2c86b5e9",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T01:08:40.313Z"
+}

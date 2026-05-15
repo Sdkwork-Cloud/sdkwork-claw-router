@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/statistical-analysis-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.statistical_analysis_advisor",
+  "skill": {
+    "id": 30890,
+    "skillKey": "clawhub-statistical-analysis-advisor",
+    "name": "Statistical Analysis Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "statistical-analysis-advisor",
+    "url": "https://clawhub.ai/skills/statistical-analysis-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/statistical-analysis-advisor-1a1f8a989dcbb72f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommends appropriate statistical methods (T-test vs ANOVA, etc.) based."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024295302,
+      "changelog": "Initial release of \"statistical-analysis-advisor\" skill.\n\n- Provides intelligent recommendations for choosing appropriate statistical tests (T-test, ANOVA, Chi-square, etc.) based on user input.\n- Includes guidance on assumption checking (normality, homogeneity, independence).\n- Supports power analysis and sample size estimation.\n- Workflow enforces structured, reproducible, and auditable outputs.\n- Documents risks, limitations, and security practices for proper usage.\n- No actual data analysis performed; human verification required for recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:665f8c830f594c1451b0087189e623917d8cb3e9a534b804921654b5d931ec49"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openfactory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openfactory",
+  "skill": {
+    "id": 31934,
+    "skillKey": "clawhub-openfactory",
+    "name": "Build Custom Linux ISO's and Deployments"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openfactory",
+    "url": "https://clawhub.ai/skills/openfactory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openfactory-bb50a3505664cec0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, test, and deploy custom Linux ISOs with OpenFactory. Create VMs, run compliance tests, manage recipes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ziegenbalg",
+      "userId": "s174b6trwwpt6efb22aw5rb3n183m1na",
+      "displayName": "ziegenbalg",
+      "image": "https://avatars.githubusercontent.com/u/56849323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774557028938,
+      "changelog": "Initial release of OpenFactory skill.\n\n- Build, test, and deploy custom Linux ISOs via natural language.\n- Manage builds, recipes, VMs, and compliance tests through a unified API.\n- Supports recipe customization, VM operations, and integration with git repositories.\n- Includes detailed workflows, error handling, and rate limits for streamlined infrastructure management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6816d00cead6b90fc3d737d960188de46e0b4b484742ee6c1003aa9826701b1"
+}

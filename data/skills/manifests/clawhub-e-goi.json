@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24115,
+  "uuid": "skill-clawhub-e-goi",
+  "skillKey": "clawhub-e-goi",
+  "name": "E Goi",
+  "summary": "E-goi integration. Manage Organizations. Use when the user wants to interact with E-goi data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e_goi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "E-goi integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with E-goi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/e-goi@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "e-goi",
+      "url": "https://clawhub.ai/skills/e-goi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e-goi",
+    "url": "https://clawhub.ai/skills/e-goi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e-goi-132fa1228dc6d517.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/e-goi@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-e-goi-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a4f546aec08413c0963c10a414809e2d0dec74ac16d9eb9d9188c41911fa4be",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:42:04.387Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25284,
+  "uuid": "skill-clawhub-soul-backup-skill",
+  "skillKey": "clawhub-soul-backup-skill",
+  "name": "SOUL Backup Skill",
+  "summary": "Backup and restore OpenClaw workspace SOUL files with versioning, validation, and sanitized openclaw.json handling.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_backup_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "Backup and restore OpenClaw workspace SOUL files with versioning, validation, and sanitized ope."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-backup-skill@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-backup-skill",
+      "url": "https://clawhub.ai/skills/soul-backup-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-backup-skill",
+    "url": "https://clawhub.ai/skills/soul-backup-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-backup-skill-997ebfd28628e63e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-backup-skill@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-backup-skill-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da863a502e1ba6d6252bfc6b6602e8821af3fe3fbc15d4e98d161ff059271349",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T12:44:30.978Z"
+}

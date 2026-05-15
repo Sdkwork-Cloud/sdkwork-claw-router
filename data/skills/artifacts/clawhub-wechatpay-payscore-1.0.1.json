@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechatpay-payscore@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechatpay_payscore",
+  "skill": {
+    "id": 63690,
+    "skillKey": "clawhub-wechatpay-payscore",
+    "name": "微信支付支付分接入skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechatpay-payscore",
+    "url": "https://clawhub.ai/skills/wechatpay-payscore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechatpay-payscore-f8d991d05c725801.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信支付分接入解决方案，覆盖创单/确认/完结/扣款/退款全链路，提供选型/示例代码/业务速查/质量评估/排障五大能力。Use when user mentions \"微信支付分\", \"支付分\", \"信用分\", \"免押租借\", \"免押金\", \"先享后付\", \"先免模式\", \"先享模式\", \"需确认订单\", \"支付分..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangpeng319",
+      "userId": "s173xcppepryqfkc9dvt7gm0rs83g31d",
+      "displayName": "zhangpeng",
+      "image": "https://avatars.githubusercontent.com/u/70940892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778063734126,
+      "changelog": "wechatpay-payscore 1.0.1 更新日志\n\n- 商户模式 Java 示例代码中，取消服务订单接口文件名由 CancelPayScoreOrder.java 更名为 CancelServiceOrder.java。\n- 调整使示例代码文件命名与接口功能保持一致，无功能变动。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49601aa0c80ebc0c7a2b1b0c2659968ff0243b4fd3aae1e31964f739d4f2c771"
+}

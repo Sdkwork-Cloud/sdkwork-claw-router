@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37257,
+  "uuid": "skill-clawhub-trip-planner-generator",
+  "skillKey": "clawhub-trip-planner-generator",
+  "name": "Trip Planner Generator",
+  "summary": "Generates structured travel plans for trip websites. Invoke when user wants to create a travel itinerary, plan a trip, or needs help organizing travel details.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_planner_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dustink66",
+      "features": [
+        "Generates structured travel plans for trip websites",
+        "Invoke when user wants to create a travel itinerary, plan a trip, or needs help organizing trav."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-planner-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97211432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-planner-generator",
+      "url": "https://clawhub.ai/skills/trip-planner-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-planner-generator",
+    "url": "https://clawhub.ai/skills/trip-planner-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-planner-generator-098f6c28d7bb69f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-planner-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-planner-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fd3ca59d041238b7fa02feddbecd728beeae8f4510e60873ff2cf94325d3bcb",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T15:54:45.524Z"
+}

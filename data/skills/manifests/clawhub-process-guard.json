@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37273,
+  "uuid": "skill-clawhub-process-guard",
+  "skillKey": "clawhub-process-guard",
+  "name": "ProcessGuard — Critical Process Monitor & Auto-Restart",
+  "summary": "Monitor critical processes and auto-restart on failure. Tracks CPU and memory usage, escalates alerts via webhook, callback, or file, and writes a dead man's...",
+  "version": "2.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.process_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Monitor critical processes and auto-restart on failure",
+        "Tracks CPU and memory usage, escalates alerts via webhook, callback, or file, and writes a dead."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/process-guard@2.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "process-guard",
+      "url": "https://clawhub.ai/skills/process-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "process-guard",
+    "url": "https://clawhub.ai/skills/process-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/process-guard-d902680ea5e7d39e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/process-guard@2.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-process-guard-2.1.4.json",
+      "version": "2.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:343d7d4a7ee8033445f004931c7c510a81e9be82d00b12ce677ee01fd64e071e",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:34:24.971Z"
+}

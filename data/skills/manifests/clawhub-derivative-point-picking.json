@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56818,
+  "uuid": "skill-clawhub-derivative-point-picking",
+  "skillKey": "clawhub-derivative-point-picking",
+  "name": "导数取点",
+  "summary": "Solve high-school or college-entrance-exam style derivative problems centered on root existence, root count, and parameter ranges. Use when a problem asks wh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.derivative_point_picking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jiuxiao",
+      "features": [
+        "Solve high-school or college-entrance-exam style derivative problems centered on root existence.",
+        "Use when a problem asks wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/derivative-point-picking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148369812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "derivative-point-picking",
+      "url": "https://clawhub.ai/skills/derivative-point-picking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "derivative-point-picking",
+    "url": "https://clawhub.ai/skills/derivative-point-picking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/derivative-point-picking-7a73a5ef3e693028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/derivative-point-picking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-derivative-point-picking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88b1fac0222a15f670562ac4a758da7a55ae4f1877e3ebea9e6251c7486f839a",
+      "artifactSizeBytes": 2014
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T14:07:53.744Z"
+}

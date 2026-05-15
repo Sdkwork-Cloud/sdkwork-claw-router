@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58745,
+  "uuid": "skill-clawhub-douyin-hot",
+  "skillKey": "clawhub-douyin-hot",
+  "name": "抖音热榜 / Douyin Hot",
+  "summary": "抖音热榜获取技能 | Douyin Hot List Fetcher 获取抖音热榜/热搜榜数据 | Get Douyin hot list/trending data 包含热门视频、挑战赛、音乐等多领域热门内容 | Includes popular videos, challenges, music and mo...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_hot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noah",
+      "features": [
+        "抖音热榜获取技能 | Douyin Hot List Fetcher 获取抖音热榜/热搜榜数据 | Get Douyin hot list/trending data 包含热门视频、挑战赛、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-hot@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242364666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-hot",
+      "url": "https://clawhub.ai/skills/douyin-hot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-hot",
+    "url": "https://clawhub.ai/skills/douyin-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-hot-63bc323a8da4001f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-hot@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-hot-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b068f481c3d8e0c47cb8887575e82f4c06d09a002f871c3d9dcc6d150dac2d4d",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:58:36.443Z"
+}

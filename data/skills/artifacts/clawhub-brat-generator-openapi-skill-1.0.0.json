@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brat-generator-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brat_generator_openapi_skill",
+  "skill": {
+    "id": 56148,
+    "skillKey": "clawhub-brat-generator-openapi-skill",
+    "name": "Brat Generator – Free Brat Meme & Album Cover Generator Inspired by Charli XCX – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brat-generator-openapi-skill",
+    "url": "https://clawhub.ai/skills/brat-generator-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brat-generator-openapi-skill-631ddd451183a576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI brat generator — create a Charli XCX brat-style album cover meme with custom text and color"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776306313191,
+      "changelog": "- Initial release of the brat-generator-openapi-skill v1.0.0\n- Generate Charli XCX brat-style album cover memes with customizable text and color.\n- Requires HTTPS access and a WESHOP_API_KEY environment variable for authentication.\n- Provides endpoints for starting a meme generation run, polling status, and uploading images.\n- Includes detailed API usage instructions, security guidance, and field descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aecc4a82b7fa4e0957228c6e43a3847429dd2d036d86387c0819545b16fab3a8"
+}

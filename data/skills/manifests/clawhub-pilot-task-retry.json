@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37966,
+  "uuid": "skill-clawhub-pilot-task-retry",
+  "skillKey": "clawhub-pilot-task-retry",
+  "name": "Pilot Task Retry",
+  "summary": "Automatic retry with exponential backoff and fallback targets. Use this skill when: 1. You need resilient task submission with automatic retry logic 2. You w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_task_retry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Automatic retry with exponential backoff and fallback targets",
+        "Use this skill when: 1",
+        "You need resilient task submission with automatic retry logic 2",
+        "You w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-task-retry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-task-retry",
+      "url": "https://clawhub.ai/skills/pilot-task-retry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-task-retry",
+    "url": "https://clawhub.ai/skills/pilot-task-retry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-task-retry-9036d417779bbc74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-task-retry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-task-retry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54db01e972ebdca3835f0180e3ec0ffce8c38aa2e6aea997eedfb3cdd64a1fdf",
+      "artifactSizeBytes": 1904
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:33:07.758Z"
+}

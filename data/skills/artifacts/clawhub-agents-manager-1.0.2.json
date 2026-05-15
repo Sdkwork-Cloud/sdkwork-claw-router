@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agents-manager@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_manager",
+  "skill": {
+    "id": 9126,
+    "skillKey": "clawhub-agents-manager",
+    "name": "Agent manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-manager",
+    "url": "https://clawhub.ai/skills/agents-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-manager-281f44ce730c988d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Clawdbot agents: discover, profile, track capabilities, define routing hierarchy, and assign tasks. Use when: (1) Listing available agents, (2) Profiling agent capabilities and communication methods, (3) Defining agent routing (can_."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agentandbot-design",
+      "userId": "publishers:agentandbot-design",
+      "displayName": "agentandbot",
+      "image": "https://avatars.githubusercontent.com/u/258481583?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 4289,
+      "installsAllTime": 20,
+      "installsCurrent": 18,
+      "stars": 5,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769902147665,
+      "changelog": "**Summary: Modernized and expanded agent management with new scripts, protocols, and clearer human/agent workflows.**\n\n- Added comprehensive agent management scripts (discovery, validation, health checking, stats, visualization, setup).\n- Introduced \"Handshake Protocol\" and approval workflows for task assignment.\n- Replaced older references/structure files to fix naming consistency.\n- Split guidance for humans and agents, including step-by-step commands and protocols.\n- Included detailed references and agent registry schema for easier onboarding and management.\n- Updated metadata and homepage for better integration and discoverability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b2156ae1d6368f97c94c9f5438e7374ef3ea62f08b9d2b7d00a2f870f036b3b"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17322,
+  "uuid": "skill-clawhub-bb-browser-sites",
+  "skillKey": "clawhub-bb-browser-sites",
+  "name": "Bb Browser Sites",
+  "summary": "Turn any website into a CLI command. 36 platforms, 103 commands — Twitter, Reddit, GitHub, YouTube, Zhihu, Bilibili, Weibo, and more. Uses OpenClaw's browser...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bb_browser_sites",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yan5xu",
+      "features": [
+        "Turn any website into a CLI command",
+        "36 platforms, 103 commands — Twitter, Reddit, GitHub, YouTube, Zhihu, Bilibili, Weibo, and more",
+        "Uses OpenClaw's browser..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bb-browser-sites@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5762066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bb-browser-sites",
+      "url": "https://clawhub.ai/skills/bb-browser-sites"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bb-browser-sites",
+    "url": "https://clawhub.ai/skills/bb-browser-sites",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bb-browser-sites-4beb406b7e556550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bb-browser-sites@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bb-browser-sites-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04947ca971703d0c2619e2011215be155a29e8118ec7b4b0e1c39a50967fa059",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:42:30.638Z"
+}

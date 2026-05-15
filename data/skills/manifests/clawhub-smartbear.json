@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34253,
+  "uuid": "skill-clawhub-smartbear",
+  "skillKey": "clawhub-smartbear",
+  "name": "Smartbear",
+  "summary": "SmartBear integration. Manage data, records, and automate workflows. Use when the user wants to interact with SmartBear data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smartbear",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SmartBear integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SmartBear data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smartbear@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smartbear",
+      "url": "https://clawhub.ai/skills/smartbear"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smartbear",
+    "url": "https://clawhub.ai/skills/smartbear",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smartbear-0e098c933852c981.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smartbear@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smartbear-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ad2b197ad0d3194bfc713f8f16c662761963f2a4b60200fe30cd96489eaea4f",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:43:20.718Z"
+}

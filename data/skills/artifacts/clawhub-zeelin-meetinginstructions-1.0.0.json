@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zeelin-meetinginstructions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_meetinginstructions",
+  "skill": {
+    "id": 67555,
+    "skillKey": "clawhub-zeelin-meetinginstructions",
+    "name": "ZeeLin MeetingInstructions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-meetinginstructions",
+    "url": "https://clawhub.ai/skills/zeelin-meetinginstructions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-meetinginstructions-46e34933fb322139.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从会议记录（腾讯会议、飞书会议、钉钉会议等）中提取领导对特定成员的指导意见、工作要求和行动计划。当用户提到\"提取会议指导\"\"会议纪要中的任务\"\"领导对XX的要求\"\"从会议记录中整理待办\"等场景时触发此skill。也适用于：从组会/周会/项目会记录中抽取某人的action items、整理导师对学生的指导建议、提取..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tengjie888",
+      "userId": "publishers:tengjie888",
+      "displayName": "tengjie888",
+      "image": "https://avatars.githubusercontent.com/u/129856943?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772634100114,
+      "changelog": "- Initial release of zeelin-meetinginstructions.\n- Extracts leader's guidance, requirements, and action items for specific members from meeting transcripts (Tencent Meeting, Feishu, DingTalk, etc.).\n- Triggered by phrases like “提取会议指导”, “领导对XX的要求”, “会议纪要中的任务”.\n- Supports both Chinese and English meeting transcripts.\n- Handles direct/indirect instructions, context-dependent guidance, and relevant general principles.\n- Provides structured, actionable summaries with priority, deadlines, and original leader quotes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:33b23a917a1824a3f1da271c2f143a51f2335fb6d60a233e85da62397977bd5c"
+}

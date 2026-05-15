@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15241,
+  "uuid": "skill-clawhub-expanso-tls-inspect",
+  "skillKey": "clawhub-expanso-tls-inspect",
+  "name": "Expanso tls-inspect",
+  "summary": "Inspect TLS certificates for expiry, SANs, chain validity, and cipher details using Expanso Edge pipelines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_tls_inspect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Expanso",
+      "features": [
+        "Inspect TLS certificates for expiry, SANs, chain validity, and cipher details using Expanso Edg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expanso-tls-inspect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expanso-tls-inspect",
+      "url": "https://clawhub.ai/skills/expanso-tls-inspect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-tls-inspect",
+    "url": "https://clawhub.ai/skills/expanso-tls-inspect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-tls-inspect-54bedb2d051ac9cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expanso-tls-inspect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expanso-tls-inspect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09b077f6f7eae8987d75b24987b8361a1044a7af458e00b0dd4b147c10e5a73d",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:51:10.634Z"
+}

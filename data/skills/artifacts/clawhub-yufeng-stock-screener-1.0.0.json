@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yufeng-stock-screener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yufeng_stock_screener",
+  "skill": {
+    "id": 72167,
+    "skillKey": "clawhub-yufeng-stock-screener",
+    "name": "A股量化选股助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yufeng-stock-screener",
+    "url": "https://clawhub.ai/skills/yufeng-stock-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yufeng-stock-screener-9c3eb2ff80271d11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股智能量化选股助手（禹锋量化 · 专业版）。当用户询问A股选股、股票推荐、 今日买什么股票、量化选股、短线机会、强势股、涨停股分析、个股技术分析、 主力资金流向、择时建议时触发此技能。 Use when: A股选股、今天买什么、推荐股票、短线股票、强势股筛选、量化筛选、 技术分析、主力资金、买卖点分析、择时评分..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wsy0303",
+      "userId": "s173sn28jmsfs5y9ht24ysxtd584847y",
+      "displayName": "wsy0303",
+      "image": "https://avatars.githubusercontent.com/u/270104323?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775412153749,
+      "changelog": "- Initial release of yufeng-stock-screener: An AI-powered quantitative stock screener for A-shares (禹锋量化 · 专业版).\n- Provides automated screening of short-term opportunities based on a four-dimensional scoring system (technical, capital, chips, sector rotation).\n- Supports user queries for stock picks, short-term opportunities, technical analysis, fund flows, hot sectors, and timing suggestions.\n- Requires API Token for use, with clear subscription and setup guidance.\n- Outputs formatted, actionable recommendations for the A-share market.\n- Not designed for Hong Kong/US stocks, funds, futures, or bonds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fab9984416eb0b8bc554eca4667b78269d54fd7a92609954d9e23a4e363998fb"
+}

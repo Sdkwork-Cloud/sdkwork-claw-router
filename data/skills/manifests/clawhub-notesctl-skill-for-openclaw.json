@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11262,
+  "uuid": "skill-clawhub-notesctl-skill-for-openclaw",
+  "skillKey": "clawhub-notesctl-skill-for-openclaw",
+  "name": "Notesctl",
+  "summary": "Manage Apple Notes via deterministic local scripts (create, append, list, search, export, and edit). Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folders.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notesctl_skill_for_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clinchcc",
+      "features": [
+        "Manage Apple Notes via deterministic local scripts (create, append, list, search, export, and e.",
+        "Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notesctl-skill-for-openclaw@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130424325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notesctl-skill-for-openclaw",
+      "url": "https://clawhub.ai/skills/notesctl-skill-for-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notesctl-skill-for-openclaw",
+    "url": "https://clawhub.ai/skills/notesctl-skill-for-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notesctl-skill-for-openclaw-35c7e876f40956e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notesctl-skill-for-openclaw@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notesctl-skill-for-openclaw-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e230146bd6e36037cf4891cdb2a46b9694fcc478bf3a42ee700e82ebfdd805ae",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T07:31:18.233Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/summarize-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_pdf",
+  "skill": {
+    "id": 22396,
+    "skillKey": "clawhub-summarize-pdf",
+    "name": "Summarize Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-pdf",
+    "url": "https://clawhub.ai/skills/summarize-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-pdf-22d854ed52eb7d0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF to Markdown converter - extract text, tables and formulas from PDF files to clean Markdown. Use when converting PDF documents, extracting PDF content, pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanis90",
+      "userId": "s17c6n53ezjj2w372fjv34m7zx83gva1",
+      "displayName": "tanis90",
+      "image": "https://avatars.githubusercontent.com/u/22654397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774378318871,
+      "changelog": "Initial release of summarize-pdf.\n\n- Converts PDF files (local or URL) to clean Markdown, extracting text, tables, and formulas.\n- Allows page range selection and language hints (supports Chinese and English).\n- No API key, signup, or authentication required (limits: 10MB or 20 pages per doc).\n- Usage examples and installation instructions for npm, uv, and go provided.\n- Intended for quick PDF reading, extraction, conversion, parsing, or summarization requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7331fa22154109b3c50f815660f022e4bebb687fad4393184bc18747c5817535"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-01@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_01",
+  "skill": {
+    "id": 27170,
+    "skillKey": "clawhub-test-01",
+    "name": "dasfgg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-01",
+    "url": "https://clawhub.ai/skills/test-01",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-01-5fe3fd6ee69b25aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ide-rea",
+      "userId": "s17a4y7rpj2bmp94zpqe8r915h83gq6d",
+      "displayName": "ide-rea",
+      "image": "https://avatars.githubusercontent.com/u/30512600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773755097254,
+      "changelog": "Initial release of Baidu Test skill.\n\n- Added Baidu web search capability via scripts/search.py.\n- Supports search queries with configurable result counts and freshness/time filters.\n- Usage requires Python 3 and BAIDU_API_KEY environment variable.\n- Provides full CLI documentation and examples for invoking the search script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1befd11f5bccc6221a3451dac618a4eafe6e055c98c9dfa20f4a83e31ce409d"
+}

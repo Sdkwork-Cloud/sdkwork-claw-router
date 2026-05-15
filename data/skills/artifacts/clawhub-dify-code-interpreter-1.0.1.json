@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dify-code-interpreter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dify_code_interpreter",
+  "skill": {
+    "id": 65663,
+    "skillKey": "clawhub-dify-code-interpreter",
+    "name": "dify-code-interpreter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dify-code-interpreter",
+    "url": "https://clawhub.ai/skills/dify-code-interpreter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dify-code-interpreter-ea362db4eea8ec19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解释任意编程语言代码的语法、逻辑、用途与实现细节，支持多种语言并返回结构化说明。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangwp1",
+      "userId": "s171ewwkhdjhje25cfe8dwk9as83hdv8",
+      "displayName": "zhangwp1",
+      "image": "https://avatars.githubusercontent.com/u/128907222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1781,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773037362783,
+      "changelog": "- Removed core files: code_interpreter.py and skill.json.\n- The skill’s code and configuration file have been deleted.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d20495d942dbcff6334cd97f6e5e8c0885d1c1a0e7ac309f46662256efab8faa"
+}

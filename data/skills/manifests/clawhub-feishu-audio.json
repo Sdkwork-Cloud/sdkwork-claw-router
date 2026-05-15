@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66392,
+  "uuid": "skill-clawhub-feishu-audio",
+  "skillKey": "clawhub-feishu-audio",
+  "name": "feishu-audio",
+  "summary": "将音频文件转换为飞书可播放的语音消息。先用 ffmpeg 转为 opus 格式，再上传到飞书，最后发送 audio 消息。适用于用户想要在飞书中收到可播放的语音消息的场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_audio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianyn1990",
+      "features": [
+        "将音频文件转换为飞书可播放的语音消息。先用 ffmpeg 转为 opus 格式，再上传到飞书，最后发送 audio 消息。适用于用户想要在飞书中收到可播放的语音消息的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-audio@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7401433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-audio",
+      "url": "https://clawhub.ai/skills/feishu-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-audio",
+    "url": "https://clawhub.ai/skills/feishu-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-audio-8f84d8efe09c94a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-audio@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-audio-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5a746bc3c61f2c0f10d55729ff1d1625acafa726237425ed74761b2c09d146e",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T08:55:33.201Z"
+}

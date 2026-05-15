@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-case-design-senior@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_case_design_senior",
+  "skill": {
+    "id": 73541,
+    "skillKey": "clawhub-test-case-design-senior",
+    "name": "软件测试用例设计"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-case-design-senior",
+    "url": "https://clawhub.ai/skills/test-case-design-senior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-case-design-senior-74e175cc45d76cdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "具备高级测试用例设计能力，能输出覆盖复杂页面跳转、路由参数及多页面联动的标准化高质量测试用例。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cassion-ran",
+      "userId": "s1765jzj8wrw7nvtkfg1zwyc1983qbrh",
+      "displayName": "Cassion-Ran",
+      "image": "https://avatars.githubusercontent.com/u/271445476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776674975052,
+      "changelog": "- 去除了所有带有加粗高亮 ⭐️ 标识的内容，以统一风格和文本清晰度。\n- 不再对“页面跳转”、“路由参数”、“联动测试”等内容进行特殊视觉强调，相关能力说明依然保留。\n- 示例用例、触发场景、最佳实践和其他所有功能描述未做实际结构或内容改变。\n- 整体内容表达与结构保持一致，对核心能力以及示例流程无任何影响。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:655171bc2948d4bc2069dc4af972591f7a1a90c88dcb6173a50e75b65be705dc"
+}

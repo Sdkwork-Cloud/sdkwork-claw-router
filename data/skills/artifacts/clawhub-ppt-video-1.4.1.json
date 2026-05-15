@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-video@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_video",
+  "skill": {
+    "id": 63665,
+    "skillKey": "clawhub-ppt-video",
+    "name": "Ppt Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-video",
+    "url": "https://clawhub.ai/skills/ppt-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-video-450299a8cfca23df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将PPTX/PDF/HTML演示文稿及背景材料自动转换成1280×720口语化播报视频，支持内容风格识别和语速调节。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincentlau2046-sudo",
+      "userId": "s177qxxtwn13trxmgd54c7a6wh83h7rc",
+      "displayName": "vincentlau2046-sudo",
+      "image": "https://avatars.githubusercontent.com/u/259013171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1776445962312,
+      "changelog": "修复硬编码路径安全问题，移除 /home/Vincent/ 引用，改用环境变量和相对路径",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c73ee1b96bfc2641258d8d6fef47f40eb1ee650daa9f64a28525ca3cdebaeefb"
+}

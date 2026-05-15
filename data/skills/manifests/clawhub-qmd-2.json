@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27457,
+  "uuid": "skill-clawhub-qmd-2",
+  "skillKey": "clawhub-qmd-2",
+  "name": "Qmd",
+  "summary": "Search markdown knowledge bases, notes, and documentation using QMD. Use when users ask to search notes, find documents, or look up information.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Satvik374",
+      "features": [
+        "Search markdown knowledge bases, notes, and documentation using QMD",
+        "Use when users ask to search notes, find documents, or look up information."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qmd-2@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190399082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qmd-2",
+      "url": "https://clawhub.ai/skills/qmd-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-2",
+    "url": "https://clawhub.ai/skills/qmd-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-2-5bf524b03eca9948.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qmd-2@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qmd-2-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a52fce93d02faaac5983ce0564fa75a54e794dc8f777645f8e06b9c5ac090b2b",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:08:50.810Z"
+}

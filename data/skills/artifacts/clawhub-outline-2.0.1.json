@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outline@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outline",
+  "skill": {
+    "id": 21406,
+    "skillKey": "clawhub-outline",
+    "name": "Outline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outline",
+    "url": "https://clawhub.ai/skills/outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outline-318678825324247b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate document outlines with TOC, chapter planning, and hierarchy management. Use when structuring documents, planning chapters, creating outlines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773830877357,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a73042525d19df2edaabf3af59e86259e5df64c05dbde75512c26b0c709bd99"
+}

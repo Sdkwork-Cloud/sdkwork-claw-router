@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67361,
+  "uuid": "skill-clawhub-event-driven-strategy",
+  "skillKey": "clawhub-event-driven-strategy",
+  "name": "Event Driven Strategy",
+  "summary": "事件驱动交易策略 - 捕捉财报、并购、政策等事件带来的超额收益机会，基于预期差分析和催化剂强度评估生成交易信号。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.event_driven_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hmaya",
+      "features": [
+        "事件驱动交易策略",
+        "捕捉财报、并购、政策等事件带来的超额收益机会，基于预期差分析和催化剂强度评估生成交易信号。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/event-driven-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16179827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "event-driven-strategy",
+      "url": "https://clawhub.ai/skills/event-driven-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "event-driven-strategy",
+    "url": "https://clawhub.ai/skills/event-driven-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/event-driven-strategy-60009820dae5b107.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/event-driven-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-event-driven-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a665ba24d374cf854d300cd5f803d42b2a1a7aad84cc73410d173e4951087e9",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:35:04.620Z"
+}

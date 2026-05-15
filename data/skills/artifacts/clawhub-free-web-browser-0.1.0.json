@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-web-browser@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_web_browser",
+  "skill": {
+    "id": 29275,
+    "skillKey": "clawhub-free-web-browser",
+    "name": "Free Web Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-web-browser",
+    "url": "https://clawhub.ai/skills/free-web-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-web-browser-d0bbfe6a7dda504d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse web through OpenClaw web_search and web_fetch with Ollama as search provider, no external API key required. Use when user asks to search web, verify c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prantikmedhi",
+      "userId": "s17fzr5vpcdp378d65tc4bt06h852d2x",
+      "displayName": "Prantik Medhi",
+      "image": "https://avatars.githubusercontent.com/u/140103052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776567466039,
+      "changelog": "Initial release: Ollama-backed free web browsing workflow using web_search and web_fetch.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bc39a52e530a9475817bac248395ab40316450fdd6b942ded9dfc8c18dcc6f9"
+}

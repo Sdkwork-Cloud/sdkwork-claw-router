@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17371,
+  "uuid": "skill-clawhub-feishu-doc-long-content",
+  "skillKey": "clawhub-feishu-doc-long-content",
+  "name": "feishu-doc-long-content",
+  "summary": "Create Feishu Docs by first creating an empty doc, then write content in chunks under 800 bytes to avoid truncation or errors.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_long_content",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josephyb97",
+      "features": [
+        "Create Feishu Docs by first creating an empty doc, then write content in chunks under 800 bytes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-doc-long-content@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59716535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-doc-long-content",
+      "url": "https://clawhub.ai/skills/feishu-doc-long-content"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-long-content",
+    "url": "https://clawhub.ai/skills/feishu-doc-long-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-long-content-3ce5e70b2c25e65d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-doc-long-content@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-doc-long-content-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5695ab01ef6d4043ec0da54de59c40936d9bd5e057fa26e1fea3a6321e74e379",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T06:30:11.314Z"
+}

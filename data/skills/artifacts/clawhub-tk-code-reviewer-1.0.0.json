@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tk-code-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tk_code_reviewer",
+  "skill": {
+    "id": 52916,
+    "skillKey": "clawhub-tk-code-reviewer",
+    "name": "AI Code Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tk-code-reviewer",
+    "url": "https://clawhub.ai/skills/tk-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tk-code-reviewer-47bf9b425c82a0b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated code review — security vulnerabilities, performance issues, best practices, refactoring suggestions, and documentation gaps. Supports Python, JavaS..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tktk-ai",
+      "userId": "s17dae0n2wkh65b6p2v4zvkbt184ey9h",
+      "displayName": "tktk-ai",
+      "image": "https://avatars.githubusercontent.com/u/59158345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775662156474,
+      "changelog": "Initial release — automated code reviews for security, performance, best practices with PR-ready comments",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df72409b2f0ae72c3f4955eadf94675fb7ed7805533a4a8b3e47165bd647e3d5"
+}

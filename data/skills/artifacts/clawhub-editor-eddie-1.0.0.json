@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-eddie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_eddie",
+  "skill": {
+    "id": 55828,
+    "skillKey": "clawhub-editor-eddie",
+    "name": "Editor Eddie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-eddie",
+    "url": "https://clawhub.ai/skills/editor-eddie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-eddie-16f619f368f8ad38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the pauses, add transitions, and export a clean final cut — and get p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777821764073,
+      "changelog": "Editor Eddie 1.0.0 — your AI-powered video editing assistant\n\n- Initial release with fast, cloud-based video editing: upload footage, describe edits, and export polished videos in minutes.\n- Supports MP4, MOV, AVI, and WebM video files up to 500MB; includes basic audio and image track support.\n- Automatic backend connection and session management, including anonymous 7-day trial tokens.\n- Common edit actions: trim pauses, add transitions, export to 1080p MP4, preview timeline, check credits, and more.\n- Clear error handling for file size, format, credits, and subscription issues.\n- Designed for content creators seeking professional results without complex editing software.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e201cc0622ad15bbc3ed562417fed0bb8a49d207f9762c4ed0a02500b079014c"
+}

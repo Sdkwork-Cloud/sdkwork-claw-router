@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19234,
+  "uuid": "skill-clawhub-cooking-recipe",
+  "skillKey": "clawhub-cooking-recipe",
+  "name": "Cooking Recipe",
+  "summary": "Make a recipe by giving some ingredients.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cooking_recipe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "demonkit",
+      "features": [
+        "Make a recipe by giving some ingredients."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cooking-recipe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4036624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cooking-recipe",
+      "url": "https://clawhub.ai/skills/cooking-recipe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cooking-recipe",
+    "url": "https://clawhub.ai/skills/cooking-recipe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cooking-recipe-4894dd84a219cf0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cooking-recipe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cooking-recipe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c93377e7427d77571b428431d743465d3fcd0fdf0accb574947a8d9766cd22ae",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:26:54.388Z"
+}

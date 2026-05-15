@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27210,
+  "uuid": "skill-clawhub-polymarket-smart-money",
+  "skillKey": "clawhub-polymarket-smart-money",
+  "name": "Polymarket Smart Money",
+  "summary": "Discover, analyze, and filter Polymarket smart money wallets. Use when asked to find profitable traders, analyze wallet addresses, detect market makers or HF...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_smart_money",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "griffithkk3-del",
+      "features": [
+        "Discover, analyze, and filter Polymarket smart money wallets",
+        "Use when asked to find profitable traders, analyze wallet addresses, detect market makers or HF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-smart-money@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250252436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-smart-money",
+      "url": "https://clawhub.ai/skills/polymarket-smart-money"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-smart-money",
+    "url": "https://clawhub.ai/skills/polymarket-smart-money",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-smart-money-5cd6cc193ba871ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-smart-money@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-smart-money-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0287646a218be914f23637451c93af412b6b511a5d2f55f8e8f8136eecab4675",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:50:15.452Z"
+}

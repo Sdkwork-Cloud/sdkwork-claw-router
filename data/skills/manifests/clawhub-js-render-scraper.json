@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63320,
+  "uuid": "skill-clawhub-js-render-scraper",
+  "skillKey": "clawhub-js-render-scraper",
+  "name": "Js Render Scraper",
+  "summary": "爬取需要 JavaScript 渲染的动态网页内容。当用户要求抓取 SPA、React/Vue 应用、无限滚动页面、需要登录的页面或任何依赖 JS 动态加载内容的网站时使用。支持使用 Playwright 进行浏览器自动化抓取。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.js_render_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "plover061",
+      "features": [
+        "爬取需要 JavaScript 渲染的动态网页内容。当用户要求抓取 SPA、React/Vue 应用、无限滚动页面、需要登录的页面或任何依赖 JS 动态加载内容的网站时使用。支持使用 Pla."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/js-render-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98512436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "js-render-scraper",
+      "url": "https://clawhub.ai/skills/js-render-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "js-render-scraper",
+    "url": "https://clawhub.ai/skills/js-render-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/js-render-scraper-45930f21fb7111f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/js-render-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-js-render-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12b4446c53c01bbf0ca3480acdb17d92d84a07d3ed9144d46e5fa544b71fadba",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:46:32.272Z"
+}

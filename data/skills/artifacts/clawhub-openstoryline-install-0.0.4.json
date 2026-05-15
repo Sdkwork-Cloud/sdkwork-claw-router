@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openstoryline-install@0.0.4",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openstoryline_install",
+  "skill": {
+    "id": 16238,
+    "skillKey": "clawhub-openstoryline-install",
+    "name": "OpenStoryline Install"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openstoryline-install",
+    "url": "https://clawhub.ai/skills/openstoryline-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openstoryline-install-34ad3cd49d78cbeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, and start FireRed-OpenStoryline from source on a local machine. Use when a user asks to set up OpenStoryline, troubleshoot installation,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anlittledy",
+      "userId": "s17007apknzj1ncm8kgw7c5zc983gvxv",
+      "displayName": "Anlittledy",
+      "image": "https://avatars.githubusercontent.com/u/78261172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 890,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.4",
+      "createdAt": 1773628055678,
+      "changelog": "- Added explicit instructions for cloning the FireRed-OpenStoryline GitHub repository if the local repo does not exist.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2312f65506dec7ab5689faac9461b9ac0c6d160e1f4fa71b54bfe74885bd704e"
+}

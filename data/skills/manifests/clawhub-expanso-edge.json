@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11135,
+  "uuid": "skill-clawhub-expanso-edge",
+  "skillKey": "clawhub-expanso-edge",
+  "name": "expanso",
+  "summary": "Data processing pipelines for OpenClaw. Deploy skills from the Expanso marketplace to transform, analyze, and process data locally.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_edge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Expanso",
+      "features": [
+        "Data processing pipelines for OpenClaw",
+        "Deploy skills from the Expanso marketplace to transform, analyze, and process data locally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expanso-edge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expanso-edge",
+      "url": "https://clawhub.ai/skills/expanso-edge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-edge",
+    "url": "https://clawhub.ai/skills/expanso-edge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-edge-9cec9f2682b60812.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expanso-edge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-expanso-edge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd973e7f43ad42bc5a09d5770061d50de9858e04c1fd666f630e8294da4be46a",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T03:21:25.941Z"
+}

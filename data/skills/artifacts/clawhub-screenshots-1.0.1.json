@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screenshots@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screenshots",
+  "skill": {
+    "id": 14086,
+    "skillKey": "clawhub-screenshots",
+    "name": "Screenshots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screenshots",
+    "url": "https://clawhub.ai/skills/screenshots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screenshots-98d875b61ff29a12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create professional App Store and Google Play screenshots with automatic sizing, device frames, marketing copy, and iterative visual learning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 939,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771180664768,
+      "changelog": "Preferences now persist across skill updates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a73440d30f069db47f3866ce3bf759a53620f5da0e4c37973d8c9dfd1c3be010"
+}

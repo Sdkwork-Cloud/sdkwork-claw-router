@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70740,
+  "uuid": "skill-clawhub-ai-self-evolution",
+  "skillKey": "clawhub-ai-self-evolution",
+  "name": "AI自动进化工程，结合self-improvement技巧+实际运行总结而成",
+  "summary": "记录经验、错误与修正，持续改进。触发场景：命令失败 | 操作出错 | 用户纠正（不对、实际上、你错了） | 功能请求（能不能、我希望、有没有办法） | API或工具失败 | 知识过时 | 发现更优做法 | 重复模式 | 非显而易见的问题。执行重大任务前先回顾历史经验。会话开始时回顾，会话结束时总结。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_self_evolution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andy",
+      "features": [
+        "记录经验、错误与修正，持续改进。触发场景：命令失败 | 操作出错 | 用户纠正（不对、实际上、你错了） | 功能请求（能不能、我希望、有没有办法） | API或工具失败 | 知识过时 | 发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-self-evolution@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8328012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-self-evolution",
+      "url": "https://clawhub.ai/skills/ai-self-evolution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-self-evolution",
+    "url": "https://clawhub.ai/skills/ai-self-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-self-evolution-44ac88831ca3e9fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-self-evolution@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-self-evolution-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca5ecbe0ffd0874e4b2a53846a981d9b48aa10a289c243a661e97499c6c25d40",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T01:43:18.113Z"
+}

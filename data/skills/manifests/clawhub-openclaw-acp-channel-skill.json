@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55081,
+  "uuid": "skill-clawhub-openclaw-acp-channel-skill",
+  "skillKey": "clawhub-openclaw-acp-channel-skill",
+  "name": "Acp",
+  "summary": "ACP channel plugin for OpenClaw — configure and use. Covers single/multi identity configuration, strict 1:1 binding policy (agentId <-> accountId), agent.md...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_acp_channel_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderXjeff",
+      "features": [
+        "ACP channel plugin for OpenClaw — configure and use",
+        "Covers single/multi identity configuration, strict 1:1 binding policy (agentId <-> accountId),."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-acp-channel-skill@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92134017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-acp-channel-skill",
+      "url": "https://clawhub.ai/skills/openclaw-acp-channel-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-acp-channel-skill",
+    "url": "https://clawhub.ai/skills/openclaw-acp-channel-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-acp-channel-skill-efde4e16603e6aff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-acp-channel-skill@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-acp-channel-skill-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef0513adab2ada87cc7af15682d0e4d2bc0285ca141fe4656f4960e3fbbfc0f0",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T02:08:38.768Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52967,
+  "uuid": "skill-clawhub-idempotency",
+  "skillKey": "clawhub-idempotency",
+  "name": "Idempotency",
+  "summary": "Deep idempotency workflow—identifying retry surfaces, idempotency keys, storage and TTL, exactly-once pitfalls, and testing duplicate delivery. Use when desi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idempotency",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Deep idempotency workflow—identifying retry surfaces, idempotency keys, storage and TTL, exactl.",
+        "Use when desi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idempotency@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idempotency",
+      "url": "https://clawhub.ai/skills/idempotency"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idempotency",
+    "url": "https://clawhub.ai/skills/idempotency",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idempotency-f5d39a07e87f63da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idempotency@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idempotency-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4c29451f7ec82a9d247c99aefd209e7b02951daf58697df979f8db708991725",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:16:05.936Z"
+}

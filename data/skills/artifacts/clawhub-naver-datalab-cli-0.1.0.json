@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/naver-datalab-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naver_datalab_cli",
+  "skill": {
+    "id": 57597,
+    "skillKey": "clawhub-naver-datalab-cli",
+    "name": "Naver Datalab Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naver-datalab-cli",
+    "url": "https://clawhub.ai/skills/naver-datalab-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naver-datalab-cli-590c933f68857cdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean search-keyword and shopping-trend analytics via the official NAVER DataLab API (openapi.naver.com/v1/datalab/*). Six subcommands wrapping 통합 검색어 트렌드 a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chloepark85",
+      "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+      "displayName": "Chloe Park",
+      "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777248919324,
+      "changelog": "Initial release of naver-datalab-cli — Korean search and shopping trend analytics via NAVER DataLab API\n\n- Provides 6 subcommands covering 통합 검색어 트렌드 and 쇼핑인사이트 (category, keyword, device, gender, age breakdowns).\n- Outputs JSONL for easy integration with `jq`, `csvkit`, `pandas`, and other tools.\n- Ideal for Korean SEO, trend sensing, campaign planning, brand monitoring, and influencer/blog analysis.\n- Requires NAVER developer credentials (free tier: 25k req/day for search, 1k req/day for shopping insights).\n- Includes example scripts and detailed usage notes for all commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:405c31b62ab8a263a4b1c3e146c3ed70cc4240a98c540ed2d4d0aec9785214f0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35039,
+  "uuid": "skill-clawhub-jetson-cuda",
+  "skillKey": "clawhub-jetson-cuda",
+  "name": "Jetson CUDA",
+  "summary": "Provides NVIDIA Jetson CUDA tools to query CUDA version, GPU device info, and CUDA library paths on Jetson devices.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jetson_cuda",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kunka",
+      "features": [
+        "Provides NVIDIA Jetson CUDA tools to query CUDA version, GPU device info, and CUDA library path."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jetson-cuda@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11926106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jetson-cuda",
+      "url": "https://clawhub.ai/skills/jetson-cuda"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jetson-cuda",
+    "url": "https://clawhub.ai/skills/jetson-cuda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jetson-cuda-e5b13c0577586374.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jetson-cuda@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jetson-cuda-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:190f0397f6cff18785581850a8fd78f1c2c558d5bb326b61d17699ba136751b8",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:44:14.012Z"
+}

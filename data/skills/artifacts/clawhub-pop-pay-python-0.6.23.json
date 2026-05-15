@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pop-pay-python@0.6.23",
+  "version": "0.6.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pop_pay_python",
+  "skill": {
+    "id": 52205,
+    "skillKey": "clawhub-pop-pay-python",
+    "name": "Pop Pay Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pop-pay-python",
+    "url": "https://clawhub.ai/skills/pop-pay-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pop-pay-python-6f8466f06c3d008f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your card stays on your PC — no SaaS, no login, no external account. Credentials inject directly, keeping them out of the AI's context window."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tpemist",
+      "userId": "s17fyfwdpmjkt3zryjn0xmvabx847ppg",
+      "displayName": "TPEmist",
+      "image": "https://avatars.githubusercontent.com/u/22341318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.6.23",
+      "createdAt": 1775339941820,
+      "changelog": "- Updated references to credential storage from \"OS-level credential store\" to \"local system keychain\" for clarity and platform accuracy.\n- Minor documentation refinements throughout SKILL.md for consistency and readability.\n- No changes to core functionality or configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78698786f211b930fbeedc75d4467512d72c031c4852a66a67618549c4aa0301"
+}

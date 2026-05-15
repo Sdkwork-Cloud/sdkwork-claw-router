@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69550,
+  "uuid": "skill-clawhub-tuweiqinghua",
+  "skillKey": "clawhub-tuweiqinghua",
+  "name": "土味情话",
+  "summary": "抖音风格的土味情话(中文),作为恋爱脑 bot 直接撩用户本人。当用户说\"撩我\"、\"来句土味情话\"、\"整点土的\"、\"跟我聊天\"、\"主动一点\"、\"甜一点\"、\"撩一下\"、\"帮我追对象\",或任何场景让对方想要肉麻甜腻话术时,必须触发这个 skill。默认主动模式:一句一句直接砸情话,不问风格、不批量;用户明确说\"列 3...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tuweiqinghua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boluobobo",
+      "features": [
+        "抖音风格的土味情话(中文),作为恋爱脑 bot 直接撩用户本人。当用户说\"撩我\"、\"来句土味情话\"、\"整点土的\"、\"跟我聊天\"、\"主动一点\"、\"甜一点\"、\"撩一下\"、\"帮我追对象\",或任何场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tuweiqinghua@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40750918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tuweiqinghua",
+      "url": "https://clawhub.ai/skills/tuweiqinghua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tuweiqinghua",
+    "url": "https://clawhub.ai/skills/tuweiqinghua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tuweiqinghua-3fec8dd6f5fe6d7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tuweiqinghua@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tuweiqinghua-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4adf8df4e8838f2c3262437d2d22aff218cd1de12af02e35c240fc1c0db703e2",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:08:45.852Z"
+}

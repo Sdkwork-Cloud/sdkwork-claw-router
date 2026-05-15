@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolrouter@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolrouter",
+  "skill": {
+    "id": 51784,
+    "skillKey": "clawhub-toolrouter",
+    "name": "ToolRouter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolrouter",
+    "url": "https://clawhub.ai/skills/toolrouter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolrouter-54a980be3ceed7cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One MCP gateway to 230+ AI tools — SEO, web search, image generation, video, screenshots, security scanning, and more. Auto-provisions on first use with no A..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blakefolgado",
+      "userId": "s171b4vrhh69ne6hgk4nm292vn83yvvm",
+      "displayName": "Blakefolgado",
+      "image": "https://avatars.githubusercontent.com/u/6277604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776479824422,
+      "changelog": "Updated tool count to 230+. Added Connectors for OAuth-connected accounts. Expanded skill catalog.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f0a5c0bd26d51230172176fe1be05872041463c4fb1248536284694dc036ccf"
+}

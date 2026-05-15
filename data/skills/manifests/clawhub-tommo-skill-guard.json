@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23108,
+  "uuid": "skill-clawhub-tommo-skill-guard",
+  "skillKey": "clawhub-tommo-skill-guard",
+  "name": "Skill Guard",
+  "summary": "Security scanner for OpenClaw agent skills. Pre-install check via ClawHub page, local pattern scanning via read tool (zero exec), integrity verification. Use...",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tommo_skill_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TommoT2",
+      "features": [
+        "Security scanner for OpenClaw agent skills",
+        "Pre-install check via ClawHub page, local pattern scanning via read tool (zero exec), integrity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tommo-skill-guard@5.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106430507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tommo-skill-guard",
+      "url": "https://clawhub.ai/skills/tommo-skill-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tommo-skill-guard",
+    "url": "https://clawhub.ai/skills/tommo-skill-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tommo-skill-guard-25ec5c29b879bbb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tommo-skill-guard@5.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tommo-skill-guard-5.0.0.json",
+      "version": "5.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:539681f6eefc30583f9486ee4f5c6b9f004d434a7bf8f6c54165513f5e90830c",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T23:45:52.613Z"
+}

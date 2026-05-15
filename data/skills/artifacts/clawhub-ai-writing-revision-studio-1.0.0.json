@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-writing-revision-studio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_writing_revision_studio",
+  "skill": {
+    "id": 49952,
+    "skillKey": "clawhub-ai-writing-revision-studio",
+    "name": "Ai Writing Revision Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-writing-revision-studio",
+    "url": "https://clawhub.ai/skills/ai-writing-revision-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-writing-revision-studio-38d165c3df73ea92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Improves existing drafts by diagnosing issues, planning targeted revision passes, and generating reusable AI prompts to enhance clarity, structure, argument,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 56,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778330448362,
+      "changelog": "AI Writing Revision Studio 1.0.0\n\n- Initial release introducing a structured, human-in-the-loop AI editorial workflow for revising drafts.\n- Supports multi-pass revision: structure, argument, style, concision, and final polish.\n- Includes detailed diagnosis, revision planning, copy-ready AI prompts, and before/after examples.\n- Emphasizes maintaining user authorship and voice while reducing generic AI-generated language.\n- Built-in safety boundaries to prevent plagiarism, fabrication, and misuse in sensitive domains.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68b34169a31b5554a962a8fa3d707c3afecfd7aa48ab3091e8e30da33f099340"
+}

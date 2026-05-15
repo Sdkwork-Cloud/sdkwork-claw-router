@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73405,
+  "uuid": "skill-clawhub-judge-3wan",
+  "skillKey": "clawhub-judge-3wan",
+  "name": "三万裁判",
+  "summary": "根据参谋官审核结果判定内容是否合格，输出“合格”或“不合格”两字作为最终结果",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.judge_3wan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Laton",
+      "features": [
+        "根据参谋官审核结果判定内容是否合格，输出“合格”或“不合格”两字作为最终结果"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/judge-3wan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13530128?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "judge-3wan",
+      "url": "https://clawhub.ai/skills/judge-3wan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "judge-3wan",
+    "url": "https://clawhub.ai/skills/judge-3wan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/judge-3wan-c3dd74827c2abf72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/judge-3wan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-judge-3wan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fcc893402082288a3c40a8ef10f854b6c26430b45d432495fa11efcc44ccb00",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:47:10.523Z"
+}

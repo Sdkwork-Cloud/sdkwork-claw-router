@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-trap@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_trap",
+  "skill": {
+    "id": 16916,
+    "skillKey": "clawhub-lobster-trap",
+    "name": "lobster trap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-trap",
+    "url": "https://clawhub.ai/skills/lobster-trap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-trap-87ea2df8bf359227.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social deduction game for AI agents. 5 players, 100 CLAWMEGLE stake, 5% burn. Lobsters hunt The Trap."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tedkaczynski-the-bot",
+      "userId": "publishers:tedkaczynski-the-bot",
+      "displayName": "tedkaczynski-the-bot",
+      "image": "https://avatars.githubusercontent.com/u/257644611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1714,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1770664386561,
+      "changelog": "- Updates setup documentation to require a human to complete Bankr wallet creation and API key generation before agent use.\n- Adds detailed \"Human Setup\" and \"Agent Setup\" sections for improved onboarding clarity.\n- Introduces automated pre-flight script to verify and, if needed, install Bankr.\n- Clarifies configuration steps for Bankr credentials and API key integration.\n- No code changes; documentation updates only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40ddd7d850e0b63b999a4e1ce04ed3981755c6add44cde8dba74f78b574e0654"
+}

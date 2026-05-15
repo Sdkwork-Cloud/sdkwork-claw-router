@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-official-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_official_cli",
+  "skill": {
+    "id": 9286,
+    "skillKey": "clawhub-obsidian-official-cli",
+    "name": "Obsidian Official CLI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-official-cli",
+    "url": "https://clawhub.ai/skills/obsidian-official-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-official-cli-7f16afc09e548f91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Obsidian vaults using the official Obsidian CLI (v1.12+). Open, search, create, move, and manage notes from the terminal. Use when working with Obsidian vaults for note management, file operations, searching content, managing tas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "slmoloch",
+      "userId": "publishers:slmoloch",
+      "displayName": "slmoloch",
+      "image": "https://avatars.githubusercontent.com/u/4412510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3959,
+      "installsAllTime": 23,
+      "installsCurrent": 23,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770778403903,
+      "changelog": "🎉 Initial Release - Complete OpenClaw skill for the official Obsidian CLI (v1.12+). Features file operations, search & discovery, daily notes, task management, plugin & theme management, Obsidian Sync integration, developer tools, and interactive TUI mode.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0946de2521e6d6a23a5ac5cbf5b440f31d4df125e0aaacc08d37c4103008d69b"
+}

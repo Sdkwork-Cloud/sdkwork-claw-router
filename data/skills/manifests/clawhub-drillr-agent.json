@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51896,
+  "uuid": "skill-clawhub-drillr-agent",
+  "skillKey": "clawhub-drillr-agent",
+  "name": "drillr — Power Terminal for Deep Financial Research",
+  "summary": "Access Drillr's financial research capabilities — agentic search over company financials, a high-signal market event feed, published analyst articles, and pe...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drillr_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Little Grebe",
+      "features": [
+        "Access Drillr's financial research capabilities — agentic search over company financials, a hig."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drillr-agent@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/drillr-agent/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drillr-agent",
+      "url": "https://clawhub.ai/skills/drillr-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drillr-agent",
+    "url": "https://clawhub.ai/skills/drillr-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drillr-agent-73225e817e455421.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drillr-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-drillr-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a56b52bf27986d45917db41892ea29520289ba03b4e6eea9b49953ddd4421b6",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T11:46:14.894Z"
+}

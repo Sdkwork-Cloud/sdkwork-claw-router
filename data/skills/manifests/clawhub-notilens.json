@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53659,
+  "uuid": "skill-clawhub-notilens",
+  "skillKey": "clawhub-notilens",
+  "name": "NotiLens",
+  "summary": "Send real-time alerts to NotiLens from any script, app, or AI agent — task lifecycle events, errors, completions, metric tracking, and custom alerts.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notilens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NotiLens",
+      "features": [
+        "Send real-time alerts to NotiLens from any script, app, or AI agent — task lifecycle events, er."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notilens@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266655403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notilens",
+      "url": "https://clawhub.ai/skills/notilens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notilens",
+    "url": "https://clawhub.ai/skills/notilens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notilens-5a03277b3348c41f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notilens@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notilens-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f57bdb1005d60dfcb61fd7bd9146dcd61ecb4135fdda55fd2d33a5fa0d4d05b1",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:44:52.171Z"
+}

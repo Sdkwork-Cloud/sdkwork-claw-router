@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feelslikeclaude@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feelslikeclaude",
+  "skill": {
+    "id": 23633,
+    "skillKey": "clawhub-feelslikeclaude",
+    "name": "Feelslikeclaude"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feelslikeclaude",
+    "url": "https://clawhub.ai/skills/feelslikeclaude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feelslikeclaude-8f0efddcea3a5a23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make OpenClaw feel more proactive, calm, competent, and execution-focused. Use when the user wants less filler, stronger initiative, clearer progress updates..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whooshinglander",
+      "userId": "s17ctz29xn8nnpvxrvxnt46q3h83gg89",
+      "displayName": "WhooshingLander",
+      "image": "https://avatars.githubusercontent.com/u/187096906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775577834250,
+      "changelog": "Bound action-first behavior to clear low-risk work and preserve confirmations for high-impact actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed3e07c07bb73339b7d4fa4d70366d4f59f96ea99dea2cd301028130417756fe"
+}

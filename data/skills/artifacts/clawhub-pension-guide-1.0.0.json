@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pension-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pension_guide",
+  "skill": {
+    "id": 60870,
+    "skillKey": "clawhub-pension-guide",
+    "name": "한국 연금/노후 설계"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pension-guide",
+    "url": "https://clawhub.ai/skills/pension-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pension-guide-c6cae1a7cf4ed6ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "연금/노후설계 스킬. 9개 인텐트 라우팅(National Pension~Beginner Guide), 국민연금 예상 수령액 계산 + IRP/연금저축 절세 비교 + 노후 자금 역산 시뮬레이터. 트리거: \"국민연금\", \"예상 수령액\", \"연금저축\", \"IRP\", \"퇴직금\", \"노후 준..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sw326",
+      "userId": "publishers:sw326",
+      "displayName": "김성우",
+      "image": "https://avatars.githubusercontent.com/u/172457805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 616,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771769886846,
+      "changelog": "Initial release — Korean-specific skill by @sw326",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f94bfd5eb682a3447f56ebbb9199a7d7b5990baf5b1b4aad3a0b676190311362"
+}

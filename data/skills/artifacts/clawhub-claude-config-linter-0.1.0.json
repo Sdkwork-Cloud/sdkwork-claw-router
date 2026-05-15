@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-config-linter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_config_linter",
+  "skill": {
+    "id": 33896,
+    "skillKey": "clawhub-claude-config-linter",
+    "name": "Claude Config Linter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-config-linter",
+    "url": "https://clawhub.ai/skills/claude-config-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-config-linter-2cf2330ac4be185e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lint your Claude Code config for token waste. Checks CLAUDE.md, hooks, skills, and commands. Gives health score and actionable fixes. Use when user asks abou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "singggggyee",
+      "userId": "s172495a8eaqa4vnpf6twt7ke9844t2y",
+      "displayName": "SingYee",
+      "image": "https://avatars.githubusercontent.com/u/266048725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775330456307,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9848eb1a8fd41533a3848723d2571e9e1610634ad4e022131d4ae8a7dc76296d"
+}

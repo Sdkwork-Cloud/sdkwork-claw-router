@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9811,
+  "uuid": "skill-clawhub-larrybrain",
+  "skillKey": "clawhub-larrybrain",
+  "name": "Larrybrain",
+  "summary": "Skill marketplace for OpenClaw agents. One subscription, unlimited tools. Search, download, and install skills from the LarryBrain library.",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.larrybrain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OliverHenry",
+      "features": [
+        "Skill marketplace for OpenClaw agents",
+        "One subscription, unlimited tools",
+        "Search, download, and install skills from the LarryBrain library."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/larrybrain@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159768186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "larrybrain",
+      "url": "https://clawhub.ai/skills/larrybrain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "larrybrain",
+    "url": "https://clawhub.ai/skills/larrybrain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/larrybrain-ca691dd65536668f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/larrybrain@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-larrybrain-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e2da47ce2491a1603089aa4025f395dc3313334d1297170fa9d4fa0d6cacd59",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T07:46:58.486Z"
+}

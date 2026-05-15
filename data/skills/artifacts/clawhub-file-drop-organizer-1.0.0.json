@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-drop-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_drop_organizer",
+  "skill": {
+    "id": 60150,
+    "skillKey": "clawhub-file-drop-organizer",
+    "name": "File Drop Organizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-drop-organizer",
+    "url": "https://clawhub.ai/skills/file-drop-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-drop-organizer-872cb96796a5b508.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理下载目录或临时资料目录，先给分类方案、命名建议和移动预案，再决定是否执行。；use for files, organize, downloads workflows；do not use for 直接删除文件, 修改系统目录."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773736626413,
+      "changelog": "Initial release of file-drop-organizer.\n\n- Provides workflows to organize download or temp directories by proposing categorization, naming, and move plans before taking any action.\n- Does not directly delete files or modify system directories.\n- Outputs reviewable drafts and actionable checklists, emphasizing safety and manual confirmation.\n- Includes structure for directory overview, classification suggestions, duplicate risk, naming recommendations, move plans, and review items.\n- Designed for dry-run and auditable organization without high-risk operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e816b649bd1040c818558253bcc3292cd92015f85b412feb4c8dd94311bf4bf3"
+}

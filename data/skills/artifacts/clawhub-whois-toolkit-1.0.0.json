@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whois-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whois_toolkit",
+  "skill": {
+    "id": 31077,
+    "skillKey": "clawhub-whois-toolkit",
+    "name": "Whois Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whois-toolkit",
+    "url": "https://clawhub.ai/skills/whois-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whois-toolkit-9fcaf05e1d2edcbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Domain WHOIS lookup toolkit for querying registrar, creation/expiry dates, nameservers, status, and registrant info. Use when looking up domain ownership, ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774098399787,
+      "changelog": "whois-toolkit 1.0.0\n\n- Initial release of the WHOIS lookup toolkit.\n- Supports querying registrar, creation/expiry dates, nameservers, status, and registrant info.\n- No external dependencies or API keys required.\n- Handles batch WHOIS queries and structured output, including JSON and raw mode.\n- Provides expiry alerts with color-coded warnings.\n- Built-in WHOIS server mapping for 25+ major TLDs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26a4a53878e954a9a0e731aae2ea9c6b8f5f3fcfe33efb9d5241a1ff999809d0"
+}

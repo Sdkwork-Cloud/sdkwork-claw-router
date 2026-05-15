@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65728,
+  "uuid": "skill-clawhub-fortune-china500-skill",
+  "skillKey": "clawhub-fortune-china500-skill",
+  "name": "Fortune China500 Skill",
+  "summary": "获取《财富》中国 500 强企业排行榜数据，支持查询不同年份的完整 500 强企业名单。自动判断榜单发布时间（每年 7 月），输出 Excel 文件包含排名、企业名称、行业、营收等数据。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fortune_china500_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hyqdq888",
+      "features": [
+        "获取《财富》中国 500 强企业排行榜数据，支持查询不同年份的完整 500 强企业名单。自动判断榜单发布时间（每年 7 月），输出 Excel 文件包含排名、企业名称、行业、营收等数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fortune-china500-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70789535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fortune-china500-skill",
+      "url": "https://clawhub.ai/skills/fortune-china500-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fortune-china500-skill",
+    "url": "https://clawhub.ai/skills/fortune-china500-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fortune-china500-skill-694e559f982d3b36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fortune-china500-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fortune-china500-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c79f1f4d395630a3a4e89183f34cefdf0951a17bd59b744225069524a0743dc",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:17:49.455Z"
+}

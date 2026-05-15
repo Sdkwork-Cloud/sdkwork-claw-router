@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73156,
+  "uuid": "skill-clawhub-file-download-server",
+  "skillKey": "clawhub-file-download-server",
+  "name": "文件下载服务器",
+  "summary": "快速搭建临时文件下载服务器，支持HTTP下载、美观的下载页面、防火墙端口自动开放。适用于需要向用户发送文件但聊天工具不支持直接文件传输的场景。触发词：下载服务器、文件下载、发送文件、搭建下载链接",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_download_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mtafersit1-png",
+      "features": [
+        "快速搭建临时文件下载服务器，支持HTTP下载、美观的下载页面、防火墙端口自动开放。适用于需要向用户发送文件但聊天工具不支持直接文件传输的场景。触发词：下载服务器、文件下载、发送文件、搭建下载."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-download-server@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260794212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-download-server",
+      "url": "https://clawhub.ai/skills/file-download-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-download-server",
+    "url": "https://clawhub.ai/skills/file-download-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-download-server-15a92ad9ea42b9e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-download-server@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-download-server-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dfa16e4838ab8f44d718b9c4e7768ed4e24a724064eed6ecd8c644db18b4e45",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:38:07.296Z"
+}

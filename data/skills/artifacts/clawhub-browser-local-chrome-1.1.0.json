@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-local-chrome@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_local_chrome",
+  "skill": {
+    "id": 45065,
+    "skillKey": "clawhub-browser-local-chrome",
+    "name": "Browser Local Chrome"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-local-chrome",
+    "url": "https://clawhub.ai/skills/browser-local-chrome",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-local-chrome-9518c8b510a2c5f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure and manage local Chrome in debug mode for browser automation with OpenClaw, enabling SSRF whitelist and browser status checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liulike",
+      "userId": "s171mghq300dqey0rn7knbvf5d83pecx",
+      "displayName": "Like Liu",
+      "image": "https://avatars.githubusercontent.com/u/10540853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776139345256,
+      "changelog": "跨平台支持 + 故障排查工具 + 混合方案",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:013667d15a669f422d9d6a1082fa2ff858cea28e72979ffec0ebcd4d43bf379b"
+}

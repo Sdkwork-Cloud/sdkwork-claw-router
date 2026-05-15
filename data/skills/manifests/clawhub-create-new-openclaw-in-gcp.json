@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10714,
+  "uuid": "skill-clawhub-create-new-openclaw-in-gcp",
+  "skillKey": "clawhub-create-new-openclaw-in-gcp",
+  "name": "Create New Openclaw Instance on GCP VM",
+  "summary": "Deploy and configure an OpenClaw instance on a GCP VM with Tailscale networking, Brave Search integration, and secure credential handling.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_new_openclaw_in_gcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Divide-By-0",
+      "features": [
+        "Deploy and configure an OpenClaw instance on a GCP VM with Tailscale networking, Brave Search i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-new-openclaw-in-gcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4804438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-new-openclaw-in-gcp",
+      "url": "https://clawhub.ai/skills/create-new-openclaw-in-gcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-new-openclaw-in-gcp",
+    "url": "https://clawhub.ai/skills/create-new-openclaw-in-gcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-new-openclaw-in-gcp-faee82156f616cf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-new-openclaw-in-gcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-new-openclaw-in-gcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:274f680baa13b99375c34cabbdbde931f10e9ed37dbe36dd9a30ae78288b7799",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T02:38:39.376Z"
+}

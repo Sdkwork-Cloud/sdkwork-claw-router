@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/windows-git-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_git_ops",
+  "skill": {
+    "id": 44059,
+    "skillKey": "clawhub-windows-git-ops",
+    "name": "windows-git-ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-git-ops",
+    "url": "https://clawhub.ai/skills/windows-git-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-git-ops-24db1681c5f9ce7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when performing Git operations in a Windows PowerShell workspace, especially for branch creation, staging, commit, merge, status inspection, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangchaoqing5",
+      "userId": "s17f5vwz7na0nng8v0matrattd84vsy5",
+      "displayName": "zhangchaoqing5",
+      "image": "https://avatars.githubusercontent.com/u/139210191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776136642217,
+      "changelog": "- Initial release of windows-git-ops skill.\n- Provides guidelines for safe and auditable Git operations specifically in Windows PowerShell.\n- Enforces strict avoidance of bash-only shell syntax and promotes single-command invocations.\n- Details workflows for inspecting state, branch creation (with codex/ prefix), committing, and merging.\n- Outlines common pitfalls and PowerShell-safe command patterns to reduce user mistakes.\n- Specifies expected outputs for clarity and auditability of Git actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f4be319f6f429470069be0fe95c4aaa3d447f2484e12e9bfaf7e25363f3e2ba"
+}

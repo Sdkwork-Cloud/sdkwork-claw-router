@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outlook-delegate@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outlook_delegate",
+  "skill": {
+    "id": 13640,
+    "skillKey": "clawhub-outlook-delegate",
+    "name": "Outlook Delegate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outlook-delegate",
+    "url": "https://clawhub.ai/skills/outlook-delegate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outlook-delegate-4c1395eb12c027ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, search, and manage Outlook emails and calendar via Microsoft Graph API with delegate support. Supports sending as self, as owner (Send As), and on behalf of owner (Send on Behalf). Modified for delegate access from https://clawhub.ai."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "87marc",
+      "userId": "s17e9d7444xy3fs2c07jx1hn7n83nky6",
+      "displayName": "87Marc",
+      "image": "https://avatars.githubusercontent.com/u/2963808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 970,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1770952576638,
+      "changelog": "**Expanded support for sending as self, as owner, and on behalf of owner, with clear Exchange permission guidance.**\n\n- Added explicit support and documentation for three sending modes: as self, as owner (Send As), and on behalf of owner (Send on Behalf).\n- Clarified Exchange permissions required for each sending mode, emphasizing not to grant both SendAs and SendOnBehalf together.\n- Updated configuration to include display names and tenant/timezone fields for improved customization.\n- Improved setup instructions with step-by-step Microsoft Entra ID and Exchange permission guidance.\n- Enhanced mode tables, explanations, and troubleshooting to prevent common permission mistakes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:30e71861e6b40647c16d863a99d6e39944341c36c613cba5347eca93a37cf4a9"
+}

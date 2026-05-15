@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30571,
+  "uuid": "skill-clawhub-dead-link-scanner",
+  "skillKey": "clawhub-dead-link-scanner",
+  "name": "Dead Link Scanner",
+  "summary": "Scan websites, markdown files, and HTML files for broken links (dead links). Use when checking a website for 404s, validating links in documentation or READM...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dead_link_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Scan websites, markdown files, and HTML files for broken links (dead links)",
+        "Use when checking a website for 404s, validating links in documentation or READM..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dead-link-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dead-link-scanner",
+      "url": "https://clawhub.ai/skills/dead-link-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dead-link-scanner",
+    "url": "https://clawhub.ai/skills/dead-link-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dead-link-scanner-5f943af8169b8fd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dead-link-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dead-link-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3563cf26f651d788e2a7e7066c793cf39de62b4da7b3af20ea380a468a567861",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T22:12:08.425Z"
+}

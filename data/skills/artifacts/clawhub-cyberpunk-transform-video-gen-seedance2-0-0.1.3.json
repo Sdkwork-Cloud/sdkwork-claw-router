@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyberpunk-transform-video-gen-seedance2-0@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyberpunk_transform_video_gen_seedance2_0",
+  "skill": {
+    "id": 30675,
+    "skillKey": "clawhub-cyberpunk-transform-video-gen-seedance2-0",
+    "name": "Cyberpunk Transform Video Gen Seedance2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyberpunk-transform-video-gen-seedance2-0",
+    "url": "https://clawhub.ai/skills/cyberpunk-transform-video-gen-seedance2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyberpunk-transform-video-gen-seedance2-0-3fa6b74d0aaaec85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Re-skin any everyday clip concept into neon-drenched, high-tech, augmented urban futures using WeryAI Seedance 2.0 only. Use when you need TikTok-style verti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoucdr",
+      "userId": "s17112gmymgcv04spgyd4zzw3583h7ab",
+      "displayName": "parallel world",
+      "image": "https://avatars.githubusercontent.com/u/16458879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1774080137956,
+      "changelog": "- Updated workflow and prerequisites section: clarified that the CLI now requires an explicit (non-empty) model parameter in JSON and exits with a MISSING_PARAM error if missing; no longer defaults to any model.\n- Documented that the script does not enforce the allowed model; users must explicitly set and confirm `\"model\":\"SEEDANCE_2_0\"` for all jobs.\n- No functional changes to code—documentation only (SKILL.md clarifications).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed43037c9067ba9da4f72dc445acba232da6921b1a90d1d63a7639bfb64e1f7e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/presentation-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presentation_agent",
+  "skill": {
+    "id": 19628,
+    "skillKey": "clawhub-presentation-agent",
+    "name": "Presentation Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presentation-agent",
+    "url": "https://clawhub.ai/skills/presentation-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presentation-agent-a1fb4d92f66b5cc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown documents to presentation slides (PDF/PPTX/HTML) using Marp. Supports Mermaid diagrams (gantt, flowchart, etc.) and data graphs. Use when a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mtdnot",
+      "userId": "publishers:mtdnot",
+      "displayName": "mtdnot",
+      "image": "https://avatars.githubusercontent.com/u/115239996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773401971443,
+      "changelog": "Initial release: Convert Markdown to PDF/PPTX/HTML slides using Marp with Mermaid diagram support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff245e662e37a07606cc6ab5ed5a04a00e1d13cc7691be1ba0f406261aec5b3e"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9959,
+  "uuid": "skill-clawhub-tradingview-screener",
+  "skillKey": "clawhub-tradingview-screener",
+  "name": "TradingView Screener",
+  "summary": "Screen markets across 6 asset classes using TradingView data. API pre-filters + pandas computed signals. YAML-driven strategies.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradingview_screener",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lukebaze",
+      "features": [
+        "Screen markets across 6 asset classes using TradingView data",
+        "API pre-filters + pandas computed signals",
+        "YAML-driven strategies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tradingview-screener@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67284748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tradingview-screener",
+      "url": "https://clawhub.ai/skills/tradingview-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradingview-screener",
+    "url": "https://clawhub.ai/skills/tradingview-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradingview-screener-fe9685afe0c4decc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tradingview-screener@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tradingview-screener-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b17c52cdbf8cf60406d915c0ddf110c5053ebb1aaa84e6245ee3229cc06e137",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T09:51:45.720Z"
+}

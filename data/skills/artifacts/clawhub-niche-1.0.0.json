@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/niche@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.niche",
+  "skill": {
+    "id": 14103,
+    "skillKey": "clawhub-niche",
+    "name": "Niche - Peer to Peer Trading Cards Marketplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "niche",
+    "url": "https://clawhub.ai/skills/niche",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/niche-4bd0ba1cf742f5bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trading card marketplace with partial USDC deposits. Browse cards, deposit partial amounts, and complete purchases with secure on-chain escrow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clementsutjiatma",
+      "userId": "publishers:clementsutjiatma",
+      "displayName": "ClementSutjiatma",
+      "image": "https://avatars.githubusercontent.com/u/24305920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770495266244,
+      "changelog": "Initial release of Niche — a peer-to-peer trading card marketplace with partial USDC deposit and secure on-chain escrow.\n\n- Browse and search listings without an account; share card URLs easily.\n- List, hold, and purchase cards with partial USDC deposits (escrowed on-chain).\n- Require login (email, OTP, passkey) for deposits, payments, and wallet operations.\n- Meet in person to inspect cards before completing payment; atomic final payment and fund release upon confirmation.\n- CLI and hosted browser-based UI; all heavy logic and escrow managed server-side.\n- Testnet support with simulated users and Circle USDC faucet for testing.\n- Automated check for watched card matches (every 15 minutes).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:967800b8bc656472fda1101e8410e355ca28fb7f74664991b40c7de067be1660"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53696,
+  "uuid": "skill-clawhub-kubernetes-operator-scaffolder",
+  "skillKey": "clawhub-kubernetes-operator-scaffolder",
+  "name": "Kubernetes Operator Scaffolder",
+  "summary": "Scaffold production-ready Kubernetes operators — generate CRDs, controllers, RBAC, webhooks, and Dockerfiles with best practices for Go or Python operators.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_operator_scaffolder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Scaffold production-ready Kubernetes operators — generate CRDs, controllers, RBAC, webhooks, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubernetes-operator-scaffolder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubernetes-operator-scaffolder",
+      "url": "https://clawhub.ai/skills/kubernetes-operator-scaffolder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-operator-scaffolder",
+    "url": "https://clawhub.ai/skills/kubernetes-operator-scaffolder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-operator-scaffolder-19a4d837cd0dcb22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubernetes-operator-scaffolder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-operator-scaffolder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a9c1804fe2dd27d37cde71e97077a77c5fa39d9c3b9045acfa3d34d7f4c8e32",
+      "artifactSizeBytes": 2619
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T06:42:23.096Z"
+}

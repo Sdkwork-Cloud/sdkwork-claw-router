@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qelt-dex@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qelt_dex",
+  "skill": {
+    "id": 26609,
+    "skillKey": "clawhub-qelt-dex",
+    "name": "QELT DEX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qelt-dex",
+    "url": "https://clawhub.ai/skills/qelt-dex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qelt-dex-7becbad27d3a5df4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Uniswap v4 pools and liquidity positions on QELT Mainnet. Use when asked about DEX pools, token swaps, liquidity provision, WQELT wrapping/unwr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prqelt",
+      "userId": "publishers:prqelt",
+      "displayName": "PRQELT",
+      "image": "https://avatars.githubusercontent.com/u/198798555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772776778797,
+      "changelog": "Initial release: Interact with Uniswap v4 pools and liquidity positions on QELT Mainnet.\n\n- Provides contract addresses for all Uniswap v4 core contracts on QELT.\n- Supports querying pool state, token balances (WQELT), and pool/position details.\n- Supports wrapping/unwrapping QELT via WQELT for trading.\n- Enables preparation of token swaps and liquidity provision via UniversalRouter and PositionManager.\n- Only Uniswap v4 is supported; V2/V3 calls revert with `UnsupportedProtocol`.\n- Emphasizes safety: requires pre-signed transactions for all write operations and applies slippage protection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c3cc4e3305c9d2b525924026967292717148b9c4eb2132a0273fed6942c571e5"
+}

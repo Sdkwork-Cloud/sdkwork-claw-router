@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66958,
+  "uuid": "skill-clawhub-cn-weight-tracker",
+  "skillKey": "clawhub-cn-weight-tracker",
+  "name": "体重追踪记录",
+  "summary": "中文体重追踪助手。记录每日体重、计算BMI、追踪趋势、设定目标。 本地存储，无需账号，隐私安全。 当用户说\"体重\"、\"记录体重\"、\"今天多重\"、\"BMI\"、\"体脂\"、\"减重\"、\"目标体重\"时触发。 Keywords: 体重, BMI, 减重, 增重, 目标体重, 体重记录, 健康",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_weight_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "中文体重追踪助手。记录每日体重、计算BMI、追踪趋势、设定目标。 本地存储，无需账号，隐私安全。 当用户说\"体重\"、\"记录体重\"、\"今天多重\"、\"BMI\"、\"体脂\"、\"减重\"、\"目标体重\"时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-weight-tracker@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-weight-tracker",
+      "url": "https://clawhub.ai/skills/cn-weight-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-weight-tracker",
+    "url": "https://clawhub.ai/skills/cn-weight-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-weight-tracker-7f4c1f23af093e21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-weight-tracker@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-weight-tracker-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f100c23721a8a059fc371c329e4b21daf051ad78c9809058f914166f412b90d",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:46:43.905Z"
+}

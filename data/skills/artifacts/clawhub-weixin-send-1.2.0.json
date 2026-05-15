@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weixin-send@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_send",
+  "skill": {
+    "id": 60758,
+    "skillKey": "clawhub-weixin-send",
+    "name": "weixin-send"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-send",
+    "url": "https://clawhub.ai/skills/weixin-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-send-2c1f72e29180b9c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主动向微信 ClawBot 用户推送文本消息。作为 openclaw-weixin 插件 message 工具的兜底方案，仅在其不可用时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luhuiwang",
+      "userId": "s17cm863rkcbmtkmgn8xbqmd5d83hg7j",
+      "displayName": "Luhui WANG",
+      "image": "https://avatars.githubusercontent.com/u/44135132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774493093163,
+      "changelog": "定位调整：作为openclaw-weixin插件message工具的兜底方案。添加使用优先级说明和profile前提条件。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51feeb6f744ca006269bdda7eea7cd10a118d99b9eee5ce5fd7ff3738a88c363"
+}

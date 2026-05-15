@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35815,
+  "uuid": "skill-clawhub-ikea",
+  "skillKey": "clawhub-ikea",
+  "name": "IKEA",
+  "summary": "Information assistant for IKEA. Search products, news, financials, and official resources for IKEA.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ikea",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for IKEA",
+        "Search products, news, financials, and official resources for IKEA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ikea@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ikea",
+      "url": "https://clawhub.ai/skills/ikea"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ikea",
+    "url": "https://clawhub.ai/skills/ikea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ikea-0e79172671f59f0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ikea@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ikea-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdc08a715c85dab0848447663080d9fedaf72e739868fd2fa62fdc3a4bb463cf",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:12:31.329Z"
+}

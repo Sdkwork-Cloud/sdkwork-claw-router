@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-applescript-fallback@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_applescript_fallback",
+  "skill": {
+    "id": 24653,
+    "skillKey": "clawhub-macos-applescript-fallback",
+    "name": "macOS AppleScript Fallback (Reminders / Notes / Calendar / iMessage)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-applescript-fallback",
+    "url": "https://clawhub.ai/skills/macos-applescript-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-applescript-fallback-36ee97fd2e6edc45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reliable macOS AppleScript fallback for creating Apple Reminders, Apple Notes, Apple Calendar events, and sending iMessage when direct tool/plugin routes are..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qy-zhang",
+      "userId": "s172kfh5eb1cmb1stpzbn2n7rx83gmqg",
+      "displayName": "Fitzwilliam Zhang",
+      "image": "https://avatars.githubusercontent.com/u/18302375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774177459671,
+      "changelog": "macos-applescript-fallback v1.0.0\n\n- Initial release providing robust AppleScript-based fallback for creating Reminders, Notes, Calendar events, and sending iMessages on macOS.\n- Introduces shell scripts for each task, optimized for compatibility and easy troubleshooting.\n- Includes a structured workflow for clarifying intent, executing scripts, confirming results, and diagnosing errors.\n- Compatibility safeguards and fallbacks ensure reliable operation even on older or differently configured macOS systems.\n- Documentation added for user prompts, script arguments, troubleshooting, and best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecb2779a65d60de1d6031661de58b41a31b280bc82d081359256777a4ac0acf1"
+}

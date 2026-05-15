@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/teleport-tbot-bootstrap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teleport_tbot_bootstrap",
+  "skill": {
+    "id": 26814,
+    "skillKey": "clawhub-teleport-tbot-bootstrap",
+    "name": "Teleport Machine ID tbot Bootstrap (MacOS LaunchAgent)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teleport-tbot-bootstrap",
+    "url": "https://clawhub.ai/skills/teleport-tbot-bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teleport-tbot-bootstrap-5396f4f4db1eab88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstrap a persistent Teleport Machine ID (tbot) setup on macOS using LaunchAgent and tbot configure identity. Trigger when asked to set up, automate, or va..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webvictim",
+      "userId": "publishers:webvictim",
+      "displayName": "webvictim",
+      "image": "https://avatars.githubusercontent.com/u/897821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773257204004,
+      "changelog": "Initial release of teleport-tbot-bootstrap\n\n- Automates setup of persistent Teleport Machine ID (tbot) on macOS using LaunchAgent and `tbot configure identity`\n- Guides collection of required inputs: proxy address, onboarding token, bot roles, and output directory\n- Installs and manages user-level LaunchAgent for seamless tbot identity refresh at login\n- Performs automatic config, first-run verification, and status reporting using tsh\n- Emphasizes security best practices and provides known limitations for v1.0.0\n- Complements the teleport-tsh-ssh skill for daily SSH and automation host access\n- Supports bound keypair onboarding (with registration secret)\n- Includes Teleport prereq YAML examples (Role/Bot/Token)\n- Scopes node access via openclaw-allowed: \"true\" label pattern\n- Includes host user auto-creation example (create_host_user_mode: insecure-drop)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7eda1d1b7d16c5189cfbe2eef53062719b9b872f34651ac4923fe90d64fcbb66"
+}

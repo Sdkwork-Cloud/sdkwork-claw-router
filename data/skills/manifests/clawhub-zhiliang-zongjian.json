@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73648,
+  "uuid": "skill-clawhub-zhiliang-zongjian",
+  "skillKey": "clawhub-zhiliang-zongjian",
+  "name": "质量总监技能",
+  "summary": "基于现场纪要和照片自动分析，生成符合某电商平台及多行业标准的完整工厂审核报告，提供问题定级与评分结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhiliang_zongjian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mxp0126",
+      "features": [
+        "基于现场纪要和照片自动分析，生成符合某电商平台及多行业标准的完整工厂审核报告，提供问题定级与评分结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhiliang-zongjian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236555697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhiliang-zongjian",
+      "url": "https://clawhub.ai/skills/zhiliang-zongjian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhiliang-zongjian",
+    "url": "https://clawhub.ai/skills/zhiliang-zongjian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhiliang-zongjian-5cea5e77cf165271.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhiliang-zongjian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhiliang-zongjian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40d4a9dcc2865fcfc0b3fa473061eaab50bfe6710652de74ba0a9fe8423508c8",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T01:58:36.377Z"
+}

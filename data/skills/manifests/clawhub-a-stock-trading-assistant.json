@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63421,
+  "uuid": "skill-clawhub-a-stock-trading-assistant",
+  "skillKey": "clawhub-a-stock-trading-assistant",
+  "name": "A Stock Trading Assistant",
+  "summary": "专业A股交易助手，提供沪深市场实时行情、个股分析、大盘情绪、热点板块、交易策略和价格预警服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_trading_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xndks",
+      "features": [
+        "专业A股交易助手，提供沪深市场实时行情、个股分析、大盘情绪、热点板块、交易策略和价格预警服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-trading-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129990038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-trading-assistant",
+      "url": "https://clawhub.ai/skills/a-stock-trading-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-trading-assistant",
+    "url": "https://clawhub.ai/skills/a-stock-trading-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-trading-assistant-6d18f2b611999be0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-trading-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-trading-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ca72a6b8c94cb49adda8e8c59fe136b7d0827b828b0e83c5929e68e4ac749a1",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:34:42.966Z"
+}

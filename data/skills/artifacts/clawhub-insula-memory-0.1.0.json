@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insula-memory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insula_memory",
+  "skill": {
+    "id": 10202,
+    "skillKey": "clawhub-insula-memory",
+    "name": "Insula Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insula-memory",
+    "url": "https://clawhub.ai/skills/insula-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insula-memory-d6fe37ed664578dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Internal state awareness for AI agents. Energy, mood, and interoception. Part of the AI Brain series."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "impkind",
+      "userId": "s17a6jgq93ckexmb6qdvze637s84538n",
+      "displayName": "ImpKind",
+      "image": "https://avatars.githubusercontent.com/u/54905270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2177,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769909355504,
+      "changelog": "Initial placeholder - under development",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:320a4a4a60bf1e22411fcb95516f0a800ad031786e1fc7114dd75ffdb308e6cd"
+}

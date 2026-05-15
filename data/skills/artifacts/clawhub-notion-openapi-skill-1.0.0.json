@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_openapi_skill",
+  "skill": {
+    "id": 39406,
+    "skillKey": "clawhub-notion-openapi-skill",
+    "name": "Notion Openapi Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-openapi-skill",
+    "url": "https://clawhub.ai/skills/notion-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-openapi-skill-9e6c353d9063b0c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Notion Public API through UXC with a curated OpenAPI schema for search, block traversal, page reads, content writes, and data source/database inspect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774322123590,
+      "changelog": "Initial release of notion-openapi-skill, enabling Notion Public API access via UXC and a curated OpenAPI schema.\n\n- Provides commands for search, block traversal, page reads, and structured content writes in Notion.\n- Focuses on recursive reads and operations not covered by the Notion MCP.\n- Includes support for token validation, database/data source introspection, and standard CRUD for pages and blocks.\n- Requires uxc installed, a Notion integration token or OAuth, and uses a fixed Notion-Version header (2026-03-11).\n- Operations grouped into session, traversal, write, and data source/database reads.\n- Emphasizes explicit credentials setup and careful validation before write operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:877e46c9b0c764b9990e9cb2c002bd1ee3afc7ddb6272e7671f998825042ada3"
+}

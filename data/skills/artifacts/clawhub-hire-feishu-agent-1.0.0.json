@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hire-feishu-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hire_feishu_agent",
+  "skill": {
+    "id": 60297,
+    "skillKey": "clawhub-hire-feishu-agent",
+    "name": "Hire Feishu Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hire-feishu-agent",
+    "url": "https://clawhub.ai/skills/hire-feishu-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hire-feishu-agent-85c52b1611a4290f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "**当用户说出以下类似语句时触发本 Skill**： - \"帮我招聘一个飞书助理\" - \"新增一个飞书渠道的 Agent\" - \"我要在飞书上部署一个新 Agent\" - \"hire a Feishu agent"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xrovis",
+      "userId": "publishers:xrovis",
+      "displayName": "Hunter",
+      "image": "https://avatars.githubusercontent.com/u/160611472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773848494631,
+      "changelog": "- Initial release of the hire-feishu-agent skill.\n- Guides users step-by-step to add a new Feishu agent by collecting required details.\n- Clearly lists JSON config changes across three locations: accounts, agent list, and bindings.\n- Provides copy-ready JSON snippets for easy configuration.\n- Includes usage tips and parameter validation reminders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f08d7dbcaf475742b855edae530d4744713cd1e6f352ab14944092ca22b8c2d2"
+}

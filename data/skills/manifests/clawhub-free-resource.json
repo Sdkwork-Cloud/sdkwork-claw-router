@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20643,
+  "uuid": "skill-clawhub-free-resource",
+  "skillKey": "clawhub-free-resource",
+  "name": "Free Resource",
+  "summary": "Search and retrieve royalty-free media from Pixabay (images/videos), Freesound (audio effects), and Jamendo (music/BGM). Use when the user needs to find stoc...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_resource",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "noah",
+      "features": [
+        "Search and retrieve royalty-free media from Pixabay (images/videos), Freesound (audio effects),.",
+        "Use when the user needs to find stoc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-resource@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13805682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-resource",
+      "url": "https://clawhub.ai/skills/free-resource"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-resource",
+    "url": "https://clawhub.ai/skills/free-resource",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-resource-ba8a2ee2ef8f9a74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-resource@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-resource-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a58efb681e64155cad4edfc7162816559914089f20a2799b4aa6980e39e55e3",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T04:59:24.618Z"
+}

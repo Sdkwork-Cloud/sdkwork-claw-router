@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signalradar@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signalradar",
+  "skill": {
+    "id": 20971,
+    "skillKey": "clawhub-signalradar",
+    "name": "Signalradar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signalradar",
+    "url": "https://clawhub.ai/skills/signalradar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signalradar-9d900769a3696a97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SignalRadar — Monitor Polymarket prediction markets for probability changes and send alerts when thresholds are crossed. Use when user asks to \"add a Polymar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vahnxu",
+      "userId": "s17d86qgf1fm0mqac9pvp4rrns83tdzh",
+      "displayName": "vahnxu",
+      "image": "https://avatars.githubusercontent.com/u/19759725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 901,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 42
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1773685448180,
+      "changelog": "# SignalRadar 1.0.8 Changelog\n\n- Version bump to 1.0.8; updated version metadata in SKILL.md.\n- No user-facing feature or behavior changes.\n- Documentation updated for accurate versioning.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2165d72e2b138fd8a01ca4037cfb2e61cd3eab22a53942d47a35c83a1e87dc39"
+}

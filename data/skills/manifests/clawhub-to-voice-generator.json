@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49344,
+  "uuid": "skill-clawhub-to-voice-generator",
+  "skillKey": "clawhub-to-voice-generator",
+  "name": "To Voice Generator",
+  "summary": "Get voiced video files ready to post, without touching a single slider. Upload your text or script (TXT, DOCX, PDF, MP4, up to 200MB), say something like \"co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.to_voice_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get voiced video files ready to post, without touching a single slider",
+        "Upload your text or script (TXT, DOCX, PDF, MP4, up to 200MB), say something like \"co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/to-voice-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "to-voice-generator",
+      "url": "https://clawhub.ai/skills/to-voice-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "to-voice-generator",
+    "url": "https://clawhub.ai/skills/to-voice-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/to-voice-generator-478d61aca23cc1a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/to-voice-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-to-voice-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25953b9f13103309a84f25652d26b3a3df5ee848b8ec173035aadfdce78b7951",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T12:10:42.057Z"
+}

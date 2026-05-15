@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54730,
+  "uuid": "skill-clawhub-veo-3-1",
+  "skillKey": "clawhub-veo-3-1",
+  "name": "Veo 3.1 API",
+  "summary": "Use PoYo AI Veo 3.1 for frame-conditioned video generation through the `https://api.poyo.ai/api/generate/submit` endpoint. Use when a user wants fast or qual...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veo_3_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolhackboy",
+      "features": [
+        "Use PoYo AI Veo 3.1 for frame-conditioned video generation through the `https://api.poyo.ai/api.",
+        "Use when a user wants fast or qual..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veo-3-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13427145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veo-3-1",
+      "url": "https://clawhub.ai/skills/veo-3-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veo-3-1",
+    "url": "https://clawhub.ai/skills/veo-3-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veo-3-1-6a4dfeda6c2746c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veo-3-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-veo-3-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bc17fa2e335689e0378b842acda4857d0f9f9fde709f41c2534d07bf936412f",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:08:52.457Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17296,
+  "uuid": "skill-clawhub-wheel-of-fortune",
+  "skillKey": "clawhub-wheel-of-fortune",
+  "name": "Wheel of Fortune",
+  "summary": "Generate a link to an interactive 3D wheel to randomly choose from 2 to 20 user-provided options, optionally weighted by preference.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wheel_of_fortune",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peetzweg/",
+      "features": [
+        "Generate a link to an interactive 3D wheel to randomly choose from 2 to 20 user-provided option."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wheel-of-fortune@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/839848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wheel-of-fortune",
+      "url": "https://clawhub.ai/skills/wheel-of-fortune"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wheel-of-fortune",
+    "url": "https://clawhub.ai/skills/wheel-of-fortune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wheel-of-fortune-66c66adbbe0a4ef2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wheel-of-fortune@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wheel-of-fortune-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43aef06837ce06c34786ff931772c286b6fca1f4a9eb54592372dd3c6c3ecb93",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:01:32.701Z"
+}

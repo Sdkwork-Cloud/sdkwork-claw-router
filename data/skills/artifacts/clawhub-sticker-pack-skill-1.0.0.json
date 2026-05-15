@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sticker-pack-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sticker_pack_skill",
+  "skill": {
+    "id": 43309,
+    "skillKey": "clawhub-sticker-pack-skill",
+    "name": "Sticker Pack Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sticker-pack-skill",
+    "url": "https://clawhub.ai/skills/sticker-pack-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sticker-pack-skill-ccf316146011987f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate ai sticker pack generator images from text descriptions via the Neta AI image generation API (free trial at neta.art/open)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776046738394,
+      "changelog": "- Initial release of sticker-pack-skill.\n- Generate AI sticker pack images from text descriptions using the Neta AI image generation API.\n- Requires API token; supports optional image size and reference options.\n- Instant image URL returned based on user prompt.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81315a006a61ba756158becb544d3804648e4fb7014886546747857816014c88"
+}

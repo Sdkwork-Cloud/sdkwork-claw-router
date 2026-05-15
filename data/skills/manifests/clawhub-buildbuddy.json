@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36553,
+  "uuid": "skill-clawhub-buildbuddy",
+  "skillKey": "clawhub-buildbuddy",
+  "name": "Buildbuddy",
+  "summary": "BuildBuddy integration. Manage data, records, and automate workflows. Use when the user wants to interact with BuildBuddy data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buildbuddy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "BuildBuddy integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BuildBuddy data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buildbuddy@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buildbuddy",
+      "url": "https://clawhub.ai/skills/buildbuddy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buildbuddy",
+    "url": "https://clawhub.ai/skills/buildbuddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buildbuddy-7943afe833f0e9d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buildbuddy@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-buildbuddy-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b48b3952de4c29a6fc2f408fc83cf6b42d0f8810e2160abed8afd0545b10c3c",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:15:54.705Z"
+}

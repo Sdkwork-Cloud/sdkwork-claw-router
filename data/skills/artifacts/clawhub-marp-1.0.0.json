@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marp",
+  "skill": {
+    "id": 50991,
+    "skillKey": "clawhub-marp",
+    "name": "Marp — Markdown Presentations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marp",
+    "url": "https://clawhub.ai/skills/marp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marp-02e27d07aea57830.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when creating slide decks, presentations, product requirement docs with diagrams, or converting markdown to PDF/PPTX/HTML slides. Triggers on \"make a dec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patoo0x",
+      "userId": "publishers:patoo0x",
+      "displayName": "patoo0x",
+      "image": "https://avatars.githubusercontent.com/u/262265744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773936196850,
+      "changelog": "Initial release: full Marp syntax reference, CLI commands, directives, image syntax, diagram integration, product doc templates",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbb4e7a01e651c57342dff1ac46f988e6af803ebac11e672eb9cc6644a384645"
+}

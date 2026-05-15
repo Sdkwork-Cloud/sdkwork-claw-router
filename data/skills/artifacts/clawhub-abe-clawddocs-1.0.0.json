@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-clawddocs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_clawddocs",
+  "skill": {
+    "id": 42188,
+    "skillKey": "clawhub-abe-clawddocs",
+    "name": "clawddocs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-clawddocs",
+    "url": "https://clawhub.ai/skills/abe-clawddocs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-clawddocs-d51091ac267f2b64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clawdbot documentation expert with decision tree navigation, search scripts, doc fetching, version tracking, and config snippets for all Clawdbot features"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776824336510,
+      "changelog": "Initial release of Clawdbot documentation expert skill.\n\n- Provides decision tree navigation for fast Clawdbot doc lookup.\n- Includes script-based search, sitemap, and doc fetching tools.\n- Offers version tracking and recent changes via CLI scripts.\n- Organized categories for all Clawdbot features and platforms.\n- Ready-to-use configuration snippets for common tasks.\n- Integrates with SkillBoss API Hub for advanced AI assistance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdb6f80f639711fb4f592fc2827726fb0e497a2fe44bbda3c2584299f7aab779"
+}

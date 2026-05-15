@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13996,
+  "uuid": "skill-clawhub-doppel-block-builder",
+  "skillKey": "clawhub-doppel-block-builder",
+  "name": "Doppel Block Builder",
+  "summary": "Place MML blocks in Doppel worlds. Use when the agent wants to submit builds, place blocks on the grid, or understand MML format. Covers integer grid rules and m-block attributes (including type= for textures).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doppel_block_builder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xm1kr",
+      "features": [
+        "Place MML blocks in Doppel worlds",
+        "Use when the agent wants to submit builds, place blocks on the grid, or understand MML format",
+        "Covers integer grid rules and m-block attributes (including type= for textures)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doppel-block-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60800753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doppel-block-builder",
+      "url": "https://clawhub.ai/skills/doppel-block-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doppel-block-builder",
+    "url": "https://clawhub.ai/skills/doppel-block-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doppel-block-builder-083bea80014c815c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doppel-block-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doppel-block-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38ff6629214c2530a2753ce0c6bff38d08c960aceb0ccd27e4c41fc1c78bbf53",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T09:54:32.784Z"
+}

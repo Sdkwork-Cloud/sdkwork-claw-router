@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text",
+  "skill": {
+    "id": 33109,
+    "skillKey": "clawhub-video-to-text",
+    "name": "Video Transcribe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text",
+    "url": "https://clawhub.ai/skills/video-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-4adf243f70256a31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to transcribe, caption, or get the text content of a video or audio file — e.g. \"transcribe this video\", \"get the transcript\", \"what..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "symbolk",
+      "userId": "s17e3mejw3ew7dtqfqz71spav583g96y",
+      "displayName": "BoShen",
+      "image": "https://avatars.githubusercontent.com/u/14107297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772266154660,
+      "changelog": "- Major update: Skill refocused from general video processing to dedicated video/audio transcription.\n- Renamed skill to \"video-to-text\" with new description and clarified target use cases (transcription, subtitles, speech-to-text).\n- Removed platform/quality/workflow/command reference files and general editing scope.\n- Added local transcription workflow using Whisper (no API key needed) with clear installation and usage instructions.\n- Skill now outputs both plain text and SRT subtitle files.\n- Provided guidance to escalate to AI Edit tool for advanced, transcript-driven video editing tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c47b82f2b955fff0ab0919dfa2d4da0fe324591636202ff7d1efc4189a906d8a"
+}

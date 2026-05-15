@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44094,
+  "uuid": "skill-clawhub-command-center-1-4-1",
+  "skillKey": "clawhub-command-center-1-4-1",
+  "name": "Command Center 1.4.1",
+  "summary": "Mission control dashboard for OpenClaw - real-time session monitoring, LLM usage tracking, cost intelligence, and system vitals. View all your AI agents in o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.command_center_1_4_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JCDentonCore",
+      "features": [
+        "Mission control dashboard for OpenClaw",
+        "real-time session monitoring, LLM usage tracking, cost intelligence, and system vitals",
+        "View all your AI agents in o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/command-center-1-4-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114034738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "command-center-1-4-1",
+      "url": "https://clawhub.ai/skills/command-center-1-4-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "command-center-1-4-1",
+    "url": "https://clawhub.ai/skills/command-center-1-4-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/command-center-1-4-1-07b5830de31d3bb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/command-center-1-4-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-command-center-1-4-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61d43c381f3e3e2b7dd19da592683ea61f462b93f8382ebb97beb3cad866b437",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T08:35:21.755Z"
+}

@@ -1,8 +1,9 @@
 import {
-  createRequestToken,
+  createRequestParams,
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
   isRecord,
+  normalizeJsonObject,
   readApiRecord,
   readBoolean,
   readNullableString,
@@ -14,6 +15,7 @@ import {
   readStringArray,
   requiredSafePathSegment,
   type ApiRecord,
+  type JsonObject,
 } from 'sdkwork-claw-router-commons/runtime';
 import type {
   AdminSkillArtifactCreateRequest,
@@ -25,9 +27,7 @@ import type {
   AdminSkillCategoryCreateRequest,
   AdminSkillCreateRequest,
   AdminSkillItem,
-  AdminSkillListRequest,
   AdminSkillPackageCreateRequest,
-  AdminSkillPackageListRequest,
   AdminSkillPackageUpdateRequest,
   AdminSkillReviewRequest,
   AdminSkillUpdateRequest,
@@ -150,8 +150,8 @@ export interface AdminSkill {
   ratingCount: string;
   tags: string[];
   capabilities: string[];
-  configSchema: Record<string, unknown>;
-  defaultConfig: Record<string, unknown>;
+  configSchema: JsonObject;
+  defaultConfig: JsonObject;
   latestPublishedAt: string;
   createdAt: string;
   updatedAt: string;
@@ -189,8 +189,8 @@ export interface AdminSkillCreateInput extends AdminSkillCreateRequest {
   currency?: string;
   tags?: string[];
   capabilities?: string[];
-  configSchema?: Record<string, unknown>;
-  defaultConfig?: Record<string, unknown>;
+  configSchema?: JsonObject;
+  defaultConfig?: JsonObject;
 }
 
 export interface AdminSkillUpdateInput extends AdminSkillUpdateRequest {
@@ -222,8 +222,8 @@ export interface AdminSkillUpdateInput extends AdminSkillUpdateRequest {
   currency?: string;
   tags?: string[];
   capabilities?: string[];
-  configSchema?: Record<string, unknown>;
-  defaultConfig?: Record<string, unknown>;
+  configSchema?: JsonObject;
+  defaultConfig?: JsonObject;
 }
 
 export interface AdminSkillAsset extends AdminSkillAssetItem {
@@ -343,32 +343,70 @@ export interface AdminSkillArtifactUpdateInput extends AdminSkillArtifactUpdateR
   deprecatedAt?: string | null;
 }
 
+export interface AdminSkillListInput {
+  searchQuery?: unknown;
+  marketStatus?: SkillMarketStatus;
+  reviewStatus?: SkillReviewStatus;
+  visibility?: SkillVisibility;
+  enabled?: boolean;
+  categoryId?: unknown;
+  page?: unknown;
+  pageSize?: unknown;
+}
+
+export interface AdminSkillPackageListInput {
+  searchQuery?: unknown;
+  enabled?: boolean;
+  categoryId?: unknown;
+  page?: unknown;
+  pageSize?: unknown;
+}
+
+interface AdminSkillListSdkParams {
+  q?: string;
+  marketStatus?: SkillMarketStatus;
+  reviewStatus?: SkillReviewStatus;
+  visibility?: SkillVisibility;
+  enabled?: boolean;
+  categoryId?: string;
+  page?: number;
+  pageSize?: number;
+}
+
+interface AdminSkillPackageListSdkParams {
+  q?: string;
+  enabled?: boolean;
+  categoryId?: string;
+  page?: number;
+  pageSize?: number;
+}
+
 export class AdminSkillService {
   static async fetchSkillCategories(): Promise<AdminSkillCategory[]> {
-    const result = await getClawRouterBackendSdkClient().skill.fetchSkillCategories();
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.list();
     ensurePlusApiSuccess(result, 'Failed to fetch skill categories');
     return readRequiredApiItems(result, 'Failed to fetch skill categories')
       .map(normalizeSkillCategory);
   }
 
   static async createSkillCategory(input: AdminSkillCategoryCreateInput): Promise<AdminSkillCategory> {
-    const result = await getClawRouterBackendSdkClient().skill.createSkillCategory(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.categories.create(
       normalizeCreateCategoryRequest(input),
-      requestToken('admin-skill-category-create'),
+      createRequestParams('admin-skill-category-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to create skill category');
     return normalizeSkillCategory(readRequiredApiItem(result, 'Created skill category response is missing data'));
   }
 
-  static async fetchSkillPackages(query: AdminSkillPackageListRequest = {}): Promise<AdminSkillPackage[]> {
-    const result = await getClawRouterBackendSdkClient().skill.fetchSkillPackages(normalizePackageListRequest(query));
+  static async fetchSkillPackages(query: AdminSkillPackageListInput = {}): Promise<AdminSkillPackage[]> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.list(normalizePackageListRequest(query));
     ensurePlusApiSuccess(result, 'Failed to fetch skill packages');
     return readRequiredApiItems(result, 'Failed to fetch skill packages')
       .map(normalizeSkillPackage);
   }
 
   static async getSkillPackage(packageId: string): Promise<AdminSkillPackage> {
-    const result = await getClawRouterBackendSdkClient().skill.getSkillPackage(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.retrieve(
       requiredSafePathSegment(packageId, 'packageId'),
     );
     ensurePlusApiSuccess(result, 'Failed to fetch skill package');
@@ -376,26 +414,26 @@ export class AdminSkillService {
   }
 
   static async createSkillPackage(input: AdminSkillPackageCreateInput): Promise<AdminSkillPackage> {
-    const result = await getClawRouterBackendSdkClient().skill.createSkillPackage(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.create(
       normalizeCreatePackageRequest(input),
-      requestToken('admin-skill-package-create'),
+      createRequestParams('admin-skill-package-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to create skill package');
     return normalizeSkillPackage(readRequiredApiItem(result, 'Created skill package response is missing data'));
   }
 
   static async updateSkillPackage(packageId: string, input: AdminSkillPackageUpdateInput): Promise<AdminSkillPackage> {
-    const result = await getClawRouterBackendSdkClient().skill.updateSkillPackage(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.update(
       requiredSafePathSegment(packageId, 'packageId'),
       normalizeUpdatePackageRequest(input),
-      requestToken('admin-skill-package-update'),
+      createRequestParams('admin-skill-package-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update skill package');
     return normalizeSkillPackage(readRequiredApiItem(result, 'Updated skill package response is missing data'));
   }
 
   static async deleteSkillPackage(packageId: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().skill.deleteSkillPackage(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.delete(
       requiredSafePathSegment(packageId, 'packageId'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete skill package');
@@ -403,34 +441,32 @@ export class AdminSkillService {
   }
 
   static async enableSkillPackage(packageId: string): Promise<AdminSkillPackage> {
-    const result = await getClawRouterBackendSdkClient().skill.enableSkillPackage(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.enable(
       requiredSafePathSegment(packageId, 'packageId'),
-      undefined,
-      requestToken('admin-skill-package-enable'),
+      createRequestParams('admin-skill-package-enable'),
     );
     ensurePlusApiSuccess(result, 'Failed to enable skill package');
     return normalizeSkillPackage(readRequiredApiItem(result, 'Enabled skill package response is missing data'));
   }
 
   static async disableSkillPackage(packageId: string): Promise<AdminSkillPackage> {
-    const result = await getClawRouterBackendSdkClient().skill.disableSkillPackage(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.package.disable(
       requiredSafePathSegment(packageId, 'packageId'),
-      undefined,
-      requestToken('admin-skill-package-disable'),
+      createRequestParams('admin-skill-package-disable'),
     );
     ensurePlusApiSuccess(result, 'Failed to disable skill package');
     return normalizeSkillPackage(readRequiredApiItem(result, 'Disabled skill package response is missing data'));
   }
 
-  static async fetchSkills(query: AdminSkillListRequest = {}): Promise<AdminSkill[]> {
-    const result = await getClawRouterBackendSdkClient().skill.fetchSkills(normalizeListRequest(query));
+  static async fetchSkills(query: AdminSkillListInput = {}): Promise<AdminSkill[]> {
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.list(normalizeListRequest(query));
     ensurePlusApiSuccess(result, 'Failed to fetch skills');
     return readRequiredApiItems(result, 'Failed to fetch skills')
       .map(normalizeSkill);
   }
 
   static async getSkill(skillId: string): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.getSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.retrieve(
       requiredSafePathSegment(skillId, 'skillId'),
     );
     ensurePlusApiSuccess(result, 'Failed to fetch skill');
@@ -438,26 +474,26 @@ export class AdminSkillService {
   }
 
   static async createSkill(input: AdminSkillCreateInput): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.createSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.create(
       normalizeCreateSkillRequest(input),
-      requestToken('admin-skill-create'),
+      createRequestParams('admin-skill-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to create skill');
     return normalizeSkill(readRequiredApiItem(result, 'Created skill response is missing data'));
   }
 
   static async updateSkill(skillId: string, input: AdminSkillUpdateInput): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.updateSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.update(
       requiredSafePathSegment(skillId, 'skillId'),
       normalizeUpdateSkillRequest(input),
-      requestToken('admin-skill-update'),
+      createRequestParams('admin-skill-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update skill');
     return normalizeSkill(readRequiredApiItem(result, 'Updated skill response is missing data'));
   }
 
   static async deleteSkill(skillId: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().skill.deleteSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.delete(
       requiredSafePathSegment(skillId, 'skillId'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete skill');
@@ -465,67 +501,63 @@ export class AdminSkillService {
   }
 
   static async enableSkill(skillId: string): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.enableSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.enable(
       requiredSafePathSegment(skillId, 'skillId'),
-      undefined,
-      requestToken('admin-skill-enable'),
+      createRequestParams('admin-skill-enable'),
     );
     ensurePlusApiSuccess(result, 'Failed to enable skill');
     return normalizeSkill(readRequiredApiItem(result, 'Enabled skill response is missing data'));
   }
 
   static async disableSkill(skillId: string): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.disableSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.disable(
       requiredSafePathSegment(skillId, 'skillId'),
-      undefined,
-      requestToken('admin-skill-disable'),
+      createRequestParams('admin-skill-disable'),
     );
     ensurePlusApiSuccess(result, 'Failed to disable skill');
     return normalizeSkill(readRequiredApiItem(result, 'Disabled skill response is missing data'));
   }
 
   static async publishSkill(skillId: string): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.publishSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.publish(
       requiredSafePathSegment(skillId, 'skillId'),
-      undefined,
-      requestToken('admin-skill-publish'),
+      createRequestParams('admin-skill-publish'),
     );
     ensurePlusApiSuccess(result, 'Failed to publish skill');
     return normalizeSkill(readRequiredApiItem(result, 'Published skill response is missing data'));
   }
 
   static async offlineSkill(skillId: string): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.offlineSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.unpublish(
       requiredSafePathSegment(skillId, 'skillId'),
-      undefined,
-      requestToken('admin-skill-offline'),
+      createRequestParams('admin-skill-offline'),
     );
     ensurePlusApiSuccess(result, 'Failed to offline skill');
     return normalizeSkill(readRequiredApiItem(result, 'Offline skill response is missing data'));
   }
 
   static async approveSkill(skillId: string, reviewComment?: string): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.approveSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.review.approve(
       requiredSafePathSegment(skillId, 'skillId'),
       normalizeReviewRequest({ reviewComment }),
-      requestToken('admin-skill-review-approve'),
+      createRequestParams('admin-skill-review-approve'),
     );
     ensurePlusApiSuccess(result, 'Failed to approve skill');
     return normalizeSkill(readRequiredApiItem(result, 'Approved skill response is missing data'));
   }
 
   static async rejectSkill(skillId: string, reviewComment?: string): Promise<AdminSkill> {
-    const result = await getClawRouterBackendSdkClient().skill.rejectSkill(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.review.reject(
       requiredSafePathSegment(skillId, 'skillId'),
       normalizeReviewRequest({ reviewComment }),
-      requestToken('admin-skill-review-reject'),
+      createRequestParams('admin-skill-review-reject'),
     );
     ensurePlusApiSuccess(result, 'Failed to reject skill');
     return normalizeSkill(readRequiredApiItem(result, 'Rejected skill response is missing data'));
   }
 
   static async fetchSkillAssets(skillId: string): Promise<AdminSkillAsset[]> {
-    const result = await getClawRouterBackendSdkClient().skill.fetchSkillAssets(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.list(
       requiredSafePathSegment(skillId, 'skillId'),
     );
     ensurePlusApiSuccess(result, 'Failed to fetch skill assets');
@@ -534,7 +566,7 @@ export class AdminSkillService {
   }
 
   static async getSkillAsset(skillId: string, assetId: string): Promise<AdminSkillAsset> {
-    const result = await getClawRouterBackendSdkClient().skill.getSkillAsset(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.retrieve(
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(assetId, 'assetId'),
     );
@@ -543,38 +575,38 @@ export class AdminSkillService {
   }
 
   static async createSkillAsset(skillId: string, input: AdminSkillAssetCreateInput): Promise<AdminSkillAsset> {
-    const result = await getClawRouterBackendSdkClient().skill.createSkillAsset(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.create(
       requiredSafePathSegment(skillId, 'skillId'),
       normalizeCreateAssetRequest(input),
-      requestToken('admin-skill-asset-create'),
+      createRequestParams('admin-skill-asset-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to create skill asset');
     return normalizeSkillAsset(readRequiredApiItem(result, 'Created skill asset response is missing data'));
   }
 
   static async updateSkillAsset(skillId: string, assetId: string, input: AdminSkillAssetUpdateInput): Promise<AdminSkillAsset> {
-    const result = await getClawRouterBackendSdkClient().skill.updateSkillAsset(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.update(
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(assetId, 'assetId'),
       normalizeUpdateAssetRequest(input),
-      requestToken('admin-skill-asset-update'),
+      createRequestParams('admin-skill-asset-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update skill asset');
     return normalizeSkillAsset(readRequiredApiItem(result, 'Updated skill asset response is missing data'));
   }
 
   static async deleteSkillAsset(skillId: string, assetId: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().skill.deleteSkillAsset(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.assets.delete(
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(assetId, 'assetId'),
-      requestToken('admin-skill-asset-delete'),
+      createRequestParams('admin-skill-asset-delete'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete skill asset');
     return readBoolean(readApiRecord(result), 'deleted', false);
   }
 
   static async fetchSkillArtifacts(skillId: string): Promise<AdminSkillArtifact[]> {
-    const result = await getClawRouterBackendSdkClient().skill.fetchSkillArtifacts(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.list(
       requiredSafePathSegment(skillId, 'skillId'),
     );
     ensurePlusApiSuccess(result, 'Failed to fetch skill artifacts');
@@ -583,7 +615,7 @@ export class AdminSkillService {
   }
 
   static async getSkillArtifact(skillId: string, artifactId: string): Promise<AdminSkillArtifact> {
-    const result = await getClawRouterBackendSdkClient().skill.getSkillArtifact(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.retrieve(
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(artifactId, 'artifactId'),
     );
@@ -592,31 +624,31 @@ export class AdminSkillService {
   }
 
   static async createSkillArtifact(skillId: string, input: AdminSkillArtifactCreateInput): Promise<AdminSkillArtifact> {
-    const result = await getClawRouterBackendSdkClient().skill.createSkillArtifact(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.create(
       requiredSafePathSegment(skillId, 'skillId'),
       normalizeCreateArtifactRequest(input),
-      requestToken('admin-skill-artifact-create'),
+      createRequestParams('admin-skill-artifact-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to create skill artifact');
     return normalizeSkillArtifact(readRequiredApiItem(result, 'Created skill artifact response is missing data'));
   }
 
   static async updateSkillArtifact(skillId: string, artifactId: string, input: AdminSkillArtifactUpdateInput): Promise<AdminSkillArtifact> {
-    const result = await getClawRouterBackendSdkClient().skill.updateSkillArtifact(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.update(
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(artifactId, 'artifactId'),
       normalizeUpdateArtifactRequest(input),
-      requestToken('admin-skill-artifact-update'),
+      createRequestParams('admin-skill-artifact-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update skill artifact');
     return normalizeSkillArtifact(readRequiredApiItem(result, 'Updated skill artifact response is missing data'));
   }
 
   static async deleteSkillArtifact(skillId: string, artifactId: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().skill.deleteSkillArtifact(
+    const result = await getClawRouterBackendSdkClient().ecosystem.skills.artifacts.delete(
       requiredSafePathSegment(skillId, 'skillId'),
       requiredSafePathSegment(artifactId, 'artifactId'),
-      requestToken('admin-skill-artifact-delete'),
+      createRequestParams('admin-skill-artifact-delete'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete skill artifact');
     return readBoolean(readApiRecord(result), 'deleted', false);
@@ -774,11 +806,11 @@ function normalizeCreateCategoryRequest(input: AdminSkillCategoryCreateInput): A
   };
 }
 
-function normalizeListRequest(input: AdminSkillListRequest): AdminSkillListRequest {
-  const request: AdminSkillListRequest = {};
-  const keyword = optionalText(input.keyword, 'keyword', 128);
-  if (keyword) {
-    request.keyword = keyword;
+function normalizeListRequest(input: AdminSkillListInput): AdminSkillListSdkParams {
+  const request: AdminSkillListSdkParams = {};
+  const searchQuery = optionalText(input.searchQuery, 'searchQuery', 128);
+  if (searchQuery) {
+    request.q = searchQuery;
   }
   if (input.marketStatus) {
     request.marketStatus = readMarketStatus(input.marketStatus);
@@ -796,8 +828,8 @@ function normalizeListRequest(input: AdminSkillListRequest): AdminSkillListReque
   if (categoryId) {
     request.categoryId = categoryId;
   }
-  if (input.pageNo !== undefined) {
-    request.pageNo = positiveInteger(input.pageNo, 'pageNo', 1_000_000);
+  if (input.page !== undefined) {
+    request.page = positiveInteger(input.page, 'page', 1_000_000);
   }
   if (input.pageSize !== undefined) {
     request.pageSize = positiveInteger(input.pageSize, 'pageSize', 200);
@@ -805,11 +837,11 @@ function normalizeListRequest(input: AdminSkillListRequest): AdminSkillListReque
   return request;
 }
 
-function normalizePackageListRequest(input: AdminSkillPackageListRequest): AdminSkillPackageListRequest {
-  const request: AdminSkillPackageListRequest = {};
-  const keyword = optionalText(input.keyword, 'keyword', 128);
-  if (keyword) {
-    request.keyword = keyword;
+function normalizePackageListRequest(input: AdminSkillPackageListInput): AdminSkillPackageListSdkParams {
+  const request: AdminSkillPackageListSdkParams = {};
+  const searchQuery = optionalText(input.searchQuery, 'searchQuery', 128);
+  if (searchQuery) {
+    request.q = searchQuery;
   }
   if (typeof input.enabled === 'boolean') {
     request.enabled = input.enabled;
@@ -818,8 +850,8 @@ function normalizePackageListRequest(input: AdminSkillPackageListRequest): Admin
   if (categoryId) {
     request.categoryId = categoryId;
   }
-  if (input.pageNo !== undefined) {
-    request.pageNo = positiveInteger(input.pageNo, 'pageNo', 1_000_000);
+  if (input.page !== undefined) {
+    request.page = positiveInteger(input.page, 'page', 1_000_000);
   }
   if (input.pageSize !== undefined) {
     request.pageSize = positiveInteger(input.pageSize, 'pageSize', 200);
@@ -1353,17 +1385,14 @@ function optionalFormBoolean(form: FormData, key: string): boolean | undefined {
   throw new Error(`${key} must be a boolean`);
 }
 
-function optionalJsonObjectFormField(form: FormData, key: string): Record<string, unknown> | undefined {
+function optionalJsonObjectFormField(form: FormData, key: string): JsonObject | undefined {
   const value = optionalFormText(form, key, 65_536);
   if (value === undefined) {
     return undefined;
   }
   try {
     const parsed: unknown = JSON.parse(value);
-    if (!isRecord(parsed)) {
-      throw new Error(`${key} must be a JSON object`);
-    }
-    return parsed;
+    return normalizeJsonObject(parsed, key);
   } catch (error) {
     if (error instanceof Error && error.message === `${key} must be a JSON object`) {
       throw error;
@@ -1560,14 +1589,8 @@ function validateChecksumHash(value: string): void {
   }
 }
 
-function normalizeObject(value: unknown, fieldName: string): Record<string, unknown> {
-  if (value === undefined) {
-    return {};
-  }
-  if (!isRecord(value)) {
-    throw new Error(`${fieldName} must be a JSON object`);
-  }
-  return value;
+function normalizeObject(value: unknown, fieldName: string): JsonObject {
+  return normalizeJsonObject(value, fieldName);
 }
 
 function positiveInteger(value: unknown, fieldName: string, maxValue: number): number {
@@ -1649,9 +1672,9 @@ function assignOptionalCategoryType(target: AdminSkillCategoryCreateInput, value
   target.type = value;
 }
 
-function readRecord(record: ApiRecord, key: string): Record<string, unknown> {
+function readRecord(record: ApiRecord, key: string): JsonObject {
   const value = record[key];
-  return isRecord(value) ? value : {};
+  return isRecord(value) ? normalizeJsonObject(value, key) : {};
 }
 
 function readRequiredRecord(value: unknown, message: string): ApiRecord {
@@ -1670,10 +1693,6 @@ function trimDecimal(value: string): string {
   const whole = wholeRaw.replace(/^0+(?=\d)/, '') || '0';
   const fraction = fractionRaw.replace(/0+$/g, '');
   return fraction ? `${whole}.${fraction}` : whole;
-}
-
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
 }
 
 function pruneUndefined<T extends Record<string, unknown>>(value: T): T {

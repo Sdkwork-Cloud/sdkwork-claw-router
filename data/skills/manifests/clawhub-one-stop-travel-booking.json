@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58729,
+  "uuid": "skill-clawhub-one-stop-travel-booking",
+  "skillKey": "clawhub-one-stop-travel-booking",
+  "name": "一站式旅行预订",
+  "summary": "Booking.com国际酒店预订助手，支持全球酒店搜索、房型查询、价格对比、预订管理。Invoke when user wants to search international hotels, book hotels on Booking.com, or manage Booking.com reservat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_stop_travel_booking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赵瑞宇",
+      "features": [
+        "Booking.com国际酒店预订助手，支持全球酒店搜索、房型查询、价格对比、预订管理。Invoke when user wants to search international hote."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/one-stop-travel-booking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266894511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "one-stop-travel-booking",
+      "url": "https://clawhub.ai/skills/one-stop-travel-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-stop-travel-booking",
+    "url": "https://clawhub.ai/skills/one-stop-travel-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-stop-travel-booking-e91dba8069d74cd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/one-stop-travel-booking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-one-stop-travel-booking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d42f88da7a7df6005528bc6f8a1270c792d46834f05c468033dfb7f3a86281d",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:56:54.922Z"
+}

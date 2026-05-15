@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8895,
+  "uuid": "skill-clawhub-report-generator",
+  "skillKey": "clawhub-report-generator",
+  "name": "Generate responsive HTML pages suitable for reporting, supporting resizing and screenshot capture.",
+  "summary": "Generates a structured report HTML based on a specific template. Invoke when user wants to create a report, slide, or summary card from raw content.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Juguangyuan",
+      "features": [
+        "Generates a structured report HTML based on a specific template",
+        "Invoke when user wants to create a report, slide, or summary card from raw content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/report-generator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224916817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "report-generator",
+      "url": "https://clawhub.ai/skills/report-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-generator",
+    "url": "https://clawhub.ai/skills/report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-generator-78bcca60d79068d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/report-generator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-report-generator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7c237283ed40728bcc4c3bd2f1b27eaa7f72d1a8c1a32d131361721a8f814f9",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T13:34:02.000Z"
+}

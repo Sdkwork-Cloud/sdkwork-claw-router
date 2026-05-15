@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-for-win@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_for_win",
+  "skill": {
+    "id": 61138,
+    "skillKey": "clawhub-hermes-for-win",
+    "name": "Hermes For Win"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-for-win",
+    "url": "https://clawhub.ai/skills/hermes-for-win",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-for-win-b0642b3d75910c86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键安装、部署和管理 hermes Agent 和 hermes-webui 在 Windows 系统上，包括开机自启动、后台常驻和自动更新功能。调用时机：当 Windows 用户想要快速安装和配置 hermes 生态时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardwason",
+      "userId": "s177q4wcvafq6fzfkhk2g3cwth83y01d",
+      "displayName": "AI花生",
+      "image": "https://avatars.githubusercontent.com/u/47667850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776493264719,
+      "changelog": "## v1.1.0 - Fix Port Consistency and Documentation\n\n### 🔧 What's Fixed\n- Port consistency: Changed default port from 8788  8787 (matches hermes-webui default)\n- WSL2 dependency: Added clear documentation that WSL2 is required\n- Third-party project: Added note that this is a third-party installer, not official\n\n### 📦 GitHub Release\nAlso available on GitHub: https://github.com/EdwardWason/hermes-for-win/releases/tag/v1.1.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c8ed63499e49133cfb7dfc032e0db0b454619ad72c10c58434a2e117e66aaf4"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59456,
+  "uuid": "skill-clawhub-1688-to-ozon",
+  "skillKey": "clawhub-1688-to-ozon",
+  "name": "1688 To Ozon",
+  "summary": "1688 商品自动采集并上传到 OZON 平台",
+  "version": "1.0.71",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_to_ozon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "z4201812",
+      "features": [
+        "1688 商品自动采集并上传到 OZON 平台"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1688-to-ozon@1.0.71",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44394501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1688-to-ozon",
+      "url": "https://clawhub.ai/skills/1688-to-ozon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-to-ozon",
+    "url": "https://clawhub.ai/skills/1688-to-ozon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-to-ozon-c2ca008ca8af8318.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1688-to-ozon@1.0.71",
+      "artifactUrl": "data/skills/artifacts/clawhub-1688-to-ozon-1.0.71.json",
+      "version": "1.0.71",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f222c69f8448a13f52c4182020f3bf133e9f1df14b96d98eeddaaa9b4be1d012",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T01:10:04.604Z"
+}

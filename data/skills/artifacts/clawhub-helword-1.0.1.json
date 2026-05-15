@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/helword@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helword",
+  "skill": {
+    "id": 28003,
+    "skillKey": "clawhub-helword",
+    "name": "helword"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helword",
+    "url": "https://clawhub.ai/skills/helword",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helword-4ce59a0ff71e3ac9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A simple hello world skill that demonstrates basic skill structure. When users ask for a greeting, it responds with a friendly hello message."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yehan5555",
+      "userId": "publishers:yehan5555",
+      "displayName": "yehan5555",
+      "image": "https://avatars.githubusercontent.com/u/153287575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773121463048,
+      "changelog": "- Added new usage examples: \"Hello world\" and \"Introduce yourself\" to clarify trigger coverage.\n- No changes to core logic or triggers; documentation was expanded for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:baa9592814166a72c1190cd2f7ed39081496b1468f36d9b8424e9ca6bcac1be7"
+}

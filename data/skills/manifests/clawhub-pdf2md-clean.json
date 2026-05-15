@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28897,
+  "uuid": "skill-clawhub-pdf2md-clean",
+  "skillKey": "clawhub-pdf2md-clean",
+  "name": "PDF to Markdown",
+  "summary": "Convert PDF to Markdown using local processing. No external API calls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf2md_clean",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lifei68801",
+      "features": [
+        "Convert PDF to Markdown using local processing",
+        "No external API calls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf2md-clean@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130719648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf2md-clean",
+      "url": "https://clawhub.ai/skills/pdf2md-clean"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf2md-clean",
+    "url": "https://clawhub.ai/skills/pdf2md-clean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf2md-clean-0a9e9e6ecf4c5b76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf2md-clean@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf2md-clean-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f1bb53651f14f5607e02a6f91ec9ee4e55ce724926fad34b13475b3f7ec2334",
+      "artifactSizeBytes": 1789
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:59:52.091Z"
+}

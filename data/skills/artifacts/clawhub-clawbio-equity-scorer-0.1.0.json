@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbio-equity-scorer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbio_equity_scorer",
+  "skill": {
+    "id": 26060,
+    "skillKey": "clawhub-clawbio-equity-scorer",
+    "name": "ClawBio Equity Scorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbio-equity-scorer",
+    "url": "https://clawhub.ai/skills/clawbio-equity-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbio-equity-scorer-c97e95fb2d319df5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compute HEIM diversity and equity metrics from VCF or ancestry data. Generates heterozygosity, FST, PCA plots, and a composite HEIM Equity Score with markdow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manuelcorpas",
+      "userId": "publishers:manuelcorpas",
+      "displayName": "manuelcorpas",
+      "image": "https://avatars.githubusercontent.com/u/383303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772042684553,
+      "changelog": "Initial release: HEIM diversity metrics from VCF/ancestry data",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9548d9c748cd28fbc702da4ab5ba3d4605a276a7cfbba9d85454bdb9c62e920e"
+}

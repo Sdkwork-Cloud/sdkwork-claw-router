@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mytest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mytest",
+  "skill": {
+    "id": 72431,
+    "skillKey": "clawhub-mytest",
+    "name": "mytest1111111"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mytest",
+    "url": "https://clawhub.ai/skills/mytest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mytest-f68d27da17d9fd49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高中地理提分专项技能，提供精准答疑、教材查询、工具包、错题管理、真题解析、提分技巧等功能。当用户询问高中地理相关的知识点、题目解析、教材内容、公式图表、错题整理、真题解析、提分技巧等内容时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyswimmer",
+      "userId": "publishers:flyswimmer",
+      "displayName": "flyswimmer",
+      "image": "https://avatars.githubusercontent.com/u/141317710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773378044170,
+      "changelog": "geography-score-improvement 1.0.0 — 高中地理提分技能首次发布\n\n- 提供高中地理知识点答疑、教材目录查询、基础工具包和错题收录等全学习场景免费功能\n- 支持文字、拍照、语音多种提问方式，自动归类题目及知识点\n- 免费体验近3年高考真题题库、基础答题技巧和高频易错点清单\n- 涵盖全国各主流教材版本和官方教学大纲内容查询\n- 明确区分免费基础功能与高级付费内容，方便用户自主选择",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac72cb1ab72c67d5ac9bf66e1296cae4569ea9e3a99b49dde8230bf0e9fd618d"
+}

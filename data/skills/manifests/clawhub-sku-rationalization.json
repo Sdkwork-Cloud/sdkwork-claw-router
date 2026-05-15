@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46872,
+  "uuid": "skill-clawhub-sku-rationalization",
+  "skillKey": "clawhub-sku-rationalization",
+  "name": "SKU Rationalization",
+  "summary": "Identify underperforming SKUs, recommend discontinuations, and optimize product catalog for maximum profitability.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sku_rationalization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Identify underperforming SKUs, recommend discontinuations, and optimize product catalog for max."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sku-rationalization@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sku-rationalization",
+      "url": "https://clawhub.ai/skills/sku-rationalization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sku-rationalization",
+    "url": "https://clawhub.ai/skills/sku-rationalization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sku-rationalization-90de0df81530fbe8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sku-rationalization@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sku-rationalization-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e9df5d24a485e3a247e1569553f0955c5475b092aad76e07479d62047e0b2da",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T14:36:33.459Z"
+}

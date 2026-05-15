@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64666,
+  "uuid": "skill-clawhub-insurance-actuarial-python",
+  "skillKey": "clawhub-insurance-actuarial-python",
+  "name": "Insurance Actuarial Python",
+  "summary": "使用奇异谱分析和平稳自助法对利率时间序列进行分解与统计推断，构建 NSS 曲线模型并校准利率衍生品参数。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_actuarial_python",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "使用奇异谱分析和平稳自助法对利率时间序列进行分解与统计推断，构建 NSS 曲线模型并校准利率衍生品参数。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insurance-actuarial-python@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insurance-actuarial-python",
+      "url": "https://clawhub.ai/skills/insurance-actuarial-python"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-actuarial-python",
+    "url": "https://clawhub.ai/skills/insurance-actuarial-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-actuarial-python-2bc55ce2e19abd03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insurance-actuarial-python@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-insurance-actuarial-python-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1883d2e818635e7487be4efc68ced2a9a109912b3898637369fb98c81fba8e2",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:27:37.561Z"
+}

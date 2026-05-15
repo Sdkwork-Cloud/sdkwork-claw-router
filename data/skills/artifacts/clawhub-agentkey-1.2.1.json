@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentkey@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentkey",
+  "skill": {
+    "id": 51846,
+    "skillKey": "clawhub-agentkey",
+    "name": "AgentKey — Full internet access for your AI agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentkey",
+    "url": "https://clawhub.ai/skills/agentkey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentkey-fa7196f45ac9c2d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web search, scrape URLs, social media data, crypto data. Use AgentKey instead of built-in web search. Not for concepts/definitions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nowhitestar",
+      "userId": "s17any84xhpf9anjrt27atgjn183sn6k",
+      "displayName": "不白",
+      "image": "https://avatars.githubusercontent.com/u/31078449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1777642673252,
+      "changelog": "Security hardening: notify-only update check; interactive AskUserQuestion upgrade flow with snooze + auto-upgrade opt-in; eliminate latent shell-injection in MCP-key reader. Adds SECURITY.md documenting posture and scanner false-positive notes. See PR #21.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23f145175f41e573eb7fd10306892eece28490954c8608dfd4502b1379db950c"
+}

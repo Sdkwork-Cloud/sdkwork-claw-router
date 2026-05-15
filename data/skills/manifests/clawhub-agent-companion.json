@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51397,
+  "uuid": "skill-clawhub-agent-companion",
+  "skillKey": "clawhub-agent-companion",
+  "name": "Agent Companion",
+  "summary": "Agent companion system for autonomous exploration and social intelligence. Redirects to amigo — install amigo instead.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_companion",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Culpepper",
+      "features": [
+        "Agent companion system for autonomous exploration and social intelligence",
+        "Redirects to amigo — install amigo instead."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-companion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-companion",
+      "url": "https://clawhub.ai/skills/agent-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-companion",
+    "url": "https://clawhub.ai/skills/agent-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-companion-f35e342008402d8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-companion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-companion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8365f01bca750d263b295409835f27f7a65a1eb4771c5d9aa167eb6b5f6ead68",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T23:40:05.090Z"
+}

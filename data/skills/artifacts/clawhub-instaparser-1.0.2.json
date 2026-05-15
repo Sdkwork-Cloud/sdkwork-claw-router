@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instaparser@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instaparser",
+  "skill": {
+    "id": 28532,
+    "skillKey": "clawhub-instaparser",
+    "name": "Instaparser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instaparser",
+    "url": "https://clawhub.ai/skills/instaparser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instaparser-5e3891f2a4dc5a86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Instaparser API to parse articles, PDFs, and generate summaries from URLs. Trigger when users want to extract content from web pages, parse PDF docum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donohue",
+      "userId": "s17bnp2443xhpf8gn33zp1a1j983jeqw",
+      "displayName": "Brian Donohue",
+      "image": "https://avatars.githubusercontent.com/u/1069050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774469037390,
+      "changelog": "- Added explicit metadata indicating that the environment variable INSTAPARSER_API_KEY is required and is the primary configuration key.\n- No changes to functionality or interface.  \n- Documentation updated to include metadata section for integration purposes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7496d13ef7d24a8d0ff90d193d7eb59c16aad59cc2fd2f465b846227be97bc6"
+}

@@ -1,11 +1,10 @@
-import type { GenerationHistoryItem } from '@sdkwork/clawrouter-app-sdk';
 import {
   isRecord,
   readRequiredString,
   readStringArray,
   type ApiRecord,
 } from 'sdkwork-claw-router-commons/runtime';
-import type { PlaygroundHistoryItem, PlaygroundMedia } from './playgroundService';
+import type { PlaygroundHistoryItem, PlaygroundMedia } from './playgroundTypes.ts';
 
 export function mapGenerationHistoryItems(
   items: unknown[],

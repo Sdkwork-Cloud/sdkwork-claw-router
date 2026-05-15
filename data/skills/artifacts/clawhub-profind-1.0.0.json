@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/profind@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.profind",
+  "skill": {
+    "id": 64619,
+    "skillKey": "clawhub-profind",
+    "name": "ProFind"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "profind",
+    "url": "https://clawhub.ai/skills/profind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/profind-d4116dfa076e3e3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ProFind macOS 文件搜索技能 — 毫秒级索引搜索、文件内容全文检索、按大小/日期/类型筛选、批量操作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steve-shi-web",
+      "userId": "s17d6f9pb0rf90ncgwhrpmgznx83ztnt",
+      "displayName": "Steve-Shi-Web",
+      "image": "https://avatars.githubusercontent.com/u/57715648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775618347006,
+      "changelog": "Initial release — ProFind macOS file search with AppleScript, Shell hooks, URL scheme and HTTP API support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:757d8c078f37097158498b2c46e232d929bd517e3d3ca766724cf4a7a5b7af0a"
+}

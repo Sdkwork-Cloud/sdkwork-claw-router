@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcd-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcd_cn",
+  "skill": {
+    "id": 10445,
+    "skillKey": "clawhub-mcd-cn",
+    "name": "McDonald's China"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcd-cn",
+    "url": "https://clawhub.ai/skills/mcd-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcd-cn-7db9f0b85a491955.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query McDonald's China MCP server via the mcd-cn CLI for campaign calendars, coupons, and auto-claiming. Use for human-friendly coupon lookup or JSON output for scripts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanchen01",
+      "userId": "publishers:ryanchen01",
+      "displayName": "ryanchen01",
+      "image": "https://avatars.githubusercontent.com/u/31496323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2569,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768636172271,
+      "changelog": "Initial release of mcd-cn:\n\n- Query McDonald's China MCP server for campaign calendars and coupon information via CLI.\n- Human-readable output by default; supports JSON output for scripting.\n- Features commands for viewing campaign calendars, available coupons, auto-claiming, and more.\n- Requires MCP token (`MCDCN_MCP_TOKEN`) for authentication.\n- Rate limited to 600 requests/minute per token.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8eb14eabc85ac6e147fb936807fab69fc91c63149037cebb4c7f12b24e3f3703"
+}

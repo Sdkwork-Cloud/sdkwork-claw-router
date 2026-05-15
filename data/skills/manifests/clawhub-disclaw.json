@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18873,
+  "uuid": "skill-clawhub-disclaw",
+  "skillKey": "clawhub-disclaw",
+  "name": "Disclaw",
+  "summary": "Manage Discord workspace structure and OpenClaw routing as code. Use when creating/renaming/deleting Discord channels, categories, threads, or managing agent...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ofan",
+      "features": [
+        "Manage Discord workspace structure and OpenClaw routing as code",
+        "Use when creating/renaming/deleting Discord channels, categories, threads, or managing agent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disclaw@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/319679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disclaw",
+      "url": "https://clawhub.ai/skills/disclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disclaw",
+    "url": "https://clawhub.ai/skills/disclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disclaw-977b1751634abba1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disclaw@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-disclaw-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f5dbc02938b4caec0ae390f938909bdbb5510abb024a78383bc7881cff37eea",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T08:00:16.660Z"
+}

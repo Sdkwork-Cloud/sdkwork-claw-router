@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/labor-solana-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.labor_solana_skill",
+  "skill": {
+    "id": 31567,
+    "skillKey": "clawhub-labor-solana-skill",
+    "name": "Labor Solana skill: Solana ecosystem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "labor-solana-skill",
+    "url": "https://clawhub.ai/skills/labor-solana-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/labor-solana-skill-cf41de05b1226181.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transfers native SOL on Solana to a recipient address using a funded signing key from environment configuration. Use when the user asks to send SOL, transfer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xxbrain01",
+      "userId": "s171ck0bdbh6y3nbyka8aqy12s83t1w2",
+      "displayName": "0xxbrain01",
+      "image": "https://avatars.githubusercontent.com/u/144876138?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774970087840,
+      "changelog": "update better",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa2a659bca7fb5eb6c22d75434d5ce83afd65947c5c32c11ac6f1b3c83670122"
+}

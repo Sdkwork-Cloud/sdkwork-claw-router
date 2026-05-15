@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vvvv-spreads@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvv_spreads",
+  "skill": {
+    "id": 56572,
+    "skillKey": "clawhub-vvvv-spreads",
+    "name": "Vvvv Spreads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvv-spreads",
+    "url": "https://clawhub.ai/skills/vvvv-spreads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvv-spreads-587d0ac4e624eff3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps write code using vvvv gamma's Spread<T> immutable collection type and SpreadBuilder<T>. Use when working with Spreads, SpreadBuilder, collections, arra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tebjan",
+      "userId": "publishers:tebjan",
+      "displayName": "Tebjan Halm",
+      "image": "https://avatars.githubusercontent.com/u/1094716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772750600848,
+      "changelog": "Improved skill descriptions: better triggering for HLSL/shaders, Spreads/collections, ImportAsIs/dotnet, VL packages, reactive channels. Fixed broken cross-skill reference in troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bcc74a95489f1eb34003bededc6183ed56349a0d528d0d44e9f84eb7657e3ff8"
+}

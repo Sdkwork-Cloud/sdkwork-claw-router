@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13260,
+  "uuid": "skill-clawhub-adwhiz",
+  "skillKey": "clawhub-adwhiz",
+  "name": "AdWhiz",
+  "summary": "Manage Google Ads & Meta (Facebook) Ads from your AI coding tool. 102 MCP tools for auditing, creating, and optimizing ad accounts using natural language.",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adwhiz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Orris",
+      "features": [
+        "Manage Google Ads & Meta (Facebook) Ads from your AI coding tool",
+        "102 MCP tools for auditing, creating, and optimizing ad accounts using natural language."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adwhiz@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/399680?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adwhiz",
+      "url": "https://clawhub.ai/skills/adwhiz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adwhiz",
+    "url": "https://clawhub.ai/skills/adwhiz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adwhiz-0260b35bd3116e4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adwhiz@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adwhiz-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1306461ddea03e0d5adf679944022c9a287aebde51e2f8ca99c5b7139fe5f814",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:05:14.573Z"
+}

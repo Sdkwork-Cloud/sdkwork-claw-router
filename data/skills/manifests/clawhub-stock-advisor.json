@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61893,
+  "uuid": "skill-clawhub-stock-advisor",
+  "skillKey": "clawhub-stock-advisor",
+  "name": "Stock Advisor Pro",
+  "summary": "你的私人 AI 投顾。提供 A 股个股深度多维分析、持仓管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daas.ai",
+      "features": [
+        "你的私人 AI 投顾。提供 A 股个股深度多维分析、持仓管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48641543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-advisor",
+      "url": "https://clawhub.ai/skills/stock-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-advisor",
+    "url": "https://clawhub.ai/skills/stock-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-advisor-83d64852d67dfd89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea11dac3aed9fda275f3809c6575a467c97e9834aa459d0e8a83ca9e7052496f",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T10:21:44.997Z"
+}

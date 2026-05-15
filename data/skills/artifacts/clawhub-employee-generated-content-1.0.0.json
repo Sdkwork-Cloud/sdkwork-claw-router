@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/employee-generated-content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.employee_generated_content",
+  "skill": {
+    "id": 29940,
+    "skillKey": "clawhub-employee-generated-content",
+    "name": "employee-generated-content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "employee-generated-content",
+    "url": "https://clawhub.ai/skills/employee-generated-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/employee-generated-content-d1a2a037422929c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to plan, implement, or optimize employee-generated content (EGC) or employee advocacy. Also use when the user mentions \"EGC,\" \"employee a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773742980443,
+      "changelog": "Automated batch sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eed49a0cee31bea5eeca35b9bd145cccc390cba8d714065e550c6f8a1b2084fe"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vistoya-fashion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vistoya_fashion",
+  "skill": {
+    "id": 36416,
+    "skillKey": "clawhub-vistoya-fashion",
+    "name": "vistoya fashion search and shopping"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vistoya-fashion",
+    "url": "https://clawhub.ai/skills/vistoya-fashion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vistoya-fashion-24562aaf431becd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and recommend real fashion products and brands across thousands of online stores via the Vistoya MCP. Use when the user wants to discover, compare, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vistoya",
+      "userId": "s179jgegvz3tggd8qq05b7chc98602ff",
+      "displayName": "Vistoya",
+      "image": "https://avatars.githubusercontent.com/u/275310955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777855853848,
+      "changelog": "- Initial release of vistoya-fashion-shop skill.\n- Enables searching and recommending real fashion products and brands from thousands of online stores via Vistoya MCP.\n- Supports natural-language queries, structured filters, similar-item lookup, multi-currency pricing, and direct merchant links.\n- Provides dedicated tools for product and brand discovery, as well as catalog-aware filtering.\n- Strict rules: no inventing product details, render API prices accurately, and always include merchant links for recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a0c28995c0fc3c91417f977005115078f9ea7e97a7549271783e55f96e31ea7"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29836,
+  "uuid": "skill-clawhub-workamajig",
+  "skillKey": "clawhub-workamajig",
+  "name": "Workamajig",
+  "summary": "Workamajig integration. Manage data, records, and automate workflows. Use when the user wants to interact with Workamajig data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workamajig",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Workamajig integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Workamajig data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workamajig@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workamajig",
+      "url": "https://clawhub.ai/skills/workamajig"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workamajig",
+    "url": "https://clawhub.ai/skills/workamajig",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workamajig-e7c589664ec34f41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workamajig@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-workamajig-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c5a0354d8111d34a338a62c7acf4057d337dc46a0316a78dd8fbdcaf53e5b5f",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:57.246Z"
+}

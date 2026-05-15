@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_summary",
+  "skill": {
+    "id": 67111,
+    "skillKey": "clawhub-bilibili-summary",
+    "name": "bilibili summary skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-summary",
+    "url": "https://clawhub.ai/skills/bilibili-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-summary-cc1598e2a7125c74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "处理 B 站（哔哩哔哩）视频字幕的完整工作流。能力包括：（1）引导用户扫码登录获取 Cookie；（2）自动获取视频字幕（优先 AI 字幕，自动回退 CC 字幕）；（3）生成视频内容摘要；（4）当用户询问\"某内容在哪个时间段\"时，从字幕文件中精准定位时间戳。当用户提供 B 站视频链接、BVID，或提到\"b站字幕\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baikemark",
+      "userId": "s174t9tps0jjtv9aatrb4hktzh83h3ar",
+      "displayName": "Mark",
+      "image": "https://avatars.githubusercontent.com/u/143090912?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774262625627,
+      "changelog": "bilibili-summary skill 1.0.0 — Initial release\n\n- Supports the complete workflow for handling Bilibili (哔哩哔哩) video subtitles, including user login via QR code, automatic subtitle fetching (AI/CC, with fallback), summary generation, and keyword time-stamp lookup.\n- Subtitles auto-cached locally; uses cache if available to save time and API calls.\n- Provides clear instructions and CLI scripts for cookie login, subtitle fetching, and time-stamp searching.\n- Designed to trigger for any request involving B 站视频/bilibili subtitles, summaries, or keyword location queries.\n- Pure Python, minimally dependent (requests needed; qrcode optional).\n- Gracefully handles missing/invalid cookies, videos with no subtitles, and network errors, with user guidance for each case.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:620342716fa21be97ce8e3895e1b6c32edcd4d2685db79ee0c257d439df74306"
+}

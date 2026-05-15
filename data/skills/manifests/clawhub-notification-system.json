@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29285,
+  "uuid": "skill-clawhub-notification-system",
+  "skillKey": "clawhub-notification-system",
+  "name": "Notification System",
+  "summary": "Manage outbound notifications across WhatsApp, Telegram, email. Handle templates, scheduling, delivery tracking, rate limiting.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notification_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "engibarian",
+      "features": [
+        "Manage outbound notifications across WhatsApp, Telegram, email",
+        "Handle templates, scheduling, delivery tracking, rate limiting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notification-system@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/453686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notification-system",
+      "url": "https://clawhub.ai/skills/notification-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notification-system",
+    "url": "https://clawhub.ai/skills/notification-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notification-system-e6c1da9f4f716d45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notification-system@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notification-system-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95de17ddea81c8f7ad6e244f28cd0a52273564b99973dd56f61c687eb09d1878",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T21:15:23.123Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71227,
+  "uuid": "skill-clawhub-berkeley",
+  "skillKey": "clawhub-berkeley",
+  "name": "Berkeley",
+  "summary": "提供加州大学伯克利分校的历史、学术优势、科研成就及与硅谷产业的紧密联系信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.berkeley",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供加州大学伯克利分校的历史、学术优势、科研成就及与硅谷产业的紧密联系信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/berkeley@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "berkeley",
+      "url": "https://clawhub.ai/skills/berkeley"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "berkeley",
+    "url": "https://clawhub.ai/skills/berkeley",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/berkeley-b07ec327d75c9759.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/berkeley@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-berkeley-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5064346954bd9afdc05c96c26b01460d6dee2a9a444e5f1725a0a1e24ef900a7",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:56:51.269Z"
+}

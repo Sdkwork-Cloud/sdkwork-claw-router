@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62777,
+  "uuid": "skill-clawhub-toefl-speaking",
+  "skillKey": "clawhub-toefl-speaking",
+  "name": "TOEFL Speaking Question Generator",
+  "summary": "托福口语面试部分出题引擎。AI 自动选定主题，生成 4 道递进式面试题和参考答案。不依赖固定主题库。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toefl_speaking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "saikewei",
+      "features": [
+        "托福口语面试部分出题引擎。AI 自动选定主题，生成 4 道递进式面试题和参考答案。不依赖固定主题库。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toefl-speaking@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58879129?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toefl-speaking",
+      "url": "https://clawhub.ai/skills/toefl-speaking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toefl-speaking",
+    "url": "https://clawhub.ai/skills/toefl-speaking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toefl-speaking-13fc8f7cfbda11a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toefl-speaking@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-toefl-speaking-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee433c3ee8c13c86a1ba2fd54821457c8870505a4b23644c877dd79d95182aa7",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T19:09:42.476Z"
+}

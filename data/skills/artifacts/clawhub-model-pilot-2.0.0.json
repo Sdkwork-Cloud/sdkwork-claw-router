@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-pilot@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_pilot",
+  "skill": {
+    "id": 52594,
+    "skillKey": "clawhub-model-pilot",
+    "name": "Model Pilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-pilot",
+    "url": "https://clawhub.ai/skills/model-pilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-pilot-3ecede6ec606eb6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Match task complexity to the right model. Quick heuristic check before expensive tasks — recommends cheaper models when quality won't suffer. Fetches live pr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tommot2",
+      "userId": "s17fzh9kw6g9v8fg9kppsbmwt183p1kd",
+      "displayName": "TommoT2",
+      "image": "https://avatars.githubusercontent.com/u/106430507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775172560349,
+      "changelog": "Removed static model database. Live pricing via web_fetch. Simplified 3-tier classification. Quick heuristic check.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:add1120975589c4c3762b0083011c6d384c3b5f7a10228b06a58c1657a710efe"
+}

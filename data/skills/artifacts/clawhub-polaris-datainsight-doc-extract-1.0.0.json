@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polaris-datainsight-doc-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polaris_datainsight_doc_extract",
+  "skill": {
+    "id": 23375,
+    "skillKey": "clawhub-polaris-datainsight-doc-extract",
+    "name": "polaris-datainsight-doc-extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polaris-datainsight-doc-extract",
+    "url": "https://clawhub.ai/skills/polaris-datainsight-doc-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polaris-datainsight-doc-extract-9fbd1cdcae94ff77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from Office documents (DOCX, PPTX, XLSX, HWP, HWPX) using the Polaris AI DataInsight Doc Extract API. Use when the user wants to pars..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jacob-g-park",
+      "userId": "publishers:jacob-g-park",
+      "displayName": "jacob-g-park",
+      "image": "https://avatars.githubusercontent.com/u/195715144?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772507470090,
+      "changelog": "Polaris DataInsight Doc Extract 1.0.0 — Initial Release\n\n- Extracts structured data from DOCX, PPTX, XLSX, HWP, and HWPX files using the Polaris AI DataInsight API.\n- Supports extracting text, images, tables (with CSV/HTML/JSON), charts (with CSV), shapes, equations, headers, and footers from Office-format documents.\n- Returns a unified, page-based JSON schema for all elements, packaged in a ZIP file response.\n- Ready for parsing document structure, building RAG pipelines, or automating Office data extraction workflows.\n- Includes usage examples in Python and curl; outlines authentication and API key requirements.\n- Designed for easy integration and scales for data analysis, document parsing, and content conversion tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56c2b491c18c2d11ff67e1c693f3fdd4e9660f41bf1f5044fb57c551c1d07b6d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanlike-memory-plugin@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanlike_memory_plugin",
+  "skill": {
+    "id": 34744,
+    "skillKey": "clawhub-humanlike-memory-plugin",
+    "name": "Human-Like Memory Plugin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanlike-memory-plugin",
+    "url": "https://clawhub.ai/skills/humanlike-memory-plugin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanlike-memory-plugin-a4ee8ece7b6797cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Long-term memory plugin for OpenClaw: automatic recall, storage, and agent tools"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "humanlike2026",
+      "userId": "s179jzt59vtqw8yescebs7khds83kkqy",
+      "displayName": "HumanLikeTeam",
+      "image": "https://avatars.githubusercontent.com/u/269673980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775980892275,
+      "changelog": "Normalize wrapped recall queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b51dc7c46f1af3fb938f5f3c9075eaeceba194b4359657ac1410ddf72091553"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/long-context-shell@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.long_context_shell",
+  "skill": {
+    "id": 30456,
+    "skillKey": "clawhub-long-context-shell",
+    "name": "long-context-shell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "long-context-shell",
+    "url": "https://clawhub.ai/skills/long-context-shell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/long-context-shell-19c2eea65ead35c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs long or continuous shell commands with file-backed logs, truncated previews, and fast log scanning. Invoke when shell output may be large, ongoing, or h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qipengguo",
+      "userId": "s170pr38p1397r6p2bxqgmp6p583hzq7",
+      "displayName": "QipengGuo",
+      "image": "https://avatars.githubusercontent.com/u/8382210?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774374283809,
+      "changelog": "Initial release of long-context-shell skill.\n\n- Run long or continuous shell commands with file-backed logs and truncated previews.\n- Monitor, peek, scan, and stop running sessions for easier management of large or live shell output.\n- Compact status cards summarize progress; avoid dumping raw command output.\n- Offers fast log scanning for likely errors, warnings, and failures.\n- Provides flexible log previewing and timestamp-based querying for efficient inspection.\n- Includes safety and recommended workflow guidance to prevent accidental destructive actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4063d1bbf059b4fe6cf58b4da0f25bbdc68ec5eff6b901ab5c67e1c086f021b6"
+}

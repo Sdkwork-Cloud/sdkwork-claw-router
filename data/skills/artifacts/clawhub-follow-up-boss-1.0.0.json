@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/follow-up-boss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_up_boss",
+  "skill": {
+    "id": 15869,
+    "skillKey": "clawhub-follow-up-boss",
+    "name": "Follow Up Boss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-up-boss",
+    "url": "https://clawhub.ai/skills/follow-up-boss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-up-boss-ffec15912cdf9879.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool to manage contacts, tasks, notes, deals, events, and communications via the Follow Up Boss API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielfoch",
+      "userId": "publishers:danielfoch",
+      "displayName": "danielfoch",
+      "image": "https://avatars.githubusercontent.com/u/152220262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 937,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771090920115,
+      "changelog": "- Initial release of the Follow Up Boss CLI skill.\n- Supports managing people, notes, tasks, events, deals, webhooks, and more via the Follow Up Boss API.\n- Provides commands to create, update, and retrieve entities such as people, tasks, events, notes, calls, text messages, and emails.\n- Includes setup instructions and usage examples for key CLI commands.\n- Highlights important limitations: logged (but not sent) texts/emails and API rate limits.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f2d20637b6da0754bd12fe4e3d257dcaaa1f706805a14d81b357f60832a3e8e"
+}

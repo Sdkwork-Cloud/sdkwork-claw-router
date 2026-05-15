@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67716,
+  "uuid": "skill-clawhub-arxiv-daily",
+  "skillKey": "clawhub-arxiv-daily",
+  "name": "arxiv-daily",
+  "summary": "每日 arXiv 论文获取加整理技能。当用户想要获取每日 arXiv 论文相关领域论文、设置论文订阅、管理论文推送时间、添加新的论文领域时触发。也用于用户询问\"arxiv\"、\"每日论文\"、\"论文推送\"等相关话题时。",
+  "version": "0.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hislocked",
+      "features": [
+        "每日 arXiv 论文获取加整理技能。当用户想要获取每日 arXiv 论文相关领域论文、设置论文订阅、管理论文推送时间、添加新的论文领域时触发。也用于用户询问\"arxiv\"、\"每日论文\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-daily@0.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17588273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-daily",
+      "url": "https://clawhub.ai/skills/arxiv-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-daily",
+    "url": "https://clawhub.ai/skills/arxiv-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-daily-d9c240160b5a14d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-daily@0.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-daily-0.9.1.json",
+      "version": "0.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df2eb2e9285a697766d69aa04e05f732b6f181327d371b0e5d58c6644cc238ab",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:41:17.491Z"
+}

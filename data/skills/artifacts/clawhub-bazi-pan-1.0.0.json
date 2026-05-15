@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazi-pan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_pan",
+  "skill": {
+    "id": 70722,
+    "skillKey": "clawhub-bazi-pan",
+    "name": "Bazi Pan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-pan",
+    "url": "https://clawhub.ai/skills/bazi-pan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-pan-91199f2f30c10eae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "八字排盘，根据出生年月日时排八字、大运、流年，分析五行强弱与命理特点"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingo-318",
+      "userId": "s174azpqkfzaht4rsrns8gsy4983gadk",
+      "displayName": "Mingo_318",
+      "image": "https://avatars.githubusercontent.com/u/62329898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 414,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772778445384,
+      "changelog": "Initial release of bazi-pan skill.\n\n- Provides 八字排盘 (Bazi charting) based on user-supplied birth year, month, day, and time (lunar calendar).\n- Analyzes strength of Five Elements and core destiny characteristics.\n- Interprets Ten Heavenly Stems, Twelve Earthly Branches, and their element correspondences.\n- Offers clear output including birth data, Four Pillars, Five Elements distribution, day master strength, useful god (用神) suggestions, and major luck cycles (大运).\n- Reminds users results are for reference only and require comprehensive evaluation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf6d9f61557e271611533d313e83249b317921c3793708625e080a7d1176aa56"
+}

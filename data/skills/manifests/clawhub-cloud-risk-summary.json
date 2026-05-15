@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36111,
+  "uuid": "skill-clawhub-cloud-risk-summary",
+  "skillKey": "clawhub-cloud-risk-summary",
+  "name": "Cloud Risk Summary",
+  "summary": "Generates comprehensive cloud risk summaries by analyzing provider configurations, environments, services, and security exposures.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_risk_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates comprehensive cloud risk summaries by analyzing provider configurations, environments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-risk-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-risk-summary",
+      "url": "https://clawhub.ai/skills/cloud-risk-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-risk-summary",
+    "url": "https://clawhub.ai/skills/cloud-risk-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-risk-summary-f9fbcf5d86a89f51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-risk-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-risk-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5ae58d209a3e8f39e08b61e02318036bda7bf4a18bafef36adbde2ce5ec0fd2",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:34:28.794Z"
+}

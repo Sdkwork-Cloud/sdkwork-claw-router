@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22376,
+  "uuid": "skill-clawhub-sunday",
+  "skillKey": "clawhub-sunday",
+  "name": "Sunday",
+  "summary": "Agent identity provider — own email address and E2E-encrypted credential vault. Use when storing or retrieving passwords for services, logging into services with stored credentials, checking email inbox, receiving OTP/verification codes vi.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunday",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raunak Singwi",
+      "features": [
+        "Agent identity provider — own email address and E2E-encrypted credential vault",
+        "Use when storing or retrieving passwords for services, logging into services with stored creden.",
+        "Replaces 1Password + AgentMail with a single skill — no desktop app, no tmux, fully autonomous."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sunday@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18749768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sunday",
+      "url": "https://clawhub.ai/skills/sunday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunday",
+    "url": "https://clawhub.ai/skills/sunday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunday-b6ac44e3f415a3a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sunday@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sunday-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:615765d83c70efbd14d4264905b70ba81509d93254a8e706087d6e4fea45e260",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T09:39:59.319Z"
+}

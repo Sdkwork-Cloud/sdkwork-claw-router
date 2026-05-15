@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/us@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.us",
+  "skill": {
+    "id": 23184,
+    "skillKey": "clawhub-us",
+    "name": "us"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "us",
+    "url": "https://clawhub.ai/skills/us",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/us-79adb2a2fce5c6ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delivers structured US equity research including snapshots, earnings analysis, valuation scenarios, catalysts, risks, and actionable trade or monitoring plans."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhryo25",
+      "userId": "publishers:jhryo25",
+      "displayName": "jhryo25",
+      "image": "https://avatars.githubusercontent.com/u/67048115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771986368026,
+      "changelog": "12",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ede19f2926f1f3c89435faa8a5d32ad9928513adaf3cdd140a85569bcc6d164"
+}

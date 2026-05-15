@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21594,
+  "uuid": "skill-clawhub-visual-explainer-openclaw",
+  "skillKey": "clawhub-visual-explainer-openclaw",
+  "name": "Visual Explainer for OpenClaw",
+  "summary": "Generate beautiful, self-contained HTML pages that visually explain systems, code changes, plans, and data. Use when the user asks for a diagram, architectur...",
+  "version": "0.5.1-openclaw.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_explainer_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ric Lewis",
+      "features": [
+        "Generate beautiful, self-contained HTML pages that visually explain systems, code changes, plan.",
+        "Use when the user asks for a diagram, architectur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-explainer-openclaw@0.5.1-openclaw.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7773610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-explainer-openclaw",
+      "url": "https://clawhub.ai/skills/visual-explainer-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-explainer-openclaw",
+    "url": "https://clawhub.ai/skills/visual-explainer-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-explainer-openclaw-055a707726dfa69d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-explainer-openclaw@0.5.1-openclaw.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-explainer-openclaw-0.5.1-openclaw.1.json",
+      "version": "0.5.1-openclaw.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bc7002b574aaccb6a5834a6a6f32625a08c70e33a1fbad4cc9bdfc5369e5110",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:55:08.498Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72817,
+  "uuid": "skill-clawhub-taobao-detail-query",
+  "skillKey": "clawhub-taobao-detail-query",
+  "name": "阿里商品详情查询",
+  "summary": "查询阿里平台（淘宝/天猫）商品详情，支持商品ID或链接输入，返回详情数据",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_detail_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YanJun",
+      "features": [
+        "查询阿里平台（淘宝/天猫）商品详情，支持商品ID或链接输入，返回详情数据"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobao-detail-query@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3753405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobao-detail-query",
+      "url": "https://clawhub.ai/skills/taobao-detail-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-detail-query",
+    "url": "https://clawhub.ai/skills/taobao-detail-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-detail-query-b145f82abe5dd536.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobao-detail-query@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobao-detail-query-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c0e40394ddd363f51482e99a25c4c23b0ee5807ea3174239552d1859d643a52",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:26:50.785Z"
+}

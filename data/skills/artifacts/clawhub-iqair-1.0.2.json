@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iqair@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iqair",
+  "skill": {
+    "id": 14978,
+    "skillKey": "clawhub-iqair",
+    "name": "IQAir Air Quality"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iqair",
+    "url": "https://clawhub.ai/skills/iqair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iqair-d5a776324dd46d0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get real-time air quality data from IQAir API for any location worldwide. Returns AQI (Air Quality Index) with visual indicators and quality levels. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atesluks",
+      "userId": "s1738dfdpm6kf3vm62cr6f9y7183zxpm",
+      "displayName": "Antons Tesluks",
+      "image": "https://avatars.githubusercontent.com/u/63112577?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 791,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771295895405,
+      "changelog": "Latest updates with coordinate support and formatted output",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:70af5cb84870116c1564c02e96993c3e1ebc7f92f842f7539394acb81526583d"
+}

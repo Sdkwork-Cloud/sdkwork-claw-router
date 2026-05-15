@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-daily-report@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_daily_report",
+  "skill": {
+    "id": 62092,
+    "skillKey": "clawhub-a-share-daily-report",
+    "name": "A Share Daily Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-daily-report",
+    "url": "https://clawhub.ai/skills/a-share-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-daily-report-d247f9adc631042b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成专业级 A股早报/晚报，包含大盘指数行情、市场情绪、K线走势图、 行业/概念板块排行、个股涨跌榜、主题新闻追踪、综合分析， 输出 Markdown + PNG 图表 + PDF。数据源为东方财富公开 API、 同花顺公开板块页及海外公开行情接口。 Use when asked to create daily..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shoukuan",
+      "userId": "s176jz6gawd4w6yd4e8exvk35583r6eq",
+      "displayName": "Shoukuan",
+      "image": "https://avatars.githubusercontent.com/u/42137264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 755,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775142629959,
+      "changelog": "**Major initial release with full modular structure and automatic A-share daily report generation.**\n\n- Introduced one-click script to generate professional A-share morning and evening reports, supporting Markdown output and Feishu publishing.\n- Modularized architecture: separate modules for data fetching, analysis, rendering, and publishing with independent configuration and test coverage.\n- Support for multi-source data (akshare/main, tushare, Sina, MX-Data), fallback and mock strategies to ensure robustness.\n- Configurable watchlist, flexible output directory, and Feishu API integration for document publishing and notifications.\n- Added detailed documentation: architecture, data source, interface, structure, testing, and usage guides.\n- Comprehensive test cases included for core modules and sample configs for quick customization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12f74d85b745d72d466550e8f9fa1be9983671962c6dc19f7afb219d9568ef34"
+}

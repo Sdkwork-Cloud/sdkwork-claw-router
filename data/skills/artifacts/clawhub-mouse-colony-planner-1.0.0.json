@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mouse-colony-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mouse_colony_planner",
+  "skill": {
+    "id": 39399,
+    "skillKey": "clawhub-mouse-colony-planner",
+    "name": "Mouse Colony Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mouse-colony-planner",
+    "url": "https://clawhub.ai/skills/mouse-colony-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mouse-colony-planner-868df7a6e0660db2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate breeding timelines and cage requirements for transgenic mouse colonies"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774594779137,
+      "changelog": "- Initial release of Mouse Colony Planner.\n- Calculates breeding timelines and estimates cage requirements for transgenic mouse colonies.\n- Supports cost estimation for breeding (cage, husbandry, and genotyping fees).\n- Command-line interface with customizable parameters for breeding schemes and colony setup.\n- Provides detailed output including stage timelines, cage numbers, total cost, and breeding flowchart.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7686c2b386011ff94e92ef26b54762ee23aa2aae7397e89e859f10ad81907e90"
+}

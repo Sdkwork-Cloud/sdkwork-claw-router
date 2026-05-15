@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52303,
+  "uuid": "skill-clawhub-construction",
+  "skillKey": "clawhub-construction",
+  "name": "Construction",
+  "summary": "Use for construction and project management operations — project scheduling, daily site reports, subcontractor coordination, material procurement, budget tra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.construction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rithythul",
+      "features": [
+        "Use for construction and project management operations — project scheduling, daily site reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/construction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5461492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "construction",
+      "url": "https://clawhub.ai/skills/construction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "construction",
+    "url": "https://clawhub.ai/skills/construction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/construction-7a01adea4b8a1084.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/construction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-construction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f49f3320d309280012a52189ec01257de40154a617d039e89d14efc105ae7619",
+      "artifactSizeBytes": 2655
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:52:35.983Z"
+}

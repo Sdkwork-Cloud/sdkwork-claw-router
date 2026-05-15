@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45170,
+  "uuid": "skill-clawhub-boxed-fetch",
+  "skillKey": "clawhub-boxed-fetch",
+  "name": "Boxed Fetch",
+  "summary": "Lightweight web scraping tool based on WebAssembly sandbox mechanism. Fetches URL content and extracts readable text. Use when you need to fetch webpage cont...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boxed_fetch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guyoung",
+      "features": [
+        "Lightweight web scraping tool based on WebAssembly sandbox mechanism",
+        "Fetches URL content and extracts readable text",
+        "Use when you need to fetch webpage cont..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boxed-fetch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boxed-fetch",
+      "url": "https://clawhub.ai/skills/boxed-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boxed-fetch",
+    "url": "https://clawhub.ai/skills/boxed-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boxed-fetch-611fdd7c5cfb31a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boxed-fetch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boxed-fetch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ca054cda9accfcbfc3bdb24752cea3134152325d990d3dc28c39b3cd3915ac4",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T05:42:11.691Z"
+}

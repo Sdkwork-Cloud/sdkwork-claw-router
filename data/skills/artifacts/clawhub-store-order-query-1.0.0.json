@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/store-order-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.store_order_query",
+  "skill": {
+    "id": 21440,
+    "skillKey": "clawhub-store-order-query",
+    "name": "store-order-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "store-order-query",
+    "url": "https://clawhub.ai/skills/store-order-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/store-order-query-839a7d8d3818b9e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "query store order information from database"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bondli",
+      "userId": "s177p2wmp8es5mem55h55wyq7183h7bj",
+      "displayName": "bondli",
+      "image": "https://avatars.githubusercontent.com/u/6427929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774347571182,
+      "changelog": "Initial release of store-order-query skill.\n\n- Allows querying store order information from a MySQL database.\n- Supports flexible queries by time range and analysis dimension (order count, revenue, items, payment methods).\n- Includes setup workflow for database configuration.\n- Generates analytical reports in Markdown format based on order data.\n- Handles error cases for missing configuration, database errors, and empty results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a0588c3fbc9320f04973ed3b1658524a0e09d5a81f28d522cf7620e3d72009a"
+}

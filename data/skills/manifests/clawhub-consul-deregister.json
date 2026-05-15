@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35900,
+  "uuid": "skill-clawhub-consul-deregister",
+  "skillKey": "clawhub-consul-deregister",
+  "name": "Consul Service Deregister",
+  "summary": "Consul service deregistration tool. Triggered when users mention Consul deregister, remove service instance, service removal, or offline. Supports batch dere...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consul_deregister",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "strongant",
+      "features": [
+        "Consul service deregistration tool",
+        "Triggered when users mention Consul deregister, remove service instance, service removal, or of.",
+        "Supports batch dere..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consul-deregister@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7685936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consul-deregister",
+      "url": "https://clawhub.ai/skills/consul-deregister"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consul-deregister",
+    "url": "https://clawhub.ai/skills/consul-deregister",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consul-deregister-c85381d80bb40a9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consul-deregister@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-consul-deregister-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d8c753f55fdaf1de0571f4f0c93e6487dee0a54722777d481dc5b3afec653ba",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:44:04.297Z"
+}

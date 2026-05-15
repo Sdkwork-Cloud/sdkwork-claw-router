@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68966,
+  "uuid": "skill-clawhub-nexus-ai",
+  "skillKey": "clawhub-nexus-ai",
+  "name": "nexua-ai",
+  "summary": "Nexus 小程序统一智能助手。整合发布资源/岗位/活动、查询使用报告、智能问答三大功能。当用户说「发布资源/岗位/活动/招聘」「查询 nexus 总结/使用报告/AI使用报告」或询问资源/人、搜索信息时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "songsh66",
+      "features": [
+        "Nexus 小程序统一智能助手。整合发布资源/岗位/活动、查询使用报告、智能问答三大功能。当用户说「发布资源/岗位/活动/招聘」「查询 nexus 总结/使用报告/AI使用报告」或询问资源/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-ai@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22723042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-ai",
+      "url": "https://clawhub.ai/skills/nexus-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-ai",
+    "url": "https://clawhub.ai/skills/nexus-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-ai-1482801f868da355.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-ai@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-ai-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea783cd58ee002b15709ed3f0af19819e01e20bb0444eef4e333b343357ebb96",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:49:41.425Z"
+}

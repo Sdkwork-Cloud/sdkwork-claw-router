@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ebook-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebook_downloader",
+  "skill": {
+    "id": 66767,
+    "skillKey": "clawhub-ebook-downloader",
+    "name": "电子书下载"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebook-downloader",
+    "url": "https://clawhub.ai/skills/ebook-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebook-downloader-fda2e52115434810.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "下载中文电子书到用户电脑。通过搜索读书派(dushupai.com)等资源站获取城通网盘下载链接，自动完成密码输入、API调用获取直链、curl下载、zip解压等全流程。当用户提到\"下载电子书\"、\"下载这本书\"、\"找一下某本书的电子版\"、\"帮我下个epub/mobi/azw3\"、\"下载 XX 到电脑\"等与获取电子..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoyishuai",
+      "userId": "s17c9zmwatqeazj76aqgtzx37184w27m",
+      "displayName": "caoyishuai",
+      "image": "https://avatars.githubusercontent.com/u/12783386?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773821840423,
+      "changelog": "首次发布：支持从读书派等网站搜索并下载中文电子书",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01c9f415c7eaa5d179f2e98e8ec6bdea34ad3afdd2d5ce60cfc05b21724c986b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/garmin-connect-health@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_connect_health",
+  "skill": {
+    "id": 25900,
+    "skillKey": "clawhub-garmin-connect-health",
+    "name": "Garmin Connect Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-connect-health",
+    "url": "https://clawhub.ai/skills/garmin-connect-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-connect-health-4398d558d7bb2daf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch health and fitness data from Garmin Connect -- 40+ metrics including sleep, HRV, stress, body battery, SpO2, VO2 Max, training status, and activities...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dw1161",
+      "userId": "s17fs1k3mbz2dmtnhv13m1npb183g3sh",
+      "displayName": "dw1161",
+      "image": "https://avatars.githubusercontent.com/u/1182165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1778163023149,
+      "changelog": "Restore original real-product screenshots after owner review and approval; keep SQLite documentation and privacy notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f0e22cb0facc5be50412d7cd004e24197879cd1fc95fc234963d4ff6e030cca"
+}

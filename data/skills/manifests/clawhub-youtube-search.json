@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10349,
+  "uuid": "skill-clawhub-youtube-search",
+  "skillKey": "clawhub-youtube-search",
+  "name": "youtube-search",
+  "summary": "Use when the user wants to find YouTube content on any topic: searching for videos or channels, finding creators who cover a subject, discovering tutorials,...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Das",
+      "features": [
+        "Use when the user wants to find YouTube content on any topic: searching for videos or channels,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-search@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43847374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-search",
+      "url": "https://clawhub.ai/skills/youtube-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-search",
+    "url": "https://clawhub.ai/skills/youtube-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-search-e17bfdf73aa4d48b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-search@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-search-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a97578420bd806bf353cecc64c0b03523bea11d94e76757cbeb59fd3fbc86bb",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T15:05:46.569Z"
+}

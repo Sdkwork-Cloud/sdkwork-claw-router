@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/walmart-price-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walmart_price_tracker",
+  "skill": {
+    "id": 39575,
+    "skillKey": "clawhub-walmart-price-tracker",
+    "name": "Walmart Price Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walmart-price-tracker",
+    "url": "https://clawhub.ai/skills/walmart-price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walmart-price-tracker-795f6b2ccb42e7c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides Walmart price trend analysis, competitor comparisons, and data-driven repricing strategies tailored to your e-commerce business context."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexscope",
+      "userId": "s17dwyzs7t74hqkesy6xh9wszx83hgt0",
+      "displayName": "nexscope-ai",
+      "image": "https://avatars.githubusercontent.com/u/265748176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774667106469,
+      "changelog": "Beta release — functional skill for e-commerce AI agents. Built by Nexscope.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48941d1132b7a560b354f197fd10bfb09369df6506200338974fb24c0b6d1082"
+}

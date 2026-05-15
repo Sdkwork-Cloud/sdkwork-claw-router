@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10279,
+  "uuid": "skill-clawhub-wecom",
+  "skillKey": "clawhub-wecom",
+  "name": "Wecom",
+  "summary": "Send messages to WeCom (企业微信) via webhooks using MCP protocol. Works with Claude Code, Claude Desktop, and other MCP clients.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "christo",
+      "features": [
+        "Send messages to WeCom (企业微信) via webhooks using MCP protocol",
+        "Works with Claude Code, Claude Desktop, and other MCP clients."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1757861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom",
+      "url": "https://clawhub.ai/skills/wecom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom",
+    "url": "https://clawhub.ai/skills/wecom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-d932fff27b2aff44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f211acc136d6332e72f545a1c8dde7ef6636bda544619da32ff4999f9ef83f0",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T06:23:17.860Z"
+}

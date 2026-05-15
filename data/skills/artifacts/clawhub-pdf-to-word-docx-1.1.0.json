@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-to-word-docx@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_word_docx",
+  "skill": {
+    "id": 8615,
+    "skillKey": "clawhub-pdf-to-word-docx",
+    "name": "PDF to Word Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-word-docx",
+    "url": "https://clawhub.ai/skills/pdf-to-word-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-word-docx-71197fcfeca99f38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF to Word converts PDF to editable Word/DOCX with AI-powered layout analysis and table recognition, built on ComPDF Conversion SDK to better preserve table..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "compdf-youna",
+      "userId": "s178t897hzzp9pvkwbav4e2kfs83g980",
+      "displayName": "ComPDF",
+      "image": "https://avatars.githubusercontent.com/u/108785628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 96,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777464121232,
+      "changelog": "**PDF to Word Converter 1.1.0**\n\n- Improved skill description with more specific use cases and enhanced clarity for typical PDF to Word and document layout preservation scenarios.\n- Updated summary emphasizes AI-powered layout analysis, robust table, multi-column, and image handling, and real-world editing use cases.\n- No code or script changes were made; documentation was updated for clearer discoverability and guidance.\n- All conversion features and usage patterns remain compatible and unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd6ab407a1f6f687b812b7c3d026d9b7e011aefca54ebc13a3a478bc7582dbd1"
+}

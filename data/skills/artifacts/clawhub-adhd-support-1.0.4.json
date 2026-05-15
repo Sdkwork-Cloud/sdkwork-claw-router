@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adhd-support@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adhd_support",
+  "skill": {
+    "id": 21449,
+    "skillKey": "clawhub-adhd-support",
+    "name": "ADHD Support"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adhd-support",
+    "url": "https://clawhub.ai/skills/adhd-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adhd-support-d35f9cf727e5062e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cognitive copilot for people with ADHD. Use this skill whenever someone mentions paralysis, can't start a task, feels overwhelmed, needs to organize their da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "betancur",
+      "userId": "s17dvvjzc12gww2tc1c1c55p7x84cahx",
+      "displayName": "Jose Betancur",
+      "image": "https://avatars.githubusercontent.com/u/139290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772231667667,
+      "changelog": "**Focus mode timer now always user-side, never run by the agent.**\n\n- Focus mode updated: user is always instructed to set their own timer (e.g., phone or browser); agent no longer runs, requests, or triggers timers or notifications.\n- All references to running timers or system notifications in Focus mode removed.\n- Clarified that the timer is always the user's responsibility for all environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:534a8fd922d3a5c1aa261ab668a5bf140a83f737b1bf16df9e76db5c24438d15"
+}

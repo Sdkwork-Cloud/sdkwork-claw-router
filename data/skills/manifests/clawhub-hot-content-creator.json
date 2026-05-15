@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71696,
+  "uuid": "skill-clawhub-hot-content-creator",
+  "skillKey": "clawhub-hot-content-creator",
+  "name": "Hot Content Creator",
+  "summary": "热点内容创作助手：自动抓取多平台热点，筛选创作方向，生成小红书封面图和虚拟博主形象， 写出有人味的爆款内容。触发词：热点创作、追热点、创作方向、小红书方向、抖音方向。 适用场景：需要从热点中挖掘内容创作方向并生成配图+文案的完整工作流。",
+  "version": "1.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_content_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DayuCyrus",
+      "features": [
+        "热点内容创作助手：自动抓取多平台热点，筛选创作方向，生成小红书封面图和虚拟博主形象， 写出有人味的爆款内容。触发词：热点创作、追热点、创作方向、小红书方向、抖音方向。 适用场景：需要从热点中."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-content-creator@1.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273726579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-content-creator",
+      "url": "https://clawhub.ai/skills/hot-content-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-content-creator",
+    "url": "https://clawhub.ai/skills/hot-content-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-content-creator-21c9f19bef6ca990.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-content-creator@1.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-content-creator-1.6.2.json",
+      "version": "1.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4b67b4ba5e5ce88a005376248a517b98aad24826dc8740413c47a8c8f3cb582",
+      "artifactSizeBytes": 2231
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T10:29:11.237Z"
+}

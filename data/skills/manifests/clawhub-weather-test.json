@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36748,
+  "uuid": "skill-clawhub-weather-test",
+  "skillKey": "clawhub-weather-test",
+  "name": "Weather Test",
+  "summary": "Get current weather and forecasts (no API key required).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ErhWen Kuo",
+      "features": [
+        "Get current weather and forecasts (no API key required)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5875719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-test",
+      "url": "https://clawhub.ai/skills/weather-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-test",
+    "url": "https://clawhub.ai/skills/weather-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-test-97ee80c44e1624e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e01cca17f39460230da2d1eb7837c672556fb631aba348f7811b5b3fd03f873",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T00:10:48.726Z"
+}

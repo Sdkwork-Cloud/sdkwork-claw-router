@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-search-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_cn",
+  "skill": {
+    "id": 62667,
+    "skillKey": "clawhub-multi-search-cn",
+    "name": "Multi Search CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-cn",
+    "url": "https://clawhub.ai/skills/multi-search-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-cn-cafa2fe69762430d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聚合国内常用搜索引擎：默认用 DuckDuckGo HTML（cn-zh）零 API Key 抓取可解析结果，并输出必应中国、百度、搜狗、360 的直达搜索链接。当用户需要中文网页检索、国内信息、政策/舆情、对比多个搜索引擎、或 Brave/Google 不可用时使用。依赖 Python 3 标准库与 scrip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scottliu007",
+      "userId": "publishers:scottliu007",
+      "displayName": "fanzhuo",
+      "image": "https://avatars.githubusercontent.com/u/128193289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773996795172,
+      "changelog": "v1.0.0: DDG HTML kl=cn-zh + CN engine deep links; Python3 stdlib only; tested on macOS + Ubuntu",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:830d16c6d5bae467880271f1f9bd8d314caee8c833555961d3aabc716b907a85"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopping-trip@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_trip",
+  "skill": {
+    "id": 47908,
+    "skillKey": "clawhub-shopping-trip",
+    "name": "shopping-trip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-trip",
+    "url": "https://clawhub.ai/skills/shopping-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-trip-71abb71a68bb1108.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for shopping trips to outlet malls and duty-free destinations. Also supports: flight booking, hotel reservation, train tickets, attraction ticke..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivan97",
+      "userId": "s17c9gmxdhe2fy3pe6n74qabhs83krgv",
+      "displayName": "Yangki Zhang",
+      "image": "https://avatars.githubusercontent.com/u/10104255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777257850977,
+      "changelog": "**shopping-trip 3.2.0 changelog**\n\n- Expanded product scope: now supports flight booking, hotel reservation, train tickets, attraction tickets, itinerary planning, visa info, travel insurance, and car rental, all powered by Fliggy (Alibaba Group)\n- Enhanced output rules: stricter CLI data validation, Markdown formatting, lead with conclusion and key shopping tips\n- Improved multi-language support: strict output language matching user input\n- Added explicit CLI parameter documentation and scenario playbooks for more accurate bookings\n- Updated brand messaging and booking link requirements in results",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af4eac03123cc942ba941e7b49d264ef1e9d5b03d828a46f676e4d8de06b6a33"
+}

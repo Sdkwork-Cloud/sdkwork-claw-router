@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-editor-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_editor_online",
+  "skill": {
+    "id": 37288,
+    "skillKey": "clawhub-best-editor-online",
+    "name": "Best Editor Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-editor-online",
+    "url": "https://clawhub.ai/skills/best-editor-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-editor-online-c6caedba0b6d3991.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished edited clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776592398513,
+      "changelog": "Best Editor Online — Initial Release (v1.0.0)\n\n- Launch of online AI-powered video editor for quick, professional edits and exports.\n- Supports uploading raw video clips (MP4, MOV, AVI, WebM up to 500MB) and simple text-based edit requests.\n- Delivers automatic edits (trim pauses, add transitions, export final cut) and 1080p MP4 downloads in minutes.\n- Built-in session handling, authentication flow with free 7-day token and 100 credits for new users.\n- Seamless workflow for uploading, editing, viewing credits/status, and exporting polished videos.\n- Extensive error handling, export options, and helpful editing tips included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4aae39f4493b01e8c8a5d8055d4c37faac8cd5a9af3d2257d82054de9aff82a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ralph-loops@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ralph_loops",
+  "skill": {
+    "id": 9017,
+    "skillKey": "clawhub-ralph-loops",
+    "name": "Ralph Loops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ralph-loops",
+    "url": "https://clawhub.ai/skills/ralph-loops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ralph-loops-dc19a74e11a6477c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs autonomous iterative AI loops for requirements, planning, or building phases using structured prompts and fresh context per iteration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qlifebot-coder",
+      "userId": "publishers:qlifebot-coder",
+      "displayName": "qlifebot-coder",
+      "image": "https://avatars.githubusercontent.com/u/258573345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5071,
+      "installsAllTime": 22,
+      "installsCurrent": 21,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769936024664,
+      "changelog": "Added warning: don't block conversation while monitoring loops",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a99094ca0cd7dcdf1d6f0ac09effde2a83adcf0bec46846b10ad04f1c0288b32"
+}

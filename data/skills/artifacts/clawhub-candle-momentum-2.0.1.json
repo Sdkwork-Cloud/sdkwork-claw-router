@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/candle-momentum@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.candle_momentum",
+  "skill": {
+    "id": 34912,
+    "skillKey": "clawhub-candle-momentum",
+    "name": "Polymarket Candle Momentum"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "candle-momentum",
+    "url": "https://clawhub.ai/skills/candle-momentum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/candle-momentum-8b5090bc4e57b350.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade Polymarket 5-minute crypto fast markets using 1-minute candle body analysis and volume surge detection from Binance. Scans BTC, ETH, SOL, XRP, BNB simu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mibayy",
+      "userId": "s179d2am41rchxqf8a7jwrjp4n83gaje",
+      "displayName": "Mibayy",
+      "image": "https://avatars.githubusercontent.com/u/97958526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774067403066,
+      "changelog": "Gradient sizing: //0/5 based on body_ratio + vol_surge strength",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fdfac184d446a7215e2576e2fa7579c52906b978db658ba0cdf00e4164cc977"
+}

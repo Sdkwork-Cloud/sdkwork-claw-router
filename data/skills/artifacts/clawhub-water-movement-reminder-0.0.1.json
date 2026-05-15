@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/water-movement-reminder@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.water_movement_reminder",
+  "skill": {
+    "id": 24619,
+    "skillKey": "clawhub-water-movement-reminder",
+    "name": "water-reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "water-movement-reminder",
+    "url": "https://clawhub.ai/skills/water-movement-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/water-movement-reminder-a893d4bd7a8ec639.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sends hydration and movement reminders every 45 minutes from 8:00 to 23:00 to promote healthy work habits and prevent prolonged sitting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renchzhao",
+      "userId": "s17djpcc0dhqv27bzfnphv48gd83zzj3",
+      "displayName": "RenchZhao",
+      "image": "https://avatars.githubusercontent.com/u/165626690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773114977703,
+      "changelog": "## [0.0.1] - 2026-03-10\n\n### Added\n- Initial release of Water Reminder skill\n- 45-minute hydration and movement reminder functionality\n- Time-based restriction (8:00-23:00 in user's timezone)\n- State tracking via heartbeat-state.json file\n- Cross-platform messaging support (not limited to Feishu)\n- Configurable reminder message with emoji support\n- Error handling for missing files or invalid timestamps\n- Automatic state file creation if not exists\n\n### Features\n- Health-focused reminders to prevent prolonged sitting\n- Respects user rest time (no notifications outside working hours)\n- Accurate timing with state persistence across sessions\n- Lightweight implementation using existing heartbeat mechanism\n- Easy integration with any Agent channel system\n\n### Configuration\n- Uses standard USER.md for user identification\n- Leverages existing memory/heartbeat-state.json for state tracking\n- No external dependencies required\n- Compatible with OpenClaw's standard workspace structure",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0cacaf797b417b72998b6e9fcff0cfebd1fc3179adc2d50e5ed7e057cf2e3c37"
+}

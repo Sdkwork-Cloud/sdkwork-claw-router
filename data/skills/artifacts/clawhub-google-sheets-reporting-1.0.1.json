@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-sheets-reporting@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_sheets_reporting",
+  "skill": {
+    "id": 23200,
+    "skillKey": "clawhub-google-sheets-reporting",
+    "name": "Google Sheets Reporting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-sheets-reporting",
+    "url": "https://clawhub.ai/skills/google-sheets-reporting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-sheets-reporting-315d8d8e0d91da22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated reporting and alerts from Google Sheets data. Daily summaries with auto-detected metrics, configurable threshold alerts, and weekly multi-sheet dig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhmalvi",
+      "userId": "publishers:mhmalvi",
+      "displayName": "Muhammad H.M. Alvi",
+      "image": "https://avatars.githubusercontent.com/u/74125579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772560388139,
+      "changelog": "Fix: declare all env vars used in workflows in requires.env metadata for security scan compliance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13841d5a3164f497faae5683124a2b5bcb3f67ce2918371e5dbd32929d1df1b0"
+}

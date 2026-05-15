@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59424,
+  "uuid": "skill-clawhub-inbox-action-board",
+  "skillKey": "clawhub-inbox-action-board",
+  "name": "Inbox Action Board",
+  "summary": "把邮件或消息整理成回复、等待、跟进、归档四类行动视图。；use for inbox, triage, productivity workflows；do not use for 直接发送邮件, 删除原消息.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inbox_action_board",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把邮件或消息整理成回复、等待、跟进、归档四类行动视图。；use for inbox, triage, productivity workflows；do not use for 直接发送邮件."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inbox-action-board@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inbox-action-board",
+      "url": "https://clawhub.ai/skills/inbox-action-board"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inbox-action-board",
+    "url": "https://clawhub.ai/skills/inbox-action-board",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inbox-action-board-a9198a8e733c229f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inbox-action-board@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inbox-action-board-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d61380ef86374bc722db62261a067f929df9be0fa0ef899d353e317372d80cb4",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:17:48.904Z"
+}

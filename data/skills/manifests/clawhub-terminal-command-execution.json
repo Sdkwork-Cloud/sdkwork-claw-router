@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10276,
+  "uuid": "skill-clawhub-terminal-command-execution",
+  "skillKey": "clawhub-terminal-command-execution",
+  "name": "Terminal Command Execution",
+  "summary": "Execute terminal commands safely and reliably with clear pre-checks, output validation, and recovery steps. Use when users ask to run shell/CLI commands, ins...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terminal_command_execution",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "big-fox",
+      "features": [
+        "Execute terminal commands safely and reliably with clear pre-checks, output validation, and rec.",
+        "Use when users ask to run shell/CLI commands, ins..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/terminal-command-execution@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102596034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "terminal-command-execution",
+      "url": "https://clawhub.ai/skills/terminal-command-execution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terminal-command-execution",
+    "url": "https://clawhub.ai/skills/terminal-command-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terminal-command-execution-8e2b6fca1f4e4412.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/terminal-command-execution@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-terminal-command-execution-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0508ebc5f000202713171fb89ac90ddbde0e4905060652366a49404a4721d7a9",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T15:51:53.387Z"
+}

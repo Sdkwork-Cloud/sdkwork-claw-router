@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32367,
+  "uuid": "skill-clawhub-nmail",
+  "skillKey": "clawhub-nmail",
+  "name": "nmail",
+  "summary": "Command-line tool to send, read, and manage Korean Naver and Daum emails via nmail with JSON outputs and account configuration.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Harlockius",
+      "features": [
+        "Command-line tool to send, read, and manage Korean Naver and Daum emails via nmail with JSON ou."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nmail@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41049683?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nmail",
+      "url": "https://clawhub.ai/skills/nmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nmail",
+    "url": "https://clawhub.ai/skills/nmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nmail-2cc6f50cd3ab389c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nmail@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nmail-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86af6440355c8c541b574c0eaebdc592c2abe2dd7ede9829e09e9bae27f80b78",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:28:48.746Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40177,
+  "uuid": "skill-clawhub-ppt-task-orchestrator",
+  "skillKey": "clawhub-ppt-task-orchestrator",
+  "name": "Ppt Task Orchestrator",
+  "summary": "Production orchestration for pptx page task extraction and batch image delivery by reusing main-image-editor + psd-automator.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_task_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dhrxy",
+      "features": [
+        "Production orchestration for pptx page task extraction and batch image delivery by reusing main."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-task-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51009660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-task-orchestrator",
+      "url": "https://clawhub.ai/skills/ppt-task-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-task-orchestrator",
+    "url": "https://clawhub.ai/skills/ppt-task-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-task-orchestrator-bc63a1c622c650b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-task-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-task-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a3e2a35a0248c41b0ed581404bd6c42d1bea8550d58880beda34e11b877caf5",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:47:08.350Z"
+}

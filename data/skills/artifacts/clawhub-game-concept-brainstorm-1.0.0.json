@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-concept-brainstorm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_concept_brainstorm",
+  "skill": {
+    "id": 55013,
+    "skillKey": "clawhub-game-concept-brainstorm",
+    "name": "Game Concept Brainstorm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-concept-brainstorm",
+    "url": "https://clawhub.ai/skills/game-concept-brainstorm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-concept-brainstorm-36b80397e026397a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a vague game idea into a sharp fantasy, design pillars, player verbs, and acceptance bar before implementation begins. This is the proper “brainstorm” s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike007jd",
+      "userId": "s17445vjamxwgyr2d1q1jysg1d83qskv",
+      "displayName": "mike007jd",
+      "image": "https://avatars.githubusercontent.com/u/31256541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774857093910,
+      "changelog": "- Initial release of the skill for turning vague game ideas into clear, actionable concepts.\n- Guides teams through defining the core fantasy, primary player verbs, reward loops, and acceptance criteria.\n- Provides a structured workflow to lock key design pillars before implementation begins.\n- Includes templates and deliverables to document brainstorm results.\n- Ensures focus and decisiveness, protecting the intended game experience from dilution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5bd357d060ea2152a195d67887eeaeca2710e4eb1434f2ce094a00f39c9251d"
+}

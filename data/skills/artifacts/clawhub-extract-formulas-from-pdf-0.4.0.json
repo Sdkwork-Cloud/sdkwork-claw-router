@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/extract-formulas-from-pdf@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.extract_formulas_from_pdf",
+  "skill": {
+    "id": 31241,
+    "skillKey": "clawhub-extract-formulas-from-pdf",
+    "name": "Extract Formulas From Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "extract-formulas-from-pdf",
+    "url": "https://clawhub.ai/skills/extract-formulas-from-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/extract-formulas-from-pdf-9181b7b6b3311c7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract mathematical formulas and equations from PDF documents using MinerU. Identifies and converts formula content from academic papers, textbooks, and tec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzlzyca",
+      "userId": "s177m2xppsth4a69xqx30k6kds83haz0",
+      "displayName": "mzlzyCA",
+      "image": "https://avatars.githubusercontent.com/u/87289074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775210293619,
+      "changelog": "SEO: expand description for better ClawHub vector search discovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65a7843f387ff64553ea4c0a6e736aae6284701374da2e772314d5db58d0f193"
+}

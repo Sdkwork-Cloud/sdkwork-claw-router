@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11675,
+  "uuid": "skill-clawhub-serpapi-mcp",
+  "skillKey": "clawhub-serpapi-mcp",
+  "name": "Serpapi Mcp",
+  "summary": "Run SerpAPI searches via SerpAPI's MCP server using mcporter. Use when the user asks to search the web with SerpAPI/SerpAPI MCP, wants SerpAPI inside Clawdbot, or to use the /serp command.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serpapi_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcos Morales",
+      "features": [
+        "Run SerpAPI searches via SerpAPI's MCP server using mcporter",
+        "Use when the user asks to search the web with SerpAPI/SerpAPI MCP, wants SerpAPI inside Clawdbo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/serpapi-mcp@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102313951?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "serpapi-mcp",
+      "url": "https://clawhub.ai/skills/serpapi-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serpapi-mcp",
+    "url": "https://clawhub.ai/skills/serpapi-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serpapi-mcp-f46d307c02f0bcb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/serpapi-mcp@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-serpapi-mcp-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aad5638fbde82acbffcb5134ce269b6ccc484cb5991deed8a7dabffd6afa8ac",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T09:53:59.309Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/admapix@1.0.28",
+  "version": "1.0.28",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.admapix",
+  "skill": {
+    "id": 8223,
+    "skillKey": "clawhub-admapix",
+    "name": "AdMapix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "admapix",
+    "url": "https://clawhub.ai/skills/admapix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/admapix-f482a65fe0066193.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ad intelligence & app analytics assistant. Search ad creatives, analyze apps, view rankings, track downloads/revenue, and get market insights. Get your API k..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fly0pants",
+      "userId": "s17485bhjxmrt6atmnk22z55ex83gb56",
+      "displayName": "fly0pants",
+      "image": "https://avatars.githubusercontent.com/u/110800087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127743,
+      "installsAllTime": 264,
+      "installsCurrent": 259,
+      "stars": 276,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "1.0.28",
+      "createdAt": 1774360902758,
+      "changelog": "admapix 1.0.28\n\n- Updated description: now includes a direct link (https://www.admapix.com) for users to obtain an API key.\n- Improved onboarding clarity by instructing users to sign up and get their API key at AdMapix before use.\n- No logic or workflow changes; all interaction flows, API handling, and language rules remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1713560ec731f9ab4a90f1a708bb098a8eb6fc91dbefe48ee8e12dacaabf1ffe"
+}

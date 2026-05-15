@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/new-contact-hygiene-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_contact_hygiene_workflow",
+  "skill": {
+    "id": 37747,
+    "skillKey": "clawhub-new-contact-hygiene-workflow",
+    "name": "New Contact Hygiene Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-contact-hygiene-workflow",
+    "url": "https://clawhub.ai/skills/new-contact-hygiene-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-contact-hygiene-workflow-9f1644b111a8f747.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a HubSpot workflow that auto-enriches and stages new contacts upon creation. Sets lifecycle stage, copies company name and industry from associated com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774554513618,
+      "changelog": "- Initial release of the \"New Contact Hygiene Workflow\" skill.\n- Provides step-by-step instructions to manually build a HubSpot workflow that enriches and stages every new contact upon creation.\n- Ensures new contacts are set to \"Lead,\" and copies company name and industry from the associated company.\n- Outlines limitations of the HubSpot Workflows API and explains why workflow must be built in the UI.\n- Details three workflow-building options: manual UI build (recommended), HubSpot Breeze AI (with critical caveats), and Claude Anthropic Chrome extension.\n- Includes testing, verification, workflow rollback steps, and covers edge cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0063857a6ffe3f2e1ae7bcb130fed9863d588ae14594db29a354168f5beed6e1"
+}

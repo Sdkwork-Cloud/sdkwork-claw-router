@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cambridge-uk@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cambridge_uk",
+  "skill": {
+    "id": 70300,
+    "skillKey": "clawhub-cambridge-uk",
+    "name": "Cambridge Uk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cambridge-uk",
+    "url": "https://clawhub.ai/skills/cambridge-uk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cambridge-uk-33a6497e480e28e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供剑桥大学历史、学院、申请条件、学费资助及校园生活等详细信息，助力英国留学了解与规划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238024214,
+      "changelog": "- Improved SKILL.md for concise navigation and clearer usage scenarios.\n- Added quick access sections for brand history, business overview, market presence, and industry ranking.\n- Refined summary and read triggers for better clarity.\n- Updated recommendations for using the official website for the latest information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d66fd54280f9b3c4ca75a5956596291ad02b5ce4388c80607446b8b24fcdc565"
+}

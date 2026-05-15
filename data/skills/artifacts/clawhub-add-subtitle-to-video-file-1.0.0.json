@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-subtitle-to-video-file@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_subtitle_to_video_file",
+  "skill": {
+    "id": 55193,
+    "skillKey": "clawhub-add-subtitle-to-video-file",
+    "name": "Add Subtitle To Video File"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-subtitle-to-video-file",
+    "url": "https://clawhub.ai/skills/add-subtitle-to-video-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-subtitle-to-video-file-769ff0561a54067d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — add subtitles in English and burn them into the video — and get captioned..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776315260054,
+      "changelog": "add-subtitle-to-video-file 1.0.0 — Initial Release\n\n- Easily add and burn subtitles into your video files (MP4, MOV, AVI, WebM up to 500MB).\n- Automatic subtitle generation and cloud rendering — no editing software needed.\n- Supports uploading video files, checking credits, and downloading rendered videos.\n- Guided prompts and user-friendly status updates for each step.\n- Handles common errors with clear feedback and suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84ff73bc179b21e18ce98b6401aa718f45d4db8879aee7fa4b72a25fd46a2db0"
+}

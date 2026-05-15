@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-api-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_api_automation",
+  "skill": {
+    "id": 9339,
+    "skillKey": "clawhub-notion-api-automation",
+    "name": "Notion API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-api-automation",
+    "url": "https://clawhub.ai/skills/notion-api-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-api-automation-84fa3b5240711604.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Notion notes, pages, and data sources with a JSON-first CLI for search, read/export, write/import, append, and move operations. Use when working with Notion, organising notes, moving pages, triaging an inbox, or reading/writing page."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3533,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769976832448,
+      "changelog": "Initial skill release for Notion integration.\n\n- Provides a JSON-first CLI (`notionctl.mjs`) to search, read/export, write/import, append, and move Notion pages and data sources.\n- Supports authentication via `NOTION_API_KEY` and fallbacks.\n- Includes Markdown import/export, property setting, and triage workflow tools.\n- Ships example assets: note markdown and triage rules JSON.\n- Designed for error-resilient, deterministic scripting with clear operating rules and troubleshooting advice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d322e80f4aa637cec8c280a4a2837342169fac59126d506c6db775f4c180bffe"
+}

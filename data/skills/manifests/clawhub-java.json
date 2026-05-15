@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9579,
+  "uuid": "skill-clawhub-java",
+  "skillKey": "clawhub-java",
+  "name": "Java",
+  "summary": "Write robust Java avoiding null traps, equality bugs, and concurrency pitfalls.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.java",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Write robust Java avoiding null traps, equality bugs, and concurrency pitfalls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/java@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "java",
+      "url": "https://clawhub.ai/skills/java"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "java",
+    "url": "https://clawhub.ai/skills/java",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/java-38a0963a6364b09a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/java@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-java-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce5604c6269fc0ddab881f2fa155bad757971614f49f826d0e2c270b91addf55",
+      "artifactSizeBytes": 1733
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T20:17:54.767Z"
+}

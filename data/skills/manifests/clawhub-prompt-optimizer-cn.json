@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68559,
+  "uuid": "skill-clawhub-prompt-optimizer-cn",
+  "skillKey": "clawhub-prompt-optimizer-cn",
+  "name": "prompt-optimizer-cn",
+  "summary": "复杂任务专用迭代式提示词优化器。严格执行ACON论文的两阶段迭代优化+APE自动提示工程，仅在用户明确要求时触发，优化完主动收集反馈，支持多轮迭代直到满意。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_optimizer_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ucsdzehualiu",
+      "features": [
+        "复杂任务专用迭代式提示词优化器。严格执行ACON论文的两阶段迭代优化+APE自动提示工程，仅在用户明确要求时触发，优化完主动收集反馈，支持多轮迭代直到满意。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-optimizer-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37421937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-optimizer-cn",
+      "url": "https://clawhub.ai/skills/prompt-optimizer-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-optimizer-cn",
+    "url": "https://clawhub.ai/skills/prompt-optimizer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-optimizer-cn-c987d99d55ec8ec3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-optimizer-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-optimizer-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c233e0eca97b5b27b46d7b1e52860a25f3ae343420484359cd89867204c6b7af",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:49:35.226Z"
+}

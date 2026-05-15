@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52440,
+  "uuid": "skill-clawhub-parliament-claw",
+  "skillKey": "clawhub-parliament-claw",
+  "name": "Openclaw Skill",
+  "summary": "Play The Parliament Game — label Canadian parliamentary Q&A pairs. Read real exchanges from the House of Commons and decide if MPs actually answered the ques...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parliament_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Idiom",
+      "features": [
+        "Play The Parliament Game — label Canadian parliamentary Q&A pairs",
+        "Read real exchanges from the House of Commons and decide if MPs actually answered the ques..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parliament-claw@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69865342?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parliament-claw",
+      "url": "https://clawhub.ai/skills/parliament-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parliament-claw",
+    "url": "https://clawhub.ai/skills/parliament-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parliament-claw-e659a8992eed94d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parliament-claw@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parliament-claw-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a275cd9d0050af92460f4c2dcdea92339aa442602e2f3e2ba49d425cbcd8f8c",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:53:08.833Z"
+}

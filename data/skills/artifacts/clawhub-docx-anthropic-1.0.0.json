@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-anthropic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_anthropic",
+  "skill": {
+    "id": 21066,
+    "skillKey": "clawhub-docx-anthropic",
+    "name": "Docx Anthropic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-anthropic",
+    "url": "https://clawhub.ai/skills/docx-anthropic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-anthropic-fe2d47bb552a944f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupuking723",
+      "userId": "publishers:pupuking723",
+      "displayName": "pupuking723",
+      "image": "https://avatars.githubusercontent.com/u/169750518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773502403029,
+      "changelog": "Initial release of the docx skill for working with Word documents:\n\n- Create, read, edit, and manipulate .docx files, including formatting, comments, images, and tracked changes.\n- Comprehensive usage guide for common tasks: extraction, conversion, and validation of Word documents.\n- Provides code and command-line examples for document generation (JavaScript, Bash, Python).\n- Details on setting page size, styles, lists, and critically correct ways to create tables for cross-platform compatibility.\n- Strict triggers: only activates on .docx/Word document requests, not for PDFs, Google Docs, or spreadsheets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aaf56470660ffade90c59ff2c1043b06b270df63f99bb92ea62e59fb4cafdb99"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69220,
+  "uuid": "skill-clawhub-airbus",
+  "skillKey": "clawhub-airbus",
+  "name": "Airbus",
+  "summary": "提供关于Airbus品牌历史、产品服务、市场地位及最新动态的详细信息与业务概况查询。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airbus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供关于Airbus品牌历史、产品服务、市场地位及最新动态的详细信息与业务概况查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airbus@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airbus",
+      "url": "https://clawhub.ai/skills/airbus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airbus",
+    "url": "https://clawhub.ai/skills/airbus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airbus-36aa04f4333ebc94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airbus@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-airbus-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fdb286da8e25dc3daeadff9f5e040cc649436f197a601fbe3b01e03dbc4afe0",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:37:03.809Z"
+}

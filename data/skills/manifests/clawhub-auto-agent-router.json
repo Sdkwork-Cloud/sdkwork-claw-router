@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60639,
+  "uuid": "skill-clawhub-auto-agent-router",
+  "skillKey": "clawhub-auto-agent-router",
+  "name": "Auto Agent Router",
+  "summary": "根据消息命令自动路由到子 Agent。**Agent 应该：收到消息时首先检查是否包含 /coder、/writer 等命令，如果是则调用 sessions_spawn 启动对应子 Agent。**",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_agent_router",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnson",
+      "features": [
+        "根据消息命令自动路由到子 Agent。**Agent 应该：收到消息时首先检查是否包含 /coder、/writer 等命令，如果是则调用 sessions_spawn 启动对应子 Agen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-agent-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-agent-router",
+      "url": "https://clawhub.ai/skills/auto-agent-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-agent-router",
+    "url": "https://clawhub.ai/skills/auto-agent-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-agent-router-52ae7542809ffee3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-agent-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-agent-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb94d200db46f57902c86b2c102ba6aba81d6c76f72f84115dd1bc532b1a35e0",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T06:58:23.855Z"
+}

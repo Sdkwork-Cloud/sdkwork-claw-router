@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32991,
+  "uuid": "skill-clawhub-integrate-freshsales",
+  "skillKey": "clawhub-integrate-freshsales",
+  "name": "Freshsales",
+  "summary": "Freshsales integration. Manage crm and sales data, records, and workflows. Use when the user wants to interact with Freshsales data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_freshsales",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Freshsales integration",
+        "Manage crm and sales data, records, and workflows",
+        "Use when the user wants to interact with Freshsales data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-freshsales@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-freshsales",
+      "url": "https://clawhub.ai/skills/integrate-freshsales"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-freshsales",
+    "url": "https://clawhub.ai/skills/integrate-freshsales",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-freshsales-6c0089760bbe3eec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-freshsales@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-freshsales-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0cbf00c1063afb03d92fad7dd1a2a4357dca963888545f994bd633a97bd8e7c",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:36:26.118Z"
+}

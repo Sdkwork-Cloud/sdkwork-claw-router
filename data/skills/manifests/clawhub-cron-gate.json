@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25985,
+  "uuid": "skill-clawhub-cron-gate",
+  "skillKey": "clawhub-cron-gate",
+  "name": "Cron Gate",
+  "summary": "Pre-checks sessions for new messages via a zero-token Python script to trigger expensive OpenClaw crons only when new activity exists, saving tokens.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_gate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ori-claw",
+      "features": [
+        "Pre-checks sessions for new messages via a zero-token Python script to trigger expensive OpenCl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-gate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259138859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-gate",
+      "url": "https://clawhub.ai/skills/cron-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-gate",
+    "url": "https://clawhub.ai/skills/cron-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-gate-fe7b174358091c96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-gate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-gate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9eec63b9e6595586020933df3f597cc2feb66c32b3a6a2f0575e839d7478426d",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:27:46.546Z"
+}

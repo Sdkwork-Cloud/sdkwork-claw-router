@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentinel-downloader-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentinel_downloader_skill",
+  "skill": {
+    "id": 57744,
+    "skillKey": "clawhub-sentinel-downloader-skill",
+    "name": "sentinel_download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentinel-downloader-skill",
+    "url": "https://clawhub.ai/skills/sentinel-downloader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentinel-downloader-skill-3f751a9c4c27a941.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download Sentinel satellite imagery (Sentinel-1/2/5P) via STAC API with cloud cover filtering and batch download support | 基于 STAC API 下载哨兵卫星影像 (Sentinel-1/2..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruiduobao",
+      "userId": "s176n12ps0h5nrddqkyav159x183jbv6",
+      "displayName": "ruiduobao",
+      "image": "https://avatars.githubusercontent.com/u/26473196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773147038462,
+      "changelog": "- Expanded documentation to include both English and Chinese for all sections.\n- Added summary sections: Example Output and STAC API Endpoints.\n- Improved parameter and mission tables with bilingual headers and descriptions.\n- Enhanced usage instructions with bilingual examples.\n- Clarified license section for broader understanding.\n- No code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64b2924fde0098258b9e488f96f82416f2f6461c5f264dcbf56f3a4e6f387aa6"
+}

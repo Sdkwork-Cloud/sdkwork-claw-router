@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mema@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mema",
+  "skill": {
+    "id": 15691,
+    "skillKey": "clawhub-mema",
+    "name": "Mema Brain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mema",
+    "url": "https://clawhub.ai/skills/mema",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mema-48ebef73894899e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mema's personal brain - SQLite metadata index for documents and Redis short-term context buffer. Use for organizing workspace knowledge paths and managing ep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1999azzar",
+      "userId": "publishers:1999azzar",
+      "displayName": "azzar budiyanto",
+      "image": "https://avatars.githubusercontent.com/u/48999412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 965,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771266880950,
+      "changelog": "Addressed audit findings: added REDIS_PORT to metadata, clarified metadata-only indexing (no full-text), and ensured env.example.txt inclusion.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e79c93c620e42929c620b14308504fa72bbaaa45eb7801a119c0fcdb89154e9"
+}

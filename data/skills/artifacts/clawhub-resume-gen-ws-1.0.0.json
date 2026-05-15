@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-gen-ws@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_gen_ws",
+  "skill": {
+    "id": 61603,
+    "skillKey": "clawhub-resume-gen-ws",
+    "name": "简历生成技能（W工作室）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-gen-ws",
+    "url": "https://clawhub.ai/skills/resume-gen-ws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-gen-ws-ff11ae7b9a225efa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简历生成技能（W工作室）- 通过结构化信息收集，生成 Reactive Resume v2 标准 JSON，可导入 aicv.weinuo.work 生成精美简历 PDF。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xk103295870-alt",
+      "userId": "s17a35a5k5s7cw51pvrd6xet2n8454gb",
+      "displayName": "xiaoke321",
+      "image": "https://avatars.githubusercontent.com/u/249103362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776321162837,
+      "changelog": "Initial release.\n\n- Generates Reactive Resume v2 JSON for easy import into aicv.weinuo.work to create professional PDF resumes.\n- Guides users through structured information collection with clear required fields.\n- All data is processed locally; privacy is fully protected.\n- Offers multiple professional resume templates for different roles and industries.\n- Outputs JSON, printable PDF, and an info backup file for easy future editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:888dad9313588094a31a79a55ee212fa2bb4215be73f6af08e3aa97ccb27edfc"
+}

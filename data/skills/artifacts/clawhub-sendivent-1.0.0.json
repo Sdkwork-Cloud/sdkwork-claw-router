@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sendivent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sendivent",
+  "skill": {
+    "id": 44922,
+    "skillKey": "clawhub-sendivent",
+    "name": "Sendivent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sendivent",
+    "url": "https://clawhub.ai/skills/sendivent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sendivent-8589ef8fc2cea910.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sendivent multi-channel notification API. Use when sending notifications via email, SMS, Slack, push, Telegram, WhatsApp, or Discord. Triggers on: send notif..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oakleaf",
+      "userId": "s171jjt4g0tgyfppqjjd8hym4x8437ev",
+      "displayName": "oakleaf",
+      "image": "https://avatars.githubusercontent.com/u/441910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775132561622,
+      "changelog": "Initial release — Sendivent API\nreference, Node.js SDK guide, authentication, channels, template variables, webhooks, and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb181f4e98a347ff0933f2d60552b284eb117a76b00c04b87a6b4e794bbeb550"
+}

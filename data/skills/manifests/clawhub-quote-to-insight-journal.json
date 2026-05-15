@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48976,
+  "uuid": "skill-clawhub-quote-to-insight-journal",
+  "skillKey": "clawhub-quote-to-insight-journal",
+  "name": "Quote To Insight Journal",
+  "summary": "Transforms a brief user-provided quote into personal insight, context, and next reflection prompts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quote_to_insight_journal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Transforms a brief user-provided quote into personal insight, context, and next reflection prom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quote-to-insight-journal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quote-to-insight-journal",
+      "url": "https://clawhub.ai/skills/quote-to-insight-journal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quote-to-insight-journal",
+    "url": "https://clawhub.ai/skills/quote-to-insight-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quote-to-insight-journal-5bd148715eb8e577.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quote-to-insight-journal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quote-to-insight-journal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3886955595b71fd2f2e11bf9a56705a73c9f8c007e9a3838a816f691665c6cd",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T15:22:25.142Z"
+}

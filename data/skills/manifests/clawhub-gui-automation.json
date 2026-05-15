@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21261,
+  "uuid": "skill-clawhub-gui-automation",
+  "skillKey": "clawhub-gui-automation",
+  "name": "GUI Automation",
+  "summary": "Control the desktop via CUA computer server API running on port 8000",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gui_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sarinali",
+      "features": [
+        "Control the desktop via CUA computer server API running on port 8000"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gui-automation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74844953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gui-automation",
+      "url": "https://clawhub.ai/skills/gui-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gui-automation",
+    "url": "https://clawhub.ai/skills/gui-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gui-automation-1b7331c694fad6b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gui-automation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gui-automation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0d6de6ed23435813052f2721b7afa7927b92097302913c657218803d3a1d50c",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:39:18.928Z"
+}

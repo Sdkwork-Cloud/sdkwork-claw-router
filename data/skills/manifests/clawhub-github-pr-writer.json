@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30683,
+  "uuid": "skill-clawhub-github-pr-writer",
+  "skillKey": "clawhub-github-pr-writer",
+  "name": "GitHub PR Writer",
+  "summary": "Write clear, structured GitHub pull request descriptions using a standardized template. Use when creating a PR, updating a PR description, or when asked to d...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_pr_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deonte Cooper",
+      "features": [
+        "Write clear, structured GitHub pull request descriptions using a standardized template",
+        "Use when creating a PR, updating a PR description, or when asked to d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-pr-writer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45864171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-pr-writer",
+      "url": "https://clawhub.ai/skills/github-pr-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-pr-writer",
+    "url": "https://clawhub.ai/skills/github-pr-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-pr-writer-c9642ada14764699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-pr-writer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-pr-writer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:079be51649feef1cfd0ee795f696725fa092d189a1bb2194bd98e68d5f06e255",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:11:50.462Z"
+}

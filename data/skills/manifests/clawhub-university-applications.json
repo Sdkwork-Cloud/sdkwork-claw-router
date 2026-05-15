@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66072,
+  "uuid": "skill-clawhub-university-applications",
+  "skillKey": "clawhub-university-applications",
+  "name": "命理大师",
+  "summary": "全体系命理大师——融合八字/四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、西方星盘、 数字命理、九宫飞星风水、择时择吉于一体的综合命理技能。支持用户注册与档案管理、 每日运程自动推送、交互式六爻占卜界面、九宫飞星计算脚本、HTML 报告生成。 自动识别体系与资料完整度，按 S/A/B/C 四级精度输出解读。 触...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.university_applications",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "全体系命理大师——融合八字/四柱、紫微斗数、奇门遁甲、六爻、梅花易数、塔罗、西方星盘、 数字命理、九宫飞星风水、择时择吉于一体的综合命理技能。支持用户注册与档案管理、 每日运程自动推送、交互."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/university-applications@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "university-applications",
+      "url": "https://clawhub.ai/skills/university-applications"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "university-applications",
+    "url": "https://clawhub.ai/skills/university-applications",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/university-applications-619c6600fb721c0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/university-applications@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-university-applications-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c02838307088870051e828681642a01f90003110e9f844924a2dde438907244c",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T06:05:56.146Z"
+}

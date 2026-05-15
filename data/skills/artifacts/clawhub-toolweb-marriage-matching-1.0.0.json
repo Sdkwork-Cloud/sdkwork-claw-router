@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-marriage-matching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_marriage_matching",
+  "skill": {
+    "id": 39445,
+    "skillKey": "clawhub-toolweb-marriage-matching",
+    "name": "Marriage Matching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-marriage-matching",
+    "url": "https://clawhub.ai/skills/toolweb-marriage-matching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-marriage-matching-85c074205a3ae81a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates bride and groom horoscopes then produces a marriage compatibility report with PDF outputs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775404988685,
+      "changelog": "Seek Alliance - Marriage Matching Backend v1.0.0\n\n- Initial release providing Vedic astrology-based marriage compatibility analysis.\n- Generates horoscopes and a detailed compatibility report for bride and groom, all as downloadable PDFs.\n- Supports South Indian and North Indian chart types, with language options including Tamil, English, Malayalam, Telugu, Kannada, and Hindi.\n- Includes endpoints for city search (for birth details), API health status, and PDF downloads.\n- Free and paid pricing plans available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aec172efb77ae614d5fa50b03e8b9fd6884cf0987843dd8d39ec62a59703f9b8"
+}

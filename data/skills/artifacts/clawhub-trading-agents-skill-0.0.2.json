@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-agents-skill@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_agents_skill",
+  "skill": {
+    "id": 32209,
+    "skillKey": "clawhub-trading-agents-skill",
+    "name": "trading-agents.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-agents-skill",
+    "url": "https://clawhub.ai/skills/trading-agents-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-agents-skill-66d7b2c445dbb32c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate a swarm of specialized Claude subagents that simulate a professional trading firm to analyze stocks and produce trading decisions. Based on the T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huahang",
+      "userId": "s173awjzc1mx1adn7z0k57d8md849g8a",
+      "displayName": "huahang",
+      "image": "https://avatars.githubusercontent.com/u/351370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1775399217616,
+      "changelog": "Version 0.0.2\n\n- Added environment configuration files: .python-version, pyproject.toml, and uv.lock for reproducible Python setup.\n- Introduced Openclaw metadata to declare required system dependencies (python3, pip, uv).\n- Specified installation and virtual environment management instructions in SKILL.md, including use of uv for dependency management and script execution.\n- No changes to functional agent orchestration logic, core pipeline, or user interaction described in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:629c0b931f50c0d01b3e086db22dedce491343e6c6a2907d819826a7b335afcc"
+}

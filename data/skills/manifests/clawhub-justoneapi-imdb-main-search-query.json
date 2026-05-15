@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47356,
+  "uuid": "skill-clawhub-justoneapi-imdb-main-search-query",
+  "skillKey": "clawhub-justoneapi-imdb-main-search-query",
+  "name": "IMDb Keyword Search API",
+  "summary": "Call GET /api/imdb/main-search-query/v1 for IMDb Keyword Search through JustOneAPI with searchTerm.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_imdb_main_search_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/imdb/main-search-query/v1 for IMDb Keyword Search through JustOneAPI with searchT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-imdb-main-search-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-imdb-main-search-query",
+      "url": "https://clawhub.ai/skills/justoneapi-imdb-main-search-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-imdb-main-search-query",
+    "url": "https://clawhub.ai/skills/justoneapi-imdb-main-search-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-imdb-main-search-query-b9835f7d4ee128e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-imdb-main-search-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-imdb-main-search-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1a03060091f129b4378dbf5a13d71eca9730b10178633189debde05d04af1bb",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:59:37.596Z"
+}

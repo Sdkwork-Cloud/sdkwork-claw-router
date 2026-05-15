@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19514,
+  "uuid": "skill-clawhub-privacy-concierge",
+  "skillKey": "clawhub-privacy-concierge",
+  "name": "Privacy Concierge",
+  "summary": "Personal AI assistant that monitors your online privacy, calculates exposure scores, automates data broker opt-outs, tracks breaches, and offers privacy advice.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_concierge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlielila",
+      "features": [
+        "Personal AI assistant that monitors your online privacy, calculates exposure scores, automates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privacy-concierge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100155734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privacy-concierge",
+      "url": "https://clawhub.ai/skills/privacy-concierge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-concierge",
+    "url": "https://clawhub.ai/skills/privacy-concierge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-concierge-8e7c8e748174bc1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privacy-concierge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-privacy-concierge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a321bacd438b207f27d69a4c4024e93459168eef492ed3ab31fb9a3cbae0947",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T21:33:00.485Z"
+}

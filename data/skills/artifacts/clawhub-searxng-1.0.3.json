@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng",
+  "skill": {
+    "id": 8340,
+    "skillKey": "clawhub-searxng",
+    "name": "Searxng"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng",
+    "url": "https://clawhub.ai/skills/searxng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-7da65835ed9c2ecb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Privacy-respecting metasearch using your local SearXNG instance. Search the web, images, news, and more without external API dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abk234",
+      "userId": "publishers:abk234",
+      "displayName": "Avinash Venkatswamy",
+      "image": "https://avatars.githubusercontent.com/u/192931312?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 18972,
+      "installsAllTime": 458,
+      "installsCurrent": 429,
+      "stars": 31,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1769472992634,
+      "changelog": "Latest updates with improved documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aefcc221b354922542c404f714988f8f99bd1b7e2cb8b3819d8290111e0b7d97"
+}

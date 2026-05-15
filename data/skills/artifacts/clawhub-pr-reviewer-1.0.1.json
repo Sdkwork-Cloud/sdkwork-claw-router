@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pr-reviewer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pr_reviewer",
+  "skill": {
+    "id": 8781,
+    "skillKey": "clawhub-pr-reviewer",
+    "name": "pr-reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pr-reviewer",
+    "url": "https://clawhub.ai/skills/pr-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pr-reviewer-d6dceeadf7b2e0c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated GitHub PR code review with diff analysis, lint integration, and structured reports. Use when reviewing pull requests, checking for security issues,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "briancolinger",
+      "userId": "s1703pbrqfdv5rjpy9mp3x44ah83qysr",
+      "displayName": "Brian Colinger",
+      "image": "https://avatars.githubusercontent.com/u/8125655?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 6767,
+      "installsAllTime": 53,
+      "installsCurrent": 51,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771529167274,
+      "changelog": "Fix security scan flags: declare runtime dependencies, document env vars and write paths",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7fe518bfc4138b3dcca7670b3a923d74907295c0fc59fa03a061725f4235ccbe"
+}

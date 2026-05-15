@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44674,
+  "uuid": "skill-clawhub-pipeworx-usgswater",
+  "skillKey": "clawhub-pipeworx-usgswater",
+  "name": "Pipeworx usgswater",
+  "summary": "Provides real-time and historical USGS streamflow and gage height data for rivers, creeks, and streams across the United States.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_usgswater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides real-time and historical USGS streamflow and gage height data for rivers, creeks, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-usgswater@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-usgswater",
+      "url": "https://clawhub.ai/skills/pipeworx-usgswater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-usgswater",
+    "url": "https://clawhub.ai/skills/pipeworx-usgswater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-usgswater-14f792c65d0ca0e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-usgswater@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-usgswater-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:322ce71a92f16c589da2c09d3fe6392466a20b5bbe5f2dc85912e566c9e58c8e",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T17:12:08.790Z"
+}

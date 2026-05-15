@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64011,
+  "uuid": "skill-clawhub-gaode-c3-us-shop",
+  "skillKey": "clawhub-gaode-c3-us-shop",
+  "name": "POI 详情页问题排查编排器",
+  "summary": "POI 详情页问题排查编排器。自动执行 6 步排查流程：查代码 (sourceId)→查日志→复现请求→解析返回→阅读代码→定位问题。当用户提供 gsid/traceId 排查 POI 详情页问题时触发。触发词：POI 排查、poi 问题、详情页异常、gsid 排查、traceId 分析、poi 调试、conte...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaode_c3_us_shop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hnyyghk",
+      "features": [
+        "POI 详情页问题排查编排器。自动执行 6 步排查流程：查代码 (sourceId)→查日志→复现请求→解析返回→阅读代码→定位问题。当用户提供 gsid/traceId 排查 POI 详情."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gaode-c3-us-shop@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17867953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gaode-c3-us-shop",
+      "url": "https://clawhub.ai/skills/gaode-c3-us-shop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaode-c3-us-shop",
+    "url": "https://clawhub.ai/skills/gaode-c3-us-shop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaode-c3-us-shop-ad2db3b388984a1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gaode-c3-us-shop@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gaode-c3-us-shop-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:074317253bdb300026f306aab5d635082fa22464534e82f47ba8d394609e987c",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:28:24.994Z"
+}

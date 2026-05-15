@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-example-synthesizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_example_synthesizer",
+  "skill": {
+    "id": 59203,
+    "skillKey": "clawhub-skill-example-synthesizer",
+    "name": "Skill Example Synthesizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-example-synthesizer",
+    "url": "https://clawhub.ai/skills/skill-example-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-example-synthesizer-8a1f84fc91c9b845.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为 Skill 生成高质量正例、反例和边界例，提升路由与可理解性。；use for skills, examples, routing workflows；do not use for 只给笼统例子, 忽视误触发场景."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773905885859,
+      "changelog": "Initial release of skill-example-synthesizer.\n\n- Generates high-quality positive, negative, and edge case examples for skills to improve routing and clarity.\n- Prioritizes explicit inclusion of anti-patterns and edge scenarios; avoids generic examples.\n- Provides clear structure for output: positive examples, negative examples, edge cases, common mistakes, documentation suggestions, and maintenance tips.\n- Adds safety boundaries: output is read-only by default, emphasizes auditability, and avoids risky operations.\n- Includes guidance for usage workflow, environment requirements, and documentation pairing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:392a1ad264b314a0fb2cb761d8d6f5ff11299b3bd329129c85b0d7144ea341c2"
+}

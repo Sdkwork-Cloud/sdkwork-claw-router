@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-fast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_fast",
+  "skill": {
+    "id": 48520,
+    "skillKey": "clawhub-maker-fast",
+    "name": "Maker Fast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-fast",
+    "url": "https://clawhub.ai/skills/maker-fast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-fast-078a2572d758e59d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw phone recording into 1080p ready-to-share videos just by typing what you need. Whether it's rapidly producing finished videos from raw cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777399483359,
+      "changelog": "Initial release of Maker Fast — rapid AI-powered video editing from raw footage.\n\n- Instantly turn raw phone recordings into 1080p shareable videos with simple prompts.\n- Connects to a cloud backend; free token system for anonymous users.\n- Handles uploads, edits, credits checking, export, and session management via clear commands.\n- Guides users with progress statuses and streamlines render/export (MP4 format recommended).\n- Supports a wide range of audio, video, and image file types up to 500MB.\n- Robust error handling and user feedback for common issues (credits, file type, rate limits).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a596e9e2d95393d238b5f3fee51a6799b0288629c73eb68fdbd211342d45ee85"
+}

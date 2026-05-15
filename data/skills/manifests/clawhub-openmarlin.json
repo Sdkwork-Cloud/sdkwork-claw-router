@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19300,
+  "uuid": "skill-clawhub-openmarlin",
+  "skillKey": "clawhub-openmarlin",
+  "name": "OpenMarlin",
+  "summary": "Use OpenMarlin from OpenClaw to answer questions, run tasks, and manage OpenMarlin account setup and billing flows.",
+  "version": "0.1.22-main.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmarlin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alex4506",
+      "features": [
+        "Use OpenMarlin from OpenClaw to answer questions, run tasks, and manage OpenMarlin account setu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmarlin@0.1.22-main.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99305234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmarlin",
+      "url": "https://clawhub.ai/skills/openmarlin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmarlin",
+    "url": "https://clawhub.ai/skills/openmarlin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmarlin-2b7ed64b6ab338a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmarlin@0.1.22-main.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmarlin-0.1.22-main.1.json",
+      "version": "0.1.22-main.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27040eaaec35e0383987cd29fb3329f33ec8be57f0a03ab342b28a0614812bc3",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:29:11.363Z"
+}

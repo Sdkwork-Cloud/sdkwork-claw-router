@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18350,
+  "uuid": "skill-clawhub-kdocs",
+  "skillKey": "clawhub-kdocs",
+  "name": "Kdocs",
+  "summary": "Retrieve and summarize titles, authors, updates, and key content from public Kdocs document shares, templates, and product pages.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kdocs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Retrieve and summarize titles, authors, updates, and key content from public Kdocs document sha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kdocs@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kdocs",
+      "url": "https://clawhub.ai/skills/kdocs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kdocs",
+    "url": "https://clawhub.ai/skills/kdocs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kdocs-8688e58b5f2a6508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kdocs@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kdocs-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0ca8839966173b6bf884ce388ebe8f52e2af49d60f84ee24073a7ead5687140",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:08:43.023Z"
+}

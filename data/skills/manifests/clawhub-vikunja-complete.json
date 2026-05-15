@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22876,
+  "uuid": "skill-clawhub-vikunja-complete",
+  "skillKey": "clawhub-vikunja-complete",
+  "name": "Vikunja-complete",
+  "summary": "Production-oriented Vikunja task/project management skill with deterministic commands and strong validation.",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vikunja_complete",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KohlHammond",
+      "features": [
+        "Production-oriented Vikunja task/project management skill with deterministic commands and stron."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vikunja-complete@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120000610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vikunja-complete",
+      "url": "https://clawhub.ai/skills/vikunja-complete"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vikunja-complete",
+    "url": "https://clawhub.ai/skills/vikunja-complete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vikunja-complete-b378b2707a5ddfbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vikunja-complete@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vikunja-complete-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0054d0c026d2f4bc0da683a1afd770d44a20f6104e159a3f808d2fd05bd0f53f",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:29:23.585Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_assistant",
+  "skill": {
+    "id": 58943,
+    "skillKey": "clawhub-meeting-assistant",
+    "name": "Meeting Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-assistant",
+    "url": "https://clawhub.ai/skills/meeting-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-assistant-d6e923fc0a571dc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于构建和排查 SenseAudio 会议助手，覆盖实时会议转写、说话人区分、实时翻译、会议纪要生成、行动项提取与转录导出。Build and troubleshoot SenseAudio meeting assistants for live meeting transcription, speaker-aw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scikkk",
+      "userId": "s171sgccp6wt09makas274ye9584ktsf",
+      "displayName": "scikkk",
+      "image": "https://avatars.githubusercontent.com/u/77485593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1246,
+      "installsAllTime": 14,
+      "installsCurrent": 13,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773417570815,
+      "changelog": "Initial public release of SenseAudio Meeting Assistant skill.\n\n- Enables building and troubleshooting meeting workflows with SenseAudio ASR, including live transcription, speaker diarization, real-time translation, summary generation, action item extraction, and transcript export.\n- Detailed workflow guidance for both live and recorded meetings with model and feature selection advice.\n- Provides implementation rules, interface/model selection, minimal request examples, and limitations/caveats for typical meeting scenarios.\n- Includes output checklist and common pitfalls to guide users in best practices and avoid frequent errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e8176011b17a42d3d38deebffba1f05b9fdad6ba2c3abd1365fdb1ac74b9baa"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_creator",
+  "skill": {
+    "id": 18652,
+    "skillKey": "clawhub-agent-creator",
+    "name": "Agent Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-creator",
+    "url": "https://clawhub.ai/skills/agent-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-creator-432e616b62b18854.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a new AI agent identity (SOUL.md, IDENTITY.md, AGENTS.md) and package it as a .skill file ready to upload to ClawHub. Use when a user wants to create,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 16,
+      "installsCurrent": 15,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773091030909,
+      "changelog": "Initial release: generates SOUL.md, IDENTITY.md, AGENTS.md and packages them as a .skill file ready for ClawHub upload",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e59741d856619d8610294cb89a1eede81ea9d947f5d8da50000384932f7c3ab3"
+}

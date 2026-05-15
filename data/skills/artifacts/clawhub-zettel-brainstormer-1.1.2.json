@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zettel-brainstormer@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zettel_brainstormer",
+  "skill": {
+    "id": 19214,
+    "skillKey": "clawhub-zettel-brainstormer",
+    "name": "zettel-brainstormer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zettel-brainstormer",
+    "url": "https://clawhub.ai/skills/zettel-brainstormer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zettel-brainstormer-512ad462b2e5c8a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build structured brainstorming notes from a seed zettel by retrieving linked notes, preprocessing each note with subagents for relevance extraction, drafting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hxy9243",
+      "userId": "s174jr89gtts64q6r7vjgw2e2983fhme",
+      "displayName": "Xiaoyu Kevin Hu",
+      "image": "https://avatars.githubusercontent.com/u/3738091?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 629,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1774463801358,
+      "changelog": "docs: gracefully fallback if zettel-link is missing and mandate references in user output",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bbfbd2d0e1ea6aa9e9c38f546e8d3b008402843d3cbd0db8d4d56d7c62d0b39"
+}

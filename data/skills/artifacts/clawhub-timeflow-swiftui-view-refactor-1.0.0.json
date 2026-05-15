@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/timeflow-swiftui-view-refactor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timeflow_swiftui_view_refactor",
+  "skill": {
+    "id": 52226,
+    "skillKey": "clawhub-timeflow-swiftui-view-refactor",
+    "name": "Swiftui View Refactor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timeflow-swiftui-view-refactor",
+    "url": "https://clawhub.ai/skills/timeflow-swiftui-view-refactor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timeflow-swiftui-view-refactor-b7b36f97a451c5f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Refactor and review SwiftUI view files for consistent structure, dependency injection, and Observation usage. Use when asked to clean up a SwiftUI view’s lay..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774444228677,
+      "changelog": "Initial release of SwiftUI View Refactor guidelines.\n\n- Standardizes SwiftUI view file structure and ordering (environments, properties, init, body, helpers).\n- Emphasizes Model-View (MV) patterns: minimize view models, promote lightweight orchestration.\n- Outlines when and how to split large bodies and computed views into subviews or dedicated types.\n- Advises against top-level conditional swaps for stable identity and view trees.\n- Provides strict handling of view models and @Observable usage for dependency injection.\n- Includes workflow and formatting practices for large SwiftUI view files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:770b143fbb8ea073e8dc40ebf3317b011db6608368a6c5ec23fc1cb43941ee83"
+}

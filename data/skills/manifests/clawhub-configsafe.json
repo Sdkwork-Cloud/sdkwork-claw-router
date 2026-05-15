@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54277,
+  "uuid": "skill-clawhub-configsafe",
+  "skillKey": "clawhub-configsafe",
+  "name": "configsafe",
+  "summary": "Infrastructure configuration auditor — scans Dockerfiles, K8s manifests, Terraform, and CI/CD pipelines for security misconfigurations",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.configsafe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Infrastructure configuration auditor — scans Dockerfiles, K8s manifests, Terraform, and CI/CD p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/configsafe@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "configsafe",
+      "url": "https://clawhub.ai/skills/configsafe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "configsafe",
+    "url": "https://clawhub.ai/skills/configsafe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/configsafe-2ecf809039aa8361.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/configsafe@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-configsafe-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4a2e9aeec357c12d88e8586326d366823406d0fffd180e5a0065e0f5ebd9a4e",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:18:58.719Z"
+}

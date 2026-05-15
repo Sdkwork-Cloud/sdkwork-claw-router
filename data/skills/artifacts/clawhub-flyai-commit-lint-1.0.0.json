@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-commit-lint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_commit_lint",
+  "skill": {
+    "id": 43242,
+    "skillKey": "clawhub-flyai-commit-lint",
+    "name": "Flyai Commit Lint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-commit-lint",
+    "url": "https://clawhub.ai/skills/flyai-commit-lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-commit-lint-cf6f9ce2a27aeba4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enforce conventional commit messages with semantic validation, scope checking, and automated fix suggestions for git workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775121122527,
+      "changelog": "Initial release with conventional commit message linting and auto-fix suggestions.\n\n- Enforces semantic validation for commit messages with checks on type, scope, and subject.\n- Supports optional but recommended kebab-case scopes corresponding to project modules.\n- Validates commit subject for imperative mood, lowercase start, no period, and line length.\n- Provides automated suggestions to fix common commit message issues.\n- Integrates with git hooks, CI pipelines, and local development workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ce89c0cecb8ffdc60be36a84925627beea69254fe9aa97c3c6d9e5f6106b2f0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36312,
+  "uuid": "skill-clawhub-aana-code-change-review",
+  "skillKey": "clawhub-aana-code-change-review",
+  "name": "AANA Code Change Review Skill",
+  "summary": "Reviews and verifies code changes for scope, correctness, security, testing, secrets, and risks before commits, PRs, or deployments.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_code_change_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Reviews and verifies code changes for scope, correctness, security, testing, secrets, and risks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-code-change-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-code-change-review",
+      "url": "https://clawhub.ai/skills/aana-code-change-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-code-change-review",
+    "url": "https://clawhub.ai/skills/aana-code-change-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-code-change-review-d54676207cce7be5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-code-change-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-code-change-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67529f2ef5766ae8ccebda7ff2f037c0c8faafe8c098dc2b9cd1aa788d714d18",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T22:01:54.031Z"
+}

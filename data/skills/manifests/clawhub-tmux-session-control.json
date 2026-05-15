@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36985,
+  "uuid": "skill-clawhub-tmux-session-control",
+  "skillKey": "clawhub-tmux-session-control",
+  "name": "Tmux",
+  "summary": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmux_session_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utromaya-code",
+      "features": [
+        "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane outpu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tmux-session-control@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254962629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tmux-session-control",
+      "url": "https://clawhub.ai/skills/tmux-session-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmux-session-control",
+    "url": "https://clawhub.ai/skills/tmux-session-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmux-session-control-b0cab7bdf7ae2401.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tmux-session-control@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tmux-session-control-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f61517729e48ea8cfa0dc280da2629a336c158170827a0b036ff8c0ee744aef",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T21:49:25.345Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qianfan-knowledgebase-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qianfan_knowledgebase_search",
+  "skill": {
+    "id": 13885,
+    "skillKey": "clawhub-qianfan-knowledgebase-search",
+    "name": "Qianfan KnowledgeBase Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qianfan-knowledgebase-search",
+    "url": "https://clawhub.ai/skills/qianfan-knowledgebase-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qianfan-knowledgebase-search-4ed53bb44f23af9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search knowledge from Qianfan Knowledgebase. Use this when you need to retrieve information from user's private knowledge bases on Baidu Qianfan platform."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hannatao",
+      "userId": "s17ffp3j11bg15nmsgnj7rc5x583kwna",
+      "displayName": "hannatao",
+      "image": "https://avatars.githubusercontent.com/u/20313556?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1312,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770642696625,
+      "changelog": "- Documentation clean-up: Removed extra trailing whitespace from SKILL.md.\n- No functional or user-facing changes in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1c5f91dba4c03820b61fb29efb54b5405fbe483e7c039bd059db6afd97b2dc03"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42812,
+  "uuid": "skill-clawhub-employee-handbook-generator",
+  "skillKey": "clawhub-employee-handbook-generator",
+  "name": "Employee Handbook Generator (UK)",
+  "summary": "Generates complete, legally compliant UK employee handbooks and workplace policies tailored to business type and size. Use when someone needs an employee han...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.employee_handbook_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ExternalOS",
+      "features": [
+        "Generates complete, legally compliant UK employee handbooks and workplace policies tailored to.",
+        "Use when someone needs an employee han..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/employee-handbook-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "employee-handbook-generator",
+      "url": "https://clawhub.ai/skills/employee-handbook-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "employee-handbook-generator",
+    "url": "https://clawhub.ai/skills/employee-handbook-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/employee-handbook-generator-1dd4844205334643.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/employee-handbook-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-employee-handbook-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b958ea60de5642e9b4078ffc294de2b51da86ed55014b920c672ddee55583cc",
+      "artifactSizeBytes": 2739
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:45:22.075Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18288,
+  "uuid": "skill-clawhub-market-structure-scan",
+  "skillKey": "clawhub-market-structure-scan",
+  "name": "Market Structure Scan",
+  "summary": "Multi-timeframe crypto scanner analyzing market structure using Ichimoku Cloud, Bollinger Bands, MACD, and RSI without trade advice or unrelated concepts.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_structure_scan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bigedsherer-ctrl",
+      "features": [
+        "Multi-timeframe crypto scanner analyzing market structure using Ichimoku Cloud, Bollinger Bands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-structure-scan@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235980808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-structure-scan",
+      "url": "https://clawhub.ai/skills/market-structure-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-structure-scan",
+    "url": "https://clawhub.ai/skills/market-structure-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-structure-scan-b6272a847a2def4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-structure-scan@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-structure-scan-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c55b0dd3a04abb6c7d31d564e0a1725ead781109563294ea22fd36ab37a2013",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T14:50:56.460Z"
+}

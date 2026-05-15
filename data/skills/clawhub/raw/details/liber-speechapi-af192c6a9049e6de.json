@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "liber-speechapi",
+    "displayName": "liber-speechapi",
+    "summary": "Handle Telegram voice messages with ASR, summarize replies, and provide TTS; also support direct text-to-speech and speech-to-text conversion with environmen...",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1776154488427,
+    "updatedAt": 1777527526629
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1776252443744,
+    "changelog": "**Changelog for liber-speechapi v1.1.0**\n\n- Updated configuration priority for `.env`: environment variables > `~/.openclaw/.env` > local skill directory > current directory.\n- Now loads `speechapi_config.json` from `~/.openclaw/workspace/config/` as the primary config, with fallback to local `config.json`.\n- Removed `config_template.json` and added `speechapi_config.json` as the canonical config file.\n- Clarified documentation to resolve config precedence and external config locations.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "liberalchang",
+    "userId": "s1711a251cb269zj1bjvwcffxh83kcjh",
+    "displayName": "chang",
+    "image": "https://avatars.githubusercontent.com/u/79965108?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527526629
+  }
+}

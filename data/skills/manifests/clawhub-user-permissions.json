@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71127,
+  "uuid": "skill-clawhub-user-permissions",
+  "skillKey": "clawhub-user-permissions",
+  "name": "User Permissions",
+  "summary": "定义需要征求用户同意才能执行的操作规则。当任务涉及修改系统配置、安装/变更组件、执行可能影响系统运行的操作时，必须参考此skill确认是否需要先获得用户同意。特别适用于：系统管理任务、配置变更、skill安装/修改、定时任务管理、数据清理、网络配置、版本更新等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.user_permissions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CCCU-IMU",
+      "features": [
+        "定义需要征求用户同意才能执行的操作规则。当任务涉及修改系统配置、安装/变更组件、执行可能影响系统运行的操作时，必须参考此skill确认是否需要先获得用户同意。特别适用于：系统管理任务、配置变."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/user-permissions@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243494412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "user-permissions",
+      "url": "https://clawhub.ai/skills/user-permissions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "user-permissions",
+    "url": "https://clawhub.ai/skills/user-permissions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/user-permissions-cdec5cb662200e22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/user-permissions@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-user-permissions-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2d6f59de23e1c4696a16508d5e7112a144e14904373fa0247f3d14bc95c3eac",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T06:37:12.075Z"
+}

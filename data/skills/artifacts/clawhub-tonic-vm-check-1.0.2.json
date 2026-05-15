@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tonic-vm-check@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonic_vm_check",
+  "skill": {
+    "id": 56059,
+    "skillKey": "clawhub-tonic-vm-check",
+    "name": "VM Health Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonic-vm-check",
+    "url": "https://clawhub.ai/skills/tonic-vm-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonic-vm-check-b293f4c43d3bac7b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🖥️ Instant VM health checks — no config needed after first run. Point it at any Docker-based Linux server and get a clean report covering CPU, memory, disk,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonylnng",
+      "userId": "s173dqf5dknnr8d6w4pkbz1mn183wcdy",
+      "displayName": "tonylnng",
+      "image": "https://avatars.githubusercontent.com/u/36330929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773818176324,
+      "changelog": "Improved ClawHub description — clearer use cases and trigger phrases",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbdbe5abb3230df4dbc1759157262452c51064e4537529b76484975b593003ae"
+}

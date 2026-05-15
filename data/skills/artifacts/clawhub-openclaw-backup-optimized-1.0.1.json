@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-backup-optimized@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_optimized",
+  "skill": {
+    "id": 9791,
+    "skillKey": "clawhub-openclaw-backup-optimized",
+    "name": "Openclaw Backup Optimized"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-optimized",
+    "url": "https://clawhub.ai/skills/openclaw-backup-optimized",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-optimized-e2e2bbc50d3b1ff2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimized OpenClaw backup skill for creating full snapshots with workspace archive splitting, change summaries, restore instructions, and Discord notifications. Use when you need to set up or run automated backups, configure backup cron jo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cccarv82",
+      "userId": "publishers:cccarv82",
+      "displayName": "cccarv82",
+      "image": "https://avatars.githubusercontent.com/u/103304587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2857,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770050692872,
+      "changelog": "- Added separate environment variable setup instructions for Windows (PowerShell) in addition to macOS/Linux.\n- Clarified the script and path examples to use user home directories consistently (e.g., ~/.openclaw).\n- Specified that OpenClaw cron jobs run in the gateway environment.\n- Improved formatting and OS-specific guidance for easier installation and setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:340465000f8c3369d3a78262657cde4e60729a84f4bb3b03eda1252d76a3538d"
+}

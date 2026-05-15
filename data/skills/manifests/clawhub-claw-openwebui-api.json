@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59646,
+  "uuid": "skill-clawhub-claw-openwebui-api",
+  "skillKey": "clawhub-claw-openwebui-api",
+  "name": "open-webui-api 操作技能",
+  "summary": "整合 Open WebUI RAG 知識庫 API，讓 OpenClaw 能自動上傳文件和查詢知識庫。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_openwebui_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ken",
+      "features": [
+        "整合 Open WebUI RAG 知識庫 API，讓 OpenClaw 能自動上傳文件和查詢知識庫。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-openwebui-api@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13045852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-openwebui-api",
+      "url": "https://clawhub.ai/skills/claw-openwebui-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-openwebui-api",
+    "url": "https://clawhub.ai/skills/claw-openwebui-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-openwebui-api-dadf1c21e032f852.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-openwebui-api@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-openwebui-api-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:080d75e0d942b796f1f80908339f47556197614c3800536ef3fdb74060d03ad8",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T06:27:18.033Z"
+}

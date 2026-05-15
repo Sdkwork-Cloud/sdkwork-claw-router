@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26665,
+  "uuid": "skill-clawhub-sqlformat",
+  "skillKey": "clawhub-sqlformat",
+  "name": "Sqlformat",
+  "summary": "Format, lint, and pretty-print SQL with dialect conversion. Use when checking style, validating syntax, formatting queries, generating clean SQL.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlformat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Format, lint, and pretty-print SQL with dialect conversion",
+        "Use when checking style, validating syntax, formatting queries, generating clean SQL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sqlformat@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sqlformat",
+      "url": "https://clawhub.ai/skills/sqlformat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlformat",
+    "url": "https://clawhub.ai/skills/sqlformat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlformat-6aa27ef339fedb31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sqlformat@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sqlformat-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0901d52fa429527f3232a4eb774830f4c593a36034c9dba69fbba3df727fcb65",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:02:43.093Z"
+}

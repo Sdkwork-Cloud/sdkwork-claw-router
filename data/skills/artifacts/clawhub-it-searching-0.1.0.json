@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/it-searching@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.it_searching",
+  "skill": {
+    "id": 19080,
+    "skillKey": "clawhub-it-searching",
+    "name": "It Searching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "it-searching",
+    "url": "https://clawhub.ai/skills/it-searching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/it-searching-6819c97a379173c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides up-to-date tech news and AI research by scraping major AI company blogs and retrieving relevant papers from arXiv."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvinecarn",
+      "userId": "publishers:alvinecarn",
+      "displayName": "alvinecarn",
+      "image": "https://avatars.githubusercontent.com/u/255032544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 629,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771221462437,
+      "changelog": "Initial release of it-searching skill:\n\n- Provides an IT-focused search agent with access to url_scraping and arxiv_search tools.\n- Includes a curated list of major tech company blog URLs for direct access to official updates.\n- Outlines clear tool usage rules for retrieving recent AI papers and company news.\n- Offers guidance on template variables and agent configuration for runtime usage.\n- Ensures up-to-date results by instructing users to read actual web content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b0c9958c84d4336bcabde7632be43111049399e3cfd67083352d23618ab7037"
+}

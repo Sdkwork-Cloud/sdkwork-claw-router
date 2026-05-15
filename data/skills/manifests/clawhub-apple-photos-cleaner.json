@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20038,
+  "uuid": "skill-clawhub-apple-photos-cleaner",
+  "skillKey": "clawhub-apple-photos-cleaner",
+  "name": "Apple Photos Cleaner",
+  "summary": "Analyze and safely identify junk, duplicates, storage usage, timeline recaps, and quality scores to help organize and clean Apple Photos libraries on macOS.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_photos_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matthew Anderson",
+      "features": [
+        "Analyze and safely identify junk, duplicates, storage usage, timeline recaps, and quality score."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-photos-cleaner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87380976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-photos-cleaner",
+      "url": "https://clawhub.ai/skills/apple-photos-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-photos-cleaner",
+    "url": "https://clawhub.ai/skills/apple-photos-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-photos-cleaner-2e7359de351a91b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-photos-cleaner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-photos-cleaner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba02baa8a3e893a0335584cf86140d61415233eca39c001e0924cea69b97c4b8",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T17:34:59.543Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39217,
+  "uuid": "skill-clawhub-integrate-openai",
+  "skillKey": "clawhub-integrate-openai",
+  "name": "Openai",
+  "summary": "OpenAI integration. Manage Assistants, Files. Use when the user wants to interact with OpenAI data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_openai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "OpenAI integration",
+        "Manage Assistants, Files",
+        "Use when the user wants to interact with OpenAI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-openai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-openai",
+      "url": "https://clawhub.ai/skills/integrate-openai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-openai",
+    "url": "https://clawhub.ai/skills/integrate-openai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-openai-d8971abd53b69f1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-openai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-openai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1defe75926727242d4f9cf6d91c0ff0e5195b32de766e9b3412c6e7104edf697",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:37:05.342Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-online-course-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_online_course_creator",
+  "skill": {
+    "id": 53545,
+    "skillKey": "clawhub-cm-online-course-creator",
+    "name": "Online Course Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-online-course-creator",
+    "url": "https://clawhub.ai/skills/cm-online-course-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-online-course-creator-0f992fc8efdf8120.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coach someone through creating, launching, and selling an online course — niche validation, curriculum design, lesson structure, recording workflow, platform..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777679579466,
+      "changelog": "- Initial release of the Online Course Creator skill.\n- Guides creators through every stage: niche validation, curriculum design, lesson structure, recording workflow, platform selection, pricing, sales copy, launch sequencing, and iteration.\n- Supports decisions between cohort-based, self-paced, and hybrid course models.\n- Diagnoses common issues like poor sales, low completion rates, and lack of testimonials.\n- Provides detailed stage-by-stage playbooks, curriculum design best practices, production checklists, and platform comparisons.\n- Triggers on commonly asked online course and platform terms for easy access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1316ed0f229768556eff2886fc97a4fb82a243a84f8236850197492579eb2c25"
+}

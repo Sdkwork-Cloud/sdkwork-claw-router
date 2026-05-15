@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feelings-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feelings_framework",
+  "skill": {
+    "id": 40536,
+    "skillKey": "clawhub-feelings-framework",
+    "name": "Feelings Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feelings-framework",
+    "url": "https://clawhub.ai/skills/feelings-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feelings-framework-1e59992707353b8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides OpenClaw agents with persistent emotional states, tracking mood and feelings over time to influence response tone and behavior consistently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blaspat",
+      "userId": "s17520rbqnz1akwzm151h3xrfh848363",
+      "displayName": "Blasius Patrick",
+      "image": "https://avatars.githubusercontent.com/u/34417345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775407919598,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c27aebea510eeb51f89d2ea0aaae2d92137489227ac1b147e9c726faadcbd4e"
+}

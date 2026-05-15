@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuma-image-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuma_image_search",
+  "skill": {
+    "id": 57774,
+    "skillKey": "clawhub-kuma-image-search",
+    "name": "图片检索技能（KuMa定制版）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuma-image-search",
+    "url": "https://clawhub.ai/skills/kuma-image-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuma-image-search-6f399273239add8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visual image search using Google Lens via SerpAPI. Identify objects, landmarks, products, plants, animals, artwork, logos, or any visual entity from an image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kumamon2019s",
+      "userId": "s173tg1xa240bcd524t0ct9kn583t82b",
+      "displayName": "Venwell Chiang",
+      "image": "https://avatars.githubusercontent.com/u/42192791?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944114966,
+      "changelog": "Initial release of kuma-image-search: visual image search using Google Lens via SerpAPI.\n\n- Identify objects, products, landmarks, plants, animals, artwork, logos, and more from images.\n- Supports searching by image URL or local files (auto-uploaded).\n- Offers product search with pricing, exact/visual matches, and image provenance.\n- Returns structured markdown or raw JSON output.\n- Requires SERPAPI_KEY environment variable; no external dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b34b55a3a3d94a3b677581fe1d3db0a750caf825889879d2ec823c4bb51b01b"
+}

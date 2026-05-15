@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-search-for-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search_for_free",
+  "skill": {
+    "id": 41419,
+    "skillKey": "clawhub-baidu-search-for-free",
+    "name": "baidu_search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search-for-free",
+    "url": "https://clawhub.ai/skills/baidu-search-for-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-for-free-feb83e2554f9d55d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform Baidu search to retrieve Chinese web results with titles, summaries, and links, and parse webpage content from search results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoking",
+      "userId": "s17dzpwesyrtg00nc4dg89z4rd83gwew",
+      "displayName": "chaoking",
+      "image": "https://avatars.githubusercontent.com/u/7858960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774344851047,
+      "changelog": "- Migrated to using the baidusearch library for Baidu search results.\n- Added ability to parse and extract content from search result webpages.\n- New scripts: baidu_search.py (search), fetch_url.py (fetch & parse webpage), and search_and_fetch.py (integrated workflow).\n- Command-line support for search, webpage parsing, and full search+parse processes.\n- Documentation updated for workflow, result structure, and usage examples.\n- Removed legacy scripts and API key requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13db96a725c1112a6330eb5908bf0a21098db49d57438bda3f378b7397505e92"
+}

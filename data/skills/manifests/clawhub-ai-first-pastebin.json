@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53959,
+  "uuid": "skill-clawhub-ai-first-pastebin",
+  "skillKey": "clawhub-ai-first-pastebin",
+  "name": "AI-first pastebin",
+  "summary": "Use 呵.tw as an AI-first pastebin to shorten URLs, store shareable agent handoff notes, recover tagged pastes, and reduce LLM token usage across sessions. Tri...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_first_pastebin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jouston Huang",
+      "features": [
+        "Use 呵.tw as an AI-first pastebin to shorten URLs, store shareable agent handoff notes, recover."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-first-pastebin@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115980414?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-first-pastebin",
+      "url": "https://clawhub.ai/skills/ai-first-pastebin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-first-pastebin",
+    "url": "https://clawhub.ai/skills/ai-first-pastebin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-first-pastebin-d1296a7439ffccee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-first-pastebin@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-first-pastebin-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b610ea617821fe52a298b49ff686a16d8fd55edb7f112910175d6d65d922298f",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T03:34:32.851Z"
+}

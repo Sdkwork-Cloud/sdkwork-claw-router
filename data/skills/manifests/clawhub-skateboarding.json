@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73453,
+  "uuid": "skill-clawhub-skateboarding",
+  "skillKey": "clawhub-skateboarding",
+  "name": "网红滑板",
+  "summary": "提供关于网红滑板的推荐清单、打卡路线与指南。用户搜索网红滑板或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skateboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供关于网红滑板的推荐清单、打卡路线与指南。用户搜索网红滑板或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skateboarding@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skateboarding",
+      "url": "https://clawhub.ai/skills/skateboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skateboarding",
+    "url": "https://clawhub.ai/skills/skateboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skateboarding-15af8950c8b0ec62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skateboarding@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skateboarding-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fa1b5804614fc4d756cbb532ccd4c47ed7e6c97742b915e41f1e9c96d12493c",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:52:54.607Z"
+}

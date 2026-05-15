@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41804,
+  "uuid": "skill-clawhub-ollama-smart-router",
+  "skillKey": "clawhub-ollama-smart-router",
+  "name": "Smart Router for Ollama",
+  "summary": "Intelligent task routing between local and cloud Ollama LLM instances. Use when the user wants cost-efficient AI responses by routing simple tasks to a local...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_smart_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon",
+      "features": [
+        "Intelligent task routing between local and cloud Ollama LLM instances",
+        "Use when the user wants cost-efficient AI responses by routing simple tasks to a local..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-smart-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268817640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-smart-router",
+      "url": "https://clawhub.ai/skills/ollama-smart-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-smart-router",
+    "url": "https://clawhub.ai/skills/ollama-smart-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-smart-router-a477b6d0a5cc6575.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-smart-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-smart-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bce877e8a57f267c0c93bf1e9c75271627ea9c475973f312c3b596c055c47d5",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:19:11.885Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70065,
+  "uuid": "skill-clawhub-todo-master",
+  "skillKey": "clawhub-todo-master",
+  "name": "待办大师",
+  "summary": "用于本地待办管理的技能，支持基于 Python CLI 和 SQLite 存储待办；首次必须由用户确认数据目录（默认使用当前 skill 目录下的 data，或指定一个已存在的绝对路径）；支持添加待办、快速添加今日/明日待办、查看今日待办、按状态/优先级/关键字筛选查看全部待办、查看单条、更新、完成、重开、归档，...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_master",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TQQ",
+      "features": [
+        "用于本地待办管理的技能，支持基于 Python CLI 和 SQLite 存储待办；首次必须由用户确认数据目录（默认使用当前 skill 目录下的 data，或指定一个已存在的绝对路径）；支."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-master@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78466483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-master",
+      "url": "https://clawhub.ai/skills/todo-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-master",
+    "url": "https://clawhub.ai/skills/todo-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-master-126b2a694d2d8e8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-master@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-master-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:845e905597aedf70a2e38a1064256fb7334fb418d6ce14d0224f971f728afb0c",
+      "artifactSizeBytes": 2561
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T07:42:20.880Z"
+}

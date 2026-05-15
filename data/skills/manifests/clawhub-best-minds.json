@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66803,
+  "uuid": "skill-clawhub-best-minds",
+  "skillKey": "clawhub-best-minds",
+  "name": "Best Minds",
+  "summary": "模拟器思维：不问\"你怎么看\"，而是问\"世界上谁最懂这个？TA 会怎么说？\"。触发词：最强大脑、顶级专家、世界级、best minds、谁最懂这个",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_minds",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ru63num07",
+      "features": [
+        "模拟器思维：不问\"你怎么看\"，而是问\"世界上谁最懂这个？TA 会怎么说？\"。触发词：最强大脑、顶级专家、世界级、best minds、谁最懂这个"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/best-minds@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159872607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "best-minds",
+      "url": "https://clawhub.ai/skills/best-minds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-minds",
+    "url": "https://clawhub.ai/skills/best-minds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-minds-67bc947746abff4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/best-minds@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-best-minds-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f10fe2657a56847a42c811e97ef94e5925fd8b67e0c415a1849151e2df107bb",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T11:43:53.904Z"
+}

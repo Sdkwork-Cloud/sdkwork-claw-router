@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/star-office@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.star_office",
+  "skill": {
+    "id": 62408,
+    "skillKey": "clawhub-star-office",
+    "name": "Star Office"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "star-office",
+    "url": "https://clawhub.ai/skills/star-office",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/star-office-41db74579992ff68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Star Office UI 一键化 Skill：帮主人快速部署像素办公室看板，支持多 Agent 加入、状态可视化、移动端查看与公网访问。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18153",
+      "userId": "publishers:18153",
+      "displayName": "18153",
+      "image": "https://avatars.githubusercontent.com/u/139947520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774037064929,
+      "changelog": "star-office-ui 1.0.0 — Initial Release\n\n- Enables one-click deployment of a pixel office dashboard supporting multiple agents, status visualization, mobile viewing, and public access.\n- Adds sidebar with customizable asset management and password protection (default: 1234), with strong password recommended for production/public use.\n- Integrates with Gemini API for AI-powered room redesign; basic features work without API.\n- Supports three languages (Chinese/English/Japanese) and self-managed art assets.\n- Provides clear setup steps, state switching commands, and public access instructions (Cloudflare Tunnel recommended).\n- Includes major March 2026 updates:\n  - Asset copyright clarification (MIT for code, no commercial use for art assets, main character now a cat).\n  - Security and stability fixes (CDN cache, frontend, image generation async mode, sidebar UX, join key enhancements).\n  - Upgrade guidance and change reminders for existing users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a076bd192f2dd8036c4da26822be8f924cd68aa08d828f4c653f74e058b9cbf4"
+}

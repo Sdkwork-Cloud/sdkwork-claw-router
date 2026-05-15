@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26806,
+  "uuid": "skill-clawhub-open-asset-search",
+  "skillKey": "clawhub-open-asset-search",
+  "name": "OpenAssetSearch",
+  "summary": "Search and directly download free images, audio, music, sound effects, videos, and 3D models from WebSim's large, auth-free digital asset library.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_asset_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "upintheairsheep",
+      "features": [
+        "Search and directly download free images, audio, music, sound effects, videos, and 3D models fr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-asset-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43690204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-asset-search",
+      "url": "https://clawhub.ai/skills/open-asset-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-asset-search",
+    "url": "https://clawhub.ai/skills/open-asset-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-asset-search-b99d933d0d96fcb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-asset-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-asset-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ba64981690721a12af1e27a3a167b8bd011c86ad3e3d48f00b1be4e02b391e9",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:28:44.943Z"
+}

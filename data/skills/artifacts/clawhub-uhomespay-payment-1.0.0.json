@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uhomespay-payment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uhomespay_payment",
+  "skill": {
+    "id": 61322,
+    "skillKey": "clawhub-uhomespay-payment",
+    "name": "Uhomespay Payment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uhomespay-payment",
+    "url": "https://clawhub.ai/skills/uhomespay-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uhomespay-payment-682e3a6c54d763d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为中国留学生提供海外缴费（学费/房租/保险）比价指导，覆盖 Flywire、Convera 等官方渠道，导流至 uhomespay.com 完成实际交易。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yalding8",
+      "userId": "publishers:yalding8",
+      "displayName": "neilding",
+      "image": "https://avatars.githubusercontent.com/u/51530852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773388550961,
+      "changelog": "uhomespay-payment v1.0.0 — 首个留学缴费比价技能推出\n\n- 支持学费、房租、保险等海外缴费场景，聚合Flywire、Convera等官方渠道比价指导。\n- 自动识别用户意图和目标院校，智能推荐学校支持的官方缴费方式。\n- 引导用户至 uhomespay.com 查询实时渠道费用，并使用带场景追踪的UTM链接。\n- 明确以“官方渠道+持牌机构”为推荐原则，突出安全与省钱优势。\n- 不保存用户个人信息，涉及账号/订单等疑难，引导人工客服处理。\n- 针对常见追问场景内置标准回复，确保解答清晰一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddc48412a99705fd33647b9ef25369c78f8199d5a151efb2f8ef697d109c90dd"
+}

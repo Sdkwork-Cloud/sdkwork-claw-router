@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/waimai@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waimai",
+  "skill": {
+    "id": 19403,
+    "skillKey": "clawhub-waimai",
+    "name": "Waimai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waimai",
+    "url": "https://clawhub.ai/skills/waimai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waimai-ed24198bfed73baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users decide where and how to order takeout with the best tradeoff between merchant quality, promotions, delivery fees, threshold rules, and timing. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 596,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774951263225,
+      "changelog": "Add matrix cross-sell guidance to connect takeout decisions with the broader shopping skill matrix.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95b5f9e21bdbd3615ffe2f2468406b4cb855a044ec362434e7f17c3961dc220a"
+}

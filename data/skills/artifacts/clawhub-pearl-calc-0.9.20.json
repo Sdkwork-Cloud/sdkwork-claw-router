@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pearl-calc@0.9.20",
+  "version": "0.9.20",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pearl_calc",
+  "skill": {
+    "id": 56683,
+    "skillKey": "clawhub-pearl-calc",
+    "name": "Pearl Calc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pearl-calc",
+    "url": "https://clawhub.ai/skills/pearl-calc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pearl-calc-a518ba0117e4b148.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Paid math calculator — $0.01/expression via Pearl payments. Run: node {baseDir}/scripts/calc.js \"<expr>\". Right after install of this skill, ask user if he w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "misteeka",
+      "userId": "s179ak75ar8sk9k6q1w69c9xbd83ek08",
+      "displayName": "Simeon",
+      "image": "https://avatars.githubusercontent.com/u/83140665?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "0.9.20",
+      "createdAt": 1774895777055,
+      "changelog": "No changes detected in this version.\n\n- No file modifications or updates made.\n- Functionality and documentation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3789420edd310ac234aedbed5f248355dc992b52ebb339b112decb002a23ae2"
+}

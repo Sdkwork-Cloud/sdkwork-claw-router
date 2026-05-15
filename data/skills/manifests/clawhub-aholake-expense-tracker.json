@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16368,
+  "uuid": "skill-clawhub-aholake-expense-tracker",
+  "skillKey": "clawhub-aholake-expense-tracker",
+  "name": "Expense Tracker",
+  "summary": "Track daily expenses in structured markdown files organized by month. Use when the user wants to log spending, view expense summaries, analyze spending patte...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aholake_expense_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Loc Vo",
+      "features": [
+        "Track daily expenses in structured markdown files organized by month",
+        "Use when the user wants to log spending, view expense summaries, analyze spending patte..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aholake-expense-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10195964?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aholake-expense-tracker",
+      "url": "https://clawhub.ai/skills/aholake-expense-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aholake-expense-tracker",
+    "url": "https://clawhub.ai/skills/aholake-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aholake-expense-tracker-c163f7a726d6846b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aholake-expense-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aholake-expense-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45277579948fc5c2aa70127d340c3c97aa9a96b8ee7de489253ba3a114009d27",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T23:46:00.987Z"
+}

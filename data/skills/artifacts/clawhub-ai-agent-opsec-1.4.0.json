@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-agent-opsec@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_agent_opsec",
+  "skill": {
+    "id": 50178,
+    "skillKey": "clawhub-ai-agent-opsec",
+    "name": "AI Agent OPSEC — Runtime Classified Data Enforcer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-agent-opsec",
+    "url": "https://clawhub.ai/skills/ai-agent-opsec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-agent-opsec-ff033979f6f3d365.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prevent your AI agent from leaking classified terms to external APIs, subagents, or logs. Term registry + runtime redaction + pre-publish audit. Zero depende..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1773291370331,
+      "changelog": "Fix scanner false positive: renamed gateExternalPayload to sanitizeOutbound, payload field to sanitized — removes exfiltration signal pattern",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3fcafde33a79cab828a5d28481d7d5a477906d86c0c4d546043214fbf448cea"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61322,
+  "uuid": "skill-clawhub-uhomespay-payment",
+  "skillKey": "clawhub-uhomespay-payment",
+  "name": "Uhomespay Payment",
+  "summary": "为中国留学生提供海外缴费（学费/房租/保险）比价指导，覆盖 Flywire、Convera 等官方渠道，导流至 uhomespay.com 完成实际交易。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uhomespay_payment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "neilding",
+      "features": [
+        "为中国留学生提供海外缴费（学费/房租/保险）比价指导，覆盖 Flywire、Convera 等官方渠道，导流至 uhomespay.com 完成实际交易。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uhomespay-payment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51530852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uhomespay-payment",
+      "url": "https://clawhub.ai/skills/uhomespay-payment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uhomespay-payment",
+    "url": "https://clawhub.ai/skills/uhomespay-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uhomespay-payment-682e3a6c54d763d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uhomespay-payment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uhomespay-payment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddc48412a99705fd33647b9ef25369c78f8199d5a151efb2f8ef697d109c90dd",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:55:50.961Z"
+}

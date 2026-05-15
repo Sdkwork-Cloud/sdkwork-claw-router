@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/readpaper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readpaper",
+  "skill": {
+    "id": 69982,
+    "skillKey": "clawhub-readpaper",
+    "name": "论文阅读助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readpaper",
+    "url": "https://clawhub.ai/skills/readpaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readpaper-1df0c91c1c58f469.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "论文阅读报告生成器，从PDF提取结构化内容并生成全中文阅读报告。触发关键词：/readpaper、论文阅读、论文分析、PDF分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenbhxmu",
+      "userId": "s172wfttq6sqk8vpbw4th9retd84419r",
+      "displayName": "ChenBHXMU",
+      "image": "https://avatars.githubusercontent.com/u/108165710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775185060593,
+      "changelog": "- 首发版本，提供从PDF自动提取论文结构化内容并生成全中文阅读报告的能力。报告包括：论文基本信息；研究背景；研究方法；图表介绍；批判性思考等。\n- 支持多种PDF解析库，按文件大小智能选择最优提取方案。\n- 自动检测并安装依赖库，无需手动配置环境。\n- 提取论文元数据、摘要、方法、图表等内容，输出标准报告结构。\n- 缓存分析结果，相同文件支持极速复用。\n- 通过关键词/命令一键生成面向中文学术用户的详细论文阅读报告。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6a4cf820e747c8c887872cdd4a79488f07abf51c9f116838b79651f154cccf1"
+}

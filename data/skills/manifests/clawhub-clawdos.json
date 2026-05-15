@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18661,
+  "uuid": "skill-clawhub-clawdos",
+  "skillKey": "clawhub-clawdos",
+  "name": "Windows Execution Interface for OpenClaw",
+  "summary": "Windows automation via Clawdos API: screen capture, mouse/keyboard input, window management, file-system operations, and shell command execution. Standalone...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danzig233",
+      "features": [
+        "Windows automation via Clawdos API: screen capture, mouse/keyboard input, window management, fi.",
+        "Standalone..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdos@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54832537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdos",
+      "url": "https://clawhub.ai/skills/clawdos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdos",
+    "url": "https://clawhub.ai/skills/clawdos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdos-25b28ef03f8f6f7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdos@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdos-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab30e25a6e688269a747876be090d87ef49ff344fba5f0a794fd6cb8efa8545f",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:07:24.665Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-buttons@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_buttons",
+  "skill": {
+    "id": 34683,
+    "skillKey": "clawhub-prompt-buttons",
+    "name": "Prompt Buttons"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-buttons",
+    "url": "https://clawhub.ai/skills/prompt-buttons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-buttons-762643232ba3bfb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive helper skill that wraps agent prompts with short, consistent tappable button menus (Yes/No, single digits, or small option sets) so users can..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanjinlimkelvin-dot",
+      "userId": "s17ftbnyep3rsqrbkyww8xnsph83hy2b",
+      "displayName": "tanjinlimkelvin-dot",
+      "image": "https://avatars.githubusercontent.com/u/266243000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774149245990,
+      "changelog": "Telegram inline buttons with graceful fallback for OpenClaw agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29663fc6aad2a0e960b21fa0cfd7e378cf8d4f371f280c3dcad0a39e3adeddf0"
+}

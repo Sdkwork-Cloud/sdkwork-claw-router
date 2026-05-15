@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-messages-openclaw-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_messages_openclaw_skill",
+  "skill": {
+    "id": 10698,
+    "skillKey": "clawhub-google-messages-openclaw-skill",
+    "name": "Google Messages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-messages-openclaw-skill",
+    "url": "https://clawhub.ai/skills/google-messages-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-messages-openclaw-skill-b34bf6859d14d237.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive SMS/RCS via Google Messages web interface (messages.google.com). Use when asked to \"send a text\", \"check texts\", \"SMS\", \"text message\", \"Google Messages\", or forward incoming texts to other channels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2480,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769928644580,
+      "changelog": "Initial release of google-messages-openclaw-skill.\n\n- Enables sending and receiving SMS/RCS via Google Messages web interface.\n- Automates message workflow: pairing, sending, and receiving texts using the browser tool.\n- Provides real-time incoming SMS notifications via webhook forwarding.\n- Includes setup instructions for QR pairing, persistent session, and systemd service.\n- Details command references, selectors, troubleshooting, and security practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5e404ca19d042395aec81d12606916d1970fa0fa168dca3509078a229b7a09f7"
+}

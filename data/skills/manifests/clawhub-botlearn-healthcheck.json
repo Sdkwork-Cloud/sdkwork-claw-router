@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40626,
+  "uuid": "skill-clawhub-botlearn-healthcheck",
+  "skillKey": "clawhub-botlearn-healthcheck",
+  "name": "botlearn-healthcheck",
+  "summary": "botlearn-healthcheck — BotLearn autonomous health inspector for OpenClaw instances across 5 domains (hardware, config, security, skills, autonomy); triggers...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botlearn_healthcheck",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "邢怀康",
+      "features": [
+        "botlearn-healthcheck — BotLearn autonomous health inspector for OpenClaw instances across 5 dom.",
+        "triggers..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/botlearn-healthcheck@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32790342?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "botlearn-healthcheck",
+      "url": "https://clawhub.ai/skills/botlearn-healthcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botlearn-healthcheck",
+    "url": "https://clawhub.ai/skills/botlearn-healthcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botlearn-healthcheck-38c0845f69b2d33b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/botlearn-healthcheck@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-botlearn-healthcheck-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f837f40e0f8613ee19be18bd98e26921596f762acc4c2797f6e7481fc1dde66",
+      "artifactSizeBytes": 2635
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T19:48:45.034Z"
+}

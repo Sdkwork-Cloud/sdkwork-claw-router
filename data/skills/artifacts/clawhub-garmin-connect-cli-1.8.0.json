@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/garmin-connect-cli@1.8.0",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_connect_cli",
+  "skill": {
+    "id": 12831,
+    "skillKey": "clawhub-garmin-connect-cli",
+    "name": "Garmin Connect CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-connect-cli",
+    "url": "https://clawhub.ai/skills/garmin-connect-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-connect-cli-6490fa79a94682d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Garmin Connect CLI for activities, health, body composition, workouts, devices, gear, goals, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bpauli",
+      "userId": "s17bzqc1wf5cykqjmw6y6kwjn183n69b",
+      "displayName": "Burkhard Pauli",
+      "image": "https://avatars.githubusercontent.com/u/689884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1385,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.8.0",
+      "createdAt": 1777364597783,
+      "changelog": "- Added `gccli activities types` command to list available activity types.\n- No other user-facing changes detected in this update.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c07492994221012e26b2de8eba17497bd17f86ab6348cbd4dc343a610fcf53c9"
+}

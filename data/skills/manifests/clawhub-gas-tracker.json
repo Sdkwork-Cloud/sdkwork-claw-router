@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59268,
+  "uuid": "skill-clawhub-gas-tracker",
+  "skillKey": "clawhub-gas-tracker",
+  "name": "Gas Tracker",
+  "summary": "实时追踪ETH、BSC、Polygon、Arbitrum、Optimism等多链Gas费用，预测最佳交易时间。每次调用收费0.001 USDT。触发词：gas费、gas price、gas tracker、gas监控、eth gas、bsc gas。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gas_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deeplearning1993",
+      "features": [
+        "实时追踪ETH、BSC、Polygon、Arbitrum、Optimism等多链Gas费用，预测最佳交易时间。每次调用收费0.001 USDT。触发词：gas费、gas price、gas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gas-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106026146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gas-tracker",
+      "url": "https://clawhub.ai/skills/gas-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gas-tracker",
+    "url": "https://clawhub.ai/skills/gas-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gas-tracker-56dd470771859e32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gas-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gas-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8924e530dc52aab55260aa4bd25a1d70d488a20bdfc070401f3974f4c11d8b2",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T00:27:11.396Z"
+}

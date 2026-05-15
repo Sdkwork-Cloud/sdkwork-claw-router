@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pansou@1.1.6",
+  "version": "1.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pansou",
+  "skill": {
+    "id": 70883,
+    "skillKey": "clawhub-pansou",
+    "name": "PanSou 网盘搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pansou",
+    "url": "https://clawhub.ai/skills/pansou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pansou-4f99c9304b722ae1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网盘资源搜索引擎。支持百度网盘、阿里云盘、夸克网盘、天翼云盘、UC网盘、移动云盘、115、PikPak、迅雷、123网盘、磁力链接、电驴等12种网盘类型。支持按网盘类型、插件、TG频道过滤搜索结果。当用户需要搜索电影、剧集、软件、学习资料等网盘资源时使用此技能。触发词：搜索网盘、找资源、pan搜、网盘搜索、pan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "212-mei",
+      "userId": "s172fe20k3n3644sbev99fad6n83hzvy",
+      "displayName": "212-mei",
+      "image": "https://avatars.githubusercontent.com/u/62559713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.1.6",
+      "createdAt": 1776062900703,
+      "changelog": "替换示例中的具体剧名为 觉醒年代；示例链接替换为占位符，避免展示有效分享链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b300ceab5f5c0e3049d9084cba759e3e7073e5e09faab7178f2123b5f1a2661"
+}

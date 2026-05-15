@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-weekly-report@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_weekly_report",
+  "skill": {
+    "id": 58389,
+    "skillKey": "clawhub-ai-weekly-report",
+    "name": "AI Weekly Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-weekly-report",
+    "url": "https://clawhub.ai/skills/ai-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-weekly-report-0b6e741f92eef7b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI周报总结"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongyusheng",
+      "userId": "publishers:dongyusheng",
+      "displayName": "dongyusheng",
+      "image": "https://avatars.githubusercontent.com/u/52525198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773497329622,
+      "changelog": "- 重大变更：全面更新数据来源与说明，实现更权威、覆盖面更广的AI资讯采集。\n- 替换了所有微信公众号来源为7个AI资讯网站。\n- 明确限制最大查询跨度为一个月。\n- 更新了周报输出模板，链接展示为“原文链接”。\n- 明确工作流程与文件保存规则，提示输出文件路径。\n- 删除旧版SKILL.md，新增新版skill.md。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c75040e6e6eceef35aa47e841b09abbb86bbb2f359d252f2568abda04da3bea"
+}

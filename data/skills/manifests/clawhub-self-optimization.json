@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34688,
+  "uuid": "skill-clawhub-self-optimization",
+  "skillKey": "clawhub-self-optimization",
+  "name": "Self Optimization",
+  "summary": "Turn mistakes, corrections, dead ends, and repeated fixes into durable improvements. Use when work reveals a non-obvious lesson, a recurring failure, a missi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alethean-kaw",
+      "features": [
+        "Turn mistakes, corrections, dead ends, and repeated fixes into durable improvements",
+        "Use when work reveals a non-obvious lesson, a recurring failure, a missi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-optimization@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238510429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-optimization",
+      "url": "https://clawhub.ai/skills/self-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-optimization",
+    "url": "https://clawhub.ai/skills/self-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-optimization-4c5ef935e9b8a008.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-optimization@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-optimization-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e21af531dae1189bdea5aaed1ec77c9d5d18cfac7f3fb079c2b3d779a8c3c38c",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:33:27.381Z"
+}

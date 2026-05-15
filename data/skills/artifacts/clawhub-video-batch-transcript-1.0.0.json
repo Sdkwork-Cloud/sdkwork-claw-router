@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-batch-transcript@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_batch_transcript",
+  "skill": {
+    "id": 65440,
+    "skillKey": "clawhub-video-batch-transcript",
+    "name": "视频批量转录"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-batch-transcript",
+    "url": "https://clawhub.ai/skills/video-batch-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-batch-transcript-66e83ade965824c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用视频批量转录工具 - 支持 1000+ 网站（B 站、YouTube、抖音、Twitch 等），使用 yt-dlp 批量下载视频音频，GPU 加速语音转文字（faster-whisper + CUDA），自动校正专业术语，生成结构化学习笔记。支持断点续传、批量导出、多格式输出、需要登录的网站配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775653441356,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd2847bc568bab0b56cdb812582eed53399b90d8d3dd400a36cecad1422247ed"
+}

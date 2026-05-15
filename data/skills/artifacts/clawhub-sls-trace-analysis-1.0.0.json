@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sls-trace-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sls_trace_analysis",
+  "skill": {
+    "id": 67517,
+    "skillKey": "clawhub-sls-trace-analysis",
+    "name": "SLS + ARMS 全链路问题排查"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sls-trace-analysis",
+    "url": "https://clawhub.ai/skills/sls-trace-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sls-trace-analysis-dc26e5b8f980c5d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询阿里云SLS日志和ARMS调用链，结合源码和数据库进行全链路问题排查。 完整流程：查日志 → 画调用链 → 定位源码 → 排查数据库 → 给出修复方案。 Use when: 用户说「分析sls」「分析问题」或想排查业务服务/线上接口/用户请求的报错或异常。 触发示例：「分析sls」「帮我查一下这个trace_..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccrazyfish",
+      "userId": "s17cggvsf74paand5s1w72j50d83h9k8",
+      "displayName": "Zhichao Lee",
+      "image": "https://avatars.githubusercontent.com/u/38174721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774341168511,
+      "changelog": "sls-trace-analysis v1.0.0\n\n- Initial release.\n- Enables full-link Alibaba Cloud SLS log and ARMS trace investigation, integrating source code and database troubleshooting.\n- Provides strict, template-driven user interactions for collecting trace parameters, querying, and presenting results.\n- Automates script execution based on user input for trace_id, wusid, or path, with flexible time range selection.\n- Ensures all logstore logs are grouped, unmerged, and fully output as per guidelines.\n- Implements strict error handling and user guidance for cases where no data is found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13261605ca2f66862957931351324db2f200ff504b4804014139a3720cdad412"
+}

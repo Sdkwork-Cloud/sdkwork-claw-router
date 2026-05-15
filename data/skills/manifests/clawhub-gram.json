@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9501,
+  "uuid": "skill-clawhub-gram",
+  "skillKey": "clawhub-gram",
+  "name": "Instagram Skill via cyberdrk/gram CLI",
+  "summary": "Instagram CLI for viewing feeds, posts, profiles, and engagement via cookies.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gram",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arein",
+      "features": [
+        "Instagram CLI for viewing feeds, posts, profiles, and engagement via cookies."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gram@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/966091?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gram",
+      "url": "https://clawhub.ai/skills/gram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gram",
+    "url": "https://clawhub.ai/skills/gram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gram-caa75103c53be0b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gram@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gram-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b99a7de5892dc0261ddc516c580e65d8a4e75edbd8649aff9654c5fdd6e20fd6",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T09:50:31.792Z"
+}

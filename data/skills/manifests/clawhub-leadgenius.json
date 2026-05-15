@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40415,
+  "uuid": "skill-clawhub-leadgenius",
+  "skillKey": "clawhub-leadgenius",
+  "name": "Leadgenius",
+  "summary": "Enrich and score sales leads using AI-powered analysis, data validation, and CRM integration. Use when the user needs lead qualification, contact enrichment,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadgenius",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ncreighton",
+      "features": [
+        "Enrich and score sales leads using AI-powered analysis, data validation, and CRM integration",
+        "Use when the user needs lead qualification, contact enrichment,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/leadgenius@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15095223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "leadgenius",
+      "url": "https://clawhub.ai/skills/leadgenius"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadgenius",
+    "url": "https://clawhub.ai/skills/leadgenius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadgenius-be3ccf05b7bd450d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/leadgenius@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-leadgenius-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:701f5d166f059631d9aea58ad276a9dd7faf7a2a835c3bb1f486843e0f5ad76a",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:57:01.913Z"
+}

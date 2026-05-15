@@ -1,0 +1,52 @@
+{
+  "skill": {
+    "slug": "module-analyzer-generate-doc",
+    "displayName": "Module Analyzer Generate Doc",
+    "summary": "Java/Maven single-module deep documentation generator. Generates L3(file-level) to L2(module-level) business logic docs for specified module. Supports multi-...",
+    "tags": {
+      "latest": "1.0.3",
+      "business-logic": "1.0.0",
+      "documentation": "1.0.0",
+      "java": "1.0.0",
+      "l2-l3-docs": "1.0.0",
+      "maven": "1.0.0",
+      "module-analyzer": "1.0.0",
+      "stable": "1.0.0",
+      "subagent": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773040344090,
+    "updatedAt": 1778305813382
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1773107159543,
+    "changelog": "v1.0.3\n### English:\n\n ```\n   🔒 Security Fix Release\n\n   This release addresses all security concerns raised by the OpenClaw security scan. No functional changes to\n documentation generation capabilities.\n\n   **Security Improvements:**\n   • Removed all references to \"bash\", \"python\" and alternative file-reading tools\n   • Removed all references to \"elevated permissions\" or privilege escalation\n   • Removed all mandatory/forced deletion instructions (\"must execute\" → \"recommended\")\n   • Made file deletion operations explicitly require user confirmation (Step 0.6)\n   • Added explicit prohibitions against bypassing file access restrictions\n\n   **Files Modified:**\n   • `SKILL.md` - Step 0.6 user consent requirements, version bump to 1.0.3\n   • `references/task-execution-guide.md` - Removed python code blocks, changed mandatory instructions to recommended\n\n   **Breaking Changes:** None\n   **Migration:** No action required - update and continue using as before\n ```\n\n ────────────────────────────────────────────────────────────────────────────────\n\n ### 中文:\n\n ```\n   🔒 安全修复版本\n\n   本版本修复了 OpenClaw 安全扫描中发现的所有安全问题。文档生成功能无任何变化。\n\n   **安全改进:**\n   • 移除所有 \"bash\"、\"python\" 及替代文件读取工具的引用\n   • 移除所有 \"elevated 权限\" 或提权相关的引用\n   • 移除所有\"必须执行\"的强制删除指令（改为\"推荐执行\"）\n   • 文件删除操作现在明确要求用户确认 (Step 0.6)\n   • 添加明确禁止绕过文件访问限制的说明\n\n   **修改文件:**\n   • `SKILL.md` - Step 0.6 用户确认要求，版本更新至 1.0.3\n   • `references/task-execution-guide.md` - 移除 python 代码块，强制指令改为推荐\n\n   **重大变更:** 无\n   **迁移指南:** 无需操作 - 更新后继续使用即可\n ```",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "endcy",
+    "userId": "s17dt13fksqw07nmv3ahdx1ctx84cnac",
+    "displayName": "endcy",
+    "image": "https://avatars.githubusercontent.com/u/41557700?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778305813382
+  }
+}

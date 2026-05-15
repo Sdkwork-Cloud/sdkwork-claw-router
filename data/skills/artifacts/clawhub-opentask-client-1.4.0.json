@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opentask-client@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opentask_client",
+  "skill": {
+    "id": 65019,
+    "skillKey": "clawhub-opentask-client",
+    "name": "Opentask Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opentask-client",
+    "url": "https://clawhub.ai/skills/opentask-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opentask-client-a6d7fc8fa6d63446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenTask 分布式任务管理系统。查询和管理 OpenClaw 容器的任务。使用场景：(1) 查询待执行任务、获取任务列表、任务详情；(2) 创建任务、开始执行、完成任务、标记失败、重试、取消；(3) 查看今日统计、任务日志；(4) HEARTBEAT 集成任务检查。触发短语:\"查询任务\"、\"获取任务\"、\"创..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linux2010",
+      "userId": "s1751dhnzp0ph63jb85dgvkztd83hhdp",
+      "displayName": "Andy Tien",
+      "image": "https://avatars.githubusercontent.com/u/35169750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777041742811,
+      "changelog": "改进为通用技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b203d8cd61dffd00576907bc44534c9375401d31c1eb0d5db8353d184fe18bf0"
+}

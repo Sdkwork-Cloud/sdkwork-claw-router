@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ticktickpower@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktickpower",
+  "skill": {
+    "id": 36513,
+    "skillKey": "clawhub-ticktickpower",
+    "name": "Ticktick Skill For Power Users"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktickpower",
+    "url": "https://clawhub.ai/skills/ticktickpower",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktickpower-9ae9ed6bf2426e91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TickTick tasks and projects from the command line with OAuth2 auth, batch operations, and rate limit handling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hfarazi",
+      "userId": "s179gdfwcdbntfgp8b1eg89tbh84h1a4",
+      "displayName": "Hafez Farazi",
+      "image": "https://avatars.githubusercontent.com/u/12081530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775736977881,
+      "changelog": "Skill to connect to Tickticks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25f3bc46100b99b77c5fc8d293e4c2be954dea613b641fe312c501d7d930fda6"
+}

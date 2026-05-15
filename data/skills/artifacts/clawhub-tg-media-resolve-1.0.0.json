@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tg-media-resolve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tg_media_resolve",
+  "skill": {
+    "id": 55182,
+    "skillKey": "clawhub-tg-media-resolve",
+    "name": "Telegram Media Resolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tg-media-resolve",
+    "url": "https://clawhub.ai/skills/tg-media-resolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tg-media-resolve-531de3ecec5a2bc5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Resolve Telegram <media:image>, <media:document>, <media:video> and other media placeholders into actual files for vision/analysis. Use when a Telegram message contains a media placeholder (e.g. <media:image>) that you cannot see — typical."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurinzo",
+      "userId": "publishers:kurinzo",
+      "displayName": "kurinzo",
+      "image": "https://avatars.githubusercontent.com/u/1148125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1161,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770652788674,
+      "changelog": "Initial release: resolve <media:image/document/video> placeholders from Telegram messages via Bot API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c273c256192ad9f91391d933c308a2bc34be66f869c60347eede625c775f681"
+}

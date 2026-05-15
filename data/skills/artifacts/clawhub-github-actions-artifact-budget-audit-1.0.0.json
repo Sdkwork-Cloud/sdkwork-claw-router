@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-artifact-budget-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_artifact_budget_audit",
+  "skill": {
+    "id": 28578,
+    "skillKey": "clawhub-github-actions-artifact-budget-audit",
+    "name": "GitHub Actions Artifact Budget Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-artifact-budget-audit",
+    "url": "https://clawhub.ai/skills/github-actions-artifact-budget-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-artifact-budget-audit-e64f3cf5bdb70afe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit GitHub Actions artifact storage usage from JSON exports so bloated artifacts are flagged before they inflate CI cost."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772788219416,
+      "changelog": "Initial release: artifact size hotspot audit with thresholds, filters, text/json reports, and fail gate",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:406ff6abc4d892fc880c2a17df465b1180fcb9759156d272d8bd79360eaf3cff"
+}

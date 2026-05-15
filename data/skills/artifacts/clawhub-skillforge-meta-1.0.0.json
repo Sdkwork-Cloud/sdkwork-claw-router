@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillforge-meta@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillforge_meta",
+  "skill": {
+    "id": 54971,
+    "skillKey": "clawhub-skillforge-meta",
+    "name": "SkillForge — Self-Evolving AI Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillforge-meta",
+    "url": "https://clawhub.ai/skills/skillforge-meta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillforge-meta-07c862b84e87b4fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop repeating yourself. SkillForge watches how you work, discovers your patterns, and forges them into reusable Skills — automatically. The more you use it,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jfranklee",
+      "userId": "s1794yb05dsjjzs2f0qccvjx2n83qg4d",
+      "displayName": "JFrankLee",
+      "image": "https://avatars.githubusercontent.com/u/60511092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774599807083,
+      "changelog": "Initial release: Scout pattern discovery, Smith skill forging, Sensei health monitoring",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0007b0f4ec95d96fde915ea94fb4378442ae1886432cf16d391a4bf3d45060d"
+}

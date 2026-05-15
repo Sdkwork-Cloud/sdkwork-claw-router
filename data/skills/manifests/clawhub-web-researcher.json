@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11225,
+  "uuid": "skill-clawhub-web-researcher",
+  "skillKey": "clawhub-web-researcher",
+  "name": "Web Researcher",
+  "summary": "Use this skill for deep research, fact-checking, or finding the latest technical news.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_researcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aokikaito79",
+      "features": [
+        "Use this skill for deep research, fact-checking, or finding the latest technical news."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-researcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142609570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-researcher",
+      "url": "https://clawhub.ai/skills/web-researcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-researcher",
+    "url": "https://clawhub.ai/skills/web-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-researcher-732ff2e8de802abe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-researcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-researcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c553deec1535a69722ac52fa1d58166481e80ce567466584de2ce6c31ce5aac0",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:00:46.862Z"
+}

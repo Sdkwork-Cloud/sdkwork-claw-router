@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33101,
+  "uuid": "skill-clawhub-wbiztool",
+  "skillKey": "clawhub-wbiztool",
+  "name": "Wbiztool",
+  "summary": "Wbiztool integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wbiztool data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wbiztool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Wbiztool integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wbiztool data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wbiztool@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wbiztool",
+      "url": "https://clawhub.ai/skills/wbiztool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wbiztool",
+    "url": "https://clawhub.ai/skills/wbiztool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wbiztool-f89c59c8a4f8f508.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wbiztool@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wbiztool-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbbdd7c51ee8dff958ce59119a6a28ad658841b1d26c74626493fddefbf4c153",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:10:40.616Z"
+}

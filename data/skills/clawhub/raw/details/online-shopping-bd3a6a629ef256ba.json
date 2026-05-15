@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "online-shopping",
+    "displayName": "Online Shopping",
+    "summary": "Browse and buy products from online stores, including Cloudflare-protected sites. Use when the user asks to find, compare, or order products online. Handles...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 834,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1771853753521,
+    "updatedAt": 1778387710105
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1771853753521,
+    "changelog": "- Initial release of the \"online-shopping\" skill for browsing and buying products from online stores, including those protected by Cloudflare.\n- Uses Patchright (stealth Playwright) scripts and xvfb to bypass bot detection and enable automated shopping workflows.\n- Supports product search, price comparison, adding to cart, and automated checkout—always stopping for user confirmation before payment.\n- Provides step-by-step guidance for running and customizing Patchright scripts, highlighting critical bot evasion practices.\n- Integrates user preferences and addresses from local references files to streamline checkout, with clear safety measures to prevent accidental purchases.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "filipmartinsson",
+    "userId": "publishers:filipmartinsson",
+    "displayName": "Filip Martinsson",
+    "image": "https://avatars.githubusercontent.com/u/10158281?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387710105
+  }
+}

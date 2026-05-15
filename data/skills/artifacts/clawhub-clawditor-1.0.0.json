@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawditor",
+  "skill": {
+    "id": 19095,
+    "skillKey": "clawhub-clawditor",
+    "name": "Clawditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawditor",
+    "url": "https://clawhub.ai/skills/clawditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawditor-9c2e298205136ee6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit an OpenClaw agent workspace and generate standardized evaluation reports, scores, and patches. Use when asked to review memory quality, retrieval effic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theylon",
+      "userId": "publishers:theylon",
+      "displayName": "Theylon",
+      "image": "https://avatars.githubusercontent.com/u/27952472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 637,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771331626087,
+      "changelog": "Initial release of Clawditor: an OpenClaw workspace auditor and evaluation harness.\n\n- Scans agent workspaces to generate evaluation reports, numeric scores, and change recommendations.\n- Provides a detailed, repeatable workflow analyzing memory quality, retrieval, output, reliability, and goal alignment.\n- Outputs standardized summaries, scorecards, structured JSON reports, and concrete file patches.\n- Implements gold standard memory schema recommendations for agent workspaces.\n- Leverages helper scripts to streamline inventory, duplication detection, log scanning, and git stats.\n- Enforces strict evidence discipline, ties scores to file paths, and flags risks and improvements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23d0bfa875459957634e4f62deea369c262606d93818a04c0877bad959dec25c"
+}

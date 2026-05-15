@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baserow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baserow",
+  "skill": {
+    "id": 21730,
+    "skillKey": "clawhub-baserow",
+    "name": "Baserow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baserow",
+    "url": "https://clawhub.ai/skills/baserow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baserow-53081b9c32665ac9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Baserow tables/rows over the REST API for reads, inserts, and updates. Use when user asks to view or modify Baserow CRM/pipeline data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericjbone",
+      "userId": "s179b7n4v2f83vtq203b7yy4q9847zzw",
+      "displayName": "Eric Bone",
+      "image": "https://avatars.githubusercontent.com/u/88692009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772380843162,
+      "changelog": "- Initial release of the baserow skill to work with Baserow tables and rows via REST API for reading, inserting, and updating CRM/pipeline data.\n- Supports reading with Python (GET requests) and requires curl for writes (POST/PATCH) due to API limitations.\n- Includes documentation for environment variable setup, authentication, table mappings for Renpho CRM, and minimal usage examples.\n- Highlights important safety and usage conventions for integrating with Baserow in Renpho sales workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc9769d97f5e453759caa3b20470b1c213cc4d207755279b6d32c0af898ae31c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zyt-one-click-video-creation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyt_one_click_video_creation",
+  "skill": {
+    "id": 65916,
+    "skillKey": "clawhub-zyt-one-click-video-creation",
+    "name": "Zyt one click video creation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyt-one-click-video-creation",
+    "url": "https://clawhub.ai/skills/zyt-one-click-video-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyt-one-click-video-creation-c786676d67d914ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用户输入一个选题或口播稿，自动生成完整短视频成片（文案、分镜、数字人口播 + AI 画面混剪）。适用于「一键成片」「根据选题做视频」等场景。当前 skill 已内聚 TTS、数字人视频生成与 AI 文生视频调用能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuoyuting214",
+      "userId": "s173jvgnwrdkdq98kh17nyzq5183j2aj",
+      "displayName": "zuoyuting214",
+      "image": "https://avatars.githubusercontent.com/u/226682936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774522067206,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:469e55837a847a745d334d4324bf82ee15ea47edf5c4f46a03e78cffdcdde3f1"
+}

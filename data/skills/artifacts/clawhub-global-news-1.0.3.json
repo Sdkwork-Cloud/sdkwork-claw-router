@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/global-news@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_news",
+  "skill": {
+    "id": 50430,
+    "skillKey": "clawhub-global-news",
+    "name": "Global News By Opera News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-news",
+    "url": "https://clawhub.ai/skills/global-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-news-c4a16408995f3c68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stay informed with Global News — get breaking news, top headlines, local city news, and full-text article search across Europe, Americas, Latin America, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zerokileom",
+      "userId": "s171nmdxn2qj5t97yfrx4wr6gh83h0qm",
+      "displayName": "zerokileom",
+      "image": "https://avatars.githubusercontent.com/u/49235156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775034754418,
+      "changelog": "- Added support for trending and hot video search, including new triggers like \"video\", \"hot video\", and \"trending video\"\n- Introduced the new tool `search_hot_videos` for finding viral videos by keyword and optional look-back period\n- Updated skill description, triggers, and documentation to reflect video content capabilities\n- No changes to existing news tools or article formatting",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8bceb3180d740a7af6cb8783d70679a4e98f3b9a725618f06886784009ae4e9"
+}

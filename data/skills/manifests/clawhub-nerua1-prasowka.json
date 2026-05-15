@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43991,
+  "uuid": "skill-clawhub-nerua1-prasowka",
+  "skillKey": "clawhub-nerua1-prasowka",
+  "name": "Daily News Portal (Prasowka)",
+  "summary": "Generate a daily news portal as a single HTML file. Uses fetch_news.py + web_fetch + LLM for summaries. 18 categories, dark/light toggle, responsive layout.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nerua1_prasowka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nerua1",
+      "features": [
+        "Generate a daily news portal as a single HTML file",
+        "Uses fetch_news.py + web_fetch + LLM for summaries",
+        "18 categories, dark/light toggle, responsive layout."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nerua1-prasowka@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271220546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nerua1-prasowka",
+      "url": "https://clawhub.ai/skills/nerua1-prasowka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nerua1-prasowka",
+    "url": "https://clawhub.ai/skills/nerua1-prasowka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nerua1-prasowka-67c8058ceefb88ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nerua1-prasowka@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nerua1-prasowka-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5445e770f581dd889823b82f7a9ab360f1bae3f79264b31342b0bc9622447260",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:17:39.516Z"
+}

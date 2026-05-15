@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitnet@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitnet",
+  "skill": {
+    "id": 61427,
+    "skillKey": "clawhub-bitnet",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitnet",
+    "url": "https://clawhub.ai/skills/bitnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitnet-80656a6e019be5c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微软官方 1-bit LLM 推理框架，在 CPU 上运行 1.58-bit 量化大语言模型，速度提升 1.4-6x、能耗降低 55-82%，单 CPU 可运行 100B 参数模型，达到人类阅读速度"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cn-big-cabbage",
+      "userId": "s17dbd0j0kazk5ay31x9kv1z3n84f04v",
+      "displayName": "CN-big-cabbage",
+      "image": "https://avatars.githubusercontent.com/u/63539779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776818508169,
+      "changelog": "- 首个版本，集成微软官方 BitNet 1-bit LLM 高效 CPU 推理框架\n- 支持在消费级 x86/ARM CPU 上本地高效运行 1.58-bit 量化大语言模型\n- 提供端到端安装、模型下载、量化、推理及性能基准测试流程\n- 覆盖多模型格式，支持交互式对话、批量推理及多线程优化\n- 文档详尽，涵盖安装指引、疑难解答与核心用例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:deded96e7f457c598186ec5f805d6d3e09ae2efe44697427fe96ca2950065506"
+}

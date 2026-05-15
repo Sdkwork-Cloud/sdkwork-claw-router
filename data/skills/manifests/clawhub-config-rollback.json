@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19443,
+  "uuid": "skill-clawhub-config-rollback",
+  "skillKey": "clawhub-config-rollback",
+  "name": "Config Rollback",
+  "summary": "Auto-rollback protection for config changes. Backs up before edit, sets a 5-minute system timer to restore if things go wrong. Works with any service config,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_rollback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2233admin",
+      "features": [
+        "Auto-rollback protection for config changes",
+        "Backs up before edit, sets a 5-minute system timer to restore if things go wrong",
+        "Works with any service config,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-rollback@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57929895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-rollback",
+      "url": "https://clawhub.ai/skills/config-rollback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-rollback",
+    "url": "https://clawhub.ai/skills/config-rollback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-rollback-736252171b532dda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-rollback@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-rollback-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10bd53001071b965195ea4ac3d36956e1e325867885dfc8e4ea397916444b37a",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T20:46:53.154Z"
+}

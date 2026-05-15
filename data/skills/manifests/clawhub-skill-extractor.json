@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36068,
+  "uuid": "skill-clawhub-skill-extractor",
+  "skillKey": "clawhub-skill-extractor",
+  "name": "Skill Extractor",
+  "summary": "Export any installed OpenClaw skill into a shareable ZIP: detects & stages external runtime files, generates STRUCTURE.md for LLM-guided install. Reads and p...",
+  "version": "1.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seph",
+      "features": [
+        "Export any installed OpenClaw skill into a shareable ZIP: detects & stages external runtime fil.",
+        "Reads and p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-extractor@1.8.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65636039?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-extractor",
+      "url": "https://clawhub.ai/skills/skill-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-extractor",
+    "url": "https://clawhub.ai/skills/skill-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-extractor-0d85d9fb087adf45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-extractor@1.8.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-extractor-1.8.1.json",
+      "version": "1.8.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dcab7be0192cc116d770a5401ce4fdaccc2a85ddf883d8122529c37246c2605",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:15:31.910Z"
+}

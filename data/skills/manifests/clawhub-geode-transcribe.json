@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33976,
+  "uuid": "skill-clawhub-geode-transcribe",
+  "skillKey": "clawhub-geode-transcribe",
+  "name": "Geode On-device Transcribe & Summary",
+  "summary": "Transcribe and summarize audio/video files locally. Unlimited usage at a flat rate for heavy users.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geode_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geodeteam",
+      "features": [
+        "Transcribe and summarize audio/video files locally",
+        "Unlimited usage at a flat rate for heavy users."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geode-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269431370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geode-transcribe",
+      "url": "https://clawhub.ai/skills/geode-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geode-transcribe",
+    "url": "https://clawhub.ai/skills/geode-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geode-transcribe-f45d14a37ffb39f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geode-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geode-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fbb72ea4ad6dcbd4a590737b5f3e21a6587b1d87b8f3bb6edc634ea2d992450",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:39:21.162Z"
+}

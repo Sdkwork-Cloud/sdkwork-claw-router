@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-todo-list@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_todo_list",
+  "skill": {
+    "id": 65193,
+    "skillKey": "clawhub-openclaw-todo-list",
+    "name": "OpenClaw TODO List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-todo-list",
+    "url": "https://clawhub.ai/skills/openclaw-todo-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-todo-list-bac93be6c4e0ab24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用待办事项管理技能。记录需要做的事（TODO）和已完成的事（DONE），区分于日记的日常记录。触发时机：(1) 有明确任务时 (2) 任务完成时 (3) 用户要求查看进度。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773970797348,
+      "changelog": "- Initial release of the todo-list skill for managing tasks (TODO/DONE) separate from daily logs.\n- Provides clear file formats for TODO.md (待做/进行中) and DONE.md (已完成).\n- Emphasizes concise, purposeful task recording and proactive status updates.\n- Includes usage instructions, recording conventions, and sample commands.\n- Details the difference between task management and daily journaling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:902d4e7230469645e069194f840957e2dac5df3184f90b8969270e11acd5cf52"
+}

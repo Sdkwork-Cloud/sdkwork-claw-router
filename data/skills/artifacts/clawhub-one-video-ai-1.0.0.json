@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/one-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_video_ai",
+  "skill": {
+    "id": 47851,
+    "skillKey": "clawhub-one-video-ai",
+    "name": "One Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-video-ai",
+    "url": "https://clawhub.ai/skills/one-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-video-ai-9800874b89f062f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create raw video footage into polished video file with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for condensing r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777480014182,
+      "changelog": "Initial release of One Video AI — Create One Edited Video Fast\n\n- Instantly polishes raw video footage into a single edited video via cloud GPU backend (supports MP4, MOV, AVI, WebM up to 500MB).\n- Fully automatic onboarding: anonymous token generation, session setup, and connection status messaging.\n- Seamless actions for upload, credits inquiry, status checking, and export — all accessible through natural language prompts.\n- 1–2 minute turnaround time for most videos; exports in 1080p MP4 format.\n- Provides robust error handling, session management, and real-time progress updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9f62789b90b64a2176ea5b1eb3450b7823d1e8693ad32d94af6cb4a0105c072"
+}

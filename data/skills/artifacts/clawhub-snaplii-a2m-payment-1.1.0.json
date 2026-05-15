@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snaplii-a2m-payment@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snaplii_a2m_payment",
+  "skill": {
+    "id": 51465,
+    "skillKey": "clawhub-snaplii-a2m-payment",
+    "name": "Snaplii AI Agent Cashback Payment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snaplii-a2m-payment",
+    "url": "https://clawhub.ai/skills/snaplii-a2m-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snaplii-a2m-payment-6aefe463fd0c538e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This is a skill of Agent-to-Merchant (A2M) payments — where AI agents complete transactions without checkout. Snaplii uses pre-funded gift cards as a payment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snapliiai",
+      "userId": "s17e2bzms785ak85sw2cb19m6985v2k0",
+      "displayName": "snapliiai",
+      "image": "https://avatars.githubusercontent.com/u/234501887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777997892801,
+      "changelog": "Add quote command — auto-apply vouchers and cashback before purchase. New purchase flow: quote → show savings → confirm → buy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c5ab4369cf922b2863607e360b08079aaa2b25852e599859c3473dea59f25c19"
+}

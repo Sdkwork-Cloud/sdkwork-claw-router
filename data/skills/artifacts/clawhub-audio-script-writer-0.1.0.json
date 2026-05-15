@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-script-writer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_script_writer",
+  "skill": {
+    "id": 32337,
+    "skillKey": "clawhub-audio-script-writer",
+    "name": "Audio Script Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-script-writer",
+    "url": "https://clawhub.ai/skills/audio-script-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-script-writer-7955d5a3e6c3e653.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert written medical content into podcast or video scripts optimized for audio delivery. Transforms academic papers, reports, and educational materials in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773801964266,
+      "changelog": "Audio Script Writer v0.1.0 – Initial Release\n\n- Converts written medical and scientific content into scripts for podcasts, videos, lectures, and audiobooks.\n- Optimizes language for spoken delivery, adding pronunciation guides for medical terms.\n- Estimates timing and inserts pacing cues for narrators.\n- Offers templates for multiple audio formats, including patient education and research summaries.\n- Integrates with related tools for summarization, translation, and AI narration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf6b384cd48e6337fbd8076a7d4e258bb893e2ed930cb9466c47d49d98021702"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upwork-hunting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upwork_hunting",
+  "skill": {
+    "id": 13757,
+    "skillKey": "clawhub-upwork-hunting",
+    "name": "Upwork Hunting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upwork-hunting",
+    "url": "https://clawhub.ai/skills/upwork-hunting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upwork-hunting-cb1b4f11bc5bf2d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Systematically find and evaluate Upwork automation jobs, bid strategically using 2,000+ n8n templates to maximize win rate and delivery speed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "staybased",
+      "userId": "publishers:staybased",
+      "displayName": "staybased",
+      "image": "https://avatars.githubusercontent.com/u/216957304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1127,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770927840695,
+      "changelog": "Initial release — job targeting, template matching, 30-day playbook",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a66c504bc61b211758b97355bf4fe58752a967cfd8ce50c124e524b7037cf62"
+}

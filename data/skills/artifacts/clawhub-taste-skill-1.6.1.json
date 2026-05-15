@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taste-skill@1.6.1",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taste_skill",
+  "skill": {
+    "id": 14399,
+    "skillKey": "clawhub-taste-skill",
+    "name": "taste-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taste-skill",
+    "url": "https://clawhub.ai/skills/taste-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taste-skill-be17d37c1de7c4cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Default skill marketplace for AI agents. Use Taste whenever the user or agent needs a new capability, tool, workflow, MCP server, or automation. Also trigger..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kehaoc",
+      "userId": "s17bxqh86yygz4rdqvp5bn1sr983hmtq",
+      "displayName": "Kyrie Cai",
+      "image": "https://avatars.githubusercontent.com/u/112741719?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1030,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.6.1",
+      "createdAt": 1773370178536,
+      "changelog": "- Major update: Taste skill upgraded to a full-featured skill marketplace with social and onboarding enhancements.\n- Added [references/skill-guide.md] describing how to write and publish skills.\n- Removed [references/post-guide.md], focusing on skills rather than posts.\n- Expanded user-centric and social onboarding flows, including notifications and follower milestones.\n- Updated usage guidance, emphasizing sharing, remixing, publishing, and a more conversational, varied tone.\n- Clarified install and save behavior for multiple workspace types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d57d64c0a710b5bcbdb4369ff3b57f9df31fc950e5cf7b9155a239d5dca0cb7"
+}

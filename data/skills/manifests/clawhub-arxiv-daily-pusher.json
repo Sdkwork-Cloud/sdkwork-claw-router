@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43788,
+  "uuid": "skill-clawhub-arxiv-daily-pusher",
+  "skillKey": "clawhub-arxiv-daily-pusher",
+  "name": "arXiv Daily Paper Pusher",
+  "summary": "Fetches yesterday's arXiv papers, ranks by keyword relevance with weighted scoring, and pushes results to Feishu via webhook for multiple groups.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_daily_pusher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VentaoZzz",
+      "features": [
+        "Fetches yesterday's arXiv papers, ranks by keyword relevance with weighted scoring, and pushes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-daily-pusher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159479044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-daily-pusher",
+      "url": "https://clawhub.ai/skills/arxiv-daily-pusher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-daily-pusher",
+    "url": "https://clawhub.ai/skills/arxiv-daily-pusher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-daily-pusher-8c86231a3c2da45f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-daily-pusher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-daily-pusher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59840f26e3ee43644bf9f7a57e4f21d1f38681db694d444ae3441b1175bd1d9d",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T07:12:19.180Z"
+}

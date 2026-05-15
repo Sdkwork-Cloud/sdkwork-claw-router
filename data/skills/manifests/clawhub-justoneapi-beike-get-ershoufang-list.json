@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43976,
+  "uuid": "skill-clawhub-justoneapi-beike-get-ershoufang-list",
+  "skillKey": "clawhub-justoneapi-beike-get-ershoufang-list",
+  "name": "Beike Resale Housing List API",
+  "summary": "Call GET /api/beike/get-ershoufang-list/v1 for Beike Resale Housing List through JustOneAPI with cityId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_beike_get_ershoufang_list",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/beike/get-ershoufang-list/v1 for Beike Resale Housing List through JustOneAPI wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-beike-get-ershoufang-list@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-beike-get-ershoufang-list",
+      "url": "https://clawhub.ai/skills/justoneapi-beike-get-ershoufang-list"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-beike-get-ershoufang-list",
+    "url": "https://clawhub.ai/skills/justoneapi-beike-get-ershoufang-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-beike-get-ershoufang-list-fa78f0def20b212e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-beike-get-ershoufang-list@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-beike-get-ershoufang-list-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a30c47a58e73adf75019bbf1dc437b861166ebae48874030aeebcd61e8a63f5",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T15:12:18.276Z"
+}

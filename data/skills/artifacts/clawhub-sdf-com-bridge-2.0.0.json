@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sdf-com-bridge@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdf_com_bridge",
+  "skill": {
+    "id": 24283,
+    "skillKey": "clawhub-sdf-com-bridge",
+    "name": "SDF COM Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdf-com-bridge",
+    "url": "https://clawhub.ai/skills/sdf-com-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdf-com-bridge-249082b1790a9446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge between SDF COM chatroom and Feishu-Lark messaging platform. Supports bi-directional message translation between English and Chinese, command executio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ykaixu",
+      "userId": "publishers:ykaixu",
+      "displayName": "YuKaiXu",
+      "image": "https://avatars.githubusercontent.com/u/30675834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772348902345,
+      "changelog": "SDF COM chatroom to Feishu bridge with real-time message sync, translation, and command relay. Features: SSH socket reuse, COM protocol support, bidirectional EN-ZH translation, Feishu command integration. 2.0.0-patched: added dependency checker, error recovery, and translation handler.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5988ab0e440c13fba83e2eccdcea2de6d3b98d3f644a9046c473da04d7c109bb"
+}

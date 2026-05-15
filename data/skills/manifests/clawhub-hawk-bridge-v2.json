@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45089,
+  "uuid": "skill-clawhub-hawk-bridge-v2",
+  "skillKey": "clawhub-hawk-bridge-v2",
+  "name": "Workspace",
+  "summary": "Automates project inspection and iteration by analyzing from user, product, project, and tech perspectives to continuously improve code quality and delivery.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hawk_bridge_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gao.QiLin",
+      "features": [
+        "Automates project inspection and iteration by analyzing from user, product, project, and tech p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hawk-bridge-v2@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1791740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hawk-bridge-v2",
+      "url": "https://clawhub.ai/skills/hawk-bridge-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hawk-bridge-v2",
+    "url": "https://clawhub.ai/skills/hawk-bridge-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hawk-bridge-v2-8841efb08623906f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hawk-bridge-v2@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hawk-bridge-v2-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e9ba4a37c1f7654e51ff96798dfb2557a6d912e3a2730ac6b2c55ac4e3975a3",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T03:29:00.196Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35197,
+  "uuid": "skill-clawhub-sonatype",
+  "skillKey": "clawhub-sonatype",
+  "name": "Sonatype",
+  "summary": "Sonatype integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sonatype data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sonatype",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Sonatype integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sonatype data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sonatype@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sonatype",
+      "url": "https://clawhub.ai/skills/sonatype"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sonatype",
+    "url": "https://clawhub.ai/skills/sonatype",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sonatype-eda870f040899043.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sonatype@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sonatype-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df98092401c60080fabdd13322a9db0f976821b05bcd3cc59b963b36c3609090",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:45:11.581Z"
+}

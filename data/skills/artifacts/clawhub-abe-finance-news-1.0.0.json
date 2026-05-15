@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-finance-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_finance_news",
+  "skill": {
+    "id": 45692,
+    "skillKey": "clawhub-abe-finance-news",
+    "name": "abe-finance-news"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-finance-news",
+    "url": "https://clawhub.ai/skills/abe-finance-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-finance-news-bbbd7b4d0634d13f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market news briefings with AI summaries. Use when asked about stock news, market updates, portfolio performance, morning/evening briefings, financial headlin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777003756235,
+      "changelog": "finance-news 1.0.0 — Initial Release\n\n- Provides AI-powered market news briefings with summaries and headlines.\n- Supports US, European, and Japanese markets with sources like WSJ, Barron's, CNBC, and Yahoo.\n- Configurable delivery via WhatsApp, Telegram, and language choice (English or German).\n- Features portfolio tracking, stock-specific news, and automated morning/evening briefings.\n- Integrates with OpenClaw workflows, Lobster approval gates, and OpenBB tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:464c6af7e78ea806ad3503c591e416fc2744097eac2573c31e496e1ee130f984"
+}

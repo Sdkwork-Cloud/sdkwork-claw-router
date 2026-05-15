@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssl-checker@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl_checker",
+  "skill": {
+    "id": 21014,
+    "skillKey": "clawhub-ssl-checker",
+    "name": "Ssl Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl-checker",
+    "url": "https://clawhub.ai/skills/ssl-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-checker-f602260121ef0679.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check SSL certificate health, protocols, and cipher suites on domains. Use when auditing web security."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773930205518,
+      "changelog": "v3.0.0: rewrite",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:032e20658b315b2ff4c25c72ad87d039e35b2c7f58bac23584cd1588e52532ed"
+}

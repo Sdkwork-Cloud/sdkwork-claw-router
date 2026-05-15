@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wacrawl@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wacrawl",
+  "skill": {
+    "id": 54019,
+    "skillKey": "clawhub-wacrawl",
+    "name": "Wacrawl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wacrawl",
+    "url": "https://clawhub.ai/skills/wacrawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wacrawl-8982a29c72c20e5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only local archive and full-text search of macOS WhatsApp Desktop chats. Snapshots WhatsApp's SQLite databases into ~/.wacrawl/wacrawl.db without modify..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chasewebb",
+      "userId": "s176yq1qj6wp0md7d8t7a1mrj583f0t8",
+      "displayName": "Chase Webb",
+      "image": "https://avatars.githubusercontent.com/u/26909069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777398858330,
+      "changelog": "Initial publish: PaperChase crawler-fleet skill wrapping the upstream wacrawl CLI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:221b538be07e189e42c8a491afd151903c8eff6c11d1e5f079c6212e681770db"
+}

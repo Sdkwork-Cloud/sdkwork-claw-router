@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67642,
+  "uuid": "skill-clawhub-shlibrary-seat-booking",
+  "skillKey": "clawhub-shlibrary-seat-booking",
+  "name": "Shanghai Library Seat Booking",
+  "summary": "上海图书馆东馆三楼座位预约。支持浏览器自动化登录获取认证信息，以及基于API的座位预约（指定座位或系统自动分配）。适用于需要自动化预约图书馆座位的场景。",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shlibrary_seat_booking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liu Yuanyi",
+      "features": [
+        "上海图书馆东馆三楼座位预约。支持浏览器自动化登录获取认证信息，以及基于API的座位预约（指定座位或系统自动分配）。适用于需要自动化预约图书馆座位的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shlibrary-seat-booking@0.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17917491?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shlibrary-seat-booking",
+      "url": "https://clawhub.ai/skills/shlibrary-seat-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shlibrary-seat-booking",
+    "url": "https://clawhub.ai/skills/shlibrary-seat-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shlibrary-seat-booking-8838b8f0c27d9e2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shlibrary-seat-booking@0.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-shlibrary-seat-booking-0.1.9.json",
+      "version": "0.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bfd865245bcdda881b1e94a2bba8574efacfb611f5e6a1142e272cd7f6f4eb1",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T09:34:48.242Z"
+}

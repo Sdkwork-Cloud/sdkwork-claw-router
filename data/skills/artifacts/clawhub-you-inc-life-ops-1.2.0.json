@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/you-inc-life-ops@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.you_inc_life_ops",
+  "skill": {
+    "id": 66987,
+    "skillKey": "clawhub-you-inc-life-ops",
+    "name": "You Inc Life Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "you-inc-life-ops",
+    "url": "https://clawhub.ai/skills/you-inc-life-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/you-inc-life-ops-092b5b8269653638.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多智能体个人生活运营系统（YOU Inc.）。将个人生活视为公司运营，通过12个专业化Agent角色在身心健康、情绪社交、工作成长、精神爱好四个维度实现全方位自我管理。使用场景：(1) 任务拆解与对抗拖延 (2) 知识提炼与学习 (3) 情绪支持与心理疏导 (4) 健康管理与饮食运动建议 (5) 财务记账与订阅管..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zabr1314",
+      "userId": "s178enc3bpnh4aqt5b4nf0pj1d83hs38",
+      "displayName": "zabr1314",
+      "image": "https://avatars.githubusercontent.com/u/96586924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774320136185,
+      "changelog": "- 个性判断方式升级：由关键词匹配切换为对用户自然语言意图的语义理解，提升对话智能化和触发准确性。\n- SKILL.md 说明中，明确用户可以用自然语言表达状态和需求，无需依赖固定关键词。\n- skill 描述更新，突出“个人生活管家系统”与智能意图理解能力。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a52d9292f69a907ccc7a36dd9677aaf71a52f031a340b90482c7ade0eab13d1"
+}

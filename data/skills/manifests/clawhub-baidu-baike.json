@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9884,
+  "uuid": "skill-clawhub-baidu-baike",
+  "skillKey": "clawhub-baidu-baike",
+  "name": "baidu baike search",
+  "summary": "The Baidu Baike Component is a knowledge service tool designed to query authoritative encyclopedia explanations for various nouns. Its core function is given a specific \"noun\" (object, person, location, concept, event, etc.) provided by th.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_baike",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu_qianfan",
+      "features": [
+        "The Baidu Baike Component is a knowledge service tool designed to query authoritative encyclope.",
+        "Its core function is given a specific \"noun\" (object, person, location, concept, event, etc.) p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-baike@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41750260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-baike",
+      "url": "https://clawhub.ai/skills/baidu-baike"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-baike",
+    "url": "https://clawhub.ai/skills/baidu-baike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-baike-9507ce6f61f64b0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-baike@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-baike-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:010e545c9777e38dc86c78e0e14325837475736a8fd8dc6c732ffb08fa317e74",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T15:14:07.184Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/error-recovery-xiaobai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_recovery_xiaobai",
+  "skill": {
+    "id": 69345,
+    "skillKey": "clawhub-error-recovery-xiaobai",
+    "name": "Error Recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-recovery-xiaobai",
+    "url": "https://clawhub.ai/skills/error-recovery-xiaobai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-recovery-xiaobai-72d0544d77eace60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统化错误恢复 — 当工具失败时提供结构化的诊断、重试和汇报流程。防止静默失败、无限重试、错误升级。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aptratcn",
+      "userId": "s17cpfvkz8jmsw8vpgqypg10vh857dxa",
+      "displayName": "Erwin",
+      "image": "https://avatars.githubusercontent.com/u/268770574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776728431970,
+      "changelog": "Initial release to ClawHub",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6975a7c3e92b6bfc595e66e58e8198a32a7433102a36d5758eb8360b8053332"
+}

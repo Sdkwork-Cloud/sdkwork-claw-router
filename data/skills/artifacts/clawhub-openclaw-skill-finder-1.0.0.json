@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_finder",
+  "skill": {
+    "id": 58117,
+    "skillKey": "clawhub-openclaw-skill-finder",
+    "name": "skill finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-finder",
+    "url": "https://clawhub.ai/skills/openclaw-skill-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-finder-712e69b6ddafcf14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, browse, and discover OpenClaw skills from ClawHub platform with advanced filtering | 搜索、浏览、发现 ClawHub 平台上的 OpenClaw 技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774344191961,
+      "changelog": "**Skill Finder 1.0.0 — Major update: Focused on OpenClaw skill discovery from ClawHub with modern CLI and filtering.**\n\n- Redesigned to search, browse, and discover OpenClaw skills from the ClawHub platform only.\n- Introduced a new command-line tool (`openclaw-skill-finder`) installable via npm.\n- Added advanced features: category/tag filtering, fuzzier search, popularity/trending/recent sorting, and verified skill highlights.\n- Removed support for searching third-party ecosystems and complex memory/preference logic.\n- Replaced detailed agent/integration logic with simple human/CLI usage.\n- Added full English and Chinese documentation, usage examples, troubleshooting, and setup instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffdbeaf7f8ac82ea529a5698ab38a42ff998dd741bbd0f6d217fc76541d8261a"
+}

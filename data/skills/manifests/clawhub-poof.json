@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33856,
+  "uuid": "skill-clawhub-poof",
+  "skillKey": "clawhub-poof",
+  "name": "Poof",
+  "summary": "Poof integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Poof data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poof",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Poof integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Poof data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poof@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poof",
+      "url": "https://clawhub.ai/skills/poof"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poof",
+    "url": "https://clawhub.ai/skills/poof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poof-6b571f65fa6fa2c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poof@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-poof-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8069f0f7f8e792cf9b662d440a60a7f4dff01f226988dbcfe536b291d4aa4b03",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:52:30.894Z"
+}

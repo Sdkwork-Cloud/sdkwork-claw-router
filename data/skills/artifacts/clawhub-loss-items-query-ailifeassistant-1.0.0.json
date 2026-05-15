@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loss-items-query-ailifeassistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loss_items_query_ailifeassistant",
+  "skill": {
+    "id": 67930,
+    "skillKey": "clawhub-loss-items-query-ailifeassistant",
+    "name": "Loss Items 查询（复购商品）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loss-items-query-ailifeassistant",
+    "url": "https://clawhub.ai/skills/loss-items-query-ailifeassistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loss-items-query-ailifeassistant-09ef6e4a5bfb5ec3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 待复购商品/ 待购买商品 /资损品物品列表/商品补货，支持分页、状态、排序等参数。直接调用你的业务 HTTPS 接口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kunxinian",
+      "userId": "publishers:kunxinian",
+      "displayName": "KUNXINIAN",
+      "image": "https://avatars.githubusercontent.com/u/35528670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773989117177,
+      "changelog": "初始版本：支持 page/size/status/sort 参数，调用 pre-detailailifeast 接口，兼容复购商品查询关键词",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff8afd5f6198986246654d66a4e79782def8202fdef8f28c6ea48e691fcaa28a"
+}

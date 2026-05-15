@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zenmux-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenmux_image_gen",
+  "skill": {
+    "id": 22660,
+    "skillKey": "clawhub-zenmux-image-gen",
+    "name": "ZenMux Image Gen (Nano Banana 2)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenmux-image-gen",
+    "url": "https://clawhub.ai/skills/zenmux-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenmux-image-gen-81610471457728aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from text prompts using ZenMux API (Vertex AI protocol with Gemini models). Use when: (1) User wants to generate/create images from text desc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinkthinking",
+      "userId": "s17fvnm0xm90q8sknnr36s75q986amc0",
+      "displayName": "thinkthinking",
+      "image": "https://avatars.githubusercontent.com/u/61035602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772546923898,
+      "changelog": "- Initial release of zenmux-image-gen skill.\n- Generate images from text prompts using the ZenMux API and Google Gemini models.\n- Supports aspect ratio and resolution controls, as well as image-to-image editing.\n- Provides a command-line script with options for model selection, prompt details, and output customization.\n- Requires ZENMUX_API_KEY for secure API access.\n- Includes clear setup instructions, prompt tips, error troubleshooting, and batch generation examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:654e085a5254b738071f470dbf0ab4f88c93bf886dd838f215becadc133890c0"
+}

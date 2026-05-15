@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41803,
+  "uuid": "skill-clawhub-no-cap",
+  "skillKey": "clawhub-no-cap",
+  "name": "No Cap",
+  "summary": "Automatically ingest X/Twitter bookmarks, filter noise, and extract actionable signals. Run to process new bookmarks into structured intelligence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.no_cap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zephyr2800",
+      "features": [
+        "Automatically ingest X/Twitter bookmarks, filter noise, and extract actionable signals",
+        "Run to process new bookmarks into structured intelligence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/no-cap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262954335?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "no-cap",
+      "url": "https://clawhub.ai/skills/no-cap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "no-cap",
+    "url": "https://clawhub.ai/skills/no-cap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/no-cap-4890e3048e4cd544.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/no-cap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-no-cap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9fbb29a77de8ab717265068f59ad6a1a1d3b30e09c95422e75d9464a0249869",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:50:15.153Z"
+}

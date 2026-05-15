@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17251,
+  "uuid": "skill-clawhub-self-improving-skill",
+  "skillKey": "clawhub-self-improving-skill",
+  "name": "Self Improving Skill",
+  "summary": "Structured improvement system for learnable skills (programming, design, languages, instruments). Use when tracking progress, identifying bottlenecks, or opt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Structured improvement system for learnable skills (programming, design, languages, instruments)",
+        "Use when tracking progress, identifying bottlenecks, or opt..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-skill",
+      "url": "https://clawhub.ai/skills/self-improving-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-skill",
+    "url": "https://clawhub.ai/skills/self-improving-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-skill-ab257b5424dc79a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8839308d4b8c795c77ccef800f251ea1f5da3bc4fa523a3d83ac668bfa238271",
+      "artifactSizeBytes": 2620
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T22:03:56.112Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52257,
+  "uuid": "skill-clawhub-safe-action",
+  "skillKey": "clawhub-safe-action",
+  "name": "Safe Action",
+  "summary": "Before any destructive or irreversible action, run a safety pre-flight — check risks, reversibility, and timing.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_action",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CutTheMustard",
+      "features": [
+        "Before any destructive or irreversible action, run a safety pre-flight — check risks, reversibi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-action@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63439451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-action",
+      "url": "https://clawhub.ai/skills/safe-action"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-action",
+    "url": "https://clawhub.ai/skills/safe-action",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-action-3b213e4d60eaa62c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-action@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-action-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb0544061f098a817d7f72ca0efc70d3bc3a282edd7f2aa95a36fd3c86d4cf55",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:59:51.498Z"
+}

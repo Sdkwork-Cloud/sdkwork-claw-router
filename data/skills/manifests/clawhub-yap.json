@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18117,
+  "uuid": "skill-clawhub-yap",
+  "skillKey": "clawhub-yap",
+  "name": "yap",
+  "summary": "Fast on-device speech-to-text transcription on macOS 26+ using Apple Speech.framework, supporting multiple languages and output formats without model downloads.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tobihagemann",
+      "features": [
+        "Fast on-device speech-to-text transcription on macOS 26+ using Apple Speech.framework, supporti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yap@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2924160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yap",
+      "url": "https://clawhub.ai/skills/yap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yap",
+    "url": "https://clawhub.ai/skills/yap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yap-1f8f4b311ca78f1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yap@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yap-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b92c75300e0d9d4b1c071e60af756e665e9eaf7cf7a3daf9543af07200d62243",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T14:16:01.670Z"
+}

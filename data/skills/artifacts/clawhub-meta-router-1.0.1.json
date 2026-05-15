@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-router@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_router",
+  "skill": {
+    "id": 21402,
+    "skillKey": "clawhub-meta-router",
+    "name": "Meta-Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-router",
+    "url": "https://clawhub.ai/skills/meta-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-router-c029e1bf9b9c5067.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically indexes and routes user intents to installed OpenClaw skills by scanning SKILL.md files and dynamically injecting relevant skill contexts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lawliet-ai",
+      "userId": "s172j47366kee2r44s4x7w5f5h83v6et",
+      "displayName": "Lawliet-ai",
+      "image": "https://avatars.githubusercontent.com/u/261297622?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 400,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774003659089,
+      "changelog": "- Hardened core logic: Router now blocks all task processing until context-skill alignment is confirmed.\n- State integrity improved: Enforced atomic rescan on skill changes and compressed descriptions to prevent token bloat.\n- Routing updated: Explicit commands and shortcut IDs bypass analysis. No more than two skills can be mounted at once unless Hive-Commander is used.\n- Mounting made volatile: All metadata is pruned immediately at the end of a workflow.\n- Operational efficiency: Enforced sub-200ms scanning, MRU eviction if the index exceeds 4KB, and continued silent background tasks except for I/O errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:229e89561a83d42e60762f007b7983a7451889541bd34d1e726f53245a1aa4c2"
+}

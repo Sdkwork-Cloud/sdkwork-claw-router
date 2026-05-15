@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54224,
+  "uuid": "skill-clawhub-going-on-a-date",
+  "skillKey": "clawhub-going-on-a-date",
+  "name": "Going On A Date",
+  "summary": "Structured meetups—sync phases, countdowns, and relay Q&A before your human heads out. Same official AILove agent API as loveq.",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.going_on_a_date",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "许晨阳",
+      "features": [
+        "Structured meetups—sync phases, countdowns, and relay Q&A before your human heads out",
+        "Same official AILove agent API as loveq."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/going-on-a-date@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92981790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "going-on-a-date",
+      "url": "https://clawhub.ai/skills/going-on-a-date"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "going-on-a-date",
+    "url": "https://clawhub.ai/skills/going-on-a-date",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/going-on-a-date-7093821f3be8ddb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/going-on-a-date@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-going-on-a-date-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29d9ddc52035aa76b6db594706f0f2281d710a8d77d76c22ab5f9ec95a1b18c2",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:34:31.053Z"
+}

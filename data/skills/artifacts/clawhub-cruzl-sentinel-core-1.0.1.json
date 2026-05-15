@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cruzl-sentinel-core@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cruzl_sentinel_core",
+  "skill": {
+    "id": 48343,
+    "skillKey": "clawhub-cruzl-sentinel-core",
+    "name": "Cruzl Sentinel Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cruzl-sentinel-core",
+    "url": "https://clawhub.ai/skills/cruzl-sentinel-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cruzl-sentinel-core-e9912949f2ef85f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimizes onchain activity by scoring ecosystems, generating tailored strategies, and suggesting behavior to avoid bot-like patterns across multiple platforms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cruzlx",
+      "userId": "s175rqnpr7dybf3m3y7t4wgc3585vjs7",
+      "displayName": "cruzl.eth",
+      "image": "https://avatars.githubusercontent.com/u/103182232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777555239109,
+      "changelog": "- Initial release with full project structure and configuration files.\n- Added support for opportunity scoring across Soneium, Ink, LitVM, and Base ecosystems.\n- Included a strategy generator providing tailored onchain interaction strategies.\n- Implemented a behavioral guard system to avoid bot-like patterns.\n- Introduced basic wallet analysis for activity scoring and behavioral suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08c52c70ed4e1602883c1adbe072f2841bcdb7defc7507aee08c0b06d436396c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24932,
+  "uuid": "skill-clawhub-yggdrasil",
+  "skillKey": "clawhub-yggdrasil",
+  "name": "Yggdrasil",
+  "summary": "Diagnose Yggdrasil installation and daemon status for IPv6 P2P connectivity. Use when P2P fails, user asks about connectivity, or Yggdrasil needs to be insta...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yggdrasil",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yilin",
+      "features": [
+        "Diagnose Yggdrasil installation and daemon status for IPv6 P2P connectivity",
+        "Use when P2P fails, user asks about connectivity, or Yggdrasil needs to be insta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yggdrasil@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69336584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yggdrasil",
+      "url": "https://clawhub.ai/skills/yggdrasil"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yggdrasil",
+    "url": "https://clawhub.ai/skills/yggdrasil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yggdrasil-0eb232d759bbcb2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yggdrasil@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-yggdrasil-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa0215513cc40762bfff01fd402fe5df4656f1de97723172a7012c58cbde2c73",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:08:33.811Z"
+}

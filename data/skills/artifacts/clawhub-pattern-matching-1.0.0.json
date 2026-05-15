@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pattern-matching@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pattern_matching",
+  "skill": {
+    "id": 31866,
+    "skillKey": "clawhub-pattern-matching",
+    "name": "Pattern Matching"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pattern-matching",
+    "url": "https://clawhub.ai/skills/pattern-matching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pattern-matching-fe9126015bbc3b49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides patterns for detecting sensitive data like API keys, credit cards, emails, SSNs, phone numbers, and IPs for authorized security testing and validation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pandaai-1337",
+      "userId": "publishers:pandaai-1337",
+      "displayName": "PandaAI-1337",
+      "image": "https://avatars.githubusercontent.com/u/264713685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774107394782,
+      "changelog": "Initial release of SecLists Pattern-Matching skill:\n\n- Provides sensitive data patterns for security testing—API keys, credit cards, emails, SSNs, phone numbers, and IP addresses.\n- Includes reference text files for common sensitive data patterns.\n- Helpful for data discovery and validation tasks.\n- Designed for authorized security testing, educational use, bug bounty, and CTFs.\n- Guidance on ethical and authorized usage included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:570678cd8534ac76b3fb4519cbac1a9e73ddc9b9ed283c1e866bcebf4e2a36c4"
+}

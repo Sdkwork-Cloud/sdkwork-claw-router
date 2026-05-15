@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72663,
+  "uuid": "skill-clawhub-deep-reading",
+  "skillKey": "clawhub-deep-reading",
+  "name": "Deep Reading",
+  "summary": "深度精读助手，逐章逐节阅读原文，产出结构化笔记。触发词：精读、深度阅读、逐章阅读、读书笔记、看书、阅读经典。支持古典原典、现代著作、学术著作等多种书籍类型，自动推断单次阅读量。每章产出6项结构化笔记：原文引用、逐句解析、义理阐释、跨文本关联、现代启示、疑难标注。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_reading",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YY-C8",
+      "features": [
+        "深度精读助手，逐章逐节阅读原文，产出结构化笔记。触发词：精读、深度阅读、逐章阅读、读书笔记、看书、阅读经典。支持古典原典、现代著作、学术著作等多种书籍类型，自动推断单次阅读量。每章产出6项结."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-reading@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65576910?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-reading",
+      "url": "https://clawhub.ai/skills/deep-reading"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-reading",
+    "url": "https://clawhub.ai/skills/deep-reading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-reading-104c29cc7ef95ad0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-reading@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-reading-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2feb9f8a562b99d79582a6469a08824e566389c7f351f6e9fe8fa7751ccbaa9",
+      "artifactSizeBytes": 2848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:28:04.990Z"
+}

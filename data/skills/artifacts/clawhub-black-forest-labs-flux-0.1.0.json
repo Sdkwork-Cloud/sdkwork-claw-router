@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/black-forest-labs-flux@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.black_forest_labs_flux",
+  "skill": {
+    "id": 42790,
+    "skillKey": "clawhub-black-forest-labs-flux",
+    "name": "Black Forest Labs FLUX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "black-forest-labs-flux",
+    "url": "https://clawhub.ai/skills/black-forest-labs-flux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/black-forest-labs-flux-84a51fbba14c0735.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images with Black Forest Labs FLUX models using a direct BFL API key. Use when the user wants FLUX image generation through Black Forest Labs itself..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gamaleldientarek",
+      "userId": "s17bwt1tfsyf6xaw64ghpjtj0n83hjwe",
+      "displayName": "Gamal Eldien Tarek Abdelsataar",
+      "image": "https://avatars.githubusercontent.com/u/59454675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775598178328,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9b3250dd70ba3036d1e6a53b811b2aba5f4eff76894824d4580e155c9fc5c67"
+}

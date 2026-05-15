@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-eye@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_eye",
+  "skill": {
+    "id": 55985,
+    "skillKey": "clawhub-smart-eye",
+    "name": "SmartEye - Agent的眼睛"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-eye",
+    "url": "https://clawhub.ai/skills/smart-eye",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-eye-d37f85e700199c0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and analyze ONVIF PTZ IP cameras to capture frames, view streams, find objects, and perform pan-tilt-zoom movements using configured camera aliases."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lubingshun",
+      "userId": "s17bavmc1a7t4xxd19pbygmrvx84hakw",
+      "displayName": "lubingshun",
+      "image": "https://avatars.githubusercontent.com/u/191822452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775974644637,
+      "changelog": "重建 v3.0.0 - 全新发布，完整功能：PTZ云台控制/抽帧截图/多摄找东西/VLC调阅/别名定位/配置表格优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c64cf658ecd86250597604b2471ee3ae59a0a19d66d6674c8f0120b5d65277f5"
+}

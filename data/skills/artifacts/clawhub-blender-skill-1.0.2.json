@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blender-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blender_skill",
+  "skill": {
+    "id": 44959,
+    "skillKey": "clawhub-blender-skill",
+    "name": "blender-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blender-skill",
+    "url": "https://clawhub.ai/skills/blender-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blender-skill-257466398ce67b6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to and control Blender via the official Blender MCP Server. Supports two modes: full MCP Server + mcporter (recommended) and direct TCP Socket (light..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taosiuman",
+      "userId": "s17fkgns47174kx42nm8z7c5g184249f",
+      "displayName": "Taosiuman",
+      "image": "https://avatars.githubusercontent.com/u/3102173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777687641008,
+      "changelog": "blender-skill 1.0.2 changelog\n\n- Added a warning under \"Method 2: Direct TCP Socket to Blender Addon\" highlighting the security risks of executing caller-supplied code directly in Blender without guardrails.\n- No other content or functional changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea345df7c391bcd64672b8f048cce9ead1e921da2a34e45677f8c7c60e927491"
+}

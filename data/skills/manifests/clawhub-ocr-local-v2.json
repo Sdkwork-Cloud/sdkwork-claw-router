@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23187,
+  "uuid": "skill-clawhub-ocr-local-v2",
+  "skillKey": "clawhub-ocr-local-v2",
+  "name": "OCR Local V2",
+  "summary": "Extract text from images using Tesseract.js OCR (100% local, no API key required). Supports Chinese (simplified/traditional) and English.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_local_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "15914355527",
+      "features": [
+        "Extract text from images using Tesseract.js OCR (100% local, no API key required)",
+        "Supports Chinese (simplified/traditional) and English."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocr-local-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51820137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocr-local-v2",
+      "url": "https://clawhub.ai/skills/ocr-local-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-local-v2",
+    "url": "https://clawhub.ai/skills/ocr-local-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-local-v2-7b1a2c92b492dbda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocr-local-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocr-local-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3341bdd3aba3e41ce6bef13415c6071fdee3beb6780a9a87dff9c93d82a6ce71",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:07:15.426Z"
+}

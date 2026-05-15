@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/no-login-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.no_login_video",
+  "skill": {
+    "id": 48970,
+    "skillKey": "clawhub-no-login-video",
+    "name": "No Login Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "no-login-video",
+    "url": "https://clawhub.ai/skills/no-login-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/no-login-video-2db05d7bc6beafac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute screen recording or phone video into 1080p ready-to-share MP4 just by typing what you need. Whether it's editing and exporting videos instant..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777550908923,
+      "changelog": "No Login Video — 1.0.0\n\n- Initial release of the No Login Video skill for instant MP4 video editing and export with no account required.\n- Supports video upload, editing via natural language, and swift 1080p export — typically in 30-90 seconds.\n- Anonymous token-based authentication with 100 free credits, auto-refresh if needed.\n- Clear API mapping for status, export, upload, credits, and editing tasks.\n- Robust error codes, attribution headers, and informative text summaries of editing timeline.\n- Designed for ultra-fast, zero-signup editing — ideal for quick social or screen recording workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41366f5fa4c7170226826955a25fe00f8ecb3c6ce013dd920afff37d52a4a551"
+}

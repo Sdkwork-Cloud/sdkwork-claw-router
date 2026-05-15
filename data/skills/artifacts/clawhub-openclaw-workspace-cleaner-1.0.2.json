@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-workspace-cleaner@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_workspace_cleaner",
+  "skill": {
+    "id": 59747,
+    "skillKey": "clawhub-openclaw-workspace-cleaner",
+    "name": "Workspace Cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-workspace-cleaner",
+    "url": "https://clawhub.ai/skills/openclaw-workspace-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-workspace-cleaner-dada4bdb8c6cc3c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "优化 OpenClaw 工作区基础文件（AGENTS/MEMORY/SOUL/TOOLS/IDENTITY/USER），减少上下文噪音。执行前必须列出优化方案并获得确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776245421394,
+      "changelog": "补充与Skills重复内容的检查规则",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5189bf659fd3f5521846371f9052ef0bbd079dddf660b71bd4bcc612b24e06d5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63496,
+  "uuid": "skill-clawhub-fapi-reddit",
+  "skillKey": "clawhub-fapi-reddit",
+  "name": "Fapi Reddit",
+  "summary": "通过自然语言调用 fapi.uk 提供的 Reddit API，实现用户、子版块帖子查询和搜索等功能，无需手动组装参数。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fapi_reddit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huojiecs110",
+      "features": [
+        "通过自然语言调用 fapi.uk 提供的 Reddit API，实现用户、子版块帖子查询和搜索等功能，无需手动组装参数。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fapi-reddit@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154880305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fapi-reddit",
+      "url": "https://clawhub.ai/skills/fapi-reddit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fapi-reddit",
+    "url": "https://clawhub.ai/skills/fapi-reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fapi-reddit-94f6f979d68ce9f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fapi-reddit@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fapi-reddit-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1527e008297cb99d4d4d31a0736e281fe62c667937135c3488836c5a901569c",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:05:44.506Z"
+}

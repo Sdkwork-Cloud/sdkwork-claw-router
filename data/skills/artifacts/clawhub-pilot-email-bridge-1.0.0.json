@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-email-bridge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_email_bridge",
+  "skill": {
+    "id": 45773,
+    "skillKey": "clawhub-pilot-email-bridge",
+    "name": "Pilot Email Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-email-bridge",
+    "url": "https://clawhub.ai/skills/pilot-email-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-email-bridge-168b59a490ca244c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive emails via Pilot Protocol messaging. Use this skill when: 1. You need to send email notifications from Pilot agents 2. You want to receive e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775701142232,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95ae61d1518520901714e243eb897de460af0d826050cf2875c35c31eeaafa54"
+}

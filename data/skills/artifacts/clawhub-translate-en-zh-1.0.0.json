@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/translate-en-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.translate_en_zh",
+  "skill": {
+    "id": 68494,
+    "skillKey": "clawhub-translate-en-zh",
+    "name": "Translate EN ZH"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "translate-en-zh",
+    "url": "https://clawhub.ai/skills/translate-en-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/translate-en-zh-fcf4fd8692073476.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中英文互转工具，支持文本翻译、批量文件翻译、术语对齐。使用场景：(1) 用户需要将中文翻译成英文或英文翻译成中文；(2) 翻译文档、代码注释、邮件等文本内容；(3) 批量处理翻译任务；(4) 用户提到\"翻译\"、\"英译中\"、\"中译英\"、\"中英文转换\"等关键词。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffrey-zou",
+      "userId": "s174d4961hn1284m9j783d2xyh83reqc",
+      "displayName": "Jeffrey-Zou",
+      "image": "https://avatars.githubusercontent.com/u/199565958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1354,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773804897672,
+      "changelog": "- Initial release of the translate-en-zh skill: a bilingual English-Chinese translation tool.\n- Supports text translation, batch document translation, and terminology alignment.\n- Handles professional scenarios such as code comment translation, technical documentation, business emails, and conversational language.\n- Maintains original formatting for text, code, and Markdown documents.\n- Includes batch translation scripts and built-in terminology resources for consistency.\n- Automatically detects language direction and processes user translation requests directly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc6f87754e08b8782a8eb6d6a1f45d2617b44a9a0eb7b723048f3181d498b3ed"
+}

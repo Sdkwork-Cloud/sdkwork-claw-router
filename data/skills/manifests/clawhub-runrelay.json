@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23016,
+  "uuid": "skill-clawhub-runrelay",
+  "skillKey": "clawhub-runrelay",
+  "name": "Runrelay",
+  "summary": "Search and book flights, hotels, and travel via RunRelay API. Covers 300+ airlines including low-cost carriers (Ryanair, Wizz Air, EasyJet) that no other API...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runrelay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "runrelay",
+      "features": [
+        "Search and book flights, hotels, and travel via RunRelay API",
+        "Covers 300+ airlines including low-cost carriers (Ryanair, Wizz Air, EasyJet) that no other API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/runrelay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260778404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "runrelay",
+      "url": "https://clawhub.ai/skills/runrelay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runrelay",
+    "url": "https://clawhub.ai/skills/runrelay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runrelay-08458040f4f298f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/runrelay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-runrelay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43de635e650408be9879215ca0e9c3f1538f80a5cba591750145891c812700ca",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T23:18:15.020Z"
+}

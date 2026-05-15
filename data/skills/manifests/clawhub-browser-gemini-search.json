@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44090,
+  "uuid": "skill-clawhub-browser-gemini-search",
+  "skillKey": "clawhub-browser-gemini-search",
+  "name": "Browser Gemini Search",
+  "summary": "Search the web using Google Gemini via OpenClaw-controlled Chrome with remote debugging enabled and an approved user profile.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_gemini_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dream007007s",
+      "features": [
+        "Search the web using Google Gemini via OpenClaw-controlled Chrome with remote debugging enabled."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-gemini-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205114065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-gemini-search",
+      "url": "https://clawhub.ai/skills/browser-gemini-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-gemini-search",
+    "url": "https://clawhub.ai/skills/browser-gemini-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-gemini-search-6f707a56469fe262.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-gemini-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-gemini-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dff182399b359860ed0f110364d9635638e3937af8fb817a087c9d105d55110",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T15:23:49.731Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53023,
+  "uuid": "skill-clawhub-rules-of-the-claw",
+  "skillKey": "clawhub-rules-of-the-claw",
+  "name": "Rules of the Claw",
+  "summary": "A strong, field-tested Guardian baseline for OpenClaw Guardian — 56 deterministic rules protecting against credential theft, data exfiltration, network scann...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rules_of_the_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bahuleyan",
+      "features": [
+        "A strong, field-tested Guardian baseline for OpenClaw Guardian — 56 deterministic rules protect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rules-of-the-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209914980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rules-of-the-claw",
+      "url": "https://clawhub.ai/skills/rules-of-the-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rules-of-the-claw",
+    "url": "https://clawhub.ai/skills/rules-of-the-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rules-of-the-claw-5958e69305059df9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rules-of-the-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rules-of-the-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a39ed3a580e37ebecb5505547b518dee0a0017e123b2c0d89cdd9a8e5d927bb8",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T13:43:54.938Z"
+}

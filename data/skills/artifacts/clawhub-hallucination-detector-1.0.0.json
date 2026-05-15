@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hallucination-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallucination_detector",
+  "skill": {
+    "id": 72206,
+    "skillKey": "clawhub-hallucination-detector",
+    "name": "幻觉检测器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallucination-detector",
+    "url": "https://clawhub.ai/skills/hallucination-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallucination-detector-45afc15dd1538e32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "幻觉检测器 - 原创技能。检测AI生成代码中的幻觉内容，包括不存在的API、错误的参数、虚假引用等。适用于代码审查、AI编程辅助、质量保证等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "534422530",
+      "userId": "s170k9770tgh0506hw0dwtb6pd83kwyq",
+      "displayName": "534422530",
+      "image": "https://avatars.githubusercontent.com/u/82763531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777358158298,
+      "changelog": "原创技能 - 检测AI生成代码中的幻觉内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:691e8efd4bca9a8c6be970bdc90ee8cbad108cb7345f50ad8583227ed09be9a4"
+}

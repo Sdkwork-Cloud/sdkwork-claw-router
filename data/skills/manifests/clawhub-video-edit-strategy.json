@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63358,
+  "uuid": "skill-clawhub-video-edit-strategy",
+  "skillKey": "clawhub-video-edit-strategy",
+  "name": "video-edit-strategy",
+  "summary": "分析素材与用户意图，输出结构化 JSON 剪辑策略（分镜、时间线、转场、音频、文字）。当用户要求制作短视频、混剪、或提供了素材但未给出具体剪辑指令时调用。策略输出供 ffmpeg-cli / ffmpeg-video-editor 等下游 skill 执行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_edit_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Elk",
+      "features": [
+        "分析素材与用户意图，输出结构化 JSON 剪辑策略（分镜、时间线、转场、音频、文字）。当用户要求制作短视频、混剪、或提供了素材但未给出具体剪辑指令时调用。策略输出供 ffmpeg-cli /."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-edit-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44892530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-edit-strategy",
+      "url": "https://clawhub.ai/skills/video-edit-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-edit-strategy",
+    "url": "https://clawhub.ai/skills/video-edit-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-edit-strategy-c8eb4d12685ba449.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-edit-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-edit-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6249cb29708a773e9b06c338af76cbaa6ba592b7e4817b1f96d2dc382c00a160",
+      "artifactSizeBytes": 2582
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:57:34.578Z"
+}

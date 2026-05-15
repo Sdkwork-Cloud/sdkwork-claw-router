@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/casino-bonus-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.casino_bonus_hunter",
+  "skill": {
+    "id": 33472,
+    "skillKey": "clawhub-casino-bonus-hunter",
+    "name": "Casino Bonus Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "casino-bonus-hunter",
+    "url": "https://clawhub.ai/skills/casino-bonus-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/casino-bonus-hunter-be09cadd6527b14a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans 30+ online casinos, calculates the Expected Value of each welcome/reload/cashback bonus using optimal blackjack strategy, adjusts EV by casino reputati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mibayy",
+      "userId": "s179d2am41rchxqf8a7jwrjp4n83gaje",
+      "displayName": "Mibayy",
+      "image": "https://avatars.githubusercontent.com/u/97958526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774064438411,
+      "changelog": "Initial release: 30+ casinos, EV calc + reputation scoring, welcome/reload/cashback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9315a504d65040269ff540e3ae3dae3cb19c0cc0e5c029d4272362e97385f2a3"
+}

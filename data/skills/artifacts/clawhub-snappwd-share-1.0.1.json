@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snappwd-share@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snappwd_share",
+  "skill": {
+    "id": 22272,
+    "skillKey": "clawhub-snappwd-share",
+    "name": "SnapPwd Secure Secret Sharing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snappwd-share",
+    "url": "https://clawhub.ai/skills/snappwd-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snappwd-share-548b4bc3ef2ce927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Securely share secrets, API keys, files, and credentials with OpenClaw agents and team members via self-destructing links. Use when the user needs to share s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fantaclaw-ai",
+      "userId": "s17e01023j2ae49yssazdnymdx83gkb6",
+      "displayName": "fantaclaw-ai",
+      "image": "https://avatars.githubusercontent.com/u/258181007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773899418688,
+      "changelog": "Fix: update display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f601f8adba1da432114060905eb9cd34b42bf85c3740159487f347654526998"
+}

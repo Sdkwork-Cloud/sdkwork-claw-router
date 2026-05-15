@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insta-poster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insta_poster",
+  "skill": {
+    "id": 38381,
+    "skillKey": "clawhub-insta-poster",
+    "name": "Insta poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insta-poster",
+    "url": "https://clawhub.ai/skills/insta-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insta-poster-ab0bc30302baeabe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically creates Instagram captions, hashtags, and image prompts from a user-provided topic for ready-to-post content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shivang2882-bot",
+      "userId": "s178ntjgd0pw758m1sq17hn10n84evbv",
+      "displayName": "shivang2882-bot",
+      "image": "https://avatars.githubusercontent.com/u/269683229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775804434045,
+      "changelog": "The Instagram Poster Skill is an AI-powered automation tool that converts a user’s input topic into a fully prepared Instagram post. It automatically generates engaging captions, relevant hashtags, and high-quality image according user input optimized for posting on Instagram platform.\nThe main purpose of this skill is to simplify and speed up content creation, allowing users to generate complete Instagram-ready posts by simply providing a topic or instruction.\nThis skill can be used for marketing, branding, motivational content, tech posts, and general social media content creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e503840f1138eaed335b499ffc56e551e877e6194286fbfe8283c78e71e1fbd"
+}

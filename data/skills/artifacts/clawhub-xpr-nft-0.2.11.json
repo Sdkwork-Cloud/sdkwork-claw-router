@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xpr-nft@0.2.11",
+  "version": "0.2.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpr_nft",
+  "skill": {
+    "id": 18586,
+    "skillKey": "clawhub-xpr-nft",
+    "name": "XPR NFT (AtomicAssets)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpr-nft",
+    "url": "https://clawhub.ai/skills/xpr-nft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpr-nft-3f09db2fcdbabb75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage the full AtomicAssets NFT lifecycle on XPR Network including creation, minting, selling, auctioning, transferring, and burning NFTs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulgnz",
+      "userId": "publishers:paulgnz",
+      "displayName": "paulgnz",
+      "image": "https://avatars.githubusercontent.com/u/12118160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 678,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.11",
+      "createdAt": 1771017980965,
+      "changelog": "xpr-nft v0.2.11\n\n- Expanded and clarified documentation for NFT operations on XPR Network in SKILL.md\n- Provided detailed step-by-step guides for creating, minting, and delivering NFTs, including job delivery workflows\n- Added guidance on using IPFS, price formatting, and schema attribute types\n- Emphasized critical safety rules and important operational notes for NFT lifecycle actions\n- No functional changes to code; documentation update only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:65cb21e9ff40b0676498f22ce204ab7bcf751b7e459953e190209b440ac87e61"
+}

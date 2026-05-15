@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72160,
+  "uuid": "skill-clawhub-shi-shi-cai-jing",
+  "skillKey": "clawhub-shi-shi-cai-jing",
+  "name": "实时财经",
+  "summary": "实时抓取并汇总新浪财经7×24小时全球财经新闻。通过API接口智能增量检测，每5分钟自动抓取最新新闻。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shi_shi_cai_jing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ripplefox",
+      "features": [
+        "实时抓取并汇总新浪财经7×24小时全球财经新闻。通过API接口智能增量检测，每5分钟自动抓取最新新闻。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shi-shi-cai-jing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15647550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shi-shi-cai-jing",
+      "url": "https://clawhub.ai/skills/shi-shi-cai-jing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shi-shi-cai-jing",
+    "url": "https://clawhub.ai/skills/shi-shi-cai-jing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shi-shi-cai-jing-4405c955098fe715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shi-shi-cai-jing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shi-shi-cai-jing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c570c7ef51e9a9a2116a08fa6038632610a9bba8a6403aecbed35e4e0c525ef2",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:06:05.215Z"
+}

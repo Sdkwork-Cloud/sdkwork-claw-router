@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11613,
+  "uuid": "skill-clawhub-clawgle",
+  "skillKey": "clawhub-clawgle",
+  "name": "Clawgle - Stop Rebuilding Wheels",
+  "summary": "Before building your request, your agent checks if it's already been done. Faster results, less wasted effort.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawgle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andrewbouras",
+      "features": [
+        "Before building your request, your agent checks if it's already been done",
+        "Faster results, less wasted effort."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawgle@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94498047?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawgle",
+      "url": "https://clawhub.ai/skills/clawgle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawgle",
+    "url": "https://clawhub.ai/skills/clawgle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawgle-6057d64fb7cec0fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawgle@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawgle-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf8a7c096658344ba9a01bf072e9e44356c6d29746ed4656c5a854e7db1e38ef",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T22:54:06.921Z"
+}

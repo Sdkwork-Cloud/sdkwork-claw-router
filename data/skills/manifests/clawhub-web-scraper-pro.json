@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57920,
+  "uuid": "skill-clawhub-web-scraper-pro",
+  "skillKey": "clawhub-web-scraper-pro",
+  "name": "Web Scraper Pro",
+  "summary": "Intelligent web scraper that fetches any URL and returns clean Markdown content. Triggers on requests like \"帮我抓取网页\", \"获取这个网页内容\", \"fetch this URL\", \"scrape th...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scraper_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LiuSir",
+      "features": [
+        "Intelligent web scraper that fetches any URL and returns clean Markdown content",
+        "Triggers on requests like \"帮我抓取网页\", \"获取这个网页内容\", \"fetch this URL\", \"scrape th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-scraper-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32128085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-scraper-pro",
+      "url": "https://clawhub.ai/skills/web-scraper-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scraper-pro",
+    "url": "https://clawhub.ai/skills/web-scraper-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scraper-pro-c5854943135dafbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-scraper-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-scraper-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f24c249c10f6ca64259d4306411b477352b8393a1e266a5b779fcf85d1a6e0d",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T02:29:53.019Z"
+}

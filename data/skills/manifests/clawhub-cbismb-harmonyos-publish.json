@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60645,
+  "uuid": "skill-clawhub-cbismb-harmonyos-publish",
+  "skillKey": "clawhub-cbismb-harmonyos-publish",
+  "name": "cbismb-harmonyos-publish",
+  "summary": "自动发布文章到中小企业IT网 HarmonyOS 板块。当用户要求发布文章到中小企业IT网、cbismb.com、HarmonyOS开发者社区时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cbismb_harmonyos_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itcastWsy",
+      "features": [
+        "自动发布文章到中小企业IT网 HarmonyOS 板块。当用户要求发布文章到中小企业IT网、cbismb.com、HarmonyOS开发者社区时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cbismb-harmonyos-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33108189?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cbismb-harmonyos-publish",
+      "url": "https://clawhub.ai/skills/cbismb-harmonyos-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cbismb-harmonyos-publish",
+    "url": "https://clawhub.ai/skills/cbismb-harmonyos-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cbismb-harmonyos-publish-dab7dc300171d713.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cbismb-harmonyos-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cbismb-harmonyos-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a74e846e3d29d72803891f562d37ee9341b6bf576358a76c87147be88b57139a",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T11:56:58.576Z"
+}

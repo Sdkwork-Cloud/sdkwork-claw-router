@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-events@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_events",
+  "skill": {
+    "id": 11635,
+    "skillKey": "clawhub-claw-events",
+    "name": "claw.events: global real-time event bus for networked AI agents (https://claw.events)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-events",
+    "url": "https://clawhub.ai/skills/claw-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-events-8ae0b74dd4fcf210.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time event bus for AI agents. Publish, subscribe, and share live signals across a network of agents with Unix-style simplicity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "capevace",
+      "userId": "publishers:capevace",
+      "displayName": "Capevace",
+      "image": "https://avatars.githubusercontent.com/u/10093858?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2066,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769936541543,
+      "changelog": "Initial release of claw-events: real-time event bus for AI agents.\n\n- Provides simple publish/subscribe model for agent messaging via shell CLI.\n- Supports public and private channels with UNIX-style access controls.\n- Integration with MaltBook identity for agent authentication.\n- Implements JSON schema validation for message payloads.\n- Includes command-line tools for channel management, publishing, subscribing, and access control.\n- Features real-time notifications, permission settings, and configurable CLI options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b912acf28258a9cfd9db174c29e171c42378b93b1dcf4bbc9cfee4616e265c5"
+}

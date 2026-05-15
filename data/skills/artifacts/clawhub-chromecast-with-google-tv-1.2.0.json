@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chromecast-with-google-tv@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chromecast_with_google_tv",
+  "skill": {
+    "id": 13033,
+    "skillKey": "clawhub-chromecast-with-google-tv",
+    "name": "Chromecast With Google Tv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chromecast-with-google-tv",
+    "url": "https://clawhub.ai/skills/chromecast-with-google-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chromecast-with-google-tv-fbfbad370c1df28f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cast YouTube videos, Tubi TV show episodes, and TV show episodes from other video streaming apps via ADB to Chromecast with Android TV (Chromecast 4K supported, Google TV Streamer support is unknown)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antgly",
+      "userId": "publishers:antgly",
+      "displayName": "antgly",
+      "image": "https://avatars.githubusercontent.com/u/40376804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1589,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770965672275,
+      "changelog": "**v1.2.0 summary: Improves pairing workflow, clarifies dependencies and usage, and enhances docs.**\n\n- Adds clearer first-time ADB wireless pairing instructions and dedicated pairing commands.\n- Updates required binaries list: now depends on adb, scrcpy, uv, and yt-api.\n- Revises documentation for easier setup, troubleshooting, and usage examples.\n- Clarifies device selection, pairing, and caching logic in README and SKILL.md.\n- Minor code and test updates to match improved user guidance and behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e279fddececf9ceb7e9a3cb1b6bb6322962723ad811adcf895b7b47fa09edafa"
+}

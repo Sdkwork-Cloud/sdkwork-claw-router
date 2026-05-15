@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62099,
+  "uuid": "skill-clawhub-chinese-pkm-memory",
+  "skillKey": "clawhub-chinese-pkm-memory",
+  "name": "中文 PKM 记忆系统",
+  "summary": "PKM（个人知识管理）三分支记忆系统。使用时机：(1) 接收记忆，(2) 检索上下文，(3) 搜索记忆，(4) 添加事实，(5) 检查 Qdrant。三分支：L1 复位（索引）、L2 索引、L3 日志、L4 Qdrant、L5 Obsidian、L6 Nebula、L7 情景记忆。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_pkm_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kofna3369",
+      "features": [
+        "PKM（个人知识管理）三分支记忆系统。使用时机：(1) 接收记忆，(2) 检索上下文，(3) 搜索记忆，(4) 添加事实，(5) 检查 Qdrant。三分支：L1 复位（索引）、L2 索引、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-pkm-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110220070?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-pkm-memory",
+      "url": "https://clawhub.ai/skills/chinese-pkm-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-pkm-memory",
+    "url": "https://clawhub.ai/skills/chinese-pkm-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-pkm-memory-22a69a534c3c5041.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-pkm-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-pkm-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95f6f4af93eaf6978fdd58cb7f4f7da1295515fbb6fd52059fce7970bdc9ceb9",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T01:37:51.050Z"
+}

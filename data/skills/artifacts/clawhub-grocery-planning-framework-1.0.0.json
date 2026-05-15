@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grocery-planning-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grocery_planning_framework",
+  "skill": {
+    "id": 49885,
+    "skillKey": "clawhub-grocery-planning-framework",
+    "name": "Grocery Planning Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grocery-planning-framework",
+    "url": "https://clawhub.ai/skills/grocery-planning-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grocery-planning-framework-a3c40a91a4505227.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a step-by-step weekly framework to audit food inventory, plan meals, create store-section grocery lists, reduce waste, and track budget."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778280467046,
+      "changelog": "Initial release of the Grocery Planning Framework skill.\n\n- Introduces a step-by-step framework linking meal planning with shopping, inventory audits, and prepping.\n- Includes actionable food waste reduction strategies and simple budget tracking tools.\n- Provides workflows and templates: meal planning, pantry audits, store-section grocery lists, weekly shop-prep-cook process.\n- Designed for easy adoption by individuals and families, with safety, budget, and cultural considerations clearly stated.\n- Excludes nutritional advice and non-food inventory management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc16eedf29d8f266e6ec72446abc5850494d968969d3ee294d7ba7a761af87fc"
+}

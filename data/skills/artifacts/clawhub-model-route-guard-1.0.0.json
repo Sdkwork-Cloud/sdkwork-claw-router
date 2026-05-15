@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-route-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_route_guard",
+  "skill": {
+    "id": 20460,
+    "skillKey": "clawhub-model-route-guard",
+    "name": "Model Route Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-route-guard",
+    "url": "https://clawhub.ai/skills/model-route-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-route-guard-a9923b8f3210bde2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and fix model routing conflicts. Ensure primary model uses correct provider endpoint without duplicate overrides."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dalomeve",
+      "userId": "s170jb8y518cbtqkxpgjgcz0yn843mr1",
+      "displayName": "Dalomeve",
+      "image": "https://avatars.githubusercontent.com/u/115125037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772348940128,
+      "changelog": "- Initial release of model-route-guard.\n- Diagnose and fix model routing conflicts for Openclaw.\n- Audit and resolve duplicate provider overrides and endpoint mismatches.\n- Ensures primary model uses correct provider endpoint (coding.dashscope.aliyuncs.com).\n- Provides step-by-step workflow for route auditing, conflict fixing, and verification.\n- Safeguards privacy by not exposing API keys in output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:783d85155a6bcc42292e530d2481f65a584798932c9a4108e65e41b27cf471b3"
+}

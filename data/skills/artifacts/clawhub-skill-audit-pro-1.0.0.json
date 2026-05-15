@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-audit-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_audit_pro",
+  "skill": {
+    "id": 64431,
+    "skillKey": "clawhub-skill-audit-pro",
+    "name": "Skill Audit Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-audit-pro",
+    "url": "https://clawhub.ai/skills/skill-audit-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-audit-pro-e13869e98a6c53ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent技能安全扫描工具。自动扫描已安装的OpenClaw技能，发现安全隐患。支持定时扫描（每24小时），自动发送报告到配置的所有Channel（Telegram/飞书等）。检测硬编码凭证、Shell注入、网络泄露等安全威胁。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ohmanymoneygomyhome-creator",
+      "userId": "s17c3yyvsfetky355sszeewjf583ngsv",
+      "displayName": "ohmanymoneygomyhome-creator",
+      "image": "https://avatars.githubusercontent.com/u/265224848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774531589102,
+      "changelog": "Initial release - AI skill security scanner with daily auto-scan and multi-channel reporting",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b834f06fd3749e13c9e17a2b9b01790408d90f4794d850c018dfe2fbc3bc0d62"
+}

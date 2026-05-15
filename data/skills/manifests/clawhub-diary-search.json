@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71206,
+  "uuid": "skill-clawhub-diary-search",
+  "skillKey": "clawhub-diary-search",
+  "name": "Diary Search",
+  "summary": "检索日记与会话内容，支持中文分词、BM25搜索、时间衰减排序。可搜索日记、查找历史对话（含归档）、导出会话记录（自动过滤噪音，3天后自动清理）、查询定时任务运行记录。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diary_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sebrinass",
+      "features": [
+        "检索日记与会话内容，支持中文分词、BM25搜索、时间衰减排序。可搜索日记、查找历史对话（含归档）、导出会话记录（自动过滤噪音，3天后自动清理）、查询定时任务运行记录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diary-search@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106059562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diary-search",
+      "url": "https://clawhub.ai/skills/diary-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diary-search",
+    "url": "https://clawhub.ai/skills/diary-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diary-search-e37748a6813ae74d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diary-search@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-diary-search-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f8bcd1dd8c50945c41e5302b090a29c642a73245617048f00029c5e953d6045",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:32:33.994Z"
+}

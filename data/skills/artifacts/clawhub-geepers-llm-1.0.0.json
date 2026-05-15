@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geepers-llm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geepers_llm",
+  "skill": {
+    "id": 17799,
+    "skillKey": "clawhub-geepers-llm",
+    "name": "Geepers Llm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geepers-llm",
+    "url": "https://clawhub.ai/skills/geepers-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geepers-llm-116bbdf6a145ebca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send requests to the dr.eamer.dev LLM API for chat completions, vision analysis, image generation, text-to-speech, and video generation across 12 model provi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukeslp",
+      "userId": "publishers:lukeslp",
+      "displayName": "Lucas Steuber",
+      "image": "https://avatars.githubusercontent.com/u/78874798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771399804790,
+      "changelog": "Initial release of geepers-llm skill.\n\n- Unified API access to 12 LLM providers for chat, vision analysis, image generation, text-to-speech, and video generation.\n- Supports: anthropic, openai, xai, mistral, cohere, gemini, perplexity, groq, huggingface, ollama.\n- Endpoints for chat completion, model listing, image analysis, image generation, and TTS.\n- Designed for easy comparison of LLM provider responses and quick access without direct API keys.\n- Simple API key setup via environment variable or per-request header.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef434db17daa42a010444b1293798fab3c64cfc0b2b39de5334a2fad4556df93"
+}

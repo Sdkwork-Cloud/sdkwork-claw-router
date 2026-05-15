@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65079,
+  "uuid": "skill-clawhub-experience-summary-sys",
+  "skillKey": "clawhub-experience-summary-sys",
+  "name": "Experience Summary Sys",
+  "summary": "管理经验总结系统：定时生成每日/每周/每月/每季度/每年经验总结，以及按需调用历史经验的功能",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.experience_summary_sys",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thiswin",
+      "features": [
+        "管理经验总结系统：定时生成每日/每周/每月/每季度/每年经验总结，以及按需调用历史经验的功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/experience-summary-sys@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62000536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "experience-summary-sys",
+      "url": "https://clawhub.ai/skills/experience-summary-sys"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "experience-summary-sys",
+    "url": "https://clawhub.ai/skills/experience-summary-sys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/experience-summary-sys-2a21610c9b8c90b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/experience-summary-sys@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-experience-summary-sys-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1be23057fcd190c79ae039438085f96e7c8c276d00e499727fd78ae9fec2c99e",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T00:06:16.591Z"
+}

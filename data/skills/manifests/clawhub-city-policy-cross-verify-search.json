@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69760,
+  "uuid": "skill-clawhub-city-policy-cross-verify-search",
+  "skillKey": "clawhub-city-policy-cross-verify-search",
+  "name": "city-policy-cross-verify-search",
+  "summary": "根据用户输入的城市和年份（默认最新），围绕异地就医备案、异地生育结算、公积金异地贷款、购房资格、车牌摇号与竞价、子女非户籍入学、本科人才落户等 7 个维度，执行多来源政策检索与交叉验证，输出结构化结论，并附带来源网址。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.city_policy_cross_verify_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "根据用户输入的城市和年份（默认最新），围绕异地就医备案、异地生育结算、公积金异地贷款、购房资格、车牌摇号与竞价、子女非户籍入学、本科人才落户等 7 个维度，执行多来源政策检索与交叉验证，输出."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/city-policy-cross-verify-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "city-policy-cross-verify-search",
+      "url": "https://clawhub.ai/skills/city-policy-cross-verify-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "city-policy-cross-verify-search",
+    "url": "https://clawhub.ai/skills/city-policy-cross-verify-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/city-policy-cross-verify-search-3a3785bccd2d7cde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/city-policy-cross-verify-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-city-policy-cross-verify-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58f9dc748c6ea23d6ee7aa917f118501e90eab7332b5ef62011ebb7b9bef7535",
+      "artifactSizeBytes": 2909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T02:14:50.699Z"
+}

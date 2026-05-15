@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40701,
+  "uuid": "skill-clawhub-hn-podcast-archive",
+  "skillKey": "clawhub-hn-podcast-archive",
+  "name": "HN Podcast Archive",
+  "summary": "Automate podcast archiving by detecting new HN episodes from RSS, downloading audio, transcribing locally with Whisper, and generating markdown archives with...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hn_podcast_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Automate podcast archiving by detecting new HN episodes from RSS, downloading audio, transcribi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hn-podcast-archive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hn-podcast-archive",
+      "url": "https://clawhub.ai/skills/hn-podcast-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hn-podcast-archive",
+    "url": "https://clawhub.ai/skills/hn-podcast-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hn-podcast-archive-fcf120ec14a49eeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hn-podcast-archive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hn-podcast-archive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b6ac4f9a58c3411362e4647089c44c2169a18d239458f3a5e8e062432799715",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T18:23:11.735Z"
+}

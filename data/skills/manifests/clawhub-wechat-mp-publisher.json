@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62751,
+  "uuid": "skill-clawhub-wechat-mp-publisher",
+  "skillKey": "clawhub-wechat-mp-publisher",
+  "name": "wechat-mp-publisher",
+  "summary": "远程微信公众号发布技能。通过 HTTP MCP 解决家用宽带 IP 变动问题，支持大文件上传、多主题排版与一键发布。",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_publisher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MISAKIGA",
+      "features": [
+        "远程微信公众号发布技能。通过 HTTP MCP 解决家用宽带 IP 变动问题，支持大文件上传、多主题排版与一键发布。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp-publisher@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34915635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp-publisher",
+      "url": "https://clawhub.ai/skills/wechat-mp-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-publisher",
+    "url": "https://clawhub.ai/skills/wechat-mp-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-publisher-bcc9a275880460da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp-publisher@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-publisher-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e5e548bdabf5bedcbafc0fe558960873142cb2f5c77b02b5e02726cf7a1087b",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T00:58:58.060Z"
+}

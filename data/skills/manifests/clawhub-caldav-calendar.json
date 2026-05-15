@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8269,
+  "uuid": "skill-clawhub-caldav-calendar",
+  "skillKey": "clawhub-caldav-calendar",
+  "name": "Caldav Calendar",
+  "summary": "Sync and query CalDAV calendars (iCloud, Google, Fastmail, Nextcloud, etc.) using vdirsyncer + khal. Works on Linux.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caldav_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Asleep",
+      "features": [
+        "Sync and query CalDAV calendars (iCloud, Google, Fastmail, Nextcloud, etc.) using vdirsyncer +.",
+        "Works on Linux."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caldav-calendar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122379135?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caldav-calendar",
+      "url": "https://clawhub.ai/skills/caldav-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caldav-calendar",
+    "url": "https://clawhub.ai/skills/caldav-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caldav-calendar-fe0e9aee5f3f1b72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caldav-calendar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-caldav-calendar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:028b7b1651d7e144439e5c4d47d5393de7827e35c8ced9cb20b2ae5784ab484a",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T01:45:16.915Z"
+}

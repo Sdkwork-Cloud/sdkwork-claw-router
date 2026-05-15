@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-for-pc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_for_pc",
+  "skill": {
+    "id": 48137,
+    "skillKey": "clawhub-video-editor-for-pc",
+    "name": "Video Editor For Pc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-for-pc",
+    "url": "https://clawhub.ai/skills/video-editor-for-pc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-for-pc-bec5925806ed7343.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777231119555,
+      "changelog": "Video Editor for PC — Initial Release (v1.0.0)\n\n- Launches an AI-powered video editor for PC, enabling quick edits and HD MP4 exports without installing traditional software.\n- Supports upload of raw video footage (MP4, MOV, AVI, WebM, up to 500MB) and natural-language instructions for editing tasks.\n- Cloud-based GPU rendering with typical export times of 1-2 minutes for short clips; export available in multiple formats up to 1080p.\n- Automatic first-time setup and user authentication using a free token system with 100 credits for 7 days.\n- Provides clear workflows for uploading, editing, exporting, and checking credits or session status with concise user prompts.\n- All video processing occurs server-side; clear error handling and guidance for unsupported files, large uploads, or credit issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a89d742070be1bc054f4f98ed22fea2b537b8b2a7c964e87d89adc1301e3949b"
+}

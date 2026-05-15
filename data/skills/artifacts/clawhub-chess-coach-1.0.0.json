@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chess-coach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chess_coach",
+  "skill": {
+    "id": 38460,
+    "skillKey": "clawhub-chess-coach",
+    "name": "Chess Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chess-coach",
+    "url": "https://clawhub.ai/skills/chess-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chess-coach-8ed353a6bf64c3a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive chess coaching based on Chess.com games and stats. Monitors a user's progress, analyzes recent games according to their skill level, and offers p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twharmon",
+      "userId": "s17bqfe9bj5s1g1548dpgq1t0d83wzr4",
+      "displayName": "twharmon",
+      "image": "https://avatars.githubusercontent.com/u/16892444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774902765936,
+      "changelog": "- Initial release of Chess Coach skill.\n- Connect your Chess.com profile to track rating and stats across Blitz, Bullet, and Rapid formats.\n- Get personalized game analysis and receive actionable feedback based on your skill level.\n- Logs recurring mistakes and synthesizes them into a focused weekly \"Coaching Review\" session.\n- Ensures only new, relevant games are analyzed and maintains a history of key observations for tailored coaching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4b0fbed70db344d4fc085e1b5ffbf497a7c75e1ab70cdf97f42ccf6476c41dc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35723,
+  "uuid": "skill-clawhub-open-policy-agent",
+  "skillKey": "clawhub-open-policy-agent",
+  "name": "Open Policy Agent",
+  "summary": "Open Policy Agent integration. Manage data, records, and automate workflows. Use when the user wants to interact with Open Policy Agent data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_policy_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Open Policy Agent integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Open Policy Agent data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-policy-agent@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-policy-agent",
+      "url": "https://clawhub.ai/skills/open-policy-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-policy-agent",
+    "url": "https://clawhub.ai/skills/open-policy-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-policy-agent-439db2c68f5dccd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-policy-agent@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-policy-agent-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8071726841b2979db2a5b3b183bb55053a916a69d8d66a522d2fd9ab5523e08b",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:48:20.433Z"
+}

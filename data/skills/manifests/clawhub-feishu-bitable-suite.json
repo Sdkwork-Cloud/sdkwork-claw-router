@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68298,
+  "uuid": "skill-clawhub-feishu-bitable-suite",
+  "skillKey": "clawhub-feishu-bitable-suite",
+  "name": "飞书Bitable管理工具",
+  "summary": "飞书多维表格（Bitable）的创建、查询、编辑和管理工具。包含 27 种字段类型支持、高级筛选、批量操作和视图管理。 **当以下情况时使用此 Skill**： (1) 需要创建或管理飞书多维表格 App (2) 需要在多维表格中新增、查询、修改、删除记录（行数据） (3) 需要管理字段（列）、视图、数据表 (4...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bitable_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a3152557994-ship-it",
+      "features": [
+        "飞书多维表格（Bitable）的创建、查询、编辑和管理工具。包含 27 种字段类型支持、高级筛选、批量操作和视图管理。 **当以下情况时使用此 Skill**： (1) 需要创建或管理飞书多."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bitable-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248589521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bitable-suite",
+      "url": "https://clawhub.ai/skills/feishu-bitable-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bitable-suite",
+    "url": "https://clawhub.ai/skills/feishu-bitable-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bitable-suite-648e71a2132212e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bitable-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bitable-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa7bf41675a8850e1a61adc0e61d2a298a6067d135ddd363f0ce479647d2dc87",
+      "artifactSizeBytes": 2564
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:33:44.892Z"
+}

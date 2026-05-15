@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16946,
+  "uuid": "skill-clawhub-google-sheets-agent",
+  "skillKey": "clawhub-google-sheets-agent",
+  "name": "Google Sheets Agent",
+  "summary": "Read, write, and append to Google Sheets via service account — zero dependencies. Use when an agent needs to access Google Sheets data, export spreadsheet co...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_sheets_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "The Agent Wire",
+      "features": [
+        "Read, write, and append to Google Sheets via service account — zero dependencies",
+        "Use when an agent needs to access Google Sheets data, export spreadsheet co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-sheets-agent@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260305314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-sheets-agent",
+      "url": "https://clawhub.ai/skills/google-sheets-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-sheets-agent",
+    "url": "https://clawhub.ai/skills/google-sheets-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-sheets-agent-5b40776bf72b8fc8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-sheets-agent@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-sheets-agent-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2d199725ad5d1f305aa099e4756455f1052691e001d868fd912335761aa41f8",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T17:45:47.275Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29038,
+  "uuid": "skill-clawhub-claw-multi-agent",
+  "skillKey": "clawhub-claw-multi-agent",
+  "name": "Claw Multi Agent",
+  "summary": "Claw Multi Agent enables parallel multi-agent orchestration for faster, comprehensive research, model comparison, and code pipelines, saving 50-65% time.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_multi_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zcyynl",
+      "features": [
+        "Claw Multi Agent enables parallel multi-agent orchestration for faster, comprehensive research,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-multi-agent@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90548106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-multi-agent",
+      "url": "https://clawhub.ai/skills/claw-multi-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-multi-agent",
+    "url": "https://clawhub.ai/skills/claw-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-multi-agent-68efa415f6fd0af6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-multi-agent@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-multi-agent-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c34ec5a58e07443131b3fe75b04c2f96661ea4ecbd9e5b401cd484c08f065b26",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T12:09:19.603Z"
+}

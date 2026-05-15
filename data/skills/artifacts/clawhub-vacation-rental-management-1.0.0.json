@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vacation-rental-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vacation_rental_management",
+  "skill": {
+    "id": 40072,
+    "skillKey": "clawhub-vacation-rental-management",
+    "name": "Vacation Rental Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vacation-rental-management",
+    "url": "https://clawhub.ai/skills/vacation-rental-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vacation-rental-management-d5f06b24c629ed00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage vacation rental turnovers, guest reservations, and cleaning schedules. Auto-schedule cleanings based on guest check-out, coordinate multi-property tur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mchusma",
+      "userId": "s176x7w2pyxht1c3n0szyhqjx583wh84",
+      "displayName": "mchusma",
+      "image": "https://avatars.githubusercontent.com/u/8185194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774904335049,
+      "changelog": "Vacation Rental Management 1.0.0 – Initial Release\n\n- Automate vacation rental turnover management, including guest reservations, cleaning schedules, and multi-property coordination.\n- Supports natural language CLI, Claude MCP server integration, and direct REST API use.\n- Tracks guest check-in/check-out, schedules turnover cleanings, manages checklists, and monitors job status.\n- Simplifies handling of late changes (guest extension, cancellation) and supports flexible workflows.\n- For Airbnb/VRBO hosts, short-term rental managers, and property operators seeking streamlined operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d0aec4cb51fbb465094417d18ce0dc29a0a963d344cf19c2d5f1631ecd5d5d1"
+}

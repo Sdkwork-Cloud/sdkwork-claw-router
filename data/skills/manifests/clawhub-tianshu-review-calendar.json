@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65202,
+  "uuid": "skill-clawhub-tianshu-review-calendar",
+  "skillKey": "clawhub-tianshu-review-calendar",
+  "name": "Tianshu Review Calendar",
+  "summary": "根据考试日期与科目列表，把复习主题均摊到考前每一天，生成 Markdown 日程表（可打印勾选）。 Use when: 期末周、多门课冲刺；用户说「复习排期」「考前两周计划」。 NOT for: 精确到小时的闹钟；代替个人学习习惯诊断。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_review_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianshu",
+      "features": [
+        "根据考试日期与科目列表，把复习主题均摊到考前每一天，生成 Markdown 日程表（可打印勾选）。 Use when: 期末周、多门课冲刺；用户说「复习排期」「考前两周计划」。 NOT fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianshu-review-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100948785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianshu-review-calendar",
+      "url": "https://clawhub.ai/skills/tianshu-review-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-review-calendar",
+    "url": "https://clawhub.ai/skills/tianshu-review-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-review-calendar-ddec9bc116852716.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianshu-review-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianshu-review-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3864115b27050c03a25959d49c34d4626d81a7f49dd15e89c8efd9cd87cc78ba",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:37:53.928Z"
+}

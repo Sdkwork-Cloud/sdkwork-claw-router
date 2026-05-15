@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sunshine-antigravity-image-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunshine_antigravity_image_gen",
+  "skill": {
+    "id": 23079,
+    "skillKey": "clawhub-sunshine-antigravity-image-gen",
+    "name": "Antigravity Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunshine-antigravity-image-gen",
+    "url": "https://clawhub.ai/skills/sunshine-antigravity-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunshine-antigravity-image-gen-778ca82641f8fcbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using the internal Google Antigravity API (Gemini 3 Pro Image). High quality, native generation without browser automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773610808287,
+      "changelog": "- Adds SKILL.md with setup and usage instructions for Google Antigravity (Gemini 3 Pro Image) image generation.\n- Describes simple CLI usage and available arguments for generating images.\n- Documents requirements: Node.js and Google OAuth authentication.\n- Covers error handling, output details, and troubleshooting common issues.\n- Emphasizes no browser automation—uses direct API access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c1056324b6cda8fa08980c42e6f242a30090e93dc79ce0578b23b52892784d2"
+}

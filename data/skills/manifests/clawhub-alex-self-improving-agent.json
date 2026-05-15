@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41084,
+  "uuid": "skill-clawhub-alex-self-improving-agent",
+  "skillKey": "clawhub-alex-self-improving-agent",
+  "name": "Self Improving Agent (Alex)",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alex_self_improving_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shendingyi",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alex-self-improving-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266918069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alex-self-improving-agent",
+      "url": "https://clawhub.ai/skills/alex-self-improving-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alex-self-improving-agent",
+    "url": "https://clawhub.ai/skills/alex-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alex-self-improving-agent-305704f11a6fc1b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alex-self-improving-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alex-self-improving-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9307136051e2aa1bb09da228e407e2e700e235673c4e0adcb6d9d682b4d6666a",
+      "artifactSizeBytes": 2680
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T23:14:24.439Z"
+}

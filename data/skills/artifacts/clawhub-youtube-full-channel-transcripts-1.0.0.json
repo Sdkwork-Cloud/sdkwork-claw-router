@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-full-channel-transcripts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_full_channel_transcripts",
+  "skill": {
+    "id": 41233,
+    "skillKey": "clawhub-youtube-full-channel-transcripts",
+    "name": "YouTube Full Channel Transcripts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-full-channel-transcripts",
+    "url": "https://clawhub.ai/skills/youtube-full-channel-transcripts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-full-channel-transcripts-77820310d6861a39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract transcripts from all videos in a YouTube channel for free (no paid APIs). Uses yt-dlp to discover videos and fetch available subtitles. Saves combine..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otomazeli",
+      "userId": "publishers:otomazeli",
+      "displayName": "Blue Fox",
+      "image": "https://avatars.githubusercontent.com/u/651052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774233338866,
+      "changelog": "Initial release — free, local YouTube channel transcript extraction via yt-dlp",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62d948dda8e83c265945e95f8025a2120dafb1921fba3666d470acad477706c9"
+}

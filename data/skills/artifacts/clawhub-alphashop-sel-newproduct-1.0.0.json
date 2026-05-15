@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alphashop-sel-newproduct@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphashop_sel_newproduct",
+  "skill": {
+    "id": 64248,
+    "skillKey": "clawhub-alphashop-sel-newproduct",
+    "name": "alphashop-sel-newproduct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphashop-sel-newproduct",
+    "url": "https://clawhub.ai/skills/alphashop-sel-newproduct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphashop-sel-newproduct-cb488328f970df55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AlphaShop新品选品SKILL：基于关键词和商品筛选条件生成深度市场分析和新品推荐报告。 支持Amazon和TikTok平台的跨境电商选品，提供市场评级、竞争分析、新品推荐、热销品对比等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1688aiinfra",
+      "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+      "displayName": "1688AiInfra",
+      "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774259022558,
+      "changelog": "AlphaShop新品选品SKILL v1.0.1 — 新增跨境电商选品和深度市场分析\n\n- 支持根据关键词与筛选条件，调用AlphaShop API生成新品市场分析与选品报告。\n- 适用于Amazon与TikTok，覆盖多国市场，提供市场评级、机会分析、新品推荐及热销品对比。\n- 实现两步式工作流：先查关键词(search)，再用search结果生成新品报告(report)，关键词参数需严格来源于推荐列表。\n- 提供丰富参数自定义和详细错误提示，新手也可快速上手。\n- 详尽CLI命令行指南和环境配置说明，便于API凭证配置。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8415f70c7f981ef03a84164c610a501f69fa7615ae719a7d1321daf08d2629f"
+}

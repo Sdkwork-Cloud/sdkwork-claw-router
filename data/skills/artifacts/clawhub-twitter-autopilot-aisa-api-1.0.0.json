@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twitter-autopilot-aisa-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twitter_autopilot_aisa_api",
+  "skill": {
+    "id": 49790,
+    "skillKey": "clawhub-twitter-autopilot-aisa-api",
+    "name": "Twitter Autopilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twitter-autopilot-aisa-api",
+    "url": "https://clawhub.ai/skills/twitter-autopilot-aisa-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twitter-autopilot-aisa-api-9317a7867f4ec122.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reads and searches X (Twitter) data including profiles, timelines, mentions, followers, tweet search, trends, lists, communities, and Spaces. Also supports p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 67,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778258431813,
+      "changelog": "Initial release of twitter-autopilot skill.\n\n- Enables agents to read and search public X (Twitter) data: user profiles, timelines, mentions, followers, trends, lists, communities, Spaces, and perform tweet/user searches.\n- Supports posting, liking/unliking tweets, and following/unfollowing users after OAuth authorization.\n- Provides clear workflow instructions for read, engagement, and posting actions.\n- Comprehensive API and bash usage documentation included.\n- Compatible with agentskills.io ecosystem; requires only a Python 3 environment and an AISA_API_KEY.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d8971452c29e2106dd4026368d97715fd793465636928d1f86a76c02ea8428e5"
+}

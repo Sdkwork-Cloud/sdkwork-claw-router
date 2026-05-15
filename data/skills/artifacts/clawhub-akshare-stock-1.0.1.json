@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akshare-stock@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_stock",
+  "skill": {
+    "id": 60157,
+    "skillKey": "clawhub-akshare-stock",
+    "name": "A股量化 AkShare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-stock",
+    "url": "https://clawhub.ai/skills/akshare-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-stock-ebf86ebde7cf7fe6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。用于回答关于A股股票查询、行情数据、财务分析、选股等问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mbpz",
+      "userId": "s172mwqtmjm0e0r2dv1ecqjj5n83k049",
+      "displayName": "ttbb",
+      "image": "https://avatars.githubusercontent.com/u/19383199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 25347,
+      "installsAllTime": 289,
+      "installsCurrent": 277,
+      "stars": 80,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772461532238,
+      "changelog": "- Added a new \"备选方案: Baostock\" section with example code for using baostock if AkShare installation fails.\n- Updated \"注意事项\" to include a note about potential network issues and testing in the local environment.\n- No changes to skill functionality or API usage; documentation improvement only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7621e8c4994070a34913a75eff22ff7232d87d5e1d3dde474f3757ed0755ab94"
+}

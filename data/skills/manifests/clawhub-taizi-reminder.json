@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29120,
+  "uuid": "skill-clawhub-taizi-reminder",
+  "skillKey": "clawhub-taizi-reminder",
+  "name": "Reminder",
+  "summary": "Capture natural-language events in Chinese or English, save them to your workspace, and schedule Telegram reminders with default 24h, 1h, and 10m notifications.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_reminder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fresh3",
+      "features": [
+        "Capture natural-language events in Chinese or English, save them to your workspace, and schedul."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taizi-reminder@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23310067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taizi-reminder",
+      "url": "https://clawhub.ai/skills/taizi-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-reminder",
+    "url": "https://clawhub.ai/skills/taizi-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-reminder-c0a49497ca61e052.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taizi-reminder@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-taizi-reminder-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb2a23a801c391435581546a7f79ee822ddd8e55bcf0f774b9fcb98bb07a9430",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:05:24.254Z"
+}

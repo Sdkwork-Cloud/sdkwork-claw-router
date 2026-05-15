@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14427,
+  "uuid": "skill-clawhub-pmc-harvest",
+  "skillKey": "clawhub-pmc-harvest",
+  "name": "PMC Harvest",
+  "summary": "Fetch and retrieve full-text or abstracts of open-access articles from PubMed Central by journal, year, or PMCID using NCBI's public APIs without an API key.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pmc_harvest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "angusthefuzz",
+      "features": [
+        "Fetch and retrieve full-text or abstracts of open-access articles from PubMed Central by journa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pmc-harvest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226103412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pmc-harvest",
+      "url": "https://clawhub.ai/skills/pmc-harvest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pmc-harvest",
+    "url": "https://clawhub.ai/skills/pmc-harvest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pmc-harvest-6ab76330501c38a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pmc-harvest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pmc-harvest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bce8eb2813128414a20bda76b0863ec7ef9358ef9fe800f8c1200b1751df6bde",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T18:39:21.198Z"
+}

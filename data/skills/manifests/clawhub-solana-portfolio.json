@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66175,
+  "uuid": "skill-clawhub-solana-portfolio",
+  "skillKey": "clawhub-solana-portfolio",
+  "name": "Solana Portfolio",
+  "summary": "管理 Solana 投资组合 — 追踪多钱包余额、代币分布和资产估值。当用户想查看持仓、添加钱包或了解资产状况时触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_portfolio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liji3597",
+      "features": [
+        "管理 Solana 投资组合 — 追踪多钱包余额、代币分布和资产估值。当用户想查看持仓、添加钱包或了解资产状况时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-portfolio@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77437682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-portfolio",
+      "url": "https://clawhub.ai/skills/solana-portfolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-portfolio",
+    "url": "https://clawhub.ai/skills/solana-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-portfolio-db2afac5f5e92ccb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-portfolio@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-portfolio-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:710e8c8f11f968b3d1da53317ec5b4a7cc38fa5bd875305ac1f639fb58e55f56",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:46:05.286Z"
+}

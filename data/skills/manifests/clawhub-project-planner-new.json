@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57659,
+  "uuid": "skill-clawhub-project-planner-new",
+  "skillKey": "clawhub-project-planner-new",
+  "name": "软件项目开发规划助手",
+  "summary": "Plans a new software project by gathering requirements through structured questions before producing a plan. Use when the user says \"I want to build\", \"help...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_planner_new",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dapan0902",
+      "features": [
+        "Plans a new software project by gathering requirements through structured questions before prod.",
+        "Use when the user says \"I want to build\", \"help..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-planner-new@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219090163?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-planner-new",
+      "url": "https://clawhub.ai/skills/project-planner-new"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-planner-new",
+    "url": "https://clawhub.ai/skills/project-planner-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-planner-new-39542ddb3f7c190a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-planner-new@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-planner-new-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c5392b3f4ab8c03c77f08a6f37803602aebfbd3f294bdcd6f52a214f3439582",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:24:58.117Z"
+}

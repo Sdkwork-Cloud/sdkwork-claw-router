@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neomano-places@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neomano_places",
+  "skill": {
+    "id": 27961,
+    "skillKey": "clawhub-neomano-places",
+    "name": "Neomano Places (Google Places)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neomano-places",
+    "url": "https://clawhub.ai/skills/neomano-places",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neomano-places-92d2a015999dd710.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google Places (Places API New) for real-world places, businesses, restaurants, and nearby recommendations. Use when the user asks to find specific pla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elandivar",
+      "userId": "s17abqhgmxav893t9p3w692jms83jmw7",
+      "displayName": "elandivar",
+      "image": "https://avatars.githubusercontent.com/u/4536961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774407580694,
+      "changelog": "Add user-facing setup guidance for Google Cloud Console API key creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8c22e45e6c11007441b5d7960872f09213b8458d48c8d3b088eff0306412c77"
+}

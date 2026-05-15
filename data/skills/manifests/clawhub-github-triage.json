@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57366,
+  "uuid": "skill-clawhub-github-triage",
+  "skillKey": "clawhub-github-triage",
+  "name": "GitHub 通知自动分拣",
+  "summary": "GitHub notification auto-triage via email channel. Classifies incoming GitHub notification emails into three tiers: (1) CI failures and security alerts → imm...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevincodeL",
+      "features": [
+        "GitHub notification auto-triage via email channel",
+        "Classifies incoming GitHub notification emails into three tiers: (1) CI failures and security a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-triage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20519059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-triage",
+      "url": "https://clawhub.ai/skills/github-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-triage",
+    "url": "https://clawhub.ai/skills/github-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-triage-3de32f1831e0f003.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-triage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-triage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99db733485d6623c2203f458e2fe3adde2248acff788f97304468eacf88da317",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:55:06.911Z"
+}

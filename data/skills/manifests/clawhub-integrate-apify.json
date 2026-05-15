@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37943,
+  "uuid": "skill-clawhub-integrate-apify",
+  "skillKey": "clawhub-integrate-apify",
+  "name": "Apify",
+  "summary": "Apify integration. Manage Actors, Datasets, KeyValueStores, RequestQueues, Tasks. Use when the user wants to interact with Apify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_apify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Apify integration",
+        "Manage Actors, Datasets, KeyValueStores, RequestQueues, Tasks",
+        "Use when the user wants to interact with Apify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-apify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-apify",
+      "url": "https://clawhub.ai/skills/integrate-apify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-apify",
+    "url": "https://clawhub.ai/skills/integrate-apify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-apify-f0ff854e9645a85c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-apify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-apify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db8e012bc752344bfe5748679a030294ce292bd2681e4ce9f2d8cf57af4d1d65",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:59:52.238Z"
+}

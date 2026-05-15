@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13597,
+  "uuid": "skill-clawhub-glm-master-skill",
+  "skillKey": "clawhub-glm-master-skill",
+  "name": "GLM-Master-Skill",
+  "summary": "Documentation-only master skill for GLM ecosystem discovery and installation. This skill does not execute scripts or subprocess commands. It provides a curat...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glm_master_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jared Wen",
+      "features": [
+        "Documentation-only master skill for GLM ecosystem discovery and installation",
+        "This skill does not execute scripts or subprocess commands",
+        "It provides a curat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glm-master-skill@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142211841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glm-master-skill",
+      "url": "https://clawhub.ai/skills/glm-master-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glm-master-skill",
+    "url": "https://clawhub.ai/skills/glm-master-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glm-master-skill-15b31874d138aa43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glm-master-skill@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-glm-master-skill-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2656934b90d885df57f08e1c9cadb3019721bcb49500010e605ef4ec9406c5ea",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:20:04.112Z"
+}

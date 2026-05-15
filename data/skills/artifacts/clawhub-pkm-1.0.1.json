@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pkm@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pkm",
+  "skill": {
+    "id": 9614,
+    "skillKey": "clawhub-pkm",
+    "name": "Personal Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pkm",
+    "url": "https://clawhub.ai/skills/pkm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pkm-898756d06c1122c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users build a personal knowledge base by organizing whatever they send into structured notes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3118,
+      "installsAllTime": 16,
+      "installsCurrent": 14,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770766859608,
+      "changelog": "Rename to Personal Knowledge Base",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b260ebb5f4cd4e1a75c611e180f0f4b621b9d0ec0d801ce4dd5d96725fc6a39b"
+}

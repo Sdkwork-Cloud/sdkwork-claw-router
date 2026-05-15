@@ -1,4 +1,4 @@
-use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine};
+use sdkwork_claw_config::{DatabaseConfig, DatabaseEngine, StartupInstallMode};
 
 #[test]
 fn parses_sqlite_database_urls_for_desktop_deployment() {
@@ -64,4 +64,25 @@ fn rejects_invalid_environment_database_pool_size() {
     .unwrap_err();
 
     assert!(error.contains("SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS"));
+}
+
+#[test]
+fn parses_startup_install_mode_from_optional_environment_part() {
+    assert_eq!(
+        StartupInstallMode::Ensure,
+        StartupInstallMode::from_optional_part(None).unwrap()
+    );
+    assert_eq!(
+        StartupInstallMode::Ensure,
+        StartupInstallMode::from_optional_part(Some("ensure".to_owned())).unwrap()
+    );
+    assert_eq!(
+        StartupInstallMode::Skip,
+        StartupInstallMode::from_optional_part(Some("SKIP".to_owned())).unwrap()
+    );
+    assert!(
+        StartupInstallMode::from_optional_part(Some("repair".to_owned()))
+            .unwrap_err()
+            .contains("SDKWORK_CLAW_STARTUP_INSTALL_MODE")
+    );
 }

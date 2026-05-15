@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-workers@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_workers",
+  "skill": {
+    "id": 32288,
+    "skillKey": "clawhub-cloudflare-workers",
+    "name": "cloudflare-workers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-workers",
+    "url": "https://clawhub.ai/skills/cloudflare-workers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-workers-730f38c749978610.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rapid development with Cloudflare Workers - build and deploy serverless applications on Cloudflare's global network. Use when building APIs, full-stack web a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tenequm",
+      "userId": "s17bp3v1hm1dnkzey0c9tfh02183j0y5",
+      "displayName": "Misha Kolesnik",
+      "image": "https://avatars.githubusercontent.com/u/22403766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1777570356783,
+      "changelog": "Updated cloudflare-workers from 3.0.0 to 3.1.0.\nChanges:\n- modified `SKILL.md`",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4daab2bbb2bb97c1fa6d4336eb13a9bbb92cc87c80ba7b6a14b698db53ea97e6"
+}

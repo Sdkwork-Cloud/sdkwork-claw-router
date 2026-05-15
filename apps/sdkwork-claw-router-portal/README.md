@@ -35,8 +35,8 @@ Useful root entrypoints:
 - `pnpm.cmd release` runs release preflight and the full verification gate.
 - `pnpm.cmd smoke:dev` verifies the unified edge entrypoint and direct service URLs on isolated local ports.
 - `pnpm.cmd portal:dev` starts only the browser portal Vite dev server.
-- `pnpm.cmd desktop:dev` starts the portal with `SDKWORK_CLAW_DEPLOYMENT_MODE=desktop`.
-- `pnpm.cmd service:dev` starts the local runtime with service-mode environment flags.
+- `pnpm.cmd desktop:dev` starts the full install-checked local workspace with `SDKWORK_CLAW_DEPLOYMENT_MODE=desktop`.
+- `pnpm.cmd service:dev` starts the full install-checked local workspace with service-mode environment flags.
 - `pnpm.cmd server:dev -- --gateway-bind 0.0.0.0:19080` starts all services with forwarded workspace options.
 - `pnpm.cmd server:plan` prints the server startup plan without launching processes.
 
@@ -135,12 +135,20 @@ Run the full product verification before release:
 
 ```powershell
 $env:CARGO_TARGET_DIR='target-codex'
-node scripts/verify-claw-router-product.mjs --skip-edge-dev-smoke
+pnpm.cmd verify
 ```
 
-Release and CI hosts should require edge smoke explicitly:
+`pnpm.cmd verify` does not launch the live `pnpm dev` workspace by default.
+Run the edge dev smoke directly when that coverage is needed:
 
 ```powershell
 $env:CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED="1"
 pnpm.cmd smoke:dev
+```
+
+Or opt the verify plan into the same live smoke:
+
+```powershell
+$env:CLAWROUTER_EDGE_DEV_SMOKE_REQUIRED="1"
+pnpm.cmd verify -- --with-edge-dev-smoke
 ```

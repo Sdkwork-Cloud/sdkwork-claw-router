@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/realsense-d435i@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realsense_d435i",
+  "skill": {
+    "id": 61172,
+    "skillKey": "clawhub-realsense-d435i",
+    "name": "realsense-d435i"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realsense-d435i",
+    "url": "https://clawhub.ai/skills/realsense-d435i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realsense-d435i-c3bd034d9fdc939d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intel RealSense D435i 深度相机操作技能。适用：深度照片、3D点云、IMU数据、RGBD视频录制。自动按日期分目录存储。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zh1fen",
+      "userId": "s179g8jn4mpkb9bx1a4tea6nqd83gj4v",
+      "displayName": "Yifeng Zhan",
+      "image": "https://avatars.githubusercontent.com/u/140321694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774625050141,
+      "changelog": "- Updated the data output directory structure: files are now organized by content type and date (photos, videos, pointcloud, imu) instead of a single date-based directory.\n- Adjusted the SKILL.md documentation to reflect these directory structure changes for improved data management and clarity.\n- No code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7fffcacfca2419a7fa67700b39157d8612ff02254bd95a596d8de2ec94f7dbe"
+}

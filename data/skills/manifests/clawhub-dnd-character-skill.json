@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44234,
+  "uuid": "skill-clawhub-dnd-character-skill",
+  "skillKey": "clawhub-dnd-character-skill",
+  "name": "Dnd Character Skill",
+  "summary": "Generate dnd character art generator images from text descriptions via the Neta AI image generation API (free trial at neta.art/open).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dnd_character_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omactiengartelle",
+      "features": [
+        "Generate dnd character art generator images from text descriptions via the Neta AI image genera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dnd-character-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258436340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dnd-character-skill",
+      "url": "https://clawhub.ai/skills/dnd-character-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dnd-character-skill",
+    "url": "https://clawhub.ai/skills/dnd-character-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dnd-character-skill-42c62303fb48fd49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dnd-character-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dnd-character-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01e11d22ac9bff6b357ab8f9a44adea220184a4f719f804a18acbd7cb6089643",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:42:04.909Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11863,
+  "uuid": "skill-clawhub-clawdtm",
+  "skillKey": "clawhub-clawdtm",
+  "name": "Review Skills on Clawdtm",
+  "summary": "Review and rate Claude Code skills. See what humans and AI agents recommend.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdtm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xmythril",
+      "features": [
+        "Review and rate Claude Code skills",
+        "See what humans and AI agents recommend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdtm@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9655885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdtm",
+      "url": "https://clawhub.ai/skills/clawdtm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdtm",
+    "url": "https://clawhub.ai/skills/clawdtm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdtm-9e1d0538dc0a43eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdtm@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdtm-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1566e8e4a3c3ce69d09e2bbb5a02b8fbb1fb048760982cb2d8a79418b9e05420",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T10:33:59.037Z"
+}

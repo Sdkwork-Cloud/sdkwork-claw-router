@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40871,
+  "uuid": "skill-clawhub-ops-runbook-generator",
+  "skillKey": "clawhub-ops-runbook-generator",
+  "name": "runbook-generator",
+  "summary": "Generate operational runbooks from project files. Scans Dockerfiles, docker-compose.yml, systemd units, Makefiles, package.json, and config files to produce...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_runbook_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Generate operational runbooks from project files",
+        "Scans Dockerfiles, docker-compose.yml, systemd units, Makefiles, package.json, and config files."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ops-runbook-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ops-runbook-generator",
+      "url": "https://clawhub.ai/skills/ops-runbook-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-runbook-generator",
+    "url": "https://clawhub.ai/skills/ops-runbook-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-runbook-generator-b70fa22d6c41ca80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ops-runbook-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ops-runbook-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed9fad80d66c9beaecce0c80ef86f8e40274cdb436db4e5a418d17032f5705e6",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:53:04.919Z"
+}

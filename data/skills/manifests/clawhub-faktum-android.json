@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58193,
+  "uuid": "skill-clawhub-faktum-android",
+  "skillKey": "clawhub-faktum-android",
+  "name": "Faktum Android",
+  "summary": "Faktum News Android 앱 개발 세션. Google 공식 Android CLI(`~/bin/android`) + 공식 Skills(android-cli, navigation-3, edge-to-edge)를 조합해 Kotlin + Jetpack Compose로 모바일 앱...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faktum_android",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Faktum News Android 앱 개발 세션",
+        "Google 공식 Android CLI(`~/bin/android`) + 공식 Skills(android-cli, navigation-3, edge-to-edge)를 조합."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faktum-android@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faktum-android",
+      "url": "https://clawhub.ai/skills/faktum-android"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faktum-android",
+    "url": "https://clawhub.ai/skills/faktum-android",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faktum-android-4092f8eb05de899a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faktum-android@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-faktum-android-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d4221ed6cc0c4d20ab71b9a520feb20f07cd21469db2165c2b51d2c324ac194",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T00:00:31.363Z"
+}

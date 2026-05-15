@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thesaurus@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thesaurus",
+  "skill": {
+    "id": 26496,
+    "skillKey": "clawhub-thesaurus",
+    "name": "Thesaurus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thesaurus",
+    "url": "https://clawhub.ai/skills/thesaurus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thesaurus-f506fc296dddaaa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up synonyms, antonyms, and related words with history and export. Use when finding alternatives, checking usage, running drills, analyzing frequency."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773831124897,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdd9cf7e9d3a2ce8adc390abe30cbae624b13113f85e538afab96b716aa599ca"
+}

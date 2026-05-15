@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-ppt-generator-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ppt_generator_1",
+  "skill": {
+    "id": 34111,
+    "skillKey": "clawhub-ai-ppt-generator-1",
+    "name": "Ai Ppt Generator 1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ppt-generator-1",
+    "url": "https://clawhub.ai/skills/ai-ppt-generator-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ppt-generator-1-61b51e6eef2a9a9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate PPT with Baidu AI. Smart template selection based on content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigertamvip",
+      "userId": "s171vwmtm81hafva67c196sr5n83hhtb",
+      "displayName": "tigertamvip",
+      "image": "https://avatars.githubusercontent.com/u/61303958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774148780465,
+      "changelog": "- Initial release of AI PPT Generator for Baidu AI.\n- Supports automatic smart template selection based on PPT topic content.\n- Optionally allows users to manually choose a template from a list.\n- Includes robust fallback logic: auto-selects a template if none is specified or found.\n- Integrates with Baidu API, handling real style IDs and template IDs.\n- Provides sample commands for both automatic and manual PPT generation workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adf3a3542ae9bc3ab0b93987e7526e761dedbd2f2d6df6ab1294a6c3f1a74b92"
+}

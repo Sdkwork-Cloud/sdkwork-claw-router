@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-pricing-command-center@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_pricing_command_center",
+  "skill": {
+    "id": 51918,
+    "skillKey": "clawhub-amazon-pricing-command-center",
+    "name": "Amazon Pricing Command Center"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-pricing-command-center",
+    "url": "https://clawhub.ai/skills/amazon-pricing-command-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-pricing-command-center-6788a72a91ed87f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data-driven pricing strategy engine for Amazon sellers. Give me your ASIN(s) — I auto-detect the leaf category, analyze pricing landscape, and deliver RAISE/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apiclaw",
+      "userId": "s17081rahwfg1emrhs1pmfhmq984gan3",
+      "displayName": "apiclaw",
+      "image": "https://avatars.githubusercontent.com/u/268545826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776083846133,
+      "changelog": "**amazon-pricing-command-center v1.1.1**\n\n- Updated script usage instructions in SKILL.md (no longer instructs to \"read\" the script; only execute).\n- Clarified and streamlined references to files in documentation.\n- No changes to business logic or API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afe65fbcf4953c25c7547857698cfa6e9a836122f7180880bb1decd23dba10be"
+}

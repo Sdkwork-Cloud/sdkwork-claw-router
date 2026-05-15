@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camino-real-estate@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_real_estate",
+  "skill": {
+    "id": 12965,
+    "skillKey": "clawhub-camino-real-estate",
+    "name": "Real Estate Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-real-estate",
+    "url": "https://clawhub.ai/skills/camino-real-estate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-real-estate-4f19e4bbfeafee40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate any address for home buyers and renters. Get nearby schools, transit, grocery stores, parks, restaurants, and walkability using Camino AI's location..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "james-southendsolutions",
+      "userId": "publishers:james-southendsolutions",
+      "displayName": "James-southendsolutions",
+      "image": "https://avatars.githubusercontent.com/u/93152760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 980,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1771301407264,
+      "changelog": "- Added curl and jq as required binaries in the skill's metadata.\n- No functional or usage changes; documentation now explicitly lists binary dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0414446524627d762b0d0e8388204e7aab08f65277c16509c6f84d84387de95"
+}

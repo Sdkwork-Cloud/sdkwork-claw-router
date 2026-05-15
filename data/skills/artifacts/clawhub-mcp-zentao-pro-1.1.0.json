@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-zentao-pro@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_zentao_pro",
+  "skill": {
+    "id": 64183,
+    "skillKey": "clawhub-mcp-zentao-pro",
+    "name": "禅道MCP agent pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-zentao-pro",
+    "url": "https://clawhub.ai/skills/mcp-zentao-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-zentao-pro-b4b24b3a5543ab1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "禅道(ZenTao) MCP大模型能力扩展包。提供跨项目的数据聚合视图、一句话生成任务、无缝报工(Log Effort)、自动状态流转等四组原生能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenish",
+      "userId": "s17a69w0akakkjs3kfww4g385983gr7w",
+      "displayName": "chenish",
+      "image": "https://avatars.githubusercontent.com/u/46879957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773315690633,
+      "changelog": "mcp-zentao-pro 1.1.0\n\n- Expanded documentation with new management and team dashboard usage guidance.\n- Added detailed usage instructions and parameters for management aggregation (管理聚合), workload radar, stagnant tasks, standup, and weekly report abilities.\n- Updated command line usage examples to reflect new features, team member cache, and richer query/filtering options.\n- Clarified distinction between personal and management perspectives in examples and instructions.\n- Enhanced sections on advanced abilities: morning standup radar, weekly synthesis, team workload summary, and stagnant tasks tracking.\n- Improved quick reference and practical call patterns for both AI tooling and CLI invocation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8d16d3cd2bcdf8f0b2b37450f218e7aea8d4c9d12f0a9443c8d86570c6bebaf"
+}

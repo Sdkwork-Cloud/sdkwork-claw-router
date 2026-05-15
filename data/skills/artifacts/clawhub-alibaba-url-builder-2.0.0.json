@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibaba-url-builder@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibaba_url_builder",
+  "skill": {
+    "id": 51500,
+    "skillKey": "clawhub-alibaba-url-builder",
+    "name": "Alibaba Url Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibaba-url-builder",
+    "url": "https://clawhub.ai/skills/alibaba-url-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibaba-url-builder-e91517bc26b87a45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build Alibaba.com URLs for agent navigation with traffic tracking (traffic_type=ags_llm). Supports search, product details, suppliers, RFQ, AI Mode, Top Rank..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zeyu426",
+      "userId": "s17bq25xegcyvjvn29wme9cwpn83n8hh",
+      "displayName": "Zeyu426",
+      "image": "https://avatars.githubusercontent.com/u/61571196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773746333822,
+      "changelog": "Simplified SKILL.md following skill-creator规范，统一英文格式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34dec2b683a64f6c2a52cceb79b33d6f807d58a9656c7b9265eda4bebe0f18a3"
+}

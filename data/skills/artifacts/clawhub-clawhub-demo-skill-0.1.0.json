@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-demo-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_demo_skill",
+  "skill": {
+    "id": 49438,
+    "skillKey": "clawhub-clawhub-demo-skill",
+    "name": "ClawHub Demo Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-demo-skill",
+    "url": "https://clawhub.ai/skills/clawhub-demo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-demo-skill-fd54d8726ec276bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this tiny demo skill to verify that a ClawHub skill can be published, installed, and invoked; it returns a short confirmation message and optionally echo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "colifire",
+      "userId": "s17465p0dw6eazb2jffss5zxnx866wq6",
+      "displayName": "lin-ke",
+      "image": "https://avatars.githubusercontent.com/u/185170636?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 78,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778053981869,
+      "changelog": "Initial demo skill for ClawHub publish testing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25a87779f4d59364eb9530bd882b9df9d0dfa3d202952777415977b32589a321"
+}

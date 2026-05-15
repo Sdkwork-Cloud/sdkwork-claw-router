@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68417,
+  "uuid": "skill-clawhub-check-bookings-phone",
+  "skillKey": "clawhub-check-bookings-phone",
+  "name": "Check Bookings Phone",
+  "summary": "检查携程旅行app预售订单的日期可用性。通过ADB连接Android设备，自动化操作携程app，遍历\"未使用 预售订单\"中的每个订单，查询指定日期范围内每天的预约状态（可约、约满、补差价等）。当用户提到检查携程订单、查看预售订单可用日期、查酒店预约状态时触发此skill。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_bookings_phone",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chao Zheng",
+      "features": [
+        "检查携程旅行app预售订单的日期可用性。通过ADB连接Android设备，自动化操作携程app，遍历\"未使用 预售订单\"中的每个订单，查询指定日期范围内每天的预约状态（可约、约满、补差价等）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/check-bookings-phone@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10296164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "check-bookings-phone",
+      "url": "https://clawhub.ai/skills/check-bookings-phone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-bookings-phone",
+    "url": "https://clawhub.ai/skills/check-bookings-phone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-bookings-phone-582cee5260f26e50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/check-bookings-phone@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-check-bookings-phone-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b700fbaa5e94c68a51c13a0e29fb924615fc6b0dcecc1f6f138cb2865c8d1c65",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T03:52:48.463Z"
+}

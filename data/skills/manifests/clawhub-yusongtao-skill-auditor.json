@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66346,
+  "uuid": "skill-clawhub-yusongtao-skill-auditor",
+  "skillKey": "clawhub-yusongtao-skill-auditor",
+  "name": "Skill Auditor (于松涛版)",
+  "summary": "安全审计OpenClaw技能，检测文件操作、网络请求、命令执行、权限和数据泄露等安全风险并生成报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yusongtao_skill_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yustnust",
+      "features": [
+        "安全审计OpenClaw技能，检测文件操作、网络请求、命令执行、权限和数据泄露等安全风险并生成报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yusongtao-skill-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205522004?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yusongtao-skill-auditor",
+      "url": "https://clawhub.ai/skills/yusongtao-skill-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yusongtao-skill-auditor",
+    "url": "https://clawhub.ai/skills/yusongtao-skill-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yusongtao-skill-auditor-1d876a66beb28283.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yusongtao-skill-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yusongtao-skill-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c98454eb6980e0734264ca77b203fce6d2230abf6e751b17e8cbfdea3a8e9f7",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:44:39.663Z"
+}

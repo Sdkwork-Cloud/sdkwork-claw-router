@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25706,
+  "uuid": "skill-clawhub-magnetic",
+  "skillKey": "clawhub-magnetic",
+  "name": "Magnetic",
+  "summary": "Magnetic integration. Manage Organizations. Use when the user wants to interact with Magnetic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magnetic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Magnetic integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Magnetic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magnetic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magnetic",
+      "url": "https://clawhub.ai/skills/magnetic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magnetic",
+    "url": "https://clawhub.ai/skills/magnetic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magnetic-7674fd90e76d296a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magnetic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-magnetic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc55f6229e4ec105ef981f57a2d742e6fc6ef6a41b938ecc97bbb3a8c0982df9",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:43:01.790Z"
+}

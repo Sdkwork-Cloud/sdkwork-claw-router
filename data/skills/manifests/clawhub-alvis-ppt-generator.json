@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45933,
+  "uuid": "skill-clawhub-alvis-ppt-generator",
+  "skillKey": "clawhub-alvis-ppt-generator",
+  "name": "Ai Ppt Generator",
+  "summary": "Generate PPT with SkillBoss API Hub. Smart template selection based on content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_ppt_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Generate PPT with SkillBoss API Hub",
+        "Smart template selection based on content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-ppt-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-ppt-generator",
+      "url": "https://clawhub.ai/skills/alvis-ppt-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-ppt-generator",
+    "url": "https://clawhub.ai/skills/alvis-ppt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-ppt-generator-57f916dfb9944ed5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-ppt-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-ppt-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb25ed97d59fa8f1941234fca418979d9141165d6f07158d461fa45e213dbc34",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:22:10.098Z"
+}

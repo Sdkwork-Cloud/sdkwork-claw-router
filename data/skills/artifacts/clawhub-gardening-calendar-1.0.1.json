@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gardening-calendar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gardening_calendar",
+  "skill": {
+    "id": 24118,
+    "skillKey": "clawhub-gardening-calendar",
+    "name": "Gardening Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gardening-calendar",
+    "url": "https://clawhub.ai/skills/gardening-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gardening-calendar-7d8cb417e5d19a25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides accurate monthly sowing and harvesting guidance for 160+ plants, tailored to UK and selected international climates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siatrial",
+      "userId": "publishers:siatrial",
+      "displayName": "siatrial",
+      "image": "https://avatars.githubusercontent.com/u/29793076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772459910725,
+      "changelog": "- Added core plant data in `references/plant-data.ts`.\n- Implemented central calendar logic with `scripts/calendar-logic.ts` to calculate sowing and harvesting windows.\n- Enhanced skill architecture to support month-by-month and plant-specific advice using these new modules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:abe6e7dd68e8f09317ae9b7eb2402753e856fad3d9b744807ee0f730ea3c4762"
+}

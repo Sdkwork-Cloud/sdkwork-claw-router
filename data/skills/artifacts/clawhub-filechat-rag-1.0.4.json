@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/filechat-rag@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filechat_rag",
+  "skill": {
+    "id": 32543,
+    "skillKey": "clawhub-filechat-rag",
+    "name": "Filechat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filechat-rag",
+    "url": "https://clawhub.ai/skills/filechat-rag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filechat-rag-9fa8cc869b6c1a5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, retrieve, and chat with documents securely stored in ANY Google Drive folder using semantic vector search (RAG). Use when: (1) a user asks to save a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eladrave",
+      "userId": "s173v5nncrn4twk8aykszn2tr583et7r",
+      "displayName": "eladrave",
+      "image": "https://avatars.githubusercontent.com/u/86946294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774905278990,
+      "changelog": "- Added developer tests and setup files for validation and automated testing (`tests/credentials.json`, `tests/setup.js`, `tests/skill.test.js`).\n- Added `_meta.json` to support additional skill metadata or configuration.\n- Removed an obsolete or auto-generated metadata file.\n- Updated documentation with a new section on Google Workspace authentication, including how to check and prompt for Drive OAuth before usage.\n- Expanded documentation with a full end-to-end testing and validation workflow for setup, authentication, cache cleaning, and RAG functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae5408a6c6790e99b6ca1ac64f7595377be81b0c176c051105399a89526375ec"
+}

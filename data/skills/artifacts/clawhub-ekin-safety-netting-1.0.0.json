@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ekin-safety-netting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ekin_safety_netting",
+  "skill": {
+    "id": 42375,
+    "skillKey": "clawhub-ekin-safety-netting",
+    "name": "Safety Netting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ekin-safety-netting",
+    "url": "https://clawhub.ai/skills/ekin-safety-netting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ekin-safety-netting-d67ef042eb8ea83e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated clinical safety netting for NHS GPs. Follows up with patients after appointments, checks for red flag symptoms, escalates to GP when needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ekin-kahraman",
+      "userId": "s170m4e41xne63h6cfwjmemhpx83r69x",
+      "displayName": "Ekin-Kahraman",
+      "image": "https://avatars.githubusercontent.com/u/252896499?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774708026516,
+      "changelog": "Initial release with full safety netting automation:\n\n- Automates clinical safety netting follow-up after GP appointments for NHS patients.\n- Checks for red flag symptoms by contacting patients at defined timeframes, using plain English and multiple communication channels (email, SMS, WhatsApp, Telegram, voice).\n- Escalates to the GP if red flags are detected, if the patient does not respond, or responses are unclear.\n- Records all contacts, responses, matched flags, and decisions for audit and learning.\n- Includes built-in memory and learning to optimize follow-ups and improve phrase and keyword matching over time.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ce4a136867db7924839376c56e02a2936132ad8c030f6ef022e333022371952"
+}

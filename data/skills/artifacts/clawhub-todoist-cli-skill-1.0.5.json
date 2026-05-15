@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todoist-cli-skill@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_cli_skill",
+  "skill": {
+    "id": 21082,
+    "skillKey": "clawhub-todoist-cli-skill",
+    "name": "Todoist CLI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-cli-skill",
+    "url": "https://clawhub.ai/skills/todoist-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-cli-skill-fb912a678ac8d61f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage tasks and projects in Todoist using the Official Todoist CLI tool (https://github.com/Doist/todoist-cli). Use when user asks about tasks, to-dos, remi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leaofelipe",
+      "userId": "s174e8545kpxbjhg3hy1xyh44d83n2j6",
+      "displayName": "Felipe Leão",
+      "image": "https://avatars.githubusercontent.com/u/1847691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773700307943,
+      "changelog": "Move API token link to top of Setup section for better visibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cc9561cefb0eff0fd8ffe71aee249e0b7c76bef5afe2072a964fc80b9c1b43d"
+}

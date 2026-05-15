@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41430,
+  "uuid": "skill-clawhub-caption-ai",
+  "skillKey": "clawhub-caption-ai",
+  "name": "Caption Ai",
+  "summary": "Turn a 3-minute YouTube tutorial recording into 1080p captioned videos just by typing what you need. Whether it's adding auto-generated subtitles to videos o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Turn a 3-minute YouTube tutorial recording into 1080p captioned videos just by typing what you.",
+        "Whether it's adding auto-generated subtitles to videos o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caption-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caption-ai",
+      "url": "https://clawhub.ai/skills/caption-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-ai",
+    "url": "https://clawhub.ai/skills/caption-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-ai-753d4c2abaa80aab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caption-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caption-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c01afbc7452313c4ea39ab1d4e94c2f4020a6238dc731a6b9c82470eb4bb8f28",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T22:22:40.989Z"
+}

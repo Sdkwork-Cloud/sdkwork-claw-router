@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-company-cmo-3-0-0@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_company_cmo_3_0_0",
+  "skill": {
+    "id": 64829,
+    "skillKey": "clawhub-ai-company-cmo-3-0-0",
+    "name": "Ai Company Cmo 3.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-company-cmo-3-0-0",
+    "url": "https://clawhub.ai/skills/ai-company-cmo-3-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-company-cmo-3-0-0-9894270cf5e1f5d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI公司首席营销官（CMO）技能包。增长架构师与首席协同官。品牌战略、GEO引擎优化、需求生成、Agent化工作流、AI驱动永续增长引擎。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1776596248603,
+      "changelog": "Version 3.0.1 → 3.1.0\n\n- 新增GEO模块数据合规要求：增加k-匿名（k≥5）/差分隐私（ε≤1.0）脱敏标准，数据入库前需完成脱敏，不在明文环境训练模型。\n- 舆情监控合规增强：禁止绕过认证访问，API需合同批准，使用须CEO+CLO双重审批，增加数据使用边界约束。\n- 引入第三方API供应链安全与数据处理协议（DPA）要求，年度审计和安全评估。\n- 跨境数据传输合规：需数据流图（DFD），PIPL§38-40规范，GDPR标准合同或等效认定，明确禁止数据向无充分保护法域转移。\n- 变更日志和模块说明同步补充所有新增合规技术和审批机制。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f363d8bd815eb8171caca05b83e3a37bf36a70207f5d0a307f8c9626c5a4813"
+}

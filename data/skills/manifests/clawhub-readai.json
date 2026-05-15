@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44676,
+  "uuid": "skill-clawhub-readai",
+  "skillKey": "clawhub-readai",
+  "name": "Read AI",
+  "summary": "Fetch and manage Read AI meeting data - summaries, transcripts, action items, and engagement metrics. Use when the user asks about meetings, meeting notes, m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.readai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brandon Stewart",
+      "features": [
+        "Fetch and manage Read AI meeting data",
+        "summaries, transcripts, action items, and engagement metrics",
+        "Use when the user asks about meetings, meeting notes, m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/readai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233162579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "readai",
+      "url": "https://clawhub.ai/skills/readai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "readai",
+    "url": "https://clawhub.ai/skills/readai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/readai-265b4131971172ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/readai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-readai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:540f68316a419acb808ba651dd54021e338b5d7ea3fc2f8276ae79f5139b1560",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T18:15:06.962Z"
+}

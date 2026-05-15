@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25661,
+  "uuid": "skill-clawhub-shortio",
+  "skillKey": "clawhub-shortio",
+  "name": "Shortio",
+  "summary": "Short.io integration. Manage Domains, Bundles, Teams, Users. Use when the user wants to interact with Short.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Short.io integration",
+        "Manage Domains, Bundles, Teams, Users",
+        "Use when the user wants to interact with Short.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortio",
+      "url": "https://clawhub.ai/skills/shortio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortio",
+    "url": "https://clawhub.ai/skills/shortio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortio-4d5779bfad52bd3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:701982ada8c7989717979cc86ecd64455059705f5e9b1f5f83f290ffda016c9a",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:41:13.815Z"
+}

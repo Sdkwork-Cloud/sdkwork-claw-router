@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25595,
+  "uuid": "skill-clawhub-manus-openclaw-bridge",
+  "skillKey": "clawhub-manus-openclaw-bridge",
+  "name": "Manus on OpenClaw",
+  "summary": "Connect OpenClaw to Manus task APIs for chat-driven image generation, document/slides jobs, task polling, output collection, and messaging-surface return flows.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manus_openclaw_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "t0nyren",
+      "features": [
+        "Connect OpenClaw to Manus task APIs for chat-driven image generation, document/slides jobs, tas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manus-openclaw-bridge@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5243102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manus-openclaw-bridge",
+      "url": "https://clawhub.ai/skills/manus-openclaw-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manus-openclaw-bridge",
+    "url": "https://clawhub.ai/skills/manus-openclaw-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manus-openclaw-bridge-e420f002c504ac7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manus-openclaw-bridge@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-manus-openclaw-bridge-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15fd3d52870a6c1f60bf92bdaeee9c1fa6cf902e4ff8e956e9e255df37a593b0",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:32:02.867Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chengxin@0.8.1",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chengxin",
+  "skill": {
+    "id": 69628,
+    "skillKey": "clawhub-chengxin",
+    "name": "同程程心 Tongcheng Chengxin Travel Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chengxin",
+    "url": "https://clawhub.ai/skills/chengxin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chengxin-2033e9d0bda6e59d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同程程心 Skill - 基于同程旅行大模型（程心）的在线旅游搜索能力。提供更专业的机票、火车票、酒店、度假产品（自由行/跟团游）、旅游攻略、行程规划、特价机票、汽车票、长途汽车、景区、门票等的查询能力，基于同程官方数据，更加实时准确可靠，一键进入预订页面，让旅行更简单，更快乐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tongcheng-ai",
+      "userId": "s173qqesnrcex7hjxs5xgtkhx183vv6n",
+      "displayName": "tongcheng-ai",
+      "image": "https://avatars.githubusercontent.com/u/271886447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.8.1",
+      "createdAt": 1777428441379,
+      "changelog": "tc-chengxin v0.8.1\n\n- Optimized output formatting and rendering logic\n- Enhanced configuration and error handling workflow\n- Added privacy policy statement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e32760c84de87b1af0f941d7074221effc3c7fd18738bf7100f1459f557fd93"
+}

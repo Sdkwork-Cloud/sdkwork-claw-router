@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37129,
+  "uuid": "skill-clawhub-toml-validator",
+  "skillKey": "clawhub-toml-validator",
+  "name": "Toml Validator",
+  "summary": "Validate, lint, diff, and inspect TOML configuration files. Use when asked to check TOML syntax, compare TOML configs, show TOML structure, validate pyprojec...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toml_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate, lint, diff, and inspect TOML configuration files",
+        "Use when asked to check TOML syntax, compare TOML configs, show TOML structure, validate pyproj."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toml-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toml-validator",
+      "url": "https://clawhub.ai/skills/toml-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toml-validator",
+    "url": "https://clawhub.ai/skills/toml-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toml-validator-2ea219b7a0965789.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toml-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-toml-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6acb1e24288ab64e007aec3b59c4481ec2e143a5f63a8c89943635669593e722",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:03:15.555Z"
+}

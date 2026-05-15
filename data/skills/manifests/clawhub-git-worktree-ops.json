@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59873,
+  "uuid": "skill-clawhub-git-worktree-ops",
+  "skillKey": "clawhub-git-worktree-ops",
+  "name": "Git Worktree Ops",
+  "summary": "并行开发环境管理技能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_worktree_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "soponcd",
+      "features": [
+        "并行开发环境管理技能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-worktree-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31302208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-worktree-ops",
+      "url": "https://clawhub.ai/skills/git-worktree-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-worktree-ops",
+    "url": "https://clawhub.ai/skills/git-worktree-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-worktree-ops-7afa5fda0ecfa4eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-worktree-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-worktree-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896dcb78bc990c84a00e1acf8d303f071f2bb69027787891749537c295fa5f40",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:58:07.103Z"
+}

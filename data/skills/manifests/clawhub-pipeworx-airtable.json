@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43427,
+  "uuid": "skill-clawhub-pipeworx-airtable",
+  "skillKey": "clawhub-pipeworx-airtable",
+  "name": "Pipeworx airtable",
+  "summary": "Integrate with Airtable API to list bases, fetch and filter records, get record details, create new records, and retrieve base schemas.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_airtable",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Integrate with Airtable API to list bases, fetch and filter records, get record details, create."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-airtable@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-airtable",
+      "url": "https://clawhub.ai/skills/pipeworx-airtable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-airtable",
+    "url": "https://clawhub.ai/skills/pipeworx-airtable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-airtable-057bc829127ec534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-airtable@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-airtable-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c1069962883d6fd119ac22b2d37a3fdbe9bc810e1487c263695f4d1a08d2be3",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:28:38.186Z"
+}

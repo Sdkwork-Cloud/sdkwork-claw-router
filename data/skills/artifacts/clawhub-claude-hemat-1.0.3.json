@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-hemat@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_hemat",
+  "skill": {
+    "id": 17687,
+    "skillKey": "clawhub-claude-hemat",
+    "name": "Claude Hemat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-hemat",
+    "url": "https://clawhub.ai/skills/claude-hemat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-hemat-1d6c1f13b22c32a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides Q&A, casual chat, and simple tasks using Haiku 4.5; spawns Sonnet 4.5 or Opus 4.6 for analysis, reasoning, and complex tasks as needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axellageraldinc",
+      "userId": "publishers:axellageraldinc",
+      "displayName": "Axellageraldinc Adryamarthanino",
+      "image": "https://avatars.githubusercontent.com/u/19605159?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 726,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771236892803,
+      "changelog": "- Added \"Model Rules\" section to clarify model selection criteria.\n- Updated instructions to refer explicitly to the \"Model Rules\" for deciding which model to use.\n- Clarified the types of questions suitable for Sonnet 4.5, including \"Why\" and \"How\".\n- Improved documentation structure for better understanding of when to escalate to advanced models.\n- No code or file changes; documentation improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57654ea4947e1ea5849c64765e3622c1f2f6c9ec2dfa8d8184554181c89f4d5b"
+}

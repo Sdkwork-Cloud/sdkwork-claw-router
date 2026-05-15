@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/routstr-balance-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.routstr_balance_management",
+  "skill": {
+    "id": 13712,
+    "skillKey": "clawhub-routstr-balance-management",
+    "name": "Routstr Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "routstr-balance-management",
+    "url": "https://clawhub.ai/skills/routstr-balance-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/routstr-balance-management-c1dee8fc99882c50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Routstr balance by checking balance, creating Lightning invoices for top-up, and checking invoice payment status"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sh1ftred",
+      "userId": "publishers:sh1ftred",
+      "displayName": "sh1ftred",
+      "image": "https://avatars.githubusercontent.com/u/213178690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770450671789,
+      "changelog": "Initial release of Routstr Balance Management skill.\n\n- Check current Routstr API balance in sats and BTC\n- Display usage statistics: total spent and total requests\n- Create Lightning invoices for account top-up\n- Check payment status of Lightning invoices\n- Top up account balance using Cashu tokens",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9fff90ec0829333977f0b656dab1107a490b9b14cdc886274fc9282a59f94fbd"
+}

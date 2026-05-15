@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27619,
+  "uuid": "skill-clawhub-auto-index",
+  "skillKey": "clawhub-auto-index",
+  "name": "Google SEO GEO Auto Index",
+  "summary": "Google Indexing API tool. Use when user wants to submit URLs for Google indexing. Supports two modes: \"auto-index\" (fetch sitemap, diff against cache, submit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_index",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GEOLY AI",
+      "features": [
+        "Google Indexing API tool",
+        "Use when user wants to submit URLs for Google indexing",
+        "Supports two modes: \"auto-index\" (fetch sitemap, diff against cache, submit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-index@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70360114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-index",
+      "url": "https://clawhub.ai/skills/auto-index"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-index",
+    "url": "https://clawhub.ai/skills/auto-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-index-4fce4d39a1ea62e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-index@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-index-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e049ae8058e85aaf39368c14e641f74f24a938e3e9aec2baceaa5b141a762767",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T09:16:31.379Z"
+}

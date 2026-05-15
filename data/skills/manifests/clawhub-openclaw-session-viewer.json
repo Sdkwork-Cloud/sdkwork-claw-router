@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23074,
+  "uuid": "skill-clawhub-openclaw-session-viewer",
+  "skillKey": "clawhub-openclaw-session-viewer",
+  "name": "openclaw session viewer",
+  "summary": "Generate an interactive HTML viewer to review and analyze OpenClaw conversation sessions, including history, tool calls, token usage, and debugging details.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_viewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nan Wang",
+      "features": [
+        "Generate an interactive HTML viewer to review and analyze OpenClaw conversation sessions, inclu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-session-viewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4329072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-session-viewer",
+      "url": "https://clawhub.ai/skills/openclaw-session-viewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-viewer",
+    "url": "https://clawhub.ai/skills/openclaw-session-viewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-viewer-e85c919ffafc0d6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-session-viewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-viewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22ea52a0c431418ac0b90a6bc44479aba28964a91112942e0b4c917448170c9f",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:28:18.337Z"
+}

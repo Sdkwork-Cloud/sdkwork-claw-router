@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/who-growth-charts@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.who_growth_charts",
+  "skill": {
+    "id": 10694,
+    "skillKey": "clawhub-who-growth-charts",
+    "name": "WHO Growth Charts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "who-growth-charts",
+    "url": "https://clawhub.ai/skills/who-growth-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/who-growth-charts-e8675626d969cf4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate WHO child growth charts (height, weight, BMI) with percentile curves. Downloads official WHO reference data on demand. Use when users ask about chil..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odrobnik",
+      "userId": "s175mv7e1vzhser8sz79yq23fd83h54z",
+      "displayName": "Oliver Drobnik",
+      "image": "https://avatars.githubusercontent.com/u/333270?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2377,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1772921485242,
+      "changelog": "Fix missing 'import os' causing runtime crash when os.environ is accessed",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:465fbdbbe0508373e33bd498006617c944e522d2c79af72e53f785aedabad619"
+}

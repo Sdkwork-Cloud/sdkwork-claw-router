@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19906,
+  "uuid": "skill-clawhub-smart-image-search",
+  "skillKey": "clawhub-smart-image-search",
+  "name": "Smart Image Search",
+  "summary": "Search images from text queries and return the most relevant image result, candidate images, source pages, or ready-to-open search links. Use when the user a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_image_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mumu",
+      "features": [
+        "Search images from text queries and return the most relevant image result, candidate images, so.",
+        "Use when the user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-image-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83773810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-image-search",
+      "url": "https://clawhub.ai/skills/smart-image-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-image-search",
+    "url": "https://clawhub.ai/skills/smart-image-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-image-search-8866d706140d56ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-image-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-image-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c7ce140bd5fea3d7f77bd5bdb2374e5804aa7cd6c48940373bebd381f0fd80f",
+      "artifactSizeBytes": 2686
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:52:24.719Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71279,
+  "uuid": "skill-clawhub-laosi-blog-watcher",
+  "skillKey": "clawhub-laosi-blog-watcher",
+  "name": "博客监控",
+  "summary": "博客监控技能 - 监控博客和网站更新，通过RSS或网页变化检测。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_blog_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "监控博客和网站更新，通过RSS或网页变化检测。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-blog-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-blog-watcher",
+      "url": "https://clawhub.ai/skills/laosi-blog-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-blog-watcher",
+    "url": "https://clawhub.ai/skills/laosi-blog-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-blog-watcher-282577aa35bd0383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-blog-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-blog-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f84966f580f6de53bd2f965abd04891726a539e68bf5513ea6b7235bc11b6cd0",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:47:57.856Z"
+}

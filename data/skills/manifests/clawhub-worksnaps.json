@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37268,
+  "uuid": "skill-clawhub-worksnaps",
+  "skillKey": "clawhub-worksnaps",
+  "name": "Worksnaps",
+  "summary": "Worksnaps integration. Manage data, records, and automate workflows. Use when the user wants to interact with Worksnaps data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worksnaps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Worksnaps integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Worksnaps data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/worksnaps@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "worksnaps",
+      "url": "https://clawhub.ai/skills/worksnaps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worksnaps",
+    "url": "https://clawhub.ai/skills/worksnaps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worksnaps-a8a33ceb89920999.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/worksnaps@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-worksnaps-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92254a6863c5a9ad4a1f41b67f24d93f74ae7fe07cd61dc7e2f3439114eac62b",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:12:05.891Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11620,
+  "uuid": "skill-clawhub-setup-automatik",
+  "skillKey": "clawhub-setup-automatik",
+  "name": "Setup Automatik",
+  "summary": "Facilitate the installation and management of VPS solutions using the Setup Automatik engine (powered by Orion Design). Use when the user wants to install, configure, or manage tools like Traefik, Portainer, Chatwoot, N8N, and other open-s.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_automatik",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alltomatos",
+      "features": [
+        "Facilitate the installation and management of VPS solutions using the Setup Automatik engine (p.",
+        "Use when the user wants to install, configure, or manage tools like Traefik, Portainer, Chatwoo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/setup-automatik@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179011971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "setup-automatik",
+      "url": "https://clawhub.ai/skills/setup-automatik"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-automatik",
+    "url": "https://clawhub.ai/skills/setup-automatik",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-automatik-cd868a52be3506f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/setup-automatik@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-setup-automatik-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1c77ca2ae02434b31428635bcfe6778ddb061ef7a0908e230b64b781c03f9f2",
+      "artifactSizeBytes": 2609
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:33:17.005Z"
+}

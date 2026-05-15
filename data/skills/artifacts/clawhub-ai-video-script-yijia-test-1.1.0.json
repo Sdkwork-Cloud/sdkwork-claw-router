@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-script-yijia-test@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_script_yijia_test",
+  "skill": {
+    "id": 64826,
+    "skillKey": "clawhub-ai-video-script-yijia-test",
+    "name": "AI Video Script Generator (Yijia Test)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-script-yijia-test",
+    "url": "https://clawhub.ai/skills/ai-video-script-yijia-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-script-yijia-test-588bd1207543cbb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成 AI 短视频脚本、镜头拆解、画面提示词、字幕文案与可直接进入视频生成测试的 prompt。用于把一个主题快速整理成可执行的视频方案，尤其适合：短视频选题、分镜脚本、AI 视频提示词、Yijia/Sora/Grok 文生视频测试、图生视频测试、爆款短视频结构化策划。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shiftshen",
+      "userId": "s170zm3qgvzbxnd3b992zatfns85mmwc",
+      "displayName": "shiftshen",
+      "image": "https://avatars.githubusercontent.com/u/41694492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773827762880,
+      "changelog": "Expand script skill into executable Yijia test workflow guidance and add direct temp-workflow prompt/testing reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebef13dd48c807b2c86405f0778bd09678b159be49496648dd1d84de7c33b124"
+}

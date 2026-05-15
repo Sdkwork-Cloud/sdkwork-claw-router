@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70191,
+  "uuid": "skill-clawhub-target",
+  "skillKey": "clawhub-target",
+  "name": "Target",
+  "summary": "提供Target品牌信息，涵盖美国折扣零售市场、设计民主化策略、全渠道运营及设计师联名合作等内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.target",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供Target品牌信息，涵盖美国折扣零售市场、设计民主化策略、全渠道运营及设计师联名合作等内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/target@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "target",
+      "url": "https://clawhub.ai/skills/target"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "target",
+    "url": "https://clawhub.ai/skills/target",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/target-34a04005bcaf206e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/target@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-target-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d66eb1b76c8153d74c1f691d5f4baeb7a9a5bfe3eb3dac4fc67a7f6ea395c80",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:59:30.355Z"
+}

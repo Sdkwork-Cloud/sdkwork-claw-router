@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73597,
+  "uuid": "skill-clawhub-interior-xhs-assistant",
+  "skillKey": "clawhub-interior-xhs-assistant",
+  "name": "室内设计师小红书文案助手",
+  "summary": "为本地室内设计师定制，自动生成符合小红书调性的选题、标题、正文和本地化标签，助力精准获客。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interior_xhs_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "137984917-cyber",
+      "features": [
+        "为本地室内设计师定制，自动生成符合小红书调性的选题、标题、正文和本地化标签，助力精准获客。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interior-xhs-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270913925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interior-xhs-assistant",
+      "url": "https://clawhub.ai/skills/interior-xhs-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interior-xhs-assistant",
+    "url": "https://clawhub.ai/skills/interior-xhs-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interior-xhs-assistant-361a01f5bb7fdb17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interior-xhs-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-interior-xhs-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d270b4cac7816d66bb95f5483ca02affeee2e16c0fc2a16fe4c13f7d9f00c855",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:30:28.164Z"
+}

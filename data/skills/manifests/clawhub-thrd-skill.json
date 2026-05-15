@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16549,
+  "uuid": "skill-clawhub-thrd-skill",
+  "skillKey": "clawhub-thrd-skill",
+  "name": "Thrd Skill",
+  "summary": "Provision a dedicated inbox for your AI agent and manage email safely via thrd.email. Includes instant onboarding, inbound polling, reply/send (idempotent +...",
+  "version": "1.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thrd_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thrd.",
+      "features": [
+        "Provision a dedicated inbox for your AI agent and manage email safely via thrd.email",
+        "Includes instant onboarding, inbound polling, reply/send (idempotent +..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thrd-skill@1.2.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51226753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thrd-skill",
+      "url": "https://clawhub.ai/skills/thrd-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thrd-skill",
+    "url": "https://clawhub.ai/skills/thrd-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thrd-skill-b80449bb4320fa91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thrd-skill@1.2.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-thrd-skill-1.2.7.json",
+      "version": "1.2.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4574cb66aa86877f92ae0f427cc074add173851c8c8fac9b08ccdb3d9efa99c9",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T15:39:10.897Z"
+}

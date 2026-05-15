@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saysigned@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saysigned",
+  "skill": {
+    "id": 18794,
+    "skillKey": "clawhub-saysigned",
+    "name": "SaySigned - Agreement infrastructure for AI agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saysigned",
+    "url": "https://clawhub.ai/skills/saysigned",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saysigned-3066e4e7cef1a2d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable AI agents to register, create, send, sign, and verify legally binding e-signature agreements via API or email with automated key and config management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klsv",
+      "userId": "publishers:klsv",
+      "displayName": "Denis K",
+      "image": "https://avatars.githubusercontent.com/u/11153590?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 660,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771566395836,
+      "changelog": "### Version 1.0.1 — Changelog\n\n- Human confirmation is now required before making any MCP client config changes (such as adding API keys or restarting the client).\n- All setup steps that modify system configuration now instruct to show the pending change and require explicit user approval before proceeding.\n- Publisher, homepage, documentation links, and TLS requirements added to documentation for improved clarity.\n- Minor edits for clarity and emphasis on human-in-the-loop control for sensitive actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb0527192cbfe59f8e1bcbd4877039b2ab607992296e5f23d0c1a650c820afd8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wordpress-publishing-skill-for-claude@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_publishing_skill_for_claude",
+  "skill": {
+    "id": 8964,
+    "skillKey": "clawhub-wordpress-publishing-skill-for-claude",
+    "name": "WordPress Publisher Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-publishing-skill-for-claude",
+    "url": "https://clawhub.ai/skills/wordpress-publishing-skill-for-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-publishing-skill-for-claude-69c6ab7fee103548.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish content directly to WordPress sites via REST API with full Gutenberg block support. Create and publish posts/pages, auto-load and select categories from website, generate SEO-optimized tags, preview articles before publishing, and."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asif2bd",
+      "userId": "s172w5rqenpwn4qb4g5n563hx9845890",
+      "displayName": "Asif",
+      "image": "https://avatars.githubusercontent.com/u/2099592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4428,
+      "installsAllTime": 18,
+      "installsCurrent": 18,
+      "stars": 11,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770058842477,
+      "changelog": "Initial release with full end-to-end WordPress publishing workflow and Gutenberg block support.\n\n- Connect and authenticate securely to any WordPress site using the REST API and application passwords.\n- Auto-load categories from the WordPress site and intelligently select or create categories based on article content.\n- Automatically generate SEO-optimized tags to improve discoverability.\n- Convert markdown or HTML into fully supported Gutenberg blocks, including tables, images, code, and rich formatting.\n- Preview drafted posts for visual accuracy before publishing, including a thorough checklist.\n- Publish or schedule posts and verify published outputs, with troubleshooting guidance for common issues.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:389fef0fcd5913dc4666518ec9e00463f6dfbd248c4c70bb57865939d46a8da5"
+}

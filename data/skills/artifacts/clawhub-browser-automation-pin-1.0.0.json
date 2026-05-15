@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-automation-pin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_automation_pin",
+  "skill": {
+    "id": 22857,
+    "skillKey": "clawhub-browser-automation-pin",
+    "name": "Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-automation-pin",
+    "url": "https://clawhub.ai/skills/browser-automation-pin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-automation-pin-47622e825bf08cfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation for AI agents using PinchTab. Control Chrome programmatically for testing, scraping, and interaction. Features token-efficient text extrac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huamu668",
+      "userId": "publishers:huamu668",
+      "displayName": "huamu668",
+      "image": "https://avatars.githubusercontent.com/u/202473531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772936730759,
+      "changelog": "Initial release of browser-automation skill, enabling programmatic Chrome browser control via PinchTab.\n\n- Automate browser tasks including navigation, interaction, testing, and data extraction.\n- Supports token-efficient text extraction (800 tokens/page) and interactive element identification.\n- Provides multi-instance, profile-based, headless and headed Chrome operation.\n- RESTful HTTP API for actions: navigation, snapshots, clicks, typing, scrolling, extraction, and more.\n- Includes ready-to-use bash patterns for web scraping, form filling, parallel automation, and visual testing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0399d8d66cef56bf5a0c488ad8e85ba52edcbb6d324424cd89fe7dd4c5316b14"
+}

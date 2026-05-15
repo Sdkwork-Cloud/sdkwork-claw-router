@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49596,
+  "uuid": "skill-clawhub-unifi-advisor",
+  "skillKey": "clawhub-unifi-advisor",
+  "name": "UniFi Advisor",
+  "summary": "Read-only UniFi network advisor covering the Site Manager cloud API and the Network Integration API. Query devices, clients, networks, firewall zones and pol...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifi_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arseni-mik",
+      "features": [
+        "Read-only UniFi network advisor covering the Site Manager cloud API and the Network Integration.",
+        "Query devices, clients, networks, firewall zones and pol..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unifi-advisor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77124149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unifi-advisor",
+      "url": "https://clawhub.ai/skills/unifi-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifi-advisor",
+    "url": "https://clawhub.ai/skills/unifi-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifi-advisor-72208e8d64f770b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unifi-advisor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-unifi-advisor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0996a186d00ac93b3eb52aa00f2a9d7caea60057b002c801be8f21be438a41d",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T11:38:28.791Z"
+}

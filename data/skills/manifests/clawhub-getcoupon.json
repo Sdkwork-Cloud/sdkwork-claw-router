@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73296,
+  "uuid": "skill-clawhub-getcoupon",
+  "skillKey": "clawhub-getcoupon",
+  "name": "优惠券查询助手",
+  "summary": "优惠券查询助手，当用户询问优惠、折扣、红包时调用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getcoupon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GeraldAlexanderrw",
+      "features": [
+        "优惠券查询助手，当用户询问优惠、折扣、红包时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getcoupon@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556620?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getcoupon",
+      "url": "https://clawhub.ai/skills/getcoupon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getcoupon",
+    "url": "https://clawhub.ai/skills/getcoupon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getcoupon-c191338408c90a7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getcoupon@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-getcoupon-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ecdfa86ad619218dfc9cfe9a827569be6c6250c85f3f9307e13ddd86d7136ea",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:56:01.175Z"
+}

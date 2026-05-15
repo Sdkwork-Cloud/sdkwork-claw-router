@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-doctorbot-healthcheck-free@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_doctorbot_healthcheck_free",
+  "skill": {
+    "id": 21933,
+    "skillKey": "clawhub-skill-doctorbot-healthcheck-free",
+    "name": "Doctorbot Healthcheck Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-doctorbot-healthcheck-free",
+    "url": "https://clawhub.ai/skills/skill-doctorbot-healthcheck-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-doctorbot-healthcheck-free-5f1577e82077e16b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🩺 Free Security & Health Audit. Your OpenClaw deserves a check-up. This skill performs a non-invasive scan to detect security risks, outdated software, and misconfigurations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bamontejano",
+      "userId": "publishers:bamontejano",
+      "displayName": "bamontejano",
+      "image": "https://avatars.githubusercontent.com/u/209756837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 969,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770913088408,
+      "changelog": "Initial public release.\n\n- Provides a free, read-only security and health audit for OpenClaw hosts.\n- Detects vulnerabilities, outdated software, and misconfigurations without making changes.\n- Checks update status, firewall configuration, open ports, OS version, and running services.\n- Generates a simple System Health Score report.\n- Promotes an upgrade path to a Pro version with automated fixes and advanced features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af563d70d1d5657570b8b673d99dc807d3e15c627f0d472c348a563a6ebdb129"
+}

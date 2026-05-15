@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-debugger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_debugger",
+  "skill": {
+    "id": 41000,
+    "skillKey": "clawhub-meta-debugger",
+    "name": "Meta Debugger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-debugger",
+    "url": "https://clawhub.ai/skills/meta-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-debugger-11770df5303b7e8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered self-debugging system that identifies, analyzes, and fixes errors automatically. Learns from past errors, builds error patterns, generates fix sug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jason-aka-chen",
+      "userId": "publishers:jason-aka-chen",
+      "displayName": "jason-aka-chen",
+      "image": "https://avatars.githubusercontent.com/u/251550877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774167318934,
+      "changelog": "- Initial release of meta-debugger: an AI-powered self-debugging system for autonomous error identification, analysis, and correction.\n- Supports runtime error detection, root cause analysis, fix generation and autonomous safe application of fixes.\n- Includes error history, prevention strategies, and continuous learning from past incidents.\n- Provides decorators and APIs for easy integration in Python projects and with external systems like OpenClaw.\n- Features customizable error handling, logging, and robust metrics tracking for error rates and fix effectiveness.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0138e542dded73758690e7f5d703e641f6cddd7e3559326ff8b9b44ac13c169"
+}

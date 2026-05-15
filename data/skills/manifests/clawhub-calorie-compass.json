@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37396,
+  "uuid": "skill-clawhub-calorie-compass",
+  "skillKey": "clawhub-calorie-compass",
+  "name": "Calorie Compass",
+  "summary": "Estimate calorie content from food names, portion sizes, or food images.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calorie_compass",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rajib",
+      "features": [
+        "Estimate calorie content from food names, portion sizes, or food images."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calorie-compass@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16340036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calorie-compass",
+      "url": "https://clawhub.ai/skills/calorie-compass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calorie-compass",
+    "url": "https://clawhub.ai/skills/calorie-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calorie-compass-581c141a77d4fbfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calorie-compass@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calorie-compass-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fed5b142df685b5516c573ade7a200986f227364915ae9af5cd0f01b854817cc",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:03:55.327Z"
+}

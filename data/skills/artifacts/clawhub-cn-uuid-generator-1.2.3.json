@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-uuid-generator@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_uuid_generator",
+  "skill": {
+    "id": 57454,
+    "skillKey": "clawhub-cn-uuid-generator",
+    "name": "Cn Uuid Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-uuid-generator",
+    "url": "https://clawhub.ai/skills/cn-uuid-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-uuid-generator-c5aaa34375791652.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "$desc"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1777690545736,
+      "changelog": "修复标题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa4be58f750731d3a06b1fdc4b57ba0063387ae386f7b27ddaf7458c79e6196c"
+}

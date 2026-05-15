@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67982,
+  "uuid": "skill-clawhub-prompt-compress",
+  "skillKey": "clawhub-prompt-compress",
+  "name": "prompt-compress",
+  "summary": "提示词压缩与优化技能。用于分析提示词、提取关键词、精简冗余内容、压缩后输出给大模型以减少 Token 消耗。触发词：压缩提示词、精简prompt、减少token、优化提示词、提示词优化、token节省、关键词提取、提示词精简。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_compress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackzh1982",
+      "features": [
+        "提示词压缩与优化技能。用于分析提示词、提取关键词、精简冗余内容、压缩后输出给大模型以减少 Token 消耗。触发词：压缩提示词、精简prompt、减少token、优化提示词、提示词优化、to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-compress@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208619262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-compress",
+      "url": "https://clawhub.ai/skills/prompt-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-compress",
+    "url": "https://clawhub.ai/skills/prompt-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-compress-4895cc3d390a929c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-compress@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-compress-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca0152e32bf7b323625c437a2144fcfc401dce7ba7cb5e10b6905e3b8060ae4d",
+      "artifactSizeBytes": 2607
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:03:07.642Z"
+}

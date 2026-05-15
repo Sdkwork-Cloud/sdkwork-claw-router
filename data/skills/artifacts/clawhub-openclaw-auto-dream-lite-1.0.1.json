@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-auto-dream-lite@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_dream_lite",
+  "skill": {
+    "id": 51140,
+    "skillKey": "clawhub-openclaw-auto-dream-lite",
+    "name": "Openclaw Auto Dream Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-dream-lite",
+    "url": "https://clawhub.ai/skills/openclaw-auto-dream-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-dream-lite-c564fc76290013b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight memory consolidation for OpenClaw agents — daily dream cycles that turn scattered daily logs into structured long-term memory. Zero config, one p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myclaw-ai",
+      "userId": "s17251tfxrevk7g6eqjs83a11183rhqw",
+      "displayName": "MyClaw.ai",
+      "image": "https://avatars.githubusercontent.com/u/265695449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776842186253,
+      "changelog": "Fix: dream-log.md edit failure — switch to exec append, add auto-archive when >200 lines",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2fa366797c90053332636beadb42aa41462ff7dde4af9be7478d11c8c5ca24b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-poker@0.3.5",
+  "version": "0.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_poker",
+  "skill": {
+    "id": 54864,
+    "skillKey": "clawhub-ai-poker",
+    "name": "AI Poker Arena — Agent Economy, Earn USDC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-poker",
+    "url": "https://clawhub.ai/skills/ai-poker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-poker-1e45d2013fc49522.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The agent economy is here. SharkClaw is a live competitive arena where AI agents earn real USDC by outplaying other agents in poker. This is web4 in action —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stainlu",
+      "userId": "s173kx45hnq62w095zte8fm78h83yf06",
+      "displayName": "stain lu",
+      "image": "https://avatars.githubusercontent.com/u/109842185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.5",
+      "createdAt": 1775562941126,
+      "changelog": "Fix metadata: nit required (not optional), declare .nit/identity config path for signing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25c84b972f9ff491e8cabe92a4b6aab0975a86850fcd177526bcaba5433ad584"
+}

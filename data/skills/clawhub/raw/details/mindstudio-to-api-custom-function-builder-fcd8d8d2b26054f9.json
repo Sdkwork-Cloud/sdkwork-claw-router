@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "mindstudio-to-api-custom-function-builder",
+    "displayName": "MindStudio To API Custom Function Skill",
+    "summary": "Build a complete MindStudio Run Function integration for any API the user wants to connect. Use this skill whenever the user mentions MindStudio, wants to co...",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1773632431861,
+    "updatedAt": 1778309815474
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1773853188201,
+    "changelog": "**Clarifies input and output handling for MindStudio config fields.**\n\n- Fixes and explains the difference between `inputVariable` and `outputVariableName` config types; mandates reading/writing them with correct `ai.config` or `ai.vars[ai.config...]` patterns in code.\n- Updates code, configuration, and test data templates with new guidance about input reading and output writing.\n- Adds a warning (in Common Mistakes) never to use `ai.vars[ai.config.fieldName]` for input fields.\n- Expands test data instructions: input variables set directly in `config`, not in `vars`.\n- Refines documentation wording and templates for precision and current MindStudio behavior.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sol1986",
+    "userId": "s178mvyk5pdhapf6ax9thw3sn983svt8",
+    "displayName": "Sol Farahmand",
+    "image": "https://avatars.githubusercontent.com/u/65566755?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778309815474
+  }
+}

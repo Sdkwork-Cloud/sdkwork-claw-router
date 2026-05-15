@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hopkin-paid-ads@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hopkin_paid_ads",
+  "skill": {
+    "id": 51420,
+    "skillKey": "clawhub-hopkin-paid-ads",
+    "name": "Hopkin – Paid Ads: Meta, TikTok, Google, LinkedIn, Reddit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hopkin-paid-ads",
+    "url": "https://clawhub.ai/skills/hopkin-paid-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hopkin-paid-ads-5c673af090fa824e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query ad platform data (Meta, Google, LinkedIn, Reddit) using the Hopkin CLI. Use this skill when the user asks about ad accounts, campaigns, ad performance,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nemo",
+      "userId": "s17375jdk6dd5813vtxhg45mfd840x7t",
+      "displayName": "Nima Gardideh",
+      "image": "https://avatars.githubusercontent.com/u/1082310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774073349358,
+      "changelog": "Initial release of the Hopkin Paid Ads skill.\n\n- Enables querying ad platform data (Meta, Google, LinkedIn, Reddit) via the Hopkin CLI.\n- Read-only: exclusively retrieves data—cannot create or modify campaigns.\n- Provides usage instructions for installation, setup, authentication, and querying advertising data.\n- Supports multiple output formats (JSON, CSV, TSV) and advanced filtering options.\n- Guidance included for command discovery and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85de1afab3b671fe52fc5e1bada7f3a58d3f6c63df8d16dfc337015776e6f64b"
+}

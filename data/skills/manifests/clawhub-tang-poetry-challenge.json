@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66912,
+  "uuid": "skill-clawhub-tang-poetry-challenge",
+  "skillKey": "clawhub-tang-poetry-challenge",
+  "name": "tang poetry challenge",
+  "summary": "唐诗三百首对诗挑战游戏，提供诗句上句，用户需要对出下句。包含挑战结束评分和错题分析功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tang_poetry_challenge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rikhou",
+      "features": [
+        "唐诗三百首对诗挑战游戏，提供诗句上句，用户需要对出下句。包含挑战结束评分和错题分析功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tang-poetry-challenge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16496572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tang-poetry-challenge",
+      "url": "https://clawhub.ai/skills/tang-poetry-challenge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tang-poetry-challenge",
+    "url": "https://clawhub.ai/skills/tang-poetry-challenge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tang-poetry-challenge-305cafc5bdfdada6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tang-poetry-challenge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tang-poetry-challenge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f67e42afcfd7f5f3696565736e6f970806aef18c0d36dc8d6e0cbb13045aeea4",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:45:54.328Z"
+}

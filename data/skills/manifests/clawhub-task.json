@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8889,
+  "uuid": "skill-clawhub-task",
+  "skillKey": "clawhub-task",
+  "name": "Task",
+  "summary": "Tasker docstore task management via tool-dispatch. Use for task lists, due today/overdue, week planning, add/move/complete, or explicit /task commands.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amirbrooks",
+      "features": [
+        "Tasker docstore task management via tool-dispatch",
+        "Use for task lists, due today/overdue, week planning, add/move/complete, or explicit /task comm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224349976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task",
+      "url": "https://clawhub.ai/skills/task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task",
+    "url": "https://clawhub.ai/skills/task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-0ebb429fa86d481c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cf85d4f9c137483c6eae41433a853f99cb1208975b69fef916382ff0468ca41",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-22T23:13:37.767Z"
+}

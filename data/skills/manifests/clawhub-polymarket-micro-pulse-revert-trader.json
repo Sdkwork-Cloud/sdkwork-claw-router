@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56590,
+  "uuid": "skill-clawhub-polymarket-micro-pulse-revert-trader",
+  "skillKey": "clawhub-polymarket-micro-pulse-revert-trader",
+  "name": "Polymarket Micro Pulse Revert Trader",
+  "summary": "Trades mean-reversion on crypto 5-minute interval markets after detecting a single extreme probability pulse (p > 70% or p < 30%) on Polymarket.",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_micro_pulse_revert_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades mean-reversion on crypto 5-minute interval markets after detecting a single extreme prob."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-micro-pulse-revert-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-micro-pulse-revert-trader",
+      "url": "https://clawhub.ai/skills/polymarket-micro-pulse-revert-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-micro-pulse-revert-trader",
+    "url": "https://clawhub.ai/skills/polymarket-micro-pulse-revert-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-micro-pulse-revert-trader-f6dc2104d1aac48a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-micro-pulse-revert-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-micro-pulse-revert-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a757689f5e3f1d5470169cb693a7d12e15f07ece19399a1dc485b115b5b1382f",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:34:25.486Z"
+}

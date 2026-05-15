@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68666,
+  "uuid": "skill-clawhub-intel-briefing",
+  "skillKey": "clawhub-intel-briefing",
+  "name": "Intel Briefing",
+  "summary": "全域情报简报生成系统。手动触发，从多信源采集、评分、去重、输出HTML情报简报。覆盖国际形势、AI应用、社会民生、潮流热点四大分类。触发词：情报简报、早报、午报、晚报、推送简报、生成简报、daily briefing。",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intel_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lodligos",
+      "features": [
+        "全域情报简报生成系统。手动触发，从多信源采集、评分、去重、输出HTML情报简报。覆盖国际形势、AI应用、社会民生、潮流热点四大分类。触发词：情报简报、早报、午报、晚报、推送简报、生成简报、d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intel-briefing@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78740893?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intel-briefing",
+      "url": "https://clawhub.ai/skills/intel-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intel-briefing",
+    "url": "https://clawhub.ai/skills/intel-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intel-briefing-51417ab3f60b922e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intel-briefing@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-intel-briefing-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8edcb7894867c11d625fb9a621b28139daf0e2c1111f48575fe0efc00b214bb",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:05:15.731Z"
+}

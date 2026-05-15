@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wenyan-compress@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenyan_compress",
+  "skill": {
+    "id": 65678,
+    "skillKey": "clawhub-wenyan-compress",
+    "name": "Wenyan Compress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenyan-compress",
+    "url": "https://clawhub.ai/skills/wenyan-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenyan-compress-ae4f2250e3dd7fdc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将白话文/英文压缩成简洁的文言文，节省token。支持保真模式、压缩比统计、忠实度检查"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnskycn",
+      "userId": "s17c5mym70kjjjppp4byfvthcd83j0ng",
+      "displayName": "cnskycn",
+      "image": "https://avatars.githubusercontent.com/u/4388567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775619656095,
+      "changelog": "- 增加详细用法说明，包括指令语法和压缩等级解释\n- 新增多种压缩风格（普通、详细、极简、诗意）及优先级说明\n- 引入保真模式和忠实度检查，提升关键信息保留能力\n- 添加压缩比与统计信息展示\n- 列举丰富输入输出示例，涵盖中文、英文及专项场景\n- 明确适用场景及注意事项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0c8255c240faf67b4901c67a9c3fc5669601aedc6c434587ee631891bedfd92"
+}

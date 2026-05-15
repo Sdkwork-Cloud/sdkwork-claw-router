@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40180,
+  "uuid": "skill-clawhub-question-type-generator",
+  "skillKey": "clawhub-question-type-generator",
+  "name": "Question Type Generator",
+  "summary": "Generate exam-oriented higher mathematics questions with adaptive difficulty, providing problem statements, answers, difficulty levels, and key concept analy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.question_type_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "math",
+      "features": [
+        "Generate exam-oriented higher mathematics questions with adaptive difficulty, providing problem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/question-type-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48268142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "question-type-generator",
+      "url": "https://clawhub.ai/skills/question-type-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "question-type-generator",
+    "url": "https://clawhub.ai/skills/question-type-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/question-type-generator-455480a709aba625.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/question-type-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-question-type-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a302811a59a1369d41f51dd7005c80c5e32aa5ad1e8eae75538a86123ab4c43",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T14:13:36.022Z"
+}

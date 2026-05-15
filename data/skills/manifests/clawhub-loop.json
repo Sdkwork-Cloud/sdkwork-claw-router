@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12192,
+  "uuid": "skill-clawhub-loop",
+  "skillKey": "clawhub-loop",
+  "name": "Loop",
+  "summary": "Run iterative agent loops until success criteria are met. Controlled autonomous iteration.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loop",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Run iterative agent loops until success criteria are met",
+        "Controlled autonomous iteration."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loop@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loop",
+      "url": "https://clawhub.ai/skills/loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loop",
+    "url": "https://clawhub.ai/skills/loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loop-254637f72efcddb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loop@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-loop-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2f34838070344b687828cc9f3e3368d5c828dbea04e51858ddef444b721ce2a",
+      "artifactSizeBytes": 1789
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T13:37:49.363Z"
+}

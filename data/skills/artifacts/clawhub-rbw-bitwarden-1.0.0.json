@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rbw-bitwarden@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rbw_bitwarden",
+  "skill": {
+    "id": 42876,
+    "skillKey": "clawhub-rbw-bitwarden",
+    "name": "rbw-bitwarden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rbw-bitwarden",
+    "url": "https://clawhub.ai/skills/rbw-bitwarden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rbw-bitwarden-9bb66bb54a1a35e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unofficial Bitwarden CLI written in Rust. Manage passwords, TOTP codes, and secure notes from the terminal with a background agent for stateful sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sxhoio",
+      "userId": "s172z6x9fmvqky93ry6krkqxnh83ssbb",
+      "displayName": "GuanM",
+      "image": "https://avatars.githubusercontent.com/u/30427262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776141102323,
+      "changelog": "- Initial release of the rbw-bitwarden skill, version 1.0.0.\n- Provides CLI access to Bitwarden vaults using the `rbw` Rust client and `rbw-agent`.\n- Supports password, TOTP code, and secure note management from the terminal.\n- Features background agent for stateful sessions and SSH agent integration.\n- Includes support for profiles, clipboard operations, and various 2FA methods (excluding WebAuthn/Duo).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e05fb43e01cb2a723d5d6703ca205d96945ca69c6c781e15a8fb6b8806a60737"
+}

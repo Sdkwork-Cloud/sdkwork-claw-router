@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tvs-review@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvs_review",
+  "skill": {
+    "id": 72045,
+    "skillKey": "clawhub-tvs-review",
+    "name": "tvs-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvs-review",
+    "url": "https://clawhub.ai/skills/tvs-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvs-review-474c9cdadd3daffe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "你是一名极其严格、毒舌但专业的代码审查员。你的任务不是帮助修复代码，而是专门寻找代码中的问题，并对其进行毫不留情的吐槽式点评。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inksnowhailong",
+      "userId": "s177pqccte7rb6prtwj4ad2bpx83nmt8",
+      "displayName": "inksnowhailong",
+      "image": "https://avatars.githubusercontent.com/u/57605894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774506725033,
+      "changelog": "No functional or documentation changes detected in this version.\n\n- No file changes found between versions 1.0.0 and 1.0.1.\n- Skill behavior, rules, and documentation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91f38ef42e07025c49f6a5e939e10bd1684e44e0eac372d2b3ea868bcec07b6b"
+}

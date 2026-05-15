@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spec-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spec_kit",
+  "skill": {
+    "id": 34797,
+    "skillKey": "clawhub-spec-kit",
+    "name": "Spec Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spec-kit",
+    "url": "https://clawhub.ai/skills/spec-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spec-kit-41efd0fc6ddabbec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use GitHub Spec Kit for Spec-Driven Development. Initialize projects, create specifications, and build software using the /speckit.* slash commands. Supports..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aungmyokyaw",
+      "userId": "publishers:aungmyokyaw",
+      "displayName": "Aung Myo Kyaw",
+      "image": "https://avatars.githubusercontent.com/u/9404824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 672,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772280368737,
+      "changelog": "Initial release: Spec-Driven Development support for GitHub Spec Kit",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:87c61ba910ac467dd1feebb3f4eb1dfeb987783a6352c41d95018e0713831187"
+}

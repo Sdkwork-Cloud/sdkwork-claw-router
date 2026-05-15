@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65700,
+  "uuid": "skill-clawhub-ssh-remote-sanitized",
+  "skillKey": "clawhub-ssh-remote-sanitized",
+  "name": "Ssh Remote Sanitized",
+  "summary": "SSH 远程服务器管理工具。支持多服务器连接管理、命令执行、文件传输、系统监控、服务管理、日志分析、安全检查等功能，适用于 Linux/Unix 服务器运维。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_remote_sanitized",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "myroboskill.com",
+      "features": [
+        "SSH 远程服务器管理工具。支持多服务器连接管理、命令执行、文件传输、系统监控、服务管理、日志分析、安全检查等功能，适用于 Linux/Unix 服务器运维。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-remote-sanitized@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7106779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-remote-sanitized",
+      "url": "https://clawhub.ai/skills/ssh-remote-sanitized"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-remote-sanitized",
+    "url": "https://clawhub.ai/skills/ssh-remote-sanitized",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-remote-sanitized-c9c420d5c79c84ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-remote-sanitized@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-remote-sanitized-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36b80030080ade91e462d8b9eef2c241056bb8278ed0a8b19a9541701ebe6cc6",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:51:31.991Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/higress-gateway-management@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.higress_gateway_management",
+  "skill": {
+    "id": 27286,
+    "skillKey": "clawhub-higress-gateway-management",
+    "name": "Higress Gateway Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "higress-gateway-management",
+    "url": "https://clawhub.ai/skills/higress-gateway-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/higress-gateway-management-8f91657235e5875f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage the Higress AI Gateway via its Console API (consumers, routes, AI providers, MCP servers). Use when creating consumers, configuring routes, or managin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "montycn",
+      "userId": "s17fq3f5c7xm0qja9p4xz3px8h83hcxd",
+      "displayName": "Monty",
+      "image": "https://avatars.githubusercontent.com/u/21038938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773997922273,
+      "changelog": "Initial release of the higress-gateway-management skill.\n\n- Provides commands and guidance for managing Higress AI Gateway via its Console API.\n- Supports consumer, AI route, and LLM provider management, including create, update, and delete operations.\n- Session cookie authentication instructions included.\n- Highlights environment variable usage for seamless integration in Manager containers.\n- Guidance for AI provider registration and AI route configuration, with clear separation from generic route management.\n- Notes on version handling, auth plugin activation time, and interoperation with MCP server management skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3030f893de167bc2a352eb73bb89753303f5470cdc32c70e8455946312b6a4f"
+}

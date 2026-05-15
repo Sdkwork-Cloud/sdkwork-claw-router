@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wip-x@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wip_x",
+  "skill": {
+    "id": 18705,
+    "skillKey": "clawhub-wip-x",
+    "name": "Wip X"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wip-x",
+    "url": "https://clawhub.ai/skills/wip-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wip-x-dcddd72e6a2cd98d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X Platform API. Read posts, search tweets, post, upload media."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parkertoddbrooks",
+      "userId": "s17620xzyc7kfan8m36at57m6n83h8he",
+      "displayName": "Parker Todd Brooks",
+      "image": "https://avatars.githubusercontent.com/u/585456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 667,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771700243074,
+      "changelog": "Release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:696304f5bf2a42bb6de1dabc7ec284e94f34d35df8080515b8e5c7b58ff49601"
+}

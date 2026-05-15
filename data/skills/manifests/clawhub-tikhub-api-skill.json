@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19137,
+  "uuid": "skill-clawhub-tikhub-api-skill",
+  "skillKey": "clawhub-tikhub-api-skill",
+  "name": "tikhub-api-skill",
+  "summary": "Search and query TikHub APIs for TikTok, Douyin, Xiaohongshu, Lemon8, Instagram, YouTube, Twitter, Reddit, and more. Use when user asks about needs to fetch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tikhub_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangdabiao",
+      "features": [
+        "Search and query TikHub APIs for TikTok, Douyin, Xiaohongshu, Lemon8, Instagram, YouTube, Twitt.",
+        "Use when user asks about needs to fetch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tikhub-api-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1232260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tikhub-api-skill",
+      "url": "https://clawhub.ai/skills/tikhub-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tikhub-api-skill",
+    "url": "https://clawhub.ai/skills/tikhub-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tikhub-api-skill-9efac888636f5cb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tikhub-api-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tikhub-api-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad860a52e99138497e1cf3158a455957940ed237b478588c8214ed97fe18e782",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T05:00:32.694Z"
+}

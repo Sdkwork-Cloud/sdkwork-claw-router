@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akievo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akievo",
+  "skill": {
+    "id": 34715,
+    "skillKey": "clawhub-akievo",
+    "name": "Akievo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akievo",
+    "url": "https://clawhub.ai/skills/akievo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akievo-644b73b376c6e407.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent project planning for AI agents. Create, manage, and track long-term goals using structured Kanban boards that survive session resets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akievo",
+      "userId": "s17dksz0w82mwgwy4k0a40zrws83kf3s",
+      "displayName": "Akievo",
+      "image": "https://avatars.githubusercontent.com/u/266026879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774443705644,
+      "changelog": "Akievo 1.0.0 — Initial Release\n\n- Introduces persistent project planning for AI agents with structured Kanban boards that survive session resets.\n- Boards are organized per goal, with lists as sequential phases and cards as actionable tasks.\n- Outlines robust workflows for session startup, goal planning, task execution, plan updating, and progress reporting.\n- Emphasizes respecting human edits, requiring confirmation before deleting boards or cards, and maintaining clear logs of agent actions.\n- Integration requires an AKIEVO_API_KEY for secure API access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c5ff7eb09302c10bbc62f0d31321f49e1434172fe939361c581f3aad0e597d5"
+}

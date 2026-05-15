@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-desktop-pro@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_desktop_pro",
+  "skill": {
+    "id": 50536,
+    "skillKey": "clawhub-virtual-desktop-pro",
+    "name": "Virtual Desktop Pro v4 -- Universal Browser Execution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-desktop-pro",
+    "url": "https://clawhub.ai/skills/virtual-desktop-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-desktop-pro-e152eae30326569e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent authenticated browser for OpenClaw via kasmweb/chrome Docker sidecar. Principal logs in once via noVNC — sessions saved permanently in Docker volu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "georges91560",
+      "userId": "publishers:georges91560",
+      "displayName": "Wesley Armando",
+      "image": "https://avatars.githubusercontent.com/u/130360599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1773618459135,
+      "changelog": "Version 4.0.1\n\n- No changes detected from the previous version (4.0.0).\n- This release is functionally identical; no files were modified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c3c433fe4e3dc109a483b977bf16071b60b291f309524811d6c545a8e4d4259"
+}

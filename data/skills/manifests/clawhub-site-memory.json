@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31429,
+  "uuid": "skill-clawhub-site-memory",
+  "skillKey": "clawhub-site-memory",
+  "name": "site-memory",
+  "summary": "Persistent memory for repeated browser work. Use when an agent revisits the same sites or flows and should load a few relevant notes up front, then save dura...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.site_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "12",
+      "features": [
+        "Persistent memory for repeated browser work",
+        "Use when an agent revisits the same sites or flows and should load a few relevant notes up fron."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/site-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153109197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "site-memory",
+      "url": "https://clawhub.ai/skills/site-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "site-memory",
+    "url": "https://clawhub.ai/skills/site-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/site-memory-7fc4421efec1a56c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/site-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-site-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c009ac99a9dad66238b109fd0411cbb93bae410fbd3c5c216570b093ae4e083",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T07:21:19.389Z"
+}

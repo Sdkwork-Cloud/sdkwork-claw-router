@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ifly-text-proofread@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifly_text_proofread",
+  "skill": {
+    "id": 56868,
+    "skillKey": "clawhub-ifly-text-proofread",
+    "name": "ifly-text-proofread"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifly-text-proofread",
+    "url": "https://clawhub.ai/skills/ifly-text-proofread",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifly-text-proofread-aa404253914a6c86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iFlytek Official Document Proofreading (公文校对) — detect and correct errors in Chinese text including typos, punctuation, word order, factual mistakes, sensiti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingzhe2020",
+      "userId": "s17e3thgyg00vp9728mfseza8d83neqj",
+      "displayName": "Iflytek AIcloud",
+      "image": "https://avatars.githubusercontent.com/u/162573515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773847021918,
+      "changelog": "- Initial release of ifly-text-proofread: proofreads Chinese text for 27 error types using iFlytek's official document proofreading API.\n- Supports typos, punctuation, word order, factual errors, and sensitive content detection.\n- Handles up to 220,000 characters per request; input can come from command-line text, stdin, or file.\n- Pure Python standard library implementation—no external dependencies required.\n- Provides clear output with problem highlights, explanations, and correction suggestions.\n- Includes detailed setup instructions, error code explanations, and troubleshooting tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a5eeea66c0675e3145ef7ae0786c8aec7dfa4c56b402a6f86e6d6c313fdb6c5"
+}

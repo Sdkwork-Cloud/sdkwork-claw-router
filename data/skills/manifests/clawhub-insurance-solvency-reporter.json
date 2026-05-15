@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62019,
+  "uuid": "skill-clawhub-insurance-solvency-reporter",
+  "skillKey": "clawhub-insurance-solvency-reporter",
+  "name": "Insurance Solvency Report Generator",
+  "summary": "提供基于中国C-ROSS偿二代二期规则的保险公司偿付能力季度及年度报告编制与压力测试分析工具。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insurance_solvency_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingfeng-19",
+      "features": [
+        "提供基于中国C-ROSS偿二代二期规则的保险公司偿付能力季度及年度报告编制与压力测试分析工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insurance-solvency-reporter@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8140166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insurance-solvency-reporter",
+      "url": "https://clawhub.ai/skills/insurance-solvency-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insurance-solvency-reporter",
+    "url": "https://clawhub.ai/skills/insurance-solvency-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insurance-solvency-reporter-545ccd24b5590619.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insurance-solvency-reporter@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insurance-solvency-reporter-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4df8ad37990cee24474b39142ff0a5f70bcd9f8b8c54ff8ec4cfa10db9781bb1",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T15:22:18.902Z"
+}

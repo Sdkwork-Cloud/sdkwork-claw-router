@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dcl-semantic-drift-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dcl_semantic_drift_guard",
+  "skill": {
+    "id": 51133,
+    "skillKey": "clawhub-dcl-semantic-drift-guard",
+    "name": "DCL Semantic Drift Guard — Hallucination & Context Drift Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dcl-semantic-drift-guard",
+    "url": "https://clawhub.ai/skills/dcl-semantic-drift-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dcl-semantic-drift-guard-301fdba5d659a783.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to detect semantic hallucinations and context drift in LLM outputs. Triggers when an agent or pipeline needs to verify that a generated respon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daririnch",
+      "userId": "s177qzsztsa0qx35zmdc3g65s184c673",
+      "displayName": "Dari Rinch",
+      "image": "https://avatars.githubusercontent.com/u/161933416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775720639704,
+      "changelog": "Initial release of DCL Semantic Drift Guard — Hallucination & Context Drift Detector\n\n- Compares LLM output with source documents or RAG-retrieved knowledge, detecting unsupported, fabricated, or omitted claims.\n- Supports both inline context and knowledge base source modes.\n- Provides configurable strictness levels for different use cases: strict, balanced, and lenient.\n- Outputs a tamper-evident audit record with drift details, verdict (IN_COMMIT or HALLUCINATION_DRIFT), and cryptographic hash.\n\nPart of the Leibniz Layer™ verification suite — designed to compose with DCL Policy Enforcer and DCL Sentinel Trace for end-to-end tamper-evident AI output verification.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d52a8b046102089756f6223c130a2bb2bf879ee4e950f9bf45565f6407442b80"
+}

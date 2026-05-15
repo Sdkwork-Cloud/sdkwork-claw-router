@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38210,
+  "uuid": "skill-clawhub-situation-monitor",
+  "skillKey": "clawhub-situation-monitor",
+  "name": "Situation Monitor",
+  "summary": "Triages Discord activity and Kubernetes incidents into ranked situation reports with fixture-first demos, live Discord and Apify intake, Contextual-grounded...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.situation_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mohnishb-ai",
+      "features": [
+        "Triages Discord activity and Kubernetes incidents into ranked situation reports with fixture-fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/situation-monitor@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243601118?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "situation-monitor",
+      "url": "https://clawhub.ai/skills/situation-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "situation-monitor",
+    "url": "https://clawhub.ai/skills/situation-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/situation-monitor-83e28a6c11d5cfd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/situation-monitor@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-situation-monitor-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0afdec914b9ed774a9767ca31d9d0e90ec4632b38d3794da22a270cd415255e2",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T22:43:35.155Z"
+}

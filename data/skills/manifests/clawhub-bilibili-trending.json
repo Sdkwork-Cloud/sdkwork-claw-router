@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64883,
+  "uuid": "skill-clawhub-bilibili-trending",
+  "skillKey": "clawhub-bilibili-trending",
+  "name": "Bilibili 热门趋势分析",
+  "summary": "获取 Bilibili 全榜单热门数据并分析趋势。支持 21 个榜单，自动调用子 Agent 分析并生成 MD 报告持久化储存。安全无隐私风险，仅调用公开 API。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_trending",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rookiecoder-jsjs",
+      "features": [
+        "获取 Bilibili 全榜单热门数据并分析趋势。支持 21 个榜单，自动调用子 Agent 分析并生成 MD 报告持久化储存。安全无隐私风险，仅调用公开 API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-trending@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231662653?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-trending",
+      "url": "https://clawhub.ai/skills/bilibili-trending"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-trending",
+    "url": "https://clawhub.ai/skills/bilibili-trending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-trending-581c3068dcfc62dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-trending@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-trending-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fda9e888fff4de24a737a096b251916ec2d8443e1e66af8252f2f9ec3b236c6d",
+      "artifactSizeBytes": 2819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:24:17.065Z"
+}

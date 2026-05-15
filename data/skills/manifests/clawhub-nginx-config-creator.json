@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11544,
+  "uuid": "skill-clawhub-nginx-config-creator",
+  "skillKey": "clawhub-nginx-config-creator",
+  "name": "Nginx Config Creator",
+  "summary": "Creates a standard Nginx/OpenResty reverse proxy config file for a service and reloads the web server. Features safety checks and environment awareness. Takes service name, domain, and port as main arguments.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nginx_config_creator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xieyuanqing",
+      "features": [
+        "Creates a standard Nginx/OpenResty reverse proxy config file for a service and reloads the web.",
+        "Features safety checks and environment awareness",
+        "Takes service name, domain, and port as main arguments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nginx-config-creator@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43878017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nginx-config-creator",
+      "url": "https://clawhub.ai/skills/nginx-config-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nginx-config-creator",
+    "url": "https://clawhub.ai/skills/nginx-config-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nginx-config-creator-27c600fe4588cbe4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nginx-config-creator@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nginx-config-creator-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6495ab9a4a69794cbc977d75c16b8d2543c9fa985b3d6f4586b7a045d37df02",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T09:16:19.611Z"
+}

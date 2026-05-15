@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11333,
+  "uuid": "skill-clawhub-qmd-local-search",
+  "skillKey": "clawhub-qmd-local-search",
+  "name": "qmd Local Search",
+  "summary": "Fast local search for markdown files, notes, and docs using qmd CLI. Use instead of `find` for file discovery. Combines BM25 full-text search, vector semantic search, and LLM reranking—all running locally. Use when searching for files, fin.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_local_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bheemreddy181",
+      "features": [
+        "Fast local search for markdown files, notes, and docs using qmd CLI",
+        "Use instead of `find` for file discovery",
+        "Combines BM25 full-text search, vector semantic search, and LLM reranking—all running locally",
+        "Use when searching for files, finding code, locating documentation, or discovering content in i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qmd-local-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101338506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qmd-local-search",
+      "url": "https://clawhub.ai/skills/qmd-local-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-local-search",
+    "url": "https://clawhub.ai/skills/qmd-local-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-local-search-c8c31df1aa32ce95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qmd-local-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qmd-local-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d090a7ab556da5c955785b39122ff6235f43e0636c1b72422e1a1ed55b227e1",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T03:59:23.188Z"
+}

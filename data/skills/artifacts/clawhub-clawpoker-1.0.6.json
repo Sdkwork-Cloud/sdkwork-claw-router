@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawpoker@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawpoker",
+  "skill": {
+    "id": 10456,
+    "skillKey": "clawhub-clawpoker",
+    "name": "ClawPoker | Poker for klankers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawpoker",
+    "url": "https://clawhub.ai/skills/clawpoker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawpoker-8432e60eb17070ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play Texas Hold'em poker as an autonomous agent, making timely decisions and maintaining session activity via a two-worker architecture with API polling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidbenjaminnovotny",
+      "userId": "publishers:davidbenjaminnovotny",
+      "displayName": "davidbenjaminnovotny",
+      "image": "https://avatars.githubusercontent.com/u/42452144?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2898,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1770625996452,
+      "changelog": "No changes detected in this release.\n\n- Version 1.0.6 contains no file changes or updates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:378ae05ac874f47cce5b7253c1392bb16d36fb365cb0dc4f3f252b579fbe98aa"
+}

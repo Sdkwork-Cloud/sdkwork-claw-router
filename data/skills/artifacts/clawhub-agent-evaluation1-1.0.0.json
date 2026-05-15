@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-evaluation1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_evaluation1",
+  "skill": {
+    "id": 53328,
+    "skillKey": "clawhub-agent-evaluation1",
+    "name": "agent-evaluation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-evaluation1",
+    "url": "https://clawhub.ai/skills/agent-evaluation1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-evaluation1-4bc572e1a8ee0962.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring—where even top agents..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776042808840,
+      "changelog": "Agent Evaluation v1.0.0\n\n- Initial release with comprehensive tools for testing and benchmarking LLM agents.\n- Supports behavioral testing, capability assessment, reliability metrics, and production monitoring.\n- Includes clear distinction between benchmark performance and real-world reliability.\n- Provides statistical, behavioral contract, and adversarial testing patterns.\n- Lists common pitfalls (anti-patterns) and key \"sharp edges\" to watch for in agent evaluation.\n- Integrates all agent evaluation LLM calls via SkillBoss API Hub with simple Python example.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70c8023aaac738112d57c43bf31d611e5de90637a9c5280f9b661e9e403cc2c8"
+}

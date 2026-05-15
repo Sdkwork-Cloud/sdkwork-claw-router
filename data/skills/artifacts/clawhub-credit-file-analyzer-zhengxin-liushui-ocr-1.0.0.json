@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/credit-file-analyzer-zhengxin-liushui-ocr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.credit_file_analyzer_zhengxin_liushui_ocr",
+  "skill": {
+    "id": 72983,
+    "skillKey": "clawhub-credit-file-analyzer-zhengxin-liushui-ocr",
+    "name": "识别5300中银行流水样式、识别简版征信、详版征信、企业版征信等各种信贷文件汇总成专业分析报告。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "credit-file-analyzer-zhengxin-liushui-ocr",
+    "url": "https://clawhub.ai/skills/credit-file-analyzer-zhengxin-liushui-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/credit-file-analyzer-zhengxin-liushui-ocr-4e2f7ce2c0ab55a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析征信报告、银行流水等信贷文件，返回结构化数据和分析报告地址。当用户需要分析征信报告（详版/简版）、企业征信、银行流水，或者提到信贷文件解析、征信查询、流水分析时使用此技能。用户需提供文件的公网 URL 和分析类型。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoosss",
+      "userId": "publishers:zoosss",
+      "displayName": "zoosss",
+      "image": "https://avatars.githubusercontent.com/u/70013733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773559113539,
+      "changelog": "Initial release of credit-file-analyzer:\n\n- 支持解析详版/简版征信、企业征信、银行流水等信贷文件，返回结构化数据和分析报告链接\n- 兼容 PDF、图片、Excel 等主流文件格式，支持密码保护\n- 提供自动化信贷文件结构化解析与对应专业分析解读（中文输出）\n- 输出包括报告链接、关键信息总览、逾期与负债分析、异常交易识别等\n- 严格脱敏个人敏感信息，结论客观真实\n- 操作简单，用户仅需提供文件 URL 和分析类型",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3d84da295ddd81c0608ffab280fa2d423c6464254b6bdb9549c841f0dc881f4"
+}

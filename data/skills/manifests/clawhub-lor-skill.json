@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32247,
+  "uuid": "skill-clawhub-lor-skill",
+  "skillKey": "clawhub-lor-skill",
+  "name": "LoR (Loop of Resilience)",
+  "summary": "A modular 5-step engineering verification loop ensuring reliable execution and output validation for complex tasks like coding and planning.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lor_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhang, Yu-Wei",
+      "features": [
+        "A modular 5-step engineering verification loop ensuring reliable execution and output validatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lor-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133742993?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lor-skill",
+      "url": "https://clawhub.ai/skills/lor-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lor-skill",
+    "url": "https://clawhub.ai/skills/lor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lor-skill-efa37de6210e7c16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lor-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lor-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da83196a4ab506a60c2c337c98a9d02c176cfacc63a323ee2abfe899311b280b",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T14:58:42.554Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58481,
+  "uuid": "skill-clawhub-what-to-eat",
+  "skillKey": "clawhub-what-to-eat",
+  "name": "What To Eat",
+  "summary": "随机推荐今天吃什么。支持按菜系、口味、预算、人数筛选。Use when: user asks what to eat, meal recommendations, food suggestions, 吃什么, 今天吃啥, restaurant ideas, or needs help deciding on food.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.what_to_eat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ccky",
+      "features": [
+        "随机推荐今天吃什么。支持按菜系、口味、预算、人数筛选。Use when: user asks what to eat, meal recommendations, food suggesti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/what-to-eat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1493927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "what-to-eat",
+      "url": "https://clawhub.ai/skills/what-to-eat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "what-to-eat",
+    "url": "https://clawhub.ai/skills/what-to-eat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/what-to-eat-0bf70eb31921920f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/what-to-eat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-what-to-eat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bd3a1b053ad3458e0fa10de7d8e8ad7ca1d5a19c72c76c5fcc466167df34699",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T16:10:24.545Z"
+}

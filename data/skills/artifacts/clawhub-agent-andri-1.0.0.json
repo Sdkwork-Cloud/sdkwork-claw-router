@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-andri@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_andri",
+  "skill": {
+    "id": 29554,
+    "skillKey": "clawhub-agent-andri",
+    "name": "Agent Andri"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-andri",
+    "url": "https://clawhub.ai/skills/agent-andri",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-andri-3f613321f01f9218.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Andri periodically sends its status report to the meeting-room by appending a message to a designated file."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alibabacloudservice19-collab",
+      "userId": "s172cejgke46rwzy4d4pmptj5h83t0np",
+      "displayName": "alibabacloudservice19-collab",
+      "image": "https://avatars.githubusercontent.com/u/246847821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773845587986,
+      "changelog": "agent-Andri 1.0.0 – Initial release\n\n- Merepresentasikan agen pekerja bernama **Andri** yang secara periodik melaporkan status ke meeting‑room.\n- Menggunakan skrip `scripts/status_report.sh` untuk membaca variabel lingkungan, membuat pesan status, dan mengirimkannya ke file meeting-room.\n- Mendukung konfigurasi melalui variabel lingkungan: `AGENT_NAME`, `NV_API_KEY`, dan `MODEL`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a39cf7ad682d691054b9ab62b6801e86cbd6f5126b9069dfb5c94a49aa78d7c9"
+}

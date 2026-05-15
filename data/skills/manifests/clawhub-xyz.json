@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68668,
+  "uuid": "skill-clawhub-xyz",
+  "skillKey": "clawhub-xyz",
+  "name": "Xyz",
+  "summary": "网络搜索工具，支持多种搜索引擎后端（DuckDuckGo、Tavily、Bing、Google、SearXNG）。使用场景：当用户需要搜索网络上的实时信息、查找最新资料、获取在线资源时调用。通过命令行执行搜索查询并返回结构化的搜索结果（标题、链接、摘要）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xyz",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jwu26",
+      "features": [
+        "网络搜索工具，支持多种搜索引擎后端（DuckDuckGo、Tavily、Bing、Google、SearXNG）。使用场景：当用户需要搜索网络上的实时信息、查找最新资料、获取在线资源时调用。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xyz@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1152204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xyz",
+      "url": "https://clawhub.ai/skills/xyz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xyz",
+    "url": "https://clawhub.ai/skills/xyz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xyz-3608bca1e44ea6c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xyz@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xyz-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe8091c0506f84fc312af402e3f3b03fb96f798b9a87f2d4a4bfa42ad2b058a7",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T07:11:03.070Z"
+}

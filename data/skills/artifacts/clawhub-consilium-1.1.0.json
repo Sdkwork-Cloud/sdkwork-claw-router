@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consilium@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consilium",
+  "skill": {
+    "id": 28738,
+    "skillKey": "clawhub-consilium",
+    "name": "Consilium"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consilium",
+    "url": "https://clawhub.ai/skills/consilium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consilium-11a612955151cd7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your personal board of AI advisors — the only skill that uses truly different AI models (not one model role-playing). Get better answers to hard questions by..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morozsm",
+      "userId": "s179jzsfkyhy6k2evnpdb79kk583mbav",
+      "displayName": "Sergey Morozik",
+      "image": "https://avatars.githubusercontent.com/u/4393731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 706,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771971088726,
+      "changelog": "v1.1: Follow-up with specific panelists, Action Items in output, Privacy & Data section, competitive differentiation (true multi-model vs role-playing), improved description",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7219d4a4de76da9ad564ae4be54c4510e5ff877d09800639b35f226c5cbe5c53"
+}

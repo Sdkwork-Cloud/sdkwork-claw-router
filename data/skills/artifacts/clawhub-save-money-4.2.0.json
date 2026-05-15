@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/save-money@4.2.0",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_money",
+  "skill": {
+    "id": 9347,
+    "skillKey": "clawhub-save-money",
+    "name": "Save Money"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-money",
+    "url": "https://clawhub.ai/skills/save-money",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-money-ca19c15141b0aa8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-detect task complexity for Claude models (Haiku + Sonnet). Route simple tasks to Haiku, escalate complex ones to Sonnet. Save 50%+ on API costs. | 適用 Claude 模型（Haiku + Sonnet），自動偵測任務難度，簡單用 Haiku，複雜升級 Sonnet，輕鬆省下 50% 以上的費用。— RULES: Bef."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peterokase42",
+      "userId": "publishers:peterokase42",
+      "displayName": "peterokase42",
+      "image": "https://avatars.githubusercontent.com/u/240852882?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 6145,
+      "installsAllTime": 28,
+      "installsCurrent": 26,
+      "stars": 24,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "4.2.0",
+      "createdAt": 1769696112835,
+      "changelog": "Add Claude model mention, complete 費用 text, add body explanation for long description",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:04edda75de6066f6ecbe865dde67a998cf52dc607de7c837b7002e8cc70061eb"
+}

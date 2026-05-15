@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33799,
+  "uuid": "skill-clawhub-x-search-1-0-0",
+  "skillKey": "clawhub-x-search-1-0-0",
+  "name": "X Search 1.0.0",
+  "summary": "Search X (Twitter) posts using the xAI API. Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X, or find social med...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_search_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PerfectWorldLtd",
+      "features": [
+        "Search X (Twitter) posts using the xAI API",
+        "Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-search-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127099033?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-search-1-0-0",
+      "url": "https://clawhub.ai/skills/x-search-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-search-1-0-0",
+    "url": "https://clawhub.ai/skills/x-search-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-search-1-0-0-7b84572e6cdd5670.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-search-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-search-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:171ed05ab4d717ddd726ec16764a472411eb5574ac8a9c71885bc23893e5cf55",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:17:38.564Z"
+}

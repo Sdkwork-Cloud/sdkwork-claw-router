@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43357,
+  "uuid": "skill-clawhub-alon-fact-check",
+  "skillKey": "clawhub-alon-fact-check",
+  "name": "alon-fact-check",
+  "summary": "USE WHEN user wants to verify factual claims from text or a URL with authoritative sources, or trace a claim back to its original or official source URL. Ext...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alon_fact_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alon",
+      "features": [
+        "USE WHEN user wants to verify factual claims from text or a URL with authoritative sources, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alon-fact-check@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19970878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alon-fact-check",
+      "url": "https://clawhub.ai/skills/alon-fact-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alon-fact-check",
+    "url": "https://clawhub.ai/skills/alon-fact-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alon-fact-check-8d8d1d2ab4e4ec29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alon-fact-check@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alon-fact-check-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b68e07b43bc4725b9ddd6d2bb0fea6bc4781e691c556e5ba425f0624652f4d1",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T03:10:16.893Z"
+}

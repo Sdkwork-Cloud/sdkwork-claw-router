@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/homebase@0.3.2",
+  "version": "0.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homebase",
+  "skill": {
+    "id": 31477,
+    "skillKey": "clawhub-homebase",
+    "name": "Homebase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homebase",
+    "url": "https://clawhub.ai/skills/homebase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homebase-1f84fae642329e85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Family household coordinator. Aggregates Google Calendar, runs a daily morning briefing (weather, schedule, kids meals, school snacks), watches school Gmail..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hchawla",
+      "userId": "s170x5reaa6915ktteva7gbsqh84bzqh",
+      "displayName": "Harsh Chawla",
+      "image": "https://avatars.githubusercontent.com/u/8922136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.3.2",
+      "createdAt": 1775801750993,
+      "changelog": "fix: update description, trigger security rescan after hardcoded-path fix in 0.3.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f1b3bef3d27a772475cae78dd3df1598355f6cdd4a618bbd0d7d0c4015cdcec"
+}

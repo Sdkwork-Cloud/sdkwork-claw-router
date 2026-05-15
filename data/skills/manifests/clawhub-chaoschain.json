@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12453,
+  "uuid": "skill-clawhub-chaoschain",
+  "skillKey": "clawhub-chaoschain",
+  "name": "ChaosChain - Agent Trust & Reputation",
+  "summary": "Verify AI agent identity and reputation via ERC-8004 on-chain registries",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaoschain",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SumeetChougule",
+      "features": [
+        "Verify AI agent identity and reputation via ERC-8004 on-chain registries"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chaoschain@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101477214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chaoschain",
+      "url": "https://clawhub.ai/skills/chaoschain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaoschain",
+    "url": "https://clawhub.ai/skills/chaoschain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaoschain-5368f208de658338.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chaoschain@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-chaoschain-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f33913472f4b192321a0ad63d4ec87f869918e0c8fc668131f648bc77f332049",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:50:59.661Z"
+}

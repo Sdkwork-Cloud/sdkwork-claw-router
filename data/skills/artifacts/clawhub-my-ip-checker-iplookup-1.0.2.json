@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-ip-checker-iplookup@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_ip_checker_iplookup",
+  "skill": {
+    "id": 29335,
+    "skillKey": "clawhub-my-ip-checker-iplookup",
+    "name": "ip-lookup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-ip-checker-iplookup",
+    "url": "https://clawhub.ai/skills/my-ip-checker-iplookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-ip-checker-iplookup-a5782209005d9e0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the public MyIPChecker IP information API and explain or return the geolocation and network fields it provides. Use when Codex needs to look up metadat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanzhengyang",
+      "userId": "s17dz8ypp1dc0m8jaxywvdqp6h83n9kg",
+      "displayName": "tanzhengyang",
+      "image": "https://avatars.githubusercontent.com/u/33396232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774863792024,
+      "changelog": "myipchecker-iplookup v1.0.2\n\n- Updated references to the public endpoint: now generically called \"the deployed IP info endpoint\" instead of hardcoding the URL.\n- Improved command example for custom base URLs to use a placeholder (`<service-base-url>`) for clarity.\n- Updated the example for no-parameter requests to match new endpoint phrasing.\n- No functional changes; documentation wording is more generic and adaptable.update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31e46cb2978e3b68c6b348f4b40f0f437cd49e15bd730caaa0a609d3cd25f39a"
+}

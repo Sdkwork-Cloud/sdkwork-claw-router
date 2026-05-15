@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29059,
+  "uuid": "skill-clawhub-mparticle",
+  "skillKey": "clawhub-mparticle",
+  "name": "Mparticle",
+  "summary": "MParticle integration. Manage data, records, and automate workflows. Use when the user wants to interact with MParticle data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mparticle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MParticle integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with MParticle data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mparticle@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mparticle",
+      "url": "https://clawhub.ai/skills/mparticle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mparticle",
+    "url": "https://clawhub.ai/skills/mparticle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mparticle-28f7193906e400fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mparticle@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mparticle-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:470ca1e1861331e37b4897ab0c27698cb99bf11a0e7f5034012afa85ef94464f",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:15:48.556Z"
+}

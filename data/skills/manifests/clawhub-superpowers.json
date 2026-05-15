@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8500,
+  "uuid": "skill-clawhub-superpowers",
+  "skillKey": "clawhub-superpowers",
+  "name": "Superpowers Dev Workflow",
+  "summary": "Spec-first, TDD, subagent-driven software development workflow. Use when: (1) building any new feature or app — triggers brainstorm → plan → subagent executi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superpowers",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wlshlad85",
+      "features": [
+        "Spec-first, TDD, subagent-driven software development workflow",
+        "Use when: (1) building any new feature or app — triggers brainstorm → plan → subagent executi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superpowers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146856731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superpowers",
+      "url": "https://clawhub.ai/skills/superpowers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superpowers",
+    "url": "https://clawhub.ai/skills/superpowers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superpowers-b225390a8984c8de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superpowers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-superpowers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47d120f5e5c8c0d27510b52b88437a62b88ec3423d662cbc5fc0c26e1a9ac113",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T21:17:44.279Z"
+}

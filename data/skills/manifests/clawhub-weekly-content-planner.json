@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17376,
+  "uuid": "skill-clawhub-weekly-content-planner",
+  "skillKey": "clawhub-weekly-content-planner",
+  "name": "Weekly Content Planner",
+  "summary": "Generate a full week of social media content for any topic. Outputs platform-optimized posts for Twitter/X, LinkedIn, and Instagram with hashtags and posting...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_content_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claudiodrusus",
+      "features": [
+        "Generate a full week of social media content for any topic",
+        "Outputs platform-optimized posts for Twitter/X, LinkedIn, and Instagram with hashtags and posti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-content-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258132540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-content-planner",
+      "url": "https://clawhub.ai/skills/weekly-content-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-content-planner",
+    "url": "https://clawhub.ai/skills/weekly-content-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-content-planner-1a3800f1f847fd3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-content-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-content-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2061fccb60fbbdbb35eac662b009d63f67f56d711ec37df90a3053f29bb3fa7b",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:38:19.651Z"
+}

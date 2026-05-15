@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-to-share@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_share",
+  "skill": {
+    "id": 58181,
+    "skillKey": "clawhub-md-to-share",
+    "name": "Md To Share"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-share",
+    "url": "https://clawhub.ai/skills/md-to-share",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-share-82d1e0be28e160aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Markdown 文件转换为原生长图的 skill，可被 OpenClaw、Claude Code 等 AI Agent 直接调用。A skill that converts Markdown to long images, callable by AI Agents like OpenClaw and Cl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dtacheng",
+      "userId": "s17bg152wk3rk1rf4vpekm44x583r0hz",
+      "displayName": "DTacheng",
+      "image": "https://avatars.githubusercontent.com/u/191015020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774719726186,
+      "changelog": "v2.0: Migrate from puppeteer-core to Playwright (bundled Chromium, no system browser needed). v2.2: Add --channel flag for channel-aware smart splitting (Discord auto-split, WeChat/iMessage keep long image). Fix bash wrapper arg forwarding and symlink resolution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cd171cb2f4201f6b288f5335a6bcb49393ee52ae33d85449f65a2f401df805a"
+}

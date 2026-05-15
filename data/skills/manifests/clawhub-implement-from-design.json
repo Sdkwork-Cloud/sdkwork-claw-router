@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64753,
+  "uuid": "skill-clawhub-implement-from-design",
+  "skillKey": "clawhub-implement-from-design",
+  "name": "Implement From Design",
+  "summary": "基于 Figma、Sketch、MasterGo、Pixso、墨刀或摹客的设计上下文实现页面或组件，强调复用、设计 Token 映射以及面向生产的前端实现方式，并将实现计划保存为 Markdown 文件。当用户提供设计稿链接、设计选区、截图或要求按设计稿实现组件/页面时自动激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.implement_from_design",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bovin Phang",
+      "features": [
+        "基于 Figma、Sketch、MasterGo、Pixso、墨刀或摹客的设计上下文实现页面或组件，强调复用、设计 Token 映射以及面向生产的前端实现方式，并将实现计划保存为 Markd."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/implement-from-design@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17447895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "implement-from-design",
+      "url": "https://clawhub.ai/skills/implement-from-design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "implement-from-design",
+    "url": "https://clawhub.ai/skills/implement-from-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/implement-from-design-c0e6886f17b09f5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/implement-from-design@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-implement-from-design-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7a483184d3d30eb4abdea6430f845a9e474d105b3dae1ec823dd2fefa862738",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:04:56.858Z"
+}

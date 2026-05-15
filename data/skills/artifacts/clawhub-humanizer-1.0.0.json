@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer",
+  "skill": {
+    "id": 8221,
+    "skillKey": "clawhub-humanizer",
+    "name": "Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer",
+    "url": "https://clawhub.ai/skills/humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-f614735fa80bbb58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: infla."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biostartechnology",
+      "userId": "publishers:biostartechnology",
+      "displayName": "B*T",
+      "image": "https://avatars.githubusercontent.com/u/46933184?v=4"
+    },
+    "stats": {
+      "comments": 6,
+      "downloads": 104812,
+      "installsAllTime": 1398,
+      "installsCurrent": 1339,
+      "stars": 597,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769231736865,
+      "changelog": "Initial release - Remove AI writing patterns based on Wikipedia's Signs of AI Writing guide. Detects 24 patterns including inflated symbolism, AI vocabulary, em dash overuse, and more.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e98d6482d845bd72e6c4a73f5e870329de9f576d9665736af5d917335a06163b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/midasheng-audio-tagging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midasheng_audio_tagging",
+  "skill": {
+    "id": 33155,
+    "skillKey": "clawhub-midasheng-audio-tagging",
+    "name": "midasheng-audio-tagging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midasheng-audio-tagging",
+    "url": "https://clawhub.ai/skills/midasheng-audio-tagging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midasheng-audio-tagging-e6efb2ebccf01fff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audio tagging service for environmental sound recognition. Use when user needs to identify environmental sounds in audio files (water sounds, snoring, etc.)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimbozhang",
+      "userId": "s17dbn18x3rkzrszmpd9hypv6983k25k",
+      "displayName": "Junbo Zhang",
+      "image": "https://avatars.githubusercontent.com/u/1777456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773929879724,
+      "changelog": "- Initial release of the environmental audio tagging service.\n- Supports identification and classification of environmental sounds in common audio formats (mp3, wav, m4a, ogg, flac).\n- Provides command-line and programmatic interfaces for audio tagging and queue status checking.\n- Includes queue metrics with estimated wait time and queue state indicators (green/yellow/red).\n- Troubleshooting guidance for common issues like file errors, unsupported formats, and long queue times.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2e7cddbe9fcfe82c52139acdda5d7da91d1c4e735414bea567886481f900701"
+}

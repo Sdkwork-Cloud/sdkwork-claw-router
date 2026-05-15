@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63894,
+  "uuid": "skill-clawhub-sts2-vision",
+  "skillKey": "clawhub-sts2-vision",
+  "name": "Sts2 Vision",
+  "summary": "杀戮尖塔2视觉识别DPS监控系统 - 通过屏幕捕获和OCR识别实时监控战斗数据",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sts2_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ErebusCry",
+      "features": [
+        "杀戮尖塔2视觉识别DPS监控系统",
+        "通过屏幕捕获和OCR识别实时监控战斗数据"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sts2-vision@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45029552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sts2-vision",
+      "url": "https://clawhub.ai/skills/sts2-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sts2-vision",
+    "url": "https://clawhub.ai/skills/sts2-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sts2-vision-293ae84f544bf1ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sts2-vision@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sts2-vision-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca9b33538b99f2235bf19c76c6b9b90afafd6e20925371a5fe0b8c7e544e14d8",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:18:22.775Z"
+}

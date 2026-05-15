@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expertlens@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expertlens",
+  "skill": {
+    "id": 46257,
+    "skillKey": "clawhub-expertlens",
+    "name": "ExpertLens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expertlens",
+    "url": "https://clawhub.ai/skills/expertlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expertlens-6e63e500d62d66ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ExpertLens is an AI thinking framework that forces expert-level reasoning on any task. It activates when the user signals high-quality output — \"deep think\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashutosh2m",
+      "userId": "s1794f435tg2sbgbzd7d8y9ays83gp56",
+      "displayName": "Ashutosh",
+      "image": "https://avatars.githubusercontent.com/u/242848773?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776685041673,
+      "changelog": "- Added metadata section with openclaw homepage link in SKILL.md.\n- No changes to functionality or behavior; all logic and instructions remain the same.\n- Update improves discoverability and attribution via new metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be6e19094bdc90fad157c73ffd28ef38f5ac0a08f8f946dfc065e5047f9286f2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26157,
+  "uuid": "skill-clawhub-f5tts-monitor",
+  "skillKey": "clawhub-f5tts-monitor",
+  "name": "F5tts Monitor",
+  "summary": "Monitor F5-TTS distributed training on the 9-GPU mining rig (Local-LLM) without interfering with the process.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.f5tts_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pbseiya",
+      "features": [
+        "Monitor F5-TTS distributed training on the 9-GPU mining rig (Local-LLM) without interfering wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/f5tts-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34887773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "f5tts-monitor",
+      "url": "https://clawhub.ai/skills/f5tts-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "f5tts-monitor",
+    "url": "https://clawhub.ai/skills/f5tts-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/f5tts-monitor-909864876459542e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/f5tts-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-f5tts-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd4606da92d83652c0ec80f53816d376316282c0593338518ef673be64081300",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T17:40:03.926Z"
+}

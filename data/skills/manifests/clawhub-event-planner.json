@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9817,
+  "uuid": "skill-clawhub-event-planner",
+  "skillKey": "clawhub-event-planner",
+  "name": "Event Planner",
+  "summary": "Plan events (night out, weekend, date night, team outing, meals, trips) by searching venues via Google Places API. Auto-selects best restaurants, bars, activities based on location, budget, party size, and preferences. Generates detailed i.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.event_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "udiedrichsen",
+      "features": [
+        "Plan events (night out, weekend, date night, team outing, meals, trips) by searching venues via.",
+        "Auto-selects best restaurants, bars, activities based on location, budget, party size, and pref.",
+        "Generates detailed itinerary with timing and Google Maps link",
+        "Use when asked to plan an outing, create an itinerary, find places for events, or organize acti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/event-planner@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4386398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "event-planner",
+      "url": "https://clawhub.ai/skills/event-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "event-planner",
+    "url": "https://clawhub.ai/skills/event-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/event-planner-c905c8f21c17ca1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/event-planner@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-event-planner-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7478f70415cced001fd7d72fec66e89c9decbe4c27c427ae4a5c2d0732bf9d6b",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-16T09:30:55.984Z"
+}

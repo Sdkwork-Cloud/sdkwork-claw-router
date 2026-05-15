@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19526,
+  "uuid": "skill-clawhub-intelligent-triage-symptom-analysis",
+  "skillKey": "clawhub-intelligent-triage-symptom-analysis",
+  "name": "Intelligent Triage Symptom Analysis",
+  "summary": "Intelligent Triage and Symptom Analysis Skill. Supports 650+ symptoms across 11 body systems. Based on ESI and Manchester Triage System with 5-level triage c...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_triage_symptom_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joe",
+      "features": [
+        "Intelligent Triage and Symptom Analysis Skill",
+        "Supports 650+ symptoms across 11 body systems",
+        "Based on ESI and Manchester Triage System with 5-level triage c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intelligent-triage-symptom-analysis@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26564438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intelligent-triage-symptom-analysis",
+      "url": "https://clawhub.ai/skills/intelligent-triage-symptom-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-triage-symptom-analysis",
+    "url": "https://clawhub.ai/skills/intelligent-triage-symptom-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-triage-symptom-analysis-b00f889b8f4e6b7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intelligent-triage-symptom-analysis@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-intelligent-triage-symptom-analysis-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:761ba5618051fc689e95e2c97a279ef502abff4f4803819d374c4c49c8d79d68",
+      "artifactSizeBytes": 2692
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T01:54:03.264Z"
+}

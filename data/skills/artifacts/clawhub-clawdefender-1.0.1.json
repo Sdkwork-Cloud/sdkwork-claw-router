@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdefender@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdefender",
+  "skill": {
+    "id": 8511,
+    "skillKey": "clawhub-clawdefender",
+    "name": "ClawDefender - OpenClaw Security - Prompt injection, rogue skills etc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdefender",
+    "url": "https://clawhub.ai/skills/clawdefender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdefender-4cdb5fa1a409fcc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner and input sanitizer for AI agents. Detects prompt injection, command injection, SSRF, credential exfiltration, and path traversal attacks. Use when (1) installing new skills from ClawHub, (2) processing external input like."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nukewire",
+      "userId": "publishers:nukewire",
+      "displayName": "Nukewire",
+      "image": "https://avatars.githubusercontent.com/u/7239958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9126,
+      "installsAllTime": 66,
+      "installsCurrent": 64,
+      "stars": 31,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769980686291,
+      "changelog": "ClawDefender v1.0.1\n\n- Tuned pattern detection to reduce false positives.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc8f5aed67e487ac112af81f2af3a80669a540681a29719db273b107b85904aa"
+}

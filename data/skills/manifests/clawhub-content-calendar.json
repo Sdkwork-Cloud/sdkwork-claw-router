@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25774,
+  "uuid": "skill-clawhub-content-calendar",
+  "skillKey": "clawhub-content-calendar",
+  "name": "Content Calendar",
+  "summary": "Plan, schedule, and track content across channels — newsletters, social media, blog posts, and videos. Manages pipeline stages, publishing cadence, and repur...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clawdssen",
+      "features": [
+        "Plan, schedule, and track content across channels — newsletters, social media, blog posts, and.",
+        "Manages pipeline stages, publishing cadence, and repur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-calendar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262485069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-calendar",
+      "url": "https://clawhub.ai/skills/content-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-calendar",
+    "url": "https://clawhub.ai/skills/content-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-calendar-8c13f82207b0d67c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-calendar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-calendar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45182ae8570a2f9386e6342fe4cc54293bf4998f86a6576bb497181671a4e556",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T00:00:30.970Z"
+}

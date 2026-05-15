@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-design-assets@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_design_assets",
+  "skill": {
+    "id": 44476,
+    "skillKey": "clawhub-abe-design-assets",
+    "name": "design-assets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-design-assets",
+    "url": "https://clawhub.ai/skills/abe-design-assets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-design-assets-4792deb2e66eccc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and edit icons, favicons, images, and color palettes using AI generation, macOS tools, ImageMagick, and SVG for scalable graphics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quincygunter",
+      "userId": "s17d0tr1e37k04dr1j7gy5ff0584nmyw",
+      "displayName": "QuincyGunter",
+      "image": "https://avatars.githubusercontent.com/u/260427166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776918935280,
+      "changelog": "Initial release of abe-design-assets.\n\n- Provides guides and scripts for creating and editing graphic design assets: icons, favicons, images, and color palettes.\n- Includes tool selection table for common asset tasks.\n- Features code samples for AI image generation via SkillBoss API Hub.\n- Supplies bash scripts for generating app icons and favicons for multiple platforms.\n- Offers palette generator function and quick references for ImageMagick and sips usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6409d69658e1f764e67b18a96624b88e4601a79bcaf22570e6343fcc4cba3aee"
+}

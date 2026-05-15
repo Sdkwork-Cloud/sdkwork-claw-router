@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55600,
+  "uuid": "skill-clawhub-realtor",
+  "skillKey": "clawhub-realtor",
+  "name": "Realtor",
+  "summary": "Realtor.com — search listings, agents, and property details via API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realtor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Realtor.com — search listings, agents, and property details via API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realtor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realtor",
+      "url": "https://clawhub.ai/skills/realtor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realtor",
+    "url": "https://clawhub.ai/skills/realtor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realtor-4401c6ea53ee02b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realtor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-realtor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a53738775cc0a4e35bae131fb369d68b6879c3bc14c3ac4dfbf2665d16d00ef1",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:52:56.239Z"
+}

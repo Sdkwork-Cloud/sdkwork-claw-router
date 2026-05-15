@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/captcha-login-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.captcha_login_assistant",
+  "skill": {
+    "id": 24330,
+    "skillKey": "clawhub-captcha-login-assistant",
+    "name": "captcha-login-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "captcha-login-assistant",
+    "url": "https://clawhub.ai/skills/captcha-login-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/captcha-login-assistant-d030e3cd7b5faa9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with web login processes that require CAPTCHA verification. Uses Chrome DevTools MCP to capture screenshots, recognizes CAPTCHA codes using AI vision,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leungbh",
+      "userId": "s1750nmdfswgeyf56m53te5pb583nwjn",
+      "displayName": "leungBH",
+      "image": "https://avatars.githubusercontent.com/u/32665935?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773574792200,
+      "changelog": "Initial release of CAPTCHA Login Assistant.\n\n- Automates web login processes requiring CAPTCHA verification through Chrome DevTools MCP.\n- Captures login page screenshots, recognizes CAPTCHA codes using AI vision, and fills in credentials programmatically.\n- Supports rapid and consecutive login scenarios where CAPTCHA validity is short.\n- Provides troubleshooting steps and best practices for common CAPTCHA and login workflow issues.\n- Prioritizes security and privacy when handling sensitive data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3607b64298f8fae84c1560cadf55854d0f9ed124f5e86fdd0410908d8f142d81"
+}

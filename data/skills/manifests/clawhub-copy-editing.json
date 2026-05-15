@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9507,
+  "uuid": "skill-clawhub-copy-editing",
+  "skillKey": "clawhub-copy-editing",
+  "name": "Copy Editing",
+  "summary": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,'...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copy_editing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "When the user wants to edit, review, or improve existing marketing copy",
+        "Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,'..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copy-editing@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copy-editing",
+      "url": "https://clawhub.ai/skills/copy-editing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copy-editing",
+    "url": "https://clawhub.ai/skills/copy-editing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copy-editing-2e9bba9b68014e1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copy-editing@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-copy-editing-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c1091e0ea1db1139994a9ed12a034b6182e9f2e487eb56f7ea961155f812e69",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:27:36.129Z"
+}

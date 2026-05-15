@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/olares-settings@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.olares_settings",
+  "skill": {
+    "id": 48918,
+    "skillKey": "clawhub-olares-settings",
+    "name": "Olares Settings (olares-cli settings)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "olares-settings",
+    "url": "https://clawhub.ai/skills/olares-settings",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/olares-settings-e31ed40ea201cbab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "olares-cli settings command tree: profile-based reads of every section the SPA's Settings page exposes (https://docs.olares.com/manual/olares/settings/) plus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengpeng",
+      "userId": "s174507xmb894228wwnc0z209s85vcfx",
+      "displayName": "Peng Peng",
+      "image": "https://avatars.githubusercontent.com/u/921131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777555405880,
+      "changelog": "Automated publish from cli/skills/publish.sh",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c5f406790bfd2a95aaf9612b03ca2c42c4a07287b358bf6a31fc73d57b85782"
+}

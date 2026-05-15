@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ynab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ynab",
+  "skill": {
+    "id": 9715,
+    "skillKey": "clawhub-ynab",
+    "name": "Manage YNAB budgets, accounts, categories, and transactions."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ynab",
+    "url": "https://clawhub.ai/skills/ynab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ynab-9053e6535da1f293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YNAB budgets, accounts, categories, and transactions via CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obviyus",
+      "userId": "publishers:obviyus",
+      "displayName": "obviyus",
+      "image": "https://avatars.githubusercontent.com/u/22031114?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2617,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767591101713,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11a4ef2775b39d347104262a8a64c69f4f1a24a01d07336d1ac76899c46b176c"
+}

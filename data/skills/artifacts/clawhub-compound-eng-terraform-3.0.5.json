@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compound-eng-terraform@3.0.5",
+  "version": "3.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_terraform",
+  "skill": {
+    "id": 25263,
+    "skillKey": "clawhub-compound-eng-terraform",
+    "name": "ia-terraform"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-terraform",
+    "url": "https://clawhub.ai/skills/compound-eng-terraform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-terraform-c6d0881915cd9047.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Terraform and OpenTofu configuration, modules, testing, state management, and HCL review. Use when working with Terraform, OpenTofu, HCL, tfvars, tftest, sta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iliaal",
+      "userId": "s17bcar8wq0xhegs0ny6f57ypd8484bw",
+      "displayName": "Ilia Alshanetsky",
+      "image": "https://avatars.githubusercontent.com/u/158724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "3.0.5",
+      "createdAt": 1777507454037,
+      "changelog": "v3.0.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efbe17a3212e310e678bef58b4947adbc08db1ecc414bbd6d5d7a8808152c170"
+}

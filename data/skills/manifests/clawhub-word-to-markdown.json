@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36307,
+  "uuid": "skill-clawhub-word-to-markdown",
+  "skillKey": "clawhub-word-to-markdown",
+  "name": "Word To Markdown",
+  "summary": "Document to Markdown converter - convert DOCX, PPTX, Excel files to Markdown. Use when extracting content from Word documents, PowerPoint presentations, or E...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_to_markdown",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tanis90",
+      "features": [
+        "Document to Markdown converter",
+        "convert DOCX, PPTX, Excel files to Markdown",
+        "Use when extracting content from Word documents, PowerPoint presentations, or E..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word-to-markdown@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22654397?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word-to-markdown",
+      "url": "https://clawhub.ai/skills/word-to-markdown"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-to-markdown",
+    "url": "https://clawhub.ai/skills/word-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-to-markdown-514d662842ce0993.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word-to-markdown@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-to-markdown-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01fb9fb672ca69d5273f519dca46f3218044e872259d9cd931d74fa0acb37d44",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T15:32:45.456Z"
+}

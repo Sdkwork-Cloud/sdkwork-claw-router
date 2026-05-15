@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47426,
+  "uuid": "skill-clawhub-maverick-shopify-mcp",
+  "skillKey": "clawhub-maverick-shopify-mcp",
+  "name": "Shopify mcp",
+  "summary": "Search, read, and work with Shopify products, variants, catalog discovery, sellers, and checkout links via Shopify's configured MCP server (https://catalog.s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_shopify_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maverick",
+      "features": [
+        "Search, read, and work with Shopify products, variants, catalog discovery, sellers, and checkou."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maverick-shopify-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261420589"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maverick-shopify-mcp",
+      "url": "https://clawhub.ai/skills/maverick-shopify-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-shopify-mcp",
+    "url": "https://clawhub.ai/skills/maverick-shopify-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-shopify-mcp-5120cc7214c9db0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maverick-shopify-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maverick-shopify-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf7958d0630e374a4cfd0bedd0d1a73006f574e5a082eec13df34812c802da4a",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T18:49:47.470Z"
+}

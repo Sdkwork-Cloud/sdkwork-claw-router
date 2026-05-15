@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flash-forge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flash_forge",
+  "skill": {
+    "id": 23033,
+    "skillKey": "clawhub-flash-forge",
+    "name": "FlashForge AI Flashcard Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flash-forge",
+    "url": "https://clawhub.ai/skills/flash-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flash-forge-0317ee0f7714abd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate flashcards from any content. Paste notes, articles, or textbook pages. Get study-ready cards with spaced repetition scheduling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773181807330,
+      "changelog": "Initial upload",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16283e6518ac2849e401af8daf7e339c03fad82256dc8a7799d501bbaf697f3e"
+}

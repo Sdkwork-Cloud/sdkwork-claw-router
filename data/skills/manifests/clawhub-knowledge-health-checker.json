@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34066,
+  "uuid": "skill-clawhub-knowledge-health-checker",
+  "skillKey": "clawhub-knowledge-health-checker",
+  "name": "knowledge-health-checker",
+  "summary": "Audit and improve Markdown knowledge-base health across Obsidian, Logseq, Notion exports, docs folders, and wiki repositories. Detect empty placeholder notes...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_health_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xb19960921",
+      "features": [
+        "Audit and improve Markdown knowledge-base health across Obsidian, Logseq, Notion exports, docs.",
+        "Detect empty placeholder notes..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-health-checker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83778953?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-health-checker",
+      "url": "https://clawhub.ai/skills/knowledge-health-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-health-checker",
+    "url": "https://clawhub.ai/skills/knowledge-health-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-health-checker-bc9ef101e99cb2e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-health-checker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-health-checker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71bef14c5a4f4536dc2c8031832ba70e43e778e0f0174e97970998a833714506",
+      "artifactSizeBytes": 4722
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T05:44:56.700Z"
+}

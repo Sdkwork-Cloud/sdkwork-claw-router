@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-automation-cdp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_automation_cdp",
+  "skill": {
+    "id": 59891,
+    "skillKey": "clawhub-browser-automation-cdp",
+    "name": "Browser Automation (CDP)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-automation-cdp",
+    "url": "https://clawhub.ai/skills/browser-automation-cdp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-automation-cdp-5eaae1a55be3a3ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过已登录的Edge或Chrome浏览器，利用Chrome DevTools Protocol执行JS渲染页面的导航、点击、截图及数据提取等自动化操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hunling233",
+      "userId": "s17avmbef3aebwmed2jwc360d583ggtr",
+      "displayName": "Hunling233",
+      "image": "https://avatars.githubusercontent.com/u/207156128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2443,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774353028070,
+      "changelog": "- Initial release of the Browser Automation Skill.\n- Enables browser automation via user’s logged-in Edge or Chrome using Chrome DevTools Protocol (CDP) over WebSocket.\n- Provides methods for navigation, DOM extraction, interaction (clicks, form filling, scrolling), and screenshot capture.\n- Includes detailed setup guide for enabling remote debugging on Edge (9222) and Chrome (9223).\n- Offers documented API and practical usage tips for platforms like B站, 小红书, and Minimax.\n- Documents common pitfalls: port conflicts, connection reuse, and SPA navigation constraints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdafe0edb30f6f4def791c1d1a2dbf5433c9f056ad028e5eb15d59913bc5fcb9"
+}

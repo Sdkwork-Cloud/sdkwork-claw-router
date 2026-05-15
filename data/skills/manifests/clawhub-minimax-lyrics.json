@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39226,
+  "uuid": "skill-clawhub-minimax-lyrics",
+  "skillKey": "clawhub-minimax-lyrics",
+  "name": "MiniMax Lyrics Generation",
+  "summary": "Generate structured song lyrics in various styles and themes using the MiniMax lyrics_generation API for full song creation or editing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_lyrics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xRay",
+      "features": [
+        "Generate structured song lyrics in various styles and themes using the MiniMax lyrics_generatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-lyrics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57515812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-lyrics",
+      "url": "https://clawhub.ai/skills/minimax-lyrics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-lyrics",
+    "url": "https://clawhub.ai/skills/minimax-lyrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-lyrics-8d723c39bd4b4737.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-lyrics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-lyrics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7b44a1a511071f165bcaf43a4ac001ea7f946a4a1763c3f781d2bd66357c2fe",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:08:40.600Z"
+}

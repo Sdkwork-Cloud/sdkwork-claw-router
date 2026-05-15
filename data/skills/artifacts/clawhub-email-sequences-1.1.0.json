@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-sequences@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_sequences",
+  "skill": {
+    "id": 34127,
+    "skillKey": "clawhub-email-sequences",
+    "name": "Email Sequences"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-sequences",
+    "url": "https://clawhub.ai/skills/email-sequences",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-sequences-74e9164478b87abb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create segmented email sequences for abandoned carts, post-purchase follow-up, win-back campaigns, and seasonal promotions for online stores."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774887926299,
+      "changelog": "**Changelog for v1.0.1 of email-sequences:**\n\n- Added helpful resources and references: checklist, ESP guide, output template, and strategy guide.\n- Expanded, clarified SKILL.md with new \"Solves,\" \"Quick Reference,\" and detailed step-by-step workflow.\n- Provided explicit email sequence examples (abandoned cart/post-purchase) for better usability.\n- Included practical notes on segmentation, timing, and suppression best practices.\n- Improved structure for faster reference and implementation by ecommerce teams.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:830dfe3ca0a52c0a30f847938920ef3a10b7a381983aebf7435712c687646782"
+}

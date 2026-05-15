@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-boost@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_boost",
+  "skill": {
+    "id": 40782,
+    "skillKey": "clawhub-agent-memory-boost",
+    "name": "Memory Boost"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-boost",
+    "url": "https://clawhub.ai/skills/agent-memory-boost",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-boost-1398abf23644352b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent task memory and keep-alive loop for OpenClaw agents. Every task gets durable notes. Arm the loop for long tasks, disarm when done. No external dep..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techieter",
+      "userId": "s17589cfbycfwwx6m1njrg07t184432f",
+      "displayName": "Terry Hundley",
+      "image": "https://avatars.githubusercontent.com/u/8798400?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775229917488,
+      "changelog": "Initial release with persistent task memory and keep-alive loop for OpenClaw agents.\n\n- Implements automatic, durable task notes for every assigned task (RESUME.md, CHECKLIST.md, DOCS.md).\n- Adds a keep-alive loop with arm/disarm controls via /loop-start and /loop-stop.\n- Schedules five monitoring and integrity jobs: watchdog, replayer, escalator, validator, smoke test.\n- All data stored locally under ~/.openclaw/memory/, no external dependencies.\n- Includes templates and clear update rules for reliable multi-session task tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e210593ae6e239350a7815fdf9d9ceaabf7e222ef41b29c7cd72fbac0352efdf"
+}

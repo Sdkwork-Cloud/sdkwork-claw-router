@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-clip-curator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_clip_curator",
+  "skill": {
+    "id": 48040,
+    "skillKey": "clawhub-youtube-clip-curator",
+    "name": "Youtube Clip Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-clip-curator",
+    "url": "https://clawhub.ai/skills/youtube-clip-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-clip-curator-4445dad71be8d415.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze long YouTube videos to extract ranked clip candidates with timestamps, titles, hooks, emotion tags, and optional edit project files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noahcraft-open",
+      "userId": "s17b98ep12pn9e895pdbc1311s84v6ex",
+      "displayName": "noahcraft-open",
+      "image": "https://avatars.githubusercontent.com/u/274974039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777503111316,
+      "changelog": "Initial release of YouTube Clip Curator\n\n- Analyzes long-form YouTube videos to extract and rank 5–10 short clip candidates.\n- Outputs each clip with start/end timestamps, suggested titles, hook descriptions, and emotion tags.\n- Supports optional generation of Premiere Pro FCPXML, DaVinci Resolve scripts, thumbnail briefs, and SRT subtitles.\n- Allows customization via reference clip channels and target clip count or duration.\n- Implements clear selection and composition rules focused on emotion peaks, punchlines, and standalone context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:929bbda82446343bd3a08f9f91795228c213fa36daf206b515370a990c9cb7f4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8397,
+  "uuid": "skill-clawhub-openclaw-github-assistant",
+  "skillKey": "clawhub-openclaw-github-assistant",
+  "name": "OpenClaw GitHub Assistant",
+  "summary": "Query and manage GitHub repositories - list repos, check CI status, create issues, search repos, and view recent activity.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_github_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "conorkenn",
+      "features": [
+        "Query and manage GitHub repositories",
+        "list repos, check CI status, create issues, search repos, and view recent activity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-github-assistant@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86976860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-github-assistant",
+      "url": "https://clawhub.ai/skills/openclaw-github-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-github-assistant",
+    "url": "https://clawhub.ai/skills/openclaw-github-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-github-assistant-5b223dd161b74897.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-github-assistant@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-github-assistant-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d01ce8f2a7937d0a7d79b054059727d5f1bedf9137bf7c53a31c76ef4271e746",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T16:07:41.686Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46357,
+  "uuid": "skill-clawhub-pilot-quality-assurance-pipeline-setup",
+  "skillKey": "clawhub-pilot-quality-assurance-pipeline-setup",
+  "name": "Pilot Quality Assurance Pipeline Setup",
+  "summary": "Deploy a quality assurance pipeline with 3 agents that automate test generation, execution, and reporting. Use this skill when: 1. User wants to set up an au...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_quality_assurance_pipeline_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a quality assurance pipeline with 3 agents that automate test generation, execution, and.",
+        "Use this skill when: 1",
+        "User wants to set up an au..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-quality-assurance-pipeline-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-quality-assurance-pipeline-setup",
+      "url": "https://clawhub.ai/skills/pilot-quality-assurance-pipeline-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-quality-assurance-pipeline-setup",
+    "url": "https://clawhub.ai/skills/pilot-quality-assurance-pipeline-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-quality-assurance-pipeline-setup-8c4ca45180e0dc27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-quality-assurance-pipeline-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-quality-assurance-pipeline-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85b9a0d1a9f7a3ec372acccd2efa5f4e00ca99cfe80d40b7ba11165601958e94",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T04:42:09.888Z"
+}

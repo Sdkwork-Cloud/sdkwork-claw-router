@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nlm@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nlm",
+  "skill": {
+    "id": 21813,
+    "skillKey": "clawhub-nlm",
+    "name": "nlm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nlm",
+    "url": "https://clawhub.ai/skills/nlm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nlm-4c53f2ab9f173a69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NotebookLM CLI for listing notebooks, creating notebooks, adding sources, querying notebooks, generating studio artifacts, downloading outputs, sharing noteb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lsuper",
+      "userId": "s17bmgzqad1mxa3258h9y577k983t1d7",
+      "displayName": "lsuper",
+      "image": "https://avatars.githubusercontent.com/u/701268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773046275557,
+      "changelog": "Initial release of NotebookLM CLI skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cdcf05d1301c64cb14b7e280568f5ee2188e1f2456e67957ef7bd7541120c311"
+}

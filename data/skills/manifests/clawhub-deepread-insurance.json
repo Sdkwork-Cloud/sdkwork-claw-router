@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42520,
+  "uuid": "skill-clawhub-deepread-insurance",
+  "skillKey": "clawhub-deepread-insurance",
+  "name": "DeepRead Insurance Documents",
+  "summary": "Extract structured data from insurance claims, policies, EOBs, and loss reports. Pre-built schemas for claimant info, coverage, damages, adjuster notes. PII...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepread_insurance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepRead.tech",
+      "features": [
+        "Extract structured data from insurance claims, policies, EOBs, and loss reports",
+        "Pre-built schemas for claimant info, coverage, damages, adjuster notes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepread-insurance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253471566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepread-insurance",
+      "url": "https://clawhub.ai/skills/deepread-insurance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepread-insurance",
+    "url": "https://clawhub.ai/skills/deepread-insurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepread-insurance-a3bc453d483be896.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepread-insurance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepread-insurance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d12c4fd38810ee6518202d9e6671129d332fcba4f2c94aa465a2513ab021ffbf",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:41:08.628Z"
+}

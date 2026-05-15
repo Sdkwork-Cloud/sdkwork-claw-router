@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-bytehouse-data-asset-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_bytehouse_data_asset_analyzer",
+  "skill": {
+    "id": 63846,
+    "skillKey": "clawhub-byted-bytehouse-data-asset-analyzer",
+    "name": "Byted Bytehouse Data Asset Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-bytehouse-data-asset-analyzer",
+    "url": "https://clawhub.ai/skills/byted-bytehouse-data-asset-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-bytehouse-data-asset-analyzer-066f4b224dea3fd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于ByteHouse MCP Server，生成数据资产目录和血缘分析的技能，用于获取数据库表结构、生成数据资产目录、分析表之间的血缘关系。当用户需要获取ByteHouse数据库的表结构、生成数据资产目录、分析表之间的血缘关系时，使用此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774526713705,
+      "changelog": "byted-bytehouse-data-asset-analyzer 1.0.0 – Initial Release\n\n- Provides data asset catalog and lineage analysis for ByteHouse via MCP Server.\n- Supports extraction of full table and field schema, asset catalog generation, and table lineage analysis.\n- Outputs include: schema, catalog, and lineage JSON files with detailed metadata and statistics.\n- Automatic tagging for tables based on naming patterns and engine types.\n- Requires the bytehouse-mcp skill for ByteHouse server connectivity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dec0e8fc41ac1c77a907762b6020cc8c0038f1b64cdea8258cbd68740c8d8da8"
+}

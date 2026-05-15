@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-tool-subtitle-erase@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_tool_subtitle_erase",
+  "skill": {
+    "id": 51346,
+    "skillKey": "clawhub-video-tool-subtitle-erase",
+    "name": "WeryAI video tool — subtitle erase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-tool-subtitle-erase",
+    "url": "https://clawhub.ai/skills/video-tool-subtitle-erase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-tool-subtitle-erase-8571e93a1a3a95d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove burnt-in subtitles or on-screen text from an HTTPS video via WeryAI (video-subtitle-erase). Use when the user wants subtitle or text removal, not tran..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoucdr",
+      "userId": "s17112gmymgcv04spgyd4zzw3583h7ab",
+      "displayName": "parallel world",
+      "image": "https://avatars.githubusercontent.com/u/16458879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774330817197,
+      "changelog": "- Initial release of the video-tool-subtitle-erase skill.\n- Removes burnt-in subtitles or on-screen text from videos via WeryAI using a public HTTPS video URL.\n- Only supports subtitle erasure, not translation, watermark removal, or text-to-video generation.\n- Requires Node.js 18+, WERYAI_API_KEY, and no local file uploads—inputs are via public links only.\n- Provides clear CLI usage for submitting, waiting, and status checks, and emphasizes strict scope and security guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b3e4a0e54004b512d6779066a2914345dc99c6ade00f8acac9fe65e755a9a70"
+}

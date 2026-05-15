@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitpanda-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitpanda_v2",
+  "skill": {
+    "id": 30785,
+    "skillKey": "clawhub-bitpanda-v2",
+    "name": "Bitpanda V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitpanda-v2",
+    "url": "https://clawhub.ai/skills/bitpanda-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitpanda-v2-b00fa07158053099.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interagisci con l'API Bitpanda per ottenere dati grezzi di portafoglio, trade e prezzi senza aggregazioni, con gestione completa di pagination ed errori."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattialagreca",
+      "userId": "publishers:mattialagreca",
+      "displayName": "MattiaLaGreca",
+      "image": "https://avatars.githubusercontent.com/u/221189553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773854425203,
+      "changelog": "**Stable and accurate rebuild of the Bitpanda portfolio management skill.**\n\n- Uses official `/v1/asset-wallets` endpoint for `balances` and `data` (replaces non-existent endpoints from previous version)\n- Returns unprocessed raw data directly from Bitpanda—no automatic aggregations\n- Implements correct and automatic pagination (especially for trade history)\n- Improved error handling with clear messages for authentication, rate limits, and missing tools\n- Designed for reliability and transparency: minimal internal logic and full user control of the data",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:512c996eaba28fa12ce466a4a3a144f676527a07abc8c0236351ea36e356ea0a"
+}

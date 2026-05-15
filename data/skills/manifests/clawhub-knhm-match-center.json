@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18782,
+  "uuid": "skill-clawhub-knhm-match-center",
+  "skillKey": "clawhub-knhm-match-center",
+  "name": "KNHB Match Center",
+  "summary": "Query Dutch field hockey match schedules and results from KNHB Match Center (hockeyweerelt.nl). Use when looking up hockey clubs, teams, upcoming matches, or...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knhm_match_center",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thomas A. de Ruiter",
+      "features": [
+        "Query Dutch field hockey match schedules and results from KNHB Match Center (hockeyweerelt.nl)",
+        "Use when looking up hockey clubs, teams, upcoming matches, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knhm-match-center@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knhm-match-center",
+      "url": "https://clawhub.ai/skills/knhm-match-center"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knhm-match-center",
+    "url": "https://clawhub.ai/skills/knhm-match-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knhm-match-center-4b91b0fe5ceae6bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knhm-match-center@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knhm-match-center-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9399c874d4d81292d534ba7aca880e507dcc2e31101fb85636a157849a565323",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T16:22:37.113Z"
+}

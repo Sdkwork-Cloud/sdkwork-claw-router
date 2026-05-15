@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60548,
+  "uuid": "skill-clawhub-fireseed-writing-expert",
+  "skillKey": "clawhub-fireseed-writing-expert",
+  "name": "Fireseed Writing Expert",
+  "summary": "火种写作专家体系 v3.0.0。自包含模板 + 自动初始化 + 11 个核心子技能 + 评估反馈循环。作品可一键发布至 fireseed.online 平台。",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireseed_writing_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suttangle",
+      "features": [
+        "火种写作专家体系 v3.0.0。自包含模板 + 自动初始化 + 11 个核心子技能 + 评估反馈循环。作品可一键发布至 fireseed.online 平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fireseed-writing-expert@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131636493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fireseed-writing-expert",
+      "url": "https://clawhub.ai/skills/fireseed-writing-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireseed-writing-expert",
+    "url": "https://clawhub.ai/skills/fireseed-writing-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireseed-writing-expert-e32e2f5992562c9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fireseed-writing-expert@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fireseed-writing-expert-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbb627f374555c9b2e460a293ea7c131dae29c22dbc7edaf0afcbc23e3f68703",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T04:14:14.163Z"
+}

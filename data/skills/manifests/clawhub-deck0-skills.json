@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17357,
+  "uuid": "skill-clawhub-deck0-skills",
+  "skillKey": "clawhub-deck0-skills",
+  "name": "DECK-0",
+  "summary": "Interact with DECK-0 digital collectibles platform to browse collections, buy card packs, open packs, view leaderboards, and apply as a publisher. Use when the user asks to collect trading cards, purchase NFT packs, manage their collection.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deck0_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SignorCrypto",
+      "features": [
+        "Interact with DECK-0 digital collectibles platform to browse collections, buy card packs, open.",
+        "Use when the user asks to collect trading cards, purchase NFT packs, manage their collection, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deck0-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96951419?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deck0-skills",
+      "url": "https://clawhub.ai/skills/deck0-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deck0-skills",
+    "url": "https://clawhub.ai/skills/deck0-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deck0-skills-721cc3d54bf24ff3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deck0-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deck0-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d536a2a8b37583574d053666c49aed0b2a3935fb42af0814b959eaa1e358cbc",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T13:34:52.805Z"
+}

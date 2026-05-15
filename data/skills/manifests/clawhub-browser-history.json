@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14809,
+  "uuid": "skill-clawhub-browser-history",
+  "skillKey": "clawhub-browser-history",
+  "name": "Browser History",
+  "summary": "Search and retrieve URLs, titles, and visit counts from Das's Chrome browsing history, including recent visits and YouTube video searches.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_history",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Das",
+      "features": [
+        "Search and retrieve URLs, titles, and visit counts from Das's Chrome browsing history, includin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-history@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43847374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-history",
+      "url": "https://clawhub.ai/skills/browser-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-history",
+    "url": "https://clawhub.ai/skills/browser-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-history-bf66e646c8030979.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-history@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-history-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00ebd8ae54f027317491b3b44fc876529a6f7759f9c4093e6cc4fc9c6695684f",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T07:53:36.890Z"
+}

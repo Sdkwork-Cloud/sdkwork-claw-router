@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-system@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_system",
+  "skill": {
+    "id": 61421,
+    "skillKey": "clawhub-agent-memory-system",
+    "name": "Agent Memory System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-system",
+    "url": "https://clawhub.ai/skills/agent-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-system-62608795592e95ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Agent 长期记忆系统 - 温度模型 + 自动归档 + 知识提炼。让 AI Agent 拥有持久记忆，自动管理冷热数据，从经验中提炼可复用技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccyaolei",
+      "userId": "publishers:ccyaolei",
+      "displayName": "ccyaolei",
+      "image": "https://avatars.githubusercontent.com/u/207572886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772621105418,
+      "changelog": "agent-memory-system v1.0.1\n\n- Added install.sh and scripts/install.sh for streamlined installation.\n- Updated documentation in README.md.\n- Updated metadata in _meta.json for improved clarity and consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e5dad6ed0b1e9a0e9aa6857a28f829460ac35df7d99b4d575028691677fc5d3"
+}

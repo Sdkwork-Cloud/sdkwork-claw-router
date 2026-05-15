@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/service-business-prospecting@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.service_business_prospecting",
+  "skill": {
+    "id": 46363,
+    "skillKey": "clawhub-service-business-prospecting",
+    "name": "Service Business Prospecting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "service-business-prospecting",
+    "url": "https://clawhub.ai/skills/service-business-prospecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/service-business-prospecting-9e22d9fa1ea3542f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily lead generation for local US service businesses (HVAC, Plumbing, Dental, Med Spa, etc.). Generates qualified leads with verified contact info, ready fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haughtonventures",
+      "userId": "s17aggy49zn7t3jhe8hffezshx85pmwx",
+      "displayName": "haughtonventures",
+      "image": "https://avatars.githubusercontent.com/u/272037620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777391962132,
+      "changelog": "Initial release — automates daily lead generation for local service businesses in the US.\n\n- Runs a daily 6am job to produce 25+ qualified leads per target city/industry.\n- Uses specific ICP filtering to ensure high-quality, non-chain, established business prospects.\n- Assigns leads a contact completeness tier and matches best sales pitch angle.\n- Outputs daily CSVs ready for sales automation tracking, plus a summary notes file.\n- Enforces strict data quality: all leads are real, verified, and never fabricated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ace60b0780cc199266891c540479e389b548b7b74d2aeb954ed8af9407cfb038"
+}

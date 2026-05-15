@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-candidate-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_candidate_search",
+  "skill": {
+    "id": 62452,
+    "skillKey": "clawhub-linkedin-candidate-search",
+    "name": "linkedin-candidate-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-candidate-search",
+    "url": "https://clawhub.ai/skills/linkedin-candidate-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-candidate-search-ff25dd12f0ad1074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动使用 Chrome 调试在 LinkedIn 搜索指定职位和地点的候选人，提取并基于云经验等硬性条件智能筛选，避免重复扫描。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianjunye",
+      "userId": "s178x03n0v7kt6nmv474ewqe8983kmk2",
+      "displayName": "qianjunye",
+      "image": "https://avatars.githubusercontent.com/u/3345643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777448590719,
+      "changelog": "Initial release with automated LinkedIn candidate search and structured pre-check process.\n\n- Automates LinkedIn candidate search using Chrome DevTools and Google/LinkedIn dual search.\n- Separates parameters into \"search\" (for query) and \"LLM analysis\" (profile post-processing) layers.\n- Implements a strict pre-check sequence: Chrome session, LinkedIn login, save directory, and workspace validation.\n- Prevents duplicate scans by saving profiles per role in organized local folders.\n- Profiles are parsed, scored (A/B/C) based on hard and soft conditions, and saved as Markdown files.\n- Step-by-step operation with automatic fixes and clear user prompts for missing prerequisites.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18bffba1f7f72cf18afdf439ba6a0e4ff1d311445669f841d9dd088f34d4b326"
+}

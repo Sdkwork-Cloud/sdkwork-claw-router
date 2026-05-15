@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asdsadasd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asdsadasd",
+  "skill": {
+    "id": 27523,
+    "skillKey": "clawhub-asdsadasd",
+    "name": "asdsadasd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asdsadasd",
+    "url": "https://clawhub.ai/skills/asdsadasd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asdsadasd-351a783d7b6550b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An end-to-end AI Content Pipeline that crawls articles, rewrites them using Google Gemini, and automatically publishes to Facebook Fanpage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunneetoichoi",
+      "userId": "publishers:yunneetoichoi",
+      "displayName": "Phan Văn Năng",
+      "image": "https://avatars.githubusercontent.com/u/109004626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773940842205,
+      "changelog": "ai-content-pipeline 2.0.0 introduces an all-in-one automated workflow for AI-based article rewriting and social media publishing.\n\n- Combines web crawling, AI rewriting (Google Gemini), and Facebook posting into a seamless pipeline.\n- Supports extraction from both static news sites and dynamic content (e.g., Facebook) using BeautifulSoup or Apify.\n- Generates engaging, localized captions automatically via Gemini 2.5 Flash.\n- Enables batch processing of URLs and JSON reporting.\n- Simple command-line interface for analyzing, rewriting, and posting content directly to your Facebook Fanpage.\n- Configuration via `.env` file for API and platform integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:321fd0633d8932599b7fde80fceb086be35ff190cfd231ceffb72b17c3e13f30"
+}

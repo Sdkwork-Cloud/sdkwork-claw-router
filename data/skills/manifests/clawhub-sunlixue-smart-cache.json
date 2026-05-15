@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68510,
+  "uuid": "skill-clawhub-sunlixue-smart-cache",
+  "skillKey": "clawhub-sunlixue-smart-cache",
+  "name": "Smart Cache",
+  "summary": "本地智能缓存系统，为AI助手提供语义级别的请求缓存。当用户需要(1)减少重复API调用成本、(2)加速相似问题的响应、(3)创建本地缓存层来优化AI助手性能时使用此技能。支持精确匹配(L1)和语义相似匹配(L2)两种缓存模式。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunlixue_smart_cache",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heimaomao83",
+      "features": [
+        "本地智能缓存系统，为AI助手提供语义级别的请求缓存。当用户需要(1)减少重复API调用成本、(2)加速相似问题的响应、(3)创建本地缓存层来优化AI助手性能时使用此技能。支持精确匹配(L1)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sunlixue-smart-cache@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272205287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sunlixue-smart-cache",
+      "url": "https://clawhub.ai/skills/sunlixue-smart-cache"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunlixue-smart-cache",
+    "url": "https://clawhub.ai/skills/sunlixue-smart-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunlixue-smart-cache-5026fdaf6d592886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sunlixue-smart-cache@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sunlixue-smart-cache-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5bfea5c80625568bfa72ec2a3f834a49f3ca0c9e218513b10b00d7ac4ffeef9",
+      "artifactSizeBytes": 2652
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:29:45.634Z"
+}

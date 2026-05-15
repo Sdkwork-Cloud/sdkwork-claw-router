@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/case-echo@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.case_echo",
+  "skill": {
+    "id": 45709,
+    "skillKey": "clawhub-case-echo",
+    "name": "Case Echo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "case-echo",
+    "url": "https://clawhub.ai/skills/case-echo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/case-echo-7df7558daa4988fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "extract simple structured json fields from a short chinese medical case description. use when the user provides a brief chinese case summary and wants standa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heyheya11",
+      "userId": "s17ej5ghr8j96z6qwz8mt2zpr1840j1m",
+      "displayName": "heyheya11",
+      "image": "https://avatars.githubusercontent.com/u/204634557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775136919666,
+      "changelog": "initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:625a7a66c866e8c2ddf095ad0a68bc21726097b6717862e2cc801a8213ffd2cc"
+}

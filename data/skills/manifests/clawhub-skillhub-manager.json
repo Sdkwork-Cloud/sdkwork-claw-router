@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30116,
+  "uuid": "skill-clawhub-skillhub-manager",
+  "skillKey": "clawhub-skillhub-manager",
+  "name": "SkillHub Manager",
+  "summary": "Manage and publish agent skills on SkillHub and ClawHub. Best for developers and operators who need a repeatable workflow to search skills, inspect packages,...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillhub_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codeblackhole",
+      "features": [
+        "Manage and publish agent skills on SkillHub and ClawHub",
+        "Best for developers and operators who need a repeatable workflow to search skills, inspect pack."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillhub-manager@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39405686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillhub-manager",
+      "url": "https://clawhub.ai/skills/skillhub-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillhub-manager",
+    "url": "https://clawhub.ai/skills/skillhub-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillhub-manager-235fc592c1a6a074.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillhub-manager@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillhub-manager-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d13e2909e482a68273dd174747440273b308cb9d5bda8cbd07a28a368971f617",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T09:03:28.581Z"
+}

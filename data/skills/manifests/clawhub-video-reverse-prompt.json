@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27368,
+  "uuid": "skill-clawhub-video-reverse-prompt",
+  "skillKey": "clawhub-video-reverse-prompt",
+  "name": "Video Reverse Prompt",
+  "summary": "Analyze videos to extract reverse prompts, shot-by-shot breakdowns, and AI-ready visual descriptions via the NanoPhoto.AI Video Reverse Prompt API. Use when:...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_reverse_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NanoPhoto.AI",
+      "features": [
+        "Analyze videos to extract reverse prompts, shot-by-shot breakdowns, and AI-ready visual descrip.",
+        "Use when:..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-reverse-prompt@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260005344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-reverse-prompt",
+      "url": "https://clawhub.ai/skills/video-reverse-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-reverse-prompt",
+    "url": "https://clawhub.ai/skills/video-reverse-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-reverse-prompt-5366271f8233f73b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-reverse-prompt@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-reverse-prompt-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:596c162cab675f5ec9ab17b05e8b0514beccf4602ffcb9f41958740cc36643c1",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T10:47:57.758Z"
+}

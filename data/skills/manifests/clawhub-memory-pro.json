@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16649,
+  "uuid": "skill-clawhub-memory-pro",
+  "skillKey": "clawhub-memory-pro",
+  "name": "memory-pro",
+  "summary": "This skill provides semantic search over your memory files using a local vector database.",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "royhk920",
+      "features": [
+        "This skill provides semantic search over your memory files using a local vector database."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-pro@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129730053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-pro",
+      "url": "https://clawhub.ai/skills/memory-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-pro",
+    "url": "https://clawhub.ai/skills/memory-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-pro-a89d0d2cac943101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-pro@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-pro-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57688455e9b77505de6a2358edf076a11d44b10037aead86c796ea4829d7a258",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:31:40.669Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/esimpal-api@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esimpal_api",
+  "skill": {
+    "id": 21397,
+    "skillKey": "clawhub-esimpal-api",
+    "name": "eSIMPal API Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esimpal-api",
+    "url": "https://clawhub.ai/skills/esimpal-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esimpal-api-f09bc58a40f876c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building or debugging an agent (e.g. Telegram/WhatsApp bot, AI assistant) that integrates with the eSIMPal API to buy eSIMs for end-users, create or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deniurchak",
+      "userId": "publishers:deniurchak",
+      "displayName": "Denis Yurchak",
+      "image": "https://avatars.githubusercontent.com/u/67059948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772545857215,
+      "changelog": "**Stronger safety controls and support for activation approval gates.**\n\n- Added explicit runtime contract: refuse execution if ESIMPAL_API_KEY is missing, or if required user confirmation is not present for purchase/payment/activation actions.\n- Extended approval gating to activation endpoints (`/activate/new` and `/activate/existing`), not just purchase and payment.\n- Introduced `cancel` order endpoint and updated flow steps to reference cancellation.\n- Updated credential/environment variable declarations for clarity and runtime enforcement.\n- Clarified that user confirmation must be action-specific and cannot be bypassed or inferred.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c10fc671a4c91b601a9105e527b36e55f44af0b83f90360c9c23a4675388283b"
+}

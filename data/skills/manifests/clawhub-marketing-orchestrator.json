@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25854,
+  "uuid": "skill-clawhub-marketing-orchestrator",
+  "skillKey": "clawhub-marketing-orchestrator",
+  "name": "Marketing Orchestrator",
+  "summary": "Orchestrates marketing data collection from Instagram, Meta Ads, SEO, competitors, and website audits to generate a comprehensive marketing audit report.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marketing_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adarsh More",
+      "features": [
+        "Orchestrates marketing data collection from Instagram, Meta Ads, SEO, competitors, and website."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/marketing-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103880462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "marketing-orchestrator",
+      "url": "https://clawhub.ai/skills/marketing-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marketing-orchestrator",
+    "url": "https://clawhub.ai/skills/marketing-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marketing-orchestrator-b1157dd1b098626c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/marketing-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-marketing-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d79e81d590ab7c2eb805cf6df189770114f29c64972e73548c72606d311aec85",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:39:27.937Z"
+}

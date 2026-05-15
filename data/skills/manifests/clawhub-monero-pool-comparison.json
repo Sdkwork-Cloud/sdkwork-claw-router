@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33767,
+  "uuid": "skill-clawhub-monero-pool-comparison",
+  "skillKey": "clawhub-monero-pool-comparison",
+  "name": "Monero Pool Comparison",
+  "summary": "Compare Monero mining pools by fees, payout thresholds, methods, privacy, reliability, and choose the best fit for your mining needs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monero_pool_comparison",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liumaimiao",
+      "features": [
+        "Compare Monero mining pools by fees, payout thresholds, methods, privacy, reliability, and choo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monero-pool-comparison@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131150921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monero-pool-comparison",
+      "url": "https://clawhub.ai/skills/monero-pool-comparison"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monero-pool-comparison",
+    "url": "https://clawhub.ai/skills/monero-pool-comparison",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monero-pool-comparison-1ba1b21250b87545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monero-pool-comparison@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monero-pool-comparison-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79f088d63cd1e840f6806d5b4fa14fbbddfbb7d65e15a83c3b8e09cadf6ad875",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:30:52.292Z"
+}

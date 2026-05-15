@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generation-like-grok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generation_like_grok",
+  "skill": {
+    "id": 46932,
+    "skillKey": "clawhub-free-video-generation-like-grok",
+    "name": "Free Video Generation Like Grok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generation-like-grok",
+    "url": "https://clawhub.ai/skills/free-video-generation-like-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generation-like-grok-35aded791257ec65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate text prompts into AI generated videos with this skill. Works with MP4, MOV, WebM, GIF files up to 500MB. content creators use it for generating shor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777171882021,
+      "changelog": "Initial release of \"Free Video Generation Like Grok — Generate AI Videos From Text\".\n\n- Instantly generate 1080p AI videos from text prompts; supports up to 500MB files in MP4, MOV, WebM, and GIF formats.\n- Cloud-based workflow: automatic connection and anonymous token setup (100 free credits / 7 days).\n- Simple user commands for generating, editing, uploading files, checking credits, exporting videos, and session management.\n- Intuitive session management: seamless session creation and tracking for multi-step edits and exports.\n- Exports deliver MP4 (default), with wide format support and a 1–2 minute turnaround per video.\n- Clear, user-focused error handling and workflow summaries throughout the experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be393c4b0ce230a35c77df012deea6d41eb31412efdc4286bf0218be9cd3b273"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-email@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_email",
+  "skill": {
+    "id": 18650,
+    "skillKey": "clawhub-safe-email",
+    "name": "Safe Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-email",
+    "url": "https://clawhub.ai/skills/safe-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-email-f8563232beb1efcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Privacy-first workflow for processing explicitly forwarded emails via IMAP in a dedicated inbox. Use only when the user explicitly asks to process the latest..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitansde",
+      "userId": "s17fyzry42n290bx3rzvz063w584my0j",
+      "displayName": "Nitan SDE",
+      "image": "https://avatars.githubusercontent.com/u/240224320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 443,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773007164017,
+      "changelog": "Scope simplification: removed calendar/reminder requirements and actions. Skill is now extraction-only (IMAP forwarded-email parsing + suggested next steps), with explicit-trigger and optional-deletion safeguards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:164eb8b396b32cdb654efb81efa84eed7c8179cb526fb033082e267ed5ada215"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rate-limit-validator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rate_limit_validator",
+  "skill": {
+    "id": 22129,
+    "skillKey": "clawhub-rate-limit-validator",
+    "name": "Rate Limit Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rate-limit-validator",
+    "url": "https://clawhub.ai/skills/rate-limit-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rate-limit-validator-f12ea3df85810e7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test whether an HTTP endpoint enforces rate limiting. Sends a burst of requests and checks for 429 responses, Retry-After, and X-RateLimit headers. Useful fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techris93",
+      "userId": "s179sve0bc6w9j16r79gb9c1yd83hcr7",
+      "displayName": "Onyedika Christopher Agada",
+      "image": "https://avatars.githubusercontent.com/u/115749095?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772543566292,
+      "changelog": "Initial release of the rate-limit-validator skill.\n\n- Tests if an HTTP endpoint enforces rate limiting by sending a burst of requests and analyzing responses.\n- Checks for HTTP 429 responses, as well as Retry-After and X-RateLimit headers.\n- Useful for validating API/gateway throttling before production deployment.\n- Designed to confirm rate limit middleware or to audit third-party services.\n- Requires curl to run.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f61c3cd8feca7ea3b633e19709dfcdf6558c32464985f1977c8753f0a660b17"
+}

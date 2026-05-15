@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/improvement-evaluator@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.improvement_evaluator",
+  "skill": {
+    "id": 59689,
+    "skillKey": "clawhub-improvement-evaluator",
+    "name": "Improvement Evaluator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "improvement-evaluator",
+    "url": "https://clawhub.ai/skills/improvement-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/improvement-evaluator-5e1d80c26e20e029.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当需要验证 Skill 改进是否真正提升了 AI 执行效果时使用。通过预定义任务集（YAML）运行 AI 任务，判定 pass/fail，输出 execution_pass_rate。不用于文档结构评分（用 improvement-learner）或候选打分（用 improvement-discriminator）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775532681204,
+      "changelog": "v2.1: 13/13 POWERFUL at 92.2%, enriched SKILL.md docs, README added, example tag fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab7c05bd1ec8184e5cc10441540ae19d85c41469e45aa27f3f8c07c28d1382d6"
+}

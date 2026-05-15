@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42581,
+  "uuid": "skill-clawhub-rar-archive-helper",
+  "skillKey": "clawhub-rar-archive-helper",
+  "name": "Unzip Files with WinRAR",
+  "summary": "cross-platform rar and winrar command-line archive handling for windows and linux. use when chatgpt needs to compress or extract archives with rar or winrar,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rar_archive_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mason",
+      "features": [
+        "cross-platform rar and winrar command-line archive handling for windows and linux",
+        "use when chatgpt needs to compress or extract archives with rar or winrar,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rar-archive-helper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43538950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rar-archive-helper",
+      "url": "https://clawhub.ai/skills/rar-archive-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rar-archive-helper",
+    "url": "https://clawhub.ai/skills/rar-archive-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rar-archive-helper-8f992cacb52ca385.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rar-archive-helper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rar-archive-helper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e76282328b34d708e563bc403c896fa0867156b2d491080c1ce0b9b1532e0b69",
+      "artifactSizeBytes": 2656
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T13:10:47.589Z"
+}

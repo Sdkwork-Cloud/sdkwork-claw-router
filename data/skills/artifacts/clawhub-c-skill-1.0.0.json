@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/c-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.c_skill",
+  "skill": {
+    "id": 63711,
+    "skillKey": "clawhub-c-skill",
+    "name": "create skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "c-skill",
+    "url": "https://clawhub.ai/skills/c-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/c-skill-442c373196ecf015.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能创建OpenClaw技能，提供技能发现、复用建议和自适应文件生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangjinghua0127",
+      "userId": "s172r1btf7y9xywd5xpygdffmh83mcq5",
+      "displayName": "Mr.Yang",
+      "image": "https://avatars.githubusercontent.com/u/27726895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774498781057,
+      "changelog": "Initial release of intelligent skill creation wizard for OpenClaw.\n\n- Enables smart discovery of similar skills before creation, with reuse suggestions.\n- Provides adaptive generation of necessary files based on user input.\n- Simplifies the skill creation process through guided interactions.\n- Outputs YAML frontmatter-compliant SKILL.md with key metadata.\n- Designed exclusively for use within the OpenClaw environment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef2d33f06a8bab788ceee0045795cbb7757e4aa125d0b6ed667adf9a00b660b1"
+}

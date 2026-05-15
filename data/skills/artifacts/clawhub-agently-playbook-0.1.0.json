@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agently-playbook@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agently_playbook",
+  "skill": {
+    "id": 34903,
+    "skillKey": "clawhub-agently-playbook",
+    "name": "Agently Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agently-playbook",
+    "url": "https://clawhub.ai/skills/agently-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agently-playbook-261198ffd3ceea91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to build, initialize, validate, optimize, or refactor a model-powered assistant, internal tool, automation, evaluator, or workflow fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maplemx",
+      "userId": "publishers:maplemx",
+      "displayName": "Maplemx",
+      "image": "https://avatars.githubusercontent.com/u/4413155?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773917583560,
+      "changelog": "Initial release of agently-playbook.\n\n- Introduces a skill for building, initializing, validating, optimizing, or refactoring model-powered assistants, internal tools, automations, or workflows from high-level business scenarios.\n- Establishes a workflow to clarify goals, select owner layer, repo skeleton, and appropriate Agently capability path.\n- Defines routing rules for specialized tasks like model setup, prompt management, output control, orchestration, and migrations.\n- Emphasizes async-first patterns and discourages early low-level implementation or custom orchestration.\n- Provides anti-patterns to avoid during early solution shaping.\n- Lists relevant references for further guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94e19295f00875b7df47e4c1cc9379c662be75713dde55d98963e63a3aaecfbf"
+}

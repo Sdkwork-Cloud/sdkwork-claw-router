@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-highlights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_highlights",
+  "skill": {
+    "id": 46267,
+    "skillKey": "clawhub-ai-video-editor-highlights",
+    "name": "Ai Video Editor Highlights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-highlights",
+    "url": "https://clawhub.ai/skills/ai-video-editor-highlights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-highlights-b0f2e87507e7a347.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get highlight reel clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777084953542,
+      "changelog": "AI Video Editor Highlights 1.0.0 — initial release.\n\n- Instantly extract and export video highlights using AI, with no manual editing.\n- Upload raw footage (MP4, MOV, AVI, WebM; up to 500MB), instruct the AI, and receive a compiled 1080p MP4 highlight reel.\n- Built for sports creators, event videographers, and YouTubers needing fast highlight extraction.\n- Simple session and token handling—automatic sign-in with a free starter token if needed.\n- Supports file upload, credits/balance checks, real-time session monitoring, and cloud-accelerated rendering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2aba2483ecc7fec7d7108219a137f7755291ce01089b2f00364113d93c48fded"
+}

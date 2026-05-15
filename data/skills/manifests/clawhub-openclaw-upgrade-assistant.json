@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58785,
+  "uuid": "skill-clawhub-openclaw-upgrade-assistant",
+  "skillKey": "clawhub-openclaw-upgrade-assistant",
+  "name": "OpenClaw 升级前影响评估工具",
+  "summary": "深度分析 OpenClaw 版本更新对现有配置的影响，生成兼容性报告并精准备份受影响文件。Invoke when user asks to analyze OpenClaw updates, check upgrade compatibility, or backup configs before upgrading.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_upgrade_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adgai115",
+      "features": [
+        "深度分析 OpenClaw 版本更新对现有配置的影响，生成兼容性报告并精准备份受影响文件。Invoke when user asks to analyze OpenClaw updates,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-upgrade-assistant@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226634751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-upgrade-assistant",
+      "url": "https://clawhub.ai/skills/openclaw-upgrade-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-upgrade-assistant",
+    "url": "https://clawhub.ai/skills/openclaw-upgrade-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-upgrade-assistant-e1a94a433eae42e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-upgrade-assistant@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-upgrade-assistant-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8173ee1e2eb975902017a751aa1599b5e21261b84ef3187b99baeb4f3b21209d",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:49:53.391Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43141,
+  "uuid": "skill-clawhub-pitch-amplifier",
+  "skillKey": "clawhub-pitch-amplifier",
+  "name": "Pitch Amplifier",
+  "summary": "Turn a vague reporting clue, observation, or topic hunch into a deeper news pitch by extracting entities, retrieving 1-2 hop context from a city knowledge gr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pitch_amplifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangzuomin2019",
+      "features": [
+        "Turn a vague reporting clue, observation, or topic hunch into a deeper news pitch by extracting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pitch-amplifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177852965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pitch-amplifier",
+      "url": "https://clawhub.ai/skills/pitch-amplifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pitch-amplifier",
+    "url": "https://clawhub.ai/skills/pitch-amplifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pitch-amplifier-de4aab5eb7439f10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pitch-amplifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pitch-amplifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:888ecaf56c3a3b9bae193ce2c6f192518a9e21a54a795e10b8de7ff37f22b3f6",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T17:15:59.362Z"
+}

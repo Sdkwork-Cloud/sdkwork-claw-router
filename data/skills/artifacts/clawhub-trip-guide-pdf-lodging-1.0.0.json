@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-guide-pdf-lodging@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_guide_pdf_lodging",
+  "skill": {
+    "id": 46117,
+    "skillKey": "clawhub-trip-guide-pdf-lodging",
+    "name": "Trip Guide PDF Lodging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-guide-pdf-lodging",
+    "url": "https://clawhub.ai/skills/trip-guide-pdf-lodging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-guide-pdf-lodging-1adcb9d91253c6dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research, plan, revise, and deliver lodging-anchored travel guides as HTML/PDF with verified route data, hotel selection, fallback hotel swaps, curated scree..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allensu0314",
+      "userId": "s175kt7cgm5y4gjpcdtdzemfhd83wsdy",
+      "displayName": "oldShade",
+      "image": "https://avatars.githubusercontent.com/u/13867741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775206798375,
+      "changelog": "Initial release: lodging-anchored travel guide research and HTML/PDF workflow with verified route data and hotel-swap revision logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38dfb354c7cd21cf00262637e105d043b6e9ca7197c67326e16ecdc9f8e9650b"
+}

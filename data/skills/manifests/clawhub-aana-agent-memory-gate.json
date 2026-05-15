@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34707,
+  "uuid": "skill-clawhub-aana-agent-memory-gate",
+  "skillKey": "clawhub-aana-agent-memory-gate",
+  "name": "AANA Agent Memory Gate Skill",
+  "summary": "Manages user memory operations by validating relevance, sensitivity, source, approval, and lifecycle before storing, reusing, editing, importing, exporting,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_agent_memory_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Manages user memory operations by validating relevance, sensitivity, source, approval, and life."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-agent-memory-gate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-agent-memory-gate",
+      "url": "https://clawhub.ai/skills/aana-agent-memory-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-agent-memory-gate",
+    "url": "https://clawhub.ai/skills/aana-agent-memory-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-agent-memory-gate-a94d80f3cb0c315f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-agent-memory-gate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-agent-memory-gate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:322bc50731774b326bbf372fc78919307085290e13e6d17e0577c20f8aaac866",
+      "artifactSizeBytes": 2519
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:57:08.315Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kagi-summarizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kagi_summarizer",
+  "skill": {
+    "id": 17802,
+    "skillKey": "clawhub-kagi-summarizer",
+    "name": "Kagi Summarizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kagi-summarizer",
+    "url": "https://clawhub.ai/skills/kagi-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kagi-summarizer-180f54cbda9e7322.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize any URL or text using Kagi's Universal Summarizer API. Supports multiple engines (including the enterprise-grade Muriel model), bullet-point takeaw..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joelazar",
+      "userId": "publishers:joelazar",
+      "displayName": "Jozsef Lazar",
+      "image": "https://avatars.githubusercontent.com/u/16268238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 744,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771686284784,
+      "changelog": "- Summarize any URL or text using Kagi's Universal Summarizer API, supporting articles, papers, PDFs, video transcripts, and more.\n- Choose between multiple summarization engines (friendly, formal, or enterprise-grade quality).\n- Output options include prose summary, bullet-point takeaways, and translation to 28 languages.\n- Supports JSON output, caching, HTTP timeout configuration, and easy installation via pre-built binaries or from source.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:565deb71a0b53c212914a4ede6c472840f60ff7775e0c4977fc99ec80add8c72"
+}

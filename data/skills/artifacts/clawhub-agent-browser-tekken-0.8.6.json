@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-tekken@0.8.6",
+  "version": "0.8.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_tekken",
+  "skill": {
+    "id": 9193,
+    "skillKey": "clawhub-agent-browser-tekken",
+    "name": "Agent Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-tekken",
+    "url": "https://clawhub.ai/skills/agent-browser-tekken",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-tekken-1710f1c11a943a36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates browser interactions for web testing, form filling, screenshots, and data extraction. Use when the user needs to navigate websites, interact with web pages, fill forms, take screenshots, test web applications, or extract informat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tekkenkk",
+      "userId": "s171abkdt47v8rwqstp6dep0zh83gck6",
+      "displayName": "tekkenKK",
+      "image": "https://avatars.githubusercontent.com/u/137667712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3766,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.8.6",
+      "createdAt": 1769925873416,
+      "changelog": "- Added comprehensive SKILL.md usage guide with detailed command explanations and examples.\n- Documented workflows for browser navigation, interaction, automation, and information extraction.\n- Included instructions for advanced features: video recording, semantic locators, network interception, and browser settings customization.\n- Clarified the use of element references and alternative semantic selectors.\n- Outlined management of tabs, windows, frames, dialogs, cookies, storage, and global options.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59d4f5ff3e5e6e464fc478cd498dc23e950ca474dad8c47a6c7d81897839ebe1"
+}

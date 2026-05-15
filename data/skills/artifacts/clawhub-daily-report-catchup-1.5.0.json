@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-report-catchup@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_report_catchup",
+  "skill": {
+    "id": 57577,
+    "skillKey": "clawhub-daily-report-catchup",
+    "name": "码虫日报补课系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-report-catchup",
+    "url": "https://clawhub.ai/skills/daily-report-catchup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-report-catchup-bd4e1833f759488e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detects missed daily reports, regenerates missing ones, updates the index, and logs reflections for seamless report catch-up management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "colbertlee",
+      "userId": "s17czvdf5kq47c4r80rv4t9pds857ye5",
+      "displayName": "colbertlee",
+      "image": "https://avatars.githubusercontent.com/u/60634777?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1776692716869,
+      "changelog": "修复 KeyError、exit code、symlink 警告；新增模板和集成说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5eb779cccb6e59f2a9564c8f3c8883ce99db069869852e9512a7e13fcd9ea5b"
+}

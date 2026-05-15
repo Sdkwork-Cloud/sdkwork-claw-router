@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37022,
+  "uuid": "skill-clawhub-bicycle-shops",
+  "skillKey": "clawhub-bicycle-shops",
+  "name": "Nearby Bicycle Shops",
+  "summary": "Find nearby bicycle shops. Invoke when user asks for bike shops near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bicycle_shops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Find nearby bicycle shops",
+        "Invoke when user asks for bike shops near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bicycle-shops@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bicycle-shops",
+      "url": "https://clawhub.ai/skills/bicycle-shops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bicycle-shops",
+    "url": "https://clawhub.ai/skills/bicycle-shops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bicycle-shops-2b7cbab3df865147.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bicycle-shops@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bicycle-shops-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ac5784507d84a6d645947f1c960d9910d5577b9ff5e9a115451b5827f41ddc5",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:47:23.710Z"
+}

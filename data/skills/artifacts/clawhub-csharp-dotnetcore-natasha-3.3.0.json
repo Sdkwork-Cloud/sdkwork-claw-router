@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/csharp-dotnetcore-natasha@3.3.0",
+  "version": "3.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csharp_dotnetcore_natasha",
+  "skill": {
+    "id": 38470,
+    "skillKey": "clawhub-csharp-dotnetcore-natasha",
+    "name": "Csharp Dotnetcore Natasha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csharp-dotnetcore-natasha",
+    "url": "https://clawhub.ai/skills/csharp-dotnetcore-natasha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csharp-dotnetcore-natasha-003330e4eb3898b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when developers need to create dynamic C# features at runtime, including dynamic class generation, dynamic method creation, accessi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nmsazulxxiaohao",
+      "userId": "s17dd6m89vkjh3b2m11n25r1zh83wc4e",
+      "displayName": "NMSAzulXXiaoHao",
+      "image": "https://avatars.githubusercontent.com/u/267565249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.3.0",
+      "createdAt": 1774843764684,
+      "changelog": "csharp-dotnetcore-natasha 3.3.0\n\n- Added an extensive SKILL.md with clear documentation on dynamic runtime C# code generation using Natasha.\n- Details provided for three distinct compilation modes: Smart Mode, Simple Mode, and Custom Compilation Mode.\n- Included setup instructions, code samples, and explanations for each usage scenario.\n- Outlined prerequisites, supported frameworks (.NET Core 3.1+ through .NET 8.0+), and optimization strategies.\n- Clarified common workflows, cache usage, and fine-grained metadata management options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a0aa8c6a24afff259dfb9aa2cac8d6abc592a04211c7e0e0c81d8096ef88626"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-file-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_file_organizer",
+  "skill": {
+    "id": 69326,
+    "skillKey": "clawhub-local-file-organizer",
+    "name": "本地文件整理虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-file-organizer",
+    "url": "https://clawhub.ai/skills/local-file-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-file-organizer-10ec6d4768228314.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地文件整理虾 — 自动分类、重命名并归档本地文件。 当以下情况时使用此 Skill： (1) 需要自动整理本地目录（下载文件夹、桌面、项目归档等） (2) 需要按文件类型分类（文档/图片/视频/音频/压缩包/代码） (3) 需要检测并清理重复文件 (4) 需要批量重命名文件，统一命名格式 (5) 用户提到\"整理..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776667750020,
+      "changelog": "初始版本：支持按文件类型自动分类、重复文件检测、批量整理，内置分类规则库和命名规范模板",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9292550cefac66d4b0bd1592cc6daaa0c7f999da6aa1290a3fa8d6d861892bf"
+}

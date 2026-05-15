@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49199,
+  "uuid": "skill-clawhub-ping-monitor-hardened",
+  "skillKey": "clawhub-ping-monitor-hardened",
+  "name": "Ping Monitor Hardened",
+  "summary": "ICMP health check for hosts, phones, and daemons",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ping_monitor_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "ICMP health check for hosts, phones, and daemons"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ping-monitor-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ping-monitor-hardened",
+      "url": "https://clawhub.ai/skills/ping-monitor-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ping-monitor-hardened",
+    "url": "https://clawhub.ai/skills/ping-monitor-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ping-monitor-hardened-a97c7c5a0c24428d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ping-monitor-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ping-monitor-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48af058224d6166f9b05aec2985ec5e39c1a28e9ed97afbbef4d561d295440ad",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T10:01:13.473Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-smart-task-scheduler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_smart_task_scheduler",
+  "skill": {
+    "id": 47791,
+    "skillKey": "clawhub-skylv-smart-task-scheduler",
+    "name": "Skylv Smart Task Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-smart-task-scheduler",
+    "url": "https://clawhub.ai/skills/skylv-smart-task-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-smart-task-scheduler-73705fd6374b28d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Context-aware task scheduling with priority management"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777855937572,
+      "changelog": "Initial release: context-aware task scheduler for flexible, condition-driven automation.\n\n- Schedule tasks to run not only by time, but also based on file changes, API readiness, or custom conditions.\n- Supports multiple trigger types: cron, interval, file-watch, rate-limit, manual, and one-time execution.\n- Flexible condition logic: only run tasks when specific files exist, APIs are ready, or within defined time windows.\n- Includes command line options for running, listing, and watching tasks in real-time.\n- Provides a robust alternative to fixed-time-only schedulers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd0ad577e4b3330cb57ae164300db322157cff8be79f61609ea37161d2bf2666"
+}

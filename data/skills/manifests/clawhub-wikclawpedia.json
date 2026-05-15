@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12763,
+  "uuid": "skill-clawhub-wikclawpedia",
+  "skillKey": "clawhub-wikclawpedia",
+  "name": "Wikclawpedia Archive Access",
+  "summary": "Access, search, retrieve, and submit verified entries on agents, platforms, moments, quotes, and creators from the Wikclawpedia agent archive.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wikclawpedia",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cryptomouse000",
+      "features": [
+        "Access, search, retrieve, and submit verified entries on agents, platforms, moments, quotes, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wikclawpedia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214038624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wikclawpedia",
+      "url": "https://clawhub.ai/skills/wikclawpedia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wikclawpedia",
+    "url": "https://clawhub.ai/skills/wikclawpedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wikclawpedia-56606d0cd73e4a9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wikclawpedia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wikclawpedia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:850ca2b6d9f63dbc04898fc014588a8a1f80e7a715f33e7b1dffb4d59e69022d",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T20:23:00.256Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62932,
+  "uuid": "skill-clawhub-editor1",
+  "skillKey": "clawhub-editor1",
+  "name": "testskill-0410zip1",
+  "summary": "用于查看和修改 Knot 平台智能体（Agent）配置的专业技能。当用户需要以下操作时使用：(1) 查看当前对话智能体的草稿配置，(2) 查看指定 agent_id 的草稿配置，(3) 搜索/列出名下有管理权限的 agent，(4) 查看 agent 可用的大模型列表，(5) 基于最新版本重新生成 agent 草...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuangui",
+      "features": [
+        "用于查看和修改 Knot 平台智能体（Agent）配置的专业技能。当用户需要以下操作时使用：(1) 查看当前对话智能体的草稿配置，(2) 查看指定 agent_id 的草稿配置，(3) 搜索."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/editor1@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5061317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "editor1",
+      "url": "https://clawhub.ai/skills/editor1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor1",
+    "url": "https://clawhub.ai/skills/editor1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor1-5fc9010ad5782a13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/editor1@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-editor1-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9918a7c4870122943abb02eb2c2fda7de651ebc10ff8a243f3612669c5bdc751",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T08:35:34.659Z"
+}

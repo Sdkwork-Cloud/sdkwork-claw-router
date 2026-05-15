@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_cn",
+  "skill": {
+    "id": 63934,
+    "skillKey": "clawhub-humanizer-cn",
+    "name": "humanizer-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-cn",
+    "url": "https://clawhub.ai/skills/humanizer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-cn-f962330d87487471.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "去除中文文本中的 AI 写作痕迹，使其读起来自然。基于维基百科 AI 写作特征指南，检测 24 种 AI 模式。触发词：humanizer-cn、去除 AI 痕迹、去除 AI 写作痕迹、中文文本人性化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xcjl",
+      "userId": "s17c0swjv7p83sgyqfwvqqkbed83hk19",
+      "displayName": "Jialin",
+      "image": "https://avatars.githubusercontent.com/u/38884292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775278524993,
+      "changelog": "- 首次发布 humanizer-cn 1.0.0。\n- 去除中文文本中的 AI 写作痕迹，输出自然语言。\n- 基于维基百科 AI 写作特征指南，涵盖 24 种典型 AI 模式检测。\n- 提供详细用例与质量评分标准，确保文本更加精炼、人性化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbff95cf42a3d93cdbc969e54045c7fa8040c9ab84b8842db792978a3ca2b3ad"
+}

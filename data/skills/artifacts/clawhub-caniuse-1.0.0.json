@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caniuse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caniuse",
+  "skill": {
+    "id": 46520,
+    "skillKey": "clawhub-caniuse",
+    "name": "can i use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caniuse",
+    "url": "https://clawhub.ai/skills/caniuse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caniuse-04bc790ac312bd7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query browser compatibility for CSS/JS features using caniuse-cli. Use when user asks about browser support, compatibility, \"can I use X\", \"does X work in IE..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouqicf",
+      "userId": "s179rvw8p2a30bkaty0331xqx984fz77",
+      "displayName": "周祺",
+      "image": "https://avatars.githubusercontent.com/u/436305?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775962281361,
+      "changelog": "caniuse skill 1.0.0 – Initial Release\n\n- Provides browser compatibility queries for CSS/JS features via caniuse-cli.\n- Includes detailed mapping of common feature names to caniuse queries.\n- Offers installation guidance if caniuse-cli is missing.\n- Explains how to present results and highlight key compatibility findings.\n- Gives fallback instructions if a feature is not found in the database.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2acc74f7dfdf9fe7d1ac672c0c464b480eb6884b6204a42fa7b002abef6ffc50"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-relation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_relation",
+  "skill": {
+    "id": 62578,
+    "skillKey": "clawhub-openclaw-relation",
+    "name": "openclaw-relation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-relation",
+    "url": "https://clawhub.ai/skills/openclaw-relation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-relation-4364bb6d437293f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 完整文档知识库。涵盖安装、配置、Gateway 网关、渠道、节点、CLI 命令、自动化、安全等所有核心功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aetik-yue",
+      "userId": "s1713a6pccstx5c7yk69mm370h84vdt5",
+      "displayName": "Aetik",
+      "image": "https://avatars.githubusercontent.com/u/79252578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773106692518,
+      "changelog": "openclaw-relation 1.0.0\n\n- 首次发布，覆盖 OpenClaw 全面官方文档知识，包括安装、配置、Gateway 网关、渠道、节点、CLI 命令、自动化与安全等核心功能。\n- 支持详细的多渠道对接、插件扩展、移动节点配对、Web 控制界面、自动化及安全配置说明。\n- 提供丰富的 CLI 命令参考、常见问题与故障排除、最佳实践及配置样例。\n- 集成官方文档和社区资源链接，便于进一步查阅和支持。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2d75d59bc94fc08b86024f9a49d0d0072a31f0399a0367ca650ea8a54d89a86"
+}

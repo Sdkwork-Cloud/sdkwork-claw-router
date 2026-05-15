@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72598,
+  "uuid": "skill-clawhub-gold-price",
+  "skillKey": "clawhub-gold-price",
+  "name": "黄金价格查询",
+  "summary": "查询当前黄金大盘价格。用于回答关于黄金价格、金价走势、贵金属行情的问题。包括国内金价（银行金条、回收价、首饰品牌价）和国际金价。不需要 API key。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaojuhao1020-debug",
+      "features": [
+        "查询当前黄金大盘价格。用于回答关于黄金价格、金价走势、贵金属行情的问题。包括国内金价（银行金条、回收价、首饰品牌价）和国际金价。不需要 API key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gold-price@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235069942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gold-price",
+      "url": "https://clawhub.ai/skills/gold-price"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price",
+    "url": "https://clawhub.ai/skills/gold-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-69ad44a0c0daafb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gold-price@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gold-price-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:904a754a4a9e9b4e3ba659fe3db0ee7cd3fe0a39518d3b0881eab35652327b40",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T06:13:35.315Z"
+}

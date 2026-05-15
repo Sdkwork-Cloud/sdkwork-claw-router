@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-image-to-video-generator-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_image_to_video_generator_ai",
+  "skill": {
+    "id": 46631,
+    "skillKey": "clawhub-free-image-to-video-generator-ai",
+    "name": "Free Image To Video Generator Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-image-to-video-generator-ai",
+    "url": "https://clawhub.ai/skills/free-image-to-video-generator-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-image-to-video-generator-ai-816b5ac96ce454cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, GIF files up to 200MB. social media creators use it for converting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776239662486,
+      "changelog": "Initial release: Free Image to Video Generator AI skill\n\n- Convert still images (JPG, PNG, WEBP, GIF up to 200MB) into 1080p MP4 videos in 30–60 seconds via cloud GPU.\n- Automated session and token setup with 100 free credits and 7-day expiry.\n- Supports uploads, timeline edits, credits check, export, and state queries through simple commands.\n- Error handling for tokens, sessions, credits, file limits, and rate limits.\n- Exports in multiple formats (MP4, MOV, AVI, WEBM, MKV, JPG, PNG, GIF, WEBP, MP3, WAV, M4A, AAC).\n- Designed for quick, easy AI-powered video creation from images, ideal for social media content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdea5539e50437f44d3b0eda9bef2744a9148cb3b54afe3631c30250b27d107b"
+}

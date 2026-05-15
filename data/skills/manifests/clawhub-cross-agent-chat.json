@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59813,
+  "uuid": "skill-clawhub-cross-agent-chat",
+  "skillKey": "clawhub-cross-agent-chat",
+  "name": "Cross Agent Chat",
+  "summary": "实现不同 agent 间的标准化消息发送与接收，支持查询目标 session 并通过 sessions_send 进行跨 agent 通信。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_agent_chat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ebly",
+      "features": [
+        "实现不同 agent 间的标准化消息发送与接收，支持查询目标 session 并通过 sessions_send 进行跨 agent 通信。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-agent-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5242545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-agent-chat",
+      "url": "https://clawhub.ai/skills/cross-agent-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-agent-chat",
+    "url": "https://clawhub.ai/skills/cross-agent-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-agent-chat-4c5d8438865aac66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-agent-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-agent-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d295b294847f55e89a885334e2b1a30ffd436ec72c06ddfca80bc0fab5a412b",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T19:24:36.049Z"
+}

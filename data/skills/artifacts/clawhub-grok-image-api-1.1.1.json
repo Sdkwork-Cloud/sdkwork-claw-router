@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grok-image-api@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_image_api",
+  "skill": {
+    "id": 23733,
+    "skillKey": "clawhub-grok-image-api",
+    "name": "Grok Image API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-image-api",
+    "url": "https://clawhub.ai/skills/grok-image-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-image-api-3abcc2c5ef1b5cc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with OpenAI-compatible image generation and image editing endpoints. Use when the user wants to generate images from prompts, edit images with prompts a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaolozee",
+      "userId": "publishers:xiaolozee",
+      "displayName": "XiaoLozee",
+      "image": "https://avatars.githubusercontent.com/u/71216589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1772964330033,
+      "changelog": "Make the public skill more generic: remove local secrets wrapper, remove fixed workspace paths, and document environment-driven configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:52678f2c67e6c9e69138aefae490ed3205e8aa4b247b8eaeca8a10328bade64f"
+}

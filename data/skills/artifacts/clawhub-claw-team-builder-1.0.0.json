@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-team-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_team_builder",
+  "skill": {
+    "id": 60294,
+    "skillKey": "clawhub-claw-team-builder",
+    "name": "Agent Team 构建器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-team-builder",
+    "url": "https://clawhub.ai/skills/claw-team-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-team-builder-2ba9d0b220780cad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent Team 规划与配置工具。通过多轮交互澄清需求，自动创建 Agent 配置、工作空间、Bootstrap 文件。 触发场景： - 用户说\"创建新 Agent\" / \"新建 bot\" / \"配置多个 bot\" - 用户说\"规划 agent team\" / \"我需要几个不同的 agent\" - 用户说\"添..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "8421bit",
+      "userId": "s17dbkw01wkbnvytaa0n8m25rs83hz0n",
+      "displayName": "8421bit",
+      "image": "https://avatars.githubusercontent.com/u/61646827?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772805310298,
+      "changelog": "通过引导式对话规划并创建 Agent Team，自动生成配置文件",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4bd7a52bbc8e8a709ca9b885912c88a16d45b1d060bbdbdfdc6326ff3de36350"
+}

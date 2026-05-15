@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57699,
+  "uuid": "skill-clawhub-bilibili-video-extractor",
+  "skillKey": "clawhub-bilibili-video-extractor",
+  "name": "bilibili-video-extractor（B站（bilibili）视频分析专家）",
+  "summary": "Extract and analyze Bilibili video data, decode user comments, reveal why videos go viral, and provide actionable content and title ideas for creators.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "if530770",
+      "features": [
+        "Extract and analyze Bilibili video data, decode user comments, reveal why videos go viral, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-video-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46310539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-video-extractor",
+      "url": "https://clawhub.ai/skills/bilibili-video-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-extractor",
+    "url": "https://clawhub.ai/skills/bilibili-video-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-extractor-125869d484e217ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-video-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-video-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:328db4ef803c62381c265d66d83f634c48d228bbd4e76486e41cc7dfc0f1458c",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T10:33:10.793Z"
+}

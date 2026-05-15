@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/studying@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.studying",
+  "skill": {
+    "id": 13016,
+    "skillKey": "clawhub-studying",
+    "name": "Studying"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "studying",
+    "url": "https://clawhub.ai/skills/studying",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/studying-435c149cbc6a5e5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-learns your study habits for academic success. Adapts techniques, timing, and materials to you."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1275,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771184131439,
+      "changelog": "Preferences now persist across skill updates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a4f49c6bcb9c76868033401fabb02604877caf7cf64afd3f8d6242eca609d11"
+}

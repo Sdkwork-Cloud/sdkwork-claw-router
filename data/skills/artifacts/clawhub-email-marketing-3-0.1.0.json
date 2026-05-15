@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-marketing-3@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_marketing_3",
+  "skill": {
+    "id": 67085,
+    "skillKey": "clawhub-email-marketing-3",
+    "name": "Email Marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-marketing-3",
+    "url": "https://clawhub.ai/skills/email-marketing-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-marketing-3-3b0e5640fc8cc214.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "执行邮件营销任务，包括群发营销邮件、自动化回信监控、FAQ 知识库智能匹配、语种自动对齐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlrlyy",
+      "userId": "s17ey0da7bwkypvdpt9r5r1x9x83ha8s",
+      "displayName": "zlrlyy",
+      "image": "https://avatars.githubusercontent.com/u/78633588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772445373486,
+      "changelog": "- Initial release of email-marketing skill with support for personalized bulk emailing, auto-reply monitoring, FAQ-based intelligent responses, and language alignment for business etiquette.\n- Automates reading contact lists from Excel, dynamic content replacement, and simulates human-like sending behaviors to reduce spam risk.\n- Ensures only questions with clear answers in the FAQ receive replies and prevents duplicate or ambiguous responses.\n- Provides scripts and guidelines for sending, replying, and generating reports.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eeebe8895f4ee41477d7743fd57e97b79de2e5e7b4d1f2a5875c2392d322ce76"
+}

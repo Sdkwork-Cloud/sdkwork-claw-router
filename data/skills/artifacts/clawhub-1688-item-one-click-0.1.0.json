@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1688-item-one-click@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_item_one_click",
+  "skill": {
+    "id": 71393,
+    "skillKey": "clawhub-1688-item-one-click",
+    "name": "1688 Item One Click"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-item-one-click",
+    "url": "https://clawhub.ai/skills/1688-item-one-click",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-item-one-click-a3a3422e990ddeb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "1688 商品一键操作 —— 提供商品快速修改能力，支持一键修改标题、主图和发布会员号动态。 工具能力：修改商品标题、修改商品主图、发布会员号动态，传入商品ID和新内容即可完成操作。 触发词：修改标题、改标题、换标题、修改主图、换主图、一键修改、商品修改、发动态、会员号动态、私域营销、上新通知。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1688aiinfra",
+      "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+      "displayName": "1688AiInfra",
+      "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 56,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778319986621,
+      "changelog": "Initial release of 1688-item-one-click skill:\n\n- Provides one-click item operations for 1688: modify product title, main image, and publish Member post.\n- Introduces a strict 2-step process: before_check (pre-check, including agreement signing), then execute (perform change after user confirmation).\n- Supports title, main image, limited-time discount, and Member post editing via CLI.\n- Enforces safe workflow—no write operations unless before_check passes and user confirms.\n- Includes CLI commands, full usage guides, output formats, failure handling instructions, and environment variable/configuration documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46a8addf92f66a5ec44060b560b263e5ac437d1660f4e6fae805b7176d27ccbe"
+}

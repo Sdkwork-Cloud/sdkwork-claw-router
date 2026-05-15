@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57253,
+  "uuid": "skill-clawhub-xhs-content-creator",
+  "skillKey": "clawhub-xhs-content-creator",
+  "name": "小红书内容创作",
+  "summary": "Generate Xiaohongshu (小红书/RED) content optimized for the platform's CES algorithm. Use when: (1) creating xiaohongshu/小红书 posts, (2) writing Chinese social m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_content_creator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "372768498",
+      "features": [
+        "Generate Xiaohongshu (小红书/RED) content optimized for the platform's CES algorithm",
+        "Use when: (1) creating xiaohongshu/小红书 posts, (2) writing Chinese social m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-content-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41884301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-content-creator",
+      "url": "https://clawhub.ai/skills/xhs-content-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-content-creator",
+    "url": "https://clawhub.ai/skills/xhs-content-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-content-creator-07967f0678985528.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-content-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-content-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a15affd13e8bd0c95cceaf72a6cc1da3c467a16298fde71c85db6cfa49120af",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T12:27:12.351Z"
+}

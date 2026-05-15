@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16850,
+  "uuid": "skill-clawhub-cold-outreach-skill",
+  "skillKey": "clawhub-cold-outreach-skill",
+  "name": "Cold Outreach Skill",
+  "summary": "Orchestrates Apollo, LinkedIn, YC Cold Outreach, and MachFive APIs to source leads, enrich profiles, create personalized B2B outreach sequences ready for sen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cold_outreach_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hagen Hoferichter",
+      "features": [
+        "Orchestrates Apollo, LinkedIn, YC Cold Outreach, and MachFive APIs to source leads, enrich prof."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cold-outreach-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12556763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cold-outreach-skill",
+      "url": "https://clawhub.ai/skills/cold-outreach-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cold-outreach-skill",
+    "url": "https://clawhub.ai/skills/cold-outreach-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cold-outreach-skill-2814891651b87119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cold-outreach-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cold-outreach-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:988d20acd4c35bbcaff4169286be289ac02a07a8b10756f403e280c299d859aa",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T13:41:05.479Z"
+}

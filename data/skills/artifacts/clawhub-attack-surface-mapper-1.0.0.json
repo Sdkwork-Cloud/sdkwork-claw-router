@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attack-surface-mapper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attack_surface_mapper",
+  "skill": {
+    "id": 52945,
+    "skillKey": "clawhub-attack-surface-mapper",
+    "name": "Attack Surface Mapper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attack-surface-mapper",
+    "url": "https://clawhub.ai/skills/attack-surface-mapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attack-surface-mapper-a1a747f3cc32b2ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Purple team — map agent's full attack surface by combining red team probes and blue team detections. Identify defense coverage gaps and prioritize hardening."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arhadnane",
+      "userId": "s17atsjv2c1a86fqvanj1x35as83yc1w",
+      "displayName": "Adnane Arharbi",
+      "image": "https://avatars.githubusercontent.com/u/14889338?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775253087651,
+      "changelog": "- Initial release of Attack Surface Mapper skill.\n- Maps an agent’s full attack surface by merging red team probes and blue team detections.\n- Identifies and scores defense coverage gaps across defined surface categories (channels, skills, tools, models, memory, inter-agent, supply chain).\n- Generates a prioritized hardening plan and outputs a detailed coverage matrix.\n- Operates read-only, storing results confidentially and providing actionable recommendations for security posture improvement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:768603f4add8b68238678b0fbec5616757f3dbc2b3cca99e1905c53cfea12cb1"
+}

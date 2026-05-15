@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/night-patch@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.night_patch",
+  "skill": {
+    "id": 69849,
+    "skillKey": "clawhub-night-patch",
+    "name": "NightPatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "night-patch",
+    "url": "https://clawhub.ai/skills/night-patch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/night-patch-a30dd14b1ee58bbf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动检测并夜间修复工作流中的低风险问题，支持一键回滚且不影响生产环境。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teachers10086",
+      "userId": "publishers:teachers10086",
+      "displayName": "teachers10086",
+      "image": "https://avatars.githubusercontent.com/u/168104056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 739,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771452696488,
+      "changelog": "night-patch v1.0.2\n\n- 更新文件访问说明：新增将 shell alias 写入 ~/.bashrc 而非 ~/.bash_aliases，以提升兼容性，并以注释说明原因\n- 其余内容无变化",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ce0e205a56431aefe7f9a3c0409b2118b5ca1e5b977790dbcf9cfa3d3ab639d"
+}

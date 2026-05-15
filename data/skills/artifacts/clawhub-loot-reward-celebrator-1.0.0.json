@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loot-reward-celebrator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loot_reward_celebrator",
+  "skill": {
+    "id": 43273,
+    "skillKey": "clawhub-loot-reward-celebrator",
+    "name": "Loot Reward Celebrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loot-reward-celebrator",
+    "url": "https://clawhub.ai/skills/loot-reward-celebrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loot-reward-celebrator-9271d46e718e7491.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help the user close the loop after effort by turning a completed task into a loot table, a fair reward plan, a visible record of the win, and a sensible next..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776250972373,
+      "changelog": "Initial release of loot-reward-celebrator skill.\n\n- Provides a structured way to celebrate completed tasks and milestones using a loot table and fair reward planning.\n- Guides users to select sustainable, healthy, and value-aligned rewards.\n- Helps make wins visible and meaningful without encouraging unhealthy or costly behaviors.\n- Suggests next unlock conditions to motivate continued progress.\n- Delivers outputs in markdown, including loot tables, reward suggestions, visible records, and sustainability guardrails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5f797b9c835c2099b249c2e3c32e449f1aacd74ad6ee8b552ad977b57afe7cc"
+}

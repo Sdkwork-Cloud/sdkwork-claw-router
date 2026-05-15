@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-imdb-title-countries-of-origin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_imdb_title_countries_of_origin",
+  "skill": {
+    "id": 46943,
+    "skillKey": "clawhub-justoneapi-imdb-title-countries-of-origin",
+    "name": "IMDb Countries of Origin API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-imdb-title-countries-of-origin",
+    "url": "https://clawhub.ai/skills/justoneapi-imdb-title-countries-of-origin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-imdb-title-countries-of-origin-5698c0f1fbe12015.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/imdb/title-countries-of-origin/v1 for IMDb Countries of Origin through JustOneAPI with id."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777327936024,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5faba076b95b744a215067105b0203a60bce34d3cfc42a29c3437bf000217f2c"
+}

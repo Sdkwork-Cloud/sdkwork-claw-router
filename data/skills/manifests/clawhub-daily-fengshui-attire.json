@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73280,
+  "uuid": "skill-clawhub-daily-fengshui-attire",
+  "skillKey": "clawhub-daily-fengshui-attire",
+  "name": "每日穿衣指南",
+  "summary": "每日穿衣指南，基于地支五行生克原理给出穿衣颜色建议",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_fengshui_attire",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "每日穿衣指南，基于地支五行生克原理给出穿衣颜色建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-fengshui-attire@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-fengshui-attire",
+      "url": "https://clawhub.ai/skills/daily-fengshui-attire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-fengshui-attire",
+    "url": "https://clawhub.ai/skills/daily-fengshui-attire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-fengshui-attire-e920ad59e72cd172.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-fengshui-attire@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-fengshui-attire-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:157288b246ea83d01f80402833e12e560814290e37002723c231c6bca5bd5b46",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:41:12.587Z"
+}

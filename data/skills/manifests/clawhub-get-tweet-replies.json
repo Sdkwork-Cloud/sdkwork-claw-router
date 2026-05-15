@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52742,
+  "uuid": "skill-clawhub-get-tweet-replies",
+  "skillKey": "clawhub-get-tweet-replies",
+  "name": "Get Tweet Replies",
+  "summary": "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/followers, posting tweets/replies, liking, retweeting, following/un...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_tweet_replies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xquik",
+      "features": [
+        "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/follo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-tweet-replies@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/get-tweet-replies/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-tweet-replies",
+      "url": "https://clawhub.ai/skills/get-tweet-replies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-tweet-replies",
+    "url": "https://clawhub.ai/skills/get-tweet-replies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-tweet-replies-9e74dacbd146a8cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-tweet-replies@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-tweet-replies-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed003cfc9ef406b0293a791983b8dbad67b04d6ef3f279bbd339d2b8e656a425",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:17:50.652Z"
+}

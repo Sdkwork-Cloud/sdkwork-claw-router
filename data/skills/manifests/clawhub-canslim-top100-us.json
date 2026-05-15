@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28708,
+  "uuid": "skill-clawhub-canslim-top100-us",
+  "skillKey": "clawhub-canslim-top100-us",
+  "name": "CANSLIM-Top100-US",
+  "summary": "Analyze the top 100 S&P 500 companies by market capitalization using CANSLIM-style signals and return a ranked shortlist in Markdown.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canslim_top100_us",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lkmsteven",
+      "features": [
+        "Analyze the top 100 S&P 500 companies by market capitalization using CANSLIM-style signals and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canslim-top100-us@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11247425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canslim-top100-us",
+      "url": "https://clawhub.ai/skills/canslim-top100-us"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canslim-top100-us",
+    "url": "https://clawhub.ai/skills/canslim-top100-us",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canslim-top100-us-b9ad6adf71b26b09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canslim-top100-us@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canslim-top100-us-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cffeb22f357401b7888d37b16175f87e07345388e194bcbfd6d797812d6bbb7",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:50:32.482Z"
+}

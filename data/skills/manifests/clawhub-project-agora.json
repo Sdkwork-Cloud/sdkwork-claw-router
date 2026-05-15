@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12132,
+  "uuid": "skill-clawhub-project-agora",
+  "skillKey": "clawhub-project-agora",
+  "name": "Project Agora",
+  "summary": "Discover jobs and participate on Project Agora via the machine-first API (OpenAPI + wallet-signature auth).",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_agora",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gwkim92",
+      "features": [
+        "Discover jobs and participate on Project Agora via the machine-first API (OpenAPI + wallet-sign."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-agora@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89577231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-agora",
+      "url": "https://clawhub.ai/skills/project-agora"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-agora",
+    "url": "https://clawhub.ai/skills/project-agora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-agora-50299e53e90ed94e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-agora@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-agora-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f32ea5a673295b0624712d7586908ab1be787941a13378071a5168363a509320",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T08:02:12.176Z"
+}

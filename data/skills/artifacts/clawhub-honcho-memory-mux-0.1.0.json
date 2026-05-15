@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/honcho-memory-mux@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.honcho_memory_mux",
+  "skill": {
+    "id": 22768,
+    "skillKey": "clawhub-honcho-memory-mux",
+    "name": "Honcho Memory Multiplexer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "honcho-memory-mux",
+    "url": "https://clawhub.ai/skills/honcho-memory-mux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/honcho-memory-mux-8d6cc7e469ba9336.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and enable Honcho + the @alloralabs/honcho-memory-mux extension, migrate legacy file memory, and update workspace instructions so agents use memory v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spooktheducks",
+      "userId": "publishers:spooktheducks",
+      "displayName": "Yung Spook",
+      "image": "https://avatars.githubusercontent.com/u/24452339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772140673576,
+      "changelog": "honcho-memory-mux-setup 0.1.0 – Initial Release\n\n- Installs and configures Honcho with @alloralabs/honcho-memory-mux for multiplexed memory retrieval (Honcho-first, local file fallback).\n- Migrates legacy memory files to Honcho, preserving file safety and providing clear, classified previews and confirmations.\n- Automatically updates workspace agent documentation to explain new memory policies, retrieval order, write behavior, and fallback procedures.\n- Adds practical conventions for agent memory handling and supports optional, non-intrusive memory observability reporting.\n- Includes guardrails for safe migration, transparent reporting, and reversible changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bbd38a84ebd7b98245218821aa8b91d45abb2bb020c06fe47f737ec4085579b3"
+}

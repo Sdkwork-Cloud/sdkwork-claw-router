@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47580,
+  "uuid": "skill-clawhub-skylv-changelog-release-manager",
+  "skillKey": "clawhub-skylv-changelog-release-manager",
+  "name": "Skylv Changelog Release Manager",
+  "summary": "Generates changelogs from git commit history using conventional commits. Triggers: generate changelog, release notes, changelog.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_changelog_release_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generates changelogs from git commit history using conventional commits",
+        "Triggers: generate changelog, release notes, changelog."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-changelog-release-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-changelog-release-manager",
+      "url": "https://clawhub.ai/skills/skylv-changelog-release-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-changelog-release-manager",
+    "url": "https://clawhub.ai/skills/skylv-changelog-release-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-changelog-release-manager-45181b2bfdfd5492.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-changelog-release-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-changelog-release-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:069e36533ebc1eace460612cf97ac9f0da436a3fb8fb11ef49b9a4c1ce43d32e",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T00:49:16.488Z"
+}

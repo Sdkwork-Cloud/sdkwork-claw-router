@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56627,
+  "uuid": "skill-clawhub-wuyin-gpt-image2",
+  "skillKey": "clawhub-wuyin-gpt-image2",
+  "name": "WuyinKeji GPT-Image-2",
+  "summary": "Generate images using the WuyinKeji GPT-Image-2 API (速创科技). Supports text-to-image, reference images, multiple aspect ratios, and async result polling. Use w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wuyin_gpt_image2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlexShen",
+      "features": [
+        "Generate images using the WuyinKeji GPT-Image-2 API (速创科技)",
+        "Supports text-to-image, reference images, multiple aspect ratios, and async result polling",
+        "Use w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wuyin-gpt-image2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73343630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wuyin-gpt-image2",
+      "url": "https://clawhub.ai/skills/wuyin-gpt-image2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wuyin-gpt-image2",
+    "url": "https://clawhub.ai/skills/wuyin-gpt-image2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wuyin-gpt-image2-43afb235caa981f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wuyin-gpt-image2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wuyin-gpt-image2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2feca15b4a500caae85bbfc396e6c3329a3dc8295dbf454fac69b48c9b8367a7",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:46:31.547Z"
+}

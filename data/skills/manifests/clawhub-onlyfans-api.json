@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11608,
+  "uuid": "skill-clawhub-onlyfans-api",
+  "skillKey": "clawhub-onlyfans-api",
+  "name": "OnlyFans API Access",
+  "summary": "Query OnlyFans data and analytics via the OnlyFansAPI.com platform. Get revenue summaries across all models, identify top-performing models, analyze Free Trial and Tracking Link conversion rates, compare link earnings, and much more! Use w.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onlyfans_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "martingalovic",
+      "features": [
+        "Query OnlyFans data and analytics via the OnlyFansAPI.com platform",
+        "Get revenue summaries across all models, identify top-performing models, analyze Free Trial and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onlyfans-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6873980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onlyfans-api",
+      "url": "https://clawhub.ai/skills/onlyfans-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onlyfans-api",
+    "url": "https://clawhub.ai/skills/onlyfans-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onlyfans-api-73932c20035f25b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onlyfans-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-onlyfans-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e54e4fa2ad66185fc776672f6129f122000d5e5202fa309779d7a51181ac293",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T12:21:40.751Z"
+}

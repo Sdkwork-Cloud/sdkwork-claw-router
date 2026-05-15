@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73334,
+  "uuid": "skill-clawhub-financial-analysis",
+  "skillKey": "clawhub-financial-analysis",
+  "name": "金融分析技能",
+  "summary": "利用免费数据源进行多资产投资组合的风险平价分析、动态调仓和回测，提供文字报告与图表可视化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wzratgit",
+      "features": [
+        "利用免费数据源进行多资产投资组合的风险平价分析、动态调仓和回测，提供文字报告与图表可视化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financial-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111557788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financial-analysis",
+      "url": "https://clawhub.ai/skills/financial-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-analysis",
+    "url": "https://clawhub.ai/skills/financial-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-analysis-d6471a5a97befad7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financial-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-financial-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78bbee045c47e595fb31aae4a3789e96ec3745d09212d063e5b0eadec585f148",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:01:22.443Z"
+}

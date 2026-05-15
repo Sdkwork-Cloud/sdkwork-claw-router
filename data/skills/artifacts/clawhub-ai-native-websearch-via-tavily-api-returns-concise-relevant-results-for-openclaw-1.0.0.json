@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_native_websearch_via_tavily_api_returns_concise_relevant_results_for_openclaw",
+  "skill": {
+    "id": 13439,
+    "skillKey": "clawhub-ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+    "name": "Web Search Tavily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+    "url": "https://clawhub.ai/skills/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-native-websearch-via-tavily-api-returns-concise-relevant-results-for-openclaw-ceca2ef46326629b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs AI-optimized web searches via Tavily API, returning concise and relevant results with options for depth, topic, and result count."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xjordansg-yolo",
+      "userId": "s17eqxzhby6aqcv44tccm6dqh583fznj",
+      "displayName": "0xjordansg-yolo",
+      "image": "https://avatars.githubusercontent.com/u/249538244?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1393,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771074981521,
+      "changelog": "Initial release of AI-optimized web search for AI agents using Tavily API via AIsa.\n\n- Provides concise, relevant web search results through a unified API gateway.\n- Supports flexible search options: result count, advanced/deep search, topic selection, and date range for news.\n- Includes URL content extraction.\n- Requires AISA_API_KEY for authentication.\n- Simple CLI usage for all features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:314103bb7819dd974cff4e01b43c3d1e78d4fb1270a22b330ac0943fb334c53c"
+}

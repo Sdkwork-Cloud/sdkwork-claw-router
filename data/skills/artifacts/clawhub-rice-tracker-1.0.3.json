@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rice-tracker@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rice_tracker",
+  "skill": {
+    "id": 69408,
+    "skillKey": "clawhub-rice-tracker",
+    "name": "rice-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rice-tracker",
+    "url": "https://clawhub.ai/skills/rice-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rice-tracker-0ea89f2f3109ed82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "大米采购管理系统 v2.0。记录每个客户的分批进货、消耗追踪、欠款追踪与对账管理。 支持分批进货、欠款追踪、对公/对私转账、月底对账提醒。 适用于：大米卖家追踪客户库存与应收款、团购组织者管理库存、家庭食材管理。 Keywords: 大米, 库存管理, 采购提醒, 欠款追踪, 对账管理, 分批进货"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swiftuis",
+      "userId": "s178gq4h4my33j71sca5mva78s83q13z",
+      "displayName": "SwiftUIs",
+      "image": "https://avatars.githubusercontent.com/u/51349479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775102085300,
+      "changelog": "v2.0.0 introduces major new features and enhancements for rice inventory and accounts management:\n\n- 支持分批进货，自动汇总客户大米库存\n- 增加欠款追踪/对账管理，可记录每笔进货的金额、付款状态、结账日期\n- 可区分对私（微信/支付宝）和对公（公户转账）账户类型\n- 新增月底结账、月度对账和到期自动提醒收款\n- Web 界面升级，增加库存、进货、对账三大视图\n- 提供双重自动提醒：库存耗尽与对账到期",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43c8954f9e941c4d1c81c7c61919092138e922d28121aa255eb293a2140b18db"
+}

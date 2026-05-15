@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-script-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_script_generator",
+  "skill": {
+    "id": 62659,
+    "skillKey": "clawhub-video-script-generator",
+    "name": "Video Script Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-script-generator",
+    "url": "https://clawhub.ai/skills/video-script-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-script-generator-0538efe30aaf1b15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成短视频脚本和分镜。输入产品/主题描述、目标受众、时长，输出完整脚本+分镜结构（JSON/YAML）。支持多种模板：痛点-解决、反转剧情、before-after。触发词：视频脚本、短视频文案、分镜、storyboard、video script。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oliviapp8",
+      "userId": "publishers:oliviapp8",
+      "displayName": "Olivia_Pp",
+      "image": "https://avatars.githubusercontent.com/u/51184967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1110,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774191776550,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c8f0069984c8c190f96fb7f5c5d4e513017137df05bd97926e7643fbb447297"
+}

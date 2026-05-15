@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-perplexity-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_perplexity_search",
+  "skill": {
+    "id": 31856,
+    "skillKey": "clawhub-my-perplexity-search",
+    "name": "Perplexity Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-perplexity-search",
+    "url": "https://clawhub.ai/skills/my-perplexity-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-perplexity-search-086066a7580813b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perplexity Sonar search and answer generation through AIsa. Use when the task is specifically to call Perplexity Sonar, Sonar Pro, Sonar Reasoning Pro, or So..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renning22",
+      "userId": "s170hey90qee9bets5ysrasphn83eh82",
+      "displayName": "Ning Ren",
+      "image": "https://avatars.githubusercontent.com/u/4597657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773648710292,
+      "changelog": "Initial release of the aisaclaw-perplexity-search skill.\n\n- Provides Perplexity Sonar-powered search and answer generation via AIsa API.\n- Supports citation-backed answers, reasoning, and long-form research using four endpoints: sonar, sonar-pro, sonar-reasoning-pro, and sonar-deep-research.\n- Python client and curl examples included for all endpoints.\n- Requires an AISA_API_KEY for authentication.\n- Model selection guidance and timeout behaviors documented.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75baddd8fb230ae966e43dff1f97d643d1a1560b9b74bcd569d1b4923d507dd4"
+}

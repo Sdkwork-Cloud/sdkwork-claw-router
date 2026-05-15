@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65962,
+  "uuid": "skill-clawhub-tencentcloud-lighthouse",
+  "skillKey": "clawhub-tencentcloud-lighthouse",
+  "name": "TencentCloud Lighthouse",
+  "summary": "管理腾讯云轻量应用服务器，实现创建、删除、开关机、查询状态及促销方案查询与成本控制。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_lighthouse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superStupidBear",
+      "features": [
+        "管理腾讯云轻量应用服务器，实现创建、删除、开关机、查询状态及促销方案查询与成本控制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-lighthouse@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6762468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-lighthouse",
+      "url": "https://clawhub.ai/skills/tencentcloud-lighthouse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-lighthouse",
+    "url": "https://clawhub.ai/skills/tencentcloud-lighthouse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-lighthouse-e66b9bdb7d4177b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-lighthouse@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-lighthouse-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4219192d65cbcb70dff1cf78e6ec0b28d4a6f80c768b03066df0b751c9ce95c",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:13:33.478Z"
+}

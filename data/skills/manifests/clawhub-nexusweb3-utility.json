@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51664,
+  "uuid": "skill-clawhub-nexusweb3-utility",
+  "skillKey": "clawhub-nexusweb3-utility",
+  "name": "NexusWeb3 Utility Infrastructure",
+  "summary": "Read-only API reference for NexusWeb3 utility protocols 11-20 on Base mainnet — scheduling, oracle, voting, storage, messaging, staking, whitelist, auctions,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexusweb3_utility",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nexusweb3dev",
+      "features": [
+        "Read-only API reference for NexusWeb3 utility protocols 11-20 on Base mainnet — scheduling, ora."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexusweb3-utility@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259958882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexusweb3-utility",
+      "url": "https://clawhub.ai/skills/nexusweb3-utility"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexusweb3-utility",
+    "url": "https://clawhub.ai/skills/nexusweb3-utility",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexusweb3-utility-2b11bbadcc48c932.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexusweb3-utility@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexusweb3-utility-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:266eb4512abc56b99576aa97aa16e42c1d1ef8033d199fcc1407eea4b8e6e57b",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:13:02.108Z"
+}

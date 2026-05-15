@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/save-to-spotify@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_to_spotify",
+  "skill": {
+    "id": 16319,
+    "skillKey": "clawhub-save-to-spotify",
+    "name": "Save To Spotify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-to-spotify",
+    "url": "https://clawhub.ai/skills/save-to-spotify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-to-spotify-660d2b33bc637231.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create polished audio content and save to Spotify. Produces episodes with TTS narration, a rich timeline (chapters plus in-player images, external links, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spotify",
+      "userId": "s178q1njn7prgvajksxt46zez58649bp",
+      "displayName": "Spotify",
+      "image": "https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Primary_Logo_RGB_Green.png"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 8,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778165061457,
+      "changelog": "save-to-spotify 0.1.1\n\n- Updated reference documentation in cli-usage.md and timeline.md.\n- No changes to logic or functionality; this is a documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87ec8eda560cc4f280c94b717a30e89f5bccd4eb939ec7efe2841df22e89cf3c"
+}

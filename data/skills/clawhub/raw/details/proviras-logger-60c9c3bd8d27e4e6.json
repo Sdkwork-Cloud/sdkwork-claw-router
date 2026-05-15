@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "proviras-logger",
+    "displayName": "Proviras Logger",
+    "summary": "Run on every heartbeat to summarize completed tasks and log them to your analytics dashboard. Triggers automatically during heartbeat cycles to track agent p...",
+    "tags": {
+      "latest": "1.0.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 284,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1775938535234,
+    "updatedAt": 1777750606425
+  },
+  "latestVersion": {
+    "version": "1.0.5",
+    "createdAt": 1777750483100,
+    "changelog": "Version 1.0.5\n\n- Updated environment variable requirements: PROVIRAS_PARENT_ID and PROVIRAS_PLATFORM are now always required, while PROVIRAS_USER_ID is optional and injected only for tracking agent ownership.\n- Registration logic changed to always use PROVIRAS_PARENT_ID as the user identity and optionally include PROVIRAS_USER_ID for agent-spawned agents.\n- Added platform detection (PROVIRAS_PLATFORM) as required context during registration.\n- Expanded logging to always include model identifiers per task.\n- Clarified instructions for passing environment variables when spawning sub-agents for accurate parent–child linkage.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "proviras",
+    "userId": "s17779c7ex7zxt08hha4fnawt584mb68",
+    "displayName": "proviras",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777750606425
+  }
+}

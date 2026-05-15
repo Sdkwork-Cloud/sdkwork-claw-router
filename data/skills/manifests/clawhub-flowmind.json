@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9383,
+  "uuid": "skill-clawhub-flowmind",
+  "skillKey": "clawhub-flowmind",
+  "name": "FlowMind",
+  "summary": "Manage productivity with FlowMind — goals, tasks (with subtasks), notes, people, and tags via REST API. Use when the user wants to create, list, update, or delete goals, tasks, notes, contacts, or tags; manage focus/priorities; track progr.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowmind",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fancygobot",
+      "features": [
+        "Manage productivity with FlowMind — goals, tasks (with subtasks), notes, people, and tags via R.",
+        "Use when the user wants to create, list, update, or delete goals, tasks, notes, contacts, or ta.",
+        "manage focus/priorities",
+        "track progress"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flowmind@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258339936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flowmind",
+      "url": "https://clawhub.ai/skills/flowmind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowmind",
+    "url": "https://clawhub.ai/skills/flowmind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowmind-a9e3dd159449f15d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flowmind@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flowmind-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fbd6e9161f91b27c448e8f9e0d74d5d0931ab1cf42f827246ff943c25e7b8c7",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T09:38:15.339Z"
+}

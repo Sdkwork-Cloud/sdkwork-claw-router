@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61369,
+  "uuid": "skill-clawhub-improvement-discriminator",
+  "skillKey": "clawhub-improvement-discriminator",
+  "name": "Improvement Discriminator",
+  "summary": "当需要对改进候选多人盲审打分、用 LLM 做语义评估、判断候选是否应被接受、或打分结果全是 hold 想知道为什么时使用。支持 --panel 多审阅者盲审和 --llm-judge 语义评估。不用于结构评估（用 improvement-learner）或门禁决策（用 improvement-gate）。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.improvement_discriminator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "当需要对改进候选多人盲审打分、用 LLM 做语义评估、判断候选是否应被接受、或打分结果全是 hold 想知道为什么时使用。支持 --panel 多审阅者盲审和 --llm-judge 语义评."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/improvement-discriminator@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "improvement-discriminator",
+      "url": "https://clawhub.ai/skills/improvement-discriminator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "improvement-discriminator",
+    "url": "https://clawhub.ai/skills/improvement-discriminator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/improvement-discriminator-76f1b0ce71e7a540.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/improvement-discriminator@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-improvement-discriminator-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:090a5c5ac6cfdbaf7f165ff252a5cc2fbbb38a9f427a2324caa59742c54a43bf",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:13:59.710Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opinion-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opinion_skill",
+  "skill": {
+    "id": 64536,
+    "skillKey": "clawhub-opinion-skill",
+    "name": "Opinion Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opinion-skill",
+    "url": "https://clawhub.ai/skills/opinion-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opinion-skill-fb7c0f097454f37c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 bun 运行时的 Opinion 预测市场工具集，支持市场查询、订单簿查看及基于多签钱包的链上交易操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuandiaodiaodiao",
+      "userId": "s1791r01dra7s3hhe1eb9kgmp183qr88",
+      "displayName": "a",
+      "image": "https://avatars.githubusercontent.com/u/33371662?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772113204221,
+      "changelog": "- Added new script: `scripts/trades.ts` for querying trade history by assetId.\n- Updated documentation in SKILL.md to:\n  - Describe `trades.ts` usage and options.\n  - List `trades` in the quick command reference and environment variable section.\n- No breaking changes; data-querying functions expanded.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef3ac62817b44f4ae8090df9681180630636b32e598162ccb0ed97bd7a91ca80"
+}

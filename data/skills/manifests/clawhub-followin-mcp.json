@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60750,
+  "uuid": "skill-clawhub-followin-mcp",
+  "skillKey": "clawhub-followin-mcp",
+  "name": "FollowinMCP",
+  "summary": "Followin MCP 相关子 Skill 的索引与入口。在需要路由到情报/舆情/策略/宏观/美股等能力时，先读本文件再打开 references 下对应 *.SKILL.md。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.followin_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ray",
+      "features": [
+        "Followin MCP 相关子 Skill 的索引与入口。在需要路由到情报/舆情/策略/宏观/美股等能力时，先读本文件再打开 references 下对应 *.SKILL.md。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/followin-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162131154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "followin-mcp",
+      "url": "https://clawhub.ai/skills/followin-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "followin-mcp",
+    "url": "https://clawhub.ai/skills/followin-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/followin-mcp-11a7ee66eaab454e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/followin-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-followin-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce17fa278360697a6ca91650b9deb4c8016d88c2bb8152ba312a3b08b1389687",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T16:29:00.828Z"
+}

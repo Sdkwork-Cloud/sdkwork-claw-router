@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yifan-shenfeng@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yifan_shenfeng",
+  "skill": {
+    "id": 59307,
+    "skillKey": "clawhub-yifan-shenfeng",
+    "name": "智能菜谱"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yifan-shenfeng",
+    "url": "https://clawhub.ai/skills/yifan-shenfeng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yifan-shenfeng-b4b7dbe666bba575.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一饭封神 - AI智能菜谱生成平台工具。根据用户提供的食材、口味、 dietary restrictions 生成菜谱，并提供访问 https://eat.lz-t.top/ 的快捷方式。Use when user asks for recipe generation, cooking ideas, 菜谱推荐,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13700307924",
+      "userId": "s17dghfz2zj7d8as2mjctrf6ph83pafs",
+      "displayName": "13700307924",
+      "image": "https://avatars.githubusercontent.com/u/71315396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774851280927,
+      "changelog": "描述\t一饭封神 - AI智能菜谱生成平台工具。根据用户提供的食材、口味生成菜谱推荐。\n触发关键词\t一饭封神、生成菜谱、推荐菜谱、今天吃什么、食材做菜、AI菜谱",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e907f35c68e88aebbe6c4e8f9efa0f79d9a30caa97f65868fe2f6d4bdb661c6c"
+}

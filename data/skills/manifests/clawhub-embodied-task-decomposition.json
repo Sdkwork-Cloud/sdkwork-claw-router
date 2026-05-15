@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36021,
+  "uuid": "skill-clawhub-embodied-task-decomposition",
+  "skillKey": "clawhub-embodied-task-decomposition",
+  "name": "Embodied Task Decomposition",
+  "summary": "Decompose complex physical tasks into atomic subtasks for robot execution. Use when user provides: (1) An image showing a physical scene (indoor/outdoor), an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.embodied_task_decomposition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NaNaoiSong",
+      "features": [
+        "Decompose complex physical tasks into atomic subtasks for robot execution",
+        "Use when user provides: (1) An image showing a physical scene (indoor/outdoor), an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/embodied-task-decomposition@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24368194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "embodied-task-decomposition",
+      "url": "https://clawhub.ai/skills/embodied-task-decomposition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "embodied-task-decomposition",
+    "url": "https://clawhub.ai/skills/embodied-task-decomposition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/embodied-task-decomposition-d0eabdfcb350cd96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/embodied-task-decomposition@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-embodied-task-decomposition-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1bfaf609dbb8280a2b7a60441464de9f4031ae514ba0aeaec30ce9b8a75ed29",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:58:12.117Z"
+}

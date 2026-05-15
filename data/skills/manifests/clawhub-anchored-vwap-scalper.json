@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52676,
+  "uuid": "skill-clawhub-anchored-vwap-scalper",
+  "skillKey": "clawhub-anchored-vwap-scalper",
+  "name": "anchored-vwap-scalper",
+  "summary": "Production single-skill BTC scalper on Lighter DEX with FULL explicit Python strategy engine + accurate incremental Anchored VWAP. 4 strategies, 1% risk, fix...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anchored_vwap_scalper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidm413",
+      "features": [
+        "Production single-skill BTC scalper on Lighter DEX with FULL explicit Python strategy engine +.",
+        "4 strategies, 1% risk, fix..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anchored-vwap-scalper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86382522?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anchored-vwap-scalper",
+      "url": "https://clawhub.ai/skills/anchored-vwap-scalper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anchored-vwap-scalper",
+    "url": "https://clawhub.ai/skills/anchored-vwap-scalper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anchored-vwap-scalper-b8d42101fd1de139.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anchored-vwap-scalper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anchored-vwap-scalper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6efffa24f0d748e62cca0f7db5763dff6f462c3edfbf2ff4f4bc46383ed85ae4",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:44:53.669Z"
+}

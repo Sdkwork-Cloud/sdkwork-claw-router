@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pokeinfo@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pokeinfo",
+  "skill": {
+    "id": 55729,
+    "skillKey": "clawhub-pokeinfo",
+    "name": "Pokeinfo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pokeinfo",
+    "url": "https://clawhub.ai/skills/pokeinfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pokeinfo-4e22fecff7aa64d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Pokémon / Pokemon information from PokéAPI. Lookup Pokemon details by name or ID - stats, abilities, types, moves, sprites, and cries. Supports 9 langu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrisluo5311",
+      "userId": "s176z2jcg5147w3aymf7b6wqys84r1vn",
+      "displayName": "Chris Lo",
+      "image": "https://avatars.githubusercontent.com/u/77089596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777016837994,
+      "changelog": "Add security note clarifying no credentials are required",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bd3725ab0dc7d15e33808ee784910af2f1de88db9201eb47b2b85632a97023e"
+}

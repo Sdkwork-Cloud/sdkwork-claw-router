@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65842,
+  "uuid": "skill-clawhub-check-chinese-holiday",
+  "skillKey": "clawhub-check-chinese-holiday",
+  "name": "中国节假日检测",
+  "summary": "基于 chinesecalendar 包的中国节假日检测，判断是否为节假日/调休日工作日",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.check_chinese_holiday",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuehongyanL",
+      "features": [
+        "基于 chinesecalendar 包的中国节假日检测，判断是否为节假日/调休日工作日"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/check-chinese-holiday@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21170105?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "check-chinese-holiday",
+      "url": "https://clawhub.ai/skills/check-chinese-holiday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "check-chinese-holiday",
+    "url": "https://clawhub.ai/skills/check-chinese-holiday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/check-chinese-holiday-397be02f3c1c4651.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/check-chinese-holiday@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-check-chinese-holiday-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d2e97701acbb3dc360d029d8228bf988ca8c77efd9b6e4804f3d335c522534d",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:28:17.678Z"
+}

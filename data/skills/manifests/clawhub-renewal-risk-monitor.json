@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59371,
+  "uuid": "skill-clawhub-renewal-risk-monitor",
+  "skillKey": "clawhub-renewal-risk-monitor",
+  "name": "Renewal Risk Monitor",
+  "summary": "识别续约风险信号，区分可挽回风险与高概率流失信号。；use for renewal, risk, customer-success workflows；do not use for 伪造健康度数据, 替代正式续约决策.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renewal_risk_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "识别续约风险信号，区分可挽回风险与高概率流失信号。；use for renewal, risk, customer-success workflows；do not use for 伪造健康."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/renewal-risk-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "renewal-risk-monitor",
+      "url": "https://clawhub.ai/skills/renewal-risk-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renewal-risk-monitor",
+    "url": "https://clawhub.ai/skills/renewal-risk-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renewal-risk-monitor-b6e51389abc90e5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/renewal-risk-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-renewal-risk-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43643fb5628e87e0360bc575f3c0c84ff25ea5cf25b79a1b0891765733845146",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:21:17.874Z"
+}

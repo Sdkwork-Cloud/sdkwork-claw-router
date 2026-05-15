@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amai-id@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amai_id",
+  "skill": {
+    "id": 12066,
+    "skillKey": "clawhub-amai-id",
+    "name": "AMAI ID"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amai-id",
+    "url": "https://clawhub.ai/skills/amai-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amai-id-7c5b573d56b18514.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Soul-Bound Keys and Soulchain for persistent agent identity, reputation, and messaging. The identity primitive for the agentic web."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gonzih",
+      "userId": "publishers:gonzih",
+      "displayName": "Gonzih",
+      "image": "https://avatars.githubusercontent.com/u/266275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1817,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770178758356,
+      "changelog": "AMAI Identity skill version 1.0.0 initial release:\n\n- Introduces Soul-Bound Keys (SBK) for persistent, non-transferable agent identity.\n- Implements Soulchain: an append-only, hash-linked log for agent actions and reputation.\n- Provides secure, signature-based registration and API request signing using Ed25519.\n- Enables agent-to-agent messaging using public keys with no external authentication.\n- Includes endpoints for identity registration, lookup, key retrieval, health, and statistics.\n- Requires a cryptography library for Ed25519 signatures.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c25d52e592b39e10fde97a98ddcf62d012b68aa5bf2039c9674c17f4f742b8e"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34561,
+  "uuid": "skill-clawhub-medication-reconciliation",
+  "skillKey": "clawhub-medication-reconciliation",
+  "name": "Medication Reconciliation",
+  "summary": "Compare patient pre-admission medication lists with inpatient orders to automatically identify omitted or duplicated medications and improve medication safety.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medication_reconciliation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Compare patient pre-admission medication lists with inpatient orders to automatically identify."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medication-reconciliation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medication-reconciliation",
+      "url": "https://clawhub.ai/skills/medication-reconciliation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medication-reconciliation",
+    "url": "https://clawhub.ai/skills/medication-reconciliation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medication-reconciliation-d50a3e4114ff4149.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medication-reconciliation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medication-reconciliation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7ad381ef69f4b9affc242449e547d7672fd4d214d0dc84e45753dff532b9c06",
+      "artifactSizeBytes": 2600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:33:03.397Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67942,
+  "uuid": "skill-clawhub-diankeyuan-contacts",
+  "skillKey": "clawhub-diankeyuan-contacts",
+  "name": "Diankeyuan Contacts",
+  "summary": "管理电科院人员信息和科室关系的技能。支持添加、查询、更新电科院工作人员、科室、办公室等信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diankeyuan_contacts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HumbleBin",
+      "features": [
+        "管理电科院人员信息和科室关系的技能。支持添加、查询、更新电科院工作人员、科室、办公室等信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diankeyuan-contacts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98149733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diankeyuan-contacts",
+      "url": "https://clawhub.ai/skills/diankeyuan-contacts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diankeyuan-contacts",
+    "url": "https://clawhub.ai/skills/diankeyuan-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diankeyuan-contacts-4361adfcb3f641da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diankeyuan-contacts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diankeyuan-contacts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37ef0561aa36919e968a2a967a3bbf506a47afd6d66859d0732e371e619116e4",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T16:15:06.796Z"
+}

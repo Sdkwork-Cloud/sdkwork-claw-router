@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57918,
+  "uuid": "skill-clawhub-sbti-now",
+  "skillKey": "clawhub-sbti-now",
+  "name": "SBTI Test Now",
+  "summary": "Run the self-contained SBTI personality test when users ask for sbti 人格, sbti 人格测试, sbti test, sbti personality, sbti 中文测试, sbti 是什么, what is sbti, sbti mean...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_now",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fechin",
+      "features": [
+        "Run the self-contained SBTI personality test when users ask for sbti 人格, sbti 人格测试, sbti test,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sbti-now@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2541482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sbti-now",
+      "url": "https://clawhub.ai/skills/sbti-now"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-now",
+    "url": "https://clawhub.ai/skills/sbti-now",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-now-331134170e7356f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sbti-now@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sbti-now-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c95801b83032eb7616b4ce0dbdda8c0fcb948d4bccd6d3e4bdafe3172a682da",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T09:14:10.817Z"
+}

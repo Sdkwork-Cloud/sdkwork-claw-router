@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34801,
+  "uuid": "skill-clawhub-alibabacloud-ecs-diagnose",
+  "skillKey": "clawhub-alibabacloud-ecs-diagnose",
+  "name": "Alibabacloud Ecs Diagnose",
+  "summary": "Comprehensive Alibaba Cloud ECS instance diagnostics skill. Performs systematic troubleshooting including cloud platform status checks and GuestOS internal d...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_ecs_diagnose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Comprehensive Alibaba Cloud ECS instance diagnostics skill",
+        "Performs systematic troubleshooting including cloud platform status checks and GuestOS internal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-ecs-diagnose@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-ecs-diagnose",
+      "url": "https://clawhub.ai/skills/alibabacloud-ecs-diagnose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-ecs-diagnose",
+    "url": "https://clawhub.ai/skills/alibabacloud-ecs-diagnose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-ecs-diagnose-7fd2fbc46cbadf45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-ecs-diagnose@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-ecs-diagnose-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49decf39a6f5f2a980dd66874d80997ebb6a76a7d27528a7c3b690263ad3f09f",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:09:58.041Z"
+}

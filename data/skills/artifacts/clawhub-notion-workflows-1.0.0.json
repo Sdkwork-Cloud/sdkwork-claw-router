@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notion-workflows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_workflows",
+  "skill": {
+    "id": 25101,
+    "skillKey": "clawhub-notion-workflows",
+    "name": "Notion Workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-workflows",
+    "url": "https://clawhub.ai/skills/notion-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-workflows-b872d7577b1cdf35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Notion tasks by creating, querying, and updating pages or databases, generating templates, and summarizing content via browser-triggered workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deliverydriver",
+      "userId": "publishers:deliverydriver",
+      "displayName": "deliverydriver",
+      "image": "https://avatars.githubusercontent.com/u/26074034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773546321355,
+      "changelog": "Initial: DB/page automations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19ec6444e0abebeafa58ca7e3c3ab1b2120b0b265a006c9511d219719bd87a12"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51643,
+  "uuid": "skill-clawhub-mineru-document-explorer",
+  "skillKey": "clawhub-mineru-document-explorer",
+  "name": "MinerU Document Explorer",
+  "summary": "REQUIRED for any task involving reading or understanding PDF contents. Use when a user asks about a .pdf file — reading pages, answering questions, extractin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_document_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rise-1210",
+      "features": [
+        "REQUIRED for any task involving reading or understanding PDF contents",
+        "Use when a user asks about a .pdf file — reading pages, answering questions, extractin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mineru-document-explorer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194394453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mineru-document-explorer",
+      "url": "https://clawhub.ai/skills/mineru-document-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-document-explorer",
+    "url": "https://clawhub.ai/skills/mineru-document-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-document-explorer-05992a562ffc191f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mineru-document-explorer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mineru-document-explorer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55c2268fa440cde807e18a0b18315a252c6f5a2a17347688bfa8fb3aef5e11df",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:21:43.642Z"
+}

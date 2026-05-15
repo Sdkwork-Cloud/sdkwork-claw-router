@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chartjs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chartjs",
+  "skill": {
+    "id": 32730,
+    "skillKey": "clawhub-chartjs",
+    "name": "Chartjs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chartjs",
+    "url": "https://clawhub.ai/skills/chartjs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chartjs-aeb6dd081c371827.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chart.js charting skill. Used to generate visual charts such as line charts, bar charts, pie charts, radar charts, scatter plots, etc."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775873594298,
+      "changelog": "Initial release of the chartjs skill.\n\n- Provides Chart.js integration for generating visual charts (line, bar, pie, radar, scatter, etc.).\n- Details installation methods (npm, CDN, import) and setup instructions.\n- Describes chart types, required controllers/elements, and basic usage.\n- Includes tips for common configurations, responsive layouts, multiple datasets, colors, and interactions.\n- Covers output methods, including HTML rendering and screenshot/image export.\n- Reference to additional API documentation for advanced usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:171ebc8a2ced5cac94c136ca662f8e94612e90eda5da1a018fccc5ec11fcd627"
+}

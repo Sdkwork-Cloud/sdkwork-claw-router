@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-ai-age-filter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_ai_age_filter",
+  "skill": {
+    "id": 33230,
+    "skillKey": "clawhub-mediaio-ai-age-filter",
+    "name": "AI Age Filter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-ai-age-filter",
+    "url": "https://clawhub.ai/skills/mediaio-ai-age-filter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-ai-age-filter-f1f7a71cd85b8fae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apply AI-powered age transformation filters to images using Media.io OpenAPI. Accurately renders younger or older versions of faces. AI age filter, age progr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773887745733,
+      "changelog": "- Updated metadata to add OpenClaw integration details, including required binaries and homepage.\n- Removed previous Media.io-specific metadata (emoji, publisher, source).\n- No changes to functionality or endpoint usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5505031dcae18b2f9813d3369963c5680bc2de48795e2f75c59576c9211bf73"
+}

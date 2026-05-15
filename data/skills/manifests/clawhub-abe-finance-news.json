@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45692,
+  "uuid": "skill-clawhub-abe-finance-news",
+  "skillKey": "clawhub-abe-finance-news",
+  "name": "abe-finance-news",
+  "summary": "Market news briefings with AI summaries. Use when asked about stock news, market updates, portfolio performance, morning/evening briefings, financial headlin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_finance_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Market news briefings with AI summaries",
+        "Use when asked about stock news, market updates, portfolio performance, morning/evening briefin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-finance-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-finance-news",
+      "url": "https://clawhub.ai/skills/abe-finance-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-finance-news",
+    "url": "https://clawhub.ai/skills/abe-finance-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-finance-news-bbbd7b4d0634d13f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-finance-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-finance-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:464c6af7e78ea806ad3503c591e416fc2744097eac2573c31e496e1ee130f984",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:09:16.235Z"
+}

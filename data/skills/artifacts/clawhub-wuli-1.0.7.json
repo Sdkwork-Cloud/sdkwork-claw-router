@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wuli@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wuli",
+  "skill": {
+    "id": 17868,
+    "skillKey": "clawhub-wuli",
+    "name": "Wuli Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wuli",
+    "url": "https://clawhub.ai/skills/wuli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wuli-0740dec0d849f338.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI images and videos with 17+ active models via Wuli.art open platform API. Use when creating images from text prompts, editing images with one or m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sir1st-inc",
+      "userId": "s179xvjp16z1yq7913bsy6fns183hzwv",
+      "displayName": "zihao chu",
+      "image": "https://avatars.githubusercontent.com/u/198162296?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 638,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1777293800078,
+      "changelog": "ci: pin publish slug to 'wuli'",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb2258e2cbcd9ce723063c292020278578e8f3c09678c08f0194ab23068e7a24"
+}

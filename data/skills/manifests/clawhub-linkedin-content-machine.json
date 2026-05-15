@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23964,
+  "uuid": "skill-clawhub-linkedin-content-machine",
+  "skillKey": "clawhub-linkedin-content-machine",
+  "name": "Linkedin Content Machine",
+  "summary": "Automatically generate 10 personalized LinkedIn posts and email templates from YouTube videos, tailored to your brand and ready to use.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_content_machine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sammy-the-bot",
+      "features": [
+        "Automatically generate 10 personalized LinkedIn posts and email templates from YouTube videos,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-content-machine@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263724352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-content-machine",
+      "url": "https://clawhub.ai/skills/linkedin-content-machine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-content-machine",
+    "url": "https://clawhub.ai/skills/linkedin-content-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-content-machine-3566f4d16f14156b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-content-machine@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-content-machine-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f08a8aadb93d1612ad49175b7593469e4d01db773e20e9f75278cd44f9f42b2e",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T05:04:04.754Z"
+}

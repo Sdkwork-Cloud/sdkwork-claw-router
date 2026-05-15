@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21518,
+  "uuid": "skill-clawhub-fin-intel-hub",
+  "skillKey": "clawhub-fin-intel-hub",
+  "name": "Fin Intel Hub",
+  "summary": "Access global financial data including SEC filings, Asian and US stock markets, crypto on-chain metrics, financial news sentiment, and macroeconomic indicators.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fin_intel_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuan622",
+      "features": [
+        "Access global financial data including SEC filings, Asian and US stock markets, crypto on-chain."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fin-intel-hub@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34533348?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fin-intel-hub",
+      "url": "https://clawhub.ai/skills/fin-intel-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fin-intel-hub",
+    "url": "https://clawhub.ai/skills/fin-intel-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fin-intel-hub-335f79f2145f4b4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fin-intel-hub@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fin-intel-hub-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f662c810a0b8794e6b8280d3a4ae038879e83e82146f9c41508e8ba7888336f0",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T09:03:55.162Z"
+}

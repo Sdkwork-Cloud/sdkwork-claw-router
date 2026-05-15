@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20381,
+  "uuid": "skill-clawhub-browser-devtools",
+  "skillKey": "clawhub-browser-devtools",
+  "name": "Browser Devtools",
+  "summary": "Chrome Dev Editor is a developer tool for building apps on the Chrome platform - Chrome Apps and Web browser-devtools.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_devtools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Chrome Dev Editor is a developer tool for building apps on the Chrome platform",
+        "Chrome Apps and Web browser-devtools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-devtools@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-devtools",
+      "url": "https://clawhub.ai/skills/browser-devtools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-devtools",
+    "url": "https://clawhub.ai/skills/browser-devtools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-devtools-c95987578df27213.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-devtools@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-devtools-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e62868093cc89b1fa88e8185ad80db067d8be0aa7c37d7f32c45b66aa6174bf",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:07:27.375Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atlas-vuln-scanner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlas_vuln_scanner",
+  "skill": {
+    "id": 47469,
+    "skillKey": "clawhub-atlas-vuln-scanner",
+    "name": "Atlas Smart Contract Vulnerability Pattern Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlas-vuln-scanner",
+    "url": "https://clawhub.ai/skills/atlas-vuln-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlas-vuln-scanner-37f55278cf237821.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Solidity repositories for Atlas smart-contract vulnerability patterns and generate triage-ready security reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "n8gendegen",
+      "userId": "s178kk8n3h54fa7qzx3gsf72md85y3vm",
+      "displayName": "n8gendegen",
+      "image": "https://avatars.githubusercontent.com/u/264058056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777732826404,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b43e24d83285a2c129699556a9eee7bb2f7d99bb9ff0ec09d33aa49729f1624b"
+}

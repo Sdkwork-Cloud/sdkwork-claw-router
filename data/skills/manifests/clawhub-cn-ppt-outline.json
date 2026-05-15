@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72023,
+  "uuid": "skill-clawhub-cn-ppt-outline",
+  "skillKey": "clawhub-cn-ppt-outline",
+  "name": "PPT大纲生成器",
+  "summary": "PPT大纲生成助手。输入主题或内容，自动生成PPT大纲、分页结构、每页要点。支持工作汇报、产品发布、培训课件、商业计划等多种场景。输出可直接导入PPT软件。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_ppt_outline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "PPT大纲生成助手。输入主题或内容，自动生成PPT大纲、分页结构、每页要点。支持工作汇报、产品发布、培训课件、商业计划等多种场景。输出可直接导入PPT软件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-ppt-outline@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-ppt-outline",
+      "url": "https://clawhub.ai/skills/cn-ppt-outline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-ppt-outline",
+    "url": "https://clawhub.ai/skills/cn-ppt-outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-ppt-outline-ce842759497e2300.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-ppt-outline@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-ppt-outline-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc05d3e4048662649817a792e9481e208b6c3e6d208f1d56f13131023a28e7d1",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:45:47.185Z"
+}

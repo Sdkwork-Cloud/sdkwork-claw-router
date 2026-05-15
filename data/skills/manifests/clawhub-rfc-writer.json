@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30110,
+  "uuid": "skill-clawhub-rfc-writer",
+  "skillKey": "clawhub-rfc-writer",
+  "name": "RFC Writer",
+  "summary": "Draft a technical Request for Comments (RFC) or technical proposal document based on a rough idea or scattered requirements. Triggers when the user asks to w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rfc_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xudong Guo",
+      "features": [
+        "Draft a technical Request for Comments (RFC) or technical proposal document based on a rough id.",
+        "Triggers when the user asks to w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rfc-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24563928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rfc-writer",
+      "url": "https://clawhub.ai/skills/rfc-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rfc-writer",
+    "url": "https://clawhub.ai/skills/rfc-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rfc-writer-63d7585f900d03b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rfc-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rfc-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66af58cc52ac9ecef3b1eec165028bf71b42a5dc40fc0fb53e6ecd601be9a6f6",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:02:41.789Z"
+}

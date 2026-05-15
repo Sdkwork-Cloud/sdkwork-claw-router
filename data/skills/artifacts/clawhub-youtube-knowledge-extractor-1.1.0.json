@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-knowledge-extractor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_knowledge_extractor",
+  "skill": {
+    "id": 14617,
+    "skillKey": "clawhub-youtube-knowledge-extractor",
+    "name": "Youtube Knowledge Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-knowledge-extractor",
+    "url": "https://clawhub.ai/skills/youtube-knowledge-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-knowledge-extractor-3cde6bd63a60f28e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multimodal YouTube video analysis through both audio (transcript) and visual (frame extraction + image analysis) channels. Especially powerful for HowTo vide..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdrabent",
+      "userId": "publishers:sdrabent",
+      "displayName": "sdrabent",
+      "image": "https://avatars.githubusercontent.com/u/5302548?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 947,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771151279470,
+      "changelog": "Renamed from youtube-video-analyzer to youtube-knowledge-extractor for better discoverability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c474d7af9c6fecb2b1ba5e47c253ecc846b986765f6206bd01587d0d71e076ec"
+}

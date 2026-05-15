@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57712,
+  "uuid": "skill-clawhub-flyclaw",
+  "skillKey": "clawhub-flyclaw",
+  "name": "FlyClaw (Flight N-in-1 Search Zero Login)",
+  "summary": "Multi-source flight aggregation — tickets, nonstop, round-trip, cabin. 航班机票/零登录/零API, zero login, zero account, zero API key. Pure Python, no browser. 机票价格/航...",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI4MSE",
+      "features": [
+        "Multi-source flight aggregation — tickets, nonstop, round-trip, cabin",
+        "航班机票/零登录/零API, zero login, zero account, zero API key",
+        "Pure Python, no browser",
+        "机票价格/航..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyclaw@0.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199689343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyclaw",
+      "url": "https://clawhub.ai/skills/flyclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyclaw",
+    "url": "https://clawhub.ai/skills/flyclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyclaw-e2f23ef6f2c207be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyclaw@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyclaw-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:997595072e08885341af8a8701d37f98ad48a5548908db7e5a16e0437b8a0180",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:16:31.953Z"
+}

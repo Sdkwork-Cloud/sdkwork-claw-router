@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22122,
+  "uuid": "skill-clawhub-gis",
+  "skillKey": "clawhub-gis",
+  "name": "Gis",
+  "summary": "Helps with GIS concepts, spatial data formats, projections, and spatial analysis. Use when the user works with shapefiles, GeoJSON, coordinate reference syst...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openlang",
+      "features": [
+        "Helps with GIS concepts, spatial data formats, projections, and spatial analysis",
+        "Use when the user works with shapefiles, GeoJSON, coordinate reference syst..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45782174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gis",
+      "url": "https://clawhub.ai/skills/gis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gis",
+    "url": "https://clawhub.ai/skills/gis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gis-58e3d99e1d933009.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1d0e57b4b1c1912398d0503a3d9fad32839852acce1a22dc8803c4e2e99f6cb",
+      "artifactSizeBytes": 2489
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:19:11.304Z"
+}

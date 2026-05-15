@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/threat-intel-aggregator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threat_intel_aggregator",
+  "skill": {
+    "id": 37565,
+    "skillKey": "clawhub-threat-intel-aggregator",
+    "name": "Threat Intel Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threat-intel-aggregator",
+    "url": "https://clawhub.ai/skills/threat-intel-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threat-intel-aggregator-a17d333ab6de8e83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregates and analyzes threat intelligence data to check targets against known threats and security risks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774044991840,
+      "changelog": "Initial release of the Threat Intelligence Aggregator API.\n\n- Aggregates and analyzes threat intelligence data from multiple sources.\n- Supports threat and risk checks for IPs, domains, file hashes, and URLs.\n- Returns consolidated findings, confidence levels, and remediation recommendations.\n- Offers a single POST /check-threat endpoint for rapid, multi-source threat assessment.\n- Provides clear risk scoring and detailed response schema for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adb7b5a90d943614fb03884bcc11b17a1a59552a7c7e938774914cf147dc3f31"
+}

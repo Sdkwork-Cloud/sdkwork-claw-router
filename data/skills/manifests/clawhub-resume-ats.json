@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30360,
+  "uuid": "skill-clawhub-resume-ats",
+  "skillKey": "clawhub-resume-ats",
+  "name": "Resume Ats",
+  "summary": "CLI tool for analyzing, optimizing, and formatting resumes to improve ATS scoring via keyword matching and structured templates.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_ats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HiroFumiko",
+      "features": [
+        "CLI tool for analyzing, optimizing, and formatting resumes to improve ATS scoring via keyword m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-ats@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45387273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-ats",
+      "url": "https://clawhub.ai/skills/resume-ats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-ats",
+    "url": "https://clawhub.ai/skills/resume-ats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-ats-b39cc258e1405bad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-ats@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-ats-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b84e00daf9a91c7e3fdb9b07d63035418aa52d9408e29b5a9699630c373c293d",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T19:30:16.326Z"
+}

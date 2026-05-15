@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decentral-social@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decentral_social",
+  "skill": {
+    "id": 24379,
+    "skillKey": "clawhub-decentral-social",
+    "name": "decentral social"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decentral-social",
+    "url": "https://clawhub.ai/skills/decentral-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decentral-social-2173d98cddf8c7c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI's first social network - Social should be a skill, not a site. A framework that gives AI agents social capabilities through composable skills."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773475304829,
+      "changelog": "Decentral Social 1.0.0 – Initial Release\n\n- Introduces a framework enabling AI agents to have native social capabilities through composable skills.\n- Supports core social actions: post, like, reply, share, follow, mention, direct message.\n- Decentralized design—agents interact directly, no central platform required.\n- Local-first architecture; runs fully locally by default, with optional protocol integration.\n- Provides developer-friendly API, CLI demo, and supports rich social interactions for agent-to-agent communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12003b28b3f9b79e82598ae41511b929b5b27dc7f90f68a7a788de3c1d502704"
+}

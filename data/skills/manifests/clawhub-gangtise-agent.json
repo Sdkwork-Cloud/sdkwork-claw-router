@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60841,
+  "uuid": "skill-clawhub-gangtise-agent",
+  "skillKey": "clawhub-gangtise-agent",
+  "name": "Gangtise Agent调用",
+  "summary": "通过 Gangtise Agent OpenAPI 统一拉取 Markdown 投研文本，面向「快速可读、少跳转」的研究与问答场景。 各 Agent 能力概览：one-pager（公司一页通，单票核心要素与结论浓缩）； investment-logic（投资逻辑，主线叙事与关键假设）； peer-comparis...",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gangtise_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GangtiseGts",
+      "features": [
+        "通过 Gangtise Agent OpenAPI 统一拉取 Markdown 投研文本，面向「快速可读、少跳转」的研究与问答场景。 各 Agent 能力概览：one-pager（公司一页通."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gangtise-agent@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274197162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gangtise-agent",
+      "url": "https://clawhub.ai/skills/gangtise-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gangtise-agent",
+    "url": "https://clawhub.ai/skills/gangtise-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gangtise-agent-d5b9de00167b0c2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gangtise-agent@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gangtise-agent-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27ce06678946d5d62d589b0b898c2504b934f1a3f3c102ac3b3f6b6bf5ab8887",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T01:21:20.127Z"
+}

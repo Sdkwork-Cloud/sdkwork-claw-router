@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runtime-verifier@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_verifier",
+  "skill": {
+    "id": 45660,
+    "skillKey": "clawhub-runtime-verifier",
+    "name": "Runtime Verifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-verifier",
+    "url": "https://clawhub.ai/skills/runtime-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-verifier-579385e526cb0764.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when a code change must be verified by actually running the app, endpoint, or CLI flow instead of relying only on unit tests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wimi321",
+      "userId": "s177xf3genmsr92b653psf6fas83zzd8",
+      "displayName": "wimi321",
+      "image": "https://avatars.githubusercontent.com/u/34830250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775150218723,
+      "changelog": "Initial extraction from local Claude Code source",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dc802c8af1f30504c8758e949eaea004bdf44b1808aa6d0f04a6e9261d834ef"
+}

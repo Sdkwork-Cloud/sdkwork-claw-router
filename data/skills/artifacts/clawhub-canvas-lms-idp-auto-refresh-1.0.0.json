@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canvas-lms-idp-auto-refresh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_lms_idp_auto_refresh",
+  "skill": {
+    "id": 42509,
+    "skillKey": "clawhub-canvas-lms-idp-auto-refresh",
+    "name": "Canvas LMS IDP Auto Token Refresh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-lms-idp-auto-refresh",
+    "url": "https://clawhub.ai/skills/canvas-lms-idp-auto-refresh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-lms-idp-auto-refresh-ab7db3e350b50567.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically refresh Canvas LMS API tokens via institutional CAS/SAML IDP login using RSA-encrypted credentials and manage token lifecycle."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "summers-tars",
+      "userId": "s1743twhzcc326xa1rby3czy8x854z4r",
+      "displayName": "TheSumSt",
+      "image": "https://avatars.githubusercontent.com/u/37763040?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776583176688,
+      "changelog": "Initial release: automated Canvas API token refresh via institutional IDP (CAS/SAML) login with RSA encryption. Supports Fudan University, adaptable to other Chinese universities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c8cff48b1fdd467f059d8b276cb8e4095e03e124643c0db15361bbe7ca9182c"
+}

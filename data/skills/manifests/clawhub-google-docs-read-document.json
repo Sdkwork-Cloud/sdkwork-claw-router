@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40282,
+  "uuid": "skill-clawhub-google-docs-read-document",
+  "skillKey": "clawhub-google-docs-read-document",
+  "name": "Google Docs Read Document",
+  "summary": "Atomic node skill to read a Google Doc using the gog CLI.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_docs_read_document",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zvirb",
+      "features": [
+        "Atomic node skill to read a Google Doc using the gog CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-docs-read-document@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130008533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-docs-read-document",
+      "url": "https://clawhub.ai/skills/google-docs-read-document"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-docs-read-document",
+    "url": "https://clawhub.ai/skills/google-docs-read-document",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-docs-read-document-4345632bc48affb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-docs-read-document@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-docs-read-document-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04a2bb872ea241952e07130497eb05e0d5444d67070be704015326f301efc7e4",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:15:33.234Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/industry-research-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.industry_research_analyst",
+  "skill": {
+    "id": 68381,
+    "skillKey": "clawhub-industry-research-analyst",
+    "name": "Industry Research Analyst 行业研究分析师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "industry-research-analyst",
+    "url": "https://clawhub.ai/skills/industry-research-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/industry-research-analyst-62dea3bfe8ba30e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "行业研究分析师 — 结构化深度行业研究skill。输入行业名称、产业链环节或研究课题，输出投行级别的行业深度研究报告。覆盖行业概览、产业链分析、竞争格局、驱动因素、风险评估、投资建议六大维度。适用场景：(1) 分析某个行业的市场规模和增长逻辑 (2) 梳理产业链上中下游关系 (3) 对比行业内公司竞争格局 (4)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ybridge",
+      "userId": "s17934zznz02gz0y94rkzcgdxn84as6h",
+      "displayName": "YBridge",
+      "image": "https://avatars.githubusercontent.com/u/45400384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774096965882,
+      "changelog": "Initial release: 6-dimensional industry research framework. Covers market sizing, value chain analysis, competitive landscape (Porter's Five Forces), growth drivers, risk assessment, and investment thesis. Chinese/English bilingual. Includes detailed research framework reference, output examples, and data collection script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5827c73af3a39d08295c2c1e33383b6b5dd17ffe8fef7eaf516c0022125c72b9"
+}

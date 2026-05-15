@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-repurposer-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_repurposer_tool",
+  "skill": {
+    "id": 41569,
+    "skillKey": "clawhub-content-repurposer-tool",
+    "name": "Content Repurposer Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-repurposer-tool",
+    "url": "https://clawhub.ai/skills/content-repurposer-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-repurposer-tool-5a0b65584750b58b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Repurpose long-form content (blog posts, articles, newsletters, YouTube transcripts) into platform-optimized social media posts, Twitter/X threads, LinkedIn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776124020822,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d1f54b8a809572647f543abeffa42d5ce4c3e582a9a6af53541ba6421c2f02d"
+}

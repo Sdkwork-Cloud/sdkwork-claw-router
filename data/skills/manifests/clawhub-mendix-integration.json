@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42418,
+  "uuid": "skill-clawhub-mendix-integration",
+  "skillKey": "clawhub-mendix-integration",
+  "name": "Mendix",
+  "summary": "Mendix integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mendix data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mendix_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Mendix integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mendix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mendix-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mendix-integration",
+      "url": "https://clawhub.ai/skills/mendix-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mendix-integration",
+    "url": "https://clawhub.ai/skills/mendix-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mendix-integration-43e0991d9c1d80e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mendix-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mendix-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40124799b8eadc4ed23a1742e536f606c285c24bde5544e7ec2f4c09f82d30d5",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:44:22.069Z"
+}

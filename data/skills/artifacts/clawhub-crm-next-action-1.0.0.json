@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crm-next-action@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_next_action",
+  "skill": {
+    "id": 59931,
+    "skillKey": "clawhub-crm-next-action",
+    "name": "Crm Next Action"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-next-action",
+    "url": "https://clawhub.ai/skills/crm-next-action",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-next-action-dfaf92655cd16f86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为机会池或客户列表逐条生成下一步动作、跟进理由和不推进原因。；use for crm, next-action, sales workflows；do not use for 伪造客户互动记录, 擅自发消息."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773640780680,
+      "changelog": "crm-next-action 1.0.0 – Initial Release\n\n- Generates next actions, follow-up reasons, and non-advancement explanations for CRM opportunities or customer lists.\n- Organizes output with clear structure: summary, next steps, reasoning, non-advancement causes, risks, and priority.\n- Emphasizes auditability and review: drafts are provided before execution, with boundaries on sensitive actions.\n- Applies strict rules for missing information, risk disclosure, and CRM interaction limits.\n- Available for use on Darwin, Linux, and Windows environments with Python 3 required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:380162c7ca067e36758604510863058087ef50350b9fc3dcfc84a323c56167ca"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64145,
+  "uuid": "skill-clawhub-vipshop-product-consultant",
+  "skillKey": "clawhub-vipshop-product-consultant",
+  "name": "vipshop-product-consultant",
+  "summary": "通过唯品会API查询并综合分析商品信息、用户评价和尺码反馈，提供详细购买建议和口碑报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vipshop_product_consultant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeToBusy",
+      "features": [
+        "通过唯品会API查询并综合分析商品信息、用户评价和尺码反馈，提供详细购买建议和口碑报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vipshop-product-consultant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/177394001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vipshop-product-consultant",
+      "url": "https://clawhub.ai/skills/vipshop-product-consultant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vipshop-product-consultant",
+    "url": "https://clawhub.ai/skills/vipshop-product-consultant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vipshop-product-consultant-a38dbd00935cb99e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vipshop-product-consultant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vipshop-product-consultant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8e55e024a646c38b0ee70628d03c99592260a13251569e144afb65ca62f2276",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:21:49.703Z"
+}

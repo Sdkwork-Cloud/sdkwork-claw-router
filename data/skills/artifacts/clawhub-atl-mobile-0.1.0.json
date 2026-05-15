@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atl-mobile@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atl_mobile",
+  "skill": {
+    "id": 11892,
+    "skillKey": "clawhub-atl-mobile",
+    "name": "Agent Touch Layer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atl-mobile",
+    "url": "https://clawhub.ai/skills/atl-mobile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atl-mobile-25955a261ed57b04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mobile browser and native app automation via ATL (iOS Simulator). Navigate, click, screenshot, and automate web and native app tasks on iPhone/iPad simulators."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jordancoin",
+      "userId": "publishers:jordancoin",
+      "displayName": "JordanCoin",
+      "image": "https://avatars.githubusercontent.com/u/6958488?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1963,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770416022859,
+      "changelog": "Initial release of ATL mobile browser and native app automation for iOS simulators.\n\n- Introduces two HTTP servers for automation: port 9222 for web (Safari/WebView) and port 9223 for native app control (XCTest).\n- Supports key browser commands: navigate, mark/click elements, evaluate scripts, take screenshots.\n- Native app commands: open/close apps by bundle ID, snapshot accessibility tree, tap by reference, find and fill elements by text.\n- Provides installation instructions, common bundle IDs, and full workflow examples.\n- Requires macOS tools: xcrun, xcodebuild, and curl.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbdfe03340d0160b7ec5853488675c8efd8ec0579ac5f156be278ff8fafab06a"
+}

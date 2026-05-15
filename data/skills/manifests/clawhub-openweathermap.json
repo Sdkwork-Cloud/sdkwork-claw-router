@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30540,
+  "uuid": "skill-clawhub-openweathermap",
+  "skillKey": "clawhub-openweathermap",
+  "name": "OpenWeatherMap Weather",
+  "summary": "Get current weather data, forecasts, and weather information from OpenWeatherMap API. Use when the user asks about weather, temperature, forecasts, or any we...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openweathermap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Phil Lawlor",
+      "features": [
+        "Get current weather data, forecasts, and weather information from OpenWeatherMap API",
+        "Use when the user asks about weather, temperature, forecasts, or any we..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openweathermap@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3833981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openweathermap",
+      "url": "https://clawhub.ai/skills/openweathermap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openweathermap",
+    "url": "https://clawhub.ai/skills/openweathermap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openweathermap-06bfcd3d007a7abf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openweathermap@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openweathermap-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2af5f88492d253ca5cfd1f9bf1cc69ece97c6daf7b63439e59d3bbcfa4b5ea19",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T16:49:41.753Z"
+}

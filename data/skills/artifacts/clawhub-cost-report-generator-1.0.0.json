@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cost-report-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cost_report_generator",
+  "skill": {
+    "id": 64311,
+    "skillKey": "clawhub-cost-report-generator",
+    "name": "Cost Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cost-report-generator",
+    "url": "https://clawhub.ai/skills/cost-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cost-report-generator-7fc9270cb2454dd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从项目费用 Excel 文件（如 EVP 项目费用.xlsx）自动生成按客户分类的成本分析报告。支持帝国、BAT、MT、ITMS 等客户分类，包含 2025 年和 2026 年成本分析，自动计算年度汇总、月度明细、月均数据。使用场景：用户发送类似\"EVP 项目费用.xlsx\"的文件并要求生成成本分析报告，或提到\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "richard052317",
+      "userId": "s177wypm20j69d0samsxf63ryh84cg22",
+      "displayName": "Richard052317",
+      "image": "https://avatars.githubusercontent.com/u/265495226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776398374693,
+      "changelog": "- 首个版本发布，支持从项目费用 Excel 文件自动生成按客户分类的成本分析报告\n- 自动识别客户分类（帝国、BAT、MT、ITMS），并进行多项费用和时间维度的详细分析\n- 年度汇总、月均、月度明细等核心财务指标自动生成\n- 输出报告严格美化，包括颜色、格式、对齐、边框和列宽等细节\n- 支持命令行和 Python 两种方式调用，按需调整输入输出参数\n- 提供完整的输入格式说明、常见问题排查和多种团队共享方式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:959914ab47fb77297505b133c6fc467c2f0e296b34cfe4e31e661dae5a916e31"
+}

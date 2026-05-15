@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13027,
+  "uuid": "skill-clawhub-midjourney",
+  "skillKey": "clawhub-midjourney",
+  "name": "Midjourney",
+  "summary": "AI image generation via Midjourney Discord bot: create images from prompts, upscale, create variations, blend images, describe images. Use when: (1) generati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midjourney",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gsxrchris",
+      "features": [
+        "AI image generation via Midjourney Discord bot: create images from prompts, upscale, create var.",
+        "Use when: (1) generati..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/midjourney@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229546692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "midjourney",
+      "url": "https://clawhub.ai/skills/midjourney"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midjourney",
+    "url": "https://clawhub.ai/skills/midjourney",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midjourney-d931372ba7f836a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/midjourney@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-midjourney-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0662b738751d71924d12e37d539e0f8831d896ada5bedde294baeee8e15be43d",
+      "artifactSizeBytes": 1929
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T22:49:46.329Z"
+}

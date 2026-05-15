@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/btc-strategy-v40@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_strategy_v40",
+  "skill": {
+    "id": 59344,
+    "skillKey": "clawhub-btc-strategy-v40",
+    "name": "Btc Strategy V40"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-strategy-v40",
+    "url": "https://clawhub.ai/skills/btc-strategy-v40",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-strategy-v40-4ff10e7e94ec69f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BTC V4.0 量化交易策略 - 基于 EMA3/EMA8 交叉、RSI 和动量的多因子信号系统。 通过 Agent Trade Kit 自动执行 BTC-USDT-SWAP 永续合约交易。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianzhentao1",
+      "userId": "s173110e450gcxtqg03yr2p02d841vkj",
+      "displayName": "qianzhentao1",
+      "image": "https://avatars.githubusercontent.com/u/140900356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1776095045807,
+      "changelog": "- 联合 Agent Trade Kit，实现 BTC-USDT-SWAP 永续合约自动化交易执行\n- 策略决策流程优化：明确分五步，包括行情数据采集、市场情绪分析、AI 多因子推理、自动下单与风控\n- 新增市场情绪数据输入（资金费率/持仓量/多空比），并纳入仓位与风险判断\n- 信号评分和决策标准更详细，动态调整仓位比例，添加严格止损与回撤风控规则\n- 每 5 分钟执行周期，增强与 OKX 竞赛排行榜兼容性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0a4a77a5b2b5353cc3485ac60856f62e539fb6adebd6044c7f587ac3dc5ff88"
+}

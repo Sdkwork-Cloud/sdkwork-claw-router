@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hallucinated-paths@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hallucinated_paths",
+  "skill": {
+    "id": 45738,
+    "skillKey": "clawhub-hallucinated-paths",
+    "name": "Hallucinated Paths"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hallucinated-paths",
+    "url": "https://clawhub.ai/skills/hallucinated-paths",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hallucinated-paths-c9665c81649c2a87.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reply cites file paths, directories, or module locations that do not exist in the current project."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mvogt99",
+      "userId": "s1795cpfvhkpcq4k9a8xmpepw585gbjp",
+      "displayName": "mvogt99",
+      "image": "https://avatars.githubusercontent.com/u/911083?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777223774367,
+      "changelog": "- Initial release of the \"hallucinated-paths\" skill.\n- Detects and describes cases where replies reference non-existent file paths, directories, or module locations.\n- Lists common symptoms of hallucinated paths, such as instructions referencing missing files or unresolvable imports.\n- Provides guidance for verifying file existence and proper path usage.\n- Recommends strategies to avoid inventing plausible-sounding but incorrect paths.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cef7a4db4ab64418232945d99fed29979a0c0b2d70912d32f41d09bdc49acff6"
+}

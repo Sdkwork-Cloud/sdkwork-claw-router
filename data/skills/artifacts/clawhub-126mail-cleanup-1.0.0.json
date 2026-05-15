@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/126mail-cleanup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.126mail_cleanup",
+  "skill": {
+    "id": 44819,
+    "skillKey": "clawhub-126mail-cleanup",
+    "name": "126 Mail Cleanup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "126mail-cleanup",
+    "url": "https://clawhub.ai/skills/126mail-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/126mail-cleanup-c95e46b14d7a1e8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to clean up, back up, or optimize their 126.com (NetEase) email account. Covers local backup, spam/subscription bulk delet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinghaojia",
+      "userId": "s178ctw1yw1mpyqe81gqd7y1cn84b9ms",
+      "displayName": "YinghaoJia",
+      "image": "https://avatars.githubusercontent.com/u/23326844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775515755116,
+      "changelog": "Initial release: full backup, classification, bulk cleanup, large attachment stripping for NetEase 126.com email",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63b34c9ca96ad8c30d90cffdb7af67a2edadd262c1f08102598a1bec5a41f4a4"
+}

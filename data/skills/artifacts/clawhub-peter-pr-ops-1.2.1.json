@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/peter-pr-ops@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peter_pr_ops",
+  "skill": {
+    "id": 62817,
+    "skillKey": "clawhub-peter-pr-ops",
+    "name": "Peter Pr Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peter-pr-ops",
+    "url": "https://clawhub.ai/skills/peter-pr-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peter-pr-ops-345c4bdf77aa5f16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PR 收口自动化。单 PR 串行合并与多 PR 批量清理，减少重复人工操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chinasilva",
+      "userId": "s1702gacd3xqn76t52dae61n9983gzxk",
+      "displayName": "chinasilva",
+      "image": "https://avatars.githubusercontent.com/u/16743182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772520983169,
+      "changelog": "- 优化 PR 自动化流程，区分单个和批量 PR 处理，提高操作效率。\n- 优先调用本地脚本 `scripts/automerge` 和 `scripts/massageprs`，脚本缺失自动补齐。\n- 新增缺失脚本补齐机制，确保自动化流程不中断。\n- 明确合并护栏（如 CI 不通过不强合，单 PR 默认 squash，批量模式默认 merge）。\n- 合并完成后自动刷新 `docs/SESSION-BOOTSTRAP.md`，并明确输出结果与操作建议。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5951e8bdd3af663afddb6dba10a3046497d855e752f1ee82709cd3ae2a881c60"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-video-script-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_video_script_writer",
+  "skill": {
+    "id": 45703,
+    "skillKey": "clawhub-best-video-script-writer",
+    "name": "Best Video Script Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-video-script-writer",
+    "url": "https://clawhub.ai/skills/best-video-script-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-video-script-writer-56abdc37b0057ec1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute product explainer brief into 1080p ready-to-use scripts just by typing what you need. Whether it's generating video scripts from a topic or b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775975896050,
+      "changelog": "Initial release of Best Video Script Writer — generate ready-to-use video scripts from any topic or brief in seconds.\n\n- Instantly generate 1080p video scripts based on your prompt; supports YouTube, product explainers, and more.\n- Simple onboarding — just send a topic or brief and describe your needs.\n- Secure connection to backend API with automatic handling of tokens and sessions.\n- Fast cloud GPU rendering for exporting finished videos (supports MP4 and more).\n- Supports file uploads, timeline previews, and credit balance checks directly in chat.\n- Includes clear workflows, error handling, and user guidance for seamless editing and exports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e437563ac68bbb8a8692437bc95c78fc8a18f64ca95101a944bcefd675527be"
+}

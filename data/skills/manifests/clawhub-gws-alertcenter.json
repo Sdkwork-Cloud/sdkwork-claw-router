@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22453,
+  "uuid": "skill-clawhub-gws-alertcenter",
+  "skillKey": "clawhub-gws-alertcenter",
+  "name": "Gws Alertcenter",
+  "summary": "Google Workspace Alert Center: Manage Workspace security alerts.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_alertcenter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Google Workspace Alert Center: Manage Workspace security alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-alertcenter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-alertcenter",
+      "url": "https://clawhub.ai/skills/gws-alertcenter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-alertcenter",
+    "url": "https://clawhub.ai/skills/gws-alertcenter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-alertcenter-6933d481a00f7587.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-alertcenter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-alertcenter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64908b31de26e44e58587558dd13f3305d3c3a63a95fa646881e772a06cc3f8d",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T23:04:32.699Z"
+}

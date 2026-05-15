@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71072,
+  "uuid": "skill-clawhub-feishu-img-send-mx",
+  "skillKey": "clawhub-feishu-img-send-mx",
+  "name": "飞书图片发送",
+  "summary": "直接通过飞书开放平台 API 发送图片（绕过 OpenClaw 插件的限制），而非以文件附件形式发送。使用场景：需要发送截图、二维码等图片给用户时。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_img_send_mx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Moistenxx",
+      "features": [
+        "直接通过飞书开放平台 API 发送图片（绕过 OpenClaw 插件的限制），而非以文件附件形式发送。使用场景：需要发送截图、二维码等图片给用户时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-img-send-mx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242734902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-img-send-mx",
+      "url": "https://clawhub.ai/skills/feishu-img-send-mx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-img-send-mx",
+    "url": "https://clawhub.ai/skills/feishu-img-send-mx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-img-send-mx-c858436b78ccffd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-img-send-mx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-img-send-mx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cd64111f9438a872307857d872b36ee244b2439cb1546c4b7cb5dde6a7a4aad",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:02:22.988Z"
+}

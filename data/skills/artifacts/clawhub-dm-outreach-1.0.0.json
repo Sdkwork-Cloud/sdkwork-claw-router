@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dm-outreach@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dm_outreach",
+  "skill": {
+    "id": 11164,
+    "skillKey": "clawhub-dm-outreach",
+    "name": "Dm Outreach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dm-outreach",
+    "url": "https://clawhub.ai/skills/dm-outreach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dm-outreach-aae415da2ab6d0a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft personalized Instagram DMs for qualified leads with focused templates, saved as files for manual sending and follow-up outreach."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "visualdeptcreative",
+      "userId": "publishers:visualdeptcreative",
+      "displayName": "visualdeptcreative",
+      "image": "https://avatars.githubusercontent.com/u/257858472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1942,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770291923253,
+      "changelog": "- Initial release of the dm-outreach skill.\n- Drafts high-quality, personalized Instagram DMs for qualified leads under manual sending workflow.\n- Includes week-by-week DM batching strategy, with clear daily targets and lead prioritization.\n- Provides ready-to-use DM templates for first contact and follow-ups, following strict quality, tone, and compliance guidelines.\n- Outputs drafts to a standardized CSV format for streamlined manual sending.\n- Emphasizes Skynet’s compliance—no automated DM sending to avoid Instagram bans.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ab54b037c9fb77a1273bd36b0d937285aad4239f24e81602b242e1be1479640"
+}

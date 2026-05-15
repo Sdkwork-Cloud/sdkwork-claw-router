@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73000,
+  "uuid": "skill-clawhub-design-framework-builder",
+  "skillKey": "clawhub-design-framework-builder",
+  "name": "设计框架套件 - 框架生成器",
+  "summary": "设计框架自动生成套件（框架生成器）：收到设计需求后自动生成完整设计框架并发送群预览",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_framework_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "807209066",
+      "features": [
+        "设计框架自动生成套件（框架生成器）：收到设计需求后自动生成完整设计框架并发送群预览"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/design-framework-builder@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86033938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "design-framework-builder",
+      "url": "https://clawhub.ai/skills/design-framework-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-framework-builder",
+    "url": "https://clawhub.ai/skills/design-framework-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-framework-builder-7dcc464267949fe6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/design-framework-builder@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-design-framework-builder-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54c102015d292c5886abb0c61cff30f41d94d4fc550b2a5129a185c230db785a",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:12:13.593Z"
+}

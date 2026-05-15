@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45901,
+  "uuid": "skill-clawhub-skill-publisher-test-3461",
+  "skillKey": "clawhub-skill-publisher-test-3461",
+  "name": "Skill Publisher",
+  "summary": "Automate OpenClaw skill publishing to GitHub and ClawHub. Handles ZIP extraction, file preparation (README, .gitignore, SkillBoss links), Git operations, Git...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_publisher_test_3461",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Automate OpenClaw skill publishing to GitHub and ClawHub",
+        "Handles ZIP extraction, file preparation (README, .gitignore, SkillBoss links), Git operations,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-publisher-test-3461@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-publisher-test-3461",
+      "url": "https://clawhub.ai/skills/skill-publisher-test-3461"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-publisher-test-3461",
+    "url": "https://clawhub.ai/skills/skill-publisher-test-3461",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-publisher-test-3461-6e1b8e6cc5ed75ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-publisher-test-3461@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-publisher-test-3461-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08fe832c9b8953fbf87a33e557bbcaec87ce183534c113b44d718aa65a6fcc34",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:45:27.507Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proposal-copilot@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proposal_copilot",
+  "skill": {
+    "id": 21321,
+    "skillKey": "clawhub-proposal-copilot",
+    "name": "Proposal Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proposal-copilot",
+    "url": "https://clawhub.ai/skills/proposal-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proposal-copilot-b5706f647aa652ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Upwork/freelance bid materials from a job description, including English proposal draft, bid-worthiness score, pricing suggestion (fixed/hourly), mi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeterwang",
+      "userId": "publishers:jeterwang",
+      "displayName": "jeterWang",
+      "image": "https://avatars.githubusercontent.com/u/194473111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772690405235,
+      "changelog": "中文版 Upwork 提案助手，支持多种风格，智能评分，计费集成。添加中文命令别名，付费解锁完整功能。定价：每次调用 0.001 USDT，通过 SkillPay.me 计费，余额不足返回充值链接。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a6dd6c9d6f8d7bb48308833edf7ba1452c4cde38980d41f709ec12c0afee5577"
+}

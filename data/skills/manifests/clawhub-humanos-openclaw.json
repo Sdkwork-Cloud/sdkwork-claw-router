@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19962,
+  "uuid": "skill-clawhub-humanos-openclaw",
+  "skillKey": "clawhub-humanos-openclaw",
+  "name": "Humanos - Programmable Human Authorization for Agent Actions",
+  "summary": "Require verifiable human approval before high-risk agent actions.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanos_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Humanos",
+      "features": [
+        "Require verifiable human approval before high-risk agent actions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanos-openclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36866655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanos-openclaw",
+      "url": "https://clawhub.ai/skills/humanos-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanos-openclaw",
+    "url": "https://clawhub.ai/skills/humanos-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanos-openclaw-0e2569b3fe783bb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanos-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanos-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9278d690cbbd96cedf534b1a132b17566ec14ab2e96e5e3a43066d11211a2a06",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:01:18.120Z"
+}

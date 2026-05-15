@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-agent@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_agent",
+  "skill": {
+    "id": 12088,
+    "skillKey": "clawhub-my-agent",
+    "name": "Conscious OS Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-agent",
+    "url": "https://clawhub.ai/skills/my-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-agent-178890c4e2da4e09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides calm, clear coaching that frames problems precisely, avoids false confidence, uses structured responses, and guides practical next steps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lazymonlabs",
+      "userId": "publishers:lazymonlabs",
+      "displayName": "lazymonlabs",
+      "image": "https://avatars.githubusercontent.com/u/251475336?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1879,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1770328510989,
+      "changelog": "- Added heartbeat.js file for improved system monitoring or keep-alive functionality.\n- No changes made to skill logic or user-facing features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af1cd70b58634252bba3ab57943c9229feb763e63e79d7205a1ee50556e33a4d"
+}

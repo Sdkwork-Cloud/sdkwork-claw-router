@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72989,
+  "uuid": "skill-clawhub-shanghai-hua",
+  "skillKey": "clawhub-shanghai-hua",
+  "name": "上海话（沪语）",
+  "summary": "上海话（沪语）对话 Skill（默认模式）。支持日常对话、问候、情感表达、美食、职场吐槽、上海本地特色文化等场景。说\"普通话模式\"可切换到正常普通话模式。触发词包括：侬、阿拉、啥、哪能、今朝、蛮、忒、扎劲、轧闹猛、白相、吃生活、扎台型、坍台、拎不清、拆烂污、捣浆糊、豁翎子、接翎子、小龙花、摸鱼、搭子、噶山湖等上海...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shanghai_hua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adchina2025",
+      "features": [
+        "上海话（沪语）对话 Skill（默认模式）。支持日常对话、问候、情感表达、美食、职场吐槽、上海本地特色文化等场景。说\"普通话模式\"可切换到正常普通话模式。触发词包括：侬、阿拉、啥、哪能、今朝."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shanghai-hua@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265822641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shanghai-hua",
+      "url": "https://clawhub.ai/skills/shanghai-hua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shanghai-hua",
+    "url": "https://clawhub.ai/skills/shanghai-hua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shanghai-hua-44f10725cb32201b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shanghai-hua@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shanghai-hua-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8297a2e318ea095512855e73e40c11290f5bae3e9ef490daeae3e9e5af73fc96",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T09:51:13.708Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bandwidth-income@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bandwidth_income",
+  "skill": {
+    "id": 18041,
+    "skillKey": "clawhub-bandwidth-income",
+    "name": "Clawhub Skill Bandwidth Income"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bandwidth-income",
+    "url": "https://clawhub.ai/skills/bandwidth-income",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bandwidth-income-114bfebc736b3e2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and manage bandwidth-sharing nodes on Grass.io, Mysterium, Storj, and Honeygain to earn passive crypto income with monitoring and ROI tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariusfit",
+      "userId": "publishers:mariusfit",
+      "displayName": "mariusfit",
+      "image": "https://avatars.githubusercontent.com/u/53900085?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 712,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771982912620,
+      "changelog": "Bandwidth Income Skill v1.0.0\n\n- Initial release: set up, monitor, and optimize crypto-earning bandwidth-sharing nodes.\n- Supports Grass.io, Mysterium Network, Storj, and Honeygain with Docker-based deployment.\n- Unified status, earnings tracking, and monitoring alerts for all platforms.\n- Includes ROI calculation and estimated earnings calculator.\n- Provides quick start guides, Docker compose samples, and monitoring script.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:425b7e10b31bc2862964415c925d807acee83797b73fa8265cae7ca7d2929abc"
+}

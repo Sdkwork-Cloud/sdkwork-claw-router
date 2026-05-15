@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-mcp-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_mcp_v2",
+  "skill": {
+    "id": 14894,
+    "skillKey": "clawhub-minimax-mcp-v2",
+    "name": "MiniMax MCP Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-mcp-v2",
+    "url": "https://clawhub.ai/skills/minimax-mcp-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-mcp-v2-cac713a7153cb1fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform real-time web searches and analyze images using MiniMax MCP with input prompts and flexible image sources."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hillsp99",
+      "userId": "publishers:hillsp99",
+      "displayName": "HillSP",
+      "image": "https://avatars.githubusercontent.com/u/204435494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1077,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772018709130,
+      "changelog": "Initial release of MiniMax MCP Search Skill.\n\n- Supports real-time web search with concise results (title, link, summary, date) via MiniMax MCP.\n- Enables image understanding for both local files and URLs in JPEG, PNG, or WebP formats.\n- Requires installation of mcporter and pre-configured MiniMax API Key.\n- Clear usage instructions and parameter descriptions provided for all tools.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:343a17099fbf93fdbe88a5e35c53a37782dc2970a13d5c33d162bf806d30dc1f"
+}

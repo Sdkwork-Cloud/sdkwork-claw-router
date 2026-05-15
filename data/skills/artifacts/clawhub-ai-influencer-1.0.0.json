@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-influencer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_influencer",
+  "skill": {
+    "id": 23750,
+    "skillKey": "clawhub-ai-influencer",
+    "name": "AI Influencer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-influencer",
+    "url": "https://clawhub.ai/skills/ai-influencer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-influencer-ac52b26aa1658cfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create an AI clone video (talking head) from a single reference photo, a text script, and a cloned voice. Automates the pipeline of image generation (Gemini)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yadavabhijeet4",
+      "userId": "publishers:yadavabhijeet4",
+      "displayName": "yadavabhijeet4",
+      "image": "https://avatars.githubusercontent.com/u/197090871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 420,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773260530344,
+      "changelog": "- Initial release of ai-influencer skill: generate photorealistic AI clone (talking-head) videos using a reference photo, script, and cloned voice.\n- Fully automates the pipeline: image creation (Gemini), voice cloning (ElevenLabs), and lip-sync video animation (Kling AI).\n- Offers a simple command to orchestrate all steps, requiring only image, prompt, script, and voice ID inputs.\n- Requires API keys for ElevenLabs and Kling AI; video rendering runs asynchronously and may take several minutes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a55bc656d1cb63a7f62633dd770e39ad0d4e22fabd7b707c80880850cc717134"
+}

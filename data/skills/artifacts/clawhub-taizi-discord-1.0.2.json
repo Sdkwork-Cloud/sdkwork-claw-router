@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taizi-discord@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_discord",
+  "skill": {
+    "id": 22044,
+    "skillKey": "clawhub-taizi-discord",
+    "name": "Discord"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-discord",
+    "url": "https://clawhub.ai/skills/taizi-discord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-discord-51a9ce8a3ed57d8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Discord via Clawdbot to send messages, react, post stickers/emojis, run polls, manage threads/pins/search, fetch info, and moderate channels or DMs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fresh3",
+      "userId": "publishers:fresh3",
+      "displayName": "fresh3",
+      "image": "https://avatars.githubusercontent.com/u/23310067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773795915621,
+      "changelog": "Bug fixes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da533560ea189b6d810fe988423b6619fd56af0cba90b978d49b5e355aede3b8"
+}

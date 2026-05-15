@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42008,
+  "uuid": "skill-clawhub-steam-icon-fixer",
+  "skillKey": "clawhub-steam-icon-fixer",
+  "name": "Steam Icon Fixer",
+  "summary": "Fix missing or generic Steam game desktop icons on Linux by finding the Steam app ID from local launchers and installing replacement artwork into the user's...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steam_icon_fixer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lunarmoon26",
+      "features": [
+        "Fix missing or generic Steam game desktop icons on Linux by finding the Steam app ID from local."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/steam-icon-fixer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5451439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "steam-icon-fixer",
+      "url": "https://clawhub.ai/skills/steam-icon-fixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steam-icon-fixer",
+    "url": "https://clawhub.ai/skills/steam-icon-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steam-icon-fixer-86cb830e7128dc9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/steam-icon-fixer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-steam-icon-fixer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2eb3b1d5cde6040ee814d48b0dcda753a6e99eced167f694e596a62f140d9b37",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:12:08.849Z"
+}

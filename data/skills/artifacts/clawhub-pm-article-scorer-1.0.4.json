@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm-article-scorer@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_article_scorer",
+  "skill": {
+    "id": 65932,
+    "skillKey": "clawhub-pm-article-scorer",
+    "name": "Pm Article Scorer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-article-scorer",
+    "url": "https://clawhub.ai/skills/pm-article-scorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-article-scorer-2f734e3f1e251705.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI产品经理内容相关性评分技能。对公众号文章进行多维度启发式评分（0-100分），判断是否值得AI产品经理关注。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agasding",
+      "userId": "s17dgcbj38p9et7fjq834fndtn83xaqt",
+      "displayName": "Kai",
+      "image": "https://avatars.githubusercontent.com/u/14113685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775644846682,
+      "changelog": "清理遗留文件（移除README.md、旧版scripts、OpenAI API key示例），仅保留SKILL.md+LICENSE+_meta.json",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8c85be96338d03f8e28f9e6710a061debcccc2c5c21c49cf925918d67515a8d"
+}

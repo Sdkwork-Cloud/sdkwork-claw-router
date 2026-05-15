@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/entrepreneur-skill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.entrepreneur_skill",
+  "skill": {
+    "id": 52758,
+    "skillKey": "clawhub-entrepreneur-skill",
+    "name": "entrepreneur-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "entrepreneur-skill",
+    "url": "https://clawhub.ai/skills/entrepreneur-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/entrepreneur-skill-f0da24d6810ed09e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your AI Founder Partner for building and scaling startups — diagnose your stage, run hypothesis experiments, make pricing decisions, design growth loops, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neiljo-gy",
+      "userId": "s179vn1xk5bsc9jy98a9j2brkh83gtgg",
+      "displayName": "acnlabs",
+      "image": "https://avatars.githubusercontent.com/u/43027886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776442752542,
+      "changelog": "v0.1.2: clean package, remove internal tooling files",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd5d9a44ad9d3fafb2ef0762239743ebf447edfaf18ef2977bfba19eba683bb1"
+}

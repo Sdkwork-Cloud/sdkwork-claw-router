@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72032,
+  "uuid": "skill-clawhub-spending-log",
+  "skillKey": "clawhub-spending-log",
+  "name": "spending-log",
+  "summary": "个人支出记账。当用户提到记账、花了、消费、支出、账单、开销、统计消费、月度报表时触发。支持自然语言记账、自动分类、月度统计、预算提醒和月度报表生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spending_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baoxinwen",
+      "features": [
+        "个人支出记账。当用户提到记账、花了、消费、支出、账单、开销、统计消费、月度报表时触发。支持自然语言记账、自动分类、月度统计、预算提醒和月度报表生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spending-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84140746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spending-log",
+      "url": "https://clawhub.ai/skills/spending-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spending-log",
+    "url": "https://clawhub.ai/skills/spending-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spending-log-ee2c3dc79b27c358.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spending-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spending-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c297be56ee4d2e84fd29f75d0082d3d0ee81b4a443c372889fff8b37e5f5e4b",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T08:19:31.700Z"
+}

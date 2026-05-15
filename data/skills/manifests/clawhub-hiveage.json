@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31622,
+  "uuid": "skill-clawhub-hiveage",
+  "skillKey": "clawhub-hiveage",
+  "name": "Hiveage",
+  "summary": "Hiveage integration. Manage Users, Organizations. Use when the user wants to interact with Hiveage data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiveage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Hiveage integration",
+        "Manage Users, Organizations",
+        "Use when the user wants to interact with Hiveage data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hiveage@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hiveage",
+      "url": "https://clawhub.ai/skills/hiveage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiveage",
+    "url": "https://clawhub.ai/skills/hiveage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiveage-84f715154e9e24ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hiveage@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-hiveage-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3dabb7b893f9b6d25229478715d0c79c2ce4de728ad0dd3210a2e76be1d5066",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:33:27.387Z"
+}

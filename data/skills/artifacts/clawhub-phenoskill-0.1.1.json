@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phenoskill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phenoskill",
+  "skill": {
+    "id": 17844,
+    "skillKey": "clawhub-phenoskill",
+    "name": "Phenosnap Phenotype Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phenoskill",
+    "url": "https://clawhub.ai/skills/phenoskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phenoskill-db728fda74a78717.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract clinical phenotypes and medication entities from user-provided text using PhenoSnap, producing a timestamped JSON output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaichop",
+      "userId": "publishers:kaichop",
+      "displayName": "Kai Wang",
+      "image": "https://avatars.githubusercontent.com/u/5926328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 740,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772119297460,
+      "changelog": "No user-visible changes detected in this release.\n\n- No file or documentation updates were made between versions 0.1.0 and 0.1.1.\n- Functionality, usage, and requirements remain the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c67bf3273d6ccbf3b3f9a1b33fe05855f1ffd60b57385930959eddc5e60e2cff"
+}

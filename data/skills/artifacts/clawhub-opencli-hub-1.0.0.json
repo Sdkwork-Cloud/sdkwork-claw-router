@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencli-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_hub",
+  "skill": {
+    "id": 33999,
+    "skillKey": "clawhub-opencli-hub",
+    "name": "opencli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-hub",
+    "url": "https://clawhub.ai/skills/opencli-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-hub-d3b2beba1b76fa1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal CLI for browser automation and website command-line access, supporting commands for Bilibili, Twitter, Reddit, GitHub, and more with automation fea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chensu1234",
+      "userId": "s17b39d2taddmxdagg5n82qycx844nt7",
+      "displayName": "chensu1234",
+      "image": "https://avatars.githubusercontent.com/u/182055550?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775201719340,
+      "changelog": "Initial release: Universal CLI Hub for 70+ websites with browser automation support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5d9dbda9b3d5f2988dc15dfc5f9981dc69006c4627b796655ef82fc60508d1a"
+}

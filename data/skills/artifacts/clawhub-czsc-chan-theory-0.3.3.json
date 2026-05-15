@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/czsc-chan-theory@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.czsc_chan_theory",
+  "skill": {
+    "id": 63566,
+    "skillKey": "clawhub-czsc-chan-theory",
+    "name": "Czsc Chan Theory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "czsc-chan-theory",
+    "url": "https://clawhub.ai/skills/czsc-chan-theory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/czsc-chan-theory-7a570bcfb699e3ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CZSC 缠论技术分析工具，支持 K 线生成、笔线段识别、分型信号提取与 A 股回测可视化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1776954301792,
+      "changelog": "v0.3.3: bilingual metadata injected. H1 shows 缠论技术分析; tagline replaced with skill-specific Chinese hook; tags upgraded to Level 1-4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e057a382b257c70af0b6be4ef2bead3dd113fcb58f65e93225e6437f0a25d82"
+}

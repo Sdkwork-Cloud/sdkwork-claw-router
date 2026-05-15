@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36358,
+  "uuid": "skill-clawhub-hiphops",
+  "skillKey": "clawhub-hiphops",
+  "name": "Hiphops",
+  "summary": "Hiphops integration. Manage data, records, and automate workflows. Use when the user wants to interact with Hiphops data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiphops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Hiphops integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Hiphops data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hiphops@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hiphops",
+      "url": "https://clawhub.ai/skills/hiphops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiphops",
+    "url": "https://clawhub.ai/skills/hiphops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiphops-32232c8717538268.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hiphops@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hiphops-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db0aef06507919553eace4cdac04fe4fcdf00023a58d9bdeecd9c0245a0ee7de",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:33:19.933Z"
+}

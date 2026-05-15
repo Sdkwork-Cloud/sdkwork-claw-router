@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pixel-office@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pixel_office",
+  "skill": {
+    "id": 58393,
+    "skillKey": "clawhub-pixel-office",
+    "name": "Pixel Office"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pixel-office",
+    "url": "https://clawhub.ai/skills/pixel-office",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pixel-office-a7a10bc753aab186.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Animated pixel-art office where agents appear as characters that walk, sit, and interact with furniture in real time. 像素风办公室，让各个 agents 以角色形式实时走动、入座，并与家具互动。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xmanrui",
+      "userId": "s17b3qydx8bxwq5vj4wt4fayv583xnsn",
+      "displayName": "xmanrui",
+      "image": "https://avatars.githubusercontent.com/u/4094054?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 613,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772811143316,
+      "changelog": "Initial release: pixel-office skill forked from openclaw-bot-dashboard with dedicated triggers, bilingual description, /pixel-office access path, and strict LAN URL return rules.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:225d8be041ace7b0cb7cdaad57625729b7414d4298111f0c78b6fad2ddf9faed"
+}

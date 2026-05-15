@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72324,
+  "uuid": "skill-clawhub-tech-invest-daily",
+  "skillKey": "clawhub-tech-invest-daily",
+  "name": "科技投资日报",
+  "summary": "科技行业投资日报生成与推送。当用户要求生成科技投资日报、发送每日投资报告、或cron定时触发日报任务时使用。自动抓取财联社实时新闻、获取涉及上市公司股价、生成深度分析报告并通过飞书一条消息发送完整Markdown报告，同时生成PDF附件。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_invest_daily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ilove323",
+      "features": [
+        "科技行业投资日报生成与推送。当用户要求生成科技投资日报、发送每日投资报告、或cron定时触发日报任务时使用。自动抓取财联社实时新闻、获取涉及上市公司股价、生成深度分析报告并通过飞书一条消息发."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-invest-daily@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14835165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-invest-daily",
+      "url": "https://clawhub.ai/skills/tech-invest-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-invest-daily",
+    "url": "https://clawhub.ai/skills/tech-invest-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-invest-daily-47f95915465f466f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-invest-daily@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-invest-daily-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:014dc970f336c0f7f390242f94fa523f94aff7e0b85b24c9c4c4f8327d74d15b",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T05:38:41.441Z"
+}

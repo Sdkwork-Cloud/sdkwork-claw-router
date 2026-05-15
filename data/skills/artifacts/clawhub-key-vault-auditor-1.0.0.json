@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/key-vault-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.key_vault_auditor",
+  "skill": {
+    "id": 25052,
+    "skillKey": "clawhub-key-vault-auditor",
+    "name": "Key Vault Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "key-vault-auditor",
+    "url": "https://clawhub.ai/skills/key-vault-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/key-vault-auditor-6d7f6b4c609abe8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Azure Key Vault configuration, access policies, and secret hygiene for credential exposure risks"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anmolnagpal",
+      "userId": "publishers:anmolnagpal",
+      "displayName": "Anmol Nagpal",
+      "image": "https://avatars.githubusercontent.com/u/4303310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772622268681,
+      "changelog": "azure-key-vault-auditor 1.0.0 – Initial release\n\n- Provides instruction-only auditing for Azure Key Vault security, configuration, and access policies.\n- Analyzes exported Azure CLI/console data for exposures (public access, policy risks, expired secrets).\n- Generates a findings table, Bicep hardening templates, secret rotation plans, and managed identity migration guidance.\n- Clearly outlines required user inputs and minimum Azure permissions (read-only).\n- Does not request or process any credentials or secrets directly.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb95052a44e1f27dd003763351deba95e74ab0f2e7ac1f658017ae5d6cb06af4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/041-llm-wiki@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.041_llm_wiki",
+  "skill": {
+    "id": 53377,
+    "skillKey": "clawhub-041-llm-wiki",
+    "name": "llm-wiki SKILL inspired by Karpathy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "041-llm-wiki",
+    "url": "https://clawhub.ai/skills/041-llm-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/041-llm-wiki-ee46841b4ecb9dd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Karpathy's llm-wiki pattern implementation — cumulative knowledge management for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nemo4110",
+      "userId": "s173ycbfz08xfrrqb7xrepkwa1842rdz",
+      "displayName": "T0M0R1N",
+      "image": "https://avatars.githubusercontent.com/u/70043311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777478444925,
+      "changelog": "Version 1.4.0\n\n- Introduced agent-bridge interface (`scripts/agent-bridge.py`) as a unified entry point for all automation and agent interactions.\n- Added dedicated agent logging module (`src/llm_wiki/agent_logger.py`) for improved traceability and debugging.\n- Updated SKILL definition to reference the new agent-bridge script in entry points, workflows, and CLI documentation.\n- Revised ingest, link, and relink function workflows to use the agent-bridge tool for discovery, merging, and batch operations.\n- Enhanced documentation to distinguish between protocol mode, agent bridge usage, and legacy CLI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80afdc75687452f0ce8849397eeda6c3bc34e585b0b97fbdffc57e3aa1e53ef3"
+}

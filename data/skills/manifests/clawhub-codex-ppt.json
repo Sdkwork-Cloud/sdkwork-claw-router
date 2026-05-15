@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49928,
+  "uuid": "skill-clawhub-codex-ppt",
+  "skillKey": "clawhub-codex-ppt",
+  "name": "Codex PPT",
+  "summary": "Generate image-based PowerPoint decks from articles, reports, papers, notes, or outlines. Use this skill when the user asks to create a visually unified PPT/...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "凝紫暮",
+      "features": [
+        "Generate image-based PowerPoint decks from articles, reports, papers, notes, or outlines",
+        "Use this skill when the user asks to create a visually unified PPT/..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-ppt@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33387665?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-ppt",
+      "url": "https://clawhub.ai/skills/codex-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-ppt",
+    "url": "https://clawhub.ai/skills/codex-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-ppt-d03b2404ea074e45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-ppt@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-ppt-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33b05592b4b9f742f03a0c5840adc8e18fcfd233addaa018554a435d837db9ab",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:02:04.377Z"
+}

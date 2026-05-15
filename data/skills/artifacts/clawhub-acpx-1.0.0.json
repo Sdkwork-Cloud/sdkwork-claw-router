@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acpx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acpx",
+  "skill": {
+    "id": 10387,
+    "skillKey": "clawhub-acpx",
+    "name": "Acpx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acpx",
+    "url": "https://clawhub.ai/skills/acpx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acpx-8c402010da9a5918.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use acpx as a headless ACP CLI for agent-to-agent communication, including prompt/exec/sessions workflows, session scoping, queueing, permissions, and output..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beelkic",
+      "userId": "publishers:beelkic",
+      "displayName": "深山大柠檬",
+      "image": "https://avatars.githubusercontent.com/u/34309188?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2390,
+      "installsAllTime": 35,
+      "installsCurrent": 31,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773777615368,
+      "changelog": "acpx 1.0.0\n\n- Initial release of the acpx CLI for Agent Client Protocol (ACP).\n- Provides persistent and parallel agent sessions, one-shot execs, and prompt queueing.\n- Supports named sessions, prompt cancellation, and configurable output formats.\n- Includes built-in agent registry for seamless agent selection (e.g., codex, claude).\n- Offers configuration via global/project config files and flexible permission modes.\n- Features session management commands, agent reconnection, and structured output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21cf6822583facfbdb438314076bd45cd868907f5505e3e6d458a54a50e84940"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthcheck-rose@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthcheck_rose",
+  "skill": {
+    "id": 40980,
+    "skillKey": "clawhub-healthcheck-rose",
+    "name": "Healthcheck Rose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthcheck-rose",
+    "url": "https://clawhub.ai/skills/healthcheck-rose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthcheck-rose-bbfda984ab0e6268.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track water and sleep with JSON file storage"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roseknife520",
+      "userId": "s176haxyd9kqx6vtbz35wtpgbs83kvzt",
+      "displayName": "roseknife520",
+      "image": "https://avatars.githubusercontent.com/u/242541187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504983976,
+      "changelog": "- Initial release of health tracker skill using JSON file storage\n- Track water intake and sleep/wake times via user commands\n- Supports adding, updating, and deleting water and sleep records\n- Simple statistics view: totals and today’s water intake\n- Data stored in `{baseDir}/health-data.json` with ISO8601 timestamps\n- Node.js built-in modules only; file is auto-created if missing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e81e9f236d29e04983090f9e69b9fc80deef004fd66ae9e446c3fa395c5bb7c5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/push2today@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.push2today",
+  "skill": {
+    "id": 73340,
+    "skillKey": "clawhub-push2today",
+    "name": "推送到负一屏"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "push2today",
+    "url": "https://clawhub.ai/skills/push2today",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/push2today-4482b2edbff23204.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将任务执行结果推送到负一屏卡片显示，支持普通推送和定时任务推送"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pingjiang",
+      "userId": "s17f6mq7tg7kxn00nkwp41a1fx83x49v",
+      "displayName": "as",
+      "image": "https://avatars.githubusercontent.com/u/961856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774861105115,
+      "changelog": "Initial release of push2today.\n\n- Enables pushing task results to the mobile \"Today\" screen via command-line.\n- Supports both immediate and scheduled (定时) push operations.\n- Requires authentication token (AS_TODAY_AUTH_CODE) for API access.\n- Provides clear parameter requirements for summary, result, content, and scheduling fields.\n- Enforces strict length limits and mandatory fields for scheduled tasks.\n- Includes comprehensive usage and configuration instructions for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03abee7294a0c74aefd2fe03feb4d398757fde118b59856151966c7b05a90a6c"
+}

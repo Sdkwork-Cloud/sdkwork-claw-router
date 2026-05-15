@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pump-sdk-core@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pump_sdk_core",
+  "skill": {
+    "id": 50925,
+    "skillKey": "clawhub-pump-sdk-core",
+    "name": "Pump Sdk Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pump-sdk-core",
+    "url": "https://clawhub.ai/skills/pump-sdk-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pump-sdk-core-b042920b6cff2846.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and extend the core Pump SDK — an offline-first TypeScript SDK that constructs Solana TransactionInstructions for token creation, buying, selling, migr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "speraxos",
+      "userId": "publishers:speraxos",
+      "displayName": "speraxos",
+      "image": "https://avatars.githubusercontent.com/u/220422846?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772151327831,
+      "changelog": "pump-sdk-core 0.1.0\n\n- Initial release of Pump SDK Core, an offline-first TypeScript SDK for Solana transaction instruction creation.\n- Supports token creation, buying, selling, migration, and creator fee collection across Pump, PumpAMM, PumpFees, and Mayhem programs.\n- Includes both offline (`PumpSdk`) and online (`OnlinePumpSdk`) instruction builder classes.\n- Account decoding with Anchor-based coders for all relevant on-chain state.\n- Designed for flexibility: methods return reusable `TransactionInstruction[]`, support both SPL and Token-2022 programs, and handle account extension and validation.\n- Comprehensive documentation and patterns for instruction building, decoding, and safe extension.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83e4afc636ab4d74e77706355a34c2b7811a398835100ec989df2195ecdc8b42"
+}

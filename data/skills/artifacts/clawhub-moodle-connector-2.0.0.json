@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moodle-connector@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodle_connector",
+  "skill": {
+    "id": 24724,
+    "skillKey": "clawhub-moodle-connector",
+    "name": "Moodle Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodle-connector",
+    "url": "https://clawhub.ai/skills/moodle-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodle-connector-6d60aa9bfb42f399.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Moodle REST API client, batch downloader, and MCP server for Claude Code integration. SSO-enabled with support for Azure AD, Google, and SAML."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jabir-srj",
+      "userId": "s17e1qp0jaz7ad6f2z8g455nkx83gdpg",
+      "displayName": "Jabir Iliyas Suraj-Deen",
+      "image": "https://avatars.githubusercontent.com/u/76161308?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774830128071,
+      "changelog": "Major update: SSO Support & Headless Deployment Features. Support for Azure AD, Google OAuth, and SAML. Mobile Launch Flow integration. Tampermonkey helper for CI/CD. Bilingual documentation (English & Spanish).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:088cc691c0e59d97028bf425e6c57e5ccd31f3c72860b918285d46fab2b9b0a9"
+}

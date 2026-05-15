@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grvt-markets-agent-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grvt_markets_agent_skill",
+  "skill": {
+    "id": 18978,
+    "skillKey": "clawhub-grvt-markets-agent-skill",
+    "name": "Grvt Markets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grvt-markets-agent-skill",
+    "url": "https://clawhub.ai/skills/grvt-markets-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grvt-markets-agent-skill-d26c863ab7410fbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trade on GRVT (Gravity Markets) derivatives exchange via the grvt-cli tool. Use when the user wants to trade crypto derivatives, place or cancel orders, chec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "madeinusmate",
+      "userId": "publishers:madeinusmate",
+      "displayName": "Stefano Cantù",
+      "image": "https://avatars.githubusercontent.com/u/25027502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 646,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771734921854,
+      "changelog": "Initial release of grvt-markets-agent-skill.\n\n- Adds support for trading on GRVT (Gravity Markets) derivatives exchange via the grvt-cli tool.\n- Enables placing and canceling orders, checking positions, viewing market data (orderbook, candles, tickers, funding rates), and managing account balances.\n- Allows transfers between sub-accounts, withdrawals to Ethereum, leverage adjustments, and querying trade or order history.\n- Includes important security and usage disclaimers requiring explicit user acknowledgment before use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:173ad7010f09a3ac5a161340fdafaa8608154d83a7b0a6499870a1447a323eec"
+}

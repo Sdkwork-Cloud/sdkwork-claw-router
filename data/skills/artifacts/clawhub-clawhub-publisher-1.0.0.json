@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publisher",
+  "skill": {
+    "id": 13313,
+    "skillKey": "clawhub-clawhub-publisher",
+    "name": "Clawhub Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publisher",
+    "url": "https://clawhub.ai/skills/clawhub-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publisher-9fa9fe8676c50549.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate skill publishing to ClawHub with versioning, changelog generation, asset bundling, metadata validation, and one-command deployment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shepherd217",
+      "userId": "s173xh5g50sh861x4h6zd29kr584p2sx",
+      "displayName": "Shepherd217",
+      "image": "https://avatars.githubusercontent.com/u/161944613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1436,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770741505752,
+      "changelog": "Production-ready skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e99c0f97a4c5d8aba19f62d79f469dc532d47eadc58a5ec014b598ddc1b32713"
+}

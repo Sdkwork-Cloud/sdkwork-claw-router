@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12011,
+  "uuid": "skill-clawhub-supabase-ops",
+  "skillKey": "clawhub-supabase-ops",
+  "name": "Supabase Ops",
+  "summary": "Manages Supabase migrations, types generation, RLS policies, and edge functions",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supabase_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guilherme Favaron",
+      "features": [
+        "Manages Supabase migrations, types generation, RLS policies, and edge functions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supabase-ops@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109181842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supabase-ops",
+      "url": "https://clawhub.ai/skills/supabase-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supabase-ops",
+    "url": "https://clawhub.ai/skills/supabase-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supabase-ops-8afde0f051b36bd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supabase-ops@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-supabase-ops-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0813631f84ad0621557cdc5bd42839ef19d86c95705a75989c6ec9cdc154bc24",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:16:59.752Z"
+}

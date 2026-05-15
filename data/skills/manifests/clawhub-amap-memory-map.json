@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71743,
+  "uuid": "skill-clawhub-amap-memory-map",
+  "skillKey": "clawhub-amap-memory-map",
+  "name": "Amap Memory Map",
+  "summary": "把你的生活记忆标记在地图上。告诉我你去过的地方、发生过的故事，我会通过高德地图自动定位、标注，生成可探索的记忆地图。支持时间轴回放、区域聚合、天气还原和分享导出。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_memory_map",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SmartVicky",
+      "features": [
+        "把你的生活记忆标记在地图上。告诉我你去过的地方、发生过的故事，我会通过高德地图自动定位、标注，生成可探索的记忆地图。支持时间轴回放、区域聚合、天气还原和分享导出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amap-memory-map@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270828245?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amap-memory-map",
+      "url": "https://clawhub.ai/skills/amap-memory-map"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-memory-map",
+    "url": "https://clawhub.ai/skills/amap-memory-map",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-memory-map-24fd1fbc9521ac8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amap-memory-map@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amap-memory-map-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd859879e6f56130b9c1e4872df9c5edeeb0e4b2141d09e64e3f856e880a6d03",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:41:12.236Z"
+}

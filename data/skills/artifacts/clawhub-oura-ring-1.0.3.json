@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oura-ring@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oura_ring",
+  "skill": {
+    "id": 12681,
+    "skillKey": "clawhub-oura-ring",
+    "name": "Ouraskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oura-ring",
+    "url": "https://clawhub.ai/skills/oura-ring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oura-ring-0c5e5951ba6b3b25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Syncs daily health and fitness data from Oura Ring into markdown files. Provides sleep, readiness, activity, heart rate, stress, SpO2, and workout data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freakyflow",
+      "userId": "publishers:freakyflow",
+      "displayName": "freakyflow",
+      "image": "https://avatars.githubusercontent.com/u/95600411?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1649,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770772649201,
+      "changelog": "Set disable-model-invocation: true for explicit-only invocation; add config section declaring OURA_TOKEN as type: secret",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1aca295edd36bd93e7e4cc65e5c803097011e33d29a7b4f87cfcf3d999e290d7"
+}

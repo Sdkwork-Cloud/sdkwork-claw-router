@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jisu-calendar@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_calendar",
+  "skill": {
+    "id": 71815,
+    "skillKey": "clawhub-jisu-calendar",
+    "name": "Calendar - 万年历查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-calendar",
+    "url": "https://clawhub.ai/skills/jisu-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-calendar-fca0312897d5af9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询指定日期的公历、农历、星座、生肖、黄历要点与节假日。当用户说：明天农历几号？今年春节是哪天？或类似万年历问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 9,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1775209591640,
+      "changelog": "- 更新了技能名称与描述，更加突出适用场景及自然语言触发方式\n- README 文档组织和表述优化，使用指引更简明易懂\n- 不涉及功能或脚本代码的更改，仅文档内容调整\n- 现有 API 调用方式和参数保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9babe0232f720e45146c4f64b6f5c558d5650bc50ebe7b0ee3afde38894b28a"
+}

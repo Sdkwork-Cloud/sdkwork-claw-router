@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42406,
+  "uuid": "skill-clawhub-kirk-build-nonprofit-faq-page",
+  "skillKey": "clawhub-kirk-build-nonprofit-faq-page",
+  "name": "Build Nonprofit FAQ Page",
+  "summary": "Generate customer-facing answers for common nonprofit questions. Use when working on FAQ content for nonprofits, NGOs, fundraisers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_build_nonprofit_faq_page",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Generate customer-facing answers for common nonprofit questions",
+        "Use when working on FAQ content for nonprofits, NGOs, fundraisers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kirk-build-nonprofit-faq-page@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kirk-build-nonprofit-faq-page",
+      "url": "https://clawhub.ai/skills/kirk-build-nonprofit-faq-page"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-build-nonprofit-faq-page",
+    "url": "https://clawhub.ai/skills/kirk-build-nonprofit-faq-page",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-build-nonprofit-faq-page-10226415f27d87c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kirk-build-nonprofit-faq-page@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kirk-build-nonprofit-faq-page-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2b0a7812c5932c1ce7f2a0b0c4e59983d032f0f20902c7d01c6c2d7030b08e2",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T10:23:42.531Z"
+}

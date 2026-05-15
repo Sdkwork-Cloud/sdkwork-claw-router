@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blender-asset-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blender_asset_generator",
+  "skill": {
+    "id": 56736,
+    "skillKey": "clawhub-blender-asset-generator",
+    "name": "Blender 资产生成"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blender-asset-generator",
+    "url": "https://clawhub.ai/skills/blender-asset-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blender-asset-generator-8953219ad40f5979.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates ecommerce/game/teaching 3D assets via Blender scripts (Blender 4.2+ including 5.x). Supports cloud Windows and local machines; reference-image guid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yamasite",
+      "userId": "s173svzz2y3tqm5hzwzbk529h185a2nq",
+      "displayName": "yamasite",
+      "image": "https://avatars.githubusercontent.com/u/10089260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776926394722,
+      "changelog": "Initial release of blender-asset-generator.\n\n- Generates structured, reproducible 3D asset projects for ecommerce, game, or teaching use cases via Blender scripts (supports Blender 4.2+ and 5.x).\n- Supports cloud Windows PC as primary runtime, with local execution on Windows or macOS as alternatives.\n- Offers text-only and vision-assisted workflows; gracefully degrades if reference images or vision are unavailable.\n- Produces clear project structure: spec.json, Blender Python scripts, run scripts, and required export formats (GLB mandatory, FBX/USDC optional), plus preview renders and QA evaluation.\n- Includes input templates and references to guide usage and ensure consistent quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:476d3ac7a66a206e0bba5176bcbd183469cb5ce7157e0748e41f75ff21c2c323"
+}

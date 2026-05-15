@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16421,
+  "uuid": "skill-clawhub-backstage",
+  "skillKey": "clawhub-backstage",
+  "name": "backstage companion",
+  "summary": "Anti-drift protocol script. Ensures parity between docs and system. Triggers: 'bom dia PROJECT' / 'good morning PROJECT' (load project context with health ch...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backstage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nicholas Frota",
+      "features": [
+        "Anti-drift protocol script",
+        "Ensures parity between docs and system",
+        "Triggers: 'bom dia PROJECT' / 'good morning PROJECT' (load project context with health ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/backstage@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "backstage",
+      "url": "https://clawhub.ai/skills/backstage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backstage",
+    "url": "https://clawhub.ai/skills/backstage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backstage-c28ad2ec11288e23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/backstage@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-backstage-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce29cf011dd8b8bd040670b2408db84df2bea35b863cab63f7a545c439320f80",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T15:28:15.001Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20404,
+  "uuid": "skill-clawhub-agentnet",
+  "skillKey": "clawhub-agentnet",
+  "name": "AgentNet",
+  "summary": "Agent-to-agent discovery network. Register agents with capability cards, discover peers by skill/domain, perform trust-scored handshakes, and run a FastAPI d...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentnet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cassh",
+      "features": [
+        "Agent-to-agent discovery network",
+        "Register agents with capability cards, discover peers by skill/domain, perform trust-scored han."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentnet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128089099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentnet",
+      "url": "https://clawhub.ai/skills/agentnet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentnet",
+    "url": "https://clawhub.ai/skills/agentnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentnet-b0ba6fd6b887da15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentnet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentnet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a1dda96acceaa3f37a451f07f913a48b83aaa6954a4b0f7e7d359ac5aa973a9",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T18:13:05.542Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52417,
+  "uuid": "skill-clawhub-state-management",
+  "skillKey": "clawhub-state-management",
+  "name": "State Management",
+  "summary": "Deep workflow for client (and hybrid) state—modeling domain vs UI state, server cache vs client store, async and consistency, DevTools, persistence, and test...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.state_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Deep workflow for client (and hybrid) state—modeling domain vs UI state, server cache vs client."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/state-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "state-management",
+      "url": "https://clawhub.ai/skills/state-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "state-management",
+    "url": "https://clawhub.ai/skills/state-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/state-management-458921641954fe0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/state-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-state-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb4c85c50ca285abef369471cfa75d352cadda1ff0d9269de49d5cc67d520022",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:02:19.063Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-introspection@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_introspection",
+  "skill": {
+    "id": 27790,
+    "skillKey": "clawhub-daily-introspection",
+    "name": "daily-introspection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-introspection",
+    "url": "https://clawhub.ai/skills/daily-introspection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-introspection-2f7a6fc89ee71486.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous daily self-introspection and self-improvement for OpenClaw agents. Automatically reviews daily conversation logs, identifies mistakes and improvem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raydoomed",
+      "userId": "s1793ae330e8wwb5pepxqvhbvs83gsdh",
+      "displayName": "xRay",
+      "image": "https://avatars.githubusercontent.com/u/57515812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775399674619,
+      "changelog": "No user-facing or internal changes in this version.\n\n- Version bump to 1.0.3 with no file or documentation modifications detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:735d53beff99043ef51e9298d97c6ecbe8bce77861df59702eff66afa343fa1a"
+}

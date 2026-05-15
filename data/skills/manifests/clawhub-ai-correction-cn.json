@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62428,
+  "uuid": "skill-clawhub-ai-correction-cn",
+  "skillKey": "clawhub-ai-correction-cn",
+  "name": "AI幻觉纠偏 / AI纠偏",
+  "summary": "AI幻觉纠偏 / AI纠偏 alias route into Official VeriClaw. 如果你的真实目标是官方公共安装入口，先安装 `vericlaw`；这个页面只负责把 AI幻觉纠偏、AI纠偏、AI监督、AI纠错、AI校正、模型纠偏、幻觉纠偏、AI幻觉、AI工作幻觉 和 bot纠偏 这些中文意图映射...",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_correction_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sheygoodbai",
+      "features": [
+        "AI幻觉纠偏 / AI纠偏 alias route into Official VeriClaw",
+        "如果你的真实目标是官方公共安装入口，先安装 `vericlaw`；这个页面只负责把 AI幻觉纠偏、AI纠偏、AI监督、AI纠错、AI校正、模型纠偏、幻觉纠偏、AI幻觉、AI工作幻觉 和 bo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-correction-cn@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143479205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-correction-cn",
+      "url": "https://clawhub.ai/skills/ai-correction-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-correction-cn",
+    "url": "https://clawhub.ai/skills/ai-correction-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-correction-cn-d14c73ca5d6023f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-correction-cn@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-correction-cn-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:713ec2ce7073372a30fa4eac676dd3867e2929a3ae1bd5de99e30cef76501e34",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T14:31:28.406Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-browser-0-1-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_browser_0_1_2",
+  "skill": {
+    "id": 13322,
+    "skillKey": "clawhub-agentic-browser-0-1-2",
+    "name": "Agentic Browser 0.1.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-browser-0-1-2",
+    "url": "https://clawhub.ai/skills/agentic-browser-0-1-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-browser-0-1-2-6a4e37dd6070fd49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation for AI agents via inference.sh. Navigate web pages, interact with elements using @e refs, take screenshots, record video. Capabilities: web scraping, form filling, clicking, typing, drag-drop, file upload, JavaScript exe."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xyny89",
+      "userId": "publishers:xyny89",
+      "displayName": "xyny89",
+      "image": "https://avatars.githubusercontent.com/u/34770009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1403,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770658798546,
+      "changelog": "Initial release of agentic-browser-0-1-2.\n\n- Provides browser automation for AI agents using inference.sh and Playwright.\n- Supports navigation, element interaction via `@e` references, screenshots, and video recording.\n- Includes full web automation actions: clicking, filling forms, dragging, uploading files, and executing JavaScript.\n- Offers reusable session management, proxy support, and visible cursor for video demos.\n- Extensive documentation, templates, and ready-to-use automation workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce830f47ddb7266cb3f3bbbb98d44e3fc32740fc74a390dc39c2cd60e20d219a"
+}

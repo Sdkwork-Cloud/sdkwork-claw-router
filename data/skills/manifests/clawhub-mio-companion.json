@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68324,
+  "uuid": "skill-clawhub-mio-companion",
+  "skillKey": "clawhub-mio-companion",
+  "name": "Mio Companion",
+  "summary": "主动学习用户习惯，定时发起聊天，自动识别待办事项并安排时间管理任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mio_companion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "libaiqwq",
+      "features": [
+        "主动学习用户习惯，定时发起聊天，自动识别待办事项并安排时间管理任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mio-companion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136383329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mio-companion",
+      "url": "https://clawhub.ai/skills/mio-companion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mio-companion",
+    "url": "https://clawhub.ai/skills/mio-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mio-companion-726658fef44ffc76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mio-companion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mio-companion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06c290c8b5a7d313f8e7dbfcf317f66bab916f945851748d3cb59998856fa669",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:50:56.423Z"
+}

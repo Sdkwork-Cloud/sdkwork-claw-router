@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19681,
+  "uuid": "skill-clawhub-openclaw-backup-guide",
+  "skillKey": "clawhub-openclaw-backup-guide",
+  "name": "openclaw-backup-guide",
+  "summary": "Automates hourly OpenClaw workspace backups with SQLite database export, optional NAS sync via rsync, and GitHub version control commits and pushes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_guide",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lancelot3777-svg",
+      "features": [
+        "Automates hourly OpenClaw workspace backups with SQLite database export, optional NAS sync via."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-backup-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256438690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-backup-guide",
+      "url": "https://clawhub.ai/skills/openclaw-backup-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-guide",
+    "url": "https://clawhub.ai/skills/openclaw-backup-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-guide-618caf9f446bfc29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-backup-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-backup-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71b6d6eab82f0d5118246a5b09d5081f4117bcbf766a8875072fffd38a55d890",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T14:49:56.133Z"
+}

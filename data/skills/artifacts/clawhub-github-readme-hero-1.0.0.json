@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-readme-hero@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_readme_hero",
+  "skill": {
+    "id": 33365,
+    "skillKey": "clawhub-github-readme-hero",
+    "name": "GitHub-README Hero.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-readme-hero",
+    "url": "https://clawhub.ai/skills/github-readme-hero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-readme-hero-d150d1747aac29f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn ordinary GitHub README pages, skill landing pages, or Markdown intros into cover-like hero layouts with centered titles, quote-led openings, restrained..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shaozrrr",
+      "userId": "s177ny8q87dqew3ektctbq5dc584pwne",
+      "displayName": "SHAO Zhaoru",
+      "image": "https://avatars.githubusercontent.com/u/214261453?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776182748029,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bee97c67687e950373e9e55f54a826d63c0688c1b3e3bd92fee4a0109bbc3943"
+}

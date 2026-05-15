@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11961,
+  "uuid": "skill-clawhub-nochat-channel",
+  "skillKey": "clawhub-nochat-channel",
+  "name": "NoChat Channel",
+  "summary": "Enables agent-to-agent post-quantum E2E encrypted messaging via NoChat with trust levels, agent discovery, and server-blind privacy in OpenClaw.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nochat_channel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CatsMeow492",
+      "features": [
+        "Enables agent-to-agent post-quantum E2E encrypted messaging via NoChat with trust levels, agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nochat-channel@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56234110?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nochat-channel",
+      "url": "https://clawhub.ai/skills/nochat-channel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nochat-channel",
+    "url": "https://clawhub.ai/skills/nochat-channel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nochat-channel-91d8ff690148a66a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nochat-channel@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nochat-channel-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0db40c43fa81a3789ab952b316dff470c3a5f408364077b13678256113191796",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T19:11:14.460Z"
+}

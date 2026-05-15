@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70543,
+  "uuid": "skill-clawhub-openclaw-funding-arb",
+  "skillKey": "clawhub-openclaw-funding-arb",
+  "name": "openclaw-funding-arb",
+  "summary": "运行和维护 MEXC 股票合约资金费套利机器人，包含毫秒级触发、资金费率阈值过滤、股票白名单过滤、美股常规时段停盘窗口控制、以及未平仓状态持久化恢复。用户提出启动、调参、排障或改造该套利流程时使用本技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_funding_arb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linshengyyy",
+      "features": [
+        "运行和维护 MEXC 股票合约资金费套利机器人，包含毫秒级触发、资金费率阈值过滤、股票白名单过滤、美股常规时段停盘窗口控制、以及未平仓状态持久化恢复。用户提出启动、调参、排障或改造该套利流程."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-funding-arb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150687052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-funding-arb",
+      "url": "https://clawhub.ai/skills/openclaw-funding-arb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-funding-arb",
+    "url": "https://clawhub.ai/skills/openclaw-funding-arb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-funding-arb-9dd0c32280b72894.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-funding-arb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-funding-arb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ced6c3b67f2896cf7b497fd89eb47f875dfdd6fbd2e869a51791a93e751b56e",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:40:24.878Z"
+}

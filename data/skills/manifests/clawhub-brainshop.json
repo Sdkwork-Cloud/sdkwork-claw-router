@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29220,
+  "uuid": "skill-clawhub-brainshop",
+  "skillKey": "clawhub-brainshop",
+  "name": "Brainshop",
+  "summary": "BrainShop integration. Manage data, records, and automate workflows. Use when the user wants to interact with BrainShop data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainshop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BrainShop integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with BrainShop data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brainshop@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brainshop",
+      "url": "https://clawhub.ai/skills/brainshop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainshop",
+    "url": "https://clawhub.ai/skills/brainshop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainshop-18ffbdf1145173dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brainshop@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-brainshop-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e11a21b87efc4b4bddd8c1387bd9bcdcbaf7a771ef48d76c03de1fb00186bfef",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:30:33.136Z"
+}

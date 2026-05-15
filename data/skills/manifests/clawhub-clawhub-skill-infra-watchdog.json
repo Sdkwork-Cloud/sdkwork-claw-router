@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19465,
+  "uuid": "skill-clawhub-clawhub-skill-infra-watchdog",
+  "skillKey": "clawhub-clawhub-skill-infra-watchdog",
+  "name": "Clawhub Skill Infra Watchdog",
+  "summary": "Self-hosted infrastructure monitoring with local checks for HTTP, TCP, Docker, resources, SSL, DNS, Proxmox, and alerts via WhatsApp, Telegram, or Discord.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_infra_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mariusfit",
+      "features": [
+        "Self-hosted infrastructure monitoring with local checks for HTTP, TCP, Docker, resources, SSL,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-infra-watchdog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53900085?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-infra-watchdog",
+      "url": "https://clawhub.ai/skills/clawhub-skill-infra-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-infra-watchdog",
+    "url": "https://clawhub.ai/skills/clawhub-skill-infra-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-infra-watchdog-5576322e0ba6eaa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-infra-watchdog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-infra-watchdog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7840e719148a80aaa44fa285628716829f947c08747c247f03f0834dc4a80e91",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T00:59:30.868Z"
+}

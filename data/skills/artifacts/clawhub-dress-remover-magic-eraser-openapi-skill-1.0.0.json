@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dress-remover-magic-eraser-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dress_remover_magic_eraser_openapi_skill",
+  "skill": {
+    "id": 56450,
+    "skillKey": "clawhub-dress-remover-magic-eraser-openapi-skill",
+    "name": "AI Dress Remover – Remove Dresses from Photos Online – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dress-remover-magic-eraser-openapi-skill",
+    "url": "https://clawhub.ai/skills/dress-remover-magic-eraser-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dress-remover-magic-eraser-openapi-skill-6b969fe89b88dfae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI dress remover — erase a dress and replace with a bikini while keeping body proportions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776389708637,
+      "changelog": "Version 1.0.0 Changelog\n\n- Initial release of the dress-remover-magic-eraser skill.\n- Erases a dress in a photo and replaces it with a bikini, while maintaining natural body proportions.\n- Requires HTTPS access and a WESHOP_API_KEY for authentication.\n- Provides endpoints to start processing, poll status, and upload images.\n- Includes guidance on API key security and environment variable usage.\n- Supports input of a person photo URL and optional customization of output via text description and batch count.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7d671246733b2acf6252971ae38065c2b94b33b92d5060c03bd05792c0cfdf2"
+}

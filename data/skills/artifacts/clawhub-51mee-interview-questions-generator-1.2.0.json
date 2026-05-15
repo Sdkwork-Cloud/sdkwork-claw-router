@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/51mee-interview-questions-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.51mee_interview_questions_generator",
+  "skill": {
+    "id": 61996,
+    "skillKey": "clawhub-51mee-interview-questions-generator",
+    "name": "51mee Interview Questions Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "51mee-interview-questions-generator",
+    "url": "https://clawhub.ai/skills/51mee-interview-questions-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/51mee-interview-questions-generator-ff5729dcb5e56ff7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面试题库生成器。触发场景：用户提供职位JD和候选人简历，要求生成定制化面试题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "51mee-com",
+      "userId": "publishers:51mee-com",
+      "displayName": "51mee",
+      "image": "https://avatars.githubusercontent.com/u/226007355?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773714207711,
+      "changelog": "interview-questions-generator v1.2.0\n\n- Complete documentation added, including detailed feature explanation, workflow, input limits, data privacy, prompt templates, output templates, error handling, and best practices.\n- Security and prompt-injection protections clarified for usage scenarios.\n- Output and prompt templates standardized to ensure consistent and structured JSON/Markdown results.\n- Example outputs and error codes included for reference.\n- Usage notes and privacy enhancements emphasized for safe deployment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cbd07705df7814a455d22b85ddfb763718dc7c1cf493075c00b547aff358421"
+}

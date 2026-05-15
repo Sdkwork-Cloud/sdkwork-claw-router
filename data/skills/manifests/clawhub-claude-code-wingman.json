@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9167,
+  "uuid": "skill-clawhub-claude-code-wingman",
+  "skillKey": "clawhub-claude-code-wingman",
+  "name": "Claude Code Wingman",
+  "summary": "Your Claude Code wingman - orchestrate multiple Claude Code sessions across projects, monitor them all from WhatsApp",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_wingman",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yossiovadia",
+      "features": [
+        "Your Claude Code wingman",
+        "orchestrate multiple Claude Code sessions across projects, monitor them all from WhatsApp"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-wingman@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1851728?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-wingman",
+      "url": "https://clawhub.ai/skills/claude-code-wingman"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-wingman",
+    "url": "https://clawhub.ai/skills/claude-code-wingman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-wingman-200d5a068dddc898.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-wingman@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-wingman-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:488da6bcdc5381139137773e720a57c3cfcce021745e2e3db1802951b5644691",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T21:57:29.108Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-in-filmora@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_in_filmora",
+  "skill": {
+    "id": 55737,
+    "skillKey": "clawhub-video-in-filmora",
+    "name": "Video In Filmora"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-in-filmora",
+    "url": "https://clawhub.ai/skills/video-in-filmora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-in-filmora-1420dd250d49da72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the clip, add transitions, and apply color correction — and get edite..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777827031277,
+      "changelog": "- Initial release of the \"Video in Filmora\" skill for fast, AI-powered video editing.\n- Supports uploading MP4, MOV, AVI, and MKV files up to 500MB for server-side editing and export.\n- Users can request trims, transitions, color correction, and more—AI handles editing based on instructions.\n- Seamless cloud rendering delivers polished video (MP4, up to 1080p) in 1–2 minutes.\n- Built-in flow for session management, credit checks, and friendly status updates.\n- Ideal for content creators and casual editors who want quick, professional results without complicated software.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af510ac7bb9b3ffea32639138e26614543c3880fb29b2ed562d94dd577e2646f"
+}

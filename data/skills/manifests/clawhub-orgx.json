@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53581,
+  "uuid": "skill-clawhub-orgx",
+  "skillKey": "clawhub-orgx",
+  "name": "OrgX",
+  "summary": "Use when managing work with OrgX — reporting progress, requesting decisions, registering artifacts, syncing memory, checking quality gates, or viewing org st...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orgx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hope Atina",
+      "features": [
+        "Use when managing work with OrgX — reporting progress, requesting decisions, registering artifa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orgx@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8039862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orgx",
+      "url": "https://clawhub.ai/skills/orgx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orgx",
+    "url": "https://clawhub.ai/skills/orgx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orgx-efcefb8889f24f0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orgx@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orgx-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48d855ebb0561d8ed9e4c664f273266f8090650733f4d6928dcdab9641bd864f",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T21:06:52.558Z"
+}

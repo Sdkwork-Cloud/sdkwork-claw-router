@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hierarchical-memory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hierarchical_memory",
+  "skill": {
+    "id": 15735,
+    "skillKey": "clawhub-hierarchical-memory",
+    "name": "Hierarchical Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hierarchical-memory",
+    "url": "https://clawhub.ai/skills/hierarchical-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hierarchical-memory-d865b4f1ac81e509.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and navigate a multi-layered, branch-based memory system. This skill helps organize complex agent context into Root, Domain, and Project layers to pre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "balkanblbn",
+      "userId": "publishers:balkanblbn",
+      "displayName": "balkanblbn",
+      "image": "https://avatars.githubusercontent.com/u/224807213?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 768,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771793591686,
+      "changelog": "Added security transparency and script documentation to address suspicious flags.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:454242c647e3a9981fb05944177977572e1da17de025f60cf5d925b4112f5863"
+}

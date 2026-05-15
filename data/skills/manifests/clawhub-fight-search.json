@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72934,
+  "uuid": "skill-clawhub-fight-search",
+  "skillKey": "clawhub-fight-search",
+  "name": "机票查询",
+  "summary": "AI机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fight_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fight-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fight-search",
+      "url": "https://clawhub.ai/skills/fight-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fight-search",
+    "url": "https://clawhub.ai/skills/fight-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fight-search-e263eabd1436d692.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fight-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fight-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:593de710dacda696f51352538080d7e5c375c37c65115fef7fde56fde5d29ef5",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:44:34.590Z"
+}

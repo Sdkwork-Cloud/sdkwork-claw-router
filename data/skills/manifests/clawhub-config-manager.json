@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57154,
+  "uuid": "skill-clawhub-config-manager",
+  "skillKey": "clawhub-config-manager",
+  "name": "Config Manager - 配置管理器",
+  "summary": "Manage dynamic, type-safe string, int, and bool configurations via key=value files for configurable, multi-environment applications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Light F Star",
+      "features": [
+        "Manage dynamic, type-safe string, int, and bool configurations via key=value files for configur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251987713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-manager",
+      "url": "https://clawhub.ai/skills/config-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-manager",
+    "url": "https://clawhub.ai/skills/config-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-manager-99c048b9eedcedfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc87e82e215c269048d807ef60df06208b320eb14970be86c3d12d066ece8959",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:24:03.638Z"
+}

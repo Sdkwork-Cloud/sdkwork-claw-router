@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-workspace-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_workspace_automation",
+  "skill": {
+    "id": 14248,
+    "skillKey": "clawhub-google-workspace-automation",
+    "name": "Google Workspace Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-workspace-automation",
+    "url": "https://clawhub.ai/skills/google-workspace-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-workspace-automation-4081e41bb80cea1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design Gmail, Drive, Sheets, and Calendar automations with scope-aware plans. Use for repeatable daily task automation with explicit OAuth scopes and audit-r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x-professor",
+      "userId": "s17bg4xm5b50d70ncct7b9shxh83n6jb",
+      "displayName": "Muhammad Mazhar Saeed",
+      "image": "https://avatars.githubusercontent.com/u/160357695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1066,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772136198403,
+      "changelog": "Initial release of Google Workspace Automation skill.\n\n- Design automation plans for Gmail, Drive, Sheets, and Calendar tasks.\n- Automatically derive required OAuth scopes for explicit, audit-ready outputs.\n- Supports repeatable daily task automation with scope-aware planning.\n- Includes scripts and guides for deterministic planning and quota considerations.\n- Enforces least-privilege access and idempotent automations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee0c6d9282d2c626883584f3ee05f829981fe07a8dfbd144ef802075ed03f60a"
+}

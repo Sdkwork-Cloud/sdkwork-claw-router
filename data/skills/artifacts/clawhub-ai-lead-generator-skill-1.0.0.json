@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-lead-generator-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_lead_generator_skill",
+  "skill": {
+    "id": 11098,
+    "skillKey": "clawhub-ai-lead-generator-skill",
+    "name": "Ai Lead Generator Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-lead-generator-skill",
+    "url": "https://clawhub.ai/skills/ai-lead-generator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-lead-generator-skill-cce2378321fa5ece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered tool that generates qualified B2B lead lists with validated contacts, company data, pain points, and exports via LinkedIn and Apollo integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "highlander89",
+      "userId": "publishers:highlander89",
+      "displayName": "Highlander89",
+      "image": "https://avatars.githubusercontent.com/u/107950656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2254,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770743381211,
+      "changelog": "Initial release of AI Lead Generator Skill.\n\n- Generate targeted, qualified B2B lead lists with company, contact, and personalization data.\n- Integrates with LinkedIn Sales Navigator and Apollo.io for enhanced lead discovery and data accuracy.\n- Features include email validation, technographics, GDPR compliance, and export to multiple formats.\n- Supports a wide range of industries and role-based targeting.\n- Provides CLI commands for flexible and automated lead generation.\n- Offers transparent usage plans and straightforward installation instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:271cb701554b8aac0c8b79c3e9a14d5881dcc6a43ea8a6b23686a4fd59b277e6"
+}

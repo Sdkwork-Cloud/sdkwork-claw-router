@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46546,
+  "uuid": "skill-clawhub-letter-maker",
+  "skillKey": "clawhub-letter-maker",
+  "name": "Letter Maker",
+  "summary": "Get animated letter videos ready to post, without touching a single slider. Upload your text or images (MP4, MOV, PNG, JPG, up to 200MB), say something like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.letter_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "Get animated letter videos ready to post, without touching a single slider",
+        "Upload your text or images (MP4, MOV, PNG, JPG, up to 200MB), say something like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/letter-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "letter-maker",
+      "url": "https://clawhub.ai/skills/letter-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "letter-maker",
+    "url": "https://clawhub.ai/skills/letter-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/letter-maker-3fae33b3b699e516.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/letter-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-letter-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:310c3592ba71b4a2b1e866548d7ca393bd1d01603da82f26b5f392d01147133a",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:27:38.711Z"
+}

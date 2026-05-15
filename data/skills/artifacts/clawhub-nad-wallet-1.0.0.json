@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nad-wallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nad_wallet",
+  "skill": {
+    "id": 23054,
+    "skillKey": "clawhub-nad-wallet",
+    "name": "Nad Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nad-wallet",
+    "url": "https://clawhub.ai/skills/nad-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nad-wallet-43de8f8622074890.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🔐 Nad Wallet - Monad Chain Identity for AI Agents. Create wallets, sign messages (SIWE), manage MON tokens programmatically. Built for the Nad ecosystem (nad.fun, NadMail, NadName)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daaab",
+      "userId": "s1734aczwq16mt7vnhrq68bkq5841wa6",
+      "displayName": "Ju Chun Ko",
+      "image": "https://avatars.githubusercontent.com/u/1607280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 973,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770645969267,
+      "changelog": "Initial release: wallet creation, MON balance check, NadMail SIWE registration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:197fcb99cd25c74a1abef89138cf2df21becc38d4ec70e51f7c344dac69497ee"
+}

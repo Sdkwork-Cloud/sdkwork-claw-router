@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40719,
+  "uuid": "skill-clawhub-namely-integration",
+  "skillKey": "clawhub-namely-integration",
+  "name": "Namely",
+  "summary": "Namely integration. Manage Persons, Organizations, Jobs, Goals, Payrolls. Use when the user wants to interact with Namely data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.namely_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Namely integration",
+        "Manage Persons, Organizations, Jobs, Goals, Payrolls",
+        "Use when the user wants to interact with Namely data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/namely-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "namely-integration",
+      "url": "https://clawhub.ai/skills/namely-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "namely-integration",
+    "url": "https://clawhub.ai/skills/namely-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/namely-integration-63400937ca764e2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/namely-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-namely-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6ed7325856ea5614e90754574c0dfb7856dbf36715932c57bb8f745092fb2c9",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:03.578Z"
+}

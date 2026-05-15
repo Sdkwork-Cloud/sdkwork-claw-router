@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-highlights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_highlights",
+  "skill": {
+    "id": 47318,
+    "skillKey": "clawhub-video-editor-highlights",
+    "name": "Video Editor Highlights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-highlights",
+    "url": "https://clawhub.ai/skills/video-editor-highlights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-highlights-66ddf038153d596e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get highlight reel clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777393655568,
+      "changelog": "Video Editor Highlights 1.0.0 – Initial Release\n\n- Launches automated video highlight extraction and compilation for sports creators, YouTubers, and event videographers.\n- Upload raw video (up to 500MB); describe your goal (e.g., \"make a 90-second highlight reel\") and get back a 1080p MP4.\n- Integrated cloud rendering pipeline—no manual editing or local install required.\n- Supports session management, credits, export, and error handling with clear user feedback.\n- Accepts MP4, MOV, AVI, WebM, and common image/audio formats for input.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e37bb2643950e431ef7ac70c0d298ec6c5f98ba932158647e4f13f3514050a58"
+}

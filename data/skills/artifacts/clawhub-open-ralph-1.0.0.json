@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-ralph@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_ralph",
+  "skill": {
+    "id": 11007,
+    "skillKey": "clawhub-open-ralph",
+    "name": "open-ralph"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-ralph",
+    "url": "https://clawhub.ai/skills/open-ralph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-ralph-1c8ee7b8079581e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run an autonomous Open Ralph Wiggum coding loop using OpenCode Zen with free models and automatic fallback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bderiel",
+      "userId": "publishers:bderiel",
+      "displayName": "Bderiel",
+      "image": "https://avatars.githubusercontent.com/u/19789345?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1940,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770332907070,
+      "changelog": "- Initial release of open-ralph skill.\n- Enables an autonomous Ralph Wiggum coding loop using OpenCode Zen and the ralph CLI.\n- Optimized for free OpenCode Zen models with automatic fallback based on model availability and errors.\n- Supports use cases like fixing tests, implementing features, refactoring, lint/type error fixes, and build-fix loops.\n- Includes clear usage instructions and example commands.\n- Requires running inside a git repository.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40feeb38082407301c8391574af08fefdccfebe2c9b36dcba2061cf34b4411df"
+}

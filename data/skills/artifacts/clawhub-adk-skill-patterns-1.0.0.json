@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adk-skill-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adk_skill_patterns",
+  "skill": {
+    "id": 36756,
+    "skillKey": "clawhub-adk-skill-patterns",
+    "name": "ADK Skill Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adk-skill-patterns",
+    "url": "https://clawhub.ai/skills/adk-skill-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adk-skill-patterns-2ccf7cb75444fea0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "5 proven agent skill design patterns (Tool Wrapper, Generator, Reviewer, Inversion, Pipeline) from Google's ADK. Build reliable, composable skills with templ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxlauriehutchinson",
+      "userId": "s179qr50zp85a1ac75z9px9jnh83v5nt",
+      "displayName": "Max Hutchinson",
+      "image": "https://avatars.githubusercontent.com/u/20815036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774789494544,
+      "changelog": "- Initial release of adk-skill-patterns.\n- Documents 5 proven agent skill design patterns: Tool Wrapper, Generator, Reviewer, Inversion, Pipeline.\n- Includes decision trees, pattern composition guides, anti-patterns, and practical templates.\n- Helps structure agent skill logic for reliability, composability, and maintainability.\n- Provides clear implementation notes and usage instructions for OpenClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:179e9375b1aca0b1dff819c15c9877c6efac264e328189a906b31b5995f61b5f"
+}

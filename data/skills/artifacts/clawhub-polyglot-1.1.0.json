@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polyglot@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyglot",
+  "skill": {
+    "id": 19627,
+    "skillKey": "clawhub-polyglot",
+    "name": "Polyglot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyglot",
+    "url": "https://clawhub.ai/skills/polyglot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyglot-55213f39076bfe8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate text to any language with formality control and cultural notes. Target language defaults to English."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unixlamadev-spec",
+      "userId": "s173nr0teechvmbjjz4j5r9nen83gjtb",
+      "displayName": "unixlamadev-spec",
+      "image": "https://avatars.githubusercontent.com/u/251052015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773473708584,
+      "changelog": "Now supports model selection — specify any of 19 models across 5 providers per request (e.g. gemini-2.5-flash, mistral-large-latest, claude-opus-4-5-20251101)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cfb5c6eb56cd0ef1fe5b6332aa8648b4e83547a1cb5fe3e27fd55202aa37f65"
+}

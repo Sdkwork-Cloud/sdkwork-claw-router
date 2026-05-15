@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-infographic@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_infographic",
+  "skill": {
+    "id": 10835,
+    "skillKey": "clawhub-weather-infographic",
+    "name": "Weather TV style"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-infographic",
+    "url": "https://clawhub.ai/skills/weather-infographic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-infographic-ba5778ea5c461dfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a TV-style weather infographic with a location-specific seasonal background. Use when the user asks for a visual weather forecast or a weather infographic for a specific address."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silverkiwi",
+      "userId": "publishers:silverkiwi",
+      "displayName": "silverkiwi",
+      "image": "https://avatars.githubusercontent.com/u/13608461?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1924,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769982173987,
+      "changelog": "- Updated seasonal backgrounds to be hemisphere-aware (uses current local season for any location).\n- Improved usage documentation with an example for London.\n- No code or feature changes beyond README/metadata update.\n- Added file: .DS_Store (no functional impact).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b90b63abcaca03d51d99efc2e191e6abf5651cc5f0dfe24533d6ceec58c1823"
+}

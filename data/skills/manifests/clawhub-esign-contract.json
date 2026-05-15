@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70296,
+  "uuid": "skill-clawhub-esign-contract",
+  "skillKey": "clawhub-esign-contract",
+  "name": "esign-contract",
+  "summary": "e签宝电子签名技能 — 支持 AI 生成任意类型的合同/协议并排版为 PDF， 上传已有文件发起电子签署，返回签署链接。 触发场景：用户要求生成、起草、撰写任何类型的合同或协议（如\"写个借款合同\"、 \"帮我拟一份保密协议\"、\"起草租赁合同\"），或要求对已有合同文件发起签署、 查询签署进度、撤销签署、下载签署文件、...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esign_contract",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "esign-cn-open-source",
+      "features": [
+        "e签宝电子签名技能 — 支持 AI 生成任意类型的合同/协议并排版为 PDF， 上传已有文件发起电子签署，返回签署链接。 触发场景：用户要求生成、起草、撰写任何类型的合同或协议（如\"写个借款."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esign-contract@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211654876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esign-contract",
+      "url": "https://clawhub.ai/skills/esign-contract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esign-contract",
+    "url": "https://clawhub.ai/skills/esign-contract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esign-contract-b7f1bdb578885663.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esign-contract@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-esign-contract-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a429283a867e4b3342f2e66e9d3689d57cf8180bc2d53ed80cb215f72135384f",
+      "artifactSizeBytes": 2611
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:27:07.317Z"
+}

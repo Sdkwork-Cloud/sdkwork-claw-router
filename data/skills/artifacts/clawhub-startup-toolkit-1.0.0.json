@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/startup-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_toolkit",
+  "skill": {
+    "id": 17872,
+    "skillKey": "clawhub-startup-toolkit",
+    "name": "Startup Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-toolkit",
+    "url": "https://clawhub.ai/skills/startup-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-toolkit-13bdeea2daa94c10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a complete React/Node.js toolkit with landing page, authentication, payments, analytics, and marketing features to launch your startup quickly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 707,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772644207626,
+      "changelog": "Initial release of Startup Toolkit.\n\n- Provides a modern SaaS landing page with SEO and conversion optimization.\n- Built-in authentication with social login and password recovery.\n- Integrated Stripe payments with subscription management and invoice generation.\n- Analytics tools for user tracking, event insights, and dashboard visualization.\n- Marketing features like email capture, waitlist, and referral system.\n- Quick start scripts and support for React, Node.js/Express, PostgreSQL, Docker, and CI/CD.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ff27285e8287c51f47e6b981646a8da058aadcf12ceeb248b23c5c72008fe9f"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13496,
+  "uuid": "skill-clawhub-suisec",
+  "skillKey": "clawhub-suisec",
+  "name": "Sui Sec",
+  "summary": "Sui Secure - Pre-simulate transactions via sui client call --dry-run and sui client ptb --dry-run, compare results against user intent to detect malicious contract behavior. Only execute if intent matches; block otherwise.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suisec",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "k66 (Lana Chen)",
+      "features": [
+        "Sui Secure",
+        "Pre-simulate transactions via sui client call --dry-run and sui client ptb --dry-run, compare r.",
+        "Only execute if intent matches",
+        "block otherwise."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suisec@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45890492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suisec",
+      "url": "https://clawhub.ai/skills/suisec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suisec",
+    "url": "https://clawhub.ai/skills/suisec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suisec-f3f178a11b2ea59c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suisec@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-suisec-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d2d0bd075855e0bf672f3ab0985b7bc0bb5e3222e90eccf75bd54b05bff8b5e",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T05:16:29.844Z"
+}

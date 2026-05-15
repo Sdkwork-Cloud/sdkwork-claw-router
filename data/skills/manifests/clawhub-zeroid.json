@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53880,
+  "uuid": "skill-clawhub-zeroid",
+  "skillKey": "clawhub-zeroid",
+  "name": "Openclaw Skill",
+  "summary": "Identity infrastructure for AI agents — register identities, issue tokens, delegate to sub-agents, revoke credentials, manage policies",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeroid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abhijitjavelin",
+      "features": [
+        "Identity infrastructure for AI agents — register identities, issue tokens, delegate to sub-agen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeroid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191871714?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeroid",
+      "url": "https://clawhub.ai/skills/zeroid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeroid",
+    "url": "https://clawhub.ai/skills/zeroid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeroid-26902acd7147cc03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeroid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeroid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fd0ea59559938a310697d87a9370621383aa86de9ab8f6269995edcaa58cf2f",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:11:16.816Z"
+}

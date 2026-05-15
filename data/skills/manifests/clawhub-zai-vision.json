@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48739,
+  "uuid": "skill-clawhub-zai-vision",
+  "skillKey": "clawhub-zai-vision",
+  "name": "Zai Vision",
+  "summary": "Z.AI Vision analysis using GLM-4.6V model for image and video understanding. Use when Claude needs to analyze images (screenshots, UI designs, photos, diagra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zai_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "twolfe1991-cloud",
+      "features": [
+        "Z.AI Vision analysis using GLM-4.6V model for image and video understanding",
+        "Use when Claude needs to analyze images (screenshots, UI designs, photos, diagra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zai-vision@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258322580?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zai-vision",
+      "url": "https://clawhub.ai/skills/zai-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zai-vision",
+    "url": "https://clawhub.ai/skills/zai-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zai-vision-bbd5cc85b20f9d8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zai-vision@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zai-vision-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89d12cabde232fd488e2b552c952f38738c50ee29f2c50a953d75febf3c53f80",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:03:14.440Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-travel-blindbox@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_travel_blindbox",
+  "skill": {
+    "id": 72101,
+    "skillKey": "clawhub-flyai-travel-blindbox",
+    "name": "旅行盲盒"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-travel-blindbox",
+    "url": "https://clawhub.ai/skills/flyai-travel-blindbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-travel-blindbox-409e175e157ff809.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "旅行盲盒助手，让旅行回归\"探索未知\"的本质。不选目的地，只设底线条件（预算上限、最远飞行时间、时间、排除城市），AI在满足条件的目的地中随机抽取一个，结合\"拆盲盒\"趣味交互。当用户提到\"旅行盲盒\"、\"随机旅行\"、\"去哪都行\"、\"选择困难\"、\"不知道去哪\"、\"帮我选目的地\"、\"随机抽一个\"、\"盲盒\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hello-ahang",
+      "userId": "s173amcatjt4szds3pjwe405r584382h",
+      "displayName": "hello_hang",
+      "image": "https://avatars.githubusercontent.com/u/19886468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775237070809,
+      "changelog": "Version 1.0.1\n\n- Added a comprehensive reference directory with detailed documentation on algorithms, workflows, tools, flight ranges, user profiles, search commands, and example dialogues.\n- Refactored SKILL.md to streamline main logic, referencing modular documentation for workflows, tool usage, algorithms, and self-learning mechanisms.\n- Implemented dual-mode user profile management strategy (memory API or local file fallback).\n- Enhanced clarity and maintainability by separating core instructions and detailed technical guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33c7859454b34d8cf36dd0168c10a1201c64df4fcc793e79bf2cb7c26edf6806"
+}

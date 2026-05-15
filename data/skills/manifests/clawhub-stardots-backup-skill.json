@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23271,
+  "uuid": "skill-clawhub-stardots-backup-skill",
+  "skillKey": "clawhub-stardots-backup-skill",
+  "name": "Backup image to StarDots",
+  "summary": "Automatically upload images to Stardots.io cloud storage, manage files, and obtain secure access links using API authentication.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stardots_backup_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keepchen",
+      "features": [
+        "Automatically upload images to Stardots.io cloud storage, manage files, and obtain secure acces."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stardots-backup-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11535899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stardots-backup-skill",
+      "url": "https://clawhub.ai/skills/stardots-backup-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stardots-backup-skill",
+    "url": "https://clawhub.ai/skills/stardots-backup-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stardots-backup-skill-a931290d67264e51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stardots-backup-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stardots-backup-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cb5b971b7ea803bf01aff7a66c1634c2b0a56b5b8128d62f560a0f8673ef31a",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:32:35.907Z"
+}

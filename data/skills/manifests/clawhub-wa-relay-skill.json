@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15825,
+  "uuid": "skill-clawhub-wa-relay-skill",
+  "skillKey": "clawhub-wa-relay-skill",
+  "name": "Wa Relay",
+  "summary": "WhatsApp message relay for OpenClaw v0.2.0. Routes third-party DMs to a relay agent that forwards them to the main agent via sessions_send. The main agent no...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wa_relay_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zarruk",
+      "features": [
+        "WhatsApp message relay for OpenClaw v0.2.0",
+        "Routes third-party DMs to a relay agent that forwards them to the main agent via sessions_send",
+        "The main agent no..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wa-relay-skill@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22011904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wa-relay-skill",
+      "url": "https://clawhub.ai/skills/wa-relay-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wa-relay-skill",
+    "url": "https://clawhub.ai/skills/wa-relay-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wa-relay-skill-4305612ffa427189.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wa-relay-skill@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wa-relay-skill-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:875fef1ff1433b244204fa731dcdb96e5076c54d211d21a9f5e34a6e64dd54b5",
+      "artifactSizeBytes": 1943
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T20:17:13.412Z"
+}

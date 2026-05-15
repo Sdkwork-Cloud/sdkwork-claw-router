@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/checklist@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checklist",
+  "skill": {
+    "id": 21123,
+    "skillKey": "clawhub-checklist",
+    "name": "Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checklist",
+    "url": "https://clawhub.ai/skills/checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checklist-6da624dba5235ba1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collaborative task checklist manager for AI agents with sequential, parallel, and looping execution. Features agent coordination, dependencies, deadlock prev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "welliu",
+      "userId": "s175qgnzakde9qv9dm97tj2hfh841va1",
+      "displayName": "wel liu",
+      "image": "https://avatars.githubusercontent.com/u/13745586?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773246056843,
+      "changelog": "- Added 9 built-in checklist templates for common workflows and tasks, including API review, code merge, container security, daily standup, database migration, incident response, onboarding, performance testing, and release.\n- No changes to existing commands, workflow modes, or safety features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d71736bc2f9e58240764bbdd58d5d72e7dcb58baf54923592cb8071f478efc4"
+}

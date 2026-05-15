@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shorts-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shorts_automation",
+  "skill": {
+    "id": 46871,
+    "skillKey": "clawhub-shorts-automation",
+    "name": "Shorts Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shorts-automation",
+    "url": "https://clawhub.ai/skills/shorts-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shorts-automation-62cab61468b9b068.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert long-form video into vertical short clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok creators use it for generating sh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776233156011,
+      "changelog": "Initial release: Instantly convert long-form videos into vertical shorts using cloud GPU rendering.\n\n- Accepts MP4, MOV, AVI, WebM (up to 500MB) and processes videos into 1080p MP4 shorts in 1–2 minutes.\n- Automatic connection to backend and free token generation for new users (100 free credits, valid 7 days).\n- Supports automated short/clip extraction with captions, BGM, aspect ratio changes, and text overlays.\n- Simple commands for exporting, uploading, checking credits, and session state.\n- Full support for common content creator workflows (quick edits, iterative refinement, batch processing).\n- Clear error handling for authentication, file type/size, credits, and rate limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0fb8298e523e8a8278094fd9e85d26b2ffefd42fb321ad351c84c1b9b3cef4cb"
+}

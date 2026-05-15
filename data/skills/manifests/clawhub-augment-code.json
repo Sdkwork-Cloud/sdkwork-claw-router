@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62358,
+  "uuid": "skill-clawhub-augment-code",
+  "skillKey": "clawhub-augment-code",
+  "name": "Augment Code",
+  "summary": "Augment Code AI 编程助手，精通企业级代码理解、大型代码库导航、上下文感知补全",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.augment_code",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "Augment Code AI 编程助手，精通企业级代码理解、大型代码库导航、上下文感知补全"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/augment-code@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "augment-code",
+      "url": "https://clawhub.ai/skills/augment-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "augment-code",
+    "url": "https://clawhub.ai/skills/augment-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/augment-code-f980a0970a282d75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/augment-code@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-augment-code-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f94f1eedc61cc2b9ac678bb85a6a95afad3283d8e343083324e5067f010b495",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:57:09.812Z"
+}

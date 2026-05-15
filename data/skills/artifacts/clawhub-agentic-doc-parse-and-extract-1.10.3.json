@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-doc-parse-and-extract@1.10.3",
+  "version": "1.10.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_doc_parse_and_extract",
+  "skill": {
+    "id": 26018,
+    "skillKey": "clawhub-agentic-doc-parse-and-extract",
+    "name": "agentic-doc-parse-and-extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-doc-parse-and-extract",
+    "url": "https://clawhub.ai/skills/agentic-doc-parse-and-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-doc-parse-and-extract-0b20946bd3ab3eef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI-powered parsing and key information extraction from high-frequency documents including invoices, orders, receipts, long texts, and common Chinese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laiye-adp",
+      "userId": "s17cqxy7t90jwwf5x1jhnss4td85c8ch",
+      "displayName": "Laiye ADP",
+      "image": "https://avatars.githubusercontent.com/u/259055827?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.10.3",
+      "createdAt": 1777027583567,
+      "changelog": "Align the product version numbers on all platforms",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21052cacaa78ca2e74023af248294af94581adabd5b34001f6d222cec80a8d95"
+}

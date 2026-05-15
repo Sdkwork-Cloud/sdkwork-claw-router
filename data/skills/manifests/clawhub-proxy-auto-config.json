@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63348,
+  "uuid": "skill-clawhub-proxy-auto-config",
+  "skillKey": "clawhub-proxy-auto-config",
+  "name": "proxy auto config",
+  "summary": "自动检测和配置系统代理设置，特别为 OpenClaw Gateway 优化。使用场景包括：1) Gateway 启动时自动检测代理，2) 自动配置环境变量，3) 创建代理启动脚本，4) 定时检查代理状态，5) 支持 v2ray、Clash、SS/SSR 等常见代理工具。当系统使用代理网络环境时自动触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy_auto_config",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaiiNor",
+      "features": [
+        "自动检测和配置系统代理设置，特别为 OpenClaw Gateway 优化。使用场景包括：1) Gateway 启动时自动检测代理，2) 自动配置环境变量，3) 创建代理启动脚本，4) 定时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxy-auto-config@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138784610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxy-auto-config",
+      "url": "https://clawhub.ai/skills/proxy-auto-config"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy-auto-config",
+    "url": "https://clawhub.ai/skills/proxy-auto-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy-auto-config-a41ca79cc831e7ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxy-auto-config@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxy-auto-config-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ec3cfd4737e8ea33f08010aaf62a17bdbf762bd5590f24de45671e9e946e44c",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:58:35.817Z"
+}

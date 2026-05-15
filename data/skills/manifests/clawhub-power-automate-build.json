@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22100,
+  "uuid": "skill-clawhub-power-automate-build",
+  "skillKey": "clawhub-power-automate-build",
+  "name": "Power Automate Build",
+  "summary": "Build, scaffold, and deploy Power Automate cloud flows using the FlowStudio MCP server. Your agent constructs flow definitions, wires connections, deploys, a...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.power_automate_build",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ninihen1",
+      "features": [
+        "Build, scaffold, and deploy Power Automate cloud flows using the FlowStudio MCP server",
+        "Your agent constructs flow definitions, wires connections, deploys, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/power-automate-build@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123369259?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "power-automate-build",
+      "url": "https://clawhub.ai/skills/power-automate-build"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "power-automate-build",
+    "url": "https://clawhub.ai/skills/power-automate-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/power-automate-build-d2acd67452385141.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/power-automate-build@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-power-automate-build-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3d80da3068c794b4cde11afbbf59c037cbb88ee8db8cf26531da1798620e5b3",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:50:35.143Z"
+}

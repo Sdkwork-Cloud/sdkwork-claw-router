@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nanobot-overstory-bridge@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobot_overstory_bridge",
+  "skill": {
+    "id": 21873,
+    "skillKey": "clawhub-nanobot-overstory-bridge",
+    "name": "Nanobot Overstory Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobot-overstory-bridge",
+    "url": "https://clawhub.ai/skills/nanobot-overstory-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobot-overstory-bridge-e70c37da0d94741a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Seamless bidirectional bridge between nanobot (Ollama Mistral orchestrator) and overstory (Claude Code agent swarm). Routes tasks through the OverClaw gatewa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772284180787,
+      "changelog": "- Introduced OverClaw Bridge as a seamless bidirectional connector between nanobot and overstory, routing all tasks via the OverClaw gateway (port 18800).\n- Added modular components: Python CLI wrapper (overstory_client), task classification/router, persistent session bridge with SQLite mapping, and robust bidirectional memory sync.\n- Enables task intake, agent coordination, status checks, inter-agent mail, and memory operations from both Python and CLI interfaces.\n- New task-to-capability mapping automates agent selection for research, social, coding, review, and more.\n- Clear separation of responsibilities between nanobot orchestration and overstory subagent lifecycle and coordination.\n- Updated environment variables, requirements, and integration flow documentation for straightforward deployment and integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a81e7a7a28caa23d032457372a0ca48a97ff4b7de6f9b54616ff8abd7197ca8d"
+}

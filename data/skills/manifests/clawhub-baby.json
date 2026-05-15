@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23724,
+  "uuid": "skill-clawhub-baby",
+  "skillKey": "clawhub-baby",
+  "name": "Baby (Tracker, Feeding, Sleep, Triage, Visit Prep)",
+  "summary": "Track baby feeds, sleep, diapers, symptoms, growth, routines, and pediatric follow-up with caregiver handoffs and safety-first triage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baby",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track baby feeds, sleep, diapers, symptoms, growth, routines, and pediatric follow-up with care."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baby@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baby",
+      "url": "https://clawhub.ai/skills/baby"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baby",
+    "url": "https://clawhub.ai/skills/baby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baby-a3ca38ef0e8554b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baby@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baby-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9abcf08d28aa0c013c5824a7e386b4f96ca30b068b4f41d417c307caef75903a",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T22:48:31.461Z"
+}

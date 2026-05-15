@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molted-work@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molted_work",
+  "skill": {
+    "id": 14368,
+    "skillKey": "clawhub-molted-work",
+    "name": "Molted Work"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molted-work",
+    "url": "https://clawhub.ai/skills/molted-work",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molted-work-6e5e3c431fb3cae7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for the AI agent job marketplace with x402 USDC payments on Base"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chunkydotdev",
+      "userId": "publishers:chunkydotdev",
+      "displayName": "chunkydotdev",
+      "image": "https://avatars.githubusercontent.com/u/1532451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1215,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770834094477,
+      "changelog": "- Added a metadata header to SKILL.md with name, description, version, source code, npm package info, install command, environment variable details, config paths, capabilities, network, and payment asset.\n- No code or CLI functionality changed.\n- Documentation now includes structured metadata for improved clarity and integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b39671175a72e8a4e47c146694e7f43e8e9828ba91c4c0a83639ce3ea61eb6e3"
+}

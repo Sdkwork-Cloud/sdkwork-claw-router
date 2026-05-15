@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intellectia-stock-forecast-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intellectia_stock_forecast_1_0_2",
+  "skill": {
+    "id": 15899,
+    "skillKey": "clawhub-intellectia-stock-forecast-1-0-2",
+    "name": "Intellectia Stock Forecast 1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intellectia-stock-forecast-1-0-2",
+    "url": "https://clawhub.ai/skills/intellectia-stock-forecast-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intellectia-stock-forecast-1-0-2-d3d0a97df58d45fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "US Stock AI Trading Assistant | Intellectia AI Stock Forecast — Smart analysis of stock entry/exit points, target price predictions, probability calculations, and technical ratings. Supports \"Should I Buy\" investment decision Q&A."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renixaus",
+      "userId": "publishers:renixaus",
+      "displayName": "Renixaus",
+      "image": "https://avatars.githubusercontent.com/u/94712193?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1595,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770207803967,
+      "changelog": "Initial release of the Intellectia Stock Forecast skill:\n\n- Provides US stock, ETF, and crypto yearly forecasts and “Should I Buy?” Q&A via the Intellectia API.\n- Supports two endpoints: price/entry/exit predictions (2026–2035) and structured investment rationale analysis.\n- Fast setup instructions for OpenClaw users, including installation and troubleshooting tips.\n- Example usage for both forecast and decision analysis included (curl/python).\n- Strong disclaimers: informational use only; not investment advice.\n- One-symbol queries per request; supports forced invocation and skill auto-matching phrases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7ec217a264aa4f9418c6dff2ca6b57edd166125039e487b2d4731cde383661c"
+}

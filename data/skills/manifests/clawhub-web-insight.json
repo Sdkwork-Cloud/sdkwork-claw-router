@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71581,
+  "uuid": "skill-clawhub-web-insight",
+  "skillKey": "clawhub-web-insight",
+  "name": "Web Insight",
+  "summary": "互联网内容洞察技能。面向全域网络信息监测与情报分析场景，提供多条件组合精准检索能力，可覆盖全网新闻、社交、资讯等多渠道公开内容。支持关键词、情感、时间、平台等多条件组合查询，依托 NLP 智能解析，实现内容去重、关键信息抽取与数据结构化输出，一键供 AI Agent 调用。适用于品牌管理、市场分析、竞品追踪、风险...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "longGGGGGG",
+      "features": [
+        "互联网内容洞察技能。面向全域网络信息监测与情报分析场景，提供多条件组合精准检索能力，可覆盖全网新闻、社交、资讯等多渠道公开内容。支持关键词、情感、时间、平台等多条件组合查询，依托 NLP 智."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-insight@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40319383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-insight",
+      "url": "https://clawhub.ai/skills/web-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-insight",
+    "url": "https://clawhub.ai/skills/web-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-insight-dd83724ef735b938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-insight@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-insight-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f7481a0c25b7ecdb5d3c390ddd0e7431edf3ac0039c751a9285adb4a19be87f",
+      "artifactSizeBytes": 2277
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:39:58.113Z"
+}

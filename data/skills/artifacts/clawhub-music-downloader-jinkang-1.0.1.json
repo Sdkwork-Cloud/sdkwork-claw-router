@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-downloader-jinkang@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_downloader_jinkang",
+  "skill": {
+    "id": 65496,
+    "skillKey": "clawhub-music-downloader-jinkang",
+    "name": "music-downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-downloader-jinkang",
+    "url": "https://clawhub.ai/skills/music-downloader-jinkang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-downloader-jinkang-6da06f21aeb82e2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持从1000+音乐平台下载音频、封面、元数据及歌词，自动选择最佳音质并嵌入封面。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinkang19940922",
+      "userId": "s17c3nth1ng687v4mpnmbzsg4584qmr0",
+      "displayName": "噢福阔斯KANG",
+      "image": "https://avatars.githubusercontent.com/u/96525444?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776054927151,
+      "changelog": "- 默认输出路径由 /home/node/.openclaw/other/music/ 调整为 /other/music/（公共空间）\n- SKILL.md 文档更新，优化默认路径描述\n- 无新增功能或功能改变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4d3b789a2f0b72336a81c97f43822c7a6d331208cdfda3f03bde40438d7a111"
+}

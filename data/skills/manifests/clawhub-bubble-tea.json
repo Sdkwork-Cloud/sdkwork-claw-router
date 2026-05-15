@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73440,
+  "uuid": "skill-clawhub-bubble-tea",
+  "skillKey": "clawhub-bubble-tea",
+  "name": "网红奶茶",
+  "summary": "提供关于网红奶茶的推荐清单、打卡路线与指南。用户搜索网红奶茶或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bubble_tea",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供关于网红奶茶的推荐清单、打卡路线与指南。用户搜索网红奶茶或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bubble-tea@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bubble-tea",
+      "url": "https://clawhub.ai/skills/bubble-tea"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bubble-tea",
+    "url": "https://clawhub.ai/skills/bubble-tea",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bubble-tea-51b3aa39ff2e4203.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bubble-tea@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bubble-tea-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfbe41fcb765c26f0dfdad742d42431ae86ab87812574337cff38756d8ab5074",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:41:06.027Z"
+}

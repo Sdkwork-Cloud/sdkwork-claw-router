@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pedestrian-traffic-counting-gpt-multimodal@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pedestrian_traffic_counting_gpt_multimodal",
+  "skill": {
+    "id": 46106,
+    "skillKey": "clawhub-pedestrian-traffic-counting-gpt-multimodal",
+    "name": "gpt-multimodal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pedestrian-traffic-counting-gpt-multimodal",
+    "url": "https://clawhub.ai/skills/pedestrian-traffic-counting-gpt-multimodal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pedestrian-traffic-counting-gpt-multimodal-02c152a197c74395.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze images and multi-frame sequences using OpenAI GPT series"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lnj22",
+      "userId": "s17d639v6hjv5h7zr9b9h1s1ed84v9vq",
+      "displayName": "lnj22",
+      "image": "https://avatars.githubusercontent.com/u/234027299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776260162037,
+      "changelog": "Bulk publish from all-task-skills-dedup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bd6d1cdfacdf056965887d8d405679664ab27f53831dea494bbe803ed83d5cb"
+}

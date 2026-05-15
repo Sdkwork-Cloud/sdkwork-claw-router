@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/which-llm@1.0.18",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.which_llm",
+  "skill": {
+    "id": 11941,
+    "skillKey": "clawhub-which-llm",
+    "name": "Which LLM? Deterministic model selection for agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "which-llm",
+    "url": "https://clawhub.ai/skills/which-llm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/which-llm-8679e55eceaf21e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deterministic decision-ranking API with HTTP 402 payments and outcome credits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zapkid",
+      "userId": "publishers:zapkid",
+      "displayName": "Zapkid",
+      "image": "https://avatars.githubusercontent.com/u/4131350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1941,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.0.18",
+      "createdAt": 1773141732574,
+      "changelog": "No functional changes; SKILL.md updated for clarity, scope, and registry compliance.\n\n- Simplified and condensed documentation, focusing on safe API usage and registry summary.\n- More explicit about wallet requirements—now only needed for paid requests.\n- Clarified install mechanism (instruction only) and that no code or files are written/downloaded on install.\n- Removed extended credential setup and security best practices.\n- Added troubleshooting section for common API responses.\n- Registry fields updated: includes sensitivity level and install expectations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82c03e4fd03d9a8b2f34d3cdf3ae58a4942e7bd728b3f7bc515ae8a59a47fb11"
+}

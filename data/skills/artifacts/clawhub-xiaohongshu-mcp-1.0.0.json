@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_mcp",
+  "skill": {
+    "id": 8266,
+    "skillKey": "clawhub-xiaohongshu-mcp",
+    "name": "Xiaohongshu (小红书) Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-mcp",
+    "url": "https://clawhub.ai/skills/xiaohongshu-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-mcp-249212623b3543ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Xiaohongshu (RedNote) content operations using a Python client for the xiaohongshu-mcp server. Use for: (1) Publishing image, text, and video content, (2) Searching for notes and trends, (3) Analyzing post details and comments, (4."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "borye",
+      "userId": "publishers:borye",
+      "displayName": "Borye",
+      "image": "https://avatars.githubusercontent.com/u/8169060?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 34622,
+      "installsAllTime": 323,
+      "installsCurrent": 302,
+      "stars": 167,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769938539127,
+      "changelog": "Initial release of xiaohongshu-mcp skill.\n\n- Automate Xiaohongshu (RedNote) content operations via Python client for the xiaohongshu-mcp local server.\n- Supports publishing image, text, and video content to Xiaohongshu.\n- Enables searching for notes and trending topics, analyzing post details and comments, and managing user feeds and profiles.\n- Provides clear setup instructions for running the required local server and login steps.\n- Includes CLI Python script with commands for status checks, searching, publishing, and retrieving detailed note information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:39df83ef7af7618398fafbd36b959021d4702b7bdbc41ab14db064befa443327"
+}

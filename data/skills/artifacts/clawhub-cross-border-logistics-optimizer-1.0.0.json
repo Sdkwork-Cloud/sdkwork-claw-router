@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-border-logistics-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_border_logistics_optimizer",
+  "skill": {
+    "id": 37594,
+    "skillKey": "clawhub-cross-border-logistics-optimizer",
+    "name": "Cross Border Logistics Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-border-logistics-optimizer",
+    "url": "https://clawhub.ai/skills/cross-border-logistics-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-border-logistics-optimizer-14fc64044c8cec16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare cross-border e-commerce shipping options, packaging tactics, customs-risk signals, and speed-versus-cost tradeoffs for sellers, operations teams, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776075690848,
+      "changelog": "Cross-border Logistics Optimizer 1.0.0 – Initial Release\n\n- Advisory tool to compare international e-commerce shipping routes, with focus on cost, speed, customs risk, and packaging strategy.\n- Does not use live carrier APIs; relies on proven shipping heuristics and exception patterns.\n- Generates a markdown brief with executive summary, lane comparison, route recommendation, packaging checklist, and customs-risk notes.\n- Supports flexible user input: origin/destination, parcel details, value, product type, risk patterns, and priorities.\n- Flags missing info and avoids making guaranteed delivery or legal compliance promises.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d79d83dec8c83c1b0fedabf2cabb36522d654009c7f2044eb29b056e9d65db9"
+}

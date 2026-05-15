@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phoenixclaw-ledger@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenixclaw_ledger",
+  "skill": {
+    "id": 11070,
+    "skillKey": "clawhub-phoenixclaw-ledger",
+    "name": "phoenixclaw-ledger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenixclaw-ledger",
+    "url": "https://clawhub.ai/skills/phoenixclaw-ledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenixclaw-ledger-8e8037a628536727.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Passive financial tracking plugin for PhoenixClaw. Automatically detects expenses and income from conversations and payment screenshots. Use when: - User mentions money/spending (any language) - User shares payment screenshots (WeChat Pay,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goforu",
+      "userId": "s17crgxn95snsyyfwb3dkamnsd83vn37",
+      "displayName": "betterest",
+      "image": "https://avatars.githubusercontent.com/u/5236864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2179,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1770092813253,
+      "changelog": "- Added support for financial goal management, including savings, budget control, and wishlist tracking.\n- Introduced weekly financial reports and Sunday 9 PM spending recaps.\n- Added query support for real-time, natural language finance questions.\n- New features: spending trend visualization and interactive transaction browser.\n- Expanded documentation with new guides for transaction browsing, trends, weekly reports, goal tracking, and query patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1aef282e31a5908f7ee5779cc208b4badb62fcaa3bdc2f0d05ae2682c23cd50c"
+}

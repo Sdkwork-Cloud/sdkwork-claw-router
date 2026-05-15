@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-gen-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_gen_bot",
+  "skill": {
+    "id": 17616,
+    "skillKey": "clawhub-image-gen-bot",
+    "name": "Image Gen Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-gen-bot",
+    "url": "https://clawhub.ai/skills/image-gen-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-gen-bot-5cbde8468f7e6cfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from text prompts using FLUX via Together.ai. Returns image URL. Prompts are auto-enhanced for best results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unixlamadev-spec",
+      "userId": "s173nr0teechvmbjjz4j5r9nen83gjtb",
+      "displayName": "unixlamadev-spec",
+      "image": "https://avatars.githubusercontent.com/u/251052015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 702,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773366034479,
+      "changelog": "- Initial public release of image-gen-bot.\n- Generate images from text prompts using the FLUX model via Together.ai.\n- Prompts are automatically enhanced for better visual quality before generation.\n- Supports customizable image dimensions and quality settings.\n- Returns a URL to the generated image for easy sharing or download.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:101b3d93ea281bd5f16377d657e0771d4cad8bfcce4d2c422c62bb4beb19f359"
+}

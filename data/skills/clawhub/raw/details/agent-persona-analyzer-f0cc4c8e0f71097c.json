@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "agent-persona-analyzer",
+    "displayName": "agent-persona-analyzer",
+    "summary": "智能体人格分析 Skill。用于分析 Agent 的性别角色、性格类型、心理年龄、职业倾向和自我介绍。 触发场景： (1) 用户让 Agent 做自我介绍或介绍自己 (2) Agent 主动提及自身特征 (3) 用户要求进行人格测评、性格测试 (4) 用户询问 Agent 的性别、年龄、性格、擅长领域 (5) 用...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1773834626991,
+    "updatedAt": 1777620909782
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773987616044,
+    "changelog": "**重大变更：从行为推断升级为完全随机化生成 Agent 人格档案。**\n\n- 所有人格属性（MBTI、性别、年龄、职业倾向等）均采用时间戳算法完全随机生成，不再依据对话或行为推断。\n- 首次触发时自动生成完整档案（包含昵称、性格、特长等信息），并写入 agent-persona-name.json，后续均读取该档案，不再变更。\n- 提供详细的随机规则，确保每个属性的独立随机性。\n- 新增 MBTI 16型关键词参考表及更细化的昵称生成规则。\n- 输出自我介绍时，严格依档案内容生成，风格更加统一亲切。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "tcdjl",
+    "userId": "s17413z1vbgw9r7gkj9g68km3h83x1ya",
+    "displayName": "tcdjl",
+    "image": "https://avatars.githubusercontent.com/u/39190676?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38677,
+  "uuid": "skill-clawhub-lowyat-forum-research",
+  "skillKey": "clawhub-lowyat-forum-research",
+  "name": "Lowyat Forum Research",
+  "summary": "Research any topic by searching Lowyat forum (forum.lowyat.net), scraping relevant threads into Excel, and analyzing the results. Use this skill whenever the...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lowyat_forum_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johnson",
+      "features": [
+        "Research any topic by searching Lowyat forum (forum.lowyat.net), scraping relevant threads into.",
+        "Use this skill whenever the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lowyat-forum-research@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15358452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lowyat-forum-research",
+      "url": "https://clawhub.ai/skills/lowyat-forum-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lowyat-forum-research",
+    "url": "https://clawhub.ai/skills/lowyat-forum-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lowyat-forum-research-2c0bab703de40edc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lowyat-forum-research@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lowyat-forum-research-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f6b524413161f6e28e03d17da6e57091eb8c72134b4a3a256421e61496def2d",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:40:21.567Z"
+}

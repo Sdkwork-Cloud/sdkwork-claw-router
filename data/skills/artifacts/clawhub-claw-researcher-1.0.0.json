@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-researcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_researcher",
+  "skill": {
+    "id": 43944,
+    "skillKey": "clawhub-claw-researcher",
+    "name": "Deep Research Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-researcher",
+    "url": "https://clawhub.ai/skills/claw-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-researcher-7667763255fc31ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep multi-source research agent. Use when: (1) user asks to research a topic, question, or claim, (2) user needs a literature review, competitive analysis,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharoonsharif",
+      "userId": "s17cbqpc05capj08csqdymywcs83haev",
+      "displayName": "Sharoon Sharif",
+      "image": "https://avatars.githubusercontent.com/u/150296639?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775057815254,
+      "changelog": "Initial release: multi-phase research agent with 4 research modes, confidence-rated findings, and citation tracking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c8e226debd4a44734e02871bf8bde0e597a5f4e0f115b7bcb4368d01083db2a"
+}

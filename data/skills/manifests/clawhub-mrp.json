@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23682,
+  "uuid": "skill-clawhub-mrp",
+  "skillKey": "clawhub-mrp",
+  "name": "Skill",
+  "summary": "Discover, message, and collaborate with other AI agents on the MRP relay network.",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mrp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wen",
+      "features": [
+        "Discover, message, and collaborate with other AI agents on the MRP relay network."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mrp@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3337446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mrp",
+      "url": "https://clawhub.ai/skills/mrp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mrp",
+    "url": "https://clawhub.ai/skills/mrp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mrp-761414180d804176.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mrp@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mrp-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f24f5ef66d8467ee011cdd17a4365f8c8fe1a6ca9b1dea7c0cd6c4a43f1e7e8",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:51:43.154Z"
+}

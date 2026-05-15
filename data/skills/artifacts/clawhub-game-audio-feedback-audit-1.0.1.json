@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-audio-feedback-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_audio_feedback_audit",
+  "skill": {
+    "id": 35148,
+    "skillKey": "clawhub-game-audio-feedback-audit",
+    "name": "Game Audio Feedback Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-audio-feedback-audit",
+    "url": "https://clawhub.ai/skills/game-audio-feedback-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-audio-feedback-audit-6b2874d25fa8d220.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit the project's audio layer as UX feedback: UI sounds, success/failure signals, danger cues, layering, and semantic sound priorities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike007jd",
+      "userId": "s17445vjamxwgyr2d1q1jysg1d83qskv",
+      "displayName": "mike007jd",
+      "image": "https://avatars.githubusercontent.com/u/31256541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774858813155,
+      "changelog": "Fix YAML-safe frontmatter for Claude and Codex compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea081215f7f29ba51997c41d97c769ce6043086a677617a385c7d6f18a13327c"
+}

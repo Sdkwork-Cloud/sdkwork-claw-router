@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32846,
+  "uuid": "skill-clawhub-polymarket-macro-inflation-chain-trader",
+  "skillKey": "clawhub-polymarket-macro-inflation-chain-trader",
+  "name": "Polymarket Macro Inflation Chain Trader",
+  "summary": "Three-step macro chain reaction trader for Polymarket. Chains commodity pressure (oil, WTI, crude) through inflation and rate expectations (Fed, FOMC) to equ...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_macro_inflation_chain_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Three-step macro chain reaction trader for Polymarket",
+        "Chains commodity pressure (oil, WTI, crude) through inflation and rate expectations (Fed, FOMC)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-macro-inflation-chain-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-macro-inflation-chain-trader",
+      "url": "https://clawhub.ai/skills/polymarket-macro-inflation-chain-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-macro-inflation-chain-trader",
+    "url": "https://clawhub.ai/skills/polymarket-macro-inflation-chain-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-macro-inflation-chain-trader-d06cc85c9b916aa7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-macro-inflation-chain-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-macro-inflation-chain-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55a74a4d530af8f77c55de35f3220232d4e5b5dc76cf251a7ef77a3a746027fe",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:30:29.745Z"
+}

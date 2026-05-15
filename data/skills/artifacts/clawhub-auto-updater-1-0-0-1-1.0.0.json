@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-1-0-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_1_0_0_1",
+  "skill": {
+    "id": 21311,
+    "skillKey": "clawhub-auto-updater-1-0-0-1",
+    "name": "Auto Updater 1.0.0 (1)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-1-0-0-1",
+    "url": "https://clawhub.ai/skills/auto-updater-1-0-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-1-0-0-1-68f87a900473a664.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwsq",
+      "userId": "s17dmbwvt7e2dtzv4mpw3n13rx83hk3f",
+      "displayName": "Gwsq",
+      "image": "https://avatars.githubusercontent.com/u/150670216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772742081073,
+      "changelog": "- Initial release of the auto-updater skill.\n- Automatically checks for and installs updates to Clawdbot and all installed skills once daily via cron.\n- Sends a summary message to the user detailing what was updated and any issues encountered.\n- Provides options for setup, configuration, troubleshooting, and disabling auto-updates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db3cf41616851a5dc79b6a34696e679e20f1f88efa38977855234d83dae4e798"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-service-onboarding@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_service_onboarding",
+  "skill": {
+    "id": 52118,
+    "skillKey": "clawhub-web-service-onboarding",
+    "name": "Web Service Onboarding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-service-onboarding",
+    "url": "https://clawhub.ai/skills/web-service-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-service-onboarding-2104390dcaf7b848.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous signup for external web services — browser automation, email verification, API key generation and secure storage in 1Password. Use when asked to c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774671903698,
+      "changelog": "Security: added security_notes to clarify legitimate usage of network/credential/encoding patterns. Prevents false-positive scanner flags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3f0ef96d9d499660d5ee53933715c3726bd72ca9d03365ff7f128d98a33fd11"
+}

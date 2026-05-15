@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15822,
+  "uuid": "skill-clawhub-meetup-planner",
+  "skillKey": "clawhub-meetup-planner",
+  "name": "Meetup Planner",
+  "summary": "An intelligent event finder that searches for meetups and events based on your interests, tracks them, and reminds you before they happen",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetup_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apresmoi",
+      "features": [
+        "An intelligent event finder that searches for meetups and events based on your interests, track."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meetup-planner@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11778792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meetup-planner",
+      "url": "https://clawhub.ai/skills/meetup-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetup-planner",
+    "url": "https://clawhub.ai/skills/meetup-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetup-planner-91c8408befe18698.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meetup-planner@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-meetup-planner-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87cde00988390c6302ec8bc4fc2d27d6770c808a864601d2d3dbe02d5396e81b",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T22:00:13.364Z"
+}

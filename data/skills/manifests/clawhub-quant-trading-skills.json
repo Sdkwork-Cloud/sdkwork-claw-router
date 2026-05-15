@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71184,
+  "uuid": "skill-clawhub-quant-trading-skills",
+  "skillKey": "clawhub-quant-trading-skills",
+  "name": "quant_trading-skills",
+  "summary": "获取股票/基金等金融标的的量化数据，包括行情数据、财务数据、资金流向数据和舆情数据。支持单只股票查询和批量数据拉取。当用户需要查询股票行情、财务指标、资金流向或相关舆情信息时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_trading_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharkpicker",
+      "features": [
+        "获取股票/基金等金融标的的量化数据，包括行情数据、财务数据、资金流向数据和舆情数据。支持单只股票查询和批量数据拉取。当用户需要查询股票行情、财务指标、资金流向或相关舆情信息时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-trading-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44901372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-trading-skills",
+      "url": "https://clawhub.ai/skills/quant-trading-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-trading-skills",
+    "url": "https://clawhub.ai/skills/quant-trading-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-trading-skills-3839074d76039f3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-trading-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-trading-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fedb8e24079d451d8c0441e3d8755b7590911f2b2c331638fade404ddfc7d9a",
+      "artifactSizeBytes": 3600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:18:48.355Z"
+}

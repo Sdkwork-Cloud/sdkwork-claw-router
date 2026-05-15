@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yinian-zwds@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yinian_zwds",
+  "skill": {
+    "id": 61503,
+    "skillKey": "clawhub-yinian-zwds",
+    "name": "Yinian Zwds"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yinian-zwds",
+    "url": "https://clawhub.ai/skills/yinian-zwds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yinian-zwds-40613e030b23b496.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一念紫微斗数 (Yinian Zi Wei Dou Shu) — 专业AI紫微斗数排盘解盘系统。三派合一：三合派/飞星派/占验派。触发词：紫微斗数、紫微、命盘、排盘、ZWDS、ziwei、Purple Star"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincent-vstudios",
+      "userId": "s1770xqgc3sg2z1hm28yq20h6h83gqg1",
+      "displayName": "Vincent-VStudios",
+      "image": "https://avatars.githubusercontent.com/u/152049630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777228429948,
+      "changelog": "Version 2.1.0 of yinian-zwds adds major enhancements to clarity, structure, and professional use:\n\n- Expanded skill documentation with full workflow for 紫微斗数排盘与解盘，三派合一三大流派（中州派/钦天门/紫云体系）特点说明。\n- Added detailed user prompts and script execution guidance for both阳历/农历排盘。\n- Included reference tables: 12宫结构、14主星简介、亮度体系、生年四化表。\n- Defined输出规范、伦理提醒及AI身份声明要求，防止误用与隐私泄露。\n- Organized technical文件目录、核心知识与自定义扩展说明，提升易用性和可维护性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fa05695614c3f56ef154388b803ad12f3a3b7920043528d7074344d5b87df1c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/short-video-agent-kit@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_video_agent_kit",
+  "skill": {
+    "id": 49203,
+    "skillKey": "clawhub-short-video-agent-kit",
+    "name": "Short Video Agent Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-video-agent-kit",
+    "url": "https://clawhub.ai/skills/short-video-agent-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-video-agent-kit-59df4acdf0ac3425.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use one dry-run-first interface for agent-generated vertical video payloads across Sora/OpenAI, Gemini Veo, xAI/Grok, and Seedance-style providers. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778073000023,
+      "changelog": "Initial Delx ClawHub skill for agent-first open-source discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a4d4e981537ad2bfbec4f21e39b875bce7001e9b9b3d4c383d004474d7983b2"
+}

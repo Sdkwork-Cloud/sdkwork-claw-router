@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59470,
+  "uuid": "skill-clawhub-firecrawl-local-search",
+  "skillKey": "clawhub-firecrawl-local-search",
+  "name": "Firecrawl Local Search",
+  "summary": "抓取网站数据的本地 Firecrawl 服务。使用本地 API (http://192.168.1.2:3002/) 进行网页抓取、数据提取和站内搜索。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firecrawl_local_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bobowg163",
+      "features": [
+        "抓取网站数据的本地 Firecrawl 服务。使用本地 API (http://192.168.1.2:3002/) 进行网页抓取、数据提取和站内搜索。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firecrawl-local-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179481581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firecrawl-local-search",
+      "url": "https://clawhub.ai/skills/firecrawl-local-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firecrawl-local-search",
+    "url": "https://clawhub.ai/skills/firecrawl-local-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firecrawl-local-search-bdbaf1fa214773d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firecrawl-local-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firecrawl-local-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d31ae16e0b1979b8a1d115bd88b50d85d35a8242a212a03837d4e1b833ac70f",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T02:26:02.851Z"
+}

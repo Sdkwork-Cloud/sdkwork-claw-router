@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63123,
+  "uuid": "skill-clawhub-openclaw-skill-dingtalk-setup",
+  "skillKey": "clawhub-openclaw-skill-dingtalk-setup",
+  "name": "Dingtalk Setup",
+  "summary": "钉钉企业内部机器人渠道快速对接。Use when: 用户需要对接钉钉渠道、配置钉钉 Stream 模式、排查钉钉消息问题。NOT for: 飞书/Lark、企业微信等其他平台。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_dingtalk_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaoyunhao0107",
+      "features": [
+        "钉钉企业内部机器人渠道快速对接。Use when: 用户需要对接钉钉渠道、配置钉钉 Stream 模式、排查钉钉消息问题。NOT for: 飞书/Lark、企业微信等其他平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-dingtalk-setup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181611992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-dingtalk-setup",
+      "url": "https://clawhub.ai/skills/openclaw-skill-dingtalk-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-dingtalk-setup",
+    "url": "https://clawhub.ai/skills/openclaw-skill-dingtalk-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-dingtalk-setup-64973f7ad992e93a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-dingtalk-setup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-dingtalk-setup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6df0b10b49ee805e6ee90dbb18df7a633adec5507941c20fcfc20cdf0798a19",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T06:30:56.637Z"
+}

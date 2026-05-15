@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63239,
+  "uuid": "skill-clawhub-lean-cloud-backtest",
+  "skillKey": "clawhub-lean-cloud-backtest",
+  "name": "Lean Cloud Backtest",
+  "summary": "通过 LEAN 引擎搭建多市场量化研究与回测环境，支持 QuantBook 历史数据获取、技术指标计算和自定义因子建模。。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lean_cloud_backtest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "通过 LEAN 引擎搭建多市场量化研究与回测环境，支持 QuantBook 历史数据获取、技术指标计算和自定义因子建模。。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lean-cloud-backtest@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lean-cloud-backtest",
+      "url": "https://clawhub.ai/skills/lean-cloud-backtest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lean-cloud-backtest",
+    "url": "https://clawhub.ai/skills/lean-cloud-backtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lean-cloud-backtest-035b3c1812ff3741.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lean-cloud-backtest@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-lean-cloud-backtest-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b51ff67f77b1474975d47ef5ade4597fe9e5f4ad0d8f956d097b27af91fdf24b",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:27:45.490Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8996,
+  "uuid": "skill-clawhub-taskr",
+  "skillKey": "clawhub-taskr",
+  "name": "Taskr - Persistent Task Planning & Execution for AI Agents",
+  "summary": "Persistent cloud task planning and execution for OpenClaw. Create hierarchical task plans that survive session resets, span multiple agents, and let users re...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EoM",
+      "features": [
+        "Persistent cloud task planning and execution for OpenClaw",
+        "Create hierarchical task plans that survive session resets, span multiple agents, and let users."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taskr@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100184516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taskr",
+      "url": "https://clawhub.ai/skills/taskr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskr",
+    "url": "https://clawhub.ai/skills/taskr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskr-6b0e858cdb4d5819.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taskr@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taskr-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:899fafc0c3d1b9d7abc8356b78169005b18a448beaed5e313398a23e77aaf1c4",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:05:05.944Z"
+}

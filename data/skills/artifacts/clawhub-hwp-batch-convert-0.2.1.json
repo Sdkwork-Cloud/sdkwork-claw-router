@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hwp-batch-convert@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hwp_batch_convert",
+  "skill": {
+    "id": 57574,
+    "skillKey": "clawhub-hwp-batch-convert",
+    "name": "Hwp Batch Convert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hwp-batch-convert",
+    "url": "https://clawhub.ai/skills/hwp-batch-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hwp-batch-convert-ef332c32ab6f50ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch-convert 한컴 한글 문서(HWP/HWPX) on Windows into PDF and other export formats with a Korean-friendly automation workflow. Use when the user asks for 이 폴더 hwp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twbeatles",
+      "userId": "s177m68c4t241waawxzycwefcd83jmk7",
+      "displayName": "twbeatles",
+      "image": "https://avatars.githubusercontent.com/u/243789332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1773977868339,
+      "changelog": "Polish ClawHub-facing description and intro copy for clearer discovery and positioning",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d8a38cea543ad1343e787a78da76ae82f9f204e91b24541dd220032d8b380af"
+}

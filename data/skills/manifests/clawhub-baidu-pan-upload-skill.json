@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64050,
+  "uuid": "skill-clawhub-baidu-pan-upload-skill",
+  "skillKey": "clawhub-baidu-pan-upload-skill",
+  "name": "Baidu Pan Upload",
+  "summary": "百度网盘文件上传，支持分片上传、断点续传和进度监控。触发词：百度网盘上传、baidu pan upload、上传文件到网盘、upload to baidu pan、断点续传。适用场景：(1)上传本地文件到百度网盘指定目录 (2)大文件自动分片上传 (>4MB) (3)中断后断点续传 (4)自动创建远程目录。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_pan_upload_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superStupidBear",
+      "features": [
+        "百度网盘文件上传，支持分片上传、断点续传和进度监控。触发词：百度网盘上传、baidu pan upload、上传文件到网盘、upload to baidu pan、断点续传。适用场景：(1)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-pan-upload-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6762468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-pan-upload-skill",
+      "url": "https://clawhub.ai/skills/baidu-pan-upload-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-pan-upload-skill",
+    "url": "https://clawhub.ai/skills/baidu-pan-upload-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-pan-upload-skill-45a643fecc0f6344.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-pan-upload-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-pan-upload-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca6e706a72b7ec6206c03e05942a23776c9adb4d78d6202ccc21c38290716cfd",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T18:26:50.945Z"
+}

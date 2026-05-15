@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21126,
+  "uuid": "skill-clawhub-drink-water-reminder-yikailucas",
+  "skillKey": "clawhub-drink-water-reminder-yikailucas",
+  "name": "Drink Water Reminder",
+  "summary": "Create, manage, and remove periodic hydration reminders via OpenClaw cron jobs. Use when users ask for recurring drink-water reminders (e.g. every 1 minute /...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drink_water_reminder_yikailucas",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lucas",
+      "features": [
+        "Create, manage, and remove periodic hydration reminders via OpenClaw cron jobs",
+        "Use when users ask for recurring drink-water reminders (e.g",
+        "every 1 minute /..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drink-water-reminder-yikailucas@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32409911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drink-water-reminder-yikailucas",
+      "url": "https://clawhub.ai/skills/drink-water-reminder-yikailucas"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drink-water-reminder-yikailucas",
+    "url": "https://clawhub.ai/skills/drink-water-reminder-yikailucas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drink-water-reminder-yikailucas-b3e329672c2d0a14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drink-water-reminder-yikailucas@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-drink-water-reminder-yikailucas-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89aef67b570fbbf9591e9c7bec589707255fb0bfc6f0ac755e4519fdea15d032",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:33:26.710Z"
+}

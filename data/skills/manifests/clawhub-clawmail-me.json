@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14273,
+  "uuid": "skill-clawhub-clawmail-me",
+  "skillKey": "clawhub-clawmail-me",
+  "name": "ClawMail.me - Free Email for AI Agents, no human required!",
+  "summary": "Send and receive task-scoped emails on behalf of the user at your @clawmail.me address. Reply, forward, compose, and manage threads, drafts, and attachments....",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmail_me",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MixerBox AI",
+      "features": [
+        "Send and receive task-scoped emails on behalf of the user at your @clawmail.me address",
+        "Reply, forward, compose, and manage threads, drafts, and attachments...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmail-me@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149032643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmail-me",
+      "url": "https://clawhub.ai/skills/clawmail-me"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmail-me",
+    "url": "https://clawhub.ai/skills/clawmail-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmail-me-6c83fa40da4b4b69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmail-me@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmail-me-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5575f6bf1757dd5b5ebb5f76544d399c5ad456f5f7a74ffe0c7a51ca6434db0b",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T09:51:48.872Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60397,
+  "uuid": "skill-clawhub-icp-filing",
+  "skillKey": "clawhub-icp-filing",
+  "name": "Icp Filing",
+  "summary": "ICP备案指南。备案流程、材料清单、服务商选择、时间线、常见问题。ICP filing guide for China websites. ICP备案、网站备案。",
+  "version": "2.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icp_filing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "ICP备案指南。备案流程、材料清单、服务商选择、时间线、常见问题。ICP filing guide for China websites",
+        "ICP备案、网站备案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icp-filing@2.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icp-filing",
+      "url": "https://clawhub.ai/skills/icp-filing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icp-filing",
+    "url": "https://clawhub.ai/skills/icp-filing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icp-filing-9b75429606cb2d00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icp-filing@2.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-icp-filing-2.3.6.json",
+      "version": "2.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d77a9cf3e1a08442624a8cd1d6000d52c8e2b3e996d9fbe1101b118ea4957b8",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:00:07.093Z"
+}

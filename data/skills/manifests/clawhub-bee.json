@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71755,
+  "uuid": "skill-clawhub-bee",
+  "skillKey": "clawhub-bee",
+  "name": "bee",
+  "summary": "抖音视频一键工作流：下载无水印视频 → 上传阿里云OSS → 写入飞书多维表格。支持各种抖音链接格式，智能提取标题和话题标签。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JerryXn",
+      "features": [
+        "抖音视频一键工作流：下载无水印视频 → 上传阿里云OSS → 写入飞书多维表格。支持各种抖音链接格式，智能提取标题和话题标签。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bee@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37356803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bee",
+      "url": "https://clawhub.ai/skills/bee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bee",
+    "url": "https://clawhub.ai/skills/bee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bee-62cb81b5904a262f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bee@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bee-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47ef014ad70e46cf9a45d86a71635d33abd2eddf9b6b918037ba32b1b87e613f",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T07:11:43.981Z"
+}

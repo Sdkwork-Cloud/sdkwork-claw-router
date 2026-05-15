@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bizyair-images@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bizyair_images",
+  "skill": {
+    "id": 62420,
+    "skillKey": "clawhub-bizyair-images",
+    "name": "BizyAir API出图"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bizyair-images",
+    "url": "https://clawhub.ai/skills/bizyair-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bizyair-images-68a59e9480cd8a64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 BizyAir 异步 API 的模块化图片生成助手，支持多工作流模板（web_app_id）动态切换与自定义传参。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bozoyan",
+      "userId": "s177sfxjmcf9fr0s1w3k478s4x83h0ef",
+      "displayName": "bozoyan",
+      "image": "https://avatars.githubusercontent.com/u/4261158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772877249089,
+      "changelog": "bizyair-images 1.0.0\n\n- 初始版本，支持基于 BizyAir API 的模块化图片生成。\n- 提供多工作流模板（web_app_id）动态切换及自定义参数传递。\n- 按需自动为人物/模特场景追加提示词，提升人像生成质量。\n- 支持常用图片尺寸规格映射与批量生成。\n- 分为“创建任务”和“查询结果”两步流程，内置任务状态提醒与多图展示表格。\n- 优化出错提示，确保 API 密钥安全和易用性。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a1eeb94abb127d714d28e9c33e06f1d697ffd98dfd032170f2fa0e07a3c3e936"
+}

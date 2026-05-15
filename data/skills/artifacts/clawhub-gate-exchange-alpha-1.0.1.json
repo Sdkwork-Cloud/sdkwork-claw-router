@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-exchange-alpha@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_alpha",
+  "skill": {
+    "id": 38371,
+    "skillKey": "clawhub-gate-exchange-alpha",
+    "name": "Gate Exchange Alpha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-alpha",
+    "url": "https://clawhub.ai/skills/gate-exchange-alpha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-alpha-4996fbbaeb7d3c9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate Alpha token market skill. Use when the user specifically asks to browse, trade, or check Alpha market tokens. Triggers on 'alpha tokens', 'alpha market'..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775115107908,
+      "changelog": "- Added a new MCP execution reference: users must now read and follow `references/mcp.md` for quote/order flows.\n- Clarified that `SKILL.md` handles module dispatch/business boundaries; moved execution details to `references/mcp.md`.\n- Simplified and shortened the skill description for clarity and focus.\n- No changes to endpoints, modules, or supported workflows.\n- Minor adjustments to guidance on module routing and execution to reference the new MCP flow document.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c76052c4a23e6d75c85ade5cf7a3b76b16cb5d8f2f4509141f81d59a08ed58dc"
+}

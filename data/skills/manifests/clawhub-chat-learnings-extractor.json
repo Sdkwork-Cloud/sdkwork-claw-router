@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36004,
+  "uuid": "skill-clawhub-chat-learnings-extractor",
+  "skillKey": "clawhub-chat-learnings-extractor",
+  "name": "Chat Learnings Extractor",
+  "summary": "Extract structured learnings (lessons, decisions, patterns, dead ends) from AI conversation exports using a local Ollama model or any OpenAI-compatible API....",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_learnings_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Deonte Cooper",
+      "features": [
+        "Extract structured learnings (lessons, decisions, patterns, dead ends) from AI conversation exp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chat-learnings-extractor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45864171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chat-learnings-extractor",
+      "url": "https://clawhub.ai/skills/chat-learnings-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-learnings-extractor",
+    "url": "https://clawhub.ai/skills/chat-learnings-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-learnings-extractor-43df1c0459ba252a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chat-learnings-extractor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-chat-learnings-extractor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f888b2e1c757a75790844a38006644be860e569b6b0c3e459400216f5fd4e02",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T13:50:55.575Z"
+}

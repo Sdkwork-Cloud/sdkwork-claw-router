@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25755,
+  "uuid": "skill-clawhub-memori-extension",
+  "skillKey": "clawhub-memori-extension",
+  "name": "memori-extension",
+  "summary": "Memory augmentation and LLM call interception using the Memori Python library with optional Zhipu API integration.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memori_extension",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ian-at",
+      "features": [
+        "Memory augmentation and LLM call interception using the Memori Python library with optional Zhi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memori-extension@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172589295?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memori-extension",
+      "url": "https://clawhub.ai/skills/memori-extension"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memori-extension",
+    "url": "https://clawhub.ai/skills/memori-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memori-extension-827e1e4ed8703cb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memori-extension@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-memori-extension-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bf0298825e388ac4994309e168a01a3b6b0096b4cfba314dd330b0e0a01877b",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:07:40.400Z"
+}

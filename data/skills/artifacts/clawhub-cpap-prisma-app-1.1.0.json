@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cpap-prisma-app@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpap_prisma_app",
+  "skill": {
+    "id": 51682,
+    "skillKey": "clawhub-cpap-prisma-app",
+    "name": "CPAP PrismaAPP Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpap-prisma-app",
+    "url": "https://clawhub.ai/skills/cpap-prisma-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpap-prisma-app-71636f62cb5e61b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches CPAP therapy data from the PrismaAPP API (Löwenstein Medical) and writes a daily Obsidian log note. Use when the user says \"CPAP log\", \"sleep therapy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanwebgit",
+      "userId": "s1716q5ac0tac8855fb0f7k2g183f7jr",
+      "displayName": "Sanweb",
+      "image": "https://avatars.githubusercontent.com/u/78940573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775608319746,
+      "changelog": "Initial release: full CPAP therapy log from Löwenstein PrismaAPP API with 9 locales and Obsidian note generation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cb38b20ae31a684db5846d997768ccf6c0e6e28261109926ef7dbf5c064f7eb"
+}

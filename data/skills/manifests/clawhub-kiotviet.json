@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38911,
+  "uuid": "skill-clawhub-kiotviet",
+  "skillKey": "clawhub-kiotviet",
+  "name": "Kiotviet",
+  "summary": "KiotViet integration. Manage Recordses. Use when the user wants to interact with KiotViet data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kiotviet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "KiotViet integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with KiotViet data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kiotviet@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kiotviet",
+      "url": "https://clawhub.ai/skills/kiotviet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kiotviet",
+    "url": "https://clawhub.ai/skills/kiotviet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kiotviet-e08566eb1129ad25.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kiotviet@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kiotviet-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c27f84c49b972bc495e16721dcae22c32835d912d9d0c04d8e9119fbfd69285",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:03:59.962Z"
+}

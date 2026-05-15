@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-ops@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_ops",
+  "skill": {
+    "id": 45336,
+    "skillKey": "clawhub-n8n-ops",
+    "name": "n8n ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-ops",
+    "url": "https://clawhub.ai/skills/n8n-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-ops-a527d6bca1afd896.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous n8n workflow automation agent — create, debug, monitor & optimize n8n workflows via natural language using the REST API. Supports AI/LangChain pip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samansalari",
+      "userId": "s1700ddjd89k629hah277gpe9185mx51",
+      "displayName": "Saman Salari",
+      "image": "https://avatars.githubusercontent.com/u/6347155?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 699,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772716071163,
+      "changelog": "- Added explicit configuration details for required environment variables `N8N_API_KEY` and `N8N_BASE_URL`, including a quick-reference table and clearer setup requirements.\n- Expanded the \"Safety\" section with stronger guardrails on destructive actions (delete, activate, deactivate), credential handling best practices, and API key scoping recommendations.\n- Updated `metadata` to list `N8N_BASE_URL` as a required environment variable for improved clarity.\n- Improved organization and readability for configuration and usage protocols, making responsibilities, prerequisites, and security measures more accessible to users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:58e79ce74db912efa842a50ef2c1b2a9fa6fbac187058583e9abc9dadee316c4"
+}

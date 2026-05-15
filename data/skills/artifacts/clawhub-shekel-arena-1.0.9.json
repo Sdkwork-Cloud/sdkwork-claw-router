@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shekel-arena@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shekel_arena",
+  "skill": {
+    "id": 33942,
+    "skillKey": "clawhub-shekel-arena",
+    "name": "Shekel Arena"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shekel-arena",
+    "url": "https://clawhub.ai/skills/shekel-arena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shekel-arena-96a4b35e5fc41b2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect a Shekel Hyperliquid trading agent to the Virtuals Degenerate Claw Arena for leaderboard competition, copy-trading, and subscriber revenue. Sets up a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shekel-xyz",
+      "userId": "s173rpvg9178bw28m0ehdydd0s84d19t",
+      "displayName": "Shekel.xyz",
+      "image": "https://avatars.githubusercontent.com/u/86789882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776697487122,
+      "changelog": "- Added two new required environment variables: `DGCLAW_AGENT_ID` and `DGCLAW_SIGNALS_THREAD_ID`.\n- Updated the `.env` configuration step to include instructions for retrieving and setting these new IDs from the Arena forums.\n- Clarified that without these IDs, forum signal posting is disabled, but position mirroring will still work.\n- Expanded the `.env` example and related documentation for greater clarity on required keys.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ebbacacdb8a4ee7bfda335feafd648f30cbd0fbe9351f7d6db36eca1b203b5e"
+}

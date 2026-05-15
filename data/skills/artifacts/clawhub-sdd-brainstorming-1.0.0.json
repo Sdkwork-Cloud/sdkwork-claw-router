@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sdd-brainstorming@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_brainstorming",
+  "skill": {
+    "id": 69083,
+    "skillKey": "clawhub-sdd-brainstorming",
+    "name": "SDD Brainstorming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-brainstorming",
+    "url": "https://clawhub.ai/skills/sdd-brainstorming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-brainstorming-b067c25264b05ad6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在实现任何新功能、构建组件、添加功能或修改行为之前必须使用。用于在实现前探索用户意图、需求和设计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mahingbun-dev",
+      "userId": "s1704qgspztwnte3w2xmz4g7b183j5bp",
+      "displayName": "mahingbun-dev",
+      "image": "https://avatars.githubusercontent.com/u/174362089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773709623210,
+      "changelog": "初始版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed2d48c7bfc182ff2ec5ea5917288b2e74e6b7012f23d7d15a9b24f5d1e85288"
+}

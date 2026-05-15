@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19584,
+  "uuid": "skill-clawhub-r2-cli",
+  "skillKey": "clawhub-r2-cli",
+  "name": "Cloudflare R2 CLI",
+  "summary": "Minimal Python CLI for secure upload, download, list, and delete operations on Cloudflare R2 storage using AWS Signature V4 authentication.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r2_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Web3 Hungry",
+      "features": [
+        "Minimal Python CLI for secure upload, download, list, and delete operations on Cloudflare R2 st."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/r2-cli@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24318495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "r2-cli",
+      "url": "https://clawhub.ai/skills/r2-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r2-cli",
+    "url": "https://clawhub.ai/skills/r2-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r2-cli-4b06e90a579fb485.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/r2-cli@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-r2-cli-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c80974d4a337d993cd20ebd8ccc6ab13d2199a05cfa7cb5912f45b3a7cdaa927",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T07:30:57.692Z"
+}

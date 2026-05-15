@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34095,
+  "uuid": "skill-clawhub-tts-api",
+  "skillKey": "clawhub-tts-api",
+  "name": "TTS",
+  "summary": "Use this skill whenever the user wants to convert text to speech, generate audio from text, create voiceovers, or produce spoken audio files. Triggers includ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengwm",
+      "features": [
+        "Use this skill whenever the user wants to convert text to speech, generate audio from text, cre.",
+        "Triggers includ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52602131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-api",
+      "url": "https://clawhub.ai/skills/tts-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-api",
+    "url": "https://clawhub.ai/skills/tts-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-api-6f27f131aa895f11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3450e8aa121fc4de642a4bcd5ad0095ca243425414a6c6d1505711f16fbeeb96",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T14:35:44.571Z"
+}

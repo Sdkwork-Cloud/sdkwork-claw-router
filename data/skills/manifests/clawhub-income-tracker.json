@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67763,
+  "uuid": "skill-clawhub-income-tracker",
+  "skillKey": "clawhub-income-tracker",
+  "name": "Income Tracker",
+  "summary": "收入追踪器 - 多平台收入记录、统计分析、趋势图表。适用于自由职业者、创作者、副业者。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.income_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "多平台收入记录、统计分析、趋势图表。适用于自由职业者、创作者、副业者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/income-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "income-tracker",
+      "url": "https://clawhub.ai/skills/income-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "income-tracker",
+    "url": "https://clawhub.ai/skills/income-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/income-tracker-efc7273245494251.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/income-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-income-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed2736630e3deee9f26117e1338ac55a7436626ad2a6053ca96ef5df5568ffa8",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T00:41:06.655Z"
+}

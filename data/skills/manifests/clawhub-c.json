@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25672,
+  "uuid": "skill-clawhub-c",
+  "skillKey": "clawhub-c",
+  "name": "C",
+  "summary": "Avoid common C mistakes — memory leaks, buffer overflows, undefined behavior, and pointer traps.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.c",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common C mistakes — memory leaks, buffer overflows, undefined behavior, and pointer traps."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/c@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "c",
+      "url": "https://clawhub.ai/skills/c"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "c",
+    "url": "https://clawhub.ai/skills/c",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/c-2e7d2c03a9507ae2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/c@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-c-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:597517353debe170142c99d16d23163939f7b5854a745aa4f56a9fca74518469",
+      "artifactSizeBytes": 1730
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T21:27:29.646Z"
+}

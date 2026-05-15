@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-investing-assistant-with-framework@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_investing_assistant_with_framework",
+  "skill": {
+    "id": 24626,
+    "skillKey": "clawhub-ai-investing-assistant-with-framework",
+    "name": "Ai Investing Assistant With Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-investing-assistant-with-framework",
+    "url": "https://clawhub.ai/skills/ai-investing-assistant-with-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-investing-assistant-with-framework-8c0852455a9ee319.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a US stock using a value investing checklist and output detailed scoring steps."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kristian-zf",
+      "userId": "publishers:kristian-zf",
+      "displayName": "kris",
+      "image": "https://avatars.githubusercontent.com/u/83905121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772358524722,
+      "changelog": "Initial release of AI Investing Assistant (Value Framework):\n\n- Analyze US stocks using a value investing checklist covering ROE, debt ratio, free cash flow conversion, and moat strength.\n- Accepts input as JSON with ticker and key metrics.\n- Provides a rating (A/B/C/D) and detailed scoring with per-metric checks.\n- Displays scoring rules, identifies missing fields, and traces the analysis logic step-by-step.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:febe246af5af472a68d4b80adc90dc6c4d2d0daf8d3e94521d5e5c576cd2d103"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/driftguard@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.driftguard",
+  "skill": {
+    "id": 19038,
+    "skillKey": "clawhub-driftguard",
+    "name": "DriftGuard Security Scanner+"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "driftguard",
+    "url": "https://clawhub.ai/skills/driftguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/driftguard-9eac07cb19fbea99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DriftGuard Security Scanner+ is a local-first security drift scanner for repos, OpenClaw skills, and AI agent tools. Use to scan before trust, save trusted b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "david90232",
+      "userId": "s178c05yv2fztx80x6tweh2eg983egxd",
+      "displayName": "david90232",
+      "image": "https://avatars.githubusercontent.com/u/223688885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1778001666633,
+      "changelog": "Harden first-time reviews: do not auto-apply target-provided .driftguard.json suppressions unless --use-target-config is explicit. Quote raw evidence lines as untrusted data in reports. Add OpenClaw metadata declaring Node runtime requirement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2dd37cffb5a56dfc6aa3811a240d8b68fe2be846bd2f0fc546c9cd670d87f855"
+}

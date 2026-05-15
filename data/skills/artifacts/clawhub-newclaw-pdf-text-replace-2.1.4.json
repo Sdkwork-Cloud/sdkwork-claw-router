@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newclaw-pdf-text-replace@2.1.4",
+  "version": "2.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newclaw_pdf_text_replace",
+  "skill": {
+    "id": 34672,
+    "skillKey": "clawhub-newclaw-pdf-text-replace",
+    "name": "PDF Text Replace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newclaw-pdf-text-replace",
+    "url": "https://clawhub.ai/skills/newclaw-pdf-text-replace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newclaw-pdf-text-replace-6573dc58f52625e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Replace text in PDF files while preserving visual fidelity. Handles custom font encodings, embedded subsets, encrypted PDFs, image-based scans (OCR), variabl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newclaw26",
+      "userId": "s1739tb9jwnt4ft2ntvd8h8dn984mks7",
+      "displayName": "newclaw26",
+      "image": "https://avatars.githubusercontent.com/u/193198183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.1.4",
+      "createdAt": 1775930183499,
+      "changelog": "Fix CMap beginbfrange multi-char range parsing (off-by-one bug); add missing L2/L3/L5 modules to openclaw release; fix CMap dual-format mutual exclusion",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e8a18123a91595c33d3e077418862ef1aaffe68f6e4a646069dbce2e6d16f2d"
+}

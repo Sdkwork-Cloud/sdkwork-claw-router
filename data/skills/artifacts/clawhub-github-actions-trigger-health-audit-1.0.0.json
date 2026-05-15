@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-trigger-health-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_trigger_health_audit",
+  "skill": {
+    "id": 22892,
+    "skillKey": "clawhub-github-actions-trigger-health-audit",
+    "name": "GitHub Actions Trigger Health Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-trigger-health-audit",
+    "url": "https://clawhub.ai/skills/github-actions-trigger-health-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-trigger-health-audit-73c346a35f29a20a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit GitHub Actions run health by trigger event and workflow so flaky or noisy automation sources are easy to prioritize."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772827599163,
+      "changelog": "Initial release of GitHub Actions Trigger Health Audit.\n\n- Audits GitHub Actions runs, grouping by repository, event, and workflow.\n- Calculates failure, cancel, and timeout rates, plus average runtime.\n- Flags warning and critical hotspots based on configurable thresholds.\n- Supports include/exclude regex filters for repo, workflow, and event.\n- Offers text and JSON output for dashboards and automation gating.\n- Customizable thresholds and fail conditions for automation integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21250cb3570678d50cb309260c10383540a761bcac4edf3e74dfdc7442e453ee"
+}

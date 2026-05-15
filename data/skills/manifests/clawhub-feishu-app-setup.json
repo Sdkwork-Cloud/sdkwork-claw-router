@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73506,
+  "uuid": "skill-clawhub-feishu-app-setup",
+  "skillKey": "clawhub-feishu-app-setup",
+  "name": "飞书开放平台应用自动化配置",
+  "summary": "自动化完成飞书开放平台企业自建应用的创建、权限配置、事件订阅、改名和版本发布，简化繁琐操作流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_app_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "evan966890",
+      "features": [
+        "自动化完成飞书开放平台企业自建应用的创建、权限配置、事件订阅、改名和版本发布，简化繁琐操作流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-app-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236738035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-app-setup",
+      "url": "https://clawhub.ai/skills/feishu-app-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-app-setup",
+    "url": "https://clawhub.ai/skills/feishu-app-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-app-setup-3b6cff513ac94415.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-app-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-app-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95b2d3f4a59d71c87af5db114020e204e66bed5693ef652c4630ac27b6a4dbde",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T00:20:31.208Z"
+}

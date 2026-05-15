@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-product-api-skill@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_product_api_skill",
+  "skill": {
+    "id": 10060,
+    "skillKey": "clawhub-amazon-product-api-skill",
+    "name": "Amazon Product Api Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-product-api-skill",
+    "url": "https://clawhub.ai/skills/amazon-product-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-product-api-skill-e7b4052e1fc608ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill helps users extract structured product listings from Amazon, including titles, ASINs, prices, ratings, and specifications. Use this skill when use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2761,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1773744993252,
+      "changelog": "- Added initial implementation of the Amazon Product API skill script (scripts/amazon_product_api.py).\n- Enables structured extraction of Amazon product listings using an independent Python script.\n- Supports one-line command usage to search by keywords, brand, pagination, and language.\n- All other documentation and usage instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:692cfcd78633ee64043ebf9fe966190f362fec3eab3d68118568933de02510ee"
+}

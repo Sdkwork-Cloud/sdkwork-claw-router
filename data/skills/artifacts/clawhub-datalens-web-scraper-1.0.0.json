@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datalens-web-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datalens_web_scraper",
+  "skill": {
+    "id": 45845,
+    "skillKey": "clawhub-datalens-web-scraper",
+    "name": "web-scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datalens-web-scraper",
+    "url": "https://clawhub.ai/skills/datalens-web-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datalens-web-scraper-e16b75f898b29247.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use DataLens MCP tools to scrape structured data from any website open in Chrome. Triggers when the user wants to extract lists, tables, comments, products,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weird94",
+      "userId": "s178anjvexkv7fxwy2pka1teqh84zphb",
+      "displayName": "weird94",
+      "image": "https://avatars.githubusercontent.com/u/16274199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776354096560,
+      "changelog": "Initial release of datalens-web-scraper skill.\n\n- Enables structured data extraction from any website open in Chrome using DataLens MCP tools.\n- Provides a clear, step-by-step scraping workflow covering table detection, column analysis, job start, status polling, and data export.\n- Outlines prerequisite setup for required npm packages, Chrome extension, and Node.js.\n- Supports browser tab management and job control commands.\n- Includes troubleshooting tools and explicit agent rules for correct operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10028fa4bfd7fe59075d8353ff1ff766213654f665f82364d27d8b290a62f13b"
+}

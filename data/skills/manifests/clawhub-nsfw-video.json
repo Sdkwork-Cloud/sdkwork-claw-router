@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50326,
+  "uuid": "skill-clawhub-nsfw-video",
+  "skillKey": "clawhub-nsfw-video",
+  "name": "NSFW Video Generation — Adult Creative AI Video Models",
+  "summary": "Generate AI videos for mature creative projects using Wan 2.2 Spicy (LoRA-tuned for NSFW, top recommended), Wan 2.6, Seedance 1.5, Vidu Q3-Pro, and other mod...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nsfw_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MikeWang",
+      "features": [
+        "Generate AI videos for mature creative projects using Wan 2.2 Spicy (LoRA-tuned for NSFW, top r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nsfw-video@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60566571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nsfw-video",
+      "url": "https://clawhub.ai/skills/nsfw-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nsfw-video",
+    "url": "https://clawhub.ai/skills/nsfw-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nsfw-video-7853859258aebba4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nsfw-video@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-nsfw-video-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f49c08f51cae43812b06f38dded739ea9684885771773b28b9afffbdf48ac2c9",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:45:47.268Z"
+}

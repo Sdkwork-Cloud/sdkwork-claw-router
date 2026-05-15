@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50370,
+  "uuid": "skill-clawhub-portfolio-drift-monitor",
+  "skillKey": "clawhub-portfolio-drift-monitor",
+  "name": "Portfolio Drift Monitor",
+  "summary": "Real-time Kalshi portfolio drift alerts — monitors positions and fires when any moves beyond your configured threshold since last check. Snapshot comparison,...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_drift_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingmadellc",
+      "features": [
+        "Real-time Kalshi portfolio drift alerts — monitors positions and fires when any moves beyond yo.",
+        "Snapshot comparison,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/portfolio-drift-monitor@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257369583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "portfolio-drift-monitor",
+      "url": "https://clawhub.ai/skills/portfolio-drift-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-drift-monitor",
+    "url": "https://clawhub.ai/skills/portfolio-drift-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-drift-monitor-a12213b55ab3b1c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/portfolio-drift-monitor@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-portfolio-drift-monitor-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d4fa058b34b260f5f1e2cc73322a22b7cf409f1c4600042c399c8ccbb7269d0",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T21:17:52.855Z"
+}

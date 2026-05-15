@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67095,
+  "uuid": "skill-clawhub-must-play-recommendations",
+  "skillKey": "clawhub-must-play-recommendations",
+  "name": "must-play-recommendations",
+  "summary": "为用户推荐城市的必玩景点。当用户询问某个城市有什么好玩的、景点推荐、必去景点、旅游攻略时触发。核心能力是基于 FlyAI CLI 获取城市的5A级景区和热门好评景点，提供详细推荐信息。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.must_play_recommendations",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SeaSon",
+      "features": [
+        "为用户推荐城市的必玩景点。当用户询问某个城市有什么好玩的、景点推荐、必去景点、旅游攻略时触发。核心能力是基于 FlyAI CLI 获取城市的5A级景区和热门好评景点，提供详细推荐信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/must-play-recommendations@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26041981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "must-play-recommendations",
+      "url": "https://clawhub.ai/skills/must-play-recommendations"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "must-play-recommendations",
+    "url": "https://clawhub.ai/skills/must-play-recommendations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/must-play-recommendations-95e98887d1bbd4f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/must-play-recommendations@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-must-play-recommendations-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:335ee4d3dc067cdfc6d17a358ec5b59bcd3abf9106033738f17f775cda1bb816",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:39:30.421Z"
+}

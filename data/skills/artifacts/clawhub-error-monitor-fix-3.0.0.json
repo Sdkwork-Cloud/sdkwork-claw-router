@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/error-monitor-fix@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.error_monitor_fix",
+  "skill": {
+    "id": 59832,
+    "skillKey": "clawhub-error-monitor-fix",
+    "name": "Error Monitor Fix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "error-monitor-fix",
+    "url": "https://clawhub.ai/skills/error-monitor-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/error-monitor-fix-346ce63f502b8fdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "错误监控 - 扫描 JSON 日志、捕获 ERROR 级别错误、OpenClaw 系统级错误修复建议"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amd5",
+      "userId": "s1751ams93yq7ebhk4m0rj58f583gjdd",
+      "displayName": "c32",
+      "image": "https://avatars.githubusercontent.com/u/8718992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1776158982020,
+      "changelog": "职责边界重构: 移除缓存清理/权限修复(属dev/test/rule子代理操作),保留Gateway重启/端口检查/会话清理3个系统级策略",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64dc546bb6bc5d382785b1391d81cbecc131b905bfdb3fe2e37c1105705af172"
+}

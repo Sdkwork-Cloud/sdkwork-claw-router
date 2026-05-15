@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/advanced-evaluation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advanced_evaluation",
+  "skill": {
+    "id": 36099,
+    "skillKey": "clawhub-advanced-evaluation",
+    "name": "Advanced Evaluation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advanced-evaluation",
+    "url": "https://clawhub.ai/skills/advanced-evaluation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advanced-evaluation-2926238df67515ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"implement LLM-as-judge\", \"compare model outputs\", \"create evaluation rubrics\", \"mitigate evaluation bias\", o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "karmaent",
+      "userId": "s17ftg7vfcekcxtzxa4vqgfprh840axc",
+      "displayName": "KarmaENT",
+      "image": "https://avatars.githubusercontent.com/u/172393619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775040510703,
+      "changelog": "Initial release of advanced-evaluation, a comprehensive skill for building robust LLM evaluation systems.\n\n- Provides actionable guidance for implementing LLM-as-judge in automated pipelines.\n- Explains evaluation methods: direct scoring vs. pairwise comparison, with reliability and bias considerations.\n- Details systemic LLM biases (e.g., position, length, self-enhancement) and mitigation strategies.\n- Outlines metric selection frameworks for different evaluation tasks.\n- Supplies prompt templates and protocols for direct scoring, pairwise comparison, and rubric creation.\n- Offers practical patterns for evaluation pipeline design and rubric adaptation by domain.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69cf146f147ce9b4fcdfa9e051c874ffd661f27e4945f1c8038ba44f0a9af2f2"
+}

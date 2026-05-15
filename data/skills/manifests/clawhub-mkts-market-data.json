@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16402,
+  "uuid": "skill-clawhub-mkts-market-data",
+  "skillKey": "clawhub-mkts-market-data",
+  "name": "mkts Market Data",
+  "summary": "Real-time market data, portfolio tracking, trade journaling, screening, and news for stocks, crypto, ETFs, commodities, and forex — no API key required to start",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mkts_market_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stephen",
+      "features": [
+        "Real-time market data, portfolio tracking, trade journaling, screening, and news for stocks, cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mkts-market-data@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41870969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mkts-market-data",
+      "url": "https://clawhub.ai/skills/mkts-market-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mkts-market-data",
+    "url": "https://clawhub.ai/skills/mkts-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mkts-market-data-a3a19745c9db8982.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mkts-market-data@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-mkts-market-data-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64767f6abd254a39c29297050c13b1be5b8ebc686abc955b74f452f3041f915d",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:53:49.568Z"
+}

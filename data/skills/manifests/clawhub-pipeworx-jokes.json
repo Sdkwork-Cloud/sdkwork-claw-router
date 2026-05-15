@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56255,
+  "uuid": "skill-clawhub-pipeworx-jokes",
+  "skillKey": "clawhub-pipeworx-jokes",
+  "name": "Pipeworx jokes",
+  "summary": "Jokes MCP — wraps JokeAPI v2 (free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_jokes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Jokes MCP — wraps JokeAPI v2 (free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-jokes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-jokes",
+      "url": "https://clawhub.ai/skills/pipeworx-jokes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-jokes",
+    "url": "https://clawhub.ai/skills/pipeworx-jokes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-jokes-32bdf326e31e615c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-jokes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-jokes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec3ecaafdc992e4a82187f56ef0b897997eddb394556e984433abc12bf135f05",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:16:46.310Z"
+}

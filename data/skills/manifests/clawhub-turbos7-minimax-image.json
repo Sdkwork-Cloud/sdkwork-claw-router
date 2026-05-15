@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67321,
+  "uuid": "skill-clawhub-turbos7-minimax-image",
+  "skillKey": "clawhub-turbos7-minimax-image",
+  "name": "MiniMax Image Generation",
+  "summary": "MiniMax 图片生成技能。集成文生图和图生图功能，支持从文本描述生成图片，也可基于参考图生成新图片。触发场景：(1) 用户请求生成图片，(2) 用户提供描述并要求生成图片，(3) 用户上传参考图并要求基于该图生成新图，(4) 用户想要生成指定风格的图片。支持的风格：漫画、元气、中世纪、水彩（仅 image-0...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.turbos7_minimax_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vesper",
+      "features": [
+        "MiniMax 图片生成技能。集成文生图和图生图功能，支持从文本描述生成图片，也可基于参考图生成新图片。触发场景：(1) 用户请求生成图片，(2) 用户提供描述并要求生成图片，(3) 用户上."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/turbos7-minimax-image@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69713627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "turbos7-minimax-image",
+      "url": "https://clawhub.ai/skills/turbos7-minimax-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "turbos7-minimax-image",
+    "url": "https://clawhub.ai/skills/turbos7-minimax-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/turbos7-minimax-image-938991d8ea43032b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/turbos7-minimax-image@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-turbos7-minimax-image-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3c2be481dfc69ad66cb8276054b48f2237c4b09f70798661ac89a35c1a4f3cb",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T21:59:22.688Z"
+}

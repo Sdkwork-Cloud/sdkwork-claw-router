@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33805,
+  "uuid": "skill-clawhub-tradr",
+  "skillKey": "clawhub-tradr",
+  "name": "tradr",
+  "summary": "Onchain trade execution engine. Feed a CA + score, get full trade lifecycle — sized entry, mode-based exits, on-chain verification, and trade logging. Requires Bankr skill.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "riskanon",
+      "features": [
+        "Onchain trade execution engine",
+        "Feed a CA + score, get full trade lifecycle — sized entry, mode-based exits, on-chain verificat.",
+        "Requires Bankr skill."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tradr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259250328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tradr",
+      "url": "https://clawhub.ai/skills/tradr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradr",
+    "url": "https://clawhub.ai/skills/tradr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradr-2b35b79da069f4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tradr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tradr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af667e7874ddb5901914ff1e17a9f88bef3673a1f7b60643a27410f68e8ac876",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T13:02:50.697Z"
+}

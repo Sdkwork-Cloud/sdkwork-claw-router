@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68725,
+  "uuid": "skill-clawhub-jisu-baiduai",
+  "skillKey": "clawhub-jisu-baiduai",
+  "name": "Baidu Intelligent Search - 百度智能搜索生成",
+  "summary": "先联网搜索再由模型总结回答（智能搜索生成）。当用户说：帮我总结一下某某事件的最新进展、搜一下并给个结论，或类似「搜索+归纳」问题时，使用本技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_baiduai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "先联网搜索再由模型总结回答（智能搜索生成）。当用户说：帮我总结一下某某事件的最新进展、搜一下并给个结论，或类似「搜索+归纳」问题时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jisu-baiduai@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jisu-baiduai",
+      "url": "https://clawhub.ai/skills/jisu-baiduai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-baiduai",
+    "url": "https://clawhub.ai/skills/jisu-baiduai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-baiduai-0b63fb47524e50c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jisu-baiduai@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jisu-baiduai-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f83493310da19171677928400aee6225417857fcc18a13a99fa3920ca9abb1b6",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:58:06.918Z"
+}

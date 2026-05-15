@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67882,
+  "uuid": "skill-clawhub-skill-tester-cn",
+  "skillKey": "clawhub-skill-tester-cn",
+  "name": "skill-tester-cn",
+  "summary": "Claude Code技能测试框架。自动分析技能定义、生成测试用例、执行功能测试并生成详细的评分测试报告。当用户要求\"测试技能\"、\"评估技能\"、\"检查技能是否工作\"、\"验证技能功能\"时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_tester_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhou Chang",
+      "features": [
+        "Claude Code技能测试框架。自动分析技能定义、生成测试用例、执行功能测试并生成详细的评分测试报告。当用户要求\"测试技能\"、\"评估技能\"、\"检查技能是否工作\"、\"验证技能功能\"时触发此."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-tester-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-tester-cn",
+      "url": "https://clawhub.ai/skills/skill-tester-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-tester-cn",
+    "url": "https://clawhub.ai/skills/skill-tester-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-tester-cn-e2a29d65cb78c741.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-tester-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-tester-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe8a2a0d8be2b881e271cb786cc72c66236dcd63fa4099fb12ec669717cf2bf1",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T08:50:21.261Z"
+}

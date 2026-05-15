@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beamer-pipeline-public@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beamer_pipeline_public",
+  "skill": {
+    "id": 47075,
+    "skillKey": "clawhub-beamer-pipeline-public",
+    "name": "Beamer Pipeline Public"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beamer-pipeline-public",
+    "url": "https://clawhub.ai/skills/beamer-pipeline-public",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beamer-pipeline-public-3c4217e9e7b13e2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert academic papers or notes into Chinese academic Beamer slides using a seven-phase local pipeline with pluggable agent execution and LaTeX compilation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccmxigua",
+      "userId": "s176p8sx1d8rt90bs5kkqh837s85m54t",
+      "displayName": "ccmxigua",
+      "image": "https://avatars.githubusercontent.com/u/100678136?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1777344406202,
+      "changelog": "Remove executable upstream-reference snapshots from the public package, add non-executable upstream design notes, and clarify that private OpenClaw runtime/session/database orchestration code is excluded.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c56dc35f7195320d3181ed534db08068a96d8f6da990a10afa369058aba2e6af"
+}

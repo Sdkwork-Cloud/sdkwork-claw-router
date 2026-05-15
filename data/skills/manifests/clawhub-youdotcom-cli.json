@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10097,
+  "uuid": "skill-clawhub-youdotcom-cli",
+  "skillKey": "clawhub-youdotcom-cli",
+  "name": "You.com Web Search & Research CLI",
+  "summary": "Web search, research with citations, and content extraction for bash agents using curl and You.com's REST API. - MANDATORY TRIGGERS: You.com, youdotcom, YDC,...",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youdotcom_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edward Irby",
+      "features": [
+        "Web search, research with citations, and content extraction for bash agents using curl and You..",
+        "MANDATORY TRIGGERS: You.com, youdotcom, YDC,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youdotcom-cli@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1058725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youdotcom-cli",
+      "url": "https://clawhub.ai/skills/youdotcom-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youdotcom-cli",
+    "url": "https://clawhub.ai/skills/youdotcom-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youdotcom-cli-66a08846ab7d01c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youdotcom-cli@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youdotcom-cli-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b0dc21e4ccc26b545215da0c99b4864ed6fd87e49d2d91b2da251f8aae7a92b",
+      "artifactSizeBytes": 2136
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T20:48:09.319Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64861,
+  "uuid": "skill-clawhub-my-stock-decide-execute-skill",
+  "skillKey": "clawhub-my-stock-decide-execute-skill",
+  "name": "my_stock_decide_execute_skill",
+  "summary": "当且仅当用户明确要求“交易决策并执行”或提到“my_stock_decide_execute_skill”时触发。这是一个严格流程控制的编排型交易执行技能，强制按照“决策 -> 交易挂单 -> 日志记录”三步顺序执行，且每步都要求显式输出结果并由用户确认或自动串联。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_stock_decide_execute_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canonxu",
+      "features": [
+        "当且仅当用户明确要求“交易决策并执行”或提到“my_stock_decide_execute_skill”时触发。这是一个严格流程控制的编排型交易执行技能，强制按照“决策 -> 交易挂单 -."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-stock-decide-execute-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7338324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-stock-decide-execute-skill",
+      "url": "https://clawhub.ai/skills/my-stock-decide-execute-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-stock-decide-execute-skill",
+    "url": "https://clawhub.ai/skills/my-stock-decide-execute-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-stock-decide-execute-skill-8affb915ef389f50.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-stock-decide-execute-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-stock-decide-execute-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5b12b6d6e59cf0c5e81d262d6fdb26d4a9ca93a54168c8e1cc313b584cbaf25",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T03:12:48.106Z"
+}

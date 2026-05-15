@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49082,
+  "uuid": "skill-clawhub-video-face-swap",
+  "skillKey": "clawhub-video-face-swap",
+  "name": "Video Face Swap",
+  "summary": "replace video clips, images into face-swapped video with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators, filmmakers, social m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_face_swap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "replace video clips, images into face-swapped video with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators, filmmakers, social m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-face-swap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-face-swap",
+      "url": "https://clawhub.ai/skills/video-face-swap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-face-swap",
+    "url": "https://clawhub.ai/skills/video-face-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-face-swap-eab7f33852065fae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-face-swap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-face-swap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5b5c9c4deb32cfbc9e6932b966b1781096af78ac1d97d265f90e11fe61c526e",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T17:01:20.266Z"
+}

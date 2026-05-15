@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28484,
+  "uuid": "skill-clawhub-valuesider-superinvestor-data",
+  "skillKey": "clawhub-valuesider-superinvestor-data",
+  "name": "ValueSider Superinvestor Data",
+  "summary": "Fetches Superinvestors' 13F portfolio holdings and buy/sell activity from ValueSider (valuesider.com). Use when the user asks for guru portfolio, 13F holding...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.valuesider_superinvestor_data",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laimiaohua",
+      "features": [
+        "Fetches Superinvestors' 13F portfolio holdings and buy/sell activity from ValueSider (valueside.",
+        "Use when the user asks for guru portfolio, 13F holding..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/valuesider-superinvestor-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36961979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "valuesider-superinvestor-data",
+      "url": "https://clawhub.ai/skills/valuesider-superinvestor-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "valuesider-superinvestor-data",
+    "url": "https://clawhub.ai/skills/valuesider-superinvestor-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/valuesider-superinvestor-data-91ad59ea0f2ccfeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/valuesider-superinvestor-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-valuesider-superinvestor-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d610aea47edc4fc3258d31f994f93c9a2185252dee3ad6fd5c4dbb858a608258",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:33:10.500Z"
+}

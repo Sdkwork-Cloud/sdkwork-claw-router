@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-workspace@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_workspace",
+  "skill": {
+    "id": 50837,
+    "skillKey": "clawhub-gws-workspace",
+    "name": "Google Workspace (gws CLI)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-workspace",
+    "url": "https://clawhub.ai/skills/gws-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-workspace-f2079a450203a374.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Google Workspace via the `gws` CLI — Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, Tasks, Meet, Slides, Forms, Contacts, and every other Workspac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swaylq",
+      "userId": "s176q2rckepz8d5m8v7dafb17s83n2x7",
+      "displayName": "Sway Liu",
+      "image": "https://avatars.githubusercontent.com/u/5630262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1331,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772802185391,
+      "changelog": "Fix chat command format, add security notes, add disclaimer, add .gitignore",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5623d0a2db40c07cfe90575b1a89a7a73b50792be67bde2cb0b0f3ab2e871114"
+}

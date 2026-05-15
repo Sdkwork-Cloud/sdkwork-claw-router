@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-director@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_director",
+  "skill": {
+    "id": 67996,
+    "skillKey": "clawhub-video-director",
+    "name": "Video Director"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-director",
+    "url": "https://clawhub.ai/skills/video-director",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-director-806f5880148346f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知识类短视频画面规划技能。将枯燥文字转化为高吸引力、高信息密度的图文动画短视频画面，包含名词视觉化和入场动画设计。输出标准JSON格式分镜表供video-producer使用，也可独立使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a1024708231",
+      "userId": "s174qmgq05ybe5apd1vz0yphkd83j9w1",
+      "displayName": "a1024708231",
+      "image": "https://avatars.githubusercontent.com/u/46381730?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774450095837,
+      "changelog": "添加自定义结尾支持；可以通过 endingText、endingTitle、endingDesc 参数自定义结尾文案和标题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bde4a9f7a78c83aec5fe4e3c565d5b2d492264d6f422f80aaef76ec850eba5b5"
+}

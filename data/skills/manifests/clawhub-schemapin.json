@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18267,
+  "uuid": "skill-clawhub-schemapin",
+  "skillKey": "clawhub-schemapin",
+  "name": "SchemaPin",
+  "summary": "SchemaPin enables cryptographic signing and verification of tool schemas to prevent tampering using ECDSA P-256, SHA-256, TOFU pinning, and .well-known key d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.schemapin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jascha",
+      "features": [
+        "SchemaPin enables cryptographic signing and verification of tool schemas to prevent tampering u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/schemapin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/768841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "schemapin",
+      "url": "https://clawhub.ai/skills/schemapin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "schemapin",
+    "url": "https://clawhub.ai/skills/schemapin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/schemapin-a99d2f61d8166a2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/schemapin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-schemapin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dc55b3689a6809ab793b69d88634f3f865b33e0a70a8e371b58114d3030fd10",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T06:43:17.912Z"
+}

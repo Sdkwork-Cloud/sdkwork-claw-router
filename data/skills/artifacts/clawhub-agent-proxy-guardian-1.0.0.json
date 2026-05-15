@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-proxy-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_proxy_guardian",
+  "skill": {
+    "id": 21032,
+    "skillKey": "clawhub-agent-proxy-guardian",
+    "name": "Agent Proxy Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-proxy-guardian",
+    "url": "https://clawhub.ai/skills/agent-proxy-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-proxy-guardian-36588ac9a1ef69fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous RPC & VPN rotation for AI Agents. Ensures 99.9% uptime by bypassing geo-locks and rate limits on exchanges and Web3 protocols."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmstudio667-commits",
+      "userId": "publishers:tmstudio667-commits",
+      "displayName": "System Architect Zero",
+      "image": "https://avatars.githubusercontent.com/u/261739543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1028,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772610064121,
+      "changelog": "Initial release of Agent Proxy Guardian – reliable proxy/VPN rotation for AI Agents.\n\n- Ensures 99.9% uptime by bypassing geo-locks and rate limits on exchanges and Web3 protocols.\n- Automatically detects API timeouts and rotates through proxies and VPNs with smart node selection.\n- Supports HTTP, WebSocket (OKX/Binance), and RPC (Solana/Base) protocols.\n- Benchmarks latency to always pick the fastest route.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14b0899035d09d8ee7f5430724c50e797e051dfe17bd6e717bd78ad5812b38e1"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45578,
+  "uuid": "skill-clawhub-alvis-ai-image-generation",
+  "skillKey": "clawhub-alvis-ai-image-generation",
+  "name": "Ai Image Generation",
+  "summary": "Generate AI images with FLUX, Gemini, Grok, Seedream, Reve and 50+ models via SkillBoss API Hub. Models: FLUX Dev LoRA, FLUX.2 Klein LoRA, Gemini 3 Pro Image...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_ai_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Generate AI images with FLUX, Gemini, Grok, Seedream, Reve and 50+ models via SkillBoss API Hub",
+        "Models: FLUX Dev LoRA, FLUX.2 Klein LoRA, Gemini 3 Pro Image..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-ai-image-generation@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-ai-image-generation",
+      "url": "https://clawhub.ai/skills/alvis-ai-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-ai-image-generation",
+    "url": "https://clawhub.ai/skills/alvis-ai-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-ai-image-generation-a62ed161bc08a2a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-ai-image-generation@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-ai-image-generation-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df500fc98e9c52ccc2e027ebe351ee14e7aa88fe666ea0a17438721205a1ec3f",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:15:09.118Z"
+}

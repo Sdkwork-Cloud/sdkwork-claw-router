@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/month-end-close@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.month_end_close",
+  "skill": {
+    "id": 25597,
+    "skillKey": "clawhub-month-end-close",
+    "name": "Month End Close"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "month-end-close",
+    "url": "https://clawhub.ai/skills/month-end-close",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/month-end-close-f3637415bb73d380.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate and validate the full month-end close for a QBO client. Reads client SOP, runs automated close checks, scores each item, proposes journal entries..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774155188012,
+      "changelog": "Final scrub - removed remaining internal references",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e12dd6ffd3560dec50610a909b28961752049e5534e7a9ce0d33b0c69eeffe47"
+}

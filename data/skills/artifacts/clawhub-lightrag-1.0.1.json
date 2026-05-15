@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lightrag@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightrag",
+  "skill": {
+    "id": 10572,
+    "skillKey": "clawhub-lightrag",
+    "name": "LightRAG Search Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightrag",
+    "url": "https://clawhub.ai/skills/lightrag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightrag-8d2ee9de568eff3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and manage knowledge bases using LightRAG API. Supports multiple servers, context-aware writing, and direct information retrieval. Use when the user wants to query a LightRAG-powered knowledge base or use it as context for tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruslanlanket",
+      "userId": "s17f1zyxcdr10fmqwatej4jqgx83k4md",
+      "displayName": "RuslanLanket",
+      "image": "https://avatars.githubusercontent.com/u/151464535?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2561,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769961188542,
+      "changelog": "Slightly improved work with the API.\n- No user-visible changes in this version.\n- No file or documentation updates were detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd6904f9c949690bfa0494e542af1ed136c7b70b25441fe55907b9ae493cf0f9"
+}

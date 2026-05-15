@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adspower-browser@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adspower_browser",
+  "skill": {
+    "id": 15962,
+    "skillKey": "clawhub-adspower-browser",
+    "name": "adspower-browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adspower-browser",
+    "url": "https://clawhub.ai/skills/adspower-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adspower-browser-9ce2165adc43d7df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AdsPower profile operation via adspower-browser CLI. open/launch/start browser or profile, environment, config profile, AdsPower; create/update/delete/list p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adspower",
+      "userId": "s17dtd11a6vmmccwhpar8asy6s83jd8a",
+      "displayName": "AdsPower Official",
+      "image": "https://avatars.githubusercontent.com/u/101709438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 845,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1777011492402,
+      "changelog": "adspower-browser 1.0.11\n\n- Major documentation update: simplified and clarified usage instructions, focusing on concise command-line examples.\n- Added references/tool-intent-map.md to map user phrases/intent to CLI commands.\n- Removed old usage references and the main README.md for a streamlined, more actionable SKILL.md.\n- Updated command examples to use new CLI aliases (ads, adspower); improved parameter explanations.\n- Expanded intent mapping to better clarify when to apply this skill and the commands supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd2e9edc52e881d1af16746c7fa9d687a2e0fed62993f707e29b28b1756ab29b"
+}

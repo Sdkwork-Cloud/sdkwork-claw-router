@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17166,
+  "uuid": "skill-clawhub-mcp-finder",
+  "skillKey": "clawhub-mcp-finder",
+  "name": "Mcp Finder",
+  "summary": "Find the right MCP server for your task. 6,700+ MCP servers indexed and ranked by community trust. No API key. For MCP + OpenClaw combined, see meyhem-capabi...",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c5huracan",
+      "features": [
+        "Find the right MCP server for your task",
+        "6,700+ MCP servers indexed and ranked by community trust",
+        "No API key",
+        "For MCP + OpenClaw combined, see meyhem-capabi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-finder@0.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93015898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-finder",
+      "url": "https://clawhub.ai/skills/mcp-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-finder",
+    "url": "https://clawhub.ai/skills/mcp-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-finder-f752fd9b99618512.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-finder@0.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-finder-0.2.4.json",
+      "version": "0.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e7474cd7312a6c36affe6cc14f99ed64438a6ffb822dd4711ecbe70d47b7b4a",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:25:06.600Z"
+}

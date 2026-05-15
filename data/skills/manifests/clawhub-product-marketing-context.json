@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9018,
+  "uuid": "skill-clawhub-product-marketing-context",
+  "skillKey": "clawhub-product-marketing-context",
+  "name": "Product Marketing Context",
+  "summary": "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' or wants to avoid repeating foundational information.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_marketing_context",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MichaelHoughtonDeBox",
+      "features": [
+        "When the user wants to create or update their product marketing context document",
+        "Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'posi.",
+        "Creates `.claude/product-marketing-context.md` that other marketing skills reference."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-marketing-context@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123170392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-marketing-context",
+      "url": "https://clawhub.ai/skills/product-marketing-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-marketing-context",
+    "url": "https://clawhub.ai/skills/product-marketing-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-marketing-context-93cc04606d03eaad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-marketing-context@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-marketing-context-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b476af939bced727693c9de2e1a22ba08b7d56dca19c332932804316b18b1440",
+      "artifactSizeBytes": 2674
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T19:35:40.180Z"
+}

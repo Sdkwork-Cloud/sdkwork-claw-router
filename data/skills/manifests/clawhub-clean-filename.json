@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44365,
+  "uuid": "skill-clawhub-clean-filename",
+  "skillKey": "clawhub-clean-filename",
+  "name": "Clean Filename",
+  "summary": "Removes invalid characters and normalizes filenames for safe, cross-platform use in files and directories, with optional recursive cleaning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_filename",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Removes invalid characters and normalizes filenames for safe, cross-platform use in files and d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clean-filename@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clean-filename",
+      "url": "https://clawhub.ai/skills/clean-filename"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-filename",
+    "url": "https://clawhub.ai/skills/clean-filename",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-filename-ceb33fbebf0c7dcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clean-filename@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clean-filename-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e936e12b8ab7f94be494cdf967cda941a768c9172ef92a0544cc78b1c4fac7f6",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:11:33.725Z"
+}

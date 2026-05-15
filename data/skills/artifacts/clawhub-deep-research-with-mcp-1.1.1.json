@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-with-mcp@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_with_mcp",
+  "skill": {
+    "id": 23575,
+    "skillKey": "clawhub-deep-research-with-mcp",
+    "name": "Deep Research with MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-with-mcp",
+    "url": "https://clawhub.ai/skills/deep-research-with-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-with-mcp-1cbbd1fd4980e8e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-source deep research agent using MCP search tools (minimax web_search or zai-mcp-server web_search_prime)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanghan0501",
+      "userId": "s17fzz2b58reasexdmzjs131jn83hdym",
+      "displayName": "wanghan0501",
+      "image": "https://avatars.githubusercontent.com/u/13730405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773059711222,
+      "changelog": "- Fixed priority order of required search tools, making MiniMax.web_search the primary MCP search tool.\n- Updated metadata section to explicitly list binary requirements (\"mcporter\", \"curl\", \"python3\").\n- Clarified server and tool names throughout documentation for consistency.\n- No changes to core workflow or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:224a4550ab347a6f81224c48e0982600feab112dd336a56faf06cacdb3a19d62"
+}

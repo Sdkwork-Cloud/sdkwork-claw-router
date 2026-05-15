@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tusharefree@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tusharefree",
+  "skill": {
+    "id": 63187,
+    "skillKey": "clawhub-tusharefree",
+    "name": "tushare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tusharefree",
+    "url": "https://clawhub.ai/skills/tusharefree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tusharefree-61b2f2d02eabd4e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tushare Pro 金融大数据平台 - 提供A股、指数、基金、期货、债券、宏观数据，Token认证方式访问。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774260002373,
+      "changelog": "- Added a new demo project directory containing example usage and a README.\n- No changes to existing API documentation or core functionality.\n- Helps users quickly get started with sample code in demo_project/demo.py.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8835e2319df7c2be8840f79b157fa783c0090ae9fe23234f1292c4bbbff758ee"
+}

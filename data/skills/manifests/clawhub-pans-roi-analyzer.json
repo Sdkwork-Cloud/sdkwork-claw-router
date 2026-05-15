@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63305,
+  "uuid": "skill-clawhub-pans-roi-analyzer",
+  "skillKey": "clawhub-pans-roi-analyzer",
+  "name": "Pans Roi Analyzer",
+  "summary": "AI算力销售 ROI 分析器。对比当前方案与新方案的成本和性能，计算 ROI、 TCO（总拥有成本）和投资回收期。输入 GPU 配置和业务指标， 生成投资回报分析报告，支持成本优化建议和竞品对比。 触发词：ROI分析, 成本对比, TCO计算, 投资回报, 成本优化, ROI calculator, TCO co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_roi_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "AI算力销售 ROI 分析器。对比当前方案与新方案的成本和性能，计算 ROI、 TCO（总拥有成本）和投资回收期。输入 GPU 配置和业务指标， 生成投资回报分析报告，支持成本优化建议和竞品."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pans-roi-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pans-roi-analyzer",
+      "url": "https://clawhub.ai/skills/pans-roi-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-roi-analyzer",
+    "url": "https://clawhub.ai/skills/pans-roi-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-roi-analyzer-1ef3d4c897829845.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pans-roi-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pans-roi-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:711e22fe1b30e81ba01243174664d7080e46a32d82a2b942cf305f6b32d2864c",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:38:06.887Z"
+}

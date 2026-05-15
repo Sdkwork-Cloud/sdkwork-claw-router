@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wb-troubleshooter-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wb_troubleshooter_1",
+  "skill": {
+    "id": 43186,
+    "skillKey": "clawhub-wb-troubleshooter-1",
+    "name": "WB Troubleshooter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wb-troubleshooter-1",
+    "url": "https://clawhub.ai/skills/wb-troubleshooter-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wb-troubleshooter-1-738004214c6efeb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Western Blot troubleshooting guide with step-by-step solutions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775100424277,
+      "changelog": "wb-troubleshooter-1 v1.0.0 Changelog\n\n- Initial release of Western Blot troubleshooting guide.\n- Provides step-by-step diagnosis and solutions for common problems such as high background, no signal, multiple bands, and band smearing.\n- Accepts problem description and antibody type as input parameters.\n- Returns systematic troubleshooting steps, likely causes, and ranked solution recommendations.\n- Includes risk and security assessment details.\n- Marked as Draft status; no external dependencies required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc0c394a4ec6d58cd09568212b357abe8d65ec148e61263809e3c197340797d3"
+}

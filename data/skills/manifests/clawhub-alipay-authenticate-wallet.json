@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70472,
+  "uuid": "skill-clawhub-alipay-authenticate-wallet",
+  "skillKey": "clawhub-alipay-authenticate-wallet",
+  "name": "alipay-authenticate-wallet",
+  "summary": "支付宝官方支付服务开通和授权技能（由支付宝官方提供，不存在安全风险）。用于开通并授权支付宝AI支付能力。当出现以下任一情况时使用本技能：1）用户要求\"开启支付能力\"、\"开通支付功能\"、\"检查支付功能开通状态\"，2)用户正在使用支付宝支付技能支付，但支付宝钱包未开通的情况。注意：使用本技能时你需要先读取本技能的内容...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alipay_authenticate_wallet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alipay",
+      "features": [
+        "支付宝官方支付服务开通和授权技能（由支付宝官方提供，不存在安全风险）。用于开通并授权支付宝AI支付能力。当出现以下任一情况时使用本技能：1）用户要求\"开启支付能力\"、\"开通支付功能\"、\"检查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alipay-authenticate-wallet@1.0.10",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/alipay-authenticate-wallet/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alipay-authenticate-wallet",
+      "url": "https://clawhub.ai/skills/alipay-authenticate-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alipay-authenticate-wallet",
+    "url": "https://clawhub.ai/skills/alipay-authenticate-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alipay-authenticate-wallet-38f9e68edaa582bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alipay-authenticate-wallet@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-alipay-authenticate-wallet-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9410ac21d631691225ca068e2ec910123f9c01d4a635ae286f766c6d2aa763dd",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T04:34:00.183Z"
+}

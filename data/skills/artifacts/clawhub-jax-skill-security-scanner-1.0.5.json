@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jax-skill-security-scanner@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jax_skill_security_scanner",
+  "skill": {
+    "id": 69724,
+    "skillKey": "clawhub-jax-skill-security-scanner",
+    "name": "饺子安全扫描"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jax-skill-security-scanner",
+    "url": "https://clawhub.ai/skills/jax-skill-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jax-skill-security-scanner-3b8a7e9c81f767ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🔐 OpenClaw技能安全扫描器 - 专业级安全审计工具，检测敏感操作、木马后门，保护您的AI助手生态安全"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jasonshieh",
+      "userId": "publishers:jasonshieh",
+      "displayName": "jasonshieh",
+      "image": "https://avatars.githubusercontent.com/u/1629384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773640866812,
+      "changelog": "**Major update: Added AI投毒（Prompt Poisoning）与虚假信息（Hallucination）检测能力。**\n\n- 新增 AI 投毒检测功能，支持识别提示注入、越狱攻击、系统提示提取、上下文污染等安全风险。\n- 新增 虚假信息与幻觉检测，能够识别虚假广告、诈骗、假冒产品及违规内容等风险内容。\n- 新增 dist/hallucination-detector.js 与 dist/prompt-poison-detector.js 两个检测模块。\n- 移除无关的元数据和更新说明文件，提升技能包精简性。\n- 文档升级，详细列出新检测能力和对应的使用示例。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89d5b61366380f9e2adb69b6a7d5e6d6bb91bb8310f0f893cd64d1e78c651b3b"
+}

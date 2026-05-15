@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70176,
+  "uuid": "skill-clawhub-quant-stock",
+  "skillKey": "clawhub-quant-stock",
+  "name": "Quant Stock",
+  "summary": "AI量化选股系统 - 基于多维度评分模型的A股选股分析工具。扫描新能源、电力、半导体、医药、AI、机器人、军工、贵金属等行业，输出每日量化选股报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rix Zhang",
+      "features": [
+        "AI量化选股系统",
+        "基于多维度评分模型的A股选股分析工具。扫描新能源、电力、半导体、医药、AI、机器人、军工、贵金属等行业，输出每日量化选股报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-stock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42019741?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-stock",
+      "url": "https://clawhub.ai/skills/quant-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-stock",
+    "url": "https://clawhub.ai/skills/quant-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-stock-f0608d0f99f336e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-stock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-stock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ce02fd231edf3849c2181662383b14881908336748c0a90bdd643ba4c85688d",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:21:38.544Z"
+}

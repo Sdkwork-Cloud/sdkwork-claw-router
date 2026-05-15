@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/boss-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_report",
+  "skill": {
+    "id": 38019,
+    "skillKey": "clawhub-boss-report",
+    "name": "Boss Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-report",
+    "url": "https://clawhub.ai/skills/boss-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-report-c4da420c7a978fab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates detailed daily, weekly, or monthly work summaries for managers, saving to memory and exporting as HTML or PDF reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linux2010",
+      "userId": "s1751dhnzp0ph63jb85dgvkztd83hhdp",
+      "displayName": "Andy Tien",
+      "image": "https://avatars.githubusercontent.com/u/35169750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776698521604,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67cb7520995bad870ff97e57c72de8e1f7cdd2f3ccaec030ea5b82d977b9332d"
+}

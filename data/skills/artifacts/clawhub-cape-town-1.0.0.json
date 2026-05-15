@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cape-town@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cape_town",
+  "skill": {
+    "id": 43085,
+    "skillKey": "clawhub-cape-town",
+    "name": "Cape Town"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cape-town",
+    "url": "https://clawhub.ai/skills/cape-town",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cape-town-49bf4a832bb5d801.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a comprehensive guide to Cape Town's history, culture, landmarks, tourism, economy, and creative industries under Table Mountain."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777028882958,
+      "changelog": "Cape Town skill 1.0.0 — 深度介绍开普敦历史、文化与旅游的全新指南。\n\n- 覆盖从殖民地到现代创意中心的历史时间线与事件\n- 详细说明经济结构、支柱产业与创业生态\n- 地标地点、文化交汇、葡萄酒产业等护城河分析\n- 提供城市关键数据与有趣地理/历史事实\n- 指明适用场景：旅游、南非经济、历史文化等查询",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a8dc14b422ba5f118b4073c5df691d9a5340b6a8a69a332d85e9589708f93c2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47005,
+  "uuid": "skill-clawhub-deep-research-pipeline",
+  "skillKey": "clawhub-deep-research-pipeline",
+  "name": "Deep Research Pipeline",
+  "summary": "Multi-stage deep research with reflection loops, multi-query retrieval, LLM chunk selection, and citation integrity. Use when: deep research, literature revi...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vardhineediganesh877-ui",
+      "features": [
+        "Multi-stage deep research with reflection loops, multi-query retrieval, LLM chunk selection, an.",
+        "Use when: deep research, literature revi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-pipeline@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274308381?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-pipeline",
+      "url": "https://clawhub.ai/skills/deep-research-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-pipeline",
+    "url": "https://clawhub.ai/skills/deep-research-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-pipeline-4712ab98b4240c36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-pipeline@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-pipeline-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf85c87ed2f7e9ad11296fe3554f4ee52ffb59d96df5e815c470bfbbf34d0a55",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T18:00:51.859Z"
+}

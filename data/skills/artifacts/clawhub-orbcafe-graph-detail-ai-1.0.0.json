@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orbcafe-graph-detail-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orbcafe_graph_detail_ai",
+  "skill": {
+    "id": 29481,
+    "skillKey": "clawhub-orbcafe-graph-detail-ai",
+    "name": "orbcafe-graph-detail-ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orbcafe-graph-detail-ai",
+    "url": "https://clawhub.ai/skills/orbcafe-graph-detail-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orbcafe-graph-detail-ai-1a24e28ce868cc29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build ORBCAFE graph analytics dialogs, detail pages, and AI settings flows using CGraphReport, chart components, CDetailInfoPage/useDetailInfo, and CCustomiz..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenruiyang",
+      "userId": "s17e6bmx11wm3tn9bxz60qc4fh83gew1",
+      "displayName": "SHENRUIYANG",
+      "image": "https://avatars.githubusercontent.com/u/47732614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773188074462,
+      "changelog": "Initial release of orbcafe-graph-detail-ai skill:\n\n- Supports building ORBCAFE graph analytics dialogs, detail pages, and configurable AI settings flows.\n- Integrates with components such as CGraphReport, chart components, CDetailInfoPage/useDetailInfo, and CCustomizeAgent.\n- Handles requests involving KPI/chart drilldown, searchable detail tabs, and AI prompt settings.\n- Provides clear workflow, API usage, and output contract for consistent implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1027f5550b5309f6789423d5c2c8c306e39d9bb823c1b7e0590035b4d30dc212"
+}

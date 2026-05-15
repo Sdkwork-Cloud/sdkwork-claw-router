@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31789,
+  "uuid": "skill-clawhub-privacera",
+  "skillKey": "clawhub-privacera",
+  "name": "Privacera",
+  "summary": "Privacera integration. Manage data, records, and automate workflows. Use when the user wants to interact with Privacera data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Privacera integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Privacera data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privacera@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privacera",
+      "url": "https://clawhub.ai/skills/privacera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacera",
+    "url": "https://clawhub.ai/skills/privacera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacera-97074a764f9f4dea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privacera@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-privacera-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31742909cf23a4cb8c7da42b21054e043f455bd74237af4653e56a6b88cf7183",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:27:42.134Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stirling-pdf@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stirling_pdf",
+  "skill": {
+    "id": 14113,
+    "skillKey": "clawhub-stirling-pdf",
+    "name": "Stirling PDF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stirling-pdf",
+    "url": "https://clawhub.ai/skills/stirling-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stirling-pdf-0e0aa517799753a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-hosted REST API for comprehensive PDF manipulation including merge, split, convert, OCR, compress, sign, redact, and secure PDFs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "angusthefuzz",
+      "userId": "publishers:angusthefuzz",
+      "displayName": "angusthefuzz",
+      "image": "https://avatars.githubusercontent.com/u/226103412?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1033,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771083123902,
+      "changelog": "Fix metadata format for env vars (use object format)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8064749d7ed888e46819b5454cd1978eb34ff4aae826956bad69249d19b9d260"
+}

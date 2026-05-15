@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37095,
+  "uuid": "skill-clawhub-package-json-linter",
+  "skillKey": "clawhub-package-json-linter",
+  "name": "Package Json Linter",
+  "summary": "Lint and validate package.json files for common mistakes, missing fields, security issues, and best practices. Use when asked to lint, validate, audit, or ch...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_json_linter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Lint and validate package.json files for common mistakes, missing fields, security issues, and.",
+        "Use when asked to lint, validate, audit, or ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/package-json-linter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "package-json-linter",
+      "url": "https://clawhub.ai/skills/package-json-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-json-linter",
+    "url": "https://clawhub.ai/skills/package-json-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-json-linter-1cfe824a95500efe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/package-json-linter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-package-json-linter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd5b8801d8063777c89bb47a16e86ec4fe58323305bde369341e1f7372f9dda2",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:14.870Z"
+}

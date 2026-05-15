@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52104,
+  "uuid": "skill-clawhub-tableau",
+  "skillKey": "clawhub-tableau",
+  "name": "tableau",
+  "summary": "Expert on modern configuration converter — converts Excel/CSV/XML/YAML into Protobuf-backed JSON/Text/Bin configs via protogen + confgen pipeline. Trigger wh...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tableau",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenchy",
+      "features": [
+        "Expert on modern configuration converter — converts Excel/CSV/XML/YAML into Protobuf-backed JSO.",
+        "Trigger wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tableau@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4188052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tableau",
+      "url": "https://clawhub.ai/skills/tableau"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tableau",
+    "url": "https://clawhub.ai/skills/tableau",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tableau-5f0974ee455c4cd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tableau@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tableau-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:424ae7362b6f71ea4b8c8e1b88606739755768f647b26b1317eb208a831eba3a",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:06:18.052Z"
+}

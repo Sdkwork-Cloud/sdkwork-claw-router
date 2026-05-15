@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/siemens@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siemens",
+  "skill": {
+    "id": 70223,
+    "skillKey": "clawhub-siemens",
+    "name": "Siemens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siemens",
+    "url": "https://clawhub.ai/skills/siemens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siemens-30e363d3e8c59f2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "德国工业科技巨头，专注工业自动化、智能基础设施、交通和医疗，2024财年营收约778亿欧元，全球领先数字化供应商。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776844980107,
+      "changelog": "- 新增公司简介与业务结构，聚焦工业自动化、智能基础设施、交通及医疗四大核心板块  \n- 列出历史关键节点及西门子重大转型历程  \n- 详细分析数字化平台和软件订阅转型，突出核心护城河  \n- 提供关键财务与业务数据（营收、员工数、全球覆盖等）  \n- 补充行业地位、创新案例及战略变革亮点",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69efc895cf73bde40743fdbe1521a574f72ebffca0603cd44503a56abdc26dcc"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65397,
+  "uuid": "skill-clawhub-mx-mx-stocks-screener",
+  "skillKey": "clawhub-mx-mx-stocks-screener",
+  "name": "Mx Stocks Screener",
+  "summary": "基于东方财富数据库，支持通过自然语言输入筛选A港美股、基金、债券等多种资产，支持多元指标筛选，含技术面、消息面、基本面及市场情绪等，可用于全球资产速筛、跨市场监控、投资组合构建、策略回测等场景。返回结果包含数据说明及 csv 文件。Natural language screener for investment...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_mx_stocks_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "akiry09",
+      "features": [
+        "基于东方财富数据库，支持通过自然语言输入筛选A港美股、基金、债券等多种资产，支持多元指标筛选，含技术面、消息面、基本面及市场情绪等，可用于全球资产速筛、跨市场监控、投资组合构建、策略回测等场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-mx-stocks-screener@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267565654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-mx-stocks-screener",
+      "url": "https://clawhub.ai/skills/mx-mx-stocks-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-mx-stocks-screener",
+    "url": "https://clawhub.ai/skills/mx-mx-stocks-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-mx-stocks-screener-50cb0d16fe4e1b97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-mx-stocks-screener@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-mx-stocks-screener-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2149b892d51531f441b97080c4bda3d9aa42758c7b9aa8f223944adf3ba4430",
+      "artifactSizeBytes": 2660
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:24:28.647Z"
+}

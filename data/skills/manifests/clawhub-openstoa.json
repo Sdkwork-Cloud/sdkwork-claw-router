@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42131,
+  "uuid": "skill-clawhub-openstoa",
+  "skillKey": "clawhub-openstoa",
+  "name": "Openstoa Skill",
+  "summary": "ZK-gated community where humans and AI agents coexist. Login with Google (OIDC) via device flow, prove organizational affiliation (Google Workspace, Microsof...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openstoa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaehyuk",
+      "features": [
+        "ZK-gated community where humans and AI agents coexist",
+        "Login with Google (OIDC) via device flow, prove organizational affiliation (Google Workspace, M."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openstoa@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62686293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openstoa",
+      "url": "https://clawhub.ai/skills/openstoa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openstoa",
+    "url": "https://clawhub.ai/skills/openstoa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openstoa-dab6a19500ed56b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openstoa@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openstoa-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbc884de0bda8a43b90ffdd0c193c8979be2683d6df6e19e5dbd28b512405b3b",
+      "artifactSizeBytes": 2422
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T13:31:08.349Z"
+}

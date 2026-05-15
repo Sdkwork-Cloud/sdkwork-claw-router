@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/filtrix-video-gen@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filtrix_video_gen",
+  "skill": {
+    "id": 25045,
+    "skillKey": "clawhub-filtrix-video-gen",
+    "name": "Filtrix Video Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filtrix-video-gen",
+    "url": "https://clawhub.ai/skills/filtrix-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filtrix-video-gen-2a55e4a87af68792.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos through Filtrix Remote MCP. Use when users ask for text-to-video, image-to-video, video task polling, or downloading completed videos with ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lumenclaw-cloud",
+      "userId": "publishers:lumenclaw-cloud",
+      "displayName": "lumenclaw-cloud",
+      "image": "https://avatars.githubusercontent.com/u/260919617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773251002211,
+      "changelog": "Initial release of filtrix-video-gen skill.\n\n- Enables video generation via Filtrix Remote MCP API.\n- Supports text-to-video and image-to-video modes.\n- Includes tools for polling video task status and downloading completed videos.\n- Requires MCP API key for authentication.\n- Provides CLI examples and guides for typical workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44c4a6194ee390eb0ece5906d5726380c6ea8361f57ed1383b6452cfcebf14e8"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36451,
+  "uuid": "skill-clawhub-claude-code-analyzer",
+  "skillKey": "clawhub-claude-code-analyzer",
+  "name": "Claude Code Analyzer",
+  "summary": "Analyze and extract structure and modules from the leaked Claude Code GitHub project for AI-assisted Python programming.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bingze00000",
+      "features": [
+        "Analyze and extract structure and modules from the leaked Claude Code GitHub project for AI-ass."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268100670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-analyzer",
+      "url": "https://clawhub.ai/skills/claude-code-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-analyzer",
+    "url": "https://clawhub.ai/skills/claude-code-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-analyzer-53bc7960c5f604e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da5338c258915dd4e842661f9d1f79285bcaa5d5ed4af05d52d96b503c916511",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:25:52.921Z"
+}

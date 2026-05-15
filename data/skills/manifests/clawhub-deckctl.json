@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55945,
+  "uuid": "skill-clawhub-deckctl",
+  "skillKey": "clawhub-deckctl",
+  "name": "deckctl — Steam Deck / Bazzite Manager",
+  "summary": "Steam Deck & Bazzite system management — gamescope, flatpak, podman, GPU, performance, game mode, system health",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deckctl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "13",
+      "features": [
+        "Steam Deck & Bazzite system management — gamescope, flatpak, podman, GPU, performance, game mod."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deckctl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20891937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deckctl",
+      "url": "https://clawhub.ai/skills/deckctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deckctl",
+    "url": "https://clawhub.ai/skills/deckctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deckctl-0e8a74f01b341f79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deckctl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deckctl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c76cfc913cbaf1d9299f914d9951605d7b3975b617953fb6a57ac7e054f2ac2",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T16:15:47.873Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65649,
+  "uuid": "skill-clawhub-moltbook-weekly",
+  "skillKey": "clawhub-moltbook-weekly",
+  "name": "Moltbook Weekly Report",
+  "summary": "自动生成周报并写入企业微信文档。支持数据汇总、Markdown报告生成、一键发布，适合项目周报、团队同步、数据报告场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_weekly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rf-AI-WH",
+      "features": [
+        "自动生成周报并写入企业微信文档。支持数据汇总、Markdown报告生成、一键发布，适合项目周报、团队同步、数据报告场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbook-weekly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265223072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbook-weekly",
+      "url": "https://clawhub.ai/skills/moltbook-weekly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-weekly",
+    "url": "https://clawhub.ai/skills/moltbook-weekly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-weekly-dcb5c093fbf7a97d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbook-weekly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-weekly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e94b236b5d0bc28e55ce4bd773700c14c4004f1d51e7cf1c7fb43e7de7acfcd",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:19:59.930Z"
+}

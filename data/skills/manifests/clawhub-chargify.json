@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31304,
+  "uuid": "skill-clawhub-chargify",
+  "skillKey": "clawhub-chargify",
+  "name": "Chargify",
+  "summary": "Chargify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Chargify data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chargify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Chargify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Chargify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chargify@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chargify",
+      "url": "https://clawhub.ai/skills/chargify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chargify",
+    "url": "https://clawhub.ai/skills/chargify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chargify-c4f68f4d6c815597.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chargify@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-chargify-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c029628f6a8ed03aa3e4caa24af15d69726f427527c2511cbc9d3206cae965ad",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:28:57.068Z"
+}

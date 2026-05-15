@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58827,
+  "uuid": "skill-clawhub-currency-converter-pro",
+  "skillKey": "clawhub-currency-converter-pro",
+  "name": "Currency Converter Pro",
+  "summary": "实时汇率换算专家。支持150+货币实时汇率、批量换算、多货币对比、历史汇率查询。零API Key，免费数据源。When user asks about currency exchange, conversion rates, USD to CNY, forex, or money conversion.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.currency_converter_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darbling",
+      "features": [
+        "实时汇率换算专家。支持150+货币实时汇率、批量换算、多货币对比、历史汇率查询。零API Key，免费数据源。When user asks about currency exchange,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/currency-converter-pro@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105998927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "currency-converter-pro",
+      "url": "https://clawhub.ai/skills/currency-converter-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "currency-converter-pro",
+    "url": "https://clawhub.ai/skills/currency-converter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/currency-converter-pro-ed7c16fc935e3740.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/currency-converter-pro@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-currency-converter-pro-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9826b5d82eb09d2b09061336ce94480f45724ec17dbf2ca94ffd69366688dabd",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:19:58.901Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-dsc-audit@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_dsc_audit",
+  "skill": {
+    "id": 39837,
+    "skillKey": "clawhub-alibabacloud-dsc-audit",
+    "name": "Alibabacloud Dsc Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-dsc-audit",
+    "url": "https://clawhub.ai/skills/alibabacloud-dsc-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-dsc-audit-7fa1024bf69a4bbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and handle security risk events from Alibaba Cloud Data Security Center. Supports viewing the list of unprocessed risk events and performing manual han..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1777027869472,
+      "changelog": "**Summary: CLI AI-mode, User-Agent, and plugin upgrade requirements enforced.**\n\n- Requires Aliyun CLI version >= 3.3.3 (was >= 3.3.1).\n- All CLI invocations must set User-Agent to \"AlibabaCloud-Agent-Skills/alibabacloud-dsc-audit\".\n- AI-mode must be enabled before workflow begins and disabled at every exit point.\n- Users must update/install plugins via `aliyun plugin update` and set `--auto-plugin-install true`.\n- SKILL.md and CLI install guide updated with these new steps and requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74433066ab54faa01ae83a48bcbcb2587ebd0bd857520ce0d0e937d38679325c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48745,
+  "uuid": "skill-clawhub-camscanner-image-detect-tampering",
+  "skillKey": "clawhub-camscanner-image-detect-tampering",
+  "name": "CamScanner Detect Tampering",
+  "summary": "Use CamScanner to detect whether an image has been PS-edited, manipulated, or tampered with. Powered by a manipulation-detection engine that identifies photo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camscanner_image_detect_tampering",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CamScanner-AI",
+      "features": [
+        "Use CamScanner to detect whether an image has been PS-edited, manipulated, or tampered with",
+        "Powered by a manipulation-detection engine that identifies photo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camscanner-image-detect-tampering@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269073986?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camscanner-image-detect-tampering",
+      "url": "https://clawhub.ai/skills/camscanner-image-detect-tampering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camscanner-image-detect-tampering",
+    "url": "https://clawhub.ai/skills/camscanner-image-detect-tampering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camscanner-image-detect-tampering-62d2915db1111f46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camscanner-image-detect-tampering@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camscanner-image-detect-tampering-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96abd054662ec0bea939d80ba83f4fc76f5204603af82d0d1187cb3e6e0d4b66",
+      "artifactSizeBytes": 2514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:00:58.236Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72151,
+  "uuid": "skill-clawhub-dunkin",
+  "skillKey": "clawhub-dunkin",
+  "name": "Dunkin",
+  "summary": "提供唐恩都乐咖啡、甜甜圈及烘焙食品的菜单、门店信息、会员福利及定制服务等查询与支持。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dunkin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供唐恩都乐咖啡、甜甜圈及烘焙食品的菜单、门店信息、会员福利及定制服务等查询与支持。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dunkin@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dunkin",
+      "url": "https://clawhub.ai/skills/dunkin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dunkin",
+    "url": "https://clawhub.ai/skills/dunkin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dunkin-2df7b03d1a69954f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dunkin@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dunkin-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaf7a4d8dc19a4e473612861be6ebca91c19d6bb79841d2722a24b923cad88be",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:36:36.706Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70412,
+  "uuid": "skill-clawhub-sudo-gold",
+  "skillKey": "clawhub-sudo-gold",
+  "name": "sudo-gold",
+  "summary": "使用 Tavily 搜索获取黄金相关信息，覆盖上海黄金交易所、上海期货交易所、香港金银业贸易场、银行账户黄金、伦敦金银及金店金价等行情数据。",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sudo_gold",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FMouse",
+      "features": [
+        "使用 Tavily 搜索获取黄金相关信息，覆盖上海黄金交易所、上海期货交易所、香港金银业贸易场、银行账户黄金、伦敦金银及金店金价等行情数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sudo-gold@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36061597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sudo-gold",
+      "url": "https://clawhub.ai/skills/sudo-gold"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sudo-gold",
+    "url": "https://clawhub.ai/skills/sudo-gold",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sudo-gold-94355685595c582e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sudo-gold@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-sudo-gold-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d4043856e71aa31d2e24dd4db4433800dcd4ee99e940446d7416d2fbbfc24f6",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T14:59:38.465Z"
+}

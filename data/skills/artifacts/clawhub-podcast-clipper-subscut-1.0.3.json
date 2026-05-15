@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-clipper-subscut@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_clipper_subscut",
+  "skill": {
+    "id": 28773,
+    "skillKey": "clawhub-podcast-clipper-subscut",
+    "name": "Podcast Clipper ( Subscut )"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-clipper-subscut",
+    "url": "https://clawhub.ai/skills/podcast-clipper-subscut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-clipper-subscut-3adec25410ae64f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to turn a long podcast, interview, webinar, or talking-head video into multiple short clips for TikTok, Reels, or YouTube..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arpittiwari24",
+      "userId": "s17b1517vr1292zcp7hv1szt9s84g1ya",
+      "displayName": "Arrpit Tiwari",
+      "image": "https://avatars.githubusercontent.com/u/100207940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776168408005,
+      "changelog": "Major update: More control over clip style, duration, and format.\n\n- Increased clip limit from 10 to 20 per video; now also supports min/max clip duration settings.\n- Added new caption styles: \"leon,\" \"hormozi,\" \"beast,\" and extended aliasing for \"clean\" and \"minimal.\"\n- Introduced `format` option for rendered output: choose between \"dynamic\" (auto-reframe) and \"hook_frame\" (title card with original framing).\n- CLI options updated: more parameters, improved documentation, new defaults, and more flexible usage.\n- Output now includes start/end timestamps for each returned clip.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebea9dd0105454e3dd6ffb01f91c824ca3cdde0e38b880618dc9ec70f227c125"
+}

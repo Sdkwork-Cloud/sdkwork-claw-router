@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68926,
+  "uuid": "skill-clawhub-public-ip-skill-in-openclaw",
+  "skillKey": "clawhub-public-ip-skill-in-openclaw",
+  "name": "Public Ip",
+  "summary": "查询当前机器的公网 IP 地址。用于需要确定服务器或客户端在互联网上的公开标识时。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_ip_skill_in_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "trollhe",
+      "features": [
+        "查询当前机器的公网 IP 地址。用于需要确定服务器或客户端在互联网上的公开标识时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/public-ip-skill-in-openclaw@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41068725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "public-ip-skill-in-openclaw",
+      "url": "https://clawhub.ai/skills/public-ip-skill-in-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-ip-skill-in-openclaw",
+    "url": "https://clawhub.ai/skills/public-ip-skill-in-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-ip-skill-in-openclaw-cf0aeac232962791.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/public-ip-skill-in-openclaw@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-public-ip-skill-in-openclaw-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53dff0688811225b5c3245a5cfbaaa36ec13f6ad77f92012789c57d0e5daeed6",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T16:24:50.554Z"
+}

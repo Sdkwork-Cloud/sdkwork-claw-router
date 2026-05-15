@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tokenview-address-balance@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokenview_address_balance",
+  "skill": {
+    "id": 30711,
+    "skillKey": "clawhub-tokenview-address-balance",
+    "name": "Blockchain Balance Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokenview-address-balance",
+    "url": "https://clawhub.ai/skills/tokenview-address-balance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokenview-address-balance-db3833fd44d1a0d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the balance of a blockchain address via Tokenview API, defaulting to BTC and requiring TOKENVIEW_API_KEY in the environment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bdonglobal",
+      "userId": "s17ckxaxde794a53atb4vy09b183h8av",
+      "displayName": "bdonglobal",
+      "image": "https://avatars.githubusercontent.com/u/116442891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774356258558,
+      "changelog": "- Updated script execution path to use the environment variable $OPENCLAW_STATE_DIR instead of a fixed home directory path.\n- No other functional or interface changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3c77340fb982ec569ef77dbfcbd2080bb046774a682500bd0fd40a878a2de2b"
+}

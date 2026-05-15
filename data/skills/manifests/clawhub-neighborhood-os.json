@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27842,
+  "uuid": "skill-clawhub-neighborhood-os",
+  "skillKey": "clawhub-neighborhood-os",
+  "name": "claw.condos",
+  "summary": "Build, decorate, and evolve voxel plots on claw.condos using Neighborhood APIs. Use when an agent needs to register/login, modify blocks, run large blueprint...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neighborhood_os",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shkurkin",
+      "features": [
+        "Build, decorate, and evolve voxel plots on claw.condos using Neighborhood APIs",
+        "Use when an agent needs to register/login, modify blocks, run large blueprint..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neighborhood-os@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4693559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neighborhood-os",
+      "url": "https://clawhub.ai/skills/neighborhood-os"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neighborhood-os",
+    "url": "https://clawhub.ai/skills/neighborhood-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neighborhood-os-91e7a9a16ac28777.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neighborhood-os@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neighborhood-os-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:586e620d3a334d27979913429bf2506f41502ac88e40e659003f8918e4738c78",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:23:17.358Z"
+}

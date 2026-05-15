@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-yike-storyboard@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_yike_storyboard",
+  "skill": {
+    "id": 37014,
+    "skillKey": "clawhub-alibabacloud-yike-storyboard",
+    "name": "Alibabacloud Yike Storyboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-yike-storyboard",
+    "url": "https://clawhub.ai/skills/alibabacloud-yike-storyboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-yike-storyboard-16d503219109d251.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Yike Storyboard Creation Skill - Complete AI video creation workflow from novel/script to storyboard via conversational interface. Use this skill when users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776421729384,
+      "changelog": "- Minimum Aliyun CLI version requirement raised to 3.3.3.\n- Updated installation instructions: added direct upgrade command and clarified plugin update steps.\n- Enforced the use of a standardized CLI User-Agent (`AlibabaCloud-Agent-Skills/alibabacloud-yike-storyboard`) for all aliyun CLI commands.\n- Documentation updates across setup and workflow to reflect new CLI requirements.\n- Minor clarifications and corrections in setup, parameter confirmation, and workflow descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9d6e688d49b4698e70764804fc69c8cf099e3b0176c8f5edfe14b01e3d6611f"
+}

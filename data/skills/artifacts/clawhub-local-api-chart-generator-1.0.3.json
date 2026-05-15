@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-api-chart-generator@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_api_chart_generator",
+  "skill": {
+    "id": 66447,
+    "skillKey": "clawhub-local-api-chart-generator",
+    "name": "local-api-chart-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-api-chart-generator",
+    "url": "https://clawhub.ai/skills/local-api-chart-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-api-chart-generator-94484a965a49087a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为调用本地数据接口并生成图表展示定制的 Skill。接收自然语言指令（如“我要最近一年燃油类型为天然气的扭矩占比”），自动提取参数，请求本地接口，生成 HTML 柱状图并返回完整的 HTML 源码。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "z904832819",
+      "userId": "s17djh1hq0yajm72n9zp489xfn84gc82",
+      "displayName": "z904832819",
+      "image": "https://avatars.githubusercontent.com/u/53605664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776736690630,
+      "changelog": "Sync from PycharmProjects",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4574945d4f3f772275877f72694ae772f845127faceac5d5431c1563bc2a932e"
+}

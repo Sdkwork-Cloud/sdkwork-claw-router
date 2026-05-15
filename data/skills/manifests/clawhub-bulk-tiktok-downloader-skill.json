@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15154,
+  "uuid": "skill-clawhub-bulk-tiktok-downloader-skill",
+  "skillKey": "clawhub-bulk-tiktok-downloader-skill",
+  "name": "Bulk Tiktok Downloader",
+  "summary": "Bulk download TikTok videos from a text file of URLs using yt-dlp. Use when a user asks to download many TikTok videos at once, process a URL list file, or s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bulk_tiktok_downloader_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mes",
+      "features": [
+        "Bulk download TikTok videos from a text file of URLs using yt-dlp",
+        "Use when a user asks to download many TikTok videos at once, process a URL list file, or s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bulk-tiktok-downloader-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106491563?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bulk-tiktok-downloader-skill",
+      "url": "https://clawhub.ai/skills/bulk-tiktok-downloader-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bulk-tiktok-downloader-skill",
+    "url": "https://clawhub.ai/skills/bulk-tiktok-downloader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bulk-tiktok-downloader-skill-d3c37c990a2b50c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bulk-tiktok-downloader-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bulk-tiktok-downloader-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc85779797bcb512cd44e3a582f6b1adb91ec7ea12df3942994895ff6274501b",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T00:09:51.625Z"
+}

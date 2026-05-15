@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65669,
+  "uuid": "skill-clawhub-token-tracker-daily",
+  "skillKey": "clawhub-token-tracker-daily",
+  "name": "token-tracker-daily",
+  "summary": "Token 消耗追踪工具。当用户需要监控 API token 使用情况、生成每日/每周消耗报告、分析使用趋势时使用此 Skill。功能包括：自动记录每次对话的 token 消耗、生成数据表格报告、计算使用趋势和预测、支持定时推送日报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_tracker_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "timyljob2011-sudo",
+      "features": [
+        "Token 消耗追踪工具。当用户需要监控 API token 使用情况、生成每日/每周消耗报告、分析使用趋势时使用此 Skill。功能包括：自动记录每次对话的 token 消耗、生成数据表格."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-tracker-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253444946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-tracker-daily",
+      "url": "https://clawhub.ai/skills/token-tracker-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-tracker-daily",
+    "url": "https://clawhub.ai/skills/token-tracker-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-tracker-daily-8c16164574d4bbde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-tracker-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-tracker-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c9d3e040ff55b9cd3c43f43286e208374f1a89c2387e304a6e49655542369c3",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:50:54.906Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu-fetch-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_fetch_skill",
+  "skill": {
+    "id": 59334,
+    "skillKey": "clawhub-zhihu-fetch-skill",
+    "name": "知乎抓取.SKILL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-fetch-skill",
+    "url": "https://clawhub.ai/skills/zhihu-fetch-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-fetch-skill-5853f4a06dc1c021.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知乎收藏夹与文章内容抓取：API/Playwright 多级降级、Cookie 持久化与保活、批量正文与图片、断点续传、可选写入 Obsidian。| Zhihu collection scraping, batch article fetch, Obsidian export."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "handsomestwei",
+      "userId": "s17cne95kry5y91xh399564e9584ejmf",
+      "displayName": "handsomestWei",
+      "image": "https://avatars.githubusercontent.com/u/36500279?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777637642401,
+      "changelog": "zhihu-fetch-skill 1.1.0 introduces improved cookie management and batch failure handling for more robust Zhihu scraping.\n\n- 增强：批量抓取内置 Cookie 自动保活机制（主动/被动 TTL 检测、激进刷新、自动恢复、定期保存 Cookie）\n- 新增：支持散发失败累积写入、连续失败自动中断与缓存丢弃、失败项可用 --retry-failed 参数重试\n- 更新：SKILL.md「已知问题与对策」详述保活与失败处理逻辑，补充关键脚本行为说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3b86f9f17f1f1599171249652f65f4ab7bd430713307c9423d8edc583db5e97"
+}

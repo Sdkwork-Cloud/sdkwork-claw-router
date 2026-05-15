@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46760,
+  "uuid": "skill-clawhub-secmarketedgar",
+  "skillKey": "clawhub-secmarketedgar",
+  "name": "SEC_Market MCP (AI Agent + Company US)",
+  "summary": "Access SEC EDGAR-backed US company data, filings, metrics, ads, commerce tools, and research via a unified MCP API with audit-traceable lineage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secmarketedgar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afunsten",
+      "features": [
+        "Access SEC EDGAR-backed US company data, filings, metrics, ads, commerce tools, and research vi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secmarketedgar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7649826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secmarketedgar",
+      "url": "https://clawhub.ai/skills/secmarketedgar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secmarketedgar",
+    "url": "https://clawhub.ai/skills/secmarketedgar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secmarketedgar-ae4c3ce5d1954959.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secmarketedgar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-secmarketedgar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c2e3b05914a4d6a705add6360d13aae52a3260bfda4708117cfdac2c0bd0cb9",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:00:08.795Z"
+}

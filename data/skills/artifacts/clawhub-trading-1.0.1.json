@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading",
+  "skill": {
+    "id": 8620,
+    "skillKey": "clawhub-trading",
+    "name": "Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading",
+    "url": "https://clawhub.ai/skills/trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-0035e3bed3a10ebe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trading analysis and education. Technical analysis, chart patterns, risk management, and position sizing for stocks, forex, and crypto."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7907,
+      "installsAllTime": 67,
+      "installsCurrent": 65,
+      "stars": 14,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772034919239,
+      "changelog": "Added setup.md, memory-template.md, enhanced guardrails, and legal disclaimers following SEC/NFA patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:40beaed124e2325d2ba49610e6d3246046f52fad805876ed6f0b65287ddccbe1"
+}

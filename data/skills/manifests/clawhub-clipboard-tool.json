@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46617,
+  "uuid": "skill-clawhub-clipboard-tool",
+  "skillKey": "clawhub-clipboard-tool",
+  "name": "Clipboard Tool",
+  "summary": "Perform clipboard-tool operations from the command line.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clipboard_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Perform clipboard-tool operations from the command line."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clipboard-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clipboard-tool",
+      "url": "https://clawhub.ai/skills/clipboard-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clipboard-tool",
+    "url": "https://clawhub.ai/skills/clipboard-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clipboard-tool-b8ce39f0e4c960df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clipboard-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clipboard-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:713e94419ba44362ea451ba5791a589c2ae4b96161269ff71e89f2590101d328",
+      "artifactSizeBytes": 1777
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T20:55:05.954Z"
+}

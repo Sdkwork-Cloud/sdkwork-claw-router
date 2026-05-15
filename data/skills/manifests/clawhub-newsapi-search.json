@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10696,
+  "uuid": "skill-clawhub-newsapi-search",
+  "skillKey": "clawhub-newsapi-search",
+  "name": "NewsAPI Search",
+  "summary": "Search news articles via NewsAPI with filtering by time windows, sources, domains, and languages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsapi_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hegghammer",
+      "features": [
+        "Search news articles via NewsAPI with filtering by time windows, sources, domains, and language."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newsapi-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64712218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newsapi-search",
+      "url": "https://clawhub.ai/skills/newsapi-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsapi-search",
+    "url": "https://clawhub.ai/skills/newsapi-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsapi-search-d3e86991df294e59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newsapi-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newsapi-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac7b000244f3abdf17264f5a1806242c9a4196f5ab66c2b4189f5f7d25361c77",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T22:16:10.019Z"
+}

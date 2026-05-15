@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22776,
+  "uuid": "skill-clawhub-nexus-sentiment-analysis",
+  "skillKey": "clawhub-nexus-sentiment-analysis",
+  "name": "NEXUS Sentiment Analysis",
+  "summary": "Analyze emotional tone and detect opinions",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_sentiment_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Analyze emotional tone and detect opinions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-sentiment-analysis@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-sentiment-analysis",
+      "url": "https://clawhub.ai/skills/nexus-sentiment-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-sentiment-analysis",
+    "url": "https://clawhub.ai/skills/nexus-sentiment-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-sentiment-analysis-3715a2e710281762.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-sentiment-analysis@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-sentiment-analysis-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2085367e3c42f6efbeff6ec31a4a5a63b2bc9c518e5550c2864ffc6c924aa67f",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:13:58.151Z"
+}

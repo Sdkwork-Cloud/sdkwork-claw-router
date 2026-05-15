@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25708,
+  "uuid": "skill-clawhub-model-router-waai",
+  "skillKey": "clawhub-model-router-waai",
+  "name": "Model Router",
+  "summary": "Model Router - Parallel multi-LLM invocation with result merging. Use when: need better answers, compare model outputs, or get best result from multiple LLMs...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_router_waai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HuaiBuer",
+      "features": [
+        "Model Router",
+        "Parallel multi-LLM invocation with result merging",
+        "Use when: need better answers, compare model outputs, or get best result from multiple LLMs..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-router-waai@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71966998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-router-waai",
+      "url": "https://clawhub.ai/skills/model-router-waai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-router-waai",
+    "url": "https://clawhub.ai/skills/model-router-waai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-router-waai-3f35ab3a0b955313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-router-waai@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-router-waai-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b1781ff1dcf7ca2b4df871d4da20e37d373afff0d141af9b2082d52362788e2",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T10:16:23.447Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24601,
+  "uuid": "skill-clawhub-mailboxvalidator",
+  "skillKey": "clawhub-mailboxvalidator",
+  "name": "Mailboxvalidator",
+  "summary": "MailboxValidator integration. Manage Users, Organizations. Use when the user wants to interact with MailboxValidator data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailboxvalidator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "MailboxValidator integration",
+        "Manage Users, Organizations",
+        "Use when the user wants to interact with MailboxValidator data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailboxvalidator@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailboxvalidator",
+      "url": "https://clawhub.ai/skills/mailboxvalidator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailboxvalidator",
+    "url": "https://clawhub.ai/skills/mailboxvalidator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailboxvalidator-ad0044512baff9bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailboxvalidator@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailboxvalidator-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:059d1c85156b800236506d5adf820cb3c5cb5cd10fd7d69abbdd7506359baf76",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:43:09.257Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openrouter-free-helper@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openrouter_free_helper",
+  "skill": {
+    "id": 61461,
+    "skillKey": "clawhub-openrouter-free-helper",
+    "name": "Openrouter Free Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openrouter-free-helper",
+    "url": "https://clawhub.ai/skills/openrouter-free-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openrouter-free-helper-5e7f794eae2a9e03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "监控 OpenRouter 免费模型的到期通知和新模型发现，自动每日检查并推送飞书通知"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suidge",
+      "userId": "s1769yn9ptpyx07673vcrfy2yd83jjt3",
+      "displayName": "Neo Shi",
+      "image": "https://avatars.githubusercontent.com/u/34770064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1778334003196,
+      "changelog": "fix: use endpoint.model_variant_slug instead of top-level slug for free model discovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f87ee1f7633c45a2af57b1b0f2c1242134baa5a4c904c4a48fa23577a1de740"
+}

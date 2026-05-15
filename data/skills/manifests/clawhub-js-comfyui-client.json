@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65012,
+  "uuid": "skill-clawhub-js-comfyui-client",
+  "skillKey": "clawhub-js-comfyui-client",
+  "name": "ComfyUI Client",
+  "summary": "此技能应在用户需要通过 ComfyUI 生成图片或视频时使用。支持加载工作流、修改 prompt、提交任务、轮询结果并自动下载生成的图片和视频。需 ComfyUI 服务已启动。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.js_comfyui_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JS",
+      "features": [
+        "此技能应在用户需要通过 ComfyUI 生成图片或视频时使用。支持加载工作流、修改 prompt、提交任务、轮询结果并自动下载生成的图片和视频。需 ComfyUI 服务已启动。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/js-comfyui-client@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5433500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "js-comfyui-client",
+      "url": "https://clawhub.ai/skills/js-comfyui-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "js-comfyui-client",
+    "url": "https://clawhub.ai/skills/js-comfyui-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/js-comfyui-client-ffaac551b948e516.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/js-comfyui-client@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-js-comfyui-client-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aee897b36cac749b1986a56e23249fdbcc8e4e3d5df7f79f29348b3c6a6e29f",
+      "artifactSizeBytes": 2714
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:05:23.924Z"
+}

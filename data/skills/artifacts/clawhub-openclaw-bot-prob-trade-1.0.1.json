@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-bot-prob-trade@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bot_prob_trade",
+  "skill": {
+    "id": 15854,
+    "skillKey": "clawhub-openclaw-bot-prob-trade",
+    "name": "Openclaw Bot Prob Trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bot-prob-trade",
+    "url": "https://clawhub.ai/skills/openclaw-bot-prob-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bot-prob-trade-f7f315da864d60c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous trading bot for Polymarket via prob.trade. Run strategies, manage risk, scan markets. Requires the probtrade skill for API access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vlprosvirkin",
+      "userId": "publishers:vlprosvirkin",
+      "displayName": "vlprosvirkin",
+      "image": "https://avatars.githubusercontent.com/u/5712374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 860,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771443544744,
+      "changelog": "Major update: Initial release of the autonomous Polymarket trading bot.\n\n- Added standalone trading bot with market scanning, risk management, and strategy modules.\n- Supports dry-run mode, balance/status checks, and strategy listing.\n- Pluggable strategies included for momentum and pair arbitrage.\n- New config system (`config.yaml`) for customizing strategies and risk limits.\n- All bot actions and outputs are agent/AI-friendly (JSON/formatted text).\n- Requires and integrates with the existing `probtrade` skill for API access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f98843183b1fe07706123c7111f451b73b1003b40ef9d0d1e64b2a1a0ac1a2ee"
+}

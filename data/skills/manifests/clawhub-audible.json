@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68766,
+  "uuid": "skill-clawhub-audible",
+  "skillKey": "clawhub-audible",
+  "name": "Audible",
+  "summary": "适用于用户希望围绕 Audible 规划有声书推荐、会员运营、内容消费提升、书单策划与收听问题排查时使用。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audible",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "适用于用户希望围绕 Audible 规划有声书推荐、会员运营、内容消费提升、书单策划与收听问题排查时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audible@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audible",
+      "url": "https://clawhub.ai/skills/audible"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audible",
+    "url": "https://clawhub.ai/skills/audible",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audible-961281ce5eace239.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audible@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-audible-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80f60aa10a9af1b0a24f085792be995da853999db2964c81fabb1080fbd39f9c",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:57:20.454Z"
+}

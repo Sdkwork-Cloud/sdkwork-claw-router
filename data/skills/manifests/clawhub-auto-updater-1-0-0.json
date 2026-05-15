@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9998,
+  "uuid": "skill-clawhub-auto-updater-1-0-0",
+  "skillKey": "clawhub-auto-updater-1-0-0",
+  "name": "Auto Updater 1.0.0",
+  "summary": "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of what changed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pntrivedy",
+      "features": [
+        "Automatically update Clawdbot and all installed skills once daily",
+        "Runs via cron, checks for updates, applies them, and messages the user with a summary of what c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-updater-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/848537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-updater-1-0-0",
+      "url": "https://clawhub.ai/skills/auto-updater-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-1-0-0",
+    "url": "https://clawhub.ai/skills/auto-updater-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-1-0-0-f82b4c540d4ef893.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-updater-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c342c39cc5565d12379cf0e7959f179d2294f4644ded81d4db2b9aa473dd829e",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T16:06:50.615Z"
+}

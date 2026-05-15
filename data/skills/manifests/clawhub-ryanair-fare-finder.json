@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18762,
+  "uuid": "skill-clawhub-ryanair-fare-finder",
+  "skillKey": "clawhub-ryanair-fare-finder",
+  "name": "Ryanair Fare finder",
+  "summary": "Build and interpret Ryanair fare-finder URLs for cheap flight searches. Use when the user wants to find budget flights from a specific UK airport, configure...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ryanair_fare_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Callum Kemp",
+      "features": [
+        "Build and interpret Ryanair fare-finder URLs for cheap flight searches",
+        "Use when the user wants to find budget flights from a specific UK airport, configure..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ryanair-fare-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15968763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ryanair-fare-finder",
+      "url": "https://clawhub.ai/skills/ryanair-fare-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ryanair-fare-finder",
+    "url": "https://clawhub.ai/skills/ryanair-fare-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ryanair-fare-finder-062e5617848f4f1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ryanair-fare-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ryanair-fare-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddc4d76c1d73cf12f4cd4efaa6a6fffc279036931154d5ca1b00b2292d8f4271",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T21:22:22.076Z"
+}

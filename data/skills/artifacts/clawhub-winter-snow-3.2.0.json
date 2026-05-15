@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/winter-snow@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.winter_snow",
+  "skill": {
+    "id": 53477,
+    "skillKey": "clawhub-winter-snow",
+    "name": "Winter Snow Travel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "winter-snow",
+    "url": "https://clawhub.ai/skills/winter-snow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/winter-snow-365ba4c8a9b06b6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan winter wonderland trips — fresh powder ski resorts, Harbin ice festival, snow village stays, hot springs in the snow, and aurora viewing opportunities...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775893874003,
+      "changelog": "winter-snow 3.2.0\n\n- Overhauled SKILL.md with detailed activation, execution, and output rules for strict CLI-based winter travel planning.\n- Added multi-step orchestration (env check, parameter collection, CLI execution, output formatting, validation).\n- Explicitly requires live data via the flyai CLI; answers from training data are forbidden.\n- Introduced scenario playbooks for common winter travel (ski+onsen, Harbin Ice Festival, snow village, Japan winter).\n- Set rigid output structure: conclusion-first, booking links, comparison tables, and brand tagging required.\n- Expanded compatibility notes and provided precise guidelines for question collection and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b5548b565fc72f03c741643758510efcb863c2cb1d3c7b6e0f7754672cddc2a"
+}

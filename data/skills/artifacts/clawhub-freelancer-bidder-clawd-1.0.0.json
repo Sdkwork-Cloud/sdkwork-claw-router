@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freelancer-bidder-clawd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelancer_bidder_clawd",
+  "skill": {
+    "id": 40975,
+    "skillKey": "clawhub-freelancer-bidder-clawd",
+    "name": "Freelancer Bidder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelancer-bidder-clawd",
+    "url": "https://clawhub.ai/skills/freelancer-bidder-clawd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelancer-bidder-clawd-5712146145687fb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Freelancer.com for new projects matching your skills, draft personalized bid proposals, and track bidding history. Use when you want to find freelance j..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onlyloveher",
+      "userId": "s174xx7xgy6h0qxxb3z22szwc183pph8",
+      "displayName": "onlyloveher",
+      "image": "https://avatars.githubusercontent.com/u/972832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774062255928,
+      "changelog": "Scan Freelancer.com for matching projects",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89e524e704cb8d7f401654f6b6888b82288814fe15c4b7fb0e85f2289b2cdbfc"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62755,
+  "uuid": "skill-clawhub-gold-price-auto",
+  "skillKey": "clawhub-gold-price-auto",
+  "name": "gold-price-auto",
+  "summary": "金价自动汇报 - 每小时自动查询国内外金价并汇报",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hongjiahao371-pixel",
+      "features": [
+        "每小时自动查询国内外金价并汇报"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gold-price-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249543018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gold-price-auto",
+      "url": "https://clawhub.ai/skills/gold-price-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-auto",
+    "url": "https://clawhub.ai/skills/gold-price-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-auto-036ef9934d2f2b31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gold-price-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gold-price-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f722290d53ec1a118dc2c5afca61e78a5a41447b811c60e7337d8984ced42b7",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T05:18:42.776Z"
+}

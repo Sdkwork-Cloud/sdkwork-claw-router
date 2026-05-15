@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10020,
+  "uuid": "skill-clawhub-podcast-generation",
+  "skillKey": "clawhub-podcast-generation",
+  "name": "Podcast Generation with Microsoft Foundry",
+  "summary": "Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creation from content, or integrating with Azure.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thegovind",
+      "features": [
+        "Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model.",
+        "Use when building text-to-speech features, audio narrative generation, podcast creation from co.",
+        "Covers full-stack implementation from React frontend to Python FastAPI backend with WebSocket s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-generation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18152044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-generation",
+      "url": "https://clawhub.ai/skills/podcast-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-generation",
+    "url": "https://clawhub.ai/skills/podcast-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-generation-0f2b870ec3c3a828.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-generation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-generation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4710fb35dd3c9c34f38bff9fd3bab4b390b79ce42adc0ea568d60d44d78be7ae",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:48:12.990Z"
+}

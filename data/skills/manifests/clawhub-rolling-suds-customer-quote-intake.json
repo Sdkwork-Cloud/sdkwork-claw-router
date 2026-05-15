@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38301,
+  "uuid": "skill-clawhub-rolling-suds-customer-quote-intake",
+  "skillKey": "clawhub-rolling-suds-customer-quote-intake",
+  "name": "Rolling Suds Customer Quote Intake",
+  "summary": "Normalize messy Rolling Suds customer or salesperson inputs for exterior cleaning jobs into a clean intake summary, estimator-ready handoff, Workiz-friendly...",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rolling_suds_customer_quote_intake",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael D",
+      "features": [
+        "Normalize messy Rolling Suds customer or salesperson inputs for exterior cleaning jobs into a c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rolling-suds-customer-quote-intake@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63065566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rolling-suds-customer-quote-intake",
+      "url": "https://clawhub.ai/skills/rolling-suds-customer-quote-intake"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rolling-suds-customer-quote-intake",
+    "url": "https://clawhub.ai/skills/rolling-suds-customer-quote-intake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rolling-suds-customer-quote-intake-6d817e5fc92e9793.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rolling-suds-customer-quote-intake@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-rolling-suds-customer-quote-intake-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f42905e0c3cad7c4d0ab267852ed44e22ff52df49ebd4b93eca9ab67d8cc3e25",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T14:16:39.997Z"
+}

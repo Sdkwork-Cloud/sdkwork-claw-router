@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-morning-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_morning_weather",
+  "skill": {
+    "id": 48816,
+    "skillKey": "clawhub-travel-morning-weather",
+    "name": "Travel Morning Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-morning-weather",
+    "url": "https://clawhub.ai/skills/travel-morning-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-morning-weather-e56cab5e248a62ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adjust morning weather briefing location based on travel plans captured from conversation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suidge",
+      "userId": "s1769yn9ptpyx07673vcrfy2yd83jjt3",
+      "displayName": "Neo Shi",
+      "image": "https://avatars.githubusercontent.com/u/34770064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777873232882,
+      "changelog": "Initial release: dynamic morning weather location based on travel plans",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:935b397e4c697c2a1bbb3d7b309d903832e6a4798a048274d3f9ee0ac7ed536e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20329,
+  "uuid": "skill-clawhub-open-meteo",
+  "skillKey": "clawhub-open-meteo",
+  "name": "Open-Meteo Weather + Weather Strip",
+  "summary": "Get weather forecasts via Open-Meteo API (free, no API key). Use when: user asks about weather, temperature, rain probability, UV index, wind, or forecasts f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_meteo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pete dapkus",
+      "features": [
+        "Get weather forecasts via Open-Meteo API (free, no API key)",
+        "Use when: user asks about weather, temperature, rain probability, UV index, wind, or forecasts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-meteo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/433596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-meteo",
+      "url": "https://clawhub.ai/skills/open-meteo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-meteo",
+    "url": "https://clawhub.ai/skills/open-meteo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-meteo-955d3d03f58c01c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-meteo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-meteo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f3b9f713086e33b554297119e28200881b354649ec17e285e245ffde5878163",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T04:07:47.697Z"
+}

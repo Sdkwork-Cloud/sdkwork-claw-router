@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssq-prediction@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssq_prediction",
+  "skill": {
+    "id": 56143,
+    "skillKey": "clawhub-ssq-prediction",
+    "name": "SSQ Prediction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssq-prediction",
+    "url": "https://clawhub.ai/skills/ssq-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssq-prediction-bfeca120977837ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Investment Research - Double Color Ball (双色球) Prediction. Fetches historical data, applies Contextual Quantum-like Bayesian Network (CQ-BN) model, and sen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rix-zhang",
+      "userId": "s17e1mpv44gzs74myt134s9nxx83qkxy",
+      "displayName": "Rix Zhang",
+      "image": "https://avatars.githubusercontent.com/u/42019741?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774580411422,
+      "changelog": "Remove hardcoded private group ID; declare openclaw binary dependency and FEISHU_SSQ_GROUP_ID env var in metadata; clarify Feishu auth relies on OpenClaw platform config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20651bc125346af1a320a48f6fada564211a73e30538552a5aa0d05be3936b78"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19409,
+  "uuid": "skill-clawhub-evolution-whatsapp",
+  "skillKey": "clawhub-evolution-whatsapp",
+  "name": "Evolution WhatsApp",
+  "summary": "Manage WhatsApp via Evolution API: send messages, media, contacts, polls, manage groups, fetch chats, and summarize conversations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolution_whatsapp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kareem Adel",
+      "features": [
+        "Manage WhatsApp via Evolution API: send messages, media, contacts, polls, manage groups, fetch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evolution-whatsapp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66748311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evolution-whatsapp",
+      "url": "https://clawhub.ai/skills/evolution-whatsapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolution-whatsapp",
+    "url": "https://clawhub.ai/skills/evolution-whatsapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolution-whatsapp-3fd6d1821b8528d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evolution-whatsapp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evolution-whatsapp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5136f693f9fe07fb25885f4cefa66709ef614665d2191fd249a1c62463114737",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T17:13:50.433Z"
+}

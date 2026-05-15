@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36567,
+  "uuid": "skill-clawhub-databox",
+  "skillKey": "clawhub-databox",
+  "name": "Databox",
+  "summary": "Databox integration. Manage data, records, and automate workflows. Use when the user wants to interact with Databox data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.databox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Databox integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Databox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/databox@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "databox",
+      "url": "https://clawhub.ai/skills/databox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "databox",
+    "url": "https://clawhub.ai/skills/databox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/databox-87d102ba433aafc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/databox@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-databox-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:058d095f964887598e86b3a20be109f3584e604be1910eb05a4706e687b4ba61",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:22:21.658Z"
+}

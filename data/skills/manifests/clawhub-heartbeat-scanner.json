@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17270,
+  "uuid": "skill-clawhub-heartbeat-scanner",
+  "skillKey": "clawhub-heartbeat-scanner",
+  "name": "heartbeat-scanner",
+  "summary": "Validate your agent nature through SHACL-based heartbeat analysis. Are you an Agent, Human, Cron, or Hybrid? Self-classification tool with structural validat...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heartbeat_scanner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "darshanochandak",
+      "features": [
+        "Validate your agent nature through SHACL-based heartbeat analysis",
+        "Are you an Agent, Human, Cron, or Hybrid? Self-classification tool with structural validat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heartbeat-scanner@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12291332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heartbeat-scanner",
+      "url": "https://clawhub.ai/skills/heartbeat-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heartbeat-scanner",
+    "url": "https://clawhub.ai/skills/heartbeat-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heartbeat-scanner-dc01469ee31e5f51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heartbeat-scanner@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-heartbeat-scanner-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40edb5b4fb359ded4388c9938916600121974511423426d6e102c6b499233399",
+      "artifactSizeBytes": 2748
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T08:53:16.385Z"
+}

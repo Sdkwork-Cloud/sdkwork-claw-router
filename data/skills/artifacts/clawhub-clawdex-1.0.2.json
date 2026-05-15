@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdex@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdex",
+  "skill": {
+    "id": 8728,
+    "skillKey": "clawhub-clawdex",
+    "name": "Clawdex by Koi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdex",
+    "url": "https://clawhub.ai/skills/clawdex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdex-db5856badde75c31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security check for ClawHub skills powered by Koi. Query the Clawdex API before installing any skill to verify it's safe."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wearekoi",
+      "userId": "publishers:wearekoi",
+      "displayName": "wearekoi",
+      "image": "https://avatars.githubusercontent.com/u/245664760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6775,
+      "installsAllTime": 60,
+      "installsCurrent": 58,
+      "stars": 6,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769966383139,
+      "changelog": "- Updated skill name and description to reference \"Koi\" instead of \"Koi Security.\"\n- Changed \"About Koi Security\" section title to \"About Koi\" and updated the description, mentioning that Clawdex verdicts are powered by Wings, the agentic AI risk engine.\n- Minor rewording throughout documentation for consistency and clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c5f35ffdcb4fa09da1eb32176fe368e6c8317edf9f2b58aaf61214f7fea18477"
+}

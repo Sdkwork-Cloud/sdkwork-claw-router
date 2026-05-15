@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/managing-actingweb-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.managing_actingweb_memory",
+  "skill": {
+    "id": 22737,
+    "skillKey": "clawhub-managing-actingweb-memory",
+    "name": "ActingWeb Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "managing-actingweb-memory",
+    "url": "https://clawhub.ai/skills/managing-actingweb-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/managing-actingweb-memory-b10c361da81eb46d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stores and retrieves personal preferences, decisions, and context across conversations using ActingWeb Personal AI Memory via MCP. Activates when the user me..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gregertw",
+      "userId": "publishers:gregertw",
+      "displayName": "Greger Teigre Wedel",
+      "image": "https://avatars.githubusercontent.com/u/23233429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772447062233,
+      "changelog": "Initial release with persistent, cross-session memory features for personalized AI assistance.\n\n- Enables saving and retrieving user preferences, decisions, and context across conversations via ActingWeb Personal AI Memory.\n- Activates automatically when requests would benefit from long-term memory, shared context, or historical user data.\n- Provides tools to search, save, update, and manage categorized memories, including auto-categorization and preview functionality.\n- Supports shared memories from trusted connections and allows remote actions (e.g., device control, triggering workflows).\n- Includes the Context Builder workflow for gathering complex, cross-category context to improve task performance.\n- Offers guidance on best practices for memory usage and maintenance to ensure accuracy and relevance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:510d2996f495be61680e55c730a977d77d5af5cacc123d1b8c750f5aa0a660f3"
+}

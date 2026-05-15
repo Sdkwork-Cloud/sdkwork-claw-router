@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53845,
+  "uuid": "skill-clawhub-prd-for-agents",
+  "skillKey": "clawhub-prd-for-agents",
+  "name": "PRD for Agents",
+  "summary": "Use this skill whenever an agent or user asks to write, draft, create, or produce a PRD, product requirements document, product spec, or feature spec — espec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_for_agents",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanketsao",
+      "features": [
+        "Use this skill whenever an agent or user asks to write, draft, create, or produce a PRD, produc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prd-for-agents@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97818119?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prd-for-agents",
+      "url": "https://clawhub.ai/skills/prd-for-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-for-agents",
+    "url": "https://clawhub.ai/skills/prd-for-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-for-agents-17587f7d38f0f76a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prd-for-agents@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prd-for-agents-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3612f0d23f93d50fca86d95f89ec90d96bacd3b8bc68a9b645e169f87d541c72",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T00:05:18.811Z"
+}

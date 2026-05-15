@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58424,
+  "uuid": "skill-clawhub-test-ai-map-api",
+  "skillKey": "clawhub-test-ai-map-api",
+  "name": "test-ai-map-api",
+  "summary": "百度地图 Agent Plan 直连调用 place、direction、geocoding、reverse_geocoding、weather 五类能力。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_ai_map_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Clifton Hills",
+      "features": [
+        "百度地图 Agent Plan 直连调用 place、direction、geocoding、reverse_geocoding、weather 五类能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-ai-map-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12622610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-ai-map-api",
+      "url": "https://clawhub.ai/skills/test-ai-map-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-ai-map-api",
+    "url": "https://clawhub.ai/skills/test-ai-map-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-ai-map-api-d69185987c398a49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-ai-map-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-ai-map-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3670b9cc208c7346007781e749b85fb5bd9371b898e1b4303bdab0368a002f2",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T06:09:32.554Z"
+}

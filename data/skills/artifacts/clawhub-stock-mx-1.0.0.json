@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-mx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_mx",
+  "skill": {
+    "id": 72511,
+    "skillKey": "clawhub-stock-mx",
+    "name": "stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-mx",
+    "url": "https://clawhub.ai/skills/stock-mx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-mx-2f4533131decd816.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于东方财富权威数据库，提供股票选股、行情、财务及关联关系等金融数据的智能查询与筛选服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jade-srgb",
+      "userId": "s17aqa4yqej67v4g7mrzqwnvm183k152",
+      "displayName": "Jade-srgb",
+      "image": "https://avatars.githubusercontent.com/u/134922000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774262522286,
+      "changelog": "Initial release of stock-mx skillset:\n\n- Introduces three financial skills: news search, intelligent stock selection, and financial data query.\n- Provides detailed API usage for each skill, including required parameters and sample queries.\n- Includes field-by-field explanations of response data for all supported endpoints.\n- Offers notes on API key usage and best practices for querying data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25be561b70b80151990a3e9445a487d26bbf2456fc6acb3613b5555381140108"
+}

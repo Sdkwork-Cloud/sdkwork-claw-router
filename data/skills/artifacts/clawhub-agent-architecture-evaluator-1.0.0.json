@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-architecture-evaluator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_architecture_evaluator",
+  "skill": {
+    "id": 27668,
+    "skillKey": "clawhub-agent-architecture-evaluator",
+    "name": "agent-architecture-evaluator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-architecture-evaluator",
+    "url": "https://clawhub.ai/skills/agent-architecture-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-architecture-evaluator-112d1ae8e6b02c40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when evaluating, testing, and optimizing an agent architecture or multi-agent system. Best for reviewing planning, routing, memory, tool use, reliability..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ada01325150-alt",
+      "userId": "s175wkdbn9mwt7csspvf9yqa2h83kymm",
+      "displayName": "ada01325150-alt",
+      "image": "https://avatars.githubusercontent.com/u/255065451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773372910172,
+      "changelog": "- Initial release of the Agent Architecture Evaluator skill.\n- Enables systematic evaluation, testing, and optimization of agent or multi-agent system architectures.\n- Reviews key dimensions: planner/executor splits, routers, memory, tool use, reliability, cost, observability, and failure modes.\n- Provides standardized outputs: architecture inventory, failure mode map, test plan, optimization roadmap, measurement plan, and final recommendations.\n- Includes best practices, anti-patterns, and references for structured architecture review and optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ccddb4a80ca9aba3fec9ecd02e3a311206525cc3bc8a41bc8f714f0b7ee17d8b"
+}

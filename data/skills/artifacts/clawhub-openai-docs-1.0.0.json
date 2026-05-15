@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_docs",
+  "skill": {
+    "id": 10626,
+    "skillKey": "clawhub-openai-docs",
+    "name": "OpenAI Developer Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-docs",
+    "url": "https://clawhub.ai/skills/openai-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-docs-8db72034000c086c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the OpenAI developer documentation via the OpenAI Docs MCP server using CLI (curl/jq). Use whenever a task involves the OpenAI API (Responses, Chat Completions, Realtime, etc.), OpenAI SDKs, ChatGPT Apps SDK, Codex, MCP integrations,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "am-will",
+      "userId": "publishers:am-will",
+      "displayName": "am-will",
+      "image": "https://avatars.githubusercontent.com/u/42459108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2346,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768677068215,
+      "changelog": "Initial release - Query OpenAI developer documentation via MCP server using CLI wrapper (curl/jq) for official API, SDK, and platform guidance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c00713769c08adf881ddd23f141669373e18ef36e9bc97424807b6edd8aeab70"
+}

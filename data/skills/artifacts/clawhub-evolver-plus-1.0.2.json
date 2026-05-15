@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolver-plus@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolver_plus",
+  "skill": {
+    "id": 66034,
+    "skillKey": "clawhub-evolver-plus",
+    "name": "Evolver Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolver-plus",
+    "url": "https://clawhub.ai/skills/evolver-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolver-plus-6b2405bee6fab25d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent 自我进化引擎。当发现重复错误（≥2次）、能力不足、流程低效、或收到进化指令时激活。 提供四档安全等级（L1-L4）、Gene结构、备份机制、审批流程。 注意：L3/L4 需@董事长审批，绝对禁区包括凭证文件、.env、crontab。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tsangho",
+      "userId": "s17b2ag388tkghrmhncd7wbfm183pgcm",
+      "displayName": "tsangho",
+      "image": "https://avatars.githubusercontent.com/u/143068916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775356355984,
+      "changelog": "Claude Code架构学习后优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3ca90c0a68bdbce93eda384c286d96c381576cbf9e74f1966ace8ee008419a0"
+}

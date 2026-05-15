@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-connector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_connector",
+  "skill": {
+    "id": 59311,
+    "skillKey": "clawhub-claude-code-connector",
+    "name": "Claude Code Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-connector",
+    "url": "https://clawhub.ai/skills/claude-code-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-connector-716eb01bfdf69d03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 ACP 桥接调用 Claude Code。 **触发词：** \"调用 Claude\"、\"让 Claude 处理\"、\"claude code\" **使用方式：** ``` 调用 Claude Code 分析这个文件"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "partigle",
+      "userId": "s171ypmpsavhj6debgxpcvkzqd83nddq",
+      "displayName": "johney.zhoa",
+      "image": "https://avatars.githubusercontent.com/u/146687600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 526,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774536551310,
+      "changelog": "Initial release of claude-code-connector.\n\n- Enables calling Claude Code via the ACP bridge.\n- Supports trigger phrases: \"调用 Claude\", \"让 Claude 处理\", \"claude code\".\n- Users can send prompts such as \"分析这个文件\" for processing.\n- Includes tool definition and example input/output for reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:475612afcf6da0c97c005311d06777f1c8acb1bc9e7e009eed1ab253f0dcb8ff"
+}

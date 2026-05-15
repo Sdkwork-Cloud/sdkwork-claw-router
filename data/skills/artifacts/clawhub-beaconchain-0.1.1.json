@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beaconchain@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beaconchain",
+  "skill": {
+    "id": 13643,
+    "skillKey": "clawhub-beaconchain",
+    "name": "Beaconchain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beaconchain",
+    "url": "https://clawhub.ai/skills/beaconchain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beaconchain-297019efb5fee68c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Ethereum validator dashboard health on beaconcha.in via V2 API, focused on one-check-per-day status and BeaconScore-first triage. Use when the user asks to check validator health, BeaconScore, missed duties, or set up low-anxiety d."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thisisjeron",
+      "userId": "publishers:thisisjeron",
+      "displayName": "ThisIsJeron",
+      "image": "https://avatars.githubusercontent.com/u/14175797?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770774552028,
+      "changelog": "Declare required env vars/runtime in metadata, add security transparency section, and set disableModelInvocation for explicit-use safety.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37edbb9db49771c1238f3b1b1ca54466e991537afe5cae12fe1f62a7c92d7936"
+}

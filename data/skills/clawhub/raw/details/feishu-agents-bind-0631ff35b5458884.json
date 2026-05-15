@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "feishu-agents-bind",
+    "displayName": "feishu-agents",
+    "summary": "绑定飞书机器人到Agent。用户发送App ID和App Secret即可自动配置飞书账号并绑定到指定Agent。用于：(1) 用户提供App ID和App Secret (2) 创建或选择要绑定的Agent (3) 自动配置openclaw.json并重启Gateway。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773733588647,
+    "updatedAt": 1778310816702
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773733588647,
+    "changelog": "中文使用教程： \n1.发送飞书机器人App ID：xxxx,App Secret:xxxxx,Agent:名称\n2.等待创建完成后，打开机器人发一条消息获取：Pairing code\n3.执行：openclaw pairing approve feishu 你的Pairing code\n4.重启：openclaw channels status\n\nInitial release: Automates Feishu bot binding to an agent using App ID and App Secret.\n\n- Allows users to provide Feishu App ID and App Secret to quickly configure and bind to a selected agent.\n- Guides users to create or select a target agent and automates updates to openclaw.json.\n- Includes commands for agent creation, credential configuration, binding, and Gateway restart.\n- Provides usage instructions, trigger conditions, and setup requirements for a smooth configuration experience.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "aigcpro",
+    "userId": "s17f5v6frfa8dhnx8zqs2xe7mh83n56g",
+    "displayName": "OpenAix",
+    "image": "https://avatars.githubusercontent.com/u/21351751?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310816702
+  }
+}

@@ -95,6 +95,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 const BACKEND_API_PREFIX = '/backend/v3/api';
 
                 export interface ClawRouterAppSdkClientOptions {
+                  accessToken?: string;
                   appBaseUrl?: string;
                   authToken?: string;
                   platform?: string;
@@ -102,6 +103,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 }
 
                 export interface ClawRouterBackendSdkClientOptions {
+                  accessToken?: string;
                   backendBaseUrl?: string;
                   authToken?: string;
                   platform?: string;
@@ -111,6 +113,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 export function getClawRouterAppSdkClient(options: ClawRouterAppSdkClientOptions = {}) {
                   return new SdkworkAppClient({
                     baseUrl: normalizeGeneratedSdkBaseUrl(options.appBaseUrl ?? APP_API_PREFIX, APP_API_PREFIX),
+                    accessToken: options.accessToken,
                     authToken: options.authToken,
                     platform: options.platform,
                     timeout: options.timeout,
@@ -120,6 +123,7 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 export function getClawRouterBackendSdkClient(options: ClawRouterBackendSdkClientOptions = {}) {
                   return new SdkworkBackendClient({
                     baseUrl: normalizeGeneratedSdkBaseUrl(options.backendBaseUrl ?? BACKEND_API_PREFIX, BACKEND_API_PREFIX),
+                    accessToken: options.accessToken,
                     authToken: options.authToken,
                     platform: options.platform,
                     timeout: options.timeout,
@@ -200,6 +204,55 @@ class FrontendContractGuardianTest(unittest.TestCase):
                 ["/", "/admin/ratelimit", "/console/api-keys", "/console/dashboard", "/models"],
                 routes,
             )
+
+    def test_extracts_contracted_child_routes_from_wildcard_mount(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(
+                root,
+                """
+                <Routes>
+                  <Route path="/auth/*" element={<AuthRoutes />} />
+                </Routes>
+                """,
+            )
+            self.write_contract(
+                root,
+                """
+                routes:
+                  - route: /auth/login
+                    required_tables: [iam_user]
+                  - route: /auth/register
+                    required_tables: [iam_user]
+                frontend_operations: []
+                frontend_models: []
+                """,
+            )
+            self.write_route_classification(
+                root,
+                """
+                schema: sdkwork-claw-router-frontend-route-classification
+                routes:
+                  - route: /auth/login
+                    package: portal-root
+                    owner: public-portal
+                    route_scope: public
+                    delivery_kind: sdk_backed_business_runtime
+                    api_surface: app
+                    evidence: [apps/sdkwork-claw-router-portal/src/App.tsx]
+                  - route: /auth/register
+                    package: portal-root
+                    owner: public-portal
+                    route_scope: public
+                    delivery_kind: sdk_backed_business_runtime
+                    api_surface: app
+                    evidence: [apps/sdkwork-claw-router-portal/src/App.tsx]
+                """,
+            )
+
+            routes = FrontendContractGuardian(root=root).extract_portal_routes()
+
+            self.assertEqual(["/auth/login", "/auth/register"], routes)
 
     def test_browser_source_files_ignore_dependency_and_build_artifact_directories(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -668,7 +721,6 @@ class FrontendContractGuardianTest(unittest.TestCase):
                   backendBaseUrl?: string;
                   apiKey?: string;
                   authToken?: string;
-                  accessToken?: string;
                   platform?: string;
                   timeout?: number;
                   headers?: Record<string, string>;
@@ -2655,6 +2707,32 @@ class FrontendContractGuardianTest(unittest.TestCase):
             result = FrontendContractGuardian(root=root).run()
 
             self.assertTrue(result.ok, result.messages)
+
+    def test_accepts_dependency_check_prefix_before_vite_dev_scripts(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_app(root, '<Route path="/" element={<Home />} />')
+            self.write_manifest(root, {"routes": {"/": {"tables": []}}, "tables": []})
+            self.write_contract(root, "routes:\n  - route: /\n")
+            self.write_portal_package(
+                root,
+                """
+                {
+                  "scripts": {
+                    "dev": "pnpm deps:check && vite --configLoader native",
+                    "browser:dev": "pnpm deps:check && vite --configLoader native",
+                    "build": "vite build --configLoader native"
+                  }
+                }
+                """,
+            )
+
+            result = FrontendContractGuardian(root=root).run()
+
+            self.assertNotIn(
+                "portal dev and browser:dev scripts must run Vite directly with native config loading",
+                result.messages,
+            )
 
     def test_reports_local_tool_api_browser_network_source_with_invalid_purpose(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

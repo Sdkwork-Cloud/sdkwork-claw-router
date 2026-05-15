@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/family-hotel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_hotel",
+  "skill": {
+    "id": 53542,
+    "skillKey": "clawhub-family-hotel",
+    "name": "family-hotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-hotel",
+    "url": "https://clawhub.ai/skills/family-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-hotel-3d30592bf7d8acdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find hotels perfect for families — multi-bed rooms, kid-friendly amenities, nearby playgrounds, and family-oriented services. Also supports: flight booking,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "v3.2.3",
+      "createdAt": 1775719296750,
+      "changelog": "No user-facing changes in v3.2.3.\n\n- No updates detected; documentation and functionality remain as in v3.2.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d21a87f659ceba4d034f37e33bf0a2d3a2845681d3ea2cf2ef9129a9cc95198"
+}

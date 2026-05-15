@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cheap-flight@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheap_flight",
+  "skill": {
+    "id": 51415,
+    "skillKey": "clawhub-cheap-flight",
+    "name": "Search Cheap Flights — Low-Cost Airfare, Budget Airlines, Discount Tickets & Flight Deals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheap-flight",
+    "url": "https://clawhub.ai/skills/cheap-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheap-flight-e8c57781843b1bed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the cheapest flights between any two cities. Compares prices across airlines, sorts by lowest fare, and highlights budget options including red-eye and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1776081863826,
+      "changelog": "Renamed and optimized per naming methodology v3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2963f1d343df91c0d910cc1662e42c0e91bd3d77d44223cf78ad2cca66a4554d"
+}

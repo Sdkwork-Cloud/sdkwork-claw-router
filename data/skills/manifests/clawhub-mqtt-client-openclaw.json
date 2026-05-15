@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25419,
+  "uuid": "skill-clawhub-mqtt-client-openclaw",
+  "skillKey": "clawhub-mqtt-client-openclaw",
+  "name": "Mqtt Client",
+  "summary": "Universal MQTT Client for OpenClaw with Node.js/mqtt.js. Enables Connection Management, Subscription Management, Message Handling and OpenClaw Integration fo...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mqtt_client_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sanweb",
+      "features": [
+        "Universal MQTT Client for OpenClaw with Node.js/mqtt.js",
+        "Enables Connection Management, Subscription Management, Message Handling and OpenClaw Integrati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mqtt-client-openclaw@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78940573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mqtt-client-openclaw",
+      "url": "https://clawhub.ai/skills/mqtt-client-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mqtt-client-openclaw",
+    "url": "https://clawhub.ai/skills/mqtt-client-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mqtt-client-openclaw-f5acb4439d52d846.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mqtt-client-openclaw@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mqtt-client-openclaw-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63da3bd933483e046671c28608c7f2872c7f5577c01149986a6bc8e0a796602f",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:46:01.928Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-claw@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_claw",
+  "skill": {
+    "id": 23978,
+    "skillKey": "clawhub-web-claw",
+    "name": "Web Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-claw",
+    "url": "https://clawhub.ai/skills/web-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-claw-af936c216e97b614.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web dashboard for OpenClaw. Browser-based UI for any installed skill. Schema-driven rendering, JWT auth, RBAC, AI chat, real-time updates. Install web dashbo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mailnike",
+      "userId": "s17ee5y8kxe1zfx1t7te9wcgzx83j215",
+      "displayName": "Nikhil Jathar",
+      "image": "https://avatars.githubusercontent.com/u/22786232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773147053426,
+      "changelog": "**Major change: Streamlined packaging, clarified responsibilities, and reduced included files.**\n\n- Removed nearly all application code; only retains metadata and guidance files, moving full app code retrieval to install-time clone from GitHub.\n- Added clear note that ERP setup and data management are handled by the erpclaw skill, not webclaw.\n- Actions remain the same, but reset-password now documents the ability to set a custom password.\n- Installation and privilege requirements simplified and clarified.\n- Only includes CONTRIBUTING.md as an onboard doc; all core files now fetched during install.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dfc11dbc54742af22a195354bce6c0e78165d8b49b5407825a8fe70e8374938"
+}

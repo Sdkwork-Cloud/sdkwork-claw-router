@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60814,
+  "uuid": "skill-clawhub-balance-checker",
+  "skillKey": "clawhub-balance-checker",
+  "name": "Balance Checker",
+  "summary": "查询 AI API 服务商的余额（DeepSeek、Moonshot/Kimi、火山引擎）。当用户说\"查余额\"、\"还有多少额度\"、\"余额多少\"时自动触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.balance_checker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kyya",
+      "features": [
+        "查询 AI API 服务商的余额（DeepSeek、Moonshot/Kimi、火山引擎）。当用户说\"查余额\"、\"还有多少额度\"、\"余额多少\"时自动触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/balance-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13448248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "balance-checker",
+      "url": "https://clawhub.ai/skills/balance-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "balance-checker",
+    "url": "https://clawhub.ai/skills/balance-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/balance-checker-8f042c199ff09ef9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/balance-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-balance-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f95f77292dfaf7053c33dffaf36c7a7b24516729bce824022398aeccc754ee60",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T10:09:31.426Z"
+}

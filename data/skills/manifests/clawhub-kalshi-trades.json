@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47495,
+  "uuid": "skill-clawhub-kalshi-trades",
+  "skillKey": "clawhub-kalshi-trades",
+  "name": "kalshi trades",
+  "summary": "Read-only Kalshi OpenAPI scouting skill for market discovery, liquidity checks, and market validation. Use for scanning and ranking Kalshi opportunities. Pai...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_trades",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ben",
+      "features": [
+        "Read-only Kalshi OpenAPI scouting skill for market discovery, liquidity checks, and market vali.",
+        "Use for scanning and ranking Kalshi opportunities"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-trades@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6516437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-trades",
+      "url": "https://clawhub.ai/skills/kalshi-trades"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-trades",
+    "url": "https://clawhub.ai/skills/kalshi-trades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-trades-1ed6e6e6f995f970.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-trades@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-trades-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2705560266cd39dcc87b5cf7692d6e4343506036642167a0e20178555e8aaf0",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T20:47:13.254Z"
+}

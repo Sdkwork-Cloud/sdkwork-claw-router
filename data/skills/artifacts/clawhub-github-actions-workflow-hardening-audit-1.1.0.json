@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-workflow-hardening-audit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_workflow_hardening_audit",
+  "skill": {
+    "id": 24830,
+    "skillKey": "clawhub-github-actions-workflow-hardening-audit",
+    "name": "GitHub Actions Workflow Hardening Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-workflow-hardening-audit",
+    "url": "https://clawhub.ai/skills/github-actions-workflow-hardening-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-workflow-hardening-audit-d56d11b765899e8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit GitHub Actions workflow files for hardening gaps (missing timeouts/permissions/concurrency and floating action refs)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772921206934,
+      "changelog": "Add file/event regex filters for targeted workflow triage in large repos",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e53232cc7449d759d53149fe61295cb69609fa3959e303e752f17c659f38e5b"
+}

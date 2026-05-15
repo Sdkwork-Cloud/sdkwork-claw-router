@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64165,
+  "uuid": "skill-clawhub-youtube-whisper",
+  "skillKey": "clawhub-youtube-whisper",
+  "name": "Youtube Whisper",
+  "summary": "YouTube影片一鍵轉文字！自動下載影片並用AI轉成中文/英文字幕，沒有字幕的影片也能用。",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_whisper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ken",
+      "features": [
+        "YouTube影片一鍵轉文字！自動下載影片並用AI轉成中文/英文字幕，沒有字幕的影片也能用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-whisper@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13045852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-whisper",
+      "url": "https://clawhub.ai/skills/youtube-whisper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-whisper",
+    "url": "https://clawhub.ai/skills/youtube-whisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-whisper-e915b9af73dca67c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-whisper@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-whisper-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3671da109d4730cc587b4a2bc7570c8f2a265503f29fa46ad9c5eac5ce40c69e",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:24:51.439Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-portfolio-risk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_portfolio_risk",
+  "skill": {
+    "id": 15364,
+    "skillKey": "clawhub-afrexai-portfolio-risk",
+    "name": "Portfolio Risk Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-portfolio-risk",
+    "url": "https://clawhub.ai/skills/afrexai-portfolio-risk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-portfolio-risk-de50d6e75bcd3bc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze your portfolio to identify concentration risks, calculate Value at Risk, estimate drawdowns, beta, Sharpe ratio, income, run stress tests, and sugges..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1017,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771169321487,
+      "changelog": "**Initial release of the Portfolio Risk Analyzer: a comprehensive portfolio risk management system.**\n\n- Analyze user investment portfolios with structured intake, including price lookups and summary tables.\n- Calculate key risk metrics: concentration risk, parametric Value at Risk (VaR), estimated maximum drawdown, beta, Sharpe ratio, and income analysis.\n- Provide stress test results for historical and custom scenarios; report detailed scenario impacts and recovery estimates.\n- Assess current allocation versus standard model portfolios and offer optimization suggestions.\n- Fully self-contained functionality — no reliance on external APIs; leverages web search for data as needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a6d95917d1c0e44c34970ad19e10d2070512ea75fde0ad006fa8e02623c769c"
+}

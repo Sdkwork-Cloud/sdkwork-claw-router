@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/registration@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.registration",
+  "skill": {
+    "id": 26809,
+    "skillKey": "clawhub-registration",
+    "name": "Registration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "registration",
+    "url": "https://clawhub.ai/skills/registration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/registration-29c9c30e0604515c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage registration records and attendee data. Use when logging sign-ups, checking capacity, converting export formats, generating confirmation reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773798433621,
+      "changelog": "v2.5 retry: desc+homepage+source+security",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60db002e71c1dc71b8a7c7eed84b836554f0703cffbe7a17fc6a6c4a717693fc"
+}

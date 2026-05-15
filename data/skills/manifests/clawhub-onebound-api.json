@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34151,
+  "uuid": "skill-clawhub-onebound-api",
+  "skillKey": "clawhub-onebound-api",
+  "name": "onebound-api",
+  "summary": "Search Taobao and 1688 products, and fetch product details, through the Onebound platform gateway.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onebound_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff2011eng",
+      "features": [
+        "Search Taobao and 1688 products, and fetch product details, through the Onebound platform gatew."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onebound-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55311884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onebound-api",
+      "url": "https://clawhub.ai/skills/onebound-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onebound-api",
+    "url": "https://clawhub.ai/skills/onebound-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onebound-api-264c37dcd3a66cf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onebound-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-onebound-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea5d47b6215b9cd248b9a7322471ae881edcc9df3913e376c8b0a3be02bbecaa",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T04:04:11.370Z"
+}

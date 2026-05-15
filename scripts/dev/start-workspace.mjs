@@ -2,6 +2,7 @@
 
 import { mkdirSync } from 'node:fs';
 import { spawn } from 'node:child_process';
+import { createServer } from 'node:net';
 import path from 'node:path';
 import process from 'node:process';
 import { fileURLToPath } from 'node:url';
@@ -45,6 +46,13 @@ function splitBind(bind, flagName) {
   }
 
   return { host, port: String(port) };
+}
+
+function listenHostFromBindHost(host) {
+  if (host === '[::]') {
+    return '::';
+  }
+  return host;
 }
 
 function toPortablePath(value) {
@@ -102,7 +110,7 @@ function cargoCommand(platform = process.platform) {
 }
 
 function localSqliteDatabaseUrl(workspaceRoot) {
-  return `sqlite://${toPortablePath(path.join(workspaceRoot, DEFAULT_DEV_DATABASE_RELATIVE_PATH))}`;
+  return `sqlite://${toPortablePath(DEFAULT_DEV_DATABASE_RELATIVE_PATH)}`;
 }
 
 function defaultModelsCatalogRoot(workspaceRoot) {
@@ -231,13 +239,22 @@ export function parseWorkspaceArgs(argv = []) {
   return settings;
 }
 
-function serviceEnv(settings, bindEnvName, bindValue) {
+function serviceEnv(settings, bindEnvName, bindValue, {
+  startupInstallMode = 'ensure',
+} = {}) {
+  const databaseMaxConnections = process.env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS
+    ?? (String(settings.databaseUrl ?? '').trim().toLowerCase().startsWith('sqlite:') ? '1' : undefined);
   const env = {
     ...process.env,
     SDKWORK_CLAW_DEPLOYMENT_MODE: 'server',
     [bindEnvName]: bindValue,
     SDKWORK_CLAW_DATABASE_URL: settings.databaseUrl,
+    SDKWORK_CLAW_STARTUP_INSTALL_MODE: startupInstallMode,
     SDKWORK_MODELS_CATALOG_ROOT: settings.modelsCatalogRoot,
+    SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP:
+      process.env.SDKWORK_CLAW_MODEL_RANKING_RUN_ON_STARTUP ?? 'false',
+    SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED:
+      process.env.SDKWORK_CLAW_USAGE_SETTLEMENT_WORKER_ENABLED ?? 'false',
     SDKWORK_CLAW_API_KEY_PEPPER:
       process.env.SDKWORK_CLAW_API_KEY_PEPPER ?? DEFAULT_DEV_SECRET,
     SDKWORK_CLAW_TRUSTED_SUBJECT_SECRET:
@@ -251,6 +268,9 @@ function serviceEnv(settings, bindEnvName, bindValue) {
     SDKWORK_CLAW_INSTALL_SEED_PROFILE:
       process.env.SDKWORK_CLAW_INSTALL_SEED_PROFILE ?? 'commercial',
   };
+  if (databaseMaxConnections !== undefined) {
+    env.SDKWORK_CLAW_DATABASE_MAX_CONNECTIONS = databaseMaxConnections;
+  }
 
   return env;
 }
@@ -275,7 +295,9 @@ function portalEnv(settings) {
 
 function edgeServerEnv(settings) {
   return {
-    ...serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind),
+    ...serviceEnv(settings, 'SDKWORK_CLAW_SERVER_BIND', settings.serverBind, {
+      startupInstallMode: 'skip',
+    }),
     SDKWORK_CLAW_EDGE_SERVER: '1',
     SDKWORK_CLAW_EDGE_GATEWAY_BASE_URL: settings.gatewayForwardUrl,
     SDKWORK_CLAW_EDGE_BACKEND_API_BASE_URL: settings.backendApiForwardUrl,
@@ -355,7 +377,9 @@ export function buildWorkspaceCommandPlan(settings, {
       command: cargoCommand(platform),
       args: ['run', '-p', 'sdkwork-claw-gateway'],
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_GATEWAY_BIND', settings.gatewayBind),
+      env: serviceEnv(settings, 'SDKWORK_CLAW_GATEWAY_BIND', settings.gatewayBind, {
+        startupInstallMode: 'skip',
+      }),
       shell: false,
       windowsHide: platform === 'win32',
     },
@@ -364,7 +388,9 @@ export function buildWorkspaceCommandPlan(settings, {
       command: cargoCommand(platform),
       args: ['run', '-p', 'sdkwork-claw-admin-api'],
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_ADMIN_API_BIND', settings.adminApiBind),
+      env: serviceEnv(settings, 'SDKWORK_CLAW_ADMIN_API_BIND', settings.adminApiBind, {
+        startupInstallMode: 'skip',
+      }),
       shell: false,
       windowsHide: platform === 'win32',
     },
@@ -373,7 +399,9 @@ export function buildWorkspaceCommandPlan(settings, {
       command: cargoCommand(platform),
       args: ['run', '-p', 'sdkwork-claw-app-api'],
       cwd: workspaceRoot,
-      env: serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind),
+      env: serviceEnv(settings, 'SDKWORK_CLAW_APP_API_BIND', settings.appApiBind, {
+        startupInstallMode: 'skip',
+      }),
       shell: false,
       windowsHide: platform === 'win32',
     },
@@ -401,6 +429,70 @@ export function buildWorkspaceCommandPlan(settings, {
     nodeExecutable: process.execPath,
     steps,
   };
+}
+
+export function workspaceBindTargets(settings) {
+  return [
+    { name: 'gateway', bind: settings.gatewayBind },
+    { name: 'admin-api', bind: settings.adminApiBind },
+    { name: 'app-api', bind: settings.appApiBind },
+    { name: 'portal', bind: settings.portalBind },
+    { name: 'server', bind: settings.serverBind },
+  ].map((target) => {
+    const { host, port } = splitBind(target.bind, `--${target.name}-bind`);
+    return {
+      ...target,
+      host,
+      port,
+    };
+  });
+}
+
+export async function canBindWorkspaceTarget(target) {
+  return new Promise((resolve) => {
+    const server = createServer();
+    server.unref();
+    server.once('error', () => resolve(false));
+    server.listen(
+      {
+        host: listenHostFromBindHost(target.host),
+        port: Number.parseInt(target.port, 10),
+        exclusive: true,
+      },
+      () => {
+        server.close(() => resolve(true));
+      },
+    );
+  });
+}
+
+export async function findUnavailableWorkspaceBinds(
+  settings,
+  canBind = canBindWorkspaceTarget,
+) {
+  const unavailable = [];
+  for (const target of workspaceBindTargets(settings)) {
+    if (!(await canBind(target))) {
+      unavailable.push(target);
+    }
+  }
+  return unavailable;
+}
+
+export async function assertWorkspaceBindsAvailable(
+  settings,
+  canBind = canBindWorkspaceTarget,
+) {
+  const unavailable = await findUnavailableWorkspaceBinds(settings, canBind);
+  if (unavailable.length === 0) {
+    return;
+  }
+
+  throw new Error(
+    `workspace ports are already in use: ${
+      unavailable.map((target) => `${target.name} ${target.bind}`).join(', ')
+    }. Stop the stale workspace process or restart with explicit --*-bind ports.`,
+  );
 }
 
 export function workspaceAccessLines(settings) {
@@ -613,6 +705,13 @@ async function main() {
 
   if (settings.dryRun) {
     process.exit(0);
+  }
+
+  try {
+    await assertWorkspaceBindsAvailable(settings);
+  } catch (error) {
+    console.error(`[start-workspace] ${error.message}`);
+    process.exit(1);
   }
 
   const children = [];

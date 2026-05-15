@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65596,
+  "uuid": "skill-clawhub-orange-office-api",
+  "skillKey": "clawhub-orange-office-api",
+  "name": "橙子通API自动化",
+  "summary": "橙子通（orange-office.cn）库存管理系统 API 自动化。用于通过 API 创建出库单、查询库存、管理主播仓库等，无需浏览器。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orange_office_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiao1230123",
+      "features": [
+        "橙子通（orange-office.cn）库存管理系统 API 自动化。用于通过 API 创建出库单、查询库存、管理主播仓库等，无需浏览器。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orange-office-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140776820?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orange-office-api",
+      "url": "https://clawhub.ai/skills/orange-office-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orange-office-api",
+    "url": "https://clawhub.ai/skills/orange-office-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orange-office-api-48e814602ea1a646.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orange-office-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orange-office-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:735cbb2eb80cfb55c08f16ded75b64fe57c5cbdb4daeb7637632ea8f04464cf5",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T16:05:31.216Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gigohotel@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gigohotel",
+  "skill": {
+    "id": 63311,
+    "skillKey": "clawhub-gigohotel",
+    "name": "aigo hotel search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gigohotel",
+    "url": "https://clawhub.ai/skills/gigohotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gigohotel-5391319231aa31a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能酒店搜索，支持地点、日期、星级、预算筛选"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "l18784175468-oss",
+      "userId": "publishers:l18784175468-oss",
+      "displayName": "qkzy-oss",
+      "image": "https://avatars.githubusercontent.com/u/239508520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 614,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1771999480632,
+      "changelog": "- Bumped version to 1.0.9.\n- No other changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63d774672ba6d12156796e9a529b1f260a7c6a438ee2b211b612904299ffc56e"
+}

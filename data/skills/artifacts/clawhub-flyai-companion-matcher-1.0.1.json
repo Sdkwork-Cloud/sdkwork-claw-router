@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyai-companion-matcher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_companion_matcher",
+  "skill": {
+    "id": 72133,
+    "skillKey": "clawhub-flyai-companion-matcher",
+    "name": "旅伴匹配度报告"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-companion-matcher",
+    "url": "https://clawhub.ai/skills/flyai-companion-matcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-companion-matcher-75098664125c7ca1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "旅伴匹配度报告——出发前先测你们合不合适！帮助旅伴在出发前做\"旅行风格匹配度测试\"，提前发现分歧点，并给出基于真实酒店/景点数据的兼顾方案。当用户提到\"旅伴测试\"、\"旅行风格匹配\"、\"一起旅行合不合适\"、\"旅伴匹配度\"、\"旅行冲突\"、\"旅伴风格\"、\"出行前测试\"、\"和XX一起旅行\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hello-ahang",
+      "userId": "s173amcatjt4szds3pjwe405r584382h",
+      "displayName": "hello_hang",
+      "image": "https://avatars.githubusercontent.com/u/19886468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775236954587,
+      "changelog": "**Changelog for flyai-companion-matcher v1.0.1**\n\n- Added extensive reference documentation (13 files) covering AI搜索、酒店/景点/航班查询、策略、工作流程、自我成长等能力。\n- 简化并模块化主文档：核心流程、策略、成长能力等内容拆分，主文档引用 reference/ 下的详细步骤与规则。\n- 明确各 FlyAI 命令用法及参数需查阅 reference/，避免误用/猜测接口格式。\n- 新增图片与预订链接的标准展示规范，提升报告输出一致性和美观性。\n- 用户偏好保存/成长能力等功能要求引用对应 reference/ 文档，结构更清晰易扩展。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2496757a7b15190027eef63bd8b4e71c4c2de343fb8f0c3cc68c2f3ce6f761f7"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20011,
+  "uuid": "skill-clawhub-recipe-draft-email-from-doc",
+  "skillKey": "clawhub-recipe-draft-email-from-doc",
+  "name": "Recipe Draft Email From Doc",
+  "summary": "Read content from a Google Doc and use it as the body of a Gmail message.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_draft_email_from_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Read content from a Google Doc and use it as the body of a Gmail message."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-draft-email-from-doc@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-draft-email-from-doc",
+      "url": "https://clawhub.ai/skills/recipe-draft-email-from-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-draft-email-from-doc",
+    "url": "https://clawhub.ai/skills/recipe-draft-email-from-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-draft-email-from-doc-a2763fe7cd82a3e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-draft-email-from-doc@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-draft-email-from-doc-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b5976a89e2bd296aab0b9e894610555253938e5693923d234f9fb0aea5a4aa4",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:24.480Z"
+}

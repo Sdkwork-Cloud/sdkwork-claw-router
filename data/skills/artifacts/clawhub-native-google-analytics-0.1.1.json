@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/native-google-analytics@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.native_google_analytics",
+  "skill": {
+    "id": 10433,
+    "skillKey": "clawhub-native-google-analytics",
+    "name": "Native Google Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "native-google-analytics",
+    "url": "https://clawhub.ai/skills/native-google-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/native-google-analytics-0907aeee4bcaa04c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Google Analytics 4 (GA4) data directly via the Analytics Data API. Use when you need website analytics like top pages, traffic sources, sessions, users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeninja23",
+      "userId": "s173w4sv23s5bb8w4kjv1t143n842den",
+      "displayName": "codeninja23",
+      "image": "https://avatars.githubusercontent.com/u/34013241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 865,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 18,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771791027190,
+      "changelog": "- Added new metadata section to SKILL.md for environment variables, binaries, and file requirements.\n- Declared primary environment variable (GA4_PROPERTY_ID) and listed required scripts for openclaw compatibility.\n- Added a README.md file. \n- No changes to core functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c086a46a0d8fb2a178a5cd8b6ae6e238d12607ed0da60439c9d36ea523e974fe"
+}

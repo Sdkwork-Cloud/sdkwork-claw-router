@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19795,
+  "uuid": "skill-clawhub-self-optimizer",
+  "skillKey": "clawhub-self-optimizer",
+  "name": "Self Optimizer",
+  "summary": "Analyzes OpenClaw logs, chat history, and the .openclaw installation to propose self-improvement and optimization suggestions. Use when optimizing or auditin...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Analyzes OpenClaw logs, chat history, and the .openclaw installation to propose self-improvemen.",
+        "Use when optimizing or auditin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-optimizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-optimizer",
+      "url": "https://clawhub.ai/skills/self-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-optimizer",
+    "url": "https://clawhub.ai/skills/self-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-optimizer-dd7c9d32beec4008.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-optimizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-optimizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c17493d86d039a9d71273e1f70cd06dcb9bddbc6751698196d5850c640a36c9a",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T13:16:24.999Z"
+}

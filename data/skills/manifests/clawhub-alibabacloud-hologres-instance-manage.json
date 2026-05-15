@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36539,
+  "uuid": "skill-clawhub-alibabacloud-hologres-instance-manage",
+  "skillKey": "clawhub-alibabacloud-hologres-instance-manage",
+  "name": "Alibabacloud Hologres Instance Manage",
+  "summary": "Alibaba Cloud Hologres Instance Management Skill. Use for listing and querying Hologres instances. Triggers: \"hologres\", \"list instances\", \"get instance deta...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_hologres_instance_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud Hologres Instance Management Skill",
+        "Use for listing and querying Hologres instances",
+        "Triggers: \"hologres\", \"list instances\", \"get instance deta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-hologres-instance-manage@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-hologres-instance-manage",
+      "url": "https://clawhub.ai/skills/alibabacloud-hologres-instance-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-hologres-instance-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-hologres-instance-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-hologres-instance-manage-f40b4bce7a13b028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-hologres-instance-manage@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-hologres-instance-manage-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37e20135d852b12c4e29a5d56b2266ea8e3b70d62bac9dacd5a05de8265afaa7",
+      "artifactSizeBytes": 2674
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T05:18:54.764Z"
+}

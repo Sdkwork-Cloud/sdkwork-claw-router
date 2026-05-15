@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "free-feishu-voice",
+    "displayName": "free-feishu-voice",
+    "summary": "Send customized voice messages to Feishu chats by generating and uploading TTS audio using configurable credentials and options.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773645207061,
+    "updatedAt": 1778309975575
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773645207061,
+    "changelog": "Initial public release with core Feishu voice messaging features:\n\n- Added support for sending Feishu voice messages via shell scripts, using either espeak-ng+ffmpeg or high-quality Edge TTS.\n- Introduced a JSON configuration system with environment variable overrides for credentials, chat ID, default text, and voice.\n- Scripts automatically generate config templates if the config file does not exist.\n- Both basic (espeak) and enhanced (Edge TTS) scripts validate parameters and dependencies before sending messages.\n- Edge TTS version supports auto-installation of Python package edge-tts and provides higher quality voice output.\n- Added inline help and status/error outputs for simplified troubleshooting.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jisuwudou",
+    "userId": "publishers:jisuwudou",
+    "displayName": "jisuwudou",
+    "image": "https://avatars.githubusercontent.com/u/5960639?v=4"
+  },
+  "moderation": null
+}

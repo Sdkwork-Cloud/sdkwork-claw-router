@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69761,
+  "uuid": "skill-clawhub-tilannlou",
+  "skillKey": "clawhub-tilannlou",
+  "name": "環境偵測",
+  "summary": "环境偵測協助檢查系統與硬體工具、Python套件、Docker及網路狀態，並匯出詳細結果與報告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tilannlou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tilannlou",
+      "features": [
+        "环境偵測協助檢查系統與硬體工具、Python套件、Docker及網路狀態，並匯出詳細結果與報告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tilannlou@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181840601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tilannlou",
+      "url": "https://clawhub.ai/skills/tilannlou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tilannlou",
+    "url": "https://clawhub.ai/skills/tilannlou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tilannlou-185c4af977c8f95e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tilannlou@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tilannlou-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:941e3a8446c504fd4a564d621719fcd5bdce8d80b2e24d6f88c9d178eb1e9535",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T06:11:41.234Z"
+}

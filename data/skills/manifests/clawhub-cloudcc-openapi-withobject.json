@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59350,
+  "uuid": "skill-clawhub-cloudcc-openapi-withobject",
+  "skillKey": "clawhub-cloudcc-openapi-withobject",
+  "name": "cloudcc-openapi-withobject",
+  "summary": "CloudCC OpenAPI 调用技能 - 提供完整的 REST API 接口调用能力，支持对象/字段元数据查询",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudcc_openapi_withobject",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "androidxhm",
+      "features": [
+        "CloudCC OpenAPI 调用技能",
+        "提供完整的 REST API 接口调用能力，支持对象/字段元数据查询"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudcc-openapi-withobject@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3445930?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudcc-openapi-withobject",
+      "url": "https://clawhub.ai/skills/cloudcc-openapi-withobject"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudcc-openapi-withobject",
+    "url": "https://clawhub.ai/skills/cloudcc-openapi-withobject",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudcc-openapi-withobject-8b3e4a0f3a16ec49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudcc-openapi-withobject@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudcc-openapi-withobject-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e7164f0c1aacbb8664bea7a0b613299a3ba7ee453e1458404ef42f7c535a6d3",
+      "artifactSizeBytes": 2640
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T09:40:00.088Z"
+}

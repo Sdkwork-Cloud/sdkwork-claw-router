@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50879,
+  "uuid": "skill-clawhub-find-moments-in-the-video",
+  "skillKey": "clawhub-find-moments-in-the-video",
+  "name": "WayinVideo - Find Moments in the Video",
+  "summary": "Find specific moments in a video using a natural language query. Ideal for locating particular scenes, topics, or events in long videos (e.g., “the part wher...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_moments_in_the_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WayinVideo",
+      "features": [
+        "Find specific moments in a video using a natural language query",
+        "Ideal for locating particular scenes, topics, or events in long videos (e.g., “the part wher..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-moments-in-the-video@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264544436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-moments-in-the-video",
+      "url": "https://clawhub.ai/skills/find-moments-in-the-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-moments-in-the-video",
+    "url": "https://clawhub.ai/skills/find-moments-in-the-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-moments-in-the-video-488fad06bb101638.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-moments-in-the-video@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-moments-in-the-video-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7df707236a5252c58db6e5dbb2186dd33f0332c6af320c87298e053ce968ecac",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T11:21:19.747Z"
+}

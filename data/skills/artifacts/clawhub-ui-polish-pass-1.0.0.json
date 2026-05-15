@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ui-polish-pass@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ui_polish_pass",
+  "skill": {
+    "id": 52161,
+    "skillKey": "clawhub-ui-polish-pass",
+    "name": "UI Polish Pass"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ui-polish-pass",
+    "url": "https://clawhub.ai/skills/ui-polish-pass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ui-polish-pass-ea5acb95bc5a88c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Core pack — always active as final step. Visual polish pass for spacing, hierarchy, alignment, and cleanup. Runs after design-review and ux-baseline-check as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aa-on-ai",
+      "userId": "s17c7rw6zqf32g9sv6mqgxjxhh83fa3a",
+      "displayName": "ai-ron",
+      "image": "https://avatars.githubusercontent.com/u/94061050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774041717596,
+      "changelog": "- Initial release of the \"ui-polish-pass\" core skill.\n- Provides a comprehensive, step-by-step checklist for visual polish including spacing, hierarchy, alignment, color, interaction, micro-details, and final review.\n- Outlines when not to use the polish pass (e.g., unfinished prototypes, internal tools).\n- Includes practical speed tips and clarifies principles for making interfaces feel professional, not just functional.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7083ed23be7ce23a41a0c504dc9f585c88345920380ad5a2cd53bb2016f5e7b2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21866,
+  "uuid": "skill-clawhub-iknowkungfu",
+  "skillKey": "clawhub-iknowkungfu",
+  "name": "Iknowkungfu",
+  "summary": "Skill discovery engine. Analyzes what your agent does and recommends ClawHub skills you're missing. Use when: /kungfu, /kungfu-scan, /kungfu-gaps, 'what skil...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iknowkungfu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WhooshingLander",
+      "features": [
+        "Skill discovery engine",
+        "Analyzes what your agent does and recommends ClawHub skills you're missing",
+        "Use when: /kungfu, /kungfu-scan, /kungfu-gaps, 'what skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iknowkungfu@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187096906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iknowkungfu",
+      "url": "https://clawhub.ai/skills/iknowkungfu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iknowkungfu",
+    "url": "https://clawhub.ai/skills/iknowkungfu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iknowkungfu-411638aa5706fe7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iknowkungfu@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iknowkungfu-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45fbf9f45ab4648035cc98c847f908d0d757649668a4d3ba59204bd84dcb597c",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:23:47.147Z"
+}

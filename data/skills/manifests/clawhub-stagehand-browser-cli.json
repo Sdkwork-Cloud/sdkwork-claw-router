@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8790,
+  "uuid": "skill-clawhub-stagehand-browser-cli",
+  "skillKey": "clawhub-stagehand-browser-cli",
+  "name": "Stagehand Browser CLI",
+  "summary": "Automate web browser interactions using natural language via CLI commands. Use when the user asks to browse websites, navigate web pages, extract data from websites, take screenshots, fill forms, click buttons, or interact with web applica.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stagehand_browser_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peytoncasper",
+      "features": [
+        "Automate web browser interactions using natural language via CLI commands",
+        "Use when the user asks to browse websites, navigate web pages, extract data from websites, take."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stagehand-browser-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8305883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stagehand-browser-cli",
+      "url": "https://clawhub.ai/skills/stagehand-browser-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stagehand-browser-cli",
+    "url": "https://clawhub.ai/skills/stagehand-browser-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stagehand-browser-cli-a023ef173ab650db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stagehand-browser-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stagehand-browser-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:962164cab591ddaf45c93110110795de1ff592e339fe1156f55e2babc7e05ef9",
+      "artifactSizeBytes": 2505
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T16:01:58.021Z"
+}

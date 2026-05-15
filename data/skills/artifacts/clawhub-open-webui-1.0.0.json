@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-webui@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_webui",
+  "skill": {
+    "id": 14188,
+    "skillKey": "clawhub-open-webui",
+    "name": "Open WebUI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-webui",
+    "url": "https://clawhub.ai/skills/open-webui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-webui-d496c82198e4f336.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Open WebUI API integration for managing LLM models, chat completions, Ollama proxy operations, file uploads, knowledge bases (RAG), image generation, audio processing, and pipelines. Use this skill when interacting with Open WebUI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x7466",
+      "userId": "publishers:0x7466",
+      "displayName": "TFM",
+      "image": "https://avatars.githubusercontent.com/u/7838269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1198,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770578753553,
+      "changelog": "Initial release: Complete Open WebUI API integration with models, chat, RAG, files, knowledge base, and Ollama proxy support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b37229ccb509f4b534206e02bdaf82c26211e1ede819782251e9f87ff5c61f9d"
+}

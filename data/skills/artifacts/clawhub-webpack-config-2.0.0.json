@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webpack-config@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webpack_config",
+  "skill": {
+    "id": 58505,
+    "skillKey": "clawhub-webpack-config",
+    "name": "Webpack Config"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webpack-config",
+    "url": "https://clawhub.ai/skills/webpack-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webpack-config-b0bcb9f6ef6202ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Webpack/Vite配置生成。项目配置、插件、Loader、优化、代码分割、迁移。Webpack/Vite config generator with plugins, loaders, optimization, code splitting. Webpack、Vite、构建工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 613,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773920649,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdb5a1d3b53e79cb031497cc4b3e15b7e966b0912de75d1dc11169e767c0848c"
+}

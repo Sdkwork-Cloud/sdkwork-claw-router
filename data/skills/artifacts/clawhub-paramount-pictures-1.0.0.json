@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paramount-pictures@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paramount_pictures",
+  "skill": {
+    "id": 47570,
+    "skillKey": "clawhub-paramount-pictures",
+    "name": "Paramount Pictures"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paramount-pictures",
+    "url": "https://clawhub.ai/skills/paramount-pictures",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paramount-pictures-74cc5a8ce00fc678.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides historical insights, business analysis, and key data on Paramount Pictures' film legacy, streaming transition, and industry impact."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777205045901,
+      "changelog": "- 首次发布 Paramount Pictures 技能，提供百年影业历史、商业模式、核心数据及代表性IP介绍  \n- 涵盖 Paramount+ 流媒体转型、订阅增长策略及CBS协同内容  \n- 增添 Skydance 收购谈判等最新业界动态  \n- 特别收录有趣品牌轶事与里程碑事件  \n- 适用于分析派拉蒙公司变革、研究电影产业发展",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f368dd953b76225cb1bb30397395ed09da931c9c4cc4b611ddb48276510fcc01"
+}

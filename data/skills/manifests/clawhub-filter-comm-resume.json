@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69425,
+  "uuid": "skill-clawhub-filter-comm-resume",
+  "skillKey": "clawhub-filter-comm-resume",
+  "name": "筛选沟通简历",
+  "summary": "从BOSS直聘沟通列表筛选符合全日制本科、2-8年经验、主用React且优先熟练AI工具的候选人简历。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filter_comm_resume",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "herohimmel",
+      "features": [
+        "从BOSS直聘沟通列表筛选符合全日制本科、2-8年经验、主用React且优先熟练AI工具的候选人简历。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filter-comm-resume@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33949766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filter-comm-resume",
+      "url": "https://clawhub.ai/skills/filter-comm-resume"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filter-comm-resume",
+    "url": "https://clawhub.ai/skills/filter-comm-resume",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filter-comm-resume-452e771899cdf98f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filter-comm-resume@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-filter-comm-resume-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2501df2d8bfa36aa52a1758ef32a9b99c245511255e56921595ff7316c3e554c",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:05:28.332Z"
+}

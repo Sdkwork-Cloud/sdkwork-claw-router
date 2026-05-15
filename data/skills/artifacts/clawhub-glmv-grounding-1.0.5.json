@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glmv-grounding@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmv_grounding",
+  "skill": {
+    "id": 19494,
+    "skillKey": "clawhub-glmv-grounding",
+    "name": "GLM-V-Grounding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmv-grounding",
+    "url": "https://clawhub.ai/skills/glmv-grounding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmv-grounding-85cf25915c7029f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill that uses GLM-V native grounding capabilities for coordinate conversion, bounding-box visualization, and more. GLM-V native grounding can locate any..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaredforreal",
+      "userId": "s175c2hb1p5qwxh8z279000h0s83j2tt",
+      "displayName": "Jared Wen",
+      "image": "https://avatars.githubusercontent.com/u/142211841?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 500,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776255741188,
+      "changelog": "Version 1.0.5 of glmv-grounding\n\n- No code or documentation changes detected in this release.\n- Functionality and usage remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a90dcb9cc7791204b06b3df671364adeba0d50e39d6efca1eb050541c171dae1"
+}

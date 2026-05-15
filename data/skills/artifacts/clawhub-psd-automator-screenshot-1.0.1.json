@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psd-automator-screenshot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psd_automator_screenshot",
+  "skill": {
+    "id": 23839,
+    "skillKey": "clawhub-psd-automator-screenshot",
+    "name": "Psd Automator Screenshot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psd-automator-screenshot",
+    "url": "https://clawhub.ai/skills/psd-automator-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psd-automator-screenshot-c9884b7b551502c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use screenshot + natural language instruction to locate PSD text layers and dispatch automated edits with confidence gating. Requires psd-automator core."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dhrxy",
+      "userId": "s17ep23tvtyn3spbjjbf8j6zj183jznd",
+      "displayName": "dhrxy",
+      "image": "https://avatars.githubusercontent.com/u/51009660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774428430412,
+      "changelog": "maintenance update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd2b47c10d30851b25b9ee83bedaf1ac4320b48fd5a40b7bb145993624b7eaa1"
+}

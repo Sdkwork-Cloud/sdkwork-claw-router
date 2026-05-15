@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38463,
+  "uuid": "skill-clawhub-claw-agent-spawner",
+  "skillKey": "clawhub-claw-agent-spawner",
+  "name": "Agent Spawner",
+  "summary": "Decompose complex tasks into independent subtasks, spawn parallel agents to execute them, then collect and synthesize results efficiently.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_agent_spawner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigas",
+      "features": [
+        "Decompose complex tasks into independent subtasks, spawn parallel agents to execute them, then."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-agent-spawner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69516204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-agent-spawner",
+      "url": "https://clawhub.ai/skills/claw-agent-spawner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-agent-spawner",
+    "url": "https://clawhub.ai/skills/claw-agent-spawner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-agent-spawner-7744de25cdb3e11e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-agent-spawner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-agent-spawner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b87297b28cc2db9a426673040426b28c4a873b1cad16509bc946dead970713fb",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T08:57:30.735Z"
+}

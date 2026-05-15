@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-fundamentals@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_fundamentals",
+  "skill": {
+    "id": 17859,
+    "skillKey": "clawhub-stock-fundamentals",
+    "name": "Stock Fundamentals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-fundamentals",
+    "url": "https://clawhub.ai/skills/stock-fundamentals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-fundamentals-e5715ff1598a4174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run local script to analyze stock fundamentals (P/E, EPS, margins, debt, ROE, analyst targets) using yfinance. Use exec tool to run: uv run /root/.openclaw/w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "youpele52",
+      "userId": "s177cjete9gkkjq09py127x5xx83sfh8",
+      "displayName": "youpele52",
+      "image": "https://avatars.githubusercontent.com/u/43122220?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 710,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772855773728,
+      "changelog": "- Updated skill name to \"stock-fundamentals\" and clarified the description for broader clarity.\n- Improved usage instructions: added explicit command examples, including exchange suffixes for international stocks and ETFs.\n- Added \"When NOT to use\" section to guide expected use cases and avoid overlap with other skills.\n- Included a \"Ticker Format Reference\" table for quick lookup of international ticker conventions.\n- Clarified direct command usage (`uv run .../src/main.py <TICKER>`) and advised against using web search, curl, or auxiliary scripts.\n- Expanded output details and notes to set clear expectations on data sourcing, coverage, and output fields.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:079d6e135720d299c8b0e4824b77724bec595d135319f9870052795b51f81cc1"
+}

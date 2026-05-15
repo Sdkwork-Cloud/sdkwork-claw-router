@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sunshine-baidu-web-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sunshine_baidu_web_search",
+  "skill": {
+    "id": 19653,
+    "skillKey": "clawhub-sunshine-baidu-web-search",
+    "name": "Baidu Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sunshine-baidu-web-search",
+    "url": "https://clawhub.ai/skills/sunshine-baidu-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sunshine-baidu-web-search-aab83aecfc2bfeb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Baidu Qianfan web search API for real-time web retrieval. Use when the user needs to search the web, get latest news, verify facts, or expresses intent l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunshine-del-ux",
+      "userId": "publishers:sunshine-del-ux",
+      "displayName": "Sunshine-del-ux",
+      "image": "https://avatars.githubusercontent.com/u/83053073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773610817385,
+      "changelog": "baidu-web-search v1.0.1\n\n- Added comprehensive SKILL.md with detailed usage instructions, privacy and API key protection rules, and configuration guidance.\n- Clarified strict security requirements for handling API keys and config files.\n- Outlined scenarios for using the Baidu Qianfan web search API and expected integration flow.\n- Described supported input/output formats and platform-specific configuration steps.\n- Provided clear instructions for first-time setup and command execution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d84feb641b695c88d984155c243cb48219aa940d999dba2db85cfa0e103d173"
+}

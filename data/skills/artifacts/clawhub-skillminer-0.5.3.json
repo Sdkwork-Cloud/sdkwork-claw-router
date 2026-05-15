@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skillminer@0.5.3",
+  "version": "0.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillminer",
+  "skill": {
+    "id": 28682,
+    "skillKey": "clawhub-skillminer",
+    "name": "Skillminer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillminer",
+    "url": "https://clawhub.ai/skills/skillminer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillminer-e3632421805c896c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Suggest reusable skills from recurring patterns in local memory files. Human review gate, drafts only to skills/_pending/, local-first runner with optional e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robbyczgw-cla",
+      "userId": "s177f7tydbpq0gh2sctd8hqdjn83fnwv",
+      "displayName": "Robby",
+      "image": "https://avatars.githubusercontent.com/u/239660374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "0.5.3",
+      "createdAt": 1776776884158,
+      "changelog": "skillminer 0.5.3\n\n- Updated SKILL.md with clearer metadata, including capabilities, network policy, I/O details, and runner explanation.\n- Added optional emoji field to SKILL.md.\n- Improved metadata structure for environments, binaries, configs, and subprocesses.\n- No functionality changes; documentation and manifest enhancements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f4af627205fa005e6f4229110823ff1b522858523f6d703e4143bff70c803d3e"
+}

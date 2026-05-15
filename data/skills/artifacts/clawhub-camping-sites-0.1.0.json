@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camping-sites@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camping_sites",
+  "skill": {
+    "id": 34807,
+    "skillKey": "clawhub-camping-sites",
+    "name": "Nearby Camping Sites"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camping-sites",
+    "url": "https://clawhub.ai/skills/camping-sites",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camping-sites-df92cf0e7fa3f8e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby camping sites. Invoke when user asks for camping near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774253644862,
+      "changelog": "Initial release of \"Nearby Camping Sites\" skill.\n\n- Find camping sites near a specified location using latitude and longitude.\n- Supports radius, result limit, and optional filters (e.g., open_now, min_rating, keywords).\n- Standardized POI response format for easy front-end/API reuse.\n- Covers camping, RV sites, and similar nearby queries.\n- Built-in privacy protection and rate limiting, with error codes for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9aa15f464597ae241b66971532ab34b216813d7086cd7cf069977887ebad912f"
+}

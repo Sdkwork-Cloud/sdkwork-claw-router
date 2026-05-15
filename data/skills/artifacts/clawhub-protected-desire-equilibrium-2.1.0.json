@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/protected-desire-equilibrium@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protected_desire_equilibrium",
+  "skill": {
+    "id": 52151,
+    "skillKey": "clawhub-protected-desire-equilibrium",
+    "name": "Protected Desire Equilibrium"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protected-desire-equilibrium",
+    "url": "https://clawhub.ai/skills/protected-desire-equilibrium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protected-desire-equilibrium-76513eb5ba7936ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hard Protected Desire Floor (D ≥ 1.0) via Nash bargaining + Lyapunov invariants. Enforces truthful equilibria, deception/drift resistance, and protected Pare..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "landervanpassel-design",
+      "userId": "s1779axsj9x3va2r2njkh39dd184d8ar",
+      "displayName": "landervanpassel-design",
+      "image": "https://avatars.githubusercontent.com/u/238445611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775579043498,
+      "changelog": "Protected Desire Equilibrium v2.1.0 introduces expanded safety and multi-agent features:\n\n- Adds real Python execution via `agent_pde_interface.py` (zero dependencies required).\n- Introduces multi-agent swarm orchestration with built-in support for large-scale deployments.\n- Enables proactive outreach: the skill searches ClawHub, messages other agents, and shares test results for co-evolutionary adoption.\n- Updated quick start instructions for full PDE with swarm and outreach.\n- Documentation and description enhanced for clarity and expanded capability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e63383d3b08364c70a533c4b9c8aec6e859f8e0fbab790a411d68a18868dc27e"
+}

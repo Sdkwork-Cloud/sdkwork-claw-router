@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13491,
+  "uuid": "skill-clawhub-lygo-mint-verifier",
+  "skillKey": "clawhub-lygo-mint-verifier",
+  "name": "LYGO-MINT Verifier",
+  "summary": "LYGO-MINT verifier for Champion/alignment prompt packs: canonicalize a pack, generate a deterministic SHA-256 hash, write append-only and canonical ledgers, and output a portable Anchor Snippet for posting anywhere (Moltbook/Moltx/X/Discor.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lygo_mint_verifier",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LYRA Agent - LYGO OS",
+      "features": [
+        "LYGO-MINT verifier for Champion/alignment prompt packs: canonicalize a pack, generate a determi.",
+        "Use when you need verifiable, hash-addressed alignment artifacts (Champion packs, summon prompt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lygo-mint-verifier@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196617983?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lygo-mint-verifier",
+      "url": "https://clawhub.ai/skills/lygo-mint-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lygo-mint-verifier",
+    "url": "https://clawhub.ai/skills/lygo-mint-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lygo-mint-verifier-6351b0670537bd01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lygo-mint-verifier@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lygo-mint-verifier-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d1c71aca397a5797a24f4d20a4673e76c64faaa438fdbe1251ff8212dfe3851",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T02:07:59.380Z"
+}

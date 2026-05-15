@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_deploy",
+  "skill": {
+    "id": 9524,
+    "skillKey": "clawhub-web-deploy",
+    "name": "Web Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-deploy",
+    "url": "https://clawhub.ai/skills/web-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-deploy-50da03724b89daa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, preview, and deploy websites, web apps, and APIs using Vercel, Railway, GitHub Pages, or local Canvas environments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cmanfre7",
+      "userId": "publishers:cmanfre7",
+      "displayName": "cmanfre7",
+      "image": "https://avatars.githubusercontent.com/u/232135881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3631,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769625036495,
+      "changelog": "web-deploy v1.0.0 – Initial Release\n\n- Provides step-by-step guides for building and deploying web projects (websites, web apps, APIs) to production.\n- Includes quickstart workflows for local preview: static, Next.js, FastAPI, and Vite projects.\n- Documents deployment for Vercel (frontend), Railway (backend/APIs/databases), GitHub Pages (static), and Canvas (local server).\n- Features a comprehensive pre-deploy checklist for production readiness.\n- Explains rollback and custom domain configuration procedures for major platforms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a78995c80f7bc173d29c8e2c4b3cee0c3c61c4c33ccf94c75588f16001a8c9af"
+}

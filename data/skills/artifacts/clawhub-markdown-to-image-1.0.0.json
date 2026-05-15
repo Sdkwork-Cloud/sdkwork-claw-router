@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-to-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_to_image",
+  "skill": {
+    "id": 58459,
+    "skillKey": "clawhub-markdown-to-image",
+    "name": "Markdown → 图片卡片"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-to-image",
+    "url": "https://clawhub.ai/skills/markdown-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-to-image-f32586ec31d50691.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user wants to convert Markdown content into shareable image cards — triggered by phrases like \"转图片\"、\"做卡片\"、\"生成海报\"、\"生成分享图\"、\"把这个转成图片\"、\"export as image\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reffwu",
+      "userId": "s172yqztq7m2zd1j1wmbqb93en83m5cq",
+      "displayName": "Ruifu Wu",
+      "image": "https://avatars.githubusercontent.com/u/96998152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777475387011,
+      "changelog": "Initial release of markdown-to-image.\n\n- Converts Markdown into shareable image cards with professional formatting for social platforms.\n- Includes mandatory pre-check for file issues (content, technical, formatting) before image generation.\n- Generates a cover card with a short, book-style title automatically created from document content.\n- All options have sensible defaults; no user prompts unless issues are detected.\n- Outputs images directly to the Downloads folder, organized by card title.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50e23b02f07a2a7cce7ec7c02c2ee399f6d4bfc21ee77745c7804459f424b2f6"
+}

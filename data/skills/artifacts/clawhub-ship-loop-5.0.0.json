@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ship-loop@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ship_loop",
+  "skill": {
+    "id": 56248,
+    "skillKey": "clawhub-ship-loop",
+    "name": "Ship Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ship-loop",
+    "url": "https://clawhub.ai/skills/ship-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ship-loop-7ff7c0643b7b3626.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a chained build→ship→verify→notify pipeline for multi-segment feature work. Use when implementing multiple features in sequence, each as a coding agent t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fernando-fernandez3",
+      "userId": "s174vdzb0pwqb5g733zj83a89n83pfb4",
+      "displayName": "Fernando",
+      "image": "https://avatars.githubusercontent.com/u/50898844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1774590293163,
+      "changelog": "**Ship Loop v5.0.0 — Major upgrade: persistent DB backend, event-driven pipeline, verdict router, and reflective analytics.**\n\n- Added SQLite (`tars.db`) backend for full pipeline state, event log, learnings, and usage tracking.\n- Introduced event queue for robust crash recovery and auditing; CLI can now inspect event/history.\n- Added a verdict router for configurable outcome→action mapping, replacing hardcoded branching.\n- New reflection loop audits run history, scoring learnings and surfacing actionable recommendations.\n- All state (runs, segments, learnings, cost, verdicts) is DB-backed; `SHIPLOOP.yml` is now config-only.\n- New CLI commands for reflection, history, events, and advanced analytics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e42a4d4dc3b704e3e8a1ee7d46c4707e07337e2d808e38fa527b4373d10883bb"
+}

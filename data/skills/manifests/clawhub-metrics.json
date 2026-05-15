@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19789,
+  "uuid": "skill-clawhub-metrics",
+  "skillKey": "clawhub-metrics",
+  "name": "Metrics",
+  "summary": "Capture, normalize, and report metrics across any domain with reusable dimensions, programmable formulas, and scalable reporting workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metrics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Capture, normalize, and report metrics across any domain with reusable dimensions, programmable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metrics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metrics",
+      "url": "https://clawhub.ai/skills/metrics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metrics",
+    "url": "https://clawhub.ai/skills/metrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metrics-177a7ea3611fe6b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metrics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-metrics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dee5470f0ba933786637a44aa591557e8dc50278a19b89c4d4366eda32fd32e",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T20:31:22.473Z"
+}

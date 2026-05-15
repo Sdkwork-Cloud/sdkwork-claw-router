@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookshops@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookshops",
+  "skill": {
+    "id": 36897,
+    "skillKey": "clawhub-bookshops",
+    "name": "Nearby Bookshops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookshops",
+    "url": "https://clawhub.ai/skills/bookshops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookshops-8ef93792ee4c4294.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find nearby bookshops. Invoke when user asks for bookstores near me."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774244781357,
+      "changelog": "Nearby Bookshops 0.1.0 – Initial Release\n\n- Find nearby bookshops based on user location.\n- Supports filters such as open_now, min_rating, and keywords.\n- Returns standardized POI lists; enforces response consistency.\n- Handles errors for invalid location, large radius, unavailable provider, and rate limits.\n- Includes privacy safeguards and recommends caching frequent queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dbf20b81e0f02d4915797d45ff3810b6acfaf4266ade6e9bd6d8c06dc9fde37"
+}

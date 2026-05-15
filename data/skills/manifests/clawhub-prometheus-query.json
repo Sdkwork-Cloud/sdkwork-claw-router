@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28941,
+  "uuid": "skill-clawhub-prometheus-query",
+  "skillKey": "clawhub-prometheus-query",
+  "name": "prometheus-query",
+  "summary": "Query Prometheus metrics, alerts, and cluster status using PromQL with options for direct URL or Kubernetes port-forward access.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prometheus_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoodAtMe",
+      "features": [
+        "Query Prometheus metrics, alerts, and cluster status using PromQL with options for direct URL o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prometheus-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10082030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prometheus-query",
+      "url": "https://clawhub.ai/skills/prometheus-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prometheus-query",
+    "url": "https://clawhub.ai/skills/prometheus-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prometheus-query-20a17c8e5fe775ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prometheus-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prometheus-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e447dd2a6856638e8b6bba21463474b794fb262d66e3922c9fd6119744cbe8c",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:52:52.645Z"
+}

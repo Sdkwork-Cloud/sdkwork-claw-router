@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/k8s-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_browser",
+  "skill": {
+    "id": 11119,
+    "skillKey": "clawhub-k8s-browser",
+    "name": "Kubernetes Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-browser",
+    "url": "https://clawhub.ai/skills/k8s-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-browser-e721d9832fc6d86a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation for Kubernetes dashboards and web UIs. Use when interacting with Kubernetes Dashboard, Grafana, ArgoCD UI, or other web interfaces. Requires MCP_BROWSER_ENABLED=true."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rohitg00",
+      "userId": "s1764xxjbprf3br6gghgha128x84zctc",
+      "displayName": "Rohit Ghumare",
+      "image": "https://avatars.githubusercontent.com/u/48523873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2746,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769433533790,
+      "changelog": "- Initial release of k8s-browser skill for automating Kubernetes dashboards and web UIs.\n- Provides 26 browser automation tools for navigating, interacting, and capturing screenshots of Kubernetes Dashboard, Grafana, ArgoCD UI, and similar interfaces.\n- Requires enabling browser features with MCP_BROWSER_ENABLED=true.\n- Includes example workflows for Kubernetes Dashboard, Grafana, and ArgoCD UI automation.\n- Supports session management, device emulation, and advanced selectors for clicks and form fills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0b4a77b4c68747eed1d0c90bd04085c6f18cbfa12d67e847a74699bef05f8d82"
+}

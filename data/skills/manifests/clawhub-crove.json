@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30517,
+  "uuid": "skill-clawhub-crove",
+  "skillKey": "clawhub-crove",
+  "name": "Crove",
+  "summary": "Crove integration. Manage Organizations, Users, Goals, Filters. Use when the user wants to interact with Crove data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crove",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Crove integration",
+        "Manage Organizations, Users, Goals, Filters",
+        "Use when the user wants to interact with Crove data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crove@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crove",
+      "url": "https://clawhub.ai/skills/crove"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crove",
+    "url": "https://clawhub.ai/skills/crove",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crove-3a292e1e5b6ce31a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crove@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-crove-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b144affadefc8acc52a5f576166a5bb80da991037b2157de474882ad416df17",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:36:02.092Z"
+}

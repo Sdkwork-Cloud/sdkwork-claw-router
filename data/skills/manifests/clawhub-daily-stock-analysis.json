@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11019,
+  "uuid": "skill-clawhub-daily-stock-analysis",
+  "skillKey": "clawhub-daily-stock-analysis",
+  "name": "Daily Stock Analysis",
+  "summary": "Deterministic daily stock analysis skill for global equities. Use when users need daily analysis, next-trading-day close prediction, prior forecast review, r...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HeXavi8",
+      "features": [
+        "Deterministic daily stock analysis skill for global equities",
+        "Use when users need daily analysis, next-trading-day close prediction, prior forecast review, r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-stock-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51332043?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-stock-analysis",
+      "url": "https://clawhub.ai/skills/daily-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-stock-analysis",
+    "url": "https://clawhub.ai/skills/daily-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-stock-analysis-299b4a291e280412.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-stock-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-stock-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72ff57801e084def4a49973ed9e42ef7940680fea3f6f065c06b27e2c1bc3983",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:53:26.033Z"
+}

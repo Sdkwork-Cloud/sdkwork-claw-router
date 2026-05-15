@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-voice-to-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_voice_to_text",
+  "skill": {
+    "id": 63977,
+    "skillKey": "clawhub-byted-voice-to-text",
+    "name": "Byted Voice To Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-voice-to-text",
+    "url": "https://clawhub.ai/skills/byted-voice-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-voice-to-text-1b93ecee89708615.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音转文字（ASR）。使用火山引擎 BigModel ASR 识别语音，包含极速版（≤2h/100MB 同步快速返回）和标准版（≤5h 异步识别）两种模式。支持飞书语音消息、本地音频文件及音频 URL。当收到语音消息或音频附件（.ogg/.mp3/.wav）时使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774597118325,
+      "changelog": "byted-voice-to-text 1.0.0 – Initial Release\n\n- Provides voice-to-text conversion using Volcengine BigModel ASR, supporting both Express (≤2h/100MB, synchronous) and Standard (≤5h, asynchronous) modes.\n- Supports Feishu voice messages, local audio files, and audio URLs (.ogg/.mp3/.wav).\n- Enforces mandatory script routing and error handling procedures; does not fall back to whisper or other providers.\n- Includes pre-checks for audio properties and ffmpeg/ffprobe dependencies, with auto-installation if missing.\n- Outlines precise instructions, environment variable requirements, and command samples for all supported workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b94589de9ae5b20f7df9cb314665da211e81f627e802f64c689a801e2a86775"
+}

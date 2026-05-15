@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/community-demand-prospecting@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.community_demand_prospecting",
+  "skill": {
+    "id": 25037,
+    "skillKey": "clawhub-community-demand-prospecting",
+    "name": "Community Demand Prospecting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "community-demand-prospecting",
+    "url": "https://clawhub.ai/skills/community-demand-prospecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/community-demand-prospecting-1a37f8ed087b9958.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit a repo or product, run market research and competitor research, choose positioning, find users, and draft safe Reddit or X outreach."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cuongducle",
+      "userId": "publishers:cuongducle",
+      "displayName": "cuongducle",
+      "image": "https://avatars.githubusercontent.com/u/35300247?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1772975217285,
+      "changelog": "Optimize keywords for search and skill discovery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e1a6d2614068f70bf5305ddc36ef88f731d4249387896b7c58b2acf87d665ea"
+}

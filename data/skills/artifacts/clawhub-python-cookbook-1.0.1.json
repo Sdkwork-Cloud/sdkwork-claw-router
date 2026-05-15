@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/python-cookbook@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_cookbook",
+  "skill": {
+    "id": 24974,
+    "skillKey": "clawhub-python-cookbook",
+    "name": "Python Cookbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-cookbook",
+    "url": "https://clawhub.ai/skills/python-cookbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-cookbook-92b8ecfd2c9e0540.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Python code patterns and recipes for everyday tasks. Use when you need file I/O snippets, list comprehensions, decorators, async functions, regex patterns, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loutai0307-prog",
+      "userId": "s178me4n5rr0ch93xv584tjyv183s7r1",
+      "displayName": "loutai0307-prog",
+      "image": "https://avatars.githubusercontent.com/u/266760463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776407209939,
+      "changelog": "Fix: align SKILL.md commands with script implementation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5127190b4eca8fa8b8051bacd8bafd981df789772cfc9d76b08ecfaddf9ed15"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catime@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catime",
+  "skill": {
+    "id": 14561,
+    "skillKey": "clawhub-catime",
+    "name": "catime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catime",
+    "url": "https://clawhub.ai/skills/catime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catime-244a034cab8ef213.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and send AI-generated hourly cat images. Every hour a unique cat artwork is born via Google Gemini. Use when user asks for a cat picture, wants to browse the cat gallery, or requests the latest AI-generated cat image to be sent to th."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yazelin",
+      "userId": "publishers:yazelin",
+      "displayName": "yazelin",
+      "image": "https://avatars.githubusercontent.com/u/6235553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1770789710561,
+      "changelog": "v2: Enhanced SKILL.md with detailed agent workflow, cat image sending capability, and comprehensive usage examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a55a77bb039f3d85bdcb56d57adbe0679851ed8550b5f2a4290ec223fc40a78b"
+}

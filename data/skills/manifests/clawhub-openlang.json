@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23641,
+  "uuid": "skill-clawhub-openlang",
+  "skillKey": "clawhub-openlang",
+  "name": "OpenLang",
+  "summary": "Compact AI-to-AI communication protocol. Use when spawning sub-agents, sending inter-agent messages via sessions_send/sessions_spawn, or when instructed to s...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openlang",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andreanjos",
+      "features": [
+        "Compact AI-to-AI communication protocol",
+        "Use when spawning sub-agents, sending inter-agent messages via sessions_send/sessions_spawn, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openlang@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4633681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openlang",
+      "url": "https://clawhub.ai/skills/openlang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openlang",
+    "url": "https://clawhub.ai/skills/openlang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openlang-99d0fc9ba10536ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openlang@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openlang-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:002af2a0a2e3817d491cfac50d6ec71166422fe1624d8907a2e64b67bc3ca721",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:56:04.450Z"
+}

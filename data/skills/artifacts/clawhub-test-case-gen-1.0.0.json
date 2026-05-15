@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-case-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_case_gen",
+  "skill": {
+    "id": 41842,
+    "skillKey": "clawhub-test-case-gen",
+    "name": "Test Case Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-case-gen",
+    "url": "https://clawhub.ai/skills/test-case-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-case-gen-c3d84b1dc1ada68a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate test cases from requirements, user stories, PRDs, or API docs. Output structured test cases in markdown tables or export to CSV/JSON. Supports equiv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanghengyi1986-afk",
+      "userId": "s173knyfg55hja2f40zjr9egvs84wkbp",
+      "displayName": "zhanghengyi1986-afk",
+      "image": "https://avatars.githubusercontent.com/u/266693384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776217543875,
+      "changelog": "Initial release: test case generation from requirements, boundary analysis, pairwise, state transition, CSV/JSON export",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1d3abbd61f2b82d9cce3ff77b3e1e5e2f0ca4b46828bc3420ef5fb35fa9975c"
+}

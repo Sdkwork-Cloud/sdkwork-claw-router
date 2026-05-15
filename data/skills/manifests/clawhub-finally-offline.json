@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20319,
+  "uuid": "skill-clawhub-finally-offline",
+  "skillKey": "clawhub-finally-offline",
+  "name": "Finally Offline Culture MCP",
+  "summary": "Browse culture articles and generate personalized HTML newsletters via MCP",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finally_offline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WN-FO",
+      "features": [
+        "Browse culture articles and generate personalized HTML newsletters via MCP"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finally-offline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186637785?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finally-offline",
+      "url": "https://clawhub.ai/skills/finally-offline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finally-offline",
+    "url": "https://clawhub.ai/skills/finally-offline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finally-offline-b7643f6666333547.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finally-offline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finally-offline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79db3d29e0418f22cdde1842df0e881391df16c9c3f6b265bf08ec09c2b5fde4",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T21:45:50.664Z"
+}

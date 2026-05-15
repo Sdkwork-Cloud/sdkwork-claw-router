@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31503,
+  "uuid": "skill-clawhub-project-heartbeat",
+  "skillKey": "clawhub-project-heartbeat",
+  "name": "Project Heartbeat",
+  "summary": "Design controlled continuation loops for long-running projects. Use when a task is too large for one session, benefits from periodic wake-ups, and needs expl...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_heartbeat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuu Dao",
+      "features": [
+        "Design controlled continuation loops for long-running projects",
+        "Use when a task is too large for one session, benefits from periodic wake-ups, and needs expl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-heartbeat@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74347577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-heartbeat",
+      "url": "https://clawhub.ai/skills/project-heartbeat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-heartbeat",
+    "url": "https://clawhub.ai/skills/project-heartbeat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-heartbeat-bce3ed9411ddf874.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-heartbeat@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-heartbeat-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4302438191d2636518b76e1ddc0ae07f064f86ae67ee27163553a75d84d8d50",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T05:47:49.429Z"
+}

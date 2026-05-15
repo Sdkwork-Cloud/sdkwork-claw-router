@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54060,
+  "uuid": "skill-clawhub-chinese-sentence-correction",
+  "skillKey": "clawhub-chinese-sentence-correction",
+  "name": "chinese-sentence-correction",
+  "summary": "Use when correcting Chinese ill-formed sentences (病句) with minimal edits while preserving original meaning, including grammar, wording, word order, redundanc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_sentence_correction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "摸模鱼",
+      "features": [
+        "Use when correcting Chinese ill-formed sentences (病句) with minimal edits while preserving origi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinese-sentence-correction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56257239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinese-sentence-correction",
+      "url": "https://clawhub.ai/skills/chinese-sentence-correction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-sentence-correction",
+    "url": "https://clawhub.ai/skills/chinese-sentence-correction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-sentence-correction-54d5b60bf2873785.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinese-sentence-correction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinese-sentence-correction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6815b99a7dd17237ce4653df96cc63d85ef57c815a6d777504e993dd1003faf0",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:23:17.878Z"
+}

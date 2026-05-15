@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-2-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_ai",
+  "skill": {
+    "id": 43739,
+    "skillKey": "clawhub-seedance-2-ai",
+    "name": "Seedance 2 Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-ai",
+    "url": "https://clawhub.ai/skills/seedance-2-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-ai-feab7a2447ad2230.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tired of spending hours trying to produce professional-quality video content with clunky tools that never quite capture your vision? seedance-2-ai brings Byt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775665534897,
+      "changelog": "Seedance 2 AI — Initial Release\n\n- Generate cinematic, high-motion AI video clips from text prompts, reference images, or both.\n- Seamless connection and authentication with ByteDance's Seedance 2 API, including free trial token support.\n- Supports various modes: text-to-video, image-to-video, style transfer, easy export, credits checking, and state reporting.\n- Automatic backend event handling, error handling, and smart API routing for upload, generation, export, and balance queries.\n- Outputs high-quality video in multiple formats (mp4, mov, avi, webm, gif, etc.).\n- Clear, user-friendly setup and status updates; hides technical details during use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:572b5103df3e4c55f0a6d7666e6595babc8cdc6f1950c9462f4786d0690e7f0c"
+}

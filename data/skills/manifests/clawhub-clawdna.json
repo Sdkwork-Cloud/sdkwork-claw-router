@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25680,
+  "uuid": "skill-clawhub-clawdna",
+  "skillKey": "clawhub-clawdna",
+  "name": "Clawdna",
+  "summary": "Generate a public, privacy-safe persona/card/wiki lead from historical behavior when the user explicitly asks to run ClawDNA.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdna",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "不足为道",
+      "features": [
+        "Generate a public, privacy-safe persona/card/wiki lead from historical behavior when the user e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdna@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208321697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdna",
+      "url": "https://clawhub.ai/skills/clawdna"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdna",
+    "url": "https://clawhub.ai/skills/clawdna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdna-03ecf7c5188bcb18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdna@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdna-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65f6a4b396f96bd40d9776ba0ed3ccb47c650238ccde0da4fd35b97d0f8fe7a3",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:15:14.126Z"
+}

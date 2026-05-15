@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alimerce@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alimerce",
+  "skill": {
+    "id": 61969,
+    "skillKey": "clawhub-alimerce",
+    "name": "AliMerce 商城助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alimerce",
+    "url": "https://clawhub.ai/skills/alimerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alimerce-78bac7118ea19c5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AliMerce 商城 AI 助手技能 - 客服、销售、商品管理、订单处理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alimerce",
+      "userId": "s17fret1pb43pp8ytnfa1yv0e586a3hn",
+      "displayName": "alimerce",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 56,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778223202377,
+      "changelog": "AliMerce AI Assistant 初始版本上线：\n\n- 提供商品咨询与订单处理自动化客服功能\n- 支持个性化客户偏好记录与更新\n- 实现销售推荐与下单协助\n- 规范多语言沟通与标准化响应格式\n- 高风险操作设定人工审批流程\n- 提供实际对话处理案例说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d4fa2854e30a1322689cd02d98a69580d43b7038f488c04c88ee36b2488d6bf"
+}

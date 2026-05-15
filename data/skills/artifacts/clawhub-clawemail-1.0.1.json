@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawemail@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawemail",
+  "skill": {
+    "id": 13176,
+    "skillKey": "clawhub-clawemail",
+    "name": "Clawemail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawemail",
+    "url": "https://clawhub.ai/skills/clawemail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawemail-1b9a25ddfaa461aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace via ClawEmail.com service — Gmail, Drive, Docs, Sheets, Slides, Calendar, Forms. Use PROACTIVELY when the user asks to send email, create documents, manage files, schedule events, or work with any Google service."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cto1",
+      "userId": "publishers:cto1",
+      "displayName": "cto1",
+      "image": "https://avatars.githubusercontent.com/u/7560345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1890,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770898846636,
+      "changelog": "- Renamed skill from \"claw\" to \"clawemail\" throughout documentation.\n- Updated all example file paths from `claw` to `clawemail` for setup and script usage.\n- Revised description to clarify this skill uses the ClawEmail.com service.\n- No functional changes to API usage examples or core documentation content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a4e37791988b8d5569d71dd494e43f2e32c70d6d04cc7496a031f92bae274a8"
+}

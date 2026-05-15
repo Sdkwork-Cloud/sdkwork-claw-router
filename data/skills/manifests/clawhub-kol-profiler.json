@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40150,
+  "uuid": "skill-clawhub-kol-profiler",
+  "skillKey": "clawhub-kol-profiler",
+  "name": "KOL Profiler",
+  "summary": "Analyze physician academic influence and collaboration networks",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kol_profiler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Analyze physician academic influence and collaboration networks"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kol-profiler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kol-profiler",
+      "url": "https://clawhub.ai/skills/kol-profiler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kol-profiler",
+    "url": "https://clawhub.ai/skills/kol-profiler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kol-profiler-2b64669cb8332ab3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kol-profiler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kol-profiler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa81f41a4e51853c3736ba0ef54684706e0c9d050325c949d97a8e09983febdf",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:37:03.407Z"
+}

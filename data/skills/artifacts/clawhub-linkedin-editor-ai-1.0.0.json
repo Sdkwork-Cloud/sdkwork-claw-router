@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-editor-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_editor_ai",
+  "skill": {
+    "id": 41472,
+    "skillKey": "clawhub-linkedin-editor-ai",
+    "name": "Linkedin Editor Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-editor-ai",
+    "url": "https://clawhub.ai/skills/linkedin-editor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-editor-ai-c874d08be8b87720.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cloud-based linkedin-editor-ai tool that handles editing and optimizing videos for LinkedIn posts and profiles. Upload MP4, MOV, AVI, WebM files (up to 500MB..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775863261509,
+      "changelog": "Initial release of LinkedIn Editor AI — Edit and Export LinkedIn Videos:\n\n- Supports uploading raw video files (MP4, MOV, AVI, WebM, up to 500MB) for LinkedIn-optimized editing.\n- Allows users to describe desired edits (trim silences, add captions, resize, etc.) and exports 1080p MP4 videos in 1–2 minutes.\n- Fully cloud-based: runs edits and exports on GPU servers — no local install required.\n- Automatic setup and authentication using a free 7-day token with 100 credits for new users.\n- Exports are free and credited; jobs remain linked to active sessions.\n- Provides clear feedback on workflow progress, errors, and supported formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc62e240b6dc25b5aeb9ea3cc8ada98172feef0b2f2a4d0521855dbd860d3018"
+}

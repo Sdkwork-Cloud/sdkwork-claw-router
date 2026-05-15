@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-hq@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hq",
+  "skill": {
+    "id": 11557,
+    "skillKey": "clawhub-agent-hq",
+    "name": "Agent HQ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hq",
+    "url": "https://clawhub.ai/skills/agent-hq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hq-d35aaa0a0d418140.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy the Agent HQ mission-control stack (Express + React + Telegram notifier / Jarvis summary) so other Clawdbot teams can spin up the same board, high-priority watcher, and alert automation. Includes setup, telemetry, and automation hoo."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thibautrey",
+      "userId": "publishers:thibautrey",
+      "displayName": "thibautrey",
+      "image": "https://avatars.githubusercontent.com/u/1433921?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 1663,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770627009737,
+      "changelog": "2026-02-09 release: README translation, changelog, new release notes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:301c8041b18142734da4c92418d39bf79032ca13d50b5cc81f7a277c4234863e"
+}

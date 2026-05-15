@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-sop@5.6.0",
+  "version": "5.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_sop",
+  "skill": {
+    "id": 68623,
+    "skillKey": "clawhub-token-sop",
+    "name": "TOKEN SOP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-sop",
+    "url": "https://clawhub.ai/skills/token-sop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-sop-49175d57286ba607.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动缓存并复用本地成功工作流，优先本地执行节省Token，支持断网使用和云端备份共享。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ainclaw",
+      "userId": "s17dmbmaenebbv89tz8zc0bfts83h405",
+      "displayName": "ainclaw",
+      "image": "https://avatars.githubusercontent.com/u/252712074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "5.6.0",
+      "createdAt": 1773940019021,
+      "changelog": "- Updated dependencies in package.json\n- Minor metadata adjustments in skill.json\n\nNo functional changes to the skill logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:31615d2fe3206af4ea08b7d84021cff643a5a03b8f851db0279ae34d7370551c"
+}

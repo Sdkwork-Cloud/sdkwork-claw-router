@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dewu@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dewu",
+  "skill": {
+    "id": 72516,
+    "skillKey": "clawhub-dewu",
+    "name": "Dewu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dewu",
+    "url": "https://clawhub.ai/skills/dewu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dewu-6e2e47cd9884670b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理得物电商平台公开的商家入驻条件、活动信息、营销工具及服务规则等官方信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773925159723,
+      "changelog": "Initial release of the “dewu” skill.\n\n- Organizes public information from Dewu’s official pages, including merchant onboarding, event details, and service rules.\n- Supports sorting entry requirements, fee structures, promotional activity timelines, and key service policies.\n- Clearly separates merchant-side and consumer-side rules for easier reference.\n- Emphasizes compliance: only processes publicly available data, does not access private accounts or backend operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:087be2f334af579c12599332267574f842ec81464139e7de07bb4c74bae65d75"
+}

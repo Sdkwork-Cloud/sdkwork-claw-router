@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-captcha-solver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_captcha_solver",
+  "skill": {
+    "id": 18067,
+    "skillKey": "clawhub-auto-captcha-solver",
+    "name": "Auto Captcha Solver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-captcha-solver",
+    "url": "https://clawhub.ai/skills/auto-captcha-solver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-captcha-solver-7801a09724c96ab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect and solve simple image captchas during browser automation. Use when flows encounter 4-6 character text, distorted alphanumeric, numeric, rotated, or a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cx6226301",
+      "userId": "publishers:cx6226301",
+      "displayName": "bigchen",
+      "image": "https://avatars.githubusercontent.com/u/7425194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 720,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773407027639,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3d86b631539503b99d3732c99c17143c715421fb747228dbbbd5df5692fce2a"
+}

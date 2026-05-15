@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-resend@1.0.14",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_resend",
+  "skill": {
+    "id": 13674,
+    "skillKey": "clawhub-email-resend",
+    "name": "Email Resend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-resend",
+    "url": "https://clawhub.ai/skills/email-resend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-resend-de296c6f1cda39c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive emails using the Resend API. Use for: (1) sending emails directly via Resend API, (2) receiving email notifications via cron, (3) drafting r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivelin",
+      "userId": "publishers:ivelin",
+      "displayName": "Ivelin Ivanov",
+      "image": "https://avatars.githubusercontent.com/u/2234901?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1358,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.0.14",
+      "createdAt": 1772138781295,
+      "changelog": "email-resend 1.0.14\n\n- Updated version to 1.0.14.\n- Documentation updates in SKILL.md for clarity and maintenance; no code or feature changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:919f63c509b4f97825b1a11b926561a49fc5c8790a6b71c3d9d58e3089d90042"
+}

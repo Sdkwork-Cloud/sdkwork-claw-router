@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53383,
+  "uuid": "skill-clawhub-prompt-debugger",
+  "skillKey": "clawhub-prompt-debugger",
+  "name": "Prompt Debugger",
+  "summary": "Debug prompts that produce unexpected AI outputs — diagnose failure modes, identify ambiguity and conflicting instructions, test variations, compare model re...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_debugger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Debug prompts that produce unexpected AI outputs — diagnose failure modes, identify ambiguity a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-debugger@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-debugger",
+      "url": "https://clawhub.ai/skills/prompt-debugger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-debugger",
+    "url": "https://clawhub.ai/skills/prompt-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-debugger-9143c62de8273280.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-debugger@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-debugger-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41c93e005e206751fc98999c3752203680768ef1262da0c90046d1eab9e41e4a",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:33.710Z"
+}

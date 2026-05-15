@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63451,
+  "uuid": "skill-clawhub-yinxiang-notes",
+  "skillKey": "clawhub-yinxiang-notes",
+  "name": "yinxiang-notes",
+  "summary": "印象笔记（中国版）集成 skill。使用 Developer Token 在印象笔记中创建、整理和搜索笔记。支持笔记本列表、创建笔记、更新笔记内容/标签、移动笔记到废纸篓、查看/清空废纸篓、搜索内容、增量同步到 Obsidian vault。适用于使用 app.yinxiang.com 的用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yinxiang_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suepradun",
+      "features": [
+        "印象笔记（中国版）集成 skill。使用 Developer Token 在印象笔记中创建、整理和搜索笔记。支持笔记本列表、创建笔记、更新笔记内容/标签、移动笔记到废纸篓、查看/清空废纸篓、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yinxiang-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59818764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yinxiang-notes",
+      "url": "https://clawhub.ai/skills/yinxiang-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yinxiang-notes",
+    "url": "https://clawhub.ai/skills/yinxiang-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yinxiang-notes-986aac8a2bcbbb1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yinxiang-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yinxiang-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8340aa2417718da64133794eb46073679059b82d4df22a67006fb55844bd0e53",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:00:49.444Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15023,
+  "uuid": "skill-clawhub-obsidian-openclaw-sync",
+  "skillKey": "clawhub-obsidian-openclaw-sync",
+  "name": "Obsidian Openclaw Sync",
+  "summary": "Sync Obsidian OpenClaw config across multiple iCloud devices. Manages symlinks for seamless multi-device sync.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_openclaw_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yang Jun",
+      "features": [
+        "Sync Obsidian OpenClaw config across multiple iCloud devices",
+        "Manages symlinks for seamless multi-device sync."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-openclaw-sync@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/815438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-openclaw-sync",
+      "url": "https://clawhub.ai/skills/obsidian-openclaw-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-openclaw-sync",
+    "url": "https://clawhub.ai/skills/obsidian-openclaw-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-openclaw-sync-3ba998c3213cb97a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-openclaw-sync@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-openclaw-sync-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4265c5b1f58ce061fae339bd2a064c95b7eeb8ac47360153450ee2fd498d81e",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T02:03:51.787Z"
+}

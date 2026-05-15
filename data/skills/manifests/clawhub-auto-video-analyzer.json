@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61726,
+  "uuid": "skill-clawhub-auto-video-analyzer",
+  "skillKey": "clawhub-auto-video-analyzer",
+  "name": "Auto Video Analyzer",
+  "summary": "自动分析视频内容，提取关键帧进行AI视觉分析。支持 Windows、macOS 和 Linux。首次使用自动从GitHub下载对应平台的工具脚本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_video_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shishenbaiye",
+      "features": [
+        "自动分析视频内容，提取关键帧进行AI视觉分析。支持 Windows、macOS 和 Linux。首次使用自动从GitHub下载对应平台的工具脚本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-video-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53844415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-video-analyzer",
+      "url": "https://clawhub.ai/skills/auto-video-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-video-analyzer",
+    "url": "https://clawhub.ai/skills/auto-video-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-video-analyzer-2cab7f91b6f0d0cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-video-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-video-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d33ee46a5da11a8775217f22da01a042595934a814215d892270d0415bf8b69c",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:15:31.776Z"
+}

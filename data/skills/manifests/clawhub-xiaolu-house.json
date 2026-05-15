@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73498,
+  "uuid": "skill-clawhub-xiaolu-house",
+  "skillKey": "clawhub-xiaolu-house",
+  "name": "小鹿选房",
+  "summary": "小鹿选房是专业的房产信息平台，当用户需要找房源、选笋盘、比价格、查成交、看小区、查学区时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaolu_house",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FangGeek",
+      "features": [
+        "小鹿选房是专业的房产信息平台，当用户需要找房源、选笋盘、比价格、查成交、看小区、查学区时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaolu-house@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131229823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaolu-house",
+      "url": "https://clawhub.ai/skills/xiaolu-house"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaolu-house",
+    "url": "https://clawhub.ai/skills/xiaolu-house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaolu-house-1ea0089ab4ef3ff8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaolu-house@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaolu-house-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2726c37891a85d571de210467866d7eb2d02dc9c8e81d4b2a5a90826fb72b4d",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:38:20.088Z"
+}

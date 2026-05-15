@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qa-gate@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_gate",
+  "skill": {
+    "id": 28775,
+    "skillKey": "clawhub-qa-gate",
+    "name": "Qa Gate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-gate",
+    "url": "https://clawhub.ai/skills/qa-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-gate-206555eba4631d8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Final quality validation gate for any artifact before human review. Run this skill on documents, skills, PRDs, blog posts, or code artifacts to validate fact..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "corbin-breton",
+      "userId": "s17e2d7wzt9cynyq8rc1g1bem583fhdd",
+      "displayName": "Corbin Breton",
+      "image": "https://avatars.githubusercontent.com/u/4294018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774833784025,
+      "changelog": "Upgraded factual accuracy check to sequential claim verification protocol (P1) — extract claims, verify each independently, score verification rate",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a5ca70a56e854e6f160fd67f534eadc8b03f265601877cbae755dba0c13e855"
+}

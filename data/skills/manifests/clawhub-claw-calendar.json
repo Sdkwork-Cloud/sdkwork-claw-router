@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47002,
+  "uuid": "skill-clawhub-claw-calendar",
+  "skillKey": "clawhub-claw-calendar",
+  "name": "Claw Calendar",
+  "summary": "Manage calendar events by creating, viewing, updating, or deleting events using natural language commands via the Claw Calendar API.",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stwang",
+      "features": [
+        "Manage calendar events by creating, viewing, updating, or deleting events using natural languag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-calendar@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38035199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-calendar",
+      "url": "https://clawhub.ai/skills/claw-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-calendar",
+    "url": "https://clawhub.ai/skills/claw-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-calendar-5c6007c1b35471c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-calendar@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-calendar-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c27fbb9a1d2366716c534c43671f8a286c321f319354e2db17c692da8d14552",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:02:20.531Z"
+}

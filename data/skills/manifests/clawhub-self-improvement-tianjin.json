@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30704,
+  "uuid": "skill-clawhub-self-improvement-tianjin",
+  "skillKey": "clawhub-self-improvement-tianjin",
+  "name": "Self Improvement Tianjin",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improvement_tianjin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianjin-ren",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improvement-tianjin@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191457384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improvement-tianjin",
+      "url": "https://clawhub.ai/skills/self-improvement-tianjin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improvement-tianjin",
+    "url": "https://clawhub.ai/skills/self-improvement-tianjin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improvement-tianjin-2a8e0f12cf7a622b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improvement-tianjin@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improvement-tianjin-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:200f6427b5caa292cf84058678c4d00682e45ce77e73f05ff7eaf9e4f272aa28",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:25:02.354Z"
+}

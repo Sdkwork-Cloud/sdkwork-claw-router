@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29036,
+  "uuid": "skill-clawhub-workspace-hygiene",
+  "skillKey": "clawhub-workspace-hygiene",
+  "name": "Workspace Hygiene Publish",
+  "summary": "Audit and maintain workspace file structure, memory quality, and project documentation. Use when: cleaning up the workspace, running a file audit, checking m...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_hygiene",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve",
+      "features": [
+        "Audit and maintain workspace file structure, memory quality, and project documentation",
+        "Use when: cleaning up the workspace, running a file audit, checking m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-hygiene@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210807441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-hygiene",
+      "url": "https://clawhub.ai/skills/workspace-hygiene"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-hygiene",
+    "url": "https://clawhub.ai/skills/workspace-hygiene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-hygiene-c70aeac9ce51f1d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-hygiene@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-hygiene-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f58b8843b07d115e238b3ff24eeb73572bb0767914557f16dbbc3353bb67ad86",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T19:36:39.141Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stable-image-ultra@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stable_image_ultra",
+  "skill": {
+    "id": 34165,
+    "skillKey": "clawhub-stable-image-ultra",
+    "name": "Stable Image Ultra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stable-image-ultra",
+    "url": "https://clawhub.ai/skills/stable-image-ultra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stable-image-ultra-4b0a854215c9d379.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate the highest quality photorealistic images using Stability AI's Stable Image Ultra and Stable Diffusion 3.5 Large models via AWS Bedrock. The most po..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wujiaming88",
+      "userId": "s171ccng28wdj2n2tdtw8q70zd83ha4q",
+      "displayName": "Garming",
+      "image": "https://avatars.githubusercontent.com/u/7887545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777012918526,
+      "changelog": "新增aspect-ratio参数(9种比例), Quality-First铁律, Prompt工程指南, 强制PNG输出, 设为默认生图技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6306a837843b3bc7854447cddd46c43e8f5cfc88b57cf37afa75e435606d5585"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8464,
+  "uuid": "skill-clawhub-image-cog",
+  "skillKey": "clawhub-image-cog",
+  "name": "Image Cog",
+  "summary": "AI image generation and photo editing powered by CellCog. Text-to-image, image-to-image, consistent characters, product photography, reference-based generati...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_cog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CellCog",
+      "features": [
+        "AI image generation and photo editing powered by CellCog",
+        "Text-to-image, image-to-image, consistent characters, product photography, reference-based gene."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-cog@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14193431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-cog",
+      "url": "https://clawhub.ai/skills/image-cog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-cog",
+    "url": "https://clawhub.ai/skills/image-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-cog-beeb94686ee67a7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-cog@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-cog-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e981ad6a4b1e64709c4dca90a17bba06f92e8cca7b377fb92e9b549ad0fb1fcb",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:18:58.679Z"
+}

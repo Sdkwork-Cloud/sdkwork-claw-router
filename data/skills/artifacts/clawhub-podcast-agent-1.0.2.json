@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-agent@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_agent",
+  "skill": {
+    "id": 43728,
+    "skillKey": "clawhub-podcast-agent",
+    "name": "Podcast Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-agent",
+    "url": "https://clawhub.ai/skills/podcast-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-agent-e0541b1fc66f397e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search articles on any topic, generate a two-host dialogue script, and synthesize podcast audio via TTS. Turn long reads into listenable content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "besty0121",
+      "userId": "s174yh6zn30ahdy1cgjzj31bes841kse",
+      "displayName": "besty0121",
+      "image": "https://avatars.githubusercontent.com/u/133213023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775110974316,
+      "changelog": "- Documentation (SKILL.md) updated for clarity and formatting; no changes to functionality.\n- No user-facing features or code logic were changed in this release.\n- Example workflows, usage guides, and output descriptions remain consistent.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98ea164bed2b6b16d454013727975c66e93b231ad6e5a7bfdb10f3ee6b902d82"
+}

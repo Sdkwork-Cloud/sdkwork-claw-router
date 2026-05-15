@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37433,
+  "uuid": "skill-clawhub-nm-imbue-workflow-monitor",
+  "skillKey": "clawhub-nm-imbue-workflow-monitor",
+  "name": "Nm Imbue Workflow Monitor",
+  "summary": "Detect workflow failures and inefficient patterns, then create GitHub issues for improvement via /fix-workflow",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_imbue_workflow_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Detect workflow failures and inefficient patterns, then create GitHub issues for improvement vi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-imbue-workflow-monitor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-imbue-workflow-monitor",
+      "url": "https://clawhub.ai/skills/nm-imbue-workflow-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-imbue-workflow-monitor",
+    "url": "https://clawhub.ai/skills/nm-imbue-workflow-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-imbue-workflow-monitor-6161fd357814ae5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-imbue-workflow-monitor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-imbue-workflow-monitor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec4f10caecf335f7676f94e1be60df2a5541a6aada751a9e487786a050ecc590",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:17:38.198Z"
+}

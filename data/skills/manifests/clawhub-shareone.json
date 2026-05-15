@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64233,
+  "uuid": "skill-clawhub-shareone",
+  "skillKey": "clawhub-shareone",
+  "name": "shareone",
+  "summary": "发布本地生成的 HTML 网页、PDF 或 PPTX 到 ShareOne 平台，生成公网分享短链接（Capability URL）。当用户要求“发布”、“分享”、“生成链接”或“上线”某个生成的页面/文档时使用此技能。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shareone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sudoprivacy",
+      "features": [
+        "发布本地生成的 HTML 网页、PDF 或 PPTX 到 ShareOne 平台，生成公网分享短链接（Capability URL）。当用户要求“发布”、“分享”、“生成链接”或“上线”某个."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shareone@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26501403?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shareone",
+      "url": "https://clawhub.ai/skills/shareone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shareone",
+    "url": "https://clawhub.ai/skills/shareone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shareone-0b1958ec9d76a057.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shareone@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-shareone-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8774e2ee8638c4f04d0fc8e170b2328fb49657cc45decd556b6876c7a6d8c40",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:30:56.038Z"
+}

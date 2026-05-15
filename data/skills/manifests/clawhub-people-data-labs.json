@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26126,
+  "uuid": "skill-clawhub-people-data-labs",
+  "skillKey": "clawhub-people-data-labs",
+  "name": "People Data Labs",
+  "summary": "People Data Labs integration. Manage Persons, Companies. Use when the user wants to interact with People Data Labs data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.people_data_labs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "People Data Labs integration",
+        "Manage Persons, Companies",
+        "Use when the user wants to interact with People Data Labs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/people-data-labs@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "people-data-labs",
+      "url": "https://clawhub.ai/skills/people-data-labs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "people-data-labs",
+    "url": "https://clawhub.ai/skills/people-data-labs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/people-data-labs-298cb0211e586d09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/people-data-labs@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-people-data-labs-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b010077cd20360df0201f460ecf07e01bfc80ed33f796a6333767fdc909b5d4f",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:50:55.280Z"
+}

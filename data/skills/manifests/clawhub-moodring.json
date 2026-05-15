@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50916,
+  "uuid": "skill-clawhub-moodring",
+  "skillKey": "clawhub-moodring",
+  "name": "Moodring",
+  "summary": "Reference tool for life — covers intro, quickstart, patterns and more. Quick lookup for Moodring concepts, best practices, and implementation patterns.",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Reference tool for life — covers intro, quickstart, patterns and more",
+        "Quick lookup for Moodring concepts, best practices, and implementation patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moodring@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moodring",
+      "url": "https://clawhub.ai/skills/moodring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodring",
+    "url": "https://clawhub.ai/skills/moodring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodring-b73f74d170aeee43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moodring@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-moodring-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7636da9dcfac09ecac85c3af2c2740cd919af250eb647897099db67e63df02ce",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:45:59.011Z"
+}

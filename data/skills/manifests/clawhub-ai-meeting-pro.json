@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33196,
+  "uuid": "skill-clawhub-ai-meeting-pro",
+  "skillKey": "clawhub-ai-meeting-pro",
+  "name": "Meeting Assistant",
+  "summary": "AI meeting assistant for agenda generation, minute taking, and action item tracking using Manager-Worker pattern.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "banxian87",
+      "features": [
+        "AI meeting assistant for agenda generation, minute taking, and action item tracking using Manag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-meeting-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264314218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-meeting-pro",
+      "url": "https://clawhub.ai/skills/ai-meeting-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-pro",
+    "url": "https://clawhub.ai/skills/ai-meeting-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-pro-1b807f7928c083f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-meeting-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-meeting-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac7c594b56d5a2ffdb780c5dae908037d0fe1c149015f976aef6b5202c3f77d4",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T04:44:02.643Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20964,
+  "uuid": "skill-clawhub-recipe-organize-drive-folder",
+  "skillKey": "clawhub-recipe-organize-drive-folder",
+  "name": "Recipe Organize Drive Folder",
+  "summary": "Create a Google Drive folder structure and move files into the right locations.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_organize_drive_folder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Create a Google Drive folder structure and move files into the right locations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recipe-organize-drive-folder@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recipe-organize-drive-folder",
+      "url": "https://clawhub.ai/skills/recipe-organize-drive-folder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-organize-drive-folder",
+    "url": "https://clawhub.ai/skills/recipe-organize-drive-folder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-organize-drive-folder-679efb620989c1fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recipe-organize-drive-folder@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-recipe-organize-drive-folder-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a34724007f3289720beda6d6f1a112569f020321b6fc69ffaec4fa2abee5265",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:36:43.225Z"
+}

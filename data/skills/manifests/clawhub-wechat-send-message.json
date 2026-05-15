@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66778,
+  "uuid": "skill-clawhub-wechat-send-message",
+  "skillKey": "clawhub-wechat-send-message",
+  "name": "微信Mac版消息发送",
+  "summary": "在微信 Mac 版发送消息。当用户提到\"微信发消息\"、\"发微信\"、\"给 XXX 发微信\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_send_message",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "calvin-dean",
+      "features": [
+        "在微信 Mac 版发送消息。当用户提到\"微信发消息\"、\"发微信\"、\"给 XXX 发微信\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-send-message@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121805072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-send-message",
+      "url": "https://clawhub.ai/skills/wechat-send-message"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-send-message",
+    "url": "https://clawhub.ai/skills/wechat-send-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-send-message-8aa12fbda4d01527.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-send-message@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-send-message-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93a999ba145491017ac64ebb4ea4b9a955e64b3df8ba41ac6fcc07d6b0cd1ad3",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T13:41:42.519Z"
+}

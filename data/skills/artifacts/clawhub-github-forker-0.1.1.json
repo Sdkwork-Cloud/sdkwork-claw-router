@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-forker@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_forker",
+  "skill": {
+    "id": 51177,
+    "skillKey": "clawhub-github-forker",
+    "name": "Github Forker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-forker",
+    "url": "https://clawhub.ai/skills/github-forker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-forker-e82275577d1f5746.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to fork a GitHub repository — creating their own copy of a repo under their GitHub account. Trigger on any fork or copy-to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chat2dev",
+      "userId": "publishers:chat2dev",
+      "displayName": "chat2dev",
+      "image": "https://avatars.githubusercontent.com/u/217951755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773563544777,
+      "changelog": "- Added a README.md file with detailed usage and instructions.\n- No changes to code or main logic; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08cb59d7501ff2dfae5b1ac9aff27e3644d576cc13828ec32937eac2b9e003d4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byreal-perps-cli@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byreal_perps_cli",
+  "skill": {
+    "id": 38246,
+    "skillKey": "clawhub-byreal-perps-cli",
+    "name": "Byreal Perps CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byreal-perps-cli",
+    "url": "https://clawhub.ai/skills/byreal-perps-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byreal-perps-cli-16310333c980d611.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Byreal Hyperliquid perpetual futures trading CLI: account setup, market/limit orders with TP/SL, position close-market/close-limit/close-all, leverage contro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ggg223399",
+      "userId": "s17f04thpab8stcky696j9pvvd83g2nk",
+      "displayName": "James333",
+      "image": "https://avatars.githubusercontent.com/u/40433945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1774317694824,
+      "changelog": "- Improved documentation and command reference in SKILL.md, detailing installation, credential management, command usage, and API/WebSocket fallback.\n- Added clear guidance on permissions, data privacy, and security practices for running trading and signal commands.\n- Explicitly listed hard constraints: only use the CLI interface, do not expose private keys, and avoid raw SDK calls.\n- Provided updated examples for key commands: account management, order/position handling, market signals, updates, and testnet usage.\n- Enhanced troubleshooting information for API connectivity issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:743598e911f210771afc21a6bb69f3c13ea52919dab2458282531371379ecc2d"
+}

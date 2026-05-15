@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46665,
+  "uuid": "skill-clawhub-retirement-trip",
+  "skillKey": "clawhub-retirement-trip",
+  "name": "retirement-trip",
+  "summary": "Book flights for retirement celebration trips. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary planning, visa...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retirement_trip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Book flights for retirement celebration trips",
+        "Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itinerary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retirement-trip@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retirement-trip",
+      "url": "https://clawhub.ai/skills/retirement-trip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retirement-trip",
+    "url": "https://clawhub.ai/skills/retirement-trip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retirement-trip-7f9d990f5b7a43da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retirement-trip@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retirement-trip-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52985f8ecdea4dbcd54db81fec9289f2e0d0b17d7f1ce74effcbfe24c5a9e0e6",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T00:36:06.498Z"
+}

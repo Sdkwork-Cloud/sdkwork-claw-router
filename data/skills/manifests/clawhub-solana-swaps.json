@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11002,
+  "uuid": "skill-clawhub-solana-swaps",
+  "skillKey": "clawhub-solana-swaps",
+  "name": "Solana Swaps",
+  "summary": "Swap tokens on Solana via Jupiter aggregator and check wallet balances. Use when user wants to swap tokens, check SOL/token balance, or get swap quotes.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_swaps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "imthatcarlos",
+      "features": [
+        "Swap tokens on Solana via Jupiter aggregator and check wallet balances",
+        "Use when user wants to swap tokens, check SOL/token balance, or get swap quotes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-swaps@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20136572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-swaps",
+      "url": "https://clawhub.ai/skills/solana-swaps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-swaps",
+    "url": "https://clawhub.ai/skills/solana-swaps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-swaps-2aedfe5c6638755e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-swaps@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-swaps-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a90eb5dc6d401f00860fb0d8558075c696a83b72b2412e0abca8683c57a8dad9",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T22:04:33.287Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28732,
+  "uuid": "skill-clawhub-tianqi",
+  "skillKey": "clawhub-tianqi",
+  "name": "tianqi",
+  "summary": "Get current weather and forecasts via wttr.in and Open-Meteo. Use when: user asks in Chinese about weather, temperature, rain, wind, or short-range forecasts...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianqi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "Get current weather and forecasts via wttr.in and Open-Meteo",
+        "Use when: user asks in Chinese about weather, temperature, rain, wind, or short-range forecasts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianqi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianqi",
+      "url": "https://clawhub.ai/skills/tianqi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianqi",
+    "url": "https://clawhub.ai/skills/tianqi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianqi-4a8302d113f0d8a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianqi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianqi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f694f7913f025c4234ab783bfb3c088cc34ccfd5f40a248054fe45f54e330d36",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T11:16:20.792Z"
+}

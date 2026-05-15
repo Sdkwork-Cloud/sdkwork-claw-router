@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xia-zhua-zhua@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xia_zhua_zhua",
+  "skill": {
+    "id": 61339,
+    "skillKey": "clawhub-xia-zhua-zhua",
+    "name": "Content Catcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xia-zhua-zhua",
+    "url": "https://clawhub.ai/skills/xia-zhua-zhua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xia-zhua-zhua-0aab980069ce243b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "虾抓抓(xia-zhua-zhua) v4.0 - 超强内容抓取技能 支持：Markdown/PDF/多模态提取/结构化抽取/翻译/视频下载 触发词：抓取网页、网页转Markdown、内容抓取、虾抓抓、视频下载"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luis1213899",
+      "userId": "s17dx8tkck6b2b3d3capmeyfmx84mj9a",
+      "displayName": "luis1213899",
+      "image": "https://avatars.githubusercontent.com/u/266679161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1777051004572,
+      "changelog": "- Skill renamed to \"xia-zhua-zhua\" and branding updated throughout documentation.\n- File structure expanded with 12 new files added, including key modules like analyzer.py and smart-extract.py.\n- Core features remain the same; primarily documentation, naming, and structure adjustments.\n- Removed \"content-catcher\" references to clarify and focus on the \"虾抓抓(xia-zhua-zhua)\" identity.\n- All usage examples, descriptions, and trigger words updated for consistency with the new name.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6400e969acc0720a1b19bbefcdb54b6ef3c24bf1d7bef5ced3fa0d47e176fb5"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30923,
+  "uuid": "skill-clawhub-instruqt",
+  "skillKey": "clawhub-instruqt",
+  "name": "Instruqt",
+  "summary": "Instruqt integration. Manage data, records, and automate workflows. Use when the user wants to interact with Instruqt data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instruqt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Instruqt integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Instruqt data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instruqt@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instruqt",
+      "url": "https://clawhub.ai/skills/instruqt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instruqt",
+    "url": "https://clawhub.ai/skills/instruqt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instruqt-658d3611caf0de6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instruqt@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-instruqt-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aee550dd0e2db3b208160deb1c6c7f7b1c5f1054291f8bce0ea0876afdb87a85",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:59:48.932Z"
+}

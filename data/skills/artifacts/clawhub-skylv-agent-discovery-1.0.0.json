@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-agent-discovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_agent_discovery",
+  "skill": {
+    "id": 61562,
+    "skillKey": "clawhub-skylv-agent-discovery",
+    "name": "Agent Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-agent-discovery",
+    "url": "https://clawhub.ai/skills/skylv-agent-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-agent-discovery-93f10386ba7a44fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent发现探索助手。搜索、评估、集成公开Agent。使用场景：(1) 搜索可用Agent，(2) 评估Agent能力，(3) 集成方案设计，(4) 成本效益分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775781892270,
+      "changelog": "Initial-release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ceb2fe498c49aa848d4ab3daef056a326a459af5bbc359a9261d52d663f00303"
+}

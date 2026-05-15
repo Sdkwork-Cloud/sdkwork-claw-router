@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51989,
+  "uuid": "skill-clawhub-security-essentials",
+  "skillKey": "clawhub-security-essentials",
+  "name": "Security Essentials",
+  "summary": "Harden your OpenClaw agent deployment — SSH lockdown, firewall rules, automated security audits, secret rotation reminders, RAM/process monitoring, and CVE a...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_essentials",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nograve.dev",
+      "features": [
+        "Harden your OpenClaw agent deployment — SSH lockdown, firewall rules, automated security audits."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-essentials@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193042501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-essentials",
+      "url": "https://clawhub.ai/skills/security-essentials"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-essentials",
+    "url": "https://clawhub.ai/skills/security-essentials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-essentials-940d21faf15ad2bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-essentials@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-essentials-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10f04ab2d3a35905949d297771247454cd4844779ef22054ed41724e342b0c13",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:13:47.465Z"
+}

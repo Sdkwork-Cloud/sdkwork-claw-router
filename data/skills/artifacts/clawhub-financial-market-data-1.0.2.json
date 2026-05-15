@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-market-data@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_market_data",
+  "skill": {
+    "id": 31318,
+    "skillKey": "clawhub-financial-market-data",
+    "name": "financial-market-data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-market-data",
+    "url": "https://clawhub.ai/skills/financial-market-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-market-data-9422f5f9672334cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides unified access to multi-source financial market data including stocks, futures, ETFs, realtime quotes, sectors, financials, and macroeconomic indica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bjdenglun",
+      "userId": "s173cyvrb1p4kp2kde9gnwpxv5849ewz",
+      "displayName": "BJ_denglun",
+      "image": "https://avatars.githubusercontent.com/u/52783978?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775351265157,
+      "changelog": "- 移除了默认配置的东方财富 MX API Key，需用户自行申请填写。\n- SKILL.md 相关 API Key 说明已更新，提供了申请地址。\n- 其余接口使用说明与内容未变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01cd7dc3c9c194711baae361cb223c39518dc82202f1b92fc10faa036c6c959f"
+}

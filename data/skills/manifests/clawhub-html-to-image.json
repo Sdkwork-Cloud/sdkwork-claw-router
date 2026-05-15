@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21291,
+  "uuid": "skill-clawhub-html-to-image",
+  "skillKey": "clawhub-html-to-image",
+  "name": "Use agentbrowser to convert html to image",
+  "summary": "Takes a URL, HTML file path, or raw HTML code and generates a printable image.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.html_to_image",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "upwell",
+      "features": [
+        "Takes a URL, HTML file path, or raw HTML code and generates a printable image."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/html-to-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/728808?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "html-to-image",
+      "url": "https://clawhub.ai/skills/html-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "html-to-image",
+    "url": "https://clawhub.ai/skills/html-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/html-to-image-1df43024187a28e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/html-to-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-html-to-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5b4e8f1dadf12516fb37a2f13c1685993d3a52619f1947fa331496bb96eb359",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T02:59:38.906Z"
+}

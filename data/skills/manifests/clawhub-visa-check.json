@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44467,
+  "uuid": "skill-clawhub-visa-check",
+  "skillKey": "clawhub-visa-check",
+  "name": "Visa Check",
+  "summary": "Check visa requirements, application procedures, required documents, and processing times for any destination. Covers tourist, business, and transit visas. A...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visa_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Check visa requirements, application procedures, required documents, and processing times for a.",
+        "Covers tourist, business, and transit visas"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visa-check@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visa-check",
+      "url": "https://clawhub.ai/skills/visa-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visa-check",
+    "url": "https://clawhub.ai/skills/visa-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visa-check-d4a6b3feef5e5d0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visa-check@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visa-check-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e56fd1bca63991dd49fd40707cb36103656e57426fa1d7fd6e6e39d51a586475",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T07:44:47.058Z"
+}

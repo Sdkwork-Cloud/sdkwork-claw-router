@@ -24,6 +24,10 @@
     "verify": "node scripts/verify-claw-router-product.mjs",
     "verify:fast": "node scripts/verify-claw-router-product.mjs --fast",
     "models:check": "node data/sdkwork-models/tools/build-index.mjs --check && node data/sdkwork-models/tools/validate-catalog.mjs && node data/sdkwork-models/tools/freshness-report.mjs --max-age-policy catalog-freshness-policy.json && node data/sdkwork-models/tools/catalog-audit.mjs && node data/sdkwork-models/tools/release-catalog.mjs --check",
+    "skills:seed:mirror-clawhub": "node scripts/mirror-clawhub-skills-seed.mjs --fetch",
+    "skills:seed:check": "node scripts/mirror-clawhub-skills-seed.mjs --check",
+    "app-store:seed:update": "node scripts/update-app-store-seed.mjs",
+    "app-store:seed:check": "node scripts/update-app-store-seed.mjs --check",
     "clean:fast": "node scripts/clean-claw-router-workspace.mjs",
     "release:preflight": "node scripts/release-preflight.mjs"
   }

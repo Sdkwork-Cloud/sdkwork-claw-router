@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35036,
+  "uuid": "skill-clawhub-icepay",
+  "skillKey": "clawhub-icepay",
+  "name": "Icepay",
+  "summary": "ICEPAY integration. Manage data, records, and automate workflows. Use when the user wants to interact with ICEPAY data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icepay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ICEPAY integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ICEPAY data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icepay@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icepay",
+      "url": "https://clawhub.ai/skills/icepay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icepay",
+    "url": "https://clawhub.ai/skills/icepay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icepay-6196a970128a4cbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icepay@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-icepay-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0678149876b89b3f8ac74503b8dfed92a9831d0dcacad027e9b426e07d721c85",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:57:59.372Z"
+}

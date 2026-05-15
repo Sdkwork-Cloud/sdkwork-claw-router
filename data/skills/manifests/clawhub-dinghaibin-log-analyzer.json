@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47947,
+  "uuid": "skill-clawhub-dinghaibin-log-analyzer",
+  "skillKey": "clawhub-dinghaibin-log-analyzer",
+  "name": "Log Analyzer",
+  "summary": "Analyze log files to extract insights, errors, and patterns. Use when user needs to debug application errors, find patterns in server logs, analyze access lo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dinghaibin_log_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Analyze log files to extract insights, errors, and patterns",
+        "Use when user needs to debug application errors, find patterns in server logs, analyze access l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dinghaibin-log-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dinghaibin-log-analyzer",
+      "url": "https://clawhub.ai/skills/dinghaibin-log-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dinghaibin-log-analyzer",
+    "url": "https://clawhub.ai/skills/dinghaibin-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dinghaibin-log-analyzer-d6cf926b8093c67f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dinghaibin-log-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dinghaibin-log-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95fad49cafef08ba0ad88573ccc530bd06f585e8f8b7ab910a32f6cac1b04525",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T16:55:20.022Z"
+}

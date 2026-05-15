@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-with-vscode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_with_vscode",
+  "skill": {
+    "id": 50684,
+    "skillKey": "clawhub-openclaw-with-vscode",
+    "name": "openclaw-with-vscode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-with-vscode",
+    "url": "https://clawhub.ai/skills/openclaw-with-vscode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-with-vscode-5ba2864908824c04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge between OpenClaw and VS Code Copilot — dispatch coding tasks from any OpenClaw channel to VS Code for execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diankourenxia",
+      "userId": "s176z63dwmwkejyx4mbpm1kj1584nj4s",
+      "displayName": "diankourenxia",
+      "image": "https://avatars.githubusercontent.com/u/15888981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773763551343,
+      "changelog": "Initial release: Integrates OpenClaw with VS Code Copilot to execute coding tasks locally.\n\n- Dispatch write, edit, review, or debug requests from OpenClaw directly to VS Code Copilot.\n- Utilizes local HTTP endpoints for all communication; no data is sent externally.\n- Includes setup instructions and workflow for task execution and result display.\n- Requires VS Code to be open with Copilot in Agent mode for full functionality.\n- Health check and endpoint details provided for troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a2b1d5cf88cd2b077264a62abdc53f3f3809815cdb8bb3f360184f9a0975ce1"
+}

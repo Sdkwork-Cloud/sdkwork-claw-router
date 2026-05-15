@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36782,
+  "uuid": "skill-clawhub-devops-maturity",
+  "skillKey": "clawhub-devops-maturity",
+  "name": "DevOps Maturity Assessment",
+  "summary": "Assess DevOps maturity level in organizations, especially cloud-native or cloud-migrating companies. Use when someone asks about DevOps assessment, maturity...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devops_maturity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kacper Bąk",
+      "features": [
+        "Assess DevOps maturity level in organizations, especially cloud-native or cloud-migrating compa.",
+        "Use when someone asks about DevOps assessment, maturity..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devops-maturity@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56700396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devops-maturity",
+      "url": "https://clawhub.ai/skills/devops-maturity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devops-maturity",
+    "url": "https://clawhub.ai/skills/devops-maturity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devops-maturity-514d6a74bda6344a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devops-maturity@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-devops-maturity-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0203bbee6f70272b9605a4c1f646d0db51ce398aeef8bf420f86bd52158ef93",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T22:35:06.724Z"
+}

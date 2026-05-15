@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63141,
+  "uuid": "skill-clawhub-health-habit-builder",
+  "skillKey": "clawhub-health-habit-builder",
+  "name": "Health Habit Builder",
+  "summary": "Health Habit Builder / 健康习惯养成师. 基于行为科学和习惯形成理论，智能拆解微习惯、跟踪打卡、分析动机，帮助用户建立可持续的健康习惯。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_habit_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Health Habit Builder / 健康习惯养成师",
+        "基于行为科学和习惯形成理论，智能拆解微习惯、跟踪打卡、分析动机，帮助用户建立可持续的健康习惯。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/health-habit-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "health-habit-builder",
+      "url": "https://clawhub.ai/skills/health-habit-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-habit-builder",
+    "url": "https://clawhub.ai/skills/health-habit-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-habit-builder-ad6a833cc39f99ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/health-habit-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-health-habit-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8a56c40faba356b1fed3617bfc6dd99f5a75b6fbf186fb83dc493404c8416a2",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:24:22.448Z"
+}

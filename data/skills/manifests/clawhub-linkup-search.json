@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21429,
+  "uuid": "skill-clawhub-linkup-search",
+  "skillKey": "clawhub-linkup-search",
+  "name": "Linkup",
+  "summary": "Use this skill whenever the agent has access to Linkup web search or fetch tools. Teaches the agent how to reason about query construction, choose search dep...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkup_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shauryajain21",
+      "features": [
+        "Use this skill whenever the agent has access to Linkup web search or fetch tools",
+        "Teaches the agent how to reason about query construction, choose search dep..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkup-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72522908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkup-search",
+      "url": "https://clawhub.ai/skills/linkup-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkup-search",
+    "url": "https://clawhub.ai/skills/linkup-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkup-search-6de64142c9c29631.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkup-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkup-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe550bb67c72ff28b22b75016547ad7a342f4c45f1f145f3463f51bd377e3b2e",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T21:13:25.596Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beginners-photo-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beginners_photo_video",
+  "skill": {
+    "id": 48333,
+    "skillKey": "clawhub-beginners-photo-video",
+    "name": "Beginners Photo Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beginners-photo-video",
+    "url": "https://clawhub.ai/skills/beginners-photo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beginners-photo-video-3e9cfeea4c7b6680.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn five vacation photos from your phone into 1080p slideshow video clips just by typing what you need. Whether it's turning a set of photos into a shareabl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777396939943,
+      "changelog": "- Initial release of Beginners Photo Video: easily turn 5–10 photos into 1080p shareable videos in under a minute using simple prompts.\n- No need for manual editing—just upload photos and describe your desired result.\n- Seamless cloud processing with automatic session/token management; setup completes with a “Ready!” notification.\n- Exports support MP4 (default) plus other video, image, and audio formats. Max file size: 200MB.\n- Common workflows include quick edits, batch processing, and iterative refinement with easy re-edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94fe6eae9c74b2d18df9bfaab527548601a7a70b517e51792b30f17375dc118a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18074,
+  "uuid": "skill-clawhub-paperbanana",
+  "skillKey": "clawhub-paperbanana",
+  "name": "PaperBanana",
+  "summary": "Generate publication-quality academic diagrams from paper methodology text",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperbanana",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dwzhu-pku",
+      "features": [
+        "Generate publication-quality academic diagrams from paper methodology text"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paperbanana@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52273452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paperbanana",
+      "url": "https://clawhub.ai/skills/paperbanana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperbanana",
+    "url": "https://clawhub.ai/skills/paperbanana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperbanana-27bf2f5e5a0b8345.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paperbanana@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paperbanana-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02d88c2167de5542aa23abcccd0912568bf57308be9b6ad714df9b1c4ec60bdf",
+      "artifactSizeBytes": 1849
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:40:16.202Z"
+}

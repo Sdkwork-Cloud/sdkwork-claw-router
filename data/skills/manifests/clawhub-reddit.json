@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8444,
+  "uuid": "skill-clawhub-reddit",
+  "skillKey": "clawhub-reddit",
+  "name": "Reddit",
+  "summary": "Browse, search, post, and moderate Reddit. Read-only works without auth; posting/moderation requires OAuth setup.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "theglove44",
+      "features": [
+        "Browse, search, post, and moderate Reddit",
+        "Read-only works without auth",
+        "posting/moderation requires OAuth setup."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148962746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit",
+      "url": "https://clawhub.ai/skills/reddit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit",
+    "url": "https://clawhub.ai/skills/reddit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-2e183f2a7a70de1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b0d7f6382530f7730618b683d1537d1d776946bc571a161e72931abf95e40de",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T09:36:26.690Z"
+}

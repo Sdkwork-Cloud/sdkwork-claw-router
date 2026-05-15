@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bmw-auto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bmw_auto",
+  "skill": {
+    "id": 47472,
+    "skillKey": "clawhub-bmw-auto",
+    "name": "Bmw Auto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bmw-auto",
+    "url": "https://clawhub.ai/skills/bmw-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bmw-auto-5a0bf18412140cbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights into BMW's history, business model, market positioning, electric transformation, and competitive landscape in the luxury auto indu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777669821512,
+      "changelog": "BMW skill 1.0.0 highlights BMW’s century-long journey, brand strategy, and key market data.\n\n- 全新内容介绍 BMW 从创立到如今的历史时间线与重大里程碑\n- 总结了 BMW 的商业模式、品牌护城河与全球市场地位\n- 提供 2023 年核心财务及交付数据\n- 点评德国豪华车市场格局及 BMW 电动化战略进展\n- 增加与品牌相关的有趣小知识",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:711c4702be3755222cdc3b5d438d0116546ee15352972c32365571a17e554399"
+}

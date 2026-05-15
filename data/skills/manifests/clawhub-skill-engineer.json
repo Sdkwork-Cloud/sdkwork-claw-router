@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14590,
+  "uuid": "skill-clawhub-skill-engineer",
+  "skillKey": "clawhub-skill-engineer",
+  "name": "Skill Engineer",
+  "summary": "Design, test, review, and maintain agent skills for OpenClaw systems using multi-agent iterative refinement. Orchestrates Designer, Reviewer, and Tester suba...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_engineer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chunhua Liao",
+      "features": [
+        "Design, test, review, and maintain agent skills for OpenClaw systems using multi-agent iterativ.",
+        "Orchestrates Designer, Reviewer, and Tester suba..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-engineer@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1627206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-engineer",
+      "url": "https://clawhub.ai/skills/skill-engineer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-engineer",
+    "url": "https://clawhub.ai/skills/skill-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-engineer-37875d14239473a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-engineer@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-engineer-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2f59d4a12018738b529d4bde0b6c0374286f7123237d01114552d68a349efb7",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T17:02:44.200Z"
+}

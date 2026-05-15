@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47109,
+  "uuid": "skill-clawhub-image-agent-plus",
+  "skillKey": "clawhub-image-agent-plus",
+  "name": "image-agent-plus",
+  "summary": "Use image-agent-plus CLI to generate images, prioritizing image2 for high-quality text and prompt-following, with Codex/Gemini fallback.",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_agent_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "webkubor",
+      "features": [
+        "Use image-agent-plus CLI to generate images, prioritizing image2 for high-quality text and prom."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-agent-plus@2.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29485642?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-agent-plus",
+      "url": "https://clawhub.ai/skills/image-agent-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-agent-plus",
+    "url": "https://clawhub.ai/skills/image-agent-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-agent-plus-235416deaa76687c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-agent-plus@2.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-agent-plus-2.0.5.json",
+      "version": "2.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf1afc6fab0731cd04f5f178e8b4f33433381bdb1945049fa1cf6449dbd4b107",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:37:09.007Z"
+}

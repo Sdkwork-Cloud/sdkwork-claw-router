@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37914,
+  "uuid": "skill-clawhub-cloud-data-migration",
+  "skillKey": "clawhub-cloud-data-migration",
+  "name": "Cloud Data Migration",
+  "summary": "Generate comprehensive data migration plans between cloud vendors. Supports database, big data, and data lake migrations. Automatically recommends target pro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_data_migration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WBP",
+      "features": [
+        "Generate comprehensive data migration plans between cloud vendors",
+        "Supports database, big data, and data lake migrations",
+        "Automatically recommends target pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-data-migration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273774793?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-data-migration",
+      "url": "https://clawhub.ai/skills/cloud-data-migration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-data-migration",
+    "url": "https://clawhub.ai/skills/cloud-data-migration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-data-migration-d3ca127afa01edbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-data-migration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-data-migration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:772db565296d948eb5f1530c2c60665241f30cd2e7dde194af5645889d381615",
+      "artifactSizeBytes": 2604
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T06:35:28.491Z"
+}

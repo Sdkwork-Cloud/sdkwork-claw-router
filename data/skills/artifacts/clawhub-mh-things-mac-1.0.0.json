@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mh-things-mac@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mh_things_mac",
+  "skill": {
+    "id": 53587,
+    "skillKey": "clawhub-mh-things-mac",
+    "name": "MH things-mac"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mh-things-mac",
+    "url": "https://clawhub.ai/skills/mh-things-mac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mh-things-mac-a1e02e05e8b4effd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database). Use when a user as..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohdalhashemi98-hue",
+      "userId": "publishers:mohdalhashemi98-hue",
+      "displayName": "mohdalhashemi98-hue",
+      "image": "https://avatars.githubusercontent.com/u/241047511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 699,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771957097027,
+      "changelog": "Priority upload batch",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:505bff48e83a0db3c620608dd12d02353c89652284c9426925771d7bbf654b89"
+}

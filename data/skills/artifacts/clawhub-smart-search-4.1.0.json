@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-search@4.1.0",
+  "version": "4.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_search",
+  "skill": {
+    "id": 60301,
+    "skillKey": "clawhub-smart-search",
+    "name": "Smart Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-search",
+    "url": "https://clawhub.ai/skills/smart-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-search-499e59757622262f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "免费无限搜索！Exa MCP（主力·零配置）+ SearX（隐私）+ Tavily（AI 摘要），面向大众，无需 API Key。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lee920311",
+      "userId": "s178b3w3ez88q4m6pztmdgqc7n83hz2z",
+      "displayName": "Lee920311",
+      "image": "https://avatars.githubusercontent.com/u/106474165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "4.1.0",
+      "createdAt": 1775010520224,
+      "changelog": "v4.1.0: SearX 1.1.0 + Tavily 双引擎架构，智能场景识别，一键部署",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12e4d70e5cfe1e4f2648f534f1f18e2b062d69d465451fa6716f5b30566417fc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39950,
+  "uuid": "skill-clawhub-apollo-integration",
+  "skillKey": "clawhub-apollo-integration",
+  "name": "Apollo",
+  "summary": "Apollo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Apollo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Apollo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Apollo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apollo-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apollo-integration",
+      "url": "https://clawhub.ai/skills/apollo-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-integration",
+    "url": "https://clawhub.ai/skills/apollo-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-integration-f3a4f443c6c1676f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apollo-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-apollo-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31367ba485196be7c0447b238f33315877e5eff694a0e1b82b0c760206eae219",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:20:10.074Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-report@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_report",
+  "skill": {
+    "id": 69576,
+    "skillKey": "clawhub-literature-report",
+    "name": "Literature Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-report",
+    "url": "https://clawhub.ai/skills/literature-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-report-6fa4026160e99c70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动科研文献汇报系统。每天自动检索顶级期刊最新论文，AI辅助筛选，生成双语摘要，推送到飞书。使用方法：1. 用户说\"设置文献汇报\"或\"每天推送论文\"时激活；2. 用户要求自定义研究主题时激活；3. 用户要求文献检索和推送时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjuzhiyucai",
+      "userId": "publishers:zjuzhiyucai",
+      "displayName": "ZJUZhiyuCai",
+      "image": "https://avatars.githubusercontent.com/u/128504462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 592,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772455042745,
+      "changelog": "literature-report 1.0.4\n\n- 增加 base_url 及 model 配置说明，示例默认 DeepSeek/硅基流动 API。\n- 安全提示和凭据说明中，强调 base_url 安全性与LLM数据会被发送到API供应商。\n- 故障排除部分增加 base_url 检查和飞书推送为“占位符实现”说明。\n- 精简描述，去除对钉钉/微信推送相关表述。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:332d1c12129f2ed105055c09c735321d824eb097199bf63e1acdf63b748a10fe"
+}

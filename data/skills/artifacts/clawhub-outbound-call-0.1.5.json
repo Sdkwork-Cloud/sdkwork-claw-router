@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outbound-call@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outbound_call",
+  "skill": {
+    "id": 13946,
+    "skillKey": "clawhub-outbound-call",
+    "name": "Outbound Call"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outbound-call",
+    "url": "https://clawhub.ai/skills/outbound-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outbound-call-e9ecf4ed13c5b883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make outbound phone calls via ElevenLabs voice agent and Twilio"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "humanjesse",
+      "userId": "publishers:humanjesse",
+      "displayName": "human jesse",
+      "image": "https://avatars.githubusercontent.com/u/79856258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1074,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771302442988,
+      "changelog": "Added source link to SKILL.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ffeb3605b399d09f75a47ac9f286e74db098881e9d6011bce6d0adf6dc9bd6d"
+}

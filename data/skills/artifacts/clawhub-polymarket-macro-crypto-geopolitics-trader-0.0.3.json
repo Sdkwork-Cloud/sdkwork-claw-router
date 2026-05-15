@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-macro-crypto-geopolitics-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_macro_crypto_geopolitics_trader",
+  "skill": {
+    "id": 30650,
+    "skillKey": "clawhub-polymarket-macro-crypto-geopolitics-trader",
+    "name": "Polymarket Macro Crypto Geopolitics Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-macro-crypto-geopolitics-trader",
+    "url": "https://clawhub.ai/skills/polymarket-macro-crypto-geopolitics-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-macro-crypto-geopolitics-trader-11efbec31e4c8334.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades the lag between geopolitical escalation markets and crypto price threshold markets on Polymarket. When Iran military action probability rises, BTC thr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386619825,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c28ddb8b58e036ce6bdcdb9e627e0f7b048b62c10660f5c4a6e295a60ce44364"
+}

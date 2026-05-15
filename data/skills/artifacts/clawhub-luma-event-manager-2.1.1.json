@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luma-event-manager@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luma_event_manager",
+  "skill": {
+    "id": 12433,
+    "skillKey": "clawhub-luma-event-manager",
+    "name": "Luma Event Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luma-event-manager",
+    "url": "https://clawhub.ai/skills/luma-event-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luma-event-manager-ffc23917e5538bf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Luma Event Manager for Clawdbot — Discover events by topic or location, RSVP, view guest lists, and sync to Google Calendar. No API key required (web scraping), no Luma Plus subscription needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariovallereyes",
+      "userId": "publishers:mariovallereyes",
+      "displayName": "mariovallereyes",
+      "image": "https://avatars.githubusercontent.com/u/120954554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1769735050059,
+      "changelog": "Added repo link to description",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61fea8a80e72b7ac01764f2bfe886cad0f077495e3c84f6c15ba2cefd34d5ffa"
+}

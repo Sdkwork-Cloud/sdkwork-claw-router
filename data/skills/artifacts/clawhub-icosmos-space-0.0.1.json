@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icosmos-space@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icosmos_space",
+  "skill": {
+    "id": 63074,
+    "skillKey": "clawhub-icosmos-space",
+    "name": "icosmos.space"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icosmos-space",
+    "url": "https://clawhub.ai/skills/icosmos-space",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icosmos-space-7f7ba632b9d630d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shopify 店铺运营/诊断技能：从 Supabase 拉取店铺域名与 token，做装修/产品/结账/指标异常检测，并支持发布引流博文（唯一写操作）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taceywong",
+      "userId": "s171s4hhp24nh04nx1spgp6mdd83jzmj",
+      "displayName": "王新勇(Tacey Wong)",
+      "image": "https://avatars.githubusercontent.com/u/5282810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773760004974,
+      "changelog": "icosmos-shopify 0.0.1 – Initial Release\n\n- Introduces a set of Shopify store audit and diagnostics commands, mainly read-only, triggered by OpenClaw.\n- Provides commands for store sync, data retrieval (shop, products, orders, blogs), theme checks, product diagnostics, checkout testing, and metrics analysis.\n- Supports a single write action: publishing a Shopify Blog article with explicit confirmation.\n- Implements consistent output (JSON recommended), pagination handling, and security boundaries (tokens masked, sensitive info omitted).\n- Includes troubleshooting notes for common Shopify API errors and limiting scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19b965a2c707dfd97493b349b203f038eeb395ec0b47b07f056c29b9cb772932"
+}

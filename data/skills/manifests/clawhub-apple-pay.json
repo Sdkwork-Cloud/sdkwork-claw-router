@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23155,
+  "uuid": "skill-clawhub-apple-pay",
+  "skillKey": "clawhub-apple-pay",
+  "name": "Apple Pay",
+  "summary": "Implement Apple Pay for web and iOS with merchant validation, token handling, and production-safe checkout flows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_pay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Implement Apple Pay for web and iOS with merchant validation, token handling, and production-sa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-pay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-pay",
+      "url": "https://clawhub.ai/skills/apple-pay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-pay",
+    "url": "https://clawhub.ai/skills/apple-pay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-pay-1051b6fa4f753f5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-pay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-pay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:756fcbe7fd611dfcb8adcc21a31ff895041ed33f809b5b212aa90a6690c73cea",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T22:17:26.154Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-video-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_video_publish",
+  "skill": {
+    "id": 72954,
+    "skillKey": "clawhub-xiaohongshu-video-publish",
+    "name": "小红书视频发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-video-publish",
+    "url": "https://clawhub.ai/skills/xiaohongshu-video-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-video-publish-c2e19c7ebcec98b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书视频发布。使用浏览器自动化在网页版小红书创作者服务平台发布视频笔记。当用户说\"发布视频到小红书\"、\"发小红书视频\"时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnyxu820",
+      "userId": "s1768x2158685x4322rt3jaxh585w7at",
+      "displayName": "Johnnyxu820",
+      "image": "https://avatars.githubusercontent.com/u/154959104?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 886,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772505757689,
+      "changelog": "xiaohongshu-video-publish 1.0.0 — Initial release\n\n- Enables automated publishing of video posts to the Xiaohongshu web creator platform.\n- Guides users through uploading videos, filling in titles and topics, setting cover images, and choosing location.\n- Includes a step-by-step publishing flow, troubleshooting FAQ, and final pre-publish checklist.\n- Requires the OpenClaw Chrome extension and a logged-in Xiaohongshu creator account.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dadfafeaf36378b97e43c41280a1a7a1d49c283c0fee8b184dcb83a1502a7748"
+}

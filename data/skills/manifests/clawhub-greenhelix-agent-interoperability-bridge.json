@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31323,
+  "uuid": "skill-clawhub-greenhelix-agent-interoperability-bridge",
+  "skillKey": "clawhub-greenhelix-agent-interoperability-bridge",
+  "name": "The Agent Interoperability Bridge: Connecting GreenHelix Agents to x402, ACP, A2A, MCP, Visa TAP, Google AP2/UCP, PayPal Agent.",
+  "summary": "The Agent Interoperability Bridge: Connecting GreenHelix Agents to x402, ACP, A2A, MCP, Visa TAP, Google AP2/UCP, PayPal Agent Ready, and OpenAI ACP Ecosyste...",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greenhelix_agent_interoperability_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirni",
+      "features": [
+        "The Agent Interoperability Bridge: Connecting GreenHelix Agents to x402, ACP, A2A, MCP, Visa TA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/greenhelix-agent-interoperability-bridge@1.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13551232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "greenhelix-agent-interoperability-bridge",
+      "url": "https://clawhub.ai/skills/greenhelix-agent-interoperability-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greenhelix-agent-interoperability-bridge",
+    "url": "https://clawhub.ai/skills/greenhelix-agent-interoperability-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greenhelix-agent-interoperability-bridge-fac90e3f204dfa31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/greenhelix-agent-interoperability-bridge@1.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-greenhelix-agent-interoperability-bridge-1.3.1.json",
+      "version": "1.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0ae12b849564106c9e460a899f2f2143cb660e1f3f5432af63ee84effb26b9c",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:10:24.138Z"
+}

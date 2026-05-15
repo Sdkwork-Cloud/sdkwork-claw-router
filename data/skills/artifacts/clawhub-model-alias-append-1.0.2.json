@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-alias-append@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_alias_append",
+  "skill": {
+    "id": 10604,
+    "skillKey": "clawhub-model-alias-append",
+    "name": "Model Alias Append"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-alias-append",
+    "url": "https://clawhub.ai/skills/model-alias-append",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-alias-append-d5976f9c41d3af5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically appends the model alias to the end of every response with integrated hook functionality and configuration change detection. Use when transparency about which model generated each response is needed. Use when: providing model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ccapton",
+      "userId": "publishers:ccapton",
+      "displayName": "Ccapton",
+      "image": "https://avatars.githubusercontent.com/u/20469019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2250,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769942094948,
+      "changelog": "- Updated install instructions to remove explicit version requirement; now installs latest version by default.\n- Bumped version to 1.0.2.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74b523475c7e8cdfd3874bb257dd9bafaf14fb03ce5a9ea47dd40f1be1f4e4c1"
+}

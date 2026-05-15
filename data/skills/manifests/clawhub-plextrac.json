@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33630,
+  "uuid": "skill-clawhub-plextrac",
+  "skillKey": "clawhub-plextrac",
+  "name": "Plextrac",
+  "summary": "PlexTrac integration. Manage data, records, and automate workflows. Use when the user wants to interact with PlexTrac data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plextrac",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PlexTrac integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PlexTrac data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plextrac@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plextrac",
+      "url": "https://clawhub.ai/skills/plextrac"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plextrac",
+    "url": "https://clawhub.ai/skills/plextrac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plextrac-44f88246aaeae73d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plextrac@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-plextrac-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d97142f281b50a88966a61826092b4f8c856e35a275d025c69fcfe5b3dad9bb3",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:25:24.967Z"
+}

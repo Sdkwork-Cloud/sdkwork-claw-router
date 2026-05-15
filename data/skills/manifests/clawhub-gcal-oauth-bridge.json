@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33267,
+  "uuid": "skill-clawhub-gcal-oauth-bridge",
+  "skillKey": "clawhub-gcal-oauth-bridge",
+  "name": "gcal-oauth-bridge",
+  "summary": "Interact with the Calendar Bridge — a self-hosted Node.js service that provides a persistent REST API for Google Calendar events. Handles OAuth token auto-re...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcal_oauth_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Killenberger",
+      "features": [
+        "Interact with the Calendar Bridge — a self-hosted Node.js service that provides a persistent RE.",
+        "Handles OAuth token auto-re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gcal-oauth-bridge@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5844780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gcal-oauth-bridge",
+      "url": "https://clawhub.ai/skills/gcal-oauth-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcal-oauth-bridge",
+    "url": "https://clawhub.ai/skills/gcal-oauth-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcal-oauth-bridge-cd2c8a44de6571ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gcal-oauth-bridge@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gcal-oauth-bridge-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9be1c14ae4102a88c2e4dfcb27876a8b6ea02ba47620634ed077675a77225f4d",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T05:34:56.025Z"
+}

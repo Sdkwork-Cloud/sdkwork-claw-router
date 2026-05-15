@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32853,
+  "uuid": "skill-clawhub-resources-page-generator",
+  "skillKey": "clawhub-resources-page-generator",
+  "name": "resources-page-generator",
+  "summary": "When the user wants to create, optimize, or audit resources page or content hub. Also use when the user mentions \"resources page,\" \"resource center,\" \"conten...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resources_page_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to create, optimize, or audit resources page or content hub",
+        "Also use when the user mentions \"resources page,\" \"resource center,\" \"conten..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resources-page-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resources-page-generator",
+      "url": "https://clawhub.ai/skills/resources-page-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resources-page-generator",
+    "url": "https://clawhub.ai/skills/resources-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resources-page-generator-19ebe61249f84b51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resources-page-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-resources-page-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dd048a6328deb8e71e3056c26baa4d02d6d3b441d29a6a65c554a705b1f25a0",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:47:13.806Z"
+}

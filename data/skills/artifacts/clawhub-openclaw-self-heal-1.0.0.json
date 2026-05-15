@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-self-heal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_heal",
+  "skill": {
+    "id": 41484,
+    "skillKey": "clawhub-openclaw-self-heal",
+    "name": "Openclaw Self Heal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-heal",
+    "url": "https://clawhub.ai/skills/openclaw-self-heal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-heal-6b416faf65a5dd82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously diagnose and fix OpenClaw system errors affecting UI, channels, gateway, memory, or pairing, escalating only if needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbauman-26",
+      "userId": "s1711897fxnnsgq8zncz56scbd853tdj",
+      "displayName": "jbauman-26",
+      "image": "https://avatars.githubusercontent.com/u/254146237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776474699508,
+      "changelog": "Initial release of openclaw-self-heal.\n\n- Introduces autonomous diagnosis and resolution for OpenClaw system issues.\n- Covers scenarios like Control UI failure, offline channels, gateway crashes, memory/plugin errors, and failed pairing.\n- Emphasizes safe, self-contained fixes with escalation for destructive or repeated failures only.\n- Provides step-by-step triage, common recovery commands, and post-fix verification instructions.\n- Logs all actions and notifies Jake only when required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14300866775cd81b63ea7b52acae98e9fd270878f5196df9e730683f64c3d0b8"
+}

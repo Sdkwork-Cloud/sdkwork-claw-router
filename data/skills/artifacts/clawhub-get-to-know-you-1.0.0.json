@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-to-know-you@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_to_know_you",
+  "skill": {
+    "id": 8826,
+    "skillKey": "clawhub-get-to-know-you",
+    "name": "get-to-know-you"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-to-know-you",
+    "url": "https://clawhub.ai/skills/get-to-know-you",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-to-know-you-abbb5f29adb80b59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Dual-core efficiency improvement skill: (1) Actively collect user work background, preference habits through Socratic guided Q&A, automatically sync and upda..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zzzanezhou0829",
+      "userId": "s176b8e927ekwcm13wsyy7txwd83qvz5",
+      "displayName": "zane iris zhou",
+      "image": "https://avatars.githubusercontent.com/u/265173160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 66,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775114417311,
+      "changelog": "v1.0.0 Initial Release\n- Dual core features launched:\n  1. Personalized user portrait construction: supports dual modes of questionnaire centralized collection + daily fragmented collection, automatically syncs and updates OpenClaw configuration files, zero threshold to build exclusive AI assistant\n  2. Task/optimization workflow standardization: enforces the 4-step process of \"Requirement Alignment → Plan Output → User Confirmation → Execution\", fundamentally eliminates invalid back-and-forth communication in negative feedback/skill optimization scenarios\n- Supports breakpoint resume: information collection process can be interrupted at any time, progress will be automatically restored next time\n- Built-in Chinese/English versions, adapted to users of different languages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:093ae8b23834d80669b26fadce7c600bbbe33a5e1a05a69af7cbcc98737c0915"
+}

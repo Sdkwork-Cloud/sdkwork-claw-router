@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11094,
+  "uuid": "skill-clawhub-ui-ux-dev",
+  "skillKey": "clawhub-ui-ux-dev",
+  "name": "UI/UX Design and Development",
+  "summary": "Generate and serve live HTML/CSS/JS UI designs from natural language prompts. Use when the user asks to design, create, build, or prototype a website, landing page, UI, dashboard, web page, or frontend mockup. Also triggers on requests to.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ui_ux_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wing8169",
+      "features": [
+        "Generate and serve live HTML/CSS/JS UI designs from natural language prompts",
+        "Use when the user asks to design, create, build, or prototype a website, landing page, UI, dash.",
+        "Also triggers on requests to update, tweak, or iterate on a previously generated design",
+        "Replaces traditional UI design + frontend dev workflow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ui-ux-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33794617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ui-ux-dev",
+      "url": "https://clawhub.ai/skills/ui-ux-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ui-ux-dev",
+    "url": "https://clawhub.ai/skills/ui-ux-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ui-ux-dev-3fdaca84262d7479.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ui-ux-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ui-ux-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb3b695897f9371872d697ee7c439f614fd2a8393f3942c7079bc5311a8dab8c",
+      "artifactSizeBytes": 2566
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:28:15.034Z"
+}

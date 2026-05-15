@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61101,
+  "uuid": "skill-clawhub-agent-memory-system-new",
+  "skillKey": "clawhub-agent-memory-system-new",
+  "name": "Agent Memory System New",
+  "summary": "OpenClaw Agent 长期记忆系统 - 温度模型 + 自动归档 + 知识提炼。让 AI Agent 拥有持久记忆，自动管理冷热数据，从经验中提炼可复用技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_system_new",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomor1984",
+      "features": [
+        "OpenClaw Agent 长期记忆系统",
+        "温度模型 + 自动归档 + 知识提炼。让 AI Agent 拥有持久记忆，自动管理冷热数据，从经验中提炼可复用技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-system-new@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64009485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-system-new",
+      "url": "https://clawhub.ai/skills/agent-memory-system-new"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-system-new",
+    "url": "https://clawhub.ai/skills/agent-memory-system-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-system-new-ea73e1cea006453f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-system-new@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-system-new-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a3021ef47acc9e35b913356b367c529fe6c6d5098f31cd1126aca00abf80f1b",
+      "artifactSizeBytes": 2047
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:13:41.488Z"
+}

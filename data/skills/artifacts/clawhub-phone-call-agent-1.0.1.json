@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phone-call-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_call_agent",
+  "skill": {
+    "id": 50706,
+    "skillKey": "clawhub-phone-call-agent",
+    "name": "Phone Call Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-call-agent",
+    "url": "https://clawhub.ai/skills/phone-call-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-call-agent-c521efcb9c54d9b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI voice call agent — make outbound calls, generate browser call links, accept inbound calls, and retrieve full transcripts + summaries when calls end. Suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "littlesheepxy",
+      "userId": "publishers:littlesheepxy",
+      "displayName": "Little 羊",
+      "image": "https://avatars.githubusercontent.com/u/61880568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773143585132,
+      "changelog": "**Expanded documentation for browser-based share link calling.**\n\n- Added a new \"How Share Links Work\" section for clearer, step-by-step guidance on generating and using browser call links.\n- Instructions now highlight how to start the tunnel and properly configure PUBLIC_URL so links are accessible outside localhost.\n- Example user workflow is shown with updated emphasis on share link usage.\n- Main agent instructions, call flow, and MCP tool details are unchanged. No changes to actual code or features.了",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:482dd25a3268fe5e15a98367eb18d10077e5f14d8c732ace8a312e82eba49cc3"
+}

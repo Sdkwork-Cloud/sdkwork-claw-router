@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recruiting@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruiting",
+  "skill": {
+    "id": 20463,
+    "skillKey": "clawhub-recruiting",
+    "name": "Recruiting"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruiting",
+    "url": "https://clawhub.ai/skills/recruiting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruiting-438287bf455f1f46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hiring workflow management with structured processes and candidate tracking. Use when user mentions hiring, job descriptions, resume screening, interviews, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1773063833525,
+      "changelog": "Version 2.3.0 of the recruiting skill contains no changes to existing files or features.\n\n- No modifications detected.\n- All workflows, safety policies, and script references remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64180443071e1090214c1a5bc55dc0e9c0e3a91883bf31aa6301028a88c02431"
+}

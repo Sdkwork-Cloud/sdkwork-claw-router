@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56541,
+  "uuid": "skill-clawhub-codex-pet",
+  "skillKey": "clawhub-codex-pet",
+  "name": "🫧 Codex Pet — Pro Pack on RunComfy",
+  "summary": "Codex Pet generator on RunComfy. Build a Codex-compatible Codex Pet spritesheet.webp + pet.json from a single reference image, drop it into `${CODEX_HOME:-$H...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_pet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kalvin",
+      "features": [
+        "Codex Pet generator on RunComfy",
+        "Build a Codex-compatible Codex Pet spritesheet.webp + pet.json from a single reference image, d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-pet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58277734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-pet",
+      "url": "https://clawhub.ai/skills/codex-pet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-pet",
+    "url": "https://clawhub.ai/skills/codex-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-pet-6669be19fa32dbd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-pet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-pet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fccb0494ed4c69d4885b493f4a6329ac92954348f55042e23ddb5e0a1e77f48c",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T03:18:31.480Z"
+}

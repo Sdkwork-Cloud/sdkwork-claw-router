@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-news-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_news_digest",
+  "skill": {
+    "id": 60173,
+    "skillKey": "clawhub-agent-news-digest",
+    "name": "Agent News Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-news-digest",
+    "url": "https://clawhub.ai/skills/agent-news-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-news-digest-3725d7c97bc05a60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "키워드 기반 뉴스 수집 및 3줄 요약 에이전트"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinu4you",
+      "userId": "publishers:jinu4you",
+      "displayName": "jinu4you",
+      "image": "https://avatars.githubusercontent.com/u/30405449?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772890821748,
+      "changelog": "- 최초 릴리스 버전 1.0.0\n- 키워드 기반 실시간 뉴스 수집 기능 제공 (Tavily API 활용)\n- Llama 3.3 70B 모델로 뉴스 기사 3줄 요약 지원\n- 기사의 중요도(1~5점) 평가 기능 포함\n- 전체 내용을 아우르는 마크다운 브리핑 생성",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fdae64d39d8058617c7d6f99cbfca1edbfbafd42f290f46200919eec79895e05"
+}

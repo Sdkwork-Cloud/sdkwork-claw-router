@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47361,
+  "uuid": "skill-clawhub-miro-management",
+  "skillKey": "clawhub-miro-management",
+  "name": "Miro Management",
+  "summary": "Manage Miro through the Miro REST API using OAuth 2.0, saved token files, or direct access tokens. Use when the user wants to connect a personal or local Mir...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miro_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stanislav Stankovic",
+      "features": [
+        "Manage Miro through the Miro REST API using OAuth 2.0, saved token files, or direct access toke.",
+        "Use when the user wants to connect a personal or local Mir..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miro-management@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1871432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miro-management",
+      "url": "https://clawhub.ai/skills/miro-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miro-management",
+    "url": "https://clawhub.ai/skills/miro-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miro-management-a89aa444d09afa5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miro-management@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miro-management-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bbac0a27279f46deaf88153ff9402afbaaf12d122f978b54f1d305b0a57f1b3",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T13:19:51.873Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-apps-script-push@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_apps_script_push",
+  "skill": {
+    "id": 25464,
+    "skillKey": "clawhub-gws-apps-script-push",
+    "name": "Gws Apps Script Push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-apps-script-push",
+    "url": "https://clawhub.ai/skills/gws-apps-script-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-apps-script-push-a7d4b5e1db188bfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Apps Script: Upload local files to an Apps Script project."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772653017828,
+      "changelog": "Initial release: Upload local files to a Google Apps Script project.\n\n- Adds command: gws apps-script +push for uploading files to a specified Apps Script project.\n- Supports .gs, .js, .html, and appsscript.json files; skips hidden files and node_modules.\n- Accepts --script (project ID, required) and --dir (optional local directory) flags.\n- Replaces all files in the target Apps Script project.\n- Includes precautions to confirm with user before overwriting project files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:820e9a60c1e46f403d720e5eaddb7c929ceae34748cbe675263b9e073cfdecc2"
+}

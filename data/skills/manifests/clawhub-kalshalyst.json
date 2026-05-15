@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20322,
+  "uuid": "skill-clawhub-kalshalyst",
+  "skillKey": "clawhub-kalshalyst",
+  "name": "Kalshalyst",
+  "summary": "Contrarian prediction market scanner that finds mispricings on Kalshi using Claude Sonnet analysis, Brier score calibration, and Kelly Criterion position siz...",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshalyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kingmadellc",
+      "features": [
+        "Contrarian prediction market scanner that finds mispricings on Kalshi using Claude Sonnet analy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshalyst@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257369583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshalyst",
+      "url": "https://clawhub.ai/skills/kalshalyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshalyst",
+    "url": "https://clawhub.ai/skills/kalshalyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshalyst-dab937f9c154c971.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshalyst@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshalyst-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3aeecdf7169e2a2ccb6ad4548d9b515bcb241b21935fc7c37c7e28b6210d7b4b",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T23:32:42.300Z"
+}

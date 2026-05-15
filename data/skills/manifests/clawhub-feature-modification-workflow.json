@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34928,
+  "uuid": "skill-clawhub-feature-modification-workflow",
+  "skillKey": "clawhub-feature-modification-workflow",
+  "name": "feature-modification-workflow",
+  "summary": "Structured workflow to analyze, plan, and execute feature modifications by scenario complexity, ensuring controlled, incremental, and risk-aware changes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feature_modification_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liancheng",
+      "features": [
+        "Structured workflow to analyze, plan, and execute feature modifications by scenario complexity,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feature-modification-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53899938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feature-modification-workflow",
+      "url": "https://clawhub.ai/skills/feature-modification-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feature-modification-workflow",
+    "url": "https://clawhub.ai/skills/feature-modification-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feature-modification-workflow-da7d7adebc1e3576.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feature-modification-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feature-modification-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e33209b7e3cdc01d85fe925b4f3b01eaaa535ad38ea0d3d01b559c1aa3417360",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:04:36.012Z"
+}

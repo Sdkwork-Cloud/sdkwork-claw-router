@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73519,
+  "uuid": "skill-clawhub-express-query",
+  "skillKey": "clawhub-express-query",
+  "name": "多平台快递查询",
+  "summary": "根据快递单号识别承运商，查询并解析物流轨迹，判断异常状态，提供准确的物流状况和处理建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.express_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhili007",
+      "features": [
+        "根据快递单号识别承运商，查询并解析物流轨迹，判断异常状态，提供准确的物流状况和处理建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/express-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178701974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "express-query",
+      "url": "https://clawhub.ai/skills/express-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "express-query",
+    "url": "https://clawhub.ai/skills/express-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/express-query-63ef3ff0d06a7b9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/express-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-express-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:feecc39d821fb810caec30ac1c94e8bc0dfc4d71419f0b228bc6a8ff79f0a2b9",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:35:46.115Z"
+}

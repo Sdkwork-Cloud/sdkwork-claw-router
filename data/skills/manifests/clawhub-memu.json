@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50520,
+  "uuid": "skill-clawhub-memu",
+  "skillKey": "clawhub-memu",
+  "name": "memU: Persistent Memory for 24/7 Agents",
+  "summary": "Persistent memory infrastructure for 24/7 agents. Replaces flat-file memory with a three-layer architecture (Resource → Memory Item → Memory Category) that r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ProjectSnowWork",
+      "features": [
+        "Persistent memory infrastructure for 24/7 agents",
+        "Replaces flat-file memory with a three-layer architecture (Resource → Memory Item → Memory Cate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216470608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memu",
+      "url": "https://clawhub.ai/skills/memu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memu",
+    "url": "https://clawhub.ai/skills/memu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memu-11fd5af53e2bd8fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23e068854fd295a0e75b71584c515df12c212ec167aca7e7a85a161b8a2bf28f",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:06:56.408Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68810,
+  "uuid": "skill-clawhub-byted-security-llmscanner",
+  "skillKey": "clawhub-byted-security-llmscanner",
+  "name": "Byted Security Llmscanner",
+  "summary": "大模型安全测评全流程管理工具。支持创建/更新模型和智能体测评资产、查询可用资源、发起合规测评任务、发起安全测评任务、分析测评结果等全流程操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_security_llmscanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "大模型安全测评全流程管理工具。支持创建/更新模型和智能体测评资产、查询可用资源、发起合规测评任务、发起安全测评任务、分析测评结果等全流程操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-security-llmscanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-security-llmscanner",
+      "url": "https://clawhub.ai/skills/byted-security-llmscanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-security-llmscanner",
+    "url": "https://clawhub.ai/skills/byted-security-llmscanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-security-llmscanner-a52a4069a8df2a1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-security-llmscanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-security-llmscanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7e0a8f59c3ea45fe726ce6a736c52bb9c865295cadf9e4e1c582d49ac4954d6",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:47:15.007Z"
+}

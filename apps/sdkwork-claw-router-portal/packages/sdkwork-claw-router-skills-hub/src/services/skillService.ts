@@ -7,15 +7,15 @@ import type {
   SkillsCatalogResponse as SdkSkillsCatalogResponse,
 } from '@sdkwork/clawrouter-app-sdk';
 import {
-  createRequestToken,
+  createRequestParams,
   ensurePlusApiSuccess,
   getClawRouterAppSdkClient,
   isRecord,
+  normalizeJsonObject,
   optionalBoundedPositiveInteger,
   optionalPositiveInteger,
   optionalText,
   pruneUndefinedQueryParams,
-  standardListQueryArguments,
   readApiData,
   readRequiredApiItem,
   readRequiredApiItems,
@@ -38,23 +38,33 @@ const MAX_SKILL_CATALOG_STATUS_LENGTH = 64;
 const MAX_SKILL_CATALOG_TIMESTAMP_LENGTH = 64;
 
 interface SkillFilters {
-  search?: string;
+  searchQuery?: string;
   categories?: string[];
   sortBy?: SkillSortKey;
 }
 
 type SkillCatalogQueryFilterInput = SkillFilters & {
-  keyword?: unknown;
-  pageNo?: unknown;
+  searchQuery?: unknown;
+  page?: unknown;
   pageSize?: unknown;
   status?: unknown;
   startTime?: unknown;
   endTime?: unknown;
 };
 
+type SkillCatalogQueryParams = {
+  q?: string;
+  page?: number;
+  pageSize?: number;
+  status?: string;
+  startTime?: string;
+  endTime?: string;
+};
+
 export const skillService = {
   async getSkills(filters?: SkillFilters): Promise<Skill[]> {
-    const result = await getClawRouterAppSdkClient().skill.getSkills(...skillCatalogQueryArguments(filters));
+    const query = toSkillCatalogQueryParams(filters);
+    const result = await getClawRouterAppSdkClient().ecosystem.skills.list(query);
     ensurePlusApiSuccess(result, 'Failed to fetch skills');
     const items: SdkSkillsCatalogResponse['items'] = readRequiredApiItems(
       result,
@@ -63,7 +73,7 @@ export const skillService = {
     return filterSkillsForCatalog(
       items.map(normalizeSkillApiRecord),
       {
-        searchQuery: filters?.search ?? '',
+        searchQuery: filters?.searchQuery ?? '',
         categories: filters?.categories ?? [],
         sortBy: filters?.sortBy ?? 'Most Popular',
       },
@@ -71,7 +81,7 @@ export const skillService = {
   },
 
   async getSkillById(id: string): Promise<Skill | undefined> {
-    const result = await getClawRouterAppSdkClient().skill.getSkillById(requiredSafePathSegment(id, 'skillId'));
+    const result = await getClawRouterAppSdkClient().ecosystem.skills.retrieve(requiredSafePathSegment(id, 'skillId'));
     if (result === null || result === undefined) {
       return undefined;
     }
@@ -84,7 +94,7 @@ export const skillService = {
   },
 
   async getCategories(): Promise<string[]> {
-    const result = await getClawRouterAppSdkClient().skill.skillsGetCategories();
+    const result = await getClawRouterAppSdkClient().ecosystem.skills.categories.list();
     ensurePlusApiSuccess(result, 'Failed to fetch skill categories');
     const items: SdkSkillCategoriesResponse['items'] = readRequiredApiItems(
       result,
@@ -102,7 +112,7 @@ export const skillService = {
   },
 
   async getMySkills(): Promise<InstalledSkill[]> {
-    const result = await getClawRouterAppSdkClient().skill.getMySkills();
+    const result = await getClawRouterAppSdkClient().ecosystem.users.current.skills.list();
     ensurePlusApiSuccess(result, 'Failed to fetch installed skills');
     const items: SdkAppInstalledSkillsResponse['items'] = readRequiredApiItems(
       result,
@@ -112,55 +122,50 @@ export const skillService = {
   },
 
   async enableSkill(skillId: string, config: unknown = {}): Promise<InstalledSkill> {
-    const result = await getClawRouterAppSdkClient().skill.enableSkill(
+    const result = await getClawRouterAppSdkClient().ecosystem.skills.enable(
       requiredSafePathSegment(skillId, 'skillId'),
       skillConfigRequest(config),
-      createRequestToken('skill-enable'),
+      createRequestParams('skill-enable'),
     );
     ensurePlusApiSuccess(result, 'Failed to enable skill');
     return readInstalledSkillResult(result, 'Enabled skill response is missing data');
   },
 
   async disableSkill(skillId: string): Promise<InstalledSkill> {
-    const result = await getClawRouterAppSdkClient().skill.disableSkill(
+    const result = await getClawRouterAppSdkClient().ecosystem.skills.disable(
       requiredSafePathSegment(skillId, 'skillId'),
-      undefined,
-      createRequestToken('skill-disable'),
+      createRequestParams('skill-disable'),
     );
     ensurePlusApiSuccess(result, 'Failed to disable skill');
     return readInstalledSkillResult(result, 'Disabled skill response is missing data');
   },
 
   async updateSkillConfig(skillId: string, config: unknown): Promise<InstalledSkill> {
-    const result = await getClawRouterAppSdkClient().skill.updateSkillConfig(
+    const result = await getClawRouterAppSdkClient().ecosystem.skills.config.update(
       requiredSafePathSegment(skillId, 'skillId'),
       skillConfigRequest(config),
-      createRequestToken('skill-config'),
+      createRequestParams('skill-config'),
     );
     ensurePlusApiSuccess(result, 'Failed to update skill config');
     return readInstalledSkillResult(result, 'Updated skill response is missing data');
   },
 };
 
-function toSkillCatalogQueryParams(filters: SkillCatalogQueryFilterInput | undefined = {}): Record<string, string | number> {
-  const keyword = optionalText(filters.keyword ?? filters.search, 'search', MAX_SKILL_CATALOG_QUERY_TEXT_LENGTH);
+function toSkillCatalogQueryParams(filters: SkillCatalogQueryFilterInput | undefined = {}): SkillCatalogQueryParams {
+  const searchQuery = optionalText(filters.searchQuery, 'searchQuery', MAX_SKILL_CATALOG_QUERY_TEXT_LENGTH);
 
   return pruneUndefinedQueryParams({
-    pageNo: optionalPositiveInteger(filters.pageNo, 'pageNo'),
+    q: searchQuery,
+    page: optionalPositiveInteger(filters.page, 'page'),
     pageSize: optionalBoundedPositiveInteger(filters.pageSize, 'pageSize', MAX_SKILL_CATALOG_PAGE_SIZE),
-    keyword,
     status: optionalText(filters.status, 'status', MAX_SKILL_CATALOG_STATUS_LENGTH),
     startTime: optionalText(filters.startTime, 'startTime', MAX_SKILL_CATALOG_TIMESTAMP_LENGTH),
     endTime: optionalText(filters.endTime, 'endTime', MAX_SKILL_CATALOG_TIMESTAMP_LENGTH),
   });
 }
 
-function skillCatalogQueryArguments(filters: SkillCatalogQueryFilterInput | undefined = {}) {
-  return standardListQueryArguments(toSkillCatalogQueryParams(filters));
-}
-
 function skillConfigRequest(config: unknown): SdkAppSkillConfigRequest {
-  return { config: normalizeSkillConfig(config) };
+  return { config: normalizeJsonObject(normalizeSkillConfig(config), 'config') };
 }
 
 function readInstalledSkillResult(result: unknown, message: string): InstalledSkill {

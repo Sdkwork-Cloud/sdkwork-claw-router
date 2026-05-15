@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-deployer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_deployer",
+  "skill": {
+    "id": 54006,
+    "skillKey": "clawhub-clawhub-deployer",
+    "name": "clawhub-deployer — Skill Publishing Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-deployer",
+    "url": "https://clawhub.ai/skills/clawhub-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-deployer-04258b0e78ef5ae0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish a skill to ClawHub registry. Use when user asks to publish, release, or deploy a skill to ClawHub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "futurizerush",
+      "userId": "s174ks6c53yjm9ez7sh6ckryf984dsd6",
+      "displayName": "Futurize Rush",
+      "image": "https://avatars.githubusercontent.com/u/122273125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775578940258,
+      "changelog": "Initial release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a18d22d1eafb98a89b5166d9cc7d88c96da598489746d1f04a1f115046881820"
+}

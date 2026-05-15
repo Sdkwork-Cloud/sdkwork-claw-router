@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roundtable-forum@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roundtable_forum",
+  "skill": {
+    "id": 67185,
+    "skillKey": "clawhub-roundtable-forum",
+    "name": "roundtable-forum"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roundtable-forum",
+    "url": "https://clawhub.ai/skills/roundtable-forum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roundtable-forum-3a55a516d3f7be86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主持人引导多位思想代表就复杂议题展开结构化深度对话，生成ASCII思考框架和知识网络助力决策与学习。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangzhixu",
+      "userId": "s178m0j22d0wc51dwwrh604q3h83qa06",
+      "displayName": "张志旭",
+      "image": "https://avatars.githubusercontent.com/u/59090803?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774588431552,
+      "changelog": "roundtable-forum v1.0.0\n\n- 首次发布，推出结构化深度对话框架“圆桌论坛”\n- 支持主持人引导、多思想代表即时参与\n- 实现用户可控的多轮对话流程及代表人物动态邀请\n- 自动生成 ASCII 争议图表和结构化知识网络\n- 提供多场景适用模板及使用命令\n- 每天可定时自动启动论坛讨论",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b6162ff7acbcfa35f329d600dd55887ec923a3e969eac9de22a99a318e3767f"
+}

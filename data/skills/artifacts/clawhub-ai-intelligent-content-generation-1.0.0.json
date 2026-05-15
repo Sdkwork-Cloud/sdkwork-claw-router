@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-intelligent-content-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligent_content_generation",
+  "skill": {
+    "id": 58970,
+    "skillKey": "clawhub-ai-intelligent-content-generation",
+    "name": "Ai Intelligent Content Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligent-content-generation",
+    "url": "https://clawhub.ai/skills/ai-intelligent-content-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligent-content-generation-c41733ce691419d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "内容生成，文章生成 + 图片生成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 361,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773774299799,
+      "changelog": "Initial release of AI智能内容生成系统:\n\n- Generates articles, images, and videos using AI.\n- Includes title optimization and automated content moderation.\n- Offers tiered pricing for different user needs.\n- Suitable for content creation, marketing, news, and social media.\n- Built with Python, FastAPI, and GPT integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b130f855431e796cc4dd1125423f1c9172901c9dabd64b1283c86b26962b890"
+}

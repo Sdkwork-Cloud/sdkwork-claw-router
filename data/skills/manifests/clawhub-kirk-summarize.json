@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46095,
+  "uuid": "skill-clawhub-kirk-summarize",
+  "skillKey": "clawhub-kirk-summarize",
+  "name": "summarize",
+  "summary": "Summarize URLs, local files (PDFs, images, audio), and YouTube links using the summarize CLI with customizable length and model options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_summarize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Summarize URLs, local files (PDFs, images, audio), and YouTube links using the summarize CLI wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kirk-summarize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kirk-summarize",
+      "url": "https://clawhub.ai/skills/kirk-summarize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-summarize",
+    "url": "https://clawhub.ai/skills/kirk-summarize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-summarize-de2f1b2afb3c1f9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kirk-summarize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kirk-summarize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:008006ab47010aef90b5ee873d4d9672973a1db7f4cbd8be1169375c5add1996",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:34:23.580Z"
+}

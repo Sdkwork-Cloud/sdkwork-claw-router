@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/package-json-linter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.package_json_linter",
+  "skill": {
+    "id": 37095,
+    "skillKey": "clawhub-package-json-linter",
+    "name": "Package Json Linter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "package-json-linter",
+    "url": "https://clawhub.ai/skills/package-json-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/package-json-linter-1cfe824a95500efe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lint and validate package.json files for common mistakes, missing fields, security issues, and best practices. Use when asked to lint, validate, audit, or ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593734870,
+      "changelog": "- Updated STATUS.md file.\n- No changes made to code or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd5b8801d8063777c89bb47a16e86ec4fe58323305bde369341e1f7372f9dda2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goldhold-memory@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goldhold_memory",
+  "skill": {
+    "id": 26203,
+    "skillKey": "clawhub-goldhold-memory",
+    "name": "GoldHold Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goldhold-memory",
+    "url": "https://clawhub.ai/skills/goldhold-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goldhold-memory-4df8932ee3a9131c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent memory for AI agents. Remember across sessions. Encrypted in transit and at rest. https://goldhold.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerrysrodz",
+      "userId": "publishers:jerrysrodz",
+      "displayName": "AllAutoTunes",
+      "image": "https://avatars.githubusercontent.com/u/126110064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773172013005,
+      "changelog": "Removed skill.json and setup.sh -- all metadata in SKILL.md frontmatter only, matching platform convention",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ce52d1975e7ccc2e48de342d77862fa08ac738743642dc64ac222714cf84a46"
+}

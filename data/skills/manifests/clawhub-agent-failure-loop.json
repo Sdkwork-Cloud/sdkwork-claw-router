@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36757,
+  "uuid": "skill-clawhub-agent-failure-loop",
+  "skillKey": "clawhub-agent-failure-loop",
+  "name": "Agent Failure Loop",
+  "summary": "An end-to-end self-improvement loop that automatically detects agent failures, classifies them, tracks recurrence, auto-generates rules, and promotes them to...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_failure_loop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reikys",
+      "features": [
+        "An end-to-end self-improvement loop that automatically detects agent failures, classifies them,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-failure-loop@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83810275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-failure-loop",
+      "url": "https://clawhub.ai/skills/agent-failure-loop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-failure-loop",
+    "url": "https://clawhub.ai/skills/agent-failure-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-failure-loop-9f0f8b3085756f71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-failure-loop@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-failure-loop-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20a171030ea0477636e31fff3a49b36f3869f4a48fb63533b700027ce5b10666",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:56:18.955Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shippo-official@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shippo_official",
+  "skill": {
+    "id": 22103,
+    "skillKey": "clawhub-shippo-official",
+    "name": "Shippo Clawhub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shippo-official",
+    "url": "https://clawhub.ai/skills/shippo-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shippo-official-ee478caf92b23d67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "(Beta) Ship packages with Shippo. Multi-carrier rate shopping, label generation, package tracking, address validation, customs declarations, and batch proces..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyatt-shippo",
+      "userId": "s178frb2310wc9rp6d3sdwqnm184wwdm",
+      "displayName": "Wyatt",
+      "image": "https://avatars.githubusercontent.com/u/219727004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776373161775,
+      "changelog": "Switch from Gram hosted MCP to standalone @shippo/shippo-mcp (beta).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d379687b410b84fe55b2cf49a97a8805d07a23a54ef623affb3f2d89fea1c04"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-bitwarden-cli@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_bitwarden_cli",
+  "skill": {
+    "id": 39429,
+    "skillKey": "clawhub-safe-bitwarden-cli",
+    "name": "Safe Bitwarden Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-bitwarden-cli",
+    "url": "https://clawhub.ai/skills/safe-bitwarden-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-bitwarden-cli-ca5c581c96d11e8c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Industrial-grade secure bridge to Bitwarden. Copy passwords and TOTP codes with Zero-trust kernel-level piping."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chyern",
+      "userId": "s172az8q2nespx8r1zpa5n8fax84bnna",
+      "displayName": "chyern",
+      "image": "https://avatars.githubusercontent.com/u/38884300?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1776333512423,
+      "changelog": "Added TOTP (2FA) support: Users can now securely copy 6-digit codes directly to the native clipboard using kernel-level piping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb9655c29ec150ad91ee522ef43bba848240315cdf2275eb230ec9395a8b0bd1"
+}

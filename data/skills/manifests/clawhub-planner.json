@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17599,
+  "uuid": "skill-clawhub-planner",
+  "skillKey": "clawhub-planner",
+  "name": "Planner",
+  "summary": "Local-first planning engine for trips, weeks, launches, projects, schedules, and structured decision-making. Use whenever the user wants to plan something, o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "Local-first planning engine for trips, weeks, launches, projects, schedules, and structured dec.",
+        "Use whenever the user wants to plan something, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "planner",
+      "url": "https://clawhub.ai/skills/planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "planner",
+    "url": "https://clawhub.ai/skills/planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/planner-244b8435061420f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e672216f57f99367e3025bfc0366bba7ad406fbd7427cbd8ebb4c4454dff96d2",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:33:54.011Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10343,
+  "uuid": "skill-clawhub-create-prediction-markets",
+  "skillKey": "clawhub-create-prediction-markets",
+  "name": "permissionless prediction markets",
+  "summary": "Create, trade, and settle prediction markets on Base with any ERC20 collateral. Use when building prediction market infrastructure, running contests, crowdsourcing probability estimates, adding utility to tokens, or tapping into true infor.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_prediction_markets",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "proxima424",
+      "features": [
+        "Create, trade, and settle prediction markets on Base with any ERC20 collateral",
+        "Use when building prediction market infrastructure, running contests, crowdsourcing probability."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-prediction-markets@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95137001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-prediction-markets",
+      "url": "https://clawhub.ai/skills/create-prediction-markets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-prediction-markets",
+    "url": "https://clawhub.ai/skills/create-prediction-markets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-prediction-markets-7e0fbb6ad3074101.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-prediction-markets@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-prediction-markets-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:627f44ad1449886487e2993389d812dacb4b0a740b2be20d2c9a8462af91206b",
+      "artifactSizeBytes": 2660
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T16:08:49.814Z"
+}

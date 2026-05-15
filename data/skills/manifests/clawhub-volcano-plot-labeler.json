@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30713,
+  "uuid": "skill-clawhub-volcano-plot-labeler",
+  "skillKey": "clawhub-volcano-plot-labeler",
+  "name": "Volcano Plot Labeler",
+  "summary": "Automatically label top significant genes in volcano plots with repulsion algorithm",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcano_plot_labeler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EC-cyber258",
+      "features": [
+        "Automatically label top significant genes in volcano plots with repulsion algorithm"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcano-plot-labeler@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229709544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcano-plot-labeler",
+      "url": "https://clawhub.ai/skills/volcano-plot-labeler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcano-plot-labeler",
+    "url": "https://clawhub.ai/skills/volcano-plot-labeler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcano-plot-labeler-a0655f607446f0b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcano-plot-labeler@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcano-plot-labeler-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b817ce837e94659e8112a385826c93aaa57d15cfbf99be945ea850c150f1e1b",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:34:33.580Z"
+}

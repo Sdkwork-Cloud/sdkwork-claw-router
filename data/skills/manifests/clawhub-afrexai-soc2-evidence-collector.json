@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28822,
+  "uuid": "skill-clawhub-afrexai-soc2-evidence-collector",
+  "skillKey": "clawhub-afrexai-soc2-evidence-collector",
+  "name": "Soc2 Evidence Collector",
+  "summary": "Generate SOC2 evidence collection checklists, automate evidence gathering scripts, and produce audit-ready evidence packages. Covers all 5 Trust Service Crit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_soc2_evidence_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "afrexai-cto",
+      "features": [
+        "Generate SOC2 evidence collection checklists, automate evidence gathering scripts, and produce.",
+        "Covers all 5 Trust Service Crit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-soc2-evidence-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261321054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-soc2-evidence-collector",
+      "url": "https://clawhub.ai/skills/afrexai-soc2-evidence-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-soc2-evidence-collector",
+    "url": "https://clawhub.ai/skills/afrexai-soc2-evidence-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-soc2-evidence-collector-8cd58b76f83aa5db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-soc2-evidence-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-soc2-evidence-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4abd3346c70259c73810772529292895e6a6f65f070a82d5c332331916d327cd",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:00:28.576Z"
+}

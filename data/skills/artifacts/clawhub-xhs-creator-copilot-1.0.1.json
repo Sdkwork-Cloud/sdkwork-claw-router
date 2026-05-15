@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-creator-copilot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_creator_copilot",
+  "skill": {
+    "id": 70859,
+    "skillKey": "clawhub-xhs-creator-copilot",
+    "name": "xhs-creator-copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-creator-copilot",
+    "url": "https://clawhub.ai/skills/xhs-creator-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-creator-copilot-61be76a4c235b0dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书创作者本地辅助桌面工具(期货/财经账号「不期而遇」专用)。 当用户提到小红书选题、写笔记、起草回复、回复粉丝评论、私信回复、 内容去AI化、排版优化、合规预检、批量评论处理时使用。 本工具完全本地运行,**不接触小红书平台任何接口**, 只做内容生成、合规预检、去AI化润色、本地文件输出和回复草稿建议。 所..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yujietech",
+      "userId": "s1737gmy6rg3a2n5j35e8md5gx83g9gt",
+      "displayName": "yujietech",
+      "image": "https://avatars.githubusercontent.com/u/267198626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777355769764,
+      "changelog": "xhs-creator-copilot v1.0.1\n\n- 新增 references/cover-image.md，补充封面图生成相关规范与流程。\n- 意图路由增加“生成封面图/给我做张图”相关指令跳转支持。\n- 合规声明与参数字段说明同步支持生成封面图 (task_type=生成封面图)。\n- 优化文档结构，完善本地输出与多格式输出的配套说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6769b76546d991606ec6fe4308b7d0aa07e4a295a4401b9378db368e6203dd8d"
+}

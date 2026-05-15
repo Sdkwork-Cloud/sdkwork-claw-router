@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-shopify-manager@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_shopify_manager",
+  "skill": {
+    "id": 54905,
+    "skillKey": "clawhub-openclaw-shopify-manager",
+    "name": "Openclaw Shopify Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-shopify-manager",
+    "url": "https://clawhub.ai/skills/openclaw-shopify-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-shopify-manager-e84dfa51c3d2b20a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw to Shopify with guided setup, local `.env` secret storage, Shopify OAuth, webhook validation, product and content operations, and host or Do..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dave8172",
+      "userId": "s17a3h270bxgs49ebrfbs1rp3183hzwv",
+      "displayName": "Dhawal",
+      "image": "https://avatars.githubusercontent.com/u/17314872?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774626095040,
+      "changelog": "v0.2.1: redesign README and ClawHub-facing listing copy to be cleaner, more user-oriented, and more focused on Shopify outcomes and setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a218a77623f8ce2a7699fa77c582d8b8540b2fb8acb759f747438e741d97c558"
+}

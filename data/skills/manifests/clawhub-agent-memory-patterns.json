@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62231,
+  "uuid": "skill-clawhub-agent-memory-patterns",
+  "skillKey": "clawhub-agent-memory-patterns",
+  "name": "Agent Memory Patterns",
+  "summary": "永続エージェント向けメモリアーキテクチャパターン",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_patterns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Byron-McKeeby",
+      "features": [
+        "永続エージェント向けメモリアーキテクチャパターン"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-memory-patterns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70863380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-memory-patterns",
+      "url": "https://clawhub.ai/skills/agent-memory-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-patterns",
+    "url": "https://clawhub.ai/skills/agent-memory-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-patterns-96ec3025c5e84d23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-memory-patterns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-memory-patterns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e65a5b9c99bcd986edd0ede07e8d55a95d11ad85b7b01a5120e2c0abed15cf0",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T00:41:39.405Z"
+}

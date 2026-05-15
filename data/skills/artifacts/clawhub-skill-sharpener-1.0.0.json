@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-sharpener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_sharpener",
+  "skill": {
+    "id": 64049,
+    "skillKey": "clawhub-skill-sharpener",
+    "name": "Skill Sharpener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-sharpener",
+    "url": "https://clawhub.ai/skills/skill-sharpener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-sharpener-8c9b28bf66d96422.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对现有 Agent Skill（SKILL.md）进行全面质量评估并生成优化建议报告。当用户想要审查、评估、诊断或改进某个 skill 的质量时使用此技能，包括：检查 skill 是否符合最佳实践、描述是否有效触发、结构是否合理、内容是否简洁。使用关键词如\"评估 skill\"、\"优化 skill\"、\"审查 ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuxxxu",
+      "userId": "s17f9qtd89hqa7exkbvz5zvgfx83yjg5",
+      "displayName": "liuxxxu",
+      "image": "https://avatars.githubusercontent.com/u/96455140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 781,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773110045959,
+      "changelog": "- First release of \"skill-sharpener\", a skill for comprehensive quality evaluation and optimization recommendations for existing Agent Skills.\n- Supports automated structure analysis, code review of scripts, and step-by-step quality scoring across metadata, structure, content, examples, and script quality.\n- Generates a detailed evaluation report highlighting critical issues, improvement suggestions, strengths, and an optimized description draft.\n- Interactive workflow guides users to select skills, review problems, and optionally apply direct fixes or rewrites.\n- Aligns with best practices for skill discoverability, trigger effectiveness, and maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0baeac5c618e7e4670a7bbec5e5859d6ad43442516cff819bb82a7455dcbab78"
+}

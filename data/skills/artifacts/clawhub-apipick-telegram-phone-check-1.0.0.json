@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apipick-telegram-phone-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apipick_telegram_phone_check",
+  "skill": {
+    "id": 19091,
+    "skillKey": "clawhub-apipick-telegram-phone-check",
+    "name": "Telegram Phone Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apipick-telegram-phone-check",
+    "url": "https://clawhub.ai/skills/apipick-telegram-phone-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apipick-telegram-phone-check-223f52545e7da8db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check if a phone number is registered on Telegram using the apipick Telegram Checker API. Returns registration status, Telegram user ID, username, first/last..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "javainthinking",
+      "userId": "s179pwr839zxxcs8hgrqv73jv583ma9f",
+      "displayName": "javainthinking",
+      "image": "https://avatars.githubusercontent.com/u/2844583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 638,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771771016540,
+      "changelog": "- Major overhaul: Skill now provides a Telegram phone number checker using the apipick API.\n- Replaced general API integration patterns and docs with documentation focused on checking Telegram registration status via phone number.\n- Added instructions for using the apipick API, including authentication with API key and details on request/response structure.\n- Removed previous files and documentation related to authentication patterns, pagination, resilience, and webhooks for generic APIs.\n- Included error code explanations and usage pattern for the Telegram checking endpoint.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:38220b2f2e32435048218573571d4bd96e172cd3956925202257200bc258d41d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70371,
+  "uuid": "skill-clawhub-linkbot",
+  "skillKey": "clawhub-linkbot",
+  "name": "星罗好货linkbot",
+  "summary": "导购专家，回答用户购物相关问题，并给购买链接。当用户咨询购物问题，或想查询价格、优惠活动时调用，并替您一键转链赚取佣金。支持传入关键词或商品链接搜索，支持京东/淘宝/天猫。为了确保您的人类能赚到佣金，请联系提供方(www.haohuo.com)获取授权key并配置到Skill中",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkbot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zachariah-77",
+      "features": [
+        "导购专家，回答用户购物相关问题，并给购买链接。当用户咨询购物问题，或想查询价格、优惠活动时调用，并替您一键转链赚取佣金。支持传入关键词或商品链接搜索，支持京东/淘宝/天猫。为了确保您的人类能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkbot@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228875721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkbot",
+      "url": "https://clawhub.ai/skills/linkbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkbot",
+    "url": "https://clawhub.ai/skills/linkbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkbot-6542fd06bbe8aa90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkbot@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkbot-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9537c8a8d37b1af50df6ca21d2250aac6c21eddd147007d0199354c14a2fbabb",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:32:44.746Z"
+}

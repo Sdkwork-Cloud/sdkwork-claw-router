@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meshmonitor-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meshmonitor_api",
+  "skill": {
+    "id": 40157,
+    "skillKey": "clawhub-meshmonitor-api",
+    "name": "MeshMonitor API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meshmonitor-api",
+    "url": "https://clawhub.ai/skills/meshmonitor-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meshmonitor-api-cc60fe287a75ecf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the MeshMonitor REST API to inspect Meshtastic mesh state, nodes, channels, telemetry, messages, traceroutes, packets, solar data, and network-wide stats..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dadud",
+      "userId": "s1759h3ny40n1kjwmq1222a3gd841xhz",
+      "displayName": "Dadud",
+      "image": "https://avatars.githubusercontent.com/u/2881902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775055986406,
+      "changelog": "Initial release: MeshMonitor API skill with endpoint discovery, node/channel/telemetry/message/traceroute/network/packet/solar support, message sending, and report helpers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:806239c17c55ebcb5ac6808b3123a839bf0cd990c83743450c80ed988a25d054"
+}

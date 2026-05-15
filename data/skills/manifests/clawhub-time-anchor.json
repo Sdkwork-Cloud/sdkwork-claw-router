@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53625,
+  "uuid": "skill-clawhub-time-anchor",
+  "skillKey": "clawhub-time-anchor",
+  "name": "Time Anchor",
+  "summary": "Offload date math to code — get current date, days/weeks until goal dates, and month-end info. Use whenever you need to reason about relative dates or calcul...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_anchor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zigzag067",
+      "features": [
+        "Offload date math to code — get current date, days/weeks until goal dates, and month-end info",
+        "Use whenever you need to reason about relative dates or calcul..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/time-anchor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/120057582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "time-anchor",
+      "url": "https://clawhub.ai/skills/time-anchor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-anchor",
+    "url": "https://clawhub.ai/skills/time-anchor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-anchor-cba7a5af9a4d6f5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/time-anchor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-time-anchor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3967222b36bf096e86b01295a9718a527f4a9815bbf5b38c2cc3f48cb081f7b",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T17:14:30.144Z"
+}

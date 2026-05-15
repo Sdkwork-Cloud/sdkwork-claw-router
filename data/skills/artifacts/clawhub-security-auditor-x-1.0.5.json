@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-auditor-x@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_auditor_x",
+  "skill": {
+    "id": 43583,
+    "skillKey": "clawhub-security-auditor-x",
+    "name": "Security Auditor X"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-auditor-x",
+    "url": "https://clawhub.ai/skills/security-auditor-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-auditor-x-22586f997e254156.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform comprehensive security audits on codebases, infrastructure configs, API designs, and architecture documents. Use this skill whenever the user wants t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leewest0",
+      "userId": "s1723s6rzxhc18jmvxsbtz0rcd84sazj",
+      "displayName": "leewest0",
+      "image": "https://avatars.githubusercontent.com/u/58524946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776333695779,
+      "changelog": "Updated release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e24c53120ac739abc0adfe33e8264320d9836547e131c6901dd06ed4967dc94c"
+}

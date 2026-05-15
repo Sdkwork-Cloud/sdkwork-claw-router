@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ph-wingman@1.6.1",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ph_wingman",
+  "skill": {
+    "id": 54086,
+    "skillKey": "clawhub-ph-wingman",
+    "name": "producthunt-wingman"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ph-wingman",
+    "url": "https://clawhub.ai/skills/ph-wingman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ph-wingman-d3f81badefa53f34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Premium PH outreach agent — automates community discovery, enrichment, and LinkedIn engagement locally."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techievena",
+      "userId": "s1734zsyqd1hqjsg7rxrqz84th83z0e8",
+      "displayName": "Abinash Senapati",
+      "image": "https://avatars.githubusercontent.com/u/17270966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.6.1",
+      "createdAt": 1776920220103,
+      "changelog": "- Skill slug updated from \"producthunt-wingman\" to \"ph-wingman\".\n- Version incremented to 1.6.1.\n- No functional or feature changes to code or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43fd64dae82a7dd44f676d5e83db696eaea2d835333a248d16749f3ea4dacba6"
+}

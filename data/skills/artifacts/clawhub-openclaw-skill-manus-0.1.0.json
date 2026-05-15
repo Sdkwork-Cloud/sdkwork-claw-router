@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-manus@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_manus",
+  "skill": {
+    "id": 55748,
+    "skillKey": "clawhub-openclaw-skill-manus",
+    "name": "Manus AI Skill for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-manus",
+    "url": "https://clawhub.ai/skills/openclaw-skill-manus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-manus-5d78fd363959b49f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agente de IA autónomo de Manus con capacidades de investigación, desarrollo, automatización y generación de medios."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "disi3r",
+      "userId": "publishers:disi3r",
+      "displayName": "disi3r",
+      "image": "https://avatars.githubusercontent.com/u/33871685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1759,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769986180409,
+      "changelog": "- Primera versión pública del skill \"manus\": agente de IA autónomo para investigación, desarrollo, automatización y generación de medios.\n- Soporte para integraciones con Gmail, Notion, Google Calendar, Slack y Similarweb.\n- Scripts incluidos para ejecutar tareas, crear proyectos, subir archivos, comprobar estado y resultados, y servidor de webhooks.\n- Configuración mediante API key en la variable de entorno `MANUS_API_KEY`.\n- Compatible con el SDK de OpenAI usando tu API key de Manus.\n- Documentación detallada de comandos y mejores prácticas para uso efectivo.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af3dc30fbf749e8d59f810d6d8dc9a0c36584fa20103513fc396e15f9b97f82d"
+}

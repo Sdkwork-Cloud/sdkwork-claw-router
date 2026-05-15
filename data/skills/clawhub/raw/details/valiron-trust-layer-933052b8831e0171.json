@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "valiron-trust-layer",
+    "displayName": "Valiron",
+    "summary": "Intercept and authorize outgoing machine-to-machine payments (x402 or similar) using @valiron/sdk trust decisions on the counterparty agent before payment ex...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 620,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1771980859227,
+    "updatedAt": 1778388023884
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1772034420725,
+    "changelog": "- Added a metadata field specifying the skill key and primary environment variable required (`VALIRON_API_KEY`).\n- Clarified that `VALIRON_API_KEY` is now optional by default, but reserved/required for authenticated deployments.\n- Updated runtime requirements and configuration instructions to reflect optional and conditional use of `VALIRON_API_KEY`.\n- Improved guidance on failure behavior: fail closed only if required policy/config inputs are missing, and clarified SDK authentication handling.\n- No code or file changes; documentation/refinement update only.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "vatsashah45",
+    "userId": "s17897mxjjyq7nqcady75rh49583gwx4",
+    "displayName": "Vatsa Shah",
+    "image": "https://avatars.githubusercontent.com/u/72754751?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778388023884
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu",
+  "skill": {
+    "id": 9599,
+    "skillKey": "clawhub-zhihu",
+    "name": "Zhihu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu",
+    "url": "https://clawhub.ai/skills/zhihu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-938c2e85cbd73265.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Zhihu AI Bot to publish, like/unlike, comment, delete comments, and fetch ring or comment details using Zhihu API credentials."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keepwonder",
+      "userId": "s1716mjq7gtfm8jrap91rqdcj983xrg7",
+      "displayName": "Kiang",
+      "image": "https://avatars.githubusercontent.com/u/6965141?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 2982,
+      "installsAllTime": 32,
+      "installsCurrent": 28,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770468817151,
+      "changelog": "- Added a README.md file with usage, command examples, and API details for the Zhihu Bot integration.\n- No changes to code or features; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d732b6c4e5a22f9f03f7e127ebd8bcf986a33195f9e272c82510a87dd28990f3"
+}

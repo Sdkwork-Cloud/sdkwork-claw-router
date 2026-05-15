@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arixv-daily@0.9.1",
+  "version": "0.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arixv_daily",
+  "skill": {
+    "id": 67743,
+    "skillKey": "clawhub-arixv-daily",
+    "name": "arxiv-daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arixv-daily",
+    "url": "https://clawhub.ai/skills/arixv-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arixv-daily-0d7622d9b56fe01b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日 arXiv 论文获取加整理技能。当用户想要获取每日 arXiv 论文相关领域论文、设置论文订阅、管理论文推送时间、添加新的论文领域时触发。也用于用户询问\"arxiv\"、\"每日论文\"、\"论文推送\"等相关话题时。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hislocked",
+      "userId": "s17fmg30bf1j51j9tx4y761ta983jvww",
+      "displayName": "Hislocked",
+      "image": "https://avatars.githubusercontent.com/u/17588273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.9.1",
+      "createdAt": 1774420722103,
+      "changelog": "arxiv-daily v0.9.1\n\n- 新增详细文档（SKILL.md），说明每日 arXiv 论文获取、整理、推送及领域管理的工作流程和配置信息。\n- 支持通过对话引导初始化：定制感兴趣领域、定时提取/推送、推送渠道、语言及翻译偏好。\n- 实现多领域配置与管理，支持多个领域的定时论文推送。\n- 优化每日论文摘要自动生成及 markdown 总结，结构化推送文案。\n- 增强错误处理与数据保留逻辑（日自动清理 7 天前数据，处理失败提醒）。\n- 明确脚本与目录结构，规范配置文件及使用注意事项。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b76c8f78342caa9d6b51ad6c1845ff030358df7e143f7ef2afd3efdc33d7af88"
+}

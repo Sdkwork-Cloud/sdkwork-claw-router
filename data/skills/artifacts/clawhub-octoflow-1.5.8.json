@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/octoflow@1.5.8",
+  "version": "1.5.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.octoflow",
+  "skill": {
+    "id": 22391,
+    "skillKey": "clawhub-octoflow",
+    "name": "Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "octoflow",
+    "url": "https://clawhub.ai/skills/octoflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/octoflow-781601538a27de85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to run GPU-accelerated computations, analyze data, process images/audio/video, train ML models, or generate code from natural languag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikedconcepcion",
+      "userId": "publishers:mikedconcepcion",
+      "displayName": "Mr.Octopus",
+      "image": "https://avatars.githubusercontent.com/u/65360953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 475,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.5.8",
+      "createdAt": 1772681115209,
+      "changelog": "v1.5.8: 445 stdlib modules, 150 GPU kernels, 4.5 MB binary, Loom Engine v2, SHA-256 checksums",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a1426f8d7aa1750ae78a933e8063c3c9cecf34cd2d26b80d8af8b766660e4e26"
+}

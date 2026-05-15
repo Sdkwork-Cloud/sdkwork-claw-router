@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50315,
+  "uuid": "skill-clawhub-attestation-root-diversity-analyzer",
+  "skillKey": "clawhub-attestation-root-diversity-analyzer",
+  "name": "Attestation Root Diversity Analyzer",
+  "summary": "Helps measure the concentration of trust roots in a skill's attestation graph — identifying monoculture risk where a single compromised root invalidates an e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attestation_root_diversity_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps measure the concentration of trust roots in a skill's attestation graph — identifying mon."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/attestation-root-diversity-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "attestation-root-diversity-analyzer",
+      "url": "https://clawhub.ai/skills/attestation-root-diversity-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attestation-root-diversity-analyzer",
+    "url": "https://clawhub.ai/skills/attestation-root-diversity-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attestation-root-diversity-analyzer-b46adf58400e93d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/attestation-root-diversity-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-attestation-root-diversity-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:953ed8311c8cb0d00bc0326951ada7fe306e3efaf7c49b7ab43dcbee781d6046",
+      "artifactSizeBytes": 2603
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T09:56:34.653Z"
+}

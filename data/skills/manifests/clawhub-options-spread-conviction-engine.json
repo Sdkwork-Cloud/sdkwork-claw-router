@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11008,
+  "uuid": "skill-clawhub-options-spread-conviction-engine",
+  "skillKey": "clawhub-options-spread-conviction-engine",
+  "name": "Options Spread Conviction Engine",
+  "summary": "Multi-regime options spread analysis engine with Kelly Criterion Position Sizing. Scores vertical spreads (bull put, bear call, bull call, bear put) and mult...",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.options_spread_conviction_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AdamNaghs",
+      "features": [
+        "Multi-regime options spread analysis engine with Kelly Criterion Position Sizing",
+        "Scores vertical spreads (bull put, bear call, bull call, bear put) and mult..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/options-spread-conviction-engine@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79067867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "options-spread-conviction-engine",
+      "url": "https://clawhub.ai/skills/options-spread-conviction-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "options-spread-conviction-engine",
+    "url": "https://clawhub.ai/skills/options-spread-conviction-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/options-spread-conviction-engine-6645af35331be90a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/options-spread-conviction-engine@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-options-spread-conviction-engine-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40189ece338880ccfd8f89110a312474f6cc4381448747bb7c85f469265cf8b0",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T05:58:48.954Z"
+}

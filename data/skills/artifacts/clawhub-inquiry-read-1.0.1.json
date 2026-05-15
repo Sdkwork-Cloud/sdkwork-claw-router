@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inquiry-read@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inquiry_read",
+  "skill": {
+    "id": 62196,
+    "skillKey": "clawhub-inquiry-read",
+    "name": "inquiry-read"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inquiry-read",
+    "url": "https://clawhub.ai/skills/inquiry-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inquiry-read-9a330bf64cb9182e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 Tradew 平台分页读取客户网站询盘信息，支持多语言、自定义字段和 AI Agent 调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mouxiaming",
+      "userId": "s17d13ddhkx4knh6s621padmp98695px",
+      "displayName": "mouxiaming",
+      "image": "https://avatars.githubusercontent.com/u/45960106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778212811196,
+      "changelog": "- Removed package.json file from the project.\n- No feature or code changes; only package configuration was removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76197c029a60754d18396550db920f7ff609161d1befc1b877a74b8e4267eea2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wenhub@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenhub",
+  "skill": {
+    "id": 68523,
+    "skillKey": "clawhub-wenhub",
+    "name": "WenHub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenhub",
+    "url": "https://clawhub.ai/skills/wenhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenhub-d5442500ee423cc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文枢三院制 AI Agent 协作治理体系。提供决策者→管理者→经略院(任务拆解)→工造院(执行)→明鉴院(质检) 的完整协作流程，适用于需要多 Agent 协作治理的场景， 包括任务分配与分级、质量管控与评分、标准化汇报、知识沉淀与复用、安全管控与违规处理等。 配套参考资料（references/ 目录）涵盖三..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18505298102",
+      "userId": "s172p93e8dhxqkegktm312wbbd83mrja",
+      "displayName": "巩旭",
+      "image": "https://avatars.githubusercontent.com/u/112172944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1776994961287,
+      "changelog": "修复安全扫描 Suspicious：移除不存在的 templates/ 引用，描述改为指向官网下载",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:910939e75b2f0c86283a83a71c945b71436e224875a7cf396c2ab478bef8951d"
+}

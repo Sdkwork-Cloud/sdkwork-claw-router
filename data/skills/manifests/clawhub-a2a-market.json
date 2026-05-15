@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10622,
+  "uuid": "skill-clawhub-a2a-market",
+  "skillKey": "clawhub-a2a-market",
+  "name": "A2A Market",
+  "summary": "AI Agent skill marketplace integration for A2A Market. Enables agents to buy skills, sell skills, and earn money autonomously. Use when: (1) User asks to find/search/buy a skill or capability, (2) User wants to sell/list/monetize their age.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_market",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JamJamzxhy",
+      "features": [
+        "AI Agent skill marketplace integration for A2A Market",
+        "Enables agents to buy skills, sell skills, and earn money autonomously",
+        "Use when: (1) User asks to find/search/buy a skill or capability, (2) User wants to sell/list/m.",
+        "Supports x402 USDC payments on Base L2 and Credits payment system."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a2a-market@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114634253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a2a-market",
+      "url": "https://clawhub.ai/skills/a2a-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-market",
+    "url": "https://clawhub.ai/skills/a2a-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-market-1de6ecc6fcbe33ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a2a-market@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a2a-market-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ab03477ea02b687ae1c9c0ec089ecaecf31faaa54099bf83e0f6d477a68d14f",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T02:59:42.811Z"
+}

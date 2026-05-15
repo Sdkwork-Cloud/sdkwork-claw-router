@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72865,
+  "uuid": "skill-clawhub-video-wechat-ip-script-agent",
+  "skillKey": "clawhub-video-wechat-ip-script-agent",
+  "name": "视频号爆款 IP 脚本工厂",
+  "summary": "生成适合视频号发布的爆款IP内容方案：选题、标题、钩子、口播脚本、镜头建议、封面文案、发布文案、评论引导，以及医美场景下的基础合规改写。",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_wechat_ip_script_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangfu20171212-hue",
+      "features": [
+        "生成适合视频号发布的爆款IP内容方案：选题、标题、钩子、口播脚本、镜头建议、封面文案、发布文案、评论引导，以及医美场景下的基础合规改写。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-wechat-ip-script-agent@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257722331?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-wechat-ip-script-agent",
+      "url": "https://clawhub.ai/skills/video-wechat-ip-script-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-wechat-ip-script-agent",
+    "url": "https://clawhub.ai/skills/video-wechat-ip-script-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-wechat-ip-script-agent-40a87b4f66d9f971.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-wechat-ip-script-agent@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-wechat-ip-script-agent-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0b0d34b9b12a2cf70b038fd2e9c8137f13bde857446c2c5a993b667f8a196a6",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:48:44.430Z"
+}

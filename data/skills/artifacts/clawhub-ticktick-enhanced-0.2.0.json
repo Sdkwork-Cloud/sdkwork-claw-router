@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ticktick-enhanced@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick_enhanced",
+  "skill": {
+    "id": 40199,
+    "skillKey": "clawhub-ticktick-enhanced",
+    "name": "Ticktick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick-enhanced",
+    "url": "https://clawhub.ai/skills/ticktick-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-enhanced-e399b50cfb629ca7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage TickTick tasks and projects"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halr9000",
+      "userId": "publishers:halr9000",
+      "displayName": "halr9000",
+      "image": "https://avatars.githubusercontent.com/u/18482?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774196509977,
+      "changelog": "Phase 1+2 improvements: ID-mandatory operations, triage command, focus mode, config, rich output, docs. ADHD-friendly features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8eb207106803cd588f3753485a5d8fdfbd40d21c162241e098bda866077e3a8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-to-xhs@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_to_xhs",
+  "skill": {
+    "id": 31555,
+    "skillKey": "clawhub-github-to-xhs",
+    "name": "GitHub to Xiaohongshu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-to-xhs",
+    "url": "https://clawhub.ai/skills/github-to-xhs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-to-xhs-d8c8921067db6e4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a GitHub repository and generate Xiaohongshu (Little Red Book) infographic posts. Use when the user wants to create social media content about a GitH..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laojun509",
+      "userId": "s175rjaqs0zz2x81vbyxnxb34183rdc1",
+      "displayName": "laojun",
+      "image": "https://avatars.githubusercontent.com/u/26532654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776062917643,
+      "changelog": "Add file naming convention with timestamp and version",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cf6ae42fa762b1ad4a0e924c9d5e6a1914dbc3dee47ffb65da9241a19a69f97"
+}

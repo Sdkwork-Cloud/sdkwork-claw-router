@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ifly-image-understanding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifly_image_understanding",
+  "skill": {
+    "id": 56853,
+    "skillKey": "clawhub-ifly-image-understanding",
+    "name": "ifly-image-understanding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifly-image-understanding",
+    "url": "https://clawhub.ai/skills/ifly-image-understanding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifly-image-understanding-5e188a1c4f7a6719.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iFlytek Image Understanding (图片理解) — analyze and answer questions about images using Spark Vision model. WebSocket API, pure Python stdlib, no pip dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qingzhe2020",
+      "userId": "s17e3thgyg00vp9728mfseza8d83neqj",
+      "displayName": "Iflytek AIcloud",
+      "image": "https://avatars.githubusercontent.com/u/162573515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773846808286,
+      "changelog": "Initial release of iFlytek Image Understanding skill\n\n- Analyze and answer questions about images using Spark Vision model via WebSocket API.\n- Pure Python standard library; no pip dependencies required.\n- Supports flexible querying: general description, specific questions, and basic/advanced model selection.\n- Configurable options for domain, temperature, max tokens, and raw output.\n- Includes error code explanations and usage examples.\n- Max image size 4MB, supported formats: .jpg, .jpeg, .png.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32ea487105d2606f1e2e1decbf7ba02b16bc0aa6bb976a5c132d2e26feac1d47"
+}

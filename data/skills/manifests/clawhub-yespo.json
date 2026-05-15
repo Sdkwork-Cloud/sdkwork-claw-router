@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34895,
+  "uuid": "skill-clawhub-yespo",
+  "skillKey": "clawhub-yespo",
+  "name": "Yespo",
+  "summary": "Yespo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Yespo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yespo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Yespo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Yespo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yespo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yespo",
+      "url": "https://clawhub.ai/skills/yespo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yespo",
+    "url": "https://clawhub.ai/skills/yespo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yespo-fbfdfca29da65431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yespo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yespo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:555ecfd4be7188a110fda8e630b887e0b7ae06239f371f6830aac93d8991c581",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:12:15.637Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/semanticscholar-search-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semanticscholar_search_skill",
+  "skill": {
+    "id": 16633,
+    "skillKey": "clawhub-semanticscholar-search-skill",
+    "name": "SemanticScholar Search Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semanticscholar-search-skill",
+    "url": "https://clawhub.ai/skills/semanticscholar-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semanticscholar-search-skill-36788ce394951757.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search academic papers, authors, and citations with detailed metadata using the Semantic Scholar API, supporting queries, paper details, author profiles, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackkuo666",
+      "userId": "publishers:jackkuo666",
+      "displayName": "JackKuo666",
+      "image": "https://avatars.githubusercontent.com/u/41313632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 744,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772155037565,
+      "changelog": "Initial release of Semantic Scholar Search.\n\n- Enables searching academic papers by keywords, title, or author via Semantic Scholar API\n- Provides detailed paper info including abstract, authors, citations, venue, and publication year\n- Supports author profile lookup with publication count and h-index\n- Offers citation and reference data for any paper\n- Outputs results to console or JSON, with optional export to file",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ab722ad2b7e009f0ed6e5c37c0bd21e5879e9caa812bd2278634e5719281b38"
+}

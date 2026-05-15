@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_search",
+  "skill": {
+    "id": 61932,
+    "skillKey": "clawhub-chinese-search",
+    "name": "Chinese Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-search",
+    "url": "https://clawhub.ai/skills/chinese-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-search-f4f06fd4121c9e4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文搜索增强，整合必应中国、搜狗微信等中文搜索引擎 (MVP v1.0)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776822310490,
+      "changelog": "添加付费版本：Pro 版¥99 一次性，订阅版¥19/月",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a753444eb58e57337a4dadc8eafeb24dccaa2b67d3a260b14fc17dbd2a7ff0c4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11039,
+  "uuid": "skill-clawhub-telegram-history",
+  "skillKey": "clawhub-telegram-history",
+  "name": "Telegram History",
+  "summary": "Fetch Telegram chat message history via MTProto user API (Telethon). Use when needing to read old messages from any Telegram chat, group, or forum topic that...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_history",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rahul Sethuram",
+      "features": [
+        "Fetch Telegram chat message history via MTProto user API (Telethon)",
+        "Use when needing to read old messages from any Telegram chat, group, or forum topic that..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-history@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11512787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-history",
+      "url": "https://clawhub.ai/skills/telegram-history"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-history",
+    "url": "https://clawhub.ai/skills/telegram-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-history-85e032adb608dc2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-history@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-history-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37c9c09aeb0b04081935eb73f0fa2c1cf91e3bcbe6ff896d1cc2714b0d85d401",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:51:35.051Z"
+}

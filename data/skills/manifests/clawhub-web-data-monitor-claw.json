@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71494,
+  "uuid": "skill-clawhub-web-data-monitor-claw",
+  "skillKey": "clawhub-web-data-monitor-claw",
+  "name": "全网数据探测虾",
+  "summary": "全网数据探测虾 — 监控竞品官网或特定站点的页面变动，自动巡查并在关键内容变化时发送通知。 适用场景：竞品价格监控、法规更新监控、招聘信息监控、新闻舆情监控、技术文档更新监控。 触发关键词：监控 爬虫 网页变动 竞品监控 价格监控 法规更新 舆情监控 数据采集 网站监控 页面变化 自动抓取 web-data-mo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_data_monitor_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "全网数据探测虾 — 监控竞品官网或特定站点的页面变动，自动巡查并在关键内容变化时发送通知。 适用场景：竞品价格监控、法规更新监控、招聘信息监控、新闻舆情监控、技术文档更新监控。 触发关键词：."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-data-monitor-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-data-monitor-claw",
+      "url": "https://clawhub.ai/skills/web-data-monitor-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-data-monitor-claw",
+    "url": "https://clawhub.ai/skills/web-data-monitor-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-data-monitor-claw-1e2924739a176e71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-data-monitor-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-data-monitor-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:702964f26cca0d6a11fbc63b86689c44fd263ca1ca68e3f863f10f0c9dd7c8c4",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T04:07:23.544Z"
+}

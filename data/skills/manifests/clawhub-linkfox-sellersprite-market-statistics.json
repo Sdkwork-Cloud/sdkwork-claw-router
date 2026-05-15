@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65085,
+  "uuid": "skill-clawhub-linkfox-sellersprite-market-statistics",
+  "skillKey": "clawhub-linkfox-sellersprite-market-statistics",
+  "name": "Sellersprite Market Statistics",
+  "summary": "使用卖家精灵选市场统计能力，按类目节点输出市场统计看板，包含头部Listing平均评分、均价、BSR、销量、卖家数量与新品相关指标，适合快速判断某类目市场质量与竞争格局。当用户提到类目市场统计、选市场看板、市场基础盘评估、节点市场质量、头部商品统计、SellerSprite market statistics、c...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_sellersprite_market_statistics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "使用卖家精灵选市场统计能力，按类目节点输出市场统计看板，包含头部Listing平均评分、均价、BSR、销量、卖家数量与新品相关指标，适合快速判断某类目市场质量与竞争格局。当用户提到类目市场统."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-sellersprite-market-statistics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-sellersprite-market-statistics",
+      "url": "https://clawhub.ai/skills/linkfox-sellersprite-market-statistics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-sellersprite-market-statistics",
+    "url": "https://clawhub.ai/skills/linkfox-sellersprite-market-statistics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-sellersprite-market-statistics-d475cf0aa4c12bec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-sellersprite-market-statistics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-sellersprite-market-statistics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54c6ebab373eb42df242ea70a687d248159f195ef7c9a8098e199ef91d9bf60d",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T07:47:08.985Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mp-writer-skill-mxx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_writer_skill_mxx",
+  "skill": {
+    "id": 67708,
+    "skillKey": "clawhub-wechat-mp-writer-skill-mxx",
+    "name": "wechat-mp-writer-skill-mxx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-writer-skill-mxx",
+    "url": "https://clawhub.ai/skills/wechat-mp-writer-skill-mxx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-writer-skill-mxx-de2fe940daf9acea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号文章全流程写作助手。支持热点选题、文章撰写、AI去味润色（去除机器感）、配图建议、一键发布到公众号草稿箱。适用于技术博主、自媒体创作者、企业公众号运营等场景。当用户需要写公众号文章、润色内容、寻找配图或发布到微信时使用此skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hahacatlsq",
+      "userId": "publishers:hahacatlsq",
+      "displayName": "hahacatlsq",
+      "image": "https://avatars.githubusercontent.com/u/131435882?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 4693,
+      "installsAllTime": 31,
+      "installsCurrent": 29,
+      "stars": 34,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772196802331,
+      "changelog": "Initial release.\n\n- 发布微信公众号文章全流程写作助手（选题、写作、润色、配图、发布）。\n- 支持热点选题建议和多种写作风格模板。\n- 专有AI去味润色功能，生成更接近真人的文章。\n- 提供个性化配图建议与素材搜索。\n- 一键发布至公众号草稿箱，支持标准Markdown格式。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3598840cd0ab64c8f431b68131bd18ccbb647add560e0bf543d0ef236e8e7c44"
+}

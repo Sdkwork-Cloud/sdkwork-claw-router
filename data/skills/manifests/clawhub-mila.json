@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41002,
+  "uuid": "skill-clawhub-mila",
+  "skillKey": "clawhub-mila",
+  "name": "mila",
+  "summary": "Create, read, update, and delete documents, spreadsheets, and slide presentations in Mila via the REST API or MCP tools. Use when the user wants to manage co...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mila",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fred",
+      "features": [
+        "Create, read, update, and delete documents, spreadsheets, and slide presentations in Mila via t.",
+        "Use when the user wants to manage co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mila@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45578633?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mila",
+      "url": "https://clawhub.ai/skills/mila"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mila",
+    "url": "https://clawhub.ai/skills/mila",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mila-2eb4e402831c134c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mila@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mila-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4026118f205106d795b3de776c3d9663d6a41abb8b0f8afae21ace2b0cd00f17",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:36:42.610Z"
+}

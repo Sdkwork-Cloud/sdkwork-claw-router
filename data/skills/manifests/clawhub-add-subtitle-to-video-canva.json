@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46684,
+  "uuid": "skill-clawhub-add-subtitle-to-video-canva",
+  "skillKey": "clawhub-add-subtitle-to-video-canva",
+  "name": "Add Subtitle To Video Canva",
+  "summary": "Get captioned videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add sub...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_subtitle_to_video_canva",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get captioned videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"add sub..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/add-subtitle-to-video-canva@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "add-subtitle-to-video-canva",
+      "url": "https://clawhub.ai/skills/add-subtitle-to-video-canva"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-subtitle-to-video-canva",
+    "url": "https://clawhub.ai/skills/add-subtitle-to-video-canva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-subtitle-to-video-canva-f48faa01efd917d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/add-subtitle-to-video-canva@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-add-subtitle-to-video-canva-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db84582e99a9b96305bdb35e5b4ca9ee8f761dbc0d8dcc0afccea555d7386b6e",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:50:06.251Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aipose-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aipose_openapi_skill",
+  "skill": {
+    "id": 54984,
+    "skillKey": "clawhub-aipose-openapi-skill",
+    "name": "AI Pose Generator – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aipose-openapi-skill",
+    "url": "https://clawhub.ai/skills/aipose-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aipose-openapi-skill-92c21b15a5861a1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Change the human pose in a photo while keeping the garment unchanged"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776146678214,
+      "changelog": "- Initial release of aipose-openapi-skill version 1.0.0\n- Enables changing a human pose in a photo while preserving the garment\n- Provides endpoints to start a pose change run, poll status, and upload images\n- Requires HTTPS connection to openapi.weshop.ai and a valid API key via WESHOP_API_KEY environment variable\n- Users must not share their API key with domains other than openapi.weshop.ai\n- Supports adjustable generation quality and batch output options",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf33cbea2d3ecfb02e2f588e84daa0ea56f2e93167fb02de995991de581d0399"
+}

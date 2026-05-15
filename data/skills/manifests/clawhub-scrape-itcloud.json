@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30223,
+  "uuid": "skill-clawhub-scrape-itcloud",
+  "skillKey": "clawhub-scrape-itcloud",
+  "name": "Scrape Itcloud",
+  "summary": "Scrape-It.Cloud integration. Manage Projects, Users, Organizations. Use when the user wants to interact with Scrape-It.Cloud data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scrape_itcloud",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Scrape-It.Cloud integration",
+        "Manage Projects, Users, Organizations",
+        "Use when the user wants to interact with Scrape-It.Cloud data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scrape-itcloud@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scrape-itcloud",
+      "url": "https://clawhub.ai/skills/scrape-itcloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scrape-itcloud",
+    "url": "https://clawhub.ai/skills/scrape-itcloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scrape-itcloud-4925236016f1d936.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scrape-itcloud@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-scrape-itcloud-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2938746bd48af1de76be666a1a6d85fa197c287049c6d90c25c8a3591b06945a",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:38:04.159Z"
+}

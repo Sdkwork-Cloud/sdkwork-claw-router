@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-waf-quick-showcase@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_waf_quick_showcase",
+  "skill": {
+    "id": 39187,
+    "skillKey": "clawhub-alibabacloud-waf-quick-showcase",
+    "name": "Alibabacloud Waf Quick Showcase"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-waf-quick-showcase",
+    "url": "https://clawhub.ai/skills/alibabacloud-waf-quick-showcase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-waf-quick-showcase-b865b7a59b7e70da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solution skill for using WAF to protect web applications on ECS. Used for quickly deploying network environments including VPC, security groups, and ECS inst..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776751476865,
+      "changelog": "alibabacloud-waf-quick-showcase 0.0.2\n\n- Enforces Aliyun CLI version >= 3.3.3 and requires explicit plugin updates before workflow.\n- Adds mandatory configuration steps for \"AI-Mode\" before and after running CLI commands.\n- Requires all aliyun CLI commands to include a specific user-agent flag for tracking.\n- Updates pre-flight checks and installation guide to reflect new CLI and plugin requirements.\n- Improves clarity in scenario rules and step instructions for enhanced user experience and guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c36ad55e430f1f6601e12673976249a4f8e551674224eae68363806463387503"
+}

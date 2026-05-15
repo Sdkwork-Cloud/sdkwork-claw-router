@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20496,
+  "uuid": "skill-clawhub-code-security",
+  "skillKey": "clawhub-code-security",
+  "name": "Code Security",
+  "summary": "Review code for security risks like injection, auth flaws, sensitive data leaks, and recommend precise, actionable fixes with risk levels and patches.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sf0799",
+      "features": [
+        "Review code for security risks like injection, auth flaws, sensitive data leaks, and recommend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-security@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65325612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-security",
+      "url": "https://clawhub.ai/skills/code-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-security",
+    "url": "https://clawhub.ai/skills/code-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-security-f35456defcb794df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-security@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-security-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c589eb021c9584bd0ee97e7cbdb9af8ba5bff493df29c222a81cc0a29730e27",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T08:20:47.181Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47896,
+  "uuid": "skill-clawhub-litellm-vertex-codex",
+  "skillKey": "clawhub-litellm-vertex-codex",
+  "name": "Src",
+  "summary": "Configure OpenAI Codex CLI to use Vertex AI Gemini models via LiteLLM. A guide for translating strict Codex requests for Gemini compatibility.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.litellm_vertex_codex",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bhrum",
+      "features": [
+        "Configure OpenAI Codex CLI to use Vertex AI Gemini models via LiteLLM",
+        "A guide for translating strict Codex requests for Gemini compatibility."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/litellm-vertex-codex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222737880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "litellm-vertex-codex",
+      "url": "https://clawhub.ai/skills/litellm-vertex-codex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "litellm-vertex-codex",
+    "url": "https://clawhub.ai/skills/litellm-vertex-codex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/litellm-vertex-codex-19db5b3ac4b5d41c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/litellm-vertex-codex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-litellm-vertex-codex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0118a5d939442837cbd452261d2520565a27086b5abcd81bd9ce16dc2b1b7d2b",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T15:15:28.911Z"
+}

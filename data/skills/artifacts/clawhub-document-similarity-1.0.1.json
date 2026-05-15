@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-similarity@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_similarity",
+  "skill": {
+    "id": 31464,
+    "skillKey": "clawhub-document-similarity",
+    "name": "Document Similarity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-similarity",
+    "url": "https://clawhub.ai/skills/document-similarity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-similarity-30969ed8b2f84f99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare two images or PDFs for visual similarity via the PDFAPIHub cloud API. Documents are uploaded to pdfapihub.com for comparison using feature matching,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rishabhdugar",
+      "userId": "s17er4205vjg2p2hpn1fxtpqz1850q84",
+      "displayName": "Rishabh Dugar",
+      "image": "https://avatars.githubusercontent.com/u/7722125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776481964178,
+      "changelog": "Clarify hosted API (documents uploaded to PDFAPIHub for comparison). Add privacy notice. Declare CLIENT-API-KEY credential in description.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6357dbb036a792aa735fd5bbd4b5e29d17c01b14754f4115ce373509c410142e"
+}

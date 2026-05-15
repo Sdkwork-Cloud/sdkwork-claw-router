@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22452,
+  "uuid": "skill-clawhub-github-repo-analyzer",
+  "skillKey": "clawhub-github-repo-analyzer",
+  "name": "GitHub Repo Analyzer",
+  "summary": "Analyze GitHub repositories to provide statistics, contributor activity, programming languages, and issue and PR trends.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "Analyze GitHub repositories to provide statistics, contributor activity, programming languages,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-repo-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-repo-analyzer",
+      "url": "https://clawhub.ai/skills/github-repo-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-analyzer",
+    "url": "https://clawhub.ai/skills/github-repo-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-analyzer-697a1bb691598690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-repo-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-repo-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5ec493ffb2450b534a4f0bb7123c5904b2547b6ef8676763e333e46949af5bc",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T21:12:03.194Z"
+}

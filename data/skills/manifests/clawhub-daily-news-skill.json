@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69269,
+  "uuid": "skill-clawhub-daily-news-skill",
+  "skillKey": "clawhub-daily-news-skill",
+  "name": "news-skill",
+  "summary": "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Victoria",
+      "features": [
+        "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178981575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-skill",
+      "url": "https://clawhub.ai/skills/daily-news-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-skill",
+    "url": "https://clawhub.ai/skills/daily-news-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-skill-4807e7dc64ea1450.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16b702d7dbe2a41dd412396abf30513f368143c214be3e8254afbd581fb524b8",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:36:12.359Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8457,
+  "uuid": "skill-clawhub-linkedin-api",
+  "skillKey": "clawhub-linkedin-api",
+  "name": "LinkedIn",
+  "summary": "LinkedIn API integration with managed OAuth. Share posts, manage profile, run ads, and access LinkedIn features. Use this skill when users want to share cont...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "LinkedIn API integration with managed OAuth",
+        "Share posts, manage profile, run ads, and access LinkedIn features",
+        "Use this skill when users want to share cont..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-api@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-api",
+      "url": "https://clawhub.ai/skills/linkedin-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-api",
+    "url": "https://clawhub.ai/skills/linkedin-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-api-cf8452d5f1406f6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-api@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-api-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94079f4d2f5963cac4a2b44e180041e28b8293cf5b80ca3e207336b657f935c3",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:18:41.527Z"
+}

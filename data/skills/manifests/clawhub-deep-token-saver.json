@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60921,
+  "uuid": "skill-clawhub-deep-token-saver",
+  "skillKey": "clawhub-deep-token-saver",
+  "name": "Deep Token Saver",
+  "summary": "综合 token 节省方案。6层技术叠加，从输入/输出/记忆/上下文/审计全链路降本。含Caveman、L0/L1/L2分层、Remnic/QMD持久化、记忆去重、AGENTS压缩、Token审计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_token_saver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RealGhost",
+      "features": [
+        "综合 token 节省方案。6层技术叠加，从输入/输出/记忆/上下文/审计全链路降本。含Caveman、L0/L1/L2分层、Remnic/QMD持久化、记忆去重、AGENTS压缩、Toke."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-token-saver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60616432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-token-saver",
+      "url": "https://clawhub.ai/skills/deep-token-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-token-saver",
+    "url": "https://clawhub.ai/skills/deep-token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-token-saver-6b7cdd37995902ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-token-saver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-token-saver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09fd74caf8ba4488fdb5c97ae2c6c58dd4ed0d4aea6a8e730e60e3b3b24d6ad1",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T04:06:20.209Z"
+}

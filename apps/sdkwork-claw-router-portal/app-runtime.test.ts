@@ -298,13 +298,14 @@ test("app service normalizes catalog filters before generated app SDK call", asy
   await withAppSdkFetch(
     (url) => {
       const requestUrl = new URL(url, "http://localhost");
-      assert.equal(requestUrl.pathname, "/app/v3/api/app/store");
-      assert.equal(requestUrl.searchParams.get("pageNo"), "2");
-      assert.equal(requestUrl.searchParams.get("pageSize"), "25");
-      assert.equal(requestUrl.searchParams.get("keyword"), "data lens");
+      assert.equal(requestUrl.pathname, "/app/v3/api/platform/apps/store");
+      assert.equal(requestUrl.searchParams.get("page"), "2");
+      assert.equal(requestUrl.searchParams.get("page_size"), "25");
+      assert.equal(requestUrl.searchParams.get("q"), "data lens");
+      assert.equal(requestUrl.searchParams.has("search_query"), false);
       assert.equal(requestUrl.searchParams.get("status"), "ACTIVE");
-      assert.equal(requestUrl.searchParams.get("startTime"), "2026-05-01T00:00:00Z");
-      assert.equal(requestUrl.searchParams.get("endTime"), "2026-05-31T23:59:59Z");
+      assert.equal(requestUrl.searchParams.get("start_time"), "2026-05-01T00:00:00Z");
+      assert.equal(requestUrl.searchParams.get("end_time"), "2026-05-31T23:59:59Z");
       assert.equal(requestUrl.searchParams.has("search"), false);
       assert.equal(requestUrl.searchParams.has("platformTypes"), false);
       assert.equal(requestUrl.searchParams.has("categories"), false);
@@ -332,8 +333,8 @@ test("app service normalizes catalog filters before generated app SDK call", asy
     },
     async (captured) => {
       const result = await appService.getApps({
-        search: " data lens ",
-        pageNo: "2",
+        searchQuery: " data lens ",
+        page: "2",
         pageSize: "25",
         status: "ACTIVE",
         startTime: " 2026-05-01T00:00:00Z ",
@@ -357,13 +358,13 @@ test("app service rejects invalid catalog query filters before generated app SDK
       throw new Error("app SDK must not be called for invalid app catalog filters");
     },
     async (captured) => {
-      await assert.rejects(() => appService.getApps({ pageNo: 0 } as any), /pageNo must be a positive integer/);
-      await assert.rejects(() => appService.getApps({ pageNo: "abc" } as any), /pageNo must be a positive integer/);
+      await assert.rejects(() => appService.getApps({ page: 0 } as any), /page must be a positive integer/);
+      await assert.rejects(() => appService.getApps({ page: "abc" } as any), /page must be a positive integer/);
       await assert.rejects(() => appService.getApps({ pageSize: 0 } as any), /pageSize must be between 1 and 100/);
       await assert.rejects(() => appService.getApps({ pageSize: 101 } as any), /pageSize must be between 1 and 100/);
       await assert.rejects(
-        () => appService.getApps({ search: "x".repeat(129) } as any),
-        /search must be at most 128 characters/,
+        () => appService.getApps({ searchQuery: "x".repeat(129) } as any),
+        /searchQuery must be at most 128 characters/,
       );
       await assert.rejects(
         () => appService.getApps({ startTime: { value: "2026-05-01T00:00:00Z" } } as any),
@@ -399,7 +400,7 @@ test("app service rejects unsafe app detail ids before generated app SDK call", 
 test("app service returns undefined when detail response data is null", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      assert.equal(url, "/app/v3/api/app/store/missing-app");
+      assert.equal(url, "/app/v3/api/platform/apps/store/missing-app");
       assert.equal(init?.method ?? "GET", "GET");
       return null;
     },
@@ -415,7 +416,7 @@ test("app service returns undefined when detail response data is null", async ()
 test("app service fails closed when detail response does not contain an app entity", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/app/store/app-1" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/platform/apps/store/app-1" && (init?.method ?? "GET") === "GET") {
         return {
           items: [
             {
@@ -440,7 +441,7 @@ test("app service fails closed when detail response does not contain an app enti
 test("app service fails closed when catalog response contains malformed app rows", async () => {
   await withAppSdkFetch(
     (url, init) => {
-      if (url === "/app/v3/api/app/store" && (init?.method ?? "GET") === "GET") {
+      if (url === "/app/v3/api/platform/apps/store" && (init?.method ?? "GET") === "GET") {
         return { items: ["not-an-app-record"] };
       }
       throw new Error(`Unexpected SDK request ${init?.method ?? "GET"} ${url}`);
@@ -462,7 +463,7 @@ test("app service fails closed when catalog response omits required app identity
   ] as const) {
     await withAppSdkFetch(
       (url, init) => {
-        if (url === "/app/v3/api/app/store" && (init?.method ?? "GET") === "GET") {
+        if (url === "/app/v3/api/platform/apps/store" && (init?.method ?? "GET") === "GET") {
           const app = {
             appId: "app-1",
             name: "Data Lens",

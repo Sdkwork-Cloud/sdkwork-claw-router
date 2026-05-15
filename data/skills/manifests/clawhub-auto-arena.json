@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28658,
+  "uuid": "skill-clawhub-auto-arena",
+  "skillKey": "clawhub-auto-arena",
+  "name": "Auto Arena",
+  "summary": "Automatically evaluate and compare multiple AI models or agents without pre-existing test data. Generates test queries from a task description, collects resp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_arena",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "helloml0326",
+      "features": [
+        "Automatically evaluate and compare multiple AI models or agents without pre-existing test data",
+        "Generates test queries from a task description, collects resp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-arena@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18115084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-arena",
+      "url": "https://clawhub.ai/skills/auto-arena"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-arena",
+    "url": "https://clawhub.ai/skills/auto-arena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-arena-c3cce078ebaf175a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-arena@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-arena-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbf0ba715a74cfc1a654ea4abf2b121e33aa489dd37951750ae015dad1d349a0",
+      "artifactSizeBytes": 2533
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:14:21.582Z"
+}

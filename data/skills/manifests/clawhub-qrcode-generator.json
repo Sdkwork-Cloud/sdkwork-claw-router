@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21902,
+  "uuid": "skill-clawhub-qrcode-generator",
+  "skillKey": "clawhub-qrcode-generator",
+  "name": "Qrcode Generator",
+  "summary": "Generate QR codes from text, URLs, or data for payments, WiFi sharing, or any task needing a scannable QR code image.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qrcode_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shixiaoliuo",
+      "features": [
+        "Generate QR codes from text, URLs, or data for payments, WiFi sharing, or any task needing a sc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qrcode-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89396884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qrcode-generator",
+      "url": "https://clawhub.ai/skills/qrcode-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qrcode-generator",
+    "url": "https://clawhub.ai/skills/qrcode-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qrcode-generator-4f894cd73fadd23e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qrcode-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qrcode-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:172ebf96c1234ffb2a7eb35cdca3eb8682737dea0ac90aeb576237e136df98ae",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T03:38:29.329Z"
+}

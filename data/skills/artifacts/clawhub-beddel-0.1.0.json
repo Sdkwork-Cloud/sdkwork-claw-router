@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beddel@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beddel",
+  "skill": {
+    "id": 44084,
+    "skillKey": "clawhub-beddel",
+    "name": "Beddel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beddel",
+    "url": "https://clawhub.ai/skills/beddel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beddel-33f43c08b56dcfad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute declarative YAML AI workflows with branching, retry, multi-provider LLM support, guardrails, and OpenTelemetry tracing via the Beddel Python SDK. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "botanarede",
+      "userId": "s17ekkye94c5g5hawagrxghbcx83h0km",
+      "displayName": "Bota na Rede",
+      "image": "https://avatars.githubusercontent.com/u/121181632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774354413207,
+      "changelog": "beddel 0.1.0 — Initial release\n\n- Execute declarative YAML AI workflows with branching, retry, and multi-provider LLM support via the Beddel Python SDK.\n- Out-of-the-box guardrails and OpenTelemetry tracing for observability.\n- CLI supports running, validating, and serving YAML workflows and listing workflow primitives.\n- Supports several workflow primitives: llm, chat, output-generator, guardrail, call-agent, tool, and agent-exec.\n- Includes detailed documentation and a bundled example for integrating with OpenClaw.\n- Enhanced security for shell execution and API key handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44c82a33da0d84fbc352256ba4ffec273ae6dbadd8f1e64d6027424ec68dc2e8"
+}

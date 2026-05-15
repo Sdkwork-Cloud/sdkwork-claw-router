@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60908,
+  "uuid": "skill-clawhub-windows-browser-ops",
+  "skillKey": "clawhub-windows-browser-ops",
+  "name": "Windows Browser Ops",
+  "summary": "Windows Desktop 浏览器远程操控。用于在 Discord / 本地会话中触发 Edge/Chrome 执行“打开网页、交互、截图、打包下载”等动作，并回传证据。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_browser_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuLu",
+      "features": [
+        "Windows Desktop 浏览器远程操控。用于在 Discord / 本地会话中触发 Edge/Chrome 执行“打开网页、交互、截图、打包下载”等动作，并回传证据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-browser-ops@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268072618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-browser-ops",
+      "url": "https://clawhub.ai/skills/windows-browser-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-browser-ops",
+    "url": "https://clawhub.ai/skills/windows-browser-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-browser-ops-c024a2bebe299e76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-browser-ops@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-browser-ops-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ec3432ce99ed6414ee4d72829a9fdf06ff77de525fd2ab52fc6c2ca6559d281",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:09:09.996Z"
+}

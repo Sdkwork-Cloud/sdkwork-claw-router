@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9398,
+  "uuid": "skill-clawhub-nmap-recon",
+  "skillKey": "clawhub-nmap-recon",
+  "name": "Nmap Recon",
+  "summary": "Perform network reconnaissance and port scanning with Nmap to find open ports, detect services, identify vulnerabilities, and enumerate targets accurately.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nmap_recon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nsahal",
+      "features": [
+        "Perform network reconnaissance and port scanning with Nmap to find open ports, detect services,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nmap-recon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209289504?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nmap-recon",
+      "url": "https://clawhub.ai/skills/nmap-recon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nmap-recon",
+    "url": "https://clawhub.ai/skills/nmap-recon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nmap-recon-25bd386d46a4948f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nmap-recon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nmap-recon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c46125e05fc2c69042127dc89ab67dd21b8d908c7d1026a79655f3a429441e88",
+      "artifactSizeBytes": 2297
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T22:11:57.097Z"
+}

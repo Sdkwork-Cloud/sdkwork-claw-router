@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31557,
+  "uuid": "skill-clawhub-group-summarizer",
+  "skillKey": "clawhub-group-summarizer",
+  "name": "Group Summarizer",
+  "summary": "Synthesizes member-parent markdown reports into a continuous narrative.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dean Lee",
+      "features": [
+        "Synthesizes member-parent markdown reports into a continuous narrative."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/group-summarizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34669133?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "group-summarizer",
+      "url": "https://clawhub.ai/skills/group-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-summarizer",
+    "url": "https://clawhub.ai/skills/group-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-summarizer-35f4ea124418ad52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/group-summarizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-group-summarizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8d0a3b51cca9e3892657bf35a8c06dbe3d57df2791ca5a984c880fe6c284b13",
+      "artifactSizeBytes": 2174
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:10:59.110Z"
+}

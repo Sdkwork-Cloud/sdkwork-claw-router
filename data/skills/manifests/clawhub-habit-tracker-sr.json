@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25750,
+  "uuid": "skill-clawhub-habit-tracker-sr",
+  "skillKey": "clawhub-habit-tracker-sr",
+  "name": "HabitTracker Conversational Habit Tracking",
+  "summary": "Track daily habits through agent conversation. Streaks, reminders, weekly reports. Did you exercise today? With accountability.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habit_tracker_sr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Track daily habits through agent conversation",
+        "Streaks, reminders, weekly reports",
+        "Did you exercise today? With accountability."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/habit-tracker-sr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "habit-tracker-sr",
+      "url": "https://clawhub.ai/skills/habit-tracker-sr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habit-tracker-sr",
+    "url": "https://clawhub.ai/skills/habit-tracker-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habit-tracker-sr-3f00566a05fa316a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/habit-tracker-sr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-habit-tracker-sr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84ec4c260ffff294eadf61ff950575a16341cb311d66cba3a8c207d5dfd878e4",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:00:08.896Z"
+}

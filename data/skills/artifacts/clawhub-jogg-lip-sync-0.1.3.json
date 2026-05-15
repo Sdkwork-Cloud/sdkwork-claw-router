@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jogg-lip-sync@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jogg_lip_sync",
+  "skill": {
+    "id": 19410,
+    "skillKey": "clawhub-jogg-lip-sync",
+    "name": "Jogg Lip Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jogg-lip-sync",
+    "url": "https://clawhub.ai/skills/jogg-lip-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jogg-lip-sync-1c6b40e5a1a0a456.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs Jogg lip sync using video and audio inputs, reuses tasks when available, and monitors status until completion. Use to generate or check lip sync results."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joggai-tech",
+      "userId": "s17a92dsnm0g4gx4mz54b349kx83h1f1",
+      "displayName": "JoggAI-Tech",
+      "image": "https://avatars.githubusercontent.com/u/185797477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1774332989663,
+      "changelog": "- Added a README.md file with documentation for setup, usage, inputs, triggers, environment, and procedure.\n- Clarified `.env` usage rules and guidance for the API key in error messages.\n- Reorganized and trimmed documentation in SKILL.md for clarity.\n- No changes to core functionality; update is documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb6295a1e6c1accf27574e8cfd34ecbec6ea2abde75a03922eb8c7237f782941"
+}

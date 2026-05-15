@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniqlo-product-query@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniqlo_product_query",
+  "skill": {
+    "id": 56013,
+    "skillKey": "clawhub-uniqlo-product-query",
+    "name": "uniqlo(优衣库)-product-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniqlo-product-query",
+    "url": "https://clawhub.ai/skills/uniqlo-product-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniqlo-product-query-0fdcca2dae9ebdaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Uniqlo discounted products for men, women, kids, and baby clothing. Generates a Markdown file with product images, prices, discount rates, and purchase..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gpyangyoujun",
+      "userId": "s178eaap4bvprfw0tc3avqxe6584cegd",
+      "displayName": "g_pyAng",
+      "image": "https://avatars.githubusercontent.com/u/10325039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775887896711,
+      "changelog": "No user-facing changes in this version.  \nNo file changes were detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7cfbc043b419fb8531354aa832c11da8dadbe4161734fc097833b461b9a3fff"
+}

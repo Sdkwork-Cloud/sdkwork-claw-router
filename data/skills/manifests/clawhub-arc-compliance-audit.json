@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15572,
+  "uuid": "skill-clawhub-arc-compliance-audit",
+  "skillKey": "clawhub-arc-compliance-audit",
+  "name": "Compliance Audit",
+  "summary": "Immutable audit trail for autonomous agent operations. Log skill executions, data access, decisions, and budget changes with tamper-evident hashes. Essential...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_compliance_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ArcSelf",
+      "features": [
+        "Immutable audit trail for autonomous agent operations",
+        "Log skill executions, data access, decisions, and budget changes with tamper-evident hashes",
+        "Essential..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arc-compliance-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91297640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arc-compliance-audit",
+      "url": "https://clawhub.ai/skills/arc-compliance-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-compliance-audit",
+    "url": "https://clawhub.ai/skills/arc-compliance-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-compliance-audit-140c91e0380083f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arc-compliance-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arc-compliance-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03c6060e1344d9183c8755205c95bcb97816ef5275095fed6c3d31976c615c50",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T21:18:25.655Z"
+}

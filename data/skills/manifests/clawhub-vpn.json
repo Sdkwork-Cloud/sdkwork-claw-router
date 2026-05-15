@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12124,
+  "uuid": "skill-clawhub-vpn",
+  "skillKey": "clawhub-vpn",
+  "name": "VPN",
+  "summary": "Configure and troubleshoot VPN connections for privacy and remote access.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vpn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Configure and troubleshoot VPN connections for privacy and remote access."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vpn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vpn",
+      "url": "https://clawhub.ai/skills/vpn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vpn",
+    "url": "https://clawhub.ai/skills/vpn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vpn-ebf20cefc9169e0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vpn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vpn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32a18839cda0b4bfc5768ff552406cd6f5d01eb99ed66ca89f9e73325bcd1423",
+      "artifactSizeBytes": 1721
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:09:48.298Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gina@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gina",
+  "skill": {
+    "id": 18694,
+    "skillKey": "clawhub-gina",
+    "name": "gina"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gina",
+    "url": "https://clawhub.ai/skills/gina",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gina-030923893f54c3d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gina namespace for Netsnek e.U. personal assistant and scheduling framework"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kleberbaum",
+      "userId": "s179y7p0xkfm2kf6ncqxegwrzd84dvzm",
+      "displayName": "kleberbaum",
+      "image": "https://avatars.githubusercontent.com/u/26285351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 668,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771382063007,
+      "changelog": "Initial release: reserved gina namespace for Netsnek e.U.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:450c4ad63a53d45f0acca0824f97228c4f8afc22aa9a713af074b34e79379df6"
+}

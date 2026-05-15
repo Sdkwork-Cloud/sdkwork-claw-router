@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comcast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comcast",
+  "skill": {
+    "id": 66619,
+    "skillKey": "clawhub-comcast",
+    "name": "Comcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comcast",
+    "url": "https://clawhub.ai/skills/comcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comcast-4ad259ee02094999.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供美国最大有线电视与宽带互联网服务，拥有NBC环球影视内容及Peacock流媒体平台，年营收约1210亿美元。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776650102986,
+      "changelog": "Comcast skill v1.0.0\n\n- 初版发布，详细介绍 Comcast 业务结构、历史沿革与核心护城河\n- 提供 2024 年最新营收、用户、员工等关键数据\n- 梳理主要业务单元：Xfinity 有线、宽带、NBCUniversal、Peacock 流媒体及 Sky\n- 收录并解析重大收购事件与行业地位\n- 特别整理适用于投资、竞品分析和商业模式研究的信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:378ffdf0384bf7bd2044bdbf25b0da29e80d08de15ac9dfc720dec0e6afb4126"
+}

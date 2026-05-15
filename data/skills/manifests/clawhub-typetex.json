@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10127,
+  "uuid": "skill-clawhub-typetex",
+  "skillKey": "clawhub-typetex",
+  "name": "Compile LaTex & Typst into PDF with TypeTex",
+  "summary": "Compile Typst and LaTeX documents to PDF via API. Send source code, get back a PDF.",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typetex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gregm711",
+      "features": [
+        "Compile Typst and LaTeX documents to PDF via API",
+        "Send source code, get back a PDF."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typetex@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13073838?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typetex",
+      "url": "https://clawhub.ai/skills/typetex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typetex",
+    "url": "https://clawhub.ai/skills/typetex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typetex-e7083ca9258be597.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typetex@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-typetex-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0688b1efc3deb8d8428212ca4f1d5037a9528204324899faf0929aa49a3d06a5",
+      "artifactSizeBytes": 2141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T23:11:47.833Z"
+}

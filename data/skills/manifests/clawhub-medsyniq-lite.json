@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30459,
+  "uuid": "skill-clawhub-medsyniq-lite",
+  "skillKey": "clawhub-medsyniq-lite",
+  "name": "MedSynIQ Lite",
+  "summary": "Free medical intelligence for AI assistants. 5 agents, 20 skills. Lite version of MedSynIQ Pro.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medsyniq_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrainBytes",
+      "features": [
+        "Free medical intelligence for AI assistants",
+        "5 agents, 20 skills",
+        "Lite version of MedSynIQ Pro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medsyniq-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40733563?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medsyniq-lite",
+      "url": "https://clawhub.ai/skills/medsyniq-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medsyniq-lite",
+    "url": "https://clawhub.ai/skills/medsyniq-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medsyniq-lite-8e4c13fb92971d8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medsyniq-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medsyniq-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35308a14873caef5597b53d6de856a6c367705c19158088f2a829b790ad66cf1",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T21:07:40.724Z"
+}

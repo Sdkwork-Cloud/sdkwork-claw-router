@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33998,
+  "uuid": "skill-clawhub-openclaw-xiaomi-home",
+  "skillKey": "clawhub-openclaw-xiaomi-home",
+  "name": "Xiaomi Home Control",
+  "summary": "Control Xiaomi/Mijia smart home devices via Home Assistant using natural language to manage lights, AC, locks, fans, sensors, and more locally.",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_xiaomi_home",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "canmaxfire",
+      "features": [
+        "Control Xiaomi/Mijia smart home devices via Home Assistant using natural language to manage lig."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-xiaomi-home@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76983334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-xiaomi-home",
+      "url": "https://clawhub.ai/skills/openclaw-xiaomi-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-xiaomi-home",
+    "url": "https://clawhub.ai/skills/openclaw-xiaomi-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-xiaomi-home-40d2c6eb42e4911a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-xiaomi-home@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-xiaomi-home-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5b67c9d639b39de23bef5e534865ab29131432a14603d90e25fa46846f3749d",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T07:55:24.492Z"
+}

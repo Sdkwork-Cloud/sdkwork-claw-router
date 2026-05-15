@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18620,
+  "uuid": "skill-clawhub-clickup-project-management",
+  "skillKey": "clawhub-clickup-project-management",
+  "name": "Clickup Project Management",
+  "summary": "Manage ClickUp via natural language. Uses the taazkareem.com remote MCP server. A license key is required for full tool access (unlicensed calls return check...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickup_project_management",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Talib Kareem",
+      "features": [
+        "Manage ClickUp via natural language",
+        "Uses the taazkareem.com remote MCP server",
+        "A license key is required for full tool access (unlicensed calls return check..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clickup-project-management@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4195036?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clickup-project-management",
+      "url": "https://clawhub.ai/skills/clickup-project-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickup-project-management",
+    "url": "https://clawhub.ai/skills/clickup-project-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickup-project-management-3ef634db29ab011c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clickup-project-management@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-clickup-project-management-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54bcfd56cdedb2885b0d6bd5dec86476c45167ba04d98880abc107bc9283cf1c",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T09:36:07.207Z"
+}

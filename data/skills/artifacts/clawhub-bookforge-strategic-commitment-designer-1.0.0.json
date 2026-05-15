@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-strategic-commitment-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_strategic_commitment_designer",
+  "skill": {
+    "id": 55152,
+    "skillKey": "clawhub-bookforge-strategic-commitment-designer",
+    "name": "Strategic Commitment Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-strategic-commitment-designer",
+    "url": "https://clawhub.ai/skills/bookforge-strategic-commitment-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-strategic-commitment-designer-4738660704116b8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design credible strategic moves — commitments, threats, and promises — to change the game in your favor before play begins. Use this skill when a user needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776958286873,
+      "changelog": "Initial release of the Strategic Commitment Designer skill.\n\n- Helps users design credible strategic moves — commitments, threats, and promises — to influence counterpart behavior before play begins.\n- Guides users to classify their move (deterrence vs. compellence; commitment, threat, or promise) and select appropriate credibility mechanisms.\n- Covers the full taxonomy of strategic moves and all eight credibility mechanisms for making threats/promises believable.\n- Suited for negotiators, policymakers, executives, and anyone needing to make a stance credible, deter/compel action, or structure robust incentive mechanisms.\n- Requires an underlying game analysis (from backward-reasoning-game-solver) before use; does not include game tree solving itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47183ce4e8db79b25cfa419d2e749fb0202438cebac202145992b928c550c15b"
+}

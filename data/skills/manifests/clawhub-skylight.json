@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49563,
+  "uuid": "skill-clawhub-skylight",
+  "skillKey": "clawhub-skylight",
+  "name": "Skylight",
+  "summary": "Interact with Skylight Calendar frame - manage calendar events, chores, lists, task box items, and rewards. Use when the user wants to view/create calendar e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yury Bubnov",
+      "features": [
+        "Interact with Skylight Calendar frame",
+        "manage calendar events, chores, lists, task box items, and rewards",
+        "Use when the user wants to view/create calendar e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1534853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylight",
+      "url": "https://clawhub.ai/skills/skylight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylight",
+    "url": "https://clawhub.ai/skills/skylight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylight-154605f08848682c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9fd07cea69d2590d80e687bec7791dead4bd17d6741224fbe89efe771408d09",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:48:24.545Z"
+}

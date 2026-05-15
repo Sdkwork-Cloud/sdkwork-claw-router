@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oracle-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oracle_report",
+  "skill": {
+    "id": 71898,
+    "skillKey": "clawhub-oracle-report",
+    "name": "Oracle 收盘报告"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oracle-report",
+    "url": "https://clawhub.ai/skills/oracle-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oracle-report-68f7a2ef3b494241.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成包含大盘指数、情绪资金和全球市场数据的A股市场日报，支持节假日处理和飞书卡片格式发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icemanzb",
+      "userId": "s176rch48tvjxpv3a8fkccjkgx8471vm",
+      "displayName": "icemanZB",
+      "image": "https://avatars.githubusercontent.com/u/12381156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775311286637,
+      "changelog": "首次发布：A股收盘日报生成器",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6801f9816a0fbca15aeaad7d5d4ea9f257076862db0d3be1824ba8efc2f818b2"
+}

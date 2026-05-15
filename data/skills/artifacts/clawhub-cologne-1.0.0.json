@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cologne@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cologne",
+  "skill": {
+    "id": 49311,
+    "skillKey": "clawhub-cologne",
+    "name": "Cologne"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cologne",
+    "url": "https://clawhub.ai/skills/cologne",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cologne-cbce682978e78c05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cologne is a media and cultural hub on the Rhine with a Roman foundation, famous for its cathedral, major media companies, and diverse economic sectors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778065455888,
+      "changelog": "- Initial release introducing Cologne as a skill.\n- Covers Cologne’s Roman foundation, historical timeline, and rebuilding after WWII.\n- Outlines the city’s economic strengths: major media/broadcasting hub, headquarters for WDR and RTL, industrial profile, tourism, and trade fairs.\n- Highlights Cologne Cathedral’s global significance and cultural attractions like the Carnival.\n- Provides key data: population, GDP, visitor numbers, and main industries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35fb171d35d671427d648ec0c5041f23ec8912faaa4bc5cad7dc0f8c6b0470f3"
+}

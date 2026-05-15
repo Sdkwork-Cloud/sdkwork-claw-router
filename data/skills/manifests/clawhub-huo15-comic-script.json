@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60128,
+  "uuid": "skill-clawhub-huo15-comic-script",
+  "skillKey": "clawhub-huo15-comic-script",
+  "name": "Huo15 Comic Script",
+  "summary": "主题一句话 → 分幕分镜剧本 JSON（国风/仙侠/宫斗/江湖）。输出 script.json 含 characters、scenes、dialogue、camera、mood。触发词：生成剧本、漫剧剧本、分镜脚本、漫剧script。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_comic_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "主题一句话 → 分幕分镜剧本 JSON（国风/仙侠/宫斗/江湖）。输出 script.json 含 characters、scenes、dialogue、camera、mood。触发词：生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-comic-script@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-comic-script",
+      "url": "https://clawhub.ai/skills/huo15-comic-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-comic-script",
+    "url": "https://clawhub.ai/skills/huo15-comic-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-comic-script-e924728a3377381b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-comic-script@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-comic-script-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:587d69988f61733579bfa125aa8f27a7e4fe7ea5b4e543b65381a757363d9788",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:23:55.539Z"
+}

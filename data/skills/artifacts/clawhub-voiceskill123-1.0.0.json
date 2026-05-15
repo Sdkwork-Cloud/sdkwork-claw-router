@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voiceskill123@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voiceskill123",
+  "skill": {
+    "id": 22223,
+    "skillKey": "clawhub-voiceskill123",
+    "name": "voiceskill123"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voiceskill123",
+    "url": "https://clawhub.ai/skills/voiceskill123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voiceskill123-de87783a021e3d16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Start voice calls via the OpenClaw voice-call plugin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blockcloud",
+      "userId": "publishers:blockcloud",
+      "displayName": "blockcloud",
+      "image": "https://avatars.githubusercontent.com/u/19220974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772369820855,
+      "changelog": "Initial release of the voice-call skill for OpenClaw.\n\n- Enables starting and managing voice calls via Twilio, Telnyx, Plivo, or mock providers.\n- Provides CLI commands to initiate calls and check call status.\n- Exposes tool actions for agents: initiate, continue, speak, end calls, and get status.\n- Requires the voice-call plugin to be enabled and configured.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f8b0b69f787e2ac282795b78b03731a006a719cec1ec44f2db656532d4180d5"
+}

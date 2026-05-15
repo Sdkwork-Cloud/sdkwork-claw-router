@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12894,
+  "uuid": "skill-clawhub-mlscp",
+  "skillKey": "clawhub-mlscp",
+  "name": "Mlscp",
+  "summary": "Parse and generate MLSCP (Micro LLM Swarm Communication Protocol) commands. Use when communicating with other agents efficiently, parsing compressed commands, or generating token-efficient instructions. Reduces token usage by 70-80% compar.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlscp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sirkrouph-dev",
+      "features": [
+        "Parse and generate MLSCP (Micro LLM Swarm Communication Protocol) commands",
+        "Use when communicating with other agents efficiently, parsing compressed commands, or generatin.",
+        "Reduces token usage by 70-80% compared to natural language."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mlscp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31062336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mlscp",
+      "url": "https://clawhub.ai/skills/mlscp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlscp",
+    "url": "https://clawhub.ai/skills/mlscp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlscp-ae174eaa6f0cf0ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mlscp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mlscp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4052d46de5a9513efd8d85f5c17d8bcc79a9af639e71d7f7f2430c9ef1072086",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T21:47:29.012Z"
+}

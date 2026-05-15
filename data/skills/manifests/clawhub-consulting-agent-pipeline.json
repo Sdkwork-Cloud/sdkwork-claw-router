@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63679,
+  "uuid": "skill-clawhub-consulting-agent-pipeline",
+  "skillKey": "clawhub-consulting-agent-pipeline",
+  "name": "Consulting Agent Pipeline",
+  "summary": "多Agent协作研究管线 — 将\"调研→框架→执行→审核→迭代→交付\"的咨询项目工作流抽象为可复制的标准化协议。触发场景：(1) 新项目需要多Agent协作且横跨多个平台（Claude/Codex/Gemini/Minimax），(2) 咨询类交付物需要多轮结构化审核迭代，(3) 需要建立项目状态追踪机制替代散落...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consulting_agent_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LorwaLeroy",
+      "features": [
+        "多Agent协作研究管线 — 将\"调研→框架→执行→审核→迭代→交付\"的咨询项目工作流抽象为可复制的标准化协议。触发场景：(1) 新项目需要多Agent协作且横跨多个平台（Claude/Co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consulting-agent-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198293349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consulting-agent-pipeline",
+      "url": "https://clawhub.ai/skills/consulting-agent-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consulting-agent-pipeline",
+    "url": "https://clawhub.ai/skills/consulting-agent-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consulting-agent-pipeline-6a14b78f54031892.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consulting-agent-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consulting-agent-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bec4ce7c56ccde599a1cebffc9e48ca43834b86b59e06488e74769e2fb3585c",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:16:22.700Z"
+}

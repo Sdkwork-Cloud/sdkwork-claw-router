@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nodejs-project-arch@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nodejs_project_arch",
+  "skill": {
+    "id": 48820,
+    "skillKey": "clawhub-nodejs-project-arch",
+    "name": "Node.js Project Architecture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nodejs-project-arch",
+    "url": "https://clawhub.ai/skills/nodejs-project-arch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nodejs-project-arch-40d1f6b0d816e0f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Node.js project architecture standards for AI-assisted development. Enforces file splitting (<400 lines), config externalization, route modularization, and a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abczsl520",
+      "userId": "publishers:abczsl520",
+      "displayName": "abczsl520",
+      "image": "https://avatars.githubusercontent.com/u/65114094?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772820103748,
+      "changelog": "Added AI Dev Quality Suite cross-references",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b8d4e5a312477c9b82b5c129f3a14fce41aa9f0cc980634e7d584ea4ae5d057"
+}

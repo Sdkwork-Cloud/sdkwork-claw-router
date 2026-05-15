@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-tagger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_tagger",
+  "skill": {
+    "id": 71486,
+    "skillKey": "clawhub-music-tagger",
+    "name": "Music Tagger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-tagger",
+    "url": "https://clawhub.ai/skills/music-tagger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-tagger-5ffd1b8b5726f041.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "音乐文件批量标签工具，支持读取/编辑音乐元数据（歌名、艺术家、专辑、流派等），批量编辑标签，按标签整理音乐文件，预览模式和撤销功能！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772771573217,
+      "changelog": "正式版本发布！音乐文件批量标签工具，支持读取/编辑音乐元数据（歌名、艺术家、专辑、流派等），批量编辑标签，按标签整理音乐文件，预览模式和撤销功能！",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61b0d95de1468864b226d49fee46e44b65f147202d4b8b184e28e49f6abced21"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-fixed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_fixed",
+  "skill": {
+    "id": 48665,
+    "skillKey": "clawhub-video-editor-fixed",
+    "name": "Video Editor Fixed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-fixed",
+    "url": "https://clawhub.ai/skills/video-editor-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-fixed-a72d55eb66d95bae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get corrected video files ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777822667434,
+      "changelog": "- Initial release of the Video Editor Fixed skill.\n- Upload video clips (MP4, MOV, AVI, WebM; up to 500MB) and describe fixes—such as stabilizing, color correction, and noise removal—for automatic processing.\n- No manual editing required; simply instruct and export 1080p MP4 results.\n- Built-in cloud rendering pipeline processes and repairs footage in about 30–90 seconds.\n- Session, upload, export, and credits all managed via streamlined API workflows.\n- Designed for fast, automated repair of damaged or low-quality video for content creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2a5a9578df8277436f8678103415b84afc384d8d3d72318e6d21afc51b8e246"
+}

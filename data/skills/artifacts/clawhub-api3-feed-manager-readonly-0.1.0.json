@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api3-feed-manager-readonly@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api3_feed_manager_readonly",
+  "skill": {
+    "id": 49642,
+    "skillKey": "clawhub-api3-feed-manager-readonly",
+    "name": "Api3 Feed Manager Readonly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api3-feed-manager-readonly",
+    "url": "https://clawhub.ai/skills/api3-feed-manager-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api3-feed-manager-readonly-85bed81906eabb1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only Api3 feed discovery, readiness, coverage, and purchase-planning skill for downstream agent projects. Use when an agent needs to discover or verify..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daav3",
+      "userId": "s176sa2svdwgks5ycz1yngewb184yand",
+      "displayName": "dave",
+      "image": "https://avatars.githubusercontent.com/u/49767509?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778152122807,
+      "changelog": "Initial read-only variant split from executor-capable Api3 feed manager",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f829bd9d2da8e96bf7e062f54d8c3a9de3fd43a5517f772f9b918e91b2cf4ccf"
+}

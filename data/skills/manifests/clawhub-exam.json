@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13631,
+  "uuid": "skill-clawhub-exam",
+  "skillKey": "clawhub-exam",
+  "name": "Exam",
+  "summary": "Generate practice tests, flashcards, study schedules, and timed simulations from any study material.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exam",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Generate practice tests, flashcards, study schedules, and timed simulations from any study mate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exam@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exam",
+      "url": "https://clawhub.ai/skills/exam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exam",
+    "url": "https://clawhub.ai/skills/exam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exam-5e89e9d8544af15b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exam@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exam-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f0ae22ace9ce2524879bec08399e3c387580cb4e3200cebf950febc0339643e",
+      "artifactSizeBytes": 1753
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T09:18:54.018Z"
+}

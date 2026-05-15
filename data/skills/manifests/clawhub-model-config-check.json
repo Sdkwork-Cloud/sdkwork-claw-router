@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63211,
+  "uuid": "skill-clawhub-model-config-check",
+  "skillKey": "clawhub-model-config-check",
+  "name": "Model Config Check",
+  "summary": "校验模型配置是否正确、模型是否可以正常连接和返回内容。当用户说\"检查模型\"、\"测试模型\"、\"模型能不能用\"、\"模型配置\"、\"诊断模型问题\"时使用。**每次修改模型配置（config.patch/config.apply涉及models.providers）后必须自动执行校验。** 用户只给模型名+API key时...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_config_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PL Uncle",
+      "features": [
+        "校验模型配置是否正确、模型是否可以正常连接和返回内容。当用户说\"检查模型\"、\"测试模型\"、\"模型能不能用\"、\"模型配置\"、\"诊断模型问题\"时使用。**每次修改模型配置（config.patc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-config-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10780985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-config-check",
+      "url": "https://clawhub.ai/skills/model-config-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-config-check",
+    "url": "https://clawhub.ai/skills/model-config-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-config-check-88b90b2c47c2f584.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-config-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-config-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00cbc1eaa428ad65fa6373f74e8fbc792e448e236fc7961d5b4b5974dc4855fa",
+      "artifactSizeBytes": 2650
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:14:47.900Z"
+}

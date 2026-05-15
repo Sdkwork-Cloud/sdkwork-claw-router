@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16247,
+  "uuid": "skill-clawhub-openstoryline-use",
+  "skillKey": "clawhub-openstoryline-use",
+  "name": "OpenStoryline Use",
+  "summary": "Use this skill when OpenStoryline is already installed and the user wants to start the local MCP/Web services, create or continue a session, send editing ins...",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openstoryline_use",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anlittledy",
+      "features": [
+        "Use this skill when OpenStoryline is already installed and the user wants to start the local MC."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openstoryline-use@0.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78261172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openstoryline-use",
+      "url": "https://clawhub.ai/skills/openstoryline-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openstoryline-use",
+    "url": "https://clawhub.ai/skills/openstoryline-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openstoryline-use-002a955371f93155.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openstoryline-use@0.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openstoryline-use-0.0.5.json",
+      "version": "0.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a01facaa7f6936595825f9dd840473c21f2c48775164473948cca1fb917d140",
+      "artifactSizeBytes": 2121
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T06:10:52.947Z"
+}

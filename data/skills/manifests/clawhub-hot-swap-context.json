@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42242,
+  "uuid": "skill-clawhub-hot-swap-context",
+  "skillKey": "clawhub-hot-swap-context",
+  "name": "hot-swap-context-as-MCP",
+  "summary": "Buildable Bring Your Own Context system for AI agents. Use for: creating user-owned or org-owned context vaults, scaffolding typed memory systems, generating...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_swap_context",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Foo Jun Wei",
+      "features": [
+        "Buildable Bring Your Own Context system for AI agents",
+        "Use for: creating user-owned or org-owned context vaults, scaffolding typed memory systems, gen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hot-swap-context@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122217524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hot-swap-context",
+      "url": "https://clawhub.ai/skills/hot-swap-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-swap-context",
+    "url": "https://clawhub.ai/skills/hot-swap-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-swap-context-ab421834340ca609.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hot-swap-context@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hot-swap-context-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08a7aebcc0e90c5c42c0d716826817580b0ff0c4ae15f5d53c079dfcd8ed555f",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T05:34:43.876Z"
+}

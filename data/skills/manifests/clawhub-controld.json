@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19957,
+  "uuid": "skill-clawhub-controld",
+  "skillKey": "clawhub-controld",
+  "name": "Controld",
+  "summary": "Manage Control D DNS filtering service via API. Use for DNS profile management, device configuration, custom blocking rules, service filtering, analytics set...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.controld",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Austin Garrod",
+      "features": [
+        "Manage Control D DNS filtering service via API",
+        "Use for DNS profile management, device configuration, custom blocking rules, service filtering,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/controld@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2317379?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "controld",
+      "url": "https://clawhub.ai/skills/controld"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "controld",
+    "url": "https://clawhub.ai/skills/controld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/controld-045cf67e1b01a6fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/controld@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-controld-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cbd4660d9d4dc4da35100e65af5c04bf1d541e9602a48764ffd4f753353b79b",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:22:07.842Z"
+}

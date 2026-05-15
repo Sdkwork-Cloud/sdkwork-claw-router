@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shelly-blutrv-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_blutrv_manager",
+  "skill": {
+    "id": 32778,
+    "skillKey": "clawhub-shelly-blutrv-manager",
+    "name": "Shelly BluTRV Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-blutrv-manager",
+    "url": "https://clawhub.ai/skills/shelly-blutrv-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-blutrv-manager-7a3449d11531c690.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Shelly BluTRV thermostats and H&T sensors locally via RPC with cloud fallback for temperature reading and setting heater targets in specified rooms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wolf128058",
+      "userId": "s1788y7cne0vvadxttdpcnzbr183fbae",
+      "displayName": "Wolf",
+      "image": "https://avatars.githubusercontent.com/u/946255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774817854906,
+      "changelog": "Initial stable 1.0 release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a3fb44dded97a13ce969e4fbc61077e19b8f032e3828f0dbfb8dcbf0913497c"
+}

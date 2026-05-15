@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9723,
+  "uuid": "skill-clawhub-x-timeline-digest",
+  "skillKey": "clawhub-x-timeline-digest",
+  "name": "X Timeline Digest",
+  "summary": "Build a deduplicated digest from X (Twitter) For You and Following timelines using bird. Outputs a payload for upstream delivery.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_timeline_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seandong",
+      "features": [
+        "Build a deduplicated digest from X (Twitter) For You and Following timelines using bird",
+        "Outputs a payload for upstream delivery."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-timeline-digest@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/758427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-timeline-digest",
+      "url": "https://clawhub.ai/skills/x-timeline-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-timeline-digest",
+    "url": "https://clawhub.ai/skills/x-timeline-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-timeline-digest-d47fe3826f53a73f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-timeline-digest@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-timeline-digest-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:928b82e4090d18ffa7c6e7de383e040ed2d041b3ddf86cd36f56259bc143125c",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T00:59:45.232Z"
+}

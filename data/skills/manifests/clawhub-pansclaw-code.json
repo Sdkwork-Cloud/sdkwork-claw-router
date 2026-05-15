@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32929,
+  "uuid": "skill-clawhub-pansclaw-code",
+  "skillKey": "clawhub-pansclaw-code",
+  "name": "PansClaw Code",
+  "summary": "Use the PansClaw Code CLI (Rust reimplementation of Claude Code) for AI-assisted coding. Triggers when: user wants to run coding tasks via pansclaw code, del...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pansclaw_code",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dashiming",
+      "features": [
+        "Use the PansClaw Code CLI (Rust reimplementation of Claude Code) for AI-assisted coding",
+        "Triggers when: user wants to run coding tasks via pansclaw code, del..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pansclaw-code@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28342384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pansclaw-code",
+      "url": "https://clawhub.ai/skills/pansclaw-code"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pansclaw-code",
+    "url": "https://clawhub.ai/skills/pansclaw-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pansclaw-code-bd920466f1993cb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pansclaw-code@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pansclaw-code-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:177198b829750fa188d0a30cf83314278faa8d8fc11342d8a157a5b9f334208e",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:40:00.831Z"
+}

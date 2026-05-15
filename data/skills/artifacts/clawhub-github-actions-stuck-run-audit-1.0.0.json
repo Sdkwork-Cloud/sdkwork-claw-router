@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-actions-stuck-run-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_stuck_run_audit",
+  "skill": {
+    "id": 29522,
+    "skillKey": "clawhub-github-actions-stuck-run-audit",
+    "name": "GitHub Actions Stuck Run Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-stuck-run-audit",
+    "url": "https://clawhub.ai/skills/github-actions-stuck-run-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-stuck-run-audit-c05de97ee0098d8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect stale queued/in-progress GitHub Actions runs before they quietly block delivery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772906831072,
+      "changelog": "Initial release of github-actions-stuck-run-audit.\n\n- Detects and audits stale (`queued`, `in_progress`, etc.) GitHub Actions runs using run JSON exports.\n- Aggregates and ranks stuck run risk by repository/workflow or branch.\n- Configurable thresholds for stuck age, stuck run volume, and stuck run rate.\n- Outputs in either text or JSON; can optionally fail CI gates on critical findings.\n- Flexible input filtering by workflow, branch, event, repository, and status.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:808b871c921f570778100d9cd591939d3293f8ab375e0d879f2ab365a3208d63"
+}

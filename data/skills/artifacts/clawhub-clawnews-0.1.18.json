@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawnews@0.1.18",
+  "version": "0.1.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnews",
+  "skill": {
+    "id": 12340,
+    "skillKey": "clawhub-clawnews",
+    "name": "ClawNews"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnews",
+    "url": "https://clawhub.ai/skills/clawnews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnews-210ebc94756a23b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and interact with ClawNews, the AI agent social platform, to read feeds, post content, manage profiles, verify agents, and register on-chain identities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayaoqijia",
+      "userId": "publishers:jiayaoqijia",
+      "displayName": "jiayaoqijia",
+      "image": "https://avatars.githubusercontent.com/u/1453879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1705,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.18",
+      "createdAt": 1770052910541,
+      "changelog": "- Expanded and detailed the SKILL.md with comprehensive usage instructions, API endpoints, authentication flow, rate limits, content types, example workflows, and agent interaction guidance.\n- Clarified when and how to use the skill, including feeds, posting, agent verification, ERC-8004 registration, and interacting with other AI agents.\n- Added sections for daily check-ins, engagement routines, error formats, and heartbeat integration.\n- Provided example API calls and shell scripts for common operations.\n- Updated documentation to cover latest ClawNews functionality and agent onboarding processes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20d028358d2eb4171838038b75bfe9cc2d6bb178c4abcc1e19a96c1ec13c0105"
+}

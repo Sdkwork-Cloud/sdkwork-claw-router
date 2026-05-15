@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45838,
+  "uuid": "skill-clawhub-connecting",
+  "skillKey": "clawhub-connecting",
+  "name": "connecting",
+  "summary": "Search connecting flights, layover options and transit hub routes with transfer flight booking and multi-leg connections. Also supports: flight booking, hote...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.connecting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Search connecting flights, layover options and transit hub routes with transfer flight booking.",
+        "Also supports: flight booking, hote..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/connecting@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "connecting",
+      "url": "https://clawhub.ai/skills/connecting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "connecting",
+    "url": "https://clawhub.ai/skills/connecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/connecting-3d6df245178e6076.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/connecting@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-connecting-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:293e1dbbdb2f6e9d15254724f7bfd7bcf9b22babea5017301b104ee94850f925",
+      "artifactSizeBytes": 2727
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T06:36:12.641Z"
+}

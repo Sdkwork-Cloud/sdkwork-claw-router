@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-geo-audit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_geo_audit",
+  "skill": {
+    "id": 13934,
+    "skillKey": "clawhub-seo-geo-audit",
+    "name": "SEO + GEO Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-geo-audit",
+    "url": "https://clawhub.ai/skills/seo-geo-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-geo-audit-cd13fe24eae0b67e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a unified SEO and GEO audit for a website, page, or domain. Use when the user asks for a full SEO audit, GEO audit, AI visibility review, EEAT review, en..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geo-seo",
+      "userId": "s17156thhgyq29sk15zffx710d83q2dn",
+      "displayName": "Tim",
+      "image": "https://avatars.githubusercontent.com/u/180150290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773301485679,
+      "changelog": "Add off-site mentions, platform-specific AI readiness, and a more explicit coverage map",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0474b6f49633d02abf2283c4dd880f9fa046ad82ad75384a7308fe8df217c88"
+}

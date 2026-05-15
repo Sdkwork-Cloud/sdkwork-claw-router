@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-code-executor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_code_executor",
+  "skill": {
+    "id": 31112,
+    "skillKey": "clawhub-jpeng-code-executor",
+    "name": "Code Executor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-code-executor",
+    "url": "https://clawhub.ai/skills/jpeng-code-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-code-executor-540ada4ec30919d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe code execution in sandboxed environments. Supports Python, JavaScript, Bash, and more with resource limits and timeout controls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774355285069,
+      "changelog": "- Initial release of jpeng-code-executor\n- Safely execute code in sandboxed environments with support for Python, JavaScript, Bash, Ruby, and Go\n- Enforces resource limits (CPU, memory, execution time) and restricts network/file system access\n- Provides command-line interface to run code snippets or scripts from files\n- Default safety restrictions: 30s timeout, 512MB memory, no network, 1MB output limit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a2f558dbb9a573401664c174e3986d14f0357c9169c1d8f00da26fd75586595f"
+}

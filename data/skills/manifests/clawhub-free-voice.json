@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10737,
+  "uuid": "skill-clawhub-free-voice",
+  "skillKey": "clawhub-free-voice",
+  "name": "Free voice from Comfy UI + Qwen3 TTS",
+  "summary": "Generate Russian male voice audio using ComfyUI with Qwen3 TTS node and save as MP3 for voice messages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_voice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Onimka",
+      "features": [
+        "Generate Russian male voice audio using ComfyUI with Qwen3 TTS node and save as MP3 for voice m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-voice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124047600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-voice",
+      "url": "https://clawhub.ai/skills/free-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-voice",
+    "url": "https://clawhub.ai/skills/free-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-voice-89231a7238c64bdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-voice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-voice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f5e2bfc1077bf37c7441d696d840570eaa4bdde6be2dff52c19c1aede2c4712",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T08:29:59.936Z"
+}

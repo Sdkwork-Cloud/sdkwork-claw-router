@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-backup-zurbrick@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_zurbrick",
+  "skill": {
+    "id": 28538,
+    "skillKey": "clawhub-openclaw-backup-zurbrick",
+    "name": "OpenClaw Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-zurbrick",
+    "url": "https://clawhub.ai/skills/openclaw-backup-zurbrick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-zurbrick-1aeca1ae4816efb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encrypted backup and restore for OpenClaw agents. Creates two-tier archives: cloud-safe operational backups plus optional age-encrypted secrets for local rec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zurbrick",
+      "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+      "displayName": "Don Zurbrick",
+      "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773967069524,
+      "changelog": "Leaned out the runtime skill, moved weekly/monthly/pre-change workflow detail into a focused reference, and tightened the public README around backup, verify, restore, and GitHub-safe archive flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00d4bb52692e2cec49866f8e36e7439ece096bcf047831971fcc00142029be3a"
+}

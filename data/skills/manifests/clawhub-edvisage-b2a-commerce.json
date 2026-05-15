@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32101,
+  "uuid": "skill-clawhub-edvisage-b2a-commerce",
+  "skillKey": "clawhub-edvisage-b2a-commerce",
+  "name": "Edvisage B2a Commerce",
+  "summary": "Enables OpenClaw agents to transact autonomously and securely using the x402 open payment protocol with configurable spending limits and safety checks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edvisage_b2a_commerce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edvisage Global",
+      "features": [
+        "Enables OpenClaw agents to transact autonomously and securely using the x402 open payment proto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edvisage-b2a-commerce@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268633876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edvisage-b2a-commerce",
+      "url": "https://clawhub.ai/skills/edvisage-b2a-commerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edvisage-b2a-commerce",
+    "url": "https://clawhub.ai/skills/edvisage-b2a-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edvisage-b2a-commerce-5bc3b3c12051870c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edvisage-b2a-commerce@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edvisage-b2a-commerce-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:825ab5b914419328612be358746e650977f4e562e562dda2e4db6cd49ce3b228",
+      "artifactSizeBytes": 2455
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:56:59.308Z"
+}

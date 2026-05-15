@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66835,
+  "uuid": "skill-clawhub-amazon-product-scraper",
+  "skillKey": "clawhub-amazon-product-scraper",
+  "name": "Amazon Product Scraper",
+  "summary": "抓取亚马逊产品详情页信息，包括标题、价格、销量、排名、规格和五点描述，生成结构化竞品分析报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_product_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "denicmic-chung",
+      "features": [
+        "抓取亚马逊产品详情页信息，包括标题、价格、销量、排名、规格和五点描述，生成结构化竞品分析报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-product-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240508608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-product-scraper",
+      "url": "https://clawhub.ai/skills/amazon-product-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-product-scraper",
+    "url": "https://clawhub.ai/skills/amazon-product-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-product-scraper-91251e7b80979a51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-product-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-product-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d45cd03e754b7cd78fd0f60ab13447ac579f4b78eb6f09b0f6645279a33619a1",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T04:30:13.661Z"
+}

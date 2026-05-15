@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63472,
+  "uuid": "skill-clawhub-feishu-send-file-1-2-1",
+  "skillKey": "clawhub-feishu-send-file-1-2-1",
+  "name": "Feishu Send File 1.2.1",
+  "summary": "通过飞书机器人稳定发送本地普通文件或本地图片。用于现有一等工具无法直接完成“发送本地文件附件”时，或本地图片经常规消息链路发送后在飞书里只显示路径文本而不显示图片本体时。普通文件走 `im/v1/files -> file_key -> msg_type=file`，图片走 `im/v1/images -> im...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_send_file_1_2_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kururu111",
+      "features": [
+        "通过飞书机器人稳定发送本地普通文件或本地图片。用于现有一等工具无法直接完成“发送本地文件附件”时，或本地图片经常规消息链路发送后在飞书里只显示路径文本而不显示图片本体时。普通文件走 `im/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-send-file-1-2-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47022539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-send-file-1-2-1",
+      "url": "https://clawhub.ai/skills/feishu-send-file-1-2-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-send-file-1-2-1",
+    "url": "https://clawhub.ai/skills/feishu-send-file-1-2-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-send-file-1-2-1-31cb5fcf5260473b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-send-file-1-2-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-send-file-1-2-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31260ca8d71763eea24d4fbb33fbbcdf160231e0fcf1091a1ff8cb2d289789b0",
+      "artifactSizeBytes": 2760
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:30:52.693Z"
+}

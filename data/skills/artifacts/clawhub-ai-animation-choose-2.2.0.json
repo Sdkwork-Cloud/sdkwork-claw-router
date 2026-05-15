@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-animation-choose@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_animation_choose",
+  "skill": {
+    "id": 65376,
+    "skillKey": "clawhub-ai-animation-choose",
+    "name": "Ai Animation Studio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-animation-choose",
+    "url": "https://clawhub.ai/skills/ai-animation-choose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-animation-choose-d4e57a28b90fc2d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动将故事转分镜并生成风格化动画视频，支持两种生成模式、自动配音、字幕烧录和30+首BGM选择。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "systiger",
+      "userId": "s17ajdwb6mqagsb70yednmgn5n83gwd8",
+      "displayName": "systiger",
+      "image": "https://avatars.githubusercontent.com/u/154035099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774798343956,
+      "changelog": "AI Animation Studio v2.2.0 (2026-03-29)\n\n- 新增字幕烧录功能，支持自动生成并嵌入字幕\n- 增加 `subtitle_burner.py` 字幕工具（Pillow + ffmpeg）\n- 新增 `full_workflow.py` 脚本，实现一站式完整工作流\n- 字幕样式优化：白色字体配黑色描边，底部居中显示，自动去除标点\n- 工作流程中新增字幕步骤：配音 → 字幕 → BGM",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5afaa123d61612f1aa51ebb1605d77719ffe2ff33dc2c8ba3d779e62efc996aa"
+}

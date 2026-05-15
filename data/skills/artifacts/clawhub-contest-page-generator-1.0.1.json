@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contest-page-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contest_page_generator",
+  "skill": {
+    "id": 33540,
+    "skillKey": "clawhub-contest-page-generator",
+    "name": "contest-page-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contest-page-generator",
+    "url": "https://clawhub.ai/skills/contest-page-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contest-page-generator-d17229ac9e272e90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create, optimize, or audit a giveaway, contest, or promotional campaign page. Also use when the user mentions \"giveaway,\" \"contest,\" \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774969433774,
+      "changelog": "Batch: alternatives through download",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2e6bb173ee7f72ba74c9324bb5d0d0559d396ab035248b19cfb48f5a089975a"
+}

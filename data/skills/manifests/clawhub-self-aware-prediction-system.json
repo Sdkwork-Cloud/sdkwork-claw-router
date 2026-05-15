@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26527,
+  "uuid": "skill-clawhub-self-aware-prediction-system",
+  "skillKey": "clawhub-self-aware-prediction-system",
+  "name": "Self Aware Prediction System",
+  "summary": "Provides predictions with quantified uncertainty by evaluating data completeness, prediction type, and confidence to inform decision-making risks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_aware_prediction_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keys-li",
+      "features": [
+        "Provides predictions with quantified uncertainty by evaluating data completeness, prediction ty."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-aware-prediction-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127641627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-aware-prediction-system",
+      "url": "https://clawhub.ai/skills/self-aware-prediction-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-aware-prediction-system",
+    "url": "https://clawhub.ai/skills/self-aware-prediction-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-aware-prediction-system-1661d0e4705b27b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-aware-prediction-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-aware-prediction-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8ccbccdb1f9ca4b97c5a8ab7f7e1d71722880370e4913f3bfe1b70dd1bd2737",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:41:00.492Z"
+}

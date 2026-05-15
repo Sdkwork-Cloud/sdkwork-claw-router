@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70453,
+  "uuid": "skill-clawhub-life-scheduler",
+  "skillKey": "clawhub-life-scheduler",
+  "name": "Life Scheduler",
+  "summary": "让 AI Agent 拥有持续的虚拟生活状态——每天自动生成穿搭、日程、心情，注入对话上下文，使 Agent 像真人一样在过日子。适用于拟人化伴侣、角色扮演、虚拟偶像等需要生活连续性的 Agent。触发词：日程、今天做了什么、穿了什么、状态、心情、生成日程、刷新状态、换个今日安排、创意池、穿搭风格池、事件池。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "T-Chen-CN",
+      "features": [
+        "让 AI Agent 拥有持续的虚拟生活状态——每天自动生成穿搭、日程、心情，注入对话上下文，使 Agent 像真人一样在过日子。适用于拟人化伴侣、角色扮演、虚拟偶像等需要生活连续性的 Ag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/life-scheduler@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115991373?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "life-scheduler",
+      "url": "https://clawhub.ai/skills/life-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-scheduler",
+    "url": "https://clawhub.ai/skills/life-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-scheduler-84fd72e5df2730b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/life-scheduler@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-life-scheduler-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:024a3ffc32e8531831412912d3960c6dbf015521cfddbb71dc7afb9429b5bbfa",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:04:48.917Z"
+}

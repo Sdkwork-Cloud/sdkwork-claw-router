@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64492,
+  "uuid": "skill-clawhub-zeelin-search-pro",
+  "skillKey": "clawhub-zeelin-search-pro",
+  "name": "ZeeLin Search 智灵搜索",
+  "summary": "使用智灵搜索进行数据查询。当用户说\"使用智灵搜索\"、\"智灵搜索帮我查询\"、\"调用智灵搜索\"、\"用智灵搜索\"、\"智灵搜索查询\"、\"舆情数据\"、\"舆情\"、\"新闻报道\"、\"...舆情数据\"、\"...舆情\"、\"...新闻报道\"、\"...热点话题\"、\"...最新趋势\"等时使用此技能。首先检查Zeelin_Api_Key是否...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeelin_search_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "urhd528",
+      "features": [
+        "使用智灵搜索进行数据查询。当用户说\"使用智灵搜索\"、\"智灵搜索帮我查询\"、\"调用智灵搜索\"、\"用智灵搜索\"、\"智灵搜索查询\"、\"舆情数据\"、\"舆情\"、\"新闻报道\"、\"...舆情数据\"、\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeelin-search-pro@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211808151?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeelin-search-pro",
+      "url": "https://clawhub.ai/skills/zeelin-search-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeelin-search-pro",
+    "url": "https://clawhub.ai/skills/zeelin-search-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeelin-search-pro-d2728a0a5cc2e65d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeelin-search-pro@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeelin-search-pro-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eed82e9d9eb30b4272a688517343153e7cdc1a4264d9ce4a86f0ce785f4ecf6",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:40:12.808Z"
+}

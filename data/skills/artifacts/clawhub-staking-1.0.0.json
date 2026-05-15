@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/staking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.staking",
+  "skill": {
+    "id": 32939,
+    "skillKey": "clawhub-staking",
+    "name": "Staking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "staking",
+    "url": "https://clawhub.ai/skills/staking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/staking-d9a998cac6609274.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze staking operations. Use when you need to understand staking mechanisms, evaluate protocol security, or reference on-chain concepts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain1",
+      "userId": "s17214ddq2ph75r81trqngwmtn83exsy",
+      "displayName": "bytesagain1",
+      "image": "https://avatars.githubusercontent.com/u/261107384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774124247379,
+      "changelog": "publish v1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4cab6d04c65478df1203840f4235a45bf036b80e752231a72f23a51d7c05129c"
+}

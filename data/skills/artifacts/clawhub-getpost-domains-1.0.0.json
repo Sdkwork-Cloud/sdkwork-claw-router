@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/getpost-domains@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getpost_domains",
+  "skill": {
+    "id": 31472,
+    "skillKey": "clawhub-getpost-domains",
+    "name": "GetPost Domains API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getpost-domains",
+    "url": "https://clawhub.ai/skills/getpost-domains",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getpost-domains-f25c5cbd43f8ac5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register domains, manage DNS, and set up email sending via API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dommholland",
+      "userId": "publishers:dommholland",
+      "displayName": "domm",
+      "image": "https://avatars.githubusercontent.com/u/4269710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773919215521,
+      "changelog": "- Initial release of getpost-domains skill.\n- Register domains, manage DNS records, and set up email sending entirely via API.\n- Automatic Cloudflare DNS provisioning and SendGrid email authentication (SPF/DKIM/DMARC).\n- Simple API endpoints to check domain availability, view TLD prices, register domains, manage DNS, and handle email setup.\n- No dashboard required; fast setup and easy integration for agents and automations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:148f1d97e61f2d2070591d911991461e76527ab81a711293e03e6c7e1d1a1a64"
+}

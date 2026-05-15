@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51027,
+  "uuid": "skill-clawhub-iso9001-qms",
+  "skillKey": "clawhub-iso9001-qms",
+  "name": "ISO 9001:2015 QMS — Implementation, Audit & CAPA",
+  "summary": "ISO 9001:2015 Quality Management System implementation, internal audit, and CAPA management. Use when implementing a QMS from scratch, conducting gap assessm...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iso9001_qms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Zsak",
+      "features": [
+        "ISO 9001:2015 Quality Management System implementation, internal audit, and CAPA management",
+        "Use when implementing a QMS from scratch, conducting gap assessm..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iso9001-qms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2845028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iso9001-qms",
+      "url": "https://clawhub.ai/skills/iso9001-qms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iso9001-qms",
+    "url": "https://clawhub.ai/skills/iso9001-qms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iso9001-qms-a2f3fed5d6c3e8a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iso9001-qms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iso9001-qms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15839499ce379c1a059152f6bace9450e57bbdb0ba8affed4b68202c4df6303b",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:42:12.546Z"
+}

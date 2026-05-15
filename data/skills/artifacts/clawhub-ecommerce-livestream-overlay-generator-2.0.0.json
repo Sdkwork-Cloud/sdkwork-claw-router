@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-livestream-overlay-generator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_livestream_overlay_generator",
+  "skill": {
+    "id": 67457,
+    "skillKey": "clawhub-ecommerce-livestream-overlay-generator",
+    "name": "电商直播贴片生成器 / Ecommerce Livestream Overlay Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-livestream-overlay-generator",
+    "url": "https://clawhub.ai/skills/ecommerce-livestream-overlay-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-livestream-overlay-generator-e6b24da6f6ddb49f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "电商直播贴片生成器 / 电商直播视觉包装工具。 适用于淘宝直播、抖音直播带货、拼多多直播、快手直播等电商直播场景。 输入品牌、产品、促销信息或产品照片，自动生成完整电商直播视觉包装： 背景、标题栏、主播形象、价格卡、产品货架、福利条、促销贴片。 支持绿幕抠图、自动合成预览、打包交付。 E-commerce liv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gaoyuji12138",
+      "userId": "s1772j8ad7n605nf7mc2twgj61840611",
+      "displayName": "gaoyuji12138",
+      "image": "https://avatars.githubusercontent.com/u/231046781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777370469013,
+      "changelog": "V2: Full Chinese SKILL.md. Bilingual metadata, data privacy section, scanner-compatible format. Prompt templates slightly shortened to fit 8192 token limit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fade06d37e1df8c9e79526f327507918d945763dfada654edbed50ad00ee2d0f"
+}

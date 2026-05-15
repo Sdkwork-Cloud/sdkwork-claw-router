@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51326,
+  "uuid": "skill-clawhub-family-grocery",
+  "skillKey": "clawhub-family-grocery",
+  "name": "Family Grocery List",
+  "summary": "Shared family grocery list — multiple members add, remove, and view items organized by store. Admin-managed access, web-verified store addresses and item ava...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_grocery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adeydas",
+      "features": [
+        "Shared family grocery list — multiple members add, remove, and view items organized by store",
+        "Admin-managed access, web-verified store addresses and item ava..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/family-grocery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1383020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "family-grocery",
+      "url": "https://clawhub.ai/skills/family-grocery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-grocery",
+    "url": "https://clawhub.ai/skills/family-grocery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-grocery-09058abb7f5d1fb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/family-grocery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-family-grocery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:144c687020966799da80a5a53f5ddff4e949b0c1c8e56dc1ca15631f63e5b9c3",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T00:40:44.079Z"
+}

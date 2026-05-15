@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34594,
+  "uuid": "skill-clawhub-research-pipeline",
+  "skillKey": "clawhub-research-pipeline",
+  "name": "Research Pipeline",
+  "summary": "Automated literature research pipeline for Chopin's academic work. Combines arXiv search, paper summarization, and Obsidian note-taking into a single workflo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chopin",
+      "features": [
+        "Automated literature research pipeline for Chopin's academic work",
+        "Combines arXiv search, paper summarization, and Obsidian note-taking into a single workflo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/research-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81441834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "research-pipeline",
+      "url": "https://clawhub.ai/skills/research-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-pipeline",
+    "url": "https://clawhub.ai/skills/research-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-pipeline-911149ba3ce5fbab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/research-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-research-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:928e7c906756d0c0be8d8104e9a785c3a21cc646333e497a4b455584cdd31308",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:18:22.594Z"
+}

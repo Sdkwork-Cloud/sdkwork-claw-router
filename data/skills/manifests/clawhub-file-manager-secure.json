@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35684,
+  "uuid": "skill-clawhub-file-manager-secure",
+  "skillKey": "clawhub-file-manager-secure",
+  "name": "File Manager Secure",
+  "summary": "Perform safe file operations with path validation, dry-run previews, recoverable trash deletes, batch confirmations, and audit logging to prevent data loss.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_manager_secure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "houssam-eddine",
+      "features": [
+        "Perform safe file operations with path validation, dry-run previews, recoverable trash deletes,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-manager-secure@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114784283?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-manager-secure",
+      "url": "https://clawhub.ai/skills/file-manager-secure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-manager-secure",
+    "url": "https://clawhub.ai/skills/file-manager-secure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-manager-secure-35ff56f14ebe9605.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-manager-secure@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-manager-secure-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c33beae35282126f5e42abce227a24b573c28239ca3d68826b516418847845e4",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:22:44.842Z"
+}

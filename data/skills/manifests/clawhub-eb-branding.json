@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42811,
+  "uuid": "skill-clawhub-eb-branding",
+  "skillKey": "clawhub-eb-branding",
+  "name": "Branding",
+  "summary": "Create brand identity and visual guidelines. Use this skill when the user mentions: brand identity, brand guidelines, logo, color palette, typography, brand...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eb_branding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emerson Braun",
+      "features": [
+        "Create brand identity and visual guidelines",
+        "Use this skill when the user mentions: brand identity, brand guidelines, logo, color palette, t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eb-branding@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25778027?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eb-branding",
+      "url": "https://clawhub.ai/skills/eb-branding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eb-branding",
+    "url": "https://clawhub.ai/skills/eb-branding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eb-branding-658fd9159fa1d701.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eb-branding@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eb-branding-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e967e5e5d48d2dce6c97a398e5f4b58cc2858e3da8399814c1296841dd6215b",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:06:56.946Z"
+}

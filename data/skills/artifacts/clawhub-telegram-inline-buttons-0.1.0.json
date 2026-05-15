@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-inline-buttons@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_inline_buttons",
+  "skill": {
+    "id": 18901,
+    "skillKey": "clawhub-telegram-inline-buttons",
+    "name": "Telegram Inline Buttons"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-inline-buttons",
+    "url": "https://clawhub.ai/skills/telegram-inline-buttons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-inline-buttons-8bde65837ccd803b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use inline buttons when communicating with Rahul on Telegram (message tool) to reduce typing and force crisp decisions. Trigger when drafting Telegram messag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rahulsinghalchicago",
+      "userId": "publishers:rahulsinghalchicago",
+      "displayName": "RahulSinghalChicago",
+      "image": "https://avatars.githubusercontent.com/u/3970349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772167374556,
+      "changelog": "Initial release: Telegram inline buttons defaults + auto-edit selection line w/ emoji + ignore stale callbacks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ae33c1ab018b6e4f0153f4a8f24de13a5cf8e6d8be0406da4b099346a2d57c7"
+}

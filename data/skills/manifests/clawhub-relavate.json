@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31508,
+  "uuid": "skill-clawhub-relavate",
+  "skillKey": "clawhub-relavate",
+  "name": "Relavate",
+  "summary": "Relavate integration. Manage Organizations, Users. Use when the user wants to interact with Relavate data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relavate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Relavate integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Relavate data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/relavate@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "relavate",
+      "url": "https://clawhub.ai/skills/relavate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relavate",
+    "url": "https://clawhub.ai/skills/relavate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relavate-71a8cfb41602aadf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/relavate@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-relavate-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61ae46da73779c0acc26aee5751a5c14ba02ee12cc7145a70528f4988df0ed9c",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:33:04.822Z"
+}

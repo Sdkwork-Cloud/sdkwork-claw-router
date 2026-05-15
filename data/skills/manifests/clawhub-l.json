@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22612,
+  "uuid": "skill-clawhub-l",
+  "skillKey": "clawhub-l",
+  "name": "L",
+  "summary": "Short alias skill for listing files, directories, processes, or system information. Use when you need to see what's present in a directory or system state.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.l",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "openlang",
+      "features": [
+        "Short alias skill for listing files, directories, processes, or system information",
+        "Use when you need to see what's present in a directory or system state."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/l@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45782174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "l",
+      "url": "https://clawhub.ai/skills/l"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "l",
+    "url": "https://clawhub.ai/skills/l",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/l-acac86c0e609ca90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/l@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-l-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0a34442e1d288cda60c5c45c41b247413d03c3c97706f600053f3101ee91431",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:13:37.537Z"
+}

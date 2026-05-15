@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60230,
+  "uuid": "skill-clawhub-minimax-token-plan",
+  "skillKey": "clawhub-minimax-token-plan",
+  "name": "MiniMax Token Plan 余额查询",
+  "summary": "查询 MiniMax Token Plan 订阅套餐余额。引导用户配置 API Key（通过 openclaw config set 保存到本地环境变量），查询 M2.7 请求次数、TTS 字符、视频/图片生成配额等。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_token_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Superuser-fank",
+      "features": [
+        "查询 MiniMax Token Plan 订阅套餐余额。引导用户配置 API Key（通过 openclaw config set 保存到本地环境变量），查询 M2.7 请求次数、TTS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-token-plan@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118589778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-token-plan",
+      "url": "https://clawhub.ai/skills/minimax-token-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-token-plan",
+    "url": "https://clawhub.ai/skills/minimax-token-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-token-plan-7461e6aadbcdb2eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-token-plan@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-token-plan-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4872f7b770f0ae583759e3e3647d64978adf8c398f32e46fba51a124855e2fbd",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T17:55:11.697Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17129,
+  "uuid": "skill-clawhub-subfeed",
+  "skillKey": "clawhub-subfeed",
+  "name": "Subfeed",
+  "summary": "AI entities with full agentic backend for your OpenClaw project in one prompt. Your IDE agent will self-register and start building. Human is optional.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subfeed",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Subfeed-AI",
+      "features": [
+        "AI entities with full agentic backend for your OpenClaw project in one prompt",
+        "Your IDE agent will self-register and start building",
+        "Human is optional."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subfeed@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143498559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subfeed",
+      "url": "https://clawhub.ai/skills/subfeed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subfeed",
+    "url": "https://clawhub.ai/skills/subfeed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subfeed-43b2da8f4f462bf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subfeed@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-subfeed-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e61f2789cb54e5be3bc457fa8f559b2ae9c00f8b88c2577eaeaddba63a0f41fd",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T16:20:11.187Z"
+}

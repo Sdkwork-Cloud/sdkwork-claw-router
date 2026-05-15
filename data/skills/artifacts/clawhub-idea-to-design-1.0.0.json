@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-to-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_to_design",
+  "skill": {
+    "id": 57783,
+    "skillKey": "clawhub-idea-to-design",
+    "name": "头脑风暴 · 从想法到设计"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-to-design",
+    "url": "https://clawhub.ai/skills/idea-to-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-to-design-a1b90543a61b74e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dizhu",
+      "userId": "s177gp8b3q1v25nzahp7d5adzh83sy4z",
+      "displayName": "dizhu",
+      "image": "https://avatars.githubusercontent.com/u/3749687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776792694564,
+      "changelog": "首发：通过自然对话把想法变成完整设计文档。逐一提问收敛需求 → 提出2-3种方案 → 分段呈现设计 → Spec自审 → 交付。含 Visual Companion 和 Spec Reviewer。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10566ffd4c60890b0046695a9930ba5fc806ccd779ce56644936b25fd039f25b"
+}

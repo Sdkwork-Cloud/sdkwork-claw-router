@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22632,
+  "uuid": "skill-clawhub-appdrag",
+  "skillKey": "clawhub-appdrag",
+  "name": "Appdrag",
+  "summary": "AppDrag integration. Manage Organizations. Use when the user wants to interact with AppDrag data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appdrag",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "AppDrag integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with AppDrag data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appdrag@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appdrag",
+      "url": "https://clawhub.ai/skills/appdrag"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appdrag",
+    "url": "https://clawhub.ai/skills/appdrag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appdrag-c5f1b7e569a99f3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appdrag@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-appdrag-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3be2c32c89a2882504cc247d8e4778fecf84d37443a177bb7f8d0bd9285382a6",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:11:20.663Z"
+}

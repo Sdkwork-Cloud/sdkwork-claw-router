@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-maker-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_maker_text",
+  "skill": {
+    "id": 41589,
+    "skillKey": "clawhub-free-maker-text",
+    "name": "Free Maker Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-maker-text",
+    "url": "https://clawhub.ai/skills/free-maker-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-maker-text-e73142468aeae68d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get text-based videos ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, PDF, MP4, up to 200MB), say something like \"turn..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776743294386,
+      "changelog": "Initial release: Instantly turn text prompts into downloadable 1080p videos with visuals and music.\n\n- Upload TXT, DOCX, PDF, or MP4 (up to 200MB); describe your video; get a ready-to-post MP4 in ~1-2 minutes.\n- Automated setup: quick connect via anonymous token (no account needed).\n- Cloud pipeline: all editing/rendering happens server-side; no software or camera required.\n- Easily check credits, job status, or export results by text command.\n- Robust error handling with clear guidance for common issues (like missing credits or file size limits).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db928550c7e691dfb63717d6aea82b26f7241b4815ca3e47f60f8b4189fb4830"
+}

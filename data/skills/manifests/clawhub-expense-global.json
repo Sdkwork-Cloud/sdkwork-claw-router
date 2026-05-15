@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61567,
+  "uuid": "skill-clawhub-expense-global",
+  "skillKey": "clawhub-expense-global",
+  "name": "海外费用报销",
+  "summary": "智能费控助手，提供预算管理、费用标准设置、超标预警、费用分析、成本优化建议等功能。支持企业级费用管控，实现事前预算、事中控制、事后分析的闭环管理。Invoke when user needs to set budget, check cost standards, monitor spending, or ana...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expense_global",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "智能费控助手，提供预算管理、费用标准设置、超标预警、费用分析、成本优化建议等功能。支持企业级费用管控，实现事前预算、事中控制、事后分析的闭环管理。Invoke when user needs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expense-global@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expense-global",
+      "url": "https://clawhub.ai/skills/expense-global"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expense-global",
+    "url": "https://clawhub.ai/skills/expense-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expense-global-6400d5673648089f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expense-global@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expense-global-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a72e2cba6452c57b3db56f0b702032fd59b3a20d194d4384ab31bc1b61dc84fa",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:04:32.559Z"
+}

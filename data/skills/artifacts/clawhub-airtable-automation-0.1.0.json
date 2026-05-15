@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airtable-automation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airtable_automation",
+  "skill": {
+    "id": 10357,
+    "skillKey": "clawhub-airtable-automation",
+    "name": "Airtable Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airtable-automation",
+    "url": "https://clawhub.ai/skills/airtable-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airtable-automation-dbacd90e952f03ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Airtable tasks via Rube MCP (Composio): records, bases, tables, fields, views. Always search tools first for current schemas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sohamganatra",
+      "userId": "publishers:sohamganatra",
+      "displayName": "sohamganatra",
+      "image": "https://avatars.githubusercontent.com/u/7982102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2392,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770356029819,
+      "changelog": "- Initial release of Airtable automation skill via Rube MCP and Composio\n- Supports core Airtable actions: records, bases, tables, fields, and views\n- Provides step-by-step tool sequences and parameter/pitfall guidance for each workflow\n- Includes best practices for schema discovery, formula syntax, batch limits, and ID formats\n- Summarizes common tool slugs and required parameters for quick reference",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:15a456a7f6544ccd051c4011322e546afa42098498f5fa0841340c6f968a6661"
+}

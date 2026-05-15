@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paid-content-generator-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paid_content_generator_online",
+  "skill": {
+    "id": 39150,
+    "skillKey": "clawhub-paid-content-generator-online",
+    "name": "Paid Content Generator Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paid-content-generator-online",
+    "url": "https://clawhub.ai/skills/paid-content-generator-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paid-content-generator-online-b8277abd150b1091.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get monetizable video content ready to post, without touching a single slider. Upload your text prompts, footage (MP4, MOV, AVI, WebM, up to 500MB), say some..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776601894410,
+      "changelog": "Initial release of Paid Content Generator Online — Generate and Export Monetizable Videos.\n\n- Instantly generate monetizable videos from user prompts and footage, with a cloud-based rendering pipeline.\n- Simple setup: automatic token acquisition, session creation, and 100 free credits for new users.\n- Supports uploading various video formats (MP4, MOV, AVI, WebM) up to 500MB and exporting 1080p MP4s.\n- Includes commands for exporting, checking credit balance, uploading files, and tracking session state.\n- Automated guidance: maps natural language to editing actions, provides timeline summaries, and handles API errors gracefully.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea17a4d7a5aa561bb2c15ed9e03f26e8cff7e6b0292a119c6112cdaad8a4cd19"
+}

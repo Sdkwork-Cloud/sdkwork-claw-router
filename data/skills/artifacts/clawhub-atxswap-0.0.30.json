@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/atxswap@0.0.30",
+  "version": "0.0.30",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atxswap",
+  "skill": {
+    "id": 18528,
+    "skillKey": "clawhub-atxswap",
+    "name": "ATXSwap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atxswap",
+    "url": "https://clawhub.ai/skills/atxswap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atxswap-f0e5a4198f28c605.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage ATX on BSC with wallet creation, price and balance queries, PancakeSwap V3 swaps, liquidity operations, LP positions and holdings, and BNB/ERC20 trans..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agentswapx",
+      "userId": "s17dmcmzd5ve77tjfb48rfpvxh84fqgh",
+      "displayName": "atxswap",
+      "image": "https://avatars.githubusercontent.com/u/137752209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 583,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 28
+    },
+    "latestVersion": {
+      "version": "0.0.30",
+      "createdAt": 1778050652292,
+      "changelog": "ClawHub republish; llms.txt synced to registry latest 0.0.30.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18b6db3897e2b22ceb6cae9208c8a8a4262f380f06e937b825254c96dae3af67"
+}

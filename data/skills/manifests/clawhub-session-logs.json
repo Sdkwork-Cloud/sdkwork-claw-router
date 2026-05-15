@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8268,
+  "uuid": "skill-clawhub-session-logs",
+  "skillKey": "clawhub-session-logs",
+  "name": "Session-logs",
+  "summary": "Search and analyze your own session logs (older/parent conversations) using jq.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_logs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guogang1024",
+      "features": [
+        "Search and analyze your own session logs (older/parent conversations) using jq."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-logs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/238972861?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-logs",
+      "url": "https://clawhub.ai/skills/session-logs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-logs",
+    "url": "https://clawhub.ai/skills/session-logs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-logs-1e21270fa195d1df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-logs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-logs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49a7a0d48a36901387a26f92395456c62f1ba2d860b1e98114205d0339ad62c4",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:33:47.000Z"
+}

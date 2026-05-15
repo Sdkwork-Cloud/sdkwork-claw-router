@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59462,
+  "uuid": "skill-clawhub-meta",
+  "skillKey": "clawhub-meta",
+  "name": "Meta Control - Agent Orchestration",
+  "summary": "我作为主控 Agent 的协调能力。调度子 Agent 后台操作，我只管全局。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xaiohuangningde",
+      "features": [
+        "我作为主控 Agent 的协调能力。调度子 Agent 后台操作，我只管全局。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meta@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143916959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meta",
+      "url": "https://clawhub.ai/skills/meta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta",
+    "url": "https://clawhub.ai/skills/meta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ea3bd73e2b506e00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meta@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meta-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0488328858bbd06e451ba811d77f48f289bfb222a57c96880eb83cb7ce745f32",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:38:53.251Z"
+}

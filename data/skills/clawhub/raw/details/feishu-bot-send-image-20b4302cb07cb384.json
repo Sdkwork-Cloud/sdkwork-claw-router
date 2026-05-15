@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "feishu-bot-send-image",
+    "displayName": "Feishu Send Image",
+    "summary": "Send images directly in Feishu chat as native image messages (not file attachments). Use when: need to send a generated image, chart, screenshot, or any loca...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773932763326,
+    "updatedAt": 1778312995806
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773932763326,
+    "changelog": "First release: Sends local image files as native image messages in Feishu via Bot API, not as attachments.\n\n- Added script (feishu_send_image.sh) to send PNG/JPG/GIF/WEBP images directly to Feishu users or groups\n- Usage requires specifying image path, receiver ID/type, app ID, and app secret\n- Uses Feishu Bot API: authenticates, uploads image, sends message\n- Credentials must be manually extracted from ~/.openclaw/openclaw.json\n- Replaces previous tool which could only send attachments, enabling true image messages",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jasonzhang2015",
+    "userId": "s176m6r1kkv4wv92134rj0mw2h83k827",
+    "displayName": "PL Uncle",
+    "image": "https://avatars.githubusercontent.com/u/10780985?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312995806
+  }
+}

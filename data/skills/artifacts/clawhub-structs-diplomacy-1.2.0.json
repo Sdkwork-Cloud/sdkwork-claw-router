@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structs-diplomacy@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_diplomacy",
+  "skill": {
+    "id": 20539,
+    "skillKey": "clawhub-structs-diplomacy",
+    "name": "Structs Diplomacy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-diplomacy",
+    "url": "https://clawhub.ai/skills/structs-diplomacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-diplomacy-3871512aeec02f0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handles permissions, address management, and inter-player coordination in Structs. Use when granting or revoking permissions on objects, registering new addr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abstrct",
+      "userId": "s17cc5kakaxpzqm7102vd7gsax83srkw",
+      "displayName": "Josh McDougall",
+      "image": "https://avatars.githubusercontent.com/u/196776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774840307993,
+      "changelog": "Sync with structs-ai upstream: v0.15 combat overhaul, 24-bit permissions, guild rank system, controller=PlayerId, guild-rank-set commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:589196a7c4b3af8e81b7b091cf82199be2a3c995faf93bc53f9d11a2c2df1372"
+}

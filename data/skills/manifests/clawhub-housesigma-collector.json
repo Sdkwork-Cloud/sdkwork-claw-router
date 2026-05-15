@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60040,
+  "uuid": "skill-clawhub-housesigma-collector",
+  "skillKey": "clawhub-housesigma-collector",
+  "name": "Housesigma Collector",
+  "summary": "HouseSigma 매물 데이터를 자동 및 수동으로 수집해 Hauscout SQLite DB에 저장하고 크론잡으로 주기적 업데이트를 지원합니다.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.housesigma_collector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sonim1",
+      "features": [
+        "HouseSigma 매물 데이터를 자동 및 수동으로 수집해 Hauscout SQLite DB에 저장하고 크론잡으로 주기적 업데이트를 지원합니다."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/housesigma-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2497849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "housesigma-collector",
+      "url": "https://clawhub.ai/skills/housesigma-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "housesigma-collector",
+    "url": "https://clawhub.ai/skills/housesigma-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/housesigma-collector-d44a9c6fed6be43b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/housesigma-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-housesigma-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40d8a187dcd9f0e862bc538db5cf9741add322668f5bb885baa97a4233e02e04",
+      "artifactSizeBytes": 2495
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:09:14.095Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meo-mai-moi@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meo_mai_moi",
+  "skill": {
+    "id": 40567,
+    "skillKey": "clawhub-meo-mai-moi",
+    "name": "Meo Mai Moi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meo-mai-moi",
+    "url": "https://clawhub.ai/skills/meo-mai-moi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meo-mai-moi-478577223782c379.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for Meo Mai Moi pet-owner tasks when an agent needs to help a user manage their pets through the documented API: listing pets, updating pet profiles, add..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "troioi-vn",
+      "userId": "s17a2kkknw5n95dxnk0a36cred85jcns",
+      "displayName": "troioi-vn",
+      "image": "https://avatars.githubusercontent.com/u/45875464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1777299658914,
+      "changelog": "Add explicit hosted app, developer token page, docs, API integration guide, and project links for users setting up agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79e5fd26dc47161da328cbe78f27fd0b557901b484fd7b5891da9232286092a8"
+}

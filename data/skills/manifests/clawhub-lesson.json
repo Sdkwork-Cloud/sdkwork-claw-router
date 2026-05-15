@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71692,
+  "uuid": "skill-clawhub-lesson",
+  "skillKey": "clawhub-lesson",
+  "name": "Lesson",
+  "summary": "生成今日菜单推荐。根据用户手头的食材、口味偏好、人数和烹饪时间， 从内置食材库和菜谱库中智能匹配，输出完整的菜单方案和分步烹饪指南。 当用户提到\"今天吃什么\"\"做什么菜\"\"菜单\"\"菜谱推荐\"\"晚饭吃啥\"等意图时触发。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lesson",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yequanzheng",
+      "features": [
+        "生成今日菜单推荐。根据用户手头的食材、口味偏好、人数和烹饪时间， 从内置食材库和菜谱库中智能匹配，输出完整的菜单方案和分步烹饪指南。 当用户提到\"今天吃什么\"\"做什么菜\"\"菜单\"\"菜谱推荐\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lesson@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107382370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lesson",
+      "url": "https://clawhub.ai/skills/lesson"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lesson",
+    "url": "https://clawhub.ai/skills/lesson",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lesson-b78e58750d4f05fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lesson@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lesson-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eebcdda9f29043a78877ff5a1a540202f105159aae002b4c8e89c5f90fcb7952",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:32:35.476Z"
+}

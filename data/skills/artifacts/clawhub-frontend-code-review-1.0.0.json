@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontend-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_code_review",
+  "skill": {
+    "id": 67041,
+    "skillKey": "clawhub-frontend-code-review",
+    "name": "frontend-code-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-code-review",
+    "url": "https://clawhub.ai/skills/frontend-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-code-review-a49aef93d495d33a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从架构、可维护性、类型安全、可访问性、样式一致性、性能和可测试性等角度审查前端代码，并将报告保存为 Markdown 文件。当用户要求代码审查、Review、评审代码质量时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bovinphang",
+      "userId": "s175m64gr8tsfc06cj22czzfys83mp52",
+      "displayName": "Bovin Phang",
+      "image": "https://avatars.githubusercontent.com/u/17447895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774523008810,
+      "changelog": "Version 1.1.0 introduces a structured, standards-driven approach to frontend code review.\n\n- Adds a detailed skill description covering review criteria: architecture, type safety, rendering, styles, accessibility, maintainability, testing, and security.\n- Defines mandatory, recommended, and stylistic review checklists for consistent evaluations.\n- Specifies a unified Markdown report output format, including risk grading and actionable feedback.\n- Automates saving review reports to the project's /reports directory, with clear filename conventions.\n- Designed to activate automatically for Vue, React, TypeScript, and UI-layer code review requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8dd4f0de3ae301b6823372b4710be109d87daa23c361beba127fec40c7e1f99b"
+}

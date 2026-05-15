@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23278,
+  "uuid": "skill-clawhub-activecampaign-integration",
+  "skillKey": "clawhub-activecampaign-integration",
+  "name": "Activecampaign",
+  "summary": "ActiveCampaign integration. Manage Users, Organizations, Leads, Projects, Goals, Filters. Use when the user wants to interact with ActiveCampaign data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activecampaign_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ActiveCampaign integration",
+        "Manage Users, Organizations, Leads, Projects, Goals, Filters",
+        "Use when the user wants to interact with ActiveCampaign data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/activecampaign-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "activecampaign-integration",
+      "url": "https://clawhub.ai/skills/activecampaign-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activecampaign-integration",
+    "url": "https://clawhub.ai/skills/activecampaign-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activecampaign-integration-ba99e3092a2f7135.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/activecampaign-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-activecampaign-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edc96bc94248a9aadbd66c24f25f046df1eb457ededda89dd187706664ce15ea",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:09.399Z"
+}

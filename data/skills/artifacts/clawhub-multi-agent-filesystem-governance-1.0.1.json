@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-agent-filesystem-governance@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_filesystem_governance",
+  "skill": {
+    "id": 28140,
+    "skillKey": "clawhub-multi-agent-filesystem-governance",
+    "name": "Multi-Agent Filesystem Governance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-filesystem-governance",
+    "url": "https://clawhub.ai/skills/multi-agent-filesystem-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-filesystem-governance-5d0041c5e4989dd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Govern filesystem organization and file-operation decisions in multi-agent environments. Use when deciding where files should live across agent-private works..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darinrowe",
+      "userId": "publishers:darinrowe",
+      "displayName": "DarinRowe",
+      "image": "https://avatars.githubusercontent.com/u/5706314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773477069579,
+      "changelog": "Add best-practice guidance for durable code project roots, recommend ~/projects for long-lived repositories, distinguish temporary /tmp validation work, and clarify that formal repos should not live long-term in agent runtime or skill directories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f15939f57556992037b50682247c09d51e81bf4da15372388690975fe14aacf8"
+}

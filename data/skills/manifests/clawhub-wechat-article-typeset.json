@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68614,
+  "uuid": "skill-clawhub-wechat-article-typeset",
+  "skillKey": "clawhub-wechat-article-typeset",
+  "name": "公众号文章排版",
+  "summary": "公众号文章预设主题排版--Markdown 一键渲染主题并生成复制页预览链接（不含 AI 结构化预览）",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_typeset",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shiker",
+      "features": [
+        "公众号文章预设主题排版--Markdown 一键渲染主题并生成复制页预览链接（不含 AI 结构化预览）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-typeset@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32234876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-typeset",
+      "url": "https://clawhub.ai/skills/wechat-article-typeset"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-typeset",
+    "url": "https://clawhub.ai/skills/wechat-article-typeset",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-typeset-d6712102eea07c60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-typeset@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-typeset-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b6abb0c02d70e09f1db9f4a823bc401e771b955bbfa8385d2bfb2e35da78619",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:21:10.327Z"
+}

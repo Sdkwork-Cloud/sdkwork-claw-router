@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62690,
+  "uuid": "skill-clawhub-ocr-invoice",
+  "skillKey": "clawhub-ocr-invoice",
+  "name": "发票识别报销",
+  "summary": "智能报销助手，支持差旅费用报销、发票管理、费用审批、报销进度查询、费用分析等功能。可处理机票、酒店、用车、餐饮等多种费用类型，自动识别发票信息，智能匹配差旅订单。Invoke when user needs to submit expense report, upload invoice, check reimb...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_invoice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "智能报销助手，支持差旅费用报销、发票管理、费用审批、报销进度查询、费用分析等功能。可处理机票、酒店、用车、餐饮等多种费用类型，自动识别发票信息，智能匹配差旅订单。Invoke when us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocr-invoice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocr-invoice",
+      "url": "https://clawhub.ai/skills/ocr-invoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-invoice",
+    "url": "https://clawhub.ai/skills/ocr-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-invoice-c10bcb6430c8e4c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocr-invoice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocr-invoice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16e3a2bfee1fac6b001fed50b805da5f6f4fb1b42aeb3ac00e259c6a28b75ffd",
+      "artifactSizeBytes": 2682
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:42:07.453Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fomo-news@1.1.6",
+  "version": "1.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fomo_news",
+  "skill": {
+    "id": 31173,
+    "skillKey": "clawhub-fomo-news",
+    "name": "Fomo News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fomo-news",
+    "url": "https://clawhub.ai/skills/fomo-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fomo-news-3b2a83492e0c5d9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time news aggregation skill that fetches trending GitHub repos, social posts from key tech/AI figures, and breaking news from major outlets. Supports ca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yealexchen",
+      "userId": "s176zgp4cryjv5n5n1ycchqdsn83h23z",
+      "displayName": "yealexchen",
+      "image": "https://avatars.githubusercontent.com/u/10083823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.6",
+      "createdAt": 1774522882893,
+      "changelog": "fomo-news 1.1.6\n\n- Minor update to the SKILL.md documentation only; no code changes detected.\n- Clarified language in the configuration section.\n- Updated the required info footer wording.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dfd16f42a64ecbdb6735b251de9ca1e50dc6712a69da2fcf6ec8a4b0be88eb6"
+}

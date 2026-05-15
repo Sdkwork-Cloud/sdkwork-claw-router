@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58325,
+  "uuid": "skill-clawhub-instructor-structured-output",
+  "skillKey": "clawhub-instructor-structured-output",
+  "name": "Instructor Structured Output",
+  "summary": "Instructor：声明 Pydantic BaseModel 即可从 20 个 LLM provider 拿到类型化实例。核心是 monkey-patch（instructor.patch / from_*）拦截 create()，注入 schema-aware kwargs，tenacity 重试 + In...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instructor_structured_output",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "Instructor：声明 Pydantic BaseModel 即可从 20 个 LLM provider 拿到类型化实例。核心是 monkey-patch（instructor.patc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instructor-structured-output@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instructor-structured-output",
+      "url": "https://clawhub.ai/skills/instructor-structured-output"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instructor-structured-output",
+    "url": "https://clawhub.ai/skills/instructor-structured-output",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instructor-structured-output-4286a87662480e7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instructor-structured-output@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instructor-structured-output-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d18946c1d00579e197fa529437d20800f2985e29dc46eb71df45e2c3dc34b95d",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T10:51:06.679Z"
+}

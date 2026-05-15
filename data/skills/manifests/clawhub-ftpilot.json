@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37411,
+  "uuid": "skill-clawhub-ftpilot",
+  "skillKey": "clawhub-ftpilot",
+  "name": "FTPilot",
+  "summary": "AI-powered endurance cycling coach using Intervals.icu data. Use when the user asks about cycling training, FTP, power zones, workout planning, fitness statu...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftpilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuai007",
+      "features": [
+        "AI-powered endurance cycling coach using Intervals.icu data",
+        "Use when the user asks about cycling training, FTP, power zones, workout planning, fitness stat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftpilot@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31700922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftpilot",
+      "url": "https://clawhub.ai/skills/ftpilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftpilot",
+    "url": "https://clawhub.ai/skills/ftpilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftpilot-c93ef382325f190c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftpilot@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftpilot-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d2793d7713e0ed375a02116aa8fc91f4c6543444778f3da5bfb6d04a7a46597",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T12:33:43.066Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/durable-agents@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.durable_agents",
+  "skill": {
+    "id": 18950,
+    "skillKey": "clawhub-durable-agents",
+    "name": "Durable Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "durable-agents",
+    "url": "https://clawhub.ai/skills/durable-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/durable-agents-2b2b8bd8d1ad51ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build autonomous multi-agent pipelines with Mastra (agents only) and Trigger.dev (all workflows and tasks). Use when creating AI agents, designing multi-stag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ainakwalamonk",
+      "userId": "publishers:ainakwalamonk",
+      "displayName": "Zeeshan Ahmad",
+      "image": "https://avatars.githubusercontent.com/u/92335908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772080181917,
+      "changelog": "Initial release of durable-agents for autonomous multi-agent pipelines.\n\n- Integrates Mastra (for agent reasoning) and Trigger.dev (for durable, retryable task orchestration)\n- Establishes strict best practices: logic in AGENT.md, one job per agent, Zod-typed schemas everywhere\n- Mandates error handling by return value (never throwing) for all tools\n- Provides detailed step-by-step guides for creating agents and tools\n- Enforces permission gating for any tool that performs real-world or destructive actions\n- Ensures all agentic outputs and intermediate states are persisted to a database, never in memory",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b43d6dc5a5c014b0036a3a49afc71d31c3a34100e62510971a15b14c2385d911"
+}

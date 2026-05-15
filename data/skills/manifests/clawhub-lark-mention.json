@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70512,
+  "uuid": "skill-clawhub-lark-mention",
+  "skillKey": "clawhub-lark-mention",
+  "name": "Lark Mention",
+  "summary": "飞书 @ 提及专属技能。支持在群聊中向指定成员发送带真实 @ 提及的消息，解决飞书无法通过纯文本标签艾特成员的问题。触发场景：群里艾特成员、艾特全员、发送带 @ 的通知公告。",
+  "version": "26.3.27",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lark_mention",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "toto2016",
+      "features": [
+        "飞书 @ 提及专属技能。支持在群聊中向指定成员发送带真实 @ 提及的消息，解决飞书无法通过纯文本标签艾特成员的问题。触发场景：群里艾特成员、艾特全员、发送带 @ 的通知公告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lark-mention@26.3.27",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20316684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lark-mention",
+      "url": "https://clawhub.ai/skills/lark-mention"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lark-mention",
+    "url": "https://clawhub.ai/skills/lark-mention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lark-mention-8ff33815b284efff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lark-mention@26.3.27",
+      "artifactUrl": "data/skills/artifacts/clawhub-lark-mention-26.3.27.json",
+      "version": "26.3.27",
+      "runtime": "metadata",
+      "checksumHash": "sha256:756b89b9ea579fcfb1ab7a2b532ba56ac4bcddb03ce602920d3a71d4b597b9f4",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:46:07.065Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-review@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_review",
+  "skill": {
+    "id": 8552,
+    "skillKey": "clawhub-literature-review",
+    "name": "Literature Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-review",
+    "url": "https://clawhub.ai/skills/literature-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-review-92d3d2f459beb5cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assistance with writing literature reviews by searching for academic sources via Semantic Scholar, OpenAlex, Crossref and PubMed APIs. Use when the user needs to find papers on a topic, get details for specific DOIs, or draft sections of a."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weird-aftertaste",
+      "userId": "publishers:weird-aftertaste",
+      "displayName": "weird-aftertaste",
+      "image": "https://avatars.githubusercontent.com/u/39530029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8806,
+      "installsAllTime": 89,
+      "installsCurrent": 82,
+      "stars": 20,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1769256891795,
+      "changelog": "Major stability and feature update by Claude Opus: added PubMed abstracts, DOI deduplication, safer date handling, and robust error handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1de17c23dbdc00c49b2aa84029003b487f1a87055103284b9ee44262949ce372"
+}

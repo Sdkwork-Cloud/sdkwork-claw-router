@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19608,
+  "uuid": "skill-clawhub-ramalama-cli",
+  "skillKey": "clawhub-ramalama-cli",
+  "name": "RamaLama CLI",
+  "summary": "Run and interact with AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ramalama_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ian Eaves",
+      "features": [
+        "Run and interact with AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ramalama-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7785207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ramalama-cli",
+      "url": "https://clawhub.ai/skills/ramalama-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ramalama-cli",
+    "url": "https://clawhub.ai/skills/ramalama-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ramalama-cli-cdb16cb4bacc1988.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ramalama-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ramalama-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c066b5ae657c94c4b1ae671e8804a08876438d1be430ee4305db618431eae5a2",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T20:35:37.883Z"
+}

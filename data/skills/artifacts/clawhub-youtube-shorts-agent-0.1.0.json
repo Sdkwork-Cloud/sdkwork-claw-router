@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-shorts-agent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_shorts_agent",
+  "skill": {
+    "id": 49499,
+    "skillKey": "clawhub-youtube-shorts-agent",
+    "name": "YouTube Shorts Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-shorts-agent",
+    "url": "https://clawhub.ai/skills/youtube-shorts-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-shorts-agent-0634fb7e639ff55f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prepare, validate, and explicitly upload YouTube Shorts through the official YouTube Data API with dry-run safety. Use when an AI agent needs setup, usage, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778077105715,
+      "changelog": "Initial Delx ClawHub skill for agent-first open-source discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be39e74bf2efe8bede30fa4d0b5e9670a133b317d524fb7612c8917b2eac067e"
+}

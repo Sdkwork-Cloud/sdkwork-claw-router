@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-polisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_polisher",
+  "skill": {
+    "id": 69701,
+    "skillKey": "clawhub-paper-polisher",
+    "name": "Paper Polisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-polisher",
+    "url": "https://clawhub.ai/skills/paper-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-polisher-1597398e2877cfef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "论文润色修改专家 - 中英文论文的语言润色、逻辑优化、格式规范。支持SCI论文、核心期刊论文、学位论文的修改。保持原意不变，提升学术表达。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776354540167,
+      "changelog": "paper-polisher v1.0.0\n\n- Initial release of an advanced academic paper polishing skill, supporting both Chinese and English.\n- Provides detailed principles and workflows for language editing, logical optimization, and formatting, suitable for SCI, core journals, and theses.\n- Includes editable prompt templates and output formats for both Chinese and English paper revision scenarios.\n- Emphasizes preserving author intent, maintaining document structure, and ensuring academic style.\n- Offers modification statistics, detailed change explanations, and terminology verification in output.\n- Sample modifications and usage guidelines included for user reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc7aea75bf59386ee24bfa7d356d4a431c137d3e2df30281d0f1f39e26e329a4"
+}

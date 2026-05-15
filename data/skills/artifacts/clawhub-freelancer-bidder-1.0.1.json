@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freelancer-bidder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelancer_bidder",
+  "skill": {
+    "id": 22260,
+    "skillKey": "clawhub-freelancer-bidder",
+    "name": "Freelancer Auto Bidder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelancer-bidder",
+    "url": "https://clawhub.ai/skills/freelancer-bidder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelancer-bidder-8af41dcbcd07efaf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Freelancer.com for new projects matching your skills, draft personalized bid proposals, and track bidding history. Use when you want to find freelance j..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "27555402-spec",
+      "userId": "publishers:27555402-spec",
+      "displayName": "27555402-spec",
+      "image": "https://avatars.githubusercontent.com/u/259451072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773072240872,
+      "changelog": "Full instructions added",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf10efc9697b88353ede7479ad963ed4c34b7cb2daa911ab9a01e4d209606507"
+}

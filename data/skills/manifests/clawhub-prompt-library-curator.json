@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14429,
+  "uuid": "skill-clawhub-prompt-library-curator",
+  "skillKey": "clawhub-prompt-library-curator",
+  "name": "Prompt Library Curator",
+  "summary": "Curate multi-category prompt libraries in EN/ES with basic/pro levels and export in Markdown/JSON/CSV. Use when users want prompt packs, prompt catalogs, or reusable prompt templates across popular categories (marketing, sales, dev, design.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_library_curator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nerdcuba",
+      "features": [
+        "Curate multi-category prompt libraries in EN/ES with basic/pro levels and export in Markdown/JS.",
+        "Use when users want prompt packs, prompt catalogs, or reusable prompt templates across popular.",
+        "Include a note to request more categories or improvements."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prompt-library-curator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121952866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prompt-library-curator",
+      "url": "https://clawhub.ai/skills/prompt-library-curator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-library-curator",
+    "url": "https://clawhub.ai/skills/prompt-library-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-library-curator-a59c627ba8951da0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prompt-library-curator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prompt-library-curator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fba77f1143230e26b29c7c539a9038746f8c6f5d7a39abe22757ba112c5fcff",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T23:43:31.396Z"
+}

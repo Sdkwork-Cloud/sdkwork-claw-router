@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18659,
+  "uuid": "skill-clawhub-wan",
+  "skillKey": "clawhub-wan",
+  "name": "wan-image-gen",
+  "summary": "Generate images using Alibaba DashScope wan2.6-t2i model, download to Desktop, and upload to catbox.moe image hosting. Use when the user asks to generate, cr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wan",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agentrix",
+      "features": [
+        "Generate images using Alibaba DashScope wan2.6-t2i model, download to Desktop, and upload to ca.",
+        "Use when the user asks to generate, cr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156587109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wan",
+      "url": "https://clawhub.ai/skills/wan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wan",
+    "url": "https://clawhub.ai/skills/wan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wan-611f9708e31c66b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:862768cac37a2e42d66fe3fca53e0b14528634c80aa6eff3d268bef16ae5516b",
+      "artifactSizeBytes": 2124
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T16:00:31.976Z"
+}

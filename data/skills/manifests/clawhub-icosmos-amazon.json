@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62936,
+  "uuid": "skill-clawhub-icosmos-amazon",
+  "skillKey": "clawhub-icosmos-amazon",
+  "name": "icosmos Amazon",
+  "summary": "Shopify 店铺运营/诊断技能：从 Supabase 拉取店铺域名与 token，做装修/产品/结账/指标异常检测，并支持发布引流博文（唯一写操作）。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icosmos_amazon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "王新勇(Tacey Wong)",
+      "features": [
+        "Shopify 店铺运营/诊断技能：从 Supabase 拉取店铺域名与 token，做装修/产品/结账/指标异常检测，并支持发布引流博文（唯一写操作）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icosmos-amazon@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5282810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icosmos-amazon",
+      "url": "https://clawhub.ai/skills/icosmos-amazon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icosmos-amazon",
+    "url": "https://clawhub.ai/skills/icosmos-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icosmos-amazon-6a477231f64d686c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icosmos-amazon@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-icosmos-amazon-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c33933648002e187dd751599c2157c008929f1a408c370356fe0ec8a6238ef6",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:05:49.619Z"
+}

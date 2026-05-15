@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36252,
+  "uuid": "skill-clawhub-git-repo-cleaner",
+  "skillKey": "clawhub-git-repo-cleaner",
+  "name": "Git Repo Cleaner",
+  "summary": "Audit and clean up Git repositories. Find stale/merged branches, large files in history, orphaned tags, repo bloat, and generate cleanup scripts. Use when as...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_repo_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Audit and clean up Git repositories",
+        "Find stale/merged branches, large files in history, orphaned tags, repo bloat, and generate cle.",
+        "Use when as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-repo-cleaner@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-repo-cleaner",
+      "url": "https://clawhub.ai/skills/git-repo-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-repo-cleaner",
+    "url": "https://clawhub.ai/skills/git-repo-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-repo-cleaner-feb15eecd6a63ee8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-repo-cleaner@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-repo-cleaner-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7bc769ac9f8f2daa303bd783b2f3a2734f7cda149579fbe5afa9a462009ac68",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:01:41.529Z"
+}

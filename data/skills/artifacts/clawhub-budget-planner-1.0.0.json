@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/budget-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_planner",
+  "skill": {
+    "id": 62176,
+    "skillKey": "clawhub-budget-planner",
+    "name": "Budget Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-planner",
+    "url": "https://clawhub.ai/skills/budget-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-planner-d1b5d0f90a285e8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "预算规划 - 收支预算、分类管理、超支提醒"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776839445008,
+      "changelog": "Initial release of Budget Planner—plan and track your spending.\n\n- Budget planning for income and expenses\n- Category-based management\n- Overspending alerts and notifications\n- Monthly report generation\n- Savings goal tracking\n- Free and Pro versions available",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:518f8a47f4bb3b3518d9f2cfdcf73684a53324d5a42a39ab98a68b4826e134ca"
+}

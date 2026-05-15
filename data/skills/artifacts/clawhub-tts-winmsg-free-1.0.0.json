@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tts-winmsg-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_winmsg_free",
+  "skill": {
+    "id": 64423,
+    "skillKey": "clawhub-tts-winmsg-free",
+    "name": "tts-winmsg-free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-winmsg-free",
+    "url": "https://clawhub.ai/skills/tts-winmsg-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-winmsg-free-a64cac3435776f9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Windows本地TTS朗读技能。通过WM_COPYDATA消息把AI回复实时发送到迷你窗口朗读，支持中英文标点分割、队列顺序播放、语速音量滑块调节，零token消耗，完全本地运行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "512548510",
+      "userId": "s177daj39zpes4pz9t7f64s3w583s0ve",
+      "displayName": "512548510",
+      "image": "https://avatars.githubusercontent.com/u/48117536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774692453701,
+      "changelog": "v1.0.0: Initial release\\",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8ced347b49b5d00f825366c920ed791fa7dcb88ced7c592b1c0aefb9bb1108e"
+}

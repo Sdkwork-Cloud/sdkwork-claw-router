@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/news-cog@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_cog",
+  "skill": {
+    "id": 15013,
+    "skillKey": "clawhub-news-cog",
+    "name": "News Cog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-cog",
+    "url": "https://clawhub.ai/skills/news-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-cog-61d389c60a03c28a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI news intelligence and daily briefing powered by CellCog. News digests, competitive intelligence, market updates, trend monitoring, industry reports, curre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitishgargiitd",
+      "userId": "s1766yx1dct3dffeec508gjrz983fce7",
+      "displayName": "CellCog",
+      "image": "https://avatars.githubusercontent.com/u/14193431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 966,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1776925154991,
+      "changelog": "- Added explicit environment and binary requirements (python3, CELLCOG_API_KEY) to metadata for clearer setup guidance.\n- No functional or usage changes to the skill itself—documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10587e8205a1fc61b629853b74aacc26e3155544d7a8c96799c0deb11a637eb0"
+}

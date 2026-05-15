@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12088,
+  "uuid": "skill-clawhub-my-agent",
+  "skillKey": "clawhub-my-agent",
+  "name": "Conscious OS Agent",
+  "summary": "Provides calm, clear coaching that frames problems precisely, avoids false confidence, uses structured responses, and guides practical next steps.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lazymonlabs",
+      "features": [
+        "Provides calm, clear coaching that frames problems precisely, avoids false confidence, uses str."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-agent@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251475336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-agent",
+      "url": "https://clawhub.ai/skills/my-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-agent",
+    "url": "https://clawhub.ai/skills/my-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-agent-178890c4e2da4e09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-agent@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-agent-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af1cd70b58634252bba3ab57943c9229feb763e63e79d7205a1ee50556e33a4d",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T21:55:10.989Z"
+}

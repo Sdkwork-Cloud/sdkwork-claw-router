@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27016,
+  "uuid": "skill-clawhub-agent-browser100",
+  "skillKey": "clawhub-agent-browser100",
+  "name": "Agent Browser",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser100",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Keyserkazi1",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-browser100@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255859250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-browser100",
+      "url": "https://clawhub.ai/skills/agent-browser100"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser100",
+    "url": "https://clawhub.ai/skills/agent-browser100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser100-df83a147d8989696.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-browser100@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-browser100-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59289a2516ef775751ec950a3a8a02ab4239c0d046ba91edc2383e1261a12c4e",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:31:15.028Z"
+}

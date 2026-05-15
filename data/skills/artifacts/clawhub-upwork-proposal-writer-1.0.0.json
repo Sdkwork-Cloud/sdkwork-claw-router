@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upwork-proposal-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upwork_proposal_writer",
+  "skill": {
+    "id": 30232,
+    "skillKey": "clawhub-upwork-proposal-writer",
+    "name": "Upwork Proposal Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upwork-proposal-writer",
+    "url": "https://clawhub.ai/skills/upwork-proposal-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upwork-proposal-writer-59b35dd94c09b26c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates tailored Upwork proposals for automation, bot, and web scraping jobs by analyzing postings and suggesting pricing and portfolio highlights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "merjua14",
+      "userId": "publishers:merjua14",
+      "displayName": "merjua14",
+      "image": "https://avatars.githubusercontent.com/u/40038194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773415856916,
+      "changelog": "- Initial release of Upwork Proposal Writer Skill.\n- Automatically generates tailored proposals for automation, bot development, and web scraping jobs.\n- Analyzes job postings to identify key requirements and client pain points.\n- Produces proposals using a proven template structure, including opening hook, solution overview, social proof, and clear call-to-action.\n- Suggests relevant portfolio examples and provides pricing guidelines for different job types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec38007cd1a05e332b0f2e2e8d4f456e0f28073e7a7e1d90810c361af8445843"
+}

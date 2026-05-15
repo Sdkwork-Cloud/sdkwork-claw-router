@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23289,
+  "uuid": "skill-clawhub-clawnedhub",
+  "skillKey": "clawhub-clawnedhub",
+  "name": "clawnedhub - Scan and Security your OpenClaw Instances",
+  "summary": "Security agent that inventories installed OpenClaw skills, analyzes them for threats, and syncs results to your Clawned dashboard.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnedhub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jenish-sojitra",
+      "features": [
+        "Security agent that inventories installed OpenClaw skills, analyzes them for threats, and syncs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawnedhub@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68073095?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawnedhub",
+      "url": "https://clawhub.ai/skills/clawnedhub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnedhub",
+    "url": "https://clawhub.ai/skills/clawnedhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnedhub-fbd3cf9600c9efa2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawnedhub@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawnedhub-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a895268721ec9ca1f9113dd20d58fd4b0f0b827e7ef2e9361847c7c8e34d915e",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T08:43:01.345Z"
+}

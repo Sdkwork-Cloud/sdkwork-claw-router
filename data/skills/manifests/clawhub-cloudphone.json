@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14362,
+  "uuid": "skill-clawhub-cloudphone",
+  "skillKey": "clawhub-cloudphone",
+  "name": "Cloud Phone Agent",
+  "summary": "Use mcporter to call cpc-mcp-server AutoJS Agent tools for cloud Android task execution and result retrieval.",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudphone",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sav7ng",
+      "features": [
+        "Use mcporter to call cpc-mcp-server AutoJS Agent tools for cloud Android task execution and res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudphone@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20219567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudphone",
+      "url": "https://clawhub.ai/skills/cloudphone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudphone",
+    "url": "https://clawhub.ai/skills/cloudphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudphone-9db7fb865402ce0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudphone@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudphone-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:010c781d8677882e7623547f9cebf0fcccd85f289a8b5e85cd871ab01afb5e7b",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T11:23:10.621Z"
+}

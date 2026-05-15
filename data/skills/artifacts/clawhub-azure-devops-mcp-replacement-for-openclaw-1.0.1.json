@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-devops-mcp-replacement-for-openclaw@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_devops_mcp_replacement_for_openclaw",
+  "skill": {
+    "id": 49251,
+    "skillKey": "clawhub-azure-devops-mcp-replacement-for-openclaw",
+    "name": "Azure Devops MCP Replacement For OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-devops-mcp-replacement-for-openclaw",
+    "url": "https://clawhub.ai/skills/azure-devops-mcp-replacement-for-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-devops-mcp-replacement-for-openclaw-8c67e7a18e90ec2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Azure DevOps via direct REST API calls — list projects, teams, repos, work items, sprints/iterations (project-wide or scoped to a specific team..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahmedyehya92",
+      "userId": "s17efnpwh93yp3zakmfdmsy14h857t5v",
+      "displayName": "ahmedyehya92",
+      "image": "https://avatars.githubusercontent.com/u/25884049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773077453718,
+      "changelog": "**Added support for team member and people operations in Azure DevOps skill.**\n\n- Added `scripts/people.js` for team member tracking, workloads, and daily standup summaries.\n- Introduced `team-config.json` for persistent team member configuration.\n- Updated usage docs with new commands for standup and capacity tracking by person or team.\n- Expanded documentation and endpoint references for all new people-related features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05217438bb60de3f8d90a339c2ad905a71a41678582b084eca201d5d3a482fae"
+}

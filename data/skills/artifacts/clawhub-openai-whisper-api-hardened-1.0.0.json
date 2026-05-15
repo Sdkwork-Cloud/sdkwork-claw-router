@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openai-whisper-api-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openai_whisper_api_hardened",
+  "skill": {
+    "id": 48284,
+    "skillKey": "clawhub-openai-whisper-api-hardened",
+    "name": "Openai Whisper Api Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openai-whisper-api-hardened",
+    "url": "https://clawhub.ai/skills/openai-whisper-api-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openai-whisper-api-hardened-5ed454fbceadc312.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio via OpenAI Audio Transcriptions API (Whisper)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776931237061,
+      "changelog": "Initial release of openai-whisper-api-hardened.\n\n- Transcribes audio files using OpenAI’s Audio Transcriptions API (Whisper) with a secure curl-based shell script.\n- Requires `curl` and the `OPENAI_API_KEY` environment variable.\n- Includes a quick-start script and support for common flags (model, output, language, prompt, JSON output).\n- Offers extensive security guardrails to prevent API key leakage and limit file exposure.\n- Advises use of the wrapper script for authentication and input sanitization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa3fd0bae56bc0ce33cdc46493dc04eeca9324516326c33283b7c4ef39c350e2"
+}

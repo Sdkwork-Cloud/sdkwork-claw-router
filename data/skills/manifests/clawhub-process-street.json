@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32557,
+  "uuid": "skill-clawhub-process-street",
+  "skillKey": "clawhub-process-street",
+  "name": "Process Street",
+  "summary": "Process Street integration. Manage Organizations, Integrations. Use when the user wants to interact with Process Street data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.process_street",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Process Street integration",
+        "Manage Organizations, Integrations",
+        "Use when the user wants to interact with Process Street data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/process-street@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "process-street",
+      "url": "https://clawhub.ai/skills/process-street"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "process-street",
+    "url": "https://clawhub.ai/skills/process-street",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/process-street-960282b8111a4895.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/process-street@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-process-street-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9da8aeea5e3c4705974009a21af740b5b3c41898756217e267b728f8b8b2ca6a",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:53:07.079Z"
+}

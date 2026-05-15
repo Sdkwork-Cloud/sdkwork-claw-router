@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-amazon-appflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_amazon_appflow",
+  "skill": {
+    "id": 48443,
+    "skillKey": "clawhub-lap-amazon-appflow",
+    "name": "Lap Amazon Appflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-amazon-appflow",
+    "url": "https://clawhub.ai/skills/lap-amazon-appflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-amazon-appflow-b14475ba8b33bf49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon Appflow API skill. Use when working with Amazon Appflow for cancel-flow-executions, create-connector-profile, create-flow. Covers 25 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777888085044,
+      "changelog": "Initial release of lap-amazon-appflow skill.\n\n- Provides access to 25 Amazon AppFlow API endpoints, including flow management and connector profile operations.\n- Supports actions like creating, listing, describing, starting, stopping, and deleting flows and connector profiles.\n- AWS SigV4 authentication required (AMAZON_APPFLOW_API_KEY).\n- Includes tagging operations for flows.\n- Setup instructions included for authentication and sample endpoint calls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88dcffe159b06a4b014a4dcb27f53ac7bfbf44a77170822bc7167759c9e2e06e"
+}

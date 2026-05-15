@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-failure-registry@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_failure_registry",
+  "skill": {
+    "id": 16219,
+    "skillKey": "clawhub-agent-failure-registry",
+    "name": "Failure Registry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-failure-registry",
+    "url": "https://clawhub.ai/skills/agent-failure-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-failure-registry-0dd5e607dc5e8910.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the community-driven Agent Failure Registry for known agent errors, solutions, and lessons to debug issues or submit new failure post-mortems."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unleashedbelial",
+      "userId": "publishers:unleashedbelial",
+      "displayName": "unleashedbelial",
+      "image": "https://avatars.githubusercontent.com/u/258501946?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 892,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771089413280,
+      "changelog": "Initial release of the Failure Registry skill.\n\n- Search the Agent Failure Registry for known agent failures, solutions, and lessons learned.\n- Supports searching by category, keyword, and tags using the provided script.\n- Enables browsing curated and community-submitted post-mortems.\n- Allows users to submit new failure post-mortems via GitHub PR.\n- Includes clear documentation and usage examples for both searching and submitting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:548f8f7f0c3b4e9a084194b3a0f28fd85c027c3f91b6c8e8d3f686ed1065ef80"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26377,
+  "uuid": "skill-clawhub-banana-api",
+  "skillKey": "clawhub-banana-api",
+  "name": "Banana Api",
+  "summary": "Generate and edit images using Nano Banana (Gemini-3-Pro-Image-Preview) API. Handles automatic base64 encoding/decoding, image compression, and Discord integ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banana_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jasonboi",
+      "features": [
+        "Generate and edit images using Nano Banana (Gemini-3-Pro-Image-Preview) API",
+        "Handles automatic base64 encoding/decoding, image compression, and Discord integ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/banana-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45893232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "banana-api",
+      "url": "https://clawhub.ai/skills/banana-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banana-api",
+    "url": "https://clawhub.ai/skills/banana-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banana-api-a6e122b913cbd028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/banana-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-banana-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a563b185d51cd775fb228b3aef758bae01079cf0ac9007ad64f2cf6c0fcc7074",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:47:15.850Z"
+}

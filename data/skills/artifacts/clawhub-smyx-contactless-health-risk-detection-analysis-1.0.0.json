@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smyx-contactless-health-risk-detection-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_contactless_health_risk_detection_analysis",
+  "skill": {
+    "id": 57816,
+    "skillKey": "clawhub-smyx-contactless-health-risk-detection-analysis",
+    "name": "Contactless Health Risk Screening Tool | 非接触式健康风险检测分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-contactless-health-risk-detection-analysis",
+    "url": "https://clawhub.ai/skills/smyx-contactless-health-risk-detection-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-contactless-health-risk-detection-analysis-06b86cd30235bb1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Combines frontal facial image capture with multimodal physiological feature analysis to provide early risk screening and alerts for chronic and acute conditi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "18072937735",
+      "userId": "s17f8q65zg3y98t86jdg1177g583whq8",
+      "displayName": "smyx-skills",
+      "image": "https://avatars.githubusercontent.com/u/272124705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776160950874,
+      "changelog": "- Initial release of the Contactless Health Risk Detection & Analysis skill.\n- Provides early-stage risk screening and alerts for chronic and acute conditions (e.g., heart attack, stroke, hypertension, hyperlipidemia) by analyzing frontal facial images with multimodal physiological features.\n- Supports both local image/video uploads and internet video/image URLs for analysis.\n- Enforces strict data handling and privacy rules, including prohibition on reading local memory files; all report queries must use the cloud API.\n- Requires users to provide an open-id (via config file or direct input) before analysis or report retrieval; operation is paused and prompts the user if open-id is not available.\n- Returns structured reports and outputs historical report lists in a Markdown table with direct links to each cloud-based report.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:630517dafb3cb628c75372a9ace2c275f81d4e479606bf4f41a852eecf5610d5"
+}

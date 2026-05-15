@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38665,
+  "uuid": "skill-clawhub-homestruk-rent-comps",
+  "skillKey": "clawhub-homestruk-rent-comps",
+  "name": "Homestruk Rent Comps",
+  "summary": "Analyze rental comps and recommend rent pricing for Massachusetts properties. Use when user asks about rent pricing, market rent, comparable properties, rent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homestruk_rent_comps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adams Jean Baptiste",
+      "features": [
+        "Analyze rental comps and recommend rent pricing for Massachusetts properties",
+        "Use when user asks about rent pricing, market rent, comparable properties, rent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/homestruk-rent-comps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22421595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "homestruk-rent-comps",
+      "url": "https://clawhub.ai/skills/homestruk-rent-comps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homestruk-rent-comps",
+    "url": "https://clawhub.ai/skills/homestruk-rent-comps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homestruk-rent-comps-03f587ed8fefbe6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/homestruk-rent-comps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-homestruk-rent-comps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7489067e39ee838d66d828d352fa5a4b746d5d1a0e4f91b6349a50afcf44f907",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:32:35.462Z"
+}

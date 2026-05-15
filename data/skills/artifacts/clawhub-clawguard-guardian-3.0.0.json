@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawguard-guardian@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_guardian",
+  "skill": {
+    "id": 44364,
+    "skillKey": "clawhub-clawguard-guardian",
+    "name": "ClawGuard-Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-guardian",
+    "url": "https://clawhub.ai/skills/clawguard-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-guardian-ea6e86d12f02168e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawGuard Guardian v3 - Runtime guardian with behavior monitoring, interception, session freeze/replay, and emergency response"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stardreaming",
+      "userId": "s17861a46gwzndpth03w6nvv4d845chj",
+      "displayName": "stardreaming",
+      "image": "https://avatars.githubusercontent.com/u/160408334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1775293871995,
+      "changelog": "ClawGuard Guardian v3 initial release:\n\n- Introduces real-time monitoring, interception, session freeze/replay, and emergency response controls for AI agent operations.\n- Supports command, file, network, and prompt injection monitoring with risk-based rule sets and automated response actions.\n- Provides interactive commands to start monitoring, view status/logs, freeze/unfreeze sessions, and replay or export session timelines.\n- Implements audit logging with structured retention and export options.\n- Replaces the original threat detector with a new guardian-centric architecture focused on session management and immediate intervention.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29a1f8d734777fbbeeddd7a55602c9e97dc11dbe455e78dae53bbdcee1357c11"
+}

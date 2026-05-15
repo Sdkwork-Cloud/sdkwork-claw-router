@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36234,
+  "uuid": "skill-clawhub-ceridian-dayforce",
+  "skillKey": "clawhub-ceridian-dayforce",
+  "name": "Ceridian Dayforce",
+  "summary": "Ceridian Dayforce integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ceridian Dayforce data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ceridian_dayforce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Ceridian Dayforce integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ceridian Dayforce data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ceridian-dayforce@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ceridian-dayforce",
+      "url": "https://clawhub.ai/skills/ceridian-dayforce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ceridian-dayforce",
+    "url": "https://clawhub.ai/skills/ceridian-dayforce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ceridian-dayforce-932a558fabe83fd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ceridian-dayforce@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ceridian-dayforce-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:790d9c17b584101e0a7c86b122608e888312dda904f2d563e00b91187f4304d5",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:17:17.971Z"
+}

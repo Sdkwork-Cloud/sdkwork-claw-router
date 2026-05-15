@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13682,
+  "uuid": "skill-clawhub-parenting",
+  "skillKey": "clawhub-parenting",
+  "name": "Parenting",
+  "summary": "Help parents with age-appropriate guidance, behavior challenges, and avoiding common parenting advice pitfalls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parenting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Help parents with age-appropriate guidance, behavior challenges, and avoiding common parenting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parenting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parenting",
+      "url": "https://clawhub.ai/skills/parenting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parenting",
+    "url": "https://clawhub.ai/skills/parenting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parenting-0417928ae0601fd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parenting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-parenting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd3e445dabba19b1397847728976ad2dc4731ecc4303d9c8ab90f07d94933255",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T11:29:27.306Z"
+}

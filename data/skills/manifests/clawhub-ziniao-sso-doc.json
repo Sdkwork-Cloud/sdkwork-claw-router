@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63704,
+  "uuid": "skill-clawhub-ziniao-sso-doc",
+  "skillKey": "clawhub-ziniao-sso-doc",
+  "name": "ziniao-sso-doc",
+  "summary": "Use when 需要理解紫鸟单点登录 OpenAPI 的定位、能力、集成流程或接口清单， 用于 ERP 系统 SSO 对接规划、集成设计或接口评估。 不要用于直接查阅具体接口参数——查阅时读取 reference/ 下对应文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ziniao_sso_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ziniao-open",
+      "features": [
+        "Use when 需要理解紫鸟单点登录 OpenAPI 的定位、能力、集成流程或接口清单， 用于 ERP 系统 SSO 对接规划、集成设计或接口评估。 不要用于直接查阅具体接口参数——查阅时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ziniao-sso-doc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/106373185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ziniao-sso-doc",
+      "url": "https://clawhub.ai/skills/ziniao-sso-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ziniao-sso-doc",
+    "url": "https://clawhub.ai/skills/ziniao-sso-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ziniao-sso-doc-9c8899118519a2e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ziniao-sso-doc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ziniao-sso-doc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0cad7258206a03c7a68694daa9d87014660c34e20ce20c3223ab3c9a74820251",
+      "artifactSizeBytes": 2690
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:39:16.470Z"
+}

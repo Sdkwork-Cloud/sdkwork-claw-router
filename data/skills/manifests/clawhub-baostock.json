@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63949,
+  "uuid": "skill-clawhub-baostock",
+  "skillKey": "clawhub-baostock",
+  "name": "BaoStock",
+  "summary": "BaoStock 免费A股数据平台 - 支持K线、财务数据、行业分类查询，无需注册即可使用。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baostock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderwpf",
+      "features": [
+        "BaoStock 免费A股数据平台",
+        "支持K线、财务数据、行业分类查询，无需注册即可使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baostock@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134041140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baostock",
+      "url": "https://clawhub.ai/skills/baostock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baostock",
+    "url": "https://clawhub.ai/skills/baostock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baostock-cb4f9267fb864dbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baostock@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-baostock-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cb8fbb9e4f34f079745aa2934e4715815d41a6cd96d407f784ec6f8dcacc3d3",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:07:11.823Z"
+}

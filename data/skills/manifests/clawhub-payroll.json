@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22650,
+  "uuid": "skill-clawhub-payroll",
+  "skillKey": "clawhub-payroll",
+  "name": "Payroll",
+  "summary": "A comprehensive AI agent skill for managing payroll accurately and on time. Helps small business owners run payroll without a dedicated HR function, explains...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payroll",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agenticio",
+      "features": [
+        "A comprehensive AI agent skill for managing payroll accurately and on time",
+        "Helps small business owners run payroll without a dedicated HR function, explains..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payroll@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259287600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payroll",
+      "url": "https://clawhub.ai/skills/payroll"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payroll",
+    "url": "https://clawhub.ai/skills/payroll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payroll-60f91a742458ae60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payroll@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-payroll-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f9a63f1cedaa4efa6521ddd5dc1831aa3d9709b1d18babc0b52b3d78f6881c9",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:05:48.445Z"
+}

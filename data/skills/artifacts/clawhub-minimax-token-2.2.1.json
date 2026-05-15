@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-token@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_token",
+  "skill": {
+    "id": 61626,
+    "skillKey": "clawhub-minimax-token",
+    "name": "Minimax Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-token",
+    "url": "https://clawhub.ai/skills/minimax-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-token-979953141b502c4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检查 MiniMax API Token 剩余配额。支持定时检查并通过 Telegram 发送通知。适用于：查询 Token 余额、配置定时监控、设置余额不足提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sherlockfate",
+      "userId": "publishers:sherlockfate",
+      "displayName": "SherLockfate",
+      "image": "https://avatars.githubusercontent.com/u/23006770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1773283272489,
+      "changelog": "Version 2.2.1\n\n- No code or documentation changes detected in this release.\n- The skill remains functionally and descriptively the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9566643a6995cbb0ea2a19b28548bdd454d5c953925641a2e1daa30114fed71c"
+}

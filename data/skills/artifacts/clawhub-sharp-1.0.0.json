@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sharp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sharp",
+  "skill": {
+    "id": 65943,
+    "skillKey": "clawhub-sharp",
+    "name": "Sharp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sharp",
+    "url": "https://clawhub.ai/skills/sharp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sharp-632e93023886160a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供夏普公司概况、核心产品、创新技术和市场地位，涵盖液晶显示、家电及IGZO和Plasmacluster技术介绍。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776396342173,
+      "changelog": "Sharp 1.0.0 — 初始版本发布\n\n- 提供夏普公司全新概览，涵盖历史、核心产品、技术创新和市场地位\n- 详细介绍 AQUOS 电视、IGZO 显示屏和 Plasmacluster 等主要产品与专利技术\n- 展示被鸿海（富士康）收购及其对公司业务的影响\n- 列出公司关键信息（成立时间、总部、母公司、营收等）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:866d42ab0f97a61d7d20d685bddaa15f0f20d82b4e81618c4bfeb5440facf293"
+}

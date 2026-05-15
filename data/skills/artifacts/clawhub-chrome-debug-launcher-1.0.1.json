@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chrome-debug-launcher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_debug_launcher",
+  "skill": {
+    "id": 57884,
+    "skillKey": "clawhub-chrome-debug-launcher",
+    "name": "Chrome Debug Launcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-debug-launcher",
+    "url": "https://clawhub.ai/skills/chrome-debug-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-debug-launcher-2f33e2c1a18ffcdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch two independent Chrome browser instances — one normal and one with remote debugging enabled on port 9222. Activate when user says \"打开两个浏览器\", \"开调试浏览器\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengzongxin",
+      "userId": "s17av33vbv3hzz0wg9qjecz58x83j9m3",
+      "displayName": "chengzongxin",
+      "image": "https://avatars.githubusercontent.com/u/12250722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 743,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774410607438,
+      "changelog": "- Added _meta.json file for improved metadata management.\n- No changes to core functionality or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38efaddcdd7e30e0535bf5fc1c6af21dd83b3e36a10b71fdb20eab4a7a9f2433"
+}

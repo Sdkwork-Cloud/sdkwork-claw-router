@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedream5@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedream5",
+  "skill": {
+    "id": 64652,
+    "skillKey": "clawhub-seedream5",
+    "name": "Seedream5"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedream5",
+    "url": "https://clawhub.ai/skills/seedream5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedream5-621d711a3875b30c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用火山引擎豆包 Seedream 5.0 生成或编辑图片。支持文生图、单图/多图生图、组图、联网搜索。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zealman2025",
+      "userId": "s179psr4wbz5mgka1rmb3rs93583k5x2",
+      "displayName": "zealman2025",
+      "image": "https://avatars.githubusercontent.com/u/47205982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773113711075,
+      "changelog": "首次发布：火山引擎豆包 Seedream 5.0 图片生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47f2f983d53efccd332af72c75a7d68f0b0f04b5402b389f8031c67a2931a12e"
+}

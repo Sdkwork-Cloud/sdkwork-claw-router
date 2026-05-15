@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-player@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_player",
+  "skill": {
+    "id": 58681,
+    "skillKey": "clawhub-bilibili-player",
+    "name": "Bilibili Player"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-player",
+    "url": "https://clawhub.ai/skills/bilibili-player",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-player-ece60ab2130f1fa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B 站视频播放器。用 Playwright 搜索 B 站视频并获取准确链接，然后用 open 命令在当前浏览器打开播放。Use when users request to play Bilibili videos or search for specific content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "e421083458",
+      "userId": "publishers:e421083458",
+      "displayName": "niuyufu",
+      "image": "https://avatars.githubusercontent.com/u/13925430?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 970,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771706141336,
+      "changelog": "- Initial release of bilibili-player: a tool for searching and playing Bilibili videos via Playwright and the open command on macOS.\n- Supports movie, TV show, music, documentary, and tutorial searches using natural keywords.\n- Ensures accurate video retrieval by parsing Bilibili search results directly.\n- Automatically opens the found video in the user's current macOS browser with full login/cookie support.\n- Includes Python and shell scripts for flexible command-line usage.\n- Requires Python 3, Playwright, macOS, and network connection.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b982f4fa5913b490bd7f2b62ad5d01d5449229902d323d81401114a539d978ae"
+}

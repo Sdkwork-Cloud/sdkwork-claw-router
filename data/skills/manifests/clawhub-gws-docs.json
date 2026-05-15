@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14135,
+  "uuid": "skill-clawhub-gws-docs",
+  "skillKey": "clawhub-gws-docs",
+  "name": "Gws Docs",
+  "summary": "Read and write Google Docs.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Read and write Google Docs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-docs@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-docs",
+      "url": "https://clawhub.ai/skills/gws-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-docs",
+    "url": "https://clawhub.ai/skills/gws-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-docs-2d6bc88436b837b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-docs@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-docs-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c62ac78477e5c83bb40645e06abad7d42cdd35cb5a367671cde540388e85dc23",
+      "artifactSizeBytes": 1767
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:33:33.896Z"
+}

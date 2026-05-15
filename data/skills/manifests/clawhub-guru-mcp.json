@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10566,
+  "uuid": "skill-clawhub-guru-mcp",
+  "skillKey": "clawhub-guru-mcp",
+  "name": "Guru MCP",
+  "summary": "Access Guru knowledge base via MCP - ask AI questions, search documents, create drafts, and update cards. Connects to all your Guru sources including Slack, Drive, Confluence, and SharePoint.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guru_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pvoo",
+      "features": [
+        "Access Guru knowledge base via MCP",
+        "ask AI questions, search documents, create drafts, and update cards",
+        "Connects to all your Guru sources including Slack, Drive, Confluence, and SharePoint."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guru-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20116814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guru-mcp",
+      "url": "https://clawhub.ai/skills/guru-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guru-mcp",
+    "url": "https://clawhub.ai/skills/guru-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guru-mcp-122550c23468332d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guru-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guru-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edfacde89c74ec7b2ced75a8ab6b9cdfa61893e35b0e5fc955fbd81a25082596",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T14:57:28.841Z"
+}

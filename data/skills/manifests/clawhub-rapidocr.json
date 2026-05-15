@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26864,
+  "uuid": "skill-clawhub-rapidocr",
+  "skillKey": "clawhub-rapidocr",
+  "name": "RapidOCR",
+  "summary": "Extract text from local image files with RapidOCR. Use when the user wants OCR on a JPG, PNG, WEBP, BMP, or TIFF image and may want plain text or JSON output.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapidocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RapidAI",
+      "features": [
+        "Extract text from local image files with RapidOCR",
+        "Use when the user wants OCR on a JPG, PNG, WEBP, BMP, or TIFF image and may want plain text or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rapidocr@1.0.3",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/rapidocr/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rapidocr",
+      "url": "https://clawhub.ai/skills/rapidocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapidocr",
+    "url": "https://clawhub.ai/skills/rapidocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapidocr-1698c33fd6f49b5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rapidocr@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-rapidocr-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15ce330a2fa439070647364a2f7192922168e64fa4318f9db7ec9976582ce1b7",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:44:37.423Z"
+}

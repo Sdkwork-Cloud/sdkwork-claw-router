@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hummingbot-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hummingbot_deploy",
+  "skill": {
+    "id": 21091,
+    "skillKey": "clawhub-hummingbot-deploy",
+    "name": "Hummingbot Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hummingbot-deploy",
+    "url": "https://clawhub.ai/skills/hummingbot-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hummingbot-deploy-0da55e9768a01dfb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy Hummingbot trading infrastructure including API server, MCP server, and Condor Telegram bot. Use this skill when the user wants to install, deploy, se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengtality",
+      "userId": "s17e4dmyqswjyz0b64xsrbe1r585g65b",
+      "displayName": "Michael Feng",
+      "image": "https://avatars.githubusercontent.com/u/1795030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772228987395,
+      "changelog": "- Initial release of the hummingbot-deploy skill.\n- Deploys Hummingbot trading infrastructure, including Hummingbot API (required), MCP server (optional), and Condor Telegram bot (optional).\n- Provides detailed installation, environment check, configuration, and verification instructions for each component.\n- Includes troubleshooting steps and links to official documentation.\n- Designed to support both regular machines and containerized environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:245f7c6a6ce7034bca47792ed4e5c3073d77f1d2a41693b9bc75a2ef2265bf11"
+}

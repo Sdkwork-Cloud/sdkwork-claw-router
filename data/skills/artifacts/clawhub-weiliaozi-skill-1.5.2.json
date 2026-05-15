@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weiliaozi-skill@1.5.2",
+  "version": "1.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiliaozi_skill",
+  "skill": {
+    "id": 65442,
+    "skillKey": "clawhub-weiliaozi-skill",
+    "name": "尉缭子分析法 | Wei Liaozi Strategic Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiliaozi-skill",
+    "url": "https://clawhub.ai/skills/weiliaozi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiliaozi-skill-1dedcb210f9ed647.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "尉缭子战略分析法。使用时机：(1) 用户需要结构化战略分析 (2) 想避免冲动决策 (3) 问\"值不值得做/先做什么/对手会怎么反应\" (4) 商业判断、竞争分析、谈判准备、项目取舍。框架：本质 → 条件 → 得失 → 先后 → 对手，按顺序想，不跳步。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phoenixlucky",
+      "userId": "s17705e3p3j221cp70a66wbscd844f38",
+      "displayName": "Ethan Wilkins",
+      "image": "https://avatars.githubusercontent.com/u/73684172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.5.2",
+      "createdAt": 1777270355731,
+      "changelog": "Removed the old compatibility field name from README examples to avoid ClawHub static-scan false positives. Kept instructions as the documented host-facing field for ClawHub routing integration. Added direct historical route matches and tests for short prompts such as 秦灭亡, 楚汉相争, and 张良韩信与尉缭关系. Bumped the project version to 1.5.2.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f37c07936442c0022cbd300af1d5fe2e7cf22ac01edaec3552197584fbc0fa39"
+}

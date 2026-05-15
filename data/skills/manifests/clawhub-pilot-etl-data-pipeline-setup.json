@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43426,
+  "uuid": "skill-clawhub-pilot-etl-data-pipeline-setup",
+  "skillKey": "clawhub-pilot-etl-data-pipeline-setup",
+  "name": "Pilot Etl Data Pipeline Setup",
+  "summary": "Deploy a five-stage ETL data pipeline with 5 agents. Use this skill when: 1. User wants to set up an ETL or data processing pipeline 2. User is configuring a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_etl_data_pipeline_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a five-stage ETL data pipeline with 5 agents",
+        "Use this skill when: 1",
+        "User wants to set up an ETL or data processing pipeline 2",
+        "User is configuring a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-etl-data-pipeline-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-etl-data-pipeline-setup",
+      "url": "https://clawhub.ai/skills/pilot-etl-data-pipeline-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-etl-data-pipeline-setup",
+    "url": "https://clawhub.ai/skills/pilot-etl-data-pipeline-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-etl-data-pipeline-setup-ec90ae87d81836e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-etl-data-pipeline-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-etl-data-pipeline-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cdef8725393dd8eeb745dca5b21b320d4d0f80bd2995aed877d9cb65004b5fd",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:33:08.146Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openforge@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openforge",
+  "skill": {
+    "id": 51789,
+    "skillKey": "clawhub-openforge",
+    "name": "Openforge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openforge",
+    "url": "https://clawhub.ai/skills/openforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openforge-320c809922414d74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Staged, multi-model PRD execution for OpenClaw. Write a PRD with phased sections, model routing, and validation gates — OpenForge executes it across local an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "corbin-breton",
+      "userId": "s17e2d7wzt9cynyq8rc1g1bem583fhdd",
+      "displayName": "Corbin Breton",
+      "image": "https://avatars.githubusercontent.com/u/4294018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774843050722,
+      "changelog": "**Security and safety update for gate command handling.**\n\n- Strengthened PRD and workspace safety documentation to clarify trust model and secret handling.\n- Added a new `Shell-Gate: true` field to allow explicit opt-in for shell metacharacters in gate commands.\n- By default, OpenForge now validates and rejects gate commands containing shell metacharacters unless `Shell-Gate: true` is set for the phase.\n- Improved documentation on PRD review requirements and risks when running untrusted gate commands.\n- Updated the default “What OpenForge Does NOT Do” and safety sections to remove CLI/sandbox references and to highlight new validation steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0afa15a540c0425f3146631a5b385648c7257f4bf56a89e078118f6675436224"
+}

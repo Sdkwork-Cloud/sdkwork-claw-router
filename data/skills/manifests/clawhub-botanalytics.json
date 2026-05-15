@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32886,
+  "uuid": "skill-clawhub-botanalytics",
+  "skillKey": "clawhub-botanalytics",
+  "name": "Botanalytics",
+  "summary": "Botanalytics integration. Manage data, records, and automate workflows. Use when the user wants to interact with Botanalytics data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botanalytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Botanalytics integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Botanalytics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/botanalytics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "botanalytics",
+      "url": "https://clawhub.ai/skills/botanalytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botanalytics",
+    "url": "https://clawhub.ai/skills/botanalytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botanalytics-0fb743cc80be9f4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/botanalytics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-botanalytics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be33faf0f7e896120b2116deb3fd98d49493573be0323e8a2c2bd6e2e69356cd",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:14:48.158Z"
+}

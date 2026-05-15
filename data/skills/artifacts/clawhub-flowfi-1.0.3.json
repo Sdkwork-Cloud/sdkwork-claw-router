@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flowfi@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowfi",
+  "skill": {
+    "id": 27906,
+    "skillKey": "clawhub-flowfi",
+    "name": "FlowFi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowfi",
+    "url": "https://clawhub.ai/skills/flowfi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowfi-7975edd14767317e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "REST API instructions for FlowFi—authorization, smart accounts, workflows (AI generate, edit, deploy, undeploy, delete, pause, resume, stop), execution (list..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devarogundade",
+      "userId": "publishers:devarogundade",
+      "displayName": "devarogundade",
+      "image": "https://avatars.githubusercontent.com/u/81397790?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 936,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771242221313,
+      "changelog": "Summary: Documentation has been modularized by topic with new files for each major API group.\n\n- Split documentation into separate files: authorization, smart accounts, AI workflows, workflows, DTOs, execution, websocket, price, templates, and endpoint summary.\n- Added a documentation index in docs/README.md and provided links to each topic from the main SKILL.md.\n- Replaced inlined API instructions with references to the new topic-specific documentation files.\n- Updated quick entry points for common actions using the more modular documentation structure.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d36c8a92802f52031767c22edceef386f8f229cbca0372272f7a288b34625574"
+}

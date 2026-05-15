@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-fork-mode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_fork_mode",
+  "skill": {
+    "id": 61281,
+    "skillKey": "clawhub-lobster-fork-mode",
+    "name": "Lobster Fork Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-fork-mode",
+    "url": "https://clawhub.ai/skills/lobster-fork-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-fork-mode-511ad3affe97a851.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fork子Agent模式 — 子Agent继承父上下文。当需要子Agent了解父会话的关键上下文时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxiaofei860208-source",
+      "userId": "s17937syhc72vf48t0a5914v8d847evs",
+      "displayName": "wangxiaofei860208-source",
+      "image": "https://avatars.githubusercontent.com/u/260913269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775315219648,
+      "changelog": "lobster-fork-mode v1.0.0\n\n- Introduces fork mode to allow subAgents to inherit essential parent session context.\n- Defines a manual injection process for key parent context during subAgent spawn.\n- Provides structured templates for context collection, fork prompt generation, and session spawning.\n- Outlines practical context size management and truncation strategies.\n- Includes guidance for cache parameter consistency and scenarios best suited for fork mode.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c1fac8bc13ab9d5214e018729a058e09a068011121397f2caaf915d22222ff1"
+}

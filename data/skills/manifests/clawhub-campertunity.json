@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43939,
+  "uuid": "skill-clawhub-campertunity",
+  "skillKey": "clawhub-campertunity",
+  "name": "Campertunity",
+  "summary": "Search for campgrounds, check availability and book campsites across the entire world",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campertunity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jsuppers",
+      "features": [
+        "Search for campgrounds, check availability and book campsites across the entire world"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/campertunity@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34351874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "campertunity",
+      "url": "https://clawhub.ai/skills/campertunity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campertunity",
+    "url": "https://clawhub.ai/skills/campertunity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campertunity-6ad45bb150c6d534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/campertunity@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-campertunity-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ce2c5440dd65be65d5451cc61669e18f321d52eaaa9fef1f853fcdc5fec3d9e",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:25:16.046Z"
+}

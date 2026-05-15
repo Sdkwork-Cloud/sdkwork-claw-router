@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55025,
+  "uuid": "skill-clawhub-bigmodel-web-search-fallback",
+  "skillKey": "clawhub-bigmodel-web-search-fallback",
+  "name": "BigModel Web Search Fallback",
+  "summary": "Use Zhipu / BigModel web search as a non-invasive fallback when the built-in web_search route is unavailable, failing, or the user explicitly wants 智谱 / BigM...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigmodel_web_search_fallback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gxhdky2345",
+      "features": [
+        "Use Zhipu / BigModel web search as a non-invasive fallback when the built-in web_search route i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bigmodel-web-search-fallback@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21243690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bigmodel-web-search-fallback",
+      "url": "https://clawhub.ai/skills/bigmodel-web-search-fallback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigmodel-web-search-fallback",
+    "url": "https://clawhub.ai/skills/bigmodel-web-search-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigmodel-web-search-fallback-0134909980ebfef5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bigmodel-web-search-fallback@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bigmodel-web-search-fallback-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c57a293e582b6241c9f07e0d1742841a7ac5e5a32ecb3e2b9cd503a3fe5e58e",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:18:55.342Z"
+}

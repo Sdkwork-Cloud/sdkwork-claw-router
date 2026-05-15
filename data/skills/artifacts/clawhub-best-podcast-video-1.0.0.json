@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-podcast-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_podcast_video",
+  "skill": {
+    "id": 46914,
+    "skillKey": "clawhub-best-podcast-video",
+    "name": "Best Podcast Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-podcast-video",
+    "url": "https://clawhub.ai/skills/best-podcast-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-podcast-video-6d745ab01e9aecaa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert audio or video files into polished podcast videos with this skill. Works with MP3, MP4, WAV, MOV files up to 500MB. podcasters use it for converting..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775975666558,
+      "changelog": "- Initial release of \"Best Podcast Video\" for converting podcast audio or video files into polished 1080p MP4 videos.\n- Supports MP3, MP4, WAV, and MOV files up to 500MB.\n- Fast cloud GPU processing; typical video conversion completes in 1–2 minutes.\n- Handles user workflows including uploads, timeline editing, and exports via simple chat prompts.\n- Free, anonymous sessions available with 100 credits and a 7-day expiry.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:740219b21a4750634e08938ce91dfd26f9b4d5ef0c31c3d2371ca28a9b821c27"
+}

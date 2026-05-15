@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-cli-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_cli_skills",
+  "skill": {
+    "id": 45652,
+    "skillKey": "clawhub-playwright-cli-skills",
+    "name": "Playwright Cli Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-cli-skills",
+    "url": "https://clawhub.ai/skills/playwright-cli-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-cli-skills-1048a7d3ef7b7ad6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate browser interactions, test web pages and work with Playwright tests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinqian598188460",
+      "userId": "s179286y1vh6yjg3jqska2gy1h83hjmn",
+      "displayName": "xinqian598188460",
+      "image": "https://avatars.githubusercontent.com/u/23734502?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776162443274,
+      "changelog": "Initial release of playwright-cli skill.\n\n- Automate browser interactions and web page testing using the Playwright CLI.\n- Supports commands for navigation, input, mouse, keyboard, tabs, storage, network, and browser sessions.\n- Includes snapshotting, screenshots, PDF generation, and raw output options for advanced workflows.\n- Provides options for working with cookies, localStorage, sessionStorage, and browser profiles.\n- Offers support for multi-tab browsing, session management, and DevTools commands.\n- Installation instructions for both global and local CLI usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6330536df3cb274dd3b9d1eb3b47dfd1d89a91969742d29a1de82ec49ad77a52"
+}

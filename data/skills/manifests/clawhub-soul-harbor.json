@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22623,
+  "uuid": "skill-clawhub-soul-harbor",
+  "skillKey": "clawhub-soul-harbor",
+  "name": "Soul Harbor",
+  "summary": "Stop talking to a robot. Give your OpenClaw agent a soul that truly cares.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_harbor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoborlon-alpha",
+      "features": [
+        "Stop talking to a robot",
+        "Give your OpenClaw agent a soul that truly cares."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-harbor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235118954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-harbor",
+      "url": "https://clawhub.ai/skills/soul-harbor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-harbor",
+    "url": "https://clawhub.ai/skills/soul-harbor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-harbor-a6741986efc8b174.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-harbor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-harbor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37bb5807e76b8e21c5f764e0718c2c4fcadad618a03b9deaa05d68593efcd71f",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:34:19.122Z"
+}

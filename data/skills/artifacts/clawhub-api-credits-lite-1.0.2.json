@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-credits-lite@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_credits_lite",
+  "skill": {
+    "id": 17948,
+    "skillKey": "clawhub-api-credits-lite",
+    "name": "API Credit Health Bar Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-credits-lite",
+    "url": "https://clawhub.ai/skills/api-credits-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-credits-lite-42599090dfce2262.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Display API credit balances for 5 core providers (Anthropic, OpenAI, OpenRouter, Mistral, Groq) with video game style health bars. API auto-checks and manual..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "franciscobuiltdat",
+      "userId": "publishers:franciscobuiltdat",
+      "displayName": "FranciscoBuiltDat",
+      "image": "https://avatars.githubusercontent.com/u/260347361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 731,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771874002263,
+      "changelog": "- Updated skill usage instructions to provide clear, conversational guidance for when and how to check, sync, or top up API credits.\n- Added explicit trigger examples for each feature, including manual and API-based balance updates.\n- Specified which providers support API auto-check (OpenAI, OpenRouter, Vercel) and which require manual sync.\n- Included troubleshooting tips for empty configuration and first-time setup.\n- Clarified upgrade path to api-credits-pro for advanced needs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e2a64c654183d084206c9ea6428d0e42ba519ce54e13799ae73f1d467d845fcf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pincaimao-mock-interview@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_mock_interview",
+  "skill": {
+    "id": 58002,
+    "skillKey": "clawhub-pincaimao-mock-interview",
+    "name": "聘才猫（Pincaimao）模拟面试"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-mock-interview",
+    "url": "https://clawhub.ai/skills/pincaimao-mock-interview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-mock-interview-81f7b9b9ab52c608.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聘才猫 - 模拟面试 Use when calling Pincaimao Mock Interview API to simulate a real interview scenario with multi-turn conversation. Supports text and video modes, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pincaimao",
+      "userId": "s1713pekdpzv03xf9a2xmpv2y183mkb1",
+      "displayName": "聘才猫（Pincaimao）",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775114533088,
+      "changelog": "- Added guidance on how to obtain a free API key, including an invite link.\n- No changes to functionality or API—documentation only update.\n- Version bumped to 1.0.1.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d63430bfa38be28aa8a8c4f71d11abf210137356621b7409e61413d9e3b5a90"
+}

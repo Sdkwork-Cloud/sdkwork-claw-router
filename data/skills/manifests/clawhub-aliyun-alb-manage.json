@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43625,
+  "uuid": "skill-clawhub-aliyun-alb-manage",
+  "skillKey": "clawhub-aliyun-alb-manage",
+  "name": "Aliyun Alb Manage",
+  "summary": "Use when managing and troubleshoot Alibaba Cloud ALB (Application Load Balancer), including the user asks to inspect, create, change, or debug ALB instances,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_alb_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when managing and troubleshoot Alibaba Cloud ALB (Application Load Balancer), including the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-alb-manage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-alb-manage",
+      "url": "https://clawhub.ai/skills/aliyun-alb-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-alb-manage",
+    "url": "https://clawhub.ai/skills/aliyun-alb-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-alb-manage-3569fd4af5abf3e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-alb-manage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-alb-manage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eebb86046686f2f8c92fe885af48c1abe8cf1178314855456230aba9c26a353c",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:17:34.845Z"
+}

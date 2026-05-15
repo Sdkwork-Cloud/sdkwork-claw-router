@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-couplet-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_couplet_query",
+  "skill": {
+    "id": 72072,
+    "skillKey": "clawhub-jike-couplet-query",
+    "name": "中文对联查询 - 即刻数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-couplet-query",
+    "url": "https://clawhub.ai/skills/jike-couplet-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-couplet-query-29a30b84188bcf72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文对联查询。支持按上联或下联关键词搜索，也支持随机返回对联。 适用场景：用户要求搜索、随机推荐或解释相关中文内容时使用。数据由即刻数据（jikeapi.cn）开放接口提供。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jikeapi-cn",
+      "userId": "s1748e0m2nvjyq8jm7s2y4man185q081",
+      "displayName": "jikeapi",
+      "image": "https://avatars.githubusercontent.com/u/26078515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777445475406,
+      "changelog": "首次发布中文对联查询 - 即刻数据 Skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00894ee9670f7f62965929394026bbd567f916849c636065abdd98e3e43858df"
+}

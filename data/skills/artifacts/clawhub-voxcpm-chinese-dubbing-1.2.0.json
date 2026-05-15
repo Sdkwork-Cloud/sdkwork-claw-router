@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voxcpm-chinese-dubbing@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voxcpm_chinese_dubbing",
+  "skill": {
+    "id": 66091,
+    "skillKey": "clawhub-voxcpm-chinese-dubbing",
+    "name": "Video Dubbing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voxcpm-chinese-dubbing",
+    "url": "https://clawhub.ai/skills/voxcpm-chinese-dubbing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voxcpm-chinese-dubbing-6d8df72073df857b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎯 **唯一使用VoxCPM的中文配音技能** - 外语视频一键中文配音，支持硬字幕检测、断点续传、智能BGM。触发场景：(1) 用户需要给外语视频配音 (2) 视频翻译需求 (3) 多语言内容本地化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newaiguy",
+      "userId": "s176zqcw03n2wnp2q2g7rbn4rs83g8kh",
+      "displayName": "Newaiguy",
+      "image": "https://avatars.githubusercontent.com/u/97015274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774908773456,
+      "changelog": "voxcpm-chinese-dubbing 1.2.0 Changelog\n\n- Version bump to 1.2.0 without any file changes or documentation updates.\n- No new features, fixes, or modifications detected in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9c1308fc67e6fc44d8a22bb37e040cd2f875943ec0a6c446710648c73b2e0ad"
+}

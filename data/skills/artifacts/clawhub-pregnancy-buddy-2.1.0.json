@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pregnancy-buddy@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pregnancy_buddy",
+  "skill": {
+    "id": 69407,
+    "skillKey": "clawhub-pregnancy-buddy",
+    "name": "孕期搭子 Pregnancy Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pregnancy-buddy",
+    "url": "https://clawhub.ai/skills/pregnancy-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pregnancy-buddy-7cae649e24606f88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "孕期搭子 - 面向孕期妈妈的全程AI陪伴助手。支持产检报告解读（NT/唐筛/糖耐/大排畸等8项）、30+种食物安全查询、10月营养食谱（协和医院+中国营养学会）、周末备餐方案、宝宝发育可视化、关键时间线管理、情绪陪伴。基于真实孕妈对话记录优化的Gemini风格交互。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iriswong31",
+      "userId": "s176f2n304y9j0a5b6mnn8smqn840hhe",
+      "displayName": "iriswong31",
+      "image": "https://avatars.githubusercontent.com/u/192711691?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1775014800119,
+      "changelog": "v2.1: 主动推送引擎（不等用户问）+ 每月给宝宝的信自动生成 + 产检主动提醒(7天/3天/当天) + 餐食时间感知推荐 + 里程碑自动播报",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc635cd98d56be30c5627a939a54fddf5c043ae425de53a6b5afd4662f04e5be"
+}

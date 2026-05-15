@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-relay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_relay",
+  "skill": {
+    "id": 51164,
+    "skillKey": "clawhub-claw-relay",
+    "name": "Claw Relay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-relay",
+    "url": "https://clawhub.ai/skills/claw-relay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-relay-409d08fbc0325842.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route AI agent traffic through a residential IP using Tailscale exit nodes — no custom code, no proxies, just WireGuard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicholaslocascio",
+      "userId": "publishers:nicholaslocascio",
+      "displayName": "Nick Locascio",
+      "image": "https://avatars.githubusercontent.com/u/2542033?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772157682122,
+      "changelog": "claw-relay 1.0.0\n\n- Initial release of claw-relay.\n- Enables routing AI agent traffic through a residential IP using Tailscale exit nodes (WireGuard tunnel) — no custom relay or proxy required.\n- Provides setup instructions for both Residential Node (exit node) and Cloud Node (VPS).\n- Includes troubleshooting steps, architecture overview, and advanced options for ACLs and self-hosting with Headscale.\n- No changes to agent code required; network routing is fully transparent.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6bce54de61a2050db11978255f5a0df9fdf9b27bb5cfe7eaa2cdd17a30e96a9e"
+}

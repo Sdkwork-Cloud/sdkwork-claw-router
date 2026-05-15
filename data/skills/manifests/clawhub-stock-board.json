@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73088,
+  "uuid": "skill-clawhub-stock-board",
+  "skillKey": "clawhub-stock-board",
+  "name": "股票打板筛选",
+  "summary": "筛选A股市场中当日及昨日涨停和强势股票，并统计各板块涨停数量，支持创业板和科创板筛选。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_board",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrBlackerX",
+      "features": [
+        "筛选A股市场中当日及昨日涨停和强势股票，并统计各板块涨停数量，支持创业板和科创板筛选。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-board@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46913471?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-board",
+      "url": "https://clawhub.ai/skills/stock-board"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-board",
+    "url": "https://clawhub.ai/skills/stock-board",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-board-e2c0b787067d954b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-board@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-board-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fecbbc4a622e464b81a399c0166d09ce0ebd849d27a51dfe0f20d41c55c621eb",
+      "artifactSizeBytes": 2152
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:39:11.520Z"
+}

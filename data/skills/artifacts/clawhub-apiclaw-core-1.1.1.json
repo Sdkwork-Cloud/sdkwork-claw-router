@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apiclaw-core@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apiclaw_core",
+  "skill": {
+    "id": 34908,
+    "skillKey": "clawhub-apiclaw-core",
+    "name": "Apiclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apiclaw-core",
+    "url": "https://clawhub.ai/skills/apiclaw-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apiclaw-core-b2ff006b4325f82d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "General overview, 11 API endpoints. AI-powered commerce data infrastructure with 200M+ Amazon products. Endpoints: category browsing, market metrics, product..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apiclaw",
+      "userId": "s17081rahwfg1emrhs1pmfhmq984gan3",
+      "displayName": "apiclaw",
+      "image": "https://avatars.githubusercontent.com/u/268545826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776083776801,
+      "changelog": "- Added author and homepage fields to SKILL metadata for improved attribution and discoverability.\n- Bumped version to 1.1.1.\n- No changes to functionality or API endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c06e13b29f24081f867c7afd7ed00d87d07272ea4cb08683da356d6c70990894"
+}

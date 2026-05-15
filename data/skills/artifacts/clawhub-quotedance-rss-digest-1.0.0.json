@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quotedance-rss-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quotedance_rss_digest",
+  "skill": {
+    "id": 63966,
+    "skillKey": "clawhub-quotedance-rss-digest",
+    "name": "quotedance-rss-digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quotedance-rss-digest",
+    "url": "https://clawhub.ai/skills/quotedance-rss-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quotedance-rss-digest-2ee93a127311077a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聚合已启用订阅源的RSS资讯，支持按源名关键词过滤，返回最近几天内最新文章的Markdown列表，含本地缓存。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yoocky",
+      "userId": "publishers:yoocky",
+      "displayName": "yoocky",
+      "image": "https://avatars.githubusercontent.com/u/3873111?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773919411611,
+      "changelog": "Initial release of quotedance-rss-digest:  \n- Aggregates recent feed articles from your quotedance-service subscriptions using local RSSHub, outputting Markdown summaries.\n- Supports filtering by source name keyword (e.g., \"only 少数派\").\n- Includes local caching with configurable TTL for both articles and feed lists.\n- Offers CLI script with parameters for days, limit, source filtering, and cache control.\n- Configuration via `config.json` for API URLs, keys, defaults, and TTLs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0f6196ef684987b7ed117002c255692958834a8f3ab695f1471856ee6ce8db8"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11862,
+  "uuid": "skill-clawhub-sportsbet-advisor",
+  "skillKey": "clawhub-sportsbet-advisor",
+  "name": "Sportsbet Advisor",
+  "summary": "Provide informed opinions and educated guesses on sports bets from Sportsbet. Use when asked to research a specific bet, analyze relevant data (both current and historical), and predict a potential outcome. Always include a disclaimer that.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sportsbet_advisor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TVDOfficial",
+      "features": [
+        "Provide informed opinions and educated guesses on sports bets from Sportsbet",
+        "Use when asked to research a specific bet, analyze relevant data (both current and historical),.",
+        "Always include a disclaimer that the prediction is an educated guess and may be incorrect",
+        "**When assessing an outcome, provide a confidence level, ensuring it never exceeds 95%.**"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sportsbet-advisor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27910650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sportsbet-advisor",
+      "url": "https://clawhub.ai/skills/sportsbet-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sportsbet-advisor",
+    "url": "https://clawhub.ai/skills/sportsbet-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sportsbet-advisor-b10f5776ec9fedd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sportsbet-advisor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sportsbet-advisor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2dfb3f0b5d70306662dd0e114bde61682fe24ac4ea9e818f0d9fc053177881b6",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T15:11:22.416Z"
+}

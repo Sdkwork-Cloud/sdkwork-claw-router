@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35803,
+  "uuid": "skill-clawhub-freeagent",
+  "skillKey": "clawhub-freeagent",
+  "name": "Freeagent",
+  "summary": "Freeagent integration. Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more. Use when the user wants to interact with Freeagent data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freeagent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Freeagent integration",
+        "Manage Deals, Persons, Organizations, Leads, Projects, Pipelines and more",
+        "Use when the user wants to interact with Freeagent data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freeagent@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freeagent",
+      "url": "https://clawhub.ai/skills/freeagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freeagent",
+    "url": "https://clawhub.ai/skills/freeagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freeagent-6cc54df2990a805c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freeagent@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-freeagent-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6c62e50c09826a09663d881059bab83f820d5576240a0ed511fe5f17e937b13",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:41:48.247Z"
+}

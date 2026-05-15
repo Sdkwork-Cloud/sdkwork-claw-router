@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-description-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_description_generator",
+  "skill": {
+    "id": 10833,
+    "skillKey": "clawhub-product-description-generator",
+    "name": "Product Description Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-description-generator",
+    "url": "https://clawhub.ai/skills/product-description-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-description-generator-325a77000ebc23ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate SEO-optimized product descriptions for e-commerce platforms (Amazon, Shopify, eBay, Etsy). Create compelling, conversion-focused copy with keywords, features, benefits, and calls-to-action. Use when creating product listings, opti."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michael-laffin",
+      "userId": "s172763bq8hk878ptgz2a77cqn83j1f6",
+      "displayName": "Michael-laffin",
+      "image": "https://avatars.githubusercontent.com/u/133843289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1983,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770215436526,
+      "changelog": "Initial release: Generate SEO-optimized product descriptions for Amazon, Shopify, eBay, Etsy with platform-specific optimization",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f5c0850fe7bd6e9c0a44408b842f59b3ef374eeeda9bab9b848bba03fa380f9"
+}

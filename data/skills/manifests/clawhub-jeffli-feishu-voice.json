@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57249,
+  "uuid": "skill-clawhub-jeffli-feishu-voice",
+  "skillKey": "clawhub-jeffli-feishu-voice",
+  "name": "飞书语音回复",
+  "summary": "Generate Feishu-native voice replies with a playable pause/resume bar by synthesizing text, converting it with ffmpeg to Ogg/Opus, and sending it as a voice...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jeffli_feishu_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeffli2002",
+      "features": [
+        "Generate Feishu-native voice replies with a playable pause/resume bar by synthesizing text, con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jeffli-feishu-voice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212463878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jeffli-feishu-voice",
+      "url": "https://clawhub.ai/skills/jeffli-feishu-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jeffli-feishu-voice",
+    "url": "https://clawhub.ai/skills/jeffli-feishu-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jeffli-feishu-voice-5081f4ba94238c0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jeffli-feishu-voice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jeffli-feishu-voice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:303cdf34ac384165cbe40b9875aa17f6f1fe1dfbc5a75dfebb0826c53d99ba3d",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:49:03.555Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dalong-session-logs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dalong_session_logs",
+  "skill": {
+    "id": 48674,
+    "skillKey": "clawhub-dalong-session-logs",
+    "name": "Dalong Session Logs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dalong-session-logs",
+    "url": "https://clawhub.ai/skills/dalong-session-logs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dalong-session-logs-da1941464e2e9180.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and analyze your own session logs (older/parent conversations) using jq."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1yihui",
+      "userId": "s17dkj69epg7yy8vn06c46hemn85dcap",
+      "displayName": "辉哥",
+      "image": "https://avatars.githubusercontent.com/u/197358991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778078148818,
+      "changelog": "- Initial release of the session-logs skill.\n- Enables searching and analyzing your session logs using jq and ripgrep.\n- Provides detailed usage instructions and example queries for listing, searching, and summarizing conversation histories.\n- Documents session log storage location and file structure.\n- Includes tips for efficient usage and handling large or deleted session files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b8dfccd4b93ff71f9b1efa0894fcda8000dafbef59e3ca3572060f73a989d00"
+}

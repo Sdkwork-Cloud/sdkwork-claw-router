@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29750,
+  "uuid": "skill-clawhub-auto-updater-openclaw",
+  "skillKey": "clawhub-auto-updater-openclaw",
+  "name": "OpenClaw Auto-Updater",
+  "summary": "Automatically keep OpenClaw and installed workspace skills up to date using native OpenClaw commands. Use when the user wants automatic update checks, schedu...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZDY2019",
+      "features": [
+        "Automatically keep OpenClaw and installed workspace skills up to date using native OpenClaw com.",
+        "Use when the user wants automatic update checks, schedu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-updater-openclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55227405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-updater-openclaw",
+      "url": "https://clawhub.ai/skills/auto-updater-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-openclaw",
+    "url": "https://clawhub.ai/skills/auto-updater-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-openclaw-bead93d365fe1659.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-updater-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-updater-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2d9ffdeb9345c422aac15f5a73a2e2cebd5c924a8e5a20a7a360df98b1a54f1",
+      "artifactSizeBytes": 2193
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:23:57.416Z"
+}

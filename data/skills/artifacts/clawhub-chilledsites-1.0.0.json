@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chilledsites@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chilledsites",
+  "skill": {
+    "id": 14586,
+    "skillKey": "clawhub-chilledsites",
+    "name": "ChilledSites"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chilledsites",
+    "url": "https://clawhub.ai/skills/chilledsites",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chilledsites-f5025d6f8885f88a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered website generation and deployment. Generate, edit, and deploy websites to .chilledsites.com in seconds."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulgosnell",
+      "userId": "publishers:paulgosnell",
+      "displayName": "paulgosnell",
+      "image": "https://avatars.githubusercontent.com/u/615605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770583678929,
+      "changelog": "Initial release of ChilledSites skill—AI-powered website generation and deployment.\n\n- Instantly generate, edit, and deploy websites via REST API; no browser or human setup required.\n- Free account creation with 10,000 tokens for OpenClaw agents (supports 2 website generations).\n- Deploy live to `*.chilledsites.com` subdomains.\n- Supports uploading custom HTML, CSS, JS, or AI-generated sites from text prompts.\n- Features include token balance checks, AI image generation, and listing all existing sites.\n- Extensive examples and clear usage constraints provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca7a054c100dba6105b9d8263f8fd0c46bd20644047ab8a53b57c7af5500abc4"
+}

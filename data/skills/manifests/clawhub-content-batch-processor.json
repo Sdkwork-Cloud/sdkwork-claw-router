@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70780,
+  "uuid": "skill-clawhub-content-batch-processor",
+  "skillKey": "clawhub-content-batch-processor",
+  "name": "content-batch-processor（批量内容处理工具，支持文本格式化、摘要生成、关键词提取、文件格式转换等批处理操作，提升内容工作效率。）",
+  "summary": "批量内容处理工具，支持文本格式化、摘要生成、关键词提取、多语言翻译等批量操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_batch_processor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "careytian",
+      "features": [
+        "批量内容处理工具，支持文本格式化、摘要生成、关键词提取、多语言翻译等批量操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-batch-processor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264030747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-batch-processor",
+      "url": "https://clawhub.ai/skills/content-batch-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-batch-processor",
+    "url": "https://clawhub.ai/skills/content-batch-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-batch-processor-c69baba4136f25a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-batch-processor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-batch-processor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d8f1d3b8cbc9031d7e1326f853257ff708b31d96cff49674b04da0f268a8db3",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:23:28.027Z"
+}

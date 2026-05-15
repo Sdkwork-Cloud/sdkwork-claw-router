@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17992,
+  "uuid": "skill-clawhub-super-search",
+  "skillKey": "clawhub-super-search",
+  "name": "super-search",
+  "summary": "Performs simultaneous searches across Tavily, Brave, DuckDuckGo, and Google, aggregates and deduplicates results, then presents the top relevant links with s...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "runawaydevil",
+      "features": [
+        "Performs simultaneous searches across Tavily, Brave, DuckDuckGo, and Google, aggregates and ded."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-search@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8763225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-search",
+      "url": "https://clawhub.ai/skills/super-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-search",
+    "url": "https://clawhub.ai/skills/super-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-search-88b0fe15043e2cfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-search@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-search-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35e3c09c1cd1e0b4cf92b82fe7a80f1d8845fe87da809b98198dd9fd7ac22a7f",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:05:03.545Z"
+}

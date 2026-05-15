@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apm-performance-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apm_performance_analysis",
+  "skill": {
+    "id": 60663,
+    "skillKey": "clawhub-apm-performance-analysis",
+    "name": "腾讯云APM性能分析skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apm-performance-analysis",
+    "url": "https://clawhub.ai/skills/apm-performance-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apm-performance-analysis-66c6b47a14bc424d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "APM 性能分析工具，通过 MCP 桥接连接腾讯云 APM Server，提供业务系统查询、实例详情、性能指标分析、调用链追踪、火焰图查看等能力。Trigger when user mentions APM, 性能分析, application performance, 业务系统, APM 实例, 调用链, 火焰..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "doycc",
+      "userId": "s178fj0ycqz81sydhcckgkkr1s83gmmd",
+      "displayName": "doycc",
+      "image": "https://avatars.githubusercontent.com/u/169504674?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775544859663,
+      "changelog": "apm-performance-analysis v1.0.0\n\n- 首次发布：通过 MCP 桥接集成腾讯云 APM Server，实现业务系统查询、实例详情、性能指标分析、调用链追踪、火焰图查看等核心功能。\n- 强制规范：全面支持移动端（如企业微信），严禁创建/删除临时文件，全部数据在对话中直接处理。\n- 通过 .env 文件管理腾讯云凭证，自动加密传输，确保安全合规，绝不回显/硬编码密钥。\n- 所有操作需通过 venv_manager.py 脚本在虚拟环境内完成，避免污染主环境。\n- 丰富文档：附带交互规范、凭证配置教程、错误排查指南和高级用法说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edd105b7592f30ea54e0982aa8ea3ad9a0499cb8ed43fee83bc917ad454c9e9f"
+}

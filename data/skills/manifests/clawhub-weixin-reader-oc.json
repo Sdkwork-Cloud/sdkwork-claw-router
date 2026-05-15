@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65903,
+  "uuid": "skill-clawhub-weixin-reader-oc",
+  "skillKey": "clawhub-weixin-reader-oc",
+  "name": "Weixin Reader",
+  "summary": "读取微信公众号文章内容。当用户发送微信公众号文章链接（mp.weixin.qq.com）时，使用此 skill 提取文章完整文字内容。此工具不需要登录即可提取微信文章，是读取微信文章的最佳方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_reader_oc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SuperChao",
+      "features": [
+        "读取微信公众号文章内容。当用户发送微信公众号文章链接（mp.weixin.qq.com）时，使用此 skill 提取文章完整文字内容。此工具不需要登录即可提取微信文章，是读取微信文章的最佳方."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-reader-oc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11920742?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-reader-oc",
+      "url": "https://clawhub.ai/skills/weixin-reader-oc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-reader-oc",
+    "url": "https://clawhub.ai/skills/weixin-reader-oc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-reader-oc-dc92a4925060f020.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-reader-oc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-reader-oc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:719be916e99cb9dd9baa7f78b24ef55f73af6a4a0d2bbbf9240f58815421211b",
+      "artifactSizeBytes": 2351
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T13:42:25.878Z"
+}

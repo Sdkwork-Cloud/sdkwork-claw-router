@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20104,
+  "uuid": "skill-clawhub-yandex-tracker",
+  "skillKey": "clawhub-yandex-tracker",
+  "name": "Yandex Tracker",
+  "summary": "Work with Yandex Tracker (issues, queues, comments, attachments, links, search, bulk operations) via Python yandex_tracker_client. Use when the user asks to...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Артём Ковальчук",
+      "features": [
+        "Work with Yandex Tracker (issues, queues, comments, attachments, links, search, bulk operations.",
+        "Use when the user asks to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandex-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141329922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandex-tracker",
+      "url": "https://clawhub.ai/skills/yandex-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-tracker",
+    "url": "https://clawhub.ai/skills/yandex-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-tracker-80148f357a61721f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandex-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandex-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74f3c786f9f01dd2936f7fe219e4dd88162dbfabc063010fbb47902e2bec944e",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T20:55:06.714Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallet-skills@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_skills",
+  "skill": {
+    "id": 12125,
+    "skillKey": "clawhub-wallet-skills",
+    "name": "Sponge Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-skills",
+    "url": "https://clawhub.ai/skills/wallet-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-skills-0b1224a790ca5a30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage crypto wallets, transfers, swaps, and balances via the Sponge Wallet API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rishabluthra",
+      "userId": "publishers:rishabluthra",
+      "displayName": "Rishab Luthra",
+      "image": "https://avatars.githubusercontent.com/u/12266349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1905,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770508632589,
+      "changelog": "- Major expansion of supported endpoints: added Polymarket trading, Amazon checkout and search, and x402 service discovery.\n- API now supports \"agent-first\" registration mode, enabling instant API key issuance before human claim.\n- Balance endpoint now includes Polymarket USDC.e balances.\n- Standard credential storage updated to optionally include `claimCode` and `claimUrl`.\n- Registration instructions and claim flow documentation expanded for clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66beb00e0176ce99ce51deca6b7dbc468bc99458f975096c0de0db5e6e42236f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-video-gen@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_video_gen",
+  "skill": {
+    "id": 61161,
+    "skillKey": "clawhub-seedance-video-gen",
+    "name": "Seedance Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-video-gen",
+    "url": "https://clawhub.ai/skills/seedance-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-video-gen-956265461b6724e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用字节跳动 Seedance 生成 AI 视频：文生视频、图生视频（首帧/首尾帧/参考图）、 异步任务查询。支持 Seedance 2.0（多模态输入、视频续生、视频编辑）等多个模型。 Use when: (1) 用户说\"生成视频\"/\"做个视频\"/\"AI视频\"/\"text to video\", (2) 用户要求..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovensky1992-wk",
+      "userId": "s17dsprt4znvnqphy9hhy68va983nsqs",
+      "displayName": "lovensky1992-wk",
+      "image": "https://avatars.githubusercontent.com/u/264908128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 590,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778048951655,
+      "changelog": "Weekly sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca3c517b02a24513ed7290169507af363ae3f4996e1ea60ea241a6bbf9e929d7"
+}

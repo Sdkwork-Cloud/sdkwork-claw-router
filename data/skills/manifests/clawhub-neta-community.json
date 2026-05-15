@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51228,
+  "uuid": "skill-clawhub-neta-community",
+  "skillKey": "clawhub-neta-community",
+  "name": "Neta Community",
+  "summary": "Neta API community skill — browse interactive feeds, view collection details, like and interact with content, and browse content by tags and characters in a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neta_community",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hu Xiuhan",
+      "features": [
+        "Neta API community skill — browse interactive feeds, view collection details, like and interact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neta-community@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1184998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neta-community",
+      "url": "https://clawhub.ai/skills/neta-community"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neta-community",
+    "url": "https://clawhub.ai/skills/neta-community",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neta-community-d62b2a3e3bfcc21e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neta-community@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neta-community-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff0f0398900e1eb5a16f4eb11a3a55926b9337e9099ff62242fa829da6249111",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:17:02.973Z"
+}

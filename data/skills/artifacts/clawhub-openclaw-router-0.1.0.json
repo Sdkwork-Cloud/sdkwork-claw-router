@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-router@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_router",
+  "skill": {
+    "id": 58260,
+    "skillKey": "clawhub-openclaw-router",
+    "name": "Openclaw Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-router",
+    "url": "https://clawhub.ai/skills/openclaw-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-router-8c4d18d145855903.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent Model Routing - Save 60% on AI Costs / 智能路由系统 - 节省 60% 成本"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pepsiboy87",
+      "userId": "publishers:pepsiboy87",
+      "displayName": "pepsiboy87",
+      "image": "https://avatars.githubusercontent.com/u/205547749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 529,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772389861275,
+      "changelog": "- Initial release of the openclaw-router skill.\n- Provides intelligent model routing to optimize AI costs, with up to 60% savings.\n- Supports both local and cloud models, multi-region, and multilingual (English, Chinese).\n- Features include automatic model selection, token and cost tracking, user preference learning, and budget management.\n- Offers a free tier (1000 requests/month) and paid plans with unlimited requests and additional features.\n- Includes clear setup instructions, configuration examples, and comprehensive documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:51c822208a19413e5a2311bda046e349652e7edd560903519d71a8656c7aca41"
+}

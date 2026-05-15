@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28546,
+  "uuid": "skill-clawhub-saas-project-bootstrap",
+  "skillKey": "clawhub-saas-project-bootstrap",
+  "name": "SaaS Project Bootstrap",
+  "summary": "Bootstrap any SaaS, dashboard, mobile, or API project with a reusable 3-agent AI operating system. Creates AGENTS.md, architect/builder/tester instructions,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saas_project_bootstrap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mededdahby",
+      "features": [
+        "Bootstrap any SaaS, dashboard, mobile, or API project with a reusable 3-agent AI operating syst.",
+        "Creates AGENTS.md, architect/builder/tester instructions,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/saas-project-bootstrap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99148703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "saas-project-bootstrap",
+      "url": "https://clawhub.ai/skills/saas-project-bootstrap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saas-project-bootstrap",
+    "url": "https://clawhub.ai/skills/saas-project-bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saas-project-bootstrap-ed77ebf1953486b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/saas-project-bootstrap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-saas-project-bootstrap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78d8e0d7a203da83b6f8b323a59bc62c7c89083c222e0dc2edb7b4937d6f75bc",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T17:15:41.902Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/war-room@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.war_room",
+  "skill": {
+    "id": 10524,
+    "skillKey": "clawhub-war-room",
+    "name": "War Room"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "war-room",
+    "url": "https://clawhub.ai/skills/war-room",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/war-room-a69ad71068a44c20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent war room for brainstorming, system design, architecture review, product specs, business strategy, or any complex problem. Use when a user wants to run a structured multi-agent session with specialist roles, when they mention \"w."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxkle1nz",
+      "userId": "publishers:maxkle1nz",
+      "displayName": "maxkle1nz",
+      "image": "https://avatars.githubusercontent.com/u/204379921?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2603,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770583869008,
+      "changelog": "Version 1.1.0: Enhanced multi-agent collaboration framework",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb5a006bc409cf4db92337f1259a13f1f462d8096018ec41927ce89b81692876"
+}

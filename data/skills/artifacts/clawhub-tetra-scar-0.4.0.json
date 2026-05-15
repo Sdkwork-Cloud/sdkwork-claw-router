@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tetra-scar@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tetra_scar",
+  "skill": {
+    "id": 52960,
+    "skillKey": "clawhub-tetra-scar",
+    "name": "tetra-scar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tetra-scar",
+    "url": "https://clawhub.ai/skills/tetra-scar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tetra-scar-f902869cc4b942c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scar memory, reflex arc, and decision traces for AI agents. Learn from failures permanently. Block repeated mistakes instantly — no LLM calls needed. Three-l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aibenyclaude-coder",
+      "userId": "publishers:aibenyclaude-coder",
+      "displayName": "aibenyclaude-coder",
+      "image": "https://avatars.githubusercontent.com/u/259613785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1774079367671,
+      "changelog": "v0.4.0: GitHub Action for CI safety auditing, scar_audit.py with 8 failure pattern detectors, examples, FUNDING.yml",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ffb39d3e7779ea2a51d11161614ad5c3187e6face8d11377845c3d2ace5c105"
+}

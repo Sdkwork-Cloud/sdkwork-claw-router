@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jl-video-downloader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jl_video_downloader",
+  "skill": {
+    "id": 69099,
+    "skillKey": "clawhub-jl-video-downloader",
+    "name": "jl-video-downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jl-video-downloader",
+    "url": "https://clawhub.ai/skills/jl-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jl-video-downloader-1d22f81b7506b4e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多平台视频下载和文案提取工具。支持抖音、快手、小红书、B站、YouTube等平台的视频下载和语音转文字功能。当用户需要下载视频、提取视频文案或批量处理视频时激活此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pyzxs",
+      "userId": "s1773fw1k9ch2kq85qw0esaw9h83kgzt",
+      "displayName": "pycoder",
+      "image": "https://avatars.githubusercontent.com/u/149787002?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775182475616,
+      "changelog": "## jl-video-downloader 1.0.1\n\n- 新增 `scripts/download.sh`、`scripts/setup.sh`：提供一键安装与主命令封装脚本，简化使用流程。\n- 新增 `scripts/env.example`：示例环境变量配置文件，便于快速上手和环境管理。\n- 新增 `scripts/README.md`：详细说明脚本工具的安装与用法。\n- 文档大幅更新，增加推荐使用脚本工具的说明与高级配置、故障排查、自动加载环境等内容。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c222338315850555f4cdfefecfd48dad71e881af806925f8fa66c2869d4cd17"
+}

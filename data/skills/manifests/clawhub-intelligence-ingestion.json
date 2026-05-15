@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49604,
+  "uuid": "skill-clawhub-intelligence-ingestion",
+  "skillKey": "clawhub-intelligence-ingestion",
+  "name": "Intelligence Ingestion",
+  "summary": "Analyze and evaluate URLs, links, articles, tweets, and external info sources for strategic value. NOT a summarizer — this skill classifies, scores importanc...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligence_ingestion",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KELIHAO",
+      "features": [
+        "Analyze and evaluate URLs, links, articles, tweets, and external info sources for strategic val.",
+        "NOT a summarizer — this skill classifies, scores importanc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/intelligence-ingestion@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259751141?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "intelligence-ingestion",
+      "url": "https://clawhub.ai/skills/intelligence-ingestion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligence-ingestion",
+    "url": "https://clawhub.ai/skills/intelligence-ingestion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligence-ingestion-6a3784d637b84968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/intelligence-ingestion@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-intelligence-ingestion-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8e523441a33190e5f7ee6997c26732480a4d455cfc2849fec2743d3662f4c2d",
+      "artifactSizeBytes": 2593
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T10:13:22.832Z"
+}

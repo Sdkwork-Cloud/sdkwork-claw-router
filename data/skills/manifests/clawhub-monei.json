@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33561,
+  "uuid": "skill-clawhub-monei",
+  "skillKey": "clawhub-monei",
+  "name": "Monei",
+  "summary": "MONEI integration. Manage data, records, and automate workflows. Use when the user wants to interact with MONEI data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monei",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MONEI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with MONEI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monei@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monei",
+      "url": "https://clawhub.ai/skills/monei"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monei",
+    "url": "https://clawhub.ai/skills/monei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monei-e870e5b01b004167.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monei@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-monei-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78db7e5598a748dab47a42b01d7329cb0cc088effc494d78dbab0cd4f5c118ad",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:15:22.103Z"
+}

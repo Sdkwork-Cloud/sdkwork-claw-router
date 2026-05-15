@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71810,
+  "uuid": "skill-clawhub-juhe-verify-bankcard-three",
+  "skillKey": "clawhub-juhe-verify-bankcard-three",
+  "name": "银行卡三要素核验 - 聚合数据",
+  "summary": "银行卡三要素核验。验证银行卡号、姓名、身份证号三要素是否一致。使用场景：用户说\"验证银行卡\"、\"核验银行卡三要素\"、\"银行卡实名认证\"、\"检查银行卡号和身份证是否匹配\"、\"银行卡三元素检测\"等。通过聚合数据（juhe.cn）API实时核验，支持单次查询和批量核验。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_verify_bankcard_three",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juhe-skills",
+      "features": [
+        "银行卡三要素核验。验证银行卡号、姓名、身份证号三要素是否一致。使用场景：用户说\"验证银行卡\"、\"核验银行卡三要素\"、\"银行卡实名认证\"、\"检查银行卡号和身份证是否匹配\"、\"银行卡三元素检测\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juhe-verify-bankcard-three@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203600343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juhe-verify-bankcard-three",
+      "url": "https://clawhub.ai/skills/juhe-verify-bankcard-three"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-verify-bankcard-three",
+    "url": "https://clawhub.ai/skills/juhe-verify-bankcard-three",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-verify-bankcard-three-1d76387b6562a6f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juhe-verify-bankcard-three@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juhe-verify-bankcard-three-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8169f95244476a3e87ae75d8daff654d49cdcc3ec02e0193f558638e29fe5e73",
+      "artifactSizeBytes": 2645
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T05:14:31.324Z"
+}

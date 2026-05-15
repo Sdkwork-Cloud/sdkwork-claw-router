@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-dms-skill@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_dms_skill",
+  "skill": {
+    "id": 38013,
+    "skillKey": "clawhub-alibabacloud-dms-skill",
+    "name": "Alibabacloud Dms Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-dms-skill",
+    "url": "https://clawhub.ai/skills/alibabacloud-dms-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-dms-skill-1da824ae1c94a707.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud DMS Database Read/Write Skill. Use this skill to search for target databases in DMS and execute SQL queries and data modifications. Triggers: \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776750713095,
+      "changelog": "alibabacloud-dms-skill v0.0.2 changelog:\n\n- Added mandatory AI-Mode lifecycle steps for all operations, including session setup and teardown.\n- Raised minimum Aliyun CLI version requirement to 3.3.3.\n- Enforced per-command and session-level User-Agent setting for all CLI calls.\n- Introduced strong write operation protection: `--force` required for INSERT/UPDATE/DELETE, with preview support via `--dry-run`.\n- Updated parameter rules and clarified security, confirmation, and workflow documentation.\n- Improved CLI installation and plugin update guidance in CLI installation reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:377cf5811fb90163a9f4a21158027ef8d3a1a87c1b61615316cce30f79bb53a7"
+}

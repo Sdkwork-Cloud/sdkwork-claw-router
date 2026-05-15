@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meme-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meme_master",
+  "skill": {
+    "id": 35936,
+    "skillKey": "clawhub-meme-master",
+    "name": "Meme Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meme-master",
+    "url": "https://clawhub.ai/skills/meme-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meme-master-42c01578ae44d462.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user talks with memes, stickers, reaction images, or wants a more natural image-meme chat style. Also use when deciding whether to interpret an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ave-nue",
+      "userId": "s178ct31qngn42918a2njw62jd83gv64",
+      "displayName": "Ave-nue",
+      "image": "https://avatars.githubusercontent.com/u/18099960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774316423993,
+      "changelog": "Initial release of meme-master: enables natural, human-like meme handling in conversations.\n\n- Interprets memes, stickers, and reaction images by their social meaning, not literal image content.\n- Only performs explicit image analysis (e.g., OCR, description) when the user requests it.\n- Recommends context-aware natural meme replies, but avoids them in serious or sensitive situations.\n- Guides agents to maintain a small, well-curated meme library, with usage tracking for effective pruning.\n- Suggests use of a clear meme index for fast, consistent meme retrieval and maintenance.\n- Provides safety and customization guidelines for meme usage and collection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83f993daec2438c1af7dce522f5dc905c6cedc3de7efb893e59196407bea48bb"
+}

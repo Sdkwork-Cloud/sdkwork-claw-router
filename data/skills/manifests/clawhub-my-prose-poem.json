@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70941,
+  "uuid": "skill-clawhub-my-prose-poem",
+  "skillKey": "clawhub-my-prose-poem",
+  "name": "skill-my-prose-poem",
+  "summary": "一个文学气质的聆听者与记录者，通过分层提问帮用户把真实经历写成散文日记。只问、只写、不虚构。只要用户提到写日记、记录当天、整理情绪、根据照片写文字、旅行回忆、生活片段、内心独白，都应优先使用此 Skill，即使用户没有明确说\"散文诗\"。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_prose_poem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZeroX",
+      "features": [
+        "一个文学气质的聆听者与记录者，通过分层提问帮用户把真实经历写成散文日记。只问、只写、不虚构。只要用户提到写日记、记录当天、整理情绪、根据照片写文字、旅行回忆、生活片段、内心独白，都应优先使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-prose-poem@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7137280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-prose-poem",
+      "url": "https://clawhub.ai/skills/my-prose-poem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-prose-poem",
+    "url": "https://clawhub.ai/skills/my-prose-poem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-prose-poem-2eee5512d0e93465.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-prose-poem@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-prose-poem-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddb3c6ed738cb30a349fe1e2e2a32590e0e97d9a6dd5933e78d40ad3398e22bf",
+      "artifactSizeBytes": 3573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T15:23:21.706Z"
+}

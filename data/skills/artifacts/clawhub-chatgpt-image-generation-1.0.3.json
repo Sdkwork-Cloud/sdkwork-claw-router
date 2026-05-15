@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chatgpt-image-generation@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatgpt_image_generation",
+  "skill": {
+    "id": 19579,
+    "skillKey": "clawhub-chatgpt-image-generation",
+    "name": "Chatgpt Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatgpt-image-generation",
+    "url": "https://clawhub.ai/skills/chatgpt-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatgpt-image-generation-2d1f370eee08ad57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from ChatGPT using Playwright browser automation. Opens ChatGPT, sends prompts, waits for generation, and saves the resulting images."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amian",
+      "userId": "publishers:amian",
+      "displayName": "Anum Mian",
+      "image": "https://avatars.githubusercontent.com/u/2462466?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 603,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772657427224,
+      "changelog": "Simplified - no profile selection, cross-platform",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dcd12f6bc08b99b5be40ceaa6c3672ebc04fb8e7ee832fc49192d1a88f7f9148"
+}

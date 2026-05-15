@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66670,
+  "uuid": "skill-clawhub-vibe-harvester",
+  "skillKey": "clawhub-vibe-harvester",
+  "name": "瀑布流特定画风采图员 (The Vibe Harvester)",
+  "summary": "自动向下滚动瀑布流网站（如小红书、Pinterest），根据用户设定的审美偏好进行视觉筛选，并自动下载符合要求的参考图。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_harvester",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AnotherJ1",
+      "features": [
+        "自动向下滚动瀑布流网站（如小红书、Pinterest），根据用户设定的审美偏好进行视觉筛选，并自动下载符合要求的参考图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibe-harvester@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20277331?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibe-harvester",
+      "url": "https://clawhub.ai/skills/vibe-harvester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-harvester",
+    "url": "https://clawhub.ai/skills/vibe-harvester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-harvester-456ae72d5fe9f5a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibe-harvester@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibe-harvester-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d0f94dd826ded90897e2ca703cdcf4109a9e07dbfe56e3c74c20c992c8f6098",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T11:02:46.733Z"
+}

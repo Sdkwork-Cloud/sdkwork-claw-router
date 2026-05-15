@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50375,
+  "uuid": "skill-clawhub-pancake-swap-skills",
+  "skillKey": "clawhub-pancake-swap-skills",
+  "name": "pancake skills",
+  "summary": "BSC (Binance Smart Chain) trading on PancakeSwap — wallet creation, token swaps, pair discovery, and balance management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pancake_swap_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Keti Yohannes",
+      "features": [
+        "BSC (Binance Smart Chain) trading on PancakeSwap — wallet creation, token swaps, pair discovery."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pancake-swap-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38397885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pancake-swap-skills",
+      "url": "https://clawhub.ai/skills/pancake-swap-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pancake-swap-skills",
+    "url": "https://clawhub.ai/skills/pancake-swap-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pancake-swap-skills-b93bbb5a517de060.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pancake-swap-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pancake-swap-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc9f6a6a2a0fe57115b4336275d3bfbfb6063e19219658b413ca9be49e3fabfa",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T13:21:40.945Z"
+}

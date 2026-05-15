@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-catfacts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_catfacts",
+  "skill": {
+    "id": 41186,
+    "skillKey": "clawhub-pipeworx-catfacts",
+    "name": "Pipeworx catfacts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-catfacts",
+    "url": "https://clawhub.ai/skills/pipeworx-catfacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-catfacts-8d7592c23bc5454d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Random cat facts and breed information from the Cat Facts API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucegutman",
+      "userId": "s17cvgtez7j4kg9j5x0713jyyx84as33",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/138315805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775582075815,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58987c6dbd3b092d6275cd240d8043a0c960ea34e73f923e8b034224791cb017"
+}

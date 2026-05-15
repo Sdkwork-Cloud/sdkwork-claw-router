@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-qdata@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_qdata",
+  "skill": {
+    "id": 72524,
+    "skillKey": "clawhub-stock-qdata",
+    "name": "实现基于qmt智能交易终端的A股交易数据本地化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-qdata",
+    "url": "https://clawhub.ai/skills/stock-qdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-qdata-3224600b7cd7bd77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于QMT量化交易平台，支持自然语言指令下载并实时网页监控A股多周期历史行情数据，含智能错误处理和任务控制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diudiuhuang",
+      "userId": "s172jagkkjz2a0sdm6029gfbs983rwkq",
+      "displayName": "village_dog",
+      "image": "https://avatars.githubusercontent.com/u/29334441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774973494315,
+      "changelog": "- 新增静态文件 static/socket.io.min.js，用于网页实时通信支持。\n- SKILL.md内联系方式和社区说明更新，增加自行下载部分资源文件的提示。\n- 其余功能与描述保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04218ec231c5fd22eb1fcdba18790fa07b5c996b328a681aae00ed4a3b4c310b"
+}

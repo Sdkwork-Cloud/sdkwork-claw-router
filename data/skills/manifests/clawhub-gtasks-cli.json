@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12474,
+  "uuid": "skill-clawhub-gtasks-cli",
+  "skillKey": "clawhub-gtasks-cli",
+  "name": "gtasks-cli",
+  "summary": "Manage Google Tasks from the command line - view, create, update, delete tasks and task lists. Use when the user asks to interact with Google Tasks, manage t...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gtasks_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siddhartha Varma",
+      "features": [
+        "Manage Google Tasks from the command line",
+        "view, create, update, delete tasks and task lists",
+        "Use when the user asks to interact with Google Tasks, manage t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gtasks-cli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39856034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gtasks-cli",
+      "url": "https://clawhub.ai/skills/gtasks-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gtasks-cli",
+    "url": "https://clawhub.ai/skills/gtasks-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gtasks-cli-5fb9eeaaf1c688a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gtasks-cli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gtasks-cli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ef8dae791b763368e94f6c55a13c752e0feb71138396d3f86bb5cb6b8405817",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:36:25.895Z"
+}

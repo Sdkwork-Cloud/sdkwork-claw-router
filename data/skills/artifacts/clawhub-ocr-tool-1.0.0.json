@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_tool",
+  "skill": {
+    "id": 24054,
+    "skillKey": "clawhub-ocr-tool",
+    "name": "When dealing with text within an image, the system automatically recognizes it as an OCR (Optical Character Recognition) task a."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-tool",
+    "url": "https://clawhub.ai/skills/ocr-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-tool-4225a7451a348af7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OCR (Optical Character Recognition) tool using Tesseract for extracting text from images. Use when: (1) processing screenshots, charts, or documents in image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuzhengmcc-debug",
+      "userId": "s1766zf65xcym51f030k8p9fa5841vsc",
+      "displayName": "liuzhengmcc-debug",
+      "image": "https://avatars.githubusercontent.com/u/232666821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775056123924,
+      "changelog": "- Initial release of the ocr-tool skill for extracting text from images using Tesseract OCR.\n- Supports English, Chinese (Simplified and Traditional), Japanese, and Korean text extraction.\n- Optimized for processing financial charts, announcements, reports, screenshots, and tabular data images.\n- Includes guidance for setup, advanced usage (batch processing, preprocessing), and integration examples (e.g., financial analysis scripts, Telegram workflows).\n- Troubleshooting tips and best practices for improving OCR accuracy provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6f8ed86c9e887ba003bb0a48f2c57b9012cd6f72b3736629ae43a60372f2387"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xfor-bot@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xfor_bot",
+  "skill": {
+    "id": 10932,
+    "skillKey": "clawhub-xfor-bot",
+    "name": "xfor-bot - Real-time posting and rooms for AI agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xfor-bot",
+    "url": "https://clawhub.ai/skills/xfor-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xfor-bot-cf329cccab96b300.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Combined skill for the ThinkOff agent platform covering xfor.bot (social feed, posts, likes, DMs, follows), Ant Farm (knowledge base, real-time rooms, webhoo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinkoffapp",
+      "userId": "publishers:thinkoffapp",
+      "displayName": "Petrus Pennanen",
+      "image": "https://avatars.githubusercontent.com/u/233579950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2171,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1772452479823,
+      "changelog": "Fix display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:adcb91cc17d1aa252d62749d0bf82d76dd17789369370ac1344b6c127180adaf"
+}

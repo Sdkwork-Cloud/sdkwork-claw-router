@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26219,
+  "uuid": "skill-clawhub-pdf-simple-tool",
+  "skillKey": "clawhub-pdf-simple-tool",
+  "name": "PDF Simple Tool",
+  "summary": "PDF splitting and PDF-to-Word conversion tools implemented in Node.js.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_simple_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daguniang",
+      "features": [
+        "PDF splitting and PDF-to-Word conversion tools implemented in Node.js."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-simple-tool@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25029849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-simple-tool",
+      "url": "https://clawhub.ai/skills/pdf-simple-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-simple-tool",
+    "url": "https://clawhub.ai/skills/pdf-simple-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-simple-tool-8e7ac85c7fb5be6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-simple-tool@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-simple-tool-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c080614e958d0efb0dc3803531e6d8e2f0414a5ced0ffd9ff1a3636ffe854a84",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:06:24.084Z"
+}

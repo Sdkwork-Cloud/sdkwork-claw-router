@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36709,
+  "uuid": "skill-clawhub-postqube-threads-publisher",
+  "skillKey": "clawhub-postqube-threads-publisher",
+  "name": "PostQube Threads Publisher",
+  "summary": "A powerful social media posting skill for PostQube. Triggers when the user wants to: - Publish a post to Threads. - Create a \"Thread Storm\" or \"Auto-chained\"...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postqube_threads_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wan Fahmi",
+      "features": [
+        "A powerful social media posting skill for PostQube",
+        "Triggers when the user wants to:",
+        "Publish a post to Threads",
+        "Create a \"Thread Storm\" or \"Auto-chained\"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postqube-threads-publisher@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44287448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postqube-threads-publisher",
+      "url": "https://clawhub.ai/skills/postqube-threads-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postqube-threads-publisher",
+    "url": "https://clawhub.ai/skills/postqube-threads-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postqube-threads-publisher-d3e7cd35d354f832.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postqube-threads-publisher@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-postqube-threads-publisher-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f60037cb823f959f048af0c5b18013729cb3fb47094cd0f774b31bd41ad054c",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T12:23:40.699Z"
+}

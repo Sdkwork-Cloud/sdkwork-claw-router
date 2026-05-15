@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bizyair-upload@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bizyair_upload",
+  "skill": {
+    "id": 61926,
+    "skillKey": "clawhub-bizyair-upload",
+    "name": "BizyAir 文件上传"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bizyair-upload",
+    "url": "https://clawhub.ai/skills/bizyair-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bizyair-upload-b1b15351ead4bc40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BizyAir 文件上传助手。当用户需要将本地图片、音频、视频等资源上传到 BizyAir 服务器时使用此技能。支持快速上传并获取可访问的 URL。触发场景：用户提到\"上传到 BizyAir\"、\"BizyAir 上传\"、\"上传图片到 BizyAir\"，或者需要获取 BizyAir input resource U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bozoyan",
+      "userId": "s177sfxjmcf9fr0s1w3k478s4x83h0ef",
+      "displayName": "bozoyan",
+      "image": "https://avatars.githubusercontent.com/u/4261158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773410634395,
+      "changelog": "bizyair-upload v1.0.0\n\n- Initial release of BizyAir 文件上传助手.\n- Upload local images, audio, video, and other files to BizyAir server.\n- Quickly receive accessible URLs after upload.\n- List already uploaded BizyAir input resources.\n- Includes API key setup instructions and error handling guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9db5aebcf63ea3ab409d284a55d0e7f8739b19e87b4064b7b797102cbe1234b"
+}

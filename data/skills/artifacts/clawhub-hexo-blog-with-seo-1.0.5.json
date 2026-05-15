@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hexo-blog-with-seo@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hexo_blog_with_seo",
+  "skill": {
+    "id": 26467,
+    "skillKey": "clawhub-hexo-blog-with-seo",
+    "name": "Hexo Blog with SEO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hexo-blog-with-seo",
+    "url": "https://clawhub.ai/skills/hexo-blog-with-seo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hexo-blog-with-seo-6b1ce3499bbca32a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft and publish Hexo posts end-to-end (front matter + SEO polish + deploy)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarxi",
+      "userId": "s1774j3a1fskvgghgkt21bsbbs845ap0",
+      "displayName": "Jarxi",
+      "image": "https://avatars.githubusercontent.com/u/24486894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772577681039,
+      "changelog": "Require explicit user confirmation before removing published flag or deploying",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d8dae26b189750bf99a888df001005505efdbb7a6513c380f7b8017647468209"
+}

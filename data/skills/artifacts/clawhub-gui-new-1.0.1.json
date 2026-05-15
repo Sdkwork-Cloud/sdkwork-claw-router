@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gui-new@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gui_new",
+  "skill": {
+    "id": 26116,
+    "skillKey": "clawhub-gui-new",
+    "name": "gui.new"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gui-new",
+    "url": "https://clawhub.ai/skills/gui-new",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gui-new-e0b3f871c7f3c851.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create shareable HTML canvases via the gui.new API. Use when: (1) generating visual output (dashboards, charts, forms, tables, diagrams, landing pages, inter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dylanfeltus",
+      "userId": "publishers:dylanfeltus",
+      "displayName": "Dylan Feltus",
+      "image": "https://avatars.githubusercontent.com/u/12265899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773276251844,
+      "changelog": "Add security note about data sent to external service. Clarify API key is optional.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a9b935a46a40a0edbda5fc289334abe240d8b60e6602fc46fab77e06be49efc"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screenshot-to-task@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screenshot_to_task",
+  "skill": {
+    "id": 59052,
+    "skillKey": "clawhub-screenshot-to-task",
+    "name": "Screenshot To Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screenshot-to-task",
+    "url": "https://clawhub.ai/skills/screenshot-to-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screenshot-to-task-01804e21e56ab13b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "把截图里的待办或灵感整理成任务、备注和优先级。；use for screenshots, tasks, capture workflows；do not use for 伪造截图内容, 替代 OCR 系统."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773902186907,
+      "changelog": "Initial release of screenshot-to-task skill.\n\n- Organizes tasks, notes, and priorities from screenshot content.\n- Provides workflow for reviewing and structuring tasks based on screenshot summaries and user context.\n- Enforces clear boundaries: does not generate false screenshot content or replace OCR functions.\n- Outputs tasks, notes, priority, required info, archiving advice, and next steps in a structured format.\n- Includes explicit handling of incomplete inputs and risk/compliance warnings.\n- Supports execution via python3 if environment allows, or outputs structured drafts directly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c30958524e04dd7145cf39cc64c9ae81bd5e7d9bc6f80e7f7d0261aad6a257c"
+}

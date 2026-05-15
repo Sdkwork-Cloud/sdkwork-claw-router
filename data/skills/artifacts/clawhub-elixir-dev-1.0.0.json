@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elixir-dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elixir_dev",
+  "skill": {
+    "id": 11593,
+    "skillKey": "clawhub-elixir-dev",
+    "name": "Elixir Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elixir-dev",
+    "url": "https://clawhub.ai/skills/elixir-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elixir-dev-6b3b59904f4326a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Elixir/Phoenix development companion. Run and interpret mix test, mix credo, mix dialyzer, mix format. Generate modules following OTP conventions: contexts, schemas, GenServers, supervisors, tasks. Debug compilation errors and warnings. He."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gchapim",
+      "userId": "publishers:gchapim",
+      "displayName": "gchapim",
+      "image": "https://avatars.githubusercontent.com/u/1141813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1973,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770104857924,
+      "changelog": "Initial release of elixir-dev: a comprehensive Elixir/Phoenix development companion.\n\n- Run and interpret `mix` commands: test, credo, dialyzer, format.\n- Generate modules with OTP conventions—contexts, schemas, GenServers, supervisors, and tasks.\n- Debug compilation errors and warnings; get quick explanations and fixes.\n- Get help with Ecto migrations, queries, changesets, and associations.\n- Reference practical templates and patterns for OTP, Ecto, and Phoenix LiveView tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5c901dafe4c5d9b274b40af5b0e67a6cab79d7fce985976e43c8a7fbcc582406"
+}

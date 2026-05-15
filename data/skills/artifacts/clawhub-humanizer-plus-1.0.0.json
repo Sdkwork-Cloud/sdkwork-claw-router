@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-plus@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_plus",
+  "skill": {
+    "id": 22181,
+    "skillKey": "clawhub-humanizer-plus",
+    "name": "AI Text Humanizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-plus",
+    "url": "https://clawhub.ai/skills/humanizer-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-plus-4381c92f75394daf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove signs of AI-generated writing from text via the Claw0x API. Use when the user asks to humanize text, make AI writing sound natural, remove AI patterns..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kennyzir",
+      "userId": "s17cffj9ap2f7pqdtjc91f3m2983gfab",
+      "displayName": "claw0x",
+      "image": "https://avatars.githubusercontent.com/u/169416751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 473,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773887478392,
+      "changelog": "- Major rewrite: Switched to Claw0x API-powered AI humanizer with LLM and regex fallback.\n- New: Uses Gemini LLM, guided by Wikipedia’s \"Signs of AI writing,\" to humanize text and remove 24+ AI patterns.\n- Deterministic regex fallback added if LLM is unavailable.\n- Improved: Enhanced detection and correction, input key flexibility, and explicit output fields including detection method.\n- New API key and usage instructions; detailed setup and security notes included.\n- README removed; replaced by comprehensive SKILL.md instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dd78b4406340c82267c7a9316801dd0576d08e5bb520ceb61e18625e7e6c04c"
+}

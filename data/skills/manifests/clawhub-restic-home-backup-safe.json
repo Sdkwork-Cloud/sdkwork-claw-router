@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16567,
+  "uuid": "skill-clawhub-restic-home-backup-safe",
+  "skillKey": "clawhub-restic-home-backup-safe",
+  "name": "Restic Home Backup (Safe Apply Mode)",
+  "summary": "Design, implement, and operate encrypted restic backups for Linux home directories with systemd automation, retention policies, and restore validation. Use w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restic_home_backup_safe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Moep90",
+      "features": [
+        "Design, implement, and operate encrypted restic backups for Linux home directories with systemd.",
+        "Use w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restic-home-backup-safe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3042152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restic-home-backup-safe",
+      "url": "https://clawhub.ai/skills/restic-home-backup-safe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restic-home-backup-safe",
+    "url": "https://clawhub.ai/skills/restic-home-backup-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restic-home-backup-safe-23d36a390bcbd5bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restic-home-backup-safe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-restic-home-backup-safe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3cbc719884102acc1139e5b2bb724deba430715a34c6e69c3b01684b3c97061",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:48:24.997Z"
+}

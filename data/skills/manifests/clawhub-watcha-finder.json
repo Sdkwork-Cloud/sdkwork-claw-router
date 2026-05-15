@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24618,
+  "uuid": "skill-clawhub-watcha-finder",
+  "skillKey": "clawhub-watcha-finder",
+  "name": "Watcha Finder",
+  "summary": "Find, evaluate, and recommend AI products using the watcha.cn platform API. Use this skill whenever the user asks about AI tools, AI products, AI apps, or wa...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.watcha_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iKn0wNoth1ng",
+      "features": [
+        "Find, evaluate, and recommend AI products using the watcha.cn platform API",
+        "Use this skill whenever the user asks about AI tools, AI products, AI apps, or wa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/watcha-finder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81969272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "watcha-finder",
+      "url": "https://clawhub.ai/skills/watcha-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "watcha-finder",
+    "url": "https://clawhub.ai/skills/watcha-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/watcha-finder-084043d5e47323b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/watcha-finder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-watcha-finder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16317a2da74fa5bedef7793295e04244a4ef2bbf62948acb315137cf0636b266",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:24:48.901Z"
+}

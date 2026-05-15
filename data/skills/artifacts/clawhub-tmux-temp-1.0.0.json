@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tmux-temp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tmux_temp",
+  "skill": {
+    "id": 22783,
+    "skillKey": "clawhub-tmux-temp",
+    "name": "Tmux Temp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tmux-temp",
+    "url": "https://clawhub.ai/skills/tmux-temp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tmux-temp-f8e0611aab09895d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouyaya100",
+      "userId": "s1732e0d6vva4v4qnw2ng7q2tx83njhq",
+      "displayName": "zhouyaya100",
+      "image": "https://avatars.githubusercontent.com/u/200876861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772974219398,
+      "changelog": "tmux-temp 1.0.0 initial release:\n\n- Provides detailed documentation for controlling tmux sessions remotely by sending keystrokes and scraping pane output.\n- Outlines conventions for socket management, session/pane targeting, and safe command input.\n- Includes tips for orchestrating multiple coding agents in parallel using tmux sessions.\n- Documents methods for monitoring, capturing output, and waiting for text in panes.\n- Notes platform support (macOS/Linux) and Windows/WSL setup guidance.\n- Offers cleanup instructions and details about helper scripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e8708c4f5514340ca7720f7139da3f1a6227c6d130a3bc1a52c3446fd2b4746"
+}

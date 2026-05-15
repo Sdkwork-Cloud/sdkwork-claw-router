@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proper-git-commit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proper_git_commit",
+  "skill": {
+    "id": 39036,
+    "skillKey": "clawhub-proper-git-commit",
+    "name": "Commit code safe and nice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proper-git-commit",
+    "url": "https://clawhub.ai/skills/proper-git-commit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proper-git-commit-5479b55c4b3028c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart git commit with remote sync, amend intelligence, and conventional commits. Use when the user asks to commit changes, stage and commit, \"/commit\", save..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hugogu",
+      "userId": "s1786pd9zc99skgrwcbc48wtss83nynb",
+      "displayName": "Hugo Gu",
+      "image": "https://avatars.githubusercontent.com/u/2989766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775012659783,
+      "changelog": "- Initial release of smart git commit skill with remote sync and amend intelligence.\n- Automatically checks and syncs with the remote branch before committing, aborting on conflicts for safety.\n- Analyzes diffs to determine whether to create a new commit or amend the previous commit, using strict conventional commit rules.\n- Generates standardized conventional commit messages and includes model/agent info in the commit footer.\n- Stages relevant changes (excluding secrets), with built-in safety and clear user guidance on conflicts or pre-commit hook failures.\n- Supports optional push when requested, with safeguards against unsafe operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8266c8895f47e63ff1c61d4f86260c413bf321b58a286e5c3796fbef3ae80337"
+}

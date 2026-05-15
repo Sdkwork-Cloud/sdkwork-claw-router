@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-video-dl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_video_dl",
+  "skill": {
+    "id": 24237,
+    "skillKey": "clawhub-linkedin-video-dl",
+    "name": "Linkedin Video Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-video-dl",
+    "url": "https://clawhub.ai/skills/linkedin-video-dl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-video-dl-53687353e1f6ca1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download videos from public LinkedIn posts as MP4 files without authentication or dependencies, saving them at the best available quality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpnarchi",
+      "userId": "publishers:jpnarchi",
+      "displayName": "jpnarchi",
+      "image": "https://avatars.githubusercontent.com/u/142521385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 417,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772040810784,
+      "changelog": "Initial release of linkedin-video-dl\n\n- Download LinkedIn videos from public post URLs without authentication.\n- Saves video files in MP4 format to the current directory with unique filenames.\n- No external dependencies; built using Go's standard library.\n- Includes download progress display and safe interruption handling.\n- Skips download if the target file already exists.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf37754aa15910740c1b9ad2848847aa16586b81bbb2977c6dc611812c9a831f"
+}

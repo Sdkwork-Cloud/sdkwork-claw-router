@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wof-rps@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wof_rps",
+  "skill": {
+    "id": 51033,
+    "skillKey": "clawhub-wof-rps",
+    "name": "WatchOrfight - Rock, Paper, Scissor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wof-rps",
+    "url": "https://clawhub.ai/skills/wof-rps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wof-rps-9453deb8a24a1eba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play Rock Paper Scissors on WatchOrFight — on-chain gaming with USDC stakes on Base"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wof-developers",
+      "userId": "publishers:wof-developers",
+      "displayName": "wof-developers",
+      "image": "https://avatars.githubusercontent.com/u/261234722?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772046502053,
+      "changelog": "Minor security and safety documentation updates.\n\n- Added recommendation to prefer a hardware wallet or ephemeral signer over setting `PRIVATE_KEY` in env variables.\n- Clarified CLI contract interaction functions for transaction scope.\n- Added instructions to verify the CLI package source before installing.\n- Noted to restrict permissions on the local secret file after first use (`chmod 600 ~/.wof-rps-secrets.json`).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c1a51566d1e5b9a45678f94e64a6c4c8a99e6c522edc4d9204d43483f462f32b"
+}

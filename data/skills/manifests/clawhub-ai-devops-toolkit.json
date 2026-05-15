@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22853,
+  "uuid": "skill-clawhub-ai-devops-toolkit",
+  "skillKey": "clawhub-ai-devops-toolkit",
+  "name": "Ai Devops Toolkit",
+  "summary": "Operational tooling for teams running local LLM infrastructure. Request tracing with full scoring breakdowns, per-application usage analytics via request tag...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_devops_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Operational tooling for teams running local LLM infrastructure",
+        "Request tracing with full scoring breakdowns, per-application usage analytics via request tag..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-devops-toolkit@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-devops-toolkit",
+      "url": "https://clawhub.ai/skills/ai-devops-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-devops-toolkit",
+    "url": "https://clawhub.ai/skills/ai-devops-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-devops-toolkit-0f14f889f683279e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-devops-toolkit@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-devops-toolkit-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:341d998b8f2ac2539f9f8d920db94d488793a67a099ffe9e7dac2aa8d3796646",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:06.645Z"
+}

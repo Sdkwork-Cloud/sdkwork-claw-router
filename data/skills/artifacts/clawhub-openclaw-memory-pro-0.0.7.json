@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-memory-pro@0.0.7",
+  "version": "0.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_pro",
+  "skill": {
+    "id": 53676,
+    "skillKey": "clawhub-openclaw-memory-pro",
+    "name": "Memory Pro System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-pro",
+    "url": "https://clawhub.ai/skills/openclaw-memory-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-pro-b895f487d6d9f915.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enhanced AI memory system — vector store, document-level MSA, knowledge graph, collision engine, executable skills, and closed-loop skill evolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fluffyaicode",
+      "userId": "s172ga90kpsv774wk04ygrp9qx83kfgt",
+      "displayName": "FluffyAIcode",
+      "image": "https://avatars.githubusercontent.com/u/1561031?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.7",
+      "createdAt": 1774420705159,
+      "changelog": "v0.0.7: Token budget control, executable skills, MemoryHub callbacks, LLM-powered MSA recall, attention-aware collision engine, multi-provider LLM client.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d0d55b9bd0ac0cdcf210641ab43f4a314f7b9e768348c17d4c17709879ead52"
+}

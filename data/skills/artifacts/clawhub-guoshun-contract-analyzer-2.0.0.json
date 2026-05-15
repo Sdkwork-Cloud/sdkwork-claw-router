@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guoshun-contract-analyzer@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guoshun_contract_analyzer",
+  "skill": {
+    "id": 69002,
+    "skillKey": "clawhub-guoshun-contract-analyzer",
+    "name": "国顺合同风险审核"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guoshun-contract-analyzer",
+    "url": "https://clawhub.ai/skills/guoshun-contract-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guoshun-contract-analyzer-55a5f2ac7fb90656.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国顺合同风险审核技能 V2.0 - 江苏国顺智能科技有限公司专用。自动分析工程合同（施工分包/货物采购/智能化分包），输出结构化风险报告。功能包括：(1)执行摘要 (2)付款条款分析 (3)工期与违约金评估 (4)质保金与保修条款 (5)下浮率/管理费核算 (6)合同闪光点识别 (7)风险条款谈判策略 (8)合同..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmygx",
+      "userId": "s17f83z4j2gxvarqndt8kfabts83nqd2",
+      "displayName": "jimmygx",
+      "image": "https://avatars.githubusercontent.com/u/27848299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775297201463,
+      "changelog": "**guoshun-contract-analyzer v2.0.0 – Major update with expanded features and enhanced output**\n\n- Added \"执行摘要\" (Executive Summary) for rapid 30-second decision support.\n- Introduced \"合同闪光点\" (Contract Highlights) with multi-level benefit classification and negotiation strategies.\n- New \"风险条款谈判策略\" (Risk Clause Negotiation Tactics) module for practical negotiation language and alternatives.\n- Integrated \"合同价款核算器\" (Contract Amount Calculator) for accurate net income and cash flow computation.\n- Expanded report structure: more detailed, modular LeCard output including action line risk lists, dual-score 5-star rating, and benefit-to-risk comparison.\n- Improved rules for scoring, risk level assignment, and actionable recommendations for various contract scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f7f2e87c1ec3cd6ea6436060e5259d764e3337c7d423b230dc45d9105290348"
+}

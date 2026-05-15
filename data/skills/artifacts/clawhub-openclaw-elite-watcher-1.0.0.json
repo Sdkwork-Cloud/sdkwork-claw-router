@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-elite-watcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_elite_watcher",
+  "skill": {
+    "id": 18231,
+    "skillKey": "clawhub-openclaw-elite-watcher",
+    "name": "OpenClaw Elite Watcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-elite-watcher",
+    "url": "https://clawhub.ai/skills/openclaw-elite-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-elite-watcher-3e44eaf0dbea88c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero-latency intelligence engine for the OpenClaw ecosystem. Monitors core protocol commits from Peter Steinberger and top developers, distilling raw code di..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmstudio667-commits",
+      "userId": "publishers:tmstudio667-commits",
+      "displayName": "System Architect Zero",
+      "image": "https://avatars.githubusercontent.com/u/261739543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 687,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772463040039,
+      "changelog": "Initial release of openclaw-elite-watcher:\n\n- Introduces zero-latency monitoring of core OpenClaw protocol commits.\n- Tracks code changes by Peter Steinberger and top developers.\n- Distills raw code diffs into actionable, human-readable strategy reports.\n- Provides real-time intelligence updates for the OpenClaw ecosystem.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:948f36cc6b8af30ff963fcb96071d807c7b4016c39a12f3eb8752bf0b34d54b4"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20707,
+  "uuid": "skill-clawhub-clawsec-clawhub-checker",
+  "skillKey": "clawhub-clawsec-clawhub-checker",
+  "name": "clawsec-clawhub-checker",
+  "summary": "ClawHub reputation checker for clawsec-suite. Adds a standalone reputation gate before guarded skill installation.",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsec_clawhub_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davida-ps",
+      "features": [
+        "ClawHub reputation checker for clawsec-suite",
+        "Adds a standalone reputation gate before guarded skill installation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsec-clawhub-checker@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232346510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsec-clawhub-checker",
+      "url": "https://clawhub.ai/skills/clawsec-clawhub-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsec-clawhub-checker",
+    "url": "https://clawhub.ai/skills/clawsec-clawhub-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsec-clawhub-checker-58c28578a798578f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsec-clawhub-checker@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsec-clawhub-checker-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe846cd48285cb29829ab0e42d293266e69eebafb340aa87ec890f792fdf5625",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T00:03:31.414Z"
+}

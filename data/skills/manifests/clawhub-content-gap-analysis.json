@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57241,
+  "uuid": "skill-clawhub-content-gap-analysis",
+  "skillKey": "clawhub-content-gap-analysis",
+  "name": "Content Gap Analysis",
+  "summary": "Find content gaps: topics and keywords competitors cover that you don't, with editorial calendar. 内容缺口/选题规划",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_gap_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Zhu",
+      "features": [
+        "Find content gaps: topics and keywords competitors cover that you don't, with editorial calendar",
+        "内容缺口/选题规划"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-gap-analysis@9.9.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139607425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-gap-analysis",
+      "url": "https://clawhub.ai/skills/content-gap-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-gap-analysis",
+    "url": "https://clawhub.ai/skills/content-gap-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-gap-analysis-90f4b4d4dd5f9778.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-gap-analysis@9.9.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-gap-analysis-9.9.5.json",
+      "version": "9.9.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c7c0c8574190fa6136d86c31e1ff0d2d6d55a4fae4f566d6aa5681d165c3044",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:05:25.335Z"
+}

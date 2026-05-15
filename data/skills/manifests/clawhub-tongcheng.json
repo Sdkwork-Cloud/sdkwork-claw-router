@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71086,
+  "uuid": "skill-clawhub-tongcheng",
+  "skillKey": "clawhub-tongcheng",
+  "name": "Tongcheng",
+  "summary": "提供同程旅行酒店与机票公开页面的价格、评分和时刻摘要，支持轻量分析与行程预算估算。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tongcheng",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供同程旅行酒店与机票公开页面的价格、评分和时刻摘要，支持轻量分析与行程预算估算。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tongcheng@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tongcheng",
+      "url": "https://clawhub.ai/skills/tongcheng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tongcheng",
+    "url": "https://clawhub.ai/skills/tongcheng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tongcheng-a5bf1ff387f2dc97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tongcheng@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tongcheng-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d07437739bf144c3d93385735a22fdd7f1dd5154368193773debe430cde717d",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:24:20.780Z"
+}

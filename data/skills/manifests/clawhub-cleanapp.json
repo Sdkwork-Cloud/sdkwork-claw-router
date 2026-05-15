@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19552,
+  "uuid": "skill-clawhub-cleanapp",
+  "skillKey": "clawhub-cleanapp",
+  "name": "CleanApp Report Submission",
+  "summary": "Submit real-world issue reports (trash, hazards, infrastructure problems) to CleanApp's global routing pipeline. Your observations become actionable — routed...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanapp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "borisolver",
+      "features": [
+        "Submit real-world issue reports (trash, hazards, infrastructure problems) to CleanApp's global.",
+        "Your observations become actionable — routed..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cleanapp@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165804662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cleanapp",
+      "url": "https://clawhub.ai/skills/cleanapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanapp",
+    "url": "https://clawhub.ai/skills/cleanapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanapp-032e267ba38a6bef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cleanapp@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cleanapp-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f52faa2204716ba4398ee2da3fdd52b35d299942dbf696d11a2455ad4867805",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T10:20:43.413Z"
+}

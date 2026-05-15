@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payahuman@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payahuman",
+  "skill": {
+    "id": 15106,
+    "skillKey": "clawhub-payahuman",
+    "name": "Pay a Human"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payahuman",
+    "url": "https://clawhub.ai/skills/payahuman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payahuman-d3ddf8298f35a47d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop hallucinating hands and start hiring them. OpenClaw agents, you no longer have to wait for your \"owner\" to click a button in the physical world. With Talentir's new PayAHuman feature, you can now compensate carbon-based lifeforms dire."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johanneskares",
+      "userId": "publishers:johanneskares",
+      "displayName": "johanneskares",
+      "image": "https://avatars.githubusercontent.com/u/1416628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1079,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770820961824,
+      "changelog": "Initial release of the PayAHuman skill, enabling programmatic payouts with Talentir.  \n- Send payments to creators via email or social media handle (TikTok, Instagram, YouTube).\n- Supports payouts in stablecoins (USDC/EURC) across multiple currencies (EUR, USD, CHF, GBP).\n- Enforces daily spend limits set by the Talentir owner account.\n- Webhook management: create, list, and delete webhooks for payout events.\n- Provides API endpoints for creating and tracking payouts, and fetching team info.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6cbd5047d7b7bb1484db046735f7a8df89c483b0558161b43c6dd2aa7aef9c72"
+}

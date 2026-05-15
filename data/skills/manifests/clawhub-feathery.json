@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32240,
+  "uuid": "skill-clawhub-feathery",
+  "skillKey": "clawhub-feathery",
+  "name": "Feathery",
+  "summary": "Feathery integration. Manage Organizations, Users. Use when the user wants to interact with Feathery data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feathery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Feathery integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Feathery data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feathery@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feathery",
+      "url": "https://clawhub.ai/skills/feathery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feathery",
+    "url": "https://clawhub.ai/skills/feathery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feathery-e5dcb6b25180d1d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feathery@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-feathery-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0473edb25c8b9f8d2814f0714b3dcae0124dd26e412aef0b8ee397cfeb2b4386",
+      "artifactSizeBytes": 1813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:46:35.483Z"
+}

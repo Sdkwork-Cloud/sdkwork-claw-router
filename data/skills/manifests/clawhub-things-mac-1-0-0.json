@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54671,
+  "uuid": "skill-clawhub-things-mac-1-0-0",
+  "skillKey": "clawhub-things-mac-1-0-0",
+  "name": "Things Mac 1.0.0",
+  "summary": "Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database). Use when a user as...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.things_mac_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kenswj",
+      "features": [
+        "Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme",
+        "read/search/list from the local Things database)",
+        "Use when a user as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/things-mac-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29836387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "things-mac-1-0-0",
+      "url": "https://clawhub.ai/skills/things-mac-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "things-mac-1-0-0",
+    "url": "https://clawhub.ai/skills/things-mac-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/things-mac-1-0-0-1dfe7d11158f710c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/things-mac-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-things-mac-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5643651e6749464294026b94ff279ccafbd89fbb06296fc7900489d8a29e9293",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T17:41:39.877Z"
+}

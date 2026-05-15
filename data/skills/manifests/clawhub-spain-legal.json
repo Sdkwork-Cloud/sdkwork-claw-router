@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28782,
+  "uuid": "skill-clawhub-spain-legal",
+  "skillKey": "clawhub-spain-legal",
+  "name": "Spain Legal",
+  "summary": "Use when an agent needs structured Spain legal screening for visas, residency, nationality, NIE/TIE, Beckham regime, EU family routes, or Spain tax-regime qu...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spain_legal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heyalerio",
+      "features": [
+        "Use when an agent needs structured Spain legal screening for visas, residency, nationality, NIE."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spain-legal@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250747040?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spain-legal",
+      "url": "https://clawhub.ai/skills/spain-legal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spain-legal",
+    "url": "https://clawhub.ai/skills/spain-legal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spain-legal-ffa414acbb227cf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spain-legal@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-spain-legal-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:387f928a1a301b56e83b8d22be7f869a415e46fcda8b00d9156da4a52b2285f0",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T22:33:16.619Z"
+}

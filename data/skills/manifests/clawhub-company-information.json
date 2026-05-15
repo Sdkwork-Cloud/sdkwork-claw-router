@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70717,
+  "uuid": "skill-clawhub-company-information",
+  "skillKey": "clawhub-company-information",
+  "name": "CompanyInformation",
+  "summary": "企业舆情监测与风险预警技能。基于 FEEDAX API 查询特定上市公司的新闻资讯和舆情动态，支持情感分析（正面/负面/中性）、舆情热度评估、行业分类和关联公司识别。 使用场景：用户查询特定公司新闻、监测企业舆情风险、分析公司口碑、研究上市公司动态、追踪企业负面事件、评估投资风险、了解行业竞争格局等。 触发示例：...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_information",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "longGGGGGG",
+      "features": [
+        "企业舆情监测与风险预警技能。基于 FEEDAX API 查询特定上市公司的新闻资讯和舆情动态，支持情感分析（正面/负面/中性）、舆情热度评估、行业分类和关联公司识别。 使用场景：用户查询特定."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-information@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40319383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-information",
+      "url": "https://clawhub.ai/skills/company-information"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-information",
+    "url": "https://clawhub.ai/skills/company-information",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-information-b04298e288320303.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-information@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-information-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4761dfeab3740c144bc8611b5ebea7a5c14d0ac17068619aebbb219a2d434fa7",
+      "artifactSizeBytes": 2902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T10:28:19.842Z"
+}

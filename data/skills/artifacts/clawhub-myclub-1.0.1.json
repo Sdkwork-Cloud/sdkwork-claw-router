@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/myclub@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myclub",
+  "skill": {
+    "id": 27959,
+    "skillKey": "clawhub-myclub",
+    "name": "myClub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myclub",
+    "url": "https://clawhub.ai/skills/myclub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myclub-1ddfbaffd0df08d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch accounts' sports schedules, practices, games, and events from myclub.fi. Auto-discovers accounts and clubs from your myclub.fi account. Use for checkin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanninen",
+      "userId": "publishers:hanninen",
+      "displayName": "Aki Hänninen",
+      "image": "https://avatars.githubusercontent.com/u/779448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 336,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773518930621,
+      "changelog": "Version 1.0.1 of myclub\n\n- README updated\n- No code or documentation changes detected in this release.\n- All features, setup steps, and security/privacy policies remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d8b54c93782488e0946d4401a88dc94160e7382c96aeaa74f9fc69be70b63d3"
+}

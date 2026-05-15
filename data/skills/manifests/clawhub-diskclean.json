@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36666,
+  "uuid": "skill-clawhub-diskclean",
+  "skillKey": "clawhub-diskclean",
+  "name": "diskclean",
+  "summary": "AI-assisted disk space scanner and cleaner. Finds reclaimable space (node_modules, build caches, package caches, downloads, Docker, Xcode, logs) and intellig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diskclean",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Reid",
+      "features": [
+        "AI-assisted disk space scanner and cleaner",
+        "Finds reclaimable space (node_modules, build caches, package caches, downloads, Docker, Xcode,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diskclean@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114296700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diskclean",
+      "url": "https://clawhub.ai/skills/diskclean"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diskclean",
+    "url": "https://clawhub.ai/skills/diskclean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diskclean-f21c2e9d148389af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diskclean@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diskclean-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a40fda8697354c354dad52660faa3886b1421c86ec3cd8dc235c8ea94c2785c4",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T13:57:28.768Z"
+}

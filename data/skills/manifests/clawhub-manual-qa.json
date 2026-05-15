@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53120,
+  "uuid": "skill-clawhub-manual-qa",
+  "skillKey": "clawhub-manual-qa",
+  "name": "Manual QA",
+  "summary": "Generate a manual QA checklist from code changes. Use when the user wants to test a PR, commit, branch, or staged changes — or says \"QA this\", \"test plan\", \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manual_qa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felipefreitag",
+      "features": [
+        "Generate a manual QA checklist from code changes",
+        "Use when the user wants to test a PR, commit, branch, or staged changes — or says \"QA this\", \"t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manual-qa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6249611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manual-qa",
+      "url": "https://clawhub.ai/skills/manual-qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manual-qa",
+    "url": "https://clawhub.ai/skills/manual-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manual-qa-3e5b8696ecc2c276.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manual-qa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-manual-qa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:262b0d5b2d317a5e73ba29e0e1a8d1754830aed7ce68920fdcf98bffc5f4a9fd",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T20:22:55.317Z"
+}

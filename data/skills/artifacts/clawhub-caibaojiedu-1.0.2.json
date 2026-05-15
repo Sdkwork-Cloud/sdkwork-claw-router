@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caibaojiedu@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caibaojiedu",
+  "skill": {
+    "id": 71981,
+    "skillKey": "clawhub-caibaojiedu",
+    "name": "caibao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caibaojiedu",
+    "url": "https://clawhub.ai/skills/caibaojiedu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caibaojiedu-6b1e068dd25e2fcf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "精准解读真实财报数据，分析重资产周期拐点，排查财务造假，提供严谨投资决断建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "houyucheg",
+      "userId": "publishers:houyucheg",
+      "displayName": "houyucheg",
+      "image": "https://avatars.githubusercontent.com/u/57081480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773924882961,
+      "changelog": "- Removed 9 files, including key script modules and metadata.\n- Core functionality and internal worker scripts (such as stock analysis and data layers) have been deleted.\n- No changes made to role description or workflow logic documentation (SKILL.md remains unchanged).\n- This update significantly reduces the skill's technical implementation files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f4f6a1a88e6a65d2bfc98fd6b76915d8a9fa9fb16f605629c365692cafc2ad1"
+}

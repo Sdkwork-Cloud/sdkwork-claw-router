@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58216,
+  "uuid": "skill-clawhub-finetune-service-cn",
+  "skillKey": "clawhub-finetune-service-cn",
+  "name": "Fine-tune Service CN | 模型微调服务",
+  "summary": "模型微调服务 | Model Fine-tuning Service. LLM LoRA/QLoRA 微调 | LLM LoRA/QLoRA fine-tuning. 7B/13B 模型微调 | 7B/13B model fine-tuning. Stable Diffusion LoRA 训练 | Stable...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finetune_service_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "模型微调服务 | Model Fine-tuning Service",
+        "LLM LoRA/QLoRA 微调 | LLM LoRA/QLoRA fine-tuning",
+        "7B/13B 模型微调 | 7B/13B model fine-tuning",
+        "Stable Diffusion LoRA 训练 | Stable..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finetune-service-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finetune-service-cn",
+      "url": "https://clawhub.ai/skills/finetune-service-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finetune-service-cn",
+    "url": "https://clawhub.ai/skills/finetune-service-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finetune-service-cn-7140f16b43b3ca0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finetune-service-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finetune-service-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac322d2c3efe4148fd839e11c2a733185597b9bd89c929d6c1ecffb8f7110917",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T12:17:35.468Z"
+}

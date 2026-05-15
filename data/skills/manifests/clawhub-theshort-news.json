@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29779,
+  "uuid": "skill-clawhub-theshort-news",
+  "skillKey": "clawhub-theshort-news",
+  "name": "The Short News",
+  "summary": "Real-time news intelligence from theshort.ai. Search topic- and tag-scoped news feeds, fetch article details with summaries, list available topics and tags....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theshort_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sssemil",
+      "features": [
+        "Real-time news intelligence from theshort.ai",
+        "Search topic",
+        "and tag-scoped news feeds, fetch article details with summaries, list available topics and tags."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/theshort-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3113308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "theshort-news",
+      "url": "https://clawhub.ai/skills/theshort-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theshort-news",
+    "url": "https://clawhub.ai/skills/theshort-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theshort-news-87479065f11c7247.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/theshort-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-theshort-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7be4d32293d25ebf12794d5a58c869d50e2af3c96b848d4d46e3a18a24597f4",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:04:29.101Z"
+}

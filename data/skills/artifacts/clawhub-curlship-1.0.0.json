@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/curlship@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.curlship",
+  "skill": {
+    "id": 14931,
+    "skillKey": "clawhub-curlship",
+    "name": "CurlShip Directory Submission"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "curlship",
+    "url": "https://clawhub.ai/skills/curlship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/curlship-9f330ce7cb479bfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Submit products to CurlShip, the bot-friendly SaaS directory. One curl command to list your product with OG tag scraping, badge-based dofollow links, and tier upgrades."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcindudekdev",
+      "userId": "s175vzm8t5k5914xmjc2e3y2ed83fmy3",
+      "displayName": "Marcin Dudek",
+      "image": "https://avatars.githubusercontent.com/u/109857699?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770824624942,
+      "changelog": "Initial release: submit, list, upgrade, and badge endpoints for the bot-friendly SaaS directory",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d0cfc7413136c0aabf97347e6652c9dff6de183fe347e226f989521a22e6dc2"
+}

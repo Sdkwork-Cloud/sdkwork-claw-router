@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43801,
+  "uuid": "skill-clawhub-boxed-ffmpeg",
+  "skillKey": "clawhub-boxed-ffmpeg",
+  "name": "Boxed FFmpeg",
+  "summary": "Audio/video information extraction, format conversion, and audio extraction using FFmpeg WASM sandbox.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boxed_ffmpeg",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guyoung",
+      "features": [
+        "Audio/video information extraction, format conversion, and audio extraction using FFmpeg WASM s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boxed-ffmpeg@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boxed-ffmpeg",
+      "url": "https://clawhub.ai/skills/boxed-ffmpeg"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boxed-ffmpeg",
+    "url": "https://clawhub.ai/skills/boxed-ffmpeg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boxed-ffmpeg-db636a01a5ac8837.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boxed-ffmpeg@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boxed-ffmpeg-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0becf2e41465b6cd8dccccc08b81ae17b4b5d55e4e5f4a79eeaa3ca20917418d",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:41:57.810Z"
+}

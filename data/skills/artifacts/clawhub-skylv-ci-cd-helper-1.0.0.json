@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-ci-cd-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_ci_cd_helper",
+  "skill": {
+    "id": 61664,
+    "skillKey": "clawhub-skylv-ci-cd-helper",
+    "name": "Ci Cd Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-ci-cd-helper",
+    "url": "https://clawhub.ai/skills/skylv-ci-cd-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-ci-cd-helper-a5d232ec1972f729.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CI/CD助手。设计流水线、配置自动化、部署脚本。使用场景：(1) 流水线设计，(2) GitHub Actions配置，(3) 部署脚本，(4) 测试集成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775786461458,
+      "changelog": "Auto-publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2bbf1622bb8547be31429d6a54ad3678cf6b6eb3933459310d2899dd8c3795b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61681,
+  "uuid": "skill-clawhub-docx-tool",
+  "skillKey": "clawhub-docx-tool",
+  "name": "Docx Tool",
+  "summary": "使用 python-docx 库创建、读取和修改 Word 文档 (.docx)。支持文本、段落、表格、样式、图片等操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaodouzi",
+      "features": [
+        "使用 python-docx 库创建、读取和修改 Word 文档 (.docx)。支持文本、段落、表格、样式、图片等操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docx-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26651875?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docx-tool",
+      "url": "https://clawhub.ai/skills/docx-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-tool",
+    "url": "https://clawhub.ai/skills/docx-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-tool-6bf530b8ff661c17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docx-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docx-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f795592556f1ffeb354b585b044ef8aaad8e8d560fc8ff835b91b5f89483962",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T01:16:51.100Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13484,
+  "uuid": "skill-clawhub-warren-nft-mainnet",
+  "skillKey": "clawhub-warren-nft-mainnet",
+  "name": "Warren NFT Deploy(mainnet)",
+  "summary": "Deploy NFT collections permanently on MegaETH mainnet. Images are stored on-chain via SSTORE2, then published through WarrenContainer and WarrenLaunchedNFT.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warren_nft_mainnet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "planetai87",
+      "features": [
+        "Deploy NFT collections permanently on MegaETH mainnet",
+        "Images are stored on-chain via SSTORE2, then published through WarrenContainer and WarrenLaunch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warren-nft-mainnet@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62147646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warren-nft-mainnet",
+      "url": "https://clawhub.ai/skills/warren-nft-mainnet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warren-nft-mainnet",
+    "url": "https://clawhub.ai/skills/warren-nft-mainnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warren-nft-mainnet-86bdf9ba4a681df4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warren-nft-mainnet@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-warren-nft-mainnet-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8783819e4ff6f50f4227fc2816c361c71b2bd71835f5f8b8a13e85eed0f77d9d",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T03:13:43.850Z"
+}

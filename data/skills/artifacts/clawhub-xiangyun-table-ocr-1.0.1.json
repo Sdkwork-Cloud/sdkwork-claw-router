@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiangyun-table-ocr@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiangyun_table_ocr",
+  "skill": {
+    "id": 64979,
+    "skillKey": "clawhub-xiangyun-table-ocr",
+    "name": "文档识别-表格识别-Pro（翔云开放平台）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiangyun-table-ocr",
+    "url": "https://clawhub.ai/skills/xiangyun-table-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiangyun-table-ocr-e150be15e33bc8d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "翔云通用文档/表格识别 Agent。当用户请求以下操作时触发： - 通用文档识别、文档 OCR、OCR 文档、识别图片文字 - 表格识别、表格 OCR、识别表格 - 提取表格内容、读取表格数据 - 识别图片/扫描件/PDF 中的文字和表格 - 表格转 Excel、表格转 Word、表格转 Markdown - 导..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liudengkui",
+      "userId": "s1741bfyzp3b0en85c71e500e584v20a",
+      "displayName": "liudengkui",
+      "image": "https://avatars.githubusercontent.com/u/19543709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776760935975,
+      "changelog": "- No file changes detected; internal version update only.\n- Documentation and functionality remain unchanged from the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:125acc387499025fb9ec3487a07b1831a2557cd6c438feb303db489f2b4af3ca"
+}

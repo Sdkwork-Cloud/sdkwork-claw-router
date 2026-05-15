@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66260,
+  "uuid": "skill-clawhub-kuaishou-auto-publishing-ai-employee",
+  "skillKey": "clawhub-kuaishou-auto-publishing-ai-employee",
+  "name": "快手自动发布AI数字员工",
+  "summary": "快手视频/图文自动上传 skill。当用户需要登录快手、校验账号或上传内容时使用。基于 social-auto-upload 项目，OPclaw 自动准备运行环境，无需用户手动安装。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaishou_auto_publishing_ai_employee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kukuoAI",
+      "features": [
+        "快手视频/图文自动上传 skill。当用户需要登录快手、校验账号或上传内容时使用。基于 social-auto-upload 项目，OPclaw 自动准备运行环境，无需用户手动安装。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuaishou-auto-publishing-ai-employee@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275868190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuaishou-auto-publishing-ai-employee",
+      "url": "https://clawhub.ai/skills/kuaishou-auto-publishing-ai-employee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaishou-auto-publishing-ai-employee",
+    "url": "https://clawhub.ai/skills/kuaishou-auto-publishing-ai-employee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaishou-auto-publishing-ai-employee-602e3db5718dea55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuaishou-auto-publishing-ai-employee@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuaishou-auto-publishing-ai-employee-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1933192b76ce4c54c622d11b40a0036755542881e6d2c3463a4b928e69e65e95",
+      "artifactSizeBytes": 2645
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T08:46:52.413Z"
+}

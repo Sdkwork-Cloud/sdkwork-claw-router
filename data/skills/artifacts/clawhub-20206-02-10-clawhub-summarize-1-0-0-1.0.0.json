@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/20206-02-10-clawhub-summarize-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.20206_02_10_clawhub_summarize_1_0_0",
+  "skill": {
+    "id": 10610,
+    "skillKey": "clawhub-20206-02-10-clawhub-summarize-1-0-0",
+    "name": "20206 02 10 Clawhub Summarize 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "20206-02-10-clawhub-summarize-1-0-0",
+    "url": "https://clawhub.ai/skills/20206-02-10-clawhub-summarize-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/20206-02-10-clawhub-summarize-1-0-0-e0cb8e1bff4cb597.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pin-alt",
+      "userId": "publishers:pin-alt",
+      "displayName": "pin-alt",
+      "image": "https://avatars.githubusercontent.com/u/139849587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2135,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770876253449,
+      "changelog": "- Initial release of the Summarize skill.\n- Summarize URLs, local files, images, audio, PDFs, and YouTube links via CLI.\n- Supports multiple AI models (Google Gemini, OpenAI, Anthropic, xAI) with configurable API keys.\n- Includes flexible output flags: control length, output format, extraction mode, and more.\n- Optional config file and API keys for advanced extraction and YouTube transcription.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a16fe3246edbe9c9ffc78e0a3e6d015fb5d190ef5e08c85118999cffdfc65907"
+}

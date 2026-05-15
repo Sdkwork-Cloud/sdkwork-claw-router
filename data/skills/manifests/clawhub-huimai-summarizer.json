@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69816,
+  "uuid": "skill-clawhub-huimai-summarizer",
+  "skillKey": "clawhub-huimai-summarizer",
+  "name": "📝 文档摘要大师",
+  "summary": "上传长文档/文章/PDF/合同，自动生成结构化摘要、关键条款提取、执行清单。支持20+种摘要格式。安装即用，无需API Key。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huimai_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yezhaowang888-stack",
+      "features": [
+        "上传长文档/文章/PDF/合同，自动生成结构化摘要、关键条款提取、执行清单。支持20+种摘要格式。安装即用，无需API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huimai-summarizer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274244352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huimai-summarizer",
+      "url": "https://clawhub.ai/skills/huimai-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huimai-summarizer",
+    "url": "https://clawhub.ai/skills/huimai-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huimai-summarizer-3bef6af044f54213.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huimai-summarizer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huimai-summarizer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:712901988b222fc07a2d28e86a86cb2b23c201e86fbea6fb2e002107e6653888",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T05:43:07.403Z"
+}

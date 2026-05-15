@@ -28,11 +28,10 @@ struct AdminFinanceState {
 }
 
 #[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
 struct AdminFinanceRequestQuery {
-    page_no: Option<i64>,
+    page: Option<i64>,
     page_size: Option<i64>,
-    keyword: Option<String>,
+    q: Option<String>,
     status: Option<String>,
     start_time: Option<String>,
     end_time: Option<String>,
@@ -58,11 +57,11 @@ struct ValidatedFinanceListQuery {
 pub fn admin_finance_router_with_store(store: Arc<dyn AdminFinanceStore + Send + Sync>) -> Router {
     Router::new()
         .route(
-            "/backend/v3/api/finance/admin/ledger",
+            "/backend/v3/api/billing/finance/ledger",
             get(fetch_transactions),
         )
         .route(
-            "/backend/v3/api/router/finance/usage-statements",
+            "/backend/v3/api/billing/finance/usage_statements",
             get(fetch_billing_records),
         )
         .with_state(AdminFinanceState { store })
@@ -129,14 +128,14 @@ fn validated_query(
     query: AdminFinanceRequestQuery,
 ) -> Result<ValidatedFinanceListQuery, Response> {
     let subject = resolve_subject(headers)?;
-    let page_no = query.page_no.unwrap_or(DEFAULT_PAGE_NO);
+    let page_no = query.page.unwrap_or(DEFAULT_PAGE_NO);
     if page_no < 1 {
-        return Err(bad_request("pageNo must be greater than or equal to 1"));
+        return Err(bad_request("page must be greater than or equal to 1"));
     }
     let page_size = query.page_size.unwrap_or(DEFAULT_PAGE_SIZE);
     if !(1..=MAX_PAGE_SIZE).contains(&page_size) {
         return Err(bad_request(format!(
-            "pageSize must be between 1 and {MAX_PAGE_SIZE}"
+            "page_size must be between 1 and {MAX_PAGE_SIZE}"
         )));
     }
 
@@ -144,11 +143,11 @@ fn validated_query(
         subject,
         page_no,
         page_size,
-        keyword: normalize_optional_text(query.keyword, "keyword", MAX_KEYWORD_LEN)?,
+        keyword: normalize_optional_text(query.q, "q", MAX_KEYWORD_LEN)?,
         status: normalize_optional_text(query.status, "status", MAX_STATUS_LEN)?
             .map(|value| value.to_ascii_lowercase()),
-        start_time: normalize_optional_text(query.start_time, "startTime", MAX_TIME_LEN)?,
-        end_time: normalize_optional_text(query.end_time, "endTime", MAX_TIME_LEN)?,
+        start_time: normalize_optional_text(query.start_time, "start_time", MAX_TIME_LEN)?,
+        end_time: normalize_optional_text(query.end_time, "end_time", MAX_TIME_LEN)?,
     })
 }
 

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/literature-search-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.literature_search_pro",
+  "skill": {
+    "id": 60675,
+    "skillKey": "clawhub-literature-search-pro",
+    "name": "Literature Search Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "literature-search-pro",
+    "url": "https://clawhub.ai/skills/literature-search-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/literature-search-pro-c083f303de8af781.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业级多数据库学术文献搜索，支持智能去重、质量排序及自动缓存，涵盖OpenAlex、Semantic Scholar和arXiv数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776354567018,
+      "changelog": "- Literature-search-pro functionality has been fully integrated into the unified search skill.\n- This version serves as a compatibility layer; all features are now accessible via the search scholar command.\n- Original scholar commands remain available for backward compatibility and are automatically forwarded.\n- Supports multiple databases: OpenAlex, Semantic Scholar, and arXiv.\n- Features include multi-source search, intelligent deduplication, quality ranking by citation, and automatic result caching.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1350edfa27a8ed84f4fde9175f4289ba82e036980fb87e01117f14d0fa3d473"
+}

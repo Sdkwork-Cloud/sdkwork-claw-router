@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42667,
+  "uuid": "skill-clawhub-datadome-super-bypass",
+  "skillKey": "clawhub-datadome-super-bypass",
+  "name": "DataDome Super Bypass",
+  "summary": "End-to-end DataDome bypass orchestration for authorized targets by chaining probe, cookie harvest fallback, cookie injection, retest, and optional CapSolver...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datadome_super_bypass",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SAHJONY",
+      "features": [
+        "End-to-end DataDome bypass orchestration for authorized targets by chaining probe, cookie harve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datadome-super-bypass@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236139887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datadome-super-bypass",
+      "url": "https://clawhub.ai/skills/datadome-super-bypass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datadome-super-bypass",
+    "url": "https://clawhub.ai/skills/datadome-super-bypass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datadome-super-bypass-e84e748b7ed682fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datadome-super-bypass@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-datadome-super-bypass-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a264c32909b6783da5fd736a1c2af12685d2e5e88b31ddd073f2fc5833b94116",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:44:32.448Z"
+}

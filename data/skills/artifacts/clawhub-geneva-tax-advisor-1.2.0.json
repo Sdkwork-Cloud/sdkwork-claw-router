@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geneva-tax-advisor@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geneva_tax_advisor",
+  "skill": {
+    "id": 34549,
+    "skillKey": "clawhub-geneva-tax-advisor",
+    "name": "Geneva Tax Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geneva-tax-advisor",
+    "url": "https://clawhub.ai/skills/geneva-tax-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geneva-tax-advisor-e57e16630794c54d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide taxpayers through filing Geneva (Switzerland) tax returns with GeTax. Covers salary, professional expenses (forfaitaire vs effectifs), pillar 3a/3b, he..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calsoufi",
+      "userId": "s1768jgkcz263p0gf0zfhst6xs83s87q",
+      "displayName": "CharlesAl",
+      "image": "https://avatars.githubusercontent.com/u/128849032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774722133883,
+      "changelog": "Spec-compliant rewrite: SKILL.md trimmed to 111 lines with progressive disclosure. Gotchas extracted to references/gotchas.md. Better read-when triggers on reference files. Added emoji metadata. Decision tree for forfaitaire vs effectifs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30dc7610d99ba4db0327a2bc4f479bdcacf26bc610d1fb72186ae6a3fe13283f"
+}

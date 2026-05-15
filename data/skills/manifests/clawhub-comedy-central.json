@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62155,
+  "uuid": "skill-clawhub-comedy-central",
+  "skillKey": "clawhub-comedy-central",
+  "name": "Comedy Central",
+  "summary": "提供美国喜剧频道Comedy Central的历史、节目、业务范围及最新动态信息查询。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comedy_central",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供美国喜剧频道Comedy Central的历史、节目、业务范围及最新动态信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comedy-central@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comedy-central",
+      "url": "https://clawhub.ai/skills/comedy-central"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comedy-central",
+    "url": "https://clawhub.ai/skills/comedy-central",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comedy-central-cf22ee44da4b76cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comedy-central@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-comedy-central-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7761267f638735cae63439b19b22a65e3ec73a6e2924aa2eb625adfbc63c5266",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:32:17.446Z"
+}

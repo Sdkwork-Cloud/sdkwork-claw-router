@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/k8s-debug@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_debug",
+  "skill": {
+    "id": 20083,
+    "skillKey": "clawhub-k8s-debug",
+    "name": "K8s Debug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-debug",
+    "url": "https://clawhub.ai/skills/k8s-debug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-debug-205b1fe293298d3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and fix Kubernetes pods, CrashLoopBackOff, Pending, DNS, networking, storage, and rollout failures with kubectl."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq280948982",
+      "userId": "publishers:qq280948982",
+      "displayName": "qq280948982",
+      "image": "https://avatars.githubusercontent.com/u/685689?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773409029204,
+      "changelog": "Initial release of k8s-debug – a systematic toolkit for diagnosing and fixing Kubernetes pod, rollout, network, DNS, and storage issues.\n\n- Provides trigger phrases to detect when Kubernetes debugging is needed.\n- Details prerequisites and safety practices, including restricted use of disruptive kubectl commands.\n- Introduces modular troubleshooting scripts for pod, network, and cluster diagnostics.\n- Includes structured workflows for isolating and resolving common cluster issues.\n- Offers reference navigation for quick symptom-to-solution lookup.\n- Documents expected script usage, arguments, and fallback behaviors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40e3c78c4b1a538354e5fb0da1cc67d8eb17ee2f729e0faf5ed94cb7fb3bdf6a"
+}

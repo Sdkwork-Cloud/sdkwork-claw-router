@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/2o-verification@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.2o_verification",
+  "skill": {
+    "id": 26623,
+    "skillKey": "clawhub-2o-verification",
+    "name": "2O Human Verification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "2o-verification",
+    "url": "https://clawhub.ai/skills/2o-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/2o-verification-22565f55e7eae1f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Human verification for AI agents. Submit claims, draft responses, or observation requests to human domain experts via the 2O API. Returns structured verdicts..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "russellshen1992",
+      "userId": "publishers:russellshen1992",
+      "displayName": "russellshen1992",
+      "image": "https://avatars.githubusercontent.com/u/97408418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773253620015,
+      "changelog": "Initial release: verify claims, empathy review, witness observations via 2O API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a99d8e7b9ee1d47a87686f1628d198a4ad976fe4d724a4a91ae46f1e2ea729f8"
+}

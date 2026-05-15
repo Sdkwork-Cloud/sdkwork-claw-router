@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62801,
+  "uuid": "skill-clawhub-mermaid-charts",
+  "skillKey": "clawhub-mermaid-charts",
+  "name": "Mermaid Charts 全图表画图技能",
+  "summary": "使用 Mermaid 语法生成流程图、时序图、类图等多种图表，支持输出 PNG 和交互型 HTML 格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_charts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "harrot90-code",
+      "features": [
+        "使用 Mermaid 语法生成流程图、时序图、类图等多种图表，支持输出 PNG 和交互型 HTML 格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mermaid-charts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266251749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mermaid-charts",
+      "url": "https://clawhub.ai/skills/mermaid-charts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-charts",
+    "url": "https://clawhub.ai/skills/mermaid-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-charts-d449da9b69fcc71b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mermaid-charts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-charts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12f8d02fc63c3400f65ab6235575b952b40ab53383e1def4f2b564cf5e12f0f5",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T06:10:25.430Z"
+}

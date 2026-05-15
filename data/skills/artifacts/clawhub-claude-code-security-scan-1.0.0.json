@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-security-scan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_security_scan",
+  "skill": {
+    "id": 34915,
+    "skillKey": "clawhub-claude-code-security-scan",
+    "name": "Claude Code Security Scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-security-scan",
+    "url": "https://clawhub.ai/skills/claude-code-security-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-security-scan-eff81e4a8c9311e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Claude Code configuration for security vulnerabilities, misconfigurations, and injection risks using AgentShield. Scans settings, MCP servers, hooks, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djc00p",
+      "userId": "s17akx17qd32yxnr1065qq0kdd83h2c3",
+      "displayName": "Deonte Cooper",
+      "image": "https://avatars.githubusercontent.com/u/45864171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775395016912,
+      "changelog": "Initial release. Claude Code config security audit — scans for hardcoded secrets, injection risks, misconfigs. Adapted from everything-claude-code by @affaan-m (MIT)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5088146a64fa81dd8b95d7f86a0b33e8e903ae9abe3cb7c827bfa2c4bf27639e"
+}

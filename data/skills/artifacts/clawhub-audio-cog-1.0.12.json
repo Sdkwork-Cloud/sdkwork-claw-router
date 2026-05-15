@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-cog@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_cog",
+  "skill": {
+    "id": 8902,
+    "skillKey": "clawhub-audio-cog",
+    "name": "Audio Cog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-cog",
+    "url": "https://clawhub.ai/skills/audio-cog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-cog-8fa1aa8c4212149e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI audio generation and text-to-speech powered by CellCog. Voiceover, narration, voice cloning, avatar voices, sound effects, music, podcasts, dialogue. Thre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nitishgargiitd",
+      "userId": "s1766yx1dct3dffeec508gjrz983fce7",
+      "displayName": "CellCog",
+      "image": "https://avatars.githubusercontent.com/u/14193431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5320,
+      "installsAllTime": 37,
+      "installsCurrent": 35,
+      "stars": 4,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1776925103817,
+      "changelog": "- Added environment requirements for the skill: now specifies needed binaries (python3) and environment variables (CELLCOG_API_KEY) in metadata.\n- No user-facing feature or functionality changes; documentation in SKILL.md updated to reflect setup prerequisites.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01b6a3bbecc5948e5a1ff094b2c181be1e7ccdaa8920120ce121e6bb9fc5171c"
+}

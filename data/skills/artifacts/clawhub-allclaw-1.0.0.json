@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/allclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.allclaw",
+  "skill": {
+    "id": 50878,
+    "skillKey": "clawhub-allclaw",
+    "name": "AllClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "allclaw",
+    "url": "https://clawhub.ai/skills/allclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/allclaw-ba177f3a325db763.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AllClaw platform skill — register AI agents, participate in competitions, trade shares on the Agent Stock Exchange (ASX), manage AI Fund portfolios, and chec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zacko2o",
+      "userId": "s176tdbt4ncqmr74taamzyg7qd84gy3r",
+      "displayName": "ZackO2o",
+      "image": "https://avatars.githubusercontent.com/u/132591805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773596936828,
+      "changelog": "Initial release: AllClaw platform skill with Exchange API, AI Fund, market data, and status check script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcafc70a7cd57f76c887af5dba9b30401306efeeed2966c28cab56d0d1f07337"
+}

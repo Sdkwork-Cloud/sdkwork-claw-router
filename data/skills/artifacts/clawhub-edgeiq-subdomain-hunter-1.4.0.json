@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edgeiq-subdomain-hunter@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeiq_subdomain_hunter",
+  "skill": {
+    "id": 40268,
+    "skillKey": "clawhub-edgeiq-subdomain-hunter",
+    "name": "Subdomain Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeiq-subdomain-hunter",
+    "url": "https://clawhub.ai/skills/edgeiq-subdomain-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeiq-subdomain-hunter-d1510036af0570a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs passive subdomain enumeration using CT logs, DNS zone transfer checks, takeover detection, and optional bruteforce without active probing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edgeiq-labs",
+      "userId": "s17281v95sfy21qznab55m4qb984t38a",
+      "displayName": "EdgeIQLabs",
+      "image": "https://avatars.githubusercontent.com/u/16479432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777136900061,
+      "changelog": "v1.4.0: URGENT FIX — corrected Stripe Payment Link URLs (no suffixes, correct live URLs)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74b86c7ae8b8ac99b2d912ae8a0cc48a2e28afd894ed4a765d079244be571bf0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61979,
+  "uuid": "skill-clawhub-feishu-auto-report",
+  "skillKey": "clawhub-feishu-auto-report",
+  "name": "Feishu Send Message",
+  "summary": "自动从本地配置获取飞书凭证，支持多Agent独立身份向指定open_id或chat_id发送文本消息汇报任务结果。",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_auto_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pikaqiuyaya",
+      "features": [
+        "自动从本地配置获取飞书凭证，支持多Agent独立身份向指定open_id或chat_id发送文本消息汇报任务结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-auto-report@5.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146065672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-auto-report",
+      "url": "https://clawhub.ai/skills/feishu-auto-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-auto-report",
+    "url": "https://clawhub.ai/skills/feishu-auto-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-auto-report-e5d82d3118196233.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-auto-report@5.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-auto-report-5.0.0.json",
+      "version": "5.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b29690a332b30e86ddc6d4dfc9d6baaa86dbd513066a2a719e8905679d5bea3",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:45:29.202Z"
+}

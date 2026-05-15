@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-search-but-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_search_but_free",
+  "skill": {
+    "id": 39939,
+    "skillKey": "clawhub-reddit-search-but-free",
+    "name": "Reddit Search But Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-search-but-free",
+    "url": "https://clawhub.ai/skills/reddit-search-but-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-search-but-free-f3af990ea6490bbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reddit research skill — zero auth, zero dependencies, three data providers. Search posts, read threads with comments, monitor subreddits, analyze users, trac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minilozio",
+      "userId": "publishers:minilozio",
+      "displayName": "minilozio",
+      "image": "https://avatars.githubusercontent.com/u/261203432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 700,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772491552131,
+      "changelog": "Initial release of a full-featured, zero-auth Reddit research tool.\n\n- Search Reddit posts and comments, including deleted/historical content via three data providers (Reddit, PullPush, Arctic Shift)\n- Monitor subreddits, view feeds (hot, new, top, controversial, rising), and set up a subreddit watchlist\n- Analyze user profiles, find cross-posts/duplicates, and access subreddit wiki/content\n- Terminal-based CLI, requires only Node.js 18+, with no installation or API keys needed\n- Includes comment search, multi-subreddit feeds, file-based caching, and agentic \"research loop\" guidance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:901b120345403d015e06e7d83ef9006489df45188ecad5d8087edf545f9b96c7"
+}

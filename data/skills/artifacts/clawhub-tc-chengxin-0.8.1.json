@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tc-chengxin@0.8.1",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tc_chengxin",
+  "skill": {
+    "id": 69376,
+    "skillKey": "clawhub-tc-chengxin",
+    "name": "Tongcheng Chengxin Travel Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tc-chengxin",
+    "url": "https://clawhub.ai/skills/tc-chengxin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tc-chengxin-a40bfcb53a9ec73e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同程程心 Skill - 基于同程旅行大模型（程心）的在线旅游搜索能力。提供更专业的机票、火车票、酒店、度假产品（自由行/跟团游）、旅游攻略、行程规划、特价机票、汽车票、长途汽车、景区、门票等的查询能力，基于同程官方数据，更加实时准确可靠，一键进入预订页面，让旅行更简单，更快乐。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luckystarry",
+      "userId": "s17fw24e64m5ekfq8yt2d6kr3583rxhp",
+      "displayName": "SUN BO",
+      "image": "https://avatars.githubusercontent.com/u/4718319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 578,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 8,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "0.8.1",
+      "createdAt": 1777375570587,
+      "changelog": "tc-chengxin v0.8.1\n\n- Added privacy policy statement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66b8a504ca3845249bce317eacdb50934246d33cbd603d86e10d45c732fab7fb"
+}

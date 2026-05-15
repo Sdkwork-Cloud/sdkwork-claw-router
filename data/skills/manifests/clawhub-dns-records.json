@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52544,
+  "uuid": "skill-clawhub-dns-records",
+  "skillKey": "clawhub-dns-records",
+  "name": "Dns Records",
+  "summary": "Look up DNS records for any domain — A, AAAA, MX, NS, TXT, CNAME, SOA. Use when asked to check DNS records, find a domain's IP address, look up mail servers,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dns_records",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Look up DNS records for any domain — A, AAAA, MX, NS, TXT, CNAME, SOA",
+        "Use when asked to check DNS records, find a domain's IP address, look up mail servers,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dns-records@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dns-records",
+      "url": "https://clawhub.ai/skills/dns-records"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dns-records",
+    "url": "https://clawhub.ai/skills/dns-records",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dns-records-d7e365744164d36c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dns-records@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dns-records-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e351e4da1d75ee726230998c357d81ee4651890a818050341b7580dfe620ae0b",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:39:25.497Z"
+}

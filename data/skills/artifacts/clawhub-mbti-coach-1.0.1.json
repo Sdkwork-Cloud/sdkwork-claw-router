@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mbti-coach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mbti_coach",
+  "skill": {
+    "id": 64348,
+    "skillKey": "clawhub-mbti-coach",
+    "name": "MBTI Coach — Personality Development System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mbti-coach",
+    "url": "https://clawhub.ai/skills/mbti-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mbti-coach-aef4b0e737c75734.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MBTI 人格教练。帮助用户了解自己的 MBTI 类型、设定目标类型，并通过日程管理和专业指导实现人格发展。触发词：「MBTI」「人格教练」「我想变成」「安排日程」「查看进度」「问教练」「以XX视角」。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leilei926524-tech",
+      "userId": "s174ftaafqa048n853nb0g3j7183krjb",
+      "displayName": "leilei926524-tech",
+      "image": "https://avatars.githubusercontent.com/u/238133142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 394,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773620171420,
+      "changelog": "Rewrote SKILL.md in English for global audience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a088c5d3e8e8a60966029fdcf7b48a51e2d8eb93281b6200719c4031a7e6263b"
+}

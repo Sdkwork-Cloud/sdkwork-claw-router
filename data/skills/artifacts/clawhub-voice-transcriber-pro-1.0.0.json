@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-transcriber-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_transcriber_pro",
+  "skill": {
+    "id": 16928,
+    "skillKey": "clawhub-voice-transcriber-pro",
+    "name": "Voice Transcriber Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-transcriber-pro",
+    "url": "https://clawhub.ai/skills/voice-transcriber-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-transcriber-pro-81f42eb0fac2b748.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Voice note transcription and archival for OpenClaw agents. Powered by Deepgram Nova-3. Transcribes audio messages, saves both audio files and text transcript..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 826,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771143858793,
+      "changelog": "Audio transcription via Whisper + voice note journaling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a1d40fc829ee61a196c3fb3967e62be54e4eaaad516f9c3fcec011a705009cf"
+}

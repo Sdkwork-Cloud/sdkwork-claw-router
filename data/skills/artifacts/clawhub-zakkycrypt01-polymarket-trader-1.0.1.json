@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zakkycrypt01-polymarket-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zakkycrypt01_polymarket_trader",
+  "skill": {
+    "id": 20243,
+    "skillKey": "clawhub-zakkycrypt01-polymarket-trader",
+    "name": "Polymarket Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zakkycrypt01-polymarket-trader",
+    "url": "https://clawhub.ai/skills/zakkycrypt01-polymarket-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zakkycrypt01-polymarket-trader-32df3fb5d2c02131.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute limit orders on Polymarket markets by specifying market slug, outcome, price, and order size via a Python script."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zakkycrypt01",
+      "userId": "publishers:zakkycrypt01",
+      "displayName": "Abdulaleem Zakariyah",
+      "image": "https://avatars.githubusercontent.com/u/156052850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771808511109,
+      "changelog": "Version 1.0.1: Patched critical shell injection vulnerability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbe6af977697f02334c6d16e3ef76240c187757b43d3bc23b7fb7b805c031ccd"
+}

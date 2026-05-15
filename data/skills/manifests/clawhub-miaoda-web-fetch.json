@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57183,
+  "uuid": "skill-clawhub-miaoda-web-fetch",
+  "skillKey": "clawhub-miaoda-web-fetch",
+  "name": "妙达网页抓取",
+  "summary": "Use when user needs to crawl or fetch a specific URL to extract/summarize its content. Provides necessary command usage instructions for fetching known URLs....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miaoda_web_fetch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nice1234-h",
+      "features": [
+        "Use when user needs to crawl or fetch a specific URL to extract/summarize its content",
+        "Provides necessary command usage instructions for fetching known URLs...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miaoda-web-fetch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55769646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miaoda-web-fetch",
+      "url": "https://clawhub.ai/skills/miaoda-web-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miaoda-web-fetch",
+    "url": "https://clawhub.ai/skills/miaoda-web-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miaoda-web-fetch-92ef98d1168e5f28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miaoda-web-fetch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-miaoda-web-fetch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:961641b0c0fea2c713bd94ac5bd46c4b97eca89e3604401be034edacfcf5c67e",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T06:56:23.038Z"
+}

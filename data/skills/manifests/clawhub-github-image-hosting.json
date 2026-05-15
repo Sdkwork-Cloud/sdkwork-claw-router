@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15744,
+  "uuid": "skill-clawhub-github-image-hosting",
+  "skillKey": "clawhub-github-image-hosting",
+  "name": "github-image-hosting",
+  "summary": "Upload images to img402.dev for embedding in GitHub PRs, issues, and comments. Images under 1MB are uploaded free (no payment, no auth) and persist for 7 days. Use when the agent needs to share an image in a GitHub context — screenshots, m.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_image_hosting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rahulgi",
+      "features": [
+        "Upload images to img402.dev for embedding in GitHub PRs, issues, and comments",
+        "Images under 1MB are uploaded free (no payment, no auth) and persist for 7 days",
+        "Use when the agent needs to share an image in a GitHub context — screenshots, mockups, diagrams.",
+        "Triggers: \"screenshot this\", \"attach an image\", \"add a screenshot to the PR\", \"upload this mock."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-image-hosting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2237985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-image-hosting",
+      "url": "https://clawhub.ai/skills/github-image-hosting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-image-hosting",
+    "url": "https://clawhub.ai/skills/github-image-hosting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-image-hosting-21940815a8badf3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-image-hosting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-image-hosting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:138fbcac5bb499e7735e0eee69cc1a0a6c9df409fca4e778870549aa5b3f0ba7",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T09:22:17.093Z"
+}

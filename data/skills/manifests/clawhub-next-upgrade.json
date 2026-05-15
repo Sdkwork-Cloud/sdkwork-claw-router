@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18161,
+  "uuid": "skill-clawhub-next-upgrade",
+  "skillKey": "clawhub-next-upgrade",
+  "name": "Next Upgrade",
+  "summary": "Upgrade Next.js to the latest version following official migration guides and codemods",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.next_upgrade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vi.dev",
+      "features": [
+        "Upgrade Next.js to the latest version following official migration guides and codemods"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/next-upgrade@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114379606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "next-upgrade",
+      "url": "https://clawhub.ai/skills/next-upgrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "next-upgrade",
+    "url": "https://clawhub.ai/skills/next-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/next-upgrade-f29f3b98c0905767.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/next-upgrade@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-next-upgrade-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51fad314a343be1719cb27a95b685d1eba3a407489b9d58a6dc7b996dd2704c8",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T16:43:33.908Z"
+}

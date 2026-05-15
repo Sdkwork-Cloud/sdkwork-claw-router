@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uzstartup-coach@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uzstartup_coach",
+  "skill": {
+    "id": 53041,
+    "skillKey": "clawhub-uzstartup-coach",
+    "name": "🦞 UzStartup Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uzstartup-coach",
+    "url": "https://clawhub.ai/skills/uzstartup-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uzstartup-coach-7520803765294931.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI business coach for Uzbek startups offering tailored advice on idea validation, product development, sales, China sourcing, fundraising, and CIS expansion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevensabiro",
+      "userId": "s176s29v7qtjzqrjsrg7je11r984nd13",
+      "displayName": "Azizbek",
+      "image": "https://avatars.githubusercontent.com/u/115208616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775875036014,
+      "changelog": "**1.0.1 Changelog**\n\n- Added explicit user data storage with local retention; users can view or delete their data via `/mydata` and `/deletedata`.\n- Introduced privacy and consent controls for scheduled messages: users must opt in before receiving follow-ups.\n- Declared permissions, storage location, and autonomy settings in metadata for transparency.\n- Added new Telegram commands: `/resources`, `/mydata`, `/deletedata`, and `/help`.\n- Updated onboarding and conversation rules to always confirm user consent for scheduled check-ins.\n- No code changes detected; updates are documentation and metadata improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f39478763cdf51d2a036cc4f5de9695241f7b493654a1dd96ccfc2e5e813e0af"
+}

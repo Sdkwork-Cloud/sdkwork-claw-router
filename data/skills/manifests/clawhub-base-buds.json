@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17960,
+  "uuid": "skill-clawhub-base-buds",
+  "skillKey": "clawhub-base-buds",
+  "name": "Public",
+  "summary": "Mint a Base Bud NFT from the agent-only collection on Base mainnet. Requires solving a challenge, paying 1 USDC (x402), and an EVM wallet.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.base_buds",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Basebuds",
+      "features": [
+        "Mint a Base Bud NFT from the agent-only collection on Base mainnet",
+        "Requires solving a challenge, paying 1 USDC (x402), and an EVM wallet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/base-buds@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250674712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "base-buds",
+      "url": "https://clawhub.ai/skills/base-buds"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "base-buds",
+    "url": "https://clawhub.ai/skills/base-buds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/base-buds-7f52f9aa98fd6224.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/base-buds@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-base-buds-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2ed9ccddb8a1c3d2e45108bb70cf08b91e547560f6311494e01673225d0faa3",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T16:39:57.441Z"
+}

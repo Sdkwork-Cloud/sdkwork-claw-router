@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26937,
+  "uuid": "skill-clawhub-fulfill-git-escrow",
+  "skillKey": "clawhub-fulfill-git-escrow",
+  "name": "Fulfill Git Escrow",
+  "summary": "Fulfill a git escrow bounty by writing a solution or submitting an existing one. Use when the user wants to solve a test suite challenge, write code to pass...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fulfill_git_escrow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "疒奀",
+      "features": [
+        "Fulfill a git escrow bounty by writing a solution or submitting an existing one",
+        "Use when the user wants to solve a test suite challenge, write code to pass..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fulfill-git-escrow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46226846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fulfill-git-escrow",
+      "url": "https://clawhub.ai/skills/fulfill-git-escrow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fulfill-git-escrow",
+    "url": "https://clawhub.ai/skills/fulfill-git-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fulfill-git-escrow-71acb4bf760db37d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fulfill-git-escrow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fulfill-git-escrow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec5044729509b5dd14ec76389b6c683f73c4bc2fcb8d482ed1e974b5b3f896c1",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T12:28:01.169Z"
+}

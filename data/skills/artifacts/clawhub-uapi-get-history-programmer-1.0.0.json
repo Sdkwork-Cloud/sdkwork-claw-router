@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uapi-get-history-programmer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapi_get_history_programmer",
+  "skill": {
+    "id": 58577,
+    "skillKey": "clawhub-uapi-get-history-programmer",
+    "name": "UAPI 程序员历史事件 接口"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapi-get-history-programmer",
+    "url": "https://clawhub.ai/skills/uapi-get-history-programmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapi-get-history-programmer-06e584d86449278f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 UAPI 的“程序员历史事件”单接口 skill，处理 程序员历史事件 等请求。 Use when the user wants get history programmer, history programmer, programmer, or when you need to call GET /his..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuakami",
+      "userId": "publishers:shuakami",
+      "displayName": "速冻饺子",
+      "image": "https://avatars.githubusercontent.com/u/149454909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773084673272,
+      "changelog": "Initial publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3bc408cbb19255ae6e251ba2d807f0c2ff5a29b3af0e26b1c4c156639d297cf4"
+}

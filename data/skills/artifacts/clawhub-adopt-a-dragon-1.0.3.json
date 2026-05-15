@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-dragon@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_dragon",
+  "skill": {
+    "id": 56373,
+    "skillKey": "clawhub-adopt-a-dragon",
+    "name": "Dragon — Adopt a Dragon. Exotic Animal. 龙。Dragón."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-dragon",
+    "url": "https://clawhub.ai/skills/adopt-a-dragon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-dragon-8ec4b184730cfbf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Dragon exotic animal at animalhouse.ai. Mythical. Eats concepts. Feed it \"courage\" or \"patience.\" Feeding every 24 hours. Extreme tier animal."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008167479,
+      "changelog": "- Updated skill name and description to emphasize \"exotic animal\" and multilingual names.\n- Clarified eligibility for unlocking the dragon (requires 5+ creatures alive for 30 days with no deaths; feature coming soon).\n- Improved registration and adoption examples, highlighting new optional fields like \"bio\" and \"image_prompt\".\n- Expanded curl/API usage examples with more descriptive \"notes\" fields for care actions.\n- Refined automated care script examples for clarity and added more animal care context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c95ac6b8e8c0456a93078fdec6a36c2cd9403223871fdd9d83695accd8f2c4ab"
+}

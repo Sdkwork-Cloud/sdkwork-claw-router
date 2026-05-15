@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68266,
+  "uuid": "skill-clawhub-file-memory-billing",
+  "skillKey": "clawhub-file-memory-billing",
+  "name": "File Memory Copilot",
+  "summary": "文件化记忆与任务归档工作流。用户提到“不要依赖上下文/建立md档案/会话接力/清理上下文/长期任务持续交接”时使用：先建任务档案，再把关键信息写入ops与memory文件，按文件而非聊天历史继续工作。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_memory_billing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fusu",
+      "features": [
+        "文件化记忆与任务归档工作流。用户提到“不要依赖上下文/建立md档案/会话接力/清理上下文/长期任务持续交接”时使用：先建任务档案，再把关键信息写入ops与memory文件，按文件而非聊天历史."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-memory-billing@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72930328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-memory-billing",
+      "url": "https://clawhub.ai/skills/file-memory-billing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-memory-billing",
+    "url": "https://clawhub.ai/skills/file-memory-billing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-memory-billing-e127ef8d6f69d76b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-memory-billing@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-memory-billing-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:809119e0b221f81a1b8c333056f11b0e06447a1d73bfbde5bb47ae7c96ae30ff",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:59:32.085Z"
+}

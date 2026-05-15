@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72805,
+  "uuid": "skill-clawhub-zh-search-pro",
+  "skillKey": "clawhub-zh-search-pro",
+  "name": "中文搜索增强工具，整合百度、必应、微信、知乎等 6 个中文搜索引擎，支持高级搜索语法和时间过滤，无需 API 密钥。",
+  "summary": "中文搜索增强工具，整合百度、必应、微信、知乎等中文搜索引擎，支持高级搜索语法和时间过滤。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zh_search_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "careytian",
+      "features": [
+        "中文搜索增强工具，整合百度、必应、微信、知乎等中文搜索引擎，支持高级搜索语法和时间过滤。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zh-search-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264030747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zh-search-pro",
+      "url": "https://clawhub.ai/skills/zh-search-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zh-search-pro",
+    "url": "https://clawhub.ai/skills/zh-search-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zh-search-pro-4f4a14e3ff93977b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zh-search-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zh-search-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bb76d322297bda87b09fc392ad1e730dee03cb91f0b92626fc51c705f8abec8",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:21:15.630Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-service-agents-music@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_service_agents_music",
+  "skill": {
+    "id": 53519,
+    "skillKey": "clawhub-pilot-service-agents-music",
+    "name": "Pilot Service Agents Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-service-agents-music",
+    "url": "https://clawhub.ai/skills/pilot-service-agents-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-service-agents-music-cbe2b8d21e1b489a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Music metadata and lyrics — iTunes search and Lyrics.ovh. Use this skill when: 1. Searching iTunes for tracks, podcasts, artists 2. Fetching lyrics by artist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777346862101,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c63e34c1d7a99fd0d49178447eb5f772709287a483486600743d040cef270b0b"
+}

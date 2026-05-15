@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-dca-reflection-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_dca_reflection_guide",
+  "skill": {
+    "id": 46814,
+    "skillKey": "clawhub-crypto-dca-reflection-guide",
+    "name": "Crypto Dca Reflection Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-dca-reflection-guide",
+    "url": "https://clawhub.ai/skills/crypto-dca-reflection-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-dca-reflection-guide-92561a3acd02cab2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A reflection skill that helps decide whether a recurring buy habit fits the user's goals, budget, and temperament. Use when the user is considering a DCA str..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776296208846,
+      "changelog": "Initial release of crypto-dca-reflection-guide.\n\n- Guides users in evaluating if a dollar-cost averaging (DCA) habit fits their goals, budget, and temperament.\n- Prompts for goal horizon, conviction, cash flow, and responses to volatility.\n- Highlights reasons for considering DCA and compares it with alternative approaches.\n- Offers a simple, rule-based experiment and clear review point if DCA is suitable.\n- Flags edge cases (like irregular income or gambling behavior) where DCA may not be a good fit.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:525a1c194e9408ffb29dd7e05df73c8e39d34504dfa06e8de08c04a0499dea70"
+}

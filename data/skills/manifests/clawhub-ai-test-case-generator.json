@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66338,
+  "uuid": "skill-clawhub-ai-test-case-generator",
+  "skillKey": "clawhub-ai-test-case-generator",
+  "name": "Ai Test Case Generator",
+  "summary": "AI 自动生成测试用例工具。基于高级测试架构师角色，使用等价类划分、场景分析法、正交分解、状态迁移等方法生成覆盖全面的测试用例集。支持输出 Markdown 格式并调用接口转换为 Excel 测试用例。使用场景：(1) 根据需求文档生成测试用例 (2) 设计功能测试用例 (3) 补充边界值和异常流测试用例 (4)...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_test_case_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LianWilliam",
+      "features": [
+        "AI 自动生成测试用例工具。基于高级测试架构师角色，使用等价类划分、场景分析法、正交分解、状态迁移等方法生成覆盖全面的测试用例集。支持输出 Markdown 格式并调用接口转换为 Excel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-test-case-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35838730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-test-case-generator",
+      "url": "https://clawhub.ai/skills/ai-test-case-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-test-case-generator",
+    "url": "https://clawhub.ai/skills/ai-test-case-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-test-case-generator-f26b7cd628f4cb2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-test-case-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-test-case-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:217a59df6733988480455ae93bd66e36b3ade63c5abad133fea1640ff55f87f0",
+      "artifactSizeBytes": 2787
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:19:07.055Z"
+}

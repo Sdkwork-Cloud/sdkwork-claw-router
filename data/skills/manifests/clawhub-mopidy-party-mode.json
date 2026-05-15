@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41801,
+  "uuid": "skill-clawhub-mopidy-party-mode",
+  "skillKey": "clawhub-mopidy-party-mode",
+  "name": "Mopidy Party Mode",
+  "summary": "Run a Mopidy music system in party mode for shared or group chats, where everyone can contribute songs but only the host can control playback. Use by default...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mopidy_party_mode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grantmacnamara",
+      "features": [
+        "Run a Mopidy music system in party mode for shared or group chats, where everyone can contribut.",
+        "Use by default..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mopidy-party-mode@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6692175?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mopidy-party-mode",
+      "url": "https://clawhub.ai/skills/mopidy-party-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mopidy-party-mode",
+    "url": "https://clawhub.ai/skills/mopidy-party-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mopidy-party-mode-eaded6d3e51de3e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mopidy-party-mode@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mopidy-party-mode-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58ece126ab09607ac40aded9c6496d137dce20112f61edb04b49c859f08a6a63",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:44:43.105Z"
+}

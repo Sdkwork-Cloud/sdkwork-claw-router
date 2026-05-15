@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54478,
+  "uuid": "skill-clawhub-pipeworx-exchange",
+  "skillKey": "clawhub-pipeworx-exchange",
+  "name": "Pipeworx exchange",
+  "summary": "Currency exchange rates and conversion — current, historical, and all supported pairs via the Frankfurter API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_exchange",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Currency exchange rates and conversion — current, historical, and all supported pairs via the F."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-exchange@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-exchange",
+      "url": "https://clawhub.ai/skills/pipeworx-exchange"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-exchange",
+    "url": "https://clawhub.ai/skills/pipeworx-exchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-exchange-3cd4588d0efeb0e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-exchange@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-exchange-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80095c38ce8138a1ac12062b3a044046386b3b90664a105aea88947a3d81a324",
+      "artifactSizeBytes": 1862
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T18:19:37.590Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64372,
+  "uuid": "skill-clawhub-gangtise-data",
+  "skillKey": "clawhub-gangtise-data",
+  "name": "Gangtise 数据库",
+  "summary": "通过 Gangtise 金融 Open API 拉取结构化量化数据，包括日K行情、财务三大报表、主营构成与估值分位等。需在 scripts 目录配置授权（.authorization），证券参数须为完整代码（如 600519.SH）。当用户需要可落盘的表格化行情与基本面数据时使用。",
+  "version": "1.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gangtise_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GangtiseGts",
+      "features": [
+        "通过 Gangtise 金融 Open API 拉取结构化量化数据，包括日K行情、财务三大报表、主营构成与估值分位等。需在 scripts 目录配置授权（.authorization），证券."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gangtise-data@1.4.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274197162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gangtise-data",
+      "url": "https://clawhub.ai/skills/gangtise-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gangtise-data",
+    "url": "https://clawhub.ai/skills/gangtise-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gangtise-data-1f9a4ed3ee85c543.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gangtise-data@1.4.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-gangtise-data-1.4.3.json",
+      "version": "1.4.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09c6cc2090045373bf59f1a07b012b9446c916266e7cbe834585b5b78f4cbb8d",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T08:50:09.035Z"
+}

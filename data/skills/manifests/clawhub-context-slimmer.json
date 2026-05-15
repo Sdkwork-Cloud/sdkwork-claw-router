@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12867,
+  "uuid": "skill-clawhub-context-slimmer",
+  "skillKey": "clawhub-context-slimmer",
+  "name": "Context Slimmer",
+  "summary": "Audit and slim down always-loaded context files (AGENTS.md, TOOLS.md, USER.md, MEMORY.md, HEARTBEAT.md, SOUL.md, IDENTITY.md). Use when asked to reduce token usage, audit context files, optimize context window, or slim down workspace files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_slimmer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SunDevilATB",
+      "features": [
+        "Audit and slim down always-loaded context files (AGENTS.md, TOOLS.md, USER.md, MEMORY.md, HEART.",
+        "Use when asked to reduce token usage, audit context files, optimize context window, or slim dow.",
+        "Measures current token cost and identifies what to move, remove, or compress."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-slimmer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170658350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-slimmer",
+      "url": "https://clawhub.ai/skills/context-slimmer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-slimmer",
+    "url": "https://clawhub.ai/skills/context-slimmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-slimmer-47de2394e944179a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-slimmer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-slimmer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4295bf88514d06332fde386b18db1f6d191bb4822f29287a5ce055bb841e4e3",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T22:47:58.377Z"
+}

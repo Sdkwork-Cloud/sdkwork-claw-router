@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/starter-flow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.starter_flow",
+  "skill": {
+    "id": 66892,
+    "skillKey": "clawhub-starter-flow",
+    "name": "Starter Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "starter-flow",
+    "url": "https://clawhub.ai/skills/starter-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/starter-flow-577c44d30882429c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速一键安装 OpenClaw 五个核心技能，支持自主选择和中英文切换，提供新手引导，本地安全运行并可随时卸载。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "largetool",
+      "userId": "s174h1rvndzxpg052914dvpjjs83xj3a",
+      "displayName": "largetool",
+      "image": "https://avatars.githubusercontent.com/u/128457415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772085245691,
+      "changelog": "Starter Flow 1.0.0 — 快速上手 OpenClaw 的新手启动套件\n\n- 提供一键安装 5 个核心技能，3 分钟完成 OpenClaw 入门配置\n- 支持勾选安装、语言切换（中文/英文）、安全本地运行\n- 安装完成自动显示新手引导与核心用法\n- 触发词覆盖“新手”、“启动”、“快速上手”等常见说法\n- 用户自主选择，随时可卸载，不残留",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f28e16249f570257d18bfba0c1d174ecf948f096481569cdf220ad32411d06a"
+}

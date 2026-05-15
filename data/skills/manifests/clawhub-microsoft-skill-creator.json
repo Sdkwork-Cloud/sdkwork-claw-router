@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15839,
+  "uuid": "skill-clawhub-microsoft-skill-creator",
+  "skillKey": "clawhub-microsoft-skill-creator",
+  "name": "Microsoft Skill Creator",
+  "summary": "Create agent skills for Microsoft technologies using Learn MCP tools. Use when users want to create a skill that teaches agents about any Microsoft technolog...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_skill_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tianqi Zhang",
+      "features": [
+        "Create agent skills for Microsoft technologies using Learn MCP tools",
+        "Use when users want to create a skill that teaches agents about any Microsoft technolog..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microsoft-skill-creator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5326582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microsoft-skill-creator",
+      "url": "https://clawhub.ai/skills/microsoft-skill-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-skill-creator",
+    "url": "https://clawhub.ai/skills/microsoft-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-skill-creator-f9057b982182b707.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microsoft-skill-creator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-microsoft-skill-creator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56125668cc7befd6c88ed273f9cea3b7a1b535f5b9440e28d646c84119142964",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:39:13.349Z"
+}

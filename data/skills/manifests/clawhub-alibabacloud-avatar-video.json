@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55293,
+  "uuid": "skill-clawhub-alibabacloud-avatar-video",
+  "skillKey": "clawhub-alibabacloud-avatar-video",
+  "name": "Alibabacloud Avatar Video",
+  "summary": "Use Alibaba Cloud DashScope API and LingMou to generate AI video and speech. Seven capabilities — (1) LivePortrait talking-head (image + audio → video, two-s...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_avatar_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Use Alibaba Cloud DashScope API and LingMou to generate AI video and speech",
+        "Seven capabilities — (1) LivePortrait talking-head (image + audio → video, two-s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-avatar-video@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-avatar-video",
+      "url": "https://clawhub.ai/skills/alibabacloud-avatar-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-avatar-video",
+    "url": "https://clawhub.ai/skills/alibabacloud-avatar-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-avatar-video-84d4fbfbe47e2e47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-avatar-video@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-avatar-video-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c534357d1d061443c36910b43cb6d66977c645df2b8f4d18e3016b447be8d821",
+      "artifactSizeBytes": 2653
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:54:07.453Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54687,
+  "uuid": "skill-clawhub-gmail-email",
+  "skillKey": "clawhub-gmail-email",
+  "name": "Gmail",
+  "summary": "Search Gmail messages, read threads, manage drafts and labels, and send or reply to email — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Search Gmail messages, read threads, manage drafts and labels, and send or reply to email — pow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-email@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-email",
+      "url": "https://clawhub.ai/skills/gmail-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-email",
+    "url": "https://clawhub.ai/skills/gmail-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-email-a26a5e1c795f4462.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-email@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-email-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e75d871f747507d3c668d40dc7a8f3f12d1b8bc558f1edc11859c88a2ae22323",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T20:29:38.420Z"
+}

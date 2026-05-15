@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/authensor-gateway@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authensor_gateway",
+  "skill": {
+    "id": 10552,
+    "skillKey": "clawhub-authensor-gateway",
+    "name": "Authensor Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authensor-gateway",
+    "url": "https://clawhub.ai/skills/authensor-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authensor-gateway-7c219940fded953f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fail-safe policy gate for OpenClaw marketplace skills. Intercepts tool calls before execution and checks them against your Authensor policy. Low-risk actions run automatically. High-risk actions require your approval. Dangerous actions are."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "authensor",
+      "userId": "publishers:authensor",
+      "displayName": "AUTHENSOR",
+      "image": "https://avatars.githubusercontent.com/u/250658088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2564,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1770791806927,
+      "changelog": "Add code-level enforcement hook (authensor-gate.sh) — bypass-proof PreToolUse hook with deterministic classification and redaction. Two-tier enforcement model.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e3152da43e9439556190de6e56e8160686772336b8f1c28603cf742e819395b"
+}

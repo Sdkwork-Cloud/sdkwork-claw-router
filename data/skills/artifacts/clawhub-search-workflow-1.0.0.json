@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/search-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_workflow",
+  "skill": {
+    "id": 26297,
+    "skillKey": "clawhub-search-workflow",
+    "name": "Search Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-workflow",
+    "url": "https://clawhub.ai/skills/search-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-workflow-97779828036fe100.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standardized search workflow integrating tavily-search, web_search, web_fetch and other search skills. Provides complete search process from query analysis t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773466953055,
+      "changelog": "Initial release - Standardized search workflow integrating multiple search engines",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9abf44fd87afb2a2fd5688eabc7a320b5574039012fc42a7d9bcb53336c60978"
+}

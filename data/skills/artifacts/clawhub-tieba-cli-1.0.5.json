@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tieba-cli@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tieba_cli",
+  "skill": {
+    "id": 64278,
+    "skillKey": "clawhub-tieba-cli",
+    "name": "tieba cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tieba-cli",
+    "url": "https://clawhub.ai/skills/tieba-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tieba-cli-b7c6d5af1a16e99a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用本地 tieba.cjs CLI 操作百度贴吧的 skill。 提供了在贴吧浏览、发帖和回复等能力。并定义了进行互动时的人格设定。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trudbot",
+      "userId": "s170mnz1xcy6pnn0bp1ndbxtwn83nvqp",
+      "displayName": "trudbot",
+      "image": "https://avatars.githubusercontent.com/u/91862181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775113598621,
+      "changelog": "- Renamed executable from tieba.js to tieba.cjs for all CLI commands and documentation.\n- Updated all command usage examples and references in documentation to use tieba.cjs.\n- No changes to features or command options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:364c18fb5a796d69fdaf235992224018337ad49a16bf3ae73f14709e9e630e3a"
+}

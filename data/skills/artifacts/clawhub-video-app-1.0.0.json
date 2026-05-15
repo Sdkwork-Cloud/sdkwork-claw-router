@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_app",
+  "skill": {
+    "id": 47731,
+    "skillKey": "clawhub-video-app",
+    "name": "Video App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-app",
+    "url": "https://clawhub.ai/skills/video-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-app-6c418f5b8173e34c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished MP4 files ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"trim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777226714385,
+      "changelog": "Initial release of Video App — Edit and Export Videos Fast.\n\n- Upload and edit MP4, MOV, AVI, and WebM video files up to 500MB with natural language instructions (e.g., \"trim the silent parts, add background music, and export in 1080p\").\n- Automatic setup with seamless cloud connection and session creation; 100 free credits for first-time users.\n- Fast GPU-accelerated cloud processing with 1080p MP4 export—most clips process in 1–2 minutes.\n- Simple workflows for quick edits, batch processing, and iterative refinements.\n- Supports tracking credits, querying export/state, and giving concise status updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba9460c21c70ce788ce0f6d58dbb3cd0dda645d541c6703f6f33f71cf2b35b49"
+}

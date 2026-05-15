@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31262,
+  "uuid": "skill-clawhub-network-engineer",
+  "skillKey": "clawhub-network-engineer",
+  "name": "Network Engineer",
+  "summary": "Generates personalized network engineering career roadmaps by assessing experience, skills, and goals to guide skill development and certification planning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_engineer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates personalized network engineering career roadmaps by assessing experience, skills, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/network-engineer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "network-engineer",
+      "url": "https://clawhub.ai/skills/network-engineer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-engineer",
+    "url": "https://clawhub.ai/skills/network-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-engineer-a29b174fb5aae49c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/network-engineer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-network-engineer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95ea0f49c0f987398caefdac9b48c70915ee1fe54ca102e490fe8f600ed47630",
+      "artifactSizeBytes": 2478
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:50:10.667Z"
+}

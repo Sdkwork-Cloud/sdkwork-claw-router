@@ -45,10 +45,7 @@ fn app_gateway_traces_router_with_state(
     require_subject: bool,
 ) -> Router {
     Router::new()
-        .route(
-            "/app/v3/api/router/gateway/traces",
-            get(fetch_gateway_traces),
-        )
+        .route("/app/v3/api/ai/gateway/traces", get(fetch_gateway_traces))
         .with_state(AppGatewayTracesState {
             read_store,
             require_subject,

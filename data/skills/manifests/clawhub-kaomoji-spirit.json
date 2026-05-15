@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62806,
+  "uuid": "skill-clawhub-kaomoji-spirit",
+  "skillKey": "clawhub-kaomoji-spirit",
+  "name": "Kaomoji Spirit",
+  "summary": "顏文字推薦助手 - 根據語氣自動推薦合適顏文字",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaomoji_spirit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wakame",
+      "features": [
+        "根據語氣自動推薦合適顏文字"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kaomoji-spirit@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264813137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kaomoji-spirit",
+      "url": "https://clawhub.ai/skills/kaomoji-spirit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaomoji-spirit",
+    "url": "https://clawhub.ai/skills/kaomoji-spirit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaomoji-spirit-6a857de05bfe0d48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kaomoji-spirit@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kaomoji-spirit-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1228a7c29c02122c3f0e766862cb7166919aabc3d9ae65bf66077ebd45d97647",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T10:50:05.485Z"
+}

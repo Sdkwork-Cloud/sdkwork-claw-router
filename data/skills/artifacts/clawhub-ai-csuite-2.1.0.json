@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-csuite@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_csuite",
+  "skill": {
+    "id": 23216,
+    "skillKey": "clawhub-ai-csuite",
+    "name": "AI C-Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-csuite",
+    "url": "https://clawhub.ai/skills/ai-csuite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-csuite-dc5a85c725481eb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs a script-backed AI C-Suite strategic debate for SaaS teams. It builds a stage-aware executive roster, generates structured debate rounds, synthesizes a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarezoe",
+      "userId": "s178sk484g47vwcbvvfcjpftfx8461fz",
+      "displayName": "clarezoe",
+      "image": "https://avatars.githubusercontent.com/u/460084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1772129961655,
+      "changelog": "Re-publish with latest scripts and config",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13cb887f65cd8e0d816052fa9b406bfdc7eacf074d58fdce886ffedc9988f852"
+}

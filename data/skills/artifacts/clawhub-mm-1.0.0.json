@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mm",
+  "skill": {
+    "id": 43855,
+    "skillKey": "clawhub-mm",
+    "name": "Memory Manager Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mm",
+    "url": "https://clawhub.ai/skills/mm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mm-8fa1dddd53606ceb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize, store, and recall information, set smart reminders, link related notes, and receive prompts to improve memory retention."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hgta23",
+      "userId": "s176ns9wb0zkz6m56ha2rk438x843wcn",
+      "displayName": "bittao",
+      "image": "https://avatars.githubusercontent.com/u/17961407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775653582022,
+      "changelog": "Memory Manager skill v1.0.0 released:\n\n- Organize, store, and recall notes, facts, and ideas efficiently.\n- Set smart reminders based on time, location, or events.\n- Link related information to build a connected knowledge network.\n- Receive periodic prompts to review and reinforce memory.\n- Search and retrieve saved information using natural language queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb39c8738e817875de844885d7bd3ea2c5b9d238ff251af1172a5548e8f797e9"
+}

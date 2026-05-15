@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-massage@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_massage",
+  "skill": {
+    "id": 13092,
+    "skillKey": "clawhub-book-massage",
+    "name": "Book Massage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-massage",
+    "url": "https://clawhub.ai/skills/book-massage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-massage-f2a89f77631056b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book massage services through Lokuli MCP. Use when user needs to find and book massage. Triggers on requests like \"book a massage\", \"find massage near me\", or any massage service request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770339936510,
+      "changelog": "Fixed display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2516c814388233204c6664384c971e4174ac061e1efb099ff337c71f6401bc74"
+}

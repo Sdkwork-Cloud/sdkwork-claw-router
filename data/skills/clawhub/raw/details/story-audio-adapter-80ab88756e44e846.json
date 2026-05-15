@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "story-audio-adapter",
+    "displayName": "有声读物生成助手",
+    "summary": "Use when: 用户希望把带有 `[角色]文本` 标记的小说、剧本、故事台词转成多角色有声作品时触发。 适用于旁白、人物对白、角色 ID 已标注清楚的文本内容。Skill 会读取可编辑音色库，分析角色数量与性格特征，匹配最接近的音色，逐段调用 SenseAudio TTS，最后拼接为完整音频并以 `MEDIA...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1773732404847,
+    "updatedAt": 1778310800875
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773732404847,
+    "changelog": "Initial release of story-audio-adapter.\n\n- Converts structured `[角色]内容` story/novel scripts into multi-role audio using SenseAudio TTS.\n- Reads an editable voice library for role-to-voice matching; default voices provided.\n- Full workflow: config check, voice listing, role/voice analysis, segment synthesis, output `MEDIA:./...` for Feishu/OpenClaw.\n- Strict fallback and error handling for missing API keys, input limits, or empty voice library.\n- Outputs character analysis, voice mapping, and always returns a media reference for channel consumption.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "xinhao-96",
+    "userId": "s17est75fddx5qx0wkm9n1szdh85tezf",
+    "displayName": "Xin",
+    "image": "https://avatars.githubusercontent.com/u/151364531?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310800875
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14591,
+  "uuid": "skill-clawhub-usememos",
+  "skillKey": "clawhub-usememos",
+  "name": "Memos",
+  "summary": "Create, read, update, and delete memos on a Memos instance (usememos/memos). Handles requests like \"save this as a memo\", \"list my recent memos\", \"update mem...",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usememos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sinhong2011",
+      "features": [
+        "Create, read, update, and delete memos on a Memos instance (usememos/memos)",
+        "Handles requests like \"save this as a memo\", \"list my recent memos\", \"update mem..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usememos@0.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28216536?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usememos",
+      "url": "https://clawhub.ai/skills/usememos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usememos",
+    "url": "https://clawhub.ai/skills/usememos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usememos-676711df77cdc14c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usememos@0.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-usememos-0.1.9.json",
+      "version": "0.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e6947c0c33a0fe766f1f4a806f23ba0c11304ee1bcee2437574a359217d7d1f",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T11:37:35.076Z"
+}

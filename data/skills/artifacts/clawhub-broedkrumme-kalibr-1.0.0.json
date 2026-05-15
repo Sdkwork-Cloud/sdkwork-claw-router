@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/broedkrumme-kalibr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broedkrumme_kalibr",
+  "skill": {
+    "id": 45171,
+    "skillKey": "clawhub-broedkrumme-kalibr",
+    "name": "Broedkrumme Kalibr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broedkrumme-kalibr",
+    "url": "https://clawhub.ai/skills/broedkrumme-kalibr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broedkrumme-kalibr-867c27f22f94986e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures agent outcomes and LLM telemetry for continuous self-improvement and optional intelligent model routing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "broedkrummen",
+      "userId": "s176tqmpjtkpkhfdzyb4m64qts83hexw",
+      "displayName": "Broedkrummen",
+      "image": "https://avatars.githubusercontent.com/u/146327287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771928137473,
+      "changelog": "- Initial release of Kalibr skill.\n- Captures agent outcomes for tracking and analysis.\n- Collects LLM telemetry data.\n- Supports optional intelligent model routing.\n- Enables self-improvement tracking for agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14d177916d14641a3d367760c01ced7d9a65092872b7a409296e8f54236366b3"
+}

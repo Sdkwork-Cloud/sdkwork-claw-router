@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44229,
+  "uuid": "skill-clawhub-box-kvcache",
+  "skillKey": "clawhub-box-kvcache",
+  "name": "Box-KVCache",
+  "summary": "Local KV Cache compression for LLMs using low-rank decomposition and INT8 quantization to reduce GPU memory by 2-4x during inference.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.box_kvcache",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "heijiaziopenclaw",
+      "features": [
+        "Local KV Cache compression for LLMs using low-rank decomposition and INT8 quantization to reduc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/box-kvcache@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269780373?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "box-kvcache",
+      "url": "https://clawhub.ai/skills/box-kvcache"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "box-kvcache",
+    "url": "https://clawhub.ai/skills/box-kvcache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/box-kvcache-1a299951f79ab8cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/box-kvcache@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-box-kvcache-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:507c9654eabda58060f14b0d9d420701500361cd2dc1ac96bd2bdf9875c23fa4",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T18:52:04.894Z"
+}

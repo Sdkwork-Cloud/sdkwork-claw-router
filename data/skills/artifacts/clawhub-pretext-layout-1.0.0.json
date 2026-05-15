@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pretext-layout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pretext_layout",
+  "skill": {
+    "id": 36495,
+    "skillKey": "clawhub-pretext-layout",
+    "name": "pretext-layout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pretext-layout",
+    "url": "https://clawhub.ai/skills/pretext-layout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pretext-layout-9e24596ebd94f7c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate, debug, or prototype @chenglou/pretext for browser-based multiline text measurement and manual line layout. Use when replacing DOM height probes, b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "royhk920",
+      "userId": "s179273w43zh8y75zyzst8wa2h83gwxh",
+      "displayName": "royhk920",
+      "image": "https://avatars.githubusercontent.com/u/129730053?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774807209615,
+      "changelog": "- Initial release of pretext-layout (v1.0.0).\n- Provides integration, prototyping, and debugging guidance for @chenglou/pretext in browser-based multiline text measurement and layout.\n- Includes workflow steps, decision guide, and core implementation rules for accurate text measurement and layout caching.\n- Offers a scaffolding script for minimal browser demos and references for key integration patterns, usage, and caveats.\n- Clarifies runtime, caching, and environment requirements, with emphasis on browser support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:739ace88604f89985506677b568f03ed2feffd06f5f5f037d15f981152676dd6"
+}

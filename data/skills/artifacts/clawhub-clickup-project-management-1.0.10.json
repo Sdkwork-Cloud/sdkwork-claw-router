@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clickup-project-management@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clickup_project_management",
+  "skill": {
+    "id": 18620,
+    "skillKey": "clawhub-clickup-project-management",
+    "name": "Clickup Project Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clickup-project-management",
+    "url": "https://clawhub.ai/skills/clickup-project-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clickup-project-management-3ef634db29ab011c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage ClickUp via natural language. Uses the taazkareem.com remote MCP server. A license key is required for full tool access (unlicensed calls return check..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taazkareem",
+      "userId": "publishers:taazkareem",
+      "displayName": "Talib Kareem",
+      "image": "https://avatars.githubusercontent.com/u/4195036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 654,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1772184967207,
+      "changelog": "- No file or documentation changes detected in this version.\n- No user-facing updates or modifications introduced in v1.0.10.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54bcfd56cdedb2885b0d6bd5dec86476c45167ba04d98880abc107bc9283cf1c"
+}

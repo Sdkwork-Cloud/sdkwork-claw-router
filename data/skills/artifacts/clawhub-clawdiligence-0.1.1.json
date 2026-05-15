@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdiligence@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdiligence",
+  "skill": {
+    "id": 55960,
+    "skillKey": "clawhub-clawdiligence",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdiligence",
+    "url": "https://clawhub.ai/skills/clawdiligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdiligence-174f06e359cdf0f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI M&A due diligence analyst. Analyze companies, valuate businesses, parse financial statements (決算書), and generate acquisition simulation reports from publi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yu010101",
+      "userId": "publishers:yu010101",
+      "displayName": "yu010101",
+      "image": "https://avatars.githubusercontent.com/u/187271470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771325042278,
+      "changelog": "Step 1 reorder: text input first, EDINET auto-fetch last (requires API key). Tested with real PDFs (JFE Steel, Taiyo Life Insurance).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:652b45697eeeb5e13f699c8de485ecdb3b4fe497250e2ba5fdb661f40acf8b2c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bing-image-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bing_image_creator",
+  "skill": {
+    "id": 46804,
+    "skillKey": "clawhub-bing-image-creator",
+    "name": "Bing Image Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bing-image-creator",
+    "url": "https://clawhub.ai/skills/bing-image-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bing-image-creator-ea3b15f2300ad9b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short text description like 'a fox reading a book in a forest at sunset' into 1080p AI generated visuals just by typing what you need. Whether it's ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776240309815,
+      "changelog": "- Initial release of Bing Image Creator skill (v1.0.0).\n- Generate AI images in 1080p from short text prompts within 20-40 seconds.\n- Automatic session and token management using free anonymous tokens (100 credits, 7-day expiry).\n- Supports image and video formats: mp4, jpg, png, gif, webp, and more.\n- Includes user-friendly handling for uploads, downloads, credits, state, and export.\n- Detailed error handling and helpful workflow tips provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef3e27f5a4ba68a180f925c5de9f373235306fef00a66f2ac6b11a1abde94860"
+}

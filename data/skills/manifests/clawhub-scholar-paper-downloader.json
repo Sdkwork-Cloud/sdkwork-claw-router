@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62476,
+  "uuid": "skill-clawhub-scholar-paper-downloader",
+  "skillKey": "clawhub-scholar-paper-downloader",
+  "name": "scholar-paper-downloader",
+  "summary": "学术文献PDF批量下载工具,支持从多个学术网站(arXiv、PubMed、PMC、Semantic Scholar等)搜索和下载论文, 自动提取元数据、生成索引列表。优先从官方免费渠道下载,付费文献提供手动下载指引。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scholar_paper_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyzwp",
+      "features": [
+        "学术文献PDF批量下载工具,支持从多个学术网站(arXiv、PubMed、PMC、Semantic Scholar等)搜索和下载论文, 自动提取元数据、生成索引列表。优先从官方免费渠道下载,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scholar-paper-downloader@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35085062?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scholar-paper-downloader",
+      "url": "https://clawhub.ai/skills/scholar-paper-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scholar-paper-downloader",
+    "url": "https://clawhub.ai/skills/scholar-paper-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scholar-paper-downloader-34c1c000f6b95224.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scholar-paper-downloader@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-scholar-paper-downloader-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f16a2c90b851e7dc010f64e1201acd3785bd30a8b86c72333e480d6923b5312",
+      "artifactSizeBytes": 2497
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:20:38.421Z"
+}

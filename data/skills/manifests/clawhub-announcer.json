@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10829,
+  "uuid": "skill-clawhub-announcer",
+  "skillKey": "clawhub-announcer",
+  "name": "Announcer",
+  "summary": "Announce text throughout the house via AirPlay speakers using Airfoil + ElevenLabs TTS.",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.announcer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oliver Drobnik",
+      "features": [
+        "Announce text throughout the house via AirPlay speakers using Airfoil + ElevenLabs TTS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/announcer@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "announcer",
+      "url": "https://clawhub.ai/skills/announcer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "announcer",
+    "url": "https://clawhub.ai/skills/announcer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/announcer-41a449142a692021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/announcer@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-announcer-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:095b5b19d24e5f7f68b5a07750dc5dd08e28fcd107aaf6a851bbf7470bf71ac4",
+      "artifactSizeBytes": 1796
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T20:40:51.505Z"
+}

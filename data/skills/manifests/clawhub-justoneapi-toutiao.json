@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31480,
+  "uuid": "skill-clawhub-justoneapi-toutiao",
+  "skillKey": "clawhub-justoneapi-toutiao",
+  "name": "Toutiao API",
+  "summary": "Analyze Toutiao workflows with JustOneAPI, including article Details, user Profile, and app Keyword Search across 4 operations.",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_toutiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze Toutiao workflows with JustOneAPI, including article Details, user Profile, and app Key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-toutiao@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-toutiao",
+      "url": "https://clawhub.ai/skills/justoneapi-toutiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-toutiao",
+    "url": "https://clawhub.ai/skills/justoneapi-toutiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-toutiao-7bd9ae51a6a358fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-toutiao@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-toutiao-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05433d3640316722157ceeef4044839b63ddcd197e3b3263dd17ad081efda0b4",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:08:14.962Z"
+}

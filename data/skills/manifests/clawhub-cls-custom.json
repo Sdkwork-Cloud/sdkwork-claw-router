@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73322,
+  "uuid": "skill-clawhub-cls-custom",
+  "skillKey": "clawhub-cls-custom",
+  "name": "财联社自定义新闻日报",
+  "summary": "自动获取财联社电报自定义关键词新闻并格式化为一句话新闻",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cls_custom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FrankLe1117",
+      "features": [
+        "自动获取财联社电报自定义关键词新闻并格式化为一句话新闻"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cls-custom@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156928058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cls-custom",
+      "url": "https://clawhub.ai/skills/cls-custom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cls-custom",
+    "url": "https://clawhub.ai/skills/cls-custom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cls-custom-b578f7b34cdb88ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cls-custom@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cls-custom-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cba7593efbaa0a4248eeccd1769ab2282276b80850c7a1dff775dbea7175610",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T09:13:55.088Z"
+}

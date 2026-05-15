@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-debate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_debate",
+  "skill": {
+    "id": 20121,
+    "skillKey": "clawhub-agent-debate",
+    "name": "Agent Debate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-debate",
+    "url": "https://clawhub.ai/skills/agent-debate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-debate-185c7d3819b7c6c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinates multiple agents to independently argue competing approaches, then synthesizes their positions to identify the best solution for complex decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xrichyrich",
+      "userId": "publishers:0xrichyrich",
+      "displayName": "0xrichyrich",
+      "image": "https://avatars.githubusercontent.com/u/123500475?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772442112025,
+      "changelog": "Agent Debate Skill v1.0.0 — Initial Release\n\n- Introduces a debate pattern where multiple sub-agents independently argue solutions to a question, followed by a synthesis agent choosing the best answer.\n- Supports single or multi-round debates, including position, rebuttal, and synthesis phases.\n- Includes a specialized \"Red Team\" adversarial pattern for robustness and security evaluation.\n- Defines a clear file-based structure for agent coordination and progress tracking.\n- Provides recommended usage scenarios, example prompts, and guidelines for model selection.\n- Designed for architecture decisions, debugging, strategy analysis, and more.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:32b340527d2913e50745012840a2c90de2c192c331b2d33b945efda51e3f1c68"
+}

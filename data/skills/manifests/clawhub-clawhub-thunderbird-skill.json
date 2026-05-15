@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27382,
+  "uuid": "skill-clawhub-clawhub-thunderbird-skill",
+  "skillKey": "clawhub-clawhub-thunderbird-skill",
+  "name": "Thunderbird",
+  "summary": "Read and search local Mozilla Thunderbird mail storage on disk. Use when working with Thunderbird profiles, extracting emails from local folders or IMAP cach...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_thunderbird_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tilen Komel",
+      "features": [
+        "Read and search local Mozilla Thunderbird mail storage on disk",
+        "Use when working with Thunderbird profiles, extracting emails from local folders or IMAP cach..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-thunderbird-skill@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46865859?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-thunderbird-skill",
+      "url": "https://clawhub.ai/skills/clawhub-thunderbird-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-thunderbird-skill",
+    "url": "https://clawhub.ai/skills/clawhub-thunderbird-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-thunderbird-skill-e162e52f3e1d22b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-thunderbird-skill@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-thunderbird-skill-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7721e6b46f512508213c62f64fa4387c99a024767f23c30e6c82932656b28438",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T10:11:53.024Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attribution-ads-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attribution_ads_helper",
+  "skill": {
+    "id": 27618,
+    "skillKey": "clawhub-attribution-ads-helper",
+    "name": "Attribution Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attribution-ads-helper",
+    "url": "https://clawhub.ai/skills/attribution-ads-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attribution-ads-helper-354e3e48095f1257.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build cross-channel attribution analysis and decision guidance for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, Shopify Ads, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772693463392,
+      "changelog": "Initial release of attribution-ads-helper — a cross-channel attribution analysis and decision-support tool.\n\n- Diagnose attribution discrepancies across Meta, Google Ads, TikTok, YouTube, Amazon Ads, Shopify Ads, and DSP campaigns.\n- Compare performance by attribution window and quantify budget impact.\n- Generate explicit mismatch maps, sensitivity analyses, and safe allocation recommendations.\n- Support key decisions (e.g., model comparison, resolving conflicting ROAS/CAC) with actionable outputs.\n- Provide guidelines for platform-specific behaviors, failure handling, and practical validation steps.\n- Includes robust workflow, decision rules, and quality checklist for reliable guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e0be4e305adca398d6054f839688a1c45ab2016e9f180ef6eed33275fef4960"
+}

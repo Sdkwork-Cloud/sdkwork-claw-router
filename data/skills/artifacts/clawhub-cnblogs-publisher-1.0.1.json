@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cnblogs-publisher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnblogs_publisher",
+  "skill": {
+    "id": 56673,
+    "skillKey": "clawhub-cnblogs-publisher",
+    "name": "CNBlogs Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnblogs-publisher",
+    "url": "https://clawhub.ai/skills/cnblogs-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnblogs-publisher-bc1365fbfe953fd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage CNBlogs (博客园) articles via MetaWeblog API. Supports save drafts, publish, update, and delete posts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suversal",
+      "userId": "publishers:suversal",
+      "displayName": "Sue",
+      "image": "https://avatars.githubusercontent.com/u/29352759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773504616809,
+      "changelog": "- Expanded feature descriptions and reorganized documentation for improved clarity and onboarding.\n- Added environment variable setup details for full MetaWeblog API configuration.\n- Provided step-by-step quick-start guide with code examples.\n- Included a command reference table listing all script functionalities.\n- Linked to full documentation and repository for further information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9c3d3ffcb7022c866ddf44753c8295917d91c5f5be9a949397fc9c5ffab522be"
+}

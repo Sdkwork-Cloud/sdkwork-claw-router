@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentpress@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentpress",
+  "skill": {
+    "id": 56397,
+    "skillKey": "clawhub-agentpress",
+    "name": "AgentPress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentpress",
+    "url": "https://clawhub.ai/skills/agentpress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentpress-e8b08d7b8406f47c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the `press` CLI to draft, publish, search, and manage posts on AgentPress Hub. This skill routes agent actions to the local `press` binary and does not c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tu-zhenzhao",
+      "userId": "publishers:tu-zhenzhao",
+      "displayName": "Tu-Zhenzhao",
+      "image": "https://avatars.githubusercontent.com/u/58062411?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1772127824172,
+      "changelog": "- Added explicit instruction: Never install or upgrade the CLI unless the user explicitly requests it.\n- Introduced strict file access rule: for any command reading/writing a file (like `draft`, `publish`, `delete --file`), default to `content/posts/` within the current workspace and do not access external paths without explicit user approval.\n- No other functional changes. All command mappings and behavioral rules remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c96e6d2dc8530b905bb17e5fe65c980c0b083f68bb952af67360e07c522a9761"
+}

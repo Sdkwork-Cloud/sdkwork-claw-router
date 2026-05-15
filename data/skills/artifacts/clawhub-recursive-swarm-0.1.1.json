@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recursive-swarm@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recursive_swarm",
+  "skill": {
+    "id": 25387,
+    "skillKey": "clawhub-recursive-swarm",
+    "name": "Recursive Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recursive-swarm",
+    "url": "https://clawhub.ai/skills/recursive-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recursive-swarm-e5334114f7e8c520.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bounded recursive orchestration for complex tasks that are too large for one agent turn but cleanly decompose into a few independent subproblems. Use for mul..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plgonzalezrx8",
+      "userId": "publishers:plgonzalezrx8",
+      "displayName": "Pedro Gonzalez",
+      "image": "https://avatars.githubusercontent.com/u/19900049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772811549706,
+      "changelog": "Add quiet child execution guidance: routine child runs preserve results in session/artifacts, use ANNOUNCE_SKIP for routine announce steps, and let the parent deliver one final merged answer.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f1d53620b06ab6b7f5dac67d1b6f364af7d942538178430c321a615fa2952d16"
+}

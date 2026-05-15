@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18831,
+  "uuid": "skill-clawhub-doc-ocr-skills",
+  "skillKey": "clawhub-doc-ocr-skills",
+  "name": "Doc Ocr Skills",
+  "summary": "OCR documents (PDFs and images) using Gemini 2.5 Flash, PaddleOCR (local), or RapidOCR (local).",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_ocr_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sirk",
+      "features": [
+        "OCR documents (PDFs and images) using Gemini 2.5 Flash, PaddleOCR (local), or RapidOCR (local)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-ocr-skills@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1182545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-ocr-skills",
+      "url": "https://clawhub.ai/skills/doc-ocr-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-ocr-skills",
+    "url": "https://clawhub.ai/skills/doc-ocr-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-ocr-skills-c96b4b51313029a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-ocr-skills@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-ocr-skills-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44d8eae24d8b45cd8de59ed61bf8f51af90c1d85dadd32f1edc62badd46ae46a",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:20:12.539Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19339,
+  "uuid": "skill-clawhub-origin",
+  "skillKey": "clawhub-origin",
+  "name": "origin",
+  "summary": "Tracks data provenance and lineage by tracing sources, logging transformations, and auditing anchors to ensure data auditability and compliance.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.origin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kleberbaum",
+      "features": [
+        "Tracks data provenance and lineage by tracing sources, logging transformations, and auditing an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/origin@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26285351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "origin",
+      "url": "https://clawhub.ai/skills/origin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "origin",
+    "url": "https://clawhub.ai/skills/origin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/origin-181fdd46fc4a7246.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/origin@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-origin-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2eebe8b8ea92c4d9f671227664e053c43291d7b1460512ebb35560f3c0adbfd6",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T02:34:12.254Z"
+}

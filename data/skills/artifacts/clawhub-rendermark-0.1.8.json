@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rendermark@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rendermark",
+  "skill": {
+    "id": 22194,
+    "skillKey": "clawhub-rendermark",
+    "name": "RenderMark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rendermark",
+    "url": "https://clawhub.ai/skills/rendermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rendermark-f701289e6fd802a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional markdown rendering, export, and publishing via MCP. Use when user asks to \"render markdown\", \"export to PDF\", \"convert to DOCX\", \"create a docum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmsaavedra",
+      "userId": "publishers:jmsaavedra",
+      "displayName": "jmsaavedra",
+      "image": "https://avatars.githubusercontent.com/u/230557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1773261614646,
+      "changelog": "Add MCP server instructions and __unlock_rendermark__ fallback tool for non-ClawHub agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dce306f0311cc8b6466cc1158f43d12f9c7521a3bd288efb9d57cac638f05b06"
+}

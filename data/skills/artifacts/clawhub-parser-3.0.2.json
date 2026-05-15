@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parser@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parser",
+  "skill": {
+    "id": 23012,
+    "skillKey": "clawhub-parser",
+    "name": "Parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parser",
+    "url": "https://clawhub.ai/skills/parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parser-b17d45121150928f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse JSON, CSV, XML, and logs into structured output. Use when converting formats, validating structure, extracting fields, analyzing nested data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 435,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1773914382362,
+      "changelog": "v3.0.2: Fixed SKILL.md alignment — declared data storage, env vars, fixed python3 injection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb6d8c7a0c36059a9902e5aac5b2671396a0b3b7f10fc411cbca97c28a345766"
+}

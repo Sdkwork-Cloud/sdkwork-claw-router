@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63579,
+  "uuid": "skill-clawhub-ai-intelligence-site",
+  "skillKey": "clawhub-ai-intelligence-site",
+  "name": "Ai Intelligence Site",
+  "summary": "AI 情报中心网站自动化管理。创建、更新、部署 AI 竞品分析网站到 GitHub Pages。 支持 5 个子站：全球站、中文站、Skills站、资讯站、模型站。 每日自动更新：删除旧数据 → Serper 搜索发现网站 → 获取真实流量 → 推送 GitHub。 触发词：AI情报中心、竞品分析网站、AI聚合网...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_intelligence_site",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "griffithkk3-del",
+      "features": [
+        "AI 情报中心网站自动化管理。创建、更新、部署 AI 竞品分析网站到 GitHub Pages。 支持 5 个子站：全球站、中文站、Skills站、资讯站、模型站。 每日自动更新：删除旧数据."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-intelligence-site@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250252436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-intelligence-site",
+      "url": "https://clawhub.ai/skills/ai-intelligence-site"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-intelligence-site",
+    "url": "https://clawhub.ai/skills/ai-intelligence-site",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-intelligence-site-bd4c14e2941d5a7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-intelligence-site@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-intelligence-site-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca06b3ea14cd750f69abe40576a38290c4f9d3afdb1034c6c5671962e52bc37a",
+      "artifactSizeBytes": 2733
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:56:50.839Z"
+}

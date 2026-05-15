@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63101,
+  "uuid": "skill-clawhub-autogen",
+  "skillKey": "clawhub-autogen",
+  "name": "Autogen",
+  "summary": "AutoGen 多智能体对话框架助手，精通 Agent 对话编排、代码执行、群聊模式",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autogen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "AutoGen 多智能体对话框架助手，精通 Agent 对话编排、代码执行、群聊模式"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autogen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autogen",
+      "url": "https://clawhub.ai/skills/autogen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autogen",
+    "url": "https://clawhub.ai/skills/autogen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autogen-378d20480713fb84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autogen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autogen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ac7399025f7514058b0e28ddf10570db337454c663747529c4d33243c1c84c1",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:57:23.526Z"
+}

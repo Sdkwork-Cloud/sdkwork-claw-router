@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12932,
+  "uuid": "skill-clawhub-x-twitter-api",
+  "skillKey": "clawhub-x-twitter-api",
+  "name": "X Twitter",
+  "summary": "X (Twitter) API client for searching tweets, retrieving article content, and fetching trending topics. Supports both Bearer Token (app-only) and OAuth 2.0 authentication.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zaaachary",
+      "features": [
+        "X (Twitter) API client for searching tweets, retrieving article content, and fetching trending.",
+        "Supports both Bearer Token (app-only) and OAuth 2.0 authentication."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-twitter-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36671298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-twitter-api",
+      "url": "https://clawhub.ai/skills/x-twitter-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-api",
+    "url": "https://clawhub.ai/skills/x-twitter-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-api-ce72910927e65b72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-twitter-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-twitter-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65fe7dbb599bb64686a478f856b413ed89803e04e808e78f5a83aed989a8a33f",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T08:46:55.558Z"
+}

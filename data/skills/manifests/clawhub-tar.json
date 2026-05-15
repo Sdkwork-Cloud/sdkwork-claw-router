@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27265,
+  "uuid": "skill-clawhub-tar",
+  "skillKey": "clawhub-tar",
+  "name": "Tar",
+  "summary": "Create, extract, list, and compress tar archives with format support. Use when scanning contents, monitoring sizes, reporting results, alerting corruption.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Create, extract, list, and compress tar archives with format support",
+        "Use when scanning contents, monitoring sizes, reporting results, alerting corruption."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tar@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tar",
+      "url": "https://clawhub.ai/skills/tar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tar",
+    "url": "https://clawhub.ai/skills/tar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tar-90aebae315675cbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tar@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tar-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e6c21c3e73b66268388f7e2417fccb3a5e06c23ea4dfaa322c7d12c47f1deb1",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:53:31.867Z"
+}

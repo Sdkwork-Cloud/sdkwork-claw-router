@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21184,
+  "uuid": "skill-clawhub-pieces-mcp",
+  "skillKey": "clawhub-pieces-mcp",
+  "name": "Pieces Long-Term Memory (MCP)",
+  "summary": "Connect OpenClaw to Pieces via MCP-only (no SSE) and use Pieces as external long-term memory. Use this when the human runs PiecesOS with LTM enabled on anoth...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pieces_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Ross",
+      "features": [
+        "Connect OpenClaw to Pieces via MCP-only (no SSE) and use Pieces as external long-term memory",
+        "Use this when the human runs PiecesOS with LTM enabled on anoth..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pieces-mcp@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201150816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pieces-mcp",
+      "url": "https://clawhub.ai/skills/pieces-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pieces-mcp",
+    "url": "https://clawhub.ai/skills/pieces-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pieces-mcp-a212ce5a77bac7a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pieces-mcp@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pieces-mcp-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:594acc29e7f671953e8aaff75ed891f75b011429f982b3c614122e574787ddf9",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:05:06.246Z"
+}

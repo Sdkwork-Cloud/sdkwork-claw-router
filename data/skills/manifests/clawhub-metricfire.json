@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34756,
+  "uuid": "skill-clawhub-metricfire",
+  "skillKey": "clawhub-metricfire",
+  "name": "Metricfire",
+  "summary": "MetricFire integration. Manage data, records, and automate workflows. Use when the user wants to interact with MetricFire data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metricfire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "MetricFire integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with MetricFire data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metricfire@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metricfire",
+      "url": "https://clawhub.ai/skills/metricfire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metricfire",
+    "url": "https://clawhub.ai/skills/metricfire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metricfire-623abd6777f2b660.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metricfire@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-metricfire-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3158d010e25395647b1762c1f84c14c2303c3377d29a4b44a47006c3c2856a9",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:44:39.286Z"
+}

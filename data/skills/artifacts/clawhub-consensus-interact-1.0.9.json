@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consensus-interact@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_interact",
+  "skill": {
+    "id": 12547,
+    "skillKey": "clawhub-consensus-interact",
+    "name": "consensus-interact"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-interact",
+    "url": "https://clawhub.ai/skills/consensus-interact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-interact-a3b6b8e1815b5b98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate consensus.tools end-to-end (post jobs, create submissions, cast votes, resolve results) using either a local-first board or a hosted board (depending..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaicianflone",
+      "userId": "s173yh69sk2g7jzav29e74412s83qaga",
+      "displayName": "Kai Cianflone",
+      "image": "https://avatars.githubusercontent.com/u/30943151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1638,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1771529560043,
+      "changelog": "Manual publish after 1.0.9 release merge",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d9343a386c36d25fe93c948b0236ee63349fe7d49877dd1fc3d5f7f6841fbae"
+}

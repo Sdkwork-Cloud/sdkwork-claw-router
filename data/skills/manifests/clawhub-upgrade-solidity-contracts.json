@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25928,
+  "uuid": "skill-clawhub-upgrade-solidity-contracts",
+  "skillKey": "clawhub-upgrade-solidity-contracts",
+  "name": "Upgrade Solidity Contracts",
+  "summary": "Upgrade Solidity smart contracts using OpenZeppelin proxy patterns. Use when users need to: (1) make contracts upgradeable with UUPS, Transparent, or Beacon...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upgrade_solidity_contracts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Upgrade Solidity smart contracts using OpenZeppelin proxy patterns",
+        "Use when users need to: (1) make contracts upgradeable with UUPS, Transparent, or Beacon..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upgrade-solidity-contracts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upgrade-solidity-contracts",
+      "url": "https://clawhub.ai/skills/upgrade-solidity-contracts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upgrade-solidity-contracts",
+    "url": "https://clawhub.ai/skills/upgrade-solidity-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upgrade-solidity-contracts-460aeb35a3921526.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upgrade-solidity-contracts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-upgrade-solidity-contracts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ad9769f440510d1409180c4519f33a27ed1e20cdaeb86e987a974f2924a31eb",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:16:28.721Z"
+}

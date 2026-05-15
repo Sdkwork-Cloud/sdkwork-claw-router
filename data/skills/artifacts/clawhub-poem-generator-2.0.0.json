@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poem-generator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poem_generator",
+  "skill": {
+    "id": 58760,
+    "skillKey": "clawhub-poem-generator",
+    "name": "Poem Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poem-generator",
+    "url": "https://clawhub.ai/skills/poem-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poem-generator-faee17f7f8e16ba9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "诗歌生成助手。现代诗、俳句、对联、藏头诗、古诗翻译。Poem generator with free verse, haiku, couplets, acrostic poems."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 551,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773883906,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01241295a461094e8079fd8af5a1f4e578d4da3a40024743b4e6d62907c5dde5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57964,
+  "uuid": "skill-clawhub-kungfu-finance",
+  "skillKey": "clawhub-kungfu-finance",
+  "name": "功夫财经",
+  "summary": "Mainland China A-share stock and sector analysis tool (中国A股个股与板块分析). Current repo build focuses on stable deterministic products for stock snapshots, basic f...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kungfu_finance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jickchen34",
+      "features": [
+        "Mainland China A-share stock and sector analysis tool (中国A股个股与板块分析)",
+        "Current repo build focuses on stable deterministic products for stock snapshots, basic f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kungfu-finance@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66556312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kungfu-finance",
+      "url": "https://clawhub.ai/skills/kungfu-finance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kungfu-finance",
+    "url": "https://clawhub.ai/skills/kungfu-finance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kungfu-finance-88a8ef3749dd8352.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kungfu-finance@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kungfu-finance-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c22c6c2e7ac879c988ce2e80d486b4c66492fd5d954d81893445852e36f927d",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:23:02.762Z"
+}

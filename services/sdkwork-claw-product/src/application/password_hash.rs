@@ -13,6 +13,8 @@ const MIN_ITERATIONS: u32 = 1_000;
 const MAX_ITERATIONS: u32 = 1_000_000;
 
 pub trait PasswordHasher {
+    fn hash_password(&self, password: &str, salt_hint: &str) -> DomainResult<String>;
+
     fn verify_password(&self, password: &str, encoded_hash: &str) -> DomainResult<bool>;
 }
 
@@ -47,6 +49,16 @@ impl Pbkdf2Sha256PasswordHasher {
 }
 
 impl PasswordHasher for Pbkdf2Sha256PasswordHasher {
+    fn hash_password(&self, password: &str, salt_hint: &str) -> DomainResult<String> {
+        let mut salt = Vec::with_capacity(32);
+        salt.extend_from_slice(b"sdkwork-claw-router:");
+        salt.extend_from_slice(salt_hint.as_bytes());
+        if salt.len() < 16 {
+            return Err(DomainError::new("password salt hint is too short"));
+        }
+        Self::hash_password_with_salt(password, &salt, DEFAULT_ITERATIONS)
+    }
+
     fn verify_password(&self, password: &str, encoded_hash: &str) -> DomainResult<bool> {
         if password.is_empty() || encoded_hash.trim().is_empty() {
             return Ok(false);
@@ -229,5 +241,16 @@ mod tests {
             1_000,
             Pbkdf2Sha256PasswordHasher::default_iterations().min(1_000)
         );
+    }
+
+    #[test]
+    fn password_hasher_trait_hashes_and_verifies_passwords() {
+        let hasher = Pbkdf2Sha256PasswordHasher;
+        let hash = hasher
+            .hash_password("correct-password", "user-30-credential")
+            .unwrap();
+
+        assert!(hasher.verify_password("correct-password", &hash).unwrap());
+        assert!(!hasher.verify_password("wrong-password", &hash).unwrap());
     }
 }

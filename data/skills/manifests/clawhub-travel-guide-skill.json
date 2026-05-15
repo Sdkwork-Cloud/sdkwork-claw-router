@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73718,
+  "uuid": "skill-clawhub-travel-guide-skill",
+  "skillKey": "clawhub-travel-guide-skill",
+  "name": "出游攻略助手",
+  "summary": "智能旅行攻略生成器。当用户想要制定旅行计划、询问旅游攻略、需要行程安排时使用。根据目的地、日期、人员、预算等信息，通过实时网络查询生成包含机票酒店、游玩计划、交通、美食、天气的完整攻略。所有价格、时间等关键信息必须来自网络查询并标注来源。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_guide_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WendyHu",
+      "features": [
+        "智能旅行攻略生成器。当用户想要制定旅行计划、询问旅游攻略、需要行程安排时使用。根据目的地、日期、人员、预算等信息，通过实时网络查询生成包含机票酒店、游玩计划、交通、美食、天气的完整攻略。所有."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-guide-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48543239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-guide-skill",
+      "url": "https://clawhub.ai/skills/travel-guide-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-guide-skill",
+    "url": "https://clawhub.ai/skills/travel-guide-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-guide-skill-176d7cab787f91f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-guide-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-guide-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6cdf61a06cb7ce80fae7c8cf036494e2f4f2df3ca27c66b1c9be2d61eb7c1d3",
+      "artifactSizeBytes": 2779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:01:51.004Z"
+}

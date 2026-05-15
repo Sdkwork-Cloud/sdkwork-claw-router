@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "transfer-skill-to-windows",
+    "displayName": "Transfer Skill To Windows",
+    "summary": "Adapt an existing agent skill so it works cleanly on Windows when the input is either a skill folder path or a zip file.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773462487783,
+    "updatedAt": 1777619392017
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773462487783,
+    "changelog": "Initial release — adds skill for adapting agent skills to Windows compatibility.\n\n- Accepts as input either a skill folder path or a zip file containing a skill.\n- Detects and rewrites Unix-specific commands, paths, and instructions for Windows, primarily using PowerShell.\n- Creates a Windows-ready output copy, preserving the original input by default.\n- Updates scripts and supporting files to ensure Windows compatibility.\n- Verifies converted skills are runnable and self-contained for Windows use.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "iideas18",
+    "userId": "s17dmpe6t06dnd7pg1v0sarhj1846m65",
+    "displayName": "iideas18",
+    "image": "https://avatars.githubusercontent.com/u/44938480?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60941,
+  "uuid": "skill-clawhub-github-fetch",
+  "skillKey": "clawhub-github-fetch",
+  "name": "GitHub 稳定获取",
+  "summary": "提供多层备选方案，优先通过 SSH clone，其次使用 ghproxy 镜像及 jsdelivr CDN，解决国内 GitHub 连接不稳定问题。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_fetch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "d9g",
+      "features": [
+        "提供多层备选方案，优先通过 SSH clone，其次使用 ghproxy 镜像及 jsdelivr CDN，解决国内 GitHub 连接不稳定问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-fetch@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9856183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-fetch",
+      "url": "https://clawhub.ai/skills/github-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-fetch",
+    "url": "https://clawhub.ai/skills/github-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-fetch-917f65a5c6d22883.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-fetch@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-fetch-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87048421f9b7dd6e4d722b39f527d4a4de2277a3096ea1be1f080aba0420e990",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:22:26.683Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9632,
+  "uuid": "skill-clawhub-realtime-crypto-price-api",
+  "skillKey": "clawhub-realtime-crypto-price-api",
+  "name": "Real-time Crypto Price API",
+  "summary": "Provides real-time and historical cryptocurrency prices, market cap rankings, trending tokens, and batch queries for 10,000+ coins via API and CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realtime_crypto_price_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "StrykrAgent",
+      "features": [
+        "Provides real-time and historical cryptocurrency prices, market cap rankings, trending tokens,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realtime-crypto-price-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257988338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realtime-crypto-price-api",
+      "url": "https://clawhub.ai/skills/realtime-crypto-price-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realtime-crypto-price-api",
+    "url": "https://clawhub.ai/skills/realtime-crypto-price-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realtime-crypto-price-api-3b3f1391dcef4d88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realtime-crypto-price-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-realtime-crypto-price-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4bce806565aa719cfbcc2976a534cfe8f053fc330e2a1edb22f24d467a43c93",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T13:11:21.949Z"
+}

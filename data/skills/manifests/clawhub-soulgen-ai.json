@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42006,
+  "uuid": "skill-clawhub-soulgen-ai",
+  "skillKey": "clawhub-soulgen-ai",
+  "name": "Soulgen Ai",
+  "summary": "generate text prompts or images into AI character videos with this skill. Works with JPG, PNG, MP4, WebM files up to 200MB. content creators, digital artists...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulgen_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "generate text prompts or images into AI character videos with this skill",
+        "Works with JPG, PNG, MP4, WebM files up to 200MB",
+        "content creators, digital artists..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soulgen-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soulgen-ai",
+      "url": "https://clawhub.ai/skills/soulgen-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulgen-ai",
+    "url": "https://clawhub.ai/skills/soulgen-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulgen-ai-886d4b59b4eabb7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soulgen-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soulgen-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6597010a1a982982bcd9105915bec869cf9c0220e587febc406962157dc2c60f",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T02:15:59.350Z"
+}

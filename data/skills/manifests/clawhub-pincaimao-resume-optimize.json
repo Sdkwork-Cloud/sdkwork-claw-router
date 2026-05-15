@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58006,
+  "uuid": "skill-clawhub-pincaimao-resume-optimize",
+  "skillKey": "clawhub-pincaimao-resume-optimize",
+  "name": "聘才猫（Pincaimao）简历优化",
+  "summary": "聘才猫 - 简历优化 Use when calling Pincaimao Resume Optimization API to automatically optimize or rewrite resume content based on a target job description. Requires...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_resume_optimize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "聘才猫（Pincaimao）",
+      "features": [
+        "简历优化 Use when calling Pincaimao Resume Optimization API to automatically optimize or rewrite re.",
+        "Requires..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pincaimao-resume-optimize@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pincaimao-resume-optimize/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pincaimao-resume-optimize",
+      "url": "https://clawhub.ai/skills/pincaimao-resume-optimize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-resume-optimize",
+    "url": "https://clawhub.ai/skills/pincaimao-resume-optimize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-resume-optimize-69664d9087658aeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pincaimao-resume-optimize@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pincaimao-resume-optimize-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2384fabd30e2fad08d3c84afb5abb4dd1c01b4c56c4062373725c40c5bd569c8",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:21:01.057Z"
+}

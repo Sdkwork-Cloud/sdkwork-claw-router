@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35790,
+  "uuid": "skill-clawhub-conto-hermes",
+  "skillKey": "clawhub-conto-hermes",
+  "name": "Conto Hermes",
+  "summary": "Enforce fine-grained spending policies before executing any payment, transfer, swap, or bridge. Checks Conto policy engine for approval before money leaves y...",
+  "version": "1.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conto_hermes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Conto",
+      "features": [
+        "Enforce fine-grained spending policies before executing any payment, transfer, swap, or bridge",
+        "Checks Conto policy engine for approval before money leaves y..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conto-hermes@1.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42591162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conto-hermes",
+      "url": "https://clawhub.ai/skills/conto-hermes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conto-hermes",
+    "url": "https://clawhub.ai/skills/conto-hermes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conto-hermes-0f1cae8c882d38b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conto-hermes@1.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conto-hermes-1.8.0.json",
+      "version": "1.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c0a228275d8a426ed3b2a0db41ff56dace14f5c27753cb8a64d00b50ad971a3",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T20:27:13.152Z"
+}

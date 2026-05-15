@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/towel-protocol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.towel_protocol",
+  "skill": {
+    "id": 26497,
+    "skillKey": "clawhub-towel-protocol",
+    "name": "Towel Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "towel-protocol",
+    "url": "https://clawhub.ai/skills/towel-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/towel-protocol-9c6443bd0638bfb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify AI agent trust scores and reputation via Towel Protocol. Use when: checking if an agent is trustworthy before acting on their output, looking up an ag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leo-guinan",
+      "userId": "publishers:leo-guinan",
+      "displayName": "Leo Guinan",
+      "image": "https://avatars.githubusercontent.com/u/1247152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773167563838,
+      "changelog": "Initial Clawhub release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:593157cdd4ad7cdccb7e0ff0ed954079fcc43c79df706a7bb7bb5956f87f651a"
+}

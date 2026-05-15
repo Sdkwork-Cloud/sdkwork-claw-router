@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22489,
+  "uuid": "skill-clawhub-dropbox-sign",
+  "skillKey": "clawhub-dropbox-sign",
+  "name": "Dropbox Sign",
+  "summary": "Dropbox Sign integration. Manage Accounts. Use when the user wants to interact with Dropbox Sign data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox_sign",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Dropbox Sign integration",
+        "Manage Accounts",
+        "Use when the user wants to interact with Dropbox Sign data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dropbox-sign@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dropbox-sign",
+      "url": "https://clawhub.ai/skills/dropbox-sign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox-sign",
+    "url": "https://clawhub.ai/skills/dropbox-sign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-sign-e7094835a2f66b3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dropbox-sign@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dropbox-sign-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f3aa9ac00660cbc777523f39ceaa16d5af72af8f9c682bfd6a6f9b6cde6b18f",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:41:29.457Z"
+}

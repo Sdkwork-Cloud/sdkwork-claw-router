@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-forward@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_forward",
+  "skill": {
+    "id": 18597,
+    "skillKey": "clawhub-whatsapp-forward",
+    "name": "WhatsApp Forward"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-forward",
+    "url": "https://clawhub.ai/skills/whatsapp-forward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-forward-97258ffda15d646f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate VCards, parse invite links, and create forwarding templates"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marcosrippel",
+      "userId": "publishers:marcosrippel",
+      "displayName": "Marcos Santos",
+      "image": "https://avatars.githubusercontent.com/u/74862230?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771519279496,
+      "changelog": "Initial release. Forwarding and sharing utilities for WhatsApp. Generate VCards for contact sharing, create multi-contact VCards, parse group invite links, and build forwarding message templates. Outputs ready-to-use formats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a939dd54befdf71e14b42a8cd82e4a91d0d9fee9812937782bc455422b9aebe"
+}

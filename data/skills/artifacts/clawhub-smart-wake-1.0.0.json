@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-wake@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_wake",
+  "skill": {
+    "id": 20296,
+    "skillKey": "clawhub-smart-wake",
+    "name": "Smart Wake"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-wake",
+    "url": "https://clawhub.ai/skills/smart-wake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-wake-b593e9fef28fe62b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prevent subagent timeout using checkpoint + cron wake + resume via session spawn mechanism."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cong91",
+      "userId": "publishers:cong91",
+      "displayName": "cong91",
+      "image": "https://avatars.githubusercontent.com/u/2290242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772451935328,
+      "changelog": "smart-wake` is a critical survival protocol designed to protect autonomous AI agents from being \"killed\" silently due to system timeouts when executing long, complex, or resource-heavy tasks (such as code compilation, large web scraping, or waiting for API responses). It transforms the agent from a passive listener into a proactive, self-sustaining worker.\n\n**How to Use (For Agents):**\nWhenever you are assigned a task that might exceed your given timeout limit, you must:\n1. **Divide the work:** Break the task into smaller executable chunks (e.g., 5-minute blocks).\n2. **Save your progress (Checkpoint):** Right before you suspect a timeout is approaching, save exactly what you have completed and what needs to be done next into a JSON checkpoint object.\n3. **Set an Alarm (Cron Wake):** Use the `cron` tool to schedule a wake-up call for yourself in a few minutes. \n4. **Pass the Baton:** In the cron payload, inject the `task_id` and the `next_actions`. When the cron wakes you (or spawns a fresh subagent session), you will read the checkpoint and resume exactly where you left off, completely bypassing the timeout limit!",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:47343860c8dbf7b5bdeabc3f501a85ecd6c48887fceabcbc62bccce79501b248"
+}

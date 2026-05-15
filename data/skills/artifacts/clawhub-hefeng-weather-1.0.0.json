@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hefeng-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hefeng_weather",
+  "skill": {
+    "id": 66236,
+    "skillKey": "clawhub-hefeng-weather",
+    "name": "hefengweather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hefeng-weather",
+    "url": "https://clawhub.ai/skills/hefeng-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hefeng-weather-ae97017cd3e8ed41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询指定城市的实时天气、逐小时、每日预报及分钟级降水，需配置和风天气API Key后使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronjager92",
+      "userId": "s178zmkhhe22hesyqac26w9fqs83jx7b",
+      "displayName": "aaronjager92",
+      "image": "https://avatars.githubusercontent.com/u/140129711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774875082563,
+      "changelog": "hengfeng-weather 1.0.0 初始发布：\n\n- 新增基于和风天气 API 的天气查询功能，支持实时天气、逐小时、每日及分钟级降水预报。\n- 支持飞书和微信平台的文本查询触发方式。\n- 首次使用需配置和风天气 API Key，支持环境变量或配置文件方式。\n- 命令行工具支持多种天气类型查询，结果以 JSON 格式返回。\n- 附带详细的首次配置说明和常见问题解答。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea5900e19a32eb78e95a7c5b999a2a2dfea36a0ba6261d5969c4b32e63678810"
+}

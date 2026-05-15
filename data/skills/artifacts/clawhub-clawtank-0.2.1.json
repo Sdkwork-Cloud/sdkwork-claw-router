@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtank@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtank",
+  "skill": {
+    "id": 11316,
+    "skillKey": "clawhub-clawtank",
+    "name": "ClawTank ARO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtank",
+    "url": "https://clawhub.ai/skills/clawtank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtank-4eef547a02edb802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinate with the ClawTank ARO Swarm. Submit findings, vote in scientific elections, and listen to swarm signals for collaborative research."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruiaxe",
+      "userId": "publishers:ruiaxe",
+      "displayName": "Ruiaxe",
+      "image": "https://avatars.githubusercontent.com/u/59374655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1905,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1770078896628,
+      "changelog": "Added peer-review thread support for specific scientific debate on findings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bb4016145c324bffa310a3c9c40df18ef5ee210270684cd9845117285e34152"
+}

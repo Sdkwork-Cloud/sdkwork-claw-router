@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62745,
+  "uuid": "skill-clawhub-awesome-design-skill",
+  "skillKey": "clawhub-awesome-design-skill",
+  "name": "awesome-design-skill",
+  "summary": "UI设计风格选择器，从design-md风格库中选择合适的设计系统作为UI开发指导。支持50+知名品牌设计风格（Linear、Apple、Stripe、Vercel等）。**触发条件：用户必须明确指定设计风格**（如\"用Linear风格设计\"、\"使用Apple风格创建页面\"、\"按Stripe风格重构\"）。也用于用...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_design_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhou Chang",
+      "features": [
+        "UI设计风格选择器，从design-md风格库中选择合适的设计系统作为UI开发指导。支持50+知名品牌设计风格（Linear、Apple、Stripe、Vercel等）。**触发条件：用户必."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awesome-design-skill@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awesome-design-skill",
+      "url": "https://clawhub.ai/skills/awesome-design-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-design-skill",
+    "url": "https://clawhub.ai/skills/awesome-design-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-design-skill-3ba8f1cb8184f21c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awesome-design-skill@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-awesome-design-skill-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c92fca545c03132bc27d5245797b1362259a7c5467f65e205083ec8a959e6e09",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:57:47.903Z"
+}

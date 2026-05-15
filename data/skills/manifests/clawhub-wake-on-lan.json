@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30010,
+  "uuid": "skill-clawhub-wake-on-lan",
+  "skillKey": "clawhub-wake-on-lan",
+  "name": "Wake On Lan",
+  "summary": "Send Wake on LAN (WOL) magic packets to remotely wake up computers and network devices. Use when the user wants to wake, turn on, or power on a remote device...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wake_on_lan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tonakic",
+      "features": [
+        "Send Wake on LAN (WOL) magic packets to remotely wake up computers and network devices",
+        "Use when the user wants to wake, turn on, or power on a remote device..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wake-on-lan@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183658957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wake-on-lan",
+      "url": "https://clawhub.ai/skills/wake-on-lan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wake-on-lan",
+    "url": "https://clawhub.ai/skills/wake-on-lan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wake-on-lan-863b0ac3a341463c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wake-on-lan@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wake-on-lan-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95517f2ac7c79150d17c0bb188c1e7fe722cab1ff9f1fab809ca97a6c70d91c7",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:57:59.312Z"
+}

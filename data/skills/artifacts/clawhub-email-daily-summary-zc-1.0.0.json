@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-daily-summary-zc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_daily_summary_zc",
+  "skill": {
+    "id": 35682,
+    "skillKey": "clawhub-email-daily-summary-zc",
+    "name": "Email Daily Summary Zc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-daily-summary-zc",
+    "url": "https://clawhub.ai/skills/email-daily-summary-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-daily-summary-zc-3831bc4c942b450e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically logs into email accounts (Gmail, Outlook, QQ Mail, etc.) and generates daily email summaries. Use when the user wants to get a summary of their..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lean-zhouchao",
+      "userId": "s178rxdgn3z5d3avc5xwvvghx183kh7y",
+      "displayName": "lean-zhouchao",
+      "image": "https://avatars.githubusercontent.com/u/23061177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774487045323,
+      "changelog": "- Initial release of email-daily-summary-zc.\n- Automatically logs into multiple email services (Gmail, Outlook, QQ, etc.) and generates daily summaries.\n- Supports fetching latest emails, classifying by importance/sender/subject, and daily statistical reporting.\n- Provides both real browser session reuse and manual login workflow.\n- Offers Bash and Python scripting examples for extracting, summarizing, and reporting email data.\n- Includes instructions for automation using cron and macOS launchd, plus security best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8413cac6647c0db525ebc707d2558e6e8837a2a1c049b31b6cd8b345e8e63121"
+}

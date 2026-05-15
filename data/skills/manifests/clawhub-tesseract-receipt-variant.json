@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39565,
+  "uuid": "skill-clawhub-tesseract-receipt-variant",
+  "skillKey": "clawhub-tesseract-receipt-variant",
+  "name": "Tesseract Receipt Tracker",
+  "summary": "OCR-based receipt tracker for expense, travel, freelance logging using tesseract. Extracts date, vendor, amount, tax, mileage, items from receipts/invoices/i...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tesseract_receipt_variant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skunnyo",
+      "features": [
+        "OCR-based receipt tracker for expense, travel, freelance logging using tesseract",
+        "Extracts date, vendor, amount, tax, mileage, items from receipts/invoices/i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tesseract-receipt-variant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51137961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tesseract-receipt-variant",
+      "url": "https://clawhub.ai/skills/tesseract-receipt-variant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tesseract-receipt-variant",
+    "url": "https://clawhub.ai/skills/tesseract-receipt-variant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tesseract-receipt-variant-0813fa1ae8918c92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tesseract-receipt-variant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tesseract-receipt-variant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ae5da978bf0392f8bf1265350007310b3dc9ed29a3916244ee3b90b5ec4b52d",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:11:00.760Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16996,
+  "uuid": "skill-clawhub-filewave",
+  "skillKey": "clawhub-filewave",
+  "name": "Filewave",
+  "summary": "Query and manage FileWave UEM device inventory, perform filtered searches, view device hierarchy, and run fleet analytics via the REST API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filewave",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh Levitsky, CISSP",
+      "features": [
+        "Query and manage FileWave UEM device inventory, perform filtered searches, view device hierarch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filewave@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/695509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filewave",
+      "url": "https://clawhub.ai/skills/filewave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filewave",
+    "url": "https://clawhub.ai/skills/filewave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filewave-4d9befce01f00da9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filewave@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-filewave-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ae2da3d6cefbf870593a714d3187085f0c202b08e5a9f6165844b67cacdd2f3",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T23:06:27.542Z"
+}

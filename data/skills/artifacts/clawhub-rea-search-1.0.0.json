@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rea-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rea_search",
+  "skill": {
+    "id": 16725,
+    "skillKey": "clawhub-rea-search",
+    "name": "realestate.com.au Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rea-search",
+    "url": "https://clawhub.ai/skills/rea-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rea-search-34c5770e3b80fd47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search realestate.com.au property listings by constructing search and listing URLs. Use when searching for Australian properties to buy, rent, or sold via re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jakelin",
+      "userId": "publishers:jakelin",
+      "displayName": "JakeLin",
+      "image": "https://avatars.githubusercontent.com/u/573856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 857,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771149918742,
+      "changelog": "- Initial release of rea-search skill.\n- Generate realestate.com.au property listing URLs for buying, renting, or sold properties.\n- Supports search filtering by suburb, postcode, price range, bedrooms, property type, and multiple suburbs.\n- Build individual property listing and suburb profile URLs.\n- Sold property and pagination URL formats included.\n- Notes on API limitations and web_fetch workarounds provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d6529ac25414b8b678b284cea10977301c126a9fe56843ebd4b638e6257add16"
+}

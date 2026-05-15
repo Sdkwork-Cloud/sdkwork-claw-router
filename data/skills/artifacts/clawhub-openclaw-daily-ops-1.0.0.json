@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-daily-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_daily_ops",
+  "skill": {
+    "id": 51380,
+    "skillKey": "clawhub-openclaw-daily-ops",
+    "name": "Openclaw Daily Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-daily-ops",
+    "url": "https://clawhub.ai/skills/openclaw-daily-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-daily-ops-0f1cb2202d99d7bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily cost reporting + session hygiene for OpenClaw deployments. Tracks per-session API spend, shows 7-day trend, and wipes zombie sessions >24h old to preve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zylcold",
+      "userId": "s174fzcthb4thwb3db0dhmgme984jdp1",
+      "displayName": "云龙",
+      "image": "https://avatars.githubusercontent.com/u/7792014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773714625547,
+      "changelog": "openclaw-daily-ops 1.0.0 — Initial release\n\n- Tracks daily OpenClaw per-session API costs and 7-day trends, posting nightly Discord reports\n- Wipes (\"resets\") zombie sessions older than 24h and larger than 1MB to prevent excessive context growth\n- Logs all actions to `state/cost-log.json` and `state/session-reset-log.json`\n- Zero personal info required; highly configurable for paths, Discord integration, thresholds, and naming\n- Designed for robust and friendly night-to-night operations via cron",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8775d9b9d5535c61a1b3b5a330c226f7d31c9a8185d1b7be7af4f821d3cd7682"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23699,
+  "uuid": "skill-clawhub-council-of-llms",
+  "skillKey": "clawhub-council-of-llms",
+  "name": "Council of LLMs",
+  "summary": "Real multi-model council deliberation for OpenClaw subagents. Spawns 3 parallel subagents with different LLMs (kimi-k2.6, deepseek-v4-pro, gemma4:31b) and di...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.council_of_llms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wahaj Ahmed",
+      "features": [
+        "Real multi-model council deliberation for OpenClaw subagents",
+        "Spawns 3 parallel subagents with different LLMs (kimi-k2.6, deepseek-v4-pro, gemma4:31b) and di."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/council-of-llms@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57330918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "council-of-llms",
+      "url": "https://clawhub.ai/skills/council-of-llms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "council-of-llms",
+    "url": "https://clawhub.ai/skills/council-of-llms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/council-of-llms-d6b27b2c0ab4b379.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/council-of-llms@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-council-of-llms-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32921e75eceb674e999ffb340d5d902148b5d098b136e5eb991e033fa093fb53",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T21:43:46.301Z"
+}

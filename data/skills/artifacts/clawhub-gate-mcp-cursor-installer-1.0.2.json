@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gate-mcp-cursor-installer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_mcp_cursor_installer",
+  "skill": {
+    "id": 23868,
+    "skillKey": "clawhub-gate-mcp-cursor-installer",
+    "name": "Gate Cursor One-Click Installer (MCP + Skills)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-mcp-cursor-installer",
+    "url": "https://clawhub.ai/skills/gate-mcp-cursor-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-mcp-cursor-installer-1d8249afac84caa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gate MCP and Gate skills installer for Cursor. Use when the user asks to set up Gate trading or research tools in Cursor. Triggers on 'install Gate MCP Curso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gate-exchange",
+      "userId": "s172g4d1dcv6ccs6desbb2xw1583qza9",
+      "displayName": "Gate",
+      "image": "https://avatars.githubusercontent.com/u/33109813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775115482824,
+      "changelog": "- Added references/mcp.md as the authoritative source for execution, preflight, and verification steps.\n- Updated SKILL.md to clarify product scope, behavior, and install rules; user and installer should strictly follow references/mcp.md for workflow.\n- SKILL.md description reworded for clearer trigger phrases and purpose.\n- No changes to install script or user-facing flow; installer workflow and config merge/check logic are now separated for maintainability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d27892be4aed378e7a0d287c3e42f3e4b83f01429cff1ceeecbf6febca650660"
+}

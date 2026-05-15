@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifi",
+  "skill": {
+    "id": 9446,
+    "skillKey": "clawhub-unifi",
+    "name": "Unifi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifi",
+    "url": "https://clawhub.ai/skills/unifi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifi-25aec3597b117f17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and monitor UniFi network via local gateway API (Cloud Gateway Max / UniFi OS). Use when the user asks to \"check UniFi\", \"list UniFi devices\", \"show who's on the network\", \"UniFi clients\", \"UniFi health\", \"top apps\", \"network alerts\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmagar",
+      "userId": "publishers:jmagar",
+      "displayName": "jmagar",
+      "image": "https://avatars.githubusercontent.com/u/38927646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3582,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769203188662,
+      "changelog": "- Added a new README.md file with documentation.\n- Updated SKILL.md to increment version to 1.0.1.\n- No functional changes to code or features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d21a37f89b6b623446186a286be63f0a5f5bd49aefafe2249f0b7baa3031b355"
+}

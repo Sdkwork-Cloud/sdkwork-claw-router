@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26440,
+  "uuid": "skill-clawhub-agent-autonomy-kit-backup",
+  "skillKey": "clawhub-agent-autonomy-kit-backup",
+  "name": "Agent Autonomy Kit.Backup",
+  "summary": "Stop waiting for prompts. Keep working.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_autonomy_kit_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ayakolin",
+      "features": [
+        "Stop waiting for prompts",
+        "Keep working."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-autonomy-kit-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79017455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-autonomy-kit-backup",
+      "url": "https://clawhub.ai/skills/agent-autonomy-kit-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-autonomy-kit-backup",
+    "url": "https://clawhub.ai/skills/agent-autonomy-kit-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-autonomy-kit-backup-7c8112bc7a613d66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-autonomy-kit-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-autonomy-kit-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ddaee2c8c5e7c34e9b86483c9e6e93f1ac787826961f2abd63e9b2064a564cf",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:46:10.489Z"
+}

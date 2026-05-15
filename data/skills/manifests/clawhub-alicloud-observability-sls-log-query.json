@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17837,
+  "uuid": "skill-clawhub-alicloud-observability-sls-log-query",
+  "skillKey": "clawhub-alicloud-observability-sls-log-query",
+  "name": "Alicloud Observability Sls Log Query",
+  "summary": "Query and troubleshoot logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and the Python SDK. Use for time-bounded log search, error investi...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_observability_sls_log_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Query and troubleshoot logs in Alibaba Cloud Log Service (SLS) using query|analysis syntax and.",
+        "Use for time-bounded log search, error investi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-observability-sls-log-query@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-observability-sls-log-query",
+      "url": "https://clawhub.ai/skills/alicloud-observability-sls-log-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-observability-sls-log-query",
+    "url": "https://clawhub.ai/skills/alicloud-observability-sls-log-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-observability-sls-log-query-04fda0194a0dae9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-observability-sls-log-query@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-observability-sls-log-query-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f597342a53e57f26586c3617729098083998f4474214675fc937ab2a57e3ce55",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:40:04.852Z"
+}

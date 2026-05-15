@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12200,
+  "uuid": "skill-clawhub-beeper-api-cli",
+  "skillKey": "clawhub-beeper-api-cli",
+  "name": "Beeper API CLI",
+  "summary": "Read and send messages via Beeper CLI. Supports WhatsApp, Telegram, Signal, Instagram, Twitter/X, LinkedIn, Facebook Messenger and more.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beeper_api_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nerveband",
+      "features": [
+        "Read and send messages via Beeper CLI",
+        "Supports WhatsApp, Telegram, Signal, Instagram, Twitter/X, LinkedIn, Facebook Messenger and mor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beeper-api-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1530727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beeper-api-cli",
+      "url": "https://clawhub.ai/skills/beeper-api-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beeper-api-cli",
+    "url": "https://clawhub.ai/skills/beeper-api-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beeper-api-cli-8865c6923c4ea337.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beeper-api-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beeper-api-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60a3e01b11e32b14d8f0d92c6923c97270f83fe50b4c22b8b94c33148e433b7f",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T03:36:31.871Z"
+}

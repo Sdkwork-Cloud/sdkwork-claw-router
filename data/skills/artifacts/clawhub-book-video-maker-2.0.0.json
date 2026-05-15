@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-video-maker@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_video_maker",
+  "skill": {
+    "id": 45457,
+    "skillKey": "clawhub-book-video-maker",
+    "name": "Book Video Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-video-maker",
+    "url": "https://clawhub.ai/skills/book-video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-video-maker-f57f074a88db13dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 1080x1920 vertical book summary videos with AI images, TTS voice, Ken Burns effect, and precise subtitle and audio alignment using customizable temp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jianzhufangna",
+      "userId": "s1732zp8fn8rwx7abbsz3mvrz9842pwa",
+      "displayName": "jianzhufangna",
+      "image": "https://avatars.githubusercontent.com/u/273156246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776359118862,
+      "changelog": "Book Video Maker 2.0 brings major updates for generating book-themed viral short videos.\n\n- Added precise subtitle and voice alignment for improved viewing experience.\n- Supports API Key configuration via config file or environment variable.\n- Now generates 1080x1920 vertical videos with Ken Burns effect.\n- Uses AI for intelligent image generation and TTS voiceover.\n- Updated quick start guide and parameter instructions for easier setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77a4348bdde0c149b3b8916846cadfeade506ab47937b9dcd446a78e5040a486"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50670,
+  "uuid": "skill-clawhub-claw-switch",
+  "skillKey": "clawhub-claw-switch",
+  "name": "Claw Switch",
+  "summary": "Simple model router for OpenClaw. Switch between available models based on task type. No manual config needed — just use natural language.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_switch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SiliconYahaha",
+      "features": [
+        "Simple model router for OpenClaw",
+        "Switch between available models based on task type",
+        "No manual config needed — just use natural language."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-switch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159695031?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-switch",
+      "url": "https://clawhub.ai/skills/claw-switch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-switch",
+    "url": "https://clawhub.ai/skills/claw-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-switch-3eddb9c847609bfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-switch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-switch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d78219716850c11c02015c41e087285b4fb93f015946b25df700e9137a7d8b30",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T17:30:29.667Z"
+}

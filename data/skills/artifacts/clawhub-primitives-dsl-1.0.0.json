@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/primitives-dsl@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.primitives_dsl",
+  "skill": {
+    "id": 37274,
+    "skillKey": "clawhub-primitives-dsl",
+    "name": "Universal Game Primitives"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "primitives-dsl",
+    "url": "https://clawhub.ai/skills/primitives-dsl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/primitives-dsl-81f8da2c339c63c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal game architecture DSL with six primitives (LOOP, TILEGRID, CONTROLBLOCK, POOL, EVENT, DISPATCHER). Use when: (1) designing portable game/sim loops, (2) translating between architectures (68K ↔ Cell ↔ CUDA ↔ ECS), (3) explaining e."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stusatwork-oss",
+      "userId": "s1777jqjsfzwcsvybmgbh3ezjd85f5dy",
+      "displayName": "stusatwork-oss",
+      "image": "https://avatars.githubusercontent.com/u/239813197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 873,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770913669375,
+      "changelog": "Initial public release of primitives-dsl.\n\n- Introduces a universal DSL for game architecture using six primitives: LOOP, TILEGRID, CONTROLBLOCK, POOL, EVENT, DISPATCHER.\n- Supports clear mapping and translation across architectures (68K, Cell, CUDA, ECS).\n- Ensures every use produces standardized outputs: Primitive Map, Dataflow Sketch, Worked Example, and Portability Notes.\n- Provides reference guides, worked examples, and style/guardrail rules for consistent DSL usage.\n- Optimized for portability, explicit system design, and AI agent explainability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1fa824c1aebf32ff067bc920b62a87b5db2aba7252a3d048456dde61e7f4d134"
+}

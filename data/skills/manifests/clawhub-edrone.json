@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32170,
+  "uuid": "skill-clawhub-edrone",
+  "skillKey": "clawhub-edrone",
+  "name": "Edrone",
+  "summary": "Edrone integration. Manage data, records, and automate workflows. Use when the user wants to interact with Edrone data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edrone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Edrone integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Edrone data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edrone@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edrone",
+      "url": "https://clawhub.ai/skills/edrone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edrone",
+    "url": "https://clawhub.ai/skills/edrone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edrone-7e97758e87e90662.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edrone@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-edrone-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddaeb2c76d4f04a6811177a73223f173e08d3972e04538753a172cea916cff7c",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:42:38.214Z"
+}

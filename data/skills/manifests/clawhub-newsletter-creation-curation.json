@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9861,
+  "uuid": "skill-clawhub-newsletter-creation-curation",
+  "skillKey": "clawhub-newsletter-creation-curation",
+  "name": "Newsletter Creation & Curation",
+  "summary": "Industry-specific newsletter creation with cadence recommendations and automation workflows",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsletter_creation_curation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shashwat Ghosh",
+      "features": [
+        "Industry-specific newsletter creation with cadence recommendations and automation workflows"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/newsletter-creation-curation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190284467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "newsletter-creation-curation",
+      "url": "https://clawhub.ai/skills/newsletter-creation-curation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsletter-creation-curation",
+    "url": "https://clawhub.ai/skills/newsletter-creation-curation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsletter-creation-curation-a070c8bbdfe0175d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/newsletter-creation-curation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-newsletter-creation-curation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:763bcb2d72855e52ba30a06900b0624a073a8eecb3344a77ac1e511deb89ea27",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T14:50:03.695Z"
+}

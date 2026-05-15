@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cnki-exp-search-automation-0-2-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnki_exp_search_automation_0_2_0",
+  "skill": {
+    "id": 66353,
+    "skillKey": "clawhub-cnki-exp-search-automation-0-2-0",
+    "name": "Cnki Exp Search Automation 0.2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnki-exp-search-automation-0-2-0",
+    "url": "https://clawhub.ai/skills/cnki-exp-search-automation-0-2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnki-exp-search-automation-0-2-0-fdf4a998fcafbb18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CNKI（中国知网）高级搜索自动化技能。使用浏览器自动化技术搜索文献并获取结果列表及摘要信息。建议在有头浏览器环境下使用以便于处理反机器人验证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangyingzhuangk",
+      "userId": "s1745jre4s1dpyqce9y646s8gh84v3k6",
+      "displayName": "zhangyingzhuangk",
+      "image": "https://avatars.githubusercontent.com/u/16957705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776131980728,
+      "changelog": "- Initial public release of the CNKI 高级搜索自动化技能.\n- Supports automated advanced search and batch result extraction from CNKI using browser automation.\n- Provides tools to extract detailed article metadata and abstracts.\n- Includes guidance for handling anti-robot verification (user manual intervention required).\n- Recommends use of a headful browser environment for best compatibility with CNKI's security measures.\n- Documentation covers usage examples, JS extraction scripts, multi-page crawling, and data export tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42cf434beed34b5d2fb298bf6afb54b8961d004c2c53e6a2ce1da63d5a9cff13"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68345,
+  "uuid": "skill-clawhub-param-eval",
+  "skillKey": "clawhub-param-eval",
+  "name": "Param Eval",
+  "summary": "招标/采购项目技术参数需求逐项评估，输出标准格式的需求响应表",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.param_eval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iamdacai",
+      "features": [
+        "招标/采购项目技术参数需求逐项评估，输出标准格式的需求响应表"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/param-eval@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197450145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "param-eval",
+      "url": "https://clawhub.ai/skills/param-eval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "param-eval",
+    "url": "https://clawhub.ai/skills/param-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/param-eval-964745f779654cb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/param-eval@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-param-eval-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e18279082d181fd7ae8543550fcb253a7831e235505312833e625a1ab7d8253",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T09:22:02.834Z"
+}

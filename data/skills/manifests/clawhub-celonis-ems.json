@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24989,
+  "uuid": "skill-clawhub-celonis-ems",
+  "skillKey": "clawhub-celonis-ems",
+  "name": "Celonis Ems",
+  "summary": "Celonis EMS integration. Manage Organizations. Use when the user wants to interact with Celonis EMS data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.celonis_ems",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Celonis EMS integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Celonis EMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/celonis-ems@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "celonis-ems",
+      "url": "https://clawhub.ai/skills/celonis-ems"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "celonis-ems",
+    "url": "https://clawhub.ai/skills/celonis-ems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/celonis-ems-f35176434129920b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/celonis-ems@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-celonis-ems-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:549f961f9608e0bf9de02eecf71c3e3c2fc0ed87d05f132e8d8147b300c8ab8d",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:28:12.383Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-ai-briefing@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_ai_briefing",
+  "skill": {
+    "id": 68688,
+    "skillKey": "clawhub-daily-ai-briefing",
+    "name": "Daily AI Briefing（每日AI简报）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-ai-briefing",
+    "url": "https://clawhub.ai/skills/daily-ai-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-ai-briefing-807a1f5cd73c1b17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日AI硬核进展简报的质量规范与执行流程。定义红线规则、搜索策略、信息源、提纯标准、自检清单和输出模板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tino-chen",
+      "userId": "s17fc8yt0yqfwyna24h50jpcxn847yb4",
+      "displayName": "Tino Chen",
+      "image": "https://avatars.githubusercontent.com/u/263268772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775413969126,
+      "changelog": "Display name: 添加中文名称",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8075acb70b8cc0117e24ecb6ea9321e8305632795eb735418f90b14cf208899"
+}

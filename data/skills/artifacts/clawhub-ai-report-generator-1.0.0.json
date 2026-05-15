@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-report-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_report_generator",
+  "skill": {
+    "id": 62156,
+    "skillKey": "clawhub-ai-report-generator",
+    "name": "Ai Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-report-generator",
+    "url": "https://clawhub.ai/skills/ai-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-report-generator-fc62748a8f0388a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据飞书表格中的小红书数据，生成运营报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangfeng1995",
+      "userId": "s176ebdy7m6zcheacary38c7dh83hhtj",
+      "displayName": "huangfeng1995",
+      "image": "https://avatars.githubusercontent.com/u/113488508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774231952139,
+      "changelog": "ai-report-generator 1.0.0 - 初始版本发布\n\n- 支持从飞书表格读取小红书运营数据\n- 自动计算阅读量、互动率、涨粉等核心指标\n- 生成标准化的小红书运营分析报告，包括数据概览、爆款分析、问题诊断和优化建议\n- 适配飞书表格指定字段结构\n- 需确保已有飞书表格数据且应用具备读取权限",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d5b0244fdcc7feb5d2eab5b6319eddb7dad731ae76fb521f920d74662c61f09"
+}

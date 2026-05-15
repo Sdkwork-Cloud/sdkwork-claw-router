@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72000,
+  "uuid": "skill-clawhub-one-click-posting",
+  "skillKey": "clawhub-one-click-posting",
+  "name": "One Click Posting",
+  "summary": "一键发帖执行技能：把同一条内容快速打包为小红书/X/知乎可发布稿，并按固定门禁完成“预检→老板确认→发布→截图复核→数据归档”。用于用户说“一键发帖”“帮我直接发”“多平台同步发”“先出发布包再发”的场景；也用于发布前质量检查和发布后复盘归档。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_click_posting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "一键发帖执行技能：把同一条内容快速打包为小红书/X/知乎可发布稿，并按固定门禁完成“预检→老板确认→发布→截图复核→数据归档”。用于用户说“一键发帖”“帮我直接发”“多平台同步发”“先出发布."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/one-click-posting@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "one-click-posting",
+      "url": "https://clawhub.ai/skills/one-click-posting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-click-posting",
+    "url": "https://clawhub.ai/skills/one-click-posting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-click-posting-9ca81a80e2ff7cbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/one-click-posting@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-one-click-posting-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c8b01676f99b9cbe33d0354c8a960ae849b914af7c570e924ebd3024d4e2c5e",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:09:54.266Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-twitter-command-center@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_command_center",
+  "skill": {
+    "id": 38737,
+    "skillKey": "clawhub-aisa-twitter-command-center",
+    "name": "AIsa Twitter Command Center"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-command-center",
+    "url": "https://clawhub.ai/skills/aisa-twitter-command-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-command-center-8cb8f556d9f929b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X/Twitter profiles, tweets, trends, lists, communities, and Spaces through the AIsa relay, then support approved posting workflows with OAuth. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778245006105,
+      "changelog": "Version 1.0.3\n\n- Expanded skill description to highlight support for lists, communities, and Spaces, and clarified OAuth-based posting workflows.\n- Added \"When NOT to use\" and \"Security Notes\" sections to documentation for clearer guidance and safe usage.\n- Provided explicit quick reference commands, posting workflow steps, and environment variable setup examples.\n- Updated metadata with homepage, source code links, and improved formatting.\n- Enhanced guardrails and usage examples to better set user expectations for research, monitoring, and posting tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b220140d921de6d01ab4adbe8cd92f2248b825f1785bcd5220e2245af38ad02e"
+}

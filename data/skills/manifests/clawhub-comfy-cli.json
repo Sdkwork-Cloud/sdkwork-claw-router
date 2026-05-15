@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9665,
+  "uuid": "skill-clawhub-comfy-cli",
+  "skillKey": "clawhub-comfy-cli",
+  "name": "Comfy Cli",
+  "summary": "Install, manage, and run ComfyUI instances. Use when setting up ComfyUI, launching servers, installing/updating/debugging custom nodes, downloading models from CivitAI/HuggingFace, managing workspaces, running API workflows, or troubleshoo.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfy_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johntheyoung",
+      "features": [
+        "Install, manage, and run ComfyUI instances",
+        "Use when setting up ComfyUI, launching servers, installing/updating/debugging custom nodes, dow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfy-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59088717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfy-cli",
+      "url": "https://clawhub.ai/skills/comfy-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfy-cli",
+    "url": "https://clawhub.ai/skills/comfy-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfy-cli-e61656dc1337abfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfy-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfy-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44d8266d77ad27036d82f716c6a6e2a65ff73c20754262cd294885b06552e3e6",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T09:38:01.836Z"
+}

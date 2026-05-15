@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/retail-store-poscore-baseline-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retail_store_poscore_baseline_analysis",
+  "skill": {
+    "id": 66135,
+    "skillKey": "clawhub-retail-store-poscore-baseline-analysis",
+    "name": "历史基线分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retail-store-poscore-baseline-analysis",
+    "url": "https://clawhub.ai/skills/retail-store-poscore-baseline-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retail-store-poscore-baseline-analysis-a2f4db592e2f6824.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "门店历史基线分析工具。基于Agent API数据库视图，提供多周期基线+四分位分析。 核心能力： 1. 多周期基线（13周/季度、26周/半年、52周/全年、12个月） 2. 多维度分组（按星期几分组、自然周、自然月） 3. 四分位分析（P25/P50/P75，识别异常区间） 4. 基线类型（weekday按星期..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gwyang7",
+      "userId": "s174smknxqd6qs6q88gjradc7x83ngrp",
+      "displayName": "Xtechmerge.AI",
+      "image": "https://avatars.githubusercontent.com/u/176652150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774532435960,
+      "changelog": "Initial release: 支持多周期基线、四分位分析",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81e1ba1f84a14daa7f84096e361193c1997541c32f08f7279833e09740c2ef6d"
+}

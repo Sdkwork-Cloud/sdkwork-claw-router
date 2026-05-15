@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-copy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_copy",
+  "skill": {
+    "id": 26311,
+    "skillKey": "clawhub-ad-copy",
+    "name": "Ad Copy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-copy",
+    "url": "https://clawhub.ai/skills/ad-copy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-copy-ac1df5e2fa94f5cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates targeted, high-converting advertising copy with headline, body, CTA, and visual guidance for multi-platform digital marketing campaigns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1970168137",
+      "userId": "s1750jcdy0m9f65nkyj3n8y7ws83f35s",
+      "displayName": "走过",
+      "image": "https://avatars.githubusercontent.com/u/48984941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774233772036,
+      "changelog": "Initial release of the ad-copy skill for generating high-performing advertising creative.\n\n- Creates targeted ad copy for digital marketing, including feed ads, native, social, and display formats.\n- Focuses on boosting CTR with optimized headlines, body copy, CTAs, and creative concepts.\n- Supports audience-specific messaging and multiple platform selections.\n- Includes built-in recommendations for visual direction and A/B testing strategies.\n- Accepts detailed campaign inputs and outputs headline options, ad variations, and testing plans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bff8496f4af460ae99a41128fefad02d3d5f8676b63c39b185f6bf21e81566c7"
+}

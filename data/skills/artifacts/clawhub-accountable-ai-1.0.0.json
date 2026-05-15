@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accountable-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountable_ai",
+  "skill": {
+    "id": 39179,
+    "skillKey": "clawhub-accountable-ai",
+    "name": "Accountable AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountable-ai",
+    "url": "https://clawhub.ai/skills/accountable-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountable-ai-24a003004ec0b784.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implements governance for AI teams by defining roles, decision authority, procedures, and delegation to ensure accountability and traceable actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kgapol",
+      "userId": "s175vcsn3kcjrex7t13qed9a3583xwhf",
+      "displayName": "kgapol",
+      "image": "https://avatars.githubusercontent.com/u/1832819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774844366477,
+      "changelog": "- Initial release of Accountable AI, a governance framework for AI agent teams.\n- Introduces role and responsibility documentation with GOVERNANCE.md, PROCEDURES.md, and DELEGATION.md.\n- Enables decision trails, accountability, and clear delegation among agents.\n- Provides procedures to prevent improvisation on sensitive operations.\n- Designed for traceability, audit trails, and robust escalation protocols.\n- Part of the Trust AI Suite for comprehensive AI team management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fe2c2ecc7b7fb041220518bef92dca913d832101ef2c4234527a81d578365f1"
+}

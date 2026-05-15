@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63288,
+  "uuid": "skill-clawhub-image-recognition",
+  "skillKey": "clawhub-image-recognition",
+  "name": "Image Recognition",
+  "summary": "图片识别 - 通用图片识别技能，支持 OCR 文字提取、物体识别、场景分析等。自动使用用户配置的视觉模型，适用于 Android/Termux 环境。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_recognition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangning823-arch",
+      "features": [
+        "通用图片识别技能，支持 OCR 文字提取、物体识别、场景分析等。自动使用用户配置的视觉模型，适用于 Android/Termux 环境。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-recognition@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267068942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-recognition",
+      "url": "https://clawhub.ai/skills/image-recognition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-recognition",
+    "url": "https://clawhub.ai/skills/image-recognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-recognition-062ac839de26e280.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-recognition@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-recognition-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecf2e32fa880c9d206e19af60ab5160cf6ea2e1d6dae4863f39c366e7e65f71d",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:17:12.220Z"
+}

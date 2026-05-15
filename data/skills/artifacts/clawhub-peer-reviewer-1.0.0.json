@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/peer-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peer_reviewer",
+  "skill": {
+    "id": 11760,
+    "skillKey": "clawhub-peer-reviewer",
+    "name": "Peer Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peer-reviewer",
+    "url": "https://clawhub.ai/skills/peer-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peer-reviewer-227482248228e32f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered academic paper reviewer. Uses a multi-agent system (Deconstructor, Devil's Advocate, Judge) to analyze papers for logical flaws, contradictions, and empirical validity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sschepis",
+      "userId": "publishers:sschepis",
+      "displayName": "sschepis",
+      "image": "https://avatars.githubusercontent.com/u/1401279?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2029,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770265940826,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1079632ea15b05e21b7d4cc689d43ecce6d66f958264dca0520b077ea21514fd"
+}

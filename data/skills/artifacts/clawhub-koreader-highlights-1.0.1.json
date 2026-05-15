@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/koreader-highlights@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.koreader_highlights",
+  "skill": {
+    "id": 23585,
+    "skillKey": "clawhub-koreader-highlights",
+    "name": "koreader-highlights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "koreader-highlights",
+    "url": "https://clawhub.ai/skills/koreader-highlights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/koreader-highlights-1f831ace401ea71b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user asks about reading highlights, book notes, annotations, or reading history from KOReader. Triggers: \"what books\", \"show highligh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myugan",
+      "userId": "publishers:myugan",
+      "displayName": "myugan",
+      "image": "https://avatars.githubusercontent.com/u/20453528?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 426,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772895731584,
+      "changelog": "- Major update: user replies are now strictly human-readable only — no commands, code, file paths, or technical details are displayed.\n- Clearer step-by-step workflow for finding and reading KOReader highlights, with specific instructions for book listing, searching, and highlight summary.\n- Improved error handling: instead of showing errors or technical output, users see plain, friendly messages if something goes wrong.\n- All supported fields and file format details clarified; only user-relevant data is ever shown, with internal fields ignored.\n- The skill continues to be read-only and focused solely on KOReader highlight data.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2623907e6011376cf7ca11f95bb096ffb9c4a6f7bfd8c7ad5d3a0b44f4f409e"
+}

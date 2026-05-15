@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28682,
+  "uuid": "skill-clawhub-skillminer",
+  "skillKey": "clawhub-skillminer",
+  "name": "Skillminer",
+  "summary": "Suggest reusable skills from recurring patterns in local memory files. Human review gate, drafts only to skills/_pending/, local-first runner with optional e...",
+  "version": "0.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillminer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robby",
+      "features": [
+        "Suggest reusable skills from recurring patterns in local memory files",
+        "Human review gate, drafts only to skills/_pending/, local-first runner with optional e..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillminer@0.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239660374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillminer",
+      "url": "https://clawhub.ai/skills/skillminer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillminer",
+    "url": "https://clawhub.ai/skills/skillminer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillminer-e3632421805c896c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillminer@0.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillminer-0.5.3.json",
+      "version": "0.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4af627205fa005e6f4229110823ff1b522858523f6d703e4143bff70c803d3e",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:08:04.158Z"
+}

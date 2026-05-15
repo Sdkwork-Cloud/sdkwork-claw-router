@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/camino-query@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_query",
+  "skill": {
+    "id": 15685,
+    "skillKey": "clawhub-camino-query",
+    "name": "Broad Location Entity Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-query",
+    "url": "https://clawhub.ai/skills/camino-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-query-cab2f3960ab3eab1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for places using natural language with Camino AI's location intelligence API. Returns relevant results with coordinates, distances, and metadata. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "james-southendsolutions",
+      "userId": "publishers:james-southendsolutions",
+      "displayName": "James-southendsolutions",
+      "image": "https://avatars.githubusercontent.com/u/93152760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 787,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1771301454267,
+      "changelog": "- Added \"curl\" and \"jq\" as required system binaries in the skill metadata.\n- No other user-facing documentation or usage changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6433e9af41eda6128dedd19df06c839538bfb209fc0e505a1dce637b71927e88"
+}

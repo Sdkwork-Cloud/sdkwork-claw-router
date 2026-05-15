@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45290,
+  "uuid": "skill-clawhub-kirk-habit-tracker",
+  "skillKey": "clawhub-kirk-habit-tracker",
+  "name": "habit-tracker",
+  "summary": "Build habits with streaks, reminders, and progress visualization",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kirk_habit_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KirkRaman",
+      "features": [
+        "Build habits with streaks, reminders, and progress visualization"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kirk-habit-tracker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255880392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kirk-habit-tracker",
+      "url": "https://clawhub.ai/skills/kirk-habit-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kirk-habit-tracker",
+    "url": "https://clawhub.ai/skills/kirk-habit-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kirk-habit-tracker-f1398d5783633000.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kirk-habit-tracker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kirk-habit-tracker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:986ef304a0f2a28976af6e4dff6762e5d2f6d6104f86336184f6a5a88c243b06",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:19:43.328Z"
+}

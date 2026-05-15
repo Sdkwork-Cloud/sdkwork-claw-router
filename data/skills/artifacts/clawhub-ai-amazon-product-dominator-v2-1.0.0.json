@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-amazon-product-dominator-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_amazon_product_dominator_v2",
+  "skill": {
+    "id": 50966,
+    "skillKey": "clawhub-ai-amazon-product-dominator-v2",
+    "name": "AI Amazon Product Dominator — Find Winning Products & Crush the Competition Before You Launch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-amazon-product-dominator-v2",
+    "url": "https://clawhub.ai/skills/ai-amazon-product-dominator-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-amazon-product-dominator-v2-e376d1f74c8febdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes Amazon to identify winning products, analyze competitors, mine negative reviews, calculate profits, craft optimized listings, and create launch videos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774789837992,
+      "changelog": "Initial release — AI Amazon Product Dominator v1.0.0\n\n- Scrapes Amazon for high-demand, low-competition products with detailed market metrics.\n- Analyzes top competitor listings and mines 1-star reviews to find weaknesses and product improvement opportunities.\n- Calculates real profit margins, factoring in sourcing, FBA fees, and PPC costs.\n- Auto-generates a fully optimized Amazon listing with SEO-driven keywords.\n- Develops a keyword-based launch strategy and review/PPC plan.\n- Produces a product launch video using InVideo AI for use in listings and ads.\n- Powered by Apify, InVideo AI, and Claude AI for a complete Amazon launch intelligence report.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f5dceb9075195ac4542a3827eda9c42f5ee13f8970d9e5acda3e14882db168c"
+}

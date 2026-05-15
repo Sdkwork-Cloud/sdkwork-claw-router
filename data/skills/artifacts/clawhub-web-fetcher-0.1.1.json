@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-fetcher@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fetcher",
+  "skill": {
+    "id": 57806,
+    "skillKey": "clawhub-web-fetcher",
+    "name": "Web Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fetcher",
+    "url": "https://clawhub.ai/skills/web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fetcher-414aec806b93339c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart web content fetcher - articles and videos from WeChat, Feishu, Bilibili, Zhihu, Toutiao, YouTube, etc. Triggers: '抓取文章', '下载网页', '保存文章', 'fetch URL', '..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexxxiong",
+      "userId": "publishers:alexxxiong",
+      "displayName": "alexxiong",
+      "image": "https://avatars.githubusercontent.com/u/45865830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 635,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773119607957,
+      "changelog": "Initial release: smart web content fetcher for articles and videos",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1ef5c98a687de9aa52be88fd61e811610e2148f74f5d01dcb92b5524ab003c8"
+}

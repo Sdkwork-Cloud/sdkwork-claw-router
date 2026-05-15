@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revolut-business@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revolut_business",
+  "skill": {
+    "id": 13545,
+    "skillKey": "clawhub-revolut-business",
+    "name": "Revolut Business"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revolut-business",
+    "url": "https://clawhub.ai/skills/revolut-business",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revolut-business-fd6030a00a5f3569.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Revolut Business API CLI — accounts, balances, transactions, counterparties, payments, FX exchange, CSV export. Auto-refreshes OAuth tokens. Business accounts only (not personal)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "christianhaberl",
+      "userId": "publishers:christianhaberl",
+      "displayName": "christianhaberl",
+      "image": "https://avatars.githubusercontent.com/u/116439789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1836,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769882844961,
+      "changelog": "Fix: description translated to English",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:64fad239a840cd13417a1890e3c29913a1de5416b8080a77089171eb969d0145"
+}

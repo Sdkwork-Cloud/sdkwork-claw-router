@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10656,
+  "uuid": "skill-clawhub-privy",
+  "skillKey": "clawhub-privy",
+  "name": "Privy Agentic Wallets",
+  "summary": "Create and manage agentic wallets with Privy. Use for autonomous onchain transactions, wallet creation, policy management, and transaction execution on Ethereum, Solana, and other chains. Triggers on requests involving crypto wallets for A.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tedim52",
+      "features": [
+        "Create and manage agentic wallets with Privy",
+        "Use for autonomous onchain transactions, wallet creation, policy management, and transaction ex.",
+        "Triggers on requests involving crypto wallets for AI agents, server-side wallet operations, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/privy@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46531991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "privy",
+      "url": "https://clawhub.ai/skills/privy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privy",
+    "url": "https://clawhub.ai/skills/privy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privy-2fcce22b01d7ce17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/privy@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-privy-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b42c306d341872ea86cc05f1d5a76234d762798342b4d506e14f063e273dd4d9",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T20:27:13.117Z"
+}

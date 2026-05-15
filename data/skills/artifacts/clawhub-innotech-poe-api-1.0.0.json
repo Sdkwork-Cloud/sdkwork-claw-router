@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/innotech-poe-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.innotech_poe_api",
+  "skill": {
+    "id": 27836,
+    "skillKey": "clawhub-innotech-poe-api",
+    "name": "Poe Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "innotech-poe-api",
+    "url": "https://clawhub.ai/skills/innotech-poe-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/innotech-poe-api-b6ac966e75226cb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable intelligent querying of 300+ AI models via Poe API with automatic model selection, task-based routing, and cost-quality optimization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nwcalvin",
+      "userId": "publishers:nwcalvin",
+      "displayName": "nwcalvin",
+      "image": "https://avatars.githubusercontent.com/u/3368077?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772533803671,
+      "changelog": "Poe API Orchestration Skill v1.0.0\n\n- Initial release enabling OpenClaw to access and route requests across 300+ AI models via the Poe API.\n- Features intelligent model selection and cost optimization based on task type.\n- Supports querying for text, image, video, audio generation, and AI-assisted web search.\n- Provides detailed task-model mapping tables and usage guidance.\n- Includes quickstart code examples and principles for effective model usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:587943bcfd0d6601886169e25564b6b536e23dc1436c9c0d8010f966fcdcd01f"
+}

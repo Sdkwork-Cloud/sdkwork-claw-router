@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-guidelines-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_guidelines_pro",
+  "skill": {
+    "id": 29043,
+    "skillKey": "clawhub-brand-guidelines-pro",
+    "name": "Brand Guidelines Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-guidelines-pro",
+    "url": "https://clawhub.ai/skills/brand-guidelines-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-guidelines-pro-664a36c326a9a564.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsuyungfeng",
+      "userId": "s176mg6jsk6y2za6pgwznfhbas83gzaw",
+      "displayName": "hsuyungfeng",
+      "image": "https://avatars.githubusercontent.com/u/140491126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773450059987,
+      "changelog": "- Initial release of \"brand-guidelines-pro\": applies Anthropic's official brand colors and typography.\n- Supports smart font assignment (Poppins for headings, Lora for body; falls back to Arial/Georgia).\n- Provides detailed guidelines for brand colors and visual hierarchy.\n- Automatically handles accent and background colors for shapes and text.\n- Requires no extra font installation if Poppins/Lora are already on your system.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed6e19401405e667b60fa2c460baad7233e667ac8ac0f045589cc034367dfa4e"
+}

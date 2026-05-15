@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "automation-runner",
+    "displayName": "Automation Runner",
+    "summary": "Executes approved shell commands, manages backups, and safely retrieves secrets from Bitwarden.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1362,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1771874626538,
+    "updatedAt": 1778387758239
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1771874626538,
+    "changelog": "- Initial release of automation_runner skill.\n- Executes approved shell commands for OpenClaw, with strict security via the exec-approvals gate.\n- Safely retrieves secrets using the Bitwarden (`bws`) wrapper; API keys are never stored in plain text.\n- Restricts all script execution to a dedicated workspace directory.\n- Manages approved long-running tasks such as backups.\n- Logs command output by date for traceability.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "barnyp",
+    "userId": "publishers:barnyp",
+    "displayName": "Paul Barnabas",
+    "image": "https://avatars.githubusercontent.com/u/11508121?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778387758239
+  }
+}

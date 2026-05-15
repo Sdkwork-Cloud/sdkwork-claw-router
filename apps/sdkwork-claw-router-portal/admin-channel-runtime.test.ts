@@ -203,7 +203,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/channel/list" && method === "POST") {
+      if (url === "/backend/v3/api/integration/channels" && method === "GET") {
         return {
           items: [
             {
@@ -231,7 +231,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
           ],
         };
       }
-      if (url === "/backend/v3/api/channel" && method === "POST") {
+      if (url === "/backend/v3/api/integration/channels" && method === "POST") {
         return {
           item: {
             id: "channel-2",
@@ -251,7 +251,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
           },
         };
       }
-      if (url === "/backend/v3/api/channel" && method === "PUT") {
+      if (url === "/backend/v3/api/integration/channels" && method === "PUT") {
         return {
           item: {
             id: "channel-2",
@@ -269,7 +269,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
           },
         };
       }
-      if (url === "/backend/v3/api/channel/channel-2/test" && method === "POST") {
+      if (url === "/backend/v3/api/integration/channels/channel-2/verify" && method === "POST") {
         return {
         channelId: "7",
         success: true,
@@ -291,7 +291,7 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
         },
         };
       }
-      if (url === "/backend/v3/api/channel/channel-2" && method === "DELETE") {
+      if (url === "/backend/v3/api/integration/channels/channel-2" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
@@ -330,11 +330,11 @@ test("admin channel service calls generated backend SDK paths and normalizes cha
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "POST /backend/v3/api/channel/list",
-          "POST /backend/v3/api/channel",
-          "PUT /backend/v3/api/channel",
-          "POST /backend/v3/api/channel/channel-2/test",
-          "DELETE /backend/v3/api/channel/channel-2",
+          "GET /backend/v3/api/integration/channels",
+          "POST /backend/v3/api/integration/channels",
+          "PUT /backend/v3/api/integration/channels",
+          "POST /backend/v3/api/integration/channels/channel-2/verify",
+          "DELETE /backend/v3/api/integration/channels/channel-2",
         ],
       );
       assert.deepEqual(JSON.parse(captured[1].body), {
@@ -366,7 +366,7 @@ test("admin provider secret service calls generated backend SDK paths and normal
   await withBackendSdkFetch(
     (url, init) => {
       const method = init?.method ?? "GET";
-      if (url === "/backend/v3/api/provider-secrets/list" && method === "POST") {
+      if (url === "/backend/v3/api/integration/provider_secrets?provider_code=openai&status=disabled" && method === "GET") {
         return {
           items: [
             {
@@ -383,7 +383,7 @@ test("admin provider secret service calls generated backend SDK paths and normal
           ],
         };
       }
-      if (url === "/backend/v3/api/provider-secrets" && method === "POST") {
+      if (url === "/backend/v3/api/integration/provider_secrets" && method === "POST") {
         return {
           item: {
             id: "secret-2",
@@ -399,7 +399,7 @@ test("admin provider secret service calls generated backend SDK paths and normal
           },
         };
       }
-      if (url === "/backend/v3/api/provider-secrets" && method === "PUT") {
+      if (url === "/backend/v3/api/integration/provider_secrets" && method === "PUT") {
         return {
           item: {
             id: "secret-2",
@@ -414,7 +414,7 @@ test("admin provider secret service calls generated backend SDK paths and normal
           },
         };
       }
-      if (url === "/backend/v3/api/provider-secrets/secret-2" && method === "DELETE") {
+      if (url === "/backend/v3/api/integration/provider_secrets/secret-2" && method === "DELETE") {
         return { deleted: true };
       }
       throw new Error(`Unexpected SDK request ${method} ${url}`);
@@ -446,16 +446,13 @@ test("admin provider secret service calls generated backend SDK paths and normal
       assert.deepEqual(
         captured.map((request) => `${request.method} ${request.url}`),
         [
-          "POST /backend/v3/api/provider-secrets/list",
-          "POST /backend/v3/api/provider-secrets",
-          "PUT /backend/v3/api/provider-secrets",
-          "DELETE /backend/v3/api/provider-secrets/secret-2",
+          "GET /backend/v3/api/integration/provider_secrets?provider_code=openai&status=disabled",
+          "POST /backend/v3/api/integration/provider_secrets",
+          "PUT /backend/v3/api/integration/provider_secrets",
+          "DELETE /backend/v3/api/integration/provider_secrets/secret-2",
         ],
       );
-      assert.deepEqual(JSON.parse(captured[0].body), {
-        providerCode: "openai",
-        status: "disabled",
-      });
+      assert.equal(captured[0].body, "");
       assert.deepEqual(JSON.parse(captured[1].body), {
         providerCode: "anthropic",
         name: "Anthropic Backup",
@@ -570,7 +567,7 @@ test("admin channel service rejects unsafe SDK path ids before calling generated
 test("admin channel test fails closed when backend success response omits the tested channel item", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/channel/channel-2/test" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/channels/channel-2/verify" && init?.method === "POST") {
         return {
           channelId: "channel-2",
           success: true,
@@ -592,7 +589,7 @@ test("admin channel test fails closed when backend success response omits the te
 test("admin channel list fails closed when backend omits stable channel ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/channel/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
         return {
           items: [
             {
@@ -626,7 +623,7 @@ test("admin channel list fails closed when backend omits stable channel ids", as
 test("admin channel list fails closed when backend returns malformed channel rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/channel/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
         return {
           items: [
             {
@@ -662,7 +659,7 @@ test("admin channel list fails closed when backend returns malformed channel row
 test("admin channel list fails closed when backend omits channel models", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/channel/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
         return {
           items: [
             {
@@ -696,7 +693,7 @@ test("admin channel list fails closed when backend omits channel models", async 
 test("admin channel list fails closed when backend returns unsupported channel status", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/channel/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/channels" && init?.method === "GET") {
         return {
           items: [
             {
@@ -731,7 +728,7 @@ test("admin channel list fails closed when backend returns unsupported channel s
 test("admin provider secret list fails closed when backend omits stable credential ids", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/provider-secrets/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/provider_secrets" && init?.method === "GET") {
         return {
           items: [
             {
@@ -761,7 +758,7 @@ test("admin provider secret list fails closed when backend omits stable credenti
 test("admin provider secret list fails closed when backend returns malformed credential rows", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/provider-secrets/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/provider_secrets" && init?.method === "GET") {
         return {
           items: ["malformed-provider-secret-row"],
         };
@@ -780,7 +777,7 @@ test("admin provider secret list fails closed when backend returns malformed cre
 test("admin provider secret list fails closed when backend omits secret references", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/provider-secrets/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/provider_secrets" && init?.method === "GET") {
         return {
           items: [
             {
@@ -810,7 +807,7 @@ test("admin provider secret list fails closed when backend omits secret referenc
 test("admin provider secret list fails closed when backend returns unsupported credential status", async () => {
   await withBackendSdkFetch(
     (url, init) => {
-      if (url === "/backend/v3/api/provider-secrets/list" && init?.method === "POST") {
+      if (url === "/backend/v3/api/integration/provider_secrets" && init?.method === "GET") {
         return {
           items: [
             {

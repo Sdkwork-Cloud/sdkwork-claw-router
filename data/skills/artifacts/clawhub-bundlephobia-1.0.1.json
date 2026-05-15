@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bundlephobia@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bundlephobia",
+  "skill": {
+    "id": 53454,
+    "skillKey": "clawhub-bundlephobia",
+    "name": "bundlephobia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bundlephobia",
+    "url": "https://clawhub.ai/skills/bundlephobia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bundlephobia-05244d338239a3f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bundle size & dependency bloat analyzer — scans JS/TS projects for oversized dependencies, duplicate packages, tree-shaking failures, and bundle configuratio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhteevah",
+      "userId": "s17b8q91y0grcxtcbcmvck351n84tdze",
+      "displayName": "suhteevah",
+      "image": "https://avatars.githubusercontent.com/u/2342183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776179072220,
+      "changelog": "Fix: declare all deps, JWT signature verification, configPaths",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed66ab8811e9f2739506a467d5d57e8daff7606c0ba2d519479d559ac95d1aee"
+}

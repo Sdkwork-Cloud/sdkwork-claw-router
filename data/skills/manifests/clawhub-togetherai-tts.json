@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17169,
+  "uuid": "skill-clawhub-togetherai-tts",
+  "skillKey": "clawhub-togetherai-tts",
+  "name": "Togetherai Tts",
+  "summary": "Convert text to speech using the TogetherAI API with the MiniMax speech-2.6-turbo model and save audio in mp3 format.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.togetherai_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marc Smith",
+      "features": [
+        "Convert text to speech using the TogetherAI API with the MiniMax speech-2.6-turbo model and sav."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/togetherai-tts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121727217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "togetherai-tts",
+      "url": "https://clawhub.ai/skills/togetherai-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "togetherai-tts",
+    "url": "https://clawhub.ai/skills/togetherai-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/togetherai-tts-a62189fbc24738b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/togetherai-tts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-togetherai-tts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cace623316cec0c600a31d46210d4c36d09412c2558062b5b3b977a30d9deb14",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T04:03:25.342Z"
+}

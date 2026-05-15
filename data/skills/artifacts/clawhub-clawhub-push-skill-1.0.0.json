@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-push-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_push_skill",
+  "skill": {
+    "id": 58570,
+    "skillKey": "clawhub-clawhub-push-skill",
+    "name": "ClawHub Push Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-push-skill",
+    "url": "https://clawhub.ai/skills/clawhub-push-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-push-skill-493765d1abdb7e50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键推送 skill 到 ClawHub registry，自动处理 acceptLicenseTerms 和文件格式问题"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bg1avd",
+      "userId": "s17e1m5ac1rppw87gfc2cfare9846fyp",
+      "displayName": "Rao Lin",
+      "image": "https://avatars.githubusercontent.com/u/16436148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773250290662,
+      "changelog": "ClawHub Push Skill 1.0.0\n\n- Initial release\n- 修复 acceptLicenseTerms bug\n- 支持单个和批量 skill 推送\n- 自动检测 ClawHub token 位置\n- 自动处理 tags 数组格式和文件上传方式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:020826b378909afd4d5a41d388740b6dcaf8568108ffe580ef36d1fbc76fac64"
+}

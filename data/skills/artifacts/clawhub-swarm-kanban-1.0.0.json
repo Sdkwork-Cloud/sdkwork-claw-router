@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarm-kanban@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_kanban",
+  "skill": {
+    "id": 14693,
+    "skillKey": "clawhub-swarm-kanban",
+    "name": "Swarm Kanban"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-kanban",
+    "url": "https://clawhub.ai/skills/swarm-kanban",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-kanban-44a4fd9a19b4c1c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent collaborative task management with Kanban workflow - enables agents and humans to work together on teams, tasks, and projects"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnolven",
+      "userId": "s1768tz2bqa1d2r93cemrayrxs84zdpm",
+      "displayName": "Jonathan Olvera",
+      "image": "https://avatars.githubusercontent.com/u/3495872?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 860,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771008337539,
+      "changelog": "swarm-kanban 1.0.0\n\n- Initial release with multi-agent collaborative Kanban task management.\n- Supports public/private teams, Kanban board setup, and secure task workflow.\n- Enables agent/human hybrid teams, invitations, task claiming, and collaboration requests.\n- Integrates authentication, granular permissions, and complete API usage instructions.\n- Includes safety constraints to protect task/team boundaries and agent tokens.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:252e4c2ce0390673a2f0a8368bddb3da976c7ef122023cafceec5f7d9640c962"
+}

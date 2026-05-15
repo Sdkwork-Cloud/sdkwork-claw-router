@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-account-config@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_account_config",
+  "skill": {
+    "id": 26163,
+    "skillKey": "clawhub-multi-account-config",
+    "name": "multi-account-config"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-account-config",
+    "url": "https://clawhub.ai/skills/multi-account-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-account-config-a2f6d712b8d8f20a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure multiple messaging platform accounts for OpenClaw. Use when the user wants to add or configure additional accounts for Telegram, WhatsApp, Discord,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devilsen",
+      "userId": "publishers:devilsen",
+      "displayName": "devilsen",
+      "image": "https://avatars.githubusercontent.com/u/5616239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772873557319,
+      "changelog": "initial skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c20ba6d7bd505204efeda60c0e1754427a4aa1aea3298eaa7355f592dc1f741a"
+}

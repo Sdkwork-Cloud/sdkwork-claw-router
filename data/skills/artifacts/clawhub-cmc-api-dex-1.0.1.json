@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmc-api-dex@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_api_dex",
+  "skill": {
+    "id": 20477,
+    "skillKey": "clawhub-cmc-api-dex",
+    "name": "[Outdated] CoinMarketCap Onchain Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-api-dex",
+    "url": "https://clawhub.ai/skills/cmc-api-dex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-api-dex-893d6fd31768dac0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API reference for CoinMarketCap DEX endpoints including token lookup, pools, transactions, trending, and security analysis. Use this skill whenever the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bryan-cmc",
+      "userId": "s17bca3zner64rbfxfnh3vp5s183nv6n",
+      "displayName": "CoinMarketCap",
+      "image": "https://avatars.githubusercontent.com/u/158990050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772468788809,
+      "changelog": "Use https://clawhub.ai/bryan-cmc/cmc-api-onchain-data for the latest onchain data skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:46190b84ba33c64dac395c44fe40eb74b5c125c5345156eb36571c9084e97ac4"
+}

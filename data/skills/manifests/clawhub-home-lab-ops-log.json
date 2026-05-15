@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60004,
+  "uuid": "skill-clawhub-home-lab-ops-log",
+  "skillKey": "clawhub-home-lab-ops-log",
+  "name": "Home Lab Ops Log",
+  "summary": "为个人服务器或家庭实验室记录变更前后、目的、回滚和观察结果。；use for homelab, ops-log, changes workflows；do not use for 执行真实运维命令, 公开敏感主机信息.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_lab_ops_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为个人服务器或家庭实验室记录变更前后、目的、回滚和观察结果。；use for homelab, ops-log, changes workflows；do not use for 执行真实运."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-lab-ops-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-lab-ops-log",
+      "url": "https://clawhub.ai/skills/home-lab-ops-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-lab-ops-log",
+    "url": "https://clawhub.ai/skills/home-lab-ops-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-lab-ops-log-bef39fe15af174e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-lab-ops-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-lab-ops-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c434f4bdd91f40f6c7f7083db42b4d4c3dc5cc96320fc3baa000ef79805c1686",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:37:30.671Z"
+}

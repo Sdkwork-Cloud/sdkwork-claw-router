@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67745,
+  "uuid": "skill-clawhub-food-expiry-reminder",
+  "skillKey": "clawhub-food-expiry-reminder",
+  "name": "food-expiry-reminder",
+  "summary": "食品过期提醒技能。用于记录、管理和提醒食品过期情况。当用户需要记录食品信息、检查食品是否过期、查看即将过期的食品或管理食品库存时使用此技能。数据存储在food_data.json文件中。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_expiry_reminder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CYT",
+      "features": [
+        "食品过期提醒技能。用于记录、管理和提醒食品过期情况。当用户需要记录食品信息、检查食品是否过期、查看即将过期的食品或管理食品库存时使用此技能。数据存储在food_data.json文件中。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/food-expiry-reminder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140494845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "food-expiry-reminder",
+      "url": "https://clawhub.ai/skills/food-expiry-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-expiry-reminder",
+    "url": "https://clawhub.ai/skills/food-expiry-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-expiry-reminder-f121b1d0295e93e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/food-expiry-reminder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-food-expiry-reminder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bf7118cdf4e4676dcba8fa34aeca1d1795d94ebf06b29fa9966b2e874127943",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:10:17.431Z"
+}

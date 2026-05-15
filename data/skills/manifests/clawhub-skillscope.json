@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50384,
+  "uuid": "skill-clawhub-skillscope",
+  "skillKey": "clawhub-skillscope",
+  "name": "skillscope",
+  "summary": "AI Agent Skill decision engine. Use when users need to find, evaluate, or install skills — recommends the best skill for any task with quality/safety scoring...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillscope",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Defang Li",
+      "features": [
+        "AI Agent Skill decision engine",
+        "Use when users need to find, evaluate, or install skills — recommends the best skill for any ta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillscope@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17498154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillscope",
+      "url": "https://clawhub.ai/skills/skillscope"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillscope",
+    "url": "https://clawhub.ai/skills/skillscope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillscope-15d29fb45b401a26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillscope@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillscope-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4991233018cd82ad71ec8bf736988fd7855cbfeb791b7a1d26f6362e3dfc08",
+      "artifactSizeBytes": 2542
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T17:42:26.202Z"
+}

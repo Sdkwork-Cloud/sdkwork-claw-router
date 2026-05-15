@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19597,
+  "uuid": "skill-clawhub-evolver-official",
+  "skillKey": "clawhub-evolver-official",
+  "name": "Capability Evolver",
+  "summary": "A self-evolution engine for AI agents. Analyzes runtime history to identify improvements and applies protocol-constrained evolution.",
+  "version": "1.20.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolver_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "toller892",
+      "features": [
+        "A self-evolution engine for AI agents",
+        "Analyzes runtime history to identify improvements and applies protocol-constrained evolution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evolver-official@1.20.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125938283?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evolver-official",
+      "url": "https://clawhub.ai/skills/evolver-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolver-official",
+    "url": "https://clawhub.ai/skills/evolver-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolver-official-4d10a0fbc8cf0479.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evolver-official@1.20.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-evolver-official-1.20.4.json",
+      "version": "1.20.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:268a7b69cfcbc193dc20fe1f2eba302382ea9e265fc843ed0a8c6ed4321b338c",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T14:38:45.700Z"
+}

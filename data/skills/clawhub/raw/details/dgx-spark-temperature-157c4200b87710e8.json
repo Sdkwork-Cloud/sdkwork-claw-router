@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "dgx-spark-temperature",
+    "displayName": "Dgx Spark Temperature",
+    "summary": "Reads and reports hardware temperature sensor values from the DGX Spark system via SNMP for hardware health monitoring.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777261318320,
+    "updatedAt": 1777528011522
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777261318320,
+    "changelog": "Initial release of dgx-spark-temperature.\n\n- Reads hardware temperature sensors on the DGX Spark via SNMP.\n- Provides mappings for 16 sensors, including GPU, NIC ASICs, and generic thermal sensors.\n- Values are reported in milliCelsius; convert to °C by dividing by 1000.\n- Instructions provided for invoking the temperature check script.\n- Useful for hardware health and temperature checks on the DGX Spark.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "seitzbg",
+    "userId": "s171ana6cfhvd3vjh90r1td3z184a9vf",
+    "displayName": "Bryan Seitz",
+    "image": "https://avatars.githubusercontent.com/u/171158?v=4"
+  },
+  "moderation": null
+}

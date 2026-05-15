@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uw32w3kdfsdfe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uw32w3kdfsdfe",
+  "skill": {
+    "id": 39685,
+    "skillKey": "clawhub-uw32w3kdfsdfe",
+    "name": "AI PC Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uw32w3kdfsdfe",
+    "url": "https://clawhub.ai/skills/uw32w3kdfsdfe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uw32w3kdfsdfe-62f1ed93e7690134.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to the Newegg PC Builder MCP service to retrieve PC build configurations, component compatibility checks, and build recommendations. Use this skill w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "176wer",
+      "userId": "s1720hhe2zq2cv48frwd7svnss85887g",
+      "displayName": "176wer",
+      "image": "https://avatars.githubusercontent.com/u/7268839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776771829043,
+      "changelog": "AI PC BUILDER",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff35d78e767f1c33d269b23818a28a8a20d53ba30630756292671c59db95e1f2"
+}

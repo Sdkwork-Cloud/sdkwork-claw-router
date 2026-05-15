@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48995,
+  "uuid": "skill-clawhub-and-video",
+  "skillKey": "clawhub-and-video",
+  "name": "And Video",
+  "summary": "Turn a 2-minute main video and a 30-second clip into 1080p merged video file just by typing what you need. Whether it's combining multiple video clips into o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.and_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Turn a 2-minute main video and a 30-second clip into 1080p merged video file just by typing wha.",
+        "Whether it's combining multiple video clips into o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/and-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "and-video",
+      "url": "https://clawhub.ai/skills/and-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "and-video",
+    "url": "https://clawhub.ai/skills/and-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/and-video-37a697ceba5b6376.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/and-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-and-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:047fe03f63761601877a0650c5b161417967fcb3d3f8f1c9525da152c7de0bc0",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T03:56:00.608Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-compile-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_compile_skill",
+  "skill": {
+    "id": 41809,
+    "skillKey": "clawhub-openclaw-compile-skill",
+    "name": "Compile Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-compile-skill",
+    "url": "https://clawhub.ai/skills/openclaw-compile-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-compile-skill-4da4b84a3be88445.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the operator asks to compile the configured inbox knowledge notes into curated transit documents and archive source material with auditable links. D..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arroncn993-sys",
+      "userId": "s170fysw4vwecww4df0c96kq1x83ksth",
+      "displayName": "arroncn993-sys",
+      "image": "https://avatars.githubusercontent.com/u/268228561?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777746046380,
+      "changelog": "Publish from public openclaw-knowledge-skills repo; clarify generic path setup, require explicit COMPILE_INBOX_DIR, fail fast on missing inbox, and remove private path assumptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c66b983d705f353e96b450257ef6153974bd2767b97742a0aff695de07b03fb"
+}

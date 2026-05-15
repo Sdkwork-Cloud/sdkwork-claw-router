@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-web3-query-token-info@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_web3_query_token_info",
+  "skill": {
+    "id": 24495,
+    "skillKey": "clawhub-binance-web3-query-token-info",
+    "name": "Binance Query Token Info"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-web3-query-token-info",
+    "url": "https://clawhub.ai/skills/binance-web3-query-token-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-web3-query-token-info-829543f118f438ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query token details by keyword, contract address, or chain. Search tokens, get metadata and social links, retrieve real-time market data (price, price trend,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binance-skills-hub",
+      "userId": "s1797yfgknag3mk22xw9gjajbs83gr82",
+      "displayName": "binance-skills-hub",
+      "image": "https://avatars.githubusercontent.com/u/265599625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773896677221,
+      "changelog": "binance-web3 v1.0.0\n\n- Initial release of the Query Token Info skill by binance-web3-team.\n- Enables searching for tokens by name, symbol, or contract address across BSC, Base, and Solana chains.\n- Provides APIs to retrieve token metadata (details, social links, creator, description).\n- Offers real-time market data: price, price trend, volume, holders, liquidity, and market cap.\n- Supports fetching K-Line candlestick (OHLCV) charts for technical analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da96a5c17e00f514c53451994fad5c27f4b04359c4ba6eaaf1286a06b2211800"
+}

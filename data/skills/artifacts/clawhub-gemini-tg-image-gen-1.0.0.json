@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-tg-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_tg_image_gen",
+  "skill": {
+    "id": 12286,
+    "skillKey": "clawhub-gemini-tg-image-gen",
+    "name": "Gemini TG Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-tg-image-gen",
+    "url": "https://clawhub.ai/skills/gemini-tg-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-tg-image-gen-0a77d26102e79971.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via OpenRouter (google/gemini-2.5-flash-image) and send to Telegram. Use when user asks for AI-generated images in TG."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drones277",
+      "userId": "s17bsrhdh2k4q72y10spy3r3f984yafm",
+      "displayName": "RigdenDjapo",
+      "image": "https://avatars.githubusercontent.com/u/240135008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1713,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770596594163,
+      "changelog": "Initial: Generate AI images via OpenRouter Gemini 2.5 Flash + send to Telegram. Uses OPENROUTER_API_KEY env.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6712ad980f8ff66e8fe37516473f1e163a1f0353640052fed8e9185c081856cd"
+}

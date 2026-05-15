@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55933,
+  "uuid": "skill-clawhub-xiaohongshu-post-antaeus",
+  "skillKey": "clawhub-xiaohongshu-post-antaeus",
+  "name": "Xiaohongshu Post (Browser Auto)",
+  "summary": "Create and publish Xiaohongshu (小红书/RED) notes. Use when: user wants to publish a note to Xiaohongshu, schedule or batch post content, generate Xiaohongshu-s...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_post_antaeus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antaeus001",
+      "features": [
+        "Create and publish Xiaohongshu (小红书/RED) notes",
+        "Use when: user wants to publish a note to Xiaohongshu, schedule or batch post content, generate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-post-antaeus@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/744597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-post-antaeus",
+      "url": "https://clawhub.ai/skills/xiaohongshu-post-antaeus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-post-antaeus",
+    "url": "https://clawhub.ai/skills/xiaohongshu-post-antaeus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-post-antaeus-d1f5dfab67d725a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-post-antaeus@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-post-antaeus-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:688aaf56c6aca26cb269ddbe6e2552e9b25985fc5d8d85f3d0e32bac3b36b622",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:23:47.568Z"
+}

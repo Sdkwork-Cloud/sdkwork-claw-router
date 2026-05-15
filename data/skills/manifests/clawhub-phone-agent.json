@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9680,
+  "uuid": "skill-clawhub-phone-agent",
+  "skillKey": "clawhub-phone-agent",
+  "name": "Phone Voice Agent",
+  "summary": "Run a real-time AI phone agent using Twilio, Deepgram, and ElevenLabs. Handles incoming calls, transcribes audio, generates responses via LLM, and speaks back via streaming TTS. Use when user wants to: (1) Test voice AI capabilities, (2) H.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Run a real-time AI phone agent using Twilio, Deepgram, and ElevenLabs",
+        "Handles incoming calls, transcribes audio, generates responses via LLM, and speaks back via str.",
+        "Use when user wants to: (1) Test voice AI capabilities, (2) Handle phone calls programmatically."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phone-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phone-agent",
+      "url": "https://clawhub.ai/skills/phone-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-agent",
+    "url": "https://clawhub.ai/skills/phone-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-agent-50c182c7d2e91461.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phone-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phone-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1adf2185f7eb9e4ccdde63ff145a0b75d9337de2173f02132c3990dac3699543",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:43:39.955Z"
+}

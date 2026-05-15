@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12007,
+  "uuid": "skill-clawhub-tokenbroker",
+  "skillKey": "clawhub-tokenbroker",
+  "name": "Tokenbroker",
+  "summary": "AI Agent Skill for GitHub project analysis and nad.fun token launch. Analyzes repos, generates token identity/promo, and launches on nad.fun.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokenbroker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "starrftw",
+      "features": [
+        "AI Agent Skill for GitHub project analysis and nad.fun token launch",
+        "Analyzes repos, generates token identity/promo, and launches on nad.fun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tokenbroker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8301446?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tokenbroker",
+      "url": "https://clawhub.ai/skills/tokenbroker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokenbroker",
+    "url": "https://clawhub.ai/skills/tokenbroker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokenbroker-46a228142262e0aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tokenbroker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tokenbroker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d6e580c959eec92ae47240972d31c3ff053e072909e8d27fa2b963615ea2d01",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T11:50:56.080Z"
+}

@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "honeymoon-trip",
+    "displayName": "honeymoon-trip",
+    "summary": "Plan a dreamy honeymoon — luxury hotels, romantic activities, couples' spa, sunset dinners, and unforgettable experiences for newlyweds. Also supports: fligh...",
+    "tags": {
+      "booking": "3.2.0",
+      "flyai": "3.2.0",
+      "latest": "3.2.0",
+      "travel": "3.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775719425794,
+    "updatedAt": 1777527354439
+  },
+  "latestVersion": {
+    "version": "3.2.0",
+    "createdAt": 1775719425794,
+    "changelog": "Version 3.2.0 of honeymoon-trip focuses on enforcing reliable real-time data sourcing and introduces strict output validation.\n\n- Fully revised execution rules: All travel results now strictly originate from `flyai` CLI command outputs—never training data.\n- Mandatory CLI environment checks: Attempts installation if missing, requires manual installation on repeated failure.\n- Every recommended result must include a real-time `[Book]({detailUrl})` link for booking via Fliggy.\n- New output validation step: If any results lack valid booking links, re-execution is required before responding.\n- Expanded, clear workflow and explicit scenario playbooks to handle luxury, beach, and budget honeymoons.\n- Enhanced multi-lingual support and clear output formatting, including brand tag and markdown tables.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xiejinsong",
+    "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+    "displayName": "xiejinsong",
+    "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527354439
+  }
+}

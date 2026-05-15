@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biomarker-investigation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biomarker_investigation",
+  "skill": {
+    "id": 43361,
+    "skillKey": "clawhub-biomarker-investigation",
+    "name": "Biomarker Investigation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biomarker-investigation",
+    "url": "https://clawhub.ai/skills/biomarker-investigation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biomarker-investigation-295c66e604e2d444.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the academic and patent literatures related to the biomarkers, based on the queries Load the skill when the queries are about - Refer a specific bioma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patsnaplifescience",
+      "userId": "s178w3pk85rejw2tje9nd1jras85eg1c",
+      "displayName": "XK",
+      "image": "https://avatars.githubusercontent.com/u/275897758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778145380989,
+      "changelog": "- Added a detailed Setup Guide, including API key instructions and MCP server connection steps.\n- Increased version to 1.0.3 and updated metadata.\n- Setup section now clearly lists required and optional MCP services.\n- Provided direct links and usage tips for PatSnap LifeScience tools and support.\n- Core skill logic, execution principles, and domain coverage remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f91862c00a27889ef0e4681c521d252637be011403237ec5f4cbf481679b955"
+}

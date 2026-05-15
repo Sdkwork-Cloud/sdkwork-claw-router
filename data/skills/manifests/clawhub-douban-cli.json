@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70673,
+  "uuid": "skill-clawhub-douban-cli",
+  "skillKey": "clawhub-douban-cli",
+  "name": "Douban CLI",
+  "summary": "豆瓣电影/书籍/影人/用户收藏查询与标记 CLI。触发词：豆瓣、电影推荐、热门电影、想看什么、top250、美剧日剧韩剧、影评短评、标记看过、评分、好书推荐、书籍、豆列、关注、导出观影记录、影人、演员导演。",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douban_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m3",
+      "features": [
+        "豆瓣电影/书籍/影人/用户收藏查询与标记 CLI。触发词：豆瓣、电影推荐、热门电影、想看什么、top250、美剧日剧韩剧、影评短评、标记看过、评分、好书推荐、书籍、豆列、关注、导出观影记录、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douban-cli@0.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11957602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douban-cli",
+      "url": "https://clawhub.ai/skills/douban-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douban-cli",
+    "url": "https://clawhub.ai/skills/douban-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douban-cli-60e34d8122925710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douban-cli@0.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-douban-cli-0.2.5.json",
+      "version": "0.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:091dceaf05937ba17df42bb0d0bb75f8b4f95a2a657f020f1343867c05a7eeda",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:49:32.411Z"
+}

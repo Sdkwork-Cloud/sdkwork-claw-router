@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23117,
+  "uuid": "skill-clawhub-china-mirror-resolver",
+  "skillKey": "clawhub-china-mirror-resolver",
+  "name": "China Mirror Resolver",
+  "summary": "Self-healing China mirror source resolver. Automatically discovers, validates, and configures domestic mirror sources for pip/npm/yarn/pnpm/conda/Docker/Go/...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_mirror_resolver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "The-Ladder-of-Rrogress",
+      "features": [
+        "Self-healing China mirror source resolver",
+        "Automatically discovers, validates, and configures domestic mirror sources for pip/npm/yarn/pnp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-mirror-resolver@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/163966746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-mirror-resolver",
+      "url": "https://clawhub.ai/skills/china-mirror-resolver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-mirror-resolver",
+    "url": "https://clawhub.ai/skills/china-mirror-resolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-mirror-resolver-703bb3966d743711.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-mirror-resolver@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-mirror-resolver-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5afc8fa30e7df68acca13fe4808949dfbab4857f1a60abc5ab2a8bda22947832",
+      "artifactSizeBytes": 2665
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:03:51.160Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rest-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rest_api",
+  "skill": {
+    "id": 16980,
+    "skillKey": "clawhub-rest-api",
+    "name": "REST API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rest-api",
+    "url": "https://clawhub.ai/skills/rest-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rest-api-d2609a8f60a2f494.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build production-ready REST APIs with contract-first design, secure auth, robust testing, and deployment runbooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772613788773,
+      "changelog": "Initial release with end-to-end REST API build workflow from contract to deployment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06200e0ae241d7ff4fb7509b142f9fc719af5cc6ebdc2a008e5a9d524a8fddba"
+}

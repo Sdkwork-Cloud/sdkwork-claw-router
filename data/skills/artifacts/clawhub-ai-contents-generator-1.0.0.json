@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-contents-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_contents_generator",
+  "skill": {
+    "id": 47871,
+    "skillKey": "clawhub-ai-contents-generator",
+    "name": "AI Contents Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-contents-generator",
+    "url": "https://clawhub.ai/skills/ai-contents-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-contents-generator-a19b683c759268fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates viral content scraping, analyzes hooks, generates original scripts and captions, schedules posts, and optimizes a self-sustaining content pipeline."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777380528500,
+      "changelog": "Initial release of a fully automated content generation pipeline.\n\n- Scrapes trending content from TikTok, Instagram, YouTube, and Reddit using Apify.\n- Extracts hooks and post structures, reverse-engineers virality, and generates original scripts, captions, carousels, and threads via Claude (OpenClaw).\n- Automatically generates a full weekly content calendar.\n- Batch schedules posts for auto-publishing across major platforms (Instagram, TikTok, LinkedIn, Twitter/X).\n- Tracks generated content performance and closes the feedback loop for continuous improvement.\n- Runs autonomously with minimal human input once configured.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b10869133acb4229ffcdc57787182f870f254e59b5e4efbc17725b9ec1d7ac5e"
+}

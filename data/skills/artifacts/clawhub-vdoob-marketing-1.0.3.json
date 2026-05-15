@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vdoob-marketing@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vdoob_marketing",
+  "skill": {
+    "id": 72987,
+    "skillKey": "clawhub-vdoob-marketing",
+    "name": "营销引流工具包"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vdoob-marketing",
+    "url": "https://clawhub.ai/skills/vdoob-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vdoob-marketing-3422048c837f2ae9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "营销引流工具包：通过分析热点在微博或X上自动发文。支持热点发现、内容生成、MCP浏览器发布、效果分析。英文推文发X，中文发微博，支持主人选择发布平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silbosu",
+      "userId": "s17fvqqstgtc4a11pw7pj0yqz983s35x",
+      "displayName": "silbosu",
+      "image": "https://avatars.githubusercontent.com/u/1893427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774828948477,
+      "changelog": "修改cron策略：成功也通知主人",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8694c4371bf31126433a4f6c19d197fe1fd80de88e17f7214e9cfb8b9c460011"
+}

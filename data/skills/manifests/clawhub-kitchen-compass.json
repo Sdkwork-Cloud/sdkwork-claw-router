@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42554,
+  "uuid": "skill-clawhub-kitchen-compass",
+  "skillKey": "clawhub-kitchen-compass",
+  "name": "Kitchen Compass",
+  "summary": "Build and operate a portable Kitchen Compass meal-planning workspace. Use when setting up a Kitchen Compass household data root, converting recipes into the...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kitchen_compass",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drewsadik",
+      "features": [
+        "Build and operate a portable Kitchen Compass meal-planning workspace",
+        "Use when setting up a Kitchen Compass household data root, converting recipes into the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kitchen-compass@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267674149?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kitchen-compass",
+      "url": "https://clawhub.ai/skills/kitchen-compass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kitchen-compass",
+    "url": "https://clawhub.ai/skills/kitchen-compass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kitchen-compass-2d4d72e4847ca744.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kitchen-compass@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kitchen-compass-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0ccaf59f76540e63a317fc3fd5496cce1613dee82589e445ca8e560ea4d68ca",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T18:56:03.302Z"
+}

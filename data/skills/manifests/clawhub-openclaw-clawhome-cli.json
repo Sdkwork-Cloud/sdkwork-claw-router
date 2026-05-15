@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58875,
+  "uuid": "skill-clawhub-openclaw-clawhome-cli",
+  "skillKey": "clawhub-openclaw-clawhome-cli",
+  "name": "openclaw-clawhome-cli",
+  "summary": "将 OpenClaw 连接到 Clawhome 聊天平台，实现 AI 自动回复。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_clawhome_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Ji",
+      "features": [
+        "将 OpenClaw 连接到 Clawhome 聊天平台，实现 AI 自动回复。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-clawhome-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4366878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-clawhome-cli",
+      "url": "https://clawhub.ai/skills/openclaw-clawhome-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-clawhome-cli",
+    "url": "https://clawhub.ai/skills/openclaw-clawhome-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-clawhome-cli-4f1af6657f0ec427.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-clawhome-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-clawhome-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23f58373ad2a4b1085be5bc4c6577de6a964225bda6450f0d697bb380d9b4232",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:43:59.576Z"
+}

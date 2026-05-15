@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arc-workflow-orchestrator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arc_workflow_orchestrator",
+  "skill": {
+    "id": 11240,
+    "skillKey": "clawhub-arc-workflow-orchestrator",
+    "name": "Workflow Orchestrator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arc-workflow-orchestrator",
+    "url": "https://clawhub.ai/skills/arc-workflow-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arc-workflow-orchestrator-798f1f43089b99d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chain skills into automated pipelines with conditional logic, error handling, and audit logging. Define workflows in YAML or JSON, then execute them hands-fr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trypto1019",
+      "userId": "publishers:trypto1019",
+      "displayName": "ArcSelf",
+      "image": "https://avatars.githubusercontent.com/u/91297640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2002,
+      "installsAllTime": 14,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771290090636,
+      "changelog": "- Initial release of version 1.1.0.\n- Updated core logic in scripts/orchestrator.py.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a392d77bf4aa6cbbd09f170327ab06ae9bb742fe8ea82db581fa2215af68948d"
+}

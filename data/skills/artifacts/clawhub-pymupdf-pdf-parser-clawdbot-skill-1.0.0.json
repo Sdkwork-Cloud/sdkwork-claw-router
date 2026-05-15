@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pymupdf-pdf-parser-clawdbot-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pymupdf_pdf_parser_clawdbot_skill",
+  "skill": {
+    "id": 8890,
+    "skillKey": "clawhub-pymupdf-pdf-parser-clawdbot-skill",
+    "name": "PyMuPDF PDF Parser Clawdbot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pymupdf-pdf-parser-clawdbot-skill",
+    "url": "https://clawhub.ai/skills/pymupdf-pdf-parser-clawdbot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pymupdf-pdf-parser-clawdbot-skill-059622ba8694f333.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast local PDF parsing with PyMuPDF (fitz) for Markdown/JSON outputs and optional images/tables. Use when speed matters more than robustness, or as a fallback while heavier parsers are unavailable. Default to single-PDF parsing with per-do."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kesslerio",
+      "userId": "publishers:kesslerio",
+      "displayName": "kesslerio",
+      "image": "https://avatars.githubusercontent.com/u/2647990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5382,
+      "installsAllTime": 41,
+      "installsCurrent": 39,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769196431096,
+      "changelog": "Initial release of PyMuPDF PDF parsing skill.\n\n- Fast local PDF extraction using PyMuPDF (fitz) with Markdown output by default.\n- Supports optional JSON, image extraction, and simple table outputs.\n- Designed for single-PDF runs with per-document output directories.\n- Includes command-line options for output format, images, tables, and language metadata.\n- Recommended as a quick alternative or fallback when heavier PDF parsers are unavailable.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:46a4e4dc675b4a8220a815200dfaf97747de37776fb2a0251fc725a0d70e9c4f"
+}

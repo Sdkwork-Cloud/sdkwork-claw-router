@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zh-de-ai-if@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zh_de_ai_if",
+  "skill": {
+    "id": 70975,
+    "skillKey": "clawhub-zh-de-ai-if",
+    "name": "zh-de-ai-if"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zh-de-ai-if",
+    "url": "https://clawhub.ai/skills/zh-de-ai-if",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zh-de-ai-if-13cbd4079b17e7a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "去除中文文本中的 AI 味、官话味、模板味，让文字更自然、具体、更像真人表达。适用于博客、公众号、邮件、演讲稿、产品文案等中文文本润色。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "antony232",
+      "userId": "s173pprfhmhtb3e1tc9pgb5p5n83mhf6",
+      "displayName": "Antony232",
+      "image": "https://avatars.githubusercontent.com/u/4213962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775940444058,
+      "changelog": "- 首发版本，提供中文文本“去 AI 味”润色能力。\n- 帮助用户将中文改得更自然、更像真人表达，减少官话、模板和企业黑话。\n- 支持 mild、standard、aggressive 不同改写强度，适应正式到日常文本需求。\n- 标准流程涵盖场景判断、问题标记、文本改写及核实提醒，确保原意不变、内容更具体。\n- 给出详细类型标签和安全边界，避免编造来源或误删专业术语。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ebfccadd5fba439b11ab7b021fab5d8be214552fd2d712533815ea44c917ae3"
+}

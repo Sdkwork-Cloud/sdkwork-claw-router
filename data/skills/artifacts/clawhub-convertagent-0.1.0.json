@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/convertagent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convertagent",
+  "skill": {
+    "id": 22382,
+    "skillKey": "clawhub-convertagent",
+    "name": "ConvertAgent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convertagent",
+    "url": "https://clawhub.ai/skills/convertagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convertagent-4249b9bf7cc0f99d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use ConvertAgent for file format conversions through the local CLI. Trigger for any request to convert files (documents, images, audio, video, spreadsheets,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enigami12",
+      "userId": "publishers:enigami12",
+      "displayName": "Senthil",
+      "image": "https://avatars.githubusercontent.com/u/224040528?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772881729824,
+      "changelog": "Initial release: use ConvertAgent CLI for deterministic file conversions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df74c1306dea670f6e2ef5bf968c38ef2fe44be11b8983b9f98ff53decc6d85e"
+}

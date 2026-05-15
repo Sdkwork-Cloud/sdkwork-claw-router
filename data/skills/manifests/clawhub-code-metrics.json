@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36777,
+  "uuid": "skill-clawhub-code-metrics",
+  "skillKey": "clawhub-code-metrics",
+  "name": "Code Metrics",
+  "summary": "Analyze code quality metrics including lines of code by language, cyclomatic complexity (Python), function/class counts, comment ratios, and largest file ran...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_metrics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Analyze code quality metrics including lines of code by language, cyclomatic complexity (Python."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-metrics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-metrics",
+      "url": "https://clawhub.ai/skills/code-metrics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-metrics",
+    "url": "https://clawhub.ai/skills/code-metrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-metrics-6aa916ba2baba1e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-metrics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-metrics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e100c94c4694e1ef345bafdca18ac44a107e44fba38351c3860bf851b7bad873",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:07:49.741Z"
+}

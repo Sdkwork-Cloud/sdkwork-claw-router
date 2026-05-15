@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-agent-email@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_agent_email",
+  "skill": {
+    "id": 33284,
+    "skillKey": "clawhub-easy-agent-email",
+    "name": "easy-agent-email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-agent-email",
+    "url": "https://clawhub.ai/skills/easy-agent-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-agent-email-86a8b3c86ce68c65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upgraded to https://clawhub.ai/tyxiang/ai-agent-email-skill and no longer maintains this version."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tyxiang",
+      "userId": "s1710fpzrqwmrenqmxqnkzq2ch83pz4j",
+      "displayName": "Tyxiang",
+      "image": "https://avatars.githubusercontent.com/u/7249372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775268927890,
+      "changelog": "- Deprecated and removed all core scripts and documentation.\n- Updated description to indicate migration to https://clawhub.ai/tyxiang/ai-agent-email-skill.\n- This version no longer maintains the previous script-based email operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d521d37530bf31ed0b3818b1e70c1a45b2c9eb35d3ae83a4032a6924b58937d"
+}

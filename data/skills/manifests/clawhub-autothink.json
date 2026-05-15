@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26316,
+  "uuid": "skill-clawhub-autothink",
+  "skillKey": "clawhub-autothink",
+  "name": "Autothink 1.0.0",
+  "summary": "Automatically adjust OpenClaw's thinking level based on message complexity. Switch between low/medium/high modes intelligently with session persistence.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autothink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zpy0726",
+      "features": [
+        "Automatically adjust OpenClaw's thinking level based on message complexity",
+        "Switch between low/medium/high modes intelligently with session persistence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autothink@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68719261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autothink",
+      "url": "https://clawhub.ai/skills/autothink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autothink",
+    "url": "https://clawhub.ai/skills/autothink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autothink-aa4161b5b0f49c6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autothink@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autothink-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c70ea2ac5e10e4404a08ce961ba793db954950180d21dd838cd2cfeba7a9c34c",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T18:24:29.045Z"
+}

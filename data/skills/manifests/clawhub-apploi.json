@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37286,
+  "uuid": "skill-clawhub-apploi",
+  "skillKey": "clawhub-apploi",
+  "name": "Apploi",
+  "summary": "Apploi integration. Manage data, records, and automate workflows. Use when the user wants to interact with Apploi data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apploi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Apploi integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Apploi data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apploi@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apploi",
+      "url": "https://clawhub.ai/skills/apploi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apploi",
+    "url": "https://clawhub.ai/skills/apploi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apploi-4ad4c331142c28b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apploi@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-apploi-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c2893067e9da01b378369c2ce79675a4f1aa2dc546801926278551e769dcf67",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:11:29.913Z"
+}

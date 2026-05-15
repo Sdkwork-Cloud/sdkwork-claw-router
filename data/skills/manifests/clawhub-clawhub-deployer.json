@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54006,
+  "uuid": "skill-clawhub-clawhub-deployer",
+  "skillKey": "clawhub-clawhub-deployer",
+  "name": "clawhub-deployer — Skill Publishing Assistant",
+  "summary": "Publish a skill to ClawHub registry. Use when user asks to publish, release, or deploy a skill to ClawHub.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_deployer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Futurize Rush",
+      "features": [
+        "Publish a skill to ClawHub registry",
+        "Use when user asks to publish, release, or deploy a skill to ClawHub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-deployer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122273125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-deployer",
+      "url": "https://clawhub.ai/skills/clawhub-deployer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-deployer",
+    "url": "https://clawhub.ai/skills/clawhub-deployer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-deployer-04258b0e78ef5ae0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-deployer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-deployer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a18d22d1eafb98a89b5166d9cc7d88c96da598489746d1f04a1f115046881820",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:22:20.258Z"
+}

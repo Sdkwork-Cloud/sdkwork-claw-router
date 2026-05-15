@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-usage@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_usage",
+  "skill": {
+    "id": 67991,
+    "skillKey": "clawhub-email-usage",
+    "name": "Email Usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-usage",
+    "url": "https://clawhub.ai/skills/email-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-usage-8746739d8f4882c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用本地邮件服务器收发我们自己域名的邮件。固定脚本位于 scripts/ 目录，直接执行即可。发送失败或密码遗忘时联系 小爪子。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776212155532,
+      "changelog": "支持 SASL 认证、新增 create_email.py、subject 解码、5参数调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac2303357d9445662d871ce5c930ce8f90e66d902c40675dbe2d95b3d1773d69"
+}

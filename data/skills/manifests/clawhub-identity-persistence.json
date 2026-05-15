@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19766,
+  "uuid": "skill-clawhub-identity-persistence",
+  "skillKey": "clawhub-identity-persistence",
+  "name": "Identity Persistence Layer",
+  "summary": "Extracts and versions AI agent identity snapshots from memory files, scoring continuity and tracking changes to detect cognitive drift or fractures.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identity_persistence",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quriustus",
+      "features": [
+        "Extracts and versions AI agent identity snapshots from memory files, scoring continuity and tra."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/identity-persistence@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145394137?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "identity-persistence",
+      "url": "https://clawhub.ai/skills/identity-persistence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identity-persistence",
+    "url": "https://clawhub.ai/skills/identity-persistence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identity-persistence-33e71f515d2ee4ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/identity-persistence@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-identity-persistence-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af8e9763f08df120c0f776e0fba3a2bab41cc2421af1cf995eb67fbe7ca2b901",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T21:38:29.245Z"
+}

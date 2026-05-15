@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/praxis-gws@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.praxis_gws",
+  "skill": {
+    "id": 16543,
+    "skillKey": "clawhub-praxis-gws",
+    "name": "Praxis Google Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "praxis-gws",
+    "url": "https://clawhub.ai/skills/praxis-gws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/praxis-gws-b9fc8d7fb515ff13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace CLI for Gmail, Calendar, and Drive. Official Google APIs wrapper for secure, direct API access without third-party proxies. Use when managin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jfab68",
+      "userId": "publishers:jfab68",
+      "displayName": "JFab68",
+      "image": "https://avatars.githubusercontent.com/u/42310697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771745691018,
+      "changelog": "Initial release: Gmail, Calendar, Drive CLI using official Google APIs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:02fbf278348776c36ccf67c448fdd376ec8a0728af90fa59638e3738dbd557d6"
+}

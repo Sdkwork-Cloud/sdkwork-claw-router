@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58845,
+  "uuid": "skill-clawhub-tieba-spider",
+  "skillKey": "clawhub-tieba-spider",
+  "name": "Tieba Spider",
+  "summary": "贴吧帖子爬虫 - 从百度贴吧抓取帖子内容并导出为 Markdown（支持图片下载、楼中楼解析）。Tieba thread crawler - crawl Tieba threads to Markdown with images and sub-posts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tieba_spider",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fuxiaoji",
+      "features": [
+        "从百度贴吧抓取帖子内容并导出为 Markdown（支持图片下载、楼中楼解析）。Tieba thread crawler",
+        "crawl Tieba threads to Markdown with images and sub-posts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tieba-spider@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183272150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tieba-spider",
+      "url": "https://clawhub.ai/skills/tieba-spider"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tieba-spider",
+    "url": "https://clawhub.ai/skills/tieba-spider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tieba-spider-578a7fed774d774e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tieba-spider@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tieba-spider-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b93112a9e9fd5ffc738003d66ec1dd00044422c84e2f48cf60bd3c3b9e3cb8e5",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T11:15:26.298Z"
+}

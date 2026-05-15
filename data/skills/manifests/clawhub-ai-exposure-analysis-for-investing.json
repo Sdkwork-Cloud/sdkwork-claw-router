@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50124,
+  "uuid": "skill-clawhub-ai-exposure-analysis-for-investing",
+  "skillKey": "clawhub-ai-exposure-analysis-for-investing",
+  "name": "Stock AI exposure analysis for investing",
+  "summary": "Analyze any public company's AI exposure using the 8-dimension AI Exposure Index. Fetches last 4 10-K filings (or international equivalents), O*NET data, pat...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_exposure_analysis_for_investing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "martinpmm",
+      "features": [
+        "Analyze any public company's AI exposure using the 8-dimension AI Exposure Index",
+        "Fetches last 4 10-K filings (or international equivalents), O*NET data, pat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-exposure-analysis-for-investing@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159039300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-exposure-analysis-for-investing",
+      "url": "https://clawhub.ai/skills/ai-exposure-analysis-for-investing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-exposure-analysis-for-investing",
+    "url": "https://clawhub.ai/skills/ai-exposure-analysis-for-investing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-exposure-analysis-for-investing-092793f062edf402.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-exposure-analysis-for-investing@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-exposure-analysis-for-investing-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2278a0513de2829eff44965daec9da3cf6f3843cb32e9af4f8dde8a656d1453e",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T02:44:31.064Z"
+}

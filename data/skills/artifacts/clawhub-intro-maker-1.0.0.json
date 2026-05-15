@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intro-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intro_maker",
+  "skill": {
+    "id": 39006,
+    "skillKey": "clawhub-intro-maker",
+    "name": "Intro Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intro-maker",
+    "url": "https://clawhub.ai/skills/intro-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intro-maker-a9ce91092d0e6603.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get branded intro clips ready to post, without touching a single slider. Upload your brand assets, images (PNG, JPG, MP4, MOV, up to 200MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775946861697,
+      "changelog": "- Initial release of Intro Maker skill.\n- Instantly create branded 1080p video intros using your own logo, colors, and assets—no design experience needed.\n- Supports file uploads up to 200MB (PNG, JPG, MP4, MOV, and more).\n- Easy authentication with free anonymous token; 100 credits included for new users.\n- Cloud-based editing and rendering—get downloadable MP4s within seconds.\n- Designed for YouTubers and content creators seeking fast, professional intros.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:434f6b7f2d6a05357287535651ba63be3039f2669de90fdcce4f3a78115dd218"
+}

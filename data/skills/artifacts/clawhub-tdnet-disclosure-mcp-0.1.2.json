@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tdnet-disclosure-mcp@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tdnet_disclosure_mcp",
+  "skill": {
+    "id": 57342,
+    "skillKey": "clawhub-tdnet-disclosure-mcp",
+    "name": "Tdnet Disclosure Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tdnet-disclosure-mcp",
+    "url": "https://clawhub.ai/skills/tdnet-disclosure-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tdnet-disclosure-mcp-cc93ee8dc7f0978d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access TDNET timely disclosures (適時開示) from Tokyo Stock Exchange (JPX/TSE) — earnings reports (決算短信), dividends, buybacks, forecast revisions, governance cha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajtgjmdjp",
+      "userId": "publishers:ajtgjmdjp",
+      "displayName": "ajtgjmdjp",
+      "image": "https://avatars.githubusercontent.com/u/195097911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771175659967,
+      "changelog": "Add int→str coercion, non-retryable status handling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:690573c85e3dc97c1dfd2fbe8fcfd4951524cad2703d43450907d7c9f414bbbf"
+}

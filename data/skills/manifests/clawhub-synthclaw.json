@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37561,
+  "uuid": "skill-clawhub-synthclaw",
+  "skillKey": "clawhub-synthclaw",
+  "name": "SynthClaw",
+  "summary": "Render Blender files with agent-controlled procedural parameters for synthetic data generation. Use when generating training data with controlled variations,...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synthclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Artur Yakimovich, PhD",
+      "features": [
+        "Render Blender files with agent-controlled procedural parameters for synthetic data generation",
+        "Use when generating training data with controlled variations,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synthclaw@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1135672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synthclaw",
+      "url": "https://clawhub.ai/skills/synthclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synthclaw",
+    "url": "https://clawhub.ai/skills/synthclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synthclaw-9e37794dd217e73e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synthclaw@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-synthclaw-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28c5a4850d851195c37dcbc34e39fc6f4b65425a747eef8a186f39843a95fe30",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:53:47.857Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/embedded-review@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.embedded_review",
+  "skill": {
+    "id": 18272,
+    "skillKey": "clawhub-embedded-review",
+    "name": "Embedded Code Review Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "embedded-review",
+    "url": "https://clawhub.ai/skills/embedded-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/embedded-review-ef14f5df1b168fe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert code review for embedded/firmware projects with dual-model cross-review (Claude + Codex via ACP). Detects memory safety, interrupt hazards, RTOS pitfa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ylongw",
+      "userId": "publishers:ylongw",
+      "displayName": "ylongw",
+      "image": "https://avatars.githubusercontent.com/u/67491174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 694,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772447284757,
+      "changelog": "Initial ClawHub release: dual-model cross-review (Claude + Codex via ACP), 4 embedded checklists (memory safety, interrupt safety, hardware interfaces, C/C++ pitfalls), prepare-diff.sh",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20fbb8876a5b41bdeed6e690d6f8c4cb607a4b34ef34303b9ae6d8869624a497"
+}

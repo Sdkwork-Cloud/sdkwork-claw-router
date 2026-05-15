@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59761,
+  "uuid": "skill-clawhub-iscandium-openclaw-samba-backup",
+  "skillKey": "clawhub-iscandium-openclaw-samba-backup",
+  "name": "iScandium OpenClaw Samba Backup",
+  "summary": "将 OpenClaw 数据备份到远程 Samba 服务器。当用户提到「备份 openclaw」「设置自动备份」时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iscandium_openclaw_samba_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iscandium",
+      "features": [
+        "将 OpenClaw 数据备份到远程 Samba 服务器。当用户提到「备份 openclaw」「设置自动备份」时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iscandium-openclaw-samba-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1598608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iscandium-openclaw-samba-backup",
+      "url": "https://clawhub.ai/skills/iscandium-openclaw-samba-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iscandium-openclaw-samba-backup",
+    "url": "https://clawhub.ai/skills/iscandium-openclaw-samba-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iscandium-openclaw-samba-backup-cb764f495b40e6aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iscandium-openclaw-samba-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iscandium-openclaw-samba-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88ad1b644853a61231d99d21ee95a8debf21d26ff47bfdf978e60810f34a56e2",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T20:14:24.956Z"
+}

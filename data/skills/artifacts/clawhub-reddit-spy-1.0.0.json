@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-spy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_spy",
+  "skill": {
+    "id": 53923,
+    "skillKey": "clawhub-reddit-spy",
+    "name": "Reddit Spy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-spy",
+    "url": "https://clawhub.ai/skills/reddit-spy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-spy-acc9d70e5c787812.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stealth Reddit intelligence -- browse, read, and analyze any subreddit without getting blocked. Multi-layer fallback (OAuth API -> Stealth HTTP -> Browser St..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hioliver933",
+      "userId": "publishers:hioliver933",
+      "displayName": "oh-coder",
+      "image": "https://avatars.githubusercontent.com/u/196421532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 694,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771635840390,
+      "changelog": "Initial release of reddit-spy for stealth subreddit analysis:\n\n- Enables browsing, reading, and analyzing any subreddit without getting blocked, using a multi-layer fallback system (OAuth API → Tor → Stealth HTTP → Browser Stealth → PullPush archive).\n- Provides comprehensive commands including spy (full subreddit scan), deep-read (posts + comments), bulk-scan (multi-subreddit sweep), strategy extraction, keyword search, user-intel, and health-check.\n- Designed for reliability and anti-blocking: auto-rotates IPs with Tor, caches layer health, and respects API/Reddit rate limits.\n- Returns detailed analytics: content types, hook patterns, timing, post rankings, and actionable recommendations.\n- Read-only operation with safety limits and optional OAuth/Proxy support for higher reliability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97eaff3a471716c7f1a53237c6d36c0b64bb667bf816fec64aface615f2f180c"
+}

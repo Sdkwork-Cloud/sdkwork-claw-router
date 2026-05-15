@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41991,
+  "uuid": "skill-clawhub-robotaxi-tracker",
+  "skillKey": "clawhub-robotaxi-tracker",
+  "name": "Robotaxi Tracker",
+  "summary": "Use this skill when the user asks for the latest or current US autonomous vehicle, self-driving car, robotaxi, Tesla, or Waymo vehicle counts, fleet size, ci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robotaxi_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "阿赖",
+      "features": [
+        "Use this skill when the user asks for the latest or current US autonomous vehicle, self-driving."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/robotaxi-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3153852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "robotaxi-tracker",
+      "url": "https://clawhub.ai/skills/robotaxi-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robotaxi-tracker",
+    "url": "https://clawhub.ai/skills/robotaxi-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robotaxi-tracker-2069a9788d4eab8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/robotaxi-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-robotaxi-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b4726066d324b271be7e019730e7bbc3ed6fe63ee4556ee4425e05c0b52b89a",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T03:49:07.863Z"
+}

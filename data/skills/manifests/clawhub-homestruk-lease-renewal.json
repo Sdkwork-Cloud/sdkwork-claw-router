@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33982,
+  "uuid": "skill-clawhub-homestruk-lease-renewal",
+  "skillKey": "clawhub-homestruk-lease-renewal",
+  "name": "Homestruk Lease Renewal",
+  "summary": "Track lease expirations and manage the 90-day renewal process. Use when checking upcoming lease expirations, planning rent increases, drafting renewal offers...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homestruk_lease_renewal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adams Jean Baptiste",
+      "features": [
+        "Track lease expirations and manage the 90-day renewal process",
+        "Use when checking upcoming lease expirations, planning rent increases, drafting renewal offers.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/homestruk-lease-renewal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22421595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "homestruk-lease-renewal",
+      "url": "https://clawhub.ai/skills/homestruk-lease-renewal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homestruk-lease-renewal",
+    "url": "https://clawhub.ai/skills/homestruk-lease-renewal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homestruk-lease-renewal-c8cbf63cd783b670.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/homestruk-lease-renewal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-homestruk-lease-renewal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48e785915593bb817a5fd4fe2785f975ca124969f758d87710d5446e44b9ead3",
+      "artifactSizeBytes": 2650
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:33:39.457Z"
+}

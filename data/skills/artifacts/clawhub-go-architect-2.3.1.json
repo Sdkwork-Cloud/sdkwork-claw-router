@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/go-architect@2.3.1",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_architect",
+  "skill": {
+    "id": 30633,
+    "skillKey": "clawhub-go-architect",
+    "name": "Go Architect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-architect",
+    "url": "https://clawhub.ai/skills/go-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-architect-e106adf30e5e14ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Go application architecture with net/http 1.22+ routing, project structure patterns, graceful shutdown, and dependency injection. Use when building Go web se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.3.1",
+      "createdAt": 1776831133430,
+      "changelog": "go-architect v2.3.1 changelog:\n\n- Added an explicit \"Hard gates\" section to enforce step-by-step architecture checks for code reviews.\n- Now specifies pass/fail criteria for Go version requirements, composition root, shutdown pattern, and dependency injection.\n- Ensures that usage of Go 1.22+ ServeMux features requires go1.22+ toolchain, with review instructions.\n- Clarifies handling of configuration: handlers must not access env/globals directly, and all shared dependencies must be injected.\n- No functional/code logic changes outside of expanded review documentation and instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10245a034423a1875db60ae01f662f9ea2f771711fc0e83f18a0fd28bace9bd5"
+}

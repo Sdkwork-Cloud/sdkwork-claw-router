@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paygents@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paygents",
+  "skill": {
+    "id": 17668,
+    "skillKey": "clawhub-paygents",
+    "name": "PayGents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paygents",
+    "url": "https://clawhub.ai/skills/paygents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paygents-1ec269e3c1e06533.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Accept crypto payments in AI agent conversations. Generate MetaMask/Trust Wallet deeplinks, verify transactions on-chain, check balances, issue receipts. No..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amitaybohadana",
+      "userId": "publishers:amitaybohadana",
+      "displayName": "Amitay",
+      "image": "https://avatars.githubusercontent.com/u/35673699?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 757,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1771582732353,
+      "changelog": "Fix script paths, add Quick Start, unified branding, improved description",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5d88786ec5c67593c0370ac35e7d808c74c0684b1cd7a0dd07ba2b9dbe59986"
+}

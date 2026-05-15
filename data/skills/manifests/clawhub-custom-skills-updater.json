@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23194,
+  "uuid": "skill-clawhub-custom-skills-updater",
+  "skillKey": "clawhub-custom-skills-updater",
+  "name": "custom-skills-updater",
+  "summary": "Manage manually installed skills (non-ClawHub). Supports checking updates, updating, and listing custom skills from GitHub or local sources.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_skills_updater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "An Jing",
+      "features": [
+        "Manage manually installed skills (non-ClawHub)",
+        "Supports checking updates, updating, and listing custom skills from GitHub or local sources."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/custom-skills-updater@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16971146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "custom-skills-updater",
+      "url": "https://clawhub.ai/skills/custom-skills-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-skills-updater",
+    "url": "https://clawhub.ai/skills/custom-skills-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-skills-updater-6c86dfa48ddafd02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/custom-skills-updater@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-custom-skills-updater-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:504a8c95206003af9c0e7f88e8cd837bcb690a9bad70ff2be61570f965c31b76",
+      "artifactSizeBytes": 2441
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:07:45.479Z"
+}

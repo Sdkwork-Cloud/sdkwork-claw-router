@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/testing-strategy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testing_strategy",
+  "skill": {
+    "id": 54835,
+    "skillKey": "clawhub-testing-strategy",
+    "name": "Testing Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testing-strategy",
+    "url": "https://clawhub.ai/skills/testing-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testing-strategy-ca441ddee8887b2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep testing strategy workflow—risk mapping, test pyramid, levels of isolation, flakiness, data, CI gates, and quality signals beyond coverage %. Use when de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774368154849,
+      "changelog": "- Initial release of the \"testing-strategy\" skill with a comprehensive workflow for designing test approaches.\n- Covers six key stages: risk mapping, test layers (pyramid), test case design, test data and environments, CI gates, and observability of test health.\n- Provides practical guidance for handling flaky CI, test ownership, debates over test types, and QA vs. dev responsibilities.\n- Includes a review checklist, practical tips, and strategies for legacy or fast-moving teams.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af1ee41c51d5e1d33621f5c440df6fe5e493a40787412fea106d786a13d00cd4"
+}

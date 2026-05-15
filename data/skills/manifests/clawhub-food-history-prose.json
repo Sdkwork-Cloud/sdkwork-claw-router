@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69034,
+  "uuid": "skill-clawhub-food-history-prose",
+  "skillKey": "clawhub-food-history-prose",
+  "name": "Food History Prose",
+  "summary": "生成符合规范的高质量食物历史散文，聚焦欧洲中世纪或近现代食物故事，避免俗套，结构清晰，语言平实有温度。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_history_prose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zealot",
+      "features": [
+        "生成符合规范的高质量食物历史散文，聚焦欧洲中世纪或近现代食物故事，避免俗套，结构清晰，语言平实有温度。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/food-history-prose@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5056784?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "food-history-prose",
+      "url": "https://clawhub.ai/skills/food-history-prose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-history-prose",
+    "url": "https://clawhub.ai/skills/food-history-prose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-history-prose-010d443745fe6cec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/food-history-prose@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-food-history-prose-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38b836365a92fea791eb75d24a9415fae7e6533c6d6049694c5d392e28bd4349",
+      "artifactSizeBytes": 2002
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T11:50:46.107Z"
+}

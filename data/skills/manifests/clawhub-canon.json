@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72325,
+  "uuid": "skill-clawhub-canon",
+  "skillKey": "clawhub-canon",
+  "name": "Canon",
+  "summary": "提供佳能相机、打印机及镜头信息，价格查询及技术支持，助您了解佳能产品与选购建议。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供佳能相机、打印机及镜头信息，价格查询及技术支持，助您了解佳能产品与选购建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canon@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canon",
+      "url": "https://clawhub.ai/skills/canon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canon",
+    "url": "https://clawhub.ai/skills/canon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canon-7a5356659c5b128b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canon@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-canon-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:313e4f627600935a21ca851d69d95521236210d8db528747ab873070ad995eb9",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:27:07.571Z"
+}

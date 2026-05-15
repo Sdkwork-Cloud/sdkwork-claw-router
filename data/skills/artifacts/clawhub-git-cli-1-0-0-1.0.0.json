@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-cli-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_cli_1_0_0",
+  "skill": {
+    "id": 24339,
+    "skillKey": "clawhub-git-cli-1-0-0",
+    "name": "Git Cli 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-cli-1-0-0",
+    "url": "https://clawhub.ai/skills/git-cli-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-cli-1-0-0-7ef2c940a65079c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helper for using the Git CLI to inspect, stage, commit, branch, and synchronize code changes. Use when the user wants to understand or perform Git operations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenswj",
+      "userId": "s17d896e7f5ep1sf0czq0yjckn83k80e",
+      "displayName": "kenswj",
+      "image": "https://avatars.githubusercontent.com/u/29836387?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773510778876,
+      "changelog": "- Initial release of git-cli skill.\n- Provides clear guidance for common Git CLI tasks: inspection, staging, committing, branching, stashing, syncing, and history.\n- Emphasizes safety by prioritizing non-destructive commands and cautioning against risky operations.\n- Offers troubleshooting and workflow tips for both beginners and experienced users.\n- Designed to assist users in understanding and performing essential Git operations from the command line.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74b4d2e5e8d679576faa18e4f6450aba27cf942604c3b476fa945bc27f544939"
+}

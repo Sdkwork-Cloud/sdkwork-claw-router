@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43511,
+  "uuid": "skill-clawhub-confluence-atlassian",
+  "skillKey": "clawhub-confluence-atlassian",
+  "name": "Publish Confluence",
+  "summary": "Full-featured Confluence Cloud REST API v2 skill. Manage pages, spaces, blogposts, attachments, comments, labels, and more via direct Atlassian API calls. Us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.confluence_atlassian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlienTree",
+      "features": [
+        "Full-featured Confluence Cloud REST API v2 skill",
+        "Manage pages, spaces, blogposts, attachments, comments, labels, and more via direct Atlassian A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/confluence-atlassian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235218406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "confluence-atlassian",
+      "url": "https://clawhub.ai/skills/confluence-atlassian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "confluence-atlassian",
+    "url": "https://clawhub.ai/skills/confluence-atlassian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/confluence-atlassian-3c7c63569f4d00f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/confluence-atlassian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-confluence-atlassian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58ae51ca20f469e5c2953bb7a7ce1628e5ab741c6155feb84f0fe790dd9a42b2",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T01:26:03.515Z"
+}

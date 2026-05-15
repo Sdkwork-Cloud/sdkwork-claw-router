@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shelly-landing-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_landing_gen",
+  "skill": {
+    "id": 17496,
+    "skillKey": "clawhub-shelly-landing-gen",
+    "name": "Landing Page Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-landing-gen",
+    "url": "https://clawhub.ai/skills/shelly-landing-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-landing-gen-a6e81eaa7322577f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate complete, responsive HTML landing pages from a product name, tagline, and description. Clean CSS, mobile-ready, with hero, features, CTA, and footer..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 774,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771807662775,
+      "changelog": "Initial release of Landing Page Generator.\n\n- Instantly generate complete, responsive HTML landing pages with a single script.\n- Outputs modern, mobile-ready design: hero, 3-column features, CTA, and footer.\n- Clean, self-contained HTML and CSS—no external dependencies.\n- Simple CLI usage with product name, tagline, and description as input.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d3c67aa3893d1bea8caa5ad028ea39d0cc702f0c9303da22bc539b7285337b7"
+}

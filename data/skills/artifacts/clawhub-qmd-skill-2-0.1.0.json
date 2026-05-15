@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qmd-skill-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qmd_skill_2",
+  "skill": {
+    "id": 10898,
+    "skillKey": "clawhub-qmd-skill-2",
+    "name": "Qmd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qmd-skill-2",
+    "url": "https://clawhub.ai/skills/qmd-skill-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qmd-skill-2-ef144847dccd38b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local hybrid search for markdown notes and docs. Use when searching notes, finding related content, or retrieving documents from indexed collections."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifecoacher",
+      "userId": "publishers:lifecoacher",
+      "displayName": "lifecoacher",
+      "image": "https://avatars.githubusercontent.com/u/213470940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2264,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769828353208,
+      "changelog": "Initial release of qmd-skill-2: local hybrid search for Markdown notes and docs.\n\n- Provides fast keyword search (`qmd search`) and slow semantic search (`qmd vsearch`) over indexed Markdown collections.\n- Highlights best usage practices, install and setup instructions, and behavior differences between keyword and semantic search modes.\n- Lists common commands and important options for searching, retrieving, and maintaining your Markdown search index.\n- Offers advice on keeping indexes updated and embedding refreshed via cron or scheduler.\n- Explains relation to other search tools (e.g., code search, Clawdbot memory search).\n- Requires Bun and is compatible with macOS and Linux.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5603a4bf96b7a0c0d2d81732195919859e40b144ce1974a67226d96294a90a5"
+}

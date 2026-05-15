@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60097,
+  "uuid": "skill-clawhub-email-backup",
+  "skillKey": "clawhub-email-backup",
+  "name": "Email Backup",
+  "summary": "QQ邮箱文件备份Skill - 打包文件并发送到QQ邮箱",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dragonHuge",
+      "features": [
+        "QQ邮箱文件备份Skill",
+        "打包文件并发送到QQ邮箱"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105436434?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-backup",
+      "url": "https://clawhub.ai/skills/email-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-backup",
+    "url": "https://clawhub.ai/skills/email-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-backup-753fb64d0963225b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:116775b0d1aae7d46e86fec2ef139a86aa74798a85012c497bc1adfbee771507",
+      "artifactSizeBytes": 1793
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T17:56:25.910Z"
+}

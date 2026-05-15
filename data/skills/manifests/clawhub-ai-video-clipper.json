@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66409,
+  "uuid": "skill-clawhub-ai-video-clipper",
+  "skillKey": "clawhub-ai-video-clipper",
+  "name": "AI视频剪辑Skill",
+  "summary": "全自动AI视频剪辑Skill。当用户请求以下操作时触发： - \"帮我剪辑视频\"、\"自动剪辑\"、\"AI剪辑视频\" - \"剪辑电影素材\"、\"批量剪辑视频\"、\"自动生成视频\" - \"视频素材自动处理\"、\"从素材自动生成成片\" - \"制作短剧集\"、\"剪辑短视频\"、\"自动导出视频\" - \"素材自动导入\"、\"视频自动添加字幕...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_clipper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ai285384076-droid",
+      "features": [
+        "全自动AI视频剪辑Skill。当用户请求以下操作时触发：",
+        "\"帮我剪辑视频\"、\"自动剪辑\"、\"AI剪辑视频\"",
+        "\"剪辑电影素材\"、\"批量剪辑视频\"、\"自动生成视频\"",
+        "\"视频素材自动处理\"、\"从素材自动生成成片\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-video-clipper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270533602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-video-clipper",
+      "url": "https://clawhub.ai/skills/ai-video-clipper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-clipper",
+    "url": "https://clawhub.ai/skills/ai-video-clipper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-clipper-b051a5e57a423d80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-video-clipper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-video-clipper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d93356989b48efb92124ef17b72c768371b833fa2f470c97fe864d6e25c6bd85",
+      "artifactSizeBytes": 2746
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:42:45.218Z"
+}

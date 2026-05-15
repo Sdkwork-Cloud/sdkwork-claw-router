@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46520,
+  "uuid": "skill-clawhub-caniuse",
+  "skillKey": "clawhub-caniuse",
+  "name": "can i use",
+  "summary": "Query browser compatibility for CSS/JS features using caniuse-cli. Use when user asks about browser support, compatibility, \"can I use X\", \"does X work in IE...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caniuse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "周祺",
+      "features": [
+        "Query browser compatibility for CSS/JS features using caniuse-cli",
+        "Use when user asks about browser support, compatibility, \"can I use X\", \"does X work in IE..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caniuse@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/436305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caniuse",
+      "url": "https://clawhub.ai/skills/caniuse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caniuse",
+    "url": "https://clawhub.ai/skills/caniuse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caniuse-04bc790ac312bd7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caniuse@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caniuse-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2acc74f7dfdf9fe7d1ac672c0c464b480eb6884b6204a42fa7b002abef6ffc50",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T02:51:21.361Z"
+}

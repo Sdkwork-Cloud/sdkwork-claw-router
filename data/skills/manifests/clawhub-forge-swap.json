@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54815,
+  "uuid": "skill-clawhub-forge-swap",
+  "skillKey": "clawhub-forge-swap",
+  "name": "FORGE — Cross-Chain Swap Agent",
+  "summary": "Cross-chain swap routing via THORChain. Get quotes and build swap transactions across 44+ assets (BTC, ETH, RUNE, AVAX, USDC and more). Non-custodial — retur...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forge_swap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "morebetterclaw",
+      "features": [
+        "Cross-chain swap routing via THORChain",
+        "Get quotes and build swap transactions across 44+ assets (BTC, ETH, RUNE, AVAX, USDC and more)",
+        "Non-custodial — retur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/forge-swap@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262843550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "forge-swap",
+      "url": "https://clawhub.ai/skills/forge-swap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forge-swap",
+    "url": "https://clawhub.ai/skills/forge-swap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forge-swap-aa98c0b41365fa23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/forge-swap@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-forge-swap-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:648056bbb50d18f187fec7849e5d5cdc1f4e9191caf1f0c75f39006da2b8175b",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T17:16:49.702Z"
+}

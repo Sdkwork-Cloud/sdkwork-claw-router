@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-5@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_5",
+  "skill": {
+    "id": 57368,
+    "skillKey": "clawhub-self-improving-agent-5",
+    "name": "自我改进智能体"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-5",
+    "url": "https://clawhub.ai/skills/self-improving-agent-5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-5-638a2eccf8cab86f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tigertamvip",
+      "userId": "s171vwmtm81hafva67c196sr5n83hhtb",
+      "displayName": "tigertamvip",
+      "image": "https://avatars.githubusercontent.com/u/61303958?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774054675351,
+      "changelog": "Initial release of the self-improvement skill for agents—log and promote errors, learnings, and feature requests for continuous improvement.\n\n- Introduces structured logging for errors, learnings, and feature requests in markdown files under `.learnings/`\n- Provides detailed templates for each log entry type, including priority, context, suggested actions, and metadata\n- Describes workflows for promoting broadly applicable learnings to project memory files like `CLAUDE.md`, `AGENTS.md`, and others\n- Includes guidance for setup with OpenClaw, as well as generic agent compatibility\n- Offers examples of entry formats and guidance for resolving or promoting learnings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbe62d3839dc3a4b9be1071bfce01310c478eb7dd6c5f6ba4f05a358a92109cc"
+}

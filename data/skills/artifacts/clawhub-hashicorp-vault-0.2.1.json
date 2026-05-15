@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hashicorp-vault@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hashicorp_vault",
+  "skill": {
+    "id": 54707,
+    "skillKey": "clawhub-hashicorp-vault",
+    "name": "HashiCorp Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hashicorp-vault",
+    "url": "https://clawhub.ai/skills/hashicorp-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hashicorp-vault-e829beeff8eec5a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with HashiCorp Vault using the `vault` CLI for authentication checks, KV secret reads and writes, listing paths, enabling and tuning secrets engines, po..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimpang8",
+      "userId": "publishers:jimpang8",
+      "displayName": "jimpang8",
+      "image": "https://avatars.githubusercontent.com/u/27860553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1773548522353,
+      "changelog": "Generalize examples, remove local hostnames/IPs, and use neutral Vault endpoint defaults",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:baeae3dfad4d691b2623644be3e0c3fde6fbc7b11e33a8d47990db4bd937d233"
+}

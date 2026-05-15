@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-cybersecurity-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_cybersecurity_trader",
+  "skill": {
+    "id": 22936,
+    "skillKey": "clawhub-polymarket-cybersecurity-trader",
+    "name": "Polymarket Cybersecurity Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-cybersecurity-trader",
+    "url": "https://clawhub.ai/skills/polymarket-cybersecurity-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-cybersecurity-trader-883e88b68a27a743.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades Polymarket prediction markets on major cyberattacks, ransomware incidents, data breaches, zero-day exploits, and national cybersecurity legislation. E..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 456,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386035961,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:395b1cc558c1b60370696814e76fb16a9ef14f567085557e4437399f0361e16b"
+}

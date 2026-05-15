@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47818,
+  "uuid": "skill-clawhub-ascii-tool",
+  "skillKey": "clawhub-ascii-tool",
+  "name": "Ascii Tool",
+  "summary": "Convert and inspect ASCII character codes and text encodings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ascii_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Convert and inspect ASCII character codes and text encodings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ascii-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ascii-tool",
+      "url": "https://clawhub.ai/skills/ascii-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ascii-tool",
+    "url": "https://clawhub.ai/skills/ascii-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ascii-tool-b9e80a43d47fab96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ascii-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ascii-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce2cdb1b147313e6a96b666083599ba5d1b64c18140353904d4f017bca6aed1a",
+      "artifactSizeBytes": 1754
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T18:07:23.145Z"
+}

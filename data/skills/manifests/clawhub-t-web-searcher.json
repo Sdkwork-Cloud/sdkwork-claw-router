@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22444,
+  "uuid": "skill-clawhub-t-web-searcher",
+  "skillKey": "clawhub-t-web-searcher",
+  "name": "t-web-searcher",
+  "summary": "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.t_web_searcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hhjack",
+      "features": [
+        "AI-optimized web search via Tavily API",
+        "Returns concise, relevant results for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/t-web-searcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7053817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "t-web-searcher",
+      "url": "https://clawhub.ai/skills/t-web-searcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "t-web-searcher",
+    "url": "https://clawhub.ai/skills/t-web-searcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/t-web-searcher-e5c7ccae7ba8f91d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/t-web-searcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-t-web-searcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80959ab942b05661855d35a5751c7f753d544438a2c2c8dded4192e35459eb3c",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:25:27.588Z"
+}

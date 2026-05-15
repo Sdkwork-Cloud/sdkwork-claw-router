@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawflow",
+  "skill": {
+    "id": 11812,
+    "skillKey": "clawhub-clawflow",
+    "name": "Clawflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawflow",
+    "url": "https://clawhub.ai/skills/clawflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawflow-6cb6f0cd8dcf12af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Protocol for multi-agent collaboration via OpenClaw's message-passing and recursive task DAGs. Use this skill whenever the user wants to coordinate work acro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "srikanth235",
+      "userId": "publishers:srikanth235",
+      "displayName": "srikanth235",
+      "image": "https://avatars.githubusercontent.com/u/2303589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1782,
+      "installsAllTime": 23,
+      "installsCurrent": 20,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771399920556,
+      "changelog": "Clawflow 1.0.0 – Protocol for Multi-Agent Coordination via OpenClaw\n\n- Introduces a skill for coordinating complex workflows among multiple OpenClaw agents using message passing and recursive task DAGs.\n- Provides detailed guidance for when and how to break projects into parallel subtasks handled by different agents.\n- Outlines protocols for agent identity, peer discovery, and workspace organization relying exclusively on OpenClaw’s native configuration.\n- Specifies agent interaction patterns including direct execution, delegation, and DAG-based dependency management.\n- Defines a durable message audit log and standardizes task state storage within agent workspaces.\n- Documents the agent decision loop, error handling, and best practices for task decomposition.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56170817e86fc8c573aa779d2b5175a82654e19672138f2cf428c53447924dce"
+}

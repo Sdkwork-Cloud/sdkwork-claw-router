@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-news-podcast@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_news_podcast",
+  "skill": {
+    "id": 59225,
+    "skillKey": "clawhub-auto-news-podcast",
+    "name": "Auto news podcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-news-podcast",
+    "url": "https://clawhub.ai/skills/auto-news-podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-news-podcast-235ee555befac4a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "**Auto News Podcast** 是一款智能新闻播客生成工具，能够根据用户输入的关键词自动完成从新闻搜索到音频生成的完整流程。 **Auto News Podcast** is an intelligent news podcast generation tool that automatically..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiazengtian",
+      "userId": "s170wvvpsf7kean82b801jrbdn84cswf",
+      "displayName": "jiazengtian",
+      "image": "https://avatars.githubusercontent.com/u/31950619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1778136020694,
+      "changelog": "auto-news-podcast 1.0.12\n\n- Improved logging and console output in image search scripts for better debugging and transparency.\n- Enhanced image search workflow and retries in both v2 and v3 to improve reliability.\n- Updated SKILL.md with no functional changes to user guidance or feature set.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0ae6054c7d2ab6a06e47daca6404cee16f2fc6211bcb730b8216b1b13121ea2"
+}

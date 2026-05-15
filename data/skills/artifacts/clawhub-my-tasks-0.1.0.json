@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-tasks@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_tasks",
+  "skill": {
+    "id": 19708,
+    "skillKey": "clawhub-my-tasks",
+    "name": "My Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-tasks",
+    "url": "https://clawhub.ai/skills/my-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-tasks-6c1b34d2118f91e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "View your personal task history and status on OpenAnt. Use when the user wants to see their own tasks, check what they've completed, review their task histor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ant-1984",
+      "userId": "s17c3h114xfd5y4q0eth1p20gh83k3r8",
+      "displayName": "ant-1984",
+      "image": "https://avatars.githubusercontent.com/u/261687401?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772365341232,
+      "changelog": "Initial release of the \"my-tasks\" skill:\n\n- Enables viewing your personal task history and current involvement on OpenAnt.\n- Supports listing completed tasks, active assignments, tasks awaiting review, and those you've created.\n- Provides unified commands for all roles and detailed task inspection.\n- Requires authentication before accessing any personal task data.\n- All commands are read-only and structured for easy parsing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4b2401cc1a2fab47820c1014a43e5955f2577ebdc0748106d9ea26635846c13"
+}

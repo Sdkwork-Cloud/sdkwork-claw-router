@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-growth-tracker@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_growth_tracker",
+  "skill": {
+    "id": 34215,
+    "skillKey": "clawhub-github-growth-tracker",
+    "name": "Github Growth Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-growth-tracker",
+    "url": "https://clawhub.ai/skills/github-growth-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-growth-tracker-72ba122365cf66bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track GitHub repo growth (stars, forks, issues, commits) with periodic digests and trend analysis. Compare your repos against a watchlist. Use when checking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "99rebels",
+      "userId": "s17b17x5vmnh2q27ane7sj7an5843qs4",
+      "displayName": "99rebels",
+      "image": "https://avatars.githubusercontent.com/u/148632105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775332077470,
+      "changelog": "Portable architecture: SKILL_DATA_DIR env var with XDG fallback, chmod 0600 on credentials, generic User-Agent, cross-agent compatibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13b99c5736b030dc5885c25b81ef95c6a580a8990b4c2ded3ca210eb74509dd6"
+}

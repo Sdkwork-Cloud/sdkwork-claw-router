@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54895,
+  "uuid": "skill-clawhub-huobao-image-generation",
+  "skillKey": "clawhub-huobao-image-generation",
+  "name": "AI 火宝",
+  "summary": "Generate images from text prompts or transform existing images using AI with configurable count, watermark, and API key settings.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huobao_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "培根666",
+      "features": [
+        "Generate images from text prompts or transform existing images using AI with configurable count."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huobao-image-generation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26167011?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huobao-image-generation",
+      "url": "https://clawhub.ai/skills/huobao-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huobao-image-generation",
+    "url": "https://clawhub.ai/skills/huobao-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huobao-image-generation-0fecfc1d5487f871.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huobao-image-generation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-huobao-image-generation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37e2cbfad2afafc7f744474792c59c0b7ccf4019dd9905809594e625fb0bff25",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T06:41:09.452Z"
+}

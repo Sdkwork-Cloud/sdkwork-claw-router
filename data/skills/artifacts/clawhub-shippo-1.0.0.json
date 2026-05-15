@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shippo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shippo",
+  "skill": {
+    "id": 54419,
+    "skillKey": "clawhub-shippo",
+    "name": "Shippo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shippo",
+    "url": "https://clawhub.ai/skills/shippo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shippo-adf6ac33a1ba7e6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shippo — shipping labels, rates comparison, package tracking, address validation, and returns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772823223146,
+      "changelog": "Initial release of the Shippo skill.\n\n- Provides Python 3.10+ CLI for Shippo: shipping labels, rate comparison, tracking, address validation, and returns.\n- All major Shippo API functions accessible via easy CLI commands.\n- Outputs results in JSON format for integration ease.\n- Requires only a single environment variable: SHIPPO_API_TOKEN.\n- No external dependencies; uses Python standard library only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:53da7c6c0ea6441ef5a7e3083c920be98cbaa848628e3bff65354bc58b74b5c0"
+}

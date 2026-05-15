@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28258,
+  "uuid": "skill-clawhub-k8s-network-policy-generator",
+  "skillKey": "clawhub-k8s-network-policy-generator",
+  "name": "Kubernetes Network Policy Generator",
+  "summary": "Evaluate and compare privacy solution vendors with a weighted scorecard across 12 criteria. Use when selecting privacy management software, comparing data pr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_network_policy_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Evaluate and compare privacy solution vendors with a weighted scorecard across 12 criteria",
+        "Use when selecting privacy management software, comparing data pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-network-policy-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-network-policy-generator",
+      "url": "https://clawhub.ai/skills/k8s-network-policy-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-network-policy-generator",
+    "url": "https://clawhub.ai/skills/k8s-network-policy-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-network-policy-generator-5cb60418205be0c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-network-policy-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-network-policy-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5a220c622ce037ec757bee6f968fdb535846032f2877d145d39c49ca1de1178",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:58:27.668Z"
+}

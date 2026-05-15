@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/configure-telerik-nuget@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.configure_telerik_nuget",
+  "skill": {
+    "id": 38759,
+    "skillKey": "clawhub-configure-telerik-nuget",
+    "name": "Configure Telerik NuGet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "configure-telerik-nuget",
+    "url": "https://clawhub.ai/skills/configure-telerik-nuget",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/configure-telerik-nuget-b3b1a4335f7e5bc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps setup, configure and manage Telerik NuGet feeds in your repo's nuget.config file."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lancemccarthy",
+      "userId": "publishers:lancemccarthy",
+      "displayName": "Lance McCarthy",
+      "image": "https://avatars.githubusercontent.com/u/3520532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774007621051,
+      "changelog": "**configure-telerik-nuget 1.1.0**\n\n- Added skill metadata: required binaries, author, homepage, and source.\n- Store Telerik API key as a user-level environment variable for improved security.\n- Updated nuget.config credentials to reference the environment variable instead of a hardcoded key.\n- Added version field to the skill metadata frontmatter.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69acda9828d04fe62878d573ef2a4ef519788e8b994cf6550a47b42779457c01"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25691,
+  "uuid": "skill-clawhub-filesystem2",
+  "skillKey": "clawhub-filesystem2",
+  "name": "filesystem-1.0.2",
+  "summary": "Advanced filesystem operations - listing, searching, batch processing, and directory analysis for Clawdbot",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.filesystem2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qq258067284",
+      "features": [
+        "Advanced filesystem operations",
+        "listing, searching, batch processing, and directory analysis for Clawdbot"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/filesystem2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30460445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "filesystem2",
+      "url": "https://clawhub.ai/skills/filesystem2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "filesystem2",
+    "url": "https://clawhub.ai/skills/filesystem2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/filesystem2-1ce4daeffb9324b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/filesystem2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-filesystem2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:435fc50b09b0b5b988085ea416dfb4b488cda4e5e782087a024c9326559f6254",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:36:19.887Z"
+}

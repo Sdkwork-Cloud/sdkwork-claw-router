@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spacetime-memory@1.1.7",
+  "version": "1.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spacetime_memory",
+  "skill": {
+    "id": 22536,
+    "skillKey": "clawhub-spacetime-memory",
+    "name": "SpacetimeDB Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spacetime-memory",
+    "url": "https://clawhub.ai/skills/spacetime-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spacetime-memory-734819d3cc4979e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-performance SpacetimeDB memory integration for OpenClaw. Replaces static file memory with a lightning-fast WebAssembly-powered mind-vault running on a l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kennethrajsimon",
+      "userId": "s17da6vq3862s9a60h7x4rj6mn855kkb",
+      "displayName": "kennethrajsimon",
+      "image": "https://avatars.githubusercontent.com/u/32383354?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 460,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.1.7",
+      "createdAt": 1773181118346,
+      "changelog": "Made workspace paths portable across user environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47c7cf15681f1f01e990da8a4882b10dadbc3517c84991b483774bd98f961d28"
+}

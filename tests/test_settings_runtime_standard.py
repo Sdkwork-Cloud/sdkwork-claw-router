@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -19,34 +19,35 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "settingsService.ts"
         ).read_text(encoding="utf-8")
-        user_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "user.ts").read_text(
+        iam_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "iam.ts").read_text(
             encoding="utf-8"
         )
         type_exports = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
         self.assertIn("operation: updateSettings", contract)
         self.assertIn("request_schema:", contract)
         self.assertIn("name: UpdateSettingsRequest", contract)
         self.assertIn("name: UpdateSettingsResponse", contract)
-        self.assertIn("getClawRouterAppSdkClient().user.updateSettings(toUpdateSettingsRequest(data))", settings_service)
-        self.assertIn("function toUpdateSettingsRequest(data: SettingsData): SettingsData", settings_service)
+        self.assertIn("getClawRouterAppSdkClient().iam.users.settings.update(toUpdateSettingsRequest(data))", settings_service)
+        self.assertIn("function toUpdateSettingsRequest(data: SettingsData): SdkUpdateSettingsRequest", settings_service)
         self.assertNotIn("as unknown as Record<string, unknown>", settings_service)
         self.assertNotIn("fetch('/app/v3/api", settings_service)
         self.assertNotIn("axios", settings_service)
 
-        self.assertIn("UpdateSettingsRequest", user_api)
-        self.assertIn("UpdateSettingsResult", user_api)
+        self.assertIn("UpdateSettingsRequest", iam_api)
+        self.assertIn("UsersSettingsUpdateResult", iam_api)
         self.assertIn(
-            "async updateSettings(body: UpdateSettingsRequest): Promise<UpdateSettingsResult>",
-            user_api,
+            "async update(body: UpdateSettingsRequest): Promise<UsersSettingsUpdateResult>",
+            iam_api,
         )
-        self.assertIn("this.client.put<UpdateSettingsResult>", user_api)
-        self.assertNotIn("async updateSettings(body?: OperationRequest): Promise<PlusApiResult>", user_api)
+        self.assertIn("this.client.put<UsersSettingsUpdateResult>", iam_api)
+        self.assertIn("appApiPath(`/iam/users/settings`)", iam_api)
+        self.assertNotIn("async updateSettings(body?: OperationRequest): Promise<PlusApiResult>", iam_api)
         self.assertIn("export type { UpdateSettingsRequest }", type_exports)
         self.assertIn("export type { UpdateSettingsResponse }", type_exports)
-        self.assertIn("export type { UpdateSettingsResult }", type_exports)
+        self.assertIn("export type { UsersSettingsUpdateResult }", type_exports)
 
     def test_console_settings_ui_has_retryable_load_and_awaited_saves(self) -> None:
         settings_view = (
@@ -124,7 +125,7 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         self.assertIn("UpdateSettingsCommand", settings_port)
         self.assertIn("UpdateSettingsOutcome", settings_port)
 
-        self.assertIn('"/app/v3/api/user/settings"', app_settings)
+        self.assertIn('"/app/v3/api/iam/users/settings"', app_settings)
         self.assertIn("validate_update_settings_request", app_settings)
         self.assertIn("webhook URL must use http or https", app_settings)
         self.assertIn('PlusApiResult::error("4001"', app_settings)
@@ -148,7 +149,7 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
         openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
             encoding="utf-8"
         )
-        user_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "user.ts").read_text(
+        iam_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "iam.ts").read_text(
             encoding="utf-8"
         )
         settings_service = (
@@ -163,15 +164,16 @@ class SettingsRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("name: SettingsDataResponse", contract)
         self.assertIn('"SettingsDataResponse"', openapi)
-        self.assertIn('"FetchSettingsResult"', openapi)
+        self.assertIn('"UsersSettingsRetrieveResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/SettingsDataResponse"', openapi)
-        self.assertIn("async fetchSettings(params?: QueryParams): Promise<FetchSettingsResult>", user_api)
-        self.assertIn("get<FetchSettingsResult>", user_api)
-        self.assertNotIn("fetchSettings(params?: QueryParams): Promise<PlusApiResult>", user_api)
+        self.assertIn("async retrieve(): Promise<UsersSettingsRetrieveResult>", iam_api)
+        self.assertIn("get<UsersSettingsRetrieveResult>", iam_api)
+        self.assertNotIn("fetchSettings(params?: QueryParams): Promise<PlusApiResult>", iam_api)
 
-        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "fetch-settings-result.ts"
+        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "users-settings-retrieve-result.ts"
         self.assertTrue(result_path.exists())
         self.assertIn("data?: SettingsDataResponse;", result_path.read_text(encoding="utf-8"))
+        self.assertIn("getClawRouterAppSdkClient().iam.users.settings.retrieve()", settings_service)
 
         self.assertIn("SettingsDataResponse as SdkSettingsDataResponse", settings_service)
         self.assertIn("type SdkSettingsNotifications = SdkSettingsDataResponse['notifications'];", settings_service)

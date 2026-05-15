@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69912,
+  "uuid": "skill-clawhub-regex-tester",
+  "skillKey": "clawhub-regex-tester",
+  "name": "RegexTester",
+  "summary": "正则表达式助手，支持匹配测试、提取所有匹配、分组捕获、文本替换及常用模式生成。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regex_tester",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crossallen",
+      "features": [
+        "正则表达式助手，支持匹配测试、提取所有匹配、分组捕获、文本替换及常用模式生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/regex-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16713236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "regex-tester",
+      "url": "https://clawhub.ai/skills/regex-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regex-tester",
+    "url": "https://clawhub.ai/skills/regex-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regex-tester-1c7d95d2a00b6f8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/regex-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-regex-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b61ee10bc37a00f24cfde753fefb99367c097c8579b43f4fa71bd49af38a852d",
+      "artifactSizeBytes": 2160
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T02:19:38.288Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hubspot-suite@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hubspot_suite",
+  "skill": {
+    "id": 18084,
+    "skillKey": "clawhub-hubspot-suite",
+    "name": "Hubspot Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hubspot-suite",
+    "url": "https://clawhub.ai/skills/hubspot-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hubspot-suite-842c4a9d43327e25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive HubSpot CRM, Marketing, Sales, Service, and CMS management suite. Covers all HubSpot APIs: CRM objects (contacts, companies, deals, tickets, cu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luigi08001",
+      "userId": "publishers:luigi08001",
+      "displayName": "Luigi08001",
+      "image": "https://avatars.githubusercontent.com/u/217232646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 719,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771501819433,
+      "changelog": "Fix: added missing scripts and credentials metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ccd4b84b18823478a9af06d21d2075391a58448a750860f94fc52ae4f6bdffb"
+}

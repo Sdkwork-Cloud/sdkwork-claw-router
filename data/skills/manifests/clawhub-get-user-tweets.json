@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53331,
+  "uuid": "skill-clawhub-get-user-tweets",
+  "skillKey": "clawhub-get-user-tweets",
+  "name": "Get User Tweets",
+  "summary": "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/followers, posting tweets/replies, liking, retweeting, following/un...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_user_tweets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xquik",
+      "features": [
+        "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/follo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-user-tweets@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/get-user-tweets/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-user-tweets",
+      "url": "https://clawhub.ai/skills/get-user-tweets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-user-tweets",
+    "url": "https://clawhub.ai/skills/get-user-tweets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-user-tweets-61d6d8e5473c4b48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-user-tweets@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-user-tweets-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a7e0d6c4c72cf4e53a932c7e89b225ecabd11bfbce15a5d6d620a3be860c268",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:36:36.159Z"
+}

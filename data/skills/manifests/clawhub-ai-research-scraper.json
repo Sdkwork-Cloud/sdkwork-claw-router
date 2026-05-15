@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66789,
+  "uuid": "skill-clawhub-ai-research-scraper",
+  "skillKey": "clawhub-ai-research-scraper",
+  "name": "Ai Research Scraper",
+  "summary": "用于抓取AI领域最新研究信息的技能，重点关注AI产品发展。从知名AI网站获取信息，提供简洁概括和链接，限制数据量以便快速阅读。",
+  "version": "1.8.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_research_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kernix0421",
+      "features": [
+        "用于抓取AI领域最新研究信息的技能，重点关注AI产品发展。从知名AI网站获取信息，提供简洁概括和链接，限制数据量以便快速阅读。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-research-scraper@1.8.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86642704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-research-scraper",
+      "url": "https://clawhub.ai/skills/ai-research-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-research-scraper",
+    "url": "https://clawhub.ai/skills/ai-research-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-research-scraper-65a5af12ad0ed37f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-research-scraper@1.8.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-research-scraper-1.8.14.json",
+      "version": "1.8.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12937d835b9c2e5e480b31222f2f95e88d490fc6948fb60a365a37d588868035",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T18:38:45.904Z"
+}

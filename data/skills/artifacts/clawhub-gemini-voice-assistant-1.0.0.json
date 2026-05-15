@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-voice-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_voice_assistant",
+  "skill": {
+    "id": 16284,
+    "skillKey": "clawhub-gemini-voice-assistant",
+    "name": "Gemini Voice Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-voice-assistant",
+    "url": "https://clawhub.ai/skills/gemini-voice-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-voice-assistant-8cc33ea3f7e09f0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Voice-to-voice AI assistant using Gemini Live API. Speak to the AI and get spoken responses. Use when you want to have natural voice conversations with an AI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alimostafaradwan",
+      "userId": "s177gg7j17spww9649sr89ew6n85he0t",
+      "displayName": "Ali Mostafa Radwan",
+      "image": "https://avatars.githubusercontent.com/u/66019196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 794,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771753000088,
+      "changelog": "Initial release - Voice-to-voice AI assistant using Gemini Live API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c6f64f499a85e9f9a936ef442e628c27b3d3b55899a30e1e7aa8531a92763cc0"
+}

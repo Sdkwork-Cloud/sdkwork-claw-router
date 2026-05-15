@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wework",
+  "skill": {
+    "id": 68618,
+    "skillKey": "clawhub-wework",
+    "name": "Wework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wework",
+    "url": "https://clawhub.ai/skills/wework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wework-5b81d52d431080c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业微信开发助手，精通应用开发、客户联系、消息推送等企业 API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773652662892,
+      "changelog": "Major update: Expanded from a placeholder to a comprehensive enterprise WeChat developer assistant.\n\n- Skill name changed from “Wework” to “企业微信”，version bumped to 1.0.0.\n- Detailed usage guide: Added comprehensive API documentation covering departments, members, messages, webhooks, customer contact, approval, schedule, and meeting.\n- Introduced best practices for token management, security, rate limiting, and error handling.\n- Included certification system, callback event verification, and common error codes for troubleshooting.\n- Updated tags and category to reflect the enterprise WeChat focus.\n- Removed placeholder text; now provides full, practical guidance for developers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4920400e3f8cdbfb15eec7d04879b45075cd3cd61897f97d48294b179077a04"
+}

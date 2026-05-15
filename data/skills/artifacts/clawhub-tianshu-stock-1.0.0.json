@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-stock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_stock",
+  "skill": {
+    "id": 73456,
+    "skillKey": "clawhub-tianshu-stock",
+    "name": "天枢股票分析系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-stock",
+    "url": "https://clawhub.ai/skills/tianshu-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-stock-3e378e83e7904fdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于七大哲学理论，提供多维度评分和实时数据的智能股票诊断和操作建议系统。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "horizoncove",
+      "userId": "s17db51np30f4wk2n976x2x0wd83hsgt",
+      "displayName": "horizoncove",
+      "image": "https://avatars.githubusercontent.com/u/221652459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774976059244,
+      "changelog": "初始版本 - 基于七大哲学理论的智能股票诊断系统",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eae309347d639e954fb11f9b854238cb11766d2a312c139de386dd4ad84a3a83"
+}

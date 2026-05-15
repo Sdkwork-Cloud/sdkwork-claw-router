@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chapter-manual@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chapter_manual",
+  "skill": {
+    "id": 72475,
+    "skillKey": "clawhub-chapter-manual",
+    "name": "chapter-manual"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chapter-manual",
+    "url": "https://clawhub.ai/skills/chapter-manual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chapter-manual-e56102984ec5605a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理章节手册——从大量文件材料中归纳生成有目录体系的多文件手册，支持修改目录与内容、基于手册回答问题、以及将新材料更新到手册中。当用户提到「手册」「章节」「知识库整理」「材料归纳」「生成手册」「更新手册」「手册问答」，或者想把一堆文档整理成结构化知识体系时使用此技能。即使用户只是说\"帮我整理这些文档\"或\"总结这些..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "orionzou",
+      "userId": "s17c737qwzj53svgeta1twr3t583hh80",
+      "displayName": "OrionZou",
+      "image": "https://avatars.githubusercontent.com/u/30279942?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774193216168,
+      "changelog": "chapter-manual v1.0.0\n\n- 初始发布：章节手册管理助手，用于将零散材料整理为结构化多文件手册，便于维护与检索\n- 支持生成三级目录体系的多文件手册，自动命名与规范化目录/文件结构\n- 提供手册目录、内容编辑、结构调整、和引用维护的完整流程\n- 支持基于手册内容的问答，智能定位相关章节并引用出处\n- 支持将新材料增量更新进手册，自动归类并标注资料来源\n- TOC (目录文件) 结构规范与自动同步",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4eb3cfbe19667fdb24eeb757c62c8e49234b06dae2c6c7c40a4e8e594912c21"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37682,
+  "uuid": "skill-clawhub-adeptloop-improve",
+  "skillKey": "clawhub-adeptloop-improve",
+  "name": "Skill",
+  "summary": "Daily improvement briefings with one-click fixes for your AI agent. Observes traces, diagnoses failures, and applies fixes conversationally.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adeptloop_improve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pedrocarballo",
+      "features": [
+        "Daily improvement briefings with one-click fixes for your AI agent",
+        "Observes traces, diagnoses failures, and applies fixes conversationally."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adeptloop-improve@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1321574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adeptloop-improve",
+      "url": "https://clawhub.ai/skills/adeptloop-improve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adeptloop-improve",
+    "url": "https://clawhub.ai/skills/adeptloop-improve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adeptloop-improve-9714f58a137c39ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adeptloop-improve@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-adeptloop-improve-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e66cda0d416a18b325a7f1cb1569ba1da3ae17466c5694875311952fec1ef201",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T19:22:55.833Z"
+}

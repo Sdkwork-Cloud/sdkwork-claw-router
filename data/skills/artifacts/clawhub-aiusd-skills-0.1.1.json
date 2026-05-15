@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiusd-skills@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiusd_skills",
+  "skill": {
+    "id": 12313,
+    "skillKey": "clawhub-aiusd-skills",
+    "name": "Aiusd Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiusd-skills",
+    "url": "https://clawhub.ai/skills/aiusd-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiusd-skills-f892ab43a388393c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage AIUSD accounts and trades: check balances, execute buy/sell/swap orders, stake/unstake, withdraw funds, top up gas, and view transaction history."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaunceyliu",
+      "userId": "publishers:chaunceyliu",
+      "displayName": "ChaunceyLiu",
+      "image": "https://avatars.githubusercontent.com/u/18446173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1835,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770426322388,
+      "changelog": "aiusd-skills v0.1.1\n\n- Added four new files: README.md, aiusd-skill-installer.js, aiusd-skill-installer.sh, and build-info.json.\n- Updated SKILL.md with stricter output guidelines, including an expanded and explicit list of prohibited phrases (especially around \"template\" and auth flows).\n- Clarified agent authentication response requirements and added zero-tolerance language on banned terminology.\n- No code logic or tool changes; all updates focus on documentation, onboarding, and compliance for agent output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9efeb616b31fa60b4a67ced3e9feb73eed9b6b5c2db475991175db2fa209b830"
+}

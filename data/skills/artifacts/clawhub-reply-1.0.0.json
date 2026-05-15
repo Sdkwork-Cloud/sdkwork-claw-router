@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reply",
+  "skill": {
+    "id": 11678,
+    "skillKey": "clawhub-reply",
+    "name": "Moin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reply",
+    "url": "https://clawhub.ai/skills/reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reply-5782b18687e6cf8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write viral, persuasive, engaging tweets and threads. Uses web research to find viral examples in your niche, then models writing based on proven formulas and X algorithm optimization. Use when creating tweets, threads, or X content strate."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trymoinai-create",
+      "userId": "publishers:trymoinai-create",
+      "displayName": "trymoinai-create",
+      "image": "https://avatars.githubusercontent.com/u/234671997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1961,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769837672839,
+      "changelog": "Initial release of the Tweet Writer skill:\n\n- Drafts viral, persuasive tweets and threads optimized for X's algorithm.\n- Leverages real-time web research to find and analyze top-performing tweets in your niche.\n- Uses proven hook formulas, copywriting frameworks (PAS, AIDA, BAB), and structuring techniques.\n- Includes up-to-date tips on the X algorithm, engagement signals, and best/worst practices for 2026.\n- Provides step-by-step workflow: research, pattern analysis, hook building, and thread composition.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5eb80ec085c8cca3be2d7d1d99c9cbe2c42f1933e7e34558f74b2bceda347b2b"
+}

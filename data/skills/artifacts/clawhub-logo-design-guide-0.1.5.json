@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logo-design-guide@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logo_design_guide",
+  "skill": {
+    "id": 13865,
+    "skillKey": "clawhub-logo-design-guide",
+    "name": "Logo Design Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logo-design-guide",
+    "url": "https://clawhub.ai/skills/logo-design-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logo-design-guide-e7e9ea52159dbbef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Logo design principles and AI image generation best practices for creating logos. Covers logo types, prompting techniques, scalability rules, and iteration w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1195,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403256248,
+      "changelog": "- Initial release of Logo Design Guide (v0.1.5).\n- Provides guidance on AI-powered logo creation, including types of logos, prompt techniques, and best practices.\n- Detailed sample prompts and CLI commands for generating scalable, minimal logos via inference.sh.\n- Covers AI limitations (esp. text rendering), color and scalability rules, and iteration workflow.\n- Includes common pitfalls and file format recommendations for production-ready logos.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c92084440b6d1a20f7abcfe1d07f0ff08c3b5839729f3f04ae3c4fa66ea61bf8"
+}

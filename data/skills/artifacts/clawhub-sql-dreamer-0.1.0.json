@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sql-dreamer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_dreamer",
+  "skill": {
+    "id": 48614,
+    "skillKey": "clawhub-sql-dreamer",
+    "name": "SQL Dreamer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-dreamer",
+    "url": "https://clawhub.ai/skills/sql-dreamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-dreamer-8b028cf6d03f923c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Feeds OpenClaw dreamer with high-importance memories from SQL, archives dream outputs back to SQL, and prunes old dream files automatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oblio-falootin",
+      "userId": "s178hc1brh9m5mmh3hnb27txnx83j824",
+      "displayName": "Oblio",
+      "image": "https://avatars.githubusercontent.com/u/263802398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777398498163,
+      "changelog": "Initial publication. SQL-backed memory corpus feeder and dream output archiver for OpenClaw. Replaces file-based memory ingestion with curated SQL queries, archives dream phase outputs to SQL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:925b3e6eab8fbeec652244fa16497039c92f3bb1773d74cca2ba3dbd07e5a26e"
+}

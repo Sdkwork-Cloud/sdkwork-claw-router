@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62630,
+  "uuid": "skill-clawhub-xiaofei-ziyong-wechat-article-scraper",
+  "skillKey": "clawhub-xiaofei-ziyong-wechat-article-scraper",
+  "name": "xiaofei自用-WeChat Article Scraper",
+  "summary": "微信公众号文章抓取工具。从 mp.weixin.qq.com 抓取公开文章（文字+图片+视频），解析内容块顺序，下载图片，按原顺序写入飞书知识库。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaofei_ziyong_wechat_article_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mengzi53",
+      "features": [
+        "微信公众号文章抓取工具。从 mp.weixin.qq.com 抓取公开文章（文字+图片+视频），解析内容块顺序，下载图片，按原顺序写入飞书知识库。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaofei-ziyong-wechat-article-scraper@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117899626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaofei-ziyong-wechat-article-scraper",
+      "url": "https://clawhub.ai/skills/xiaofei-ziyong-wechat-article-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaofei-ziyong-wechat-article-scraper",
+    "url": "https://clawhub.ai/skills/xiaofei-ziyong-wechat-article-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaofei-ziyong-wechat-article-scraper-7af0106a159e08ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaofei-ziyong-wechat-article-scraper@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaofei-ziyong-wechat-article-scraper-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72644d30b05dc8994e16c96eae9e2aae333d641606ebd89640f21dda47c9660d",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:05:35.789Z"
+}

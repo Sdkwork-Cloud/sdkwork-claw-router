@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64042,
+  "uuid": "skill-clawhub-basic-integration-guide",
+  "skillKey": "clawhub-basic-integration-guide",
+  "name": "Basic Integration Guide",
+  "summary": "指导开发者如何接入basic基础服务，包括依赖引入、gRPC调用、REST API使用、配置说明。涵盖国际化(i18n)、项目管理、租户管理、字典管理、存储、认证等核心能力",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.basic_integration_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "effort02",
+      "features": [
+        "指导开发者如何接入basic基础服务，包括依赖引入、gRPC调用、REST API使用、配置说明。涵盖国际化(i18n)、项目管理、租户管理、字典管理、存储、认证等核心能力"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/basic-integration-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20784341?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "basic-integration-guide",
+      "url": "https://clawhub.ai/skills/basic-integration-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "basic-integration-guide",
+    "url": "https://clawhub.ai/skills/basic-integration-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/basic-integration-guide-935b071bbce2cdfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/basic-integration-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-basic-integration-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12263becf8cf9e9429c7a72d70bdcf76bbe0700f71330410cb88be1bac9e06f8",
+      "artifactSizeBytes": 2534
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T11:05:41.253Z"
+}

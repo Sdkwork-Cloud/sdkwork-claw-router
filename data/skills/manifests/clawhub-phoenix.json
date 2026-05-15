@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71797,
+  "uuid": "skill-clawhub-phoenix",
+  "skillKey": "clawhub-phoenix",
+  "name": "Phoenix",
+  "summary": "提供凤凰城的旅游指南，包括历史文化、地标、美食、活动及实用旅行信息，助您规划行程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供凤凰城的旅游指南，包括历史文化、地标、美食、活动及实用旅行信息，助您规划行程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phoenix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phoenix",
+      "url": "https://clawhub.ai/skills/phoenix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenix",
+    "url": "https://clawhub.ai/skills/phoenix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenix-03a8f0dd8edb3378.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phoenix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phoenix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fd6bf185d04f4bfa3522e1f9ea4a5443c72eb36563f3232fa930411707d6ea8",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T22:57:44.835Z"
+}

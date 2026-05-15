@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68384,
+  "uuid": "skill-clawhub-issuefinder-tool",
+  "skillKey": "clawhub-issuefinder-tool",
+  "name": "Issuefinder Tool",
+  "summary": "功能强大的车辆日志下载与解析工具，支持云端日志下载、本地日志处理、自动故障分析等功能",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.issuefinder_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lichm1007",
+      "features": [
+        "功能强大的车辆日志下载与解析工具，支持云端日志下载、本地日志处理、自动故障分析等功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/issuefinder-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141213593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "issuefinder-tool",
+      "url": "https://clawhub.ai/skills/issuefinder-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "issuefinder-tool",
+    "url": "https://clawhub.ai/skills/issuefinder-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/issuefinder-tool-677984d4f7c2e4cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/issuefinder-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-issuefinder-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9da18ff6b39010ff6d62d0a7d63b966bad863f154455c53a5ffad69a8eeec965",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T04:38:20.439Z"
+}

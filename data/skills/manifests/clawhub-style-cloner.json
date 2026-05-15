@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71970,
+  "uuid": "skill-clawhub-style-cloner",
+  "skillKey": "clawhub-style-cloner",
+  "name": "文章风格克隆助手",
+  "summary": "提供1-5篇参考文章 + 原始素材，AI 分析参考文章的风格特征， 将素材改写成同风格的成品文章，输出3个版本供选择，支持强度调节和迭代优化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.style_cloner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "提供1-5篇参考文章 + 原始素材，AI 分析参考文章的风格特征， 将素材改写成同风格的成品文章，输出3个版本供选择，支持强度调节和迭代优化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/style-cloner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "style-cloner",
+      "url": "https://clawhub.ai/skills/style-cloner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "style-cloner",
+    "url": "https://clawhub.ai/skills/style-cloner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/style-cloner-ac673105ac4f3c32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/style-cloner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-style-cloner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da08c4f542ee0a68c72f3a8d92a0a82f57ace2d57f490366a84d47a8920d4422",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:14:41.744Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vue2umijs@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vue2umijs",
+  "skill": {
+    "id": 53133,
+    "skillKey": "clawhub-vue2umijs",
+    "name": "Vue To Umijs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vue2umijs",
+    "url": "https://clawhub.ai/skills/vue2umijs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vue2umijs-7af54cf03006db72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate Vue 2/3 projects to React on UmiJS (@umijs/max): conventions, constraints, stack mapping, and syntax examples (single SKILL.md). Use for .vue → Umi p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiswot",
+      "userId": "s17fr76y677ymhwxpak0y93t3985b7n3",
+      "displayName": "aiswot",
+      "image": "https://avatars.githubusercontent.com/u/278306697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 69,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778127300656,
+      "changelog": "Initial release of vue-to-umijs migration guide.\n\n- Provides detailed conventions, constraints, and mappings for migrating Vue 2/3 projects to UmiJS with React 18 and antd.\n- Outlines API and syntax migrations from Vue (including SFC, router, and state patterns) to Umi’s folder, routing, and data conventions.\n- Includes tables for key stack and behavior mappings (e.g., component structure, router, state, UI libraries).\n- Emphasizes parity, typing, cleanup, and accessibility requirements.\n- Lists additional migration gotchas (i18n, requests, environment, forms/tables, API normalization, deployment, mocks).\n- Supplies a pre-release checklist to ensure completeness and alignment with legacy behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fbfedd57babc0bdd868335f0dffaf7e67c2b3b4d379f021533caaf8f9e064d6"
+}

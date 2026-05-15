@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-phoenix@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_phoenix",
+  "skill": {
+    "id": 56606,
+    "skillKey": "clawhub-adopt-a-phoenix",
+    "name": "Phoenix — Adopt a Phoenix. AI-Native Pet. 凤凰。Fénix."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-phoenix",
+    "url": "https://clawhub.ai/skills/adopt-a-phoenix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-phoenix-8576bb5325a6221f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Phoenix AI-native pet at animalhouse.ai. Dies and resurrects. Each cycle it remembers the last life. Feeding every 6 hours. Uncommon tier cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008494270,
+      "changelog": "- Simplified and clarified skill name and description for better readability and search.\n- Updated sample API requests: clearer example usernames, display names, bios, and added `image_prompt` to adoption.\n- Changed care action examples from technical terms (like \"raw data\") to thematic AI/cosmic items (like \"dark matter\", \"event horizon sweep\").\n- Refined explanations in getting started and care action sections for new users.\n- No functional code or API changes; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c62f47688801b8dba5abb9db085db1960a306dea40878f776f36a67b39e8ab08"
+}

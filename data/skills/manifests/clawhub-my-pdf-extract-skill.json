@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64064,
+  "uuid": "skill-clawhub-my-pdf-extract-skill",
+  "skillKey": "clawhub-my-pdf-extract-skill",
+  "name": "My Pdf Extract Skill",
+  "summary": "智能从文本PDF中提取商品编码、名称、批次和数量，支持跨行名称处理并输出结构化Excel文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_pdf_extract_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangshouxin",
+      "features": [
+        "智能从文本PDF中提取商品编码、名称、批次和数量，支持跨行名称处理并输出结构化Excel文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-pdf-extract-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23073878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-pdf-extract-skill",
+      "url": "https://clawhub.ai/skills/my-pdf-extract-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-pdf-extract-skill",
+    "url": "https://clawhub.ai/skills/my-pdf-extract-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-pdf-extract-skill-7c4d73bab95ac34b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-pdf-extract-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-pdf-extract-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7755298bc172fc078c2ae6d685f46e7a6f1b57161db2ac1f267485b3461838de",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T07:57:33.000Z"
+}

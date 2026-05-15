@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/greg-eisenberg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.greg_eisenberg",
+  "skill": {
+    "id": 36028,
+    "skillKey": "clawhub-greg-eisenberg",
+    "name": "Greg Eisenberg"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "greg-eisenberg",
+    "url": "https://clawhub.ai/skills/greg-eisenberg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/greg-eisenberg-61e3a8f262e4c582.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate content ideas, business strategies, and startup concepts in the style of Greg Eisenberg (Startup Ideas Podcast). Use when brainstorming product idea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "finnmackay",
+      "userId": "publishers:finnmackay",
+      "displayName": "finnmackay",
+      "image": "https://avatars.githubusercontent.com/u/82451968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774002350199,
+      "changelog": "Initial release: startup ideas, AI business strategy, Claude Code workflows, OpenClaw setup guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e8c66b5b8f12b8c5f5300ad9fd5a7cb31844da1f40ccfa87ccf659785431118"
+}

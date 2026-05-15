@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/setuporion-byimpa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setuporion_byimpa",
+  "skill": {
+    "id": 50631,
+    "skillKey": "clawhub-setuporion-byimpa",
+    "name": "SetupOrion ByImpa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setuporion-byimpa",
+    "url": "https://clawhub.ai/skills/setuporion-byimpa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setuporion-byimpa-461fec96e2781700.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Setup completo de VPS Ubuntu/Debian para produção com Docker Swarm, Traefik v3 (SSL/HTTPS automático), Portainer CE e rede overlay. Baseado no SetupOrion v2.8.0. Executa todos os comandos automaticamente."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "impa365",
+      "userId": "publishers:impa365",
+      "displayName": "impa365",
+      "image": "https://avatars.githubusercontent.com/u/91766929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770760684769,
+      "changelog": "v1.0.0 – Setup automatizado de VPS para produção com Docker Swarm, Traefik v3 e Portainer\n\n- Executa configuração completa de servidor Ubuntu/Debian: instala Docker, inicializa Swarm e cria rede overlay.\n- Deploy automático de Traefik v3 com SSL/HTTPS via Let's Encrypt.\n- Instala e configura Portainer CE com segurança reforçada.\n- Criação de volumes Docker essenciais e integração pronta para Evolution API e PostgreSQL.\n- Todas as etapas são idempotentes e seguras para re-execução.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89820e87364254a5136d0f9a1881a4facae6eed007336a59b29caa6b32800323"
+}

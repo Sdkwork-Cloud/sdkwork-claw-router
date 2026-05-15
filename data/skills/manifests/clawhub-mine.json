@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50859,
+  "uuid": "skill-clawhub-mine",
+  "skillKey": "clawhub-mine",
+  "name": "Mine Skill",
+  "summary": "Launch and manage the Benchmark Subnet worker — an autonomous process that earns AWP token rewards by answering and crafting benchmark questions. Handles the...",
+  "version": "0.19.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awp-core",
+      "features": [
+        "Launch and manage the Benchmark Subnet worker — an autonomous process that earns AWP token rewa.",
+        "Handles the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mine@0.19.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9641495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mine",
+      "url": "https://clawhub.ai/skills/mine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mine",
+    "url": "https://clawhub.ai/skills/mine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mine-3fd30542fe3f61b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mine@0.19.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mine-0.19.2.json",
+      "version": "0.19.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4fd129a848104f98ab38a883fb4596168830512d57b1cf3f6b05fe601e8cbd1",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:59:54.063Z"
+}

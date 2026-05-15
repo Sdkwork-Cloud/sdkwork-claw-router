@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-charts@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_charts",
+  "skill": {
+    "id": 20843,
+    "skillKey": "clawhub-smart-charts",
+    "name": "smart-charts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-charts",
+    "url": "https://clawhub.ai/skills/smart-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-charts-9934061733bebaeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent chart generation and data analysis skill. Reads user-supplied data files (CSV/Excel/JSON), analyzes data characteristics with LLM assistance, aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neuhanli",
+      "userId": "s170fra97dyryvewpm8k1555p983efvx",
+      "displayName": "hanli",
+      "image": "https://avatars.githubusercontent.com/u/133091538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1774519084084,
+      "changelog": "- Added requirements.txt for easy installation of Python dependencies.\n- Updated documentation to include installation instructions and a dependency table.\n- No core logic or workflow changes; functionality remains the same as previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d95e3fc61f2ce90e1e3047a5ccc16d97f47c099634cd1f8a0450e9b39cdd3128"
+}

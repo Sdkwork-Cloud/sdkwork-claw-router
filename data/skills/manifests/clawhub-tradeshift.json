@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35211,
+  "uuid": "skill-clawhub-tradeshift",
+  "skillKey": "clawhub-tradeshift",
+  "name": "Tradeshift",
+  "summary": "Tradeshift integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tradeshift data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradeshift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Tradeshift integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tradeshift data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tradeshift@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tradeshift",
+      "url": "https://clawhub.ai/skills/tradeshift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradeshift",
+    "url": "https://clawhub.ai/skills/tradeshift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradeshift-fb25fad096eb6c6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tradeshift@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tradeshift-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21630fe6eae76ab1640f07f76244f0c6be4d2bd88675c50931e305cc8939565c",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:06:40.133Z"
+}

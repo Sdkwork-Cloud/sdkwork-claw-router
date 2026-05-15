@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16088,
+  "uuid": "skill-clawhub-lite-sqlite",
+  "skillKey": "clawhub-lite-sqlite",
+  "name": "Lite Sqlite",
+  "summary": "Fast lightweight local SQLite database for OpenClaw agents with minimal RAM and storage usage. Use when creating or managing SQLite databases for storing age...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lite_sqlite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omprasad122007-rgb",
+      "features": [
+        "Fast lightweight local SQLite database for OpenClaw agents with minimal RAM and storage usage",
+        "Use when creating or managing SQLite databases for storing age..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lite-sqlite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260436802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lite-sqlite",
+      "url": "https://clawhub.ai/skills/lite-sqlite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lite-sqlite",
+    "url": "https://clawhub.ai/skills/lite-sqlite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lite-sqlite-9d66a15fca5893bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lite-sqlite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lite-sqlite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e350f77da4e25c93b8c607e339d67d316e4828b545034facdb2c400eabcb80f6",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:51:07.030Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61964,
+  "uuid": "skill-clawhub-mermaid-ascii-renderer",
+  "skillKey": "clawhub-mermaid-ascii-renderer",
+  "name": "Mermaid Ascii Renderer",
+  "summary": "使用 beautiful-mermaid 项目将 Mermaid 图表渲染为 ASCII 艺术。提供解析、布局算法和渲染操作的完整实现指南，支持流程图、状态图、序列图、类图和 ER 图表。当用户请求涉及以下场景时使用：（1）beautiful-mermaid 的 ASCII 渲染系统实现；（2）在终端/控制台输出...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_ascii_renderer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe-rq",
+      "features": [
+        "使用 beautiful-mermaid 项目将 Mermaid 图表渲染为 ASCII 艺术。提供解析、布局算法和渲染操作的完整实现指南，支持流程图、状态图、序列图、类图和 ER 图表。当."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mermaid-ascii-renderer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77777313?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mermaid-ascii-renderer",
+      "url": "https://clawhub.ai/skills/mermaid-ascii-renderer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-ascii-renderer",
+    "url": "https://clawhub.ai/skills/mermaid-ascii-renderer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-ascii-renderer-0ef88e6269256767.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mermaid-ascii-renderer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-ascii-renderer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b165cf4be58bf521101092bb632029a96a330f3d825f4e42fca2903acbf65d7b",
+      "artifactSizeBytes": 2719
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:53:29.258Z"
+}

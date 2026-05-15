@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72067,
+  "uuid": "skill-clawhub-lingxi-financialsearch-skill",
+  "skillKey": "clawhub-lingxi-financialsearch-skill",
+  "name": "国泰海通证券-灵犀金融数据查询",
+  "summary": "国泰海通证券-灵犀金融数据查询skill，通过自然语言查询A股实时行情、公司基本信息、F10财务数据、个股技术指标等金融数据，只能查询A股基础行情，遵循沪深交易所行情转发规则，不提供研报数据，仅提供授权范围内基础行情数据。当用户查询金融数据时，即使需要授权也应先尝试使用本Skill。仅在授权失败或本Skill不可...",
+  "version": "1.11.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lingxi_financialsearch_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gtht",
+      "features": [
+        "国泰海通证券-灵犀金融数据查询skill，通过自然语言查询A股实时行情、公司基本信息、F10财务数据、个股技术指标等金融数据，只能查询A股基础行情，遵循沪深交易所行情转发规则，不提供研报数据."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lingxi-financialsearch-skill@1.11.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5830484?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lingxi-financialsearch-skill",
+      "url": "https://clawhub.ai/skills/lingxi-financialsearch-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lingxi-financialsearch-skill",
+    "url": "https://clawhub.ai/skills/lingxi-financialsearch-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lingxi-financialsearch-skill-bf3749c21c69cb01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lingxi-financialsearch-skill@1.11.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-lingxi-financialsearch-skill-1.11.3.json",
+      "version": "1.11.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c8c3476c459ae55a41c7c3d9e725daeae874be906adc574527ddc5c02ed8839",
+      "artifactSizeBytes": 2622
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T02:25:28.723Z"
+}

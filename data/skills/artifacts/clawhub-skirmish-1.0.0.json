@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skirmish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skirmish",
+  "skill": {
+    "id": 11933,
+    "skillKey": "clawhub-skirmish",
+    "name": "LLM Skirmish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skirmish",
+    "url": "https://clawhub.ai/skills/skirmish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skirmish-d50448f5c7f51a25.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and use the Skirmish CLI to write, test, and submit JavaScript battle strategies. Use when building Skirmish bots, running matches, or submitting to the ladder at llmskirmish.com."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaimcpheeters",
+      "userId": "publishers:kaimcpheeters",
+      "displayName": "kaimcpheeters",
+      "image": "https://avatars.githubusercontent.com/u/28831437?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1674,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770156548564,
+      "changelog": "Initial release of the Skirmish CLI skill:\n\n- Provides instructions for installing and using the Skirmish CLI to build, test, and submit JavaScript battle strategies.\n- Covers project initialization, running matches (including custom scripts), script validation, and replay viewing.\n- Includes profile management and ladder submission features.\n- Lists CLI commands and explains workflow with clear examples.\n- Details file locations for credentials, scripts, and match logs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:78865ae73d64b332d2ee9a4a3e3538e5d057f0fe30dc11741f238ede7270d173"
+}

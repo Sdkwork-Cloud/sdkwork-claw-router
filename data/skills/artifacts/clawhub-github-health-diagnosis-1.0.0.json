@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-health-diagnosis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_health_diagnosis",
+  "skill": {
+    "id": 61120,
+    "skillKey": "clawhub-github-health-diagnosis",
+    "name": "github-health-diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-health-diagnosis",
+    "url": "https://clawhub.ai/skills/github-health-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-health-diagnosis-b507f4d94f989c7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub 项目健康度诊断 — 输入仓库地址，AI 自动分析 Issues、代码质量、CI状态，生成诊断报告并发布到飞书 Wiki。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlszhonglongshen",
+      "userId": "s178jr2zywr30fqk79fnqadhks83gpp0",
+      "displayName": "zlszhonglongshen",
+      "image": "https://avatars.githubusercontent.com/u/9023908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776800523593,
+      "changelog": "Initial release — diagnose GitHub project health and generate AI reports for Feishu Wiki.\n\n- Analyze GitHub repository issues, code quality, and CI/CD status with a single command.\n- Generate a visual health report (including scores, problem lists, and suggestions) published directly to Feishu Wiki.\n- Covers five key dimensions: code quality, issue activity, CI/CD, community engagement, and security.\n- Supports trigger words and easy input formats for fast team adoption.\n- Provides shareable diagnosis cards and full report links for collaboration and documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8af23a54a0a155f173e84c98bb734abb234ca9a44b9db8d7522e0f98f478ec2e"
+}

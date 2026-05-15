@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nm-tome-dig@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_tome_dig",
+  "skill": {
+    "id": 52066,
+    "skillKey": "clawhub-nm-tome-dig",
+    "name": "Nm Tome Dig"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-tome-dig",
+    "url": "https://clawhub.ai/skills/nm-tome-dig",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-tome-dig-a0733d8b479f0e47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    ">- Interactively refine research results by searching deeper into a subtopic or specific channel. Loads the active session and merges new findings into it. U..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "athola",
+      "userId": "s17emme0e2m3cpf7k2jvp3a84984b8z9",
+      "displayName": "athola",
+      "image": "https://avatars.githubusercontent.com/u/9769290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778293251723,
+      "changelog": "Release v1.9.5",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a78de82280d759cf6a44f59b4dbcd69c2fbf1a297ce88bbd37b475867633b30c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48411,
+  "uuid": "skill-clawhub-agent-settings-manager",
+  "skillKey": "clawhub-agent-settings-manager",
+  "name": "Agent Settings Manager",
+  "summary": "Configuration management for AI agents. Manage, validate, version, and sync configs across environments. Triggers: config management, configuration, env vari...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_settings_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Configuration management for AI agents",
+        "Manage, validate, version, and sync configs across environments",
+        "Triggers: config management, configuration, env vari..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-settings-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-settings-manager",
+      "url": "https://clawhub.ai/skills/agent-settings-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-settings-manager",
+    "url": "https://clawhub.ai/skills/agent-settings-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-settings-manager-6d968e1d23e2a652.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-settings-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-settings-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9211e98c674718916e530938e70be7aa3e9fa6402e55d2f09329d0c299ac66fe",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T00:49:01.443Z"
+}

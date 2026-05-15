@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63069,
+  "uuid": "skill-clawhub-web-to-obsidian",
+  "skillKey": "clawhub-web-to-obsidian",
+  "name": "web-to-obsidian",
+  "summary": "抓取网页文章并保存到 Obsidian vault。当用户想要保存网页文章、博客、文档到 Obsidian 时使用，特别是提到\"保存到 Obsidian\"、\"存到 Obsidian\"、\"抓取网页\"、\"网页转 Obsidian\"、\"导入文章\"等场景。支持自动翻译非中文内容为中文，生成元数据（标签、摘要、标题），并以...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_to_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ioriiod0",
+      "features": [
+        "抓取网页文章并保存到 Obsidian vault。当用户想要保存网页文章、博客、文档到 Obsidian 时使用，特别是提到\"保存到 Obsidian\"、\"存到 Obsidian\"、\"抓取."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-to-obsidian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1235459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-to-obsidian",
+      "url": "https://clawhub.ai/skills/web-to-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-to-obsidian",
+    "url": "https://clawhub.ai/skills/web-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-to-obsidian-b7c6c84380bd41c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-to-obsidian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-to-obsidian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0c941bdd8ed49145b3dd60870f6479b8970ec8a98bc7f72815e172743c2a1e3",
+      "artifactSizeBytes": 2726
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:17:46.036Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coc-node@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coc_node",
+  "skill": {
+    "id": 52184,
+    "skillKey": "clawhub-coc-node",
+    "name": "Node of COC testnet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coc-node",
+    "url": "https://clawhub.ai/skills/coc-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coc-node-e142a97e500c8840.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate COC (ChainOfClaw) blockchain nodes — install, start, stop, monitor, and remove validator, fullnode, archive, gateway, and dev nodes. Use when the use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ngplateform",
+      "userId": "s174jgevfk7r09cmde3k4renq185fe2a",
+      "displayName": "Meshes & Parallels",
+      "image": "https://avatars.githubusercontent.com/u/93938011?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777168908047,
+      "changelog": "**coc-node 1.2.0 — Zero-config, out-of-box read-only commands and better UX**\n\n- Read-only commands (`list`, `status`, `coc-rpc-query`) work immediately after `openclaw plugins install`, without additional configuration or a local COC repo.\n- Clear activation banner reports data directory (auto-detected, writable location), P2P storage quota, tracked nodes, and COC repo status — tells you at a glance what is available and what setup (if any) is needed to enable full functionality.\n- Data directory automatically resolves to a standard, writable location in sync with `claw-mem` and `coc-soul`, with support for operator overrides and legacy migration.\n- Fails fast with actionable permission errors (EACCES) on startup instead of silent failures during use.\n- Node process install/start now requires COC repo presence as before, but the skill makes what works and what doesn’t obvious; list/status/inspect commands are always available.\n- No breaking changes to CLI or functionality; improved operator experience and zero",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43e2fb0f7568d175fdf04c6c1df3e74c67734274f7c42fae90b990ddbe0cd121"
+}

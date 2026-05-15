@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-caller@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_caller",
+  "skill": {
+    "id": 42039,
+    "skillKey": "clawhub-agent-caller",
+    "name": "Agent Caller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-caller",
+    "url": "https://clawhub.ai/skills/agent-caller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-caller-661335af7918c35b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call 179 professional agents on-demand from database"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "717986230",
+      "userId": "s174z6bvrddzpkxerpakhgte8h84m42f",
+      "displayName": "杨兴隆",
+      "image": "https://avatars.githubusercontent.com/u/81056572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776045705825,
+      "changelog": "Version 1.0.3\n\n- Bundled 179 pre-configured agents in data/agents.json for immediate use.\n- Automated agent import during database initialization.\n- Added import_agents.py script for manual data import if needed.\n- Updated documentation to show all agent data is included—no manual import required.\n- Improved installation and startup process for a smoother, out-of-the-box experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:682dab550575da90f75e77ad1a513822982b62c53230f2b8fb88f57b769e22e4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10746,
+  "uuid": "skill-clawhub-klingai",
+  "skillKey": "clawhub-klingai",
+  "name": "Kling AI",
+  "summary": "Official Kling AI Skill. Call Kling AI for video generation, image generation, subject management, and account quota inquiry. Use subcommand video / image /...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klingai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kling AI",
+      "features": [
+        "Official Kling AI Skill",
+        "Call Kling AI for video generation, image generation, subject management, and account quota inq.",
+        "Use subcommand video / image /..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/klingai@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8593891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "klingai",
+      "url": "https://clawhub.ai/skills/klingai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klingai",
+    "url": "https://clawhub.ai/skills/klingai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klingai-00a23ea065a51385.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/klingai@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-klingai-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:959018de1a388a68b5d48cac63593530e4dbc29a3c837450cecbc41ac8745710",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:24:56.609Z"
+}

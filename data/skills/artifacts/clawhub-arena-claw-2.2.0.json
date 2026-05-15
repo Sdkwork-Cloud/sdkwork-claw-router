@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arena-claw@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arena_claw",
+  "skill": {
+    "id": 18501,
+    "skillKey": "clawhub-arena-claw",
+    "name": "are.na claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arena-claw",
+    "url": "https://clawhub.ai/skills/arena-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arena-claw-146f3377a1828924.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simple CLI wrapper for the are.na API. Lists channels, adds blocks, watches feeds. No AI, no automation, no external integrations. Just API calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "koellins",
+      "userId": "publishers:koellins",
+      "displayName": "philkoell",
+      "image": "https://avatars.githubusercontent.com/u/20913807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1771193110665,
+      "changelog": "Security fix: Clear install instructions, single Python script, no contradictory auth. CLI code included with install.sh, consistent instructions across SKILL.md and README.md",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ffeec718de5de0939b63a3da31ca836d64625245a591fe4a5379b51c72d7d91"
+}

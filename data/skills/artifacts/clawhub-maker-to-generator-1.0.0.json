@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-to-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_to_generator",
+  "skill": {
+    "id": 49067,
+    "skillKey": "clawhub-maker-to-generator",
+    "name": "Maker To Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-to-generator",
+    "url": "https://clawhub.ai/skills/maker-to-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-to-generator-e1231297544edaf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get generated video files ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777864041554,
+      "changelog": "Initial release of Maker to Generator — quickly convert video projects to shareable generated videos in the cloud.\n\n- Upload video clips (MP4, MOV, AVI, WebM, up to 500MB) and describe your desired output for fast AI video generation.\n- Automated setup: supports anonymous access by generating a temporary token with 100 free credits, valid for 7 days.\n- Export 1080p MP4 from your projects in 30–90 seconds; all rendering handled server-side for quick turnaround.\n- Supports core actions via prompt routing: upload, export, check credits, track session state, and edit timelines.\n- Includes robust error handling, multi-format support, and session/timeline management for iterative workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81a55964abf9d506e52b405412a7123c56d5f9e4236a37ef456d8abc6889eb8c"
+}

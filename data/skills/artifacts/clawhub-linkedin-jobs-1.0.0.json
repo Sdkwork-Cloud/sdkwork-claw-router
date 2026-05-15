@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-jobs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_jobs",
+  "skill": {
+    "id": 33303,
+    "skillKey": "clawhub-linkedin-jobs",
+    "name": "LinkedIn Jobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-jobs",
+    "url": "https://clawhub.ai/skills/linkedin-jobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-jobs-0f661c5b11ae9368.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and monitor LinkedIn job listings with city-based filters, hourly cron support, and smart deduplication. Supports 100+ global tech hubs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yashsuman15",
+      "userId": "s176fp2ttfbmh884fyqvpw095n84ctvq",
+      "displayName": "yashsuman15",
+      "image": "https://avatars.githubusercontent.com/u/114386148?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775554890631,
+      "changelog": "Initial release of the LinkedIn Jobs skill.\n\n- Search and monitor LinkedIn job listings using city-based filters and precise geo IDs for 100+ global tech hubs.\n- Supports both one-time job searches and scheduled hourly monitoring via cron, with smart deduplication to avoid repeated postings.\n- Flexible filtering options for experience, remote/hybrid, job type, and recent postings.\n- Easy management of search profiles, including adding, enabling/disabling, running, and removing profiles from the command line.\n- Returns clear, detailed JSON job results suitable for notifications or further processing.\n- Fully configurable via a single config file, including the option to add custom cities and notification preferences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75421efe6294ce5c3db063ff358cd9d7bc023683530d39972f7a34d0f9768bad"
+}

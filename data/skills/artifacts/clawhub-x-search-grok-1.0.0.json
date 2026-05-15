@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-search-grok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_search_grok",
+  "skill": {
+    "id": 42475,
+    "skillKey": "clawhub-x-search-grok",
+    "name": "X Search (Grok API)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-search-grok",
+    "url": "https://clawhub.ai/skills/x-search-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-search-grok-3f4b13ac7a1002b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search X (Twitter) for account posts, trending topics, or topic discussions using Grok API. Outputs Obsidian-ready Markdown."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyue55",
+      "userId": "s17ft05r616gva9rbj6fjp8mq983hhq8",
+      "displayName": "wangyue55",
+      "image": "https://avatars.githubusercontent.com/u/6974906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774797288625,
+      "changelog": "Search X accounts, trends, and topics via xAI Grok API. Outputs Obsidian-ready Markdown with translation, summary, and keywords.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cef1f82a14c74aa6ca7fddb20be1f9bfc5b43bb8443e82569db563fc18d60e70"
+}

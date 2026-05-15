@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dataview@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataview",
+  "skill": {
+    "id": 23611,
+    "skillKey": "clawhub-dataview",
+    "name": "Dataview"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataview",
+    "url": "https://clawhub.ai/skills/dataview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataview-c0b4f94d78c3799b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explore CSV and JSON files with quick queries, filters, and aggregation. Use when inspecting data, running queries, filtering rows, aggregating."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain-lab",
+      "userId": "s174pq5f3gzez3838vt2642fmx848f1d",
+      "displayName": "bytesagain-lab",
+      "image": "https://avatars.githubusercontent.com/u/271735676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773808182145,
+      "changelog": "Domain-specific upgrade",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a32311496eff0b445fc85f107077e58dc00fddc59315667f01d36e0a30bbec19"
+}

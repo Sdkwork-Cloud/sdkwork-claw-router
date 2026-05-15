@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43189,
+  "uuid": "skill-clawhub-x-post-fetcher",
+  "skillKey": "clawhub-x-post-fetcher",
+  "name": "X Post Fetcher",
+  "summary": "Automates browser to fetch and summarize publicly visible tweets from a specified X (Twitter) user into a Markdown report.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_post_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "寒武纪智能Cambrian Intelligence",
+      "features": [
+        "Automates browser to fetch and summarize publicly visible tweets from a specified X (Twitter) u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-post-fetcher@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17725003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-post-fetcher",
+      "url": "https://clawhub.ai/skills/x-post-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-post-fetcher",
+    "url": "https://clawhub.ai/skills/x-post-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-post-fetcher-968a918dad6d419c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-post-fetcher@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-post-fetcher-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d930fbf0fa88305b8eeb563dffba1cd089442ef1c42c07aff263b92574f7835",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:04:28.123Z"
+}

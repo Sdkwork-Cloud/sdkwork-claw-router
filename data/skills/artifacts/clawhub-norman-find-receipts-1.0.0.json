@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/norman-find-receipts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.norman_find_receipts",
+  "skill": {
+    "id": 19473,
+    "skillKey": "clawhub-norman-find-receipts",
+    "name": "Norman: Find Receipts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "norman-find-receipts",
+    "url": "https://clawhub.ai/skills/norman-find-receipts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/norman-find-receipts-8cd50bb8442633bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and attach missing receipts for business transactions. Search Gmail, email, or other sources for invoices and receipts, then upload them to Norman. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanlee000",
+      "userId": "s17cbmkhac7cryh3kwmg7jc0ch83qty9",
+      "displayName": "Stan Kharlap",
+      "image": "https://avatars.githubusercontent.com/u/117379032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771533929176,
+      "changelog": "Initial release of the find-receipts skill:\n\n- Enables searching for and attaching missing receipts to business transactions.\n- Guides users to locate receipts from Gmail, email providers, vendor portals, cloud storage, or photo libraries.\n- Supports uploading, attaching, and verifying receipts for individual or multiple transactions.\n- Includes tips for German compliance (Aufbewahrungspflicht, GoBD, Vorsteuerabzug).\n- Integrates with Norman Finance and provides step-by-step assistance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6417bb94caf1ea6e9992d97ca0c2c099973e7893603f96bc8c202582ee4bd9a7"
+}

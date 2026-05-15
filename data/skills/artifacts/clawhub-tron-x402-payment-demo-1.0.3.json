@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tron-x402-payment-demo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tron_x402_payment_demo",
+  "skill": {
+    "id": 47065,
+    "skillKey": "clawhub-tron-x402-payment-demo",
+    "name": "tron-x402-payment-demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tron-x402-payment-demo",
+    "url": "https://clawhub.ai/skills/tron-x402-payment-demo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tron-x402-payment-demo-009b2b2aaf14f91b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Demo of x402 payment protocol by fetching a protected image. Triggers: '演示x402-payment' or 'demo x402-payment'"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wzc1206",
+      "userId": "publishers:wzc1206",
+      "displayName": "AiBank",
+      "image": "https://avatars.githubusercontent.com/u/116271706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1621,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770392059612,
+      "changelog": "- Skill name updated to x402_payment_demo\n- Added support for Chinese trigger phrase: \"演示x402-payment\"\n- Updated author to opencode\n- Modified resource endpoint to http://x402-tron-demo.sunagent.ai/protected\n- Updated triggers and example usage in documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:51dedd38a97d9166718cdf08c559dc8a99f8eec0f3083939827f6e3cc78538a0"
+}

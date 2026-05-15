@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37518,
+  "uuid": "skill-clawhub-jd-resume-tailor",
+  "skillKey": "clawhub-jd-resume-tailor",
+  "name": "JD Resume Tailor",
+  "summary": "Generate job-specific tailored resumes from a base profile and job description. First collects structured user info (personal details, work history, side pro...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_resume_tailor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "26048608982lp-ai",
+      "features": [
+        "Generate job-specific tailored resumes from a base profile and job description",
+        "First collects structured user info (personal details, work history, side pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jd-resume-tailor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221461112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jd-resume-tailor",
+      "url": "https://clawhub.ai/skills/jd-resume-tailor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-resume-tailor",
+    "url": "https://clawhub.ai/skills/jd-resume-tailor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-resume-tailor-62c700e89a4b8005.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jd-resume-tailor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jd-resume-tailor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:151c84e4ae1cd059fb4ee32894bcf731b734427ea59211a026fe2a0c1b5ef196",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T15:14:06.267Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50062,
+  "uuid": "skill-clawhub-wol-catering-api",
+  "skillKey": "clawhub-wol-catering-api",
+  "name": "WOL catering api",
+  "summary": "Access the Wake-up On LAN catering API to list menu items, place orders by product ID and quantity, and view order history with account balance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wol_catering_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Martin Schimmel",
+      "features": [
+        "Access the Wake-up On LAN catering API to list menu items, place orders by product ID and quant."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wol-catering-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6135389?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wol-catering-api",
+      "url": "https://clawhub.ai/skills/wol-catering-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wol-catering-api",
+    "url": "https://clawhub.ai/skills/wol-catering-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wol-catering-api-3374cf6004c0bd7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wol-catering-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wol-catering-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cb8dc80638ea4e36b15c18c42727207af4fb31ee63d8fcf931066352815c9f8",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T20:25:13.586Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38493,
+  "uuid": "skill-clawhub-medici-investments",
+  "skillKey": "clawhub-medici-investments",
+  "name": "Medici Investments Pack",
+  "summary": "Position management and market monitoring tools for active traders. Includes risk-based position sizing (fixed fractional, ATR, Kelly Criterion) and a quick...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medici_investments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Position management and market monitoring tools for active traders",
+        "Includes risk-based position sizing (fixed fractional, ATR, Kelly Criterion) and a quick..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medici-investments@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medici-investments",
+      "url": "https://clawhub.ai/skills/medici-investments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medici-investments",
+    "url": "https://clawhub.ai/skills/medici-investments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medici-investments-b1090e897a926ee3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medici-investments@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medici-investments-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46ba2ecf0001ceff767844203143fd115b1192952d4c193d49b536423a8fbcc8",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:41:56.090Z"
+}

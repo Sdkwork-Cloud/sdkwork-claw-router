@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rag-eval@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_eval",
+  "skill": {
+    "id": 15333,
+    "skillKey": "clawhub-rag-eval",
+    "name": "rag-eval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-eval",
+    "url": "https://clawhub.ai/skills/rag-eval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-eval-2a86557f2f8f06de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate your RAG pipeline quality using Ragas metrics (faithfulness, answer relevancy, context precision)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathanjing",
+      "userId": "s17aah0h06a3741dypyhe3a2xd85pgsx",
+      "displayName": "Jonathan Jing",
+      "image": "https://avatars.githubusercontent.com/u/17068507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 842,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772585554431,
+      "changelog": "Fixed versioning regression and added simplified installation instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4fe3e8049c6f369db9eea39bd922b29c5c3c06b20f65b67c50d85abad74a1877"
+}

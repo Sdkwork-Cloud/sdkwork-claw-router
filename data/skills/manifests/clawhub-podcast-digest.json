@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70422,
+  "uuid": "skill-clawhub-podcast-digest",
+  "skillKey": "clawhub-podcast-digest",
+  "name": "podcast-digest",
+  "summary": "深度解析播客音频内容，生成结构化纪要与可视化学习材料。适用于：用户上传播客音频文件、提供播客文字稿、输入播客标题或链接、要求\"帮我整理播客内容\"、\"分析这期播客\"、\"做播客笔记\"、\"播客内容总结\"、\"多期播客对比研究\"、\"播客知识图谱\"等场景。 当用户提到 podcast（播客）、音频内容学习、节目笔记、嘉宾观点...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BlackGoldenTicked",
+      "features": [
+        "深度解析播客音频内容，生成结构化纪要与可视化学习材料。适用于：用户上传播客音频文件、提供播客文字稿、输入播客标题或链接、要求\"帮我整理播客内容\"、\"分析这期播客\"、\"做播客笔记\"、\"播客内容."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1313145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-digest",
+      "url": "https://clawhub.ai/skills/podcast-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-digest",
+    "url": "https://clawhub.ai/skills/podcast-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-digest-d08cfca4921f9ac2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e3d9778a5ec0fec9530e86a5e10308906dd06f512740abebd91517575bcbf13",
+      "artifactSizeBytes": 2802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T03:18:05.251Z"
+}

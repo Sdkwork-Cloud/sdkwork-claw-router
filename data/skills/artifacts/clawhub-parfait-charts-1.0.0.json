@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parfait-charts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parfait_charts",
+  "skill": {
+    "id": 34762,
+    "skillKey": "clawhub-parfait-charts",
+    "name": "Parfait Charts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parfait-charts",
+    "url": "https://clawhub.ai/skills/parfait-charts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parfait-charts-92c172fa7d5ff29f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stacked bar charts showing composition and performance. Use for analyzing structure and trends."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linuszz",
+      "userId": "s17e0e5q8g0sjf5mpwdq1sy65183gmj7",
+      "displayName": "linuszz",
+      "image": "https://avatars.githubusercontent.com/u/46770204?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774184736654,
+      "changelog": "Initial release of parfait-charts skill:\n\n- Provides stacked bar chart (parfait chart) visualizations for composition and performance analysis.\n- Outlines standard chart structure and sample output format.\n- Includes clear use cases like revenue mix, cost structure, and portfolio breakdown.\n- Supplies step-by-step instructions and tips for effective analysis.\n- Delivers template for presenting trends, key insights, and strategic implications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f2aefae9fe6c23d38f7117524dc857205d5ef71460d7cb1021917922319312b"
+}

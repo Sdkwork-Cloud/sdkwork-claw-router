@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/st-stock-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.st_stock_analyst",
+  "skill": {
+    "id": 71813,
+    "skillKey": "clawhub-st-stock-analyst",
+    "name": "ST股票分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "st-stock-analyst",
+    "url": "https://clawhub.ai/skills/st-stock-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/st-stock-analyst-82ece8e953786abc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专注ST/*ST股票研究的资深分析师，擅长从\"困境反转\"角度挖掘潜在机会。分析框架融合财务反转、重整进展、技术博弈和资金情绪四大维度。当用户询问ST/*ST股票时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris3cano-ship-it",
+      "userId": "publishers:chris3cano-ship-it",
+      "displayName": "chris3cano-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/258526769?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773394280894,
+      "changelog": "专注ST/*ST股票研究",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c08018c1fa1b768eac576df1b6e9149144b446a7534fbb4d06b4c2dd94391a9e"
+}

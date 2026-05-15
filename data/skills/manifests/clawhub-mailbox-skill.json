@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28426,
+  "uuid": "skill-clawhub-mailbox-skill",
+  "skillKey": "clawhub-mailbox-skill",
+  "name": "mailbox-skill",
+  "summary": "Use when working through the workspace mailbox protocol under .mailbox, including reading inbox items, composing replies in a private scratch area, and deliv...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailbox_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LEO",
+      "features": [
+        "Use when working through the workspace mailbox protocol under .mailbox, including reading inbox."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailbox-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3523570?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailbox-skill",
+      "url": "https://clawhub.ai/skills/mailbox-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailbox-skill",
+    "url": "https://clawhub.ai/skills/mailbox-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailbox-skill-75d8524e63ed3c29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailbox-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailbox-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896ec1360be7b15a8a0859aab471dcbf426f8e107ebd7b4e340274e0d8f3f148",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:55:52.255Z"
+}

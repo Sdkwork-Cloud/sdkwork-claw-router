@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/id-cv-resume-creator@5.2.4",
+  "version": "5.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.id_cv_resume_creator",
+  "skill": {
+    "id": 10130,
+    "skillKey": "clawhub-id-cv-resume-creator",
+    "name": "Digital Identity, CV & Resume Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "id-cv-resume-creator",
+    "url": "https://clawhub.ai/skills/id-cv-resume-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/id-cv-resume-creator-b7b8efa6d13c33e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a free digital identity, professional resume and CV — from classic PDF and HTML layouts to 3D worlds and playable games. Permanent public URL with own..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rotorstar",
+      "userId": "s175k6b14b83rhx24459jw2fth84tx2j",
+      "displayName": "Rotorstar",
+      "image": "https://avatars.githubusercontent.com/u/35960900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3043,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "5.2.4",
+      "createdAt": 1772452639580,
+      "changelog": "- Updated HITL spec version from 0.6 to 0.7 for improved human-in-the-loop flow.\n- Terminology clarified: \"requestor\" consistently replaces \"user\" or \"human\" as the primary party interacting with the process.\n- Communication instructions and user-facing messages now refer to \"requestor\" instead of \"user\".\n- No functional or API changes detected.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:972c49bea4e155d3104a6c21e08012b5fdea659646cc0e9da1193fb2b487e516"
+}

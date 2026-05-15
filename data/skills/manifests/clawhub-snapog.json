@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37790,
+  "uuid": "skill-clawhub-snapog",
+  "skillKey": "clawhub-snapog",
+  "name": "SnapOG",
+  "summary": "Generate social images and OG cards from professional templates via the SnapOG API. One API call = one pixel-perfect PNG.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snapog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "taylor",
+      "features": [
+        "Generate social images and OG cards from professional templates via the SnapOG API",
+        "One API call = one pixel-perfect PNG."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/snapog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95944429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "snapog",
+      "url": "https://clawhub.ai/skills/snapog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snapog",
+    "url": "https://clawhub.ai/skills/snapog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snapog-8ddaacce9b2157bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/snapog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-snapog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d05746d7e8dc24da4709637528274dfa0ee7724bc5ea4cb22b22369392eb9bcd",
+      "artifactSizeBytes": 1772
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T15:51:15.250Z"
+}

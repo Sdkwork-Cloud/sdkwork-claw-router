@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17398,
+  "uuid": "skill-clawhub-doc-process",
+  "skillKey": "clawhub-doc-process",
+  "name": "Doc Process",
+  "summary": "Document intelligence: categorize, autofill forms, analyze contracts, scan receipts/invoices, analyze bank statements, parse resumes/CVs, scan IDs/passports...",
+  "version": "4.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_process",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "piyush-zinc",
+      "features": [
+        "Document intelligence: categorize, autofill forms, analyze contracts, scan receipts/invoices, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-process@4.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172476424?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-process",
+      "url": "https://clawhub.ai/skills/doc-process"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-process",
+    "url": "https://clawhub.ai/skills/doc-process",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-process-599f391902d36afa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-process@4.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-process-4.1.1.json",
+      "version": "4.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:576045fdc2dd88007dc84c19bf22a0a3de0f68185c3d0dba0fbdc43081219fac",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T05:16:20.502Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63855,
+  "uuid": "skill-clawhub-3d-pet-checkout-test",
+  "skillKey": "clawhub-3d-pet-checkout-test",
+  "name": "3D Pet Checkout Test",
+  "summary": "执行 3D Pet 宠物下单测试完整流程，包含登录、选择产品、上传图片、等待生成、验证结账。用于自动化测试 joyarti 3D 宠物产品购买流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3d_pet_checkout_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jinxuanzhu",
+      "features": [
+        "执行 3D Pet 宠物下单测试完整流程，包含登录、选择产品、上传图片、等待生成、验证结账。用于自动化测试 joyarti 3D 宠物产品购买流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/3d-pet-checkout-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39006238?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "3d-pet-checkout-test",
+      "url": "https://clawhub.ai/skills/3d-pet-checkout-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3d-pet-checkout-test",
+    "url": "https://clawhub.ai/skills/3d-pet-checkout-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3d-pet-checkout-test-89a41820e66d3174.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/3d-pet-checkout-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-3d-pet-checkout-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b93f2cb3ce3eba2d5173c37da175949907dceb4314b715617854c9c102544b95",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:54:10.361Z"
+}

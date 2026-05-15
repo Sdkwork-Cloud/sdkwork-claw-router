@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-trading-backtrader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_trading_backtrader",
+  "skill": {
+    "id": 13872,
+    "skillKey": "clawhub-quant-trading-backtrader",
+    "name": "quant-trading-backtrader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-trading-backtrader",
+    "url": "https://clawhub.ai/skills/quant-trading-backtrader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-trading-backtrader-050cdac1a971023b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, backtest, and optimize quantitative trading strategies in Python using Backtrader with support for indicators, risk management, and reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gmsx000-cloud",
+      "userId": "publishers:gmsx000-cloud",
+      "displayName": "gmsx000-cloud",
+      "image": "https://avatars.githubusercontent.com/u/260407988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1164,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772380201044,
+      "changelog": "Initial release of quant-trading-backtrader.\n\n- Build and backtest quantitative trading strategies using the Backtrader framework in Python.\n- Includes structured examples for indicator-based strategies, risk management (stop-loss, take-profit, position sizing), and reporting (trade logs, PNL).\n- Supports flexible data input (CSV, pandas DataFrame).\n- Provides template code and best practices for robust, research-driven strategy development.\n- Example strategies included, such as a basic SMA crossover with stop-loss.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:09257c8766a710300f7e18d99c9f736ca698b229699f3c86792161d7f285c10b"
+}

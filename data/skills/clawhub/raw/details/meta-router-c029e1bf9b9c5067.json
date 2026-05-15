@@ -1,0 +1,50 @@
+{
+  "skill": {
+    "slug": "meta-router",
+    "displayName": "Meta-Router",
+    "summary": "Automatically indexes and routes user intents to installed OpenClaw skills by scanning SKILL.md files and dynamically injecting relevant skill contexts.",
+    "tags": {
+      "latest": "1.0.1",
+      "Automation": "1.0.0",
+      "Efficiency": "1.0.0",
+      "Infrastructure": "1.0.0",
+      "Performance": "1.0.0",
+      "Routing": "1.0.0",
+      "Utility": "1.0.0"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 400,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1773651289195,
+    "updatedAt": 1778310055973
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774003659089,
+    "changelog": "- Hardened core logic: Router now blocks all task processing until context-skill alignment is confirmed.\n- State integrity improved: Enforced atomic rescan on skill changes and compressed descriptions to prevent token bloat.\n- Routing updated: Explicit commands and shortcut IDs bypass analysis. No more than two skills can be mounted at once unless Hive-Commander is used.\n- Mounting made volatile: All metadata is pruned immediately at the end of a workflow.\n- Operational efficiency: Enforced sub-200ms scanning, MRU eviction if the index exceeds 4KB, and continued silent background tasks except for I/O errors.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lawliet-ai",
+    "userId": "s172j47366kee2r44s4x7w5f5h83v6et",
+    "displayName": "Lawliet-ai",
+    "image": "https://avatars.githubusercontent.com/u/261297622?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310055973
+  }
+}

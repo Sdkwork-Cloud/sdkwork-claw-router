@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63138,
+  "uuid": "skill-clawhub-ai-hotspot-daily",
+  "skillKey": "clawhub-ai-hotspot-daily",
+  "name": "Hotspot Aggregator",
+  "summary": "全网热点聚合 - 微博/知乎/抖音/新闻热榜自动抓取，生成 AI 友好格式的每日热点日报",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_hotspot_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linzmin",
+      "features": [
+        "微博/知乎/抖音/新闻热榜自动抓取，生成 AI 友好格式的每日热点日报"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-hotspot-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14884257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-hotspot-daily",
+      "url": "https://clawhub.ai/skills/ai-hotspot-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-hotspot-daily",
+    "url": "https://clawhub.ai/skills/ai-hotspot-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-hotspot-daily-91c395935c89a8fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-hotspot-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-hotspot-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10d5f6607f42f61d97c804fc6e90593b8988feadd58412852761b0538ecfbda9",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:28:55.862Z"
+}

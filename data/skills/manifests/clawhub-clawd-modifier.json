@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10598,
+  "uuid": "skill-clawhub-clawd-modifier",
+  "skillKey": "clawhub-clawd-modifier",
+  "name": "Clawd Modifier",
+  "summary": "Modify Clawd, the Claude Code mascot. Use this skill when users want to customize Clawd's appearance in their Claude Code CLI, including changing colors (blue Clawd, green Clawd, holiday themes), adding features (arms, hats, accessories),.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_modifier",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "masonc15",
+      "features": [
+        "Modify Clawd, the Claude Code mascot",
+        "Use this skill when users want to customize Clawd's appearance in their Claude Code CLI, includ.",
+        "Triggers include \"change Clawd color\", \"give Clawd arms\", \"customize the mascot\", \"modify Clawd."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawd-modifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7069521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawd-modifier",
+      "url": "https://clawhub.ai/skills/clawd-modifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-modifier",
+    "url": "https://clawhub.ai/skills/clawd-modifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-modifier-e59aa0e278919316.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawd-modifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawd-modifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3111ef4db21b8d1f316c55b2e20c5c9600c3f18fff782c311e546e031983a399",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-09T19:42:26.744Z"
+}

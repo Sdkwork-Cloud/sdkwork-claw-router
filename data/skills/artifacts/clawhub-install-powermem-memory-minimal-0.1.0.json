@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/install-powermem-memory-minimal@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.install_powermem_memory_minimal",
+  "skill": {
+    "id": 59590,
+    "skillKey": "clawhub-install-powermem-memory-minimal",
+    "name": "Install Powermem Memory Minimal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "install-powermem-memory-minimal",
+    "url": "https://clawhub.ai/skills/install-powermem-memory-minimal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/install-powermem-memory-minimal-78da41e7b82a51cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "memory-powermem 最小安装步骤（OpenClaw + PowerMem 长期记忆），面向个人用户；无需单独配置 powermem.env，复用 OpenClaw 里已配好的对话模型。本 skill 可独立分发，不依赖其他安装类 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teingi",
+      "userId": "s178ft0b7rpjjaf7eayxm2d8j983g26g",
+      "displayName": "powermem",
+      "image": "https://avatars.githubusercontent.com/u/35712518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774319295196,
+      "changelog": "- Initial release: provides step-by-step, minimal installation guide for PowerMem memory with OpenClaw for personal users.\n- No need for separate powermem.env configuration — automatically reuses the conversation model and keys configured in OpenClaw.\n- Supports quick installation via a single command/script for Mac and Linux.\n- Includes troubleshooting guidance for common setup problems.\n- Designed for independent distribution; does not depend on other installation skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8004add467832bfcb8ff8e598f66c0d7893000c7200a003ec5eb77b39155eef4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35843,
+  "uuid": "skill-clawhub-plausible-analytics-agent",
+  "skillKey": "clawhub-plausible-analytics-agent",
+  "name": "Plausible Analytics Agent",
+  "summary": "Track pageviews and custom events via the Plausible Events API, and query stats (top pages, top sources, countries, realtime visitors). Use when you need to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plausible_analytics_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KRYZL19",
+      "features": [
+        "Track pageviews and custom events via the Plausible Events API, and query stats (top pages, top.",
+        "Use when you need to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plausible-analytics-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220403544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plausible-analytics-agent",
+      "url": "https://clawhub.ai/skills/plausible-analytics-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plausible-analytics-agent",
+    "url": "https://clawhub.ai/skills/plausible-analytics-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plausible-analytics-agent-c4972436fb3ddba6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plausible-analytics-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plausible-analytics-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc929481c2000cffc7ec0ff405dfe67c10f5edcbba6db131d098659ebb03eb65",
+      "artifactSizeBytes": 2364
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:33:57.187Z"
+}

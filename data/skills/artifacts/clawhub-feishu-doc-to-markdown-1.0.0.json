@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-doc-to-markdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_doc_to_markdown",
+  "skill": {
+    "id": 70193,
+    "skillKey": "clawhub-feishu-doc-to-markdown",
+    "name": "飞书文档智能转换Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-doc-to-markdown",
+    "url": "https://clawhub.ai/skills/feishu-doc-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-doc-to-markdown-400d3823943940f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能转换飞书文档为高可用Markdown格式，自动处理私有资源、无效占位符、冗余引用，生成多版本满足不同场景需求"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whisperbot",
+      "userId": "s17fa9zrgxbra0sgn5mjb4xgys83he1s",
+      "displayName": "Vash",
+      "image": "https://avatars.githubusercontent.com/u/8397522?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 61,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778236086298,
+      "changelog": "Initial release of feishu-doc-to-markdown.\n\n- Automatically converts Feishu documents to Markdown with high information density.\n- Supports 3 output versions: raw backup, enhanced text, and optimized (default).\n- Intelligently processes private assets, invalid placeholders, redundant references, and automates cleanup.\n- Extracts and structures non-text content (images, charts, whiteboards, tables).\n- Automatically categorizes, archives by date/project, and associates core points with project/domain labels for easy knowledge management.\n- Supports integration with a knowledge base (`LEARNINGS.md`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8378ed222cc049010432ae00992e233b125e7c44cf775245621d46e2e3dd3a0"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42819,
+  "uuid": "skill-clawhub-finskills-us-stock-analyzer",
+  "skillKey": "clawhub-finskills-us-stock-analyzer",
+  "name": "us-stock-analyzer",
+  "summary": "Perform institutional-grade analysis of any US-listed stock using real-time and fundamental data from the Finskills API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finskills_us_stock_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "finskills",
+      "features": [
+        "Perform institutional-grade analysis of any US-listed stock using real-time and fundamental dat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finskills-us-stock-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32382589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finskills-us-stock-analyzer",
+      "url": "https://clawhub.ai/skills/finskills-us-stock-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finskills-us-stock-analyzer",
+    "url": "https://clawhub.ai/skills/finskills-us-stock-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finskills-us-stock-analyzer-a43d796df1f71259.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finskills-us-stock-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-finskills-us-stock-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8834029cc44b141d1434668a29abbc148173fd5ae2ffd5a5fab19e5419482e22",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T14:42:49.871Z"
+}

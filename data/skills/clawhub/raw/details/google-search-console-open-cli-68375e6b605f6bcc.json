@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "google-search-console-open-cli",
+    "displayName": "Google Search Console CLI",
+    "summary": "Google Search Console data analysis and site management via google-search-console-cli. Use when the user wants to check search performance, analyze queries,...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775552161864,
+    "updatedAt": 1777527275094
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775552161864,
+    "changelog": "**Major breaking change: CLI has been reworked for a new interface, authentication method, output, and workflow.**\n\n- Switches from `gsc` to `google-search-console-cli` command, with a new command structure and argument format.\n- Changes authentication: now uses Google service account credentials (preferred via env var, supports ADC and per-command flag).\n- Updates all subcommands (`query`, `sites`, `site`, `sitemaps`, `inspect`, batching, etc.) and parameters to the new CLI interface.\n- Simplifies output: JSON by default, with optional compact NDJSON for batch/pipe use.\n- Adds auto-pagination support for large query exports using the `--all` flag.\n- Introduces richer documentation for filters (dimension filter groups), country/device codes, and practical CLI examples.\n\nThis release is **not backward-compatible** with the previous version (`gsc`). Please follow the new setup, authentication, and usage guidelines.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "bin-huang",
+    "userId": "s1739hnztbtdx615kbwmdfzz6x84d57g",
+    "displayName": "Bin-Huang",
+    "image": "https://avatars.githubusercontent.com/u/20723142?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527275094
+  }
+}

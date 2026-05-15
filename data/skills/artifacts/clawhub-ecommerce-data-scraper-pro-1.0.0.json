@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-data-scraper-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_data_scraper_pro",
+  "skill": {
+    "id": 60401,
+    "skillKey": "clawhub-ecommerce-data-scraper-pro",
+    "name": "E-commerce Data Scraper Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-data-scraper-pro",
+    "url": "https://clawhub.ai/skills/ecommerce-data-scraper-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-data-scraper-pro-331a3558ddbbe571.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能数据抓取工具 - 从网页/API 提取结构化数据，支持批量处理"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chungvic",
+      "userId": "s17c74402z77nc2ek4rf3ybne183pt97",
+      "displayName": "chungvic",
+      "image": "https://avatars.githubusercontent.com/u/264721513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775124680972,
+      "changelog": "Initial release of ecommerce-data-scraper-pro.\n\n- 提供网页/API 数据抓取，自动识别并结构化输出 JSON、CSV、Excel\n- 支持批量处理、多页面抓取和请求延迟设置\n- 集成反爬虫机制（请求频率控制、代理支持）\n- 可自定义抓取字段及数据类型（产品、文章、招聘、房产等）\n- 提供 API 抓取与数据清洗功能\n- 多输出格式和基础定时任务支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90a7378df8ed72785410dca4962cd99a2800054204a8fa89e4576b0575794ae2"
+}

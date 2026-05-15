@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66820,
+  "uuid": "skill-clawhub-ab-test-analyzer",
+  "skillKey": "clawhub-ab-test-analyzer",
+  "name": "Ab Test Analyzer",
+  "summary": "自动分析A/B测试数据，计算统计显著性，生成可视化报告并提供优化建议，支持多变量测试。",
+  "version": "1.0.52",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_test_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "自动分析A/B测试数据，计算统计显著性，生成可视化报告并提供优化建议，支持多变量测试。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ab-test-analyzer@1.0.52",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ab-test-analyzer",
+      "url": "https://clawhub.ai/skills/ab-test-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-test-analyzer",
+    "url": "https://clawhub.ai/skills/ab-test-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-test-analyzer-caf8e1c5c3a7e126.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ab-test-analyzer@1.0.52",
+      "artifactUrl": "data/skills/artifacts/clawhub-ab-test-analyzer-1.0.52.json",
+      "version": "1.0.52",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12c90bf49ad4646a9d31265ec1d3fb4b8e19ed30d394b9550747fd79422eab8c",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:49:09.828Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22634,
+  "uuid": "skill-clawhub-centra",
+  "skillKey": "clawhub-centra",
+  "name": "Centra",
+  "summary": "Centra integration. Manage Organizations, Projects, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Centra data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.centra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Centra integration",
+        "Manage Organizations, Projects, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Centra data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/centra@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "centra",
+      "url": "https://clawhub.ai/skills/centra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "centra",
+    "url": "https://clawhub.ai/skills/centra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/centra-f07362bc4303dcb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/centra@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-centra-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:842ad8fe73ae4194b9fc536e976eb52920c30e51d6c7633ea120cf8204dd2b43",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:28:18.681Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23195,
+  "uuid": "skill-clawhub-daily",
+  "skillKey": "clawhub-daily",
+  "name": "Daily",
+  "summary": "Daily integration. Manage Persons, Organizations, Deals, Leads, Projects, Activities and more. Use when the user wants to interact with Daily data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Daily integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Activities and more",
+        "Use when the user wants to interact with Daily data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily",
+      "url": "https://clawhub.ai/skills/daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily",
+    "url": "https://clawhub.ai/skills/daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-6f31304cdfd0a3a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32d0f1a05dfbe77f199f108d253d2a848983e8246bfae4e51aaddffb46e9f474",
+      "artifactSizeBytes": 1815
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:51:48.668Z"
+}

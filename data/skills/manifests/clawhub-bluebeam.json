@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24496,
+  "uuid": "skill-clawhub-bluebeam",
+  "skillKey": "clawhub-bluebeam",
+  "name": "Bluebeam",
+  "summary": "Bluebeam integration. Manage Persons, Organizations, Deals, Projects, Activities, Notes and more. Use when the user wants to interact with Bluebeam data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluebeam",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Bluebeam integration",
+        "Manage Persons, Organizations, Deals, Projects, Activities, Notes and more",
+        "Use when the user wants to interact with Bluebeam data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bluebeam@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bluebeam",
+      "url": "https://clawhub.ai/skills/bluebeam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluebeam",
+    "url": "https://clawhub.ai/skills/bluebeam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluebeam-8ae56be495a96f1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bluebeam@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bluebeam-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41d7e9adec7d4d98a71eb39710c24d380930d7d33f2086cc3e4f3f2e09aed64a",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:14:30.156Z"
+}

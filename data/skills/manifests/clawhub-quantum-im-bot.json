@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70238,
+  "uuid": "skill-clawhub-quantum-im-bot",
+  "skillKey": "clawhub-quantum-im-bot",
+  "name": "量子密信对话机器人接入openclaw",
+  "summary": "量子密信即时通讯渠道插件。将 OpenClaw 接入量子密信平台，实现 AI 智能回复、多账号管理、安全配对等功能。支持文本、图片、文件、图文消息，群聊和私聊。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantum_im_bot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mildniu",
+      "features": [
+        "量子密信即时通讯渠道插件。将 OpenClaw 接入量子密信平台，实现 AI 智能回复、多账号管理、安全配对等功能。支持文本、图片、文件、图文消息，群聊和私聊。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quantum-im-bot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78668933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quantum-im-bot",
+      "url": "https://clawhub.ai/skills/quantum-im-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantum-im-bot",
+    "url": "https://clawhub.ai/skills/quantum-im-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantum-im-bot-f29de327bbad205c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quantum-im-bot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-quantum-im-bot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62b9f544ffe0f1592b1c97719907dae30563d9a21f53217326f374745925741e",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T00:11:11.173Z"
+}

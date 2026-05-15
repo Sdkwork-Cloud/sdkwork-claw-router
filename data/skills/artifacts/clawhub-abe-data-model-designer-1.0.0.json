@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-data-model-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_data_model_designer",
+  "skill": {
+    "id": 41068,
+    "skillKey": "clawhub-abe-data-model-designer",
+    "name": "data-model-designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-data-model-designer",
+    "url": "https://clawhub.ai/skills/abe-data-model-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-data-model-designer-e1211b2c8fa7278c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design data models for construction projects. Create entity-relationship diagrams, define schemas, and generate database structures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvisdunlop",
+      "userId": "s17fq465rgqaeb4mjcdf3p9dkh84s6zy",
+      "displayName": "AlvisDunlop",
+      "image": "https://avatars.githubusercontent.com/u/255881479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776917792462,
+      "changelog": "Initial release of data-model-designer\n\n- Design data models for construction projects, addressing issues with fragmented and inconsistent data.\n- Define entities, relationships, and schemas for effective data management.\n- Generate SQL schemas, JSON Schemas, and Mermaid ER diagrams directly from your definitions.\n- Supports entity validation and automated relationship mapping.\n- Requires Python 3 and SKILLBOSS_API_KEY environment variable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b84803a08320e4d9f48074ac97da5be6143669a53cf84a0d8d3e5ae7d5a840e6"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34583,
+  "uuid": "skill-clawhub-phi-readiness-stages",
+  "skillKey": "clawhub-phi-readiness-stages",
+  "name": "PHI Readiness Stages",
+  "summary": "Assess the current PHI Readiness Stage (PRS) of a workload, repository, system, or environment; determine HIPAA applicability and role; identify evidence gap...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phi_readiness_stages",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick Ren",
+      "features": [
+        "Assess the current PHI Readiness Stage (PRS) of a workload, repository, system, or environment",
+        "determine HIPAA applicability and role",
+        "identify evidence gap..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phi-readiness-stages@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6598524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phi-readiness-stages",
+      "url": "https://clawhub.ai/skills/phi-readiness-stages"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phi-readiness-stages",
+    "url": "https://clawhub.ai/skills/phi-readiness-stages",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phi-readiness-stages-e84c8dfcf7e2e9b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phi-readiness-stages@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-phi-readiness-stages-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3eb0706faaf0857998a7fc3763c6eb78ce991c95fdeab440cc2df0a413f78d7",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T01:16:29.055Z"
+}

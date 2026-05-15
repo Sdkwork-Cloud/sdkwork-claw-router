@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48455,
+  "uuid": "skill-clawhub-notion-publisher",
+  "skillKey": "clawhub-notion-publisher",
+  "name": "Notion Publisher",
+  "summary": "Publish articles to Notion using cached local copies of the target database's default Notion template when available. Use this skill when the user types /not...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miraclemin",
+      "features": [
+        "Publish articles to Notion using cached local copies of the target database's default Notion te.",
+        "Use this skill when the user types /not..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21076746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-publisher",
+      "url": "https://clawhub.ai/skills/notion-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-publisher",
+    "url": "https://clawhub.ai/skills/notion-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-publisher-92ebe9789780ac33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b70d4d1eb72aa6fbf867c736616cbe548fefc6301e9ea4e2f4d376935dad419",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:10:47.265Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-weekly-briefing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_weekly_briefing",
+  "skill": {
+    "id": 23442,
+    "skillKey": "clawhub-tech-weekly-briefing",
+    "name": "Tech Weekly Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-weekly-briefing",
+    "url": "https://clawhub.ai/skills/tech-weekly-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-weekly-briefing-d8fdbe4d8767936a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate weekly tech news briefings from 6 major English tech media sources (TechCrunch, The Verge, Wired, Ars Technica, MIT Technology Review, The Informati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangzhe1991",
+      "userId": "s1708qg6h23dd2tajyc1egf2m185vvej",
+      "displayName": "Zhe (Phil) Yang",
+      "image": "https://avatars.githubusercontent.com/u/860739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 432,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773072463750,
+      "changelog": "Initial release: Multi-source tech news aggregation with daily RSS fetching, intelligent deduplication, hot news detection (2+ media coverage), low-quality content filtering, and interactive company navigation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29d0dd6272c900b50d76362d3b2ff1638e1ec6897f3942fb4e95135977baa06c"
+}

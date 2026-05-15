@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/json-canvas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_canvas",
+  "skill": {
+    "id": 13730,
+    "skillKey": "clawhub-json-canvas",
+    "name": "Json Canvas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-canvas",
+    "url": "https://clawhub.ai/skills/json-canvas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-canvas-9579cdcbe099d312.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and edit JSON Canvas files (.canvas) with nodes, edges, groups, and connections. Use when working with .canvas files, creating visual canvases, mind m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sadlay",
+      "userId": "s17a5cjw7pmtkezhfces5wy77h83natv",
+      "displayName": "Li Yaping",
+      "image": "https://avatars.githubusercontent.com/u/38170721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 943,
+      "installsAllTime": 43,
+      "installsCurrent": 43,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772649727782,
+      "changelog": "- Initial release of the json-canvas skill.\n- Enables creation and editing of JSON Canvas (.canvas) files with support for nodes, edges, groups, and connections.\n- Includes detailed workflows for creating canvases, adding nodes, connecting nodes, and editing structures.\n- Supports all node types: text, file, link, and group, following JSON Canvas Spec 1.0.\n- Provides comprehensive validation guidelines to ensure file integrity.\n- Offers layout suggestions, example structures, and references for further learning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:854d721fd68264ed11adc258264667091ee28f0445c233dbbee39ae645e70a32"
+}

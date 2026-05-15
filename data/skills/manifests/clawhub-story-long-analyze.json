@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68593,
+  "uuid": "skill-clawhub-story-long-analyze",
+  "skillKey": "clawhub-story-long-analyze",
+  "name": "Story Long Analyze",
+  "summary": "长篇网文拆文。深度拆解爆款长篇小说的黄金三章、人设架构、爽点设计、节奏控制。 支持两种模式： - 快速拆解：分析黄金三章和整体结构（默认） - 深度拆解：逐章拆解整本小说，输出结构化文件到指定目录 触发方式：/story-long-analyze、/长篇拆文、「帮我拆这本书」「分析黄金三章」 深度模式触发：「深度...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_long_analyze",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "worldwonderer",
+      "features": [
+        "长篇网文拆文。深度拆解爆款长篇小说的黄金三章、人设架构、爽点设计、节奏控制。 支持两种模式：",
+        "快速拆解：分析黄金三章和整体结构（默认）",
+        "深度拆解：逐章拆解整本小说，输出结构化文件到指定目录 触发方式：/story-long-analyze、/长篇拆文、「帮我拆这本书」「分析黄金三章」 深度模式触发：「深度..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-long-analyze@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49583093?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-long-analyze",
+      "url": "https://clawhub.ai/skills/story-long-analyze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-long-analyze",
+    "url": "https://clawhub.ai/skills/story-long-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-long-analyze-3db4ab9d8ffa79c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-long-analyze@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-long-analyze-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c84245e737777c373f30d9d137d62a142570adf7835ea81e92a159c4378d3d55",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:09:05.174Z"
+}

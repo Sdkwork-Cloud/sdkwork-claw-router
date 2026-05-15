@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40671,
+  "uuid": "skill-clawhub-copilot-pet",
+  "skillKey": "clawhub-copilot-pet",
+  "name": "Copilot Pet",
+  "summary": "Virtual pets for GitHub Copilot and Microsoft Copilot agents. Model-agnostic. 73+ species. Your copilot writes code. Your pet needs food. Both are real.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_pet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lee Brown",
+      "features": [
+        "Virtual pets for GitHub Copilot and Microsoft Copilot agents",
+        "Model-agnostic",
+        "73+ species",
+        "Your copilot writes code"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copilot-pet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1395866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copilot-pet",
+      "url": "https://clawhub.ai/skills/copilot-pet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-pet",
+    "url": "https://clawhub.ai/skills/copilot-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-pet-3d69fa52f2468968.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copilot-pet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-copilot-pet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f9c03ea9e8eeb77d3ae46339c3234e8f4d820405106476981a3babb798497f2",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:46:47.193Z"
+}

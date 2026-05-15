@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67902,
+  "uuid": "skill-clawhub-global-commodity-today",
+  "skillKey": "clawhub-global-commodity-today",
+  "name": "Global Commodity Today",
+  "summary": "全球大宗商品行情简报工具，支持查询伦敦金、伦敦银、伦敦铜、纽约铂、布伦特原油的当前价格和当日涨跌幅，生成简洁的行情简报。基于akshare获取实时数据。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.global_commodity_today",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ruoqin Zou",
+      "features": [
+        "全球大宗商品行情简报工具，支持查询伦敦金、伦敦银、伦敦铜、纽约铂、布伦特原油的当前价格和当日涨跌幅，生成简洁的行情简报。基于akshare获取实时数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/global-commodity-today@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111648436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "global-commodity-today",
+      "url": "https://clawhub.ai/skills/global-commodity-today"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "global-commodity-today",
+    "url": "https://clawhub.ai/skills/global-commodity-today",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/global-commodity-today-f649f58f053e7e5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/global-commodity-today@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-global-commodity-today-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03aee25a072467775aecb9b9f681717dec412b252daad6904b69c4cf1c8b20d1",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:53:48.433Z"
+}

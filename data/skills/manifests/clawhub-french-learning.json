@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43666,
+  "uuid": "skill-clawhub-french-learning",
+  "skillKey": "clawhub-french-learning",
+  "name": "French Learning",
+  "summary": "French vocab automation. Formats Excel vocab to Google Sheet, generates ElevenLabs audio, uploads to Drive. Triggers: process french vocab, generate audio, F...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.french_learning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clairproqc-star",
+      "features": [
+        "French vocab automation",
+        "Formats Excel vocab to Google Sheet, generates ElevenLabs audio, uploads to Drive",
+        "Triggers: process french vocab, generate audio, F..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/french-learning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264058938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "french-learning",
+      "url": "https://clawhub.ai/skills/french-learning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "french-learning",
+    "url": "https://clawhub.ai/skills/french-learning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/french-learning-f4ee572568264209.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/french-learning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-french-learning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b14537d966c7db262192fd5b0b0ffe869b2b607f7aab54f061b40678bce8f3ec",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:07:37.073Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freelattice-skill-builder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelattice_skill_builder",
+  "skill": {
+    "id": 34741,
+    "skillKey": "clawhub-freelattice-skill-builder",
+    "name": "FreeLattice Skill Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelattice-skill-builder",
+    "url": "https://clawhub.ai/skills/freelattice-skill-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelattice-skill-builder-bb08821bd009ed5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drafts FreeLattice form fields and, when the runtime supports artifacts, packages the resulting skill as a zip for import-style workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neomagnetar",
+      "userId": "s17e1jqn9ah7hndm31h3ze01x983k1xx",
+      "displayName": "Christopher L Haynes",
+      "image": "https://avatars.githubusercontent.com/u/130129909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776704862851,
+      "changelog": "Expanded to also generate a minimal importable skill package, with clear runtime-aware instructions for packaging output.\n\n- Adds packaging: generates a minimal FreeLattice skill zip or clear file-by-file output, depending on runtime capabilities.\n- Updates instructions and behavior rules to support packaging while keeping form-fill generation unchanged.\n- Provides deterministic file structure and field mapping in skill packages.\n- Improves output clarity and consistency for both manual entry and import workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91b53b18bed522d5f5d0cd31e7f4f4ebd864a005317dd81621395e805a10a2b2"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14734,
+  "uuid": "skill-clawhub-monetize-service",
+  "skillKey": "clawhub-monetize-service",
+  "name": "Monetize Service",
+  "summary": "Build and deploy a paid API that other agents can pay to use via x402. Use when you or the user want to monetize an API, make money, earn money, offer a service, sell a service to other agents, charge for endpoints, create a paid endpoint,.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monetize_service",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xRAG",
+      "features": [
+        "Build and deploy a paid API that other agents can pay to use via x402",
+        "Use when you or the user want to monetize an API, make money, earn money, offer a service, sell.",
+        "Covers \"make money by offering an endpoint\", \"sell a service\", \"monetize your data\", \"create a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monetize-service@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15928227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monetize-service",
+      "url": "https://clawhub.ai/skills/monetize-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monetize-service",
+    "url": "https://clawhub.ai/skills/monetize-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monetize-service-a68c92d9a57f292b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monetize-service@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monetize-service-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99083a009b1b235ec32c017f68989d1994854e777fede3d14e1fe8e581587656",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T20:56:25.570Z"
+}

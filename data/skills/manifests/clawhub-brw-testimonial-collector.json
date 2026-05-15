@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18069,
+  "uuid": "skill-clawhub-brw-testimonial-collector",
+  "skillKey": "clawhub-brw-testimonial-collector",
+  "name": "Testimonial Collector",
+  "summary": "Systematically gather and format client testimonials. Use when someone needs social proof, wants to collect feedback, or needs to turn happy clients into pub...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brw_testimonial_collector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Wagner",
+      "features": [
+        "Systematically gather and format client testimonials",
+        "Use when someone needs social proof, wants to collect feedback, or needs to turn happy clients."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brw-testimonial-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3800703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brw-testimonial-collector",
+      "url": "https://clawhub.ai/skills/brw-testimonial-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brw-testimonial-collector",
+    "url": "https://clawhub.ai/skills/brw-testimonial-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brw-testimonial-collector-bf72aa6920a0c6d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brw-testimonial-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-brw-testimonial-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:638c9736e4c7d1ef61a4ef6e13e3df91251e3c90e411cbcf2a7c3a053f309091",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T20:34:12.182Z"
+}

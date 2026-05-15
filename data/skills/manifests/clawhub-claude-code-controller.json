@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65727,
+  "uuid": "skill-clawhub-claude-code-controller",
+  "skillKey": "clawhub-claude-code-controller",
+  "name": "Claude Code 控制器",
+  "summary": "专门控制 Claude Code 的技能。提供简化的命令接口，支持快速任务、长时间任务、并行任务和进度跟踪。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven-Chen13",
+      "features": [
+        "专门控制 Claude Code 的技能。提供简化的命令接口，支持快速任务、长时间任务、并行任务和进度跟踪。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-controller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77038088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-controller",
+      "url": "https://clawhub.ai/skills/claude-code-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-controller",
+    "url": "https://clawhub.ai/skills/claude-code-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-controller-69f4d70af98427d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-controller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-controller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7bc805359883712ad199aa52dc09af3b5a3ac6f66d0a436c4d16e7776003208",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:39:49.790Z"
+}

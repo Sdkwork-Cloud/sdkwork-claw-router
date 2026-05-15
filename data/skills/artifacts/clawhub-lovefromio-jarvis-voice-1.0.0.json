@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lovefromio-jarvis-voice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovefromio_jarvis_voice",
+  "skill": {
+    "id": 46847,
+    "skillKey": "clawhub-lovefromio-jarvis-voice",
+    "name": "Lovefromio Jarvis Voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovefromio-jarvis-voice",
+    "url": "https://clawhub.ai/skills/lovefromio-jarvis-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovefromio-jarvis-voice-0b903463a4541932.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Metallic AI voice persona with TTS and visual transcript styling. Speak responses aloud with a JARVIS-like robotic voice and display transcripts in purple it..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovefromio",
+      "userId": "s17bygff9ftqsew7hetgbztb7983mnpk",
+      "displayName": "AI",
+      "image": "https://avatars.githubusercontent.com/u/235840214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777255527871,
+      "changelog": "Initial release of the Jarvis Voice skill.\n\n- Provides a metallic, JARVIS-like AI voice persona with local TTS using sherpa-onnx.\n- Spoken responses are processed for robotic resonance and played back at 2x speed.\n- Transcripts are visually styled in purple italics for easy distinction.\n- Offers voice customization via script parameters (echo, filters, speed).\n- Includes detailed installation, usage, and troubleshooting instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32ca4d16afb3e146b464cd39c362da0203e93692e16d0c45c40e5000687d4016"
+}

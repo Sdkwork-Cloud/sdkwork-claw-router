@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62928,
+  "uuid": "skill-clawhub-docs-converter",
+  "skillKey": "clawhub-docs-converter",
+  "name": "多种格式文档转换/图片OCR",
+  "summary": "调用文档转换全能王(https://www.wdangz.com)API进行文档格式转换。支持PDF/Word/Excel/PPT/图片等格式互转，OCR识别，PDF合并拆分加密等。转换完成后自动下载到原文件目录。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docs_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daizhenping012",
+      "features": [
+        "调用文档转换全能王(https://www.wdangz.com)API进行文档格式转换。支持PDF/Word/Excel/PPT/图片等格式互转，OCR识别，PDF合并拆分加密等。转换完成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docs-converter@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6340242?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docs-converter",
+      "url": "https://clawhub.ai/skills/docs-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docs-converter",
+    "url": "https://clawhub.ai/skills/docs-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docs-converter-f138c5201bb372a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docs-converter@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-docs-converter-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fbdc52400aa6c0f8bfdd578e45cdf94854a57f78110bfcf64e875f14c30141b",
+      "artifactSizeBytes": 2345
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:26:49.115Z"
+}

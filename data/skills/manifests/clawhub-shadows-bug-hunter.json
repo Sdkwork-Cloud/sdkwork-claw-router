@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50974,
+  "uuid": "skill-clawhub-shadows-bug-hunter",
+  "skillKey": "clawhub-shadows-bug-hunter",
+  "name": "Shadows Bug Hunter",
+  "summary": "Structured debugging with 4 techniques — Log Injection, Screenshot Analysis, Manual Trace, Test-Driven Fix. Use when facing errors, broken UI, regressions, o...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shadows_bug_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NakedoShadow",
+      "features": [
+        "Structured debugging with 4 techniques — Log Injection, Screenshot Analysis, Manual Trace, Test.",
+        "Use when facing errors, broken UI, regressions, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shadows-bug-hunter@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196211757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shadows-bug-hunter",
+      "url": "https://clawhub.ai/skills/shadows-bug-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shadows-bug-hunter",
+    "url": "https://clawhub.ai/skills/shadows-bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shadows-bug-hunter-ff6ccbc4a803048a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shadows-bug-hunter@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shadows-bug-hunter-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ede6b3618c1df73d07167f1210013d89dc11fc0451a5724f614cc6a16914a10e",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:37:03.855Z"
+}

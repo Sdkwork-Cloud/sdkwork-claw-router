@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solid-execution@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solid_execution",
+  "skill": {
+    "id": 73514,
+    "skillKey": "clawhub-solid-execution",
+    "name": "踏实执行工作法"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solid-execution",
+    "url": "https://clawhub.ai/skills/solid-execution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solid-execution-77b15c699399c7c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "强调逐步、完整且持续执行任务，确保言行一致、无遗漏，并通过三方监督保障质量和可靠性。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangyunxiao-ai",
+      "userId": "s1708x3ctrhh4xyrfsdc9hj3n984gew6",
+      "displayName": "yangyunxiao-ai",
+      "image": "https://avatars.githubusercontent.com/u/261404537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775959632571,
+      "changelog": "Version 3.2.0 introduces an enhanced supervision system and workflow requirements for solid-execution.\n\n- Added \"三方监督机制\" (Triple-Agent Oversight: 监督 Agent, 诤友 Agent, 反派 Agent) to enforce execution standards.\n- Defined clear roles, duties, and inspection items for each supervising agent.\n- Expanded and clarified step-by-step execution and quality assurance workflows.\n- Updated prohibited behaviors with detailed descriptions for 9 categories.\n- Included quick checklists for pre-, mid-, and post-execution phases.\n- Reiterated that all agents must strictly follow these ironclad rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0dee3c44383cfe1dc695aed19cb84f6ae57a5a04ae96f81f85a10eceb0e42a7"
+}

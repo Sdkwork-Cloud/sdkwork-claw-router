@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-novel-publishing-readiness-and-quality-check-skill@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_novel_publishing_readiness_and_quality_check_skill",
+  "skill": {
+    "id": 69620,
+    "skillKey": "clawhub-web-novel-publishing-readiness-and-quality-check-skill",
+    "name": "Novel Publish Ready"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-novel-publishing-readiness-and-quality-check-skill",
+    "url": "https://clawhub.ai/skills/web-novel-publishing-readiness-and-quality-check-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-novel-publishing-readiness-and-quality-check-skill-d389f033dcc0c902.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小说质量检查技能。触发关键词：检查正文、质量报告、违禁词、套路句、章节衔接、逻辑漏洞、自检、人写感、大纲、人设。执行最大算力深度推理五步链，每章必须跑freq_check.py词频扫描+逐行违禁词扫描双轨制，复核自检通过方可出报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chn012cjus",
+      "userId": "s177fdxdvzcq3sb9cv3qp182wn83q1r8",
+      "displayName": "chn012cjus",
+      "image": "https://avatars.githubusercontent.com/u/266467448?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1774794384177,
+      "changelog": "Version 1.0.9 – Major framework and rule overhaul for quality checks\n\n- 增加底层创作规则：禁止使用AI训练语料和成品句式，仅允许用字典词汇全新组合形成文本。\n- 强化推理链执行：每次检查必须执行五步完整推理链，包括任务解析、多分支解法、全链路推理、交叉校验和交付物生成，严禁省略或简化任一步骤。\n- 新增替代表达库建设原则和动态高频词库更新机制，要求高频重复词进入违禁库并持续滚动更新。\n- 明确替换方案自检流程，所有修改建议必须先违禁词和逻辑校验双重通过，禁止出现用禁用词替换禁用词、语义偏移或无关感情色彩。\n- 检查流程与输出格式保持原有细项，进一步补充了违禁内容清单、具体操作边界和风险提示",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8041bf6c2cf47a042bd088b6216da04865e9cab106accaeeec9b081e8f51f6f6"
+}

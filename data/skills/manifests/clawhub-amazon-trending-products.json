@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35114,
+  "uuid": "skill-clawhub-amazon-trending-products",
+  "skillKey": "clawhub-amazon-trending-products",
+  "name": "Amazon Trending Products",
+  "summary": "Discover trending products and rising categories on Amazon. Analyzes Best Seller Rank (BSR) patterns, new release momentum, seasonal trends, and emerging nic...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_trending_products",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nexscope-ai",
+      "features": [
+        "Discover trending products and rising categories on Amazon",
+        "Analyzes Best Seller Rank (BSR) patterns, new release momentum, seasonal trends, and emerging n."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-trending-products@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-trending-products",
+      "url": "https://clawhub.ai/skills/amazon-trending-products"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-trending-products",
+    "url": "https://clawhub.ai/skills/amazon-trending-products",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-trending-products-5d7ba4e8b201789c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-trending-products@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-trending-products-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35a948308690ad896fb546ff564e1ba71da9df7d78a3fc7eb272b8eedfc5d4d1",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:20:40.458Z"
+}

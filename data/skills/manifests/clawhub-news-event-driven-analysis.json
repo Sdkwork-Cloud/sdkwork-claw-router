@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65866,
+  "uuid": "skill-clawhub-news-event-driven-analysis",
+  "skillKey": "clawhub-news-event-driven-analysis",
+  "name": "News Event Driven Analysis",
+  "summary": "基于最新新闻和历史数据，解读政策、公司公告、行业事件及市场情绪，评估事件对股价和投资机会的影响。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_event_driven_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "军舰",
+      "features": [
+        "基于最新新闻和历史数据，解读政策、公司公告、行业事件及市场情绪，评估事件对股价和投资机会的影响。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-event-driven-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38390774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-event-driven-analysis",
+      "url": "https://clawhub.ai/skills/news-event-driven-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-event-driven-analysis",
+    "url": "https://clawhub.ai/skills/news-event-driven-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-event-driven-analysis-3464d0484a96a8a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-event-driven-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-event-driven-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba4ae54a6dd71a72890ba83a808f0a149a7bec590d7f067380cdf1e291ca66b1",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:44:49.117Z"
+}

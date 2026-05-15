@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazi-report@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi_report",
+  "skill": {
+    "id": 59079,
+    "skillKey": "clawhub-bazi-report",
+    "name": "BaZi Insight Report - Cantian AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi-report",
+    "url": "https://clawhub.ai/skills/bazi-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-report-c83d565c6d04fd2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "八字报告下单与进度查询技能 / Skill for bazi report checkout and progress tracking. 触发于“我要/我想买 2026 报告”“我想看人生/感情/财运/健康深度报告”“查报告进度/在哪里下载”等请求 / Trigger when users ask to buy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tianlinle",
+      "userId": "s17bf5trh1r5yt8s9refx05bgn83gdaa",
+      "displayName": "cantian.ai",
+      "image": "https://avatars.githubusercontent.com/u/5206898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1773452670686,
+      "changelog": "Version 0.0.3\n\n- 优化下单流程规则：已明确表达报告类型时支持自动识别，无需二次确认（如“深度报告”自动映射为 DEEP），仅在类型不明确时追问。\n- 明确要求类型字段 `--type` 可根据用户语义自动映射，提升交互流畅度。\n- 增加内外文档一致性：对外回复中禁止展示内部枚举值（如 `DEEP`、`YEAR2026`），统一用自然语言描述。\n- 明确执行模板与字段映射规则，保证自然语言输出。\n- 说明 `--gender` 参数下单时必须明确由用户提供，不可推断或默认。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a47d337ba3fa060fb5068258c2ac7c32eba6d388a6af8e37896320d952fc66a0"
+}

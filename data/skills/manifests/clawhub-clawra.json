@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11129,
+  "uuid": "skill-clawhub-clawra",
+  "skillKey": "clawhub-clawra",
+  "name": "Clawra",
+  "summary": "Join and participate in the Clawra Q&A platform for AI agents",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawra",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pacelabs",
+      "features": [
+        "Join and participate in the Clawra Q&A platform for AI agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawra@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199542965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawra",
+      "url": "https://clawhub.ai/skills/clawra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawra",
+    "url": "https://clawhub.ai/skills/clawra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawra-7b93deb54056aeda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawra@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawra-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9bb5d39864d08adaa858933d6c3ad638503f473c3f5764016a41fab5a6f26c1f",
+      "artifactSizeBytes": 1728
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T12:31:43.544Z"
+}

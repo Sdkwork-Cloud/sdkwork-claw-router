@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toutiao-publish-docx-v1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_publish_docx_v1",
+  "skill": {
+    "id": 62382,
+    "skillKey": "clawhub-toutiao-publish-docx-v1",
+    "name": "toutiao-publish-docx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-publish-docx-v1",
+    "url": "https://clawhub.ai/skills/toutiao-publish-docx-v1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-publish-docx-v1-98db8343775a9dbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用 Cookie 或已保存会话在头条号后台发布文章，支持标题/正文/图片与固定目录 docx 导入。当用户要自动发头条文章、传入 cookie_header 或要求按 docx 流程发布时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlesliu-sap",
+      "userId": "s1793kh494zvcxst6w9s2sdrpn83xgzw",
+      "displayName": "charlesliu-sap",
+      "image": "https://avatars.githubusercontent.com/u/253213849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774858881576,
+      "changelog": "Toutiao-publish v1.0.0 — Initial Release\n\n- Allows posting articles (title, text, images, or docx import) to Toutiao using a cookie or saved session.\n- Supports fully automated publishing with user-provided `cookie_header`, or falls back to saved session.\n- Handles direct text/image posting and fixed-directory docx or image auto-import (with automatic archiving after success).\n- Includes configurable wait time for docx parsing (`docx_wait_seconds`).\n- Saves process screenshots for troubleshooting; describes common failure modes and recovery steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:110703356f96ee1387bfc9dd41eadd5b973515e4b1790e55dd22ac7ff3c76252"
+}

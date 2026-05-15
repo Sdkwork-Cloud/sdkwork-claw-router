@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-news-api@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_news_api",
+  "skill": {
+    "id": 11193,
+    "skillKey": "clawhub-google-news-api",
+    "name": "Google News Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-news-api",
+    "url": "https://clawhub.ai/skills/google-news-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-news-api-3a7db7d3d6610a7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape structured news data from Google News automatically. Use when the user asks for news on a topic, industry trends, or PR monitoring. Triggers on keywords like \"find news about\", \"track trends\", or \"monitor PR\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2056,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770391176311,
+      "changelog": "Initial release of google-news-api skill – scrape and retrieve structured news data from Google News automatically.\n\n- Fetches news data based on keywords, date range, and result limit.\n- Guides users to provide a BrowserAct API key if missing or invalid.\n- Returns news items with headline, source, link, publish time, and author.\n- Automatically retries once for errors (except invalid API key).\n- Fully compatible with major AI assistant platforms (OpenCode, Claude Code, Cursor, OpenClaw).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e5a7658c8f608eb96ec3f2669b05ea5cd40fe1b4bd030766d2c4dbe93909c16a"
+}

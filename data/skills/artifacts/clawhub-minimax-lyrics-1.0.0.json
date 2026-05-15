@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-lyrics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_lyrics",
+  "skill": {
+    "id": 39226,
+    "skillKey": "clawhub-minimax-lyrics",
+    "name": "MiniMax Lyrics Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-lyrics",
+    "url": "https://clawhub.ai/skills/minimax-lyrics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-lyrics-8d723c39bd4b4737.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured song lyrics in various styles and themes using the MiniMax lyrics_generation API for full song creation or editing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raydoomed",
+      "userId": "s1793ae330e8wwb5pepxqvhbvs83gsdh",
+      "displayName": "xRay",
+      "image": "https://avatars.githubusercontent.com/u/57515812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775898520600,
+      "changelog": "Initial release: generate structured song lyrics with MiniMax lyrics_generation API, supports 14 structure tags",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7b44a1a511071f165bcaf43a4ac001ea7f946a4a1763c3f781d2bd66357c2fe"
+}

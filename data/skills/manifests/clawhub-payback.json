@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37227,
+  "uuid": "skill-clawhub-payback",
+  "skillKey": "clawhub-payback",
+  "name": "Payback",
+  "summary": "Payback reference tool. Use when working with payback in finance contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Payback reference tool",
+        "Use when working with payback in finance contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payback@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payback",
+      "url": "https://clawhub.ai/skills/payback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payback",
+    "url": "https://clawhub.ai/skills/payback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payback-a4d842639f7fe1ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payback@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-payback-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57dbb06eaa6b7233899276948d91c7bea2a9a37de50fb78eaf1ec5ce9d6faebf",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T20:19:31.274Z"
+}

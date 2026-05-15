@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35483,
+  "uuid": "skill-clawhub-jim-hk-bus-eta",
+  "skillKey": "clawhub-jim-hk-bus-eta",
+  "name": "HK Bus ETA",
+  "summary": "Query Hong Kong bus ETA/stop data and MTR heavy rail ETA from natural-language transport questions using official KMB/LWB, Citybus, and MTR open-data endpoin...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jim_hk_bus_eta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimpang8",
+      "features": [
+        "Query Hong Kong bus ETA/stop data and MTR heavy rail ETA from natural-language transport questi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jim-hk-bus-eta@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27860553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jim-hk-bus-eta",
+      "url": "https://clawhub.ai/skills/jim-hk-bus-eta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jim-hk-bus-eta",
+    "url": "https://clawhub.ai/skills/jim-hk-bus-eta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jim-hk-bus-eta-063a184efde2bd6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jim-hk-bus-eta@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jim-hk-bus-eta-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9ff66f83ce4fd09c91c99f8714c9aa2c3b0d394a2b06f23d7e4fd643cd064ed",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:51:52.505Z"
+}

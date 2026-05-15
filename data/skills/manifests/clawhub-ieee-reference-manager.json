@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64101,
+  "uuid": "skill-clawhub-ieee-reference-manager",
+  "skillKey": "clawhub-ieee-reference-manager",
+  "name": "ieee-reference-manager",
+  "summary": "IEEE Trans 论文参考文献全流程管理助手。负责参考文献的格式校验、引用审查、BibTeX 条目修复、期刊名标准化、DOI/元数据在线验证、Early Access 处理、作者数量合规、重复条目检测等。当用户需要\"检查参考文献\"、\"修复引用格式\"、\"验证 DOI\"、\"整理 bib 文件\"、\"参考文献审查\"时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ieee_reference_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Linghaoz",
+      "features": [
+        "IEEE Trans 论文参考文献全流程管理助手。负责参考文献的格式校验、引用审查、BibTeX 条目修复、期刊名标准化、DOI/元数据在线验证、Early Access 处理、作者数量合规."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ieee-reference-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55875143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ieee-reference-manager",
+      "url": "https://clawhub.ai/skills/ieee-reference-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ieee-reference-manager",
+    "url": "https://clawhub.ai/skills/ieee-reference-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ieee-reference-manager-2426cf439cc747ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ieee-reference-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ieee-reference-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d7ab5b95eaecd10e3022467854678972cacda30a31b7d5cc7debe989e15fa8c",
+      "artifactSizeBytes": 2839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:19:45.140Z"
+}

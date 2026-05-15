@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-pdf-orgnizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_pdf_orgnizer",
+  "skill": {
+    "id": 36291,
+    "skillKey": "clawhub-skill-pdf-orgnizer",
+    "name": "Skill PDF Orgnizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-pdf-orgnizer",
+    "url": "https://clawhub.ai/skills/skill-pdf-orgnizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-pdf-orgnizer-fb1574b07db830ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organizes PDFs by extracting metadata and classifying into topics, renaming files, and sorting into topic-based folders using AI analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yxl184",
+      "userId": "publishers:yxl184",
+      "displayName": "Yiming Liu",
+      "image": "https://avatars.githubusercontent.com/u/22651447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773738490246,
+      "changelog": "PDF Organizer Skill 1.0.0 – Initial Release\n\n- Automatically categorizes and organizes PDFs by topic using GPT analysis.\n- Extracts key metadata (title, author, journal) for smart file naming.\n- Creates topic and subtopic folder structure for organized storage.\n- Supports batch and incremental processing of multiple PDF files.\n- Handles corrupted files and API failures gracefully, with detailed logging.\n- Fully configurable through a simple JSON file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53b6291a330686a7d8b884767bd2a7e74d4b5593baf1ea32b78b166fe23915df"
+}

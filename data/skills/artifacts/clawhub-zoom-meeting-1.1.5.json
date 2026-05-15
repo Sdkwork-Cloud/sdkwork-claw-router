@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zoom-meeting@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoom_meeting",
+  "skill": {
+    "id": 18826,
+    "skillKey": "clawhub-zoom-meeting",
+    "name": "Zoom Meetings"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoom-meeting",
+    "url": "https://clawhub.ai/skills/zoom-meeting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoom-meeting-0688ab1febfe8b7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to create, retrieve, list, and delete Zoom meetings using the Zoom REST API. Use this skill whenever the user mentions Zoom meetings, wants to schedule a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neuyazvimyi",
+      "userId": "s175pefdb3jebfx9jhpbcg06f983y98y",
+      "displayName": "Alibek Beldinov",
+      "image": "https://avatars.githubusercontent.com/u/1714732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1772726586748,
+      "changelog": "Version 1.1.5 of the zoom-meeting skill:\n\n- Replaced shell script-based meeting management with a new Python-based API script (`scripts/zoom_api.py`), enabling more robust meeting creation, retrieval, listing, and deletion.\n- Expanded functional scope: supports creating, retrieving, listing, and deleting meetings using the Zoom REST API.\n- Improved user interaction: accepts both natural language requests and structured JSON; always provides human-readable responses (no JSON output).\n- Clarified and simplified credential handling; all authentication is handled automatically within the skill.\n- Added dedicated API reference documentation (`references/zoom_api_reference.md`) and removed obsolete shell scripts and settings files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c6b253ad085974c5679c42c5919c090625b59c017d59d7a155dd9281f35aa044"
+}

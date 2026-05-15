@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66265,
+  "uuid": "skill-clawhub-ai-news-xiaohongshu",
+  "skillKey": "clawhub-ai-news-xiaohongshu",
+  "name": "AI 行业资讯专家与小红书内容创作",
+  "summary": "AI 行业资讯专家 + 小红书内容创作。检索 24 小时内最新 AI 资讯，生成小红书文案 + 3:4 比例 HTML 封面。使用场景：(1) 每日 AI 资讯汇总，(2) 小红书图文笔记创作，(3) 大模型发布/融资/技术突破等资讯整理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_xiaohongshu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGICaptain",
+      "features": [
+        "AI 行业资讯专家 + 小红书内容创作。检索 24 小时内最新 AI 资讯，生成小红书文案 + 3:4 比例 HTML 封面。使用场景：(1) 每日 AI 资讯汇总，(2) 小红书图文笔记创."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-xiaohongshu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43975677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-xiaohongshu",
+      "url": "https://clawhub.ai/skills/ai-news-xiaohongshu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-xiaohongshu",
+    "url": "https://clawhub.ai/skills/ai-news-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-xiaohongshu-468d28704848cb65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-xiaohongshu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-xiaohongshu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dddd07e441d0287fe40d28a18221675a82a75e9032d5362376e575d43ba385f",
+      "artifactSizeBytes": 2806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:21:45.937Z"
+}

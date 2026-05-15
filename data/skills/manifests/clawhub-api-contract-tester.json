@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44954,
+  "uuid": "skill-clawhub-api-contract-tester",
+  "skillKey": "clawhub-api-contract-tester",
+  "name": "API Contract Tester",
+  "summary": "Validate API contracts between services using consumer-driven contract testing. Generate and verify Pact contracts, OpenAPI compliance tests, and schema comp...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_contract_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate API contracts between services using consumer-driven contract testing",
+        "Generate and verify Pact contracts, OpenAPI compliance tests, and schema comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-contract-tester@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-contract-tester",
+      "url": "https://clawhub.ai/skills/api-contract-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-contract-tester",
+    "url": "https://clawhub.ai/skills/api-contract-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-contract-tester-3fca11563782a1ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-contract-tester@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-contract-tester-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64d826bc90aeeb04ca24946619f82e11d03714c7d19d5e7958d6bb5fab9e619a",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T23:59:36.362Z"
+}

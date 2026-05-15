@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8401,
+  "uuid": "skill-clawhub-opennews-mcp",
+  "skillKey": "clawhub-opennews-mcp",
+  "name": "opennews",
+  "summary": "Crypto news search, AI ratings, trading signals, and real-time updates via the OpenNews 6551 API. Supports keyword search, coin filtering, source filtering,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opennews_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "infra403",
+      "features": [
+        "Crypto news search, AI ratings, trading signals, and real-time updates via the OpenNews 6551 API",
+        "Supports keyword search, coin filtering, source filtering,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opennews-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117965724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opennews-mcp",
+      "url": "https://clawhub.ai/skills/opennews-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opennews-mcp",
+    "url": "https://clawhub.ai/skills/opennews-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opennews-mcp-a120e1f74eedae7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opennews-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opennews-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98d662ffb0048c6f74d85e50a9352d746107f5e3a80e156b07bc7ac57c8140f0",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T07:45:27.485Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-mod@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_mod",
+  "skill": {
+    "id": 45544,
+    "skillKey": "clawhub-text-to-video-mod",
+    "name": "Text To Video Mod"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-mod",
+    "url": "https://clawhub.ai/skills/text-to-video-mod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-mod-a0796417887f1025.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 150-word product description into 1080p generated video clips just by typing what you need. Whether it's converting written scripts or prompts into re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776864451526,
+      "changelog": "text-to-video-mod 1.0.0 — Initial release\n\n- Convert up to 150-word text descriptions or scripts into 1080p ready-to-share video clips in 1–2 minutes.\n- API-based workflow: handles session creation, file upload, editing, and export behind the scenes.\n- Simple prompt system — just describe the video you want; no timeline, export settings, or technical steps required.\n- Supports a variety of formats for export: mp4, mov, gif, webm, audio, and image types.\n- Built-in credit and session management, including error handling for common issues.\n- Guidance and conversational tips for best results; supports iterative editing and batch processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4d899353fc689ab2dbfbfed0eaaa6529c0eb094808fb21946e1e0f615128336"
+}

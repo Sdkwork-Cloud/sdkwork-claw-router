@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61661,
+  "uuid": "skill-clawhub-product-doc-hub",
+  "skillKey": "clawhub-product-doc-hub",
+  "name": "product-doc-hub",
+  "summary": "面向 AI 产品团队的一站式文档解决方案，一套工具覆盖从产品定义到 API 上线的全链路文档：PRD（功能规格说明书）、Product Brief（投资人/团队轻量介绍）、Experience Framework（体验验证方法论，含四维模型+埋点指标+SUS/EV/NPS/SAM量表设计）、API Console...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_doc_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ildar981105-create",
+      "features": [
+        "面向 AI 产品团队的一站式文档解决方案，一套工具覆盖从产品定义到 API 上线的全链路文档：PRD（功能规格说明书）、Product Brief（投资人/团队轻量介绍）、Experienc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-doc-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265237862?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-doc-hub",
+      "url": "https://clawhub.ai/skills/product-doc-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-doc-hub",
+    "url": "https://clawhub.ai/skills/product-doc-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-doc-hub-369f1adb0011b947.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-doc-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-doc-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5916f6860bda1dabc1e9cfb0ffdd3c33aa977addba0188c96bb27588cb226fbb",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T09:07:00.245Z"
+}

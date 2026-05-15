@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9978,
+  "uuid": "skill-clawhub-openclaw-migration",
+  "skillKey": "clawhub-openclaw-migration",
+  "name": "openclaw-migration",
+  "summary": "Guides the renaming of the Clawd project to OpenClaw by detailing file moves, updates, testing, and documentation steps for consistent migration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_migration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuan Chen",
+      "features": [
+        "Guides the renaming of the Clawd project to OpenClaw by detailing file moves, updates, testing,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-migration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25518100?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-migration",
+      "url": "https://clawhub.ai/skills/openclaw-migration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-migration",
+    "url": "https://clawhub.ai/skills/openclaw-migration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-migration-a9cb49f18ea1bc6d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-migration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-migration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a9e7b0efadb44eb529f2087674cc78c7b337a6ef2fdcaeef4f9f4a395851539",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T19:27:18.079Z"
+}

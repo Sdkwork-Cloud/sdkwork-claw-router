@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61141,
+  "uuid": "skill-clawhub-btc-eth-ai-signal",
+  "skillKey": "clawhub-btc-eth-ai-signal",
+  "name": "BTC/ETH AI Trader",
+  "summary": "BTC/ETH 交易分析系统。AI技术分析、开仓建议、多平台推送。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btc_eth_ai_signal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thanatosmoe",
+      "features": [
+        "BTC/ETH 交易分析系统。AI技术分析、开仓建议、多平台推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btc-eth-ai-signal@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229470931?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btc-eth-ai-signal",
+      "url": "https://clawhub.ai/skills/btc-eth-ai-signal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btc-eth-ai-signal",
+    "url": "https://clawhub.ai/skills/btc-eth-ai-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btc-eth-ai-signal-2b71de0330cd7841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btc-eth-ai-signal@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-btc-eth-ai-signal-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37fa4e267ec1c7a926374d6a7106e0c0d3adc73403fdc40640a6ffd17a04b053",
+      "artifactSizeBytes": 2145
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:08:41.374Z"
+}

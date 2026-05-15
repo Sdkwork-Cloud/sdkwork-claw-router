@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32588,
+  "uuid": "skill-clawhub-cody-integration",
+  "skillKey": "clawhub-cody-integration",
+  "name": "Cody",
+  "summary": "Cody integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cody data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cody_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cody integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cody data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cody-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cody-integration",
+      "url": "https://clawhub.ai/skills/cody-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cody-integration",
+    "url": "https://clawhub.ai/skills/cody-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cody-integration-bee6b72afe957633.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cody-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cody-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aba948dfbbbf8d38a506806738fdd99a8217e277718e45aca32373e602eea952",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:33:24.561Z"
+}

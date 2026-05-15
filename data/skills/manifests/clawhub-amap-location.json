@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61142,
+  "uuid": "skill-clawhub-amap-location",
+  "skillKey": "clawhub-amap-location",
+  "name": "amap-location",
+  "summary": "高德地图服务（路径规划、POI 搜索）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amap_location",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ttguy0707",
+      "features": [
+        "高德地图服务（路径规划、POI 搜索）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amap-location@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253405180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amap-location",
+      "url": "https://clawhub.ai/skills/amap-location"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amap-location",
+    "url": "https://clawhub.ai/skills/amap-location",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amap-location-3958c4cb69b0ddf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amap-location@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amap-location-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55178c331a2e78fa767726f01034d539202e9fb43f0058d591238a1c0e0bee58",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:50:00.304Z"
+}

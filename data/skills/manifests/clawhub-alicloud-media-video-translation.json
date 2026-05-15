@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14094,
+  "uuid": "skill-clawhub-alicloud-media-video-translation",
+  "skillKey": "clawhub-alicloud-media-video-translation",
+  "name": "Alicloud Media Video Translation",
+  "summary": "Create and manage Alibaba Cloud IMS video translation jobs via OpenAPI (subtitle/voice/face). Use when you need API-based video translation, status polling,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alicloud_media_video_translation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Create and manage Alibaba Cloud IMS video translation jobs via OpenAPI (subtitle/voice/face)",
+        "Use when you need API-based video translation, status polling,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alicloud-media-video-translation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alicloud-media-video-translation",
+      "url": "https://clawhub.ai/skills/alicloud-media-video-translation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alicloud-media-video-translation",
+    "url": "https://clawhub.ai/skills/alicloud-media-video-translation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alicloud-media-video-translation-0dbb5858f3df0e13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alicloud-media-video-translation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alicloud-media-video-translation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:816c184a1081a608f2d3a1804aa6703e3e4113985688fd5960cf876739c9ffdd",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:39:30.715Z"
+}

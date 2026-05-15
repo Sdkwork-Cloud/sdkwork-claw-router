@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70465,
+  "uuid": "skill-clawhub-douyin-video-forge-felix",
+  "skillKey": "clawhub-douyin-video-forge-felix",
+  "name": "Douyin Video Forge Felix",
+  "summary": "抖音短视频全链路自动化制作。适用于：收到客户项目需要制作抖音推广视频、 策划短视频内容、生成视频脚本、分析抖音热点趋势、制作爆款短视频。 通过浏览器采集抖音热榜和视频数据，生成分段脚本，调用可灵API生成视频并拼接成片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_video_forge_felix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felix",
+      "features": [
+        "抖音短视频全链路自动化制作。适用于：收到客户项目需要制作抖音推广视频、 策划短视频内容、生成视频脚本、分析抖音热点趋势、制作爆款短视频。 通过浏览器采集抖音热榜和视频数据，生成分段脚本，调用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-video-forge-felix@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42231352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-video-forge-felix",
+      "url": "https://clawhub.ai/skills/douyin-video-forge-felix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-video-forge-felix",
+    "url": "https://clawhub.ai/skills/douyin-video-forge-felix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-video-forge-felix-afd3b41e4277c0dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-video-forge-felix@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-video-forge-felix-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f5e8799b9782b1e7a81062c607d20677ea37edcf74d088b9fd1d934238f4ae2",
+      "artifactSizeBytes": 2754
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T10:29:43.030Z"
+}

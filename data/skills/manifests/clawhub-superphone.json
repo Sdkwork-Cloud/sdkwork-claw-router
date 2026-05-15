@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29489,
+  "uuid": "skill-clawhub-superphone",
+  "skillKey": "clawhub-superphone",
+  "name": "Superphone",
+  "summary": "SuperPhone integration. Manage Persons, Organizations, Leads, Deals, Activities, Notes and more. Use when the user wants to interact with SuperPhone data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.superphone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SuperPhone integration",
+        "Manage Persons, Organizations, Leads, Deals, Activities, Notes and more",
+        "Use when the user wants to interact with SuperPhone data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/superphone@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "superphone",
+      "url": "https://clawhub.ai/skills/superphone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "superphone",
+    "url": "https://clawhub.ai/skills/superphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/superphone-172e766b5ee41887.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/superphone@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-superphone-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24b300901ab794a84e31fa59c39640377bf69b86fcb39982109df2d8724c981f",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:48:41.329Z"
+}

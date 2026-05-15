@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edu",
+  "skill": {
+    "id": 64197,
+    "skillKey": "clawhub-edu",
+    "name": "education-learning-aggregation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edu",
+    "url": "https://clawhub.ai/skills/edu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edu-e613bb442bf089c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聚合28个教育类子技能，自动匹配用户需求，支持教师教学和学生学习全场景，统一格式输出高效便捷结果"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenleimap",
+      "userId": "s1703zfhrax9e9f7dc611fpmgx83mkkg",
+      "displayName": "AI遇见天马",
+      "image": "https://avatars.githubusercontent.com/u/129256359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 527,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "v1.0.9-simplified",
+      "createdAt": 1773578998664,
+      "changelog": "⚙️ 功能说明\n自动识别用户需求类型，自动路由到对应子技能处理\n所有返回结果统一格式，结构清晰、风格统一\n支持后续手动新增教育类技能，直接在配置中添加即可\n无冗余代码，运行效率高，适配所有OpenClaw环境\n📅 后续迭代计划\n新增自动抓取入库功能，自动识别新的教育类技能\n新增多维度搜索功能，支持按年龄段、学科、功能筛选技能\n持续补充更多教育类技能，覆盖更多场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b132f5908619062078d5277c788c2c40f89e3ea0358ee51525d74568a2f41cd4"
+}

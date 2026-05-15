@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fennecseo-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fennecseo_audit",
+  "skill": {
+    "id": 49352,
+    "skillKey": "clawhub-fennecseo-audit",
+    "name": "Fennec SEO Auditor Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fennecseo-audit",
+    "url": "https://clawhub.ai/skills/fennecseo-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fennecseo-audit-eca338a81b9d7c36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uses Fennec SEO Auditor results to audit a URL. Invoke when user wants a quick on‑page/technical SEO health check or to verify favicon/meta/schema and GEO re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2winter-dev",
+      "userId": "s17daezgfwhfzjyr5djmkp35md851cgz",
+      "displayName": "2winter-dev",
+      "image": "https://avatars.githubusercontent.com/u/108644167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 619,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771680313616,
+      "changelog": "Initial release of Fennec SEO Audit Skill.\n\n- Enables quick on-page and technical SEO audits using Fennec SEO Auditor extension results.\n- Assesses key elements: titles, meta, headings, canonicals, favicon, Open Graph, schema, and GEO readiness.\n- Guides users on running audits and sharing findings for structured recommendations.\n- Prioritizes actionable advice on indexability, snippet quality, trust, and LLM/RAG suitability.\n- Output organizes issues by priority, with detailed fixes and a perspective on LLM retrieval and citation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74dea7785ad127422939cf89426c6c5a5cff25f80a094fa6edd33e31a73cb13c"
+}

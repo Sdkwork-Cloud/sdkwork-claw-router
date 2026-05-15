@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shlink-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shlink_cli",
+  "skill": {
+    "id": 31511,
+    "skillKey": "clawhub-shlink-cli",
+    "name": "Shlink CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shlink-cli",
+    "url": "https://clawhub.ai/skills/shlink-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shlink-cli-33871f639736dfd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to install, configure, or troubleshoot the Shlink CLI from GitHub and manage short URLs, tags, visits, domains, and health..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parinll",
+      "userId": "publishers:parinll",
+      "displayName": "Parin Lai",
+      "image": "https://avatars.githubusercontent.com/u/40908073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773571623613,
+      "changelog": "Publish minimal package containing only SKILL.md with GitHub install instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1659ef567bb9d2dffe5d41d12a844992cd88ac6d7990df6d75a58bd9cfbe1bae"
+}

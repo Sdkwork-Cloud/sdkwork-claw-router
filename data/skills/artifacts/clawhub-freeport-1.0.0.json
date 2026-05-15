@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freeport@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freeport",
+  "skill": {
+    "id": 52479,
+    "skillKey": "clawhub-freeport",
+    "name": "Freeport"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freeport",
+    "url": "https://clawhub.ai/skills/freeport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freeport-8acc7f2879617dbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free-port and free-trade zone reference — FTZ regulations, bonded logistics, duty deferral, re-export procedures. Use when planning warehouse operations in f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774102718897,
+      "changelog": "publish v1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:725cce0c4ab662df7be9be83466c5e06eb8aebd71f83aa466098e9b033f8883d"
+}

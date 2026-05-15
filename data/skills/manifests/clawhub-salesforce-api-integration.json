@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19371,
+  "uuid": "skill-clawhub-salesforce-api-integration",
+  "skillKey": "clawhub-salesforce-api-integration",
+  "name": "Salesforce API Integration",
+  "summary": "Complete Salesforce REST API for SOQL queries, CRUD operations, Bulk API, Composite API, authentication, and standard objects with error handling.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salesforce_api_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Complete Salesforce REST API for SOQL queries, CRUD operations, Bulk API, Composite API, authen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salesforce-api-integration@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salesforce-api-integration",
+      "url": "https://clawhub.ai/skills/salesforce-api-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salesforce-api-integration",
+    "url": "https://clawhub.ai/skills/salesforce-api-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salesforce-api-integration-4c4b731b2403d267.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salesforce-api-integration@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-salesforce-api-integration-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffd0cb24ffbe03f45198bdac4b70c3a23637a62a6d191ee6cfcb587c2a9c3f32",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T12:43:16.104Z"
+}

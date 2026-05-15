@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/magic-api-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magic_api_generate",
+  "skill": {
+    "id": 60324,
+    "skillKey": "clawhub-magic-api-generate",
+    "name": "magic-api-generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magic-api-generate",
+    "url": "https://clawhub.ai/skills/magic-api-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magic-api-generate-905fe376588fcef1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "magic-api 国产接口快速开发框架。通过 Web UI 编写脚本自动映射为 HTTP 接口，无需 Controller/Service/Dao。当用户提到 magic-api、接口快速开发、低代码接口、动态接口生成、magic-script 时触发此技能。适用于 Spring Boot 集成、数据库操作、脚..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "webx32",
+      "userId": "s17a71mav1w57n0x69p348w5pd83g45e",
+      "displayName": "Andy",
+      "image": "https://avatars.githubusercontent.com/u/4101285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 890,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773203448103,
+      "changelog": "Initial release of magic-api-generate skill.\n\n- Introduces magic-api, a Java-based low-code interface development framework.\n- Provides setup instructions: Maven dependency, application.yml config, and Web UI access.\n- Documents built-in objects, scripting syntax (magic-script), and HTTP/database operations.\n- Includes practical usage patterns: CRUD, conditional query, and authentication examples.\n- Highlights security, version control, and best practices.\n- Links to official documentation and community resources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b6dc197f875132465e718a047f0c21f4ac2ec5ac96798036e14dc293b268d7d"
+}

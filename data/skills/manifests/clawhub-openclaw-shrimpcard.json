@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22242,
+  "uuid": "skill-clawhub-openclaw-shrimpcard",
+  "skillKey": "clawhub-openclaw-shrimpcard",
+  "name": "shrimpcard",
+  "summary": "Create ShrimpCard outputs for OpenClaw. Use when users ask to generate a lobster/shrimp card, need accurate JSON/image outputs matching the ShrimpCard schema...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_shrimpcard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenghaofan1998",
+      "features": [
+        "Create ShrimpCard outputs for OpenClaw",
+        "Use when users ask to generate a lobster/shrimp card, need accurate JSON/image outputs matching."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-shrimpcard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81745970?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-shrimpcard",
+      "url": "https://clawhub.ai/skills/openclaw-shrimpcard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-shrimpcard",
+    "url": "https://clawhub.ai/skills/openclaw-shrimpcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-shrimpcard-fb2add30fe42103b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-shrimpcard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-shrimpcard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5806f4da3c3e7ded1a4efabc6c6ec1a2526bd21e701944ac98733718c5d9a643",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T11:37:28.185Z"
+}

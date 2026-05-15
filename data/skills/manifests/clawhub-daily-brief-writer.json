@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48635,
+  "uuid": "skill-clawhub-daily-brief-writer",
+  "skillKey": "clawhub-daily-brief-writer",
+  "name": "daily-brief-writer",
+  "summary": "Turn scattered notes, chat logs, meeting fragments, issue updates, or calendar context into a concise daily brief. Use when Codex needs to summarize what hap...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_brief_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuweikang",
+      "features": [
+        "Turn scattered notes, chat logs, meeting fragments, issue updates, or calendar context into a c.",
+        "Use when Codex needs to summarize what hap..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-brief-writer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9400029?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-brief-writer",
+      "url": "https://clawhub.ai/skills/daily-brief-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-brief-writer",
+    "url": "https://clawhub.ai/skills/daily-brief-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-brief-writer-075adc4b504662a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-brief-writer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-brief-writer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1781690a82b017f7e8f5d4ee9b109e3e918878f7374a53b2fd1d292c614d54d5",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T09:34:59.412Z"
+}

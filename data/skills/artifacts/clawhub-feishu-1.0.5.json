@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu",
+  "skill": {
+    "id": 72456,
+    "skillKey": "clawhub-feishu",
+    "name": "Feishu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu",
+    "url": "https://clawhub.ai/skills/feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-5ed0d740eb0d2ce6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书深度集成技能。不是简单的消息桥接，而是你的数字指挥中枢。专为中国企业高压协作环境设计，理解“分寸”与“效率”两套并行规则，把消息、审批、会议、文档、多维表格、日程与邮箱，压缩成有优先级、可执行的行动链。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agisearch",
+      "userId": "publishers:agisearch",
+      "displayName": "AGIsearch",
+      "image": "https://avatars.githubusercontent.com/u/216465592?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5117,
+      "installsAllTime": 54,
+      "installsCurrent": 50,
+      "stars": 3,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773221599853,
+      "changelog": "Version 1.0.5\n\n- 引入了“协作诊断层”，明确先对协作摩擦类型进行识别与分层诊断，强调优先判断再行动。\n- 增加对错误动作（如上下文缺失、过早提醒、盲目更新、错层处理、升级漂移）的默认风险提示机制。\n- 文档大幅优化并重组，提升对“最佳动作”和风险压制的逻辑阐述。\n- 进一步细化交互逻辑，确保动作前须有诊断、建议与多重确认。\n- 版本号升级，保持与最新能力结构一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4f36beeef50b0bbd99ba1a92a7b007f2c29905c0402d29dcdabd5d8389a9b21"
+}

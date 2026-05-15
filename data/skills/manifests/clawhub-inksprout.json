@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31696,
+  "uuid": "skill-clawhub-inksprout",
+  "skillKey": "clawhub-inksprout",
+  "name": "Inksprout",
+  "summary": "Inksprout integration. Manage Organizations, Pipelines, Users, Filters. Use when the user wants to interact with Inksprout data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inksprout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Inksprout integration",
+        "Manage Organizations, Pipelines, Users, Filters",
+        "Use when the user wants to interact with Inksprout data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inksprout@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inksprout",
+      "url": "https://clawhub.ai/skills/inksprout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inksprout",
+    "url": "https://clawhub.ai/skills/inksprout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inksprout-cc8d33f2927a260b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inksprout@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-inksprout-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d610a7063e012a193c57ec4f76bc1ec93daf54c12b9a7993f14061116bdb8b12",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:35:18.279Z"
+}

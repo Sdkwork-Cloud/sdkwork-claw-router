@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tvscreener@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tvscreener",
+  "skill": {
+    "id": 12661,
+    "skillKey": "clawhub-tvscreener",
+    "name": "Tvscreener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tvscreener",
+    "url": "https://clawhub.ai/skills/tvscreener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tvscreener-6f3cbc9b9c8ff8c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query TradingView screener data for HK, A-share, A-share ETF, and US symbols with deepentropy/tvscreener. Use for stock lookup, technical indicators (price/change/RSI/MACD/volume), symbol filtering, and custom field/filter-based market que."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "subway-chenyan",
+      "userId": "publishers:subway-chenyan",
+      "displayName": "Subway-chenyan",
+      "image": "https://avatars.githubusercontent.com/u/62011329?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1656,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770779960578,
+      "changelog": "- Initial release of tvscreener skill.\n- Provides market queries for HK, A-share, A-share ETF, and US stocks using deepentropy/tvscreener.\n- Supports stock lookups, technical indicators (price, change, RSI, MACD, volume), symbol filters, and custom queries.\n- Includes example scripts for querying symbols, discovering fields, and running field/filter-based queries.\n- Detailed troubleshooting and reference documentation provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc1d72fbd9e2f18abff97b2bce51365cdb3c782b4f160ced0a1dd83517f158bd"
+}

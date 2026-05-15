@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45997,
+  "uuid": "skill-clawhub-pipeworx-cdc",
+  "skillKey": "clawhub-pipeworx-cdc",
+  "name": "Pipeworx cdc",
+  "summary": "Search and retrieve public health datasets and records from the CDC via Socrata API using dataset keywords or IDs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_cdc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search and retrieve public health datasets and records from the CDC via Socrata API using datas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-cdc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-cdc",
+      "url": "https://clawhub.ai/skills/pipeworx-cdc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-cdc",
+    "url": "https://clawhub.ai/skills/pipeworx-cdc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-cdc-2ec14f695099a19d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-cdc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-cdc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9fdbe481c32f3a9bd26c53c0f0e544f1b8b7ee014b12834bdd900617748065ce",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T18:58:13.544Z"
+}

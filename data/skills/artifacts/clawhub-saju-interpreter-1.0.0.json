@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saju-interpreter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saju_interpreter",
+  "skill": {
+    "id": 57476,
+    "skillKey": "clawhub-saju-interpreter",
+    "name": "Saju Interpreter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saju-interpreter",
+    "url": "https://clawhub.ai/skills/saju-interpreter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saju-interpreter-8651874a1ba018dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interpret East Asian Four Pillars / Saju charts from already-derived pillars (year, month, day, hour stems/branches). Use when the user asks for 사주, 사주팔자, 명리..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "honeybearsoup",
+      "userId": "s17c172qek053d1g5ry4wnkxgh83sk9d",
+      "displayName": "honeybearsoup",
+      "image": "https://avatars.githubusercontent.com/u/19279855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774717764995,
+      "changelog": "Initial public release: evidence-first Four Pillars interpretation and first-pass pillar calculator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4704f372924d22c637419d0535b963b25118a9e08ce53b9d53afab1eb78bc003"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20408,
+  "uuid": "skill-clawhub-env-manager",
+  "skillKey": "clawhub-env-manager",
+  "name": "Env Manager",
+  "summary": "Manage environment variables, secrets, and config across agent sessions. Secure credential storage with encryption at rest.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.env_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Manage environment variables, secrets, and config across agent sessions",
+        "Secure credential storage with encryption at rest."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/env-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "env-manager",
+      "url": "https://clawhub.ai/skills/env-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "env-manager",
+    "url": "https://clawhub.ai/skills/env-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/env-manager-8f46e79d9380f2b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/env-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-env-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b36ca61eb467f80c4bd35bffc112eb03a4e590e266bdf334c3a42e37c943a46",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T20:40:14.802Z"
+}

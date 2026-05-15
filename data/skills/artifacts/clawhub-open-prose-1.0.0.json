@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-prose@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_prose",
+  "skill": {
+    "id": 54988,
+    "skillKey": "clawhub-open-prose",
+    "name": "OpenProse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-prose",
+    "url": "https://clawhub.ai/skills/open-prose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-prose-1abc16e4136a3a2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenProse VM skill pack. Activate on any `prose` command, .prose files, or OpenProse mentions; orchestrates multi-agent workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "simbabuddy",
+      "userId": "publishers:simbabuddy",
+      "displayName": "simbabuddy",
+      "image": "https://avatars.githubusercontent.com/u/231597571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772613875983,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:96dfa8173d28c0eb238cbad1cb90bc6031df537316599521bd7dd3f8782e3d3f"
+}

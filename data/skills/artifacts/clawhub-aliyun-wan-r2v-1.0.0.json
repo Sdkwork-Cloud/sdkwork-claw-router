@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-wan-r2v@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_wan_r2v",
+  "skill": {
+    "id": 45353,
+    "skillKey": "clawhub-aliyun-wan-r2v",
+    "name": "Aliyun Wan R2v"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-wan-r2v",
+    "url": "https://clawhub.ai/skills/aliyun-wan-r2v",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-wan-r2v-2f8127ae336afdb4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating reference-based videos with Alibaba Cloud Model Studio Wan R2V models (wan2.6-r2v-flash, wan2.6-r2v). Use when creating multi-shot videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775077500718,
+      "changelog": "- Initial release of aliyun-wan-r2v skill for generating reference-based videos using Alibaba Cloud Model Studio Wan R2V models.\n- Supports multi-shot video creation from reference videos/images, preserving character style.\n- Provides validation steps and output handling guidance, including evidence and polling snapshots.\n- Documents required model names (`wan2.6-r2v-flash`, `wan2.6-r2v`), with preference for “flash” when available.\n- Outlines normalized interface for video generation, request/response schema, and async handling best practices.\n- Includes setup instructions, helper scripts, and workflow recommendations for reliable operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fddf31d526df4f900e47773e39e957b1d9ec5e6d7ab40cf67d3b5f864005e106"
+}

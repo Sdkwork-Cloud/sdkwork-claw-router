@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69669,
+  "uuid": "skill-clawhub-baidupan",
+  "skillKey": "clawhub-baidupan",
+  "name": "Baidupan",
+  "summary": "百度网盘自动化工具，支持上传、下载、列表、同步等操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidupan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robin-Lee-China",
+      "features": [
+        "百度网盘自动化工具，支持上传、下载、列表、同步等操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidupan@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227948089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidupan",
+      "url": "https://clawhub.ai/skills/baidupan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidupan",
+    "url": "https://clawhub.ai/skills/baidupan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidupan-3cca9118d3bb3843.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidupan@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidupan-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc0ccd85db9fed66df7ffd2f67465ab72baf35722a642ba2b00813e80c3c8358",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:51:43.613Z"
+}

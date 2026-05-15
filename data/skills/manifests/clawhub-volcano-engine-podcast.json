@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71169,
+  "uuid": "skill-clawhub-volcano-engine-podcast",
+  "skillKey": "clawhub-volcano-engine-podcast",
+  "name": "火山引擎豆包语音播客",
+  "summary": "生成火山引擎豆包语音播客（PodcastTTS）。输入主题文本，自动生成双人对话式播客音频。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcano_engine_podcast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cindypapa",
+      "features": [
+        "生成火山引擎豆包语音播客（PodcastTTS）。输入主题文本，自动生成双人对话式播客音频。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcano-engine-podcast@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128971646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcano-engine-podcast",
+      "url": "https://clawhub.ai/skills/volcano-engine-podcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcano-engine-podcast",
+    "url": "https://clawhub.ai/skills/volcano-engine-podcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcano-engine-podcast-9e1579eeffb8b1eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcano-engine-podcast@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcano-engine-podcast-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42f15db57a604997f7d7eec4ec3b5f0fe46d9a90a7d931a1ab2777dd0c5e42ff",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T12:51:26.994Z"
+}

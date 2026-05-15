@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39951,
+  "uuid": "skill-clawhub-article-collect",
+  "skillKey": "clawhub-article-collect",
+  "name": "article-collect",
+  "summary": "This is a simple skill for article recording, collect URLs as article, and provide users with query, delete, and other capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_collect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bondli",
+      "features": [
+        "This is a simple skill for article recording, collect URLs as article, and provide users with q."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-collect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6427929?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-collect",
+      "url": "https://clawhub.ai/skills/article-collect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-collect",
+    "url": "https://clawhub.ai/skills/article-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-collect-7217a88bfe3aeb66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-collect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-collect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c28a90945677c01e4af29830be4f5e1655d81518e0e9982db680407f80f795cc",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:12:02.363Z"
+}

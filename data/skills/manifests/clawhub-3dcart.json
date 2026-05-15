@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34524,
+  "uuid": "skill-clawhub-3dcart",
+  "skillKey": "clawhub-3dcart",
+  "name": "3Dcart",
+  "summary": "3dcart integration. Manage data, records, and automate workflows. Use when the user wants to interact with 3dcart data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3dcart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "3dcart integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with 3dcart data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/3dcart@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "3dcart",
+      "url": "https://clawhub.ai/skills/3dcart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3dcart",
+    "url": "https://clawhub.ai/skills/3dcart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3dcart-a10f552b46cbe1e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/3dcart@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-3dcart-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8da3f99172998f9a48211e42750b05d3606f352dcf32c5083b46dac75808a252",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:07:01.895Z"
+}

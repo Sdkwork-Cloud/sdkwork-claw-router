@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-samber-slog@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_samber_slog",
+  "skill": {
+    "id": 56898,
+    "skillKey": "clawhub-golang-samber-slog",
+    "name": "Golang Samber Slog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-samber-slog",
+    "url": "https://clawhub.ai/skills/golang-samber-slog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-samber-slog-0f3f8ecd31a932c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured logging extensions for Golang using samber/slog-**** packages — multi-handler pipelines (slog-multi), log sampling (slog-sampling), attribute form..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 254,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775119134863,
+      "changelog": "- Bumped skill version to 1.0.3 in metadata.\n- Added allowed tool: AskUserQuestion.\n- Fixed minor typo (\"more informations\" → \"more information\") in documentation.\n- No functional or behavioral changes—documentation and metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58329f2d8402efb32a22b4fdb5c86fe6ae176b8db10b48b88b123e2f81a9f495"
+}

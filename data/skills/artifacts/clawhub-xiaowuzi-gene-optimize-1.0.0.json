@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaowuzi-gene-optimize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaowuzi_gene_optimize",
+  "skill": {
+    "id": 71730,
+    "skillKey": "clawhub-xiaowuzi-gene-optimize",
+    "name": "小五子 - 基因优化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaowuzi-gene-optimize",
+    "url": "https://clawhub.ai/skills/xiaowuzi-gene-optimize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaowuzi-gene-optimize-72aa09ac456408ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专注于压缩提示词Token、调整指令权重及语义对齐，提升本地模型执行效率和指令精准度。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tonicpopo",
+      "userId": "s173c84hncfg44jbnw0zm96ad583scta",
+      "displayName": "tonicpopo",
+      "image": "https://avatars.githubusercontent.com/u/91814973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774709040477,
+      "changelog": "xiaowuzi-gene-optimize 1.0.0\n\n- Initial release introducing a gene optimization module for the Xiaowuzi system.\n- Implements token compression to reduce redundancy and improve model response speed.\n- Adds adaptive weighting based on historical task success for more specialized task performance.\n- Enhances semantic alignment to ensure optimized instructions match model preferences and reduce misinterpretation.\n- Designed for high-precision scenarios such as quantitative trading signal analysis and strategy simulation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb7edfa70aa488e56c95cbc702a10d49699ae0b68de1dca0f203fe9806801420"
+}

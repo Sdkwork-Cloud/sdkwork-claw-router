@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-watch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_watch",
+  "skill": {
+    "id": 15963,
+    "skillKey": "clawhub-apple-watch",
+    "name": "Apple Watch Health Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-watch",
+    "url": "https://clawhub.ai/skills/apple-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-watch-d042491b55b7d023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Apple Watch health data sync via Health Auto Export app. Use when querying sleep, heart rate, steps, workouts, or any health metrics. Also use when setting u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lainnet-42",
+      "userId": "publishers:lainnet-42",
+      "displayName": "LainNet-42",
+      "image": "https://avatars.githubusercontent.com/u/229284596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 945,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771475186543,
+      "changelog": "Apple Watch health data sync (v1.0.0)\n\n- Initial release for syncing Apple Watch health data to a PC using Health Auto Export.\n- Guides users through full setup: confirming prerequisites, launching a persistent server, and configuring iPhone app step by step.\n- Includes platform-specific instructions for running the server as a background service.\n- Provides detailed troubleshooting, verification, and fallback manual setup flow.\n- Covers querying API, showing dashboards, and heartbeat health check integration for real-time monitoring.\n- Emphasizes cross-platform compatibility (Windows/macOS/Linux) and requirements for both hardware and software.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:188a43f90692260b22f7524a06ebe5ddcbc74b280faa7c705c99b2c955ea0caf"
+}

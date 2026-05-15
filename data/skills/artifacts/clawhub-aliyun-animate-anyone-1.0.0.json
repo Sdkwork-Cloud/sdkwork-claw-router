@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-animate-anyone@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_animate_anyone",
+  "skill": {
+    "id": 55432,
+    "skillKey": "clawhub-aliyun-animate-anyone",
+    "name": "Aliyun Animate Anyone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-animate-anyone",
+    "url": "https://clawhub.ai/skills/aliyun-animate-anyone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-animate-anyone-c7d28d699a603beb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating dance or motion-transfer videos with Alibaba Cloud Model Studio AnimateAnyone (`animate-anyone-gen2`) using a detected character image an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775073711061,
+      "changelog": "Initial release of aliyun-animate-anyone skill:\n\n- Enables dance and motion-transfer video generation using Alibaba Cloud Model Studio AnimateAnyone (Gen2).\n- Supports input normalization for image detection, action template extraction, and final video generation.\n- Saves outputs including request payloads, detection results, template IDs, and task logs.\n- Requires public URLs for inputs and is restricted to the China mainland (Beijing) region.\n- Offers operational guidance for best visual quality based on input type.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73b1264c7c8c35a88c00a1c5eb6b674c775f3f0d7d31d9f3f3c2aafd8f27d7f9"
+}

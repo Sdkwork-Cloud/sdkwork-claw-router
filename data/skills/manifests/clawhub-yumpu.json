@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32271,
+  "uuid": "skill-clawhub-yumpu",
+  "skillKey": "clawhub-yumpu",
+  "name": "Yumpu",
+  "summary": "Yumpu integration. Manage data, records, and automate workflows. Use when the user wants to interact with Yumpu data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yumpu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Yumpu integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Yumpu data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yumpu@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yumpu",
+      "url": "https://clawhub.ai/skills/yumpu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yumpu",
+    "url": "https://clawhub.ai/skills/yumpu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yumpu-f56a10c38772b98c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yumpu@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yumpu-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdc937c608b26001fb7b69b808b2e76031523504203c41f0ccd2ee4831806a12",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:04:26.874Z"
+}

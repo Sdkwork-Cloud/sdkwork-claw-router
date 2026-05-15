@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9725,
+  "uuid": "skill-clawhub-baoyu-post-to-x",
+  "skillKey": "clawhub-baoyu-post-to-x",
+  "name": "Baoyu Post To X",
+  "summary": "Posts content and articles to X (Twitter). Supports regular posts with images/videos and X Articles (long-form Markdown). Uses real Chrome with CDP to bypass anti-automation. Use when user asks to \"post to X\", \"tweet\", \"publish to Twitter\".",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_post_to_x",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuhedev",
+      "features": [
+        "Posts content and articles to X (Twitter)",
+        "Supports regular posts with images/videos and X Articles (long-form Markdown)",
+        "Uses real Chrome with CDP to bypass anti-automation",
+        "Use when user asks to \"post to X\", \"tweet\", \"publish to Twitter\", or \"share on X\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baoyu-post-to-x@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19663285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baoyu-post-to-x",
+      "url": "https://clawhub.ai/skills/baoyu-post-to-x"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-post-to-x",
+    "url": "https://clawhub.ai/skills/baoyu-post-to-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-post-to-x-c0b7b544202e82b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baoyu-post-to-x@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baoyu-post-to-x-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da7a3f8e880ca931242c814256c02b14ae6a1c88921c27b3d3f52606334d5844",
+      "artifactSizeBytes": 2583
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T03:44:38.722Z"
+}

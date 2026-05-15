@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53388,
+  "uuid": "skill-clawhub-volcengine-web-search",
+  "skillKey": "clawhub-volcengine-web-search",
+  "name": "volcengine-web-search",
+  "summary": "Using volcengine web_search.py script to search web and get the result, prepare clear and specific `query`.Run the script `python scripts/web_search.py \"query\"`. Organize the answer based on the returned summary list, do not add or guess c.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine_skills",
+      "features": [
+        "Using volcengine web_search.py script to search web and get the result, prepare clear and speci.",
+        "Organize the answer based on the returned summary list, do not add or guess content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-web-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231006044?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-web-search",
+      "url": "https://clawhub.ai/skills/volcengine-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-web-search",
+    "url": "https://clawhub.ai/skills/volcengine-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-web-search-7de54ffc8591462e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-web-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-web-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d6437ea5dde5771bdb8e5da41e55865c52d5d0a80d00d38e60c9d3446cc7201",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T02:05:25.540Z"
+}

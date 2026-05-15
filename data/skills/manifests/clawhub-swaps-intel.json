@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20681,
+  "uuid": "skill-clawhub-swaps-intel",
+  "skillKey": "clawhub-swaps-intel",
+  "name": "Swaps Intel",
+  "summary": "Assess cryptocurrency addresses for risk signals, labels, and reputation across blockchains using Swaps Intelligence API data.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swaps_intel",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "supabank",
+      "features": [
+        "Assess cryptocurrency addresses for risk signals, labels, and reputation across blockchains usi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swaps-intel@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213186112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swaps-intel",
+      "url": "https://clawhub.ai/skills/swaps-intel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swaps-intel",
+    "url": "https://clawhub.ai/skills/swaps-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swaps-intel-047ec62ddc11d119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swaps-intel@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swaps-intel-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d08da570943d0282c79f10aad894cafb1f8ece61f4aa513af9dbe48192ac787d",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T05:08:43.361Z"
+}

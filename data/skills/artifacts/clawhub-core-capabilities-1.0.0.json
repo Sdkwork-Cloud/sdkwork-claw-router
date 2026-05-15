@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/core-capabilities@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.core_capabilities",
+  "skill": {
+    "id": 65393,
+    "skillKey": "clawhub-core-capabilities",
+    "name": "Core Capabilities"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "core-capabilities",
+    "url": "https://clawhub.ai/skills/core-capabilities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/core-capabilities-3d4fb9abba822fa9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工作助手核心能力集成 - 包含 Obsidian/Git 同步、记忆数据库、自然语言查询、监控页面等完整能力套件。当用户需要查询系统能力、使用 Obsidian、管理记忆、查看状态时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awublack",
+      "userId": "s179k4wcec3dghbaskqd8r6d9584pvct",
+      "displayName": "awublack",
+      "image": "https://avatars.githubusercontent.com/u/22994037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775964793189,
+      "changelog": "Initial release of core-capabilities skill integrating all major work assistant features:\n\n- Combines Obsidian/Git sync, memory database, natural language query, and web monitoring into a unified toolkit.\n- Enables capability queries, Obsidian management, memory lookups, and system status checks.\n- Provides usage examples, troubleshooting steps, and maintenance recommendations.\n- Includes monitoring dashboard and detailed quickstart guides for all core features.\n- Tracks database sync, Cron jobs, Git operations, and service health in one place.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbc9f5324208cebfc7999a55ac3a586ef5c14845dc61dbc273b10809dcad4a64"
+}

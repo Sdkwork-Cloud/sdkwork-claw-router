@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-hindi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_hindi",
+  "skill": {
+    "id": 47835,
+    "skillKey": "clawhub-generator-hindi",
+    "name": "Generator Hindi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-hindi",
+    "url": "https://clawhub.ai/skills/generator-hindi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-hindi-05f85ebb05413a5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute English explainer video into 1080p Hindi dubbed videos just by typing what you need. Whether it's generating Hindi language videos from exist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777823837602,
+      "changelog": "generator-hindi 1.0.0\n\n- Initial release: Quickly turn 2-minute English explainer videos into 1080p Hindi-dubbed videos with optional Hindi subtitles.\n- Simple workflow: Just upload video clips and describe your output; the rest is automated — no manual editing or local installs required.\n- Automatic backend/session setup with guided authentication, free token acquisition, and streamlined user communication.\n- Cloud GPU rendering supports fast export in major video/audio/image formats (mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac).\n- Full support for Hindi video generation, batch processing, timeline editing, and preview summaries, with robust error handling and tips for best results.\n- Includes credit management, session state tracking, and simple export with branded attribution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:133511c1968fae46dfbd814913ced80707a8d5313dc91c2ca75374abcd0184e3"
+}

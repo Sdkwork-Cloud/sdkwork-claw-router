@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64176,
+  "uuid": "skill-clawhub-process-diagram-pro",
+  "skillKey": "clawhub-process-diagram-pro",
+  "name": "Process-Diagram-Pro",
+  "summary": "生成符合行业标准的化工工艺PFD、P&ID、系统架构及数据流图，支持温度渐变和中文显示。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.process_diagram_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xx235300",
+      "features": [
+        "生成符合行业标准的化工工艺PFD、P&ID、系统架构及数据流图，支持温度渐变和中文显示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/process-diagram-pro@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66450912?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "process-diagram-pro",
+      "url": "https://clawhub.ai/skills/process-diagram-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "process-diagram-pro",
+    "url": "https://clawhub.ai/skills/process-diagram-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/process-diagram-pro-8bb8718da06d0bad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/process-diagram-pro@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-process-diagram-pro-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d4e725bf8325c74890b8730f127cb852394637ff9e69fdb6b4210a5506d2c70",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:54:56.303Z"
+}

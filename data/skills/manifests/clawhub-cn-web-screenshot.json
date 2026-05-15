@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67199,
+  "uuid": "skill-clawhub-cn-web-screenshot",
+  "skillKey": "clawhub-cn-web-screenshot",
+  "name": "Cn Web Screenshot",
+  "summary": "网页截图工具。输入URL自动捕获网页截图，支持全页截图、视口截图、移动端视图、延迟加载等待。保存为PNG格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_web_screenshot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "网页截图工具。输入URL自动捕获网页截图，支持全页截图、视口截图、移动端视图、延迟加载等待。保存为PNG格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-web-screenshot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-web-screenshot",
+      "url": "https://clawhub.ai/skills/cn-web-screenshot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-web-screenshot",
+    "url": "https://clawhub.ai/skills/cn-web-screenshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-web-screenshot-a0d63705b9dd24fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-web-screenshot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-web-screenshot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f4d9881bd83d44d244885c8b2be43d62bb021234eddda89596ea92dd7515085",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T05:20:17.910Z"
+}

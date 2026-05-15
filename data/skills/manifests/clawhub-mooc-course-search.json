@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68826,
+  "uuid": "skill-clawhub-mooc-course-search",
+  "skillKey": "clawhub-mooc-course-search",
+  "name": "Mooc Course Search",
+  "summary": "MOOC 课程搜索与推荐服务。适用于找课、课程对比、按学习目标筛课、关注证书与评价等场景。关键词：MOOC、慕课、课程推荐、课程对比、证书、考研、机器学习、高等数学。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mooc_course_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mooc",
+      "features": [
+        "MOOC 课程搜索与推荐服务。适用于找课、课程对比、按学习目标筛课、关注证书与评价等场景。关键词：MOOC、慕课、课程推荐、课程对比、证书、考研、机器学习、高等数学。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mooc-course-search@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56037053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mooc-course-search",
+      "url": "https://clawhub.ai/skills/mooc-course-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mooc-course-search",
+    "url": "https://clawhub.ai/skills/mooc-course-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mooc-course-search-9273060811ac4684.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mooc-course-search@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mooc-course-search-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74f322e9ef4bc9363f3f9c47d8b35fa30e35772c80fbc31ae46764a454a8cc59",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T08:48:21.148Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wahoo-skill@0.1.8",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wahoo_skill",
+  "skill": {
+    "id": 54392,
+    "skillKey": "clawhub-wahoo-skill",
+    "name": "Wahoo Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wahoo-skill",
+    "url": "https://clawhub.ai/skills/wahoo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wahoo-skill-dfa3d1c63f61719e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wahoo Fitness Cloud API — fetch workouts, download FIT files, parse power/HR/cadence/GPS into local SQLite for analysis"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tgmerritt",
+      "userId": "s1755sfb9q331dk6dwfxy0qsen86093e",
+      "displayName": "Tyler",
+      "image": "https://avatars.githubusercontent.com/u/1245864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.8",
+      "createdAt": 1778075191095,
+      "changelog": "Full FIT capture: per-second records table, device inventory, HR/power zone thresholds, session FTP/altitude/grade/temp/zones, lap HR and trigger. Auto-reparse on upgrade fills new data from cached FIT files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c0f44206af9c4dc8e5f98d96093edc132aaf59aff4d07e3cb0b5c2d8346e941c"
+}

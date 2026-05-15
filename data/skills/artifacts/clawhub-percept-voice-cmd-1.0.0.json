@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/percept-voice-cmd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.percept_voice_cmd",
+  "skill": {
+    "id": 17281,
+    "skillKey": "clawhub-percept-voice-cmd",
+    "name": "Percept Voice Commands"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "percept-voice-cmd",
+    "url": "https://clawhub.ai/skills/percept-voice-cmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/percept-voice-cmd-15a62bfbc9cb5525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects wake words in speech and routes voice commands like email, text, reminders, search, and notes to OpenClaw agents for execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarvis563",
+      "userId": "publishers:jarvis563",
+      "displayName": "jarvis563",
+      "image": "https://avatars.githubusercontent.com/u/258515214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 795,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771784612500,
+      "changelog": "Initial release of percept-voice-cmd:\n\n- Detects wake words and routes voice commands to OpenClaw agents for hands-free control.\n- Supports actions like email, text, reminders, search, calendar, notes, and general custom commands.\n- Allows configuration of wake words and authorized speakers via dashboard or config files.\n- Uses fast regex and LLM fallback for intent parsing, and resolves contacts from an address book.\n- Unapproved speaker commands are logged but not executed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55388cf8045dfccdd20e02ea943fe4d9662310ad031edc1d8e7ceb5820dd21a1"
+}

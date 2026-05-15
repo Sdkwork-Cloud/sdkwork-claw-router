@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22288,
+  "uuid": "skill-clawhub-decision-topology",
+  "skillKey": "clawhub-decision-topology",
+  "name": "Decision Topology",
+  "summary": "Records the structure of conversations where ideas evolve, branch, get rejected, pivot, or combine. Saves each structural shift as a node in a local JSON tre...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_topology",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jounes De Schrijver",
+      "features": [
+        "Records the structure of conversations where ideas evolve, branch, get rejected, pivot, or comb.",
+        "Saves each structural shift as a node in a local JSON tre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/decision-topology@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190874150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "decision-topology",
+      "url": "https://clawhub.ai/skills/decision-topology"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-topology",
+    "url": "https://clawhub.ai/skills/decision-topology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-topology-782fc75843ba33f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/decision-topology@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-decision-topology-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b7cb5c946961f8a95968876f881e350bd5e7eb34d1e8debc0ed28737428a833",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T10:40:49.160Z"
+}

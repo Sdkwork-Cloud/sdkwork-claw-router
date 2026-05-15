@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guild-knowledge@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guild_knowledge",
+  "skill": {
+    "id": 66454,
+    "skillKey": "clawhub-guild-knowledge",
+    "name": "guild-knowledge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guild-knowledge",
+    "url": "https://clawhub.ai/skills/guild-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guild-knowledge-518b46e10ace3e8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动读取 Guild 文档，搜索最新信息，比较评估经验建议与新方案，提供应用方案并提醒是否更新文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pipiy416",
+      "userId": "s17cdmm187h4g549qvv2vbf2en83q9vb",
+      "displayName": "Pipiy416",
+      "image": "https://avatars.githubusercontent.com/u/187491710?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774590058378,
+      "changelog": "guild-knowledge v1.0.1\n\n- Removed PUBLISH_CHECKLIST.md and scripts/guild_scan.js files.\n- Optimized documentation: clearer, more concise SKILL.md with improved bilingual (Chinese/English) structure.\n- Updated usage examples, features list, and review workflow for easier understanding.\n- No changes to core functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f7a3c64fdb6a61249855452c2ca270dec29e65379c652199b6eabde4c0b6aa9"
+}

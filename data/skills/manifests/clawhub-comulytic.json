@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28608,
+  "uuid": "skill-clawhub-comulytic",
+  "skillKey": "clawhub-comulytic",
+  "name": "Comulytic",
+  "summary": "Query Comulytic meetings, contacts, action items, and conversation history. Use when: user asks about meetings, notes, call summaries, contacts, pending task...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comulytic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenbaochao",
+      "features": [
+        "Query Comulytic meetings, contacts, action items, and conversation history",
+        "Use when: user asks about meetings, notes, call summaries, contacts, pending task..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comulytic@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23637914?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comulytic",
+      "url": "https://clawhub.ai/skills/comulytic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comulytic",
+    "url": "https://clawhub.ai/skills/comulytic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comulytic-d5c5751790ce9706.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comulytic@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-comulytic-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:476bc5185c2189d59e01c933adac7062948752d0fa0e0046f5595d8f26405a52",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:07:52.759Z"
+}

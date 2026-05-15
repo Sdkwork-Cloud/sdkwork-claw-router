@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_builder",
+  "skill": {
+    "id": 9828,
+    "skillKey": "clawhub-app-builder",
+    "name": "App Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-builder",
+    "url": "https://clawhub.ai/skills/app-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-builder-9387b1f2507b4307.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, edit, and deploy Instant-backed apps using npx instant-cli, create-instant-app (Next.js + Codex), GitHub (gh), and Vercel (vercel). Use when asked to create a new app, modify an existing app, fix bugs, add features, or deploy/update."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stopachka",
+      "userId": "publishers:stopachka",
+      "displayName": "stopachka",
+      "image": "https://avatars.githubusercontent.com/u/984574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3310,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770076208982,
+      "changelog": "Initial release of the app-builder skill.\n\n- Build, edit, and deploy Instant-backed apps using npx instant-cli, create-instant-app (Next.js + Codex), GitHub CLI, and Vercel.\n- Enforces a workflow for new and existing app projects under ~/apps, covering GitHub repository creation, Vercel deployment, and environment variable management.\n- Provides clear, step-by-step instructions for project creation, editing, and deployment.\n- Includes guidance for communicating progress to the user and handling missing tools or logins.\n- Establishes best practices and guardrails for project structure and version control.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b11a298080078d503288e4f9c5141818f702fb2ef091ea0367f62823f0add24e"
+}

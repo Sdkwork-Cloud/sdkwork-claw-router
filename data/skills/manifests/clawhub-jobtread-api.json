@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14444,
+  "uuid": "skill-clawhub-jobtread-api",
+  "skillKey": "clawhub-jobtread-api",
+  "name": "JobTread Agent",
+  "summary": "Operate JobTread via its Pave API to create, read, update, and manage accounts, jobs, documents, tasks, locations, custom fields, and webhooks programmatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobtread_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BrokenWatchCEO",
+      "features": [
+        "Operate JobTread via its Pave API to create, read, update, and manage accounts, jobs, documents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobtread-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110206505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobtread-api",
+      "url": "https://clawhub.ai/skills/jobtread-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobtread-api",
+    "url": "https://clawhub.ai/skills/jobtread-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobtread-api-0b343b9b3535a07f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobtread-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobtread-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acb2a387379a3ebc6c99e022cf7739259a8058e639c1c3676c3386c65034d574",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T21:09:42.264Z"
+}

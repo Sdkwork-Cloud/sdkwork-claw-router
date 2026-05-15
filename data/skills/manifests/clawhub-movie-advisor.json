@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27841,
+  "uuid": "skill-clawhub-movie-advisor",
+  "skillKey": "clawhub-movie-advisor",
+  "name": "Movie Advisor",
+  "summary": "Suggests movies and TV shows based on your taste or mood, providing ratings, cast, runtime, and where to stream globally with data-backed details.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Suggests movies and TV shows based on your taste or mood, providing ratings, cast, runtime, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/movie-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "movie-advisor",
+      "url": "https://clawhub.ai/skills/movie-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-advisor",
+    "url": "https://clawhub.ai/skills/movie-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-advisor-33f1d9ecfed66bf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/movie-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-movie-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40a626981d95512c7294695356ae59fa222e55ae8c63709371680a55a85c67fa",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T06:53:56.225Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eastmoney-stock@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_stock",
+  "skill": {
+    "id": 66197,
+    "skillKey": "clawhub-eastmoney-stock",
+    "name": "Eastmoney Stock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-stock",
+    "url": "https://clawhub.ai/skills/eastmoney-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-stock-8cc646c51de10c60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询东方财富股票数据，包括个股行情、涨跌幅、成交量等。用于回答股票相关问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongchun2008",
+      "userId": "publishers:dongchun2008",
+      "displayName": "dongchun2008",
+      "image": "https://avatars.githubusercontent.com/u/106893657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5581,
+      "installsAllTime": 44,
+      "installsCurrent": 42,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772925042828,
+      "changelog": "Initial release of eastmoney-stock.\n\n- Query real-time stock data from Eastmoney, including price, change percentage, and volume.\n- Supports A-shares, Hong Kong stocks (add .HK), and US stocks (add .N).\n- Provides top gainers/losers and watchlist queries.\n- Designed to answer natural language stock questions in Chinese.\n- Data may be delayed by a few minutes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cc4b7c14c3b7f704331719c54b119a98f75d091755e6ec39d0fa8b507cc902b8"
+}

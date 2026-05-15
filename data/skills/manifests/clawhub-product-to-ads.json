@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12806,
+  "uuid": "skill-clawhub-product-to-ads",
+  "skillKey": "clawhub-product-to-ads",
+  "name": "Product to Ads (Ad-Ready)",
+  "summary": "Generate professional advertising images from product URLs using the Ad-Ready pipeline on ComfyDeploy. Use when the user wants to create ads for any product by providing a URL, optionally with a brand profile (70+ brands) and funnel stage.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_to_ads",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul de Lavallaz",
+      "features": [
+        "Generate professional advertising images from product URLs using the Ad-Ready pipeline on Comfy.",
+        "Use when the user wants to create ads for any product by providing a URL, optionally with a bra.",
+        "Supports model/talent integration, brand-aware creative direction, and multi-format output",
+        "Differs from Morpheus (manual fashion photography) — Ad-Ready is URL-driven, brand-intelligent,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-to-ads@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51497690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-to-ads",
+      "url": "https://clawhub.ai/skills/product-to-ads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-to-ads",
+    "url": "https://clawhub.ai/skills/product-to-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-to-ads-42a23d5468849c18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-to-ads@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-to-ads-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3276c0a3192dbb412cce9fe69f54f49e7f53dd1cb7e484c5f9fadffbdd48efb8",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:29:11.974Z"
+}

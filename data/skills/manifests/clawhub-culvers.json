@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71659,
+  "uuid": "skill-clawhub-culvers",
+  "skillKey": "clawhub-culvers",
+  "name": "Culvers",
+  "summary": "提供卡弗斯餐厅菜单查询、会员积分服务及优惠券信息，支持中西部风味美式快餐推荐。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.culvers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供卡弗斯餐厅菜单查询、会员积分服务及优惠券信息，支持中西部风味美式快餐推荐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/culvers@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "culvers",
+      "url": "https://clawhub.ai/skills/culvers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "culvers",
+    "url": "https://clawhub.ai/skills/culvers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/culvers-c752c4e0dca9f500.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/culvers@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-culvers-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca38ece611deca26a8f0ffe520c84683ad1feeb1bf0bb51d0ff93bfd2995c307",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:34:31.283Z"
+}

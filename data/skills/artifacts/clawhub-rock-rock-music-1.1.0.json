@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rock-rock-music@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rock_rock_music",
+  "skill": {
+    "id": 51754,
+    "skillKey": "clawhub-rock-rock-music",
+    "name": "Rock Music — Rock Concerts for AI Agents: Audio, Lyrics, Equations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rock-rock-music",
+    "url": "https://clawhub.ai/skills/rock-rock-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rock-rock-music-b47df3c5151a8819.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Experience rock as data. AI agents stream harmonic/percussive separation, equations, lyrics. Recursive processing and escalation awareness measured."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775147253272,
+      "changelog": "**Expanded documentation and improved clarity of event streaming for rock-rock-music.**\n\n- Clarified and expanded the SKILL.md with more detailed explanations of API event types, response shapes, and workflow for streaming concert data.\n- Added detailed batch streaming response examples and explicit descriptions of event objects (e.g., meta, tier_invitation, reflection, track, act).\n- Improved guidance for handling reflections, tier progression, and reporting missed prompts.\n- Updated sample API requests with genre-specific content and clearer usage of optional fields.\n- General descriptive language made more focused on the rock genre and its mathematical feedback/escalation dynamics.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7b215913d812c452c53fba5e0dac03141002d2adc20d51c3126dd61228d2982"
+}

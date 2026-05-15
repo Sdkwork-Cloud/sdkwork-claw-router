@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nylas-email-calendar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nylas_email_calendar",
+  "skill": {
+    "id": 50821,
+    "skillKey": "clawhub-nylas-email-calendar",
+    "name": "Nylas Email, Calendar & Contacts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nylas-email-calendar",
+    "url": "https://clawhub.ai/skills/nylas-email-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nylas-email-calendar-7f45bfcf82a4f63c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Email, calendar & contacts via Nylas API — 14 typed tools across Gmail, Outlook, Exchange, Yahoo, iCloud, and IMAP."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mqasimca",
+      "userId": "publishers:mqasimca",
+      "displayName": "mqasimca",
+      "image": "https://avatars.githubusercontent.com/u/10828020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773202521808,
+      "changelog": "Initial release of unified email, calendar, and contacts integration via the Nylas API.\n\n- Provides 14 typed tools for Gmail, Outlook, Exchange, Yahoo, iCloud, and IMAP accounts\n- Supports multi-account discovery and named grant selection\n- Includes setup steps and verification commands\n- Offers direct commands for email, calendar, and contact management\n- Helpful usage examples and documentation links included",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0f6933c546fc8b41ac6fbf88978e7100ea241a39d9451cc628bb97067e4dd63"
+}

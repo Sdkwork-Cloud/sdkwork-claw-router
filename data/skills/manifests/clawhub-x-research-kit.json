@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37995,
+  "uuid": "skill-clawhub-x-research-kit",
+  "skillKey": "clawhub-x-research-kit",
+  "name": "x-research-kit",
+  "summary": "Extract and analyze X (Twitter) content using yt-dlp and gallery-dl. Supports tweet metadata, video extraction, thread retrieval, profile analysis, and space...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_research_kit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "江辰",
+      "features": [
+        "Extract and analyze X (Twitter) content using yt-dlp and gallery-dl",
+        "Supports tweet metadata, video extraction, thread retrieval, profile analysis, and space..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-research-kit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16217324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-research-kit",
+      "url": "https://clawhub.ai/skills/x-research-kit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-research-kit",
+    "url": "https://clawhub.ai/skills/x-research-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-research-kit-e3d92d7bd8d1f8df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-research-kit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-research-kit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7c13ca815691c11c6d5c55d7fbb5688782d825c7ab45e65a44cd06a77605794",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T09:19:57.989Z"
+}

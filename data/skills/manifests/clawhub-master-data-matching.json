@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32115,
+  "uuid": "skill-clawhub-master-data-matching",
+  "skillKey": "clawhub-master-data-matching",
+  "name": "Master Data Matching",
+  "summary": "Production-ready Master Data Intelligent Matching System. Use when: matching vendor/customer/employee records, deduplicating master data, resolving OCR-extra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.master_data_matching",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "woaim65",
+      "features": [
+        "Production-ready Master Data Intelligent Matching System",
+        "Use when: matching vendor/customer/employee records, deduplicating master data, resolving OCR-e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/master-data-matching@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98373717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "master-data-matching",
+      "url": "https://clawhub.ai/skills/master-data-matching"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "master-data-matching",
+    "url": "https://clawhub.ai/skills/master-data-matching",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/master-data-matching-5cda25a7648cd056.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/master-data-matching@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-master-data-matching-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a1be5a168be918d91695879112600126e95d101fa0b7837540824cb05657908",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:52:34.364Z"
+}

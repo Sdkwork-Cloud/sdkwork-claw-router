@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dkey-switch@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dkey_switch",
+  "skill": {
+    "id": 67479,
+    "skillKey": "clawhub-dkey-switch",
+    "name": "Dkey Switch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dkey-switch",
+    "url": "https://clawhub.ai/skills/dkey-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dkey-switch-4f756b671ffa28b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 窗口切换技能。用于定位并激活 Windows 上的目标窗口，支持智能模糊匹配、窗口查找、进程匹配、句柄激活与标签切换回退。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ddmy",
+      "userId": "s172gv00zarmkw8tkqzrev8re183gj9v",
+      "displayName": "ddmy",
+      "image": "https://avatars.githubusercontent.com/u/19168372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 523,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1773220983907,
+      "changelog": "**v1.1.4 brings major documentation, workflow, and feature clarity updates.**\n\n- Added extensive internal documentation and reference files (assets/ and references/), including guides on agents, onboarding, patterns, and memory.\n- Introduced new scripts for process automation, including alias definitions and security auditing.\n- Overhauled SKILL.md to highlight a new workflow: always attempt intelligent fuzzy matching and window listing prior to activation, with explicit JSON result handling and clarifications on fallback procedures.\n- Explicitly documented fuzzy matching rules, built-in alias examples, and improved step-by-step AI operation protocols.\n- Clarified non-trigger scenarios to avoid unintended activation and expanded usage examples for typical user requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e99d1673bdbe688d3e5840ed67bce43bbe83d48f26c7601d5f0ea55bd38fcc51"
+}

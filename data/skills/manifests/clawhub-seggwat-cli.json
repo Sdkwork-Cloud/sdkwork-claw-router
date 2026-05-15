@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35192,
+  "uuid": "skill-clawhub-seggwat-cli",
+  "skillKey": "clawhub-seggwat-cli",
+  "name": "SeggWat CLI",
+  "summary": "Use the SeggWat CLI to manage feedback, projects, and ratings from the terminal. Trigger this skill whenever the user wants to collect, triage, query, or aut...",
+  "version": "0.17.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seggwat_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hauju",
+      "features": [
+        "Use the SeggWat CLI to manage feedback, projects, and ratings from the terminal",
+        "Trigger this skill whenever the user wants to collect, triage, query, or aut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seggwat-cli@0.17.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23400160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seggwat-cli",
+      "url": "https://clawhub.ai/skills/seggwat-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seggwat-cli",
+    "url": "https://clawhub.ai/skills/seggwat-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seggwat-cli-ff77875b60fc115e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seggwat-cli@0.17.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-seggwat-cli-0.17.4.json",
+      "version": "0.17.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:895f27262bff721f8714d393e813c917a0dec5ce1f67058a76104ae2d81e9649",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T15:16:29.104Z"
+}

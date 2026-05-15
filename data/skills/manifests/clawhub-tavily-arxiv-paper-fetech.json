@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38827,
+  "uuid": "skill-clawhub-tavily-arxiv-paper-fetech",
+  "skillKey": "clawhub-tavily-arxiv-paper-fetech",
+  "name": "Tavily arXiv Paper Fetech",
+  "summary": "Resolve one or more paper titles to reliable arXiv papers using Tavily search, then fetch compact arXiv metadata and abstracts with a local helper script. Us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_arxiv_paper_fetech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dehao Huang",
+      "features": [
+        "Resolve one or more paper titles to reliable arXiv papers using Tavily search, then fetch compa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-arxiv-paper-fetech@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46663106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-arxiv-paper-fetech",
+      "url": "https://clawhub.ai/skills/tavily-arxiv-paper-fetech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-arxiv-paper-fetech",
+    "url": "https://clawhub.ai/skills/tavily-arxiv-paper-fetech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-arxiv-paper-fetech-cc90dcaa99de042b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-arxiv-paper-fetech@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-arxiv-paper-fetech-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edb044cee6af5621e3effc5a98eb7abdae896d03890906eca6e30dd5e67f2caf",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T11:24:06.637Z"
+}

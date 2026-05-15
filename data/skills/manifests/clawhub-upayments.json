@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36629,
+  "uuid": "skill-clawhub-upayments",
+  "skillKey": "clawhub-upayments",
+  "name": "Upayments",
+  "summary": "UPayments integration. Manage data, records, and automate workflows. Use when the user wants to interact with UPayments data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upayments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "UPayments integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with UPayments data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upayments@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upayments",
+      "url": "https://clawhub.ai/skills/upayments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upayments",
+    "url": "https://clawhub.ai/skills/upayments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upayments-bb4aaeb2cd25f721.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upayments@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-upayments-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6ff873cd615879c0118dd1ee15789442e469520e512569b17a5a62b2f72b0f0",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:57:29.619Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sed-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sed_tool",
+  "skill": {
+    "id": 48003,
+    "skillKey": "clawhub-sed-tool",
+    "name": "Sed Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sed-tool",
+    "url": "https://clawhub.ai/skills/sed-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sed-tool-6859e03d2b337356.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stream editor for filtering and transforming text using scripts. Use for find-and-replace, text manipulation, and batch file editing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777739423403,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2737c7eeab7df7a6f0568361775c36156341583d3c4a166d9c7f493423458cec"
+}

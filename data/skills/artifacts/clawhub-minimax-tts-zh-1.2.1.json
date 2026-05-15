@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-tts-zh@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tts_zh",
+  "skill": {
+    "id": 65655,
+    "skillKey": "clawhub-minimax-tts-zh",
+    "name": "Minimax Tts Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tts-zh",
+    "url": "https://clawhub.ai/skills/minimax-tts-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tts-zh-6570133e1c44d509.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 MiniMax API 将文字转换为 MP3 语音文件。触发词：文字转语音、TTS、生成语音、生成音频、把文字转成语音、文字转MP3、生成MP3。触发后按交互流程引导用户完成 Token 配置、文字输入、音色选择，最终生成 MP3 文件发给用户。严禁使用 say 命令或通过喇叭播放，必须生成 MP3 文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ggttol",
+      "userId": "s17bmqe07zy7pg6x3jr1r3yfbh83yw9m",
+      "displayName": "ggttol",
+      "image": "https://avatars.githubusercontent.com/u/30802623?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775014422828,
+      "changelog": "- 改变发送 MP3 文件的方式：现在输出文件路径前缀为 FILE:，且要求回复中用 MEDIA: 前缀，平台将自动发送音频文件\n- 明确禁止使用 <file> 标签、sessions_send、message 工具等旧文件发送方法，只允许使用 MEDIA: 方式\n- 优化命令输出解析说明，指导按 FILE: 行提取绝对路径再加上 MEDIA: 前缀\n- 小幅优化文档表达，更清晰区分生成和发送步骤",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7e372926382997e88f46a983bd059122a94803e7985b2c35e91208759b2c90c"
+}

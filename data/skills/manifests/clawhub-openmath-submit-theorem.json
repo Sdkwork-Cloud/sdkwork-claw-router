@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28146,
+  "uuid": "skill-clawhub-openmath-submit-theorem",
+  "skillKey": "clawhub-openmath-submit-theorem",
+  "name": "openmath-submit-theorem",
+  "summary": "Submits proofs to the OpenMath platform using a two-stage commit-reveal flow. Use when the user wants to commit a proof hash or reveal a Lean/Rocq proof on t...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmath_submit_theorem",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shentu-org",
+      "features": [
+        "Submits proofs to the OpenMath platform using a two-stage commit-reveal flow",
+        "Use when the user wants to commit a proof hash or reveal a Lean/Rocq proof on t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmath-submit-theorem@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18119716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmath-submit-theorem",
+      "url": "https://clawhub.ai/skills/openmath-submit-theorem"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmath-submit-theorem",
+    "url": "https://clawhub.ai/skills/openmath-submit-theorem",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmath-submit-theorem-8898b8218717cc07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmath-submit-theorem@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmath-submit-theorem-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b61993dd5c3ae83fc09392b15ce2352100f54569c3aef70cee16e72919020e34",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:19:13.557Z"
+}

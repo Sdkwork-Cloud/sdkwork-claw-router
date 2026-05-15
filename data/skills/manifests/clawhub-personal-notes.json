@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12118,
+  "uuid": "skill-clawhub-personal-notes",
+  "skillKey": "clawhub-personal-notes",
+  "name": "Personal Notes",
+  "summary": "Acts as the user's note-taking and journaling assistant in the Notes topic. Captures thoughts, reflections, daily logs, random notes. Use when in Personal ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_notes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GekaCross",
+      "features": [
+        "Acts as the user's note-taking and journaling assistant in the Notes topic",
+        "Captures thoughts, reflections, daily logs, random notes",
+        "Use when in Personal ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57638140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-notes",
+      "url": "https://clawhub.ai/skills/personal-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-notes",
+    "url": "https://clawhub.ai/skills/personal-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-notes-05cd42fd91a0870f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eec4ed4ab1d811fcb249f500378c0455d4b1b4e4a943cb56a9beb2608a83d77a",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T11:09:51.177Z"
+}

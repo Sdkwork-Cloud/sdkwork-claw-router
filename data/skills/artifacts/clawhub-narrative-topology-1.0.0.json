@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/narrative-topology@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.narrative_topology",
+  "skill": {
+    "id": 29766,
+    "skillKey": "clawhub-narrative-topology",
+    "name": "narrative-topology"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "narrative-topology",
+    "url": "https://clawhub.ai/skills/narrative-topology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/narrative-topology-bb1abaa102e7bc58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract semantic relationships from long narratives, architectures, or complex discussions using RDF-style triple notation. Generate adjacency matrices to re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turinfohlen",
+      "userId": "s17fz4w553pec7mghb98bzaxsn850z9f",
+      "displayName": "TurinFohlen",
+      "image": "https://avatars.githubusercontent.com/u/208427613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776664636943,
+      "changelog": "Initial release of narrative-topology skill.\n\n- Introduces RDF-style triple notation for semantic extraction from narratives.\n- Provides a Python scanner to extract and expand triples, generating an adjacency matrix.\n- Supports parallel subjects/objects with cartesian product notation.\n- Outputs compressed adjacency matrices and basic narrative graph statistics.\n- Enables downstream graph analysis (degree, paths, cycles) for complex discussions.\n- Includes instructions for extending output to weighted edges and Mermaid diagram generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c00ac939a6c5b41f74b97d3854dd80c49aec9020503f5a7b1559d525e0479fa"
+}

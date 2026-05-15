@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/relationship-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.relationship_skills",
+  "skill": {
+    "id": 9528,
+    "skillKey": "clawhub-relationship-skills",
+    "name": "Relationship Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "relationship-skills",
+    "url": "https://clawhub.ai/skills/relationship-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/relationship-skills-a596231affd9dd33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Improve relationships with communication tools, conflict resolution, and connection ideas"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhillin8",
+      "userId": "publishers:jhillin8",
+      "displayName": "jhillin8",
+      "image": "https://avatars.githubusercontent.com/u/79551560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3121,
+      "installsAllTime": 22,
+      "installsCurrent": 20,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769326614500,
+      "changelog": "- Initial release of relationship-skills.\n- Provides communication frameworks (I-statements, active listening, expressing needs).\n- Includes conflict resolution techniques and structured guidance for disagreements.\n- Offers personalized date ideas tailored to preferences and location.\n- Features relationship health tracking with check-in prompts and pattern detection.\n- Delivers connection-building ideas and conversation starters to deepen bonds.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e28248749f797f43ebda42122a42f216ea00a55ea0bdcd40836e0005942a0e97"
+}

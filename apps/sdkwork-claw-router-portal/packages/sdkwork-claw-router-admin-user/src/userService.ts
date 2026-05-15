@@ -1,4 +1,5 @@
 import {
+  createRequestParams,
   createRequestToken,
   ensurePlusApiSuccess,
   getClawRouterBackendSdkClient,
@@ -65,41 +66,41 @@ export type ApiKeyCreateInput = {
 
 export class UserService {
   static async fetchUsers(): Promise<UserListItem[]> {
-    const result = await getClawRouterBackendSdkClient().user.fetchUsers();
+    const result = await getClawRouterBackendSdkClient().iam.users.list();
     ensurePlusApiSuccess(result, 'Failed to fetch users');
     return readRequiredApiItems(result, 'Failed to fetch users')
       .map(normalizeUser);
   }
 
   static async fetchApiKeysMap(): Promise<Record<number, ApiKeyItem[]>> {
-    const result = await getClawRouterBackendSdkClient().apikey.fetchApiKeysMap();
+    const result = await getClawRouterBackendSdkClient().iam.apiKeys.list();
     ensurePlusApiSuccess(result, 'Failed to fetch API keys');
     return normalizeApiKeysMap(readApiData(result));
   }
 
   static async addUser(user: UserCreateInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().user.add(
+    const result = await getClawRouterBackendSdkClient().system.users.create(
       toCreateUserRequest(user),
-      requestToken('admin-user-create'),
+      createRequestParams('admin-user-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add user');
     return normalizeUser(readRequiredApiItem(result, 'Created user response is missing data'));
   }
 
   static async updateBalance(id: number, input: UserBalanceAdjustmentInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().router.updateBalance(
-      positiveId(id, 'userId'),
+    const result = await getClawRouterBackendSdkClient().billing.users.balanceAdjustments.create(
+      String(positiveId(id, 'userId')),
       toBalanceAdjustmentRequest(input),
-      requestToken('admin-user-balance-adjust'),
+      createRequestParams('admin-user-balance-adjust'),
     );
     ensurePlusApiSuccess(result, 'Failed to update user balance');
     return normalizeUser(readRequiredApiItem(result, 'Updated user balance response is missing data'));
   }
 
   static async updateUser(id: number, updates: UserUpdateInput): Promise<UserListItem> {
-    const result = await getClawRouterBackendSdkClient().user.updateUser(
+    const result = await getClawRouterBackendSdkClient().system.users.update(
       toUpdateUserRequest(id, updates),
-      requestToken('admin-user-update'),
+      createRequestParams('admin-user-update'),
     );
     ensurePlusApiSuccess(result, 'Failed to update user');
     return normalizeUser(readRequiredApiItem(result, 'Updated user response is missing data'));
@@ -107,10 +108,9 @@ export class UserService {
 
   static async createApiKey(input: ApiKeyCreateInput): Promise<{ key: ApiKeyItem; rawKey: string }> {
     const tokens = idempotencyTokens('admin-api-key-create');
-    const result = await getClawRouterBackendSdkClient().apikey.createApiKey(
+    const result = await getClawRouterBackendSdkClient().iam.apiKeys.create(
       toCreateApiKeyRequest(input),
-      tokens.idempotencyKey,
-      tokens.requestId,
+      { idempotencyKey: tokens.idempotencyKey, xRequestId: tokens.requestId },
     );
     ensurePlusApiSuccess(result, 'Failed to create API key');
     const data = readApiRecord(result);
@@ -130,7 +130,7 @@ export class UserService {
   }
 
   static async deleteApiKey(userId: number, keyId: string): Promise<void> {
-    const result = await getClawRouterBackendSdkClient().apikey.deleteApiKey(
+    const result = await getClawRouterBackendSdkClient().iam.apiKeys.delete(
       requiredSafePathSegment(keyId, 'apiKeyId'),
     );
     ensurePlusApiSuccess(result, 'Failed to delete API key');
@@ -198,10 +198,6 @@ function positiveAmount(value: number, fieldName: string): number {
 
 function pruneUndefined<T extends object>(value: T): T {
   return Object.fromEntries(Object.entries(value).filter(([, item]) => item !== undefined)) as T;
-}
-
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
 }
 
 function idempotencyTokens(scope: string): { idempotencyKey: string; requestId: string } {

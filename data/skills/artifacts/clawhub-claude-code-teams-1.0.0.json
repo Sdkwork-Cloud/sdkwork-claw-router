@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-teams@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_teams",
+  "skill": {
+    "id": 12761,
+    "skillKey": "clawhub-claude-code-teams",
+    "name": "Claude Code Agent Teams"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-teams",
+    "url": "https://clawhub.ai/skills/claude-code-teams",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-teams-e0d57d5df4a0e445.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Coordinate multiple Claude Code agents to work in parallel on independent tasks like multi-lens reviews, debugging, and full-stack features with defined file..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matthew-a-gordon",
+      "userId": "publishers:matthew-a-gordon",
+      "displayName": "matthew-a-gordon",
+      "image": "https://avatars.githubusercontent.com/u/15892283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1421,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771267342264,
+      "changelog": "Initial release: 6 templates for common team patterns, automation scripts, streamlined documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:441e412d447ec0c476ac6a343e389caa93ffd7c6c3e3d76ec2f326a64b3641a8"
+}

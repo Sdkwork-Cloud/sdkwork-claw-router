@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-spa@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_spa",
+  "skill": {
+    "id": 13416,
+    "skillKey": "clawhub-book-spa",
+    "name": "Book Spa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-spa",
+    "url": "https://clawhub.ai/skills/book-spa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-spa-6705f9dedd2ee927.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book spa services through Lokuli MCP. Use when user needs to find and book spa. Triggers on requests like \"book a spa\", \"find spa near me\", or any spa service request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1461,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770340055038,
+      "changelog": "Fixed name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25ba94116057435e7b831b5420fafb915ad212aee4635f72b6ff7a0acdefb169"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/game-feedback-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_feedback_audit",
+  "skill": {
+    "id": 36921,
+    "skillKey": "clawhub-game-feedback-audit",
+    "name": "Game Feedback Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-feedback-audit",
+    "url": "https://clawhub.ai/skills/game-feedback-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-feedback-audit-cc3fb04c83d12f4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit interaction feedback quality: input acknowledgment, hit/collect/reward/failure signaling, danger telegraphing, and state-transition clarity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike007jd",
+      "userId": "s17445vjamxwgyr2d1q1jysg1d83qskv",
+      "displayName": "mike007jd",
+      "image": "https://avatars.githubusercontent.com/u/31256541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774858813507,
+      "changelog": "Fix YAML-safe frontmatter for Claude and Codex compatibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:802ca7886f79cab79a8fb22600e41aab5ed57088b94c6eeb6422881c2f99f220"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fixed-amount-invoice-ocr@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fixed_amount_invoice_ocr",
+  "skill": {
+    "id": 58916,
+    "skillKey": "clawhub-fixed-amount-invoice-ocr",
+    "name": "Fixed Amount Invoice Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fixed-amount-invoice-ocr",
+    "url": "https://clawhub.ai/skills/fixed-amount-invoice-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fixed-amount-invoice-ocr-8bd31ce8c414d98b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持定额发票识别。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scnet-sugon",
+      "userId": "s17aan1jdk93c5398r3ypc523d83hqys",
+      "displayName": "SCNet-sugon",
+      "image": "https://avatars.githubusercontent.com/u/267813088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776317165967,
+      "changelog": "fixed_amount_invoice_ocr 1.0.4\n\n- 示例对话更新，更准确地展示定额发票识别的推荐用法。\n- 旧版技能说明中的身份证、文字通用识别等表述已删除，使文档描述与技能功能一致。\n- 其余内容未变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a8161eed14fff2ec46979ec9f2a9b7933c074fa28aca15f18551ad6f0310bdb"
+}

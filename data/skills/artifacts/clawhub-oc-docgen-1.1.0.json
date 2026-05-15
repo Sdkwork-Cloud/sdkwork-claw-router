@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-docgen@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_docgen",
+  "skill": {
+    "id": 41010,
+    "skillKey": "clawhub-oc-docgen",
+    "name": "OpenClaw Doc Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-docgen",
+    "url": "https://clawhub.ai/skills/oc-docgen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-docgen-a3dcc42a82d83388.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates documentation from code. Creates API docs, README updates, architecture diagrams, and keeps documentation in sync with code changes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775118637859,
+      "changelog": "Added C/C++ support: API documentation generation, Doxygen style support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4c1fc41069f2c7d52d31fd36cb6287f8989c091b07600ffb1d12347c1b87b47"
+}

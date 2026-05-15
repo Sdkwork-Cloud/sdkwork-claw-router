@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20257,
+  "uuid": "skill-clawhub-percept-speaker-id",
+  "skillKey": "clawhub-percept-speaker-id",
+  "name": "Percept Speaker ID",
+  "summary": "Identifies and tracks speakers in multi-person conversations, mapping speaker labels to names and managing voice command authorization levels.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.percept_speaker_id",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis563",
+      "features": [
+        "Identifies and tracks speakers in multi-person conversations, mapping speaker labels to names a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/percept-speaker-id@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258515214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "percept-speaker-id",
+      "url": "https://clawhub.ai/skills/percept-speaker-id"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "percept-speaker-id",
+    "url": "https://clawhub.ai/skills/percept-speaker-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/percept-speaker-id-6f712c5e76484e40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/percept-speaker-id@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-percept-speaker-id-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07bd2add0dd8287cbc0bcab8a86f9f06e48f79a56596548880827f7a6aedbb11",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:23:36.264Z"
+}

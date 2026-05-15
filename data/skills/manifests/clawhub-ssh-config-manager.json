@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24024,
+  "uuid": "skill-clawhub-ssh-config-manager",
+  "skillKey": "clawhub-ssh-config-manager",
+  "name": "SSH Config Manager",
+  "summary": "CLI tool to manage SSH config files, organize hosts, generate configs, and test connections.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_config_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derick",
+      "features": [
+        "CLI tool to manage SSH config files, organize hosts, generate configs, and test connections."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-config-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114499711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-config-manager",
+      "url": "https://clawhub.ai/skills/ssh-config-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-config-manager",
+    "url": "https://clawhub.ai/skills/ssh-config-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-config-manager-5da8de9f9b20417a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-config-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-config-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72175572ffd67a715ca32d4b8bfdb9328457d0c7ee37abf58ff52726203f1034",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T14:00:55.053Z"
+}

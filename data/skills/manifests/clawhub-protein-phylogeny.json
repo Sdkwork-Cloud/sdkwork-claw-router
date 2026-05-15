@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41191,
+  "uuid": "skill-clawhub-protein-phylogeny",
+  "skillKey": "clawhub-protein-phylogeny",
+  "name": "Protein Phylogeny",
+  "summary": "Comprehensive protein family phylogenetic analysis workflow with quality control, conservation analysis, coevolution network analysis, and publication-ready...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protein_phylogeny",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Billwanttobetop",
+      "features": [
+        "Comprehensive protein family phylogenetic analysis workflow with quality control, conservation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protein-phylogeny@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103113834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protein-phylogeny",
+      "url": "https://clawhub.ai/skills/protein-phylogeny"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protein-phylogeny",
+    "url": "https://clawhub.ai/skills/protein-phylogeny",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protein-phylogeny-e30682f2cfded237.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protein-phylogeny@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-protein-phylogeny-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29a9fbf0dfa4c472ea025af1f5ec855e1b469e7c6031ba1196e46f23bac2c308",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T16:33:20.795Z"
+}

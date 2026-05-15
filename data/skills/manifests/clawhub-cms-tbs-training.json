@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65170,
+  "uuid": "skill-clawhub-cms-tbs-training",
+  "skillKey": "clawhub-cms-tbs-training",
+  "name": "Cms Tbs Training",
+  "summary": "TBS训战平台用户端API封装，支持首页聚合、药品场景查询、PPT演讲、训战记录、学习视频、GPTS交互、训练发起等功能",
+  "version": "0.80.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_tbs_training",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "TBS训战平台用户端API封装，支持首页聚合、药品场景查询、PPT演讲、训战记录、学习视频、GPTS交互、训练发起等功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-tbs-training@0.80.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-tbs-training",
+      "url": "https://clawhub.ai/skills/cms-tbs-training"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-tbs-training",
+    "url": "https://clawhub.ai/skills/cms-tbs-training",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-tbs-training-bcbf1ef6f26a4514.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-tbs-training@0.80.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-tbs-training-0.80.0.json",
+      "version": "0.80.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae734fb9ce7e814d261f82aef7501d6de563275f546365027ff9a5961851bfdb",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:02:04.024Z"
+}

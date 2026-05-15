@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-deck@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_deck",
+  "skill": {
+    "id": 13171,
+    "skillKey": "clawhub-openclaw-deck",
+    "name": "OpenClaw Deck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-deck",
+    "url": "https://clawhub.ai/skills/openclaw-deck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-deck-25a791fe84b3c098.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-column chat deck UI for OpenClaw agents. Launch a local web interface to manage and chat with multiple agents side-by-side."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kellyclaudeai",
+      "userId": "publishers:kellyclaudeai",
+      "displayName": "kellyclaudeai",
+      "image": "https://avatars.githubusercontent.com/u/258509868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1083,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770680761742,
+      "changelog": "Initial release: multi-column agent chat UI with keyboard navigation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2ce17cb4f6ce5a66a7dff6d99fa2a3eb818cf875ad02e910938faf873421d884"
+}

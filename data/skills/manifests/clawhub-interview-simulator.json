@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8373,
+  "uuid": "skill-clawhub-interview-simulator",
+  "skillKey": "clawhub-interview-simulator",
+  "name": "Interview Simulator",
+  "summary": "Simulates mock interviews for any role and experience level with tailored technical, behavioral, and case questions plus detailed feedback and scoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview_simulator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "Simulates mock interviews for any role and experience level with tailored technical, behavioral."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interview-simulator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interview-simulator",
+      "url": "https://clawhub.ai/skills/interview-simulator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview-simulator",
+    "url": "https://clawhub.ai/skills/interview-simulator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-simulator-c91356fd26e0ec08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interview-simulator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-interview-simulator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:acc48d38c442944c165bcda79866a7c1394e2a7eae4e0a21bc971ff7c1a1eea7",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:33:32.455Z"
+}

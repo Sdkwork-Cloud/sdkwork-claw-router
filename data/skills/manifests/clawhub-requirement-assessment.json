@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68410,
+  "uuid": "skill-clawhub-requirement-assessment",
+  "skillKey": "clawhub-requirement-assessment",
+  "name": "Requirement Assessment",
+  "summary": "需求细化与工时评估技能。接收用户需求（文本或截图），主动询问澄清问题，分析需求合理性，输出合并的需求清单 + 工时评估表，并创建飞书 Bitable 多维表。适用于项目立项、需求评审、工时估算场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requirement_assessment",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yakov0922",
+      "features": [
+        "需求细化与工时评估技能。接收用户需求（文本或截图），主动询问澄清问题，分析需求合理性，输出合并的需求清单 + 工时评估表，并创建飞书 Bitable 多维表。适用于项目立项、需求评审、工时估."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/requirement-assessment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8510897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "requirement-assessment",
+      "url": "https://clawhub.ai/skills/requirement-assessment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requirement-assessment",
+    "url": "https://clawhub.ai/skills/requirement-assessment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requirement-assessment-7480bffe9d9991ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/requirement-assessment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-requirement-assessment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f922579627d98995f9aaff868b2823abca35b0993358c0482f8595dc57cec80",
+      "artifactSizeBytes": 2594
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T12:03:11.168Z"
+}

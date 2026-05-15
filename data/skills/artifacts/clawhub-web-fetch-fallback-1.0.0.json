@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-fetch-fallback@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fetch_fallback",
+  "skill": {
+    "id": 45331,
+    "skillKey": "clawhub-web-fetch-fallback",
+    "name": "Web Fetch Fallback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fetch-fallback",
+    "url": "https://clawhub.ai/skills/web-fetch-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fetch-fallback-7e7d08de3e478510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch web content using curl as a fallback when web_fetch is blocked due to private, internal, or special-use IP address restrictions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiantian-douba",
+      "userId": "s17cf5p08xazw0rqxxs1wf49rx84x423",
+      "displayName": "TianTian-DouBa",
+      "image": "https://avatars.githubusercontent.com/u/2969009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776234159288,
+      "changelog": "- Initial release of the web-fetch-fallback skill.\n- Provides guidance and best practices for using curl as a fallback when web_fetch blocks requests to private/internal/special-use IP addresses.\n- Includes example curl commands for fetching content, using custom headers, saving output, and handling timeouts.\n- Outlines limitations, security considerations, and recommended workflows for safe usage.\n- Reference to a reusable curl script and detailed curl exit code meanings included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:263774ca3b722402eb355c867992774b01391d4a87f7513751a20e163f65b5ce"
+}

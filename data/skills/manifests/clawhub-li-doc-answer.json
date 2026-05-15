@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63691,
+  "uuid": "skill-clawhub-li-doc-answer",
+  "skillKey": "clawhub-li-doc-answer",
+  "name": "Li_doc_answer - 通用文档 AI 答案生成",
+  "summary": "AI自动识别Word文档中的8种题型题目，生成格式统一的参考答案，支持批量处理和doc/docx格式转换。",
+  "version": "3.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.li_doc_answer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Terry S Fisher",
+      "features": [
+        "AI自动识别Word文档中的8种题型题目，生成格式统一的参考答案，支持批量处理和doc/docx格式转换。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/li-doc-answer@3.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42956557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "li-doc-answer",
+      "url": "https://clawhub.ai/skills/li-doc-answer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "li-doc-answer",
+    "url": "https://clawhub.ai/skills/li-doc-answer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/li-doc-answer-6b95a1a3d81e35c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/li-doc-answer@3.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-li-doc-answer-3.0.5.json",
+      "version": "3.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a495b82614d8b428afcdb1ad18ca6ed382c4d6b05116e530f76487a5dbef55e7",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T22:45:56.229Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ultrahuman-biodata-assistant@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ultrahuman_biodata_assistant",
+  "skill": {
+    "id": 29072,
+    "skillKey": "clawhub-ultrahuman-biodata-assistant",
+    "name": "Ultrahuman Biodata Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ultrahuman-biodata-assistant",
+    "url": "https://clawhub.ai/skills/ultrahuman-biodata-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ultrahuman-biodata-assistant-a57a97da062596d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the Ultrahuman MCP to answer questions about sleep, recovery, readiness, daily metrics, morning brief, ring data, glucose, and metabolic health. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duzafizzl",
+      "userId": "publishers:duzafizzl",
+      "displayName": "Duzafizzl",
+      "image": "https://avatars.githubusercontent.com/u/175158250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773585539140,
+      "changelog": "Initial release of the Ultrahuman Biodata Assistant skill.\n\n- Answers questions about sleep, recovery, readiness, daily metrics, and trends using Ultrahuman MCP data.\n- Supports queries for morning briefs, recovery checks, daily health data, and comparisons over multiple days.\n- Handles both ring and CGM data, including metrics like sleep score, recovery score, HRV, steps, and glucose.\n- Provides structured, scannable summaries and brief trends without medical advice.\n- Handles user date and email context, with fallback prompts if necessary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:634979d839edbf83f579f8d4a1fec896a9828b21c79a12072b07a4b042be6419"
+}

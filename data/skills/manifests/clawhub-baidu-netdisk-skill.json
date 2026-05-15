@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57992,
+  "uuid": "skill-clawhub-baidu-netdisk-skill",
+  "skillKey": "clawhub-baidu-netdisk-skill",
+  "name": "Baidu Netdisk Skill",
+  "summary": "Baidu Netdisk file management for OpenClaw - List, search, download, upload with OAuth 2.0 (百度网盘文件管理 - OAuth 一键授权)",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_netdisk_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miaozai Studio",
+      "features": [
+        "Baidu Netdisk file management for OpenClaw",
+        "List, search, download, upload with OAuth 2.0 (百度网盘文件管理",
+        "OAuth 一键授权)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-netdisk-skill@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201531641?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-netdisk-skill",
+      "url": "https://clawhub.ai/skills/baidu-netdisk-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-netdisk-skill",
+    "url": "https://clawhub.ai/skills/baidu-netdisk-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-netdisk-skill-1e5aab7aa8c5db6c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-netdisk-skill@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-netdisk-skill-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4454babfe714b836b13db3b14475b6c2a04a6f7f9e6e839c6d02a7901cd04e98",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:10:12.255Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21194,
+  "uuid": "skill-clawhub-clerk",
+  "skillKey": "clawhub-clerk",
+  "name": "Clerk",
+  "summary": "Clerk integration. Manage Users, Organizations. Use when the user wants to interact with Clerk data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clerk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Clerk integration",
+        "Manage Users, Organizations",
+        "Use when the user wants to interact with Clerk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clerk@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clerk",
+      "url": "https://clawhub.ai/skills/clerk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clerk",
+    "url": "https://clawhub.ai/skills/clerk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clerk-c40dc72b0228e585.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clerk@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clerk-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56cfc49c9af46ed1830545c4b59317d463762e20f5932e0bba3853e8a62f4372",
+      "artifactSizeBytes": 1786
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:31:02.881Z"
+}

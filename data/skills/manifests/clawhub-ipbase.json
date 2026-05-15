@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30034,
+  "uuid": "skill-clawhub-ipbase",
+  "skillKey": "clawhub-ipbase",
+  "name": "Ipbase",
+  "summary": "Ipbase integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ipbase data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipbase",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ipbase integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ipbase data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ipbase@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ipbase",
+      "url": "https://clawhub.ai/skills/ipbase"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipbase",
+    "url": "https://clawhub.ai/skills/ipbase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipbase-664ed5352017176e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ipbase@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ipbase-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a518762dc72cbb827e4469e932e99a4133dd4ea7d64c9865cbbc20a3eada886e",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:01:38.692Z"
+}

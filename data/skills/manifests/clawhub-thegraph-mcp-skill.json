@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27171,
+  "uuid": "skill-clawhub-thegraph-mcp-skill",
+  "skillKey": "clawhub-thegraph-mcp-skill",
+  "name": "Thegraph Mcp Skill",
+  "summary": "Use The Graph Subgraph MCP through UXC via native SSE with a fixed linked command for subgraph discovery, schema retrieval, deployment selection, and GraphQL...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thegraph_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Use The Graph Subgraph MCP through UXC via native SSE with a fixed linked command for subgraph."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thegraph-mcp-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thegraph-mcp-skill",
+      "url": "https://clawhub.ai/skills/thegraph-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thegraph-mcp-skill",
+    "url": "https://clawhub.ai/skills/thegraph-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thegraph-mcp-skill-c60a0cf102aab729.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thegraph-mcp-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-thegraph-mcp-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6274c86ec6a0327d6dc96e6aebda135c5b0d1190a90de528b82f0324e5da960",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T16:07:21.697Z"
+}

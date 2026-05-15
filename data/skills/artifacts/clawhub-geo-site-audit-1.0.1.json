@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-site-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_site_audit",
+  "skill": {
+    "id": 20834,
+    "skillKey": "clawhub-geo-site-audit",
+    "name": "GEO Site Readiness Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-site-audit",
+    "url": "https://clawhub.ai/skills/geo-site-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-site-audit-f777f6929e95e75a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a structured 29-point GEO (Generative Engine Optimization) readiness audit on any website. Checks AI accessibility, structured data, content citability,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772281008153,
+      "changelog": "**geo-site-audit v1.0.1**\n\n- Adds scripts for running single and batch GEO audits (`geo_audit.py`, `batch_audit.py`)\n- Adds detailed reference docs for checklist, integrations, schemas, and scoring\n- Updated skill description for broader and clearer trigger criteria\n- Expanded usage instructions, including advanced options and troubleshooting\n- Introduced multiple output formats: Markdown, JSON, HTML\n- Added grade scale for interpreting audit results",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc81893641ed77d99b4c9e346e0389d7ec00ae7e3a0a30f7915ef477b8ac0057"
+}

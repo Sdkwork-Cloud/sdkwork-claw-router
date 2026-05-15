@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53592,
+  "uuid": "skill-clawhub-pci-dss-readiness-auditor",
+  "skillKey": "clawhub-pci-dss-readiness-auditor",
+  "name": "Pci Dss Readiness Auditor",
+  "summary": "Audit a payment stack for PCI DSS v4.0 / v4.0.1 readiness — determine cardholder data environment (CDE) scope from data flows (storage, processing, transmiss...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pci_dss_readiness_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Audit a payment stack for PCI DSS v4.0 / v4.0.1 readiness — determine cardholder data environme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pci-dss-readiness-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pci-dss-readiness-auditor",
+      "url": "https://clawhub.ai/skills/pci-dss-readiness-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pci-dss-readiness-auditor",
+    "url": "https://clawhub.ai/skills/pci-dss-readiness-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pci-dss-readiness-auditor-0bb5e151b1a937d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pci-dss-readiness-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pci-dss-readiness-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85a0f67f0cc1ec4a5be5c11afec644a4e102b398479ac09fc92ba83487fa4b65",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T02:11:25.344Z"
+}

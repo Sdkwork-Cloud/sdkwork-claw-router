@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/story-short-write@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_short_write",
+  "skill": {
+    "id": 65475,
+    "skillKey": "clawhub-story-short-write",
+    "name": "Story Short Write"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-short-write",
+    "url": "https://clawhub.ai/skills/story-short-write",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-short-write-aca7a6a1a2e321d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短篇网文写作。辅助短篇小说创作，从构思到成稿，聚焦情绪拉扯与节奏把控。 触发方式：/story-short-write、/写短篇、「帮我写一篇短篇」「写个盐言故事」"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "worldwonderer",
+      "userId": "s1748rsha25rh871z39a8xdg9n85tqyh",
+      "displayName": "worldwonderer",
+      "image": "https://avatars.githubusercontent.com/u/49583093?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777650936617,
+      "changelog": "v0.3.0: 流程衔接表中文化+术语通俗化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8aec4c3e6abee8b7ccd3446d9f90e61e85eef51257aa5d4ed08cbdc2bcbcab04"
+}

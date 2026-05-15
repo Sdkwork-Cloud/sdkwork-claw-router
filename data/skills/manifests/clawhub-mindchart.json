@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20371,
+  "uuid": "skill-clawhub-mindchart",
+  "skillKey": "clawhub-mindchart",
+  "name": "Mindchart",
+  "summary": "Create exquisite infographics from user-uploaded files or given text. Used when user requests to create an infographic.",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindchart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangshulin",
+      "features": [
+        "Create exquisite infographics from user-uploaded files or given text",
+        "Used when user requests to create an infographic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mindchart@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17463933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mindchart",
+      "url": "https://clawhub.ai/skills/mindchart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindchart",
+    "url": "https://clawhub.ai/skills/mindchart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindchart-98eef26866f323eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mindchart@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-mindchart-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3312868f3b3c36b1b6f58fa7c5bb181a502c055256d0a8eb6b79ee7db2030fa2",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T06:56:54.363Z"
+}

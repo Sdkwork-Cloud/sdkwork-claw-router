@@ -20,7 +20,7 @@ impl ProviderSecretMapResolver {
 }
 
 impl ProviderSecretResolver for ProviderSecretMapResolver {
-    fn resolve_bearer_token(&self, secret_ref: &str) -> DomainResult<String> {
+    fn resolve_secret_value(&self, secret_ref: &str) -> DomainResult<String> {
         let secret_ref = secret_ref.trim();
         if secret_ref.is_empty() {
             return Err(DomainError::new("provider secret_ref is required"));
@@ -37,7 +37,7 @@ impl fmt::Debug for ProviderSecretMapResolver {
         formatter
             .debug_struct("ProviderSecretMapResolver")
             .field("secret_count", &self.secrets.len())
-            .field("bearer_tokens", &"[REDACTED]")
+            .field("secret_values", &"[REDACTED]")
             .finish()
     }
 }

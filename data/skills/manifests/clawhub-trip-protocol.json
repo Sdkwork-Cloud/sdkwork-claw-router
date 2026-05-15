@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42187,
+  "uuid": "skill-clawhub-trip-protocol",
+  "skillKey": "clawhub-trip-protocol",
+  "name": "Trip Protocol",
+  "summary": "Temporarily modify your agent's SOUL.md by consuming verified TripExperience NFTs for 3–15 minutes before auto-restoring original state.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_protocol",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reggie-sporewell",
+      "features": [
+        "Temporarily modify your agent's SOUL.md by consuming verified TripExperience NFTs for 3–15 minu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-protocol@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257888022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-protocol",
+      "url": "https://clawhub.ai/skills/trip-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-protocol",
+    "url": "https://clawhub.ai/skills/trip-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-protocol-894d21ce1eb89bbb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-protocol@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-protocol-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3867a13ec5c6f244b85afb1906cacbbaea3e06287a16803ab9e3715ec2bdb6bc",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T22:05:10.527Z"
+}

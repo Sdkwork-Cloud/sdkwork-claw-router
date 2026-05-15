@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-integration@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_integration",
+  "skill": {
+    "id": 63664,
+    "skillKey": "clawhub-memory-integration",
+    "name": "Memory Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-integration",
+    "url": "https://clawhub.ai/skills/memory-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-integration-42596842b0d30287.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "同步 OpenClaw 记忆文件到共现图和语义向量库，支持增量更新及语义加共现的统一搜索接口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whoisme007",
+      "userId": "s17fqq02tcx4erebjpdxkpfyfs83gnes",
+      "displayName": "whoisme007",
+      "image": "https://avatars.githubusercontent.com/u/6497382?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773802055176,
+      "changelog": "memory-integration v0.1.0\n\n- 初始发布：为 OpenClaw 星型记忆架构提供记忆同步与增强搜索服务\n- 支持原生记忆结构（MEMORY.md, memory/*.md）同步至共现图和语义向量库\n- 提供统一的语义+共现增强搜索 API\n- 实现增量同步与唯一记忆 ID，支持跨系统引用\n- 提供标准适配器接口与配置支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73e5960a30aa0a2d9e008bcdcae25303fdf0fbec3a7249d9db837ab06963e6d4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23574,
+  "uuid": "skill-clawhub-creatio",
+  "skillKey": "clawhub-creatio",
+  "name": "Creatio",
+  "summary": "Creatio integration. Manage Leads, Organizations, Users. Use when the user wants to interact with Creatio data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creatio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Creatio integration",
+        "Manage Leads, Organizations, Users",
+        "Use when the user wants to interact with Creatio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/creatio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "creatio",
+      "url": "https://clawhub.ai/skills/creatio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creatio",
+    "url": "https://clawhub.ai/skills/creatio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creatio-2db08657b592ffb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/creatio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-creatio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef3d9ef28c2945255200f52ce804326583674c24742ae416fb75c7117bb83dd1",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:21:20.039Z"
+}

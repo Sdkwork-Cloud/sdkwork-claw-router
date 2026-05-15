@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/affiliate-link-injector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.affiliate_link_injector",
+  "skill": {
+    "id": 24746,
+    "skillKey": "clawhub-affiliate-link-injector",
+    "name": "Affiliate Link Injector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "affiliate-link-injector",
+    "url": "https://clawhub.ai/skills/affiliate-link-injector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/affiliate-link-injector-082b350fe0096979.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan content for product mentions and auto-insert affiliate links with FTC compliance disclosures. Use when the user needs to monetize blog posts, product re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ncreighton",
+      "userId": "s1796aws4dkha8d1m3anczz2dn83hvxz",
+      "displayName": "ncreighton",
+      "image": "https://avatars.githubusercontent.com/u/15095223?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773588461333,
+      "changelog": "Initial release of affiliate-link-injector.\n\n- Automatically scans content for product mentions and inserts tracked affiliate links with FTC-compliant disclosures.\n- Supports Amazon Associates, ShareASale, Impact, CJ Affiliate, and custom networks.\n- Compatible with platforms including WordPress, Google Docs, Substack, and more.\n- Features intelligent product detection, context-aware link injection, and compliance audit reporting.\n- Provides multi-language disclosures and configurable compliance modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50000de3766baab8a1af190497a73cfdff964ed74697aee22347adac686659f7"
+}

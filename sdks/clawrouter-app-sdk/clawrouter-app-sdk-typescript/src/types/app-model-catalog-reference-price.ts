@@ -1,0 +1,9 @@
+/** App model catalog reference price schema exposed by Claw Router. */
+export interface AppModelCatalogReferencePrice {
+  /** Billing meter field on app model catalog reference price. */
+  billingMeter: string;
+  /** Currency field on app model catalog reference price. */
+  currency: string;
+  /** Decimal unit price in the native official reference currency. */
+  unitPrice: string;
+}

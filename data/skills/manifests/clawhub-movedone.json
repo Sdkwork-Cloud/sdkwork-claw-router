@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27922,
+  "uuid": "skill-clawhub-movedone",
+  "skillKey": "clawhub-movedone",
+  "name": "Movedone",
+  "summary": "Manage Movedone kanban projects, columns, tasks, comments, and task links via the local HTTP API.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movedone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaichaosun",
+      "features": [
+        "Manage Movedone kanban projects, columns, tasks, comments, and task links via the local HTTP AP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/movedone@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10568673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "movedone",
+      "url": "https://clawhub.ai/skills/movedone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movedone",
+    "url": "https://clawhub.ai/skills/movedone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movedone-1a7bb12cdc5ccf78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/movedone@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-movedone-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0151f390c270ec779c79c77fb99f7e33d090fc48f16665d81196c0fef97c89ac",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T04:02:19.191Z"
+}

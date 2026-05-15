@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-transcribe-api@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_transcribe_api",
+  "skill": {
+    "id": 57187,
+    "skillKey": "clawhub-douyin-transcribe-api",
+    "name": "抖音文案解析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-transcribe-api",
+    "url": "https://clawhub.ai/skills/douyin-transcribe-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-transcribe-api-205afd456614ca22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call the coze-js-api Douyin transcription endpoint and return transcript-ready results from Douyin URLs or share-text. Use this skill whenever the user asks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyriswu",
+      "userId": "s17adkk1pw6rdbxdzht0y1pey583gqfs",
+      "displayName": "kyris wu",
+      "image": "https://avatars.githubusercontent.com/u/5120703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773390687110,
+      "changelog": "**Now uses an external shell script for transcription requests.**\n\n- Added scripts/transcribe_douyin.sh for handling API requests via bash.\n- Updated logic to execute the bundled shell script instead of building API requests inline.\n- Response formatting and error prompts remain consistent, but requests use exec bash scripts/transcribe_douyin.sh with environment-based API key.\n- Added metadata to declare system requirements (bash, curl, python3).\n- Clarified examples and instructions to prefer the shell wrapper over manual curl commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:209fe03eef7d0cee8bf851cb29bb6afb8013f756cd9919aeb2029bb2818bdeb3"
+}

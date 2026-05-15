@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workflow-builder-lite@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_builder_lite",
+  "skill": {
+    "id": 26536,
+    "skillKey": "clawhub-workflow-builder-lite",
+    "name": "Workflow Builder Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-builder-lite",
+    "url": "https://clawhub.ai/skills/workflow-builder-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-builder-lite-d13410027e88b4f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and execute multi-step workflows with conditional logic. Chain API calls, agent actions, and shell commands into sequences with if/else branching. Pers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tommot2",
+      "userId": "s17fzh9kw6g9v8fg9kppsbmwt183p1kd",
+      "displayName": "TommoT2",
+      "image": "https://avatars.githubusercontent.com/u/106430507?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775172421436,
+      "changelog": "Exec steps with confirmation, persistent workflows to files, simplified build/execute flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0054f2262899e3df53035383d7882344f7615e65801b32cb440fef0ec95dcc4"
+}

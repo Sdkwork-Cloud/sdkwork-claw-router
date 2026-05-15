@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-plugin-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_plugin_writer",
+  "skill": {
+    "id": 62429,
+    "skillKey": "clawhub-figma-plugin-writer",
+    "name": "Figma Plugin Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-plugin-writer",
+    "url": "https://clawhub.ai/skills/figma-plugin-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-plugin-writer-93011d2ccb4b1f6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动生成和更新 Figma 插件的 code.js 以创建和修改设计元素，用户更新代码后需手动运行插件执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zerozlw",
+      "userId": "s179zebkkb5tpv7z7d2t4hq7m983hnbc",
+      "displayName": "Zoe Addamssance",
+      "image": "https://avatars.githubusercontent.com/u/32867264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774252548596,
+      "changelog": "- Major documentation overhaul for clarity and conciseness (SKILL.md rewritten in English).\n- Better structure: clearer prerequisites, workflow, and explicit API/code example sections.\n- Rules, best practices, and iteration patterns are now listed in a concise, step-by-step manner.\n- Removed README.md; all setup and instructional info is consolidated in SKILL.md.\n- No code/logic changes; examples remain, but doc organization and guidance are now much more user-friendly.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a98fca853c820e40dec2920f8f4601aa40e44a1dd79446aa07b9a662cc792f6"
+}

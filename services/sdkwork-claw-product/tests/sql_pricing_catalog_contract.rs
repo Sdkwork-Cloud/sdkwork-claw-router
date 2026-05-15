@@ -2,7 +2,8 @@ use sdkwork_claw_product::application::{
     ListModelCatalogQuery, ModelCatalogQueryService, PriceAvailability,
 };
 use sdkwork_claw_product::domain::{
-    BillingMeter, DecimalValue, ModelVendor, PriceSide, ProviderRetryPolicy,
+    BillingMeter, DecimalValue, ModelVendor, PriceSide, ProviderAuthType, ProviderRetryPolicy,
+    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicyScope,
 };
 use sdkwork_claw_product::infrastructure::sql::catalog::{
     PricingCatalogRows, SqlPricingCatalogSnapshot,
@@ -10,7 +11,7 @@ use sdkwork_claw_product::infrastructure::sql::catalog::{
 use sdkwork_claw_product::infrastructure::sql::rows::{
     AiModelRow, ApiKeyGroupMetricSnapshotRow, ApiKeyGroupRow, GatewayAccessPolicyRow,
     GatewayApiKeyRow, ModelPriceRow, ModelProviderRouteRow, ModelVendorRow, PricingPlanRow,
-    QuotaPolicyRow,
+    ProviderAccountPoolRouteRow, QuotaPolicyRow, RoutingPolicyRow, RoutingRuleRow,
 };
 use sdkwork_claw_product::infrastructure::sql::PricingCatalogSql;
 use sdkwork_claw_product::ports::PricingCatalog;
@@ -65,6 +66,9 @@ fn sql_queries_use_schema_registry_tables_and_never_forbidden_synonyms() {
         "integration_provider_account",
         "integration_channel",
         "integration_channel_model",
+        "ai_routing_policy",
+        "ai_routing_profile",
+        "ai_routing_rule",
     ] {
         assert!(
             sql.contains(required_table),
@@ -106,7 +110,7 @@ fn sql_queries_project_stable_codes_instead_of_enum_ordinals() {
 #[test]
 fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     let queries = PricingCatalogSql::snapshot_load_queries();
-    assert_eq!(10, queries.len());
+    assert_eq!(13, queries.len());
 
     let sql = queries.join("\n");
     for required_table in [
@@ -123,6 +127,9 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "integration_provider_account",
         "integration_channel",
         "integration_channel_model",
+        "ai_routing_policy",
+        "ai_routing_profile",
+        "ai_routing_rule",
     ] {
         assert!(
             sql.contains(required_table),
@@ -157,8 +164,33 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
         "provider route snapshot query must project resolved provider base_url"
     );
     assert!(
+        PricingCatalogSql::load_provider_routes().contains("JOIN integration_provider p"),
+        "provider route snapshot query must require an active provider for callable account-pool routing"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("JOIN integration_provider_account a"),
+        "provider route snapshot query must require an active provider account for callable account-pool routing"
+    );
+    assert!(
         PricingCatalogSql::load_provider_routes().contains("secret_ref"),
         "provider route snapshot query must project provider account secret_ref"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("auth_type"),
+        "provider route snapshot query must project provider account auth_type"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("auth_config"),
+        "provider route snapshot query must project provider account auth_config"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes().contains("NULLIF(a.secret_ref, '')"),
+        "provider route snapshot query must filter routes without provider account secret_ref"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_routes()
+            .contains("NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '')"),
+        "provider route snapshot query must filter routes without resolved base_url"
     );
     assert!(
         PricingCatalogSql::load_provider_routes().contains("timeout_ms"),
@@ -167,6 +199,53 @@ fn snapshot_load_queries_are_parameterless_and_cover_every_catalog_row_set() {
     assert!(
         PricingCatalogSql::load_provider_routes().contains("retry_policy"),
         "provider route snapshot query must project integration_channel.retry_policy for provider egress retry control"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes().contains("base_url"),
+        "account pool snapshot query must project resolved provider base_url for model-less route-scoped forwarding"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes()
+            .contains("JOIN integration_provider p"),
+        "account pool snapshot query must require an active provider for callable forwarding"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes()
+            .contains("JOIN integration_provider_account a"),
+        "account pool snapshot query must require an active provider account for callable forwarding"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes().contains("secret_ref"),
+        "account pool snapshot query must project provider account secret_ref"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes().contains("auth_type"),
+        "account pool snapshot query must project provider account auth_type"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes().contains("auth_config"),
+        "account pool snapshot query must project provider account auth_config"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes().contains("NULLIF(a.secret_ref, '')"),
+        "account pool snapshot query must filter channels without provider account secret_ref"
+    );
+    assert!(
+        PricingCatalogSql::load_provider_account_pool_routes()
+            .contains("NULLIF(COALESCE(NULLIF(c.base_url_override, ''), p.base_url_template), '')"),
+        "account pool snapshot query must filter channels without resolved base_url"
+    );
+    assert!(
+        PricingCatalogSql::load_routing_policies().contains("default_profile_id"),
+        "routing policy snapshot query must project the default active profile"
+    );
+    assert!(
+        PricingCatalogSql::load_routing_rules().contains("candidate_channels"),
+        "routing rule snapshot query must project candidate account-pool channels"
+    );
+    assert!(
+        PricingCatalogSql::load_routing_rules().contains("fallback_chain"),
+        "routing rule snapshot query must project configured fallback account-pool channels"
     );
 }
 
@@ -202,6 +281,8 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
         provider_model: "openai/global/gpt-4o-mini".to_owned(),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+        auth_type: Some("bearer".to_owned()),
+        auth_config_json: Some("{}".to_owned()),
         timeout_ms: Some(30_000),
         retry_policy_json: Some(
             r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
@@ -223,6 +304,47 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     assert_eq!(
         Some(ProviderRetryPolicy::new(3, vec![429, 500, 503], 25).unwrap()),
         route.retry_policy
+    );
+    assert_eq!(ProviderAuthType::Bearer, route.auth_profile.auth_type);
+    assert_eq!(None, route.auth_profile.name);
+
+    let account_pool_route = ProviderAccountPoolRouteRow {
+        provider_code: "openrouter".to_owned(),
+        channel_id: 3001,
+        base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
+        secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+        auth_type: Some("header".to_owned()),
+        auth_config_json: Some(r#"{"name":"x-api-key"}"#.to_owned()),
+        timeout_ms: Some(30_000),
+        retry_policy_json: Some(
+            r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
+                .to_owned(),
+        ),
+    }
+    .try_into_domain()
+    .unwrap();
+    assert_eq!("openrouter", account_pool_route.provider_code);
+    assert_eq!(3001, account_pool_route.channel_id);
+    assert_eq!(
+        Some("http://provider-proxy.internal/openrouter"),
+        account_pool_route.base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/openrouter/account/main"),
+        account_pool_route.secret_ref.as_deref()
+    );
+    assert_eq!(Some(30_000), account_pool_route.timeout_ms);
+    assert_eq!(
+        Some(ProviderRetryPolicy::new(3, vec![429, 500, 503], 25).unwrap()),
+        account_pool_route.retry_policy
+    );
+    assert_eq!(
+        ProviderAuthType::Header,
+        account_pool_route.auth_profile.auth_type
+    );
+    assert_eq!(
+        Some("x-api-key"),
+        account_pool_route.auth_profile.name.as_deref()
     );
 
     let api_key = GatewayApiKeyRow {
@@ -325,6 +447,53 @@ fn row_mappers_convert_sql_rows_into_domain_objects() {
     assert_eq!(PriceSide::UpstreamCost, price.price_side);
     assert_eq!(BillingMeter::LlmInputToken, price.billing_meter);
     assert_eq!("0.110000", price.unit_price.to_fixed_string(6));
+
+    let routing_policy = RoutingPolicyRow {
+        id: 9001,
+        tenant_id: 10,
+        organization_id: 20,
+        policy_code: "standard-group-routing".to_owned(),
+        policy_scope: 5,
+        subject_id: Some(10),
+        capability: Some(1),
+        default_profile_id: Some(9101),
+        fallback_mode: Some(1),
+    }
+    .try_into_domain()
+    .unwrap();
+    assert_eq!(RoutingPolicyScope::ApiKeyGroup, routing_policy.policy_scope);
+    assert_eq!(Some(RoutingCapability::Chat), routing_policy.capability);
+    assert_eq!(
+        Some(RoutingFallbackMode::None),
+        routing_policy.fallback_mode
+    );
+    assert_eq!(Some(10), routing_policy.subject_id);
+    assert_eq!(Some(9101), routing_policy.default_profile_id);
+
+    let routing_rule = RoutingRuleRow {
+        id: 9102,
+        tenant_id: 10,
+        organization_id: 20,
+        profile_id: 9101,
+        rule_code: "gpt-4o-mini-account-pool".to_owned(),
+        priority: 10,
+        match_expression_json: r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#.to_owned(),
+        target_model: Some("openai/global/gpt-4o-mini".to_owned()),
+        candidate_channels_json: r#"[{"channel_id":3001,"weight":100}]"#.to_owned(),
+        fallback_chain_json: r#"[{"channelId":3002,"weight":50}]"#.to_owned(),
+        constraints_json: r#"{"max_latency_ms":30000}"#.to_owned(),
+    }
+    .try_into_domain()
+    .unwrap();
+    assert!(routing_rule.matches_catalog_key("openai/global/gpt-4o-mini", "gpt-4o-mini"));
+    assert_eq!(
+        vec![RouteCandidate::new(3001, 100)],
+        routing_rule.candidate_channels
+    );
+    assert_eq!(
+        vec![RouteCandidate::new(3002, 50)],
+        routing_rule.fallback_chain
+    );
 }
 
 #[test]
@@ -359,6 +528,8 @@ fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
         provider_model: "openai/global/gpt-4o-mini".to_owned(),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+        auth_type: None,
+        auth_config_json: None,
         timeout_ms: Some(0),
         retry_policy_json: None,
     };
@@ -373,6 +544,8 @@ fn row_mappers_reject_invalid_decimal_and_unknown_price_side() {
         provider_model: "openai/global/gpt-4o-mini".to_owned(),
         base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
         secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+        auth_type: None,
+        auth_config_json: None,
         timeout_ms: Some(30_000),
         retry_policy_json: Some(r#"{"max_attempts":0,"retryable_status_codes":[503]}"#.to_owned()),
     };
@@ -424,6 +597,26 @@ fn sql_catalog_snapshot_implements_pricing_catalog_from_database_rows() {
             panic!("snapshot must preserve pricing rows: {reason}");
         }
     }
+
+    let policies = snapshot.list_routing_policies();
+    assert_eq!(1, policies.len());
+    assert_eq!(RoutingPolicyScope::ApiKeyGroup, policies[0].policy_scope);
+    assert_eq!(Some(10), policies[0].subject_id);
+
+    let rules = snapshot.list_routing_rules(9101);
+    assert_eq!(1, rules.len());
+    assert_eq!(
+        vec![RouteCandidate::new(3001, 100)],
+        rules[0].candidate_channels
+    );
+
+    let account_pool_routes = snapshot.list_provider_account_pool_routes();
+    assert_eq!(2, account_pool_routes.len());
+    assert_eq!(3001, account_pool_routes[0].channel_id);
+    assert_eq!(
+        Some("vault://providers/openrouter/account/main"),
+        account_pool_routes[0].secret_ref.as_deref()
+    );
 }
 
 #[test]
@@ -477,6 +670,48 @@ fn sql_catalog_snapshot_rejects_invalid_provider_retry_policy_before_serving_cat
         .contains("integration_channel.retry_policy"));
 }
 
+#[test]
+fn sql_catalog_snapshot_rejects_invalid_routing_rule_json_before_serving_catalog() {
+    let mut rows = priced_catalog_rows();
+    rows.routing_rules[0].candidate_channels_json = "not-json".to_owned();
+
+    let result = SqlPricingCatalogSnapshot::from_rows(rows);
+
+    let error = match result {
+        Ok(_) => panic!("catalog snapshot must reject invalid routing candidate channels"),
+        Err(error) => error,
+    };
+    assert!(error.to_string().contains("candidate_channels"));
+}
+
+#[test]
+fn sql_catalog_snapshot_rejects_unknown_routing_fallback_mode_before_serving_catalog() {
+    let mut rows = priced_catalog_rows();
+    rows.routing_policies[0].fallback_mode = Some(99);
+
+    let result = SqlPricingCatalogSnapshot::from_rows(rows);
+
+    let error = match result {
+        Ok(_) => panic!("catalog snapshot must reject unknown routing fallback modes"),
+        Err(error) => error,
+    };
+    assert!(error.to_string().contains("fallback_mode"));
+}
+
+#[test]
+fn sql_catalog_snapshot_rejects_unknown_routing_capability_before_serving_catalog() {
+    let mut rows = priced_catalog_rows();
+    rows.routing_policies[0].capability = Some(99);
+
+    let result = SqlPricingCatalogSnapshot::from_rows(rows);
+
+    let error = match result {
+        Ok(_) => panic!("catalog snapshot must reject unknown routing capabilities"),
+        Err(error) => error,
+    };
+    assert!(error.to_string().contains("capability"));
+}
+
 fn priced_catalog_rows() -> PricingCatalogRows {
     PricingCatalogRows {
         vendors: vec![ModelVendorRow {
@@ -498,6 +733,8 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                 provider_model: "openai/global/gpt-4o-mini".to_owned(),
                 base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
                 secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+                auth_type: Some("bearer".to_owned()),
+                auth_config_json: Some("{}".to_owned()),
                 timeout_ms: Some(30_000),
                 retry_policy_json: Some(
                     r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
@@ -512,10 +749,61 @@ fn priced_catalog_rows() -> PricingCatalogRows {
                 provider_model: "gpt-4o-mini".to_owned(),
                 base_url: Some("http://provider-proxy.internal/azure".to_owned()),
                 secret_ref: Some("vault://providers/azure/account/main".to_owned()),
+                auth_type: Some("azure_openai".to_owned()),
+                auth_config_json: Some("{}".to_owned()),
                 timeout_ms: None,
                 retry_policy_json: None,
             },
         ],
+        provider_account_pool_routes: vec![
+            ProviderAccountPoolRouteRow {
+                provider_code: "openrouter".to_owned(),
+                channel_id: 3001,
+                base_url: Some("http://provider-proxy.internal/openrouter".to_owned()),
+                secret_ref: Some("vault://providers/openrouter/account/main".to_owned()),
+                auth_type: Some("bearer".to_owned()),
+                auth_config_json: Some("{}".to_owned()),
+                timeout_ms: Some(30_000),
+                retry_policy_json: Some(
+                    r#"{"max_attempts":3,"retryable_status_codes":[429,500,503],"backoff_ms":25}"#
+                        .to_owned(),
+                ),
+            },
+            ProviderAccountPoolRouteRow {
+                provider_code: "azure_openai".to_owned(),
+                channel_id: 2001,
+                base_url: Some("http://provider-proxy.internal/azure".to_owned()),
+                secret_ref: Some("vault://providers/azure/account/main".to_owned()),
+                auth_type: Some("azure_openai".to_owned()),
+                auth_config_json: Some("{}".to_owned()),
+                timeout_ms: None,
+                retry_policy_json: None,
+            },
+        ],
+        routing_policies: vec![RoutingPolicyRow {
+            id: 9001,
+            tenant_id: 10,
+            organization_id: 20,
+            policy_code: "standard-group-routing".to_owned(),
+            policy_scope: 5,
+            subject_id: Some(10),
+            capability: Some(1),
+            default_profile_id: Some(9101),
+            fallback_mode: Some(1),
+        }],
+        routing_rules: vec![RoutingRuleRow {
+            id: 9102,
+            tenant_id: 10,
+            organization_id: 20,
+            profile_id: 9101,
+            rule_code: "gpt-4o-mini-account-pool".to_owned(),
+            priority: 10,
+            match_expression_json: r#"{"catalogKey":"openai/global/gpt-4o-mini"}"#.to_owned(),
+            target_model: Some("openai/global/gpt-4o-mini".to_owned()),
+            candidate_channels_json: r#"[{"channel_id":3001,"weight":100}]"#.to_owned(),
+            fallback_chain_json: "[]".to_owned(),
+            constraints_json: "{}".to_owned(),
+        }],
         pricing_plans: vec![PricingPlanRow {
             plan_code: "standard".to_owned(),
             base_price_side_code: "official_reference".to_owned(),

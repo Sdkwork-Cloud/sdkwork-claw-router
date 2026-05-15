@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69081,
+  "uuid": "skill-clawhub-xianyu-search",
+  "skillKey": "clawhub-xianyu-search",
+  "name": "xianyu-search",
+  "summary": "提供基于预算、成色和信用筛选的闲鱼二手商品搜索，并支持多平台价格比对和推荐。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xianyu_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LG2021888",
+      "features": [
+        "提供基于预算、成色和信用筛选的闲鱼二手商品搜索，并支持多平台价格比对和推荐。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xianyu-search@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46318359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xianyu-search",
+      "url": "https://clawhub.ai/skills/xianyu-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xianyu-search",
+    "url": "https://clawhub.ai/skills/xianyu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xianyu-search-c3fa7c4f9ba5a4f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xianyu-search@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xianyu-search-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:230c59809165000ce58f6821d00af54799a510e162aa52949b068b01cf320a82",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T04:41:15.923Z"
+}

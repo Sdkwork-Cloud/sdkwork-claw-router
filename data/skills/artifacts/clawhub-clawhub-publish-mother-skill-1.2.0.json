@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-publish-mother-skill@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_publish_mother_skill",
+  "skill": {
+    "id": 38750,
+    "skillKey": "clawhub-clawhub-publish-mother-skill",
+    "name": "ClawHub Publish Mother Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-publish-mother-skill",
+    "url": "https://clawhub.ai/skills/clawhub-publish-mother-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-publish-mother-skill-7d11721a71aa045c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Workflow for publishing and updating OpenClaw skills on ClawHub using verified token authentication and validation checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775778130596,
+      "changelog": "Test",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cf2f17793b5fb94e7d67cc2c090213021d4c6708d04313749065fa15c2b5852"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43518,
+  "uuid": "skill-clawhub-editor-online",
+  "skillKey": "clawhub-editor-online",
+  "name": "Editor Online",
+  "summary": "Cloud-based editor-online tool that handles editing videos directly in the browser without software. Upload MP4, MOV, AVI, WebM files (up to 500MB), describe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_online",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whitejohnk-26",
+      "features": [
+        "Cloud-based editor-online tool that handles editing videos directly in the browser without soft.",
+        "Upload MP4, MOV, AVI, WebM files (up to 500MB), describe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/editor-online@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "editor-online",
+      "url": "https://clawhub.ai/skills/editor-online"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-online",
+    "url": "https://clawhub.ai/skills/editor-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-online-4fbfe21cc9539839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/editor-online@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-editor-online-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88064980dc7d430fcf504e00825d43e841c9b2c120102588ee3a87d8dd995832",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T17:41:50.607Z"
+}

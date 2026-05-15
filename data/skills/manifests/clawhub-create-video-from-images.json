@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40124,
+  "uuid": "skill-clawhub-create-video-from-images",
+  "skillKey": "clawhub-create-video-from-images",
+  "name": "Create Video From Images",
+  "summary": "turn images into compiled image video with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. marketers, social media creators use it for turning...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_video_from_images",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "turn images into compiled image video with this skill",
+        "Works with JPG, PNG, WEBP, HEIC files up to 200MB",
+        "marketers, social media creators use it for turning..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-video-from-images@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-video-from-images",
+      "url": "https://clawhub.ai/skills/create-video-from-images"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-video-from-images",
+    "url": "https://clawhub.ai/skills/create-video-from-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-video-from-images-ceb3ea4351217fb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-video-from-images@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-video-from-images-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95713d7759bc0e34989ffdc3b1d754390be6552077dfafb4bfec4b03fe09a60d",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T19:50:40.858Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54490,
+  "uuid": "skill-clawhub-abe-foundry",
+  "skillKey": "clawhub-abe-foundry",
+  "name": "abe-foundry",
+  "summary": "Self-writing meta-extension that forges new capabilities — researches docs, writes extensions, tools, hooks, and skills",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_foundry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Self-writing meta-extension that forges new capabilities — researches docs, writes extensions,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-foundry@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-foundry",
+      "url": "https://clawhub.ai/skills/abe-foundry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-foundry",
+    "url": "https://clawhub.ai/skills/abe-foundry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-foundry-231687a66a7221c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-foundry@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-foundry-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d874206ee75f5c8f8b40057b1b4f40aad9b4c607352acb640521c462636b79f3",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:10:29.531Z"
+}

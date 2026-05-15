@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8822,
+  "uuid": "skill-clawhub-knowledge-graph",
+  "skillKey": "clawhub-knowledge-graph",
+  "name": "Knowledge Graph",
+  "summary": "Maintain Clawdbot's compounding knowledge graph under life/areas/** by adding/superseding atomic facts (items.json), regenerating entity summaries (summary.md), and keeping IDs consistent. Use when you need deterministic updates to the kno.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_graph",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SafaTinaztepe",
+      "features": [
+        "Maintain Clawdbot's compounding knowledge graph under life/areas/** by adding/superseding atomi.",
+        "Use when you need deterministic updates to the knowledge graph rather than manual JSON edits."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-graph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8147022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-graph",
+      "url": "https://clawhub.ai/skills/knowledge-graph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-graph",
+    "url": "https://clawhub.ai/skills/knowledge-graph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-graph-21f4f8f2bc86bc89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-graph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-graph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9382b008fc7926c8002ef6ed23767ea6e4ecb6f2fd88c86560465b24b2addefb",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T21:41:05.298Z"
+}

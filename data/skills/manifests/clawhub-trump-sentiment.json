@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62200,
+  "uuid": "skill-clawhub-trump-sentiment",
+  "skillKey": "clawhub-trump-sentiment",
+  "name": "Trump Sentiment",
+  "summary": "Trump 舆情分析 Skill。通过多渠道覆盖（Truth Social/X搜索/Google News实时/大V主页）捕获 Trump 言行，结合市场反应验证，辅助投资决策。触发：「/trump」「分析Trump舆情」。📢微信公众号：PM熊叔（打造一人公司的投研团队）",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trump_sentiment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bear Xiong",
+      "features": [
+        "Trump 舆情分析 Skill。通过多渠道覆盖（Truth Social/X搜索/Google News实时/大V主页）捕获 Trump 言行，结合市场反应验证，辅助投资决策。触发：「/t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trump-sentiment@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5952306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trump-sentiment",
+      "url": "https://clawhub.ai/skills/trump-sentiment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trump-sentiment",
+    "url": "https://clawhub.ai/skills/trump-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trump-sentiment-e85bbd384c55c64f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trump-sentiment@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trump-sentiment-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7488e04f006472d2d5298ddebb4365c1f3d5e09dd55952d4b65fa3571e2659c8",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:29:01.540Z"
+}

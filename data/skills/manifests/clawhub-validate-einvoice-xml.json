@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71881,
+  "uuid": "skill-clawhub-validate-einvoice-xml",
+  "skillKey": "clawhub-validate-einvoice-xml",
+  "name": "校验XML数电票",
+  "summary": "验证XML文件是否为中国数电票（全面数字化电子发票）格式。检查XML结构、必需字段和数电票特征。当用户需要验证XML是否为数电票、检查数电票格式合规性、或处理电子发票XML文件时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.validate_einvoice_xml",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanW2039",
+      "features": [
+        "验证XML文件是否为中国数电票（全面数字化电子发票）格式。检查XML结构、必需字段和数电票特征。当用户需要验证XML是否为数电票、检查数电票格式合规性、或处理电子发票XML文件时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/validate-einvoice-xml@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92492588?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "validate-einvoice-xml",
+      "url": "https://clawhub.ai/skills/validate-einvoice-xml"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "validate-einvoice-xml",
+    "url": "https://clawhub.ai/skills/validate-einvoice-xml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/validate-einvoice-xml-ca9904af36459efc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/validate-einvoice-xml@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-validate-einvoice-xml-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48973ca1215e64da73a8d964919ad98eba4b4df9c1e9e12a2ff432dd3e2cbb81",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:24:12.887Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21224,
+  "uuid": "skill-clawhub-logic-hunter",
+  "skillKey": "clawhub-logic-hunter",
+  "name": "Logic Hunter",
+  "summary": "Hard-core logic verification and evidence tracing tool based on the \"Golden Triangle\" knowledge mining framework",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logic_hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ken0122",
+      "features": [
+        "Hard-core logic verification and evidence tracing tool based on the \"Golden Triangle\" knowledge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logic-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49142720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logic-hunter",
+      "url": "https://clawhub.ai/skills/logic-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logic-hunter",
+    "url": "https://clawhub.ai/skills/logic-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logic-hunter-984bc475884b8b81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logic-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logic-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b30092d995a874eee694ac7203a1485712265dbf3fdddaec0a313dc30ad8d4f",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T11:00:36.278Z"
+}

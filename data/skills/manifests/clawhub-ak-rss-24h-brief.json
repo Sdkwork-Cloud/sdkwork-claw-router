@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17194,
+  "uuid": "skill-clawhub-ak-rss-24h-brief",
+  "skillKey": "clawhub-ak-rss-24h-brief",
+  "name": "AK RSS 24h Brief",
+  "summary": "Read RSS/Atom feeds from an OPML list, fetch articles from the last N hours, and generate a Chinese categorized brief. Use for requests like “generate a 24-h...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ak_rss_24h_brief",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "seandong",
+      "features": [
+        "Read RSS/Atom feeds from an OPML list, fetch articles from the last N hours, and generate a Chi.",
+        "Use for requests like “generate a 24-h..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ak-rss-24h-brief@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/758427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ak-rss-24h-brief",
+      "url": "https://clawhub.ai/skills/ak-rss-24h-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ak-rss-24h-brief",
+    "url": "https://clawhub.ai/skills/ak-rss-24h-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ak-rss-24h-brief-37c2d4b95c225feb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ak-rss-24h-brief@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ak-rss-24h-brief-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11707152ae02b549d4da567830cfe8a51f559f592b017565c7f925bb8fc3a116",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T08:19:46.364Z"
+}

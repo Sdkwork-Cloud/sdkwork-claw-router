@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70234,
+  "uuid": "skill-clawhub-workday-calculator",
+  "skillKey": "clawhub-workday-calculator",
+  "name": "workday-calculator",
+  "summary": "计算时间区间内有多少个工作日的技能。支持排除中国的节假日和调休安排。当用户询问工作日计算、节假日排除、工作时间计算时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workday_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hunterxysy",
+      "features": [
+        "计算时间区间内有多少个工作日的技能。支持排除中国的节假日和调休安排。当用户询问工作日计算、节假日排除、工作时间计算时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workday-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22309896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workday-calculator",
+      "url": "https://clawhub.ai/skills/workday-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workday-calculator",
+    "url": "https://clawhub.ai/skills/workday-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workday-calculator-f289a9e7634b40d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workday-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workday-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:588648e2ae045bfefe58da71f82cda7c1078b9b35418bbfd0800d4c1cef3bb5f",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:00:37.685Z"
+}

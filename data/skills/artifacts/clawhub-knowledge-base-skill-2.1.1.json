@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-base-skill@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_base_skill",
+  "skill": {
+    "id": 27288,
+    "skillKey": "clawhub-knowledge-base-skill",
+    "name": "Knowledge Base Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-base-skill",
+    "url": "https://clawhub.ai/skills/knowledge-base-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-base-skill-55989e23a0c6d529.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-business knowledge base with image attachment + OCR support. Manage Q&A databases by business type, auto page splitting, and intelligent search."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wwl52",
+      "userId": "s17byhhs9w4m3hm5y0tkpgakp983wv73",
+      "displayName": "william-w",
+      "image": "https://avatars.githubusercontent.com/u/56250829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773823998099,
+      "changelog": "Complete release with Python scripts (kb-manager.py, image-manager.py, kb-image.sh) for knowledge base management, image attachment support, and OCR text extraction. Fixes security warning about missing files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7d20cb0375728a8b21f6ce8a0641e7456287b6d736caddae9c50e911bd3b331"
+}

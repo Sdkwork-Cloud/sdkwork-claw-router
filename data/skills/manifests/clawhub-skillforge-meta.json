@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54971,
+  "uuid": "skill-clawhub-skillforge-meta",
+  "skillKey": "clawhub-skillforge-meta",
+  "name": "SkillForge — Self-Evolving AI Skills",
+  "summary": "Stop repeating yourself. SkillForge watches how you work, discovers your patterns, and forges them into reusable Skills — automatically. The more you use it,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillforge_meta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JFrankLee",
+      "features": [
+        "Stop repeating yourself",
+        "SkillForge watches how you work, discovers your patterns, and forges them into reusable Skills.",
+        "The more you use it,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillforge-meta@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60511092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillforge-meta",
+      "url": "https://clawhub.ai/skills/skillforge-meta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillforge-meta",
+    "url": "https://clawhub.ai/skills/skillforge-meta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillforge-meta-07c862b84e87b4fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillforge-meta@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillforge-meta-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0007b0f4ec95d96fde915ea94fb4378442ae1886432cf16d391a4bf3d45060d",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:23:27.083Z"
+}

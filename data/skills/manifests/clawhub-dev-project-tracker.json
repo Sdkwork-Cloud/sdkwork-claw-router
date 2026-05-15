@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71083,
+  "uuid": "skill-clawhub-dev-project-tracker",
+  "skillKey": "clawhub-dev-project-tracker",
+  "name": "Dev Project Tracker",
+  "summary": "按需求/版本维度管理项目全生命周期。创建需求目录、记录日常进展、追踪问题、管理变更、自动蒸馏归档。 触发词：创建需求目录、新建项目、项目进展、记录进展、项目归档、蒸馏项目、查看项目、项目状态、 \"新需求\"、\"建个项目目录\"、\"记一下进展\"、\"这个需求上线了\"。 适用于任何按版本/需求迭代的软件项目。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_project_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangliujiao-tal",
+      "features": [
+        "按需求/版本维度管理项目全生命周期。创建需求目录、记录日常进展、追踪问题、管理变更、自动蒸馏归档。 触发词：创建需求目录、新建项目、项目进展、记录进展、项目归档、蒸馏项目、查看项目、项目状态."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-project-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131833544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-project-tracker",
+      "url": "https://clawhub.ai/skills/dev-project-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-project-tracker",
+    "url": "https://clawhub.ai/skills/dev-project-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-project-tracker-13bb9793046dd694.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-project-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-project-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eda6cb33c2f062391a59446cf8ad3eec605715b6a1411c3edecd4d41cd916544",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:16:36.060Z"
+}

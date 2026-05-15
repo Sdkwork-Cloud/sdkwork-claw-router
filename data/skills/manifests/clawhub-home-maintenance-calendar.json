@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49188,
+  "uuid": "skill-clawhub-home-maintenance-calendar",
+  "skillKey": "clawhub-home-maintenance-calendar",
+  "name": "Home Maintenance Calendar",
+  "summary": "Build a seasonal + interval-based home maintenance calendar to prevent costly surprises. Track what needs attention before it breaks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_maintenance_calendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Build a seasonal + interval-based home maintenance calendar to prevent costly surprises",
+        "Track what needs attention before it breaks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/home-maintenance-calendar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "home-maintenance-calendar",
+      "url": "https://clawhub.ai/skills/home-maintenance-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-maintenance-calendar",
+    "url": "https://clawhub.ai/skills/home-maintenance-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-maintenance-calendar-04f6c0b386adb646.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/home-maintenance-calendar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-home-maintenance-calendar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91b0a21320914feda85f32d25e901d1e727e9b197be80f07b627c26e4a8c5132",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T23:54:01.119Z"
+}

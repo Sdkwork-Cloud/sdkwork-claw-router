@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/course-prep-afp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.course_prep_afp",
+  "skill": {
+    "id": 65041,
+    "skillKey": "clawhub-course-prep-afp",
+    "name": "备课AFP · Course-Prep-Auto-Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "course-prep-afp",
+    "url": "https://clawhub.ai/skills/course-prep-afp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/course-prep-afp-d94a6610f060b641.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工程化备课系统（Course-Prep-Auto-Flow v1.0）。把\"靠灵感备课\"变成\"走流程出内容\"。用户提供课程主题、受众画像、参考素材，系统自动完成：P1信息采集→P2骨架设计→P3素材提炼→P4内容填充→P5结构审查→P6配图规划→P7终局产出。适用于公开课、直播课、工作坊的备课准备。触发关键词：备..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yipng05-max",
+      "userId": "s17e7y2rfdj7a3t1zc44g22dk983ncaz",
+      "displayName": "yipng05-max",
+      "image": "https://avatars.githubusercontent.com/u/256726987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773992200080,
+      "changelog": "首发：工程化备课系统，7步标准流程，从素材收集到配图生成，全程Pull模式驱动，基于2026-03-20学术工程化公开课备课实战提炼",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:657f15f9227015c77db0d27ff8bb913a3b45407f1c4a26a13fd1ad1c11fca5eb"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35716,
+  "uuid": "skill-clawhub-nicechat",
+  "skillKey": "clawhub-nicechat",
+  "name": "nicechat",
+  "summary": "NiceChat API and CLI skill for AI agents.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nicechat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-HAN",
+      "features": [
+        "NiceChat API and CLI skill for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nicechat@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/839799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nicechat",
+      "url": "https://clawhub.ai/skills/nicechat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nicechat",
+    "url": "https://clawhub.ai/skills/nicechat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nicechat-05142d2841d9cd7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nicechat@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-nicechat-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:748c7f66306966ec70fc0090f281b1b0618e524187dd8552680fb80ebc9545e8",
+      "artifactSizeBytes": 2120
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T17:05:49.354Z"
+}

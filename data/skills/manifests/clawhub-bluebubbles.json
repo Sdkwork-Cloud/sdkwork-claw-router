@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8382,
+  "uuid": "skill-clawhub-bluebubbles",
+  "skillKey": "clawhub-bluebubbles",
+  "name": "Bluebubbles",
+  "summary": "Build or update the BlueBubbles external channel plugin for Clawdbot (extension package, REST send/probe, webhook inbound).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluebubbles",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevin19830331",
+      "features": [
+        "Build or update the BlueBubbles external channel plugin for Clawdbot (extension package, REST s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bluebubbles@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115806002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bluebubbles",
+      "url": "https://clawhub.ai/skills/bluebubbles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluebubbles",
+    "url": "https://clawhub.ai/skills/bluebubbles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluebubbles-78831fc3eac647f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bluebubbles@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bluebubbles-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73dbfbb5f5956ee4d7b02bc30fddafe4abfd6af069e29f4d72748555b0d464a5",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T05:27:11.570Z"
+}

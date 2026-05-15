@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25533,
+  "uuid": "skill-clawhub-clawlendar",
+  "skillKey": "clawhub-clawlendar",
+  "name": "Clawlendar",
+  "summary": "Timestamp-first perpetual calendar interop for AI agents. Use when agents need cross-calendar conversion (Gregorian/Julian/ISO/ROC/Buddhist/Japanese era/sexa...",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlendar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Huang Geyang",
+      "features": [
+        "Timestamp-first perpetual calendar interop for AI agents",
+        "Use when agents need cross-calendar conversion (Gregorian/Julian/ISO/ROC/Buddhist/Japanese era/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlendar@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6568873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlendar",
+      "url": "https://clawhub.ai/skills/clawlendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlendar",
+    "url": "https://clawhub.ai/skills/clawlendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlendar-2ba861dace4958ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlendar@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlendar-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5469d92a4bdeb231ead45ef8e0916d9248eab8d58387477e9e479a61f0ef34de",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T15:52:39.194Z"
+}

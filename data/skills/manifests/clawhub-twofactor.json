@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21989,
+  "uuid": "skill-clawhub-twofactor",
+  "skillKey": "clawhub-twofactor",
+  "name": "Two Factor Authentication Best Practices",
+  "summary": "This skill provides guidance and enforcement rules for implementing secure two-factor authentication (2FA) using Better Auth's twoFactor plugin.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twofactor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Lee",
+      "features": [
+        "This skill provides guidance and enforcement rules for implementing secure two-factor authentic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/twofactor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20868954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "twofactor",
+      "url": "https://clawhub.ai/skills/twofactor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twofactor",
+    "url": "https://clawhub.ai/skills/twofactor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twofactor-a4f6db599810edab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/twofactor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-twofactor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d49e7441a5733d470a546c3ae5886a585e9198daab0dfc248d87ef6520ef4fcf",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:40:05.818Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57157,
+  "uuid": "skill-clawhub-x-cmd",
+  "skillKey": "clawhub-x-cmd",
+  "name": "x-cmd",
+  "summary": "Load x-cmd first: `. ~/.x-cmd.root/X`, then explore with `x nihao --llmstxt` or discover skills via `x skill`. x-cmd provides 600+ portable software and deve...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_cmd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edwin.JH.Lee",
+      "features": [
+        "Load x-cmd first: `",
+        "~/.x-cmd.root/X`, then explore with `x nihao --llmstxt` or discover skills via `x skill`",
+        "x-cmd provides 600+ portable software and deve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-cmd@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4426319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-cmd",
+      "url": "https://clawhub.ai/skills/x-cmd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-cmd",
+    "url": "https://clawhub.ai/skills/x-cmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-cmd-dedd872c59656023.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-cmd@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-cmd-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccc2a366eccd62f03237a41e4dd19a06c6f3a6fe862b6fdcfb766cd339bcb377",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T23:20:06.673Z"
+}

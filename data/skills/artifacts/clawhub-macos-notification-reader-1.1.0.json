@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macos-notification-reader@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_notification_reader",
+  "skill": {
+    "id": 19881,
+    "skillKey": "clawhub-macos-notification-reader",
+    "name": "macOS Notification Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-notification-reader",
+    "url": "https://clawhub.ai/skills/macos-notification-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-notification-reader-f1f0024575db0ee9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reads recent macOS notifications from the local database and exports them to date-organized markdown files for review and logging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gift-is-coding",
+      "userId": "s1736c9jd7nwwa2fw9wpcfqzvs855grm",
+      "displayName": "gift-is-coding",
+      "image": "https://avatars.githubusercontent.com/u/33282030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 475,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772707015903,
+      "changelog": "**Work notification summary support added**\n\n- Added `work-summary.sh` script for automated work-related notification summaries.\n- Updated documentation with instructions for generating work summaries and filtered reports.\n- Expanded Features section to highlight new summary and filtering capabilities.\n- Added setup examples for running the work summary script via cron.\n- Clarified output formats and updated file structure documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25bb9ed0ae9a4f2370e5d5ea5118d2bf8149961324c9b0bd3e057837f33477b6"
+}

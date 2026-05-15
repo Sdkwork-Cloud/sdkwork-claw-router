@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44359,
+  "uuid": "skill-clawhub-budget-hotel-finder",
+  "skillKey": "clawhub-budget-hotel-finder",
+  "name": "Budget Hotel Finder",
+  "summary": "Find clean, comfortable hotels under your budget. Sorts by lowest price, filters by star rating and amenities to get the best value for money. Also supports:...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.budget_hotel_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Find clean, comfortable hotels under your budget",
+        "Sorts by lowest price, filters by star rating and amenities to get the best value for money",
+        "Also supports:..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/budget-hotel-finder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "budget-hotel-finder",
+      "url": "https://clawhub.ai/skills/budget-hotel-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "budget-hotel-finder",
+    "url": "https://clawhub.ai/skills/budget-hotel-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/budget-hotel-finder-548af1d3c63adb8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/budget-hotel-finder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-budget-hotel-finder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8dcea3b21e2eef55def60db15c28f881256df353a7de26667297be86bb8bd0d4",
+      "artifactSizeBytes": 2126
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:31:38.977Z"
+}

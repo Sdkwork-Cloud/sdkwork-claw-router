@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52850,
+  "uuid": "skill-clawhub-focus-guard",
+  "skillKey": "clawhub-focus-guard",
+  "name": "Focus Guard",
+  "summary": "Session coherence protocol for Claude — track decisions, resist scope creep, flag drift. Keeps long AI sessions on track without losing what was already deci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.focus_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "Session coherence protocol for Claude — track decisions, resist scope creep, flag drift",
+        "Keeps long AI sessions on track without losing what was already deci..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/focus-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "focus-guard",
+      "url": "https://clawhub.ai/skills/focus-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "focus-guard",
+    "url": "https://clawhub.ai/skills/focus-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/focus-guard-20e5ca8ef45b36e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/focus-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-focus-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fcde6fce3d6d538354129b9e153c6fda9ec4df5d96e9d62bee88372173fe6c6",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:48:31.067Z"
+}

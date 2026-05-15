@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "ytmusic-player",
+    "displayName": "Youtube Music Player",
+    "summary": "Operate YouTube Music via natural language. Search songs, artists, albums, playlists, lyrics, charts, recommendations, and control playback. Browse personal...",
+    "tags": {
+      "latest": "0.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1774258427253,
+    "updatedAt": 1777622809895
+  },
+  "latestVersion": {
+    "version": "0.2.0",
+    "createdAt": 1774331628537,
+    "changelog": "Major update: Playback now uses a persistent Playwright browser daemon instead of Chrome CDP.\n\n- Added scripts/player_daemon.py for managing a persistent Playwright-based browser session.\n- Updated playback architecture: playback commands auto-start and reuse a daemon-managed browser; manual Chrome launch is no longer needed.\n- Removed scripts/launch_chrome.py; Chrome CDP support has been replaced by Playwright.\n- User now signs into YouTube Music once in the new browser window managed by the daemon.\n- Updated documentation and commands to reflect new playback workflow and profile management.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kadaliao",
+    "userId": "s17f4degyq9nw4hs56geedqmgs83gsj7",
+    "displayName": "kadaliao",
+    "image": "https://avatars.githubusercontent.com/u/7401626?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777622809895
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14583,
+  "uuid": "skill-clawhub-openclaw-linear",
+  "skillKey": "clawhub-openclaw-linear",
+  "name": "Linear CLI",
+  "summary": "Manage Linear issues, projects, teams, and documents from the command line using the linear CLI. Create, update, list, and track issues; manage projects and milestones; interact with the Linear GraphQL API.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_linear",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cipher-shad0w",
+      "features": [
+        "Manage Linear issues, projects, teams, and documents from the command line using the linear CLI",
+        "Create, update, list, and track issues",
+        "manage projects and milestones",
+        "interact with the Linear GraphQL API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-linear@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107557730?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-linear",
+      "url": "https://clawhub.ai/skills/openclaw-linear"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-linear",
+    "url": "https://clawhub.ai/skills/openclaw-linear",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-linear-9b9888dc32ed9720.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-linear@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-linear-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f68c0c7c9dab2a71976785e5d4124f33214e45df660f5a5d8c0ee31487e6fcd9",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T11:57:45.348Z"
+}

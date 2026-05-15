@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/next-upgrade@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.next_upgrade",
+  "skill": {
+    "id": 18161,
+    "skillKey": "clawhub-next-upgrade",
+    "name": "Next Upgrade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "next-upgrade",
+    "url": "https://clawhub.ai/skills/next-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/next-upgrade-f29f3b98c0905767.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upgrade Next.js to the latest version following official migration guides and codemods"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuanvidev",
+      "userId": "s179baf9cy52rfsxrbtpv7hjfx83hmf9",
+      "displayName": "vi.dev",
+      "image": "https://avatars.githubusercontent.com/u/114379606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 694,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771519413908,
+      "changelog": "- Initial release of next-upgrade skill.\n- Automates upgrading Next.js projects to the latest version following official migration guides.\n- Detects current Next.js and related dependency versions.\n- Fetches relevant migration documentation and codemods from nextjs.org.\n- Guides through codemod usage, dependency updates, and required manual changes.\n- Includes steps for updating TypeScript types and verifying the upgrade.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:51fad314a343be1719cb27a95b685d1eba3a407489b9d58a6dc7b996dd2704c8"
+}

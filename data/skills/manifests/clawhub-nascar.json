@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12197,
+  "uuid": "skill-clawhub-nascar",
+  "skillKey": "clawhub-nascar",
+  "name": "NASCAR",
+  "summary": "Provides expert analysis, race previews, driver comparisons, strategy breakdowns, and playoff insights for NASCAR Cup, Xfinity, and Truck Series.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nascar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cmp343-art",
+      "features": [
+        "Provides expert analysis, race previews, driver comparisons, strategy breakdowns, and playoff i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nascar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258550738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nascar",
+      "url": "https://clawhub.ai/skills/nascar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nascar",
+    "url": "https://clawhub.ai/skills/nascar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nascar-91246e60ed7dc033.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nascar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nascar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2796ff2f375f89ef1722da32df5a4bb372948e8b5ddfc15af555c0123c923dc",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T05:46:02.525Z"
+}

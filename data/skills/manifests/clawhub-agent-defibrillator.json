@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15210,
+  "uuid": "skill-clawhub-agent-defibrillator",
+  "skillKey": "clawhub-agent-defibrillator",
+  "name": "Agent Defibrillator",
+  "summary": "Watchdog that monitors your AI agent gateway and restarts it when it crashes. Triggers on \"install defibrillator\", \"agent watchdog\", \"gateway monitor\", \"auto...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_defibrillator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hazy",
+      "features": [
+        "Watchdog that monitors your AI agent gateway and restarts it when it crashes",
+        "Triggers on \"install defibrillator\", \"agent watchdog\", \"gateway monitor\", \"auto..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-defibrillator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126595453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-defibrillator",
+      "url": "https://clawhub.ai/skills/agent-defibrillator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-defibrillator",
+    "url": "https://clawhub.ai/skills/agent-defibrillator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-defibrillator-717868971e9b86bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-defibrillator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-defibrillator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffa9065686d143e58baa4358459fc904f8aa9bb1ab8ccf121e0c947b86ea5c2e",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T11:35:24.894Z"
+}

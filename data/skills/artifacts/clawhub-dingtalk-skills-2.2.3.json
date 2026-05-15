@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-skills@2.2.3",
+  "version": "2.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_skills",
+  "skill": {
+    "id": 69130,
+    "skillKey": "clawhub-dingtalk-skills",
+    "name": "DingTalk Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-skills",
+    "url": "https://clawhub.ai/skills/dingtalk-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-skills-7ff16d40bc07992d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "钉钉操作助手，支持查人、查部门、发消息、预约会议、审批管理、日程查询和知识库操作等功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hioneowner",
+      "userId": "s17534pge6p251qs7cjacgc5js83jw98",
+      "displayName": "Hione",
+      "image": "https://avatars.githubusercontent.com/u/24585615?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.2.3",
+      "createdAt": 1774246441191,
+      "changelog": "同步最新代码",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc1bb03da9a66ddd7910c6496df93aefab785fb653d7963cf11c8e41ff73a971"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11082,
+  "uuid": "skill-clawhub-family-todo-management",
+  "skillKey": "clawhub-family-todo-management",
+  "name": "Manage Your Family's todos",
+  "summary": "Manage family todo lists with multi-user support",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_todo_management",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thurendous",
+      "features": [
+        "Manage family todo lists with multi-user support"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/family-todo-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40059593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "family-todo-management",
+      "url": "https://clawhub.ai/skills/family-todo-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-todo-management",
+    "url": "https://clawhub.ai/skills/family-todo-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-todo-management-65578606094cccf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/family-todo-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-family-todo-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93c9a7354aaaf29ce067b54976ad69859acfad49762616e3de4c5e5863a1c6ab",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T14:45:13.694Z"
+}

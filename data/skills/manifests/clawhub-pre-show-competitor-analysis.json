@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57359,
+  "uuid": "skill-clawhub-pre-show-competitor-analysis",
+  "skillKey": "clawhub-pre-show-competitor-analysis",
+  "name": "Pre Show Competitor Analysis",
+  "summary": "Analyze competitor exhibitor presence, booth positioning, and messaging before the show. \"Who are my competitors at this show?\" / \"分析展会竞争对手\" / \"Messekonkurre...",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pre_show_competitor_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weilun88313",
+      "features": [
+        "Analyze competitor exhibitor presence, booth positioning, and messaging before the show",
+        "\"Who are my competitors at this show?\" / \"分析展会竞争对手\" / \"Messekonkurre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pre-show-competitor-analysis@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33587196?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pre-show-competitor-analysis",
+      "url": "https://clawhub.ai/skills/pre-show-competitor-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pre-show-competitor-analysis",
+    "url": "https://clawhub.ai/skills/pre-show-competitor-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pre-show-competitor-analysis-e79c0c7f97b6b752.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pre-show-competitor-analysis@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pre-show-competitor-analysis-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:243448470fb5e26e946949454de9a4b646f7783266c283e70b5f2c1824692d03",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T07:54:29.600Z"
+}

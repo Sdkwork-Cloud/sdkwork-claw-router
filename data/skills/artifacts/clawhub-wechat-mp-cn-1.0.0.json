@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mp-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_cn",
+  "skill": {
+    "id": 58558,
+    "skillKey": "clawhub-wechat-mp-cn",
+    "name": "WeChat MP CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-cn",
+    "url": "https://clawhub.ai/skills/wechat-mp-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-cn-51c960e624ed2871.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信公众号监控 - 文章监控、阅读量追踪、舆情分析（WeChat Official Account）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guohongbin-git",
+      "userId": "s171qwkar0v16rk324ta5jz7wd83ts19",
+      "displayName": "Guohongbin",
+      "image": "https://avatars.githubusercontent.com/u/202475309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 11802,
+      "installsAllTime": 109,
+      "installsCurrent": 100,
+      "stars": 44,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771484984899,
+      "changelog": "- 初始发布：微信公众号监控工具上线，支持文章监控、阅读量追踪、舆情分析。\n- 支持管理订阅号和服务号。\n- 兼容官方 API、第三方 SDK（WeChatpy、EasyWechat）、及数据平台接入。\n- 提供手动与自动多种监控方式。\n- 详细列出数据字段与应用场景，包含竞品、内容与舆情分析。\n- 明确 API 认证和数据使用的合规要求。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f897efd2ef59becd992bf19e650b9b84798661ccf5a4f0ca8e57fc61b30e3920"
+}

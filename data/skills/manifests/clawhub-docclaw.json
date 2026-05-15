@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11986,
+  "uuid": "skill-clawhub-docclaw",
+  "skillKey": "clawhub-docclaw",
+  "name": "DocClaw",
+  "summary": "DocClaw is a documentation skill for OpenClaw that combines live docs search, direct markdown fetch, and offline local-doc fallback.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Legendary",
+      "features": [
+        "DocClaw is a documentation skill for OpenClaw that combines live docs search, direct markdown f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docclaw@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256609840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docclaw",
+      "url": "https://clawhub.ai/skills/docclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docclaw",
+    "url": "https://clawhub.ai/skills/docclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docclaw-dc5af15bddf9328f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docclaw@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-docclaw-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9ff97df3e1277a9b3e3160452c2868d0dd8228c56a26d08f5aff677d4757044",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T09:47:59.133Z"
+}

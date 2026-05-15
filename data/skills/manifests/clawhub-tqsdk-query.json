@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69176,
+  "uuid": "skill-clawhub-tqsdk-query",
+  "skillKey": "clawhub-tqsdk-query",
+  "name": "tqsdk-query",
+  "summary": "天勤量化 - 期货实时行情与历史数据接口，提供国内期货、期权的实时报价、K线序列与历史数据查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tqsdk_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaingush",
+      "features": [
+        "期货实时行情与历史数据接口，提供国内期货、期权的实时报价、K线序列与历史数据查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tqsdk-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269621947?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tqsdk-query",
+      "url": "https://clawhub.ai/skills/tqsdk-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tqsdk-query",
+    "url": "https://clawhub.ai/skills/tqsdk-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tqsdk-query-2ce50c65494cbee3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tqsdk-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tqsdk-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e66e1aa5f8332647faa3a10d5fbbbb8b7cf0fffa8c06c6f6eebae49f28616dbb",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:36:18.100Z"
+}

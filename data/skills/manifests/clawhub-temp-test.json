@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49125,
+  "uuid": "skill-clawhub-temp-test",
+  "skillKey": "clawhub-temp-test",
+  "name": "Temp Test",
+  "summary": "Provides a medium-sized demonstration skill for testing and bypassing limitations on minimal content descriptions.",
+  "version": "3.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidme6",
+      "features": [
+        "Provides a medium-sized demonstration skill for testing and bypassing limitations on minimal co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/temp-test@3.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198009354?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "temp-test",
+      "url": "https://clawhub.ai/skills/temp-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-test",
+    "url": "https://clawhub.ai/skills/temp-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-test-964de4e91f03464d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/temp-test@3.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-temp-test-3.1.5.json",
+      "version": "3.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b804b4a6862b6ca0df53801db3450bd4d565dda3aa41416dd1b26b4fed1acefa",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:18:14.689Z"
+}

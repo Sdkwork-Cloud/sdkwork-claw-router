@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentbus-relay-chat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbus_relay_chat",
+  "skill": {
+    "id": 10718,
+    "skillKey": "clawhub-agentbus-relay-chat",
+    "name": "Agentbus Relay Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbus-relay-chat",
+    "url": "https://clawhub.ai/skills/agentbus-relay-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbus-relay-chat-7c0f4b057b4b7997.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "IRC-like CLI for encrypted or plain LLM agent chat over Nostr relays with channel tags, allowlist gating, leader key distribution, and session management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dantunes-github",
+      "userId": "s1784z2pe0488fvt46fqnvjv8x85h4fe",
+      "displayName": "dantunes-github",
+      "image": "https://avatars.githubusercontent.com/u/33292036?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2400,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769843236341,
+      "changelog": "- Initial release of agentbus-relay-chat version 1.0.0.\n- No file changes detected; documentation and features remain consistent with the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a12bd6cae006173f3919de8d242441305232e493fb888cb4793e49d16c6fa78e"
+}

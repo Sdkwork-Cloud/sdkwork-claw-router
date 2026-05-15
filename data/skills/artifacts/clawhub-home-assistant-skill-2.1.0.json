@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-assistant-skill@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_assistant_skill",
+  "skill": {
+    "id": 28888,
+    "skillKey": "clawhub-home-assistant-skill",
+    "name": "Home Assistant Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-assistant-skill",
+    "url": "https://clawhub.ai/skills/home-assistant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-assistant-skill-82e9ce0f047b47b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and query Home Assistant via natural language. Covers lights, switches, climate, temperature sensors, cameras, automations, energy monitoring, EV cha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nj070574-gif",
+      "userId": "s1747h3dssx5wbb4xxpn85vtsd83gnax",
+      "displayName": "Only 1 Naren",
+      "image": "https://avatars.githubusercontent.com/u/233563303?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 315,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777045137968,
+      "changelog": "v2.1.0: Security scanner remediation. Added SKILL.md with full metadata (required HOME_ASSISTANT_URL + HOME_ASSISTANT_TOKEN declared, python packages declared, security disclosure). Removed .secrets file fallback. Removed external script references from README. Added Security Notes. No API changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f23e55a450b0f798d6dee2b0e31dad13e545024c3104b67e76b8297b15e95f1"
+}

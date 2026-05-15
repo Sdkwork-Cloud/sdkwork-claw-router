@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-customer-requirement-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_customer_requirement_analysis",
+  "skill": {
+    "id": 69574,
+    "skillKey": "clawhub-jy-customer-requirement-analysis",
+    "name": "jy-customer-requirement-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-customer-requirement-analysis",
+    "url": "https://clawhub.ai/skills/jy-customer-requirement-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-customer-requirement-analysis-6c5c56fb39f59629.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "金融投顾智能助理技能。基于客户沟通素材，帮助理财师/投顾经理快速精准理解客户投资需求，输出标准化分析报告（需求痛点、可行性评估、解决方案、产品匹配、潜在需求挖掘）。支持 PDF 导出和 HTML 可视化。使用场景：当用户需要分析客户投资需求、生成投顾分析报告、进行客户画像分析、制定理财方案或匹配金融产品时触发。F..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776224161786,
+      "changelog": "- 更新工具命令与内容，将部分工具名称由 FundMultipleFactorFilter 和 StockMultipleFactorFilter 调整为 SmartFundSelection 和 SmartStockSelection，并同步相关调用示例。\n- 修正并规范工具调用方式，确保文档与实际服务一致。\n- 其余内容和功能描述保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d1dc5f9fe1fa1306ce7421b900aa6ec1ffae01a26cb22f019e79eb064180923"
+}

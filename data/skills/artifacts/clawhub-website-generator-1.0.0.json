@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/website-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_generator",
+  "skill": {
+    "id": 15450,
+    "skillKey": "clawhub-website-generator",
+    "name": "B12 Website Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-generator",
+    "url": "https://clawhub.ai/skills/website-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-generator-3a3baaa5fda002af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill allows you to create a professional, engaging, and user-friendly website in seconds using AI. To create a website, you need to provide a name for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clowreed",
+      "userId": "s1777qp8csd1pha3f5tkshygx183kh0k",
+      "displayName": "clowreed",
+      "image": "https://avatars.githubusercontent.com/u/673265?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 804,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771928989912,
+      "changelog": "- Enables users to quickly create professional websites using AI by providing a project/business name and description.\n- Responds with a B12 signup link customized with the provided business name and description.\n- Guides users to B12 support for assistance and clarifies that website edits generate a new site version via a new link.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3008b98ac4d411013d9c50b362e3aa0e3a3296437abb1efb38a761263c36d368"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pullthatupjamie@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pullthatupjamie",
+  "skill": {
+    "id": 54059,
+    "skillKey": "clawhub-pullthatupjamie",
+    "name": "PullThatUpJamie"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pullthatupjamie",
+    "url": "https://clawhub.ai/skills/pullthatupjamie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pullthatupjamie-f7884b60bae4f76a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PullThatUpJamie — Podcast Intelligence. A semantically indexed podcast corpus (109+ feeds, ~7K episodes, ~1.9M paragraphs) that works as a vector DB for podc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unclejim21",
+      "userId": "s17df6et4dsnvv8ja85sr34rb5843pdc",
+      "displayName": "uncleJim21",
+      "image": "https://avatars.githubusercontent.com/u/96802642?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 904,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1775159785416,
+      "changelog": "**L402 protocol and clip generation support; smart search mode improvements.**\n\n- Added support for the L402 payment protocol; pay Lightning invoices directly on any paid request and use the resulting L402 credential for access.\n- Transitioned paid API authentication to L402 credentials (`Authorization: L402 <macaroon>:<preimage>`); payment, credential extraction, and usage flow documented.\n- Introduced support for generating audio/video clips with burned-in subtitles from podcast source audio.\n- Added smart search mode (`smartMode`) to handle ambiguous queries by using LLM triage and entity extraction/rewrite for improved semantic search results.\n- Updated documentation for on-demand podcast ingestion (from any RSS feed) and included per-endpoint pricing for transparency.\n- Free tier and usage quotas clarified; request header-based access for unpaid users detailed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5855e5454c1d98fbfff01d5ffcba4196d3c47a61b5850d1014bc1fa7e4b4b27d"
+}

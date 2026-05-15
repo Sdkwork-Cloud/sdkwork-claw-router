@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14406,
+  "uuid": "skill-clawhub-passkey",
+  "skillKey": "clawhub-passkey",
+  "name": "Passkey",
+  "summary": "Implement WebAuthn passkeys avoiding critical security and compatibility pitfalls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.passkey",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Implement WebAuthn passkeys avoiding critical security and compatibility pitfalls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/passkey@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "passkey",
+      "url": "https://clawhub.ai/skills/passkey"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "passkey",
+    "url": "https://clawhub.ai/skills/passkey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/passkey-4b949c1309045061.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/passkey@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-passkey-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59efe27e2601a232ff33fcc587c138cd16640c0cd90837addd3f94faef971153",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T22:57:13.937Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-weiyun-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_weiyun_skill",
+  "skill": {
+    "id": 39801,
+    "skillKey": "clawhub-super-weiyun-skill",
+    "name": "super-weiyun-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-weiyun-skill",
+    "url": "https://clawhub.ai/skills/super-weiyun-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-weiyun-skill-d6967fa9a42d1674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user needs to manage Tencent Weiyun cloud storage, including file upload/download, sharing, space management, and account..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "subaru0573",
+      "userId": "s17fv9b8ta6mn155x3x71jzdf583p03s",
+      "displayName": "Subaru0573",
+      "image": "https://avatars.githubusercontent.com/u/188862647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775823333360,
+      "changelog": "super-weiyun-skill 1.0.0 — Initial Release\n\n- Introduces a comprehensive toolkit for managing Tencent Weiyun cloud storage via Python (CLI & SDK).\n- Supports file and folder upload/download, sharing management, space/recycle bin management, and file operations (copy, move, rename, delete, search).\n- Provides authentication via QR code scanning or browser cookies.\n- Offers detailed parameter and output specifications for each capability, with consistent API response format.\n- Includes numerous trigger phrases in English and Chinese for flexible invocation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7100ede0cd81741534a6171fe4d8c709bfe6e63414b13c552f001972ccec50c"
+}

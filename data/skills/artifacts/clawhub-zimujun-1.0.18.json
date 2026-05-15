@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zimujun@1.0.18",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zimujun",
+  "skill": {
+    "id": 63874,
+    "skillKey": "clawhub-zimujun",
+    "name": "字幕菌"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zimujun",
+    "url": "https://clawhub.ai/skills/zimujun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zimujun-0bae37a78644ce08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "字幕菌（zimujun）：从主流视频平台链接提取视频文案/字幕文本。适用于 YouTube、TikTok/抖音、小红书、Bilibili 等平台。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kyriswu",
+      "userId": "s17adkk1pw6rdbxdzht0y1pey583gqfs",
+      "displayName": "kyris wu",
+      "image": "https://avatars.githubusercontent.com/u/5120703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 653,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.0.18",
+      "createdAt": 1777821636277,
+      "changelog": "- 新增网页版字幕解析入口，方便不使用命令行的用户：https://devtool.uk/video-transcript\n- 标准回复和文档中加入对网页版入口的指引说明\n- 其他功能和用法保持不变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:666ab2a4a81dccc3adab6af9ee89c12f46f2388a48f4c308881aaa81ee8167a4"
+}

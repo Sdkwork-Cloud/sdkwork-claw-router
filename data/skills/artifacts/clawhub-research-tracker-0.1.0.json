@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-tracker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_tracker",
+  "skill": {
+    "id": 9780,
+    "skillKey": "clawhub-research-tracker",
+    "name": "Research Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-tracker",
+    "url": "https://clawhub.ai/skills/research-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-tracker-9a1caa7b13d50ffd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and track autonomous AI research projects with state logging, instruction queues, agent coordination, and progress monitoring via SQLite."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "julian1645",
+      "userId": "publishers:julian1645",
+      "displayName": "julian1645",
+      "image": "https://avatars.githubusercontent.com/u/256913974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3168,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769373683230,
+      "changelog": "Initial release of research-tracker CLI.\n\n- Manage autonomous research agents with explicit project/objective tracking.\n- Append-only state/event log using local SQLite database.\n- Instruction queue system enables agent handoffs and urgent/operator interventions.\n- Heartbeat and attention detection for monitoring long-running or background research.\n- Multi-step investigation supported with progress/state checkpoints.\n- Includes auditing, blocking, stop signals, and archive functions for project oversight.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:20a200218980f5ce6fd486e839a0352b395f7dc9b0dcb84fb61aa2ccaca9c1d7"
+}

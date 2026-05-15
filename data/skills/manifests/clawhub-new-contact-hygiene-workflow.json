@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37747,
+  "uuid": "skill-clawhub-new-contact-hygiene-workflow",
+  "skillKey": "clawhub-new-contact-hygiene-workflow",
+  "name": "New Contact Hygiene Workflow",
+  "summary": "Build a HubSpot workflow that auto-enriches and stages new contacts upon creation. Sets lifecycle stage, copies company name and industry from associated com...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_contact_hygiene_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Build a HubSpot workflow that auto-enriches and stages new contacts upon creation",
+        "Sets lifecycle stage, copies company name and industry from associated com..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/new-contact-hygiene-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "new-contact-hygiene-workflow",
+      "url": "https://clawhub.ai/skills/new-contact-hygiene-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-contact-hygiene-workflow",
+    "url": "https://clawhub.ai/skills/new-contact-hygiene-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-contact-hygiene-workflow-9f1644b111a8f747.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/new-contact-hygiene-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-new-contact-hygiene-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0063857a6ffe3f2e1ae7bcb130fed9863d588ae14594db29a354168f5beed6e1",
+      "artifactSizeBytes": 2621
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T19:48:33.618Z"
+}

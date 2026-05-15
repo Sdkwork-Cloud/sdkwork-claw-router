@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-competitive-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_competitive_intelligence",
+  "skill": {
+    "id": 25816,
+    "skillKey": "clawhub-abm-competitive-intelligence",
+    "name": "Competitive Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-competitive-intelligence",
+    "url": "https://clawhub.ai/skills/abm-competitive-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-competitive-intelligence-78cdad25d9d0aad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs competitive intelligence by researching competitors and analyzing their online presence using web search and site scraping. Use when the user mentio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773806111585,
+      "changelog": "Initial release of the competitive-intelligence skill:\n\n- Automates multi-step competitor research using web search and selective site scraping.\n- Guides users to provide key context: company, product category, competitors, interests, and scope.\n- Outlines a clear workflow: gather context, identify competitors, research with web search, deep-dive with target scraping, and synthesize findings.\n- Provides a detailed, structured report format including executive summary, competitor profiles, feature matrix, messaging, and gap analysis.\n- Designed for actionable insights, focusing on what matters for positioning and product strategy.\n- References related research and enablement skills for complementary use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf18f3fb0b5acaf329945ce4bed9a9b182fee095898a7f4df56e35cebcf6647a"
+}

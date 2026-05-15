@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67257,
+  "uuid": "skill-clawhub-llm-tester",
+  "skillKey": "clawhub-llm-tester",
+  "name": "LLM Tester",
+  "summary": "LLM 模型对比测试工具。支持多模型批量对比测试，自动记录耗时、Token 消耗、成功率，生成 JSON 格式对比报告。当需要评估不同 LLM 模型在特定任务上的表现时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_tester",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuzhihui886",
+      "features": [
+        "LLM 模型对比测试工具。支持多模型批量对比测试，自动记录耗时、Token 消耗、成功率，生成 JSON 格式对比报告。当需要评估不同 LLM 模型在特定任务上的表现时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-tester@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213567314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-tester",
+      "url": "https://clawhub.ai/skills/llm-tester"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-tester",
+    "url": "https://clawhub.ai/skills/llm-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-tester-94575b26a4b3cdaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-tester@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-tester-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:570b15248c3d4e7253b1d3db1e08c99701eda0dcca8bfa919be39fec74a184a7",
+      "artifactSizeBytes": 2006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:04:25.347Z"
+}

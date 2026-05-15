@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dogecoin-node@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dogecoin_node",
+  "skill": {
+    "id": 14998,
+    "skillKey": "clawhub-dogecoin-node",
+    "name": "Dogecoin Node"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dogecoin-node",
+    "url": "https://clawhub.ai/skills/dogecoin-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dogecoin-node-4aa808d39bc54077.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to set up and operate a Dogecoin Core full node with RPC access, blockchain tools, and optional tipping functionality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "greatape42069",
+      "userId": "publishers:greatape42069",
+      "displayName": "GreatApe42069",
+      "image": "https://avatars.githubusercontent.com/u/153969184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 867,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772647572421,
+      "changelog": "dogecoin-node 1.0.5 Changelog\n\n- Updated installation and configuration instructions for clarity and accuracy.\n- Health check script now provides blockchain sync status, live DOGE price from CoinGecko, and disk monitoring; CLI output uses `jq` for structured JSON parsing.\n- New recommended location: all example paths use `~/.openclaw/` instead of `.openwork/`.\n- Added `jq` as a required dependency for health scripting.\n- Improved documentation and safety warnings for private key commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eadc49d88228e86d23e79ad01b5041e81f248e18cf57ce95564a95abb2ad2ad4"
+}

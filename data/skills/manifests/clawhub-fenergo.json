@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31984,
+  "uuid": "skill-clawhub-fenergo",
+  "skillKey": "clawhub-fenergo",
+  "name": "Fenergo",
+  "summary": "Fenergo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Fenergo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fenergo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Fenergo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Fenergo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fenergo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fenergo",
+      "url": "https://clawhub.ai/skills/fenergo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fenergo",
+    "url": "https://clawhub.ai/skills/fenergo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fenergo-fb2a95225d055233.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fenergo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fenergo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb8f0df173f3cc150e76a1256142485d55eb556e5916dd7a9eb72560dc43ea3e",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:46:46.458Z"
+}

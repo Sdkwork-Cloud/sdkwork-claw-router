@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66122,
+  "uuid": "skill-clawhub-tdx-ua-patcher",
+  "skillKey": "clawhub-tdx-ua-patcher",
+  "name": "通达信UA修改，TcefWnd.dll修改",
+  "summary": "通达信 TcefWnd.dll User-Agent 修改工具。用于查找通达信安装目录、检测版本信息、修改浏览器组件的 UA 标识。当用户需要修改通达信 UA、伪装成移动端浏览器、或绕过某些网站对通达信内置浏览器的限制时使用此 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tdx_ua_patcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "祝先生Bruce",
+      "features": [
+        "通达信 TcefWnd.dll User-Agent 修改工具。用于查找通达信安装目录、检测版本信息、修改浏览器组件的 UA 标识。当用户需要修改通达信 UA、伪装成移动端浏览器、或绕过某些."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tdx-ua-patcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95122518?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tdx-ua-patcher",
+      "url": "https://clawhub.ai/skills/tdx-ua-patcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tdx-ua-patcher",
+    "url": "https://clawhub.ai/skills/tdx-ua-patcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tdx-ua-patcher-7a433d39e58a99a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tdx-ua-patcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tdx-ua-patcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b37a83bb196ea608c017600e4cd82b6ea6050978f0b8da5b2fccf9780d1e3741",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T14:20:52.865Z"
+}

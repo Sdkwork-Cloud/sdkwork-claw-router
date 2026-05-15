@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39733,
+  "uuid": "skill-clawhub-datagate",
+  "skillKey": "clawhub-datagate",
+  "name": "Datagate",
+  "summary": "Validate JSON data against a JSON Schema (Draft 2020-12). Post a schema and payload, get back whether it's valid plus detailed error paths and messages for e...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datagate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirni",
+      "features": [
+        "Validate JSON data against a JSON Schema (Draft 2020-12)",
+        "Post a schema and payload, get back whether it's valid plus detailed error paths and messages f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datagate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13551232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datagate",
+      "url": "https://clawhub.ai/skills/datagate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datagate",
+    "url": "https://clawhub.ai/skills/datagate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datagate-c5cc223ed9a3b1e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datagate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-datagate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e6b7d103d9470ee76317905398b83590fc47f0dc9bcc8bef4fe7c7c1ba4df31",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:06:30.508Z"
+}

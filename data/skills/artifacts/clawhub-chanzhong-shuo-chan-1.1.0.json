@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chanzhong-shuo-chan@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanzhong_shuo_chan",
+  "skill": {
+    "id": 72888,
+    "skillKey": "clawhub-chanzhong-shuo-chan",
+    "name": "缠中说禅数字人对谈"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanzhong-shuo-chan",
+    "url": "https://clawhub.ai/skills/chanzhong-shuo-chan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanzhong-shuo-chan-b6955975cb66318f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "缠中说禅数字人对谈技能。当用户说\"问问李彪\"、\"缠师怎么看\"、\"缠中说禅\"、\"问个缠论问题\"、\"李彪怎么说\"时触发。以李彪（缠中说禅）的犀利语气和独特观点回答股票投资、缠论技术分析、哲学思辨、诗词创作等问题，引用其博客核心语录，保持自由批判的风格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wsyummy",
+      "userId": "s174g42p44rt00dg2x4jscq7k1853h83",
+      "displayName": "huangchuzhi",
+      "image": "https://avatars.githubusercontent.com/u/90503267?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776490202910,
+      "changelog": "v1.1: 增加缠论108篇完整版(883KB)，包含教你炒股票全部108篇核心内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce9bba35b236e0a9e43c6afb2180a69ed9b51460f1fe5f8d800e0d3e280dfc99"
+}

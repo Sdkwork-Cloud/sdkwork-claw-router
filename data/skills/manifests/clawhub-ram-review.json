@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63642,
+  "uuid": "skill-clawhub-ram-review",
+  "skillKey": "clawhub-ram-review",
+  "name": "Ram Review",
+  "summary": "召唤拉姆姐姐来评价雷姆的工作",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ram_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Madoka",
+      "features": [
+        "召唤拉姆姐姐来评价雷姆的工作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ram-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9532020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ram-review",
+      "url": "https://clawhub.ai/skills/ram-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ram-review",
+    "url": "https://clawhub.ai/skills/ram-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ram-review-07868a4dd1ae00c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ram-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ram-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0886198b414b83cefcc5cece617712cd0b535a71e7247b4bf954dbd82a2930b5",
+      "artifactSizeBytes": 1750
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T23:34:24.902Z"
+}

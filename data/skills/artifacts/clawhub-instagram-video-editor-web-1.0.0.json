@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-video-editor-web@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_video_editor_web",
+  "skill": {
+    "id": 55187,
+    "skillKey": "clawhub-instagram-video-editor-web",
+    "name": "Instagram Video Editor Web"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-video-editor-web",
+    "url": "https://clawhub.ai/skills/instagram-video-editor-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-video-editor-web-05ea1a7e33b5c971.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — crop to 9:16, add captions, and trim the intro silence — and get Instagram..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776799280215,
+      "changelog": "Instagram Video Editor Web 1.0.0 — Initial Release\n\n- Launches a web-based AI video editor designed for Instagram creators.\n- Supports uploading MP4, MOV, AVI, WebM files up to 500MB and automates editing tasks such as cropping, captioning, and trimming.\n- Instant cloud processing and export — get Instagram-ready videos in about 30–60 seconds.\n- Automatic setup with token management and session handling.\n- Export jobs processed on cloud GPUs, with progress feedback and error handling.\n- No desktop installation required; everything runs in the browser.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe782cbec0de5d0b325fbaa61d1c5622e1776fb9e42be89f3be04c6663b367d2"
+}

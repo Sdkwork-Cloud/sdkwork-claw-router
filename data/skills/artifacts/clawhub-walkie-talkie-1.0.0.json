@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/walkie-talkie@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walkie_talkie",
+  "skill": {
+    "id": 9962,
+    "skillKey": "clawhub-walkie-talkie",
+    "name": "Walkie-Talkie Mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walkie-talkie",
+    "url": "https://clawhub.ai/skills/walkie-talkie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walkie-talkie-bbbd171fcd4dacdf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handles voice-to-voice conversations on WhatsApp. Automatically transcribes incoming audio and responds with local TTS audio. Use when the user wants to \"talk\" instead of type."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rubenfb23",
+      "userId": "s17cxwc75n6z653vb02yr0cpqs85s8ge",
+      "displayName": "Rubén Fernández Boullón",
+      "image": "https://avatars.githubusercontent.com/u/98909961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2695,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769433420898,
+      "changelog": "Walkie-Talkie skill initial release:\n\n- Enables automatic voice-to-voice conversations on WhatsApp via local transcription and text-to-speech.\n- Transcribes incoming audio messages and processes them as prompts.\n- Responds with both text and synthetic voice audio using local TTS.\n- Activates when receiving audio messages or upon user request (\"activa modo walkie-talkie\", \"hablemos por voz\").\n- Uses only local tools for processing and aims to ensure rapid response times.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8cf838527ed92638f3dad15126873048bafebe3b505172c5ce36fd79ab6dff75"
+}

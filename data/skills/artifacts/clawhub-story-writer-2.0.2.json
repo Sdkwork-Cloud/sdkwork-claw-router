@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/story-writer@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_writer",
+  "skill": {
+    "id": 58356,
+    "skillKey": "clawhub-story-writer",
+    "name": "Story Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-writer",
+    "url": "https://clawhub.ai/skills/story-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-writer-3c169196763f802c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小说创作、角色设计、情节设计(三幕式)、对话生成、世界观构建、续写。Story writing with character design, three-act plot structure, dialogue generation, worldbuilding. Supports bilingual docum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1866,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1774620553969,
+      "changelog": "Bilingual and Quality Enhancement",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6d4e52b6b8dfa10053c04a9c1e5cd6c39a7ffd4abd1f227c8d9d5e18978795e"
+}

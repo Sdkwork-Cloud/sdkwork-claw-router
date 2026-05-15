@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56240,
+  "uuid": "skill-clawhub-hpd-pipeline",
+  "skillKey": "clawhub-hpd-pipeline",
+  "name": "HPD Pipeline",
+  "summary": "Use when the HPD lab needs a repeatable Planner -> Designer -> conditional Developer -> Tester flow for an approved idea, with Lobster-first and sequential f...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hpd_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "omermesebuken1",
+      "features": [
+        "Use when the HPD lab needs a repeatable Planner -> Designer -> conditional Developer -> Tester."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hpd-pipeline@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76281192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hpd-pipeline",
+      "url": "https://clawhub.ai/skills/hpd-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hpd-pipeline",
+    "url": "https://clawhub.ai/skills/hpd-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hpd-pipeline-b9fd9401e08b9893.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hpd-pipeline@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hpd-pipeline-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3208f384d39ee6af319c061a9cda81043750fa83931efb7104809a83da404d5",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:42:21.298Z"
+}

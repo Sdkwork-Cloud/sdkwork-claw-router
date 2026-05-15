@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-vetter-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_bak",
+  "skill": {
+    "id": 36292,
+    "skillKey": "clawhub-skill-vetter-bak",
+    "name": "Skill Vetter.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-bak",
+    "url": "https://clawhub.ai/skills/skill-vetter-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-bak-197fd034dcf53bff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aysun168",
+      "userId": "s170rarzak4xye78xxtx35w94x83q3ya",
+      "displayName": "aysun168",
+      "image": "https://avatars.githubusercontent.com/u/17974169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774584305661,
+      "changelog": "skill-vetter-bak v1.0.0\n\n- Initial release introducing a security-first vetting protocol for AI agent skills.\n- Provides a detailed step-by-step vetting checklist for source, code review, permission scope, and risk classification.\n- Includes a standardized output report template for documenting vetting results.\n- Offers practical shell commands to assist with vetting GitHub-hosted skills.\n- Establishes a trust hierarchy and clear guidance for handling different skill risk levels.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d82918f1a7bdebabc979e529f3f8a53cc32ae7a067a98f88afa92c51dfc99495"
+}

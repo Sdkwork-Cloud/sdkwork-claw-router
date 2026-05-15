@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prepublish-privacy-scrub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prepublish_privacy_scrub",
+  "skill": {
+    "id": 20648,
+    "skillKey": "clawhub-prepublish-privacy-scrub",
+    "name": "Prepublish Privacy Scrub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prepublish-privacy-scrub",
+    "url": "https://clawhub.ai/skills/prepublish-privacy-scrub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prepublish-privacy-scrub-6eb845067aeac636.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan and remove sensitive data before publishing skills. Detect API keys, tokens, secrets, and personal info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dalomeve",
+      "userId": "s170jb8y518cbtqkxpgjgcz0yn843mr1",
+      "displayName": "Dalomeve",
+      "image": "https://avatars.githubusercontent.com/u/115125037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 535,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772361048282,
+      "changelog": "Initial release of prepublish-privacy-scrub.\n\n- Scans project files for sensitive data patterns: API keys, tokens, secrets, emails, personal paths, and internal URLs.\n- Provides PowerShell functions for automated detection (Test-PrivacyScan) and redaction (Invoke-PrivacyScrub) of sensitive data.\n- Includes a pre-publish privacy checklist to ensure files are clean before publishing.\n- Privacy/safety practices: local-only scanning, use of placeholders, and file backup before scrubbing.\n- Offers clear usage triggers and executable verification criteria for safe publishing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ba767e0bf35b0704a33a44f05f1d487610560cedb52dd5d9bcb39352ad7abf24"
+}

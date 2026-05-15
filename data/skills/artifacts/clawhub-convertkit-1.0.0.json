@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/convertkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convertkit",
+  "skill": {
+    "id": 50495,
+    "skillKey": "clawhub-convertkit",
+    "name": "Convertkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convertkit",
+    "url": "https://clawhub.ai/skills/convertkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convertkit-dea4595b95ca9620.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ConvertKit (Kit) creator marketing — manage subscribers, forms, sequences, broadcasts, tags, and automations via the ConvertKit API. Build email lists, creat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772571346360,
+      "changelog": "Initial release of the ConvertKit skill for creator email marketing and automation.\n\n- Manage subscribers, forms, sequences, broadcasts, tags, and automations via the ConvertKit API.\n- Provides a Python CLI with commands for subscriber management, tagging, form and sequence operations, broadcasts, and analytics.\n- No external dependencies; uses Python standard library only.\n- Outputs results in JSON or human-readable format.\n- Requires only a ConvertKit API key for setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c2c746a4c8a7ba615ba24278d1e798ddd465071b64fd332e79f75618c0d8f66b"
+}

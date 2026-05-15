@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66241,
+  "uuid": "skill-clawhub-aigohotel-mcp",
+  "skillKey": "clawhub-aigohotel-mcp",
+  "name": "aigohotel-mcp",
+  "summary": "使用 AigoHotel MCP 工具完成酒店检索、结构化筛选和实时房型价格确认。用户提出酒店推荐、预算或星级限制、候选对比、房型价格与退改规则确认时触发。本技能优先调用 MCP 工具并返回结构化结论，同时根据客户端环境选择 cloud HTTP、uvx stdio 或本地调试模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigohotel_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dreamtzlong",
+      "features": [
+        "使用 AigoHotel MCP 工具完成酒店检索、结构化筛选和实时房型价格确认。用户提出酒店推荐、预算或星级限制、候选对比、房型价格与退改规则确认时触发。本技能优先调用 MCP 工具并返回."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigohotel-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232517634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigohotel-mcp",
+      "url": "https://clawhub.ai/skills/aigohotel-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigohotel-mcp",
+    "url": "https://clawhub.ai/skills/aigohotel-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigohotel-mcp-5ae0f89e23d0d2fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigohotel-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigohotel-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:802b2811c01f73769d28003397adb046a23fb474c110c5b9798444f982dd1f73",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T08:27:35.362Z"
+}

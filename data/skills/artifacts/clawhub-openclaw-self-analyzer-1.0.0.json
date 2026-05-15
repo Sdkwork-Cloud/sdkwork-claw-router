@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-self-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_self_analyzer",
+  "skill": {
+    "id": 62930,
+    "skillKey": "clawhub-openclaw-self-analyzer",
+    "name": "OpenClaw Self Analyzer - 自分析工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-self-analyzer",
+    "url": "https://clawhub.ai/skills/openclaw-self-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-self-analyzer-1bffb6654355077d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动分析OpenClaw架构，检测钩子点，生成钩子代码，扫描代码并生成详细分析报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fofo365",
+      "userId": "publishers:fofo365",
+      "displayName": "fofo365",
+      "image": "https://avatars.githubusercontent.com/u/37063409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772549858816,
+      "changelog": "Initial release of OpenClaw Self Analyzer.\n\n- Provides automated architecture analysis and hook point detection for OpenClaw.\n- Generates hooks and extension packages with customizable logic.\n- Includes code scanning and comprehensive report generation features.\n- Supports integration via Python scripts for both hook generation and report output.\n- Documents OpenClaw pipeline stages and hook types with usage instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b24a84235dd526d853d3f18779f77c089df527381d3b9bd207de69cc973ab1db"
+}

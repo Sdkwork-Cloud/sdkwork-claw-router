@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baoyu-image-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baoyu_image_gen",
+  "skill": {
+    "id": 9750,
+    "skillKey": "clawhub-baoyu-image-gen",
+    "name": "Baoyu Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baoyu-image-gen",
+    "url": "https://clawhub.ai/skills/baoyu-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baoyu-image-gen-42ef32dcccd2d285.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image generation with OpenAI, Google, DashScope and Replicate APIs. Supports text-to-image, reference images, aspect ratios. Sequential by default; parall..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peters820-art",
+      "userId": "publishers:peters820-art",
+      "displayName": "PETERS820-art",
+      "image": "https://avatars.githubusercontent.com/u/252963998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2644,
+      "installsAllTime": 80,
+      "installsCurrent": 80,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772822703840,
+      "changelog": "Initial release of baoyu-image-gen: a multi-provider API-based image generation tool.\n\n- Supports image generation via OpenAI, Google, DashScope, and Replicate APIs.\n- Allows text prompts, reference images, aspect ratios, image size, and quality presets.\n- Provider, model, and defaults configurable via CLI flags, EXTEND.md, and environment variables.\n- Ensures a blocking setup with EXTEND.md before image generation; guides first-time configuration.\n- Sequential generation is default; parallel mode available upon explicit user request.\n- Robust error handling with user setup hints and auto-retries for failed generations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ede2e0b66c407e536c863b80e11e7b68a7e52d77148abd9effb6bd0fdd2b471c"
+}

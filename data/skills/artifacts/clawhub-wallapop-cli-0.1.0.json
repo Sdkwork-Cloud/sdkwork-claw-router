@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallapop-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallapop_cli",
+  "skill": {
+    "id": 11761,
+    "skillKey": "clawhub-wallapop-cli",
+    "name": "Wallapop Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallapop-cli",
+    "url": "https://clawhub.ai/skills/wallapop-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallapop-cli-1ebb5e5782fbec36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the wallapop CLI to search listings, fetch item details, view user profiles, and list categories. Apply when a user asks for Wallapop marketplace data or when you need CLI commands and flags for wallapop-cli usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pjtf93",
+      "userId": "publishers:pjtf93",
+      "displayName": "pjtf93",
+      "image": "https://avatars.githubusercontent.com/u/18081873?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1830,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769364167110,
+      "changelog": "- Initial release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ac333831b59c3b21573cbfe479bfc9b223879210c2dce89c539a2dc6f020b4cd"
+}

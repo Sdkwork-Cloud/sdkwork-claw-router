@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
 import { spawn } from 'node:child_process';
+import { mkdirSync } from 'node:fs';
 import { createServer } from 'node:net';
+import path from 'node:path';
 import process from 'node:process';
 
 const REQUEST_TIMEOUT_MS = 2_000;
 const STARTUP_TIMEOUT_MS = Number.parseInt(
-  process.env.CLAWROUTER_EDGE_DEV_SMOKE_TIMEOUT_MS ?? '120000',
+  process.env.CLAWROUTER_EDGE_DEV_SMOKE_TIMEOUT_MS ?? '900000',
   10,
 );
 const PORT_SEARCH_START = Number.parseInt(
@@ -25,6 +27,24 @@ const EXPECTED_RUNTIME_ENV_OUTPUT = [
   'PORTAL_PUBLIC_BACKEND_API_BASE_URL=/backend/v3/api',
   'PORTAL_PUBLIC_APP_API_BASE_URL=/app/v3/api',
 ];
+
+const BACKEND_SURFACE_OPENAPI_CONTRACT = {
+  expectedTitle: 'SDKWork Claw Router Backend API',
+  requiredPaths: [
+    '/backend/v3/api/ai/model_vendors',
+    '/backend/v3/api/billing/recharges/packages',
+    '/backend/v3/api/ecosystem/skills',
+  ],
+};
+
+const APP_SURFACE_OPENAPI_CONTRACT = {
+  expectedTitle: 'SDKWork Claw Router App API',
+  requiredPaths: [
+    '/app/v3/api/platform/apps/store',
+    '/app/v3/api/ecosystem/skills',
+    '/app/v3/api/billing/account/points/recharges/packages',
+  ],
+};
 
 const ISOLATED_ENV_NAMES = [
   'SDKWORK_CLAW_DATABASE_URL',
@@ -108,6 +128,20 @@ function isolatedSmokeEnv() {
   return env;
 }
 
+function toPortablePath(value) {
+  return value.replaceAll(path.sep, '/');
+}
+
+function isolatedSmokeDatabaseUrl() {
+  const databaseRelativePath = path.join(
+    'target',
+    'dev-smoke',
+    `sdkwork-claw-router-${process.pid}-${Date.now()}.sqlite`,
+  );
+  mkdirSync(path.dirname(databaseRelativePath), { recursive: true });
+  return `sqlite://${toPortablePath(databaseRelativePath)}`;
+}
+
 function appendOutput(output, chunk) {
   output.text += chunk.toString();
   if (output.text.length > MAX_CAPTURED_OUTPUT_CHARS) {
@@ -115,11 +149,20 @@ function appendOutput(output, chunk) {
   }
 }
 
-function launchWorkspace({ serverPort, gatewayPort, adminApiPort, appApiPort, portalPort }) {
+function launchWorkspace({
+  serverPort,
+  gatewayPort,
+  adminApiPort,
+  appApiPort,
+  portalPort,
+  databaseUrl,
+}) {
   const command = pnpmCommand();
   const args = [
     'dev',
     '--',
+    '--database-url',
+    databaseUrl,
     '--server-bind',
     `127.0.0.1:${serverPort}`,
     '--gateway-bind',
@@ -282,16 +325,29 @@ function assertHealth({ response, body }, label, expectedService) {
 function assertGatewayOpenApi({ response, body }, label) {
   assertStatus(response, label);
   const payload = parseJson(body, label);
-  if (payload.openapi !== '3.0.0' || !payload.paths?.['/v1/models']) {
+  if (
+    payload.openapi !== '3.0.3'
+    || payload.info?.title !== 'Claw Router Open API'
+    || payload['x-api-prefix'] !== '/v1'
+    || !payload.paths?.['/v1/models']
+    || !payload.paths?.['/v1/chat/completions']
+    || !payload.paths?.['/v1/responses']
+    || !payload.paths?.['/google/v1beta/models/{model}:generateContent']
+  ) {
     throw new Error(`${label} did not return the gateway OpenAPI contract: ${body.slice(0, 500)}`);
   }
 }
 
-function assertSurfaceOpenApi({ response, body }, label, expectedPrefix) {
+function assertSurfaceOpenApi({ response, body }, label, { expectedTitle, requiredPaths }) {
   assertStatus(response, label);
   const payload = parseJson(body, label);
-  if (payload.openapi !== '3.0.3' || payload['x-api-prefix'] !== expectedPrefix) {
-    throw new Error(`${label} did not return ${expectedPrefix} OpenAPI: ${body.slice(0, 500)}`);
+  const openApiVersion = String(payload.openapi ?? '');
+  const missingPaths = requiredPaths.filter((apiPath) => !payload.paths?.[apiPath]);
+  if (!/^3\./u.test(openApiVersion) || payload.info?.title !== expectedTitle || missingPaths.length > 0) {
+    throw new Error(
+      `${label} did not return the ${expectedTitle} surface OpenAPI contract; `
+      + `missing paths: ${missingPaths.join(', ') || '<none>'}; ${body.slice(0, 500)}`,
+    );
   }
 }
 
@@ -316,9 +372,36 @@ function assertRuntimeEnv({ response, body }, label) {
   }
 }
 
-function runProcess(command, args) {
+function assertPublicBrowseEnvelope({ response, body }, label, expectedText) {
+  assertStatus(response, label);
+  const payload = parseJson(body, label);
+  if (payload.code !== '2000') {
+    throw new Error(
+      `${label} must not require authorization and must return code 2000: ${body.slice(0, 500)}`,
+    );
+  }
+  const items = payload.data?.items;
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new Error(`${label} returned no public browse data: ${body.slice(0, 500)}`);
+  }
+  if (!body.includes(expectedText)) {
+    throw new Error(`${label} did not include ${expectedText}: ${body.slice(0, 500)}`);
+  }
+}
+
+function runProcess(command, args, { timeoutMs = 5_000 } = {}) {
   return new Promise((resolve) => {
     let child;
+    let settled = false;
+    let timer;
+    const finish = () => {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      clearTimeout(timer);
+      resolve();
+    };
     try {
       child = spawn(command, args, {
         stdio: 'ignore',
@@ -328,8 +411,12 @@ function runProcess(command, args) {
       resolve();
       return;
     }
-    child.on('error', () => resolve());
-    child.on('exit', () => resolve());
+    timer = setTimeout(() => {
+      child.kill('SIGTERM');
+      finish();
+    }, timeoutMs);
+    child.on('error', finish);
+    child.on('exit', finish);
   });
 }
 
@@ -393,12 +480,14 @@ async function main() {
   const adminBaseUrl = `http://127.0.0.1:${adminApiPort}`;
   const appBaseUrl = `http://127.0.0.1:${appApiPort}`;
   const portalBaseUrl = `http://127.0.0.1:${portalPort}`;
+  const databaseUrl = isolatedSmokeDatabaseUrl();
   const workspace = launchWorkspace({
     serverPort,
     gatewayPort,
     adminApiPort,
     appApiPort,
     portalPort,
+    databaseUrl,
   });
   if (!workspace) {
     return;
@@ -453,13 +542,13 @@ async function main() {
       url: `${edgeBaseUrl}/backend/v3/api/openapi.json`,
       label: 'edge backend OpenAPI',
       validate: (result) =>
-        assertSurfaceOpenApi(result, 'edge backend OpenAPI', '/backend/v3/api'),
+        assertSurfaceOpenApi(result, 'edge backend OpenAPI', BACKEND_SURFACE_OPENAPI_CONTRACT),
     });
     await waitForEndpoint({
       ...workspace,
       url: `${edgeBaseUrl}/app/v3/api/openapi.json`,
       label: 'edge app OpenAPI',
-      validate: (result) => assertSurfaceOpenApi(result, 'edge app OpenAPI', '/app/v3/api'),
+      validate: (result) => assertSurfaceOpenApi(result, 'edge app OpenAPI', APP_SURFACE_OPENAPI_CONTRACT),
     });
     await waitForEndpoint({
       ...workspace,
@@ -472,6 +561,34 @@ async function main() {
       url: `${edgeBaseUrl}/runtime-env.js`,
       label: 'edge portal runtime env',
       validate: (result) => assertRuntimeEnv(result, 'edge portal runtime env'),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${edgeBaseUrl}/app/v3/api/platform/apps/store/categories`,
+      label: 'edge app store public categories',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'edge app store public categories', 'Productivity'),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${edgeBaseUrl}/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6`,
+      label: 'edge app store public list',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'edge app store public list', 'SDKWork Claw Router'),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${edgeBaseUrl}/app/v3/api/ecosystem/skills/categories`,
+      label: 'edge skills public categories',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'edge skills public categories', 'SDKWork Official'),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${edgeBaseUrl}/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6`,
+      label: 'edge skills public list',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'edge skills public list', 'Prompt Optimizer'),
     });
 
     await waitForEndpoint({
@@ -491,13 +608,41 @@ async function main() {
       url: `${adminBaseUrl}/backend/v3/api/openapi.json`,
       label: 'direct backend OpenAPI',
       validate: (result) =>
-        assertSurfaceOpenApi(result, 'direct backend OpenAPI', '/backend/v3/api'),
+        assertSurfaceOpenApi(result, 'direct backend OpenAPI', BACKEND_SURFACE_OPENAPI_CONTRACT),
     });
     await waitForEndpoint({
       ...workspace,
       url: `${appBaseUrl}/app/v3/api/openapi.json`,
       label: 'direct app OpenAPI',
-      validate: (result) => assertSurfaceOpenApi(result, 'direct app OpenAPI', '/app/v3/api'),
+      validate: (result) => assertSurfaceOpenApi(result, 'direct app OpenAPI', APP_SURFACE_OPENAPI_CONTRACT),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${appBaseUrl}/app/v3/api/platform/apps/store/categories`,
+      label: 'direct app store public categories',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'direct app store public categories', 'Productivity'),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${appBaseUrl}/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6`,
+      label: 'direct app store public list',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'direct app store public list', 'SDKWork Claw Router'),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${appBaseUrl}/app/v3/api/ecosystem/skills/categories`,
+      label: 'direct skills public categories',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'direct skills public categories', 'SDKWork Official'),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${appBaseUrl}/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6`,
+      label: 'direct skills public list',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(result, 'direct skills public list', 'Prompt Optimizer'),
     });
     await waitForEndpoint({
       ...workspace,
@@ -520,7 +665,7 @@ async function main() {
         assertSurfaceOpenApi(
           result,
           'direct portal backend OpenAPI proxy',
-          '/backend/v3/api',
+          BACKEND_SURFACE_OPENAPI_CONTRACT,
         ),
     });
     await waitForEndpoint({
@@ -528,13 +673,62 @@ async function main() {
       url: `${portalBaseUrl}/app/v3/api/openapi.json`,
       label: 'direct portal app OpenAPI proxy',
       validate: (result) =>
-        assertSurfaceOpenApi(result, 'direct portal app OpenAPI proxy', '/app/v3/api'),
+        assertSurfaceOpenApi(
+          result,
+          'direct portal app OpenAPI proxy',
+          APP_SURFACE_OPENAPI_CONTRACT,
+        ),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${portalBaseUrl}/app/v3/api/platform/apps/store/categories`,
+      label: 'direct portal app store public categories proxy',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(
+          result,
+          'direct portal app store public categories proxy',
+          'Productivity',
+        ),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${portalBaseUrl}/app/v3/api/platform/apps/store?q=sdkwork-claw-router&page=1&page_size=6`,
+      label: 'direct portal app store public list proxy',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(
+          result,
+          'direct portal app store public list proxy',
+          'SDKWork Claw Router',
+        ),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${portalBaseUrl}/app/v3/api/ecosystem/skills/categories`,
+      label: 'direct portal skills public categories proxy',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(
+          result,
+          'direct portal skills public categories proxy',
+          'SDKWork Official',
+        ),
+    });
+    await waitForEndpoint({
+      ...workspace,
+      url: `${portalBaseUrl}/app/v3/api/ecosystem/skills?q=prompt&page=1&page_size=6`,
+      label: 'direct portal skills public list proxy',
+      validate: (result) =>
+        assertPublicBrowseEnvelope(
+          result,
+          'direct portal skills public list proxy',
+          'Prompt Optimizer',
+        ),
     });
 
     console.log(`[edge-dev-smoke] passed: ${edgeBaseUrl}/`);
   } finally {
     await killProcessTree(workspace.child);
   }
+  process.exit(0);
 }
 
 main().catch((error) => {

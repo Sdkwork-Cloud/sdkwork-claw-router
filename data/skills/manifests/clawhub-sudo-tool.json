@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47656,
+  "uuid": "skill-clawhub-sudo-tool",
+  "skillKey": "clawhub-sudo-tool",
+  "name": "Sudo Tool",
+  "summary": "Execute commands with superuser privileges. Use for system administration tasks requiring elevated permissions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sudo_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Execute commands with superuser privileges",
+        "Use for system administration tasks requiring elevated permissions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sudo-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sudo-tool",
+      "url": "https://clawhub.ai/skills/sudo-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sudo-tool",
+    "url": "https://clawhub.ai/skills/sudo-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sudo-tool-5112b4e1ec657481.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sudo-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sudo-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0d92b2cbfef29eac9c3e23c9576ce7ef2ae00f48005d41b5e1b70cec94cf1ce",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T16:55:04.670Z"
+}

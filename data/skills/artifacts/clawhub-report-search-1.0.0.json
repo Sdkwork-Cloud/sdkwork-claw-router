@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/report-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.report_search",
+  "skill": {
+    "id": 65141,
+    "skillKey": "clawhub-report-search",
+    "name": "report-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "report-search",
+    "url": "https://clawhub.ai/skills/report-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/report-search-8a09404eb1fd2e73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索并提取fxbaogao.com上的研报，支持按关键词、机构、作者和时间筛选，并提供报告摘要和正文阅读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eliauktm",
+      "userId": "publishers:eliauktm",
+      "displayName": "EliaukTM",
+      "image": "https://avatars.githubusercontent.com/u/18300771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773216900016,
+      "changelog": "Initial release of report-search skill for discovering and retrieving research reports from fxbaogao.com.\n\n- Supports keyword, organization, author, and time range filtering when searching for reports.\n- Provides commands for both report search and detailed content retrieval via Python scripts.\n- Displays key metadata in search results (doc_id, organization, date, links), with workflow for users to select and view individual reports.\n- JSON output structure and recommended reply conventions clearly documented.\n- Includes guidance for error handling, environment requirements, and command usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9114c285c3c0abfa190630ba4d87e39bb6903a04fbf23e094589e1409952c394"
+}

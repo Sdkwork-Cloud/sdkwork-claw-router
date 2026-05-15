@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64641,
+  "uuid": "skill-clawhub-tsa-risk",
+  "skillKey": "clawhub-tsa-risk",
+  "name": "tsa-risk",
+  "summary": "腾讯云智能顾问（Tencent Cloud Smart Advisor）架构风险巡检工具。用于获取云架构详情、架构列表、目录查询、风险评估项查询及架构评估结果。",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tsa_risk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tencent Cloud Smart Advisor Team",
+      "features": [
+        "腾讯云智能顾问（Tencent Cloud Smart Advisor）架构风险巡检工具。用于获取云架构详情、架构列表、目录查询、风险评估项查询及架构评估结果。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tsa-risk@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56500775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tsa-risk",
+      "url": "https://clawhub.ai/skills/tsa-risk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tsa-risk",
+    "url": "https://clawhub.ai/skills/tsa-risk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tsa-risk-7fad169eb780aa77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tsa-risk@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tsa-risk-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b41ab40c994430205ddb716e8395263ca365caa1672590482acd6ff107f761bc",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:18:09.661Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/suppr-document-translation-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suppr_document_translation_skills",
+  "skill": {
+    "id": 63609,
+    "skillKey": "clawhub-suppr-document-translation-skills",
+    "name": "超能文献-AI文档翻译"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suppr-document-translation-skills",
+    "url": "https://clawhub.ai/skills/suppr-document-translation-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suppr-document-translation-skills-1cb0f1c06ad0da59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "超能文献（Suppr）文档翻译 API。当用户需要翻译文档（Word、Excel、PowerPoint、PDF、TXT、HTML）、查询翻译状态或管理翻译任务时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjg678",
+      "userId": "s17af8835m60vx8n5hjefzrnqx8493zm",
+      "displayName": "Jianguang Zheng",
+      "image": "https://avatars.githubusercontent.com/u/35589061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775401063821,
+      "changelog": "Initial release of document translation skill.\n\n- Provides API for AI-powered translation of Word, Excel, PowerPoint, PDF, TXT, and HTML documents.\n- Supports task creation (file upload or URL), status querying, task management, and result download.\n- Includes endpoints for creating, listing, stopping, and checking translation tasks.\n- Supports multiple languages and document formats up to 2GB.\n- Documentation outlines typical workflow and response formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:af944eadfc6429beeabf78922503f763f1634b9c1a021576c94eb7533de22971"
+}

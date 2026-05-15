@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64583,
+  "uuid": "skill-clawhub-github-trending-project",
+  "skillKey": "clawhub-github-trending-project",
+  "name": "github-trending-project",
+  "summary": "查询 GitHub Trending 热门项目，支持按编程语言、日期范围、口语（文档语言）筛选。当用户想了解 GitHub 今日/本周/本月热门项目、特定语言的热门仓库、或中文文档的热门项目时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_project",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "langlyyy",
+      "features": [
+        "查询 GitHub Trending 热门项目，支持按编程语言、日期范围、口语（文档语言）筛选。当用户想了解 GitHub 今日/本周/本月热门项目、特定语言的热门仓库、或中文文档的热门项目."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-trending-project@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29001120?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-trending-project",
+      "url": "https://clawhub.ai/skills/github-trending-project"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-project",
+    "url": "https://clawhub.ai/skills/github-trending-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-project-7669875f5da4527b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-trending-project@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-trending-project-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67de6c7868301320214bcc42794014d5d37907b37972b85a014930baa9a1ef6c",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T17:06:39.206Z"
+}

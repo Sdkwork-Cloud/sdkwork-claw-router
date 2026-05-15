@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64019,
+  "uuid": "skill-clawhub-agent-bug-submission",
+  "skillKey": "clawhub-agent-bug-submission",
+  "name": "Agent Bug Submission",
+  "summary": "提交缺陷信息到TeamCycle平台，支持缺陷全生命周期管理，含飞书多维表格和文档记录与查询功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_bug_submission",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LuiciferYi",
+      "features": [
+        "提交缺陷信息到TeamCycle平台，支持缺陷全生命周期管理，含飞书多维表格和文档记录与查询功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-bug-submission@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24913493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-bug-submission",
+      "url": "https://clawhub.ai/skills/agent-bug-submission"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-bug-submission",
+    "url": "https://clawhub.ai/skills/agent-bug-submission",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-bug-submission-3a903030f8c7f3e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-bug-submission@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-bug-submission-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d85b2711167905d963a4c7147970a0bc99ace40f87c806de26a5f06c0c07c0d",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:31:16.937Z"
+}

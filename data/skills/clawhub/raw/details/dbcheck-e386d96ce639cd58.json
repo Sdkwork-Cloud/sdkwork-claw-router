@@ -1,0 +1,59 @@
+{
+  "skill": {
+    "slug": "dbcheck",
+    "displayName": "DBCheck 数据库巡检",
+    "summary": "执行 MySQL、PostgreSQL、Oracle、SQL Server、DM8、TiDB 数据库健康巡检，内置 130+ 条增强风险分析规则 + 慢查询深度分析引擎 + 本地 Ollama AI 大模型诊断建议，一键生成专业 Word 巡检报告。适用于 DBA 和运维人员快速掌握数据库运行状况、排查风险。项目...",
+    "tags": {
+      "database": "2.3.6",
+      "dm8": "2.3.6",
+      "inspection": "2.3.6",
+      "latest": "2.3.6",
+      "mysql": "2.3.6",
+      "oracle": "2.3.6",
+      "postgresql": "2.3.6",
+      "report": "2.3.6",
+      "tidb": "2.3.6",
+      "ai": "1.0.4",
+      "trends": "1.0.4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "createdAt": 1775828730893,
+    "updatedAt": 1777552009809
+  },
+  "latestVersion": {
+    "version": "2.3.6",
+    "createdAt": 1777551754972,
+    "changelog": "**Major update with new database support, enhanced analysis, and new export/report features:**\n\n- 新增 TiDB 数据库巡检支持，含专用入口与独立风险规则。\n- 增加慢查询深度分析引擎，支持 6 大数据库慢 SQL 采集与 AI 优化建议。\n- 内置风险规则扩展到 130+ 条，覆盖更多数据库与专项分析。\n- 新增配置基线检查（MySQL/PostgreSQL），自动推荐与对比核心参数。\n- 加入索引健康分析（MySQL/PostgreSQL），识别缺失/冗余/未用索引。\n- 增加脱敏报告导出，敏感字段自动掩码。\n- 支持报告 PDF 导出（需 LibreOffice 或 docx2pdf）。\n- 框架结构调整，多个新脚本文件（如 index_health.py, config_baseline.py, desensitize.py）。\n- 文档完善，增加 TiDB/专项分析/导出说明。",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "fiyo",
+    "userId": "s17caexdtfyetnh13g8pkyx5rx83v01e",
+    "displayName": "fiyo",
+    "image": "https://avatars.githubusercontent.com/u/5062945?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dynamic_code_execution",
+      "suspicious.exposed_secret_literal",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dynamic_code_execution, suspicious.exposed_secret_literal, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777552009809
+  }
+}

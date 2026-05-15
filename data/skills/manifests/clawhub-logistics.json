@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20673,
+  "uuid": "skill-clawhub-logistics",
+  "skillKey": "clawhub-logistics",
+  "name": "Logistics",
+  "summary": "Query and explain parcel logistics across courier providers, including tracking, courier identification, multi-package lookup, status interpretation, and del...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logistics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Query and explain parcel logistics across courier providers, including tracking, courier identi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logistics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logistics",
+      "url": "https://clawhub.ai/skills/logistics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logistics",
+    "url": "https://clawhub.ai/skills/logistics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logistics-8880894de4fc1864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logistics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-logistics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a59349d94920959834647d69175030b06f41bfb271cb694d85c3329471039a41",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T05:55:22.984Z"
+}

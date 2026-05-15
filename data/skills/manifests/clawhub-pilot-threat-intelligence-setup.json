@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44790,
+  "uuid": "skill-clawhub-pilot-threat-intelligence-setup",
+  "skillKey": "clawhub-pilot-threat-intelligence-setup",
+  "name": "Pilot Threat Intelligence Setup",
+  "summary": "Deploy a threat intelligence platform with 4 agents. Use this skill when: 1. User wants to set up a threat intelligence pipeline for IOC collection and distr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_threat_intelligence_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a threat intelligence platform with 4 agents",
+        "Use this skill when: 1",
+        "User wants to set up a threat intelligence pipeline for IOC collection and distr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-threat-intelligence-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-threat-intelligence-setup",
+      "url": "https://clawhub.ai/skills/pilot-threat-intelligence-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-threat-intelligence-setup",
+    "url": "https://clawhub.ai/skills/pilot-threat-intelligence-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-threat-intelligence-setup-782d48163397aa5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-threat-intelligence-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-threat-intelligence-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0f0becd52830808ed048421d843fd048ce0512e3fe2680405c99f1c05697bd3",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:47:22.476Z"
+}

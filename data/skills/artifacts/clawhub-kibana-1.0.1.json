@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kibana@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kibana",
+  "skill": {
+    "id": 50690,
+    "skillKey": "clawhub-kibana",
+    "name": "Kibana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kibana",
+    "url": "https://clawhub.ai/skills/kibana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kibana-805c028db6cf7561.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kibana API integration with managed authentication. This is a write-capable integration — it can read, create, update, and delete saved objects, dashboards,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777630916100,
+      "changelog": "- Updated authentication and management endpoints from gateway.maton.ai/ctrl.maton.ai to api.maton.ai for improved consistency.\n- Clarified write permissions: This skill now supports creating, updating, and deleting Kibana resources, but all write actions require explicit user approval with identifiers.\n- Enhanced security guidance: Strongly recommend use of least-privilege, non-admin Kibana API keys and non-production environments for exploratory tasks.\n- Added detailed warnings and required workflows for high-impact actions such as deleting dashboards or alert rules.\n- Removed LICENSE.txt from the skill package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:314581a74520cc110e4b2bc21069cf37c9a01e312aee465716e282caf0580e1f"
+}

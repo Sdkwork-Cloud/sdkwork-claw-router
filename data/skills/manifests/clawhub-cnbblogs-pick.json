@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71537,
+  "uuid": "skill-clawhub-cnbblogs-pick",
+  "skillKey": "clawhub-cnbblogs-pick",
+  "name": "CNBLOGS 精华内容抓取",
+  "summary": "抓取博客园精华区文章标题和正文，支持指定页数批量下载并保存为纯文本文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnbblogs_pick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XWork",
+      "features": [
+        "抓取博客园精华区文章标题和正文，支持指定页数批量下载并保存为纯文本文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnbblogs-pick@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24762268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnbblogs-pick",
+      "url": "https://clawhub.ai/skills/cnbblogs-pick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnbblogs-pick",
+    "url": "https://clawhub.ai/skills/cnbblogs-pick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnbblogs-pick-27c1388cf60dfc4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnbblogs-pick@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnbblogs-pick-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca856ac940d0e51a19ee6cfb0c1fe7d0b096f667543113974bee2fb4a66831ca",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:27:34.731Z"
+}

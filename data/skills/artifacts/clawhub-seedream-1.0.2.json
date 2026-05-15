@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedream@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedream",
+  "skill": {
+    "id": 20543,
+    "skillKey": "clawhub-seedream",
+    "name": "Seedream 5.0 — AI Image Generation & Editing by ByteDance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedream",
+    "url": "https://clawhub.ai/skills/seedream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedream-5ab4f0fdb3e6cd4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and edit AI images using ByteDance's Seedream — featuring text-to-image, image editing, and batch sequential generation with up to 4K resolution, PN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xixihhhh",
+      "userId": "s178tcr2rphfrfg0hgzrtz7bs183h25f",
+      "displayName": "MikeWang",
+      "image": "https://avatars.githubusercontent.com/u/60566571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1238,
+      "installsAllTime": 13,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773807082981,
+      "changelog": "- Added a Python script (`scripts/generate_image.py`) for image generation, editing, and model management.\n- No external dependencies required for the script.\n- Updated documentation to include script usage examples for listing models, generating images, uploading, and editing.\n- Existing API and model parameters remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54c0cdbd538ee8ac8ae39eeeff683e9baab508966051401b4fcf403ba322725a"
+}

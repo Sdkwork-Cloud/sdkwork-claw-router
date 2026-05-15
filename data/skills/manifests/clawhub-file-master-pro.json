@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73464,
+  "uuid": "skill-clawhub-file-master-pro",
+  "skillKey": "clawhub-file-master-pro",
+  "name": "文件管理大师",
+  "summary": "强大的文件批量处理工具，支持重命名、整理、搜索、转换等操作，让文件管理变得简单高效。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_master_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shengjun33333-code",
+      "features": [
+        "强大的文件批量处理工具，支持重命名、整理、搜索、转换等操作，让文件管理变得简单高效。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-master-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237052705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-master-pro",
+      "url": "https://clawhub.ai/skills/file-master-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-master-pro",
+    "url": "https://clawhub.ai/skills/file-master-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-master-pro-5fdc708a5e42f89d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-master-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-master-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3124e161e9a27d5b13e4df93eddfaf75417b4aee7b5e22f4753e8cf940121a65",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:36:11.601Z"
+}

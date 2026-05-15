@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sdr-quotation-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdr_quotation_generator",
+  "skill": {
+    "id": 36500,
+    "skillKey": "clawhub-sdr-quotation-generator",
+    "name": "Quotation Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdr-quotation-generator",
+    "url": "https://clawhub.ai/skills/sdr-quotation-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdr-quotation-generator-7383b74f30e25037.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-generate professional PDF proforma invoices with company letterhead, multi-language support, and post-quote tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ipythoning",
+      "userId": "s172w4n5ns9akgj3tg573p1kvx83gtgq",
+      "displayName": "iPythoning",
+      "image": "https://avatars.githubusercontent.com/u/29250610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774462938736,
+      "changelog": "Security: pricing disclosure triggers, owner approval",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e3d374b0ff2e30ce607b9dffa1d859e9269b76dd080298c95afec558c6516d6"
+}

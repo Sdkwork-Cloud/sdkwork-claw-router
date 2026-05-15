@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nex-depcheck@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nex_depcheck",
+  "skill": {
+    "id": 42265,
+    "skillKey": "clawhub-nex-depcheck",
+    "name": "Nex DepCheck"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nex-depcheck",
+    "url": "https://clawhub.ai/skills/nex-depcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nex-depcheck-04db822efa4eb2b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill dependency checker. Scan Python skills for external dependencies. Verify stdlib-only compliance, check individual files or entire skill directories. No..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexaiguy",
+      "userId": "s17fm42hs04zf6z5g1gpabtbmh847c3k",
+      "displayName": "Nex AI",
+      "image": "https://avatars.githubusercontent.com/u/149910894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775440807034,
+      "changelog": "Initial release of Nex DepCheck.\n\n- Scan Python skills or files to find external dependencies.\n- Verify compliance with Python standard library (stdlib-only skills).\n- Supports checking individual files, skill folders, or whole directories.\n- No external dependencies required; pure stdlib, no database.\n- Includes command-line commands: check, scan, file, stdlib.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c66da3f1435753003700d9d0f0465722b4e6012a2d3f4da2cd5b79eac6f40baa"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48210,
+  "uuid": "skill-clawhub-splitsym",
+  "skillKey": "clawhub-splitsym",
+  "name": "splitsym",
+  "summary": "Extract comments and split symbols from source files. Use when users want to extract inline comments, docstrings, or block comments from code files to unders...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.splitsym",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TurinFohlen",
+      "features": [
+        "Extract comments and split symbols from source files",
+        "Use when users want to extract inline comments, docstrings, or block comments from code files t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/splitsym@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208427613?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "splitsym",
+      "url": "https://clawhub.ai/skills/splitsym"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "splitsym",
+    "url": "https://clawhub.ai/skills/splitsym",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/splitsym-f1a9227bb8087cfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/splitsym@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-splitsym-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46c2c15e95282c774dd08af4a38d4ee3ba6c27e819bf398607542af0d456efe4",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:15:32.699Z"
+}

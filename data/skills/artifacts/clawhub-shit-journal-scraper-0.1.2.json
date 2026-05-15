@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shit-journal-scraper@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shit_journal_scraper",
+  "skill": {
+    "id": 56674,
+    "skillKey": "clawhub-shit-journal-scraper",
+    "name": "S.H.I.T底刊摘要"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shit-journal-scraper",
+    "url": "https://clawhub.ai/skills/shit-journal-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shit-journal-scraper-dac02bfe4f6ce787.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates extraction and AI-based analysis of research papers from shitjournal.org, capturing titles, abstracts, DOIs, and publication dates in JSON format."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "excalibur9527",
+      "userId": "s171x6qq5n03ywxpx979e1r43s85ce07",
+      "displayName": "Excalibur9527",
+      "image": "https://avatars.githubusercontent.com/u/126892847?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773373886577,
+      "changelog": "- Updated authorship credit in SKILL.md from \"ZhouGuang\" to \"Excalibur9527\".\n- No functional or technical changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cac3823aba00498e748bbf14143ac5a95258e3cc659634450a6f29e67397f495"
+}

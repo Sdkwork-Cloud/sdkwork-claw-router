@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/devloop-agent-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devloop_agent_pack",
+  "skill": {
+    "id": 21107,
+    "skillKey": "clawhub-devloop-agent-pack",
+    "name": "This skill provides a complete multi-agent collaboration system for product-driven development loops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devloop-agent-pack",
+    "url": "https://clawhub.ai/skills/devloop-agent-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devloop-agent-pack-70f97a7aaba52816.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete multi-agent collaboration workflow for product-driven development loops. Covers the full lifecycle from product discovery through architecture desig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weitanai",
+      "userId": "s17dhdk25dycg6td5cv2tsbav58418ra",
+      "displayName": "Guangsheng Ye",
+      "image": "https://avatars.githubusercontent.com/u/44537075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773128935867,
+      "changelog": "Version 1.0.0 introduces a comprehensive multi-agent workflow for DevLoop:\n\n- Adds detailed descriptions of six specialized agents (Product, Core Dev, Dev, Test, Marketing, Research) and their roles in product-driven development.\n- Documents the complete lifecycle—from product discovery, design, coding, testing, to marketing—supported by stage-by-stage workflows and communication protocols.\n- Specifies shared file conventions, session startup flows, agent collaboration methods, security guidelines, and memory management standards.\n- Provides a list of template files for core artifacts (design docs, test specs, reports, etc.) and explains their intended usage.\n- Includes guidance on customizing agent behavior, troubleshooting collaboration, and referencing in-depth protocol and design background materials.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:551da77741619d335439453f2e231c0626b9087869b93fa1c121a30051a2e342"
+}

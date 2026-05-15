@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prisma-migrate@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prisma_migrate",
+  "skill": {
+    "id": 41026,
+    "skillKey": "clawhub-prisma-migrate",
+    "name": "prisma-migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prisma-migrate",
+    "url": "https://clawhub.ai/skills/prisma-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prisma-migrate-93feed66b5c795cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate Prisma Access configurations between different SCM tenants (TSGs). Use when moving security policies, NAT rules, address objects, and other configura..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leesandao",
+      "userId": "s17fm19m3nc5bdzp4xh7pssfps83k6cf",
+      "displayName": "H@CKMEN",
+      "image": "https://avatars.githubusercontent.com/u/11771122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776093684040,
+      "changelog": "## v1.1.0 / 迁移兼容性矩阵\n\n### English\nAdded real-world migration compatibility matrix: what can be migrated directly via SCM API, what requires manual handling. Key findings: Service Account permissions block URL/Data/AI profiles, conflict detection must check all folders, Profile Groups support partial migration.\n\n### 中文\n新增实测迁移兼容性矩阵：哪些可直接通过 SCM API 迁移，哪些需要手动处理。关键发现：Service Account 权限限制导致部分高级配置无法导出，冲突检测需覆盖所有 folder，配置组支持部分迁移。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bca2b62fd4a4c555a5d5c72883a812bbd0ba555f21af14f3e6db72324bede64f"
+}

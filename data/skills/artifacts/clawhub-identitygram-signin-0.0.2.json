@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/identitygram-signin@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identitygram_signin",
+  "skill": {
+    "id": 15493,
+    "skillKey": "clawhub-identitygram-signin",
+    "name": "Identitygram Signin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identitygram-signin",
+    "url": "https://clawhub.ai/skills/identitygram-signin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identitygram-signin-c433c4430b875372.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sign in to IdentityGram by calling the /auth/signin endpoint."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "waqas-orcalo",
+      "userId": "publishers:waqas-orcalo",
+      "displayName": "waqas-orcalo",
+      "image": "https://avatars.githubusercontent.com/u/152472554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1016,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1770873825788,
+      "changelog": "- Removed encryption logic and reliance on encryption keys for credentials.\n- Updated the authentication process to send plain email and password in JSON format.\n- Cleaned up and simplified documentation in README.md and SKILL.md.\n- Removed unused files: scripts/signin.js, package.json, and package-lock.json.\n- Adjusted configuration instructions for easier integration with OpenClaw's invocation system.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7ad569a7baf47e81dc340cf7adc14e0f6bfd7551c685303e0e4a64f7afa7ffe"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/optimize@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.optimize",
+  "skill": {
+    "id": 30106,
+    "skillKey": "clawhub-optimize",
+    "name": "openclaw-optimize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "optimize",
+    "url": "https://clawhub.ai/skills/optimize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/optimize-e46f92236739147c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize OpenClaw performance and prevent lag. Use when: (1) OpenClaw feels slow or laggy, (2) High memory usage, (3) Slow response times, (4) Gateway crashe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhmza",
+      "userId": "s1731me9e5kng66hvejkjfnmyh83r94c",
+      "displayName": "Ache",
+      "image": "https://avatars.githubusercontent.com/u/127603560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774770920382,
+      "changelog": "openclaw-optimize v2.0.0 introduces a comprehensive performance tuning toolkit for OpenClaw:\n\n- Adds commands and Python API for automatic optimization, including memory management, skill analysis, history cleaning, and performance monitoring.\n- Provides detailed usage scenarios, troubleshooting, and fix recipes for deployment lag, slowdowns, and gateway issues.\n- Includes ready-to-use configuration templates for high performance and memory optimization.\n- Features integrated tools for diagnostics, benchmarking, and automated scheduled optimization tasks.\n- Chinese-language guides and best practices for rapid adoption.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9898774f948c50afac7b99829def10b8aec296315ab07e9339d2e73cc2748c2"
+}

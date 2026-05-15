@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57549,
+  "uuid": "skill-clawhub-housing-price-data",
+  "skillKey": "clawhub-housing-price-data",
+  "name": "Housing Price Data",
+  "summary": "Fetch official Chinese 70-city residential property price index data from the National Bureau of Statistics (国家统计局). Use when users ask about 房价指数, housing t...",
+  "version": "2.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.housing_price_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fangtianwd",
+      "features": [
+        "Fetch official Chinese 70-city residential property price index data from the National Bureau o.",
+        "Use when users ask about 房价指数, housing t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/housing-price-data@2.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42469250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "housing-price-data",
+      "url": "https://clawhub.ai/skills/housing-price-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "housing-price-data",
+    "url": "https://clawhub.ai/skills/housing-price-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/housing-price-data-109dc4eed5983924.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/housing-price-data@2.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-housing-price-data-2.2.3.json",
+      "version": "2.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bc67c834eaf70ccda5a466e873bb42f5c32438f7da2f7c64c250650c0174c07",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:21:31.413Z"
+}

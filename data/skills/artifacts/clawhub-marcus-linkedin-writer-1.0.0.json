@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marcus-linkedin-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marcus_linkedin_writer",
+  "skill": {
+    "id": 56532,
+    "skillKey": "clawhub-marcus-linkedin-writer",
+    "name": "marcus-linkedin-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marcus-linkedin-writer",
+    "url": "https://clawhub.ai/skills/marcus-linkedin-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marcus-linkedin-writer-10acb0bbfc5ceb1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever Marcus Wang asks to write a LinkedIn post. Triggers include: any mention of 'LinkedIn post', 'write a post', '帖子', 'LinkedIn内容', or r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suntaskmarcus-design",
+      "userId": "publishers:suntaskmarcus-design",
+      "displayName": "suntaskmarcus-design",
+      "image": "https://avatars.githubusercontent.com/u/251697547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773466234202,
+      "changelog": "- Major update: Skill is now tailored to Marcus Wang, a Solar Thermal OEM Specialist, and is triggered for LinkedIn post requests by him or about his expertise.\n- Added 5 custom writing engines styled for Marcus’s persona, experience, and audience — each with distinct hooks, structures, and tones.\n- Defined strict requirements: minimum sentence variety, mandatory use of real experience, niche-relevant hashtags, and concise posts (under 1,300 characters).\n- Prohibited generic claims, motivational tones, pitches, third-party report authority, and any output formatting or labels.\n- Skill guides request handling: always ask for topic and preferred style; option to present all 5 writing styles for comparison.\n- Removed generic documentation (README.md); SKILL.md is now highly specialized and detailed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f4dc5e796961893700e2354ddbdfab17234985800b05676353ae9bff63b1c8a"
+}

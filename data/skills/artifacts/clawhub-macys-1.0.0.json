@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macys@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macys",
+  "skill": {
+    "id": 72159,
+    "skillKey": "clawhub-macys",
+    "name": "Macys"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macys",
+    "url": "https://clawhub.ai/skills/macys",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macys-e62b99bcca0d0e22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供梅西百货品牌信息、历史沿革、感恩节游行及零售业态转型的综合参考资料。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776322153826,
+      "changelog": "Macy's skill v1.0.0 – Launches with a comprehensive brand guide and retail history\n\n- Introduces an in-depth overview of Macy's brand, history, and retail evolution from 1858 to present.\n- Explains key events like the Macy’s Thanksgiving Day Parade and signature marketing tactics.\n- Details Macy’s multi-brand retail matrix, including sub-brands like Bloomingdale’s and Bluemercury.\n- Highlights cultural impact, business transformation, and notable brand facts for easy reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c96e8d978243babba2b3e9f3e97fb69fe06d2c848c1612f9b871eb110c3c0124"
+}

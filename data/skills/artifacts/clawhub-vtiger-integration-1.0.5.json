@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vtiger-integration@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vtiger_integration",
+  "skill": {
+    "id": 49296,
+    "skillKey": "clawhub-vtiger-integration",
+    "name": "Vtiger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vtiger-integration",
+    "url": "https://clawhub.ai/skills/vtiger-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vtiger-integration-3df88d9f12207cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vtiger integration. Manage Leads, Organizations, Persons, Deals, Activities, Notes and more. Use when the user wants to interact with Vtiger data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "membranedev",
+      "userId": "s17ejzcy4w0v2h2tf7xa3y1mw583eedz",
+      "displayName": "Membrane Dev",
+      "image": "https://avatars.githubusercontent.com/u/147116108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777561119768,
+      "changelog": "Auto sync from membranedev/application-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:288bbf902a8fd64099392dd476eb39d0670dd71c4d8a72f59c836ba6b309c01c"
+}

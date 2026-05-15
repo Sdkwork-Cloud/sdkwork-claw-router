@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/invoice-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.invoice_gen",
+  "skill": {
+    "id": 26204,
+    "skillKey": "clawhub-invoice-gen",
+    "name": "Invoice Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "invoice-gen",
+    "url": "https://clawhub.ai/skills/invoice-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/invoice-gen-9024aaac2ee7de59.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional PDF invoices from simple text commands. Supports multiple currencies, tax calculation, CJK text, and customizable templates. No externa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zacjiang",
+      "userId": "publishers:zacjiang",
+      "displayName": "Shihao Jiang (Zac)",
+      "image": "https://avatars.githubusercontent.com/u/15880609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 352,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772891414015,
+      "changelog": "Initial release of invoice-gen.\n\n- Generate professional PDF invoices from simple text commands or structured data.\n- Supports multiple currencies, tax calculations, and customizable templates.\n- Handles CJK text (Chinese, Japanese, Korean) for company names and items.\n- Works offline with no external service required.\n- Includes a simple script for direct PDF invoice generation.\n- Print-ready, clean PDF output with configurable details and itemized billing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9561d9e0407427f0f87d4b4e3aba9060fe110b16a85bd0567e8e6989ebca5e0"
+}

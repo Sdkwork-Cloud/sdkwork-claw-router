@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60265,
+  "uuid": "skill-clawhub-dev-deploy",
+  "skillKey": "clawhub-dev-deploy",
+  "name": "one-click dev and dploy",
+  "summary": "快速创建并部署 Web 应用到 Cloudflare Pages；包含文件覆盖、Git推送与系统修改的安全确认机制。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PlayWithAI",
+      "features": [
+        "快速创建并部署 Web 应用到 Cloudflare Pages；包含文件覆盖、Git推送与系统修改的安全确认机制。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2209675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-deploy",
+      "url": "https://clawhub.ai/skills/dev-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-deploy",
+    "url": "https://clawhub.ai/skills/dev-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-deploy-125d669eaca465a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2fd71a03dde9b663f172e338c14cc7b4642c30263b0753640c675a33a6744fb",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:49:33.184Z"
+}

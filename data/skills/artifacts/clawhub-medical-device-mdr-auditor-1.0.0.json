@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-device-mdr-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_device_mdr_auditor",
+  "skill": {
+    "id": 33557,
+    "skillKey": "clawhub-medical-device-mdr-auditor",
+    "name": "Medical Device MDR Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-device-mdr-auditor",
+    "url": "https://clawhub.ai/skills/medical-device-mdr-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-device-mdr-auditor-caee42de877b43f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit medical device technical files against EU MDR 2017/745 regulations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774513283464,
+      "changelog": "Initial public release of the Medical Device MDR Auditor skill.\n\n- Audits medical device technical files against EU MDR 2017/745 requirements.\n- Checks for presence and completeness of critical documents, including Clinical Evaluation Reports, PMS and PMCF Plans, Risk Management, and other regulatory files.\n- Supports single-file and batch audits with configurable input and output paths.\n- Generates structured compliance reports, including audit findings and compliance status.\n- Command-line interface with support for device classification, verbose output, and different output formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bffb37838ef140e72cf0903027c134367cf8c0a946e0481cbe3ebe83939e4585"
+}

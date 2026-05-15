@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/license-picker@6.0.0",
+  "version": "6.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.license_picker",
+  "skill": {
+    "id": 49817,
+    "skillKey": "clawhub-license-picker",
+    "name": "License Picker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "license-picker",
+    "url": "https://clawhub.ai/skills/license-picker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/license-picker-844eb95d6247e46b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Open source license reference — SPDX identifiers, permissive vs copyleft comparison, license compatibility matrix, patent clauses, and compliance scanning tools"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain1",
+      "userId": "s17214ddq2ph75r81trqngwmtn83exsy",
+      "displayName": "bytesagain1",
+      "image": "https://avatars.githubusercontent.com/u/261107384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 598,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "6.0.0",
+      "createdAt": 1774226702383,
+      "changelog": "Clean package with matching SKILL.md and script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e868b03761bcb66fcfbbbf9b5b8b68b88f6e2281f15f38d1fae8d927ce11f08c"
+}

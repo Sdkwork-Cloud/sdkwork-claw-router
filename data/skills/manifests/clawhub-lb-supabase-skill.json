@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8683,
+  "uuid": "skill-clawhub-lb-supabase-skill",
+  "skillKey": "clawhub-lb-supabase-skill",
+  "name": "Supabase Complete Documentation",
+  "summary": "Complete Supabase platform documentation. Use when working with Supabase - covers authentication (email, OAuth, magic links, phone, SSO), database (PostgreSQL, RLS, migrations), storage (file uploads, CDN), edge functions, realtime subscri.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lb_supabase_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leonaaardob",
+      "features": [
+        "Complete Supabase platform documentation",
+        "Use when working with Supabase",
+        "covers authentication (email, OAuth, magic links, phone, SSO), database (PostgreSQL, RLS, migra.",
+        "Includes framework integrations (Next.js, React, SvelteKit, etc.)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lb-supabase-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207195840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lb-supabase-skill",
+      "url": "https://clawhub.ai/skills/lb-supabase-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lb-supabase-skill",
+    "url": "https://clawhub.ai/skills/lb-supabase-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lb-supabase-skill-6a51e340705c5a5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lb-supabase-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lb-supabase-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8af9dd1b7793b3c36b791e36f19f60c9cafc21d4d9dd2fb7398fbbea8a4a931d",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T15:03:55.046Z"
+}

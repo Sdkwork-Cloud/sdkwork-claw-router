@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-tiktok-get-user-detail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_tiktok_get_user_detail",
+  "skill": {
+    "id": 49015,
+    "skillKey": "clawhub-justoneapi-tiktok-get-user-detail",
+    "name": "TikTok User Profile API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-tiktok-get-user-detail",
+    "url": "https://clawhub.ai/skills/justoneapi-tiktok-get-user-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-tiktok-get-user-detail-4eab7780f9becf1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call GET /api/tiktok/get-user-detail/v1 for TikTok User Profile through JustOneAPI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777541522027,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89f3b2264f27444373b6cbb620a29798924ef69165888c909615d5f4f3da3b77"
+}

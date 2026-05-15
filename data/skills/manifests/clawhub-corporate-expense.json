@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62701,
+  "uuid": "skill-clawhub-corporate-expense",
+  "skillKey": "clawhub-corporate-expense",
+  "name": "企业报销管家",
+  "summary": "智能报销助手，支持差旅费用报销、发票管理、费用审批、报销进度查询、费用分析等功能。可处理机票、酒店、用车、餐饮等多种费用类型，自动识别发票信息，智能匹配差旅订单。Invoke when user needs to submit expense report, upload invoice, check reimb...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corporate_expense",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fenbeitong-trip",
+      "features": [
+        "智能报销助手，支持差旅费用报销、发票管理、费用审批、报销进度查询、费用分析等功能。可处理机票、酒店、用车、餐饮等多种费用类型，自动识别发票信息，智能匹配差旅订单。Invoke when us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/corporate-expense@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265222913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "corporate-expense",
+      "url": "https://clawhub.ai/skills/corporate-expense"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corporate-expense",
+    "url": "https://clawhub.ai/skills/corporate-expense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corporate-expense-5c064e44e0fd86cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/corporate-expense@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-corporate-expense-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5c41f5a8af94227db0a640615bfc2f41dbf9bfee04791c88763763715d3be18",
+      "artifactSizeBytes": 2599
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:46:31.738Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parallel-ai-search@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_ai_search",
+  "skill": {
+    "id": 11648,
+    "skillKey": "clawhub-parallel-ai-search",
+    "name": "Parallel AI search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-ai-search",
+    "url": "https://clawhub.ai/skills/parallel-ai-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-ai-search-2723610b91f197fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Parallel's parallel-cli to do live web search, URL extraction (clean markdown), deep research reports, bulk data enrichment (CSV/JSON), FindAll entity di..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tristanmanchester",
+      "userId": "s17c3xv8wvvzzbj84z9vcj498n83gnkp",
+      "displayName": "Tristan Manchester",
+      "image": "https://avatars.githubusercontent.com/u/108270628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1931,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773330283649,
+      "changelog": "**Major Update: Now uses parallel-cli instead of Node scripts. All previous script-based files removed; new CLI-focused docs and references added.**\n\n- Replaced Node.js script-based workflow with unified `parallel-cli` command-line interface.\n- Added new routing and usage instructions for Search, Extract, Deep Research, Enrich, FindAll, and Monitor modes.\n- Removed all Node.js scripts and their references.\n- Added command templates and troubleshooting guides specific to CLI workflow.\n- Documentation now guides users to install and authenticate with `parallel-cli` before use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bad7deb87ad2b5a3df8189853003667eaee0b6bf142808c138e9951e2889a761"
+}

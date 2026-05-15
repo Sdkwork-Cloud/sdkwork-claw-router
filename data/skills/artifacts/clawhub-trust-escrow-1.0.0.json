@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trust-escrow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trust_escrow",
+  "skill": {
+    "id": 15646,
+    "skillKey": "clawhub-trust-escrow",
+    "name": "Trust Escrow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trust-escrow",
+    "url": "https://clawhub.ai/skills/trust-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trust-escrow-76cd45cd82e97dd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage USDC escrows for agent-to-agent payments on Base Sepolia. 30% gas savings, batch operations, dispute resolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "droppingbeans",
+      "userId": "publishers:droppingbeans",
+      "displayName": "droppingbeans",
+      "image": "https://avatars.githubusercontent.com/u/257360520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1583,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770216354802,
+      "changelog": "Initial release: Production-ready escrow for agent-to-agent USDC payments on Base Sepolia. 30% gas savings, batch operations, dispute resolution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca24b849f61186b7dcfff708b5d69e8d054df0d45446b674a8bdc39461449568"
+}

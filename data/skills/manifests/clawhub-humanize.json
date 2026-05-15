@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8714,
+  "uuid": "skill-clawhub-humanize",
+  "skillKey": "clawhub-humanize",
+  "name": "Humanize",
+  "summary": "Remove AI writing patterns from text. Use when editing, reviewing, or rewriting text to sound more natural and human-written. Detects patterns like inflated symbolism, promotional language, em dash overuse, AI vocabulary, and sycophantic t.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanize",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "artur-zhdan",
+      "features": [
+        "Remove AI writing patterns from text",
+        "Use when editing, reviewing, or rewriting text to sound more natural and human-written",
+        "Detects patterns like inflated symbolism, promotional language, em dash overuse, AI vocabulary,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanize@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78844452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanize",
+      "url": "https://clawhub.ai/skills/humanize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanize",
+    "url": "https://clawhub.ai/skills/humanize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanize-5d0297147237d6a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanize@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanize-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc5834bfe05eb0c3237d8ffd60f216ab528619300c7d396f452fd6d0f42d84da",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T22:37:29.793Z"
+}

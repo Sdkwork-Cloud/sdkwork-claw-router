@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/asia-arrival-card@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asia_arrival_card",
+  "skill": {
+    "id": 71478,
+    "skillKey": "clawhub-asia-arrival-card",
+    "name": "asia-arrival-card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asia-arrival-card",
+    "url": "https://clawhub.ai/skills/asia-arrival-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asia-arrival-card-bb080590d54679cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "亚洲入境卡填写助手。支持马来西亚、泰国、新加坡、印尼、越南、菲律宾、日本、韩国等亚洲国家的入境卡/签证申请填写指导。输入目的地国家、护照信息、行程信息，提供详细的入境卡填写操作指南，包含完整流程、字段说明、异常处理和自动化脚本建议。当用户提到\"入境卡\"、\"入境卡怎么办\"、\"签证申请\"、\"马来西亚/泰国/新加坡/印..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivy-ting",
+      "userId": "s17c6yagd3acedcmka66e958cx841fk7",
+      "displayName": "ivy-ting",
+      "image": "https://avatars.githubusercontent.com/u/234137810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775048611526,
+      "changelog": "**Skill renamed and major documentation overhaul with enhanced guidance and coverage:**\n\n- Skill 名称由 \"asia-arrival-card\" 更新为 \"southeast-asia-arrival-card\"。\n- 全面重写 SKILL.md，聚焦八个亚洲主要国家/地区入境卡/签证填写辅助。\n- 新增“智能文档识别”板块，支持护照、机票、酒店订单图片/PDF自动结构化识别与信息抽取。\n- 优化回答风格：结构化分块（分标题、表格、emoji）、详细字段说明、场景化异常处理及额外实用建议。\n- 明确分步骤的工作流程并覆盖特殊、常见问题，包含材料清单、自动化脚本、常见FAQ、国家对比等指南。\n- 扩展对未覆盖国家的动态 web_search 方案，保持输出格式一致性和时效性说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9b60b11a55d018b9d5a0e34ab65e0a0e06d006e9dd74346e64aca87cc71e1d0"
+}

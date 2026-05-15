@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xtdata@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xtdata",
+  "skill": {
+    "id": 59793,
+    "skillKey": "clawhub-xtdata",
+    "name": "xtdata"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xtdata",
+    "url": "https://clawhub.ai/skills/xtdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xtdata-f078a76d95a8825f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "XtQuant行情数据模块 - 为QMT/miniQMT提供实时行情、K线、Tick、Level2和财务数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 591,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774260340545,
+      "changelog": "- Added a demo project with usage examples and documentation.\n- New files: demo_project/README.md and demo_project/demo.py.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b93a3ba2b72d7c9b266c1e679baf3656db138ef0b61a15034a666aa1835476f8"
+}

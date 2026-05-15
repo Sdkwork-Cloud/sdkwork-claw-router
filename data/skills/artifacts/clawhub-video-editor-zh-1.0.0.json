@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-zh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_zh",
+  "skill": {
+    "id": 48401,
+    "skillKey": "clawhub-video-editor-zh",
+    "name": "Video Editor Zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-zh",
+    "url": "https://clawhub.ai/skills/video-editor-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-zh-3c5e9065ae56a468.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited Chinese videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777480311755,
+      "changelog": "Initial release of Video Editor ZH — fast AI-powered editing for Chinese video creators.\n\n- Upload raw Chinese video (up to 500MB), request edits in Chinese, and export 1080p MP4 results.\n- Fully cloud-based workflow: handles editing, subtitles, transitions, and background music via API.\n- Automatic setup with free token provisioning and session management.\n- Supports mp4, mov, avi, webm, and key audio/image formats.\n- Error handling includes guidance for file limits, authentication, and export eligibility.\n- Optimized for rapid, iterative editing and fast turnaround for shorter videos.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c2b9f7666b48ddff0d00b21491a85ce7d7d5b89d11d0564af5e8128ee20a0d1"
+}

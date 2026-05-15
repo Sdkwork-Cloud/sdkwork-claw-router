@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67490,
+  "uuid": "skill-clawhub-article-extract",
+  "skillKey": "clawhub-article-extract",
+  "name": "Article Extract",
+  "summary": "提取微信公众号、博客、新闻等网页的正文内容，绕过反爬机制，纯文本输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_extract",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CodePlayer",
+      "features": [
+        "提取微信公众号、博客、新闻等网页的正文内容，绕过反爬机制，纯文本输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/article-extract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21231607?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "article-extract",
+      "url": "https://clawhub.ai/skills/article-extract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-extract",
+    "url": "https://clawhub.ai/skills/article-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-extract-db2044bd7ef0f959.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/article-extract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-article-extract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da4e8e1e05481a2ba1603af1a13762024bc245aab1c0988aa7d57ea96d451861",
+      "artifactSizeBytes": 1916
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:13:33.886Z"
+}

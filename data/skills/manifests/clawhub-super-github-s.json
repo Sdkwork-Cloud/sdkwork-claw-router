@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57698,
+  "uuid": "skill-clawhub-super-github-s",
+  "skillKey": "clawhub-super-github-s",
+  "name": "super-github-s",
+  "summary": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.def listingep75 alert...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_github_s",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Subaru0573",
+      "features": [
+        "Interact with GitHub using the `gh` CLI",
+        "Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/super-github-s@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188862647?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "super-github-s",
+      "url": "https://clawhub.ai/skills/super-github-s"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-github-s",
+    "url": "https://clawhub.ai/skills/super-github-s",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-github-s-0e771ab340e3fdd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/super-github-s@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-super-github-s-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b304709990698662cde64f9f5e5fc3004e113112b992aee506f9408191666d76",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T06:23:32.847Z"
+}

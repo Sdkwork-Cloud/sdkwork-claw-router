@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jarvis-vocal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jarvis_vocal",
+  "skill": {
+    "id": 34138,
+    "skillKey": "clawhub-jarvis-vocal",
+    "name": "Jarvis Vocal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jarvis-vocal",
+    "url": "https://clawhub.ai/skills/jarvis-vocal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jarvis-vocal-ed330e1844fd971c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Authentic J.A.R.V.I.S. voice synthesis using Piper TTS with HuggingFace-trained model. Generates movie-accurate voice locally and can push to connected Andro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kishen35",
+      "userId": "s17egqq07km1hmp6ahkbkn178s84gq6r",
+      "displayName": "Kishen35",
+      "image": "https://avatars.githubusercontent.com/u/14159195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776007049282,
+      "changelog": "Initial release: Authentic J.A.R.V.I.S. voice using Piper TTS with HuggingFace model. Wireless delivery to Android via ADB over Tailscale.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35f898e4d529a0973413d200d6a79f811d5ad66eabaa8c1e05a50ec39b98fdf6"
+}

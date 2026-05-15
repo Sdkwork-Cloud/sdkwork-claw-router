@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/press-release@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.press_release",
+  "skill": {
+    "id": 58783,
+    "skillKey": "clawhub-press-release",
+    "name": "Press Release"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "press-release",
+    "url": "https://clawhub.ai/skills/press-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/press-release-35ac26ab9bd62aab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "新闻稿生成器。企业新闻稿、产品发布、融资公告、活动报道。Press release generator for product launches, funding announcements, events. 新闻稿、公关稿、媒体发布。Use when writing press releases."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 584,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773990662,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5bd36ca1dd2ceca16778f6a4f90609b0c83d4c9b5298d5502d748d88441c0578"
+}

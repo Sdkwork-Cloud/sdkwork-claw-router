@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wos-crawler@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wos_crawler",
+  "skill": {
+    "id": 59136,
+    "skillKey": "clawhub-wos-crawler",
+    "name": "wos-crawler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wos-crawler",
+    "url": "https://clawhub.ai/skills/wos-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wos-crawler-75cc98909602e114.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WOS 文献一站式工具：Web of Science 检索爬取 + PDF 批量下载，全部在同一个 Web 界面完成。 基于 Selenium 爬取 WOS 文献列表，导出 Excel 后自动调用多渠道 PDF 下载器（Sci-Hub/CORE/S2 OA/OpenAlex/Unpaywall/Publisher..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grizzlyccc",
+      "userId": "s1746tsm6dd1gtf6xb9heszgds83w4rw",
+      "displayName": "GrizzlyCcc",
+      "image": "https://avatars.githubusercontent.com/u/56722496?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 249,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1775583634773,
+      "changelog": "- Major update: removed the main crawling script, disabling core skill functionality.\n- File removed: scripts/wos_crawler.py\n- The skill cannot perform WOS literature crawling without this file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78a20b19ae6a26804c76c712d9a9dc4ed9247310c0f4ddd01ad640fb7228e39a"
+}

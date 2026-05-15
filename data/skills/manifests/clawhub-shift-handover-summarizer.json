@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41655,
+  "uuid": "skill-clawhub-shift-handover-summarizer",
+  "skillKey": "clawhub-shift-handover-summarizer",
+  "name": "Shift Handover Summarizer",
+  "summary": "Generate structured shift handover summaries from EHR records, highlighting critical events, vital sign changes, and pending tasks for incoming clinical staff.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shift_handover_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Generate structured shift handover summaries from EHR records, highlighting critical events, vi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shift-handover-summarizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shift-handover-summarizer",
+      "url": "https://clawhub.ai/skills/shift-handover-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shift-handover-summarizer",
+    "url": "https://clawhub.ai/skills/shift-handover-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shift-handover-summarizer-ea29e1cf5d01a61f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shift-handover-summarizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shift-handover-summarizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5dffa3bc3b953018a5a49538fda99e13cbb6e9f8ecc599f6611babdce9ab97d",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:17:14.396Z"
+}

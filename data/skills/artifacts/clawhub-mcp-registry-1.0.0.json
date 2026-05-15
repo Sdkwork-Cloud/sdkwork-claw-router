@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-registry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_registry",
+  "skill": {
+    "id": 37736,
+    "skillKey": "clawhub-mcp-registry",
+    "name": "mcp-registry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-registry",
+    "url": "https://clawhub.ai/skills/mcp-registry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-registry-1df5479bcbbec02a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, search, and browse MCP servers from the official MCP Registry and MCPCentral. Find servers, get specs, and generate setup configurations. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcpcentral-io",
+      "userId": "s17dp0brskyf9c88x1yzkcf84h83n123",
+      "displayName": "mcpcentral-io",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774542783060,
+      "changelog": "- Initial release of mcp-registry skill for discovering, searching, and browsing MCP servers from the official MCP Registry and MCPCentral.\n- Search and browse servers with real-time registry metadata, specs, install commands, and configuration details.\n- Supports keyword search, version browsing, and popular server enrichment from MCPCentral (stars, downloads, picks).\n- Guides for install/setup generation based on real package and environment variable metadata.\n- Clear handling of server name encoding, pagination, API field gotchas, and official vs enrichment data roles.\n- No authentication required; all endpoints are public and documented in skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72ca8b59d526bd5f0c890e43f6307401212f4921f19685739bf7026f95072690"
+}

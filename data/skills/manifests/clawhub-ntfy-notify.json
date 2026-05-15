@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20085,
+  "uuid": "skill-clawhub-ntfy-notify",
+  "skillKey": "clawhub-ntfy-notify",
+  "name": "ntfy-notify",
+  "summary": "Send ntfy.sh notifications with curl, including advanced headers like title, priority, tags, click links, action buttons, and image attachments. Use when a u...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntfy_notify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "拜拜是大猫",
+      "features": [
+        "Send ntfy.sh notifications with curl, including advanced headers like title, priority, tags, cl.",
+        "Use when a u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntfy-notify@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32433624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntfy-notify",
+      "url": "https://clawhub.ai/skills/ntfy-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntfy-notify",
+    "url": "https://clawhub.ai/skills/ntfy-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntfy-notify-b033bd569a5cb402.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntfy-notify@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntfy-notify-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bb176dcf6b1f56d3d615e23163461027f1ae308c912fe59eb1bdde86564da83",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T03:31:03.651Z"
+}

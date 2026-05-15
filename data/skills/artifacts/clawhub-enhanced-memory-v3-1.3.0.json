@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enhanced-memory-v3@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enhanced_memory_v3",
+  "skill": {
+    "id": 59671,
+    "skillKey": "clawhub-enhanced-memory-v3",
+    "name": "Enhanced Memory System V3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enhanced-memory-v3",
+    "url": "https://clawhub.ai/skills/enhanced-memory-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enhanced-memory-v3-a551206625660169.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完整记忆系统 - 文件系统记忆 + 向量搜索 + 四类记忆分类 + AutoDream 自动整合"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minmengxhw-cpu",
+      "userId": "s171n50ja894a51q7a162ztvws83gbtb",
+      "displayName": "minmengxhw-cpu",
+      "image": "https://avatars.githubusercontent.com/u/265757721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774957039942,
+      "changelog": "v1.3.0: AutoDream LLM整合调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad6e88644cbe58b03d33676a8fe4254dae3b65bc51b6b99b1775acca00f260cf"
+}

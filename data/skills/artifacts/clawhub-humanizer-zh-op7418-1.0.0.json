@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/humanizer-zh-op7418@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_zh_op7418",
+  "skill": {
+    "id": 70650,
+    "skillKey": "clawhub-humanizer-zh-op7418",
+    "name": "Humanizer Zh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-zh-op7418",
+    "url": "https://clawhub.ai/skills/humanizer-zh-op7418",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-zh-op7418-7ce6c3fb1c46556f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "去除文本中的 AI 生成痕迹。适用于编辑或审阅文本，使其听起来更自然、更像人类书写。 基于维基百科的\"AI 写作特征\"综合指南。检测并修复以下模式：夸大的象征意义、 宣传性语言、以 -ing 结尾的肤浅分析、模糊的归因、破折号过度使用、三段式法则、 AI 词汇、否定式排比、过多的连接性短语。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachary2024",
+      "userId": "s17c7sk3xpv8nrmd693h6jhacs84hf61",
+      "displayName": "Zachary2024",
+      "image": "https://avatars.githubusercontent.com/u/150130997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775735024410,
+      "changelog": "- Initial release of \"humanizer-zh\" skill.\n- Provides detailed guidelines for editing text to remove AI-generated writing patterns in Chinese.\n- Detects and rewrites common AI traits: exaggerated symbolism, promotional language, vague attributions, overused connectors, formulaic structures, and more.\n- Includes practical rewrite examples, a rapid checklist, and a 50-point quality rating system for revised text.\n- Focuses on making text sound natural, specific, and authentically human.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e6f4da82b8445d567d0572273ae93594431873e2e77808ba92e0acc14bd4dea"
+}

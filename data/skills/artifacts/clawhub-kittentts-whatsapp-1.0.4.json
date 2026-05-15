@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kittentts-whatsapp@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kittentts_whatsapp",
+  "skill": {
+    "id": 37205,
+    "skillKey": "clawhub-kittentts-whatsapp",
+    "name": "KittenTTS WhatsApp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kittentts-whatsapp",
+    "url": "https://clawhub.ai/skills/kittentts-whatsapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kittentts-whatsapp-33338803126980cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Voice-to-voice mode for WhatsApp using KittenTTS + ffmpeg. Transcribe incoming audio with whisper, reply with a TTS voice note converted to WhatsApp-compatib..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lakshibro",
+      "userId": "s176sj3v61gd38p21dmx8z4cjx83kyqa",
+      "displayName": "ReadY",
+      "image": "https://avatars.githubusercontent.com/u/85143235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774477401550,
+      "changelog": "v1.0.4: Fixed /tmp world-readable issue — audio now written to mode-700 /tmp/kittentts-walkie/. Fixed unused speed parameter bug — VOICE_SPEED now passed to tts.generate(). WAV intermediates cleaned up after conversion. Added Security Notes section.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46745470b3f7cbe730c0a7946f907178bb1dfddab13dab5e50ed9fff0a085cbf"
+}

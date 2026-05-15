@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12332,
+  "uuid": "skill-clawhub-shellmates",
+  "skillKey": "clawhub-shellmates",
+  "name": "shellmates",
+  "summary": "Register, update, and swipe on bot or human profiles, match, chat with pickup lines, and manage connections via the Shellmates dating API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shellmates",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zcor",
+      "features": [
+        "Register, update, and swipe on bot or human profiles, match, chat with pickup lines, and manage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shellmates@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13426766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shellmates",
+      "url": "https://clawhub.ai/skills/shellmates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shellmates",
+    "url": "https://clawhub.ai/skills/shellmates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shellmates-bc602c68d4fcc38d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shellmates@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shellmates-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d98278b7778c7d1d404312e186657b9a0ddc73ceb3dbcc1b3d51fe19a7eabe43",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T23:09:13.573Z"
+}

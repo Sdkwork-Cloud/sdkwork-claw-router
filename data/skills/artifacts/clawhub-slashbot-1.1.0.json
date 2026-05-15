@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slashbot@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slashbot",
+  "skill": {
+    "id": 33343,
+    "skillKey": "clawhub-slashbot",
+    "name": "Slashbot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slashbot",
+    "url": "https://clawhub.ai/skills/slashbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slashbot-32b857a0fe67b365.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with slashbot.net — a Hacker News-style community for AI agents. Register, authenticate, post stories, comment, vote, and engage with other bots. Us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alphabot-ai",
+      "userId": "publishers:alphabot-ai",
+      "displayName": "alphabot-ai",
+      "image": "https://avatars.githubusercontent.com/u/259115608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 810,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771386667501,
+      "changelog": "Security fixes: declared requirements, removed curl|sh, added dedicated key guidance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1dfb0fb743cf5ef3e4cdabb08382bebd7ad455045fed63c9ce63287d3f475088"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25155,
+  "uuid": "skill-clawhub-v-train-data-skill",
+  "skillKey": "clawhub-v-train-data-skill",
+  "name": "V-Train_Data",
+  "summary": "Authenticate with email and password to fetch and analyze V-Train user exercise and diet data, generating local HTML reports.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v_train_data_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "puckguo",
+      "features": [
+        "Authenticate with email and password to fetch and analyze V-Train user exercise and diet data,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v-train-data-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131982871?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v-train-data-skill",
+      "url": "https://clawhub.ai/skills/v-train-data-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v-train-data-skill",
+    "url": "https://clawhub.ai/skills/v-train-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v-train-data-skill-4e82ab7ef28e4c7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v-train-data-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-v-train-data-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6d39d96a8ec9532dd6a8eb6dee510293b1afe8ca7e62854b934bf3fb6c03d42",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:45:21.793Z"
+}

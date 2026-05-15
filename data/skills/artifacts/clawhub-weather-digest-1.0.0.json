@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-digest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_digest",
+  "skill": {
+    "id": 20491,
+    "skillKey": "clawhub-weather-digest",
+    "name": "Weather Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-digest",
+    "url": "https://clawhub.ai/skills/weather-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-digest-e400ba0f0298c998.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate daily Weather Intelligence Digest using NOAA/NWS data with customizable locations and alert monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannyboy1241",
+      "userId": "publishers:dannyboy1241",
+      "displayName": "dannyboy1241",
+      "image": "https://avatars.githubusercontent.com/u/261070742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 554,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771464562744,
+      "changelog": "- Initial release of Weather Intelligence Digest skill.\n- Generates daily weather digests using NOAA/NWS data.\n- Supports customizable locations and alert monitoring.\n- Outputs digest in markdown format, ready for PDF or email.\n- Easy configuration via JSON; no API key required.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7c72cc7b0ca13ba0b32f2d10a41bdabf75516b903380f4120b3a900a76440af"
+}

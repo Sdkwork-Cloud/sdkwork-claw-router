@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19245,
+  "uuid": "skill-clawhub-ppt-compress",
+  "skillKey": "clawhub-ppt-compress",
+  "name": "PPT Compressor",
+  "summary": "Compress PPT/PPTX file size. Decompress PPT, compress large images, repackage and convert to PDF to significantly reduce file size. Suitable for scenarios wh...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_compress",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "accidwar",
+      "features": [
+        "Compress PPT/PPTX file size",
+        "Decompress PPT, compress large images, repackage and convert to PDF to significantly reduce fil.",
+        "Suitable for scenarios wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-compress@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125898907?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-compress",
+      "url": "https://clawhub.ai/skills/ppt-compress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-compress",
+    "url": "https://clawhub.ai/skills/ppt-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-compress-44a7b89dd1eb0ff6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-compress@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-compress-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ea76f7566c7f5c8947c86e2235b3bd8ed4ba9fb9d9aa6c231246637e3d1b8ae",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T03:48:05.227Z"
+}

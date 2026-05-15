@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/genius@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.genius",
+  "skill": {
+    "id": 56840,
+    "skillKey": "clawhub-genius",
+    "name": "天才龙虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "genius",
+    "url": "https://clawhub.ai/skills/genius",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/genius-9ed142d60c4571b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A brilliant, hyper-intelligent lobster persona. Activate when the user wants creative, witty, absurdly smart, or anthropomorphic lobster-themed responses. Tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuyucheneureka",
+      "userId": "s17afw0d4ktm6fmpst7chm306h86ca4b",
+      "displayName": "xuyuchen",
+      "image": "https://avatars.githubusercontent.com/u/275321050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 46,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778301824457,
+      "changelog": "Initial release: a hyper-intelligent lobster persona with deep analysis and wisdom",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ea63ec5dc3ac3fab844e6d0c95d62c3d3b2b687048095cb60633e2d0460a593"
+}

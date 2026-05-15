@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63256,
+  "uuid": "skill-clawhub-multi-robot-skill",
+  "skillKey": "clawhub-multi-robot-skill",
+  "name": "Multi Robot Skill",
+  "summary": "多机器人协同控制 Skill。让 AI Agent 具备感知反馈、动态适配、并行调度多种机器人的能力。支持机械臂、四足机器人等任意 HTTP API 机器人。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_robot_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alan1112223331",
+      "features": [
+        "多机器人协同控制 Skill。让 AI Agent 具备感知反馈、动态适配、并行调度多种机器人的能力。支持机械臂、四足机器人等任意 HTTP API 机器人。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-robot-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128958791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-robot-skill",
+      "url": "https://clawhub.ai/skills/multi-robot-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-robot-skill",
+    "url": "https://clawhub.ai/skills/multi-robot-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-robot-skill-afc16e460f65efc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-robot-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-robot-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbc196de09b6702270619baac17852c4d8583d231afb87f430d51079197688d3",
+      "artifactSizeBytes": 2583
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:04:32.081Z"
+}

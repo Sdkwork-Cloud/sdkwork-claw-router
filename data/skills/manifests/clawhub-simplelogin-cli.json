@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25069,
+  "uuid": "skill-clawhub-simplelogin-cli",
+  "skillKey": "clawhub-simplelogin-cli",
+  "name": "Simplelogin Cli",
+  "summary": "Create and manage SimpleLogin email aliases from the command line. Protect your real email with secure, private aliases.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplelogin_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mcclawd",
+      "features": [
+        "Create and manage SimpleLogin email aliases from the command line",
+        "Protect your real email with secure, private aliases."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simplelogin-cli@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270908256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simplelogin-cli",
+      "url": "https://clawhub.ai/skills/simplelogin-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplelogin-cli",
+    "url": "https://clawhub.ai/skills/simplelogin-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplelogin-cli-182d3d5314c4a146.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simplelogin-cli@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-simplelogin-cli-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92f244d0e7dd33aacb1b74b2c0ef1f71d844723cd0cb74f85e50578342ca7dbc",
+      "artifactSizeBytes": 1985
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T03:49:44.525Z"
+}

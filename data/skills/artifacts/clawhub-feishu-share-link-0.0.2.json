@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-share-link@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_share_link",
+  "skill": {
+    "id": 71149,
+    "skillKey": "clawhub-feishu-share-link",
+    "name": "feishu-share-link"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-share-link",
+    "url": "https://clawhub.ai/skills/feishu-share-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-share-link-54e2fbe71db3fdfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书专属分享链接生成规范。当生成文档、多维表格、知识库等链接时，必须同时提供专属企业域名的链接和通用飞书根域名的链接，确保稳妥访问。支持多租户动态读取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andersonhjb",
+      "userId": "s17dz73q6zkbag0z5s5yhgvfyh83pjzm",
+      "displayName": "AI悦创Python一对一辅导",
+      "image": "https://avatars.githubusercontent.com/u/48122016?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1773565192227,
+      "changelog": "- Initial documentation added with a detailed README.md.\n- Provides clear rules and formats for generating Feishu share links with both custom enterprise and root domains.\n- Instructions included for dynamically determining the custom domain per tenant.\n- Usage examples for Bitable, Docx, Wiki, and Sheets links.\n- No code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90b7ec74ff5044160e21aca6aa283f2e12abbf2acef765c08cb12603d5821069"
+}

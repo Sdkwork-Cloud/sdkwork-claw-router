@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dianping-review-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dianping_review_writer",
+  "skill": {
+    "id": 71015,
+    "skillKey": "clawhub-dianping-review-writer",
+    "name": "Dianping Review Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dianping-review-writer",
+    "url": "https://clawhub.ai/skills/dianping-review-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dianping-review-writer-df48b2cc7e1dbb00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成大众点评高质量评论，帮助用户快速提升账号等级。支持多种商家类型（餐饮、美容、休闲娱乐等），自动生成真实感评论，包含评分建议、配图提示、标签推荐。适用于需要批量写点评升级账号的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laojun509",
+      "userId": "s175rjaqs0zz2x81vbyxnxb34183rdc1",
+      "displayName": "laojun",
+      "image": "https://avatars.githubusercontent.com/u/26532654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775993223996,
+      "changelog": "dianping-review-writer 1.0.0 初始发布\n\n- 支持多类型商家（餐饮、美容、娱乐、健身、酒店等）点评生成\n- 提供多种评论风格模板：详实、故事感、简短\n- 每次可批量生成多条评论，含配图建议与标签推荐\n- 自动优化字数、内容结构和关键词以提升账号等级\n- 支持脚本化及参数化生成高质量点评",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c87b45424e5e3184867a237016107a864355ce60da4a9f400452ce991ce7e9f5"
+}

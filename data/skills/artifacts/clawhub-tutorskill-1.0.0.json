@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tutorskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutorskill",
+  "skill": {
+    "id": 32789,
+    "skillKey": "clawhub-tutorskill",
+    "name": "yourtutor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutorskill",
+    "url": "https://clawhub.ai/skills/tutorskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutorskill-e60fa7395e11d68b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Activate this skill when a student provides study material (PDF or pasted notes) and a syllabus, and wants to prepare for an exam. Extracts key definitions,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayushsaklani-min",
+      "userId": "s1723x2zpzqq3v011t2w0afdmd84yeak",
+      "displayName": "Ayush Saklani",
+      "image": "https://avatars.githubusercontent.com/u/221412911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776342306522,
+      "changelog": "v1.0.0 — Initial release\n\n- Exam-type awareness (MCQ vs written mode)\n- Triage mode: priority ordering when student has limited time\n- Missing input handling (no PDF, no syllabus)\n- Cross-references between related topics\n- Practice question per topic\n- Conflict resolution when PDF and syllabus scope differ\n- Stripped output mode for ≤1 hour cramming sessions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b4df9e314a4b849058c434d05ad6e06747fb185492542d5b4fe62b9bfce06c4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37419,
+  "uuid": "skill-clawhub-integrate-google-analytics",
+  "skillKey": "clawhub-integrate-google-analytics",
+  "name": "Google Analytics",
+  "summary": "Google Analytics integration. Manage Accounts. Use when the user wants to interact with Google Analytics data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_google_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Google Analytics integration",
+        "Manage Accounts",
+        "Use when the user wants to interact with Google Analytics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-google-analytics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-google-analytics",
+      "url": "https://clawhub.ai/skills/integrate-google-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-google-analytics",
+    "url": "https://clawhub.ai/skills/integrate-google-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-google-analytics-ccb70edfeec5420e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-google-analytics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-google-analytics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fcd9d6d2c288d3558ad25921ef3e253f2562562daacc25c5e22fa207cbd8008",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:00:13.817Z"
+}

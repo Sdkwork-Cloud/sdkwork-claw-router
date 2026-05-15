@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/funding-rate-trader@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funding_rate_trader",
+  "skill": {
+    "id": 17764,
+    "skillKey": "clawhub-funding-rate-trader",
+    "name": "Funding Rate Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funding-rate-trader",
+    "url": "https://clawhub.ai/skills/funding-rate-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funding-rate-trader-33f0b69ba2b7a112.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crypto funding rate arbitrage strategy. Scan negative funding rates, auto-trade with stop-loss/take-profit. No API key needed for scanning, Binance API for t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 738,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771910677269,
+      "changelog": "- Added three new scripts: scan.js, trader.js, and monitor.js for scanning opportunities, auto-trading, and monitoring positions.\n- Updated documentation with usage instructions for the new scripts.\n- Version bump to 1.0.1.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4c79a18530851df993dd078c5e64a51e29a310de2be5bb7190c64e60a045350"
+}

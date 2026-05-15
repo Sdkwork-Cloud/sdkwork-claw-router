@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20533,
+  "uuid": "skill-clawhub-opensource-release",
+  "skillKey": "clawhub-opensource-release",
+  "name": "Open Source Release",
+  "summary": "Convert a private repository to public open-source. Use when making a repo public, sanitizing personal info from code/docs/git history, or preparing a projec...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensource_release",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jini92",
+      "features": [
+        "Convert a private repository to public open-source",
+        "Use when making a repo public, sanitizing personal info from code/docs/git history, or preparin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opensource-release@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43900848?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opensource-release",
+      "url": "https://clawhub.ai/skills/opensource-release"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensource-release",
+    "url": "https://clawhub.ai/skills/opensource-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensource-release-20b5938012cd611f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opensource-release@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opensource-release-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:646c39e707e263c0b07f3b4558869afb6ef13905d9e2fa2d09e024056b60ff6a",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T22:09:49.654Z"
+}

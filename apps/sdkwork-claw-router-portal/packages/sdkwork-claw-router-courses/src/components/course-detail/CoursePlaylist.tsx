@@ -2,7 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronUp, LayoutGrid, X } from 'lucide-react';
 import type { CoursePlaylistView } from '../../data';
 
-export function CoursePlaylist({ playlist }: { playlist: CoursePlaylistView }) {
+export function CoursePlaylist({
+  playlist,
+  onLessonSelect,
+}: {
+  playlist: CoursePlaylistView;
+  onLessonSelect?: (lessonId: string) => void;
+}) {
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [expandedChapters, setExpandedChapters] = useState<Record<number, boolean>>({ 0: true });
   const [showGrid, setShowGrid] = useState(false);
@@ -94,6 +100,13 @@ export function CoursePlaylist({ playlist }: { playlist: CoursePlaylistView }) {
                 <button
                   key={lesson.id}
                   title={lesson.title}
+                  type="button"
+                  onClick={() => {
+                    onLessonSelect?.(lesson.id);
+                    setShowGrid(false);
+                  }}
+                  aria-pressed={lesson.active}
+                  aria-label={`Play lesson ${lesson.number}: ${lesson.title}`}
                   className={`aspect-square flex flex-col items-center justify-center gap-1 rounded-xl border text-sm font-bold transition-all ${
                     lesson.active
                       ? 'border-[#00aeec] bg-[#00aeec]/10 text-[#00aeec] shadow-sm'
@@ -128,7 +141,13 @@ export function CoursePlaylist({ playlist }: { playlist: CoursePlaylistView }) {
               <div className={`transition-all overflow-hidden ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
                 <div className={`flex flex-col py-1 ${isSingleChapter ? 'px-0' : 'px-1'}`}>
                   {chapter.lessons.map((lesson) => (
-                    <div key={lesson.id} className={`group flex items-center justify-between gap-2 px-2.5 py-2 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors cursor-pointer rounded-md ${lesson.active ? 'bg-slate-50 dark:bg-white/5' : ''}`}>
+                    <button
+                      key={lesson.id}
+                      type="button"
+                      onClick={() => onLessonSelect?.(lesson.id)}
+                      aria-pressed={lesson.active}
+                      className={`group flex w-full items-center justify-between gap-2 px-2.5 py-2 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors cursor-pointer rounded-md text-left focus:outline-none focus:ring-2 focus:ring-[#00aeec] ${lesson.active ? 'bg-slate-50 dark:bg-white/5' : ''}`}
+                    >
                       <div className="flex items-center gap-2 overflow-hidden w-full">
                         {lesson.active ? (
                           <div className="w-2 h-2 rounded-full bg-[#00aeec] flex-shrink-0" />
@@ -140,7 +159,7 @@ export function CoursePlaylist({ playlist }: { playlist: CoursePlaylistView }) {
                         </span>
                       </div>
                       <span className="text-[11px] text-slate-400 flex-shrink-0 font-mono hidden sm:inline-block bg-slate-50 dark:bg-white/5 px-1.5 py-0.5 rounded">{lesson.duration}</span>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>

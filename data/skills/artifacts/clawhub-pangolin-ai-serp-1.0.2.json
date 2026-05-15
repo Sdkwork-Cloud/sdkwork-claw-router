@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pangolin-ai-serp@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pangolin_ai_serp",
+  "skill": {
+    "id": 40727,
+    "skillKey": "clawhub-pangolin-ai-serp",
+    "name": "Pangolinfo Ai Serp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pangolin-ai-serp",
+    "url": "https://clawhub.ai/skills/pangolin-ai-serp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pangolin-ai-serp-6ffd35da14ff13e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Google and get AI Overviews using Pangolin APIs. Use this skill when the user wants to: search Google with AI answers, get search engine results, perf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuyu020923",
+      "userId": "s1796a0hp8pj5e9ttx7vmd9x1h83kfeb",
+      "displayName": "liuyu020923",
+      "image": "https://avatars.githubusercontent.com/u/260918117?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774445388434,
+      "changelog": "- Updates authentication environment variable and cache file names from PANGOLIN_TOKEN and ~/.pangolin_token to PANGOLIN_API_KEY and ~/.pangolin_api_key for consistency.\n- Updates documentation (SKILL.md) to reflect the new variable and file names throughout setup and usage instructions.\n- No changes to core usage, command-line options, or API behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37bdf1c098030c5e6f09a1f397cbad11be96aefe4077911a50523a9c4db3a98b"
+}

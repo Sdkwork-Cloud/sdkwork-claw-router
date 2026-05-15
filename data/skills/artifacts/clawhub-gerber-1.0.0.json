@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gerber@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gerber",
+  "skill": {
+    "id": 49479,
+    "skillKey": "clawhub-gerber",
+    "name": "Gerber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gerber",
+    "url": "https://clawhub.ai/skills/gerber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gerber-92e094ab2d7d0020.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gerber is a leading US baby food brand founded in 1927, known for baby food, formula, and snacks, with strong market presence and Nestle ownership."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778184233323,
+      "changelog": "- Initial release introducing the Gerber Products Company skill.\n- Provides historical timeline, business model, and market positioning.\n- Includes moat analysis, key data, and notable brand facts.\n- Useful for research on baby food markets, brand loyalty, and consumer products history.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7925a34e8dafaa6c23e1d50d84da5d298bde7636740579c3b676e6acb6454479"
+}

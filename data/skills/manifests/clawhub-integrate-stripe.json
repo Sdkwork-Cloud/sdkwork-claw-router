@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32992,
+  "uuid": "skill-clawhub-integrate-stripe",
+  "skillKey": "clawhub-integrate-stripe",
+  "name": "Stripe",
+  "summary": "Stripe integration. Manage Customers, Products, Payouts, Transfers. Use when the user wants to interact with Stripe data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_stripe",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Stripe integration",
+        "Manage Customers, Products, Payouts, Transfers",
+        "Use when the user wants to interact with Stripe data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-stripe@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-stripe",
+      "url": "https://clawhub.ai/skills/integrate-stripe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-stripe",
+    "url": "https://clawhub.ai/skills/integrate-stripe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-stripe-8ff3dcd050165e9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-stripe@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-stripe-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5588e080064aa00d5f163a6223b3cea999d496b6e74020780aa85e41f9610886",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:00:40.780Z"
+}

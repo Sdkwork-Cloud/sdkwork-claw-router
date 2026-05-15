@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66762,
+  "uuid": "skill-clawhub-daily-briefing-wps",
+  "skillKey": "clawhub-daily-briefing-wps",
+  "name": "Morning Briefing",
+  "summary": "每天早上定时生成并发送数据分析与项目进展汇报。适用场景：1) 触发晨检 cron（每日 09:00）；2) 用户要求查看当前项目状态/进展摘要；3) 需要整合 memory 日志、WPS 日历、Ezone 卡片、PG 压测状态等多源数据生成简报。触发词包括：早报、晨检、数据汇报、进展汇报、项目状态、今天怎么样。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_briefing_wps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangwanxia",
+      "features": [
+        "每天早上定时生成并发送数据分析与项目进展汇报。适用场景：1) 触发晨检 cron（每日 09:00）；2) 用户要求查看当前项目状态/进展摘要；3) 需要整合 memory 日志、WPS 日."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-briefing-wps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277690698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-briefing-wps",
+      "url": "https://clawhub.ai/skills/daily-briefing-wps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-briefing-wps",
+    "url": "https://clawhub.ai/skills/daily-briefing-wps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-briefing-wps-d5de3362b98f0051.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-briefing-wps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-briefing-wps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e9d737fbc68be42f00f471edbb3c1fd867a55aec6f7d4f2ae190f518a97e6c9",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T03:40:58.329Z"
+}

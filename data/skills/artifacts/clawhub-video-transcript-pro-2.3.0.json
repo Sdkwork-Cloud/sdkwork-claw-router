@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-transcript-pro@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_transcript_pro",
+  "skill": {
+    "id": 67920,
+    "skillKey": "clawhub-video-transcript-pro",
+    "name": "video-transcript-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-transcript-pro",
+    "url": "https://clawhub.ai/skills/video-transcript-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-transcript-pro-038105b8845311cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动转录视频音频，智能修正润色并生成逐字稿及知乎、微信、小红书多平台发布稿，支持用户个性化定制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "artminding",
+      "userId": "s17d7p6gcc3cbs98fchss30b5183gka3",
+      "displayName": "Yi,Li （李祎）",
+      "image": "https://avatars.githubusercontent.com/u/29275663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1774877494963,
+      "changelog": "v2.3: 完善多平台发布稿字数对照表，增强金句提取规则，添加配图提示词规范",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f860b55997a92570ae11e6dca2fb26237be17229d3a84faea90fc38dd9e99d1"
+}

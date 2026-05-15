@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-crawler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_crawler",
+  "skill": {
+    "id": 70676,
+    "skillKey": "clawhub-image-crawler",
+    "name": "Image-crawler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-crawler",
+    "url": "https://clawhub.ai/skills/image-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-crawler-819eeffef882b8a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "图片采集/爬虫工具，支持百度和Bing图片搜索引擎。当用户要求采集、爬取、下载、 搜集图片时使用。支持关键词拓展、图片去重（URL+内容hash，跨次运行持久化）、 进度监控和停滞检测。触发词：采集图片、爬取图片、下载图片、图片爬虫、抓取图片。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mx2013713828",
+      "userId": "s177984kkp3f7ft4vb9wk6fwrs83rcyt",
+      "displayName": "MagicWolf",
+      "image": "https://avatars.githubusercontent.com/u/16423859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774680201793,
+      "changelog": "image-crawler v1.0.0 – 首发版本\n\n- 支持通过百度和Bing图片搜索按关键词批量采集图片\n- 内置智能关键词拓展，提升图片多样性\n- 提供图片去重（URL与内容hash，支持持久化）\n- 支持进度监控、停滞检测与自动化错误处理\n- 脚本输出标准JSON，便于集成和结果追踪\n- 支持追加采集并自动跳过已下载图片",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3f5bf1addb9ecbd6987922321eaa2f2d8d68099be7b31d7c5eccef602fc7a77"
+}

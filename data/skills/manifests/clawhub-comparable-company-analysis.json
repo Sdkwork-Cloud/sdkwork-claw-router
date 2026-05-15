@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70326,
+  "uuid": "skill-clawhub-comparable-company-analysis",
+  "skillKey": "clawhub-comparable-company-analysis",
+  "name": "comparable-company-analysis",
+  "summary": "金融领域的可比公司分析工具，通过行业分析法对目标公司与可比公司整合经营指标、估值倍数和统计基准比较。目前仅支持A股上市公司分析。输入单一公司问句后，调用可比公司接口并生成主题化Excel报告。适用于快速对比目标公司与同业在经营、财务、估值维度的差异。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comparable_company_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Financial AI Analyst",
+      "features": [
+        "金融领域的可比公司分析工具，通过行业分析法对目标公司与可比公司整合经营指标、估值倍数和统计基准比较。目前仅支持A股上市公司分析。输入单一公司问句后，调用可比公司接口并生成主题化Excel报告."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comparable-company-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41098207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comparable-company-analysis",
+      "url": "https://clawhub.ai/skills/comparable-company-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comparable-company-analysis",
+    "url": "https://clawhub.ai/skills/comparable-company-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comparable-company-analysis-d794a3c75d3cd4eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comparable-company-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comparable-company-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaf2b49e3248d9a3e12b12d95f679e89c5d055c9b5bbe31008033e9ec4766987",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:18:24.501Z"
+}

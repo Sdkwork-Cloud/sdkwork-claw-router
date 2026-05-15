@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wordpress-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wordpress_optimizer",
+  "skill": {
+    "id": 33410,
+    "skillKey": "clawhub-wordpress-optimizer",
+    "name": "WordPress Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wordpress-optimizer",
+    "url": "https://clawhub.ai/skills/wordpress-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wordpress-optimizer-7f58d5f9d21ca362.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize and tune WordPress sites for performance and security with automated analysis and configuration management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774241203483,
+      "changelog": "Initial release of WordPress Optimizer Tool.\n\n- Automates optimization and tuning of WordPress sites for performance and security.\n- Supports site-wide optimization (with admin credentials) and performance tuning (with token).\n- Provides API endpoints for optimize-wp, tune-wp, and service health checks.\n- Returns actionable performance metrics and improvement recommendations.\n- Includes multiple pricing tiers for various user needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ddcb2b04dc9b5acb0a8a2ad12f4aabdd2b97f8a72393a0454bfacc2f5097c57"
+}

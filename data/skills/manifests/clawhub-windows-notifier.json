@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17935,
+  "uuid": "skill-clawhub-windows-notifier",
+  "skillKey": "clawhub-windows-notifier",
+  "name": "Windows Notifier",
+  "summary": "Send native Windows desktop notifications for local reminders, alerts, and background-attention events. Use when the user wants a Windows popup, a local toas...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_notifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dougzl",
+      "features": [
+        "Send native Windows desktop notifications for local reminders, alerts, and background-attention.",
+        "Use when the user wants a Windows popup, a local toas..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-notifier@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188727531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-notifier",
+      "url": "https://clawhub.ai/skills/windows-notifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-notifier",
+    "url": "https://clawhub.ai/skills/windows-notifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-notifier-b0bec8410803804a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-notifier@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-notifier-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5f2f93dd4468410deeed109ae43aa4f27ed4ed9ed41a0a4d50c0b60c3cdc39b",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:05:27.818Z"
+}

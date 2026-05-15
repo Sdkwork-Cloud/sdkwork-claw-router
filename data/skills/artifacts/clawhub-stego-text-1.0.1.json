@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stego-text@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stego_text",
+  "skill": {
+    "id": 51399,
+    "skillKey": "clawhub-stego-text",
+    "name": "Stego Text — Steganographic Message Encoding for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stego-text",
+    "url": "https://clawhub.ai/skills/stego-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stego-text-14120d4a608dc5e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Encode and decode hidden messages within natural-looking text using steganographic techniques. Use when asked to hide a message in text, encode a secret mess..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "morpheis",
+      "userId": "s17etpzv05kvssrjch82p9prps83h494",
+      "displayName": "Morpheis",
+      "image": "https://avatars.githubusercontent.com/u/6878926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775075052665,
+      "changelog": "Update display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6928a5ca28a1348585794520021b10ad67fdffa97071bff8fd21da30acc1f59e"
+}

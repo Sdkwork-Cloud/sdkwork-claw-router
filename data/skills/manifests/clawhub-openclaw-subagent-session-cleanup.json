@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46348,
+  "uuid": "skill-clawhub-openclaw-subagent-session-cleanup",
+  "skillKey": "clawhub-openclaw-subagent-session-cleanup",
+  "name": "OpenClaw Subagent Session Cleanup",
+  "summary": "Clean up accumulated subagent and cron:run child sessions in OpenClaw to fix slow subagent startup. Use when: subagents are slow to start, sessions.json is t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_subagent_session_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lrddrl",
+      "features": [
+        "Clean up accumulated subagent and cron:run child sessions in OpenClaw to fix slow subagent star.",
+        "Use when: subagents are slow to start, sessions.json is t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-subagent-session-cleanup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50850041?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-subagent-session-cleanup",
+      "url": "https://clawhub.ai/skills/openclaw-subagent-session-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-subagent-session-cleanup",
+    "url": "https://clawhub.ai/skills/openclaw-subagent-session-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-subagent-session-cleanup-5668d181eaffb353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-subagent-session-cleanup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-subagent-session-cleanup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74c50d53461d30f0c3e226fe08f20da9a53083761004098e87c4ffac329baf4c",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T21:10:18.397Z"
+}

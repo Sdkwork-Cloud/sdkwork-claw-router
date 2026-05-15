@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-no-credits@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_no_credits",
+  "skill": {
+    "id": 49498,
+    "skillKey": "clawhub-video-generator-free-no-credits",
+    "name": "Video Generator Free No Credits"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-no-credits",
+    "url": "https://clawhub.ai/skills/video-generator-free-no-credits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-no-credits-23b8cea0c0ca6a78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get ready-to-share videos ready to post, without touching a single slider. Upload your text or images (MP4, MOV, PNG, JPG, up to 200MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 78,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777950578281,
+      "changelog": "Initial release — generate AI videos with no credit limits or paywalls.\n\n- Upload text or images (supports MP4, MOV, PNG, JPG, up to 200MB)\n- Instantly generate videos by describing your needs (e.g., \"create a 30-second promotional video\")\n- Download ready-to-share 1080p MP4 videos\n- Automatic setup and session management, with 100 free credits for new users\n- Supports fast, cloud-based rendering and interactive editing via chat commands",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eac3c7e45d0c04a67306bf3c7f5f28dd0afd23cc81f835b2265bd479357a7d20"
+}

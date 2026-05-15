@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61870,
+  "uuid": "skill-clawhub-openclaw-wealth-guide",
+  "skillKey": "clawhub-openclaw-wealth-guide",
+  "name": "Openclaw Wealth Guide",
+  "summary": "自动采集、处理多种数据源并导出JSON、CSV、Excel等格式，支持定时任务及OpenClaw无缝集成，适合中国市场。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_wealth_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxg852621787",
+      "features": [
+        "自动采集、处理多种数据源并导出JSON、CSV、Excel等格式，支持定时任务及OpenClaw无缝集成，适合中国市场。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-wealth-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271096132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-wealth-guide",
+      "url": "https://clawhub.ai/skills/openclaw-wealth-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-wealth-guide",
+    "url": "https://clawhub.ai/skills/openclaw-wealth-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-wealth-guide-68900529a14e88e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-wealth-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-wealth-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b56a046d9da0beb0211f9bc2a7d07bc12f6743ec2b7ba5116e9572075a7199b",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:04:45.371Z"
+}

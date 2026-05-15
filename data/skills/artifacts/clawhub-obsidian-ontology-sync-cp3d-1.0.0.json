@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-ontology-sync-cp3d@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_ontology_sync_cp3d",
+  "skill": {
+    "id": 29767,
+    "skillKey": "clawhub-obsidian-ontology-sync-cp3d",
+    "name": "Obsidian Ontology Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-ontology-sync-cp3d",
+    "url": "https://clawhub.ai/skills/obsidian-ontology-sync-cp3d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-ontology-sync-cp3d-8a7d21020ca3dcde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bidirectional sync between Obsidian PKM (human-friendly notes) and structured ontology (machine-queryable graph). Automatically extracts entities and relatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cp3d1455926-svg",
+      "userId": "s177dnrcxaj8y42437mjj0m9y583t54n",
+      "displayName": "cp3d1455926-svg",
+      "image": "https://avatars.githubusercontent.com/u/268315927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775043912579,
+      "changelog": "Initial release: Bidirectional sync between Obsidian markdown notes and a structured ontology graph, with automated extraction, analytics, and feedback.\n\n- Extracts entities (Person, Organization, Project, etc.) and relationships from Obsidian notes.\n- Provides analysis and feedback to improve note structure and data completeness.\n- Highly configurable extraction, storage, and scheduling via YAML config.\n- Integrates with cron for automated sync, analytics, and feedback reports.\n- Suggests template improvements and highlights missing or inconsistent information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d0876282c2f9da1f13b7f047e0a21284220ed483134059526e71af3fc192412"
+}

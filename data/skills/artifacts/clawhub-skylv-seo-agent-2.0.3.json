@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-seo-agent@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_seo_agent",
+  "skill": {
+    "id": 58523,
+    "skillKey": "clawhub-skylv-seo-agent",
+    "name": "Skylv Seo Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-seo-agent",
+    "url": "https://clawhub.ai/skills/skylv-seo-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-seo-agent-c2017e835ce4a374.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SEO 优化专家。关键词研究、内容优化、排名监控、技术 SEO 审计、竞品分析。集成 Google Keyword Planner、Search Console API。Triggers: seo, keyword research, search optimization, ranking, seo audit."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1776648389020,
+      "changelog": "- Updated version number to 2.0.2 in SKILL.md\n- Revised description to be more concise and in English, highlighting main SEO features and supported triggers\n- No changes to features, functionality, or code—documentation and metadata only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bc0731f4ab97c1a653c07430fe21de10c670165a68cdeabd9327da31d5496f3"
+}

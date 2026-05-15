@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22020,
+  "uuid": "skill-clawhub-voipms-sms",
+  "skillKey": "clawhub-voipms-sms",
+  "name": "Voipms Sms",
+  "summary": "OpenClaw skill for sending and retrieving SMS messages via the VoIP.ms API (no Bitwarden dependency).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voipms_sms",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ccormier",
+      "features": [
+        "OpenClaw skill for sending and retrieving SMS messages via the VoIP.ms API (no Bitwarden depend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voipms-sms@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1540819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voipms-sms",
+      "url": "https://clawhub.ai/skills/voipms-sms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voipms-sms",
+    "url": "https://clawhub.ai/skills/voipms-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voipms-sms-f6452ee50ed0ccd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voipms-sms@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-voipms-sms-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:216d73f2115f339b53aa8271ff5f9d1712060801266c2c469bfbd274a8202cfc",
+      "artifactSizeBytes": 2143
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T20:21:52.879Z"
+}

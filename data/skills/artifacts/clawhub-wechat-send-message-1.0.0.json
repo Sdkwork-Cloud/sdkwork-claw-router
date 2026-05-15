@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-send-message@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_send_message",
+  "skill": {
+    "id": 66778,
+    "skillKey": "clawhub-wechat-send-message",
+    "name": "微信Mac版消息发送"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-send-message",
+    "url": "https://clawhub.ai/skills/wechat-send-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-send-message-8aa12fbda4d01527.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在微信 Mac 版发送消息。当用户提到\"微信发消息\"、\"发微信\"、\"给 XXX 发微信\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calvin-dean",
+      "userId": "s17d5efa4g40dv72ysapcjg20984c83e",
+      "displayName": "calvin-dean",
+      "image": "https://avatars.githubusercontent.com/u/121805072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775569302519,
+      "changelog": "首发版本，支持搜索联系人并发送消息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93a999ba145491017ac64ebb4ea4b9a955e64b3df8ba41ac6fcc07d6b0cd1ad3"
+}

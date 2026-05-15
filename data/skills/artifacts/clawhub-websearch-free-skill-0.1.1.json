@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/websearch-free-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.websearch_free_skill",
+  "skill": {
+    "id": 18902,
+    "skillKey": "clawhub-websearch-free-skill",
+    "name": "Websearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "websearch-free-skill",
+    "url": "https://clawhub.ai/skills/websearch-free-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/websearch-free-skill-aaa68c38cebe33e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform web searches using various search engines and APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roryyu",
+      "userId": "s1758ajva3qvv26wd3sh4da2p583gv5a",
+      "displayName": "Rory",
+      "image": "https://avatars.githubusercontent.com/u/740817?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 643,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773806700086,
+      "changelog": "**Major breaking change: All core source files removed; SKILL.md now includes only documentation and sample code.**\n\n- Removed main logic files: ReadResult.js, search.js, exasearch.js, package.json, and config/mcporter.json.\n- SKILL.md updated to embed sample code and keep documentation only; no executable scripts included.\n- Usage instructions and error handling sections remain as reference.\n- Skill now serves as a documentation/sample reference rather than a working implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:580e12124e3065ac944485a8645deb7e58d37255a3b8193afdb7f90c9d23fbe4"
+}

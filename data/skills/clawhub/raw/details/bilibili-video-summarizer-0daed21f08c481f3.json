@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "bilibili-video-summarizer",
+    "displayName": "Bilibili Video Summarizer",
+    "summary": "B站（bilibili）视频字幕下载与总结工具。当用户说\"帮我总结这个B站视频\"、\"B站视频总结\"、\"总结b站视频\"、\"这个视频说了什么\"、\"视频内容是什么\"时触发此技能。自动从B站下载字幕（支持官方字幕和AI字幕），解析为纯文本后对视频内容进行总结，支持中英文双语字幕。",
+    "tags": {
+      "bilibili": "1.0.0",
+      "latest": "1.0.0",
+      "subtitle": "1.0.0",
+      "summarizer": "1.0.0",
+      "video": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774510308014,
+    "updatedAt": 1777623759858
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774510308014,
+    "changelog": "- Initial release of bilibili-video-summarizer.\n- Enables downloading and summarizing Bilibili video subtitles (official and AI-generated), supporting both Chinese and English.\n- Requires user to configure Bilibili cookie (SESSDATA) for subtitle access.\n- Automatically extracts subtitles, parses to plain text, and generates structured summaries.\n- Handles cases where subtitles are missing or invalid URLs are provided, guiding the user accordingly.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yeezi02",
+    "userId": "s17crapv26yfhvsy22tr3k7hsn83gcdz",
+    "displayName": "YEEZI02",
+    "image": "https://avatars.githubusercontent.com/u/132755784?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623759858
+  }
+}

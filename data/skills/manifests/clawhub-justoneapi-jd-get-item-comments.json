@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48962,
+  "uuid": "skill-clawhub-justoneapi-jd-get-item-comments",
+  "skillKey": "clawhub-justoneapi-jd-get-item-comments",
+  "name": "JD.com Product Comments API",
+  "summary": "Call GET /api/jd/get-item-comments/v1 for JD.com Product Comments through JustOneAPI with itemId.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_jd_get_item_comments",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/jd/get-item-comments/v1 for JD.com Product Comments through JustOneAPI with itemI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-jd-get-item-comments@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-jd-get-item-comments",
+      "url": "https://clawhub.ai/skills/justoneapi-jd-get-item-comments"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-jd-get-item-comments",
+    "url": "https://clawhub.ai/skills/justoneapi-jd-get-item-comments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-jd-get-item-comments-f3e1a2774bcc8400.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-jd-get-item-comments@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-jd-get-item-comments-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a28fb573e7b85ac49571746919f263d3bad29cf3329a5be5cdf1ef54440604e9",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T04:06:57.025Z"
+}

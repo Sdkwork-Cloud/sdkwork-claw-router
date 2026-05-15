@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64959,
+  "uuid": "skill-clawhub-eden-digital-web3-weekly-digest",
+  "skillKey": "clawhub-eden-digital-web3-weekly-digest",
+  "name": "eden-digital-web3-weekly-digest",
+  "summary": "自动抓取数据并生成 Web3 行业资本运作周报，涵盖融资事件、监管动态、上市公司 DAT 动态、并购交易与 RWA 项目追踪。当用户提到\"写周报\"、\"生成周报\"、\"整理本周融资\"、\"Web3 周报\"、\"资本运作周报\"、\"采编周报\"，或请求整理加密行业本周动态时，立即激活此 skill。即使用户只说\"帮我写本周的\"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eden_digital_web3_weekly_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baoyangispoor",
+      "features": [
+        "自动抓取数据并生成 Web3 行业资本运作周报，涵盖融资事件、监管动态、上市公司 DAT 动态、并购交易与 RWA 项目追踪。当用户提到\"写周报\"、\"生成周报\"、\"整理本周融资\"、\"Web3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eden-digital-web3-weekly-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89283297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eden-digital-web3-weekly-digest",
+      "url": "https://clawhub.ai/skills/eden-digital-web3-weekly-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eden-digital-web3-weekly-digest",
+    "url": "https://clawhub.ai/skills/eden-digital-web3-weekly-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eden-digital-web3-weekly-digest-9265f88deed3cccc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eden-digital-web3-weekly-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eden-digital-web3-weekly-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:060c277a4916392e70c1cedfc03834f6dcc250796592b721acac3b1ec4079011",
+      "artifactSizeBytes": 2963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:31:25.038Z"
+}

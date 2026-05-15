@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34450,
+  "uuid": "skill-clawhub-activeprospect",
+  "skillKey": "clawhub-activeprospect",
+  "name": "Activeprospect",
+  "summary": "ActiveProspect integration. Manage data, records, and automate workflows. Use when the user wants to interact with ActiveProspect data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activeprospect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ActiveProspect integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ActiveProspect data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/activeprospect@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "activeprospect",
+      "url": "https://clawhub.ai/skills/activeprospect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activeprospect",
+    "url": "https://clawhub.ai/skills/activeprospect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activeprospect-f72703f1d27b63c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/activeprospect@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-activeprospect-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8686d1e5f0f0b4c7a0403db95b531fad0a2bfadd1270f05e96b363dec7d2b4e",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:15:19.817Z"
+}

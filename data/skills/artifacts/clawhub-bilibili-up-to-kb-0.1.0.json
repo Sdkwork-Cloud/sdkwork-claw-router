@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-up-to-kb@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_up_to_kb",
+  "skill": {
+    "id": 53887,
+    "skillKey": "clawhub-bilibili-up-to-kb",
+    "name": "Bilibili Up To Kb"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-up-to-kb",
+    "url": "https://clawhub.ai/skills/bilibili-up-to-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-up-to-kb-16c8218f818bd201.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Bilibili (B站) videos into a searchable text knowledge base. Supports single videos and batch processing of entire UP主 channels. Uses local whisper.cp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shanjiaming",
+      "userId": "publishers:shanjiaming",
+      "displayName": "shanjiaming",
+      "image": "https://avatars.githubusercontent.com/u/68770027?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772244300244,
+      "changelog": "Initial release – Convert Bilibili videos/channels into a structured text knowledge base.\n\n- Supports single videos and batch processing of entire UP主 channels.\n- Uses local whisper.cpp for transcription; no API key required.\n- Automated transcript cleaning with paragraph-level coverage to fix ASR errors.\n- Outputs cleaned transcripts, metadata, and an index; raw transcripts stored separately.\n- Handles large channels and includes resumable, concurrency-safe bash scripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:070833402835e2374ea5cddadbc9f6adf00a8401656373f51483052b4c382f4e"
+}

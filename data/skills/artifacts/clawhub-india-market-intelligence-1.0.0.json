@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/india-market-intelligence@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.india_market_intelligence",
+  "skill": {
+    "id": 30989,
+    "skillKey": "clawhub-india-market-intelligence",
+    "name": "india-market-intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "india-market-intelligence",
+    "url": "https://clawhub.ai/skills/india-market-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/india-market-intelligence-5ff73e49e1b3e0af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive India-focused market intelligence tool that fetches real-time data on NIFTY, SENSEX, global indices, market news, geopolitical events, and prov..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sshrungare",
+      "userId": "s17cpg9zaxdw9d6t7ydk9q83gd842ssg",
+      "displayName": "sshrungare",
+      "image": "https://avatars.githubusercontent.com/u/31124947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133281878,
+      "changelog": "india-market-intelligence v1.0.0\n\n- Initial release of a comprehensive India-focused market intelligence tool.\n- Fetches real-time data on NIFTY, SENSEX, global indices, currencies, and commodities.\n- Aggregates market news and tracks major geopolitical events relevant to markets.\n- Provides AI-powered insights, including probability predictions, risk assessment (1–10 gauge), and trading decision support.\n- Includes multiple commands (all-in-one, overview, Indian market, news, geopolitical, sectors, intermarket, watchlist, custom reports).\n- Sources data from Yahoo Finance, Moneycontrol, Economic Times, and other trusted providers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7cbdd256638103e0d474cdc88ce35ea6a7bf2cc7eb53c53c744cfaf3304828e"
+}

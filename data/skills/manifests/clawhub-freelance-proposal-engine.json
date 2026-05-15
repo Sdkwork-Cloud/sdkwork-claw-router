@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12899,
+  "uuid": "skill-clawhub-freelance-proposal-engine",
+  "skillKey": "clawhub-freelance-proposal-engine",
+  "name": "Freelance Proposal Engine",
+  "summary": "Generate tailored freelance proposals for Upwork, Fiverr, Freelancer, and PeoplePerHour job listings. Use when writing proposals, bidding on gigs, or responding to client job posts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelance_proposal_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sean Wyngaard",
+      "features": [
+        "Generate tailored freelance proposals for Upwork, Fiverr, Freelancer, and PeoplePerHour job lis.",
+        "Use when writing proposals, bidding on gigs, or responding to client job posts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/freelance-proposal-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187758643?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "freelance-proposal-engine",
+      "url": "https://clawhub.ai/skills/freelance-proposal-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelance-proposal-engine",
+    "url": "https://clawhub.ai/skills/freelance-proposal-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelance-proposal-engine-fac1fe2f6289b7ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/freelance-proposal-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-freelance-proposal-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:552cb70e3b15dc6fdc47f9696cd99eb36a1585f3bb3126113f5be9ebdd1580c3",
+      "artifactSizeBytes": 2635
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T12:29:03.045Z"
+}

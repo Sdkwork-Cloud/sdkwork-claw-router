@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ltpm@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ltpm",
+  "skill": {
+    "id": 25852,
+    "skillKey": "clawhub-ltpm",
+    "name": "Long-term Task Progress Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ltpm",
+    "url": "https://clawhub.ai/skills/ltpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ltpm-89683649d8552b14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages multi-session, multi-stage projects by maintaining and syncing MISSION.md, PROGRESS.md, and NEXT_STEPS.md for seamless long-term progress tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bono5137",
+      "userId": "publishers:bono5137",
+      "displayName": "bono5137",
+      "image": "https://avatars.githubusercontent.com/u/7820612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773675188210,
+      "changelog": "LTPM 2.1.0 introduces a universal, structured protocol for managing long-term projects in OpenClaw.\n\n- Defines a required Core Triad structure: MISSION.md, PROGRESS.md, and NEXT_STEPS.md for all projects.\n- Details dual-track progress capture: passive (background HEARTBEAT.md monitoring) and active (milestone-based updates).\n- Introduces adaptive auto-save thresholds based on project complexity and session activity.\n- Provides templates for project documents, and guidance for various project types.\n- Adds configuration options for threshold settings and resource-aware file watching as a passive progress-capture optimization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c313fea681e58f9f45cedc897c543ade26a37b696b4a36e459ba8b7c970b537"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72224,
+  "uuid": "skill-clawhub-jd",
+  "skillKey": "clawhub-jd",
+  "name": "Jd",
+  "summary": "京东集团全面介绍。提供京东集团的历史、业务板块、旗下公司、创始人、物流体系、商业模式等内容的查询。适用于：1) 了解京东集团的发展历程；2) 熟悉京东核心业务；3) 了解京东物流体系；4) 学习京东商业模式和企业文化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "京东集团全面介绍。提供京东集团的历史、业务板块、旗下公司、创始人、物流体系、商业模式等内容的查询。适用于：1) 了解京东集团的发展历程；2) 熟悉京东核心业务；3) 了解京东物流体系；4)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jd",
+      "url": "https://clawhub.ai/skills/jd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd",
+    "url": "https://clawhub.ai/skills/jd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-ad3e69e9aa860657.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23205e96cc3548cfbbbed1fe0d06aed72b2680f5cc8326d47435a61c57db6559",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T17:31:38.191Z"
+}

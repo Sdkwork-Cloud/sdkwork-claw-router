@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44280,
+  "uuid": "skill-clawhub-obsidian-wiki-auto",
+  "skillKey": "clawhub-obsidian-wiki-auto",
+  "name": "obsidian-wiki",
+  "summary": "Build and maintain a personal knowledge Wiki using the LLM Wiki pattern with OpenClaw-optimized step-by-step execution. Use sub-agents for parallel processin...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_wiki_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jayxjw",
+      "features": [
+        "Build and maintain a personal knowledge Wiki using the LLM Wiki pattern with OpenClaw-optimized.",
+        "Use sub-agents for parallel processin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-wiki-auto@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70039288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-wiki-auto",
+      "url": "https://clawhub.ai/skills/obsidian-wiki-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-wiki-auto",
+    "url": "https://clawhub.ai/skills/obsidian-wiki-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-wiki-auto-6f569bb0f34e7541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-wiki-auto@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-wiki-auto-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:959c5caa5ddeb16f058d02a7edd9d7fd92738a3ff2287a9ce9e11ae20102088c",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T01:19:34.633Z"
+}

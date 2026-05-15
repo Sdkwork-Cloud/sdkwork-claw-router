@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8678,
+  "uuid": "skill-clawhub-clawflows",
+  "skillKey": "clawhub-clawflows",
+  "name": "Clawflows",
+  "summary": "Search, install, and run multi-skill automations from clawflows.com. Combine multiple skills into powerful workflows with logic, conditions, and data flow between steps.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawflows",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cluka-399",
+      "features": [
+        "Search, install, and run multi-skill automations from clawflows.com",
+        "Combine multiple skills into powerful workflows with logic, conditions, and data flow between s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawflows@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257591420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawflows",
+      "url": "https://clawhub.ai/skills/clawflows"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawflows",
+    "url": "https://clawhub.ai/skills/clawflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawflows-7a74664137241fc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawflows@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawflows-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:495c229764530b3514b5b26a2ff62365d841a7f6560ba1cdb77f060398a113d1",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:11:56.399Z"
+}

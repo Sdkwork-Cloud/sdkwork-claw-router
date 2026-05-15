@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_review",
+  "skill": {
+    "id": 19947,
+    "skillKey": "clawhub-security-review",
+    "name": "Security Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-review",
+    "url": "https://clawhub.ai/skills/security-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-review-078bdee851eebf7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a world-class security assessment before installing any external package, CLI, npm module, Python library, or third-party integration. Produces a GO/NO-G..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mpbshhx",
+      "userId": "publishers:mpbshhx",
+      "displayName": "mpbshhx",
+      "image": "https://avatars.githubusercontent.com/u/235782436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 503,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773872821527,
+      "changelog": "World-class security assessment before any install. Source code analysis, CVE search, data flow review. GO/NO-GO/CONDITIONAL verdict.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2af136b61f198b725eed1244d5b007e4c711e8d979934109e09189fe63933361"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_automation",
+  "skill": {
+    "id": 8741,
+    "skillKey": "clawhub-linkedin-automation",
+    "name": "LinkedIn Automation by Zich (BradAI's OpenClaw)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-automation",
+    "url": "https://clawhub.ai/skills/linkedin-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-automation-43f2b703fefc2889.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate LinkedIn content creation, posting, engagement tracking, and audience growth. Use for posting content, scheduling posts, analyzing engagement metrics, generating content ideas, commenting on posts, and building LinkedIn presence.."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zich-dev",
+      "userId": "publishers:zich-dev",
+      "displayName": "zich-dev",
+      "image": "https://avatars.githubusercontent.com/u/59956290?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 5192,
+      "installsAllTime": 27,
+      "installsCurrent": 25,
+      "stars": 23,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769856129853,
+      "changelog": "Initial release: Automate LinkedIn content creation, posting, engagement, and analytics.\n\n- Post and schedule content (with optional images) directly to LinkedIn.\n- Track post analytics, audience growth, and engagement metrics.\n- Generate content ideas based on trending LinkedIn topics.\n- Automate liking and commenting on posts to boost engagement.\n- Includes strategies, workflows, and troubleshooting guides for effective LinkedIn automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f693caef33db1be602c9bd137787a7ac746f977b7dc43ab71bbe3dc465ba0418"
+}

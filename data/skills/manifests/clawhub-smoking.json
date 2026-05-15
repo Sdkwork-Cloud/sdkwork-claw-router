@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22872,
+  "uuid": "skill-clawhub-smoking",
+  "skillKey": "clawhub-smoking",
+  "name": "Smoking (Tracker, Logger, Quit, Reduce)",
+  "summary": "Track smoking and nicotine use, reduce consumption, or quit with neutral logs, trigger mapping, and adaptive plans.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smoking",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Track smoking and nicotine use, reduce consumption, or quit with neutral logs, trigger mapping,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smoking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smoking",
+      "url": "https://clawhub.ai/skills/smoking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smoking",
+    "url": "https://clawhub.ai/skills/smoking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smoking-71132fbb5b125184.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smoking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smoking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04c20be42bb053bef937d433d126d8898dce90fac79eae5226d59429c0f2e4cb",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T11:21:39.638Z"
+}

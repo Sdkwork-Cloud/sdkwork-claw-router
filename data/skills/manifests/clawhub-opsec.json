@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29815,
+  "uuid": "skill-clawhub-opsec",
+  "skillKey": "clawhub-opsec",
+  "name": "clawguard",
+  "summary": "Security review and risk auditing for OpenClaw skills and deployments. Inspect third-party skills, dangerous instructions, credential requests, privilege ris...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opsec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duclawbot",
+      "features": [
+        "Security review and risk auditing for OpenClaw skills and deployments",
+        "Inspect third-party skills, dangerous instructions, credential requests, privilege ris..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opsec@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216468018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opsec",
+      "url": "https://clawhub.ai/skills/opsec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opsec",
+    "url": "https://clawhub.ai/skills/opsec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opsec-17fc517571db7aeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opsec@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-opsec-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f8c292c741ce131f81f38e31adfafc212e76fc5ebcd8eb4e3b49d2fd72d9086",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T12:25:03.703Z"
+}

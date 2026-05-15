@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68879,
+  "uuid": "skill-clawhub-psbc-cn",
+  "skillKey": "clawhub-psbc-cn",
+  "name": "中国邮政储蓄银行官网主站",
+  "summary": "中国邮政储蓄银行官网（主站)https://www.psbc.com/ 邮储银行核心官方网站，提供个人、公司、三农、金融市场等全业务服务入口邮储银行",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psbc_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eam",
+      "features": [
+        "中国邮政储蓄银行官网（主站)https://www.psbc.com/ 邮储银行核心官方网站，提供个人、公司、三农、金融市场等全业务服务入口邮储银行"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/psbc-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90089625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "psbc-cn",
+      "url": "https://clawhub.ai/skills/psbc-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psbc-cn",
+    "url": "https://clawhub.ai/skills/psbc-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psbc-cn-1d3933726a620754.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/psbc-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-psbc-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c207233879d232cd5e2130746f9f897661aeadef0bd4f603dd6a85ff6e69388e",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:09:16.646Z"
+}

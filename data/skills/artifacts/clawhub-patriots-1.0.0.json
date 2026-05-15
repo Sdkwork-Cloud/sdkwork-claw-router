@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patriots@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patriots",
+  "skill": {
+    "id": 45643,
+    "skillKey": "clawhub-patriots",
+    "name": "Patriots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patriots",
+    "url": "https://clawhub.ai/skills/patriots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patriots-462aec2ca8883242.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "New England Patriots are an NFL dynasty with 6 Super Bowl titles, built on Belichick-Brady leadership, strong player development, and diverse revenue streams."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777147552840,
+      "changelog": "- 首次发布，全面介绍新英格兰爱国者队（New England Patriots）的历史与商业模式\n- 总结球队从创立到成为NFL王朝的关键转折点\n- 阐述收入结构、竞争优势，以及球队品牌成长故事\n- 包含丰富数据、俱乐部规模信息及冷知识\n- 适用于分析爱国者商业战略、管理决策和未来增长机会",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:310cf2955e22a09641eaccabb2307902254fd690e1fdfcac2a769d6d12195f6f"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32131,
+  "uuid": "skill-clawhub-rapid7-insight-platform",
+  "skillKey": "clawhub-rapid7-insight-platform",
+  "name": "Rapid7 Insight Platform",
+  "summary": "Rapid7 Insight Platform integration. Manage Users, Roles, Organizations, Assets, Vulnerabilities, Findings and more. Use when the user wants to interact with...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rapid7_insight_platform",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Rapid7 Insight Platform integration",
+        "Manage Users, Roles, Organizations, Assets, Vulnerabilities, Findings and more",
+        "Use when the user wants to interact with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rapid7-insight-platform@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rapid7-insight-platform",
+      "url": "https://clawhub.ai/skills/rapid7-insight-platform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rapid7-insight-platform",
+    "url": "https://clawhub.ai/skills/rapid7-insight-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rapid7-insight-platform-5a7d6273ef539e45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rapid7-insight-platform@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rapid7-insight-platform-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bed013a2708ba59dc75e10d91e21847c692ac94e3ef67930754309ec8fdbe131",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:31:22.849Z"
+}

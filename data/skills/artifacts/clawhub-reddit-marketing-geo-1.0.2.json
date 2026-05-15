@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-marketing-geo@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_marketing_geo",
+  "skill": {
+    "id": 16230,
+    "skillKey": "clawhub-reddit-marketing-geo",
+    "name": "Reddit Marketing and GEO Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-marketing-geo",
+    "url": "https://clawhub.ai/skills/reddit-marketing-geo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-marketing-geo-89a566b23cec483d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawns a specialized sub-agent to monitor Reddit and optimize for GEO. Runs on a scheduled cron job (9 AM/6 PM default) to deliver lead drafts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "muhammedilyasy",
+      "userId": "publishers:muhammedilyasy",
+      "displayName": "Ilyasy",
+      "image": "https://avatars.githubusercontent.com/u/132816511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 861,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773290724266,
+      "changelog": "**Summary:**  \nThis version adds rigorous anti-hallucination rules to prevent inclusion of unverifiable Reddit threads in digests.\n\n- Introduced a mandatory URL verification pipeline using `web_fetch` before drafting or reporting any thread.\n- Added explicit rules forbidding fabrication, modification, or reuse of thread URLs without live re-fetching.\n- Digests now require inclusion of the exact fetched URL, Reddit post title, and comment count for transparency.\n- Cycle reports must explicitly state if no valid Reddit threads were found; invention of threads to fill digests is now prohibited.\n- Implemented final pre-post verification step to ensure threads are still live before submitting any drafted comment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a586218d3504edb5938291c129ad3e5b3a495d4ca7bf027bd135cfccea57b687"
+}

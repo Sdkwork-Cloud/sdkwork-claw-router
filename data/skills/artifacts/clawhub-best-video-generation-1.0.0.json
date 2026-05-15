@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-video-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_video_generation",
+  "skill": {
+    "id": 47252,
+    "skillKey": "clawhub-best-video-generation",
+    "name": "Best Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-video-generation",
+    "url": "https://clawhub.ai/skills/best-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-video-generation-7b3d5088bb314163.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short text prompt describing a sunset timelapse over a city into 1080p AI generated videos just by typing what you need. Whether it's generating video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777307800737,
+      "changelog": "- Initial release of Best Video Generation skill.\n- Generate 1080p AI videos from text prompts, images, or URLs in 1-2 minutes.\n- Automatic setup: supports anonymous free token registration, session management, and cloud GPU rendering.\n- Supports common video workflows: upload, generate, edit, preview, and export in multiple formats (MP4, MOV, GIF, etc.).\n- Includes error handling, session state management, and required request headers for smooth API integration.\n- Designed for easy use—no software installation or timeline editing required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f74c92db1ed12b9746aaa4fd9dfe559845e20695b3655aeeaf9b68c0d69763b9"
+}

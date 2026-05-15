@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54296,
+  "uuid": "skill-clawhub-doctorclaw-weekly-report",
+  "skillKey": "clawhub-doctorclaw-weekly-report",
+  "name": "DoctorClaw Weekly Report",
+  "summary": "Weekly report generator — compile progress from tasks, emails, and calendar into one summary. Friday cron or on-demand.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_weekly_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ceobotson-bot",
+      "features": [
+        "Weekly report generator — compile progress from tasks, emails, and calendar into one summary",
+        "Friday cron or on-demand."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doctorclaw-weekly-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263067918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doctorclaw-weekly-report",
+      "url": "https://clawhub.ai/skills/doctorclaw-weekly-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-weekly-report",
+    "url": "https://clawhub.ai/skills/doctorclaw-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-weekly-report-7075bcb4e796add5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doctorclaw-weekly-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doctorclaw-weekly-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3404ad1517aaabc5f2becb784b8c14fa72714a481fa660d8160a2b0f8e273c4",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T13:03:02.442Z"
+}

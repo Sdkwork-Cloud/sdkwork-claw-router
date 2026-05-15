@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12945,
+  "uuid": "skill-clawhub-book-dance-lessons",
+  "skillKey": "clawhub-book-dance-lessons",
+  "name": "Book Dance Lessons",
+  "summary": "Book dance-lessons services through Lokuli MCP. Use when user needs to find and book dance-lessons. Triggers on requests like \"book a dance-lessons\", \"find dance-lessons near me\", or any dance-lessons service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_dance_lessons",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book dance-lessons services through Lokuli MCP",
+        "Use when user needs to find and book dance-lessons",
+        "Triggers on requests like \"book a dance-lessons\", \"find dance-lessons near me\", or any dance-le."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-dance-lessons@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-dance-lessons",
+      "url": "https://clawhub.ai/skills/book-dance-lessons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-dance-lessons",
+    "url": "https://clawhub.ai/skills/book-dance-lessons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-dance-lessons-7f0934b025fb1a74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-dance-lessons@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-dance-lessons-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1239e83042a7c14660aa6a18282d57f06d93dc3d2ab6ee70c01d5cb9be9a3d8",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:26.957Z"
+}

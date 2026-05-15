@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-transcript@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_transcript",
+  "skill": {
+    "id": 13157,
+    "skillKey": "clawhub-bilibili-transcript",
+    "name": "Bilibili Transcript"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-transcript",
+    "url": "https://clawhub.ai/skills/bilibili-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-transcript-6ba263ed6fd39f68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe Bilibili videos to text with high accuracy using Whisper medium model. Use when the user provides a Bilibili video URL (BVxxxxx) and wants to: (1)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "54lynnn",
+      "userId": "s17eg5gndg4q9p16rk2nqbpje183gv2k",
+      "displayName": "54Lynnn",
+      "image": "https://avatars.githubusercontent.com/u/192216119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1288,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 22
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1773774821557,
+      "changelog": "**bilibili-transcript v2.2.0 Changelog**\n\n- Fixed cookie detection: now uses the browser config directory to avoid encoding errors.\n- Streamlined workflow: automatically prioritizes CC subtitles, then AI subtitles, then Whisper transcription in a single script.\n- Improved WSL support: auto-detects both WSL Chromium and Windows Edge cookies.\n- Smarter fallback: seamlessly switches between available subtitle and transcription sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4c42b89b183fef322770f5b557b8f463cb162a7b52c0146d40921a0985b3f95"
+}

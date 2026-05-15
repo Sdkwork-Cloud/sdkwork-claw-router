@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69002,
+  "uuid": "skill-clawhub-guoshun-contract-analyzer",
+  "skillKey": "clawhub-guoshun-contract-analyzer",
+  "name": "国顺合同风险审核",
+  "summary": "国顺合同风险审核技能 V2.0 - 江苏国顺智能科技有限公司专用。自动分析工程合同（施工分包/货物采购/智能化分包），输出结构化风险报告。功能包括：(1)执行摘要 (2)付款条款分析 (3)工期与违约金评估 (4)质保金与保修条款 (5)下浮率/管理费核算 (6)合同闪光点识别 (7)风险条款谈判策略 (8)合同...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guoshun_contract_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimmygx",
+      "features": [
+        "国顺合同风险审核技能 V2.0",
+        "江苏国顺智能科技有限公司专用。自动分析工程合同（施工分包/货物采购/智能化分包），输出结构化风险报告。功能包括：(1)执行摘要 (2)付款条款分析 (3)工期与违约金评估 (4)质保金与保修."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guoshun-contract-analyzer@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27848299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guoshun-contract-analyzer",
+      "url": "https://clawhub.ai/skills/guoshun-contract-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guoshun-contract-analyzer",
+    "url": "https://clawhub.ai/skills/guoshun-contract-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guoshun-contract-analyzer-55a5f2ac7fb90656.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guoshun-contract-analyzer@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guoshun-contract-analyzer-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f7f2e87c1ec3cd6ea6436060e5259d764e3337c7d423b230dc45d9105290348",
+      "artifactSizeBytes": 3006
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:06:41.463Z"
+}

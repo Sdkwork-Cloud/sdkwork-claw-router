@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23858,
+  "uuid": "skill-clawhub-discord-task-center",
+  "skillKey": "clawhub-discord-task-center",
+  "name": "Discord Task Center",
+  "summary": "Manage Discord task-center forums by creating task threads with tags, archiving tasks by updating tags, and following model tag settings per thread.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_task_center",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nannyu",
+      "features": [
+        "Manage Discord task-center forums by creating task threads with tags, archiving tasks by updati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-task-center@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31527323?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-task-center",
+      "url": "https://clawhub.ai/skills/discord-task-center"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-task-center",
+    "url": "https://clawhub.ai/skills/discord-task-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-task-center-ebe6ff098e296aab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-task-center@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-task-center-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f34c90ddbed94be7ae2b460ff1256d08c856e05c47d1c56963961e172ac0fb5",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:42:49.181Z"
+}

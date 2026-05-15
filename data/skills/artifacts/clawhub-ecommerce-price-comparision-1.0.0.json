@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-price-comparision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_price_comparision",
+  "skill": {
+    "id": 24641,
+    "skillKey": "clawhub-ecommerce-price-comparision",
+    "name": "ecommerce-price-comparision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-price-comparision",
+    "url": "https://clawhub.ai/skills/ecommerce-price-comparision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-price-comparision-6f7f8637ec446f64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare products across JD, Taobao, Tmall, Pinduoduo, and Douyin Mall by normalizing product identity, standardizing price basis, detecting purchase risk, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongtao-xiang",
+      "userId": "s1783jh84nbpafebywc4dqckbx83m85x",
+      "displayName": "Hongtao-Xiang",
+      "image": "https://avatars.githubusercontent.com/u/226661384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773369803256,
+      "changelog": "Price Compare 1.0.0 – Initial Release\n\n- Enables product comparison across JD, Taobao, Tmall, Pinduoduo, and Douyin Mall using normalized product identity and standardized price basis.\n- Avoids common comparison errors by enforcing strict same-product matching and labeling price conditions and risks.\n- Produces decision-ready recommendations: highlights the lowest price, best value, and safest purchase options rather than just the cheapest result.\n- Explicitly addresses ambiguity, purchase risks, and non-equivalent listings to ensure reliable, transparent recommendations.\n- Detailed step-by-step comparison and recommendation logic included for consistent, trustworthy outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c09f0c595c97ed715f197d6f011ada9b20c0d01a180e2a14e61d5916f089ac2c"
+}

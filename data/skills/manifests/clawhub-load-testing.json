@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51886,
+  "uuid": "skill-clawhub-load-testing",
+  "skillKey": "clawhub-load-testing",
+  "name": "Load Testing",
+  "summary": "Deep load testing workflow—goals and SLOs, workload modeling, scenario design, environment fidelity, execution, metrics interpretation, and bottlenecks to fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.load_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Deep load testing workflow—goals and SLOs, workload modeling, scenario design, environment fide."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/load-testing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "load-testing",
+      "url": "https://clawhub.ai/skills/load-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "load-testing",
+    "url": "https://clawhub.ai/skills/load-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/load-testing-3c152b2b332e3632.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/load-testing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-load-testing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d2c54278c6df6697ffba525566b1b8c041cc845508b5739687e86fe108d4627",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:16:16.047Z"
+}

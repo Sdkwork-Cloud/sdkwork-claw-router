@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68487,
+  "uuid": "skill-clawhub-cathay-pacific",
+  "skillKey": "clawhub-cathay-pacific",
+  "name": "Cathay Pacific",
+  "summary": "提供国泰航空航班搜索、预订、值机、升舱、里程查询和贵宾室信息等全方位服务。",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cathay_pacific",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供国泰航空航班搜索、预订、值机、升舱、里程查询和贵宾室信息等全方位服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cathay-pacific@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cathay-pacific",
+      "url": "https://clawhub.ai/skills/cathay-pacific"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cathay-pacific",
+    "url": "https://clawhub.ai/skills/cathay-pacific",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cathay-pacific-1164a65e3a0ede85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cathay-pacific@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-cathay-pacific-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d37c4f40f8cff0559f0b879c29d90c6fb4aa7e7c268439808f54cd4c8b3a858",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:27:46.161Z"
+}

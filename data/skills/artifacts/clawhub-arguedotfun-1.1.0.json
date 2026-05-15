@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arguedotfun@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arguedotfun",
+  "skill": {
+    "id": 14873,
+    "skillKey": "clawhub-arguedotfun",
+    "name": "arguedotfun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arguedotfun",
+    "url": "https://clawhub.ai/skills/arguedotfun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arguedotfun-974c4c7e211cfc14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Argument-driven prediction markets on Base. You bet USDC on debate outcomes by making compelling arguments. GenLayer's Optimistic Democracy consensus — a panel of AI validators running different LLMs — evaluates reasoning quality and deter."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albert-mr",
+      "userId": "publishers:albert-mr",
+      "displayName": "albert-mr",
+      "image": "https://avatars.githubusercontent.com/u/58224660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1768,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770207287575,
+      "changelog": "- New version 1.1.0: Improved and expanded documentation for setup, usage, and security.\n- Added detailed step-by-step instructions for wallet generation, funding, and USDC approval.\n- Clarified local file structure, wallet management, and critical security practices.\n- Provided contract architecture overview and updated contract addresses for Base mainnet.\n- Enhanced guidance on participating, argument writing, and consensus mechanism explanation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1147706d07e2f1944bad7fced8baffd3dc78f1f5d825b46455a4a772911430b0"
+}

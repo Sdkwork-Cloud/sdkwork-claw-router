@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59210,
+  "uuid": "skill-clawhub-message-split",
+  "skillKey": "clawhub-message-split",
+  "name": "Message Split",
+  "summary": "长消息自动拆分 skill。当回复内容超过渠道限制时，自动将消息拆分为多条有序发送，避免截断或丢消息。Auto-split long messages into smaller chunks before sending, with sequence markers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_split",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "退役前写代码的",
+      "features": [
+        "长消息自动拆分 skill。当回复内容超过渠道限制时，自动将消息拆分为多条有序发送，避免截断或丢消息。Auto-split long messages into smaller chunks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/message-split@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3349388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "message-split",
+      "url": "https://clawhub.ai/skills/message-split"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-split",
+    "url": "https://clawhub.ai/skills/message-split",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-split-55829fdd301ee953.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/message-split@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-message-split-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40f73348151987c3f169bfc2c111bfd2f1f658ae5df78c166c3caf1918551523",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:30:11.233Z"
+}

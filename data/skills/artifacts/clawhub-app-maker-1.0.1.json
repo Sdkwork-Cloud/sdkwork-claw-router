@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-maker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_maker",
+  "skill": {
+    "id": 71484,
+    "skillKey": "clawhub-app-maker",
+    "name": "app-maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-maker",
+    "url": "https://clawhub.ai/skills/app-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-maker-0a24d2d3af053854.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动完成从需求分析、页面设计、数据库建模、代码生成到可视化调试和一键部署的全栈应用开发全流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chall2015",
+      "userId": "s17b1f67m59n4b1y85x10j0amn83ggxp",
+      "displayName": "chall2015",
+      "image": "https://avatars.githubusercontent.com/u/12229815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773677108363,
+      "changelog": "App Maker is a comprehensive full-stack application development skill that automates the entire software development lifecycle. It transforms natural language requirements into production-ready applications through a structured 6-phase workflow:\n\n1. **Requirements Analysis** - Generates PRD, user stories, and feature prioritization\n2. **UI/UX Design** - Creates component trees, wireframes, and design systems\n3. **Database Design** - Produces Prisma/SQL schemas with ER diagrams\n4. **Code Generation** - Generates frontend (React/Vue/Flutter) and backend (Node.js/Python/Go) code\n5. **Visual Debugging** - Provides live preview with component inspection and state debugging\n6. **Deployment** - One-click deploy to Vercel, Alibaba Cloud, or Docker\n\n**Key Features:**\n- Multi-model AI support with automatic fallback (Claude Code , Qwen, Gemini,GLM,etc.)\n- Technology stack customization (frontend, backend, database, deployment target)\n- Visual debugging interface with hot reload\n- Plugin system for extensibility\n- Production-ready code with tests and CI/CD configuration\n\n**Supported Stacks:**\n- Frontend: React, Vue, Flutter\n- Backend: Node.js, Python, Go\n- Database: PostgreSQL, MongoDB, MySQL\n- Deploy: Vercel, Alibaba Cloud, Docker, Kubernetes\n\nPerfect for rapid prototyping, MVP development, and automating repetitive coding tasks.\n\nLong Description (for skill page)\nSee UPLOAD.md for complete markdown description with:\n\n6-phase workflow explanation\nKey features list\nSupported tech stacks\nUse cases\n\n📸 Optional: Add Screenshots\nSee SCREENSHOTS.md for guide. Recommended:\n\nWorkflow diagram\nDebug interface\nProject structure\nModel configuration\nCLI usage\nApp preview",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb1f3885598619a95cf530d2dce1b14c70c37f9850010fa8cc1d5ab527b75ed9"
+}

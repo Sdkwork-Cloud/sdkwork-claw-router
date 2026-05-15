@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18760,
+  "uuid": "skill-clawhub-personal-hygiene",
+  "skillKey": "clawhub-personal-hygiene",
+  "name": "Personal Hygiene",
+  "summary": "Acts as the user's personal care and grooming assistant in the Hygiene topic. Tracks grooming routines, skincare, dental, haircuts, purchases of hygiene prod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_hygiene",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GekaCross",
+      "features": [
+        "Acts as the user's personal care and grooming assistant in the Hygiene topic",
+        "Tracks grooming routines, skincare, dental, haircuts, purchases of hygiene prod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-hygiene@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57638140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-hygiene",
+      "url": "https://clawhub.ai/skills/personal-hygiene"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-hygiene",
+    "url": "https://clawhub.ai/skills/personal-hygiene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-hygiene-e3ac8e13f426f983.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-hygiene@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-hygiene-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12bf353226c97ef76c903c91465bf86c2d0a164206da1dd7d31f1594b447a2cf",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T09:17:02.966Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65659,
+  "uuid": "skill-clawhub-scene-analysis",
+  "skillKey": "clawhub-scene-analysis",
+  "name": "scene-analysis",
+  "summary": "商业闭环场景分析与评估工具；当用户需要进行Gate0战略红线过滤、Gate1量化评估打分或蓝军审核时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scene_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YAO",
+      "features": [
+        "商业闭环场景分析与评估工具；当用户需要进行Gate0战略红线过滤、Gate1量化评估打分或蓝军审核时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scene-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7600422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scene-analysis",
+      "url": "https://clawhub.ai/skills/scene-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scene-analysis",
+    "url": "https://clawhub.ai/skills/scene-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scene-analysis-5b510e828917315c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scene-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scene-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0643bdf402a147c17a4e04846026aac2869ea485e80a773dac4864ba463673d8",
+      "artifactSizeBytes": 2592
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T01:00:07.583Z"
+}

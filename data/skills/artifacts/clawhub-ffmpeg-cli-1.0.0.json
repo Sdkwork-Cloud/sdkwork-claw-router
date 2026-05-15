@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ffmpeg-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffmpeg_cli",
+  "skill": {
+    "id": 8829,
+    "skillKey": "clawhub-ffmpeg-cli",
+    "name": "FFmpeg CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffmpeg-cli",
+    "url": "https://clawhub.ai/skills/ffmpeg-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffmpeg-cli-61ba8b2a2c274625.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process video and audio using FFmpeg CLI for transcoding, cutting, merging, audio extraction, thumbnails, GIFs, speed, filters, subtitles, and watermarks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ascendswang",
+      "userId": "publishers:ascendswang",
+      "displayName": "ascendswang",
+      "image": "https://avatars.githubusercontent.com/u/257700150?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5588,
+      "installsAllTime": 35,
+      "installsCurrent": 34,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769579607401,
+      "changelog": "Initial release: comprehensive video/audio processing with cut, merge, extract-audio, thumb, gif, convert, speed, watermark scripts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6ff95c40ba88a47b59994794682131a6efc055d154353baadbd7c9047742baf"
+}

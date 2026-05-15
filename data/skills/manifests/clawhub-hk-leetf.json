@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21792,
+  "uuid": "skill-clawhub-hk-leetf",
+  "skillKey": "clawhub-hk-leetf",
+  "name": "Hk LeETF",
+  "summary": "Analyzes Hong Kong leveraged ETFs by evaluating holdings, price deviation, liquidity risks, and provides rebalancing timing, arbitrage opportunities, and ris...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_leetf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WuZiMaKi",
+      "features": [
+        "Analyzes Hong Kong leveraged ETFs by evaluating holdings, price deviation, liquidity risks, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hk-leetf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17017172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hk-leetf",
+      "url": "https://clawhub.ai/skills/hk-leetf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-leetf",
+    "url": "https://clawhub.ai/skills/hk-leetf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-leetf-a04e0deb5304a29f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hk-leetf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hk-leetf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f885323b9357435678eb8f770c470f005e14aae422cfb1150830683d8edf6844",
+      "artifactSizeBytes": 2245
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T23:54:54.659Z"
+}

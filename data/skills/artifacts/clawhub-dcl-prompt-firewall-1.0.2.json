@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dcl-prompt-firewall@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dcl_prompt_firewall",
+  "skill": {
+    "id": 37298,
+    "skillKey": "clawhub-dcl-prompt-firewall",
+    "name": "DCL Prompt Firewall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dcl-prompt-firewall",
+    "url": "https://clawhub.ai/skills/dcl-prompt-firewall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dcl-prompt-firewall-e5f7927eaba45e2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instruction-only input-layer shield for AI agents and LLM pipelines. Detects prompt injection, jailbreak attempts, instruction override, role-switch attacks,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daririnch",
+      "userId": "s177qzsztsa0qx35zmdc3g65s184c673",
+      "displayName": "Dari Rinch",
+      "image": "https://avatars.githubusercontent.com/u/161933416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776083139530,
+      "changelog": "- Refined and streamlined the detection checklist and attack category descriptions for clarity and simplicity.\n- Merged and generalized some attack pattern categories; updated language for plain and concise pattern definitions.\n- Revised output schema to remove input/analysis hashes and deterministic fingerprint, focusing on findings and category status.\n- Updated privacy and pipeline placement sections for clarity and concise instruction.\n- Improved quick-start and usage instructions, reflecting the skill's fully local, instruction-only operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6547ec8f50de1c7d0beec0eccdeab72d5d3d03e303141fe79fa4075a4c0a03e5"
+}

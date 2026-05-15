@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63458,
+  "uuid": "skill-clawhub-rqalpha-cn-backtest",
+  "skillKey": "clawhub-rqalpha-cn-backtest",
+  "name": "Rqalpha Cn Backtest",
+  "summary": "基于20日价格动量在沪深300、沪深500与国债之间自动轮转配置，通过RQAlpha框架执行完整回测并评估组合绩效。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rqalpha_cn_backtest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "基于20日价格动量在沪深300、沪深500与国债之间自动轮转配置，通过RQAlpha框架执行完整回测并评估组合绩效。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rqalpha-cn-backtest@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rqalpha-cn-backtest",
+      "url": "https://clawhub.ai/skills/rqalpha-cn-backtest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rqalpha-cn-backtest",
+    "url": "https://clawhub.ai/skills/rqalpha-cn-backtest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rqalpha-cn-backtest-48e3b5e1a58bdda8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rqalpha-cn-backtest@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-rqalpha-cn-backtest-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76d919579d7c3442020fcadf6ae3139eb86b196e655237cd91bdee82d1fbdba1",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:29:52.312Z"
+}

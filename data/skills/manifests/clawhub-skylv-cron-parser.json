@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36187,
+  "uuid": "skill-clawhub-skylv-cron-parser",
+  "skillKey": "clawhub-skylv-cron-parser",
+  "name": "Skylv Cron Parser",
+  "summary": "Parses, validates, and explains cron expressions. Converts between human-readable and cron format. Triggers: parse cron, validate cron, cron expression.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_cron_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Parses, validates, and explains cron expressions",
+        "Converts between human-readable and cron format",
+        "Triggers: parse cron, validate cron, cron expression."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-cron-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-cron-parser",
+      "url": "https://clawhub.ai/skills/skylv-cron-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-cron-parser",
+    "url": "https://clawhub.ai/skills/skylv-cron-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-cron-parser-a316487f704e7677.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-cron-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-cron-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fea36d9512e7115701af116ab5d24a999a0cd0165f8a007f48e083126cb6e23",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T05:54:50.549Z"
+}

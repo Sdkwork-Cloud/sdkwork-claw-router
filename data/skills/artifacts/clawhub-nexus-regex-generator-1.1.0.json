@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexus-regex-generator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_regex_generator",
+  "skill": {
+    "id": 23554,
+    "skillKey": "clawhub-nexus-regex-generator",
+    "name": "NEXUS Regex Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-regex-generator",
+    "url": "https://clawhub.ai/skills/nexus-regex-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-regex-generator-108087887ad42fe5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and explain regular expressions"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyberforexblockchain",
+      "userId": "s17a9p4658c98g5crz7yh772ex83nny8",
+      "displayName": "CyberForexBlockchain",
+      "image": "https://avatars.githubusercontent.com/u/37193064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775754829972,
+      "changelog": "Added x402 payment protocol (Coinbase/Masumi), multi-chain Cardano + Stellar documentation, 10 protocols",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77522cd15726abe232a1af426c03a89535deab4ec2fa4292fad4b72137d86c52"
+}

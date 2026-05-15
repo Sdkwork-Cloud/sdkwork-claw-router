@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-multimodal-product-similarity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_multimodal_product_similarity",
+  "skill": {
+    "id": 59932,
+    "skillKey": "clawhub-linkfox-multimodal-product-similarity",
+    "name": "Multimodal Product Similarity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-multimodal-product-similarity",
+    "url": "https://clawhub.ai/skills/linkfox-multimodal-product-similarity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-multimodal-product-similarity-64634b6ff5b52f52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "多模态产品图片相似度分析与分组。当用户提到产品图片相似度、视觉分组、查找外观相似的商品、基于图片去重、竞品同款检测、同款商品聚类、按外观分组、image similarity, product image comparison, visual clustering, same-style recognition,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775032948058,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86784fd36667e1c2d73f6a45b1a5ded09312dad4ac09f6a875aee92390db24e4"
+}

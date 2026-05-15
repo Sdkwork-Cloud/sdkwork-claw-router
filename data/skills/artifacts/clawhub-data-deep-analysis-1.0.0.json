@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-deep-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_deep_analysis",
+  "skill": {
+    "id": 70133,
+    "skillKey": "clawhub-data-deep-analysis",
+    "name": "Deep Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-deep-analysis",
+    "url": "https://clawhub.ai/skills/data-deep-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-deep-analysis-c5d51605ee8a9892.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "遇到复杂或矛盾的信息时使用。系统性地追溯根源、交叉验证、形成有证据支撑的结论，避免草率判断。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingginwan",
+      "userId": "s172qkyz62rk2d8xj8pbn4qqds83pk9a",
+      "displayName": "mingginwan",
+      "image": "https://avatars.githubusercontent.com/u/91401222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774581310023,
+      "changelog": "- Initial release of \"data-deep-analysis\" skill.\n- Provides a systematic framework for analyzing complex or conflicting data.\n- Emphasizes evidence-based conclusions and avoids premature judgments.\n- Outlines a four-stage process: information gathering, pattern identification, hypothesis & validation, and conclusion.\n- Includes warning signs and common pitfalls to help users maintain rigorous analysis standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b95b385fae4dfc8766887967ce58ffbaba55ee3201b2a1b558271b4825549872"
+}

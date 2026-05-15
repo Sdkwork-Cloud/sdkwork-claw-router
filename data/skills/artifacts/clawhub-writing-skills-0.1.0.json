@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/writing-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.writing_skills",
+  "skill": {
+    "id": 9877,
+    "skillKey": "clawhub-writing-skills",
+    "name": "Writing Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "writing-skills",
+    "url": "https://clawhub.ai/skills/writing-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/writing-skills-8e60e48ace117408.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlc000190",
+      "userId": "s17eqtvxjm6jkak76k71zxaa5s85cy99",
+      "displayName": "zlc000190",
+      "image": "https://avatars.githubusercontent.com/u/8969941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2106,
+      "installsAllTime": 76,
+      "installsCurrent": 68,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770691959709,
+      "changelog": "Initial release: 编写技能",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0cde9e4a16a63c85bd4daef5cddb0fe93c2c155eb2a476283f1f086f867618ff"
+}

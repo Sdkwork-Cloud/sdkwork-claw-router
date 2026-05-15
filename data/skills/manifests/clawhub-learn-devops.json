@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27400,
+  "uuid": "skill-clawhub-learn-devops",
+  "skillKey": "clawhub-learn-devops",
+  "name": "Learn DevOps",
+  "summary": "Learn DevOps on LabEx through culture and toolchain courses plus CI/CD and ops labs. DevOps courses and labs from the MCP catalog; align picks with how LabEx...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_devops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huhuhang",
+      "features": [
+        "Learn DevOps on LabEx through culture and toolchain courses plus CI/CD and ops labs",
+        "DevOps courses and labs from the MCP catalog",
+        "align picks with how LabEx..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-devops@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5147530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-devops",
+      "url": "https://clawhub.ai/skills/learn-devops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-devops",
+    "url": "https://clawhub.ai/skills/learn-devops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-devops-eb9e3b1db7d90109.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-devops@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-devops-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f16646bd4533bd0efdd8eb2f929871e71bc9d8d331c39f8d86e3bd20cccd60b",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:35:48.938Z"
+}

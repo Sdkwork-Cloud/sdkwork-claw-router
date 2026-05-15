@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-secure-checker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_secure_checker",
+  "skill": {
+    "id": 40052,
+    "skillKey": "clawhub-skill-secure-checker",
+    "name": "Skill Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-secure-checker",
+    "url": "https://clawhub.ai/skills/skill-secure-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-secure-checker-56c0e4331c12c6a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scans Python skill code to detect security risks like malicious patterns, hardcoded secrets, dangerous functions, and integrates VirusTotal sca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774650194685,
+      "changelog": "skill-secure-checker v0.1.0\n\n- Initial release supporting static code analysis for Python skills.\n- Detects hardcoded secrets, dangerous functions, and risky code patterns.\n- Integrates VirusTotal API for optional file reputation checks.\n- Outputs machine-readable JSON and user-friendly HTML security reports.\n- Risk scoring with configurable severity thresholds.\n- Zero external Python dependencies; works standalone.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:164346d03308a1d5a31ca9512b33edb84297ebb6af61004c895857157c30fd0b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27829,
+  "uuid": "skill-clawhub-deapi-audio",
+  "skillKey": "clawhub-deapi-audio",
+  "name": "Deapi Audio",
+  "summary": "Text-to-speech, voice cloning, voice design, and transcribe audio files via deAPI GPU network. Trigger on 'text to speech', 'TTS', 'generate voice', 'read al...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deapi_audio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex Glowacki",
+      "features": [
+        "Text-to-speech, voice cloning, voice design, and transcribe audio files via deAPI GPU network",
+        "Trigger on 'text to speech', 'TTS', 'generate voice', 'read al..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deapi-audio@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22919693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deapi-audio",
+      "url": "https://clawhub.ai/skills/deapi-audio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deapi-audio",
+    "url": "https://clawhub.ai/skills/deapi-audio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deapi-audio-9ed3b89f54897139.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deapi-audio@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deapi-audio-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b297c5985b69afe1188c07861c448213f513aa7f4cc96b19e56ff413cd7f67c",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:49:15.013Z"
+}

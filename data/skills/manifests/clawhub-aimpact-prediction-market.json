@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63147,
+  "uuid": "skill-clawhub-aimpact-prediction-market",
+  "skillKey": "clawhub-aimpact-prediction-market",
+  "name": "aimpact-prediction-market",
+  "summary": "AIMPACT Prediction Market 技能提供预测市场（如 Polymarket）实时监控，实时推送提醒，基于 AI 评分智能排序，支持定时推送。当用户说\"查询预测市场热门事件\"、\"查询预测市场异常交易\"、\"查询预测市场交易机会\"或\"检查预测市场变化\"时调用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aimpact_prediction_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIMPACT",
+      "features": [
+        "AIMPACT Prediction Market 技能提供预测市场（如 Polymarket）实时监控，实时推送提醒，基于 AI 评分智能排序，支持定时推送。当用户说\"查询预测市场热门事件."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aimpact-prediction-market@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254596585?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aimpact-prediction-market",
+      "url": "https://clawhub.ai/skills/aimpact-prediction-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aimpact-prediction-market",
+    "url": "https://clawhub.ai/skills/aimpact-prediction-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aimpact-prediction-market-2ad74da4964c9688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aimpact-prediction-market@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aimpact-prediction-market-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75d5214b92d1c31dcffda6d17f81499e1045f37f5479cb04c729d20860649c6d",
+      "artifactSizeBytes": 2736
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:39:30.970Z"
+}

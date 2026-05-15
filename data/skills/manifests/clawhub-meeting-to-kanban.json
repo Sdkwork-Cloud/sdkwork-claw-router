@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28537,
+  "uuid": "skill-clawhub-meeting-to-kanban",
+  "skillKey": "clawhub-meeting-to-kanban",
+  "name": "meeting-to-kanban",
+  "summary": "Convert meeting notes or transcripts into a clean Kanban board with owners, due dates, blockers, and next actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_to_kanban",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "Convert meeting notes or transcripts into a clean Kanban board with owners, due dates, blockers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-to-kanban@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-to-kanban",
+      "url": "https://clawhub.ai/skills/meeting-to-kanban"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-to-kanban",
+    "url": "https://clawhub.ai/skills/meeting-to-kanban",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-to-kanban-124f71e7c7e2c2f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-to-kanban@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-to-kanban-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d39b3eb8c5b69c9ce96ae659358d3598e6590a62c804b12792c64ee5a813dde2",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:59:23.329Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiejiari@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiejiari",
+  "skill": {
+    "id": 57913,
+    "skillKey": "clawhub-jiejiari",
+    "name": "节假日jiejiari"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiejiari",
+    "url": "https://clawhub.ai/skills/jiejiari",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiejiari-5b6d098e7b05868c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up official Mainland China public holiday schedules and make-up workdays from bundled annual reference data. Use when the user asks about 法定节假日, 放假安排, 调..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvy",
+      "userId": "s17drhqvqmrfz94tm5320kfgj983kf7m",
+      "displayName": "jvy",
+      "image": "https://avatars.githubusercontent.com/u/5337221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773666584765,
+      "changelog": "Initial release of jiejiari skill.\n\n- Supports lookup of official Mainland China public holiday schedules and make-up workdays using 2026 reference data.\n- Answers queries related to 法定节假日, 放假安排, 调休, 补班, and 国务院办公厅 holiday notices.\n- Distinguishes between official holiday arrangements and traditional lunar festival date lookups.\n- Responds to questions about specific dates, individual festival arrangements, or provides a full 2026 list, strictly based on included data.\n- Clearly identifies whether a given date is a holiday, make-up workday, normal weekend, or regular workday.\n- Only provides data for the year 2026; informs users if other years are requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:609c0d7618ba1f42693b8db6be334a3ed98dc71f2c70662755efa4c44b57794d"
+}

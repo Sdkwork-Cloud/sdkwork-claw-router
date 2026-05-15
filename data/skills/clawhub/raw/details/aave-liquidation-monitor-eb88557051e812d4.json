@@ -1,0 +1,49 @@
+{
+  "skill": {
+    "slug": "aave-liquidation-monitor",
+    "displayName": "Aave Liquidation Monitor",
+    "summary": "Proactive monitoring of Aave V3 borrow positions with liquidation alerts. Queries user collateral, debt, and health factor across chains (Ethereum, Polygon, Arbitrum, etc.). Sends urgent alerts to Telegram/Discord/Slack when health factor drops below configurable thresholds (critical at 1.05, warning at 1.2). Use when you need continuous monitoring of Aave positions, want alerts before liquidation risk occurs, or need periodic summaries of your borrowing health.",
+    "tags": {
+      "aave": "1.0.1",
+      "alerts": "1.0.1",
+      "defi": "1.0.1",
+      "latest": "1.0.1",
+      "liquidation": "1.0.1",
+      "monitoring": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1545,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1770788919707,
+    "updatedAt": 1778385071758
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1770789188759,
+    "changelog": "Security patch: Added missing cron-runner.js, clarified credential handling (uses OpenClaw's message routing), removed full API response logging, added detailed SECURITY.md for auditors.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "jgramajo4",
+    "userId": "publishers:jgramajo4",
+    "displayName": "jgramajo4",
+    "image": "https://avatars.githubusercontent.com/u/22783249?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385071758
+  }
+}

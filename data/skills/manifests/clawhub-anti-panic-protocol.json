@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18128,
+  "uuid": "skill-clawhub-anti-panic-protocol",
+  "skillKey": "clawhub-anti-panic-protocol",
+  "name": "Anti Panic Protocol",
+  "summary": "Handle tool failures under pressure with bounded retries, clean user communication, and safe escalation. Use when commands/tools fail, when repeated retries...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_panic_protocol",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Noël",
+      "features": [
+        "Handle tool failures under pressure with bounded retries, clean user communication, and safe es.",
+        "Use when commands/tools fail, when repeated retries..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-panic-protocol@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64641984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-panic-protocol",
+      "url": "https://clawhub.ai/skills/anti-panic-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-panic-protocol",
+    "url": "https://clawhub.ai/skills/anti-panic-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-panic-protocol-228f7f965cd9060a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-panic-protocol@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-panic-protocol-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:decc0be76a32d524bfec296291a673f407dde9a9d4ea6e439f56727a6804f8f0",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T19:44:59.115Z"
+}

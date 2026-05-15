@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35283,
+  "uuid": "skill-clawhub-nm-leyline-sem-integration",
+  "skillKey": "clawhub-nm-leyline-sem-integration",
+  "name": "Nm Leyline Sem Integration",
+  "summary": "Foundation skill for sem (semantic diff CLI) integration. Provides detection, install-on-first-use, and output normalization patterns for consumer skills",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_leyline_sem_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Foundation skill for sem (semantic diff CLI) integration",
+        "Provides detection, install-on-first-use, and output normalization patterns for consumer skills"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-leyline-sem-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-leyline-sem-integration",
+      "url": "https://clawhub.ai/skills/nm-leyline-sem-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-leyline-sem-integration",
+    "url": "https://clawhub.ai/skills/nm-leyline-sem-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-leyline-sem-integration-80a48165f509cdd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-leyline-sem-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-leyline-sem-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a113c6c1972a4c564d9b8a18d589840f239f0539205267c9e1a8fe3b176fce44",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:18:08.890Z"
+}

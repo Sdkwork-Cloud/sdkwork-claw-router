@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/engramclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engramclaw",
+  "skill": {
+    "id": 51470,
+    "skillKey": "clawhub-engramclaw",
+    "name": "EngramClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engramclaw",
+    "url": "https://clawhub.ai/skills/engramclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engramclaw-d81d646dd3ceb6b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sistema de memoria persistente para agentes IA. Usa mem_save después de bugfixes, decisiones, descubrimientos, cambios de config. Usa mem_search cuando el us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dragonjar",
+      "userId": "s17dyy9svsxrqfpf9rjjzfgjm1843ev5",
+      "displayName": "DragonJAR",
+      "image": "https://avatars.githubusercontent.com/u/28887492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773184504874,
+      "changelog": "engramclaw 1.0.0 Changelog\n\n- Added MCPorter as a required dependency alongside Engram; skill now requires both binaries installed.\n- Installation and setup instructions updated: now includes step-by-step guides for installing both MCPorter and Engram on all supported platforms.\n- Metadata updated to document required binaries (mcporter, engram) and new installation methods via npm and brew for MCPorter.\n- Skill setup section clarified: details on MCPorter/Engram registration, improved verification instructions, and expected output shown.\n- No changes to functionality or APIs; all updates are documentation and setup improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb3bda045b48c0e347417d0d97cee0d25a4f1a51c69b575ea7b22423c21af412"
+}

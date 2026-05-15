@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-draw-for-lucky@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_draw_for_lucky",
+  "skill": {
+    "id": 57497,
+    "skillKey": "clawhub-daily-draw-for-lucky",
+    "name": "Daily Draw For Lucky"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-draw-for-lucky",
+    "url": "https://clawhub.ai/skills/daily-draw-for-lucky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-draw-for-lucky-085bdaf41dda3f2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily fortune draw based on Guanyin Oracle (观音灵签). 100 oracle sticks with career, love, health, wealth guidance. One draw per day. Triggers: 'draw', '帮我抽个签',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lllyandy",
+      "userId": "s174ayrh3c1r5gbgkfqf6kbn3184h9pn",
+      "displayName": "yu liu",
+      "image": "https://avatars.githubusercontent.com/u/92960327?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773292443652,
+      "changelog": "- SKILL.md simplified and made more concise for easier reading\n- Basic usage, triggers, and daily limit now presented in a brief list\n- Oracle structure and fortune distribution summarized for quick understanding\n- Guidance and notes sections reduced to essential points\n- Example and detailed explanations removed for clarity and brevity",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f47982cb87be249be5857769487890af7a11d95431ae0e5a1d91f13ba88d50f0"
+}

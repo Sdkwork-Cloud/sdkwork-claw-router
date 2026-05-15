@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zotero-vectorize@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_vectorize",
+  "skill": {
+    "id": 26824,
+    "skillKey": "clawhub-zotero-vectorize",
+    "name": "Zotero Vectorize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-vectorize",
+    "url": "https://clawhub.ai/skills/zotero-vectorize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-vectorize-2b9f50176e409848.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and maintain a cross-platform local Zotero semantic index using metadata embeddings and PDF full-text chunk embeddings. Use when the user asks to vecto..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yckbz",
+      "userId": "publishers:yckbz",
+      "displayName": "yckbz",
+      "image": "https://avatars.githubusercontent.com/u/169670310?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773056728769,
+      "changelog": "- Initial release of zotero-vectorize.\n- Build and maintain a local, cross-platform Zotero semantic index using embeddings for metadata and PDF full-text chunks.\n- Strictly read-only input from Zotero; no modifications to user data.\n- Comprehensive, step-by-step workflow for builds, incremental updates, backups, and verification.\n- Detailed integration with reference files per platform and troubleshooting guidance.\n- Automated reporting of counts, file sizes, and operational summaries after actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7474cc7ed4eb53f5e082de57755d2fe5f9be8834b9282acb34e2c235f2d2f6c"
+}

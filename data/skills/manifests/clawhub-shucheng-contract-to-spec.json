@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69161,
+  "uuid": "skill-clawhub-shucheng-contract-to-spec",
+  "skillKey": "clawhub-shucheng-contract-to-spec",
+  "name": "合同文档转写技能",
+  "summary": "将合同文件转换为需求规格说明书。使用场景：用户提供合同文件名（如\"合同 -XXX 系统.docx\"），需要生成完整的需求规格说明书。自动完成：1) 读取合同提取项目信息 2) 生成系统架构图 3) 生成 6 个子功能原型图 4) 生成带格式的 Word 文档到桌面。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shucheng_contract_to_spec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lan2898408767",
+      "features": [
+        "将合同文件转换为需求规格说明书。使用场景：用户提供合同文件名（如\"合同 -XXX 系统.docx\"），需要生成完整的需求规格说明书。自动完成：1) 读取合同提取项目信息 2) 生成系统架构图."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shucheng-contract-to-spec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134391587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shucheng-contract-to-spec",
+      "url": "https://clawhub.ai/skills/shucheng-contract-to-spec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shucheng-contract-to-spec",
+    "url": "https://clawhub.ai/skills/shucheng-contract-to-spec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shucheng-contract-to-spec-0667d0205b116b8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shucheng-contract-to-spec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shucheng-contract-to-spec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61dd46efc6020903e64ed46bea999ad7fe5c0d63f404700e15fb553471b78f84",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:23:12.820Z"
+}

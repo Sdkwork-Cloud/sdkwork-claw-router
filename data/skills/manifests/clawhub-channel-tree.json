@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34913,
+  "uuid": "skill-clawhub-channel-tree",
+  "skillKey": "clawhub-channel-tree",
+  "name": "Channel Tree",
+  "summary": "Manages hierarchical OpenClaw session channels to split tasks, create sub-channels, track status, and save tree state with inheritance and health monitoring.",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channel_tree",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kukuxNd",
+      "features": [
+        "Manages hierarchical OpenClaw session channels to split tasks, create sub-channels, track statu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/channel-tree@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/182144217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "channel-tree",
+      "url": "https://clawhub.ai/skills/channel-tree"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channel-tree",
+    "url": "https://clawhub.ai/skills/channel-tree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channel-tree-39913d741e07e59b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/channel-tree@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-channel-tree-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fb42934819e6793f17683404d38ef24b6b2ba3358af51db55fa6889b63d3d5a",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:42:56.195Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neo-ddg-search-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo_ddg_search_hardened",
+  "skill": {
+    "id": 47992,
+    "skillKey": "clawhub-neo-ddg-search-hardened",
+    "name": "Neo Ddg Search Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo-ddg-search-hardened",
+    "url": "https://clawhub.ai/skills/neo-ddg-search-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo-ddg-search-hardened-152b51d9e7d09485.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using DuckDuckGo. Free, no API key required. Use when the user asks to search the web, look something up, find information online, research a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776924034737,
+      "changelog": "- Initial release of the DuckDuckGo web search skill using the ddgs Python library.\n- Search the web without an API key; simple command-line interface provided.\n- Returns results with title, URL, and snippet; allows result count customization (default 5, max 20).\n- Guidance provided for safe handling of search data and strict security guardrails against prompt injection, SSRF, and data exfiltration.\n- Supports follow-up content retrieval using web_fetch on safe, publicly routable URLs only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dfaec915e89e86910fedc1945e13601a61656fcd9a8207855ef1e32f8679fc7"
+}

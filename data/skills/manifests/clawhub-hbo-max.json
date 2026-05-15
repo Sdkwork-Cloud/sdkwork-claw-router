@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63882,
+  "uuid": "skill-clawhub-hbo-max",
+  "skillKey": "clawhub-hbo-max",
+  "name": "Hbo Max",
+  "summary": "提供高质量剧集与纪录片，结合HBO品牌和Warner Bros. IP，打造差异化流媒体内容与竞争优势。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hbo_max",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供高质量剧集与纪录片，结合HBO品牌和Warner Bros",
+        "IP，打造差异化流媒体内容与竞争优势。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hbo-max@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hbo-max",
+      "url": "https://clawhub.ai/skills/hbo-max"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hbo-max",
+    "url": "https://clawhub.ai/skills/hbo-max",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hbo-max-9894c2ac680a6427.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hbo-max@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hbo-max-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0876da974ae28246fe8a0a5ae8c9768daaa01e1bafbcded03dc3377f97d53eff",
+      "artifactSizeBytes": 2116
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T18:30:55.238Z"
+}

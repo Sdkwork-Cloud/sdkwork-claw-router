@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pmos-search-menu-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pmos_search_menu_skill",
+  "skill": {
+    "id": 24839,
+    "skillKey": "clawhub-pmos-search-menu-skill",
+    "name": "Pmos Search Menu Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pmos-search-menu-skill",
+    "url": "https://clawhub.ai/skills/pmos-search-menu-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pmos-search-menu-skill-d5e766693ee8c3d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates menu navigation on Gansu Electric Power Trading platform (PMOS) by opening specified menu paths, handling tabs, and capturing page snapshots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xu-oliver",
+      "userId": "s174men5kanjx90th89azevmmx83j6ms",
+      "displayName": "xu-oliver",
+      "image": "https://avatars.githubusercontent.com/u/17894076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 391,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773728880888,
+      "changelog": "Initial release with scripting and documentation support.\n\n- Added PowerShell, Bash, and Node.js scripts for automating PMOS menu navigation.\n- Included README.md and SKILL.md with usage instructions and troubleshooting.\n- Added ClawHub package configuration file (clawhub.json).\n- Provided detailed navigation path references in references/NAVIGATION_PATH.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b136a6a440cda86d5711498de5127822dd65ec61828f21a275b51b6d4bec1df6"
+}

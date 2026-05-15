@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26159,
+  "uuid": "skill-clawhub-free-feishu-voice",
+  "skillKey": "clawhub-free-feishu-voice",
+  "name": "free-feishu-voice",
+  "summary": "Send customized voice messages to Feishu chats by generating and uploading TTS audio using configurable credentials and options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_feishu_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jisuwudou",
+      "features": [
+        "Send customized voice messages to Feishu chats by generating and uploading TTS audio using conf."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-feishu-voice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5960639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-feishu-voice",
+      "url": "https://clawhub.ai/skills/free-feishu-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-feishu-voice",
+    "url": "https://clawhub.ai/skills/free-feishu-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-feishu-voice-a0eb93b9872d61a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-feishu-voice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-feishu-voice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72727155697c3e2a454fc0d021afa147855ecca4c1d9a38ff0c811af40d5300f",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:13:27.061Z"
+}

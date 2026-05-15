@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yandex-archive-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_archive_scraper",
+  "skill": {
+    "id": 57915,
+    "skillKey": "clawhub-yandex-archive-scraper",
+    "name": "Yandex Archive Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-archive-scraper",
+    "url": "https://clawhub.ai/skills/yandex-archive-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-archive-scraper-1c6f258328d15cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and extract data from Yandex.Archive (Яндекс.Архив) — metric books, newspapers, directories. Bypasses bot protection via Scrapling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flobo3",
+      "userId": "s179zg9xncbgjedmxmj0yx1q2983sn3q",
+      "displayName": "Flo",
+      "image": "https://avatars.githubusercontent.com/u/268352850?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775133490538,
+      "changelog": "Initial ClawHub publication: search Yandex.Archive (metric books, newspapers, directories) with bot protection bypass.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d750a1d421fa7213b5b4164d9a842b7a6ff5541b5bed21cad2629275c3cf706"
+}

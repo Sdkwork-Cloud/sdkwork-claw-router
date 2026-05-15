@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37742,
+  "uuid": "skill-clawhub-moneyhub-enterprise",
+  "skillKey": "clawhub-moneyhub-enterprise",
+  "name": "Moneyhub Enterprise",
+  "summary": "Moneyhub Enterprise integration. Manage data, records, and automate workflows. Use when the user wants to interact with Moneyhub Enterprise data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moneyhub_enterprise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Moneyhub Enterprise integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Moneyhub Enterprise data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moneyhub-enterprise@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moneyhub-enterprise",
+      "url": "https://clawhub.ai/skills/moneyhub-enterprise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moneyhub-enterprise",
+    "url": "https://clawhub.ai/skills/moneyhub-enterprise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moneyhub-enterprise-098b42fb83baeaae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moneyhub-enterprise@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-moneyhub-enterprise-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:499e3c04eefe3f637acfd490b296e511b513ef9bbae9a7fb955a5a84eea37a17",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:45:32.715Z"
+}

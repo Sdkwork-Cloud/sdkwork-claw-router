@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45844,
+  "uuid": "skill-clawhub-dark-launch-controller",
+  "skillKey": "clawhub-dark-launch-controller",
+  "name": "Dark Launch Controller",
+  "summary": "Plan and execute dark launches with feature flags, performance monitoring, and gradual exposure rollouts",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dark_launch_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Plan and execute dark launches with feature flags, performance monitoring, and gradual exposure."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dark-launch-controller@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dark-launch-controller",
+      "url": "https://clawhub.ai/skills/dark-launch-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dark-launch-controller",
+    "url": "https://clawhub.ai/skills/dark-launch-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dark-launch-controller-309cb7081727c7c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dark-launch-controller@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dark-launch-controller-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fb716aff80490ee98a46ec42ba9b80669a3031c8a842f982645258cb3d0b5dd",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:54.381Z"
+}

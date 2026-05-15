@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmaclaw-cheminformatics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaclaw_cheminformatics",
+  "skill": {
+    "id": 26081,
+    "skillKey": "clawhub-pharmaclaw-cheminformatics",
+    "name": "Pharmaclaw Cheminformatics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaclaw-cheminformatics",
+    "url": "https://clawhub.ai/skills/pharmaclaw-cheminformatics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaclaw-cheminformatics-dd2bae793863aedc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced cheminformatics agent for 3D molecular analysis, pharmacophore mapping, format conversion, RECAP fragmentation, and stereoisomer enumeration. The \"s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheminem",
+      "userId": "publishers:cheminem",
+      "displayName": "Cheminem",
+      "image": "https://avatars.githubusercontent.com/u/260304734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773252927269,
+      "changelog": "pharmaclaw-cheminformatics v1.0.0\n\n- Initial release of an advanced cheminformatics agent for 3D molecular analysis and drug development workflows.\n- Adds 3D conformer generation, pharmacophore feature mapping, molecular format conversion (SMILES/SDF/MOL/InChI/PDB/XYZ), RECAP retrosynthetic fragmentation, and stereoisomer enumeration (R/S, E/Z).\n- Includes modules for ensemble conformer generation, pharmacophore extraction/fingerprints/comparison, retrosynthetic fragmentation, and stereochemistry analysis.\n- Provides a unified chain interface for integration with pharmacology, catalyst design, and IP expansion workflows.\n- Supports batch and single-molecule analysis; outputs 3D coordinates, SDF/PNG visualizations, and structured reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6042ab93af014e91e79218a40ce7eea5c9ddb89fea03cf2ddb92d27253b12976"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/valuescan-data-skill-beta@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.valuescan_data_skill_beta",
+  "skill": {
+    "id": 63438,
+    "skillKey": "clawhub-valuescan-data-skill-beta",
+    "name": "valuescan-data-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "valuescan-data-skill-beta",
+    "url": "https://clawhub.ai/skills/valuescan-data-skill-beta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/valuescan-data-skill-beta-31b7d8476d0d9785.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ValueScan数据查询Skill。支持代币搜索、K线数据、主力资金流分析、链上数据查询等加密货币市场数据分析功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "valuescan-io",
+      "userId": "s178a2c63ppvyayqm3b5knatwd83g7kj",
+      "displayName": "ValueScan-ai",
+      "image": "https://avatars.githubusercontent.com/u/44593427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776165153241,
+      "changelog": "Initial release of ValueScan Data Skill.\n\n- Provides advanced cryptocurrency market analytics, supporting token search, K-line data, major fund flow, and on-chain data queries.\n- Enables scenario-based queries such as market signal alerts, on-chain whale monitoring, portfolio analysis, and support/resistance level extraction.\n- Comprehensive API documentation available in Chinese, including usage examples, parameter explanations, and authentication details.\n- Supports both centralized exchange and on-chain data analysis for a wide range of digital assets.\n- Requires API Key and Secret Key for access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f5edec1b246b0802160e2fa3c8b34322cf44d2da19f2ff7baeddf727cabe9e3"
+}

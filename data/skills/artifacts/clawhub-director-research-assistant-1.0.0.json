@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/director-research-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.director_research_assistant",
+  "skill": {
+    "id": 39734,
+    "skillKey": "clawhub-director-research-assistant",
+    "name": "Research Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "director-research-assistant",
+    "url": "https://clawhub.ai/skills/director-research-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/director-research-assistant-f4f7c0393a0150fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct web research on any topic, summarize findings, and create structured reports. Use when user wants to (1) research a topic online, (2) get summaries o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "di5cip1e",
+      "userId": "s17ewhty0883w7qaxe537w985583mxaf",
+      "displayName": "di5cip1e",
+      "image": "https://avatars.githubusercontent.com/u/87604837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775580949579,
+      "changelog": "Initial release - web research, summaries, structured reports",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24bb6b4a1f2d6f05d74407aedca9b83242b8d63b6b70115a2a9d1c3115663ac3"
+}

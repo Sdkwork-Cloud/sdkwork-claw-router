@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28794,
+  "uuid": "skill-clawhub-ayao-updater",
+  "skillKey": "clawhub-ayao-updater",
+  "name": "Ayao Updater",
+  "summary": "Automatically updates OpenClaw and installed skills on a configurable schedule, handling package manager detection, local changes, and notifications.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ayao_updater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ayao99315",
+      "features": [
+        "Automatically updates OpenClaw and installed skills on a configurable schedule, handling packag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ayao-updater@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/225226537?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ayao-updater",
+      "url": "https://clawhub.ai/skills/ayao-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ayao-updater",
+    "url": "https://clawhub.ai/skills/ayao-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ayao-updater-a1e14b1ff02669ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ayao-updater@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ayao-updater-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:484d0ee052518a6fadc301babc56b7ab9ca7ae242dcf6cbf58d1edfe07baa3f7",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:05:09.711Z"
+}

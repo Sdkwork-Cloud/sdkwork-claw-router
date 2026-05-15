@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quantumlab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantumlab",
+  "skill": {
+    "id": 13164,
+    "skillKey": "clawhub-quantumlab",
+    "name": "quantumlab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantumlab",
+    "url": "https://clawhub.ai/skills/quantumlab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantumlab-4d30f6dcaf662631.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run the /home/bram/work/quantum_lab Python scripts and demos inside the existing venv ~/.venvs/qiskit. Use when asked (e.g., via Telegram/OpenClaw) to run quant_math_lab.py, qcqi_pure_math_playground.py, quantum_app.py subcommands, quantum."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bramdo",
+      "userId": "publishers:bramdo",
+      "displayName": "Bram Dobbelaar",
+      "image": "https://avatars.githubusercontent.com/u/1932397?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1890,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770329156624,
+      "changelog": "Initial release.\n\n- Provides helpers to run quantum_lab repo commands within a preconfigured Qiskit virtual environment.\n- Supports both full and shorthand command styles for easy integration with Telegram/OpenClaw.\n- Includes command expansion for gl/ql prefixes.\n- Offers clear instructions for overriding default paths and installing dependencies if needed.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc37f54e6fedde56951f57e363bf33e8c20ee4f2a2726d9b86c9870e2aa655b6"
+}

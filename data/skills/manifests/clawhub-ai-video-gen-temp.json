@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30180,
+  "uuid": "skill-clawhub-ai-video-gen-temp",
+  "skillKey": "clawhub-ai-video-gen-temp",
+  "name": "Ai Video Gen Temp",
+  "summary": "End-to-end AI video generation - create videos from text prompts using image generation, video synthesis, voice-over, and editing. Supports OpenAI DALL-E, Re...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_gen_temp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mmyg11",
+      "features": [
+        "End-to-end AI video generation",
+        "create videos from text prompts using image generation, video synthesis, voice-over, and editing",
+        "Supports OpenAI DALL-E, Re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-video-gen-temp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170302563?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-video-gen-temp",
+      "url": "https://clawhub.ai/skills/ai-video-gen-temp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-gen-temp",
+    "url": "https://clawhub.ai/skills/ai-video-gen-temp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-gen-temp-e796ad0a96d7e4f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-video-gen-temp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-video-gen-temp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb0a61559a0cca919efe18c5dc55611e63bdca529049670caa742a86aff0fe56",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:01:28.702Z"
+}

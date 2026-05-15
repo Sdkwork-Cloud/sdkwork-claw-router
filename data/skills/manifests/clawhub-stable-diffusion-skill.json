@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35628,
+  "uuid": "skill-clawhub-stable-diffusion-skill",
+  "skillKey": "clawhub-stable-diffusion-skill",
+  "name": "stable Diffusion Skill",
+  "summary": "Complete Stable Diffusion WebUI integration skill. Supports txt2img, img2img, inpainting, ControlNet, LoRA, model switching, upscaling, and more via SD WebUI...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stable_diffusion_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Freyr",
+      "features": [
+        "Complete Stable Diffusion WebUI integration skill",
+        "Supports txt2img, img2img, inpainting, ControlNet, LoRA, model switching, upscaling, and more v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stable-diffusion-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112866258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stable-diffusion-skill",
+      "url": "https://clawhub.ai/skills/stable-diffusion-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stable-diffusion-skill",
+    "url": "https://clawhub.ai/skills/stable-diffusion-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stable-diffusion-skill-0b94f4636ce22817.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stable-diffusion-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stable-diffusion-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a584cc749bb75ae37562f052cec26c99c60df98567de1b9d9f422b6063e7c866",
+      "artifactSizeBytes": 2629
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T18:29:03.741Z"
+}

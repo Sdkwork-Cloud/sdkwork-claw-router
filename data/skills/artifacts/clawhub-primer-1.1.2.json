@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/primer@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.primer",
+  "skill": {
+    "id": 10499,
+    "skillKey": "clawhub-primer",
+    "name": "The Primer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "primer",
+    "url": "https://clawhub.ai/skills/primer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/primer-04e400bfa26174f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bring Neal Stephenson's \"Young Lady's Illustrated Primer\" from The Diamond Age to life. Transform your AI from a helpful butler into a subversive tutor — one that adapts to your life stage, holds you accountable to who you're becoming, and."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucko",
+      "userId": "publishers:brucko",
+      "displayName": "brucko",
+      "image": "https://avatars.githubusercontent.com/u/9703240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2434,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 4,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1769976550862,
+      "changelog": "No user-facing changes in this version.\n\nSubmit feedback or issues here: https://docs.google.com/forms/d/e/1FAIpQLScbmg1WNwVaVZdK2tYvY2QLy_b8LWnePMmESeywLZl8IFC6Cg/viewform?usp=dialog",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c148fa4d2b669d6743b0857d49307b2a1df0d5063d8a8321ade469870a5bb49"
+}

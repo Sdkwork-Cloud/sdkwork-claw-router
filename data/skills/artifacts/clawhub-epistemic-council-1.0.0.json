@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/epistemic-council@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.epistemic_council",
+  "skill": {
+    "id": 18259,
+    "skillKey": "clawhub-epistemic-council",
+    "name": "Epistemic Council"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "epistemic-council",
+    "url": "https://clawhub.ai/skills/epistemic-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/epistemic-council-db0b35e8b41360d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and execute all Epistemic Council pipeline operations including status checks, validations, audits, and adversarial re-challenges."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "su-ariel",
+      "userId": "publishers:su-ariel",
+      "displayName": "su-ariel",
+      "image": "https://avatars.githubusercontent.com/u/242868732?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771718292724,
+      "changelog": "Epistemic Council Skill initial release.\n\n- Introduces triggers for all Epistemic Council pipeline operations, including running the council, status checks, health checks, claim validation, boundary checks, gap finding, and rechallenge.\n- Provides instructions for invocation using the exec tool and details the working directory and workspace location.\n- Lists available commands for specific operations within the pipeline.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fba9549fe9ac5cb18d5ea9282a9bceb30c7c237c06f6ca04e786ac24a1e9d2eb"
+}

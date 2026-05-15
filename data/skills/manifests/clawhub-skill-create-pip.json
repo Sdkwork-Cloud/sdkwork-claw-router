@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41657,
+  "uuid": "skill-clawhub-skill-create-pip",
+  "skillKey": "clawhub-skill-create-pip",
+  "name": "skill-create-pip",
+  "summary": "Control Ecovacs/DEEBOT robot vacuums via the Ecovacs IoT API. Use when the user wants to control a robot vacuum, check battery, start/stop/pause cleaning, re...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_create_pip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1209823208",
+      "features": [
+        "Control Ecovacs/DEEBOT robot vacuums via the Ecovacs IoT API",
+        "Use when the user wants to control a robot vacuum, check battery, start/stop/pause cleaning, re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-create-pip@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29597482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-create-pip",
+      "url": "https://clawhub.ai/skills/skill-create-pip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-create-pip",
+    "url": "https://clawhub.ai/skills/skill-create-pip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-create-pip-de9295986fa876cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-create-pip@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-create-pip-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59bca4c29a1b5c8768b9255e2307f381fde1e4a2919fed1b53e32219d8fc5a52",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:37:14.304Z"
+}

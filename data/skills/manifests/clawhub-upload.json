@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65892,
+  "uuid": "skill-clawhub-upload",
+  "skillKey": "clawhub-upload",
+  "name": "Github Ops",
+  "summary": "指导使用 Git 命令规范上传本地文件到 GitHub，涵盖初始化、分支管理、大文件处理及冲突解决方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wow",
+      "features": [
+        "指导使用 Git 命令规范上传本地文件到 GitHub，涵盖初始化、分支管理、大文件处理及冲突解决方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178591028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upload",
+      "url": "https://clawhub.ai/skills/upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upload",
+    "url": "https://clawhub.ai/skills/upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upload-ff4085ad157354dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91f9cd4cb63ce1ca472e1a9a5e5205d021198305e7ac03e90221bd0569440651",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:52:21.903Z"
+}

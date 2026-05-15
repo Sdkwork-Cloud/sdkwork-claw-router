@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-persona-os@1.6.2",
+  "version": "1.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_persona_os",
+  "skill": {
+    "id": 8396,
+    "skillKey": "clawhub-ai-persona-os",
+    "name": "AI Persona OS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-persona-os",
+    "url": "https://clawhub.ai/skills/ai-persona-os",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-persona-os-487c541d8799915a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The complete operating system for OpenClaw agents. Now with 13 Iconic Character souls (Thanos, Deadpool, JARVIS, Mary Poppins, Darth Vader, and more), SOUL.m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffjhunter",
+      "userId": "s17fhgfbdhz4g6yqeha2egykyx83grhe",
+      "displayName": "Jeff J Hunter",
+      "image": "https://avatars.githubusercontent.com/u/252698242?v=4"
+    },
+    "stats": {
+      "comments": 8,
+      "downloads": 9802,
+      "installsAllTime": 61,
+      "installsCurrent": 58,
+      "stars": 92,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "1.6.2",
+      "createdAt": 1772526950073,
+      "changelog": "v1.6.2 — Onboarding Fix + VirusTotal Compliance\n\nThe v1.6.0 Iconic Characters update shipped with a broken onboarding flow. Option 4 (SOUL.md Maker) still showed the old \"12 personalities\" menu with Data included and zero iconic characters. Users had to already know character names to find them. This patch fixes the entire setup experience and resolves all VirusTotal scanner findings.\n\n🔥 Redesigned SOUL.md Maker Sub-Menu\n\nOption 4 now opens a clear 4-way menu instead of the old 3-way:\n\nA. 🎭 Original Soul Gallery (11 personalities)\nRook, Nyx, Keel, Sage, Cipher, Blaze, Zen, Beau, Vex, Lumen, Gremlin\n\nB. 🎬 Iconic Characters Gallery (13 characters)\nThanos, Deadpool, JARVIS, Ace Ventura, Austin Powers, Dr. Evil, Seven of Nine, Captain Kirk, Mary Poppins, Darth Vader, Terminator, Alfred, Data\n\nC. 🎯 Quick Forge (~2 min)\n5 targeted questions, one custom SOUL.md\n\nD. 🔬 Deep Forge (~10 min)\nFull guided interview, highly optimized SOUL.md\n\nUsers can also skip the menu entirely by naming any soul or character directly — \"give me JARVIS\" or \"blend Rook + Zen\" just works.\n\n🎬 New Iconic Characters Gallery Display\n\nFull Step 1d added with all 13 characters, descriptions, \"tell me more about [name]\" support, and cross-gallery blending. Say \"show characters\" during setup to jump to it. Say \"show souls\" to jump back.\n\n📋 Main Menu Updated\n\nOption 4 now reads:\n🔥 SOUL.md Maker\n24 ready-to-use souls across two galleries:\n🎭 11 Original Personalities (Rook, Nyx, Sage, Zen...)\n🎬 13 Iconic Characters (Thanos, Deadpool, JARVIS, Mary Poppins...)\nOR build your own from scratch with a guided interview\n\nUsers see what's available before they choose.\n\n🔀 Cross-Gallery Blending\n\nBlend any two souls from either gallery. \"Rook + JARVIS\" reads one from prebuilt-souls and one from iconic-characters, generates a hybrid SOUL.md. Works during setup and via \"blend souls\" command anytime.\n\n🛡️ VirusTotal Compliance\n\nCron templates: Removed \"copy and paste into your terminal\" language. Now says \"the agent will run this via exec.\" Consistent with the exec-first agent rule.\n\nMissing script: Created scripts/security-audit.sh — local-only grep scanner, zero network calls. Was referenced in 4 files but never shipped.\n\nStale versions: Updated heartbeat templates from 1.4.1 to 1.6.2.\n\nGateway config: Softened requireMention directive in AGENTS-template to clearly mark it as optional.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eee3913ea3192436df6f97fa5db801b0c655af951cc02ac010b5622dd1e4df45"
+}

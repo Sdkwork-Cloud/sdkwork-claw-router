@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-only@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_only",
+  "skill": {
+    "id": 28231,
+    "skillKey": "clawhub-the-only",
+    "name": "Your ONLY"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-only",
+    "url": "https://clawhub.ai/skills/the-only",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-only-dd5aa7f8f37151fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A self-evolving, context-aware information curation engine. Use when setting up or running personalized content rituals, fetching deep content, or generating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cdotlock",
+      "userId": "s172er83y3tqrjsp2vawxa6tys83pfrz",
+      "displayName": "cdotlock",
+      "image": "https://avatars.githubusercontent.com/u/177303177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774615955969,
+      "changelog": "**Changelog for the-only v1.0.1**\n\n- Major architectural upgrade: introduced modular references and detailed technical documentation for all key modules (context engine, memory, onboarding, templates, knowledge graph, mesh network, etc).\n- Added multiple new scripts for core features: Discord bot, knowledge archive/indexing, improved knowledge graph, memory I/O, and full mesh sync support.\n- Expanded ritual types, output templates, and onboarding guides (with separate docs per component).\n- Deprecated and removed outdated files: skill guidelines and old resonance network script.\n- Enhanced clarity and completeness of skill description, triggers, and supported workflows in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09d46bfcfcac079786388155f4007a3f7c3cf97f42f1f900f3c9a3bce960a520"
+}

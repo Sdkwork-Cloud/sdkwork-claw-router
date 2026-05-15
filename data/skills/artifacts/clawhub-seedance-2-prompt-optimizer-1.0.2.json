@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-2-prompt-optimizer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_prompt_optimizer",
+  "skill": {
+    "id": 30547,
+    "skillKey": "clawhub-seedance-2-prompt-optimizer",
+    "name": "Seedance 2.0 Prompt-Optimizer Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-prompt-optimizer",
+    "url": "https://clawhub.ai/skills/seedance-2-prompt-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-prompt-optimizer-f49ed157417396e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever a user wants to generate, improve, or convert a video prompt for Seedance 2.0. Triggers on: \"make a Seedance prompt\", \"create a video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wfhiew",
+      "userId": "s17fn92vwawq2rm9f1pjwfhtk984bg5t",
+      "displayName": "WFHiew",
+      "image": "https://avatars.githubusercontent.com/u/134247716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775545453190,
+      "changelog": "- Removed the interactive prompt converter script and its test file (`prompt_converter.py`, `test_prompt_converter.py`)\n- Updated instructions: now gather prompt details conversationally through targeted questions, rather than via a CLI script\n- Adjusted workflow documentation to match the simplified, script-free process\n- No feature or output changes—core prompt formulas and reference file usage remain the same",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c057bb1dde6326264f813e846a7bd1affe3e231a2d0467272ed11ac0cf6d0101"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62628,
+  "uuid": "skill-clawhub-date-count",
+  "skillKey": "clawhub-date-count",
+  "name": "date-count",
+  "summary": "倒计日期以更好安排你的日程.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.date_count",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rain-lei",
+      "features": [
+        "倒计日期以更好安排你的日程."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/date-count@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227929994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "date-count",
+      "url": "https://clawhub.ai/skills/date-count"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "date-count",
+    "url": "https://clawhub.ai/skills/date-count",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/date-count-1247b8992f154e62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/date-count@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-date-count-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67bcc7b59a2901e3d3ff984a17b3087e9b5fae9666d4fb95f2517df3935ff8a2",
+      "artifactSizeBytes": 1719
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:53:16.985Z"
+}

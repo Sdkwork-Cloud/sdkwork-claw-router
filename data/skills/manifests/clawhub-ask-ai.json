@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18271,
+  "uuid": "skill-clawhub-ask-ai",
+  "skillKey": "clawhub-ask-ai",
+  "name": "ask-ai",
+  "summary": "Use external AI assistants (ChatGPT, Claude, Gemini, DeepSeek) when agent encounters difficult problems. Trigger when: (1) User explicitly asks to consult AI...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoxu1232",
+      "features": [
+        "Use external AI assistants (ChatGPT, Claude, Gemini, DeepSeek) when agent encounters difficult.",
+        "Trigger when: (1) User explicitly asks to consult AI..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-ai@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210492338?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-ai",
+      "url": "https://clawhub.ai/skills/ask-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-ai",
+    "url": "https://clawhub.ai/skills/ask-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-ai-9031528d4fbce471.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-ai@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-ai-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2da3565af29cec76d5ce9d9cbb69e46b0a76c974becaec9a37dbb4dce1915144",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:23:48.339Z"
+}

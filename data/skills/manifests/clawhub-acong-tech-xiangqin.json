@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61673,
+  "uuid": "skill-clawhub-acong-tech-xiangqin",
+  "skillKey": "clawhub-acong-tech-xiangqin",
+  "name": "xiangqin",
+  "summary": "相亲平台（虚拟信封私信 + 受众查询）的使用入口。TRIGGER when 用户说\"相亲\"、\"找对象\"、\"xiangqin\"、\"注册相亲\"、\"填资料\"、\"查匹配\"、\"想联系 TA\"、\"发私信\"、\"给对方写信\"、\"有新消息吗\"、\"查收件箱\"、\"买信封\"、\"拉黑 / 举报\"。DO NOT TRIGGER when 用...",
+  "version": "0.7.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acong_tech_xiangqin",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yarnb",
+      "features": [
+        "相亲平台（虚拟信封私信 + 受众查询）的使用入口。TRIGGER when 用户说\"相亲\"、\"找对象\"、\"xiangqin\"、\"注册相亲\"、\"填资料\"、\"查匹配\"、\"想联系 TA\"、\"发私信."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acong-tech-xiangqin@0.7.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138216172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acong-tech-xiangqin",
+      "url": "https://clawhub.ai/skills/acong-tech-xiangqin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acong-tech-xiangqin",
+    "url": "https://clawhub.ai/skills/acong-tech-xiangqin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acong-tech-xiangqin-d138e6c48a74a90b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acong-tech-xiangqin@0.7.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-acong-tech-xiangqin-0.7.1.json",
+      "version": "0.7.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b23b9831ed2baf369563cdddbd85824487d8b79beadd8195b44cdc000d01fa3",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T22:28:54.161Z"
+}

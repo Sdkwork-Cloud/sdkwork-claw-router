@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promo-traffic-stress-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promo_traffic_stress_monitor",
+  "skill": {
+    "id": 29912,
+    "skillKey": "clawhub-promo-traffic-stress-monitor",
+    "name": "Promo Traffic Stress Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promo-traffic-stress-monitor",
+    "url": "https://clawhub.ai/skills/promo-traffic-stress-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promo-traffic-stress-monitor-ef0d4017e5f7538a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor real-time promo traffic and conversion to optimize ad spend, restock priorities, and traffic allocation during major sales within the first 4 hours p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 293,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773481197184,
+      "changelog": "Initial release supporting live promo traffic and conversion monitoring for major sales events.\n\n- Monitors real-time traffic and conversion efficiency during high-pressure promo windows (e.g., Black Friday, flash sales).\n- Recommends scaling ad spend or reallocating budget for high-performing campaigns, and pausing/cutting for underperforming funnels.\n- Flags instant SKU sellouts and prompts restock or creative swaps, including mandatory ad pausing/redirection for OOS products.\n- Outputs structured efficiency snapshots and an actionable matrix for both ad and non-ad recommendations.\n- Includes a first-4-hour operating playbook and landing-page checklist to guide urgent troubleshooting and optimization.\n- Excludes long-term, evergreen, or creative-only scenarios without performance or inventory context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3e38402c7c30b9e0e10180b452a7a8284169be2536b2e39e76d88eeacedd0c4f"
+}

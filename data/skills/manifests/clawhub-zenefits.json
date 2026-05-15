@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25880,
+  "uuid": "skill-clawhub-zenefits",
+  "skillKey": "clawhub-zenefits",
+  "name": "Zenefits",
+  "summary": "Zenefits integration. Manage Persons, Organizations, Benefits, Payrolls, Tasks. Use when the user wants to interact with Zenefits data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenefits",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zenefits integration",
+        "Manage Persons, Organizations, Benefits, Payrolls, Tasks",
+        "Use when the user wants to interact with Zenefits data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zenefits@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zenefits",
+      "url": "https://clawhub.ai/skills/zenefits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenefits",
+    "url": "https://clawhub.ai/skills/zenefits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenefits-2761f2f808d9a60c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zenefits@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zenefits-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4dbcf716cceaff2d890471f1cf73fc865323c5dd634ea55d01a8e9b1da2ffdd1",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T20:52:31.592Z"
+}

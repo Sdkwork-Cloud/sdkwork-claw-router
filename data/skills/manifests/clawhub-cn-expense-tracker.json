@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67148,
+  "uuid": "skill-clawhub-cn-expense-tracker",
+  "skillKey": "clawhub-cn-expense-tracker",
+  "name": "记账助手",
+  "summary": "中文个人记账助手。随手记、查统计、设预算、看趋势。 本地存储，无账户、无云端、隐私安全。 当用户说\"记账\"、\"花了多少钱\"、\"本月支出\"、\"预算提醒\"时触发。 Keywords: 记账, 支出, 预算, 花费, expense, 收支, 月统计.",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_expense_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "中文个人记账助手。随手记、查统计、设预算、看趋势。 本地存储，无账户、无云端、隐私安全。 当用户说\"记账\"、\"花了多少钱\"、\"本月支出\"、\"预算提醒\"时触发。 Keywords: 记账, 支."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-expense-tracker@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-expense-tracker",
+      "url": "https://clawhub.ai/skills/cn-expense-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-expense-tracker",
+    "url": "https://clawhub.ai/skills/cn-expense-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-expense-tracker-c1ba8deb0eef15e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-expense-tracker@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-expense-tracker-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eec65fb639bb306c84ce177b6904ac339cb742a9eb54d87db2a8ce86ebfa7a31",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:44:56.557Z"
+}

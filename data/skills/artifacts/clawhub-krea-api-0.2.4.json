@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/krea-api@0.2.4",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.krea_api",
+  "skill": {
+    "id": 9719,
+    "skillKey": "clawhub-krea-api",
+    "name": "Krea.ai API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "krea-api",
+    "url": "https://clawhub.ai/skills/krea-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/krea-api-cad9a7b52deae67f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via Krea.ai API (Flux, Imagen, Ideogram, Seedream, etc.)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fossilizedcarlos",
+      "userId": "publishers:fossilizedcarlos",
+      "displayName": "Carlos E. Barboza",
+      "image": "https://avatars.githubusercontent.com/u/587521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2958,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 5,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.2.4",
+      "createdAt": 1771569123568,
+      "changelog": "- Added metadata section for credentials in SKILL.md, clarifying API key location and usage.\n- Updated troubleshooting guide to warn against using cat on sensitive credentials; suggests safer alternatives.\n- Minor cleanups to troubleshooting instructions (e.g., using ls -la instead of cat).\n- Incremented version to 0.2.4.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fbebfa2b4b337478fee9d8d5e77e6b8830203ddcf0f213aba26aa4f9d7b66652"
+}

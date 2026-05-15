@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/letsclarify@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.letsclarify",
+  "skill": {
+    "id": 50842,
+    "skillKey": "clawhub-letsclarify",
+    "name": "Let's Clarify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "letsclarify",
+    "url": "https://clawhub.ai/skills/letsclarify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/letsclarify-e098bd9aa2cfb7bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Collect structured human input — approvals, decisions, reviews, data — via web forms. Create a form with a JSON schema, send unique URLs to humans, poll for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heisee",
+      "userId": "publishers:heisee",
+      "displayName": "Heiko Seebach",
+      "image": "https://avatars.githubusercontent.com/u/17323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773344830966,
+      "changelog": "- Added REFERENCE.md for detailed API usage, examples, tool descriptions, polling, and embed info.\n- SKILL.md is now a concise summary and directs users to REFERENCE.md for full documentation.\n- Clarified REST and MCP server invocation and configuration.\n- Streamlined endpoint, request, and response descriptions.\n- Documented rate limits, data retention, and polling recommendations.\n- Added schema field types, validation, and embed widget usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bdfe585c861cfb4b081ef787b031cc0c855fef07cfc6549e44ba7643e641b62"
+}

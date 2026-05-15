@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50093,
+  "uuid": "skill-clawhub-video-compressor-8mb",
+  "skillKey": "clawhub-video-compressor-8mb",
+  "name": "Video Compressor 8mb",
+  "summary": "Get compressed MP4 files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"com...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_8mb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mory128",
+      "features": [
+        "Get compressed MP4 files ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"com..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-compressor-8mb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270709915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-compressor-8mb",
+      "url": "https://clawhub.ai/skills/video-compressor-8mb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-8mb",
+    "url": "https://clawhub.ai/skills/video-compressor-8mb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-8mb-e588664dfcde8529.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-compressor-8mb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-compressor-8mb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9012da727494d638599500d9d4385ed9e9ade99055c1aa266d6aea6e94a434cc",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T18:33:54.247Z"
+}

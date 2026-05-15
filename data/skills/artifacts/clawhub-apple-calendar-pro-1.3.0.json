@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-calendar-pro@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_calendar_pro",
+  "skill": {
+    "id": 50359,
+    "skillKey": "clawhub-apple-calendar-pro",
+    "name": "apple-calendar-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-calendar-pro",
+    "url": "https://clawhub.ai/skills/apple-calendar-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-calendar-pro-cd7a20e3b8314fd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "iCloud Calendar skill via CalDAV (RFC 4791) — works on macOS/Linux, and Windows with env/keyring auth. Supports event CRUD, multi-calendar queries, managed a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xushen-ma",
+      "userId": "s17fscyk6777s982ayvjjmecdh83t1wq",
+      "displayName": "Xushen",
+      "image": "https://avatars.githubusercontent.com/u/7592184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1772258646212,
+      "changelog": "Security: attachment path hardening — extension allowlist, sensitive path/name blocking, optional APPLECAL_ATTACH_DIR directory scoping",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5236fce0af108f9a4cc674db61abc8f597ac5eafa8e6b2ca5ab5be6054c1f251"
+}

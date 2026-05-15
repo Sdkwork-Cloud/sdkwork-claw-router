@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-all-in-one@1.0.24",
+  "version": "1.0.24",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_all_in_one",
+  "skill": {
+    "id": 8354,
+    "skillKey": "clawhub-bilibili-all-in-one",
+    "name": "Bilibili All In One"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-all-in-one",
+    "url": "https://clawhub.ai/skills/bilibili-all-in-one",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-all-in-one-0f88b9439578c652.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive Bilibili toolkit that integrates hot trending monitoring, video downloading, video watching/playback, subtitle downloading, and video publish..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wscats",
+      "userId": "s17bw1sf2hsjw09jmyh7nhzshn83h2gf",
+      "displayName": "enoyao",
+      "image": "https://avatars.githubusercontent.com/u/17243165?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 22594,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 24,
+      "versions": 25
+    },
+    "latestVersion": {
+      "version": "1.0.24",
+      "createdAt": 1777702888540,
+      "changelog": "Version 1.0.24\n\n- Improved video/audio downloader logic in `src/downloader.py` for greater robustness and precision.\n- Refactored and enhanced utility functions in `src/utils.py` to improve maintainability and efficiency.\n- Updated `skill.json` with corresponding version and metadata adjustments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fb86d5be1fa0579a4d89f8812eff5173fc61a93be416165230a5e42eeee81ee"
+}

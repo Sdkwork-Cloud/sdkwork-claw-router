@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61216,
+  "uuid": "skill-clawhub-rpm",
+  "skillKey": "clawhub-rpm",
+  "name": "RPM Package Management",
+  "summary": "🚨 RPM 打包通用规范。任何涉及 spec 文件编写/修改、rpmbuild、rpmlint、宏展开、依赖管理、构建系统模板（Autotools/CMake/Meson/Python）的场景，都必须读取此技能获取规范，绝不凭训练记忆编写 spec。适用于所有 RPM 发行版。",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rpm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei dong",
+      "features": [
+        "🚨 RPM 打包通用规范。任何涉及 spec 文件编写/修改、rpmbuild、rpmlint、宏展开、依赖管理、构建系统模板（Autotools/CMake/Meson/Python）的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rpm@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7512609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rpm",
+      "url": "https://clawhub.ai/skills/rpm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rpm",
+    "url": "https://clawhub.ai/skills/rpm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rpm-9e7ab438597fee20.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rpm@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rpm-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cf3811f4830398a893cf7cc08304fe63a3e22abdd199e6396f4063ef1656fb1",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T01:56:28.292Z"
+}

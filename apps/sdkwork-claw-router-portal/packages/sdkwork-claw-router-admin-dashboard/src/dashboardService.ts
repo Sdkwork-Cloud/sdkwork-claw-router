@@ -42,8 +42,8 @@ export interface RecentUsageTrace {
 export class AdminDashboardService {
   static generateTrafficData(timeRange: string, granularity: string): TrafficData[] {
     const data: TrafficData[] = [];
-    const pointCount = granularity === '按分钟' ? 24 : granularity === '按小时' ? 24 : granularity === '按周' ? 12 : 30;
-    const base = timeRange === '今日' || timeRange === '昨日' ? 1 : timeRange === '本周' ? 4 : timeRange === '本月' ? 12 : 24;
+    const pointCount = granularity === 'minutes' ? 24 : granularity === 'hours' ? 24 : granularity === 'weeks' ? 12 : 30;
+    const base = timeRange === '浠婃棩' || timeRange === '鏄ㄦ棩' ? 1 : timeRange === '鏈懆' ? 4 : timeRange === '鏈湀' ? 12 : 24;
 
     for (let index = 0; index < pointCount; index += 1) {
       const wave = Math.sin(index * 0.7) * 0.25 + Math.cos(index * 0.21) * 0.15 + 1;
@@ -66,7 +66,7 @@ export class AdminDashboardService {
     modelDistribution: PieChartData[];
     recentUsage: RecentUsageTrace[];
   }> {
-    const result = await getClawRouterBackendSdkClient().dashboard.fetchDashboardData();
+    const result = await getClawRouterBackendSdkClient().system.dashboard.admin.overview.retrieve();
     ensurePlusApiSuccess(result, 'Failed to fetch admin dashboard');
     const data = readApiRecord(result);
     return {
@@ -79,24 +79,24 @@ export class AdminDashboardService {
   }
 
   static async fetchInstallationStatus(): Promise<InstallationStatusResponse> {
-    const result = await getClawRouterBackendSdkClient().system.fetchInstallationStatus();
+    const result = await getClawRouterBackendSdkClient().system.installation.status.retrieve();
     ensurePlusApiSuccess(result, 'Failed to fetch installation status');
     return normalizeInstallationStatus(readApiRecord(result));
   }
 }
 
 function formatTrafficLabel(index: number, granularity: string): string {
-  if (granularity === '按分钟') {
+  if (granularity === 'minutes') {
     const minutes = index * 15;
     return `${String(Math.floor(minutes / 60)).padStart(2, '0')}:${String(minutes % 60).padStart(2, '0')}`;
   }
-  if (granularity === '按小时') {
+  if (granularity === 'hours') {
     return `${String(index).padStart(2, '0')}:00`;
   }
-  if (granularity === '按周') {
+  if (granularity === '鎸夊懆') {
     return `W${index + 1}`;
   }
-  if (granularity === '按月') {
+  if (granularity === '鎸夋湀') {
     return `${index + 1}月`;
   }
   return `${String(index + 1).padStart(2, '0')}`;

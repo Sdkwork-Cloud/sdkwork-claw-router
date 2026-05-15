@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27232,
+  "uuid": "skill-clawhub-comfyui-skill-openclaw",
+  "skillKey": "clawhub-comfyui-skill-openclaw",
+  "name": "ComfyUI Skill for OpenClaw",
+  "summary": "Run ComfyUI workflows from any AI agent (Claude Code, OpenClaw, Codex) via a single CLI. Import workflows, manage dependencies, execute across multiple serve...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_skill_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "科林 KELIN",
+      "features": [
+        "Run ComfyUI workflows from any AI agent (Claude Code, OpenClaw, Codex) via a single CLI",
+        "Import workflows, manage dependencies, execute across multiple serve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comfyui-skill-openclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167663109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comfyui-skill-openclaw",
+      "url": "https://clawhub.ai/skills/comfyui-skill-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-skill-openclaw",
+    "url": "https://clawhub.ai/skills/comfyui-skill-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-skill-openclaw-ec504883f92c4f57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comfyui-skill-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-comfyui-skill-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2ba1fede1d5713d690677bd15a62342435a41cccefd8c4052231e5171004639",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:40:37.982Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66412,
+  "uuid": "skill-clawhub-datayes-macro",
+  "skillKey": "clawhub-datayes-macro",
+  "name": "Datayes 宏观指标",
+  "summary": "查询 Datayes/通联的宏观与行业指标数据。用户询问 GDP、CPI、PPI、PMI、M2、社融、利率、就业、贸易、产量、价格等宏观或行业时间序列时使用。优先通过仓库内 Python 脚本搜索候选指标并拉取明细，不要手写 HTTP 请求。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datayes_macro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Datayes",
+      "features": [
+        "查询 Datayes/通联的宏观与行业指标数据。用户询问 GDP、CPI、PPI、PMI、M2、社融、利率、就业、贸易、产量、价格等宏观或行业时间序列时使用。优先通过仓库内 Python 脚."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/datayes-macro@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/datayes-macro/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "datayes-macro",
+      "url": "https://clawhub.ai/skills/datayes-macro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datayes-macro",
+    "url": "https://clawhub.ai/skills/datayes-macro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datayes-macro-a2daa4ca74d97089.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/datayes-macro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-datayes-macro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25fb83523c601e521a8801fa0007dd6ee557fed5180598adc4057016cdf9f717",
+      "artifactSizeBytes": 2498
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T11:58:03.710Z"
+}

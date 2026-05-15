@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paylock-escrow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paylock_escrow",
+  "skill": {
+    "id": 40032,
+    "skillKey": "clawhub-paylock-escrow",
+    "name": "PayLock Escrow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paylock-escrow",
+    "url": "https://clawhub.ai/skills/paylock-escrow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paylock-escrow-c0b26be02fb7ca78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Non-custodial SOL escrow for AI agent deals. Create contracts, lock funds, verify delivery, release payments. Use when: (1) creating escrow contracts between..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kgnvsk",
+      "userId": "s17d9ywe7f1k59kbf6t1za5res83praj",
+      "displayName": "Oleksii Kaganovsky",
+      "image": "https://avatars.githubusercontent.com/u/100070892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774643173257,
+      "changelog": "Initial release: non-custodial SOL escrow for AI agent deals",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49e55585fe615e864ef58bb241d34bfd4eac5b015adac2b5035041f8f98c5a33"
+}

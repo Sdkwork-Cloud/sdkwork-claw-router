@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expression-layer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expression_layer",
+  "skill": {
+    "id": 71211,
+    "skillKey": "clawhub-expression-layer",
+    "name": "表达层"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expression-layer",
+    "url": "https://clawhub.ai/skills/expression-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expression-layer-82b2bc9fe9838ea8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当需要内容生成、格式转换或多形式输出时触发。支持直接输入问题/素材/链接，无需前置思考层。统一路由至 ljg-skills 及发布工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777040739163,
+      "changelog": "v1.0.0: 统一的内容生成与可视化输出协调器，意图驱动路由，支持单步/串联/并行/发布编排",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:610e072bb6315850fe64460a62b60124ebb5b478464d108b40347417673b4eee"
+}

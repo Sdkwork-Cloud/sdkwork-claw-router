@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64498,
+  "uuid": "skill-clawhub-uapp-event-manage",
+  "skillKey": "clawhub-uapp-event-manage",
+  "name": "自定义事件管理",
+  "summary": "友盟自定义事件管理技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 4 个事件管理接口（2 个写入 + 2 个只读），覆盖 App 单事件创建、小程序批量事件创建、App 事件列表、小程序事件列表。当用户需要创建埋点事件定义、批量创建小程序事...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uapp_event_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umeng+",
+      "features": [
+        "友盟自定义事件管理技能，支持通过 umeng-cli call 调用友盟 OpenAPI（gateway.open.umeng.com）的 4 个事件管理接口（2 个写入 + 2 个只读），."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uapp-event-manage@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195273084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uapp-event-manage",
+      "url": "https://clawhub.ai/skills/uapp-event-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uapp-event-manage",
+    "url": "https://clawhub.ai/skills/uapp-event-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uapp-event-manage-73286eb0f79617fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uapp-event-manage@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uapp-event-manage-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eca2a24defbb6dd0d2f79ec6f654c807a6d7f20597d012dfaf431415beacb92c",
+      "artifactSizeBytes": 2795
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T11:42:30.745Z"
+}

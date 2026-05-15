@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34493,
+  "uuid": "skill-clawhub-memory-system-sidecar",
+  "skillKey": "clawhub-memory-system-sidecar",
+  "name": "Memory System Sidecar",
+  "summary": "Operate, verify, rebuild, and debug the implemented MemoryLab long-term memory sidecar feeding active task and live context files.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_system_sidecar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sjinopenclaw",
+      "features": [
+        "Operate, verify, rebuild, and debug the implemented MemoryLab long-term memory sidecar feeding."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-system-sidecar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29119182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-system-sidecar",
+      "url": "https://clawhub.ai/skills/memory-system-sidecar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-system-sidecar",
+    "url": "https://clawhub.ai/skills/memory-system-sidecar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-system-sidecar-19dbf6e046dddaa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-system-sidecar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-system-sidecar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:147d7b28b8e06e19af12882713ab2c4dd56f41e1a36bebd46c61c4a6366b40c6",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:07:11.328Z"
+}

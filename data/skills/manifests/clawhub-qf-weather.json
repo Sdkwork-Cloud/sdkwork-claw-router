@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36283,
+  "uuid": "skill-clawhub-qf-weather",
+  "skillKey": "clawhub-qf-weather",
+  "name": "Weather Query",
+  "summary": "Provides real-time weather, hourly and 7-day forecasts by city name, coordinates, or IP without needing an API key using wttr.in and Open-Meteo services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qf_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "371166758-qq",
+      "features": [
+        "Provides real-time weather, hourly and 7-day forecasts by city name, coordinates, or IP without."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qf-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267607290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qf-weather",
+      "url": "https://clawhub.ai/skills/qf-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qf-weather",
+    "url": "https://clawhub.ai/skills/qf-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qf-weather-896d7eb691ce8c23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qf-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qf-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ca7ce0fd049c6d5b2a62d8914b7bd42b564fa4ba7c7193d32ad39ff2e135aac",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:14:21.425Z"
+}

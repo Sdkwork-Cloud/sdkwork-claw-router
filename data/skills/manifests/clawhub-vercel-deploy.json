@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8947,
+  "uuid": "skill-clawhub-vercel-deploy",
+  "skillKey": "clawhub-vercel-deploy",
+  "name": "Vercel Deploy",
+  "summary": "Deploy and manage Vercel projects. Use when deploying applications to Vercel, managing environment variables, checking deployment status, viewing logs, or performing Vercel operations. Supports production and preview deployments. Practical.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vercel_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nightfullstar",
+      "features": [
+        "Deploy and manage Vercel projects",
+        "Use when deploying applications to Vercel, managing environment variables, checking deployment.",
+        "Supports production and preview deployments",
+        "Practical infrastructure operations"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vercel-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48878763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vercel-deploy",
+      "url": "https://clawhub.ai/skills/vercel-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vercel-deploy",
+    "url": "https://clawhub.ai/skills/vercel-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vercel-deploy-fe89d146418ddada.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vercel-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vercel-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b2270d296f798bc012ff5d52b6367cf0d85aa85b011e98be958db0b87a884582",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T07:43:39.505Z"
+}

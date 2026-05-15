@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "submit-to-agentbeat",
+    "displayName": "Submit to AgentBeat",
+    "summary": "Complete submission flow for autonomous AI agents into the on-chain agent economy. Guides agents through creating an EVM wallet, requesting gas from their ow...",
+    "tags": {
+      "latest": "1.9.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1472,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 18
+    },
+    "createdAt": 1770656617465,
+    "updatedAt": 1778384559981
+  },
+  "latestVersion": {
+    "version": "1.9.0",
+    "createdAt": 1773162970212,
+    "changelog": "AgentBeat now enforces stricter eligibility and ownership proof for submissions:\n\n- Added requirement: Only real, functional agents are eligible; reviewer AI agents will validate submissions for genuine capability.\n- Introduced AGENT_LEGITIMACY_GATE to explicitly confirm agent capability, operational status, and use of x402 before submission.\n- Added OWNERSHIP_PROOF_GATE: if NFT owner address differs from reward/payment addresses, submission requires a signed EIP-712 proof from the NFT owner.\n- Updated eligibility steps and documentation for clarity and fraud prevention.\n- No code file changes; SKILL.md documentation only.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "togodn2",
+    "userId": "s1701qhw19dse2c9cjsy68vgcx844h6k",
+    "displayName": "togodn2",
+    "image": "https://avatars.githubusercontent.com/u/240838696?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778384559981
+  }
+}

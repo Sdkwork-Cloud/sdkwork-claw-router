@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docker-mirror@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_mirror",
+  "skill": {
+    "id": 59475,
+    "skillKey": "clawhub-docker-mirror",
+    "name": "Docker Mirror"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-mirror",
+    "url": "https://clawhub.ai/skills/docker-mirror",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-mirror-ea33eaf349e1559a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Docker 镜像拉取工具，自动切换镜像源。当官方 registry (docker.io) 拉取超时或失败时，自动尝试备用镜像（docker.1ms.run、docker.m.daocloud.io）。适用于网络受限的 Linux 环境。需要 sg (sgdocker group) 和 docker 已安装。触..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kitsudog",
+      "userId": "s175gx7m7eedexdwq3v0d65vcn83kah6",
+      "displayName": "kitsudog",
+      "image": "https://avatars.githubusercontent.com/u/1467143?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774738179240,
+      "changelog": "- Updated scripts/docker.sh.\n- Internal script improvements or fixes; user-facing documentation unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:859dc44d26e83e9cc2101149493f1f5479265ec4910bd61476cc900dcc11561f"
+}

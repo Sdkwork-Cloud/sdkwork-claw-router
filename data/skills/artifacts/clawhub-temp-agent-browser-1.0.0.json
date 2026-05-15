@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temp-agent-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temp_agent_browser",
+  "skill": {
+    "id": 28188,
+    "skillKey": "clawhub-temp-agent-browser",
+    "name": "Temp Agent Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temp-agent-browser",
+    "url": "https://clawhub.ai/skills/temp-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temp-agent-browser-11c0c660e5329c4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayakolin",
+      "userId": "publishers:ayakolin",
+      "displayName": "ayakolin",
+      "image": "https://avatars.githubusercontent.com/u/79017455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773844780690,
+      "changelog": "Agent Browser 1.0.0 – Initial Release\n\n- Introduces a fast Rust-based headless browser automation CLI with Node.js fallback.\n- Enables navigating, clicking, typing, form filling, data extraction, UI testing, and page snapshots via structured commands.\n- Supports a wide array of commands, including advanced interactions, navigation, state checks, screenshots, video recording, network interception, and semantic element location.\n- Features session management, cookies/storage manipulation, tab/window/frame control, and direct JavaScript execution.\n- Designed for automation, testing, programmatic form filling, and extracting structured data from web pages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f762fc1782b48c3147a7958873df80bf0ece948e7b15de1c3b4c64a17f36244e"
+}

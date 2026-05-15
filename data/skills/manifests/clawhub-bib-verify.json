@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28242,
+  "uuid": "skill-clawhub-bib-verify",
+  "skillKey": "clawhub-bib-verify",
+  "name": "bib-verify",
+  "summary": "Verify a BibTeX file for hallucinated or fabricated references by cross-checking every entry against CrossRef, arXiv, and DBLP. Reports each reference as ver...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bib_verify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "helloml0326",
+      "features": [
+        "Verify a BibTeX file for hallucinated or fabricated references by cross-checking every entry ag.",
+        "Reports each reference as ver..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bib-verify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18115084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bib-verify",
+      "url": "https://clawhub.ai/skills/bib-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bib-verify",
+    "url": "https://clawhub.ai/skills/bib-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bib-verify-d5982ff725d83690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bib-verify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bib-verify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:508409fa668149a41129863417ad270156ba8b2ffc82b1d092749e4dfea3ce05",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:34:06.445Z"
+}

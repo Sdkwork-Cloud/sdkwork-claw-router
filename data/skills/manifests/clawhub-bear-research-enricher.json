@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56931,
+  "uuid": "skill-clawhub-bear-research-enricher",
+  "skillKey": "clawhub-bear-research-enricher",
+  "name": "bear-research-enricher",
+  "summary": "Enrich Bear research notes tagged 「待整理」 with thematic GIFs. Use when the user wants to auto-illustrate or spruce up draft research notes in Bear, or mentions...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bear_research_enricher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "terrycarter1985",
+      "features": [
+        "Enrich Bear research notes tagged 「待整理」 with thematic GIFs",
+        "Use when the user wants to auto-illustrate or spruce up draft research notes in Bear, or mentio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bear-research-enricher@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1542987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bear-research-enricher",
+      "url": "https://clawhub.ai/skills/bear-research-enricher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bear-research-enricher",
+    "url": "https://clawhub.ai/skills/bear-research-enricher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bear-research-enricher-daa7af6761474037.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bear-research-enricher@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bear-research-enricher-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80e9e92d427f851ad73b030ce3ec813cccd632cb91a2a49a8d7182ae25d9f1a4",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T02:37:27.993Z"
+}

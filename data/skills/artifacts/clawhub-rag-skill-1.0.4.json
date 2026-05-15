@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rag-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_skill",
+  "skill": {
+    "id": 62154,
+    "skillKey": "clawhub-rag-skill",
+    "name": "rag-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-skill",
+    "url": "https://clawhub.ai/skills/rag-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-skill-db970cdc5c5fa863.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要从知识库获取 RAG 相关内容时使用,知识库中汇聚了20位艺术家深度档案，科技与艺术的交汇，大致包括1、塞德里克·索恩 (Cedric Thorne) ------ 磁场雕塑与\"无形张力\"2. 月见里 薰 (Kaoru Tsukimisato) ------ 纳米绘画与\"微观宇宙\"3. 奥利维亚·斯特林..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaochengzhen",
+      "userId": "s174076g6ttsaeffeavhsvp9p183w93n",
+      "displayName": "xiaochengzhen",
+      "image": "https://avatars.githubusercontent.com/u/44834081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775630110246,
+      "changelog": "No file/content changes detected in this version.\n\n- No updates or modifications; this release maintains previous functionality and documentation.\n- Version number incremented for administrative purposes only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f322fd52d929033cf5b85e0af9c5995f684931058cb7e79cc33d4506363fd53"
+}

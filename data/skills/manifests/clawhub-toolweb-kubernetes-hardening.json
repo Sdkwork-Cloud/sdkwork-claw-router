@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28689,
+  "uuid": "skill-clawhub-toolweb-kubernetes-hardening",
+  "skillKey": "clawhub-toolweb-kubernetes-hardening",
+  "name": "Kubernetes Hardening",
+  "summary": "Generates security hardening recommendations and configurations for Kubernetes clusters based on specified hardening options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_kubernetes_hardening",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generates security hardening recommendations and configurations for Kubernetes clusters based o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toolweb-kubernetes-hardening@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toolweb-kubernetes-hardening",
+      "url": "https://clawhub.ai/skills/toolweb-kubernetes-hardening"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-kubernetes-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-kubernetes-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-kubernetes-hardening-19a6207fd530e4fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toolweb-kubernetes-hardening@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toolweb-kubernetes-hardening-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fb2d5064d7f41ab8fd35145c1386a5dd88ba658434fc38a9795bf50a9e86a81",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T16:24:55.020Z"
+}

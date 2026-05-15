@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68759,
+  "uuid": "skill-clawhub-lowdim-hidim",
+  "skillKey": "clawhub-lowdim-hidim",
+  "name": "Low-Dim Solve High-Dim",
+  "summary": "用低维方法解决高维复杂系统问题 - 降维建模、低维表征、子空间分解、稀疏约束。突破维度灾难，降低计算成本。应用于随机控制、强化学习、信号处理、AI推理等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lowdim_hidim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "用低维方法解决高维复杂系统问题",
+        "降维建模、低维表征、子空间分解、稀疏约束。突破维度灾难，降低计算成本。应用于随机控制、强化学习、信号处理、AI推理等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lowdim-hidim@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lowdim-hidim",
+      "url": "https://clawhub.ai/skills/lowdim-hidim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lowdim-hidim",
+    "url": "https://clawhub.ai/skills/lowdim-hidim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lowdim-hidim-4851b077e1cb7d68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lowdim-hidim@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lowdim-hidim-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:625b2931c12555233c9fc5e20f540e613362014436904b07122bb257376c600e",
+      "artifactSizeBytes": 2607
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T05:40:15.815Z"
+}

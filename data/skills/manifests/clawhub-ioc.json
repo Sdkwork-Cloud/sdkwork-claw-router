@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57393,
+  "uuid": "skill-clawhub-ioc",
+  "skillKey": "clawhub-ioc",
+  "name": "Ioc",
+  "summary": "Information assistant for IOC 国际奥委会. Get mission info, latest reports, member states, and organizational resources.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ioc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for IOC 国际奥委会",
+        "Get mission info, latest reports, member states, and organizational resources."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ioc@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ioc",
+      "url": "https://clawhub.ai/skills/ioc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ioc",
+    "url": "https://clawhub.ai/skills/ioc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ioc-7354a0024740d890.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ioc@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ioc-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30a004ac712ab12f3b7c7fd8ff3ad2c7eb774d4817fddec1df1f9f152deeb03b",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:03:06.301Z"
+}

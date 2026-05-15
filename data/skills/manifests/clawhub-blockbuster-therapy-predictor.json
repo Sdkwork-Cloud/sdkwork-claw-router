@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33048,
+  "uuid": "skill-clawhub-blockbuster-therapy-predictor",
+  "skillKey": "clawhub-blockbuster-therapy-predictor",
+  "name": "Blockbuster Therapy Predictor",
+  "summary": "Predict which early-stage biotechnology platforms (PROTAC, mRNA, gene editing, etc.) have the highest potential to become blockbuster therapies. Analyzes cli...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockbuster_therapy_predictor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Predict which early-stage biotechnology platforms (PROTAC, mRNA, gene editing, etc.) have the h.",
+        "Analyzes cli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blockbuster-therapy-predictor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blockbuster-therapy-predictor",
+      "url": "https://clawhub.ai/skills/blockbuster-therapy-predictor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockbuster-therapy-predictor",
+    "url": "https://clawhub.ai/skills/blockbuster-therapy-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockbuster-therapy-predictor-cb02b8edb51a99f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blockbuster-therapy-predictor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blockbuster-therapy-predictor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1366c1201a7c8fb1eac4fbda8b1d465876570d992f94fa3f26ce6a3266ac89e",
+      "artifactSizeBytes": 2633
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:36:59.330Z"
+}

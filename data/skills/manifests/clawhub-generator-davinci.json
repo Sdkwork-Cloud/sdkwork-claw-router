@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48095,
+  "uuid": "skill-clawhub-generator-davinci",
+  "skillKey": "clawhub-generator-davinci",
+  "name": "Generator Davinci",
+  "summary": "Get AI-generated videos ready to post, without touching a single slider. Upload your text prompts or footage (MP4, MOV, PNG, JPG, up to 500MB), say something...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_davinci",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "Get AI-generated videos ready to post, without touching a single slider",
+        "Upload your text prompts or footage (MP4, MOV, PNG, JPG, up to 500MB), say something..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generator-davinci@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generator-davinci",
+      "url": "https://clawhub.ai/skills/generator-davinci"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-davinci",
+    "url": "https://clawhub.ai/skills/generator-davinci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-davinci-4af6027f3921f3f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generator-davinci@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generator-davinci-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d86567360fade9d57d7ad897656d1549c7e246ed84c4570674542d97d447a574",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T18:00:57.359Z"
+}

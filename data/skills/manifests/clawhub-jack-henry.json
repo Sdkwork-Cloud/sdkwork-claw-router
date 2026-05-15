@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30152,
+  "uuid": "skill-clawhub-jack-henry",
+  "skillKey": "clawhub-jack-henry",
+  "name": "Jack Henry",
+  "summary": "Jack Henry integration. Manage data, records, and automate workflows. Use when the user wants to interact with Jack Henry data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jack_henry",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Jack Henry integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Jack Henry data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jack-henry@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jack-henry",
+      "url": "https://clawhub.ai/skills/jack-henry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jack-henry",
+    "url": "https://clawhub.ai/skills/jack-henry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jack-henry-def89f08c91d177a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jack-henry@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jack-henry-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:428b5945fddcfaab5345f7ccc5c291262dbb4a2475ed4ab301c6dc3d9f9b7f16",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:01:59.548Z"
+}

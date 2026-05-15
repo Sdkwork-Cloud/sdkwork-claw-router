@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39110,
+  "uuid": "skill-clawhub-full-selfbrowsing",
+  "skillKey": "clawhub-full-selfbrowsing",
+  "name": "FSB",
+  "summary": "FSB drives the user's Chrome via the FSB extension and an MCP bridge for live web tasks.",
+  "version": "0.9.61",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.full_selfbrowsing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lakshman Turlapati",
+      "features": [
+        "FSB drives the user's Chrome via the FSB extension and an MCP bridge for live web tasks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/full-selfbrowsing@0.9.61",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83905676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "full-selfbrowsing",
+      "url": "https://clawhub.ai/skills/full-selfbrowsing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "full-selfbrowsing",
+    "url": "https://clawhub.ai/skills/full-selfbrowsing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/full-selfbrowsing-9213900d5a268a3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/full-selfbrowsing@0.9.61",
+      "artifactUrl": "data/skills/artifacts/clawhub-full-selfbrowsing-0.9.61.json",
+      "version": "0.9.61",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24323a19a5cb534f84af1877bc76959bb1b0e5b8859d0f91777b28acab2d9fb1",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T17:42:47.020Z"
+}

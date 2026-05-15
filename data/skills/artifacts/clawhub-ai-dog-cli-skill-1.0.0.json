@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-dog-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_dog_cli_skill",
+  "skill": {
+    "id": 56028,
+    "skillKey": "clawhub-ai-dog-cli-skill",
+    "name": "AI Pet Portrait Generator – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-dog-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-dog-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-dog-cli-skill-b9f3e486166a8972.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI pet portrait generator — create or transform pet photos with a text prompt; image is optional"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775961168377,
+      "changelog": "Initial release of ai-dog-cli-skill:\n\n- Generate or transform pet portraits using AI with a text prompt; image input is optional.\n- Requires the weshop-cli and WESHOP_API_KEY environment variable.\n- CLI command: weshop ai-dog (with options for prompt, image, and batch size).\n- API key is securely handled via environment variable only.\n- Provides realistic pet images; default prompt is \"Pet taking a bath. Maintain realistic proportions including the number of limbs.\"\n- Example usage and output format included in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:967995f781eacbd340a69b4dc5aecfe93fdaec4704c5598343932860161c48e0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-skill-vetter-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_skill_vetter_pro",
+  "skill": {
+    "id": 29844,
+    "skillKey": "clawhub-claw-skill-vetter-pro",
+    "name": "Claw Skill Vetter Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-skill-vetter-pro",
+    "url": "https://clawhub.ai/skills/claw-skill-vetter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-skill-vetter-pro-4e3e36814dd4efa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamwang-wh",
+      "userId": "s172rhar6d3wa14s0z6j1e0pbs83wt9z",
+      "displayName": "Williamwang-wh",
+      "image": "https://avatars.githubusercontent.com/u/75006654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774861017077,
+      "changelog": "- Initial release of skill-vetter for version 1.0.0.\n- Provides a step-by-step protocol for security-first vetting of AI agent skills before installation.\n- Includes a checklist for source verification, mandatory code review with a list of red flags, permission scope assessment, and risk classification.\n- Offers a standardized output format for vetting reports.\n- Adds quick vetting commands and a trust hierarchy to guide security decisions.\n- Emphasizes caution and documentation for all skill installations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42d4e959c3563b32f353dbaa471bc706db34db011d96494c4a89742b29ee36e7"
+}

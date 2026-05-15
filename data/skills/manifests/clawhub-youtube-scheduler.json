@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58376,
+  "uuid": "skill-clawhub-youtube-scheduler",
+  "skillKey": "clawhub-youtube-scheduler",
+  "name": "YouTube Scheduler",
+  "summary": "Phân tích lịch đăng video của kênh YouTube để tìm \"khung giờ vàng\" — thời điểm đăng có nhiều view và engagement nhất. Dùng khi user yêu cầu \"Tìm giờ vàng đăn...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MCB AI",
+      "features": [
+        "Phân tích lịch đăng video của kênh YouTube để tìm \"khung giờ vàng\" — thời điểm đăng có nhiều vi.",
+        "Dùng khi user yêu cầu \"Tìm giờ vàng đăn..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-scheduler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/132585065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-scheduler",
+      "url": "https://clawhub.ai/skills/youtube-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-scheduler",
+    "url": "https://clawhub.ai/skills/youtube-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-scheduler-e3f0b5d93d7d51d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-scheduler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-scheduler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb4ca9793239acb56b2c9518b43f93cf177c547b31463d7e2bb760d673841691",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T07:22:25.172Z"
+}

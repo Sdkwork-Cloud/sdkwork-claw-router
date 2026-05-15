@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36485,
+  "uuid": "skill-clawhub-microbiome-diversity-reporter",
+  "skillKey": "clawhub-microbiome-diversity-reporter",
+  "name": "Microbiome Diversity Reporter",
+  "summary": "Interpret Alpha and Beta diversity metrics from 16S rRNA sequencing results.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microbiome_diversity_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Interpret Alpha and Beta diversity metrics from 16S rRNA sequencing results."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/microbiome-diversity-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "microbiome-diversity-reporter",
+      "url": "https://clawhub.ai/skills/microbiome-diversity-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microbiome-diversity-reporter",
+    "url": "https://clawhub.ai/skills/microbiome-diversity-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microbiome-diversity-reporter-be5cf1142b375864.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/microbiome-diversity-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-microbiome-diversity-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fce9359f1c6afbfd60970db9cff2ebeb9c5824e06b9abd8e7b747bf1349c6f9",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:26:37.855Z"
+}

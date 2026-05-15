@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-webhook-tester@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_webhook_tester",
+  "skill": {
+    "id": 35408,
+    "skillKey": "clawhub-skylv-webhook-tester",
+    "name": "Skylv Webhook Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-webhook-tester",
+    "url": "https://clawhub.ai/skills/skylv-webhook-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-webhook-tester-374f5aab04276422.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tests and debugs webhooks. Inspects requests and validates responses. Triggers: test webhook, webhook debug, http webhook."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776737068153,
+      "changelog": "Initial release of skylv-webhook-tester.\n\n- Test and debug webhook integrations with request inspection and response validation.\n- Supports triggers: test webhook, webhook debug, http webhook.\n- Provides example test payloads and response code meanings.\n- Lists common tools for webhook testing and debugging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7317c484f18b19b52d0ae794a516af513571ada4073332144da1ff26f71992df"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quodd@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quodd",
+  "skill": {
+    "id": 10354,
+    "skillKey": "clawhub-quodd",
+    "name": "Quodd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quodd",
+    "url": "https://clawhub.ai/skills/quodd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quodd-fda80f5b6bbb86c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch real-time stock quotes via Quodd API. Get current prices, daily high/low, and after-hours data for US equities. Use when the user asks for stock prices..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "khaney64",
+      "userId": "s179ww0mv835j5w7wqfbddkea983k1sb",
+      "displayName": "Kevin Haney",
+      "image": "https://avatars.githubusercontent.com/u/13684640?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2539,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774201712571,
+      "changelog": "- Updated example command paths to use absolute paths for the script location.\n- Simplified environment variable instructions for prerequisites.\n- No changes to core logic or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3c4fa3f57558d59e47b91d62c9cae0270a240c42a8b98f7783a2ce5b063b296"
+}

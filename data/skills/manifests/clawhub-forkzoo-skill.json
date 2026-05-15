@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12770,
+  "uuid": "skill-clawhub-forkzoo-skill",
+  "skillKey": "clawhub-forkzoo-skill",
+  "name": "ForkZoo",
+  "summary": "Adopt and manage GitHub-native digital pets (tamagotchis) that evolve daily with AI. Use when an agent wants to adopt a pet (monkey, cat, dog, lion), check their pet's status/evolution, interact with their pet, view the community gallery,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forkzoo_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "levi-law",
+      "features": [
+        "Adopt and manage GitHub-native digital pets (tamagotchis) that evolve daily with AI",
+        "Use when an agent wants to adopt a pet (monkey, cat, dog, lion), check their pet's status/evolu.",
+        "Triggers on pet-related requests, tamagotchi mentions, forkzoo/forkmonkey references, or \"my pe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/forkzoo-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215663328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "forkzoo-skill",
+      "url": "https://clawhub.ai/skills/forkzoo-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forkzoo-skill",
+    "url": "https://clawhub.ai/skills/forkzoo-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forkzoo-skill-82cb45d2252a7e31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/forkzoo-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-forkzoo-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5774275eb66d310afc9547724fe179b4aac4f2dad4c4f3a58ca82cb4d7428d28",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T20:04:59.341Z"
+}

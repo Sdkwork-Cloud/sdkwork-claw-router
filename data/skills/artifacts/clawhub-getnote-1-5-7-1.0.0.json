@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/getnote-1-5-7@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getnote_1_5_7",
+  "skill": {
+    "id": 69434,
+    "skillKey": "clawhub-getnote-1-5-7",
+    "name": "Getnote 1.5.7"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getnote-1-5-7",
+    "url": "https://clawhub.ai/skills/getnote-1-5-7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getnote-1-5-7-ecc5ea843fe9b263.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get笔记 - 保存、搜索、管理个人笔记和知识库。 **当以下情况时使用此 Skill**： (1) 用户要保存内容到笔记：发链接、发图片、说「记一下」「存到笔记」「保存」「收藏」 (2) 用户要搜索或查看笔记：「搜一下」「找找笔记」「最近存了什么」「看看原文」 (3) 用户要管理知识库或标签：「加到知识库」「建..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackie2010",
+      "userId": "s173vqa9ctgdddswexqqbd9ba583trd5",
+      "displayName": "jackie2010",
+      "image": "https://avatars.githubusercontent.com/u/13491078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776152603550,
+      "changelog": "Get笔记 Skill v1.0.0 - 初始版本上线\n\n- 支持保存、搜索、管理个人笔记和知识库\n- 提供详细的 API 使用规范、认证方式、安全和权限校验说明\n- 集成笔记、知识库、标签等指令路由和自然语言触发规则\n- 加入大整数（ID）处理方法及常见错误码处理指引\n- 明确使用场景和操作流程，便于用户上手",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd4c79d4c9a564662970fc7b4af407a7525c20adcdaf056c6865184c3b42af91"
+}

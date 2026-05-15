@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19389,
+  "uuid": "skill-clawhub-coo-commander",
+  "skillKey": "clawhub-coo-commander",
+  "name": "COO Commander",
+  "summary": "Startup-style COO / commander role for orchestrating missions across one or more worker agents. Use when an agent must accept a business goal, break it into...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coo_commander",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kiril-Shturman",
+      "features": [
+        "Startup-style COO / commander role for orchestrating missions across one or more worker agents",
+        "Use when an agent must accept a business goal, break it into..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coo-commander@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69124328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coo-commander",
+      "url": "https://clawhub.ai/skills/coo-commander"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coo-commander",
+    "url": "https://clawhub.ai/skills/coo-commander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coo-commander-4acb1e381f5a6bf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coo-commander@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coo-commander-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19b5a996dbe01044f43d907fc40940fc29c3f55efc38e14e100d342d0b877e59",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:25:38.358Z"
+}

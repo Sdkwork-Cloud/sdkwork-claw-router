@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcli-go@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcli_go",
+  "skill": {
+    "id": 18139,
+    "skillKey": "clawhub-agentcli-go",
+    "name": "agentcli-go"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcli-go",
+    "url": "https://clawhub.ai/skills/agentcli-go",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcli-go-3b5ea39dacddb919.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "agentcli-go framework reference for building Go CLI tools. Use when working on agentcli-go itself, scaffolding new CLI projects, adding commands, integrating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gh-xj",
+      "userId": "publishers:gh-xj",
+      "displayName": "xj",
+      "image": "https://avatars.githubusercontent.com/u/46443118?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 704,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771837811843,
+      "changelog": "Initial publish — API surface, scaffold workflows, cobrax/configx patterns, golden project layout",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab14a7ceb0014ce65a137005920695e21b762cd4c32f16e935431f0493284e21"
+}

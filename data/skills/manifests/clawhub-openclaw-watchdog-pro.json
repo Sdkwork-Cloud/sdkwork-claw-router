@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60136,
+  "uuid": "skill-clawhub-openclaw-watchdog-pro",
+  "skillKey": "clawhub-openclaw-watchdog-pro",
+  "name": "OpenClaw Watchdog Pro",
+  "summary": "OpenClaw 跨平台配置备份与网关监控。自动备份 openclaw.json，每分钟检查 gateway 状态，宕机时自动恢复。支持 Linux/macOS/Windows。触发：配置备份、gateway 监控、自动恢复、看门狗、watchdog。",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_watchdog_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dorad",
+      "features": [
+        "OpenClaw 跨平台配置备份与网关监控。自动备份 openclaw.json，每分钟检查 gateway 状态，宕机时自动恢复。支持 Linux/macOS/Windows。触发：配置备."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-watchdog-pro@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23170065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-watchdog-pro",
+      "url": "https://clawhub.ai/skills/openclaw-watchdog-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-watchdog-pro",
+    "url": "https://clawhub.ai/skills/openclaw-watchdog-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-watchdog-pro-9768b521fcf8bcc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-watchdog-pro@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-watchdog-pro-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:562f3cf71140d6b1159e98feb3f6d9bd34129cc76d5dc125b6d99e7bf6cbfd24",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:54:23.982Z"
+}

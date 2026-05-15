@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31184,
+  "uuid": "skill-clawhub-nansen-exit-signals",
+  "skillKey": "clawhub-nansen-exit-signals",
+  "name": "Nansen Exit Signals",
+  "summary": "Is smart money exiting a token I hold? Net flow direction, seller breakdown by label, and recent SM trades.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_exit_signals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Is smart money exiting a token I hold? Net flow direction, seller breakdown by label, and recen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-exit-signals@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-exit-signals",
+      "url": "https://clawhub.ai/skills/nansen-exit-signals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-exit-signals",
+    "url": "https://clawhub.ai/skills/nansen-exit-signals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-exit-signals-7632940909c744c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-exit-signals@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-exit-signals-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d559b53fd5c9d8f2b71a041ff6605ea227ff359c44cb9720c36b45833b210b4b",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:18:50.289Z"
+}

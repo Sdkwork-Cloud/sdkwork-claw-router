@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22977,
+  "uuid": "skill-clawhub-river-memory",
+  "skillKey": "clawhub-river-memory",
+  "name": "River Memory",
+  "summary": "Store and semantically search text memories locally using Ollama with automatic management and optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.river_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simon-She",
+      "features": [
+        "Store and semantically search text memories locally using Ollama with automatic management and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/river-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161613778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "river-memory",
+      "url": "https://clawhub.ai/skills/river-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "river-memory",
+    "url": "https://clawhub.ai/skills/river-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/river-memory-12d34c7e41d96be2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/river-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-river-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96a545b95e418e5fa76019dc2912cb48ddf51a2c7a485bf9f9a47ce0f8e1f6b6",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T19:19:23.862Z"
+}

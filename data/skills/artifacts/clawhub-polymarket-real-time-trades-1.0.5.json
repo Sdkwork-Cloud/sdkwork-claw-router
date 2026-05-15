@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-real-time-trades@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_real_time_trades",
+  "skill": {
+    "id": 24840,
+    "skillKey": "clawhub-polymarket-real-time-trades",
+    "name": "Polymarket Real Time Trades Stream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-real-time-trades",
+    "url": "https://clawhub.ai/skills/polymarket-real-time-trades",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-real-time-trades-ab535647eba45c74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time streaming Polymarket prediction trades on Polygon (matic) with live USD pricing. Subscribe to a live stream of Polymarket prediction market trades..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "divyn",
+      "userId": "s176j9yg3ck3epn3kgfdra114d83jxn2",
+      "displayName": "Divyasshree",
+      "image": "https://avatars.githubusercontent.com/u/41162285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1773904197522,
+      "changelog": "- Updated required credential metadata from the old `credentials` block to the new `requires.env` format in SKILL.md.\n- No code or functional changes; metadata only.\n- Ensures install prompt for BITQUERY_API_KEY is consistent with updated skill ecosystem standards.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da963017df829c6c3e3429354a110ba0939d558e4f3c3de8dbcfc08392d6127f"
+}

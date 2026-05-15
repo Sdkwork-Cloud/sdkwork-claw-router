@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35850,
+  "uuid": "skill-clawhub-rollup-config-validator",
+  "skillKey": "clawhub-rollup-config-validator",
+  "name": "Rollup Config Validator",
+  "summary": "Validate Rollup config files (rollup.config.js/mjs/ts) for output format conflicts, plugin ordering issues, deprecated options, and best practices. Use when...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rollup_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate Rollup config files (rollup.config.js/mjs/ts) for output format conflicts, plugin orde.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rollup-config-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rollup-config-validator",
+      "url": "https://clawhub.ai/skills/rollup-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rollup-config-validator",
+    "url": "https://clawhub.ai/skills/rollup-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rollup-config-validator-33964528ff210647.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rollup-config-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rollup-config-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c47178fe0c3cd39967c17b473f21fe2a472476126c92040b86cc88fe67764b76",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:45.498Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-post-generator@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_post_generator",
+  "skill": {
+    "id": 22089,
+    "skillKey": "clawhub-linkedin-post-generator",
+    "name": "LinkedIn Post Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-post-generator",
+    "url": "https://clawhub.ai/skills/linkedin-post-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-post-generator-29cdcc6c3bb99aa3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered LinkedIn post generator for professionals. Create engaging posts, thought leadership content, and career updates using Sloan agent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icepopma",
+      "userId": "publishers:icepopma",
+      "displayName": "icepopma",
+      "image": "https://avatars.githubusercontent.com/u/259024160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 475,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772671977391,
+      "changelog": "Security fix: Move merchant_key to code, remove from SKILL.md to avoid false positive",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:01c2bd8c068785317a95f740691f1f899dd862f1f66ef2380898191c4da3552d"
+}

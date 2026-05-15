@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43497,
+  "uuid": "skill-clawhub-auto-skill-distiller",
+  "skillKey": "clawhub-auto-skill-distiller",
+  "name": "Auto Skill Distiller",
+  "summary": "Auto-distill successful workflows into reusable skills. Use after completing any multi-step task to evaluate if the workflow should be saved as a skill. Trig...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_skill_distiller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christianye",
+      "features": [
+        "Auto-distill successful workflows into reusable skills",
+        "Use after completing any multi-step task to evaluate if the workflow should be saved as a skill"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-skill-distiller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/346600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-skill-distiller",
+      "url": "https://clawhub.ai/skills/auto-skill-distiller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-skill-distiller",
+    "url": "https://clawhub.ai/skills/auto-skill-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-skill-distiller-03d2fb360be7f2a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-skill-distiller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-skill-distiller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c4036afe3420170c5ddaa676df74893cb279f014a19d55651f23696fdbe0e8e",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:03:42.112Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autoglm-deepresearch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoglm_deepresearch",
+  "skill": {
+    "id": 69230,
+    "skillKey": "clawhub-autoglm-deepresearch",
+    "name": "Autoglm Deepresearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoglm-deepresearch",
+    "url": "https://clawhub.ai/skills/autoglm-deepresearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoglm-deepresearch-70dff2b70fee24b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对用户提出的课题进行深度研究和调研，输出结构化的深度报告。当用户需要深入了解某个话题、做行业调研、专题研究、竞品分析等场景时使用此 skill。 与普通搜索不同，deepresearch 会先做少量定向搜索，再对少量关键页面进行深度阅读，过程中优先展示中间发现，最后再做总结，避免因调用次数过多导致响应过慢。 To..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrhenghu",
+      "userId": "publishers:mrhenghu",
+      "displayName": "mrhenghu",
+      "image": "https://avatars.githubusercontent.com/u/193038063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773475573237,
+      "changelog": "AutoGLM DeepResearch skill initial release:\n\n- Provides deep research and structured reports for user-specified topics through controlled web search and in-depth reading.\n- Introduces a research flow: break down questions, perform 1–2 guided searches, read 1–3 key pages in depth, show interim findings, then generate a structured final report.\n- Automates token acquisition via a local HTTP service; no manual environment setup needed.\n- Enforces strict limits on API usage to ensure fast and efficient responses.\n- Clearly documents report structure and operational constraints for transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:585a33e0405f09c282b2610f06f7cfe19662a9169f88904d768b5e7ae67f69aa"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-engineer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_engineer",
+  "skill": {
+    "id": 34607,
+    "skillKey": "clawhub-test-engineer",
+    "name": "Test Engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-engineer",
+    "url": "https://clawhub.ai/skills/test-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-engineer-ef751a6fd56b8699.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional entry-level software testing career roadmap platform that generates personalized learning paths based on candidate assessment data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774365194673,
+      "changelog": "Test Engineer Roadmap 1.0.0\n\n- Initial release of the Test Engineer Roadmap API.\n- Generates personalized learning paths for entry-level software testing careers based on candidate assessment data.\n- Provides detailed, phase-based roadmaps with milestones and recommended resources.\n- Designed for aspiring test engineers, recruiters, HR, and training platforms.\n- Includes three endpoints: API info, health check, and roadmap generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47c540d9c89ed4dcc2ab1569d0ff0ebe8efc821569a95cf4089c5a1be7cb02f3"
+}

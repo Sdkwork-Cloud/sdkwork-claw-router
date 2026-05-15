@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10066,
+  "uuid": "skill-clawhub-clawlink",
+  "skillKey": "clawhub-clawlink",
+  "name": "Clawlink",
+  "summary": "Encrypted Clawbot-to-Clawbot messaging. Send messages to friends' Clawbots with end-to-end encryption.",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlink",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dave Morin",
+      "features": [
+        "Encrypted Clawbot-to-Clawbot messaging",
+        "Send messages to friends' Clawbots with end-to-end encryption."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlink@2.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78139?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlink",
+      "url": "https://clawhub.ai/skills/clawlink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlink",
+    "url": "https://clawhub.ai/skills/clawlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlink-99451bcbe858d71e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlink@2.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlink-2.6.0.json",
+      "version": "2.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ce370e1cbc7147a34acc6c4331593e4b1e3e97f5213aceca9faf0eac07c5bca",
+      "artifactSizeBytes": 1912
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T05:06:55.368Z"
+}

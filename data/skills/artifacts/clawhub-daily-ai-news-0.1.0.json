@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-ai-news@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_ai_news",
+  "skill": {
+    "id": 15730,
+    "skillKey": "clawhub-daily-ai-news",
+    "name": "Daily Ai News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-ai-news",
+    "url": "https://clawhub.ai/skills/daily-ai-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-ai-news-fda3fcf106adca55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when users need comprehensive daily news about AI, large models, and related fields."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaceymarvin99",
+      "userId": "publishers:jaceymarvin99",
+      "displayName": "JaceyMarvin99",
+      "image": "https://avatars.githubusercontent.com/u/73216966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 900,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772082846360,
+      "changelog": "Initial release of the Daily AI News skill:\n\n- Provides daily curated news on AI and large models via the 60s API.\n- Supports queries for today's news, specific historical dates, and formatted summaries.\n- Offers output in text, json, or markdown formats with clear guidance on when to use each.\n- Simple CLI script interface: `./scripts/news.sh [options] [date]`.\n- Designed for efficient, flexible retrieval and presentation of AI news.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a540d2a5c15282623cfee65abcbfaf03f2ace937c208d2e34366e14665fab26"
+}

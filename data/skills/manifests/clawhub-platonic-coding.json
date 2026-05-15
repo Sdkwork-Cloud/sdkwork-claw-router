@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52159,
+  "uuid": "skill-clawhub-platonic-coding",
+  "skillKey": "clawhub-platonic-coding",
+  "name": "Platonic Coding",
+  "summary": "Intelligent orchestrator for Platonic Coding workflow. Auto-detects project state and routes to the right next step—initialize a project, run the recovery fl...",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.platonic_coding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caesar0301",
+      "features": [
+        "Intelligent orchestrator for Platonic Coding workflow",
+        "Auto-detects project state and routes to the right next step—initialize a project, run the reco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/platonic-coding@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/499254?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "platonic-coding",
+      "url": "https://clawhub.ai/skills/platonic-coding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "platonic-coding",
+    "url": "https://clawhub.ai/skills/platonic-coding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/platonic-coding-9a653102e31f5945.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/platonic-coding@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-platonic-coding-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcca5eaef53f912649146436f86fc252e6f22bea7b0ae7f828eb980914554173",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T03:31:41.201Z"
+}

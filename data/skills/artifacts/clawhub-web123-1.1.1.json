@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web123@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web123",
+  "skill": {
+    "id": 57006,
+    "skillKey": "clawhub-web123",
+    "name": "web123"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web123",
+    "url": "https://clawhub.ai/skills/web123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web123-06e6cf08fda1760b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web3 Skill Navigator / Web3 技能导航站. Describe your need in plain language to get matched AntalphaAI skill recommendations with install commands. Triggers: web1..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deanpeng-dotcom",
+      "userId": "s17be4djsk51cp2zg7bk77n18n84n734",
+      "displayName": "deanpeng-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/271209600?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776488452626,
+      "changelog": "No code or documentation changes detected in this release.\n\n- Version bumped from 1.1.0 to 1.1.1.\n- No functional or documentation updates included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9508324582ce7eb8e49d6fcc3a965f4b0588626c1ed34203c422c01c890c4c30"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70677,
+  "uuid": "skill-clawhub-social-matrix-manager-claw",
+  "skillKey": "clawhub-social-matrix-manager-claw",
+  "name": "自媒体矩阵管家虾",
+  "summary": "自媒体矩阵管家虾 — 多账号自媒体矩阵的统一调度中心。监控数据、分析互动、检测异常、生成日报。 **当以下情况时使用此 Skill**： (1) 需要汇总多个自媒体账号（抖音/小红书/视频号/B站/微博）的运营数据 (2) 需要生成矩阵日报，标出异常账号 (3) 需要检测爆款内容（播放量超均值N倍）并推送预警 (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_matrix_manager_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "自媒体矩阵管家虾 — 多账号自媒体矩阵的统一调度中心。监控数据、分析互动、检测异常、生成日报。 **当以下情况时使用此 Skill**： (1) 需要汇总多个自媒体账号（抖音/小红书/视频号."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-matrix-manager-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-matrix-manager-claw",
+      "url": "https://clawhub.ai/skills/social-matrix-manager-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-matrix-manager-claw",
+    "url": "https://clawhub.ai/skills/social-matrix-manager-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-matrix-manager-claw-72f69d6163fe6d78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-matrix-manager-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-matrix-manager-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e73c34b2f67b2656177b48815b70efb543fdf67d8f235916521d3455710e87a8",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:16:44.411Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tasktime@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tasktime",
+  "skill": {
+    "id": 20517,
+    "skillKey": "clawhub-tasktime",
+    "name": "TaskTime CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tasktime",
+    "url": "https://clawhub.ai/skills/tasktime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tasktime-c461d1d8e97f13b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI task timer for AI agents — benchmark learning progression with auto-save logs and visualizations. Integrates with ClawVault for persistent memory."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1135,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770749308054,
+      "changelog": "Auto-save to ClawVault on stop (🐘 emoji confirms). Use --no-vault to skip.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07eb76a73e06c4df9c0fc8b28d7d4656328305398e7165058873460578f64db4"
+}

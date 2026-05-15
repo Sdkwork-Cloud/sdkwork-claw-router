@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25399,
+  "uuid": "skill-clawhub-ads-data-query-assistant",
+  "skillKey": "clawhub-ads-data-query-assistant",
+  "name": "Ads Data Query",
+  "summary": "Run natural-language data query workflows for Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, Amazon Ads, and Shopify Ads reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ads_data_query_assistant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danyangliu",
+      "features": [
+        "Run natural-language data query workflows for Meta (Facebook/Instagram), Google Ads, TikTok Ads."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ads-data-query-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184733968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ads-data-query-assistant",
+      "url": "https://clawhub.ai/skills/ads-data-query-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ads-data-query-assistant",
+    "url": "https://clawhub.ai/skills/ads-data-query-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ads-data-query-assistant-8a06f91797b3e904.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ads-data-query-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ads-data-query-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4033b32c1f473172956e2d8bea7777e553e213e74d3578fe7d669f8ff7311e02",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T00:48:05.784Z"
+}

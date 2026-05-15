@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71246,
+  "uuid": "skill-clawhub-key-tracker",
+  "skillKey": "clawhub-key-tracker",
+  "name": "Key Tracker",
+  "summary": "智能关键信息记录技能：从对话和报告中自动捕获时间节点、遗留问题、决策点、承诺事项等16类关键信息。外置大脑，不遗漏重要信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.key_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentlau2046-sudo",
+      "features": [
+        "智能关键信息记录技能：从对话和报告中自动捕获时间节点、遗留问题、决策点、承诺事项等16类关键信息。外置大脑，不遗漏重要信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/key-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259013171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "key-tracker",
+      "url": "https://clawhub.ai/skills/key-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "key-tracker",
+    "url": "https://clawhub.ai/skills/key-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/key-tracker-9b357c27bd8c8151.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/key-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-key-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfb4f98b765547bd8fa0138a057ae21fd625dcd45a3a764e66a9f4692b596451",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:11:27.827Z"
+}

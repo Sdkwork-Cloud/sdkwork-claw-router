@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26254,
+  "uuid": "skill-clawhub-auto-updaters",
+  "skillKey": "clawhub-auto-updaters",
+  "name": "Pub Autoupd",
+  "summary": "Automatically update Clawdbot and all installed skills once daily via cron. And also 50+ models for image generation, video generation, text-to-speech, speec...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updaters",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Automatically update Clawdbot and all installed skills once daily via cron",
+        "And also 50+ models for image generation, video generation, text-to-speech, speec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-updaters@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-updaters",
+      "url": "https://clawhub.ai/skills/auto-updaters"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updaters",
+    "url": "https://clawhub.ai/skills/auto-updaters",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updaters-76011110bca2376d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-updaters@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-updaters-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:781df27621951b7a3d9c008206dfe195d92f08a69a0e709a31572399a90ea7a0",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:10:52.591Z"
+}

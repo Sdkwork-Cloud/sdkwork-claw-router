@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70071,
+  "uuid": "skill-clawhub-notice-monitor",
+  "skillKey": "clawhub-notice-monitor",
+  "name": "Notice Monitor",
+  "summary": "自动监控任意网站公告列表页，支持关键词过滤、多层级分类、定时推送及多渠道通知（钉钉、微信、邮件）。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notice_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jerryharbin",
+      "features": [
+        "自动监控任意网站公告列表页，支持关键词过滤、多层级分类、定时推送及多渠道通知（钉钉、微信、邮件）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notice-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18597096?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notice-monitor",
+      "url": "https://clawhub.ai/skills/notice-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notice-monitor",
+    "url": "https://clawhub.ai/skills/notice-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notice-monitor-940f667e51d29a7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notice-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notice-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40631b843c930ed17288991b687f73bfde42dcbcf2795863da063e65f67c90b8",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:45:12.823Z"
+}

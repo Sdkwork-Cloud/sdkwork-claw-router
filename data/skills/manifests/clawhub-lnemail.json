@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17766,
+  "uuid": "skill-clawhub-lnemail",
+  "skillKey": "clawhub-lnemail",
+  "name": "LNemail",
+  "summary": "Setup and use anonymous email accounts on LNemail.net using Bitcoin Lightning payments. Use when agents need email capabilities for 2FA, notifications, or co...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lnemail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LNemail",
+      "features": [
+        "Setup and use anonymous email accounts on LNemail.net using Bitcoin Lightning payments",
+        "Use when agents need email capabilities for 2FA, notifications, or co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lnemail@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213344475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lnemail",
+      "url": "https://clawhub.ai/skills/lnemail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lnemail",
+    "url": "https://clawhub.ai/skills/lnemail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lnemail-b0fd6aa422fd96ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lnemail@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lnemail-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4bae0be04d5a0d3c65a990b9344ee1b6346b780b9d9cbffad16db0c94b9e896",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T21:14:44.274Z"
+}

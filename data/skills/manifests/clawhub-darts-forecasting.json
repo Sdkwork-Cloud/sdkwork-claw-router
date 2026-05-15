@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66856,
+  "uuid": "skill-clawhub-darts-forecasting",
+  "skillKey": "clawhub-darts-forecasting",
+  "name": "Darts Forecasting",
+  "summary": "Darts 是轻量级时间序列预测库，支持多市场金融数据的确定性与概率性预测，提供协变量整合与层级聚合能力。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.darts_forecasting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "Darts 是轻量级时间序列预测库，支持多市场金融数据的确定性与概率性预测，提供协变量整合与层级聚合能力。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/darts-forecasting@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "darts-forecasting",
+      "url": "https://clawhub.ai/skills/darts-forecasting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "darts-forecasting",
+    "url": "https://clawhub.ai/skills/darts-forecasting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/darts-forecasting-b9ac71ecff4c4a0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/darts-forecasting@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-darts-forecasting-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86758a83f6bb7e68f5d807db2ac8e7e449389a6a94cfdf79996a36c8145c9798",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:25:12.754Z"
+}

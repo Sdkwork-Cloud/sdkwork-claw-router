@@ -1,0 +1,39 @@
+{
+  "skill": {
+    "slug": "env-ops-standard",
+    "displayName": "Safe .env Manager",
+    "summary": "Safe .env key-first operations (CRUD) with secret-safe defaults. Use when troubleshooting missing env keys, auth/config failures, or when asked to add/update...",
+    "tags": {
+      "dotenv": "1.0.0",
+      "env": "1.0.0",
+      "latest": "1.0.0",
+      "ops": "1.0.0",
+      "security": "1.0.0",
+      "utility": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "createdAt": 1774440640134,
+    "updatedAt": 1777623544327
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774440640134,
+    "changelog": "Initial release of env-ops-standard for secure, policy-driven .env file management.\n\n- Enforces a key-first, secret-safe workflow for adding, updating, listing, and removing .env entries.\n- Never prints secret values; all set operations default to stdin-only and require explicit flags for value-in-argv or destructive changes.\n- Mandates comment and naming conventions, policy validation, and atomic writes with timestamped backups.\n- Includes commands for linting, health checks, dry-run previews, and policy inspection.\n- Ensures org-wide consistency and safety, especially when troubleshooting missing keys or configuration errors.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "pioneer-weirdo",
+    "userId": "s1740nb6xer4ybxtpqhb0vvjwh83gy1e",
+    "displayName": "Pioneer",
+    "image": "https://avatars.githubusercontent.com/u/80094616?v=4"
+  },
+  "moderation": null
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/article-content@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.article_content",
+  "skill": {
+    "id": 51105,
+    "skillKey": "clawhub-article-content",
+    "name": "article-content"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "article-content",
+    "url": "https://clawhub.ai/skills/article-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/article-content-31573ec90fe16c78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to write, generate, or create article body content—blog post body, long-form content, how-to guide, listicle. Also use when the user ment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774859995944,
+      "changelog": "Batch: toc through translation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09c085c6567a4c84e4371b72c866cf3eb0b9eb71b2325eaf39d77e8526f43180"
+}

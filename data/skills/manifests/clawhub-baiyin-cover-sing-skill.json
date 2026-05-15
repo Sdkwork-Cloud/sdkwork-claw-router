@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64266,
+  "uuid": "skill-clawhub-baiyin-cover-sing-skill",
+  "skillKey": "clawhub-baiyin-cover-sing-skill",
+  "name": "baiyin-cover-sing-skill",
+  "summary": "当用户希望通过百音开放平台创建 AI 歌手翻唱任务、查询翻唱任务状态，或根据已有 taskId 返回最终翻唱音频结果时使用。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baiyin_cover_sing_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baiyin",
+      "features": [
+        "当用户希望通过百音开放平台创建 AI 歌手翻唱任务、查询翻唱任务状态，或根据已有 taskId 返回最终翻唱音频结果时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baiyin-cover-sing-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63402476?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baiyin-cover-sing-skill",
+      "url": "https://clawhub.ai/skills/baiyin-cover-sing-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baiyin-cover-sing-skill",
+    "url": "https://clawhub.ai/skills/baiyin-cover-sing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baiyin-cover-sing-skill-607c1997f7a2794f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baiyin-cover-sing-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-baiyin-cover-sing-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2201f491a4775e9e4da4f2bfe63bd02f627a4fc3dc075bd6b33702e7760f147c",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:03:03.576Z"
+}

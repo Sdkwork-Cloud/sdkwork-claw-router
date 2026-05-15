@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-script-to-post@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_script_to_post",
+  "skill": {
+    "id": 66833,
+    "skillKey": "clawhub-video-script-to-post",
+    "name": "video-script-to-post"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-script-to-post",
+    "url": "https://clawhub.ai/skills/video-script-to-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-script-to-post-27393c6c3de19eec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短视频全链路编导引擎，从热点选题→分镜脚本→AI生成提示词→多平台排期，一站式输出可执行内容包"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boboy-j",
+      "userId": "s17ckg9br2p4k5kx6cr8fc4jz5852pah",
+      "displayName": "boboy-j",
+      "image": "https://avatars.githubusercontent.com/u/257822985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776555402747,
+      "changelog": "video-script-to-post 1.0.0 初始版本发布\n\n- 提供短视频全流程编导支持，从选题、脚本、AI提示词到多平台运营一站式输出内容包\n- 支持主流平台适配（抖音、B站、视频号、小红书）\n- 自动生成分镜脚本、AI视觉参数、平台优化策略及合规检查\n- 输出结构化 Markdown 工程包，方便拍摄或AI生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca47191c3ec0714696f411704b4fefd73ae766766f392a00199e83cec599fcbc"
+}

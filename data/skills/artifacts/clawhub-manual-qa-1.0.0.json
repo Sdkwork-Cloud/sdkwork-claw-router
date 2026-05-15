@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manual-qa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manual_qa",
+  "skill": {
+    "id": 53120,
+    "skillKey": "clawhub-manual-qa",
+    "name": "Manual QA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manual-qa",
+    "url": "https://clawhub.ai/skills/manual-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manual-qa-3e5b8696ecc2c276.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a manual QA checklist from code changes. Use when the user wants to test a PR, commit, branch, or staged changes — or says \"QA this\", \"test plan\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felipefreitag",
+      "userId": "s170z8eby487kafxj16r30asrn83me0s",
+      "displayName": "felipefreitag",
+      "image": "https://avatars.githubusercontent.com/u/6249611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775766175317,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:262b0d5b2d317a5e73ba29e0e1a8d1754830aed7ce68920fdcf98bffc5f4a9fd"
+}

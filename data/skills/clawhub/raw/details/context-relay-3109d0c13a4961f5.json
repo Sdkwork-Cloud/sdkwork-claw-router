@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "context-relay",
+    "displayName": "Context Relay",
+    "summary": "Solves the memory fragmentation problem for Agents during session restarts, sub-agent boundaries, and cron/heartbeat isolation.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776825212836,
+    "updatedAt": 1777527841971
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776825212836,
+    "changelog": "- Initial release of context-relay, solving agent memory fragmentation during session restarts, sub-agent boundaries, and task isolation.\n- Introduces a three-layer context architecture: PROJECT.md (identity), state.json (current state), decisions.md (decision records), and todos.json (cross-session task management).\n- Files serve as the single source of truth; agents read all context from files at startup, ensuring persistent continuity across sessions.\n- Provides clear workflows for cold start initialization and end-of-session state synchronization.\n- Adds sub-agent communication protocol via state files and includes script to initialize file structure.\n- Comprehensive documentation and file templates included for immediate adoption.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "openlark",
+    "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+    "displayName": "OpenLark",
+    "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+  },
+  "moderation": null
+}

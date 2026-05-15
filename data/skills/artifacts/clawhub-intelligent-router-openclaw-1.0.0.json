@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intelligent-router-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intelligent_router_openclaw",
+  "skill": {
+    "id": 41783,
+    "skillKey": "clawhub-intelligent-router-openclaw",
+    "name": "Intelligent Router Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intelligent-router-openclaw",
+    "url": "https://clawhub.ai/skills/intelligent-router-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intelligent-router-openclaw-d6dbbca39797b47b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent model routing for sub-agent task delegation. Choose the optimal model based on task complexity, cost, and capability requirements. Reduces costs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicocabrerac",
+      "userId": "s17dnpq3576gxa8q07zasr1vxx84ng67",
+      "displayName": "Rene Cabrera",
+      "image": "https://avatars.githubusercontent.com/u/179614942?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775891103501,
+      "changelog": "**Initial release of intelligent-router-openclaw: Intelligent model routing for task delegation based on complexity, cost, and capability.**\n\n- Automatically classifies tasks and routes to the optimal model tier, reducing compute costs for simple jobs while preserving quality for complex and critical work.\n- Enforces mandatory routing protocol for all cron jobs and sub-agent spawns; direct model assignment is blocked without router approval.\n- Introduces `router_policy.py` for pre-submission validation, model blocklisting (e.g., `ollama-gpu-server`), enforced recommendations, audits, and critical task warnings.\n- Supports live model auto-discovery and configuration health checks via inference tests.\n- Implements a 15-factor task-scoring system for accurate tier assignment.\n- Integrates with installation script for seamless protocol enforcement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd7594980e04e9dab50bb6333341513e13749d812b594dc4b06ff15085df1332"
+}

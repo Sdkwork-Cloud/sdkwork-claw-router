@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/db-migrate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_migrate",
+  "skill": {
+    "id": 52232,
+    "skillKey": "clawhub-db-migrate",
+    "name": "Db Migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-migrate",
+    "url": "https://clawhub.ai/skills/db-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-migrate-d671bafe6f8bae54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep database migration workflow—expand/contract, backward-compatible deploys, backfills, locking risks, and verification. Use when changing production schem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774601027190,
+      "changelog": "db-migrate v1.0.0 – Initial Release\n\n- Introduces a comprehensive workflow for safe, low-downtime database schema migrations using the expand/contract pattern.\n- Details six migration stages: classify change, expand, backfill & dual-write, flip reads/writes, contract, and verify & rollback.\n- Provides practical advice on backfills, locking risk mitigation, and staged rollouts.\n- Includes a final review checklist and tips specific to production use and different database engines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:288749da2d4d41cf89b8a2b55b49a4872535ef0474a000fda3ec4e1969e83fe4"
+}

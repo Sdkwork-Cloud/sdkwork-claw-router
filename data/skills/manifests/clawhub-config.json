@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20004,
+  "uuid": "skill-clawhub-config",
+  "skillKey": "clawhub-config",
+  "name": "Config",
+  "summary": "Manage app configuration files with init, list, and add operations. Use when initializing configs, listing settings, switching environments.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "Manage app configuration files with init, list, and add operations",
+        "Use when initializing configs, listing settings, switching environments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config",
+      "url": "https://clawhub.ai/skills/config"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config",
+    "url": "https://clawhub.ai/skills/config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-b79606fb3afea5bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2fe55a50d545e4504485558417138637e838ebc6124248986912fc519734800",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:38:46.329Z"
+}

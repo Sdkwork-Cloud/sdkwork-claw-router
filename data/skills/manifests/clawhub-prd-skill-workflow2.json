@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70315,
+  "uuid": "skill-clawhub-prd-skill-workflow2",
+  "skillKey": "clawhub-prd-skill-workflow2",
+  "name": "Prd Skill Workflow2",
+  "summary": "全栈PRD协作工作流。与用户共同探讨，产出可供开发、设计、测试、运营、项目经理使用的完整PRD文档。 协作流程共10步，输出PRD包含14个章节（项目概述、市场分析、需求列表、信息架构、用户流程、原型设计、UI规范、功能规格、数据模型、技术方案、非功能需求、测试方案、数据埋点、运营方案、项目计划）。 当用户说\"帮...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_skill_workflow2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShiXiangYu2",
+      "features": [
+        "全栈PRD协作工作流。与用户共同探讨，产出可供开发、设计、测试、运营、项目经理使用的完整PRD文档。 协作流程共10步，输出PRD包含14个章节（项目概述、市场分析、需求列表、信息架构、用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prd-skill-workflow2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215228006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prd-skill-workflow2",
+      "url": "https://clawhub.ai/skills/prd-skill-workflow2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-skill-workflow2",
+    "url": "https://clawhub.ai/skills/prd-skill-workflow2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-skill-workflow2-e9ede6a57414d9fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prd-skill-workflow2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prd-skill-workflow2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be548ec90ab2f9b5aae0ee0930c709e6cbda6564a89c5405689fbb06e1eb867b",
+      "artifactSizeBytes": 2803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:01:20.553Z"
+}

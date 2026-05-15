@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22806,
+  "uuid": "skill-clawhub-omnisend",
+  "skillKey": "clawhub-omnisend",
+  "name": "Omnisend",
+  "summary": "Omnisend integration. Manage Persons, Organizations, Activities, Notes, Files, Deals and more. Use when the user wants to interact with Omnisend data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnisend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Omnisend integration",
+        "Manage Persons, Organizations, Activities, Notes, Files, Deals and more",
+        "Use when the user wants to interact with Omnisend data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omnisend@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omnisend",
+      "url": "https://clawhub.ai/skills/omnisend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnisend",
+    "url": "https://clawhub.ai/skills/omnisend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnisend-668b559cb5d5baca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omnisend@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-omnisend-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7aae7205563e54d32e43aab7e746cc05d778998695fea6f4c855fd39c02342c3",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:47:51.737Z"
+}

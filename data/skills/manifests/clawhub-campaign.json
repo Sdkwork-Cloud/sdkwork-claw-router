@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23285,
+  "uuid": "skill-clawhub-campaign",
+  "skillKey": "clawhub-campaign",
+  "name": "Campaign",
+  "summary": "Campaign - command-line tool for everyday use Use when you need campaign.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campaign",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Campaign",
+        "command-line tool for everyday use Use when you need campaign."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/campaign@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "campaign",
+      "url": "https://clawhub.ai/skills/campaign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campaign",
+    "url": "https://clawhub.ai/skills/campaign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campaign-3dc260b2472062d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/campaign@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-campaign-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a048b07c56cb69bd81b5888fc9cb0a5c384bb31426ff8cf0b6a993783989439",
+      "artifactSizeBytes": 1808
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T19:15:16.523Z"
+}

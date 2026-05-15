@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50361,
+  "uuid": "skill-clawhub-bug-reaper",
+  "skillKey": "clawhub-bug-reaper",
+  "name": "Bug Reaper",
+  "summary": "Web2 bug bounty hunting agent — evidence-based vulnerability finder and report writer. Use when: auditing web apps/APIs for HackerOne, Bugcrowd, Intigriti, Y...",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_reaper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emperor Prime",
+      "features": [
+        "Web2 bug bounty hunting agent — evidence-based vulnerability finder and report writer",
+        "Use when: auditing web apps/APIs for HackerOne, Bugcrowd, Intigriti, Y..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bug-reaper@0.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72703645?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bug-reaper",
+      "url": "https://clawhub.ai/skills/bug-reaper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-reaper",
+    "url": "https://clawhub.ai/skills/bug-reaper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-reaper-e0948ce5c56786b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bug-reaper@0.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-bug-reaper-0.0.5.json",
+      "version": "0.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0994494307e2997353da57bb37ddc41270782e614efa95e8e725a187981e3f1",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T17:38:25.665Z"
+}

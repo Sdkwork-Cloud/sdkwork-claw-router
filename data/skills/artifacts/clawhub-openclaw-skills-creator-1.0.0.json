@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skills-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skills_creator",
+  "skill": {
+    "id": 34578,
+    "skillKey": "clawhub-openclaw-skills-creator",
+    "name": "OpenClaw Skills Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skills-creator",
+    "url": "https://clawhub.ai/skills/openclaw-skills-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skills-creator-ad424c14f9ec0532.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an exis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "super9du",
+      "userId": "s17ccn81eyq7syt95t6aehy6bx846xsp",
+      "displayName": "Super 9°",
+      "image": "https://avatars.githubusercontent.com/u/38002762?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775805634381,
+      "changelog": "Initial release of openclaw-skill-creator — a tool for authoring, editing, reviewing, and improving AgentSkills.\n\n- Provides comprehensive guidance for creating modular, concise, and effective skills.\n- Details best practices for structuring SKILL.md, bundled scripts, references, and assets.\n- Emphasizes context efficiency: keep core instructions in SKILL.md and offload detailed documentation to separate files as needed.\n- Outlines progressive disclosure for skill content loading: metadata, SKILL.md body, resources.\n- Clarifies what should and should not be included in a skill package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cade5fe71fdcaff63a29001afab88e3625aec4476673e2451c448f74f298f905"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59796,
+  "uuid": "skill-clawhub-volcengine-rds-mysql",
+  "skillKey": "clawhub-volcengine-rds-mysql",
+  "name": "Volcengine RDS Mysql",
+  "summary": "使用火山引擎 RDS MySQL MCP Server，帮助用户完成 RDS MySQL 相关的实例管理、数据库操作、账号管理和运维任务，可直接调用 uv run ./scripts/call_rds_mysql.py 脚本获取实时结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_rds_mysql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "使用火山引擎 RDS MySQL MCP Server，帮助用户完成 RDS MySQL 相关的实例管理、数据库操作、账号管理和运维任务，可直接调用 uv run ./scripts/cal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-rds-mysql@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-rds-mysql",
+      "url": "https://clawhub.ai/skills/volcengine-rds-mysql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-rds-mysql",
+    "url": "https://clawhub.ai/skills/volcengine-rds-mysql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-rds-mysql-4db186fbe0fb3a14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-rds-mysql@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-rds-mysql-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:643bedf45c06ea6d51c6c44ac47d93d543b45d7ef68b9c745a91103563b4570d",
+      "artifactSizeBytes": 2684
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:46:35.063Z"
+}

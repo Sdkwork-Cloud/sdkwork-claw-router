@@ -1,7 +1,7 @@
 use crate::domain::{
     AiModel, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter, GatewayAccessPolicy,
     GatewayApiKey, ModelPrice, ModelProviderRoute, ModelVendorDefinition, PriceSide, PricingPlan,
-    QuotaPolicy,
+    ProviderAccountPoolRoute, QuotaPolicy, RoutingPolicy, RoutingRule,
 };
 use crate::ports::PricingCatalog;
 
@@ -10,6 +10,9 @@ pub struct InMemoryPricingCatalog {
     vendors: Vec<ModelVendorDefinition>,
     models: Vec<AiModel>,
     provider_routes: Vec<ModelProviderRoute>,
+    provider_account_pool_routes: Vec<ProviderAccountPoolRoute>,
+    routing_policies: Vec<RoutingPolicy>,
+    routing_rules: Vec<RoutingRule>,
     plans: Vec<PricingPlan>,
     api_key_groups: Vec<ApiKeyGroup>,
     api_keys: Vec<GatewayApiKey>,
@@ -30,6 +33,18 @@ impl InMemoryPricingCatalog {
 
     pub fn add_provider_route(&mut self, route: ModelProviderRoute) {
         self.provider_routes.push(route);
+    }
+
+    pub fn add_provider_account_pool_route(&mut self, route: ProviderAccountPoolRoute) {
+        self.provider_account_pool_routes.push(route);
+    }
+
+    pub fn add_routing_policy(&mut self, policy: RoutingPolicy) {
+        self.routing_policies.push(policy);
+    }
+
+    pub fn add_routing_rule(&mut self, rule: RoutingRule) {
+        self.routing_rules.push(rule);
     }
 
     pub fn add_plan(&mut self, plan: PricingPlan) {
@@ -92,6 +107,22 @@ impl PricingCatalog for InMemoryPricingCatalog {
         self.provider_routes
             .iter()
             .filter(|route| route.catalog_key == model)
+            .cloned()
+            .collect()
+    }
+
+    fn list_provider_account_pool_routes(&self) -> Vec<ProviderAccountPoolRoute> {
+        self.provider_account_pool_routes.clone()
+    }
+
+    fn list_routing_policies(&self) -> Vec<RoutingPolicy> {
+        self.routing_policies.clone()
+    }
+
+    fn list_routing_rules(&self, profile_id: i64) -> Vec<RoutingRule> {
+        self.routing_rules
+            .iter()
+            .filter(|rule| rule.profile_id == profile_id)
             .cloned()
             .collect()
     }

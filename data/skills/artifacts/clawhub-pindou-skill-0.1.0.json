@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pindou-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pindou_skill",
+  "skill": {
+    "id": 65850,
+    "skillKey": "clawhub-pindou-skill",
+    "name": "Pindou Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pindou-skill",
+    "url": "https://clawhub.ai/skills/pindou-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pindou-skill-7383198a760a590c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "拼豆图纸一键生成。用户给一张照片想做成拼豆图纸 / 想做\"拼豆\"/\"perler\"/\"像素图\"/\"网格图\"/\"用豆子拼\"时使用。流程:谈风格、生成像素图、提取色块、出可打印的网格图纸 + 色号 + 采购清单。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ciawevy",
+      "userId": "s17cvhsy9f9kfjp6tjypa08na983ndaq",
+      "displayName": "Hanshen Zhu",
+      "image": "https://avatars.githubusercontent.com/u/90709683?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778257225807,
+      "changelog": "pindou-skill 0.1.0\n\n- First release: 一键从照片或描述生成可打印拼豆/像素网格图纸\n- 完整五步流程：用户需求确认、生成像素图、用户挑选、色块提取、出采购清单与最终图纸\n- 支持个性化参数（风格、网格、背景、色数、细节等）以自然语言与用户交互确认\n- 明确 STOP 节点，避免不必要的 API 消耗，用户可主动决策每个关键步骤\n- 采用 MARD 221 色标准色板，支持调色板自定义\n- 输出包含可打印图纸(pattern.png)、bom采购清单(csv)，附完整脚本与文件组织指导",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4bf4820377de267464fd2b47851b148db6731bb2240a6d2c19a4665b0446d38"
+}

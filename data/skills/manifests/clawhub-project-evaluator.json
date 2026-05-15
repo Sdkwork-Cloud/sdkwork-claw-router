@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71175,
+  "uuid": "skill-clawhub-project-evaluator",
+  "skillKey": "clawhub-project-evaluator",
+  "name": "AI 项目评估助手",
+  "summary": "描述一个项目想法，AI 从市场/技术/商业/风险四个维度系统评估， 输出评估报告、竞品速查、MVP建议，帮你决策「值不值得做」。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_evaluator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "antonia huang",
+      "features": [
+        "描述一个项目想法，AI 从市场/技术/商业/风险四个维度系统评估， 输出评估报告、竞品速查、MVP建议，帮你决策「值不值得做」。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-evaluator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143588581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-evaluator",
+      "url": "https://clawhub.ai/skills/project-evaluator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-evaluator",
+    "url": "https://clawhub.ai/skills/project-evaluator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-evaluator-27b73845f6e6e531.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-evaluator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-evaluator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d97522c6e72729c43d50674ab8308b0679f67f4ae8beba64254fc4182742df5",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:14:44.750Z"
+}

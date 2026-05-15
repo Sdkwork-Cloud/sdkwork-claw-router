@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32053,
+  "uuid": "skill-clawhub-flare",
+  "skillKey": "clawhub-flare",
+  "name": "Flare",
+  "summary": "Flare integration. Manage data, records, and automate workflows. Use when the user wants to interact with Flare data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flare",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Flare integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Flare data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flare@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flare",
+      "url": "https://clawhub.ai/skills/flare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flare",
+    "url": "https://clawhub.ai/skills/flare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flare-7797993a4b232d64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flare@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-flare-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ed55a14b9707c44979753ba1dda04551ea7217c8c30d00af363576ae0c14c1a",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:48:10.731Z"
+}

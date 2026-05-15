@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24122,
+  "uuid": "skill-clawhub-iot-platform",
+  "skillKey": "clawhub-iot-platform",
+  "name": "IoT Platform Connection",
+  "summary": "[WIP] Guide to connect to Cloud Studio IoT's OpenClaw platform via MCP API. Use when configuring MCP server connections, sending commands to IoT devices, rea...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iot_platform",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sobdev",
+      "features": [
+        "[WIP] Guide to connect to Cloud Studio IoT's OpenClaw platform via MCP API",
+        "Use when configuring MCP server connections, sending commands to IoT devices, rea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iot-platform@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71671270?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iot-platform",
+      "url": "https://clawhub.ai/skills/iot-platform"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iot-platform",
+    "url": "https://clawhub.ai/skills/iot-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iot-platform-9d1ef618e3adece9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iot-platform@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-iot-platform-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0753213b4554d213f352befeb058e5a78e3ed69b4c26ba5a480ab629f7c8e18",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:46:28.875Z"
+}

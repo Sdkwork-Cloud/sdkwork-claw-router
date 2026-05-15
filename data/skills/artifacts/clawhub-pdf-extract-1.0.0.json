@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-extract@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_extract",
+  "skill": {
+    "id": 8395,
+    "skillKey": "clawhub-pdf-extract",
+    "name": "Pdf Extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-extract",
+    "url": "https://clawhub.ai/skills/pdf-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-extract-6e96b0fb0bc9c298.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from PDF files for LLM processing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xejrax",
+      "userId": "publishers:xejrax",
+      "displayName": "Xejrax",
+      "image": "https://avatars.githubusercontent.com/u/148405630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 15890,
+      "installsAllTime": 209,
+      "installsCurrent": 197,
+      "stars": 17,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770135673109,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f3b51c58bdb0316d1bfb989063ecb5ff426a46818a36ac6f6a9f425836d716f"
+}

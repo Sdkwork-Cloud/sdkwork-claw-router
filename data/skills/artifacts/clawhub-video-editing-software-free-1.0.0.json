@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-software-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_software_free",
+  "skill": {
+    "id": 42468,
+    "skillKey": "clawhub-video-editing-software-free",
+    "name": "Video Editing Software Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-software-free",
+    "url": "https://clawhub.ai/skills/video-editing-software-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-software-free-cc385278e497ef5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776025855421,
+      "changelog": "Initial release: Quickly edit, process, and export videos for free with cloud rendering.\n\n- Upload raw video clips (MP4, MOV, AVI, or WebM, up to 500MB) and describe your edits to generate polished 1080p MP4s.\n- Automatic token and session management with free credits; no need for paid software.\n- Supports basic intent recognition: edit, upload, check credits, export videos, and track timeline state.\n- Handles multiple file formats, and provides step-by-step error feedback if upload or export fails.\n- Fast cloud-based GPU render pipeline (typically 1–2 minutes per short video).\n- Ideal for students, freelancers, and creators needing quick professional video edits without complex tools.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6edc5e6ca53b214bc9d24f228d663f9559217a092ec06ded5391d3e3e63ce4ab"
+}

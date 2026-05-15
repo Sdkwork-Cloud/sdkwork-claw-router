@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_suite",
+  "skill": {
+    "id": 18876,
+    "skillKey": "clawhub-google-suite",
+    "name": "Google Suite Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-suite",
+    "url": "https://clawhub.ai/skills/google-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-suite-a5d0ee19977e1d0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides unified access to Gmail, Google Calendar, and Drive APIs for managing emails, calendar events, and files with OAuth2 authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cenralsolution",
+      "userId": "s17305cm6knd54s5sga99jmzhd85vb5e",
+      "displayName": "Cenralsolution",
+      "image": "https://avatars.githubusercontent.com/u/242977556?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 643,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771958624310,
+      "changelog": "- Initial release providing unified access to Gmail, Google Calendar, and Google Drive APIs.\n- Supports sending, reading, deleting, and managing emails.\n- Allows creating, listing, updating, and deleting calendar events.\n- Handles Google Drive file operations: list, search, upload, download, and delete.\n- OAuth2 authentication with secure token storage using environment variables.\n- Python 3.8+ support with guided setup and usage examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b3477a4f3e6b0422c22b87578d4ac50b5031b5d2c59f9e2cafcaa23067e77de"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geneva-city@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geneva_city",
+  "skill": {
+    "id": 70372,
+    "skillKey": "clawhub-geneva-city",
+    "name": "Geneva City"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geneva-city",
+    "url": "https://clawhub.ai/skills/geneva-city",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geneva-city-ba8081ea2a073fce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "日内瓦是国际外交中心，拥有联合国欧洲总部，世界顶级钟表制造和私人银行业的百年传统。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777809838749,
+      "changelog": "Initial release introducing the \"geneva-city\" skill:\n\n- Overview of Geneva as a global center for international diplomacy, luxury watchmaking, and private banking.\n- Historical timeline highlighting key events from ancient Rome to the founding of the UN European headquarters.\n- Analysis of Geneva’s economic sectors: international organizations, luxury goods, and financial services.\n- Summary of Geneva's \"moat\" including its neutral status and concentration of international institutions.\n- Key demographic and economic statistics.\n- Fun fact section on Geneva's dominance in the luxury watch industry.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a52818824957ca429ad041b3d93bcdde3ef60af3e5bbced8de24a1fc43440a83"
+}

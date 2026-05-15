@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomous-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_research",
+  "skill": {
+    "id": 10391,
+    "skillKey": "clawhub-autonomous-research",
+    "name": "Autonomous Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-research",
+    "url": "https://clawhub.ai/skills/autonomous-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-research-b60e0fa533dfb729.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Conduct comprehensive research independently. Find information, analyze sources, synthesize findings, and create detailed reports without human guidance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobisamaa",
+      "userId": "publishers:tobisamaa",
+      "displayName": "tobisamaa",
+      "image": "https://avatars.githubusercontent.com/u/62774845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2576,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771877049994,
+      "changelog": "Initial release of autonomous-research skill.\n\n- Enables independent, comprehensive research on any topic.\n- Finds, analyzes, and cross-references multiple sources for credible information.\n- Synthesizes findings into detailed, structured reports with citations.\n- Evaluates source reliability using clear criteria.\n- Supports quality assurance, trend analysis, comparative research, and impact assessment.\n- Provides quick action commands for research, analysis, synthesis, and report generation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5eb9ecc25d5b1194ada63a137d06164fef6cf527fef86e6bfc9cd933e9b5a924"
+}

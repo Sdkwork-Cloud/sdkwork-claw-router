@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-review-report-chinese@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_review_report_chinese",
+  "skill": {
+    "id": 73586,
+    "skillKey": "clawhub-personal-review-report-chinese",
+    "name": "个人发展复盘助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-review-report-chinese",
+    "url": "https://clawhub.ai/skills/personal-review-report-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-review-report-chinese-26fa322e78e995d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据用户提供的文本或文件，生成结构清晰、内容详实的中文个人发展复盘报告，涵盖职业、人际、健康等多方面分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "westwood-lin",
+      "userId": "publishers:westwood-lin",
+      "displayName": "Yalin Feng",
+      "image": "https://avatars.githubusercontent.com/u/65708658?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772704413394,
+      "changelog": "Initial release of Monthly Review Skill — generates structured personal review reports in Chinese from user input  or local files.\nChinese: v0.0.1: 初始发布 & 测试，只包含一个SKILL.md, 用于从用户输入或本地文件中总结与用户近期个人发展相关的信息，结构化输出报告。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f0a49bc7e18eeabaf5d510aa77d3fe60e3769f32cb8ea88a5b9ef76c06c9cee"
+}

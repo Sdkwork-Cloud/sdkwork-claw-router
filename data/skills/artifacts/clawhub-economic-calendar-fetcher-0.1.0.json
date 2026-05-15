@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/economic-calendar-fetcher@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.economic_calendar_fetcher",
+  "skill": {
+    "id": 8911,
+    "skillKey": "clawhub-economic-calendar-fetcher",
+    "name": "Economic Calendar Fetcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "economic-calendar-fetcher",
+    "url": "https://clawhub.ai/skills/economic-calendar-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/economic-calendar-fetcher-f2b0c8a131000a69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch scheduled economic events and data releases from the FMP API for specified dates, filtering by impact, country, and type, and output a chronological ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "veeramanikandanr48",
+      "userId": "publishers:veeramanikandanr48",
+      "displayName": "Veera",
+      "image": "https://avatars.githubusercontent.com/u/119089869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5132,
+      "installsAllTime": 50,
+      "installsCurrent": 49,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769870220982,
+      "changelog": "Initial release of Economic Calendar Fetcher—fetches, filters, and reports upcoming economic events using FMP API.\n\n- Fetch scheduled economic events and data releases for specified date ranges (default: next 7 days).\n- Support filtering by event impact, country, and event type.\n- Generate chronological markdown reports with impact assessment.\n- Configure FMP API key via environment variable or user prompt.\n- Covers major global economies and key market-moving indicators.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a1cbe91f2d46b8e0cd7cb4c5e35cc52dc2cd0efc937b00f04514d9572e7addda"
+}

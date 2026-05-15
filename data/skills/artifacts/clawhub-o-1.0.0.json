@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/o@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.o",
+  "skill": {
+    "id": 26039,
+    "skillKey": "clawhub-o",
+    "name": "O"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "o",
+    "url": "https://clawhub.ai/skills/o",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/o-65c74c15a686187b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Short alias skill for quickly suggesting OS-specific commands to open files, folders, URLs, logs, or repositories from the command line or file explorer. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlang-cn",
+      "userId": "s17dqxdtqm3n7dpc7r06vmnqfd83gw7r",
+      "displayName": "openlang",
+      "image": "https://avatars.githubusercontent.com/u/45782174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 376,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773314454112,
+      "changelog": "- Initial release of the \"o\" skill for quickly suggesting concise OS-specific commands to open files, folders, URLs, logs, or repositories.\n- Provides minimal command-line answers tailored to the user's operating system, with a focus on Windows PowerShell.\n- Supports command suggestions for Windows, macOS, and Linux.\n- Always delivers short, to-the-point responses for opening tasks; avoids unnecessary explanations.\n- Strictly limits responses to safe \"open\" operations without including risky or destructive actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e88bab47c02126fa1c7b3ce04468b61519a1b3272b7f3d1bfcf331a7b548165"
+}

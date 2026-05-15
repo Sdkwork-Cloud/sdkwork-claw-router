@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/s1kasl-askdjna@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s1kasl_askdjna",
+  "skill": {
+    "id": 22685,
+    "skillKey": "clawhub-s1kasl-askdjna",
+    "name": "ksdsl-skilll"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s1kasl-askdjna",
+    "url": "https://clawhub.ai/skills/s1kasl-askdjna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s1kasl-askdjna-5f66087381a6f006.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "f1zzyw",
+      "userId": "publishers:f1zzyw",
+      "displayName": "f1zzyw",
+      "image": "https://avatars.githubusercontent.com/u/25534734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772791603492,
+      "changelog": "Initial release of self-improvement-www skill for OpenClaw and generic agent workspaces.\n\n- Provides structured logging for learnings, errors, and feature requests in Markdown files.\n- Outlines clear triggers for logging (errors, corrections, feature requests, knowledge gaps, best practices).\n- Includes detailed templates for LEARNINGS.md, ERRORS.md, and FEATURE_REQUESTS.md entries.\n- Supports workflow for promoting important learnings to project memory (AGENTS.md, SOUL.md, TOOLS.md, etc).\n- Offers setup instructions for OpenClaw and manual integration with other agent environments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b04b46ec768a7ca094452fbdfda1f29382ee14cc69e83055b9e46adc5f7a814e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nwo-robotics@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nwo_robotics",
+  "skill": {
+    "id": 27448,
+    "skillKey": "clawhub-nwo-robotics",
+    "name": "NWO Robotics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nwo-robotics",
+    "url": "https://clawhub.ai/skills/nwo-robotics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nwo-robotics-beeaf2f3e35a30a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control robots and IoT devices via natural language using the NWO Robotics API for robot commands, sensor queries, vision tasks, and task planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "redciprianpater",
+      "userId": "publishers:redciprianpater",
+      "displayName": "Ciprian Pater",
+      "image": "https://avatars.githubusercontent.com/u/66785207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773879323590,
+      "changelog": "- Updated homepage URL to https://nworobotics.cloud\n- Updated repository URL to https://huggingface.co/spaces/PUBLICAE/nwo-robotics-api-demo\n- No changes to functionality or API usage documented",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ced183a727340195f6282100d7f673cd9295513eda0f4f427d2cca685afc3f96"
+}

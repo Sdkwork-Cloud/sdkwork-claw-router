@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zilliz-cloud@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zilliz_cloud",
+  "skill": {
+    "id": 52170,
+    "skillKey": "clawhub-zilliz-cloud",
+    "name": "Zilliz Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zilliz-cloud",
+    "url": "https://clawhub.ai/skills/zilliz-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zilliz-cloud-bb035c4b0f74dee9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Zilliz Cloud clusters and Milvus vector databases — cluster ops, collections, vector search, RBAC, backups, imports, and more via zilliz-cli."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lumina2025",
+      "userId": "s17dczew53b0fsfkq6bm0b5vdd83h30x",
+      "displayName": "Lumina Wang",
+      "image": "https://avatars.githubusercontent.com/u/201706568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773819586448,
+      "changelog": "Initial release of the Zilliz Cloud CLI skill.\n\n- Manage Zilliz Cloud clusters and Milvus vector databases directly via `zilliz-cli`.\n- Supports cluster operations, collections, vector search, RBAC, backups, imports, monitoring, billing, and more.\n- Step-by-step setup guidance, including authentication, context management, and environment requirements.\n- Comprehensive documentation for cluster lifecycle management and CLI command usage.\n- Clearly lists differences between Free, Serverless, and Dedicated cluster types.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14bef81fed05d0c48db744e70fa109433e9b3c337858acabdf381349055bdedf"
+}

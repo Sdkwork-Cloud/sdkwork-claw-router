@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66411,
+  "uuid": "skill-clawhub-fund-report-extractor",
+  "skillKey": "clawhub-fund-report-extractor",
+  "name": "Fund Report Extractor",
+  "summary": "自动提取公募基金定期报告中“投资策略和运作分析”部分全文，支持文本型和扫描版PDF的精准定位与汇总。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fund_report_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suncxw-creator",
+      "features": [
+        "自动提取公募基金定期报告中“投资策略和运作分析”部分全文，支持文本型和扫描版PDF的精准定位与汇总。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fund-report-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247308666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fund-report-extractor",
+      "url": "https://clawhub.ai/skills/fund-report-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fund-report-extractor",
+    "url": "https://clawhub.ai/skills/fund-report-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fund-report-extractor-894aa753cba6b1fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fund-report-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fund-report-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f24c6883d8f916d43459e0b113d9fbd955c1c75341538a653218a1ff3213995",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:33:54.005Z"
+}

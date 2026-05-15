@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maske-adaptive-reasoning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maske_adaptive_reasoning",
+  "skill": {
+    "id": 73697,
+    "skillKey": "clawhub-maske-adaptive-reasoning",
+    "name": "马斯克自适应推理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maske-adaptive-reasoning",
+    "url": "https://clawhub.ai/skills/maske-adaptive-reasoning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maske-adaptive-reasoning-56bb02f6d8dc32d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自适应推理评估系统。自动评估任务复杂度并动态调整推理级别。在每次用户消息时触发，评估是否需要扩展思考（推理模式）来提高响应质量。用于复杂问题预处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skillforge-jojo",
+      "userId": "s177b3btepey1fcwv6ajtcahth83gnny",
+      "displayName": "skillforge-jojo",
+      "image": "https://avatars.githubusercontent.com/u/269963240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775975999877,
+      "changelog": "首次发布：自动评估任务复杂度并动态调整推理级别",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:294a0bc7a9ab08eb028da694fe64e97bdddf41379a873b0be03db5ba1f7137d3"
+}

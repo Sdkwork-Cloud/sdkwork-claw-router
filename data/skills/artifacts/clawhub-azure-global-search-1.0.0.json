@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-global-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_global_search",
+  "skill": {
+    "id": 39191,
+    "skillKey": "clawhub-azure-global-search",
+    "name": "Azure Global Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-global-search",
+    "url": "https://clawhub.ai/skills/azure-global-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-global-search-ed1b85135f70c284.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Microsoft Azure product information, documentation, parameters, features, and pricing from official sources without login. Use when the user asks about..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangbingpeng",
+      "userId": "s173ngq2jm0da73nhbpj7et9vx84803e",
+      "displayName": "WBP",
+      "image": "https://avatars.githubusercontent.com/u/273774793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776762203069,
+      "changelog": "Initial release of the azure-global-search skill:\n\n- Enables querying Microsoft Azure product information, documentation, parameters, features, and pricing from official sources without login.\n- Designed for use cases such as product lookups, documentation search, specification comparison, and parameter identification.\n- Includes bilingual support (English/Chinese) and comprehensive product alias mapping.\n- Provides a structured catalog covering AI, Compute, Storage, Database, and more Azure service categories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ced231f7c3c6d3b9e1a248c931c9c6ab715e27a4e628dd42b3b4428d2e123459"
+}

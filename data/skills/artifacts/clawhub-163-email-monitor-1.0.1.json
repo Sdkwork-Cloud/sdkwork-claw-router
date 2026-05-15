@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/163-email-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.163_email_monitor",
+  "skill": {
+    "id": 32718,
+    "skillKey": "clawhub-163-email-monitor",
+    "name": "163 Email Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "163-email-monitor",
+    "url": "https://clawhub.ai/skills/163-email-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/163-email-monitor-68a7ca8acaed14b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to 163/126/yeah.net (Coremail) email via IMAP, read inbox, search emails, and send emails via SMTP. Activate when user asks to check email, read mail..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanyuhh",
+      "userId": "s1797rdcjst0fayvztf32cs1f183qwff",
+      "displayName": "Emory Sermon",
+      "image": "https://avatars.githubusercontent.com/u/17738440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774249108128,
+      "changelog": "Security improvements: improved error handling, better input validation, detailed documentation, safer connection management",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21da1a3263a3e25647583636b6e49a9f1e8a13c439e433a77ebd17ce2c3eaeca"
+}

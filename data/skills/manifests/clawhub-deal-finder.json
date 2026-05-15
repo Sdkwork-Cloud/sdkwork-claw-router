@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67578,
+  "uuid": "skill-clawhub-deal-finder",
+  "skillKey": "clawhub-deal-finder",
+  "name": "deal-finder",
+  "summary": "全网比价助手。查找最优价格、优惠券、返利和限时折扣。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deal_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "全网比价助手。查找最优价格、优惠券、返利和限时折扣。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deal-finder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deal-finder",
+      "url": "https://clawhub.ai/skills/deal-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deal-finder",
+    "url": "https://clawhub.ai/skills/deal-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deal-finder-8dd3ff5a7e40a2d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deal-finder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deal-finder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c53d4021d17084926e347631c3a700564f28ff30957a5773075d34e8571a2f4",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T00:04:32.874Z"
+}

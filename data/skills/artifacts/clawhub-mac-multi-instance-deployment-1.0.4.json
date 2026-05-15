@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-multi-instance-deployment@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_multi_instance_deployment",
+  "skill": {
+    "id": 31630,
+    "skillKey": "clawhub-mac-multi-instance-deployment",
+    "name": "Mac Multi-Instance Deployment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-multi-instance-deployment",
+    "url": "https://clawhub.ai/skills/mac-multi-instance-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-multi-instance-deployment-e5b7d015e2c6646b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Public-safe Mac multi-instance deployment skill for generic OpenClaw-style workspace layout, boundary notes, sample config, and pack validation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoma970",
+      "userId": "s17406chjg6x6kp8e7vgcncnv183mh5m",
+      "displayName": "Guoma970",
+      "image": "https://avatars.githubusercontent.com/u/266290379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774545984436,
+      "changelog": "Version 1.0.4\n\n- Added release notes, publishing, and dialog example documentation.\n- Updated and clarified main skill and example README files.\n- Refined skill description and checklist for brevity and clarity.\n- Enhanced guardrails for public-safe deployment practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:192d907e0a4a13be389aaf467fa6e364b79cbd7f5f5d34593150683de708f4a5"
+}

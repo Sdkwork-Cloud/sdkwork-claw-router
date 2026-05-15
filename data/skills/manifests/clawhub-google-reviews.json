@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25587,
+  "uuid": "skill-clawhub-google-reviews",
+  "skillKey": "clawhub-google-reviews",
+  "name": "Google Reviews",
+  "summary": "Research Google Maps and Shopping reviews for any company. Run multi-brand monitoring with heartbeat refreshes and sentiment reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_reviews",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Research Google Maps and Shopping reviews for any company",
+        "Run multi-brand monitoring with heartbeat refreshes and sentiment reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-reviews@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-reviews",
+      "url": "https://clawhub.ai/skills/google-reviews"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-reviews",
+    "url": "https://clawhub.ai/skills/google-reviews",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-reviews-ac59d540b4f63f57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-reviews@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-reviews-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77e1c0caf8d320a3481fa8d7a9512503278a7d1a7912df8a06d439214c04c7e3",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T22:03:46.558Z"
+}

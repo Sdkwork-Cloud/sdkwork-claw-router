@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/harvest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harvest",
+  "skill": {
+    "id": 27395,
+    "skillKey": "clawhub-harvest",
+    "name": "Harvest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harvest",
+    "url": "https://clawhub.ai/skills/harvest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harvest-d087ee8196afa2ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Harvest integration. Manage Projects, Tasks, Persons, Expenses, Clients. Use when the user wants to interact with Harvest data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773439404317,
+      "changelog": "Auto sync from membranedev/application-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8ae6620e6fddf106ce4c76c0da572a95e07701a11571cb61c1b6070f548ffed"
+}

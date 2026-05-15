@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69339,
+  "uuid": "skill-clawhub-memory-index-manager",
+  "skillKey": "clawhub-memory-index-manager",
+  "name": "记忆索引管理器",
+  "summary": "记忆索引系统。用于管理长期项目记忆、自动维护索引、快速定位历史项目。仅在用户明确说\"回忆一下\"\"remember\"\"recall\"时触发读取，写入与OpenClaw原生机制保持一致，索引维护在后台自动进行。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_index_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zxc159620352",
+      "features": [
+        "记忆索引系统。用于管理长期项目记忆、自动维护索引、快速定位历史项目。仅在用户明确说\"回忆一下\"\"remember\"\"recall\"时触发读取，写入与OpenClaw原生机制保持一致，索引维护."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-index-manager@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7236475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-index-manager",
+      "url": "https://clawhub.ai/skills/memory-index-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-index-manager",
+    "url": "https://clawhub.ai/skills/memory-index-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-index-manager-8e9981f0095db86b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-index-manager@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-index-manager-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e9925c1d872e1bc573ca7425b0d4da6a2e700019473456fa4debe30c56f0716",
+      "artifactSizeBytes": 2100
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:04:33.416Z"
+}

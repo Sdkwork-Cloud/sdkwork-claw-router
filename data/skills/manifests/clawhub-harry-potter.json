@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63457,
+  "uuid": "skill-clawhub-harry-potter",
+  "skillKey": "clawhub-harry-potter",
+  "name": "Harry Potter",
+  "summary": "哈利·波特系列介绍和魔法世界指南",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.harry_potter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "哈利·波特系列介绍和魔法世界指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/harry-potter@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "harry-potter",
+      "url": "https://clawhub.ai/skills/harry-potter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "harry-potter",
+    "url": "https://clawhub.ai/skills/harry-potter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/harry-potter-927f175fde7b0690.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/harry-potter@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-harry-potter-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccef099c0f32b9958f31d6871e58162a98774a63273c8de9e6b117f20f0b87e9",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:50:47.495Z"
+}

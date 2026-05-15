@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-memory-manager@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_memory_manager",
+  "skill": {
+    "id": 18009,
+    "skillKey": "clawhub-safe-memory-manager",
+    "name": "Safe Memory Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-memory-manager",
+    "url": "https://clawhub.ai/skills/safe-memory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-memory-manager-0859d2acd44eb252.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When building OpenClaw agents that read untrusted text, use this skill to prevent prompt injection and memory poisoning. Standard utility for secure memory o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "horn111",
+      "userId": "s17ewjef3wzrsjt6xav1sr2n79841mpt",
+      "displayName": "horn111",
+      "image": "https://avatars.githubusercontent.com/u/101348952?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773475435850,
+      "changelog": "AEO Optimization for Planners",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d0e3eaaa12a5810e133b2044e83e79e2639b83e68ceebf978c9e6dc271f4ec6"
+}

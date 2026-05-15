@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-legal-assistant-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_legal_assistant_pro",
+  "skill": {
+    "id": 69995,
+    "skillKey": "clawhub-ai-legal-assistant-pro",
+    "name": "AI Legal Assistant Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-legal-assistant-pro",
+    "url": "https://clawhub.ai/skills/ai-legal-assistant-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-legal-assistant-pro-a8ae5824374bc3a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向中国用户的法律辅助 skill，用于合同风险初筛、劳动纠纷与诉讼成本估算，以及民事起诉状 / 答辩状 / 证据提纲等结构化文书骨架生成。适用于用户想看合同有没有坑、估算赔偿或诉讼费、判断是否值得起诉、或先生成一版可修改的法律文书框架时使用。本 skill 仅提供初步结构化辅助，不替代执业律师的正式法律意见。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774136483183,
+      "changelog": "Fix wrong package upload caused by ambiguous publish path; republish correct AI legal assistant content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b24f1fd5eec6d2f527b43722326dc34d393ec5e8161fd5cb9f99104cc9f6f04d"
+}

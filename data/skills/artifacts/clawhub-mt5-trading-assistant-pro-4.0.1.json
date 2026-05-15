@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mt5-trading-assistant-pro@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mt5_trading_assistant_pro",
+  "skill": {
+    "id": 51028,
+    "skillKey": "clawhub-mt5-trading-assistant-pro",
+    "name": "Mt5 Trading Assistant Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mt5-trading-assistant-pro",
+    "url": "https://clawhub.ai/skills/mt5-trading-assistant-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mt5-trading-assistant-pro-f6c741a7f4457f66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional-grade MetaTrader 5 trading automation — 35+ indicators, AI-powered strategy generation, smart risk management, and autonomous market scanning. C..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canvascn00-crypto",
+      "userId": "s17d9ewaw21bfdj9xgxgm5qcxd847y7w",
+      "displayName": "canvascn00",
+      "image": "https://avatars.githubusercontent.com/u/260036933?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1775275478552,
+      "changelog": "Reduced false-positive security flags. Replaced sensitive terms (password → code, login → account number). Cleaner language for safety scanner compatibility. Full functionality preserved. Default English, Chinese switchable.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c0ec1ee03c2881cb345ea40997a6b0d75a214dedc22e40162dc30260aba237c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38574,
+  "uuid": "skill-clawhub-nm-egregore-quality-gate",
+  "skillKey": "clawhub-nm-egregore-quality-gate",
+  "name": "Nm Egregore Quality Gate",
+  "summary": "Orchestrates egregore's QUALITY pipeline stage. Runs convention checks and invokes review skills for each quality step. Supports self-review (pre-PR) and PR-...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_egregore_quality_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Orchestrates egregore's QUALITY pipeline stage",
+        "Runs convention checks and invokes review skills for each quality step",
+        "Supports self-review (pre-PR) and PR-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-egregore-quality-gate@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-egregore-quality-gate",
+      "url": "https://clawhub.ai/skills/nm-egregore-quality-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-egregore-quality-gate",
+    "url": "https://clawhub.ai/skills/nm-egregore-quality-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-egregore-quality-gate-5ccb227989ffab92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-egregore-quality-gate@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-egregore-quality-gate-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08b315ca4601648cc6296483a3c00cae196069d3f571053188c78e20d890f3ff",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:53.065Z"
+}

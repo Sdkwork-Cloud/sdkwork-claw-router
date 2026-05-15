@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64806,
+  "uuid": "skill-clawhub-hikvision",
+  "skillKey": "clawhub-hikvision",
+  "name": "Hikvision",
+  "summary": "海康威视公司介绍和安防产品指南",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hikvision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "海康威视公司介绍和安防产品指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hikvision@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hikvision",
+      "url": "https://clawhub.ai/skills/hikvision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hikvision",
+    "url": "https://clawhub.ai/skills/hikvision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hikvision-f1a54130f4c752b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hikvision@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hikvision-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8beb024a5cefa6759baee4eb6de73414848e94047d168a88bf08d061c3e92607",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:50:02.637Z"
+}

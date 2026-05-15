@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72514,
+  "uuid": "skill-clawhub-dingtalk-docs",
+  "skillKey": "clawhub-dingtalk-docs",
+  "name": "dingtalk-docs",
+  "summary": "管理钉钉云文档中的文档、文件夹和内容。当用户想要创建文档、搜索文档、读取或写入文档内容、创建文件夹整理文档时使用。也适用于用户提到云文档、在线文档、钉钉文档、钉文档等关键词的场景。不要在用户需要操作多维表、管理日程、发消息或处理审批流时触发。",
+  "version": "0.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marila Wang",
+      "features": [
+        "管理钉钉云文档中的文档、文件夹和内容。当用户想要创建文档、搜索文档、读取或写入文档内容、创建文件夹整理文档时使用。也适用于用户提到云文档、在线文档、钉钉文档、钉文档等关键词的场景。不要在用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-docs@0.3.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8380339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-docs",
+      "url": "https://clawhub.ai/skills/dingtalk-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-docs",
+    "url": "https://clawhub.ai/skills/dingtalk-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-docs-9762192497631a42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-docs@0.3.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-docs-0.3.4.json",
+      "version": "0.3.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33300dfc5abdb90d6ae7a59b2659b67fa9aa68bae7d030a90df69e807762b5fc",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T23:20:02.876Z"
+}

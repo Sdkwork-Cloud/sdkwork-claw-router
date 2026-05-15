@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neo1307-env-health-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo1307_env_health_check",
+  "skill": {
+    "id": 27699,
+    "skillKey": "clawhub-neo1307-env-health-check",
+    "name": "Env Health Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo1307-env-health-check",
+    "url": "https://clawhub.ai/skills/neo1307-env-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo1307-env-health-check-8c5b8a632d592c4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inspect environment variables, critical directories, and write permissions, then produce a health report. Use when validating deployment readiness, local run..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neo1307",
+      "userId": "s17e4t723xx0m0178xj1mw78td85175k",
+      "displayName": "neo1307",
+      "image": "https://avatars.githubusercontent.com/u/196853531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773988808824,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfe030c33461bfc5ad03e1e5581ebb3da595ae5262da977e8ccbbcd6db5a1fc2"
+}

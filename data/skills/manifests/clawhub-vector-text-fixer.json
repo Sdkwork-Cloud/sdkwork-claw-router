@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28445,
+  "uuid": "skill-clawhub-vector-text-fixer",
+  "skillKey": "clawhub-vector-text-fixer",
+  "name": "Vector Text Fixer",
+  "summary": "Fix garbled text in PDF/SVG vector graphics for final editing in AI. Detect, replace and repair garbled text in vector graphic files while maintaining origin...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vector_text_fixer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EC-cyber258",
+      "features": [
+        "Fix garbled text in PDF/SVG vector graphics for final editing in AI",
+        "Detect, replace and repair garbled text in vector graphic files while maintaining origin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vector-text-fixer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229709544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vector-text-fixer",
+      "url": "https://clawhub.ai/skills/vector-text-fixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vector-text-fixer",
+    "url": "https://clawhub.ai/skills/vector-text-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vector-text-fixer-765c3d0067879895.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vector-text-fixer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vector-text-fixer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60c38fc3d8d0098283cd938e98ad791e4592b42ab6e8b2c8933ff0d82c35b464",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T09:34:59.183Z"
+}

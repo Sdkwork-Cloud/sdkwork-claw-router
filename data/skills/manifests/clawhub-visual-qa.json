@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26143,
+  "uuid": "skill-clawhub-visual-qa",
+  "skillKey": "clawhub-visual-qa",
+  "name": "Visual Qa",
+  "summary": "Perform pixel-level visual regression testing on web apps by capturing, comparing screenshots, and gating deployments based on configurable similarity thresh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_qa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Bolander",
+      "features": [
+        "Perform pixel-level visual regression testing on web apps by capturing, comparing screenshots,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-qa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-qa",
+      "url": "https://clawhub.ai/skills/visual-qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-qa",
+    "url": "https://clawhub.ai/skills/visual-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-qa-e16adfd6b7e983d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-qa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-qa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eaae10855e1e7c86f4dae9bc267acb54f469bbf47089408fd4dd4f8425013f30",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:37:40.889Z"
+}

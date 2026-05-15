@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-cron-handler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_cron_handler",
+  "skill": {
+    "id": 65123,
+    "skillKey": "clawhub-email-cron-handler",
+    "name": "email-cron-handler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-cron-handler",
+    "url": "https://clawhub.ai/skills/email-cron-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-cron-handler-cd881b747f0e2032.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "邮件指令定时处理任务。通过 IMAP/SMTP 自动接收并执行邮件中的指令，以邮件形式回复执行结果。适用于：(1) 创建定时任务监控指定邮箱 (2) 通过邮件下发指令给 AI Agent (3) 实现邮件驱动的自动化工作流。需配置：收件邮箱、SMTP/IMAP 配置、指令发件人白名单。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pebblerwon",
+      "userId": "publishers:pebblerwon",
+      "displayName": "王浩楠",
+      "image": "https://avatars.githubusercontent.com/u/10150276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773582855612,
+      "changelog": "Initial release of email-cron-handler:\n\n- Automates processing of command emails via IMAP/SMTP and replies with execution results.\n- Supports scheduled mailbox monitoring, sender whitelisting, and execution status feedback (success/failure/timeout).\n- Provides example configuration and documentation for quick setup.\n- Includes scripts for fetching, replying to, and marking processed emails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7154a5f58999b42c8c5852dd4f10f3ecd4b1aa8b739ba6232981cd7722401261"
+}

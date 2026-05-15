@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wled@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wled",
+  "skill": {
+    "id": 11254,
+    "skillKey": "clawhub-wled",
+    "name": "Wled"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wled",
+    "url": "https://clawhub.ai/skills/wled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wled-c1b926948a80f3a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control WLED LED controllers via HTTP API. Use when a user asks to control WLED lights, LED strips, or ESP-based LED controllers. Supports power on/off, brightness, colors (RGB), effects, palettes, presets, and device status."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rowbotik",
+      "userId": "publishers:rowbotik",
+      "displayName": "Alex Buchan",
+      "image": "https://avatars.githubusercontent.com/u/4590280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2114,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769898485820,
+      "changelog": "Initial release: Control WLED LED controllers over HTTP with comprehensive device and lighting commands.\n\n- Power on/off, brightness adjustment, and RGB color control supported.\n- Change and list effects, palettes, and presets.\n- Query full device status.\n- Command-line tool with config file and environment variable for simplified device selection.\n- No external dependencies required.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e55e5f199df9a12480ddb7abb29b5f18d4569761b1d2b09cd0c4f21a794aba21"
+}

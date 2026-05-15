@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55086,
+  "uuid": "skill-clawhub-removebg-openapi-skill",
+  "skillKey": "clawhub-removebg-openapi-skill",
+  "name": "Bulk Background Remover – API-powered",
+  "summary": "Remove the background or replace it with a solid color",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.removebg_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sparkleMing",
+      "features": [
+        "Remove the background or replace it with a solid color"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/removebg-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38350996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "removebg-openapi-skill",
+      "url": "https://clawhub.ai/skills/removebg-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "removebg-openapi-skill",
+    "url": "https://clawhub.ai/skills/removebg-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/removebg-openapi-skill-12eedb17099669be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/removebg-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-removebg-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b34bb4e118e21c4142424ff6b494bd8f069566b87ce761c772e8cfbcfd0f361",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T18:35:47.606Z"
+}

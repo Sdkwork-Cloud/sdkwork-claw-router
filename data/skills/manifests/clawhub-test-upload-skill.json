@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33258,
+  "uuid": "skill-clawhub-test-upload-skill",
+  "skillKey": "clawhub-test-upload-skill",
+  "name": "test-upload-skill",
+  "summary": "A simple test skill for verifying clawhub.ai upload functionality",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_upload_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rick",
+      "features": [
+        "A simple test skill for verifying clawhub.ai upload functionality"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-upload-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28500719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-upload-skill",
+      "url": "https://clawhub.ai/skills/test-upload-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-upload-skill",
+    "url": "https://clawhub.ai/skills/test-upload-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-upload-skill-f1389092d852aaa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-upload-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-upload-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59c68c713e9b01cee4e838e232726773d55542ae30fbe6682145658cf49b793d",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:07:59.151Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitcode-pr-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitcode_pr_audit",
+  "skill": {
+    "id": 24684,
+    "skillKey": "clawhub-gitcode-pr-audit",
+    "name": "GitCode PR Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitcode-pr-audit",
+    "url": "https://clawhub.ai/skills/gitcode-pr-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitcode-pr-audit-ddd872d50a266915.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quality audit for merged GitCode PRs: sample by time range or repo list, check compliance (labels, comments, tests, size, etc.), output table. Use when user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "autoxj",
+      "userId": "s178rh9mw9vwnrg2m6bg7jh53183hv34",
+      "displayName": "do_while_true",
+      "image": "https://avatars.githubusercontent.com/u/30582182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773316306858,
+      "changelog": "🎉 Initial release of gitcode-pr-audit\n\n- Provides quality audit for merged GitCode PRs across multiple repositories.\n- Samples PRs by time range or PR list, analyzes 8 key compliance dimensions (labels, comments, tests, size, etc.).\n- Outputs results as a Markdown or CSV table; command-line tool, Python 3.7+ stdlib only.\n- Flexible parameter parsing, with robust multi-repo and branch support.\n- Requires GITCODE_TOKEN for authentication; supports Linux/macOS/Windows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8148fbfee8a6dcf0aa50a7b9a97bf35eb368ccc74779d45429dfe41f02790910"
+}

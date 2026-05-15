@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cc3po-music-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc3po_music_generation",
+  "skill": {
+    "id": 49991,
+    "skillKey": "clawhub-cc3po-music-generation",
+    "name": "CC3PO Music Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc3po-music-generation",
+    "url": "https://clawhub.ai/skills/cc3po-music-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc3po-music-generation-f843da81fa082a6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music with optimized prompts, style control, and production-ready audio output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carloscbrls",
+      "userId": "s17e33h1bc6bw9e3rwezwwxnfx86dwn1",
+      "displayName": "Carlos J Cabrales III",
+      "image": "https://avatars.githubusercontent.com/u/2256078?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 52,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778306328988,
+      "changelog": "AI music generation: multi-provider support (Suno, Udio, Stable Audio, MusicGen, Mubert, Replicate), prompt engineering, style control, production-ready output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc193d79a38cf2d47263a529e75a80dfc36336727f02a9f50da7071e046c1f02"
+}

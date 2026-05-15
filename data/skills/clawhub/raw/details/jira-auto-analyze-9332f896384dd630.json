@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "jira-auto-analyze",
+    "displayName": "jira-auto-analyze",
+    "summary": "此技能用于自动分析JIRA进项系统线上工单（filter=13123），检查工单内容是否包含四项必填信息，并根据工单内容自动分配给相应的经办人。当用户需要自动处理JIRA新工单、检查工单信息完整性、或根据规则自动分配任务时使用此技能。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775539745683,
+    "updatedAt": 1777527268534
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775539745683,
+    "changelog": "jira-auto-analyze 1.0.0\n\n- 首次发布，提供JIRA工单自动分析与分配功能。\n- 自动检查工单四项必填信息（环境、通道类型、版本号、日志）。\n- 根据关键词智能分配工单给负责人，并自动回复处理结果。\n- 支持信息不全工单自动打回、信息完整工单自动分配。\n- 提供命令行与WorkBuddy关键词触发两种使用方式。\n- 详细日志记录，每步操作均可追踪。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "liuwei19820201",
+    "userId": "s1797d29xprx3p42392npd02j984d1y7",
+    "displayName": "liuwei19820201",
+    "image": "https://avatars.githubusercontent.com/u/4168310?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527268534
+  }
+}

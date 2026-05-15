@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25673,
+  "uuid": "skill-clawhub-agent-hand",
+  "skillKey": "clawhub-agent-hand",
+  "name": "Agent Hand",
+  "summary": "Manage and monitor all your AI agent sessions from a unified terminal with smart sorting, instant switching, and multi-profile support.",
+  "version": "0.3.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_hand",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weykon",
+      "features": [
+        "Manage and monitor all your AI agent sessions from a unified terminal with smart sorting, insta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-hand@0.3.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36456814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-hand",
+      "url": "https://clawhub.ai/skills/agent-hand"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-hand",
+    "url": "https://clawhub.ai/skills/agent-hand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-hand-a0fb30f6e75857f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-hand@0.3.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-hand-0.3.8.json",
+      "version": "0.3.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd773bf9600a7385b476d14baf0683ea437b14f5ad27921b5306d4d35c0c0c49",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T01:18:15.810Z"
+}

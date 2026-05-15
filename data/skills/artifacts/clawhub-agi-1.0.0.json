@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agi",
+  "skill": {
+    "id": 15675,
+    "skillKey": "clawhub-agi",
+    "name": "AGI / Artificial General Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agi",
+    "url": "https://clawhub.ai/skills/agi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agi-1a3e9f249b666362.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Think like a human. Reason, plan, adapt, create, and know your limits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 769,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771635946893,
+      "changelog": "Initial release with meta-cognition, multi-step planning, and epistemic humility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b2fb311ee85aec6a48ed123ca15c9a16f1d3a9c1648b23b151f62ae801efa727"
+}

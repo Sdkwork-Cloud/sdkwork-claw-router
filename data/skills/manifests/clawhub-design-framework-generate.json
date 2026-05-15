@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71737,
+  "uuid": "skill-clawhub-design-framework-generate",
+  "skillKey": "clawhub-design-framework-generate",
+  "name": "设计框架套件 - 生图交付",
+  "summary": "设计框架自动生成套件（生图交付）：用户确认后自动生成概念图并私发给 Bot 主人",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_framework_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "807209066",
+      "features": [
+        "设计框架自动生成套件（生图交付）：用户确认后自动生成概念图并私发给 Bot 主人"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/design-framework-generate@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86033938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "design-framework-generate",
+      "url": "https://clawhub.ai/skills/design-framework-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-framework-generate",
+    "url": "https://clawhub.ai/skills/design-framework-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-framework-generate-2bf7beb38ba7fb84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/design-framework-generate@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-design-framework-generate-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7421d021a5b45e8075003c18ce35e3c8abb65a640af9ea7e804deb87e4b0afe9",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:12:30.720Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astrai-inference-router@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astrai_inference_router",
+  "skill": {
+    "id": 29172,
+    "skillKey": "clawhub-astrai-inference-router",
+    "name": "Astrai Inference Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astrai-inference-router",
+    "url": "https://clawhub.ai/skills/astrai-inference-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astrai-inference-router-469829c1a16aebc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route all LLM calls through Astrai for 40%+ cost savings with intelligent routing and privacy controls"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "beee003",
+      "userId": "publishers:beee003",
+      "displayName": "beee003",
+      "image": "https://avatars.githubusercontent.com/u/135258985?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 901,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771216498093,
+      "changelog": "Add BYOK (Bring Your Own Keys) support — users provide their own provider API keys, pay providers directly. Zero token drain risk.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9b013ea6ef58fe28532acf4c48e2031fd8f0da8f06b1471b906b76a1ec6f69e3"
+}

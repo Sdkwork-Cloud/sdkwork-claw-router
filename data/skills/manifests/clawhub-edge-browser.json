@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18320,
+  "uuid": "skill-clawhub-edge-browser",
+  "skillKey": "clawhub-edge-browser",
+  "name": "Edge Browser",
+  "summary": "Control Microsoft Edge browser to fetch web pages and extract content. Use when the user wants to access a specific URL using Edge browser instead of Chrome,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meikowo",
+      "features": [
+        "Control Microsoft Edge browser to fetch web pages and extract content",
+        "Use when the user wants to access a specific URL using Edge browser instead of Chrome,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edge-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162448853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edge-browser",
+      "url": "https://clawhub.ai/skills/edge-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-browser",
+    "url": "https://clawhub.ai/skills/edge-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-browser-fa45e6c6332429df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edge-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edge-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06cb47610aae2019014f8f13b4056fef026ce51a1bdaa57e5d876e976ec3472a",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:04:19.708Z"
+}

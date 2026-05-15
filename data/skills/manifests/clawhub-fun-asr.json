@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60961,
+  "uuid": "skill-clawhub-fun-asr",
+  "skillKey": "clawhub-fun-asr",
+  "name": "Fun-ASR speech recognition",
+  "summary": "阿里云百炼 FunASR 录音文件识别，使用阿里云 DashScope API 进行语音转文字。当用户需要转录音频文件时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fun_asr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "彭震东",
+      "features": [
+        "阿里云百炼 FunASR 录音文件识别，使用阿里云 DashScope API 进行语音转文字。当用户需要转录音频文件时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fun-asr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10704539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fun-asr",
+      "url": "https://clawhub.ai/skills/fun-asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fun-asr",
+    "url": "https://clawhub.ai/skills/fun-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fun-asr-4d6b45ce87f2bfae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fun-asr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fun-asr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b92b0d4213e4f536d78ff0116bbd8f9d00c487f464d32158f165cac5463b5d20",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:40:44.436Z"
+}

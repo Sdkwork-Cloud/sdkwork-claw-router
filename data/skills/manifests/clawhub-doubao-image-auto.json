@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62886,
+  "uuid": "skill-clawhub-doubao-image-auto",
+  "skillKey": "clawhub-doubao-image-auto",
+  "name": "doubao-image-auto",
+  "summary": "豆包 AI 创作自动化 - 通过 CDP 浏览器自动化实现无手动交互的图像生成与提取。工作流：1) 连接已打开的豆包页面 2) 导航到 AI 创作页 3) 输入 prompt 并自动生成 4) 提取生成的图片 URL 5) 下载保存到本地。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_image_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangm199",
+      "features": [
+        "豆包 AI 创作自动化",
+        "通过 CDP 浏览器自动化实现无手动交互的图像生成与提取。工作流：1) 连接已打开的豆包页面 2) 导航到 AI 创作页 3) 输入 prompt 并自动生成 4) 提取生成的图片 URL."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-image-auto@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164614555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-image-auto",
+      "url": "https://clawhub.ai/skills/doubao-image-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-image-auto",
+    "url": "https://clawhub.ai/skills/doubao-image-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-image-auto-44424404a5ced514.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-image-auto@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-image-auto-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3782a45cdfca60939ca070ff6005f33fd95ef817423522d6345e424c0e5934ce",
+      "artifactSizeBytes": 2091
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:38:14.921Z"
+}

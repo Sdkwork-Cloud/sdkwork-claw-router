@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42411,
+  "uuid": "skill-clawhub-latex-formula-extraction-marker",
+  "skillKey": "clawhub-latex-formula-extraction-marker",
+  "name": "marker",
+  "summary": "Convert PDF documents to Markdown using marker_single. Use when Claude needs to extract text content from PDFs while preserving LaTeX formulas, equations, an...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.latex_formula_extraction_marker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Convert PDF documents to Markdown using marker_single",
+        "Use when Claude needs to extract text content from PDFs while preserving LaTeX formulas, equati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/latex-formula-extraction-marker@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "latex-formula-extraction-marker",
+      "url": "https://clawhub.ai/skills/latex-formula-extraction-marker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "latex-formula-extraction-marker",
+    "url": "https://clawhub.ai/skills/latex-formula-extraction-marker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/latex-formula-extraction-marker-e19c0e0946d4110f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/latex-formula-extraction-marker@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-latex-formula-extraction-marker-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2fe087803f083bf26133125e328ec4cff7ed521dfbd0aae04e1b7323d6502776",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T20:47:12.738Z"
+}

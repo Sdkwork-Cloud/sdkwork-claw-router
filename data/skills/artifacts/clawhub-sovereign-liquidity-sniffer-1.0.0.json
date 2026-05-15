@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sovereign-liquidity-sniffer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_liquidity_sniffer",
+  "skill": {
+    "id": 24360,
+    "skillKey": "clawhub-sovereign-liquidity-sniffer",
+    "name": "Sovereign Liquidity Sniffer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-liquidity-sniffer",
+    "url": "https://clawhub.ai/skills/sovereign-liquidity-sniffer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-liquidity-sniffer-987b15a5b5f8689d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Institutional-grade L2 Orderbook Imbalance (OBI) detector. Captures market maker footprints across OKX and Binance with millisecond precision."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmstudio667-commits",
+      "userId": "publishers:tmstudio667-commits",
+      "displayName": "System Architect Zero",
+      "image": "https://avatars.githubusercontent.com/u/261739543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772693134664,
+      "changelog": "Initial release: Institutional-grade L2 Orderbook Imbalance detector for crypto markets.\n\n- Real-time OBI analysis up to 100 market depth levels.\n- Detects market maker footprints and algorithms, filtering out retail activity.\n- Syncs across OKX and Binance to identify arbitrage and liquidity patterns.\n- Available for $0.30 (USDC) per scan to support continuous high-frequency data feeds.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:070769dd1c518b7f4b435beff6fe9805a6d8aa7c6f8b602b0e4568a15e858bd9"
+}

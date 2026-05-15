@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/core@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.core",
+  "skill": {
+    "id": 17647,
+    "skillKey": "clawhub-core",
+    "name": "Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "core",
+    "url": "https://clawhub.ai/skills/core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/core-0d45f5fd462b8c70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "core reference tool"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 689,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774227735105,
+      "changelog": "Clean package",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf2fb726105e8f7381e5e632ffe122b0bd4595f1a17f7fc6a398fcc2d4def7f6"
+}

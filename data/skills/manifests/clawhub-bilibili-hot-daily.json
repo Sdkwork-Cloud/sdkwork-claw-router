@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68551,
+  "uuid": "skill-clawhub-bilibili-hot-daily",
+  "skillKey": "clawhub-bilibili-hot-daily",
+  "name": "Bilibili Hot Daily",
+  "summary": "🔥 每日自动抓取哔哩哔哩热门视频排行榜，支持AI摘要生成和多渠道推送。自媒体运营必备！免费使用，定制开发请联系作者。",
+  "version": "2.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_hot_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "蓝天",
+      "features": [
+        "🔥 每日自动抓取哔哩哔哩热门视频排行榜，支持AI摘要生成和多渠道推送。自媒体运营必备！免费使用，定制开发请联系作者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-hot-daily@2.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49087597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-hot-daily",
+      "url": "https://clawhub.ai/skills/bilibili-hot-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-hot-daily",
+    "url": "https://clawhub.ai/skills/bilibili-hot-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-hot-daily-368ba99f952dc9f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-hot-daily@2.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-hot-daily-2.1.2.json",
+      "version": "2.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f001049a83121fffca65474cd2032ebd93d704eb3b38e2962db69eb3eaffa38c",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:48:28.604Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hotel-price-finder@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_price_finder",
+  "skill": {
+    "id": 22494,
+    "skillKey": "clawhub-hotel-price-finder",
+    "name": "Hotel Price Finder - Multi OTA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-price-finder",
+    "url": "https://clawhub.ai/skills/hotel-price-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-price-finder-926da0f32f1da75e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compare hotel prices across Booking.com, Agoda, Trip.com in real-time. Free multi-OTA price comparison with direct booking links. No API key required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangms30",
+      "userId": "s175tfvztd77rdbc1r3r926a518424s4",
+      "displayName": "Yang",
+      "image": "https://avatars.githubusercontent.com/u/86237798?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775114607460,
+      "changelog": "Compress SKILL.md from 298 to 106 lines for better AI performance. No feature changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5f315832bda433fefccd94b8cea02ea0345f4a7384225a2ccd91f22e99a6fb0"
+}

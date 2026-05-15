@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64898,
+  "uuid": "skill-clawhub-xiaomi-mimo-v2-tts",
+  "skillKey": "clawhub-xiaomi-mimo-v2-tts",
+  "name": "Xiaomi-MiMo-V2-TTS",
+  "summary": "小米 MiMo V2 TTS 文字转语音模型（官网目前免费）。支持中文/英文，内置情感风格（开心/悲伤/生气）、角色扮演（孙悟空/林黛玉）、方言（东北话/四川话/粤语/河南话）、语速控制及唱歌能力。mp3/opus 格式可直接发送至微信/飞书。 **配置（必需）**：在 `openclaw.json` 的 `sk...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_mimo_v2_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoqi",
+      "features": [
+        "小米 MiMo V2 TTS 文字转语音模型（官网目前免费）。支持中文/英文，内置情感风格（开心/悲伤/生气）、角色扮演（孙悟空/林黛玉）、方言（东北话/四川话/粤语/河南话）、语速控制及唱."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaomi-mimo-v2-tts@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31496660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaomi-mimo-v2-tts",
+      "url": "https://clawhub.ai/skills/xiaomi-mimo-v2-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-mimo-v2-tts",
+    "url": "https://clawhub.ai/skills/xiaomi-mimo-v2-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-mimo-v2-tts-f68c54b57fe1a57a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaomi-mimo-v2-tts@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-mimo-v2-tts-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dc9e32721d161fda9f903e0970facfb4bbde0bc52e7ad99d44ea9d2be6e203f",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:57:03.441Z"
+}

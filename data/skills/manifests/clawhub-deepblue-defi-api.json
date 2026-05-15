@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50418,
+  "uuid": "skill-clawhub-deepblue-defi-api",
+  "skillKey": "clawhub-deepblue-defi-api",
+  "name": "Deepblue Defi Api",
+  "summary": "Use when an agent needs live DeFi data from Base — ETH prices, trending pools, token scores, or wallet scans. No auth required.",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepblue_defi_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepBlue",
+      "features": [
+        "Use when an agent needs live DeFi data from Base — ETH prices, trending pools, token scores, or.",
+        "No auth required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepblue-defi-api@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260345463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepblue-defi-api",
+      "url": "https://clawhub.ai/skills/deepblue-defi-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepblue-defi-api",
+    "url": "https://clawhub.ai/skills/deepblue-defi-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepblue-defi-api-688b579c74808964.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepblue-defi-api@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepblue-defi-api-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd6b7f9a76594a75d008c28f5ac5ee5043069df202bafdd897e7b352cc0c5b32",
+      "artifactSizeBytes": 2115
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T04:17:40.956Z"
+}

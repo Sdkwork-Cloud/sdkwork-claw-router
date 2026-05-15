@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openpot-awareness@6.0.0",
+  "version": "6.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openpot_awareness",
+  "skill": {
+    "id": 53629,
+    "skillKey": "clawhub-openpot-awareness",
+    "name": "OpenPot Awareness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openpot-awareness",
+    "url": "https://clawhub.ai/skills/openpot-awareness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openpot-awareness-984da757b66e14cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Teaches this agent how to serve content to the OpenPot iOS client — cards, apps, page captures, calendar, voice, chat persistence, and onboarding"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "almnotai",
+      "userId": "s17981e5kf0y8azfgh4keqtvdn84s59y",
+      "displayName": "AlMnotAi",
+      "image": "https://avatars.githubusercontent.com/u/263162829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "6.0.0",
+      "createdAt": 1776185703462,
+      "changelog": "Calendar context push, chat persistence instructions, app emoji metadata, sync uninstall/reinstall flow, consolidated user guide, in-app guide webapp",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dc6084779893bcf02fc1fa3ceac6de00762fdf27f0d9be44c578fd62b532a2d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-researcher-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_researcher_pro",
+  "skill": {
+    "id": 53720,
+    "skillKey": "clawhub-deep-researcher-pro",
+    "name": "Deep Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-researcher-pro",
+    "url": "https://clawhub.ai/skills/deep-researcher-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-researcher-pro-9752f84a5c0fd03e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Domain Research Report Generator — runs multi-angle deep research on any topic and produces a structured, decision-ready report with evidence-scored consensu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhihua-yang",
+      "userId": "s1719777vea8ed2v6dqy4bjc6d85p3qj",
+      "displayName": "zhihua-yang",
+      "image": "https://avatars.githubusercontent.com/u/34930282?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777372399558,
+      "changelog": "Add Chinese description for better discoverability in Chinese-language skill search",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:224582a66f1c81b3b6fac5ee815186ba2f79cec8379a51ed074ecc31ec077d7a"
+}

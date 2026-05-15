@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ad-analyzer-yima@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_analyzer_yima",
+  "skill": {
+    "id": 70240,
+    "skillKey": "clawhub-ad-analyzer-yima",
+    "name": "广告数据分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-analyzer-yima",
+    "url": "https://clawhub.ai/skills/ad-analyzer-yima",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-analyzer-yima-7d6906ddfe9aa223.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "广告投放数据分析。当用户上传 Excel/CSV 广告报表，或说\"帮我分析投放数据/看看这个报表/哪个计划效果差/数据有没有问题\"时触发。自动识别所有表头列，无需预设字段名，汇总全部指标，检测异常，生成可视化图表，输出分析报告和优化建议。支持巨量引擎、腾讯广告、Meta Ads、Google Ads、快手等平台导..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ming0429",
+      "userId": "s174ep1mzq3b0mz7q623kj2wfd84tj1c",
+      "displayName": "Ming",
+      "image": "https://avatars.githubusercontent.com/u/108164999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776319869989,
+      "changelog": "**New version adds automated data visualization and script-based analysis.**\n\n- Added scripts/analyze.py for one-click automated广告报表分析 and图表生成功能.\n- 现支持自动输出 5 张 PNG 图表（数据总量柱状图、维度对比、趋势线、指标相关性热力图、主维度饼图）.\n- 增强依赖声明，集成 pandas、openpyxl、xlrd、matplotlib、seaborn.\n- 强调仅支持保存为 .py 文件运行，内联 (python3 -c) 不再适用.\n- 更新说明文档，细化分析流程与图表输出位置.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb78f214f88eaf26a9da13d6c4bf3a8ae12983273bef0e8935985b14a280b7fb"
+}

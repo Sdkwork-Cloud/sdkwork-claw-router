@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66682,
+  "uuid": "skill-clawhub-weiqi-joseki",
+  "skillKey": "clawhub-weiqi-joseki",
+  "name": "围棋定式数据库",
+  "summary": "weiqi-joseki v2.1.1 围棋定式数据库 - 基于KataGo棋谱构建。重构版采用多级时序连通性过滤，性能大幅提升。模块化设计，数据完全本地存储。",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiqi_joseki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tokener",
+      "features": [
+        "weiqi-joseki v2.1.1 围棋定式数据库",
+        "基于KataGo棋谱构建。重构版采用多级时序连通性过滤，性能大幅提升。模块化设计，数据完全本地存储。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weiqi-joseki@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39153812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weiqi-joseki",
+      "url": "https://clawhub.ai/skills/weiqi-joseki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiqi-joseki",
+    "url": "https://clawhub.ai/skills/weiqi-joseki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiqi-joseki-f6174392a72a624a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weiqi-joseki@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weiqi-joseki-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89c4f5b8b7b624699b941215795505f21cc66fc7aa4fbb0635796bab6bea7733",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:43:53.369Z"
+}

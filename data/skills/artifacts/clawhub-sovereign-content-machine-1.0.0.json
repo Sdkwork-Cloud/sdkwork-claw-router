@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sovereign-content-machine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_content_machine",
+  "skill": {
+    "id": 20000,
+    "skillKey": "clawhub-sovereign-content-machine",
+    "name": "Sovereign Content Machine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-content-machine",
+    "url": "https://clawhub.ai/skills/sovereign-content-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-content-machine-bec879bd98e813b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Content strategy engine that plans, creates, and schedules content across platforms. Analyzes audience, generates topic ideas, writes drafts, builds editoria..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryudi84",
+      "userId": "publishers:ryudi84",
+      "displayName": "ryudi84",
+      "image": "https://avatars.githubusercontent.com/u/67792598?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 570,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771845460871,
+      "changelog": "Sovereign Content Machine 1.0.0\n\n- Initial release of a comprehensive content strategy engine for planning, creating, and scheduling content across multiple platforms.\n- Provides systematic content audit with inventory, performance scoring, gap analysis, and actionable recommendations.\n- Generates actionable, high-impact audience personas with detailed behavioral and demographic insights.\n- Offers a topic ideation engine based on search demand, competitor mining, trend analysis, problem-solution mapping, and content remixing.\n- Designed to produce ready-to-execute editorial calendars, headlines, drafts, and optimization tactics backed by proven engagement metrics.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ce4f1e985c6c3a10146aee1126188e537c0c5b898e76344547e564cec7acf7e8"
+}

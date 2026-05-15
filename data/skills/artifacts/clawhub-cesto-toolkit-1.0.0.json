@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cesto-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cesto_toolkit",
+  "skill": {
+    "id": 53191,
+    "skillKey": "clawhub-cesto-toolkit",
+    "name": "cesto-toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cesto-toolkit",
+    "url": "https://clawhub.ai/skills/cesto-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cesto-toolkit-dc2cac56016a0806.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete toolkit for the Cesto platform — covers all APIs, basket creation, portfolio simulation, and market data. Use this skill whenever the user wants to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lakshyagarg26",
+      "userId": "s1745fcdsaepx4dgcayqtq72as83mwnj",
+      "displayName": "Lakshya Garg",
+      "image": "https://avatars.githubusercontent.com/u/81349831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774642262170,
+      "changelog": "Cesto Toolkit 1.0.0 — initial release\n\n- Provides a complete toolkit to interact with the Cesto platform, covering all public and authenticated API features.\n- Supports viewing and analyzing all baskets, basket details, token analytics, and cross-basket performance.\n- Enables basket creation and historical portfolio simulation (requires login).\n- Includes step-by-step, conversational user flows for all features, ensuring clear guidance and data presentation.\n- Uses bundled scripts for efficient API handling with minimal user approval for each request.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34a45e4cbc176f3fd0d7398f9fe279b822f3815879dfa6e46240cecc67a44d39"
+}

@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "vmctl-ops",
+    "displayName": "VMware ESXI-standalone automation skill",
+    "summary": "Use when vmctl is already installed and the agent must immediately run safe post-install checks and first lifecycle actions without guessing.",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1778234516994,
+    "updatedAt": 1778238707342
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1778236083329,
+    "changelog": "- Added explicit runtime requirements and expected file paths for vmctl operation.\n- Declared required commands, config paths, credential expectations, and permission scope in metadata.\n- Clarified that ESXi/helper credentials and vmctl secrets must already be configured by the installer.\n- Specified minimum permissions and limited credential scope for safe test lifecycle only.\n- No changes to core usage or procedures.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "bashrusakh",
+    "userId": "s17cmcq14kwsnc2vv2nyw5ge4x86a9kc",
+    "displayName": "bashrusakh",
+    "image": "https://avatars.githubusercontent.com/u/127580858?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778238707342
+  }
+}

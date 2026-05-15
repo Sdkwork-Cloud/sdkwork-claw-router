@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21949,
+  "uuid": "skill-clawhub-minecraft",
+  "skillKey": "clawhub-minecraft",
+  "name": "Minecraft",
+  "summary": "Plan, build, troubleshoot, and optimize Minecraft worlds, commands, redstone, mods, and servers without mixing Java and Bedrock advice.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minecraft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Plan, build, troubleshoot, and optimize Minecraft worlds, commands, redstone, mods, and servers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minecraft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minecraft",
+      "url": "https://clawhub.ai/skills/minecraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minecraft",
+    "url": "https://clawhub.ai/skills/minecraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minecraft-9970626666560a32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minecraft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minecraft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:540b2c67ef09286d4335997731381db7e69beebf65d04a4eaa111a7703dca25c",
+      "artifactSizeBytes": 1915
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:46:51.593Z"
+}

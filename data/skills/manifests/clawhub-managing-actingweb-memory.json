@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22737,
+  "uuid": "skill-clawhub-managing-actingweb-memory",
+  "skillKey": "clawhub-managing-actingweb-memory",
+  "name": "ActingWeb Memory",
+  "summary": "Stores and retrieves personal preferences, decisions, and context across conversations using ActingWeb Personal AI Memory via MCP. Activates when the user me...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.managing_actingweb_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Greger Teigre Wedel",
+      "features": [
+        "Stores and retrieves personal preferences, decisions, and context across conversations using Ac.",
+        "Activates when the user me..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/managing-actingweb-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23233429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "managing-actingweb-memory",
+      "url": "https://clawhub.ai/skills/managing-actingweb-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "managing-actingweb-memory",
+    "url": "https://clawhub.ai/skills/managing-actingweb-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/managing-actingweb-memory-b10c361da81eb46d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/managing-actingweb-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-managing-actingweb-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:510d2996f495be61680e55c730a977d77d5af5cacc123d1b8c750f5aa0a660f3",
+      "artifactSizeBytes": 2755
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T10:24:22.233Z"
+}

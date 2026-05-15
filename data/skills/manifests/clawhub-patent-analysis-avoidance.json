@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71400,
+  "uuid": "skill-clawhub-patent-analysis-avoidance",
+  "skillKey": "clawhub-patent-analysis-avoidance",
+  "name": "Patent Analysis Avoidance",
+  "summary": "专利分析与规避设计专家。当用户上传专利文档、询问专利分析、专利规避、产品设计创新、专利侵权风险、权利要求分析、技术方案对比等问题时，使用此技能。无论用户是想要分析专利保护范围、寻找规避设计方案，还是评估产品侵权风险，都应触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_analysis_avoidance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TRIZAGI",
+      "features": [
+        "专利分析与规避设计专家。当用户上传专利文档、询问专利分析、专利规避、产品设计创新、专利侵权风险、权利要求分析、技术方案对比等问题时，使用此技能。无论用户是想要分析专利保护范围、寻找规避设计方."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-analysis-avoidance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274367829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-analysis-avoidance",
+      "url": "https://clawhub.ai/skills/patent-analysis-avoidance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-analysis-avoidance",
+    "url": "https://clawhub.ai/skills/patent-analysis-avoidance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-analysis-avoidance-5b0fa7ae50405b8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-analysis-avoidance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-analysis-avoidance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4be5b4d36a1805f8f3d18210b239801e0d8ab257d573bfd2bff91b17fb4a05e",
+      "artifactSizeBytes": 2811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T03:00:15.897Z"
+}

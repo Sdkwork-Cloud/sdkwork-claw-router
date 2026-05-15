@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17326,
+  "uuid": "skill-clawhub-engineer",
+  "skillKey": "clawhub-engineer",
+  "name": "Engineer",
+  "summary": "Apply engineering judgment across systems, constraints, trade-offs, failure modes, and verification before acting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engineer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Apply engineering judgment across systems, constraints, trade-offs, failure modes, and verifica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engineer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engineer",
+      "url": "https://clawhub.ai/skills/engineer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engineer",
+    "url": "https://clawhub.ai/skills/engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engineer-7826b958b79c7062.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engineer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-engineer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:007d8ce688b76a94bef762d213bc10a3b950aa92ba650c5da26b9e6459dd5745",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:20:01.194Z"
+}

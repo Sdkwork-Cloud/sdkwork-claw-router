@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/java-audit-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.java_audit_skill",
+  "skill": {
+    "id": 64337,
+    "skillKey": "clawhub-java-audit-skill",
+    "name": "Java Security Audit - AI驱动的Java代码审计"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "java-audit-skill",
+    "url": "https://clawhub.ai/skills/java-audit-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/java-audit-skill-cb89b7514752c7df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI驱动的Java代码安全审计技能，实现系统化、高覆盖率的漏洞挖掘。使用场景： (1) 审计Java/Kotlin项目寻找安全漏洞（0day挖掘、代码审计、安全评估） (2) 企业级代码库的安全审计（支持大型项目） (3) 需要高质量、低幻觉率的安全审计报告 (4) CI/CD集成的前期漏洞发现 触发关键词：Ja..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "auroraproudmoore",
+      "userId": "s170jwkh2xp57dfkeagjra613583gj81",
+      "displayName": "AuroraProudmoore",
+      "image": "https://avatars.githubusercontent.com/u/50288625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773913002761,
+      "changelog": "Initial release v1.0.0\n\n🚀 Features:\n- 6-phase audit pipeline with 100% coverage gate\n- DKTSS vulnerability scoring system (better than CVSS)\n- 198 Semgrep rules covering 55+ vulnerability types\n- Cross-platform Python scripts (Windows/Linux/macOS)\n\n🚀 新功能:\n- 6阶段审计流水线，强制100%覆盖率门禁\n- DKTSS漏洞评分体系（比CVSS更贴合实战）\n- 198条Semgrep规则，覆盖55+漏洞类型\n- 跨平台Python脚本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94112bb77dfec72b64986e1a6660faaed9ae56889133b9467f98e0b7ffcfd252"
+}

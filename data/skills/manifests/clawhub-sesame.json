@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36184,
+  "uuid": "skill-clawhub-sesame",
+  "skillKey": "clawhub-sesame",
+  "name": "Sesame",
+  "summary": "Sesame integration. Manage data, records, and automate workflows. Use when the user wants to interact with Sesame data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sesame",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Sesame integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Sesame data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sesame@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sesame",
+      "url": "https://clawhub.ai/skills/sesame"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sesame",
+    "url": "https://clawhub.ai/skills/sesame",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sesame-d0c04f4b1951e4ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sesame@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sesame-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2489ea088683091822c371b912d3239c7749e2d26e4f194b83b9bf4b7fd0c251",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:59:14.061Z"
+}

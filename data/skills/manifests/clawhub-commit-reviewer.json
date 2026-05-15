@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66173,
+  "uuid": "skill-clawhub-commit-reviewer",
+  "skillKey": "clawhub-commit-reviewer",
+  "name": "Commit Reviewer（提交修复检查）",
+  "summary": "根据一个或多个 git 修订号和需求描述，检查提交是否真正修复了对应 bug，并给出逐条结论",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commit_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "carpe",
+      "features": [
+        "根据一个或多个 git 修订号和需求描述，检查提交是否真正修复了对应 bug，并给出逐条结论"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commit-reviewer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40817772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commit-reviewer",
+      "url": "https://clawhub.ai/skills/commit-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commit-reviewer",
+    "url": "https://clawhub.ai/skills/commit-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commit-reviewer-36bd860a3aee6022.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commit-reviewer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-commit-reviewer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26d6847361aaee5df4587c6966fda31ad7c7f49800c81f8d5de32ce56186b6c5",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:24:02.707Z"
+}

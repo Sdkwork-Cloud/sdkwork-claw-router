@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29964,
+  "uuid": "skill-clawhub-teamgram-mtproto-protocol",
+  "skillKey": "clawhub-teamgram-mtproto-protocol",
+  "name": "Teamgram MTProto Protocol",
+  "summary": "Documents the MTProto protocol handling layer in Teamgram Server, including handshake, AES-IGE decryption, QuickAck, auth_key caching, and message forwarding...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teamgram_mtproto_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhihang9978",
+      "features": [
+        "Documents the MTProto protocol handling layer in Teamgram Server, including handshake, AES-IGE."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teamgram-mtproto-protocol@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217701803?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teamgram-mtproto-protocol",
+      "url": "https://clawhub.ai/skills/teamgram-mtproto-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teamgram-mtproto-protocol",
+    "url": "https://clawhub.ai/skills/teamgram-mtproto-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teamgram-mtproto-protocol-ea7b10e18f9d01f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teamgram-mtproto-protocol@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-teamgram-mtproto-protocol-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:626c11f5be98acd96f034e2836d7aead367477c908b54d1d37e589b46dc4dbfd",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:38:23.117Z"
+}

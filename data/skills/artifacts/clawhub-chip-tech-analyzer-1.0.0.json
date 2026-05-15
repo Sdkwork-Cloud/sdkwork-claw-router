@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chip-tech-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chip_tech_analyzer",
+  "skill": {
+    "id": 72066,
+    "skillKey": "clawhub-chip-tech-analyzer",
+    "name": "显卡cpu评测"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chip-tech-analyzer",
+    "url": "https://clawhub.ai/skills/chip-tech-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chip-tech-analyzer-eb73f714f28e597e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成专业的芯片（CPU/显卡/GPU）技术分析文档，包含架构解析、性能评测、功耗分析、性价比评估等。适用于硬件评测、选购指南、技术研究报告等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hwl1413520",
+      "userId": "s17ekarx3p1e6dgdk3qfb20tbx84q8v4",
+      "displayName": "rumu14",
+      "image": "https://avatars.githubusercontent.com/u/116565375?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776008342064,
+      "changelog": "Initial release of chip-tech-analyzer:\n\n- Generates professional technical analysis documents for CPUs and GPUs, including architecture, performance, power, and value assessment.\n- Supports analysis of major platforms: Intel, AMD, Apple, NVIDIA, Intel Arc, and more.\n- Step-by-step workflow: confirm analysis goals, gather specifications, collect benchmark data, and generate structured reports.\n- Reports cover architecture breakdown, performance benchmarks (games, productivity), power/thermal analysis, and price/performance comparison.\n- Outputs in Markdown, with options for Word, PDF, HTML, or Excel summary.\n- Includes sample prompts, clear scoring standards, and user guidance on data sources and analysis limitations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b9dfed6eb3fed9c314d41065a1417140e709ed91b42cda11b3ab5dc59642481"
+}

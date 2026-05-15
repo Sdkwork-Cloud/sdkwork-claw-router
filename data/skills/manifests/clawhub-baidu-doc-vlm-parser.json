@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65185,
+  "uuid": "skill-clawhub-baidu-doc-vlm-parser",
+  "skillKey": "clawhub-baidu-doc-vlm-parser",
+  "name": "百度文档解析vlm-parser",
+  "summary": "调用百度PaddleOCR-VL大模型API解析文档。基于PaddleOCR-VL-1.5多模态大模型，支持PDF、Word、PPT、图片等格式，精准识别印刷文本、手写文本、表格、公式、图表、印章等复杂元素，支持111种语言，可处理不规则布局和长文档跨页解析。触发词：文档解析、VLM解析、大模型OCR、Paddl...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_doc_vlm_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maglanyulan",
+      "features": [
+        "调用百度PaddleOCR-VL大模型API解析文档。基于PaddleOCR-VL-1.5多模态大模型，支持PDF、Word、PPT、图片等格式，精准识别印刷文本、手写文本、表格、公式、图表."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-doc-vlm-parser@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40079055?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-doc-vlm-parser",
+      "url": "https://clawhub.ai/skills/baidu-doc-vlm-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-doc-vlm-parser",
+    "url": "https://clawhub.ai/skills/baidu-doc-vlm-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-doc-vlm-parser-986e44d0847c523e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-doc-vlm-parser@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-doc-vlm-parser-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caaaf4b4bc2e537ccf23fd08c4ab6b75f717fbe5d39cf55ebbb3579cfab4e1eb",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:48:47.275Z"
+}

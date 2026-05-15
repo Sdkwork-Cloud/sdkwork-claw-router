@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16724,
+  "uuid": "skill-clawhub-qdrant-advanced",
+  "skillKey": "clawhub-qdrant-advanced",
+  "name": "Qdrant Advanced",
+  "summary": "Advanced Qdrant vector database operations for AI agents. Semantic search, contextual document ingestion with chunking, collection management, snapshots, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qdrant_advanced",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yoder-bawt",
+      "features": [
+        "Advanced Qdrant vector database operations for AI agents",
+        "Semantic search, contextual document ingestion with chunking, collection management, snapshots,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qdrant-advanced@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259239279?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qdrant-advanced",
+      "url": "https://clawhub.ai/skills/qdrant-advanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qdrant-advanced",
+    "url": "https://clawhub.ai/skills/qdrant-advanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qdrant-advanced-9fb0d1bcf05bddc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qdrant-advanced@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qdrant-advanced-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:950169817a140533760a1bf1d32c62dd672d84f6d4aef199571a4166eb445993",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T17:15:13.641Z"
+}

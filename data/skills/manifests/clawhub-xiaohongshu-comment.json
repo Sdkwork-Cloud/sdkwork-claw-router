@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67263,
+  "uuid": "skill-clawhub-xiaohongshu-comment",
+  "skillKey": "clawhub-xiaohongshu-comment",
+  "name": "xiaohongshu-comment",
+  "summary": "小红书视频评论助手。打开浏览器访问小红书视频链接，提取标题和正文，生成贴近作品的评论并自动发送。触发词：(1) \"分析评论小红书\"，(2) \"帮我去评论小红书\"，(3) \"评论小红书视频\" 后跟视频链接。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_comment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "l1599661003-dotcom",
+      "features": [
+        "小红书视频评论助手。打开浏览器访问小红书视频链接，提取标题和正文，生成贴近作品的评论并自动发送。触发词：(1) \"分析评论小红书\"，(2) \"帮我去评论小红书\"，(3) \"评论小红书视频\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-comment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223268712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-comment",
+      "url": "https://clawhub.ai/skills/xiaohongshu-comment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-comment",
+    "url": "https://clawhub.ai/skills/xiaohongshu-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-comment-eeb99744f42d4c31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-comment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-comment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdf5e7cd4e0dc18b7f960d26a5f6939b061278b65ab7ed7eeb72394588982355",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T09:33:01.864Z"
+}

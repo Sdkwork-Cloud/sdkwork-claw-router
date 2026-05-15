@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hot-news-tracker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hot_news_tracker",
+  "skill": {
+    "id": 70250,
+    "skillKey": "clawhub-hot-news-tracker",
+    "name": "hot-news-tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hot-news-tracker",
+    "url": "https://clawhub.ai/skills/hot-news-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hot-news-tracker-cd7a944f7d00265e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "追踪今日头条热点榜单或按关键词搜索新闻资讯。当用户想了解当前热点、今日热榜、实时新闻、热搜排行，或想搜索某个话题/关键词的相关新闻时调用。常见表达：'今天有什么热点'、'最近发生了什么大事'、'帮我看看热搜'、'搜一下XX的新闻'、'XX最新动态'、'有没有关于XX的新闻'、'今天的热门话题'。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huyi9531",
+      "userId": "s170a0qka1xk58nc8bmxjg53ns8430cc",
+      "displayName": "AIconductor",
+      "image": "https://avatars.githubusercontent.com/u/128768925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775108536230,
+      "changelog": "- 文档新增了 `gnomic-cli` 的开源地址链接，方便用户获取和参考项目源码。\n- 其余内容无变化，仅作补充说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:171c558c19bb104ed88d73b0f90c6d829f575cc2a713989706d35d3da015f261"
+}

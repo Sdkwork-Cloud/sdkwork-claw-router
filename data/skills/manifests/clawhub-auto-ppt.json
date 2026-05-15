@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62117,
+  "uuid": "skill-clawhub-auto-ppt",
+  "skillKey": "clawhub-auto-ppt",
+  "name": "ZeeLin Auto-PPT",
+  "summary": "自动生成精美 PPT 演示文稿 — 通过 Google NotebookLM 生成图文并茂、设计感十足的 AI 幻灯片，导出 PDF 到桌面。用户需自行登录 NotebookLM 网页版。标题微软雅黑 40 号加粗，排版震撼，逻辑图清晰，内容有深度有创新，引用权威数据。配合 desearch skill 使用效果...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_ppt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kelcey2023",
+      "features": [
+        "自动生成精美 PPT 演示文稿 — 通过 Google NotebookLM 生成图文并茂、设计感十足的 AI 幻灯片，导出 PDF 到桌面。用户需自行登录 NotebookLM 网页版。标."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-ppt@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128341611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-ppt",
+      "url": "https://clawhub.ai/skills/auto-ppt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-ppt",
+    "url": "https://clawhub.ai/skills/auto-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-ppt-2bf691aaaefe40b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-ppt@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-ppt-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54d0fdcce886d37cb9b43cf6f70b6e0515579b219bdef1fc69cb1e5fc6cb4c2d",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T04:00:33.146Z"
+}

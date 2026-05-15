@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10871,
+  "uuid": "skill-clawhub-karakeep",
+  "skillKey": "clawhub-karakeep",
+  "name": "Karakeep",
+  "summary": "Manage bookmarks and links in a Karakeep instance. Use when the user wants to save links, list recent bookmarks, or search their collection. Triggers on phrases like \"hoard this link\", \"save to karakeep\", or \"search my bookmarks\".",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karakeep",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jayphen",
+      "features": [
+        "Manage bookmarks and links in a Karakeep instance",
+        "Use when the user wants to save links, list recent bookmarks, or search their collection",
+        "Triggers on phrases like \"hoard this link\", \"save to karakeep\", or \"search my bookmarks\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karakeep@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/329184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karakeep",
+      "url": "https://clawhub.ai/skills/karakeep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karakeep",
+    "url": "https://clawhub.ai/skills/karakeep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karakeep-c6baaca9089b4484.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karakeep@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-karakeep-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:676d2d12af3604ab4c150d8b71f183cc8fe0210b08dc8e6c59f22943d82a804f",
+      "artifactSizeBytes": 2196
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-13T05:30:02.029Z"
+}

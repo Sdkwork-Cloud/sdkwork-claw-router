@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-ops@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_ops",
+  "skill": {
+    "id": 18621,
+    "skillKey": "clawhub-content-ops",
+    "name": "Content Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-ops",
+    "url": "https://clawhub.ai/skills/content-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-ops-1842d689575e594a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Social media content operations automation system with SQLite database. Manage content crawling, curation, publishing, and analytics across platforms (Xiaoho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cwyhkyochen-a11y",
+      "userId": "s178d1zg80mbk3ay3b5abegn6n83gd1b",
+      "displayName": "cwyhkyochen-a11y",
+      "image": "https://avatars.githubusercontent.com/u/231615738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 654,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772353464152,
+      "changelog": "No major changes. Minor update only.\n\n- Documentation and metadata updated with no feature changes.\n- No user-facing or operational impact.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d16b40022c633f82b832c5a3d9aff1aaecdc47644bce7d885aedd0409985bd2b"
+}

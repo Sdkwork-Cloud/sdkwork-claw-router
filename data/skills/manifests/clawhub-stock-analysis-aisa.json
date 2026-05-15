@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43310,
+  "uuid": "skill-clawhub-stock-analysis-aisa",
+  "skillKey": "clawhub-stock-analysis-aisa",
+  "name": "stock-analysis-aisa",
+  "summary": "Analyze stocks and cryptocurrencies with live AISA-backed scoring, signals, confidence, and risk flags. Use when: the user asks to analyze a ticker, compare...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Analyze stocks and cryptocurrencies with live AISA-backed scoring, signals, confidence, and ris.",
+        "Use when: the user asks to analyze a ticker, compare..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-analysis-aisa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-analysis-aisa",
+      "url": "https://clawhub.ai/skills/stock-analysis-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-aisa",
+    "url": "https://clawhub.ai/skills/stock-analysis-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-aisa-c1b7b35236293301.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-analysis-aisa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-aisa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:881f23f1fb60f87080eb2c9aaf189891ee24493313d6f2a34fbb4f45ab8b61a8",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:17:11.654Z"
+}

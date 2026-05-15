@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55536,
+  "uuid": "skill-clawhub-apple-reminders-1",
+  "skillKey": "clawhub-apple-reminders-1",
+  "name": "Apple Reminders 1",
+  "summary": "Manage Apple Reminders via the `remindctl` CLI on macOS (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_reminders_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tigertamvip",
+      "features": [
+        "Manage Apple Reminders via the `remindctl` CLI on macOS (list, add, edit, complete, delete)",
+        "Supports lists, date filters, and JSON/plain output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-reminders-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61303958?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-reminders-1",
+      "url": "https://clawhub.ai/skills/apple-reminders-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-reminders-1",
+    "url": "https://clawhub.ai/skills/apple-reminders-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-reminders-1-90116dd161411ca2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-reminders-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-reminders-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffaa203e776471f198f4666965e32079a9a104e998c3cef9438f126b0a80d996",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:06:23.703Z"
+}

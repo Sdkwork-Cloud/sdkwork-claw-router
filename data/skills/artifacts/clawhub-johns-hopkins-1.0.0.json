@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/johns-hopkins@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.johns_hopkins",
+  "skill": {
+    "id": 43544,
+    "skillKey": "clawhub-johns-hopkins",
+    "name": "Johns Hopkins"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "johns-hopkins",
+    "url": "https://clawhub.ai/skills/johns-hopkins",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/johns-hopkins-7d4a59e3b71785dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed information on Johns Hopkins including brand history, product lines, global presence, and industry analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776261085987,
+      "changelog": "johns-hopkins skill 初版发布：\n\n- 提供 johns-hopkins 的品牌背景、产品、全球布局与行业分析简介\n- 明确常见使用场景指导与内容导航\n- 强调获取深入信息的官方和行业资源链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ecaf4b52129930e065d0a673efacedf22f0eb7105a1617c91080763fc5dd4db5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/setup-wizard@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_wizard",
+  "skill": {
+    "id": 64808,
+    "skillKey": "clawhub-setup-wizard",
+    "name": "Setup Wizard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-wizard",
+    "url": "https://clawhub.ai/skills/setup-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-wizard-cf6a56660246aeac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "引导用户输入卡密完成 OpenClaw 激活，验证后逐步配置并标记激活状态，激活后停止拦截对话。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "portisclawbot",
+      "userId": "publishers:portisclawbot",
+      "displayName": "Portisclawbot",
+      "image": "https://avatars.githubusercontent.com/u/258891532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2539,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772273544393,
+      "changelog": "重写SKILL.md：更明确的执行指令，防止agent模拟数据",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3490484ad92393b082c3522e64e2a5efac061654bb79977e4ad93c4a747332b8"
+}

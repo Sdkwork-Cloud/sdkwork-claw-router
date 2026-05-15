@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17598,
+  "uuid": "skill-clawhub-openclaw-training-manager",
+  "skillKey": "clawhub-openclaw-training-manager",
+  "name": "Training Manager",
+  "summary": "Manage and optimize your OpenClaw training workspace -- scaffold files, generate skills, log training sessions, and validate workspace structure.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_training_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anova44",
+      "features": [
+        "Manage and optimize your OpenClaw training workspace -",
+        "scaffold files, generate skills, log training sessions, and validate workspace structure."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-training-manager@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252385127?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-training-manager",
+      "url": "https://clawhub.ai/skills/openclaw-training-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-training-manager",
+    "url": "https://clawhub.ai/skills/openclaw-training-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-training-manager-d30b68c61a46b1f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-training-manager@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-training-manager-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0226a580153c8f95b6c98245e43df790d138634a0a8c1159e8e8664774aad6a2",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T07:07:21.902Z"
+}

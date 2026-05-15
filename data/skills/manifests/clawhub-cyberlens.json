@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33544,
+  "uuid": "skill-clawhub-cyberlens",
+  "skillKey": "clawhub-cyberlens",
+  "name": "CyberLens Security Scanner",
+  "summary": "Scan websites, GitHub repositories, and Claw Hub skills for practical security issues using a local quick website scan and CyberLens cloud analysis when conn...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyberlens",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shadoprizm",
+      "features": [
+        "Scan websites, GitHub repositories, and Claw Hub skills for practical security issues using a l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cyberlens@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142634171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cyberlens",
+      "url": "https://clawhub.ai/skills/cyberlens"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyberlens",
+    "url": "https://clawhub.ai/skills/cyberlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyberlens-5dcd99f1195f6e65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cyberlens@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cyberlens-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88c24361bacdf1fe03e309776738ad8e76b0afb7b693be095d49f4137fe259b7",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:50:37.268Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/btpanel-files@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btpanel_files",
+  "skill": {
+    "id": 70616,
+    "skillKey": "clawhub-btpanel-files",
+    "name": "btpanel files 宝塔面板文件管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btpanel-files",
+    "url": "https://clawhub.ai/skills/btpanel-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btpanel-files-8935bcc27a851b2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "宝塔面板文件管理技能，提供远程服务器文件/目录浏览、读取、编辑、创建、删除、权限管理等基本文件操作能力"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aapanel",
+      "userId": "s170gq9pc2mwwz5578zzf0kr4s83ngvs",
+      "displayName": "aapanel.com",
+      "image": "https://avatars.githubusercontent.com/u/31841517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775189936185,
+      "changelog": "btpanel-files 1.0.1\n\n- 文档更新：服务器添加流程增加 SSL 证书类型说明与 --verify-ssl false 参数说明。\n- 技能包关联矩阵与依赖关系描述调整，结构更加简明。\n- 进一步精简和整理常见问题部分，提升可读性。\n- 不涉及功能代码变动，仅SKILL.md文档内容优化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d6a7abca41d2419c9c2dcdc46e3ea8445af00137e24008c8816d3b7e273a4ff"
+}

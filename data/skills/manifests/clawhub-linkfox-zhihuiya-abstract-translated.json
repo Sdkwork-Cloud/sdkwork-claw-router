@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62898,
+  "uuid": "skill-clawhub-linkfox-zhihuiya-abstract-translated",
+  "skillKey": "clawhub-linkfox-zhihuiya-abstract-translated",
+  "name": "Zhihuiya Abstract Translated",
+  "summary": "从智慧芽（PatSnap）专利数据库获取专利标题和摘要的翻译版本。当用户要求专利摘要翻译、专利标题翻译、翻译后的专利摘要、其他语言的专利内容、中文/英文/日文的专利摘要，或需要通过专利ID或公开号查询特定专利的摘要、标题、patent abstract translation, patent title tran...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_zhihuiya_abstract_translated",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "从智慧芽（PatSnap）专利数据库获取专利标题和摘要的翻译版本。当用户要求专利摘要翻译、专利标题翻译、翻译后的专利摘要、其他语言的专利内容、中文/英文/日文的专利摘要，或需要通过专利ID或."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-zhihuiya-abstract-translated@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-zhihuiya-abstract-translated",
+      "url": "https://clawhub.ai/skills/linkfox-zhihuiya-abstract-translated"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-zhihuiya-abstract-translated",
+    "url": "https://clawhub.ai/skills/linkfox-zhihuiya-abstract-translated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-zhihuiya-abstract-translated-68e8cd1f969a6076.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-zhihuiya-abstract-translated@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-zhihuiya-abstract-translated-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa21647bd835b5fab286fa724fb5128a0202bbfe5e59c8366f72cab61bcd633c",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:46:03.174Z"
+}

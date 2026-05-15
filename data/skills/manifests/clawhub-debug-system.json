@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22923,
+  "uuid": "skill-clawhub-debug-system",
+  "skillKey": "clawhub-debug-system",
+  "name": "Debug System",
+  "summary": "Identify root causes of errors and failures in code, APIs, workflows, and systems. Provides structured debugging steps, explanations, and fixes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debug_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mededdahby",
+      "features": [
+        "Identify root causes of errors and failures in code, APIs, workflows, and systems",
+        "Provides structured debugging steps, explanations, and fixes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/debug-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99148703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "debug-system",
+      "url": "https://clawhub.ai/skills/debug-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debug-system",
+    "url": "https://clawhub.ai/skills/debug-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debug-system-121222fe60edac31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/debug-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-debug-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5c4e1551caac9d1b5744bfbba9f3dcc94a8bea91f67d16be892d853320b25bc",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:31:47.708Z"
+}

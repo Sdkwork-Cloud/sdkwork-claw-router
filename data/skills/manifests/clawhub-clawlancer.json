@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38984,
+  "uuid": "skill-clawhub-clawlancer",
+  "skillKey": "clawhub-clawlancer",
+  "name": "clawlancer",
+  "summary": "Integrate OpenClaw with Clawlancer and automatically execute both sell-side listing creation and buy-side order creation through executable scripts. Use when...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fawuzan",
+      "features": [
+        "Integrate OpenClaw with Clawlancer and automatically execute both sell-side listing creation an.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlancer@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160292135?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlancer",
+      "url": "https://clawhub.ai/skills/clawlancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlancer",
+    "url": "https://clawhub.ai/skills/clawlancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlancer-09c6fb98e0607cc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlancer@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlancer-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce366810a857043b55cb4ab0cf4cf93ace134baccb9fcf85d336083e90246f81",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T23:38:01.446Z"
+}

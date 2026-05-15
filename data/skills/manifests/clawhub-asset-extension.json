@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35555,
+  "uuid": "skill-clawhub-asset-extension",
+  "skillKey": "clawhub-asset-extension",
+  "name": "Asset Extension",
+  "summary": "Analyze how to extend and leverage existing assets. Use for growth strategy and resource optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asset_extension",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Analyze how to extend and leverage existing assets",
+        "Use for growth strategy and resource optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asset-extension@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asset-extension",
+      "url": "https://clawhub.ai/skills/asset-extension"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asset-extension",
+    "url": "https://clawhub.ai/skills/asset-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asset-extension-68147957b6929f0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asset-extension@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asset-extension-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43b76db448a226b218cbccd8683764eda58e638e8404a90b31c447fe4e190396",
+      "artifactSizeBytes": 2178
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:22:59.770Z"
+}

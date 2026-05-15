@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youku@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youku",
+  "skill": {
+    "id": 70812,
+    "skillKey": "clawhub-youku",
+    "name": "youku"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youku",
+    "url": "https://clawhub.ai/skills/youku",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youku-0486b5ee7c8ef6bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供优酷经典影视、独播内容及精彩视频播放指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773761878850,
+      "changelog": "- Updated skill description to highlight Youku's classic, exclusive, and recommended video content guidance.\n- Revised and streamlined capabilities, including categories, usage scenarios, and device compatibility.\n- Added concise return fields, focusing on user operations, feature highlights, and safety tips.\n- Included sample request templates for practical user guidance.\n- Expanded notes on privacy, third-party interface stability, and update frequency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2ac43ff818318b70fab38a42c9d60358b6d43a59a6158372cdf1e10cc35001d"
+}

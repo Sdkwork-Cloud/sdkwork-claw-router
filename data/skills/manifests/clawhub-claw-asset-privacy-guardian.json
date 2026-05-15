@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64067,
+  "uuid": "skill-clawhub-claw-asset-privacy-guardian",
+  "skillKey": "clawhub-claw-asset-privacy-guardian",
+  "name": "Claw Asset & Privacy Guardian",
+  "summary": "提供完全本地、匿名化的数字资产和隐私安全检测与监控，防止敏感信息泄露与账号劫持风险。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_asset_privacy_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SkilledClaw",
+      "features": [
+        "提供完全本地、匿名化的数字资产和隐私安全检测与监控，防止敏感信息泄露与账号劫持风险。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-asset-privacy-guardian@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250800479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-asset-privacy-guardian",
+      "url": "https://clawhub.ai/skills/claw-asset-privacy-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-asset-privacy-guardian",
+    "url": "https://clawhub.ai/skills/claw-asset-privacy-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-asset-privacy-guardian-e689e5b41b36bd3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-asset-privacy-guardian@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-asset-privacy-guardian-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c037fd3b3ccb8472bbc883a9687b516508f751e569defc9737d398418abf98a",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T14:24:26.132Z"
+}

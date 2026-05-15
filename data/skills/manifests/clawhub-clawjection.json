@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42515,
+  "uuid": "skill-clawhub-clawjection",
+  "skillKey": "clawhub-clawjection",
+  "name": "ClawJection",
+  "summary": "Install and apply ClawJection bundles when a user asks to install a ClawJection, run a ClawJection, or configure an OpenClaw instance from a ClawJection repo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawjection",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gregory Potemkin",
+      "features": [
+        "Install and apply ClawJection bundles when a user asks to install a ClawJection, run a ClawJect."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawjection@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57456890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawjection",
+      "url": "https://clawhub.ai/skills/clawjection"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawjection",
+    "url": "https://clawhub.ai/skills/clawjection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawjection-de8b4642e525bed0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawjection@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawjection-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8e573cafb3e6e52fab81fc4169a2e0c50cbbc0a874124217ee6d0c2bcada093",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:32:28.101Z"
+}

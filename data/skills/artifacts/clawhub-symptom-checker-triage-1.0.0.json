@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/symptom-checker-triage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.symptom_checker_triage",
+  "skill": {
+    "id": 52720,
+    "skillKey": "clawhub-symptom-checker-triage",
+    "name": "Symptom Checker Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "symptom-checker-triage",
+    "url": "https://clawhub.ai/skills/symptom-checker-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/symptom-checker-triage-2780b17b4ef01814.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Suggest triage levels (Emergency, Urgent, Outpatient) based on red flag symptoms using a rule-based engine. For AI-assisted decision support only — not a sub..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775024463187,
+      "changelog": "Initial public release — rule-based symptom checker for triage level suggestion.\n\n- Analyzes symptom descriptions to suggest triage levels: Emergency, Urgent, or Outpatient.\n- Identifies red flag symptoms and provides structured output with rationale and recommendations.\n- Includes clear disclaimers: AI-assisted only, not a substitute for professional diagnosis.\n- Offers CLI usage examples and fallback template for incomplete or failed cases.\n- Strict input validation: only triage of symptom descriptions; refuses diagnosis or prescription requests.\n- No third-party dependencies; relies on Python standard library.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04006b39d2d51532f8df0061439dc4dff476161e1b357aa501c050f215c1bf0e"
+}

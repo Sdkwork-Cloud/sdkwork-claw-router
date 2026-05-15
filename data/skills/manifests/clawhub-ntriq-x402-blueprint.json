@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56069,
+  "uuid": "skill-clawhub-ntriq-x402-blueprint",
+  "skillKey": "clawhub-ntriq-x402-blueprint",
+  "name": "Ntriq X402 Blueprint",
+  "summary": "AI architectural blueprint analysis — extract rooms, dimensions, materials from floor plans. $0.05 USDC via x402.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_blueprint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "AI architectural blueprint analysis — extract rooms, dimensions, materials from floor plans",
+        "$0.05 USDC via x402."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-x402-blueprint@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-x402-blueprint",
+      "url": "https://clawhub.ai/skills/ntriq-x402-blueprint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-blueprint",
+    "url": "https://clawhub.ai/skills/ntriq-x402-blueprint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-blueprint-c92115b401688100.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-x402-blueprint@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-x402-blueprint-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb5bf8d0ce7a4ed7621043b2a8a6976f90776b1b4daaef528f7be03a7ee77526",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:00:34.443Z"
+}

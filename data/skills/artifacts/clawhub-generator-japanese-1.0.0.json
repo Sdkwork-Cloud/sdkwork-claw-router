@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-japanese@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_japanese",
+  "skill": {
+    "id": 48096,
+    "skillKey": "clawhub-generator-japanese",
+    "name": "Generator Japanese"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-japanese",
+    "url": "https://clawhub.ai/skills/generator-japanese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-japanese-86a22d3ba4cabdc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate video clips into Japanese-localized videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. marketers use it for generating Japane..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777827767128,
+      "changelog": "Initial release — Generate Japanese-localized videos from your clips using cloud GPUs.\n\n- Supports MP4, MOV, AVI, and WebM files up to 500MB for video localization into Japanese.\n- Seamless backend connection with automatic session management; handles both authenticated and anonymous users.\n- Provides video dubbing, on-screen Japanese text, BGM editing, and export to 1080p MP4.\n- Real-time cloud processing with updates, status polling, and error handling for common issues.\n- Key workflows include single/iterative video edits and batch processing, optimized for short clips (<2 min).\n- User-friendly prompts and mapped actions for uploading, editing, checking credits, and downloading results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa93bda5803cb5f1a4658bef95132ecc4d1c2e79004ff14085f7c06f6911ea44"
+}

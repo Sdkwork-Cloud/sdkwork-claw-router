@@ -1450,7 +1450,7 @@ class SchemaGuardianTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertIn("forbidden new table prefix present: router_usage_event", result.messages)
 
-    def test_requires_java_api_prefixes(self) -> None:
+    def test_allows_custom_api_prefixes_as_registry_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             registry = self.write_registry(
@@ -1469,10 +1469,7 @@ class SchemaGuardianTest(unittest.TestCase):
 
             result = SchemaGuardian(root=root, registry_path=registry).run()
 
-            self.assertFalse(result.ok)
-            self.assertIn("api_prefixes.app must be /app/v3/api", result.messages)
-            self.assertIn("api_prefixes.backend must be /backend/v3/api", result.messages)
-            self.assertIn("api_prefixes.openai_compatible must be /v1", result.messages)
+            self.assertTrue(result.ok, result.messages)
 
     def test_requires_projection_tables_to_declare_registered_sources(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

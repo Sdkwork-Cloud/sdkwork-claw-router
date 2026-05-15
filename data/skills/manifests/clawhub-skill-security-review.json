@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16568,
+  "uuid": "skill-clawhub-skill-security-review",
+  "skillKey": "clawhub-skill-security-review",
+  "name": "Skill Security Review",
+  "summary": "Review and audit OpenClaw skills and agents for data risks, code execution, persistence, network access, privilege escalation, and supply-chain threats befor...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kickook",
+      "features": [
+        "Review and audit OpenClaw skills and agents for data risks, code execution, persistence, networ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-security-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51082753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-security-review",
+      "url": "https://clawhub.ai/skills/skill-security-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-review",
+    "url": "https://clawhub.ai/skills/skill-security-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-review-0359e64a704e8309.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-security-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-security-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:237b1fbd76d2a860207415149f579cc2e714805e8fea104c99eac2d679bfeb14",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:23:53.389Z"
+}

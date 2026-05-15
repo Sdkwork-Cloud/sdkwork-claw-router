@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10485,
+  "uuid": "skill-clawhub-autoresponder",
+  "skillKey": "clawhub-autoresponder",
+  "name": "iResponder",
+  "summary": "Monitor iMessage/SMS conversations and auto-respond based on configurable rules, AI prompts, and rate-limiting conditions. Use when you need to automatically reply to specific contacts with AI-generated responses based on conversation cont.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autoresponder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Koba42Corp",
+      "features": [
+        "Monitor iMessage/SMS conversations and auto-respond based on configurable rules, AI prompts, an.",
+        "Use when you need to automatically reply to specific contacts with AI-generated responses based.",
+        "Also use when the user asks to manage auto-responder settings, contacts, prompts, or view statu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autoresponder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76798369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autoresponder",
+      "url": "https://clawhub.ai/skills/autoresponder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autoresponder",
+    "url": "https://clawhub.ai/skills/autoresponder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autoresponder-42c60bd01b42b270.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autoresponder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-autoresponder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7276328b4a3332e4ee2d580749925408d842bc574c6a04f9160eada8e0eebda1",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T18:31:03.137Z"
+}

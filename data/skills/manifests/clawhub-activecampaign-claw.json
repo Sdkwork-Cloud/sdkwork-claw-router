@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25976,
+  "uuid": "skill-clawhub-activecampaign-claw",
+  "skillKey": "clawhub-activecampaign-claw",
+  "name": "AI Marketing + ActiveCampaign",
+  "summary": "ActiveCampaign agent for marketers + sales: list health, lead scoring, deliverability, campaign postmortems, automation diagnostics, and 40+ more reports.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.activecampaign_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ji282h7",
+      "features": [
+        "ActiveCampaign agent for marketers + sales: list health, lead scoring, deliverability, campaign."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/activecampaign-claw@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261539906?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "activecampaign-claw",
+      "url": "https://clawhub.ai/skills/activecampaign-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "activecampaign-claw",
+    "url": "https://clawhub.ai/skills/activecampaign-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/activecampaign-claw-0353adbaa043faaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/activecampaign-claw@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-activecampaign-claw-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb8f0df5fc62d1d8a62ba30019807db8cc63b44b83a4a915af542cdff0cf5bc6",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T00:16:36.504Z"
+}

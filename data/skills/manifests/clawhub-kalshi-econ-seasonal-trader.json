@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44410,
+  "uuid": "skill-clawhub-kalshi-econ-seasonal-trader",
+  "skillKey": "clawhub-kalshi-econ-seasonal-trader",
+  "name": "Kalshi Econ Seasonal Trader",
+  "summary": "Trades CPI/inflation markets on Kalshi using documented seasonal patterns in CPI data. Energy costs spike summer, housing adjustments January. Requires SIMME...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_econ_seasonal_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades CPI/inflation markets on Kalshi using documented seasonal patterns in CPI data",
+        "Energy costs spike summer, housing adjustments January",
+        "Requires SIMME..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kalshi-econ-seasonal-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kalshi-econ-seasonal-trader",
+      "url": "https://clawhub.ai/skills/kalshi-econ-seasonal-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-econ-seasonal-trader",
+    "url": "https://clawhub.ai/skills/kalshi-econ-seasonal-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-econ-seasonal-trader-c0ce52e9d110cdb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kalshi-econ-seasonal-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kalshi-econ-seasonal-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d4fd4c7599241a74efea5fbf22154d0796bb2f81f81937416c102011d2bfd60",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T21:35:25.558Z"
+}

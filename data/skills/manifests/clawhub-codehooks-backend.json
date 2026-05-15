@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15820,
+  "uuid": "skill-clawhub-codehooks-backend",
+  "skillKey": "clawhub-codehooks-backend",
+  "name": "Codehooks Backend",
+  "summary": "Deploy serverless backends for REST APIs, webhooks, data storage, scheduled jobs, queue workers, and autonomous workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codehooks_backend",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Knut Martin Tornes",
+      "features": [
+        "Deploy serverless backends for REST APIs, webhooks, data storage, scheduled jobs, queue workers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codehooks-backend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codehooks-backend",
+      "url": "https://clawhub.ai/skills/codehooks-backend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codehooks-backend",
+    "url": "https://clawhub.ai/skills/codehooks-backend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codehooks-backend-a7eff9e0328c9f5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codehooks-backend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codehooks-backend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e68f75b7f377125b04fe108f520f6a0696155386973c31c845b807cc0f97c00",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T20:11:53.799Z"
+}

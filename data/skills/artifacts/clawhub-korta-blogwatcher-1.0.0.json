@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/korta-blogwatcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.korta_blogwatcher",
+  "skill": {
+    "id": 42252,
+    "skillKey": "clawhub-korta-blogwatcher",
+    "name": "Korta Blogwatcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "korta-blogwatcher",
+    "url": "https://clawhub.ai/skills/korta-blogwatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/korta-blogwatcher-b219fccfd3f460c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "landercortazarromero",
+      "userId": "s17a4ktrsekycwkm4n8y50t27s84f3sz",
+      "displayName": "landercortazarromero",
+      "image": "https://avatars.githubusercontent.com/u/268324391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775629228028,
+      "changelog": "Initial release of blogwatcher skill.\n\n- Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.\n- Add, remove, and list tracked blogs from the command line.\n- Scan for new articles and manage read/unread status.\n- Includes installation instructions and usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bee792c5ffe89c51ebf0b8929d89a42155b2df500d920e88ff9f0d6fa3d7de40"
+}

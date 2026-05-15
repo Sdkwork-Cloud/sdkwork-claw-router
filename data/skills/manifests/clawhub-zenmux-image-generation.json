@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14004,
+  "uuid": "skill-clawhub-zenmux-image-generation",
+  "skillKey": "clawhub-zenmux-image-generation",
+  "name": "ZenMux Image Generation",
+  "summary": "Generate images via ZenMux API (Pro/Elite). Supports Text-to-Image, Image-to-Image, and Multi-Image reference fusion.",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenmux_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dadaniya99",
+      "features": [
+        "Generate images via ZenMux API (Pro/Elite)",
+        "Supports Text-to-Image, Image-to-Image, and Multi-Image reference fusion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zenmux-image-generation@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254098635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zenmux-image-generation",
+      "url": "https://clawhub.ai/skills/zenmux-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenmux-image-generation",
+    "url": "https://clawhub.ai/skills/zenmux-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenmux-image-generation-c87cdd0db8ce0356.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zenmux-image-generation@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zenmux-image-generation-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af6bab073463106f591c83e0ea65f591cc986df8d3d0c0ab02132b4ffec49f72",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T04:57:43.966Z"
+}

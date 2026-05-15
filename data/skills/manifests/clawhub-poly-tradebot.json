@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30882,
+  "uuid": "skill-clawhub-poly-tradebot",
+  "skillKey": "clawhub-poly-tradebot",
+  "name": "Poly Tradebot",
+  "summary": "Automated news analysis pipeline that fetches CNBC world news, classifies articles by topic (geopolitics vs macroeconomics), and invokes specialized skills (...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poly_tradebot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rafi Mochamad Fahreza",
+      "features": [
+        "Automated news analysis pipeline that fetches CNBC world news, classifies articles by topic (ge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poly-tradebot@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57250467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poly-tradebot",
+      "url": "https://clawhub.ai/skills/poly-tradebot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poly-tradebot",
+    "url": "https://clawhub.ai/skills/poly-tradebot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poly-tradebot-7e556919f9360226.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poly-tradebot@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-poly-tradebot-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:497a012dee6683ea41e5a8723e679560356ead288263743d215efff82583fc25",
+      "artifactSizeBytes": 2298
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:40:25.737Z"
+}

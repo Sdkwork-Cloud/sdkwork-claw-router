@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ima-voice-ai@1.0.14",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ima_voice_ai",
+  "skill": {
+    "id": 50105,
+    "skillKey": "clawhub-ima-voice-ai",
+    "name": "IMA AI Music Generator — Suno, DouBao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ima-voice-ai",
+    "url": "https://clawhub.ai/skills/ima-voice-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ima-voice-ai-ab7446e336117b3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate voiceovers, narration, and spoken audio for videos, explainers, ads, and social content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenfancy-gan",
+      "userId": "s17etzvvhp65ybcxjyj408z1nx83hx8t",
+      "displayName": "allenfancy-gan",
+      "image": "https://avatars.githubusercontent.com/u/224295706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 769,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "1.0.14",
+      "createdAt": 1774853754148,
+      "changelog": "- Added credentialNote to indicate IMA_API_KEY is sent only to api.imastudio.com.\n- Updated homepage link to https://www.imaclaw.ai in metadata.\n- No changes to features or usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b7d294072167b665c79a9e332b65e308224e685b117b563201d30b47c845570"
+}

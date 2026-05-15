@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/san-jose@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.san_jose",
+  "skill": {
+    "id": 71844,
+    "skillKey": "clawhub-san-jose",
+    "name": "San Jose"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "san-jose",
+    "url": "https://clawhub.ai/skills/san-jose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/san-jose-f9b970711c17805a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供美国圣何塞的旅游信息、历史文化介绍及旅行路线规划服务，涵盖硅谷科技、地标、美食与文化体验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776392193473,
+      "changelog": "San Jose skill 1.0.0 – Launch version with a comprehensive city guide.\n\n- Covers key attractions, history, and cultural highlights of San Jose, CA.\n- Includes recommendations for food, shopping, and local experiences.\n- Provides practical travel information: population, climate, major airport, and best seasons to visit.\n- Designed for users planning travel or seeking knowledge about San Jose’s tech and cultural scene.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b119314d0ee0adcfe0c9ec34f9708ff55dcd89279d2d54b6b26dd1079670bfe7"
+}

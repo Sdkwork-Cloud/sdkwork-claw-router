@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context7@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context7",
+  "skill": {
+    "id": 8587,
+    "skillKey": "clawhub-context7",
+    "name": "Context7 MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context7",
+    "url": "https://clawhub.ai/skills/context7",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context7-0472116c93c00c7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Context7 MCP - Intelligent documentation search and context for any library"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thesethrose",
+      "userId": "publishers:thesethrose",
+      "displayName": "Seth Rose",
+      "image": "https://avatars.githubusercontent.com/u/10383809?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 8308,
+      "installsAllTime": 72,
+      "installsCurrent": 70,
+      "stars": 16,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1769015493568,
+      "changelog": "Added best practices section for search, context, versioning, and quality filtering",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e310a91617f3dd34e33b399ddf44d4e44134c530ee502572e496b37952a1eba"
+}

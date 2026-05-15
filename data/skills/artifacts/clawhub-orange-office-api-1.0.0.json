@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orange-office-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orange_office_api",
+  "skill": {
+    "id": 65596,
+    "skillKey": "clawhub-orange-office-api",
+    "name": "橙子通API自动化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orange-office-api",
+    "url": "https://clawhub.ai/skills/orange-office-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orange-office-api-48e814602ea1a646.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "橙子通（orange-office.cn）库存管理系统 API 自动化。用于通过 API 创建出库单、查询库存、管理主播仓库等，无需浏览器。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiao1230123",
+      "userId": "s17fev0a42ncmavp5q13wkjd2183r74r",
+      "displayName": "xiao1230123",
+      "image": "https://avatars.githubusercontent.com/u/140776820?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774713931216,
+      "changelog": "orange-office-api 1.0.0\n\n- 首次发布，支持通过 API 自动化操作橙子通（orange-office.cn）库存管理系统。\n- 支持创建、修改、删除出库单，查询库存及管理主播仓库，无需浏览器操作。\n- 提供详细的 API 签名方式、请求参数和常见操作示例。\n- 详细列出各主播仓库 locId、钉钉库存表 tableId 及字段写入规范。\n- 包含库存快照计算方法及常见问题解答。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:735cbb2eb80cfb55c08f16ded75b64fe57c5cbdb4daeb7637632ea8f04464cf5"
+}

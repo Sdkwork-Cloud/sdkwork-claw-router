@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68857,
+  "uuid": "skill-clawhub-quant-data-quality",
+  "skillKey": "clawhub-quant-data-quality",
+  "name": "Quant Data Quality",
+  "summary": "数据质量检查技能。当用户说\"数据质量\"、\"数据检查\"、\"数据异常\"、\"数据问题\"、\"因子数据\"、\"信号数据\"时自动触发。提供数据质量检查清单、常见问题识别、修复建议。适用于量化项目的数据质量管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_data_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xueylee-dotcom",
+      "features": [
+        "数据质量检查技能。当用户说\"数据质量\"、\"数据检查\"、\"数据异常\"、\"数据问题\"、\"因子数据\"、\"信号数据\"时自动触发。提供数据质量检查清单、常见问题识别、修复建议。适用于量化项目的数据质量."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-data-quality@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260164558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-data-quality",
+      "url": "https://clawhub.ai/skills/quant-data-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-data-quality",
+    "url": "https://clawhub.ai/skills/quant-data-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-data-quality-54264b4586b09756.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-data-quality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-data-quality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b8e96bdfc2ee8b11b4b920e0108d3623f5c1347fc9e6455b0bd2a84b352dd69",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:49:13.133Z"
+}

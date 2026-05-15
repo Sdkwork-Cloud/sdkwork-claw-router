@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43376,
+  "uuid": "skill-clawhub-file-organizer-by-ext",
+  "skillKey": "clawhub-file-organizer-by-ext",
+  "name": "File Organizer By Ext",
+  "summary": "Organizes files into folders based on their extensions, streamlining directory cleanup by sorting files like pdfs or images into separate folders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_organizer_by_ext",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Organizes files into folders based on their extensions, streamlining directory cleanup by sorti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-organizer-by-ext@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-organizer-by-ext",
+      "url": "https://clawhub.ai/skills/file-organizer-by-ext"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-organizer-by-ext",
+    "url": "https://clawhub.ai/skills/file-organizer-by-ext",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-organizer-by-ext-8c3e482e822984c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-organizer-by-ext@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-organizer-by-ext-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb81a71e5882b7fa97866f51dcba1e720f88a4951439c2214f356fbc103f28c2",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:44:46.827Z"
+}

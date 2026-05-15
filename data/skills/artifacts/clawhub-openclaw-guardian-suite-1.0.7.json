@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-guardian-suite@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_guardian_suite",
+  "skill": {
+    "id": 63075,
+    "skillKey": "clawhub-openclaw-guardian-suite",
+    "name": "Openclaw Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-guardian-suite",
+    "url": "https://clawhub.ai/skills/openclaw-guardian-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-guardian-suite-dac16788341c94d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一键安装包含配置安全、容灾、监控和上下文优化的 OpenClaw 系统全链路守护套件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "halfmoon82",
+      "userId": "s173a0sd7rjbb7s3bsayc8607s83n58t",
+      "displayName": "halfmoon82",
+      "image": "https://avatars.githubusercontent.com/u/261569221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1773198685259,
+      "changelog": "- Removed multiple legacy and auxiliary skill components, including compaction-proxy, config-modification, config-preflight-validator, gateway-auto-rollback, model-failover-doctor, openclaw-health-audit, and skill-safe-install.\n- Updated configuration and install scripts to reflect a streamlined skill set.\n- Documentation (SKILL.md) remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a46443b78c293b2b5a967618e0dc8d4d03e6591cac757d3c5e2c800cfa6189b8"
+}

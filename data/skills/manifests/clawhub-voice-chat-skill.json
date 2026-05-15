@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64411,
+  "uuid": "skill-clawhub-voice-chat-skill",
+  "skillKey": "clawhub-voice-chat-skill",
+  "name": "Voice Chat Skill",
+  "summary": "语音对话集成技能，支持双向语音交流。使用TTS和STT实现完整的语音对话功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_chat_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangkelvin",
+      "features": [
+        "语音对话集成技能，支持双向语音交流。使用TTS和STT实现完整的语音对话功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-chat-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261776090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-chat-skill",
+      "url": "https://clawhub.ai/skills/voice-chat-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-chat-skill",
+    "url": "https://clawhub.ai/skills/voice-chat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-chat-skill-04fc5e17dfaff7c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-chat-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-chat-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3251943656deed87377ca62733dea5af6071d54473c461579f70f164cb1586ff",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:35:53.571Z"
+}

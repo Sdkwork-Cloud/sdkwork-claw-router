@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65319,
+  "uuid": "skill-clawhub-a-share-quant-report",
+  "skillKey": "clawhub-a-share-quant-report",
+  "name": "a-share-quant-report",
+  "summary": "面向A股金工研报复现的 skill，自动按研报框架拆解研究问题、选择至少1000只股票的数据集、调用标准化 Python 回测框架，并按研报逻辑系统性展示结果与图片。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_quant_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0x2Hacks",
+      "features": [
+        "面向A股金工研报复现的 skill，自动按研报框架拆解研究问题、选择至少1000只股票的数据集、调用标准化 Python 回测框架，并按研报逻辑系统性展示结果与图片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-quant-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99119378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-quant-report",
+      "url": "https://clawhub.ai/skills/a-share-quant-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-quant-report",
+    "url": "https://clawhub.ai/skills/a-share-quant-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-quant-report-0796bf2ba0b3d28c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-quant-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-quant-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e15469a6cf614ac3c994a753fce418bf68b46d85409b595784140f4e469f3d83",
+      "artifactSizeBytes": 2812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T02:42:36.370Z"
+}

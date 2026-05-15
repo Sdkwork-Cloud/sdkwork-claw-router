@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42569,
+  "uuid": "skill-clawhub-nyc-311-reporter",
+  "skillKey": "clawhub-nyc-311-reporter",
+  "name": "Nyc 311 Reporter",
+  "summary": "Automate NYC 311 service request filing by browsing the 311 portal with Playwright. Scrapes complaint categories, finds forms, fills them with user data, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyc_311_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pranjal Minocha",
+      "features": [
+        "Automate NYC 311 service request filing by browsing the 311 portal with Playwright",
+        "Scrapes complaint categories, finds forms, fills them with user data, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nyc-311-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67250571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nyc-311-reporter",
+      "url": "https://clawhub.ai/skills/nyc-311-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyc-311-reporter",
+    "url": "https://clawhub.ai/skills/nyc-311-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyc-311-reporter-b9a783f9d68540ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nyc-311-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nyc-311-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2af86c48c849f3ebd1dd3e070d05e38b0a76f2f429f536e15a63932184cbc6b",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T15:02:34.745Z"
+}

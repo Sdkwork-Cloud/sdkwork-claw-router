@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62220,
+  "uuid": "skill-clawhub-siliconflow-media",
+  "skillKey": "clawhub-siliconflow-media",
+  "name": "SiliconFlow 多模态服务，支持图片生成(FLUX/Qwen)、视频生成(Wan)、TTS语音合成、ASR语音识别。使用代金券支付。",
+  "summary": "SiliconFlow 多模态服务，支持图片生成(FLUX/Qwen)、视频生成(Wan)、TTS语音合成、ASR语音识别。使用代金券支付。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siliconflow_media",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sheldon.li",
+      "features": [
+        "SiliconFlow 多模态服务，支持图片生成(FLUX/Qwen)、视频生成(Wan)、TTS语音合成、ASR语音识别。使用代金券支付。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/siliconflow-media@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19663777?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "siliconflow-media",
+      "url": "https://clawhub.ai/skills/siliconflow-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siliconflow-media",
+    "url": "https://clawhub.ai/skills/siliconflow-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siliconflow-media-7da8d241e775f258.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/siliconflow-media@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-siliconflow-media-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26e412d1bd3b7d39688f4bc4d0741f275b3f7d9e0648eb78afdadf3f2556feb0",
+      "artifactSizeBytes": 2379
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T05:28:58.753Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59563,
+  "uuid": "skill-clawhub-bazhuayu-webhook",
+  "skillKey": "clawhub-bazhuayu-webhook",
+  "name": "Bazhuayu Webhook",
+  "summary": "八爪鱼 RPA Webhook 调用工具 - 通过 Webhook 触发 RPA 任务运行，支持自定义参数传递",
+  "version": "2.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazhuayu_webhook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "李飞RPA",
+      "features": [
+        "八爪鱼 RPA Webhook 调用工具",
+        "通过 Webhook 触发 RPA 任务运行，支持自定义参数传递"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bazhuayu-webhook@2.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31609936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bazhuayu-webhook",
+      "url": "https://clawhub.ai/skills/bazhuayu-webhook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazhuayu-webhook",
+    "url": "https://clawhub.ai/skills/bazhuayu-webhook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazhuayu-webhook-27bae64da0557501.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bazhuayu-webhook@2.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bazhuayu-webhook-2.0.4.json",
+      "version": "2.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b211daa44e551936876d7897c9df4b16e3168a3b0ae292850bc534f901ed0bd2",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:43:45.799Z"
+}

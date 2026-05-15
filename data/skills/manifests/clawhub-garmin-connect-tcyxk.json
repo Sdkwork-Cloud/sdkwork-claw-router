@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40279,
+  "uuid": "skill-clawhub-garmin-connect-tcyxk",
+  "skillKey": "clawhub-garmin-connect-tcyxk",
+  "name": "Garmin Connect",
+  "summary": "Garmin Connect integration for OpenClaw: sync fitness data (steps, HR, calories, workouts, sleep) using OAuth. Supports China (garmin.cn) and Global (garmin....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.garmin_connect_tcyxk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tcyxk",
+      "features": [
+        "Garmin Connect integration for OpenClaw: sync fitness data (steps, HR, calories, workouts, slee.",
+        "Supports China (garmin.cn) and Global (garmin...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/garmin-connect-tcyxk@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129282805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "garmin-connect-tcyxk",
+      "url": "https://clawhub.ai/skills/garmin-connect-tcyxk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "garmin-connect-tcyxk",
+    "url": "https://clawhub.ai/skills/garmin-connect-tcyxk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/garmin-connect-tcyxk-5b173f3874edd471.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/garmin-connect-tcyxk@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-garmin-connect-tcyxk-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9be3635cf62af6590925fde45648791665192116ed3485726bd2ba01352fada0",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T22:41:17.889Z"
+}

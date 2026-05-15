@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54720,
+  "uuid": "skill-clawhub-clack",
+  "skillKey": "clawhub-clack",
+  "name": "Clack",
+  "summary": "Deploy and manage Clack, a voice relay server for OpenClaw. Bridges voice input (WebSocket) through STT → OpenClaw agent → TTS, enabling real-time voice conv...",
+  "version": "1.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fbn3799",
+      "features": [
+        "Deploy and manage Clack, a voice relay server for OpenClaw",
+        "Bridges voice input (WebSocket) through STT → OpenClaw agent → TTS, enabling real-time voice co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clack@1.5.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181361725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clack",
+      "url": "https://clawhub.ai/skills/clack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clack",
+    "url": "https://clawhub.ai/skills/clack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clack-239c3607d582db3e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clack@1.5.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clack-1.5.3.json",
+      "version": "1.5.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1976a5a1b60e31cf8c57899bb56d75686b15c36183b3e3ab5b6d6b09dfcf3b33",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T21:52:34.704Z"
+}

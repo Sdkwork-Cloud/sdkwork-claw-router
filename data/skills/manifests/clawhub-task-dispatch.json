@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35205,
+  "uuid": "skill-clawhub-task-dispatch",
+  "skillKey": "clawhub-task-dispatch",
+  "name": "Task Dispatch",
+  "summary": "Task scheduling and dispatching for task boards. Use when setting up periodic task dispatch, checking for dispatchable tasks, creating subagents to execute t...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CCCaptain0129",
+      "features": [
+        "Task scheduling and dispatching for task boards",
+        "Use when setting up periodic task dispatch, checking for dispatchable tasks, creating subagents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-dispatch@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262947617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-dispatch",
+      "url": "https://clawhub.ai/skills/task-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-dispatch",
+    "url": "https://clawhub.ai/skills/task-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-dispatch-4b41a8747de1e463.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-dispatch@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-dispatch-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cad0cc4747359076e7e68ee0d62f11192d2b36a1ac4ad01f06bebc6d448ba0b",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T07:45:19.706Z"
+}

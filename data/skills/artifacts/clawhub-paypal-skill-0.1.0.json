@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paypal-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paypal_skill",
+  "skill": {
+    "id": 69813,
+    "skillKey": "clawhub-paypal-skill",
+    "name": "Paypal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paypal-skill",
+    "url": "https://clawhub.ai/skills/paypal-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paypal-skill-7650d16307e422f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "整理PayPal官网公开的产品说明、费率规则、服务边界及帮助信息，不涉及账户操作或交易执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774161771444,
+      "changelog": "paypal-skill v0.1.0\n\n- Initial release introducing PayPal skill for aggregating public information on official site, product descriptions, rate rules, and help content.\n- Focused on organizing account features, payment/transfer scenarios, product boundaries, and risk announcements from public PayPal pages.\n- Excludes account operations, investments, transactions, or processing private/sensitive data.\n- Provides methods for extracting product info, rates, service boundaries, and support resources.\n- Emphasizes compliance, copyright, and only processes publicly available content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76c26fe09ecc442cc728a4c915e98b5dc39063e7d1b7dd5f71fb4c1428c4e99b"
+}

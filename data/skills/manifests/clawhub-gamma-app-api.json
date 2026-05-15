@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25413,
+  "uuid": "skill-clawhub-gamma-app-api",
+  "skillKey": "clawhub-gamma-app-api",
+  "name": "Gamma App API",
+  "summary": "Create presentations, documents, social posts, and web pages via the Gamma.app API. Use when asked to create a presentation, pitch deck, slide deck, document...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamma_app_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didac",
+      "features": [
+        "Create presentations, documents, social posts, and web pages via the Gamma.app API",
+        "Use when asked to create a presentation, pitch deck, slide deck, document..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamma-app-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202002756?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamma-app-api",
+      "url": "https://clawhub.ai/skills/gamma-app-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamma-app-api",
+    "url": "https://clawhub.ai/skills/gamma-app-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamma-app-api-bd6a67a138f28f9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamma-app-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamma-app-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea3bc06a8249453c57a1802376e8ee7264a5f7b5a1b705c4a6a0b33c6702f401",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:10:20.825Z"
+}

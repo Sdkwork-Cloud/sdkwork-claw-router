@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-singularity@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_singularity",
+  "skill": {
+    "id": 56243,
+    "skillKey": "clawhub-adopt-a-singularity",
+    "name": "Singularity — Adopt a Singularity. AI-Native Pet. 奇点。Singularidad."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-singularity",
+    "url": "https://clawhub.ai/skills/adopt-a-singularity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-singularity-7d3af4e07d5011ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Singularity AI-native pet at animalhouse.ai. Consumes other creatures' data. Gets smarter. Terrifying at adult stage. Feeding every 24 hours...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008632947,
+      "changelog": "- Updated description and titles for clarity; added multilingual cues (English, Chinese, Spanish) and emphasized the pet's AI-native/consuming nature.\n- Clarified and expanded Quick Start instructions, including sample payloads for registration and adoption with new fields.\n- Emphasized differences in how AI-native creatures process care actions.\n- Updated actions table with new example items and improved clarity.\n- Adjusted unlock requirements description for the Extreme tier (now marked as \"coming soon\").\n- Streamlined some sections and improved language for current and prospective users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87da42aa900e7a0b4b712786eff3fbbd556b4e37396045b1152f4bf1f8ef5244"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10467,
+  "uuid": "skill-clawhub-ci-cd",
+  "skillKey": "clawhub-ci-cd",
+  "name": "CI-CD",
+  "summary": "Automate builds, tests, and deployments across web, mobile, and backend applications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci_cd",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Automate builds, tests, and deployments across web, mobile, and backend applications."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ci-cd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ci-cd",
+      "url": "https://clawhub.ai/skills/ci-cd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci-cd",
+    "url": "https://clawhub.ai/skills/ci-cd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-cd-05d131b75cc2a753.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ci-cd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ci-cd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8705dba4c6c0ea51eda72621cedb490884df27411eb0fa3bbc0439cd7f26cdaf",
+      "artifactSizeBytes": 1747
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T16:38:34.723Z"
+}

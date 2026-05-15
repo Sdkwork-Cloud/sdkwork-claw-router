@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "hi-shopping",
+    "displayName": "负一屏购物",
+    "summary": "用户在场/不在场购买skill",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775650234661,
+    "updatedAt": 1777527320029
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775650234661,
+    "changelog": "SEAP Shopping Skill initial release.\n\n- Supports both immediate and scheduled (预约) purchases, whether the user is present or not.\n- Searches and displays all matching products with full details for user selection.\n- Address confirmation workflow: reads from configuration, allows user to confirm or edit address before purchase.\n- Integrated with command-line tool for searching and buying; automates all relevant shell commands.\n- Scheduled purchase task fully automates at specified time, pushing result to user with detailed notification.\n- Robust state management: handles session files for search, confirmation, scheduling, and purchase results.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "atomicservice",
+    "userId": "s1721f4cv6wjpqdmkh77w8s995845pvg",
+    "displayName": "atomicservice",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527320029
+  }
+}

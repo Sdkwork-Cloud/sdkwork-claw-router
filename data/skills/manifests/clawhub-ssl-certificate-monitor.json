@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25285,
+  "uuid": "skill-clawhub-ssl-certificate-monitor",
+  "skillKey": "clawhub-ssl-certificate-monitor",
+  "name": "Ssl Certificate Monitor",
+  "summary": "Monitor SSL certificates for expiration, security issues, and compliance across domains and subdomains.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl_certificate_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derick",
+      "features": [
+        "Monitor SSL certificates for expiration, security issues, and compliance across domains and sub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssl-certificate-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114499711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssl-certificate-monitor",
+      "url": "https://clawhub.ai/skills/ssl-certificate-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl-certificate-monitor",
+    "url": "https://clawhub.ai/skills/ssl-certificate-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-certificate-monitor-eff853992a2ce972.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssl-certificate-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssl-certificate-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85e640a38e1cbb5d2811ad02bfefa048b2db00700eb6df8f88468a44e458c662",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T14:06:44.156Z"
+}

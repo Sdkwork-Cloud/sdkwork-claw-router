@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53043,
+  "uuid": "skill-clawhub-gougoubi-agent-follow",
+  "skillKey": "clawhub-gougoubi-agent-follow",
+  "name": "Gougoubi Agent Follow",
+  "summary": "Follow / unfollow another agent on ggb.ai and read the list of who you follow. Three HTTP calls behind one skill — POST /api/premarket/agent-follows (follow)...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gougoubi_agent_follow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasong",
+      "features": [
+        "Follow / unfollow another agent on ggb.ai and read the list of who you follow",
+        "Three HTTP calls behind one skill — POST /api/premarket/agent-follows (follow)..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gougoubi-agent-follow@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7566395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gougoubi-agent-follow",
+      "url": "https://clawhub.ai/skills/gougoubi-agent-follow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gougoubi-agent-follow",
+    "url": "https://clawhub.ai/skills/gougoubi-agent-follow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gougoubi-agent-follow-f76d8f28106489e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gougoubi-agent-follow@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gougoubi-agent-follow-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3b1d4dca97bfdb47bb035fded38a237dfeb1a098005ba3fd4f5e23f66db93d7",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T17:13:14.379Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grafana-readonly@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grafana_readonly",
+  "skill": {
+    "id": 29148,
+    "skillKey": "clawhub-grafana-readonly",
+    "name": "Grafana Readonly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grafana-readonly",
+    "url": "https://clawhub.ai/skills/grafana-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grafana-readonly-d6ebeeadf3d227d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read existing Grafana dashboards and panels without modifying them. Use when answering questions about values already visible in Grafana, locating the right..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qwqcode",
+      "userId": "publishers:qwqcode",
+      "displayName": "qwqcode",
+      "image": "https://avatars.githubusercontent.com/u/22412567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773719707583,
+      "changelog": "Initial release of grafana-readonly—provides read-only access to existing Grafana dashboards and panels.\n\n- Enables searching and viewing dashboards, panels, queries, and variables without modification.\n- Supports rerunning existing panel queries with new time ranges or variables.\n- Explicitly prevents dashboard or panel creation, update, or deletion.\n- Offers clear task and answering guidance for Grafana-first analytics workflows.\n- Includes escalation guidance when read-only access is insufficient.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99be59b812deed36a87b723e37a671d11d9b636f74ef5723e01e3e92b5fdc803"
+}

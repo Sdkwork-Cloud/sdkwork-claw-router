@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66408,
+  "uuid": "skill-clawhub-clawbrain-pro-recall",
+  "skillKey": "clawhub-clawbrain-pro-recall",
+  "name": "ClawBrain Recall",
+  "summary": "v1.2 精准回忆能力：关键词与语义双重搜索、来源标注、相关度排序。精准找回历史对话和决策。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbrain_pro_recall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelfeng",
+      "features": [
+        "v1.2 精准回忆能力：关键词与语义双重搜索、来源标注、相关度排序。精准找回历史对话和决策。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbrain-pro-recall@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2228296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbrain-pro-recall",
+      "url": "https://clawhub.ai/skills/clawbrain-pro-recall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbrain-pro-recall",
+    "url": "https://clawhub.ai/skills/clawbrain-pro-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbrain-pro-recall-7c15a3907f2dc8ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbrain-pro-recall@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbrain-pro-recall-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16891b70778a410527ddfd660b456666f4c410c236d0b4b2dc60ade3f5ca099e",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T04:56:22.522Z"
+}

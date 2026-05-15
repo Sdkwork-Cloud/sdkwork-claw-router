@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12116,
+  "uuid": "skill-clawhub-whisper-transcribe",
+  "skillKey": "clawhub-whisper-transcribe",
+  "name": "Whisper Transcribe",
+  "summary": "Transcribe audio files to text using OpenAI Whisper. Supports speech-to-text with auto language detection, multiple output formats (txt, srt, vtt, json), batch processing, and model selection (tiny to large). Use when transcribing audio re.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonas Pfalzgraf",
+      "features": [
+        "Transcribe audio files to text using OpenAI Whisper",
+        "Supports speech-to-text with auto language detection, multiple output formats (txt, srt, vtt, j.",
+        "Use when transcribing audio recordings, podcasts, voice messages, lectures, meetings, or any au.",
+        "Handles mp3, wav, m4a, ogg, flac, webm, opus, aac formats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whisper-transcribe@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20913954?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whisper-transcribe",
+      "url": "https://clawhub.ai/skills/whisper-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-transcribe",
+    "url": "https://clawhub.ai/skills/whisper-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-transcribe-6ac29c790db3dee5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whisper-transcribe@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whisper-transcribe-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c500c52dd15b995f6f60e8097bd44d1d2b84df1e50b20d83dbe96e348404b4d",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T15:32:36.120Z"
+}

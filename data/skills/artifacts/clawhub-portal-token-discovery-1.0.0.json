@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portal-token-discovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portal_token_discovery",
+  "skill": {
+    "id": 20010,
+    "skillKey": "clawhub-portal-token-discovery",
+    "name": "Portal Token Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portal-token-discovery",
+    "url": "https://clawhub.ai/skills/portal-token-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portal-token-discovery-cc3ac49bd6c4cc5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides canonical information, trusted references, and market data links for the PORTAL token."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "portaljeff",
+      "userId": "publishers:portaljeff",
+      "displayName": "PortalJeff",
+      "image": "https://avatars.githubusercontent.com/u/244567808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771241071505,
+      "changelog": "- Initial release of the Portal Token Discovery skill.\n- Provides canonical network addresses for the PORTAL token across Base, Ethereum, and Solana.\n- Supplies trusted references: CoinMarketCap, CoinGecko, official website, BaseScan, and X (Twitter) account.\n- Includes main trading pair information on Aerodrome (Base/USDC).\n- Offers instructions for retrieving live price, volume, market cap, and circulating supply from CoinGecko.\n- Emphasizes information delivery only—no trading functionality included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d952be4c1e144c8825beabd77828ee92e16303e954d88bf7489393a6f7861a59"
+}

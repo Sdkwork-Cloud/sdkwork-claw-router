@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gosmtp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gosmtp",
+  "skill": {
+    "id": 59484,
+    "skillKey": "clawhub-gosmtp",
+    "name": "Gosmtp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gosmtp",
+    "url": "https://clawhub.ai/skills/gosmtp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gosmtp-382c4ec348ddd5d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Email邮件发送工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "siysun",
+      "userId": "s171s2e4j0wdh683rd4gnqrzrd8408jx",
+      "displayName": "siysun",
+      "image": "https://avatars.githubusercontent.com/u/17974785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775959053846,
+      "changelog": "Initial release of gosmtp – an email sending tool.\n\n- Provides a compiled Windows executable and Go source code for sending emails via SMTP.\n- Allows configuration via environment variables for SMTP host, port, username, password, sender email, and sender name.\n- Supports both command-line invocation and integration within Go code.\n- Example use cases and step-by-step setup instructions included in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91e28d71f91adee8f8eb8fc1b7d7b95d69d08e88a49456eb280683db30dc1f15"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26784,
+  "uuid": "skill-clawhub-dynamic-skill-manager",
+  "skillKey": "clawhub-dynamic-skill-manager",
+  "name": "Dynamic Skill Manager",
+  "summary": "Track and manage OpenClaw skills usage, find idle skills, and safely uninstall unused ones. Use when: - User wants to see what skills are installed or track...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamic_skill_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wenju Gao",
+      "features": [
+        "Track and manage OpenClaw skills usage, find idle skills, and safely uninstall unused ones",
+        "Use when:",
+        "User wants to see what skills are installed or track..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dynamic-skill-manager@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9826697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dynamic-skill-manager",
+      "url": "https://clawhub.ai/skills/dynamic-skill-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamic-skill-manager",
+    "url": "https://clawhub.ai/skills/dynamic-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamic-skill-manager-7dec09c239ecefd2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dynamic-skill-manager@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dynamic-skill-manager-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:882a5d25fd199631dbad5900117373988c20428f187b431ea5da6daa925afd33",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:14:55.366Z"
+}

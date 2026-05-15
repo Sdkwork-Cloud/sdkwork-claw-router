@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/changelog-generator-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_generator_pro",
+  "skill": {
+    "id": 29005,
+    "skillKey": "clawhub-changelog-generator-pro",
+    "name": "Changelog Generator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-generator-pro",
+    "url": "https://clawhub.ai/skills/changelog-generator-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-generator-pro-4ffe6acde55f0e42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hsuyungfeng",
+      "userId": "s176mg6jsk6y2za6pgwznfhbas83gzaw",
+      "displayName": "hsuyungfeng",
+      "image": "https://avatars.githubusercontent.com/u/140491126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773450183988,
+      "changelog": "- Initial release of changelog-generator-pro.\n- Automatically generates user-facing changelogs from git commit history.\n- Categorizes commits (features, improvements, bug fixes, breaking changes, security).\n- Translates technical commit messages into clear, customer-friendly language.\n- Formats release notes professionally and filters out internal noise like refactoring or test commits.\n- Supports custom guidelines and focused changelog generation by date or version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dbd94274fd99667a51951bb7c56f82b651fd85cadc24bbe4618410f077a36b6"
+}

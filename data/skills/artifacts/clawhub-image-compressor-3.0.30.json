@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-compressor@3.0.30",
+  "version": "3.0.30",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_compressor",
+  "skill": {
+    "id": 58720,
+    "skillKey": "clawhub-image-compressor",
+    "name": "Image Compressor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-compressor",
+    "url": "https://clawhub.ai/skills/image-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-compressor-50f0efbf185cfb91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 `rv-image-optimize` 的图片压缩、上传与一体化压缩后上传 skill，支持 JPEG/PNG/WebP/AVIF、批量目录处理、FormData 接口配置与 JSON 结果汇总。Use when the user asks to compress images, upload optimi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ziji1224054593",
+      "userId": "s170s2khx320aycsenh5dvm9a983ysc5",
+      "displayName": "ziji1224054593",
+      "image": "https://avatars.githubusercontent.com/u/43715332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.30",
+      "createdAt": 1776847132066,
+      "changelog": "- Added explicit support and instructions for chunked and resumable uploads using the chunkUpload config block.\n- Updated recommended usage scenarios and default strategies for large file uploads and interrupted upload resumption.\n- Expanded example commands to include chunked and resumable upload operations.\n- Enhanced safety and config guidance for FormData and chunked upload configurations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c89d3d9f2b9dab5b9872a93d49f8032f44dcc727046cf16697918c9d699cebf4"
+}

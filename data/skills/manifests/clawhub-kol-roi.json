@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52533,
+  "uuid": "skill-clawhub-kol-roi",
+  "skillKey": "clawhub-kol-roi",
+  "name": "KOL Roi",
+  "summary": "Decode KOL and creator \"black box\" performance—strip refunds, suspicious traffic, and vanity clicks to estimate each creator's true profit contribution and p...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kol_roi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RIJOY-AI",
+      "features": [
+        "Decode KOL and creator \"black box\" performance—strip refunds, suspicious traffic, and vanity cl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kol-roi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219251023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kol-roi",
+      "url": "https://clawhub.ai/skills/kol-roi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kol-roi",
+    "url": "https://clawhub.ai/skills/kol-roi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kol-roi-eca3bd4a29b27926.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kol-roi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kol-roi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c036ac534562347aed3587ffae6b5ccdc2c083d92a1fbc5dfb192440d1e1cdd2",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:33:38.734Z"
+}

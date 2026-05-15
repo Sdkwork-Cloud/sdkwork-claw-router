@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53262,
+  "uuid": "skill-clawhub-naim-mcp",
+  "skillKey": "clawhub-naim-mcp",
+  "name": "Naim Mcp",
+  "summary": "Connect to nAIm — the machine-first API registry for AI agents. Browse 267+ services, search by category, compare pricing and auth types, and rate APIs via M...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.naim_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIAll-TARS",
+      "features": [
+        "Connect to nAIm — the machine-first API registry for AI agents",
+        "Browse 267+ services, search by category, compare pricing and auth types, and rate APIs via M..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/naim-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131190347?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "naim-mcp",
+      "url": "https://clawhub.ai/skills/naim-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "naim-mcp",
+    "url": "https://clawhub.ai/skills/naim-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/naim-mcp-844030f63e9fb0e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/naim-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-naim-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9355f4df2598e0edd304b8da225c3ea5dadde7f2ce2683b2363f7b3d2dbede1",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:19:19.045Z"
+}

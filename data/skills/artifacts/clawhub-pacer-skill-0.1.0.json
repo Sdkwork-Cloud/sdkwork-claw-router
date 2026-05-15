@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pacer-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pacer_skill",
+  "skill": {
+    "id": 27453,
+    "skillKey": "clawhub-pacer-skill",
+    "name": "Pacer Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pacer-skill",
+    "url": "https://clawhub.ai/skills/pacer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pacer-skill-1b76a617e448f94a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your AI career companion. Helps you scan your current situation, map possible paths, simulate futures, and track progress week by week."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hectormeta",
+      "userId": "publishers:hectormeta",
+      "displayName": "hectormeta",
+      "image": "https://avatars.githubusercontent.com/u/205048087?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773306939541,
+      "changelog": "Initial release of pacer-skill – your AI career companion.\n\n- Scans your current situation via CV or text to generate a snapshot.\n- Maps possible career paths with or without a specific goal.\n- Simulates future scenarios using a 6-month timeline.\n- Tracks progress with weekly reviews and milestone boards.\n- Automatically checks in once per week to help you stay on track.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e38f19fbc6f0ce0a465fe8a04f6f6ebb184c25f743c9a64eed546a20aa3fc05d"
+}

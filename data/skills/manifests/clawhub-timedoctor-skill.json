@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31433,
+  "uuid": "skill-clawhub-timedoctor-skill",
+  "skillKey": "clawhub-timedoctor-skill",
+  "name": "Timedoctor",
+  "summary": "Integrates with TimeDoctor API to pull employee time tracking data, worklogs, statistics, and productivity metrics using simple Python scripts",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.timedoctor_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JehadurRE",
+      "features": [
+        "Integrates with TimeDoctor API to pull employee time tracking data, worklogs, statistics, and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/timedoctor-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88510650?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "timedoctor-skill",
+      "url": "https://clawhub.ai/skills/timedoctor-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "timedoctor-skill",
+    "url": "https://clawhub.ai/skills/timedoctor-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/timedoctor-skill-84f9d0f2a99a6afe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/timedoctor-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-timedoctor-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29f5d1a320066ca365223d1bfc78ae380ca9810840eafb35bfb55be62539d7e5",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T22:43:54.653Z"
+}

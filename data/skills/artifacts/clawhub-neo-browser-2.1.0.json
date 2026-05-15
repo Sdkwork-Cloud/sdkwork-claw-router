@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/neo-browser@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neo_browser",
+  "skill": {
+    "id": 36215,
+    "skillKey": "clawhub-neo-browser",
+    "name": "Neo — Web App API Discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neo-browser",
+    "url": "https://clawhub.ai/skills/neo-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neo-browser-9322e6aab8a27648.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse websites, read web pages, interact with web apps, call website APIs, and automate web tasks. Use Neo when: user asks to check a website, read a web pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "4ier",
+      "userId": "s1764h4cgqpc90zs9r68tavz35842d1f",
+      "displayName": "傅洋",
+      "image": "https://avatars.githubusercontent.com/u/5648066?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777375092596,
+      "changelog": "Release v2.1.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:423707fe4c8692b0b1cd6e0cb38a70ee86715f89e841e4fb3fc43d0c8650b24a"
+}

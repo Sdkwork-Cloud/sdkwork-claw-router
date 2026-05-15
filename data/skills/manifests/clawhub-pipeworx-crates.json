@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45119,
+  "uuid": "skill-clawhub-pipeworx-crates",
+  "skillKey": "clawhub-pipeworx-crates",
+  "name": "Pipeworx crates",
+  "summary": "Search and retrieve Rust crate metadata, versions, and download stats from the crates.io REST API without authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_crates",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Search and retrieve Rust crate metadata, versions, and download stats from the crates.io REST A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-crates@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-crates",
+      "url": "https://clawhub.ai/skills/pipeworx-crates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-crates",
+    "url": "https://clawhub.ai/skills/pipeworx-crates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-crates-0057ddc2c0a6e5ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-crates@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-crates-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32c4033126f1dc20dcb287f17ac218992e311fb6582ac83e96012d38d6a5b291",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T19:07:54.891Z"
+}

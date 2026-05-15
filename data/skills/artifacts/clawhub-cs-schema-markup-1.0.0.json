@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cs-schema-markup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs_schema_markup",
+  "skill": {
+    "id": 24752,
+    "skillKey": "clawhub-cs-schema-markup",
+    "name": "schema-markup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs-schema-markup",
+    "url": "https://clawhub.ai/skills/cs-schema-markup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-schema-markup-8fb1f55ff101f860.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to implement, audit, or validate structured data (schema markup) on their website. Use when the user mentions 'structured data,' 'schema...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alirezarezvani",
+      "userId": "s178ertrv5d3etjg5j50zhm85n83jhdq",
+      "displayName": "Alireza Rezvani",
+      "image": "https://avatars.githubusercontent.com/u/5697919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773244270155,
+      "changelog": "Initial publish (prefixed slug)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff02ed70803c5a87a2f7d312aff4967c7d9459b91f8d7ed15d9349bbd1b26888"
+}

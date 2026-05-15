@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29354,
+  "uuid": "skill-clawhub-aivoov",
+  "skillKey": "clawhub-aivoov",
+  "name": "Aivoov",
+  "summary": "AiVOOV integration. Manage data, records, and automate workflows. Use when the user wants to interact with AiVOOV data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aivoov",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AiVOOV integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AiVOOV data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aivoov@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aivoov",
+      "url": "https://clawhub.ai/skills/aivoov"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aivoov",
+    "url": "https://clawhub.ai/skills/aivoov",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aivoov-59c3bdd9b3ec45be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aivoov@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aivoov-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2f54f4aadbc13f70b34476d79708adf70ad8f86ee55486f27b40790dd3e9fc8",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:17:26.298Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hotel-procurement-price-check@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_procurement_price_check",
+  "skill": {
+    "id": 73458,
+    "skillKey": "clawhub-hotel-procurement-price-check",
+    "name": "酒店采购价格监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-procurement-price-check",
+    "url": "https://clawhub.ai/skills/hotel-procurement-price-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-procurement-price-check-99518b8e26404a16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供酒店餐饮农产品及电商全网实时价格对比，支持多数据源查询和成本参考分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoliuzhu",
+      "userId": "s17e38390rnhxjtv52ft6b44cx84s4n1",
+      "displayName": "Chaoliuzhu",
+      "image": "https://avatars.githubusercontent.com/u/207801254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776672980844,
+      "changelog": "优化1688比价逻辑，新增价格预警",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9a0e465a1c8259475c303c2eccbe0e00f4db114e745efdca106c1443412743d"
+}

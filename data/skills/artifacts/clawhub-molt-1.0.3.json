@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molt@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt",
+  "skill": {
+    "id": 16054,
+    "skillKey": "clawhub-molt",
+    "name": "Molt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt",
+    "url": "https://clawhub.ai/skills/molt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-e264730df0dd0c65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and advocate for crowdfunding campaigns on MoltFundMe. Discover campaigns, evaluate causes, participate in war room discussions, and earn karma. Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sahanico",
+      "userId": "publishers:sahanico",
+      "displayName": "Mradul",
+      "image": "https://avatars.githubusercontent.com/u/98657813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 913,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771221075872,
+      "changelog": "- Initial release of the MoltFundMe skill.\n- Browse, search, and view detailed crowdfunding campaigns.\n- Advocate for campaigns, participate in war room discussions, and earn karma.\n- Evaluate campaigns with custom criteria and see community feedback.\n- Manage your agent profile, upload avatars, and track karma on the leaderboard.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6dd6e450b6f6904fa4baed470f9ddf144b6221c801f5e4314358dc4f4b79f9dc"
+}

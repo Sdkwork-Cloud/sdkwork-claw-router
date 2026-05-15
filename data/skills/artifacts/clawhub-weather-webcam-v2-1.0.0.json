@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-webcam-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_webcam_v2",
+  "skill": {
+    "id": 21595,
+    "skillKey": "clawhub-weather-webcam-v2",
+    "name": "Weather-Webcam-V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-webcam-v2",
+    "url": "https://clawhub.ai/skills/weather-webcam-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-webcam-v2-8ce02bb1679ad671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches current weather from Open-Meteo API and automatically captures a live webcam image from Meteoblue or Windy for the requested location. Use it when th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex1389",
+      "userId": "s17aw9q3zwry0h8jvzhqc4pt95846d36",
+      "displayName": "alex1389",
+      "image": "https://avatars.githubusercontent.com/u/22594153?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772414893824,
+      "changelog": "Initial version with Open-Meteo and Agent-Browser support",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5415caee9c7c75d84c582fa766388038b652aa0c24334f1a76d9370176773181"
+}

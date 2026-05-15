@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-watch-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_watch_skill",
+  "skill": {
+    "id": 29457,
+    "skillKey": "clawhub-crypto-watch-skill",
+    "name": "crypto-watch-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-watch-skill",
+    "url": "https://clawhub.ai/skills/crypto-watch-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-watch-skill-44fb77d1454c7487.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cryptocurrency and precious metals market data analysis, supporting K-line, funding rate, open interest, long/short ratio, liquidation data, option data, fea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "burceasn",
+      "userId": "s179hxn4nfvfawznhc1eb69ej183z7g1",
+      "displayName": "burceasn",
+      "image": "https://avatars.githubusercontent.com/u/160390955?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774963273558,
+      "changelog": "- Renamed skill from \"crypto\" to \"crypto-skill\".\n- Migrated from shell script (`crypto.sh`) interface to Python CLI (`python scripts/cli.py`).\n- Added documentation and references for technical indicators and trading strategies (`INDICATORS.md`, `STRATEGY.md`).\n- Updated structure and instructions, clarifying boundaries and responsibilities for agents versus end-users.\n- Removed old shell script files and updated available commands and usage examples for Python-based usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec52e7733928111e0f07033b5cd7c44d1a9fe0181685b6a66110dc50a3630618"
+}

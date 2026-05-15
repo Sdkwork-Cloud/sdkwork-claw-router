@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-image-gen@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_image_gen",
+  "skill": {
+    "id": 25061,
+    "skillKey": "clawhub-nano-banana-image-gen",
+    "name": "Nano banana 2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-image-gen",
+    "url": "https://clawhub.ai/skills/nano-banana-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-image-gen-b5b5493c29ed46fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and edit images using Pixwith API's Nano Banana 2 model. Supports text-to-image and image-to-image (up to 4 reference images). Use when the user ask..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tate-kt",
+      "userId": "publishers:tate-kt",
+      "displayName": "mango_fish",
+      "image": "https://avatars.githubusercontent.com/u/8767682?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1773570150847,
+      "changelog": "- Added a new section emphasizing that all API response values (such as task_id, result_urls, image_url, upload_url, and fields) must be used exactly as returned, without any modifications.\n- Updated instructions to highlight the importance of preserving the integrity of opaque API tokens throughout all workflows and responses.\n- Clarified that result_urls must be presented to the user exactly as received from the API.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a32a3c2a90ed11e28eff1895ee808addcd5ce95b0790b44782d82942d6d3f48"
+}

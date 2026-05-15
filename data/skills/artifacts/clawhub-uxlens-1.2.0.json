@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uxlens@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uxlens",
+  "skill": {
+    "id": 29348,
+    "skillKey": "clawhub-uxlens",
+    "name": "UXLens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uxlens",
+    "url": "https://clawhub.ai/skills/uxlens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uxlens-dbc53d61a03c74cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit websites for UX, UI, and accessibility issues with 600+ checkpoints, offering detailed reports, full site crawls, and redesign comparisons."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "misothecod",
+      "userId": "s1756ersmn1mk45mbs2t8m1q71857pwf",
+      "displayName": "MisotheCod",
+      "image": "https://avatars.githubusercontent.com/u/265140087?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1776711571142,
+      "changelog": "- Added structured skill metadata including required environment variable (UXLENS_API_KEY), homepage, and source link.\n- Clarified setup instructions, highlighting API key requirement and environment variable usage.\n- Reformatted API examples and response documentation using concise tables.\n- Removed batch audit example and related command-line installation details.\n- Streamlined pricing and reduced redundant instructions for a clearer overview.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:439e5e85f108f2f14d55f432ea6098b66afd829e590b3829e847d84c91919b55"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/short-drama-writer@2.3.6",
+  "version": "2.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_drama_writer",
+  "skill": {
+    "id": 58548,
+    "skillKey": "clawhub-short-drama-writer",
+    "name": "Short Drama Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-drama-writer",
+    "url": "https://clawhub.ai/skills/short-drama-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-drama-writer-4b1e4f1bbb8e30ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短剧剧本生成器。竖屏短剧、微短剧、剧情设计、角色塑造。Short drama script generator for vertical video dramas, plot design, character building. 短剧脚本、微短剧、编剧工具。Use when writing short dram..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1870,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 4,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.3.6",
+      "createdAt": 1773773544396,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:406a5b3efbb7b0d51741526e2007edaea8d9861917b6e8f476c7a9613468be25"
+}

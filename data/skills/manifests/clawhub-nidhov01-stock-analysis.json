@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26165,
+  "uuid": "skill-clawhub-nidhov01-stock-analysis",
+  "skillKey": "clawhub-nidhov01-stock-analysis",
+  "name": "Stock Analysis",
+  "summary": "Analyze stocks and cryptocurrencies using Yahoo Finance data. Supports portfolio management, watchlists with alerts, dividend analysis, 8-dimension stock sco...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nidhov01_stock_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nidhov01",
+      "features": [
+        "Analyze stocks and cryptocurrencies using Yahoo Finance data",
+        "Supports portfolio management, watchlists with alerts, dividend analysis, 8-dimension stock sco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nidhov01-stock-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235751867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nidhov01-stock-analysis",
+      "url": "https://clawhub.ai/skills/nidhov01-stock-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nidhov01-stock-analysis",
+    "url": "https://clawhub.ai/skills/nidhov01-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nidhov01-stock-analysis-2c4cbacd94d942ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nidhov01-stock-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nidhov01-stock-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db6a41fd87aa7cdbc65f77f6fc058ef34e8841d3b425fb4df6ee6d61b78e744d",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:52:35.977Z"
+}

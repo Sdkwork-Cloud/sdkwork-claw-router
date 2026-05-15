@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/savage-roast-ai@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.savage_roast_ai",
+  "skill": {
+    "id": 30546,
+    "skillKey": "clawhub-savage-roast-ai",
+    "name": "Savage Roast AI (No Mercy)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "savage-roast-ai",
+    "url": "https://clawhub.ai/skills/savage-roast-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/savage-roast-ai-5fd2fc178a99a565.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform any text into brutally honest, meme-worthy internet-style roasts perfect for calling out cringe posts, friends, or just for savage fun."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tian-0818",
+      "userId": "s172k94xt0yssz0qrs4c79df0583zwar",
+      "displayName": "卜天",
+      "image": "https://avatars.githubusercontent.com/u/184539794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775025388648,
+      "changelog": "- Summary: Now delivers one concise, savage roast per input instead of multi-part responses.\n- Updated the description and workflow to reflect single-line output.\n- Added input language detection step in the workflow.\n- Simplified example output to match the new single-roast style.\n- Clarified messaging throughout for a more focused, sharable user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19498fa87eef9950c32f9be40b16b9b099c0478796314fa21b2ef8963da2e5dc"
+}

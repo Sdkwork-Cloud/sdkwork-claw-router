@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51906,
+  "uuid": "skill-clawhub-circleci",
+  "skillKey": "clawhub-circleci",
+  "name": "Circleci",
+  "summary": "CircleCI CI/CD — manage pipelines, workflows, jobs, and insights via REST API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.circleci",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "CircleCI CI/CD — manage pipelines, workflows, jobs, and insights via REST API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/circleci@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "circleci",
+      "url": "https://clawhub.ai/skills/circleci"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "circleci",
+    "url": "https://clawhub.ai/skills/circleci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/circleci-d3566809b85a6169.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/circleci@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-circleci-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ded05aaa3fb3626b0ca9ba079e28a29e2f82cbaf1cdd90c1590f35561045985",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T02:05:00.642Z"
+}

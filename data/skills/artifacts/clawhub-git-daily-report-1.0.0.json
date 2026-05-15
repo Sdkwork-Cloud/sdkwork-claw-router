@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-daily-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_daily_report",
+  "skill": {
+    "id": 59618,
+    "skillKey": "clawhub-git-daily-report",
+    "name": "Git Daily Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-daily-report",
+    "url": "https://clawhub.ai/skills/git-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-daily-report-0fb1035f375fe3d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "发送 image-tool (所有 remote 分支) 和 voc 项目 (dev 分支) 的每日 Git 变化报告 + 代码审查（安全 + 通用）（前一天）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kidok",
+      "userId": "s178tg3v4ar5ryyyq58y1f5xqd84n78c",
+      "displayName": "kidok",
+      "image": "https://avatars.githubusercontent.com/u/7350940?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775897945261,
+      "changelog": "Initial release: Automates daily Git commit reports and code review for image-tool and voc projects.\n\n- Sends daily Git commit summaries for all remote branches of image-tool, and dev branch for voc-frontend/voc-backend.\n- Performs automated code review, covering security checks (like hardcoded credentials, SQL injection) and general code quality.\n- Delivers formatted reports via DingTalk, listing commits, file changes, review results, and improvement suggestions.\n- Supports user commands to schedule, query, or cancel daily report delivery.\n- Provides detailed report templates and setup instructions, including cron scheduling and tool dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0be0a97012aa55b04ed6d6dcaa9ddb0db8bb93dc37bbceab9c4fe1d26738c0b9"
+}

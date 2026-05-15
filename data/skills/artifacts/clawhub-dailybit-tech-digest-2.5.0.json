@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dailybit-tech-digest@2.5.0",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dailybit_tech_digest",
+  "skill": {
+    "id": 50405,
+    "skillKey": "clawhub-dailybit-tech-digest",
+    "name": "DailyBit — AI Tech Daily Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dailybit-tech-digest",
+    "url": "https://clawhub.ai/skills/dailybit-tech-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dailybit-tech-digest-f2af61ab421b888d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Curated daily digest from 92 top tech blogs (Andrej Karpathy's list) with AI-generated Chinese summaries, hierarchical tags, and personalized recommendations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azurboy",
+      "userId": "publishers:azurboy",
+      "displayName": "Azurboy",
+      "image": "https://avatars.githubusercontent.com/u/142561753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 476,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.5.0",
+      "createdAt": 1772349049892,
+      "changelog": "v2.5.0 — Initial ClawHub release.\n\n  92 top tech blogs (Andrej Karpathy's curated list) → AI-generated Chinese summaries\n  & hierarchical tags → personalized daily briefing in 3 API calls.\n\n  Features:\n  - Hierarchical tag filtering (AI/LLM/Agent, programming/Python, etc.)\n  - Batch content API for fast retrieval\n  - Per-user RSS feed management via token auth\n  - Smart curation: infers user interests from conversation, never asks\n  - Trend synthesis: merges related articles automatically",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:998573fa6711fc01fe11a6703c31f48a1b188762a309400c1b811ee908c20947"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-api-cost-optimizer@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_api_cost_optimizer",
+  "skill": {
+    "id": 56029,
+    "skillKey": "clawhub-claude-api-cost-optimizer",
+    "name": "Claude API Cost Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-api-cost-optimizer",
+    "url": "https://clawhub.ai/skills/claude-api-cost-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-api-cost-optimizer-418e50c864e530bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minimize Anthropic Claude API costs through model selection, prompt caching, batching, and cost tracking. ⚠️ Enables local caching and cost logging — review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djc00p",
+      "userId": "s17akx17qd32yxnr1065qq0kdd83h2c3",
+      "displayName": "Deonte Cooper",
+      "image": "https://avatars.githubusercontent.com/u/45864171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1778030016561,
+      "changelog": "Security: add local data warning box for cache/log files, Security Checklist for cache hygiene, explicit ANTHROPIC_API_KEY requirement note in Quick Start.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74af2da2d2dd1600e6ff82f02c01806261ebde79e071d5a38619e71a65294233"
+}

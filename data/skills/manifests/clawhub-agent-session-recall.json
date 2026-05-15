@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39589,
+  "uuid": "skill-clawhub-agent-session-recall",
+  "skillKey": "clawhub-agent-session-recall",
+  "name": "Session Recall",
+  "summary": "Recover conversation context when a message arrives with unclear meaning. Use when a user's message lacks context (e.g. \"I logged in\" with no prior mention o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_session_recall",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yoshikazu Terashi",
+      "features": [
+        "Recover conversation context when a message arrives with unclear meaning",
+        "Use when a user's message lacks context (e.g",
+        "\"I logged in\" with no prior mention o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-session-recall@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1403979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-session-recall",
+      "url": "https://clawhub.ai/skills/agent-session-recall"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-session-recall",
+    "url": "https://clawhub.ai/skills/agent-session-recall",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-session-recall-1ae77d877b0b74aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-session-recall@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-session-recall-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f10f3bf6ae0204e918aa29b75676a22cac0797b672fcdb24c414e65561648de",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:34:51.492Z"
+}

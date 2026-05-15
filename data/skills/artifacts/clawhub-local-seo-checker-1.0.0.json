@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-seo-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_seo_checker",
+  "skill": {
+    "id": 45507,
+    "skillKey": "clawhub-local-seo-checker",
+    "name": "Local Seo Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-seo-checker",
+    "url": "https://clawhub.ai/skills/local-seo-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-seo-checker-647045e2d165420a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks your business's Google Maps ranking, local pack visibility, competitor positions, and provides actionable tips to improve local SEO performance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775763697178,
+      "changelog": "Initial release of Local SEO Rank Checker.\n\n- Track Google Maps ranking positions for local businesses in real-time.\n- Monitor local pack visibility, competitor rankings, and changes over time.\n- Analyze key ranking factors including reviews, citations, and website optimization.\n- Get actionable improvement tips and dynamic keyword performance reports.\n- Features daily monitoring, weekly competitor analysis, and monthly strategy recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9e62f34faccb878d282972bddd1c9d6e64b971f5bf6f6e590512f6f6a13e906"
+}

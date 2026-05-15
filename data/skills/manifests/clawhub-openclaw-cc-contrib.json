@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61471,
+  "uuid": "skill-clawhub-openclaw-cc-contrib",
+  "skillKey": "clawhub-openclaw-cc-contrib",
+  "name": "Openclaw Cc Contrib",
+  "summary": "对话结束后自动提炼本轮对话关键记忆 / 触发词：提取记忆、提炼记忆 / 命令：/extract-memories（自动+手动）",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cc_contrib",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr.Zhenweisi",
+      "features": [
+        "对话结束后自动提炼本轮对话关键记忆 / 触发词：提取记忆、提炼记忆 / 命令：/extract-memories（自动+手动）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-cc-contrib@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253879682?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-cc-contrib",
+      "url": "https://clawhub.ai/skills/openclaw-cc-contrib"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cc-contrib",
+    "url": "https://clawhub.ai/skills/openclaw-cc-contrib",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cc-contrib-3fa6dce28615dccd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-cc-contrib@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-cc-contrib-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b2bf17ed3974123acba7a99f1f124aa623415515c4c369cca962b6ee568e902",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T17:34:20.948Z"
+}

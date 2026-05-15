@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68874,
+  "uuid": "skill-clawhub-apollo-workflow",
+  "skillKey": "clawhub-apollo-workflow",
+  "name": "Apollo Workflow",
+  "summary": "把你的想法变成能用的代码：先想清楚，再一步一步做出来。每步有检查点，不完成不往下走。",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apollo_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "把你的想法变成能用的代码：先想清楚，再一步一步做出来。每步有检查点，不完成不往下走。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apollo-workflow@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apollo-workflow",
+      "url": "https://clawhub.ai/skills/apollo-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apollo-workflow",
+    "url": "https://clawhub.ai/skills/apollo-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apollo-workflow-5e4cbe16419706ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apollo-workflow@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apollo-workflow-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0630f4d604ec16576a9b73f00bf249a8b2b58559cae10c89d27b650d5f7bdbf",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:06:00.990Z"
+}

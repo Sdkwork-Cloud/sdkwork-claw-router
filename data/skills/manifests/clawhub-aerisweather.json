@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26017,
+  "uuid": "skill-clawhub-aerisweather",
+  "skillKey": "clawhub-aerisweather",
+  "name": "Aerisweather",
+  "summary": "AerisWeather integration. Manage data, records, and automate workflows. Use when the user wants to interact with AerisWeather data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerisweather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AerisWeather integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AerisWeather data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aerisweather@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aerisweather",
+      "url": "https://clawhub.ai/skills/aerisweather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerisweather",
+    "url": "https://clawhub.ai/skills/aerisweather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerisweather-4d6a559d313bb5dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aerisweather@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aerisweather-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eade40a0297051d6a3bcf8e66ba1ab502a848b01193d89c21ccd82f8ba5d7c6a",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:16:24.799Z"
+}

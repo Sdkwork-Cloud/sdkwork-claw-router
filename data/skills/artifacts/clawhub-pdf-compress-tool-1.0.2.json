@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-compress-tool@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_compress_tool",
+  "skill": {
+    "id": 32257,
+    "skillKey": "clawhub-pdf-compress-tool",
+    "name": "pdf-compress-tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-compress-tool",
+    "url": "https://clawhub.ai/skills/pdf-compress-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-compress-tool-f98a987b2771173b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress PDF files to a target size or by percentage, using a Ghostscript + pikepdf + QPDF multi-stage pipeline."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsonklose",
+      "userId": "s171e3bzea61v2m32bybxx16zh83gjrb",
+      "displayName": "JohnsonKlose",
+      "image": "https://avatars.githubusercontent.com/u/19381163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774331965775,
+      "changelog": "Version 1.0.2 of pdf-compress-tool\n\n- No file changes detected from the previous version.\n- No updates to features, documentation, or dependencies.\n- Functionality and usage remain unchanged from the last release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc6994eb93fd15591a479f8cba185616288eba113a9f9fdba37b0ef0eb9b8032"
+}

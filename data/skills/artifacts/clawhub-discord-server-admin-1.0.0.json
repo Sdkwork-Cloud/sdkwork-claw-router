@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-server-admin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_server_admin",
+  "skill": {
+    "id": 32169,
+    "skillKey": "clawhub-discord-server-admin",
+    "name": "Discord Server Admin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-server-admin",
+    "url": "https://clawhub.ai/skills/discord-server-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-server-admin-4305b4ea31cc8ae9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Discord servers with a narrow, medium-risk scope using direct Bot API calls. Use when creating, renaming, moving, or deleting channels/categories; cre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datarxdacted",
+      "userId": "s173fwwkxkzy57rg98erpewgbn8522hd",
+      "displayName": "DataRxdacted",
+      "image": "https://avatars.githubusercontent.com/u/104392977?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776513795068,
+      "changelog": "Manage Discord servers with a narrow, honest scope: list/create/edit/delete channels and categories, manage roles, reorder roles, and assign or remove member roles. Built for direct Bot API use with explicit IDs and without moderation-suite features like bans, kicks, automod, webhooks, invites, or mass actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:946e436262d4ffb860b8f88072613b700509b45e69a8710ac2ea462cf02c84bf"
+}

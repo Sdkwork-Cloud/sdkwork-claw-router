@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69052,
+  "uuid": "skill-clawhub-enterprise-kb-manager",
+  "skillKey": "clawhub-enterprise-kb-manager",
+  "name": "Enterprise Knowledge Base Manager",
+  "summary": "企业知识库管理。用户需要上传文档、添加知识、更新资料、删除文档、管理知识库、初始化系统时调用。同时支持业务问答：当用户提出业务问题、公司政策、流程规范等问题时，优先检索知识库后回答。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_kb_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apanghu",
+      "features": [
+        "企业知识库管理。用户需要上传文档、添加知识、更新资料、删除文档、管理知识库、初始化系统时调用。同时支持业务问答：当用户提出业务问题、公司政策、流程规范等问题时，优先检索知识库后回答。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-kb-manager@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45411273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-kb-manager",
+      "url": "https://clawhub.ai/skills/enterprise-kb-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-kb-manager",
+    "url": "https://clawhub.ai/skills/enterprise-kb-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-kb-manager-f0b65deb4022f3ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-kb-manager@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-kb-manager-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef47d65b2fea19e9190171c585d0d0bbee40fc243dc443b4d0394f2ad996602f",
+      "artifactSizeBytes": 3531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T02:57:32.369Z"
+}

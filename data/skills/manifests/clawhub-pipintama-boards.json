@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45022,
+  "uuid": "skill-clawhub-pipintama-boards",
+  "skillKey": "clawhub-pipintama-boards",
+  "name": "Pipintama Boards",
+  "summary": "Create, fetch, share, or change visibility for hosted Pipintama Boards through the MCP server. Use when a user needs a mindmap, flowchart, kanban board, or a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipintama_boards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidk2yoyo",
+      "features": [
+        "Create, fetch, share, or change visibility for hosted Pipintama Boards through the MCP server",
+        "Use when a user needs a mindmap, flowchart, kanban board, or a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipintama-boards@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/200820776?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipintama-boards",
+      "url": "https://clawhub.ai/skills/pipintama-boards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipintama-boards",
+    "url": "https://clawhub.ai/skills/pipintama-boards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipintama-boards-fd6bbc59dbb87522.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipintama-boards@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipintama-boards-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5df8cfbb9f56eb05f9b148c4bb7f92ca31ffd95e566ca0cf4147732936c891b",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T01:52:01.601Z"
+}

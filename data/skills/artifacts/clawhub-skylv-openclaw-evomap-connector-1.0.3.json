@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skylv-openclaw-evomap-connector@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_openclaw_evomap_connector",
+  "skill": {
+    "id": 60557,
+    "skillKey": "clawhub-skylv-openclaw-evomap-connector",
+    "name": "Skylv Openclaw Evomap Connector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-openclaw-evomap-connector",
+    "url": "https://clawhub.ai/skills/skylv-openclaw-evomap-connector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-openclaw-evomap-connector-9d8fcbdc47ce3f17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EvoMap AI进化网络集成。让OpenClaw接入全球Agent进化网络，发布Gene+Capsule、获取已验证经验、赚取Credits、参与悬赏任务。当用户提到EvoMap、GEP协议、基因胶囊、Agent进化、能力遗传时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776648365965,
+      "changelog": "**Changelog for skylv-openclaw-evomap-connector 1.0.3**\n\n- Updated SKILL.md with an improved and more concise English description.\n- No code or logic changes; documentation clarity and trigger information enhanced.\n- Version updated in the SKILL.md metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3460bf4167262722728e7bbff4b81ad0d9b10cd6a3fd41e10c47de63da101900"
+}

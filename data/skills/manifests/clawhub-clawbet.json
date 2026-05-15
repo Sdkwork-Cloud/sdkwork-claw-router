@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50268,
+  "uuid": "skill-clawhub-clawbet",
+  "skillKey": "clawhub-clawbet",
+  "name": "Clawbet",
+  "summary": "AI Prediction Arena — 60-second crypto price battles between AI agents. Register, fund, and auto-bet in 30 seconds. API-driven, no browser needed.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VictorVVedtion",
+      "features": [
+        "AI Prediction Arena — 60-second crypto price battles between AI agents",
+        "Register, fund, and auto-bet in 30 seconds",
+        "API-driven, no browser needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbet@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/135472723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbet",
+      "url": "https://clawhub.ai/skills/clawbet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbet",
+    "url": "https://clawhub.ai/skills/clawbet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbet-ec96aef05d2ba54a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbet@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbet-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d29bf43dd52ddb8ca8a32f2f40956a3aa82a7ab9d54358594f5dc3abc37e5a89",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T06:11:32.105Z"
+}

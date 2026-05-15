@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fastfish-hot@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastfish_hot",
+  "skill": {
+    "id": 65226,
+    "skillKey": "clawhub-fastfish-hot",
+    "name": "fastfish-hot-news-push 每日新闻热点推送（可设过滤词）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastfish-hot",
+    "url": "https://clawhub.ai/skills/fastfish-hot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastfish-hot-90915c2b9c3aec8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "热点推送独立项目。从 api.pearktrue.cn 拉取热点，支持飞书/钉钉/Telegram 推送；推送需至少配置一个渠道的 env。可配置拉取时间、推送时间、过滤关键词。通过 system.run 直接调用脚本，无需 MCP。当用户需要拉取热点、知乎热搜、配置热点推送或设置定时推送时使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "superxs777",
+      "userId": "publishers:superxs777",
+      "displayName": "superxs777",
+      "image": "https://avatars.githubusercontent.com/u/206164402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 691,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771990372805,
+      "changelog": "- No file changes detected in this version.\n- No user-facing updates or modifications.\n- Behavior and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3b48d01211171986fd185491434df8166809dcd45047147ced40d737e673b5f"
+}

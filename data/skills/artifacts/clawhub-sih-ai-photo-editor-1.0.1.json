@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sih-ai-photo-editor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sih_ai_photo_editor",
+  "skill": {
+    "id": 68512,
+    "skillKey": "clawhub-sih-ai-photo-editor",
+    "name": "Sih Ai Photo Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sih-ai-photo-editor",
+    "url": "https://clawhub.ai/skills/sih-ai-photo-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sih-ai-photo-editor-38256ea118657843.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI图片编辑工具，支持自然语言驱动的换装、换背景、换脸、风格转换（动漫/粘土/油画等）、美颜修图。当用户需要AI图片处理、人像编辑、背景替换、风格迁移、服装更换、脸部融合时使用此skill。支持用户通过描述性prompt（如\"把衣服换成bikini\"、\"背景换成海边\"、\"转换成动漫风格\"）进行图片编辑。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3273283",
+      "userId": "s175jabaxjxb6749jqkdczqb4n842w5q",
+      "displayName": "a3273283",
+      "image": "https://avatars.githubusercontent.com/u/92772341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773392030772,
+      "changelog": "v1.0.1更新\n- 新功能：自动下载和预览\n- 模型升级：sihai-image-27\n- 文档更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad736d02ba856a3cea75ed36c671137c5c8249e4dff05c3ab2642bf5b7f0cf67"
+}

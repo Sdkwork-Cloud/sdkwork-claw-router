@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31141,
+  "uuid": "skill-clawhub-trust-badges-generator",
+  "skillKey": "clawhub-trust-badges-generator",
+  "name": "trust-badges-generator",
+  "summary": "When the user wants to add or optimize trust badges, \"Trusted by\" logos, security seals, or social proof elements. Also use when the user mentions \"trust bad...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trust_badges_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to add or optimize trust badges, \"Trusted by\" logos, security seals, or soc.",
+        "Also use when the user mentions \"trust bad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trust-badges-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trust-badges-generator",
+      "url": "https://clawhub.ai/skills/trust-badges-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trust-badges-generator",
+    "url": "https://clawhub.ai/skills/trust-badges-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trust-badges-generator-d2c0b8b256b02178.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trust-badges-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trust-badges-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11e76fb9a29a540de355735dfebe42b0265c7d7e83b50a4c19fa1a1144796c2e",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:18:25.541Z"
+}

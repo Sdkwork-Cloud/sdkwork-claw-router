@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63718,
+  "uuid": "skill-clawhub-agent-advisor",
+  "skillKey": "clawhub-agent-advisor",
+  "name": "Agent Advisor",
+  "summary": "模型推荐 + OpenClaw 安全系数分析工具。当用户询问\"用哪个模型\"、\"推荐模型\"、\"适合什么模型\"、\"安全系数\"、\"openclaw 安全\"、\"根据历史\"时触发。功能：(1) 根据历史会话自动分析任务类型并推荐最优的 Claude 模型（auto 模式），(2) 根据用户描述的任务推荐最优模型（recom...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrKangZuBin",
+      "features": [
+        "模型推荐 + OpenClaw 安全系数分析工具。当用户询问\"用哪个模型\"、\"推荐模型\"、\"适合什么模型\"、\"安全系数\"、\"openclaw 安全\"、\"根据历史\"时触发。功能：(1) 根据历."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-advisor@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21353325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-advisor",
+      "url": "https://clawhub.ai/skills/agent-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-advisor",
+    "url": "https://clawhub.ai/skills/agent-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-advisor-b66b2281d9031f31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-advisor@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-advisor-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20b42a8ab8bceea0d8dd2b7f7e56c08dc4ea0077fac9a826cd4504890a9eeefd",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:03:00.926Z"
+}

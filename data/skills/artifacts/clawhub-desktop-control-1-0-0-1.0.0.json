@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desktop-control-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_control_1_0_0",
+  "skill": {
+    "id": 9221,
+    "skillKey": "clawhub-desktop-control-1-0-0",
+    "name": "Desktop Control 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-control-1-0-0",
+    "url": "https://clawhub.ai/skills/desktop-control-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-control-1-0-0-56ac041ea165a364.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced desktop automation with mouse, keyboard, and screen control"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpegley",
+      "userId": "publishers:wpegley",
+      "displayName": "wpegley",
+      "image": "https://avatars.githubusercontent.com/u/72150211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3403,
+      "installsAllTime": 58,
+      "installsCurrent": 54,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770367804113,
+      "changelog": "Initial release: Advanced desktop automation for OpenClaw with rich mouse, keyboard, screen, and window control features.\n\n- Pixel-perfect mouse control: absolute/relative moves, smooth paths, clicks, drag & drop, scroll, and position tracking.\n- Fast and configurable keyboard input: typing, hotkeys, key combinations, and control of key states.\n- Screen operations: screenshots (full/region), image recognition with OpenCV, pixel color detection, multi-monitor support.\n- Window management: list, activate, move/resize, minimize/maximize windows.\n- Safety and reliability: failsafe gesture, emergency pause/approval modes, bounds-checking, and full automation logging.\n- Extensive documented API with usage examples for all key operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf6954b186f1f97745fad042dcca913f8293310db20c1306b3e2d06fd3bf93d1"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-hardening@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_hardening",
+  "skill": {
+    "id": 38577,
+    "skillKey": "clawhub-openclaw-hardening",
+    "name": "OpenClaw Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-hardening",
+    "url": "https://clawhub.ai/skills/openclaw-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-hardening-a783573a364800b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure an OpenClaw server with host hardening, chainwatch runtime safety, pastewatch secret redaction, and noisepan+entropia news intelligence. Use when sett..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppiankov",
+      "userId": "s17fzet2pk4zvezemyabzwzp6x83kp5d",
+      "displayName": "ppiankov",
+      "image": "https://avatars.githubusercontent.com/u/103106369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774673647550,
+      "changelog": "Added ContextSpectre proxy layer (noise stripping) to defense-in-depth chain",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc50fe6dfb20a92abba100c3ae7cb4e9bc83493d67feb97b1656a8e36f861d3a"
+}

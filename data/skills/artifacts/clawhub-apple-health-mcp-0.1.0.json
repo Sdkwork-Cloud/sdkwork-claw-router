@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-health-mcp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_health_mcp",
+  "skill": {
+    "id": 48833,
+    "skillKey": "clawhub-apple-health-mcp",
+    "name": "Apple Health MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-health-mcp",
+    "url": "https://clawhub.ai/skills/apple-health-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-health-mcp-9b6e8eb848444072.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read a local Apple Health export and expose activity, sleep, heart, HRV, workouts, and long-term trends to agents. Use when an AI agent needs setup, usage, s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidmosiah",
+      "userId": "s179ta33e7njh2mv4jrf0yxb5n83f191",
+      "displayName": "David Batista",
+      "image": "https://avatars.githubusercontent.com/u/624359?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778072981217,
+      "changelog": "Initial Delx ClawHub skill for agent-first open-source discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:042a3bc0c593fe670c19a4b8117f92615e690094ec60b9a9d6694434999cf5ad"
+}

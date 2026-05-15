@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-11@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_11",
+  "skill": {
+    "id": 45234,
+    "skillKey": "clawhub-test-11",
+    "name": "test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-11",
+    "url": "https://clawhub.ai/skills/test-11",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-11-aba8c8f7638d6120.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use whe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarrett817",
+      "userId": "s174fzyrs0cxgrpw5zserf6g5x83qzgd",
+      "displayName": "Jarrett817",
+      "image": "https://avatars.githubusercontent.com/u/49198831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775128916592,
+      "changelog": "test-11 1.0.0\n\n- Initial release.\n- Provides a comprehensive guide for building high-quality MCP servers.\n- Covers research, implementation, testing, and evaluation phases.\n- Includes documentation links and best practices for both TypeScript and Python SDKs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4b4443e687a513b66d34e4ec0bcf8d2960cd08723cda1c0f3dd05dab026c67c"
+}

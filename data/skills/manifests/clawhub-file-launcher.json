@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42380,
+  "uuid": "skill-clawhub-file-launcher",
+  "skillKey": "clawhub-file-launcher",
+  "name": "File Launcher",
+  "summary": "This skill allows the assistant to launch files and open them with their default applications.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_launcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BadWolf-63",
+      "features": [
+        "This skill allows the assistant to launch files and open them with their default applications."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-launcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10259644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-launcher",
+      "url": "https://clawhub.ai/skills/file-launcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-launcher",
+    "url": "https://clawhub.ai/skills/file-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-launcher-4fc132804b351873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-launcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-launcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d526810f5c9899f51af8c2d4fc33440c77e5dcb011253db186f1c2f4b399569b",
+      "artifactSizeBytes": 2093
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:52:06.103Z"
+}

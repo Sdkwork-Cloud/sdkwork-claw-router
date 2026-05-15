@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35207,
+  "uuid": "skill-clawhub-thepeer",
+  "skillKey": "clawhub-thepeer",
+  "name": "Thepeer",
+  "summary": "Thepeer integration. Manage data, records, and automate workflows. Use when the user wants to interact with Thepeer data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thepeer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Thepeer integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Thepeer data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thepeer@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thepeer",
+      "url": "https://clawhub.ai/skills/thepeer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thepeer",
+    "url": "https://clawhub.ai/skills/thepeer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thepeer-ad7514f1fa9bf868.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thepeer@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-thepeer-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dea3f5ca56e165798e6e2d7692aaa006d5731b3f2f7e0e9bad03ab782e1e0b4b",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:52:46.600Z"
+}

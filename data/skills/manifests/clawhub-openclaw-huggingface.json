@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19709,
+  "uuid": "skill-clawhub-openclaw-huggingface",
+  "skillKey": "clawhub-openclaw-huggingface",
+  "name": "Openclaw Huggingface",
+  "summary": "Manage models, datasets, Spaces, and repositories using Hugging Face CLI (hf). Supports authentication, upload, download, Space creation, and more.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_huggingface",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xuan-You Lin",
+      "features": [
+        "Manage models, datasets, Spaces, and repositories using Hugging Face CLI (hf)",
+        "Supports authentication, upload, download, Space creation, and more."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-huggingface@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134621816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-huggingface",
+      "url": "https://clawhub.ai/skills/openclaw-huggingface"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-huggingface",
+    "url": "https://clawhub.ai/skills/openclaw-huggingface",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-huggingface-a39b7157e2f35503.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-huggingface@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-huggingface-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0903ac8cf676eeeb40008d7c0f0b47d4f7e301a57f340833e9a6141b0a54587",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T06:05:54.309Z"
+}

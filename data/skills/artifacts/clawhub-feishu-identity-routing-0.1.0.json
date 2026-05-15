@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-identity-routing@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_identity_routing",
+  "skill": {
+    "id": 43959,
+    "skillKey": "clawhub-feishu-identity-routing",
+    "name": "Feishu Identity Routing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-identity-routing",
+    "url": "https://clawhub.ai/skills/feishu-identity-routing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-identity-routing-56e690127495a211.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and use a Feishu/Lark cross-app identity master for multi-agent, multi-account routing. Use when mapping the same user across different Feishu app open..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxfkuq2023",
+      "userId": "s1759vbvrxgfrfc1xk48zcmsf183ph68",
+      "displayName": "wxfkuq2023",
+      "image": "https://avatars.githubusercontent.com/u/134147538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774875563096,
+      "changelog": "Initial release: cross-app identity master, merge/review scripts, and generalized multi-account outbound routing workflow for Feishu.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:161cdc24a941224e86ee677381c5acd8d8177e2c40592184298f0595bc3ed538"
+}

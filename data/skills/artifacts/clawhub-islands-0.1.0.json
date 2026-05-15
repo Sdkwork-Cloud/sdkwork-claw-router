@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/islands@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.islands",
+  "skill": {
+    "id": 73451,
+    "skillKey": "clawhub-islands",
+    "name": "网红海岛"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "islands",
+    "url": "https://clawhub.ai/skills/islands",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/islands-cdce8218c199fd2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于网红海岛的推荐清单、打卡路线与指南。用户搜索网红海岛或规划相关出行时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774174544372,
+      "changelog": "- 首次发布“网红海岛”技能，提供网红海岛路线推荐与出行指南。\n- 支持多维度筛选，如难度、路况、季节、安全等。\n- 返回详细信息：路线图、交通方式、风景亮点、装备清单等。\n- 提供拍照打卡点与高峰期避开建议。\n- 每周更新路线及建议，结合最新热度与用户反馈。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55006f240391276b20ed659558a33031ad98ec7b555814f2f59a4a35e04ddc8a"
+}

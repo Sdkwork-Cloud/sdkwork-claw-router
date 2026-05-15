@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-position-diagnosis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_position_diagnosis",
+  "skill": {
+    "id": 63462,
+    "skillKey": "clawhub-jy-position-diagnosis",
+    "name": "jy-position-diagnosis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-position-diagnosis",
+    "url": "https://clawhub.ai/skills/jy-position-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-position-diagnosis-8999d5a4e3303c9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业证券投顾持仓诊断技能，基于恒生聚源 (gildata) MCP 金融数据库生成五维度持仓诊断报告。 覆盖持仓分析、风险舆情、持仓优化、产品推荐、用户画像五大核心模块，所有数据可溯源、带时间戳。 **Triggers when user mentions:** - \"持仓诊断\"、\"持仓分析\"、\"持仓报告\" -..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775030528391,
+      "changelog": "- Fixed formatting issues in the \"注意事项\" section to improve readability and consistency.\n- No changes to core functionality or instructions—content remains functionally consistent with the previous version.\n- Clarified section titles to standardize the markdown headings and separation of troubleshooting steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0bb98cc1611266d8c2495975d3269bb58d14ba2baeb752c6cd9d41d5aa86779"
+}

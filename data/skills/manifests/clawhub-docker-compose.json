@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8833,
+  "uuid": "skill-clawhub-docker-compose",
+  "skillKey": "clawhub-docker-compose",
+  "name": "Docker Compose",
+  "summary": "Define multi-container applications with proper dependency handling, networking, and volume management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_compose",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Define multi-container applications with proper dependency handling, networking, and volume man."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-compose@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-compose",
+      "url": "https://clawhub.ai/skills/docker-compose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-compose",
+    "url": "https://clawhub.ai/skills/docker-compose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-compose-b0a8281e9466910e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-compose@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-compose-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c556135abdc9fd6b1d0826d1f2b78b2c17c371fc5445944ba3784f32c7a705f",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T03:02:20.221Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65343,
+  "uuid": "skill-clawhub-lobster-agent",
+  "skillKey": "clawhub-lobster-agent",
+  "name": "Lobster Agent",
+  "summary": "服务器监控Agent，自动采集系统指标并上报到Coze大龙虾平台，支持CPU/内存/磁盘/网络监控、告警推送和自动节点注册。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hdguodada",
+      "features": [
+        "服务器监控Agent，自动采集系统指标并上报到Coze大龙虾平台，支持CPU/内存/磁盘/网络监控、告警推送和自动节点注册。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26781286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-agent",
+      "url": "https://clawhub.ai/skills/lobster-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-agent",
+    "url": "https://clawhub.ai/skills/lobster-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-agent-eec5ba35f45cf7f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2bc4379b145c12a0ffd9c83c7dcc9680044a41d5f3745540d29412a8b0fe630",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T00:42:44.395Z"
+}

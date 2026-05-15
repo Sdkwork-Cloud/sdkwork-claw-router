@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57927,
+  "uuid": "skill-clawhub-obsidian-clip",
+  "skillKey": "clawhub-obsidian-clip",
+  "name": "Obsidian Clip",
+  "summary": "Create and manage Obsidian “Clip” notes (web/article/page clips). Use when the user says “clip/剪藏/收藏/保存这个链接”, wants a readable summary of a URL, and wants it...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_clip",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abstract-sum",
+      "features": [
+        "Create and manage Obsidian “Clip” notes (web/article/page clips)",
+        "Use when the user says “clip/剪藏/收藏/保存这个链接”, wants a readable summary of a URL, and wants it..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-clip@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121620652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-clip",
+      "url": "https://clawhub.ai/skills/obsidian-clip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-clip",
+    "url": "https://clawhub.ai/skills/obsidian-clip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-clip-b48f301beac564c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-clip@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-clip-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85dbb9346f69fe6c57f318f4e2e82150f4c4b4774de7de4345f112b8c9dd5c1a",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T07:49:29.423Z"
+}

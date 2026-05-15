@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41444,
+  "uuid": "skill-clawhub-family-conflict-mediator",
+  "skillKey": "clawhub-family-conflict-mediator",
+  "name": "Family Conflict Mediator",
+  "summary": "Analyze family conflicts calmly and provide mediation steps, dialogue suggestions, and resources for non-emergency situations.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_conflict_mediator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Analyze family conflicts calmly and provide mediation steps, dialogue suggestions, and resource."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/family-conflict-mediator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "family-conflict-mediator",
+      "url": "https://clawhub.ai/skills/family-conflict-mediator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-conflict-mediator",
+    "url": "https://clawhub.ai/skills/family-conflict-mediator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-conflict-mediator-bbe2a7626c59685d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/family-conflict-mediator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-family-conflict-mediator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a3be160dc01432bdc2747416eb61049a538eb6e81dc32e1c16bf812478efc32",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T02:34:12.943Z"
+}

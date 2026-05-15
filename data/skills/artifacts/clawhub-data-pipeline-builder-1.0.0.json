@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-pipeline-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_pipeline_builder",
+  "skill": {
+    "id": 42806,
+    "skillKey": "clawhub-data-pipeline-builder",
+    "name": "Data Pipeline Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-pipeline-builder",
+    "url": "https://clawhub.ai/skills/data-pipeline-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-pipeline-builder-3c929e38b4ce3a32.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, schedule, and monitor ETL pipelines to extract, transform, and load data across databases, APIs, and file systems with error handling and validation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776924610748,
+      "changelog": "Initial release of data-pipeline-builder skill for building and managing ETL/data pipelines:\n\n- Connects to databases, APIs, files, S3, and GCS as sources or destinations.\n- Supports data transformation (filters, mapping, aggregation) within pipelines.\n- Enables scheduling with cron or event-based triggers.\n- Includes error handling: retry logic and dead letter queues.\n- Provides schema validation and data quality checks.\n- Monitors pipeline status, throughput, and errors.\n- Offers incremental sync capabilities using Change Data Capture (CDC).\n- CLI-style commands: create, run, and monitor pipelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df5f3cf4aec40aca29236c723a0ca0423e71cb4a76f61fefa2285632a57bca0d"
+}

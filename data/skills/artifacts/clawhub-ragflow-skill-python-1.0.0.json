@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ragflow-skill-python@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragflow_skill_python",
+  "skill": {
+    "id": 43735,
+    "skillKey": "clawhub-ragflow-skill-python",
+    "name": "ragflow-skill-python"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragflow-skill-python",
+    "url": "https://clawhub.ai/skills/ragflow-skill-python",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragflow-skill-python-2314b597bef4f3ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for RAGFlow dataset tasks: create, list, inspect, update, or delete datasets; upload, list, update, or delete documents; start or stop parsing; check par..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liberalchang",
+      "userId": "s1711a251cb269zj1bjvwcffxh83kcjh",
+      "displayName": "chang",
+      "image": "https://avatars.githubusercontent.com/u/79965108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776510174319,
+      "changelog": "Initial release of the ragflow-dataset-ingest skill for RAGFlow dataset and document management.\n\n- Supports creating, listing, inspecting, updating, and deleting RAGFlow datasets and documents.\n- Provides commands to upload documents, start/stop parsing, check parsing status, and retrieve chunks.\n- Allows listing of configured models.\n- Enforces guardrails for safe deletions, explicit parsing actions, and precise error reporting.\n- Standardizes output using exact field returns and table formatting for 3+ items.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1acc74981baf29cfa5b415ef1464e2f7d847e3e6834dfdb029975ab4d18acdd"
+}

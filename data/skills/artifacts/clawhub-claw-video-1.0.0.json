@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_video",
+  "skill": {
+    "id": 55874,
+    "skillKey": "clawhub-claw-video",
+    "name": "Claw Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-video",
+    "url": "https://clawhub.ai/skills/claw-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-video-279ccd83cda39803.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — cut and extract the best highlight moments automatically — and get trimmed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777868811684,
+      "changelog": "Initial release of Claw Video skill — quickly extract and export video highlights with AI trimming.\n\n- Upload MP4, MOV, AVI, or WebM files up to 500MB for automated highlight extraction.\n- Automatically connects to backend and manages tokens/sessions (includes free 7-day trial token flow).\n- Simple prompt-based workflow: describe, cut, and export highlight moments in seconds.\n- Provides export, credit checking, current state, and supports iterative editing.\n- Clear error messages for unsupported formats, file size limits, and subscription-related requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d384bf88cbb0962d4cb24cb2b8be6722c8504b43bd1aaa54b1289cc170fd2f4a"
+}

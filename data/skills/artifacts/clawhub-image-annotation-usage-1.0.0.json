@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-annotation-usage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_annotation_usage",
+  "skill": {
+    "id": 49916,
+    "skillKey": "clawhub-image-annotation-usage",
+    "name": "image-annotation-usage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-annotation-usage",
+    "url": "https://clawhub.ai/skills/image-annotation-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-annotation-usage-819c39d1afca76b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when integrating @frank17008/image-annotation React component into web applications, including basic setup, controlled/uncontrolled mode, custom image up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frank17008",
+      "userId": "s17817ae4bqg8thvb7at9a9j6x869msq",
+      "displayName": "Frank",
+      "image": "https://avatars.githubusercontent.com/u/25864611?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 60,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778134709287,
+      "changelog": "Initial release — concise integration and troubleshooting guide for the image annotation component.\n\n- Covers integrating @frank17008/image-annotation into React apps, including controlled/uncontrolled usage and custom image upload.\n- Details required parent container styling, common pitfalls (like blank canvas), and debugging tips.\n- Documents props, annotation types, keyboard shortcuts, and basic styling customization.\n- Provides usage patterns for exporting annotations and leveraging toolbar features.\n- Includes clear TypeScript usage guidance and typical integration code samples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc1bed337731f485bc60ea93512559f8b5f1601073123cefb2b6039f298daa6d"
+}

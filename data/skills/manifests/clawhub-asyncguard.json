@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44833,
+  "uuid": "skill-clawhub-asyncguard",
+  "skillKey": "clawhub-asyncguard",
+  "name": "asyncguard",
+  "summary": "Async/await anti-pattern analyzer -- detects promise misuse, async resource leaks, event loop blocking, missing cancellation, async error patterns, and coord...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asyncguard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Async/await anti-pattern analyzer -",
+        "detects promise misuse, async resource leaks, event loop blocking, missing cancellation, async."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asyncguard@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asyncguard",
+      "url": "https://clawhub.ai/skills/asyncguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asyncguard",
+    "url": "https://clawhub.ai/skills/asyncguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asyncguard-6847b633e5b62db2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asyncguard@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-asyncguard-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6a9be2ec24696f92c003fd667c1e4501c595713201a157e2a02f458102dc162",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:04:16.348Z"
+}

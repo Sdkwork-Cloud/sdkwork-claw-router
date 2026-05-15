@@ -330,6 +330,9 @@ impl EdgeServerConfig {
         if path == "/app/v3/api" || path.starts_with("/app/v3/api/") {
             return Some(&self.app_base_url);
         }
+        if path == "/uploads/courses" || path.starts_with("/uploads/courses/") {
+            return Some(&self.app_base_url);
+        }
         if self.portal_static_dist.is_none() {
             return Some(&self.portal_base_url);
         }
@@ -400,7 +403,10 @@ async fn edge_dispatch(State(state): State<Arc<EdgeServerState>>, request: Reque
     }
 
     let cors_origin = cors_origin_for_request(state.as_ref(), &request);
-    let response = if state.config.target_for_path(request.uri().path()).is_some() {
+    let response = if let Some(response) = static_portal_contract_response(state.as_ref(), &request)
+    {
+        response
+    } else if state.config.target_for_path(request.uri().path()).is_some() {
         forward_request(state.as_ref(), request)
             .await
             .unwrap_or_else(|message| proxy_error_response(&message))
@@ -530,6 +536,26 @@ async fn serve_portal_static(state: &EdgeServerState, request: Request) -> Respo
             response
         }
         Err(error) => proxy_error_response(&format!("failed to read portal static asset: {error}")),
+    }
+}
+
+fn static_portal_contract_response(state: &EdgeServerState, request: &Request) -> Option<Response> {
+    if state.config.portal_static_dist.is_none() || request.method() != Method::GET {
+        return None;
+    }
+
+    match request.uri().path() {
+        sdkwork_claw_http::OPENAPI_SCHEMA_TABS_PATH => Some(
+            sdkwork_claw_http::openapi_schema_tabs_response_for_surface(None),
+        ),
+        sdkwork_claw_http::GATEWAY_OPENAPI_PATH => {
+            Some(sdkwork_claw_http::gateway_openapi_response())
+        }
+        sdkwork_claw_http::APP_OPENAPI_PATH => Some(sdkwork_claw_http::app_openapi_response()),
+        sdkwork_claw_http::BACKEND_OPENAPI_PATH => {
+            Some(sdkwork_claw_http::backend_openapi_response())
+        }
+        _ => None,
     }
 }
 

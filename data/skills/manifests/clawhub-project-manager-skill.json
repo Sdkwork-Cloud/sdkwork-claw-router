@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42436,
+  "uuid": "skill-clawhub-project-manager-skill",
+  "skillKey": "clawhub-project-manager-skill",
+  "name": "Project Manager Skill",
+  "summary": "Assist with objective product research by analyzing strengths, weaknesses, risks, user value, and providing balanced improvement suggestions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_manager_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "Assist with objective product research by analyzing strengths, weaknesses, risks, user value, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-manager-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-manager-skill",
+      "url": "https://clawhub.ai/skills/project-manager-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-manager-skill",
+    "url": "https://clawhub.ai/skills/project-manager-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-manager-skill-7c4e9081045a7b98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-manager-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-manager-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03bed26a435b61bb1560ad4e13a3f78864783b0f902882c6d1d146d1ffda7efb",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:12:41.604Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34522,
+  "uuid": "skill-clawhub-weibo-trendnote-aipc",
+  "skillKey": "clawhub-weibo-trendnote-aipc",
+  "name": "Weibo TrendNote AI PC",
+  "summary": "Fetch Weibo realtime hot search rankings, summarize trending topics with a local model, and append the hot list plus digest to an Obsidian note. Supports one...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_trendnote_aipc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yinquan251",
+      "features": [
+        "Fetch Weibo realtime hot search rankings, summarize trending topics with a local model, and app.",
+        "Supports one..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-trendnote-aipc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198013915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-trendnote-aipc",
+      "url": "https://clawhub.ai/skills/weibo-trendnote-aipc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-trendnote-aipc",
+    "url": "https://clawhub.ai/skills/weibo-trendnote-aipc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-trendnote-aipc-7bfa2f76cb0b7693.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-trendnote-aipc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-trendnote-aipc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73570853ace9993d481446c511e58eb638e89d5b8787dc59155a9e67b99583cb",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:49:50.528Z"
+}

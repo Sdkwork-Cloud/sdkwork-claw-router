@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flowstitch@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowstitch",
+  "skill": {
+    "id": 42091,
+    "skillKey": "clawhub-flowstitch",
+    "name": "FlowStitch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowstitch",
+    "url": "https://clawhub.ai/skills/flowstitch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowstitch-90260d49115d47ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn one sentence into a deployed website. FlowStitch is your AI design team: prompt engineering, design system generation, multi-page creation, quality eval..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windseeker1111",
+      "userId": "s178gtgtg906gcf61xc9dgxnwx83ghr6",
+      "displayName": "windseeker1111",
+      "image": "https://avatars.githubusercontent.com/u/127914008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774335707445,
+      "changelog": "Initial release. 500/500 quality score. Full pipeline: one sentence → deployed website. Competitive analysis, brand kit import, admin dashboards, mobile apps, quality loop, React/TS export, one-command deploy. 20 files, 995-line SKILL.md. Built on Google Stitch MCP. Free from the Flow team.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22525a1a05917a20f947cd8a433fc69263a53200b9a738e92db9a05ca3196e62"
+}

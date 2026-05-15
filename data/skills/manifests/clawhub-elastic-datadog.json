@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60386,
+  "uuid": "skill-clawhub-elastic-datadog",
+  "skillKey": "clawhub-elastic-datadog",
+  "name": "Elastic Datadog",
+  "summary": "介绍Elastic从开源搜索库到综合可观测性平台的发展，涵盖Elasticsearch、ELK Stack及其商业模式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elastic_datadog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "介绍Elastic从开源搜索库到综合可观测性平台的发展，涵盖Elasticsearch、ELK Stack及其商业模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elastic-datadog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elastic-datadog",
+      "url": "https://clawhub.ai/skills/elastic-datadog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elastic-datadog",
+    "url": "https://clawhub.ai/skills/elastic-datadog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elastic-datadog-794056195276d70f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elastic-datadog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elastic-datadog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4b54ebbaa2afb9e11e4062415bae33d030eb1eb9866a1ab0e1ea1fe2f5dce1d",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:03:24.683Z"
+}

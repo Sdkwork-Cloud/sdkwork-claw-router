@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-mail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_mail",
+  "skill": {
+    "id": 14297,
+    "skillKey": "clawhub-aliyun-mail",
+    "name": "Aliyun Mail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-mail",
+    "url": "https://clawhub.ai/skills/aliyun-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-mail-11ab6cafe52d98d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A skill to send emails via Aliyun enterprise email service with support for markdown, HTML text, attachments, and syntax highlighting for code blocks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jixsonwang",
+      "userId": "s177fgbvr8jzz3wng4sra8gvws83hdt0",
+      "displayName": "Jixson",
+      "image": "https://avatars.githubusercontent.com/u/20365468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1197,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770622061549,
+      "changelog": "Initial release of Aliyun Mail skill for advanced email sending via Aliyun’s enterprise service.\n\n- Send emails as plain text, HTML, or Markdown (with automatic syntax highlighting for code blocks).\n- Attach one or more files to outgoing emails.\n- Reliably integrates with Aliyun’s SMTP using secure config files and app-specific passwords.\n- Includes robust error handling with retry logic and detailed error messages.\n- Simple command-line interface supports all main options: body types, body from file, and attachments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ac3b49012bd8dbd0f2523ce261233d161d31f0402e4ee5bcba16fe5cecc361f"
+}

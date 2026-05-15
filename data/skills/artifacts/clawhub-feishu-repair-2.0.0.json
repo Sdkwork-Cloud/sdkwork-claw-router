@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-repair@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_repair",
+  "skill": {
+    "id": 63776,
+    "skillKey": "clawhub-feishu-repair",
+    "name": "Feishu Repair"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-repair",
+    "url": "https://clawhub.ai/skills/feishu-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-repair-bc13ab79a70505e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动修复飞书-自动修复飞书群聊+自动修复会话 - 诊断 Gateway 连接、权限配置、消息投递问题"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amd5",
+      "userId": "s1751ams93yq7ebhk4m0rj58f583gjdd",
+      "displayName": "c32",
+      "image": "https://avatars.githubusercontent.com/u/8718992?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776166146633,
+      "changelog": "文档统一: 明确修复后强制重启 Gateway(非提示手动)+自动验证(配置+日志)+自动发送消息确认",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9f69fd883c5c18b525ec13b4ebb024f851f40cbf5d8eca65a43d96543bc6c30"
+}

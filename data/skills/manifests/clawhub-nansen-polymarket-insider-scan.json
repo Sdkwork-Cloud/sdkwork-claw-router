@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31260,
+  "uuid": "skill-clawhub-nansen-polymarket-insider-scan",
+  "skillKey": "clawhub-nansen-polymarket-insider-scan",
+  "name": "Nansen Polymarket Insider Scan",
+  "summary": "Scan a resolved Polymarket market for wallets exhibiting suspicious trading patterns: fresh funding, single-market focus, extreme ROI, late entry at high pri...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_polymarket_insider_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nansen AI",
+      "features": [
+        "Scan a resolved Polymarket market for wallets exhibiting suspicious trading patterns: fresh fun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nansen-polymarket-insider-scan@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93130718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nansen-polymarket-insider-scan",
+      "url": "https://clawhub.ai/skills/nansen-polymarket-insider-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-polymarket-insider-scan",
+    "url": "https://clawhub.ai/skills/nansen-polymarket-insider-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-polymarket-insider-scan-eb09dbd85de326fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nansen-polymarket-insider-scan@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nansen-polymarket-insider-scan-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6695fa489db555d71f7ed08fcaa7cfab84e2a32657e39b8d9e7448bd5f54e092",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:20:20.667Z"
+}

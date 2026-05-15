@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57611,
+  "uuid": "skill-clawhub-database-design-hardened",
+  "skillKey": "clawhub-database-design-hardened",
+  "name": "Database Design Hardened",
+  "summary": "Database design helper (数据库设计助手) — table design, normalization, indexing strategy, migration scripts, test data, and ER diagrams.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_design_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Database design helper (数据库设计助手) — table design, normalization, indexing strategy, migration sc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/database-design-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "database-design-hardened",
+      "url": "https://clawhub.ai/skills/database-design-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-design-hardened",
+    "url": "https://clawhub.ai/skills/database-design-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-design-hardened-749d23c1971a5e57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/database-design-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-database-design-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d3a0df79836663534613925adc1c172795b33d84bee3efd0f07cfab016a650e",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:21:28.123Z"
+}

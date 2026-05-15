@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11638,
+  "uuid": "skill-clawhub-mini-piv",
+  "skillKey": "clawhub-mini-piv",
+  "name": "Mini PIV - Lightweight Feature Builder",
+  "summary": "Lightweight PIV workflow - discovery-driven feature builder. No PRD needed. Asks quick questions, generates PRP, executes with validation loop. For small-to-medium features when you want to skip PRD ceremony.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mini_piv",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SmokeAlot420",
+      "features": [
+        "Lightweight PIV workflow",
+        "discovery-driven feature builder",
+        "No PRD needed",
+        "Asks quick questions, generates PRP, executes with validation loop"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mini-piv@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/194188786?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mini-piv",
+      "url": "https://clawhub.ai/skills/mini-piv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mini-piv",
+    "url": "https://clawhub.ai/skills/mini-piv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mini-piv-58404f30b0b41873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mini-piv@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mini-piv-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d79a6e3718bd09aeaf03b986f42065d80eaadeec44375994db40099cac7ac1c",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T07:37:23.486Z"
+}

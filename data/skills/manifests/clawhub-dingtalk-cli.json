@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61319,
+  "uuid": "skill-clawhub-dingtalk-cli",
+  "skillKey": "clawhub-dingtalk-cli",
+  "name": "dingtalk-cli",
+  "summary": "当用户提到钉钉知识库、钉钉文档、读取/写入文档、知识库目录、文档成员、`.axls` 表格、workbook、dingtalk doc、wiki workspace 时使用。通过本地 `dingtalk-cli` 命令调用钉钉开放平台 API，适合 agent 直接执行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MianPeng Zheng",
+      "features": [
+        "当用户提到钉钉知识库、钉钉文档、读取/写入文档、知识库目录、文档成员、`.axls` 表格、workbook、dingtalk doc、wiki workspace 时使用。通过本地 `di."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67821839?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-cli",
+      "url": "https://clawhub.ai/skills/dingtalk-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-cli",
+    "url": "https://clawhub.ai/skills/dingtalk-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-cli-a9c029b4e50abdd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2a02e814aef3fd836f18dfb051e8a38bcaeb7f6a4dab60ce65960b88a10b5a9",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:11:46.406Z"
+}

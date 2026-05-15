@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macpilot@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macpilot",
+  "skill": {
+    "id": 21684,
+    "skillKey": "clawhub-macpilot",
+    "name": "MacPilot : Control macOS using CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macpilot",
+    "url": "https://clawhub.ai/skills/macpilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macpilot-fce13af8501639bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control macOS via CLI using MacPilot for automating UI actions, managing windows, handling file dialogs, capturing screenshots, and system tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adhikjoshi",
+      "userId": "publishers:adhikjoshi",
+      "displayName": "Adhik Joshi",
+      "image": "https://avatars.githubusercontent.com/u/11740719?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1772654443212,
+      "changelog": "Programmatic macOS control for AI agents. Everything a human can do via keyboard + mouse, MacPilot can do programmatically using CLI",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:24e3b704c4015cc7df9215d203e0c1a90b96e52ed7e260008f803ae3f754f27e"
+}

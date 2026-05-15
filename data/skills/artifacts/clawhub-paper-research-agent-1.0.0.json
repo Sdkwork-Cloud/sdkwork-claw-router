@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-research-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_research_agent",
+  "skill": {
+    "id": 27161,
+    "skillKey": "clawhub-paper-research-agent",
+    "name": "Paper Research Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-research-agent",
+    "url": "https://clawhub.ai/skills/paper-research-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-research-agent-e80c356732e6ce50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous multi-agent paper research system. When user wants to research a topic, find related papers, or analyze academic literature, use this skill to orc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "changer-changer",
+      "userId": "s17a1mefv9pez7cqx2pp5bz16184j3tp",
+      "displayName": "崔之行",
+      "image": "https://avatars.githubusercontent.com/u/126934792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773798029047,
+      "changelog": "Paper Research Agent v1.0.0 initial release:\n\n- Introduces an autonomous multi-agent system for comprehensive academic paper research.\n- Automates literature search, PDF download, parallel full-paper analysis, and integrated survey generation.\n- Each analyzed paper produces a structured 6-section report covering background, problem, innovation, experiments, insights, and future work.\n- Enforces strict quality standards: minimum 3000 words/report, real data tables, source citations, and no fabricated content.\n- Supports both English and Chinese trigger phrases for research requests.\n- Includes robust error handling for failed downloads and agent analyses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bb70b75dbd38f326eb9cc6c3afd3f3092635f8d5fabfa172a6a9de029006bb2"
+}

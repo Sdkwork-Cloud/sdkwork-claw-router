@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44149,
+  "uuid": "skill-clawhub-md-2-html",
+  "skillKey": "clawhub-md-2-html",
+  "name": "Markdown to HTML Converter",
+  "summary": "Convert Markdown files to formatted HTML. Use when the user asks to convert, export, or save a Markdown file as HTML format. Triggers on phrases like \"conver...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_2_html",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "frankxpj",
+      "features": [
+        "Convert Markdown files to formatted HTML",
+        "Use when the user asks to convert, export, or save a Markdown file as HTML format",
+        "Triggers on phrases like \"conver..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/md-2-html@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/100115985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "md-2-html",
+      "url": "https://clawhub.ai/skills/md-2-html"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-2-html",
+    "url": "https://clawhub.ai/skills/md-2-html",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-2-html-37a8d9d677b1bc79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/md-2-html@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-md-2-html-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:543c874f020e202187632f11e93c78a08feb6871bf1a36e09e52db4da88c5a96",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T13:30:11.318Z"
+}

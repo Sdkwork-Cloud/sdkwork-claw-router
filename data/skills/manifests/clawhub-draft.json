@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22672,
+  "uuid": "skill-clawhub-draft",
+  "skillKey": "clawhub-draft",
+  "name": "Draft",
+  "summary": "Professional first-draft generator. Trigger whenever the user needs to write anything from scratch: emails, reports, articles, proposals, memos, cover letter...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.draft",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EthAgent",
+      "features": [
+        "Professional first-draft generator",
+        "Trigger whenever the user needs to write anything from scratch: emails, reports, articles, prop."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/draft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216467966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "draft",
+      "url": "https://clawhub.ai/skills/draft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "draft",
+    "url": "https://clawhub.ai/skills/draft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/draft-7743ce348d9284d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/draft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-draft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5372cc6d8c08236b7fd7a6997be2968c78a2934aaa38d75155d5e2b21771d3d5",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T15:55:02.596Z"
+}

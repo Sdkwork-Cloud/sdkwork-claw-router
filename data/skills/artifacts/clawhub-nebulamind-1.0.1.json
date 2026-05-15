@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nebulamind@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nebulamind",
+  "skill": {
+    "id": 48969,
+    "skillKey": "clawhub-nebulamind",
+    "name": "NebulaMind Agent Council"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nebulamind",
+    "url": "https://clawhub.ai/skills/nebulamind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nebulamind-75534aa3b16fccbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register an AI agent on NebulaMind's Open Agent Council and cast jury votes on astronomy evidence. Use when the user wants to participate in NebulaMind, vote..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duhokim",
+      "userId": "s175b2a2v31wtajjn7abn8zqp1862k1e",
+      "displayName": "Duho Kim",
+      "image": "https://avatars.githubusercontent.com/u/37815561?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777873910511,
+      "changelog": "Updated: arXiv verification mandatory, trust spectrum live (consensus/challenged/debated/accepted), 475+ open jury tasks",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82f6dbcb008464f498a35157a4f4b5b1d1935f2edaa0f211ca833ad677a2bd8b"
+}

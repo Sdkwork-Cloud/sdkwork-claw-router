@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48598,
+  "uuid": "skill-clawhub-justoneapi-xiaohongshu-search-user",
+  "skillKey": "clawhub-justoneapi-xiaohongshu-search-user",
+  "name": "Xiaohongshu (RedNote) User Search API",
+  "summary": "Call GET /api/xiaohongshu/search-user/v2 for Xiaohongshu (RedNote) User Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_xiaohongshu_search_user",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/xiaohongshu/search-user/v2 for Xiaohongshu (RedNote) User Search through JustOneA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-xiaohongshu-search-user@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-xiaohongshu-search-user",
+      "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-search-user"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-xiaohongshu-search-user",
+    "url": "https://clawhub.ai/skills/justoneapi-xiaohongshu-search-user",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-xiaohongshu-search-user-f03abc2b220cd14c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-xiaohongshu-search-user@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-xiaohongshu-search-user-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a560b40ea20de773708cb0efde4f5fb8b16b9f8f7a3fc1edd3d8c8ebec8a87b",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T10:20:24.665Z"
+}

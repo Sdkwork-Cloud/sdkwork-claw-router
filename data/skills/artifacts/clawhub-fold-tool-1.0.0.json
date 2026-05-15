@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fold-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fold_tool",
+  "skill": {
+    "id": 47831,
+    "skillKey": "clawhub-fold-tool",
+    "name": "Fold Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fold-tool",
+    "url": "https://clawhub.ai/skills/fold-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fold-tool-db3f171dc093d761.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wrap long lines of text to a specified width. Use for formatting text files to fit within column limits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777395150423,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b86911f2e6302888df7a6ac8240dc6dd033a9fc3f5a84ae6a7768c8f775dfd2a"
+}

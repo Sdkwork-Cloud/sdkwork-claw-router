@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "chanjing-text-to-digital-person",
+    "displayName": "Chanjing Text To Digital Person",
+    "summary": "Use Chanjing text-to-digital-person APIs for AI portraits, talking videos, optional LoRA training, polling, and explicit downloads when requested.",
+    "tags": {
+      "latest": "1.0.6"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "createdAt": 1773883153860,
+    "updatedAt": 1778312303458
+  },
+  "latestVersion": {
+    "version": "1.0.6",
+    "createdAt": 1774608317497,
+    "changelog": "**Summary:**  \nThis release formalizes environment variables and credential handling, adds a machine-readable manifest, and aligns documentation to the manifest model.\n\n- Added manifest.yaml for machine-readable skill metadata and environment declarations.\n- Deprecated SKILL.md-specific credential/environment documentation in favor of single-source manifest.yaml.\n- Updated environment variable names to CHANJING_OPENAPI_CREDENTIALS_DIR and CHANJING_OPENAPI_BASE_URL (legacy names still accepted for backward compatibility).\n- Clarified in documentation that all credential, permission, and agentPolicy details are defined in manifest.yaml.\n- No changes to core script logic; scripts/_auth.py and scripts/_task_api.py are unchanged in function.\n- ffmpeg/ffprobe requirements remain unchanged (not required).",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "binkes",
+    "userId": "s17dzfw0aahqzz6dr91bzpma4h83gh5n",
+    "displayName": "BinKes",
+    "image": "https://avatars.githubusercontent.com/u/7719663?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312303458
+  }
+}

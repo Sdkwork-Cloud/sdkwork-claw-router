@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22988,
+  "uuid": "skill-clawhub-aweber",
+  "skillKey": "clawhub-aweber",
+  "name": "Aweber",
+  "summary": "AWeber integration. Manage Subscribers, Lists, Broadcasts, Automations, Tags. Use when the user wants to interact with AWeber data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aweber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "AWeber integration",
+        "Manage Subscribers, Lists, Broadcasts, Automations, Tags",
+        "Use when the user wants to interact with AWeber data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aweber@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aweber",
+      "url": "https://clawhub.ai/skills/aweber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aweber",
+    "url": "https://clawhub.ai/skills/aweber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aweber-c312d47d5748ae87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aweber@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-aweber-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dba5b71e895819e0b9964cbe987d5c821288a97dc5835867909b36b97ca97482",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T13:03:07.798Z"
+}

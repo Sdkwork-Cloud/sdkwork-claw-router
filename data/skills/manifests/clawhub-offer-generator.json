@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55929,
+  "uuid": "skill-clawhub-offer-generator",
+  "skillKey": "clawhub-offer-generator",
+  "name": "Offer generator 0$ to 100$",
+  "summary": "Generates a simple, quick-to-launch digital product offer with name, benefits, price, and urgency based on your skill or idea.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.offer_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "theshimaw-svg",
+      "features": [
+        "Generates a simple, quick-to-launch digital product offer with name, benefits, price, and urgen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/offer-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266850601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "offer-generator",
+      "url": "https://clawhub.ai/skills/offer-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "offer-generator",
+    "url": "https://clawhub.ai/skills/offer-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/offer-generator-971ab9e15a991dee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/offer-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-offer-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4cf7f25ff120ea957ef753e19a35a48b9db87e53ffa0b0aebed6e252011d9fca",
+      "artifactSizeBytes": 1889
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T21:14:08.580Z"
+}

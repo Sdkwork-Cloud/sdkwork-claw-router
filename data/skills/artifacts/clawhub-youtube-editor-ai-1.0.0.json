@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-editor-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_editor_ai",
+  "skill": {
+    "id": 36634,
+    "skillKey": "clawhub-youtube-editor-ai",
+    "name": "Youtube Editor Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-editor-ai",
+    "url": "https://clawhub.ai/skills/youtube-editor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-editor-ai-fe05935488cdb4e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTubers edit raw video footage into edited YouTube videos using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs at 1080p, and re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775859258825,
+      "changelog": "youtube-editor-ai 1.0.0 — Initial release\n\n- Launches an AI-powered YouTube video editor: upload footage, describe edits, get 1080p MP4s in minutes.\n- Accepts MP4, MOV, AVI, WebM files up to 500MB; renders on cloud GPUs.\n- Handles uploads, edits, exports, and session management automatically.\n- Supports credits handling, real-time editing instructions, and concise error feedback.\n- All API interaction details, format support, and workflow tips are documented for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5e07f2924d192358a1ced0db2fed3c3b308932c9e00b94493832aa99ef0a072"
+}

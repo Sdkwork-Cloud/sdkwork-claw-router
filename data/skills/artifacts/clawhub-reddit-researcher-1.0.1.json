@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-researcher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_researcher",
+  "skill": {
+    "id": 11219,
+    "skillKey": "clawhub-reddit-researcher",
+    "name": "Reddit Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-researcher",
+    "url": "https://clawhub.ai/skills/reddit-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-researcher-e1b1cf972e9079d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and analyze Reddit posts and comments to summarize user opinions, troubleshoot issues, and track trends across communities and topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachgodsell93",
+      "userId": "publishers:zachgodsell93",
+      "displayName": "zachgodsell93",
+      "image": "https://avatars.githubusercontent.com/u/130630671?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1568,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771022280153,
+      "changelog": "- Added explicit support for OAuth credentials and environment variables, enabling higher API rate limits.\n- Documented security best practices for Reddit API credentials.\n- Updated the SKILL file to include `credentials`, `env_vars`, and `tools` fields for improved integration and clarity.\n- No changes to research workflow, API usage, or end-user functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:45dd31f1a46e516684b0a574fe5f169744b5aa420c93979567b8ce91e4f37838"
+}

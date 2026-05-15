@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/demo-agents-sdk@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.demo_agents_sdk",
+  "skill": {
+    "id": 17368,
+    "skillKey": "clawhub-demo-agents-sdk",
+    "name": "pol-agents-sdk-demo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "demo-agents-sdk",
+    "url": "https://clawhub.ai/skills/demo-agents-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/demo-agents-sdk-8d439b64bb0f92ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Polygon agent toolkit. Session-based smart contract wallets (Sequence), token ops (send/swap/bridge/deposit via Trails), ERC-8004 on-chain identity..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jameslawton",
+      "userId": "publishers:jameslawton",
+      "displayName": "JamesLawton",
+      "image": "https://avatars.githubusercontent.com/u/19821370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 786,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1771945378929,
+      "changelog": "- Switched wallet approval tunnel from ngrok to Cloudflare Quick Tunnel (`*.trycloudflare.com`).\n- `cloudflared` binary is auto-downloaded and managed in `~/.polygon-agent/bin/cloudflared`.\n- Approval URL is now only valid during the active CLI session—open it immediately; never reuse an old URL.\n- Expanded troubleshooting section with guidance for tunnel errors and cloudflared issues.\n- Manual fallback updated: cloudflared absence now triggers browser copy/paste flow and new troubleshooting advice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4544be1390845ea1113adf81ffefba222f2e04e103e81db892b1dbab4b91ba5"
+}

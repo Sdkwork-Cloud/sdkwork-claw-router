@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36955,
+  "uuid": "skill-clawhub-nmbrs",
+  "skillKey": "clawhub-nmbrs",
+  "name": "Nmbrs",
+  "summary": "Nmbrs integration. Manage data, records, and automate workflows. Use when the user wants to interact with Nmbrs data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nmbrs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Nmbrs integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Nmbrs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nmbrs@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nmbrs",
+      "url": "https://clawhub.ai/skills/nmbrs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nmbrs",
+    "url": "https://clawhub.ai/skills/nmbrs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nmbrs-11f7fdebba962561.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nmbrs@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nmbrs-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba3fd8bd617ee8e2ee49652a3312f10602097da2d0816632c8ea6cbbc15c0a67",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:47:10.981Z"
+}

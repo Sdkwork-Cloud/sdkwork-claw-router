@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18886,
+  "uuid": "skill-clawhub-csv-analyzer",
+  "skillKey": "clawhub-csv-analyzer",
+  "name": "Csv Analyzer",
+  "summary": "Analyze CSV/Excel files with natural language. Get statistics, filter rows, find anomalies, generate summaries, and export results. No pandas needed — uses P...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shihao Jiang (Zac)",
+      "features": [
+        "Analyze CSV/Excel files with natural language",
+        "Get statistics, filter rows, find anomalies, generate summaries, and export results",
+        "No pandas needed — uses P..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csv-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15880609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csv-analyzer",
+      "url": "https://clawhub.ai/skills/csv-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-analyzer",
+    "url": "https://clawhub.ai/skills/csv-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-analyzer-8d253d9f3b51fbe2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csv-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csv-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef8330b7d2e96201cd9f1e8d93f9f1163ef4c23b99fdf719218dc32f7d63409a",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:50:23.729Z"
+}

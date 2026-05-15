@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searx-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searx_search",
+  "skill": {
+    "id": 24883,
+    "skillKey": "clawhub-searx-search",
+    "name": "Searx Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searx-search",
+    "url": "https://clawhub.ai/skills/searx-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searx-search-5f7a1257d1beb1e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides web search using free SearX instances from https://searx.space/. Trigger when a user asks to search the web or wants the latest AI news and global e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fikacode",
+      "userId": "s177cptf4r1tjq6f9r4egkvs5n83qwb2",
+      "displayName": "FikaCode",
+      "image": "https://avatars.githubusercontent.com/u/42266215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773893914186,
+      "changelog": "Initial release of the searx-search skill.\n\n- Provides web search using free public SearX instances from searx.space.\n- Automatically selects and retries up to three different SearX instances if a search request fails.\n- Outputs the titles and URLs of the top 5 search results in plain text.\n- Returns an error message if all search attempts fail.\n- Designed to trigger for web search queries or requests for the latest AI news and global events.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7fa054e2bbd99f745521aac136be05e2f8fde1c2e6f9c6625870bbffc725dabc"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17967,
+  "uuid": "skill-clawhub-agent-id",
+  "skillKey": "clawhub-agent-id",
+  "name": "Agent ID",
+  "summary": "Give your agent a persistent cross-platform identity. Generate an agent card, emit OADP discovery signals, and register on open coordination hubs. Every agen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_id",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Give your agent a persistent cross-platform identity",
+        "Generate an agent card, emit OADP discovery signals, and register on open coordination hubs",
+        "Every agen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-id@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-id",
+      "url": "https://clawhub.ai/skills/agent-id"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-id",
+    "url": "https://clawhub.ai/skills/agent-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-id-b1003ddd4777cbf5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-id@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-id-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dff65f260bfbbdcfd2c8deea7bd26484867b8d1ad73b93b96e509953b7e3f84",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T15:23:11.592Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11348,
+  "uuid": "skill-clawhub-glasses-to-social",
+  "skillKey": "clawhub-glasses-to-social",
+  "name": "Glasses to Social",
+  "summary": "Turn smart glasses photos into social media posts. Monitors a Google Drive folder for new images from Meta Ray-Ban glasses (or any smart glasses), analyzes them with vision AI, drafts tweets/posts in the user's voice, and publishes on appr.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glasses_to_social",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marc J Saint-jour",
+      "features": [
+        "Turn smart glasses photos into social media posts",
+        "Monitors a Google Drive folder for new images from Meta Ray-Ban glasses (or any smart glasses),.",
+        "Use when setting up a glasses-to-social pipeline, processing smart glasses photos for social me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glasses-to-social@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82672745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glasses-to-social",
+      "url": "https://clawhub.ai/skills/glasses-to-social"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glasses-to-social",
+    "url": "https://clawhub.ai/skills/glasses-to-social",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glasses-to-social-8f1f087771e30fab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glasses-to-social@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-glasses-to-social-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9aeacd96bf2e082c9f13fe97bfe53b0f7415ee90c65f9aea266517cd3713a034",
+      "artifactSizeBytes": 2485
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:17:25.790Z"
+}

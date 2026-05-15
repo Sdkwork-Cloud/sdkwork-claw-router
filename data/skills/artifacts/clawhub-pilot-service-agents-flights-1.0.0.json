@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-service-agents-flights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_service_agents_flights",
+  "skill": {
+    "id": 53209,
+    "skillKey": "clawhub-pilot-service-agents-flights",
+    "name": "Pilot Service Agents Flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-service-agents-flights",
+    "url": "https://clawhub.ai/skills/pilot-service-agents-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-service-agents-flights-b68c6853913436d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aircraft tracking and aviation weather — ADS-B feeds (ICAO + bbox), airport directory, METAR/TAF/SIGMET. Use this skill when: 1. Live aircraft positions by I..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777339505730,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bd6512ff6e38c99d8f2b0875e779be624f5a4554d0b53121d8502b4c8582c56d"
+}

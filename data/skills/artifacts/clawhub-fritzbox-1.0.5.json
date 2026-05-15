@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fritzbox@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fritzbox",
+  "skill": {
+    "id": 45084,
+    "skillKey": "clawhub-fritzbox",
+    "name": "FRITZ!Box"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fritzbox",
+    "url": "https://clawhub.ai/skills/fritzbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fritzbox-cc86863bd5011540.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control AVM FRITZ!Box routers and Smarthome devices via TR-064 and Web API. Use when the user wants to manage their FRITZ!Box router (WLAN, connected devices..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "first-it-consulting",
+      "userId": "s171vfw0jcyt9zzr42zxrq2bhx83pp9d",
+      "displayName": "HW",
+      "image": "https://avatars.githubusercontent.com/u/712975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777629906103,
+      "changelog": "Security: pre-build auth object in __init__ to break static taint path",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c47f0e631429b30023c19c95147d52975a039f2fcc6a4065055f6990af3198a9"
+}

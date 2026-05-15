@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "openclaw-bitwarden",
+    "displayName": "Bitwarden",
+    "summary": "Set up and use Bitwarden CLI (bw). Use when installing the CLI, unlocking vault, or reading/generating secrets via bw. Handles session management with BW_SESSION.",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2336,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 3,
+      "versions": 1
+    },
+    "createdAt": 1769899433301,
+    "updatedAt": 1778382835802
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1769899433301,
+    "changelog": "Initial release of openclaw-bitwarden skill.\n\n- Set up and use the Bitwarden CLI (`bw`) with required session management via `BW_SESSION`.\n- Enforces use of a dedicated tmux session for all authenticated Bitwarden operations.\n- Provides reference workflows for install, login, unlock, and basic vault commands.\n- Includes guardrails to prevent accidental exposure of secrets and ensure secure usage.\n- Offers local testing setup using Vaultwarden (Docker Compose) with mkcert for self-hosted testing.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "jimihford",
+    "userId": "publishers:jimihford",
+    "displayName": "JimiHFord",
+    "image": "https://avatars.githubusercontent.com/u/1879448?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778382835802
+  }
+}

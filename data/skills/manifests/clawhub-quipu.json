@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33246,
+  "uuid": "skill-clawhub-quipu",
+  "skillKey": "clawhub-quipu",
+  "name": "Quipu",
+  "summary": "Quipu integration. Manage data, records, and automate workflows. Use when the user wants to interact with Quipu data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quipu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Quipu integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Quipu data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quipu@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quipu",
+      "url": "https://clawhub.ai/skills/quipu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quipu",
+    "url": "https://clawhub.ai/skills/quipu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quipu-387dc0e6e06ea6ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quipu@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-quipu-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cb8b2bd8e7de8e5edc42ebbd98ad1de11777493f41af2bb8d33e0da30dd458f",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:30:36.846Z"
+}

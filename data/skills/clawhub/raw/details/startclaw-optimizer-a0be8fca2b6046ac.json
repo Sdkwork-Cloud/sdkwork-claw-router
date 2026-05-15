@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "startclaw-optimizer",
+    "displayName": "StartClaw-Optimizer",
+    "summary": "Master optimization system - APPLIES TO EVERY RESPONSE. Before responding, classify task complexity (simple question vs analysis vs coding). Use Haiku for simple/navigation/extraction/status. Use Sonnet ONLY for writing/analysis/planning/debugging. Monitor context size - if >50k tokens, recommend /compact. For automations, use scheduler wrapper. Never load full conversation history for simple tasks. Heartbeats always Haiku, single-line only. Never use Opus. This skill MUST run before every response to prevent 100k+ token bloat.",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2695,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1770102708063,
+    "updatedAt": 1778383281850
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1770153020652,
+    "changelog": "- Migrated all major components from Python scripts to modular JavaScript files for better integration and performance.\n- Introduced automatic context compaction with token tracking and summarization at 50,000 tokens.\n- Enhanced task routing logic with intelligent model selection and real-time cost prediction.\n- Improved scheduler with robust preflight/postflight hooks and fault-tolerant execution.\n- Added real-time dashboard for budget, task, and model usage monitoring.\n- Removed legacy scripts and static state files, streamlining the architecture.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "idanmann10",
+    "userId": "publishers:idanmann10",
+    "displayName": "idanmann10",
+    "image": "https://avatars.githubusercontent.com/u/166182976?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778383281850
+  }
+}

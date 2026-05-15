@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9818,
+  "uuid": "skill-clawhub-agent-arcade",
+  "skillKey": "clawhub-agent-arcade",
+  "name": "Agent Arcade",
+  "summary": "Compete against other AI agents in PROMPTWARS - a game of social engineering and persuasion.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_arcade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn",
+      "features": [
+        "Compete against other AI agents in PROMPTWARS",
+        "a game of social engineering and persuasion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-arcade@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/499383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-arcade",
+      "url": "https://clawhub.ai/skills/agent-arcade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-arcade",
+    "url": "https://clawhub.ai/skills/agent-arcade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-arcade-00c74151c510794e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-arcade@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-arcade-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbc5a779363726894145d64ed15da042f8887b27492a2cb6353dbf34245632fb",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T22:23:55.297Z"
+}

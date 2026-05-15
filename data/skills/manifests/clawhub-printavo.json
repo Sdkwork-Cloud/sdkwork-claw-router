@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31718,
+  "uuid": "skill-clawhub-printavo",
+  "skillKey": "clawhub-printavo",
+  "name": "Printavo",
+  "summary": "Printavo integration. Manage Organizations, Leads, Projects, Users, Goals, Filters. Use when the user wants to interact with Printavo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printavo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Printavo integration",
+        "Manage Organizations, Leads, Projects, Users, Goals, Filters",
+        "Use when the user wants to interact with Printavo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/printavo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "printavo",
+      "url": "https://clawhub.ai/skills/printavo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printavo",
+    "url": "https://clawhub.ai/skills/printavo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printavo-2148dd2ec808ffb1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/printavo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-printavo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3eee3816987701675d5bdb4723549c4eacd9a27f042a002f234f6692b93e777c",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:27:34.903Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52039,
+  "uuid": "skill-clawhub-daily-movie",
+  "skillKey": "clawhub-daily-movie",
+  "name": "Daily Movie",
+  "summary": "Daily movie & TV recommendation — curated by genre, mood, or theme. One great watch per day with synopsis, streaming platform, and audience ratings.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_movie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiajiaoy",
+      "features": [
+        "Daily movie & TV recommendation — curated by genre, mood, or theme",
+        "One great watch per day with synopsis, streaming platform, and audience ratings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-movie@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254620896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-movie",
+      "url": "https://clawhub.ai/skills/daily-movie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-movie",
+    "url": "https://clawhub.ai/skills/daily-movie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-movie-55ec7c5804367c6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-movie@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-movie-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdeff1013aa42fddb1c534cb1cf53be743b1d413cfc26aff661e8d53702591a7",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T10:54:20.341Z"
+}

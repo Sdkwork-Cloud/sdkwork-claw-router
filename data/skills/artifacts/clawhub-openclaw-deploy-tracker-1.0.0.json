@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-deploy-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_deploy_tracker",
+  "skill": {
+    "id": 67122,
+    "skillKey": "clawhub-openclaw-deploy-tracker",
+    "name": "Openclaw Deploy Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-deploy-tracker",
+    "url": "https://clawhub.ai/skills/openclaw-deploy-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-deploy-tracker-0911b93723cadf1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "记录和查询 OpenClaw 生态的部署服务。当需要新增部署、查询现有服务、更新服务状态、检查依赖关系时使用。规范记录格式，提供查询和写入的工作流。无需凭证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775032847171,
+      "changelog": "- Initial release of openclaw-deploy-tracker.\n- Enables standardized recording and querying of all OpenClaw ecosystem deployments and services.\n- Provides clear guidelines for service record structure, indexing, and update workflows.\n- Supports service registration, status updates, dependency checks, and port conflict detection.\n- No credentials required; sensitive info is referenced only by variable/path.\n- Includes search and workflow examples for easy service management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9506f9f869e6adc2b05214eed24f28cbce3b4be90bc3131672ac81eab7924d3a"
+}

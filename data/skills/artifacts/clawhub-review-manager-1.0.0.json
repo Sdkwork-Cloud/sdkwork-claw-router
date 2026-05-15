@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_manager",
+  "skill": {
+    "id": 64881,
+    "skillKey": "clawhub-review-manager",
+    "name": "review-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-manager",
+    "url": "https://clawhub.ai/skills/review-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-manager-fddf8992e634f068.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "고객사 리뷰 수집·자동답글·알림·리포트 통합 관리. 네이버플레이스/구글/배민/쿠팡 리뷰 모니터링 + 감성분석 + 경쟁사 비교"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771387518017,
+      "changelog": "Initial release - 고객사용 스킬",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fd70ed2e47e78da1f709d4627c14c3a25894d2ccec12b4c65e16b8a4db8066dd"
+}

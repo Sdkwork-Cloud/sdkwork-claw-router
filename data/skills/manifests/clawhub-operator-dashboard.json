@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55613,
+  "uuid": "skill-clawhub-operator-dashboard",
+  "skillKey": "clawhub-operator-dashboard",
+  "name": "Operator Dashboard",
+  "summary": "Zero‑config OpenClaw gateway monitoring. Runs health checks, sends daily 5‑line summaries, alerts immediately on critical issues (gateway down, cron failures...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operator_dashboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LukeAustin13",
+      "features": [
+        "Zero‑config OpenClaw gateway monitoring",
+        "Runs health checks, sends daily 5‑line summaries, alerts immediately on critical issues (gatewa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/operator-dashboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34007025?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "operator-dashboard",
+      "url": "https://clawhub.ai/skills/operator-dashboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operator-dashboard",
+    "url": "https://clawhub.ai/skills/operator-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operator-dashboard-a37bbea2d6a2dc7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/operator-dashboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-operator-dashboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:993a2c897ca50479a452406e5f762c25b34006ca4641ce5edb9613d75fe16c51",
+      "artifactSizeBytes": 2591
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T12:20:58.042Z"
+}

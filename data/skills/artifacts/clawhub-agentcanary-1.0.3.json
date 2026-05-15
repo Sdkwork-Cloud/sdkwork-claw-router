@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentcanary@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcanary",
+  "skill": {
+    "id": 15887,
+    "skillKey": "clawhub-agentcanary",
+    "name": "AgentCanary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcanary",
+    "url": "https://clawhub.ai/skills/agentcanary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcanary-f94b15d6bc74b8c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-asset market intelligence API for AI agents. 130+ endpoints across macro regime detection, risk scoring, trading signals (IGNITION/ACCUMULATION/DISTRIB..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrcerq",
+      "userId": "s17btk2cfnma1wra89y0ed1dxh8454cq",
+      "displayName": "AgentCanary",
+      "image": "https://avatars.githubusercontent.com/u/188248728?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 835,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774181660451,
+      "changelog": "- Removed the file: references/endpoints.md\n- Updated VirusTotal verification link in the Security section\n- No changes to endpoints, API, or functionality\n- Documentation now omits the removed reference file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a24dcbe24222dd3ed4f77c9e0dd315413df8ed56e98d82f9d6d3e5de8df6a95d"
+}

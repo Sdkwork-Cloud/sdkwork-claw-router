@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-to-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_to_image",
+  "skill": {
+    "id": 42133,
+    "skillKey": "clawhub-pdf-to-image",
+    "name": "PDF to Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-to-image",
+    "url": "https://clawhub.ai/skills/pdf-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-to-image-8e816b73b9d4fd4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PDF pages to images (PNG, JPG, or WebP). Supports DPI control, resize, background color, and page selection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rishabhdugar",
+      "userId": "s17er4205vjg2p2hpn1fxtpqz1850q84",
+      "displayName": "Rishabh Dugar",
+      "image": "https://avatars.githubusercontent.com/u/7722125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776438416915,
+      "changelog": "- Initial release of the pdf-to-image skill.\n- Convert PDF pages to images in PNG, JPG, or WebP formats.\n- Supports DPI control, resizing, background color fill, and page selection.\n- Multiple output options: URL, base64, direct file, or both.\n- Designed for thumbnails, social media previews, print exports, and slide/image extraction.\n- Accepts PDF input via public URL, base64 string, or multipart upload.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7e99b3c444d6c94325639101cfaa0582a405bc4c9b137223b10e9020bec3203"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nerua1-arena-council@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nerua1_arena_council",
+  "skill": {
+    "id": 54717,
+    "skillKey": "clawhub-nerua1-arena-council",
+    "name": "Arena Council — Multi-Model AI Debate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nerua1-arena-council",
+    "url": "https://clawhub.ai/skills/nerua1-arena-council",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nerua1-arena-council-6d458812de3af20d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-Model Council - parallel execution of multiple LLMs with voting/consensus."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerua1",
+      "userId": "s178f4bnw35dnxc3ymhvgf114983yzer",
+      "displayName": "nerua1",
+      "image": "https://avatars.githubusercontent.com/u/271220546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777850232077,
+      "changelog": "- Added _meta.json to define metadata for the skill.\n- Updated SKILL.md to generalize LM Studio URLs from fixed localhost to <lm-studio-url> placeholders.\n- Added credits and donation/links section to the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dfc647f6b41901b0400531c8aa5d681993caf54f09486c369cecc1710275c4e1"
+}

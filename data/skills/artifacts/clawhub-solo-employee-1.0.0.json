@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-employee@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_employee",
+  "skill": {
+    "id": 66086,
+    "skillKey": "clawhub-solo-employee",
+    "name": "Solo Employee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-employee",
+    "url": "https://clawhub.ai/skills/solo-employee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-employee-1e2af25646529520.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用员工 Agent 技能。当一个 Agent 被 CEO Agent 分发任务时触发。适用于：作为一人公司的员工接受 CEO 协调者的任务、与 CEO 进行多轮对话（最多5轮）、按要求输出成果。核心能力：理解任务、执行工作、汇报成果、接受追问优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moistenxx",
+      "userId": "publishers:moistenxx",
+      "displayName": "Moistenxx",
+      "image": "https://avatars.githubusercontent.com/u/242734902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773986859110,
+      "changelog": "Initial release: Generic employee skill for solo company",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:170cc51f53d3b7f011a6ad71204c3d43ad897f11ed8e16d8c6764454d32bc39d"
+}

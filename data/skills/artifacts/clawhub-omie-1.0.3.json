@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/omie@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omie",
+  "skill": {
+    "id": 18436,
+    "skillKey": "clawhub-omie",
+    "name": "Omie ERP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omie",
+    "url": "https://clawhub.ai/skills/omie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omie-eb4ea9f4ce7e68df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Omie ERP integration via API. Manage clients, products, orders, invoices (NF-e), financials (contas a receber/pagar), and stock. Use when users ask about ERP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesbot-agnt",
+      "userId": "publishers:jamesbot-agnt",
+      "displayName": "JAMESBOT-AGNT",
+      "image": "https://avatars.githubusercontent.com/u/259971675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 671,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771636272947,
+      "changelog": "restore local copy",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:91537012944e740773d376e64835d310e7f1fb1a8e3ad92090645e26d600ed99"
+}

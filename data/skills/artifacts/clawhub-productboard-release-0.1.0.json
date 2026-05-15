@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/productboard-release@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.productboard_release",
+  "skill": {
+    "id": 11792,
+    "skillKey": "clawhub-productboard-release",
+    "name": "Productboard Release"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "productboard-release",
+    "url": "https://clawhub.ai/skills/productboard-release",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/productboard-release-b9dc5f33a1fa1b68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage ProductBoard releases and roadmap planning"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robertoamoreno",
+      "userId": "publishers:robertoamoreno",
+      "displayName": "robertoamoreno",
+      "image": "https://avatars.githubusercontent.com/u/16195292?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1889,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769839173232,
+      "changelog": "Initial release of productboard-release.\n\n- Provides tools to manage ProductBoard releases and roadmap planning.\n- Supports creating, updating, and listing features.\n- Enables viewing product hierarchy and assigning feature owners.\n- Defines workflows for sprint, release, and quarterly planning.\n- Outlines status lifecycle, best practices, and hierarchical feature organization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:15348890f5769a63e75f3edca913d21ecd4b309ecd760cbec53295b2ea2c1754"
+}

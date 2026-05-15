@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aerobase-jetlag@3.3.1",
+  "version": "3.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_jetlag",
+  "skill": {
+    "id": 19688,
+    "skillKey": "clawhub-aerobase-jetlag",
+    "name": "Aerobase Jetlag"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-jetlag",
+    "url": "https://clawhub.ai/skills/aerobase-jetlag",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-jetlag-a73ab90bbbd9e2b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Jetlag recovery optimization - score flights, generate recovery plans, optimize travel timing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kurosh87",
+      "userId": "s172tbyj9m7964rvsde9cacb2s83yxjr",
+      "displayName": "Aerobase",
+      "image": "https://avatars.githubusercontent.com/u/95127236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 588,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "3.3.1",
+      "createdAt": 1775274269565,
+      "changelog": "Align canonical 0-100 jetlag scoring and accelerated recovery guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:832be54f37c537dc14244f568199e5a922c8c7d09630115da7aded788376fdb2"
+}

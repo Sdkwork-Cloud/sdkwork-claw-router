@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prd-to-ddd-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prd_to_ddd_design",
+  "skill": {
+    "id": 21924,
+    "skillKey": "clawhub-prd-to-ddd-design",
+    "name": "Convert natural language requirements (PRD) into AI-friendly DDD domain design documents in Markdown. Use when the user provide."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prd-to-ddd-design",
+    "url": "https://clawhub.ai/skills/prd-to-ddd-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prd-to-ddd-design-d867094298ba290f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert natural language requirements (PRD) into AI-friendly DDD domain design documents in Markdown. Use when the user provides a PRD, requirement doc, or b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qitongfire",
+      "userId": "publishers:qitongfire",
+      "displayName": "qitong",
+      "image": "https://avatars.githubusercontent.com/u/29019587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773744420772,
+      "changelog": "Initial release — convert natural language requirements (PRD) into Domain-Driven Design (DDD) documents for AI agents.\n\n- Provides a phase-based workflow: event storming, domain discovery, tactical/strategic design, ER modeling, schema mapping, logic placement, and behavior modeling.\n- Produces structured Markdown output, including Mermaid diagrams, entity relationships, database schemas, APIs, and diagrams.\n- Output tailored for direct AI implementation, guiding naming, design rules, and cross-layer contracts.\n- Includes a quality checklist for design completeness and consistency.\n- Links to supporting guides and templates for phase details and output formatting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ec835da7641394496be2f0c8cf8a58d41f0e8ec50ac8ea345c19f5c31c3f1a76"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-auto-body@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_auto_body",
+  "skill": {
+    "id": 12910,
+    "skillKey": "clawhub-book-auto-body",
+    "name": "Book Auto Body"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-auto-body",
+    "url": "https://clawhub.ai/skills/book-auto-body",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-auto-body-9b9446a2f24c08da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book auto-body services through Lokuli MCP. Use when user needs to find and book auto-body. Triggers on requests like \"book a auto-body\", \"find auto-body near me\", or any auto-body service request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1621,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770339869333,
+      "changelog": "Fixed display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:69eb3ec9ed4bc60d508ad89c31338e611638968beca1fa35a8e1032a1b35db5c"
+}

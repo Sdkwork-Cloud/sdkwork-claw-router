@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61368,
+  "uuid": "skill-clawhub-coding-agent-common",
+  "skillKey": "clawhub-coding-agent-common",
+  "name": "coding-agent-common",
+  "summary": "通用的编码代理技能，封装 Codex、Claude Code、OpenCode 等工具。 使用场景：(1) 构建/创建新功能或应用 (2) 重构大型代码库 (3) Bug 修复 (4) 代码审查 (5) 迭代式编码。 不适用于：简单的单行修改（直接用 edit），读取代码（用 read 工具）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_agent_common",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whisky",
+      "features": [
+        "通用的编码代理技能，封装 Codex、Claude Code、OpenCode 等工具。 使用场景：(1) 构建/创建新功能或应用 (2) 重构大型代码库 (3) Bug 修复 (4) 代码."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-agent-common@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34331997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-agent-common",
+      "url": "https://clawhub.ai/skills/coding-agent-common"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-agent-common",
+    "url": "https://clawhub.ai/skills/coding-agent-common",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-agent-common-7f146b402fefcc4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-agent-common@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-agent-common-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc1019f44394a821651f4f2b8d3a872571d688eb6aaafd1c689f1aa735025981",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:48:58.284Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-abuse-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_abuse_api",
+  "skill": {
+    "id": 23483,
+    "skillKey": "clawhub-lap-abuse-api",
+    "name": "Lap Abuse Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-abuse-api",
+    "url": "https://clawhub.ai/skills/lap-abuse-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-abuse-api-0e45acc68a94c4e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Abuse API skill. Use when working with Abuse for abuse. Covers 6 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774255207985,
+      "changelog": "- Added a new \"CLI\" section with example commands for updating the spec and searching related APIs.\n- No changes to API endpoints or behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5030d937047545743befaa6340359f3eddf61185a820a5d3242adb754c4e78d4"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16942,
+  "uuid": "skill-clawhub-mij-kakao-local",
+  "skillKey": "clawhub-mij-kakao-local",
+  "name": "MIJ Kakao Local API (PowerShell)",
+  "summary": "PowerShell skill for calling Kakao Local API to normalize addresses and search places with keyword, location, radius, and category filters.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mij_kakao_local",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MunInJun",
+      "features": [
+        "PowerShell skill for calling Kakao Local API to normalize addresses and search places with keyw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mij-kakao-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36357771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mij-kakao-local",
+      "url": "https://clawhub.ai/skills/mij-kakao-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mij-kakao-local",
+    "url": "https://clawhub.ai/skills/mij-kakao-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mij-kakao-local-47504b1df20bb4df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mij-kakao-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mij-kakao-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f461552aa48cfe56829a5521f79b9552d1054e16cc0f05cea3a0d10b09d3a17d",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T17:32:06.319Z"
+}

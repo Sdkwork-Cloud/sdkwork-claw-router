@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71528,
+  "uuid": "skill-clawhub-zhouyi-divination",
+  "skillKey": "clawhub-zhouyi-divination",
+  "name": "Zhouyi Divination",
+  "summary": "周易综合占卜系统 — 基于用户八字命盘，结合多种传统术数（梅花易数、马前课、六爻、奇门遁甲、紫微斗数、大六壬等）进行专业命理分析和事件占卜。每次占卜由八位专家会诊，给出理性、专业、不奉承的综合判断。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhouyi_divination",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hahacatlsq",
+      "features": [
+        "周易综合占卜系统 — 基于用户八字命盘，结合多种传统术数（梅花易数、马前课、六爻、奇门遁甲、紫微斗数、大六壬等）进行专业命理分析和事件占卜。每次占卜由八位专家会诊，给出理性、专业、不奉承的综."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhouyi-divination@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131435882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhouyi-divination",
+      "url": "https://clawhub.ai/skills/zhouyi-divination"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhouyi-divination",
+    "url": "https://clawhub.ai/skills/zhouyi-divination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhouyi-divination-4a5e16fa3d807b9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhouyi-divination@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhouyi-divination-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20eb698d479ecdd79f5ba431f269b617edb24ee7d7bdc5541f7a743d56bfb6fa",
+      "artifactSizeBytes": 2878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T11:18:26.393Z"
+}

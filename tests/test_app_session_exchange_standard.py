@@ -1,4 +1,5 @@
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -17,7 +18,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         product_api_mod = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "mod.rs"
         ).read_text(encoding="utf-8")
-        app_sdk_api_index = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "index.ts")
+        app_sdk_api_index = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "index.ts")
         session_service = (
             ROOT
             / "apps"
@@ -29,8 +30,14 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         )
 
         self.assertIn("operation: createAppSession", contract)
-        self.assertIn("api_path: /app/v3/api/auth/session", contract)
-        self.assertIn("write_tables: [iam_user_login_event]", contract)
+        self.assertIn("operation_id: sessions.create", contract)
+        self.assertIn("api_path: /app/v3/api/auth/sessions", contract)
+        self.assertIn("read_sources: [iam_user, iam_session]", contract)
+        self.assertIn("write_tables: [iam_session, iam_security_event, iam_audit_event]", contract)
+        self.assertIsNone(
+            re.search(r"(?m)^\s*api_path:\s*/app/v3/api/auth/session\s*$", contract)
+        )
+        self.assertNotIn("write_tables: [iam_user_login_event]", contract)
 
         self.assertTrue(
             (ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_session.rs").exists()
@@ -39,23 +46,38 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         app_session_api = (
             ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_session.rs"
         ).read_text(encoding="utf-8")
-        self.assertIn('"/app/v3/api/auth/session"', app_session_api)
+        app_auth_api = (
+            ROOT / "services" / "sdkwork-claw-product" / "src" / "api" / "app_auth.rs"
+        ).read_text(encoding="utf-8")
+        self.assertIn('"/app/v3/api/auth/sessions"', app_session_api)
+        self.assertNotIn('"/app/v3/api/auth/session"', app_session_api)
         self.assertIn("TrustedRequestSubject::from_headers", app_session_api)
-        self.assertIn("sign_app_session_token", app_session_api)
         self.assertIn("AppSessionEventStore", app_session_api)
-        self.assertIn("session_id_hash", app_session_api)
+        self.assertIn("create_session_bridge_response", app_session_api)
+        self.assertIn("issue_iam_session", app_session_api)
         self.assertNotIn("x-sdkwork-tenant-id", app_session_api)
+        self.assertIn('const APP_SESSION_PATH: &str = "/app/v3/api/auth/sessions";', app_auth_api)
+        self.assertIn("app_sessions_router_with_store", app_auth_api)
+        self.assertIn("sign_app_session_token", app_auth_api)
+        self.assertIn("session_id_hash", app_auth_api)
+        self.assertIn("access_token", app_auth_api)
+        self.assertIn("auth_token", app_auth_api)
+        self.assertIn("IamAppContext", app_auth_api)
 
-        self.assertIn("trusted_request_subject_boundary", app_api)
+        self.assertIn("AppSubjectBoundaryConfig::new", app_api)
         self.assertIn("SqliteAppSessionEventStore", app_api)
         self.assertIn("PostgresAppSessionEventStore", app_api)
-        self.assertIn("app_session_router_with_event_store", app_api)
+        self.assertIn("app_sessions_router(", app_api)
+        self.assertIn("app_sessions_router_with_store", app_api)
+        self.assertIn("trusted_request_subject_boundary", app_auth_api)
 
         self.assertTrue(app_sdk_api_index.exists())
         self.assertTrue(session_service.exists())
         session_source = session_service.read_text(encoding="utf-8")
-        self.assertIn("@sdkwork/clawrouter-app-sdk", session_source)
+        self.assertIn("getClawRouterAppSdkClient", session_source)
+        self.assertIn(".auth.sessions.create", session_source)
         self.assertIn("createAppSession", session_source)
+        self.assertIn("grantType: 'session_bridge'", session_source)
         self.assertNotIn("fetch(", session_source)
         self.assertNotIn("axios", session_source)
 
@@ -81,15 +103,25 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("storeAppSessionFromResult", session_service)
         self.assertIn("resetClawRouterSdkClients()", session_service)
         self.assertIn("const stored = storeAppSessionFromResult(result);", session_service)
-        self.assertIn("code: '2000'", session_service)
+        self.assertIn("type StoredAppSessionToken", session_service)
+        self.assertIn("): Promise<StoredAppSessionToken>", session_service)
+        self.assertIn("return stored;", session_service)
+        self.assertNotIn("code: '2000'", session_service)
         self.assertNotIn("result.code === '2000'", session_service)
-        self.assertIn("getStoredAppSessionToken", sdk_clients)
-        self.assertIn("appClientSessionToken", sdk_clients)
-        self.assertIn("backendClientSessionToken", sdk_clients)
-        self.assertIn("const sessionToken = getStoredAppSessionToken();", sdk_clients)
-        self.assertIn("appClientSessionToken !== sessionToken", sdk_clients)
-        self.assertIn("backendClientSessionToken !== sessionToken", sdk_clients)
-        self.assertIn("authToken: options.authToken ?? getStoredAppSessionToken()", sdk_clients)
+        self.assertIn("getStoredAppSessionAuthToken", sdk_clients)
+        self.assertIn("getStoredAppSessionAccessToken", sdk_clients)
+        self.assertIn("appClientSessionKey", sdk_clients)
+        self.assertIn("backendClientSessionKey", sdk_clients)
+        self.assertIn("const authToken = getStoredAppSessionAuthToken();", sdk_clients)
+        self.assertIn("const accessToken = getStoredAppSessionAccessToken();", sdk_clients)
+        self.assertIn("const sessionKey = createSessionKey(authToken, accessToken);", sdk_clients)
+        self.assertIn("appClientSessionKey !== sessionKey", sdk_clients)
+        self.assertIn("backendClientSessionKey !== sessionKey", sdk_clients)
+        self.assertIn("createSessionKey(authToken: string | undefined, accessToken: string | undefined)", sdk_clients)
+        self.assertIn("authToken: options.authToken ?? getStoredAppSessionAuthToken()", sdk_clients)
+        self.assertIn("accessToken: options.accessToken ?? getStoredAppSessionAccessToken()", sdk_clients)
+        self.assertIn("authToken?: string;", sdk_clients)
+        self.assertIn("accessToken?: string;", sdk_clients)
         self.assertIn("?? APP_API_PREFIX", sdk_clients)
         self.assertIn("?? BACKEND_API_PREFIX", sdk_clients)
         self.assertNotIn("?? API_BASE_URL", sdk_clients)
@@ -108,7 +140,6 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertNotIn("Authorization", session_service)
         self.assertNotIn("Authorization", sdk_clients)
         self.assertNotIn("apiKey?:", sdk_clients)
-        self.assertNotIn("accessToken?:", sdk_clients)
         self.assertNotIn("headers?:", sdk_clients)
         self.assertIn("const DEFAULT_API_BASE_URL = '/v1';", env_source)
         self.assertNotIn("api.sdkwork.com", env_source)
@@ -163,9 +194,27 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
             / "components"
             / "ApiPlayground.tsx"
         ).read_text(encoding="utf-8")
+        playground_request = (
+            ROOT
+            / "apps"
+            / "sdkwork-claw-router-portal"
+            / "packages"
+            / "sdkwork-claw-router-api-reference"
+            / "src"
+            / "playgroundRequest.ts"
+        ).read_text(encoding="utf-8")
 
-        self.assertIn("getStoredAppSessionToken", playground)
-        self.assertIn("const sessionToken = getStoredAppSessionToken();", playground)
+        self.assertIn("getStoredAppSessionAuthToken", playground)
+        self.assertIn("getStoredAppSessionAccessToken", playground)
+        self.assertIn("const authToken = getStoredAppSessionAuthToken();", playground)
+        self.assertIn("const accessToken = getStoredAppSessionAccessToken();", playground)
+        self.assertIn("authToken,", playground)
+        self.assertIn("accessToken,", playground)
+        self.assertIn("'access-token'", playground_request)
+        self.assertIn("'sdkwork-access-token'", playground_request)
+        self.assertIn("headers.Authorization = `Bearer ${input.authToken.trim()}`", playground_request)
+        self.assertIn("headers['Sdkwork-Access-Token'] = input.accessToken.trim();", playground_request)
+        self.assertNotIn("headers['Access-Token'] = input.accessToken.trim();", playground_request)
         self.assertNotIn("localStorage.getItem('access_token')", playground)
         self.assertNotIn('localStorage.getItem("access_token")', playground)
         self.assertNotIn("localStorage.getItem('token')", playground)
@@ -182,6 +231,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         )
         session_service = (commons_root / "sessionService.ts").read_text(encoding="utf-8")
         navbar = (commons_root / "components" / "Navbar.tsx").read_text(encoding="utf-8")
+        portal_auth = (commons_root / "portal-auth.ts").read_text(encoding="utf-8")
         auth_controller = (
             ROOT
             / "apps"
@@ -211,13 +261,20 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertIn("clearAppSession", session_service)
         self.assertIn("clearStoredAppSessionToken()", session_service)
         self.assertIn("resetClawRouterSdkClients()", session_service)
-        self.assertIn("createAppSession", auth_controller)
-        self.assertIn("signInWithSessionBridge: createSessionBridgeSession", auth_controller)
-        self.assertIn("loginMethods: ['sessionBridge']", auth_routes)
+        self.assertIn("createSdkworkIamRuntimeAuthController", auth_controller)
+        self.assertIn("getRuntime: getClawRouterIamRuntime", auth_controller)
+        self.assertIn("SdkworkIamAuthRoutes", auth_routes)
+        self.assertIn("getRuntime={getClawRouterIamRuntime}", auth_routes)
+        self.assertIn("methodUnavailableMessage={AUTH_METHOD_UNAVAILABLE_MESSAGE}", auth_routes)
+        self.assertIn("loginMethods: ['password', 'emailCode', 'phoneCode', 'sessionBridge']", auth_routes)
+        self.assertNotIn("getClawRouterIamRuntime().service.auth.sessions.create", auth_controller)
+        self.assertNotIn("signInWithSessionBridge: createSessionBridgeSession", auth_controller)
+        self.assertNotIn("controller={clawRouterAuthController}", auth_routes)
         self.assertIn("handleSignIn", navbar)
         self.assertNotIn("createAppSession", navbar)
         self.assertNotIn("result.code === '2000'", navbar)
-        self.assertIn("navigate('/auth/login?redirect=/console')", navbar)
+        self.assertIn("buildPortalAuthLoginRedirect(location)", navbar)
+        self.assertIn("encodeURIComponent(returnPath)", portal_auth)
         self.assertIn("onClick={handleSignIn}", navbar)
         self.assertIn("clearAppSession", console_layout)
         self.assertIn("handleLogout", console_layout)
@@ -255,13 +312,17 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
             / "Navbar.tsx"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("createSessionBridgeSession", auth_controller)
-        self.assertIn("throw new Error('Claw Router session bridge did not return a reusable app session.')", auth_controller)
+        self.assertIn("createSdkworkIamRuntimeAuthController", auth_controller)
+        self.assertIn("AUTH_METHOD_UNAVAILABLE_MESSAGE", auth_routes)
+        self.assertIn("SdkworkIamAuthRoutes", auth_routes)
+        self.assertNotIn("createSessionBridgeSession", auth_controller)
+        self.assertNotIn("storeAppSessionFromResult(session)", auth_controller)
+        self.assertNotIn("throw new Error('Claw Router app session is not available.')", auth_controller)
         self.assertIn("homePath=\"/console\"", auth_routes)
-        self.assertIn("controller={clawRouterAuthController}", auth_routes)
-        self.assertIn("loginMethods: ['sessionBridge']", auth_routes)
+        self.assertIn("getRuntime={getClawRouterIamRuntime}", auth_routes)
+        self.assertIn("loginMethods: ['password', 'emailCode', 'phoneCode', 'sessionBridge']", auth_routes)
         self.assertIn("onClick={handleSignIn}", navbar)
-        self.assertIn("navigate('/auth/login?redirect=/console')", navbar)
+        self.assertIn("buildPortalAuthLoginRedirect(location)", navbar)
         self.assertNotIn("sessionBootstrapLoading", navbar)
         self.assertNotIn("SESSION_BOOTSTRAP_ERROR_MESSAGE", navbar)
         self.assertNotIn("error.message", navbar)
@@ -285,7 +346,7 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
             )
         )
         app_sdk_auth = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "auth.ts"
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "auth.ts"
         ).read_text(encoding="utf-8")
         session_service = (
             ROOT
@@ -298,16 +359,17 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("operation: createAppSession", contract)
+        self.assertIn("operation_id: sessions.create", contract)
         self.assertIn("request_id_header: true", contract)
 
         operations = {
-            operation["operation"]: operation
+            operation["operation_id"]: operation
             for operation in manifest["operations"]
             if operation["source"].endswith("sessionService.ts")
         }
-        self.assertTrue(operations["createAppSession"]["request_id_header"])
+        self.assertTrue(operations["sessions.create"]["request_id_header"])
 
-        parameters = openapi["paths"]["/app/v3/api/auth/session"]["post"]["parameters"]
+        parameters = openapi["paths"]["/app/v3/api/auth/sessions"]["post"]["parameters"]
         request_id_params = [
             parameter for parameter in parameters if parameter["name"] == "X-Request-Id"
         ]
@@ -317,13 +379,16 @@ class AppSessionExchangeStandardTest(unittest.TestCase):
         self.assertEqual(1, len(request_id_params))
         self.assertFalse(request_id_params[0]["required"])
         self.assertEqual([], idempotency_params)
+        self.assertNotIn("/app/v3/api/auth/session", openapi["paths"])
 
         self.assertIn(
-            "createAppSession(body?: OperationRequest, xRequestId?: string)",
+            "async create(body: IamSessionCreateRequest, params?: AuthSessionsCreateParams): Promise<SessionsCreateResult>",
             app_sdk_auth,
         )
-        self.assertIn("createRequestToken('app-session')", session_service)
-        self.assertIn("auth.createAppSession(undefined, requestId)", session_service)
+        self.assertIn("params?.xRequestId", app_sdk_auth)
+        self.assertIn("createRequestParams('app-session')", session_service)
+        self.assertIn(".auth.sessions.create(", session_service)
+        self.assertIn("grantType: 'session_bridge'", session_service)
 
 
 if __name__ == "__main__":

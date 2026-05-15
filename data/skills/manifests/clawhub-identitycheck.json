@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32179,
+  "uuid": "skill-clawhub-identitycheck",
+  "skillKey": "clawhub-identitycheck",
+  "name": "Identitycheck",
+  "summary": "IdentityCheck integration. Manage Users, Roles, Organizations, Persons, Leads, Deals and more. Use when the user wants to interact with IdentityCheck data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.identitycheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "IdentityCheck integration",
+        "Manage Users, Roles, Organizations, Persons, Leads, Deals and more",
+        "Use when the user wants to interact with IdentityCheck data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/identitycheck@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "identitycheck",
+      "url": "https://clawhub.ai/skills/identitycheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "identitycheck",
+    "url": "https://clawhub.ai/skills/identitycheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/identitycheck-3613233f9cc74ddd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/identitycheck@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-identitycheck-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bda8a967f9d95857ef5e98e48f01d49cc5fa916254444de48c8a8084182ada06",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:34:40.498Z"
+}

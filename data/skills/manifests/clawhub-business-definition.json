@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31382,
+  "uuid": "skill-clawhub-business-definition",
+  "skillKey": "clawhub-business-definition",
+  "name": "Business Definition",
+  "summary": "Determine unified vs separated business entities. Use for portfolio management, strategic planning, and restructuring decisions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_definition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Determine unified vs separated business entities",
+        "Use for portfolio management, strategic planning, and restructuring decisions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-definition@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-definition",
+      "url": "https://clawhub.ai/skills/business-definition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-definition",
+    "url": "https://clawhub.ai/skills/business-definition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-definition-1684e7efd3a0cf1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-definition@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-definition-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d998d6f3e5dfa15c9f0e2de67b3b4008ecb6a50a8c0f447b39b3ba33e83e2da",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:23:10.465Z"
+}

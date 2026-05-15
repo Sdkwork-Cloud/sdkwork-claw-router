@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltycash@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltycash",
+  "skill": {
+    "id": 15105,
+    "skillKey": "clawhub-moltycash",
+    "name": "moltycash"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltycash",
+    "url": "https://clawhub.ai/skills/moltycash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltycash-43495ccf499b8a89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send USDC to molty users via A2A protocol. Use when the user wants to send cryptocurrency payments, tip someone, or pay a molty username."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xsnackbaker",
+      "userId": "publishers:0xsnackbaker",
+      "displayName": "0xsnackbaker",
+      "image": "https://avatars.githubusercontent.com/u/242259318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1049,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770923230845,
+      "changelog": "Major update with simplified CLI usage and documentation.\n\n- Adds direct CLI usage with `npx moltycash send <molty_name> <amount> [--network]`\n- Simplifies payment formats and instructions for Base and Solana networks\n- Updates protocol reference to A2A and streamlines verified sender setup\n- Removes API and code example sections, focusing on command-line workflow\n- Clarifies required environment variables and their usage\n- Updates security best practices and resource links",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b001c02791be8cf33e4e4946a0ee1e8ce5b1428fbee14a9b5dc64f9fba9c48b6"
+}

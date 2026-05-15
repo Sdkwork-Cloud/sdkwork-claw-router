@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "fund-buying-decision",
+    "displayName": "Fund Buying Decision Pro",
+    "summary": "Parameterize and apply a Chinese mutual-fund buy, add, reduce, or hold strategy driven by price drawdown, recurring DCA, cash-pool management, and position l...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775037863179,
+    "updatedAt": 1777527021391
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775037863179,
+    "changelog": "Initial release: Implements a parameterized Chinese mutual fund trading strategy with clear configuration boundaries and decision workflow.\n\n- Defines flexible buy, add, reduce, or hold rules based on price drawdown, DCA, cash management, and position limits.\n- All strategy rules and thresholds centralized in SKILL.md under editable and fixed parameter groups.\n- Provides explicit daily decision outputs (`buy_dca`, `buy_dip`, `sell_take_profit`, `hold`, `skip_data_missing`).\n- Separates live strategy state (in SQLite) from configuration (in SKILL.md).\n- Documents required runtime inputs and strategy application workflow.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "seanmwx",
+    "userId": "s172p33xvek7whzrfrhyrh33cn83tbn0",
+    "displayName": "Xinhai Zou",
+    "image": "https://avatars.githubusercontent.com/u/69373538?v=4"
+  },
+  "moderation": null
+}

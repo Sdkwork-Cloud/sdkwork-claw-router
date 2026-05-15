@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pregnancy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pregnancy",
+  "skill": {
+    "id": 24281,
+    "skillKey": "clawhub-pregnancy",
+    "name": "Pregnancy (Tracker, Journal, Triage, Visit Prep)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pregnancy",
+    "url": "https://clawhub.ai/skills/pregnancy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pregnancy-f1d6a553546aa7a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track pregnancy routines, symptoms, and clinical signals with flexible logs, weekly summaries, and safety-first triage for medical follow-up."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772536919746,
+      "changelog": "Initial release with flexible pregnancy tracking modules, clinician-ready weekly summaries, and safety triage guardrails.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8fdb85c587c8af1942ec1c2c4f06424d18fa0417db45b2f0bbf7dfa194f0c161"
+}

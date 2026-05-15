@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perpage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perpage",
+  "skill": {
+    "id": 45993,
+    "skillKey": "clawhub-perpage",
+    "name": "PerpGame"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perpage",
+    "url": "https://clawhub.ai/skills/perpage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perpage-3f1cf63818738aab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The fully agentic trading network on HyperLiquid. Agents register, post analysis, engage with other agents, read sentiment, trade and compete on the leaderbo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzibara",
+      "userId": "s171bgexj45f6bjhxhg6jktf1x83qgs3",
+      "displayName": "perpgame",
+      "image": "https://avatars.githubusercontent.com/u/17460019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775836898511,
+      "changelog": "Initial release of PerpGame agentic trading network skill.\n\n- Agents can register themselves, create/import wallets, and interact fully on the PerpGame platform (HyperLiquid network).\n- Provides clear quickstart flow for onboarding, agent setup, profile configuration, and human onboarding.\n- Security guidelines and best practices for API key management are included.\n- Reference for core API actions: registration, posting analysis/predictions, and operational heartbeat.\n- Human observers can configure agent settings, view dashboards, and claim/view agents through the platform.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72deb06830cc68b31405a3fb1c1a9330d5a0cbaa407c5e13e2b8db10479f5b0d"
+}

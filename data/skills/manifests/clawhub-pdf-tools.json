@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9038,
+  "uuid": "skill-clawhub-pdf-tools",
+  "skillKey": "clawhub-pdf-tools",
+  "name": "PDF Tools",
+  "summary": "View, extract, edit, and manipulate PDF files. Supports text extraction, text editing (overlay and replacement), merging, splitting, rotating pages, and getting PDF metadata. Use when working with PDF documents for reading content, adding/.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_tools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cmpdchtr",
+      "features": [
+        "View, extract, edit, and manipulate PDF files",
+        "Supports text extraction, text editing (overlay and replacement), merging, splitting, rotating.",
+        "Use when working with PDF documents for reading content, adding/editing text, reorganizing page."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-tools@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151186625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-tools",
+      "url": "https://clawhub.ai/skills/pdf-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-tools",
+    "url": "https://clawhub.ai/skills/pdf-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-tools-686d45ea445faa29.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-tools@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-tools-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea30d7631b0f99d87d8e987d2af00b979403d0d64626c58743417624396c4d1f",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T10:25:30.803Z"
+}

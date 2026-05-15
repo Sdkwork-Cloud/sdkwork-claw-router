@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26858,
+  "uuid": "skill-clawhub-ollama-load-balancer",
+  "skillKey": "clawhub-ollama-load-balancer",
+  "name": "Ollama Load Balancer",
+  "summary": "Ollama load balancer for Llama, Qwen, DeepSeek, and Mistral inference across multiple machines. Load balancing with auto-discovery via mDNS, health checks, q...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama_load_balancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Ollama load balancer for Llama, Qwen, DeepSeek, and Mistral inference across multiple machines",
+        "Load balancing with auto-discovery via mDNS, health checks, q..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama-load-balancer@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama-load-balancer",
+      "url": "https://clawhub.ai/skills/ollama-load-balancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama-load-balancer",
+    "url": "https://clawhub.ai/skills/ollama-load-balancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-load-balancer-9607efc6985ae3f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama-load-balancer@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-load-balancer-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f8a6b40fa83b61e511348aea1a4a3d7474d02305e4c0235271f909fb201db31",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:32.073Z"
+}

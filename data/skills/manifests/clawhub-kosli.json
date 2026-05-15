@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35486,
+  "uuid": "skill-clawhub-kosli",
+  "skillKey": "clawhub-kosli",
+  "name": "Kosli",
+  "summary": "Kosli integration. Manage data, records, and automate workflows. Use when the user wants to interact with Kosli data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kosli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Kosli integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Kosli data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kosli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kosli",
+      "url": "https://clawhub.ai/skills/kosli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kosli",
+    "url": "https://clawhub.ai/skills/kosli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kosli-f2113973728a2f8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kosli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kosli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2e63b6bcc7d759997cabb0faef5ce80257d2da810a2f7750d5fa63513d1483d",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:04:58.652Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/db-readonly@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_readonly",
+  "skill": {
+    "id": 13061,
+    "skillKey": "clawhub-db-readonly",
+    "name": "DB Readonly"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-readonly",
+    "url": "https://clawhub.ai/skills/db-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-readonly-4a19857c5d73f559.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run safe read-only queries against MySQL or PostgreSQL for data inspection, reporting, and troubleshooting. Use when the user asks to read tables, inspect schema, count rows, sample data, or export query results without modifying data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reed1898",
+      "userId": "s17053w3a6c09bkqzkan106kp1843wcx",
+      "displayName": "Reed",
+      "image": "https://avatars.githubusercontent.com/u/129141816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1550,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770692551392,
+      "changelog": "Initial release: safe read-only SQL runner for MySQL/Postgres.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:742409c5ef0e0d3cf16a0dc33d30165768260e4801473bff6670b97f87f8206a"
+}

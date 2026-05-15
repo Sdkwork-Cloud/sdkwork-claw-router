@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65529,
+  "uuid": "skill-clawhub-douyin-scraper",
+  "skillKey": "clawhub-douyin-scraper",
+  "name": "douyin-scraper",
+  "summary": "抖音图文笔记采集工具。搜索关键词 → 自动筛选「图文·一周内」→ Playwright 截图（绕过反爬虫）→ Baidu OCR 识别图片文字 → 输出 Markdown 报告（含热度评分）。当用户提到\"抖音图文采集\"、\"抖音笔记抓取\"、\"抖音爬虫\"、\"抖音内容采集\"等场景时加载此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sam Cheng",
+      "features": [
+        "抖音图文笔记采集工具。搜索关键词 → 自动筛选「图文·一周内」→ Playwright 截图（绕过反爬虫）→ Baidu OCR 识别图片文字 → 输出 Markdown 报告（含热度评分）."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33610748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-scraper",
+      "url": "https://clawhub.ai/skills/douyin-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-scraper",
+    "url": "https://clawhub.ai/skills/douyin-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-scraper-65da7c9eda4d7206.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c17746b8511d4b64611534b28297504e667873082e83970c3740cdfab337129a",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:58:21.097Z"
+}

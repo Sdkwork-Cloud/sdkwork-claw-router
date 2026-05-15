@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delonix-web-intelligence@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delonix_web_intelligence",
+  "skill": {
+    "id": 67782,
+    "skillKey": "clawhub-delonix-web-intelligence",
+    "name": "德胧外网舆情采集工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delonix-web-intelligence",
+    "url": "https://clawhub.ai/skills/delonix-web-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delonix-web-intelligence-11e60509202ba26f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "德胧AI龙虾军团外网信息舆情采集工具 v1.0。整合 miaoda-web-search（网页搜索摘要）+ AutoCLI（50+平台深度采集）+ 飞书卡片推送 + 定时自动化。 触发词：舆情、情报、网情、监控、搜索、行业动态、竞争对手动态、竞品分析、外网信息采集 使用场景： - 酒店行业舆情监控（华住/锦江/亚..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoliuzhu",
+      "userId": "s17e38390rnhxjtv52ft6b44cx84s4n1",
+      "displayName": "Chaoliuzhu",
+      "image": "https://avatars.githubusercontent.com/u/207801254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776672972718,
+      "changelog": "优化搜索逻辑，新增平台覆盖",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7255a83e286e0d843280f93f07174ba7f8955e680cb36f5965c74063c0c60e0c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9588,
+  "uuid": "skill-clawhub-apple-media",
+  "skillKey": "clawhub-apple-media",
+  "name": "Apple Media Remote (for HomePod, Apple TV, etc)",
+  "summary": "Control Apple TV, HomePod, and AirPlay devices via pyatv (scan, stream, playback, volume, navigation).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_media",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aaronn",
+      "features": [
+        "Control Apple TV, HomePod, and AirPlay devices via pyatv (scan, stream, playback, volume, navig."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-media@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1653630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-media",
+      "url": "https://clawhub.ai/skills/apple-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-media",
+    "url": "https://clawhub.ai/skills/apple-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-media-5953a9cf2b91a630.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-media@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-media-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d754dea1f3260f38d866b94df369fb986fb1b4e27bcef3aea310af73295568fb",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T18:03:42.978Z"
+}

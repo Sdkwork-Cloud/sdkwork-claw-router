@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27036,
+  "uuid": "skill-clawhub-feishu-work-review-timemachine",
+  "skillKey": "clawhub-feishu-work-review-timemachine",
+  "name": "work-review-timemachine for feishu",
+  "summary": "Summarize a user's recent Feishu work into a concise weekly review or \"time machine\" recap by reading Feishu docs, meeting notes, and related materials, then...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_work_review_timemachine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangLei",
+      "features": [
+        "Summarize a user's recent Feishu work into a concise weekly review or \"time machine\" recap by r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-work-review-timemachine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5763301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-work-review-timemachine",
+      "url": "https://clawhub.ai/skills/feishu-work-review-timemachine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-work-review-timemachine",
+    "url": "https://clawhub.ai/skills/feishu-work-review-timemachine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-work-review-timemachine-2d8e416d3e8fa4e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-work-review-timemachine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-work-review-timemachine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:116d53ce26a96cd7b4aaa0c01366e5111497ceacd1f9eb7f841ca6112abfeaea",
+      "artifactSizeBytes": 2612
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:43:45.342Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11629,
+  "uuid": "skill-clawhub-ralph-loop-writer",
+  "skillKey": "clawhub-ralph-loop-writer",
+  "name": "Writes ralph loops for you that you can copy and paste",
+  "summary": "Generate ready-to-run shell loop commands for Claude Code, Gemini CLI, or Grok CLI, customized by AI tool, model, shell, complexity, and loop features.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ralph_loop_writer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Walkamolee",
+      "features": [
+        "Generate ready-to-run shell loop commands for Claude Code, Gemini CLI, or Grok CLI, customized."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ralph-loop-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197539333?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ralph-loop-writer",
+      "url": "https://clawhub.ai/skills/ralph-loop-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ralph-loop-writer",
+    "url": "https://clawhub.ai/skills/ralph-loop-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ralph-loop-writer-85b2ec645cf9ce15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ralph-loop-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ralph-loop-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:147bc2cf5f7d535c01be32fc6b2b0ca701236cfe3d9889ac8259c30a99d3124a",
+      "artifactSizeBytes": 2464
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T15:19:27.130Z"
+}

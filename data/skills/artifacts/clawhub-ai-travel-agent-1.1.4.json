@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-travel-agent@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_travel_agent",
+  "skill": {
+    "id": 51748,
+    "skillKey": "clawhub-ai-travel-agent",
+    "name": "AI Travel Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-travel-agent",
+    "url": "https://clawhub.ai/skills/ai-travel-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-travel-agent-4b4fa16215cc085f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal travel planning assistant. Requires a SerpAPI key (stored in ~/.serpapi_credentials). Searches real flights and hotels via Google (SerpAPI), checks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "floogles",
+      "userId": "s178ay3mt8qarhd84pvnsbk1dn83gq0r",
+      "displayName": "Floogles",
+      "image": "https://avatars.githubusercontent.com/u/114444239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1774478799220,
+      "changelog": "Fix: add clawdbot metadata block with requires.env and configPaths so ClawHub registry correctly reports SERPAPI_KEY credential requirement (was showing none)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:523b9ed3f8aa2cb169fae2cbd7aa8ac75e19ce44031c4693d80cffa651840405"
+}

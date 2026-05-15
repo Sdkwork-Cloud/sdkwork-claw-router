@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toutiao-auto-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_auto_publish",
+  "skill": {
+    "id": 67268,
+    "skillKey": "clawhub-toutiao-auto-publish",
+    "name": "toutiaoAutoPublish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-auto-publish",
+    "url": "https://clawhub.ai/skills/toutiao-auto-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-auto-publish-0f2e203ef3bd6b54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "今日头条微头条自动发布工具。自动发布短内容到今日头条平台，支持文本和图片。 使用场景：(1) 用户说\"发布头条\"、\"发微头条\"、\"头条发布\"时触发 (2) 需要自动发布社交媒体内容时 (3) 需要定时发布今日头条时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devilsbibble",
+      "userId": "s17cmm2hz0j740y85d56cgm6fx83k1ea",
+      "displayName": "devilsbibble",
+      "image": "https://avatars.githubusercontent.com/u/1435812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 937,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773110466902,
+      "changelog": "publish jinri toutiao news use browser agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1718c5d104b8034f15523a39ce42918af1ce37994f2bb8c64879d4c03e1c7b0a"
+}

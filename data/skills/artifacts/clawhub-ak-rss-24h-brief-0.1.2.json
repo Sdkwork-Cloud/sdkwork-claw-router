@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ak-rss-24h-brief@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ak_rss_24h_brief",
+  "skill": {
+    "id": 17194,
+    "skillKey": "clawhub-ak-rss-24h-brief",
+    "name": "AK RSS 24h Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ak-rss-24h-brief",
+    "url": "https://clawhub.ai/skills/ak-rss-24h-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ak-rss-24h-brief-37c2d4b95c225feb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read RSS/Atom feeds from an OPML list, fetch articles from the last N hours, and generate a Chinese categorized brief. Use for requests like “generate a 24-h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seandong",
+      "userId": "publishers:seandong",
+      "displayName": "seandong",
+      "image": "https://avatars.githubusercontent.com/u/758427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1201,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771834786364,
+      "changelog": "Update skill description with RSS list attribution to Andrej Karpathy and source post link.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11707152ae02b549d4da567830cfe8a51f559f592b017565c7f925bb8fc3a116"
+}

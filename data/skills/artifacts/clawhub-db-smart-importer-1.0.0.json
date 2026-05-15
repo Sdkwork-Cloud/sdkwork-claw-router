@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/db-smart-importer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_smart_importer",
+  "skill": {
+    "id": 38763,
+    "skillKey": "clawhub-db-smart-importer",
+    "name": "DB Smart Import"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-smart-importer",
+    "url": "https://clawhub.ai/skills/db-smart-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-smart-importer-4e0e830fed2c3bc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent database import from .csv and .sql dumps into MySQL, MariaDB, and SQLite. Analyzes schemas, parses SQL dumps, suggests column mappings based on c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarbcs1-prog",
+      "userId": "s171ehkfjstgzfdvr75dms5t5d84hekx",
+      "displayName": "jarbcs1-prog",
+      "image": "https://avatars.githubusercontent.com/u/239288927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775693927611,
+      "changelog": "Initial release of db-smart-importer: import CSV and SQL dumps into MySQL, MariaDB, and SQLite with smart schema analysis and column mapping.\n\n- Import data from CSV and .sql files into MySQL, MariaDB, or SQLite databases.\n- Analyze source and destination schemas for informed mapping.\n- Suggest column mappings using content-based pattern matching.\n- Support data migration and SQL dump parsing workflows.\n- Scripts for schema analysis, mapping suggestions, and executing imports included.\n- Strongly emphasizes user review of mappings and database backup before changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db90e416b4fc1b6ee055c7aa009c03bdb6d072269c6b5f2f457d1f1bf670c2e1"
+}

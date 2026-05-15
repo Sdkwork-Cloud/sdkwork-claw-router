@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-lens@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_lens",
+  "skill": {
+    "id": 49300,
+    "skillKey": "clawhub-agent-lens",
+    "name": "Agent Lens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-lens",
+    "url": "https://clawhub.ai/skills/agent-lens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-lens-efcb3670e5e924f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track AI agent API calls, analyze token usage, and optimize costs. Use when user wants to monitor LLM spending, debug API calls, track token consumption, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lrg913427-dot",
+      "userId": "s175nn6ap9fe4ne23bws9svzm185ywrq",
+      "displayName": "lrg913427-dot",
+      "image": "https://avatars.githubusercontent.com/u/279154854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1778320944339,
+      "changelog": "No changes in this release; version bump only.\n\n- No file or documentation changes detected.\n- Safe to upgrade without impact on functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff73209ebd5e7691f8566fe028ecf9685164fdcd0c0c6aeb80bbfdafac97f371"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-product-photography@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_product_photography",
+  "skill": {
+    "id": 11167,
+    "skillKey": "clawhub-ai-product-photography",
+    "name": "Ai Product Photography"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-product-photography",
+    "url": "https://clawhub.ai/skills/ai-product-photography",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-product-photography-b460c2a72eed61e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional AI product photography and commercial images. Models: FLUX, Imagen 3, Grok, Seedream for product shots, lifestyle images, mockups. Capa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2179,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403023457,
+      "changelog": "- Added comprehensive usage guide and documentation in SKILL.md.\n- Included quick start instructions and installation notes for inference.sh CLI.\n- Listed supported models and their best uses for product photography.\n- Provided sample prompts and templates for various product categories, styles, and lighting techniques.\n- Documented batch generation and post-processing workflows.\n- Shared best practices and related skills for enhanced product image creation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1ae313148b50298cf20610f4df2dc9639e3e33e0c11f016e05e53e0834dc78a1"
+}

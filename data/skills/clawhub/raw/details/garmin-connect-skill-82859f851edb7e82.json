@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "garmin-connect-skill",
+    "displayName": "garmin-connect-skill",
+    "summary": "Garmin Connect integration for OpenClaw: sync fitness data (steps, HR, calories, workouts, sleep) using OAuth. Supports China (garmin.cn) and Global (garmin....",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774651487954,
+    "updatedAt": 1777624375371
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774651487954,
+    "changelog": "Garmin Connect skill 1.0.0 – Major architecture and data upgrade\n\n- Introduces unified SQLite database for all Garmin data, enabling much faster access.\n- Supports 3 sync triggers: automatic (hourly), on-demand, and manual.\n- Expands daily metrics schema from 26 to 58 fields, supporting Body Battery, HRV, VO2 Max, and more.\n- Adds dedicated time-series tables (e.g., heart rate, body battery curves) and advanced workout metrics.\n- Greatly improves data completeness and fixes key bugs (e.g., accurate Body Battery values).\n- Compatible with both China (garmin.cn) and Global (garmin.com) accounts, supporting OpenClaw and web frontends.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "tcyxk",
+    "userId": "s174eqg8qwh5t1hpeg18sg7sed83hwyq",
+    "displayName": "tcyxk",
+    "image": "https://avatars.githubusercontent.com/u/129282805?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624375371
+  }
+}

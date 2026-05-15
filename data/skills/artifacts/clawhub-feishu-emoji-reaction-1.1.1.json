@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-emoji-reaction@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_emoji_reaction",
+  "skill": {
+    "id": 69681,
+    "skillKey": "clawhub-feishu-emoji-reaction",
+    "name": "飞书表情回复"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-emoji-reaction",
+    "url": "https://clawhub.ai/skills/feishu-emoji-reaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-emoji-reaction-0a0888c959603a34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让 Agent 学会用飞书表情回复：主动表达情绪、读懂用户 reaction 并回应、自学新表情。包含静默判断（什么时候该回、什么时候闭嘴）、文化语境（SMILE=呵呵、OnIt=在做了）、自学习闭环。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chargiie",
+      "userId": "s170znnbw2awq26592n1vz4kkx83nyq7",
+      "displayName": "Chargiie",
+      "image": "https://avatars.githubusercontent.com/u/125421337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775033793882,
+      "changelog": "修复：message_id 必须去掉 :reaction: 后缀再调 API，否则飞书返回 400",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ac7e4c941f71585d35d3a9af111c3d556b441d685daa2df863876323b8079c6"
+}

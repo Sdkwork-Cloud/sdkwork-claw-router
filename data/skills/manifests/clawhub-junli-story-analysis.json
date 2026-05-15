@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71764,
+  "uuid": "skill-clawhub-junli-story-analysis",
+  "skillKey": "clawhub-junli-story-analysis",
+  "name": "君黎AI拆书",
+  "summary": "君黎AI拆书。用于用户提供本地 `.txt` 小说绝对路径，希望把一部长篇网络小说拆成可复用的创作参考包，而不是剧情报告或文学赏析。固定产出为 `1 份书籍画像 + 6 张方法卡 + 若干案例卡`，用于后续写作参考与案例检索。更多信息关注作者，抖音君黎。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.junli_story_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "君黎",
+      "features": [
+        "君黎AI拆书。用于用户提供本地 `.txt` 小说绝对路径，希望把一部长篇网络小说拆成可复用的创作参考包，而不是剧情报告或文学赏析。固定产出为 `1 份书籍画像 + 6 张方法卡 + 若干案."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/junli-story-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20735077?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "junli-story-analysis",
+      "url": "https://clawhub.ai/skills/junli-story-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "junli-story-analysis",
+    "url": "https://clawhub.ai/skills/junli-story-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/junli-story-analysis-990f87cf80d6b2d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/junli-story-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-junli-story-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e12e97b7cc74c751d1780df7ad3a3fbac74bca33ed62b110221486ae5629a743",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:17:04.377Z"
+}

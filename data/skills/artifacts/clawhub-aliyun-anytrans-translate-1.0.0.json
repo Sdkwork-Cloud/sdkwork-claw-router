@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-anytrans-translate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_anytrans_translate",
+  "skill": {
+    "id": 41089,
+    "skillKey": "clawhub-aliyun-anytrans-translate",
+    "name": "Aliyun Anytrans Translate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-anytrans-translate",
+    "url": "https://clawhub.ai/skills/aliyun-anytrans-translate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-anytrans-translate-c008ac4af1482166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Alibaba Cloud TongyiTranslate (AnyTrans) via OpenAPI/SDK, including the user needs translation service resource operations in Alibaba Cloud..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775069977861,
+      "changelog": "Initial release of aliyun-anytrans-translate skill.\n\n- Provides guidance for managing Alibaba Cloud TongyiTranslate (AnyTrans) resources via OpenAPI and SDK.\n- Documents workflow for listing, creating, updating, and troubleshooting translation service resources.\n- Describes required access key setup, API discovery methods, and evidence handling.\n- Includes validation steps and prerequisites for secure and reproducible use.\n- Outputs all artifacts and response summaries to a dedicated directory for traceability.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94152a4f557e3975ce5df892b4f5a6ea498e916dc0a700ff7cffeb342af5172d"
+}

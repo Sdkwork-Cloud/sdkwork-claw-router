@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38131,
+  "uuid": "skill-clawhub-banked",
+  "skillKey": "clawhub-banked",
+  "name": "Banked",
+  "summary": "Banked integration. Manage data, records, and automate workflows. Use when the user wants to interact with Banked data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banked",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Banked integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Banked data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/banked@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "banked",
+      "url": "https://clawhub.ai/skills/banked"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banked",
+    "url": "https://clawhub.ai/skills/banked",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banked-f1e53b902d342070.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/banked@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-banked-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3143ac01da2145bd30ccf15c44131dafb411a247b1da3a30042a4fbf0b9bb16c",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:13:17.705Z"
+}

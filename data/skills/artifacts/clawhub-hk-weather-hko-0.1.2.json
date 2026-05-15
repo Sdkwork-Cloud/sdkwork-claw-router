@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-weather-hko@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_weather_hko",
+  "skill": {
+    "id": 66026,
+    "skillKey": "clawhub-hk-weather-hko",
+    "name": "HK Weather (HKO)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-weather-hko",
+    "url": "https://clawhub.ai/skills/hk-weather-hko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-weather-hko-cf1a2c9fcf35d8ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "香港天文台 (HKO) 開放數據 API 查詢技能。用於獲取香港天氣數據，包括：(1) 全港即時天氣，(2) 分區天氣 (港島/九龍/新界/離島)，(3) 天氣預報 (每小時/九天)，(4) 天氣警告 (暴雨/颱風/高溫等)。當用戶查詢香港天氣、請求天氣預報、或需要了解生效中天氣警告時使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leoch95",
+      "userId": "s177j1yk7yg9a0s3cbd44z6cmx83ky9g",
+      "displayName": "leoch95",
+      "image": "https://avatars.githubusercontent.com/u/31471306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774190296129,
+      "changelog": "Release 0.1.2",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e012f2d53db154be3689ebfa9c8eddc658ebc4c69e8118bda507da35bf8ee2a"
+}

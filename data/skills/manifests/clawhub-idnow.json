@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37515,
+  "uuid": "skill-clawhub-idnow",
+  "skillKey": "clawhub-idnow",
+  "name": "Idnow",
+  "summary": "IDnow integration. Manage data, records, and automate workflows. Use when the user wants to interact with IDnow data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idnow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "IDnow integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with IDnow data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idnow@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idnow",
+      "url": "https://clawhub.ai/skills/idnow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idnow",
+    "url": "https://clawhub.ai/skills/idnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idnow-820909653a3376a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idnow@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-idnow-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf6f56a43bd89082365bd0b5362a599dffac8fcc6e1d85b4f8cc5ae42109d91c",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:34:43.962Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rust-patterns@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rust_patterns",
+  "skill": {
+    "id": 16989,
+    "skillKey": "clawhub-rust-patterns",
+    "name": "Rust Patterns"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rust-patterns",
+    "url": "https://clawhub.ai/skills/rust-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rust-patterns-d1631f05efbd9182.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production Rust patterns covering ownership, async Tokio, Axum web framework, SQLx, error handling, CLI tools, WASM, and PyO3 Python bindings"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msruruguay",
+      "userId": "publishers:msruruguay",
+      "displayName": "msruruguay",
+      "image": "https://avatars.githubusercontent.com/u/85544849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 770,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772637141220,
+      "changelog": "- Initial release of the \"rust-patterns\" skill.\n- Comprehensive guide covering Rust ownership, error handling, async with Tokio, Axum web framework, SQLx, CLI development, WebAssembly, and PyO3 Python bindings.\n- Includes production-ready patterns, anti-patterns, and concise code examples for Rust Edition 2024.\n- Helpful for structuring async code, error selection (thiserror vs anyhow), database access, concurrency, and building Rust-based tools and Python extensions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11859b40d3eea9486e3b1b4ed02f4a7d88a1cb22b3edc968053d768f340e7ba6"
+}

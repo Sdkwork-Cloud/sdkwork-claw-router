@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18225,
+  "uuid": "skill-clawhub-feishu-msg-reader",
+  "skillKey": "clawhub-feishu-msg-reader",
+  "name": "Feishu Message Reader",
+  "summary": "Fetch Feishu message content by message_id, with optional thread context. Activate when: needing to read the content of a specific Feishu message by its mess...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_msg_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "deadblue",
+      "features": [
+        "Fetch Feishu message content by message_id, with optional thread context",
+        "Activate when: needing to read the content of a specific Feishu message by its mess..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-msg-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/448649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-msg-reader",
+      "url": "https://clawhub.ai/skills/feishu-msg-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-msg-reader",
+    "url": "https://clawhub.ai/skills/feishu-msg-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-msg-reader-eb5eb3097ed5ac4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-msg-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-msg-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:764d4dcac7030f65a17b91126d9eec53f1d7fd9531385e5f5595e01ad409de57",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T04:10:01.837Z"
+}

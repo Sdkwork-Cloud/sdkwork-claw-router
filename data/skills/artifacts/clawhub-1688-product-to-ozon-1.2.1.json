@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/1688-product-to-ozon@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_product_to_ozon",
+  "skill": {
+    "id": 63545,
+    "skillKey": "clawhub-1688-product-to-ozon",
+    "name": "1688-product-to-ozon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-product-to-ozon",
+    "url": "https://clawhub.ai/skills/1688-product-to-ozon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-product-to-ozon-c29e0ad2716f5fea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将1688的商品铺货到俄罗斯电商平台Ozon（上架），通过Ozon官方API实现商品信息的上传和状态查询。适用于需要将单个1688的商品上架到Ozon的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1688aiinfra",
+      "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+      "displayName": "1688AiInfra",
+      "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1774257770705,
+      "changelog": "1688-Product-to-Ozon v1.2.1\n\n- 更新元数据：增加 category、metadata(version/label/author) 字段，author 更名为 1688官方技术团队。\n- 不再在 manifest 顶部显式维护 version 字段，使用 metadata.version。\n- 补充/调整了 manifest 的结构与规范性。\n- 其他功能保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eddcca85db3a0eacaa0d5cb265d84f9e9cafe552c9596faab4f9b88d7dad50a2"
+}

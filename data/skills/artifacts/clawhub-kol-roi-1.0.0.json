@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kol-roi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kol_roi",
+  "skill": {
+    "id": 52533,
+    "skillKey": "clawhub-kol-roi",
+    "name": "KOL Roi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kol-roi",
+    "url": "https://clawhub.ai/skills/kol-roi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kol-roi-eca3bd4a29b27926.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decode KOL and creator \"black box\" performance—strip refunds, suspicious traffic, and vanity clicks to estimate each creator's true profit contribution and p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774334018734,
+      "changelog": "kol-roi v1.0.0 — Initial release\n\n- Launches a KOL/creator performance decoder for renewal/ROI using attributed orders and payouts.\n- Always outputs a standardized \"Creator renewal ledger\" table with key metrics and renewal recommendation.\n- Enforces explicit treatment of refunds, chargebacks, and suspicious traffic in reporting.\n- Includes renewal mini P&L guidance (monthly contribution vs. cost) for recommend vs. pause tiers.\n- Provides clear use-case guidance and a template/checklist when data is missing or incomplete.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c036ac534562347aed3587ffae6b5ccdc2c083d92a1fbc5dfb192440d1e1cdd2"
+}

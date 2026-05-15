@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35835,
+  "uuid": "skill-clawhub-openpapergraph",
+  "skillKey": "clawhub-openpapergraph",
+  "name": "OpenPaperGraph",
+  "summary": "Academic literature discovery and citation network analysis. Multi-source search across arXiv, DBLP, Semantic Scholar, and Google Scholar. Build citation net...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openpapergraph",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JiahaoWuGit",
+      "features": [
+        "Academic literature discovery and citation network analysis",
+        "Multi-source search across arXiv, DBLP, Semantic Scholar, and Google Scholar",
+        "Build citation net..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openpapergraph@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44497691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openpapergraph",
+      "url": "https://clawhub.ai/skills/openpapergraph"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openpapergraph",
+    "url": "https://clawhub.ai/skills/openpapergraph",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openpapergraph-7fe656aaab8e4d1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openpapergraph@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openpapergraph-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7716fc421027898b97bc88ec94d7392029618882a1777897f589f8085e0f0fc4",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T13:10:46.279Z"
+}

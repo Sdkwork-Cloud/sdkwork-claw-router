@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mirror-website@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mirror_website",
+  "skill": {
+    "id": 68914,
+    "skillKey": "clawhub-mirror-website",
+    "name": "Mirror Website"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mirror-website",
+    "url": "https://clawhub.ai/skills/mirror-website",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mirror-website-4eab14bceb96adc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "镜像网站到本地的完整工作流。当用户说镜像网站、下载网站、抓取网站、本地化网站，或者提供一个网址和保存路径时，必须使用此 skill。输入格式为：镜像网站 www.example.com 保存地址 /a/b/c。自动处理代理、递归下载、文件名清理等全流程。即使用户只是提到想把某个网站保存到本地、离线浏览、克隆站点，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wenbing3049",
+      "userId": "publishers:wenbing3049",
+      "displayName": "wenbing3049",
+      "image": "https://avatars.githubusercontent.com/u/187005504?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774013196831,
+      "changelog": "Initial release - 镜像网站到本地的完整工作流，支持离线浏览",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:780b53c25e3ce6820ce008f3cc694beaa0feeaa05e7df25604d2a6323bde2094"
+}

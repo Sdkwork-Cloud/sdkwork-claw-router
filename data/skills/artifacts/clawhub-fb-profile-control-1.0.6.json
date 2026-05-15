@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fb-profile-control@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fb_profile_control",
+  "skill": {
+    "id": 51867,
+    "skillKey": "clawhub-fb-profile-control",
+    "name": "Facebook Humanistic Profile Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fb-profile-control",
+    "url": "https://clawhub.ai/skills/fb-profile-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fb-profile-control-5318346b529e799e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CREDENTIALS REQUIRED: FB_COOKIE_FILE (Facebook session cookies JSON — treat as password), FB_STATE_FILE (Playwright state path, writable). Optional: FB_DRY_R..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joelsalespossible",
+      "userId": "s17b0sq94ks1kwhv9gz1n05prx83h6qf",
+      "displayName": "Joel Yi - DeployAIBots.com",
+      "image": "https://avatars.githubusercontent.com/u/262135669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1774460725776,
+      "changelog": "No functional code changes in this release. Metadata in SKILL.md improved for clarity:\n\n- Added structured environment variable definitions under `primaryEnv` in metadata.\n- Now explicitly documents which variables are required, their secrecy, and descriptions.\n- Improved installation and security instructions in documentation.\n- Skill usage notes clarified for safe and intended operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:070673a2680e60f5055bcd628b258ef5624b7f808e5970f7dce6f0c6e04d572c"
+}

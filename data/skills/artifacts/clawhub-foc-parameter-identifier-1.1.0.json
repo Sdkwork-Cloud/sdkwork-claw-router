@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/foc-parameter-identifier@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foc_parameter_identifier",
+  "skill": {
+    "id": 66221,
+    "skillKey": "clawhub-foc-parameter-identifier",
+    "name": "Foc Parameter Identifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foc-parameter-identifier",
+    "url": "https://clawhub.ai/skills/foc-parameter-identifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foc-parameter-identifier-8627aea5f59fbcb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FOC电机参数辨识助手 | 帮助进行FOC控制的电机参数测量和辨识，包括定子电阻R、dq电感L、磁链常数Ke、极对数、转动惯量J。提供阶跃响应测试、高频注入法、DC衰减法等实用辨识方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yongjie666888",
+      "userId": "s17drc5xysxp2mbjvg182tkj5183gqyv",
+      "displayName": "yongjie666888",
+      "image": "https://avatars.githubusercontent.com/u/177016990?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774371202490,
+      "changelog": "新增STM32/Arduino FOC配置代码示例、实测数据处理脚本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b6d5be71df5522a35e323a980aa749374a067649c65c6d552ca78bc6521ebe05"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recipe-copy-sheet-for-new-month@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_copy_sheet_for_new_month",
+  "skill": {
+    "id": 19121,
+    "skillKey": "clawhub-recipe-copy-sheet-for-new-month",
+    "name": "Recipe Copy Sheet For New Month"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-copy-sheet-for-new-month",
+    "url": "https://clawhub.ai/skills/recipe-copy-sheet-for-new-month",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-copy-sheet-for-new-month-df9d6a87927e3624.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Duplicate a Google Sheets template tab for a new month of tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 537,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982152966,
+      "changelog": "- Updated skill metadata version from 0.22.4 to 0.22.5 in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08bf2bbcc7b6301087b738168e7da20c26d6c70cce711f6572896a09840ef3df"
+}

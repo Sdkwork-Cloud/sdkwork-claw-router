@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68629,
+  "uuid": "skill-clawhub-inter-control-03-logistics-alert",
+  "skillKey": "clawhub-inter-control-03-logistics-alert",
+  "name": "03 Logistics Alert",
+  "summary": "对菜鸟物流订单进行异常监控、预警分级和赔偿标准匹配。 基于淘宝/天猫物流时效规则（2024最新版）、菜鸟专线赔付标准 和行业物流SLA基准数据，帮助内控人员快速识别异常订单、 预判风险并给出处置建议和赔偿预算。 v1.7 新增：AE-03细分规则（退件/异地/乱序）、AE-10联动供应商评分规则、赔偿封顶规则明确...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inter_control_03_logistics_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nic-yuan",
+      "features": [
+        "对菜鸟物流订单进行异常监控、预警分级和赔偿标准匹配。 基于淘宝/天猫物流时效规则（2024最新版）、菜鸟专线赔付标准 和行业物流SLA基准数据，帮助内控人员快速识别异常订单、 预判风险并给出."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inter-control-03-logistics-alert@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195308903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inter-control-03-logistics-alert",
+      "url": "https://clawhub.ai/skills/inter-control-03-logistics-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inter-control-03-logistics-alert",
+    "url": "https://clawhub.ai/skills/inter-control-03-logistics-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inter-control-03-logistics-alert-68347d774193a31b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inter-control-03-logistics-alert@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-inter-control-03-logistics-alert-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7cdfb584e728b7570905b9b31cf898e80fb578c7ea4bb3d596f5e564dc306dc1",
+      "artifactSizeBytes": 2992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T11:50:14.389Z"
+}

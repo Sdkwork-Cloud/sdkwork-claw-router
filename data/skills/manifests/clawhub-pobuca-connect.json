@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27590,
+  "uuid": "skill-clawhub-pobuca-connect",
+  "skillKey": "clawhub-pobuca-connect",
+  "name": "Pobuca Connect",
+  "summary": "Pobuca Connect integration. Manage Organizations, Leads, Deals, Projects, Pipelines, Users and more. Use when the user wants to interact with Pobuca Connect...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pobuca_connect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Pobuca Connect integration",
+        "Manage Organizations, Leads, Deals, Projects, Pipelines, Users and more",
+        "Use when the user wants to interact with Pobuca Connect..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pobuca-connect@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pobuca-connect",
+      "url": "https://clawhub.ai/skills/pobuca-connect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pobuca-connect",
+    "url": "https://clawhub.ai/skills/pobuca-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pobuca-connect-f0283ff469dfd08b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pobuca-connect@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pobuca-connect-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b17db656739f4d3adb848711115c0fa8a3d5d6d81eb1efd7c3fe7d06d97e1c90",
+      "artifactSizeBytes": 1914
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T12:01:40.060Z"
+}

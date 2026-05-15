@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logistics@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logistics",
+  "skill": {
+    "id": 20673,
+    "skillKey": "clawhub-logistics",
+    "name": "Logistics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logistics",
+    "url": "https://clawhub.ai/skills/logistics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logistics-8880894de4fc1864.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and explain parcel logistics across courier providers, including tracking, courier identification, multi-package lookup, status interpretation, and del..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774072522984,
+      "changelog": "English main doc for multi-courier logistics tracking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a59349d94920959834647d69175030b06f41bfb271cb694d85c3329471039a41"
+}

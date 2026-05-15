@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30822,
+  "uuid": "skill-clawhub-rock-rms",
+  "skillKey": "clawhub-rock-rms",
+  "name": "Rock Rms",
+  "summary": "Rock RMS integration. Manage data, records, and automate workflows. Use when the user wants to interact with Rock RMS data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rock_rms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Rock RMS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Rock RMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rock-rms@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rock-rms",
+      "url": "https://clawhub.ai/skills/rock-rms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rock-rms",
+    "url": "https://clawhub.ai/skills/rock-rms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rock-rms-c89e0ce71c07c4f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rock-rms@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rock-rms-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2dc43f017945779d77ac45451d314f09f12aa05e4d5b6e88fabb34ef7984cf1",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:35:37.049Z"
+}

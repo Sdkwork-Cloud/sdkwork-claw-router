@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taiji-topo-file-downloader@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taiji_topo_file_downloader",
+  "skill": {
+    "id": 68294,
+    "skillKey": "clawhub-taiji-topo-file-downloader",
+    "name": "Taiji Topo File Downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taiji-topo-file-downloader",
+    "url": "https://clawhub.ai/skills/taiji-topo-file-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taiji-topo-file-downloader-f804d75198844eec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在太极平台 a.taiji.woa.com 工作流页面自动定位节点侧边栏、打开配置文件面板并下载文件。用于“下载太极拓扑配置文件/模型文件”“在太极页面里找到文件并保存到本地”等任务，特别适合需要先校验页面是否已正确打开、再稳定定位侧边栏与文件列表的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m-final",
+      "userId": "publishers:m-final",
+      "displayName": "m-final",
+      "image": "https://avatars.githubusercontent.com/u/6630633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772935521822,
+      "changelog": "Add robust browser automation template, mandatory URL/page precheck, and timestamped output folder naming (topo_YYYYMMDD_HHMMSS).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e9801b552162270cf5d041d656448d3b467f6d5e0c0c28b2e351987907b2684"
+}

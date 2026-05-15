@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rainman-qweather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rainman_qweather",
+  "skill": {
+    "id": 62350,
+    "skillKey": "clawhub-rainman-qweather",
+    "name": "qweather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rainman-qweather",
+    "url": "https://clawhub.ai/skills/rainman-qweather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rainman-qweather-5768c1e4339bb22e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天气查询 — 实时天气、天气预报、生活指数、城市搜索。数据源为和风天气 (QWeather)。 触发词: 天气, 气温, 下雨, 预报, weather, forecast, 穿什么, 洗车, 紫外线, UV, 空气, 今天天气, 明天天气, 北京天气, 或任何 \"[城市] 天气\" 格式的输入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deusyu",
+      "userId": "s179bbz2mxt1jgta0f5jsdqnjs85qrsd",
+      "displayName": "Rainman",
+      "image": "https://avatars.githubusercontent.com/u/42929363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773326929644,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4696a8db2dcf061774f06b3498388ed88df04312693bf968d324f050c644923"
+}

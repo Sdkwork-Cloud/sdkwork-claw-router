@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "mem0-memory",
+    "displayName": "Mem0 Memory",
+    "summary": "mem0 本地记忆层完整实现（增强版）。语义记忆存储/检索/管理，WAL 协议，SESSION-STATE，多级记忆（User/Session/Agent）。参考 ZejunCao/bilibili_code Mem0框架解读优化。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1017,
+      "installsAllTime": 10,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774362415184,
+    "updatedAt": 1777623146212
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774362415184,
+    "changelog": "mem0-memory 2.1.0 更新内容：\n\n- 实现本地全功能语义记忆层，支持添加、检索、更新、历史、批量与重置操作\n- 新增“chat_with_memories”对话模式：自动检索记忆并注入 system prompt，由 LLM 生成增强回复\n- 内置中文记忆自动提取与 FACT_RETRIEVAL_PROMPT，支持对话中快速生成记忆条目\n- 完善多级记忆体系（用户/会话/智能体），参数可灵活指定\n- 增强工作流与 WAL 支持，实现消息分流存储与 SESSION-STATE 优先机制\n- 离线向量化（Ollama + Chroma），适配本地完全运行环境",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "chircken891",
+    "userId": "s1704fhczjrr9pw8gyz9w954ks83hswp",
+    "displayName": "chircken891",
+    "image": "https://avatars.githubusercontent.com/u/192669311?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623146212
+  }
+}

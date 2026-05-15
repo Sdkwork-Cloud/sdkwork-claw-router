@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strategic-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strategic_analyst",
+  "skill": {
+    "id": 66529,
+    "skillKey": "clawhub-strategic-analyst",
+    "name": "Strategic Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strategic-analyst",
+    "url": "https://clawhub.ai/skills/strategic-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strategic-analyst-fc9965c4484802a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "战略分析师智能体，提供各行业市场动态分析、洞察市场前景、把握市场机会、给出投资和发展建议。 使用场景包括：(1) 行业趋势分析 (2) 市场机会评估 (3) 投资建议生成 (4) 竞争格局分析 (5) 市场前景预测"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq719528161",
+      "userId": "s17aky5v47qpn25wr5cwps30s983mbeg",
+      "displayName": "qq719528161",
+      "image": "https://avatars.githubusercontent.com/u/52863806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 421,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773468129137,
+      "changelog": "- Initial release of \"strategic-analyst\" skill.\n- Provides industry trends analysis, market opportunity evaluation, investment advice, competitive landscape assessment, and market outlook forecasting.\n- Utilizes structured analysis frameworks covering macro, industry, and microenterprise levels.\n- Delivers standard market analysis report formats with data-driven insights and clear investment recommendations.\n- Prioritizes authoritative sources for information; includes guidelines on objectivity and risk disclosure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29f4cf3a13be358ee2c4160aeb320ccc86ed2e411b85e614825183827a8f50ce"
+}

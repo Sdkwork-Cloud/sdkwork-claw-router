@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53012,
+  "uuid": "skill-clawhub-hvac-dispatch-agent",
+  "skillKey": "clawhub-hvac-dispatch-agent",
+  "name": "HVAC Dispatch (30% OFF - B2B Special)",
+  "summary": "24/7 Voice & Text Dispatch Agent for HVAC & Plumbing. Qualifies leads, checks service zones, books appointments into ServiceTitan/Housecall Pro, and uses Thu...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hvac_dispatch_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "24/7 Voice & Text Dispatch Agent for HVAC & Plumbing",
+        "Qualifies leads, checks service zones, books appointments into ServiceTitan/Housecall Pro, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hvac-dispatch-agent@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hvac-dispatch-agent",
+      "url": "https://clawhub.ai/skills/hvac-dispatch-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hvac-dispatch-agent",
+    "url": "https://clawhub.ai/skills/hvac-dispatch-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hvac-dispatch-agent-a2d42d1fad9ac4d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hvac-dispatch-agent@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hvac-dispatch-agent-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14aa1fb9a2eb299f30a954783208ab1781cc55dcbdc2db8c188622512990e23b",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T19:53:23.531Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56702,
+  "uuid": "skill-clawhub-waze",
+  "skillKey": "clawhub-waze",
+  "name": "Waze",
+  "summary": "Gera links de navegação do Waze para qualquer destino: endereços, nomes de estabelecimentos, locais de compromissos na agenda. Use sempre que o usuário menci...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waze",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dicasdomaroto-maker",
+      "features": [
+        "Gera links de navegação do Waze para qualquer destino: endereços, nomes de estabelecimentos, lo.",
+        "Use sempre que o usuário menci..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waze@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232255358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waze",
+      "url": "https://clawhub.ai/skills/waze"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waze",
+    "url": "https://clawhub.ai/skills/waze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waze-83d512876997e675.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waze@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-waze-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4de28959115037bb53f318ece57a931f848186eb4c5d1c8f5e1c66f9fde47ed",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:47:37.221Z"
+}

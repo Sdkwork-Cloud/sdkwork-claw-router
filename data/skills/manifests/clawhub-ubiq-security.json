@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35426,
+  "uuid": "skill-clawhub-ubiq-security",
+  "skillKey": "clawhub-ubiq-security",
+  "name": "Ubiq Security",
+  "summary": "Ubiq Security integration. Manage data, records, and automate workflows. Use when the user wants to interact with Ubiq Security data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubiq_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Ubiq Security integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Ubiq Security data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ubiq-security@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ubiq-security",
+      "url": "https://clawhub.ai/skills/ubiq-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubiq-security",
+    "url": "https://clawhub.ai/skills/ubiq-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubiq-security-7948fe478d2d9852.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ubiq-security@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-ubiq-security-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2bb17c21027329077c98cfe6d27ed3a8454638584c8698a272792bf397f5418",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:07:49.153Z"
+}

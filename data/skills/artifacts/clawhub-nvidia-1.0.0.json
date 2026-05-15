@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nvidia@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia",
+  "skill": {
+    "id": 51586,
+    "skillKey": "clawhub-nvidia",
+    "name": "Shop from Nvidia - With your claw and creditcard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia",
+    "url": "https://clawhub.ai/skills/nvidia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-8d4321d936320802.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buy at Nvidia | Manage compatible cards, wallets & payments. Financial management for Agents and OpenClaw bots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "triplehippo",
+      "userId": "s171q9wjnctwwjjn7rjgjkwy2h83fayr",
+      "displayName": "TripleHippo",
+      "image": "https://avatars.githubusercontent.com/u/261665182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773410827687,
+      "changelog": "nvidia skill v2.3.4 – Major update and rebranding for agent financial management\n\n- Now powered by CreditClaw: Securely manage payments, compatible cards, wallets, and accounting for Agents and OpenClaw bots.\n- Added multi-rail payments: Supports owner's card checkout, Stripe x402 (USDC/Stablecoin wallet), and Crossmint (coming soon).\n- Enhanced owner guardrails: Per-transaction, daily, monthly limits, category blocks, and mandatory owner approvals by default.\n- Streamlined onboarding: Fast registration with automated approval flows and webhook support.\n- Expanded API documentation and file structure available directly via public URLs—no local installation needed.\n- Improved security: Defense-in-depth including hashed API keys, rate limiting, ephemeral sessions, and rigorous access controls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3782a436c5e06d260845bb54611c5f38a19b276120590b9afa71b8d37a02eefa"
+}

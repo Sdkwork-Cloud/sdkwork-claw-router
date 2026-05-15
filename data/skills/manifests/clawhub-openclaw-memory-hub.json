@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58543,
+  "uuid": "skill-clawhub-openclaw-memory-hub",
+  "skillKey": "clawhub-openclaw-memory-hub",
+  "name": "OpenClaw Memory Hub",
+  "summary": "三层记忆架构 (Three-tier memory architecture for OpenClaw AI agents). 提供 L0 运行时语义检索 (Ollama bge-m3 + SQLite-vec 向量库)、L1 工作记忆 (每日 Markdown 日志)、L2 长期记忆 (只读基底)、Dreami...",
+  "version": "1.10.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_hub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VictorQR",
+      "features": [
+        "三层记忆架构 (Three-tier memory architecture for OpenClaw AI agents)",
+        "提供 L0 运行时语义检索 (Ollama bge-m3 + SQLite-vec 向量库)、L1 工作记忆 (每日 Markdown 日志)、L2 长期记忆 (只读基底)、Dreami..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-hub@1.10.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42757940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-hub",
+      "url": "https://clawhub.ai/skills/openclaw-memory-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-hub",
+    "url": "https://clawhub.ai/skills/openclaw-memory-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-hub-89e0249425db7565.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-hub@1.10.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-hub-1.10.0.json",
+      "version": "1.10.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e62dbf8ec625df8050bed40741dc73b2ee9a516e57c0ea8af8354be33801844d",
+      "artifactSizeBytes": 2094
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:56:27.680Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55559,
+  "uuid": "skill-clawhub-transcript-generator",
+  "skillKey": "clawhub-transcript-generator",
+  "name": "Transcript Generator",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — generate a full text transcript of this interview video — and get text tra...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcript_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — generate a full text transcript of this interview video — and get text."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transcript-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transcript-generator",
+      "url": "https://clawhub.ai/skills/transcript-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcript-generator",
+    "url": "https://clawhub.ai/skills/transcript-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcript-generator-1a29264d44dc24da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transcript-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-transcript-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7ed79a8b51f22cea0cd733f0fd39ddf783dac7f150d89f2a1e6feabc6e6e71e",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T04:40:12.382Z"
+}

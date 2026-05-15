@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtv@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtv",
+  "skill": {
+    "id": 16508,
+    "skillKey": "clawhub-clawtv",
+    "name": "ClawTV"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtv",
+    "url": "https://clawhub.ai/skills/clawtv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtv-1c30617c6e566ef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered Apple TV remote that uses vision to autonomously navigate apps, play content, control playback, and manage settings."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "akivasolutions",
+      "userId": "s177f2j8e9h7qxk74bxe93qgks83hbrg",
+      "displayName": "akivasolutions",
+      "image": "https://avatars.githubusercontent.com/u/259251553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 876,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771046600608,
+      "changelog": "Declare ANTHROPIC_API_KEY as required env var and ~/.clawtv/config.json as config path in registry metadata. Fixes ClawHub security scan credential warnings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:512b995b078e249e7d5123addb5fc3b2e30b9826545ed7b784f7359a3d596229"
+}

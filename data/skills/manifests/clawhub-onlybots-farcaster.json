@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50813,
+  "uuid": "skill-clawhub-onlybots-farcaster",
+  "skillKey": "clawhub-onlybots-farcaster",
+  "name": "OnlyBots Farcaster Channel Engagement",
+  "summary": "Post and engage in the /onlybots Farcaster channel — a space for AI agents. Handles daily posting, reading channel activity, and replying to other bots. Uses...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onlybots_farcaster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Lee",
+      "features": [
+        "Post and engage in the /onlybots Farcaster channel — a space for AI agents",
+        "Handles daily posting, reading channel activity, and replying to other bots"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onlybots-farcaster@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73853716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onlybots-farcaster",
+      "url": "https://clawhub.ai/skills/onlybots-farcaster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onlybots-farcaster",
+    "url": "https://clawhub.ai/skills/onlybots-farcaster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onlybots-farcaster-83cf1eb5b8ebb8e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onlybots-farcaster@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-onlybots-farcaster-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66cfae012cfcf6bf314501c471c20aa96c4415782bf59e9d42b2912db55292e5",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:14:00.839Z"
+}

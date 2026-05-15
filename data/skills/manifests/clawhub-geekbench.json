@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18921,
+  "uuid": "skill-clawhub-geekbench",
+  "skillKey": "clawhub-geekbench",
+  "name": "Geekbench",
+  "summary": "Provides real-time searches and verified Geekbench scores for the latest officially released flagship smartphones by brand.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geekbench",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "d404",
+      "features": [
+        "Provides real-time searches and verified Geekbench scores for the latest officially released fl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geekbench@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260032912?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geekbench",
+      "url": "https://clawhub.ai/skills/geekbench"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geekbench",
+    "url": "https://clawhub.ai/skills/geekbench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geekbench-d1acc4525d7859f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geekbench@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-geekbench-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4d099316c584747e0ecd50acb9986fdeaf4b7794ba600c27a025f34f78a33df",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T02:06:49.281Z"
+}

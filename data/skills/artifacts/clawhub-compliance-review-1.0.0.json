@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compliance-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_review",
+  "skill": {
+    "id": 19388,
+    "skillKey": "clawhub-compliance-review",
+    "name": "Compliance Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-review",
+    "url": "https://clawhub.ai/skills/compliance-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-review-bb66fbb07647ccc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically reviews compliance of client claim authorization letters using customized templates and pushes results to Feishu every 30 minutes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liulong423401-coder",
+      "userId": "publishers:liulong423401-coder",
+      "displayName": "liulong423401-coder",
+      "image": "https://avatars.githubusercontent.com/u/238406937?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772810159658,
+      "changelog": "compliance-review 1.0.0 — 首次发布\n\n- 自动审核理赔授权通知书合规性\n- 支持多保险公司定制化模板\n- 每 30 分钟检查待审核任务\n- 检测手写签名及授权通知书存在\n- 审核结果实时推送至飞书\n- 无需人工干预，首次自动通过\n- 不收集客户个人信息",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ea9c036be4c935484b209087de5aa941ab2b6627e7627ad344069aa73814ca3"
+}

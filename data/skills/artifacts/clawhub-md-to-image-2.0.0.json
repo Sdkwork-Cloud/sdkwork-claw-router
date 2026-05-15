@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-to-image@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_to_image",
+  "skill": {
+    "id": 28891,
+    "skillKey": "clawhub-md-to-image",
+    "name": "MD to Mobile Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-to-image",
+    "url": "https://clawhub.ai/skills/md-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-to-image-72d3985e7fca37b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert Markdown files into high-contrast, mobile-friendly PNG images optimized for Telegram and social media sharing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nowhere1975",
+      "userId": "s176svyn599zygxnse1e70rg2s83t861",
+      "displayName": "nowhere1975",
+      "image": "https://avatars.githubusercontent.com/u/5549547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774027757650,
+      "changelog": "No significant changes in this version.\n\n- No file changes detected.\n- Documentation, usage instructions, and technical details remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:050fd97807a435c449ba718624599fb433cdde14a63bd30191a71306b2aa290a"
+}

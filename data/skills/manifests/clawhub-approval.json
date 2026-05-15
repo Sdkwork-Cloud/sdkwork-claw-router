@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71396,
+  "uuid": "skill-clawhub-approval",
+  "skillKey": "clawhub-approval",
+  "name": "approval",
+  "summary": "企业办公流程与工时管理 Agent，支持办公流程导航、流程申请与审批、待办事项统计、请假调休申请等。当用户需要查询审批、提交申请、查看待办时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.approval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sangjie123",
+      "features": [
+        "企业办公流程与工时管理 Agent，支持办公流程导航、流程申请与审批、待办事项统计、请假调休申请等。当用户需要查询审批、提交申请、查看待办时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/approval@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58759458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "approval",
+      "url": "https://clawhub.ai/skills/approval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "approval",
+    "url": "https://clawhub.ai/skills/approval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/approval-9deb65b8788f41ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/approval@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-approval-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df77cc3805f28950cc2f1715fa22e8bbd035536e2f5d125e8fcf4061df466915",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:26:23.033Z"
+}

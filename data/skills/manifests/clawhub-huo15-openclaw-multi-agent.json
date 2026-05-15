@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61620,
+  "uuid": "skill-clawhub-huo15-openclaw-multi-agent",
+  "skillKey": "clawhub-huo15-openclaw-multi-agent",
+  "name": "Huo15 Openclaw Multi Agent",
+  "summary": "火一五多智能体协同 - 基于 OpenClaw sessions_spawn 的多 Agent 并行工作系统。支持协调者模式、任务分配、结果汇总。触发词：多智能体协同、多 Agent、并行任务、协调者模式。",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_openclaw_multi_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "火一五多智能体协同",
+        "基于 OpenClaw sessions_spawn 的多 Agent 并行工作系统。支持协调者模式、任务分配、结果汇总。触发词：多智能体协同、多 Agent、并行任务、协调者模式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-openclaw-multi-agent@2.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-openclaw-multi-agent",
+      "url": "https://clawhub.ai/skills/huo15-openclaw-multi-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-openclaw-multi-agent",
+    "url": "https://clawhub.ai/skills/huo15-openclaw-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-openclaw-multi-agent-c6b48669e9a11a73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-openclaw-multi-agent@2.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-openclaw-multi-agent-2.2.1.json",
+      "version": "2.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3c731d050b99346df834f78a7fcf1749c8466a8d14641d271ef429452ad2a5b",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:15:53.457Z"
+}

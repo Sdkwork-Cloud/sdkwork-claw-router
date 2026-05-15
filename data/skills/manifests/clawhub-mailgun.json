@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10983,
+  "uuid": "skill-clawhub-mailgun",
+  "skillKey": "clawhub-mailgun",
+  "name": "mailgun sender",
+  "summary": "Send emails via Mailgun API. Use when the user needs to send emails programmatically, such as newsletters, notifications, alerts, or automated reports. Requi...",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailgun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manifold",
+      "features": [
+        "Send emails via Mailgun API",
+        "Use when the user needs to send emails programmatically, such as newsletters, notifications, al.",
+        "Requi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailgun@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62403180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailgun",
+      "url": "https://clawhub.ai/skills/mailgun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailgun",
+    "url": "https://clawhub.ai/skills/mailgun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailgun-b555592a1435e0a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailgun@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailgun-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef9ec5a76085cc47caabde812ab4e2d7d0827c0923575670302ae20c817307fc",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:21:30.176Z"
+}

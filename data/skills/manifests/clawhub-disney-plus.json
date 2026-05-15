@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32664,
+  "uuid": "skill-clawhub-disney-plus",
+  "skillKey": "clawhub-disney-plus",
+  "name": "Disney Plus",
+  "summary": "Provides information on Disney Plus public pages including membership plans, content channels, creator guidelines, and help resources without accessing perso...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disney_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "Provides information on Disney Plus public pages including membership plans, content channels,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disney-plus@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disney-plus",
+      "url": "https://clawhub.ai/skills/disney-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disney-plus",
+    "url": "https://clawhub.ai/skills/disney-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disney-plus-516934635cd0b20b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disney-plus@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-disney-plus-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61e3796f90051b2215c3220ab90f40753c9f447d121a648de32f6936fbd533e5",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:02:52.702Z"
+}

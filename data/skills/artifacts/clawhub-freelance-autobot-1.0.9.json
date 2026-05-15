@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freelance-autobot@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freelance_autobot",
+  "skill": {
+    "id": 51690,
+    "skillKey": "clawhub-freelance-autobot",
+    "name": "Freelance Autobot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freelance-autobot",
+    "url": "https://clawhub.ai/skills/freelance-autobot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freelance-autobot-8fd1be1b50af4e6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous freelance hunter — finds gigs on FreeLanceDAO and CryptoGigs, scores them for fit, and auto-submits proposals. Also builds your CryptoGig profile..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ssidharhubble",
+      "userId": "s1751xfhp40q8vjjqd22y5vaw584gpke",
+      "displayName": "ssyopro",
+      "image": "https://avatars.githubusercontent.com/u/156830224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1777902031807,
+      "changelog": "- Updated version to 1.0.9 in SKILL.md.\n- No functional or content changes; documentation version number increment only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4104223e4c306cd21c1d4a4de774fbcaf4f6889a600bbc991179d86e85aa171"
+}

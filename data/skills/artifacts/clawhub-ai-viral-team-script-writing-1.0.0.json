@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-viral-team-script-writing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_viral_team_script_writing",
+  "skill": {
+    "id": 67999,
+    "skillKey": "clawhub-ai-viral-team-script-writing",
+    "name": "Ai Viral Team Script Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-viral-team-script-writing",
+    "url": "https://clawhub.ai/skills/ai-viral-team-script-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-viral-team-script-writing-0230d046af92bb2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "脚本创作 - 短视频脚本撰写与分镜设计 职责：根据爆款模板生产内容、设计黄金3秒开头方案（3种以上）、撰写分镜脚本（包含镜头语言/场景氛围/角色动作/台词/BGM）、设计槽点埋梗与情绪钩子、规划结尾引导、自动推荐Vidu视频生成配置（模型版本/生成方式/时长/比例）、确保人物形象一致性、向视频生成(Leo)传递完..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junhongzhang77-ui",
+      "userId": "publishers:junhongzhang77-ui",
+      "displayName": "junhongzhang77-ui",
+      "image": "https://avatars.githubusercontent.com/u/228699128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773907270134,
+      "changelog": "ai-viral-team-script-writing v1.0.0\n\n- Initial release of the short video scriptwriting and storyboard skill.\n- Supports structured script and storyboard design with detailed English prompts for Vidu video generation.\n- Guides users through stepwise script output (framework then full script) and ensures character consistency.\n- Integrates with trending analysis, video generation, and quality check functions.\n- Offers explicit templates and keyword references for scene, camera, mood, and transition descriptions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87c6376a199b1d0295fddadfd5a7bf32a2d34afe0ada2fb3e9f06c69022bdb8c"
+}

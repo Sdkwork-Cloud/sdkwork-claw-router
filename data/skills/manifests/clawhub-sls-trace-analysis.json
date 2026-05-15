@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67517,
+  "uuid": "skill-clawhub-sls-trace-analysis",
+  "skillKey": "clawhub-sls-trace-analysis",
+  "name": "SLS + ARMS 全链路问题排查",
+  "summary": "查询阿里云SLS日志和ARMS调用链，结合源码和数据库进行全链路问题排查。 完整流程：查日志 → 画调用链 → 定位源码 → 排查数据库 → 给出修复方案。 Use when: 用户说「分析sls」「分析问题」或想排查业务服务/线上接口/用户请求的报错或异常。 触发示例：「分析sls」「帮我查一下这个trace_...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sls_trace_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhichao Lee",
+      "features": [
+        "查询阿里云SLS日志和ARMS调用链，结合源码和数据库进行全链路问题排查。 完整流程：查日志 → 画调用链 → 定位源码 → 排查数据库 → 给出修复方案。 Use when: 用户说「分析."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sls-trace-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38174721?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sls-trace-analysis",
+      "url": "https://clawhub.ai/skills/sls-trace-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sls-trace-analysis",
+    "url": "https://clawhub.ai/skills/sls-trace-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sls-trace-analysis-dc26e5b8f980c5d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sls-trace-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sls-trace-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13261605ca2f66862957931351324db2f200ff504b4804014139a3720cdad412",
+      "artifactSizeBytes": 2734
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:32:48.511Z"
+}

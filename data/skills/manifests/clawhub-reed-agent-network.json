@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19031,
+  "uuid": "skill-clawhub-reed-agent-network",
+  "skillKey": "clawhub-reed-agent-network",
+  "name": "Reed Agent Network",
+  "summary": "Build and operate a cross-gateway AgentNetwork using Discord as the message bus and GitHub as shared state storage. Use when registering agents, syncing rost...",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reed_agent_network",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Reed",
+      "features": [
+        "Build and operate a cross-gateway AgentNetwork using Discord as the message bus and GitHub as s.",
+        "Use when registering agents, syncing rost..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reed-agent-network@0.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129141816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reed-agent-network",
+      "url": "https://clawhub.ai/skills/reed-agent-network"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reed-agent-network",
+    "url": "https://clawhub.ai/skills/reed-agent-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reed-agent-network-1a986f305bc8d129.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reed-agent-network@0.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-reed-agent-network-0.2.2.json",
+      "version": "0.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7f1a05eb62d06e65787a4834d8eef97044bc9e70a362aaf5573e2df30141f64",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:55:57.888Z"
+}

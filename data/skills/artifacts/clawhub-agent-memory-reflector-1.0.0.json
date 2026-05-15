@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-reflector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_reflector",
+  "skill": {
+    "id": 43916,
+    "skillKey": "clawhub-agent-memory-reflector",
+    "name": "Agent Memory Reflector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-reflector",
+    "url": "https://clawhub.ai/skills/agent-memory-reflector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-reflector-e550f7b924ba11ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables AI agents to review past decisions, identify reasoning loops, and produce insights for self-improvement to enhance their cognitive processes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776461978913,
+      "changelog": "- Initial release of Agent Memory Reflector.\n- Enables AI agents to review past decisions and identify reasoning loops.\n- Generates actionable self-improvement insights for agents.\n- Simple logging and reflection workflow via command line.\n- Designed for easy embedding and minimal setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b73e8bb4ba32678ce6cfeb6c70e936f291d7e98fe5ac851246fdeee2fe41029"
+}

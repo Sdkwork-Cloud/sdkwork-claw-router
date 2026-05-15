@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-kill@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_kill",
+  "skill": {
+    "id": 53807,
+    "skillKey": "clawhub-token-kill",
+    "name": "token-kill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-kill",
+    "url": "https://clawhub.ai/skills/token-kill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-kill-c0eaacf410c24eed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reduce OpenClaw token consumption by 95%+ using three optimization techniques (slash commands, script-first principle, and model tiering)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "niuben",
+      "userId": "s1733gek2926hcjv5hv5f4hw9583wh07",
+      "displayName": "Timmy",
+      "image": "https://avatars.githubusercontent.com/u/1646678?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1773964180296,
+      "changelog": "Token-kill v0.0.1 initial release:\n\n- Introduces three core techniques for reducing OpenClaw token usage by 95%+: slash commands, script-first principle, and model tiering.\n- Provides practical slash commands for memory and task management to reduce token waste.\n- Outlines how to automate repetitive tasks via scripts instead of AI, and select the right AI model for task complexity.\n- Includes real-world examples, cost-saving case studies, and actionable best practices for ongoing optimization.\n- Offers clear guidelines, common pitfalls, and a simple cost-reduction formula.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6805260257d4e1f5f00d3163aa179f251ad4f2021cb27a92144464c178c4cdf3"
+}

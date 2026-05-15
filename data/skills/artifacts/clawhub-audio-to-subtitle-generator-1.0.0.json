@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-to-subtitle-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_to_subtitle_generator",
+  "skill": {
+    "id": 35237,
+    "skillKey": "clawhub-audio-to-subtitle-generator",
+    "name": "Audio To Subtitle Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-to-subtitle-generator",
+    "url": "https://clawhub.ai/skills/audio-to-subtitle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-to-subtitle-generator-2d3fe55f1ed64be7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tell me what you need and I'll turn your spoken audio into clean, time-synced subtitles in minutes. This audio-to-subtitle-generator skill transcribes dialog..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774836846043,
+      "changelog": "Initial release of Audio to Subtitle Generator.\n\n- Instantly converts spoken audio from video files (mp4, mov, avi, webm, mkv) into accurate, time-synced subtitles (SRT, VTT).\n- Cloud-backed transcription with automatic setup and streamlined authentication (includes 100 free credits on first sign-in).\n- Simple file upload and subtitle export process with support for user requests and format preferences.\n- Real-time status updates and built-in error handling for common issues (authentication, file size, unsupported formats).\n- Designed for content creators, educators, accessibility, and fast video workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a97507aef30e59ea312a2b1a3af3df372c7f3b95a3c9e0a70828fb556b3003bd"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12131,
+  "uuid": "skill-clawhub-joan-workflow",
+  "skillKey": "clawhub-joan-workflow",
+  "name": "Joan Workflow",
+  "summary": "This skill should be used when the user asks about \"joan\", \"pods\", \"workspace\", \"domain knowledge\", \"context sync\", \"joan init\", \"joan todo\", or needs guidance on how Joan's knowledge management system works. Provides workflow guidance for.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joan_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "donny-son",
+      "features": [
+        "This skill should be used when the user asks about \"joan\", \"pods\", \"workspace\", \"domain knowled.",
+        "Provides workflow guidance for pods, todos, plans, and workspace management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joan-workflow@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60206749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joan-workflow",
+      "url": "https://clawhub.ai/skills/joan-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joan-workflow",
+    "url": "https://clawhub.ai/skills/joan-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joan-workflow-d4a6f785b69f9992.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joan-workflow@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-joan-workflow-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02aa9b77d4782dc14a6709d84c9a2aa77cd5ba17a73ac288ff0e8727c5fe74ef",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T08:50:36.977Z"
+}

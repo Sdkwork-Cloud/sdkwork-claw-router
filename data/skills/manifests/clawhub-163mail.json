@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49532,
+  "uuid": "skill-clawhub-163mail",
+  "skillKey": "clawhub-163mail",
+  "name": "163mail",
+  "summary": "Send, receive, search, read, reply, forward, and delete emails via 163.com using IMAP and SMTP with authorization codes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.163mail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lxy1503",
+      "features": [
+        "Send, receive, search, read, reply, forward, and delete emails via 163.com using IMAP and SMTP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/163mail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11658205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "163mail",
+      "url": "https://clawhub.ai/skills/163mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "163mail",
+    "url": "https://clawhub.ai/skills/163mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/163mail-9ff77e825a0cb283.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/163mail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-163mail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b97bd4da659de70c8af98ce89336fbd44a5aa18dd3634da865e05699aceb36ed",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:15:53.386Z"
+}

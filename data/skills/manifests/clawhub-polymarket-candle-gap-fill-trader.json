@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30944,
+  "uuid": "skill-clawhub-polymarket-candle-gap-fill-trader",
+  "skillKey": "clawhub-polymarket-candle-gap-fill-trader",
+  "name": "Polymarket Candle Gap Fill Trader",
+  "summary": "Trades gap-fill reversions on Polymarket 5-minute crypto interval markets. When consecutive intervals have contradictory strong signals -- prior interval res...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_candle_gap_fill_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades gap-fill reversions on Polymarket 5-minute crypto interval markets",
+        "When consecutive intervals have contradictory strong signals -",
+        "prior interval res..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-candle-gap-fill-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-candle-gap-fill-trader",
+      "url": "https://clawhub.ai/skills/polymarket-candle-gap-fill-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-candle-gap-fill-trader",
+    "url": "https://clawhub.ai/skills/polymarket-candle-gap-fill-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-candle-gap-fill-trader-6e025b63c07de3f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-candle-gap-fill-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-candle-gap-fill-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ff8a2329818b58496faf1437d840ff678f3625e51ee9394f01bbda5c7f9719f",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:29:04.149Z"
+}

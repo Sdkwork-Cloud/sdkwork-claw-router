@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18108,
+  "uuid": "skill-clawhub-devtopia-identity",
+  "skillKey": "clawhub-devtopia-identity",
+  "name": "Devtopia Identity",
+  "summary": "Manage wallet-backed on-chain agent identity with Devtopia ID. Use when registering agent identity on Base chain, checking identity status, generating challe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.devtopia_identity",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "npmrunspirit",
+      "features": [
+        "Manage wallet-backed on-chain agent identity with Devtopia ID",
+        "Use when registering agent identity on Base chain, checking identity status, generating challe.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/devtopia-identity@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206800078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "devtopia-identity",
+      "url": "https://clawhub.ai/skills/devtopia-identity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "devtopia-identity",
+    "url": "https://clawhub.ai/skills/devtopia-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/devtopia-identity-5480eabea38a0408.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/devtopia-identity@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-devtopia-identity-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f0446e8f6c55eb67dab245909e7538b792cabcaa288bf925428658045529155",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T06:22:05.605Z"
+}

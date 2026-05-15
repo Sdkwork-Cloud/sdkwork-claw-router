@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28775,
+  "uuid": "skill-clawhub-qa-gate",
+  "skillKey": "clawhub-qa-gate",
+  "name": "Qa Gate",
+  "summary": "Final quality validation gate for any artifact before human review. Run this skill on documents, skills, PRDs, blog posts, or code artifacts to validate fact...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Corbin Breton",
+      "features": [
+        "Final quality validation gate for any artifact before human review",
+        "Run this skill on documents, skills, PRDs, blog posts, or code artifacts to validate fact..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-gate@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4294018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-gate",
+      "url": "https://clawhub.ai/skills/qa-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-gate",
+    "url": "https://clawhub.ai/skills/qa-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-gate-206555eba4631d8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-gate@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-gate-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a5ca70a56e854e6f160fd67f534eadc8b03f265601877cbae755dba0c13e855",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T01:23:04.025Z"
+}

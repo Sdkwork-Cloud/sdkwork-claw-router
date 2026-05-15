@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zsxq-helper@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_helper",
+  "skill": {
+    "id": 72718,
+    "skillKey": "clawhub-zsxq-helper",
+    "name": "知识星球助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-helper",
+    "url": "https://clawhub.ai/skills/zsxq-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-helper-ccb4719874b14d55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "知识星球助手 - 登录、发帖、管理知识星球。当用户需要操作知识星球（登录、发帖、查看内容）时使用此技能。触发词：知识星球、zsxq、发帖、星球登录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeteenager",
+      "userId": "s17fcy4nvvaga0jtg623swh5xn83hykw",
+      "displayName": "Jiang Shuaijie",
+      "image": "https://avatars.githubusercontent.com/u/7362489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773913879956,
+      "changelog": "支持知识星球登录和发帖功能，登录时截图发送，发帖不需要截图",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:429f4469cd51abff1814780b3f9eedde2d4ba1f6ad80b424de9964a36480b410"
+}

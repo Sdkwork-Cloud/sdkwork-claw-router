@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69887,
+  "uuid": "skill-clawhub-four-layer-memory",
+  "skillKey": "clawhub-four-layer-memory",
+  "name": "four-layer-memory",
+  "summary": "四层记忆架构。身份层、工作记忆层、短期日志层、长期存储层分层管理，让记忆既可持续累积，又不会把上下文一次性塞满。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.four_layer_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingmoon96-dev",
+      "features": [
+        "四层记忆架构。身份层、工作记忆层、短期日志层、长期存储层分层管理，让记忆既可持续累积，又不会把上下文一次性塞满。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/four-layer-memory@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250243307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "four-layer-memory",
+      "url": "https://clawhub.ai/skills/four-layer-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "four-layer-memory",
+    "url": "https://clawhub.ai/skills/four-layer-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/four-layer-memory-a04761671215c3ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/four-layer-memory@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-four-layer-memory-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b698c740de1994bd53fcec7ed58c15b5dae91315d804e73a211aabbc70a6a6f7",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:36:57.587Z"
+}

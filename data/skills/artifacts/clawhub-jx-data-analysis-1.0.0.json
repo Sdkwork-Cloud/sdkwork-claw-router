@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jx-data-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_data_analysis",
+  "skill": {
+    "id": 35484,
+    "skillKey": "clawhub-jx-data-analysis",
+    "name": "data-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-data-analysis",
+    "url": "https://clawhub.ai/skills/jx-data-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-data-analysis-a29a1c55483a2bb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data analysis and visualization. Query databases, generate reports, automate spreadsheets, and turn raw data into clear, actionable insights. Use when (1) yo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776679702917,
+      "changelog": "- Added metric contracts, chart selection guidance, and decision brief templates to improve analysis reliability.\n- Expanded methodology and statistical rigor checklists for better decision-focused outputs.\n- Clarified usage scenarios and output standards.\n- Enhanced documentation with common traps, architectural notes, and related skill recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77e3a252861a7c680ad758c1478f4ff5ce7ce765af37641e300c66be1b804eb5"
+}

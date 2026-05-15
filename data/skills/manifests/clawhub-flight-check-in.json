@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64487,
+  "uuid": "skill-clawhub-flight-check-in",
+  "skillKey": "clawhub-flight-check-in",
+  "name": "Flight Check In",
+  "summary": "提供在线选座、行李托运规则及延误证明获取指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_check_in",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "提供在线选座、行李托运规则及延误证明获取指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight-check-in@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight-check-in",
+      "url": "https://clawhub.ai/skills/flight-check-in"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-check-in",
+    "url": "https://clawhub.ai/skills/flight-check-in",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-check-in-822970d14257d6a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight-check-in@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-check-in-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ea81666c90d17fd0ca6eb3abfe2985a6f08c9d3c08b33725b275a73538050dc",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:22:08.398Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pred-polymarket@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pred_polymarket",
+  "skill": {
+    "id": 35513,
+    "skillKey": "clawhub-pred-polymarket",
+    "name": "Polymarket Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pred-polymarket",
+    "url": "https://clawhub.ai/skills/pred-polymarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pred-polymarket-ad5586d22682e094.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prediction markets data - Polymarket, Kalshi markets, prices, positions, and trades"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisadocs",
+      "userId": "s172yz541n4361fw0sapygg0r583eghk",
+      "displayName": "AIsa",
+      "image": "https://avatars.githubusercontent.com/u/245991925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775108891078,
+      "changelog": "Version 1.0.1 of pred-polymarket\n\n- No user-facing changes detected; documentation and core features remain the same.\n- No file changes or new functionality in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e708b9637d821d677a05a8093db0349705c4b534e65be85247541246d898a6ad"
+}

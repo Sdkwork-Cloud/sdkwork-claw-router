@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/megasquirt-tuner@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.megasquirt_tuner",
+  "skill": {
+    "id": 16779,
+    "skillKey": "clawhub-megasquirt-tuner",
+    "name": "MegaSquirt Tuner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "megasquirt-tuner",
+    "url": "https://clawhub.ai/skills/megasquirt-tuner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/megasquirt-tuner-5d30698bb83271a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Megasquirt ECU tuning and calibration via TunerStudio, covering VE table, ignition timing, AFR targets, sensor calibration, accel enrichment, boost, launch c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boblobclaw",
+      "userId": "publishers:boblobclaw",
+      "displayName": "boblobclaw",
+      "image": "https://avatars.githubusercontent.com/u/260133129?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 850,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771384866273,
+      "changelog": "Fix LFD vulnerability in analyze_msq.py - add input validation and security checks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:848468872f59715fcbfe707789eb1c2b78f343d2f518bc64aa81e73b37cf3557"
+}

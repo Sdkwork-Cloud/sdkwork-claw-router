@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifuncs-deep-search@0.0.5",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifuncs_deep_search",
+  "skill": {
+    "id": 14217,
+    "skillKey": "clawhub-unifuncs-deep-search",
+    "name": "UniFuncs Deep Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifuncs-deep-search",
+    "url": "https://clawhub.ai/skills/unifuncs-deep-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifuncs-deep-search-9fcffc5b58c9f0bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use UniFuncs Deep Search API for fast, comprehensive information gathering. Use this skill when users ask for deep search, broad investigation, or in-depth t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinlic",
+      "userId": "s17azb6vg38k6qc2j24htf3pk583qew4",
+      "displayName": "UniFuncs",
+      "image": "https://avatars.githubusercontent.com/u/20235341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1241,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.5",
+      "createdAt": 1774633525990,
+      "changelog": "- Added compiled Python file: __pycache__/deep-search-report.cpython-313.pyc\n- No changes to skill usage, documentation, or features.\n- This release is functionally equivalent to the previous version except for the addition of the bytecode file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:023c394721a1e8b024a15f19c7874da1b6fa8ec80c88c8f2ca55da356c1bfb2c"
+}

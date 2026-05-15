@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16130,
+  "uuid": "skill-clawhub-expanso-json-pretty",
+  "skillKey": "clawhub-expanso-json-pretty",
+  "name": "Expanso json-pretty",
+  "summary": "Formats and pretty-prints JSON input with indentation using Expanso Edge pipelines for easy readability.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_json_pretty",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Expanso",
+      "features": [
+        "Formats and pretty-prints JSON input with indentation using Expanso Edge pipelines for easy rea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expanso-json-pretty@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expanso-json-pretty",
+      "url": "https://clawhub.ai/skills/expanso-json-pretty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-json-pretty",
+    "url": "https://clawhub.ai/skills/expanso-json-pretty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-json-pretty-bd3b8a4655165fc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expanso-json-pretty@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expanso-json-pretty-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f8ee244e331bbba09597ed5d2875926293f96bcead941d7dafc59f91dff1025",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:51:43.719Z"
+}

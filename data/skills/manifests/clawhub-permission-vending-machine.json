@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43716,
+  "uuid": "skill-clawhub-permission-vending-machine",
+  "skillKey": "clawhub-permission-vending-machine",
+  "name": "Permission Vending Machine",
+  "summary": "Multi-channel approval system for AI agent permissions. GATES sensitive operations (file deletion, git force-push) behind human approval. Notifies via iMessa...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.permission_vending_machine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tyler",
+      "features": [
+        "Multi-channel approval system for AI agent permissions",
+        "GATES sensitive operations (file deletion, git force-push) behind human approval",
+        "Notifies via iMessa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/permission-vending-machine@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265649192?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "permission-vending-machine",
+      "url": "https://clawhub.ai/skills/permission-vending-machine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "permission-vending-machine",
+    "url": "https://clawhub.ai/skills/permission-vending-machine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/permission-vending-machine-bfa322f9353cce2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/permission-vending-machine@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-permission-vending-machine-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:777f554c5166f0ab1c36a099bfb68e70958bafbb7b03da599f95016901e43501",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T22:59:17.267Z"
+}

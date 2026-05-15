@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37443,
+  "uuid": "skill-clawhub-r3",
+  "skillKey": "clawhub-r3",
+  "name": "R3",
+  "summary": "R3 integration. Manage data, records, and automate workflows. Use when the user wants to interact with R3 data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.r3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "R3 integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with R3 data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/r3@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "r3",
+      "url": "https://clawhub.ai/skills/r3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "r3",
+    "url": "https://clawhub.ai/skills/r3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/r3-e49d63b2a8a78f04.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/r3@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-r3-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ef5e3d727eef0bdecd9d2a27971affc254558acf4bd87d1b9093e9f30b63129",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:54:35.925Z"
+}

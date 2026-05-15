@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eastmoney-select-stock-1-0-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_select_stock_1_0_2",
+  "skill": {
+    "id": 68959,
+    "skillKey": "clawhub-eastmoney-select-stock-1-0-2",
+    "name": "Eastmoney Select Stock 1.0.2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-select-stock-1-0-2",
+    "url": "https://clawhub.ai/skills/eastmoney-select-stock-1-0-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-select-stock-1-0-2-0cfa0339297670fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本 Skill 支持基于股票选股条件（行情指标、财务指标等）筛选满足条件的股票；可查询指定行业/板块内的股票、上市公司，以及板块指数的成分股；同时支持股票、上市公司、板块/指数推荐等相关任务，避免大模型在选股时使用过时信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lean-zhouchao",
+      "userId": "s178rxdgn3z5d3avc5xwvvghx183kh7y",
+      "displayName": "lean-zhouchao",
+      "image": "https://avatars.githubusercontent.com/u/23061177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773625068696,
+      "changelog": "eastmoney_select_stock 1.0.0 – 初始版本发布\n\n- 支持基于自然语言选股条件（如市盈率、涨幅、行业、指数等）筛选股票，覆盖A股、港股和美股。\n- 可查询指定行业/板块内公司、板块指数成分股，支持筛选和股票推荐等相关任务。\n- 提供详细API参数说明、接口字段释义与完整Python调用示例。\n- 强调数据安全：API Key通过环境变量传递，查询仅发送选股关键词，不含用户隐私。\n- 给出常见异常处理建议及结果导出为CSV的方法。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2f8fdffe4489bbe9a4d9902d5d5e9db6b64911bfdeac6481ed6c1c24e31403a"
+}

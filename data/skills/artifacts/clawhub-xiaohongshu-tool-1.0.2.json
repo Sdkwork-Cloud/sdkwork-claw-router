@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-tool@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_tool",
+  "skill": {
+    "id": 71857,
+    "skillKey": "clawhub-xiaohongshu-tool",
+    "name": "小红书商业洞察与竞品分析助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-tool",
+    "url": "https://clawhub.ai/skills/xiaohongshu-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-tool-acaecbe01d83f8d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书运营全链路数据工具｜支持关键词搜索/笔记详情查询/爆款挖掘/竞品分析/KOL筛选/趋势洞察，基于Node.js开发，可获取小红书图文/视频笔记的点赞/评论/收藏数据，用数据驱动小红书流量增长，告别盲目创作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "um-why",
+      "userId": "s17dekqcarz582t04nvd15aj1183gf0v",
+      "displayName": "um-why",
+      "image": "https://avatars.githubusercontent.com/u/24377892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776430140703,
+      "changelog": "- Major codebase refactor: unified previous lib/ and scripts/ directories into a new src/ structure for improved modularity and maintainability.\n- Added utility and validation modules (logging, retry, request, key management, general utilities), enhancing reliability and code organization.\n- Updated CLI entry points to src/xiaohongshu/search-cli.js and src/xiaohongshu/detail-cli.js for more intuitive usage.\n- Improved command-line arguments: added short flags, clarified required fields, and strengthened URL validation.\n- Upgraded documentation with detailed usage instructions, example commands, and environment/setup notes.\n- Raised minimum supported Node.js version to 16.14.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11f46f08ecce84c9c2c73e70cde02580902198c99165f14d4a09ba36b5bb60c0"
+}

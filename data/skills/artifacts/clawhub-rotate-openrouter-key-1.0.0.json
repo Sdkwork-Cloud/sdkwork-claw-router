@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rotate-openrouter-key@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rotate_openrouter_key",
+  "skill": {
+    "id": 18098,
+    "skillKey": "clawhub-rotate-openrouter-key",
+    "name": "Rotate OpenRouter Key"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rotate-openrouter-key",
+    "url": "https://clawhub.ai/skills/rotate-openrouter-key",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rotate-openrouter-key-9a0a1d1ae79acb62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely rotate the OpenRouter API key across all config files in an OpenClaw installation. Finds every location where the key is stored, updates them, restart..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chunhualiao",
+      "userId": "s17czb50cec363y7yz4cchy9p9848424",
+      "displayName": "Chunhua Liao",
+      "image": "https://avatars.githubusercontent.com/u/1627206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 718,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771697174419,
+      "changelog": "v1.0.0: Initial release. Finds all key locations (.env + JSON), priority chain awareness, timestamped backups, API verification, dry-run mode.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a63f80f634884d532fa1af5ca2ed774e59abbc1d0eacc464041a18d865c434c"
+}

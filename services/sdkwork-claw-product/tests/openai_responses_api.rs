@@ -7,7 +7,8 @@ use sdkwork_claw_product::application::ApiKeySecretHasher;
 use sdkwork_claw_product::domain::{
     AiModel, ApiKeyGroup, BillingMeter, DecimalValue, DomainResult, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderRetryPolicy,
+    ProviderRetryPolicy, RouteCandidate, RoutingCapability, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
 };
 use sdkwork_claw_product::infrastructure::crypto::HmacSha256ApiKeySecretHasher;
 use sdkwork_claw_product::infrastructure::InMemoryPricingCatalog;
@@ -38,6 +39,10 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             3001,
             "openai/global/gpt-4.1-mini",
         )
+        .with_provider_endpoint(
+            Some("http://provider-proxy.internal/openrouter"),
+            Some("vault://providers/openrouter/account/responses"),
+        )
         .with_timeout_ms(30_000)
         .with_retry_policy(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),
     );
@@ -54,7 +59,7 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
         DecimalValue::parse("1.000000").unwrap(),
         DecimalValue::parse("1.100000").unwrap(),
     ));
-    catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash));
+    catalog.add_api_key(GatewayApiKey::new(101, 10, "sk-live", &key_hash).with_owner(10, 20, 30));
     catalog.add_price(ModelPrice::new_for_catalog_key(
         "openai/global/gpt-4.1-mini",
         "gpt-4.1-mini",
@@ -71,6 +76,31 @@ fn catalog_with_hashed_api_key(key_hash: String) -> InMemoryPricingCatalog {
             Money::usd("0.110000").unwrap(),
         )
         .for_provider("openrouter", 3001),
+    );
+    catalog.add_routing_policy(
+        RoutingPolicy::new(
+            9001,
+            10,
+            20,
+            "standard-group-responses-policy",
+            RoutingPolicyScope::ApiKeyGroup,
+            Some(10),
+            Some(9101),
+        )
+        .with_capability(RoutingCapability::Chat),
+    );
+    catalog.add_routing_rule(
+        RoutingRule::new(
+            9102,
+            10,
+            20,
+            9101,
+            "standard-group-gpt-4-1-mini",
+            1,
+            r#"{"catalogKey":"openai/global/gpt-4.1-mini"}"#,
+            "openai/global/gpt-4.1-mini",
+        )
+        .with_candidate_channels(vec![RouteCandidate::new(3001, 100)]),
     );
     catalog
 }
@@ -228,6 +258,14 @@ async fn openai_responses_relays_non_stream_request_after_auth_model_and_price_v
     assert_eq!("gpt-4.1-mini", captured[0].model);
     assert_eq!("openrouter", captured[0].provider_code);
     assert_eq!("openai/global/gpt-4.1-mini", captured[0].provider_model);
+    assert_eq!(
+        Some("http://provider-proxy.internal/openrouter"),
+        captured[0].provider_base_url.as_deref()
+    );
+    assert_eq!(
+        Some("vault://providers/openrouter/account/responses"),
+        captured[0].provider_secret_ref.as_deref()
+    );
     assert_eq!(Some(30_000), captured[0].provider_timeout_ms);
     assert_eq!(
         Some(ProviderRetryPolicy::new(3, vec![429, 503], 0).unwrap()),

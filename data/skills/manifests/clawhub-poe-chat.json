@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59416,
+  "uuid": "skill-clawhub-poe-chat",
+  "skillKey": "clawhub-poe-chat",
+  "name": "Poe Chat",
+  "summary": "使用 @gemini/@gpt/@claude 等触发词调用 Poe 模型（含 Gemini/GPT/claude/kimi/Deepseek等主流模型），自动选择 model_id 并说明使用了哪一个，支持文件上传。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poe_chat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "longman",
+      "features": [
+        "使用 @gemini/@gpt/@claude 等触发词调用 Poe 模型（含 Gemini/GPT/claude/kimi/Deepseek等主流模型），自动选择 model_id 并说明."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poe-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/932025?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poe-chat",
+      "url": "https://clawhub.ai/skills/poe-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poe-chat",
+    "url": "https://clawhub.ai/skills/poe-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poe-chat-7a6849e792c483b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poe-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poe-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec01aa96e9807023db25dcc98fd49b66fd0d5b7d9f9e22da98c33a2ab17eb074",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T13:56:20.887Z"
+}

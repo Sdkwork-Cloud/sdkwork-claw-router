@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22257,
+  "uuid": "skill-clawhub-didit-face-search",
+  "skillKey": "clawhub-didit-face-search",
+  "name": "Didit Face Search",
+  "summary": "Integrate Didit Face Search standalone API to perform 1:N facial search against all previously verified sessions. Use when the user wants to detect duplicate...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_face_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didit",
+      "features": [
+        "Integrate Didit Face Search standalone API to perform 1:N facial search against all previously.",
+        "Use when the user wants to detect duplicate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/didit-face-search@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47662054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "didit-face-search",
+      "url": "https://clawhub.ai/skills/didit-face-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-face-search",
+    "url": "https://clawhub.ai/skills/didit-face-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-face-search-d56b554ce5c1d5ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/didit-face-search@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-didit-face-search-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92d32bf5c1340535a826bebb8fca49fc0cbd28a3722cc91cac401d39160926b9",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:15:21.391Z"
+}

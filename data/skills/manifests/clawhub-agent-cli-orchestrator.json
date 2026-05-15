@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21699,
+  "uuid": "skill-clawhub-agent-cli-orchestrator",
+  "skillKey": "clawhub-agent-cli-orchestrator",
+  "name": "Agent Cli Orchestrator",
+  "summary": "Orchestrates multiple AI CLI tools by auto-detecting, prioritizing, and switching between them for stable, fallback-enabled automated coding workflows.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_cli_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Atom",
+      "features": [
+        "Orchestrates multiple AI CLI tools by auto-detecting, prioritizing, and switching between them."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-cli-orchestrator@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58652553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-cli-orchestrator",
+      "url": "https://clawhub.ai/skills/agent-cli-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-cli-orchestrator",
+    "url": "https://clawhub.ai/skills/agent-cli-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-cli-orchestrator-71fe2cd2cf7e8192.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-cli-orchestrator@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-cli-orchestrator-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:323a0c8248f5ea06629330dd15a99807f902d0d9eecf8568158ae55f4327c44f",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:08:20.803Z"
+}

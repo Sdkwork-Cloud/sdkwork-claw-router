@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38239,
+  "uuid": "skill-clawhub-assembled",
+  "skillKey": "clawhub-assembled",
+  "name": "Assembled",
+  "summary": "Assembled integration. Manage data, records, and automate workflows. Use when the user wants to interact with Assembled data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.assembled",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Assembled integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Assembled data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/assembled@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "assembled",
+      "url": "https://clawhub.ai/skills/assembled"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "assembled",
+    "url": "https://clawhub.ai/skills/assembled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/assembled-34553bbdce61d99c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/assembled@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-assembled-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73956a24d83975d627cd8698ddc8525253bd3174abc19bfdb6acbb46b7e5fd1e",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:12:20.708Z"
+}

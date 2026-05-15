@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60406,
+  "uuid": "skill-clawhub-proactive-self-improving",
+  "skillKey": "clawhub-proactive-self-improving",
+  "name": "Proactive Self Improving",
+  "summary": "自动捕获经验并安全进化的技能。触发条件：(1)命令/操作失败时→记ERRORS.md (2)被用户纠正('不对'/'应该是')时→记LEARNINGS.md (3)用户需要不存在的能力时→记FEATURE_REQUESTS.md (4)外部API/工具出错时→记ERRORS.md (5)发现自己知识过时/错误时→...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_self_improving",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lygjoey",
+      "features": [
+        "自动捕获经验并安全进化的技能。触发条件：(1)命令/操作失败时→记ERRORS.md (2)被用户纠正('不对'/'应该是')时→记LEARNINGS.md (3)用户需要不存在的能力时→记."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proactive-self-improving@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234766358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proactive-self-improving",
+      "url": "https://clawhub.ai/skills/proactive-self-improving"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-self-improving",
+    "url": "https://clawhub.ai/skills/proactive-self-improving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-self-improving-17e2435744e160b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proactive-self-improving@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proactive-self-improving-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84e16c1180f5a093b34fc4906381cb4dfd7c65dea8d8d432bdef2c2f6353ebe4",
+      "artifactSizeBytes": 2641
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:49:31.202Z"
+}

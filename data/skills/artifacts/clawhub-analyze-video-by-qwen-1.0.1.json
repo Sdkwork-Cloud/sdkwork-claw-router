@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analyze-video-by-qwen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyze_video_by_qwen",
+  "skill": {
+    "id": 61194,
+    "skillKey": "clawhub-analyze-video-by-qwen",
+    "name": "analyze video by qwen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyze-video-by-qwen",
+    "url": "https://clawhub.ai/skills/analyze-video-by-qwen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyze-video-by-qwen-1ef8f614d5b4d8c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Qwen 3.5 Plus 模型分析视频内容，支持本地文件和远程 URL，可自定义分析提示词和抽帧频率"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fackee",
+      "userId": "s171em0ncwskvbc7c3q7spqtmh84wzdh",
+      "displayName": "www",
+      "image": "https://avatars.githubusercontent.com/u/16185950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 697,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773989964770,
+      "changelog": "- Added support for analyzing remote video URLs in addition to local files\n- Updated documentation to reflect support for both local file paths and remote URLs\n- Clarified parameter descriptions and usage examples for enhanced usability\n- No code changes; added a local settings sample file",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6ce098d2026dffa4b42a487e3aecf4af48c61acf7c850cf7281f93c2eca078a"
+}

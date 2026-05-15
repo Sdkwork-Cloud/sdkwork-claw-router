@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12628,
+  "uuid": "skill-clawhub-karakeep-save",
+  "skillKey": "clawhub-karakeep-save",
+  "name": "Karakeep Save",
+  "summary": "Save bookmarks to Karakeep (self-hosted bookmark manager). Use when the user wants to save a URL, bookmark a link, or add something to their reading list.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karakeep_save",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickian",
+      "features": [
+        "Save bookmarks to Karakeep (self-hosted bookmark manager)",
+        "Use when the user wants to save a URL, bookmark a link, or add something to their reading list."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/karakeep-save@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/590678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "karakeep-save",
+      "url": "https://clawhub.ai/skills/karakeep-save"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karakeep-save",
+    "url": "https://clawhub.ai/skills/karakeep-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karakeep-save-761778bdc33937fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/karakeep-save@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-karakeep-save-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bbdd9607bb31bf790c291982caa61da51d670e993709e884ddb32e02c5f8905",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T17:46:58.133Z"
+}

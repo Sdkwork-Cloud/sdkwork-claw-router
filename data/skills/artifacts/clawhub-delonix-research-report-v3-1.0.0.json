@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/delonix-research-report-v3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delonix_research_report_v3",
+  "skill": {
+    "id": 57505,
+    "skillKey": "clawhub-delonix-research-report-v3",
+    "name": "德胧调研报告技能v3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delonix-research-report-v3",
+    "url": "https://clawhub.ai/skills/delonix-research-report-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delonix-research-report-v3-07ed7c7b3043ec85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user requests industry research reports, market analysis, business trend analysis, or professional research documents. This skill provides struc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaoliuzhu",
+      "userId": "s17e38390rnhxjtv52ft6b44cx84s4n1",
+      "displayName": "Chaoliuzhu",
+      "image": "https://avatars.githubusercontent.com/u/207801254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776716350400,
+      "changelog": "首发版本：市场分析框架，结构化调研报告生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2c1051a07bd55ab8e6620b31dc9a54f02f1a36d6525ef45a38c325433724ace"
+}

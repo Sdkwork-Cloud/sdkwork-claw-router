@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coding-agent-loops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_agent_loops",
+  "skill": {
+    "id": 19354,
+    "skillKey": "clawhub-coding-agent-loops",
+    "name": "Coding Agent Loops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-agent-loops",
+    "url": "https://clawhub.ai/skills/coding-agent-loops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-agent-loops-1edeacaa37ee06bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run long-lived AI coding agents (Codex, Claude Code) in persistent tmux sessions with Ralph retry loops and completion hooks. Use when running multi-step cod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luke-deltadesk",
+      "userId": "publishers:luke-deltadesk",
+      "displayName": "luke-deltadesk",
+      "image": "https://avatars.githubusercontent.com/u/143728034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772593451565,
+      "changelog": "Initial release of Coding Agent Loops, a tool for robust AI coding agent orchestration.\n\n- Enables running AI coding agents (Codex, Claude Code) in persistent tmux sessions with automatic Ralph retry loops and completion hooks.\n- Supports multi-step, PRD-based workflows and long-lived programming tasks that survive restarts and notify on completion.\n- Provides detailed session management commands for starting, monitoring, and terminating tmux-based agent sessions.\n- Enforces use of a stable tmux socket and mandatory completion hooks for reliable status reporting and notifications.\n- Offers troubleshooting tips and best practices for smooth operation and error recovery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f0350c7be749fc10c8a737e4f750140cf172ce0baa4fa599444941391b6b710f"
+}

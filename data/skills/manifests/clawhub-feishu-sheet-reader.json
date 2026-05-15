@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38366,
+  "uuid": "skill-clawhub-feishu-sheet-reader",
+  "skillKey": "clawhub-feishu-sheet-reader",
+  "name": "Feishu Sheet Reader",
+  "summary": "Extract and return data or metadata from Feishu Sheets by parsing sheet links, reading specific ranges, entire sheets, or listing sheet tabs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_sheet_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack-xun",
+      "features": [
+        "Extract and return data or metadata from Feishu Sheets by parsing sheet links, reading specific."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-sheet-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143464473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-sheet-reader",
+      "url": "https://clawhub.ai/skills/feishu-sheet-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-sheet-reader",
+    "url": "https://clawhub.ai/skills/feishu-sheet-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-sheet-reader-f602aef9a784b521.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-sheet-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-sheet-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e354c2653c3f886de983429373fd459e30fbea9482802cfc0a59c14e43fbb46",
+      "artifactSizeBytes": 2299
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:00:23.063Z"
+}

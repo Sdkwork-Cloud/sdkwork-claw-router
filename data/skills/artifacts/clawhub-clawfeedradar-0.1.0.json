@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawfeedradar@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawfeedradar",
+  "skill": {
+    "id": 42217,
+    "skillKey": "clawhub-clawfeedradar",
+    "name": "Claw RSS Feed Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawfeedradar",
+    "url": "https://clawhub.ai/skills/clawfeedradar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawfeedradar-6b5133e363008cec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal \"news radar\" skill built on top of a clawsqlite knowledge base and its interest clusters."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ernestyu",
+      "userId": "s17c28xz5g5xyfsd33j7eap9ts83fzj2",
+      "displayName": "Ernestyu",
+      "image": "https://avatars.githubusercontent.com/u/7390096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775639262626,
+      "changelog": "Initial release of clawfeedradar: a personal news radar skill integrating with clawsqlite interest clusters.\n\n- Fetches news/article candidates from sources like Hacker News, RSS, and arXiv.\n- Scores candidates against your long-term interest clusters in clawsqlite without modifying your database.\n- Generates personalized RSS (XML) and JSON feeds, with optional small‑LLM summaries and bilingual content.\n- Easy installation and upgrade via a bootstrap shell script and Python package.\n- Supports actions for running on individual sources or multiple sources defined in a config JSON.\n- Optional git publishing for easily subscribing via GitHub/Gitee Pages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c1f38c16eb58b0ace2dbc82b028ba434b212f23972d096780f409cc8b85c946"
+}

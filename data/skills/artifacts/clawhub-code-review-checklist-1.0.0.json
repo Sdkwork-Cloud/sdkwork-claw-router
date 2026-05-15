@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-review-checklist@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_checklist",
+  "skill": {
+    "id": 58165,
+    "skillKey": "clawhub-code-review-checklist",
+    "name": "Code Review Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-checklist",
+    "url": "https://clawhub.ai/skills/code-review-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-checklist-9d8740b8d4b931ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "代码审查清单 - A comprehensive code review checklist and guidance tool. Use when user asks about 代码审查、代码检查、PR review、代码质量, or wants to conduct or prepare for a cod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774791370164,
+      "changelog": "- Initial release of code-review-checklist skill.\n- Provides a systematic, multi-category code review checklist covering correctness, style, performance, security, error handling, testing, documentation, and architecture.\n- Offers reviewer and developer guidance, including review workflow, red flag identification, and best practices.\n- Includes language-specific considerations for JavaScript/TypeScript, Python, Java, and Go.\n- Defines a standard review output format and example prompts for various team and individual scenarios.\n- Designed for integration with github, coding-agent, and opencli.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1314534077a26399cdfb905fb73175cd2b71fb0f29c2aac7fc8cd209d8c93828"
+}

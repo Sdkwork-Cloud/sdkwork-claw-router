@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-macos-always-on@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_macos_always_on",
+  "skill": {
+    "id": 18470,
+    "skillKey": "clawhub-openclaw-macos-always-on",
+    "name": "OpenClaw macOS Always-On"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-macos-always-on",
+    "url": "https://clawhub.ai/skills/openclaw-macos-always-on",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-macos-always-on-54d46075fe267af1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run OpenClaw as a system-level LaunchDaemon on macOS for 24/7 operation, surviving screen lock, logout, and user switching. Uses caffeinate to prevent sleep...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happydog-intj",
+      "userId": "publishers:happydog-intj",
+      "displayName": "happy dog",
+      "image": "https://avatars.githubusercontent.com/u/212984?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 688,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771678277444,
+      "changelog": "Add Chinese README (README.zh-CN.md) for Chinese-speaking users",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eacbc70c984753b8300db5a20a1f8e5062c2df7976fac886d6bcaff2aa61a965"
+}

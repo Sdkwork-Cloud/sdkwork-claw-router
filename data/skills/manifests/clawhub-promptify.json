@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9338,
+  "uuid": "skill-clawhub-promptify",
+  "skillKey": "clawhub-promptify",
+  "name": "Promptify Skill",
+  "summary": "Optimize prompts for clarity and effectiveness. Use when user says \"improve this prompt\", \"optimize my prompt\", \"make this clearer\", or provides vague/unstructured prompts. Intelligently routes to sub-agents for codebase research, clarifyi.",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promptify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tolibear",
+      "features": [
+        "Optimize prompts for clarity and effectiveness",
+        "Use when user says \"improve this prompt\", \"optimize my prompt\", \"make this clearer\", or provide.",
+        "Intelligently routes to sub-agents for codebase research, clarifying questions, or web search a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/promptify@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3253693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "promptify",
+      "url": "https://clawhub.ai/skills/promptify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promptify",
+    "url": "https://clawhub.ai/skills/promptify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promptify-34287affed2ef541.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/promptify@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-promptify-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de12893e44eafea8daa213868566e95b6051198a7d3dd5c1435b5b8f7e1aba3a",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T22:22:19.117Z"
+}

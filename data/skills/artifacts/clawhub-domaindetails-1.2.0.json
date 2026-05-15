@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domaindetails@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domaindetails",
+  "skill": {
+    "id": 9923,
+    "skillKey": "clawhub-domaindetails",
+    "name": "Domain Details"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domaindetails",
+    "url": "https://clawhub.ai/skills/domaindetails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domaindetails-f99b777567b444d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up domain WHOIS/RDAP info and check marketplace listings. Free API, no auth required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "julianengel",
+      "userId": "publishers:julianengel",
+      "displayName": "julianengel",
+      "image": "https://avatars.githubusercontent.com/u/10634231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2799,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1767687559054,
+      "changelog": "Added marketplace search API - curl only, no browser needed",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8fbf464b89052a5b2add30e2fb2ce66351577eca7f18a85a77bf0f29b715a0f5"
+}

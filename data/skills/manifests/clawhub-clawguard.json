@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10599,
+  "uuid": "skill-clawhub-clawguard",
+  "skillKey": "clawhub-clawguard",
+  "name": "ClawGuard",
+  "summary": "Install and configure the ClawGuard security plugin - an LLM-as-a-Judge guardrail that detects and blocks risky tool calls",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lidan-capsule",
+      "features": [
+        "Install and configure the ClawGuard security plugin",
+        "an LLM-as-a-Judge guardrail that detects and blocks risky tool calls"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguard@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188199428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguard",
+      "url": "https://clawhub.ai/skills/clawguard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard",
+    "url": "https://clawhub.ai/skills/clawguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-825a31614ea118ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguard@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af077475374cc8a245eb26b7b3dc97ca37da7bc06509b4dd18f1e09446d0c860",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T14:49:33.685Z"
+}

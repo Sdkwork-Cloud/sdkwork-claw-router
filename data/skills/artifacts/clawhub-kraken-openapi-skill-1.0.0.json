@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kraken-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kraken_openapi_skill",
+  "skill": {
+    "id": 25548,
+    "skillKey": "clawhub-kraken-openapi-skill",
+    "name": "Kraken OpenAPI Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kraken-openapi-skill",
+    "url": "https://clawhub.ai/skills/kraken-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kraken-openapi-skill-8a427fd410db9a27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Kraken public market APIs through UXC with a curated OpenAPI schema, market-first discovery, and explicit private-auth boundary notes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773622300073,
+      "changelog": "Initial release of kraken-openapi-skill.\n\n- Provides public market-data access to Kraken via curated OpenAPI schema and UXC tooling.\n- Supports key endpoints: server time, asset pair metadata, ticker reads, OHLC, and order book snapshots.\n- Excludes private/account functions and FIX; read-only, public-surface only.\n- Includes clear guidance for workflow, authentication, and recommended usage patterns.\n- Highlights Kraken-specific pair naming and focuses on automation-ready JSON output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14a2d09e43101b08004980c0a4d040a66efc288014db6a728b08b872f5f79aab"
+}

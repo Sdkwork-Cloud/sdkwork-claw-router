@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23856,
+  "uuid": "skill-clawhub-compound-eng-code-review",
+  "skillKey": "clawhub-compound-eng-code-review",
+  "name": "ia-code-review",
+  "summary": "Structured code reviews with severity-ranked findings and deep multi-agent mode. Use when performing a code review, auditing code quality, or critiquing PRs,...",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_code_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilia Alshanetsky",
+      "features": [
+        "Structured code reviews with severity-ranked findings and deep multi-agent mode",
+        "Use when performing a code review, auditing code quality, or critiquing PRs,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compound-eng-code-review@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compound-eng-code-review",
+      "url": "https://clawhub.ai/skills/compound-eng-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-code-review",
+    "url": "https://clawhub.ai/skills/compound-eng-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-code-review-c445b4c46b4edd63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compound-eng-code-review@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-compound-eng-code-review-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:543e81f0343d58a1ec9a0a4ec9445151c894eee07138f978636c6ae0840b529a",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T23:16:26.595Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-fixing@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fixing",
+  "skill": {
+    "id": 70000,
+    "skillKey": "clawhub-web-fixing",
+    "name": "Web Fixing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fixing",
+    "url": "https://clawhub.ai/skills/web-fixing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fixing-90f12c307235c8ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "修复网页和前端界面问题。当用户要求修复网页、调试前端、解决UI问题、修复样式、响应式布局错误、移动端显示异常、CSS问题、JavaScript报错、交互功能失效、生成网页后检查并修复时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aqbjqtd",
+      "userId": "s176hcamdc143tsm5n5zzqq6f583h359",
+      "displayName": "sniper-one",
+      "image": "https://avatars.githubusercontent.com/u/56232840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775563917205,
+      "changelog": "web-fixing 1.2.0 — No file changes detected; documentation and workflow remain unchanged.\n\n- No modifications to the SKILL.md file, content, or skill implementation.\n- All guidelines, strategies, and checklists are unchanged from the previous version.\n- Documentation and workflow for web and frontend bug fixing remain as before.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75edb04ef3b9fb9dd54b6f2933cc3b991e43364c453a144c5f440b19420a5494"
+}

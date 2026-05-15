@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42546,
+  "uuid": "skill-clawhub-holded-integration",
+  "skillKey": "clawhub-holded-integration",
+  "name": "Holded",
+  "summary": "Holded integration. Manage Organizations. Use when the user wants to interact with Holded data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holded_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Holded integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Holded data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holded-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holded-integration",
+      "url": "https://clawhub.ai/skills/holded-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holded-integration",
+    "url": "https://clawhub.ai/skills/holded-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holded-integration-abbca0d063be07b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holded-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-holded-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eef0e6764d97c178f781c24e38f5edb4f108f00d9219793113ba786e0b69b494",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:33:34.956Z"
+}

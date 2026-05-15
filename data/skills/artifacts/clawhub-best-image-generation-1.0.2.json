@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/best-image-generation@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_image_generation",
+  "skill": {
+    "id": 8572,
+    "skillKey": "clawhub-best-image-generation",
+    "name": "Best Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-image-generation",
+    "url": "https://clawhub.ai/skills/best-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-image-generation-97133e6f0042361c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Best quality AI image generation (~$0.12-0.20/image). Text-to-image, image-to-image, and image editing via the EvoLink API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "evolinkai",
+      "userId": "s176k82x7tm60j2kx309p7evxs83j3z7",
+      "displayName": "EvolinkAI",
+      "image": "https://avatars.githubusercontent.com/u/253253881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 10737,
+      "installsAllTime": 84,
+      "installsCurrent": 78,
+      "stars": 8,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771684570437,
+      "changelog": "Security fix",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d225dc89c6b3740a3febd20fe3467f2331b95ff65ffa2837f9b3e32f8ee2796b"
+}

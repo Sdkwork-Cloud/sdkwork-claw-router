@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52006,
+  "uuid": "skill-clawhub-codex-history-manager",
+  "skillKey": "clawhub-codex-history-manager",
+  "name": "codex-history-manager",
+  "summary": "Search, read, export, hand off, clone, move, or rebind local Codex history stored under ~/.codex. Use when the user wants to inspect past Codex sessions, bri...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_history_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Severin Zhong",
+      "features": [
+        "Search, read, export, hand off, clone, move, or rebind local Codex history stored under ~/.codex",
+        "Use when the user wants to inspect past Codex sessions, bri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-history-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14969913?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-history-manager",
+      "url": "https://clawhub.ai/skills/codex-history-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-history-manager",
+    "url": "https://clawhub.ai/skills/codex-history-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-history-manager-1abc6f25088a088f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-history-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-history-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:358322f3928c8946d42f16bb32b5c259213990969520b337a3252fcb3f3691f7",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:40:54.346Z"
+}

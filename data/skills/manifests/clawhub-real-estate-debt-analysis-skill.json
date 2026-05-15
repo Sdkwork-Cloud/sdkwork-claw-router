@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64512,
+  "uuid": "skill-clawhub-real-estate-debt-analysis-skill",
+  "skillKey": "clawhub-real-estate-debt-analysis-skill",
+  "name": "Real Estate Debt Analysis",
+  "summary": "专业房产债权分析技能，对比安居客中介价格与阿里法拍成交价格，提供投资决策支持",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.real_estate_debt_analysis_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yejinlei",
+      "features": [
+        "专业房产债权分析技能，对比安居客中介价格与阿里法拍成交价格，提供投资决策支持"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/real-estate-debt-analysis-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1418455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "real-estate-debt-analysis-skill",
+      "url": "https://clawhub.ai/skills/real-estate-debt-analysis-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "real-estate-debt-analysis-skill",
+    "url": "https://clawhub.ai/skills/real-estate-debt-analysis-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/real-estate-debt-analysis-skill-7eec45f83d289afe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/real-estate-debt-analysis-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-real-estate-debt-analysis-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99f1fa2183cdf97b44eec64c992ccc9743152dc20e45647c968219e4c82b0f00",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:47:39.498Z"
+}

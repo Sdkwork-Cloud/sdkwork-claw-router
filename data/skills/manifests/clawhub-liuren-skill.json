@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73642,
+  "uuid": "skill-clawhub-liuren-skill",
+  "skillKey": "clawhub-liuren-skill",
+  "name": "大六壬技能",
+  "summary": "大六壬排盘与断卦技能。支持月将加时、起四课三传、排天将神煞、断课分析。用于人事占卜、失物寻人、出行吉凶、婚姻事业等预测。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuren_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dglijin-oss",
+      "features": [
+        "大六壬排盘与断卦技能。支持月将加时、起四课三传、排天将神煞、断课分析。用于人事占卜、失物寻人、出行吉凶、婚姻事业等预测。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liuren-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251980243?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liuren-skill",
+      "url": "https://clawhub.ai/skills/liuren-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuren-skill",
+    "url": "https://clawhub.ai/skills/liuren-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuren-skill-9ef37db37b61d755.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liuren-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liuren-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dab51f52d5658ddb8d0f5348e1ba97ef9a381cf6ec211ba8249d7fcb794c9c8b",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T15:10:14.916Z"
+}

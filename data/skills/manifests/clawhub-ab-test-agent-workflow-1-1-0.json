@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60793,
+  "uuid": "skill-clawhub-ab-test-agent-workflow-1-1-0",
+  "skillKey": "clawhub-ab-test-agent-workflow-1-1-0",
+  "name": "Ab Test Agent Workflow 1.1.0",
+  "summary": "多智能体双盲 A/B 测试工作流。对多个 AI 模型/Agent 进行多轮次、双盲对照测试。 核心角色：协调者（Coordinator）、受测者 A/B（Contestant）、评测者（Judge）。 触发场景：\"A/B 测试\"、\"双盲测试\"、\"比较 AI 模型\"、\"模型评测\"、\"测试工作流\"、 \"compare...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ab_test_agent_workflow_1_1_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnSmithfan",
+      "features": [
+        "多智能体双盲 A/B 测试工作流。对多个 AI 模型/Agent 进行多轮次、双盲对照测试。 核心角色：协调者（Coordinator）、受测者 A/B（Contestant）、评测者（Ju."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ab-test-agent-workflow-1-1-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147225147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ab-test-agent-workflow-1-1-0",
+      "url": "https://clawhub.ai/skills/ab-test-agent-workflow-1-1-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ab-test-agent-workflow-1-1-0",
+    "url": "https://clawhub.ai/skills/ab-test-agent-workflow-1-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ab-test-agent-workflow-1-1-0-21d219fd826b5d7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ab-test-agent-workflow-1-1-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ab-test-agent-workflow-1-1-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b066d2ff9cc02b8407a7118e4e455f8874a00ccc0f644f87a88e7e348a238af",
+      "artifactSizeBytes": 2951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:56:34.621Z"
+}

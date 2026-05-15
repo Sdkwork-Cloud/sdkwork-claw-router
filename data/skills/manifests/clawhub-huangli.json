@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67261,
+  "uuid": "skill-clawhub-huangli",
+  "skillKey": "clawhub-huangli",
+  "name": "Almanac / Huangli Inquiry - 黄历查询",
+  "summary": "按公历日期查询农历、宜忌、吉神凶煞等黄历信息。当用户说：明天宜不宜搬家？这周五适合领证吗？或类似黄历择日时，使用本技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huangli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "按公历日期查询农历、宜忌、吉神凶煞等黄历信息。当用户说：明天宜不宜搬家？这周五适合领证吗？或类似黄历择日时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huangli@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huangli",
+      "url": "https://clawhub.ai/skills/huangli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huangli",
+    "url": "https://clawhub.ai/skills/huangli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huangli-e008dbee0fda9321.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huangli@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-huangli-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e80f40dad423daa2931183781eb3eb9031693f7fc89029a95f82363f8fb5a5f",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:47:05.991Z"
+}

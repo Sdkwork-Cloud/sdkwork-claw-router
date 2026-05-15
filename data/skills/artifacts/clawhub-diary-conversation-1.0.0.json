@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diary-conversation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diary_conversation",
+  "skill": {
+    "id": 69423,
+    "skillKey": "clawhub-diary-conversation",
+    "name": "diary-conversation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diary-conversation",
+    "url": "https://clawhub.ai/skills/diary-conversation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diary-conversation-34562de94f64135a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过自然对话引导用户记录每日生活，生成散文式日记并支持图片上传。使用场景：当用户想要记录日记、回顾一天、写日记、记录今天、daily journal、生活记录时触发此技能。自动组织日记和图片，生成连贯的散文叙事。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinrenkun4916-hash",
+      "userId": "s17a0jkhdmz9p43xxs5221axj983m6st",
+      "displayName": "yinrenkun4916-hash",
+      "image": "https://avatars.githubusercontent.com/u/259093477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772544498841,
+      "changelog": "- 首发版本，提供基于自然对话的日记记录体验。\n- 支持生成具备散文感的日记，可自然融入用户图片内容。\n- 日记自动整理为按月文件夹和 Markdown 文件，并配有图片子目录。\n- 开放式多轮对话，友好引导回顾当天生活细节（情感、天气、互动、瞬间等）。\n- 设计多场景适配，并尊重用户表达习惯和情绪状态。\n使用方式：\n现在当你说\"写日记\"、\"记录今天\"、\"daily journal\"等关键词时，就会触发这个全新的 diary-conversation 技能。\n\n它会像朋友一样陪你聊天，收集一天的片段，然后自动生成一篇优美的散文式日记，保存到本地的 journals/ 目录中。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ceecde5cd5eca290d20dc4c0896d8e8c67d6efe94293fbdcb9888a31697cb5a"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31520,
+  "uuid": "skill-clawhub-switchboard",
+  "skillKey": "clawhub-switchboard",
+  "name": "Switchboard",
+  "summary": "Switchboard integration. Manage Organizations, Users. Use when the user wants to interact with Switchboard data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.switchboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Switchboard integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Switchboard data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/switchboard@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "switchboard",
+      "url": "https://clawhub.ai/skills/switchboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "switchboard",
+    "url": "https://clawhub.ai/skills/switchboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/switchboard-487537935c922e00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/switchboard@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-switchboard-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec55c7ca6e4567a24f277e6fa76785d692c8a1f8ac4ee6291ee927689d2aedc7",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:49:27.045Z"
+}

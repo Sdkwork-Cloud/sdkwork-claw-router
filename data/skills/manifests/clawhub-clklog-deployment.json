@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67888,
+  "uuid": "skill-clawhub-clklog-deployment",
+  "skillKey": "clawhub-clklog-deployment",
+  "name": "clklog快速部署",
+  "summary": "帮助用户根据操作系统和需求选择 Docker 快速部署或源码部署，并提供官方文档指引完成 ClkLog 用户行为分析系统的搭建。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clklog_deployment",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaingush",
+      "features": [
+        "帮助用户根据操作系统和需求选择 Docker 快速部署或源码部署，并提供官方文档指引完成 ClkLog 用户行为分析系统的搭建。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clklog-deployment@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269621947?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clklog-deployment",
+      "url": "https://clawhub.ai/skills/clklog-deployment"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clklog-deployment",
+    "url": "https://clawhub.ai/skills/clklog-deployment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clklog-deployment-c50ae5d8a1c86423.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clklog-deployment@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clklog-deployment-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c5a3f3b21901b996329586e8926a3f5a2ee10fc5104ebd2054f049a2b46f3e1",
+      "artifactSizeBytes": 2356
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:25:15.932Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39135,
+  "uuid": "skill-clawhub-mihomo-deploy-skill",
+  "skillKey": "clawhub-mihomo-deploy-skill",
+  "name": "mihomo-deploy-skill",
+  "summary": "Deploy mihomo proxy kernel + Metacubexd web UI on a Linux server (no sudo required, uses systemd --user). Use this skill whenever the user wants to set up mi...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mihomo_deploy_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siyu Ren",
+      "features": [
+        "Deploy mihomo proxy kernel + Metacubexd web UI on a Linux server (no sudo required, uses system.",
+        "Use this skill whenever the user wants to set up mi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mihomo-deploy-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124664633?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mihomo-deploy-skill",
+      "url": "https://clawhub.ai/skills/mihomo-deploy-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mihomo-deploy-skill",
+    "url": "https://clawhub.ai/skills/mihomo-deploy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mihomo-deploy-skill-8a3e23c88efe85c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mihomo-deploy-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mihomo-deploy-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbb0017e37993fc6c876c380389d0101db020ac259300ba2d073001f4c997512",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T14:26:51.188Z"
+}

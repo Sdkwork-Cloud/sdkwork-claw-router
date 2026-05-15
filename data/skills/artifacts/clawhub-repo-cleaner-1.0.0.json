@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repo-cleaner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_cleaner",
+  "skill": {
+    "id": 48382,
+    "skillKey": "clawhub-repo-cleaner",
+    "name": "Repo Cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-cleaner",
+    "url": "https://clawhub.ai/skills/repo-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-cleaner-06cc50f7b1190892.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely removes merged and stale Git branches. Identifies branches already on main/master. Triggers: clean branches, remove old branches, delete merged branch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777506457546,
+      "changelog": "Initial release of skylv-git-pruner.\n\n- Identifies and safely removes merged, stale, and orphaned Git branches.\n- Excludes protected branches (main, master, develop, release/*) and those with unpushed commits.\n- Presents users with a list of branches to delete and asks for confirmation.\n- Supports cleaning both local and remote branches.\n- Triggered by commands like \"clean branches\" or \"delete merged branches.\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb819d0b26e6ab82832b4cd27d20bc1e9ed802162bbcc887210e5a8267272391"
+}

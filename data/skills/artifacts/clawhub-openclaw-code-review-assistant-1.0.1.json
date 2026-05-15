@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-code-review-assistant@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_code_review_assistant",
+  "skill": {
+    "id": 67767,
+    "skillKey": "clawhub-openclaw-code-review-assistant",
+    "name": "OpenClaw代码审查助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-code-review-assistant",
+    "url": "https://clawhub.ai/skills/openclaw-code-review-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-code-review-assistant-9bbf99bc53aeeeb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化代码审查助手，支持 PR 审查、代码质量分析、潜在 bug 检测、安全漏洞扫描。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keven0706",
+      "userId": "publishers:keven0706",
+      "displayName": "keven0706",
+      "image": "https://avatars.githubusercontent.com/u/3222199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774057605962,
+      "changelog": "添加完整的中文使用文档和配置选项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7663558b8e06df4fa1f5d629aa98aa6c4dcaba0b26b9bd262bf0af1a0a3f0583"
+}

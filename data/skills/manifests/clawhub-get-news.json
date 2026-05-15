@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63480,
+  "uuid": "skill-clawhub-get-news",
+  "skillKey": "clawhub-get-news",
+  "name": "leesen86-news",
+  "summary": "加密快讯抓取与筛选技能。使用当需要：(1) 从 BlockBeats 拉取快讯数据，(2) 按关键词筛选多条资讯，(3) 输出去 HTML 标签且时间已格式化的 JSON，用于后续自动化处理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leesen86",
+      "features": [
+        "加密快讯抓取与筛选技能。使用当需要：(1) 从 BlockBeats 拉取快讯数据，(2) 按关键词筛选多条资讯，(3) 输出去 HTML 标签且时间已格式化的 JSON，用于后续自动化处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249712330?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-news",
+      "url": "https://clawhub.ai/skills/get-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-news",
+    "url": "https://clawhub.ai/skills/get-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-news-e1aeb92ac71f6ff6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e13fd9cd10539070712ff276535763c579408fd0858a3b7c6e11ed6437641ac7",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:00:57.698Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14340,
+  "uuid": "skill-clawhub-semantic-paper-radar",
+  "skillKey": "clawhub-semantic-paper-radar",
+  "name": "Semantic Paper Radar",
+  "summary": "Semantic literature discovery and synthesis across arXiv/OpenAlex/PubMed (and optional Google Scholar adapters). Use when users ask for domain must-read pape...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_paper_radar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roger Yang",
+      "features": [
+        "Semantic literature discovery and synthesis across arXiv/OpenAlex/PubMed (and optional Google S.",
+        "Use when users ask for domain must-read pape..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semantic-paper-radar@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198148965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semantic-paper-radar",
+      "url": "https://clawhub.ai/skills/semantic-paper-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-paper-radar",
+    "url": "https://clawhub.ai/skills/semantic-paper-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-paper-radar-9548f431db81992a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semantic-paper-radar@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-semantic-paper-radar-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef43e03d95fbb9af3f5f4f534e17c3381423bb06e9753bdfbd1d9b6d311bd34f",
+      "artifactSizeBytes": 2024
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T12:00:04.056Z"
+}

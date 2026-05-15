@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-sticker-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sticker_maker",
+  "skill": {
+    "id": 71359,
+    "skillKey": "clawhub-wechat-sticker-maker",
+    "name": "微信表情包制作工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sticker-maker",
+    "url": "https://clawhub.ai/skills/wechat-sticker-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sticker-maker-5f559e2f42a085a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信表情包制作工具。自动将六宫格、九宫格、十二宫格的原图裁剪并转换为符合微信表情包规范的格式（表情主图 240x240，聊天页图标 50x50）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guanyang",
+      "userId": "publishers:guanyang",
+      "displayName": "guanyang",
+      "image": "https://avatars.githubusercontent.com/u/18542157?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772350297108,
+      "changelog": "- Initial release of WeChat Sticker Maker.\n- Supports automatic cropping of 2x3, 3x2, 3x3, 3x4, 4x3 grid images into individual stickers.\n- Optional one-click background removal using rembg (U2Net).\n- Converts images to WeChat specifications: main sticker (240x240 PNG) and chat icon (50x50 PNG).\n- Generates meta.txt and info.txt templates for efficient sticker pack management.\n- Automatically numbers and names output files according to WeChat requirements.\n- Provides candidate cover and chat icon images based on the first sticker.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5e560f9c629b2cd4a7fbbd16ed07584064bac3d72b107d557b88d7951713e6a1"
+}

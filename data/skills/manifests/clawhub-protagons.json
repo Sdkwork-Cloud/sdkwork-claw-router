@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27706,
+  "uuid": "skill-clawhub-protagons",
+  "skillKey": "clawhub-protagons",
+  "name": "Protagons",
+  "summary": "Access and deploy AI character identities from the Protagons library, search by keyword or category, list options, and generate new characters with a Google...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.protagons",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Protagons - The character layer that every AI platform is missing.",
+      "features": [
+        "Access and deploy AI character identities from the Protagons library, search by keyword or cate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/protagons@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6061508?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "protagons",
+      "url": "https://clawhub.ai/skills/protagons"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "protagons",
+    "url": "https://clawhub.ai/skills/protagons",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/protagons-82b829c91ccd3e11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/protagons@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-protagons-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:523868cdb92d7cfd2fd4901c6f0fe1f746a1f40e951ad8211ff9706ebe75e713",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:01:16.247Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12702,
+  "uuid": "skill-clawhub-12306",
+  "skillKey": "clawhub-12306",
+  "name": "12306 Train Query",
+  "summary": "Query China Railway 12306 for train schedules, remaining tickets, and station info. Use when user asks about train/高铁/火车 tickets, schedules, or availability...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12306",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kirorab",
+      "features": [
+        "Query China Railway 12306 for train schedules, remaining tickets, and station info",
+        "Use when user asks about train/高铁/火车 tickets, schedules, or availability..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/12306@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88550600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "12306",
+      "url": "https://clawhub.ai/skills/12306"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12306",
+    "url": "https://clawhub.ai/skills/12306",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12306-e17cbf7dedd8cd67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/12306@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-12306-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:891248ff42dc7d756c1decbf59c6218acbc9f61e95808f6e41cdf4c1cd3318ed",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:19:50.813Z"
+}

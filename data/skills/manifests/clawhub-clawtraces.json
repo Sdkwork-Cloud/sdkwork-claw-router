@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69709,
+  "uuid": "skill-clawhub-clawtraces",
+  "skillKey": "clawhub-clawtraces",
+  "name": "Tmp.F4uxZi4Lp8",
+  "summary": "采集并提交本地 OpenClaw 对话记录到数据平台。当用户说「采集数据」「提交数据」「提交对话」「提交记录」「提交日志」「扫描对话」「扫描日志」「看看有哪些对话可以提交」「帮我提交对话记录」「查看提交记录」「提交了多少条」「clawtraces」「claw」，或表达想要扫描、采集、提交、查看本地对话记录的意图时...",
+  "version": "2.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtraces",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Miracle",
+      "features": [
+        "采集并提交本地 OpenClaw 对话记录到数据平台。当用户说「采集数据」「提交数据」「提交对话」「提交记录」「提交日志」「扫描对话」「扫描日志」「看看有哪些对话可以提交」「帮我提交对话记录."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtraces@2.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/302117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtraces",
+      "url": "https://clawhub.ai/skills/clawtraces"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtraces",
+    "url": "https://clawhub.ai/skills/clawtraces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtraces-25c4f1dff66859f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtraces@2.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtraces-2.0.8.json",
+      "version": "2.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20f97b63415534c8cc702fca0be5d7beee5e692200a7ff0337f20e77c946cc74",
+      "artifactSizeBytes": 2551
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T11:44:46.644Z"
+}

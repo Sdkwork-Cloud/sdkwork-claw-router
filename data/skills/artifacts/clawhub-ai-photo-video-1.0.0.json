@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-photo-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_photo_video",
+  "skill": {
+    "id": 37900,
+    "skillKey": "clawhub-ai-photo-video",
+    "name": "Ai Photo Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-photo-video",
+    "url": "https://clawhub.ai/skills/ai-photo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-photo-video-9a8754e7b1106a58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated photo videos ready to post, without touching a single slider. Upload your images or photos (JPG, PNG, HEIC, WEBP, up to 200MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776590950357,
+      "changelog": "AI Photo Video 1.0.0 — Launch Version\n\n- Instantly converts uploaded photos into 1080p MP4 videos with music and transitions, ready to post.\n- Supports common image formats (JPG, PNG, HEIC, WEBP) up to 200MB.\n- No manual editing required — just upload and describe the video you want.\n- Designed with simple prompts for fast video creation, showing live progress and clear feedback.\n- Handles upload, credits, session management, and export entirely through cloud processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ea6f1376e7f2f22c3ec9a8d3db1c84d1b0018d0d57ece169158e0c4d1777f54"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62451,
+  "uuid": "skill-clawhub-agent-father",
+  "skillKey": "clawhub-agent-father",
+  "name": "agent-father",
+  "summary": "创建和管理 AI Agent/员工的全流程工具。支持一键创建 Agent、飞书群组、工作区配置、员工入职。自动从 openclaw.json 读取配置。使用场景：(1) 创建新 Agent/员工，(2) 批量入职，(3) 群组配置，(4) 岗前培训，(5) 员工管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_father",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meichuanyi",
+      "features": [
+        "创建和管理 AI Agent/员工的全流程工具。支持一键创建 Agent、飞书群组、工作区配置、员工入职。自动从 openclaw.json 读取配置。使用场景：(1) 创建新 Agent/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-father@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35057768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-father",
+      "url": "https://clawhub.ai/skills/agent-father"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-father",
+    "url": "https://clawhub.ai/skills/agent-father",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-father-627d2317d652b1c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-father@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-father-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3ea35119403cd4e061c6aeb04a549e3b5e929407e283040fd51001387b70177",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:27:48.705Z"
+}

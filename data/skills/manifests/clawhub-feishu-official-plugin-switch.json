@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61002,
+  "uuid": "skill-clawhub-feishu-official-plugin-switch",
+  "skillKey": "clawhub-feishu-official-plugin-switch",
+  "name": "Feishu Official Plugin Switch",
+  "summary": "3 分钟从社区版升级到官方版，开启流式输出、用户身份、50+ 官方工具",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_official_plugin_switch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rfdiosuao",
+      "features": [
+        "3 分钟从社区版升级到官方版，开启流式输出、用户身份、50+ 官方工具"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-official-plugin-switch@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190207982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-official-plugin-switch",
+      "url": "https://clawhub.ai/skills/feishu-official-plugin-switch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-official-plugin-switch",
+    "url": "https://clawhub.ai/skills/feishu-official-plugin-switch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-official-plugin-switch-f0eb6c0fb003b609.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-official-plugin-switch@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-official-plugin-switch-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5d5716c4f842349f0228e09609fb583f2d5b06f01e71fe07f845946063f1136",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:40:35.322Z"
+}

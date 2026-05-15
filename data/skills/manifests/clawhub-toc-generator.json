@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31073,
+  "uuid": "skill-clawhub-toc-generator",
+  "skillKey": "clawhub-toc-generator",
+  "name": "toc-generator",
+  "summary": "When the user wants to add, optimize, or audit table of contents (TOC) for long-form content. Also use when the user mentions \"TOC,\" \"table of contents,\" \"ta...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toc_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to add, optimize, or audit table of contents (TOC) for long-form content",
+        "Also use when the user mentions \"TOC,\" \"table of contents,\" \"ta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toc-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toc-generator",
+      "url": "https://clawhub.ai/skills/toc-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toc-generator",
+    "url": "https://clawhub.ai/skills/toc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toc-generator-f40ed3019633c507.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toc-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-toc-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1de1697666ce1e6bf6c163a35ddee490e47b49c764745dd4c8fac8addbce0512",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:39:46.660Z"
+}

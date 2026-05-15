@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_hunter",
+  "skill": {
+    "id": 28454,
+    "skillKey": "clawhub-api-hunter",
+    "name": "API Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-hunter",
+    "url": "https://clawhub.ai/skills/api-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-hunter-9af95e89c8dd00e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically searches and compiles reports of free APIs based on specific functional requirements."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terryyehai",
+      "userId": "publishers:terryyehai",
+      "displayName": "Terry",
+      "image": "https://avatars.githubusercontent.com/u/255799262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773664151238,
+      "changelog": "- Initial release of \"API Hunter Skill\" for automatic API provider search by functionality.\n- Supports searching for free APIs in multiple categories (weather, AI/ML, data, image generation).\n- Provides sample usage via Python code, command line, and class instantiation.\n- Outputs structured reports highlighting APIs that do not require registration.\n- Includes a curated list of known free APIs with key features.\n- Lists current limitations such as unreliable temporary mail services and Cloudflare checks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9c828cdb166f778383279d5eefa8a1a789f6309fcb318f6595314ee3f07c563"
+}

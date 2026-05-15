@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chartai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chartai",
+  "skill": {
+    "id": 36901,
+    "skillKey": "clawhub-chartai",
+    "name": "Chart AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chartai",
+    "url": "https://clawhub.ai/skills/chartai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chartai-8c86b5b2f78e7490.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chartgen-ai",
+      "userId": "s1760v3fs4sg6tdv3k9gq9792h83h5yy",
+      "displayName": "ChartGen AI",
+      "image": "https://avatars.githubusercontent.com/u/128801127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774320814189,
+      "changelog": "Initial release of ChartGen AI data analysis & visualization skill.\n\n- Enables creation of a wide range of visualizations, dashboards, diagrams, Gantt charts, and PowerPoint slides.\n- Supports both text-based queries and spreadsheet file uploads (.csv, .xls, .xlsx, .tsv), with smart multi-file and cross-source analysis.\n- Requires explicit user confirmation before submitting any request or file analysis.\n- Provides real-time status updates, background task handling, and robust error reporting.\n- Delivers results with descriptive reports, visual/image artifacts, edit links, and next step suggestions, all in the user's language.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e74d47554dd9148d591bfdb907d55a460c66790aacd66a5fd61e6b18fa812115"
+}

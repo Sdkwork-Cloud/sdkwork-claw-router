@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-sync@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_sync",
+  "skill": {
+    "id": 43377,
+    "skillKey": "clawhub-file-sync",
+    "name": "File Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-sync",
+    "url": "https://clawhub.ai/skills/file-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-sync-637c7eaa711f8625.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync two folders bidirectionally with conflict detection using MD5 hashes and version history, preserving deletions and storing conflicts for manual resolution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "67available",
+      "userId": "s176c8vgvptq8mks7asfavvvqd83zxc4",
+      "displayName": "67available",
+      "image": "https://avatars.githubusercontent.com/u/98302065?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778051118095,
+      "changelog": "Fixed: shutil.copy2 called without creating parent directories first, causing failures when syncing into nested subdirectories.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e96947ddf4a2824f3ad8e92bc0ca9d58a8f140e11032f0c899d035b22c9ee5f6"
+}

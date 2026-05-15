@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-trading-bot-automaton@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_trading_bot_automaton",
+  "skill": {
+    "id": 59548,
+    "skillKey": "clawhub-crypto-trading-bot-automaton",
+    "name": "Crypto Trading Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-trading-bot-automaton",
+    "url": "https://clawhub.ai/skills/crypto-trading-bot-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-trading-bot-automaton-151c28c90e31d919.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "加密貨幣交易機器人開發 - 幫你整自動交易Bot，支持Pine Script、Python、CCXT API對接。適用於：(1)整TradingView信號Bot (2)CEX/DEX API自動化 (3)套利機器人 (4)止盈止損策略"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenghaifeng08-creator",
+      "userId": "s17btvw3vz47g5n79t5249yqad83gx21",
+      "displayName": "chenghaifeng08-creator",
+      "image": "https://avatars.githubusercontent.com/u/266006783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774355355177,
+      "changelog": "- Added detailed service descriptions, pricing, and core features for developing automated crypto trading bots.\n- Listed supported integrations: TradingView Pine Script, CEX (Binance/Bybit/OKX), DEX arbitrage, and stop-loss/take-profit strategies.\n- Provided step-by-step user workflow for requesting a bot.\n- Outlined technical stack used: Python, Pine Script, Node.js, and CCXT API.\n- Included clear pricing tables and contact information for inquiries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a2046557e74cc3ec421330e2894617f9d449a65d96a924b7a237526d1fec446"
+}

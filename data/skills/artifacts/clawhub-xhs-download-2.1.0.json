@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-download@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_download",
+  "skill": {
+    "id": 65097,
+    "skillKey": "clawhub-xhs-download",
+    "name": "小红书笔记批量下载"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-download",
+    "url": "https://clawhub.ai/skills/xhs-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-download-c81b750917426c3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书笔记批量下载。通过已登录 Chrome 的 DevTools Protocol 自动化下载小红书笔记（图片+文字）到本地。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilixiong",
+      "userId": "s170c5mk13rn2tgxg3x8hv9sa983z7xa",
+      "displayName": "weilixiong",
+      "image": "https://avatars.githubusercontent.com/u/37475384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777212977851,
+      "changelog": "重写为完整可运行脚本。替代旧版 xiaohongshu-搬运。新增：配置表、FAQ表格、自动去重、token预加载、完整4步教程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf3730a59de2d657224a5656d96ab1341cd1195428ee388b20d0fc586f6fee45"
+}

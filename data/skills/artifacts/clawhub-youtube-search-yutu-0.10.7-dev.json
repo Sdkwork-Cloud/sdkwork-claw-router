@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-search-yutu@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_search_yutu",
+  "skill": {
+    "id": 29500,
+    "skillKey": "clawhub-youtube-search-yutu",
+    "name": "YouTube Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-search-yutu",
+    "url": "https://clawhub.ai/skills/youtube-search-yutu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-search-yutu-74b68ae18e402d45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube search. Use this skill to search for videos, channels, playlists, and other resources. Useful when working with YouTube search — provides comm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 763,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773497365902,
+      "changelog": "- Improved skill metadata to include more structured requirements and installation details.\n- Added Openclaw-specific fields such as required binaries, configs, homepage, emoji, and Node package install instructions.\n- Compatibility requirements moved from description to structured metadata for better clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e89e2deab6af38dc2a311636bfaa9793d13399d13af2dc7e9a0f98c237152004"
+}

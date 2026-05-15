@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onchain-verify-transaction@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onchain_verify_transaction",
+  "skill": {
+    "id": 33165,
+    "skillKey": "clawhub-onchain-verify-transaction",
+    "name": "Onchain Verify Transaction"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onchain-verify-transaction",
+    "url": "https://clawhub.ai/skills/onchain-verify-transaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onchain-verify-transaction-f6d01633200270ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify an EVM transaction's calldata via Tenderly before signing. Confirms which tokens move, in what amounts, and to which addresses. Designed to be called..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dougalcantara",
+      "userId": "publishers:dougalcantara",
+      "displayName": "dougalcantara",
+      "image": "https://avatars.githubusercontent.com/u/15350998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1773807652986,
+      "changelog": "- Description and documentation updated to use \"verify\" and \"verification\" terminology instead of \"simulate\" and \"simulation\"\n- Clarifies that the skill is a pre-execution safety gate for EVM transactions\n- Adjusted narration and error handling messages to reflect the new verification language\n- No functional or code changes in this release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:baea0d7999b4a7dc4725ec578ae5ec341ddddf10e1211ad5512ac06135307053"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30829,
+  "uuid": "skill-clawhub-status-monitor",
+  "skillKey": "clawhub-status-monitor",
+  "name": "status-monitor",
+  "summary": "Manages OpenClaw Agent status upload scripts, periodically syncing agent online status to the cloud monitoring platform",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.status_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jax Hao Yang",
+      "features": [
+        "Manages OpenClaw Agent status upload scripts, periodically syncing agent online status to the c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/status-monitor@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10203830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "status-monitor",
+      "url": "https://clawhub.ai/skills/status-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "status-monitor",
+    "url": "https://clawhub.ai/skills/status-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/status-monitor-d84e7ca477f17802.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/status-monitor@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-status-monitor-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f7ee35687905962b9eba1f56179505c8a4b866563d6210124a310f0a233b8a2",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T00:51:03.771Z"
+}

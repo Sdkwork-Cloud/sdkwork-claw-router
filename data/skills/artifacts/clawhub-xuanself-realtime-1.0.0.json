@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xuanself-realtime@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xuanself_realtime",
+  "skill": {
+    "id": 61738,
+    "skillKey": "clawhub-xuanself-realtime",
+    "name": "俄罗斯血糖检测设备市场调研（即时版）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xuanself-realtime",
+    "url": "https://clawhub.ai/skills/xuanself-realtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xuanself-realtime-d4710838f4269733.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "俄罗斯血糖检测设备市场调研（即时版）v3.0 —— 基于实战经验重构，整合 Python 脚本化报告生成 + SerpAPI 实时搜索 + ast.literal_eval 智能解析 + Xuanself 10章节标准结构，输出可直接交付的 Word 报告。专为 Russia Country Manager 设计..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangxuan1992asia-svg",
+      "userId": "s17aarznqag17segrch76swfdn849178",
+      "displayName": "wangxuan1992asia-svg",
+      "image": "https://avatars.githubusercontent.com/u/268247391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775709382604,
+      "changelog": "提供针对俄罗斯血糖监测设备市场的研究与报告配置支持。\n\n包含基于 Python 的数据采集、报告生成及文档导出工作流。\n\n支持多语言数据源及实时市场情报功能。\n\n能够实现对俄罗斯医疗政策，主流电商Ozon，Wildberry，Yandex.Market上的血糖监测设备实时价格数据的抓取。\n\n能够更新每个月俄罗斯境内血糖监测设备生产商和销售商的的动态，俄糖尿病学术动态和主流会议的进度；\n\n能够抓取俄罗斯境内血糖监测行业的人才，数据库为hh.ru。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42fabcbd7ba91c69b3df53ac92e93ebdb4d67c36885d607b1a6b19f3de466e09"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37342,
+  "uuid": "skill-clawhub-polymarket-whale-streak-trader",
+  "skillKey": "clawhub-polymarket-whale-streak-trader",
+  "name": "Polymarket Whale Streak Trader",
+  "summary": "Tracks rolling win rate per whale wallet and only follows wallets on a verified hot streak. Dynamically promotes and demotes wallets based on recent performa...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_whale_streak_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Tracks rolling win rate per whale wallet and only follows wallets on a verified hot streak",
+        "Dynamically promotes and demotes wallets based on recent performa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-whale-streak-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-whale-streak-trader",
+      "url": "https://clawhub.ai/skills/polymarket-whale-streak-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-whale-streak-trader",
+    "url": "https://clawhub.ai/skills/polymarket-whale-streak-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-whale-streak-trader-60bd61ded5a92cd8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-whale-streak-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-whale-streak-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77ed1e62a9494a06b7780fc718123f6966c8b717f0b84f88d6ccdb58b3dc92d9",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:33:10.472Z"
+}

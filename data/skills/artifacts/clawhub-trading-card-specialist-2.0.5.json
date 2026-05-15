@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-card-specialist@2.0.5",
+  "version": "2.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_card_specialist",
+  "skill": {
+    "id": 32519,
+    "skillKey": "clawhub-trading-card-specialist",
+    "name": "Trading Card Analysis & eBay Listing Specialist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-card-specialist",
+    "url": "https://clawhub.ai/skills/trading-card-specialist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-card-specialist-dd393376fe619e62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trading card analysis, grading guidance, market comps, and eBay listing optimization for sports cards, Pokémon, and other collectible cards. Use when evaluat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mmsneaks11-max",
+      "userId": "publishers:mmsneaks11-max",
+      "displayName": "Text2List.app",
+      "image": "https://avatars.githubusercontent.com/u/257590122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 630,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.5",
+      "createdAt": 1773443916717,
+      "changelog": "- Removed scripts/card_analyzer.py and scripts/test_credentials.py, eliminating unused or unbundled code.\n- Clarified in documentation that this package does not include live eBay or PSA client implementations.\n- Updated eBay and PSA integration descriptions to specify they are only available when the host environment provides a real integration workflow.\n- No changes to core workflows or output guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:150872e90200fd905190acd888f62ffc5e7e1432aee00af7398985111b3710f5"
+}

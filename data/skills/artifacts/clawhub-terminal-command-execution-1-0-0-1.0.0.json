@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terminal-command-execution-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terminal_command_execution_1_0_0",
+  "skill": {
+    "id": 29298,
+    "skillKey": "clawhub-terminal-command-execution-1-0-0",
+    "name": "Terminal Command Execution@1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terminal-command-execution-1-0-0",
+    "url": "https://clawhub.ai/skills/terminal-command-execution-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terminal-command-execution-1-0-0-3ffdc2a1807838c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute terminal commands safely and reliably with clear pre-checks, output validation, and recovery steps. Use when users ask to run shell/CLI commands, ins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1215656",
+      "userId": "s17c1ken71c0q0ry08ba12sa7h83kspt",
+      "displayName": "1215656",
+      "image": "https://avatars.githubusercontent.com/u/255043115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774440960755,
+      "changelog": "Initial release providing safe, proven workflows for executing terminal commands.\n\n- Ensures careful pre-checks, incremental execution, and validation steps.\n- Includes detailed error handling and recovery guidance.\n- Prioritizes user safety by default, avoiding unsafe or ambiguous operations.\n- Provides clear reporting on actions taken and next steps when needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4f26a4908bcbd9dfb175b5c2248a3c8de48e37fbba015c24c7783b0d2a6d73e"
+}

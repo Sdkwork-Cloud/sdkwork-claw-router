@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dataworks-smart-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dataworks_smart_monitor",
+  "skill": {
+    "id": 61228,
+    "skillKey": "clawhub-dataworks-smart-monitor",
+    "name": "Dataworks Smart Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dataworks-smart-monitor",
+    "url": "https://clawhub.ai/skills/dataworks-smart-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dataworks-smart-monitor-0beed2babd53c824.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DataWorks 智能监控技能 - 异步分析任务运行情况，智能告警分级（不阻塞主会话）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexmayanjun-collab",
+      "userId": "s172f8k90f29ps4shmj6e9s99x83hshd",
+      "displayName": "alexmayanjun-collab",
+      "image": "https://avatars.githubusercontent.com/u/247089206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774382493314,
+      "changelog": "Initial release of dataworks-smart-monitor.\n\n- Monitors DataWorks task statuses and analyzes failures.\n- Provides intelligent alert classification (P0/P1/P2).\n- Generates daily reports with task summaries.\n- Notifications for severe and important alerts.\n- Synchronous execution in main session for this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4248d1cb3915ab4ae89c53f168d300154a1eda431f783a7238b534f2133bb67"
+}

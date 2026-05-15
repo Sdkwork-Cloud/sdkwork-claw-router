@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44372,
+  "uuid": "skill-clawhub-deep-research-surf",
+  "skillKey": "clawhub-deep-research-surf",
+  "name": "deep-research-surf",
+  "summary": "Conducts deep, multi-angle research using Surf MCP tools and parallel subagents. Use for deep research, competitive landscape analysis, strategic intelligenc...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_surf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Conducts deep, multi-angle research using Surf MCP tools and parallel subagents",
+        "Use for deep research, competitive landscape analysis, strategic intelligenc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-surf@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-surf",
+      "url": "https://clawhub.ai/skills/deep-research-surf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-surf",
+    "url": "https://clawhub.ai/skills/deep-research-surf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-surf-cf1c17891103c490.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-surf@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-surf-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6602d9f7af7d2bc9e83be6e7a2a5b1091108a5840d2b97eb7c9276c6194b4f7f",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:52:35.689Z"
+}

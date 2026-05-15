@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25178,
+  "uuid": "skill-clawhub-fly",
+  "skillKey": "clawhub-fly",
+  "name": "Fly",
+  "summary": "Deploy and manage Fly.io apps via CLI - apps, machines, volumes, secrets, certificates. Use when user mentions 'fly', 'flyctl', 'fly.io', or wants to deploy...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Melvyn",
+      "features": [
+        "Deploy and manage Fly.io apps via CLI",
+        "apps, machines, volumes, secrets, certificates",
+        "Use when user mentions 'fly', 'flyctl', 'fly.io', or wants to deploy..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56388157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fly",
+      "url": "https://clawhub.ai/skills/fly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fly",
+    "url": "https://clawhub.ai/skills/fly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fly-f4debdb7ab7dd958.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49334855214939d6fbbe1110b8c1b0de4bddf19d3aa57873d94267c2f39314dc",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:37:49.160Z"
+}

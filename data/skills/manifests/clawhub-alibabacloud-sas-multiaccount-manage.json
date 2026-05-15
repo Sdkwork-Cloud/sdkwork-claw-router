@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42343,
+  "uuid": "skill-clawhub-alibabacloud-sas-multiaccount-manage",
+  "skillKey": "clawhub-alibabacloud-sas-multiaccount-manage",
+  "name": "Alibabacloud Sas Multiaccount Manage",
+  "summary": "Manage multiple Alibaba Cloud accounts and batch-export Security Center (SAS) baseline and vulnerability reports via the aliyun CLI and Python scripts. Suppo...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_sas_multiaccount_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Manage multiple Alibaba Cloud accounts and batch-export Security Center (SAS) baseline and vuln.",
+        "Suppo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-sas-multiaccount-manage@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-sas-multiaccount-manage",
+      "url": "https://clawhub.ai/skills/alibabacloud-sas-multiaccount-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-sas-multiaccount-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-sas-multiaccount-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-sas-multiaccount-manage-e61bd1e61bc2bab2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-sas-multiaccount-manage@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-sas-multiaccount-manage-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49da6bd6a74894fbaefc59b688d98f2e7ba3893fd636945a988593005821eef6",
+      "artifactSizeBytes": 2765
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T07:44:45.067Z"
+}

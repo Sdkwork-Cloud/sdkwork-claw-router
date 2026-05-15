@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "xhs-content-qc",
+    "displayName": "小红书达人笔记质检 for bbt",
+    "summary": "对小红书达人笔记做品牌词、必带话题、@官号、调性、链接与广告法/竞品合规的自动化质检， 输出结构化报告；品牌名正确/错误写法分表（assets/brand-names-correct.txt / assets/brand-names-wrong.txt）， 并支持在 skill 目录内更新各词表文件。在用户粘贴小...",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "createdAt": 1774839109337,
+    "updatedAt": 1777526874077
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1774866373809,
+    "changelog": "**Changelog for xhs-content-qc v1.0.2**\n\n- Migrated all词表 and配置 files into dedicated assets/ and references/ subdirectories for better organization.\n- Added fetch_xhs_content.sh (shell) and fetch_xhs_content.ps1 (PowerShell) scripts for content extraction from note links, with a new preference for non-Python tools.\n- Updated SKILL.md to align all file paths and instructions with the new directory structure.\n- Changed compliance wordlist file from .md to .txt format (`assets/compliance-words.txt`).\n- Clarified and enhanced the workflow: always prefer provided shell scripts for link content fetching and fall back to Python only if necessary.\n- Improved user instructions for file updates and clarified acceptable file formats.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "wandervine",
+    "userId": "s178vg6yjb2bjbfge8gj29svcx83wy1g",
+    "displayName": "Wan Wei",
+    "image": "https://avatars.githubusercontent.com/u/33253166?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526874077
+  }
+}

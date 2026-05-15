@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-error-fix@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_error_fix",
+  "skill": {
+    "id": 61106,
+    "skillKey": "clawhub-openclaw-error-fix",
+    "name": "Openclaw Error Fix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-error-fix",
+    "url": "https://clawhub.ai/skills/openclaw-error-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-error-fix-d59a3916fb97916c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 常见错误修复 - 解决安装/配置/运行问题。适合：遇到错误的用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1003,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 29
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773643784633,
+      "changelog": "优化功能，修复问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed9770c1efad1afec1389eda3aef638f109b1c91a4dc4043acbcfcda72bf6b69"
+}

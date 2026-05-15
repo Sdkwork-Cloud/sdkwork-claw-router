@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilgrimage-travel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilgrimage_travel",
+  "skill": {
+    "id": 46211,
+    "skillKey": "clawhub-pilgrimage-travel",
+    "name": "pilgrimage-travel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilgrimage-travel",
+    "url": "https://clawhub.ai/skills/pilgrimage-travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilgrimage-travel-24ceb05794670f55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book flights for pilgrimage travel to sacred sites and religious destinations. Also supports: flight booking, hotel reservation, train tickets, attraction ti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivan97",
+      "userId": "s17c9gmxdhe2fy3pe6n74qabhs83krgv",
+      "displayName": "Yangki Zhang",
+      "image": "https://avatars.githubusercontent.com/u/10104255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777016252876,
+      "changelog": "Pilgrimage Travel skill v3.2.0\n\n- Adds strict CLI-only execution with [Book](detailUrl) link validation in every result.\n- New multilingual trigger terms for religious and pilgrimage-related flight searches.\n- Describes step-by-step workflow, including mandatory environment and parameter checks.\n- Expands supported travel services: hotel, train, visa, car rental, insurance.\n- Enhanced output formatting and brand tagging requirements.\n- Updated parameter and playbook references for improved accuracy and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:018d960423d943b85fe5663901c54bdf4172ee791702f354f20e444df756fee8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66746,
+  "uuid": "skill-clawhub-tm-soil-moisture",
+  "skillKey": "clawhub-tm-soil-moisture",
+  "name": "TM Soil Moisture Skill",
+  "summary": "专为文冠果种植设计的智慧农业数据分析助手，提供基于多深度（10cm-100cm）土壤温湿度传感器数据的实时查询、区域墒情聚合分析及智能灌溉决策支持。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tm_soil_moisture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lu87985",
+      "features": [
+        "专为文冠果种植设计的智慧农业数据分析助手，提供基于多深度（10cm-100cm）土壤温湿度传感器数据的实时查询、区域墒情聚合分析及智能灌溉决策支持。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tm-soil-moisture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35488987?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tm-soil-moisture",
+      "url": "https://clawhub.ai/skills/tm-soil-moisture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tm-soil-moisture",
+    "url": "https://clawhub.ai/skills/tm-soil-moisture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tm-soil-moisture-8c8399c5571a263e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tm-soil-moisture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tm-soil-moisture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:155915d4add31bfedaff56aa1c1120ad3cdaa658dd213648a29be831b80c7a56",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:19:25.862Z"
+}

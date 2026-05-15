@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todoist-task-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_task_manager",
+  "skill": {
+    "id": 11580,
+    "skillKey": "clawhub-todoist-task-manager",
+    "name": "Todoist Task Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-task-manager",
+    "url": "https://clawhub.ai/skills/todoist-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-task-manager-4101e90705f813df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Todoist tasks via the `todoist` CLI (list, add, modify, complete, delete). Supports filters, projects, labels, and priorities."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2mawi2",
+      "userId": "publishers:2mawi2",
+      "displayName": "Marius Wichtner",
+      "image": "https://avatars.githubusercontent.com/u/17811051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2975,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769247632464,
+      "changelog": "Initial release - Todoist CLI integration for managing tasks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:333cb275f314eed92a273a0f2da928a422fb7f30d19fb86567669d2268bc9f92"
+}

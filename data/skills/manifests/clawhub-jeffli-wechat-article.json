@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71294,
+  "uuid": "skill-clawhub-jeffli-wechat-article",
+  "skillKey": "clawhub-jeffli-wechat-article",
+  "name": "微信公众号文章抓取 (Jeff版)",
+  "summary": "微信公众号文章抓取工具。将微信公众号文章转换为 Markdown 格式，支持图片本地下载。当用户提到抓取微信公众号文章、提取公众号内容、爬取微信文章时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jeffli_wechat_article",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeffli2002",
+      "features": [
+        "微信公众号文章抓取工具。将微信公众号文章转换为 Markdown 格式，支持图片本地下载。当用户提到抓取微信公众号文章、提取公众号内容、爬取微信文章时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jeffli-wechat-article@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212463878?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jeffli-wechat-article",
+      "url": "https://clawhub.ai/skills/jeffli-wechat-article"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jeffli-wechat-article",
+    "url": "https://clawhub.ai/skills/jeffli-wechat-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jeffli-wechat-article-6725856828c136ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jeffli-wechat-article@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jeffli-wechat-article-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:198ff89327339995733e873d508384ad75013f408c3703d9d5c893930aa1d30c",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:43:18.323Z"
+}

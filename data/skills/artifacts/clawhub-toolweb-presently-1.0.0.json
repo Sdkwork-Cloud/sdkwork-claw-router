@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-presently@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_presently",
+  "skill": {
+    "id": 43445,
+    "skillKey": "clawhub-toolweb-presently",
+    "name": "Presently"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-presently",
+    "url": "https://clawhub.ai/skills/toolweb-presently",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-presently-fe512b77cf78db42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered API for generating structured presentations from text input with customizable themes and formatting options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775153239971,
+      "changelog": "Presently API 1.0.0 – Initial Release\n\n- Launches an AI-powered API that transforms text input into structured, themed presentation decks.\n- Supports customizable themes, color schemes, and layout options for generated slide cards.\n- Provides two main endpoints: health check and presentation creation.\n- Offers flexible pricing plans, including a free tier.\n- Designed for developers, content creators, and businesses seeking automated presentation generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a904e9f3f5ddc58b304a37606a6effd3feb43dea1152366a8b57006820a7e4db"
+}

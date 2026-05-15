@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69302,
+  "uuid": "skill-clawhub-tencent-meeting-mcp",
+  "skillKey": "clawhub-tencent-meeting-mcp",
+  "name": "Tencent Meeting Mcp",
+  "summary": "在用户提及腾讯会议、视频会议、线上会议相关内容与操作时使用此技能。触发关键词包括：预约会议、创建会议、修改会议、取消会议、查询会议、会议详情、会议号、meeting_id、meeting_code、参会成员、受邀成员、等候室、会议列表、我的会议、会议录制、录制回放、录制下载、会议转写、会议纪要、智能纪要、AI纪要...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_meeting_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chris8265-cl",
+      "features": [
+        "在用户提及腾讯会议、视频会议、线上会议相关内容与操作时使用此技能。触发关键词包括：预约会议、创建会议、修改会议、取消会议、查询会议、会议详情、会议号、meeting_id、meeting_c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-meeting-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264188811?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-meeting-mcp",
+      "url": "https://clawhub.ai/skills/tencent-meeting-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-meeting-mcp",
+    "url": "https://clawhub.ai/skills/tencent-meeting-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-meeting-mcp-264458c0431b03d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-meeting-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-meeting-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5e436a6994cab0becb6b29fa5a2f165db5e93c1427bb0377b8544e9535dc4b7",
+      "artifactSizeBytes": 2876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:28:54.863Z"
+}

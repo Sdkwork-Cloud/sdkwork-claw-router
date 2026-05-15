@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69089,
+  "uuid": "skill-clawhub-tc-migrate",
+  "skillKey": "clawhub-tc-migrate",
+  "name": "腾讯云跨账号资源迁移",
+  "summary": "腾讯云跨账号资源迁移工具。将源账号（账号A）的 VPC、CLB、NAT、CVM、安全组等资源迁移到目标账号（账号B），通过 CCN 云联网实现跨账号网络互通。支持自动扫描、配置生成、Terraform 部署。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tc_migrate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awaili",
+      "features": [
+        "腾讯云跨账号资源迁移工具。将源账号（账号A）的 VPC、CLB、NAT、CVM、安全组等资源迁移到目标账号（账号B），通过 CCN 云联网实现跨账号网络互通。支持自动扫描、配置生成、Terr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tc-migrate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34470865?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tc-migrate",
+      "url": "https://clawhub.ai/skills/tc-migrate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tc-migrate",
+    "url": "https://clawhub.ai/skills/tc-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tc-migrate-964996df699cdd3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tc-migrate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tc-migrate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24cbf69c351dca1c77a80b48cf76c68b96c849fd860965571dd483adeb526988",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T12:37:45.517Z"
+}

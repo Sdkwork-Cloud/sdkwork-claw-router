@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57761,
+  "uuid": "skill-clawhub-smyx-drive-analysis",
+  "skillKey": "clawhub-smyx-drive-analysis",
+  "name": "安全驾驶行为分析工具",
+  "summary": "Analyzes videos of vehicle drivers to identify unsafe driving behaviors. It generates professional analysis reports to help enhance road safety awareness. |...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_drive_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Analyzes videos of vehicle drivers to identify unsafe driving behaviors",
+        "It generates professional analysis reports to help enhance road safety awareness"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-drive-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-drive-analysis",
+      "url": "https://clawhub.ai/skills/smyx-drive-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-drive-analysis",
+    "url": "https://clawhub.ai/skills/smyx-drive-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-drive-analysis-0e997d2957b83be6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-drive-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-drive-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac77c6f7d29ebc7af3bd424dc15a74263c5807e5e47288bc11949446f05a1158",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T16:20:41.387Z"
+}

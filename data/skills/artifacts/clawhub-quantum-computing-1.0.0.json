@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quantum-computing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quantum_computing",
+  "skill": {
+    "id": 46219,
+    "skillKey": "clawhub-quantum-computing",
+    "name": "quantum-computing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quantum-computing",
+    "url": "https://clawhub.ai/skills/quantum-computing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quantum-computing-507c8335bc749943.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks about UnifiedQuantum, uniqc, OriginIR, OpenQASM, circuit building, local simulation, cloud submission, dummy mode, VQE, QAOA, UCCSD, q..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agony5757",
+      "userId": "s178xgj7nr46e6ksg86vtsdhxn85jncw",
+      "displayName": "Agony",
+      "image": "https://avatars.githubusercontent.com/u/14315492?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777255193067,
+      "changelog": "Initial release of the UnifiedQuantum skill.\n\n- Provides guidance for building, exporting, and executing quantum circuits using uniqc API and CLI.\n- Offers detailed recommendations for environment setup and package installation, including how to select and install extras.\n- Distinguishes between core and optional dependencies; clarifies handling of simulation and backend adapters.\n- Outlines main CLI commands and best practices for both shell and Python workflows.\n- Includes troubleshooting procedures and references for installation issues, configuration, and advanced quantum algorithms.\n- Advises on modern approaches for variational algorithms and PyTorch integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f274950b63595311ff9bea85402a928b50753496ce5f46d09ebfa14c4b51a1a6"
+}

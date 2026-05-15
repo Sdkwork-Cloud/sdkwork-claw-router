@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailtarget-email@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailtarget_email",
+  "skill": {
+    "id": 15807,
+    "skillKey": "clawhub-mailtarget-email",
+    "name": "Mailtarget Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailtarget-email",
+    "url": "https://clawhub.ai/skills/mailtarget-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailtarget-email-cb9eaaaf531bac10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send transactional and marketing emails via Mailtarget API. Manage sending domains, templates, API keys, and sub-accounts. Use when the agent needs to send e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "masasdani",
+      "userId": "publishers:masasdani",
+      "displayName": "Masas Dani",
+      "image": "https://avatars.githubusercontent.com/u/787088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 766,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771830791956,
+      "changelog": "Added autonomous domain setup workflow with spf-dkim-setup companion skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19294317f41793d3d917b1c2e5ec2d6ba72928640482411a1e58c21544fd146d"
+}

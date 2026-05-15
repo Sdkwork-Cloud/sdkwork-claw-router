@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17071,
+  "uuid": "skill-clawhub-browserbase-scraper-skill",
+  "skillKey": "clawhub-browserbase-scraper-skill",
+  "name": "Browserbase Scraper",
+  "summary": "Scrape Cloudflare-protected websites using Stagehand + Browserbase cloud browsers. Use when the user needs to extract data from websites with bot protection,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browserbase_scraper_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joe Alicata",
+      "features": [
+        "Scrape Cloudflare-protected websites using Stagehand + Browserbase cloud browsers",
+        "Use when the user needs to extract data from websites with bot protection,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browserbase-scraper-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browserbase-scraper-skill",
+      "url": "https://clawhub.ai/skills/browserbase-scraper-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browserbase-scraper-skill",
+    "url": "https://clawhub.ai/skills/browserbase-scraper-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browserbase-scraper-skill-da2568311de228e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browserbase-scraper-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browserbase-scraper-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80c32a89b1e3b5a32f61e28844495e6e40ca9b92f741e3d04a5a9f9a9175d0e6",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T22:24:56.177Z"
+}

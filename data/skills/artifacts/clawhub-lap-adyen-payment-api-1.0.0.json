@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-adyen-payment-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_adyen_payment_api",
+  "skill": {
+    "id": 38171,
+    "skillKey": "clawhub-lap-adyen-payment-api",
+    "name": "Lap Adyen Payment Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-adyen-payment-api",
+    "url": "https://clawhub.ai/skills/lap-adyen-payment-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-adyen-payment-api-b57641e52a5d4404.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adyen Payment API skill. Use when working with Adyen Payment for adjustAuthorisation, authorise, authorise3d. Covers 13 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775466750891,
+      "changelog": "Initial release of Adyen Payment API skill.\n\n- Supports 13 Adyen Payment API endpoints, including adjustAuthorisation, authorise, authorise3d, refund, and capture.\n- Provides endpoint descriptions, authentication methods, and base URL for API version 68.\n- Lists required environment variable: ADYEN_PAYMENT_API_KEY.\n- Includes setup instructions and common questions for endpoint selection.\n- Reference to official API spec for full parameter and schema details.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09fc7502e19f6c069b803560a0376566305f3a9f2a76d1c48fd229a7659578a1"
+}

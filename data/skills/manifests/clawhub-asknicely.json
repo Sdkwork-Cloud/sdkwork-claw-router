@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33122,
+  "uuid": "skill-clawhub-asknicely",
+  "skillKey": "clawhub-asknicely",
+  "name": "Asknicely",
+  "summary": "AskNicely integration. Manage data, records, and automate workflows. Use when the user wants to interact with AskNicely data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asknicely",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "AskNicely integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with AskNicely data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asknicely@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asknicely",
+      "url": "https://clawhub.ai/skills/asknicely"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asknicely",
+    "url": "https://clawhub.ai/skills/asknicely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asknicely-100aef4316189d85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asknicely@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-asknicely-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d621115de88bb536c49ee7a8f2e2b2af747111898a6ed766b4021282972d5e3",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:21:02.283Z"
+}

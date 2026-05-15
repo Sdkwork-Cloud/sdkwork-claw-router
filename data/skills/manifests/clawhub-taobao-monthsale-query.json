@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72848,
+  "uuid": "skill-clawhub-taobao-monthsale-query",
+  "skillKey": "clawhub-taobao-monthsale-query",
+  "name": "阿里商品月销查询",
+  "summary": "查询阿里平台（淘宝/天猫）商品月销量，支持商品ID或链接输入，返回月销量数据",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_monthsale_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YanJun",
+      "features": [
+        "查询阿里平台（淘宝/天猫）商品月销量，支持商品ID或链接输入，返回月销量数据"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobao-monthsale-query@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3753405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobao-monthsale-query",
+      "url": "https://clawhub.ai/skills/taobao-monthsale-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-monthsale-query",
+    "url": "https://clawhub.ai/skills/taobao-monthsale-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-monthsale-query-123c45bb30b0ae8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobao-monthsale-query@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobao-monthsale-query-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2bbed99e6e85fa7c949b3a0c15c97000cbc5967df2c973af78cfd684a3d2d902",
+      "artifactSizeBytes": 2123
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:01:15.334Z"
+}

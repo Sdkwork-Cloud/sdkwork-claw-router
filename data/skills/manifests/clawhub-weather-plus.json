@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20338,
+  "uuid": "skill-clawhub-weather-plus",
+  "skillKey": "clawhub-weather-plus",
+  "name": "Weather Plus",
+  "summary": "Get current weather, multi-day forecasts, clothing index, and feels-like temperature. No API key required. Use when a user wants to: (1) Check current weathe...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_plus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elevo11",
+      "features": [
+        "Get current weather, multi-day forecasts, clothing index, and feels-like temperature",
+        "No API key required",
+        "Use when a user wants to: (1) Check current weathe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-plus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133617972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-plus",
+      "url": "https://clawhub.ai/skills/weather-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-plus",
+    "url": "https://clawhub.ai/skills/weather-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-plus-c81cb215b8f55f59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-plus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-plus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2afe5804207ee272387361732f1cffb715430304353e140bcb1850bfa5c6cd3e",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:27:57.276Z"
+}

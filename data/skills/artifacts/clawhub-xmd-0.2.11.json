@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xmd@0.2.11",
+  "version": "0.2.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmd",
+  "skill": {
+    "id": 15020,
+    "skillKey": "clawhub-xmd",
+    "name": "xpr-xmd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmd",
+    "url": "https://clawhub.ai/skills/xmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmd-196c6a4071cd0ce8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Metal Dollar (XMD) stablecoin to mint, redeem, check supply, collateral reserves, and oracle prices with zero fees and multi-collateral support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulgnz",
+      "userId": "publishers:paulgnz",
+      "displayName": "paulgnz",
+      "image": "https://avatars.githubusercontent.com/u/12118160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 884,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.11",
+      "createdAt": 1771021994484,
+      "changelog": "xmd 0.2.11\n\n- Added detailed SKILL.md documentation for Metal Dollar (XMD) stablecoin.\n- Clarified minting and redemption processes, including memos and supported collateral.\n- Listed all supported collateral types with respective parameters.\n- Described associated contracts and read/write tool functions.\n- Included current safety rules and operational checks for users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a24faae26ec1d531e554570c1f27bb2d9dbb35c62cd8e238ea53607fb9c40622"
+}

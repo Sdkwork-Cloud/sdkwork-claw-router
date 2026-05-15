@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mjzj-article@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjzj_article",
+  "skill": {
+    "id": 72109,
+    "skillKey": "clawhub-mjzj-article",
+    "name": "卖家之家(跨境电商)资讯搜索与发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjzj-article",
+    "url": "https://clawhub.ai/skills/mjzj-article",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjzj-article-95e73c0af4bd9907.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "卖家之家(跨境电商)资讯搜索与发布"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjzj-tec",
+      "userId": "s17es690n9v279chvp249srv3d83v0s4",
+      "displayName": "mjzj-tec",
+      "image": "https://avatars.githubusercontent.com/u/263673237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773333592876,
+      "changelog": "- 更新描述，将“查询与发布”修改为“搜索与发布”\n- 优化部分规则描述，如“搜索资讯”“查询资讯”等表达\n- 统一文本表述，更准确区分“搜索/查询”与“发布”场景\n- 其他内容未变，接口说明、权限和发布流程保持一致",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a58ebf6940b5b8b05c24fbbdec8ef3477a640928331cbcb7d8ba727160177fc"
+}

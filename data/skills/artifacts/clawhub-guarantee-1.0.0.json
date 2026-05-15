@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guarantee@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guarantee",
+  "skill": {
+    "id": 26466,
+    "skillKey": "clawhub-guarantee",
+    "name": "Guarantee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guarantee",
+    "url": "https://clawhub.ai/skills/guarantee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guarantee-47032622e20b741b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI agent skill for understanding, writing, and evaluating guarantees in business and legal contexts. Helps businesses craft guarantees that b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duclawbot",
+      "userId": "publishers:duclawbot",
+      "displayName": "Duclawbot",
+      "image": "https://avatars.githubusercontent.com/u/216468018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772980189769,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df9011b8ddf1659147bf5ecd88203d961ccd34aa79814d1d9556340eb45ecc72"
+}

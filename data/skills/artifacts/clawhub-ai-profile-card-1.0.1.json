@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-profile-card@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_profile_card",
+  "skill": {
+    "id": 67376,
+    "skillKey": "clawhub-ai-profile-card",
+    "name": "AI Profile Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-profile-card",
+    "url": "https://clawhub.ai/skills/ai-profile-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-profile-card-197f5a9b804f8cc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成带唯一编号和自动计算年龄的AI助手身份档案卡片，输出美观详细的个人信息表格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uhang",
+      "userId": "s17f5zm34xnf1ateg71rh12pes83h9yc",
+      "displayName": "uhang",
+      "image": "https://avatars.githubusercontent.com/u/18619189?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773749385606,
+      "changelog": "- Added automatic multi-language detection and support.\n- Introduced 10 built-in language templates for profile output.\n- Enhanced unique ID generation logic.\n- Improved and expanded user documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d33673b1de15b60f977817b83b9f3b9df0c995302010f6a79f7ec22b0f964a53"
+}

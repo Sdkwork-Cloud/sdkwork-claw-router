@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_helper",
+  "skill": {
+    "id": 71698,
+    "skillKey": "clawhub-pdf-helper",
+    "name": "PDF助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-helper",
+    "url": "https://clawhub.ai/skills/pdf-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-helper-fb6f4e387408773f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供PDF转换、合并、拆分、压缩和编辑等功能，支持多种文档和图片格式互转处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pxyyqm626529-afk",
+      "userId": "publishers:pxyyqm626529-afk",
+      "displayName": "pxyyqm626529-afk",
+      "image": "https://avatars.githubusercontent.com/u/240408574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1347,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772958297446,
+      "changelog": "PDF助手 1.0.0 - 初始发布\n\n- 提供PDF创建、格式转换、合并、拆分、压缩等多种文件处理功能\n- 支持多种输入与输出文件格式，包括Office文件和多种图片格式\n- 每次最多可处理5个文件，单文件最大10MB\n- 加入SkillPay.me付费机制，按调用计费\n- 简单命令行示例和详细使用说明",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7fbcd65591fd4e0ec1cf1df10ec0a5fe16dae722a46f61b251e9375804e5f37"
+}

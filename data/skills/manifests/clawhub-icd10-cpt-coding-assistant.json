@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33616,
+  "uuid": "skill-clawhub-icd10-cpt-coding-assistant",
+  "skillKey": "clawhub-icd10-cpt-coding-assistant",
+  "name": "Icd10 Cpt Coding Assistant",
+  "summary": "Automatically recommend ICD-10 diagnosis codes and CPT procedure codes from clinical notes. Trigger when: user provides clinical notes, patient encounter sum...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icd10_cpt_coding_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Automatically recommend ICD-10 diagnosis codes and CPT procedure codes from clinical notes",
+        "Trigger when: user provides clinical notes, patient encounter sum..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icd10-cpt-coding-assistant@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icd10-cpt-coding-assistant",
+      "url": "https://clawhub.ai/skills/icd10-cpt-coding-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icd10-cpt-coding-assistant",
+    "url": "https://clawhub.ai/skills/icd10-cpt-coding-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icd10-cpt-coding-assistant-f69fe6c4d757ba0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icd10-cpt-coding-assistant@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-icd10-cpt-coding-assistant-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31300ac53754c93362ca3b12aa73746e5a6cea960ba0a07c05edd5a9e5d84c7c",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:15:43.731Z"
+}

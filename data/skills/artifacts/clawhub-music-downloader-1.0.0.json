@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_downloader",
+  "skill": {
+    "id": 67921,
+    "skillKey": "clawhub-music-downloader",
+    "name": "多源音乐下载"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-downloader",
+    "url": "https://clawhub.ai/skills/music-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-downloader-9a6830f216303fa2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从10个音乐平台搜索并下载MP3，自动切换音源和处理防盗链，保存至/tmp/music目录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wehaha",
+      "userId": "publishers:wehaha",
+      "displayName": "wehaha",
+      "image": "https://avatars.githubusercontent.com/u/25609274?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773754523597,
+      "changelog": "支持10个音源自动切换下载MP3: thttt, kugou, kuwo, netease, qq, gequbao, 5nd, 1ting, 9ku, musicenc",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a93c117c174c970bfed2fc360ef631fe6195fb92645fa3e67746d26a99da232b"
+}

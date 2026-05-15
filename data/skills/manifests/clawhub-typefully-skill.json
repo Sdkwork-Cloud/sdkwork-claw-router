@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18838,
+  "uuid": "skill-clawhub-typefully-skill",
+  "skillKey": "clawhub-typefully-skill",
+  "name": "Typefully Skill",
+  "summary": "Create, schedule, list, edit, and delete drafts on Typefully. Supports single tweets, threads, and multi-platform posts (X, LinkedIn, Threads, Bluesky, Masto...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.typefully_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chapati",
+      "features": [
+        "Create, schedule, list, edit, and delete drafts on Typefully",
+        "Supports single tweets, threads, and multi-platform posts (X, LinkedIn, Threads, Bluesky, Masto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/typefully-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "typefully-skill",
+      "url": "https://clawhub.ai/skills/typefully-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "typefully-skill",
+    "url": "https://clawhub.ai/skills/typefully-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/typefully-skill-112031f328a3cb3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/typefully-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-typefully-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:586c27aa0f4c27eaddf23d4b09975bdb8e4bc656c669adf8576c60bfe9d07cb2",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T21:35:16.836Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_openclaw",
+  "skill": {
+    "id": 22249,
+    "skillKey": "clawhub-x-openclaw",
+    "name": "xclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-openclaw",
+    "url": "https://clawhub.ai/skills/x-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-openclaw-f381360d28cef278.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract posts from X (Twitter) timeline or profile pages with engagement metrics, media URLs, and download local copies. Use when asked to scrape, list, or a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zyliu0",
+      "userId": "publishers:zyliu0",
+      "displayName": "zyliu",
+      "image": "https://avatars.githubusercontent.com/u/109995306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773660512996,
+      "changelog": "**Major skill overhaul: XClaw is now a local X (Twitter) post extractor, focused on scraping and archiving.**\n\n- Removed all previous API-based intelligence, analysis, and endpoint documentation.\n- Eliminated all code and references related to the original intelligence features and command set.\n- The skill now provides one main function: extract and archive X timeline/profile posts with engagement data and local media downloads.\n- Supplies strict output format for scraped intel files, including post metadata, metrics, and file/folder naming conventions.\n- Updated usage instructions and workflows for local scraping and file management only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27e78ebc116d32a3e48f6f2511ad3839f7cbe1335a04e1df3064e4eb8e4d574f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38399,
+  "uuid": "skill-clawhub-odds-converter",
+  "skillKey": "clawhub-odds-converter",
+  "name": "Odds Converter",
+  "summary": "Convert between American odds, decimal odds, fractional odds, implied probability, and Kalshi contract prices. Use when asked to convert odds formats, explai...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odds_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsquaredsolutions2026",
+      "features": [
+        "Convert between American odds, decimal odds, fractional odds, implied probability, and Kalshi c.",
+        "Use when asked to convert odds formats, explai..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/odds-converter@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217474775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "odds-converter",
+      "url": "https://clawhub.ai/skills/odds-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odds-converter",
+    "url": "https://clawhub.ai/skills/odds-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odds-converter-841482150fa9d2d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/odds-converter@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-odds-converter-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cbf0f73c9bae3614a79e962fee11c3aa9ac18127443b53113f8ec322fc8cde5",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T01:22:54.474Z"
+}

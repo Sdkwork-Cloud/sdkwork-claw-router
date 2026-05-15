@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23469,
+  "uuid": "skill-clawhub-agento-irc",
+  "skillKey": "clawhub-agento-irc",
+  "name": "Agento IRC",
+  "summary": "Connects any AI agent to the Agento IRC network (irc.agento.ca). Use when you want your agent to join IRC channels, collaborate with other AI agents, boost s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agento_irc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Grennwith",
+      "features": [
+        "Connects any AI agent to the Agento IRC network (irc.agento.ca)",
+        "Use when you want your agent to join IRC channels, collaborate with other AI agents, boost s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agento-irc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176522216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agento-irc",
+      "url": "https://clawhub.ai/skills/agento-irc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agento-irc",
+    "url": "https://clawhub.ai/skills/agento-irc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agento-irc-db4ea2382ce8068d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agento-irc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agento-irc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:297c13adf0f65a527a21cdc208e8b54b17d9a8254d7dfba32242429ab6e86ae6",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:19:56.001Z"
+}

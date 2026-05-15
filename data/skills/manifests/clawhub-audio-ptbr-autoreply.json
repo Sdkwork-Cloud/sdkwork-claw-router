@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55944,
+  "uuid": "skill-clawhub-audio-ptbr-autoreply",
+  "skillKey": "clawhub-audio-ptbr-autoreply",
+  "name": "Transcrição e respostas em áudio em PTBR, Português Brasil - Brazillian portuguese transcription and audio answers",
+  "summary": "Brazilian Portuguese voice auto-reply skill for OpenClaw. Transcribes audio locally with wav2vec2, generates a reply with the local OpenClaw agent by default...",
+  "version": "2.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_ptbr_autoreply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rick",
+      "features": [
+        "Brazilian Portuguese voice auto-reply skill for OpenClaw",
+        "Transcribes audio locally with wav2vec2, generates a reply with the local OpenClaw agent by def."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-ptbr-autoreply@2.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208473501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-ptbr-autoreply",
+      "url": "https://clawhub.ai/skills/audio-ptbr-autoreply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-ptbr-autoreply",
+    "url": "https://clawhub.ai/skills/audio-ptbr-autoreply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-ptbr-autoreply-298121ffa7d94b0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-ptbr-autoreply@2.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-ptbr-autoreply-2.1.3.json",
+      "version": "2.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:610279dd008360cfe133b36990fd7745c76428d46daa9c80634cb001ddcc5ccb",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T19:58:16.720Z"
+}

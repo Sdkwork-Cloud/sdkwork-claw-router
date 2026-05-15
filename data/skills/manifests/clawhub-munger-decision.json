@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37744,
+  "uuid": "skill-clawhub-munger-decision",
+  "skillKey": "clawhub-munger-decision",
+  "name": "Munger Decision",
+  "summary": "Charlie Munger's mental model decision assistant. Analyzes your decision scenario, recommends the most relevant thinking models, and guides you through struc...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.munger_decision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David",
+      "features": [
+        "Charlie Munger's mental model decision assistant",
+        "Analyzes your decision scenario, recommends the most relevant thinking models, and guides you t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/munger-decision@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39146952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "munger-decision",
+      "url": "https://clawhub.ai/skills/munger-decision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "munger-decision",
+    "url": "https://clawhub.ai/skills/munger-decision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/munger-decision-b40f656e88dca85e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/munger-decision@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-munger-decision-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69b56528cd88bffa75e19fa1550fe5036189f1d679a435391aae6427fe091dc3",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:26:39.730Z"
+}

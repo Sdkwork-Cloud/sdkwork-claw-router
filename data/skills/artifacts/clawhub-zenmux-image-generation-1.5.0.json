@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zenmux-image-generation@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zenmux_image_generation",
+  "skill": {
+    "id": 14004,
+    "skillKey": "clawhub-zenmux-image-generation",
+    "name": "ZenMux Image Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zenmux-image-generation",
+    "url": "https://clawhub.ai/skills/zenmux-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zenmux-image-generation-c87cdd0db8ce0356.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via ZenMux API (Pro/Elite). Supports Text-to-Image, Image-to-Image, and Multi-Image reference fusion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dadaniya99",
+      "userId": "s178e9wg39md2mzzgdd57zvhyd83y6sg",
+      "displayName": "dadaniya99",
+      "image": "https://avatars.githubusercontent.com/u/254098635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1279,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1770872263966,
+      "changelog": "Upgrade to Gemini 3 Pro, Multi-Image Fusion support, and Pro plan requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af6bab073463106f591c83e0ea65f591cc986df8d3d0c0ab02132b4ffec49f72"
+}

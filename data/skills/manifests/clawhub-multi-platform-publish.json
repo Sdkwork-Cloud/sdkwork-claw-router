@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67609,
+  "uuid": "skill-clawhub-multi-platform-publish",
+  "skillKey": "clawhub-multi-platform-publish",
+  "name": "Multi Platform Publish",
+  "summary": "根据不同平台要求，生成符合尺寸和风格的封面图、详情长图及文案，支持微信公众号、小红书、抖音和B站发布内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_platform_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhuchenggong19851114-design",
+      "features": [
+        "根据不同平台要求，生成符合尺寸和风格的封面图、详情长图及文案，支持微信公众号、小红书、抖音和B站发布内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-platform-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266258234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-platform-publish",
+      "url": "https://clawhub.ai/skills/multi-platform-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-platform-publish",
+    "url": "https://clawhub.ai/skills/multi-platform-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-platform-publish-3ffde3fa36a8465c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-platform-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-platform-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:758d43da7e25056b796a1d1a8c6ca96ce3b313e6ab3b389e0283df6f681a2296",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:44:00.307Z"
+}

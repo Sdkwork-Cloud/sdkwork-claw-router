@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/membox-cloud-sync@0.1.12",
+  "version": "0.1.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.membox_cloud_sync",
+  "skill": {
+    "id": 50658,
+    "skillKey": "clawhub-membox-cloud-sync",
+    "name": "Membox Cloud Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "membox-cloud-sync",
+    "url": "https://clawhub.ai/skills/membox-cloud-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/membox-cloud-sync-ab347c00bf141bf7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Private zero-knowledge encrypted cross-device memory sync, backup, and recovery for OpenClaw. Helps agents install Membox, pair devices, securely sync `MEMOR..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pupillen",
+      "userId": "publishers:pupillen",
+      "displayName": "Tingrui Zhang",
+      "image": "https://avatars.githubusercontent.com/u/83890569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.12",
+      "createdAt": 1773339306320,
+      "changelog": "Release 0.1.12: private zero-knowledge encrypted cross-device memory sync, backup, and recovery for OpenClaw.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acaef3902c59f02a85be1ad031888e7934539b3a2a18ddc4cb0372937a0eb633"
+}

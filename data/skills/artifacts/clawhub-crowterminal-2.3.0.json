@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crowterminal@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crowterminal",
+  "skill": {
+    "id": 19644,
+    "skillKey": "clawhub-crowterminal",
+    "name": "CrowTerminal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crowterminal",
+    "url": "https://clawhub.ai/skills/crowterminal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crowterminal-fec291fd1c71e05d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides persistent, versioned memory and engagement analysis for AI agents supporting creators and influencers across social media platforms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "willnigri",
+      "userId": "publishers:willnigri",
+      "displayName": "Will Nigri",
+      "image": "https://avatars.githubusercontent.com/u/186758913?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1771469986904,
+      "changelog": "CrowTerminal 2.3.0 adds LLM-native discovery and smart query capabilities.\n\n- Introduced schema discovery endpoints for field definitions, types, and semantic (natural language) aliases\n- Added natural language query endpoints to fetch data without hardcoding field names\n- New endpoints for human-readable overviews, insights, and change summaries\n- Sandbox expanded with mock endpoints for schema, smart queries, and analysis\n- Documentation updated to reflect new features and usage examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c758801736c1f3c10882c7f6b0177f27c4774f016a605b47ad1c4bb63d41fd73"
+}

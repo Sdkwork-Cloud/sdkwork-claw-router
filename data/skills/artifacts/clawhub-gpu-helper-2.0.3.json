@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpu-helper@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpu_helper",
+  "skill": {
+    "id": 51935,
+    "skillKey": "clawhub-gpu-helper",
+    "name": "Gpu Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpu-helper",
+    "url": "https://clawhub.ai/skills/gpu-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpu-helper-9a13dd38f6b1c99f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for GPU Helper concepts, best practices, and implementation patterns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1774312791599,
+      "changelog": "Fix description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f3ed9d24a98a06231a407934dde5bab27e97893ff2036ffae3a03487218f3bc"
+}

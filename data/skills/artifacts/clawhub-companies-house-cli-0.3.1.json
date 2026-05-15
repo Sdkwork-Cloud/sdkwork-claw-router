@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/companies-house-cli@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.companies_house_cli",
+  "skill": {
+    "id": 51902,
+    "skillKey": "clawhub-companies-house-cli",
+    "name": "companies-house-cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "companies-house-cli",
+    "url": "https://clawhub.ai/skills/companies-house-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/companies-house-cli-a67acaa73dfbbb6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "UK Companies House CLI — search companies, profiles, officers, filings, PSC, charges, insolvency, and agent-friendly JSON output aligned with rail-cli and tf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shan8851",
+      "userId": "s174pggpvzf6ncw463rmj1madd83g10q",
+      "displayName": "shan8851",
+      "image": "https://avatars.githubusercontent.com/u/39712238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1774465995565,
+      "changelog": "Republish from ~/.openclaw/skills as source of truth; keep OpenClaw metadata and aligned JSON/text contract guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1fc4db0615f32417463e9e15e89eb354eebccb00a8243e25c3452f22bf4196c9"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16089,
+  "uuid": "skill-clawhub-slipbot-kindle-importer",
+  "skillKey": "clawhub-slipbot-kindle-importer",
+  "name": "SlipBot Kindle Importer",
+  "summary": "Import reading notes from Kindle HTML exports into the slipbox. Use when user sends a Kindle notebook export file (HTML/XHTML). Parses book title and author, extracts only user's Notes (skips Highlights), then runs slipbot for each.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slipbot_kindle_importer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaron Swab",
+      "features": [
+        "Import reading notes from Kindle HTML exports into the slipbox",
+        "Use when user sends a Kindle notebook export file (HTML/XHTML)",
+        "Parses book title and author, extracts only user's Notes (skips Highlights), then runs slipbot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slipbot-kindle-importer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1689426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slipbot-kindle-importer",
+      "url": "https://clawhub.ai/skills/slipbot-kindle-importer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slipbot-kindle-importer",
+    "url": "https://clawhub.ai/skills/slipbot-kindle-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slipbot-kindle-importer-b3d0e6834e7e83b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slipbot-kindle-importer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slipbot-kindle-importer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:356dcbbebcef3f5ecadafe04c3a96aa63fa99c327725a65f834bd6193dc34f1d",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T19:37:36.390Z"
+}

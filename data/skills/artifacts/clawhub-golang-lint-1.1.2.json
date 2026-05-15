@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-lint@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_lint",
+  "skill": {
+    "id": 49011,
+    "skillKey": "clawhub-golang-lint",
+    "name": "Golang Lint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-lint",
+    "url": "https://clawhub.ai/skills/golang-lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-lint-d7a2b333e6998adb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides linting best practices and golangci-lint configuration for Go projects. Covers running linters, configuring .golangci.yml, suppressing warnings with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1777554313202,
+      "changelog": "- Expanded and clarified documentation in SKILL.md, providing detailed best practices for using golangci-lint on Go projects.\n- Added mode descriptions for setup, coding, and interpreting/fixing lint issues, including guidance on running in parallel using sub-agents.\n- Included quick references for running, fixing, formatting, and configuring golangci-lint, as well as Makefile targets for common tasks.\n- Outlined strict rules for suppressing lint warnings and how to justify and enforce them.\n- Provided workflow recommendations, troubleshooting tips for common linter issues, and cross-references to related skills.\n- No changes to functionality; this update focuses on comprehensive documentation improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad7df905aeecf207ee418d779a42d2a797bbbaea1181090dac3685f3162b43fe"
+}

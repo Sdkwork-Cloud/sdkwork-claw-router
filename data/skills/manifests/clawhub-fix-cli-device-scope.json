@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58733,
+  "uuid": "skill-clawhub-fix-cli-device-scope",
+  "skillKey": "clawhub-fix-cli-device-scope",
+  "name": "Fix CLI Device Scope",
+  "summary": "修复 OpenClaw CLI 设备权限不足导致 subagent/spawn/cron 等操作被拒绝的问题。 触发词: pairing required, spawn失败, cron失败, 设备权限不足, admin scope, 死循环, CLI设备, scope不足。 当 spawn subagent 报...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fix_cli_device_scope",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whhh1994",
+      "features": [
+        "修复 OpenClaw CLI 设备权限不足导致 subagent/spawn/cron 等操作被拒绝的问题。 触发词: pairing required, spawn失败, cron失败,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fix-cli-device-scope@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74339286?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fix-cli-device-scope",
+      "url": "https://clawhub.ai/skills/fix-cli-device-scope"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fix-cli-device-scope",
+    "url": "https://clawhub.ai/skills/fix-cli-device-scope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fix-cli-device-scope-7fe7a6c837c5a260.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fix-cli-device-scope@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fix-cli-device-scope-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d0c97bcb8cc0c398346e8d046818e89e78251dc3627a14cf55635b45419f2e0",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:02:33.688Z"
+}

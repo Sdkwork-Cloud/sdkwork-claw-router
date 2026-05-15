@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16210,
+  "uuid": "skill-clawhub-xpr-creative",
+  "skillKey": "clawhub-xpr-creative",
+  "name": "XPR Creative",
+  "summary": "Provides AI tools to generate and deliver creative content including rich markdown, PDFs, CSVs, AI-generated images, videos, web media, and GitHub repositories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xpr_creative",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "paulgnz",
+      "features": [
+        "Provides AI tools to generate and deliver creative content including rich markdown, PDFs, CSVs,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xpr-creative@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12118160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xpr-creative",
+      "url": "https://clawhub.ai/skills/xpr-creative"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xpr-creative",
+    "url": "https://clawhub.ai/skills/xpr-creative",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xpr-creative-745db15aaa8497b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xpr-creative@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xpr-creative-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4ad6ced08ac99d446a35f45dc7d359e134d9811f9487511b7abb5eb05dc66c2",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T05:10:30.519Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22895,
+  "uuid": "skill-clawhub-kuaidi-query",
+  "skillKey": "clawhub-kuaidi-query",
+  "name": "Kuaidi Query",
+  "summary": "Query logistics tracking information via Track123 API",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaidi_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Djttt",
+      "features": [
+        "Query logistics tracking information via Track123 API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuaidi-query@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77910823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuaidi-query",
+      "url": "https://clawhub.ai/skills/kuaidi-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaidi-query",
+    "url": "https://clawhub.ai/skills/kuaidi-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaidi-query-e7d3079746c6b0cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuaidi-query@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuaidi-query-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9740a9b788d2b63be5e94b23af61dfd7ebba491fa97998d90489518a3f266e9a",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:59:50.667Z"
+}

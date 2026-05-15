@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37878,
+  "uuid": "skill-clawhub-vercel-staging-workflow",
+  "skillKey": "clawhub-vercel-staging-workflow",
+  "name": "Vercel Staging Workflow",
+  "summary": "Set up a staging/production workflow for Vercel projects using GitHub Actions and stable URL aliases. Use when asked to create a staging environment, set up...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vercel_staging_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DanielGrobelny",
+      "features": [
+        "Set up a staging/production workflow for Vercel projects using GitHub Actions and stable URL al.",
+        "Use when asked to create a staging environment, set up..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vercel-staging-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7581754?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vercel-staging-workflow",
+      "url": "https://clawhub.ai/skills/vercel-staging-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vercel-staging-workflow",
+    "url": "https://clawhub.ai/skills/vercel-staging-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vercel-staging-workflow-9f99e0a0d4f6407b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vercel-staging-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vercel-staging-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8fdad3e866b12dec629c051cd61e3fccddf58864833b236b05bd6408752fb59",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:08:32.678Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notebooklm-ksyun@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_ksyun",
+  "skill": {
+    "id": 53445,
+    "skillKey": "clawhub-notebooklm-ksyun",
+    "name": "Notebooklm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-ksyun",
+    "url": "https://clawhub.ai/skills/notebooklm-ksyun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-ksyun-bc6e44b4a0b3e749.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Google NotebookLM integration — add sources, ask questions, generate all Studio content (podcast, video, slide deck, quiz, flashcards, infographic,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinzien1107-ctrl",
+      "userId": "s1784pwvvp9a738mpbb0fphy0d85331x",
+      "displayName": "kevinzien1107-ctrl",
+      "image": "https://avatars.githubusercontent.com/u/244894417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776547936818,
+      "changelog": "Initial release: Full integration with Google NotebookLM for programmatic content creation and research.\n\n- Add and manage sources (URLs, files, YouTube, Drive, research).\n- Ask questions, chat, and generate citations from notebooks.\n- Programmatically generate podcasts, videos, slide decks, quizzes, flashcards, infographics, mind maps, data tables, and reports.\n- Download generated artifacts in various formats.\n- Includes explicit autonomy rules for safe automation.\n- Comprehensive quick reference and supported source formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:839f2c5727276d648f1a066f32585f6caa0d25419a9d23de99134b89036711cb"
+}

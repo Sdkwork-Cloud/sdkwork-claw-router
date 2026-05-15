@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57097,
+  "uuid": "skill-clawhub-jclaw-smart-web-monitor",
+  "skillKey": "clawhub-jclaw-smart-web-monitor",
+  "name": "Smart Web Monitor (智能网页监控)",
+  "summary": "Smart web monitor with AI-powered matching. Unlike keyword/regex monitors, this skill uses the agent's own LLM reasoning to evaluate whether a web page match...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jclaw_smart_web_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywalker326",
+      "features": [
+        "Smart web monitor with AI-powered matching",
+        "Unlike keyword/regex monitors, this skill uses the agent's own LLM reasoning to evaluate whethe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jclaw-smart-web-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5773915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jclaw-smart-web-monitor",
+      "url": "https://clawhub.ai/skills/jclaw-smart-web-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jclaw-smart-web-monitor",
+    "url": "https://clawhub.ai/skills/jclaw-smart-web-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jclaw-smart-web-monitor-ad76a3a2d8b24b2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jclaw-smart-web-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jclaw-smart-web-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c90e78e65974756ed8244abf37d96614c445735c51d8477f8cf1e7600fc7629",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:08:08.460Z"
+}

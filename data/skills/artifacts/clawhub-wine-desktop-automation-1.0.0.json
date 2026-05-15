@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wine-desktop-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wine_desktop_automation",
+  "skill": {
+    "id": 23148,
+    "skillKey": "clawhub-wine-desktop-automation",
+    "name": "wine desktop automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wine-desktop-automation",
+    "url": "https://clawhub.ai/skills/wine-desktop-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wine-desktop-automation-1b10a03b9b095668.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Controls desktop applications with mouse and keyboard automation. Invoke when user needs to automate GUI operations, control desktop software, or perform UI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaodu",
+      "userId": "s17fhrsddm2h8xjx47pvgk9rr183g2jf",
+      "displayName": "xiaodu",
+      "image": "https://avatars.githubusercontent.com/u/953026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773912313848,
+      "changelog": "Initial release of wine-desktop-automation.\n\n- Provides comprehensive mouse and keyboard automation for Ubuntu + Wine environments.\n- Supports GUI automation, window management, and image-based UI control for both native Linux and Wine applications.\n- Includes tools for starting and managing Wine processes, and automating Windows apps via Wine.\n- Offers detailed configuration for input behavior, image recognition, and Wine integration.\n- Includes troubleshooting guidance and best practices for robust desktop automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b9f8803e3f29dfb39d5b0567cedcf6939d8172cc4524b734d96456b73db777d"
+}

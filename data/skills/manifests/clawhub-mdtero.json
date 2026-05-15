@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24275,
+  "uuid": "skill-clawhub-mdtero",
+  "skillKey": "clawhub-mdtero",
+  "name": "Mdtero",
+  "summary": "Use when a user wants Mdtero to parse a paper from a DOI or URL into a structured Markdown package, translate a parsed paper while keeping structure, or down...",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdtero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jianbin Chen",
+      "features": [
+        "Use when a user wants Mdtero to parse a paper from a DOI or URL into a structured Markdown pack."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mdtero@0.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62364199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mdtero",
+      "url": "https://clawhub.ai/skills/mdtero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdtero",
+    "url": "https://clawhub.ai/skills/mdtero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdtero-cc89205f6339e1b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mdtero@0.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-mdtero-0.1.9.json",
+      "version": "0.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:576b0236e43b26b2c6175e734ab081c5b8f5c5716c9a4b778f6e0e89eded10f6",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:33:32.668Z"
+}

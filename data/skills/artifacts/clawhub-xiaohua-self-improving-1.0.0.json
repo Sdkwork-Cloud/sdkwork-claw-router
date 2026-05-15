@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohua-self-improving@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohua_self_improving",
+  "skill": {
+    "id": 60902,
+    "skillKey": "clawhub-xiaohua-self-improving",
+    "name": "小花自我迭代 (HuaNiu Enhanced)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohua-self-improving",
+    "url": "https://clawhub.ai/skills/xiaohua-self-improving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohua-self-improving-c77855305f736f7e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小花专用自我迭代技能 - 基于 self-improving-agent 增强，集成 OpenClaw 工作流、MEMORY.md、百度千帆、看想做找四部曲。专为国内部署优化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aroooooy",
+      "userId": "publishers:aroooooy",
+      "displayName": "Aroooooy",
+      "image": "https://avatars.githubusercontent.com/u/96102471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 504,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772438630140,
+      "changelog": "v1.0.0 - 小花定制版：基于 self-improving-agent fork，添加 OpenClaw 原生集成、MEMORY.md 提升工作流、百度千帆配置、看想做找自动化、生产环境实战模式、国内部署优化",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8736355345590ba9aff1445f66f0cb69feee69af4cc15fb0bd1ca9833a763c62"
+}

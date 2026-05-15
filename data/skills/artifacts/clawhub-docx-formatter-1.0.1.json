@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docx-formatter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_formatter",
+  "skill": {
+    "id": 66978,
+    "skillKey": "clawhub-docx-formatter",
+    "name": "DOCX Formatter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-formatter",
+    "url": "https://clawhub.ai/skills/docx-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-formatter-305948824ac1a5f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成符合中国公文格式规范的Word文档，支持标题、正文样式、自动格式排版和中文引号配对。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rokami",
+      "userId": "publishers:rokami",
+      "displayName": "Rokami",
+      "image": "https://avatars.githubusercontent.com/u/22007307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1125,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772520413545,
+      "changelog": "No user-facing changes in this version.  \n- Version bump to 1.0.1 with no file changes detected.  \n- Functionality and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:597e891785ba54b96ea056dd1bfd11ee7424a363e019a2e8bf2793ce5d9cf8ec"
+}

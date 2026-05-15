@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65614,
+  "uuid": "skill-clawhub-enbridge",
+  "skillKey": "clawhub-enbridge",
+  "name": "Enbridge",
+  "summary": "提供恩桥 Enbridge相关信息，涵盖其北美最大能源管道网络及行业发展动态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enbridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供恩桥 Enbridge相关信息，涵盖其北美最大能源管道网络及行业发展动态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enbridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enbridge",
+      "url": "https://clawhub.ai/skills/enbridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enbridge",
+    "url": "https://clawhub.ai/skills/enbridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enbridge-60b65a790ce6bd51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enbridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enbridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cdd21979c492426a6c95f5ff1b0958dbbbedce424d21fe9d524d681d712fc53",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T18:00:46.275Z"
+}

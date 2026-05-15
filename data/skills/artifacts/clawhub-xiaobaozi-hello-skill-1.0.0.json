@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaobaozi-hello-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaobaozi_hello_skill",
+  "skill": {
+    "id": 60701,
+    "skillKey": "clawhub-xiaobaozi-hello-skill",
+    "name": "小包子Hello技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaobaozi-hello-skill",
+    "url": "https://clawhub.ai/skills/xiaobaozi-hello-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaobaozi-hello-skill-e2b83cb00d0b2a82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小包子第一个技能 - Hello World示例"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "w1tv",
+      "userId": "s179sqxwe3qvhd89absqnk2wvn83yxbs",
+      "displayName": "流民",
+      "image": "https://avatars.githubusercontent.com/u/115870781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775338702856,
+      "changelog": "小包子第一个技能，Hello World示例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55ccf40cbb9ba98a3f82c02514e9850509b4b8a10c639b2b6493b462fcd06ffb"
+}

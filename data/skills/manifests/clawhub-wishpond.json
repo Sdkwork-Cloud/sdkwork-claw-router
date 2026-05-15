@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35098,
+  "uuid": "skill-clawhub-wishpond",
+  "skillKey": "clawhub-wishpond",
+  "name": "Wishpond",
+  "summary": "Wishpond integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wishpond data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wishpond",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Wishpond integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wishpond data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wishpond@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wishpond",
+      "url": "https://clawhub.ai/skills/wishpond"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wishpond",
+    "url": "https://clawhub.ai/skills/wishpond",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wishpond-91fd1527ce39c4a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wishpond@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wishpond-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c301eacb661d706e8dbd0f550f00f2f6f0878c93210dfea9095558705a4f5a7",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:02:28.954Z"
+}

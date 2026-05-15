@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memes@2.11.0",
+  "version": "2.11.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memes",
+  "skill": {
+    "id": 24985,
+    "skillKey": "clawhub-agent-memes",
+    "name": "Agent Memes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memes",
+    "url": "https://clawhub.ai/skills/agent-memes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memes-c1d039594d5aaadc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send meme reaction images in chat. One command to pick & send. Multi-platform (Discord, Feishu, Telegram, etc). Use when the conversation calls for a visual..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kagura-agent",
+      "userId": "s172k10mer1e1pqnn7x0x5wmbd83xgrx",
+      "displayName": "kagura-agent",
+      "image": "https://avatars.githubusercontent.com/u/268167063?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 24
+    },
+    "latestVersion": {
+      "version": "2.11.0",
+      "createdAt": 1776389486454,
+      "changelog": "Fix stale platform detection: /tmp/openclaw-current-channel now ignored if >5min old. Prevents Discord memes being sent to Telegram when file has stale telegram context. OPENCLAW_CHANNEL env var takes priority over file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdba86cf2e2efc79d7716e0866713a2320a1ed932b12a5ce6eced6e76115b699"
+}

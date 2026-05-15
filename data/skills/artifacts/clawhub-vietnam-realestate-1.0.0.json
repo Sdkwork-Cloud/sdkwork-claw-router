@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vietnam-realestate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vietnam_realestate",
+  "skill": {
+    "id": 58344,
+    "skillKey": "clawhub-vietnam-realestate",
+    "name": "Vietnam Realestate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vietnam-realestate",
+    "url": "https://clawhub.ai/skills/vietnam-realestate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vietnam-realestate-3b613bd6805258d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill tra cứu và phân tích bất động sản Việt Nam toàn diện. Bao gồm: tra cứu giá đất/m² theo khu vực, bảng giá đất Nhà nước (khung giá UBND tỉnh/thành), phân..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trustydev212",
+      "userId": "s17fdedxcxmqzhtcsnq9j5fp8s83v5p9",
+      "displayName": "Trustydev212",
+      "image": "https://avatars.githubusercontent.com/u/177665374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774771018870,
+      "changelog": "Vietnam Real Estate Research & Analysis skill v1.0.0\n\n- Ra mắt skill tra cứu, phân tích và tư vấn bất động sản Việt Nam toàn diện.\n- Hỗ trợ tra cứu giá đất/m², bảng giá đất Nhà nước, phân tích xu hướng thị trường và tư vấn pháp lý bất động sản.\n- Dữ liệu cập nhật từ các nguồn chính thống thông qua web search.\n- Phục vụ đa dạng đối tượng: nhà đầu tư, môi giới, người mua nhà lần đầu.\n- Tích hợp quy trình hướng dẫn cụ thể cho từng nhóm nhu cầu.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1f60c2368e409612e547f690bdaa47ce5267632109d50a8da52673398793c39"
+}

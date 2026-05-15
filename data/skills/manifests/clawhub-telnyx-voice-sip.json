@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13097,
+  "uuid": "skill-clawhub-telnyx-voice-sip",
+  "skillKey": "clawhub-telnyx-voice-sip",
+  "name": "Sip Voice Call Control",
+  "summary": "Voice interface using Telnyx Call Control API. Answer phone calls with AI, function calling, and natural conversation. Use for hands-free assistant access, phone-based reminders, or voice-controlled tools. Requires Node.js and Telnyx API k.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_voice_sip",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teamtelnyx",
+      "features": [
+        "Voice interface using Telnyx Call Control API",
+        "Answer phone calls with AI, function calling, and natural conversation",
+        "Use for hands-free assistant access, phone-based reminders, or voice-controlled tools",
+        "Requires Node.js and Telnyx API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telnyx-voice-sip@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176328014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telnyx-voice-sip",
+      "url": "https://clawhub.ai/skills/telnyx-voice-sip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-voice-sip",
+    "url": "https://clawhub.ai/skills/telnyx-voice-sip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-voice-sip-0b7f8dc5c0b8373c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telnyx-voice-sip@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telnyx-voice-sip-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62838d9b18514a4f9b966161b963205440dfc2f8129afa891992e5e18ec7c533",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T16:10:57.646Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33737,
+  "uuid": "skill-clawhub-digital-librarian",
+  "skillKey": "clawhub-digital-librarian",
+  "name": "librarian",
+  "summary": "Ingest and tag any media link or file, ask user intent if unclear, then save a structured note in the Obsidian library for future use.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digital_librarian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EaRu723",
+      "features": [
+        "Ingest and tag any media link or file, ask user intent if unclear, then save a structured note."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digital-librarian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149820225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digital-librarian",
+      "url": "https://clawhub.ai/skills/digital-librarian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digital-librarian",
+    "url": "https://clawhub.ai/skills/digital-librarian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digital-librarian-66277fa1a3ad9875.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digital-librarian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-digital-librarian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6e3980524dc864c3226a0f9d1bcb61a3c360d29b83d169674416db4ffe94535",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:58:03.148Z"
+}

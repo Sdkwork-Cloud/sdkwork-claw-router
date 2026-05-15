@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36161,
+  "uuid": "skill-clawhub-personal-ontology",
+  "skillKey": "clawhub-personal-ontology",
+  "name": "Personal Ontology",
+  "summary": "Help users build and maintain a Personal Ontology - a Palantir-style graph of Objects (identity, beliefs, predictions, goals) and Links (relationships between them) that enables AI-driven decision-making and life alignment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_ontology",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "levineam",
+      "features": [
+        "Help users build and maintain a Personal Ontology",
+        "a Palantir-style graph of Objects (identity, beliefs, predictions, goals) and Links (relationsh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-ontology@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1668898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-ontology",
+      "url": "https://clawhub.ai/skills/personal-ontology"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-ontology",
+    "url": "https://clawhub.ai/skills/personal-ontology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-ontology-4b2871e370bee842.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-ontology@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-ontology-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a361a925dc8a60507ef3c2442b9c8d5052bcd47ae8192f8d95506fc9ba6f1bd",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T22:01:57.148Z"
+}

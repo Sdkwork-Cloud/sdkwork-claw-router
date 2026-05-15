@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19143,
+  "uuid": "skill-clawhub-country-info",
+  "skillKey": "clawhub-country-info",
+  "name": "Country Info",
+  "summary": "Retrieve detailed country data including population, capital, languages, currencies, flag, and regional info using the REST Countries API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.country_info",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "picaye",
+      "features": [
+        "Retrieve detailed country data including population, capital, languages, currencies, flag, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/country-info@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21177759?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "country-info",
+      "url": "https://clawhub.ai/skills/country-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "country-info",
+    "url": "https://clawhub.ai/skills/country-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/country-info-2720df6cf3e5c470.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/country-info@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-country-info-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66a72c0259459e4f157c9f028820381392d773ba0ee611074f74d402be7b58fa",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T06:39:19.902Z"
+}

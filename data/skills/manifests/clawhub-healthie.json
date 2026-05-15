@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54643,
+  "uuid": "skill-clawhub-healthie",
+  "skillKey": "clawhub-healthie",
+  "name": "Healthie",
+  "summary": "Healthie — manage patients, appointments, goals, and documents via GraphQL API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthie",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Healthie — manage patients, appointments, goals, and documents via GraphQL API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/healthie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "healthie",
+      "url": "https://clawhub.ai/skills/healthie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthie",
+    "url": "https://clawhub.ai/skills/healthie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthie-997537afa441cb84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/healthie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-healthie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1514e91f51ca568fd5fc0afb5146ac60b77fc2a77d7c675a8cd7acf23f0ef728",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:54:21.469Z"
+}

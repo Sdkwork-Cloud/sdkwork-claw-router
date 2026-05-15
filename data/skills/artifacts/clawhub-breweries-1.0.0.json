@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/breweries@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breweries",
+  "skill": {
+    "id": 12735,
+    "skillKey": "clawhub-breweries",
+    "name": "Breweries"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breweries",
+    "url": "https://clawhub.ai/skills/breweries",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breweries-96ba89e784ee3b65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI for AI agents to find breweries for their humans. Uses Open Brewery DB. No auth required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffaf",
+      "userId": "s170beydycbvfehr2pz7rj84p183gak4",
+      "displayName": "jeffaf",
+      "image": "https://avatars.githubusercontent.com/u/102811047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1570,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770258670193,
+      "changelog": "- Initial release of the breweries CLI skill.\n- Search for breweries by name, city, state, or type using Open Brewery DB.\n- Supports random brewery suggestions.\n- No authentication or API key required.\n- Outputs concise brewery info with name, location, type, and URL.\n- Requires bash, curl, and jq.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0df295cd81b7fd5578b4d41e7a27ba216357cdda81f2365403646f198c8f199a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/four-word-phrases@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.four_word_phrases",
+  "skill": {
+    "id": 66816,
+    "skillKey": "clawhub-four-word-phrases",
+    "name": "four-word-phrases"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "four-word-phrases",
+    "url": "https://clawhub.ai/skills/four-word-phrases",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/four-word-phrases-a7557a07ab7c2671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "常用四个词英语短句学习工具。当用户提到\"四个词\"、\"四词短句\"、\"four word\"、\"四字短句\"、\"日常口语\"、\"常用短句\"、\"实用英语\"、\"口语练习\"时自动激活。涵盖日常交流、情感表达、社交礼仪、工作学习等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aadebuger",
+      "userId": "s171rv2mdbnp8wjh2c9xvpkp9983x68a",
+      "displayName": "aadebuger",
+      "image": "https://avatars.githubusercontent.com/u/1088900?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774882526388,
+      "changelog": "Initial release of four-word-phrases skill.\n\n- Provides a categorized collection of common four-word English phrases for daily conversation, emotional expression, social etiquette, and work/study scenarios.\n- Automatically activates when users mention related keywords such as \"四个词\", \"four word\", \"常用短句\", or \"口语练习\".\n- Ensures all responses are based on phrases from a dedicated reference file (phrases.md) for accuracy.\n- Supports both display_phrases tool output and emoji fallback format for phrase presentation.\n- Allows users to browse, group, and randomly practice four-word English phrases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b135d20bc476323d65e4dbd2ccbb0659b79862e4fa825d4dd6b54f808425311"
+}

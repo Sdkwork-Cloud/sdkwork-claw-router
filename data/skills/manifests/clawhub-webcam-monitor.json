@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26501,
+  "uuid": "skill-clawhub-webcam-monitor",
+  "skillKey": "clawhub-webcam-monitor",
+  "name": "Webcam Motion Monitor",
+  "summary": "Webcam motion detection and monitoring system for WSL2 with USB/IP passthrough. Use when setting up motion detection on a USB webcam, monitoring camera snaps...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webcam_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jadegaul",
+      "features": [
+        "Webcam motion detection and monitoring system for WSL2 with USB/IP passthrough",
+        "Use when setting up motion detection on a USB webcam, monitoring camera snaps..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/webcam-monitor@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129908486?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "webcam-monitor",
+      "url": "https://clawhub.ai/skills/webcam-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webcam-monitor",
+    "url": "https://clawhub.ai/skills/webcam-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webcam-monitor-4407c09b8c405314.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/webcam-monitor@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-webcam-monitor-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60b7068da201f33353c9ccc1448e15d3667fe56674bf10bcf6914a8e26f7e985",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T14:23:19.867Z"
+}

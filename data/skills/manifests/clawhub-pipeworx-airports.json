@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55882,
+  "uuid": "skill-clawhub-pipeworx-airports",
+  "skillKey": "clawhub-pipeworx-airports",
+  "name": "Pipeworx airports",
+  "summary": "Airports MCP — wraps AirportGap API (free, no auth required)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_airports",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Airports MCP — wraps AirportGap API (free, no auth required)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-airports@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-airports",
+      "url": "https://clawhub.ai/skills/pipeworx-airports"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-airports",
+    "url": "https://clawhub.ai/skills/pipeworx-airports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-airports-106a9cc1c400bab5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-airports@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-airports-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52f66dc09da1c95dd1b0d3f02d97b698ea135767ed46254d8785deb5be1a8433",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:01:58.011Z"
+}

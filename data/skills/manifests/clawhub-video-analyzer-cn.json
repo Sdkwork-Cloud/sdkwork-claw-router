@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64070,
+  "uuid": "skill-clawhub-video-analyzer-cn",
+  "skillKey": "clawhub-video-analyzer-cn",
+  "name": "Video Analyzer CN",
+  "summary": "视频内容分析工具。支持B站、抖音、今日头条视频链接。 发送视频URL → 自动下载 → 抽帧 → 本地AI逐帧识别 → 综合总结。 使用本地minicpm-v模型，无需云端API。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_analyzer_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Murrayhoung",
+      "features": [
+        "视频内容分析工具。支持B站、抖音、今日头条视频链接。 发送视频URL → 自动下载 → 抽帧 → 本地AI逐帧识别 → 综合总结。 使用本地minicpm-v模型，无需云端API。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-analyzer-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265030772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-analyzer-cn",
+      "url": "https://clawhub.ai/skills/video-analyzer-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-analyzer-cn",
+    "url": "https://clawhub.ai/skills/video-analyzer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-analyzer-cn-9b6e2ae2c9737dd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-analyzer-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-analyzer-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4682e41337ac5e4fb79b2a8dd371385ffdeecd0242134db2aa143502a593d815",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T17:34:52.732Z"
+}

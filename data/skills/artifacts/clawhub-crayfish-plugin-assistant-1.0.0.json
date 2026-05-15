@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crayfish-plugin-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crayfish_plugin_assistant",
+  "skill": {
+    "id": 60945,
+    "skillKey": "clawhub-crayfish-plugin-assistant",
+    "name": "Crayfish Plugin Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crayfish-plugin-assistant",
+    "url": "https://clawhub.ai/skills/crayfish-plugin-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crayfish-plugin-assistant-e26508dc360f5647.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 插件开发助手，输出可运行的插件骨架、安装命令和调试步骤。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boleyn",
+      "userId": "s178twzv85nhtpzkgxdawkbb7s83pe5j",
+      "displayName": "santian",
+      "image": "https://avatars.githubusercontent.com/u/24293664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 408,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773120957471,
+      "changelog": "initial release without pinyin",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26a5e010a79affd17a71d5e3ea442fa44cf1faa43ed446a7a6ae0243c85b960a"
+}

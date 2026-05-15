@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vidu-image-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_image_generate",
+  "skill": {
+    "id": 58667,
+    "skillKey": "clawhub-vidu-image-generate",
+    "name": "Vidu API supports text-based images, reference images, and image editing."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-image-generate",
+    "url": "https://clawhub.ai/skills/vidu-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-image-generate-d6db7862cdb5eab2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vidu AI 图片生成。支持 Nano 生图、Vidu 参考生图。对话式调用，自动识别意图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-jihua",
+      "userId": "s1784btgjdbcht1279h27zwrcs83g5md",
+      "displayName": "Vidu AI",
+      "image": "https://avatars.githubusercontent.com/u/25274975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773889274369,
+      "changelog": "- Initial release of vidu-image-generate skill for Vidu AI image generation.\n- Supports both text-to-image and reference-image modes, with automatic intent recognition from user prompts.\n- Integrates multiple Vidu Nano and Vidu reference image models, with automated model and API domain selection based on user language.\n- Provides user-friendly output in Markdown with downloadable image links, generated via secure API key.\n- Includes detailed guidelines on usage, environment variables, supported modes, and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a12e50928da99c5834c398227dccd57de7ab27baf6ebb941488a7d7cb708135b"
+}

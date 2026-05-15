@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42583,
+  "uuid": "skill-clawhub-return-reason-miner",
+  "skillKey": "clawhub-return-reason-miner",
+  "name": "Return Reason Miner",
+  "summary": "Analyze product return or refund notes and turn them into a structured reason taxonomy, root-cause view, and fix-priority brief. Use when a team needs to und...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.return_reason_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Analyze product return or refund notes and turn them into a structured reason taxonomy, root-ca.",
+        "Use when a team needs to und..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/return-reason-miner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "return-reason-miner",
+      "url": "https://clawhub.ai/skills/return-reason-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "return-reason-miner",
+    "url": "https://clawhub.ai/skills/return-reason-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/return-reason-miner-dd067cde69ddcd06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/return-reason-miner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-return-reason-miner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea4b1b3be1e3d1db05bcb9fe48c2d647f66632ed91184e543c2224c46d2e1e31",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T00:26:54.949Z"
+}

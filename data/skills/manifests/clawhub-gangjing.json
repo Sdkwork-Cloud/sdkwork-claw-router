@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60333,
+  "uuid": "skill-clawhub-gangjing",
+  "skillKey": "clawhub-gangjing",
+  "name": "杠精 Gangjing",
+  "summary": "用户说什么都要杠的技能。A contrarian review and red-team skill for product, architecture, and code decisions. 默认先做口头审查；只有在用户明确要求测试代码， 或对当前工作区代码做强断言时，才升级到代码攻击与实锤验证。",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gangjing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Becker",
+      "features": [
+        "用户说什么都要杠的技能。A contrarian review and red-team skill for product, architecture, and code decisions",
+        "默认先做口头审查；只有在用户明确要求测试代码， 或对当前工作区代码做强断言时，才升级到代码攻击与实锤验证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gangjing@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21966767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gangjing",
+      "url": "https://clawhub.ai/skills/gangjing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gangjing",
+    "url": "https://clawhub.ai/skills/gangjing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gangjing-6c6a145c40191170.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gangjing@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-gangjing-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcd0ccce70710f3c01f1fe9b363b2c7660a1d1af59c8552a843fdfadeab3eb47",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T10:41:07.376Z"
+}

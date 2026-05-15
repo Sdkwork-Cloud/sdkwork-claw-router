@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/walletpilot-7715@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.walletpilot_7715",
+  "skill": {
+    "id": 12578,
+    "skillKey": "clawhub-walletpilot-7715",
+    "name": "WalletPilot 7715"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "walletpilot-7715",
+    "url": "https://clawhub.ai/skills/walletpilot-7715",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/walletpilot-7715-f628e3329281dc16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute on-chain transactions with user-granted permissions. Built on MetaMask ERC-7715. No private keys, full guardrails."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andreolf",
+      "userId": "s170zx827yhjn487411rbtv6gn84w76j",
+      "displayName": "Francesco",
+      "image": "https://avatars.githubusercontent.com/u/15174764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1635,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770162478661,
+      "changelog": "Initial release of WalletPilot-7715.\n\n- Enables permissioned on-chain transactions for agents using MetaMask ERC-7715, without sharing private keys.\n- Users can grant granular spend limits, chain allowlists, and contract permissions.\n- Supports actions: connect, execute transactions, query balance, swap tokens, send tokens, and fetch transaction history.\n- Works across Ethereum, Polygon, Arbitrum, Optimism, and Base.\n- Transactions are time-limited, revocable, and fully auditable.\n- Includes SDK setup instructions and API reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d42d5bee9b311e8349862c7a84789ac2335284759576f87feac3e791c0449791"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yunxiao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yunxiao",
+  "skill": {
+    "id": 68422,
+    "skillKey": "clawhub-yunxiao",
+    "name": "云效工作项管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yunxiao",
+    "url": "https://clawhub.ai/skills/yunxiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yunxiao-d9e675deef70e446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "云效项目协作操作助手。支持工作项（任务/需求/缺陷）的查询、创建、更新等操作。当用户提到\"云效\"、\"工作项\"、\"任务管理\"、\"项目管理\"或需要操作 devops.aliyun.com 时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengerzh",
+      "userId": "s17d45e8rs498frv4a50tb087583gvtz",
+      "displayName": "Buzz Zhang",
+      "image": "https://avatars.githubusercontent.com/u/2883744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773639940011,
+      "changelog": "初始版本：支持查询项目列表、查询/创建/更新工作项",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8a671aa660a33f5ea52a51f8ddc104423dd65389d8008b6ccbcf26d0cbf9ccc"
+}

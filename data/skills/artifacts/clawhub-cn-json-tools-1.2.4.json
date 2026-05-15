@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-json-tools@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_json_tools",
+  "skill": {
+    "id": 60388,
+    "skillKey": "clawhub-cn-json-tools",
+    "name": "JSON工具箱"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-json-tools",
+    "url": "https://clawhub.ai/skills/cn-json-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-json-tools-99e7af905ac26c48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JSON工具箱。格式化、比对、提取、压缩、验证JSON。 中文优先，无需API Key，开箱即用。 当用户说\"格式化JSON\"、\"JSON比对\"、\"JSON提取\"、\"JSON压缩\"、\"JSON验证\"时触发。 Keywords: JSON格式化, JSON比对, JSON提取, JSON压缩, json, diff."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1777696932488,
+      "changelog": "Version 1.2.4\n\n- No file changes detected in this release.\n- Functionality and documentation remain unchanged from previous versions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1e8eeeda4c57218862f544c46372e3fe5da235e01f8235996a4c30bd8446b1ca"
+}

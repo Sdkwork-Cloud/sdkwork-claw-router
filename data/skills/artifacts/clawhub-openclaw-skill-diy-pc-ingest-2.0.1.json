@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-diy-pc-ingest@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_diy_pc_ingest",
+  "skill": {
+    "id": 56533,
+    "skillKey": "clawhub-openclaw-skill-diy-pc-ingest",
+    "name": "Diy Pc Ingest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-diy-pc-ingest",
+    "url": "https://clawhub.ai/skills/openclaw-skill-diy-pc-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-diy-pc-ingest-2b0627270adb9e46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ingest pasted PC parts purchase/config text (Discord message receipts, bullet lists) into Notion DIY_PC tables (PCConfig, ストレージ, エンクロージャー, PCInput). Use when the user pastes raw purchase logs/spec notes and wants the AI to classify, enrich."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nextaltair",
+      "userId": "s1769m2r7tj3d8eqerva8kpwkx83nn9e",
+      "displayName": "Altair",
+      "image": "https://avatars.githubusercontent.com/u/1401591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1770824245045,
+      "changelog": "- No functional or documentation changes in this release.\n- Version bump only; content remains identical to the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b07a597800631880c0d659161584dd8ff6ee995cfa6d00195fcef6fa164da598"
+}

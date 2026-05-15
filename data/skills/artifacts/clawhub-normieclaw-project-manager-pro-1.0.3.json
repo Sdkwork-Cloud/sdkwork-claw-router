@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/normieclaw-project-manager-pro@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.normieclaw_project_manager_pro",
+  "skill": {
+    "id": 35507,
+    "skillKey": "clawhub-normieclaw-project-manager-pro",
+    "name": "Project Manager Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "normieclaw-project-manager-pro",
+    "url": "https://clawhub.ai/skills/normieclaw-project-manager-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/normieclaw-project-manager-pro-a33a97b33c5e7ef1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and track your tasks and projects via conversation, including creation, prioritization, status updates, breakdowns, and progress check-ins without a UI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nollio",
+      "userId": "s17c2xg0new3nrgc4axt7teszh83v8r6",
+      "displayName": "Nollio",
+      "image": "https://avatars.githubusercontent.com/u/259667367?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774993265545,
+      "changelog": "v1.0.3: Security fixes: confined scripts to skill directory, removed filesystem traversal from setup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f4f4d982a0be30a379b31cab6a616e1b139d93ef86517dfe36906fc004f5861"
+}

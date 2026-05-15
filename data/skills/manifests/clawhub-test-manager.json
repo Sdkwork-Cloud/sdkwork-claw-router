@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12339,
+  "uuid": "skill-clawhub-test-manager",
+  "skillKey": "clawhub-test-manager",
+  "name": "Test Integration",
+  "summary": "Manage ClickUp tasks by listing, creating, updating statuses, and retrieving details via ClickUp API using provided workspace and API token.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Random",
+      "features": [
+        "Manage ClickUp tasks by listing, creating, updating statuses, and retrieving details via ClickU."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-manager@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137111673?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-manager",
+      "url": "https://clawhub.ai/skills/test-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-manager",
+    "url": "https://clawhub.ai/skills/test-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-manager-6c50035a050881ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-manager@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-manager-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83e4a759a0080643fc0868ea6532a4977b781d81920142349f9670c6a7a9ee94",
+      "artifactSizeBytes": 2292
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T17:57:58.864Z"
+}

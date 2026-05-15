@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67181,
+  "uuid": "skill-clawhub-divination-oracle",
+  "skillKey": "clawhub-divination-oracle",
+  "name": "Divination Oracle",
+  "summary": "易经八卦起卦与解读技能。基于梅花易数算法进行起卦，结合AI大模型解读卦象辞与变爻含义。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.divination_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ymx409599725-a11y",
+      "features": [
+        "易经八卦起卦与解读技能。基于梅花易数算法进行起卦，结合AI大模型解读卦象辞与变爻含义。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/divination-oracle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248305802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "divination-oracle",
+      "url": "https://clawhub.ai/skills/divination-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "divination-oracle",
+    "url": "https://clawhub.ai/skills/divination-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/divination-oracle-d6b888a79fee5363.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/divination-oracle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-divination-oracle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:526587f92d4d1fd76d025ecdc0c6482d884d04ce3d482cf3088d4fdaab8920df",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:52:14.681Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69562,
+  "uuid": "skill-clawhub-quant-testing",
+  "skillKey": "clawhub-quant-testing",
+  "name": "Quant Testing",
+  "summary": "量化测试流程技能。当用户说\"回归测试\"、\"策略测试\"、\"回测验证\"、\"实盘验证\"、\"测试\"、\"上线\"、\"发布\"时自动触发。提供回归测试流程、测试用例模板、测试报告模板。适用于量化项目的测试和上线阶段。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_testing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xueylee-dotcom",
+      "features": [
+        "量化测试流程技能。当用户说\"回归测试\"、\"策略测试\"、\"回测验证\"、\"实盘验证\"、\"测试\"、\"上线\"、\"发布\"时自动触发。提供回归测试流程、测试用例模板、测试报告模板。适用于量化项目的测试和."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-testing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260164558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-testing",
+      "url": "https://clawhub.ai/skills/quant-testing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-testing",
+    "url": "https://clawhub.ai/skills/quant-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-testing-901f2e6d162d7040.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-testing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-testing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:689a5114397e248097803e6ab5fde5249c85a5e42ecdeeeb426294c30d763da8",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:48:32.894Z"
+}

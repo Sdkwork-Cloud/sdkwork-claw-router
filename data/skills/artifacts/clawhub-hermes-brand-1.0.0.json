@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_brand",
+  "skill": {
+    "id": 70420,
+    "skillKey": "clawhub-hermes-brand",
+    "name": "Hermes Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-brand",
+    "url": "https://clawhub.ai/skills/hermes-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-brand-8a432a66b29d4a4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业介绍法国奢侈品牌爱马仕的历史、稀缺工艺、手工皮具和独特商业模式，重点解析其高溢价策略。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776888863743,
+      "changelog": "hermes-brand 1.0.0\n\n- 初始发布，系统性介绍爱马仕品牌历史、核心产品和经典故事\n- 展示品牌独特商业模式，包括稀缺性、家族控股和手工艺传统\n- 提供关键经营数据（营收、利润率、涨价幅度等）和品牌发展大事记\n- 适用场景覆盖奢侈品行业研究、品牌遗产与现代化分析等",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b90077324d698b369d711766f6a86231b8b539f3d09b3e7859048b2d0e9fd75"
+}

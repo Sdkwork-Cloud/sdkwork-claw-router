@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57201,
+  "uuid": "skill-clawhub-subagent-orchestrator",
+  "skillKey": "clawhub-subagent-orchestrator",
+  "name": "subagent-orchestrator",
+  "summary": "Orchestrate OpenClaw subagents for continuous autopilot workflows. Use when managing UI/代码/验证/档案/侦察 task lines, continuing multi-round work without waiting f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hackjsw",
+      "features": [
+        "Orchestrate OpenClaw subagents for continuous autopilot workflows",
+        "Use when managing UI/代码/验证/档案/侦察 task lines, continuing multi-round work without waiting f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48341540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-orchestrator",
+      "url": "https://clawhub.ai/skills/subagent-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-orchestrator",
+    "url": "https://clawhub.ai/skills/subagent-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-orchestrator-dc7d2b4bc2f93ca0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:351e5e0bd0f19b84d881efac236d2220b3642b2dfdec232db4f0c16a3f629134",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T14:21:42.156Z"
+}

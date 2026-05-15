@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-sender-win@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_sender_win",
+  "skill": {
+    "id": 62218,
+    "skillKey": "clawhub-wechat-sender-win",
+    "name": "WeChat Sender Windows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-sender-win",
+    "url": "https://clawhub.ai/skills/wechat-sender-win",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-sender-win-ab09901525fb1695.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "微信消息自动发送工具（Windows 版）。通过 pywinauto 控制微信窗口，搜索联系人并发送消息。支持单发和群发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cloud44552731-arch",
+      "userId": "s175mwd9q68ywqyqc0ktnv5t9183h7xc",
+      "displayName": "cloud44552731-arch",
+      "image": "https://avatars.githubusercontent.com/u/228461362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776053884434,
+      "changelog": "添加高级版购买说明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd7923407e0b270405e9b2c361b00c609ffa1f1598feba0e42257393343fbcd7"
+}

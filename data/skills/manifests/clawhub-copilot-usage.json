@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42364,
+  "uuid": "skill-clawhub-copilot-usage",
+  "skillKey": "clawhub-copilot-usage",
+  "name": "Copilot Usage",
+  "summary": "Display GitHub Copilot premium request usage, quota, billing stats, and per-model multipliers for the authenticated user. Use when the user asks about their...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hitman86R",
+      "features": [
+        "Display GitHub Copilot premium request usage, quota, billing stats, and per-model multipliers f.",
+        "Use when the user asks about their..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copilot-usage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5153596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copilot-usage",
+      "url": "https://clawhub.ai/skills/copilot-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-usage",
+    "url": "https://clawhub.ai/skills/copilot-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-usage-ab0b1d35406bed81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copilot-usage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-copilot-usage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c100b70e79489469fff3d03767e0cf55f75050fa47e504dbf03497bf21de4ff",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T20:25:11.549Z"
+}

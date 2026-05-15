@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58722,
+  "uuid": "skill-clawhub-complex-task-executor",
+  "skillKey": "clawhub-complex-task-executor",
+  "name": "complex-task-executor",
+  "summary": "基于“谋事、干事、总结”方法论执行复杂任务，并自动将经验教训写入短期记忆。Invoke when user asks to handle complex tasks, plan strategies, or execute multi-step operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.complex_task_executor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "q450770953",
+      "features": [
+        "基于“谋事、干事、总结”方法论执行复杂任务，并自动将经验教训写入短期记忆。Invoke when user asks to handle complex tasks, plan strate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/complex-task-executor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245096556?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "complex-task-executor",
+      "url": "https://clawhub.ai/skills/complex-task-executor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "complex-task-executor",
+    "url": "https://clawhub.ai/skills/complex-task-executor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/complex-task-executor-0cd4c055c60c3c70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/complex-task-executor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-complex-task-executor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae5289da6534e7b2ccd94b0bfd96acf2a0ce46067b036d0c7574139265ec69b8",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:21:07.157Z"
+}

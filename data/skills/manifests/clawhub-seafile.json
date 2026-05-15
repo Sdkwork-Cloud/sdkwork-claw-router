@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37653,
+  "uuid": "skill-clawhub-seafile",
+  "skillKey": "clawhub-seafile",
+  "name": "Seafile",
+  "summary": "Search, download, and upload files in a single Seafile library using a repo token. Use when an agent needs library-scoped filename or path search, exact-path...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seafile",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Reid",
+      "features": [
+        "Search, download, and upload files in a single Seafile library using a repo token",
+        "Use when an agent needs library-scoped filename or path search, exact-path..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seafile@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seafile",
+      "url": "https://clawhub.ai/skills/seafile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seafile",
+    "url": "https://clawhub.ai/skills/seafile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seafile-fb5e2848128fc30d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seafile@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-seafile-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8808f0519d55f76d1db6f2cfd294f724f66d7b0e51523f84ec46d745ad2ad6b3",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T00:02:36.009Z"
+}

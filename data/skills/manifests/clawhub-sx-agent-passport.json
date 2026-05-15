@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54344,
+  "uuid": "skill-clawhub-sx-agent-passport",
+  "skillKey": "clawhub-sx-agent-passport",
+  "name": "Agent Passport",
+  "summary": "Issue and verify SX# agent passports — cryptographic identity with hash-chain integrity, Merkle anchoring on Base",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sx_agent_passport",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Orion",
+      "features": [
+        "Issue and verify SX# agent passports — cryptographic identity with hash-chain integrity, Merkle."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sx-agent-passport@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261614253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sx-agent-passport",
+      "url": "https://clawhub.ai/skills/sx-agent-passport"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sx-agent-passport",
+    "url": "https://clawhub.ai/skills/sx-agent-passport",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sx-agent-passport-1860f12f2fea7384.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sx-agent-passport@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sx-agent-passport-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94e6b13292c2009c5d26a334be95e697c0907167099e0e72189c64d1c0bdc9fb",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T00:23:59.968Z"
+}

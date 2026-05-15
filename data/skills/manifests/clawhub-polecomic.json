@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68451,
+  "uuid": "skill-clawhub-polecomic",
+  "skillKey": "clawhub-polecomic",
+  "name": "manga-animation",
+  "summary": "完整的漫剧（动画漫画）生成工作流 skill。当用户想要：创作漫画剧集、生成动画短片、制作分镜脚本、设计原创角色、生成动漫风格视频片段、将故事想法转化为可视化内容，或任何涉及\"漫剧\"\"动漫创作\"\"分镜\"\"人设\"\"画风设定\"\"AI生成动画\"\"参考图生成\"的请求时，必须使用此 skill。 流程覆盖：剧本创作 → 分...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polecomic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "徐京徽",
+      "features": [
+        "完整的漫剧（动画漫画）生成工作流 skill。当用户想要：创作漫画剧集、生成动画短片、制作分镜脚本、设计原创角色、生成动漫风格视频片段、将故事想法转化为可视化内容，或任何涉及\"漫剧\"\"动漫创."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polecomic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29809521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polecomic",
+      "url": "https://clawhub.ai/skills/polecomic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polecomic",
+    "url": "https://clawhub.ai/skills/polecomic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polecomic-bbf64d0c5eb6dc81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polecomic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polecomic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a27ed71927367644037f05c001292f8aede20d7c13ecf39c6c28d6e2bf7fad8c",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:39:05.117Z"
+}

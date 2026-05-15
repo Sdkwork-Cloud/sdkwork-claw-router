@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24210,
+  "uuid": "skill-clawhub-seo-analyzer-v2",
+  "skillKey": "clawhub-seo-analyzer-v2",
+  "name": "SEO Analyzer Pro",
+  "summary": "Analyze webpage SEO score based on title, meta description, H1 tags, and content length, providing detailed optimization recommendations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_analyzer_v2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loverun321",
+      "features": [
+        "Analyze webpage SEO score based on title, meta description, H1 tags, and content length, provid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seo-analyzer-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222489895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seo-analyzer-v2",
+      "url": "https://clawhub.ai/skills/seo-analyzer-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-analyzer-v2",
+    "url": "https://clawhub.ai/skills/seo-analyzer-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-analyzer-v2-f690d56d32406e66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seo-analyzer-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seo-analyzer-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f008f82a5710b73cd6651efac4f93290c20412425820e53d6893318a1b8310b",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:54:25.414Z"
+}

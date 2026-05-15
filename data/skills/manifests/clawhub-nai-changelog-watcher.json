@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39142,
+  "uuid": "skill-clawhub-nai-changelog-watcher",
+  "skillKey": "clawhub-nai-changelog-watcher",
+  "name": "Changelog Watcher",
+  "summary": "Monitor GitHub repos and npm packages for new releases and version updates. Summarizes changelogs and highlights breaking changes. Use when the user asks to...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_changelog_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Monitor GitHub repos and npm packages for new releases and version updates",
+        "Summarizes changelogs and highlights breaking changes",
+        "Use when the user asks to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nai-changelog-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nai-changelog-watcher",
+      "url": "https://clawhub.ai/skills/nai-changelog-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-changelog-watcher",
+    "url": "https://clawhub.ai/skills/nai-changelog-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-changelog-watcher-74cb3afd83c16685.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nai-changelog-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nai-changelog-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad097732407d7e6c9e91b86da3dc365a305ad1c28983cd7721e7e2a3228ec1a6",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T06:49:39.102Z"
+}

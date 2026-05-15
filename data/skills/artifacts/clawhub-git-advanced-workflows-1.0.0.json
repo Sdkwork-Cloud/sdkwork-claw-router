@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-advanced-workflows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_advanced_workflows",
+  "skill": {
+    "id": 33611,
+    "skillKey": "clawhub-git-advanced-workflows",
+    "name": "Git Advanced Workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-advanced-workflows",
+    "url": "https://clawhub.ai/skills/git-advanced-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-advanced-workflows-089295dc7ecbea36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master advanced Git workflows including rebasing, cherry-picking, bisect, worktrees, and reflog to maintain clean history and recover from any situation. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soponcd",
+      "userId": "s17028c8y9t26ss5fgt6rycpw183jt9x",
+      "displayName": "soponcd",
+      "image": "https://avatars.githubusercontent.com/u/31302208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774421879086,
+      "changelog": "Initial release of git-advanced-workflows.\n\n- Introduces advanced Git concepts: interactive rebase, cherry-pick, bisect, worktrees, and reflog.\n- Provides practical workflows for cleaning up feature branches, applying hotfixes, bug hunting, multi-branch development, and recovery from mistakes.\n- Includes best practices for safe history rewriting and collaborative scenarios.\n- Documents advanced techniques such as autosquash, commit splitting, and partial cherry-picking.\n- Helps users manage complex Git histories with confidence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d7edb68017fbcedd440fe30907e2e6b36d64dbf8b6dad17070b2905cd6c57d5"
+}

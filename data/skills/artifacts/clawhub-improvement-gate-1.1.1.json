@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/improvement-gate@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.improvement_gate",
+  "skill": {
+    "id": 59830,
+    "skillKey": "clawhub-improvement-gate",
+    "name": "Improvement Gate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "improvement-gate",
+    "url": "https://clawhub.ai/skills/improvement-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/improvement-gate-13940e1d03f4d4e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当执行完变更需要验证是否应保留、候选被标记 pending 需要人工审批、或想查看待审队列时使用。6 层机械门禁: Schema→Compile→Lint→Regression→Review→HumanReview，其中 Schema/Compile/Regression/Review 为阻塞层（失败即拒绝），L..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775495646515,
+      "changelog": "v2.0: 9-dim evaluation, category modifiers, per-dim Pareto tolerances, enriched docs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fe15804ceeac88ef6523a43219195e7656cbb5ed2700a2025e17f609a6cc4c4"
+}

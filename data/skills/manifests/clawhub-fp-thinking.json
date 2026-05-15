@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63551,
+  "uuid": "skill-clawhub-fp-thinking",
+  "skillKey": "clawhub-fp-thinking",
+  "name": "First Principles Thinking",
+  "summary": "第一性原理思维框架。强制 Agent 从原始需求和问题本质出发，不从惯例或模板出发。始终生效。触发词：第一性原理、first principles、从本质出发、追根因。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fp_thinking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wavmson",
+      "features": [
+        "第一性原理思维框架。强制 Agent 从原始需求和问题本质出发，不从惯例或模板出发。始终生效。触发词：第一性原理、first principles、从本质出发、追根因。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fp-thinking@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127436552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fp-thinking",
+      "url": "https://clawhub.ai/skills/fp-thinking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fp-thinking",
+    "url": "https://clawhub.ai/skills/fp-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fp-thinking-842b683b8aaed60c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fp-thinking@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fp-thinking-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78d50335bd90e6ddd29093ff22ca9fe7f04bbc680ada29a9284cb376dcaf3e20",
+      "artifactSizeBytes": 2639
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T04:49:03.521Z"
+}

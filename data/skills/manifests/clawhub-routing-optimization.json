@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63079,
+  "uuid": "skill-clawhub-routing-optimization",
+  "skillKey": "clawhub-routing-optimization",
+  "name": "Routing Optimization",
+  "summary": "基于调度日志数据收集、分析和A/B测试，动态优化routing规则以提升调度命中率和准确性。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.routing_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daxiangnaoyang",
+      "features": [
+        "基于调度日志数据收集、分析和A/B测试，动态优化routing规则以提升调度命中率和准确性。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/routing-optimization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223295173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "routing-optimization",
+      "url": "https://clawhub.ai/skills/routing-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "routing-optimization",
+    "url": "https://clawhub.ai/skills/routing-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/routing-optimization-04ef559d7a206bd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/routing-optimization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-routing-optimization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24777322814e73de20265f96aa4cef887c57a8359aaa07632d7b42b1b3e420de",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:20:15.066Z"
+}

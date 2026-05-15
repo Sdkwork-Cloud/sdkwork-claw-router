@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31034,
+  "uuid": "skill-clawhub-file-hasher",
+  "skillKey": "clawhub-file-hasher",
+  "name": "File Hasher",
+  "summary": "Compute, verify, and compare file hashes using MD5, SHA-1, SHA-256, SHA-512, and more. Use when checking file integrity, verifying downloads against expected...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_hasher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Compute, verify, and compare file hashes using MD5, SHA-1, SHA-256, SHA-512, and more",
+        "Use when checking file integrity, verifying downloads against expected..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-hasher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-hasher",
+      "url": "https://clawhub.ai/skills/file-hasher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-hasher",
+    "url": "https://clawhub.ai/skills/file-hasher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-hasher-f78c4fd40b2e3366.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-hasher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-hasher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0aae6e16a018fb687224fda571264aef7b79bae4bd522c5381e278d9737f9dbc",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:06:50.217Z"
+}

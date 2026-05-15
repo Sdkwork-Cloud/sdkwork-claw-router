@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xclaw02@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xclaw02",
+  "skill": {
+    "id": 12597,
+    "skillKey": "clawhub-xclaw02",
+    "name": "xClaw02"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xclaw02",
+    "url": "https://clawhub.ai/skills/xclaw02",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xclaw02-d036248ff9f4f982.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make x402 payments. Pay for APIs, sell your services, handle 402 Payment Required responses with USDC on Base and other EVM chains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "primer-dev",
+      "userId": "s170znheys61983e4tb4n426q583hahn",
+      "displayName": "primer-dev",
+      "image": "https://avatars.githubusercontent.com/u/244186697?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1619,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770076825409,
+      "changelog": "Initial release of xclaw02: Open payment standard for instant USDC payments using 402 Payment Required responses.\n\n- Supports making and receiving x402 payments via CLI and code (Node.js, Python).\n- Enables paying for APIs/services, handling 402 errors, creating wallets, and checking balances on Base and other EVM chains.\n- Includes quick setup instructions, CLI/API usage examples, and server middleware for selling paid APIs.\n- Lists supported networks, facilitators, environment variables, and common error handling.\n- Emphasizes agent safety: private key security and user confirmation for payments.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9fdbd136c5e7d0cac4b4efa85b4317db5c667966eb40dda5a69217ed52584a8c"
+}

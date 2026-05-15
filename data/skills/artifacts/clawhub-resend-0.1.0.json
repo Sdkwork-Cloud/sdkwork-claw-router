@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resend@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend",
+  "skill": {
+    "id": 9941,
+    "skillKey": "clawhub-resend",
+    "name": "Resend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend",
+    "url": "https://clawhub.ai/skills/resend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-6de1be36afd7a16d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage received (inbound) emails and attachments via Resend API. Use when user asks about their emails, received messages, or email attachments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjrussell",
+      "userId": "publishers:mjrussell",
+      "displayName": "Matt Russell",
+      "image": "https://avatars.githubusercontent.com/u/1641895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2835,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1768108750664,
+      "changelog": "Initial release - manage received emails and attachments via Resend API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4621b27339ca9e6eb218b5155a58207bc623003bb1718603cc4b568d60503639"
+}

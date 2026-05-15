@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15038,
+  "uuid": "skill-clawhub-token-guard",
+  "skillKey": "clawhub-token-guard",
+  "name": "Token Guard",
+  "summary": "Prevents LLM API 429 errors by estimating tokens, tracking quotas, throttling requests, detecting duplicates, caching responses, and auto-fallback by model.",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edmonddantesj",
+      "features": [
+        "Prevents LLM API 429 errors by estimating tokens, tracking quotas, throttling requests, detecti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-guard@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217761516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-guard",
+      "url": "https://clawhub.ai/skills/token-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-guard",
+    "url": "https://clawhub.ai/skills/token-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-guard-a5dd77b5488718a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-guard@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-guard-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9982391ec77aecf00613b6cc9a0a0bfa30333bbdcc149d7e188df978d620ba94",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T13:10:27.908Z"
+}

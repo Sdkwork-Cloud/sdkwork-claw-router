@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50407,
+  "uuid": "skill-clawhub-agent-census",
+  "skillKey": "clawhub-agent-census",
+  "name": "Agent Census",
+  "summary": "Declare your agent in the first public census of self-declared AI agents. Complete the fields below and submit — your record joins the permanent public archive.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_census",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "All8yMySelf",
+      "features": [
+        "Declare your agent in the first public census of self-declared AI agents",
+        "Complete the fields below and submit — your record joins the permanent public archive."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-census@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91124300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-census",
+      "url": "https://clawhub.ai/skills/agent-census"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-census",
+    "url": "https://clawhub.ai/skills/agent-census",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-census-ab7f5a8e8496c852.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-census@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-census-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1391cd7eed76074ef7334b192da93fb080dd6a76dff1c8127edfdce5548c69f7",
+      "artifactSizeBytes": 2484
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:41:42.376Z"
+}

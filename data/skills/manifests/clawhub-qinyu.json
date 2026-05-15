@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33018,
+  "uuid": "skill-clawhub-qinyu",
+  "skillKey": "clawhub-qinyu",
+  "name": "QinYu",
+  "summary": "QinYu Pro v2.0 - All-in-one cryptocurrency analysis system integrating 9 market data skills. Provides real-time price tracking, technical analysis (RSI, MACD...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qinyu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "woshiqinyu520",
+      "features": [
+        "QinYu Pro v2.0",
+        "All-in-one cryptocurrency analysis system integrating 9 market data skills",
+        "Provides real-time price tracking, technical analysis (RSI, MACD..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qinyu@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/196673320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qinyu",
+      "url": "https://clawhub.ai/skills/qinyu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qinyu",
+    "url": "https://clawhub.ai/skills/qinyu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qinyu-30082b4db12f73e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qinyu@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qinyu-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa24f475be2898fd90d5d97d64dc67566c73d1da075102b6690f5c5fca0113b0",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:41:21.101Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33666,
+  "uuid": "skill-clawhub-bootcamp",
+  "skillKey": "clawhub-bootcamp",
+  "name": "OpenClaw Boot Camp",
+  "summary": "Auto-generates a CLI reference doc so your agent stops guessing OpenClaw commands and starts working. Discovers all commands, subcommands, and flags from you...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bootcamp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dank-varley",
+      "features": [
+        "Auto-generates a CLI reference doc so your agent stops guessing OpenClaw commands and starts wo.",
+        "Discovers all commands, subcommands, and flags from you..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bootcamp@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203341263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bootcamp",
+      "url": "https://clawhub.ai/skills/bootcamp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bootcamp",
+    "url": "https://clawhub.ai/skills/bootcamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bootcamp-63488a31aa8e48dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bootcamp@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bootcamp-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7dfcbc28c78a202c071f76677b2459abe01dd9d2e7da230d2a986de7b9b54ff5",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T20:18:36.318Z"
+}

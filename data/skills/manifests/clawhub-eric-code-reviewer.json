@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49144,
+  "uuid": "skill-clawhub-eric-code-reviewer",
+  "skillKey": "clawhub-eric-code-reviewer",
+  "name": "Code Reviewer",
+  "summary": "Automated code review for pull requests and code snippets. Analyzes code quality, security vulnerabilities, performance issues, and best practices across Pyt...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eric_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericlooi504",
+      "features": [
+        "Automated code review for pull requests and code snippets",
+        "Analyzes code quality, security vulnerabilities, performance issues, and best practices across."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eric-code-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275256771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eric-code-reviewer",
+      "url": "https://clawhub.ai/skills/eric-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eric-code-reviewer",
+    "url": "https://clawhub.ai/skills/eric-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eric-code-reviewer-a3b07663d6df12b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eric-code-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eric-code-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43e6abb8a98190d32e9dd5cd5842271af37d5be6dce03634465646f04ed7ac1b",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T03:14:03.913Z"
+}

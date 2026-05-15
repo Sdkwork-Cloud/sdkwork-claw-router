@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36592,
+  "uuid": "skill-clawhub-neterium",
+  "skillKey": "clawhub-neterium",
+  "name": "Neterium",
+  "summary": "Neterium integration. Manage data, records, and automate workflows. Use when the user wants to interact with Neterium data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neterium",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Neterium integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Neterium data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neterium@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neterium",
+      "url": "https://clawhub.ai/skills/neterium"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neterium",
+    "url": "https://clawhub.ai/skills/neterium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neterium-21fb135da69bc757.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neterium@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-neterium-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3be04eff68f5c19b21498a022b44255ec00f51422c7171653d953a52e58d2d72",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:26.621Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52635,
+  "uuid": "skill-clawhub-ssl-certcheck",
+  "skillKey": "clawhub-ssl-certcheck",
+  "name": "Ssl Certcheck",
+  "summary": "Check SSL/TLS certificates for any hostname — expiry dates, issuer, SANs, protocol version, cipher suite. Use when asked to check if a certificate is valid,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssl_certcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Check SSL/TLS certificates for any hostname — expiry dates, issuer, SANs, protocol version, cip.",
+        "Use when asked to check if a certificate is valid,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssl-certcheck@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssl-certcheck",
+      "url": "https://clawhub.ai/skills/ssl-certcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssl-certcheck",
+    "url": "https://clawhub.ai/skills/ssl-certcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssl-certcheck-cb094803455b1ad3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssl-certcheck@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssl-certcheck-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:83323671d277de3b1272f4ee17f747247f3802c800367b0ecb838d7da1f88a7d",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T20:27:32.323Z"
+}

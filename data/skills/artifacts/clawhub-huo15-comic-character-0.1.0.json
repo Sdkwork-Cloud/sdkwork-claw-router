@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huo15-comic-character@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_comic_character",
+  "skill": {
+    "id": 64166,
+    "skillKey": "clawhub-huo15-comic-character",
+    "name": "Huo15 Comic Character"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-comic-character",
+    "url": "https://clawhub.ai/skills/huo15-comic-character",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-comic-character-649346cb0776f156.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据剧本 characters 字段，用 Seedream 4.0 生成每个角色的全身立绘/半身特写/Q 版三联卡。后续分镜用这三张图做多图参考保证角色一致性。触发词：生成角色卡、角色立绘、人物设定图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobod1",
+      "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+      "displayName": "Job Zhao",
+      "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777004641365,
+      "changelog": "initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4c3c8754edc557892a53d6b9b64fd916c0153f1d4c5276040bd8e71fbbfacdf"
+}

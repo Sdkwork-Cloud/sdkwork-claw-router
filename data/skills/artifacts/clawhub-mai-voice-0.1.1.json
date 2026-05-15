@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mai-voice@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mai_voice",
+  "skill": {
+    "id": 40565,
+    "skillKey": "clawhub-mai-voice",
+    "name": "MAI Voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mai-voice",
+    "url": "https://clawhub.ai/skills/mai-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mai-voice-6c5ddbd11ff7dae9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Synthesize speech with Microsoft's MAI-Voice-1 voices via Azure AI Speech REST API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robotsbuildrobots",
+      "userId": "s171thppb0xzd2paq5r9nhf6h984becg",
+      "displayName": "robotsbuildrobots",
+      "image": "https://avatars.githubusercontent.com/u/3463508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775513894742,
+      "changelog": "Add Azure Speech key and region setup instructions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0627a7fe89d0ff81364ada2498dd1b642a2000c4e35b098c8a58efbab78d5ed2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edge-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_router",
+  "skill": {
+    "id": 25579,
+    "skillKey": "clawhub-edge-router",
+    "name": "Edge Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-router",
+    "url": "https://clawhub.ai/skills/edge-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-router-db23055e0edb4261.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route AI agent compute tasks to the cheapest viable backend. Supports local inference (Ollama), cloud GPU (Vast.ai), and quantum hardware (Wukong 72Q). Use w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adjusternwachukwu-bot",
+      "userId": "publishers:adjusternwachukwu-bot",
+      "displayName": "adjusternwachukwu-bot",
+      "image": "https://avatars.githubusercontent.com/u/261576222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773339893402,
+      "changelog": "Smart compute routing: local → cloud → quantum",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b9d582f8ee877adc29626f9835b6b02b4a6de5517b63e51513825e947db83f8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ez-cronjob@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ez_cronjob",
+  "skill": {
+    "id": 9257,
+    "skillKey": "clawhub-ez-cronjob",
+    "name": "EZ Cronjob"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ez-cronjob",
+    "url": "https://clawhub.ai/skills/ez-cronjob",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ez-cronjob-d0720864b3d20d2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fix common cron job failures in Clawdbot/Moltbot - message delivery issues, tool timeouts, timezone bugs, and model fallback problems."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "promadgenius",
+      "userId": "publishers:promadgenius",
+      "displayName": "Isaac Zarzuri",
+      "image": "https://avatars.githubusercontent.com/u/7455199?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 3666,
+      "installsAllTime": 31,
+      "installsCurrent": 30,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769564391809,
+      "changelog": "- Provides fix and a comprehensive troubleshooting guide for common cron job issues in Clawdbot/Moltbot, including message delivery, tool timeouts, timezone errors, and model fallbacks.\n- Documents recommended flags and command usage for reliable scheduled messaging.\n- Includes diagnosis steps, debugging commands, practical solutions, and working examples.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b08cf6bbb50026a77a118dca26041f838fffba5ec2d2fda3093cc9760050c58"
+}

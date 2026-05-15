@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62286,
+  "uuid": "skill-clawhub-yt-dlp-downloader",
+  "skillKey": "clawhub-yt-dlp-downloader",
+  "name": "tl_video_downloader",
+  "summary": "下载并合并网络视频（支持B站/抖音/YouTube），当用户说“下载视频+链接”时触发",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_dlp_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangliangyi",
+      "features": [
+        "下载并合并网络视频（支持B站/抖音/YouTube），当用户说“下载视频+链接”时触发"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yt-dlp-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30541605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yt-dlp-downloader",
+      "url": "https://clawhub.ai/skills/yt-dlp-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-dlp-downloader",
+    "url": "https://clawhub.ai/skills/yt-dlp-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-dlp-downloader-93e7009515c7133b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yt-dlp-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yt-dlp-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:028a35a20db97fb56d914bb29559ca658cfbb6cf02a807582ae22b0c0378b9af",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T07:05:23.444Z"
+}

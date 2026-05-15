@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49621,
+  "uuid": "skill-clawhub-init-project-structure",
+  "skillKey": "clawhub-init-project-structure",
+  "name": "Initialize Project Structure",
+  "summary": "Use when starting a new project from scratch and the user wants the full plan/build/recap/document workflow scaffolded. Creates slim CLAUDE.md, gitignored CL...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.init_project_structure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adelvillar1",
+      "features": [
+        "Use when starting a new project from scratch and the user wants the full plan/build/recap/docum.",
+        "Creates slim CLAUDE.md, gitignored CL..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/init-project-structure@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211379529?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "init-project-structure",
+      "url": "https://clawhub.ai/skills/init-project-structure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "init-project-structure",
+    "url": "https://clawhub.ai/skills/init-project-structure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/init-project-structure-1a7505f3f0fb46c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/init-project-structure@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-init-project-structure-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb2ed5dc6b25f4a5bd7ff17fcbbc9f67eefc7033e26fd7f5e5b1e2b2aab755bc",
+      "artifactSizeBytes": 2752
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T02:08:18.021Z"
+}

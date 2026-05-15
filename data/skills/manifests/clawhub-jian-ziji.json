@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73058,
+  "uuid": "skill-clawhub-jian-ziji",
+  "skillKey": "clawhub-jian-ziji",
+  "name": "见自己",
+  "summary": "生动有趣的自我探索梳理技能，通过对话式问答引导用户深度探索自我。 具备用户交互、记录、分析报告生成和公众号推文创作等完整功能。 每轮探索完成后生成\"ai眼中的你\"分析报告，并基于分析结果创作第一人称视角的公众号推文。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jian_ziji",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "生动有趣的自我探索梳理技能，通过对话式问答引导用户深度探索自我。 具备用户交互、记录、分析报告生成和公众号推文创作等完整功能。 每轮探索完成后生成\"ai眼中的你\"分析报告，并基于分析结果创作."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jian-ziji@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jian-ziji",
+      "url": "https://clawhub.ai/skills/jian-ziji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jian-ziji",
+    "url": "https://clawhub.ai/skills/jian-ziji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jian-ziji-f5e40d70543ec10c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jian-ziji@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-jian-ziji-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ae380b82ec3769af377129ee2df1342eb7d4af5e3c94b414c64c4f9845382d4",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T03:35:57.128Z"
+}

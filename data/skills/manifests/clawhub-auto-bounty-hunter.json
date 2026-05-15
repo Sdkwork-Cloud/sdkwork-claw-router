@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26314,
+  "uuid": "skill-clawhub-auto-bounty-hunter",
+  "skillKey": "clawhub-auto-bounty-hunter",
+  "name": "Auto Bounty Hunter",
+  "summary": "Automatically scan GitHub repositories for open issues with 0 comments, evaluate their value, claim them, and submit PRs. Automates the entire GitHub bounty...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_bounty_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dagangtj",
+      "features": [
+        "Automatically scan GitHub repositories for open issues with 0 comments, evaluate their value, c.",
+        "Automates the entire GitHub bounty..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-bounty-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65108318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-bounty-hunter",
+      "url": "https://clawhub.ai/skills/auto-bounty-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-bounty-hunter",
+    "url": "https://clawhub.ai/skills/auto-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-bounty-hunter-fa9a898b77b66867.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-bounty-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-bounty-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e19f3125231ac8f1f50369e532c6c3d061efcd05aff8b9a0771be268b14ef20e",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T03:16:16.882Z"
+}

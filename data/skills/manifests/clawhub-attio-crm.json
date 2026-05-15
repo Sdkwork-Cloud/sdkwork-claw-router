@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10568,
+  "uuid": "skill-clawhub-attio-crm",
+  "skillKey": "clawhub-attio-crm",
+  "name": "Attio CRM",
+  "summary": "Manage Attio CRM records (companies, people, deals, tasks, notes). Search, create, update records and manage deal pipelines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attio_crm",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kesslerio",
+      "features": [
+        "Manage Attio CRM records (companies, people, deals, tasks, notes)",
+        "Search, create, update records and manage deal pipelines."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/attio-crm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2647990?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "attio-crm",
+      "url": "https://clawhub.ai/skills/attio-crm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attio-crm",
+    "url": "https://clawhub.ai/skills/attio-crm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attio-crm-3af0c45c99f4399d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/attio-crm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-attio-crm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0ac04ba9a3f112484c957a350893c5b75abd3ccf2baf279ae3be38a104d5668",
+      "artifactSizeBytes": 1809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T05:46:19.845Z"
+}

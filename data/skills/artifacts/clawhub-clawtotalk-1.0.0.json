@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawtotalk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtotalk",
+  "skill": {
+    "id": 39694,
+    "skillKey": "clawhub-clawtotalk",
+    "name": "Claw To Talk: OpenClaw Voice Companion on iOS & Android"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtotalk",
+    "url": "https://clawhub.ai/skills/clawtotalk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtotalk-de6096390f076926.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up Claw To Talk — the official free push-to-talk voice companion app for OpenClaw (iOS & Android) with Tailscale + ElevenLabs"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvinunreal",
+      "userId": "publishers:alvinunreal",
+      "displayName": "alvinunreal",
+      "image": "https://avatars.githubusercontent.com/u/204474669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 706,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771796447429,
+      "changelog": "Initial release of Claw To Talk skill:\n\n- Introduces the official push-to-talk mobile companion app for OpenClaw (iOS & Android).\n- Provides detailed setup instructions integrating Tailscale and optional ElevenLabs TTS.\n- Outlines common troubleshooting steps for connectivity and audio quality.\n- Adds guidance for connecting, approving devices, and enhancing voice with ElevenLabs.\n- Directs users to the official website for the latest updates and step-by-step guides.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1fe2e4f63a270d366b799cd8c73d90edd2f7fcb6f434e23ee67b540855bde462"
+}

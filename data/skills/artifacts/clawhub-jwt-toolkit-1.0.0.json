@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jwt-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jwt_toolkit",
+  "skill": {
+    "id": 25904,
+    "skillKey": "clawhub-jwt-toolkit",
+    "name": "Jwt Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jwt-toolkit",
+    "url": "https://clawhub.ai/skills/jwt-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jwt-toolkit-ee7b68f2ba16ad6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decode, inspect, and validate JWT (JSON Web Token) tokens from the command line. Shows header, payload, algorithm, expiry status, and known claim labels. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnywang2001",
+      "userId": "s174ntk6h18bvsev091zn78ex583gr1h",
+      "displayName": "John Wang",
+      "image": "https://avatars.githubusercontent.com/u/20619402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773493595557,
+      "changelog": "Initial release of jwt-toolkit — a zero-dependency tool to decode and inspect JWT tokens from the command line.\n\n- Decode JWT tokens and display header, payload, algorithm, and signature details\n- Inspect known claims with human-readable labels\n- Automatically checks expiry status and remaining validity time\n- Handles \"Bearer\" prefixes and standard input, file, or direct string input\n- Supports both JSON and human-readable text output formats\n- Built in pure Python with no external dependencies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad4c5c42d1918a20a630585669b8e526a211574721ddbcd8222597a5ac50af74"
+}

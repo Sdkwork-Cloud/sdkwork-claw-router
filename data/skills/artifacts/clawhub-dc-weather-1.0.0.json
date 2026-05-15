@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dc-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dc_weather",
+  "skill": {
+    "id": 14265,
+    "skillKey": "clawhub-dc-weather",
+    "name": "DC Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dc-weather",
+    "url": "https://clawhub.ai/skills/dc-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dc-weather-7a90c70a44a1b590.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check Washington DC weather using Open-Meteo API. Use when user asks about DC weather, current conditions, or needs a weather report for Washington DC."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vital1188",
+      "userId": "publishers:vital1188",
+      "displayName": "vital1188",
+      "image": "https://avatars.githubusercontent.com/u/72517810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1224,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770768803451,
+      "changelog": "Initial release - Washington DC weather via Open-Meteo",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b56dd70db543092339fafba777ac5997da53fc100e4837a6f36ce9d6f34651d"
+}

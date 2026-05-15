@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60044,
+  "uuid": "skill-clawhub-whoop-guru",
+  "skillKey": "clawhub-whoop-guru",
+  "name": "Whoop Guru",
+  "summary": "WHOOP AI Fitness Coach - WHOOP手环数据获取、健康分析、恢复预测、AI教练、个性化训练计划",
+  "version": "8.4.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoop_guru",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "effeceee",
+      "features": [
+        "WHOOP AI Fitness Coach",
+        "WHOOP手环数据获取、健康分析、恢复预测、AI教练、个性化训练计划"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoop-guru@8.4.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/195583691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoop-guru",
+      "url": "https://clawhub.ai/skills/whoop-guru"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoop-guru",
+    "url": "https://clawhub.ai/skills/whoop-guru",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoop-guru-70e5bb9907a46ded.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoop-guru@8.4.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoop-guru-8.4.12.json",
+      "version": "8.4.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87c25fff6ca705af4344f46db3ac601d1f295205397525e961c0758140f040a6",
+      "artifactSizeBytes": 1845
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T02:55:24.591Z"
+}

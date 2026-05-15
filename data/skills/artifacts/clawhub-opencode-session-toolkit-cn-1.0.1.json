@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencode-session-toolkit-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencode_session_toolkit_cn",
+  "skill": {
+    "id": 59357,
+    "skillKey": "clawhub-opencode-session-toolkit-cn",
+    "name": "opencode-session-toolkit-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencode-session-toolkit-cn",
+    "url": "https://clawhub.ai/skills/opencode-session-toolkit-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencode-session-toolkit-cn-bf17a4e57262ef5e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取本地 OpenCode SQLite 数据库，支持跨目录会话查询、消息检查与 Markdown 导出。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wufei-png",
+      "userId": "s17ff8qt8kgjp387vqdhv9ht3583grte",
+      "displayName": "Wu Fei",
+      "image": "https://avatars.githubusercontent.com/u/63766429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774365886906,
+      "changelog": "opencode-session-toolkit-cn 1.0.1\n\n- 新增详细 SKILL.md，介绍本地 OpenCode SQLite 数据库的读取与导出方案\n- 提供跨目录 session、消息、project 等查询与过滤命令\n- 详细说明常用 SQL 查询方法（标题、目录、project、时间范围等多条件过滤）\n- 新增一键会话 Markdown 导出脚本及常见用法示例\n- 附带数据库 schema/表结构查看与时间字段格式化方法\n- 明确数据敏感性注意事项及文件结构约定",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d42d9ee0af08673aadc0eda984ccdcd91d2f015ccfa27064dfd050d4dca5fb4b"
+}

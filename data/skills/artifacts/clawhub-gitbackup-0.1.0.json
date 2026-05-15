@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gitbackup@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitbackup",
+  "skill": {
+    "id": 14435,
+    "skillKey": "clawhub-gitbackup",
+    "name": "gitbackup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitbackup",
+    "url": "https://clawhub.ai/skills/gitbackup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitbackup-c27dbc6d6f084414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a local Git bundle backup of the OpenClaw workspace repository. Use when running /gitbackup in Telegram or when the user asks to back up Git history/refs to a local file."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trumppo",
+      "userId": "publishers:trumppo",
+      "displayName": "Trumppo",
+      "image": "https://avatars.githubusercontent.com/u/9217263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770573475569,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:906944a79aa26cad0e478d85ba521b1d5e8536eac9dbec671cf3160825a010fa"
+}

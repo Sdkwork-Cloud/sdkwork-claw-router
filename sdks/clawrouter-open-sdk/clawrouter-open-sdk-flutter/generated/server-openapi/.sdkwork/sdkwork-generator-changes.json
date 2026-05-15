@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "clawrouter-open-sdk",
+    "version": "0.1.0",
+    "language": "flutter",
+    "sdkType": "ai",
+    "packageName": "clawrouter_open_sdk"
+  },
+  "changeFingerprint": "e6ade7f9f02216ad42c717966c360d680b265ad70af569b226aeef91a950024b",
+  "changes": {
+    "createdGeneratedFiles": [],
+    "updatedGeneratedFiles": [
+      "lib/src/models.dart"
+    ],
+    "unchangedGeneratedFiles": [
+      "bin/publish-core.mjs",
+      "bin/publish.ps1",
+      "bin/publish.sh",
+      "CHANGELOG.md",
+      "lib/ai_client.dart",
+      "lib/clawrouter_open_sdk.dart",
+      "lib/src/api/api.dart",
+      "lib/src/api/assistants.dart",
+      "lib/src/api/audio_suno.dart",
+      "lib/src/api/audio.dart",
+      "lib/src/api/batches_anthropic.dart",
+      "lib/src/api/batches.dart",
+      "lib/src/api/chat_anthropic.dart",
+      "lib/src/api/chat_google.dart",
+      "lib/src/api/chat.dart",
+      "lib/src/api/completion.dart",
+      "lib/src/api/container.dart",
+      "lib/src/api/conversation.dart",
+      "lib/src/api/embeddings_google.dart",
+      "lib/src/api/embeddings.dart",
+      "lib/src/api/eval.dart",
+      "lib/src/api/files_anthropic.dart",
+      "lib/src/api/files_google.dart",
+      "lib/src/api/files.dart",
+      "lib/src/api/fine_tuning.dart",
+      "lib/src/api/images_midjourney.dart",
+      "lib/src/api/images_nano_banana.dart",
+      "lib/src/api/images_vidu.dart",
+      "lib/src/api/images.dart",
+      "lib/src/api/models.dart",
+      "lib/src/api/moderations.dart",
+      "lib/src/api/organization.dart",
+      "lib/src/api/paths.dart",
+      "lib/src/api/project.dart",
+      "lib/src/api/realtime.dart",
+      "lib/src/api/response_helpers.dart",
+      "lib/src/api/responses_google.dart",
+      "lib/src/api/responses.dart",
+      "lib/src/api/skill.dart",
+      "lib/src/api/threads.dart",
+      "lib/src/api/uploads.dart",
+      "lib/src/api/vector_stores.dart",
+      "lib/src/api/video.dart",
+      "lib/src/api/videos_kling.dart",
+      "lib/src/api/videos_vidu.dart",
+      "lib/src/api/videos_volcengine.dart",
+      "lib/src/http/client.dart",
+      "LICENSE",
+      "pubspec_overrides.yaml",
+      "pubspec.yaml",
+      "README.md",
+      "sdkwork-sdk.json"
+    ],
+    "deletedGeneratedFiles": [],
+    "scaffoldedFiles": [],
+    "preservedScaffoldFiles": [
+      "custom/README.md"
+    ],
+    "backedUpFiles": []
+  },
+  "impact": {
+    "schemaVersion": 1,
+    "areas": [
+      "models"
+    ],
+    "details": [
+      {
+        "area": "models",
+        "paths": [
+          "lib/src/models.dart"
+        ]
+      }
+    ],
+    "requiresVerification": true,
+    "summary": "Detected impact areas: models. Verification is required."
+  },
+  "verificationPlan": {
+    "shouldRun": true,
+    "runPhase": "now",
+    "summary": "Detected impact areas: models. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "steps": [
+      {
+        "id": "check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: models.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-open-sdk\\clawrouter-open-sdk-flutter\\generated\\server-openapi",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "flutter",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language flutter --project-dir . --action check"
+      }
+    ]
+  },
+  "executionDecision": {
+    "schemaVersion": 1,
+    "riskLevel": "medium",
+    "nextAction": "verify",
+    "requiresManualReview": false,
+    "applyRequiresExpectedFingerprint": false,
+    "summary": "Changes have been applied. Run the required verification plan now.",
+    "reasons": [
+      "verification-required"
+    ]
+  },
+  "preservedLegacyFiles": false
+}

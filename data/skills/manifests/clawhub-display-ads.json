@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27033,
+  "uuid": "skill-clawhub-display-ads",
+  "skillKey": "clawhub-display-ads",
+  "name": "display-ads",
+  "summary": "When the user wants to run display, banner, or ad network campaigns. Also use when the user mentions \"display ads,\" \"banner ads,\" \"ad network,\" \"ad alliance,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.display_ads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to run display, banner, or ad network campaigns",
+        "Also use when the user mentions \"display ads,\" \"banner ads,\" \"ad network,\" \"ad alliance,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/display-ads@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "display-ads",
+      "url": "https://clawhub.ai/skills/display-ads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "display-ads",
+    "url": "https://clawhub.ai/skills/display-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/display-ads-24a5723598edcffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/display-ads@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-display-ads-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76656d2604846d277ed91397e566266945a7c95e42a19e6dfa59b7c00d71222a",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:32:34.255Z"
+}

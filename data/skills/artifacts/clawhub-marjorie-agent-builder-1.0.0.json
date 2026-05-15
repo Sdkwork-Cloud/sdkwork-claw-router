@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marjorie-agent-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marjorie_agent_builder",
+  "skill": {
+    "id": 43852,
+    "skillKey": "clawhub-marjorie-agent-builder",
+    "name": "agent-builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marjorie-agent-builder",
+    "url": "https://clawhub.ai/skills/marjorie-agent-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marjorie-agent-builder-72d1dec65c67c2ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build high-performing OpenClaw agents end-to-end. Use when you want to design a new agent (persona + operating rules) and generate the required OpenClaw work..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776137105792,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e61874c813a9438c7b71c8badc7659294dddb8c66cc22b669e08fb9b43f12ef"
+}

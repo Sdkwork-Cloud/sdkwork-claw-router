@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69749,
+  "uuid": "skill-clawhub-clawlite-investigate",
+  "skillKey": "clawhub-clawlite-investigate",
+  "name": "clawlite-investigate",
+  "summary": "中文：系统化 debug 与根因调查框架（调查-分析-假设-验证），只做针对根因的修复。适用于 bug 调试、异常行为分析、服务报错排查，提供可复验结论。 日本語：調査・分析・仮説・検証の4段階で根本原因を追うデバッグフレーム。表面的修正を避け、再発防止を意識した実証可能な結論を生成。 한국어：조사/분석/가설/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlite_investigate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "中文：系统化 debug 与根因调查框架（调查-分析-假设-验证），只做针对根因的修复。适用于 bug 调试、异常行为分析、服务报错排查，提供可复验结论。 日本語：調査・分析・仮説・検証の4."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlite-investigate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlite-investigate",
+      "url": "https://clawhub.ai/skills/clawlite-investigate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlite-investigate",
+    "url": "https://clawhub.ai/skills/clawlite-investigate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlite-investigate-61d73988801565bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlite-investigate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlite-investigate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d275deb85ca86c90406061fb1116f2cb7593b14d087b9ebf9fe557208f72c55",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:14:23.660Z"
+}

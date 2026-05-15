@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/richemont@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.richemont",
+  "skill": {
+    "id": 62877,
+    "skillKey": "clawhub-richemont",
+    "name": "Richemont"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "richemont",
+    "url": "https://clawhub.ai/skills/richemont",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/richemont-433b437520e0673c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Richemont是全球第二大奢侈品集团，拥有Cartier等顶级品牌，主营珠宝腕表，2024年营收超214亿瑞士法郎。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776627142738,
+      "changelog": "Richemont skill 1.0.0 – Initial release\n\n- 提供历峰集团（Richemont）的详细公司信息及历史时间线\n- 分析主要业务结构，包括珠宝、制表、在线分销、配饰等\n- 展示公司核心优势、市场地位与护城河\n- 汇总2024年关键财务和运营数据\n- 列举独特品牌故事及业界地位亮点",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4158d37f46e67ae94a064eabb3e808b9424ecc9dbe9a1e4cac8748e8f8178f8"
+}

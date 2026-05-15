@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wavespeed-seedance-15-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wavespeed_seedance_15_pro",
+  "skill": {
+    "id": 22224,
+    "skillKey": "clawhub-wavespeed-seedance-15-pro",
+    "name": "WaveSpeedAI Seedance 1.5 Pro Video Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wavespeed-seedance-15-pro",
+    "url": "https://clawhub.ai/skills/wavespeed-seedance-15-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wavespeed-seedance-15-pro-198d11bfd913bf74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate videos using ByteDance's Seedance V1.5 Pro model via WaveSpeed AI. Supports text-to-video and image-to-video generation with 4-12 second duration at..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengzeyi",
+      "userId": "publishers:chengzeyi",
+      "displayName": "C",
+      "image": "https://avatars.githubusercontent.com/u/23494160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 482,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772523068563,
+      "changelog": "Initial release of wavespeed-seedance-15-pro.\n\n- Generate videos using ByteDance's Seedance V1.5 Pro model via WaveSpeed AI, supporting both text-to-video and image-to-video.\n- Configure videos for 4–12 seconds duration, up to 1080p resolution, with optional audio.\n- Features include smart duration, camera control, configurable seeds, and support for reference images in image-to-video.\n- Provides clear API parameters, pricing details, usage examples, and security guidance.\n- Designed for easy creation of animated videos from text prompts or images.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f7d9875ecd2b8fe4a3d6d7c97d3be97d0510f19e04b73947a30fcac3abb8de8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zspace-xunlei@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zspace_xunlei",
+  "skill": {
+    "id": 73138,
+    "skillKey": "clawhub-zspace-xunlei",
+    "name": "极空间迅雷下载"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zspace-xunlei",
+    "url": "https://clawhub.ai/skills/zspace-xunlei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zspace-xunlei-3b7e416d0b6071d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用极空间的迅雷下载资源"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pengzhxyz",
+      "userId": "publishers:pengzhxyz",
+      "displayName": "pengzhxyz",
+      "image": "https://avatars.githubusercontent.com/u/15181343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773074993936,
+      "changelog": "- 移除了命令中的日志记录功能（去除了写入 log.txt 的相关行）。\n- 其他功能和使用方法保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58d4cd3acfb0ce06117f51064155b1982a4571f1c9eab61fe55f07a5d9df88b6"
+}

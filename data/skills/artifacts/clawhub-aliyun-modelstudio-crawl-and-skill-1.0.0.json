@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-modelstudio-crawl-and-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_modelstudio_crawl_and_skill",
+  "skill": {
+    "id": 56518,
+    "skillKey": "clawhub-aliyun-modelstudio-crawl-and-skill",
+    "name": "Aliyun Modelstudio Crawl And Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-modelstudio-crawl-and-skill",
+    "url": "https://clawhub.ai/skills/aliyun-modelstudio-crawl-and-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-modelstudio-crawl-and-skill-0109276d39094e7d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when refreshing the Model Studio models crawl and regenerate derived summaries and `skills/ai/**` skills. Use when the models list or generated skills mu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775058671004,
+      "changelog": "- Initial release of aliyun-modelstudio-crawl-and-skill.\n- Automates crawling of Alibaba Cloud Model Studio models and regeneration of skills in `skills/ai/**`.\n- Outputs structured model lists, cleaned summaries, skill coverage reports, and generated skills.\n- Includes validation scripts and reproducibility guidelines.\n- Supports updating documentation files if the skills list changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:530462c9b8f79a7de58ba40697a236d1e910e4a01490b8f633b4ac6fa9b6d982"
+}

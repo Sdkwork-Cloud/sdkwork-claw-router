@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34057,
+  "uuid": "skill-clawhub-fox-cron-health-check",
+  "skillKey": "clawhub-fox-cron-health-check",
+  "name": "Fox Cron Health Check",
+  "summary": "Monitors OpenClaw cron job health, identifies failures, timeouts, and delivery issues.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fox_cron_health_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GarfieldQin",
+      "features": [
+        "Monitors OpenClaw cron job health, identifies failures, timeouts, and delivery issues."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fox-cron-health-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12707224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fox-cron-health-check",
+      "url": "https://clawhub.ai/skills/fox-cron-health-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fox-cron-health-check",
+    "url": "https://clawhub.ai/skills/fox-cron-health-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fox-cron-health-check-301a678610ddcb56.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fox-cron-health-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fox-cron-health-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:766b0295e62f12dbc59898093231cf86e65593bac24d740a7a68c344b03a8946",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T12:43:15.900Z"
+}

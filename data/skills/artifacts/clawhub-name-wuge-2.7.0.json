@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/name-wuge@2.7.0",
+  "version": "2.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.name_wuge",
+  "skill": {
+    "id": 60404,
+    "skillKey": "clawhub-name-wuge",
+    "name": "姓名五格数理测算"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "name-wuge",
+    "url": "https://clawhub.ai/skills/name-wuge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/name-wuge-2fbcbf95a9bf55db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for 姓名五格数理测算."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azazlf09",
+      "userId": "s170sfhg13bcdm027nqnn5kdxs83j1hp",
+      "displayName": "大佬的鼠DonRat",
+      "image": "https://avatars.githubusercontent.com/u/134839692?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.7.0",
+      "createdAt": 1776836553905,
+      "changelog": "姓氏多样性控制（每姓最多3个）+ 百家姓390字池 + 姓氏随机打乱最终结果",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16ed07e8af01cb16756cf1f069da1755be8cab4cefe5393537806e11d743fc72"
+}

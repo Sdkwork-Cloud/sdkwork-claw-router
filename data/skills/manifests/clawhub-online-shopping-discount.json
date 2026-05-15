@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68110,
+  "uuid": "skill-clawhub-online-shopping-discount",
+  "skillKey": "clawhub-online-shopping-discount",
+  "name": "online-shopping-discount",
+  "summary": "在有购物需求的情况下，提供查找优惠商品信息、生成优惠建议和优惠链接的能力。支持商品搜索、价格比较、优惠推荐和链接生成。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.online_shopping_discount",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuweizhen",
+      "features": [
+        "在有购物需求的情况下，提供查找优惠商品信息、生成优惠建议和优惠链接的能力。支持商品搜索、价格比较、优惠推荐和链接生成。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/online-shopping-discount@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6679752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "online-shopping-discount",
+      "url": "https://clawhub.ai/skills/online-shopping-discount"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "online-shopping-discount",
+    "url": "https://clawhub.ai/skills/online-shopping-discount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/online-shopping-discount-cb5a6de86152ef2a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/online-shopping-discount@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-online-shopping-discount-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2306f1917025429769a2625bf4ee21487e8d8a813607ab2d084fecc6743fba1d",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T02:18:47.884Z"
+}

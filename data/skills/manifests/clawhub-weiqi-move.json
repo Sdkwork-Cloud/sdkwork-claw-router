@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72926,
+  "uuid": "skill-clawhub-weiqi-move",
+  "skillKey": "clawhub-weiqi-move",
+  "name": "围棋实战选点",
+  "summary": "智能提取并生成围棋实战选点题，支持恶手检测、实战对比、交互答题、试下演练及保存SGF功能。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiqi_move",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tokener",
+      "features": [
+        "智能提取并生成围棋实战选点题，支持恶手检测、实战对比、交互答题、试下演练及保存SGF功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weiqi-move@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39153812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weiqi-move",
+      "url": "https://clawhub.ai/skills/weiqi-move"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiqi-move",
+    "url": "https://clawhub.ai/skills/weiqi-move",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiqi-move-8f1f23bc441d0b42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weiqi-move@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weiqi-move-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6ff38b554069c0033b3566d3dcc37e4cd22503dbf3f490317f602d327b0a12c",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T11:57:04.543Z"
+}

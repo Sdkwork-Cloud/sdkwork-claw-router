@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53263,
+  "uuid": "skill-clawhub-amg-check-key-vault",
+  "skillKey": "clawhub-amg-check-key-vault",
+  "name": "AMG Key Vault Health Check",
+  "summary": "Run only when the user explicitly asks for a fleet-wide Azure Key Vault health check — pulse check for availability, API latency, throttling (429s), auth fai...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amg_check_key_vault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1w2w3y",
+      "features": [
+        "Run only when the user explicitly asks for a fleet-wide Azure Key Vault health check — pulse ch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amg-check-key-vault@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3365932?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amg-check-key-vault",
+      "url": "https://clawhub.ai/skills/amg-check-key-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amg-check-key-vault",
+    "url": "https://clawhub.ai/skills/amg-check-key-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amg-check-key-vault-de13b6608420729b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amg-check-key-vault@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amg-check-key-vault-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69cb98387329ddadf1fd4f7efdf02d3621397308713c062786febc305b0c6dc1",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:05:02.196Z"
+}

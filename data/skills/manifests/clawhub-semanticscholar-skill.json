@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41995,
+  "uuid": "skill-clawhub-semanticscholar-skill",
+  "skillKey": "clawhub-semanticscholar-skill",
+  "name": "Semanticscholar Skill",
+  "summary": "Use when searching academic papers, looking up citations, finding authors, or getting paper recommendations using the Semantic Scholar API. Triggers on queri...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semanticscholar_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agents365.ai",
+      "features": [
+        "Use when searching academic papers, looking up citations, finding authors, or getting paper rec.",
+        "Triggers on queri..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semanticscholar-skill@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221161299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semanticscholar-skill",
+      "url": "https://clawhub.ai/skills/semanticscholar-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semanticscholar-skill",
+    "url": "https://clawhub.ai/skills/semanticscholar-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semanticscholar-skill-7534fa3a3d3561d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semanticscholar-skill@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-semanticscholar-skill-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d403bb6967a9efc8fe9583f5e092be89039db0a6750cccc4435bc02dff4822a6",
+      "artifactSizeBytes": 2798
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T05:58:52.231Z"
+}

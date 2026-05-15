@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45471,
+  "uuid": "skill-clawhub-dailybriefing",
+  "skillKey": "clawhub-dailybriefing",
+  "name": "Daily Briefing",
+  "summary": "Generate daily morning briefings with weather, traffic limits, and news. Provides structured data collection scripts for stable, reproducible briefing genera...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dailybriefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "caoyachao",
+      "features": [
+        "Generate daily morning briefings with weather, traffic limits, and news",
+        "Provides structured data collection scripts for stable, reproducible briefing genera..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dailybriefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13848791?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dailybriefing",
+      "url": "https://clawhub.ai/skills/dailybriefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dailybriefing",
+    "url": "https://clawhub.ai/skills/dailybriefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dailybriefing-ae0c073a13b2a008.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dailybriefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dailybriefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c8d2b705cceec7ca6869414cfa4b4b00d0aacc99ef8ffd73ea0cc667b93eba1",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:28:47.530Z"
+}

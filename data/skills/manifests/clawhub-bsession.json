@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50825,
+  "uuid": "skill-clawhub-bsession",
+  "skillKey": "clawhub-bsession",
+  "name": "browser",
+  "summary": "Browser automation — setup the bsession environment, fetch info from a website (one-shot), create scripted automations (one-shot or recurring), or debug exis...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bsession",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaxxx",
+      "features": [
+        "Browser automation — setup the bsession environment, fetch info from a website (one-shot), crea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bsession@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/471881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bsession",
+      "url": "https://clawhub.ai/skills/bsession"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bsession",
+    "url": "https://clawhub.ai/skills/bsession",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bsession-a53eae8f9019fc59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bsession@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bsession-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c19205243c3e971e238d31fcb886aec587fd252d13b29d892876cc2c794db849",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:10:33.312Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-debugger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_debugger",
+  "skill": {
+    "id": 30902,
+    "skillKey": "clawhub-agent-debugger",
+    "name": "Agent Debugger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-debugger",
+    "url": "https://clawhub.ai/skills/agent-debugger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-debugger-1fab819413380a35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Debug AI agent issues systematically. Covers tool failures, infinite loops, context overflow, rate limits, and performance bottlenecks. Use when agents misbe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "engsathiago",
+      "userId": "s1748ca82aw6dtzhdqmtcdaj1h83fxeq",
+      "displayName": "engsathiago",
+      "image": "https://avatars.githubusercontent.com/u/40508117?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773678364284,
+      "changelog": "Initial release. Systematic debugging for AI agents. Covers infinite loops, tool failures, context overflow, rate limits, memory issues, and performance bottlenecks. Includes diagnosis, fixes, and prevention tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:914742dff3474cfc087fa2b56e1abea583c694f508e1e7ef44f77cdf27fdc55b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50955,
+  "uuid": "skill-clawhub-replicate",
+  "skillKey": "clawhub-replicate",
+  "name": "Replicate",
+  "summary": "Replicate ML platform — run AI models, manage predictions, browse collections, search models. ML inference CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.replicate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Replicate ML platform — run AI models, manage predictions, browse collections, search models",
+        "ML inference CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/replicate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "replicate",
+      "url": "https://clawhub.ai/skills/replicate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "replicate",
+    "url": "https://clawhub.ai/skills/replicate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/replicate-b23b068c8142639b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/replicate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-replicate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:caa9bbdb4f56e278acd416529d9572c576c6fb260e6aae91a63ea0fa3c9ce06e",
+      "artifactSizeBytes": 2068
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T12:52:32.789Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baostock@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baostock",
+  "skill": {
+    "id": 63949,
+    "skillKey": "clawhub-baostock",
+    "name": "BaoStock"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baostock",
+    "url": "https://clawhub.ai/skills/baostock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baostock-cb4f9267fb864dbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BaoStock 免费A股数据平台 - 支持K线、财务数据、行业分类查询，无需注册即可使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1002,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774260431823,
+      "changelog": "**Demo project files added for easier usage demonstration.**\n\n- Added `demo_project/README.md` and `demo_project/demo.py` as example/demo files.\n- No changes to core functionality.\n- Provides sample code and usage instructions for new users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cb8fbb9e4f34f079745aa2934e4715815d41a6cd96d407f784ec6f8dcacc3d3"
+}

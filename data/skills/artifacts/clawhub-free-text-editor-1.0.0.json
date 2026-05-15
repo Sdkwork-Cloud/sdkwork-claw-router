@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_editor",
+  "skill": {
+    "id": 46532,
+    "skillKey": "clawhub-free-text-editor",
+    "name": "Free Text Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-editor",
+    "url": "https://clawhub.ai/skills/free-text-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-editor-532709a586d9095c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute talking head video into 1080p text-edited videos just by typing what you need. Whether it's editing videos by modifying the transcript text i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777086782047,
+      "changelog": "- Initial release of Free Text Editor.\n- Instantly edit talking head videos by modifying the transcript text instead of using a timeline.\n- Automatic backend setup and authentication with 100 free credits for new users.\n- Drop video files, make text-based edit requests, and receive a 1080p MP4 export in under a minute.\n- Supports features like filler word removal, trimming pauses, credits checking, batch uploads, and multiple output formats.\n- Error handling and feedback for uploads, status checks, and export jobs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbe7ad4774ba4932c2a1d4fc6b815dca8b5c85a12880837a40b4b59c3a430b85"
+}

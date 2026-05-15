@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plausible-analytics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plausible_analytics",
+  "skill": {
+    "id": 16376,
+    "skillKey": "clawhub-plausible-analytics",
+    "name": "Plausible Analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plausible-analytics",
+    "url": "https://clawhub.ai/skills/plausible-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plausible-analytics-afee2e5699b4e9f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and analyze website analytics from Plausible Analytics. Use when you need to check real-time visitors, get page views and visitor statistics for a time..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chloepark85",
+      "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+      "displayName": "Chloe Park",
+      "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 883,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771214798729,
+      "changelog": "- Added metadata section specifying required environment variable (PLAUSIBLE_API_KEY) and dependency on the Node.js runtime.\n- No changes to scripts, functionality, or documentation content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0276e96e265209f220fb7226c1969fb489c5b4026ed255c6b0a651ae794df004"
+}

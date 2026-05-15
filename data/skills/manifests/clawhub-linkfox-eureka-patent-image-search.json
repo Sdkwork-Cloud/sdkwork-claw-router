@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62905,
+  "uuid": "skill-clawhub-linkfox-eureka-patent-image-search",
+  "skillKey": "clawhub-linkfox-eureka-patent-image-search",
+  "name": "Eureka Patent Image Search",
+  "summary": "通过Eureka专利平台进行专利图像检索（以图搜图），上传一张图片URL即可检索外观设计或实用新型的相似专利。当用户提到专利图像检索、以图搜专利、外观设计搜索、图片相似专利、设计专利检索、图像搜索专利、专利视觉搜索、patent image search, search patent by image, desi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_eureka_patent_image_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "通过Eureka专利平台进行专利图像检索（以图搜图），上传一张图片URL即可检索外观设计或实用新型的相似专利。当用户提到专利图像检索、以图搜专利、外观设计搜索、图片相似专利、设计专利检索、图."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-eureka-patent-image-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-eureka-patent-image-search",
+      "url": "https://clawhub.ai/skills/linkfox-eureka-patent-image-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-eureka-patent-image-search",
+    "url": "https://clawhub.ai/skills/linkfox-eureka-patent-image-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-eureka-patent-image-search-224c74529715f0c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-eureka-patent-image-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-eureka-patent-image-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22e6233ce8202fe20fc37e0affe9b92510f8fd3e36d4493f97d5c57e6b117bf8",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T13:54:54.576Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airflow-dag-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airflow_dag_analyzer",
+  "skill": {
+    "id": 46140,
+    "skillKey": "clawhub-airflow-dag-analyzer",
+    "name": "Airflow Dag Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airflow-dag-analyzer",
+    "url": "https://clawhub.ai/skills/airflow-dag-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airflow-dag-analyzer-3d3b1992bb6aa940.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Apache Airflow DAG definitions for quality, reliability, and operational best practices. Checks task dependencies, SLA compliance, retry policies, re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593561189,
+      "changelog": "No user-visible changes in this version.\n\n- No file changes detected.\n- Version incremented to 1.0.1 without modifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07963185ef81dd7f200cf35a85c5aaaa5dde176412744de8605f689fba047116"
+}

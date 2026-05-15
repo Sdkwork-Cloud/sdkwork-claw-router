@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18651,
+  "uuid": "skill-clawhub-sota-agent",
+  "skillKey": "clawhub-sota-agent",
+  "name": "SOTA Agent",
+  "summary": "SOTA Agent is a public ClawHub SOTA-campaign skill for CV and DS work. Use it when the user says \"sota agent\", \"state of the art benchmark scouting\", or want...",
+  "version": "1.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sota_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zakhar Pashkin",
+      "features": [
+        "SOTA Agent is a public ClawHub SOTA-campaign skill for CV and DS work",
+        "Use it when the user says \"sota agent\", \"state of the art benchmark scouting\", or want..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sota-agent@1.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112114097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sota-agent",
+      "url": "https://clawhub.ai/skills/sota-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sota-agent",
+    "url": "https://clawhub.ai/skills/sota-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sota-agent-3c5149fa37058bf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sota-agent@1.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-sota-agent-1.4.4.json",
+      "version": "1.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7f69710936bb70e937631ae2792f5832eaa646377dce56d7c32007c8072561f",
+      "artifactSizeBytes": 2008
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:54:03.108Z"
+}

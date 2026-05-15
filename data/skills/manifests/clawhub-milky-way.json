@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70914,
+  "uuid": "skill-clawhub-milky-way",
+  "skillKey": "clawhub-milky-way",
+  "name": "Milky Way",
+  "summary": "提供银河系的基本结构、恒星数量、中心黑洞、旋臂分布及暗物质影响等科学天文知识。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.milky_way",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供银河系的基本结构、恒星数量、中心黑洞、旋臂分布及暗物质影响等科学天文知识。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/milky-way@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "milky-way",
+      "url": "https://clawhub.ai/skills/milky-way"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "milky-way",
+    "url": "https://clawhub.ai/skills/milky-way",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/milky-way-ac56c4bec4dbbb7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/milky-way@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-milky-way-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ed783c1d64a55fa8e936f4c523c118e97e7152bfda7d2f8951c274d50cbc240",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T16:04:27.061Z"
+}

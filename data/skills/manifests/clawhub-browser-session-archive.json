@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34114,
+  "uuid": "skill-clawhub-browser-session-archive",
+  "skillKey": "clawhub-browser-session-archive",
+  "name": "browser-session-archive",
+  "summary": "Extracts and archives chatgpt.com and claude.ai share links to Markdown using Chrome CDP (e.g., ChatGPT or Claude conversations).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_session_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guobaba1",
+      "features": [
+        "Extracts and archives chatgpt.com and claude.ai share links to Markdown using Chrome CDP (e.g.,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-session-archive@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49421182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-session-archive",
+      "url": "https://clawhub.ai/skills/browser-session-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-session-archive",
+    "url": "https://clawhub.ai/skills/browser-session-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-session-archive-d269c127f591b524.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-session-archive@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-session-archive-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c6c77bdf914c62899803c1dd8d605a788b613baab5fa5b5cb1875b779a122e9",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T05:36:15.509Z"
+}

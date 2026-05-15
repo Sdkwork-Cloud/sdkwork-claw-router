@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26546,
+  "uuid": "skill-clawhub-deep-web-fetcher",
+  "skillKey": "clawhub-deep-web-fetcher",
+  "name": "Deep Web Fetcher",
+  "summary": "Fetch and extract structured content from JS-rendered web pages, including main text, metadata, and key domain-specific metrics, without paid APIs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_web_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xueylee-dotcom",
+      "features": [
+        "Fetch and extract structured content from JS-rendered web pages, including main text, metadata,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-web-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260164558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-web-fetcher",
+      "url": "https://clawhub.ai/skills/deep-web-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-web-fetcher",
+    "url": "https://clawhub.ai/skills/deep-web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-web-fetcher-0bd570d85fbbcc07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-web-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-web-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96b8f4cad173ddb5e2346cb0b9caea218e00a31a6fb1c54d69dbfd955fcc368a",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:47:09.028Z"
+}

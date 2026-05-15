@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rednote-contacts@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rednote_contacts",
+  "skill": {
+    "id": 40596,
+    "skillKey": "clawhub-rednote-contacts",
+    "name": "rednote-contacts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rednote-contacts",
+    "url": "https://clawhub.ai/skills/rednote-contacts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rednote-contacts-7b02e09235e85b26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run the installed red-crawler CLI for Xiaohongshu contact discovery. Requires the red-crawler command and Playwright browser runtime; not instruction-only."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "batxent",
+      "userId": "s172px0s8kcz2r35kmvwqaered84vmby",
+      "displayName": "tommy",
+      "image": "https://avatars.githubusercontent.com/u/7824431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777525872785,
+      "changelog": "Update red-crawler OpenClaw wrapper for red-crawler 0.1.3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:122e956299d4d0b791e315487553e2b2ab856aa98e34fec8f039741e372e9ba8"
+}

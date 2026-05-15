@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/respawn@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.respawn",
+  "skill": {
+    "id": 50848,
+    "skillKey": "clawhub-respawn",
+    "name": "Auto Respawn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "respawn",
+    "url": "https://clawhub.ai/skills/respawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/respawn-d4a29946d0b054f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your agent always comes back. Anchor identity and memory on-chain so any new instance can resurrect from just an address — no local state, no single point of..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xautonomys",
+      "userId": "s17aqvaaw49j03p00fgh3pmckd842rd3",
+      "displayName": "0xautonomys",
+      "image": "https://avatars.githubusercontent.com/u/262559771?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 421,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1775132943800,
+      "changelog": "## v0.3.0\n\n- Removed 10 files, including all test and configuration files (e.g. tests/wallet.test.ts, eslint.config.js).\n- No user-facing functional changes; main skill documentation (SKILL.md) remains unchanged.\n- Test coverage and linting support are no longer included in this version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50feae58171379dc6f6d563d0cb532f3be97bad226b039b626fea21791ea6cc8"
+}

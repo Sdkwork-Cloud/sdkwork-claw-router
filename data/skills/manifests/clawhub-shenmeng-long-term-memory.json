@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70716,
+  "uuid": "skill-clawhub-shenmeng-long-term-memory",
+  "skillKey": "clawhub-shenmeng-long-term-memory",
+  "name": "Long Term Memory 长期记忆",
+  "summary": "长期记忆管理系统 - 帮助AI和用户管理、存储、检索长期记忆。支持记忆分类、标签管理、重要性评分、自动压缩、跨会话记忆保持。适用于需要长期追踪信息、建立知识库、维护历史上下文的场景。",
+  "version": "2025.4.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_long_term_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "长期记忆管理系统",
+        "帮助AI和用户管理、存储、检索长期记忆。支持记忆分类、标签管理、重要性评分、自动压缩、跨会话记忆保持。适用于需要长期追踪信息、建立知识库、维护历史上下文的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-long-term-memory@2025.4.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-long-term-memory",
+      "url": "https://clawhub.ai/skills/shenmeng-long-term-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-long-term-memory",
+    "url": "https://clawhub.ai/skills/shenmeng-long-term-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-long-term-memory-b1282ef28609b1d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-long-term-memory@2025.4.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-long-term-memory-2025.4.15.json",
+      "version": "2025.4.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11c15bd9c993cd875a79e2bd56fe9496b8194b34d4ebbeafd8f029287216f870",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:11:17.612Z"
+}

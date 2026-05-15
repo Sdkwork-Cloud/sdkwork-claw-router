@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14461,
+  "uuid": "skill-clawhub-hype",
+  "skillKey": "clawhub-hype",
+  "name": "Hype",
+  "summary": "Assist with Hyperliquid perpetuals trading, deposits, withdrawals, and L1 features.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hype",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Hyperliquid perpetuals trading, deposits, withdrawals, and L1 features."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hype@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hype",
+      "url": "https://clawhub.ai/skills/hype"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hype",
+    "url": "https://clawhub.ai/skills/hype",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hype-6b29a986309021ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hype@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hype-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc484880a99ee836a6053a685500de098e8a6d80e8d97248d27a37a0354e6ab1",
+      "artifactSizeBytes": 1735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T18:05:54.477Z"
+}

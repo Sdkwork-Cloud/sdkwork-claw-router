@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33189,
+  "uuid": "skill-clawhub-zhujian-session-archive",
+  "skillKey": "clawhub-zhujian-session-archive",
+  "name": "Session Archive",
+  "summary": "Automatically saves chat messages to a SQLite database with query and usage statistics support.",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhujian_session_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "18940111404",
+      "features": [
+        "Automatically saves chat messages to a SQLite database with query and usage statistics support."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhujian-session-archive@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55475603?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhujian-session-archive",
+      "url": "https://clawhub.ai/skills/zhujian-session-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhujian-session-archive",
+    "url": "https://clawhub.ai/skills/zhujian-session-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhujian-session-archive-01abcfc5238fc6bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhujian-session-archive@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhujian-session-archive-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75e47dbee34597655a24a938b56821f400304fec471d5e63da26d635b43c2d5c",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T15:08:25.349Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-gutter-cleaning@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_gutter_cleaning",
+  "skill": {
+    "id": 13118,
+    "skillKey": "clawhub-book-gutter-cleaning",
+    "name": "Book Gutter Cleaning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-gutter-cleaning",
+    "url": "https://clawhub.ai/skills/book-gutter-cleaning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-gutter-cleaning-62e39123d5fa4aea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book gutter-cleaning services through Lokuli MCP. Use when user needs to find and book gutter-cleaning. Triggers on requests like \"book a gutter-cleaning\", \"find gutter-cleaning near me\", or any gutter-cleaning service request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1462,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770339930633,
+      "changelog": "Fixed display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb93b0e34f2ad2f677af9b6eee308a7100e395950a2360c75a2302c20471adb8"
+}

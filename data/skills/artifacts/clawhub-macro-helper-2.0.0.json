@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macro-helper@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macro_helper",
+  "skill": {
+    "id": 58752,
+    "skillKey": "clawhub-macro-helper",
+    "name": "Macro Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macro-helper",
+    "url": "https://clawhub.ai/skills/macro-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macro-helper-fb71febfca9e0a93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Excel宏与VBA助手。生成VBA代码、解释宏、调试错误、模板库、格式转换、性能优化。Excel macro and VBA helper with generate, explain, debug, template, convert."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 785,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773564715,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1000dfac01fa21d14dcc3837a7d9bbb5340eb84da1491c0aa2b7ccd8490f724c"
+}

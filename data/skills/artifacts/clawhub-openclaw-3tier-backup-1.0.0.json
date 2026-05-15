@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-3tier-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_3tier_backup",
+  "skill": {
+    "id": 28104,
+    "skillKey": "clawhub-openclaw-3tier-backup",
+    "name": "3-Tier Auto-Backup Daily Snapshots, Drive Mirror & Emergency Recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-3tier-backup",
+    "url": "https://clawhub.ai/skills/openclaw-3tier-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-3tier-backup-724ef25d9e283342.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated backup in 3 layers: daily timestamped snapshots, secondary drive mirror, and emergency conversation export."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773198010966,
+      "changelog": "Initial upload",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93842d2fd5abe08c63433baf06248466dcd88e99283d10129827bb23a4c79b1c"
+}

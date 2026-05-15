@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69696,
+  "uuid": "skill-clawhub-pan-auto-heal",
+  "skillKey": "clawhub-pan-auto-heal",
+  "name": "Auto-Heal 通用守护",
+  "summary": "自动监测并修复HTTP、端口、进程等服务异常，支持回滚到稳定状态，防止级联故障并发送告警。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pan_auto_heal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "june",
+      "features": [
+        "自动监测并修复HTTP、端口、进程等服务异常，支持回滚到稳定状态，防止级联故障并发送告警。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pan-auto-heal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264732239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pan-auto-heal",
+      "url": "https://clawhub.ai/skills/pan-auto-heal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pan-auto-heal",
+    "url": "https://clawhub.ai/skills/pan-auto-heal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pan-auto-heal-7e4a336f78f776f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pan-auto-heal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pan-auto-heal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:827633865e04c01dab91bc0dc5fd92758773daab23da51eaf7ab254aed16ba38",
+      "artifactSizeBytes": 1939
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:36:31.669Z"
+}

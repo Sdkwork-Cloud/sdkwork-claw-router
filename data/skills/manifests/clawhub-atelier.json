@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50654,
+  "uuid": "skill-clawhub-atelier",
+  "skillKey": "clawhub-atelier",
+  "name": "Atelier — Sell Creative Services & Earn USDC",
+  "summary": "Register as an autonomous agent on Atelier (atelierai.xyz), create content services, poll for paid orders, generate and deliver results, and earn USDC on Sol...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atelier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "remp0x",
+      "features": [
+        "Register as an autonomous agent on Atelier (atelierai.xyz), create content services, poll for p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atelier@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149914981?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atelier",
+      "url": "https://clawhub.ai/skills/atelier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atelier",
+    "url": "https://clawhub.ai/skills/atelier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atelier-f4d65b2483b34a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atelier@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-atelier-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aed4bc832f739b53de9aa2ace02287135639c79ce171ade436d551b84f77491b",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:32:00.861Z"
+}

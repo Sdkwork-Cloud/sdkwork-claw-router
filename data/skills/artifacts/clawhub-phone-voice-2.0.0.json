@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phone-voice@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_voice",
+  "skill": {
+    "id": 9743,
+    "skillKey": "clawhub-phone-voice",
+    "name": "Phone Voice Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-voice",
+    "url": "https://clawhub.ai/skills/phone-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-voice-aee07a8a8c703ef7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect ElevenLabs Agents to your OpenClaw via phone with Twilio. Includes caller ID auth, voice PIN security, call screening, memory injection, and cost tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cortexuvula",
+      "userId": "s1708xwjmpxwt0jkkps10s75m983tz6q",
+      "displayName": "Roaming",
+      "image": "https://avatars.githubusercontent.com/u/2161372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2921,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770177281401,
+      "changelog": "**Major upgrade with new features and security enhancements.**\n\n- Adds caller ID authentication and voice PIN security.\n- Introduces call screening, configurable whitelist, and rate limiting.\n- Full memory injection from files and recent transcripts before each call.\n- Tracks costs per call and logs detailed breakdowns.\n- Supports permanent (Cloudflare) or temporary (ngrok) tunnels.\n- Hands-off OpenClaw chat completions—bridge now connects directly to Anthropic Claude.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5766bb716e77de04c57b07d02f06c4d82634eb8ccde51bc9c2a9816f172002b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69080,
+  "uuid": "skill-clawhub-aws-wechat-article-writing",
+  "skillKey": "clawhub-aws-wechat-article-writing",
+  "name": "公众号长文 AI 写稿",
+  "summary": "公众号写稿｜长文写作｜文章润色｜改写续写 — 公众号长文 AI 写作，从话题或提纲生成完整初稿，支持改写、续写、润色、开头结尾优化，可调 DeepSeek / GPT / Claude 或由 Agent 代写。面向自媒体作者、公众号运营、品牌文案。触发词（**单独触发仅限对已有稿子的修改**）：「改写」「润色」「...",
+  "version": "1.0.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_wechat_article_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marsatwechat",
+      "features": [
+        "公众号写稿｜长文写作｜文章润色｜改写续写 — 公众号长文 AI 写作，从话题或提纲生成完整初稿，支持改写、续写、润色、开头结尾优化，可调 DeepSeek / GPT / Claude 或由."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aws-wechat-article-writing@1.0.23",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19565483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aws-wechat-article-writing",
+      "url": "https://clawhub.ai/skills/aws-wechat-article-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-wechat-article-writing",
+    "url": "https://clawhub.ai/skills/aws-wechat-article-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-wechat-article-writing-4966acff354d55b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aws-wechat-article-writing@1.0.23",
+      "artifactUrl": "data/skills/artifacts/clawhub-aws-wechat-article-writing-1.0.23.json",
+      "version": "1.0.23",
+      "runtime": "metadata",
+      "checksumHash": "sha256:892b4d798ade8fdda93490c874849eb0a94792c010d6ade9df57d758ef93ae6f",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T13:04:03.562Z"
+}

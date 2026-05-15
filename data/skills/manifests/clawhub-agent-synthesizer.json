@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17172,
+  "uuid": "skill-clawhub-agent-synthesizer",
+  "skillKey": "clawhub-agent-synthesizer",
+  "name": "Agent Synthesizer",
+  "summary": "Enable and configure Agent Synthesizer for OpenClaw to improve autonomy and execution throughput. Use when a user asks to install, set up, troubleshoot, or o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_synthesizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rylen Anil",
+      "features": [
+        "Enable and configure Agent Synthesizer for OpenClaw to improve autonomy and execution throughput",
+        "Use when a user asks to install, set up, troubleshoot, or o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-synthesizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47320423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-synthesizer",
+      "url": "https://clawhub.ai/skills/agent-synthesizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-synthesizer",
+    "url": "https://clawhub.ai/skills/agent-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-synthesizer-52f6856d6f91aa17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-synthesizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-synthesizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f8ba7f87403b056cc671d462d7673d5cbc4fd216d06ab480010cec7752f6758",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T07:48:50.735Z"
+}

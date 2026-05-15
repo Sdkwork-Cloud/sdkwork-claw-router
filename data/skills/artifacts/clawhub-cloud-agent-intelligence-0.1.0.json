@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-agent-intelligence@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_agent_intelligence",
+  "skill": {
+    "id": 65486,
+    "skillKey": "clawhub-cloud-agent-intelligence",
+    "name": "Cloud Agent Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-agent-intelligence",
+    "url": "https://clawhub.ai/skills/cloud-agent-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-agent-intelligence-0e7ec22f4be72577.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供全球云厂商智能体动态监控、竞品深度分析、情报查询及定制对比报告的手动触发接口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pagoda111king",
+      "userId": "s1746mhemcg917609xsdwamt1183gyw3",
+      "displayName": "pagoda111king",
+      "image": "https://avatars.githubusercontent.com/u/177529007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774638344514,
+      "changelog": "cloud-agent-intelligence v0.1.0\n\n- 首次发布，支持“全球云虾情报系统”手动触发分析与监控。\n- 可立即监控与对比腾讯云、华为云、字节火山引擎等主流云厂商智能体动态。\n- 提供深度分析、对比报告与情报查询功能。\n- 支持监控状态一览及灵活定制分析维度。\n- 明确区分 Cron 自动任务与手动调用能力。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05b62a36ba39f468afb7e58f4eefc9438e80e6cdeb96207dd7ad20f2605f63cd"
+}

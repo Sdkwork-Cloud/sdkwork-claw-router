@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66556,
+  "uuid": "skill-clawhub-tensortrade-rl-env",
+  "skillKey": "clawhub-tensortrade-rl-env",
+  "name": "Tensortrade Rl Env",
+  "summary": "提供多市场回测与强化学习交易环境构建能力，支持多交易所钱包组合管理、Plotly交互式交易可视化及RL智能体训练评估。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tensortrade_rl_env",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "提供多市场回测与强化学习交易环境构建能力，支持多交易所钱包组合管理、Plotly交互式交易可视化及RL智能体训练评估。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tensortrade-rl-env@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tensortrade-rl-env",
+      "url": "https://clawhub.ai/skills/tensortrade-rl-env"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tensortrade-rl-env",
+    "url": "https://clawhub.ai/skills/tensortrade-rl-env",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tensortrade-rl-env-32879900d6525c58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tensortrade-rl-env@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tensortrade-rl-env-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fe2835c0e8355c082c47f138baeb69a4bbff9d289fbd14f7482714e31137a0d",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:30:22.761Z"
+}

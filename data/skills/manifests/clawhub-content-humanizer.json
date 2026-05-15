@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54438,
+  "uuid": "skill-clawhub-content-humanizer",
+  "skillKey": "clawhub-content-humanizer",
+  "name": "Content Humanizer",
+  "summary": "Makes AI-generated content sound genuinely human — not just cleaned up, but alive. Use when content feels robotic, uses too many AI clichés, lacks personalit...",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_humanizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Makes AI-generated content sound genuinely human — not just cleaned up, but alive",
+        "Use when content feels robotic, uses too many AI clichés, lacks personalit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-humanizer@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-humanizer",
+      "url": "https://clawhub.ai/skills/content-humanizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-humanizer",
+    "url": "https://clawhub.ai/skills/content-humanizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-humanizer-6fd7a199917458dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-humanizer@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-humanizer-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fe73d5a2a96019bf2f99f5aa6186628d05c9b316b1147fcda077d3ac90f4572",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:11:40.380Z"
+}

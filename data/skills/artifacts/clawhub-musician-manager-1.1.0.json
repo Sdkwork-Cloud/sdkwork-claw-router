@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/musician-manager@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musician_manager",
+  "skill": {
+    "id": 52962,
+    "skillKey": "clawhub-musician-manager",
+    "name": "Musician Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musician-manager",
+    "url": "https://clawhub.ai/skills/musician-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musician-manager-52b40465b1cc5fe3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Band Manager skill for musicians. Use when handling any music industry task — venue booking outreach, social media content, release planning, setlist mana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boris148",
+      "userId": "s176zyak5ty7kk1qam4bdtftq183mvsa",
+      "displayName": "Boris148",
+      "image": "https://avatars.githubusercontent.com/u/262320351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774504096740,
+      "changelog": "Musician-manager 1.1.0 is a documentation update.\n\n- Updated SKILL.md to increment the version to 1.1.0.\n- No functional or feature changes; content remains the same except for version number.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22159df9595f4e7bad80353f87304e1fae9883973f8160fb920ec3e3700552c6"
+}

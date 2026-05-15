@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/http-retry@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.http_retry",
+  "skill": {
+    "id": 15736,
+    "skillKey": "clawhub-http-retry",
+    "name": "http-retry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "http-retry",
+    "url": "https://clawhub.ai/skills/http-retry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/http-retry-eac61dcd4ba2bd9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically retries HTTP requests with exponential backoff, timeout control, and connection pooling to handle network errors and rate limits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2233admin",
+      "userId": "s17146zc2bhwqgxe6pp8t34acs83rnqt",
+      "displayName": "2233admin",
+      "image": "https://avatars.githubusercontent.com/u/57929895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 909,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771891053636,
+      "changelog": "Initial release of http-retry skill:\n\n- Provides automatic HTTP retry with exponential backoff for network errors and rate limiting (429, 5xx).\n- Implements timeout control for requests.\n- Supports reuse with connection pool.\n- Triggered by common network error keywords including timeouterror, econnreset, econnrefused, 429, retry, http error, 网络超时.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:faeaa1476155b57aeb4b53a0606a530984eba31a6e0cb5f22224b06821050e6f"
+}

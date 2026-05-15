@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repo-guardian@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_guardian",
+  "skill": {
+    "id": 30109,
+    "skillKey": "clawhub-repo-guardian",
+    "name": "Repo Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-guardian",
+    "url": "https://clawhub.ai/skills/repo-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-guardian-5f5da8f02859e617.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated GitHub PR review governance and repository maintenance automation. Use when reviewing pull requests with dual-model consensus, enforcing merge gate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "corbin-breton",
+      "userId": "s17e2d7wzt9cynyq8rc1g1bem583fhdd",
+      "displayName": "Corbin Breton",
+      "image": "https://avatars.githubusercontent.com/u/4294018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1774880768946,
+      "changelog": "- Added required environment variables to metadata: GUARDIAN_AGENT, GUARDIAN_REVIEWER_B_AGENT, GUARDIAN_REPO, GUARDIAN_AUTO_MERGE, GUARDIAN_AUTO_FIX, GUARDIAN_MAX_PRS, GUARDIAN_MAX_ISSUES.\n- Included 'openclaw' as a required bin in metadata.\n- Updated documentation to reflect these additional required environment variables.\n- No behavioral or logic changes to review or triage flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4e9f14d7e66727ea23e6e72961c2ef9d433df6f6eb49f86c9fdaf756172a5d6"
+}

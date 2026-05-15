@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moneyclaw@5.5.3",
+  "version": "5.5.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moneyclaw",
+  "skill": {
+    "id": 16902,
+    "skillKey": "clawhub-moneyclaw",
+    "name": "MoneyClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moneyclaw",
+    "url": "https://clawhub.ai/skills/moneyclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moneyclaw-cb47f22bcbff5e51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inspect a MoneyClaw wallet, create bounded payment tasks, and continue user-confirmed payment steps using a prepaid account. Use only when the user clearly a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elvismusli",
+      "userId": "s174hjbfq6r786k6pp6znwkgbx83myn2",
+      "displayName": "elvismusli",
+      "image": "https://avatars.githubusercontent.com/u/149376360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 719,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "5.5.3",
+      "createdAt": 1774835525973,
+      "changelog": "Remove hidden-card bootstrap issue fee from buyer flow guidance and clarify provider-minimum funding behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad56830f4378211b2628013ab3a4be6ec28abed7512a77ee5f1a9a2ec54c5da8"
+}

@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "mar-emotion-state",
+    "displayName": "mar-emotion-state",
+    "summary": "NL emotion tracking + prompt injection via OpenClaw hook",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777009623465,
+    "updatedAt": 1777527909569
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777009623465,
+    "changelog": "- Initial release of Emotion State skill for OpenClaw.\n- Tracks user and agent emotions as natural-language phrases and persists per-user state.\n- Injects current emotion state and a trend line into the system prompt via a workspace hook.\n- Provides simple installation and configuration steps, including environment variables for customizing hook behavior.\n- Utilizes SkillBoss API Hub for automatic LLM-based emotion detection.\n- Ensures privacy by storing only inferred emotion summaries, not raw user text.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "marjoriebroad",
+    "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+    "displayName": "MarjorieBroad",
+    "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration (+1 more)",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527909569
+  }
+}

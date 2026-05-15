@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38223,
+  "uuid": "skill-clawhub-weather-reporter",
+  "skillKey": "clawhub-weather-reporter",
+  "name": "Weather Reporter",
+  "summary": "Generate detailed weather report images for any city worldwide with temperature, precipitation, humidity, wind, sunrise/sunset, moon phase, UV index, and war...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZYT64",
+      "features": [
+        "Generate detailed weather report images for any city worldwide with temperature, precipitation,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243733465?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-reporter",
+      "url": "https://clawhub.ai/skills/weather-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-reporter",
+    "url": "https://clawhub.ai/skills/weather-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-reporter-33a68029462a1d7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20bc93edbd913d00509a203f730edce9efe74b7cb7545ea8c1280eab4bd73f2c",
+      "artifactSizeBytes": 2536
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T06:43:58.073Z"
+}

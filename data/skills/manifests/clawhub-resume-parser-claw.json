@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67644,
+  "uuid": "skill-clawhub-resume-parser-claw",
+  "skillKey": "clawhub-resume-parser-claw",
+  "name": "简历标准化解析虾",
+  "summary": "简历标准化解析虾 — 将非标简历（PDF/Word/图片/文本）解析为结构化候选人数据，并可写入飞书多维表格或导出 Excel/JSON。 **当以下情况时使用此 Skill**： (1) 用户上传或提供简历文件（PDF、Word、图片），要求提取候选人信息 (2) 需要批量解析简历并录入数据库或飞书多维表格 (...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_parser_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "简历标准化解析虾 — 将非标简历（PDF/Word/图片/文本）解析为结构化候选人数据，并可写入飞书多维表格或导出 Excel/JSON。 **当以下情况时使用此 Skill**： (1)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-parser-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-parser-claw",
+      "url": "https://clawhub.ai/skills/resume-parser-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-parser-claw",
+    "url": "https://clawhub.ai/skills/resume-parser-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-parser-claw-09db42dca2d717c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-parser-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-parser-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d58ea06389262592ec71674f0ea3ac35503f4af395aff2f2ee504c0cd38f7090",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T07:40:00.796Z"
+}

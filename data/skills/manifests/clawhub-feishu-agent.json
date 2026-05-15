@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18664,
+  "uuid": "skill-clawhub-feishu-agent",
+  "skillKey": "clawhub-feishu-agent",
+  "name": "Feishu Agent",
+  "summary": "Feishu (Lark) CLI agent - Provides calendar, todo, and contact management capabilities for AI assistants",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yang Jun",
+      "features": [
+        "Feishu (Lark) CLI agent",
+        "Provides calendar, todo, and contact management capabilities for AI assistants"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-agent@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/815438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-agent",
+      "url": "https://clawhub.ai/skills/feishu-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent",
+    "url": "https://clawhub.ai/skills/feishu-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-712614201e9aaf96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-agent@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-agent-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f5a6b03a29f380e1e3f7d03f1457fed715dddb9526065537d090c05b36138ce",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T13:58:29.840Z"
+}

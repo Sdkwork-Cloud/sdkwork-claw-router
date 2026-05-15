@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-guangjiao@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_guangjiao",
+  "skill": {
+    "id": 56292,
+    "skillKey": "clawhub-skill-guangjiao",
+    "name": "Skill Guangjiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-guangjiao",
+    "url": "https://clawhub.ai/skills/skill-guangjiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-guangjiao-62b8e6fb3979e71d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user needs to discover leads from Canton Fair (广交会) exhibitors. Use when mining business opportunities from trade show data. Use when finding exhibi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777535877131,
+      "changelog": "Version 1.0.3\n\n- Documentation (SKILL.md) updated; operational steps now specify data retrieval only via official APIs, no reference to cross-verifying with customs data.\n- Clarified that data query uses the 云旅AI MatchGPT API directly.\n- No changes to features, code, APIs, or functionality—documentation change only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a7deeb92d190c99a339bc28eea28f73cf4a559ea96852ad8d62b54b703a4080"
+}

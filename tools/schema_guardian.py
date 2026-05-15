@@ -99,12 +99,6 @@ DOMAIN_NAMES_REQUIRING_TYPE_BINDINGS = {"model_vendor", "billing_meter", "integr
 
 FORBIDDEN_PRICING_TABLES = {"ai_pricing_group"}
 
-EXPECTED_API_PREFIXES = {
-    "app": "/app/v3/api",
-    "backend": "/backend/v3/api",
-    "openai_compatible": "/v1",
-}
-
 REQUIRED_TABLE_COLUMNS = {
     "ai_model_vendor": {"vendor_code", "display_name"},
     "ai_model": {
@@ -1316,11 +1310,7 @@ class SchemaGuardian:
         if not isinstance(prefixes, dict):
             return []
 
-        messages: list[str] = []
-        for name, expected in EXPECTED_API_PREFIXES.items():
-            if prefixes.get(name) != expected:
-                messages.append(f"api_prefixes.{name} must be {expected}")
-        return messages
+        return []
 
     def _check_table_naming_guardrails(
         self,

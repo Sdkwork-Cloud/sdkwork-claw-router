@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easytrader-cn-broker@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easytrader_cn_broker",
+  "skill": {
+    "id": 69705,
+    "skillKey": "clawhub-easytrader-cn-broker",
+    "name": "Easytrader Cn Broker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easytrader-cn-broker",
+    "url": "https://clawhub.ai/skills/easytrader-cn-broker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easytrader-cn-broker-379ce4f5e1a58064.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供A股券商客户端自动化交易能力，支持雪球、芸享等多券商登录与交易操作封装，涵盖账户余额查询、持仓管理、委托下单及组合跟随等核心功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangweigang-jpg",
+      "userId": "s17ewpx5vannmrm5gje4p746kd83hyk1",
+      "displayName": "Tang Weigang",
+      "image": "https://avatars.githubusercontent.com/u/259277235?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1776954326350,
+      "changelog": "v0.3.3: bilingual metadata injected. H1 shows A 股券商自动交易; tagline replaced with skill-specific Chinese hook; tags upgraded to Level 1-4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4b3d763103f5b14ef0f24b3360c621e7d8bc04d32ec5c0bba3af9df2c21b890"
+}

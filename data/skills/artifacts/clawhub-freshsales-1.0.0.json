@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freshsales@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freshsales",
+  "skill": {
+    "id": 50582,
+    "skillKey": "clawhub-freshsales",
+    "name": "Freshsales"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freshsales",
+    "url": "https://clawhub.ai/skills/freshsales",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freshsales-b51054f3372bebab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Freshsales CRM integration — manage contacts, leads, deals, accounts, tasks, and sales sequences via the Freshsales API. Track deal pipelines, automate lead..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 495,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772592769213,
+      "changelog": "Freshsales CRM integration skill — initial release.\n\n- Manage contacts, leads, deals, accounts, tasks, and sales sequences using the Freshsales API.\n- Includes tracking of deal pipelines, automated lead assignments, activity logging, and sales reporting.\n- Designed for Python 3.10+; no external dependencies (stdlib only).\n- CLI commands for all major Freshsales CRM operations with JSON or human-readable output.\n- No data stored locally; all requests made directly to Freshsales.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3123a3e3dfc0f3f853aa8f7b3f15e63b974a25b104117d329f75833aa4d69da9"
+}

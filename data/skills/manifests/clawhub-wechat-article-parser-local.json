@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66372,
+  "uuid": "skill-clawhub-wechat-article-parser-local",
+  "skillKey": "clawhub-wechat-article-parser-local",
+  "name": "Wechat Article Parser Local",
+  "summary": "解析微信公众号文章，提取标题、作者、正文内容、图片等信息。当用户发送微信公众号链接（mp.weixin.qq.com）并希望获取文章内容、摘要或保存时触发。支持自动提取内容并可选保存到飞书表格。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_parser_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reknottycat",
+      "features": [
+        "解析微信公众号文章，提取标题、作者、正文内容、图片等信息。当用户发送微信公众号链接（mp.weixin.qq.com）并希望获取文章内容、摘要或保存时触发。支持自动提取内容并可选保存到飞书表."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-parser-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53971979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-parser-local",
+      "url": "https://clawhub.ai/skills/wechat-article-parser-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-parser-local",
+    "url": "https://clawhub.ai/skills/wechat-article-parser-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-parser-local-cebcb5096cbe7f4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-parser-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-parser-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b5819f644cddd2c91cd15317072d195504d6c5f9b4cd59d2357f32aed178bf5",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T20:02:47.628Z"
+}

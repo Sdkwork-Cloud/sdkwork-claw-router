@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erp-integration-analysis@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erp_integration_analysis",
+  "skill": {
+    "id": 13339,
+    "skillKey": "clawhub-erp-integration-analysis",
+    "name": "Erp Integration Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erp-integration-analysis",
+    "url": "https://clawhub.ai/skills/erp-integration-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erp-integration-analysis-7940c65a8c1ca41b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze ERP system integration for construction data flows. Map and optimize data flows between ERP modules"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1771168813823,
+      "changelog": "ERP Integration Analysis v2.1.0\n\n- Added comprehensive Python data model for mapping and analyzing ERP module data flows, integration points, and dependencies.\n- Incorporated standardized ERP modules and integration methods specific to construction organizations.\n- Introduced automated detection of critical data flows, module dependencies, and bottleneck identification.\n- Generates actionable recommendations and data flow diagrams to optimize integration between ERP modules and external systems.\n- Documentation references updated with quick-start code examples and relevant book citation for methodology.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88610d7f77618cc417018666a20fa5dcc961136d08c025a67e717689240c7d84"
+}

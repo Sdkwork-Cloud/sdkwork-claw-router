@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68201,
+  "uuid": "skill-clawhub-futures-radar",
+  "skillKey": "clawhub-futures-radar",
+  "name": "Futures Radar",
+  "summary": "期货与大宗商品行情监控工具。当用户询问「原油」「黄金」「白银」「天然气」「铜」「期货行情」「大宗商品」「WTI」「布伦特」「金银比」「油金比」时使用。使用 Yahoo Finance chart API 获取实时期货数据。📢微信公众号：PM熊叔（打造一人公司的投研团队）",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futures_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bear Xiong",
+      "features": [
+        "期货与大宗商品行情监控工具。当用户询问「原油」「黄金」「白银」「天然气」「铜」「期货行情」「大宗商品」「WTI」「布伦特」「金银比」「油金比」时使用。使用 Yahoo Finance cha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/futures-radar@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5952306?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "futures-radar",
+      "url": "https://clawhub.ai/skills/futures-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futures-radar",
+    "url": "https://clawhub.ai/skills/futures-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futures-radar-09ca2cf2c79e10cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/futures-radar@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-futures-radar-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc317c7e863712384dc09cc7db9a423dd149b1b8a642dd5bbfd0f7a438fbb560",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:26:03.701Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web3-daily@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web3_daily",
+  "skill": {
+    "id": 28360,
+    "skillKey": "clawhub-web3-daily",
+    "name": "Web3 Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web3-daily",
+    "url": "https://clawhub.ai/skills/web3-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web3-daily-1e140e15d6d78607.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web3 public research digest service. Provides daily digest with macro news, KOL sentiment, and real-time market data (BTC/ETH prices, Fear & Greed Index). No..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexander10011",
+      "userId": "s175jqp8a4cz486fak5mecq16x83p6tb",
+      "displayName": "alexander10011",
+      "image": "https://avatars.githubusercontent.com/u/194767108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1774947352054,
+      "changelog": "v2.1.1: Document /digest/compact as primary compact endpoint.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cf388dc8a2c1b824a6ff363b69c61cbe3e0caa29467f62bf5d9f76a6676ae19"
+}

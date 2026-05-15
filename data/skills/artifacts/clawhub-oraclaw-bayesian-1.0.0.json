@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oraclaw-bayesian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclaw_bayesian",
+  "skill": {
+    "id": 53168,
+    "skillKey": "clawhub-oraclaw-bayesian",
+    "name": "Oraclaw Bayesian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclaw-bayesian",
+    "url": "https://clawhub.ai/skills/oraclaw-bayesian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclaw-bayesian-a96416f75e055edb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bayesian inference engine for AI agents. Update beliefs with new evidence. Prior + evidence = posterior. Multi-factor prediction with calibration tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatsonyourmind",
+      "userId": "s1742adj1ngn7vhc26tve4753183j86s",
+      "displayName": "Whatsonyourmind",
+      "image": "https://avatars.githubusercontent.com/u/248369826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774612950188,
+      "changelog": "- Initial release of the Bayesian inference engine for AI agents.\n- Allows belief updating using weighted evidence factors and prior probabilities.\n- Supports multi-factor predictions with calibration tracking.\n- Provides a `predict_bayesian` tool for combining evidence into posterior estimates.\n- Includes guidance for best practices and tracking accuracy over time.\n- Freemium pricing: $0.02 per inference; 3,000 free calls/month with API key.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:639adf97b50cedf51ef9e093f6cfb5d97f16207248a7c726f6be01af93d50ed1"
+}

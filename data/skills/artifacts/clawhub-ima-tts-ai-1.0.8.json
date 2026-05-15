@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ima-tts-ai@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ima_tts_ai",
+  "skill": {
+    "id": 48670,
+    "skillKey": "clawhub-ima-tts-ai",
+    "name": "IMA AI Text To Speech — seed-tts, DouBao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ima-tts-ai",
+    "url": "https://clawhub.ai/skills/ima-tts-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ima-tts-ai-2dc36524725ba1e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert text, scripts, and captions into natural voiceovers for videos, explainers, product demos, and social posts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allenfancy-gan",
+      "userId": "s17etzvvhp65ybcxjyj408z1nx83hx8t",
+      "displayName": "allenfancy-gan",
+      "image": "https://avatars.githubusercontent.com/u/224295706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 733,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1774852365866,
+      "changelog": "IMA TTS AI 1.0.8 — Changelog\n\n- Added detailed documentation file (`SKILL-DETAIL.md`) covering API usage, all parameters, and best practices.\n- Introduced `!keywords.txt` file to provide extended keyword support and improve skill discoverability.\n- No changes to logic or interface; this update focuses on completeness and clarity of reference material.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d89c98f098f5483483aaf6dc4f687aa6ed50eea51d889dbd36049fede5975a9c"
+}

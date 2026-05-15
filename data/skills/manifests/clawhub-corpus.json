@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20186,
+  "uuid": "skill-clawhub-corpus",
+  "skillKey": "clawhub-corpus",
+  "name": "Corpus",
+  "summary": "Access a user's Corpus library from OpenClaw. Use when the user asks to search saved content, fetch item details, save links into Corpus, or create reminders...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.corpus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "doninocode",
+      "features": [
+        "Access a user's Corpus library from OpenClaw",
+        "Use when the user asks to search saved content, fetch item details, save links into Corpus, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/corpus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5225584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "corpus",
+      "url": "https://clawhub.ai/skills/corpus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "corpus",
+    "url": "https://clawhub.ai/skills/corpus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/corpus-6b17b8fcc411a533.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/corpus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-corpus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6968e767750529fe8ff14a500f4dadba995eaa815ef96251767a08dc0f925e58",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T02:31:24.547Z"
+}

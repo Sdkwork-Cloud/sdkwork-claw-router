@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hoverbot-chatbot@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hoverbot_chatbot",
+  "skill": {
+    "id": 15787,
+    "skillKey": "clawhub-hoverbot-chatbot",
+    "name": "Hoverbot Chatbot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hoverbot-chatbot",
+    "url": "https://clawhub.ai/skills/hoverbot-chatbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hoverbot-chatbot-f1fcf5960b1225e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, embed, and manage AI chatbots for any website in under 2 minutes using HoverBot."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goncharenko",
+      "userId": "publishers:goncharenko",
+      "displayName": "Vitaly Goncharenko",
+      "image": "https://avatars.githubusercontent.com/u/3524688?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 761,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771221727328,
+      "changelog": "- Removed environment variable and binary requirements from the skill metadata.\n- Cleaned up the metadata section; it is now empty under `openclaw`.\n- No changes to features or user-facing documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:77923deff04a827cef07da0e906fff1f3f95770abf757e96b9a90953f7a535c5"
+}

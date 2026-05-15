@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22171,
+  "uuid": "skill-clawhub-clawbsky",
+  "skillKey": "clawhub-clawbsky",
+  "name": "Clawbsky",
+  "summary": "Advanced Bluesky CLI with support for media (images/video), thread creation, and automated growth tools like non-mutual following cleanup.",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbsky",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sugatai",
+      "features": [
+        "Advanced Bluesky CLI with support for media (images/video), thread creation, and automated grow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawbsky@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38208505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawbsky",
+      "url": "https://clawhub.ai/skills/clawbsky"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbsky",
+    "url": "https://clawhub.ai/skills/clawbsky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbsky-1a7c6853b69a21a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawbsky@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawbsky-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8862408b41efffba927c93b87faa2781f3eac642bef04f963d348ef2fda93791",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T16:49:16.422Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38915,
+  "uuid": "skill-clawhub-llm-wiki-obsidian",
+  "skillKey": "clawhub-llm-wiki-obsidian",
+  "name": "llm-wiki",
+  "summary": "Use when the user is working inside an Obsidian or markdown vault and wants to ingest sources, query accumulated knowledge, or maintain a Karpathy-style LLM...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_wiki_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGICaptain",
+      "features": [
+        "Use when the user is working inside an Obsidian or markdown vault and wants to ingest sources,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-wiki-obsidian@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43975677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-wiki-obsidian",
+      "url": "https://clawhub.ai/skills/llm-wiki-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-wiki-obsidian",
+    "url": "https://clawhub.ai/skills/llm-wiki-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-wiki-obsidian-b93733d260063416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-wiki-obsidian@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-wiki-obsidian-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f3aaa553081d6b7af1f29b1b35d588a5cb7e655b4240f62437decffe4926db",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:24:28.324Z"
+}

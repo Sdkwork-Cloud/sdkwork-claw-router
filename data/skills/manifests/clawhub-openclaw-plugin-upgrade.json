@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60007,
+  "uuid": "skill-clawhub-openclaw-plugin-upgrade",
+  "skillKey": "clawhub-openclaw-plugin-upgrade",
+  "name": "Openclaw Plugin Upgrade",
+  "summary": "OpenClaw 插件升级助手。当用户说「升级 qqbot 插件」「更新 openclaw-qqbot」「qqbot 更新」「帮我升级插件」「升级 openclaw 插件」等相关语句时激活。支持通用 openclaw 插件（任意 npm 包）升级，以及 QQ 机器人插件（@tencent-connect/open...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_plugin_upgrade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ryanlee-gemini",
+      "features": [
+        "OpenClaw 插件升级助手。当用户说「升级 qqbot 插件」「更新 openclaw-qqbot」「qqbot 更新」「帮我升级插件」「升级 openclaw 插件」等相关语句时激活。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-plugin-upgrade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181323138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-plugin-upgrade",
+      "url": "https://clawhub.ai/skills/openclaw-plugin-upgrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-plugin-upgrade",
+    "url": "https://clawhub.ai/skills/openclaw-plugin-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-plugin-upgrade-3d43a16df824592a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-plugin-upgrade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-plugin-upgrade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37fcc33db20c67bffadf3559f08069358c1a4acd4f3c2be5d1c981a8fa8c4efa",
+      "artifactSizeBytes": 2824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:51:18.329Z"
+}

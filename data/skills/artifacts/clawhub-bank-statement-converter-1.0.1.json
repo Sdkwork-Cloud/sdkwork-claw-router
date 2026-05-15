@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bank-statement-converter@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_statement_converter",
+  "skill": {
+    "id": 20002,
+    "skillKey": "clawhub-bank-statement-converter",
+    "name": "Bank Statement Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-statement-converter",
+    "url": "https://clawhub.ai/skills/bank-statement-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-statement-converter-cfc6910aea4dab42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert PDF bank statements to CSV or JSON using API calls with support for password-protected files and processing status checks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ballerindustries",
+      "userId": "s172jpqt2jxp7s24tana8frwys83ksw9",
+      "displayName": "Angus Cheng",
+      "image": "https://avatars.githubusercontent.com/u/2443683?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 569,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772256218536,
+      "changelog": "- Minor documentation updates for clarity and organization.\n- Added a concise \"Requirements\" section listing BANKSTATEMENT_API_KEY.\n- Reformatted headings and code sections for improved readability.\n- Adjusted instructional steps for setup and usage.\n- No functional or code changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d8f13bfb23671918edf9a9ced24c10b86c6a74455a3815c000a462cdab609fb5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-research-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_2",
+  "skill": {
+    "id": 22763,
+    "skillKey": "clawhub-deep-research-2",
+    "name": "Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-2",
+    "url": "https://clawhub.ai/skills/deep-research-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-2-a5f9ad03b33ab26e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user requests comprehensive research, deep investigation, or detailed academic-style reports on any topic. Trigger phrases..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kongyo2",
+      "userId": "s175n9q6hjkfya06rmzh66q4vd84br56",
+      "displayName": "kongyo2",
+      "image": "https://avatars.githubusercontent.com/u/81297811?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 442,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772341344287,
+      "changelog": "Initial version of the deep-research skill, enabling rigorous, comprehensive academic-style investigation.\n\n- Produces multi-thousand word markdown reports with extensive citations.\n- Emphasizes thoroughness, accuracy, and source verification—prioritizing rigor over speed.\n- Implements a strict research workflow: topic decomposition, detailed planning, systematic multilingual web search, and critical analysis.\n- Requires direct access to full web pages (not just snippets) and evaluation of source credibility.\n- Encourages multi-lingual searches and cross-referencing to overcome information silos and biases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:34fbde4897870a811b84040f9efd9309888e4d66fef480d6faaa5e5a27193bb3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anvil-mesh@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anvil_mesh",
+  "skill": {
+    "id": 28916,
+    "skillKey": "clawhub-anvil-mesh",
+    "name": "Anvil Mesh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anvil-mesh",
+    "url": "https://clawhub.ai/skills/anvil-mesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anvil-mesh-b8da502fb800cbb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query the Anvil mesh network for live BSV data feeds, verify transactions via SPV, and discover HTTP 402 micropayment services. Non-custodial, sub-cent payme..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bsvanon",
+      "userId": "publishers:bsvanon",
+      "displayName": "BSVanon",
+      "image": "https://avatars.githubusercontent.com/u/140332993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1774055266727,
+      "changelog": "Add GitHub + npm links, repo now public",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2e2dfe4f7a8f477f94135ac303b753fa46e9a75c14b724598946cb710ac5c7c"
+}

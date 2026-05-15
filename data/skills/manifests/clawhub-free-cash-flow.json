@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33141,
+  "uuid": "skill-clawhub-free-cash-flow",
+  "skillKey": "clawhub-free-cash-flow",
+  "name": "Free Cash Flow",
+  "summary": "Model free cash flow to evaluate project or business value. Use for investment decisions, valuation, and understanding cash dynamics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_cash_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Model free cash flow to evaluate project or business value",
+        "Use for investment decisions, valuation, and understanding cash dynamics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-cash-flow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-cash-flow",
+      "url": "https://clawhub.ai/skills/free-cash-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-cash-flow",
+    "url": "https://clawhub.ai/skills/free-cash-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-cash-flow-c3994eaff5e3e60f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-cash-flow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-cash-flow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d03cebfcf7c7a4810b5d624324ea68bcd0fbba276fa785462811b50d779736fb",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:05:09.157Z"
+}

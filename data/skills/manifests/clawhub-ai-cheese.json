@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50386,
+  "uuid": "skill-clawhub-ai-cheese",
+  "skillKey": "clawhub-ai-cheese",
+  "name": "A.I. Cheese",
+  "summary": "Send paid messages to real humans via the A.I. Cheese platform (aicheese.app). Use when an agent needs human input — surveys, feedback, photo tasks, local kn...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_cheese",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "locjonz",
+      "features": [
+        "Send paid messages to real humans via the A.I",
+        "Cheese platform (aicheese.app)",
+        "Use when an agent needs human input — surveys, feedback, photo tasks, local kn..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-cheese@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258533783?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-cheese",
+      "url": "https://clawhub.ai/skills/ai-cheese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-cheese",
+    "url": "https://clawhub.ai/skills/ai-cheese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-cheese-da6a352022f0ce63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-cheese@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-cheese-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8ed688675c6399afa0c9a7c89727c43971c5dcc0b8b5c66162f2529680a6aa2",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T04:39:34.154Z"
+}

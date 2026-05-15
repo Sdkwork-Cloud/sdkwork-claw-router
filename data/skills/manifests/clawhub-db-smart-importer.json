@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38763,
+  "uuid": "skill-clawhub-db-smart-importer",
+  "skillKey": "clawhub-db-smart-importer",
+  "name": "DB Smart Import",
+  "summary": "Intelligent database import from .csv and .sql dumps into MySQL, MariaDB, and SQLite. Analyzes schemas, parses SQL dumps, suggests column mappings based on c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_smart_importer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarbcs1-prog",
+      "features": [
+        "Intelligent database import from .csv and .sql dumps into MySQL, MariaDB, and SQLite",
+        "Analyzes schemas, parses SQL dumps, suggests column mappings based on c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/db-smart-importer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239288927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "db-smart-importer",
+      "url": "https://clawhub.ai/skills/db-smart-importer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-smart-importer",
+    "url": "https://clawhub.ai/skills/db-smart-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-smart-importer-4e0e830fed2c3bc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/db-smart-importer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-db-smart-importer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db90e416b4fc1b6ee055c7aa009c03bdb6d072269c6b5f2f457d1f1bf670c2e1",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T00:18:47.611Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73733,
+  "uuid": "skill-clawhub-retirecalc-beijing",
+  "skillKey": "clawhub-retirecalc-beijing",
+  "name": "仅适用于北京市企业职工基本养老保险退休金测算。支持依据北京政策参数计算基础养老金、个人账户养老金、过渡性养老金，并对未退休用户做未来缴费策略优化。",
+  "summary": "仅适用于北京市企业职工基本养老保险退休金测算。支持依据北京政策参数计算基础养老金、个人账户养老金、过渡性养老金，并对未退休用户做未来缴费策略优化。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retirecalc_beijing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "park-william",
+      "features": [
+        "仅适用于北京市企业职工基本养老保险退休金测算。支持依据北京政策参数计算基础养老金、个人账户养老金、过渡性养老金，并对未退休用户做未来缴费策略优化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retirecalc-beijing@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251719985?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retirecalc-beijing",
+      "url": "https://clawhub.ai/skills/retirecalc-beijing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retirecalc-beijing",
+    "url": "https://clawhub.ai/skills/retirecalc-beijing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retirecalc-beijing-b41ffd5719288900.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retirecalc-beijing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-retirecalc-beijing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba1e6c163ab2687d176f9424e013f478c013542877e6e1743871be552c2daf0a",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:13:10.762Z"
+}

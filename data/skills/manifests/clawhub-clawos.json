@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11756,
+  "uuid": "skill-clawhub-clawos",
+  "skillKey": "clawhub-clawos",
+  "name": "Founderless Agent Factory",
+  "summary": "Connect OpenClaw agents to Founderless Factory to submit startup ideas, vote, chat, and monitor autonomous AI-driven startup experiments in real time.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawos",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ciooo44",
+      "features": [
+        "Connect OpenClaw agents to Founderless Factory to submit startup ideas, vote, chat, and monitor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawos@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89748516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawos",
+      "url": "https://clawhub.ai/skills/clawos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawos",
+    "url": "https://clawhub.ai/skills/clawos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawos-e949dda5f1b5c405.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawos@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawos-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c149b777cf8ee7d9d34882314db1d233636ee1e7ce02cd31f85c6ad2127b9d1",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T08:19:25.454Z"
+}

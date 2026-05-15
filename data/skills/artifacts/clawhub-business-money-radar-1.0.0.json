@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-money-radar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_money_radar",
+  "skill": {
+    "id": 46611,
+    "skillKey": "clawhub-business-money-radar",
+    "name": "Business Money Radar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-money-radar",
+    "url": "https://clawhub.ai/skills/business-money-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-money-radar-626ca896d68a06e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes local businesses by category and location, analyzes their health and gaps, ranks by revenue opportunity, and generates targeted outreach and market o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777059204355,
+      "changelog": "v1.0.0 — Initial release\n\n- Scrapes every local business in any location and category using Apify.\n- Runs a full health diagnostic for each business, covering website, SEO, reviews, and social presence.\n- Calculates monthly revenue at risk and assigns an opportunity score for each business.\n- Detects and ranks specific business gaps (e.g., no website, poor reviews, dead social).\n- Generates outreach messages with revenue impact estimates tailored to each business.\n- Produces a local market overview video via InVideo AI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3cdfe1f1edc9ebbd836fdd790ee501ce3f9f1c32b8e97bd37db458c84aa99bd"
+}

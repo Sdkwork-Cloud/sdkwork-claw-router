@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-auto-poster-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_auto_poster_cn",
+  "skill": {
+    "id": 73395,
+    "skillKey": "clawhub-content-auto-poster-cn",
+    "name": "内容自动发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-auto-poster-cn",
+    "url": "https://clawhub.ai/skills/content-auto-poster-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-auto-poster-cn-03504f40775461c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动发布内容到多个平台，支持微信公众号、微博、知乎等平台定时发布。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776071556259,
+      "changelog": "Initial release.\n\n- Automatically publishes content to multiple platforms, including WeChat, Weibo, and Zhihu\n- Supports scheduled publishing at optimal times\n- Provides analytics on views, likes, and comments\n- Automatically adapts content formatting for each platform",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59b39a6c3cc3c27767b9dcc923aa49b3b4d6e0bfff86dbe8a2a1f0b5bd51d353"
+}

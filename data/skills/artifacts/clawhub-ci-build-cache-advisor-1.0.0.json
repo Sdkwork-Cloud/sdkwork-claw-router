@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ci-build-cache-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ci_build_cache_advisor",
+  "skill": {
+    "id": 53800,
+    "skillKey": "clawhub-ci-build-cache-advisor",
+    "name": "Ci Build Cache Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ci-build-cache-advisor",
+    "url": "https://clawhub.ai/skills/ci-build-cache-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ci-build-cache-advisor-26b20979e031ceb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Optimize CI/CD build caching across GitHub Actions, GitLab CI, CircleCI, and Jenkins — analyze cache hit rates, recommend cache keys, and reduce build times."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777592874300,
+      "changelog": "Initial release of CI Build Cache Advisor.\n\n- Analyzes and optimizes CI/CD build caching for GitHub Actions, GitLab CI, CircleCI, and Jenkins.\n- Identifies cache hit/miss issues and suggests cache key strategies.\n- Offers platform-specific recommendations and advanced techniques (Docker, Gradle, remote cache).\n- Helps reduce build times by maximizing cache effectiveness.\n- Provides clear output with actionable insights and projected improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8200b4e5d39db23c246a7550914e18452c63a78434a1025d250fb6563dec8b7"
+}

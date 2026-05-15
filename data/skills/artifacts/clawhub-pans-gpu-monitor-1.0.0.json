@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pans-gpu-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pans_gpu_monitor",
+  "skill": {
+    "id": 66704,
+    "skillKey": "clawhub-pans-gpu-monitor",
+    "name": "Pans Gpu Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pans-gpu-monitor",
+    "url": "https://clawhub.ai/skills/pans-gpu-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pans-gpu-monitor-41e2a920fac9c23a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI算力销售GPU监控工具。接入客户GPU使用数据，生成用量/效率周报，识别优化机会。 支持成本分析、异常告警、容量规划建议。 触发词：GPU监控, 用量报告, 效率分析, 成本优化, 周报生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dashiming",
+      "userId": "s175tbqc6kczpya7xzy4rksefs83p4hp",
+      "displayName": "dashiming",
+      "image": "https://avatars.githubusercontent.com/u/28342384?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776404510452,
+      "changelog": "- Initial release of pans-gpu-monitor: a GPU usage monitoring tool for AI compute sales teams.\n- Generates weekly structured reports on customer GPU usage, efficiency, and cost.\n- Automatically identifies resource optimization opportunities and risk signals.\n- Supports cost breakdown, anomaly alerts, and capacity planning suggestions.\n- CLI interactive data collection and Markdown formatted output report.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1c3f1f4dfdc2a92495eefcb5f3bff947001631a0c177260d6b168671eb35c10"
+}

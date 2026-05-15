@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48118,
+  "uuid": "skill-clawhub-minimax-team-rules",
+  "skillKey": "clawhub-minimax-team-rules",
+  "name": "MINIMAX TEAM RULES",
+  "summary": "Shared MiniMax / MMX CLI operating rules for XiaoMei, DaLong, YuanQi, and the main coordinator. Trigger this skill whenever the task involves MiniMax, minima...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_team_rules",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "辉哥",
+      "features": [
+        "Shared MiniMax / MMX CLI operating rules for XiaoMei, DaLong, YuanQi, and the main coordinator",
+        "Trigger this skill whenever the task involves MiniMax, minima..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-team-rules@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197358991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-team-rules",
+      "url": "https://clawhub.ai/skills/minimax-team-rules"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-team-rules",
+    "url": "https://clawhub.ai/skills/minimax-team-rules",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-team-rules-adb49ad364ad9ebf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-team-rules@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-team-rules-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05c89e94422f4e49b0593d446b0668c4a28b957e16a0889388d332263c9f637c",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:29:12.735Z"
+}

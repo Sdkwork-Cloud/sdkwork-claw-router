@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/near-qr-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.near_qr_skill",
+  "skill": {
+    "id": 16974,
+    "skillKey": "clawhub-near-qr-skill",
+    "name": "Near Qr Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "near-qr-skill",
+    "url": "https://clawhub.ai/skills/near-qr-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/near-qr-skill-eb4f03afc796dae7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate QR codes for NEAR addresses and payment requests, and read NEAR QR codes from images."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ussyalfaks",
+      "userId": "publishers:ussyalfaks",
+      "displayName": "ussyalfaks",
+      "image": "https://avatars.githubusercontent.com/u/82191216?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 832,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770889875467,
+      "changelog": "- Initial release of near-qr-code skill.\n- Generate QR codes for NEAR account addresses.\n- Create QR codes for NEAR payment requests, including recipient, amount, and optional memo.\n- Read and decode NEAR QR codes from image files, extracting address or payment details as JSON.\n- Includes command-line interface for all functions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4555fc3d85a46c0f3627d37202a97fd8953dc7a2f542773f909d596073039e49"
+}

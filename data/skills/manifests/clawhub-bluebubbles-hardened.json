@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46283,
+  "uuid": "skill-clawhub-bluebubbles-hardened",
+  "skillKey": "clawhub-bluebubbles-hardened",
+  "name": "Bluebubbles Hardened",
+  "summary": "Build or update the BlueBubbles external channel plugin for OpenClaw (extension package, REST send/probe, webhook inbound).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluebubbles_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Build or update the BlueBubbles external channel plugin for OpenClaw (extension package, REST s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bluebubbles-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bluebubbles-hardened",
+      "url": "https://clawhub.ai/skills/bluebubbles-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluebubbles-hardened",
+    "url": "https://clawhub.ai/skills/bluebubbles-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluebubbles-hardened-d9288097f032678a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bluebubbles-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bluebubbles-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:749005e98a358a7d900dad0e68d12d1bbd935ad2541e637c36af94c0c2329109",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T23:34:49.559Z"
+}

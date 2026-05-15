@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentads@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentads",
+  "skill": {
+    "id": 42917,
+    "skillKey": "clawhub-agentads",
+    "name": "Agent Ads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentads",
+    "url": "https://clawhub.ai/skills/agentads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentads-f6eadeed306e3c8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Subscribe to Agent Ads to get intent-matched humans invited to your XMTP group on Base, paying only in USDC per accepted invite (no forced adds)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fweekshow",
+      "userId": "s17am116cwncwf3xs6zdj1tptd8408jw",
+      "displayName": "Mateo",
+      "image": "https://avatars.githubusercontent.com/u/196567463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775068145271,
+      "changelog": "Added MCP, A2A, and OASF discovery endpoints",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46094df65d96f856d3bffd4a9564232cf94cc9bff513ab0e6553628ee28b9792"
+}

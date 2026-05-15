@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weeko@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weeko",
+  "skill": {
+    "id": 33713,
+    "skillKey": "clawhub-weeko",
+    "name": "Weeko"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weeko",
+    "url": "https://clawhub.ai/skills/weeko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weeko-33f6b7a6ed22ff3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Weeko CLI commands for bookmark management. Search, add, update, delete bookmarks. Create and organize groups. Batch operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "occupy5",
+      "userId": "s17e29nx918n0pe2pzc8k3hgq183hx3a",
+      "displayName": "Silas",
+      "image": "https://avatars.githubusercontent.com/u/16299493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1776327968631,
+      "changelog": "Rewrite: CLI-based skill with TOON format, full command reference, best practices for AI agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db2f881392bf0a447248e5cdaf9f66a1b64101464c9a27f635f5aa8f6642ef77"
+}

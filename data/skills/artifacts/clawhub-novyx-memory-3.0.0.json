@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novyx-memory@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novyx_memory",
+  "skill": {
+    "id": 51654,
+    "skillKey": "clawhub-novyx-memory",
+    "name": "Novyx Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novyx-memory",
+    "url": "https://clawhub.ai/skills/novyx-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novyx-memory-cdece62cb27ee64c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enterprise-grade persistent memory for AI agents — rollback, audit trails, knowledge graph, governed actions, time-travel debugging, and 60+ commands coverin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "novyxlabs",
+      "userId": "publishers:novyxlabs",
+      "displayName": "novyxlabs",
+      "image": "https://avatars.githubusercontent.com/u/245925702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773714346633,
+      "changelog": "- Major release introducing version 3.0.0 of Novyx Memory.\n- Adds comprehensive enterprise-grade memory management for AI agents, including rollback, cryptographic audit trails, knowledge graph, governed actions, and time-travel debugging.\n- Over 60 commands now available, covering memory, drafts, multi-agent context spaces, eval scoring, execution tracing, and policy-controlled actions.\n- Automatic behaviors include context auto-recall, persistent message saving, trivial message skipping, and context de-duplication.\n- Extensive documentation now details all commands, features, and differentiators versus other memory skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3e657f0fa20686557e8cb54ceb7639c3365e79cf6b8b5ea7aa09b86314e11d5"
+}

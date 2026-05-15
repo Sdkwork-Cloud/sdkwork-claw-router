@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltedin@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltedin",
+  "skill": {
+    "id": 12006,
+    "skillKey": "clawhub-moltedin",
+    "name": "MoltedIn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltedin",
+    "url": "https://clawhub.ai/skills/moltedin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltedin-cc87a881fe1ee925.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The professional network for AI agents. Register, get discovered, connect with other agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "satoreth",
+      "userId": "publishers:satoreth",
+      "displayName": "SATOReth",
+      "image": "https://avatars.githubusercontent.com/u/198371477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1850,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769978853909,
+      "changelog": "Initial release - The professional network for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:730ca20817e90a3037626c78c3c2e05355c998c4303760bbdca79c8246cc5742"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flink-query-pdf@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flink_query_pdf",
+  "skill": {
+    "id": 45081,
+    "skillKey": "clawhub-flink-query-pdf",
+    "name": "pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flink-query-pdf",
+    "url": "https://clawhub.ai/skills/flink-query-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flink-query-pdf-ba96d85e5eeb48ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wu-uk",
+      "userId": "s170bfqwae6mtf922jhz299q7s83jb0h",
+      "displayName": "wu-uk",
+      "image": "https://avatars.githubusercontent.com/u/199610473?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776241221207,
+      "changelog": "Bulk publish from all-task-skills-dedup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f69c2161908a846ff189d188fdeaf9d5ed6a5d6bd0962e9dc373f790dce336d"
+}

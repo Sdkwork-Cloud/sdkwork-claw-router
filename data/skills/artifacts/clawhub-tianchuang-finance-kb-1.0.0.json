@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianchuang-finance-kb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianchuang_finance_kb",
+  "skill": {
+    "id": 71946,
+    "skillKey": "clawhub-tianchuang-finance-kb",
+    "name": "myskill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianchuang-finance-kb",
+    "url": "https://clawhub.ai/skills/tianchuang-finance-kb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianchuang-finance-kb-abf44b6913465090.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供天创财务相关文档的严格逐字检索，返回精准原文或“无”，不做解释和修改，仅限中文内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jizhidemu52",
+      "userId": "s17aty73ftf1hxjv2z9xhjef4s841csd",
+      "displayName": "Jizhidemu52",
+      "image": "https://avatars.githubusercontent.com/u/121356503?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773889786900,
+      "changelog": "- Initial release of the Tianchuang Finance Knowledge Base Skill.\n- Enables strict document retrieval from Tianchuang Financial’s 8 official PDF policy documents.\n- Returns only verbatim matching Chinese text for queries; otherwise replies with \"无\".\n- No summaries, reasoning, or alterations to the retrieved content.\n- Automatically triggers on finance-related questions with defined keywords.\n- Maintains complete fidelity to source materials, prioritizing strong matches.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4fb285049ea8afab35f64d5922e7af0ee45604d7a70c3ecb25744d600116cb4e"
+}

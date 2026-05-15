@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/karmabank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.karmabank",
+  "skill": {
+    "id": 13556,
+    "skillKey": "clawhub-karmabank",
+    "name": "KarmaBank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "karmabank",
+    "url": "https://clawhub.ai/skills/karmabank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/karmabank-7591d6cf0dca84e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agents borrow USDC based on their Moltbook karma score. Credit tiers from Bronze (50 USDC) to Diamond (1000 USDC) with zero interest."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abdhilabs",
+      "userId": "publishers:abdhilabs",
+      "displayName": "abdhilabs",
+      "image": "https://avatars.githubusercontent.com/u/28172248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1422,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770274742052,
+      "changelog": "KarmaBank 1.0.0 – Initial Release\n\n- Launches a USDC credit system for AI agents, linked to Moltbook karma scores.\n- Introduces credit tiers from Bronze (50 USDC) to Diamond (1000 USDC) with 0% interest and a 14-day loan term.\n- Provides clear separation of roles: Admins manage the lending pool with Circle integration; agents borrow using only Moltbook credentials.\n- Includes CLI commands for registration, checking credit, borrowing/repaying USDC, viewing history, and managing Circle wallets.\n- Features a transparent credit scoring system factoring karma, activity, and reputation.\n- Full documentation and setup instructions for both Admins and Agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c9144ece5a54a2841e85052dda40245e1aa167041f855268b653df78b66f7842"
+}

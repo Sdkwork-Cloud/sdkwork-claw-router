@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27170,
+  "uuid": "skill-clawhub-test-01",
+  "skillKey": "clawhub-test-01",
+  "name": "dasfgg",
+  "summary": "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_01",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ide-rea",
+      "features": [
+        "Search the web using Baidu AI Search Engine (BDSE)",
+        "Use for live information, documentation, or research topics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-01@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30512600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-01",
+      "url": "https://clawhub.ai/skills/test-01"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-01",
+    "url": "https://clawhub.ai/skills/test-01",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-01-5fe3fd6ee69b25aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-01@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-01-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1befd11f5bccc6221a3451dac618a4eafe6e055c98c9dfa20f4a83e31ce409d",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T13:44:57.254Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-company-ciso-2-0-0@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_company_ciso_2_0_0",
+  "skill": {
+    "id": 62858,
+    "skillKey": "clawhub-ai-company-ciso-2-0-0",
+    "name": "Ai Company Ciso 2.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-company-ciso-2-0-0",
+    "url": "https://clawhub.ai/skills/ai-company-ciso-2-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-company-ciso-2-0-0-934a772bd8ceb074.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI公司首席信息安全官（CISO）技能包。STRIDE威胁建模、渗透测试、事件响应、合规审计、AI网关、零信任架构、NHI管理、CEO-EXEC危机直通接口安全协议、ENGR L4双重审批签裁、Guardrail与AI网关分层定义、STRIDE统一主导权、MTTD追踪、NHI策略制定、安全缺陷统一跟踪、Licen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnsmithfan",
+      "userId": "s17ar8yxm9wh64zhr7mr0xemcn84gs16",
+      "displayName": "JohnSmithfan",
+      "image": "https://avatars.githubusercontent.com/u/147225147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776596234500,
+      "changelog": "**ai-company-ciso-2-0-1 Changelog**\n\n- Introduced detailed separation between AI Gateway (CISO scope) and Guardrail (CTO scope), clarifying access control vs. content security functions.\n- Established CISO as the sole authority for STRIDE threat modeling and approval, resolving potential overlaps with CTO activities.\n- Added CEO-EXEC crisis direct channel protocol with strict CISO approval, new operation restrictions, and enhanced audit measures.\n- Implemented CTO+CISO dual approval workflow for production/architecture changes, including clear parallel review logic and explicit override/timeout handling.\n- Updated documentation to reflect new modules, stricter stratification of responsibilities, and improved compliance and risk mitigation procedures.\n- Added references to signed STRIDE assessment documents and the dual-approval process workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fcc7164f0f5a836fc8e78196fc9a0338d4ea15d5e69245c58438fbca7c4f8d7"
+}

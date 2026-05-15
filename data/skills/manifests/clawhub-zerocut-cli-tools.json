@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26914,
+  "uuid": "skill-clawhub-zerocut-cli-tools",
+  "skillKey": "clawhub-zerocut-cli-tools",
+  "name": "ZeroCut AI Video",
+  "summary": "Use ZeroCut CLI media and document tools. Invoke when user needs generate media, run ffmpeg/pandoc, sync resources, or save outputs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zerocut_cli_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smartdiana",
+      "features": [
+        "Use ZeroCut CLI media and document tools",
+        "Invoke when user needs generate media, run ffmpeg/pandoc, sync resources, or save outputs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zerocut-cli-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3676989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zerocut-cli-tools",
+      "url": "https://clawhub.ai/skills/zerocut-cli-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zerocut-cli-tools",
+    "url": "https://clawhub.ai/skills/zerocut-cli-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zerocut-cli-tools-60ad36f318edb6be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zerocut-cli-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zerocut-cli-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f7b7d255af79f4f29ce7aba27e8aff990c9943edc3ac73e79b93d1fb53f170e",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:41:46.562Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dynamix-gg@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dynamix_gg",
+  "skill": {
+    "id": 45953,
+    "skillKey": "clawhub-dynamix-gg",
+    "name": "Dynamix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dynamix-gg",
+    "url": "https://clawhub.ai/skills/dynamix-gg",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dynamix-gg-34d6cf895cbb67d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate the Dynamix Solana trading dashboard, purchase access, sign in, manage wallets, configure automated trading strategies, monitor live trades, and mana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dynamixgg",
+      "userId": "s17bmxqvn9vpnrfptzfq6gzhdn841zbk",
+      "displayName": "DynamixGG",
+      "image": "https://avatars.githubusercontent.com/u/264211419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775038375581,
+      "changelog": "Initial release of the Dynamix Solana Trading Dashboard skill.\n\n- Guides users through purchasing, activating, and accessing the Dynamix trading platform.\n- Explains how to manage Solana wallets, including generating and importing wallets securely.\n- Provides detailed steps for configuring trading parameters, entry/exit strategies, and bot operation.\n- Covers live trade monitoring, transaction history, portfolio tracking, and account management functions.\n- Includes information on platform plans, payments (via Solana), and an exclusive promo code for 15% off.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdb14689ea9aa9892a82ddccb41f37e26ab4f092bd841c93d4f5c38c7f179a44"
+}

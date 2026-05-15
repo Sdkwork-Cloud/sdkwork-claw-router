@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bing-ai-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bing_ai_video",
+  "skill": {
+    "id": 49097,
+    "skillKey": "clawhub-bing-ai-video",
+    "name": "Bing Ai Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bing-ai-video",
+    "url": "https://clawhub.ai/skills/bing-ai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bing-ai-video-98f14e992d4115d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate video clips into AI-edited videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for generating polished..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777866243813,
+      "changelog": "- Initial release of Bing AI Video skill.\n- Generate and edit videos using AI from raw MP4, MOV, AVI, or WebM clips up to 500MB.\n- Supports quick cloud-based processing (1–2 minutes) and returns 1080p MP4 files.\n- Handles uploads, editing prompts, export, and credits/status queries.\n- Works via remote GPU—no software to install. 100 free credits for new users.\n- Includes robust error handling, session management, and detailed workflow support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80f1b1aad196bc956386ce2f5967318430edf7aa8620fb6d953ad2e976b149d0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evolution-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolution_toolkit",
+  "skill": {
+    "id": 40685,
+    "skillKey": "clawhub-evolution-toolkit",
+    "name": "Evolution Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolution-toolkit",
+    "url": "https://clawhub.ai/skills/evolution-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolution-toolkit-3a36127e77149715.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides portable tools for agent self-improvement including session handoffs, reasoning style measurement, contradiction scanning, prediction logging, playb..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ergopitrez",
+      "userId": "s173artt53rch8zfavn6hy77dd83hx7z",
+      "displayName": "ergo",
+      "image": "https://avatars.githubusercontent.com/u/262429595?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774320386200,
+      "changelog": "v1.0 — 7 tools for AI agent self-improvement: session imprints, cognitive fingerprinting, contradiction scanning, prediction calibration, Socratic thinking partner, session coherence.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a6eef9d8518da6385fd08b0eafddebbb5a7856a5ee21a06ef1b804896bdc7e2"
+}

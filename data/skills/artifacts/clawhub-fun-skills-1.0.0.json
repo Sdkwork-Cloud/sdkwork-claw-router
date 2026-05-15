@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fun-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fun_skills",
+  "skill": {
+    "id": 70695,
+    "skillKey": "clawhub-fun-skills",
+    "name": "Fun Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fun-skills",
+    "url": "https://clawhub.ai/skills/fun-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fun-skills-b73c1bb961ab3ee4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供游戏管理、笑话生成、派对与儿童活动建议及多种娱乐工具，支持游戏跟踪和趣味互动。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris7ji",
+      "userId": "s17dj6b6e3bnv0a1vn1xsy1fs983rkd2",
+      "displayName": "JI",
+      "image": "https://avatars.githubusercontent.com/u/10844222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774727398400,
+      "changelog": "- Initial release of fun-skills (v1.0.0), a comprehensive entertainment skill collection.\n- Includes a full games management system for tracking video games, board games, party, and kids’ activities.\n- Adds a high-quality joke generation guide and templates.\n- Provides quick entertainment utilities: joke generator, number guessing, coin toss, and rock-paper-scissors scripts.\n- Features practical usage tips, templates, and best practice notes for planning fun activities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9341fd2f9b3a3ea3b7c2111c9c2cf8a683369ec192026beadf379c410fb9cce5"
+}

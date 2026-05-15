@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-agent-local@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_local",
+  "skill": {
+    "id": 17017,
+    "skillKey": "clawhub-self-improving-agent-local",
+    "name": "Self Improving Agent Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-local",
+    "url": "https://clawhub.ai/skills/self-improving-agent-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-local-341eb3106bb8411d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "healersss",
+      "userId": "publishers:healersss",
+      "displayName": "healersss",
+      "image": "https://avatars.githubusercontent.com/u/54985350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 796,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1771771818443,
+      "changelog": "- Major update: Comprehensive rewrite of the documentation for the self-improving agent skill.\n- Clearly describes all logging standards for learnings, errors, and feature requests, including detailed templates and metadata.\n- Outlines the continuous improvement workflow, including how and when to promote key learnings to project memory files.\n- Provides setup instructions for both OpenClaw and generic environments, including examples of workspace directory structure.\n- Explains inter-session communication features within OpenClaw for distributing learnings.\n- Adds explicit guidance for status management, entry resolution, and ID formatting conventions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:beed94d6f74c07c3b0a7cd96eee22138e5a69c86375ab99403ee9dc3a3590e0b"
+}

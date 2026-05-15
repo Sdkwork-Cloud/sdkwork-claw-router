@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8375,
+  "uuid": "skill-clawhub-lnbits-with-qrcode",
+  "skillKey": "clawhub-lnbits-with-qrcode",
+  "name": "LNBits Wallet wtih QR Code",
+  "summary": "Manage LNbits Lightning Wallet (Balance, Pay, Invoice)",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lnbits_with_qrcode",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James Tsetsekas",
+      "features": [
+        "Manage LNbits Lightning Wallet (Balance, Pay, Invoice)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lnbits-with-qrcode@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8147662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lnbits-with-qrcode",
+      "url": "https://clawhub.ai/skills/lnbits-with-qrcode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lnbits-with-qrcode",
+    "url": "https://clawhub.ai/skills/lnbits-with-qrcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lnbits-with-qrcode-8d7916e88bcbf284.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lnbits-with-qrcode@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lnbits-with-qrcode-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81fe5b844785b10625f8f20f7a68215b467f92d5a76bccbcde99126bb3c60415",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T00:18:55.863Z"
+}

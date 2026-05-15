@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbites@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbites",
+  "skill": {
+    "id": 11411,
+    "skillKey": "clawhub-clawdbites",
+    "name": "ClawdBites"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbites",
+    "url": "https://clawhub.ai/skills/clawdbites",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbites-0dd64fcd8c7eb938.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract recipes from Instagram reels. Use when a user sends an Instagram reel link and wants to get the recipe from the caption. Parses ingredients, instructions, and macros into a clean format."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylelol",
+      "userId": "publishers:kylelol",
+      "displayName": "kylelol",
+      "image": "https://avatars.githubusercontent.com/u/3771774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769476737720,
+      "changelog": "Initial release of clawdbites: Extract recipes from Instagram reels.\n\n- Parses Instagram reel captions and video audio to extract ingredients, instructions, and macros.\n- Ensures recipes are complete by automatically transcribing audio if instructions are missing from the caption.\n- Presents results in a clean, structured recipe format with source and macros.\n- Provides clear fallback and error messages if recipes are not detected.\n- Supports wishlist storage for saving untried recipes and integrates with meal-planner skills.\n- Infers ingredient quantities when not specified, ensuring recipes always contain measurements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e615806c967efa67d45dd95fe4508507c320dc70ad279bd14ac4710062fa8100"
+}

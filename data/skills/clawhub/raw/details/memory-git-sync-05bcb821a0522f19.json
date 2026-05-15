@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "memory-git-sync",
+    "displayName": "Smart Git Backup",
+    "summary": "Automates the backup of the OpenClaw workspace to a remote Git repository. Handles large file exclusions, validates git configuration, and performs intelligent sync with conflict resolution.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 910,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "createdAt": 1770990610998,
+    "updatedAt": 1778385589618
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1770990610998,
+    "changelog": "Initial release of memory-git-sync — a skill to automate workspace backup and synchronization with a remote Git repository.\n\n- Validates local Git configuration, user identity, remote 'origin', and permissions before syncing.\n- Automatically detects and excludes large files (>95MB) to prevent push failures.\n- Stages, commits (using timestamped or custom messages), pulls, and pushes changes with intelligent conflict handling.\n- Outputs all actions with structured, prefix-based logs for easy status parsing.\n- Auto-configures branch upstream/tracking on initial push.\n- Includes fallback handling for common errors and recovery scenarios.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "vemec",
+    "userId": "s170dxgwg7wbrtrax1ptgzccg583fskz",
+    "displayName": "vemec",
+    "image": "https://avatars.githubusercontent.com/u/839090?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385589618
+  }
+}

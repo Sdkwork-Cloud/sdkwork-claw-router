@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34861,
+  "uuid": "skill-clawhub-phos",
+  "skillKey": "clawhub-phos",
+  "name": "Phos",
+  "summary": "Phos integration. Manage data, records, and automate workflows. Use when the user wants to interact with Phos data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phos",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Phos integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Phos data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/phos@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "phos",
+      "url": "https://clawhub.ai/skills/phos"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phos",
+    "url": "https://clawhub.ai/skills/phos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phos-690e80907f3b7ad8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/phos@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-phos-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f41b24399fb68b032cd67412dc1df86b9b61e28cf6a27aa240268bc552e81313",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:51:39.650Z"
+}

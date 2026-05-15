@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aws-alert-handler@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aws_alert_handler",
+  "skill": {
+    "id": 48671,
+    "skillKey": "clawhub-aws-alert-handler",
+    "name": "AWS Alert Handler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aws-alert-handler",
+    "url": "https://clawhub.ai/skills/aws-alert-handler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aws-alert-handler-44064077838bfefa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Normalize Security Hub ASFF, Inspector v2, and CloudWatch alarm JSON into a consistent shape. Auto-unwraps SNS and EventBridge envelopes. Use when an AWS ale..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ggettert",
+      "userId": "s17bj3ze3bdgz5fv4m1dbjz8mn84wmhv",
+      "displayName": "Grace Gettert",
+      "image": "https://avatars.githubusercontent.com/u/9805362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778034482701,
+      "changelog": "Set proper display name (AWS Alert Handler, not auto-title-cased).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64c600992da48fe453c76a6476ca4d2fb8c5f12253c8fc29d4bd631a471920d4"
+}

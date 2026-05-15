@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/breadcrumb-generator@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breadcrumb_generator",
+  "skill": {
+    "id": 29221,
+    "skillKey": "clawhub-breadcrumb-generator",
+    "name": "breadcrumb-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breadcrumb-generator",
+    "url": "https://clawhub.ai/skills/breadcrumb-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breadcrumb-generator-b4cd315c94662f05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to add, optimize, or audit breadcrumb navigation. Also use when the user mentions \"breadcrumbs,\" \"breadcrumb trail,\" \"breadcrumb nav,\" \"b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 307,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774793360336,
+      "changelog": "Batch: masonry through footer-generator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f93ffc1e09495cd7295f053f732adacdd8b7dd37d860c48c7440990fee6fe23"
+}

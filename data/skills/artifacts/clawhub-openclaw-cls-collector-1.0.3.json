@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-cls-collector@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_cls_collector",
+  "skill": {
+    "id": 60482,
+    "skillKey": "clawhub-openclaw-cls-collector",
+    "name": "OpenClaw CLS Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-cls-collector",
+    "url": "https://clawhub.ai/skills/openclaw-cls-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-cls-collector-f9e06f668b48b241.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 可观测数据一键采集部署。当用户提到 OpenClaw 采集、CLS 采集部署、一键部署采集器时使用此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trumphuang",
+      "userId": "s174wte4paj7439nwd5fpcjgks83jv79",
+      "displayName": "trump",
+      "image": "https://avatars.githubusercontent.com/u/42159347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 359,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773759827638,
+      "changelog": "Simplify output: default to key-input flow for testing, one-liner for production, remove risk signals from description",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:beb6cf30c4f015ffc656c807d0a55e0091790534aa107f025389727c6862e4b5"
+}

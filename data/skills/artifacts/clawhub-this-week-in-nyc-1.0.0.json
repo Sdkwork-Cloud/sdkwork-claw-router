@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/this-week-in-nyc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.this_week_in_nyc",
+  "skill": {
+    "id": 44689,
+    "skillKey": "clawhub-this-week-in-nyc",
+    "name": "This Week In NYC"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "this-week-in-nyc",
+    "url": "https://clawhub.ai/skills/this-week-in-nyc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/this-week-in-nyc-a7cbdc2fdde9150c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find things to do in New York City this week."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zkirby",
+      "userId": "s17719frc7cm1w835cae3snb9h84ybfy",
+      "displayName": "Zachary Kirby",
+      "image": "https://avatars.githubusercontent.com/u/22308211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776303250397,
+      "changelog": "Initial release of This Week in NYC skill.\n- Find unique and fun events in New York City happening this week, tailored to user interests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3be621d80272d54fb6a8dcc6052cb6147b26bd331cb9be5f135016984ab5edb1"
+}

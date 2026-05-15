@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58907,
+  "uuid": "skill-clawhub-mx-stocks-screener",
+  "skillKey": "clawhub-mx-stocks-screener",
+  "name": "Intelligent Stocks Screener",
+  "summary": "基于东方财富数据库，支持通过自然语言输入筛选A港美股、基金、债券等多种资产，支持多元指标筛选，含技术面、消息面、基本面及市场情绪等，可用于全球资产速筛、跨市场监控、投资组合构建、策略回测等场景。返回结果包含数据说明及 csv 文件。Natural language screener for investment...",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_stocks_screener",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Financial AI Analyst",
+      "features": [
+        "基于东方财富数据库，支持通过自然语言输入筛选A港美股、基金、债券等多种资产，支持多元指标筛选，含技术面、消息面、基本面及市场情绪等，可用于全球资产速筛、跨市场监控、投资组合构建、策略回测等场."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-stocks-screener@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41098207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-stocks-screener",
+      "url": "https://clawhub.ai/skills/mx-stocks-screener"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-stocks-screener",
+    "url": "https://clawhub.ai/skills/mx-stocks-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-stocks-screener-795fdf50a569af0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-stocks-screener@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-stocks-screener-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b8aa545f40e5d444dc382b8c0fce113b66e244863acfa0364119e64da5459cd",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:19:24.495Z"
+}

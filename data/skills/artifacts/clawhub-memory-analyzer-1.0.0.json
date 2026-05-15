@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_analyzer",
+  "skill": {
+    "id": 16185,
+    "skillKey": "clawhub-memory-analyzer",
+    "name": "Memory Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-analyzer",
+    "url": "https://clawhub.ai/skills/memory-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-analyzer-ae6e7ecc87919d5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes conversation history, extracts user preferences and feedback, updates memory files automatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tevfikgulep",
+      "userId": "publishers:tevfikgulep",
+      "displayName": "TevfikGulep",
+      "image": "https://avatars.githubusercontent.com/u/33700963?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 887,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770930583177,
+      "changelog": "Initial release: Analyzes conversation history to enhance memory management.\n\n- Extracts user preferences and feedback from chat sessions.\n- Automatically updates memory files (MEMORY.md, AGENTS.md, USER.md, IDENTITY.md, SOUL.md) with insights.\n- Triggered by user feedback or preference statements.\n- Uses Google Gemini 3 Flash Preview model by default.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0e439996c97a755625ab3fedd28c7d04d3120a1527ea16a1fb47c6f1e344458c"
+}

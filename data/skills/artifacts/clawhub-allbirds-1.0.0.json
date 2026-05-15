@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/allbirds@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.allbirds",
+  "skill": {
+    "id": 67221,
+    "skillKey": "clawhub-allbirds",
+    "name": "Allbirds"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "allbirds",
+    "url": "https://clawhub.ai/skills/allbirds",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/allbirds-4afed26c712ad555.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Allbirds是硅谷可持续鞋履品牌，主打羊毛与桉树纤维材质，聚焦环保与舒适，采用DTC加批发渠道销售。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777367355619,
+      "changelog": "Allbirds 1.0.0 — 知名可持续鞋履品牌技能首次发布\n\n- 提供Allbirds品牌发展关键时间线，涵盖创业、产品发布、上市及后续变动\n- 详解采用羊毛、桉树纤维等环保材料的创新产品线与商业模式\n- 分析品牌护城河，包括材料专利、品牌定位及名人效应\n- 汇总重要数据：创立时间、IPO、估值与近年营收表现\n- 补充品牌趣事及创始人灵感故事，带来更多背景信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a54c710adeeb2c128f5873632819529121056f1f1a73353982710fae79161168"
+}

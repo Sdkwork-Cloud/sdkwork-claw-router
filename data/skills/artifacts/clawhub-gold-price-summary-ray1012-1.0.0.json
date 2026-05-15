@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gold-price-summary-ray1012@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gold_price_summary_ray1012",
+  "skill": {
+    "id": 66419,
+    "skillKey": "clawhub-gold-price-summary-ray1012",
+    "name": "Gold Price Summary (Ray1012)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gold-price-summary-ray1012",
+    "url": "https://clawhub.ai/skills/gold-price-summary-ray1012",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gold-price-summary-ray1012-8910290ef523ecbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "总结当日金价涨跌并给出投资建议。当用户询问金价、今日金价、黄金行情、黄金分析、黄金投资建议、金价走势时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ray1012",
+      "userId": "s179fz4mvq1rt2n2c2jmvvy1b183nyqe",
+      "displayName": "Ray1012",
+      "image": "https://avatars.githubusercontent.com/u/26787843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773817590410,
+      "changelog": "- Initial release of gold-price-summary.\n- Provides daily gold price summary including international and domestic prices, key price changes, and market trends.\n- Offers structured investment suggestions based on risk profiles.\n- Includes analysis of influencing factors like USD index, interest rates, and geopolitical risks.\n- Outputs a clear, structured daily gold report with data sources and disclaimers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86d84bbe4e9d27da0201340ff1896f03d604303de066894ed1fc0e73aff043a5"
+}

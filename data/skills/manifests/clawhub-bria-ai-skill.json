@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47474,
+  "uuid": "skill-clawhub-bria-ai-skill",
+  "skillKey": "clawhub-bria-ai-skill",
+  "name": "Image generation, editing and remove background",
+  "summary": "Generate, edit, create product images with AI. Remove or replace backgrounds, lifestyle shots, transparent PNGs, visual assets, batch generation, illustratio...",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bria_ai_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gal Davidi",
+      "features": [
+        "Generate, edit, create product images with AI",
+        "Remove or replace backgrounds, lifestyle shots, transparent PNGs, visual assets, batch generati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bria-ai-skill@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158810732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bria-ai-skill",
+      "url": "https://clawhub.ai/skills/bria-ai-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bria-ai-skill",
+    "url": "https://clawhub.ai/skills/bria-ai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bria-ai-skill-37d823e0188049f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bria-ai-skill@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-bria-ai-skill-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fceb6570c873f806835911914b0c87083c8b4dca3b94b48a4b754e90cf23725",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:11:38.032Z"
+}

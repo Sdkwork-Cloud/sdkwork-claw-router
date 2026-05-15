@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33386,
+  "uuid": "skill-clawhub-openclaw-model-usage",
+  "skillKey": "clawhub-openclaw-model-usage",
+  "name": "OpenClaw Model Usage",
+  "summary": "Inspect local OpenClaw model usage directly from session logs. Use when asked for the current model, recent model usage, usage breakdown by model, token tota...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_model_usage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rana Salal Ali",
+      "features": [
+        "Inspect local OpenClaw model usage directly from session logs",
+        "Use when asked for the current model, recent model usage, usage breakdown by model, token tota.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-model-usage@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23635228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-model-usage",
+      "url": "https://clawhub.ai/skills/openclaw-model-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-model-usage",
+    "url": "https://clawhub.ai/skills/openclaw-model-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-model-usage-cae01494967ca16d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-model-usage@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-model-usage-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8b3c7066a3b6540180eb77ee872eafc44c0fb62c54a94087884d97b5862e500",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T13:03:08.507Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50095,
+  "uuid": "skill-clawhub-openclaw-bee",
+  "skillKey": "clawhub-openclaw-bee",
+  "name": "BEE Belief Extraction Engine",
+  "summary": "Install and configure BEE — the Belief Extraction Engine for OpenClaw. Gives agents persistent structured memory across sessions. Auto-extracts beliefs at se...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bee",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kartik Vashisth",
+      "features": [
+        "Install and configure BEE — the Belief Extraction Engine for OpenClaw",
+        "Gives agents persistent structured memory across sessions",
+        "Auto-extracts beliefs at se..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-bee@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43121867?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-bee",
+      "url": "https://clawhub.ai/skills/openclaw-bee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bee",
+    "url": "https://clawhub.ai/skills/openclaw-bee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bee-561f37584d2bb17a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-bee@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-bee-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73a22ee33ef733c03c1a75fe9761c6c5f76a2b19c58bd915dee66d9ca90ee6e2",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T23:30:50.578Z"
+}

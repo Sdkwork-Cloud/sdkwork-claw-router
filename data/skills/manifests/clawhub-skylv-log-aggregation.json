@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53962,
+  "uuid": "skill-clawhub-skylv-log-aggregation",
+  "skillKey": "clawhub-skylv-log-aggregation",
+  "name": "Skylv Log Aggregation",
+  "summary": "Aggregate and search logs from all your services in one place. Find errors, spot anomalies, debug faster — no SSH into individual servers.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_log_aggregation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Aggregate and search logs from all your services in one place",
+        "Find errors, spot anomalies, debug faster — no SSH into individual servers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-log-aggregation@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-log-aggregation",
+      "url": "https://clawhub.ai/skills/skylv-log-aggregation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-log-aggregation",
+    "url": "https://clawhub.ai/skills/skylv-log-aggregation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-log-aggregation-8420f70f0b385a48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-log-aggregation@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-log-aggregation-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74e76fd3c2dd8e4d3b67f7005c8baf6b2ff90d28ddc220032232d6204f3aee0b",
+      "artifactSizeBytes": 2408
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:34:16.408Z"
+}

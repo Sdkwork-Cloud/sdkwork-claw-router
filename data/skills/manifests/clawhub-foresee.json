@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68283,
+  "uuid": "skill-clawhub-foresee",
+  "skillKey": "clawhub-foresee",
+  "name": "Foresee",
+  "summary": "提供江波龙FORESEE企业级存储产品规格、技术方案、开发资源及销售渠道信息查询服务。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foresee",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供江波龙FORESEE企业级存储产品规格、技术方案、开发资源及销售渠道信息查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foresee@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foresee",
+      "url": "https://clawhub.ai/skills/foresee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foresee",
+    "url": "https://clawhub.ai/skills/foresee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foresee-dad4bc7dfaae38bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foresee@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-foresee-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6ff3eb5d2060096a1a019decebe60d0ff27016bb1b4be9f69424757e1b00cbd",
+      "artifactSizeBytes": 2041
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:37:39.835Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmaceuticals-exploration-zhcn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaceuticals_exploration_zhcn",
+  "skill": {
+    "id": 62246,
+    "skillKey": "clawhub-pharmaceuticals-exploration-zhcn",
+    "name": "Pharmaceuticals Exploration Zhcn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaceuticals-exploration-zhcn",
+    "url": "https://clawhub.ai/skills/pharmaceuticals-exploration-zhcn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaceuticals-exploration-zhcn-8b1ffc39ec3504f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于回答药物相关问题。对于早期药物，搜索并汇总相关专利、学术文献、数据库记录、临床试验、专利和授权交易文件来回答问题。 当用户明确提及特定药物时激活，或在调用 disease_investigation_skill 或 target_intelligence_skill 时作为辅助： - 指定输出某药物的特征或其..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patsnaplifescience",
+      "userId": "s178w3pk85rejw2tje9nd1jras85eg1c",
+      "displayName": "XK",
+      "image": "https://avatars.githubusercontent.com/u/275897758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778145412418,
+      "changelog": "- 更新了“Setup Guide”，提供更详细的PatSnap MCP服务获取与配置说明，包括API Key申请与服务接入示例\n- 增加了官方服务名称、用途与链接，明确列出本技能所需的全部MCP服务\n- 优化了部署和验证步骤，给出常见平台适配说明\n- 保留并未改变主体情报分析、模块机制与工具使用原则等核心说明\n- 元数据version提升，反映内容更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc1c412276e48093537f287155514b330bd6fc4eb8fc30707574b2fe7b4bf4cd"
+}

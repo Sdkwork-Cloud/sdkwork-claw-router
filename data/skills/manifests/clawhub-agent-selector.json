@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66131,
+  "uuid": "skill-clawhub-agent-selector",
+  "skillKey": "clawhub-agent-selector",
+  "name": "Agent-Selector",
+  "summary": "自动根据任务描述在146+专业Agent之间安全切换，支持自动适配与手动指定，确保最适合的人格身份工作。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Krislu",
+      "features": [
+        "自动根据任务描述在146+专业Agent之间安全切换，支持自动适配与手动指定，确保最适合的人格身份工作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-selector@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258380416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-selector",
+      "url": "https://clawhub.ai/skills/agent-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-selector",
+    "url": "https://clawhub.ai/skills/agent-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-selector-ae52970a1865b0c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-selector@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-selector-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44efbd49a1176110b4da83d506824edba610af71efbee8add65c1f23aadb845b",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:11:43.948Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manus-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manus_agent",
+  "skill": {
+    "id": 60562,
+    "skillKey": "clawhub-manus-agent",
+    "name": "Manus Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manus-agent",
+    "url": "https://clawhub.ai/skills/manus-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manus-agent-7a95cfb6ab2e4ff7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manus AI Agent 助手，精通通用 AI Agent 任务执行、浏览器操作、代码生成、数据分析"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 340,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774194482422,
+      "changelog": "- 新增 Manus Agent 技能文档，详细介绍 Manus AI Agent 的核心能力和使用场景  \n- 覆盖任务自动拆解、浏览器操作、代码生成与执行、文件处理等功能  \n- 提供典型应用示例：市场调研、数据分析、网页开发、竞品分析等  \n- 新增 Manus 与 ChatGPT、Claude、Devin 主要竞品的对比表  \n- 总结最佳实践和提示，帮助用户高效使用 Manus Agent",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62a50cd3a3ef18f94f36d0f77ae44ea736fad6dce6d4adf2283390ef795ab275"
+}

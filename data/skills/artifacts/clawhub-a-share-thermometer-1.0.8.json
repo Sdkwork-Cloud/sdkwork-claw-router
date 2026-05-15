@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-thermometer@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_thermometer",
+  "skill": {
+    "id": 61878,
+    "skillKey": "clawhub-a-share-thermometer",
+    "name": "A股指数温度计"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-thermometer",
+    "url": "https://clawhub.ai/skills/a-share-thermometer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-thermometer-047f203dc234e408.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询A股市场温度。当用户询问\"今日市场温度\"、\"今日A股温度\"、\"市场热度\"、\"大盘温度\"或类似问题时触发此技能。支持\"上证50\", \"沪深300\", \"上证380\", \"创业板50\", \"中证500\", \"上证180\", \"深证红利\", \"深证100\", \"中证1000\", \"上证红利\", \"中证100\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pandasky",
+      "userId": "s170qr9h5yvs8w46z656a2cprs85957b",
+      "displayName": "Yujie Pan",
+      "image": "https://avatars.githubusercontent.com/u/16076890?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776780900317,
+      "changelog": "a-share-thermometer 1.0.8\n\n- Updated SKILL.md with clearer trigger instructions and improved sample output formatting.\n- Added stricter requirements for output: fixed format, date in East 8 timezone, and no explanatory text.\n- Detailed workflow steps for script and config usage.\n- Enhanced instructions for status determination based on temperature.\n- Clarified configuration file structure and customization options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:788bce7f2fdedeb44d994b455a2200bc471f061aed568d2113d1573f042af30b"
+}

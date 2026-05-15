@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cid-tracking@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cid_tracking",
+  "skill": {
+    "id": 66830,
+    "skillKey": "clawhub-cid-tracking",
+    "name": "Cid Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cid-tracking",
+    "url": "https://clawhub.ai/skills/cid-tracking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cid-tracking-0b12505572afa52d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持抖音、快手、腾讯三平台广告CID生成、转化回传、ROI分析、异常监控及专业Excel报表，助力二类电商投流管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaohang497-tech",
+      "userId": "s17dga3arpn3ed2h9e5m49cnq583hfpt",
+      "displayName": "zhaohang497-tech",
+      "image": "https://avatars.githubusercontent.com/u/259231090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774108240383,
+      "changelog": "Initial release of cid-tracking skill — a comprehensive CID tracking toolkit for domestic e-commerce ad platforms.\n\n- Supports ByteDance OceanEngine, Kuaishou Magnetic, and Tencent Guangdiantong ad platforms.\n- Provides Click ID generation, conversion postback, ROI analysis, data dashboards, anomaly monitoring, and professional Excel reporting.\n- Includes automated daily/weekly reports and multi-platform data aggregation.\n- Features tools for conversion tracking, anomaly alerts, and visual trend analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:497a18e73289302690a65291a306e296e33c99a3daafc758870e549c1d9670a9"
+}

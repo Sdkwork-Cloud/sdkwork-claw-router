@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aigroup-finnhub-mcp@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigroup_finnhub_mcp",
+  "skill": {
+    "id": 54938,
+    "skillKey": "clawhub-aigroup-finnhub-mcp",
+    "name": "AIGroup Finnhub MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigroup-finnhub-mcp",
+    "url": "https://clawhub.ai/skills/aigroup-finnhub-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigroup-finnhub-mcp-f6d9713df298f292.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Finnhub-backed market intelligence through the `aigroup-finnhub-mcp` server for stock, crypto, forex, calendar, news, sentiment, filing, ownership, analy..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackdark425",
+      "userId": "s176mxzq3jzjv11d44t7jjr33x83rvkb",
+      "displayName": "jackdark",
+      "image": "https://avatars.githubusercontent.com/u/201514154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774247529016,
+      "changelog": "Tighten skill copy and add project homepage metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d780fd054eb98f65ceaf905df47e6a46a3d536cdf468b92dbe0de6db76d705b"
+}

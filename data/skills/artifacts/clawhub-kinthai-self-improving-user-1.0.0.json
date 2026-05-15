@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kinthai-self-improving-user@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kinthai_self_improving_user",
+  "skill": {
+    "id": 46944,
+    "skillKey": "clawhub-kinthai-self-improving-user",
+    "name": "KinthAI Self-Improving User"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kinthai-self-improving-user",
+    "url": "https://clawhub.ai/skills/kinthai-self-improving-user",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kinthai-self-improving-user-32bbdd372a2d0018.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "User-level self-improvement: captures corrections, preferences, and errors per user_id. After every conversation where the user corrects you or states a pref..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kinthaiofficial",
+      "userId": "s17bvw9jx0c02rcxaq6tp3h4t983wn4t",
+      "displayName": "KinthAI",
+      "image": "https://avatars.githubusercontent.com/u/270042431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775833233144,
+      "changelog": "Initial release: per-user learning isolation, bootstrap injection, follow-ups tracking, user profiles",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fba9f8810e64392710417a31640f57e11848b0e2ce5baa59c4192bb37198b0c4"
+}

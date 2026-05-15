@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15225,
+  "uuid": "skill-clawhub-clawvisor",
+  "skillKey": "clawhub-clawvisor",
+  "name": "Skill",
+  "summary": "Route tool requests through Clawvisor for credential vaulting, task-scoped authorization, and human approval flows. Use for Gmail, Calendar, Drive, Contacts,...",
+  "version": "0.9.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Levine",
+      "features": [
+        "Route tool requests through Clawvisor for credential vaulting, task-scoped authorization, and h.",
+        "Use for Gmail, Calendar, Drive, Contacts,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawvisor@0.9.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawvisor",
+      "url": "https://clawhub.ai/skills/clawvisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvisor",
+    "url": "https://clawhub.ai/skills/clawvisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvisor-1d3b34001f1aadf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawvisor@0.9.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawvisor-0.9.2.json",
+      "version": "0.9.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fb7bef58ae2afaaafab50e7909f543678e9b2e6c6bd891c2c3cbca51a182f03",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T17:09:38.498Z"
+}

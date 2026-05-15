@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-listener@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_listener",
+  "skill": {
+    "id": 69926,
+    "skillKey": "clawhub-voice-listener",
+    "name": "Voice Listener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-listener",
+    "url": "https://clawhub.ai/skills/voice-listener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-listener-e5caea9529347751.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能唤醒“小龙虾”，启用百度高准确度语音识别，持续监听并自动输入语音内容，支持“停止”暂停输入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanqing203",
+      "userId": "s172zjsr6846ne2b98zc59n4zx83p3d2",
+      "displayName": "fanqing203",
+      "image": "https://avatars.githubusercontent.com/u/201436940?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 522,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772713416035,
+      "changelog": "Initial release with smart voice recognition and wake-up features:\n\n- Added Baidu Speech Recognition integration for high-accuracy voice input.\n- Introduced smart wake and pause with custom keywords (\"小龙虾\" to activate, \"停止\" to pause).\n- Enabled continuous voice-to-input after activation, without repeating wake word.\n- Provided multiple start options: OpenClaw command, batch script, or CLI.\n- Included configurable API keys and wake/stop words.\n- Added basic troubleshooting and API application guide.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1fa36622cfd3f6eae22e2cd057fd74e4ef1138aad9183ac14858a4f4ea16def"
+}

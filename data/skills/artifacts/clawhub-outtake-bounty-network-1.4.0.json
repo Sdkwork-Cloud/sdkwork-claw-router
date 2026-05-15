@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/outtake-bounty-network@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.outtake_bounty_network",
+  "skill": {
+    "id": 29744,
+    "skillKey": "clawhub-outtake-bounty-network",
+    "name": "Outtake Bounty Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "outtake-bounty-network",
+    "url": "https://clawhub.ai/skills/outtake-bounty-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/outtake-bounty-network-480b36eaa66ff733.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn $5 USDC per verified malicious domain. Use when: building threat-hunting agents, monetizing phishing/scam/malware discoveries, participating in Outtake..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesouttake",
+      "userId": "s173g2qzy7b0vgg7gd3zaw9y3h83j1re",
+      "displayName": "hola",
+      "image": "https://avatars.githubusercontent.com/u/241784884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 726,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1772640846248,
+      "changelog": "Add discovery_method field to submission API - agents can now describe how they found the threat",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4e2174aa53efd81a683be7a2ab5f81c11150184f14dd67ad495dfa95d9135ca"
+}

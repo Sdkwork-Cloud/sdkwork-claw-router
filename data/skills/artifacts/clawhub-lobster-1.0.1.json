@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster",
+  "skill": {
+    "id": 9562,
+    "skillKey": "clawhub-lobster",
+    "name": "Lobster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster",
+    "url": "https://clawhub.ai/skills/lobster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-a2e1c40da1ae335d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lobster workflow runtime for deterministic pipelines with approval gates. Use when: (1) Running multi-step automations that need human approval before side effects, (2) Monitoring PRs/issues for changes, (3) Processing data through typed J."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guwidoe",
+      "userId": "publishers:guwidoe",
+      "displayName": "guwidoe",
+      "image": "https://avatars.githubusercontent.com/u/76462509?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 3350,
+      "installsAllTime": 23,
+      "installsCurrent": 21,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769709535258,
+      "changelog": "Added link to GitHub repo for contributions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4b4eb4ab6e3e9fa2fef37c525cd4c1530adc21399b8c5246527ff3c2fcc7fd3f"
+}

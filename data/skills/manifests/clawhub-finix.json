@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33364,
+  "uuid": "skill-clawhub-finix",
+  "skillKey": "clawhub-finix",
+  "name": "Finix",
+  "summary": "Finix integration. Manage data, records, and automate workflows. Use when the user wants to interact with Finix data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Finix integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Finix data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finix@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finix",
+      "url": "https://clawhub.ai/skills/finix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finix",
+    "url": "https://clawhub.ai/skills/finix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finix-8a2267974e482937.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finix@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-finix-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e148e803a7c586cc0db3a8e12817933ee381170e92383bc26763dc3ab88745c",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:47:27.438Z"
+}

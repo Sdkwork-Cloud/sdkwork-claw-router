@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-prompt-en@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_prompt_en",
+  "skill": {
+    "id": 14263,
+    "skillKey": "clawhub-seedance-prompt-en",
+    "name": "Seedance 2.0 Prompt Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-prompt-en",
+    "url": "https://clawhub.ai/skills/seedance-prompt-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-prompt-en-6f02bdc8f835cf8b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write effective prompts for Jimeng Seedance 2.0 multimodal AI video generation. Use when users want to create video prompts using text, images, videos, and a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dexhunter",
+      "userId": "publishers:dexhunter",
+      "displayName": "Dex",
+      "image": "https://avatars.githubusercontent.com/u/6930518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1095,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771419953865,
+      "changelog": "Remove bundled PDFs and unrelated files; fix install instructions for Trust Hub audit",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:158bf2aa48a112889f21c7c73c789ba6bcafa71ecc8330b35cb4ddbda022c31f"
+}

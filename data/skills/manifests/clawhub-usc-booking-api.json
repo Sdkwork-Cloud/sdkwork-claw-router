@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13720,
+  "uuid": "skill-clawhub-usc-booking-api",
+  "skillKey": "clawhub-usc-booking-api",
+  "name": "Urban Sports Club Booking API",
+  "summary": "Scan Urban Sports Club venues, list courses with booking links, and book or cancel courses using your USC login credentials.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usc_booking_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "niklaspriddat",
+      "features": [
+        "Scan Urban Sports Club venues, list courses with booking links, and book or cancel courses usin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usc-booking-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89275483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usc-booking-api",
+      "url": "https://clawhub.ai/skills/usc-booking-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usc-booking-api",
+    "url": "https://clawhub.ai/skills/usc-booking-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usc-booking-api-e82fdb72a5cff6f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usc-booking-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-usc-booking-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12255b11ed3d5aff768f89e949cf6042a72d437f9befddef89af5dbc539fe059",
+      "artifactSizeBytes": 2058
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T08:26:43.315Z"
+}

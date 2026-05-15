@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12454,
+  "uuid": "skill-clawhub-veed-ugc",
+  "skillKey": "clawhub-veed-ugc",
+  "name": "VEED UGC",
+  "summary": "Generate UGC-style promotional videos with AI lip-sync. Takes an image (person with product from Morpheus/Ad-Ready) and a script (pure dialogue), creates a video of the person speaking. Uses ElevenLabs for voice synthesis.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veed_ugc",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul de Lavallaz",
+      "features": [
+        "Generate UGC-style promotional videos with AI lip-sync",
+        "Takes an image (person with product from Morpheus/Ad-Ready) and a script (pure dialogue), creat.",
+        "Uses ElevenLabs for voice synthesis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veed-ugc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51497690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veed-ugc",
+      "url": "https://clawhub.ai/skills/veed-ugc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veed-ugc",
+    "url": "https://clawhub.ai/skills/veed-ugc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veed-ugc-dcea6c710080973b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veed-ugc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-veed-ugc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:700d73189b7a0d395a318ade56b479fa4da8a8da17d791491dce91effa7dab90",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T00:30:34.796Z"
+}

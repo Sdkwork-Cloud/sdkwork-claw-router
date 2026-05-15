@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eidolon-search@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eidolon_search",
+  "skill": {
+    "id": 50729,
+    "skillKey": "clawhub-eidolon-search",
+    "name": "Eidolon Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eidolon-search",
+    "url": "https://clawhub.ai/skills/eidolon-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eidolon-search-7c53868a9c3eef6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent memory search using SQLite FTS5. 90%+ token reduction (10x+) compared to reading full files. Use when the agent needs to search through markdown mem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dev-jslee",
+      "userId": "publishers:dev-jslee",
+      "displayName": "dev-jsLee",
+      "image": "https://avatars.githubusercontent.com/u/174088258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 441,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772687687623,
+      "changelog": "- Initial release of eidolon-search: efficient AI agent memory search using SQLite FTS5.\n- Enables building a full-text search index over markdown files with 90%+ token reduction compared to reading files directly.\n- Command-line tools provided for indexing (`build-index.py`) and searching (`search.py`) memory files.\n- Designed for fast, low-cost retrieval in large or context-limited workspaces.\n- Best used for keyword-based memory or knowledge searches; not suitable for semantic search.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7829fbda958b349fba345bceb258576e1d07906af04bf9aff1bb51fd4045b60a"
+}

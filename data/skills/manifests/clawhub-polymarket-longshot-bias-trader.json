@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56036,
+  "uuid": "skill-clawhub-polymarket-longshot-bias-trader",
+  "skillKey": "clawhub-polymarket-longshot-bias-trader",
+  "name": "Polymarket Longshot Bias Trader",
+  "summary": "Systematically trades against longshot bias by selling overpriced low-probability outcomes (buy NO ≤10%) and buying underpriced near-certainties (buy YES ≥88...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_longshot_bias_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Systematically trades against longshot bias by selling overpriced low-probability outcomes (buy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-longshot-bias-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-longshot-bias-trader",
+      "url": "https://clawhub.ai/skills/polymarket-longshot-bias-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-longshot-bias-trader",
+    "url": "https://clawhub.ai/skills/polymarket-longshot-bias-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-longshot-bias-trader-b90e1bd3a3fa4667.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-longshot-bias-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-longshot-bias-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab5d5c4ff095dab6dbfd9cb3bc1a5d67d1d3f7d033ef22272abd7de89b80786d",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:21:45.528Z"
+}

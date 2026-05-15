@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47469,
+  "uuid": "skill-clawhub-atlas-vuln-scanner",
+  "skillKey": "clawhub-atlas-vuln-scanner",
+  "name": "Atlas Smart Contract Vulnerability Pattern Scanner",
+  "summary": "Scan Solidity repositories for Atlas smart-contract vulnerability patterns and generate triage-ready security reports.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.atlas_vuln_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "n8gendegen",
+      "features": [
+        "Scan Solidity repositories for Atlas smart-contract vulnerability patterns and generate triage-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/atlas-vuln-scanner@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264058056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "atlas-vuln-scanner",
+      "url": "https://clawhub.ai/skills/atlas-vuln-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "atlas-vuln-scanner",
+    "url": "https://clawhub.ai/skills/atlas-vuln-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/atlas-vuln-scanner-37f55278cf237821.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/atlas-vuln-scanner@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-atlas-vuln-scanner-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b43e24d83285a2c129699556a9eee7bb2f7d99bb9ff0ec09d33aa49729f1624b",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T14:40:26.404Z"
+}

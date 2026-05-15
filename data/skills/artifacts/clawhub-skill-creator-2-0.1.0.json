@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-creator-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_2",
+  "skill": {
+    "id": 8440,
+    "skillKey": "clawhub-skill-creator-2",
+    "name": "Skill Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-2",
+    "url": "https://clawhub.ai/skills/skill-creator-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-2-a545c7eeaf997f03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yixinli867",
+      "userId": "publishers:yixinli867",
+      "displayName": "yixinli867",
+      "image": "https://avatars.githubusercontent.com/u/210100579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 11744,
+      "installsAllTime": 70,
+      "installsCurrent": 68,
+      "stars": 39,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769830982484,
+      "changelog": "Initial release of Skill Creator: a comprehensive guide for building effective skills to extend Claude's capabilities.\n\n- Explains the structure and purpose of skills: modular packages with workflows, integrations, and expertise.\n- Outlines core principles including conciseness, proper use of degrees of freedom, and efficient use of the context window.\n- Details required file organization with guidance on when to use SKILL.md, scripts, references, and assets.\n- Emphasizes best practices for maintaining lean, easily discoverable, and usable skills.\n- Describes the progressive disclosure system for loading skill metadata and resources efficiently.\n- Specifies what not to include, reducing clutter and ensuring skills are agent-focused.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:50157e37a80d950c59fdb4b20393b1669842200369233786d0380120be899ee6"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42549,
+  "uuid": "skill-clawhub-infographic-creator",
+  "skillKey": "clawhub-infographic-creator",
+  "name": "Infographic creator socials",
+  "summary": "Generate modern operator-style social-media infographics (Twitter, LinkedIn, Instagram) using OpenAI gpt-image-2. Use this skill whenever the user wants to m...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infographic_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "berthelol",
+      "features": [
+        "Generate modern operator-style social-media infographics (Twitter, LinkedIn, Instagram) using O.",
+        "Use this skill whenever the user wants to m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/infographic-creator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15127949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "infographic-creator",
+      "url": "https://clawhub.ai/skills/infographic-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infographic-creator",
+    "url": "https://clawhub.ai/skills/infographic-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infographic-creator-aa8c423460144e66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/infographic-creator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-infographic-creator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:259f0bb3e5a054860a6ca6770a211a62a0b9db85b4d24e13b0d70b775828f741",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T13:29:03.702Z"
+}

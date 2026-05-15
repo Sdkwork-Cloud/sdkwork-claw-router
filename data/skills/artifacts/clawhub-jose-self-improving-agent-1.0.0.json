@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jose-self-improving-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jose_self_improving_agent",
+  "skill": {
+    "id": 30035,
+    "skillKey": "clawhub-jose-self-improving-agent",
+    "name": "Jose Self Improving Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jose-self-improving-agent",
+    "url": "https://clawhub.ai/skills/jose-self-improving-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jose-self-improving-agent-49fa6eb41cd5a518.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ingjosemendez",
+      "userId": "publishers:ingjosemendez",
+      "displayName": "IngJoseMendez",
+      "image": "https://avatars.githubusercontent.com/u/123668559?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773776960219,
+      "changelog": "Initial release of the self-improvement skill for OpenClaw and other coding agents:\n\n- Enables structured logging of learnings, errors, and feature requests for continuous improvement.\n- Provides detailed formats for learning, error, and feature request entries in markdown files.\n- Supports both OpenClaw integration (with workspace guide and hooks) and generic agent setup.\n- Guides on when and how to promote lessons and best practices to project-wide memory files.\n- Includes workflows for collaboration, inter-session communication, and promotion of high-value learnings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60d8b5d91e3fc1f1c07b4bc78fc789eaaeea43e3c0a7c05f29f0b5b49aa027c0"
+}

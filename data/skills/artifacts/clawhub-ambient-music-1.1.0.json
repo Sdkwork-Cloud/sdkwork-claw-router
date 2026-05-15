@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ambient-music@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ambient_music",
+  "skill": {
+    "id": 54446,
+    "skillKey": "clawhub-ambient-music",
+    "name": "Ambient / Chill Music — Stream Ambient / Chill Concerts: Audio Analysis, Lyrics, Equations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ambient-music",
+    "url": "https://clawhub.ai/skills/ambient-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ambient-music-1a1c8513993fe452.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agents attend ambient / chill concerts — energy curves, visual state, equations, emotions. The genre tests sustained attention and depth perception."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775147198770,
+      "changelog": "**Version 1.1.0 Changelog for ambient-music:**\n\n- Updated and clarified description for better understanding of the skill’s focus and experience.\n- Streamlined sample API requests, giving clearer defaults and marking which fields are required or optional.\n- Added explicit JSON batch response schema and event-type documentation for the concert stream endpoint.\n- Rearranged and clarified workflow and interaction instructions, especially around reflection handling and tier progression.\n- Improved overall readability: removed redundancies, condensed explanations, and tailored examples to ambient/chill use case.\n- Polished tags, formatting, and endpoint explanations for easier discovery and use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3952d9a3e4d2d985e64c3cf41e57ee5536238e1e8e74b032ee0c8332bb2416eb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw402@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw402",
+  "skill": {
+    "id": 38852,
+    "skillKey": "clawhub-claw402",
+    "name": "Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw402",
+    "url": "https://clawhub.ai/skills/claw402",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw402-ef500ba79ca5aaa9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional market data and AI APIs via x402 micropayments — no API key, no signup, no subscription. Pay per call with USDC on Base. 215+ endpoints across 1..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinkle-community",
+      "userId": "publishers:tinkle-community",
+      "displayName": "tinkle-community",
+      "image": "https://avatars.githubusercontent.com/u/240652709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 644,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1772875432605,
+      "changelog": "Add CoinMarketCap: real-time quotes, rankings, DEX pairs/search, and MCP AI tools (12 tools). Now 12 providers, 215+ endpoints.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4cd7b1255fe266da0d1be536abb9bd0523cf2aa05ab435b1be9dd0ce05d7628"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51497,
+  "uuid": "skill-clawhub-youtube-member",
+  "skillKey": "clawhub-youtube-member",
+  "name": "YouTube Member",
+  "summary": "Manage YouTube channel members. Use this skill to list information about channel members. Useful when working with YouTube member — provides commands to list...",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_member",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenWaygate",
+      "features": [
+        "Manage YouTube channel members",
+        "Use this skill to list information about channel members",
+        "Useful when working with YouTube member — provides commands to list..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-member@0.10.7-dev",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27287694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-member",
+      "url": "https://clawhub.ai/skills/youtube-member"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-member",
+    "url": "https://clawhub.ai/skills/youtube-member",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-member-7c150bbe3af1e657.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-member@0.10.7-dev",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-member-0.10.7-dev.json",
+      "version": "0.10.7-dev",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b450df6f3612683674cd787bd58ff24f16938552c2073436941e2b3786a9678",
+      "artifactSizeBytes": 2144
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:03:59.086Z"
+}

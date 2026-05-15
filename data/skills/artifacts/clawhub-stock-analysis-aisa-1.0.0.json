@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-aisa@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_aisa",
+  "skill": {
+    "id": 43310,
+    "skillKey": "clawhub-stock-analysis-aisa",
+    "name": "stock-analysis-aisa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-aisa",
+    "url": "https://clawhub.ai/skills/stock-analysis-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-aisa-c1b7b35236293301.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze stocks and cryptocurrencies with live AISA-backed scoring, signals, confidence, and risk flags. Use when: the user asks to analyze a ticker, compare..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bibaofeng",
+      "userId": "s1740zrgcnwxsxgzt9bfj5a1jn842mag",
+      "displayName": "bibaofeng",
+      "image": "https://avatars.githubusercontent.com/u/86095131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776435431654,
+      "changelog": "- Initial release of the stock-analysis skill.\n- Analyze stocks and cryptocurrencies with live AISA-backed scoring, signals (BUY/HOLD/SELL), confidence, and risk flags.\n- Supports comparison of tickers and market positioning review.\n- Requires an AISA API key and Python 3 environment.\n- Designed for informational analysis, not financial advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:881f23f1fb60f87080eb2c9aaf189891ee24493313d6f2a34fbb4f45ab8b61a8"
+}

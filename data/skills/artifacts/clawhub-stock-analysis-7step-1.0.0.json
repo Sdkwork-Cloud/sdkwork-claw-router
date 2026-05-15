@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-7step@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_7step",
+  "skill": {
+    "id": 67496,
+    "skillKey": "clawhub-stock-analysis-7step",
+    "name": "stock_analysis_7step"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-7step",
+    "url": "https://clawhub.ai/skills/stock-analysis-7step",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-7step-80622d3d3c8ad602.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用7步分析法对中国A股进行全方位财务分析，自动生成包含ROE分解、盈利模式识别、行业对比和投资洞察的HTML报告。支持上海和深圳交易所所有股票。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luokeer52",
+      "userId": "s17dv3veasre4zg5f6n7ae77cd83hfe1",
+      "displayName": "luokeer52",
+      "image": "https://avatars.githubusercontent.com/u/5510712?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774516083720,
+      "changelog": "Initial release of A股财务分析 skill with 7-step analysis method.\n\n- Provides comprehensive financial analysis for all stocks on Shanghai and Shenzhen exchanges.\n- Automatically generates HTML reports including ROE decomposition, profit model identification, industry comparison, and investment insights.\n- Supports both Python and Node.js clients for flexible integration.\n- Includes documentation for authentication and accessing purchase records if the skill is paid.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:656a48362250238f9e715f7d2f61d84585e39593b0df1c0685fad9d1ef2c314d"
+}

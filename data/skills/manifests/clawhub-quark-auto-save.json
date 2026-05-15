@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58599,
+  "uuid": "skill-clawhub-quark-auto-save",
+  "skillKey": "clawhub-quark-auto-save",
+  "name": "Manage quark-auto-save(QAS, 夸克自动转存, 夸克转存, 夸克订阅) tasks via CLI.",
+  "summary": "Manage quark-auto-save(QAS, 夸克自动转存, 夸克转存, 夸克订阅) tasks via CLI.",
+  "version": "0.8.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quark_auto_save",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cp0204",
+      "features": [
+        "Manage quark-auto-save(QAS, 夸克自动转存, 夸克转存, 夸克订阅) tasks via CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quark-auto-save@0.8.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5239753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quark-auto-save",
+      "url": "https://clawhub.ai/skills/quark-auto-save"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quark-auto-save",
+    "url": "https://clawhub.ai/skills/quark-auto-save",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quark-auto-save-f7276bb7fafc575a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quark-auto-save@0.8.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-quark-auto-save-0.8.10.json",
+      "version": "0.8.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb1a698fea291e0479985ebba5967df60815ce33011bd6709edfa24b5f41d4f4",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T05:58:54.250Z"
+}

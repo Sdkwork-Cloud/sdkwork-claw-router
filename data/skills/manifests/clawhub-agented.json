@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34039,
+  "uuid": "skill-clawhub-agented",
+  "skillKey": "clawhub-agented",
+  "name": "Agented",
+  "summary": "A text editor for LLMs, not humans.",
+  "version": "1.2.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agented",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Frane Bandov",
+      "features": [
+        "A text editor for LLMs, not humans."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agented@1.2.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35420?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agented",
+      "url": "https://clawhub.ai/skills/agented"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agented",
+    "url": "https://clawhub.ai/skills/agented",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agented-13fb88153fadb719.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agented@1.2.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-agented-1.2.10.json",
+      "version": "1.2.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:99178e60c3146d576b6fda40f091ed681e2c025b06ae5eda95650e50ac37ebab",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T07:51:27.158Z"
+}

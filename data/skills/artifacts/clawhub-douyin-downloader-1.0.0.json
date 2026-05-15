@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-downloader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_downloader",
+  "skill": {
+    "id": 61945,
+    "skillKey": "clawhub-douyin-downloader",
+    "name": "抖音下载器-douyin_downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-downloader",
+    "url": "https://clawhub.ai/skills/douyin-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-downloader-148f34c081831525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "最稳定的抖音视频下载工具，用户提供抖音链接或modal_id即可自动解析并下载。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "valderwu3",
+      "userId": "s176gtsbvk3fp7ttzdcdtasfwx84wecy",
+      "displayName": "valderwu3",
+      "image": "https://avatars.githubusercontent.com/u/132856834?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6774,
+      "installsAllTime": 56,
+      "installsCurrent": 53,
+      "stars": 16,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771137506642,
+      "changelog": "最稳定的抖音视频下载工具，用户提供抖音链接或modal_id即可自动解析并下载。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43e9e9db84ae6c29de795da53eccd81753331027174710ffdaab13beb05ecaa5"
+}

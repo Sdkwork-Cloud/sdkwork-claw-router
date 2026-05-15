@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "call-transcript-todo",
+    "displayName": "Call-Transcript-Todo",
+    "summary": "通话录音转写与会议纪要生成。当用户发送音频文件（mp3/m4a/mp4/wav/ogg/amr等）时自动触发，完成语音转文字、生成飞书文档（含实录/纪要/待办）、提取待办事项。 当用户说\"帮我转录\"、\"处理一下这个录音\"、\"听一下这个\"、\"语音转文字\"、\"通话录音整理\"、\"录音纪要\"、\"这是个录音文件\"、\"tra...",
+    "tags": {
+      "latest": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775280166513,
+    "updatedAt": 1777527154294
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1775281109904,
+    "changelog": "call-transcript-todo 1.1.0\n\n- 仅在用户明确表达转录意图时触发技能，不再自动对所有音频附件执行。\n- 支持将转录结果输出为飞书文档（需凭证）或本地 Markdown 文件，自动选择并降级输出方式。\n- 优化音频转录流程，根据文件大小自动选择 small 或 medium 模型，并详细记录常见错误及处理建议。\n- 实录、纪要和待办事项结构化输出，模板内容进一步规范。\n- 添加详细错误处理指引，提升用户体验和问题排查效率。\n- skill 重命名为 call-transcript-todo，并更新唤起关键词和环境变量说明。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "daaishu",
+    "userId": "s17dr0547emvqnwnxprjn4b7gn844y5a",
+    "displayName": "Daaishu",
+    "image": "https://avatars.githubusercontent.com/u/268174005?v=4"
+  },
+  "moderation": null
+}

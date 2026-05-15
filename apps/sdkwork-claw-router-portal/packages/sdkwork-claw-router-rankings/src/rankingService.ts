@@ -40,13 +40,13 @@ export interface RankingServiceFilters {
 
 export class RankingService {
   static async fetchModelRankings(filters: RankingServiceFilters = {}): Promise<RuntimeRankingSnapshot> {
-    const result = await getClawRouterAppSdkClient().router.fetchModelRankings(
-      normalizeQueryString(filters.rankScope),
-      normalizeQueryString(filters.vendorCode),
-      normalizeQueryString(filters.modality),
-      normalizeQueryString(filters.searchQuery),
-      filters.limit ?? 200,
-    );
+    const result = await getClawRouterAppSdkClient().ai.modelRankings.list({
+      rankScope: normalizeQueryString(filters.rankScope),
+      vendorCode: normalizeQueryString(filters.vendorCode),
+      modality: normalizeQueryString(filters.modality),
+      q: normalizeQueryString(filters.searchQuery),
+      limit: filters.limit ?? 200,
+    });
     ensurePlusApiSuccess(result, 'Failed to fetch model rankings');
     const data = readApiRecord(result);
     const items = readRequiredApiItems(data, 'Failed to fetch model rankings', ['items'])
@@ -61,7 +61,7 @@ export class RankingService {
   }
 
   static async fetchModelVendors(): Promise<RankingVendorOption[]> {
-    const result = await getClawRouterAppSdkClient().router.fetchModelVendors();
+    const result = await getClawRouterAppSdkClient().ai.modelVendors.list();
     ensurePlusApiSuccess(result, 'Failed to fetch ranking model vendors');
 
     return readRequiredApiItems(result, 'Failed to fetch ranking model vendors')

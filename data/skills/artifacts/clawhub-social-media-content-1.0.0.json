@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-media-content@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_media_content",
+  "skill": {
+    "id": 16111,
+    "skillKey": "clawhub-social-media-content",
+    "name": "Social Media Content Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-media-content",
+    "url": "https://clawhub.ai/skills/social-media-content",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-media-content-d9b9eafc0713584a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate social media posts for LevelUpLove and PayLessTax brands"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wespeakallday",
+      "userId": "s173n6dbpr2gymw0t3td3k6fpd83s82b",
+      "displayName": "Carl Luis Olivier",
+      "image": "https://avatars.githubusercontent.com/u/178078524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 798,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772606720350,
+      "changelog": "Initial publish - content for LevelUpLove & PayLessTax",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4e07fc28d2c544266e573803c8ec058d452f962df11d6e0e49310acdba7123f"
+}

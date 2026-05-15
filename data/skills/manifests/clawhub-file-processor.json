@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12415,
+  "uuid": "skill-clawhub-file-processor",
+  "skillKey": "clawhub-file-processor",
+  "name": "file-processor",
+  "summary": "Automatically detects and processes files including PDF, Excel, CSV, Word, images, and text for extraction, OCR, data analysis, and summarization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_processor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ly5201314gjx",
+      "features": [
+        "Automatically detects and processes files including PDF, Excel, CSV, Word, images, and text for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-processor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204307131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-processor",
+      "url": "https://clawhub.ai/skills/file-processor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-processor",
+    "url": "https://clawhub.ai/skills/file-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-processor-ac063a703dd44fe4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-processor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-processor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dc407fe06ac226f9519c3152dd960109f24020e0e698a2ebe621ab21ae117f6",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T12:20:06.149Z"
+}

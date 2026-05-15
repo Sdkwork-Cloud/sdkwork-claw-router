@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73668,
+  "uuid": "skill-clawhub-breakfast-recommender",
+  "skillKey": "clawhub-breakfast-recommender",
+  "name": "早餐推荐助手",
+  "summary": "智能早餐推荐助手，根据冰箱食材推荐早餐、管理食材、记录偏好与历史。当用户告知冰箱食材、询问早餐推荐、更新食材、设置饮食偏好、或要求定时推荐早餐时激活。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.breakfast_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sophiayuan",
+      "features": [
+        "智能早餐推荐助手，根据冰箱食材推荐早餐、管理食材、记录偏好与历史。当用户告知冰箱食材、询问早餐推荐、更新食材、设置饮食偏好、或要求定时推荐早餐时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/breakfast-recommender@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243960448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "breakfast-recommender",
+      "url": "https://clawhub.ai/skills/breakfast-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "breakfast-recommender",
+    "url": "https://clawhub.ai/skills/breakfast-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/breakfast-recommender-0acbb0e04eb4d6ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/breakfast-recommender@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-breakfast-recommender-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d74137a4a2110d07f9fa34a3adc122efa7aa5579ed6f4fdc365d57d08ae3b2ca",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:25:46.106Z"
+}

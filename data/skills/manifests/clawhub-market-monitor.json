@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14563,
+  "uuid": "skill-clawhub-market-monitor",
+  "skillKey": "clawhub-market-monitor",
+  "name": "Market Monitor",
+  "summary": "Monitor cryptocurrency and financial markets via exchange APIs (Binance, OKX). Track prices, analyze trends, and generate market reports.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Parker",
+      "features": [
+        "Monitor cryptocurrency and financial markets via exchange APIs (Binance, OKX)",
+        "Track prices, analyze trends, and generate market reports."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-monitor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169116739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-monitor",
+      "url": "https://clawhub.ai/skills/market-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-monitor",
+    "url": "https://clawhub.ai/skills/market-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-monitor-5f589c383e0ca014.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-monitor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-monitor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eff9fba7bb4f441f78f902703045ce516621a63ab4a722014925f00534651ef7",
+      "artifactSizeBytes": 2564
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:22:28.813Z"
+}

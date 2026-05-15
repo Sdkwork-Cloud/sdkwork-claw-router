@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62402,
+  "uuid": "skill-clawhub-tjweather",
+  "skillKey": "clawhub-tjweather",
+  "name": "tjweather天气查询助手",
+  "summary": "全球地点天气预报及地理编码分析（TJWeather API）。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tjweather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QianSongUIO",
+      "features": [
+        "全球地点天气预报及地理编码分析（TJWeather API）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tjweather@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21357885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tjweather",
+      "url": "https://clawhub.ai/skills/tjweather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tjweather",
+    "url": "https://clawhub.ai/skills/tjweather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tjweather-0beafefeefaa5b1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tjweather@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tjweather-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cd8692bdb9bc77bb4a5413c450038dc69d8a86e9e135cb53ae8823aceda1990",
+      "artifactSizeBytes": 2252
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:28:18.927Z"
+}

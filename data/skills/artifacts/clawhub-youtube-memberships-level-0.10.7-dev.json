@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-memberships-level@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_memberships_level",
+  "skill": {
+    "id": 51313,
+    "skillKey": "clawhub-youtube-memberships-level",
+    "name": "YouTube Memberships Level"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-memberships-level",
+    "url": "https://clawhub.ai/skills/youtube-memberships-level",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-memberships-level-b4b7c10795f1ab12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube memberships levels. Use this skill to list information about channel membership levels. Useful when working with YouTube memberships level — p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773497065788,
+      "changelog": "- Updated the skill metadata to use the new openclaw format, specifying environment variables, required binaries, config files, and installation details.\n- Added Openclaw-specific fields such as primaryEnv, emoji, homepage, and Node.js package install instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cc687923a7c924707ddc658f9b82bc55695b7b3711fb47c465bb69ffdbb48e8"
+}

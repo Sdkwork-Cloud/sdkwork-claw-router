@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sparkle-vpn@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sparkle_vpn",
+  "skill": {
+    "id": 16345,
+    "skillKey": "clawhub-sparkle-vpn",
+    "name": "Sparkle VPN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sparkle-vpn",
+    "url": "https://clawhub.ai/skills/sparkle-vpn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sparkle-vpn-aa0a8a814380aff3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Sparkle VPN - start, stop, manage system proxy, query status and switch nodes using Mihomo core directly."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cwyhkyochen-a11y",
+      "userId": "s178d1zg80mbk3ay3b5abegn6n83gd1b",
+      "displayName": "cwyhkyochen-a11y",
+      "image": "https://avatars.githubusercontent.com/u/231615738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 886,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772305573714,
+      "changelog": "Add system proxy management (enable/disable), query status, switch node",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f9d3104f5d5bd49d95a30881716bf5b919711c0b4637a21c9ca0066d891fb878"
+}

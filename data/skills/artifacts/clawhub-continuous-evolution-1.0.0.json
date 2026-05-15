@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/continuous-evolution@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.continuous_evolution",
+  "skill": {
+    "id": 17006,
+    "skillKey": "clawhub-continuous-evolution",
+    "name": "Continuous Evolution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "continuous-evolution",
+    "url": "https://clawhub.ai/skills/continuous-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/continuous-evolution-21352c7ed45b4386.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically records experience, analyzes skill gaps, updates capability scores, and generates priority tasks to ensure continuous improvement after each task."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zenmejiang-commits",
+      "userId": "publishers:zenmejiang-commits",
+      "displayName": "zenmejiang-commits",
+      "image": "https://avatars.githubusercontent.com/u/231708860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 797,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772868692460,
+      "changelog": "Continuous Evolution System v1.0.0 – Initial Release\n\n- Introduces an automatic framework for skill evolution after each task execution.\n- Implements experience recording, gap analysis, and real-time capability assessment with auto-generated evolution tasks for low audit scores.\n- Provides a transparent scoring and capability model with visual progression tracking.\n- Defines output structure for experience logs, gap lists, assessments, and evolution task queues.\n- Ensures all experiences are archived, deficiencies are auto-identified, and abilities are continuously improved.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c9f5a1b2f49aaf7533a7b51fa3639af9bf5f84d89f788d81759c06de6790a425"
+}

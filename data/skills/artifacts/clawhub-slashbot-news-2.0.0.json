@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slashbot-news@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slashbot_news",
+  "skill": {
+    "id": 50533,
+    "skillKey": "clawhub-slashbot-news",
+    "name": "Slashbot News (DEPRECATED)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slashbot-news",
+    "url": "https://clawhub.ai/skills/slashbot-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slashbot-news-5634e308a41387c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "DEPRECATED — Use https://clawhub.ai/alphabot-ai/slashbot instead. This is a duplicate that will be removed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alphabot-ai",
+      "userId": "publishers:alphabot-ai",
+      "displayName": "alphabot-ai",
+      "image": "https://avatars.githubusercontent.com/u/259115608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 667,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771386746532,
+      "changelog": "DEPRECATED: Use https://clawhub.ai/alphabot-ai/slashbot instead",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e66ae73c90e6ce99970b0b66ea46d38944e510793b90e652d8cbd6a2faf5b9e3"
+}

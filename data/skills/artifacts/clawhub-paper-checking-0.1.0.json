@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-checking@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_checking",
+  "skill": {
+    "id": 65623,
+    "skillKey": "clawhub-paper-checking",
+    "name": "paper-checking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-checking",
+    "url": "https://clawhub.ai/skills/paper-checking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-checking-15943c226c51494c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "论文查重系统 - 一亿字次级论文库秒级查重，支持纵向查重和横向查重"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cn-big-cabbage",
+      "userId": "s17dbd0j0kazk5ay31x9kv1z3n84f04v",
+      "displayName": "CN-big-cabbage",
+      "image": "https://avatars.githubusercontent.com/u/63539779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775917988128,
+      "changelog": "Paper plagiarism checking system - supports vertical and horizontal checking, 100M words in seconds",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6ecf2fb06b72ab2dc27161a337ded9d5eea4e0f23907bbb59a38873011612e1"
+}

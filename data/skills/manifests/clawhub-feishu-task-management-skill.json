@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25093,
+  "uuid": "skill-clawhub-feishu-task-management-skill",
+  "skillKey": "clawhub-feishu-task-management-skill",
+  "name": "feishu-task-management-skill",
+  "summary": "Manage Feishu tasks through a local Python toolkit that always has app credentials and can optionally act as a user for task APIs when OAuth user tokens are...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_task_management_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "@_@",
+      "features": [
+        "Manage Feishu tasks through a local Python toolkit that always has app credentials and can opti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-task-management-skill@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50366371?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-task-management-skill",
+      "url": "https://clawhub.ai/skills/feishu-task-management-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-task-management-skill",
+    "url": "https://clawhub.ai/skills/feishu-task-management-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-task-management-skill-0a6f452adf5d9ad5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-task-management-skill@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-task-management-skill-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0333c65371fd13673a6f1691cb0965c46c438cbd930f26c7bec63bdd15a23945",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T02:51:00.312Z"
+}

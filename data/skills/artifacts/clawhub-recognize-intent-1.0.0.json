@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recognize-intent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recognize_intent",
+  "skill": {
+    "id": 66349,
+    "skillKey": "clawhub-recognize-intent",
+    "name": "Recognize Intent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recognize-intent",
+    "url": "https://clawhub.ai/skills/recognize-intent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recognize-intent-85c4145adcc84c1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "识别自然语言的意图类别并解析其中的语义，包括指标和维度，例如：\"今天的缤果店的业绩如何 \" ,将提取指标：订单成交额（业绩） ，维度：年月日-今天（2026-03-10） ，店铺-缤果店 ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lovenervermore",
+      "userId": "s179eehz3gk12qcjky3an7t6sx83pxjj",
+      "displayName": "LoveNerverMore",
+      "image": "https://avatars.githubusercontent.com/u/68802221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773710307109,
+      "changelog": "Initial release of recognize_intent skill.\n\n- Identifies the intent category and extracts core semantic entities (indicator & dimension) from natural language queries.\n- Takes rewritten queries as input and outputs intent, metric, and info for downstream processing.\n- Supports intent routing: handle_data_query, handle_metadata_query, attribution_analysis, other.\n- Integrates with multiple backend services (vector search, MySQL, dictionary/logic enhancer) with automatic degradation on connection failure.\n- Triggers clarification workflow if confidence is below threshold.\n- Provides standalone execution guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7497dfb52ca7fbb0c51380e74bb00c288e2919d9979510d24bda3aca13fe9628"
+}

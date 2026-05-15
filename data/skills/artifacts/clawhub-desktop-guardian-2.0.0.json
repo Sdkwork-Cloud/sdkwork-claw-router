@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desktop-guardian@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_guardian",
+  "skill": {
+    "id": 34706,
+    "skillKey": "clawhub-desktop-guardian",
+    "name": "Desktop Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-guardian",
+    "url": "https://clawhub.ai/skills/desktop-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-guardian-7df54c19f6ea6218.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "macOS GUI automation and desktop control for OpenClaw, powered by Hammerspoon. Gives your agent full access to interact with the Mac desktop — query windows,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "s3rous",
+      "userId": "publishers:s3rous",
+      "displayName": "s3rous",
+      "image": "https://avatars.githubusercontent.com/u/259219366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 775,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771789120587,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:833b3c12157ecd54fb22e0ada9c6ed75fb880a47fd8c6e069362853d52b11aa2"
+}

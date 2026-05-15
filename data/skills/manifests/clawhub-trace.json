@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29742,
+  "uuid": "skill-clawhub-trace",
+  "skillKey": "clawhub-trace",
+  "name": "Trace",
+  "summary": "trace",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trace@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trace",
+      "url": "https://clawhub.ai/skills/trace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trace",
+    "url": "https://clawhub.ai/skills/trace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trace-eafe895eb8119e6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trace@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trace-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42f62cf7b95bfd3934161236d33edbb56699388f7d63e0121e4242cabc63ac81",
+      "artifactSizeBytes": 1695
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:11:40.756Z"
+}

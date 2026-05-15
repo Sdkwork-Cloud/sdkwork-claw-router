@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67597,
+  "uuid": "skill-clawhub-clawlet",
+  "skillKey": "clawhub-clawlet",
+  "name": "Clawlet",
+  "summary": "Clawlet - Nostr 智能管家。用于管理 Nostr 身份、发布内容、关注用户、读取时间线、AI筛选、智能推荐、私信功能、昵称管理。当用户要求生成 Nostr 身份、发消息到 Nostr、关注某人、查看时间线、设置兴趣、发现推荐用户、发送私信、查看私信、添加昵称时使用。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawlet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "6830920",
+      "features": [
+        "Nostr 智能管家。用于管理 Nostr 身份、发布内容、关注用户、读取时间线、AI筛选、智能推荐、私信功能、昵称管理。当用户要求生成 Nostr 身份、发消息到 Nostr、关注某人、查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawlet@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54066164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawlet",
+      "url": "https://clawhub.ai/skills/clawlet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawlet",
+    "url": "https://clawhub.ai/skills/clawlet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawlet-e9f5f1542e7dd617.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawlet@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawlet-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:843711bb108b0d0f1efae7b26d6e0b201c32a93cf66157ddff09720a57e88868",
+      "artifactSizeBytes": 2194
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T16:14:05.177Z"
+}

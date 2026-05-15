@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/megaeth@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.megaeth",
+  "skill": {
+    "id": 13253,
+    "skillKey": "clawhub-megaeth",
+    "name": "MegaETH AI Developer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "megaeth",
+    "url": "https://clawhub.ai/skills/megaeth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/megaeth-68dda8f033f11fc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end MegaETH development playbook (Feb 2026). Covers wallet operations, token swaps (Kyber Network), eth_sendRawTransactionSync (EIP-7966) for instant receipts, JSON-RPC batching, real-time mini-block subscriptions, storage-aware con."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xguardbot",
+      "userId": "publishers:0xguardbot",
+      "displayName": "0xGuardbot",
+      "image": "https://avatars.githubusercontent.com/u/257929713?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1496,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770297854876,
+      "changelog": "Initial release - MegaETH development playbook covering wallet ops, smart contracts, RPC methods, gas model, and real-time features",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3e78b35f04afc87f06b94665150190a6ae9036dd3c32035362d127f621e3be82"
+}

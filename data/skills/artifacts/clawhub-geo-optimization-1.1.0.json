@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-optimization@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_optimization",
+  "skill": {
+    "id": 9201,
+    "skillKey": "clawhub-geo-optimization",
+    "name": "GEO Optimization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-optimization",
+    "url": "https://clawhub.ai/skills/geo-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-optimization-b94fd8292c818aba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generative Engine Optimization (GEO) for AI search visibility. Optimize content to appear in ChatGPT, Perplexity, Claude, and Google AI Overviews. Use when optimizing websites, pages, or content for LLM discoverability and citation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "capt-marbles",
+      "userId": "publishers:capt-marbles",
+      "displayName": "captmarbles",
+      "image": "https://avatars.githubusercontent.com/u/5841195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3809,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 8,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769554474692,
+      "changelog": "Added automated monitoring tools: geo-monitor.py for testing citation rates, geo-daily-report.py for formatted reports, and example query file for tracking AI search visibility over time",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83ec39a82379fef661ceaabf23f1054c09b80dd58b267f6989b9aec43c5856be"
+}

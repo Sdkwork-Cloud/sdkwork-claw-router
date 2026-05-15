@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huangxianshi-divination@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huangxianshi_divination",
+  "skill": {
+    "id": 68385,
+    "skillKey": "clawhub-huangxianshi-divination",
+    "name": "Huangxianshi Divination"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huangxianshi-divination",
+    "url": "https://clawhub.ai/skills/huangxianshi-divination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huangxianshi-divination-96a0829a0a3be983.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "黄仙师灵签抽签与解签。用户说“聊签/求签/抽一签/来一签/解签/全部解签”时使用。随机抽取1签并返回吉凶、签号、签题、签诗、典故全文；支持按方向解签或全部解签。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nzleo",
+      "userId": "s17dp6nvmcwq54drwsawns571s843303",
+      "displayName": "Leo",
+      "image": "https://avatars.githubusercontent.com/u/151178676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773557644864,
+      "changelog": "- 新增 scripts/signs_data.py 文件，优化签文数据处理结构。\n- 更新 scripts/lot_cli.py，适配数据模块，提高维护性。\n- 更新 data/last_draw.json，保持数据记录准确性。\n- 优化整体代码结构，为后续扩展做准备。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:accf8896364a364237b70668511986e6d04493e8e80eb5fdd81e134ee4febd40"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11644,
+  "uuid": "skill-clawhub-sui",
+  "skillKey": "clawhub-sui",
+  "name": "Sui",
+  "summary": "Answer questions about Sui blockchain ecosystem, concepts, tokenomics, validators, staking, and general knowledge. Use when users ask \"what is Sui\", \"how does Sui work\", \"Sui vs other chains\", or any Sui-related questions that aren't speci.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sui",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eason Chen",
+      "features": [
+        "Answer questions about Sui blockchain ecosystem, concepts, tokenomics, validators, staking, and.",
+        "Use when users ask \"what is Sui\", \"how does Sui work\", \"Sui vs other chains\", or any Sui-relate."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sui@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43432631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sui",
+      "url": "https://clawhub.ai/skills/sui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sui",
+    "url": "https://clawhub.ai/skills/sui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sui-244e4b24e667ebf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sui@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sui-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6917abf1525b123e4c938c5477587058b1fd942c34f21014d5b4e953698743b2",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T18:54:04.670Z"
+}

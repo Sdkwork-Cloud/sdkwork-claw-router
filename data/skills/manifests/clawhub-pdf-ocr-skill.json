@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65446,
+  "uuid": "skill-clawhub-pdf-ocr-skill",
+  "skillKey": "clawhub-pdf-ocr-skill",
+  "name": "pdf-ocr",
+  "summary": "支持双引擎的PDF OCR识别技能，可从影印版PDF文件和图片文件中提取文字内容",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_ocr_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yejinlei",
+      "features": [
+        "支持双引擎的PDF OCR识别技能，可从影印版PDF文件和图片文件中提取文字内容"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-ocr-skill@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1418455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-ocr-skill",
+      "url": "https://clawhub.ai/skills/pdf-ocr-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-ocr-skill",
+    "url": "https://clawhub.ai/skills/pdf-ocr-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-ocr-skill-d50af07ca61dc7b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-ocr-skill@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-ocr-skill-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f665d4579584958c79e6e23d4c18df51a22113a62edeafe179054395949e0da",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:19:32.554Z"
+}

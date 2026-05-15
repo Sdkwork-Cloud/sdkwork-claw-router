@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaoming-video-processor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_video_processor",
+  "skill": {
+    "id": 62177,
+    "skillKey": "clawhub-xiaoming-video-processor",
+    "name": "Video Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-video-processor",
+    "url": "https://clawhub.ai/skills/xiaoming-video-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-video-processor-acf8ef68c18d6de8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频处理工具 - 格式转换、压缩、剪辑、字幕"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776411035479,
+      "changelog": "v1.1 视频处理工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55bb2bd3d4910c6cd91281a0bdb939618c60d5336ba17d843c5e335017c5b33b"
+}

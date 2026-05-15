@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35196,
+  "uuid": "skill-clawhub-solana-security",
+  "skillKey": "clawhub-solana-security",
+  "name": "solana-security",
+  "summary": "Audit Solana programs (Anchor or native Rust) for security vulnerabilities. Use when reviewing smart contract security, finding exploits, analyzing attack ve...",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Misha Kolesnik",
+      "features": [
+        "Audit Solana programs (Anchor or native Rust) for security vulnerabilities",
+        "Use when reviewing smart contract security, finding exploits, analyzing attack ve..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana-security@0.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22403766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana-security",
+      "url": "https://clawhub.ai/skills/solana-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana-security",
+    "url": "https://clawhub.ai/skills/solana-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-security-3f228fcc2d9488a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana-security@0.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-security-0.6.1.json",
+      "version": "0.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1babe9c41782a8e6b8573d5d3bb4a89c09a5a3ea67213454f1a32e6f641034b",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:05:07.649Z"
+}

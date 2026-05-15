@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8630,
+  "uuid": "skill-clawhub-pdf-convert-compdf",
+  "skillKey": "clawhub-pdf-convert-compdf",
+  "name": "PDF Converter",
+  "summary": "PDF conversion toolkit featuring AI layout analysis and OCR. Converts PDFs to Word, Markdown, JSON, PPT, CSV, HTML, and XML for seamless LLM data processing.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_convert_compdf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ComPDF",
+      "features": [
+        "PDF conversion toolkit featuring AI layout analysis and OCR",
+        "Converts PDFs to Word, Markdown, JSON, PPT, CSV, HTML, and XML for seamless LLM data processing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-convert-compdf@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108785628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-convert-compdf",
+      "url": "https://clawhub.ai/skills/pdf-convert-compdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-convert-compdf",
+    "url": "https://clawhub.ai/skills/pdf-convert-compdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-convert-compdf-8c16bd20aa39b271.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-convert-compdf@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-convert-compdf-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cea3e3a8ff839f0b1c5e3e073b88dcc1f1bf25c9671ed49eef9cbc587b93187",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:00:40.412Z"
+}

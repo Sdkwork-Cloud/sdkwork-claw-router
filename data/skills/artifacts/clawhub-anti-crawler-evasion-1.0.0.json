@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anti-crawler-evasion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_crawler_evasion",
+  "skill": {
+    "id": 70476,
+    "skillKey": "clawhub-anti-crawler-evasion",
+    "name": "Anti-Crawler Evasion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-crawler-evasion",
+    "url": "https://clawhub.ai/skills/anti-crawler-evasion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-crawler-evasion-15dd80fec335f446.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "防止被反爬虫机制识别和封禁。当用户需要进行网页爬取、数据采集、API访问，或询问如何绕过反爬、避免IP封禁、隐藏爬虫身份时使用。触发词包括：反爬、反爬虫、绕过反爬、避免封禁、爬虫伪装、隐身爬取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "plover061",
+      "userId": "s17e8ha9nx4bn4kp34p9x8nqts84hty2",
+      "displayName": "plover061",
+      "image": "https://avatars.githubusercontent.com/u/98512436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775721422045,
+      "changelog": "Initial release of anti-crawler-evasion skill.\n\n- Provides practical strategies for bypassing anti-crawling detection and bans, including user-agent rotation, proxy/IP rotation, and request header completeness.\n- Includes rate limiting techniques and adaptive delays to control request frequency and avoid bans.\n- Offers browser fingerprint randomization, cookie/session management, and JavaScript rendering challenge handling (with Selenium/Playwright).\n- Covers automated CAPTCHA solving via 2Captcha integration.\n- Details distributed crawling architecture and human-like behavior simulation for advanced evasion.\n- Lists common anti-crawler scenarios and countermeasures, and provides recommended tools for implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cbb545bb2ee28cacb223d0219b10a5359c8341a4440f7cf4e6a8eaa8d61169f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-maker-in-pc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_maker_in_pc",
+  "skill": {
+    "id": 43535,
+    "skillKey": "clawhub-free-video-maker-in-pc",
+    "name": "Free Video Maker In Pc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-maker-in-pc",
+    "url": "https://clawhub.ai/skills/free-video-maker-in-pc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-maker-in-pc-572047e7d60c7d86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute screen recording or five product photos into 1080p polished MP4 videos just by typing what you need. Whether it's creating and editing videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776783380290,
+      "changelog": "- Initial release of \"Free Video Maker in PC\" skill.\n- Turn short screen recordings or product photos into polished 1080p MP4 videos quickly—just by describing what you want, without a timeline or export settings.\n- Seamless upload and cloud-based AI editing; supports video and photo input, with fast processing (1–2 minutes for typical clips).\n- Handles common video editing requests (merging, background music, text overlays) via keyword and intent analysis.\n- Automatic handling of user authentication and session with anonymous/free tokens and session establishment.\n- Simple error handling, clear user feedback, and support for formats like MP4, MOV, AVI, MP3, PNG, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:960a4f10ebc716b59b7d54381c3cb26d77805a1aeaee21ac0a680bd9346abbbc"
+}

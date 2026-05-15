@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24488,
+  "uuid": "skill-clawhub-yamlcheck",
+  "skillKey": "clawhub-yamlcheck",
+  "name": "Yamlcheck",
+  "summary": "Validate YAML syntax using python3, lint configs, and convert YAML to JSON. Use when checking syntax, finding errors, or converting formats.",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yamlcheck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Validate YAML syntax using python3, lint configs, and convert YAML to JSON",
+        "Use when checking syntax, finding errors, or converting formats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yamlcheck@3.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yamlcheck",
+      "url": "https://clawhub.ai/skills/yamlcheck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yamlcheck",
+    "url": "https://clawhub.ai/skills/yamlcheck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yamlcheck-de3129a0d97729cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yamlcheck@3.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-yamlcheck-3.0.2.json",
+      "version": "3.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd8f9925857d970a7acf5fa31596d88f2e856cb4cf22d28e461d5adc00b6c28a",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T11:02:08.627Z"
+}

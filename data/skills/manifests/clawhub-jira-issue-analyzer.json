@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61960,
+  "uuid": "skill-clawhub-jira-issue-analyzer",
+  "skillKey": "clawhub-jira-issue-analyzer",
+  "name": "jira-issue-analyzer",
+  "summary": "Jira 问题分析编排器。负责获取 issue 与附件、委托日志分析 subagent，并产出最终 Markdown 报告到本地目录。适用于用户要求生成 Jira 问题分析文档的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_issue_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dimos",
+      "features": [
+        "Jira 问题分析编排器。负责获取 issue 与附件、委托日志分析 subagent，并产出最终 Markdown 报告到本地目录。适用于用户要求生成 Jira 问题分析文档的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jira-issue-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17718895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jira-issue-analyzer",
+      "url": "https://clawhub.ai/skills/jira-issue-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-issue-analyzer",
+    "url": "https://clawhub.ai/skills/jira-issue-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-issue-analyzer-29e77cb6c5f70780.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jira-issue-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jira-issue-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5511b442e71ef479241c616e1dd35f94c267117cfb0593cbc5f809136df96a4",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:19:44.016Z"
+}

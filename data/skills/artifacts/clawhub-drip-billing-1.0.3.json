@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drip-billing@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drip_billing",
+  "skill": {
+    "id": 28045,
+    "skillKey": "clawhub-drip-billing",
+    "name": "Drip Billing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drip-billing",
+    "url": "https://clawhub.ai/skills/drip-billing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drip-billing-f0994ca3461f3c0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track AI agent usage and costs with Drip metered billing. Use when you need to record aggregate LLM usage, tool calls, agent runs, or other metered usage for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucas-309",
+      "userId": "s175vw40fhkr3bm546tvt7skw583zkwm",
+      "displayName": "lucas-309",
+      "image": "https://avatars.githubusercontent.com/u/73149140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772594942330,
+      "changelog": "Added detailed credential scoping guidance (public vs. secret keys) and recommended minimal privilege usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80f747d9b2c009654a1354917ff6e898b1f3aba059b4ad99b2d94c6be8a99cd1"
+}

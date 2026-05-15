@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56547,
+  "uuid": "skill-clawhub-autonomous-cascade",
+  "skillKey": "clawhub-autonomous-cascade",
+  "name": "Autonomous Cascade",
+  "summary": "Führt mehrstufige Tasks autonom durch Planen, Ausführen und Bewerten in Schleifen, bis Ziel erreicht oder Budget erschöpft ist.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomous_cascade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hupmann86-cell",
+      "features": [
+        "Führt mehrstufige Tasks autonom durch Planen, Ausführen und Bewerten in Schleifen, bis Ziel err."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomous-cascade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242008639?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomous-cascade",
+      "url": "https://clawhub.ai/skills/autonomous-cascade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomous-cascade",
+    "url": "https://clawhub.ai/skills/autonomous-cascade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomous-cascade-ae1d1ef83c758896.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomous-cascade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomous-cascade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c81b60d0f91daa47874463b3c817da72f74ca0ceaf08bdf853852884dbaa8647",
+      "artifactSizeBytes": 2471
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T06:55:28.540Z"
+}

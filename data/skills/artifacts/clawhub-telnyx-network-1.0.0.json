@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telnyx-network@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telnyx_network",
+  "skill": {
+    "id": 14508,
+    "skillKey": "clawhub-telnyx-network",
+    "name": "Telnyx Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telnyx-network",
+    "url": "https://clawhub.ai/skills/telnyx-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telnyx-network-3e1c4a45a03bd561.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Private mesh networking and public IP exposure via Telnyx WireGuard infrastructure. Connect nodes securely or expose services to the internet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teamtelnyx",
+      "userId": "s170draq1trsnzq53cd20af77s85vr4p",
+      "displayName": "teamtelnyx",
+      "image": "https://avatars.githubusercontent.com/u/176328014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770739720770,
+      "changelog": "Initial release of telnyx-network skill.\n\n- Enables private mesh networking and public IP exposure using Telnyx WireGuard infrastructure.\n- Provides scripts for setup, joining nodes, exposing services, and managing the mesh network.\n- Supports automated agent operation with sudoers setup for WireGuard binaries.\n- Includes node discovery and registration via Telnyx Storage for multi-agent communication.\n- Offers detailed documentation for usage, safety, configuration, regions, pricing, and troubleshooting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f4ee27bdd3e85ee8409f6337763104089b9f79a777af350c46793e8fc4540aa1"
+}

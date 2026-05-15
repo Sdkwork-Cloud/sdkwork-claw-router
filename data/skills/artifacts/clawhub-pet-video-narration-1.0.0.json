@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pet-video-narration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pet_video_narration",
+  "skill": {
+    "id": 69778,
+    "skillKey": "clawhub-pet-video-narration",
+    "name": "pet video narration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pet-video-narration",
+    "url": "https://clawhub.ai/skills/pet-video-narration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pet-video-narration-7fe7c5317df8ee9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "宠物第一视角视频创作技能。当用户发送宠物视频并希望生成\"宠物内心独白\"风格的配音视频时激活。适用场景：（1）分析宠物肢体动作并解读其意图；（2）生成宠物第一视角的趣味文案；（3）文字转语音并音视频合并为成品。触发词：宠物视频配音、我的宠物在想什么、给宠物加旁白、宠物内心独白、pet video narration。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhanglinghao01-rakuten",
+      "userId": "s1752bkwmdzs7qdw1gbwhd96hx83gf79",
+      "displayName": "zhanglinghao01-rakuten",
+      "image": "https://avatars.githubusercontent.com/u/47613864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774419357427,
+      "changelog": "pet-video-narration 1.0.0\n\n- Initial release.\n- Converts pet videos into \"pet’s inner monologue\" style narration videos.\n- Analyzes pet body language and generates first-person, personality-matched scripts.\n- Produces segmented narration that aligns with video action time points.\n- Supports text-to-speech and merges generated audio with the original video.\n- Includes templates and guidelines for pet species, behavior styles, and user info collection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17554d39f93f704de6093c55dede4850cbd54dce2054b11fb5b5daee4b748766"
+}

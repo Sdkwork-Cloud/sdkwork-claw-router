@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/automated-code-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automated_code_reviewer",
+  "skill": {
+    "id": 48632,
+    "skillKey": "clawhub-automated-code-reviewer",
+    "name": "Automated Code Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automated-code-reviewer",
+    "url": "https://clawhub.ai/skills/automated-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automated-code-reviewer-01928966a72c754a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated code review for AI agents. Analyze pull requests, detect bugs, enforce coding standards, and suggest improvements. Triggers: code review, PR review..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777510147452,
+      "changelog": "Initial release of automated-code-reviewer 1.0.0:\n\n- Provides automated code review for AI agents with bug detection, standards enforcement, and improvement suggestions.\n- Supports pull request analysis, security scanning, and performance review.\n- Offers configurable rules for severity, categories, and language-specific standards.\n- Enables use cases including PR gatekeeping, pre-commit checks, batch review, onboarding, and security audits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d07cc777d93bb4354ba0faf3adbf60f1c12ed455c9e75c82a842a1b0c6272c52"
+}

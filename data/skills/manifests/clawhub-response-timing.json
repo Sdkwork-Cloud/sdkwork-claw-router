@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67950,
+  "uuid": "skill-clawhub-response-timing",
+  "skillKey": "clawhub-response-timing",
+  "name": "Response Timing",
+  "summary": "回应时机技能。用于判断何时应该回应，何时应该保持沉默。当需要确定用户是否在跟当前 agent 对话、是否应该回应时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.response_timing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ebly",
+      "features": [
+        "回应时机技能。用于判断何时应该回应，何时应该保持沉默。当需要确定用户是否在跟当前 agent 对话、是否应该回应时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/response-timing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5242545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "response-timing",
+      "url": "https://clawhub.ai/skills/response-timing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "response-timing",
+    "url": "https://clawhub.ai/skills/response-timing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/response-timing-c28fc6f322e7be30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/response-timing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-response-timing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07a7feded255ef872390627b6237db0af59d29fbc1b1905904f6a601635fedb9",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T19:24:54.255Z"
+}

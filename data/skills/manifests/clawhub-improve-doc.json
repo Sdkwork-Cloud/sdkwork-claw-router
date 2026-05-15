@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36929,
+  "uuid": "skill-clawhub-improve-doc",
+  "skillKey": "clawhub-improve-doc",
+  "name": "Improve Doc",
+  "summary": "Analyze and improve existing documentation using Diataxis principles",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.improve_doc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Analyze and improve existing documentation using Diataxis principles"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/improve-doc@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "improve-doc",
+      "url": "https://clawhub.ai/skills/improve-doc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "improve-doc",
+    "url": "https://clawhub.ai/skills/improve-doc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/improve-doc-bd1fafbff43ba24f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/improve-doc@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-improve-doc-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dc74e38b6329f8b5ad56ff2d3ca9f5bffdb68c028fea35b53f43fcbcf56c6c7",
+      "artifactSizeBytes": 2480
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:11:04.980Z"
+}

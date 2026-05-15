@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_query",
+  "skill": {
+    "id": 41542,
+    "skillKey": "clawhub-arxiv-query",
+    "name": "Arxiv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-query",
+    "url": "https://clawhub.ai/skills/arxiv-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-query-4a26c169474d3510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and summarize papers from ArXiv. Use when the user asks for the latest research, specific topics on ArXiv, or a daily summary of AI papers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774319936832,
+      "changelog": "- Initial release of the arxiv-query skill.\n- Search and summarize research papers from ArXiv by keyword, author, or category.\n- Automatically records summarized papers to memory for long-term tracking.\n- Provides abstracts with concise summaries and optionally extracts more details from PDF links.\n- Includes Spanish-language example queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:463ff3e9eff60c96c91e6dd8cc01ca0c95305df4d81aee5b8818e9b25ed541b9"
+}

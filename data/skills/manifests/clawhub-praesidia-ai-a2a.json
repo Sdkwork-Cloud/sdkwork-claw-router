@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13009,
+  "uuid": "skill-clawhub-praesidia-ai-a2a",
+  "skillKey": "clawhub-praesidia-ai-a2a",
+  "name": "Praesidia",
+  "summary": "Verify AI agents, check trust scores (0-100), fetch A2A agent cards, discover marketplace agents, apply guardrails for security and compliance. Use when user mentions agent verification, trust scores, agent discovery, A2A protocol, agent i.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.praesidia_ai_a2a",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "msoica",
+      "features": [
+        "Verify AI agents, check trust scores (0-100), fetch A2A agent cards, discover marketplace agent.",
+        "Use when user mentions agent verification, trust scores, agent discovery, A2A protocol, agent i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/praesidia-ai-a2a@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13220606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "praesidia-ai-a2a",
+      "url": "https://clawhub.ai/skills/praesidia-ai-a2a"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "praesidia-ai-a2a",
+    "url": "https://clawhub.ai/skills/praesidia-ai-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/praesidia-ai-a2a-8b89c93f79699ab2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/praesidia-ai-a2a@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-praesidia-ai-a2a-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59eefd672adb69a6d3f982fb5753ad7fb00d3cfeee35e89dedd7475e24fba2aa",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T07:22:02.858Z"
+}

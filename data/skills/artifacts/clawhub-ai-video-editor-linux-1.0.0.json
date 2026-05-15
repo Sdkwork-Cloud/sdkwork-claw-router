@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-linux@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_linux",
+  "skill": {
+    "id": 46908,
+    "skillKey": "clawhub-ai-video-editor-linux",
+    "name": "Ai Video Editor Linux"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-linux",
+    "url": "https://clawhub.ai/skills/ai-video-editor-linux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-linux-696ffd562a389847.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776363395636,
+      "changelog": "Initial release of AI Video Editor Linux — browser-based AI-powered video editing for Linux users.\n\n- Upload MP4, MOV, AVI, or WebM videos (up to 500MB) and edit with natural language prompts.\n- Automatic cloud-based editing: trim silences, add transitions, and export clean MP4 cuts.\n- No software installation required; works on any Linux distro with Chrome or Firefox.\n- Includes session management, credit system, and export/download workflow.\n- Detailed error handling and direct mapping for common editing/task requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a70822eb70f14562b8c2f31826d9b945b37283522659b101d0d319c31e6b4a77"
+}

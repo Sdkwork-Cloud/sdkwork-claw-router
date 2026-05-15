@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71965,
+  "uuid": "skill-clawhub-ai-report",
+  "skillKey": "clawhub-ai-report",
+  "name": "ai-report",
+  "summary": "自动生成AI助手工作日报/周报。整理当日任务完成情况、对话主题、关键决策、待办事项，生成结构化总结报告。用于用户说写日报、写周报、总结工作、整理汇报。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Primordia",
+      "features": [
+        "自动生成AI助手工作日报/周报。整理当日任务完成情况、对话主题、关键决策、待办事项，生成结构化总结报告。用于用户说写日报、写周报、总结工作、整理汇报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-report@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224094441?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-report",
+      "url": "https://clawhub.ai/skills/ai-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-report",
+    "url": "https://clawhub.ai/skills/ai-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-report-3822602df96adaac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-report@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-report-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24e7257d9511501400918e25720ea06b4ca7e589690e2a15f832514ff771368d",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T19:02:41.935Z"
+}

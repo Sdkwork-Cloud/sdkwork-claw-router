@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shampoo-recommender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shampoo_recommender",
+  "skill": {
+    "id": 71055,
+    "skillKey": "clawhub-shampoo-recommender",
+    "name": "娜可露露洗发水推荐助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shampoo-recommender",
+    "url": "https://clawhub.ai/skills/shampoo-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shampoo-recommender-654af27ac7aae4e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "娜可露露洗发水专业推荐助手。当用户提到\"洗发水\"、\"推荐洗发水\"、\"给我推荐洗发水\"、\"什么洗发水好用\"、\"洗发水推荐\"、\"娜可露露\"、\"游泳洗头\"、\"海边游泳\"、\"泳池洗头\"、\"去氯\"、\"游泳后洗头\"、\"比赛洗头\"等相关字眼时触发。根据用户的发质（干性/油性/受损/中性）、头皮问题（去屑/控油/防脱/敏感）、使..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crazyxingxing",
+      "userId": "publishers:crazyxingxing",
+      "displayName": "crazyXingXing",
+      "image": "https://avatars.githubusercontent.com/u/26996690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774081482390,
+      "changelog": "Initial release of shampoo-recommender:\n\n- 专业顾问式流程，根据用户发质、头皮问题、使用场景、预算推荐娜可露露洗发水\n- 支持游泳及海边等专用使用场景，优先匹配去氯修护产品\n- 提供详细对话询问指引与推荐输出模板，结构化呈现推荐理由和使用建议\n- 包含产品推荐卡片自动生成脚本，支持个性化视觉展示\n- 收录FAQ答疑、对话示例和资产资源引用，便于高效解答与优质输出",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:90be603eb3e18e7875faed3eea774af50ed805941ec6773f4c07a86fc59ab9ed"
+}

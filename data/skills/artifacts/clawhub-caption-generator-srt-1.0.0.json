@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-generator-srt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_srt",
+  "skill": {
+    "id": 42061,
+    "skillKey": "clawhub-caption-generator-srt",
+    "name": "Caption Generator Srt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-srt",
+    "url": "https://clawhub.ai/skills/caption-generator-srt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-srt-a40d67a861059b60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute interview recording in MP4 into 1080p captioned videos with SRT just by typing what you need. Whether it's generating SRT caption files for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776768430455,
+      "changelog": "Caption Generator SRT 1.0.0 — Initial Release\n\n- Easily generate SRT caption files and 1080p captioned videos from your MP4 interview or social video uploads.\n- No manual editing: upload your video, describe the captions you want, and receive your result in 30–90 seconds.\n- Integrates automatic cloud backend setup and session management, including free credits for new users.\n- Supports direct file uploads and a range of video/audio formats (MP4, MOV, AVI, WebM, etc.).\n- Simple, intent-based commands for generating captions, exporting videos, checking credits, and viewing project state.\n- Handles errors gracefully, with clear messages for missing tokens, credit issues, and file problems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e5006f5008e5457206559d38795e212e6a2618c38920fe05ccdd4373841c636e"
+}

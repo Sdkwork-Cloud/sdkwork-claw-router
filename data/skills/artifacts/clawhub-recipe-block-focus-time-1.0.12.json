@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recipe-block-focus-time@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_block_focus_time",
+  "skill": {
+    "id": 19425,
+    "skillKey": "clawhub-recipe-block-focus-time",
+    "name": "Recipe Block Focus Time"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-block-focus-time",
+    "url": "https://clawhub.ai/skills/recipe-block-focus-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-block-focus-time-40c4ba16078c71e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create recurring focus time blocks on Google Calendar to protect deep work hours."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982143953,
+      "changelog": "- Updated skill version from 0.22.4 to 0.22.5 in metadata.\n- No other changes made to functionality or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11f587204112b304c57cf696c5ccf087889bce4a588c180f03394ffd9b0aee11"
+}

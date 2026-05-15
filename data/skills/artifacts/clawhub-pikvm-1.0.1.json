@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pikvm@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pikvm",
+  "skill": {
+    "id": 33932,
+    "skillKey": "clawhub-pikvm",
+    "name": "PiKVM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pikvm",
+    "url": "https://clawhub.ai/skills/pikvm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pikvm-6395a2239e3f1618.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control and inspect PiKVM devices over the PiKVM HTTP API. Use when asked to operate a PiKVM, query power or HID status, type text or shortcuts remotely, tak..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "didyouexpectthat",
+      "userId": "s177dctd2j5p9gza8d3brmp77n83rrxg",
+      "displayName": "Cody Cook",
+      "image": "https://avatars.githubusercontent.com/u/1329077?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773983296357,
+      "changelog": "Version 1.0.1\n\n- Added version and metadata fields to SKILL.md for improved environment specification and integration.\n- Declared required environment variables (PIKVM_URL, PIKVM_USER, PIKVM_PASS, etc.) and dependencies (python3) in metadata.\n- Set primary environment variable as PIKVM_PASS.\n- Linked to the official PiKVM API documentation as the homepage in metadata.\n- No changes to skill logic, description, or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92f1bd29ba8f6defc40005acf60ccf93ca8111aade179a2e6b83d5232f215457"
+}

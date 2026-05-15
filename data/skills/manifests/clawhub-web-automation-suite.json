@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68586,
+  "uuid": "skill-clawhub-web-automation-suite",
+  "skillKey": "clawhub-web-automation-suite",
+  "name": "Web Automation Suite",
+  "summary": "网页自动化套件 - 整合爬虫+浏览器自动化+定时任务。 功能：Chrome CDP连接封装、网页操作（点击/输入/滚动/截图）、数据抓取模板、表单自动填写、定时监控任务。 触发场景：自动抓取网页、自动化填表、批量发布内容、数据监控、定时任务执行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_automation_suite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxie48892-jpg",
+      "features": [
+        "整合爬虫+浏览器自动化+定时任务。 功能：Chrome CDP连接封装、网页操作（点击/输入/滚动/截图）、数据抓取模板、表单自动填写、定时监控任务。 触发场景：自动抓取网页、自动化填表、批."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-automation-suite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264585984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-automation-suite",
+      "url": "https://clawhub.ai/skills/web-automation-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-automation-suite",
+    "url": "https://clawhub.ai/skills/web-automation-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-automation-suite-30ea1acbc9413955.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-automation-suite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-automation-suite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bfe38fa15cf88b6d5a53858a86045f4c988e027695b35b16a94ef3fa1c4f58e",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T04:46:32.696Z"
+}

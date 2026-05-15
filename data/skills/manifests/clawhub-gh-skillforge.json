@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53093,
+  "uuid": "skill-clawhub-gh-skillforge",
+  "skillKey": "clawhub-gh-skillforge",
+  "name": "Skillforge",
+  "summary": "Generate valid, ClawHub-ready SKILL.md files from product metadata. Give it a name, description, and instructions — get back a properly formatted SKILL.md wi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_skillforge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mirni",
+      "features": [
+        "Generate valid, ClawHub-ready SKILL.md files from product metadata",
+        "Give it a name, description, and instructions — get back a properly formatted SKILL.md wi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gh-skillforge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13551232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gh-skillforge",
+      "url": "https://clawhub.ai/skills/gh-skillforge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-skillforge",
+    "url": "https://clawhub.ai/skills/gh-skillforge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-skillforge-3b0d143a5e7f2c85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gh-skillforge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gh-skillforge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41d91fee0802374ddc7569bc429b6c6539c8f08d920bd4dc4d8e7ccd7c004411",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T08:06:25.641Z"
+}

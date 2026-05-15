@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67268,
+  "uuid": "skill-clawhub-toutiao-auto-publish",
+  "skillKey": "clawhub-toutiao-auto-publish",
+  "name": "toutiaoAutoPublish",
+  "summary": "今日头条微头条自动发布工具。自动发布短内容到今日头条平台，支持文本和图片。 使用场景：(1) 用户说\"发布头条\"、\"发微头条\"、\"头条发布\"时触发 (2) 需要自动发布社交媒体内容时 (3) 需要定时发布今日头条时",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_auto_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devilsbibble",
+      "features": [
+        "今日头条微头条自动发布工具。自动发布短内容到今日头条平台，支持文本和图片。 使用场景：(1) 用户说\"发布头条\"、\"发微头条\"、\"头条发布\"时触发 (2) 需要自动发布社交媒体内容时 (3)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toutiao-auto-publish@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1435812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toutiao-auto-publish",
+      "url": "https://clawhub.ai/skills/toutiao-auto-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-auto-publish",
+    "url": "https://clawhub.ai/skills/toutiao-auto-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-auto-publish-0f2e203ef3bd6b54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toutiao-auto-publish@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-auto-publish-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1718c5d104b8034f15523a39ce42918af1ce37994f2bb8c64879d4c03e1c7b0a",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:41:06.902Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-summarizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_summarizer",
+  "skill": {
+    "id": 55165,
+    "skillKey": "clawhub-content-summarizer",
+    "name": "Summarize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-summarizer",
+    "url": "https://clawhub.ai/skills/content-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-summarizer-2c27bffb65fa429f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utromaya-code",
+      "userId": "publishers:utromaya-code",
+      "displayName": "utromaya-code",
+      "image": "https://avatars.githubusercontent.com/u/254962629?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774210404146,
+      "changelog": "Initial release of content-summarizer v1.0.0:\n\n- Adds a fast CLI for summarizing or extracting text from URLs, podcasts, local files, and YouTube videos.\n- Supports best-effort transcription and summary of YouTube and video links.\n- Integrates with multiple providers: OpenAI, Anthropic, xAI, and Google Gemini.\n- Flexible API key setup and configuration via environment variables or config file.\n- Includes helpful flags for summary length, output format, and extraction methods.\n- Optional fallback services for blocked sites or enhanced extraction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ec5485a596e1cc178455674d85de705a64821cc97a779958680439feb641a93"
+}

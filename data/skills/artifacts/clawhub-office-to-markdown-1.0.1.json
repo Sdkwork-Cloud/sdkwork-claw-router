@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/office-to-markdown@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office_to_markdown",
+  "skill": {
+    "id": 56225,
+    "skillKey": "clawhub-office-to-markdown",
+    "name": "Office → Markdown Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office-to-markdown",
+    "url": "https://clawhub.ai/skills/office-to-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office-to-markdown-13f93bad24fa1991.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Converts office automation documents — PDF, PPTX, DOCX, XLSX, CSV — into clean, readable Markdown. Use this skill when a user explicitly asks to convert, ext..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "naimalarain13",
+      "userId": "s17b5cqnqj78aedy8p3fg28nvn8699y3",
+      "displayName": "Naimal Salahuddin",
+      "image": "https://avatars.githubusercontent.com/u/136015168?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778144482763,
+      "changelog": "Version 1.0.1\n\n- Clarifies skill should only trigger on explicit conversion requests, not on bare file uploads.\n- Adds a required step for user confirmation before transmitting images to the vision API.\n- Documents new security practices: scripts install dependencies into an isolated temp directory, not the system Python.\n- Adds workflow/enforcement for vision extraction: prompt user if image-only pages detected, optionally skip vision if declined.\n- Updates description and edge cases to reflect these consent and security changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08aaae8b7b533bad3ac06fdf5bcf6b24380b6567a8f4ec7677b2a0be88b1431a"
+}

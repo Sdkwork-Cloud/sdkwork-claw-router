@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54707,
+  "uuid": "skill-clawhub-hashicorp-vault",
+  "skillKey": "clawhub-hashicorp-vault",
+  "name": "HashiCorp Vault",
+  "summary": "Work with HashiCorp Vault using the `vault` CLI for authentication checks, KV secret reads and writes, listing paths, enabling and tuning secrets engines, po...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hashicorp_vault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimpang8",
+      "features": [
+        "Work with HashiCorp Vault using the `vault` CLI for authentication checks, KV secret reads and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hashicorp-vault@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27860553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hashicorp-vault",
+      "url": "https://clawhub.ai/skills/hashicorp-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hashicorp-vault",
+    "url": "https://clawhub.ai/skills/hashicorp-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hashicorp-vault-e829beeff8eec5a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hashicorp-vault@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hashicorp-vault-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baeae3dfad4d691b2623644be3e0c3fde6fbc7b11e33a8d47990db4bd937d233",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:22:02.353Z"
+}

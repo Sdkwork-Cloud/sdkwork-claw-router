@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14104,
+  "uuid": "skill-clawhub-reddit-explore",
+  "skillKey": "clawhub-reddit-explore",
+  "name": "Reddit Explore",
+  "summary": "This skill should be used when the user asks to \"search Reddit\", \"explore Reddit posts\", \"find Reddit discussions about\", \"summarize Reddit opinions on\", \"what does Reddit think about\", or wants to gather and summarize community opinions f.",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_explore",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "netmsglog",
+      "features": [
+        "This skill should be used when the user asks to \"search Reddit\", \"explore Reddit posts\", \"find."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-explore@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45112788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-explore",
+      "url": "https://clawhub.ai/skills/reddit-explore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-explore",
+    "url": "https://clawhub.ai/skills/reddit-explore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-explore-553b9762050ed37c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-explore@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-explore-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc0947d4a52fd3ee48774d861a5820136e3957a04f15f9fcc370b2b4fdc52ba6",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T04:22:26.310Z"
+}

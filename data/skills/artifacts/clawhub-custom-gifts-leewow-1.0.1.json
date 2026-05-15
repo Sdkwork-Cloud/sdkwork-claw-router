@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/custom-gifts-leewow@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.custom_gifts_leewow",
+  "skill": {
+    "id": 53348,
+    "skillKey": "clawhub-custom-gifts-leewow",
+    "name": "Leewow Custom Gifts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "custom-gifts-leewow",
+    "url": "https://clawhub.ai/skills/custom-gifts-leewow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/custom-gifts-leewow-df44267970b7652f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse and create custom gifts — personalized bags, mugs, phone cases, apparel and more. Upload any image to generate an AI-powered product mockup. Includes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yqxu",
+      "userId": "s174cjaanwx8yzcdjzf7ng1apd83h1c7",
+      "displayName": "yqxu",
+      "image": "https://avatars.githubusercontent.com/u/26142185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774364482136,
+      "changelog": "Initial release - AI-powered custom gift preview",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cefe36298e6653268324aed1f8f6408bf08636f5ef93e4c70eedb3e163c19c87"
+}

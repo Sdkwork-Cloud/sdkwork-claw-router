@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25224,
+  "uuid": "skill-clawhub-halo-cli",
+  "skillKey": "clawhub-halo-cli",
+  "name": "Halo Cli",
+  "summary": "Use when the task is to operate Halo CLI in general, or may involve login, profiles, posts, single pages, search, plugins, themes, attachments, backups, mome...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halo_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan Wang",
+      "features": [
+        "Use when the task is to operate Halo CLI in general, or may involve login, profiles, posts, sin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/halo-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21301288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "halo-cli",
+      "url": "https://clawhub.ai/skills/halo-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halo-cli",
+    "url": "https://clawhub.ai/skills/halo-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halo-cli-45833001334699e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/halo-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-halo-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b8185a64abe2f0b99aced4483a409e84f0a0d393432f14a12ad7021059d0d46",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:27:10.246Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52531,
+  "uuid": "skill-clawhub-getmem-openclaw",
+  "skillKey": "clawhub-getmem-openclaw",
+  "name": "getmem.ai Memory",
+  "summary": "Persistent memory for every user via getmem.ai. Automatically ingests conversations and injects relevant context before each agent reply. Two API calls. $20...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getmem_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NimbleV2023",
+      "features": [
+        "Persistent memory for every user via getmem.ai",
+        "Automatically ingests conversations and injects relevant context before each agent reply",
+        "Two API calls"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getmem-openclaw@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133707915?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getmem-openclaw",
+      "url": "https://clawhub.ai/skills/getmem-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getmem-openclaw",
+    "url": "https://clawhub.ai/skills/getmem-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getmem-openclaw-53a7f5f3980d1ea7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getmem-openclaw@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-getmem-openclaw-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b3248da5b2045605ba7904a5535fc831fe2e4327f4a8e8639e74ff6c4334098",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T10:21:02.836Z"
+}

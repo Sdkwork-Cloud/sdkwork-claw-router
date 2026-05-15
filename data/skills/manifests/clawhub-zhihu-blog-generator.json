@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61901,
+  "uuid": "skill-clawhub-zhihu-blog-generator",
+  "skillKey": "clawhub-zhihu-blog-generator",
+  "name": "zhihu blog generator",
+  "summary": "知乎风格技术博客生成器 - 自动化生成高质量技术文章",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_blog_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepWater",
+      "features": [
+        "知乎风格技术博客生成器",
+        "自动化生成高质量技术文章"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-blog-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258605062?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-blog-generator",
+      "url": "https://clawhub.ai/skills/zhihu-blog-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-blog-generator",
+    "url": "https://clawhub.ai/skills/zhihu-blog-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-blog-generator-8e0f568c3b3d3c4d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-blog-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-blog-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8773328f1acdb9548d366f630c09d883b43a7543de9a074a21a37f4d4bd62692",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T01:50:07.372Z"
+}

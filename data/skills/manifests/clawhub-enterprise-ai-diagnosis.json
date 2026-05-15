@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70562,
+  "uuid": "skill-clawhub-enterprise-ai-diagnosis",
+  "skillKey": "clawhub-enterprise-ai-diagnosis",
+  "name": "企业AI应用诊断工具",
+  "summary": "企业AI应用诊断工具，帮助企业评估AI应用价值、计算ROI、规划实施路径。当用户询问\"企业如何用AI\"、\"AI能帮我的企业做什么\"、\"AI投入回报\"等企业AI应用相关问题时使用。支持企业现状评估、AI价值分析、ROI计算、实施路径规划、工具推荐。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_ai_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickyhu1699",
+      "features": [
+        "企业AI应用诊断工具，帮助企业评估AI应用价值、计算ROI、规划实施路径。当用户询问\"企业如何用AI\"、\"AI能帮我的企业做什么\"、\"AI投入回报\"等企业AI应用相关问题时使用。支持企业现状."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-ai-diagnosis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207309431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-ai-diagnosis",
+      "url": "https://clawhub.ai/skills/enterprise-ai-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-ai-diagnosis",
+    "url": "https://clawhub.ai/skills/enterprise-ai-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-ai-diagnosis-1313bdf31fec61ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-ai-diagnosis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-ai-diagnosis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2d99305bd63b891b50a0e0f18d0f2606cbb7777d7432d8d1b846534cfb8cae6",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:22:19.425Z"
+}

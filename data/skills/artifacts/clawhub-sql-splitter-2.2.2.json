@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sql-splitter@2.2.2",
+  "version": "2.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_splitter",
+  "skill": {
+    "id": 71934,
+    "skillKey": "clawhub-sql-splitter",
+    "name": "SQL 文件拆分工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-splitter",
+    "url": "https://clawhub.ai/skills/sql-splitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-splitter-3478ef1273a70dd5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "拆分 SQL 文件为独立文件（存储过程、函数、视图、触发器、表结构、索引、约束），自动分析依赖并生成合并脚本"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fish1981bimmer",
+      "userId": "s17dzz5rp1x5wrb7s33vv04cb984wjf8",
+      "displayName": "fish1981bimmer",
+      "image": "https://avatars.githubusercontent.com/u/271533977?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.2.2",
+      "createdAt": 1777631470168,
+      "changelog": "v2.2.1->v2.2.2: 安全修复和文档优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13f6bb19bb4995d441d13c923b9793763c5cb4b112c4a246dea1d4526086953a"
+}

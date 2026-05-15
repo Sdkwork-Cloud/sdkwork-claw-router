@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_auditor",
+  "skill": {
+    "id": 42624,
+    "skillKey": "clawhub-agent-auditor",
+    "name": "Agent Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-auditor",
+    "url": "https://clawhub.ai/skills/agent-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-auditor-9b7d463841d9295a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit any AI coding tool for telemetry, remote control, permissions, privacy, and hidden features. Generates a graded report (A-F)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mackding",
+      "userId": "s17280mcvtp4vrh7dgbtcshp6x83gb2m",
+      "displayName": "Blossom",
+      "image": "https://avatars.githubusercontent.com/u/19878893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028274948,
+      "changelog": "- Initial release of Agent Auditor.\n- Audits AI coding tools for telemetry, remote control, permissions, privacy, and hidden features.\n- Generates structured, graded reports (A-F) with detailed findings and recommendations.\n- Supports both CLI and programmatic usage.\n- Includes composite grading with per-category breakdown and actionable recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a7a05146e16cb60dded81ef670ebb57308fde6f8c9f5836bcf6124913aaeb39"
+}

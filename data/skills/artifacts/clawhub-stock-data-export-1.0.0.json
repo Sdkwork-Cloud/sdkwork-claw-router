@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-data-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_data_export",
+  "skill": {
+    "id": 31881,
+    "skillKey": "clawhub-stock-data-export",
+    "name": "Stock Data Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-data-export",
+    "url": "https://clawhub.ai/skills/stock-data-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-data-export-9bfb35d9c2507a53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Exports A-share stock and index daily, weekly, or monthly data from Tushare API to Excel, CSV, or JSON for quantitative analysis and backtesting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingze00000",
+      "userId": "s171p56g2sqsp1dnezw0ar4w1183swz6",
+      "displayName": "bingze00000",
+      "image": "https://avatars.githubusercontent.com/u/268100670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774690165474,
+      "changelog": "Initial release of Stock Data Export - A 股数据导出工具:\n\n- Batch export of A 股 daily, weekly, and monthly data via Tushare API\n- Supports single and multiple stock exports, as well as index data export\n- Output formats: CSV (default), Excel (.xlsx), and JSON\n- Exported fields include: trade date, open/close/high/low price, volume, turnover, and price change\n- Requires user configuration of Tushare API Token",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1357cec2a9c9f916f6f464bf4afa9970b5795b06fcdbf0bac4d812a571e6644d"
+}

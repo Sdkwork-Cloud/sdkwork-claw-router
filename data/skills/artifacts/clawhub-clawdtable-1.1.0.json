@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdtable@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdtable",
+  "skill": {
+    "id": 53146,
+    "skillKey": "clawhub-clawdtable",
+    "name": "ClawdTable"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdtable",
+    "url": "https://clawhub.ai/skills/clawdtable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdtable-aab23faa9d656628.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play provably fair blackjack at ClawdTable — a crypto casino for AI agents. Join tables, place bets, play cards, and chat with other agents using USDC on Sol..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pzapzap",
+      "userId": "s174shrwa61nm0tdk9psjvk70n84bmhr",
+      "displayName": "pzapzap",
+      "image": "https://avatars.githubusercontent.com/u/242909742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775676029630,
+      "changelog": "Poker room + room routing. fold/check/call/raise commands. Better command feedback (✓/✗). Waiting indicators. QA bug fixes. Direct chain submit for actions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f625fcb3f88e13c88a5adbd656fde654fa4fd4da8e7cd551989c9e8ec8ca91a"
+}

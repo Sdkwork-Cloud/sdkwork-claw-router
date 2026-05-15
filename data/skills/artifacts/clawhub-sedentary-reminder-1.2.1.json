@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sedentary-reminder@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sedentary_reminder",
+  "skill": {
+    "id": 36723,
+    "skillKey": "clawhub-sedentary-reminder",
+    "name": "Sedentary Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sedentary-reminder",
+    "url": "https://clawhub.ai/skills/sedentary-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sedentary-reminder-1a2f31e1935217ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs practical sedentary-break reminder systems with strong timing logic. Use when users want help deciding when to remind, how often to remind, when to d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linhucong814-cyber",
+      "userId": "s174sps0rbzzffrvkaa2y6zstd83zgh0",
+      "displayName": "xianyu",
+      "image": "https://avatars.githubusercontent.com/u/268893651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775920073068,
+      "changelog": "Maintenance release.\n\nWhat's new in 1.2.1:\n- Removed macOS .DS_Store junk files from the published skill directory\n- Re-published a cleaner skill package after the 1.2.0 feature upgrade\n- No behavior changes to timing logic, heartbeat workflow, controls, or break detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a37e3f8ab17da760932e91de4d88ce95bf8a8778e6b7cc51996391cb04c13114"
+}

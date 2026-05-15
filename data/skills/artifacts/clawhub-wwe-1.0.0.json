@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wwe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wwe",
+  "skill": {
+    "id": 45152,
+    "skillKey": "clawhub-wwe",
+    "name": "Wwe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wwe",
+    "url": "https://clawhub.ai/skills/wwe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wwe-c3f2c80e9cd96953.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides information on WWE history, rules, major events, and famous wrestlers like The Rock, John Cena, and Roman Reigns."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776500229896,
+      "changelog": "WWE skill version 1.0.0 released:\n\n- 新增 WWE 世界摔角娱乐的简介及历史沿革\n- 详细介绍赛制规则和赛事类型\n- 汇总知名摔角选手及其成就\n- 提供 WWE 基本信息（成立时间、总部、CEO 等）\n- 列出旗舰赛事 WrestleMania 和观众数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae79cc29719f8f80927887ba11e18189d1d371a22eb30d0554050ee51cd3d0b6"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47044,
+  "uuid": "skill-clawhub-task-cost-estimator",
+  "skillKey": "clawhub-task-cost-estimator",
+  "name": "Task Cost Estimator",
+  "summary": "Task to best model + cost. 4 modes (value, quality, balanced, local). Tracks lifetime Bonus.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_cost_estimator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maya Tao",
+      "features": [
+        "Task to best model + cost",
+        "4 modes (value, quality, balanced, local)",
+        "Tracks lifetime Bonus."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-cost-estimator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226037090?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-cost-estimator",
+      "url": "https://clawhub.ai/skills/task-cost-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-cost-estimator",
+    "url": "https://clawhub.ai/skills/task-cost-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-cost-estimator-fda205e52ccebdc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-cost-estimator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-cost-estimator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b056db6341b8a015e49bfbb80a1e262b633358fdf262d86b61ecced66df7fdf3",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T07:29:59.527Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61871,
+  "uuid": "skill-clawhub-linkfox-junglescout-keyword-share-of-voice",
+  "skillKey": "clawhub-linkfox-junglescout-keyword-share-of-voice",
+  "name": "Junglescout Keyword Share Of Voice",
+  "summary": "Jungle Scout关键词市场份额（Share of Voice）分析，返回亚马逊搜索结果前3页的品牌声量占比（自然/广告/综合）、30天精确搜索量、PPC竞价中位数及TOP3 ASIN点击转化数据，覆盖10个站点。当用户提到品牌市场份额、品牌声量占比、搜索结果品牌分布、Share of Voice、SOV分...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_junglescout_keyword_share_of_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "Jungle Scout关键词市场份额（Share of Voice）分析，返回亚马逊搜索结果前3页的品牌声量占比（自然/广告/综合）、30天精确搜索量、PPC竞价中位数及TOP3 ASIN."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-junglescout-keyword-share-of-voice@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-junglescout-keyword-share-of-voice",
+      "url": "https://clawhub.ai/skills/linkfox-junglescout-keyword-share-of-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-junglescout-keyword-share-of-voice",
+    "url": "https://clawhub.ai/skills/linkfox-junglescout-keyword-share-of-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-junglescout-keyword-share-of-voice-9202cbc80516055c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-junglescout-keyword-share-of-voice@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-junglescout-keyword-share-of-voice-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d50e15d783793986ff8712a8c55789fbba3253e3351df72b3945be91badc1a39",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T15:35:40.525Z"
+}

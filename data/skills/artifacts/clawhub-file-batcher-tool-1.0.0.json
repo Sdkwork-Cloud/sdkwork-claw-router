@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-batcher-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_batcher_tool",
+  "skill": {
+    "id": 23514,
+    "skillKey": "clawhub-file-batcher-tool",
+    "name": "file-batcher-tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-batcher-tool",
+    "url": "https://clawhub.ai/skills/file-batcher-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-batcher-tool-5b24af0530434330.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch file operations (rename, convert, organize). Use when user says \"rename files\", \"batch rename\", \"convert files\", \"organize files\", or wants to process..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yushimohuang",
+      "userId": "publishers:yushimohuang",
+      "displayName": "yushimohuang",
+      "image": "https://avatars.githubusercontent.com/u/197757967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773118763419,
+      "changelog": "Initial release of file-batcher\n\n- Introduces batch operations for file renaming, image conversion, and organization by type.\n- Supports finding duplicate files, counting files, and listing large files in a folder.\n- Allows pattern-based renaming and basic image format conversions (jpg, png, webp, gif).\n- Provides command examples and clear response formats for each operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82b1561bc1d9e5a2984f21bd1d44f24167e372866542f80f57489884201edc9b"
+}

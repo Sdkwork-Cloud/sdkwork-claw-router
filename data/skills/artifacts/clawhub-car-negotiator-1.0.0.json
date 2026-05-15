@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/car-negotiator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.car_negotiator",
+  "skill": {
+    "id": 48340,
+    "skillKey": "clawhub-car-negotiator",
+    "name": "Car Negotiator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "car-negotiator",
+    "url": "https://clawhub.ai/skills/car-negotiator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/car-negotiator-b9ab7e8809de3130.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research car prices and rebates, calculate total costs, and generate negotiation scripts and emails using proven tactics to secure better buy or lease deals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ml348126",
+      "userId": "s170v5y5f7nemjc0aa0w1j9pwx859chq",
+      "displayName": "ml348126",
+      "image": "https://avatars.githubusercontent.com/u/277025481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777689596332,
+      "changelog": "Initial release of Car Negotiator skill for car deal research and negotiation.\n\n- Research MSRP, invoice, rebates, and local inventory for car buying/leasing.\n- Calculate total cost, payments, and perform buy vs lease comparisons.\n- Provide negotiation scripts and email templates using proven tactics (mirroring, labeling, calibrated questions, Ackerman model).\n- Outputs a summary table with actionable negotiation strategies.\n- Focuses on US/ET defaults and filters for $500+ savings potential.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f034c8776ef65a206daf4ebba162e3f826fbb41543d03bb75ff9f073d94fee4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-product-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_product_scraper",
+  "skill": {
+    "id": 66835,
+    "skillKey": "clawhub-amazon-product-scraper",
+    "name": "Amazon Product Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-product-scraper",
+    "url": "https://clawhub.ai/skills/amazon-product-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-product-scraper-91251e7b80979a51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取亚马逊产品详情页信息，包括标题、价格、销量、排名、规格和五点描述，生成结构化竞品分析报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "denicmic-chung",
+      "userId": "s17dydkg2v2nmz2qxdj6mcrj9583jws2",
+      "displayName": "denicmic-chung",
+      "image": "https://avatars.githubusercontent.com/u/240508608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 925,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772339413661,
+      "changelog": "Amazon Product Scraper 1.0.0\n\n- Initial release of the Amazon Product Scraper skill.\n- Scrapes comprehensive product information from Amazon listings using an internal browser.\n- Extracts details such as title, price, reviews, BSR, descriptions, specs, and variants.\n- Generates and saves a structured competitor analysis report in markdown format.\n- Supports multiple trigger phrases and direct ASIN or URL input.\n- Ensures all product text (including emojis and all description lines) is fully captured without omissions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d45cd03e754b7cd78fd0f60ab13447ac579f4b78eb6f09b0f6645279a33619a1"
+}

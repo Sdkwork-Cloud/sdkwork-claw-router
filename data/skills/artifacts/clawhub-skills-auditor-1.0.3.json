@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-auditor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_auditor",
+  "skill": {
+    "id": 53384,
+    "skillKey": "clawhub-skills-auditor",
+    "name": "Skill Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-auditor",
+    "url": "https://clawhub.ai/skills/skills-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-auditor-f0811f77d11f56bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security audit + append-only logging + monitoring for OpenClaw skills (file-level diff, baseline approval, SHA-256 integrity). Requires Python ≥3.9 and git."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ucloud-security",
+      "userId": "s178xqve7rvfpac62z0nzcy9s583j50a",
+      "displayName": "ucloud-securiry",
+      "image": "https://avatars.githubusercontent.com/u/270830524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776075075410,
+      "changelog": "Clear responsibility boundary: scripts contain no network/HTTP/model code; Agent semantic understanding is Agent-level capability governed by Agent deployment policies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bea7201c715c818569b3f6dcfaa73d8f0e2b87a010d963777e4a8e010c5c4330"
+}

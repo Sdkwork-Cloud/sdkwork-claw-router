@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/buy-coffee@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buy_coffee",
+  "skill": {
+    "id": 32341,
+    "skillKey": "clawhub-buy-coffee",
+    "name": "Buy Coffee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buy-coffee",
+    "url": "https://clawhub.ai/skills/buy-coffee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buy-coffee-cdd917bdf3c34bac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lobster Brew helps your OpenClaw discover coffee roasters, compare coffees, build personalized carts, and hand off a secure Shopify checkout link for you to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abuiles",
+      "userId": "s175dr97njj33bk428pnh33nys83g7fb",
+      "displayName": "Adolfo Builes",
+      "image": "https://avatars.githubusercontent.com/u/21772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773820973267,
+      "changelog": "- Renamed skill and endpoints from \"buy-coffee\" to \"lobsterbrew\"; updated terminology (buyer → owner).\n- Versioning instructions improved: use local skill file as authoritative; do not re-fetch remote instructions during use.\n- Cart attribute logic updated: only attach custom cart attributes if merchant MCP supports them.\n- Subscription fallback logic simplified: no longer use Shopify Storefront GraphQL fallback; instead, inform when required subscription flow is unsupported.\n- Clarified checkout handoff, supported subscription details, and handling of unsupported selling plans.\n- Various improvements to clarity, safety, and merchant connection rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:558ec65ecbe5fefadd1bf797d95eba4921caa1b2dcf476d083f0fe9e91d30df7"
+}

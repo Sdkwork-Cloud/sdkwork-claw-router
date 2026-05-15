@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniprot-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniprot_query",
+  "skill": {
+    "id": 42022,
+    "skillKey": "clawhub-uniprot-query",
+    "name": "UniProt Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniprot-query",
+    "url": "https://clawhub.ai/skills/uniprot-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniprot-query-af61cdc53cdd712f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query UniProt database for protein sequences, metadata, and search by criteria. Use this skill when: (1) Looking up protein information by UniProt accession..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hollyya",
+      "userId": "s179vqh375ttntbve3fcfvrxps845pbn",
+      "displayName": "HollyYa",
+      "image": "https://avatars.githubusercontent.com/u/108674565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775637593165,
+      "changelog": "Initial release of uniprot-query skill.\n\n- Enables querying the UniProt database for protein sequences and comprehensive metadata.\n- Supports lookup by UniProt accession ID and searching by gene name, organism, function, or disease.\n- Retrieves detailed protein information, including domains, PTMs, annotations, and disease associations.\n- Provides query syntax guidance for advanced and flexible searches.\n- Includes sample workflows and error-handling advice for robust usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da3e6ec91c3c32a7b9c2e0642537bf19c99302ad095fa058265925cc0b436325"
+}

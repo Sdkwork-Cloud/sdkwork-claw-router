@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14845,
+  "uuid": "skill-clawhub-stakingverse-lukso",
+  "skillKey": "clawhub-stakingverse-lukso",
+  "name": "Stakingverse Lukso",
+  "summary": "Stake LYX tokens on Stakingverse (LUKSO liquid staking). Use when the user wants to stake LYX, unstake LYX, claim rewards, or check sLYX balance on Stakingve...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stakingverse_lukso",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LUKSO Agent",
+      "features": [
+        "Stake LYX tokens on Stakingverse (LUKSO liquid staking)",
+        "Use when the user wants to stake LYX, unstake LYX, claim rewards, or check sLYX balance on Stak."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stakingverse-lukso@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259435976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stakingverse-lukso",
+      "url": "https://clawhub.ai/skills/stakingverse-lukso"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stakingverse-lukso",
+    "url": "https://clawhub.ai/skills/stakingverse-lukso",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stakingverse-lukso-7ec2327e66bf0e5f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stakingverse-lukso@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stakingverse-lukso-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d553360fafbc8afbb2baa98308179cc891da728619b2aece223800613f11fe96",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T15:13:06.999Z"
+}

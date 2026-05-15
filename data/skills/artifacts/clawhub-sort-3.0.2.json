@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sort@3.0.2",
+  "version": "3.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sort",
+  "skill": {
+    "id": 23181,
+    "skillKey": "clawhub-sort",
+    "name": "Sort"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sort",
+    "url": "https://clawhub.ai/skills/sort",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sort-646964943fd22711.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sort files, lines, and columns with custom ordering and dedup. Use when scanning duplicates, monitoring changes, reporting results, alerting anomalies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.2",
+      "createdAt": 1773914375818,
+      "changelog": "v3.0.2: Fixed SKILL.md alignment — declared data storage, env vars, fixed python3 injection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bab3de9ab8a5c19f3f3ad0a3dbf312c25356bba1ec81a9f2690ac058abcc6b96"
+}

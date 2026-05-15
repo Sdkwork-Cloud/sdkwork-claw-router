@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuenkong-liuyao@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuenkong_liuyao",
+  "skill": {
+    "id": 72683,
+    "skillKey": "clawhub-yuenkong-liuyao",
+    "name": "玄空数术·六爻占卜"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuenkong-liuyao",
+    "url": "https://clawhub.ai/skills/yuenkong-liuyao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuenkong-liuyao-92547013f2951653.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "玄空数术·六爻占卜，支持起卦占卜和问答聊天两种模式。触发关键词：妖妖、六爻、起卦、占卜、算卦、卜卦、摇卦、排卦、问卦、解卦、运势、姻缘、事业、财运、健康、出行等。当用户表达占卜意图、以\"妖妖\"开头提问、或发送lyk-开头的API Key时，使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigbigtooth",
+      "userId": "s17aw8wj57jhp91zveftx4t9f583m32d",
+      "displayName": "bigbigtooth",
+      "image": "https://avatars.githubusercontent.com/u/1501590?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774527696754,
+      "changelog": "- 更新技能名称为 YuenKong_liuyao，并优化描述，强调“玄空数术·六爻占卜”\n- 其余功能、工作流程、命令规范、人设以及消息处理流程均保持不变\n- 提供更准确的服务接入地址与技能品牌识别",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:392bb27e181756296b1794117b9807f4bfff3f5743922ce343883d02f63f5cb1"
+}

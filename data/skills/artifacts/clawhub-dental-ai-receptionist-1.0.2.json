@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dental-ai-receptionist@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dental_ai_receptionist",
+  "skill": {
+    "id": 20710,
+    "skillKey": "clawhub-dental-ai-receptionist",
+    "name": "Dental Ai Receptionist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dental-ai-receptionist",
+    "url": "https://clawhub.ai/skills/dental-ai-receptionist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dental-ai-receptionist-c54f67785d231286.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete AI voice receptionist system for dental practices. 12 workflows covering inbound call routing, appointment booking, reminders, no-show followup, can..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhmalvi",
+      "userId": "publishers:mhmalvi",
+      "displayName": "Muhammad H.M. Alvi",
+      "image": "https://avatars.githubusercontent.com/u/74125579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 531,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772560833238,
+      "changelog": "Fix: strip residual n8n metadata, fix process.env to $env, add webhook HMAC validation, add crosspost auth",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:14f0b2695a1901fe008e1052fa9206e95ab4eb6bac5da868e427048fb8dee9f1"
+}

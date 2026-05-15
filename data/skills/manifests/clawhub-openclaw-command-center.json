@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14397,
+  "uuid": "skill-clawhub-openclaw-command-center",
+  "skillKey": "clawhub-openclaw-command-center",
+  "name": "Openclaw Command Center",
+  "summary": "Mission control dashboard for OpenClaw - real-time session monitoring, LLM usage tracking, cost intelligence, and system vitals. View all your AI agents in o...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_command_center",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Tsai",
+      "features": [
+        "Mission control dashboard for OpenClaw",
+        "real-time session monitoring, LLM usage tracking, cost intelligence, and system vitals",
+        "View all your AI agents in o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-command-center@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/422501?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-command-center",
+      "url": "https://clawhub.ai/skills/openclaw-command-center"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-command-center",
+    "url": "https://clawhub.ai/skills/openclaw-command-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-command-center-a9a0ed377eb50592.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-command-center@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-command-center-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e31e7d7713e7b18f4f52d2b300f3078caf5a229584629b88d32249b512f68a6b",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:36:39.170Z"
+}

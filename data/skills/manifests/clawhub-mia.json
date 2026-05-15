@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60078,
+  "uuid": "skill-clawhub-mia",
+  "skillKey": "clawhub-mia",
+  "name": "mia",
+  "summary": "MIA (Memory-Intelligent Assistant) - 智能记忆助手系统，通过记忆、规划、反馈三模块让OpenClaw具备经验学习能力",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JingyangQiao(SII)",
+      "features": [
+        "MIA (Memory-Intelligent Assistant)",
+        "智能记忆助手系统，通过记忆、规划、反馈三模块让OpenClaw具备经验学习能力"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mia@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159891886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mia",
+      "url": "https://clawhub.ai/skills/mia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mia",
+    "url": "https://clawhub.ai/skills/mia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mia-a6ae07ad556c5f93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mia@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mia-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9c8e6b8d65ecb477eb5ccd7b1d8dab00f0c1e50916016abd0e35535ed264686",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T17:37:51.664Z"
+}

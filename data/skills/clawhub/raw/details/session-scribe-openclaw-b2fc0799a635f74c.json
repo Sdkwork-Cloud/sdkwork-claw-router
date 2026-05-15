@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "session-scribe-openclaw",
+    "displayName": "Session Scribe",
+    "summary": "Automatically summarize active OpenClaw session transcripts into daily memory files using a cheap LLM. Run as a system cron job — reads new transcript entrie...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774414533098,
+    "updatedAt": 1777623458374
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1774415084484,
+    "changelog": "- Adds a privacy notice about sending transcripts to external LLM providers (OpenAI/Anthropic), including warnings about secrets/PII and recommendations for secure API key use.\n- Updates cron setup examples to recommend storing API keys in a protected file instead of inlining secrets in environment variables.\n- Documents support for `--api-key-file` and for scribing all sessions across all agents with `--agents-dir` and `--all-sessions`.\n- No functional changes to the skill logic itself.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "kitsune",
+    "userId": "s174sr9d64a47wd6p6nbcqezbd83kg6t",
+    "displayName": "Kitsune",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777623458374
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53101,
+  "uuid": "skill-clawhub-product-manager-proactive",
+  "skillKey": "clawhub-product-manager-proactive",
+  "name": "PM — AI Product Manager Skill",
+  "summary": "You are the Product Manager. Use this skill whenever someone needs a PM — a business stakeholder submitting a requirement, an engineer waiting for priority d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_manager_proactive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lika",
+      "features": [
+        "You are the Product Manager",
+        "Use this skill whenever someone needs a PM — a business stakeholder submitting a requirement, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-manager-proactive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105969928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-manager-proactive",
+      "url": "https://clawhub.ai/skills/product-manager-proactive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-manager-proactive",
+    "url": "https://clawhub.ai/skills/product-manager-proactive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-manager-proactive-07ffb35c966ff95f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-manager-proactive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-manager-proactive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a09128f005dc45f94663831e620411de73b6f977174f03a3b383c7b14c05efc6",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T23:05:06.493Z"
+}

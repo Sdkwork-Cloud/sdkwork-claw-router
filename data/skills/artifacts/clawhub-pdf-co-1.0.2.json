@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-co@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_co",
+  "skill": {
+    "id": 12210,
+    "skillKey": "clawhub-pdf-co",
+    "name": "PDF.co"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-co",
+    "url": "https://clawhub.ai/skills/pdf-co",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-co-ede6aaaf6cf5875a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PDF.co API integration with managed OAuth. Convert, merge, split, edit PDFs and extract data. Use this skill when users want to convert PDFs to/from other fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1654,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777588641818,
+      "changelog": "- Updated all API and connection management endpoints from gateway.maton.ai/ctrl.maton.ai to api.maton.ai for consistency.\n- Added a new \"Security & Permissions\" section defining functional scopes and emphasizing user confirmation for write operations.\n- Improved instructions for managing multiple connections, recommending always specifying the `Maton-Connection` header when using several accounts.\n- Removed the sample LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa7dab4dae91a43290104b4c034064598fe9bf819f7f571edc0212da49e86946"
+}

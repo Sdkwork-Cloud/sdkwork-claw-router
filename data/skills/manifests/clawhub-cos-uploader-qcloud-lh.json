@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62383,
+  "uuid": "skill-clawhub-cos-uploader-qcloud-lh",
+  "skillKey": "clawhub-cos-uploader-qcloud-lh",
+  "name": "Cos_Uploader_Qcloud_lh",
+  "summary": "通过微信接收照片，自动上传到腾讯云 COS 低频存储，按年月归档管理",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cos_uploader_qcloud_lh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jingronzhao",
+      "features": [
+        "通过微信接收照片，自动上传到腾讯云 COS 低频存储，按年月归档管理"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cos-uploader-qcloud-lh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52988456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cos-uploader-qcloud-lh",
+      "url": "https://clawhub.ai/skills/cos-uploader-qcloud-lh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cos-uploader-qcloud-lh",
+    "url": "https://clawhub.ai/skills/cos-uploader-qcloud-lh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cos-uploader-qcloud-lh-46a9dab4912c7f94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cos-uploader-qcloud-lh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cos-uploader-qcloud-lh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:133ea04ee21de31624219a6a9c32ada48d97e83e0fc90ea3ab653c8a09cd9308",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:05:46.408Z"
+}

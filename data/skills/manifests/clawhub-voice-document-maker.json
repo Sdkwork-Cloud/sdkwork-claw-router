@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70643,
+  "uuid": "skill-clawhub-voice-document-maker",
+  "skillKey": "clawhub-voice-document-maker",
+  "name": "微信频道语音+视频实现气泡自动播报模式",
+  "summary": "制作有声视频文档技能 - 将文字自动转为 TTS 语音，并配上 AI 生成的精美背景图，合成 MP4 视频文件。适用于微信视频卡片交付。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_document_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "interccy-stack",
+      "features": [
+        "制作有声视频文档技能",
+        "将文字自动转为 TTS 语音，并配上 AI 生成的精美背景图，合成 MP4 视频文件。适用于微信视频卡片交付。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-document-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258863562?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-document-maker",
+      "url": "https://clawhub.ai/skills/voice-document-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-document-maker",
+    "url": "https://clawhub.ai/skills/voice-document-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-document-maker-4c6fc72613090632.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-document-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-document-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb33fd2f2bcc16316f36cae5474f8a188a40aa59ac989c6a20c710581a17ef5a",
+      "artifactSizeBytes": 3514
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T10:16:16.786Z"
+}

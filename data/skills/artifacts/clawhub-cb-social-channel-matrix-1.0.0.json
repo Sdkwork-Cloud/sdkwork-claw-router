@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cb-social-channel-matrix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cb_social_channel_matrix",
+  "skill": {
+    "id": 46149,
+    "skillKey": "clawhub-cb-social-channel-matrix",
+    "name": "Cb Social Channel Matrix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cb-social-channel-matrix",
+    "url": "https://clawhub.ai/skills/cb-social-channel-matrix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cb-social-channel-matrix-ed22de54ceee80aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a framework to select and operate social media channels in overseas markets based on audience, category, objectives, and resource constraints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777088860546,
+      "changelog": "Initial release of cb-social-channel-matrix.\n\n- Provides a strategic framework for selecting and managing social channels in international markets.\n- Recommends channel priorities (Primary/Secondary/Avoid) per market based on market, audience, and category analysis.\n- Guides on defining each channel's funnel role, content format/cadence, and resource allocation.\n- Includes modules for market-channel fit, audience behavior mapping, channel role and success metrics, content planning, and governance.\n- Designed for teams expanding social operations overseas, with specific prompts and guidance to avoid common pitfalls.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cd61fe65618ec7fbc37d5bfaa566870f9acf5532b8a8cc973aeac9bb4437c54"
+}

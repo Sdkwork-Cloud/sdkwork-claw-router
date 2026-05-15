@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentscope-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentscope_skill",
+  "skill": {
+    "id": 30665,
+    "skillKey": "clawhub-agentscope-skill",
+    "name": "Agentscope Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentscope-skill",
+    "url": "https://clawhub.ai/skills/agentscope-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentscope-skill-fe4eaed0871bcc1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This guide covers the design philosophy, core concepts, and practical usage of the AgentScope framework. Use this skill whenever the user wants to do anythin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wxf8126275",
+      "userId": "s1786zfcxbf10b6n2wd3qwga5s83hyfc",
+      "displayName": "wxf8126275",
+      "image": "https://avatars.githubusercontent.com/u/2673544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774314500068,
+      "changelog": "agentscope-skill 1.0.0\n\n- Initial release of the skill for AgentScope, an open-source multi-agent framework for LLM applications.\n- Includes a comprehensive guide (SKILL.md) covering the framework's design philosophy, concepts, installation, architecture, and practical usage.\n- Provides step-by-step coding examples: simple chatbot, multi-agent conversations, and master-worker agent orchestration.\n- Explains repository structure and instructions for cloning and navigating the AgentScope codebase.\n- Offers detailed reference to core components: Message, Agent, Toolkit, Memory, ChatModel, and Formatter.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf1872ec4a89c290abff4b6e59474387135733e0943a996dbbdb5cc587cf2c2e"
+}

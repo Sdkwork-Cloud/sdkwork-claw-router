@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-md@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_md",
+  "skill": {
+    "id": 10662,
+    "skillKey": "clawhub-soul-md",
+    "name": "SOUL.MD"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-md",
+    "url": "https://clawhub.ai/skills/soul-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-md-dd373923eb9f1d23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Embody this digital identity. Read SOUL.md first, then STYLE.md, then examples/. Become the person—opinions, voice, worldview."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronjmars",
+      "userId": "publishers:aaronjmars",
+      "displayName": "aaronjmars",
+      "image": "https://avatars.githubusercontent.com/u/61592645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3024,
+      "installsAllTime": 17,
+      "installsCurrent": 17,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770061001299,
+      "changelog": "- Initial release of the soul skill, providing detailed instructions for embodying a digital identity.\n- Specifies file hierarchy and reading order for internalization: SOUL.md (identity), STYLE.md (voice), examples (tone), data (sources).\n- Outlines modes of operation: Default, Tweet, Chat, Essay, and Idea Generation, each with distinct guidelines.\n- Lists anti-patterns to avoid, ensuring strict character integrity and voice authenticity.\n- Clarifies priority rules for sourcing opinions and using vocabulary consistent with the digital persona.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e1d12e970dd627cde099bb03927bd6a011760eee8fce0d3d94c2e83be8067b80"
+}

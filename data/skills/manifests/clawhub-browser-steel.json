@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41426,
+  "uuid": "skill-clawhub-browser-steel",
+  "skillKey": "clawhub-browser-steel",
+  "name": "Browser Steel",
+  "summary": "Browser automation with Steel CLI as the default runtime, plus a Python Playwright fallback for custom flows. Use when the user asks to open a JS-heavy site,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_steel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xyanmi",
+      "features": [
+        "Browser automation with Steel CLI as the default runtime, plus a Python Playwright fallback for.",
+        "Use when the user asks to open a JS-heavy site,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-steel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64118037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-steel",
+      "url": "https://clawhub.ai/skills/browser-steel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-steel",
+    "url": "https://clawhub.ai/skills/browser-steel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-steel-0969c31b2c63c160.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-steel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-steel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f9b31827da2aebc95892474e823e323e94d283866d3845f2b4027473e21ce40",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T16:47:54.689Z"
+}

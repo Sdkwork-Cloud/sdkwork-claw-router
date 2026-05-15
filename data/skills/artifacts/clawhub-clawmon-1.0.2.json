@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmon@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmon",
+  "skill": {
+    "id": 20596,
+    "skillKey": "clawhub-clawmon",
+    "name": "ClawMon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmon",
+    "url": "https://clawhub.ai/skills/clawmon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmon-770602c532778fdb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Checks MCP skills for multi-tier trust scores, staking, sybil resistance, and attestation to guide secure skill usage decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drewm33",
+      "userId": "publishers:drewm33",
+      "displayName": "drewM33",
+      "image": "https://avatars.githubusercontent.com/u/149414976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 548,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771589572843,
+      "changelog": "Add provenance section: publisher identity, open-source repo link, hosting details, self-host instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:84988acd73d44dfa6b8cbcd846345b3d5fb8142d87b8082b8c2e7387aef572f8"
+}

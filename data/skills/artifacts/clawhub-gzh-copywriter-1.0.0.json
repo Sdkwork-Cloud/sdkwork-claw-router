@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gzh-copywriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gzh_copywriter",
+  "skill": {
+    "id": 70965,
+    "skillKey": "clawhub-gzh-copywriter",
+    "name": "gzh copywriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gzh-copywriter",
+    "url": "https://clawhub.ai/skills/gzh-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gzh-copywriter-70662e4478667190.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为公众号内容创作打造的文章生成工具，基于全网超过1000条爆款文章，精准总结相关的热门文章的结构、风格、行文等，提炼核心流量密码与创作要点，高效产出爆款文章。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuanyi-github",
+      "userId": "s178m9shhypj2frsz7r1pz67kh84rb1r",
+      "displayName": "to the moon",
+      "image": "https://avatars.githubusercontent.com/u/83393925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776138070379,
+      "changelog": "- 首个版本发布，包含针对微信公众号爆款文案创作的生成工具。\n- 基于1000+爆款文章归纳结构与风格，精准提炼流量密码与核心创作要点。\n- 明确依赖requests库，数据及流程均有详细规范与引用文档约束。\n- 严格要求所有流程、输出、数据接口等操作按指定文档执行，禁止跳步与替代来源。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52528d34cedf726d73f11b4165f012bc74b9072524f8e069c3ac854e045dc4ae"
+}

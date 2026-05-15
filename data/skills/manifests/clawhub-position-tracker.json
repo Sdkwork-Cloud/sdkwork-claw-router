@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25237,
+  "uuid": "skill-clawhub-position-tracker",
+  "skillKey": "clawhub-position-tracker",
+  "name": "Position Tracker",
+  "summary": "Keep track of positions across any exchange, broker, or external system. Detect orphans, prevent leaks. Self-healing state reconciliation for any stateful bot.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.position_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Keep track of positions across any exchange, broker, or external system",
+        "Detect orphans, prevent leaks",
+        "Self-healing state reconciliation for any stateful bot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/position-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "position-tracker",
+      "url": "https://clawhub.ai/skills/position-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "position-tracker",
+    "url": "https://clawhub.ai/skills/position-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/position-tracker-7a58136303445166.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/position-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-position-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fc85138ecd56c030cef1bfcc3601e006b7b79e45bcdf70a6074ea42d6ebbfe0",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:14:11.512Z"
+}

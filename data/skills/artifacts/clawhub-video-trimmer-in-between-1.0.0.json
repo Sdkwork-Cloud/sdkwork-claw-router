@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-in-between@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_in_between",
+  "skill": {
+    "id": 46587,
+    "skillKey": "clawhub-video-trimmer-in-between",
+    "name": "Video Trimmer In Between"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-in-between",
+    "url": "https://clawhub.ai/skills/video-trimmer-in-between",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-in-between-b8417e3017f5f2bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get trimmed joined clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"rem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777168323930,
+      "changelog": "Initial release of Video Trimmer In Between – Cut and Rejoin Video Sections.\n\n- Upload video clips (up to 500MB, MP4/MOV/AVI/WebM) and request removal of specific sections by timestamp.\n- Quickly trim and rejoin video segments without sliders, getting a smooth joined 1080p MP4 ready to post.\n- All editing and rendering handled by remote GPU nodes; download the result in seconds.\n- Supports credit system, error handling, and workflow guidance for efficient editing.\n- Provides clear workflows for single, batch, and iterative trimming needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bfb52a5a4627d892028c793d1b68b0008c1a7128319b5b484301618910cd9ac5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62782,
+  "uuid": "skill-clawhub-ai-bug-fixer",
+  "skillKey": "clawhub-ai-bug-fixer",
+  "name": "Ai Bug Fixer",
+  "summary": "AI Bug修复助手 - 利用大模型自动诊断和修复代码中的bug。 当用户需要以下功能时触发此skill： (1) 自动诊断bug原因 (2) 生成修复代码 (3) 异常处理建议 (4) 回归测试生成 (5) 代码补丁生成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_bug_fixer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "AI Bug修复助手",
+        "利用大模型自动诊断和修复代码中的bug。 当用户需要以下功能时触发此skill： (1) 自动诊断bug原因 (2) 生成修复代码 (3) 异常处理建议 (4) 回归测试生成 (5) 代码补."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-bug-fixer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-bug-fixer",
+      "url": "https://clawhub.ai/skills/ai-bug-fixer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-bug-fixer",
+    "url": "https://clawhub.ai/skills/ai-bug-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-bug-fixer-785062ddccd4102a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-bug-fixer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-bug-fixer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d8272a1e5120964168be10bce22636ff5c400e446e4074190a1326526f44fa7",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T19:57:43.693Z"
+}

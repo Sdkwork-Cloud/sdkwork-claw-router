@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72105,
+  "uuid": "skill-clawhub-technical-insight",
+  "skillKey": "clawhub-technical-insight",
+  "name": "Technical Insight",
+  "summary": "选型结论出来后，对最终选定的方案做深度技术拆解——内部架构分析、核心机制、竞争壁垒、风险点。不是介绍文章那种表面描述，是真的去拆它怎么运作。工作流包含：架构拆解、机制分析、壁垒识别、风险评估、演进预测、深度报告。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentlau2046-sudo",
+      "features": [
+        "选型结论出来后，对最终选定的方案做深度技术拆解——内部架构分析、核心机制、竞争壁垒、风险点。不是介绍文章那种表面描述，是真的去拆它怎么运作。工作流包含：架构拆解、机制分析、壁垒识别、风险评估."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/technical-insight@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259013171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "technical-insight",
+      "url": "https://clawhub.ai/skills/technical-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-insight",
+    "url": "https://clawhub.ai/skills/technical-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-insight-029be08f44706a15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/technical-insight@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-technical-insight-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b326a988f5b5a186d4751145666e9f71699ee5e01e5385d3b84330419b1f728f",
+      "artifactSizeBytes": 2185
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T17:17:47.615Z"
+}

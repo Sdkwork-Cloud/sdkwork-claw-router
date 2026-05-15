@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27440,
+  "uuid": "skill-clawhub-gsm-sms-gateway",
+  "skillKey": "clawhub-gsm-sms-gateway",
+  "name": "SMS Gateway",
+  "summary": "Send and receive SMS messages through a self-hosted SMS Gateway running on a USB GSM modem. Use when the user needs to send text messages, check for incoming...",
+  "version": "0.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gsm_sms_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matt Shields",
+      "features": [
+        "Send and receive SMS messages through a self-hosted SMS Gateway running on a USB GSM modem",
+        "Use when the user needs to send text messages, check for incoming..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gsm-sms-gateway@0.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/852911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gsm-sms-gateway",
+      "url": "https://clawhub.ai/skills/gsm-sms-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gsm-sms-gateway",
+    "url": "https://clawhub.ai/skills/gsm-sms-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gsm-sms-gateway-c3b3f23a5d01b700.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gsm-sms-gateway@0.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-gsm-sms-gateway-0.0.4.json",
+      "version": "0.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e6e05e0e68571b8ea146cd4a0b3bd82081e081b1cb9ccc2963af9ca7a7a05bf",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T18:37:58.589Z"
+}

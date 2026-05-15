@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excalidraw-diagram-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excalidraw_diagram_generator",
+  "skill": {
+    "id": 9581,
+    "skillKey": "clawhub-excalidraw-diagram-generator",
+    "name": "Excalidraw Diagram Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excalidraw-diagram-generator",
+    "url": "https://clawhub.ai/skills/excalidraw-diagram-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excalidraw-diagram-generator-84bdd1034cd7f356.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Excalidraw diagrams from natural language descriptions. Use when asked to \"create a diagram\", \"make a flowchart\", \"visualize a process\", \"draw a sys..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elihuvillaraus",
+      "userId": "publishers:elihuvillaraus",
+      "displayName": "Morpheous",
+      "image": "https://avatars.githubusercontent.com/u/9301701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3049,
+      "installsAllTime": 29,
+      "installsCurrent": 27,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771475282442,
+      "changelog": "Initial release – generate Excalidraw diagrams from natural language descriptions.\n\n- Supports flowcharts, relationship diagrams, mind maps, system architecture diagrams, data flow diagrams, swimlanes, class, sequence, and ER diagrams.\n- Outputs valid .excalidraw JSON files compatible with Excalidraw and its VS Code extension.\n- Includes detailed usage instructions, diagram type selection guidance, and element formatting standards.\n- Applies best practices for diagram clarity, element limits, color schemes, and layout consistency.\n- Ensures all text uses Excalifont (fontFamily: 5) for visual consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e9a50beb5f6e8ff3fdd69e87fbe9ffd9c7ce09cd3175c49dd17be737bbbff54"
+}

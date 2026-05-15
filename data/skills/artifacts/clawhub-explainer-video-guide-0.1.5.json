@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/explainer-video-guide@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explainer_video_guide",
+  "skill": {
+    "id": 16311,
+    "skillKey": "clawhub-explainer-video-guide",
+    "name": "Explainer Video Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explainer-video-guide",
+    "url": "https://clawhub.ai/skills/explainer-video-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explainer-video-guide-27bdda03c569f896.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explainer video production guide: scripting, voiceover, visuals, and assembly. Covers script formulas, pacing rules, scene planning, and multi-tool pipelines..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 871,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403176770,
+      "changelog": "- Added a comprehensive guide for producing explainer videos, covering scripting, voiceover, visuals, and assembly.\n- Included script structure templates (PAS, BAB, Feature Spotlight) with timing and word count guidance.\n- Detailed pacing rules, scene planning, and transition types for clear, effective production.\n- Provided prompt examples for generating various visual scenes and step-by-step CLI-based workflow instructions.\n- Added tips and commands for generating voiceover and background music.\n- Outlined a full CLI assembly pipeline for combining visuals, audio, and captions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e9ea874bae6f81bc43a90fa5bf2bb2fe410c3a888fb7b82c5fff332c6b0faab5"
+}

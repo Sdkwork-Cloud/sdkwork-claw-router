@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70607,
+  "uuid": "skill-clawhub-agent-swarm-ex",
+  "skillKey": "clawhub-agent-swarm-ex",
+  "name": "Agent Swarm - 多智能体集群编排",
+  "summary": "创建和编排多智能体集群完成复杂任务。当用户需要将复杂任务拆解给多个专业智能体并行或串行执行时使用此技能。适用场景：(1) 复杂项目需要多角色协作（规划、调研、编码、写作、设计、分析、审核）(2) 需要并行执行多个独立子任务以提高效率 (3) 需要专业分工以优化成本和质量。关键词：多智能体、Agent集群、任务编排...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_swarm_ex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lixiang1076",
+      "features": [
+        "创建和编排多智能体集群完成复杂任务。当用户需要将复杂任务拆解给多个专业智能体并行或串行执行时使用此技能。适用场景：(1) 复杂项目需要多角色协作（规划、调研、编码、写作、设计、分析、审核）(."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-swarm-ex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34058366?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-swarm-ex",
+      "url": "https://clawhub.ai/skills/agent-swarm-ex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-swarm-ex",
+    "url": "https://clawhub.ai/skills/agent-swarm-ex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-swarm-ex-51501ac179f06f42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-swarm-ex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-swarm-ex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:254f4d54beb941c9ee10f874de60dc72c6936afa2925107edf26b1e1ee066ca6",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T09:48:04.158Z"
+}

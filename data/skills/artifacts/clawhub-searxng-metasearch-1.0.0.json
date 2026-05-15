@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-metasearch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_metasearch",
+  "skill": {
+    "id": 12010,
+    "skillKey": "clawhub-searxng-metasearch",
+    "name": "SearXNG Metasearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-metasearch",
+    "url": "https://clawhub.ai/skills/searxng-metasearch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-metasearch-2fd30dfe48055789.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using a self-hosted SearXNG instance. Privacy-respecting metasearch that aggregates results from multiple engines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clockworksquirrel",
+      "userId": "publishers:clockworksquirrel",
+      "displayName": "clockworksquirrel",
+      "image": "https://avatars.githubusercontent.com/u/186874634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1829,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769481360070,
+      "changelog": "Initial release: Privacy-respecting metasearch aggregating 70+ engines including Google, Bing, DuckDuckGo, Brave, Startpage, Yahoo, and more. Self-hosted via Docker with JSON API support for Clawdbot integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0eb3c7fd4b3ab79e5fb56c012e897ea62bb73b9633db914b44f16f4a28865bd8"
+}

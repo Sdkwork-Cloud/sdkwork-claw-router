@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ru-pack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ru_pack",
+  "skill": {
+    "id": 70368,
+    "skillKey": "clawhub-ru-pack",
+    "name": "Ru Pack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ru-pack",
+    "url": "https://clawhub.ai/skills/ru-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ru-pack-5ca2480b94214aad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Шесть скиллов для русскоязычных пользователей — договоры, ЖКХ, анализы, претензии, госдокументы и налоги ИП."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aggel008",
+      "userId": "publishers:aggel008",
+      "displayName": "aggel008",
+      "image": "https://avatars.githubusercontent.com/u/161417766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772274760097,
+      "changelog": "- Первый релиз «Русский Пак» 1.0.0 с шестью навыками для жизни на русском языке.\n- Обрабатывает договоры, квитанции ЖКХ, медицинские анализы, претензии, госдокументы и налоги ИП/самозанятых.\n- Позволяет быстро получить пояснения или расчёты по бытовым и юридическим вопросам для жителей России и СНГ.\n- Интуитивное использование: просто напиши проблему — нужный скилл подберётся автоматически.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bdadc5a503882dd1610f17b0eddaaed76cea3403447ddcdbf8c5f1dd5d60307e"
+}

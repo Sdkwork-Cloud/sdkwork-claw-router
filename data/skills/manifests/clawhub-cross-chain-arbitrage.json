@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14650,
+  "uuid": "skill-clawhub-cross-chain-arbitrage",
+  "skillKey": "clawhub-cross-chain-arbitrage",
+  "name": "Uniswap Cross Chain Arbitrage",
+  "summary": "Find and execute cross-chain arbitrage opportunities. Scans prices across all chains, evaluates profitability after all costs (gas, bridge fees, slippage), assesses risk, and executes if profitable. Uses ERC-7683 for cross-chain settlement.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_chain_arbitrage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Find and execute cross-chain arbitrage opportunities",
+        "Scans prices across all chains, evaluates profitability after all costs (gas, bridge fees, slip.",
+        "Uses ERC-7683 for cross-chain settlement",
+        "Supports scan-only mode for research without execution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-chain-arbitrage@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-chain-arbitrage",
+      "url": "https://clawhub.ai/skills/cross-chain-arbitrage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-chain-arbitrage",
+    "url": "https://clawhub.ai/skills/cross-chain-arbitrage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-chain-arbitrage-6390bbc77f6b5681.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-chain-arbitrage@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-chain-arbitrage-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68a12bb16e2c8f3f7e01b6f273a64ab809a25aa9e6f475ac077093f706377d55",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:41:40.169Z"
+}

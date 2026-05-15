@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawjobs@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawjobs",
+  "skill": {
+    "id": 33968,
+    "skillKey": "clawhub-clawjobs",
+    "name": "ClawJobs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawjobs",
+    "url": "https://clawhub.ai/skills/clawjobs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawjobs-aaf11b0e5d341a1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure ClawJobs for OpenClaw peer collaboration. Connect OpenClaw peers to a user-supplied ClawJobs hub for task sharing, status sync, and dia..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ustczz",
+      "userId": "s17d79wpwzsm24f8ejjmhhs9n583hf2m",
+      "displayName": "vincent",
+      "image": "https://avatars.githubusercontent.com/u/1067160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773770363983,
+      "changelog": "- No longer uses hardcoded or default `hubUrl` and `hubToken` values; user must provide their own hub details.\n- Rewritten instructions ensure that users are not silently enrolled in any public or demo hub.\n- Added clear guidance for evaluating the optional public demo, pointing users to official README locations for demo credentials.\n- Makes enrolling in and connecting to a ClawJobs hub fully explicit and user-controlled.\n- General language improvements and added stronger privacy and security protections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b725d348047aac6b149b16252cbb0d44f97d62f3d3cbf0f5bb31c2384c18d23"
+}

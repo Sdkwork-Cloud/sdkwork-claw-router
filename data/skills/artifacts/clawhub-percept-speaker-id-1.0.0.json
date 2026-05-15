@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/percept-speaker-id@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.percept_speaker_id",
+  "skill": {
+    "id": 20257,
+    "skillKey": "clawhub-percept-speaker-id",
+    "name": "Percept Speaker ID"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "percept-speaker-id",
+    "url": "https://clawhub.ai/skills/percept-speaker-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/percept-speaker-id-6f712c5e76484e40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identifies and tracks speakers in multi-person conversations, mapping speaker labels to names and managing voice command authorization levels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jarvis563",
+      "userId": "publishers:jarvis563",
+      "displayName": "jarvis563",
+      "image": "https://avatars.githubusercontent.com/u/258515214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771784616264,
+      "changelog": "- Initial release of percept-speaker-id skill for speaker identification and management in multi-person conversations.\n- Tracks who said what by mapping anonymous speaker labels to real names.\n- Maintains speaker profiles with authorization and owner status.\n- Integrates with percept-listen and Omi pendant for primary speaker detection.\n- Allows configuration of speaker authorization and registry management via Percept dashboard.\n- Lays groundwork for future automatic speaker recognition using voice embeddings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07bd2add0dd8287cbc0bcab8a86f9f06e48f79a56596548880827f7a6aedbb11"
+}

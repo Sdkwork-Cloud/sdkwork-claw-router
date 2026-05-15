@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28641,
+  "uuid": "skill-clawhub-soc-deploy-misp",
+  "skillKey": "clawhub-soc-deploy-misp",
+  "name": "Soc Deploy Misp",
+  "summary": "Deploy MISP threat intelligence platform on any Docker-ready Linux host. Official misp-docker project with automatic MariaDB memory tuning (prevents OOM on s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soc_deploy_misp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Solomon Neas",
+      "features": [
+        "Deploy MISP threat intelligence platform on any Docker-ready Linux host",
+        "Official misp-docker project with automatic MariaDB memory tuning (prevents OOM on s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soc-deploy-misp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41877493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soc-deploy-misp",
+      "url": "https://clawhub.ai/skills/soc-deploy-misp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soc-deploy-misp",
+    "url": "https://clawhub.ai/skills/soc-deploy-misp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soc-deploy-misp-82ae45dbefab9188.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soc-deploy-misp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soc-deploy-misp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46a7292f2590bda26743a97426295f930340ecf1ec72e77b8836e4229632401f",
+      "artifactSizeBytes": 2522
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T00:01:11.861Z"
+}

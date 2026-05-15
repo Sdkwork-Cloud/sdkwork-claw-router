@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65268,
+  "uuid": "skill-clawhub-data-cleaning-claw",
+  "skillKey": "clawhub-data-cleaning-claw",
+  "name": "data-cleaning-claw",
+  "summary": "数据自动化清洗虾。处理脏数据、重复数据与广告噪音，输出高质量干净数据。 触发场景：用户提到\"清洗数据\"、\"去重\"、\"数据清理\"、\"脏数据\"、\"数据标准化\"、\"格式统一\"、\"去噪\"、\"数据预处理\"、\"数据质量\"、\"缺失值处理\"，或上传了 CSV/Excel/JSON 文件并要求清洗处理时。 支持：Excel/CSV...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_cleaning_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "数据自动化清洗虾。处理脏数据、重复数据与广告噪音，输出高质量干净数据。 触发场景：用户提到\"清洗数据\"、\"去重\"、\"数据清理\"、\"脏数据\"、\"数据标准化\"、\"格式统一\"、\"去噪\"、\"数据预处."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-cleaning-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-cleaning-claw",
+      "url": "https://clawhub.ai/skills/data-cleaning-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-cleaning-claw",
+    "url": "https://clawhub.ai/skills/data-cleaning-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-cleaning-claw-1553841b4c60f70b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-cleaning-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-cleaning-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4540745c64ae058163a0de9cfc54a115535fb6e6f9f8d2c966ab2580e7d3ff61",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T07:25:36.165Z"
+}

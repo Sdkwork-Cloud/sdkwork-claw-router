@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blucli-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blucli_hardened",
+  "skill": {
+    "id": 46072,
+    "skillKey": "clawhub-blucli-hardened",
+    "name": "Blucli Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blucli-hardened",
+    "url": "https://clawhub.ai/skills/blucli-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blucli-hardened-d5cabb779814424d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "BluOS CLI (blu) for discovery, playback, grouping, and volume."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776814475131,
+      "changelog": "blucli-hardened 1.0.0 – Initial release with security guardrails\n\n- Provides CLI controls for Bluesound/NAD players: discovery, playback, grouping, and volume.\n- Enforces confirmation before executing state-changing commands or affecting devices used by others.\n- Prevents piping device discovery output to network-transmitting commands for privacy.\n- Limits device discovery scope to minimize unnecessary network exposure.\n- Includes detailed usage guidance and security best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c85116d965f920a957d4cfa6c341f92f75e8d0450f91e8d2a43da32e1433f485"
+}

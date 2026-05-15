@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31399,
+  "uuid": "skill-clawhub-flywire",
+  "skillKey": "clawhub-flywire",
+  "name": "Flywire",
+  "summary": "Flywire integration. Manage data, records, and automate workflows. Use when the user wants to interact with Flywire data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flywire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Flywire integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Flywire data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flywire@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flywire",
+      "url": "https://clawhub.ai/skills/flywire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flywire",
+    "url": "https://clawhub.ai/skills/flywire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flywire-64157896d020c3a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flywire@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-flywire-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67e7cef75098c3092143c77855e47c9f4601a116add103eb8716fc7353692510",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:48:53.517Z"
+}

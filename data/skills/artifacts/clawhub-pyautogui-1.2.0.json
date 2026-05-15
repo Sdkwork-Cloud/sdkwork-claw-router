@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pyautogui@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pyautogui",
+  "skill": {
+    "id": 17083,
+    "skillKey": "clawhub-pyautogui",
+    "name": "pyautogui"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pyautogui",
+    "url": "https://clawhub.ai/skills/pyautogui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pyautogui-8714dc7027d94a61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-platform mouse/keyboard automation skill. Supports mouse control (move/click/drag/scroll), keyboard control (key press/hotkeys/type text), screen opera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ikaros-521",
+      "userId": "publishers:ikaros-521",
+      "displayName": "Ikaros",
+      "image": "https://avatars.githubusercontent.com/u/40910637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 777,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773324203207,
+      "changelog": "PyAutoGUI skill 1.2.0 adds region screenshot and copy/paste automation:\n\n- Added commands to take screenshots of specific screen regions (screenshot_region).\n- Introduced clipboard automation: copy, paste, and combined copy_paste commands for fast text input.\n- Documented use cases and command syntax for region screenshot and clipboard utilities.\n- No changes to existing mouse, keyboard, or image utility functions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cdfc6e871b4e26984f96620ba1bd2b1ed4c578cf8acefff982010057b157489"
+}

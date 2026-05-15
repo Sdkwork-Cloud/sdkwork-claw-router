@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41343,
+  "uuid": "skill-clawhub-paylock-solana",
+  "skillKey": "clawhub-paylock-solana",
+  "name": "Paylock",
+  "summary": "Integrate Solana escrow contracts to enable trustless, verified payment flows for AI agent services with delivery-based fund release.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paylock_solana",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Integrate Solana escrow contracts to enable trustless, verified payment flows for AI agent serv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paylock-solana@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paylock-solana",
+      "url": "https://clawhub.ai/skills/paylock-solana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paylock-solana",
+    "url": "https://clawhub.ai/skills/paylock-solana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paylock-solana-3fe3ef6aa27d78ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paylock-solana@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paylock-solana-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b33f627b985a58cccdc2d63d4dec4f3abeb4b301da73e69f26aa2c3a96cd2c6e",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T09:32:30.226Z"
+}

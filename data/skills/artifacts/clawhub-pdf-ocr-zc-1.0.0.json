@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-ocr-zc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_ocr_zc",
+  "skill": {
+    "id": 61518,
+    "skillKey": "clawhub-pdf-ocr-zc",
+    "name": "pdf-ocr-byzhangchong"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-ocr-zc",
+    "url": "https://clawhub.ai/skills/pdf-ocr-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-ocr-zc-89c3a0e3dd528d43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量 OCR 处理扫描 PDF，自动生成带文字层的 PDF 并可导出为 Markdown/纯文本。使用场景包括老师 Agent 需要将大量扫描教材 PDF 转化为可检索文本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openclawzhangchong",
+      "userId": "s178cqx9kma3mpnvqe8evteyr983hvb4",
+      "displayName": "张翀",
+      "image": "https://avatars.githubusercontent.com/u/270544860?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776484940024,
+      "changelog": "- 初始版本发布：支持批量 OCR 处理扫描 PDF，生成可搜索文字层或导出为纯文本/Markdown。\n- 脚本自动检测 ocrmypdf 环境，支持单文件和批量目录处理。\n- 错误日志自动保存，便于问题排查。\n- 适用于老师 Agent自动化教材 PDF 转文本的场景。\n- 提供详细安装及参数调优参考文档。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba937fe3970d2e1c7e4883f04c4dedda533325faca74620b30f39eb117e73373"
+}

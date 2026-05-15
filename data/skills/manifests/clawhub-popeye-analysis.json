@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66765,
+  "uuid": "skill-clawhub-popeye-analysis",
+  "skillKey": "clawhub-popeye-analysis",
+  "name": "Popeye Analysis",
+  "summary": "分析助手 - 数据分析、决策支持、问题诊断。触发词：分析数据、帮我决策、诊断问题",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popeye_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangtaoid",
+      "features": [
+        "数据分析、决策支持、问题诊断。触发词：分析数据、帮我决策、诊断问题"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popeye-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62326134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popeye-analysis",
+      "url": "https://clawhub.ai/skills/popeye-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popeye-analysis",
+    "url": "https://clawhub.ai/skills/popeye-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popeye-analysis-602948994d8fc38d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popeye-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-popeye-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc291447486240289629c5211558c75b09ca1774ed122fe25be6bfadeb177f8e",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:03:28.563Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zhihu-keyword-content-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_keyword_content_search",
+  "skill": {
+    "id": 67357,
+    "skillKey": "clawhub-zhihu-keyword-content-search",
+    "name": "Zhihu Keyword Content Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-keyword-content-search",
+    "url": "https://clawhub.ai/skills/zhihu-keyword-content-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-keyword-content-search-2c30d12aa92f77dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爬取知乎问题和回答。当用户要求爬取知乎、抓取知乎数据、搜索知乎问答，或提到\"知乎\"+\"爬虫/爬取/抓取/搜索\"时使用此技能。支持按关键词搜索问题、按回答数排序、抓取全部回答并保存为JSON和纯文本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taiyuexiao",
+      "userId": "s17cvwxv7anx0vtcqm1x9q524x841jmb",
+      "displayName": "taiyuexiao",
+      "image": "https://avatars.githubusercontent.com/u/167285506?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775051122926,
+      "changelog": "Initial release of Zhihu Crawler skill.\n\n- Enables searching Zhihu questions by keywords and crawling all related answers.\n- Supports sorting questions by answer count.\n- Saves results as JSON and plain text for easy analysis.\n- Provides simple command-line usage with user-supplied Cookie.\n- Handles common errors with troubleshooting guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65b9ccfddd7cd089e0f8ae2210b461af30afae092241ae75ea113dd0abaf05f6"
+}

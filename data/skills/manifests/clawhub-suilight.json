@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67486,
+  "uuid": "skill-clawhub-suilight",
+  "skillKey": "clawhub-suilight",
+  "name": "suilight",
+  "summary": "SuiLight知识沙龙 - 多智能体知识协作平台。拥有100位虚拟思想家，覆盖26个领域(科学、哲学、社会科学等)，支持跨域讨论、知识沉淀、共识追踪和知识图谱可视化。当用户需要(1)组织多角度知识讨论、(2)创建虚拟思想家角色、(3)构建知识胶囊系统、(4)实现知识图谱、(5)部署Streamlit应用时使用此...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suilight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanyview1",
+      "features": [
+        "SuiLight知识沙龙",
+        "多智能体知识协作平台。拥有100位虚拟思想家，覆盖26个领域(科学、哲学、社会科学等)，支持跨域讨论、知识沉淀、共识追踪和知识图谱可视化。当用户需要(1)组织多角度知识讨论、(2)创建虚拟思."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suilight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270816627?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suilight",
+      "url": "https://clawhub.ai/skills/suilight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suilight",
+    "url": "https://clawhub.ai/skills/suilight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suilight-07674369c31e85cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suilight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suilight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9aab12891a54e0ade301703a2ba666eb27f615dcae762fdddec3fa70a7c6fed9",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T07:43:17.590Z"
+}

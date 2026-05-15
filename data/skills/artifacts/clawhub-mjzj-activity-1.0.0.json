@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mjzj-activity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjzj_activity",
+  "skill": {
+    "id": 72155,
+    "skillKey": "clawhub-mjzj-activity",
+    "name": "卖家之家(跨境电商)活动查询与发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjzj-activity",
+    "url": "https://clawhub.ai/skills/mjzj-activity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjzj-activity-eaa4d850aa9238d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "卖家之家(跨境电商)活动查询与发布"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjzj-tec",
+      "userId": "s17es690n9v279chvp249srv3d83v0s4",
+      "displayName": "mjzj-tec",
+      "image": "https://avatars.githubusercontent.com/u/263673237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774801031718,
+      "changelog": "mjzj-activity 1.0.0 初始版本\n\n- 支持卖家之家（跨境电商）活动的查询与发布，含详细业务规则。\n- 提供四个主要接口：查询活动、获取活动城市、发布活动、申请上传活动图片。\n- 明确接口鉴权、参数格式、时间校验及图片上传要求。\n- 内置常见失败提示、权限限制说明及操作提示语。\n- 发布活动流程有严格顺序和完整校验建议，确保数据准确性与一致性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25adcc024df582a70156aa69735005f1547dc1781dafee7a85f632580110ed53"
+}

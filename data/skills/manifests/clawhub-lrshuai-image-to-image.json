@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65168,
+  "uuid": "skill-clawhub-lrshuai-image-to-image",
+  "skillKey": "clawhub-lrshuai-image-to-image",
+  "name": "LrshuAI Image To Image",
+  "summary": "图生图技能。当你需要提供一张参考图片和文本描述来生成新图片时调用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lrshuai_image_to_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazyAI",
+      "features": [
+        "图生图技能。当你需要提供一张参考图片和文本描述来生成新图片时调用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lrshuai-image-to-image@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153581534?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lrshuai-image-to-image",
+      "url": "https://clawhub.ai/skills/lrshuai-image-to-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lrshuai-image-to-image",
+    "url": "https://clawhub.ai/skills/lrshuai-image-to-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lrshuai-image-to-image-ff34d17f95f3c243.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lrshuai-image-to-image@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lrshuai-image-to-image-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34a9ba7a3ae653d151626645a7901781c45c2c478c44b835753779c669f1b01d",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T07:19:50.851Z"
+}

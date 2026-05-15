@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wallet-choice-advisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_choice_advisor",
+  "skill": {
+    "id": 46033,
+    "skillKey": "clawhub-wallet-choice-advisor",
+    "name": "Wallet Choice Advisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-choice-advisor",
+    "url": "https://clawhub.ai/skills/wallet-choice-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-choice-advisor-06b8477a0fbdbd5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A decision helper that recommends a wallet setup pattern based on the user's goals, activity level, and risk tolerance. Use when the user is deciding what ki..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776296169102,
+      "changelog": "- Initial release of wallet-choice-advisor.\n- Helps users choose a wallet setup based on goals, activity level, and risk tolerance.\n- Guides users through questions about usage intent, risk, device habits, and technical comfort.\n- Maps users to a suitable wallet pattern with clear explanations of tradeoffs.\n- Provides a setup checklist, risk overview, and advice on possible future upgrades.\n- Avoids universal or brand-specific recommendations unless requested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41a6eaa56b089cf29ee6afe736dfe1d0366f80150efbcdf8b432b26be08d9783"
+}

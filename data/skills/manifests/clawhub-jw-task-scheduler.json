@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71215,
+  "uuid": "skill-clawhub-jw-task-scheduler",
+  "skillKey": "clawhub-jw-task-scheduler",
+  "name": "Task Scheduler",
+  "summary": "智能任务调度技能 - 定时任务、周期任务、一次性提醒的创建与管理。适用于自动化运维、定时报告、提醒通知。觸發詞：定時、排程、排程任務、自動化、提醒、周期任务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jw_task_scheduler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a85012712",
+      "features": [
+        "智能任务调度技能",
+        "定时任务、周期任务、一次性提醒的创建与管理。适用于自动化运维、定时报告、提醒通知。觸發詞：定時、排程、排程任務、自動化、提醒、周期任务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jw-task-scheduler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271745311?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jw-task-scheduler",
+      "url": "https://clawhub.ai/skills/jw-task-scheduler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jw-task-scheduler",
+    "url": "https://clawhub.ai/skills/jw-task-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jw-task-scheduler-e274345635a3453b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jw-task-scheduler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jw-task-scheduler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:856d4088945f2804544091a2e67e4f80869fa31049cf26847d39013cbb3af7c4",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:39:05.258Z"
+}

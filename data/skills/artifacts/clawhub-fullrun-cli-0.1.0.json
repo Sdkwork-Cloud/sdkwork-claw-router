@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fullrun-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fullrun_cli",
+  "skill": {
+    "id": 55445,
+    "skillKey": "clawhub-fullrun-cli",
+    "name": "Fullrun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fullrun-cli",
+    "url": "https://clawhub.ai/skills/fullrun-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fullrun-cli-be13d09ee4f07216.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Google Ads campaigns — diagnose, optimize, and create campaigns"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuckerschreiber",
+      "userId": "publishers:tuckerschreiber",
+      "displayName": "tuckerschreiber",
+      "image": "https://avatars.githubusercontent.com/u/12967431?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773613821162,
+      "changelog": "Initial release of fullrun-cli, a CLI for Google Ads campaign management.\n\n- Diagnose account health and prioritize issues with triage reports.\n- Run AI-powered optimizations automatically to fix critical issues.\n- List campaigns and keywords with detailed performance metrics.\n- Output all data as structured JSON for easy integration with other tools.\n- Enforce key guardrails: command rate limits, safety checks, and best practices for campaign changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7a4205dbed2861f150677d2a92a2747ac21f19f2be75abcbab054213e0964f1"
+}

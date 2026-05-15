@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25079,
+  "uuid": "skill-clawhub-agentshield-scanner",
+  "skillKey": "clawhub-agentshield-scanner",
+  "name": "AgentShield Scanner",
+  "summary": "Scan AI agent skills, MCP servers, and plugins for security vulnerabilities. Use when: user asks to check a skill/plugin for safety, audit security, scan for...",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentshield_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Elliot Liu",
+      "features": [
+        "Scan AI agent skills, MCP servers, and plugins for security vulnerabilities",
+        "Use when: user asks to check a skill/plugin for safety, audit security, scan for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentshield-scanner@0.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55885132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentshield-scanner",
+      "url": "https://clawhub.ai/skills/agentshield-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentshield-scanner",
+    "url": "https://clawhub.ai/skills/agentshield-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentshield-scanner-2a0c2ea493fac287.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentshield-scanner@0.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentshield-scanner-0.5.1.json",
+      "version": "0.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b58bd6b4c933dc77d298d1276359d3b3b021d33af26781085f194ebc7e5daf35",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:55:29.397Z"
+}

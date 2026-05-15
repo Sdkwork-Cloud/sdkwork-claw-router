@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-proxy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_proxy",
+  "skill": {
+    "id": 11190,
+    "skillKey": "clawhub-azure-proxy",
+    "name": "Azure OpenAI Proxy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-proxy",
+    "url": "https://clawhub.ai/skills/azure-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-proxy-372f8f37b36b93fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable Azure OpenAI integration with OpenClaw via a lightweight local proxy. Use when configuring Azure OpenAI as a model provider, when encountering 404 errors with Azure OpenAI in OpenClaw, or when needing to use Azure credits (e.g. Visu."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benediktschackenberg",
+      "userId": "publishers:benediktschackenberg",
+      "displayName": "BenediktSchackenberg",
+      "image": "https://avatars.githubusercontent.com/u/6381261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1918,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770388661226,
+      "changelog": "Initial release: Lightweight proxy enabling Azure OpenAI with OpenClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:008992a3d757870ccd419cf0e212e780ac57925572709097a3b0313fe33e753a"
+}

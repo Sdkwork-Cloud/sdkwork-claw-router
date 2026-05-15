@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14509,
+  "uuid": "skill-clawhub-zigbee",
+  "skillKey": "clawhub-zigbee",
+  "name": "Zigbee",
+  "summary": "Deploy and troubleshoot Zigbee mesh networks for home automation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zigbee",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Deploy and troubleshoot Zigbee mesh networks for home automation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zigbee@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zigbee",
+      "url": "https://clawhub.ai/skills/zigbee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zigbee",
+    "url": "https://clawhub.ai/skills/zigbee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zigbee-1f3becd002ecb4bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zigbee@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zigbee-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89cb12bf82379195869b24bf6b174ebbb9fc0848810bc074a1a71f95579bd60c",
+      "artifactSizeBytes": 1731
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:18:39.846Z"
+}

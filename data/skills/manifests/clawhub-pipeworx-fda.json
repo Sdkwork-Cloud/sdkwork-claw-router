@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54512,
+  "uuid": "skill-clawhub-pipeworx-fda",
+  "skillKey": "clawhub-pipeworx-fda",
+  "name": "Pipeworx fda",
+  "summary": "US FDA open data — adverse drug event reports, drug labeling/package inserts, and food recall enforcement actions",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_fda",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "US FDA open data — adverse drug event reports, drug labeling/package inserts, and food recall e."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-fda@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-fda",
+      "url": "https://clawhub.ai/skills/pipeworx-fda"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-fda",
+    "url": "https://clawhub.ai/skills/pipeworx-fda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-fda-ad3996a1247ebc24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-fda@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-fda-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77742a721d926523d5ae0b0fcd48863cf633a80981dae840c74cfe62ca6a9720",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T19:22:00.702Z"
+}

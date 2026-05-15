@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ticktick-api-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ticktick_api_skill",
+  "skill": {
+    "id": 9100,
+    "skillKey": "clawhub-ticktick-api-skill",
+    "name": "TickTick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ticktick-api-skill",
+    "url": "https://clawhub.ai/skills/ticktick-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ticktick-api-skill-bbdaf88454762894.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TickTick API integration with managed OAuth. Manage tasks, projects, and task lists. Use this skill when users want to create, update, complete, or organize..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4336,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 7,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777591004905,
+      "changelog": "- Updated all API and connection endpoints to use api.maton.ai instead of gateway.maton.ai or ctrl.maton.ai.\n- Improved connection management documentation for clarity and consistency.\n- Added a “Security & Permissions” section, emphasizing the need for user confirmation before all write operations.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6fac55a64a5aaac7df964d054616b552dc6aa0939bd8aa9b9478cf4bafa4479"
+}

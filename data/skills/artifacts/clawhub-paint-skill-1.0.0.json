@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paint-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paint_skill",
+  "skill": {
+    "id": 44896,
+    "skillKey": "clawhub-paint-skill",
+    "name": "Paint Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paint-skill",
+    "url": "https://clawhub.ai/skills/paint-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paint-skill-ec9cda8f08ff2131.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and save simple drawings as PNG images using Python with interactive and demo modes via Pillow and Tkinter."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oangogah-claw",
+      "userId": "s1767m8qtdgdt0qf9f5cq9tmhn83mn6m",
+      "displayName": "oangogah-claw",
+      "image": "https://avatars.githubusercontent.com/u/266083626?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775450339833,
+      "changelog": "Initial release of paint-skill.\n\n- Generate simple drawings and save as PNG images using Python PIL/Pillow.\n- Provides interactive drawing mode via Tkinter window.\n- Includes demo images: rainbow and park scene (boy, cat, dog).\n- Custom scene drawing available by editing code.\n- Installation and usage instructions provided for Python 3.9+ (macOS/Linux).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e130c98f5533444f7dfd514c86f75414b0b4b9078bd3977d1b72f5e5736e1e37"
+}

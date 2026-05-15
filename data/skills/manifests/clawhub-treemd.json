@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48735,
+  "uuid": "skill-clawhub-treemd",
+  "skillKey": "clawhub-treemd",
+  "name": "treemd",
+  "summary": "Markdown document analysis and navigation using the treemd CLI. Use when exploring markdown structure (heading trees, section extraction), querying markdown...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.treemd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei",
+      "features": [
+        "Markdown document analysis and navigation using the treemd CLI",
+        "Use when exploring markdown structure (heading trees, section extraction), querying markdown..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/treemd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17737823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "treemd",
+      "url": "https://clawhub.ai/skills/treemd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "treemd",
+    "url": "https://clawhub.ai/skills/treemd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/treemd-fba69744cc7f8686.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/treemd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-treemd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c688d1c0285ae41762a47945e4070911bb05160a863c6e2501cda13f044829ed",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T13:56:09.728Z"
+}

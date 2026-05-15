@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33635,
+  "uuid": "skill-clawhub-scavio-youtube",
+  "skillKey": "clawhub-scavio-youtube",
+  "name": "Scavio Youtube",
+  "summary": "Search YouTube and retrieve video metadata. Use for finding videos, checking view counts, channel info, or AI training suitability.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scavio_youtube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scavio-ai",
+      "features": [
+        "Search YouTube and retrieve video metadata",
+        "Use for finding videos, checking view counts, channel info, or AI training suitability."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/scavio-youtube@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264839281?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "scavio-youtube",
+      "url": "https://clawhub.ai/skills/scavio-youtube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scavio-youtube",
+    "url": "https://clawhub.ai/skills/scavio-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scavio-youtube-d54429940a232b46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/scavio-youtube@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-scavio-youtube-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3d574d44f0e308c4cd7eb6279f8c343519fa7bfc9e32c3fabe0b7a1e57bb99f",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T04:17:26.233Z"
+}

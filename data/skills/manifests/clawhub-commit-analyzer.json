@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10102,
+  "uuid": "skill-clawhub-commit-analyzer",
+  "skillKey": "clawhub-commit-analyzer",
+  "name": "Commit Analyzer",
+  "summary": "Analyzes git commit frequency, categories, and timing to assess autonomous operation health and detect idle or breakthrough periods.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commit_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bobrenze-bot",
+      "features": [
+        "Analyzes git commit frequency, categories, and timing to assess autonomous operation health and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commit-analyzer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258452996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commit-analyzer",
+      "url": "https://clawhub.ai/skills/commit-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commit-analyzer",
+    "url": "https://clawhub.ai/skills/commit-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commit-analyzer-afb94f2f5d7bb93b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commit-analyzer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-commit-analyzer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:356ba62fc58fd784831185aa3dfbf7ae1112cdc577d18ce6b767f08df2a20ce0",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T16:15:10.923Z"
+}

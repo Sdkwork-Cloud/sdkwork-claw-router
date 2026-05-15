@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-card@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_card",
+  "skill": {
+    "id": 39700,
+    "skillKey": "clawhub-agent-card",
+    "name": "Agent Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-card",
+    "url": "https://clawhub.ai/skills/agent-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-card-a1087ef3dd0e5c2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage prepaid virtual Visa cards for AI agents with AgentCard. Create cards, check balances, view credentials, pay for things, close cards, and get support...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pipeabellos",
+      "userId": "s1754p3fzkcgf3ym1a5ee8htbd84cdqg",
+      "displayName": "Felipe Abello",
+      "image": "https://avatars.githubusercontent.com/u/100321034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775600176117,
+      "changelog": "Remove instructions that read local credentials and Chrome extension load-unpacked steps; add explicit scope statement so the security evaluator can see the skill's boundaries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cb1f4de6a74420ee3d5aab01d795340994735c0170ac2836c3cfcc8ee304821"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-auto-poster-xiaomolongxia@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_auto_poster_xiaomolongxia",
+  "skill": {
+    "id": 65545,
+    "skillKey": "clawhub-content-auto-poster-xiaomolongxia",
+    "name": "Content Auto Poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-auto-poster-xiaomolongxia",
+    "url": "https://clawhub.ai/skills/content-auto-poster-xiaomolongxia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-auto-poster-xiaomolongxia-c1f0f9ce1e12379b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动发布内容到多个平台，支持微信公众号、微博、知乎等平台定时发布。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774425978808,
+      "changelog": "Content Auto Poster 1.0.0 - 初始版本发布\n\n- 支持自动将内容定时发布到微信公众号、微博、知乎、简书等多个平台\n- 提供多平台内容格式自动适配\n- 汇总发布后的阅读量、点赞和评论数据\n- 支持自定义发布时间和目标平台列表\n- 提供配置项和简单的 API 输入输出格式",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5287ec807cb4e9dc0122640f2ec66979c6364ad860449276f0413aa20d2b128a"
+}

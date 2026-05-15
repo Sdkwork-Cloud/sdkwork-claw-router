@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15954,
+  "uuid": "skill-clawhub-lifx",
+  "skillKey": "clawhub-lifx",
+  "name": "Openclaw Lifx",
+  "summary": "Control LIFX smart lights via natural language. Toggle, set colors/brightness, activate scenes, create gradients on multi-zone devices.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lifx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "J",
+      "features": [
+        "Control LIFX smart lights via natural language",
+        "Toggle, set colors/brightness, activate scenes, create gradients on multi-zone devices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lifx@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5004965?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lifx",
+      "url": "https://clawhub.ai/skills/lifx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lifx",
+    "url": "https://clawhub.ai/skills/lifx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lifx-bfa6c105e62a1c80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lifx@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lifx-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ee24be41283ac2e2fc57ba47a2265ce81ad505b523027491447e3cafefd01b6",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T21:27:35.553Z"
+}

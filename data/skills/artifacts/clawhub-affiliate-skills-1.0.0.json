@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/affiliate-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.affiliate_skills",
+  "skill": {
+    "id": 24813,
+    "skillKey": "clawhub-affiliate-skills",
+    "name": "Affiliate Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "affiliate-skills",
+    "url": "https://clawhub.ai/skills/affiliate-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/affiliate-skills-5f8698949f73ff38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Live affiliate program data from list.affitor.com. Search programs, compare commissions, check cookie days, find top performers. Use when researching affilia..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sonpiaz",
+      "userId": "publishers:sonpiaz",
+      "displayName": "sonpiaz",
+      "image": "https://avatars.githubusercontent.com/u/184378458?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773788543126,
+      "changelog": "Initial release: Live search and comparison for affiliate programs with caching and daemon support.\n\n- Query, search, and compare affiliate programs in real-time from list.affitor.com.\n- Persistent server daemon with instant response after first call and 5-minute data cache.\n- Supports advanced search filters, sorting, and side-by-side program comparison.\n- API key integration for unlimited results, with fallback to free tier.\n- Easy setup instructions and self-check for binary existence.\n- Server auto-manages uptime, state, and auto-shutdown on inactivity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2f36717270e84141c5c434c12ecf6534dd81350fa814cc03091c6f00ad2af12"
+}

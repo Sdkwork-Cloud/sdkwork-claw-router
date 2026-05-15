@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaspi-autopay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaspi_autopay",
+  "skill": {
+    "id": 18055,
+    "skillKey": "clawhub-kaspi-autopay",
+    "name": "Kaspi Autopay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaspi-autopay",
+    "url": "https://clawhub.ai/skills/kaspi-autopay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaspi-autopay-c692745a35383551.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Kaspi Pay receipt verification and instant product delivery in Telegram bots for Kazakhstan businesses, ensuring 24/7 fraud-proof payments without m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azamat02",
+      "userId": "publishers:azamat02",
+      "displayName": "azamat02",
+      "image": "https://avatars.githubusercontent.com/u/48000656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 721,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771066796991,
+      "changelog": "Kaspi-autopay 1.0.0 initial release:\n\n- Automates Kaspi Pay payment verification and receipt checks for Telegram bots targeting the Kazakhstan market.\n- Enables instant, manager-free product or access delivery after payment.\n- Features fraud protection (fake receipt detection) and operates 24/7.\n- Boosts conversion rates for info-products, e-commerce, and service businesses in Kazakhstan.\n- Supports Node.js/NestJS, Telegraf API, and PostgreSQL/Supabase.\n- Offered as a managed integration—contact developer for setup and pricing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:60153eeee0fc3b0eee11be02f054b3c85c22ba0d2d83248d034628ef260391f3"
+}

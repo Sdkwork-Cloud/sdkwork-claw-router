@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-knowledge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_knowledge",
+  "skill": {
+    "id": 10857,
+    "skillKey": "clawhub-agent-knowledge",
+    "name": "Agent Knowledge Capture"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-knowledge",
+    "url": "https://clawhub.ai/skills/agent-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-knowledge-bd66fb7bd3022939.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified knowledge capture and retrieval for URLs, video/article/paper extracts, social posts, and agent research outputs. Use when saving anything worth re-f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ianderrington",
+      "userId": "publishers:ianderrington",
+      "displayName": "ianderrington",
+      "image": "https://avatars.githubusercontent.com/u/76016868?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2213,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772149574807,
+      "changelog": "Initial release: file-based knowledge capture CLI for AI agents. Includes know add/search/tidy commands. Storage: ~/.soulshare/agent/knowledge/",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37917e448d3c0a4cf46fe89f7209af89d8a69fa3285594979df926481d0c8347"
+}

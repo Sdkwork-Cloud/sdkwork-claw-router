@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34567,
+  "uuid": "skill-clawhub-minio-integration",
+  "skillKey": "clawhub-minio-integration",
+  "name": "Minio",
+  "summary": "MinIO integration. Manage data, records, and automate workflows. Use when the user wants to interact with MinIO data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minio_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MinIO integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with MinIO data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minio-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minio-integration",
+      "url": "https://clawhub.ai/skills/minio-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minio-integration",
+    "url": "https://clawhub.ai/skills/minio-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minio-integration-784aa843cfe6085d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minio-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-minio-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89444692142b1f2a63da592befa65530d9cfad32b671a838d54dd5e44771b57b",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:14:28.100Z"
+}

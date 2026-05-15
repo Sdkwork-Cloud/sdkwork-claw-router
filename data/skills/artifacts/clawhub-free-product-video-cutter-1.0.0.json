@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-product-video-cutter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_product_video_cutter",
+  "skill": {
+    "id": 41138,
+    "skillKey": "clawhub-free-product-video-cutter",
+    "name": "Free Product Video Cutter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-product-video-cutter",
+    "url": "https://clawhub.ai/skills/free-product-video-cutter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-product-video-cutter-099e90e47333ff5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim product video clips into trimmed product clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. e-commerce marketers use it for cuttin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775955148145,
+      "changelog": "Initial release of Free Product Video Cutter, a skill for trimming and exporting product video clips for e-commerce marketers.\n\n- Upload product videos (MP4, MOV, AVI, WebM, up to 500MB) and cut them into shareable clips.\n- Automatic cloud GPU processing with 1080p MP4 output; typical jobs finish in 20–40 seconds.\n- Simple onboarding with automatic connection and free token generation (100 free credits valid 7 days).\n- User prompts route to upload, export, credits, state, or editing actions via intent classification.\n- Supports quick, batch, and iterative editing workflows with persistent session timelines.\n- Comprehensive error handling and clear feedback for common upload and export issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ed1a1167b1e9b897361033e696f0ff64c4e66699fde85ab768ed0696d225bbe"
+}

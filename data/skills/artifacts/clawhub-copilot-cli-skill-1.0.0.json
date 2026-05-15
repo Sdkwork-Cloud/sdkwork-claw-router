@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copilot-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot_cli_skill",
+  "skill": {
+    "id": 20853,
+    "skillKey": "clawhub-copilot-cli-skill",
+    "name": "Copilot Cli Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot-cli-skill",
+    "url": "https://clawhub.ai/skills/copilot-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-cli-skill-3091bb4e144802d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run GitHub Copilot CLI from OpenClaw for coding tasks in a target project directory. Use when the user asks OpenClaw to use Copilot for implementation, debug..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cecwxf",
+      "userId": "s17bnch4s0gmge7dne72k5p74183grr7",
+      "displayName": "saiph",
+      "image": "https://avatars.githubusercontent.com/u/1245883?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773073027196,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee09e3af8c5bb60d616663472483963f59d8595b1a9f27d87ddf30e02c480f96"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31006,
+  "uuid": "skill-clawhub-session-context",
+  "skillKey": "clawhub-session-context",
+  "name": "Session Memory & Summarization",
+  "summary": "Automatically loads recent conversation memory into new sessions and generates AI summaries during compaction to maintain continuity across conversations. Pr...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_context",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thomas Alcala Schneider",
+      "features": [
+        "Automatically loads recent conversation memory into new sessions and generates AI summaries dur."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-context@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1779231?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-context",
+      "url": "https://clawhub.ai/skills/session-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-context",
+    "url": "https://clawhub.ai/skills/session-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-context-e5ec72c021573ee3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-context@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-context-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d95a8262048f2540cbe18803eee7cca36313414346e0a69b2a11bc836bb7ee7c",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:16:00.030Z"
+}

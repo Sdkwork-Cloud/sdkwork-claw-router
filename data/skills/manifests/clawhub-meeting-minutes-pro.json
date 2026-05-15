@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29808,
+  "uuid": "skill-clawhub-meeting-minutes-pro",
+  "skillKey": "clawhub-meeting-minutes-pro",
+  "name": "Meeting Minutes Pro",
+  "summary": "Generate concise, actionable meeting minutes for internal meetings. Includes metadata, attendees, agenda, decisions, action items (owner + due date), and fol...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_minutes_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bingze00000",
+      "features": [
+        "Generate concise, actionable meeting minutes for internal meetings",
+        "Includes metadata, attendees, agenda, decisions, action items (owner + due date), and fol..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-minutes-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268100670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-minutes-pro",
+      "url": "https://clawhub.ai/skills/meeting-minutes-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-minutes-pro",
+    "url": "https://clawhub.ai/skills/meeting-minutes-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-minutes-pro-fe37f0dc136b7b78.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-minutes-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-minutes-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c0de8ca592b081fad5c0322a52589eb130cb4961c037edc9574d97ac24993eb",
+      "artifactSizeBytes": 2628
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:05:27.094Z"
+}

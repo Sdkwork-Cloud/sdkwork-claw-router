@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47919,
+  "uuid": "skill-clawhub-video-google",
+  "skillKey": "clawhub-video-google",
+  "name": "Video Google",
+  "summary": "Get timestamped video clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_google",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "Get timestamped video clips ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-google@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-google",
+      "url": "https://clawhub.ai/skills/video-google"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-google",
+    "url": "https://clawhub.ai/skills/video-google",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-google-a51c54bcc457852d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-google@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-google-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbcfba9cb0bf88689acb485c1a53d5977f22ba14604135680515dc70b00ea350",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T16:28:25.369Z"
+}

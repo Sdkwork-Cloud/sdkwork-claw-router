@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69308,
+  "uuid": "skill-clawhub-etrade",
+  "skillKey": "clawhub-etrade",
+  "name": "Etrade",
+  "summary": "美国在线券商先驱，1996年首推互联网交易平台，2020年被摩根士丹利收购，现专注综合财富管理服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etrade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "美国在线券商先驱，1996年首推互联网交易平台，2020年被摩根士丹利收购，现专注综合财富管理服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etrade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etrade",
+      "url": "https://clawhub.ai/skills/etrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etrade",
+    "url": "https://clawhub.ai/skills/etrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etrade-96838decb1b54a74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etrade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etrade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ee480c9640324131444e6e02d5b3ea99efeb47a1ffd74077c224f30c9a20510",
+      "artifactSizeBytes": 2199
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T09:03:58.279Z"
+}

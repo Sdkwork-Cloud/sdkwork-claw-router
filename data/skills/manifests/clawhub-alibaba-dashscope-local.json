@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45577,
+  "uuid": "skill-clawhub-alibaba-dashscope-local",
+  "skillKey": "clawhub-alibaba-dashscope-local",
+  "name": "Alibaba Dashscope Local",
+  "summary": "Configure OpenClaw to use Alibaba Cloud Bailian provider (Pay-As-You-Go or Coding Plan) through a strict interactive flow. Supports 5 site options and flagsh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibaba_dashscope_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PapaBearClaw",
+      "features": [
+        "Configure OpenClaw to use Alibaba Cloud Bailian provider (Pay-As-You-Go or Coding Plan) through.",
+        "Supports 5 site options and flagsh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibaba-dashscope-local@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263776143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibaba-dashscope-local",
+      "url": "https://clawhub.ai/skills/alibaba-dashscope-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibaba-dashscope-local",
+    "url": "https://clawhub.ai/skills/alibaba-dashscope-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibaba-dashscope-local-be65e5f512e843e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibaba-dashscope-local@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibaba-dashscope-local-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b6f046348d2f7f725ef5bfe428ef5f795914f60d1cc9ad047d7f97a631a0653",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T20:47:00.507Z"
+}

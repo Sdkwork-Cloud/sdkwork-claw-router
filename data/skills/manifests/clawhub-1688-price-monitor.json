@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66182,
+  "uuid": "skill-clawhub-1688-price-monitor",
+  "skillKey": "clawhub-1688-price-monitor",
+  "name": "1688 Price Monitor",
+  "summary": "监控 1688 批发商品价格，支持一件代发价格查询、厂家信息、同款比价。适合电商卖家、代购、副业创业者。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "275254cl-hash",
+      "features": [
+        "监控 1688 批发商品价格，支持一件代发价格查询、厂家信息、同款比价。适合电商卖家、代购、副业创业者。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1688-price-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246240596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1688-price-monitor",
+      "url": "https://clawhub.ai/skills/1688-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-price-monitor",
+    "url": "https://clawhub.ai/skills/1688-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-price-monitor-6d1471c76e88e397.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1688-price-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-1688-price-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:206b2709cc616b0cbbe989185e0911d0e749cc032a317d59a63b82ce74d46bd8",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:38:49.193Z"
+}

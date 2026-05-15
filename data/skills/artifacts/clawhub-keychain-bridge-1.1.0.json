@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keychain-bridge@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keychain_bridge",
+  "skill": {
+    "id": 17879,
+    "skillKey": "clawhub-keychain-bridge",
+    "name": "Keychain Bridge Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keychain-bridge",
+    "url": "https://clawhub.ai/skills/keychain-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keychain-bridge-fdf0f5702d41127c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage secrets via macOS Keychain instead of plaintext files. Migrate existing secrets, read/write keychain entries, bridge to files for bash tools, audit fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "euda1mon1a",
+      "userId": "publishers:euda1mon1a",
+      "displayName": "Euda1mon1a",
+      "image": "https://avatars.githubusercontent.com/u/214782221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 736,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772861231923,
+      "changelog": "Fix: security unlock-keychain -p also broken on Tahoe 26.x. Add ctypes SecKeychainUnlock as working SSH alternative. Document process-scoped unlock, Homebrew vs Apple Python ACL asymmetry. Known Issues 5 → 6.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e5a9769138799d0f4eda6b05cdf5620949bde86bfa4e6a10a36f5d6064a533a"
+}

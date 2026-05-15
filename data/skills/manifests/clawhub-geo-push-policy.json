@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68570,
+  "uuid": "skill-clawhub-geo-push-policy",
+  "skillKey": "clawhub-geo-push-policy",
+  "name": "Geo Push Policy",
+  "summary": "管理事件推送策略，包括冷却期、观察池、推送次数限制、事件状态跟踪和频率限制保护。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_push_policy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liweijie0709-cmyk",
+      "features": [
+        "管理事件推送策略，包括冷却期、观察池、推送次数限制、事件状态跟踪和频率限制保护。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-push-policy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266322839?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-push-policy",
+      "url": "https://clawhub.ai/skills/geo-push-policy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-push-policy",
+    "url": "https://clawhub.ai/skills/geo-push-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-push-policy-dc334acb1d80ef1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-push-policy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-push-policy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b61e5405aa72cd45ef4469731061260521c1e2ad2c3e31775d50f6a2c5517b3",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:12:20.210Z"
+}

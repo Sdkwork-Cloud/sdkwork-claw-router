@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56483,
+  "uuid": "skill-clawhub-gcloud-cli",
+  "skillKey": "clawhub-gcloud-cli",
+  "name": "Google Cloud CLI",
+  "summary": "Manage Google Cloud Platform resources using the official gcloud CLI, discovering command syntax dynamically with `gcloud <group> --help` before execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gcloud_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Felipe Oliveira",
+      "features": [
+        "Manage Google Cloud Platform resources using the official gcloud CLI, discovering command synta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gcloud-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13547092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gcloud-cli",
+      "url": "https://clawhub.ai/skills/gcloud-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gcloud-cli",
+    "url": "https://clawhub.ai/skills/gcloud-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gcloud-cli-4d9ff9ba15f02644.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gcloud-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gcloud-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4059e2122f4a793079c4ea11be025e063019e468e854dd4bb5fb3bb3bd29d79",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T18:46:03.092Z"
+}

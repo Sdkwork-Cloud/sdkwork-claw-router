@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/biorxiv-openclaw-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biorxiv_openclaw_skill",
+  "skill": {
+    "id": 27183,
+    "skillKey": "clawhub-biorxiv-openclaw-skill",
+    "name": "bioRxiv access using API with support of time period and category"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biorxiv-openclaw-skill",
+    "url": "https://clawhub.ai/skills/biorxiv-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biorxiv-openclaw-skill-6b2243908446ceb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and retrieve biology preprints from bioRxiv by category and date range, including paper metadata without needing authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aquaskyline",
+      "userId": "s170ys4mevfsgz46cb060c640n83m493",
+      "displayName": "aquaskyline",
+      "image": "https://avatars.githubusercontent.com/u/895289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773151156588,
+      "changelog": "bio version 1.0.0\n\n- Initial release with core functionality for writing and managing professional bios across various platforms and contexts.\n- Adapts bios for specific uses (LinkedIn, speaker introduction, website, press kit, conference, etc.), maintaining consistent voice and narrative.\n- Integrates credentials into narrative rather than lists, and generates multiple opening sentence options matched to context.\n- Tracks and prompts for bio updates when significant career changes occur.\n- Added: SKILL.md, references/api.md, scripts/biorxiv.py; Removed: skill.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae436700c8716bf010e778e77639903012086f25e61b6bd04c4f2993a19cc2ae"
+}

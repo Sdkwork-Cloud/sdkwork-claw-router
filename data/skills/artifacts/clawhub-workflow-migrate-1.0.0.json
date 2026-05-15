@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workflow-migrate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_migrate",
+  "skill": {
+    "id": 17965,
+    "skillKey": "clawhub-workflow-migrate",
+    "name": "workflow-migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-migrate",
+    "url": "https://clawhub.ai/skills/workflow-migrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-migrate-a482acbc67d958db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate N8N/Zapier/Make workflows to production-grade Python or Node.js scripts. Given a workflow description or paste, rewrites automation logic with retry,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevdogg102396-afk",
+      "userId": "publishers:kevdogg102396-afk",
+      "displayName": "kevdogg102396-afk",
+      "image": "https://avatars.githubusercontent.com/u/257070288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 629,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772567445484,
+      "changelog": "workflow-migrate 1.0.0\n\n- Initial release of workflow-migrate.\n- Converts N8N, Zapier, or Make workflows into production-ready Python or Node.js scripts.\n- Adds retry, exponential backoff, logging, and self-healing (alerts, idempotency, dead-letter queue, heartbeats) to migrated scripts.\n- Guides users interactively when workflow input is vague. \n- Generated scripts are runnable, testable, and billable as deliverables.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4756011b138756d278fd61a0547f332eed307ef0568f34fc39841e47267f6de7"
+}

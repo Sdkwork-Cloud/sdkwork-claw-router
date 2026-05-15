@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31830,
+  "uuid": "skill-clawhub-cross-river",
+  "skillKey": "clawhub-cross-river",
+  "name": "Cross River",
+  "summary": "Cross River integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cross River data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_river",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cross River integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cross River data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-river@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-river",
+      "url": "https://clawhub.ai/skills/cross-river"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-river",
+    "url": "https://clawhub.ai/skills/cross-river",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-river-e26dd96966e81658.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-river@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-river-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:632228a0beb4140b1e8ddb778434e2eddede4052d4f31f3258997725fff473e7",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:35:58.736Z"
+}

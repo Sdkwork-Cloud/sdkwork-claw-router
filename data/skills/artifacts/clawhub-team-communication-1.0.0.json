@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-communication@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_communication",
+  "skill": {
+    "id": 62400,
+    "skillKey": "clawhub-team-communication",
+    "name": "Team Communication"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-communication",
+    "url": "https://clawhub.ai/skills/team-communication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-communication-8e9548379add18e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "团队内部沟通技能。当需要与其他 team members（agents）沟通、协调任务、请求帮助或发送消息时使用。提供团队成员目录、sessions_send 用法和最佳实践。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ebly",
+      "userId": "publishers:ebly",
+      "displayName": "ebly",
+      "image": "https://avatars.githubusercontent.com/u/5242545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 612,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772997887322,
+      "changelog": "团队内部沟通技能 - 提供 sessions_send 用法和团队成员目录",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2649f14c6bbdc3af34cb0a8d92dfacbe042ea51f3d3ac3792f5d21003ffeb4e5"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21514,
+  "uuid": "skill-clawhub-clawvisual",
+  "skillKey": "clawhub-clawvisual",
+  "name": "Clawvisual",
+  "summary": "URL or long-form text to social carousel generator via local CLI + MCP endpoint.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawvisual",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suinia",
+      "features": [
+        "URL or long-form text to social carousel generator via local CLI + MCP endpoint."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawvisual@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6496717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawvisual",
+      "url": "https://clawhub.ai/skills/clawvisual"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawvisual",
+    "url": "https://clawhub.ai/skills/clawvisual",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawvisual-1b255c49f8658149.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawvisual@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawvisual-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a91580b7ecd5de58e7a0fe55cd2bf711508d3082ef162a1d17a5280dac86e7cd",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T13:55:19.194Z"
+}

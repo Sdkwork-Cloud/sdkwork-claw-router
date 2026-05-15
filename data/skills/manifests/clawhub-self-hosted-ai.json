@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50850,
+  "uuid": "skill-clawhub-self-hosted-ai",
+  "skillKey": "clawhub-self-hosted-ai",
+  "name": "Self Hosted Ai",
+  "summary": "Self-hosted AI — run your own LLM inference, image generation, speech-to-text, and embeddings. No cloud APIs, no SaaS subscriptions, no data leaving your net...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_hosted_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Self-hosted AI — run your own LLM inference, image generation, speech-to-text, and embeddings",
+        "No cloud APIs, no SaaS subscriptions, no data leaving your net..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-hosted-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-hosted-ai",
+      "url": "https://clawhub.ai/skills/self-hosted-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-hosted-ai",
+    "url": "https://clawhub.ai/skills/self-hosted-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-hosted-ai-c7602580c9f62c1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-hosted-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-hosted-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c1e525060f3d1cf6c5ecf68d30272fce3369bf9a2b9b3e48ab08faa052f2899",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:44.456Z"
+}

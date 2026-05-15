@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/earnings-financials-agent@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.earnings_financials_agent",
+  "skill": {
+    "id": 27097,
+    "skillKey": "clawhub-earnings-financials-agent",
+    "name": "EarningsFinancialsAgent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "earnings-financials-agent",
+    "url": "https://clawhub.ai/skills/earnings-financials-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/earnings-financials-agent-37953f2a9a4c3d9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An autonomous agent for monitoring corporate earnings and analyzing financial statements using yfinance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "assix",
+      "userId": "s17bfvgwgfjf7wgnf57h1fpvcd83n5mq",
+      "displayName": "Anthony Assi",
+      "image": "https://avatars.githubusercontent.com/u/41215706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774056180016,
+      "changelog": "- Version number updated from 1.0.1 to 1.0.3 in SKILL.md.\n- No functional or documentation changes beyond the version number.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93eaa489a9191694cc7c43cf976c50ea3cdf2432d2dfb6371f2c3873f3b35b48"
+}

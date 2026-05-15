@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-pre-install-scanner@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_pre_install_scanner",
+  "skill": {
+    "id": 52685,
+    "skillKey": "clawhub-skill-pre-install-scanner",
+    "name": "Pre-Install Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-pre-install-scanner",
+    "url": "https://clawhub.ai/skills/skill-pre-install-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-pre-install-scanner-c7d026a39cf7a4e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-install safety check for ClawHub skills — scans for the 3 highest-risk signals before anything lands on disk. Free taster. Full 10-signal scanner in the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ordo-tech",
+      "userId": "s17ba7zvb2nvzwkzd3h2gq54yd83g190",
+      "displayName": "Ordo-tech",
+      "image": "https://avatars.githubusercontent.com/u/270605482?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775641518093,
+      "changelog": "Lite version: free taster. Full version in the ClawHub Security/Ops Pack on Gumroad.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb57abc53dcad347ef4ccb204b88d041a66beec9456105dd543c268db37b6883"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cf-markdown-agents@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cf_markdown_agents",
+  "skill": {
+    "id": 51532,
+    "skillKey": "clawhub-cf-markdown-agents",
+    "name": "cf markdown agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cf-markdown-agents",
+    "url": "https://clawhub.ai/skills/cf-markdown-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cf-markdown-agents-da38af5357ffce7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch web content using Cloudflare's Markdown for Agents protocol. Automatically converts HTML to Markdown with 80% token reduction. Use when fetching web pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xinian5216",
+      "userId": "publishers:xinian5216",
+      "displayName": "xinian5216",
+      "image": "https://avatars.githubusercontent.com/u/59920440?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773399700335,
+      "changelog": "Initial release of cf-markdown-agents.\n\n- Enables fetching web content using Cloudflare's Markdown for Agents protocol.\n- Automatically converts HTML pages to clean, structured Markdown format with ~80% token reduction.\n- Provides examples for usage with shell scripts, TypeScript/JavaScript, and cURL.\n- Describes response headers including token count and AI usage permissions.\n- Lists supported sites and summarizes key benefits for AI processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5aef3d834f3fffb1bca32d5bd9bb4aa74bfdca779869fa66ee4da4edde915f2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuheng-html-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuheng_html_report",
+  "skill": {
+    "id": 62978,
+    "skillKey": "clawhub-yuheng-html-report",
+    "name": "Html Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuheng-html-report",
+    "url": "https://clawhub.ai/skills/yuheng-html-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuheng-html-report-8a5b0cc6e74c306f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "任意数据输入 → 精美可视化HTML报告页面。触发词：生成报告/精美HTML/可视化页面/数据大屏/制作网页。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "horizoncove",
+      "userId": "s17db51np30f4wk2n976x2x0wd83hsgt",
+      "displayName": "horizoncove",
+      "image": "https://avatars.githubusercontent.com/u/221652459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776954074206,
+      "changelog": "Initial release of html-report-generator.\n\n- Generate visually appealing, data-driven HTML reports from any provided data.\n- Supports multiple built-in visualization components: hero section, KPI bar, card grid, timeline, tables, tag cloud, quote box, and badges.\n- Offers various color themes such as tech blue, brand purple, business gold, and health green.\n- Outputs a ready-to-deploy HTML page and provides an accessible deployment link.\n- Includes clear usage instructions and design specifications for consistent styling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d26ebd58fac5999ca589e3ba7157f666b1619b7c283f24495d30254ea28f149"
+}

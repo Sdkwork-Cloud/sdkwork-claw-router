@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18531,
+  "uuid": "skill-clawhub-hermes-install",
+  "skillKey": "clawhub-hermes-install",
+  "name": "Hermes Install",
+  "summary": "Complete Hermes Agent installation and migration guide. Use when user wants to install Hermes Agent, migrate from OpenClaw to Hermes, configure Feishu/Lark c...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_install",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Complete Hermes Agent installation and migration guide",
+        "Use when user wants to install Hermes Agent, migrate from OpenClaw to Hermes, configure Feishu/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-install@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-install",
+      "url": "https://clawhub.ai/skills/hermes-install"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-install",
+    "url": "https://clawhub.ai/skills/hermes-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-install-4721af89a633a5eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-install@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-install-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9811da45afe9da85070601368da96235e0a30adddb679cf28aaa4fa824cc017b",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:49:53.606Z"
+}

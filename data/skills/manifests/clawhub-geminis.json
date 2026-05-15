@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25949,
+  "uuid": "skill-clawhub-geminis",
+  "skillKey": "clawhub-geminis",
+  "name": "Pub Gemini",
+  "summary": "Gemini CLI for one-shot Q and A, summaries, and generation. And also 50+ models for image generation, video generation, text-to-speech, speech-to-text, music...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geminis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MartinPollitt",
+      "features": [
+        "Gemini CLI for one-shot Q and A, summaries, and generation",
+        "And also 50+ models for image generation, video generation, text-to-speech, speech-to-text, mus."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geminis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255053539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geminis",
+      "url": "https://clawhub.ai/skills/geminis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geminis",
+    "url": "https://clawhub.ai/skills/geminis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geminis-0b66408c191d214c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geminis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geminis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17b85b1a60d8dce538a2a2ad3fb068f5f340b6d127b5f8caa8e798545ec28f71",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:18:57.722Z"
+}

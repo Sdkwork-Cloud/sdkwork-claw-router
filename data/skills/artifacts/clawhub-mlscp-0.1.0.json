@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mlscp@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mlscp",
+  "skill": {
+    "id": 12894,
+    "skillKey": "clawhub-mlscp",
+    "name": "Mlscp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mlscp",
+    "url": "https://clawhub.ai/skills/mlscp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mlscp-ae174eaa6f0cf0ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Parse and generate MLSCP (Micro LLM Swarm Communication Protocol) commands. Use when communicating with other agents efficiently, parsing compressed commands, or generating token-efficient instructions. Reduces token usage by 70-80% compar."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sirkrouph-dev",
+      "userId": "publishers:sirkrouph-dev",
+      "displayName": "sirkrouph-dev",
+      "image": "https://avatars.githubusercontent.com/u/31062336?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1999,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769896049012,
+      "changelog": "- Initial release of the mlscp skill for the Micro LLM Swarm Communication Protocol (MLSCP)\n- Provides parsing, validation, and generation of MLSCP commands for efficient agent-to-agent communication\n- CLI scripts included for command parsing, validation, vocabulary generation, and natural language compression\n- Comprehensive command and syntax reference for MLSCP operations\n- Python API for parsing and integrating MLSCP commands into projects\n- Significant reduction in token usage (70–80%) compared to natural language instructions",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4052d46de5a9513efd8d85f5c17d8bcc79a9af639e71d7f7f2430c9ef1072086"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12821,
+  "uuid": "skill-clawhub-solana",
+  "skillKey": "clawhub-solana",
+  "name": "Solana",
+  "summary": "Assist with Solana transactions, token accounts, priority fees, and program interactions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solana",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Assist with Solana transactions, token accounts, priority fees, and program interactions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solana@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solana",
+      "url": "https://clawhub.ai/skills/solana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solana",
+    "url": "https://clawhub.ai/skills/solana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solana-615666dae9d3625a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solana@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solana-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbeec20c5705f9351e87c3c9515aa92901165cc3b61ea927155d5f46808ca6da",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T23:53:42.385Z"
+}

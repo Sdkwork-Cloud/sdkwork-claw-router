@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/test-buddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_buddy",
+  "skill": {
+    "id": 63808,
+    "skillKey": "clawhub-test-buddy",
+    "name": "buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-buddy",
+    "url": "https://clawhub.ai/skills/test-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-buddy-b77bdd24ee6f7249.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Buddy 抽卡体验。基于 Claude Code 原版 Buddy 系统的抽卡，让用户体验抽到什么稀有度的电子宠物。触发词：抽卡、buddy、电子宠物抽卡。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "subcoldzhang",
+      "userId": "s17fwhjfbjxmmyq7m0gz4x9m4983mwzq",
+      "displayName": "Yuhao Zhang",
+      "image": "https://avatars.githubusercontent.com/u/143550483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775028434067,
+      "changelog": "buddy-gacha 1.0.0\n\n- 初始发布，实现 Buddy 抽卡体验。\n- 支持18种物种和5档稀有度（带概率分布）。\n- 增加闪光系统（1%概率）和帽子系统。\n- 支持通过用户名或自定义名字抽卡，结果确定性随机。\n- 包含命令行使用说明和示例。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a77cccf1b332e29f86fb36833c2d7b59cc615b3b8d5c794d25348c9a40ca8de"
+}

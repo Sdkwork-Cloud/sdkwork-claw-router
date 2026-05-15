@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54132,
+  "uuid": "skill-clawhub-skylv-error-monitoring-agent",
+  "skillKey": "clawhub-skylv-error-monitoring-agent",
+  "name": "Skylv Error Monitoring Agent",
+  "summary": "Catch errors before users report them. Real-time monitoring, auto-grouping, and smart alerts that reduce noise by 90%.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_error_monitoring_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Catch errors before users report them",
+        "Real-time monitoring, auto-grouping, and smart alerts that reduce noise by 90%."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-error-monitoring-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-error-monitoring-agent",
+      "url": "https://clawhub.ai/skills/skylv-error-monitoring-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-error-monitoring-agent",
+    "url": "https://clawhub.ai/skills/skylv-error-monitoring-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-error-monitoring-agent-f03d99a260c8a10d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-error-monitoring-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-error-monitoring-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74f67cc9100e8d0cc6f1c9c8216562cb7c13c9802170cc8c8572dfddc0ee70ba",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:51:08.168Z"
+}

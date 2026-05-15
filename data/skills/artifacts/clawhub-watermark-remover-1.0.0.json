@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/watermark-remover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.watermark_remover",
+  "skill": {
+    "id": 68696,
+    "skillKey": "clawhub-watermark-remover",
+    "name": "Watermark Remover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "watermark-remover",
+    "url": "https://clawhub.ai/skills/watermark-remover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/watermark-remover-e9ddb3e99f0a90a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "去除 PDF 文件中的水印。使用场景：用户请求去除 PDF 文件的水印时触发。支持单个或多个文件批量处理。严格遵循确认流程：环境检查→库安装确认→水印检测→去除确认。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "techhnicistsmallwhite",
+      "userId": "publishers:techhnicistsmallwhite",
+      "displayName": "TechhnicistSmallWhite",
+      "image": "https://avatars.githubusercontent.com/u/132131761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 608,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772956367202,
+      "changelog": "- Initial release of the watermark-remover skill for removing watermarks from PDF files.\n- Supports batch processing of single or multiple PDFs.\n- Implements a strict step-by-step confirmation workflow: environment check → library installation confirmation → watermark detection → user confirmation before removal.\n- Automatically generates watermark preview images and displays results for user validation.\n- Ensures all environment changes and file modifications occur only after explicit user approval.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf7cbb21ea66151ca595ae6acac9cfb2675a2f5f3bce5a0488fc6fd965dfc531"
+}

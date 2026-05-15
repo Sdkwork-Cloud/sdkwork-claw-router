@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24025,
+  "uuid": "skill-clawhub-subscription-churn-lifecycle",
+  "skillKey": "clawhub-subscription-churn-lifecycle",
+  "name": "Subscription Churn Lifecycle",
+  "summary": "Churn prevention and lifecycle operations for subscription/recurring payment products (monthly coffee, beauty subscription boxes, pet supplies, content/softw...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscription_churn_lifecycle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RIJOY-AI",
+      "features": [
+        "Churn prevention and lifecycle operations for subscription/recurring payment products (monthly."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subscription-churn-lifecycle@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219251023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subscription-churn-lifecycle",
+      "url": "https://clawhub.ai/skills/subscription-churn-lifecycle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscription-churn-lifecycle",
+    "url": "https://clawhub.ai/skills/subscription-churn-lifecycle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscription-churn-lifecycle-d7e35ba0c488d8bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subscription-churn-lifecycle@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-subscription-churn-lifecycle-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3c564148415a726a201623baca419b3049f10d180660504e023ffb03d311158",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:18:20.089Z"
+}

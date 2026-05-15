@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52411,
+  "uuid": "skill-clawhub-api-bridge",
+  "skillKey": "clawhub-api-bridge",
+  "name": "Api Bridge",
+  "summary": "Curated free public APIs for AI agents — geocoding, weather, forex, validation, facts, finance, and test data. Use when an agent needs real-world data withou...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex",
+      "features": [
+        "Curated free public APIs for AI agents — geocoding, weather, forex, validation, facts, finance,.",
+        "Use when an agent needs real-world data withou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1514933?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-bridge",
+      "url": "https://clawhub.ai/skills/api-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-bridge",
+    "url": "https://clawhub.ai/skills/api-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-bridge-762a9418c8dfef8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7709a784e180d6fd403f458ca08bb1251b2c953e7c75e6786c100893acc91af8",
+      "artifactSizeBytes": 2211
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T23:46:51.762Z"
+}

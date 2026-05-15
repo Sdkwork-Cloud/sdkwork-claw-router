@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-rename@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_rename",
+  "skill": {
+    "id": 32524,
+    "skillKey": "clawhub-audio-rename",
+    "name": "Audio Rename"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-rename",
+    "url": "https://clawhub.ai/skills/audio-rename",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-rename-3b17737b07d33cbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rename audio files with Chinese/special characters to simple English names for mlx-stt compatibility."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ayakolin",
+      "userId": "publishers:ayakolin",
+      "displayName": "ayakolin",
+      "image": "https://avatars.githubusercontent.com/u/79017455?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774143983463,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a19f65ffc6ee3ce397b1dccd09b0271e1a198697abb1c193efc8be13bfc61007"
+}

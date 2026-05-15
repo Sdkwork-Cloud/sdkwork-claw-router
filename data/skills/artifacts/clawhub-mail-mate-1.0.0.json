@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mail-mate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mail_mate",
+  "skill": {
+    "id": 45002,
+    "skillKey": "clawhub-mail-mate",
+    "name": "Mail Mate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mail-mate",
+    "url": "https://clawhub.ai/skills/mail-mate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mail-mate-edfee3cec416fd86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connects to IMAP mailboxes using built-in provider routing to filter, normalize, extract data via regex, and push matching emails with precise time window co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tankeito",
+      "userId": "s17050jbyjd1x0p5mb5z41j5n983hd2e",
+      "displayName": "tankeito",
+      "image": "https://avatars.githubusercontent.com/u/129169395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776829065164,
+      "changelog": "# v1.0.0: Major Simplication & Core Feature Rollup\n\n- Reduced file count for a leaner, zero-dependency package (6 added, 19 removed).\n- Refactored to core Python standard library, removing external requirements.\n- New concise folder structure: main.py, reader.py (mail routing/processing), pusher.py (push notifications), setup_cron.sh, README, and documentation.\n- All previous multi-language health-report logic removed; skill now focuses on a universal IMAP mail processing pipeline.\n- Features: provider-based routing, precise local timezone filtering, deep string normalization, keyword+body matching, regex structured extraction, and multi-platform push support.\n- One-command cron registration for scheduled mail processing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d716c0ef69549195f33218190c180515bfb053f00772691544252b76419bfed"
+}

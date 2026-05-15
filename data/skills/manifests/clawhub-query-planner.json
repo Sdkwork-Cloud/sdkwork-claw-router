@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64631,
+  "uuid": "skill-clawhub-query-planner",
+  "skillKey": "clawhub-query-planner",
+  "name": "Query Planner",
+  "summary": "LLM通用查询规划技能。将复杂任务拆解为4类标准查询(identity/event/action/counter)。在需要联网搜索、多步分析、反证检索前使用。触发条件：任务依赖外部信息、需要拆解复杂问题、需要统一query结构供下游消费。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.query_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "z1one0415",
+      "features": [
+        "LLM通用查询规划技能。将复杂任务拆解为4类标准查询(identity/event/action/counter)。在需要联网搜索、多步分析、反证检索前使用。触发条件：任务依赖外部信息、需要."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/query-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261777435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "query-planner",
+      "url": "https://clawhub.ai/skills/query-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "query-planner",
+    "url": "https://clawhub.ai/skills/query-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/query-planner-2b38a551241d7c8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/query-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-query-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f1f5ad65dee854b84cf40a1e8a68b22e8a070eebecd8eb85c5ea6e5574d9add",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:33:48.324Z"
+}

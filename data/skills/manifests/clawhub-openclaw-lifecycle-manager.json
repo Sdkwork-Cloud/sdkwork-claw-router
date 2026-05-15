@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41972,
+  "uuid": "skill-clawhub-openclaw-lifecycle-manager",
+  "skillKey": "clawhub-openclaw-lifecycle-manager",
+  "name": "OpenClaw Lifecycle Manager",
+  "summary": "Gestiona el ciclo de vida de agentes y skills OpenClaw dentro de ClawForge. Usar para clasificar, validar, publicar, instalar, actualizar, deprecar o retirar...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_lifecycle_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "felix-antonio-sl",
+      "features": [
+        "Gestiona el ciclo de vida de agentes y skills OpenClaw dentro de ClawForge",
+        "Usar para clasificar, validar, publicar, instalar, actualizar, deprecar o retirar..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-lifecycle-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143637936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-lifecycle-manager",
+      "url": "https://clawhub.ai/skills/openclaw-lifecycle-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-lifecycle-manager",
+    "url": "https://clawhub.ai/skills/openclaw-lifecycle-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-lifecycle-manager-6cc3a899fb2205e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-lifecycle-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-lifecycle-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04167de782fe76b5bc34668c7a790ac5d2b12696bb1ca23abd656520210dbf97",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:16:00.795Z"
+}

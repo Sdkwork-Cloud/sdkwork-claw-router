@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zen-editorial-review@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zen_editorial_review",
+  "skill": {
+    "id": 41691,
+    "skillKey": "clawhub-zen-editorial-review",
+    "name": "Zen Editorial Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zen-editorial-review",
+    "url": "https://clawhub.ai/skills/zen-editorial-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zen-editorial-review-8b5d93634735c154.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Editorial review for news-style submissions: normalize metadata + body, check consistency, links and policy risk, author identity vs byline and timing, then..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manwjh",
+      "userId": "s171dttznasccgr57vhx635afn83n498",
+      "displayName": "深圳王哥",
+      "image": "https://avatars.githubusercontent.com/u/7723271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1777292166446,
+      "changelog": "Publish from ZenHeart v2 skills bundle.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6799f571ea5b78e864d832eefd7f20124fbc39a73536fc62b01a4b309e65416f"
+}

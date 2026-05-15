@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46346,
+  "uuid": "skill-clawhub-nbj-ob1-agent-memory-openclaw",
+  "skillKey": "clawhub-nbj-ob1-agent-memory-openclaw",
+  "name": "NBJ OB1 Agent Memory for OpenClaw",
+  "summary": "Use Nate Jones OB1 Agent Memory from OpenClaw with provenance, scope, review, and use-policy discipline.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nbj_ob1_agent_memory_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nate Jones",
+      "features": [
+        "Use Nate Jones OB1 Agent Memory from OpenClaw with provenance, scope, review, and use-policy di."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nbj-ob1-agent-memory-openclaw@0.1.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/nbj-ob1-agent-memory-openclaw/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nbj-ob1-agent-memory-openclaw",
+      "url": "https://clawhub.ai/skills/nbj-ob1-agent-memory-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nbj-ob1-agent-memory-openclaw",
+    "url": "https://clawhub.ai/skills/nbj-ob1-agent-memory-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nbj-ob1-agent-memory-openclaw-a6a6c1fc4bcd2f46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nbj-ob1-agent-memory-openclaw@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nbj-ob1-agent-memory-openclaw-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3147a5f145c0325614db6687d68ee486af8b559f7aa2bb8697252f39bd1f6726",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T05:46:01.195Z"
+}

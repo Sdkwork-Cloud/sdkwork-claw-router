@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21150,
+  "uuid": "skill-clawhub-mautic",
+  "skillKey": "clawhub-mautic",
+  "name": "Mautic",
+  "summary": "Mautic integration. Manage Leads, Organizations, Users, Roles, Notes, Activities and more. Use when the user wants to interact with Mautic data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mautic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mautic integration",
+        "Manage Leads, Organizations, Users, Roles, Notes, Activities and more",
+        "Use when the user wants to interact with Mautic data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mautic@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mautic",
+      "url": "https://clawhub.ai/skills/mautic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mautic",
+    "url": "https://clawhub.ai/skills/mautic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mautic-24e415191601abf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mautic@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mautic-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab887e15db69e45d0feb09e18b848e85c46d29909c4b0057d07952965c3fd18d",
+      "artifactSizeBytes": 1837
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:11:43.185Z"
+}

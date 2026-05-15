@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-web-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_web_search",
+  "skill": {
+    "id": 19412,
+    "skillKey": "clawhub-searxng-web-search",
+    "name": "searxng-web-search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-web-search",
+    "url": "https://clawhub.ai/skills/searxng-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-web-search-4c8a2fa1ccdcef5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using a self-hosted SearXNG metasearch engine. Use when the user asks to search the web, find information online, look up recent news, researc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gangtao",
+      "userId": "s17fb3h3yznyvkzn8pjbvf2xkh83md0v",
+      "displayName": "Gang Tao",
+      "image": "https://avatars.githubusercontent.com/u/3509037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772818244196,
+      "changelog": "SearXNG Web Search skill initial release.\n\n- Provides privacy-respecting web search via a self-hosted SearXNG instance.\n- Standalone skill, rewritten from PulseBot’s built-in web search to use SearXNG as backend.\n- Supports extensive configuration through environment variables (result count, language, safesearch, etc).\n- Usable as both a command-line script and a Python module.\n- Returns structured JSON including results, suggestions, answers, and error info.\n- Includes detailed usage instructions and troubleshooting for integration and setup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a0b9648eb131824c92e35ab9811d38c60b998fedfd87784bf55daee1801e0cb"
+}

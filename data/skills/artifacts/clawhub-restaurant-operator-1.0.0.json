@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/restaurant-operator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restaurant_operator",
+  "skill": {
+    "id": 36966,
+    "skillKey": "clawhub-restaurant-operator",
+    "name": "Restaurant Operator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restaurant-operator",
+    "url": "https://clawhub.ai/skills/restaurant-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restaurant-operator-145bd9fc8f6e1b83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage restaurant operations with recipe creation, inventory prediction, menu optimization, staff scheduling, and food safety compliance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larios613-hub",
+      "userId": "s17dtexnvfq7n4y4zngbkwq42d83m1pb",
+      "displayName": "larios613-hub",
+      "image": "https://avatars.githubusercontent.com/u/268251661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774754631844,
+      "changelog": "Restaurant Operator 1.0.0 — initial release\n\n- Combines culinary (Chef Brain) and business (Operator Brain) AI for restaurant management\n- Features include recipe creation, ingredient substitution, flavor balancing, inventory prediction, menu engineering, staff scheduling, and food safety monitoring\n- Supports use cases for new and existing restaurants, food trucks, catering, and ghost kitchens\n- Integrates with POS, inventory management, weather APIs, and reservation systems\n- Flexible pricing tiers for different business needs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d194c329fa05ec6a6a94ec73c735d251eab71bf75e716ed13e3ac0e9814769a"
+}

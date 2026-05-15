@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70561,
+  "uuid": "skill-clawhub-fusheng",
+  "skillKey": "clawhub-fusheng",
+  "name": "傅盛",
+  "summary": "傅盛人物介绍技能。当用户询问傅盛、猎豹移动创始人、猎户星空、Clean Master创始人等相关信息时激活此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fusheng",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "傅盛人物介绍技能。当用户询问傅盛、猎豹移动创始人、猎户星空、Clean Master创始人等相关信息时激活此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fusheng@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fusheng",
+      "url": "https://clawhub.ai/skills/fusheng"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fusheng",
+    "url": "https://clawhub.ai/skills/fusheng",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fusheng-ccb01a28eb3f3349.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fusheng@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fusheng-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05a5fa0eea116009c6d4d1b0740fbf7796a33010f6211491effbade180944eb7",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:07:12.909Z"
+}

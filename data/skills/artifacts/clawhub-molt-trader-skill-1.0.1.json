@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molt-trader-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_trader_skill",
+  "skill": {
+    "id": 12237,
+    "skillKey": "clawhub-molt-trader-skill",
+    "name": "Molt Trader Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-trader-skill",
+    "url": "https://clawhub.ai/skills/molt-trader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-trader-skill-d94ba74667b1ad2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simulate stock trading with long/short positions, manage portfolio, track performance, and compete on Molt Trader's leaderboard in a realistic market environ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "801c07",
+      "userId": "publishers:801c07",
+      "displayName": "801C07",
+      "image": "https://avatars.githubusercontent.com/u/6646884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1763,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769887288224,
+      "changelog": "Fix TypeScript error in client.ts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f53499a654e37ee4d92f8051a81baa3b916704b38f8afe4ee305f692c188f45"
+}

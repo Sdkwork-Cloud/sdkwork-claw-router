@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43224,
+  "uuid": "skill-clawhub-clawguard-shield",
+  "skillKey": "clawhub-clawguard-shield",
+  "name": "ClawGuard-Shield",
+  "summary": "ClawGuard Shield v3 - Active defense with prompt injection detection, intent validation, zero-width character detection, and intent integrity verification",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawguard_shield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stardreaming",
+      "features": [
+        "ClawGuard Shield v3",
+        "Active defense with prompt injection detection, intent validation, zero-width character detecti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawguard-shield@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160408334?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawguard-shield",
+      "url": "https://clawhub.ai/skills/clawguard-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawguard-shield",
+    "url": "https://clawhub.ai/skills/clawguard-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawguard-shield-c4394350820b2e98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawguard-shield@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawguard-shield-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b41d911da3032c6cbd42bc4732a7d2ff3da3b58a2e4759a727001bade9f74c8a",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T09:12:01.969Z"
+}

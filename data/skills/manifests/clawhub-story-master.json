@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70939,
+  "uuid": "skill-clawhub-story-master",
+  "skillKey": "clawhub-story-master",
+  "name": "Story Master/通过图谱和管道方式创建剧本",
+  "summary": "剧情生成管道流技能。支持多剧集连续生成、图谱管理、AI质检+人工确认的双控机制。自动管理人物、场景、钩子的关联关系。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.story_master",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hexidyg",
+      "features": [
+        "剧情生成管道流技能。支持多剧集连续生成、图谱管理、AI质检+人工确认的双控机制。自动管理人物、场景、钩子的关联关系。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/story-master@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254915923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "story-master",
+      "url": "https://clawhub.ai/skills/story-master"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "story-master",
+    "url": "https://clawhub.ai/skills/story-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/story-master-9b34833d7ec987c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/story-master@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-story-master-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6cc9824143b6cbbbcb82c7b7eeb5a5d4376fb75ef8aa38086dffecfe9dab4c0",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:48:58.354Z"
+}

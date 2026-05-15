@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53738,
+  "uuid": "skill-clawhub-agent-news-api",
+  "skillKey": "clawhub-agent-news-api",
+  "name": "Agent News Api",
+  "summary": "A set of free and premium AI enriched global news streams for agents, provided by agentnewsapi.com. Powered by $ANA on Solana.",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_news_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agentnewsdev",
+      "features": [
+        "A set of free and premium AI enriched global news streams for agents, provided by agentnewsapi..",
+        "Powered by $ANA on Solana."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-news-api@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197141258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-news-api",
+      "url": "https://clawhub.ai/skills/agent-news-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-news-api",
+    "url": "https://clawhub.ai/skills/agent-news-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-news-api-aa01f2767c794b79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-news-api@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-news-api-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61aa0ef0298b238795065859f9d31c75a49dc35eb2222849910c3983fd2ae0b4",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T01:17:17.962Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57822,
+  "uuid": "skill-clawhub-smyx-pet-health-monitoring-analysis",
+  "skillKey": "clawhub-smyx-pet-health-monitoring-analysis",
+  "name": "宠物日常健康监测分析工具",
+  "summary": "Based on computer vision, analyzes pet health indicators such as feeding frequency, drinking frequency, excretion status, mental state, vomiting behavior, an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_pet_health_monitoring_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Based on computer vision, analyzes pet health indicators such as feeding frequency, drinking fr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-pet-health-monitoring-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-pet-health-monitoring-analysis",
+      "url": "https://clawhub.ai/skills/smyx-pet-health-monitoring-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-pet-health-monitoring-analysis",
+    "url": "https://clawhub.ai/skills/smyx-pet-health-monitoring-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-pet-health-monitoring-analysis-6fd17b44a4bc3289.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-pet-health-monitoring-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-pet-health-monitoring-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9619d04d84f0c101e0ba58e2a6b4198723a1c6ab2b5a68c17597a1d4b268169f",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T01:24:43.133Z"
+}

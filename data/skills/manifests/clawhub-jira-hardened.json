@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48058,
+  "uuid": "skill-clawhub-jira-hardened",
+  "skillKey": "clawhub-jira-hardened",
+  "name": "Jira Hardened",
+  "summary": "Use when the user mentions Jira issues (e.g., \"PROJ-123\"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jira_hardened",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Faberlens",
+      "features": [
+        "Use when the user mentions Jira issues (e.g., \"PROJ-123\"), asks about tickets, wants to create/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jira-hardened@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261834257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jira-hardened",
+      "url": "https://clawhub.ai/skills/jira-hardened"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jira-hardened",
+    "url": "https://clawhub.ai/skills/jira-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jira-hardened-881e9d3b3c5901f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jira-hardened@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jira-hardened-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1891a38be47bab664c59228ffcc9f5ddf0dfb873914fe0776811715511a274b1",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:00:08.466Z"
+}

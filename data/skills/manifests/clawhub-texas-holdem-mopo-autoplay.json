@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23563,
+  "uuid": "skill-clawhub-texas-holdem-mopo-autoplay",
+  "skillKey": "clawhub-texas-holdem-mopo-autoplay",
+  "name": "MoPo Texas Hold'em Autoplay",
+  "summary": "Executable MOPO runtime takeover skill. Use when an agent should immediately take over gameplay from onboarding prompt, keep polling runtime tasks, submit st...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.texas_holdem_mopo_autoplay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cyberpinkman",
+      "features": [
+        "Executable MOPO runtime takeover skill",
+        "Use when an agent should immediately take over gameplay from onboarding prompt, keep polling ru."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/texas-holdem-mopo-autoplay@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110657392?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "texas-holdem-mopo-autoplay",
+      "url": "https://clawhub.ai/skills/texas-holdem-mopo-autoplay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "texas-holdem-mopo-autoplay",
+    "url": "https://clawhub.ai/skills/texas-holdem-mopo-autoplay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/texas-holdem-mopo-autoplay-b4e9bff9f23e2205.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/texas-holdem-mopo-autoplay@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-texas-holdem-mopo-autoplay-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e05940b8258419e6e9844140043ebdc0198efb7816558519005982f5bbb3f6f",
+      "artifactSizeBytes": 2948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T13:53:19.536Z"
+}

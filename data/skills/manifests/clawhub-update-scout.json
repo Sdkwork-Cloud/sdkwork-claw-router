@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25619,
+  "uuid": "skill-clawhub-update-scout",
+  "skillKey": "clawhub-update-scout",
+  "name": "Update Scout",
+  "summary": "Automate update tracking for OpenClaw and any other GitHub-released tools. Scout monitors your watchlist weekly, reviews release notes with a security lens,...",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.update_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ziggy2socks",
+      "features": [
+        "Automate update tracking for OpenClaw and any other GitHub-released tools",
+        "Scout monitors your watchlist weekly, reviews release notes with a security lens,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/update-scout@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261541261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "update-scout",
+      "url": "https://clawhub.ai/skills/update-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "update-scout",
+    "url": "https://clawhub.ai/skills/update-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/update-scout-223899d476ac4ca8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/update-scout@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-update-scout-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97d95cd68e9863fb1e18538267ec3fe749754c9fbaa9cc8089386bfd24263236",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:10:32.129Z"
+}

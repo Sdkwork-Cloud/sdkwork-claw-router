@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31996,
+  "uuid": "skill-clawhub-justoneapi-weibo",
+  "skillKey": "clawhub-justoneapi-weibo",
+  "name": "Weibo API",
+  "summary": "Track Weibo hot search boards, keyword results, creator profiles, fan or follower graphs, and post or video detail endpoints through JustOneAPI.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_weibo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Track Weibo hot search boards, keyword results, creator profiles, fan or follower graphs, and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-weibo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-weibo",
+      "url": "https://clawhub.ai/skills/justoneapi-weibo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-weibo",
+    "url": "https://clawhub.ai/skills/justoneapi-weibo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-weibo-7c9cb796320c568b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-weibo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-weibo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d91b7bdf79308789f58e53810e9fd4469d3f626ad514d733e76251bdf24ee9a8",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:08:25.563Z"
+}

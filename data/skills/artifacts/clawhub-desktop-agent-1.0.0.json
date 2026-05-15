@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desktop-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_agent",
+  "skill": {
+    "id": 38990,
+    "skillKey": "clawhub-desktop-agent",
+    "name": "Desktop Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-agent",
+    "url": "https://clawhub.ai/skills/desktop-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-agent-7d5b24f075ec58bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control desktop apps via mouse and keyboard, capture screenshots, teach AI tasks by demonstration, and automate workflows with saved reusable tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuzzyb33s",
+      "userId": "s171y86qx1dr1xnbf5etrq3ke984dt9a",
+      "displayName": "Fuzzyb33s",
+      "image": "https://avatars.githubusercontent.com/u/221636957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775877204245,
+      "changelog": "Initial release of Desktop AI Agent Skill:\n\n- Enables controlling desktop applications via Python commands (mouse, keyboard, screenshots).\n- Supports \"Teaching Mode\" for creating reusable automation tasks by demonstration.\n- Allows running and managing learned tasks.\n- Includes core agent, teaching system, and task storage.\n- Use with caution: full control over screen, mouse, and keyboard.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62ba775674c56acfbc3a1d60bbd2ee79bd190821987e32580e84a49cdf5b18b0"
+}

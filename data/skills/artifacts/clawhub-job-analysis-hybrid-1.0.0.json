@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/job-analysis-hybrid@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_analysis_hybrid",
+  "skill": {
+    "id": 58664,
+    "skillKey": "clawhub-job-analysis-hybrid",
+    "name": "job-analysis-hybrid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-analysis-hybrid",
+    "url": "https://clawhub.ai/skills/job-analysis-hybrid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-analysis-hybrid-0b86dd7d741117fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在对话中辅助学习\"工作分析/Job Analysis\"第 4 章\"Hybrid Methods\"。基于 Brannick/Levine/Morgeson 等人教材。当用户讨论、提问、或应用 hybrid job analysis methods（C-JAM、MJDQ、WDQ、O*NET）、task + KSAO..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776447111902,
+      "changelog": "- 首发版本，助力学习《Job and Work Analysis》第 4 章 \"Hybrid Methods\"\n- 支持 C-JAM、MJDQ、WDQ、O*NET 等主流 hybrid job analysis 方法的概念、步骤、用途快速理解与对比\n- 渐进式信息披露，每次对话先澄清目的与认知层级，再有针对性讲解或提供课本案例\n- 提供方法用途、适用场景、案例锚定和关键术语中英对照，便于理解和实际应用\n- 仅覆盖第 4 章，遇到第 2/3 章内容自动引导至相关技能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14d93afd7bce1a1387303a75ee78bd41e25f4c8b1988b43646b1111be28ed210"
+}

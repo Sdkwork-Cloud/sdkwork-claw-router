@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comic-guide-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comic_guide_skill",
+  "skill": {
+    "id": 36012,
+    "skillKey": "clawhub-comic-guide-skill",
+    "name": "Comic Guide Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comic-guide-skill",
+    "url": "https://clawhub.ai/skills/comic-guide-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comic-guide-skill-91a6d8dcd1a10717.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI-illustrated comic-style educational guides from documentation, source code, or any technical content. Produces actual comic PNG images using AI i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hongzhe4",
+      "userId": "s17a487hzvt446t86kd63abvjs83g4ex",
+      "displayName": "ChanCK",
+      "image": "https://avatars.githubusercontent.com/u/11416018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775643871115,
+      "changelog": "Initial release of comic-guide-skill.\n\n- Generate AI-illustrated comic-style educational guides from technical content, documentation, or source code.\n- Produces multi-panel comic PNG images in over 10 anime and cartoon styles, including Doraemon, Naruto, One Piece, Dragon Ball, Ghibli, and more.\n- Each chapter outputs a comic image with drawn characters, speech bubbles, and cartoon-style technical diagrams.\n- Flexible workflow: analyze content, build storyboards, define characters, generate prompts, and output comic images.\n- Supports custom styles, storyboard/prompt-only modes, and both Chinese and English outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6859d64ef06fa7511505cfe359cf01d79b4cc47362cc9027512a5519a52eafcd"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60938,
+  "uuid": "skill-clawhub-semantic-search",
+  "skillKey": "clawhub-semantic-search",
+  "name": "semantic-search",
+  "summary": "企业级语义检索技能，支持表格/字段/文件搜索和 Text-to-SQL 数据生成",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.semantic_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sevenal",
+      "features": [
+        "企业级语义检索技能，支持表格/字段/文件搜索和 Text-to-SQL 数据生成"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/semantic-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49686788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "semantic-search",
+      "url": "https://clawhub.ai/skills/semantic-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "semantic-search",
+    "url": "https://clawhub.ai/skills/semantic-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/semantic-search-a5dd8d753b254c7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/semantic-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-semantic-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:294e70d4c04a3875c2449a4b063efacb2bd69719ac38e042b2c22e5e14a2bd74",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T09:05:36.268Z"
+}

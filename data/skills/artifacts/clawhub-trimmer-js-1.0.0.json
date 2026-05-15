@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trimmer-js@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trimmer_js",
+  "skill": {
+    "id": 42309,
+    "skillKey": "clawhub-trimmer-js",
+    "name": "Trimmer Js"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trimmer-js",
+    "url": "https://clawhub.ai/skills/trimmer-js",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trimmer-js-d5486020f8db4c57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim video clips into trimmed video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for cutting and trimming..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776583268682,
+      "changelog": "trimmer-js 1.0.0 — Initial Release\n\n- Launches Trimmer JS: trims and exports MP4, MOV, AVI, and WebM video clips up to 500MB.\n- Cloud GPU processing with automatic session/token setup; handles everything via chat.\n- Supports exporting in high-quality 1080p MP4 by default.\n- Provides clear instructions for uploads, exports, checking credits, and session management.\n- Includes detailed error handling and automatic retry logic for setup and exports.\n- Designed for content creators needing fast, precise cloud video trims with no local install required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf0e44985ac736c38d0c8415f0b9b5fe2853a3e09c09c71aab85540a86fb9701"
+}

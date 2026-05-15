@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emmestudio-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emmestudio_brand",
+  "skill": {
+    "id": 35799,
+    "skillKey": "clawhub-emmestudio-brand",
+    "name": "Emmestudio Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emmestudio-brand",
+    "url": "https://clawhub.ai/skills/emmestudio-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emmestudio-brand-75b5aa5105f150b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Applica la brand identity EmmeStudio a qualsiasi output visivo o testuale. Usare quando si produce un documento, presentazione, preventivo, lettera, one-page..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silvioandreoli",
+      "userId": "s172rdgd83zp78w5390d5vv4s183g7j5",
+      "displayName": "silvioandreoli",
+      "image": "https://avatars.githubusercontent.com/u/264956089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774854016690,
+      "changelog": "Initial release: applies EmmeStudio brand identity automatically to all visual and textual outputs for both external and internal use.\n\n- Ensures every document or presentation adheres to EmmeStudio’s official guidelines for colors, fonts, and logo usage.\n- Provides step-by-step workflow for brand-compliant output creation, with quick access to brand system, templates, and assets.\n- Includes quick rules for fonts, color palette, logo spacing, price formatting, and correct capitalization.\n- Lists available assets and where to find templates and guidelines on Google Drive for consistent application.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f6af02d40606ffa088b33923e6c948a12429ea5141e6c10df699631296fd5822"
+}

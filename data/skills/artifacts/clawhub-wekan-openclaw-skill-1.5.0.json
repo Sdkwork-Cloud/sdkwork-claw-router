@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wekan-openclaw-skill@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wekan_openclaw_skill",
+  "skill": {
+    "id": 54689,
+    "skillKey": "clawhub-wekan-openclaw-skill",
+    "name": "Wekan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wekan-openclaw-skill",
+    "url": "https://clawhub.ai/skills/wekan-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wekan-openclaw-skill-8e04b1c7998dcef4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage a self-hosted Trello-like board via `wekancli`. Create, move and archive cards, lists and boards on a WeKan server. Use when user asks about task boar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "madsmith",
+      "userId": "publishers:madsmith",
+      "displayName": "madsmith",
+      "image": "https://avatars.githubusercontent.com/u/3520969?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 490,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1771722322625,
+      "changelog": "Version 1.5.0\n\n- Initial release of wekan-openclaw-skill.\n- Enables management of self-hosted Trello-like boards (Wekan) via the wekancli tool.\n- Supports creating, moving, and archiving cards, lists, and boards.\n- Requires installation of the Wekan CLI and configuration of WEKAN_URL and WEKAN_TOKEN environment variables.\n- Includes references for CLI usage examples and user installation instructions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f622a7f3999a8178eb74bcad8dfd1a0b44e6dc1cd0a310572e4c40825445953"
+}

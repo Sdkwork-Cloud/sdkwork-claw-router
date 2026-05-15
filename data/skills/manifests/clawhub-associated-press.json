@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66662,
+  "uuid": "skill-clawhub-associated-press",
+  "skillKey": "clawhub-associated-press",
+  "name": "Associated Press",
+  "summary": "全球最大的非营利新闻合作社，提供独立、可信的新闻报道和事实核查，拥有约240个办事处和1300家成员媒体。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.associated_press",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "全球最大的非营利新闻合作社，提供独立、可信的新闻报道和事实核查，拥有约240个办事处和1300家成员媒体。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/associated-press@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "associated-press",
+      "url": "https://clawhub.ai/skills/associated-press"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "associated-press",
+    "url": "https://clawhub.ai/skills/associated-press",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/associated-press-6ceb5922bac7c558.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/associated-press@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-associated-press-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1091e5e5dee84006abdd316902a65c817b3c95abc4746d8ebace99ff9f1578fc",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T17:04:28.830Z"
+}

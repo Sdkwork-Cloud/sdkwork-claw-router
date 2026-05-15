@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bambu-local@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bambu_local",
+  "skill": {
+    "id": 10040,
+    "skillKey": "clawhub-bambu-local",
+    "name": "Bambu Lab Local Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bambu-local",
+    "url": "https://clawhub.ai/skills/bambu-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bambu-local-b936905831a69804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Bambu Lab 3D printers locally via MQTT (no cloud). Supports A1, A1 Mini, P1P, P1S, X1C."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tanguyvans",
+      "userId": "s175smjrczwht2rxn40at70rqs83r58d",
+      "displayName": "Tanguyvans",
+      "image": "https://avatars.githubusercontent.com/u/71881765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2749,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769361439712,
+      "changelog": "Removed config.json, added config.example.json",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:acc114a6e9cd0d8d07a8ba3ead0deaee1f61380e1f27d1a99dae77239faaeb41"
+}

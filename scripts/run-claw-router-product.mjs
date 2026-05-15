@@ -100,6 +100,28 @@ function portalServiceEnv(env) {
   };
 }
 
+function workspaceDevelopmentStep({
+  workspaceRoot,
+  label,
+  env,
+  extraArgs,
+  platform,
+  nodeCommand,
+}) {
+  return {
+    label,
+    command: nodeCommand,
+    args: [
+      path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs'),
+      ...extraArgs,
+    ],
+    cwd: workspaceRoot,
+    env,
+    shell: false,
+    windowsHide: platform === 'win32',
+  };
+}
+
 export function createClawRouterProductLaunchPlan({
   workspaceRoot = path.resolve(__dirname, '..'),
   mode = 'desktop',
@@ -134,40 +156,34 @@ export function createClawRouterProductLaunchPlan({
 
   switch (mode) {
     case 'desktop':
-      plan.push({
-        label: 'portal local desktop runtime',
-        command: pnpm,
-        args: appendForwardArgs(['--dir', portalRelativeDir, 'browser:dev'], extraArgs),
-        cwd: workspaceRoot,
+      plan.push(workspaceDevelopmentStep({
+        workspaceRoot,
+        label: 'desktop development workspace',
         env: portalDesktopEnv(env),
-        shell,
-        windowsHide: platform === 'win32',
-      });
+        extraArgs,
+        platform,
+        nodeCommand,
+      }));
       return plan;
     case 'service':
-      plan.push({
-        label: 'portal local service runtime',
-        command: pnpm,
-        args: appendForwardArgs(['--dir', portalRelativeDir, 'browser:dev'], extraArgs),
-        cwd: workspaceRoot,
+      plan.push(workspaceDevelopmentStep({
+        workspaceRoot,
+        label: 'service development workspace',
         env: portalServiceEnv(env),
-        shell,
-        windowsHide: platform === 'win32',
-      });
+        extraArgs,
+        platform,
+        nodeCommand,
+      }));
       return plan;
     case 'server':
-      plan.push({
+      plan.push(workspaceDevelopmentStep({
+        workspaceRoot,
         label: 'server development workspace',
-        command: nodeCommand,
-        args: [
-          path.join(workspaceRoot, 'scripts', 'dev', 'start-workspace.mjs'),
-          ...extraArgs,
-        ],
-        cwd: workspaceRoot,
         env,
-        shell: false,
-        windowsHide: platform === 'win32',
-      });
+        extraArgs,
+        platform,
+        nodeCommand,
+      }));
       return plan;
     case 'plan':
       plan.push({
@@ -219,8 +235,8 @@ function printHelp() {
 Start sdkwork-claw-router through a root pnpm-compatible entrypoint.
 
 Modes:
-  desktop  Start the portal in local desktop deployment mode (default)
-  service  Start the portal with local service-mode environment flags
+  desktop  Start the full install-checked workspace with desktop environment flags (default)
+  service  Start the full install-checked workspace with service-mode environment flags
   server   Start Rust gateway/admin/app services plus the portal dev server
   plan     Print the resolved server development URLs and command plan
   check    Run the portal product check

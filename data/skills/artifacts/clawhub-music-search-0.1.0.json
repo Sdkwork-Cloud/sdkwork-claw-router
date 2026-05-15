@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/music-search@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.music_search",
+  "skill": {
+    "id": 69511,
+    "skillKey": "clawhub-music-search",
+    "name": "Music Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "music-search",
+    "url": "https://clawhub.ai/skills/music-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/music-search-57fd938fc13042d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索音乐资源（歌曲、专辑、无损音乐），从夸克网盘、百度网盘、阿里云盘、UC网盘获取资源链接。触发词：找音乐、找歌、无损音乐、FLAC下载、音乐网盘、歌曲下载、专辑资源、音乐资源、APE下载、DSD音乐、Hi-Res。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773052074285,
+      "changelog": "Initial release of music-search.\n\n- Search for music resources (songs, albums, lossless formats) from Quark, Baidu, Aliyun, and UC Netdisks.\n- Supports filtering by netdisk type, audio format (FLAC, APE, WAV, DSD, Hi-Res, etc.), and result limit.\n- Two search engines: deep (web page crawling + extraction) and web (surface-level).\n- Includes commands to search resources, get popular recommendations, and resolve redirected links.\n- Outputs results in structured JSON with details like title, link, format, extraction code, and source.\n- Customizable preferences via .env file for netdisk priority, deep search settings, and concurrency.\n- Requires Python 3 and the web-search skill; dependencies install automatically on first use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46668e0a700c442f56a86d94e4b14203c992e81997c58483ca3033673fbf6409"
+}

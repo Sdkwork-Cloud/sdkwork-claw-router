@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pco@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pco",
+  "skill": {
+    "id": 11896,
+    "skillKey": "clawhub-pco",
+    "name": "PCO CLI - Planning Center Services"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pco",
+    "url": "https://clawhub.ai/skills/pco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pco-0ec97f8db59459ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI tool for managing Planning Center Services data including plans, teams, songs, and scheduled people via the PCO Services API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rubyrunsstuff",
+      "userId": "publishers:rubyrunsstuff",
+      "displayName": "rubyrunsstuff",
+      "image": "https://avatars.githubusercontent.com/u/246602379?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1882,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1767854423828,
+      "changelog": "Initial release of pco CLI for Planning Center Services:\n\n- Provides command-line access to Planning Center Services API.\n- Supports authentication, multiple resource commands (plans, service types, items, teams, people, songs, media, and more).\n- Global options for output formatting (JSON, table, quiet), pagination, and result limits.\n- Includes direct raw API access and common workflows for church service planning.\n- Designed for use with FBC Gulfport’s church operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7fc0ad7936aa15497c65d30abecdfa17c2a8fdea9098056ef9eaec2b5fb52507"
+}

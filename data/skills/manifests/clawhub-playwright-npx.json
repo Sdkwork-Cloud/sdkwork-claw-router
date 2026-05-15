@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11568,
+  "uuid": "skill-clawhub-playwright-npx",
+  "skillKey": "clawhub-playwright-npx",
+  "name": "Playwright (scripts) + npx",
+  "summary": "Run Node.js scripts using Playwright for full browser automation, including scraping, screenshots, form handling, and dynamic content interaction.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_npx",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahone-bot",
+      "features": [
+        "Run Node.js scripts using Playwright for full browser automation, including scraping, screensho."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/playwright-npx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259169157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "playwright-npx",
+      "url": "https://clawhub.ai/skills/playwright-npx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-npx",
+    "url": "https://clawhub.ai/skills/playwright-npx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-npx-73de6772f880da2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/playwright-npx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-playwright-npx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6dbb764a95d2ef12c32d5a2f42ea10b0b7b087a7ad7b21f63dad7c86f0ecf2c",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:07:56.566Z"
+}

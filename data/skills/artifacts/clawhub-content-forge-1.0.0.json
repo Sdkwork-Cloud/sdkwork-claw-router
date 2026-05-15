@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-forge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_forge",
+  "skill": {
+    "id": 41918,
+    "skillKey": "clawhub-content-forge",
+    "name": "Content Forge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-forge",
+    "url": "https://clawhub.ai/skills/content-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-forge-8a11a040664115d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate content ideas, blog outlines, social media posts, and headlines. Use when the user needs help creating content for blogs, Twitter/X threads, LinkedI..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xunuowu",
+      "userId": "s176bs1p3qqp7k0t67rxbnbygd83mgaf",
+      "displayName": "千年虫",
+      "image": "https://avatars.githubusercontent.com/u/53294334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774500120168,
+      "changelog": "Initial release: generate blog ideas, social posts, and content calendars",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2836a341163ff232c132358e6d7cfefe02893962c39ac83d087a24802c859c5f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-forge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_forge",
+  "skill": {
+    "id": 23572,
+    "skillKey": "clawhub-clawhub-skill-forge",
+    "name": "clawhub-skill-forge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-forge",
+    "url": "https://clawhub.ai/skills/clawhub-skill-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-forge-d9abbabdd825f42d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create ClawhHub-ready OpenClaw skills with correct structure, scanner criteria, security rules & publish checklist. No credentials or binaries required."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seph1709",
+      "userId": "s173y99zb4sn7mgnw5ttzmgyc983jqrw",
+      "displayName": "seph",
+      "image": "https://avatars.githubusercontent.com/u/65636039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772677320890,
+      "changelog": "Initial release: scaffold ClawhHub-ready OpenClaw skills with correct structure, scanner criteria, security rules, and validation checklist",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a53c7462d58c703c11cd27e28a21363d84ef97c0dbf2eb43fc5489ee46fcceb4"
+}

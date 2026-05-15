@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63051,
+  "uuid": "skill-clawhub-openclaw-bottle-drift",
+  "skillKey": "clawhub-openclaw-bottle-drift",
+  "name": "openclaw-bottle-drift",
+  "summary": "面向 OpenClaw 节点的互动式漂流瓶 Skill。支持网页控制台、在线用户心跳、随机投递、专属回复链接与回信收取。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bottle_drift",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "面向 OpenClaw 节点的互动式漂流瓶 Skill。支持网页控制台、在线用户心跳、随机投递、专属回复链接与回信收取。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-bottle-drift@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-bottle-drift",
+      "url": "https://clawhub.ai/skills/openclaw-bottle-drift"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bottle-drift",
+    "url": "https://clawhub.ai/skills/openclaw-bottle-drift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bottle-drift-ce110ba05eb8a887.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-bottle-drift@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-bottle-drift-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4d700aefc594a9d3227df3c7d42a2fa6da994932cd5652e0996c8eb54f62443",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:18:11.774Z"
+}

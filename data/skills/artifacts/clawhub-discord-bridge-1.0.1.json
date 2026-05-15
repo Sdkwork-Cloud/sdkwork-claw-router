@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-bridge@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_bridge",
+  "skill": {
+    "id": 20599,
+    "skillKey": "clawhub-discord-bridge",
+    "name": "Discord Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-bridge",
+    "url": "https://clawhub.ai/skills/discord-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-bridge-1ed0fd8b3c1daafb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bridge Discord messages to Agent Zero's HTTP API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wespeakallday",
+      "userId": "s173n6dbpr2gymw0t3td3k6fpd83s82b",
+      "displayName": "Carl Luis Olivier",
+      "image": "https://avatars.githubusercontent.com/u/178078524?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772783860923,
+      "changelog": "- Bumped version to 1.0.1 in SKILL.md.\n- No functional changes; only documentation updated.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d377d8f4db0bd522294c64bc86a3ea78c2dddf4e4f811e87d1230796020588a"
+}

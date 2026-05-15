@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33060,
+  "uuid": "skill-clawhub-fix",
+  "skillKey": "clawhub-fix",
+  "name": "Fix",
+  "summary": "User behavior correction skill. Triggered by \"fix:\" prefix feedback (e.g., \"fix: why didn't you commit?\"). Analyzes the mistake, improves the relevant rule/s...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "es6kr",
+      "features": [
+        "User behavior correction skill",
+        "Triggered by \"fix:\" prefix feedback (e.g., \"fix: why didn't you commit?\")",
+        "Analyzes the mistake, improves the relevant rule/s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fix@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/819969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fix",
+      "url": "https://clawhub.ai/skills/fix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fix",
+    "url": "https://clawhub.ai/skills/fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fix-1c6e6c4c02e55178.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fix@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fix-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c92d8a6dca94c870f4f6971892c8cca708e6f6e3260387d93677883ac62bcfdb",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T02:41:49.658Z"
+}

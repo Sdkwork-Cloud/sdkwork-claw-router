@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31498,
+  "uuid": "skill-clawhub-openclaw-executing-plans",
+  "skillKey": "clawhub-openclaw-executing-plans",
+  "name": "Executing Plans",
+  "summary": "Use when executing a written implementation plan in the current session with sequential task execution and review checkpoints - for when subagent-driven mode...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_executing_plans",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "Use when executing a written implementation plan in the current session with sequential task ex.",
+        "for when subagent-driven mode..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-executing-plans@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-executing-plans",
+      "url": "https://clawhub.ai/skills/openclaw-executing-plans"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-executing-plans",
+    "url": "https://clawhub.ai/skills/openclaw-executing-plans",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-executing-plans-7a1f628e47916582.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-executing-plans@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-executing-plans-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81ab5ca58a0b873e4628a7eb3070969d8d19a12eebb3311237004ede7f8a322d",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T09:05:52.702Z"
+}

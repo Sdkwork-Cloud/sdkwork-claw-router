@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-commit-formatter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_commit_formatter",
+  "skill": {
+    "id": 57375,
+    "skillKey": "clawhub-git-commit-formatter",
+    "name": "Git Commit Formatter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-commit-formatter",
+    "url": "https://clawhub.ai/skills/git-commit-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-commit-formatter-99eec30911f4c9ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format commit message theo Conventional Commits standard (Conventional Commits v1.0.0). Input là git diff hoặc mô tả thay đổi, output là commit message có ty..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wipal",
+      "userId": "publishers:wipal",
+      "displayName": "Wi",
+      "image": "https://avatars.githubusercontent.com/u/11458415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 467,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772955324637,
+      "changelog": "Initial release: Quickly generates Conventional Commit messages from git diff or change descriptions, following strict formatting rules.\n\n- Detects input type (git diff or text) and extracts relevant change info.\n- Selects appropriate commit type (feat, fix, docs, style, refactor, test, chore) with clear mapping.\n- Optionally adds scope based on file/module context.\n- Enforces subject formatting: imperative mood, max 50 chars, no trailing period.\n- Optionally adds body for multi-line explanations or references.\n- Validates all output; prompts for corrections if guidelines are not met.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4ae94b3a84349eaab2bc2dd845ad80d3350d74488214606a696011e545d73cde"
+}

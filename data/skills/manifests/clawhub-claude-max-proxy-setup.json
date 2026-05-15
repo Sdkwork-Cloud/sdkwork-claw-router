@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17563,
+  "uuid": "skill-clawhub-claude-max-proxy-setup",
+  "skillKey": "clawhub-claude-max-proxy-setup",
+  "name": "Claude Max Proxy Setup",
+  "summary": "Use when an agent or developer wants to reduce Claude API costs, route requests through a Claude Max or Pro subscription instead of per-token billing, or set...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_max_proxy_setup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeepBlue",
+      "features": [
+        "Use when an agent or developer wants to reduce Claude API costs, route requests through a Claud."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-max-proxy-setup@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260345463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-max-proxy-setup",
+      "url": "https://clawhub.ai/skills/claude-max-proxy-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-max-proxy-setup",
+    "url": "https://clawhub.ai/skills/claude-max-proxy-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-max-proxy-setup-1a77650dc0624ff9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-max-proxy-setup@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-max-proxy-setup-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2867a05589acf2fc74db8cdf31ea7bdda7df38c4826a04f75453a905a904a260",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:40:21.940Z"
+}

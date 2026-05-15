@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-reliability-layer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_reliability_layer",
+  "skill": {
+    "id": 43474,
+    "skillKey": "clawhub-ai-reliability-layer",
+    "name": "AI Reliability Layer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-reliability-layer",
+    "url": "https://clawhub.ai/skills/ai-reliability-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-reliability-layer-6ac5bc1c41937182.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fix broken LLM output, validate AI responses, generate guaranteed structured JSON. Three micro-services for making AI output reliable. Use when LLM output is..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renoblabs",
+      "userId": "s171c0pbnstpzzy52rsh3jvfp584eazr",
+      "displayName": "renoblabs",
+      "image": "https://avatars.githubusercontent.com/u/211252113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775889728975,
+      "changelog": "Initial release of AI Reliability Layer micro-services\n\n- Three pay-per-call endpoints: /fix-json, /validate-output, /generate-structured\n- /fix-json: Automatically corrects malformed JSON from LLMs (e.g., trailing commas, missing brackets)\n- /validate-output: Checks AI output for length, format, schema compliance, and blocked patterns\n- /generate-structured: Produces valid, typed JSON responses from prompts using any custom schema\n- All services require no API keys or subscriptions; payments handled via the x402 protocol (USDC on Base)\n- Part of Reno Labs’ AEA Arena service fleet",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f34746e253c463d37482212b4947da24e9d9a0372361013667737bbc3481b305"
+}

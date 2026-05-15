@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64690,
+  "uuid": "skill-clawhub-news-scraper-xiaobai",
+  "skillKey": "clawhub-news-scraper-xiaobai",
+  "name": "news-scraper-xiaobai",
+  "summary": "从AI新闻网站爬取最新资讯，支持新闻分类和标签，用于内容聚合和舆情监控。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_scraper_xiaobai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BAI",
+      "features": [
+        "从AI新闻网站爬取最新资讯，支持新闻分类和标签，用于内容聚合和舆情监控。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-scraper-xiaobai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47627365?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-scraper-xiaobai",
+      "url": "https://clawhub.ai/skills/news-scraper-xiaobai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-scraper-xiaobai",
+    "url": "https://clawhub.ai/skills/news-scraper-xiaobai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-scraper-xiaobai-04da4ea93f0cc72c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-scraper-xiaobai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-scraper-xiaobai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db3719921ec8b29b8a239ac01e7305fa2edb82d96491834c17582a7ca8ad6678",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:11:51.376Z"
+}

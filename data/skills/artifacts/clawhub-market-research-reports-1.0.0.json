@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-research-reports@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_research_reports",
+  "skill": {
+    "id": 17341,
+    "skillKey": "clawhub-market-research-reports",
+    "name": "Market Research Reports"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-research-reports",
+    "url": "https://clawhub.ai/skills/market-research-reports",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-research-reports-cf2bde7208031b6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate comprehensive market research reports (50+ pages) in the style of top consulting firms (McKinsey, BCG, Gartner). Features professional LaTeX formatt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yumoezhung",
+      "userId": "s178rbmy9m5wbpjezx6k0pxwgs83pnyh",
+      "displayName": "YumoeZhung",
+      "image": "https://avatars.githubusercontent.com/u/49787045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 610,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772682629236,
+      "changelog": "- Initial release: Generate comprehensive, 50+ page market research reports styled after leading consulting firms.\n- Professional LaTeX formatting with consulting-firm typography, color, and layout.\n- Deep integration with research-lookup for robust, data-driven analysis.\n- Visual-rich output: 6 essential visuals (TAM/SAM/SOM, Porter's Five Forces, etc.) generated at the start, more as needed.\n- Covers multiple strategic frameworks: Porter's Five Forces, PESTLE, SWOT, BCG Matrix, TAM/SAM/SOM.\n- Designed for purposes such as investment analysis, market sizing, due diligence, go-to-market planning, and industry research.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16fe302feb1a5a0eb3a26c7bde1fc6f436e69713bbae3159f0d9f87f6cb868fd"
+}

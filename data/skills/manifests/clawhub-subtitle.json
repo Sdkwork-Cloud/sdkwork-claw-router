@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16145,
+  "uuid": "skill-clawhub-subtitle",
+  "skillKey": "clawhub-subtitle",
+  "name": "Subtitle Generator",
+  "summary": "Generate synchronized subtitles (SRT/VTT/ASS) from video audio with precise timestamps. Use when users need subtitles, captions, or video transcription with...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Generate synchronized subtitles (SRT/VTT/ASS) from video audio with precise timestamps",
+        "Use when users need subtitles, captions, or video transcription with..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subtitle@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subtitle",
+      "url": "https://clawhub.ai/skills/subtitle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle",
+    "url": "https://clawhub.ai/skills/subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-a02c387e87f68f10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subtitle@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-subtitle-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e84635e6c5dce4c016a2f4a67ea1a67585521088b9c82e9706549555c0cfcb01",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:13:48.066Z"
+}

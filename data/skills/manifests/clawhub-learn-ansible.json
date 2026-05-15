@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34948,
+  "uuid": "skill-clawhub-learn-ansible",
+  "skillKey": "clawhub-learn-ansible",
+  "name": "Learn Ansible",
+  "summary": "Learn Ansible on LabEx with infrastructure-as-code courses and playbook or inventory labs. Ansible courses and lab lists via LabEx MCP; public labex.io pages...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_ansible",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huhuhang",
+      "features": [
+        "Learn Ansible on LabEx with infrastructure-as-code courses and playbook or inventory labs",
+        "Ansible courses and lab lists via LabEx MCP",
+        "public labex.io pages..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-ansible@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5147530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-ansible",
+      "url": "https://clawhub.ai/skills/learn-ansible"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-ansible",
+    "url": "https://clawhub.ai/skills/learn-ansible",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-ansible-51cb01edb5eb3c65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-ansible@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-ansible-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:650f95f064fc773d38c3e574c786f8b1aeafa1165dbc0b071e271aae19261b83",
+      "artifactSizeBytes": 2280
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:36:30.306Z"
+}

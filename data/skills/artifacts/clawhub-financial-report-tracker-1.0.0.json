@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-report-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_report_tracker",
+  "skill": {
+    "id": 43660,
+    "skillKey": "clawhub-financial-report-tracker",
+    "name": "Financial Report Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-report-tracker",
+    "url": "https://clawhub.ai/skills/financial-report-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-report-tracker-3120ed8cb83bb535.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically track tech company financial reports and generate investment summaries. Supports retrieving earnings calendars, market expectation comparisons,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776993975989,
+      "changelog": "- Initial release of Financial Report Tracker.\n- Automatically retrieves tech company earnings calendars.\n- Compares market expectations (EPS, revenue) with actual results.\n- Interprets earnings reports: highlights key metric changes and summarizes management guidance.\n- Generates standardized investment summaries in Markdown format.\n- Command-line interface supports tracking, previewing, and reviewing company earnings reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08ebc4f29ffda5151a3bcf74ed94753a9b6635d2c7ce5667e499527ac30b66e3"
+}

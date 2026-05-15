@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18663,
+  "uuid": "skill-clawhub-etoro-apps",
+  "skillKey": "clawhub-etoro-apps",
+  "name": "eToro Apps",
+  "summary": "Enables agents to interact with the eToro API to access market data, portfolio and social features, and execute trades programmatically. Supports both OAuth...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etoro_apps",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mariano Pardo",
+      "features": [
+        "Enables agents to interact with the eToro API to access market data, portfolio and social featu.",
+        "Supports both OAuth..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etoro-apps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4909681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etoro-apps",
+      "url": "https://clawhub.ai/skills/etoro-apps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etoro-apps",
+    "url": "https://clawhub.ai/skills/etoro-apps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etoro-apps-c0dc7a71573f0166.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etoro-apps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etoro-apps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b91d832e0eabb4957aed9a6725d84cc7915e24187a54d3cce5d0a75f1aeedea",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T19:21:45.506Z"
+}

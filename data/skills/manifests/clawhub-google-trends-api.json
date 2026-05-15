@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27195,
+  "uuid": "skill-clawhub-google-trends-api",
+  "skillKey": "clawhub-google-trends-api",
+  "name": "Google Trends API",
+  "summary": "Fetches Google Trends data including daily trending topics, real-time trends, interest by region, related topics, related queries, and autocomplete suggestio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_trends_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Terry Djony",
+      "features": [
+        "Fetches Google Trends data including daily trending topics, real-time trends, interest by regio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-trends-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11571395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-trends-api",
+      "url": "https://clawhub.ai/skills/google-trends-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-trends-api",
+    "url": "https://clawhub.ai/skills/google-trends-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-trends-api-0986a0d8704b6075.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-trends-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-trends-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd982890b57febe11ec6ffc40ba99ea0de20d6c2519feea20d1d19a5b8046aa6",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:18:48.246Z"
+}

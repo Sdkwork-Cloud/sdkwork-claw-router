@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11231,
+  "uuid": "skill-clawhub-bun-runtime",
+  "skillKey": "clawhub-bun-runtime",
+  "name": "Bun Runtime",
+  "summary": "Bun runtime capabilities for filesystem, process, and network operations. Use when you need to execute Bun-specific operations like Bun.file(), Bun.write(), or Bun.glob() for optimized file handling, or when working with Bun's native proce.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bun_runtime",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rabin-thami",
+      "features": [
+        "Bun runtime capabilities for filesystem, process, and network operations",
+        "Use when you need to execute Bun-specific operations like Bun.file(), Bun.write(), or Bun.glob(.",
+        "Triggered by requests for Bun runtime features, file operations with Bun, or high-performance I."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bun-runtime@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44690395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bun-runtime",
+      "url": "https://clawhub.ai/skills/bun-runtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bun-runtime",
+    "url": "https://clawhub.ai/skills/bun-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bun-runtime-57b777a62d7bdd0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bun-runtime@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bun-runtime-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eca2a83a47b95e80bf498b9c71d64b14060428a61862c760611eddc46e81c3c2",
+      "artifactSizeBytes": 2287
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T06:22:39.259Z"
+}

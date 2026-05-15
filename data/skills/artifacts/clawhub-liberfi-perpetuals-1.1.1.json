@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liberfi-perpetuals@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liberfi_perpetuals",
+  "skill": {
+    "id": 52711,
+    "skillKey": "clawhub-liberfi-perpetuals",
+    "name": "Liberfi Perpetuals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liberfi-perpetuals",
+    "url": "https://clawhub.ai/skills/liberfi-perpetuals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liberfi-perpetuals-cb6790bfaa45b272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and trade perpetual futures through LiberFi's unified perpetuals API (openapi-server → perpetuals-server, Hyperliquid in MVP): list coins and markets,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bombmod",
+      "userId": "s1734k5ar8v7bcr162fx2j8xgn842ywy",
+      "displayName": "bombmod",
+      "image": "https://avatars.githubusercontent.com/u/212038798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777430359529,
+      "changelog": "Auto-resolve TEE evmAddress for first-person perp queries (positions/orders/fills)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4afa1d966f88c58a83fd4dfecb59d55d71809a17c8832485e6c2707127f41d5"
+}

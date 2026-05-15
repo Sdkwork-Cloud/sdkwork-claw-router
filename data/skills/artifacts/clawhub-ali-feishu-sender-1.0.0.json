@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ali-feishu-sender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ali_feishu_sender",
+  "skill": {
+    "id": 40365,
+    "skillKey": "clawhub-ali-feishu-sender",
+    "name": "Ali Feishu Sender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ali-feishu-sender",
+    "url": "https://clawhub.ai/skills/ali-feishu-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ali-feishu-sender-313833015e0ba5a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send multimedia content to Feishu (Lark) via API. Use when: (1) sending images, audio, video, rich text, or cards to Feishu users/groups, (2) uploading media..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuan-huicheng",
+      "userId": "s17c0qnxe8jej8s5srjsh3bacx83tbnw",
+      "displayName": "yuan-huicheng",
+      "image": "https://avatars.githubusercontent.com/u/134614128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774778437940,
+      "changelog": "Initial release of ali-feishu-sender.\n\n- Send multimedia (images, audio, video, rich text, interactive cards) to Feishu (Lark) users or groups via API.\n- Supports inline images, native voice bubbles (opus+duration), inline video players (mp4+duration+cover), and rich text with embedded media.\n- Automatically handles media format requirements (e.g., audio to opus, video faststart, duration extraction).\n- Provides functions and CLI to send content and upload media to Feishu.\n- Designed for posting generated content (e.g., MiniMax images, audio, video) to Feishu easily.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f4b01ceea0dda1b3340d3db2ca42cc4c6d41020f19c80c328594c4128732769"
+}

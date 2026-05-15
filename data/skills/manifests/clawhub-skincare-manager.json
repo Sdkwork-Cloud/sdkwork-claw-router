@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59287,
+  "uuid": "skill-clawhub-skincare-manager",
+  "skillKey": "clawhub-skincare-manager",
+  "name": "Skincare Manager",
+  "summary": "护肤管家 - 护肤 routine 管理 + 成分查询 + 产品追踪",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skincare_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linzmin",
+      "features": [
+        "护肤 routine 管理 + 成分查询 + 产品追踪"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skincare-manager@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14884257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skincare-manager",
+      "url": "https://clawhub.ai/skills/skincare-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skincare-manager",
+    "url": "https://clawhub.ai/skills/skincare-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skincare-manager-71c8075a0a74302b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skincare-manager@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skincare-manager-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43872adb9655f6fcb2592de57dfb70d5064cb4b11b7394a88ac5396d9de444fd",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T01:44:44.537Z"
+}

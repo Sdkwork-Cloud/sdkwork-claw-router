@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nautilus-trader-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nautilus_trader_pro",
+  "skill": {
+    "id": 43990,
+    "skillKey": "clawhub-nautilus-trader-pro",
+    "name": "Nautilus Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nautilus-trader-pro",
+    "url": "https://clawhub.ai/skills/nautilus-trader-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nautilus-trader-pro-064f5a6f8189d8ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to use the NautilusTrader algorithmic trading platform for data conversion, strategy development, backtesting, paper trading (sandbox), and live trading...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774944212601,
+      "changelog": "Initial release of NautilusTrader Skill.\n\n- Guides users through environment setup, including prerequisites, installing dependencies, and verifying the installation.\n- Explains workspace detection and repository cloning if needed.\n- Summarizes how to select and use the appropriate reference guide for each core task (data conversion, strategy development, backtesting, paper trading, live trading).\n- Provides an overview of NautilusTrader's project structure and main concepts (market data types, instrument types, BarType syntax).\n- Lists optional extra dependencies for various venues and reporting features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ba1c14a28ec11106b2c3adfa8de0223cadbb6d988242d6f50f9e732281e48e7"
+}

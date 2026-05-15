@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poyo-nano-banana@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_nano_banana",
+  "skill": {
+    "id": 54646,
+    "skillKey": "clawhub-poyo-nano-banana",
+    "name": "Nano Banana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-nano-banana",
+    "url": "https://clawhub.ai/skills/poyo-nano-banana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-nano-banana-93ca2ace53031dc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use PoYo AI Nano Banana for general image generation and image editing across many aspect ratios through the `https://api.poyo.ai/api/generate/submit` endpoi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coolhackboy",
+      "userId": "s177pant1v4gn5k13ffg1fp5b183nb02",
+      "displayName": "coolhackboy",
+      "image": "https://avatars.githubusercontent.com/u/13427145?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773187662506,
+      "changelog": "Initial release of poyo-nano-banana skill\n\n- Enables prompt-based image generation and image editing via PoYo AI Nano Banana models.\n- Supports wide/tall aspect ratios, general image creation, and reference-image edits.\n- Requires POYO_API_KEY environment variable for authentication.\n- Provides workflow guidelines for model selection, request construction, and task tracking.\n- Includes usage notes and endpoint documentation reference for easy integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:683e2f4940a2416c514b1f2e340ed2f46feba07efe376ea2a192509f19bf7d45"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-netdisk-eva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_netdisk_eva",
+  "skill": {
+    "id": 65758,
+    "skillKey": "clawhub-baidu-netdisk-eva",
+    "name": "百度网盘 EVA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-netdisk-eva",
+    "url": "https://clawhub.ai/skills/baidu-netdisk-eva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-netdisk-eva-d5054b44325b4062.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "管理和操作百度网盘文件，实现文件列出、搜索及目录创建功能，需配置AppID和access_token。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "382108113",
+      "userId": "publishers:382108113",
+      "displayName": "382108113",
+      "image": "https://avatars.githubusercontent.com/u/44855569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773316728688,
+      "changelog": "baidu-netdisk-eva 1.0.0\n\n- 初始版本，支持百度网盘基础文件管理\n- 列出根目录或指定目录下的文件\n- 搜索百度网盘中的文件\n- 创建新目录\n- 通过环境变量配置 AppID 与 access_token\n- 脚本实现基于百度网盘 REST API 和 OAuth 授权",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d18a39601821c564088f8367de8a6e9742cf87c616314035ba2d8eea6f64aa5"
+}

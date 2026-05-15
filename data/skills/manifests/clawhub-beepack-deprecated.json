@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41261,
+  "uuid": "skill-clawhub-beepack-deprecated",
+  "skillKey": "clawhub-beepack-deprecated",
+  "name": "Beepack",
+  "summary": "Search Beepack for reusable API packages before coding. Saves tokens and time by reusing production-tested code instead of writing from scratch.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beepack_deprecated",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guillaume De Laroque",
+      "features": [
+        "Search Beepack for reusable API packages before coding",
+        "Saves tokens and time by reusing production-tested code instead of writing from scratch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beepack-deprecated@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4301546?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beepack-deprecated",
+      "url": "https://clawhub.ai/skills/beepack-deprecated"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beepack-deprecated",
+    "url": "https://clawhub.ai/skills/beepack-deprecated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beepack-deprecated-7f62c8a4807f9341.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beepack-deprecated@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beepack-deprecated-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ba03c2c005b238a619176db657b17cead19d215b58c2678333afd295ebafcf6",
+      "artifactSizeBytes": 2370
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:34:53.876Z"
+}

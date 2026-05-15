@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-subtitle-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitle_browser",
+  "skill": {
+    "id": 43475,
+    "skillKey": "clawhub-ai-subtitle-browser",
+    "name": "Ai Subtitle Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitle-browser",
+    "url": "https://clawhub.ai/skills/ai-subtitle-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitle-browser-98e1d99e767069e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers and content creators use it for brows..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776029114397,
+      "changelog": "AI Subtitle Browser 1.0.0 — Initial Release\n\n- Enables uploading MP4, MOV, AVI, or WebM videos (up to 500MB) and adding AI-generated subtitles.\n- Connects automatically to cloud processing; generates temporary authentication tokens if needed.\n- Supports subtitle, audio track, aspect ratio, and overlay editing with cloud GPU-accelerated rendering.\n- Exports processed videos as 1080p MP4 files in about 30–60 seconds.\n- Includes session management, live status updates, and clear error handling and user feedback.\n- Supports multi-language subtitles and batch processing for multiple files per session.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8849d6046a62ba15267053ef66c256195fefb47725ab61a66a59db9a5546248e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kto-tourapi-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kto_tourapi_cli",
+  "skill": {
+    "id": 58589,
+    "skillKey": "clawhub-kto-tourapi-cli",
+    "name": "KTO TourAPI CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kto-tourapi-cli",
+    "url": "https://clawhub.ai/skills/kto-tourapi-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kto-tourapi-cli-c3959ff9ec23ce39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean tourism content (관광지·문화시설·축제공연·여행코스·레포츠·숙박·쇼핑·음식점) via 한국관광공사 TourAPI 4.0 (apis.data.go.kr/B551011/KorService2). Eight subcommands wrap areaCode2, cat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chloepark85",
+      "userId": "s176h4kgd3ahcdsgj48g3epf1584a12v",
+      "displayName": "Chloe Park",
+      "image": "https://avatars.githubusercontent.com/u/15118976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 101,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777335025507,
+      "changelog": "v0.1.0 — initial release. Eight subcommands wrapping 한국관광공사 TourAPI 4.0 (KorService2): area-code, category-code, area, nearby, search, festival, stay, detail (composite). JSONL output. Auth via TOURAPI_SERVICE_KEY env var.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1da815092974c1f1a99b3ce47b94b5a22d33e68c6479e869138042add6a045f"
+}

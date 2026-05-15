@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goldrush-mcp-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goldrush_mcp_skill",
+  "skill": {
+    "id": 30148,
+    "skillKey": "clawhub-goldrush-mcp-skill",
+    "name": "GoldRush MCP Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goldrush-mcp-skill",
+    "url": "https://clawhub.ai/skills/goldrush-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goldrush-mcp-skill-e785ebe3f863cc45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use GoldRush MCP through UXC for multichain wallet balances, transfers, portfolio history, NFT ownership, token approvals, prices, and chain metadata via std..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773717086001,
+      "changelog": "Initial release of goldrush-mcp-skill.\n\n- Enables GoldRush MCP operations via UXC using a fixed stdio endpoint and injected API-key authentication.\n- Provides workflow guidance for setup, linking, and command usage.\n- Supports multichain wallet balances, transfers, portfolio history, NFT checks, token approval review, and price/metadata queries.\n- Emphasizes parsing of stable output fields and safe JSON envelope handling.\n- Includes guardrails and troubleshooting for package startup and authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ec4521154d573614fc8282a3f371e82a0f4b93d9a278ccd1f3373ffb65bf0d5"
+}

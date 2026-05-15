@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53141,
+  "uuid": "skill-clawhub-skill-safety-scanner",
+  "skillKey": "clawhub-skill-safety-scanner",
+  "name": "Skill Safety Scanner",
+  "summary": "Scan your installed ClawHub skills for dangerous code patterns — credential harvesting, shell injection, unauthorized network calls, and known malicious sign...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_safety_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "infectit007",
+      "features": [
+        "Scan your installed ClawHub skills for dangerous code patterns — credential harvesting, shell i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-safety-scanner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/164786261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-safety-scanner",
+      "url": "https://clawhub.ai/skills/skill-safety-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-safety-scanner",
+    "url": "https://clawhub.ai/skills/skill-safety-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-safety-scanner-d58db834affd4ed2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-safety-scanner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-safety-scanner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb0aa0ae771799f7fd35d45e1f1292ccfcbfe27a81e760a54053c7e87794e3f1",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T18:47:46.864Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46421,
+  "uuid": "skill-clawhub-daily-soccer",
+  "skillKey": "clawhub-daily-soccer",
+  "name": "Daily Soccer Content Generator",
+  "summary": "Generate daily soccer/football news content and TikTok scripts using free sports news sources. Use when user wants to create content about football matches,...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_soccer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ahmed181283",
+      "features": [
+        "Generate daily soccer/football news content and TikTok scripts using free sports news sources",
+        "Use when user wants to create content about football matches,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-soccer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26248550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-soccer",
+      "url": "https://clawhub.ai/skills/daily-soccer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-soccer",
+    "url": "https://clawhub.ai/skills/daily-soccer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-soccer-bb81cac8e4b6cdf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-soccer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-soccer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31415f74dde568de9eed0d16a986f6c8cebc4ccd82f70b08719c785f1395f3d6",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T11:49:12.447Z"
+}

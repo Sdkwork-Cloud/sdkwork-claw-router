@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-local-hardened@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_local_hardened",
+  "skill": {
+    "id": 54183,
+    "skillKey": "clawhub-ocr-local-hardened",
+    "name": "Ocr Local Hardened"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-local-hardened",
+    "url": "https://clawhub.ai/skills/ocr-local-hardened",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-local-hardened-0aa20e15523705b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract text from images using Tesseract.js OCR (100% local, no API key required). Supports Chinese (simplified/traditional) and English."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snazar-faberlens",
+      "userId": "s17er0wp685j1z14w6vqrsnqrh83h5er",
+      "displayName": "Faberlens",
+      "image": "https://avatars.githubusercontent.com/u/261834257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776927661181,
+      "changelog": "- Initial release: Extract text from images locally using Tesseract.js, with no API key required.\n- Supports Chinese (simplified/traditional) and English language recognition.\n- Offers command-line options for language selection and JSON/text output.\n- Includes security guardrails: no remote fetching, no network transmission of output, and strict credential redaction.\n- Language data is downloaded on first run and cached for efficiency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e63d804358c4cd234808da1170476ec7ae5cda5917ebfe22f955e924d5d175d4"
+}

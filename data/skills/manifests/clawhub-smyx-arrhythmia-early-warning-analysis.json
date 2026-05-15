@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57801,
+  "uuid": "skill-clawhub-smyx-arrhythmia-early-warning-analysis",
+  "skillKey": "clawhub-smyx-arrhythmia-early-warning-analysis",
+  "name": "心律失常早期预警分析工具",
+  "summary": "Based on facial video, identifies abnormal rhythms such as premature beats, atrial fibrillation, tachycardia/bradycardia, assists in early detection of heart...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_arrhythmia_early_warning_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Based on facial video, identifies abnormal rhythms such as premature beats, atrial fibrillation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-arrhythmia-early-warning-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-arrhythmia-early-warning-analysis",
+      "url": "https://clawhub.ai/skills/smyx-arrhythmia-early-warning-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-arrhythmia-early-warning-analysis",
+    "url": "https://clawhub.ai/skills/smyx-arrhythmia-early-warning-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-arrhythmia-early-warning-analysis-8f9ec5c2398dc343.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-arrhythmia-early-warning-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-arrhythmia-early-warning-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01287ea2eae643de3b8690aa62acbdb718a3b92c2e98df273eb3acfcf0c95a01",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T17:33:41.735Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xygs-meeting-minutes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xygs_meeting_minutes",
+  "skill": {
+    "id": 68678,
+    "skillKey": "clawhub-xygs-meeting-minutes",
+    "name": "会议纪要融合生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xygs-meeting-minutes",
+    "url": "https://clawhub.ai/skills/xygs-meeting-minutes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xygs-meeting-minutes-a59bb00f65a44b84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "会议纪要融合生成器 v2.0 — 从钉钉和/或得到(Get笔记)的会议纪要PDF中提取内容，自动校准ASR错别字，融合双源优势生成审美在线的10区块会议纪要HTML+PDF。适用于任何商务会议、团队讨论、合作洽谈的纪要整理。当用户提到会议纪要、meeting minutes、纪要模板、生成纪要、融合纪要、整理会议..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caizi333333",
+      "userId": "s1714fyz68x0b2px9jkv2g2vy983hntm",
+      "displayName": "Alex",
+      "image": "https://avatars.githubusercontent.com/u/142382088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775233471392,
+      "changelog": "meeting-minutes v2.0 introduces an advanced dual-source meeting minutes generator:\n\n- Supports extracting and merging meeting notes from both DingTalk and GetNote PDFs, leveraging each platform’s strengths.\n- Automatically corrects common ASR transcription errors using a customizable term calibration system.\n- Generates visually appealing, structured 10-block meeting minutes in HTML and PDF with a refined design system and color palette.\n- Features a flexible workflow for single or dual-source inputs, including strategic data fusion, AI insights, and priority action items.\n- Enhanced user prompts and verification steps to ensure accurate, customizable outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25bb1f0151adc3785e4a929fdbce6a78d8eaa0344918e60439edf8a928339bbb"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46702,
+  "uuid": "skill-clawhub-audio-tts",
+  "skillKey": "clawhub-audio-tts",
+  "name": "Audio Tts",
+  "summary": "convert text or script into voiced video clips with this skill. Works with TXT, DOCX, PDF, SRT files up to 200MB. content creators, marketers, educators use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "susan4731-wilfordf",
+      "features": [
+        "convert text or script into voiced video clips with this skill",
+        "Works with TXT, DOCX, PDF, SRT files up to 200MB",
+        "content creators, marketers, educators use..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208907675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-tts",
+      "url": "https://clawhub.ai/skills/audio-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-tts",
+    "url": "https://clawhub.ai/skills/audio-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-tts-141fd6bff943283e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49a9b9638694d94b0cea679dc9ee866534e6a83badc1adbd6f0c148c03e4411f",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:24:06.762Z"
+}

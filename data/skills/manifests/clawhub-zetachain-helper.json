@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60665,
+  "uuid": "skill-clawhub-zetachain-helper",
+  "skillKey": "clawhub-zetachain-helper",
+  "name": "ZetaChain Omnichain Helper",
+  "summary": "ZetaChain全链助手：支持全链资产查询、CCTX跨链追踪、zEVM合约部署指南及技术文档索引。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zetachain_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mango-ice-cat",
+      "features": [
+        "ZetaChain全链助手：支持全链资产查询、CCTX跨链追踪、zEVM合约部署指南及技术文档索引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zetachain-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172019628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zetachain-helper",
+      "url": "https://clawhub.ai/skills/zetachain-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zetachain-helper",
+    "url": "https://clawhub.ai/skills/zetachain-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zetachain-helper-90e17b6b7197641f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zetachain-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zetachain-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7585032d7026aaed78ac9df8e6e591d00836db9e3ea43ec5271546e34bf0a90d",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T07:42:50.606Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30991,
+  "uuid": "skill-clawhub-kingsumo",
+  "skillKey": "clawhub-kingsumo",
+  "name": "Kingsumo",
+  "summary": "KingSumo integration. Manage Persons, Organizations, Deals, Leads, Activities, Notes and more. Use when the user wants to interact with KingSumo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kingsumo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "KingSumo integration",
+        "Manage Persons, Organizations, Deals, Leads, Activities, Notes and more",
+        "Use when the user wants to interact with KingSumo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kingsumo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kingsumo",
+      "url": "https://clawhub.ai/skills/kingsumo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kingsumo",
+    "url": "https://clawhub.ai/skills/kingsumo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kingsumo-b5f1d8e7539cf6ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kingsumo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-kingsumo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c08edbdc7d8fd48a525cbf2e39ac25f9019925be10096cc03e451122555469eb",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:03:56.691Z"
+}

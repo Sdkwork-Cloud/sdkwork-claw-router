@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58209,
+  "uuid": "skill-clawhub-voice-transcriber-toolkit",
+  "skillKey": "clawhub-voice-transcriber-toolkit",
+  "name": "Voice Transcriber Toolkit",
+  "summary": "Voice-to-Text Transcription Toolkit - 语音识别转文字，支持Whisper/Vosk引擎，批量处理，字幕导出 | Speech recognition & transcription with Whisper/Vosk engines, batch processing, su...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_transcriber_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Voice-to-Text Transcription Toolkit",
+        "语音识别转文字，支持Whisper/Vosk引擎，批量处理，字幕导出 | Speech recognition & transcription with Whisper/Vosk engin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-transcriber-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-transcriber-toolkit",
+      "url": "https://clawhub.ai/skills/voice-transcriber-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-transcriber-toolkit",
+    "url": "https://clawhub.ai/skills/voice-transcriber-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-transcriber-toolkit-2a5c5eb050998c72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-transcriber-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-transcriber-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48909f4e7f5818f0efd97683850c8d63264485fa498d38168123dbfbcc3c9ebd",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:21:58.810Z"
+}

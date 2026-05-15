@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22177,
+  "uuid": "skill-clawhub-form-builder",
+  "skillKey": "clawhub-form-builder",
+  "name": "form-builder",
+  "summary": "Automates HTML form creation from roadflow.rf_form using similarity matching, supports client validation, multi-step wizards, and dynamic conditional fields.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.form_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericyang1234",
+      "features": [
+        "Automates HTML form creation from roadflow.rf_form using similarity matching, supports client v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/form-builder@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143331068?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "form-builder",
+      "url": "https://clawhub.ai/skills/form-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "form-builder",
+    "url": "https://clawhub.ai/skills/form-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/form-builder-2188abf721049c1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/form-builder@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-form-builder-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a05169673de4177082713f8bfb0c04fd5002404d9fe072cf8da3e8e27023eac",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T02:48:26.828Z"
+}

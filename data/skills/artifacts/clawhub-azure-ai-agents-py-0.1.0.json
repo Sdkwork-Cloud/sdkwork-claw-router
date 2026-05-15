@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-ai-agents-py@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_ai_agents_py",
+  "skill": {
+    "id": 10912,
+    "skillKey": "clawhub-azure-ai-agents-py",
+    "name": "Azure Ai Agents Py - Microsoft Foundry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-ai-agents-py",
+    "url": "https://clawhub.ai/skills/azure-ai-agents-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-ai-agents-py-c98d34751173d8e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build AI agents using the Azure AI Agents Python SDK (azure-ai-agents). Use when creating agents hosted on Azure AI Foundry with tools (File Search, Code Interpreter, Bing Grounding, Azure AI Search, Function Calling, OpenAPI, MCP), managi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thegovind",
+      "userId": "publishers:thegovind",
+      "displayName": "thegovind",
+      "image": "https://avatars.githubusercontent.com/u/18152044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2368,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769835811425,
+      "changelog": "- Initial release of azure-ai-agents-py skill.\n- Provides a comprehensive guide for building AI agents using the Azure AI Agents Python SDK.\n- Includes installation steps, authentication setup, and core agent workflow examples.\n- Documents supported tools (File Search, Code Interpreter, Bing Grounding, Azure AI Search, Function Calling, OpenAPI, MCP) and integration patterns.\n- Covers advanced usage: streaming responses, file operations, vector store creation, async patterns, and response formatting.\n- Lists best practices and reference files for further learning.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1daf3e802ef83919ca5f4c3d7d19d539d50c91f9440b36ff558839c6e679a4f1"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16150,
+  "uuid": "skill-clawhub-iyeque-local-system-info",
+  "skillKey": "clawhub-iyeque-local-system-info",
+  "name": "Local System Info (Iyeque)",
+  "summary": "Return system metrics (CPU, RAM, disk, processes) using psutil.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iyeque_local_system_info",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iyeque",
+      "features": [
+        "Return system metrics (CPU, RAM, disk, processes) using psutil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iyeque-local-system-info@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183353210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iyeque-local-system-info",
+      "url": "https://clawhub.ai/skills/iyeque-local-system-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iyeque-local-system-info",
+    "url": "https://clawhub.ai/skills/iyeque-local-system-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iyeque-local-system-info-c7e8b6861586cd4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iyeque-local-system-info@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iyeque-local-system-info-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:964a71800696a64a3fe4cf2bd71ab3a7a13a6dd2598e61ca18534a60060f85a5",
+      "artifactSizeBytes": 1920
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T11:11:42.772Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mindmatch@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mindmatch",
+  "skill": {
+    "id": 38393,
+    "skillKey": "clawhub-mindmatch",
+    "name": "Mindmatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mindmatch",
+    "url": "https://clawhub.ai/skills/mindmatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mindmatch-34b1c6d12a4a0954.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to find compatible people based on deep psychological profiling. Triggers on \"find my match\", \"find me a partner\", \"who am..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivankoriako",
+      "userId": "s17azbcr7k1ytmpj3mjtm6s7js83gsht",
+      "displayName": "Lifegamer",
+      "image": "https://avatars.githubusercontent.com/u/149903830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774105038846,
+      "changelog": "Initial release of MindMatch.\n\n- Introduces AI-powered compatibility matching based on deep psychological profiling, not surface interests.\n- Supports searching for romantic partners, business co-founders, friends, or custom matches.\n- Profiles are built from conversation history and matched via a dedicated server.\n- Emphasizes privacy: all data remains local.\n- Service and matching engine under development; not yet functional.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da54dbd6b63d0dccb67c31937a04ed195ecb6d2522d08c37bcae83e2f4dd0473"
+}

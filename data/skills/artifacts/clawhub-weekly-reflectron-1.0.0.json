@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-reflectron@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_reflectron",
+  "skill": {
+    "id": 43911,
+    "skillKey": "clawhub-weekly-reflectron",
+    "name": "Weekly Reflectron"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-reflectron",
+    "url": "https://clawhub.ai/skills/weekly-reflectron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-reflectron-ca3df8c850dd142e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide a weekly reflection across Work, Health, Relationships, and Growth, then turn the review into one clear pattern plus Stop, Start, Continue, and one exp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776211224179,
+      "changelog": "Initial release of weekly-reflectron.\n\n- Guides a structured weekly review across Work, Health, Relationships, and Growth.\n- Helps users gather concrete evidence and avoid vague or overly self-critical reflection.\n- Outputs a clear pattern, Stop/Start/Continue actions, and one experiment for the next week.\n- Designed for balanced, actionable, and usable weekly reflections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cfc9cbaf912707cc8ad9f0e8e2ef52e03dcfd379532104153d40b5221e46049"
+}

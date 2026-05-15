@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qcut-video-edit@2026.3.5",
+  "version": "2026.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qcut_video_edit",
+  "skill": {
+    "id": 21099,
+    "skillKey": "clawhub-qcut-video-edit",
+    "name": "Qcut Video Edit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qcut-video-edit",
+    "url": "https://clawhub.ai/skills/qcut-video-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qcut-video-edit-1b26ffafa3377688.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run QCut's native TypeScript pipeline CLI for AI content generation, video analysis, transcription, YAML pipelines, ViMax agentic video production, and proje..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donghaozhang",
+      "userId": "publishers:donghaozhang",
+      "displayName": "donghaozhang",
+      "image": "https://avatars.githubusercontent.com/u/12164239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2026.3.5",
+      "createdAt": 1772603517143,
+      "changelog": "- Added new step to switch to the video edit panel using editor:ui:switch-panel in project/media/timeline discovery instructions.\n- Updated step order to clarify UI navigation before media and timeline export.\n- No breaking changes to commands or API. Documentation and workflow guidance improved.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d049f7652d6ff153f93f62608cd926394ef8e83546cccf67529278dcac5b1a56"
+}

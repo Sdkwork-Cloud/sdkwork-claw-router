@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17711,
+  "uuid": "skill-clawhub-soul-shifter",
+  "skillKey": "clawhub-soul-shifter",
+  "name": "Soul Shifter",
+  "summary": "Create, save, and switch OpenClaw's persona (Soul). Research characters to generate new souls or load existing ones from the library.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_shifter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xhrisfu",
+      "features": [
+        "Create, save, and switch OpenClaw's persona (Soul)",
+        "Research characters to generate new souls or load existing ones from the library."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soul-shifter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117887042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soul-shifter",
+      "url": "https://clawhub.ai/skills/soul-shifter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-shifter",
+    "url": "https://clawhub.ai/skills/soul-shifter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-shifter-0a10d68dadd3a92f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soul-shifter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soul-shifter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:631e5b25984490767b53d38bb4bb731eb7d8c04fd76c93c652393f7558c8afc5",
+      "artifactSizeBytes": 2249
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:57:45.644Z"
+}

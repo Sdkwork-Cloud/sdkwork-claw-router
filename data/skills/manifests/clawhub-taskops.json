@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49124,
+  "uuid": "skill-clawhub-taskops",
+  "skillKey": "clawhub-taskops",
+  "name": "TaskOps",
+  "summary": "Manage TaskOps md-first projects built around versioned task groups, explicit snapshots, and a separate run graph. Use when you need to inspect or author the...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SEUNGHO LEE",
+      "features": [
+        "Manage TaskOps md-first projects built around versioned task groups, explicit snapshots, and a.",
+        "Use when you need to inspect or author the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taskops@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11837072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taskops",
+      "url": "https://clawhub.ai/skills/taskops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskops",
+    "url": "https://clawhub.ai/skills/taskops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskops-65c07cee2860fb85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taskops@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taskops-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67873c29a806b4fed0ee2b61b0f68da553d703372470e6e66376cdb7426cbd9a",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T20:39:10.743Z"
+}

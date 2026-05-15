@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gangtise-knowledgebase@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gangtise_knowledgebase",
+  "skill": {
+    "id": 70524,
+    "skillKey": "clawhub-gangtise-knowledgebase",
+    "name": "Gangtise知识库"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gangtise-knowledgebase",
+    "url": "https://clawhub.ai/skills/gangtise-knowledgebase",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gangtise-knowledgebase-f47b5c2d9a1b7b55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对 Gangtise 内部知识库（报告、观点、会议纪要等）进行语义检索，返回高相关度的内容片段。当你需要阅读或推理文档的真实内容（如论点、结论、段落等），并且不关心如何定位文件时，务必使用本技能；若你更偏向先按类型/日期/证券等定位筛选再下载核验，请使用 `gangtise-file`。检索结果以语义匹配为核心，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gangtisegts",
+      "userId": "s174q9zw21n5jm4afgn33c4ymn868brv",
+      "displayName": "GangtiseGts",
+      "image": "https://avatars.githubusercontent.com/u/274197162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 66,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1778124619705,
+      "changelog": "- 更新说明，强调高相关度内容检索，突出语义匹配的专业性和准确性。\n- 详细区分了 gangtise-kb 与 gangtise-file 的使用场景与优势。\n- 新增文件类型与参数说明，完善会议纪要等分类解释。\n- 增加参数表与命令行示例，便于用户快速理解和上手。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fe789a690f749092259be24bbd616315062422b346b5b3465a23b1d16e5b037"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59809,
+  "uuid": "skill-clawhub-business-ride",
+  "skillKey": "clawhub-business-ride",
+  "name": "差旅打车",
+  "summary": "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, schedule a ride, airport transfer, or manage car service orders.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_ride",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "分贝通旅行",
+      "features": [
+        "企业用车服务助手，支持即时用车、预约用车、接送机、包车等多种用车场景，提供车型选择、费用预估、订单管理等功能。Invoke when user needs to book a car, sc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/business-ride@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/business-ride/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "business-ride",
+      "url": "https://clawhub.ai/skills/business-ride"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-ride",
+    "url": "https://clawhub.ai/skills/business-ride",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-ride-194d59a2844c0e4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/business-ride@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-business-ride-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:671fa1e66d9d64907b511b4f63ccd545a08cf3fdd5afaf7b552452d5ff329e84",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:57:44.225Z"
+}

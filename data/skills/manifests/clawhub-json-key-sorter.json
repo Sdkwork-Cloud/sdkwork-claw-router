@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44878,
+  "uuid": "skill-clawhub-json-key-sorter",
+  "skillKey": "clawhub-json-key-sorter",
+  "name": "Json Key Sorter",
+  "summary": "Sort JSON objects alphabetically by keys to standardize data, improve readability, and reduce merge conflicts in files and API responses.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_key_sorter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Sort JSON objects alphabetically by keys to standardize data, improve readability, and reduce m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-key-sorter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-key-sorter",
+      "url": "https://clawhub.ai/skills/json-key-sorter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-key-sorter",
+    "url": "https://clawhub.ai/skills/json-key-sorter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-key-sorter-d1cd1472c12b7b07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-key-sorter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-key-sorter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bcffc4ba1b375c2b59a30da492de3ddd94540626bd196359a6bdc93a50e4d92",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T22:31:26.066Z"
+}

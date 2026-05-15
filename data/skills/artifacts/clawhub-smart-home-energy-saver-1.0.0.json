@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-home-energy-saver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_home_energy_saver",
+  "skill": {
+    "id": 13072,
+    "skillKey": "clawhub-smart-home-energy-saver",
+    "name": "Smart Home Energy Saver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-home-energy-saver",
+    "url": "https://clawhub.ai/skills/smart-home-energy-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-home-energy-saver-e67236ff45b80037.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze home energy usage and propose safe, read-only automation plans for savings. Use when a user wants Home Assistant energy insights, optimization ideas, or draft automation YAML without directly controlling devices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codedao12",
+      "userId": "s17ax1y7n44r8sjagk48sw25bx84nzpq",
+      "displayName": "codedao12",
+      "image": "https://avatars.githubusercontent.com/u/249323427?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1339,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770630982909,
+      "changelog": "Smart Home Energy Saver v1.0.0\n\n- Initial release focusing on analysis and safe, read-only automation recommendations.\n- Provides energy usage summaries and identifies top savings opportunities based on user data.\n- Generates draft Home Assistant automation YAML with clear explanations for user review.\n- Requires user-provided inputs such as device lists, energy tariffs, and comfort constraints.\n- Emphasizes safety: never directly controls devices or applies changes automatically.\n- Designed for manual review and safe rollout, supporting privacy and security best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8815664acdbd1655205051dc7c31dbf3a88ecbcc2533a11efbfb920ce951e7f2"
+}

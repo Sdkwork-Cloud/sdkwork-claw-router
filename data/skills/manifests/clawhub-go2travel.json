@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68471,
+  "uuid": "skill-clawhub-go2travel",
+  "skillKey": "clawhub-go2travel",
+  "name": "go2Travel — 飞猪旅行智能规划",
+  "summary": "当用户需要旅行规划、行程编排、机票/酒店/景点搜索时触发。 适用场景：自由行/家庭游/蜜月/商务/亲子/宠物出行/出境游/露营。 不适用：纯天气查询（用 weather skill）、纯汇率查询（用独立工具）。 触发关键词：旅游/旅行/行程/机票/酒店/景点/租车/签证/攻略/预算/行李。 不触发：只问天气、只问...",
+  "version": "2.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go2travel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jasonHUOHUO",
+      "features": [
+        "当用户需要旅行规划、行程编排、机票/酒店/景点搜索时触发。 适用场景：自由行/家庭游/蜜月/商务/亲子/宠物出行/出境游/露营。 不适用：纯天气查询（用 weather skill）、纯汇率."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/go2travel@2.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32789654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "go2travel",
+      "url": "https://clawhub.ai/skills/go2travel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go2travel",
+    "url": "https://clawhub.ai/skills/go2travel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go2travel-4bcb8958f7a8bf15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/go2travel@2.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-go2travel-2.0.6.json",
+      "version": "2.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d306b76029e1373ca41453409312384e6833d177e76ba6dc8d43449125f9b7b",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T13:34:29.618Z"
+}

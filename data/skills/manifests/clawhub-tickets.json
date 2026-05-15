@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24577,
+  "uuid": "skill-clawhub-tickets",
+  "skillKey": "clawhub-tickets",
+  "name": "Game Tickets - Buy tickets with your credit card",
+  "summary": "Let your agent shop tickets online with owner approval.",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tickets",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jononovo",
+      "features": [
+        "Let your agent shop tickets online with owner approval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tickets@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22595409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tickets",
+      "url": "https://clawhub.ai/skills/tickets"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tickets",
+    "url": "https://clawhub.ai/skills/tickets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tickets-45a5c62241eec841.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tickets@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tickets-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b12290012429fce9660c229664eec850ed8ef475fa96fead4fbb700075c4ac10",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T20:48:26.390Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_publish",
+  "skill": {
+    "id": 60350,
+    "skillKey": "clawhub-web-publish",
+    "name": "Web Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-publish",
+    "url": "https://clawhub.ai/skills/web-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-publish-9dcf8282b3dc89bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将本地 Markdown/HTML 一键发布为在线链接，手机直接访问"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amlyx",
+      "userId": "publishers:amlyx",
+      "displayName": "amlyx",
+      "image": "https://avatars.githubusercontent.com/u/48619129?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 731,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771947783589,
+      "changelog": "Initial release: Quickly publish local Markdown/HTML as shareable online links.\n\n- Supports Markdown and HTML input files.\n- Generates temporary online links (1–7 day expiry options).\n- No registration required; uses dpaste.com API.\n- Simple command-line usage and mobile-friendly access.\n- Ideal for speeches, meeting notes, presentations, or temporary document sharing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f38bafba485dab29fdcb6422eb15524965fb0848496c9df61edb534651d3a255"
+}

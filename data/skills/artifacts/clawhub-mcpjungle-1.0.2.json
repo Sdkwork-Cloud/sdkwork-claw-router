@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcpjungle@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcpjungle",
+  "skill": {
+    "id": 47121,
+    "skillKey": "clawhub-mcpjungle",
+    "name": "mcpjungle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcpjungle",
+    "url": "https://clawhub.ai/skills/mcpjungle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcpjungle-2fd31510ea483583.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage MCPJungle gateway through its CLI. Use when the user needs to list, register, deregister, enable, disable, invoke, or inspect MCP servers, tools, prom..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ctxinf",
+      "userId": "s17ayenf7zqxz2chydd0c3d4rn85pjf2",
+      "displayName": "ctxinf",
+      "image": "https://avatars.githubusercontent.com/u/136044792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777450637029,
+      "changelog": "Version 1.0.2 of mcpjungle-management\n\n- Added a new \"Prerequisites\" section to the documentation, clarifying the need for the CLI and a running registry server.\n- No other user-facing changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e166e209eb00609b55184b39dd0f7722da1f02b7c40758d4b25e253b4f7ee0b3"
+}

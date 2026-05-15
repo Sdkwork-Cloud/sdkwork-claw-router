@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redotpay-payment@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redotpay_payment",
+  "skill": {
+    "id": 34083,
+    "skillKey": "clawhub-redotpay-payment",
+    "name": "RedotPay Payment Skill for MPP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redotpay-payment",
+    "url": "https://clawhub.ai/skills/redotpay-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redotpay-payment-9f34d12e3f82b0a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants the RedotPay CLI for agent-paid HTTP, MPP-style service discovery, or 402/x402 flows. Activate for redotpay, RedotPay, MPP, 402, x402..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "turbo-wang",
+      "userId": "s17ed9pje213tp47pdskp182md862fmm",
+      "displayName": "wanghao-ftd",
+      "image": "https://avatars.githubusercontent.com/u/13176434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1778136812492,
+      "changelog": "redotpay-payment v0.1.7",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36400142a446cb8dda1495380bfb56485a5c3cd015f014b7155ea6a9d5493c89"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51918,
+  "uuid": "skill-clawhub-amazon-pricing-command-center",
+  "skillKey": "clawhub-amazon-pricing-command-center",
+  "name": "Amazon Pricing Command Center",
+  "summary": "Data-driven pricing strategy engine for Amazon sellers. Give me your ASIN(s) — I auto-detect the leaf category, analyze pricing landscape, and deliver RAISE/...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_pricing_command_center",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apiclaw",
+      "features": [
+        "Data-driven pricing strategy engine for Amazon sellers",
+        "Give me your ASIN(s) — I auto-detect the leaf category, analyze pricing landscape, and deliver."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-pricing-command-center@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268545826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-pricing-command-center",
+      "url": "https://clawhub.ai/skills/amazon-pricing-command-center"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-pricing-command-center",
+    "url": "https://clawhub.ai/skills/amazon-pricing-command-center",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-pricing-command-center-6788a72a91ed87f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-pricing-command-center@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-pricing-command-center-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe65fbcf4953c25c7547857698cfa6e9a836122f7180880bb1decd23dba10be",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:37:26.133Z"
+}

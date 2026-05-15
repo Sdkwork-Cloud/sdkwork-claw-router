@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16039,
+  "uuid": "skill-clawhub-uniswap-swap-simulation",
+  "skillKey": "clawhub-uniswap-swap-simulation",
+  "name": "Uniswap Swap Simulation",
+  "summary": "Simulate and analyze Uniswap swaps including price impact, slippage, optimal routing, and gas estimation. Use when the user asks about swap execution, routing, price impact, or MEV considerations.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniswap_swap_simulation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Simulate and analyze Uniswap swaps including price impact, slippage, optimal routing, and gas e.",
+        "Use when the user asks about swap execution, routing, price impact, or MEV considerations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uniswap-swap-simulation@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uniswap-swap-simulation",
+      "url": "https://clawhub.ai/skills/uniswap-swap-simulation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniswap-swap-simulation",
+    "url": "https://clawhub.ai/skills/uniswap-swap-simulation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniswap-swap-simulation-b9cffa38b6375d15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uniswap-swap-simulation@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uniswap-swap-simulation-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3bcfd1a3394ba7a762c11a6abcd85321bb4ec94e07e018563cbc950c56f1620",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T17:54:13.394Z"
+}

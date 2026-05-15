@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53523,
+  "uuid": "skill-clawhub-skillnav",
+  "skillKey": "clawhub-skillnav",
+  "name": "SkillNav",
+  "summary": "Search 3,900+ MCP servers with install commands, get daily AI brief, and discover trending tools — in Chinese. Data from skillnav.dev editorial team.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillnav",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HuiW86",
+      "features": [
+        "Search 3,900+ MCP servers with install commands, get daily AI brief, and discover trending tool.",
+        "Data from skillnav.dev editorial team."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillnav@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253177500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillnav",
+      "url": "https://clawhub.ai/skills/skillnav"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillnav",
+    "url": "https://clawhub.ai/skills/skillnav",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillnav-521c9108192e47d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillnav@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillnav-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fda920c3b63f4d0edd435ee4a4f14c195a800a8804fc8ff1847dd0eccf38d2a0",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T10:55:10.634Z"
+}

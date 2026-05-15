@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33689,
+  "uuid": "skill-clawhub-meetup",
+  "skillKey": "clawhub-meetup",
+  "name": "claw://Meetup",
+  "summary": "Find nearby OpenClaw meetups and related AI/agent community events, summarize the best matches, and help with reminder or share-ready text. Use when the user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawNews.de",
+      "features": [
+        "Find nearby OpenClaw meetups and related AI/agent community events, summarize the best matches,.",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meetup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265372874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meetup",
+      "url": "https://clawhub.ai/skills/meetup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetup",
+    "url": "https://clawhub.ai/skills/meetup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetup-574b33d8a01dc948.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meetup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meetup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86d1d3d66825ae2e0f32926b7776777d6f12ecc9368af5d82af5bc8ddee3c74e",
+      "artifactSizeBytes": 3163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:32:32.456Z"
+}

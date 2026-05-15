@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50272,
+  "uuid": "skill-clawhub-wilma-triage",
+  "skillKey": "clawhub-wilma-triage",
+  "name": "Wilma Triage",
+  "summary": "Daily triage of Wilma school notifications for Finnish parents. Fetches exams, messages, news, schedules, homework, and lesson notes (merkinnät) — filters fo...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wilma_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aikarjal",
+      "features": [
+        "Daily triage of Wilma school notifications for Finnish parents",
+        "Fetches exams, messages, news, schedules, homework, and lesson notes (merkinnät) — filters fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wilma-triage@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8512727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wilma-triage",
+      "url": "https://clawhub.ai/skills/wilma-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wilma-triage",
+    "url": "https://clawhub.ai/skills/wilma-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wilma-triage-3e470e68b508f153.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wilma-triage@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wilma-triage-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e91050381890f3208dae8eee70d8aa9dc3c88bcedd4596a550a46c489e0b3d03",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T19:45:18.941Z"
+}

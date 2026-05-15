@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trump-daily-report@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trump_daily_report",
+  "skill": {
+    "id": 60081,
+    "skillKey": "clawhub-trump-daily-report",
+    "name": "Trump Daily Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trump-daily-report",
+    "url": "https://clawhub.ai/skills/trump-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trump-daily-report-059d3fe9617be2d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日特朗普动态追踪报告。采集Truth Social/Twitter及美国媒体(Bloomberg/CNBC/Reuters/WSJ/FT)信息，生成中英双语市场分析报告，支持早报(8:00)和晚报(16:00)双时段及收盘对照分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xsqorange",
+      "userId": "s171a625svq8xqf0xtjqha944d83g4pq",
+      "displayName": "Leon Xue",
+      "image": "https://avatars.githubusercontent.com/u/17331219?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 366,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776911948949,
+      "changelog": "v1.2.1: Agent Reach (r.jina.ai) 零配置搜索加入技能方案。Tavily 限额满时自动切换 BBC News 抓取，无需 API key。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb3f77fd348be32c8a98f8304593f1dd7abcb4054697635e21e223d6dc78ddc1"
+}

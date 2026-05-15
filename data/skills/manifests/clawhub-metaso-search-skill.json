@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57263,
+  "uuid": "skill-clawhub-metaso-search-skill",
+  "skillKey": "clawhub-metaso-search-skill",
+  "name": "秘塔搜索",
+  "summary": "Search the web using Metaso AI Search API. Use for live information, documentation, or research topics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metaso_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "square123",
+      "features": [
+        "Search the web using Metaso AI Search API",
+        "Use for live information, documentation, or research topics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metaso-search-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15503418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metaso-search-skill",
+      "url": "https://clawhub.ai/skills/metaso-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metaso-search-skill",
+    "url": "https://clawhub.ai/skills/metaso-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metaso-search-skill-9d36976e2eedf1af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metaso-search-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-metaso-search-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc08876fb126b6039ba6a83fc83f7a4f15033f5ebeae619e42e50d4b2dc272f8",
+      "artifactSizeBytes": 2188
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:43:22.367Z"
+}

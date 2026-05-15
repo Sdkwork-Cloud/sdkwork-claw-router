@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/key-rotation-planner@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.key_rotation_planner",
+  "skill": {
+    "id": 47026,
+    "skillKey": "clawhub-key-rotation-planner",
+    "name": "Key Rotation Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "key-rotation-planner",
+    "url": "https://clawhub.ai/skills/key-rotation-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/key-rotation-planner-b802dc8beceb2732.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Plan and track cryptographic key rotations for API keys, encryption keys, signing keys, and service credentials. Inventory all keys, assess rotation urgency,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593717625,
+      "changelog": "No changes in functionality or documentation; version bump only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d974ba147c3d2e84ed081fa352dce352c427ac6f556e91244fc5367f13f10f3"
+}

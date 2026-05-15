@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-plus-cn@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_plus_cn",
+  "skill": {
+    "id": 68625,
+    "skillKey": "clawhub-weather-plus-cn",
+    "name": "Weather Plus Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-plus-cn",
+    "url": "https://clawhub.ai/skills/weather-plus-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-plus-cn-c41ed70fd48e67e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询中国城市天气信息，提供温度、天气状况及穿衣和生活指数建议，数据来源中国天气网。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenchaoqun",
+      "userId": "publishers:chenchaoqun",
+      "displayName": "chenchaoqun",
+      "image": "https://avatars.githubusercontent.com/u/11999246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 508,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773502650395,
+      "changelog": "同步本地最新配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd24260228c39b1d403c8307e83a975dc6149cdccec22543590b95c8ff53776c"
+}

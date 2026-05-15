@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23176,
+  "uuid": "skill-clawhub-nvidia-sdxl",
+  "skillKey": "clawhub-nvidia-sdxl",
+  "name": "Nvidia Sdxl",
+  "summary": "Generate high-resolution PNG images from detailed text prompts using the NVIDIA Stable Diffusion XL model with customizable style, lighting, and resolution.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia_sdxl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaoxiasan",
+      "features": [
+        "Generate high-resolution PNG images from detailed text prompts using the NVIDIA Stable Diffusio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nvidia-sdxl@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52208252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nvidia-sdxl",
+      "url": "https://clawhub.ai/skills/nvidia-sdxl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia-sdxl",
+    "url": "https://clawhub.ai/skills/nvidia-sdxl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-sdxl-735e04cff6e87ca3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nvidia-sdxl@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nvidia-sdxl-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a8db3b9867edbd8d0761720d61226ea676ff36a966de73914f0d2ddf46b7b69",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T17:47:43.220Z"
+}

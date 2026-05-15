@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34480,
+  "uuid": "skill-clawhub-game-scout",
+  "skillKey": "clawhub-game-scout",
+  "name": "Game Scout",
+  "summary": "Video game strategy specialist. Amalgamates tactics, builds, guides, and meta knowledge from Reddit, YouTube creators, wikis, Twitter/X, and game databases t...",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.game_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rick Clark",
+      "features": [
+        "Video game strategy specialist",
+        "Amalgamates tactics, builds, guides, and meta knowledge from Reddit, YouTube creators, wikis, T."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/game-scout@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41970768?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "game-scout",
+      "url": "https://clawhub.ai/skills/game-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "game-scout",
+    "url": "https://clawhub.ai/skills/game-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/game-scout-43ac8db33a2ab7a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/game-scout@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-game-scout-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbe21203feb5bb96ce1417bda7a2e55020ce8af5f115af41f3e175fe476fa8a8",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:48:06.276Z"
+}

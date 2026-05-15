@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45726,
+  "uuid": "skill-clawhub-feishu-chat-importer",
+  "skillKey": "clawhub-feishu-chat-importer",
+  "name": "Feishu Chat Importer",
+  "summary": "Convert Feishu chat history exports into OpenClaw episodic memory format. Parses feishu_chat_YYYYMMDD.json files, normalizes messages, and writes daily episo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_chat_importer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arkerro",
+      "features": [
+        "Convert Feishu chat history exports into OpenClaw episodic memory format",
+        "Parses feishu_chat_YYYYMMDD.json files, normalizes messages, and writes daily episo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-chat-importer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259992285?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-chat-importer",
+      "url": "https://clawhub.ai/skills/feishu-chat-importer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-chat-importer",
+    "url": "https://clawhub.ai/skills/feishu-chat-importer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-chat-importer-aaf37c127efc6e21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-chat-importer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-chat-importer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76da8afce27fb27812adfdc504bcc09b6660f1cf9975076c9a149110bbd31a61",
+      "artifactSizeBytes": 2452
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:10:52.211Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-tracking-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_tracking_auditor",
+  "skill": {
+    "id": 18498,
+    "skillKey": "clawhub-shopify-tracking-auditor",
+    "name": "Shopify Tracking Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-tracking-auditor",
+    "url": "https://clawhub.ai/skills/shopify-tracking-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-tracking-auditor-44559b82170db0b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Shopify tracking across UTM, pixel, CAPI, and checkout events to identify attribution leaks causing inconsistent ROAS and conversion data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 677,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773222051765,
+      "changelog": "Initial release: Shopify tracking leak audit",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99c2ff642441e7195c50f31c16f2860af22357fb498918c19d092f64b7751afd"
+}

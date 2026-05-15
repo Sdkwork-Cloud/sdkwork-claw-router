@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30620,
+  "uuid": "skill-clawhub-bookingmood",
+  "skillKey": "clawhub-bookingmood",
+  "name": "Bookingmood",
+  "summary": "Bookingmood integration. Manage data, records, and automate workflows. Use when the user wants to interact with Bookingmood data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookingmood",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Bookingmood integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Bookingmood data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookingmood@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookingmood",
+      "url": "https://clawhub.ai/skills/bookingmood"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookingmood",
+    "url": "https://clawhub.ai/skills/bookingmood",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookingmood-2b70372fa073123e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookingmood@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookingmood-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf1b38ab4d08a9421456fb6b469ee43d59342eeaf9fdba63534050d829a8e57f",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:24:49.203Z"
+}

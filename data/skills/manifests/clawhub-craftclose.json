@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41440,
+  "uuid": "skill-clawhub-craftclose",
+  "skillKey": "clawhub-craftclose",
+  "name": "CraftClose",
+  "summary": "AI-powered Minecraft server monitoring with crash detection, auto-restart, and smart alerts. Use when: monitoring Minecraft servers, diagnosing crashes, sett...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.craftclose",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bejie Paulo Aclao",
+      "features": [
+        "AI-powered Minecraft server monitoring with crash detection, auto-restart, and smart alerts",
+        "Use when: monitoring Minecraft servers, diagnosing crashes, sett..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/craftclose@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253995277?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "craftclose",
+      "url": "https://clawhub.ai/skills/craftclose"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "craftclose",
+    "url": "https://clawhub.ai/skills/craftclose",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/craftclose-4caf076f55d5f4ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/craftclose@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-craftclose-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74f6f5f27825a2fa960c0ca51494dcf84c3c5142dfebc80e540f4047c36ccc6e",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:45:30.238Z"
+}

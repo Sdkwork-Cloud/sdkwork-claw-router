@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66992,
+  "uuid": "skill-clawhub-investment-buddy-pet",
+  "skillKey": "clawhub-investment-buddy-pet",
+  "name": "Investment Buddy Pet",
+  "summary": "［何时使用］当用户需要宠物陪伴式投资助手时；当用户说\"帮我找个投资宠物\"时；当检测到\"投资性格测试\"\"领宠物\"\"持仓跟踪\"\"定投提醒\"等关键词时",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_buddy_pet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lj22503",
+      "features": [
+        "［何时使用］当用户需要宠物陪伴式投资助手时；当用户说\"帮我找个投资宠物\"时；当检测到\"投资性格测试\"\"领宠物\"\"持仓跟踪\"\"定投提醒\"等关键词时"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/investment-buddy-pet@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/170225356?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "investment-buddy-pet",
+      "url": "https://clawhub.ai/skills/investment-buddy-pet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-buddy-pet",
+    "url": "https://clawhub.ai/skills/investment-buddy-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-buddy-pet-184021575c0d2a86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/investment-buddy-pet@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-investment-buddy-pet-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52da16745bd6828b2767feeb83cc0e0c2c43de7dbf0ee414e03db89f8a7889f3",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:46:24.573Z"
+}

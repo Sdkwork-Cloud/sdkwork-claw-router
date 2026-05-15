@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36272,
+  "uuid": "skill-clawhub-obsidian-rest",
+  "skillKey": "clawhub-obsidian-rest",
+  "name": "Obsidian Local REST API",
+  "summary": "Read, write, search, append, patch, and manage notes in any Obsidian vault via the Local REST API on Windows, macOS, or Linux.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_rest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Only 1 Naren",
+      "features": [
+        "Read, write, search, append, patch, and manage notes in any Obsidian vault via the Local REST A."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-rest@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233563303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-rest",
+      "url": "https://clawhub.ai/skills/obsidian-rest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-rest",
+    "url": "https://clawhub.ai/skills/obsidian-rest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-rest-5717ee1ff3a6f24c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-rest@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-rest-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52f8bd219df5f8558185f4d273c95f1549a80443ca653cfe4f49fa7af3f3ea7e",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:19:02.236Z"
+}

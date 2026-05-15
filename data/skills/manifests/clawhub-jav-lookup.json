@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56719,
+  "uuid": "skill-clawhub-jav-lookup",
+  "skillKey": "clawhub-jav-lookup",
+  "name": "jav-lookup",
+  "summary": "This skill should be used when the user provides a list of Japanese AV film codes (番号, e.g. ABF-328, START-510, MIDA-563) and wants to look up the cast (主演),...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jav_lookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onebowl824",
+      "features": [
+        "This skill should be used when the user provides a list of Japanese AV film codes (番号, e.g",
+        "ABF-328, START-510, MIDA-563) and wants to look up the cast (主演),..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jav-lookup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190184974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jav-lookup",
+      "url": "https://clawhub.ai/skills/jav-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jav-lookup",
+    "url": "https://clawhub.ai/skills/jav-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jav-lookup-2f9ddc6fbc827aa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jav-lookup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jav-lookup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87956cb2f403a789d29d5fce4cb3846adb5f2020a82006a9e19d573b45fb29df",
+      "artifactSizeBytes": 2650
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:50:20.687Z"
+}

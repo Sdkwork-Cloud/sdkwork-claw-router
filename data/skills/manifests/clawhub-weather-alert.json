@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44196,
+  "uuid": "skill-clawhub-weather-alert",
+  "skillKey": "clawhub-weather-alert",
+  "name": "Weather Alert",
+  "summary": "Monitors weather for any location, sends alerts when rain, snow, temperature, wind, UV, or pressure thresholds are exceeded, plus daily briefings and trends.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_alert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Indigas",
+      "features": [
+        "Monitors weather for any location, sends alerts when rain, snow, temperature, wind, UV, or pres."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weather-alert@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69516204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weather-alert",
+      "url": "https://clawhub.ai/skills/weather-alert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-alert",
+    "url": "https://clawhub.ai/skills/weather-alert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-alert-814eda3c0328aae5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weather-alert@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weather-alert-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abecd34e4efba0a5de0944a32eba1ff32dd613970b0c188495afe4402c51d8a6",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T00:34:15.121Z"
+}

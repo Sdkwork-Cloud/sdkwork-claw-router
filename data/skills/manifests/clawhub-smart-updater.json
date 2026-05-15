@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24001,
+  "uuid": "skill-clawhub-smart-updater",
+  "skillKey": "clawhub-smart-updater",
+  "name": "Smart Updater",
+  "summary": "Intelligent upgrade management for OpenClaw skills, extensions, and core. HITL (Human-in-the-Loop) mode: scan installed assets, read changelogs, analyze risk...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_updater",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuanhui",
+      "features": [
+        "Intelligent upgrade management for OpenClaw skills, extensions, and core",
+        "HITL (Human-in-the-Loop) mode: scan installed assets, read changelogs, analyze risk..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-updater@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2963454?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-updater",
+      "url": "https://clawhub.ai/skills/smart-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-updater",
+    "url": "https://clawhub.ai/skills/smart-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-updater-175ed07047190721.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-updater@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-updater-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94f9eee6df0a9e0149455ce253036c6d7e0af3e8719fa5f332b1add46538fb6d",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T17:42:13.525Z"
+}

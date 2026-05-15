@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26319,
+  "uuid": "skill-clawhub-caldav-calendars",
+  "skillKey": "clawhub-caldav-calendars",
+  "name": "Pub Caldav",
+  "summary": "Sync and query CalDAV calendars (iCloud, Google, Fastmail, Nextcloud) using vdirsyncer and khal. And also 50+ models for image generation, video generation,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caldav_calendars",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Sync and query CalDAV calendars (iCloud, Google, Fastmail, Nextcloud) using vdirsyncer and khal",
+        "And also 50+ models for image generation, video generation,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caldav-calendars@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caldav-calendars",
+      "url": "https://clawhub.ai/skills/caldav-calendars"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caldav-calendars",
+    "url": "https://clawhub.ai/skills/caldav-calendars",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caldav-calendars-34fb36a506e540e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caldav-calendars@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caldav-calendars-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a705435d6353aa7bb08d5277a4feba33eae77f123ae0e8f7a2d4a22241b9002",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:19:48.161Z"
+}

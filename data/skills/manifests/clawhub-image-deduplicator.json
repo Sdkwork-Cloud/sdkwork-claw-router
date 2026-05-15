@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25050,
+  "uuid": "skill-clawhub-image-deduplicator",
+  "skillKey": "clawhub-image-deduplicator",
+  "name": "Image Deduplicator",
+  "summary": "Detect and remove exact or similar duplicate images in folders using perceptual and MD5 hashing with configurable similarity and actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_deduplicator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mingo_318",
+      "features": [
+        "Detect and remove exact or similar duplicate images in folders using perceptual and MD5 hashing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-deduplicator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62329898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-deduplicator",
+      "url": "https://clawhub.ai/skills/image-deduplicator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-deduplicator",
+    "url": "https://clawhub.ai/skills/image-deduplicator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-deduplicator-dda455371439e5b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-deduplicator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-deduplicator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a9712e990900c90fd5af3c58f5b338834493d8c25bd6c32e249fdd5dd761a77",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:29:48.830Z"
+}

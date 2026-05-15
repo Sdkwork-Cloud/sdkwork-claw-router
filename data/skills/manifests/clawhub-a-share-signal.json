@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72791,
+  "uuid": "skill-clawhub-a-share-signal",
+  "skillKey": "clawhub-a-share-signal",
+  "name": "A股信号",
+  "summary": "基于结构化框架分析A股，结合筹码分布、三周期共振、优化KDJ、威科夫、缠论以及用户自定义评分规则，输出结构化分析结论与风险提示。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_signal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ByronNomad",
+      "features": [
+        "基于结构化框架分析A股，结合筹码分布、三周期共振、优化KDJ、威科夫、缠论以及用户自定义评分规则，输出结构化分析结论与风险提示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-signal@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61677763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-signal",
+      "url": "https://clawhub.ai/skills/a-share-signal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-signal",
+    "url": "https://clawhub.ai/skills/a-share-signal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-signal-32b09002945ecff7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-signal@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-signal-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:87c05a6c60b3e9c1a4e48501ee360892ec6841bfa759f4515da6cfd54ce532a6",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:10:22.034Z"
+}

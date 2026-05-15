@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56652,
+  "uuid": "skill-clawhub-explainer-video",
+  "skillKey": "clawhub-explainer-video",
+  "name": "Explainer",
+  "summary": "Create explainer videos with narration and AI-generated visuals. Triggers on: \"解说视频\", \"explainer video\", \"explain this as a video\", \"tutorial video\", \"introd...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.explainer_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xFango",
+      "features": [
+        "Create explainer videos with narration and AI-generated visuals",
+        "Triggers on: \"解说视频\", \"explainer video\", \"explain this as a video\", \"tutorial video\", \"introd..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/explainer-video@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42994114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "explainer-video",
+      "url": "https://clawhub.ai/skills/explainer-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "explainer-video",
+    "url": "https://clawhub.ai/skills/explainer-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/explainer-video-6183253326454cab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/explainer-video@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-explainer-video-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cc3c1ede78cc2d9a6016ea25e3dadc0063cdcffa41d5fb888353a21c8e7af11",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:03:52.143Z"
+}

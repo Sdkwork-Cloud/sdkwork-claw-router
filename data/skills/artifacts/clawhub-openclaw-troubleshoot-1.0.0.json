@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-troubleshoot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_troubleshoot",
+  "skill": {
+    "id": 19979,
+    "skillKey": "clawhub-openclaw-troubleshoot",
+    "name": "Openclaw Troubleshoot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-troubleshoot",
+    "url": "https://clawhub.ai/skills/openclaw-troubleshoot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-troubleshoot-c65d5eab07ecc722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provide step-by-step diagnostics and command-line fixes for common OpenClaw issues including memory plugin faults, Feishu disconnects, LLM timeouts, and Tele..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wayne19820905",
+      "userId": "publishers:wayne19820905",
+      "displayName": "Wayne19820905",
+      "image": "https://avatars.githubusercontent.com/u/195230825?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772638732869,
+      "changelog": "Initial release of openclaw-troubleshoot skill.\n\n- Provides step-by-step troubleshooting guides for common OpenClaw issues including memory loss, Feishu disconnection, LLM timeout, and Telegram errors.\n- Offers recommended diagnostic commands and practical repair solutions.\n- Lists configuration best practices for plugin management, validation, and backup.\n- Documents locations of key files and logs for easier manual checks and recovery.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:54853c7c47efe7026849b140375af38dcda0b86fee51914ecc11f1ccb5404d13"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17233,
+  "uuid": "skill-clawhub-sun-path",
+  "skillKey": "clawhub-sun-path",
+  "name": "Sun Path & Environmental Analysis",
+  "summary": "Generates a sun path diagram, calculates solar position, performs building shadow analysis, and analyzes thermal comfort.",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sun_path",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AddinCui",
+      "features": [
+        "Generates a sun path diagram, calculates solar position, performs building shadow analysis, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sun-path@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12784080?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sun-path",
+      "url": "https://clawhub.ai/skills/sun-path"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sun-path",
+    "url": "https://clawhub.ai/skills/sun-path",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sun-path-6571ed9be865ba5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sun-path@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sun-path-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4f9561be7e3be11baccb07ffff88b2b90ff8bde56fe16f4e364fc3d1081adc8",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T01:31:42.064Z"
+}

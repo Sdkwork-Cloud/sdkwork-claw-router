@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nantong-local-life@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nantong_local_life",
+  "skill": {
+    "id": 65362,
+    "skillKey": "clawhub-nantong-local-life",
+    "name": "Nantong Local Life"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nantong-local-life",
+    "url": "https://clawhub.ai/skills/nantong-local-life",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nantong-local-life-71acfb4c1fbc8e89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "南通本地生活指南：吃喝玩乐景点购物娱乐一站式推荐，支持中英文。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikky4678",
+      "userId": "publishers:mikky4678",
+      "displayName": "Mikky-OPC",
+      "image": "https://avatars.githubusercontent.com/u/40386275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 500,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772450754896,
+      "changelog": "Remove merchant details from public display",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e23641c8711b6d51e141c0d2b8c2d133887bbdcdc7defc675f60c375544d356"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63916,
+  "uuid": "skill-clawhub-v19-code-memory-triplet-store",
+  "skillKey": "clawhub-v19-code-memory-triplet-store",
+  "name": "V19 Code Memory Triplet Store",
+  "summary": "结构化存储\"代码片段↔关键知识点↔发生情境\"的三元组记忆，实现代码与知识的直接关联检索。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v19_code_memory_triplet_store",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liuyanfeng1234",
+      "features": [
+        "结构化存储\"代码片段↔关键知识点↔发生情境\"的三元组记忆，实现代码与知识的直接关联检索。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v19-code-memory-triplet-store@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263910752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v19-code-memory-triplet-store",
+      "url": "https://clawhub.ai/skills/v19-code-memory-triplet-store"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v19-code-memory-triplet-store",
+    "url": "https://clawhub.ai/skills/v19-code-memory-triplet-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v19-code-memory-triplet-store-a8d8f56cfaa92908.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v19-code-memory-triplet-store@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-v19-code-memory-triplet-store-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:466f68a596f9c516b63060b8d5fe894a476b867e40a9425f1233f026ae0b71d3",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T11:44:49.479Z"
+}

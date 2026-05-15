@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62684,
+  "uuid": "skill-clawhub-a-stock-report",
+  "skillKey": "clawhub-a-stock-report",
+  "name": "astock-report",
+  "summary": "A股报告生成与推送技能。触发方式：晨报（cron 08:00）、晚报（cron 20:00）、收盘小结（cron 15:00）、盘中预警（cron 每5分钟）、财经周末要闻（cron 周五20:00）、IPO周报（cron 周六09:00）。内置两套系统：①投资者情绪打分（6维度，满分100）②AI后市展望（收盘...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cookfish1979",
+      "features": [
+        "A股报告生成与推送技能。触发方式：晨报（cron 08:00）、晚报（cron 20:00）、收盘小结（cron 15:00）、盘中预警（cron 每5分钟）、财经周末要闻（cron 周五2."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-stock-report@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226437258?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-stock-report",
+      "url": "https://clawhub.ai/skills/a-stock-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-report",
+    "url": "https://clawhub.ai/skills/a-stock-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-report-692cefbb75f44cd4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-stock-report@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-stock-report-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d15eb4f71b8c964da7cdfa889e84052f747384556c5f67b474ed3672d5fe1e85",
+      "artifactSizeBytes": 2328
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T15:06:50.533Z"
+}

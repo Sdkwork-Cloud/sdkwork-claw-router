@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-push-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_push_ops",
+  "skill": {
+    "id": 41304,
+    "skillKey": "clawhub-geo-push-ops",
+    "name": "Geo Push Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-push-ops",
+    "url": "https://clawhub.ai/skills/geo-push-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-push-ops-1846c7ca8d1890da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handles Feishu message construction, sending with retries, rate limit detection, delivery diagnostics, and dead-letter queue management for geo alerts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liweijie0709-cmyk",
+      "userId": "s178pv1a35w03t664czf771xvx83p3kr",
+      "displayName": "liweijie0709-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/266322839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774595541230,
+      "changelog": "geo-push-ops v1.0.0\n\n- Initial release, split out from smart-geo-push.py v2.0.\n- Provides Feishu message construction, sending with retry and rate-limit handling.\n- Implements layered message templates for priority alerts, observations, and summaries.\n- Tracks detailed delivery diagnostics and supports dead-letter queue with re-delivery.\n- Includes Python API for message building and push, along with error handling and retry strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7079179650215caf1aeb1407e0dc8a04c24490f352241a781c373ac8340fb37b"
+}

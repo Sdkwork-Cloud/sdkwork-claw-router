@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53788,
+  "uuid": "skill-clawhub-gaoyuji",
+  "skillKey": "clawhub-gaoyuji",
+  "name": "publish test",
+  "summary": "Search products across 8 Chinese e-commerce platforms: Taobao, Tmall, JD, PDD, 1688, AliExpress, Douyin, XHS. Zero-config — no API keys needed. Powered by Sh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaoyuji",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaoyuji12138",
+      "features": [
+        "Search products across 8 Chinese e-commerce platforms: Taobao, Tmall, JD, PDD, 1688, AliExpress.",
+        "Zero-config — no API keys needed",
+        "Powered by Sh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gaoyuji@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231046781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gaoyuji",
+      "url": "https://clawhub.ai/skills/gaoyuji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaoyuji",
+    "url": "https://clawhub.ai/skills/gaoyuji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaoyuji-1837f8c8f8a3c096.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gaoyuji@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gaoyuji-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bc54687c6a61c6950ae31fdd8303798808d1ae8e84e659c920a644d50b282d3",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:25:10.045Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71943,
+  "uuid": "skill-clawhub-juhe-flight-query",
+  "skillKey": "clawhub-juhe-flight-query",
+  "name": "航班查询 - 聚合数据",
+  "summary": "航班查询。通过出发地、目的地、出发日期查询航班信息，包括航班号、起飞时间、到达时间、机票价格等。使用场景：用户说\"查一下北京到上海的航班\"、\"明天广州到北京的飞机\"、\"查询某日航班\"、\"机票价格查询\"等。通过聚合数据（juhe.cn）API 实时查询，免费注册每天免费调用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_flight_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juhe-skills",
+      "features": [
+        "航班查询。通过出发地、目的地、出发日期查询航班信息，包括航班号、起飞时间、到达时间、机票价格等。使用场景：用户说\"查一下北京到上海的航班\"、\"明天广州到北京的飞机\"、\"查询某日航班\"、\"机票."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juhe-flight-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203600343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juhe-flight-query",
+      "url": "https://clawhub.ai/skills/juhe-flight-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-flight-query",
+    "url": "https://clawhub.ai/skills/juhe-flight-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-flight-query-a2fccabf94373b27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juhe-flight-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juhe-flight-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ca9eb280e476f898cb51ec4ca5b6acff2d8a1cbac824af4403c38d1310b335e",
+      "artifactSizeBytes": 2625
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:11:54.298Z"
+}

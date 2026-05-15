@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17036,
+  "uuid": "skill-clawhub-cashu-emoji",
+  "skillKey": "clawhub-cashu-emoji",
+  "name": "Cashu Emoji",
+  "summary": "Encode and decode Cashu tokens that are hidden inside emojis using Unicode variation selectors.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashu_emoji",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rob Woodgate",
+      "features": [
+        "Encode and decode Cashu tokens that are hidden inside emojis using Unicode variation selectors."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cashu-emoji@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12084212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cashu-emoji",
+      "url": "https://clawhub.ai/skills/cashu-emoji"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashu-emoji",
+    "url": "https://clawhub.ai/skills/cashu-emoji",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashu-emoji-2078c05aa1133b00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cashu-emoji@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cashu-emoji-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e11a1b632f7459443dd7ec388e413a1569700495fb4e78eb16c4f757309dfa74",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T20:17:28.345Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/las-vegas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.las_vegas",
+  "skill": {
+    "id": 29674,
+    "skillKey": "clawhub-las-vegas",
+    "name": "Las Vegas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "las-vegas",
+    "url": "https://clawhub.ai/skills/las-vegas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/las-vegas-f3025cffa855e50b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Navigate Las Vegas as visitor, resident, remote worker, or entrepreneur with neighborhoods, entertainment, costs, and desert-living insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773315859962,
+      "changelog": "Launches a full Las Vegas city guide for visitors, residents, remote workers, and founders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b70ec6456ffadb4502dd5ecce94dcebbf6d8662ad6c8677b6adea22d971371f"
+}

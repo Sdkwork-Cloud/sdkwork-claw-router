@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59167,
+  "uuid": "skill-clawhub-voice-bridge-light",
+  "skillKey": "clawhub-voice-bridge-light",
+  "name": "Voice Bridge Light",
+  "summary": "提供兼容OpenAI接口的轻量级本地STT（Whisper）和TTS（Edge TTS/Piper）语音桥接HTTP服务。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_bridge_light",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangbb-coder",
+      "features": [
+        "提供兼容OpenAI接口的轻量级本地STT（Whisper）和TTS（Edge TTS/Piper）语音桥接HTTP服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/voice-bridge-light@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201201882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "voice-bridge-light",
+      "url": "https://clawhub.ai/skills/voice-bridge-light"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-bridge-light",
+    "url": "https://clawhub.ai/skills/voice-bridge-light",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-bridge-light-147ae9dcccc198bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/voice-bridge-light@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-voice-bridge-light-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfe5fbde01697cc3b23bba3b7094c5b2364ad96fe13df37ea5a92ddade31f62a",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:36:12.108Z"
+}

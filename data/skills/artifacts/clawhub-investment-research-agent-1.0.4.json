@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investment-research-agent@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investment_research_agent",
+  "skill": {
+    "id": 73665,
+    "skillKey": "clawhub-investment-research-agent",
+    "name": "麦赛尔夫"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investment-research-agent",
+    "url": "https://clawhub.ai/skills/investment-research-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investment-research-agent-174103c961744701.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "麦赛尔夫是一款专注于美国股票的投资研究代理，提供高质量、可追溯的数据检索、基本面分析及结构化报告编写，无主观判断，不提供投资建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuzed2",
+      "userId": "s17cr3t7rw52m8k915gjpn22ed84vy8a",
+      "displayName": "YUZED2",
+      "image": "https://avatars.githubusercontent.com/u/177829238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776158774901,
+      "changelog": "fixed suspicious problems",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71a26a0885cbff00d26b88591d475a56c573ca8ebe06cdb9fdf4d9274b0391b5"
+}

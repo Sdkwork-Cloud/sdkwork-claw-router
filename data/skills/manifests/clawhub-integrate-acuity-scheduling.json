@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38667,
+  "uuid": "skill-clawhub-integrate-acuity-scheduling",
+  "skillKey": "clawhub-integrate-acuity-scheduling",
+  "name": "Acuity Scheduling",
+  "summary": "Acuity Scheduling integration. Manage Calendars, Clients, Users, Forms, Packages, Coupons. Use when the user wants to interact with Acuity Scheduling data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_acuity_scheduling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Acuity Scheduling integration",
+        "Manage Calendars, Clients, Users, Forms, Packages, Coupons",
+        "Use when the user wants to interact with Acuity Scheduling data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-acuity-scheduling@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-acuity-scheduling",
+      "url": "https://clawhub.ai/skills/integrate-acuity-scheduling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-acuity-scheduling",
+    "url": "https://clawhub.ai/skills/integrate-acuity-scheduling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-acuity-scheduling-de98e5c29687a575.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-acuity-scheduling@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-acuity-scheduling-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f215fe9652185bbe5278e24d71b4f8500391cd4d6887f87d2c0be0246939ddd",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:35:47.004Z"
+}

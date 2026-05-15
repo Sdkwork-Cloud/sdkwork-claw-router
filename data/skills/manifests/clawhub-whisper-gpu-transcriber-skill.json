@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34270,
+  "uuid": "skill-clawhub-whisper-gpu-transcriber-skill",
+  "skillKey": "clawhub-whisper-gpu-transcriber-skill",
+  "name": "Whisper GPU Audio Transcriber",
+  "summary": "Convert audio to SRT subtitles using OpenAI Whisper with automatic GPU acceleration for Intel XPU / NVIDIA CUDA / AMD ROCm / Apple Metal. Ideal for content c...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_gpu_transcriber_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Allan.M",
+      "features": [
+        "Convert audio to SRT subtitles using OpenAI Whisper with automatic GPU acceleration for Intel X.",
+        "Ideal for content c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whisper-gpu-transcriber-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11768374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whisper-gpu-transcriber-skill",
+      "url": "https://clawhub.ai/skills/whisper-gpu-transcriber-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-gpu-transcriber-skill",
+    "url": "https://clawhub.ai/skills/whisper-gpu-transcriber-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-gpu-transcriber-skill-443974c26a98bd38.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whisper-gpu-transcriber-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-whisper-gpu-transcriber-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53f509919444312b30fa7fe2f7a636efdc01fd6c66ab82cb54f36608b85f52e4",
+      "artifactSizeBytes": 2096
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:16:06.580Z"
+}

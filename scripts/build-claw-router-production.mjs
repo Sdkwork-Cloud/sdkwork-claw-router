@@ -72,23 +72,33 @@ function createProductionBuildPlan(
       cwd: root,
     },
     {
-      label: 'portal production assets',
-      command: pnpmCommand(platform),
-      args: ['--dir', 'apps/sdkwork-claw-router-portal', 'build'],
-      env,
-      cwd: root,
-    },
-    {
       label: 'app SDK runtime build',
       command: pnpmCommand(platform),
-      args: ['--dir', 'sdks/clawrouter-app-sdk', 'build'],
+      args: ['--dir', 'sdks/clawrouter-app-sdk/clawrouter-app-sdk-typescript', 'build'],
       env,
       cwd: root,
+      attempts: 2,
     },
     {
       label: 'backend SDK runtime build',
       command: pnpmCommand(platform),
-      args: ['--dir', 'sdks/clawrouter-backend-sdk', 'build'],
+      args: ['--dir', 'sdks/clawrouter-backend-sdk/clawrouter-backend-sdk-typescript', 'build'],
+      env,
+      cwd: root,
+      attempts: 2,
+    },
+    {
+      label: 'open SDK runtime build',
+      command: pnpmCommand(platform),
+      args: ['--dir', 'sdks/clawrouter-open-sdk/clawrouter-open-sdk-typescript', 'build'],
+      env,
+      cwd: root,
+      attempts: 2,
+    },
+    {
+      label: 'portal production assets',
+      command: pnpmCommand(platform),
+      args: ['--dir', 'apps/sdkwork-claw-router-portal', 'build'],
       env,
       cwd: root,
     },
@@ -127,9 +137,10 @@ function renderProductionBuildPlan(
   ];
 }
 
-function runStep(step) {
+function runStepOnce(step, attempt = 1, attempts = 1) {
   return new Promise((resolve, reject) => {
-    console.error(`[build-production] ${step.label}: ${step.command} ${step.args.join(' ')}`);
+    const retryLabel = attempts > 1 ? ` (attempt ${attempt}/${attempts})` : '';
+    console.error(`[build-production] ${step.label}${retryLabel}: ${step.command} ${step.args.join(' ')}`);
     const child = spawn(step.command, step.args, {
       cwd: step.cwd,
       env: step.env,
@@ -151,6 +162,24 @@ function runStep(step) {
       resolve();
     });
   });
+}
+
+async function runStep(step) {
+  const attempts = Math.max(1, Number(step.attempts ?? 1));
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      await runStepOnce(step, attempt, attempts);
+      return;
+    } catch (error) {
+      lastError = error;
+      if (attempt >= attempts) {
+        break;
+      }
+      console.error(`[build-production] ${step.label} failed; retrying once to recover from transient toolchain process exits`);
+    }
+  }
+  throw lastError;
 }
 
 async function main(argv = process.argv.slice(2)) {

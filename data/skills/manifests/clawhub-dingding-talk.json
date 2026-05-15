@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71460,
+  "uuid": "skill-clawhub-dingding-talk",
+  "skillKey": "clawhub-dingding-talk",
+  "name": "给钉钉的联系人或者群发送信息",
+  "summary": "Windows 电脑端钉钉消息自动发送技能，通过键盘模拟给指定联系人发送消息。快捷命令：dt",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingding_talk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "返璞归真",
+      "features": [
+        "Windows 电脑端钉钉消息自动发送技能，通过键盘模拟给指定联系人发送消息。快捷命令：dt"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingding-talk@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265751874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingding-talk",
+      "url": "https://clawhub.ai/skills/dingding-talk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingding-talk",
+    "url": "https://clawhub.ai/skills/dingding-talk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingding-talk-4831e3ef5af0cfb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingding-talk@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingding-talk-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c32a0a6e37ec6d500761932cf860f0dfabd7b3c9592caee298b27c3b51d9c74",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:52:28.786Z"
+}

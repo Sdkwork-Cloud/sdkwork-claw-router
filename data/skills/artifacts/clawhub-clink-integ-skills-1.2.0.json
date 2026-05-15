@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clink-integ-skills@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clink_integ_skills",
+  "skill": {
+    "id": 49799,
+    "skillKey": "clawhub-clink-integ-skills",
+    "name": "clink-interg-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clink-integ-skills",
+    "url": "https://clawhub.ai/skills/clink-integ-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clink-integ-skills-44e802ab52f45e61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design, scaffold, validate, and review Clink standard integrations, new user onboarding, merchant skill for generic agent integrations, merchant skill for Op..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dylanclink",
+      "userId": "s17fm27jnjcvtt8eeznw2d667x86b55t",
+      "displayName": "DylanClink",
+      "image": "https://avatars.githubusercontent.com/u/266758192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 66,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1778232804089,
+      "changelog": "clink-integ-skills 1.2.0\n\n- Expanded documentation in SKILL.md to clarify supported integration scenarios and routing paths.\n- Detailed the scope for new user onboarding, standard integration, merchant OpenClaw, and generic agent integrations.\n- Outlined references and step-by-step workflows for each scenario.\n- Codified best practices for documentation use, routing, review, and artifact generation.\n- Stressed modular skill composition and strict adherence to official documentation and contracts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e38ca9acbf9e71f07309b8cdeeab1eebaa01205d6ad2bce432c599b4a528f944"
+}

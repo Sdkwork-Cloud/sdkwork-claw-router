@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rocketchat@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocketchat",
+  "skill": {
+    "id": 15437,
+    "skillKey": "clawhub-rocketchat",
+    "name": "RocketChat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocketchat",
+    "url": "https://clawhub.ai/skills/rocketchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocketchat-be73fb846f10e1ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Rocket.Chat team messaging - channels, messages, users, integrations via REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zenjabba",
+      "userId": "publishers:zenjabba",
+      "displayName": "zenjabba",
+      "image": "https://avatars.githubusercontent.com/u/679864?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 897,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771367868448,
+      "changelog": "- Skill overview and usage documentation rewritten for clarity and conciseness.\n- Environment variable names updated (`ROCKETCHAT_*` → `RC_*`) for consistency.\n- Added new sections for integrations, user management (create user, set status), and server statistics.\n- API usage examples now note incoming webhook endpoints and authentication.\n- Explained rate limits and referenced official API documentation.\n- Kept key identifiers, command examples, and \"ideas to try\" for user guidance.\n- Internal version reset in docs to 1.0.0 for new documentation style.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a9adba715452ec4a445b98dca9de467a709352e5471b985b0bc8f9b4132ed465"
+}

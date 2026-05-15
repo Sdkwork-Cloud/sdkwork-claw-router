@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67098,
+  "uuid": "skill-clawhub-whiteboard-prompt-crafter",
+  "skillKey": "clawhub-whiteboard-prompt-crafter",
+  "name": "Whiteboard Prompt Crafter",
+  "summary": "将用户的简短关键词扩展为精美的白板插图提示词，并调用 image_synthesize 生成图片。 触发场景：用户说\"生成白板图\"、\"做个白板插图\"、\"这种风格的图怎么做\"、 \"帮我画一个XX的白板图\"，或上传参考图要求生成类似风格。 核心特点：生成的图片只有白板本身，无背景，白板占满画面。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whiteboard_prompt_crafter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingyuan",
+      "features": [
+        "将用户的简短关键词扩展为精美的白板插图提示词，并调用 image_synthesize 生成图片。 触发场景：用户说\"生成白板图\"、\"做个白板插图\"、\"这种风格的图怎么做\"、 \"帮我画一个X."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whiteboard-prompt-crafter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267627552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whiteboard-prompt-crafter",
+      "url": "https://clawhub.ai/skills/whiteboard-prompt-crafter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whiteboard-prompt-crafter",
+    "url": "https://clawhub.ai/skills/whiteboard-prompt-crafter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whiteboard-prompt-crafter-de5ecb84e33f6885.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whiteboard-prompt-crafter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whiteboard-prompt-crafter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3724750b7024b0430e2d5d1813e58859c81fc860c56b0e9e5d920523ac4624ec",
+      "artifactSizeBytes": 2584
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T04:02:55.903Z"
+}

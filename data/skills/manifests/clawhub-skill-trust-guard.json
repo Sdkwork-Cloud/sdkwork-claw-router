@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17558,
+  "uuid": "skill-clawhub-skill-trust-guard",
+  "skillKey": "clawhub-skill-trust-guard",
+  "name": "Skill Trust Guard",
+  "summary": "Enforces skill-trust-scanner security checks before installing skills, blocking or alerting based on risk scores to reduce supply chain threats.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_trust_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Flynn Guo",
+      "features": [
+        "Enforces skill-trust-scanner security checks before installing skills, blocking or alerting bas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-trust-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48667439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-trust-guard",
+      "url": "https://clawhub.ai/skills/skill-trust-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-trust-guard",
+    "url": "https://clawhub.ai/skills/skill-trust-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-trust-guard-b5127301960ddf94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-trust-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-trust-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68b4c374e3007e2c45d8a56ecf45b8263d89e285a7645c9f0675c8250e592100",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T00:51:40.355Z"
+}

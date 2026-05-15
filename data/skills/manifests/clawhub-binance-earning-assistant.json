@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59527,
+  "uuid": "skill-clawhub-binance-earning-assistant",
+  "skillKey": "clawhub-binance-earning-assistant",
+  "name": "币安撸毛助手 By：0x_WanG",
+  "summary": "币安撸毛助手 - 展示币安最新撸毛活动信息，包括理财产品、活动奖励、空投预告等。Use when user asks for \"今日撸毛\", \"币安活动\", \"赚钱活动\", \"撸毛信息\", \"Binance earning\", \"airdrop info\", or any query about Binance...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_earning_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luckylion68",
+      "features": [
+        "展示币安最新撸毛活动信息，包括理财产品、活动奖励、空投预告等。Use when user asks for \"今日撸毛\", \"币安活动\", \"赚钱活动\", \"撸毛信息\", \"Binance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/binance-earning-assistant@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219605563?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "binance-earning-assistant",
+      "url": "https://clawhub.ai/skills/binance-earning-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-earning-assistant",
+    "url": "https://clawhub.ai/skills/binance-earning-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-earning-assistant-6645e697a74bb39f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/binance-earning-assistant@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-binance-earning-assistant-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdfe14fd85a9d05460a5d9a1e1bc318f10d37bab7ce878fddf500610ca3c3cfc",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:35:40.140Z"
+}

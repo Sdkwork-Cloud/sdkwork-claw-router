@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/automated-tweet-scheduler@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automated_tweet_scheduler",
+  "skill": {
+    "id": 58280,
+    "skillKey": "clawhub-automated-tweet-scheduler",
+    "name": "Automated Tweet Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automated-tweet-scheduler",
+    "url": "https://clawhub.ai/skills/automated-tweet-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automated-tweet-scheduler-059db90a0a18e7c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自動化Twitter排程發布工具 - 幫你schedule tweets、分析Engagement、管理content calendar。支持thread scheduling、media upload、analytics dashboard"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katrina-jpg",
+      "userId": "publishers:katrina-jpg",
+      "displayName": "Katrina-jpg",
+      "image": "https://avatars.githubusercontent.com/u/259838385?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 817,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771544216292,
+      "changelog": "Automated Tweet Scheduler 1.0.0 – initial release:\n\n- Schedule tweets and threads with queue system and optimized posting times.\n- Visual content calendar with drag & drop, edit, and delete for scheduled posts.\n- Thread builder with visual editing, preview, and auto-break features.\n- Engagement analytics including best times, growth, and top tweets.\n- Media support: upload images, videos, GIFs, and set alt text.\n- Available plans: Free, Pro, and Business with flexible tweet limits.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06bb509ad9e16683537d03ce6f4cafbfe6d10fe6550644de20420ef8947ad477"
+}

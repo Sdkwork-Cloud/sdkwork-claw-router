@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erc8004-identity@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erc8004_identity",
+  "skill": {
+    "id": 13326,
+    "skillKey": "clawhub-erc8004-identity",
+    "name": "ERC-8004 Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erc8004-identity",
+    "url": "https://clawhub.ai/skills/erc8004-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erc8004-identity-fc3e1dc837bde34a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and manage an AI agent's onchain identity, reputation, and task capabilities on Avalanche using the ERC-8004 NFT standard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ijaack",
+      "userId": "s17e3gjpsxfdsgxv67gc3hm3tx83g435",
+      "displayName": "Giacomo Barbieri",
+      "image": "https://avatars.githubusercontent.com/u/6631681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1452,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770460297252,
+      "changelog": "Initial release: Deploy onchain AI agent identity on Avalanche",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e6a17b5182b8684144c842c5754d20946b39fc1b5c99a7f3b480dd2b47f971d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-reader@3.1.3",
+  "version": "3.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_reader",
+  "skill": {
+    "id": 20192,
+    "skillKey": "clawhub-github-reader",
+    "name": "Github Reader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-reader",
+    "url": "https://clawhub.ai/skills/github-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-reader-ee55cafe14123cea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically interprets GitHub repositories to generate structured reports with project stats, core features, architecture highlights, and quick links."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krislu1221",
+      "userId": "s1722js5hsngdpp170necz8fgn83r9q4",
+      "displayName": "Krislu",
+      "image": "https://avatars.githubusercontent.com/u/258380416?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "3.1.3",
+      "createdAt": 1774190764731,
+      "changelog": "- Added SECURITY_AUDIT.md to enhance documentation of security practices.\n- Updated ClawHub metadata (clawhub.json).\n- No changes to core features or user-facing functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5aaf8b01a3858ebeafce0edb36ee862991d922f5ebcb9e50412a79266f262d5f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72586,
+  "uuid": "skill-clawhub-xhs-daily-ranking",
+  "skillKey": "clawhub-xhs-daily-ranking",
+  "name": "xhs-daily-ranking（小红书每日风向标）",
+  "summary": "分类查询当日热门笔记：按美妆、穿搭、美食等分类检索小红书当天热度最高的笔记，快速掌握各赛道头部内容。进行单日爆款笔记分析，查看单日互动增长最快、曝光飙升的笔记详情，分析其标题、封面、内容结构等爆款特征。追踪各领域当日趋势，监测不同领域的实时热度变化，识别正在起量的内容方向，预判下一波流量风口。最终基于当日爆款内容...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_daily_ranking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "if530770",
+      "features": [
+        "分类查询当日热门笔记：按美妆、穿搭、美食等分类检索小红书当天热度最高的笔记，快速掌握各赛道头部内容。进行单日爆款笔记分析，查看单日互动增长最快、曝光飙升的笔记详情，分析其标题、封面、内容结构."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-daily-ranking@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46310539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-daily-ranking",
+      "url": "https://clawhub.ai/skills/xhs-daily-ranking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-daily-ranking",
+    "url": "https://clawhub.ai/skills/xhs-daily-ranking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-daily-ranking-2cea08f3525195a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-daily-ranking@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-daily-ranking-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:804debe2811997393677b5500d947476d75de067d1d9f0529e1627a35fff2309",
+      "artifactSizeBytes": 2436
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T11:25:08.660Z"
+}

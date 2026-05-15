@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26230,
+  "uuid": "skill-clawhub-stayforge-api",
+  "skillKey": "clawhub-stayforge-api",
+  "name": "stayforge-api",
+  "summary": "Hotel booking and accommodation search using StayForge API - hotel booking, hotel search, accommodation booking, hotel reservation, find hotels, book hotels,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stayforge_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jbennett111",
+      "features": [
+        "Hotel booking and accommodation search using StayForge API",
+        "hotel booking, hotel search, accommodation booking, hotel reservation, find hotels, book hotels."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stayforge-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86585533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stayforge-api",
+      "url": "https://clawhub.ai/skills/stayforge-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stayforge-api",
+    "url": "https://clawhub.ai/skills/stayforge-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stayforge-api-2e015f8d104dcffb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stayforge-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stayforge-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8037c71cb5a72718a1c980dff8b6772715d4a4ac2136290b8e3fd9309051bf31",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T22:19:09.820Z"
+}

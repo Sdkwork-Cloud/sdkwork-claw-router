@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64461,
+  "uuid": "skill-clawhub-competitor-monitor-weekly",
+  "skillKey": "clawhub-competitor-monitor-weekly",
+  "name": "competitor-monitor-weekly",
+  "summary": "每周自动抓取竞品动态，分析趋势，生成结构化报告并通过飞书或邮件推送给团队。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_monitor_weekly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zlszhonglongshen",
+      "features": [
+        "每周自动抓取竞品动态，分析趋势，生成结构化报告并通过飞书或邮件推送给团队。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor-monitor-weekly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9023908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor-monitor-weekly",
+      "url": "https://clawhub.ai/skills/competitor-monitor-weekly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-monitor-weekly",
+    "url": "https://clawhub.ai/skills/competitor-monitor-weekly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-monitor-weekly-b9f6f8e1a3cf658b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor-monitor-weekly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-monitor-weekly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a4d876fad6b9daa1d04f8725c17f7308fcaf8c2c7810fb0d103b947c79a2101",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T13:04:01.707Z"
+}

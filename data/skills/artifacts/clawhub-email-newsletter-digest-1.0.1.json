@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-newsletter-digest@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_newsletter_digest",
+  "skill": {
+    "id": 24905,
+    "skillKey": "clawhub-email-newsletter-digest",
+    "name": "Email Newsletter Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-newsletter-digest",
+    "url": "https://clawhub.ai/skills/email-newsletter-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-newsletter-digest-f101648d9291caae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarizes recent newsletter emails received in Gmail into a single newsletter digest. This skill identifies newsletter emails using configured labels or sen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neeravmakwana",
+      "userId": "s17ewa46kw9ek5crkre09pc0z583y65n",
+      "displayName": "Neerav Makwana",
+      "image": "https://avatars.githubusercontent.com/u/261249544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773795063518,
+      "changelog": "Harden the skill for ClawHub scanning by removing direct home-config reads, removing bundled third-party tap installers, and reducing error output exposure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c4b8240f12a9f9d0afd40f75245388ebd1f35381d8e1f8b3e7634dc1e0266ad"
+}

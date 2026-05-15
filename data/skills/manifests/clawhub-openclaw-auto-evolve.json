@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70392,
+  "uuid": "skill-clawhub-openclaw-auto-evolve",
+  "skillKey": "clawhub-openclaw-auto-evolve",
+  "name": "OpenClaw自动进化系统",
+  "summary": "OpenClaw 自进化系统 - 让AI具备自我学习与自我提升能力 通过「犯错→学习→提炼→强化」的闭环机制，实现真正的自我改进 核心能力：自动发现问题、分析根因、提出建议、验证效果、落地形成规则",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_auto_evolve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junge",
+      "features": [
+        "OpenClaw 自进化系统",
+        "让AI具备自我学习与自我提升能力 通过「犯错→学习→提炼→强化」的闭环机制，实现真正的自我改进 核心能力：自动发现问题、分析根因、提出建议、验证效果、落地形成规则"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-auto-evolve@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235723176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-auto-evolve",
+      "url": "https://clawhub.ai/skills/openclaw-auto-evolve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-auto-evolve",
+    "url": "https://clawhub.ai/skills/openclaw-auto-evolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-auto-evolve-94d5eabb61547eb6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-auto-evolve@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-auto-evolve-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea4e6784acb241d7b7fc74019a36544b92c16f821ae7c1d80553e2c9a6601dc0",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T09:14:53.786Z"
+}

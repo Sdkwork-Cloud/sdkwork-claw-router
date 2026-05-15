@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36413,
+  "uuid": "skill-clawhub-unblu",
+  "skillKey": "clawhub-unblu",
+  "name": "Unblu",
+  "summary": "Unblu integration. Manage data, records, and automate workflows. Use when the user wants to interact with Unblu data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unblu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Unblu integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Unblu data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unblu@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unblu",
+      "url": "https://clawhub.ai/skills/unblu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unblu",
+    "url": "https://clawhub.ai/skills/unblu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unblu-bc49466adf9f20b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unblu@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-unblu-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35fdd784aa30ef9d89312b303e79f6d0799b14151fdb180115e3b9ef54e83395",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:08:02.502Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-antseed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_antseed",
+  "skill": {
+    "id": 18572,
+    "skillKey": "clawhub-openclaw-antseed",
+    "name": "OpenClaw AntSeed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-antseed",
+    "url": "https://clawhub.ai/skills/openclaw-antseed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-antseed-b8f83a61a4a91910.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect OpenClaw to the AntSeed P2P AI network as a buyer. Use when: user asks to connect OpenClaw to AntSeed, route OpenClaw through AntSeed, set up AntSeed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kotevcode",
+      "userId": "publishers:kotevcode",
+      "displayName": "Shahaf",
+      "image": "https://avatars.githubusercontent.com/u/10106174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772120643547,
+      "changelog": "Initial release: connect OpenClaw to AntSeed P2P network as a buyer",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:421989502b7092a2f14e432849fda8bf6ec442623ad3ac95f97960935a04f7fd"
+}

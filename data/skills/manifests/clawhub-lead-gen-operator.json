@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18274,
+  "uuid": "skill-clawhub-lead-gen-operator",
+  "skillKey": "clawhub-lead-gen-operator",
+  "name": "Lead Gen Operator",
+  "summary": "Automated lead generation assistant - finds companies, scores them, writes personalized outreach emails, and tracks pipeline.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_gen_operator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lober",
+      "features": [
+        "Automated lead generation assistant",
+        "finds companies, scores them, writes personalized outreach emails, and tracks pipeline."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-gen-operator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261447432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-gen-operator",
+      "url": "https://clawhub.ai/skills/lead-gen-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-gen-operator",
+    "url": "https://clawhub.ai/skills/lead-gen-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-gen-operator-160b2b648e22a7c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-gen-operator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-gen-operator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:32784ae08d10c330cb0d50e1d85cfce05818f2269150d7fef6fdce8020db2fab",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T17:04:13.200Z"
+}

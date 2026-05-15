@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45300,
+  "uuid": "skill-clawhub-mind-log",
+  "skillKey": "clawhub-mind-log",
+  "name": "MindLogger",
+  "summary": "Sends daily journal prompts via Telegram, stores user replies in MindLog, and delivers weekly pattern analysis reports every Sunday at 2pm ET.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mind_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Urim Aliu",
+      "features": [
+        "Sends daily journal prompts via Telegram, stores user replies in MindLog, and delivers weekly p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mind-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103965667?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mind-log",
+      "url": "https://clawhub.ai/skills/mind-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mind-log",
+    "url": "https://clawhub.ai/skills/mind-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mind-log-5d55fb5cf44bcaf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mind-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mind-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7103a038d24fcf90042174b44466e0d01a0e2f4de3d5a0ce160fb11a4103ef16",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:46:01.180Z"
+}

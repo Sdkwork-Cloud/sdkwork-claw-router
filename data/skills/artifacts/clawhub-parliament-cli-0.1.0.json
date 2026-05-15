@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parliament-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parliament_cli",
+  "skill": {
+    "id": 53110,
+    "skillKey": "clawhub-parliament-cli",
+    "name": "Parliament CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parliament-cli",
+    "url": "https://clawhub.ai/skills/parliament-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parliament-cli-e0d5856755c1d794.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "UK Parliament CLI — search bills, divisions, members, and written questions from official UK Parliament APIs, with stable JSON envelopes for agents. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shan8851",
+      "userId": "s174pggpvzf6ncw463rmj1madd83g10q",
+      "displayName": "shan8851",
+      "image": "https://avatars.githubusercontent.com/u/39712238?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776588872374,
+      "changelog": "Initial release for parliament-cli",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78d4d5e12a41313c87e077db5867fb530487742417c3b8a387f062676f29e8df"
+}

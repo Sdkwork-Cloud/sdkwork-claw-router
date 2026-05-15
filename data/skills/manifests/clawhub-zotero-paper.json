@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58972,
+  "uuid": "skill-clawhub-zotero-paper",
+  "skillKey": "clawhub-zotero-paper",
+  "name": "zotero-paper",
+  "summary": "将论文保存到 Zotero 文库，请按照 userid:apiKey 的格式配置 ZOTERO_CREDENTIALS 环境变量。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_paper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GloamingBlue",
+      "features": [
+        "将论文保存到 Zotero 文库，请按照 userid:apiKey 的格式配置 ZOTERO_CREDENTIALS 环境变量。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zotero-paper@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88764261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zotero-paper",
+      "url": "https://clawhub.ai/skills/zotero-paper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-paper",
+    "url": "https://clawhub.ai/skills/zotero-paper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-paper-42ea1545e11e5d86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zotero-paper@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zotero-paper-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c28a75fb0458809a82652d8f64a55e833534cdf979503b5bddd004105860dc00",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:53:57.968Z"
+}

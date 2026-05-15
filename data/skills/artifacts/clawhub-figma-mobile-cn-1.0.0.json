@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-mobile-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_mobile_cn",
+  "skill": {
+    "id": 59961,
+    "skillKey": "clawhub-figma-mobile-cn",
+    "name": "Figma Mobile Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-mobile-cn",
+    "url": "https://clawhub.ai/skills/figma-mobile-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-mobile-cn-2e668b1a30a9cce5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将 Figma 设计稿转为移动端 UI 代码（Android Jetpack Compose / XML，iOS SwiftUI / UIKit）。 在用户粘贴 Figma 链接并希望生成布局代码时使用。 通过 Figma REST API 提取设计树与 token，必要时追问澄清，再输出可落地的工程代码。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775614985658,
+      "changelog": "- 首发版本：Figma 设计稿一键转移动端 UI 代码，支持 Android（Jetpack Compose/XML）与 iOS（SwiftUI/UIKit）\n- 粘贴 Figma 链接并自动解析结构，拉取组件树并澄清歧义，输出可直接落地的原生代码\n- 简明交互流程，自动理解主要区域、动态列表、显著属性等，避免重复询问\n- 支持多平台、工程资源复用、反馈记录与规则沉淀\n- 内置异常处理与常见问题指引，降低集成与使用门槛",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dbbb9793da86bb75bfb11a6e4541d558cbab5dfe0059e7968a8d2a3aceaee003"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22949,
+  "uuid": "skill-clawhub-web-autopilot",
+  "skillKey": "clawhub-web-autopilot",
+  "name": "Web Autopilot",
+  "summary": "Record any web app operation once, AI turns it into a reusable automation tool. Use when: (1) automating repetitive tasks on any web application (reports, su...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_autopilot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kckyan",
+      "features": [
+        "Record any web app operation once, AI turns it into a reusable automation tool",
+        "Use when: (1) automating repetitive tasks on any web application (reports, su..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-autopilot@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87274064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-autopilot",
+      "url": "https://clawhub.ai/skills/web-autopilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-autopilot",
+    "url": "https://clawhub.ai/skills/web-autopilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-autopilot-7be5c98876356f71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-autopilot@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-autopilot-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:383b04601ad8f0801f77f61fa7b759c27b641d899f8839bd55aa28822bd83ade",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T16:40:00.916Z"
+}

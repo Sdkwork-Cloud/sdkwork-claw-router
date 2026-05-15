@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39532,
+  "uuid": "skill-clawhub-paper-title-generator",
+  "skillKey": "clawhub-paper-title-generator",
+  "name": "Paper Title Generator",
+  "summary": "Generate optimized paper titles for different academic venues and styles. Activated when Chopin submits a paper draft and needs title suggestions, or when st...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_title_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chopin",
+      "features": [
+        "Generate optimized paper titles for different academic venues and styles",
+        "Activated when Chopin submits a paper draft and needs title suggestions, or when st..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-title-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81441834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-title-generator",
+      "url": "https://clawhub.ai/skills/paper-title-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-title-generator",
+    "url": "https://clawhub.ai/skills/paper-title-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-title-generator-cca8a75e03883369.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-title-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-title-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abbaf4456d81d61acf9cf9c2eee22411522f907d93b53eb6205d85fa127adaa5",
+      "artifactSizeBytes": 2474
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T12:19:12.788Z"
+}

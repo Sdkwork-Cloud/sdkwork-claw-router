@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16280,
+  "uuid": "skill-clawhub-cpp",
+  "skillKey": "clawhub-cpp",
+  "name": "C++",
+  "summary": "Avoid common C++ mistakes — memory leaks, dangling references, undefined behavior, and ownership confusion.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Avoid common C++ mistakes — memory leaks, dangling references, undefined behavior, and ownershi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpp@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpp",
+      "url": "https://clawhub.ai/skills/cpp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpp",
+    "url": "https://clawhub.ai/skills/cpp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpp-a5b50343c8eded95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpp@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpp-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f38521cbb57c6821e083380d7a65824749231f5ebb63557e00fe0157e4f029b",
+      "artifactSizeBytes": 1755
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T21:07:29.943Z"
+}

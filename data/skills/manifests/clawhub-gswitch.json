@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35478,
+  "uuid": "skill-clawhub-gswitch",
+  "skillKey": "clawhub-gswitch",
+  "name": "GSwitch",
+  "summary": "Orchestrates a virtual engineering team with 7 roles working sequentially: Think, Plan, Build, Review, Test, Ship, and Reflect via shared memory coordination.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gswitch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "garysze77",
+      "features": [
+        "Orchestrates a virtual engineering team with 7 roles working sequentially: Think, Plan, Build,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gswitch@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213480852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gswitch",
+      "url": "https://clawhub.ai/skills/gswitch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gswitch",
+    "url": "https://clawhub.ai/skills/gswitch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gswitch-8d48c441f904b505.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gswitch@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gswitch-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:772db9ce3cb76e30311295912a803731427ac96386837684b217ae69b0ae7594",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T04:56:41.878Z"
+}

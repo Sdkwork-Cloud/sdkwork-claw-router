@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-competitor-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_competitor_monitor",
+  "skill": {
+    "id": 24889,
+    "skillKey": "clawhub-afrexai-competitor-monitor",
+    "name": "AfrexAI Competitor Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-competitor-monitor",
+    "url": "https://clawhub.ai/skills/afrexai-competitor-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-competitor-monitor-00a4f226c2f7cb45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tracks and analyzes competitor moves — pricing changes, feature launches, hiring, and positioning shifts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1133,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770951445215,
+      "changelog": "Competitor Monitor 1.0.0 – Initial Release\n\n- Provides a structured framework to track and analyze competitor activities, including pricing, features, positioning, hiring, content, funding, reviews, and social signals.\n- Generates actionable intelligence reports with status, recent changes, implications, and strategic recommendations.\n- Outlines specific guidance for immediate, short-term, and quarterly competitive responses.\n- Includes clear usage instructions and rules to ensure insights are strategic, not superficial.\n- References related tools for deeper lead scoring, SEO analysis, and industry context.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec972e74d056aaf323a6c2dfc85c4fe4bdbc6ca4c104e050329af1a1afb2f7a5"
+}

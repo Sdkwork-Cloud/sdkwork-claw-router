@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-cashflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_cashflow",
+  "skill": {
+    "id": 53740,
+    "skillKey": "clawhub-agent-cashflow",
+    "name": "Agent Cashflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-cashflow",
+    "url": "https://clawhub.ai/skills/agent-cashflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-cashflow-bb44a69b01fe5c21.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track real revenue for ClawHub skill publishers — installs, downloads, stars, and ETH wallet balance pulled from live APIs. No fabricated numbers. Use when y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "infectit007",
+      "userId": "s171ga0cxj8fjzqn3br33sncn984rqam",
+      "displayName": "infectit007",
+      "image": "https://avatars.githubusercontent.com/u/164786261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776106074549,
+      "changelog": "Initial release. Real revenue tracking for ClawHub publishers — live API data only, zero fabricated numbers. ETH wallet + ClawHub installs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2342245ca2dc5e4250a0dff4ac5d3a13382ccb20dfdc56b86a954bf735523230"
+}

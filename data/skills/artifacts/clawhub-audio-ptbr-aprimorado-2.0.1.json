@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-ptbr-aprimorado@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_ptbr_aprimorado",
+  "skill": {
+    "id": 39841,
+    "skillKey": "clawhub-audio-ptbr-aprimorado",
+    "name": "Audio PTBR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-ptbr-aprimorado",
+    "url": "https://clawhub.ai/skills/audio-ptbr-aprimorado",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-ptbr-aprimorado-a15203cd7fdd17f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Premium Portuguese-Brazilian voice interface with neural TTS and Claude AI integration. Features wav2vec2-large-xlsr-53-ptBR for excellent PT-BR understandin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henrique-simoes",
+      "userId": "s17c7e7kybcp5695mkbh69nd5x84n6ef",
+      "displayName": "Rick",
+      "image": "https://avatars.githubusercontent.com/u/208473501?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776147661506,
+      "changelog": "- Added _meta.json manifest for improved skill metadata and integration.\n- Introduced event hook for automatic audio processing on message receipt.\n- Added trigger for `/voz` command to configure or process audio via script.\n- Updated skill configuration for better audio processing permissions and scope.\n- No changes to core functionality; all enhancements focus on better integration and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9561599c82e27105680dc2726af4ed15a984f2c369f4ea23dc9239d7906197e5"
+}

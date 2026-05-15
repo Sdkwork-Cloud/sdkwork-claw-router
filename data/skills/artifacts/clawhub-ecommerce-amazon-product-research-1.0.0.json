@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-amazon-product-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_amazon_product_research",
+  "skill": {
+    "id": 19936,
+    "skillKey": "clawhub-ecommerce-amazon-product-research",
+    "name": "Amazon Product Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-amazon-product-research",
+    "url": "https://clawhub.ai/skills/ecommerce-amazon-product-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-amazon-product-research-d8e82a065035e1a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Amazon product research and opportunity analysis. Evaluate market demand, competition intensity, profit potential, and entry barriers for any p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nexscope",
+      "userId": "s17dwyzs7t74hqkesy6xh9wszx83hgt0",
+      "displayName": "nexscope-ai",
+      "image": "https://avatars.githubusercontent.com/u/265748176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774404626040,
+      "changelog": "- Major simplification and rewrite of documentation for clarity and structure\n- Removed setup, implementation details, and usage examples tied to previous APIs and scripts\n- New concise description focusing on market analysis, competition, and profit evaluation\n- Updated supported platforms (added Shopify, WooCommerce, Walmart, TikTok Shop, Etsy, eBay, BigCommerce)\n- Added a new methodology outlining step-by-step analysis and output standards\n- All auxiliary, script, and README files removed; only core skill definition retained",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5990841092c0a5466bf8c0662d060abc60183f7048ae0031686a1305e8a9cd48"
+}

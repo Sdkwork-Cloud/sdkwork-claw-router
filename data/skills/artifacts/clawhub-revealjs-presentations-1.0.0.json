@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/revealjs-presentations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.revealjs_presentations",
+  "skill": {
+    "id": 21134,
+    "skillKey": "clawhub-revealjs-presentations",
+    "name": "Revealjs Presentations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "revealjs-presentations",
+    "url": "https://clawhub.ai/skills/revealjs-presentations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/revealjs-presentations-dee0720d7d56e750.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, edit, and deploy reveal.js presentations as single HTML files with optional custom CSS. Use when asked to create a presentation, slide deck, pitch de..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielgrobelny",
+      "userId": "s1707neksyywgz1cnjq6552yk583h31v",
+      "displayName": "DanielGrobelny",
+      "image": "https://avatars.githubusercontent.com/u/7581754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 422,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774356671429,
+      "changelog": "Initial release: reveal.js v5 CDN-based presentations with fragments, auto-animate, themes, plugins, custom CSS, deployment guides, and comprehensive API reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64017563be424cb8db4ff3c6065e67d29bec9628b63a07563a4fe71512e8289a"
+}

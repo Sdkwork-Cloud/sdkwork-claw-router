@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49085,
+  "uuid": "skill-clawhub-feed-diet",
+  "skillKey": "clawhub-feed-diet",
+  "name": "feed-diet",
+  "summary": "Audit your information diet across HN and RSS feeds — beautiful reports with category breakdowns, ASCII charts, and personalized recommendations.",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feed_diet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Todd Kuehnl",
+      "features": [
+        "Audit your information diet across HN and RSS feeds — beautiful reports with category breakdown."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feed-diet@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25701510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feed-diet",
+      "url": "https://clawhub.ai/skills/feed-diet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feed-diet",
+    "url": "https://clawhub.ai/skills/feed-diet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feed-diet-8717a9558b760c95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feed-diet@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feed-diet-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31f6d586aff744642eb756a457d8d24fb57e9798485d12a9886a52b203e250bd",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:41:06.531Z"
+}

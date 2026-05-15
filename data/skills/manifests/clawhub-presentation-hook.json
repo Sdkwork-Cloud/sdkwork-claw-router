@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42435,
+  "uuid": "skill-clawhub-presentation-hook",
+  "skillKey": "clawhub-presentation-hook",
+  "name": "Presentation Hook",
+  "summary": "Creates engaging opening statements and powerful closings for medical.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presentation_hook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Creates engaging opening statements and powerful closings for medical."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/presentation-hook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "presentation-hook",
+      "url": "https://clawhub.ai/skills/presentation-hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presentation-hook",
+    "url": "https://clawhub.ai/skills/presentation-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presentation-hook-41aa3d0a5827a4ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/presentation-hook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-presentation-hook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:078a0f002ab69c26b95dd9d3a799fad423fb467ccddf1bdc6f3bc4bd57c3310c",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T08:56:45.518Z"
+}

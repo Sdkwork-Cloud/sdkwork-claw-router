@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65701,
+  "uuid": "skill-clawhub-cms-tbs-scene-create",
+  "skillKey": "clawhub-cms-tbs-scene-create",
+  "name": "cms-tbs-scene-create",
+  "summary": "提供【TBS 训战场景创建】全流程执行能力。用户一旦表达“创建场景/生成对练场景/医药代表训练/销售训练/校验场景/确认落库”等执行意图，必须进入本 Skill 的分阶段脚本调用流程；仅当用户明确是纯咨询时，才允许先文字说明并二次确认是否执行。本 Skill 依赖 `cms-auth-skills` 获取 `ac...",
+  "version": "0.6.33",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_tbs_scene_create",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "提供【TBS 训战场景创建】全流程执行能力。用户一旦表达“创建场景/生成对练场景/医药代表训练/销售训练/校验场景/确认落库”等执行意图，必须进入本 Skill 的分阶段脚本调用流程；仅当用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-tbs-scene-create@0.6.33",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-tbs-scene-create",
+      "url": "https://clawhub.ai/skills/cms-tbs-scene-create"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-tbs-scene-create",
+    "url": "https://clawhub.ai/skills/cms-tbs-scene-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-tbs-scene-create-0cad2c2ee8ac9c55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-tbs-scene-create@0.6.33",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-tbs-scene-create-0.6.33.json",
+      "version": "0.6.33",
+      "runtime": "metadata",
+      "checksumHash": "sha256:460b28c0d6f3fbec7b943175dd577600928ddcad25003528ef9a94a756e2e3e8",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:44:06.284Z"
+}

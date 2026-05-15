@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "topic-research",
+    "displayName": "Topic Research",
+    "summary": "Run a second-hop deep research pass through the Tavily CLI after an initial scan, then normalize the result into a local `research.md` contract. Use when Cod...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775575139546,
+    "updatedAt": 1777527286882
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775575139546,
+    "changelog": "- Initial release of the `topic-research` skill for deep research on selected topics.\n- Runs a second-hop investigation using Tavily CLI, following an initial scan or news collection.\n- Normalizes reports into a local `research.md` contract, including a writing decision layer to guide content follow-up.\n- Requires a markdown input with YAML fields (topic, question, model, etc.).\n- Outputs structured research reports and saves raw source data for traceability.\n- Ensures strict dependency handling and consistent output format.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "abigale-cyber",
+    "userId": "s177gvvwbgtc3ew8annt8ph3gx84c2xt",
+    "displayName": "Abigale-cyber",
+    "image": "https://avatars.githubusercontent.com/u/237663252?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527286882
+  }
+}

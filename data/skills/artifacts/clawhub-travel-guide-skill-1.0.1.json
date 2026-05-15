@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-guide-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_guide_skill",
+  "skill": {
+    "id": 73718,
+    "skillKey": "clawhub-travel-guide-skill",
+    "name": "出游攻略助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-guide-skill",
+    "url": "https://clawhub.ai/skills/travel-guide-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-guide-skill-176d7cab787f91f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能旅行攻略生成器。当用户想要制定旅行计划、询问旅游攻略、需要行程安排时使用。根据目的地、日期、人员、预算等信息，通过实时网络查询生成包含机票酒店、游玩计划、交通、美食、天气的完整攻略。所有价格、时间等关键信息必须来自网络查询并标注来源。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wendyhufh",
+      "userId": "s173akezqtehzp3cwqxbemtfn58439yn",
+      "displayName": "WendyHu",
+      "image": "https://avatars.githubusercontent.com/u/48543239?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775199711004,
+      "changelog": "travel-guide-skill v1.1.0 introduces strict data authenticity requirements and improves trust in travel guides.\n\n- 强化了所有关键信息必须实时网络查询并标明来源，禁止编造价格、航班号、餐厅名等数据。\n- 修改 skill 描述，突出用途、流程和来源要求。\n- 新增了数据真实性原则、信息标注格式、查询失败处理说明及来源可信度优先级。\n- 输出建议和预算等均需清晰区分“估算”与可查数据，充分提示用户自行核实。\n- 全文增加示例，要求每个价格与推荐都标注具体查询来源和时间。\n- 后续服务说明新增可实时更新单项价格等功能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6cdf61a06cb7ce80fae7c8cf036494e2f4f2df3ca27c66b1c9be2d61eb7c1d3"
+}

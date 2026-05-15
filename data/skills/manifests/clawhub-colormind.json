@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15972,
+  "uuid": "skill-clawhub-colormind",
+  "skillKey": "clawhub-colormind",
+  "name": "Colormind",
+  "summary": "Generate color palettes and get color suggestions via the Colormind.io API (list models, generate palettes with optional locked colors).",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colormind",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "boilerrat",
+      "features": [
+        "Generate color palettes and get color suggestions via the Colormind.io API (list models, genera."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/colormind@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34731569?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "colormind",
+      "url": "https://clawhub.ai/skills/colormind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colormind",
+    "url": "https://clawhub.ai/skills/colormind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colormind-90c1a7723fa123a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/colormind@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-colormind-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edb24c3967fc53c724868db8ef3b311dc5e458f96de715a40fe0661f14f90412",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T03:58:53.195Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ethnoai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ethnoai",
+  "skill": {
+    "id": 22403,
+    "skillKey": "clawhub-ethnoai",
+    "name": "nutcracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ethnoai",
+    "url": "https://clawhub.ai/skills/ethnoai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ethnoai-91c209baa7000fd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An embedded UX research skill that deeply studies how users interact with OpenClaw through passive ethnographic observation, structured micro-surveys, and re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "giulianomorse",
+      "userId": "publishers:giulianomorse",
+      "displayName": "giulianomorse",
+      "image": "https://avatars.githubusercontent.com/u/210213190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 463,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772523652940,
+      "changelog": "v2.0.0 is a major upgrade introducing deep, privacy-respecting UX research:\n\n- Adds passive, ethnographic observation of all user interactions for workflow and unmet need analysis.\n- Implements sequential micro-surveys after every task, plus a daily wrap-up survey at 18:00 local time.\n- Tracks actual token usage and per-task costs to increase user awareness.\n- Identifies the most notable or complex tasks and generates detailed case studies with full logs.\n- Enforces strict local data storage with automatic PII redaction before saving, ensuring user privacy and full control.\n- Compiles daily insight reports that users can review, edit, and share at their discretion.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25ef68e5a15ccf79dca374e4a297719d6429463931bea3cdd443d009130715c4"
+}

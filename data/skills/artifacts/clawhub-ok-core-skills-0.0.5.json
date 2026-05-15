@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ok-core-skills@0.0.5",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ok_core_skills",
+  "skill": {
+    "id": 51086,
+    "skillKey": "clawhub-ok-core-skills",
+    "name": "Ok Core Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ok-core-skills",
+    "url": "https://clawhub.ai/skills/ok-core-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ok-core-skills-cdda43ec23ecbe92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OK Skills — automate OK.com, a global classifieds and marketplace platform. Search listings, browse categories, view listing details, manage favorites, and m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "winterw",
+      "userId": "s177sw64xmgsrgb2ewz8d2djcs8584sm",
+      "displayName": "WinterW",
+      "image": "https://avatars.githubusercontent.com/u/12880581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.0.5",
+      "createdAt": 1776999622350,
+      "changelog": "- Improved search functionality in scripts/ok/full_search.py\n- Updated route handling in scripts/ok/urls.py",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d6f0a2c4ed143dfa6f85616958cef3959c11135a4ec33c9d4c84efac1645cf2"
+}

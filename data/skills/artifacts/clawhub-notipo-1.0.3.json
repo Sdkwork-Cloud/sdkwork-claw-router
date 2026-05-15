@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/notipo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notipo",
+  "skill": {
+    "id": 26213,
+    "skillKey": "clawhub-notipo",
+    "name": "notipo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notipo",
+    "url": "https://clawhub.ai/skills/notipo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notipo-b51015ce6e30cd6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish blog posts from AI agents to WordPress via Notion. One API call handles page creation, markdown conversion, image uploads, featured image generation,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kfuras",
+      "userId": "s177znvr7xxm57226fectxtjdh83gnxf",
+      "displayName": "kfuras",
+      "image": "https://avatars.githubusercontent.com/u/7188679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 371,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775818589653,
+      "changelog": "- Added support for updating existing posts with the new notipo posts update command.\n- Documented usage for updating post content, metadata, and re-syncing changes to WordPress.\n- Expanded CLI reference with posts update flags and examples.\n- Added API documentation for PATCH /api/posts/:id to update posts.\n- No other changes to core workflow or post creation behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:909f1cf230c9e925b7ec515a2fd522a4373759308c56f5ec3fced6f0f15873fe"
+}

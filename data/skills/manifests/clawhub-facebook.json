@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8985,
+  "uuid": "skill-clawhub-facebook",
+  "skillKey": "clawhub-facebook",
+  "name": "Facebook",
+  "summary": "OpenClaw skill for Facebook Graph API workflows focused on Pages posting, comments, and Page management using direct HTTPS requests.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codedao12",
+      "features": [
+        "OpenClaw skill for Facebook Graph API workflows focused on Pages posting, comments, and Page ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facebook@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249323427?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facebook",
+      "url": "https://clawhub.ai/skills/facebook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook",
+    "url": "https://clawhub.ai/skills/facebook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-3d59f7548e1af215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facebook@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-facebook-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e4e188fe86bc8bf200ee0d3c77de69bb73c40ea7013eb62b056c5834eb3c0e2",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T10:38:31.580Z"
+}

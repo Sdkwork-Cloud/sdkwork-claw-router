@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9485,
+  "uuid": "skill-clawhub-study-habits",
+  "skillKey": "clawhub-study-habits",
+  "name": "Study Habits",
+  "summary": "Build effective study habits with spaced repetition, active recall, and session tracking",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_habits",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhillin8",
+      "features": [
+        "Build effective study habits with spaced repetition, active recall, and session tracking"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/study-habits@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79551560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "study-habits",
+      "url": "https://clawhub.ai/skills/study-habits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-habits",
+    "url": "https://clawhub.ai/skills/study-habits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-habits-03ae2173f38458fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/study-habits@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-study-habits-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7eeb0c788e105220cb4dc7ee6a907e5c7ab13b4661581cb71d9ef1430fdf8dd6",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T07:37:23.178Z"
+}

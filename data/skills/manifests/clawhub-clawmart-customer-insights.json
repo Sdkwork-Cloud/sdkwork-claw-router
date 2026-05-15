@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65370,
+  "uuid": "skill-clawhub-clawmart-customer-insights",
+  "skillKey": "clawhub-clawmart-customer-insights",
+  "name": "ClawMart Customer Insights",
+  "summary": "分析客户行为和成交数据，提供客户分级、成交预测及个性化营销建议，助力精准跟进和转化提升。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmart_customer_insights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "分析客户行为和成交数据，提供客户分级、成交预测及个性化营销建议，助力精准跟进和转化提升。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawmart-customer-insights@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawmart-customer-insights",
+      "url": "https://clawhub.ai/skills/clawmart-customer-insights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmart-customer-insights",
+    "url": "https://clawhub.ai/skills/clawmart-customer-insights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmart-customer-insights-e29a3ab22c359ae4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawmart-customer-insights@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawmart-customer-insights-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9d96a1dd3bc7132f962ac8c618b256d1e5fa1a63040a58b7ba093c3cead22ef",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:42:22.431Z"
+}

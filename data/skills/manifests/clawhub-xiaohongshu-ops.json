@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66079,
+  "uuid": "skill-clawhub-xiaohongshu-ops",
+  "skillKey": "clawhub-xiaohongshu-ops",
+  "name": "xiaohongshu 小红书自动运营",
+  "summary": "小红书相关操作，覆盖账号定位、选题研究、内容生产、发布执行与复盘修复的小红书全链路运营技能。凡是小红书的浏览/搜索/发布/评论任务，默认必须使用 OpenClaw 内置浏览器流程并指定 profile=\"openclaw\"；除非用户明确要求，否则不要使用系统 open 或外部浏览器。",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZOOZOO",
+      "features": [
+        "小红书相关操作，覆盖账号定位、选题研究、内容生产、发布执行与复盘修复的小红书全链路运营技能。凡是小红书的浏览/搜索/发布/评论任务，默认必须使用 OpenClaw 内置浏览器流程并指定 pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-ops@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11496495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-ops",
+      "url": "https://clawhub.ai/skills/xiaohongshu-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-ops",
+    "url": "https://clawhub.ai/skills/xiaohongshu-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-ops-3b3a31b7e1d94c81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-ops@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-ops-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc3352367cebf392fd7643ab759e1907d078e39f5bf78cc868c68500ee45c459",
+      "artifactSizeBytes": 2809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:39:52.261Z"
+}

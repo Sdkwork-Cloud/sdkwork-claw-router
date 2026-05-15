@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30496,
+  "uuid": "skill-clawhub-wisediag-medocr",
+  "skillKey": "clawhub-wisediag-medocr",
+  "name": "WiseDiag MedOCR",
+  "summary": "PDF & Image OCR — Convert a single PDF or image to Markdown via WiseDiag cloud API, with high-accuracy text extraction, table recognition, and multi-column l...",
+  "version": "1.0.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wisediag_medocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wisediag",
+      "features": [
+        "PDF & Image OCR — Convert a single PDF or image to Markdown via WiseDiag cloud API, with high-a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wisediag-medocr@1.0.26",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/102396016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wisediag-medocr",
+      "url": "https://clawhub.ai/skills/wisediag-medocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wisediag-medocr",
+    "url": "https://clawhub.ai/skills/wisediag-medocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wisediag-medocr-ed1b76c1b6dfc751.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wisediag-medocr@1.0.26",
+      "artifactUrl": "data/skills/artifacts/clawhub-wisediag-medocr-1.0.26.json",
+      "version": "1.0.26",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0160d12c20acd87b31c0668244238973d1ba28afd64c835b4fd85c75efda4cfc",
+      "artifactSizeBytes": 2213
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:28:17.963Z"
+}

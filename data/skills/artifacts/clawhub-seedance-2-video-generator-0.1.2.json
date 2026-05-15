@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seedance-2-video-generator@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedance_2_video_generator",
+  "skill": {
+    "id": 26570,
+    "skillKey": "clawhub-seedance-2-video-generator",
+    "name": "Seedance 2 Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedance-2-video-generator",
+    "url": "https://clawhub.ai/skills/seedance-2-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedance-2-video-generator-ecc1c12ce9ef5bce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Werydance 2.0 videos through WeryAI for text-to-video, image-to-video, multi-image video, and first-frame/last-frame transitions. Use when you need..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fwwdn",
+      "userId": "s170ex8ttg10hrew681fwjwejh83gvm4",
+      "displayName": "Weiwei Fan",
+      "image": "https://avatars.githubusercontent.com/u/3015434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774429336232,
+      "changelog": "**Werydance 2.0 video generator now supports almighty reference modes and local file upload.**\n\n- Added support for multimodal \"almighty\" reference-to-video generation, accepting images, videos, audios, and text in one request.\n- Supports local file paths for images, videos, and audios with automatic uploading—no need for public URLs.\n- New strict validations for almighty mode: total media/file count, duration, field limits per OpenAPI.\n- Smart routing: selects the correct WeryAI API route based on input types (legacy modes, or almighty mode).\n- Dry-run improvements: displays which local files would be uploaded before running paid generation.\n- Documentation updates for new modes, constraints, and field guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:606c0f5b5efa4ec757610bf95cedd7923f69e5247c9c74b2b2e6271f3bdccde5"
+}

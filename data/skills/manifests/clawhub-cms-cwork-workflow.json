@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69070,
+  "uuid": "skill-clawhub-cms-cwork-workflow",
+  "skillKey": "clawhub-cms-cwork-workflow",
+  "name": "工作协同官方skill",
+  "summary": "提供【工作协同】全流程执行能力。用户一旦表达“写汇报/发汇报/发周报/提交汇报/查看收件箱/查待办/任务协作/业务单元”等执行意图，必须进入本 Skill 的脚本调用流程；仅当用户明确是纯咨询（如问规则、问怎么做）时，才允许先文字说明并二次确认是否执行。本 Skill 通过依赖 `cms-auth-skills`...",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cms_cwork_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "spzwin",
+      "features": [
+        "提供【工作协同】全流程执行能力。用户一旦表达“写汇报/发汇报/发周报/提交汇报/查看收件箱/查待办/任务协作/业务单元”等执行意图，必须进入本 Skill 的脚本调用流程；仅当用户明确是纯咨."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cms-cwork-workflow@1.0.13",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48741773?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cms-cwork-workflow",
+      "url": "https://clawhub.ai/skills/cms-cwork-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cms-cwork-workflow",
+    "url": "https://clawhub.ai/skills/cms-cwork-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cms-cwork-workflow-82278ff280ad3445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cms-cwork-workflow@1.0.13",
+      "artifactUrl": "data/skills/artifacts/clawhub-cms-cwork-workflow-1.0.13.json",
+      "version": "1.0.13",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cfdf2273c6e551bb972004aaf6f1a138e92178b5b2b020c4e87e19fe807e9d8",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:54:16.217Z"
+}

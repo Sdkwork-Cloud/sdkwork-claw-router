@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/otp-challenger@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.otp_challenger",
+  "skill": {
+    "id": 10242,
+    "skillKey": "clawhub-otp-challenger",
+    "name": "Otp Challenger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "otp-challenger",
+    "url": "https://clawhub.ai/skills/otp-challenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/otp-challenger-c64a02604f883de6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable agents and skills to challenge users for fresh two-factor authentication proof (TOTP or YubiKey) before executing sensitive actions. Use this for identity verification in approval workflows - deploy commands, financial operations, d."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryancnelson",
+      "userId": "s17exr93c9x1ybe7y3q8q1wgc185s0t2",
+      "displayName": "Ryan Nelson",
+      "image": "https://avatars.githubusercontent.com/u/347171?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 2858,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1770874753744,
+      "changelog": "Version 1.0.6\n\n- Expanded required binaries and environment variable documentation in SKILL.md.\n- Added details for privileged features and OTP failure hooks.\n- Noted `qrencode` requirement for `generate-secret.sh`.\n- Improved clarity of configuration, environment variables, and installation sections.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7201cea94a48108b186bdb5e62d969477067380cf63ca915e61982e6cc27daa4"
+}

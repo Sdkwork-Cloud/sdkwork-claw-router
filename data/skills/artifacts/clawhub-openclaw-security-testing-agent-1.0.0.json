@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-security-testing-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_testing_agent",
+  "skill": {
+    "id": 63797,
+    "skillKey": "clawhub-openclaw-security-testing-agent",
+    "name": "Security Testing Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-testing-agent",
+    "url": "https://clawhub.ai/skills/openclaw-security-testing-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-testing-agent-47634797dc725a39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全测试Agent。漏洞扫描、渗透测试、代码审计、安全加固。触发词：安全、渗透、漏洞、xss、sql注入、csrf、扫描、审计。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775695576736,
+      "changelog": "openclaw-security-testing-agent 1.0.0\n\n- Initial release of the AI-driven security testing agent\n- Supports vulnerability scanning, penetration testing, code auditing, and security hardening\n- Covers SAST (static analysis), DAST (dynamic analysis), SCA (dependency scanning), secret/key leakage, and container image scanning\n- Integrates with tools such as SonarQube, Semgrep, CodeQL, OWASP ZAP, BurpSuite, Snyk, Trivy, and others\n- Provides Python-based frameworks for detecting common web vulnerabilities including SQL injection, XSS, and CSRF",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1765621e91499f55d10fd5617ba098030447e9a3b718a6bd30bc76ce2a31c75"
+}

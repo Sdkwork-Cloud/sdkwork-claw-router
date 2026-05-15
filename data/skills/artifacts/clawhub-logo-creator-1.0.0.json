@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/logo-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logo_creator",
+  "skill": {
+    "id": 50441,
+    "skillKey": "clawhub-logo-creator",
+    "name": "Logo Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logo-creator",
+    "url": "https://clawhub.ai/skills/logo-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logo-creator-100e9448defe2641.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Engineer professional-grade brand logos using geometric primitives and negative space — generates minimalist, scalable vector-style marks via muapi.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anil-matcha",
+      "userId": "publishers:anil-matcha",
+      "displayName": "Anil Chandra Naidu Matcha",
+      "image": "https://avatars.githubusercontent.com/u/4326215?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 541,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773408647134,
+      "changelog": "Initial release of the Logo Creator skill for AI agents.\n\n- Enables creation of professional, minimalist vector-style logos using basic geometric shapes and negative space.\n- Includes guidelines for color, typography, flat design, and scalability across all logo types.\n- Provides a protocol for prompt optimization and structured brand briefs.\n- Enforces strict production constraints for consistency and legibility.\n- Supports multiple logo styles (pictorial, abstract, lettermark, emblem, mascot) with clear use cases.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f525de76076ec1d89adadbf95052ded8bffcc781e4927f5702f1aae9643e67e0"
+}

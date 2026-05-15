@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resend-email@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resend_email",
+  "skill": {
+    "id": 13504,
+    "skillKey": "clawhub-resend-email",
+    "name": "resend-email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resend-email",
+    "url": "https://clawhub.ai/skills/resend-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resend-email-760cb964dd16c838.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send emails via Resend API from any verified domain. Use when sending emails, notifications, or automated messages. Supports HTML and plain text. Default voi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vladchatware",
+      "userId": "publishers:vladchatware",
+      "displayName": "Vlad Rimsha",
+      "image": "https://avatars.githubusercontent.com/u/703823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1377,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772270864446,
+      "changelog": "Add receiving/webhook configuration instructions (Clawdbot + Tailscale Funnel + MagicDNS); include example inbound transform",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:299a1e5e79420393e61367b8253f6abba26bfb4a17889497fab17f43218493e4"
+}

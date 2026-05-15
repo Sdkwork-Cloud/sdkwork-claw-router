@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28839,
+  "uuid": "skill-clawhub-duckduckgo-search-skills",
+  "skillKey": "clawhub-duckduckgo-search-skills",
+  "name": "duckduckgo-search-skills",
+  "summary": "Search the web using DuckDuckGo. No API key required. Supports instant answers and HTML scraping modes. Privacy-focused search alternative.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duckduckgo_search_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cscsxx",
+      "features": [
+        "Search the web using DuckDuckGo",
+        "No API key required",
+        "Supports instant answers and HTML scraping modes",
+        "Privacy-focused search alternative."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duckduckgo-search-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10043543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duckduckgo-search-skills",
+      "url": "https://clawhub.ai/skills/duckduckgo-search-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duckduckgo-search-skills",
+    "url": "https://clawhub.ai/skills/duckduckgo-search-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duckduckgo-search-skills-237ee1a1673ccf0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duckduckgo-search-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-duckduckgo-search-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdd519b062510badb7278845e8915c645536ea62340f86504eb8b2290eb114c1",
+      "artifactSizeBytes": 2385
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:31:43.758Z"
+}

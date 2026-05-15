@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "abe-diet-tracker",
+    "displayName": "abe-diet-tracker",
+    "summary": "Tracks daily diet and calculates nutrition information to help achieve weight loss goals. Use when user provides meal information, asks about calorie intake,...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1776917390962,
+    "updatedAt": 1777527882939
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1776917390962,
+    "changelog": "Initial release of the diet-tracker skill:\n\n- Tracks daily diet and calculates nutrition (calories, protein, carbs, fat) to support weight loss goals.\n- Logs meals and provides remaining calorie/macronutrient budgets, with clear estimation if nutrition data is missing.\n- Integrates with cron jobs to automatically remind users to log lunch and dinner.\n- Reads user calorie/macro targets and profile from USER.md; calculates TDEE based on activity.\n- Enforces strict data logging format including calories and macronutrient grams for each meal.\n- Handles errors gracefully, prompting for missing user/profile data or food nutrition info as needed.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "abeltennyson",
+    "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+    "displayName": "AbelTennyson",
+    "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527882939
+  }
+}

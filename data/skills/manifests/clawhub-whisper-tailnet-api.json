@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25669,
+  "uuid": "skill-clawhub-whisper-tailnet-api",
+  "skillKey": "clawhub-whisper-tailnet-api",
+  "name": "Whisper Tailnet API",
+  "summary": "Consume the shared Whisper speech-to-text API over Tailnet at http://100.92.116.99:8765 using OpenAI-compatible audio transcription endpoint (/v1/audio/trans...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisper_tailnet_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lotfinity",
+      "features": [
+        "Consume the shared Whisper speech-to-text API over Tailnet at http://100.92.116.99:8765 using O."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whisper-tailnet-api@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174400846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whisper-tailnet-api",
+      "url": "https://clawhub.ai/skills/whisper-tailnet-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisper-tailnet-api",
+    "url": "https://clawhub.ai/skills/whisper-tailnet-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisper-tailnet-api-651521d53535a98c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whisper-tailnet-api@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-whisper-tailnet-api-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dd6b2f5cf6f803a45b9f5471a165b4f0a4a440c9773cea2d71bb8b6babd8d37",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T14:02:40.370Z"
+}

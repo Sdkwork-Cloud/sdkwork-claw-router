@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42103,
+  "uuid": "skill-clawhub-hootsuite-integration",
+  "skillKey": "clawhub-hootsuite-integration",
+  "name": "Hootsuite",
+  "summary": "Hootsuite integration. Manage Users, Teams. Use when the user wants to interact with Hootsuite data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hootsuite_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Hootsuite integration",
+        "Manage Users, Teams",
+        "Use when the user wants to interact with Hootsuite data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hootsuite-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hootsuite-integration",
+      "url": "https://clawhub.ai/skills/hootsuite-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hootsuite-integration",
+    "url": "https://clawhub.ai/skills/hootsuite-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hootsuite-integration-2c5c6cab7d9d85d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hootsuite-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-hootsuite-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86825f7d4f1969dd44379dd8b4be07c1442743284f91f50c77a24594655f3b57",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:33:45.560Z"
+}

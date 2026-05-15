@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72710,
+  "uuid": "skill-clawhub-resume-optimization",
+  "skillKey": "clawhub-resume-optimization",
+  "name": "简历优化技能",
+  "summary": "基于目标岗位JD分析简历匹配度，提供关键词优化、STAR法则改写等具体建议；当用户需要优化简历、改进简历、提升简历匹配度时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_optimization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "马龙",
+      "features": [
+        "基于目标岗位JD分析简历匹配度，提供关键词优化、STAR法则改写等具体建议；当用户需要优化简历、改进简历、提升简历匹配度时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-optimization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/185081395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-optimization",
+      "url": "https://clawhub.ai/skills/resume-optimization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-optimization",
+    "url": "https://clawhub.ai/skills/resume-optimization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-optimization-c624ff19129cf362.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-optimization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-optimization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d7c09443649ceca0ca63b8f429ff8a4ede1cacf3daf6da016a4a3653a7841f9",
+      "artifactSizeBytes": 2941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:40:45.217Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hug-video-generator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hug_video_generator_free",
+  "skill": {
+    "id": 43113,
+    "skillKey": "clawhub-hug-video-generator-free",
+    "name": "Hug Video Generator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hug-video-generator-free",
+    "url": "https://clawhub.ai/skills/hug-video-generator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hug-video-generator-free-ed831b7e40397d3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate photos or images into animated hug videos with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. social media users use it for creating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776769065257,
+      "changelog": "hug-video-generator-free 1.0.0\n\n- Launch of skill to generate AI-animated hug videos from user photos/images (JPG, PNG, WEBP, HEIC).\n- Handles files up to 200MB; outputs 1080p MP4 files in about 30–90 seconds using cloud GPUs.\n- Flexible workflows: upload, edit, and export hug videos with quick feedback.\n- Integrated credits tracking, error messaging, and session management for a smooth experience.\n- Guides users with prompts, concrete instructions, and an intuitive timeline summary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a75db41aa5b39b51d07920116b43a34e2ee50b67781b59f3ad7dc2d26f57aa8"
+}

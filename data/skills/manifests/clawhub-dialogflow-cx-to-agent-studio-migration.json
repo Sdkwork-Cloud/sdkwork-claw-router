@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25122,
+  "uuid": "skill-clawhub-dialogflow-cx-to-agent-studio-migration",
+  "skillKey": "clawhub-dialogflow-cx-to-agent-studio-migration",
+  "name": "Dialogflow CX to CX Agent Studio Migration Skill",
+  "summary": "Migrate Dialogflow CX agents to CX Agent Studio (CES) using official REST/RPC APIs. Exports full CX agent packages, validates components (intents, entities,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dialogflow_cx_to_agent_studio_migration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yash Kavaiya",
+      "features": [
+        "Migrate Dialogflow CX agents to CX Agent Studio (CES) using official REST/RPC APIs",
+        "Exports full CX agent packages, validates components (intents, entities,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dialogflow-cx-to-agent-studio-migration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103239923?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dialogflow-cx-to-agent-studio-migration",
+      "url": "https://clawhub.ai/skills/dialogflow-cx-to-agent-studio-migration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dialogflow-cx-to-agent-studio-migration",
+    "url": "https://clawhub.ai/skills/dialogflow-cx-to-agent-studio-migration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dialogflow-cx-to-agent-studio-migration-d449ec9c082ee863.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dialogflow-cx-to-agent-studio-migration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dialogflow-cx-to-agent-studio-migration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1866476f3fa91637935dc9627125000491f4ab29bc05447cb81f83118bc2212c",
+      "artifactSizeBytes": 2526
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:08:42.878Z"
+}

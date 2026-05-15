@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopping-in-se@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_in_se",
+  "skill": {
+    "id": 25660,
+    "skillKey": "clawhub-shopping-in-se",
+    "name": "Shopping in Sweden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-in-se",
+    "url": "https://clawhub.ai/skills/shopping-in-se",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-in-se-919dc2150161ba6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assist with searching, adding to cart, and securely purchasing products from trusted Swedish e-commerce sites using the Zupyak Mynt Card."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caoqi",
+      "userId": "publishers:caoqi",
+      "displayName": "caoooqiii",
+      "image": "https://avatars.githubusercontent.com/u/430893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773560484081,
+      "changelog": "Initial release: Swedish e-commerce shopping skill with Klarna/Stripe/Adyen payment support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:463635d21b47889a2f724e34ff9cec38849e2ffeb66ba9f2c8d652a20465fbe0"
+}

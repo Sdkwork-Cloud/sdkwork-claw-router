@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19321,
+  "uuid": "skill-clawhub-lemnos-cost-guard",
+  "skillKey": "clawhub-lemnos-cost-guard",
+  "name": "Lemnos Cost Guard",
+  "summary": "Real-time API cost tracking, context bloat detection, and budget enforcement for OpenClaw agents. Use when setting up cost guardrails, checking daily spend,...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lemnos_cost_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "getlemnos32",
+      "features": [
+        "Real-time API cost tracking, context bloat detection, and budget enforcement for OpenClaw agents",
+        "Use when setting up cost guardrails, checking daily spend,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lemnos-cost-guard@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/248950239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lemnos-cost-guard",
+      "url": "https://clawhub.ai/skills/lemnos-cost-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lemnos-cost-guard",
+    "url": "https://clawhub.ai/skills/lemnos-cost-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lemnos-cost-guard-9d494316d9648624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lemnos-cost-guard@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lemnos-cost-guard-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6752638425375fd4fa266174e0b50a3a320f88ce737ca2aa6f228346244852f3",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T01:08:22.352Z"
+}

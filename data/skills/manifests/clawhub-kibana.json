@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50690,
+  "uuid": "skill-clawhub-kibana",
+  "skillKey": "clawhub-kibana",
+  "name": "Kibana",
+  "summary": "Kibana API integration with managed authentication. This is a write-capable integration — it can read, create, update, and delete saved objects, dashboards,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kibana",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Kibana API integration with managed authentication",
+        "This is a write-capable integration — it can read, create, update, and delete saved objects, da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kibana@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kibana",
+      "url": "https://clawhub.ai/skills/kibana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kibana",
+    "url": "https://clawhub.ai/skills/kibana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kibana-805c028db6cf7561.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kibana@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-kibana-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:314581a74520cc110e4b2bc21069cf37c9a01e312aee465716e282caf0580e1f",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T10:21:56.100Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mano-afk@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mano_afk",
+  "skill": {
+    "id": 52165,
+    "skillKey": "clawhub-mano-afk",
+    "name": "mano-afk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mano-afk",
+    "url": "https://clawhub.ai/skills/mano-afk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mano-afk-4c154dac8965eda3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous full-cycle app builder. Turns a natural language description into a production-ready application — PRD, architecture, code, deployment, testing, a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanningwang",
+      "userId": "s175nb9hv26h88dzxry3zcx61n83hzp4",
+      "displayName": "HanningWang",
+      "image": "https://avatars.githubusercontent.com/u/12138760?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1777450676908,
+      "changelog": "mano-afk 1.0.6\n\n- Clarified that the skill only requires curl by default; other binaries (e.g., npm, pip) are used as needed based on the user's project and are not fixed dependencies.\n- Updated documentation under \"Data, Privacy & Safety\" to explain when development toolchains are used.\n- No functional or code changes; documentation update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03247722d8a13400b6724ebb86ac2735d4c36a231210910235cba2a397dfd797"
+}

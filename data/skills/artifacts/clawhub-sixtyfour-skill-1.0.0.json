@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sixtyfour-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sixtyfour_skill",
+  "skill": {
+    "id": 54578,
+    "skillKey": "clawhub-sixtyfour-skill",
+    "name": "Sixtyfour Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sixtyfour-skill",
+    "url": "https://clawhub.ai/skills/sixtyfour-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sixtyfour-skill-d3501f96bbc4690a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "People and company intelligence via the Sixtyfour AI API. AI research agents that read the live web — not static databases — to return structured, confidence..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rxhxm",
+      "userId": "publishers:rxhxm",
+      "displayName": "rxhxm",
+      "image": "https://avatars.githubusercontent.com/u/81479366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772616849579,
+      "changelog": "Sixtyfour-skill 1.0.0 — initial release\n\n- Provides company and people enrichment via the Sixtyfour AI API, focused on live web research (not static databases).\n- Supports endpoints for lead and company enrichment, email and phone finding, lead scoring, natural language and filter-based search, and batch workflows.\n- Returns structured, confidence-scored data with customizable fields.\n- Offers both synchronous and asynchronous API support with sample payloads, response formats, and setup documentation.\n- Targets users needing accurate, up-to-date people/company data for lead enrichment, research, and outreach.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b50299d3ae8ffd5780d0831e8d9b7da28dc561c7db0172fcdd72693e78cf9c40"
+}

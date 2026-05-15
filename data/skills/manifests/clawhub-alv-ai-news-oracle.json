@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45057,
+  "uuid": "skill-clawhub-alv-ai-news-oracle",
+  "skillKey": "clawhub-alv-ai-news-oracle",
+  "name": "Ai News Oracle",
+  "summary": "Fetch real-time AI news briefings powered by SkillBoss API Hub (Hacker News, TechCrunch, The Verge). Uses SkillBoss search and chat capabilities for news agg...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alv_ai_news_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Fetch real-time AI news briefings powered by SkillBoss API Hub (Hacker News, TechCrunch, The Ve.",
+        "Uses SkillBoss search and chat capabilities for news agg..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alv-ai-news-oracle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alv-ai-news-oracle",
+      "url": "https://clawhub.ai/skills/alv-ai-news-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alv-ai-news-oracle",
+    "url": "https://clawhub.ai/skills/alv-ai-news-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alv-ai-news-oracle-78a83ea515dce213.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alv-ai-news-oracle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alv-ai-news-oracle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf0d8f2e45680e8506d6050e0513907c72bd28b2dc5780fa1e2eb6c599620c66",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T02:48:26.185Z"
+}

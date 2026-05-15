@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27693,
+  "uuid": "skill-clawhub-indigo-governance",
+  "skillKey": "clawhub-indigo-governance",
+  "name": "Indigo Governance",
+  "summary": "Query Indigo Protocol governance data including protocol parameters, polls, .",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indigo_governance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Angelos Kappos",
+      "features": [
+        "Query Indigo Protocol governance data including protocol parameters, polls, ."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/indigo-governance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9395707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "indigo-governance",
+      "url": "https://clawhub.ai/skills/indigo-governance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indigo-governance",
+    "url": "https://clawhub.ai/skills/indigo-governance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indigo-governance-fd87ae4924e3a258.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/indigo-governance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-indigo-governance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1894214515e9f19f144be5bc7ca920f471da4552d156e0d7e544e6b09e88ed0b",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T22:26:09.651Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-media@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_media",
+  "skill": {
+    "id": 55983,
+    "skillKey": "clawhub-agent-media",
+    "name": "Agent Media: Generate AI-powered videos and images from the terminal using the `agent-media` CLI."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-media",
+    "url": "https://clawhub.ai/skills/agent-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-media-f344806881c2e819.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI UGC video production from the terminal using the `agent-media` CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nevo-david",
+      "userId": "s17ees28yb2fktpcyfrfy9mx3n83ppvx",
+      "displayName": "nevo-david",
+      "image": "https://avatars.githubusercontent.com/u/100117126?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1071,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772615427223,
+      "changelog": "agent-media 1.0.1\n\n- Overhauled documentation to focus on AI-driven UGC (User-Generated Content) and SaaS review video production via CLI.\n- Added strict mandatory rules for UGC video creation, including requirements for actor, script word count, B-roll with descriptive filenames, product name in script, and always using `--sync`.\n- Expanded and detailed UGC pipeline commands, flags, and templates for versatile video generation.\n- Provided step-by-step instructions and examples for generating SaaS review videos, emphasizing completeness and quality.\n- Updated tips and usage patterns reflecting the new feature set and workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:50c80353dd651bc8c97335fd31cc10cd5789c5fd6f1b39ef918940725fbc230a"
+}

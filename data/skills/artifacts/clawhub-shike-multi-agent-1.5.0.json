@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shike-multi-agent@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shike_multi_agent",
+  "skill": {
+    "id": 35964,
+    "skillKey": "clawhub-shike-multi-agent",
+    "name": "Shike Multi Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shike-multi-agent",
+    "url": "https://clawhub.ai/skills/shike-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shike-multi-agent-640f274d25d0cba0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-Agent dispatch system for Chinese. Dispatcher delegates to 5 persistent sub-agents via sessions_spawn. Supports polling, reply-then-dispatch, sessionKe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sjj2026",
+      "userId": "s17c5cc5h6ka4bc1q3je0zwk4983vjj7",
+      "displayName": "sjj2026",
+      "image": "https://avatars.githubusercontent.com/u/271952160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1776291164318,
+      "changelog": "Fixed metadata consistency, unified version and author info",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33e25dd672b51c7cf23726e42a3959d21bbd438f018e65217fbd0c4c0455d331"
+}

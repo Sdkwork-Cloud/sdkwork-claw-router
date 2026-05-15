@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/easy-opencode@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easy_opencode",
+  "skill": {
+    "id": 14326,
+    "skillKey": "clawhub-easy-opencode",
+    "name": "easy-opencode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easy-opencode",
+    "url": "https://clawhub.ai/skills/easy-opencode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easy-opencode-3293b8c8877e2d7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "opencode can do all the things related to code"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deciding",
+      "userId": "publishers:deciding",
+      "displayName": "deciding",
+      "image": "https://avatars.githubusercontent.com/u/7264985?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 982,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771855086979,
+      "changelog": "fix warnings",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e28fc43726ce2423826c3e15982cc8ed63abe0d1caabca2f32db9c553c61f45b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31919,
+  "uuid": "skill-clawhub-forcemanager",
+  "skillKey": "clawhub-forcemanager",
+  "name": "Forcemanager",
+  "summary": "ForceManager integration. Manage data, records, and automate workflows. Use when the user wants to interact with ForceManager data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forcemanager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ForceManager integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ForceManager data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/forcemanager@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "forcemanager",
+      "url": "https://clawhub.ai/skills/forcemanager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forcemanager",
+    "url": "https://clawhub.ai/skills/forcemanager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forcemanager-d4c4386f3c17ad31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/forcemanager@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-forcemanager-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e07e8d6f9ec27385dcdd6ab4b01ddccc2ad630584b97b44f7d5eb53322ff749",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:14.376Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-evolution@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_evolution",
+  "skill": {
+    "id": 23124,
+    "skillKey": "clawhub-hermes-evolution",
+    "name": "Hermes Evolution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-evolution",
+    "url": "https://clawhub.ai/skills/hermes-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-evolution-ab4e9ce1655f577b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hermes Evolution enhances OpenClaw with fast PM routing, proactive self-check, auto skill generation, user profiling, layered memory, and continuous learning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuritu",
+      "userId": "s1744ab01t267234gfqqgrgqh183tehc",
+      "displayName": "wuritu",
+      "image": "https://avatars.githubusercontent.com/u/105037187?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775913134085,
+      "changelog": "Hermes Evolution v1.0.0\n\n- 初始发布，基于 OpenClaw 增强并兼容所有版本\n- 提供 23 个模块，涵盖任务管理、路由、用户理解、自动进化等功能\n- 支持主动自检、自动技能生成、用户画像与需求预测、规则权重学习、渐进式加载等核心特性\n- 集成高性能检索、DAG 任务管理、结构化日志、模板渲染、多 Agent 协作与可视化\n- 提供详细安装、使用、配置、API 及故障排查文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5bbd46a56a471c7cabc6833adea8a45f4fd61f24573036c5bc05536b03c4e57"
+}

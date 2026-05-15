@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37708,
+  "uuid": "skill-clawhub-content-system-generate-image",
+  "skillKey": "clawhub-content-system-generate-image",
+  "name": "Generate Image",
+  "summary": "Generate article companion images for the content factory pipeline. Use when Codex needs article images, infographic cards, inline visuals, or a PNG exported...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_system_generate_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abigale-cyber",
+      "features": [
+        "Generate article companion images for the content factory pipeline",
+        "Use when Codex needs article images, infographic cards, inline visuals, or a PNG exported..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-system-generate-image@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237663252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-system-generate-image",
+      "url": "https://clawhub.ai/skills/content-system-generate-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-system-generate-image",
+    "url": "https://clawhub.ai/skills/content-system-generate-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-system-generate-image-3c4bb70053f720e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-system-generate-image@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-system-generate-image-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b149d1f268f794ede218a5e69764350ad01b98c407ef6f8b3e050c8457a8e63",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T04:26:41.879Z"
+}

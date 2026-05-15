@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10047,
+  "uuid": "skill-clawhub-perplexity-search-skill",
+  "skillKey": "clawhub-perplexity-search-skill",
+  "name": "Perplexity Search Skill",
+  "summary": "Search the web using Perplexity's Search API for ranked, real-time web results with advanced filtering. Use when you need to search for current information, market research, trending topics, or when Brave Search is unavailable. Supports re.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perplexity_search_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "M4vF14",
+      "features": [
+        "Search the web using Perplexity's Search API for ranked, real-time web results with advanced fi.",
+        "Use when you need to search for current information, market research, trending topics, or when.",
+        "Supports recency filtering (day/week/month/year) and returns structured results with titles, UR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/perplexity-search-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242215020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "perplexity-search-skill",
+      "url": "https://clawhub.ai/skills/perplexity-search-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perplexity-search-skill",
+    "url": "https://clawhub.ai/skills/perplexity-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perplexity-search-skill-9866699198b5abb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/perplexity-search-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-perplexity-search-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:371fd3d8ee19fa11e6d887f3d2af7131d032cadfd89fd91f1c70e40c219706b4",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-04T21:30:02.168Z"
+}

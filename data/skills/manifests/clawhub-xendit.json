@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35101,
+  "uuid": "skill-clawhub-xendit",
+  "skillKey": "clawhub-xendit",
+  "name": "Xendit",
+  "summary": "Xendit integration. Manage data, records, and automate workflows. Use when the user wants to interact with Xendit data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xendit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Xendit integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Xendit data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xendit@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xendit",
+      "url": "https://clawhub.ai/skills/xendit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xendit",
+    "url": "https://clawhub.ai/skills/xendit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xendit-86e73a79de5a4493.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xendit@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xendit-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65d3b9240c84e7771acbadb323d6498c2a854c49c52aeea7580e7296f748680a",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:03:47.545Z"
+}

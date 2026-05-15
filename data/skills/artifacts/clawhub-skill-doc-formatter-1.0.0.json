@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-doc-formatter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_doc_formatter",
+  "skill": {
+    "id": 50082,
+    "skillKey": "clawhub-skill-doc-formatter",
+    "name": "Skill Doc Formatter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-doc-formatter",
+    "url": "https://clawhub.ai/skills/skill-doc-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-doc-formatter-52ee39867efb95e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Formats SKILL.md (OpenClaw/Cursor skill docs) for optimal display on ClawHub. Produces a consistent structure—Description, Installation, Usage with benefit-f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 599,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772371006342,
+      "changelog": "Initial release of Skill Doc Formatter – a tool to standardize SKILL.md documentation for ClawHub.\n\n- Formats SKILL.md files using a clear, ClawHub-optimized structure: Description, Installation, Usage, Examples, and Commands.\n- Supports automatic example generation and section mapping for consistent, benefit-focused documentation.\n- Includes a security review tool to highlight common issues before ClawHub publication.\n- Provides CLI options for formatting, overwriting, and output control.\n- Supplies a manual template and documentation best practices for skill authors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:621953687401e14bf43231f3859167f2555af2e241f85577822f87fbdc86b7fa"
+}

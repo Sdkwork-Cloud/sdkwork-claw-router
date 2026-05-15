@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71111,
+  "uuid": "skill-clawhub-bid-monitor",
+  "skillKey": "clawhub-bid-monitor",
+  "name": "国顺搜项目",
+  "summary": "招标监控：自动抓取招投标网站，按关键词过滤新项目，飞书/Telegram推送。 支持智能化/EPC总承包/中标公告，可独立配置关键词、数据源、推送目标。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bid_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jimmygx",
+      "features": [
+        "招标监控：自动抓取招投标网站，按关键词过滤新项目，飞书/Telegram推送。 支持智能化/EPC总承包/中标公告，可独立配置关键词、数据源、推送目标。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bid-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27848299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bid-monitor",
+      "url": "https://clawhub.ai/skills/bid-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bid-monitor",
+    "url": "https://clawhub.ai/skills/bid-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bid-monitor-247599065643c5f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bid-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bid-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97e930ca5f9183e833da6232fdf190faba0edc7079ff812a83fde3ccf20a8164",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T15:04:17.533Z"
+}

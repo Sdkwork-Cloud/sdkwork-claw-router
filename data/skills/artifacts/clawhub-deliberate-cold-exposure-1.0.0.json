@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deliberate-cold-exposure@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deliberate_cold_exposure",
+  "skill": {
+    "id": 40964,
+    "skillKey": "clawhub-deliberate-cold-exposure",
+    "name": "Deliberate Cold Exposure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deliberate-cold-exposure",
+    "url": "https://clawhub.ai/skills/deliberate-cold-exposure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deliberate-cold-exposure-2c9c03bfb2183356.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you need to build physiological resilience, natural dopamine/norepinephrine spikes, improved circulation, cold tolerance, and mental toughness witho..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774916000217,
+      "changelog": "Initial release of Deliberate Cold Exposure Training skill.\n\n- Provides step-by-step, personalized cold exposure protocols for building resilience, mood, and cold tolerance.\n- Tracks progress, sends reminders, and logs each session via filesystem.\n- Includes built-in safety screens, escalation logic, and personalized medical clearance scripts.\n- Researches local water temps, sources supplies, and adapts the training plan based on your real input and feedback.\n- Emphasizes division: the agent manages planning, tracking, and learning—users do all cold exposure work themselves.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80adefba4de06b54e4f67e0429e3c34ab12147be7cc700b354514e28c031f7b0"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mh-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mh_weather",
+  "skill": {
+    "id": 17719,
+    "skillKey": "clawhub-mh-weather",
+    "name": "MH weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mh-weather",
+    "url": "https://clawhub.ai/skills/mh-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mh-weather-e1c30a6eb0a92ef8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohdalhashemi98-hue",
+      "userId": "publishers:mohdalhashemi98-hue",
+      "displayName": "mohdalhashemi98-hue",
+      "image": "https://avatars.githubusercontent.com/u/241047511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 753,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771990989553,
+      "changelog": "Priority upload batch",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ed5cdb73c804a1a7701f00644059eed6a52b041397f882e858945840ff779e56"
+}

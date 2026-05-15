@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48360,
+  "uuid": "skill-clawhub-kill-tool",
+  "skillKey": "clawhub-kill-tool",
+  "name": "Kill Tool",
+  "summary": "Terminate processes by sending signals. Use for stopping unresponsive programs, managing background tasks, and process lifecycle control.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kill_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Terminate processes by sending signals",
+        "Use for stopping unresponsive programs, managing background tasks, and process lifecycle contro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kill-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kill-tool",
+      "url": "https://clawhub.ai/skills/kill-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kill-tool",
+    "url": "https://clawhub.ai/skills/kill-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kill-tool-ab47e43c239d8609.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kill-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kill-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e53247279546c8ec7e26e18f295ac83574a3220ce8fb332038760df8bc7fc8a",
+      "artifactSizeBytes": 1823
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T22:22:18.787Z"
+}

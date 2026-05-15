@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11959,
+  "uuid": "skill-clawhub-text-to-speech",
+  "skillKey": "clawhub-text-to-speech",
+  "name": "Text To Speech",
+  "summary": "Convert text to natural speech with DIA TTS, Kokoro, Chatterbox, and more via inference.sh CLI. Models: DIA TTS (conversational), Kokoro TTS, Chatterbox, Hig...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_speech",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Convert text to natural speech with DIA TTS, Kokoro, Chatterbox, and more via inference.sh CLI",
+        "Models: DIA TTS (conversational), Kokoro TTS, Chatterbox, Hig..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-speech@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-speech",
+      "url": "https://clawhub.ai/skills/text-to-speech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-speech",
+    "url": "https://clawhub.ai/skills/text-to-speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-speech-d9d9b5ed516e738f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-speech@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-speech-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:002f558ada53852313faf77c5e4d645feb65cb30482544be8ac1626e1e9910e3",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:30:32.614Z"
+}

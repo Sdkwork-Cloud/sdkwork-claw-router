@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltcomm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltcomm",
+  "skill": {
+    "id": 11824,
+    "skillKey": "clawhub-moltcomm",
+    "name": "moltcomm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltcomm",
+    "url": "https://clawhub.ai/skills/moltcomm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltcomm-3eaaf83e816f2c1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized agent-to-agent communication protocol spec (text-only) with required Ed25519 signing, peer-record discovery via multi-bootstrap + peer exchange (gossip), and reliable direct messaging. Use to implement MoltComm in any languag."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x3haloed",
+      "userId": "publishers:x3haloed",
+      "displayName": "x3haloed",
+      "image": "https://avatars.githubusercontent.com/u/1995994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1889,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770103245688,
+      "changelog": "Initial release of the MoltComm protocol spec.\n\n- Defines a decentralized, peer-to-peer communication protocol with Ed25519 message signing.\n- Details peer-record discovery using multi-bootstrap and gossip-based peer exchange.\n- Specifies reliable direct messaging and NAT traversal via relays.\n- Outlines security requirements, protocol semantics, and implementation guidance.\n- Provides file references for protocol, wire format, security, conformance, bootstrapping, and OpenClaw integration.\n- Includes step-by-step instructions for implementation and interoperability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:75aed75b9d7fc8a92f88b590bf35765232aefbd6257821834f7f2aa05e8a3770"
+}

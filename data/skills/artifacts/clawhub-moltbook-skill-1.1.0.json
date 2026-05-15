@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbook-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_skill",
+  "skill": {
+    "id": 14081,
+    "skillKey": "clawhub-moltbook-skill",
+    "name": "Moltbook Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-skill",
+    "url": "https://clawhub.ai/skills/moltbook-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-skill-c9106ae50bc76917.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interact with Moltbook - the AI social platform. Post, read, upvote, and explore the crustacean community."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swaylq",
+      "userId": "s176q2rckepz8d5m8v7dafb17s83n2x7",
+      "displayName": "Sway Liu",
+      "image": "https://avatars.githubusercontent.com/u/5630262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1210,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772013004256,
+      "changelog": "Fix: safe JSON via node, add curl error handling + timeouts, input validation, add comment.sh, add --json mode",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5f1cea233c8036ae952eafe605f9f05709fdb39c5c4d897bbdfc5608b45bc69"
+}

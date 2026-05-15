@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-mechanic@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_mechanic",
+  "skill": {
+    "id": 13025,
+    "skillKey": "clawhub-book-mechanic",
+    "name": "Book Mechanic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-mechanic",
+    "url": "https://clawhub.ai/skills/book-mechanic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-mechanic-87eb57d1be0cb1cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book mechanic services through Lokuli MCP. Use when user needs to find and book mechanic. Triggers on requests like \"book a mechanic\", \"find mechanic near me\", or any mechanic service request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1491,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770339859676,
+      "changelog": "Fixed display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:34a077115da599ea7d1a4a5e678139b714e74d46b5978aaf3ae4baf55638c0be"
+}

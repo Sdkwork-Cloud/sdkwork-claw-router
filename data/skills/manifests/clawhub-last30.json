@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28934,
+  "uuid": "skill-clawhub-last30",
+  "skillKey": "clawhub-last30",
+  "name": "Last30 Deep Research",
+  "summary": "Deep research across Reddit, X/Twitter, Hacker News, YouTube, Polymarket, and the web from the last 30 days. Synthesizes findings into a grounded, cited brie...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ralph-oei",
+      "features": [
+        "Deep research across Reddit, X/Twitter, Hacker News, YouTube, Polymarket, and the web from the.",
+        "Synthesizes findings into a grounded, cited brie..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/last30@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84568575?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "last30",
+      "url": "https://clawhub.ai/skills/last30"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30",
+    "url": "https://clawhub.ai/skills/last30",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30-51f6d5d563c34fd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/last30@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-last30-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e496989b917ec82be4be3364d1fcdb872ddc988d7ea705e373b2e4f18b9de076",
+      "artifactSizeBytes": 1925
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T07:57:53.256Z"
+}

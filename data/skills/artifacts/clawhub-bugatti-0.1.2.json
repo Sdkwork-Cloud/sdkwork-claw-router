@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bugatti@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bugatti",
+  "skill": {
+    "id": 56892,
+    "skillKey": "clawhub-bugatti",
+    "name": "Bugatti"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bugatti",
+    "url": "https://clawhub.ai/skills/bugatti",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bugatti-1ed60b8439cc9844.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information assistant for Bugatti 布加迪. Search models, specs, pricing, reviews, and dealership info."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776232979038,
+      "changelog": "- Added version metadata to SKILL.md (version: 1.0.4).\n- No content changes were made to the skill description or sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c7dcb94fa854c0bb9ed86462dca68efbc2fb03ac7e696da79e21b1a2500fa84"
+}

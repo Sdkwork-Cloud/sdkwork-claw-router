@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38839,
+  "uuid": "skill-clawhub-wcs-helper-feishu-skill",
+  "skillKey": "clawhub-wcs-helper-feishu-skill",
+  "name": "Wcs Helper Feishu Skill",
+  "summary": "Configure OpenClaw Feishu plugin without editing config files. Send simple commands via Feishu private chat to toggle streaming, set group reply behavior, ru...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wcs_helper_feishu_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "无上宗师",
+      "features": [
+        "Configure OpenClaw Feishu plugin without editing config files",
+        "Send simple commands via Feishu private chat to toggle streaming, set group reply behavior, ru.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wcs-helper-feishu-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49145037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wcs-helper-feishu-skill",
+      "url": "https://clawhub.ai/skills/wcs-helper-feishu-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wcs-helper-feishu-skill",
+    "url": "https://clawhub.ai/skills/wcs-helper-feishu-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wcs-helper-feishu-skill-ab093521ea6758ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wcs-helper-feishu-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wcs-helper-feishu-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b7a5264a17228e4b61e25eb92241a799cc911deb5fd32b61e523bd7affe6daa",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:35:24.230Z"
+}

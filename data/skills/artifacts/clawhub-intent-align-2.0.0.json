@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intent-align@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intent_align",
+  "skill": {
+    "id": 20024,
+    "skillKey": "clawhub-intent-align",
+    "name": "Intent Align"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intent-align",
+    "url": "https://clawhub.ai/skills/intent-align",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intent-align-030e43e6a9ceef0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intent-alignment orchestration for OpenClaw agent teams across diverse host environments. Use when work must stay anchored to user goals while allowing flexi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oscraters",
+      "userId": "publishers:oscraters",
+      "displayName": "oscraters",
+      "image": "https://avatars.githubusercontent.com/u/93680161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 577,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772134477707,
+      "changelog": "intent-align v2.0.0\n\nIntent alignment orchestration for OpenClaw agent teams across diverse host environments. Use when work must stay anchored to user goals while allowing flexible execution: \n(1) coding with repos/PRs/issues, \n(2) multi-phase delivery with checkpoints, \n(3) multi-agent or multi-repo coordination, \n(4) evolving requirements needing structured re-alignment and user clarification loops.\n\n- Major overhaul of core workflow: introduces new \"intent snapshot,\" strictness modes, and ambiguity handling.\n- Added alignment hub template and expanded phase-based execution with realignment and verification gates.\n- Clearly defined autonomy levels to control user confirmation and agent flexibility.\n- Introduced modular adapter system for various environments (GitHub, local repo, trackers) with adapter validation and provenance tracking.\n- Enforced anti-bloat policies: stricter separation of concerns, focused capabilities, and schema consistency.\n- Expanded handling for edge cases: multi-repo support, non-git prototypes, and multi-agent team orchestration.\n- All changes documented with required links to essential references and quick start guide.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c053b81a1cea6e80679f2dc941e50e93c75a7cfca72fe07629afe0825faacd58"
+}

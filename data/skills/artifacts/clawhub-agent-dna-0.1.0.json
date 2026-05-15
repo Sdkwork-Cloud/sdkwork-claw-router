@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-dna@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_dna",
+  "skill": {
+    "id": 21280,
+    "skillKey": "clawhub-agent-dna",
+    "name": "Agent DNA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-dna",
+    "url": "https://clawhub.ai/skills/agent-dna",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-dna-cdab965ec005bb91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Portable agent identity encoding. Compress SOUL.md/MEMORY.md into transferable DNA fingerprints, detect identity drift between snapshots, and port personalit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cassh100k",
+      "userId": "publishers:cassh100k",
+      "displayName": "Cassh",
+      "image": "https://avatars.githubusercontent.com/u/128089099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 484,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772043178750,
+      "changelog": "v0.1.0: Portable identity encoding - encode, decode, diff, port agent personality across platforms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a926e16ae862874331d1ecfcc2855ce9899ead73b183459a3cba9a39f757ef2"
+}

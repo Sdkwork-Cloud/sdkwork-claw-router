@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supurr-hyperliquid@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supurr_hyperliquid",
+  "skill": {
+    "id": 15941,
+    "skillKey": "clawhub-supurr-hyperliquid",
+    "name": "Supurr Hyperliquid Algorithmic Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supurr-hyperliquid",
+    "url": "https://clawhub.ai/skills/supurr-hyperliquid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supurr-hyperliquid-b25c2b61bc3e4baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backtest, deploy, and monitor trading bots on Hyperliquid. Supports Grid, DCA, and Spot-Perp Arbitrage strategies across Native Perps, Spot markets (USDC/USDH), and HIP-3 sub-DEXes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yashagarwal1994",
+      "userId": "publishers:yashagarwal1994",
+      "displayName": "yashagarwal1994",
+      "image": "https://avatars.githubusercontent.com/u/99706541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 949,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770900757582,
+      "changelog": "supurr-hyperliquid 1.0.0 — Initial Release\n\n- Command-line tool to backtest, deploy, and monitor trading bots on Hyperliquid.\n- Supports Grid, DCA, and Spot-Perp Arbitrage strategies across Native Perps, Spot markets, and HIP-3 sub-DEXes.\n- Includes commands for initializing credentials, generating strategy configs, backtesting, live deployment, bot monitoring, and CLI updates.\n- Detailed configuration options for each strategy.\n- Provides quick reference table and complete CLI usage documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c4950dd53f377ed3b254213bcc767c576b98ec227254d54959f8316cafda250a"
+}

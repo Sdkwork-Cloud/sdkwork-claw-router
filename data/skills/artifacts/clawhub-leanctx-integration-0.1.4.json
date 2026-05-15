@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leanctx-integration@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leanctx_integration",
+  "skill": {
+    "id": 54405,
+    "skillKey": "clawhub-leanctx-integration",
+    "name": "Leanctx Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leanctx-integration",
+    "url": "https://clawhub.ai/skills/leanctx-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leanctx-integration-caabdf57ed3d4fb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically compresses OpenClaw tool outputs to reduce token usage by 60-99%"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackkeller",
+      "userId": "s1765bhqjfg3cvj4ddqh8h7dss840ddp",
+      "displayName": "Jack Keller",
+      "image": "https://avatars.githubusercontent.com/u/81735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1775489810551,
+      "changelog": "Remove metrics reporting - feature temporarily disabled pending session-level implementation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51e7cc380a838d6ced883dd5b2c1cb1b238e5ef7127461f084e35d0f9d33083c"
+}

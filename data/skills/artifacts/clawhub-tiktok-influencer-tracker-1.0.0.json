@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-influencer-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_influencer_tracker",
+  "skill": {
+    "id": 33645,
+    "skillKey": "clawhub-tiktok-influencer-tracker",
+    "name": "Tiktok Influencer Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-influencer-tracker",
+    "url": "https://clawhub.ai/skills/tiktok-influencer-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-influencer-tracker-841c45082be51b53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "TikTok creator/influencer management, sample tracking, and fulfillment analytics agent. Manage creator relationships, track sample shipments, analyze influen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774345769349,
+      "changelog": "Initial release — manage TikTok creator/influencer programs end-to-end.\n\n- Add, analyze, and rank creators by fit score and performance.\n- Track sample shipments, monitor outreach, and manage all logistics.\n- Log and analyze each creator’s content performance and commissions.\n- Generate outreach messages and manage template history.\n- Output program dashboards, leaderboards, and detailed performance reports.\n- Organize all data in workspace folders for creator management, samples, content, outreach, and reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd75b30783eea008fa8a7c759fc5623db89fb725e11cb981457c75de5ba467f9"
+}

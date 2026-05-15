@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56962,
+  "uuid": "skill-clawhub-hiremate",
+  "skillKey": "clawhub-hiremate",
+  "name": "HireMate — AI招聘助手",
+  "summary": "AI recruiting assistant for generating job descriptions, resume screening criteria, interview questions, candidate scoring, match analysis, salary reports, a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiremate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "keyong",
+      "features": [
+        "AI recruiting assistant for generating job descriptions, resume screening criteria, interview q."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hiremate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18619191?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hiremate",
+      "url": "https://clawhub.ai/skills/hiremate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiremate",
+    "url": "https://clawhub.ai/skills/hiremate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiremate-6795d47ecca31542.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hiremate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hiremate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b7825d0ea395c62adc69b2a189ebc790a3acbbcc709c8140cb209289ffe349b",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:51:11.015Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44479,
+  "uuid": "skill-clawhub-agent-email-setup",
+  "skillKey": "clawhub-agent-email-setup",
+  "name": "Agent Email Setup",
+  "summary": "Set up dedicated email accounts for AI agents with proper workflows. Use when agents need external communications (Lourens for sysadmin, Ace for competitions...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_email_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stefanferreira",
+      "features": [
+        "Set up dedicated email accounts for AI agents with proper workflows",
+        "Use when agents need external communications (Lourens for sysadmin, Ace for competitions..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-email-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6356549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-email-setup",
+      "url": "https://clawhub.ai/skills/agent-email-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-email-setup",
+    "url": "https://clawhub.ai/skills/agent-email-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-email-setup-1272417202144552.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-email-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-email-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdd5dbb7dcc2d05bbafc846344880cb7d8a0a21a85a74abf22f0c92431a5d78f",
+      "artifactSizeBytes": 2592
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:14:09.452Z"
+}

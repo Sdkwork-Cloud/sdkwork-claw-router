@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71555,
+  "uuid": "skill-clawhub-workspace-guardian-by-lujun",
+  "skillKey": "clawhub-workspace-guardian-by-lujun",
+  "name": "Workspace Guardian",
+  "summary": "文件创建与目录组织规则。强制执行统一的命名规范和目录结构，确保所有产出物可预测、可查找、可追溯。价值：节省 token（减少重复搜索定位）、节约时间（不再花时间找文件）、降低管理成本（产出物有序不混乱）。当用户没有明确指定路径时，此规则强制生效。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_guardian_by_lujun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lujun2508",
+      "features": [
+        "文件创建与目录组织规则。强制执行统一的命名规范和目录结构，确保所有产出物可预测、可查找、可追溯。价值：节省 token（减少重复搜索定位）、节约时间（不再花时间找文件）、降低管理成本（产出物."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-guardian-by-lujun@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267008723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-guardian-by-lujun",
+      "url": "https://clawhub.ai/skills/workspace-guardian-by-lujun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-guardian-by-lujun",
+    "url": "https://clawhub.ai/skills/workspace-guardian-by-lujun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-guardian-by-lujun-0829b25475608f4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-guardian-by-lujun@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-guardian-by-lujun-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e6b5a007d3fee69637f9fc70bf5261a793508fa24b811f952aaa5a605cf426d",
+      "artifactSizeBytes": 2695
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T13:35:03.297Z"
+}

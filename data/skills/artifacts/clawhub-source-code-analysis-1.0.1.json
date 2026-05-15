@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/source-code-analysis@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.source_code_analysis",
+  "skill": {
+    "id": 24002,
+    "skillKey": "clawhub-source-code-analysis",
+    "name": "source code analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "source-code-analysis",
+    "url": "https://clawhub.ai/skills/source-code-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/source-code-analysis-15e13d79b983b56b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"analyze source code\", \"understand this codebase\", \"perform code analysis\", \"study this project\", \"explain th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "river-zhanglh",
+      "userId": "s177z2dprw5eggx6nzyj44g29h844dkz",
+      "displayName": "river-zhanglh",
+      "image": "https://avatars.githubusercontent.com/u/200566695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775224062579,
+      "changelog": "No user-visible changes in this release.\n\n- Version number incremented from 1.0.0 to 1.0.1.\n- No file changes detected; functionality and documentation remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:35b5f3fc0e3cfd4bd107a912b8983603a2e53f413c8dec025d299088e4e1f956"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video2txt@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video2txt",
+  "skill": {
+    "id": 57485,
+    "skillKey": "clawhub-video2txt",
+    "name": "在线视频转文字稿"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video2txt",
+    "url": "https://clawhub.ai/skills/video2txt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video2txt-8bb89ecd019561d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract transcripts/subtitles from video URLs and deliver as .docx files. Use this skill whenever the user provides a video link (YouTube, Bilibili, or any y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vistalyq",
+      "userId": "publishers:vistalyq",
+      "displayName": "vistalyq",
+      "image": "https://avatars.githubusercontent.com/u/5344331?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773214057904,
+      "changelog": "**Initial release with full Node.js script support and updated skill manifest.**\n\n- Added all required script dependencies and Node.js modules (386 files) to support docx generation and subtitle processing.\n- Updated SKILL.md to include explicit version number and tool/dependency specifications for yt-dlp and node.\n- Clearly documented workflow for extracting, processing, and delivering video transcripts as .docx files.\n- Improved clarity on error handling and user guidance regarding supported platforms and missing subtitles.\n- No changes to logic; just formalized packaging and environment requirements for skill distribution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:947e98a4f584e2750038d8faf81a82e6436571212377251a69d8457e4bdaf530"
+}

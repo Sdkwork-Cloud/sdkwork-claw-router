@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/elevenlabs-voice-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elevenlabs_voice_agent",
+  "skill": {
+    "id": 33285,
+    "skillKey": "clawhub-elevenlabs-voice-agent",
+    "name": "Elevenlabs Voice Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elevenlabs-voice-agent",
+    "url": "https://clawhub.ai/skills/elevenlabs-voice-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elevenlabs-voice-agent-f2e1e4d07cc69818.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and manage ElevenLabs Conversational AI voice agents with Twilio phone integration. Use when creating AI phone agents (cold callers, appointment setter..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boris148",
+      "userId": "s176zyak5ty7kk1qam4bdtftq183mvsa",
+      "displayName": "Boris148",
+      "image": "https://avatars.githubusercontent.com/u/262320351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 240,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774504060725,
+      "changelog": "ElevenLabs Voice Agent v1.0.0\n\n- Initial release: Build and manage conversational AI phone agents using ElevenLabs API with integrated Twilio support.\n- Supports configuration of voice models, LLMs (optimized for gpt-4o-mini), and detailed phone agent settings.\n- Provides recommended voice settings and voices tailored for cold calling and appointment setting.\n- Guides through NEPQ sales framework implementation, call qualification, and objection handling.\n- Enables key phone features (voicemail detection, end call, background voice detection).\n- Includes troubleshooting tips for common voice agent issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:421bee78a486357c9fd84e3225d5451d606c84679aa152d5d724a436a10fd156"
+}

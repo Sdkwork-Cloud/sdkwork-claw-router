@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13645,
+  "uuid": "skill-clawhub-rlm-controller",
+  "skillKey": "clawhub-rlm-controller",
+  "name": "RLM Controller",
+  "summary": "RLM-style long-context controller that treats inputs as external context, slices/peeks/searches, and spawns recursive subcalls with strict safety limits. Use...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rlm_controller",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywyze",
+      "features": [
+        "RLM-style long-context controller that treats inputs as external context, slices/peeks/searches."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rlm-controller@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7504109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rlm-controller",
+      "url": "https://clawhub.ai/skills/rlm-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rlm-controller",
+    "url": "https://clawhub.ai/skills/rlm-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rlm-controller-4056ef815f4cee3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rlm-controller@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rlm-controller-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e55a79414920da1da5451aaf6c40c094208de4bcae37078eef1e1e046d82cd1",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T17:58:57.322Z"
+}

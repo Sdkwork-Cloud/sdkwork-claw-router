@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bun-runtime@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bun_runtime",
+  "skill": {
+    "id": 11231,
+    "skillKey": "clawhub-bun-runtime",
+    "name": "Bun Runtime"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bun-runtime",
+    "url": "https://clawhub.ai/skills/bun-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bun-runtime-57b777a62d7bdd0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bun runtime capabilities for filesystem, process, and network operations. Use when you need to execute Bun-specific operations like Bun.file(), Bun.write(), or Bun.glob() for optimized file handling, or when working with Bun's native proce."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rabin-thami",
+      "userId": "publishers:rabin-thami",
+      "displayName": "rabin-thami",
+      "image": "https://avatars.githubusercontent.com/u/44690395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2184,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769840559259,
+      "changelog": "Version 1.0.0\n\n- Initial release of the bun-runtime skill.\n- Provides native Bun operations for filesystem (read, write, glob), process commands, and network requests.\n- Scripts utilize Bun APIs for optimized performance and I/O tasks.\n- Automatically manages file encodings and directory creation.\n- Returns clear, JSON-formatted results and error messages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eca2a83a47b95e80bf498b9c71d64b14060428a61862c760611eddc46e81c3c2"
+}

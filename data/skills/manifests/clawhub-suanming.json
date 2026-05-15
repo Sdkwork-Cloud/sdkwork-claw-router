@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68241,
+  "uuid": "skill-clawhub-suanming",
+  "skillKey": "clawhub-suanming",
+  "name": "Suanming",
+  "summary": "六爻八卦算命术。根据用户提供的出生年月日时，运用六爻排盘系统进行命理分析。 适用于：(1) 用户询问算命 (2) 用户想知道命运/运势 (3) 用户提供生辰八字要求分析 (4) 六爻排盘",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suanming",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray1012",
+      "features": [
+        "六爻八卦算命术。根据用户提供的出生年月日时，运用六爻排盘系统进行命理分析。 适用于：(1) 用户询问算命 (2) 用户想知道命运/运势 (3) 用户提供生辰八字要求分析 (4) 六爻排盘"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suanming@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26787843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suanming",
+      "url": "https://clawhub.ai/skills/suanming"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suanming",
+    "url": "https://clawhub.ai/skills/suanming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suanming-486dcedb9ed306c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suanming@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suanming-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09b498f9e1a1968b361d50075c2df024b88a55af8e468f1bdef2d68707fb3788",
+      "artifactSizeBytes": 2369
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:37:14.191Z"
+}

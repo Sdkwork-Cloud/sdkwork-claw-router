@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moonshot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moonshot",
+  "skill": {
+    "id": 63860,
+    "skillKey": "clawhub-moonshot",
+    "name": "moonshot skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moonshot",
+    "url": "https://clawhub.ai/skills/moonshot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moonshot-6749675d80a1faa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 () 大模型进行图像分析、OCR提取、文案创作和多模态对话的智能工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mendynew",
+      "userId": "s1729cb94jpz9e70mhw7njbyks83kdfk",
+      "displayName": "mendynew",
+      "image": "https://avatars.githubusercontent.com/u/4647009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774445517915,
+      "changelog": "moonshot v1.0.0\n\n- 初始发布，集成多模态大模型工具\n- 支持图像分析与理解、OCR 文字提取、智能文案创作\n- 提供多模态对话与图片内容智能问答\n- 支持多张图片批量分析和表格结构化提取\n- 提供详细使用示例与 API 参数说明\n- 集成 Python SDK，附带最佳实践和安全提示",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32aed0f0772bf5d2105f810ce1fc9c28614f22888ffce53c401da96e3070dfdd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/handwrytten@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.handwrytten",
+  "skill": {
+    "id": 54358,
+    "skillKey": "clawhub-handwrytten",
+    "name": "Handwrytten"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "handwrytten",
+    "url": "https://clawhub.ai/skills/handwrytten",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/handwrytten-9e1b291073385e3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send real handwritten notes through robots with real pens — physical cards mailed to recipients"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidwachs",
+      "userId": "publishers:davidwachs",
+      "displayName": "davidwachs",
+      "image": "https://avatars.githubusercontent.com/u/12176167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1773288874479,
+      "changelog": "- Metadata structure updated for consistency and formatting; version field moved and now omitted from root level.\n- No functional or behavioral changes; documentation and feature guidance remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3756f760255b9a65096f32cbcd05c829447b81ccd40d5a9f86837ac66f2b0e93"
+}

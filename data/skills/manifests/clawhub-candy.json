@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65656,
+  "uuid": "skill-clawhub-candy",
+  "skillKey": "clawhub-candy",
+  "name": "Candy",
+  "summary": "提供Candy Crush Saga公开版本更新、活动、赛事及社区规则的整理与汇总，不涉及作弊或账号服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.candy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供Candy Crush Saga公开版本更新、活动、赛事及社区规则的整理与汇总，不涉及作弊或账号服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/candy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "candy",
+      "url": "https://clawhub.ai/skills/candy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "candy",
+    "url": "https://clawhub.ai/skills/candy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/candy-4d1608c849f1a496.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/candy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-candy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1faab5f6c6b01bf621d14531a4ff359825f12631aa7571587c5bd1d0c272160b",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T16:00:18.085Z"
+}

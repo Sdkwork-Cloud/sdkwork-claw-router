@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14243,
+  "uuid": "skill-clawhub-fleet",
+  "skillKey": "clawhub-fleet",
+  "name": "fleet",
+  "summary": "Multi-agent fleet management for OpenClaw, Claude Code, Codex, Cursor, Windsurf, Gemini CLI, and custom agent stacks. One CLI to monitor, manage, and orchest...",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fleet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oguzhan Atalay",
+      "features": [
+        "Multi-agent fleet management for OpenClaw, Claude Code, Codex, Cursor, Windsurf, Gemini CLI, an.",
+        "One CLI to monitor, manage, and orchest..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fleet@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54781138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fleet",
+      "url": "https://clawhub.ai/skills/fleet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fleet",
+    "url": "https://clawhub.ai/skills/fleet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fleet-5eb2ce291c7d227d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fleet@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fleet-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0d09a84616ac0acb22c138c7d8d2ad35a11514dc6616381065f672a4dde2bf3",
+      "artifactSizeBytes": 4141
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T19:26:49.664Z"
+}

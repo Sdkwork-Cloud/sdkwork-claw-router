@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71038,
+  "uuid": "skill-clawhub-ai-redaction-beta",
+  "skillKey": "clawhub-ai-redaction-beta",
+  "name": "ai-redaction-beta",
+  "summary": "一款专为个人用户设计的智能文件脱敏工具，强调纯个人独立模式。支持通过自然语言指令，脱敏用户上传的文件，对 PDF、Word、图片等多种格式的文件进行快速、精准、安全的隐私信息处理。处理完成后返回查询链接，可查看处理进度和下载结果",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_redaction_beta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MarsXH.Chang",
+      "features": [
+        "一款专为个人用户设计的智能文件脱敏工具，强调纯个人独立模式。支持通过自然语言指令，脱敏用户上传的文件，对 PDF、Word、图片等多种格式的文件进行快速、精准、安全的隐私信息处理。处理完成后."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-redaction-beta@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25813176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-redaction-beta",
+      "url": "https://clawhub.ai/skills/ai-redaction-beta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-redaction-beta",
+    "url": "https://clawhub.ai/skills/ai-redaction-beta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-redaction-beta-efb37e74bef843c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-redaction-beta@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-redaction-beta-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e7bcd892eb4e1cbb4acedb671af409b1ed402fecd6fbc0bc21a0ca521942cd8",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T05:56:15.698Z"
+}

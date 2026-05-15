@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28467,
+  "uuid": "skill-clawhub-excel-data-import",
+  "skillKey": "clawhub-excel-data-import",
+  "name": "Excel Data Import",
+  "summary": "Import, merge, and transform data from Excel (.xlsx/.csv) files using YAML-driven configuration. Use when the user asks to: (1) import data from Excel/CSV in...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_data_import",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sniper-one",
+      "features": [
+        "Import, merge, and transform data from Excel (.xlsx/.csv) files using YAML-driven configuration",
+        "Use when the user asks to: (1) import data from Excel/CSV in..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/excel-data-import@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56232840?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "excel-data-import",
+      "url": "https://clawhub.ai/skills/excel-data-import"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-data-import",
+    "url": "https://clawhub.ai/skills/excel-data-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-data-import-3195acc23782771d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/excel-data-import@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-excel-data-import-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e48f5d1bae649fcf3fb165de4a8dbfb5efdcec3d542e45b822b18e426eb3a80",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:48:05.012Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64010,
+  "uuid": "skill-clawhub-media-processor-agent",
+  "skillKey": "clawhub-media-processor-agent",
+  "name": "media-processor",
+  "summary": "OpenClaw 核心素材加工工具。支持对图片和视频（含 URL、m3u8、mp4）进行自动化处理，包括下载、压缩、添加水印和格式转换。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_processor_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mobai-6543",
+      "features": [
+        "OpenClaw 核心素材加工工具。支持对图片和视频（含 URL、m3u8、mp4）进行自动化处理，包括下载、压缩、添加水印和格式转换。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/media-processor-agent@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272405909?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "media-processor-agent",
+      "url": "https://clawhub.ai/skills/media-processor-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-processor-agent",
+    "url": "https://clawhub.ai/skills/media-processor-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-processor-agent-ba4672e5d4f9b49b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/media-processor-agent@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-media-processor-agent-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bef9999ca5ddf0cee8d6cc7eaa97532ef47bd65694d07921d77239d55c93d539",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T02:11:52.766Z"
+}

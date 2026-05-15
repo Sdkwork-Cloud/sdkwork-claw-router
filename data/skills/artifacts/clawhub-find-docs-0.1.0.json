@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-docs@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_docs",
+  "skill": {
+    "id": 33972,
+    "skillKey": "clawhub-find-docs",
+    "name": "Find Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-docs",
+    "url": "https://clawhub.ai/skills/find-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-docs-20d5b97a87e653b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieves authoritative, up-to-date technical documentation, API references, configuration details, and code examples for any developer technology. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kritsanan1",
+      "userId": "s17cpjgfabnv8rh9th9t8nb8es83mfm7",
+      "displayName": "Cakekritsanan",
+      "image": "https://avatars.githubusercontent.com/u/126095553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774114541647,
+      "changelog": "Initial release of the find-docs skill for authoritative, up-to-date technical documentation retrieval.\n\n- Enables searching and retrieving docs, code examples, API references, and configuration details for any developer technology via Context7 CLI.\n- Requires a two-step workflow: resolve library name to ID, then query documentation using that ID.\n- Emphasizes privacy (no sensitive info in queries) and accuracy (prefer docs over model knowledge).\n- Includes error handling instructions for quota issues and best practices for forming effective queries.\n- Provides clear guidance for using version-specific library IDs and handling ambiguous requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fda1dbf3d53df9cc4b73c54f8ce42dfc236df4f3d45adb0b06996bebbbb16b84"
+}

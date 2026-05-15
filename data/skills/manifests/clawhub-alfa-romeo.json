@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57599,
+  "uuid": "skill-clawhub-alfa-romeo",
+  "skillKey": "clawhub-alfa-romeo",
+  "name": "alfa-romeo",
+  "summary": "Information assistant for Alfa Romeo 阿尔法罗密欧. Search models, specs, pricing, reviews, and dealership info.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alfa_romeo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Alfa Romeo 阿尔法罗密欧",
+        "Search models, specs, pricing, reviews, and dealership info."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alfa-romeo@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alfa-romeo",
+      "url": "https://clawhub.ai/skills/alfa-romeo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alfa-romeo",
+    "url": "https://clawhub.ai/skills/alfa-romeo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alfa-romeo-7b6129c9c5ceedf8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alfa-romeo@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alfa-romeo-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a3bb99ce65391e496fcab414e37495628bddd2f7cdf99aea83ec5bb71126055",
+      "artifactSizeBytes": 2209
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:17:59.382Z"
+}

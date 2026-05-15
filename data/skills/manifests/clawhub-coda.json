@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12252,
+  "uuid": "skill-clawhub-coda",
+  "skillKey": "clawhub-coda",
+  "name": "Coda",
+  "summary": "General-purpose Coda document manager via REST API v1. Supports listing/creating/updating/deleting docs, managing tables/rows/pages, triggering automations, and exploring doc structure. Requires CODA_API_TOKEN environment variable. Delete.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coda",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TFM",
+      "features": [
+        "General-purpose Coda document manager via REST API v1",
+        "Supports listing/creating/updating/deleting docs, managing tables/rows/pages, triggering automa.",
+        "Requires CODA_API_TOKEN environment variable",
+        "Delete operations require explicit confirmation"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coda@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7838269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coda",
+      "url": "https://clawhub.ai/skills/coda"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coda",
+    "url": "https://clawhub.ai/skills/coda",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coda-66c8aec217cac5fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coda@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coda-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b165ec284706c24a95425a141bb7dd563d49b47477d9fe75ba527a35725a7d6",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T20:51:14.306Z"
+}

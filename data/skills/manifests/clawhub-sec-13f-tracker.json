@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23460,
+  "uuid": "skill-clawhub-sec-13f-tracker",
+  "skillKey": "clawhub-sec-13f-tracker",
+  "name": "SEC 13F Whale Tracker",
+  "summary": "Track top fund managers' holdings via SEC 13F filings. Fetches quarterly filings from SEC EDGAR, compares quarter-over-quarter changes (new positions, increa...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sec_13f_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Reed",
+      "features": [
+        "Track top fund managers' holdings via SEC 13F filings",
+        "Fetches quarterly filings from SEC EDGAR, compares quarter-over-quarter changes (new positions,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sec-13f-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129141816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sec-13f-tracker",
+      "url": "https://clawhub.ai/skills/sec-13f-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sec-13f-tracker",
+    "url": "https://clawhub.ai/skills/sec-13f-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sec-13f-tracker-4c5342d99fc94f66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sec-13f-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sec-13f-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f43970cee717afd9c2d60aa2d12f746ee184157ab1e8bc80a7d48b336a268dd",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T16:01:18.904Z"
+}

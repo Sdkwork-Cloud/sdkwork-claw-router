@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-daily-xhs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_daily_xhs",
+  "skill": {
+    "id": 59846,
+    "skillKey": "clawhub-ai-daily-xhs",
+    "name": "AI Daily Brief XHS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-daily-xhs",
+    "url": "https://clawhub.ai/skills/ai-daily-xhs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-daily-xhs-d45b15c8f91b1a41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 每日简报 - 全球 AI 行业新闻（公司/产品/论文）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seeu1688",
+      "userId": "s17e5csewn8rn4hj9k42760fgs84yr4f",
+      "displayName": "Seagle",
+      "image": "https://avatars.githubusercontent.com/u/6970599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776344616511,
+      "changelog": "Initial release of AI Daily Brief (AI 每日简报) skill:\n\n- Delivers concise daily summaries of major AI industry news, executive statements, product launches, and academic papers from authoritative sources worldwide.\n- Focuses on structured, category-based output for quick browsing: big company news, industry leader comments, technology products, and selected papers.\n- Gathers and summarizes only the most important developments from the past 24 hours, minimizing information overload.\n- Supports fallback search strategies using Tavily, 博查, and SearXNG to ensure reliable news gathering.\n- Outputs Chinese-language briefs with source links and key highlights.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c9b07434fae521ddb81cf3a641485909b0ad30532e7de2793777439d1edddd6"
+}

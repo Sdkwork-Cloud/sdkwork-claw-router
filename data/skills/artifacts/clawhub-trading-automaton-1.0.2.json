@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-automaton@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_automaton",
+  "skill": {
+    "id": 17631,
+    "skillKey": "clawhub-trading-automaton",
+    "name": "Trading"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-automaton",
+    "url": "https://clawhub.ai/skills/trading-automaton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-automaton-4001e551fd428b4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trading analysis and education. Technical analysis, chart patterns, risk management, and position sizing for stocks, forex, and crypto."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenghaifeng08-creator",
+      "userId": "s17btvw3vz47g5n79t5249yqad83gx21",
+      "displayName": "chenghaifeng08-creator",
+      "image": "https://avatars.githubusercontent.com/u/266006783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 761,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774355398221,
+      "changelog": "- Updated guardrails to strengthen legal disclaimers following SEC/NFA guidelines.\n- Added setup.md and memory-template.md for easier initial configuration and user progress tracking.\n- Expanded documentation: clarified language restrictions to avoid direct buy/sell advice and provide analysis only.\n- Outlined detailed risk management principles, technical analysis basics, and common trading pitfalls for educational purposes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eebaf04550625878750618c88f61e2338dbb985998a4150932df1323eb75c3e6"
+}

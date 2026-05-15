@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compress-pdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compress_pdf",
+  "skill": {
+    "id": 10997,
+    "skillKey": "clawhub-compress-pdf",
+    "name": "Compress PDF"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compress-pdf",
+    "url": "https://clawhub.ai/skills/compress-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compress-pdf-55971e9f39bc0b8e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress a user-provided PDF by uploading it to Cross-Service-Solutions, polling until completion, then returning a download URL for the compressed file."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crossservicesolutions",
+      "userId": "publishers:crossservicesolutions",
+      "displayName": "CrossServiceSolutions",
+      "image": "https://avatars.githubusercontent.com/u/201191521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2112,
+      "installsAllTime": 14,
+      "installsCurrent": 12,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770555517922,
+      "changelog": "Initial release of compress-pdf skill:\n\n- Accepts a user PDF file and compresses it using Cross-Service-Solutions API.\n- Polls job status until compression completes.\n- Returns job status, compressed file download URL, file name, and compression settings.\n- Requires an API key for authentication.\n- Supports optional image quality and DPI settings.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:57c27a8db0dd988cbc48d85129a413a6e5a4fb8bcf58fcb4818e8b00c1728267"
+}

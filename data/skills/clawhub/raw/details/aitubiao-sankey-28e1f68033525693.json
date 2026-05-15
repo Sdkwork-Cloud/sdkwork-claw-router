@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "aitubiao-sankey",
+    "displayName": "爱图表桑基图（流向图）",
+    "summary": "AI桑基图（流向图）生成。根据用户数据自动整理并创建桑基图可视化项目。当用户想要创建桑基图、流向图、展示数据流向关系时使用，触发词包括\"桑基图\"、\"流向图\"、\"sankey\"、\"sankey chart\"、\"flow diagram\"、\"data flow\"、\"create sankey\"等。",
+    "tags": {
+      "latest": "1.1.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1774937821197,
+    "updatedAt": 1777526950577
+  },
+  "latestVersion": {
+    "version": "1.1.5",
+    "createdAt": 1776934377568,
+    "changelog": "**Skill version 1.1.5 changelog:**\n\n- Major: Migrated all API calls to a dedicated Bash CLI script (`scripts/aitubiao-cli.sh`), replacing previous direct curl usage.\n- Updated authentication and quota check processes to use the new CLI commands.\n- Added explicit support and instructions for Windows/Git Bash encoding issues.\n- Removed outdated API spec reference file (`references/sankey-api.md`).\n- Improved error handling: CLI exit codes now distinguish auth failure, business errors, and network issues; creation API no longer auto-retries on error.\n- Extended documentation for download/export flows, covering supported export formats and multi-page handling.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "aitubiao",
+    "userId": "s17bfd6atd8sje15j8ehx6j4bn83zz7g",
+    "displayName": "aitubiao",
+    "image": null
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777526950577
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/joevault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joevault",
+  "skill": {
+    "id": 41953,
+    "skillKey": "clawhub-joevault",
+    "name": "JoeVault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joevault",
+    "url": "https://clawhub.ai/skills/joevault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joevault-d7dc917af743095e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit, classify, and quarantine stale paths after a profile switch, account migration, reset, or workspace move. Use when OpenClaw, Claude, WSL, Windows home..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeproai",
+      "userId": "s178a8ypxf167skfhyzkymds4h83ygv9",
+      "displayName": "JoeProAI",
+      "image": "https://avatars.githubusercontent.com/u/176786290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774978401704,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1600ce177af048243cb9176a977232211be1b5b1ea5964c87aa1d5170841e9c"
+}

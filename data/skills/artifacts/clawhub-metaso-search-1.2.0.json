@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metaso-search@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metaso_search",
+  "skill": {
+    "id": 68040,
+    "skillKey": "clawhub-metaso-search",
+    "name": "Metaso Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metaso-search",
+    "url": "https://clawhub.ai/skills/metaso-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metaso-search-73d73f5c9a1f1567.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中文AI搜索引擎，深度理解搜索意图，精准提供结构化无广告的中文信息查询与回答服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiuxinyuan321",
+      "userId": "publishers:qiuxinyuan321",
+      "displayName": "qiuxinyuan321",
+      "image": "https://avatars.githubusercontent.com/u/205333793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1156,
+      "installsAllTime": 11,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770739562885,
+      "changelog": "Meta AI Search v1.2.0\n\n- API对接调试成功，实现完整可用\n- 联合署名发布，新增团队介绍\n- 文档全面完善，增加详细配置与使用方法说明\n- 新增API端点说明与请求/响应示例\n- 对比分析主流中文搜索AI，突出优势",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:259739f38de00f879c6f68c1dde375f37d11bba44907835dfa1515eb7dc4fca5"
+}

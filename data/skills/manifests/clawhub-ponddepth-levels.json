@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23075,
+  "uuid": "skill-clawhub-ponddepth-levels",
+  "skillKey": "clawhub-ponddepth-levels",
+  "name": "Ponddepth Levels",
+  "summary": "Leveling overlay for OpenClaw Control UI (badge + XP + daily tip + level list + icons).",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ponddepth_levels",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pureheart",
+      "features": [
+        "Leveling overlay for OpenClaw Control UI (badge + XP + daily tip + level list + icons)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ponddepth-levels@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17702236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ponddepth-levels",
+      "url": "https://clawhub.ai/skills/ponddepth-levels"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ponddepth-levels",
+    "url": "https://clawhub.ai/skills/ponddepth-levels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ponddepth-levels-f7d0363c71b9f9f0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ponddepth-levels@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ponddepth-levels-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59a9019b38d4eecea1653218916b2cfed726115ee60121237885e1ba194f9f89",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T10:22:30.674Z"
+}

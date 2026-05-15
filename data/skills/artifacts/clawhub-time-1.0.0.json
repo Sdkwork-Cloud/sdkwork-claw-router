@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/time@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time",
+  "skill": {
+    "id": 13796,
+    "skillKey": "clawhub-time",
+    "name": "Time"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time",
+    "url": "https://clawhub.ai/skills/time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-336074805fc85398.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LLM time reasoning scaffold with a bundled Node.js CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ikana",
+      "userId": "s17021rtp5nnec98g55svkbdg184zhgt",
+      "displayName": "Joaquin Quezada Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/634704?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1096,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777721379105,
+      "changelog": "Bundle the CLI as skill-local Node.js source and remove binary installer instructions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8f3cb6e5a05159577c835e58565e0df61bbd300f432f291b96c6f83167c7bce"
+}

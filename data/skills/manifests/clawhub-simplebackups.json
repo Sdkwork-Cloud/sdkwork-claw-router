@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26530,
+  "uuid": "skill-clawhub-simplebackups",
+  "skillKey": "clawhub-simplebackups",
+  "name": "Simplebackups",
+  "summary": "SimpleBackups integration. Manage Backups, Restores, Alerts, Users. Use when the user wants to interact with SimpleBackups data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simplebackups",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "SimpleBackups integration",
+        "Manage Backups, Restores, Alerts, Users",
+        "Use when the user wants to interact with SimpleBackups data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/simplebackups@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "simplebackups",
+      "url": "https://clawhub.ai/skills/simplebackups"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simplebackups",
+    "url": "https://clawhub.ai/skills/simplebackups",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simplebackups-7b86adee05257875.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/simplebackups@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-simplebackups-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73fb250a9aa9d96e1a605ec31748b4a6077de7bc1aecc475ebf2296011973978",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:42:07.760Z"
+}

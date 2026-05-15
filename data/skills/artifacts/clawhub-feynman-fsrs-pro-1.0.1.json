@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feynman-fsrs-pro@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feynman_fsrs_pro",
+  "skill": {
+    "id": 65009,
+    "skillKey": "clawhub-feynman-fsrs-pro",
+    "name": "feynman-fsrs-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feynman-fsrs-pro",
+    "url": "https://clawhub.ai/skills/feynman-fsrs-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feynman-fsrs-pro-1617b45d12d2c422.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 FSRS 算法的费曼学习导师，通过 PostgreSQL 记忆库与 Obsidian 笔记联动，引导用户进行深度复习。严格遵循笔记同步→到期检查→针对性提问→动态追问→结算存储的五步流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheldon-mmmp",
+      "userId": "s17e0schxeq2pkf30yxtpszz918473gn",
+      "displayName": "Ki June",
+      "image": "https://avatars.githubusercontent.com/u/92440208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775320265918,
+      "changelog": "feynman-fsrs-pro 1.0.1\n\n- 重构配置方式，明确要求通过 Obsidian CLI 与指定 Vault（new-note）联动，路径采用 Vault 相对路径。\n- 移除多余脚本（如 get-note.js、review-helper.js 等）和文档，只保留必要说明与元数据文件。\n- SKILL.md 详细说明已同步升级，强制流程、工具调用规范更精确，数据库路径字段调整为 Obsidian 相对路径表述。\n- 工程目录更精简，便于维护与未来扩展。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3d286f1e7f0443fd9ad9c30c056d7b167af1baf07642ab8e15ed53166a3b55b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_cn",
+  "skill": {
+    "id": 60375,
+    "skillKey": "clawhub-xiaohongshu-cn",
+    "name": "Xiaohongshu CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-cn",
+    "url": "https://clawhub.ai/skills/xiaohongshu-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-cn-f30c74c57b4b7f40.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书分析 - 热门笔记发现、关键词监控、趋势分析（Instagram 中国版）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guohongbin-git",
+      "userId": "s171qwkar0v16rk324ta5jz7wd83ts19",
+      "displayName": "Guohongbin",
+      "image": "https://avatars.githubusercontent.com/u/202475309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7072,
+      "installsAllTime": 49,
+      "installsCurrent": 46,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771467070090,
+      "changelog": "Initial release - Guide and tools for Xiaohongshu analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c3c1b77a91d19d3f7974b73b63ae46a6cc9daece5e54feae2fb7ecaae2b0ad90"
+}

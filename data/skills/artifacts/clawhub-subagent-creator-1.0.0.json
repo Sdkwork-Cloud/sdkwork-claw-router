@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subagent-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_creator",
+  "skill": {
+    "id": 61271,
+    "skillKey": "clawhub-subagent-creator",
+    "name": "for create subagent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-creator",
+    "url": "https://clawhub.ai/skills/subagent-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-creator-1ba3309ed45e0d23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "子Agent创建工具 - 用于批量创建和管理OpenClaw子Agent 包含完整的子Agent创建流程：目录结构、配置文件、飞书集成等 用于快速创建具有独立workspace的子Agent"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "google-q-dot",
+      "userId": "publishers:google-q-dot",
+      "displayName": "google-q-dot",
+      "image": "https://avatars.githubusercontent.com/u/173974447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 432,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773275801366,
+      "changelog": "subagent-creator v1.0.0 – Initial release\n\n- Provides a toolset for batch creation and management of OpenClaw subagents.\n- Automates the setup of directory structure, configuration files, and Feishu channel integration for each subagent.\n- Enables rapid creation of agents with independent workspaces and dedicated skills configurations.\n- Includes standardized rules for message prefixing and Feishu message delivery.\n- Offers clear documentation and usage steps for deploying and integrating new subagents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8dd3bc22e5ccc284617a035745614931dc872321364e68c679bbaab5ee34eff4"
+}

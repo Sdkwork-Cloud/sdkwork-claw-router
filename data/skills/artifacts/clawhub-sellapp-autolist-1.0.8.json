@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sellapp-autolist@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sellapp_autolist",
+  "skill": {
+    "id": 51856,
+    "skillKey": "clawhub-sellapp-autolist",
+    "name": "Sellapp Autolist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sellapp-autolist",
+    "url": "https://clawhub.ai/skills/sellapp-autolist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sellapp-autolist-2cec043fb117dce3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto-creates digital products on SellApp using the v2 API. Maintains a catalog of 6+ digital products (Notion templates, PDFs, calculators, guides) priced $1..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ssidharhubble",
+      "userId": "s1751xfhp40q8vjjqd22y5vaw584gpke",
+      "displayName": "ssyopro",
+      "image": "https://avatars.githubusercontent.com/u/156830224?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1777902363836,
+      "changelog": "sellapp-autolist 1.0.8\n\n- Updated documentation in SKILL.md for accuracy and clarity.\n- No functional or code changes; only documentation was modified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b172b409e3622d0772a8eaa2e496cf7e9043fdda85dbafc63c631e262d7bd647"
+}

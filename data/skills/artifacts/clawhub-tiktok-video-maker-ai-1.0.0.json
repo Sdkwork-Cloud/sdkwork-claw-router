@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-video-maker-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_video_maker_ai",
+  "skill": {
+    "id": 46115,
+    "skillKey": "clawhub-tiktok-video-maker-ai",
+    "name": "Tiktok Video Maker Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-video-maker-ai",
+    "url": "https://clawhub.ai/skills/tiktok-video-maker-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-video-maker-ai-e8d4f66727c797c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create video clips or images into TikTok-ready clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok creators use it for generating..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775925384263,
+      "changelog": "TikTok Video Maker AI 1.0.0 — Initial Release\n\n- Create TikTok-ready videos from uploaded clips or images using AI, with fast 30–60 second cloud processing.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB, exporting high-quality 1080p MP4 files.\n- Simple onboarding: obtain and store a free token automatically on first use (100 free credits, valid 7 days).\n- Clear prompt handling for upload, edit, credits/balance, export, and status requests.\n- Detailed error handling, with guidance for unsupported formats, file size issues, and export limitations.\n- Export workflow produces platform-compatible videos ready for TikTok.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d01754876955b9d7765fbe3452fcdd02572e085d98f80600403eadb1e08bd42"
+}

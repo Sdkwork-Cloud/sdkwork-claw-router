@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57847,
+  "uuid": "skill-clawhub-github-100",
+  "skillKey": "clawhub-github-100",
+  "name": "Github",
+  "summary": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_100",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Keyserkazi1",
+      "features": [
+        "Interact with GitHub using the `gh` CLI",
+        "Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-100@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255859250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-100",
+      "url": "https://clawhub.ai/skills/github-100"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-100",
+    "url": "https://clawhub.ai/skills/github-100",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-100-4ae2c9668518706e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-100@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-100-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc335f287f1e260122c31eb580c7d9c3c6dc6d99c63a63e4b1bcd80e0d54d7a4",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T23:32:09.248Z"
+}

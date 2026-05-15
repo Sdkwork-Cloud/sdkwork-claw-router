@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "coding-cli-management",
+    "displayName": "Coding Cli Management",
+    "summary": "Manage and execute AI coding CLI tools on behalf of Workers by running their coding prompts in the Worker’s workspace and returning results.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773997908851,
+    "updatedAt": 1778313690019
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773997908851,
+    "changelog": "coding-cli-management 1.0.0\n\n- Initial release: Enables Manager to execute AI coding CLI tools (Claude Code, Gemini CLI, or qodercli) for Workers.\n- Implements admin approval and configuration workflow for CLI delegation mode.\n- Automatically distributes the coding-cli skill to eligible Workers and updates task specs with CLI mode instructions.\n- Handles coding-request messages, running CLI tools in the Worker’s workspace and synchronizing results.\n- Includes automated error reporting and logging for failed CLI runs, notifying both Worker and human admin.\n- Supports both Chinese and English notifications based on admin’s language.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "montycn",
+    "userId": "s17fq3f5c7xm0qja9p4xz3px8h83hcxd",
+    "displayName": "Monty",
+    "image": "https://avatars.githubusercontent.com/u/21038938?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778313690019
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-finnhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_finnhub",
+  "skill": {
+    "id": 10771,
+    "skillKey": "clawhub-openclaw-finnhub",
+    "name": "Finnhub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-finnhub",
+    "url": "https://clawhub.ai/skills/openclaw-finnhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-finnhub-b795aa05c02f323b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides real-time US stock quotes and financial data using the Finnhub API and Python."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keyfrog-21k",
+      "userId": "publishers:keyfrog-21k",
+      "displayName": "keyfrog-21K",
+      "image": "https://avatars.githubusercontent.com/u/77488170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2115,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770079818120,
+      "changelog": "Initial release of OpenClaw-Finnhub: real-time stock quotes and financials via Finnhub API.\n\n- Provides real-time US stock quote data using Finnhub API.\n- Includes a script (`./scripts/app.py`) to fetch and display stock information.\n- Requires Python 3.11+, the `finnhub-python` package, and a Finnhub API key set in the environment.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cbb527c8a31472c4e04e6fef6460c5a14c840a05e3a2f60c82828a3169ad0a40"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/futuremorning@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.futuremorning",
+  "skill": {
+    "id": 71982,
+    "skillKey": "clawhub-futuremorning",
+    "name": "未来清晨"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "futuremorning",
+    "url": "https://clawhub.ai/skills/futuremorning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/futuremorning-747d245a243996b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询未来清晨的活动信息。当用户询问未来清晨的活动、近期活动、活动安排、某个活动详情时使用。支持列出所有活动和根据活动ID获取详情。默认输出JSON，用户要求时可输出Markdown格式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longbai",
+      "userId": "s178cn95jtcgfvfwj8kb5vyt4n84pa07",
+      "displayName": "Bai Loong",
+      "image": "https://avatars.githubusercontent.com/u/1204301?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775979073874,
+      "changelog": "Initial publication",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36a27d043d396c747af5b77d5ed4e6e3c507c532b0ef0b20f9ebd88e413da7f0"
+}

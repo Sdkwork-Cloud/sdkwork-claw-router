@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59524,
+  "uuid": "skill-clawhub-eh-multi-agent",
+  "skillKey": "clawhub-eh-multi-agent",
+  "name": "Multi Agent",
+  "summary": "多 agent 协调设计模式。当需要选择 coordinator/fork/swarm 模式或设计跨 agent 协作时使用。不适用于工具重试（用 tool-governance）或上下文管理（用 context-memory）。参见 execution-loop（coordinator 持续执行）。",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eh_multi_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "_silhouette",
+      "features": [
+        "多 agent 协调设计模式。当需要选择 coordinator/fork/swarm 模式或设计跨 agent 协作时使用。不适用于工具重试（用 tool-governance）或上下文管."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eh-multi-agent@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22570800?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eh-multi-agent",
+      "url": "https://clawhub.ai/skills/eh-multi-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eh-multi-agent",
+    "url": "https://clawhub.ai/skills/eh-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eh-multi-agent-199a8dbf28d0142b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eh-multi-agent@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eh-multi-agent-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fb070fe56d209acfb325e7b6279cb3c89cabd710f6c066f755914458174d767",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:49:29.090Z"
+}

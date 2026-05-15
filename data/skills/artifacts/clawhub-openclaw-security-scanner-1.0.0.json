@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-security-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_security_scanner",
+  "skill": {
+    "id": 10882,
+    "skillKey": "clawhub-openclaw-security-scanner",
+    "name": "OpenClaw Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-security-scanner",
+    "url": "https://clawhub.ai/skills/openclaw-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-security-scanner-3ba8ac51782c0311.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a comprehensive local security scan on your OpenClaw installation. Checks config, network exposure, credentials, OS hardening, and agent guardrails. Scor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jkahn-tr",
+      "userId": "publishers:jkahn-tr",
+      "displayName": "Jkahn-tr",
+      "image": "https://avatars.githubusercontent.com/u/235643106?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2220,
+      "installsAllTime": 19,
+      "installsCurrent": 19,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771214059094,
+      "changelog": "Initial release — local security assessment & hardening for OpenClaw installations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c41762d6494ba0c18c67770c2fd837f931a696aabfe2c3ca24ecf7acab71336"
+}

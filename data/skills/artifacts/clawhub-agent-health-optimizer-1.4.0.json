@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-health-optimizer@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_health_optimizer",
+  "skill": {
+    "id": 15280,
+    "skillKey": "clawhub-agent-health-optimizer",
+    "name": "Agent Health Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-health-optimizer",
+    "url": "https://clawhub.ai/skills/agent-health-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-health-optimizer-8c9430228b1c4ccf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and improve your OpenClaw setup with one skill. Scores agent health, audits memory hygiene, checks cron reliability, and compares installed skills agai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zihaofeng2001",
+      "userId": "s1776j3p94cvqzn31g3f7pxeqd841qqq",
+      "displayName": "Zihao Feng",
+      "image": "https://avatars.githubusercontent.com/u/140311132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 912,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1773380569324,
+      "changelog": "Added CC BY-SA 4.0 license",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a6a02633b6e32d6388fe375e1e64ae3dc17bab00661fd9de00c3533f22f2f96"
+}

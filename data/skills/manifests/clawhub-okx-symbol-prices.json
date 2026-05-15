@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30398,
+  "uuid": "skill-clawhub-okx-symbol-prices",
+  "skillKey": "clawhub-okx-symbol-prices",
+  "name": "okx_symbol_prices",
+  "summary": "Fetch specified crypto spot prices from OKX and present them in USD display. Use when the user asks to get OKX prices/quotes for specific symbols (e.g. BTC,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_symbol_prices",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chgy123",
+      "features": [
+        "Fetch specified crypto spot prices from OKX and present them in USD display",
+        "Use when the user asks to get OKX prices/quotes for specific symbols (e.g"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-symbol-prices@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86524162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-symbol-prices",
+      "url": "https://clawhub.ai/skills/okx-symbol-prices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-symbol-prices",
+    "url": "https://clawhub.ai/skills/okx-symbol-prices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-symbol-prices-d603a044196b2dae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-symbol-prices@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-symbol-prices-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6ef2334a64cc6ba2f9580a4ef537dff27d1a6183596e8235fad788929ef13df",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:27:21.393Z"
+}

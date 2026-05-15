@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mobilerun-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mobilerun_skill",
+  "skill": {
+    "id": 22804,
+    "skillKey": "clawhub-mobilerun-skill",
+    "name": "Mobilerun"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mobilerun-skill",
+    "url": "https://clawhub.ai/skills/mobilerun-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mobilerun-skill-f167a9f793b93f95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control real Android phones through the Mobilerun API. Supports tapping, swiping, typing, taking screenshots, reading the UI accessibility tree, and managing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariozada",
+      "userId": "s17e7krev7vfgsnk8vjzne0v3h840pjp",
+      "displayName": "Mariozada",
+      "image": "https://avatars.githubusercontent.com/u/227328123?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773731166811,
+      "changelog": "Initial release of mobilerun-skill\n\n- Control real Android phones remotely via the Mobilerun API: tap, swipe, type, manage apps, take screenshots, and read UI elements.\n- Supports both direct phone control and autonomous task execution through the Droidrun Agent.\n- Guides users through device connection, setup, and troubleshooting, including handling API keys and device states.\n- Prioritizes user privacy and clear error messaging; no sensitive data or API keys are shown to users.\n- Usage requires a Mobilerun API key and a connected device (personal phone via Portal APK or cloud device).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df0cb337ec5f406f3b8b3c91b40de55713cfeb1a074f3e8960a6bc240dbb19dc"
+}

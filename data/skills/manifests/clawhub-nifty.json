@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32364,
+  "uuid": "skill-clawhub-nifty",
+  "skillKey": "clawhub-nifty",
+  "name": "Nifty",
+  "summary": "Nifty integration. Manage Organizations. Use when the user wants to interact with Nifty data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nifty",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Nifty integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Nifty data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nifty@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nifty",
+      "url": "https://clawhub.ai/skills/nifty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nifty",
+    "url": "https://clawhub.ai/skills/nifty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nifty-5de212ab0494f6e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nifty@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nifty-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:426832f3ca9a5c9407b7d3aa6a34f1838834545e5c4e5b7d8638c81e1e2e622b",
+      "artifactSizeBytes": 1787
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:46:57.730Z"
+}

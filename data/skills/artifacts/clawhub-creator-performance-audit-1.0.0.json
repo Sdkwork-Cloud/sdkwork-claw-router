@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creator-performance-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator_performance_audit",
+  "skill": {
+    "id": 35350,
+    "skillKey": "clawhub-creator-performance-audit",
+    "name": "Creator Performance Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator-performance-audit",
+    "url": "https://clawhub.ai/skills/creator-performance-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-performance-audit-b53f33c9168c8149.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creator Performance Audit for creators, ecommerce teams, and operators. Use when you need help with creator performance analysis for commerce teams."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774206739110,
+      "changelog": "- Initial release of creator-performance-audit skill focused on ecommerce teams and operators\n- Provides a structured, repeatable workflow for creator performance analysis\n- Designed for practical, decision-oriented support with actionable outputs\n- Includes clear criteria for when to use or not use the skill\n- Output includes diagnosis, recommendations, rationale, risks, and next steps for easy operational handoff",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8910e8a15c2b8600cfeaa6fbbd54dc0ded725abc941f40cba3502177837e1fd5"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37810,
+  "uuid": "skill-clawhub-claw-negotiate",
+  "skillKey": "clawhub-claw-negotiate",
+  "name": "claw-negotiate",
+  "summary": "APOA-constrained SAFE negotiation on OpenClaw. Two OpenClaws negotiate within user-approved bounds, stream offers in Telegram, and finalize with human-approv...",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_negotiate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Juan Figuera",
+      "features": [
+        "APOA-constrained SAFE negotiation on OpenClaw",
+        "Two OpenClaws negotiate within user-approved bounds, stream offers in Telegram, and finalize wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-negotiate@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/671267?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-negotiate",
+      "url": "https://clawhub.ai/skills/claw-negotiate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-negotiate",
+    "url": "https://clawhub.ai/skills/claw-negotiate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-negotiate-95299bca988545a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-negotiate@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-negotiate-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a86cc5d7f727dfe205eb2ecde5958ea925ed9c1a9991940446577037cf250915",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:46:23.193Z"
+}

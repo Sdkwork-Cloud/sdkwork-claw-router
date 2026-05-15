@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9993,
+  "uuid": "skill-clawhub-email-manager-lite",
+  "skillKey": "clawhub-email-manager-lite",
+  "name": "eMail manager lite",
+  "summary": "Lightweight email manager with IMAP/SMTP support, advanced search, folder management, and attachment detection. Works with Zoho, Gmail, Outlook, and any IMAP/SMTP provider.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_manager_lite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jorgermp",
+      "features": [
+        "Lightweight email manager with IMAP/SMTP support, advanced search, folder management, and attac.",
+        "Works with Zoho, Gmail, Outlook, and any IMAP/SMTP provider."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-manager-lite@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-manager-lite",
+      "url": "https://clawhub.ai/skills/email-manager-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-manager-lite",
+    "url": "https://clawhub.ai/skills/email-manager-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-manager-lite-e5cbb3678a51af86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-manager-lite@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-manager-lite-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6221857963280dc0a27383c99b75d2d1c1d2de3a18d54cc8fd72dd23656b641",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T15:34:28.105Z"
+}

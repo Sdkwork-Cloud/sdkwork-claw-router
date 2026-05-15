@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42055,
+  "uuid": "skill-clawhub-autooptimise",
+  "skillKey": "clawhub-autooptimise",
+  "name": "Autooptimise",
+  "summary": "Autonomously optimise any OpenClaw skill using a benchmark-driven experiment loop. Scores skill outputs 0-10 across 4 dimensions, identifies the lowest-scori...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autooptimise",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WealthVisionAI-Source",
+      "features": [
+        "Autonomously optimise any OpenClaw skill using a benchmark-driven experiment loop",
+        "Scores skill outputs 0-10 across 4 dimensions, identifies the lowest-scori..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autooptimise@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241807302?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autooptimise",
+      "url": "https://clawhub.ai/skills/autooptimise"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autooptimise",
+    "url": "https://clawhub.ai/skills/autooptimise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autooptimise-f42dd73db098251d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autooptimise@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autooptimise-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8200361c696a90e445689664f1b74db04788e4109a8ff49e575955a55f03f444",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T13:51:25.092Z"
+}

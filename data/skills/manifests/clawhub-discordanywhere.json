@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37713,
+  "uuid": "skill-clawhub-discordanywhere",
+  "skillKey": "clawhub-discordanywhere",
+  "name": "/Message",
+  "summary": "Send a message to Jarvis by typing \"/message\" followed by your text. Works as a text command - triggers when you type \"/message\" in chat.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discordanywhere",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kishyxd",
+      "features": [
+        "Send a message to Jarvis by typing \"/message\" followed by your text",
+        "Works as a text command",
+        "triggers when you type \"/message\" in chat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discordanywhere@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266821248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discordanywhere",
+      "url": "https://clawhub.ai/skills/discordanywhere"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discordanywhere",
+    "url": "https://clawhub.ai/skills/discordanywhere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discordanywhere-8d82868e9f7745d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discordanywhere@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discordanywhere-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85e52b723c7c7bee3b147aff2f31bbb9cb951f76cdbb24b1bfb75bd5c1e43e1e",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T14:56:56.885Z"
+}

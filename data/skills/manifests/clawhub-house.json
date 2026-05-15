@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14763,
+  "uuid": "skill-clawhub-house",
+  "skillKey": "clawhub-house",
+  "name": "House",
+  "summary": "Buy, maintain, improve, and sell homes with inspection checklists, maintenance schedules, renovation planning, and transaction guidance.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.house",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Buy, maintain, improve, and sell homes with inspection checklists, maintenance schedules, renov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/house@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "house",
+      "url": "https://clawhub.ai/skills/house"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "house",
+    "url": "https://clawhub.ai/skills/house",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/house-d6e21286621a8586.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/house@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-house-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2878a153bf965b7b579dbf4d957c22484a083313dd62abcb779d050ba2294c3",
+      "artifactSizeBytes": 1800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:26:34.875Z"
+}

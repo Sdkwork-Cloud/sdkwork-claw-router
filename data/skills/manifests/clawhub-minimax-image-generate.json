@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59160,
+  "uuid": "skill-clawhub-minimax-image-generate",
+  "skillKey": "clawhub-minimax-image-generate",
+  "name": "minimax-image",
+  "summary": "MiniMax 图片生成技能 - 支持文生图(Text-to-Image)、图生图(Image-to-Image)。支持多种宽高比(1:1/16:9/9:16/4:3/3:4)，返回 URL 或 Base64 格式，可下载保存到本地。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_image_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "silingyuan0",
+      "features": [
+        "MiniMax 图片生成技能",
+        "支持文生图(Text-to-Image)、图生图(Image-to-Image)。支持多种宽高比(1:1/16:9/9:16/4:3/3:4)，返回 URL 或 Base64 格式，可下载保."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/minimax-image-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26161065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "minimax-image-generate",
+      "url": "https://clawhub.ai/skills/minimax-image-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-image-generate",
+    "url": "https://clawhub.ai/skills/minimax-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-image-generate-d63407eb6c6c40db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/minimax-image-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-minimax-image-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bee9cf8944e53f16b421669f541daf55f7fc03c44f2beaf23c55c274c15e523",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:58:29.118Z"
+}

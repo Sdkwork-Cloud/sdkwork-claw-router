@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30136,
+  "uuid": "skill-clawhub-channeladvisor",
+  "skillKey": "clawhub-channeladvisor",
+  "name": "Channeladvisor",
+  "summary": "ChannelAdvisor integration. Manage data, records, and automate workflows. Use when the user wants to interact with ChannelAdvisor data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.channeladvisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "ChannelAdvisor integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ChannelAdvisor data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/channeladvisor@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "channeladvisor",
+      "url": "https://clawhub.ai/skills/channeladvisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "channeladvisor",
+    "url": "https://clawhub.ai/skills/channeladvisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/channeladvisor-923343675d5c4463.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/channeladvisor@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-channeladvisor-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0472619cd215c2c58603e154471e8e960f30661d4ed7a53e3c92b83fbe4ecec",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:28:42.145Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentic-powered-memecoin-trader@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_powered_memecoin_trader",
+  "skill": {
+    "id": 17774,
+    "skillKey": "clawhub-agentic-powered-memecoin-trader",
+    "name": "Agent Gary AI Powered Memecoin trader."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-powered-memecoin-trader",
+    "url": "https://clawhub.ai/skills/agentic-powered-memecoin-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-powered-memecoin-trader-0217bfb2a68c7819.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates memecoin trading on Solana using fdv.lol CLI with Agent Gary's AI full control via a locally generated, user-configured profile."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "build23w",
+      "userId": "publishers:build23w",
+      "displayName": "Spicy Home Renovation Reviews",
+      "image": "https://avatars.githubusercontent.com/u/142501218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 747,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771275669623,
+      "changelog": "Initial release of agentic-powered-memecoin-trader skill, enabling headless memecoin trading with AI agent control.\n\n- Supports running fdv.lol in CLI mode with Agent Gary \"Full AI Control\" for autonomous trading decisions.\n- Includes a safe example profile template for user configuration (no real secrets included).\n- Automated first-run onboarding wizard: generates new wallet, guides user to provide required RPC & API keys, and validates AI API key for full agent control.\n- Enforces strict local handling of sensitive information; never uploads or publishes user secrets.\n- Documents minimum profile requirements and runtime parameters for secure, fully agent-driven operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6614289743682445ec8ac35cc3a23e938d00c6922a5b6b8278e97e5a19f1cd8c"
+}

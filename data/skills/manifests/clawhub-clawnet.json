@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16078,
+  "uuid": "skill-clawhub-clawnet",
+  "skillKey": "clawhub-clawnet",
+  "name": "ClawNet",
+  "summary": "Enables OpenClaw bots to discover peers, announce presence, and communicate directly using a QUIC-based P2P network with NAT traversal.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dendisuhubdy",
+      "features": [
+        "Enables OpenClaw bots to discover peers, announce presence, and communicate directly using a QU."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawnet@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4477337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawnet",
+      "url": "https://clawhub.ai/skills/clawnet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnet",
+    "url": "https://clawhub.ai/skills/clawnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnet-570ab1ec795fca71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawnet@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawnet-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94ed82ddcb19b2a0bdf64e3b320bfbe35bf16f320e543b27172b8e0ec01e3871",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T15:19:30.603Z"
+}

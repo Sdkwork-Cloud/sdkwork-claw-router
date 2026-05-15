@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40175,
+  "uuid": "skill-clawhub-polymarket-portfolio-tracker-v2",
+  "skillKey": "clawhub-polymarket-portfolio-tracker-v2",
+  "name": "Polymarket Portfolio Tracker",
+  "summary": "Monitors Polymarket positions every 30 minutes, tracks P&L, sends Telegram alerts on wins, big moves, triggers auto-reinvestment, and enforces daily loss cir...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_portfolio_tracker_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike",
+      "features": [
+        "Monitors Polymarket positions every 30 minutes, tracks P&L, sends Telegram alerts on wins, big."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-portfolio-tracker-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5358781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-portfolio-tracker-v2",
+      "url": "https://clawhub.ai/skills/polymarket-portfolio-tracker-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-portfolio-tracker-v2",
+    "url": "https://clawhub.ai/skills/polymarket-portfolio-tracker-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-portfolio-tracker-v2-60bf987ffeb17a4b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-portfolio-tracker-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-portfolio-tracker-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbd25a535ac042678b740f3c21b4bae5b90f2d406d94cc14c1067bfaf15a56b4",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:21:17.495Z"
+}

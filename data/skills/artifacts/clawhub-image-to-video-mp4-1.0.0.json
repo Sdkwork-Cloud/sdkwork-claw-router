@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-mp4@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_mp4",
+  "skill": {
+    "id": 41461,
+    "skillKey": "clawhub-image-to-video-mp4",
+    "name": "Image To Video Mp4"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-mp4",
+    "url": "https://clawhub.ai/skills/image-to-video-mp4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-mp4-c1603597caaf32cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated MP4 video ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"tur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776796357769,
+      "changelog": "- Initial release of Image to Video MP4 skill.\n- Upload still images (JPG, PNG, WEBP, HEIC) and get a 1080p MP4 video with smooth transitions—no editing software required.\n- Automatic session setup and free temporary token for new users.\n- Simple natural language prompts trigger video creation, export, credit check, and more.\n- Optimized for quick, cloud-based processing and easy download of ready-to-post social videos.\n- Clear error messages and tips for smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81692311387424ce9f81fcdb69582ce75f63cc47f92c681ba7f5fd67ada65a9f"
+}

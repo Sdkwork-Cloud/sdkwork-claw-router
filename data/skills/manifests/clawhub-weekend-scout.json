@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43054,
+  "uuid": "skill-clawhub-weekend-scout",
+  "skillKey": "clawhub-weekend-scout",
+  "name": "Weekend Scout",
+  "summary": "Weekend Scout discovers next-weekend outdoor events, festivals, fairs, and road-trip ideas near the user's city and nearby cities. It builds home-city picks...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekend_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dmitry Nikolaenya",
+      "features": [
+        "Weekend Scout discovers next-weekend outdoor events, festivals, fairs, and road-trip ideas near.",
+        "It builds home-city picks..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekend-scout@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27283908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekend-scout",
+      "url": "https://clawhub.ai/skills/weekend-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekend-scout",
+    "url": "https://clawhub.ai/skills/weekend-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekend-scout-86378909dafafc98.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekend-scout@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekend-scout-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9931cbf085dbc372f34db0ffe9d7112738404c138b7a61b538d7c673c5f2743",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T20:03:04.629Z"
+}

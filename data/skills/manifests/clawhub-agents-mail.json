@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50807,
+  "uuid": "skill-clawhub-agents-mail",
+  "skillKey": "clawhub-agents-mail",
+  "name": "Agents Mail — Free Email for AI Agents, with No sign-up, No API key needed",
+  "summary": "Free email for AI agents. No sign-up needed. One call to get a mailbox and send.",
+  "version": "0.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_mail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agents Mail",
+      "features": [
+        "Free email for AI agents",
+        "No sign-up needed",
+        "One call to get a mailbox and send."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agents-mail@0.4.4",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/agents-mail/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agents-mail",
+      "url": "https://clawhub.ai/skills/agents-mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-mail",
+    "url": "https://clawhub.ai/skills/agents-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-mail-1e5a7df0a7b673e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agents-mail@0.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agents-mail-0.4.4.json",
+      "version": "0.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5117faf6fd87a535072a156da6bfd2196f5bf436cdd0a5fef8b4235da3c67975",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T18:24:36.878Z"
+}

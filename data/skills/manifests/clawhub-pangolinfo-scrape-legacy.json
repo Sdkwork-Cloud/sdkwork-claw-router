@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22069,
+  "uuid": "skill-clawhub-pangolinfo-scrape-legacy",
+  "skillKey": "clawhub-pangolinfo-scrape-legacy",
+  "name": "Pangolinfo Scrape (Legacy)",
+  "summary": "Search Google and scrape Amazon using Pangolin APIs. Supports AI Mode search (Google AI Overview with multi-turn dialogue), standard SERP with AI Overview ex...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pangolinfo_scrape_legacy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pangolinfo & AgentGo",
+      "features": [
+        "Search Google and scrape Amazon using Pangolin APIs",
+        "Supports AI Mode search (Google AI Overview with multi-turn dialogue), standard SERP with AI Ov."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pangolinfo-scrape-legacy@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256019276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pangolinfo-scrape-legacy",
+      "url": "https://clawhub.ai/skills/pangolinfo-scrape-legacy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pangolinfo-scrape-legacy",
+    "url": "https://clawhub.ai/skills/pangolinfo-scrape-legacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pangolinfo-scrape-legacy-e51aea36aaf09293.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pangolinfo-scrape-legacy@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pangolinfo-scrape-legacy-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ab3b23a741acae87f8c06120bc7a0868563ed23ab682a11a4624603311b045a",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T06:31:45.026Z"
+}

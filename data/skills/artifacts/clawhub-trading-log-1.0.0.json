@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trading-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_log",
+  "skill": {
+    "id": 58591,
+    "skillKey": "clawhub-trading-log",
+    "name": "trading-log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-log",
+    "url": "https://clawhub.ai/skills/trading-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-log-584832dd54c53eef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "交易日志记录系统——记录所有买卖交易、计算持仓盈亏、自动刷实时行情。When the user mentions buying/selling stocks, recording trades, checking positions, or calculating profit/loss."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wtjjacobj",
+      "userId": "s175dvgnv8vprzy08jb6ph4pxn83sgy1",
+      "displayName": "wtjjacobj",
+      "image": "https://avatars.githubusercontent.com/u/68179406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774912546421,
+      "changelog": "trading-log 1.0.0\n\n- 首次发布：推出A股/港股交易日志记录系统\n- 支持实时行情刷新、持仓/盈亏自动计算\n- 通过自然语言或命令行记录买卖、查询持仓、生成盈亏报表\n- 日志、持仓、盈亏等功能一站式管理\n- 自动对接腾讯行情接口，15:30自动刷新价格并持久化数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f59977001c9864751203779d15db574685d187cd371c151bec8877e8254bda5"
+}

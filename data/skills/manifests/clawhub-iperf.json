@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32908,
+  "uuid": "skill-clawhub-iperf",
+  "skillKey": "clawhub-iperf",
+  "name": "Iperf",
+  "summary": "iperf",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iperf",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iperf@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iperf",
+      "url": "https://clawhub.ai/skills/iperf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iperf",
+    "url": "https://clawhub.ai/skills/iperf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iperf-5164f57006c5591a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iperf@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-iperf-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0574093cca17c10780b203f75da3806e22a0820a89e300a48bedc0fa0cb3b7f",
+      "artifactSizeBytes": 1695
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:12:06.886Z"
+}

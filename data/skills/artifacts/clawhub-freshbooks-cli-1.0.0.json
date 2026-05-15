@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freshbooks-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freshbooks_cli",
+  "skill": {
+    "id": 12672,
+    "skillKey": "clawhub-freshbooks-cli",
+    "name": "FreshBooks CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freshbooks-cli",
+    "url": "https://clawhub.ai/skills/freshbooks-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freshbooks-cli-113cb13167a8a9f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FreshBooks CLI for managing invoices, clients, and billing. Use when the user mentions freshbooks, invoicing, billing, clients, or accounting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "haseebuchiha",
+      "userId": "publishers:haseebuchiha",
+      "displayName": "haseebuchiha",
+      "image": "https://avatars.githubusercontent.com/u/19784907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1601,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770441845387,
+      "changelog": "Initial release of freshbooks-cli.\n\n- Provides CLI commands for managing FreshBooks invoices, clients, and billing using the official API SDK.\n- Supports OAuth2 authentication via a manual (OOB) flow.\n- Includes commands to create, update, list, and retrieve clients and invoices.\n- Offers the ability to generate shareable invoice links and archive invoices.\n- Outputs all data as JSON for easy scripting and integration.\n- Provides setup, command reference, and sample workflows in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bd973e5a4f80f523f506d353f12d0afac97e749d04785b27fd3a14ca6e1453b7"
+}

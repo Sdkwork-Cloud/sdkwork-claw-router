@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/facebook-page-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_page_manager",
+  "skill": {
+    "id": 9044,
+    "skillKey": "clawhub-facebook-page-manager",
+    "name": "Skill to manage a facebook page"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-page-manager",
+    "url": "https://clawhub.ai/skills/facebook-page-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-page-manager-c1514cb0c23126f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Facebook Pages via Meta Graph API. Post content (text, photos, links), list posts, manage comments (list/reply/hide/delete). Use when user wants to publish to Facebook Page, check Page posts, or handle comments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longmaba",
+      "userId": "publishers:longmaba",
+      "displayName": "longmaba",
+      "image": "https://avatars.githubusercontent.com/u/9361500?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4754,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769952188351,
+      "changelog": "Initial release of Facebook Page Manager skill.\n\n- Manage Facebook Pages through the Meta Graph API: post text, photos, links, list posts, and handle comments (list/reply/hide/delete).\n- Command line tool to list pages, create posts, view posts, and manage comments.\n- Guided setup for Meta App, OAuth configuration, and token retrieval.\n- Requires Meta API permissions: pages_show_list, pages_read_engagement, pages_manage_posts, pages_manage_engagement.\n- Setup and usage instructions included for a smooth start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:003a67bf36678daf4d717768b4e55cf8347f42710b0cda9fba51d268d00095b9"
+}

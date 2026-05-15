@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26115,
+  "uuid": "skill-clawhub-groundapi-market-briefing",
+  "skillKey": "clawhub-groundapi-market-briefing",
+  "name": "Groundapi Market Briefing",
+  "summary": "Generate A-share market briefing with indices, limit-up/down pools, sector rotation, IPO calendar, anomaly signals, gold/forex macro data, trending topics, a...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groundapi_market_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qingkongzhiqian",
+      "features": [
+        "Generate A-share market briefing with indices, limit-up/down pools, sector rotation, IPO calend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/groundapi-market-briefing@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45964299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "groundapi-market-briefing",
+      "url": "https://clawhub.ai/skills/groundapi-market-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groundapi-market-briefing",
+    "url": "https://clawhub.ai/skills/groundapi-market-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groundapi-market-briefing-2787a5fd2d2cf10d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/groundapi-market-briefing@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-groundapi-market-briefing-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df7cd8d9af09fff4486945a2570f0a5b46e92cfd69d147063f81897b287fee3b",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T10:13:56.752Z"
+}

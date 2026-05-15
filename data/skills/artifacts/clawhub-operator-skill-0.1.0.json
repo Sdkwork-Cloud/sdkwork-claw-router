@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/operator-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operator_skill",
+  "skill": {
+    "id": 22502,
+    "skillKey": "clawhub-operator-skill",
+    "name": "Operator Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operator-skill",
+    "url": "https://clawhub.ai/skills/operator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operator-skill-025907dbcff6f507.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrates collaborative agent sessions with secure, fault-tolerant CRDT persistence and instant crash-proof state recovery."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "404-unknow",
+      "userId": "s178hxx773293j2n1ez3t08e1s83h4d0",
+      "displayName": "404-UNKNOW",
+      "image": "https://avatars.githubusercontent.com/u/181328405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772878765770,
+      "changelog": "operator-skill 0.1.0\n\n- Initial release of the Skill Operator for collaborative agent orchestration.\n- Persistent session management using Loro-CRDT and append-only logs.\n- Includes actions to create, sync, and load collaborative sessions.\n- Supports secure incremental updates with Ed25519 signature verification.\n- Provides crash-proof state recovery with Snapshot + Write-Ahead Logging (WAL).\n- Delivers high performance and fault-tolerance for collaborative workflows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a7b7e23fa9010bf671e22aab0aa75cb67d7cfc764e419286bb6eda03255b6948"
+}

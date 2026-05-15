@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50761,
+  "uuid": "skill-clawhub-codesmith",
+  "skillKey": "clawhub-codesmith",
+  "name": "CodeSmith",
+  "summary": "CodeSmith — senior engineering agent configuration. Full-stack dev automation, CI/CD pipelines, GitHub workflows, ACP dispatch patterns, and real operational...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codesmith",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawmentorai",
+      "features": [
+        "CodeSmith — senior engineering agent configuration",
+        "Full-stack dev automation, CI/CD pipelines, GitHub workflows, ACP dispatch patterns, and real o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codesmith@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262025190?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codesmith",
+      "url": "https://clawhub.ai/skills/codesmith"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codesmith",
+    "url": "https://clawhub.ai/skills/codesmith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codesmith-59a1144f27d3d60b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codesmith@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codesmith-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:706f97f385f6295d97d1816e5396d9a8f588a6bfdccbdadc89a5d9cb9becaceb",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T11:03:04.452Z"
+}

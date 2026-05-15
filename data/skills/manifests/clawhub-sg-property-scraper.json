@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16784,
+  "uuid": "skill-clawhub-sg-property-scraper",
+  "skillKey": "clawhub-sg-property-scraper",
+  "name": "sg-property-scraper",
+  "summary": "Search Singapore property rental and sale listings with flexible filters. Use when asked to search Singapore properties, find rental or sale listings, check...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sg_property_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "5kbpers",
+      "features": [
+        "Search Singapore property rental and sale listings with flexible filters",
+        "Use when asked to search Singapore properties, find rental or sale listings, check..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sg-property-scraper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20279863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sg-property-scraper",
+      "url": "https://clawhub.ai/skills/sg-property-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sg-property-scraper",
+    "url": "https://clawhub.ai/skills/sg-property-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sg-property-scraper-bde37672d29facfb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sg-property-scraper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sg-property-scraper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b97e5e2ad8d9424c8d9c91b97d3111dd71a61d6322b745d5241600cd0ea71be",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T09:38:21.304Z"
+}

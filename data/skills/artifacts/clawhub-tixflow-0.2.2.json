@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tixflow@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tixflow",
+  "skill": {
+    "id": 18249,
+    "skillKey": "clawhub-tixflow",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tixflow",
+    "url": "https://clawhub.ai/skills/tixflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tixflow-54879e78da54ae4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered event assistant for discovering, booking, and coordinating event tickets. Integrates with KYD Labs protocol and Google Calendar."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seenfinity",
+      "userId": "publishers:seenfinity",
+      "displayName": "Seenfinity",
+      "image": "https://avatars.githubusercontent.com/u/196230607?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 706,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1771916482291,
+      "changelog": "- No visible changes detected in this version.\n- Functionality, usage, and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e39b8f98570ba8a30ab816055d8606a5005c1f5e2aaa6d37c130f1f28ec57e70"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32585,
+  "uuid": "skill-clawhub-callpage",
+  "skillKey": "clawhub-callpage",
+  "name": "Callpage",
+  "summary": "CallPage integration. Manage data, records, and automate workflows. Use when the user wants to interact with CallPage data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.callpage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CallPage integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CallPage data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/callpage@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "callpage",
+      "url": "https://clawhub.ai/skills/callpage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "callpage",
+    "url": "https://clawhub.ai/skills/callpage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/callpage-ed63bdec6bf75866.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/callpage@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-callpage-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:718f176b3c858bfcd3e362e7f2728c78e8584bda51883f28747ef31b6eae6783",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:27:08.754Z"
+}

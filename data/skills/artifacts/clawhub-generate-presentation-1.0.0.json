@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-presentation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_presentation",
+  "skill": {
+    "id": 11184,
+    "skillKey": "clawhub-generate-presentation",
+    "name": "Generate Presentation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-presentation",
+    "url": "https://clawhub.ai/skills/generate-presentation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-presentation-3b5c390189a7ee3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional HTML and PDF presentations from markdown content, URLs, or topics. Creates visually stunning slides with AI-generated illustrations, ke..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nhype",
+      "userId": "publishers:nhype",
+      "displayName": "nhype",
+      "image": "https://avatars.githubusercontent.com/u/55147435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2041,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771173908666,
+      "changelog": "Version 1.0.0 – Initial Release\n\n- Generate professional HTML and PDF presentations from markdown content, URLs, or topics.\n- Supports AI-generated illustrations matching visual styles from a reference folder.\n- Keyboard navigation for slides and automatic PDF export.\n- Extensive markdown file parsing and customizable slide structure.\n- User approval workflow for slide content drafts before design work begins.\n- Design analysis of reference images for color, typography, and layout consistency.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c17be2a47dba8823d9c7de770c9541230060cf208ea29fde3f6a1a53dcd78f7e"
+}

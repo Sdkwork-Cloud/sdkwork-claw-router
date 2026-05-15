@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ardi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ardi_skill",
+  "skill": {
+    "id": 55861,
+    "skillKey": "clawhub-ardi-skill",
+    "name": "Ardi Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ardi-skill",
+    "url": "https://clawhub.ai/skills/ardi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ardi-skill-8181ad0cfe1183b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ardi — Agent Ordinals. 21,000 words. The first on-chain dictionary, inscribed by AI agents on Base mainnet. Agent-only worknet — no human has ever minted an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangyangxing",
+      "userId": "s17283nefmhxcmdwvgs27ma1nd83hvyb",
+      "displayName": "yangyangxing",
+      "image": "https://avatars.githubusercontent.com/u/37945726?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778115731481,
+      "changelog": "- Initial release of ardi-skill v1.0.0.\n- Implements full support for Ardi — the agent-only protocol for inscribing on-chain dictionary entries (\"Ardinals\") via Base mainnet.\n- Includes detailed triggering and usage instructions for recognizing when to activate this skill.\n- Enforces protocol rules: no human minting, caps on commits/holdings, and agent-only operations.\n- Provides clear environment variable prompts and security practices (no direct key access, contract allowlisting).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bdd9bdf704dd3ff82b8acc7c9cc73ee8494485c8718e0c5fbd4d92a734745587"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-whisper@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_whisper",
+  "skill": {
+    "id": 64165,
+    "skillKey": "clawhub-youtube-whisper",
+    "name": "Youtube Whisper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-whisper",
+    "url": "https://clawhub.ai/skills/youtube-whisper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-whisper-e915b9af73dca67c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube影片一鍵轉文字！自動下載影片並用AI轉成中文/英文字幕，沒有字幕的影片也能用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dolphins1123",
+      "userId": "s1722kzeqbx7yvz25dzpq5gcpd83hthw",
+      "displayName": "ken",
+      "image": "https://avatars.githubusercontent.com/u/13045852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1775816691439,
+      "changelog": "youtube-whisper v1.4.1\n\n- Minor update to scripts/youtube-whisper.sh.\n- No changes to user-facing documentation or features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3671da109d4730cc587b4a2bc7570c8f2a265503f29fa46ad9c5eac5ce40c69e"
+}

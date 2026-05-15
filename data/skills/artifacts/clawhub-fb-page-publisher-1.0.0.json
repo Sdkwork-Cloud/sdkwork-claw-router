@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fb-page-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fb_page_publisher",
+  "skill": {
+    "id": 24423,
+    "skillKey": "clawhub-fb-page-publisher",
+    "name": "Fb Page Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fb-page-publisher",
+    "url": "https://clawhub.ai/skills/fb-page-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fb-page-publisher-188eb1ab74b144d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish posts, upload photos, schedule content, read insights, and manage comments on Facebook Pages via the Graph API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaimin-345",
+      "userId": "publishers:jaimin-345",
+      "displayName": "Jaimin Suriya",
+      "image": "https://avatars.githubusercontent.com/u/183716342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 411,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773152001674,
+      "changelog": "Initial release of fb-page-publisher.\n\n- Publish text posts, upload photos, and schedule content on Facebook Pages.\n- View engagement metrics and insights for your Facebook Page.\n- Retrieve recent posts and their engagement statistics.\n- Manage comments by viewing, deleting, and replying to comments.\n- Operate via the Facebook Graph API using environment variables for authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7129e3b83cc7b3699012df9228bb5e4aa7a5d618d9e692e1321c90f7ee69eba"
+}

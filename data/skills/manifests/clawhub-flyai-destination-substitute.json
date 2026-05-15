@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69855,
+  "uuid": "skill-clawhub-flyai-destination-substitute",
+  "skillKey": "clawhub-flyai-destination-substitute",
+  "name": "平替旅行家",
+  "summary": "平替旅行家——想去A太贵？帮你找平替！AI理解你向往某个目的地的\"核心体验元素\"，然后在更近/更便宜的目的地中找到能提供相似体验的\"平替方案\"。当用户提到\"想去XX但太贵\"、\"XX平替\"、\"找平替\"、\"去不起XX\"、\"类似XX的地方\"、\"XX太远了\"、\"XX签证难\"时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyai_destination_substitute",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hello_hang",
+      "features": [
+        "平替旅行家——想去A太贵？帮你找平替！AI理解你向往某个目的地的\"核心体验元素\"，然后在更近/更便宜的目的地中找到能提供相似体验的\"平替方案\"。当用户提到\"想去XX但太贵\"、\"XX平替\"、\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flyai-destination-substitute@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19886468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flyai-destination-substitute",
+      "url": "https://clawhub.ai/skills/flyai-destination-substitute"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyai-destination-substitute",
+    "url": "https://clawhub.ai/skills/flyai-destination-substitute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyai-destination-substitute-8d9fc9cf84d55f3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flyai-destination-substitute@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flyai-destination-substitute-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34c14e53604af1422e34c944a109427111548c76863789dded2732707faf9512",
+      "artifactSizeBytes": 2710
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T17:25:52.345Z"
+}

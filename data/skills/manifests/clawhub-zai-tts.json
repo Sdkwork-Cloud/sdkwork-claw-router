@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54847,
+  "uuid": "skill-clawhub-zai-tts",
+  "skillKey": "clawhub-zai-tts",
+  "name": "🗣️ Text-to-speech using GLM-TTS for generating audio",
+  "summary": "Text-to-speech conversion using GLM-TTS service via the `uvx zai-tts` command for generating audio from text. Use when (1) User requests audio/voice output w...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zai_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alone",
+      "features": [
+        "Text-to-speech conversion using GLM-TTS service via the `uvx zai-tts` command for generating au.",
+        "Use when (1) User requests audio/voice output w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zai-tts@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4549099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zai-tts",
+      "url": "https://clawhub.ai/skills/zai-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zai-tts",
+    "url": "https://clawhub.ai/skills/zai-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zai-tts-420981ba646f2ef9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zai-tts@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-zai-tts-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18dcad862282b8574cf15f46b170086fc1efdfdc2c19c3608683517640d6bbba",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T06:30:37.697Z"
+}

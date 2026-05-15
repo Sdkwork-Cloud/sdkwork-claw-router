@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-matrix-manager-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_matrix_manager_claw",
+  "skill": {
+    "id": 70677,
+    "skillKey": "clawhub-social-matrix-manager-claw",
+    "name": "自媒体矩阵管家虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-matrix-manager-claw",
+    "url": "https://clawhub.ai/skills/social-matrix-manager-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-matrix-manager-claw-72f69d6163fe6d78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自媒体矩阵管家虾 — 多账号自媒体矩阵的统一调度中心。监控数据、分析互动、检测异常、生成日报。 **当以下情况时使用此 Skill**： (1) 需要汇总多个自媒体账号（抖音/小红书/视频号/B站/微博）的运营数据 (2) 需要生成矩阵日报，标出异常账号 (3) 需要检测爆款内容（播放量超均值N倍）并推送预警 (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775722604411,
+      "changelog": "初始发布：多账号自媒体矩阵数据监控、异常预警、日报生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e73c34b2f67b2656177b48815b70efb543fdf67d8f235916521d3455710e87a8"
+}

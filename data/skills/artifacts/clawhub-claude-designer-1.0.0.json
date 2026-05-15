@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_designer",
+  "skill": {
+    "id": 37888,
+    "skillKey": "clawhub-claude-designer",
+    "name": "Produce thoughtful, well-crafted design artifacts (slide decks, interactive prototypes, hi-fi mockups, animated videos, landing."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-designer",
+    "url": "https://clawhub.ai/skills/claude-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-designer-366b91b4bfd7cb58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Produce thoughtful, well-crafted design artifacts (slide decks, interactive prototypes, hi-fi mockups, animated videos, landing pages, dashboards, marketing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cced3000",
+      "userId": "s1744gh9w9p0je66b55t2b2p8s853hgz",
+      "displayName": "cced3000",
+      "image": "https://avatars.githubusercontent.com/u/300924?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776520563514,
+      "changelog": "Initial release of Claude Designer.\n\n- Expert system for producing thoughtful, well-crafted design artifacts in HTML/CSS/JS/SVG.\n- Supports a wide range of deliverables: slide decks, prototypes, hi-fi mockups, animated videos, landing pages, dashboards, and marketing materials.\n- Follows a structured design process: understand, gather context, plan, structure, build, verify, and summarize.\n- Prioritizes real design context; prompts user for existing design systems, assets, or codebases.\n- Asks focused, context-driven questions at the start of new or ambiguous projects to ensure clarity and quality.\n- Produces multiple, varied design options for exploration—avoiding generic or filler content and common \"AI design\" tropes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9812d11c95827906d4150b1ced6c03e093d0431209f5ca7093a066adea222105"
+}

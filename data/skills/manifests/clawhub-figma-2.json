@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65794,
+  "uuid": "skill-clawhub-figma-2",
+  "skillKey": "clawhub-figma-2",
+  "name": "Figma",
+  "summary": "Figma 集成。浏览团队项目与文件，读取设计结构、页面、节点，导出图片，管理评论，查看版本历史，检查组件/组件集/样式，获取设计变量（Token）。通过 MorphixAI 代理安全访问 Figma API。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Leo",
+      "features": [
+        "Figma 集成。浏览团队项目与文件，读取设计结构、页面、节点，导出图片，管理评论，查看版本历史，检查组件/组件集/样式，获取设计变量（Token）。通过 MorphixAI 代理安全访问."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/figma-2@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55380315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "figma-2",
+      "url": "https://clawhub.ai/skills/figma-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-2",
+    "url": "https://clawhub.ai/skills/figma-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-2-892d2d6aa2772228.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/figma-2@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-figma-2-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6929dbbb1729d6dd61616c7b462b6183a71e83950a7b67a57108e2d0b0edf5db",
+      "artifactSizeBytes": 2251
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T08:42:46.733Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runtime-debug-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runtime_debug_skill",
+  "skill": {
+    "id": 24357,
+    "skillKey": "clawhub-runtime-debug-skill",
+    "name": "Runtime Debug Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runtime-debug-skill",
+    "url": "https://clawhub.ai/skills/runtime-debug-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runtime-debug-skill-986d714ef8277459.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose and fix bugs using runtime execution traces. Use when debugging errors, analyzing failures, or finding root causes in Python, Node.js, or Java appli..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxsup",
+      "userId": "s176yhedb0k7y0c1ppeed7rtb983ktbh",
+      "displayName": "dxsup",
+      "image": "https://avatars.githubusercontent.com/u/46807570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 413,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773111859305,
+      "changelog": "syncause-debugger 1.0.0\n\n- Initial release introducing Syncause Debugger skill for diagnosing and fixing bugs using runtime execution traces.\n- Supports Java, Node.js, and Python applications through SDK instrumentation and integration with MCP server.\n- Debug workflow structured in four required phases: Setup, Analyze & Fix, Summary, and Teardown.\n- Detailed guidance for bug reproduction, ensuring high-quality, verifiable runtime traces.\n- Built-in pre-checks for dependencies, environment, and authentication before proceeding.\n- Reproduction strategies and trace validation checklists to maximize troubleshooting accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa01c69739151ef75aab502869b399fde2aee1abb702641bfd6bcb758a5131fb"
+}

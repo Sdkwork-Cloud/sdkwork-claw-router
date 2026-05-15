@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sbti-test@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_test",
+  "skill": {
+    "id": 68148,
+    "skillKey": "clawhub-sbti-test",
+    "name": "SBTI（Sociability, Boldness, Thinking, Independence）人格测试，聚焦**社交性**、**果敢度**、**思维模式**、**独立性**四大核心维度，精准刻画人格特质。 本技能将专业测评体系 AI 化，无需复杂."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-test",
+    "url": "https://clawhub.ai/skills/sbti-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-test-01b3dda627b2e888.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SBTI 人格测试 - 基于 15 维度人格评估的娱乐性心理测试"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biggodcheng",
+      "userId": "s175n41w2bc8g4arjkmazenkgh83kf0z",
+      "displayName": "biggodCheng",
+      "image": "https://avatars.githubusercontent.com/u/21972576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775796594711,
+      "changelog": "SBTI 人格测试 v0.1.0 — 首发上线\n\n- 发布基于 15 维度人格评估的 SBTI 测试，分 4 批共 32 题。\n- 每题均提供三档选项，支持娱乐性自我探索。\n- 测试自动分批进行，交互式收集答案后生成报告。\n- 详细说明计分规则和每批问题指向的人格模型。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d717d83dee5e90d5ccb8ec5fb490584296d218866ce3ec8627ba94b6f2b20e3"
+}

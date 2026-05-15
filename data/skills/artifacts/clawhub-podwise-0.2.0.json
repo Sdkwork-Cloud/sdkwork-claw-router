@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podwise@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podwise",
+  "skill": {
+    "id": 29162,
+    "skillKey": "clawhub-podwise",
+    "name": "Podwise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podwise",
+    "url": "https://clawhub.ai/skills/podwise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podwise-3d7a77a02dc1bc19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Podcast knowledge workflows powered by Podwise CLI: search podcasts and episodes by keyword, monitor followed shows for new releases, find popular episodes,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saitowu",
+      "userId": "s171zvnvbbdtk199x3r80m5mnh83hyh2",
+      "displayName": "SaitoWu",
+      "image": "https://avatars.githubusercontent.com/u/348915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 299,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1775284530024,
+      "changelog": "add translation to other languages",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8052eafd7b059e0252db91356ecd1b1e6d893f887872bf5cc188aa642dadf034"
+}

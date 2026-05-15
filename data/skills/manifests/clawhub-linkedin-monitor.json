@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11266,
+  "uuid": "skill-clawhub-linkedin-monitor",
+  "skillKey": "clawhub-linkedin-monitor",
+  "name": "Linkedin Monitor",
+  "summary": "Bulletproof LinkedIn inbox monitoring with progressive autonomy. Monitors messages hourly, drafts replies in your voice, and alerts you to new conversations. Supports 4 autonomy levels from monitor-only to full autonomous.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dylanbaker24",
+      "features": [
+        "Bulletproof LinkedIn inbox monitoring with progressive autonomy",
+        "Monitors messages hourly, drafts replies in your voice, and alerts you to new conversations",
+        "Supports 4 autonomy levels from monitor-only to full autonomous."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-monitor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208568310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-monitor",
+      "url": "https://clawhub.ai/skills/linkedin-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-monitor",
+    "url": "https://clawhub.ai/skills/linkedin-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-monitor-5d9d41bb306b8195.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-monitor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-monitor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c0c2cdf7a15fcbc0263ab52ac1eff5b49c93da95cfc9b5cd4abc08390ee04e7",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T17:24:41.278Z"
+}

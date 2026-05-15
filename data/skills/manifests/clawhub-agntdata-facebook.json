@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31446,
+  "uuid": "skill-clawhub-agntdata-facebook",
+  "skillKey": "clawhub-agntdata-facebook",
+  "name": "Facebook API",
+  "summary": "Use one API key to pull Facebook data (pages, groups, marketplace, and ads) for agents, automations, and analytics. Structured JSON, credit-based pricing, no se",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agntdata_facebook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaen",
+      "features": [
+        "Use one API key to pull Facebook data (pages, groups, marketplace, and ads) for agents, automat.",
+        "Structured JSON, credit-based pricing, no se"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agntdata-facebook@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53541106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agntdata-facebook",
+      "url": "https://clawhub.ai/skills/agntdata-facebook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agntdata-facebook",
+    "url": "https://clawhub.ai/skills/agntdata-facebook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agntdata-facebook-a3f7e65487d3def5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agntdata-facebook@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-agntdata-facebook-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6a08ec5463a09b642f8fc872db60ebaf0a636c081d6dd7e7811dcc254ed2904",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T23:44:54.233Z"
+}

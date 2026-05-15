@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jsrt-claw@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jsrt_claw",
+  "skill": {
+    "id": 18505,
+    "skillKey": "clawhub-jsrt-claw",
+    "name": "Jsrt Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jsrt-claw",
+    "url": "https://clawhub.ai/skills/jsrt-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jsrt-claw-e75bdbaec2a7bf96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Windows system tasks by generating and running a single JavaScript file using Microsoft JsRT with COM objects and fallback support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gnh1201",
+      "userId": "publishers:gnh1201",
+      "displayName": "Namhyeon, Go",
+      "image": "https://avatars.githubusercontent.com/u/4439601?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 685,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771838171757,
+      "changelog": "jsrt-claw 0.1.0\n\n- Initial release introducing skill overview and documentation.\n- Supports Windows automation via JScript (.js) using COM objects: FileSystem, Shell, WMI, HTTP, and Office Automation.\n- Provides a universal `CreateObject` loader with multi-ProgID fallback support.\n- Explains JavaScript runtime detection and polyfill strategies for legacy environments.\n- Includes guidance on requesting polyfills and maintaining compatibility with JScript 5.x.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e69255aead823f5c122201ab7c1936790387bb9bfaaaecae623dc8a28623a5a"
+}

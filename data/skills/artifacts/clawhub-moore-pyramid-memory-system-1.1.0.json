@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moore-pyramid-memory-system@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moore_pyramid_memory_system",
+  "skill": {
+    "id": 60291,
+    "skillKey": "clawhub-moore-pyramid-memory-system",
+    "name": "Moore Pyramid Memory System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moore-pyramid-memory-system",
+    "url": "https://clawhub.ai/skills/moore-pyramid-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moore-pyramid-memory-system-ac26c3b0df51313b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Moore 金字塔记忆系统 — 5层记忆架构，确保跨 session 连续性。每次启动时自动加载，新 session 开始时必须执行此 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tosspi",
+      "userId": "s17bdv8zb0g5vs9hj5p73ngb8n83zsqz",
+      "displayName": "tosspi",
+      "image": "https://avatars.githubusercontent.com/u/91527286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774967321056,
+      "changelog": "- Introduced version 1.1.0 of Moore 金字塔记忆系统 (Moore Pyramid Memory System).\n- Upgraded memory architecture to a 5-layer pyramid ensuring cross-session continuity.\n- Added critical `.todos.md` file for persistent tracking of cross-session todos.\n- Implemented detailed rules for conversation summaries and todo management.\n- Separated archive scripts for weekly and monthly summaries with defined cron schedules.\n- Improved documentation with usage instructions and file structure overview.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9f86c3ec644093ba7c03ab5fe96a2e249774e981ae6da813b98e1d6dd773de8"
+}

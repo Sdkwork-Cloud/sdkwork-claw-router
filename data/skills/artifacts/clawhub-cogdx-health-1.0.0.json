@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cogdx-health@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cogdx_health",
+  "skill": {
+    "id": 27231,
+    "skillKey": "clawhub-cogdx-health",
+    "name": "CogDx Health Check (Free)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cogdx-health",
+    "url": "https://clawhub.ai/skills/cogdx-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cogdx-health-6c46ea15a7934c4a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free cognitive health check for AI agents via Cerebratech CogDx. Use as entry point before committing to paid diagnostics. Agent sends 10-20 recent outputs w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "drkavner",
+      "userId": "s17epm8t94nn1n4w2k7pq6z7dx83jt4t",
+      "displayName": "Dr Amanda Kavner",
+      "image": "https://avatars.githubusercontent.com/u/78941808?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773850941301,
+      "changelog": "Free cognitive health check. Real statistical analysis. Detects one specific reasoning pattern.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:def342ebc2c173a6366f21111f5cb8e0a8751873f52ef866d256ffa7ec99365b"
+}

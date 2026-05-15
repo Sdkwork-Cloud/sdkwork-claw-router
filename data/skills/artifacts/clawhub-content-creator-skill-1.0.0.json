@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-creator-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_creator_skill",
+  "skill": {
+    "id": 16595,
+    "skillKey": "clawhub-content-creator-skill",
+    "name": "Content Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-creator-skill",
+    "url": "https://clawhub.ai/skills/content-creator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-creator-skill-782c3667c1d1c96a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrates humanizer, de-ai-ify, copywriting, and tweet-writer to create authentic, persuasive, platform-tailored content with clear engagement and factual..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h4gen",
+      "userId": "s1789vg92zcrdcbajdp87fjxsh8487xv",
+      "displayName": "Hagen Hoferichter",
+      "image": "https://avatars.githubusercontent.com/u/12556763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 867,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771077397017,
+      "changelog": "**Major update: Overhauled from a content marketing suite to a focused meta-skill for humanized, platform-appropriate copywriting.**\n\n- Replaces previous brand voice/SEO/social post toolkit with a meta-skill that orchestrates multiple purpose-specific copywriting and \"humanization\" tools.\n- New pipeline: drafts persuasive content, then applies anti-AI-pattern editing, conversational voice shaping, copywriting structures, and formats results for LinkedIn and X.\n- Requires local installation of separate `humanizer`, `de-ai-ify`, `copywriting`, and `tweet-writer` skills.\n- Ensures every output includes: final LinkedIn post, voice edit summary, persuasion framework info, 5-part X thread, and variant hooks/CTAs.\n- Strict rules for authenticity, specificity, natural rhythm, and platform fit; explicit guardrails against fabrication or manipulative tactics.\n- Old templates, frameworks, and reference scripts removed; now only coordinates installed upstream skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3339dc758015b05fecec1d44391d5f95efd59159f41c40ec444ace374c84462"
+}

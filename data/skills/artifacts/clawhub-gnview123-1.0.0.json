@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gnview123@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gnview123",
+  "skill": {
+    "id": 41454,
+    "skillKey": "clawhub-gnview123",
+    "name": "downloader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gnview123",
+    "url": "https://clawhub.ai/skills/gnview123",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gnview123-d8947beaa8ca0a2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract video details, play URLs, user posts, collections, comments, live room info, and dynamic data from Douyin, TikTok, and Bilibili via multiple API endp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goldknife6",
+      "userId": "s175xracmvjrvtppydy1jm9dnh84hgrz",
+      "displayName": "金刀(Gold Knife)",
+      "image": "https://avatars.githubusercontent.com/u/9961587?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775756104288,
+      "changelog": "Initial release of 抖音信息提取器 (gnview):\n\n- Provides API endpoints for extracting video and user information from Bilibili.\n- Supports single video, video stream URLs, user posts, collections, popular videos, comments, and replies.\n- Includes endpoints for live room and streaming data, user profile, dynamic posts, and danmaku (弹幕).\n- Configuration handled via config.json for API host and version settings.\n- All endpoints have bilingual (Chinese/English) documentation and example parameters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1018de28e73dd0d10dbc4c307a2544d9c5bcc28ae71078fe1afeb0416dc5a0fa"
+}

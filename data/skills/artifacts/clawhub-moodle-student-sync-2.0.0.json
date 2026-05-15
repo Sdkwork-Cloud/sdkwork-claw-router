@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moodle-student-sync@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodle_student_sync",
+  "skill": {
+    "id": 38921,
+    "skillKey": "clawhub-moodle-student-sync",
+    "name": "Moodle Student Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodle-student-sync",
+    "url": "https://clawhub.ai/skills/moodle-student-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodle-student-sync-60586f644e60e4cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync and summarize student Moodle data including courses, upcoming deadlines, grades, files, and announcements. Use this skill whenever a user asks for Moodl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yerassyl-sailaubay",
+      "userId": "s176r4nxvzmvxtc8zgr3x3dbm584c8c7",
+      "displayName": "yerassyl-sailaubay",
+      "image": "https://avatars.githubusercontent.com/u/107134360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775551738419,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b60e1494e7d4d5e4793c354350126e3dbd526bf30306fbe65ce6c793eb68f913"
+}

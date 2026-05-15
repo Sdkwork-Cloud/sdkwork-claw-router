@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-fetch-download@1.1.9",
+  "version": "1.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_fetch_download",
+  "skill": {
+    "id": 18584,
+    "skillKey": "clawhub-video-fetch-download",
+    "name": "Video Fetch Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-fetch-download",
+    "url": "https://clawhub.ai/skills/video-fetch-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-fetch-download-a87fc9966a24b568.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Download videos from 1000+ sites, torrents, and magnet links directly to 115 or Quark cloud storage via server-side or local downloads."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "graysonzeng",
+      "userId": "publishers:graysonzeng",
+      "displayName": "graysonzeng",
+      "image": "https://avatars.githubusercontent.com/u/21187269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.9",
+      "createdAt": 1773517754350,
+      "changelog": "fix: flatten frontmatter so registry/scanner can read install spec and required binaries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9da69ca80750d4ea30f5be238a81ffd6de21d98eae944d81c224508f22fe2404"
+}

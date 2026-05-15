@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27754,
+  "uuid": "skill-clawhub-justoneapi-kuaishou",
+  "skillKey": "clawhub-justoneapi-kuaishou",
+  "name": "Kuaishou API",
+  "summary": "Analyze Kuaishou workflows with JustOneAPI, including user Search, user Published Videos, and video Details across 7 operations.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_kuaishou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Analyze Kuaishou workflows with JustOneAPI, including user Search, user Published Videos, and v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-kuaishou@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-kuaishou",
+      "url": "https://clawhub.ai/skills/justoneapi-kuaishou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-kuaishou",
+    "url": "https://clawhub.ai/skills/justoneapi-kuaishou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-kuaishou-8aa00ce9f7bc8dd9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-kuaishou@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-kuaishou-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:431aa341f171c4b0efaa1153af3fc482c93fe04640771411fa32d52a259a4a6d",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:07:43.534Z"
+}

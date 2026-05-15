@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21546,
+  "uuid": "skill-clawhub-gitcode-issue-reply",
+  "skillKey": "clawhub-gitcode-issue-reply",
+  "name": "GitCode Issue Reply",
+  "summary": "Generate reply drafts for a single GitCode issue with similar-issue references; maintainer reviews before posting. Use when user asks to reply to or comment...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitcode_issue_reply",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "do_while_true",
+      "features": [
+        "Generate reply drafts for a single GitCode issue with similar-issue references",
+        "maintainer reviews before posting",
+        "Use when user asks to reply to or comment..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitcode-issue-reply@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30582182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitcode-issue-reply",
+      "url": "https://clawhub.ai/skills/gitcode-issue-reply"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitcode-issue-reply",
+    "url": "https://clawhub.ai/skills/gitcode-issue-reply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitcode-issue-reply-4c37d884cee9b786.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitcode-issue-reply@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitcode-issue-reply-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16e9074e0f64caf7a4213f76a0f2addcea2455d575c465a4d8800dcc4c3d2592",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T01:27:02.164Z"
+}

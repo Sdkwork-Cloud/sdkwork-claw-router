@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12334,
+  "uuid": "skill-clawhub-evolution-state-analyzer",
+  "skillKey": "clawhub-evolution-state-analyzer",
+  "name": "Evolution State Analyzer",
+  "summary": "Analyzes the evolution memory graph for stagnation patterns, recurring failures, and success plateaus. Generates actionable insights to guide future evolutio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolution_state_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WANGJUNJIE",
+      "features": [
+        "Analyzes the evolution memory graph for stagnation patterns, recurring failures, and success pl.",
+        "Generates actionable insights to guide future evolutio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evolution-state-analyzer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32323900?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evolution-state-analyzer",
+      "url": "https://clawhub.ai/skills/evolution-state-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolution-state-analyzer",
+    "url": "https://clawhub.ai/skills/evolution-state-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolution-state-analyzer-4796c7a74cdaa6ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evolution-state-analyzer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evolution-state-analyzer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80d14f6ef1279af5ce0bf57836604a2ba804e040e8c165c84a51672f13b4c4c9",
+      "artifactSizeBytes": 2229
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:31:15.358Z"
+}

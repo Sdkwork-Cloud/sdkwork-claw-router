@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shippingagent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shippingagent",
+  "skill": {
+    "id": 70871,
+    "skillKey": "clawhub-shippingagent",
+    "name": "Dewell Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shippingagent",
+    "url": "https://clawhub.ai/skills/shippingagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shippingagent-6fdbfd892ec1d828.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供全球主要港口海运集装箱的运价查询、费率规则、在线预订及货物跟踪的货运代理专用服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "barry2333317",
+      "userId": "s171k0q0kb5eyb3p17ktwx4drn842yve",
+      "displayName": "barry2333317",
+      "image": "https://avatars.githubusercontent.com/u/222605174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773685792670,
+      "changelog": "国际物流小助理新增",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f9fe6e9fb5c0b6f2a44482a510c643da7c6b2ed450e2ce01a55b1aedfd67470"
+}

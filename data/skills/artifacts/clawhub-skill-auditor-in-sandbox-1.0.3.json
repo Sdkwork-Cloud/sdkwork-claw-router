@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-auditor-in-sandbox@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_auditor_in_sandbox",
+  "skill": {
+    "id": 44301,
+    "skillKey": "clawhub-skill-auditor-in-sandbox",
+    "name": "Skill Auditor in Sandbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-auditor-in-sandbox",
+    "url": "https://clawhub.ai/skills/skill-auditor-in-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-auditor-in-sandbox-34c4147a80ed9b95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch a NovitaClaw (OpenClaw) sandbox, install a specified skill, and generate an installation & security audit report. Use when: (1) You want to test a com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freecodewu",
+      "userId": "s172ck5rm1vdydm0h60y7zzvx583wjcw",
+      "displayName": "freecodewu",
+      "image": "https://avatars.githubusercontent.com/u/96016540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776079433477,
+      "changelog": "Version 1.0.3 of skill-auditor-in-sandbox\n\n- No file changes detected.\n- Documentation and functionality remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9ecf8528ba46b00e7bea192226d892aa43a4a8e121298f4afa9eb1965f52f71"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9872,
+  "uuid": "skill-clawhub-google-trends",
+  "skillKey": "clawhub-google-trends",
+  "name": "Google Trends",
+  "summary": "Monitor Google Trends - get trending searches, compare keywords, and track interest over time. Use for market research, content planning, and trend analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_trends",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "satnamra",
+      "features": [
+        "Monitor Google Trends",
+        "get trending searches, compare keywords, and track interest over time",
+        "Use for market research, content planning, and trend analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-trends@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22494619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-trends",
+      "url": "https://clawhub.ai/skills/google-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-trends",
+    "url": "https://clawhub.ai/skills/google-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-trends-fbae62809366e57a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-trends@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-trends-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbac4129dbd1bdba8ff2e61ae115aa67a3503ed4d7743a6364899ac2f6d24a88",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T03:25:55.874Z"
+}

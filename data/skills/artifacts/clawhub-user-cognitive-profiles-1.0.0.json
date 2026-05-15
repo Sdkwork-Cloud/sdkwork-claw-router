@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/user-cognitive-profiles@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.user_cognitive_profiles",
+  "skill": {
+    "id": 17191,
+    "skillKey": "clawhub-user-cognitive-profiles",
+    "name": "🤖🤝🧠 better collab with your agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "user-cognitive-profiles",
+    "url": "https://clawhub.ai/skills/user-cognitive-profiles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/user-cognitive-profiles-862e651a9d0d61b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze ChatGPT conversation exports to discover cognitive archetypes and optimize AI-human communication patterns. Enables personalized agent interactions based on detected user profiles."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebastianffx",
+      "userId": "publishers:sebastianffx",
+      "displayName": "Sebastian Otálora",
+      "image": "https://avatars.githubusercontent.com/u/937885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1838,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770066082454,
+      "changelog": "Initial release – analyze ChatGPT conversations to identify cognitive archetypes and optimize AI-human communication.\n\n- Processes exported ChatGPT conversation history to detect user communication patterns.\n- Generates a cognitive profile output (JSON) with archetype breakdowns, communication metrics, and actionable insights.\n- Supports configuration of custom archetypes and adjustable analysis granularity.\n- Enables integration with OpenClaw agent profiles for personalized AI interactions.\n- All analysis runs locally; no data is uploaded or shared automatically.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:16325c9c377c452b8362145b5098c33a68190f1893a4568629c14774a279b2fa"
+}

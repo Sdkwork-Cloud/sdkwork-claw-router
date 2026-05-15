@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45529,
+  "uuid": "skill-clawhub-return-flights",
+  "skillKey": "clawhub-return-flights",
+  "name": "Return Flights",
+  "summary": "Search and compare round-trip flights with return date. Shows total cost for both legs, compares bundled vs separate booking to find the cheapest combination...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.return_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Search and compare round-trip flights with return date",
+        "Shows total cost for both legs, compares bundled vs separate booking to find the cheapest combi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/return-flights@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "return-flights",
+      "url": "https://clawhub.ai/skills/return-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "return-flights",
+    "url": "https://clawhub.ai/skills/return-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/return-flights-9cadfed8baa10a34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/return-flights@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-return-flights-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3aa099bd12d9c8d87d911a7c48dbecbb53f37633591c242e65e2198059fc20c",
+      "artifactSizeBytes": 2570
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T09:05:01.210Z"
+}

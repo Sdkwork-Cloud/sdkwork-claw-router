@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65184,
+  "uuid": "skill-clawhub-short-video-script-creator",
+  "skillKey": "clawhub-short-video-script-creator",
+  "name": "Short Video Script Creator",
+  "summary": "短视频核心脚本创作，通过专属参数清晰区分产品信息、口吻对标、内容对标及历史文案，批量生成高质量脚本，原生支持PDF/Word。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_video_script_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "an",
+      "features": [
+        "短视频核心脚本创作，通过专属参数清晰区分产品信息、口吻对标、内容对标及历史文案，批量生成高质量脚本，原生支持PDF/Word。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/short-video-script-creator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208153467?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "short-video-script-creator",
+      "url": "https://clawhub.ai/skills/short-video-script-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-video-script-creator",
+    "url": "https://clawhub.ai/skills/short-video-script-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-video-script-creator-733dafcaf6c388ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/short-video-script-creator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-short-video-script-creator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3ae61e79b6567c76a772564802cf6409909fe30ffb8ccb473b3eeed66f9797b",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:57:49.281Z"
+}

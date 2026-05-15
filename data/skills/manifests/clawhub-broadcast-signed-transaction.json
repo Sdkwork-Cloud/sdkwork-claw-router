@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60580,
+  "uuid": "skill-clawhub-broadcast-signed-transaction",
+  "skillKey": "clawhub-broadcast-signed-transaction",
+  "name": "Broadcast Signed Transaction",
+  "summary": "直接广播已签名的 hex 交易到链上，无需私钥，一步完成广播",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadcast_signed_transaction",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wang Chengming",
+      "features": [
+        "直接广播已签名的 hex 交易到链上，无需私钥，一步完成广播"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/broadcast-signed-transaction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17539174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "broadcast-signed-transaction",
+      "url": "https://clawhub.ai/skills/broadcast-signed-transaction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadcast-signed-transaction",
+    "url": "https://clawhub.ai/skills/broadcast-signed-transaction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadcast-signed-transaction-1b644a5d2994112a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/broadcast-signed-transaction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-broadcast-signed-transaction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3118fe02e62de99d6c34ab6a6a57529d909b4aa6d7c7879a00686c7b33451b1",
+      "artifactSizeBytes": 2587
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T08:50:06.150Z"
+}

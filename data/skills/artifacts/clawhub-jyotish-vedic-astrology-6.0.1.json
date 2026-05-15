@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jyotish-vedic-astrology@6.0.1",
+  "version": "6.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jyotish_vedic_astrology",
+  "skill": {
+    "id": 66425,
+    "skillKey": "clawhub-jyotish-vedic-astrology",
+    "name": "印度占星专业解盘系统"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jyotish-vedic-astrology",
+    "url": "https://clawhub.ai/skills/jyotish-vedic-astrology",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jyotish-vedic-astrology-7312db812d4cf673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "印度占星（Jyotish）专业解盘与推运系统。核心能力：PDF星盘输入→严谨解盘→精确推运应期输出。触发词：印度占星、吠陀占星、Jyotish、解盘、推运、星盘分析、Dasha、Transit、Nakshatra、Yoga、出生时间矫正、PDF星盘、读取PDF、分析PDF星盘、现代解读、误判纠错、Varga分盘、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "732642856",
+      "userId": "s17esfn1p0pmgfewgt1sz8e5f5865p2n",
+      "displayName": "732642856",
+      "image": "https://avatars.githubusercontent.com/u/271702047?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 83,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "6.0.1",
+      "createdAt": 1777962608928,
+      "changelog": "Major update introducing a highly structured, professional Jyotish (Vedic astrology) reading and prediction system with mandatory multi-step verification and deep workflow guidance.\n\n- Enforces a standardized workflow for chart analysis and prediction, supporting precise birth data, PDF/printed charts, and unknown birth times with correction.\n- Adds mandatory External Verification Gates (MEVG): all interpretations and forecasts must be cross-verified with at least 3 independent external sources, with strict confidence grading.\n- Requires all Transit-based predictions to output explicit timeframes, actionable advice, and confidence levels.\n- Robust engine upgrades: introduces 27 sub-commands for advanced analysis, prediction, reporting, rectification, and case research.\n- Expands methodologies with step-by-step protocols (PACDARES, nine-layer composite, triple confidence grade) and anti-dogma practitioner wisdom.\n- Comprehensive documentation and reference index (105+ files) for methods, regulations, examples, case libraries, and advanced techniques.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01693c727eff3fcc193881a757a1fbc700ea6935c99c28ec893eb32309929bb1"
+}

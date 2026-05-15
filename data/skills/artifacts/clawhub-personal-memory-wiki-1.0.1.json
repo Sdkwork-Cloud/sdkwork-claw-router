@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-memory-wiki@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_memory_wiki",
+  "skill": {
+    "id": 25715,
+    "skillKey": "clawhub-personal-memory-wiki",
+    "name": "Personalised Local Wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-memory-wiki",
+    "url": "https://clawhub.ai/skills/personal-memory-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-memory-wiki-1d967df370eb783c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uses wikmd to manage a personal, local wiki of useful information. Wiki can be hosted on HTTP for manual browsing and review. Proactively consult the wiki wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "errant",
+      "userId": "s1760rm55kqjvnr66hdhsez5d9841htv",
+      "displayName": "errant",
+      "image": "https://avatars.githubusercontent.com/u/9387?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775836650435,
+      "changelog": "- Updated description to clarify that the wiki can be hosted on HTTP for manual browsing and review.\n- Added a note and warning about hosting the wiki on 0.0.0.0 and network access in the configuration example.\n- Adjusted default configuration examples: the root directory path is now `~/personal-wiki/wiki` (was previously in `~/Documents/personal-wiki/wiki`).\n- Clarified some configuration directory and environment variable instructions to use `<PATH>/personal-wiki`.\n- Minor wording, ordering, and privacy note updates for improved clarity and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ddf606d03a289ae39113e205638e22e1709d2f5c1d5676098b495e0db4c08502"
+}

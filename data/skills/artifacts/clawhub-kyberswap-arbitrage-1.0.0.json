@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kyberswap-arbitrage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kyberswap_arbitrage",
+  "skill": {
+    "id": 16657,
+    "skillKey": "clawhub-kyberswap-arbitrage",
+    "name": "KyberSwap Arbitrage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kyberswap-arbitrage",
+    "url": "https://clawhub.ai/skills/kyberswap-arbitrage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kyberswap-arbitrage-5eeef70874dec5f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform triangular arbitrage on Base via KyberSwap by finding profitable token swaps, calculating optimal paths, and executing multi-hop trades with gas and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harleyscodes",
+      "userId": "publishers:harleyscodes",
+      "displayName": "HarleysCodes",
+      "image": "https://avatars.githubusercontent.com/u/116604105?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 842,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771102268410,
+      "changelog": "- Initial release of kyberswap-arbitrage on Base network.\n- Find triangular arbitrage opportunities, calculate optimal swap paths, and execute multi-hop trades using KyberSwap.\n- Utilizes key contracts: Router (`0x6131B5...`) and Factory (`0x5F1dddb...`).\n- Includes safety checks for slippage, gas costs, price impact, and token contract ownership.\n- Supports commonly used Base tokens (USDC, USDT, ETH/WETH).\n- Prioritizes aggressive arbitrage while auditing for potential risks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3cf38f5973b1d1a7234762b73ffd2dca09478fd8b45f089fc9212d17f11a501b"
+}

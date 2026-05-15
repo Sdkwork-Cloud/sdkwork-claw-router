@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27266,
+  "uuid": "skill-clawhub-tensorslab-image",
+  "skillKey": "clawhub-tensorslab-image",
+  "name": "TensorLab Image",
+  "summary": "Generate and edit images using TensorsLab's AI models. Supports text-to-image, image-to-image generation, plus advanced editing: avatar generation, watermark...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tensorslab_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bob",
+      "features": [
+        "Generate and edit images using TensorsLab's AI models",
+        "Supports text-to-image, image-to-image generation, plus advanced editing: avatar generation, wa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tensorslab-image@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207245394?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tensorslab-image",
+      "url": "https://clawhub.ai/skills/tensorslab-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tensorslab-image",
+    "url": "https://clawhub.ai/skills/tensorslab-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tensorslab-image-60f47aa3d086b7b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tensorslab-image@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tensorslab-image-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7a55f6ec996697b61f857cb8b115749f961d974b0eb2ab951af373441d6f46d",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:01:53.705Z"
+}

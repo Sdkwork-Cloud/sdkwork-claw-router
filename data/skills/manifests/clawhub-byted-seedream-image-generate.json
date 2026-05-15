@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32969,
+  "uuid": "skill-clawhub-byted-seedream-image-generate",
+  "skillKey": "clawhub-byted-seedream-image-generate",
+  "name": "Byted Seedream Image Generate",
+  "summary": "Generate high-quality images from text prompts using Volcano Engine Seedream models. Supports multiple artistic styles and aspect ratios. Use this skill when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_seedream_image_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "Generate high-quality images from text prompts using Volcano Engine Seedream models",
+        "Supports multiple artistic styles and aspect ratios",
+        "Use this skill when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-seedream-image-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-seedream-image-generate",
+      "url": "https://clawhub.ai/skills/byted-seedream-image-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-seedream-image-generate",
+    "url": "https://clawhub.ai/skills/byted-seedream-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-seedream-image-generate-9f778985763f251e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-seedream-image-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-seedream-image-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcceb24a214395272b57891e98f4be499d34845b2e25152b4b214e4d1e8c5553",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T04:49:35.738Z"
+}

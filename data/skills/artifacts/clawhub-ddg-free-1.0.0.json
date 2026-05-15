@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ddg-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ddg_free",
+  "skill": {
+    "id": 67121,
+    "skillKey": "clawhub-ddg-free",
+    "name": "Ddg Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ddg-free",
+    "url": "https://clawhub.ai/skills/ddg-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ddg-free-8be2cc3a541127b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完全免费的网页搜索，使用 Bing 搜索结果。无需 API key，完全免费使用。当用户需要搜索网页、查找信息时使用此命令。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ipdoctor961051-cyber",
+      "userId": "publishers:ipdoctor961051-cyber",
+      "displayName": "ipdoctor961051-cyber",
+      "image": "https://avatars.githubusercontent.com/u/248100146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 744,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772503120247,
+      "changelog": "- Initial release of the free-search skill for web search.\n- Provides completely free Bing-powered web search with no API key required.\n- Supports both Chinese and English search queries.\n- Unlimited usage, no registration needed.\n- Outputs search results in structured JSON including title, URL, and snippet.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0a0c5645dc5cf9174216e87fcd0aeb055b1b9de84e57dc3bebe1e3735f24c1ac"
+}

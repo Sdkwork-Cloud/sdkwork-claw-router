@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57780,
+  "uuid": "skill-clawhub-shuaishou-mcp-client",
+  "skillKey": "clawhub-shuaishou-mcp-client",
+  "name": "甩手店长一键采集，刊登",
+  "summary": "Builds and uses an MCP client (Streamable HTTP transport) to connect to the htyd MCP server and invoke all available tools (including login). Use when connec...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuaishou_mcp_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangJie",
+      "features": [
+        "Builds and uses an MCP client (Streamable HTTP transport) to connect to the htyd MCP server and.",
+        "Use when connec..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shuaishou-mcp-client@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92045183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shuaishou-mcp-client",
+      "url": "https://clawhub.ai/skills/shuaishou-mcp-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuaishou-mcp-client",
+    "url": "https://clawhub.ai/skills/shuaishou-mcp-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuaishou-mcp-client-602dcd76fe06453b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shuaishou-mcp-client@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shuaishou-mcp-client-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9fa5be463e406d7108fc73b60572ee736832bcd73274093a92293af1cc4f138",
+      "artifactSizeBytes": 2756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T02:41:58.236Z"
+}

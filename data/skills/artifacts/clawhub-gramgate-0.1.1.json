@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gramgate@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gramgate",
+  "skill": {
+    "id": 46093,
+    "skillKey": "clawhub-gramgate",
+    "name": "GramGate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gramgate",
+    "url": "https://clawhub.ai/skills/gramgate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gramgate-307c9e59eff79d93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Telegram gateway for AI agents and automation. Use GramGate to access a real Telegram account over REST or MCP: read channels and history, search across chat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zakirovdmr",
+      "userId": "s17bpf68yqwt15thpyzzr0x4nn84vbma",
+      "displayName": "zakirovdmr",
+      "image": "https://avatars.githubusercontent.com/u/183281456?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776165210589,
+      "changelog": "Improve ClawHub description from GitHub README",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbe0cb7b3e6fe6181d90f8a4d26cbc6ad10732cc8ffb5db879d929c92fe4308b"
+}

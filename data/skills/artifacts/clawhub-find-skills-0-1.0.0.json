@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_0",
+  "skill": {
+    "id": 31466,
+    "skillKey": "clawhub-find-skills-0",
+    "name": "Find Skills 0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-0",
+    "url": "https://clawhub.ai/skills/find-skills-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-0-4cce789e70a6db7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueda",
+      "userId": "s17esmz2rjkjt1twh7adaessj583jwms",
+      "displayName": "三昧",
+      "image": "https://avatars.githubusercontent.com/u/22470505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774436879945,
+      "changelog": "Initial release of the find-skills skill.\n\n- Helps users discover and install agent skills based on their needs or queries.\n- Guides users to search for skills using the Skills CLI and provides relevant commands and examples.\n- Offers suggestions for various common categories and how to phrase searches effectively.\n- Explains how to present and install found skills.\n- Provides guidance for cases when no relevant skill is found, including how to create new skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f68f5518253bfbb2390fe03e4b17126e4a5c1bbcc1ac117a1645615c66e6f7d6"
+}

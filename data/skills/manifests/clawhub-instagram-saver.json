@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64298,
+  "uuid": "skill-clawhub-instagram-saver",
+  "skillKey": "clawhub-instagram-saver",
+  "name": "instagram-saver",
+  "summary": "當使用者貼上 Instagram 連結時，自動下載該貼文的所有高解析度圖片與影片。使用 Cobalt API 進行解析，支援多圖貼文，若為私人帳號會自動回報。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_saver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIS1205",
+      "features": [
+        "當使用者貼上 Instagram 連結時，自動下載該貼文的所有高解析度圖片與影片。使用 Cobalt API 進行解析，支援多圖貼文，若為私人帳號會自動回報。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instagram-saver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256096402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instagram-saver",
+      "url": "https://clawhub.ai/skills/instagram-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-saver",
+    "url": "https://clawhub.ai/skills/instagram-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-saver-a7a22da963ac37db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instagram-saver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instagram-saver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be261518cbed64c6758b0ece17514227912bb80bfc8f7285561166c810fe6984",
+      "artifactSizeBytes": 2204
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T08:50:18.155Z"
+}

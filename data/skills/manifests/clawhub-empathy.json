@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13081,
+  "uuid": "skill-clawhub-empathy",
+  "skillKey": "clawhub-empathy",
+  "name": "Empathy",
+  "summary": "Respond to emotional content with genuine-feeling empathy using Chain of Empathy reasoning, reflection-before-response, and calibrated validation.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.empathy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Respond to emotional content with genuine-feeling empathy using Chain of Empathy reasoning, ref."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/empathy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "empathy",
+      "url": "https://clawhub.ai/skills/empathy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "empathy",
+    "url": "https://clawhub.ai/skills/empathy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/empathy-1bb41bab96782718.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/empathy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-empathy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab4a221d0dc290e9e42b7478fe782475a3c7316b6b0658f0f1d14343020e6260",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T21:25:18.732Z"
+}

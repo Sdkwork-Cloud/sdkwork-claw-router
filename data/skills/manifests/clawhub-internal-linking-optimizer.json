@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57200,
+  "uuid": "skill-clawhub-internal-linking-optimizer",
+  "skillKey": "clawhub-internal-linking-optimizer",
+  "name": "Internal Linking Optimizer",
+  "summary": "Use when improving internal link structure, anchor text, orphan pages, crawl depth, site architecture, or link equity flow. 内链优化/站内架构",
+  "version": "9.9.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internal_linking_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Zhu",
+      "features": [
+        "Use when improving internal link structure, anchor text, orphan pages, crawl depth, site archit.",
+        "内链优化/站内架构"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/internal-linking-optimizer@9.9.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139607425?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "internal-linking-optimizer",
+      "url": "https://clawhub.ai/skills/internal-linking-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internal-linking-optimizer",
+    "url": "https://clawhub.ai/skills/internal-linking-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internal-linking-optimizer-66f4c5f9edff55c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/internal-linking-optimizer@9.9.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-internal-linking-optimizer-9.9.5.json",
+      "version": "9.9.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d65e3ad1153d73ba39d1fef24ef8a566431c229ad6e0f0de33cb04f279b3ff26",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:05:41.853Z"
+}

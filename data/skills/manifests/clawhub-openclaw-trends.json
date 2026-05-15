@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29908,
+  "uuid": "skill-clawhub-openclaw-trends",
+  "skillKey": "clawhub-openclaw-trends",
+  "name": "OpenClaw Trends",
+  "summary": "Fetch and aggregate OpenClaw-related content from across the internet. Use when the user asks about OpenClaw trends, news, tutorials, videos, community discu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_trends",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrey Mashukov",
+      "features": [
+        "Fetch and aggregate OpenClaw-related content from across the internet",
+        "Use when the user asks about OpenClaw trends, news, tutorials, videos, community discu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-trends@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35621055?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-trends",
+      "url": "https://clawhub.ai/skills/openclaw-trends"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-trends",
+    "url": "https://clawhub.ai/skills/openclaw-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-trends-ecb752daca505a35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-trends@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-trends-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84da707f9589c3eed2d535cc1b660c6edae79b8e124a5906b59e5eca640fa193",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:50:31.902Z"
+}

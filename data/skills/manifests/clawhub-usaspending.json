@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53640,
+  "uuid": "skill-clawhub-usaspending",
+  "skillKey": "clawhub-usaspending",
+  "name": "Usaspending",
+  "summary": "USAspending.gov — federal spending data, contracts, grants, awards, agencies, and recipient search. No API key required.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.usaspending",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "USAspending.gov — federal spending data, contracts, grants, awards, agencies, and recipient sea.",
+        "No API key required."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/usaspending@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "usaspending",
+      "url": "https://clawhub.ai/skills/usaspending"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "usaspending",
+    "url": "https://clawhub.ai/skills/usaspending",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/usaspending-16cd3fc5fd8b6326.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/usaspending@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-usaspending-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f789b951432a2076031d9014f1ed8c010dc4937edd89d1c357288992342c7574",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T06:52:26.147Z"
+}

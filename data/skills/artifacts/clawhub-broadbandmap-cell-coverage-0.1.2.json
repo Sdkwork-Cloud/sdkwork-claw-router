@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/broadbandmap-cell-coverage@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadbandmap_cell_coverage",
+  "skill": {
+    "id": 37026,
+    "skillKey": "clawhub-broadbandmap-cell-coverage",
+    "name": "Broadbandmap Cell Coverage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadbandmap-cell-coverage",
+    "url": "https://clawhub.ai/skills/broadbandmap-cell-coverage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadbandmap-cell-coverage-e36c09d8f792d904.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PRELIMINARY/ITERATING SKILL (v0.x) - Query BroadbandMap-style public APIs for cellular coverage at a location, normalize results, and return a concise human..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hobbesoccc",
+      "userId": "s171gvwmyy648q51bnv6z5td1h83qcm1",
+      "displayName": "hobbesoccc",
+      "image": "https://avatars.githubusercontent.com/u/267166052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774636680249,
+      "changelog": "Add full coverage map and developer resource links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2cf5c8efe8fa41a077ccee33fa8686be65f81e8e0a2b366edbbb0ea871e105f"
+}

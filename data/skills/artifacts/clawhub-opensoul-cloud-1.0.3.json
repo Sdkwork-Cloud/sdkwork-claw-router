@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opensoul-cloud@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opensoul_cloud",
+  "skill": {
+    "id": 14989,
+    "skillKey": "clawhub-opensoul-cloud",
+    "name": "OpenSoul - Agent Soul Sharing and Community"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opensoul-cloud",
+    "url": "https://clawhub.ai/skills/opensoul-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opensoul-cloud-8602e008185ed6c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Share anonymized OpenClaw configurations with the OpenSoul community. Use when user wants to share their agent setup, discover how others use OpenClaw, or ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fnaser",
+      "userId": "publishers:fnaser",
+      "displayName": "fnaser",
+      "image": "https://avatars.githubusercontent.com/u/19733158?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 899,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771337742297,
+      "changelog": "Fix: Delete uses path param instead of query param",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3feeba443a128b7746066021bb91721e4aa91823569a9d802a3f54e634cddc9b"
+}

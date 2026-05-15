@@ -132,7 +132,7 @@ fn trusted_request_subject_boundary_strips_direct_headers_and_injects_signed_sub
         subject,
         timestamp,
         "POST",
-        "/app/v3/api/router/api-keys",
+        "/app/v3/api/router/api_keys",
     );
     let mut headers = HeaderMap::new();
     headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("999"));
@@ -157,7 +157,7 @@ fn trusted_request_subject_boundary_strips_direct_headers_and_injects_signed_sub
     inject_verified_trusted_request_subject(
         &mut headers,
         "POST",
-        "/app/v3/api/router/api-keys",
+        "/app/v3/api/router/api_keys",
         &config,
         timestamp,
     )
@@ -194,7 +194,7 @@ fn trusted_request_subject_boundary_rejects_bad_signature_without_echoing_input(
     let error = inject_verified_trusted_request_subject(
         &mut headers,
         "POST",
-        "/app/v3/api/router/api-keys",
+        "/app/v3/api/router/api_keys",
         &config,
         1_800_000_000,
     )
@@ -238,18 +238,25 @@ fn app_request_subject_boundary_injects_session_subject_after_stripping_direct_h
         operator_id: 30,
         operator_type: 1,
     };
-    let token = sign_app_session_token(&app_session_config, subject, 1_800_000_000, 1_800_000_300);
+    let auth_token =
+        sign_app_session_token(&app_session_config, subject, 1_800_000_000, 1_800_000_300);
+    let access_token =
+        sign_app_session_token(&app_session_config, subject, 1_800_000_001, 1_800_000_301);
     let mut headers = HeaderMap::new();
     headers.insert("x-sdkwork-tenant-id", HeaderValue::from_static("999"));
     headers.insert(
         "authorization",
-        HeaderValue::from_str(&format!("Bearer {token}")).unwrap(),
+        HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
+    );
+    headers.insert(
+        "sdkwork-access-token",
+        HeaderValue::from_str(&access_token).unwrap(),
     );
 
     inject_verified_app_request_subject(
         &mut headers,
         "POST",
-        "/app/v3/api/router/api-keys",
+        "/app/v3/api/router/api_keys",
         &boundary_config,
         1_800_000_001,
     )
@@ -258,6 +265,104 @@ fn app_request_subject_boundary_injects_session_subject_after_stripping_direct_h
 
     assert_eq!(subject, parsed);
     assert!(headers.get("authorization").is_none());
+    assert!(headers.get("sdkwork-access-token").is_none());
+}
+
+#[test]
+fn app_request_subject_boundary_rejects_missing_access_token() {
+    let trusted_subject_config =
+        TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
+    let app_session_config =
+        AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
+    let boundary_config =
+        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
+    let subject = TrustedRequestSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+        operator_id: 30,
+        operator_type: 1,
+    };
+    let auth_token =
+        sign_app_session_token(&app_session_config, subject, 1_800_000_000, 1_800_000_300);
+    let mut headers = HeaderMap::new();
+    headers.insert(
+        "authorization",
+        HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
+    );
+
+    let error = inject_verified_app_request_subject(
+        &mut headers,
+        "POST",
+        "/app/v3/api/router/api_keys",
+        &boundary_config,
+        1_800_000_001,
+    )
+    .unwrap_err();
+
+    assert_eq!("sdkwork-access-token header is required", error);
+    assert!(headers.get("authorization").is_none());
+}
+
+#[test]
+fn app_request_subject_boundary_rejects_mismatched_auth_and_access_subjects() {
+    let trusted_subject_config =
+        TrustedSubjectConfig::from_signing_secret("0123456789abcdef0123456789abcdef").unwrap();
+    let app_session_config =
+        AppSessionConfig::from_signing_secret("app-session-secret-0123456789abcd").unwrap();
+    let boundary_config =
+        AppSubjectBoundaryConfig::new(trusted_subject_config, app_session_config.clone());
+    let auth_subject = TrustedRequestSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 30,
+        operator_id: 30,
+        operator_type: 1,
+    };
+    let access_subject = TrustedRequestSubject {
+        tenant_id: 10,
+        organization_id: 20,
+        user_id: 31,
+        operator_id: 31,
+        operator_type: 1,
+    };
+    let auth_token = sign_app_session_token(
+        &app_session_config,
+        auth_subject,
+        1_800_000_000,
+        1_800_000_300,
+    );
+    let access_token = sign_app_session_token(
+        &app_session_config,
+        access_subject,
+        1_800_000_001,
+        1_800_000_301,
+    );
+    let mut headers = HeaderMap::new();
+    headers.insert(
+        "authorization",
+        HeaderValue::from_str(&format!("Bearer {auth_token}")).unwrap(),
+    );
+    headers.insert(
+        "sdkwork-access-token",
+        HeaderValue::from_str(&access_token).unwrap(),
+    );
+
+    let error = inject_verified_app_request_subject(
+        &mut headers,
+        "POST",
+        "/app/v3/api/router/api_keys",
+        &boundary_config,
+        1_800_000_001,
+    )
+    .unwrap_err();
+
+    assert_eq!(
+        "app session auth token and access token subjects do not match",
+        error
+    );
+    assert!(headers.get("authorization").is_none());
+    assert!(headers.get("sdkwork-access-token").is_none());
 }
 
 #[test]

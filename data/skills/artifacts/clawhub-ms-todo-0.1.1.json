@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ms-todo@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_todo",
+  "skill": {
+    "id": 60268,
+    "skillKey": "clawhub-ms-todo",
+    "name": "Ms Todo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-todo",
+    "url": "https://clawhub.ai/skills/ms-todo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-todo-e40d1bf4c3b5078d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Microsoft To Do 任务管理集成。管理任务列表和任务，创建、完成、删除任务。通过 MorphixAI 代理安全访问 Microsoft Graph API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paul-leo",
+      "userId": "s1752kcbgt0ajgbfqwd4y5vb3n83kvp4",
+      "displayName": "Paul Leo",
+      "image": "https://avatars.githubusercontent.com/u/55380315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772786443029,
+      "changelog": "- 补充了详细的前置条件说明，包括插件安装、API Key 获取、环境变量配置和账号链接步骤\n- 前置条件部分新增了具体网页链接和命令行操作示例\n- 其余核心操作和用法未发生改动",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bbc2efe8d229049ef44659fe159702c975da6cb19b4a36fa4e522fd7462631f7"
+}

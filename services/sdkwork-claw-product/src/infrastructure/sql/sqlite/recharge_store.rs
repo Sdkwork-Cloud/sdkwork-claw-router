@@ -129,10 +129,13 @@ async fn load_recharge_packages(
 
     rows.iter()
         .map(|row| {
+            let rmb = decimal_string_cell(row, "rmb", "recharge package rmb")?;
+            let bonus = integer_cell(row, "bonus");
             Ok(RechargePackage {
                 id: integer_cell(row, "id").to_string(),
-                rmb: decimal_string_cell(row, "rmb", "recharge package rmb")?,
-                bonus: integer_cell(row, "bonus"),
+                points: recharge_base_points(&rmb)? + bonus,
+                rmb,
+                bonus,
             })
         })
         .collect()

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41517,
+  "uuid": "skill-clawhub-unleash",
+  "skillKey": "clawhub-unleash",
+  "name": "Unleash",
+  "summary": "Unleash integration. Manage data, records, and automate workflows. Use when the user wants to interact with Unleash data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unleash",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Unleash integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Unleash data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unleash@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unleash",
+      "url": "https://clawhub.ai/skills/unleash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unleash",
+    "url": "https://clawhub.ai/skills/unleash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unleash-8509984c0d5a6b8a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unleash@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unleash-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1cffed98491e95687701fbccd639c2532f215e888dc98c1d516b809d64ee016",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T22:17:10.497Z"
+}

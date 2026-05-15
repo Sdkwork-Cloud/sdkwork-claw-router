@@ -1,4 +1,8 @@
-import { SDK_SYSTEM_CONFIG } from 'sdkwork-claw-router-commons/runtime';
+import {
+  CLAWROUTER_APP_SDK_REFERENCE_METADATA,
+  CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
+  SDK_SYSTEM_CONFIG,
+} from 'sdkwork-claw-router-commons/runtime';
 import type { ClawRouterGeneratedSdkMetadata } from 'sdkwork-claw-router-commons/runtime';
 import type { GeneratedSdkType, SdkReferenceSystem } from '../sdkReferenceRuntime';
 
@@ -17,6 +21,11 @@ export interface SdkLanguage {
 export type ApiSystem = SdkReferenceSystem;
 
 export type GeneratedSdkMetadata = ClawRouterGeneratedSdkMetadata;
+
+export {
+  CLAWROUTER_APP_SDK_REFERENCE_METADATA,
+  CLAWROUTER_BACKEND_SDK_REFERENCE_METADATA,
+};
 
 export const getGeneratedSdkMetadataForSystem = (system: ApiSystem): GeneratedSdkMetadata => (
   SDK_SYSTEM_CONFIG[system]
@@ -90,26 +99,26 @@ export const getSdkDataForSystem = (system: ApiSystem): SdkLanguage[] => {
       flutter: `void main() async {\n  final response = await client.chat.completions.create(\n    model: "gpt-4o",\n    messages: [ChatMessage(role: "user", content: "Hello world!")],\n  );\n  print(response.choices[0].message.content);\n}`
     },
     backend: {
-      ts: `async function main() {\n  const apiKeys = await client.apikey.fetchApiKeysMap();\n  console.log(apiKeys);\n}\n\nmain();`,
-      py: `def main():\n    api_keys = client.apikey.fetch_api_keys_map()\n    print(api_keys)\n\nif __name__ == "__main__":\n    main()`,
+      ts: `async function main() {\n  const apiKeys = await client.iam.apiKeys.list();\n  console.log(apiKeys);\n}\n\nmain();`,
+      py: `def main():\n    api_keys = client.iam.apiKeys.fetch_api_keys_map()\n    print(api_keys)\n\nif __name__ == "__main__":\n    main()`,
       go: `func main() {\n    keys, err := client.Apikey.FetchApiKeysMap(context.Background())\n    if err != nil {\n        log.Fatal(err)\n    }\n    fmt.Println(keys)\n}`,
       java: `public class Main {\n    public static void main(String[] args) {\n        ApiKeyMapResponse response = client.apikey().fetchApiKeysMap();\n        System.out.println(response.getData());\n    }\n}`,
-      ruby: `api_keys = client.apikey.fetch_api_keys_map\nputs api_keys`,
+      ruby: `api_keys = client.iam.apiKeys.fetch_api_keys_map\nputs api_keys`,
       php: `$apiKeys = $client->apikey()->fetchApiKeysMap();\nprint_r($apiKeys);`,
       csharp: `var apiKeys = await client.Apikey.FetchApiKeysMapAsync();\nConsole.WriteLine(apiKeys);`,
       rust: `let api_keys = client.apikey().fetch_api_keys_map().await?;\nprintln!("{:?}", api_keys);`,
-      flutter: `void main() async {\n  final apiKeys = await client.apikey.fetchApiKeysMap();\n  print(apiKeys);\n}`
+      flutter: `void main() async {\n  final apiKeys = await client.iam.apiKeys.fetchApiKeysMap();\n  print(apiKeys);\n}`
     },
     app: {
-      ts: `async function main() {\n  const profile = await client.user.fetchUserProfile();\n  console.log(profile);\n}\n\nmain();`,
-      py: `def main():\n    profile = client.user.fetch_user_profile()\n    print(profile)\n\nif __name__ == "__main__":\n    main()`,
-      go: `func main() {\n    profile, err := client.User.FetchUserProfile(context.Background())\n    if err != nil {\n        log.Fatal(err)\n    }\n    fmt.Println(profile)\n}`,
-      java: `public class Main {\n    public static void main(String[] args) {\n        UserProfileResponse response = client.user().fetchUserProfile();\n        System.out.println(response.getData());\n    }\n}`,
-      ruby: `profile = client.user.fetch_user_profile\nputs profile`,
-      php: `$profile = $client->user()->fetchUserProfile();\nprint_r($profile);`,
-      csharp: `var profile = await client.User.FetchUserProfileAsync();\nConsole.WriteLine(profile);`,
-      rust: `let profile = client.user().fetch_user_profile().await?;\nprintln!("{:?}", profile);`,
-      flutter: `void main() async {\n  final profile = await client.user.fetchUserProfile();\n  print(profile);\n}`
+      ts: `async function main() {\n  const profile = await client.iam.users.current.retrieve();\n  console.log(profile);\n}\n\nmain();`,
+      py: `def main():\n    profile = client.iam.users.current.retrieve()\n    print(profile)\n\nif __name__ == "__main__":\n    main()`,
+      go: `func main() {\n    profile, err := client.Iam.Users.Current.Retrieve(context.Background())\n    if err != nil {\n        log.Fatal(err)\n    }\n    fmt.Println(profile)\n}`,
+      java: `public class Main {\n    public static void main(String[] args) {\n        UsersCurrentRetrieveResult response = client.iam().users().current().retrieve();\n        System.out.println(response.getData());\n    }\n}`,
+      ruby: `profile = client.iam.users.current.retrieve\nputs profile`,
+      php: `$profile = $client->iam()->users()->current()->retrieve();\nprint_r($profile);`,
+      csharp: `var profile = await client.Iam.Users.Current.RetrieveAsync();\nConsole.WriteLine(profile);`,
+      rust: `let profile = client.iam().users().current().retrieve().await?;\nprintln!("{:?}", profile);`,
+      flutter: `void main() async {\n  final profile = await client.iam.users.current.retrieve();\n  print(profile);\n}`
     }
   };
 

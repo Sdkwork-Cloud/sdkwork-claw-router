@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9155,
+  "uuid": "skill-clawhub-mcp-hass",
+  "skillKey": "clawhub-mcp-hass",
+  "name": "🏠 Home Assistant via MCP protocol",
+  "summary": "The skill for control Home Assistant smart home devices and query states using MCP protocol.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_hass",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alone",
+      "features": [
+        "The skill for control Home Assistant smart home devices and query states using MCP protocol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-hass@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4549099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-hass",
+      "url": "https://clawhub.ai/skills/mcp-hass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-hass",
+    "url": "https://clawhub.ai/skills/mcp-hass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-hass-c3b5cae63e31243a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-hass@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-hass-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3e584793cbb06e220a095c5cb518aff9db475a7e72281bb42d9fbe13e341951",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:04:59.604Z"
+}

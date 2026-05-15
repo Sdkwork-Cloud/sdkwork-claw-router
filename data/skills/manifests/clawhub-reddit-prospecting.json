@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52579,
+  "uuid": "skill-clawhub-reddit-prospecting",
+  "skillKey": "clawhub-reddit-prospecting",
+  "name": "Reddit Lead Prospecting",
+  "summary": "Find buying-intent leads on Reddit via Brave Search — no Reddit account or OAuth needed. Score posts and generate value-first comments.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_prospecting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pbopps",
+      "features": [
+        "Find buying-intent leads on Reddit via Brave Search — no Reddit account or OAuth needed",
+        "Score posts and generate value-first comments."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-prospecting@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130667201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-prospecting",
+      "url": "https://clawhub.ai/skills/reddit-prospecting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-prospecting",
+    "url": "https://clawhub.ai/skills/reddit-prospecting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-prospecting-c247fa64a09d609c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-prospecting@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-prospecting-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2155ff2a2d4d9cc455d68ea0fa0dcbd5ca38b50a648fcb5cac844611a7c2fd02",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:04:06.247Z"
+}

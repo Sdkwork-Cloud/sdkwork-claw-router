@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-wan-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_wan_video_generator",
+  "skill": {
+    "id": 33443,
+    "skillKey": "clawhub-mediaio-wan-video-generator",
+    "name": "Media.io Wan Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-wan-video-generator",
+    "url": "https://clawhub.ai/skills/mediaio-wan-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-wan-video-generator-892a94876dbdd84f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 1080p AI videos via Media.io Wan (v2.6) using text, images, or reference videos through the Media.io OpenAPI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773988287171,
+      "changelog": "Initial release of mediaio-wan-video-generator\n\n- Generate AI videos using Wan (v2.6) via Media.io OpenAPI.\n- Supports text-to-video, image-to-video, and reference-to-video with 1080p output.\n- Includes APIs for checking credits, retrieving task results, and model-specific video generation.\n- Requires a Media.io API key (API_KEY environment variable).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9947af831a9b1b0e831a65c7efee3ab69741a2212fb59260a1f13ff4cf5f719e"
+}

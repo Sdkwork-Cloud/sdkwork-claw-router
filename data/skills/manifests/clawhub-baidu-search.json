@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8233,
+  "uuid": "skill-clawhub-baidu-search",
+  "skillKey": "clawhub-baidu-search",
+  "name": "Baidu web search",
+  "summary": "Search the web using Baidu AI Search Engine (BDSE). Use for live information, documentation, or research topics.",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ide-rea",
+      "features": [
+        "Search the web using Baidu AI Search Engine (BDSE)",
+        "Use for live information, documentation, or research topics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baidu-search@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30512600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baidu-search",
+      "url": "https://clawhub.ai/skills/baidu-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-search",
+    "url": "https://clawhub.ai/skills/baidu-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-search-bb820d9738fd00d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baidu-search@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-baidu-search-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01a43e699918efeeedeba893f0ed06a01f79245bae0a18b11028cddbe9bd5efe",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T11:27:11.266Z"
+}

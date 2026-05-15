@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-secscan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_secscan",
+  "skill": {
+    "id": 35058,
+    "skillKey": "clawhub-openclaw-secscan",
+    "name": "OpenClaw Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-secscan",
+    "url": "https://clawhub.ai/skills/openclaw-secscan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-secscan-c6215f9339a45005.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security analysis and vulnerability detection. Scans code for security issues, checks dependencies, and provides remediation advice."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775044292533,
+      "changelog": "Security scanner for vulnerability detection and secret detection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b90d76d39349e9dd72260b4b4505c68afc78420ce0c415642859a28c41eb323"
+}

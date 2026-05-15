@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/funda-gateway@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funda_gateway",
+  "skill": {
+    "id": 18561,
+    "skillKey": "clawhub-funda-gateway",
+    "name": "Funda Listings Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funda-gateway",
+    "url": "https://clawhub.ai/skills/funda-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funda-gateway-f9394a36f747984a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local Funda.nl HTTP gateway for listing details, search, and image previews"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "risboo6909",
+      "userId": "s171thc5gecds15wpb27dhwx2983g7kk",
+      "displayName": "Boris",
+      "image": "https://avatars.githubusercontent.com/u/1838968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 681,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1772386085717,
+      "changelog": "Version 1.0.12 of funda-gateway\n\n- No code or documentation changes detected in this release.\n- Functionality and API contract remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:eb02720b1a750c2e439ef42bdaf78b21a017bca605c18b14ef8b6750f4712301"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agxntsix-research-logger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agxntsix_research_logger",
+  "skill": {
+    "id": 17210,
+    "skillKey": "clawhub-agxntsix-research-logger",
+    "name": "Research Logger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agxntsix-research-logger",
+    "url": "https://clawhub.ai/skills/agxntsix-research-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agxntsix-research-logger-a5e1ae3bed3dc28b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI research pipeline with automatic SQLite logging and Langfuse tracing"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 793,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771136204248,
+      "changelog": "AI research pipeline with automatic SQLite logging and Langfuse tracing",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0f9ea4784dc1d7f61aa4ab3448093756b40a3a2359f59fab784e5e0b0d019236"
+}

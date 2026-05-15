@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46414,
+  "uuid": "skill-clawhub-claw-turbo",
+  "skillKey": "clawhub-claw-turbo",
+  "name": "claw-turbo",
+  "summary": "Zero-latency regex-based skill routing middleware for OpenClaw. Intercepts known user commands (deploy, restart, print, check logs, etc.) using compiled rege...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_turbo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jacobye2017-afk",
+      "features": [
+        "Zero-latency regex-based skill routing middleware for OpenClaw",
+        "Intercepts known user commands (deploy, restart, print, check logs, etc.) using compiled rege..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-turbo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226240011?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-turbo",
+      "url": "https://clawhub.ai/skills/claw-turbo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-turbo",
+    "url": "https://clawhub.ai/skills/claw-turbo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-turbo-2477e4123963de49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-turbo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-turbo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51abbd007ab476599ca2da19f129a01aece6c0e2909625f6b4ef3229fffadfdd",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T04:11:33.044Z"
+}

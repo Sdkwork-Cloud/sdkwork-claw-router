@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-cv-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_cv_builder",
+  "skill": {
+    "id": 9099,
+    "skillKey": "clawhub-resume-cv-builder",
+    "name": "Resume / CV Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-cv-builder",
+    "url": "https://clawhub.ai/skills/resume-cv-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-cv-builder-232547e43481e178.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create professional resumes and CVs. Generate ATS-friendly formats, optimize bullet points, tailor for specific jobs, and export to multiple formats (Markdown, HTML, LaTeX, PDF)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sebastian-buitrag0",
+      "userId": "publishers:sebastian-buitrag0",
+      "displayName": "Sebastian-Buitrag0",
+      "image": "https://avatars.githubusercontent.com/u/143345340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4196,
+      "installsAllTime": 18,
+      "installsCurrent": 17,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769716206442,
+      "changelog": "Initial release – Create professional, ATS-optimized resumes and CVs.\n\n- Generate resumes tailored for specific job roles and descriptions.\n- Optimize content for Applicant Tracking Systems (ATS) with clear do's and don'ts.\n- Provide ready-to-use templates for Software Engineer, Product Manager, and Marketing Manager roles.\n- Support exporting to multiple formats (Markdown, HTML, LaTeX, PDF).\n- Offer writing guidelines and formulas for summaries and bullet points to maximize impact.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aef170c4c9d9311bacda51d3134aca31439535e29dbf22109a65548ff1cc2733"
+}

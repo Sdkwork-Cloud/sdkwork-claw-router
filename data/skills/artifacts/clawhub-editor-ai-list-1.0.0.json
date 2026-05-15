@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-ai-list@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_ai_list",
+  "skill": {
+    "id": 47626,
+    "skillKey": "clawhub-editor-ai-list",
+    "name": "Editor Ai List"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-ai-list",
+    "url": "https://clawhub.ai/skills/editor-ai-list",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-ai-list-29bd2dc28337f3fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute raw interview clip into 1080p edited video clips just by typing what you need. Whether it's browsing and applying AI editing tools from a cur..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777226918286,
+      "changelog": "- Initial release of \"Editor AI List — Browse and Apply AI Editors\" skill.\n- Enables users to upload video clips and describe desired edits for fast, AI-powered results—no manual timeline work required.\n- Supports browsing and selecting from a curated list of AI video editors for tasks like auto-cutting, transitions, and social content generation.\n- Handles authentication, session management, cloud-based rendering, and credits tracking automatically.\n- Provides structured error handling and workflow tips for smooth user experience.\n- Exports support popular video and audio formats, with results delivered in 20–40 seconds for typical clips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c201e2b58731e8f82f48139f5dc423b3dee7c6dc56620f7e61780c61e4ac4333"
+}

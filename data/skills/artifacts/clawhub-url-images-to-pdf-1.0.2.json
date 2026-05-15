@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/url-images-to-pdf@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_images_to_pdf",
+  "skill": {
+    "id": 61099,
+    "skillKey": "clawhub-url-images-to-pdf",
+    "name": "Url Images To Pdf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-images-to-pdf",
+    "url": "https://clawhub.ai/skills/url-images-to-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-images-to-pdf-4e9fe9452a3d06cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从URL提取图片并生成PDF（保持原文顺序，不排序）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jerryliu3502",
+      "userId": "publishers:jerryliu3502",
+      "displayName": "JerryLiu3502",
+      "image": "https://avatars.githubusercontent.com/u/27113967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 614,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772292887364,
+      "changelog": "- Updated description to clarify that images are not sorted and original order is preserved\n- Bumped version to 1.0.2",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:59b123a805b061d4c387142ff0b5d6f2a15dac070f5b2baf02f971b3cb682e0a"
+}

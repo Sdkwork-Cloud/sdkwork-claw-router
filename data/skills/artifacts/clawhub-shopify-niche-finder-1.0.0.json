@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-niche-finder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_niche_finder",
+  "skill": {
+    "id": 35077,
+    "skillKey": "clawhub-shopify-niche-finder",
+    "name": "Shopify Niche Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-niche-finder",
+    "url": "https://clawhub.ai/skills/shopify-niche-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-niche-finder-65ed93855b86fed1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Identify profitable product niches for Shopify stores using market demand data, competition analysis, and profitability assessment. Triggers: niche finder, f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774572332253,
+      "changelog": "Initial release of the Shopify Niche Finder skill.\n\n- Identifies profitable product niches for Shopify stores through analysis of market demand, competition, and profitability.\n- Provides clear criteria and tools for niche evaluation, competition analysis, and profit margin assessment.\n- Includes trend analysis to distinguish between growing, declining, and evergreen niches.\n- Offers top 10 niche recommendations and a validation checklist for testing ideas before launch.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfe5a17366dbbfea92db8a1300cd511f9eaee95c5764a2314b202af9d981bac0"
+}

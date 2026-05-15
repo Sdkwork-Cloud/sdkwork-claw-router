@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-setup-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_setup_kit",
+  "skill": {
+    "id": 37685,
+    "skillKey": "clawhub-agent-setup-kit",
+    "name": "Agent Setup Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-setup-kit",
+    "url": "https://clawhub.ai/skills/agent-setup-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-setup-kit-a4637257f00e83e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configures OpenClaw agents with a universal prompt enabling skill installation, book discovery, and knowledge base integration via natural commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heardlyapp",
+      "userId": "s170j6eyf38m74mt67frz89khx84jtee",
+      "displayName": "heardlyapp",
+      "image": "https://avatars.githubusercontent.com/u/13566006?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774116565082,
+      "changelog": "Universal Agent configuration kit - one command to enable skill installation, book discovery, knowledge base integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83e23ca60a5bf7cb8460f2624ba88670f4a1f750a38002df5e23dcd2009c973f"
+}

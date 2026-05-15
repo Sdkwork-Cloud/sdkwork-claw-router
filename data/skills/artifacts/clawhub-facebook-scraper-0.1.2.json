@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/facebook-scraper@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_scraper",
+  "skill": {
+    "id": 12107,
+    "skillKey": "clawhub-facebook-scraper",
+    "name": "Facebook Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-scraper",
+    "url": "https://clawhub.ai/skills/facebook-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-scraper-c0240bd7538d694d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and scrape public Facebook pages and groups by location and category with browser simulation and export data in JSON or CSV formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arulmozhiv",
+      "userId": "s17d6p47jmzs92ja3p6wh80wx983h93g",
+      "displayName": "ArulmozhiV",
+      "image": "https://avatars.githubusercontent.com/u/58811343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1290,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 6,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1772103697776,
+      "changelog": "facebook-scraper 0.1.2\n\n- Documentation updated in SKILL.md; no functional or feature changes in this version.\n- Existing usage instructions, proxy setup, configuration, and output details remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fec62842f8add21822dc3551bcc4db6ea1887f46b6b26902660b512de27fa13e"
+}

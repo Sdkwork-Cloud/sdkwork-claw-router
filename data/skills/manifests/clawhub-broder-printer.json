@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54350,
+  "uuid": "skill-clawhub-broder-printer",
+  "skillKey": "clawhub-broder-printer",
+  "name": "Brother DCP-T426W Printer",
+  "summary": "Brother DCP-T426W network printer skill — IPP + driverless (primary), TCP direct (fallback for text-only, no sudo).",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broder_printer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yardfarmer",
+      "features": [
+        "Brother DCP-T426W network printer skill — IPP + driverless (primary), TCP direct (fallback for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/broder-printer@5.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1446828?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "broder-printer",
+      "url": "https://clawhub.ai/skills/broder-printer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broder-printer",
+    "url": "https://clawhub.ai/skills/broder-printer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broder-printer-db1e93729a2d53c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/broder-printer@5.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-broder-printer-5.0.0.json",
+      "version": "5.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1cf47a1f1412260fd7d3ba49cc43dda1d5c36dc53e6b77338050e48aa855b076",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T01:30:17.173Z"
+}

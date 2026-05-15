@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15035,
+  "uuid": "skill-clawhub-llm-data-automation",
+  "skillKey": "clawhub-llm-data-automation",
+  "name": "Llm Data Automation",
+  "summary": "Automate construction data processing using LLM (ChatGPT, Claude, LLaMA). Generate Python/Pandas scripts, extract data from documents, and create automated p...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_data_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Automate construction data processing using LLM (ChatGPT, Claude, LLaMA)",
+        "Generate Python/Pandas scripts, extract data from documents, and create automated p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-data-automation@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-data-automation",
+      "url": "https://clawhub.ai/skills/llm-data-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-data-automation",
+    "url": "https://clawhub.ai/skills/llm-data-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-data-automation-a59f862d3daf56d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-data-automation@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-data-automation-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:074c0319582932d64e4056d377ade76285d83c34bdf08d4b6a8704d45a871dc7",
+      "artifactSizeBytes": 2590
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T16:23:55.668Z"
+}

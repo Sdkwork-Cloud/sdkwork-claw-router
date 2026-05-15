@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/docsforai@0.7.0",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docsforai",
+  "skill": {
+    "id": 28527,
+    "skillKey": "clawhub-docsforai",
+    "name": "DocsForAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docsforai",
+    "url": "https://clawhub.ai/skills/docsforai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docsforai-17338d5c902a8360.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Crawl and read documentation websites using DocsForAI. Use when you need to learn a new library, framework, or tool by reading its official docs; when you wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dx2331lxz",
+      "userId": "s17b1z9ns3pjcjm3dcrxbv5wnn843xvx",
+      "displayName": "DaoXuan",
+      "image": "https://avatars.githubusercontent.com/u/116349858?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "0.7.0",
+      "createdAt": 1775199397907,
+      "changelog": "Add NextDocs framework support (detector + crawler); upgrade base docsforai to 0.6.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8654b0958dea0d130b8c0998d125b8f0d500c47207f50be81f5c9e136cf9d83c"
+}

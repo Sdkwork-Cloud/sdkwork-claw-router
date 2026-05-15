@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blocker-min-input@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blocker_min_input",
+  "skill": {
+    "id": 25447,
+    "skillKey": "clawhub-blocker-min-input",
+    "name": "Blocker Minimum Input"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blocker-min-input",
+    "url": "https://clawhub.ai/skills/blocker-min-input",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blocker-min-input-4624088795d64981.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When blocked, report exact blocker + attempts made + minimum user input needed. Enable fast unblock without back-and-forth."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dalomeve",
+      "userId": "s170jb8y518cbtqkxpgjgcz0yn843mr1",
+      "displayName": "Dalomeve",
+      "image": "https://avatars.githubusercontent.com/u/115125037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772348921755,
+      "changelog": "- Initial release with clear blocker reporting for faster unblocking.\n- Standardized \"Blocker Report\" format: exact error, attempts made, minimum user input, and fallback.\n- Agents must try at least two solutions before reporting a blocker.\n- Reports include specific minimum input and an alternative option.\n- Privacy measures: redact credentials and sensitive paths from all outputs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d47b06c0741a3e2324cd73f2a7d67935dde39097a42f36692d54d48ef400c3a"
+}

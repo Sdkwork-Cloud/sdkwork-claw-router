@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34431,
+  "uuid": "skill-clawhub-skill-combo-recommender",
+  "skillKey": "clawhub-skill-combo-recommender",
+  "name": "Skill Combo Recommender",
+  "summary": "Recommend optimal skill combinations and workflows for user tasks, offering usage examples and preset workflows to optimize project execution.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_combo_recommender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "Recommend optimal skill combinations and workflows for user tasks, offering usage examples and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-combo-recommender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-combo-recommender",
+      "url": "https://clawhub.ai/skills/skill-combo-recommender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-combo-recommender",
+    "url": "https://clawhub.ai/skills/skill-combo-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-combo-recommender-b54e078687b04787.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-combo-recommender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-combo-recommender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea2cc100fc87ec70b02d2b700a2260e546ea0fd112a0bed9a3416dd9cf883c91",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T23:09:59.350Z"
+}

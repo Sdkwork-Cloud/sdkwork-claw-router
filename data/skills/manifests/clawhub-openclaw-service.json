@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57084,
+  "uuid": "skill-clawhub-openclaw-service",
+  "skillKey": "clawhub-openclaw-service",
+  "name": "OpenClaw 技术服务",
+  "summary": "Simon's OpenClaw technical service offering - AI assistant customization, automation, deployment and consulting.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lauka",
+      "features": [
+        "Simon's OpenClaw technical service offering",
+        "AI assistant customization, automation, deployment and consulting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-service@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3881170?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-service",
+      "url": "https://clawhub.ai/skills/openclaw-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-service",
+    "url": "https://clawhub.ai/skills/openclaw-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-service-c4cccfcf64713251.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-service@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-service-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c842f85aef593b4aca0e72cd139ca32b6f78e5643a3f99a03f6428c4504e7f36",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:02:32.051Z"
+}

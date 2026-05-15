@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-templates@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_templates",
+  "skill": {
+    "id": 17515,
+    "skillKey": "clawhub-agent-memory-templates",
+    "name": "Agent Memory Templates"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-templates",
+    "url": "https://clawhub.ai/skills/agent-memory-templates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-templates-b310161a34a2d9ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-tested memory templates for AI agents. Includes SOUL.md personality templates, memory checkpoint patterns, observational memory configs, and 100 p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "g9pedro",
+      "userId": "s170qw9ry89qte3815nzjvz1sh83mzvt",
+      "displayName": "G9Pedro",
+      "image": "https://avatars.githubusercontent.com/u/78662829?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 751,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771538710521,
+      "changelog": "- Initial release of agent-memory-templates.\n- Includes production-tested memory templates for AI agents: checkpoint, handoff, context recovery, daily notes, and decision logs.\n- Offers links to premium content: 100 power prompts, 12 personality templates, and comprehensive memory architecture playbook.\n- Provides a quick start guide for using memory patterns with ClawVault.\n- Free cheat sheet and prompt preview available for users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25637fd71fd082fe4159fce9e3e57973156bff107326519039bd9a65d72bd38d"
+}

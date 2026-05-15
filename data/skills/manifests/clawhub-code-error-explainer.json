@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73110,
+  "uuid": "skill-clawhub-code-error-explainer",
+  "skillKey": "clawhub-code-error-explainer",
+  "name": "代码错误大白话解释器",
+  "summary": "帮0编程基础的同学分析代码错误，支持查阅本地代码文件，追踪连锁错误。当用户遇到代码报错、运行失败、程序不工作时使用。触发词：代码报错、运行失败、帮忙看代码、找出问题、debug、调试、程序出错、代码有问题、运行不了、报错信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_error_explainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qiuxin Wang",
+      "features": [
+        "帮0编程基础的同学分析代码错误，支持查阅本地代码文件，追踪连锁错误。当用户遇到代码报错、运行失败、程序不工作时使用。触发词：代码报错、运行失败、帮忙看代码、找出问题、debug、调试、程序出."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/code-error-explainer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251168703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "code-error-explainer",
+      "url": "https://clawhub.ai/skills/code-error-explainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-error-explainer",
+    "url": "https://clawhub.ai/skills/code-error-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-error-explainer-63d7507358c12bdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/code-error-explainer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-code-error-explainer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f09920d84174a38af52783012f8eb12ea410dfa6dbc1fc605438c727bc6a78f",
+      "artifactSizeBytes": 2983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T11:41:16.772Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41874,
+  "uuid": "skill-clawhub-zouroboros-bench",
+  "skillKey": "clawhub-zouroboros-bench",
+  "name": "Zouroboros Bench",
+  "summary": "Benchmark harness for AI memory systems. Evaluates LongMemEval, LoCoMo, and ConvoMem datasets against any memory backend via the zouroboros-memory CLI. Inclu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zouroboros_bench",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marlandoj",
+      "features": [
+        "Benchmark harness for AI memory systems",
+        "Evaluates LongMemEval, LoCoMo, and ConvoMem datasets against any memory backend via the zourobo.",
+        "Inclu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zouroboros-bench@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40152898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zouroboros-bench",
+      "url": "https://clawhub.ai/skills/zouroboros-bench"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zouroboros-bench",
+    "url": "https://clawhub.ai/skills/zouroboros-bench",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zouroboros-bench-ba9270ddd327fe34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zouroboros-bench@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zouroboros-bench-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5303cc8b83c4c4f1f3afeca45eb554d8552ad1a21006127a664e1be4ad55fe0",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T20:08:55.708Z"
+}

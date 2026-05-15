@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12368,
+  "uuid": "skill-clawhub-ping-beads",
+  "skillKey": "clawhub-ping-beads",
+  "name": "Ping Beads",
+  "summary": "Verify the bead daemon is alive and responsive",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ping_beads",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Verify the bead daemon is alive and responsive"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ping-beads@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ping-beads",
+      "url": "https://clawhub.ai/skills/ping-beads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ping-beads",
+    "url": "https://clawhub.ai/skills/ping-beads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ping-beads-1c1c0041b27574a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ping-beads@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ping-beads-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:611b5e44f428b53d4b2cb5892e53c168ec9bb15154f945c48d8656f7c984a138",
+      "artifactSizeBytes": 1723
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:21:50.820Z"
+}

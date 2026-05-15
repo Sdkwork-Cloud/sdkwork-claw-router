@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-baby@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_baby",
+  "skill": {
+    "id": 54057,
+    "skillKey": "clawhub-editor-baby",
+    "name": "Editor Baby"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-baby",
+    "url": "https://clawhub.ai/skills/editor-baby",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-baby-3e267f4f69468433.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the best moments, add soft background music, and create a short highl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777552226005,
+      "changelog": "Editor Baby 1.0.0 – Effortless AI Baby Video Editing for Families\n\n- Instantly edit and export baby highlight reels: upload raw footage, describe your desired edits (trim, add music, create highlights), and get polished videos in 1-2 minutes.\n- Simple setup — auto-connects to cloud backend and manages authentication for you.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB; exports in popular formats.\n- Designed for new parents: no editing experience required, just describe what you want.\n- Handles credits, session state, exports, and user prompts with clear feedback.\n- Streamlined for short, shareable clips ideal for social media or family sharing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c80b93750098cc304afe3bfa6cec6e9a1e878403e38167c18ae9164df91df49"
+}

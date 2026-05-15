@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14159,
+  "uuid": "skill-clawhub-period",
+  "skillKey": "clawhub-period",
+  "name": "Period Tracker",
+  "summary": "Privacy-first menstrual cycle tracking. Auto-learns periods, symptoms, and patterns.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.period",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Privacy-first menstrual cycle tracking",
+        "Auto-learns periods, symptoms, and patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/period@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "period",
+      "url": "https://clawhub.ai/skills/period"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "period",
+    "url": "https://clawhub.ai/skills/period",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/period-514cb13f603464f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/period@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-period-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a614f5bf599206ee07ffaae11fc3d444ae20b0b5676af3eace1230e696e6fd7",
+      "artifactSizeBytes": 1788
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T18:59:26.467Z"
+}

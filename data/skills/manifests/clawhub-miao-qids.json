@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71138,
+  "uuid": "skill-clawhub-miao-qids",
+  "skillKey": "clawhub-miao-qids",
+  "name": "MiaoQIDS 🛡️量子防火墙-会做pcap文件分析的猫娘",
+  "summary": "量子入侵检测系统技能喵～ 基于经典-量子混合神经网络的入侵检测系统，可以分析网络流量数据（PCAP 文件），检测多种攻击类型，并为每种攻击提供置信度喵～ 提供安全防护建议喵。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miao_qids",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tsherryyann",
+      "features": [
+        "量子入侵检测系统技能喵～ 基于经典-量子混合神经网络的入侵检测系统，可以分析网络流量数据（PCAP 文件），检测多种攻击类型，并为每种攻击提供置信度喵～ 提供安全防护建议喵。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/miao-qids@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273959355?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "miao-qids",
+      "url": "https://clawhub.ai/skills/miao-qids"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miao-qids",
+    "url": "https://clawhub.ai/skills/miao-qids",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miao-qids-0396f182a2a1613d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/miao-qids@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-miao-qids-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcee3d56042a2e0bc38bb84be5b3936d7031d5e3755d585f6b5073fec44f5522",
+      "artifactSizeBytes": 2682
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T11:23:42.380Z"
+}

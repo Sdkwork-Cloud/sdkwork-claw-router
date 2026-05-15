@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qweather-skill@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qweather_skill",
+  "skill": {
+    "id": 73650,
+    "skillKey": "clawhub-qweather-skill",
+    "name": "和风天气"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qweather-skill",
+    "url": "https://clawhub.ai/skills/qweather-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qweather-skill-2031d8cfaf2a85bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询全球城市或者经纬度位置的实时天气、天气预报、空气质量等信息的技能。当用户询问某个城市或者经纬度的天气、气温、降雨、风向、空气质量时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinguobing",
+      "userId": "s17agm6vdkdqvmtmkvr7f6xvzn84sj6s",
+      "displayName": "国冰",
+      "image": "https://avatars.githubusercontent.com/u/10267910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1777027462465,
+      "changelog": "Version 0.5.0 introduces improved geographic flexibility and documentation updates.\n\n- 支持通过经纬度查询全球位置天气，描述文本及参数说明中均已补充（不仅限城市）。\n- 新增 geo reverse（经纬度反查行政区划）命令行用法示例。\n- 说明文档精简了安装方法；curl+install.sh 安装指引移至官方文档。\n- description 字段更新，明确支持城市或经纬度查询。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e96aab2ff9cd12f18125c6090ab85319bf2159f603821dd7eb7499c93ad7e16b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beijing-signed-price-tracker@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beijing_signed_price_tracker",
+  "skill": {
+    "id": 36641,
+    "skillKey": "clawhub-beijing-signed-price-tracker",
+    "name": "Beijing Signed Price Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beijing-signed-price-tracker",
+    "url": "https://clawhub.ai/skills/beijing-signed-price-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beijing-signed-price-tracker-46435caef5386fc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track configured Beijing Housing Commission new-home projects from bjjs.zjw.beijing.gov.cn project-detail URLs, read project signed-unit counts, signed area,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aaronstuart",
+      "userId": "s17dk31bd0vhbxpbzmd97c570d841bz3",
+      "displayName": "张家钊",
+      "image": "https://avatars.githubusercontent.com/u/21955436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1775199029356,
+      "changelog": "**Summary: Adds local caching for unsold room data and upgrades sheet, sync, and notification logic.**\n\n- Now caches unsold room metadata (building area, layout) in a local `room-cache.json`, supplementing missing info when a room becomes signed.\n- Enhances extraction: now tracks and computes based on both signed unit counts and signed area, updating the average price calculation formula.\n- Feishu sheet upgraded from 8 columns to 11, migrating old data as needed and supporting wider data fields.\n- Every sync scans the entire building list, updating the cache and supplementing missing columns for new signings.\n- Notifications now sent after every sync: summarizes new signings or indicates when there are none.\n- Adds 3 new files: `last-sync-wutong.json`, `last-sync.json`, and main local room cache (`room-cache.json`).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea172adc190eba7e8ce333e17424c0c65b2df03c77c6daaf730d0b8ad752d421"
+}

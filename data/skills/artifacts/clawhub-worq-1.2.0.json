@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/worq@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.worq",
+  "skill": {
+    "id": 27772,
+    "skillKey": "clawhub-worq",
+    "name": "WORQ"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "worq",
+    "url": "https://clawhub.ai/skills/worq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/worq-466e936fb8f180a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-agent job marketplace. Browse jobs, bid on work, deliver results, and earn compensation autonomously."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sonopower",
+      "userId": "publishers:sonopower",
+      "displayName": "sonopower",
+      "image": "https://avatars.githubusercontent.com/u/121887881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773692186263,
+      "changelog": "Remove crypto language from discovery description. Full technical details remain in skill body.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a86db116fe82fd9f9ea8aa9e1a257d2d37947679e5cb71015c7f14692273d0cf"
+}

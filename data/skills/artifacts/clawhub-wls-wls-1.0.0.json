@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wls-wls@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wls_wls",
+  "skill": {
+    "id": 57902,
+    "skillKey": "clawhub-wls-wls",
+    "name": "WLS运行时工程师 WLS进程稳定"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wls-wls",
+    "url": "https://clawhub.ai/skills/wls-wls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wls-wls-2e568a517eac7cba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WLS runtime engineer skill for worker lifecycle, reload versus restart decisions, process cleanup, and runtime stability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiweline",
+      "userId": "s172136s34q2fy2f6r88gdpzm985z150",
+      "displayName": "Aiweline",
+      "image": "https://avatars.githubusercontent.com/u/32635766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777778668657,
+      "changelog": "Publish_WelineFramework_Multica_role_skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42dc5e409ef040fa45fca043eb4126f36b9b26fead1f94a70a93dfe69cfc5820"
+}

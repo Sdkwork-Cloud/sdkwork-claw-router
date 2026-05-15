@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19902,
+  "uuid": "skill-clawhub-openclaw-advanced-memory",
+  "skillKey": "clawhub-openclaw-advanced-memory",
+  "name": "OpenClaw Advanced Memory",
+  "summary": "Provides persistent, searchable AI agent memory with real-time capture, vector search, and nightly LLM curation for long-term recall on local hardware.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_advanced_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh",
+      "features": [
+        "Provides persistent, searchable AI agent memory with real-time capture, vector search, and nigh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-advanced-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34990826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-advanced-memory",
+      "url": "https://clawhub.ai/skills/openclaw-advanced-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-advanced-memory",
+    "url": "https://clawhub.ai/skills/openclaw-advanced-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-advanced-memory-8c390a5809440f43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-advanced-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-advanced-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:205f3885342bf8de84f4272e01a8c83124908752bd3eaf71f001d77360caff9f",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T01:23:58.388Z"
+}

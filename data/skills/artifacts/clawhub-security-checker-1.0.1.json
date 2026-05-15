@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-checker@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_checker",
+  "skill": {
+    "id": 13220,
+    "skillKey": "clawhub-security-checker",
+    "name": "Security Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-checker",
+    "url": "https://clawhub.ai/skills/security-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-checker-f308afd04ae16420.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner for Python skills before publishing to ClawHub. Use before publishing any skill to check for dangerous imports, hardcoded secrets, unsafe file operations, and dangerous functions like eval/exec/subprocess. Essential for ma."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johstracke",
+      "userId": "publishers:johstracke",
+      "displayName": "johstracke",
+      "image": "https://avatars.githubusercontent.com/u/63787617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1508,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770493009770,
+      "changelog": "Enhanced detection: Now catches file write operations (.write_text, .write_bytes, open for writing) in addition to existing checks. Improved security scanner to detect potential malicious file write patterns before publishing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a4f337f3825103a9780b4e8754ffc1a87d7d439aac4e748ad94ca46e3f2880a7"
+}

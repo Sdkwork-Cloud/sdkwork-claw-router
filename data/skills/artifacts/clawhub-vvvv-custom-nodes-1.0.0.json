@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vvvv-custom-nodes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvv_custom_nodes",
+  "skill": {
+    "id": 51017,
+    "skillKey": "clawhub-vvvv-custom-nodes",
+    "name": "Vvvv Custom Nodes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvv-custom-nodes",
+    "url": "https://clawhub.ai/skills/vvvv-custom-nodes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvv-custom-nodes-219df4915ec459d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps write C# node classes for vvvv gamma — the [ProcessNode] pattern, Update() method, out parameters, pin configuration, change detection, stateless opera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tebjan",
+      "userId": "publishers:tebjan",
+      "displayName": "Tebjan Halm",
+      "image": "https://avatars.githubusercontent.com/u/1094716?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772720219320,
+      "changelog": "vvvv-custom-nodes 1.0.0 — Initial Release\n\n- Provides comprehensive guidance for writing custom C# node classes for vvvv gamma using the [ProcessNode] pattern.\n- Documents best practices: proper use of Update method, out parameters, pin configuration, change detection, stateless node patterns, and IDisposable.\n- Explains how to consume context and services (like NodeContext, IFrameClock, game access, and logging) in node constructors.\n- Details live reload behavior and implications for node state and resource management.\n- Covers naming conventions to avoid “Node” suffixes, pin visibility/grouping, default values, and effective change detection patterns.\n- Requires [assembly: ImportAsIs] for node import.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bea2e83825c865904665c7ce0589a37f4df5feb8606dc3ed26ad51da5389e235"
+}

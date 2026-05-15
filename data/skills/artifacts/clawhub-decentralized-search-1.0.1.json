@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decentralized-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decentralized_search",
+  "skill": {
+    "id": 18871,
+    "skillKey": "clawhub-decentralized-search",
+    "name": "presearch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decentralized-search",
+    "url": "https://clawhub.ai/skills/decentralized-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decentralized-search-cc881d45b899ef4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-ready decentralized search for AI agents. Privacy-first, uncensored web search via distributed node infrastructure."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nosytlabs",
+      "userId": "s17cp6zbp2rhtb0ekt63yfg8e9848n6w",
+      "displayName": "NosytLabs",
+      "image": "https://avatars.githubusercontent.com/u/202056146?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 654,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771541603355,
+      "changelog": "https://github.com/NosytLabs/presearch-search-skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9790f5b69bb580a1fbe0f5b62f0594a35895e3cce55b1e3bfd66d64484c0f474"
+}

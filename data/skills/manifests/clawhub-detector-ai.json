@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41572,
+  "uuid": "skill-clawhub-detector-ai",
+  "skillKey": "clawhub-detector-ai",
+  "name": "Detector AI",
+  "summary": "AI Detection Tool - Detect AI-generated text with multiple analysis methods including perplexity analysis, burstiness detection, readability scoring, and AI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.detector_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "AI Detection Tool",
+        "Detect AI-generated text with multiple analysis methods including perplexity analysis, burstine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/detector-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "detector-ai",
+      "url": "https://clawhub.ai/skills/detector-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "detector-ai",
+    "url": "https://clawhub.ai/skills/detector-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/detector-ai-7db7ec11288504da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/detector-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-detector-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a2c9df98dff9c1a71269d5f7063fe5b27a73ddd46b77e59d5fed14926027da9",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T02:15:34.942Z"
+}

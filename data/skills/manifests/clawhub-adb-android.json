@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19687,
+  "uuid": "skill-clawhub-adb-android",
+  "skillKey": "clawhub-adb-android",
+  "name": "ADB Android Control",
+  "summary": "Control Android devices via ADB (Android Debug Bridge) from a Mac. Use when: remotely operating an Android phone (tap, swipe, type, screenshot, screen record...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adb_android",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr-xiaoming",
+      "features": [
+        "Control Android devices via ADB (Android Debug Bridge) from a Mac",
+        "Use when: remotely operating an Android phone (tap, swipe, type, screenshot, screen record..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adb-android@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88608717?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adb-android",
+      "url": "https://clawhub.ai/skills/adb-android"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adb-android",
+    "url": "https://clawhub.ai/skills/adb-android",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adb-android-f617291851e19298.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adb-android@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-adb-android-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15e842407ae6e459ae36ad4dad1843af7bce81fbdf473de3cd906bff843b8704",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:05:50.921Z"
+}

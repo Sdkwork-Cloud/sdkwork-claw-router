@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15167,
+  "uuid": "skill-clawhub-volcengine-agent-identity",
+  "skillKey": "clawhub-volcengine-agent-identity",
+  "name": "Volcengine Agent Identity",
+  "summary": "UserPool login, TIP token, credential hosting, and tool risk approval. Activate when user needs to check identity (whoami/status), log in, list/add credentia...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_agent_identity",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "M1a0",
+      "features": [
+        "UserPool login, TIP token, credential hosting, and tool risk approval",
+        "Activate when user needs to check identity (whoami/status), log in, list/add credentia..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-agent-identity@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87516818?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-agent-identity",
+      "url": "https://clawhub.ai/skills/volcengine-agent-identity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-agent-identity",
+    "url": "https://clawhub.ai/skills/volcengine-agent-identity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-agent-identity-45baed77e041f3df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-agent-identity@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-agent-identity-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b94dd9426a048f350bb415f73d78cb4feb4e4d5542fe7eb785a53248bb12f51d",
+      "artifactSizeBytes": 2398
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T11:30:11.901Z"
+}

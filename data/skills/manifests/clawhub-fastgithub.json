@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40535,
+  "uuid": "skill-clawhub-fastgithub",
+  "skillKey": "clawhub-fastgithub",
+  "name": "fastgithub",
+  "summary": "Provide a local proxy server to accelerate GitHub access, improving slow clone, push, and download speeds on Linux, macOS, and Windows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fastgithub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YanTianlong-01",
+      "features": [
+        "Provide a local proxy server to accelerate GitHub access, improving slow clone, push, and downl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fastgithub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/78240661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fastgithub",
+      "url": "https://clawhub.ai/skills/fastgithub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fastgithub",
+    "url": "https://clawhub.ai/skills/fastgithub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fastgithub-1e153d9cf2f98d35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fastgithub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fastgithub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b45c1a1807e9341a6df291c5b334a480936836e9813bbe8ad274f99b81ef5dff",
+      "artifactSizeBytes": 2206
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T02:39:27.980Z"
+}

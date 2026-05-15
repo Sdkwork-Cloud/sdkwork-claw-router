@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38724,
+  "uuid": "skill-clawhub-x-twitter-browser",
+  "skillKey": "clawhub-x-twitter-browser",
+  "name": "x-twitter-browser",
+  "summary": "Log in to X/Twitter via a real browser session and perform actions — posting, replying, reposting, liking, and bookmarking tweets via headless Playwright.",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_twitter_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawgrid",
+      "features": [
+        "Log in to X/Twitter via a real browser session and perform actions — posting, replying, reposti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-twitter-browser@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24560749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-twitter-browser",
+      "url": "https://clawhub.ai/skills/x-twitter-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-twitter-browser",
+    "url": "https://clawhub.ai/skills/x-twitter-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-twitter-browser-7cd58b05ac0f081a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-twitter-browser@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-twitter-browser-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69dbef175da62287b14164f916f4a181914bd284a47fee3aec97966f0fc7d5b3",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:34:52.385Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16692,
+  "uuid": "skill-clawhub-openclaw-nim-skill",
+  "skillKey": "clawhub-openclaw-nim-skill",
+  "name": "NVIDIA NIM Skill",
+  "summary": "Invoke various LLMs (GLM-5, Kimi-k2.5, Llama 3.1, etc.) via NVIDIA NIM API to save main agent tokens and leverage specialized model capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_nim_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "d-wwei",
+      "features": [
+        "Invoke various LLMs (GLM-5, Kimi-k2.5, Llama 3.1, etc.) via NVIDIA NIM API to save main agent t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-nim-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10348457?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-nim-skill",
+      "url": "https://clawhub.ai/skills/openclaw-nim-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-nim-skill",
+    "url": "https://clawhub.ai/skills/openclaw-nim-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-nim-skill-03bbe84ef8c3512b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-nim-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-nim-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:330a8e572dbfe9efa3aa750bc962f1d72d6d64604c66df2c38edf1a8665135c0",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T06:32:36.203Z"
+}

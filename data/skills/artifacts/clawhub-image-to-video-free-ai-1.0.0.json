@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-free-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_free_ai",
+  "skill": {
+    "id": 53006,
+    "skillKey": "clawhub-image-to-video-free-ai",
+    "name": "Image To Video Free Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-free-ai",
+    "url": "https://clawhub.ai/skills/image-to-video-free-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-free-ai-3c1e0521c07164c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drop a still photo and watch it come alive — image-to-video-free-ai transforms static images into smooth, dynamic video clips without any cost or complex set..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775628012334,
+      "changelog": "Initial release: Instantly animate still photos into dynamic video clips using free AI in the cloud.\n\n- No-cost, no-setup required: just drop a photo and describe the motion/mood you want.\n- Cloud backend handles animation, frame interpolation, and rendering—no local processing.\n- Automatic session and token management; 100 free credits granted on anonymous signup.\n- Supports video export in MP4 and multiple formats, with per-session tracking and easy state management.\n- Responsive error handling for common issues like token expiry, session loss, or unsupported files.\n- Ideal for creators, marketers, and hobbyists seeking lifelike animations from static images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00de3732d988617107b2c303812273cbf0d72d634d1d9bd1de570e7476b8e55f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24427,
+  "uuid": "skill-clawhub-jackal-skill",
+  "skillKey": "clawhub-jackal-skill",
+  "name": "Jackal Skill",
+  "summary": "Sovereign, recoverable memory for AI agents backed by Jackal decentralized storage.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jackal_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Regan-Milne",
+      "features": [
+        "Sovereign, recoverable memory for AI agents backed by Jackal decentralized storage."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jackal-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68076856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jackal-skill",
+      "url": "https://clawhub.ai/skills/jackal-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jackal-skill",
+    "url": "https://clawhub.ai/skills/jackal-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jackal-skill-c8f47e7b08fdf87f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jackal-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jackal-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ebd7891ac297614f7c7ddf96fa531e98b3fbb0b3ae262fdb1ada134e92c2ffc",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T05:53:18.231Z"
+}

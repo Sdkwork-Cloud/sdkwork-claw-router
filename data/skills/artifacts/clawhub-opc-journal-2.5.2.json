@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opc-journal@2.5.2",
+  "version": "2.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opc_journal",
+  "skill": {
+    "id": 37962,
+    "skillKey": "clawhub-opc-journal",
+    "name": "OPC Journal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opc-journal",
+    "url": "https://clawhub.ai/skills/opc-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opc-journal-a3185d678b2157dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OPC200 Journal - A CLI-style single skill for One Person Company growth tracking. Record entries, analyze patterns from dreams/memory, detect milestones, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coidea",
+      "userId": "s176kgrrm3agn1bxwhkekk8bn983g60f",
+      "displayName": "coidea",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "2.5.2",
+      "createdAt": 1776105543740,
+      "changelog": "- Expanded documentation for directory structure and command behaviors.\n- Added detailed sections on security model, concurrency, and storage format.\n- All destructive operations (`delete`, `archive --clear`) now require a `--force` flag for extra safety.\n- Command outputs are now standardized to JSON with `status`, `result`, and `message` fields.\n- Skill continues to extract only structural and keyword signals, delegating all interpretation to the caller.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:569c7e8989c0bc8cd0792db948efe25f96d90578d0cc9d2a3ad27c1b3fce16dd"
+}

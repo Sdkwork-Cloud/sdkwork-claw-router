@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/portable-tools@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portable_tools",
+  "skill": {
+    "id": 10136,
+    "skillKey": "clawhub-portable-tools",
+    "name": "Portable Tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portable-tools",
+    "url": "https://clawhub.ai/skills/portable-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portable-tools-0de93c95055e60aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build cross-device tools without hardcoding paths or account names"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tunaissacoding",
+      "userId": "publishers:tunaissacoding",
+      "displayName": "TunaIssaCoding",
+      "image": "https://avatars.githubusercontent.com/u/149756654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2830,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1769168100305,
+      "changelog": "portable-tools v1.2.0\n\n- SKILL.md rewritten for greater clarity and conciseness, emphasizing methodology and actionable patterns.\n- Description updated to focus on building cross-device tools without hardcoding paths or account names.\n- Redundant details and excessive narrative trimmed to clarify core principles, mandatory patterns, and debugging checklists.\n- Anti-patterns and real-world OAuth example made more direct and accessible.\n- Resulting documentation now provides a clearer, more universal set of guidelines for portable tool development.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f49db80092d2f1b78f84ba6c50a617bfaa0cbcc53368703f09378eacde823fde"
+}

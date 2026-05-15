@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59422,
+  "uuid": "skill-clawhub-need",
+  "skillKey": "clawhub-need",
+  "name": "need",
+  "summary": "需求补全官 / Need Clarifier. 适用于想法还模糊、需求未想清楚时，先追问关键问题，补齐目标、场景、约束与成功标准，再进入方案阶段。 / For vague or incomplete requests, ask key questions first, clarify goals, context...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.need",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "je44",
+      "features": [
+        "需求补全官 / Need Clarifier",
+        "适用于想法还模糊、需求未想清楚时，先追问关键问题，补齐目标、场景、约束与成功标准，再进入方案阶段。 / For vague or incomplete requests, ask key q."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/need@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26733566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "need",
+      "url": "https://clawhub.ai/skills/need"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "need",
+    "url": "https://clawhub.ai/skills/need",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/need-be8dff00b0d468b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/need@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-need-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf8ddc911fb9e673c3e8c377d46ea6aead630e45f2fa77c12d797bc9baee3e65",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:59:49.230Z"
+}

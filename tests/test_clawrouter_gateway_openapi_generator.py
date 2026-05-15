@@ -4,16 +4,29 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.clawrouter_gateway_openapi_generator import ClawRouterGatewayOpenApiGenerator
+from tools.clawrouter_gateway_openapi_generator import (
+    ClawRouterGatewayOpenApiGenerator,
+    VENDOR_PROVIDER_PREFIXES,
+    audit_vendor_schema_quality,
+)
 
 
 class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
+    def assertSchemaRef(self, schema: dict[str, object], expected_ref: str) -> None:
+        self.assertEqual({"$ref": expected_ref}, schema)
+
+    def assertDescribedSchemaRef(self, schema: dict[str, object], expected_ref: str) -> None:
+        self.assertEqual([{"$ref": expected_ref}], schema.get("allOf"))
+        self.assertIsInstance(schema.get("description"), str)
+        self.assertNotEqual("", schema.get("description", "").strip())
+        self.assertNotIn("$ref", schema)
+
     def test_generates_gateway_standard_openapi_contract(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             spec = ClawRouterGatewayOpenApiGenerator(root=root).generate()
 
-            self.assertEqual("3.0.0", spec["openapi"])
+            self.assertEqual("3.0.3", spec["openapi"])
             self.assertEqual("Claw Router Open API", spec["info"]["title"])
             self.assertEqual("/v1", spec["x-api-prefix"])
             self.assertNotIn("x-provider-passthrough", spec)
@@ -167,6 +180,15 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
             )
 
             operation = spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]
+            self.assertEqual(["Chat/google"], operation["tags"])
+            self.assertEqual(
+                ["Chat/google"],
+                spec["paths"]["/google/v1beta/models/{model}:streamGenerateContent"]["post"]["tags"],
+            )
+            self.assertEqual(
+                ["Chat/google"],
+                spec["paths"]["/google/v1beta/models/{model}:countTokens"]["post"]["tags"],
+            )
             self.assertNotIn("x-provider", operation)
             self.assertNotIn("x-passthrough", operation)
             self.assertEqual(
@@ -356,9 +378,9 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
                 ("/v1/images/variations", "post"): "OpenAiImageVariationMultipartRequest",
                 ("/v1/audio/transcriptions", "post"): "OpenAiAudioTranscriptionMultipartRequest",
                 ("/v1/audio/translations", "post"): "OpenAiAudioTranslationMultipartRequest",
-                ("/v1/audio/voices", "post"): "ProviderMultipartRequest",
+                ("/v1/audio/voices", "post"): "OpenAiVoiceCreateMultipartRequest",
                 ("/v1/audio/voice_consents", "post"): "OpenAiVoiceConsentMultipartRequest",
-                ("/v1/videos/characters", "post"): "ProviderMultipartRequest",
+                ("/v1/videos/characters", "post"): "OpenAiVideoCharacterMultipartRequest",
                 ("/v1/uploads/{upload_id}/parts", "post"): "OpenAiUploadPartMultipartRequest",
             }
             for (path, method), schema_name in expected_multipart_refs.items():
@@ -371,8 +393,14 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
 
             google_upload = spec["paths"]["/google/v1beta/files"]["post"]["requestBody"]["content"]
             self.assertEqual(
-                {"$ref": "#/components/schemas/ProviderMultipartRequest"},
+                {"$ref": "#/components/schemas/GoogleFileUploadMultipartRequest"},
                 google_upload["multipart/form-data"]["schema"],
+            )
+
+            anthropic_upload = spec["paths"]["/anthropic/v1/files"]["post"]["requestBody"]["content"]
+            self.assertEqual(
+                {"$ref": "#/components/schemas/AnthropicFileUploadMultipartRequest"},
+                anthropic_upload["multipart/form-data"]["schema"],
             )
 
     def test_documents_current_openai_platform_surface_extensions(self) -> None:
@@ -557,6 +585,58 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
             self.assertNotIn("x-passthrough", anthropic_files)
             self.assertIn("multipart/form-data", anthropic_files["requestBody"]["content"])
 
+    def test_documents_provider_native_list_query_parameters(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            google_list_files = {
+                parameter["name"]: parameter
+                for parameter in spec["paths"]["/google/v1beta/files"]["get"]["parameters"]
+                if parameter["in"] == "query"
+            }
+            self.assertEqual({"pageSize", "pageToken"}, set(google_list_files))
+            self.assertEqual({"type": "integer", "minimum": 1, "maximum": 100}, google_list_files["pageSize"]["schema"])
+            self.assertEqual({"type": "string"}, google_list_files["pageToken"]["schema"])
+
+            google_cached_contents = {
+                parameter["name"]: parameter
+                for parameter in spec["paths"]["/google/v1beta/cachedContents"]["get"]["parameters"]
+                if parameter["in"] == "query"
+            }
+            self.assertEqual({"pageSize", "pageToken"}, set(google_cached_contents))
+
+            anthropic_batches = {
+                parameter["name"]: parameter
+                for parameter in spec["paths"]["/anthropic/v1/messages/batches"]["get"]["parameters"]
+                if parameter["in"] == "query"
+            }
+            self.assertEqual({"before_id", "after_id", "limit"}, set(anthropic_batches))
+            self.assertEqual({"type": "integer", "minimum": 1, "maximum": 100}, anthropic_batches["limit"]["schema"])
+
+            anthropic_files = {
+                parameter["name"]: parameter
+                for parameter in spec["paths"]["/anthropic/v1/files"]["get"]["parameters"]
+                if parameter["in"] == "query"
+            }
+            self.assertEqual({"before_id", "after_id", "limit"}, set(anthropic_files))
+
+    def test_documents_anthropic_message_batch_cancel_official_route(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            self.assertNotIn("delete", spec["paths"]["/anthropic/v1/messages/batches/{batch_id}"])
+            operation = spec["paths"]["/anthropic/v1/messages/batches/{batch_id}/cancel"]["post"]
+            self.assertEqual(["Batches/anthropic"], operation["tags"])
+            self.assertEqual("anthropicCancelMessageBatch", operation["operationId"])
+            path_parameters = {
+                parameter["name"]
+                for parameter in operation["parameters"]
+                if parameter["in"] == "path"
+            }
+            self.assertEqual({"batch_id"}, path_parameters)
+            response_ref = operation["responses"]["200"]["content"]["application/json"]["schema"]["$ref"]
+            self.assertEqual("#/components/schemas/AnthropicMessageBatch", response_ref)
+
     def test_public_openapi_exposes_only_declared_provider_native_operations(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
@@ -645,6 +725,940 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
                     self.assertNotIn("x-provider", operation, f"{method.upper()} {path}")
                     self.assertNotIn("x-passthrough", operation, f"{method.upper()} {path}")
 
+    def test_public_vendor_operations_document_typed_payload_schemas(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [],
+                audit.non_component_payload_schemas,
+                "Vendor structured payloads must use named component schema refs.",
+            )
+            self.assertEqual(
+                [],
+                audit.optional_request_bodies,
+                "Vendor operations with request bodies must document them as required inputs.",
+            )
+            self.assertEqual(
+                [],
+                audit.path_parameter_mismatches,
+                "Vendor path templates must declare every path parameter as a required typed input.",
+            )
+            self.assertEqual(
+                [],
+                audit.query_parameter_mismatches,
+                "Vendor query parameters must declare typed schemas and descriptions.",
+            )
+            self.assertEqual(
+                [],
+                audit.open_object_components,
+                "Vendor reachable object components must be closed or typed map modules.",
+            )
+            self.assertEqual(
+                [],
+                audit.unregistered_operation_tags,
+                "Vendor operations must use declared API reference tags.",
+            )
+            self.assertEqual(
+                [],
+                audit.generic_payload_refs,
+                "Vendor JSON payloads must use vendor-specific component schemas.",
+            )
+
+    def test_public_openapi_operations_document_typed_payload_schemas(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            generic_refs: list[str] = []
+            for path, path_item in spec["paths"].items():
+                for method, operation in path_item.items():
+                    if method.startswith("x-") or not isinstance(operation, dict):
+                        continue
+                    for content_type, media_type in operation.get("requestBody", {}).get("content", {}).items():
+                        schema_ref = media_type.get("schema", {}).get("$ref")
+                        if schema_ref in {
+                            "#/components/schemas/JsonObject",
+                            "#/components/schemas/ProviderMultipartRequest",
+                        }:
+                            generic_refs.append(
+                                f"{method.upper()} {path} {content_type} request uses {schema_ref}"
+                            )
+                    for status, response in operation.get("responses", {}).items():
+                        if not isinstance(response, dict):
+                            continue
+                        for content_type, media_type in response.get("content", {}).items():
+                            schema_ref = media_type.get("schema", {}).get("$ref")
+                            if schema_ref == "#/components/schemas/JsonObject":
+                                generic_refs.append(
+                                    f"{method.upper()} {path} {status} {content_type} response uses {schema_ref}"
+                                )
+
+            self.assertEqual([], sorted(generic_refs))
+
+            schemas = spec["components"]["schemas"]
+            create_completion = spec["paths"]["/v1/completions"]["post"]
+            self.assertEqual(
+                {"$ref": "#/components/schemas/OpenAiCompletionCreateRequest"},
+                create_completion["requestBody"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/OpenAiCompletion"},
+                create_completion["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual("object", schemas["OpenAiCompletionCreateRequest"]["type"])
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiCompletionCreateRequest"]["additionalProperties"],
+                "#/components/schemas/ProviderJsonValue",
+            )
+            self.assertEqual(["model", "prompt"], schemas["OpenAiCompletionCreateRequest"]["required"])
+            self.assertIn("model", schemas["OpenAiCompletionCreateRequest"]["properties"])
+            self.assertIn("prompt", schemas["OpenAiCompletionCreateRequest"]["properties"])
+            self.assertIn("choices", schemas["OpenAiCompletion"]["properties"])
+
+            create_video_character = spec["paths"]["/v1/videos/characters"]["post"]
+            self.assertEqual(
+                {"$ref": "#/components/schemas/OpenAiVideoCharacterMultipartRequest"},
+                create_video_character["requestBody"]["content"]["multipart/form-data"]["schema"],
+            )
+            self.assertEqual(
+                "object",
+                schemas["OpenAiVideoCharacterMultipartRequest"]["type"],
+            )
+            self.assertIn("file", schemas["OpenAiVideoCharacterMultipartRequest"]["properties"])
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiVideoCharacterMultipartRequest"]["additionalProperties"],
+                "#/components/schemas/ProviderJsonValue",
+            )
+
+    def test_public_openapi_object_extension_maps_are_typed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            open_objects = [
+                schema_name
+                for schema_name, schema in spec["components"]["schemas"].items()
+                if isinstance(schema, dict)
+                and schema.get("type") == "object"
+                and schema.get("additionalProperties") is True
+            ]
+            self.assertEqual([], sorted(open_objects))
+            self.assertDescribedSchemaRef(
+                spec["components"]["schemas"]["OpenAiChatCompletionRequest"]["additionalProperties"],
+                "#/components/schemas/ProviderJsonValue",
+            )
+
+    def test_public_openapi_does_not_emit_empty_schema_shapes(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            empty_schema_locations: list[str] = []
+
+            def visit(node: object, location: str) -> None:
+                if isinstance(node, dict):
+                    if node == {}:
+                        empty_schema_locations.append(location)
+                    for key, value in node.items():
+                        visit(value, f"{location}.{key}")
+                elif isinstance(node, list):
+                    for index, value in enumerate(node):
+                        visit(value, f"{location}[{index}]")
+
+            visit(spec["components"]["schemas"], "#/components/schemas")
+
+            self.assertEqual([], empty_schema_locations)
+
+    def test_public_openapi_component_properties_are_typed(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            untyped_properties: list[str] = []
+            schema_shape_keys = {
+                "$ref",
+                "type",
+                "oneOf",
+                "anyOf",
+                "allOf",
+                "enum",
+                "const",
+                "items",
+                "properties",
+                "additionalProperties",
+            }
+
+            for schema_name, schema in spec["components"]["schemas"].items():
+                if not isinstance(schema, dict) or schema.get("type") != "object":
+                    continue
+                properties = schema.get("properties")
+                if not isinstance(properties, dict):
+                    continue
+                for property_name, property_schema in properties.items():
+                    if not isinstance(property_schema, dict):
+                        continue
+                    if not any(key in property_schema for key in schema_shape_keys):
+                        untyped_properties.append(f"{schema_name}.{property_name}")
+
+            self.assertEqual([], sorted(untyped_properties))
+
+    def test_public_openapi_media_file_inputs_reuse_named_modules(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            schemas = spec["components"]["schemas"]
+            for schema_name in [
+                "OpenAiFileReferenceInput",
+                "OpenAiFileReferenceObject",
+                "OpenAiImageReferenceInput",
+                "OpenAiImageReferenceObject",
+                "OpenAiImageReferenceInputList",
+                "OpenAiBinaryFilePart",
+            ]:
+                self.assertIn(schema_name, schemas)
+                self.assertIsInstance(schemas[schema_name].get("description"), str)
+
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiImageEditRequest"]["properties"]["image"],
+                "#/components/schemas/OpenAiImageReferenceInputList",
+            )
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiImageEditRequest"]["properties"]["mask"],
+                "#/components/schemas/OpenAiImageReferenceInput",
+            )
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiImageVariationRequest"]["properties"]["image"],
+                "#/components/schemas/OpenAiImageReferenceInput",
+            )
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiAudioTranscriptionRequest"]["properties"]["file"],
+                "#/components/schemas/OpenAiFileReferenceInput",
+            )
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiAudioTranslationRequest"]["properties"]["file"],
+                "#/components/schemas/OpenAiFileReferenceInput",
+            )
+
+            for schema_name, property_name in [
+                ("OpenAiImageEditMultipartRequest", "image"),
+                ("OpenAiImageEditMultipartRequest", "mask"),
+                ("OpenAiImageVariationMultipartRequest", "image"),
+                ("OpenAiAudioTranscriptionMultipartRequest", "file"),
+                ("OpenAiAudioTranslationMultipartRequest", "file"),
+            ]:
+                self.assertDescribedSchemaRef(
+                    schemas[schema_name]["properties"][property_name],
+                    "#/components/schemas/OpenAiBinaryFilePart",
+                )
+
+    def test_public_openapi_reuses_shared_openai_resource_modules(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            expected_response_refs = {
+                ("/v1/responses/input_tokens", "post"): "OpenAiResponseInputTokenCount",
+                ("/v1/responses/compact", "post"): "OpenAiResponse",
+                ("/v1/responses/{response_id}", "get"): "OpenAiResponse",
+                ("/v1/responses/{response_id}/cancel", "post"): "OpenAiResponse",
+                ("/v1/responses/{response_id}/input_items", "get"): "OpenAiResponseInputItemList",
+                ("/v1/chat/completions", "get"): "OpenAiChatCompletionList",
+                ("/v1/chat/completions/{completion_id}", "get"): "OpenAiChatCompletion",
+                ("/v1/chat/completions/{completion_id}", "post"): "OpenAiChatCompletion",
+                ("/v1/chat/completions/{completion_id}/messages", "get"): "OpenAiChatCompletionMessageList",
+                ("/v1/images/generations", "post"): "OpenAiImageList",
+                ("/v1/images/edits", "post"): "OpenAiImageList",
+                ("/v1/images/variations", "post"): "OpenAiImageList",
+                ("/v1/videos", "get"): "OpenAiVideoList",
+                ("/v1/videos", "post"): "OpenAiVideo",
+                ("/v1/videos/characters", "post"): "OpenAiVideoCharacter",
+                ("/v1/videos/characters/{character_id}", "get"): "OpenAiVideoCharacter",
+                ("/v1/videos/edits", "post"): "OpenAiVideo",
+                ("/v1/videos/extensions", "post"): "OpenAiVideo",
+                ("/v1/videos/{video_id}", "get"): "OpenAiVideo",
+                ("/v1/videos/{video_id}/remix", "post"): "OpenAiVideo",
+                ("/v1/audio/voices", "get"): "OpenAiVoiceList",
+                ("/v1/audio/voices", "post"): "OpenAiVoice",
+                ("/v1/audio/voices/{voice_id}", "get"): "OpenAiVoice",
+                ("/v1/audio/voice_consents", "get"): "OpenAiVoiceConsentList",
+                ("/v1/audio/voice_consents", "post"): "OpenAiVoiceConsent",
+                ("/v1/audio/voice_consents/{consent_id}", "get"): "OpenAiVoiceConsent",
+                ("/v1/audio/voice_consents/{consent_id}", "post"): "OpenAiVoiceConsent",
+                ("/v1/audio/transcriptions", "post"): "OpenAiAudioTranscription",
+                ("/v1/audio/translations", "post"): "OpenAiAudioTranslation",
+                ("/v1/files", "get"): "OpenAiFileList",
+                ("/v1/files", "post"): "OpenAiFile",
+                ("/v1/files/{file_id}", "get"): "OpenAiFile",
+                ("/v1/containers", "get"): "OpenAiContainerList",
+                ("/v1/containers", "post"): "OpenAiContainer",
+                ("/v1/containers/{container_id}", "get"): "OpenAiContainer",
+                ("/v1/containers/{container_id}/files", "get"): "OpenAiContainerFileList",
+                ("/v1/containers/{container_id}/files", "post"): "OpenAiContainerFile",
+                ("/v1/containers/{container_id}/files/{file_id}", "get"): "OpenAiContainerFile",
+                ("/v1/evals", "get"): "OpenAiEvalList",
+                ("/v1/evals", "post"): "OpenAiEval",
+                ("/v1/evals/{eval_id}", "get"): "OpenAiEval",
+                ("/v1/evals/{eval_id}", "post"): "OpenAiEval",
+                ("/v1/evals/{eval_id}/runs", "get"): "OpenAiEvalRunList",
+                ("/v1/evals/{eval_id}/runs", "post"): "OpenAiEvalRun",
+                ("/v1/evals/{eval_id}/runs/{run_id}", "get"): "OpenAiEvalRun",
+                ("/v1/evals/{eval_id}/runs/{run_id}", "post"): "OpenAiEvalRun",
+                ("/v1/evals/{eval_id}/runs/{run_id}/output_items", "get"): "OpenAiEvalRunOutputItemList",
+                ("/v1/evals/{eval_id}/runs/{run_id}/output_items/{output_item_id}", "get"): "OpenAiEvalRunOutputItem",
+                ("/v1/skills", "get"): "OpenAiSkillList",
+                ("/v1/skills", "post"): "OpenAiSkill",
+                ("/v1/skills/{skill_id}", "get"): "OpenAiSkill",
+                ("/v1/skills/{skill_id}", "post"): "OpenAiSkill",
+                ("/v1/skills/{skill_id}/versions", "get"): "OpenAiSkillVersionList",
+                ("/v1/skills/{skill_id}/versions", "post"): "OpenAiSkillVersion",
+                ("/v1/skills/{skill_id}/versions/{version}", "get"): "OpenAiSkillVersion",
+                ("/v1/vector_stores", "get"): "OpenAiVectorStoreList",
+                ("/v1/vector_stores", "post"): "OpenAiVectorStore",
+                ("/v1/vector_stores/{vector_store_id}", "get"): "OpenAiVectorStore",
+                ("/v1/vector_stores/{vector_store_id}/files", "post"): "OpenAiVectorStoreFile",
+                ("/v1/vector_stores/{vector_store_id}/file_batches", "post"): "OpenAiVectorStoreFileBatch",
+                ("/v1/batches", "get"): "OpenAiBatchList",
+                ("/v1/batches", "post"): "OpenAiBatch",
+                ("/v1/batches/{batch_id}", "get"): "OpenAiBatch",
+                ("/v1/batches/{batch_id}/cancel", "post"): "OpenAiBatch",
+                ("/v1/assistants", "get"): "OpenAiAssistantList",
+                ("/v1/assistants", "post"): "OpenAiAssistant",
+                ("/v1/threads", "post"): "OpenAiThread",
+                ("/v1/threads/{thread_id}/messages", "post"): "OpenAiThreadMessage",
+                ("/v1/threads/{thread_id}/runs", "post"): "OpenAiRun",
+                ("/v1/threads/{thread_id}/runs/{run_id}/steps", "get"): "OpenAiRunStepList",
+                ("/v1/fine_tuning/jobs", "get"): "OpenAiFineTuningJobList",
+                ("/v1/fine_tuning/jobs", "post"): "OpenAiFineTuningJob",
+                ("/v1/uploads", "post"): "OpenAiUpload",
+                ("/v1/uploads/{upload_id}/complete", "post"): "OpenAiUpload",
+                ("/v1/realtime/client_secrets", "post"): "OpenAiRealtimeClientSecret",
+            }
+            for (path, method), schema_name in expected_response_refs.items():
+                operation = spec["paths"][path][method]
+                response_ref = operation["responses"]["200"]["content"]["application/json"]["schema"]["$ref"]
+                self.assertEqual(
+                    f"#/components/schemas/{schema_name}",
+                    response_ref,
+                    f"{method.upper()} {path} must reuse the shared {schema_name} response module",
+                )
+
+            expected_request_refs = {
+                ("/v1/responses/input_tokens", "post"): "OpenAiResponseInputTokenCountRequest",
+                ("/v1/responses/compact", "post"): "OpenAiResponseCompactRequest",
+                ("/v1/chat/completions/{completion_id}", "post"): "OpenAiChatCompletionUpdateRequest",
+                ("/v1/videos", "post"): "OpenAiVideoCreateRequest",
+                ("/v1/videos/characters", "post"): "OpenAiVideoCharacterCreateRequest",
+                ("/v1/videos/edits", "post"): "OpenAiVideoEditRequest",
+                ("/v1/videos/extensions", "post"): "OpenAiVideoExtendRequest",
+                ("/v1/videos/{video_id}/remix", "post"): "OpenAiVideoRemixRequest",
+                ("/v1/audio/speech", "post"): "OpenAiSpeechCreateRequest",
+                ("/v1/audio/voice_consents/{consent_id}", "post"): "OpenAiVoiceConsentUpdateRequest",
+                ("/v1/containers", "post"): "OpenAiContainerCreateRequest",
+                ("/v1/evals", "post"): "OpenAiEvalCreateRequest",
+                ("/v1/evals/{eval_id}", "post"): "OpenAiEvalUpdateRequest",
+                ("/v1/evals/{eval_id}/runs", "post"): "OpenAiEvalRunCreateRequest",
+                ("/v1/skills/{skill_id}", "post"): "OpenAiSkillUpdateRequest",
+                ("/v1/batches", "post"): "OpenAiBatchCreateRequest",
+                ("/v1/vector_stores/{vector_store_id}/files", "post"): "OpenAiVectorStoreFileCreateRequest",
+                ("/v1/vector_stores/{vector_store_id}/file_batches", "post"): "OpenAiVectorStoreFileBatchCreateRequest",
+                ("/v1/assistants", "post"): "OpenAiAssistantCreateRequest",
+                ("/v1/assistants/{assistant_id}", "post"): "OpenAiAssistantUpdateRequest",
+                ("/v1/threads/{thread_id}/messages", "post"): "OpenAiThreadMessageCreateRequest",
+                ("/v1/threads/{thread_id}/runs", "post"): "OpenAiRunCreateRequest",
+                ("/v1/fine_tuning/jobs", "post"): "OpenAiFineTuningJobCreateRequest",
+                ("/v1/uploads", "post"): "OpenAiUploadCreateRequest",
+                ("/v1/realtime/client_secrets", "post"): "OpenAiRealtimeClientSecretCreateRequest",
+            }
+            for (path, method), schema_name in expected_request_refs.items():
+                operation = spec["paths"][path][method]
+                request_ref = operation["requestBody"]["content"]["application/json"]["schema"]["$ref"]
+                self.assertEqual(
+                    f"#/components/schemas/{schema_name}",
+                    request_ref,
+                    f"{method.upper()} {path} must reuse the shared {schema_name} request module",
+                )
+
+            schemas = spec["components"]["schemas"]
+            self.assertEqual(["file_id"], schemas["OpenAiVectorStoreFileCreateRequest"]["required"])
+            self.assertIn("chunking_strategy", schemas["OpenAiVectorStoreFileCreateRequest"]["properties"])
+            self.assertEqual(["input_file_id", "endpoint", "completion_window"], schemas["OpenAiBatchCreateRequest"]["required"])
+            self.assertIn("request_counts", schemas["OpenAiBatch"]["properties"])
+            self.assertIn("bytes", schemas["OpenAiFile"]["properties"])
+            self.assertIn("client_secret", schemas["OpenAiRealtimeClientSecret"]["properties"])
+            self.assertIn("memory_limit", schemas["OpenAiContainer"]["properties"])
+            self.assertIn("path", schemas["OpenAiContainerFile"]["properties"])
+            self.assertIn("testing_criteria", schemas["OpenAiEval"]["properties"])
+            self.assertIn("result_counts", schemas["OpenAiEvalRun"]["properties"])
+            self.assertIn("sample", schemas["OpenAiEvalRunOutputItem"]["properties"])
+            self.assertIn("versions", schemas["OpenAiSkill"]["properties"])
+            self.assertIn("package_sha256", schemas["OpenAiSkillVersion"]["properties"])
+            self.assertIn("url", schemas["OpenAiImage"]["properties"])
+            self.assertIn("seconds", schemas["OpenAiVideo"]["properties"])
+            self.assertIn("consent_document", schemas["OpenAiVoiceConsent"]["properties"])
+            self.assertIn("text", schemas["OpenAiAudioTranscription"]["properties"])
+            self.assertIn("usage", schemas["OpenAiRun"]["properties"])
+            self.assertIn("completed_at", schemas["OpenAiRun"]["properties"])
+            self.assertIn("usage", schemas["OpenAiRunStep"]["properties"])
+            self.assertIn("response_format", schemas["OpenAiAssistant"]["properties"])
+
+    def test_public_openapi_v1_payloads_use_canonical_modules(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            non_canonical_refs: list[str] = []
+            allowed_refs = {"DeleteResult", "SdpResponse"}
+
+            def is_canonical(schema_name: str) -> bool:
+                return schema_name.startswith("OpenAi") or schema_name in allowed_refs
+
+            for path, path_item in spec["paths"].items():
+                if not (path == "/v1" or path.startswith("/v1/")):
+                    continue
+                for method, operation in path_item.items():
+                    if method.startswith("x-") or not isinstance(operation, dict):
+                        continue
+                    location = f"{method.upper()} {path} {operation.get('operationId')}"
+                    request_body = operation.get("requestBody")
+                    if isinstance(request_body, dict):
+                        for content_type, media_type in request_body.get("content", {}).items():
+                            schema_ref = media_type.get("schema", {}).get("$ref")
+                            if not isinstance(schema_ref, str):
+                                continue
+                            schema_name = schema_ref.rsplit("/", 1)[-1]
+                            schema = spec["components"]["schemas"].get(schema_name)
+                            if isinstance(schema, dict) and isinstance(schema.get("$ref"), str):
+                                schema_name = schema["$ref"].rsplit("/", 1)[-1]
+                            if not is_canonical(schema_name):
+                                non_canonical_refs.append(f"{location} {content_type} request uses {schema_name}")
+                    for status, response in operation.get("responses", {}).items():
+                        if status not in {"200", "201"} or not isinstance(response, dict):
+                            continue
+                        for content_type, media_type in response.get("content", {}).items():
+                            schema_ref = media_type.get("schema", {}).get("$ref")
+                            if not isinstance(schema_ref, str):
+                                continue
+                            schema_name = schema_ref.rsplit("/", 1)[-1]
+                            schema = spec["components"]["schemas"].get(schema_name)
+                            if isinstance(schema, dict) and isinstance(schema.get("$ref"), str):
+                                schema_name = schema["$ref"].rsplit("/", 1)[-1]
+                            if not is_canonical(schema_name):
+                                non_canonical_refs.append(f"{location} {status} {content_type} response uses {schema_name}")
+
+            self.assertEqual([], sorted(non_canonical_refs))
+
+    def test_public_vendor_schema_quality_audit_reports_optional_request_bodies(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            del spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["requestBody"]["required"]
+            spec["paths"]["/anthropic/v1/messages"]["post"]["requestBody"]["required"] = False
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [
+                    "POST /anthropic/v1/messages requestBody must be required",
+                    "POST /google/v1beta/models/{model}:generateContent requestBody must be required",
+                ],
+                audit.optional_request_bodies,
+            )
+
+    def test_public_vendor_schema_quality_audit_reports_path_parameter_mismatches(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["parameters"] = []
+            spec["paths"]["/anthropic/v1/files/{file_id}"]["get"]["parameters"][0]["required"] = False
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [
+                    "GET /anthropic/v1/files/{file_id} path parameter file_id must be required",
+                    "POST /google/v1beta/models/{model}:generateContent path parameters mismatch: "
+                    "declared [] expected ['model']",
+                ],
+                audit.path_parameter_mismatches,
+            )
+
+    def test_public_vendor_schema_quality_audit_reports_query_parameter_mismatches(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            parameters = spec["paths"]["/google/v1beta/files"]["get"]["parameters"]
+            del parameters[0]["schema"]
+            parameters[1]["description"] = ""
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [
+                    "GET /google/v1beta/files query parameter pageSize must declare a schema",
+                    "GET /google/v1beta/files query parameter pageToken must declare a description",
+                ],
+                audit.query_parameter_mismatches,
+            )
+
+    def test_public_vendor_schema_quality_audit_reports_open_object_components(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            spec["components"]["schemas"]["GoogleGenerateContentRequest"]["additionalProperties"] = True
+            del spec["components"]["schemas"]["GoogleContent"]["additionalProperties"]
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [
+                    "#/components/schemas/GoogleContent must set additionalProperties to false "
+                    "or a typed schema",
+                    "#/components/schemas/GoogleGenerateContentRequest must set additionalProperties to false "
+                    "or a typed schema",
+                ],
+                audit.open_object_components,
+            )
+
+    def test_public_vendor_schema_quality_audit_reports_unregistered_operation_tags(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["tags"] = ["Unknown/google"]
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                ["POST /google/v1beta/models/{model}:generateContent uses undeclared tag Unknown/google"],
+                audit.unregistered_operation_tags,
+            )
+
+    def test_public_vendor_schema_quality_audit_reports_inline_structured_payloads(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["requestBody"]["content"][
+                "application/json"
+            ]["schema"] = {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "contents": {
+                        "type": "array",
+                        "items": {"$ref": "#/components/schemas/GoogleContent"},
+                    }
+                },
+            }
+            spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["responses"]["400"]["content"][
+                "application/json"
+            ]["schema"] = {"type": "object", "additionalProperties": True}
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [
+                    "POST /google/v1beta/models/{model}:generateContent 400 application/json response "
+                    "is missing a component schema ref",
+                    "POST /google/v1beta/models/{model}:generateContent application/json request "
+                    "is missing a component schema ref",
+                ],
+                audit.non_component_payload_schemas,
+            )
+
+    def test_public_vendor_schema_quality_audit_reports_missing_and_external_payload_schemas(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            del spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["requestBody"]["content"][
+                "application/json"
+            ]["schema"]
+            spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["responses"]["200"]["content"][
+                "application/json"
+            ]["schema"] = {"$ref": "https://example.com/schemas/GoogleGenerateContentResponse.json"}
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [
+                    "POST /google/v1beta/models/{model}:generateContent 200 application/json response "
+                    "uses non-component schema ref https://example.com/schemas/GoogleGenerateContentResponse.json",
+                    "POST /google/v1beta/models/{model}:generateContent application/json request "
+                    "is missing a schema",
+                ],
+                audit.non_component_payload_schemas,
+            )
+
+    def test_public_vendor_schema_quality_audit_allows_inline_binary_payloads(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertIn(
+                "AnthropicFile",
+                audit.root_schema_names,
+                "The file metadata response should still participate in the typed vendor schema graph.",
+            )
+            self.assertEqual(
+                [],
+                [
+                    item
+                    for item in audit.non_component_payload_schemas
+                    if "/anthropic/v1/files/{file_id}/content" in item
+                ],
+                "Binary file content responses are allowed to use inline string/binary schemas.",
+            )
+
+    def test_public_vendor_schema_graph_uses_named_modules_for_nested_objects(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [],
+                audit.inline_free_form_objects,
+                "Vendor schemas must use named reusable components for nested object modules.",
+            )
+            self.assertEqual(
+                [],
+                audit.anonymous_object_union_branches,
+                "Vendor schema union branches must reference named object components.",
+            )
+
+    def test_public_vendor_reachable_components_have_schema_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(
+                [],
+                audit.missing_component_descriptions,
+                "Vendor reachable schema components must include component-level descriptions.",
+            )
+
+    def test_public_vendor_schema_quality_audit_reports_standardized_results(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual([], audit.unregistered_vendor_paths)
+            self.assertEqual(47, len(audit.root_schema_names))
+            self.assertIn("ProviderJsonNull", audit.reachable_schema_names)
+            self.assertEqual([], audit.unresolved_refs)
+            self.assertEqual([], audit.non_component_payload_schemas)
+            self.assertEqual([], audit.optional_request_bodies)
+            self.assertEqual([], audit.path_parameter_mismatches)
+            self.assertEqual([], audit.query_parameter_mismatches)
+            self.assertEqual([], audit.open_object_components)
+            self.assertEqual([], audit.unregistered_operation_tags)
+            self.assertEqual([], audit.generic_payload_refs)
+            self.assertEqual([], audit.missing_component_descriptions)
+            self.assertEqual([], audit.inline_free_form_objects)
+            self.assertEqual([], audit.anonymous_object_union_branches)
+
+    def test_public_vendor_schema_quality_audit_reports_unregistered_vendor_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+            spec["paths"]["/newvendor/v1/tasks"] = {
+                "post": {
+                    "operationId": "createNewVendorTask",
+                    "summary": "Create task.",
+                    "description": "Create task.",
+                    "tags": ["Media/newvendor"],
+                    "security": [{"bearerAuth": []}],
+                    "requestBody": {
+                        "required": True,
+                        "content": {
+                            "application/json": {
+                                "schema": {"$ref": "#/components/schemas/ProviderTaskResult"}
+                            }
+                        },
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "Task result.",
+                            "content": {
+                                "application/json": {
+                                    "schema": {"$ref": "#/components/schemas/ProviderTaskResult"}
+                                }
+                            },
+                        }
+                    },
+                }
+            }
+
+            audit = audit_vendor_schema_quality(spec, provider_prefixes=self._provider_prefixes())
+
+            self.assertEqual(["/newvendor/v1/tasks"], audit.unregistered_vendor_paths)
+
+    def test_gateway_openapi_check_runs_vendor_schema_quality_audit(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["requestBody"]["content"][
+                "application/json"
+            ]["schema"] = {"$ref": "#/components/schemas/JsonObject"}
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("Vendor schema quality audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("JsonObject" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_runs_public_payload_schema_quality_audit(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            spec["paths"]["/v1/completions"]["post"]["requestBody"]["content"]["application/json"][
+                "schema"
+            ] = {"$ref": "#/components/schemas/JsonObject"}
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("Public schema quality audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("JsonObject" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_runs_public_component_schema_quality_audit(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            schemas = spec["components"]["schemas"]
+            schemas["OpenAiCompletion"]["properties"]["choices"]["items"] = {
+                "$ref": "#/components/schemas/MissingCompletionChoice"
+            }
+            schemas["OpenAiCompletionCreateRequest"]["additionalProperties"] = True
+            schemas["OpenAiCompletion"]["properties"]["empty"] = {}
+            schemas["OpenAiCompletion"]["properties"]["metadata"] = {
+                "$ref": "#/components/schemas/ProviderJsonObject",
+                "description": "Invalid OpenAPI 3.0 ref sibling.",
+            }
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(any("unresolved refs" in message for message in result.messages), result.messages)
+            self.assertTrue(any("$ref sibling schemas" in message for message in result.messages), result.messages)
+            self.assertTrue(any("empty schema shapes" in message for message in result.messages), result.messages)
+            self.assertTrue(any("untyped component properties" in message for message in result.messages), result.messages)
+            self.assertTrue(any("open object components" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_missing_request_body_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            del spec["paths"]["/v1/completions"]["post"]["requestBody"]["description"]
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("OpenAPI reference standard audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("request body descriptions" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_union_branches_without_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            branch = spec["components"]["schemas"]["OpenAiResponsesRequest"]["properties"]["input"]["oneOf"][0]
+            del branch["description"]
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("OpenAPI reference standard audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("union branch descriptions" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_additional_properties_refs_without_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            spec["components"]["schemas"]["ProviderMetadata"]["additionalProperties"] = {
+                "$ref": "#/components/schemas/ProviderJsonValue"
+            }
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("OpenAPI reference standard audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("additionalProperties descriptions" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_json_schema_null_type(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            spec["components"]["schemas"]["OpenAiChatMessage"]["properties"]["content"]["oneOf"].append(
+                {"type": "null", "description": "Invalid JSON Schema null type in OpenAPI 3.0."}
+            )
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("OpenAPI reference standard audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("OpenAPI 3.0 null type schemas" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_nullable_schema_without_type(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            del spec["components"]["schemas"]["ProviderJsonNull"]["type"]
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("OpenAPI reference standard audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(
+                any("OpenAPI 3.0 nullable schemas without type" in message for message in result.messages),
+                result.messages,
+            )
+
+    def test_gateway_openapi_check_reports_invalid_schema_keyword_placement(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            schemas = spec["components"]["schemas"]
+            schemas["OpenAiCompletionCreateRequest"]["properties"]["prompt"]["items"] = {"type": "string"}
+            del schemas["OpenAiEmbeddingsRequest"]["properties"]["input"]["oneOf"][1]["items"]
+            schemas["OpenAiCompletion"]["required"].append("missing_field")
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("OpenAPI reference standard audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("array schemas" in message for message in result.messages), result.messages)
+            self.assertTrue(any("misplaced schema keywords" in message for message in result.messages), result.messages)
+            self.assertTrue(any("required properties" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_missing_nested_schema_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            del spec["components"]["schemas"]["CreateCompletionLogprobs"]["properties"]["tokens"]["items"][
+                "description"
+            ]
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("OpenAPI reference standard audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("schema descriptions" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_unregistered_vendor_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            spec["paths"]["/newvendor/v1/tasks"] = {
+                "post": {
+                    "operationId": "createNewVendorTask",
+                    "summary": "Create task.",
+                    "description": "Create task.",
+                    "tags": ["Media/newvendor"],
+                    "security": [{"bearerAuth": []}],
+                    "requestBody": {
+                        "required": True,
+                        "content": {
+                            "application/json": {
+                                "schema": {"$ref": "#/components/schemas/ProviderTaskResult"}
+                            }
+                        },
+                    },
+                    "responses": {
+                        "200": {
+                            "description": "Task result.",
+                            "content": {
+                                "application/json": {
+                                    "schema": {"$ref": "#/components/schemas/ProviderTaskResult"}
+                                }
+                            },
+                        }
+                    },
+                }
+            }
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("Vendor schema quality audit failed" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("unregistered vendor paths" in message for message in result.messages), result.messages)
+            self.assertTrue(any("/newvendor/v1/tasks" in message for message in result.messages), result.messages)
+
+    def test_gateway_openapi_check_reports_vendor_input_documentation_gaps(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            generator = ClawRouterGatewayOpenApiGenerator(root=root)
+            output = generator.write()
+            spec = json.loads(output.read_text(encoding="utf-8"))
+            spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["parameters"] = []
+            del spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["requestBody"]["required"]
+            del spec["paths"]["/google/v1beta/models/{model}:generateContent"]["post"]["requestBody"]["content"][
+                "application/json"
+            ]["schema"]
+            output.write_text(json.dumps(spec, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+            result = generator.check()
+
+            self.assertFalse(result.ok)
+            self.assertTrue(
+                any("non-component payload schemas" in message for message in result.messages),
+                result.messages,
+            )
+            self.assertTrue(any("optional request bodies" in message for message in result.messages), result.messages)
+            self.assertTrue(any("path parameter mismatches" in message for message in result.messages), result.messages)
+
     def test_every_operation_has_complete_documentation_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
@@ -698,6 +1712,232 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
                         property_schema.get("description"),
                         f"{schema_name}.{property_name} must describe the API reference field",
                     )
+
+    def test_component_nested_schemas_have_descriptions_for_reference_tables(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            missing_descriptions: list[str] = []
+
+            def visit(node: object, location: str, *, is_schema_node: bool) -> None:
+                if isinstance(node, dict):
+                    if is_schema_node and "$ref" not in node and not node.get("description"):
+                        missing_descriptions.append(location)
+                    for key, value in node.items():
+                        visit(
+                            value,
+                            f"{location}.{key}",
+                            is_schema_node=(
+                                (key in {"items", "additionalProperties", "not"} and isinstance(value, dict))
+                                or (key in {"oneOf", "anyOf", "allOf"} and isinstance(value, list))
+                                or (location.endswith(".properties") and isinstance(value, dict))
+                            ),
+                        )
+                elif isinstance(node, list):
+                    for index, value in enumerate(node):
+                        visit(value, f"{location}[{index}]", is_schema_node=is_schema_node)
+
+            for schema_name, schema in spec["components"]["schemas"].items():
+                visit(schema, f"#/components/schemas/{schema_name}", is_schema_node=True)
+
+            self.assertEqual([], sorted(missing_descriptions))
+
+    def test_request_bodies_have_descriptions_for_reference_tables(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            for path, path_item in spec["paths"].items():
+                for method, operation in path_item.items():
+                    if method.startswith("x-"):
+                        continue
+                    request_body = operation.get("requestBody")
+                    if not isinstance(request_body, dict) or not request_body.get("content"):
+                        continue
+                    self.assertTrue(
+                        request_body.get("description"),
+                        f"{method.upper()} {path} requestBody must describe the documented input payload",
+                    )
+
+    def test_component_reference_properties_are_wrapped_with_local_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            direct_reference_properties: list[str] = []
+            for schema_name, schema in spec["components"]["schemas"].items():
+                if not isinstance(schema, dict):
+                    continue
+                properties = schema.get("properties")
+                if not isinstance(properties, dict):
+                    continue
+                for property_name, property_schema in properties.items():
+                    if isinstance(property_schema, dict) and "$ref" in property_schema:
+                        direct_reference_properties.append(
+                            f"{schema_name}.{property_name} -> {property_schema['$ref']}"
+                        )
+
+            self.assertEqual([], sorted(direct_reference_properties))
+
+    def test_component_additional_properties_refs_are_wrapped_with_local_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            direct_map_value_refs: list[str] = []
+            missing_descriptions: list[str] = []
+
+            def visit(node: object, location: str) -> None:
+                if isinstance(node, dict):
+                    additional_properties = node.get("additionalProperties")
+                    if isinstance(additional_properties, dict):
+                        if "$ref" in additional_properties:
+                            direct_map_value_refs.append(
+                                f"{location}.additionalProperties -> {additional_properties['$ref']}"
+                            )
+                        if not additional_properties.get("description"):
+                            missing_descriptions.append(f"{location}.additionalProperties")
+                    for key, value in node.items():
+                        visit(value, f"{location}.{key}")
+                elif isinstance(node, list):
+                    for index, value in enumerate(node):
+                        visit(value, f"{location}[{index}]")
+
+            visit(spec["components"]["schemas"], "#/components/schemas")
+
+            self.assertEqual([], sorted(direct_map_value_refs))
+            self.assertEqual([], sorted(missing_descriptions))
+
+    def test_component_union_reference_branches_are_wrapped_with_local_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            direct_union_branches: list[str] = []
+
+            def visit(node: object, location: str) -> None:
+                if isinstance(node, dict):
+                    for union_key in ["oneOf", "anyOf"]:
+                        branches = node.get(union_key)
+                        if not isinstance(branches, list):
+                            continue
+                        for index, branch in enumerate(branches):
+                            if isinstance(branch, dict) and "$ref" in branch:
+                                direct_union_branches.append(
+                                    f"{location}.{union_key}[{index}] -> {branch['$ref']}"
+                                )
+                    for key, value in node.items():
+                        visit(value, f"{location}.{key}")
+                elif isinstance(node, list):
+                    for index, value in enumerate(node):
+                        visit(value, f"{location}[{index}]")
+
+            visit(spec["components"]["schemas"], "#/components/schemas")
+
+            self.assertEqual([], sorted(direct_union_branches))
+
+    def test_component_union_branches_have_local_descriptions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            missing_descriptions: list[str] = []
+
+            def visit(node: object, location: str) -> None:
+                if isinstance(node, dict):
+                    for union_key in ["oneOf", "anyOf"]:
+                        branches = node.get(union_key)
+                        if not isinstance(branches, list):
+                            continue
+                        for index, branch in enumerate(branches):
+                            if not isinstance(branch, dict):
+                                continue
+                            if not branch.get("description"):
+                                missing_descriptions.append(f"{location}.{union_key}[{index}]")
+                    for key, value in node.items():
+                        visit(value, f"{location}.{key}")
+                elif isinstance(node, list):
+                    for index, value in enumerate(node):
+                        visit(value, f"{location}[{index}]")
+
+            visit(spec["components"]["schemas"], "#/components/schemas")
+
+            self.assertEqual([], sorted(missing_descriptions))
+
+    def test_component_schemas_use_openapi_30_nullable_instead_of_null_type(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            null_type_locations: list[str] = []
+
+            def visit(node: object, location: str) -> None:
+                if isinstance(node, dict):
+                    if node.get("type") == "null":
+                        null_type_locations.append(location)
+                    for key, value in node.items():
+                        visit(value, f"{location}.{key}")
+                elif isinstance(node, list):
+                    for index, value in enumerate(node):
+                        visit(value, f"{location}[{index}]")
+
+            visit(spec["components"]["schemas"], "#/components/schemas")
+
+            self.assertEqual([], sorted(null_type_locations))
+
+    def test_nullable_schemas_declare_openapi_30_type(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            nullable_without_type: list[str] = []
+
+            def visit(node: object, location: str) -> None:
+                if isinstance(node, dict):
+                    if node.get("nullable") is True and "type" not in node:
+                        nullable_without_type.append(location)
+                    for key, value in node.items():
+                        visit(value, f"{location}.{key}")
+                elif isinstance(node, list):
+                    for index, value in enumerate(node):
+                        visit(value, f"{location}[{index}]")
+
+            visit(spec["components"]["schemas"], "#/components/schemas")
+
+            self.assertEqual([], sorted(nullable_without_type))
+
+    def test_closed_object_components_expose_named_fields_for_codegen(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            closed_empty_objects: list[str] = []
+            for schema_name, schema in spec["components"]["schemas"].items():
+                if not isinstance(schema, dict):
+                    continue
+                if (
+                    schema.get("type") == "object"
+                    and schema.get("additionalProperties") is False
+                    and not schema.get("properties")
+                ):
+                    closed_empty_objects.append(schema_name)
+
+            self.assertEqual([], sorted(closed_empty_objects))
+
+    def test_generated_reference_descriptions_split_camel_case_field_names(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            spec = ClawRouterGatewayOpenApiGenerator(root=Path(tmp)).generate()
+
+            google_request = spec["components"]["schemas"]["GoogleGenerateContentRequest"]
+            self.assertIn(
+                "Tool config field",
+                google_request["properties"]["toolConfig"]["description"],
+            )
+            self.assertIn(
+                "System instruction field",
+                google_request["properties"]["systemInstruction"]["description"],
+            )
+            google_response = spec["components"]["schemas"]["GoogleGenerateContentResponse"]
+            self.assertIn(
+                "Prompt feedback field",
+                google_response["properties"]["promptFeedback"]["description"],
+            )
+            self.assertNotIn(
+                "Toolconfig",
+                google_request["properties"]["toolConfig"]["description"],
+            )
 
     def test_product_openai_routes_document_typed_request_and_response_schemas(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -764,61 +2004,63 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
                 self.assertIn(schema_name, component_names)
 
             schemas = spec["components"]["schemas"]
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiChatContentPart"]["properties"]["image_url"],
                 "#/components/schemas/OpenAiChatImageUrl",
-                schemas["OpenAiChatContentPart"]["properties"]["image_url"]["$ref"],
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiChatContentPart"]["properties"]["input_audio"],
                 "#/components/schemas/OpenAiChatInputAudio",
-                schemas["OpenAiChatContentPart"]["properties"]["input_audio"]["$ref"],
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiChatContentPart"]["properties"]["file"],
                 "#/components/schemas/OpenAiChatFile",
-                schemas["OpenAiChatContentPart"]["properties"]["file"]["$ref"],
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiChatCompletionRequest"]["properties"]["response_format"],
                 "#/components/schemas/OpenAiResponseFormat",
-                schemas["OpenAiChatCompletionRequest"]["properties"]["response_format"]["$ref"],
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiChatCompletionRequest"]["properties"]["tool_choice"],
                 "#/components/schemas/OpenAiToolChoice",
-                schemas["OpenAiChatCompletionRequest"]["properties"]["tool_choice"]["$ref"],
             )
             self.assertEqual(
                 "#/components/schemas/OpenAiResponseInputContentPart",
                 schemas["OpenAiResponseInputItem"]["properties"]["content"]["oneOf"][1]["items"]["$ref"],
             )
             response_input_branches = schemas["OpenAiResponsesRequest"]["properties"]["input"]["oneOf"]
+            self.assertEqual("string", response_input_branches[0]["type"])
+            self.assertTrue(response_input_branches[0]["description"])
+            self.assertEqual("array", response_input_branches[1]["type"])
             self.assertEqual(
-                [
-                    {"type": "string"},
-                    {
-                        "type": "array",
-                        "items": {"$ref": "#/components/schemas/OpenAiResponseInputItem"},
-                    },
-                ],
+                "#/components/schemas/OpenAiResponseInputItem",
+                response_input_branches[1]["items"]["$ref"],
+            )
+            self.assertTrue(response_input_branches[1]["description"])
+            self.assertNotIn(
+                {"type": "object"},
                 response_input_branches,
                 "Responses.input must not expose an untyped object branch in the API reference",
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiResponsesRequest"]["properties"]["text"],
                 "#/components/schemas/OpenAiTextConfig",
-                schemas["OpenAiResponsesRequest"]["properties"]["text"]["$ref"],
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiResponsesRequest"]["properties"]["reasoning"],
                 "#/components/schemas/OpenAiReasoningConfig",
-                schemas["OpenAiResponsesRequest"]["properties"]["reasoning"]["$ref"],
             )
             self.assertEqual(
                 "#/components/schemas/OpenAiAnnotation",
                 schemas["OpenAiResponseOutputContent"]["properties"]["annotations"]["items"]["$ref"],
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiResponseUsage"]["properties"]["input_tokens_details"],
                 "#/components/schemas/OpenAiResponseInputTokensDetails",
-                schemas["OpenAiResponseUsage"]["properties"]["input_tokens_details"]["$ref"],
             )
-            self.assertEqual(
+            self.assertDescribedSchemaRef(
+                schemas["OpenAiJsonSchema"]["properties"]["additionalProperties"],
                 "#/components/schemas/OpenAiJsonSchemaAdditionalProperties",
-                schemas["OpenAiJsonSchema"]["properties"]["additionalProperties"]["$ref"],
             )
             for schema_name, field_name in [
                 ("OpenAiChatCompletionRequest", "service_tier"),
@@ -895,22 +2137,14 @@ class ClawRouterGatewayOpenApiGeneratorTest(unittest.TestCase):
             self.assertEqual("Claw Router Open API", payload["info"]["title"])
             self.assertTrue(generator.check().ok)
 
-            output.write_text("{}\n", encoding="utf-8")
+            payload["info"]["description"] = "stale but structurally valid public OpenAPI fixture"
+            output.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
             result = generator.check()
             self.assertFalse(result.ok)
             self.assertIn(f"Claw Router gateway OpenAPI spec is stale: {output}", result.messages)
 
     def _provider_prefixes(self) -> set[str]:
-        return {
-            "google",
-            "anthropic",
-            "volcengine",
-            "suno",
-            "midjourney",
-            "kling",
-            "vidu",
-            "nano-banana",
-        }
+        return set(VENDOR_PROVIDER_PREFIXES)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34142,
+  "uuid": "skill-clawhub-logz-io",
+  "skillKey": "clawhub-logz-io",
+  "name": "Logz Io",
+  "summary": "Logz.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Logz.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logz_io",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Logz.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Logz.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logz-io@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logz-io",
+      "url": "https://clawhub.ai/skills/logz-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logz-io",
+    "url": "https://clawhub.ai/skills/logz-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logz-io-de3d6e99182b96d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logz-io@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-logz-io-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f871732e06326e22865dc9fa5e449974fae8035848a78879189d77d3f42c207",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:06.627Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thoughtproof@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thoughtproof",
+  "skill": {
+    "id": 28731,
+    "skillKey": "clawhub-thoughtproof",
+    "name": "ThoughtProof"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thoughtproof",
+    "url": "https://clawhub.ai/skills/thoughtproof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thoughtproof-0ba26a934ff28651.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Epistemic verification for AI agent outputs. Use ThoughtProof to verify AI reasoning, detect blind spots, and build consensus across multiple model families...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thoughtproof",
+      "userId": "publishers:thoughtproof",
+      "displayName": "ThoughtProof",
+      "image": "https://avatars.githubusercontent.com/u/262393340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 319,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772679747576,
+      "changelog": "Initial release — epistemic verification for AI agent decisions. Multi-model consensus pipeline (Generate→Critique→Synthesize), MDI scoring, local block storage. BYOK.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b42c0fd401fe74f875627e1c01a8a8caeddee92618b0cda5b36f1ef8c540d6b"
+}

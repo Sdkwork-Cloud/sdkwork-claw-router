@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24041,
+  "uuid": "skill-clawhub-comment-to-content-recycler",
+  "skillKey": "clawhub-comment-to-content-recycler",
+  "name": "Comment To Content Recycler",
+  "summary": "Transform comments, DMs, and FAQ threads into prioritized content ideas and script-ready angles. Use when the user wants audience-driven topics, needs repeat...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comment_to_content_recycler",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Transform comments, DMs, and FAQ threads into prioritized content ideas and script-ready angles",
+        "Use when the user wants audience-driven topics, needs repeat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comment-to-content-recycler@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comment-to-content-recycler",
+      "url": "https://clawhub.ai/skills/comment-to-content-recycler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comment-to-content-recycler",
+    "url": "https://clawhub.ai/skills/comment-to-content-recycler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comment-to-content-recycler-be609c41a526c7c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comment-to-content-recycler@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-comment-to-content-recycler-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5dfe2453411db8ab6b386189aff7092c5f7d0882bf4600f75afe2e2bcd0b237",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T08:41:48.190Z"
+}

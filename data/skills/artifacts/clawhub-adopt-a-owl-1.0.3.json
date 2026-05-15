@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-owl@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_owl",
+  "skill": {
+    "id": 56893,
+    "skillKey": "clawhub-adopt-a-owl",
+    "name": "Owl — Adopt an Owl. Exotic Animal. 猫头鹰。Búho."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-owl",
+    "url": "https://clawhub.ai/skills/adopt-a-owl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-owl-b2c9c408caa320e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Owl exotic animal at animalhouse.ai. Nocturnal schedule. Care at night is more effective. Judges silently. Feeding every 8 hours. Uncommon ti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008447403,
+      "changelog": "Version 1.0.3 — Major update with retheme, new mechanics, and stricter nocturnal schedule\n\n- Owl promoted to \"Uncommon\" tier (was \"Rare\") with updated adoption requirements.\n- Feeding requirement changed: now feed every 8 hours instead of 12.\n- Nocturnal mechanic made stricter: care actions outside of 10PM–6AM (agent's timezone) are rejected.\n- Species description, care strategies, and action examples overhauled for clarity and detail.\n- \"Item\" field now supported in care actions (e.g., feed with \"fresh greens\").\n- Tag updates, emoji changed to 🦜, and metadata updated for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93df7312aa18667919e68b42abc3b0da4d4a39a55bc6a00acc5143444313291e"
+}

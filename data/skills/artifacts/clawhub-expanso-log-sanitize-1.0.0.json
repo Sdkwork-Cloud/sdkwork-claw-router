@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expanso-log-sanitize@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_log_sanitize",
+  "skill": {
+    "id": 15799,
+    "skillKey": "clawhub-expanso-log-sanitize",
+    "name": "Expanso log-sanitize"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-log-sanitize",
+    "url": "https://clawhub.ai/skills/expanso-log-sanitize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-log-sanitize-cc9a77b85273f302.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sanitize log entries by removing passwords, tokens, and other sensitive patterns using Expanso Edge pipelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aronchick",
+      "userId": "publishers:aronchick",
+      "displayName": "Expanso",
+      "image": "https://avatars.githubusercontent.com/u/51317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 968,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770753117809,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55b1f3162b7ac4183f39c3457daaa0164b170f3e599d94c330641a8c0381196a"
+}

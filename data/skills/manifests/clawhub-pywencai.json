@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70332,
+  "uuid": "skill-clawhub-pywencai",
+  "skillKey": "clawhub-pywencai",
+  "name": "pywencai",
+  "summary": "同花顺问财自然语言数据查询工具 - 使用中文自然语言查询A股、指数、基金、港美股、可转债等市场数据。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pywencai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderwpf",
+      "features": [
+        "同花顺问财自然语言数据查询工具",
+        "使用中文自然语言查询A股、指数、基金、港美股、可转债等市场数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pywencai@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/134041140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pywencai",
+      "url": "https://clawhub.ai/skills/pywencai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pywencai",
+    "url": "https://clawhub.ai/skills/pywencai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pywencai-d4ac9bdd36212c6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pywencai@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pywencai-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9d913f7bca81c583f322df2c685edf7905941465b5aa1dc57da9ba0f22888a6",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:07:53.354Z"
+}

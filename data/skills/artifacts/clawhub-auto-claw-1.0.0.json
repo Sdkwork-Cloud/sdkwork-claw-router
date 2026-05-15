@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_claw",
+  "skill": {
+    "id": 39842,
+    "skillKey": "clawhub-auto-claw",
+    "name": "Auto-Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-claw",
+    "url": "https://clawhub.ai/skills/auto-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-claw-85329b430c132479.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously monitors and optimizes WordPress sites with SEO fixes, performance audits, A/B testing, security, and competitor tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiongmao11132",
+      "userId": "s17bjrw7c8qb446vtckhcpj67d83gpd8",
+      "displayName": "Xiongmao11132",
+      "image": "https://avatars.githubusercontent.com/u/129570446?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774367648026,
+      "changelog": "Auto-Claw 1.0.0 — Initial Release\n\n- Launches autonomous WordPress operations agent with 19 AI-powered capabilities for site management, optimization, and monitoring.\n- Features include SEO scanning/fixes, performance diagnostics, content auditing, image optimization, A/B testing, GEO targeting, competitor tracking, and dynamic content tools.\n- Robust security: credentials isolation, approval gates for destructive actions, soft deletes, and full JSONL audit logging.\n- Unified CLI supports all features, with demo scripts and dashboard included.\n- Beta available to first 10 D2C brands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a10fd3f6bb8f713c09c537ec0b4a9a13a39280120c1a2cde0b8b005d9adcd76"
+}

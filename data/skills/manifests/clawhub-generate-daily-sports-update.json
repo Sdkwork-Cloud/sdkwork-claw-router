@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23229,
+  "uuid": "skill-clawhub-generate-daily-sports-update",
+  "skillKey": "clawhub-generate-daily-sports-update",
+  "name": "Generate Daily Sports Update",
+  "summary": "Runs the sports science crawler to generate a daily report, sync to Notion, and prevent duplicate content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_daily_sports_update",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "王琛",
+      "features": [
+        "Runs the sports science crawler to generate a daily report, sync to Notion, and prevent duplica."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generate-daily-sports-update@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255297550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generate-daily-sports-update",
+      "url": "https://clawhub.ai/skills/generate-daily-sports-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-daily-sports-update",
+    "url": "https://clawhub.ai/skills/generate-daily-sports-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-daily-sports-update-fe9e01ac6d9efb71.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generate-daily-sports-update@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generate-daily-sports-update-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4750b6a3700f77235744be22b9e8f1354b8575fd12832642c4f9baa84278499d",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T04:20:35.682Z"
+}

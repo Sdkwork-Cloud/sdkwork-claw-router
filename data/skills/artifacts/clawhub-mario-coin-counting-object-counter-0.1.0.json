@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mario-coin-counting-object-counter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mario_coin_counting_object_counter",
+  "skill": {
+    "id": 45205,
+    "skillKey": "clawhub-mario-coin-counting-object-counter",
+    "name": "object_counter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mario-coin-counting-object-counter",
+    "url": "https://clawhub.ai/skills/mario-coin-counting-object-counter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mario-coin-counting-object-counter-65929d01dc01b0ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Count occurrences of an object in the image using computer vision algorithm."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lnj22",
+      "userId": "s17d639v6hjv5h7zr9b9h1s1ed84v9vq",
+      "displayName": "lnj22",
+      "image": "https://avatars.githubusercontent.com/u/234027299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776166376766,
+      "changelog": "Bulk publish from all-task-skills-dedup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6605a0207c1b9af11a532625741a1c46ffe50482594ada46316cacc3684b2c40"
+}

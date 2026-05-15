@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/novel-writing-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_writing_assistant",
+  "skill": {
+    "id": 73637,
+    "skillKey": "clawhub-novel-writing-assistant",
+    "name": "小说创作助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-writing-assistant",
+    "url": "https://clawhub.ai/skills/novel-writing-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-writing-assistant-f3c5221d5b2eff5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过八步结构化流程，辅助作者构思灵感、构建世界观、塑造人物、制定大纲，生成章节正文并进行审核润色，提升小说创作效率和质量。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "folhj163",
+      "userId": "s178mb49xdm5qg7ag3rvt170yd83genc",
+      "displayName": "folhj163",
+      "image": "https://avatars.githubusercontent.com/u/233896543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774251376653,
+      "changelog": "初始版本：完整的八步长篇小说创作流程。特色功能：结构化引导（避免创作迷茫）、专业模板（保证作品质量）、实时一致性审核（避免人设崩塌）、多轮交互（支持长期创作）、飞书集成（文档自动生成）。适用于写作新手和想要系统化创作长篇小说的作者。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9acc2754c6e767ed4d767bfa6022ff2b4e50c92981cbbea2ced6eef0f3134f5"
+}

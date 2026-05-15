@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35616,
+  "uuid": "skill-clawhub-qwencloud-video-generation",
+  "skillKey": "clawhub-qwencloud-video-generation",
+  "name": "qwencloud-video-generation",
+  "summary": "[QwenCloud] Generate videos using Wan models. Supports text-to-video, image-to-video, first+last frame, reference-based role-play, and video editing (VACE)....",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwencloud_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cuixiaoyang123",
+      "features": [
+        "[QwenCloud] Generate videos using Wan models",
+        "Supports text-to-video, image-to-video, first+last frame, reference-based role-play, and video."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qwencloud-video-generation@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42457946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qwencloud-video-generation",
+      "url": "https://clawhub.ai/skills/qwencloud-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwencloud-video-generation",
+    "url": "https://clawhub.ai/skills/qwencloud-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwencloud-video-generation-286c52cfa593bd51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qwencloud-video-generation@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qwencloud-video-generation-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:274141800308f19fcb9e82c8f739cfadc12a27d11dcbee21777e88cd4a1ed7db",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:18:18.602Z"
+}

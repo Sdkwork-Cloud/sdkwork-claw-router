@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37765,
+  "uuid": "skill-clawhub-review-frontend",
+  "skillKey": "clawhub-review-frontend",
+  "name": "Review Frontend",
+  "summary": "Comprehensive React/TypeScript frontend code review with optional parallel agents",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_frontend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Anderson",
+      "features": [
+        "Comprehensive React/TypeScript frontend code review with optional parallel agents"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-frontend@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17010022?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-frontend",
+      "url": "https://clawhub.ai/skills/review-frontend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-frontend",
+    "url": "https://clawhub.ai/skills/review-frontend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-frontend-83e94bc6fe69df4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-frontend@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-frontend-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c2c22b2722a58adede43b07e6b56fa92d8d250baac059131a31e6165b9336d7",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T04:15:20.157Z"
+}

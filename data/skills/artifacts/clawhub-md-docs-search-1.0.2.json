@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md-docs-search@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md_docs_search",
+  "skill": {
+    "id": 20393,
+    "skillKey": "clawhub-md-docs-search",
+    "name": "Markdown Docs Full-Text Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md-docs-search",
+    "url": "https://clawhub.ai/skills/md-docs-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md-docs-search-f759e6ea800f55b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full-text search across structured Markdown documentation archives using SQLite FTS5. Use when you need to search large collections of Markdown articles that..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carev01",
+      "userId": "publishers:carev01",
+      "displayName": "carev01",
+      "image": "https://avatars.githubusercontent.com/u/46903479?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772068575045,
+      "changelog": "v1",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d1a6a021b87bf9ba670ed55f972adddaa5eed2794bc4ead1d8418140a14947a"
+}

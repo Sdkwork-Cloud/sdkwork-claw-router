@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tweet-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_cli",
+  "skill": {
+    "id": 16288,
+    "skillKey": "clawhub-tweet-cli",
+    "name": "Tweet Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-cli",
+    "url": "https://clawhub.ai/skills/tweet-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-cli-781920f1a0ddd8fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post tweets, replies, and quotes to X/Twitter using the official API v2. Use this instead of bird for posting. Uses API credits so only post when explicitly..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xmythril",
+      "userId": "publishers:0xmythril",
+      "displayName": "0xmythril",
+      "image": "https://avatars.githubusercontent.com/u/9655885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 874,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771180592288,
+      "changelog": "- Added a detailed Security section outlining credential handling, lack of telemetry, and dependency transparency.\n- Updated installation instructions to recommend a version-pinned npm install command.\n- Specified environment variables required in metadata for clearer configuration requirements.\n- Improved credential setup steps: added `chmod 600` guidance for restricting access to `.env`.\n- Clarified depedencies and absence of install scripts in the documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d221c79147fa23d9c449016be7bebfdba4f64e77c8833973c1557ed9cf3902f6"
+}

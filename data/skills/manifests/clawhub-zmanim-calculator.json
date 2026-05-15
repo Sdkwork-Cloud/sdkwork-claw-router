@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48042,
+  "uuid": "skill-clawhub-zmanim-calculator",
+  "skillKey": "clawhub-zmanim-calculator",
+  "name": "Jewish Zmanim Calculator",
+  "summary": "Calculate Halachic times (zmanim) for any location and date. Sunrise, sunset, dawn, dusk, candle lighting, Shabbos times, Daf Yomi, and all major zmanim. Use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zmanim_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abraham Perl",
+      "features": [
+        "Calculate Halachic times (zmanim) for any location and date",
+        "Sunrise, sunset, dawn, dusk, candle lighting, Shabbos times, Daf Yomi, and all major zmanim"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zmanim-calculator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6117184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zmanim-calculator",
+      "url": "https://clawhub.ai/skills/zmanim-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zmanim-calculator",
+    "url": "https://clawhub.ai/skills/zmanim-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zmanim-calculator-267ff6227d10406b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zmanim-calculator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zmanim-calculator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc866198a1babb657c2cab561a161403d964cfdc54ac5ad0461dcd6d61174e32",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T19:29:38.858Z"
+}

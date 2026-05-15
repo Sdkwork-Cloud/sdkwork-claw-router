@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/twittershots@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.twittershots",
+  "skill": {
+    "id": 41378,
+    "skillKey": "clawhub-twittershots",
+    "name": "TwitterShots"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "twittershots",
+    "url": "https://clawhub.ai/skills/twittershots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/twittershots-b3480d191a57691b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality screenshots of Twitter/X posts using the TwitterShots API. Use when the user wants to: capture a tweet as an image, screenshot a tweet,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xinhua",
+      "userId": "s17daah017zkzghmj5q9gvfv5d83ra6e",
+      "displayName": "0xinhua",
+      "image": "https://avatars.githubusercontent.com/u/10118666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774678223893,
+      "changelog": "- Added homepage and source repository links to metadata.\n- Declared required credential (TWITTERSHOTS_API_KEY) in a new credentials section.\n- Listed Python dependencies (`requests`) in a dedicated dependencies section.\n- No changes to functionality or usage; documentation and metadata improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:189d3ea24ade0147b033e57666e1e065cf160bee3220abe1adf9067d5925bea5"
+}

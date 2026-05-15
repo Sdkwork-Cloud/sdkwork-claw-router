@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44044,
+  "uuid": "skill-clawhub-tosr-test-skill-1774319824",
+  "skillKey": "clawhub-tosr-test-skill-1774319824",
+  "name": "TOSR Test Skill",
+  "summary": "A test skill for validating skill creation, version update, and deletion workflows via the TOSR clawhub REST API.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tosr_test_skill_1774319824",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "simonlei",
+      "features": [
+        "A test skill for validating skill creation, version update, and deletion workflows via the TOSR."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tosr-test-skill-1774319824@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2107131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tosr-test-skill-1774319824",
+      "url": "https://clawhub.ai/skills/tosr-test-skill-1774319824"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tosr-test-skill-1774319824",
+    "url": "https://clawhub.ai/skills/tosr-test-skill-1774319824",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tosr-test-skill-1774319824-d94de37781e0bccb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tosr-test-skill-1774319824@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tosr-test-skill-1774319824-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79fbf6396f2084d4b8f8d720b19a76b73a381f0c106de4d96118dbfbf936357a",
+      "artifactSizeBytes": 2153
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:37:09.284Z"
+}

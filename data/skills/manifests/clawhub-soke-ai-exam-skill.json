@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67441,
+  "uuid": "skill-clawhub-soke-ai-exam-skill",
+  "skillKey": "clawhub-soke-ai-exam-skill",
+  "name": "Ai Exam 授客AI智能考试",
+  "summary": "AI智能出题考试系统 - 基于文档自动生成考试、指派学员并查询结果",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soke_ai_exam_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiangzidetiandi",
+      "features": [
+        "AI智能出题考试系统",
+        "基于文档自动生成考试、指派学员并查询结果"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soke-ai-exam-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4446184?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soke-ai-exam-skill",
+      "url": "https://clawhub.ai/skills/soke-ai-exam-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soke-ai-exam-skill",
+    "url": "https://clawhub.ai/skills/soke-ai-exam-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soke-ai-exam-skill-4d6ddfbf6d68d047.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soke-ai-exam-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-soke-ai-exam-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc68a9cfd295533958d25477f8ee6b6d73c3018d56e48dbc1a1ae389c39da3df",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T08:55:58.001Z"
+}

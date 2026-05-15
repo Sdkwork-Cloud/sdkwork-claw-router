@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-music-generation@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_music_generation",
+  "skill": {
+    "id": 12436,
+    "skillKey": "clawhub-ai-music-generation",
+    "name": "Ai Music Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-music-generation",
+    "url": "https://clawhub.ai/skills/ai-music-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-music-generation-6be39f39ecb67e88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music and songs with Diffrythm, Tencent Song Generation via inference.sh CLI. Models: Diffrythm (fast song generation), Tencent Song Generation (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "okaris",
+      "userId": "s1737xapsjy8k5qnagtfyf5nrx85t72x",
+      "displayName": "Ömer Karışman",
+      "image": "https://avatars.githubusercontent.com/u/1448702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1700,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771403008210,
+      "changelog": "- Added detailed documentation and usage instructions for generating music and songs with Diffrythm and Tencent Song Generation on inference.sh CLI.\n- Expanded examples for common use cases: instrumentals, vocals, background music, podcast intros, and game soundtracks.\n- Included prompt tips for best results with genre, mood, instrument, and structure suggestions.\n- Provided related skills and commands for broader audio/video capabilities.\n- Improved descriptions for capabilities, triggers, and suitable use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bdc7c4d85abb58f11a836117c53fceb714f4a12c56746cedfce7bfda40303fd"
+}

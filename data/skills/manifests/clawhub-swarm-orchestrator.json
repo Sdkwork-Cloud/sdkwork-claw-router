@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24525,
+  "uuid": "skill-clawhub-swarm-orchestrator",
+  "skillKey": "clawhub-swarm-orchestrator",
+  "name": "Swarm Orchestrator",
+  "summary": "AI Agent cluster orchestration platform - manage, schedule, and coordinate multiple AI agents locally with FastAPI backend and React dashboard",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "AI Agent cluster orchestration platform",
+        "manage, schedule, and coordinate multiple AI agents locally with FastAPI backend and React dash."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swarm-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swarm-orchestrator",
+      "url": "https://clawhub.ai/skills/swarm-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-orchestrator",
+    "url": "https://clawhub.ai/skills/swarm-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-orchestrator-0392eeca5cca5654.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swarm-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swarm-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b830fcaf2b1f9f34139c52533e5c68255b0907b1c49c7dc706cb1cdf95de5035",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:29:49.544Z"
+}

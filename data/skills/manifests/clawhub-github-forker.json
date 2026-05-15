@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51177,
+  "uuid": "skill-clawhub-github-forker",
+  "skillKey": "clawhub-github-forker",
+  "name": "Github Forker",
+  "summary": "Use this skill when the user wants to fork a GitHub repository — creating their own copy of a repo under their GitHub account. Trigger on any fork or copy-to...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_forker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chat2dev",
+      "features": [
+        "Use this skill when the user wants to fork a GitHub repository — creating their own copy of a r.",
+        "Trigger on any fork or copy-to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-forker@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217951755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-forker",
+      "url": "https://clawhub.ai/skills/github-forker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-forker",
+    "url": "https://clawhub.ai/skills/github-forker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-forker-e82275577d1f5746.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-forker@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-forker-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:08cb59d7501ff2dfae5b1ac9aff27e3644d576cc13828ec32937eac2b9e003d4",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T08:32:24.777Z"
+}

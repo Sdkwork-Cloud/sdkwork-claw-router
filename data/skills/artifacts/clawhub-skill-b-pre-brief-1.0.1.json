@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-b-pre-brief@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_b_pre_brief",
+  "skill": {
+    "id": 67619,
+    "skillKey": "clawhub-skill-b-pre-brief",
+    "name": "skill-b-pre-brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-b-pre-brief",
+    "url": "https://clawhub.ai/skills/skill-b-pre-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-b-pre-brief-08f5f4c3833e78ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "【会前简报定时任务】每15分钟由 OpenClaw cron 触发一次。负责在会议开始前15分钟至6小时内自动生成并发送会前进度简报。不处理会议创建、会议修改、取消会议、会后纪要等场景。触发关键词：会前简报、pre_brief、发简报、会前准备报告。cron 场景下自动触发，无需用户主动输入。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "myd2002",
+      "userId": "s175zrvz5m28epr76c6rt4dtex8474t6",
+      "displayName": "myd2002",
+      "image": "https://avatars.githubusercontent.com/u/165788146?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776578383277,
+      "changelog": "- 扫描和简报发送的会议时间窗口由“开始前30分钟至4小时”调整为“开始前15分钟至6小时”\n- SKILL.md 对窗口范围描述已同步更新，并明确只有该范围内会议会被 scan 命中\n- 其余逻辑与接口未变，流程和指令保持一致",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63000dfdb703313598fc018f4457d8de33557925d6341892799878376a6ec0d5"
+}

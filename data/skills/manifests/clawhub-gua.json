@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71996,
+  "uuid": "skill-clawhub-gua",
+  "skillKey": "clawhub-gua",
+  "name": "易经起卦",
+  "summary": "基于中国《易经》（东方神秘玄学）的起卦解卦技能。当用户希望起卦、解卦、占卜、解读易经卦象，或希望根据自然语言问题调用 `qi_gua.py` 得到本卦与变卦，再结合联网检索给出针对问题的解卦时使用。适用于：解析用户提问、运行本地 `qi_gua.py`、提取卦象、卦名、卦辞、爻位、变爻，并检索卦义与爻辞后生成结构...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gua",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CrystalChen1017",
+      "features": [
+        "基于中国《易经》（东方神秘玄学）的起卦解卦技能。当用户希望起卦、解卦、占卜、解读易经卦象，或希望根据自然语言问题调用 `qi_gua.py` 得到本卦与变卦，再结合联网检索给出针对问题的解卦."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gua@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13635336?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gua",
+      "url": "https://clawhub.ai/skills/gua"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gua",
+    "url": "https://clawhub.ai/skills/gua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gua-d669b44e486c80ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gua@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gua-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38a6b7c385d94d9a20f80eb0f567fe0cb3cf606cbd0bb15c608da1cd2f2ab177",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:47:19.059Z"
+}

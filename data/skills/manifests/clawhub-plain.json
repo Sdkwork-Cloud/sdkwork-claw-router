@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24880,
+  "uuid": "skill-clawhub-plain",
+  "skillKey": "clawhub-plain",
+  "name": "Plain",
+  "summary": "Plain integration. Manage Persons, Organizations, Deals, Leads, Activities, Notes and more. Use when the user wants to interact with Plain data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Plain integration",
+        "Manage Persons, Organizations, Deals, Leads, Activities, Notes and more",
+        "Use when the user wants to interact with Plain data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plain@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plain",
+      "url": "https://clawhub.ai/skills/plain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plain",
+    "url": "https://clawhub.ai/skills/plain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plain-a116c9ed46d62077.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plain@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-plain-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ad38a0ac8760d9d7c4160975ca9d6c501ff7e80ab68f4f008cf9463b58fa8fd",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:24:48.253Z"
+}

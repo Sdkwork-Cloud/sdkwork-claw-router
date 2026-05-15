@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/node-connect-smith@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.node_connect_smith",
+  "skill": {
+    "id": 33009,
+    "skillKey": "clawhub-node-connect-smith",
+    "name": "Node Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "node-connect-smith",
+    "url": "https://clawhub.ai/skills/node-connect-smith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/node-connect-smith-0ebf37a146bf633a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when manual connect fails, local Wi-Fi works but VPS/t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ciklopentan",
+      "userId": "s170bzkafdeer9wznxg0rasry58402yp",
+      "displayName": "ciklopentan",
+      "image": "https://avatars.githubusercontent.com/u/259757332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776210254905,
+      "changelog": "Remove all QR references; switch route discovery to config-driven checks; keep pairing/auth troubleshooting intact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c284c1746ceec89ea6af3a409a2c4dce431d3cbf3e690145020446612daa643"
+}

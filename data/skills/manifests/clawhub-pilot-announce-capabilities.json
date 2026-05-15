@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37760,
+  "uuid": "skill-clawhub-pilot-announce-capabilities",
+  "skillKey": "clawhub-pilot-announce-capabilities",
+  "name": "Pilot Announce Capabilities",
+  "summary": "Broadcast structured capability manifests to the network. Use this skill when: 1. Advertising services, resources, or APIs your agent provides 2. Publishing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_announce_capabilities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Broadcast structured capability manifests to the network",
+        "Use this skill when: 1",
+        "Advertising services, resources, or APIs your agent provides 2",
+        "Publishing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-announce-capabilities@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-announce-capabilities",
+      "url": "https://clawhub.ai/skills/pilot-announce-capabilities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-announce-capabilities",
+    "url": "https://clawhub.ai/skills/pilot-announce-capabilities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-announce-capabilities-493c3faa01bfce3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-announce-capabilities@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-announce-capabilities-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9b5bcfde66efc858ed004fbc7543a35601361c63d58631a36a07f54545f11a3",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T20:40:39.030Z"
+}

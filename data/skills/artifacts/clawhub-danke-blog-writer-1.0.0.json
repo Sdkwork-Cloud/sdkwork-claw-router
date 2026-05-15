@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/danke-blog-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.danke_blog_writer",
+  "skill": {
+    "id": 69857,
+    "skillKey": "clawhub-danke-blog-writer",
+    "name": "Danke Blog Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "danke-blog-writer",
+    "url": "https://clawhub.ai/skills/danke-blog-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/danke-blog-writer-2c0ad18b8ccce3c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "晨玙（老板）的专属博客写作助手。整合选题→标题→起草→去 AI 味→发布的完整工作流，输出自然、直接、有判断力的个人风格内容，适用于技术、AI、生活观察类博客。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex-shen1121",
+      "userId": "s17e8rt3ehqr1jwgx55v915cb983gp22",
+      "displayName": "AlexShen",
+      "image": "https://avatars.githubusercontent.com/u/73343630?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776346134065,
+      "changelog": "Danke Blog Writer v1.0.0\n\n- 首次发布，支持从选题到发布的个人博客写作全流程。\n- 自动生成多种类型、具评分的标题建议，基于营销心理学原则。\n- 按个人风格（直接、自然、有判断力）起草博客内容，适配技术、AI、生活观察等主题。\n- 提供一键“去 AI 味”润色工具，让内容更像人类创作。\n- 支持直接发布到 Halo 博客平台，适配公众号、知乎、小红书等不同平台风格要求。\n- 明确禁止高频套话、排比、过度客套和泛泛技术描述，确保输出真实可靠。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e1c9ad0afba2b66fde4020b17711d27dd9f7e7323f51aafb0c9a15ba5b5dfee"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39409,
+  "uuid": "skill-clawhub-oatda-video-status",
+  "skillKey": "clawhub-oatda-video-status",
+  "name": "OATDA Video Status",
+  "summary": "Check the status of an asynchronous video generation task from OATDA. Triggers when the user wants to check if a video is done generating, retrieve the video...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_video_status",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "devcsde",
+      "features": [
+        "Check the status of an asynchronous video generation task from OATDA",
+        "Triggers when the user wants to check if a video is done generating, retrieve the video..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oatda-video-status@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29840319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oatda-video-status",
+      "url": "https://clawhub.ai/skills/oatda-video-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-video-status",
+    "url": "https://clawhub.ai/skills/oatda-video-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-video-status-c79983ecb13e093c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oatda-video-status@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-oatda-video-status-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:861fefa0c192f2d2f348ab6a605e079f009944c81aa07ab36d37dfc70495efcf",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:04:59.424Z"
+}

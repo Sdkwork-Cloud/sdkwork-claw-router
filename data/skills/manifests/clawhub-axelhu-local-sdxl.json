@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63316,
+  "uuid": "skill-clawhub-axelhu-local-sdxl",
+  "skillKey": "clawhub-axelhu-local-sdxl",
+  "name": "Axelhu Local Sdxl",
+  "summary": "基于本地 ComfyUI 与 SDXL，实现高质量私密图像生成，支持详细构图、风格及尺寸自定义，适合无在线API场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axelhu_local_sdxl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "基于本地 ComfyUI 与 SDXL，实现高质量私密图像生成，支持详细构图、风格及尺寸自定义，适合无在线API场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axelhu-local-sdxl@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axelhu-local-sdxl",
+      "url": "https://clawhub.ai/skills/axelhu-local-sdxl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axelhu-local-sdxl",
+    "url": "https://clawhub.ai/skills/axelhu-local-sdxl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axelhu-local-sdxl-4e6316f0e48cb231.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axelhu-local-sdxl@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-axelhu-local-sdxl-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb269e5b23edae9f120e85a5bdb31fe61f2d83a8dc28511240f8666a2445dcc0",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:44:37.852Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59677,
+  "uuid": "skill-clawhub-memory-sync-cn",
+  "skillKey": "clawhub-memory-sync-cn",
+  "name": "Memory Sync CN",
+  "summary": "记忆同步系统 - 自动同步 MEMORY.md 与 CortexGraph，支持遗忘曲线和智能检索",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_sync_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "自动同步 MEMORY.md 与 CortexGraph，支持遗忘曲线和智能检索"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-sync-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-sync-cn",
+      "url": "https://clawhub.ai/skills/memory-sync-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-sync-cn",
+    "url": "https://clawhub.ai/skills/memory-sync-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-sync-cn-6a9a568416779cf2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-sync-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-sync-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e14fde7130e5793f9d1c63fb23f15f02c56b76eac1dce187f5735ee7ecfe24e2",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T01:47:11.082Z"
+}

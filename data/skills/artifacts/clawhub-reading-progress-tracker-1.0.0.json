@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reading-progress-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reading_progress_tracker",
+  "skill": {
+    "id": 42441,
+    "skillKey": "clawhub-reading-progress-tracker",
+    "name": "Reading Progress Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reading-progress-tracker",
+    "url": "https://clawhub.ai/skills/reading-progress-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reading-progress-tracker-e255b36f3b4137cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize reading into Now, Next, Later, and Drop, then track current position, format, purpose, next stopping point, and lightweight session notes. Use when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776211271707,
+      "changelog": "Initial release of Reading Progress Tracker.\n\n- Organize books into Now, Next, Later, and Drop sections.\n- Track current position, reading format (print, ebook, audiobook), and reading purpose for each book.\n- Add lightweight session notes: one idea, one quote/example, and one question per session.\n- Provide a simple markdown dashboard to review active books and progress.\n- Flexible tracking that supports pausing or dropping books without pressure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcd1777e3fbc61cdb523776f675b97fffc45bbcc09b65da61cef3e13747c797a"
+}

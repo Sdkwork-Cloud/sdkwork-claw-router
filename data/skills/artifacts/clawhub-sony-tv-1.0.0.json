@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sony-tv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sony_tv",
+  "skill": {
+    "id": 44028,
+    "skillKey": "clawhub-sony-tv",
+    "name": "Sony Tv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sony-tv",
+    "url": "https://clawhub.ai/skills/sony-tv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sony-tv-d8428744e64736fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Sony Bravia TV via IP Control protocol. Send IRCC remote commands, open URLs in TV browser, kill apps, and run diagnostics. Use when controlling a So..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yardfarmer",
+      "userId": "s17e9gt7wjfk270dns5eegtpv584nk3s",
+      "displayName": "yardfarmer",
+      "image": "https://avatars.githubusercontent.com/u/1446828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776001313000,
+      "changelog": "Sony Bravia IP control skill adds direct HTTP command support and rich documentation\n\n- New direct control of Sony Bravia TVs via IRCC-IP and REST API, no server required\n- Supports sending IRCC remote commands, opening URLs in the built-in TV browser, killing apps, and running diagnostics\n- Includes detailed command reference and ready-to-use shell/bash script for easy integration\n- Optional local test server for diagnostics and browser capability scan\n- Documents available IRCC codes, power control, HDMI switching, status queries, and TV browser capabilities",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6889c897116a008ad3adf88e3fdf8136570761e55331a186561779c99e491ab5"
+}

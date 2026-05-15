@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9352,
+  "uuid": "skill-clawhub-ssh-exec",
+  "skillKey": "clawhub-ssh-exec",
+  "name": "Ssh Exec",
+  "summary": "Run a single command on a remote Tailscale node via SSH without opening an interactive session.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_exec",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xejrax",
+      "features": [
+        "Run a single command on a remote Tailscale node via SSH without opening an interactive session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-exec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148405630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-exec",
+      "url": "https://clawhub.ai/skills/ssh-exec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-exec",
+    "url": "https://clawhub.ai/skills/ssh-exec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-exec-94dac6356f8f1a52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-exec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-exec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9de7e11517ff4586e459672f3dea58f289fd51041066ad8784736fd15f7ce6a0",
+      "artifactSizeBytes": 1759
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T16:20:56.263Z"
+}

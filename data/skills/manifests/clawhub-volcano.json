@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71641,
+  "uuid": "skill-clawhub-volcano",
+  "skillKey": "clawhub-volcano",
+  "name": "Volcano",
+  "summary": "提供火山引擎公开产品规格、价格、账单概览及服务公告的非敏感信息摘要与整理服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcano",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "提供火山引擎公开产品规格、价格、账单概览及服务公告的非敏感信息摘要与整理服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcano@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcano",
+      "url": "https://clawhub.ai/skills/volcano"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcano",
+    "url": "https://clawhub.ai/skills/volcano",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcano-06612c2832341c9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcano@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcano-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e915c312694731b0b01e0c6db7ffe9b4082c549ca7984359c17f4153e5017bfd",
+      "artifactSizeBytes": 2254
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:54:02.847Z"
+}

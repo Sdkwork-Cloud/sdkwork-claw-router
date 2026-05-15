@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/porteden-sheets-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porteden_sheets_writer",
+  "skill": {
+    "id": 51271,
+    "skillKey": "clawhub-porteden-sheets-writer",
+    "name": "Google Sheets File Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porteden-sheets-writer",
+    "url": "https://clawhub.ai/skills/porteden-sheets-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porteden-sheets-writer-9ac05e32985cc444.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated Google Sheets Data Writer — Append rows, update cells, and automate spreadsheet data pipelines with a pre-configured target sheet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "porteden",
+      "userId": "s17bsdgb41z4bpwzdr5zqz5pah83xy13",
+      "displayName": "PortEden",
+      "image": "https://avatars.githubusercontent.com/u/258120807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 358,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773797033611,
+      "changelog": "- Initial release of the porteden-sheets-writer skill.\n- Automates appending rows and updating cells in a pre-configured Google Sheet via the `porteden` CLI.\n- Supports authentication with browser login or API key, and easy target sheet configuration using environment variables.\n- Includes commands for appending from JSON/CSV, updating specific cells, and verifying writes.\n- Provides best practices for safe automation and guidance on range formats and environment variable usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed876e61e9b41a7642f33d6f4dae557e58589f994f8bae4cb83dcd780261e0e5"
+}

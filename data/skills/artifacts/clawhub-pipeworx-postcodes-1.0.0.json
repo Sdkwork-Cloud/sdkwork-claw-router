@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-postcodes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_postcodes",
+  "skill": {
+    "id": 44672,
+    "skillKey": "clawhub-pipeworx-postcodes",
+    "name": "Pipeworx postcodes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-postcodes",
+    "url": "https://clawhub.ai/skills/pipeworx-postcodes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-postcodes-1219e352a1c4bfa5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lookup UK postcode details including coordinates, administrative areas, parliamentary constituencies, NHS regions, and validate postcodes."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucegutman",
+      "userId": "s17cvgtez7j4kg9j5x0713jyyx84as33",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/138315805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776184587570,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4218b75ac345531a1c247694e80bc989287bd961d7bf6636f11913f26e235d8"
+}

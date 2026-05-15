@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10350,
+  "uuid": "skill-clawhub-xiaohongshu-search-summarizer",
+  "skillKey": "clawhub-xiaohongshu-search-summarizer",
+  "name": "Xiaohongshu Search Summarizer",
+  "summary": "Searches Xiaohongshu(小红书) for a given keyword, extracts the top N posts (including texts, images, and user comments), and then synthesizes a comprehensive fi...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_search_summarizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "piekill",
+      "features": [
+        "Searches Xiaohongshu(小红书) for a given keyword, extracts the top N posts (including texts, image."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-search-summarizer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1186842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-search-summarizer",
+      "url": "https://clawhub.ai/skills/xiaohongshu-search-summarizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-search-summarizer",
+    "url": "https://clawhub.ai/skills/xiaohongshu-search-summarizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-search-summarizer-be3e3347d2f7f980.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-search-summarizer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-search-summarizer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3de2d83debd8c6885a7056d96e8f632f72a591eb977d10ae52bd27e961e976fd",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:52:43.624Z"
+}

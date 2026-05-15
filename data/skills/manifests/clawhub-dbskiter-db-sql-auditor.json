@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61779,
+  "uuid": "skill-clawhub-dbskiter-db-sql-auditor",
+  "skillKey": "clawhub-dbskiter-db-sql-auditor",
+  "name": "SQL全生命周期审核",
+  "summary": "SQL全生命周期审核，支持SQL规范审核、性能评估、DDL影响分析。 使用场景： - 用户说\"审核SQL\" → 执行 sql \"<SQL>\" - 用户说\"检查规范\" → 执行 sql \"<SQL>\" - 用户说\"DDL影响\" → 执行 ddl \"<DDL>\" - 用户说\"查看规则\" → 执行 rules 用法：...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dbskiter_db_sql_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MagicCzc (AIOps打工人)",
+      "features": [
+        "SQL全生命周期审核，支持SQL规范审核、性能评估、DDL影响分析。 使用场景：",
+        "用户说\"审核SQL\" → 执行 sql \"<SQL>\"",
+        "用户说\"检查规范\" → 执行 sql \"<SQL>\"",
+        "用户说\"DDL影响\" → 执行 ddl \"<DDL>\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dbskiter-db-sql-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161575294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dbskiter-db-sql-auditor",
+      "url": "https://clawhub.ai/skills/dbskiter-db-sql-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dbskiter-db-sql-auditor",
+    "url": "https://clawhub.ai/skills/dbskiter-db-sql-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dbskiter-db-sql-auditor-306f39290ac2166d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dbskiter-db-sql-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dbskiter-db-sql-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a03e663199182c0cb6871bcf64ee37a8accf2a73e89ac7e6ddc092e774e64028",
+      "artifactSizeBytes": 2696
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:49:03.902Z"
+}

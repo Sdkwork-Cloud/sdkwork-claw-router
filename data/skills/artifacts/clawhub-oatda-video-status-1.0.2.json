@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oatda-video-status@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oatda_video_status",
+  "skill": {
+    "id": 39409,
+    "skillKey": "clawhub-oatda-video-status",
+    "name": "OATDA Video Status"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oatda-video-status",
+    "url": "https://clawhub.ai/skills/oatda-video-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oatda-video-status-c79983ecb13e093c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check the status of an asynchronous video generation task from OATDA. Triggers when the user wants to check if a video is done generating, retrieve the video..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "devcsde",
+      "userId": "s1715k9c0vyqryjet8h0ek3xc58447z6",
+      "displayName": "devcsde",
+      "image": "https://avatars.githubusercontent.com/u/29840319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775217899424,
+      "changelog": "Fix: use config path instead of files in manifest",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:861fefa0c192f2d2f348ab6a605e079f009944c81aa07ab36d37dfc70495efcf"
+}

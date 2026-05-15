@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autowriter@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autowriter",
+  "skill": {
+    "id": 35889,
+    "skillKey": "clawhub-autowriter",
+    "name": "Autowriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autowriter",
+    "url": "https://clawhub.ai/skills/autowriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autowriter-9384dfcc478e8f7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated writing system. Extracts the \"modify-evaluate-loop\" paradigm from autoresearch's agent loop, fuses it with humanizer de-AI mechanisms into a closed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifei68801",
+      "userId": "s17aqaaq83dwh8634acxtaty8x83hxsq",
+      "displayName": "lifei68801",
+      "image": "https://avatars.githubusercontent.com/u/130719648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774453198922,
+      "changelog": "v1.1.1: Fix ClawHub review flags - clarify network:none with user-supplied sources, constrain file access to workspace scope, limit discarded draft storage",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65930c0a393bb4dfd00d5e3df832cac42b8492274a77d912a2520751d541fe7b"
+}

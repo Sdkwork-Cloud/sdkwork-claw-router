@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moegirl-wiki@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moegirl_wiki",
+  "skill": {
+    "id": 56613,
+    "skillKey": "clawhub-moegirl-wiki",
+    "name": "Moegirl Wiki - ACG Encyclopedia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moegirl-wiki",
+    "url": "https://clawhub.ai/skills/moegirl-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moegirl-wiki-b8043708334bef29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Moegirl Wiki (萌娘百科) for ACG information — anime, manga, games, light novels, Vocaloid, and character data. Powered by the largest Chinese ACG encyclop..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmchn",
+      "userId": "publishers:jmchn",
+      "displayName": "Jianming Chen",
+      "image": "https://avatars.githubusercontent.com/u/6431720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772913929909,
+      "changelog": "Integrate llms.txt AI usage policy: enforce CC BY-NC-SA attribution, summary-only output, and source linking per zh.moegirl.org.cn/llms.txt",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc4a704444bd47734d1ef675d46cc10ce7955e29a8eb2ba93c5224603d0df06b"
+}

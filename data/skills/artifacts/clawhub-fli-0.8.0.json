@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fli@0.8.0",
+  "version": "0.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fli",
+  "skill": {
+    "id": 54603,
+    "skillKey": "clawhub-fli",
+    "name": "Google Flights CLI and MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fli",
+    "url": "https://clawhub.ai/skills/fli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fli-b3484e21eafaa359.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guidance for installing and using Fli correctly as a CLI and MCP server. Use when: setting up Fli with pipx, running `fli` flight searches, configuring Claud..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "punitarani",
+      "userId": "s17fmz2dcdm1z464t8kf8qdmfs83t7v2",
+      "displayName": "Punit Arani",
+      "image": "https://avatars.githubusercontent.com/u/33301335?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.8.0",
+      "createdAt": 1774761533497,
+      "changelog": "- Major improvement: detailed guidance for installing and using Fli as a CLI and MCP server.\n- Now recommends `pipx install flights` as the primary installation path for command-line and MCP use.\n- Clear separation between CLI usage (`fli`), STDIO MCP (`fli-mcp`), and HTTP MCP (`fli-mcp-http`), with scenarios for each.\n- Step‑by‑step instructions for Claude Desktop integration and troubleshooting tips.\n- Highlights common user mistakes and provides targeted prevention and resolution steps.\n- Adds links to official product documentation for further guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:822d197ea7ec896cd055f6694004f0e3bf178e933dfb95df488a37daaf91cfaa"
+}

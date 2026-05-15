@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-pro-enhanced@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_pro_enhanced",
+  "skill": {
+    "id": 21404,
+    "skillKey": "clawhub-nano-banana-pro-enhanced",
+    "name": "Nano Banana Pro Enhanced"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-pro-enhanced",
+    "url": "https://clawhub.ai/skills/nano-banana-pro-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-pro-enhanced-266df4da6601dfe1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steamb23",
+      "userId": "s170071d7zjqqgqpges21v7fzd83jtn2",
+      "displayName": "Choi Jiheon",
+      "image": "https://avatars.githubusercontent.com/u/6805899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 510,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772554791385,
+      "changelog": "- Clarified batch job checklist: now requires including the reason/context for the image request in HEARTBEAT.md, so intent is clear after session resets.\n- No code or logic changes; documentation update only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ccbf2c5c6b77f61abba00f632fa88978909374d5d5a2d05821e1518c55cc2405"
+}

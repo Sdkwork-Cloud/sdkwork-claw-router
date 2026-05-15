@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73048,
+  "uuid": "skill-clawhub-trending-miner-huobiaowang",
+  "skillKey": "clawhub-trending-miner-huobiaowang",
+  "name": "热门标讯挖掘助手-火标网",
+  "summary": "热门标讯挖掘助手-火标网，当用户需要进行行业热度分析、统计Top采购商或聚合近期高频中标记录时调用，调用多维度聚合统计接口，呈现特定行业的市场热度与集中度趋势。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trending_miner_huobiaowang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liu-jiapeng",
+      "features": [
+        "热门标讯挖掘助手-火标网，当用户需要进行行业热度分析、统计Top采购商或聚合近期高频中标记录时调用，调用多维度聚合统计接口，呈现特定行业的市场热度与集中度趋势。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trending-miner-huobiaowang@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37843351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trending-miner-huobiaowang",
+      "url": "https://clawhub.ai/skills/trending-miner-huobiaowang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trending-miner-huobiaowang",
+    "url": "https://clawhub.ai/skills/trending-miner-huobiaowang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trending-miner-huobiaowang-a0eb19486c8aa896.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trending-miner-huobiaowang@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trending-miner-huobiaowang-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5c9be713fdcaab012f53318d457347efde9052181eb825c0f402e794bc102a2",
+      "artifactSizeBytes": 2812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T12:07:59.023Z"
+}

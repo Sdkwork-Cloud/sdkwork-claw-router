@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65984,
+  "uuid": "skill-clawhub-stock-daily-analysis",
+  "skillKey": "clawhub-stock-daily-analysis",
+  "name": "Stock Daily Analysis",
+  "summary": "LLM驱动的每日股票分析系统。支持A股/港股/美股自选股智能分析，生成决策仪表盘和大盘复盘报告。提供技术面分析（均线、MACD、RSI、乖离率）、趋势判断、买入信号评分。可与market-data skill集成获取更稳定的ETF数据。触发词：股票分析、分析股票、每日分析、技术面分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_daily_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robottk",
+      "features": [
+        "LLM驱动的每日股票分析系统。支持A股/港股/美股自选股智能分析，生成决策仪表盘和大盘复盘报告。提供技术面分析（均线、MACD、RSI、乖离率）、趋势判断、买入信号评分。可与market-d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-daily-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35590835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-daily-analysis",
+      "url": "https://clawhub.ai/skills/stock-daily-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-daily-analysis",
+    "url": "https://clawhub.ai/skills/stock-daily-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-daily-analysis-723c5f6c7a51b2ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-daily-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-daily-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dee9a94fdc34bac7c57e689960d5a467fe79a7925ce709a2f3abc395e4d24280",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:26:59.386Z"
+}

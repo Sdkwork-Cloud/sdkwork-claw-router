@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40248,
+  "uuid": "skill-clawhub-bug-hunter",
+  "skillKey": "clawhub-bug-hunter",
+  "name": "Bug Hunter",
+  "summary": "Bug analysis, reproduction, and reporting assistant. Analyze logs, stack traces, screenshots to identify root cause. Generate structured bug reports with sev...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhanghengyi1986-afk",
+      "features": [
+        "Bug analysis, reproduction, and reporting assistant",
+        "Analyze logs, stack traces, screenshots to identify root cause",
+        "Generate structured bug reports with sev..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bug-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266693384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bug-hunter",
+      "url": "https://clawhub.ai/skills/bug-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-hunter",
+    "url": "https://clawhub.ai/skills/bug-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-hunter-bc0cba2c2f7aa149.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bug-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bug-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53c9b291c7c78f6f129bbf95dcb6a8103d266353b1696e13ad2229284d2a7854",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:45:28.027Z"
+}

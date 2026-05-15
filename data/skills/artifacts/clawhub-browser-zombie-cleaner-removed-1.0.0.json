@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-zombie-cleaner-removed@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_zombie_cleaner_removed",
+  "skill": {
+    "id": 39476,
+    "skillKey": "clawhub-browser-zombie-cleaner-removed",
+    "name": "Browser Zombie Cleaner.Removed"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-zombie-cleaner-removed",
+    "url": "https://clawhub.ai/skills/browser-zombie-cleaner-removed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-zombie-cleaner-removed-b745f4dd74ffd0c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect and clean up zombie browser processes left by OpenClaw's browser tool. When the OpenClaw Gateway restarts, Playwright-launched browser processes get o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoqunabc",
+      "userId": "s1751bafvdydz5m2jxahw6dyrs83hqr3",
+      "displayName": "Madoka",
+      "image": "https://avatars.githubusercontent.com/u/9532020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774207870457,
+      "changelog": "- Initial release of Browser Zombie Cleaner.\n- Detects and optionally cleans up orphaned (zombie) browser processes launched by OpenClaw after Gateway restarts.\n- Default mode is safe, detect-only; no processes are killed unless --kill is specified.\n- Uses strict criteria to identify only relevant orphaned browser processes owned by the current user.\n- Provides audit logging for all actions and does not require root access.\n- Supports both Linux and macOS; Windows support is planned.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1eaaa2751c8dd2474eefe8e55152e2b18f2823274983f8a0cd4324b36b6d2f02"
+}

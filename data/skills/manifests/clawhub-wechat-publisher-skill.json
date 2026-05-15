@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32452,
+  "uuid": "skill-clawhub-wechat-publisher-skill",
+  "skillKey": "clawhub-wechat-publisher-skill",
+  "name": "Wechat Publisher Skill",
+  "summary": "Automatically collects 15 AI news items, generates HTML content, and publishes drafts to WeChat official accounts with customizable templates and scheduling.",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_publisher_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "403914291",
+      "features": [
+        "Automatically collects 15 AI news items, generates HTML content, and publishes drafts to WeChat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-publisher-skill@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95468942?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-publisher-skill",
+      "url": "https://clawhub.ai/skills/wechat-publisher-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-publisher-skill",
+    "url": "https://clawhub.ai/skills/wechat-publisher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-publisher-skill-40eb8051f02a785a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-publisher-skill@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-publisher-skill-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afd8204d271f8833b91780e795c927a7a8449cc67a0fb18bb9529f5ff7416a66",
+      "artifactSizeBytes": 2073
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T14:13:43.927Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11443,
+  "uuid": "skill-clawhub-polymarket-mert-sniper",
+  "skillKey": "clawhub-polymarket-mert-sniper",
+  "name": "Polymarket Mert Sniper",
+  "summary": "Near-expiry conviction trading on Polymarket. Snipe markets about to resolve when the odds are heavily skewed. Filter by topic, cap your bets, and only trade...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_mert_sniper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AD88",
+      "features": [
+        "Near-expiry conviction trading on Polymarket",
+        "Snipe markets about to resolve when the odds are heavily skewed",
+        "Filter by topic, cap your bets, and only trade..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-mert-sniper@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6263940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-mert-sniper",
+      "url": "https://clawhub.ai/skills/polymarket-mert-sniper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-mert-sniper",
+    "url": "https://clawhub.ai/skills/polymarket-mert-sniper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-mert-sniper-a74bf63564da2c9f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-mert-sniper@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-mert-sniper-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4272db20da0f70d50cb4077114ec3f3b39fecca62bf9e14f508168ac87abc2bf",
+      "artifactSizeBytes": 2159
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T10:06:50.149Z"
+}

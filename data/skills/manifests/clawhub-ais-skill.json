@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68547,
+  "uuid": "skill-clawhub-ais-skill",
+  "skillKey": "clawhub-ais-skill",
+  "name": "ais-skill",
+  "summary": "通过 TorchV AIS 知识库远端与用户协作使用这个技能，可进行的操作包括阅读结构、搜索和读取文档、创建文档或目录、修改文档、发布或返回可跳转的文档链接时。需要利用脚本将 `kb ...` 命令发送到远端 AIS 执行。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ais_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuchuan01",
+      "features": [
+        "通过 TorchV AIS 知识库远端与用户协作使用这个技能，可进行的操作包括阅读结构、搜索和读取文档、创建文档或目录、修改文档、发布或返回可跳转的文档链接时。需要利用脚本将 `kb ...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ais-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80431571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ais-skill",
+      "url": "https://clawhub.ai/skills/ais-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ais-skill",
+    "url": "https://clawhub.ai/skills/ais-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ais-skill-2d266dfb04fbaf2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ais-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ais-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:59b3ff42fd55193ec173b5ce088a878f53af24f80417f04898c6584c06967bae",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:40:11.287Z"
+}

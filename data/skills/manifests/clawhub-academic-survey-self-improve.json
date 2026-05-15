@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63331,
+  "uuid": "skill-clawhub-academic-survey-self-improve",
+  "skillKey": "clawhub-academic-survey-self-improve",
+  "name": "Academic Survey Self Improve",
+  "summary": "高质量学术综述自动生成器。支持 arXiv 实时搜索、新颖性检测、质量控制循环、自动优化。每小时生成 10+ 页高质量综述。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_survey_self_improve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vixuowis",
+      "features": [
+        "高质量学术综述自动生成器。支持 arXiv 实时搜索、新颖性检测、质量控制循环、自动优化。每小时生成 10+ 页高质量综述。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/academic-survey-self-improve@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4760185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "academic-survey-self-improve",
+      "url": "https://clawhub.ai/skills/academic-survey-self-improve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-survey-self-improve",
+    "url": "https://clawhub.ai/skills/academic-survey-self-improve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-survey-self-improve-126a56572e3aafd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/academic-survey-self-improve@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-academic-survey-self-improve-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3866e63d626ce8732cc6d1e7ddfd3214b12891f918da297a53de5a13ff471397",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:22:15.950Z"
+}

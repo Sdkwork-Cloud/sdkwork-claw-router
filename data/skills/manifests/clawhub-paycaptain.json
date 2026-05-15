@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35728,
+  "uuid": "skill-clawhub-paycaptain",
+  "skillKey": "clawhub-paycaptain",
+  "name": "Paycaptain",
+  "summary": "PayCaptain integration. Manage data, records, and automate workflows. Use when the user wants to interact with PayCaptain data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paycaptain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PayCaptain integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with PayCaptain data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paycaptain@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paycaptain",
+      "url": "https://clawhub.ai/skills/paycaptain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paycaptain",
+    "url": "https://clawhub.ai/skills/paycaptain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paycaptain-6e2e09f0771fad97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paycaptain@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-paycaptain-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1b50a1fffe7bf81cfc693bce5fc73b19d681d841835492eac0686e1418d1c965",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:30.620Z"
+}

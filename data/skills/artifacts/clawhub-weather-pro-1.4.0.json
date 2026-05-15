@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-pro@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_pro",
+  "skill": {
+    "id": 57153,
+    "skillKey": "clawhub-weather-pro",
+    "name": "Weather Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-pro",
+    "url": "https://clawhub.ai/skills/weather-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-pro-5ada964f711f0fd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get weather, air quality, sunrise/sunset, golden/blue hour times, and sunrise/sunset glow quality forecasts (朝霞晚霞预测). Perfect for photographers and outdoor p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pazzilivo",
+      "userId": "s17cjeqkz32htpjehh9e9eg3gs83j772",
+      "displayName": "Pazzilivo",
+      "image": "https://avatars.githubusercontent.com/u/1618972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1774004895018,
+      "changelog": "支持任意城市名查询 + Golden/Blue Hour 时间段 + 修复中文城市名兼容性",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a2cbc2c4b6d8660db6a467d2e1b0ee34fe39962f9feff9c7ab08daf3fd9c51c"
+}

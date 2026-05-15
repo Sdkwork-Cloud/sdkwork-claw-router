@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansi@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansi",
+  "skill": {
+    "id": 25076,
+    "skillKey": "clawhub-nansi",
+    "name": "Nansi website and web app builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansi",
+    "url": "https://clawhub.ai/skills/nansi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansi-2085260bf15333b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build stunning websites, landing pages, portfolios, and web apps by chatting with Nansi on WhatsApp. A no-code, mobile-first AI website builder — just descri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fordodev",
+      "userId": "publishers:fordodev",
+      "displayName": "fordodev",
+      "image": "https://avatars.githubusercontent.com/u/261824051?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 702,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771861207752,
+      "changelog": "- Removed the \"emoji\" line from the skill metadata for simpler configuration.\n- No functional or content changes to the skill instructions or description.\n- Version number in the metadata remains at \"1.0.0\".",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6deabdd631a668c500373fa427c9cfaf07cc390b5a1f3833cdf2f7ccdd4d3531"
+}

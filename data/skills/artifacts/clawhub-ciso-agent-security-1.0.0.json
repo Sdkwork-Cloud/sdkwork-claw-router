@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ciso-agent-security@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ciso_agent_security",
+  "skill": {
+    "id": 42513,
+    "skillKey": "clawhub-ciso-agent-security",
+    "name": "CISO Agent Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ciso-agent-security",
+    "url": "https://clawhub.ai/skills/ciso-agent-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ciso-agent-security-033826f8053c205f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI agent cybersecurity skill implementing MITRE ATLAS, OWASP Top 10 for LLM and Agentic Applications, CSA MAESTRO, NIST AI RMF, and Gray Swan frameworks. Red..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crevita",
+      "userId": "s17c0v7zgmfhncv4qy8shk3dnx83evbc",
+      "displayName": "Crevita",
+      "image": "https://avatars.githubusercontent.com/u/57785766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774311259051,
+      "changelog": "ciso-agent-security version 1.0.0\n\n- Initial release of an AI agent cybersecurity skill for red team patrols and defense.\n- Implements MITRE ATLAS, OWASP Top 10 (LLM and Agentic), CSA MAESTRO, NIST AI RMF, and Gray Swan frameworks.\n- Defines standardized patrol procedures, posture scoring, quarantine enforcement, and patch recommendations for AI agent systems.\n- Ensures all vulnerability assessments and testing are mapped to official frameworks and sources only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d427afddeb4d71137bb5a146bb1a423fe37756639f56caf955843790fc6b5eb"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25194,
+  "uuid": "skill-clawhub-ragclaw",
+  "skillKey": "clawhub-ragclaw",
+  "name": "RagClaw Knowledge Base",
+  "summary": "Local-first knowledge base to index, search, and manage documents and web pages offline using SQLite and local embedding models.",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ragclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "emdzej",
+      "features": [
+        "Local-first knowledge base to index, search, and manage documents and web pages offline using S."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ragclaw@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/348133?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ragclaw",
+      "url": "https://clawhub.ai/skills/ragclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ragclaw",
+    "url": "https://clawhub.ai/skills/ragclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ragclaw-3ef93870bfcda7e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ragclaw@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ragclaw-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d2af29a9c095e7afad3ad49801f75de2fb9994a06da2e4e287b49a47a52f28c",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T16:22:17.175Z"
+}

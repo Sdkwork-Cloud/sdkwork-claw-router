@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nyne-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyne_search",
+  "skill": {
+    "id": 17576,
+    "skillKey": "clawhub-nyne-search",
+    "name": "Nyne Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyne-search",
+    "url": "https://clawhub.ai/skills/nyne-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyne-search-20613fff6e3b5b6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for people using natural language queries with the Nyne Search API. Find professionals by role, company, location, industry, or any combination. Suppo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michaelfanous2",
+      "userId": "publishers:michaelfanous2",
+      "displayName": "Michael Fanous",
+      "image": "https://avatars.githubusercontent.com/u/28770294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 765,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771574931754,
+      "changelog": "- Initial release of nyne-search skill.\n- Enables searching for professionals by natural language query with Nyne Search API, supporting filters by role, company, location, industry, and more.\n- Supports three search tiers (light, medium, premium), async search flow (POST to submit, poll GET with request_id), and result pagination.\n- Returns comprehensive profile data: contact enrichment, work history, education, skills, patents, social, interests, AI relevance scoring, and insights.\n- Provides detailed usage, setup, and robust JSON parsing instructions to handle API responses.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5d901d8519e7ccc5649d41a75e693adcd0c8f30b20fee009308b6838f7e7570a"
+}

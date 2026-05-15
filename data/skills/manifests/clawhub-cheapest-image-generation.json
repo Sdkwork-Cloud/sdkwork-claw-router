@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9952,
+  "uuid": "skill-clawhub-cheapest-image-generation",
+  "skillKey": "clawhub-cheapest-image-generation",
+  "name": "Cheapest Image Generation",
+  "summary": "Possibly the cheapest AI image generation (~$0.0036/image). Text-to-image via the EvoLink API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheapest_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvolinkAI",
+      "features": [
+        "Possibly the cheapest AI image generation (~$0.0036/image)",
+        "Text-to-image via the EvoLink API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cheapest-image-generation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253253881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cheapest-image-generation",
+      "url": "https://clawhub.ai/skills/cheapest-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheapest-image-generation",
+    "url": "https://clawhub.ai/skills/cheapest-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheapest-image-generation-f7e07c460e298d09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cheapest-image-generation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cheapest-image-generation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8c972e5ec30c1dfc81dd989568dc6dc260b0f8952341341726fe1ec4a155ddc",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T14:28:09.493Z"
+}

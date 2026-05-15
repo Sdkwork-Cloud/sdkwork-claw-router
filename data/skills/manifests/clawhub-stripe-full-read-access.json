@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42297,
+  "uuid": "skill-clawhub-stripe-full-read-access",
+  "skillKey": "clawhub-stripe-full-read-access",
+  "name": "Stripe Full Read Access",
+  "summary": "Access Stripe directly with a Stripe secret or restricted API key for broad read-only platform queries, especially Connect accounts, application fees, balanc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_full_read_access",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "George Lewis",
+      "features": [
+        "Access Stripe directly with a Stripe secret or restricted API key for broad read-only platform."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stripe-full-read-access@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65343203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stripe-full-read-access",
+      "url": "https://clawhub.ai/skills/stripe-full-read-access"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-full-read-access",
+    "url": "https://clawhub.ai/skills/stripe-full-read-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-full-read-access-54b8f457345b31e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stripe-full-read-access@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stripe-full-read-access-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75af4194bcfc4a3d587f7fed086e75332c359fea03bbef2d33192d5f99e48dfc",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T18:05:35.109Z"
+}

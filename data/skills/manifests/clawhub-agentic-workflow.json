@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23604,
+  "uuid": "skill-clawhub-agentic-workflow",
+  "skillKey": "clawhub-agentic-workflow",
+  "name": "Agentic Workflow System",
+  "summary": "Enables the Agentic Workflow (Kanban + Heartbeat + QA Subagent). Use this when instructed to set up a continuous, asynchronous task system for any agent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peng Shu",
+      "features": [
+        "Enables the Agentic Workflow (Kanban + Heartbeat + QA Subagent)",
+        "Use this when instructed to set up a continuous, asynchronous task system for any agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58142289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-workflow",
+      "url": "https://clawhub.ai/skills/agentic-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-workflow",
+    "url": "https://clawhub.ai/skills/agentic-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-workflow-02db96fa2333b447.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e33f4c43ae64de87bb93e4cf81a39ee5ed3e694fe390ecaff051fb57e5c5c70",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:09:13.254Z"
+}

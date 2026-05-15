@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34939,
+  "uuid": "skill-clawhub-information-extraction",
+  "skillKey": "clawhub-information-extraction",
+  "name": "Information Extraction",
+  "summary": "Extract structured information from unstructured text through a semi-automatic pipeline. Support entity extraction, relation extraction, attribute extraction...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.information_extraction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quqxui",
+      "features": [
+        "Extract structured information from unstructured text through a semi-automatic pipeline",
+        "Support entity extraction, relation extraction, attribute extraction..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/information-extraction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41822324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "information-extraction",
+      "url": "https://clawhub.ai/skills/information-extraction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "information-extraction",
+    "url": "https://clawhub.ai/skills/information-extraction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/information-extraction-3d45a0d18d48a6bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/information-extraction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-information-extraction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73331ad52db91fc7a936cc380c2212c29e301b53d5252c4a769047c46d7ff4e9",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:23:45.234Z"
+}

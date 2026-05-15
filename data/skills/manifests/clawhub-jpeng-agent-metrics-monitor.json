@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31697,
+  "uuid": "skill-clawhub-jpeng-agent-metrics-monitor",
+  "skillKey": "clawhub-jpeng-agent-metrics-monitor",
+  "name": "agent-metrics-monitor",
+  "summary": "Provides monitoring and alerting for agent abnormal behavior metrics with Prometheus and Grafana support, including P99 latency, error rates, anomaly detecti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_agent_metrics_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "Provides monitoring and alerting for agent abnormal behavior metrics with Prometheus and Grafan."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpeng-agent-metrics-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpeng-agent-metrics-monitor",
+      "url": "https://clawhub.ai/skills/jpeng-agent-metrics-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-agent-metrics-monitor",
+    "url": "https://clawhub.ai/skills/jpeng-agent-metrics-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-agent-metrics-monitor-01fcb5441e85b8e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpeng-agent-metrics-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpeng-agent-metrics-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:819fcb7112d99073dd482221006f8d8e9de5a2e2bacce70889297bfcd1271920",
+      "artifactSizeBytes": 2483
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T13:02:21.348Z"
+}

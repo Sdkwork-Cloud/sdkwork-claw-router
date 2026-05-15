@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27102,
+  "uuid": "skill-clawhub-heliospice",
+  "skillKey": "clawhub-heliospice",
+  "name": "Heliospice",
+  "summary": "Query positions of spacecraft, planets, moons, and asteroids in the solar system",
+  "version": "0.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heliospice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangzesen",
+      "features": [
+        "Query positions of spacecraft, planets, moons, and asteroids in the solar system"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heliospice@0.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29720799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heliospice",
+      "url": "https://clawhub.ai/skills/heliospice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heliospice",
+    "url": "https://clawhub.ai/skills/heliospice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heliospice-13ca63ebb18e66c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heliospice@0.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-heliospice-0.4.2.json",
+      "version": "0.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61b920728c3172aef0dccd86190a94e761af184006da900912e0e7d57a9e7571",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T10:16:07.916Z"
+}

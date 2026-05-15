@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51300,
+  "uuid": "skill-clawhub-openclaw-occ",
+  "skillKey": "clawhub-openclaw-occ",
+  "name": "OCC for OpenClaw",
+  "summary": "OCC (Origin Controlled Computing) — cryptographic proof of every OpenClaw agent action. Install, configure, and audit.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_occ",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike",
+      "features": [
+        "OCC (Origin Controlled Computing) — cryptographic proof of every OpenClaw agent action",
+        "Install, configure, and audit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-occ@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260831370?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-occ",
+      "url": "https://clawhub.ai/skills/openclaw-occ"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-occ",
+    "url": "https://clawhub.ai/skills/openclaw-occ",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-occ-fe09f61ce4ce0221.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-occ@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-occ-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76b3ceff6a21093ba3e79b5f2b37557236b9a79da5a488652ceb0bd067fdd118",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T19:40:33.809Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44770,
+  "uuid": "skill-clawhub-learned-from-ai",
+  "skillKey": "clawhub-learned-from-ai",
+  "name": "Learned from AI",
+  "summary": "Convert AI chat or drafts into structured, verified, and durable learning notes with definition, key ideas, examples, derivations, Q&A, and a cheat sheet.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learned_from_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yi",
+      "features": [
+        "Convert AI chat or drafts into structured, verified, and durable learning notes with definition."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learned-from-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9788834?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learned-from-ai",
+      "url": "https://clawhub.ai/skills/learned-from-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learned-from-ai",
+    "url": "https://clawhub.ai/skills/learned-from-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learned-from-ai-4519b70a4c768475.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learned-from-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learned-from-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05d3bf826c2bc8c6ce2646a8c58ef3df9ef3eb2feb414f7b145185618c196a53",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:08:46.517Z"
+}

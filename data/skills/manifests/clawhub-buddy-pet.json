@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60146,
+  "uuid": "skill-clawhub-buddy-pet",
+  "skillKey": "clawhub-buddy-pet",
+  "name": "BUDDY 宠物系统",
+  "summary": "BUDDY 宠物系统 - 一个虚拟宠物伴侣工具，用于生成、互动、展示 AI 宠物。当用户说\"摸摸宠物\"、\"查看宠物\"、\"孵化宠物\"、\"buddy\"、\"/buddy pet\"、\"/buddy card\"、\"/buddy hatch\"、\"/buddy mute\"、\"/buddy unmute\" 或任何与宠物互动相关的...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddy_pet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dxiaofeng0811-lgtm",
+      "features": [
+        "BUDDY 宠物系统",
+        "一个虚拟宠物伴侣工具，用于生成、互动、展示 AI 宠物。当用户说\"摸摸宠物\"、\"查看宠物\"、\"孵化宠物\"、\"buddy\"、\"/buddy pet\"、\"/buddy card\"、\"/buddy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buddy-pet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266959010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buddy-pet",
+      "url": "https://clawhub.ai/skills/buddy-pet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddy-pet",
+    "url": "https://clawhub.ai/skills/buddy-pet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddy-pet-cddd010ce301243d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buddy-pet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buddy-pet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdc6942ac392f231e2a21054febd22511651ee9f9b84675c9d3369c9f8ef564c",
+      "artifactSizeBytes": 2057
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:20:37.729Z"
+}

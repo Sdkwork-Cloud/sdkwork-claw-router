@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20268,
+  "uuid": "skill-clawhub-coinank-openapi-skill",
+  "skillKey": "clawhub-coinank-openapi-skill",
+  "name": "Coinank Openapi Skill",
+  "summary": "call coinank openapi to get data",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinank_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "a4205586",
+      "features": [
+        "call coinank openapi to get data"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coinank-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64685824?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coinank-openapi-skill",
+      "url": "https://clawhub.ai/skills/coinank-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinank-openapi-skill",
+    "url": "https://clawhub.ai/skills/coinank-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinank-openapi-skill-36611a70d4f96434.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coinank-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coinank-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd53aba358754ace7e6ec23c2b634cb3753426d34c2e3d883bb262153c4a234e",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T21:17:08.945Z"
+}

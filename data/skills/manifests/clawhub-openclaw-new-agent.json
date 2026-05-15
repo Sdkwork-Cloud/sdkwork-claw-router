@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66138,
+  "uuid": "skill-clawhub-openclaw-new-agent",
+  "skillKey": "clawhub-openclaw-new-agent",
+  "name": "Openclaw New Agent",
+  "summary": "在 OpenClaw 上创建新的独立飞书机器人（多账号模式）。当用户要求创建新的飞书机器人、新增 Agent、部署第二个机器人时使用。流程包括：收集配置信息 → 备份 → 创建工作区 → 修改配置 → 验证。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_new_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itzhouq",
+      "features": [
+        "在 OpenClaw 上创建新的独立飞书机器人（多账号模式）。当用户要求创建新的飞书机器人、新增 Agent、部署第二个机器人时使用。流程包括：收集配置信息 → 备份 → 创建工作区 → 修."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-new-agent@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37930443?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-new-agent",
+      "url": "https://clawhub.ai/skills/openclaw-new-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-new-agent",
+    "url": "https://clawhub.ai/skills/openclaw-new-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-new-agent-0ee80441f639c492.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-new-agent@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-new-agent-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fd27e8b21a3fdb9f908ece6d52e70cf17172e352152bb45d005e095a763a1ad",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T13:32:37.342Z"
+}

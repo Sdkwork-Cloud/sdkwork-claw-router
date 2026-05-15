@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audio-to-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_to_video",
+  "skill": {
+    "id": 39190,
+    "skillKey": "clawhub-audio-to-video",
+    "name": "Audio To Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-to-video",
+    "url": "https://clawhub.ai/skills/audio-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-to-video-1c8052c389b44eea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert audio files into captioned video files with this skill. Works with MP3, WAV, M4A, AAC files up to 200MB. podcasters and content creators use it for t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775939938401,
+      "changelog": "audio-to-video v1.0.0 — Initial Release\n\n- Convert MP3, WAV, M4A, AAC audio files (up to 200MB) into 1080p captioned video files.\n- Cloud-powered rendering returns MP4s ready for social media in 1–2 minutes.\n- Automatic session/token workflow with free anonymous credits for new users.\n- Intuitive chat commands: upload, export, check credits, and refine video with text prompts.\n- Full support for auto-captions, waveform visuals, and multiple language GUI instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3a430114214b3adceb297dc5afd5310ab2056b414e3d2146ac95acec72fd7a7"
+}

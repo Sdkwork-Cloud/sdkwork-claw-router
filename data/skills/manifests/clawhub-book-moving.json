@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13586,
+  "uuid": "skill-clawhub-book-moving",
+  "skillKey": "clawhub-book-moving",
+  "name": "Book Moving",
+  "summary": "Book moving services through Lokuli MCP. Use when user needs to find and book moving. Triggers on requests like \"book a moving\", \"find moving near me\", or any moving service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_moving",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book moving services through Lokuli MCP",
+        "Use when user needs to find and book moving",
+        "Triggers on requests like \"book a moving\", \"find moving near me\", or any moving service request."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-moving@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-moving",
+      "url": "https://clawhub.ai/skills/book-moving"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-moving",
+    "url": "https://clawhub.ai/skills/book-moving",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-moving-7efb0171d6db31ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-moving@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-moving-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb4f858a9e9893a6745fde7686ef6ad0be9763bf01b6f24ccfc95289d9a16c28",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:08:15.789Z"
+}

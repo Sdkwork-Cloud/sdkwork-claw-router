@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23280,
+  "uuid": "skill-clawhub-agent-treasury",
+  "skillKey": "clawhub-agent-treasury",
+  "name": "Agent Treasury",
+  "summary": "Manage your agent's crypto wallet. Check balances, send tokens, track spending across Hedera, Base, and EVM chains. Built for agents who earn and spend on-ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_treasury",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Manage your agent's crypto wallet",
+        "Check balances, send tokens, track spending across Hedera, Base, and EVM chains",
+        "Built for agents who earn and spend on-ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-treasury@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-treasury",
+      "url": "https://clawhub.ai/skills/agent-treasury"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-treasury",
+    "url": "https://clawhub.ai/skills/agent-treasury",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-treasury-5a418f1061c5036a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-treasury@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-treasury-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:898b6c1568350b3ce6cb4e904d55422a9d527a831d99bd231ca8faf77102124a",
+      "artifactSizeBytes": 2219
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T16:36:19.911Z"
+}

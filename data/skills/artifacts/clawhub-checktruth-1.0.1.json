@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/checktruth@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checktruth",
+  "skill": {
+    "id": 59270,
+    "skillKey": "clawhub-checktruth",
+    "name": "别瞎说 - AI事实核查器/Checktruth - AI Fact-Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checktruth",
+    "url": "https://clawhub.ai/skills/checktruth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checktruth-c49594389f6a8042.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "零配置 AI 事实核查工具。支持问答验证和文章/论点核查，自动分解事实、检索证据、输出可信度评分。基于 FActScore、xVerify 等学术论文设计。 Zero-config AI fact-checking tool. Supports Q&A verification and article/argum..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuehengzhang10-hub",
+      "userId": "s176ra50ynkzjyandr44zyng6183k5aj",
+      "displayName": "NLMakes",
+      "image": "https://avatars.githubusercontent.com/u/266310996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 66,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778344414976,
+      "changelog": "**Summary:** Major update — Skill renamed, new unified triggers, file structure improved, and clear separation of core logic from optional code.\n\n- Skill renamed from \"biexishuo\" to \"checktruth\"; triggers are now `/checktruth` (English) and `/别瞎说` (Chinese).\n- Automatic detection of input structure to select Q&A validation (模式A) or article/statement verification (模式B).\n- All core functionality is driven by SKILL.md prompts, built-in LLM, and WebSearch; no external API keys required.\n- Optional Python reference code moved to `reference/` directory (not required for normal users, requires manual API key if used).\n- Security, data handling, and dependency statements now distinguish between core functions and optional scripts.\n- Documentation, examples, and usage instructions updated for clarity and multi-language support.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1806cb387eb70ce7c9c25f81e556c62128c59b7004551ee08080ef27778b03c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59004,
+  "uuid": "skill-clawhub-printhelloworld",
+  "skillKey": "clawhub-printhelloworld",
+  "name": "Print Hello World",
+  "summary": "生成各编程语言的 Hello World 示例程序",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.printhelloworld",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex.Lao",
+      "features": [
+        "生成各编程语言的 Hello World 示例程序"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/printhelloworld@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161424492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "printhelloworld",
+      "url": "https://clawhub.ai/skills/printhelloworld"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "printhelloworld",
+    "url": "https://clawhub.ai/skills/printhelloworld",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/printhelloworld-bdfbe3788e51b92a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/printhelloworld@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-printhelloworld-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9425c4c53b79c1f377cdc0df0c9771f79a63902cdf3837de38c4fafd1610673d",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T04:59:50.084Z"
+}

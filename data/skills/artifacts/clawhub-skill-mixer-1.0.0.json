@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-mixer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_mixer",
+  "skill": {
+    "id": 11735,
+    "skillKey": "clawhub-skill-mixer",
+    "name": "Skill Mixer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-mixer",
+    "url": "https://clawhub.ai/skills/skill-mixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-mixer-8e2c5a5bc803d0be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Processes and auto-categorizes 150 skills into 12 composite master skills with ClawHub integration and multiple deployment options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grxkun",
+      "userId": "publishers:grxkun",
+      "displayName": "grxkun",
+      "image": "https://avatars.githubusercontent.com/u/101440677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1730,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770129799928,
+      "changelog": "SkillMixer v1.0.0 – Initial Release\n\n- Production-ready clustering skill with built-in ClawHub integration.\n- Auto-categorizes up to 150 skills into 12 master categories.\n- Zero dependencies; pure TypeScript with error handling and tests.\n- Comprehensive documentation (14 guides) covering usage, deployment, and integration.\n- Multiple deployment and usage options: ClawHub upload, cloud/self-host, and local integration.\n- Includes configuration templates and quickstart navigation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:554e6afc2ba523c2705572de9aa35bceb057eac497bd632f6137ef0bbf2e8386"
+}

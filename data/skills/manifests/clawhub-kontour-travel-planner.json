@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12195,
+  "uuid": "skill-clawhub-kontour-travel-planner",
+  "skillKey": "clawhub-kontour-travel-planner",
+  "name": "Travel Planner - Notion AI, Obsidian, Kontour.ai integration",
+  "summary": "Travel Planner - Notion AI, Obsidian, Kontour.ai integration. Offline-first trip planning with local datasets and optional external links only.",
+  "version": "1.2.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kontour_travel_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gerald He",
+      "features": [
+        "Travel Planner",
+        "Notion AI, Obsidian, Kontour.ai integration",
+        "Offline-first trip planning with local datasets and optional external links only."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kontour-travel-planner@1.2.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26716208?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kontour-travel-planner",
+      "url": "https://clawhub.ai/skills/kontour-travel-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kontour-travel-planner",
+    "url": "https://clawhub.ai/skills/kontour-travel-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kontour-travel-planner-a3b8748fbdc2ffb0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kontour-travel-planner@1.2.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-kontour-travel-planner-1.2.15.json",
+      "version": "1.2.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ef151a29eeddc9185e421b93907660c9ee0b2c4618239f265cc3275ac1c51ec",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T18:34:55.288Z"
+}

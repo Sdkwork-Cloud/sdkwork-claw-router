@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/high-value-extractors@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.high_value_extractors",
+  "skill": {
+    "id": 44125,
+    "skillKey": "clawhub-high-value-extractors",
+    "name": "High-Value Extractors"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "high-value-extractors",
+    "url": "https://clawhub.ai/skills/high-value-extractors",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/high-value-extractors-7481ba476d9ad293.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract structured data from product pages, job listings, and company pages. Plus generate working AI endpoints from schemas. LLM-powered extraction micro-se..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "renoblabs",
+      "userId": "s171c0pbnstpzzy52rsh3jvfp584eazr",
+      "displayName": "renoblabs",
+      "image": "https://avatars.githubusercontent.com/u/211252113?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775889744923,
+      "changelog": "High-Value Extractors initial release.\n\n- Four LLM-powered extraction endpoints for products, jobs, and company intel.\n- Extracts structured data from e-commerce, job listing, and company pages.\n- Generate working FastAPI endpoint code from schemas.\n- Pay per use via x402 protocol with USDC on Base.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b668ac6e2fe46ecdcb0d6dc14af56358fffb3e2c2552fc0f156bfd920470d6ad"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66267,
+  "uuid": "skill-clawhub-financepy-derivatives",
+  "skillKey": "clawhub-financepy-derivatives",
+  "name": "Financepy Derivatives",
+  "summary": "基于 FinancePy 框架的金融工具日期处理与定价能力，支持多国节假日日历与天数计数约定处理，生成债券和互换现金流调度，计算收益率和价格。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financepy_derivatives",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "基于 FinancePy 框架的金融工具日期处理与定价能力，支持多国节假日日历与天数计数约定处理，生成债券和互换现金流调度，计算收益率和价格。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/financepy-derivatives@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "financepy-derivatives",
+      "url": "https://clawhub.ai/skills/financepy-derivatives"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financepy-derivatives",
+    "url": "https://clawhub.ai/skills/financepy-derivatives",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financepy-derivatives-615091ab9ed3530c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/financepy-derivatives@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-financepy-derivatives-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf8ac4d143d0bfa01e7e3ebe68ecb588abf2219bb25923e42a59e9caec98a943",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:26:15.174Z"
+}

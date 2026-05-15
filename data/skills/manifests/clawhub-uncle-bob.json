@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25395,
+  "uuid": "skill-clawhub-uncle-bob",
+  "skillKey": "clawhub-uncle-bob",
+  "name": "Uncle Bob",
+  "summary": "Apply Robert C. Martin (Uncle Bob) principles for clean code, SOLID design, and clean architecture. Use when: (1) reviewing or refactoring code for quality,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uncle_bob",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "agentsleader",
+      "features": [
+        "Apply Robert C",
+        "Martin (Uncle Bob) principles for clean code, SOLID design, and clean architecture",
+        "Use when: (1) reviewing or refactoring code for quality,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uncle-bob@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261027104?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uncle-bob",
+      "url": "https://clawhub.ai/skills/uncle-bob"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uncle-bob",
+    "url": "https://clawhub.ai/skills/uncle-bob",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uncle-bob-6cba92d5ef649477.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uncle-bob@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-uncle-bob-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e4386c807220810e268704f1082a63a9d386551dad45ccbae7829dd98db4d9f",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T19:35:09.969Z"
+}

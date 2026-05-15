@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron-mastery@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_mastery",
+  "skill": {
+    "id": 8372,
+    "skillKey": "clawhub-cron-mastery",
+    "name": "Cron Mastery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-mastery",
+    "url": "https://clawhub.ai/skills/cron-mastery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-mastery-2f476ba550e85a41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master OpenClaw's timing systems. Use for scheduling reliable reminders, setting up periodic maintenance (janitor jobs), and understanding when to use Cron v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "i-mw",
+      "userId": "publishers:i-mw",
+      "displayName": "i-mw",
+      "image": "https://avatars.githubusercontent.com/u/10008835?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 16643,
+      "installsAllTime": 171,
+      "installsCurrent": 161,
+      "stars": 34,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771282970279,
+      "changelog": "cron-mastery 1.0.3\n\n- Updated documentation to clarify best practices for session targeting in janitor/maintenance jobs; `sessionTarget: \"main\"` is now emphasized as critical for system maintenance.\n- Enhanced the troubleshooting section with new advice for resolving gateway timeout issues and corrupted job state.\n- Modernized the legacy migration guide and examples to match OpenClaw 2026.2.15+ patterns.\n- Revised internal references, replacing and consolidating template documentation files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b333b633f885adaba37dc0b8f37b2983679d0fe7f88707edc0175269cd54f7c"
+}

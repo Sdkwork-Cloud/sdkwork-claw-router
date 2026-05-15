@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67078,
+  "uuid": "skill-clawhub-llm-wiki-cn",
+  "skillKey": "clawhub-llm-wiki-cn",
+  "name": "使用 LLM 动态构建和维护知识库",
+  "summary": "用于构建、维护、查询、归档和体检一个由 LLM 持续维护的 Markdown / Obsidian 知识 Wiki。使用场景包括：初始化个人知识库；把 source/ 下按来源分组的原始资料导入 wiki/；整理文章、论文、书摘、访谈、会议记录；维护资料页、实体页、概念页、综合页、对比页、查询归档页；更新 ind...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_wiki_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FengSuSky",
+      "features": [
+        "用于构建、维护、查询、归档和体检一个由 LLM 持续维护的 Markdown / Obsidian 知识 Wiki。使用场景包括：初始化个人知识库；把 source/ 下按来源分组的原始资料."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-wiki-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33592669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-wiki-cn",
+      "url": "https://clawhub.ai/skills/llm-wiki-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-wiki-cn",
+    "url": "https://clawhub.ai/skills/llm-wiki-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-wiki-cn-4bda622ccdd2e76f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-wiki-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-wiki-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8af8329e8dfb70cf6a30de90bd8d1896a8d357080b1f5804f26bc97cc84a3e88",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T12:48:48.673Z"
+}

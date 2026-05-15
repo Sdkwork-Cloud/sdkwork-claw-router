@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67835,
+  "uuid": "skill-clawhub-toncall-videourl-text",
+  "skillKey": "clawhub-toncall-videourl-text",
+  "name": "toncall-videourl-text",
+  "summary": "唐潮Toncall工作室开发 - 视频URL语音转文字。支持任意可直接访问的视频URL，自动下载视频、提取音频、上传火山引擎TOS、调用火山引擎语音识别API识别文字，完成后自动清理本地和TOS的临时文件。使用：当用户发送视频URL并要求提取视频文案、语音转文字、转文字时直接执行；当用户只发送视频URL没有说明意...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toncall_videourl_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "toncall",
+      "features": [
+        "唐潮Toncall工作室开发",
+        "视频URL语音转文字。支持任意可直接访问的视频URL，自动下载视频、提取音频、上传火山引擎TOS、调用火山引擎语音识别API识别文字，完成后自动清理本地和TOS的临时文件。使用：当用户发送视."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toncall-videourl-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3124883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toncall-videourl-text",
+      "url": "https://clawhub.ai/skills/toncall-videourl-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toncall-videourl-text",
+    "url": "https://clawhub.ai/skills/toncall-videourl-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toncall-videourl-text-d9280c15e881776b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toncall-videourl-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toncall-videourl-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df4a0092e8aca7efd173ea6d91445fb7fa6cc65a13960d6bbb1209d365765658",
+      "artifactSizeBytes": 2720
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:51:33.267Z"
+}

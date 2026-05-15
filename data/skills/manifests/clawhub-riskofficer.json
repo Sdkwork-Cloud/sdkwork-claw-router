@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9759,
+  "uuid": "skill-clawhub-riskofficer",
+  "skillKey": "clawhub-riskofficer",
+  "name": "RiskOfficer",
+  "summary": "Portfolio risk management and analytics. Use when user asks to calculate VaR, run Monte Carlo, stress test, optimize with Risk Parity / Calmar / Black-Litter...",
+  "version": "4.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.riskofficer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mib424242",
+      "features": [
+        "Portfolio risk management and analytics",
+        "Use when user asks to calculate VaR, run Monte Carlo, stress test, optimize with Risk Parity /."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/riskofficer@4.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98278299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "riskofficer",
+      "url": "https://clawhub.ai/skills/riskofficer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "riskofficer",
+    "url": "https://clawhub.ai/skills/riskofficer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/riskofficer-be482d1e507711f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/riskofficer@4.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-riskofficer-4.3.0.json",
+      "version": "4.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1094a5ddb6956865b5cf1f17529f69dbbc613e643da6f9b11b716a7880bbab77",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T16:07:01.655Z"
+}

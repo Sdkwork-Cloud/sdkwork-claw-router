@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aitubiao-3d-chart-illustration@1.1.5",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aitubiao_3d_chart_illustration",
+  "skill": {
+    "id": 63313,
+    "skillKey": "clawhub-aitubiao-3d-chart-illustration",
+    "name": "爱图表3D图表"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aitubiao-3d-chart-illustration",
+    "url": "https://clawhub.ai/skills/aitubiao-3d-chart-illustration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aitubiao-3d-chart-illustration-13ad998aa0398438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI图表3D插图生成。根据用户数据和指定图表类型，生成3D风格化数据可视化插画。当用户想要将图表转为3D插画、创建3D风格图表时使用，触发词包括\"3D图表\"、\"3D插图\"、\"图表转3D\"、\"3D illustration\"、\"3d chart\"、\"stylize chart\"等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aitubiao",
+      "userId": "s17bfd6atd8sje15j8ehx6j4bn83zz7g",
+      "displayName": "aitubiao",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.5",
+      "createdAt": 1776934477292,
+      "changelog": "- 新增 Bash CLI 脚本（scripts/aitubiao-cli.sh），所有 API 操作、认证、配额等统一通过该脚本调用。\n- 不再允许直接 curl API，所有认证和生成流程需使用 CLI 子命令（如 check-auth、quota、create-3d）。\n- 错误处理规则调整：创建接口发生 500/超时不可自动重试，CLI 有详细 exit code 说明。\n- Windows (Git Bash) 下调用方式说明，建议使用 --body-file 传递 UTF-8 JSON，避免中文等非 ASCII 字符乱码。\n- 移除 API 数据结构说明文档（references/chart-3d-api.md）。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c107c9b00358fac94a84148aa4c5fcf97b330ffeadd7f60ae874bdeacb208bb4"
+}

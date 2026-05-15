@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30521,
+  "uuid": "skill-clawhub-dolthub",
+  "skillKey": "clawhub-dolthub",
+  "name": "Dolthub",
+  "summary": "DoltHub integration. Manage data, records, and automate workflows. Use when the user wants to interact with DoltHub data.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolthub",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "DoltHub integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with DoltHub data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dolthub@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dolthub",
+      "url": "https://clawhub.ai/skills/dolthub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolthub",
+    "url": "https://clawhub.ai/skills/dolthub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolthub-94e0256f5ed32274.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dolthub@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-dolthub-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88215e84414345320be199c326cfcd2df44621221f75739d1c33870ac9929721",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:40:38.292Z"
+}

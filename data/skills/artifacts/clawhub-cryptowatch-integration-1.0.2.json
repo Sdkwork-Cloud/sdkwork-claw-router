@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cryptowatch-integration@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cryptowatch_integration",
+  "skill": {
+    "id": 36564,
+    "skillKey": "clawhub-cryptowatch-integration",
+    "name": "Cryptowatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cryptowatch-integration",
+    "url": "https://clawhub.ai/skills/cryptowatch-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cryptowatch-integration-26568f93580ad550.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cryptowatch integration. Manage Markets, Assets, Exchanges, Pairs, Streams. Use when the user wants to interact with Cryptowatch data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775166444798,
+      "changelog": "Revert refresh marker",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b55e835e7a92ec9d87a4bafa79f3c2d14bb6d91a21ddefa0b83597a9dda5ea8"
+}

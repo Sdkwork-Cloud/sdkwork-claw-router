@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sutang-ecom-copywriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sutang_ecom_copywriter",
+  "skill": {
+    "id": 70164,
+    "skillKey": "clawhub-sutang-ecom-copywriter",
+    "name": "电商详情页生成器 E-Com Copywriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sutang-ecom-copywriter",
+    "url": "https://clawhub.ai/skills/sutang-ecom-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sutang-ecom-copywriter-b9687e9cf4265ae6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为小电商卖家设计，输入产品信息，一键生成淘宝/抖音/小红书/拼多多全平台适配的详情页文案和带货脚本。解决小卖家写不完文案的痛点。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "miromiraclemiro-ux",
+      "userId": "s174n7mmwbjrzq8dxdm33799t983py86",
+      "displayName": "miromiraclemiro-ux",
+      "image": "https://avatars.githubusercontent.com/u/267398765?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774610147104,
+      "changelog": "Initial release: 一键生成淘宝/抖音/小红书/拼多多全平台详情页文案，专为小卖家设计",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49cdab622ff1e6fb435bd6f54f59b7d0ab66e53c345076cd77dd1afbc767a583"
+}

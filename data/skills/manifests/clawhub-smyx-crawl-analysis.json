@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57966,
+  "uuid": "skill-clawhub-smyx-crawl-analysis",
+  "skillKey": "clawhub-smyx-crawl-analysis",
+  "name": "爬行类宠物健康诊断分析工具",
+  "summary": "Analyzes uploaded reptile or arachnid videos to identify scale, skin, and body issues, then generates a detailed health diagnosis report.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_crawl_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Analyzes uploaded reptile or arachnid videos to identify scale, skin, and body issues, then gen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-crawl-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-crawl-analysis",
+      "url": "https://clawhub.ai/skills/smyx-crawl-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-crawl-analysis",
+    "url": "https://clawhub.ai/skills/smyx-crawl-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-crawl-analysis-2ced4f938077fc54.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-crawl-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-crawl-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b05e9aa37a3a2317a84956546c655e328b64826fe2b9651c72e756685b8be0c",
+      "artifactSizeBytes": 2084
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T06:54:42.211Z"
+}

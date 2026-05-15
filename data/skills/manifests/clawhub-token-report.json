@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60604,
+  "uuid": "skill-clawhub-token-report",
+  "skillKey": "clawhub-token-report",
+  "name": "Token Report",
+  "summary": "生成 Token 消耗仪表盘截图并发送到飞书",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_report",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zu",
+      "features": [
+        "生成 Token 消耗仪表盘截图并发送到飞书"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24535089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-report",
+      "url": "https://clawhub.ai/skills/token-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-report",
+    "url": "https://clawhub.ai/skills/token-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-report-c02f691aadfea587.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4617cbe208bc4147b92ec315221c0560bcfeffd8ee58f9d882cac944ae2c099",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T09:18:00.665Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ofw-mcp@2.0.7",
+  "version": "2.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ofw_mcp",
+  "skill": {
+    "id": 49658,
+    "skillKey": "clawhub-ofw-mcp",
+    "name": "Tmp.IdPp7EfJ9z"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ofw-mcp",
+    "url": "https://clawhub.ai/skills/ofw-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ofw-mcp-09a546bcf192c8ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks about OurFamilyWizard (OFW) co-parenting data. Triggers on phrases like \"check OFW\", \"OurFamilyWizard inbox\", \"O..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chrischall",
+      "userId": "s17cjx1a349nz5apaqp02vgz4h85728z",
+      "displayName": "chrischall",
+      "image": "https://avatars.githubusercontent.com/u/10564245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 72,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.7",
+      "createdAt": 1778063484860,
+      "changelog": "Version 2.0.7 of ofw-mcp\n\n- No file changes detected in this release.\n- No updates or modifications to features, tools, or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95fb131e1ab164e220302317fb2f0322ad0fb006b144594fba00abf8c3d2c787"
+}

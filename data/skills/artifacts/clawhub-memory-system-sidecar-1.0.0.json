@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-system-sidecar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_system_sidecar",
+  "skill": {
+    "id": 34493,
+    "skillKey": "clawhub-memory-system-sidecar",
+    "name": "Memory System Sidecar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-system-sidecar",
+    "url": "https://clawhub.ai/skills/memory-system-sidecar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-system-sidecar-19dbf6e046dddaa6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate, verify, rebuild, and debug the implemented MemoryLab long-term memory sidecar feeding active task and live context files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sjingh",
+      "userId": "publishers:sjingh",
+      "displayName": "sjinopenclaw",
+      "image": "https://avatars.githubusercontent.com/u/29119182?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773857231328,
+      "changelog": "Initial publication of the MemoryLab memory sidecar operating skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:147d7b28b8e06e19af12882713ab2c4dd56f41e1a36bebd46c61c4a6366b40c6"
+}

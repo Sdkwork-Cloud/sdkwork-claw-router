@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39534,
+  "uuid": "skill-clawhub-pikocnc",
+  "skillKey": "clawhub-pikocnc",
+  "name": "pikoCNC G-CODE",
+  "summary": "Interprets and executes full PikoCNC G-code commands with modal state tracking, motion control, parameter handling, and error detection for CNC machining.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pikocnc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kamil Szymoniak",
+      "features": [
+        "Interprets and executes full PikoCNC G-code commands with modal state tracking, motion control,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pikocnc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15710106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pikocnc",
+      "url": "https://clawhub.ai/skills/pikocnc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pikocnc",
+    "url": "https://clawhub.ai/skills/pikocnc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pikocnc-73ab71def4d040c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pikocnc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pikocnc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa1d339f78de8d955ca6d4a9dddc9ba110deb7024baf2cd0acc5d8e6a01c4e70",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T16:50:09.998Z"
+}

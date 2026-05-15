@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25368,
+  "uuid": "skill-clawhub-easyship",
+  "skillKey": "clawhub-easyship",
+  "name": "Easyship",
+  "summary": "Easyship integration. Manage Shipments, Trackers, Addresses, Users. Use when the user wants to interact with Easyship data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.easyship",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Easyship integration",
+        "Manage Shipments, Trackers, Addresses, Users",
+        "Use when the user wants to interact with Easyship data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/easyship@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "easyship",
+      "url": "https://clawhub.ai/skills/easyship"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "easyship",
+    "url": "https://clawhub.ai/skills/easyship",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/easyship-e700314befcadd34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/easyship@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-easyship-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70f0e4391bcf1a7bb120236bf1a7ebf8ef1491c17f8ae382b34e3af8768c09cd",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:25:19.776Z"
+}

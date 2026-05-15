@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/godmode-battle-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godmode_battle_ai",
+  "skill": {
+    "id": 27747,
+    "skillKey": "clawhub-godmode-battle-ai",
+    "name": "GODMODE Battle Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godmode-battle-ai",
+    "url": "https://clawhub.ai/skills/godmode-battle-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godmode-battle-ai-e9e4816a796010b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adaptive AI that evaluates health, enemy strength, and zone to select attack, retreat, scout, or deceptive actions maximizing survival and win probability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hakuramasam",
+      "userId": "s177akdv5h3j0hp8z3z0xsqbed83g130",
+      "displayName": "HakuramaSam",
+      "image": "https://avatars.githubusercontent.com/u/86550572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 242,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774173201604,
+      "changelog": "Initial release of godmode-battle-ai.\n\n- Implements adaptive encrypted logic for survival and dominance.\n- Dynamic behavior modes: passive, aggressive, and deceptive, selected based on health and enemy count.\n- Decision fragments for situational responses, including attacking, retreating, and deception.\n- Risk and scoring systems to optimize tactical choices.\n- Adjusts aggression, deception, and avoidance as game state evolves.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73d71cb6d006b732ce3f1cd51174bc560483de9855e9aa0ac803470b8972b004"
+}

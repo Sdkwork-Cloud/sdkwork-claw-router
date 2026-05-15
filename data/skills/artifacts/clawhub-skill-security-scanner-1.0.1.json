@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-security-scanner@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_security_scanner",
+  "skill": {
+    "id": 13955,
+    "skillKey": "clawhub-skill-security-scanner",
+    "name": "Skill Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-security-scanner",
+    "url": "https://clawhub.ai/skills/skill-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-security-scanner-dc98391f836d3c72.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan OpenClaw skills for security risks, suspicious permissions, and provide a trust score to help evaluate skill safety before use or installation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steffano198",
+      "userId": "publishers:steffano198",
+      "displayName": "DevSef",
+      "image": "https://avatars.githubusercontent.com/u/142841909?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1039,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771278064546,
+      "changelog": "- Removed always-on flag (`always: true`) from skill metadata, making the scanner no longer run by default in all cases.\n- Updated documentation to clarify and simplify examples of high-risk patterns, replacing real domains and paths with generic examples.\n- No changes to core functionality; update is documentation and configuration only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e371cc3923d196085094838108e8bca3939732bca5ce882aa083cbdb0dd92d29"
+}

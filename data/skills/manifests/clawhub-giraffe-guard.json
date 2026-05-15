@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57164,
+  "uuid": "skill-clawhub-giraffe-guard",
+  "skillKey": "clawhub-giraffe-guard",
+  "name": "🦒 Giraffe Guard — 长颈鹿卫士",
+  "summary": "Scan OpenClaw skill directories for 22 supply chain attack patterns with context-aware detection, colored output, JSON reports, and whitelist support.",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.giraffe_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lida408",
+      "features": [
+        "Scan OpenClaw skill directories for 22 supply chain attack patterns with context-aware detectio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/giraffe-guard@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197852922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "giraffe-guard",
+      "url": "https://clawhub.ai/skills/giraffe-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "giraffe-guard",
+    "url": "https://clawhub.ai/skills/giraffe-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/giraffe-guard-b4a6f9387b987682.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/giraffe-guard@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-giraffe-guard-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf149e477d6899e999bb061e983ed562cd2292baca0102e5cb4ba7ad8f59c46d",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T04:29:07.518Z"
+}

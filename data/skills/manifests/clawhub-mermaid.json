@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11217,
+  "uuid": "skill-clawhub-mermaid",
+  "skillKey": "clawhub-mermaid",
+  "name": "Mermaid Diagrams",
+  "summary": "Generate and render diagrams from Mermaid syntax into PNG, SVG, or PDF using customizable themes and various diagram types.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarekbird",
+      "features": [
+        "Generate and render diagrams from Mermaid syntax into PNG, SVG, or PDF using customizable theme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mermaid@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14085452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mermaid",
+      "url": "https://clawhub.ai/skills/mermaid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid",
+    "url": "https://clawhub.ai/skills/mermaid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-0fbccedd61528383.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mermaid@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cb08334de878078b4bab52886bf8e05b2f2a4f695452f2f918bf77986278053",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T06:30:00.978Z"
+}

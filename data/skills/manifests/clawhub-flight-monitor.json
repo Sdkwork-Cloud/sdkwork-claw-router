@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68520,
+  "uuid": "skill-clawhub-flight-monitor",
+  "skillKey": "clawhub-flight-monitor",
+  "name": "flight-monitor",
+  "summary": "机票查询与价格监控技能。支持单程/往返查询、价格阈值提醒、定时监控、手机推送通知（Bark/Server酱/PushDeer）。触发词示例：查一下北京到三亚的机票、帮我看看上海飞成都下周六往返票、监控杭州到西安3月26日机票低于500提醒我、查看所有机票监控任务。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JackZhao3925",
+      "features": [
+        "机票查询与价格监控技能。支持单程/往返查询、价格阈值提醒、定时监控、手机推送通知（Bark/Server酱/PushDeer）。触发词示例：查一下北京到三亚的机票、帮我看看上海飞成都下周六往."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight-monitor@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66126887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight-monitor",
+      "url": "https://clawhub.ai/skills/flight-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-monitor",
+    "url": "https://clawhub.ai/skills/flight-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-monitor-737698b3b1a5c418.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight-monitor@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-monitor-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5b2a08d5071f25226c3b1632d5ff07826ca2883034337e42a2bd27e65d27e49",
+      "artifactSizeBytes": 2137
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:46:10.530Z"
+}

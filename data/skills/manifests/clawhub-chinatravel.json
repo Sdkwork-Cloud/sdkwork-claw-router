@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71407,
+  "uuid": "skill-clawhub-chinatravel",
+  "skillKey": "clawhub-chinatravel",
+  "name": "China Travel",
+  "summary": "专注中国境内与入境中国旅行规划的技能。用于设计中国城市与景区路线、选择交通与酒店、安排亲子/长辈出行、优化预算，并协调多城市行程。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinatravel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "newlux",
+      "features": [
+        "专注中国境内与入境中国旅行规划的技能。用于设计中国城市与景区路线、选择交通与酒店、安排亲子/长辈出行、优化预算，并协调多城市行程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chinatravel@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4240787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chinatravel",
+      "url": "https://clawhub.ai/skills/chinatravel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinatravel",
+    "url": "https://clawhub.ai/skills/chinatravel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinatravel-03d9349650e09c92.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chinatravel@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chinatravel-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3114d3ed1ad122efcc0a6d70d75961cc705fa28d7dcdea23b33ced9b23f8cf65",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T03:47:06.151Z"
+}

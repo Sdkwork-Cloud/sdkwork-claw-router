@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-report-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_report_ai",
+  "skill": {
+    "id": 70419,
+    "skillKey": "clawhub-weekly-report-ai",
+    "name": "自动周报助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-report-ai",
+    "url": "https://clawhub.ai/skills/weekly-report-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-report-ai-3ded82c15d78b539.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动整理周报工具。支持从多个数据源（GitHub、飞书文档、日历）汇总工作内容，生成Markdown周报。支持保存历史、AI摘要、导出PDF/HTML、发送邮件、写入飞书文档。适用于需要定期总结工作成果的用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "carson1012",
+      "userId": "s172csv4psv20wm7m4ar5ngjnn847b3z",
+      "displayName": "Carson1012",
+      "image": "https://avatars.githubusercontent.com/u/261698254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774016979665,
+      "changelog": "首次发布 - 支持GitHub/飞书/日历数据源，支持生成Markdown/HTML/PDF，支持邮件发送和飞书文档写入",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12f6d74bc377a6e7e2867f2cc1b10f2c1a75870de8efd63c4d35b34f596ae08e"
+}

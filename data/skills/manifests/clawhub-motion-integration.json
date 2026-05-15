@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24276,
+  "uuid": "skill-clawhub-motion-integration",
+  "skillKey": "clawhub-motion-integration",
+  "name": "Motion",
+  "summary": "Motion integration. Manage Workspaces. Use when the user wants to interact with Motion data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.motion_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Motion integration",
+        "Manage Workspaces",
+        "Use when the user wants to interact with Motion data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/motion-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "motion-integration",
+      "url": "https://clawhub.ai/skills/motion-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "motion-integration",
+    "url": "https://clawhub.ai/skills/motion-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/motion-integration-43e57b4855f62ac9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/motion-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-motion-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:470156f40b060a1ebe41930023a761c97a6da0c220a91bfb3f20f152625f222a",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:15:41.436Z"
+}

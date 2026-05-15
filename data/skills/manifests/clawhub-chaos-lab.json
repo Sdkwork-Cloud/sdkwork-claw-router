@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11438,
+  "uuid": "skill-clawhub-chaos-lab",
+  "skillKey": "clawhub-chaos-lab",
+  "name": "Chaos Lab",
+  "summary": "Multi-agent framework for exploring AI alignment through conflicting optimization targets. Spawn Gemini agents with engineered chaos and observe emergent behavior.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaos_lab",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jbbottoms",
+      "features": [
+        "Multi-agent framework for exploring AI alignment through conflicting optimization targets",
+        "Spawn Gemini agents with engineered chaos and observe emergent behavior."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chaos-lab@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25535214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chaos-lab",
+      "url": "https://clawhub.ai/skills/chaos-lab"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaos-lab",
+    "url": "https://clawhub.ai/skills/chaos-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaos-lab-750743eb5f0759c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chaos-lab@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chaos-lab-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31ff24bed9cab4838afd2aa44c86a2aaff338eaf8cc664d5e74b0fc20bd88f52",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T16:41:36.084Z"
+}

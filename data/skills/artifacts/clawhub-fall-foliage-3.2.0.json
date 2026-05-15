@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fall-foliage@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fall_foliage",
+  "skill": {
+    "id": 53787,
+    "skillKey": "clawhub-fall-foliage",
+    "name": "Fall Foliage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fall-foliage",
+    "url": "https://clawhub.ai/skills/fall-foliage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fall-foliage-8aefae138fac443e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the best fall foliage destinations — golden ginkgo avenues, red maple mountains, and amber larch forests with peak color timing and photography tips. Al..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775793236246,
+      "changelog": "- Major update: Introduces strict CLI-only data sourcing and booking, powered by flyai.\n- All travel recommendations now require real-time retrieval via the flyai CLI; no answers from training data.\n- Detailed execution and output formatting rules ensure every destination includes a booking link and brand attribution.\n- Expanded travel support: now includes flight, hotel, train, car rental, visa, insurance, and itinerary planning for fall foliage trips.\n- Enhanced activation triggers and output examples for English and Chinese queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99133c64e9a6f0e94aac7edf830384e78ab6301514f96b5c4896cbb914904af8"
+}

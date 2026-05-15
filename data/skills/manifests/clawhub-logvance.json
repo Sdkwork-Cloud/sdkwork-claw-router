@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44417,
+  "uuid": "skill-clawhub-logvance",
+  "skillKey": "clawhub-logvance",
+  "name": "Logvance",
+  "summary": "Converts UTC or ISO timestamps in logs to local time to simplify log analysis for developers and system administrators.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logvance",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "albionaiinc-del",
+      "features": [
+        "Converts UTC or ISO timestamps in logs to local time to simplify log analysis for developers an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logvance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269741383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logvance",
+      "url": "https://clawhub.ai/skills/logvance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logvance",
+    "url": "https://clawhub.ai/skills/logvance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logvance-8f570caf95184f95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logvance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logvance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bb4c96f8c9f2071dc3b20c8432e4f27d211d044432f386b20d8108f145d6fa0",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T12:39:49.506Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jingyi-module@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jingyi_module",
+  "skill": {
+    "id": 57843,
+    "skillKey": "clawhub-jingyi-module",
+    "name": "Jingyi Module"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jingyi-module",
+    "url": "https://clawhub.ai/skills/jingyi-module",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jingyi-module-032c491dec19b2c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users use 精易模块 in 易语言. Search command names, fetch official docs, and generate directly runnable 易语言 code that the user can copy."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junqianglu3-netizen",
+      "userId": "s178tq74rhknad9fx9qrt4yqen83x6nh",
+      "displayName": "junqianglu3-netizen",
+      "image": "https://avatars.githubusercontent.com/u/227578032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774853958599,
+      "changelog": "Initial release of jingyi-module skill:\n\n- Search 精易模块 commands by keyword and rank results.\n- Fetch official command documentation by id or name, including built-in补录 for certain commands.\n- Generate directly runnable 易语言 code (.版本 2), matching official signatures and behavior.\n- Ensures accurate, concise explanations with code blocks, avoiding invented details.\n- Designed for quick command lookup, doc retrieval, and code generation based on official sources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb580a132e7942653b6c763cb7cad2369efb89d535a7929fc5cd8357c9c4815a"
+}

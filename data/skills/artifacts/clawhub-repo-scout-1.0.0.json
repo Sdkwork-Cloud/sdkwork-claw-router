@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repo-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repo_scout",
+  "skill": {
+    "id": 41195,
+    "skillKey": "clawhub-repo-scout",
+    "name": "repo-scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repo-scout",
+    "url": "https://clawhub.ai/skills/repo-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repo-scout-30c7f12d783effa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, evaluate, and rank GitHub repositories in any ecosystem or domain. Produces a structured ranking document with star counts, languages, issue health..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sliverp",
+      "userId": "s179xvx68phk51wt3ya911nnmd83gbe5",
+      "displayName": "Bijin",
+      "image": "https://avatars.githubusercontent.com/u/38134380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774358655396,
+      "changelog": "Initial public release of repo-scout.\n\n- Discover, evaluate, and rank GitHub repositories by ecosystem or domain.\n- Produces a structured markdown report with star counts, languages, issue health, and contribution friendliness scores.\n- Supports advanced scoring: considers bugs, contribution docs, CI/CD, community size, and PR responsiveness.\n- Includes workflow to define search criteria, systematically collect data, rank, and filter repositories.\n- Enables easy identification of top open-source projects and skipping of unsuitable candidates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9c91bae57a905399511ff7ea5ace8e258053ff4153b093989d31c6cd0d01de6"
+}

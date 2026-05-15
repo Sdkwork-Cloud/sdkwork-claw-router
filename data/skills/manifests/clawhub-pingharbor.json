@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29247,
+  "uuid": "skill-clawhub-pingharbor",
+  "skillKey": "clawhub-pingharbor",
+  "name": "PingHarbor",
+  "summary": "Query uptime monitors, heartbeat monitors, manage sites, retrieve incidents, create monitors, and fetch SLA reports from your PingHarbor account.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pingharbor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "captain-cole",
+      "features": [
+        "Query uptime monitors, heartbeat monitors, manage sites, retrieve incidents, create monitors, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pingharbor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269148771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pingharbor",
+      "url": "https://clawhub.ai/skills/pingharbor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pingharbor",
+    "url": "https://clawhub.ai/skills/pingharbor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pingharbor-593b0595cdc559e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pingharbor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-pingharbor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92e1e261a6d7cf666789803e0c67395043ad94413226c9a7ebcf337c3bdcc772",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:32:38.848Z"
+}

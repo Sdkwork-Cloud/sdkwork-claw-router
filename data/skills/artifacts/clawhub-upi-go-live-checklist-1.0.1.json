@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upi-go-live-checklist@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upi_go_live_checklist",
+  "skill": {
+    "id": 33951,
+    "skillKey": "clawhub-upi-go-live-checklist",
+    "name": "UPI Go Live Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upi-go-live-checklist",
+    "url": "https://clawhub.ai/skills/upi-go-live-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upi-go-live-checklist-e57b356b2d019351.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide UPI payments launch from setup through sandbox testing to go-live readiness with detailed checklists, test matrix, gates, and rollback planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anugotta",
+      "userId": "s17axsx356as5m47cf210hgx2183e9km",
+      "displayName": "ASP",
+      "image": "https://avatars.githubusercontent.com/u/4218061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773922884820,
+      "changelog": "- Removed the environment variable and binary tool requirements from metadata.\n- No changes to file content or workflow; checklist, phases, and execution flow remain the same.\n- Skill description, purpose, and disclaimers are unchanged.\n- This update does not impact user experience or checklist outcomes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:631955d539c1b7c1c60428e795f002f2a11871bbab5294d9dd3540c4cdee6089"
+}

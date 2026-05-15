@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recruiting-interview-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recruiting_interview_kit",
+  "skill": {
+    "id": 59193,
+    "skillKey": "clawhub-recruiting-interview-kit",
+    "name": "Recruiting Interview Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recruiting-interview-kit",
+    "url": "https://clawhub.ai/skills/recruiting-interview-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recruiting-interview-kit-07664977ed060a50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据 JD 生成面试题、评分维度、红旗项与面试记录模板。；use for recruiting, interview, hiring workflows；do not use for 生成歧视性问题, 替代最终录用决策."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773894837092,
+      "changelog": "Initial release of recruiting-interview-kit.\n\n- Generates interview questions, scoring dimensions, red flags, and interview record templates based on job descriptions.\n- Designed for structured recruiting, interview, and hiring workflows.\n- Prioritizes clarity, review-ready drafts, and explicit identification of missing information.\n- Ensures compliance by not generating discriminatory questions or making final hiring decisions.\n- Includes clear boundaries on workflow automation and data handling for security.\n- Provides standard output sections: job understanding, question bank, evaluation criteria, red flags, templates, and candidate experience notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b08de4b664dc6a35cbd0c359c0a6ad39482a8ca40fcd71b014b1332b92eb749"
+}

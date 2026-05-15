@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17008,
+  "uuid": "skill-clawhub-wechat-mp-publisher-1-0-0",
+  "skillKey": "clawhub-wechat-mp-publisher-1-0-0",
+  "name": "Wechat Mp Publisher 1.0.0",
+  "summary": "Publish articles to WeChat Official Accounts via API using configured AppID, AppSecret, and IP whitelist with access token management.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_publisher_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saaaa1aaaaS",
+      "features": [
+        "Publish articles to WeChat Official Accounts via API using configured AppID, AppSecret, and IP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp-publisher-1-0-0@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144110626?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp-publisher-1-0-0",
+      "url": "https://clawhub.ai/skills/wechat-mp-publisher-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-publisher-1-0-0",
+    "url": "https://clawhub.ai/skills/wechat-mp-publisher-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-publisher-1-0-0-38d1da4c16407bb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp-publisher-1-0-0@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-publisher-1-0-0-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b544e19da187c0ac2e1b7305ca6e631b0d519c588e1adce1616499f6421d1c9",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T00:49:34.246Z"
+}

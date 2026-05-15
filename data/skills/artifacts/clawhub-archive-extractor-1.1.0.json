@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/archive-extractor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archive_extractor",
+  "skill": {
+    "id": 19434,
+    "skillKey": "clawhub-archive-extractor",
+    "name": "archive-extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archive-extractor",
+    "url": "https://clawhub.ai/skills/archive-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archive-extractor-9a11fc1852cb6c33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recursively extract archive files from a file or directory. Supports zip, tar, tar.gz, tar.bz2, tar.xz, tgz, rar, 7z, gz, bz2, xz. Works on Windows, Linux, m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiliangzhao20241028",
+      "userId": "s177r82hnm8jhznzckvabgck8s83xkdn",
+      "displayName": "leon388",
+      "image": "https://avatars.githubusercontent.com/u/12844755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 512,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776222738366,
+      "changelog": "- Renamed skill from \"smart-archive-extractor\" to \"archive-extractor\".\n- Updated description and documentation for clarity and conciseness.\n- Added more detailed platform compatibility and dependency notes.\n- Clarified exact supported archive formats and their backends.\n- Stressed zero external software dependency—works with just Python 3.8+.\n- Added new metadata files for skill indexing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e35c25c1a640f6a9c650d457e75ec95d18e73d8653a0f9711b53dbe546c2df07"
+}

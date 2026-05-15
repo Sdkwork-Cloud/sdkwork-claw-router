@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60906,
+  "uuid": "skill-clawhub-knowledge-system",
+  "skillKey": "clawhub-knowledge-system",
+  "name": "龙虾知识体系管理",
+  "summary": "基于 Markdown 文件的 AI Agent 知识管理体系。建立和维护：SOUL（人格）/ USER（用户）/ AGENTS（工作规范）/ TOOLS（工具配置）/ MEMORY（长期记忆）/ memory（每日记录）/ .learnings（反思改进）/ HEARTBEAT（定期任务）。包含多 Agent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "吴俊",
+      "features": [
+        "基于 Markdown 文件的 AI Agent 知识管理体系。建立和维护：SOUL（人格）/ USER（用户）/ AGENTS（工作规范）/ TOOLS（工具配置）/ MEMORY（长期记."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-system@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18624676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-system",
+      "url": "https://clawhub.ai/skills/knowledge-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-system",
+    "url": "https://clawhub.ai/skills/knowledge-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-system-fade4b8a7cf7844e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-system@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-system-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:348b3407641b5d75633c8683dbc623f867bb47cb609750a25452a9c2c226eb25",
+      "artifactSizeBytes": 2618
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T09:44:22.971Z"
+}

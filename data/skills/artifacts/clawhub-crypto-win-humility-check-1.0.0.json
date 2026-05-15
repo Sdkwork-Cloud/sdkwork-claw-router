@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crypto-win-humility-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_win_humility_check",
+  "skill": {
+    "id": 45715,
+    "skillKey": "clawhub-crypto-win-humility-check",
+    "name": "Crypto Win Humility Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-win-humility-check",
+    "url": "https://clawhub.ai/skills/crypto-win-humility-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-win-humility-check-219be0832aefce29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A reflection skill that helps users process a win without overconfidence or lifestyle inflation. Use after a successful trade or investment gain. Prompt-only."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776300095548,
+      "changelog": "Initial release of crypto-win-humility-check skill:\n\n- Provides structured reflection after a successful crypto trade or investment gain.\n- Guides users to separate skill vs. luck and avoid overconfidence or lifestyle inflation.\n- Surfaces urges to over-trade or change lifestyle, and generates a personal humility anchor.\n- Includes safeguards for large gains and impulses to increase allocation.\n- Designed as a prompt-only tool for immediate post-gain use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e36ed2d78ef64126666beabd670c5a330e9e8084c2beda9fe632eff6d0a0142"
+}

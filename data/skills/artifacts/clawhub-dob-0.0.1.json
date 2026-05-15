@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dob@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dob",
+  "skill": {
+    "id": 62204,
+    "skillKey": "clawhub-dob",
+    "name": "dob"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dob",
+    "url": "https://clawhub.ai/skills/dob",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dob-384f303b14bcda1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "工具箱。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qshfu",
+      "userId": "s176qhj9skyjk88kd2j0hsnbhd86461f",
+      "displayName": "qshfu",
+      "image": "https://avatars.githubusercontent.com/u/15900749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1778145769133,
+      "changelog": "- 初始版本，发布 Deep Memory（深层记忆）分层结构化知识库方案。\n- 明确 deep-memory 与 memory_search 的职责与区别。\n- 提供详细决策树、目录结构、增查流程和关键词索引规范。\n- 包含初始化脚本、常见问题、脚本使用方法及维护指南。\n- 适合长期结构化沉淀知识、工具用法与经验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff6376143effbd5aff22443883955a29916594b6300569c5ee1a107c62c959a6"
+}

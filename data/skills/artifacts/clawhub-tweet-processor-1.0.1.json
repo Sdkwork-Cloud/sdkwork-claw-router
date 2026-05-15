@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tweet-processor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tweet_processor",
+  "skill": {
+    "id": 18306,
+    "skillKey": "clawhub-tweet-processor",
+    "name": "Tweet Processor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tweet-processor",
+    "url": "https://clawhub.ai/skills/tweet-processor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tweet-processor-1167603145045c31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract key insights from tweet URLs and categorize them into structured, formatted notes across tools, tech, design, people, and miscellaneous files."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caqlayan",
+      "userId": "publishers:caqlayan",
+      "displayName": "caqlayan",
+      "image": "https://avatars.githubusercontent.com/u/79770701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 683,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771600017936,
+      "changelog": "- Added _meta.json file to the project for metadata management.\n- No changes to existing functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6d58a6697e6fccc7d75bb5268f97999805f86ecbe54d8b268853124fe31ff659"
+}

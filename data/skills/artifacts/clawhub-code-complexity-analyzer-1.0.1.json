@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-complexity-analyzer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_complexity_analyzer",
+  "skill": {
+    "id": 34204,
+    "skillKey": "clawhub-code-complexity-analyzer",
+    "name": "Code Complexity Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-complexity-analyzer",
+    "url": "https://clawhub.ai/skills/code-complexity-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-complexity-analyzer-61da3b6a6530d60e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Measure cyclomatic complexity, cognitive complexity, and structural metrics for Python, JavaScript/TypeScript, and Go code. Use when analyzing code quality,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593638729,
+      "changelog": "- No file changes detected in this release.\n- No new features, fixes, or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:161a1c467bc2c0dedb6d897c33df351ba25f976bca0925e209b185e2962c9559"
+}

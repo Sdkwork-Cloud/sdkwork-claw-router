@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-agent-config-helper@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_config_helper",
+  "skill": {
+    "id": 67487,
+    "skillKey": "clawhub-feishu-agent-config-helper",
+    "name": "飞书 Agent 配置助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-config-helper",
+    "url": "https://clawhub.ai/skills/feishu-agent-config-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-config-helper-d0f0f828e60919f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "指导用户生成飞书机器人配置片段并手动集成至 openclaw.json，支持账户和群聊级绑定及会话作用域设置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe12801",
+      "userId": "s170paks6vj4s9bvx4s1fx60f183gc5d",
+      "displayName": "joe12801",
+      "image": "https://avatars.githubusercontent.com/u/70465495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775012245887,
+      "changelog": "Initial release for Feishu Agent configuration assistance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd311d32a6698d5208e1cf5910bbe43c20ae8a08ca33c4783aac0b7203e6eb14"
+}

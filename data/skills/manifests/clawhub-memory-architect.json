@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22184,
+  "uuid": "skill-clawhub-memory-architect",
+  "skillKey": "clawhub-memory-architect",
+  "name": "Memory Architect",
+  "summary": "Restructure flat MEMORY.md files into a tiered memory system with an entity graph. Use when: (1) MEMORY.md is growing unwieldy or exceeds 150 lines, (2) user...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_architect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kapslap",
+      "features": [
+        "Restructure flat MEMORY.md files into a tiered memory system with an entity graph",
+        "Use when: (1) MEMORY.md is growing unwieldy or exceeds 150 lines, (2) user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-architect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92482462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-architect",
+      "url": "https://clawhub.ai/skills/memory-architect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-architect",
+    "url": "https://clawhub.ai/skills/memory-architect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-architect-e8366e87486bba14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-architect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-architect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6287b02178035ee217d66fa6ef804a0617bf7ef69aed4745f25a3c4906c4f0e",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T03:55:23.045Z"
+}

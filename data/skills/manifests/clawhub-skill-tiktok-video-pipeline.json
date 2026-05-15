@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56265,
+  "uuid": "skill-clawhub-skill-tiktok-video-pipeline",
+  "skillKey": "clawhub-skill-tiktok-video-pipeline",
+  "name": "Skill Tiktok Video Pipeline",
+  "summary": "End-to-end TikTok ad video pipeline. Product script → Veo base video → animated caption overlay → audio mix → final MP4. One command, full automation.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_tiktok_video_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zero2Ai",
+      "features": [
+        "End-to-end TikTok ad video pipeline",
+        "Product script → Veo base video → animated caption overlay → audio mix → final MP4",
+        "One command, full automation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-tiktok-video-pipeline@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244362887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-tiktok-video-pipeline",
+      "url": "https://clawhub.ai/skills/skill-tiktok-video-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-tiktok-video-pipeline",
+    "url": "https://clawhub.ai/skills/skill-tiktok-video-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-tiktok-video-pipeline-37d8f911075a30b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-tiktok-video-pipeline@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-tiktok-video-pipeline-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfa470f322166115b42f30afd4a50dc311c783b7ec710af3e1aaa67bbe2ba2ff",
+      "artifactSizeBytes": 2820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T22:11:33.048Z"
+}

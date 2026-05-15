@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62063,
+  "uuid": "skill-clawhub-mcp-review",
+  "skillKey": "clawhub-mcp-review",
+  "name": "Mcp Review",
+  "summary": "审查MCP Server工具实现是否符合接口设计准则。当用户要求review、检查、审查MCP工具定义，或说\"check一下工具设计\"、\"review mcp tools\"、\"工具设计有没有问题\"时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sawzhang",
+      "features": [
+        "审查MCP Server工具实现是否符合接口设计准则。当用户要求review、检查、审查MCP工具定义，或说\"check一下工具设计\"、\"review mcp tools\"、\"工具设计有没有."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/859624?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-review",
+      "url": "https://clawhub.ai/skills/mcp-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-review",
+    "url": "https://clawhub.ai/skills/mcp-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-review-aaf0204ec4b25549.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da27427de49b9b388b58feaeff416b1ef2dddd2d21199d2dbe9bea13e10696fd",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:27:52.440Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-clear-committed-file-history@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_clear_committed_file_history",
+  "skill": {
+    "id": 40141,
+    "skillKey": "clawhub-git-clear-committed-file-history",
+    "name": "Permanently Clear Files from Git History"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-clear-committed-file-history",
+    "url": "https://clawhub.ai/skills/git-clear-committed-file-history",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-clear-committed-file-history-d82f822d2c21524c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide users to permanently remove files from Git repository history. Use this skill when users mention any of the following scenarios: - \"git filter-repo\", \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hhjin",
+      "userId": "s17acqvy6hjm9yg9pssq1t6r01858xp5",
+      "displayName": "hhjin",
+      "image": "https://avatars.githubusercontent.com/u/20532714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776756134701,
+      "changelog": "- Initial release of the git-filter-repo-remove-file skill.\n- Provides a step-by-step guide to permanently remove files from all Git repository history using git filter-repo.\n- Includes recommendations for backing up repositories and revoking compromised secrets.\n- Offers troubleshooting tips for common issues following a history rewrite.\n- Instructions address scenarios like removing sensitive data, large files, and ensuring all collaborators are informed of history changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54da8560656e0177c0eafbd3fba997a2778dba2bb5dd796f590aed9cdfc2c7f5"
+}

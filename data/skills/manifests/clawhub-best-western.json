@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69049,
+  "uuid": "skill-clawhub-best-western",
+  "skillKey": "clawhub-best-western",
+  "name": "Best Western",
+  "summary": "提供贝斯特韦斯特全球连锁酒店的历史、服务、市场地位及最新动态信息查询。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_western",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供贝斯特韦斯特全球连锁酒店的历史、服务、市场地位及最新动态信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/best-western@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "best-western",
+      "url": "https://clawhub.ai/skills/best-western"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-western",
+    "url": "https://clawhub.ai/skills/best-western",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-western-ac827447fdf96f72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/best-western@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-best-western-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc634fdbdaa8e873cecbc5ef3681ba19fccf9771c2e9b59ab8fd81584e8b94dc",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:02:09.288Z"
+}

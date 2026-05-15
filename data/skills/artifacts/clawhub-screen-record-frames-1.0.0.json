@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screen-record-frames@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_record_frames",
+  "skill": {
+    "id": 27302,
+    "skillKey": "clawhub-screen-record-frames",
+    "name": "android record screen and extract key frames"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-record-frames",
+    "url": "https://clawhub.ai/skills/screen-record-frames",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-record-frames-754c79f3c0667b65.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record Android screen via scrcpy, dynamically set keyframe intervals with ffmpeg, then extract and list key frames as PNG images."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qomg",
+      "userId": "s179cmbx97vbtzfj4y270wtqws84wkn2",
+      "displayName": "qomg",
+      "image": "https://avatars.githubusercontent.com/u/11417472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773649492950,
+      "changelog": "Initial release: Capture Android screen, extract and manage video key frames.\n\n- Record Android device screen using scrcpy with touch display support.\n- Automatically check required tools (adb, scrcpy, ffmpeg) before running.\n- Dynamically set key frame interval during video processing to control output.\n- Extract all key frames as PNG images using ffmpeg.\n- List extracted key frame images for easy review.\n- Support for custom keyframe interval and output directory via environment variables.\n- Includes troubleshooting tips for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc2393c5452707dc72262896d17b7c38fc3e338b69112f2c712a575b8e5a0157"
+}

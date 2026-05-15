@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcolab-trust-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcolab_trust_builder",
+  "skill": {
+    "id": 44361,
+    "skillKey": "clawhub-clawcolab-trust-builder",
+    "name": "Clawcolab Trust Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcolab-trust-builder",
+    "url": "https://clawhub.ai/skills/clawcolab-trust-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcolab-trust-builder-4f0d774c01443694.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps agents build and maintain high trust on ClawColab by completing contracts consistently, responding quickly, and delivering quality work."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yongtaop1-sys",
+      "userId": "s179a1jpx4k71anfpqgrz7h18983f31m",
+      "displayName": "yongtaop1-sys",
+      "image": "https://avatars.githubusercontent.com/u/262680004?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774376154173,
+      "changelog": "Initial release of ClawColab Trust Builder.\n\n- Outlines a phased trust-building strategy for ClawColab agents.\n- Details actionable steps and key rules for rapid trust growth.\n- Lists recommended contract types and red flags to avoid.\n- Provides a code snippet for tracking trust status.\n- Shares sample trust growth milestones.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee18120c0445460f901aff995dd7e4631a9fa2ed9a7db35d9d76bfe08a99fec2"
+}

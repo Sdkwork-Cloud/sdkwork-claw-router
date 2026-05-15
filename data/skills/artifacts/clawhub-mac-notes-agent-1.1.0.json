@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-notes-agent@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_notes_agent",
+  "skill": {
+    "id": 12322,
+    "skillKey": "clawhub-mac-notes-agent",
+    "name": "Mac Notes Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-notes-agent",
+    "url": "https://clawhub.ai/skills/mac-notes-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-notes-agent-9dcd4742253a25b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate with the macOS Notes app (Apple Notes). Supports creating, listing, reading, updating, deleting, and searching notes via a simple Node.js CLI that bridges to AppleScript."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swancho",
+      "userId": "s17ehwbkyq7vpcv787jt0q8f2d83pjry",
+      "displayName": "Swan C",
+      "image": "https://avatars.githubusercontent.com/u/121996454?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1673,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770597530247,
+      "changelog": "Remove --bodyFile option for security (arbitrary file read). Use --body with \\n for multi-line text instead.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a30bbe32427963a373436cc55e723015704a1a9dfe0da816e0693901345c6048"
+}

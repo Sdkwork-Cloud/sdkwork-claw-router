@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/planning-with-files@2.36.1",
+  "version": "2.36.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.planning_with_files",
+  "skill": {
+    "id": 8347,
+    "skillKey": "clawhub-planning-with-files",
+    "name": "Planning with files"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "planning-with-files",
+    "url": "https://clawhub.ai/skills/planning-with-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/planning-with-files-8ef4999b984ac739.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Implements Manus-style file-based planning to organize and track progress on complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when aske..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "othmanadi",
+      "userId": "s17ds6610wra1m85mmdwy4zja184wyga",
+      "displayName": "Ahmad Othman Ammar Adi.",
+      "image": "https://avatars.githubusercontent.com/u/78882424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 19344,
+      "installsAllTime": 175,
+      "installsCurrent": 166,
+      "stars": 46,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.36.1",
+      "createdAt": 1777656674762,
+      "changelog": "**No significant user-facing changes.**  \n- Updated the `Stop` hook to use a less restrictive PowerShell execution policy (`RemoteSigned` instead of `Bypass`).\n- Bumped version to 2.36.1.\n- No behavior or documentation changes affecting general use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0007a548f0efed21cab04dba31168c85f95e0317fdc1a9b12ec09898be62bbdb"
+}

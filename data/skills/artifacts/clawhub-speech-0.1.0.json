@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/speech@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech",
+  "skill": {
+    "id": 18900,
+    "skillKey": "clawhub-speech",
+    "name": "Speech"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech",
+    "url": "https://clawhub.ai/skills/speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-05fb617ad543807c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; ru..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "patches429",
+      "userId": "publishers:patches429",
+      "displayName": "Parker",
+      "image": "https://avatars.githubusercontent.com/u/169116739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773051909180,
+      "changelog": "Initial release of the speech skill.\n\n- Provides text-to-speech narration, voiceover, and batch speech generation using the OpenAI Audio API and bundled CLI.\n- Supports single or batch audio generation workflows with clear decision logic.\n- Covers default voice/model selection, instruction formatting, file conventions, and dependency setup.\n- Enforces environment checks, API key requirements, and output organization.\n- Includes comprehensive instruction on user input augmentation and delivery customization.\n- References sample templates and modules for common use cases (narration, IVR, accessibility, etc.).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:565723546f638014e7b1fa3af58fd46619782621543d409d95ad695eaf9f09f6"
+}

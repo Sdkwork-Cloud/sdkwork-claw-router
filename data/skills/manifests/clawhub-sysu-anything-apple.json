@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58432,
+  "uuid": "skill-clawhub-sysu-anything-apple",
+  "skillKey": "clawhub-sysu-anything-apple",
+  "name": "SYSU Anything Apple",
+  "summary": "Use when the user wants the macOS 12+ Apple-enhanced SYSU workflow layer, especially natural-language requests such as 把课表同步到日历、把雨课堂 ddl 加到提醒事项、把宣讲会或招聘会写进日历、...",
+  "version": "0.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sysu_anything_apple",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qybaihe",
+      "features": [
+        "Use when the user wants the macOS 12+ Apple-enhanced SYSU workflow layer, especially natural-la."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sysu-anything-apple@0.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137127051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sysu-anything-apple",
+      "url": "https://clawhub.ai/skills/sysu-anything-apple"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sysu-anything-apple",
+    "url": "https://clawhub.ai/skills/sysu-anything-apple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sysu-anything-apple-b52b7c50e131a1c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sysu-anything-apple@0.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-sysu-anything-apple-0.3.6.json",
+      "version": "0.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebba669a7f5de49dc00b5ba550e948e2eb21c586618b00237ded909eeb84a751",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:17:17.275Z"
+}

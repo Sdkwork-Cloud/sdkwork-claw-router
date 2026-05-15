@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dashboard-setup-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dashboard_setup_2",
+  "skill": {
+    "id": 72628,
+    "skillKey": "clawhub-dashboard-setup-2",
+    "name": "看板搭建"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dashboard-setup-2",
+    "url": "https://clawhub.ai/skills/dashboard-setup-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dashboard-setup-2-e5d90918071ea70a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供看板搭建的可落地指南与SOP。在开展看板搭建相关工作时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774231515899,
+      "changelog": "Initial release of the dashboard setup skill.\n\n- Provides practical guidelines and SOPs for dashboard implementation.\n- Covers business goal clarification, KPI selection, SOP formulation, data integration, pilot testing, review, and knowledge base updates.\n- Emphasizes compliance with Chinese regulations and data privacy.\n- Includes reusable templates, scripts, checklists, and reporting structures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e34bbfb36d37a13874ad5ec7fb513d2a50aa685657505ceb7005db7711ddb6f8"
+}

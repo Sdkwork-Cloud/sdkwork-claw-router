@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48524,
+  "uuid": "skill-clawhub-on-call-schedule-optimizer",
+  "skillKey": "clawhub-on-call-schedule-optimizer",
+  "name": "On Call Schedule Optimizer",
+  "summary": "Analyze and optimize on-call schedules for engineering teams. Balance load distribution, respect timezone coverage, minimize burnout, handle holidays and PTO...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.on_call_schedule_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze and optimize on-call schedules for engineering teams",
+        "Balance load distribution, respect timezone coverage, minimize burnout, handle holidays and PTO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/on-call-schedule-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "on-call-schedule-optimizer",
+      "url": "https://clawhub.ai/skills/on-call-schedule-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "on-call-schedule-optimizer",
+    "url": "https://clawhub.ai/skills/on-call-schedule-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/on-call-schedule-optimizer-5e8c3600ca815120.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/on-call-schedule-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-on-call-schedule-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a2a023be508898a435c7dd7d2acc1b3454543ff754a80d842cbdbd1a6550c1b",
+      "artifactSizeBytes": 2588
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T09:43:31.856Z"
+}

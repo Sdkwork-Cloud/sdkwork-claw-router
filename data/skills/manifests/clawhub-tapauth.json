@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34794,
+  "uuid": "skill-clawhub-tapauth",
+  "skillKey": "clawhub-tapauth",
+  "name": "TapAuth",
+  "summary": "OAuth token provider for OpenClaw agents — Google Calendar, Gmail, GitHub, Slack, Linear, Notion, Vercel, Sentry, Asana, Discord, or Apify. Integrates with O...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tapauth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonah Schwartz",
+      "features": [
+        "OAuth token provider for OpenClaw agents — Google Calendar, Gmail, GitHub, Slack, Linear, Notio.",
+        "Integrates with O..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tapauth@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4267882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tapauth",
+      "url": "https://clawhub.ai/skills/tapauth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tapauth",
+    "url": "https://clawhub.ai/skills/tapauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tapauth-8569b2d895ca9777.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tapauth@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tapauth-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4343a8a82bc43d45dbf9f4556ed86807d79ecf3fa63b9d3fe233535406263cbd",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T21:07:37.166Z"
+}

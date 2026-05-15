@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48190,
+  "uuid": "skill-clawhub-mortgage-rate-monitor",
+  "skillKey": "clawhub-mortgage-rate-monitor",
+  "name": "Mortgage Rate Monitor",
+  "summary": "Concise daily weather briefing for OpenClaw.",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mortgage_rate_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chi Li",
+      "features": [
+        "Concise daily weather briefing for OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mortgage-rate-monitor@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10106088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mortgage-rate-monitor",
+      "url": "https://clawhub.ai/skills/mortgage-rate-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mortgage-rate-monitor",
+    "url": "https://clawhub.ai/skills/mortgage-rate-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mortgage-rate-monitor-bbdf8f77b57ad0c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mortgage-rate-monitor@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mortgage-rate-monitor-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98c48b254d4e4baef7412b0a0d3bc8d321b25c8bda047471d97e01edda89d4a2",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T05:32:11.687Z"
+}

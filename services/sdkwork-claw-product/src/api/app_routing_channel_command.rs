@@ -168,19 +168,19 @@ fn app_routing_channel_command_router_with_state(
 ) -> Router {
     Router::new()
         .route(
-            "/app/v3/api/router/routing/channels",
+            "/app/v3/api/ai/routing/channels",
             post(create_routing_channel),
         )
         .route(
-            "/app/v3/api/router/routing/channels/{channel_id}",
+            "/app/v3/api/ai/routing/channels/{channel_id}",
             axum::routing::put(update_routing_channel).delete(delete_routing_channel),
         )
         .route(
-            "/app/v3/api/router/routing/channels/{channel_id}/status",
+            "/app/v3/api/ai/routing/channels/{channel_id}/status",
             axum::routing::put(set_routing_channel_status),
         )
         .route(
-            "/app/v3/api/router/routing/channels/{channel_id}/test",
+            "/app/v3/api/ai/routing/channels/{channel_id}/verify",
             post(test_routing_channel),
         )
         .with_state(AppRoutingChannelCommandState {
@@ -810,7 +810,7 @@ fn normalize_capabilities(capabilities: Vec<String>) -> Result<Vec<String>, Stri
                 return Err(
                     "capabilities must contain only llm, image, audio, music, sfx, or video"
                         .to_owned(),
-                )
+                );
             }
         }
     }

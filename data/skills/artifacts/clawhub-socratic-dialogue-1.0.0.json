@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/socratic-dialogue@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.socratic_dialogue",
+  "skill": {
+    "id": 58419,
+    "skillKey": "clawhub-socratic-dialogue",
+    "name": "socratic-dialogue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "socratic-dialogue",
+    "url": "https://clawhub.ai/skills/socratic-dialogue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/socratic-dialogue-84ebc9c8d7d2f8ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "苏格拉底式对话 - 澄清思想、挑战假设、寻找证据、探寻替代观点。Socratic dialogue - clarify thinking, challenge assumptions, seek evidence, explore alternative perspectives."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuqingsonga",
+      "userId": "s17dmy3v6hzrhra9xgyyn3rxyd8412qa",
+      "displayName": "zhuqingsonga",
+      "image": "https://avatars.githubusercontent.com/u/33415526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775059133170,
+      "changelog": "Initial release of socratic-dialogue skill:\n\n- Enables Socratic dialogue to clarify thinking, challenge assumptions, seek evidence, and explore alternative perspectives.\n- Provides multiple conversation modes: clarify, challenge, evidence, explore, and a full four-step dialogue process.\n- Focuses on guiding thought rather than giving direct answers.\n- Includes quick reference commands and an explanation of Socratic principles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a68ab62c6271a4c4300dde8e643ce85b5ad4f6b5b5198dfcd75f2d6ae4438d4"
+}

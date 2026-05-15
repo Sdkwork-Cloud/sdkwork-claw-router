@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocms-ai-prompt-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocms_ai_prompt_generator",
+  "skill": {
+    "id": 22187,
+    "skillKey": "clawhub-ocms-ai-prompt-generator",
+    "name": "ai-prompt-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocms-ai-prompt-generator",
+    "url": "https://clawhub.ai/skills/ocms-ai-prompt-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocms-ai-prompt-generator-258f97f30be94dde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and optimize precise AI prompts using templates and styles for models like GPT-4, Claude, Gemini, and Qwen."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boleyn",
+      "userId": "s178twzv85nhtpzkgxdawkbb7s83pe5j",
+      "displayName": "santian",
+      "image": "https://avatars.githubusercontent.com/u/24293664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773045997881,
+      "changelog": "Import from LeoYeAI/openclaw-master-skills on 2026-03-09",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:442ec9bc7397c95d4a11c363fe254de226d8e728849490eb16a0da22a2f8b65c"
+}

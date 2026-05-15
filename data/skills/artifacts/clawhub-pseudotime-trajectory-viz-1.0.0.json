@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pseudotime-trajectory-viz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pseudotime_trajectory_viz",
+  "skill": {
+    "id": 55236,
+    "skillKey": "clawhub-pseudotime-trajectory-viz",
+    "name": "Pseudotime Trajectory Viz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pseudotime-trajectory-viz",
+    "url": "https://clawhub.ai/skills/pseudotime-trajectory-viz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pseudotime-trajectory-viz-b77ec5ff8f339f23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze data with `pseudotime-trajectory-viz` using a reproducible workflow, explicit validation, and structured outputs for review-ready interpretation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774920664827,
+      "changelog": "pseudotime-trajectory-viz 1.0.0\n\n- Initial release with structured, reproducible workflow for visualizing single-cell developmental trajectories.\n- Supports pseudotime analysis, lineage inference, and overlay of gene expression dynamics on trajectory plots.\n- Provides explicit input validation, fallback handling, and output discipline for review-ready results.\n- Accepts AnnData (.h5ad) files and outputs trajectory visualizations, pseudotime statistics, and detailed reports.\n- Includes audit-ready commands and configurable analysis via command-line parameters.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:52b069ffb47d3fc42587f8922acd1851d8a6addb1637bdf7de1879a760eebaed"
+}

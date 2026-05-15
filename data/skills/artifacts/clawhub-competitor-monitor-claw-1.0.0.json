@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitor-monitor-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_monitor_claw",
+  "skill": {
+    "id": 69851,
+    "skillKey": "clawhub-competitor-monitor-claw",
+    "name": "实时竞品监控虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-monitor-claw",
+    "url": "https://clawhub.ai/skills/competitor-monitor-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-monitor-claw-03a46bd6d05de08d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实时竞品监控虾 — 持续追踪竞品价格、评价与上新动作的情报哨兵。当以下情况时使用此 Skill：(1) 需要监控竞品价格变动并设置预警阈值；(2) 需要追踪竞品上新动态；(3) 需要分析竞品评价口碑（好评/差评关键词）；(4) 需要检测竞品促销活动；(5) 需要生成竞品周报/月报；(6) 用户提到\"竞品监控\"、\"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775725245503,
+      "changelog": "Initial release: 价格监控、变化检测、竞品报告、飞书预警推送",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:53386837fd9b6db9e9780dfc706b1512ec04682092d61b4278f92fd9c91c4d85"
+}

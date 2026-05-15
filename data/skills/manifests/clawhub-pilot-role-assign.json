@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40036,
+  "uuid": "skill-clawhub-pilot-role-assign",
+  "skillKey": "clawhub-pilot-role-assign",
+  "name": "Pilot Role Assign",
+  "summary": "Assign and manage hierarchical roles within a swarm for coordinated task distribution. Use this skill when: 1. Agents need different responsibilities (leader...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_role_assign",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Assign and manage hierarchical roles within a swarm for coordinated task distribution",
+        "Use this skill when: 1",
+        "Agents need different responsibilities (leader..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-role-assign@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-role-assign",
+      "url": "https://clawhub.ai/skills/pilot-role-assign"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-role-assign",
+    "url": "https://clawhub.ai/skills/pilot-role-assign",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-role-assign-9a88ff1c9eb28b16.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-role-assign@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-role-assign-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fb90e7735a3f24dee09ff4f0659e36b4b2e7159ca14a334863f5db1dbc3e888",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T08:28:34.613Z"
+}

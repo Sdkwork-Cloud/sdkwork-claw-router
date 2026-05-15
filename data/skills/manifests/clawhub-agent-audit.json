@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11475,
+  "uuid": "skill-clawhub-agent-audit",
+  "skillKey": "clawhub-agent-audit",
+  "name": "Agent Audit",
+  "summary": "Audit your AI agent setup for performance, cost, and ROI. Scans OpenClaw config, cron jobs, session history, and model usage to find waste and recommend opti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sharbel",
+      "features": [
+        "Audit your AI agent setup for performance, cost, and ROI",
+        "Scans OpenClaw config, cron jobs, session history, and model usage to find waste and recommend."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/79539257?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-audit",
+      "url": "https://clawhub.ai/skills/agent-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-audit",
+    "url": "https://clawhub.ai/skills/agent-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-audit-a7f4ddab1e789859.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b5b0bbc5f8335ae7008e5e3f24ace859c2b4ae52dc79a1dec424ccce8c3e906",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T10:53:09.194Z"
+}

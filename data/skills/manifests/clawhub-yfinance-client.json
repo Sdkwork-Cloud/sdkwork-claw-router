@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20105,
+  "uuid": "skill-clawhub-yfinance-client",
+  "skillKey": "clawhub-yfinance-client",
+  "name": "yfinance-client",
+  "summary": "Provides simplified access to US and Hong Kong stock data, including prices, history, company info, financials, analyst insights, screeners, and options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yfinance_client",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xdl2003",
+      "features": [
+        "Provides simplified access to US and Hong Kong stock data, including prices, history, company i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yfinance-client@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101044428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yfinance-client",
+      "url": "https://clawhub.ai/skills/yfinance-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yfinance-client",
+    "url": "https://clawhub.ai/skills/yfinance-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yfinance-client-2aca772e03a2ca45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yfinance-client@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yfinance-client-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8582800498f70e095860a3e9d0e9227ca79ce3bb996f7b9e90c0cc827a5ec3ee",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:49:25.500Z"
+}

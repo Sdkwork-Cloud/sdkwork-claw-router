@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60794,
+  "uuid": "skill-clawhub-server-browser-automation",
+  "skillKey": "clawhub-server-browser-automation",
+  "name": "Server Browser Automation",
+  "summary": "在无桌面 Ubuntu 服务器上通过 XFCE 虚拟桌面和 Chrome 远程调试实现浏览器自动化及持久登录状态管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_browser_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenzheng9527",
+      "features": [
+        "在无桌面 Ubuntu 服务器上通过 XFCE 虚拟桌面和 Chrome 远程调试实现浏览器自动化及持久登录状态管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-browser-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207980092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-browser-automation",
+      "url": "https://clawhub.ai/skills/server-browser-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-browser-automation",
+    "url": "https://clawhub.ai/skills/server-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-browser-automation-abd22b39a0273381.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-browser-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-browser-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bca120d4da8aa80e66b1b2ab7f4d7c6ae61adff82c6ee20333e754d3cf43107",
+      "artifactSizeBytes": 2479
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T09:05:49.129Z"
+}

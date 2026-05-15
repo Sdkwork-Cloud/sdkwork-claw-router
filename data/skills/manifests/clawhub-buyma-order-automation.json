@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27681,
+  "uuid": "skill-clawhub-buyma-order-automation",
+  "skillKey": "clawhub-buyma-order-automation",
+  "name": "Buyma Order Automation",
+  "summary": "automate buyma order processing for regular daily runs and ad hoc order-range runs. use when chatgpt needs to access buyma in chrome, check or fill receipt m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buyma_order_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "innoucon-blip",
+      "features": [
+        "automate buyma order processing for regular daily runs and ad hoc order-range runs",
+        "use when chatgpt needs to access buyma in chrome, check or fill receipt m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buyma-order-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261756233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buyma-order-automation",
+      "url": "https://clawhub.ai/skills/buyma-order-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buyma-order-automation",
+    "url": "https://clawhub.ai/skills/buyma-order-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buyma-order-automation-4f12b3189307993d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buyma-order-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buyma-order-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91cffa30e2881cec28cf042cbddfae04a0f2adbaeec656acaeac3730af6b9c92",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:16:06.368Z"
+}

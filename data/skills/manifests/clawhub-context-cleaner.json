@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50106,
+  "uuid": "skill-clawhub-context-cleaner",
+  "skillKey": "clawhub-context-cleaner",
+  "name": "Context Cleaner (.md cleanup)",
+  "summary": "Optimize OpenClaw agent context files by reducing token usage 30-50% with backups, preview, rollback, and preserving core functionality on request.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_cleaner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sean",
+      "features": [
+        "Optimize OpenClaw agent context files by reducing token usage 30-50% with backups, preview, rol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-cleaner@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30160845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-cleaner",
+      "url": "https://clawhub.ai/skills/context-cleaner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-cleaner",
+    "url": "https://clawhub.ai/skills/context-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-cleaner-9040d069ddb2f6d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-cleaner@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-cleaner-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5787e6c92490ce76ee3d910e9e1c8b85700cbaafdbdbf865b7fcc2a6dd2009f",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T02:16:51.302Z"
+}

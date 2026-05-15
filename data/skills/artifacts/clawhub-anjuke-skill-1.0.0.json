@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anjuke-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anjuke_skill",
+  "skill": {
+    "id": 72075,
+    "skillKey": "clawhub-anjuke-skill",
+    "name": "anjuke-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anjuke-skill",
+    "url": "https://clawhub.ai/skills/anjuke-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anjuke-skill-46849b1346fbf456.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "该技能用于进行安居客账号自动化运营，包括账号登录、房源发布、房源检查、优化描述、增量投放、进行政府核验等具体操作，是一个全流程自动化运营的安居客技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chuapi2020",
+      "userId": "s179ex16gszeqp12z3rsmgnaw18403v4",
+      "displayName": "chuapi2020",
+      "image": "https://avatars.githubusercontent.com/u/266211246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 122,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776255070634,
+      "changelog": "该技能用于进行安居客账号自动化运营，包括账号登录、房源发布、房源检查、优化描述、增量投放、进行政府核验等具体操作，是一个全流程自动化运营的安居客技能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4775fd8a40dc6fe0b3511e80c4f4b83643c32233ff17f5b2e238274f64fad7e"
+}

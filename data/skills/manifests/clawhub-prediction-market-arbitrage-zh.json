@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69504,
+  "uuid": "skill-clawhub-prediction-market-arbitrage-zh",
+  "skillKey": "clawhub-prediction-market-arbitrage-zh",
+  "name": "预测市场套利",
+  "summary": "通过 AIsa API 发现 Polymarket 和 Kalshi 预测市场的套利机会。扫描体育市场跨平台价差、比较实时赔率、验证订单簿流动性。适用场景：预测市场套利、跨平台价差、体育博彩套利、赔率对比、无风险利润、市场低效。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_arbitrage_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "通过 AIsa API 发现 Polymarket 和 Kalshi 预测市场的套利机会。扫描体育市场跨平台价差、比较实时赔率、验证订单簿流动性。适用场景：预测市场套利、跨平台价差、体育博彩."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-market-arbitrage-zh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-market-arbitrage-zh",
+      "url": "https://clawhub.ai/skills/prediction-market-arbitrage-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-arbitrage-zh",
+    "url": "https://clawhub.ai/skills/prediction-market-arbitrage-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-arbitrage-zh-89f2045d7e045ca8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-market-arbitrage-zh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-market-arbitrage-zh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5dfd90627cd37418e2edffc49d2ed97567ae32ca81d88cf359c9f95472efc0c",
+      "artifactSizeBytes": 2628
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T13:14:54.017Z"
+}

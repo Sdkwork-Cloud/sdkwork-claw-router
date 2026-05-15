@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71802,
+  "uuid": "skill-clawhub-pathway-score-guide-pro",
+  "skillKey": "clawhub-pathway-score-guide-pro",
+  "name": "pathway-score-guide-pro",
+  "summary": "综合性的升学与职称综测评分和指引技能。覆盖专升本、保本、保研、考研、留学、读博、评职称，优先读取用户所在学校/单位最新文件；没有本地文件时，基于国家政策与代表性院校/单位公开规则给出可解释评分、差距分析、材料清单、时间线和补强建议。附带触发词、评分脚本、政策模板与资源文件。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pathway_score_guide_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "综合性的升学与职称综测评分和指引技能。覆盖专升本、保本、保研、考研、留学、读博、评职称，优先读取用户所在学校/单位最新文件；没有本地文件时，基于国家政策与代表性院校/单位公开规则给出可解释评."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pathway-score-guide-pro@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pathway-score-guide-pro",
+      "url": "https://clawhub.ai/skills/pathway-score-guide-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pathway-score-guide-pro",
+    "url": "https://clawhub.ai/skills/pathway-score-guide-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pathway-score-guide-pro-7d633943752aaa2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pathway-score-guide-pro@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pathway-score-guide-pro-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e35740d8741fadeb58d32c6729ddddd8ec65e3569dd64e76f2c4baad43bc4ed",
+      "artifactSizeBytes": 2887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T03:47:33.247Z"
+}

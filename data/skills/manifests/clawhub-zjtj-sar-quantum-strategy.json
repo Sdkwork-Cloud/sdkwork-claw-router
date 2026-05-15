@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68720,
+  "uuid": "skill-clawhub-zjtj-sar-quantum-strategy",
+  "skillKey": "clawhub-zjtj-sar-quantum-strategy",
+  "name": "ZJTJ-SAR四维选股策略",
+  "summary": "ZJTJ+SAR+成交量+市场情绪四维选股策略，结合主力动向、趋势判断、资金验证和环境分析，适合A股短线波段操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zjtj_sar_quantum_strategy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haohanyang92",
+      "features": [
+        "ZJTJ+SAR+成交量+市场情绪四维选股策略，结合主力动向、趋势判断、资金验证和环境分析，适合A股短线波段操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zjtj-sar-quantum-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61062925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zjtj-sar-quantum-strategy",
+      "url": "https://clawhub.ai/skills/zjtj-sar-quantum-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zjtj-sar-quantum-strategy",
+    "url": "https://clawhub.ai/skills/zjtj-sar-quantum-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zjtj-sar-quantum-strategy-1e570d9d06f80eb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zjtj-sar-quantum-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zjtj-sar-quantum-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:376626e3f12098b5f053e35fe5ef18953caae637e545ffd0874c50d51a68c619",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:04:23.599Z"
+}

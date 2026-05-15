@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-base-framework@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_base_framework",
+  "skill": {
+    "id": 56177,
+    "skillKey": "clawhub-knowledge-base-framework",
+    "name": "kb-framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-base-framework",
+    "url": "https://clawhub.ai/skills/knowledge-base-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-base-framework-bec1e9cdbe65325b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Erstellt eine hybride Knowledge Base mit automatischer Markdown-, PDF- und OCR-Indexierung, SQLite- und ChromaDB-Integration plus tägliche Datenqualitätsprüf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minenclown",
+      "userId": "s179kk29315fshf6hxn4st5kvx84p9re",
+      "displayName": "RaSt",
+      "image": "https://avatars.githubusercontent.com/u/161129987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1777417159982,
+      "changelog": "**Major upgrade: Adds full LLM integration, engine parallelism, and refactors architecture for extensibility.**\n\n- Introduced biblio/ directory with complete LLM integration (Ollama and HuggingFace transformers, async generator support, engine registry, parallel generation strategies).\n- Added configuration singletons for both KB and LLM via `kb/base/config.py` and `kb/biblio/config.py`.\n- CLI now supports advanced LLM features: status, engine management, essence & report generation, file watching, and scheduling.\n- Refactored knowledge base structure for clear engine/provider separation and future extensibility.\n- Removed old knowledge_base directory and replaced with robust framework/ engine/ biblio/ modules.\n- Added installation scripts and improved configuration via environment variables and .md documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed3d0f2febcb5021245da418be55b496cb5b123c65bfd9321b403055b68b8376"
+}

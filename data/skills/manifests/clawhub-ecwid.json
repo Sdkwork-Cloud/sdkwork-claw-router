@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30440,
+  "uuid": "skill-clawhub-ecwid",
+  "skillKey": "clawhub-ecwid",
+  "name": "Ecwid",
+  "summary": "Ecwid integration. Manage Stores. Use when the user wants to interact with Ecwid data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecwid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Ecwid integration",
+        "Manage Stores",
+        "Use when the user wants to interact with Ecwid data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecwid@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecwid",
+      "url": "https://clawhub.ai/skills/ecwid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecwid",
+    "url": "https://clawhub.ai/skills/ecwid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecwid-ee1a8bfc8832c921.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecwid@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecwid-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ee23e9a360d6da606c2056c0f08019dcf21532e89ad4aadc667a7b543cffa56",
+      "artifactSizeBytes": 1772
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:42:28.135Z"
+}

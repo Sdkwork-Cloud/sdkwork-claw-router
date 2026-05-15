@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72941,
+  "uuid": "skill-clawhub-dev-task",
+  "skillKey": "clawhub-dev-task",
+  "name": "Dev Task",
+  "summary": "开发项目任务管理，支持版本化开发流程。当用户需要启动开发任务、创建新版本、管理项目版本文档时使用。每次启动开发任务必须向用户确认版本编号，按版本号管理代码、开发文档、需求文档、发布配置。严格执行版本归档纪律，封版必须立即归档完整代码和文档。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev_task",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cwyhkyochen-a11y",
+      "features": [
+        "开发项目任务管理，支持版本化开发流程。当用户需要启动开发任务、创建新版本、管理项目版本文档时使用。每次启动开发任务必须向用户确认版本编号，按版本号管理代码、开发文档、需求文档、发布配置。严格."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dev-task@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231615738?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dev-task",
+      "url": "https://clawhub.ai/skills/dev-task"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev-task",
+    "url": "https://clawhub.ai/skills/dev-task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-task-ca28ac3cc08d2f28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dev-task@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dev-task-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4b2550d2362e513c734f99be8b55a7bfd0a2534dcdba81d4af9a1d856714783",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T08:23:06.072Z"
+}

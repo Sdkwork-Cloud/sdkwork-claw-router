@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-ads-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_ads_builder",
+  "skill": {
+    "id": 52746,
+    "skillKey": "clawhub-meta-ads-builder",
+    "name": "Meta Ads Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-ads-builder",
+    "url": "https://clawhub.ai/skills/meta-ads-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-ads-builder-e82bacc74819e95d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[Didoo AI] Generates Meta Ads creative — ad copy, headlines, hooks, and visual concepts. Use when user needs ad creative for a new campaign or to refresh exi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elias-didoo",
+      "userId": "s170zy2wssmkqheacrkh2syyv183vgqw",
+      "displayName": "elias-didoo",
+      "image": "https://avatars.githubusercontent.com/u/234909039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776187876362,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9a33e69e85ca7602368ad98ccc21877c1be07a918ba5e0838c61920e517d7e0"
+}

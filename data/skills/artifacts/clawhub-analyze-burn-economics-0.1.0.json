@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analyze-burn-economics@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyze_burn_economics",
+  "skill": {
+    "id": 17323,
+    "skillKey": "clawhub-analyze-burn-economics",
+    "name": "Uniswap Analyze Burn Economics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyze-burn-economics",
+    "url": "https://clawhub.ai/skills/analyze-burn-economics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyze-burn-economics-83970d4ff936932a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive analysis of Uniswap Firepit burn economics: historical burn P&L, accumulation trends, fee source breakdown, competitive dynamics, and profitability projections. Governance-grade research report. Use when user asks \"What's the."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 791,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770744723913,
+      "changelog": "analyze-burn-economics v0.1.0\n\n- Initial release offering governance-grade analysis of Uniswap Firepit burn economics.\n- Automates historical P&L per burn, fee accumulation trends, and burn frequency insights.\n- Includes comprehensive data collection: burn events, UNI price history, accumulation rates, and firepit state.\n- Provides historical reports and governance-relevant profitability projections.\n- Designed strictly for analytical use—no execution or real-time monitoring capabilities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:56b43bd6a12a65c234109565d4d1ee143c21f4da733a7f9d1b6ede7680d9b10d"
+}

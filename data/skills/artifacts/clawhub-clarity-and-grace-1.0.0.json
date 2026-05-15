@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clarity-and-grace@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_and_grace",
+  "skill": {
+    "id": 51458,
+    "skillKey": "clawhub-clarity-and-grace",
+    "name": "Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-and-grace",
+    "url": "https://clawhub.ai/skills/clarity-and-grace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-and-grace-6c6f2d68da96d837.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when writing or editing prose humans will read — documentation, commit messages, error messages, READMEs, reports, UI text, explanations. Triggers on cla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poemswe",
+      "userId": "publishers:poemswe",
+      "displayName": "Poe",
+      "image": "https://avatars.githubusercontent.com/u/7620389?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773166938174,
+      "changelog": "Initial release of the clarity-and-grace skill for writing and editing human-facing prose.\n\n- Defines a clear, three-layer approach: stance (classic prose), cognition (reader understanding), and mechanics (grammar).\n- Bans common AI-generated writing patterns such as throat-clearing, agency dodging, and pronoun crutches.\n- Outlines cognitive principles to avoid the curse of knowledge and improve clarity through chunking.\n- Provides references to actionable rules in included files covering style, concision, and specific anti-patterns.\n- Adds guidance for managing context limits by delegating copyediting when needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08cf82e6c6bf80678df1489e0241788d741be6342ffcea7708d0f24b14d65d8d"
+}

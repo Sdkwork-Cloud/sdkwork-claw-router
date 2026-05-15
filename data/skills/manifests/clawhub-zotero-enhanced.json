@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26823,
+  "uuid": "skill-clawhub-zotero-enhanced",
+  "skillKey": "clawhub-zotero-enhanced",
+  "name": "Zotero Enhanced",
+  "summary": "Manages the Zotero library. Supports adding new PDF documents with automatic metadata fetching (Crossref/arXiv), searching for existing items, reading attach...",
+  "version": "1.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_enhanced",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guoxh",
+      "features": [
+        "Manages the Zotero library",
+        "Supports adding new PDF documents with automatic metadata fetching (Crossref/arXiv), searching."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zotero-enhanced@1.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3035139?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zotero-enhanced",
+      "url": "https://clawhub.ai/skills/zotero-enhanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-enhanced",
+    "url": "https://clawhub.ai/skills/zotero-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-enhanced-9e6bcc110a3f62ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zotero-enhanced@1.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-zotero-enhanced-1.3.5.json",
+      "version": "1.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e0837cb24df5f6249d0fbc0c054bb3ac3fe5220d4c3318df55e31374fd8136f",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T14:13:35.403Z"
+}

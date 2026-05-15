@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18218,
+  "uuid": "skill-clawhub-secure-shopper",
+  "skillKey": "clawhub-secure-shopper",
+  "name": "Secure Shopper",
+  "summary": "Asynchronous shopping research + checkout using secure-autofill (1Password-backed browser filling) with results recorded to workspace artifacts.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secure_shopper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhihao",
+      "features": [
+        "Asynchronous shopping research + checkout using secure-autofill (1Password-backed browser filli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secure-shopper@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19731677?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secure-shopper",
+      "url": "https://clawhub.ai/skills/secure-shopper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secure-shopper",
+    "url": "https://clawhub.ai/skills/secure-shopper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secure-shopper-5a7cd1cd5c5552f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secure-shopper@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-secure-shopper-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8982617605c19c5b6b54882558ee2471ea52a6b6081a3f75bc098de63edde135",
+      "artifactSizeBytes": 1860
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T06:03:25.148Z"
+}

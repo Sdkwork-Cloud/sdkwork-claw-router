@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jcppt-place@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jcppt_place",
+  "skill": {
+    "id": 63374,
+    "skillKey": "clawhub-jcppt-place",
+    "name": "一站式学术Journal Club PPT制作技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jcppt-place",
+    "url": "https://clawhub.ai/skills/jcppt-place",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jcppt-place-0fde96cfa6a47644.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一站式学术Journal Club PPT制作技能。输入一篇科研论文PDF，自动完成：背景调研、作者信息整理、图表提取与标注、PPT脚本生成、配色美化，最终输出可直接演示的Journal Club幻灯片。支持Science/Nature/Cell等顶刊风格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yufeng166977",
+      "userId": "s17dt71m7916j3w42egvz9g5qs86ckaw",
+      "displayName": "Yufeng166977",
+      "image": "https://avatars.githubusercontent.com/u/208563107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 58,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778315005366,
+      "changelog": "JCPPT-PLACE 1.0.0 – Initial Release\n\n- Enables one-stop automatic creation of Journal Club PPTs from academic paper PDFs.\n- Extracts title, authors, background, results, images, and discussion directly from uploaded PDFs (supports top journals).\n- Conducts automated background research and integrates authoritative literature context.\n- Pulls out all figures and captions, storing images with consistent naming in a dedicated directory.\n- Generates a ready-to-use PPTX using an academic blue-gold template with structured, bilingual slides.\n- Follows strict quality standards for scientific accuracy, formatting, and citation throughout the workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bef620abaa0044f9a05c32c20300a9c700a9799731bb5f35cccf2dbbc53f0d3"
+}

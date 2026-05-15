@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duplicati-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duplicati_skill",
+  "skill": {
+    "id": 11309,
+    "skillKey": "clawhub-duplicati-skill",
+    "name": "Duplicati Backup Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duplicati-skill",
+    "url": "https://clawhub.ai/skills/duplicati-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duplicati-skill-343ff482e752c893.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Duplicati backups on the server using secure Bearer tokens."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robnew",
+      "userId": "s179tw8ymch045yzagkqftn3m985hj3t",
+      "displayName": "robnew",
+      "image": "https://avatars.githubusercontent.com/u/39396429?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1888,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770078422742,
+      "changelog": "Initial release of duplicati-skill\n\n- Allows management of Duplicati backups on a server using secure Bearer tokens.\n- Provides commands to check server status, list and match backup jobs, trigger backups by ID, and fetch error logs.\n- Includes usage instructions for job name resolution, reporting human-friendly backup phases, and mentioning storage alerts.\n- SKILL.md includes ready-to-use example commands and user phrases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b80abe5ad7e6bc367884ddc929a17a01400104cfbac7e2a9753b294c2c05787"
+}

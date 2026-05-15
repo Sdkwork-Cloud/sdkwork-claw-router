@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70078,
+  "uuid": "skill-clawhub-fmsh",
+  "skillKey": "clawhub-fmsh",
+  "name": "Fmsh",
+  "summary": "提供复旦微电子FPGA、MCU、智能卡芯片等产品信息、技术规格、开发资源及销售渠道查询服务。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fmsh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供复旦微电子FPGA、MCU、智能卡芯片等产品信息、技术规格、开发资源及销售渠道查询服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fmsh@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fmsh",
+      "url": "https://clawhub.ai/skills/fmsh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fmsh",
+    "url": "https://clawhub.ai/skills/fmsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fmsh-fda2c44ce73fc9e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fmsh@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fmsh-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00a9407ec43f262becd37899ae255a6323fe76a96db75bf81d6f90f4044da5f2",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:37:32.433Z"
+}

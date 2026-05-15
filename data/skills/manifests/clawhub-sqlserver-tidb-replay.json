@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45538,
+  "uuid": "skill-clawhub-sqlserver-tidb-replay",
+  "skillKey": "clawhub-sqlserver-tidb-replay",
+  "name": "sqlserver-tidb-replay",
+  "summary": "Replay SQL Server slow query logs on TiDB to verify compatibility, compare performance, and generate syntax conversion reports during migration.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sqlserver_tidb_replay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dongdong-Bryant",
+      "features": [
+        "Replay SQL Server slow query logs on TiDB to verify compatibility, compare performance, and gen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sqlserver-tidb-replay@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114673067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sqlserver-tidb-replay",
+      "url": "https://clawhub.ai/skills/sqlserver-tidb-replay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sqlserver-tidb-replay",
+    "url": "https://clawhub.ai/skills/sqlserver-tidb-replay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sqlserver-tidb-replay-6d320f3313ec10d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sqlserver-tidb-replay@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sqlserver-tidb-replay-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:645b6f50b2ddfa311d54b8c7f3731956825f437c8804714fdc6c3f7c17410f48",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T03:12:10.530Z"
+}

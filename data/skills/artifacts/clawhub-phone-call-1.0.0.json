@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phone-call@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phone_call",
+  "skill": {
+    "id": 31059,
+    "skillKey": "clawhub-phone-call",
+    "name": "Phone Call"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phone-call",
+    "url": "https://clawhub.ai/skills/phone-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phone-call-dd42a25c5698d51f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Make FaceTime audio calls on macOS by phone number or contact using the Phone app with AppleScript or tel: URLs; requires FaceTime enabled."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flexrox",
+      "userId": "s17fhwevbtwam7vd7erhz0r6ms83qtvk",
+      "displayName": "FlexRox",
+      "image": "https://avatars.githubusercontent.com/u/108794336?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774697913139,
+      "changelog": "- Initial release of the phone-call skill for macOS.\n- Make and manage phone calls via the FaceTime app using AppleScript or tel: URLs.\n- Supports calling by phone number or contact name (with optional Contacts integration).\n- Includes setup instructions, usage examples, troubleshooting, and international number formatting guidance.\n- Requires FaceTime to be enabled and configured on macOS.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b733342a76eab91284bff8a90a6cbde07e3c7a8a5cb3ec0ee49da6a3d64a202"
+}

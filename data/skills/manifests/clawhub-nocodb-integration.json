@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24917,
+  "uuid": "skill-clawhub-nocodb-integration",
+  "skillKey": "clawhub-nocodb-integration",
+  "name": "Nocodb",
+  "summary": "Nocodb integration. Manage Projects, Users, Roles. Use when the user wants to interact with Nocodb data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nocodb_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Nocodb integration",
+        "Manage Projects, Users, Roles",
+        "Use when the user wants to interact with Nocodb data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nocodb-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nocodb-integration",
+      "url": "https://clawhub.ai/skills/nocodb-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nocodb-integration",
+    "url": "https://clawhub.ai/skills/nocodb-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nocodb-integration-eea6e106ebaad097.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nocodb-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nocodb-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7966541fd71e449bac2d70d8b92a01b47a0ae066b4b92ebe9d0ee1f39e8792c7",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:18:01.508Z"
+}

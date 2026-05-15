@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianshu-vocab-plan@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_vocab_plan",
+  "skill": {
+    "id": 65408,
+    "skillKey": "clawhub-tianshu-vocab-plan",
+    "name": "Tianshu Vocab Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-vocab-plan",
+    "url": "https://clawhub.ai/skills/tianshu-vocab-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-vocab-plan-d1b53d49ec1d9e43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据词表（每行一词或短语）生成本地课表式的复习计划：第几天学新词、第几天回顾（简化艾宾浩斯：+1,+2,+4,+7,+15 天）。 Use when: 背单词、考前词汇突击；用户说「复习计划」「词表排期」「间隔复习」。 NOT for: 内置背单词 App 联动；精细到分钟的提醒。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangshengli0421",
+      "userId": "s173hn02a3sr3war78x7qzxnhn83nttz",
+      "displayName": "tianshu",
+      "image": "https://avatars.githubusercontent.com/u/100948785?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774067867203,
+      "changelog": "Initial: 词表间隔复习",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1067aa7d5a322c46ece0697b283654b297cf569f902d60376a2bf8ad84051154"
+}

@@ -12,15 +12,15 @@ export type {
   CourseLessonView,
   CourseLevel,
   CourseLevelFilter,
+  CourseOverviewSource,
   CoursePlaylistView,
   CoursePublisherView,
   CourseRelatedCardView,
   CourseVideoView,
-} from './courseCatalog';
+} from './courseCatalog.ts';
 
 export {
   COURSE_CATALOG,
-  COURSE_CATALOG as courseCatalog,
   COURSE_CONTENT_SNAPSHOT_SOURCE,
   buildBilibiliEmbedUrl,
   deriveCourseCatalogViewModel,
@@ -29,4 +29,4 @@ export {
   deriveCoursePlaylist,
   filterCoursesForCatalog,
   formatCourseCount,
-} from './courseCatalog';
+} from './courseCatalog.ts';

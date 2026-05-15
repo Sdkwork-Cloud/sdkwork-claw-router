@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38774,
+  "uuid": "skill-clawhub-gate-news-event-explain-staging",
+  "skillKey": "clawhub-gate-news-event-explain-staging",
+  "name": "gate-news-eventexplain",
+  "summary": "Event attribution and explanation. Use this skill ONLY when the user's query is exclusively about the reason behind a price move with no other analysis dimen...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_news_event_explain_staging",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaixg",
+      "features": [
+        "Event attribution and explanation",
+        "Use this skill ONLY when the user's query is exclusively about the reason behind a price move w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-news-event-explain-staging@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12163126?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-news-event-explain-staging",
+      "url": "https://clawhub.ai/skills/gate-news-event-explain-staging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-news-event-explain-staging",
+    "url": "https://clawhub.ai/skills/gate-news-event-explain-staging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-news-event-explain-staging-ddce3396e8f94b88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-news-event-explain-staging@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-news-event-explain-staging-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62a9306e9bdd5def86acb0194e5519a1100f6fa65c285f26ccb131359f5563ff",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:22:49.540Z"
+}

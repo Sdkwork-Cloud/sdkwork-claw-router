@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "dolph-clob-microstructure",
+    "displayName": "Polymarket Clob Microstructure",
+    "summary": "Analyzes Polymarket order book microstructure for inefficiencies and generates signals to trade fake breakouts and manage position sizing.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775345580108,
+    "updatedAt": 1777527173571
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775345580108,
+    "changelog": "- Initial release of CLOB Microstructure Scanner for Polymarket order book analysis\n- Scores markets on liquidity gaps, order book imbalance, whale activity, and fake breakout detection (0–100 scale)\n- Generates actionable trading signals: ENTRY_OK, REDUCE_SIZE, SKIP, and MEAN_REVERT\n- Trades only on MEAN_REVERT signals, fading fake breakouts for structural alpha\n- Modular, extensible scoring system; runs every 5 minutes by default\n- Supports dry-run and live-trading modes",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "richducat",
+    "userId": "s172pm13k2nd0gwew35ac7tnf9846t3e",
+    "displayName": "richducat",
+    "image": "https://avatars.githubusercontent.com/u/15804981?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527173571
+  }
+}

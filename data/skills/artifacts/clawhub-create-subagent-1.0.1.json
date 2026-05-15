@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-subagent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_subagent",
+  "skill": {
+    "id": 62277,
+    "skillKey": "clawhub-create-subagent",
+    "name": "Create SubAgent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-subagent",
+    "url": "https://clawhub.ai/skills/create-subagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-subagent-183312524a3d2e06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建和管理 SubAgent（子智能体）。使用当用户需要：(1) 创建新的 SubAgent 执行特定任务，(2) 查看/管理已有的 SubAgent，(3) 终止或指导 SubAgent。支持多种预设类型：开发、研究、写作、数据分析等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aning35",
+      "userId": "s170077g31ytavfqrsdxjcxqzs83mb4g",
+      "displayName": "aning35",
+      "image": "https://avatars.githubusercontent.com/u/181434640?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 784,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772292043718,
+      "changelog": "- Added detailed usage instructions, including when to use or not use this skill.\n- Introduced multiple SubAgent type templates for development, research, writing, and data analysis.\n- Outlined the full subagent creation and management workflow with clear step-by-step guidance.\n- Included example user scenarios and management commands for interacting with SubAgents.\n- Listed important usage notes, channel limitations, and configuration checks for successful operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3c9f332f667d81ec291f05e213e9eb393ecb9e0437263ccbdd360bdd39826f6d"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20474,
+  "uuid": "skill-clawhub-booksearch-api",
+  "skillKey": "clawhub-booksearch-api",
+  "name": "BeyondBSR - BookSearch API",
+  "summary": "Search Amazon KDP books on the BeyondBSR public API and retrieve BSR (Best Sellers Rank) history for a single book. Use this skill whenever the user wants to...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.booksearch_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ramius88",
+      "features": [
+        "Search Amazon KDP books on the BeyondBSR public API and retrieve BSR (Best Sellers Rank) histor.",
+        "Use this skill whenever the user wants to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/booksearch-api@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202961118?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "booksearch-api",
+      "url": "https://clawhub.ai/skills/booksearch-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "booksearch-api",
+    "url": "https://clawhub.ai/skills/booksearch-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/booksearch-api-765a8d184b77beeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/booksearch-api@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-booksearch-api-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fcfa18ed1cb18e17eade85b059a28427b25ba5ae6824413e99e6a6c30cc5a578",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T13:13:50.791Z"
+}

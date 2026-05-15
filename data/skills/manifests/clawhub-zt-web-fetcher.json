@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67115,
+  "uuid": "skill-clawhub-zt-web-fetcher",
+  "skillKey": "clawhub-zt-web-fetcher",
+  "name": "zt-web-fetcher",
+  "summary": "当需要获取网页内容时使用（搜索结果页面、博客文章、文档等）。使用 URL 转 Markdown 服务将网页转换为可读文本。 触发场景：用户说\"帮我查一下\"、\"看看这个链接\"、\"获取 xx 的信息\"等需要上网抓信息的情况。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zt_web_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "larriewong27",
+      "features": [
+        "当需要获取网页内容时使用（搜索结果页面、博客文章、文档等）。使用 URL 转 Markdown 服务将网页转换为可读文本。 触发场景：用户说\"帮我查一下\"、\"看看这个链接\"、\"获取 xx 的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zt-web-fetcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32719745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zt-web-fetcher",
+      "url": "https://clawhub.ai/skills/zt-web-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zt-web-fetcher",
+    "url": "https://clawhub.ai/skills/zt-web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zt-web-fetcher-b1d974b719c56e62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zt-web-fetcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zt-web-fetcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8baa45b070d60eb3aae1b8288f48fc83f8c530c350fb6c440c90eee9fe43981e",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:02:03.066Z"
+}

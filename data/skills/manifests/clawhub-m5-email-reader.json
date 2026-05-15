@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67885,
+  "uuid": "skill-clawhub-m5-email-reader",
+  "skillKey": "clawhub-m5-email-reader",
+  "name": "Only read email",
+  "summary": "只读邮件助手，通过 POP3 协议读取163、QQ、Gmail、Outlook等任意邮箱的邮件。支持：查询邮件总数、获取最近若干封邮件的标题列表、读取邮件完整内容（正文+附件信息）、按序号读取指定邮件、按关键词搜索邮件主题。当用户询问\"帮我看看邮件\"、\"读一下邮箱\"、\"邮件里有没有XX\"、\"最近有什么邮件\"、\"查...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.m5_email_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xuanwu Yun",
+      "features": [
+        "只读邮件助手，通过 POP3 协议读取163、QQ、Gmail、Outlook等任意邮箱的邮件。支持：查询邮件总数、获取最近若干封邮件的标题列表、读取邮件完整内容（正文+附件信息）、按序号读."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/m5-email-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72307249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "m5-email-reader",
+      "url": "https://clawhub.ai/skills/m5-email-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "m5-email-reader",
+    "url": "https://clawhub.ai/skills/m5-email-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/m5-email-reader-94d322ea044121a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/m5-email-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-m5-email-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:12c4cf5f55798752b55e6e9626f44ef87609a436d71555a05982669e4a5a9b90",
+      "artifactSizeBytes": 2706
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:08:16.352Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-evolution@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_evolution",
+  "skill": {
+    "id": 9169,
+    "skillKey": "clawhub-self-evolution",
+    "name": "Self Evolution"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-evolution",
+    "url": "https://clawhub.ai/skills/self-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-evolution-42e736ab1ecb29fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Production-grade autonomous self-improvement system with research-backed meta-learning, safe self-modification, and continuous optimization. Based on AI safe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobisamaa",
+      "userId": "publishers:tobisamaa",
+      "displayName": "tobisamaa",
+      "image": "https://avatars.githubusercontent.com/u/62774845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4185,
+      "installsAllTime": 63,
+      "installsCurrent": 58,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772243550692,
+      "changelog": "Self-Evolution v2.0.0 – Major research-backed upgrade\n\n- Integrated AI safety frameworks from MIRI, DeepMind, and OpenAI for safe self-modification, corrigibility, and rollback capability.\n- Embedded meta-learning algorithms (MAML, Reptile, Meta-SGD) enabling much faster, research-based skill acquisition and rapid adaptation.\n- Added intrinsic motivation and curiosity-driven exploration based on leading reinforcement learning principles.\n- Enhanced continual learning using techniques to prevent catastrophic forgetting and ensure knowledge retention.\n- Updated documentation for evidence-based capabilities, clearer safety guardrails, and research sources.\n- Added PLANNED.md to document future evolution plans and roadmap.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1460452091fe761c5796da0e6ed3e5005472ed58cd2515216610787267df9d7a"
+}

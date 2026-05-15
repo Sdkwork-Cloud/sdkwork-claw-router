@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/product-price-compare@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_price_compare",
+  "skill": {
+    "id": 72562,
+    "skillKey": "clawhub-product-price-compare",
+    "name": "商品比价"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-price-compare",
+    "url": "https://clawhub.ai/skills/product-price-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-price-compare-b5456cd6ab0a587d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨平台商品比价智能体技能。支持淘宝、京东、拼多多等主流电商平台的价格自动抓取、优惠规则解析与等效到手价计算。使用场景：用户需要比较同款商品在不同平台的价格时，如'比较 iPhone 16 Pro 在京东、天猫、拼多多的价格'。自动输出结构化比价报告，包含平台名称、当前价格、历史最低价、优惠信息及推荐购买建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhang3feng",
+      "userId": "s17c7gfja5qte8z0v0k20wvsc983ktv1",
+      "displayName": "zhang3feng",
+      "image": "https://avatars.githubusercontent.com/u/8307936?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774804840019,
+      "changelog": "product-price-compare v1.0.0\n\n- Initial release of a cross-platform price comparison tool for major e-commerce sites (Taobao, JD, Pinduoduo, etc.).\n- Supports automatic price retrieval, parsing of discount rules, and calculation of equivalent final prices.\n- Generates structured comparison reports including platform, current and historical lowest price, discount info, and purchase recommendations.\n- Integrates with supporting skills for web search, browser automation, semantic parsing, and report management.\n- Designed for scenarios like digital product, daily necessity, and enterprise procurement price comparison, with robust anti-crawling and security isolation strategies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30300a9711f9d44b517b71943ba74ce916ff52cd75bd7941dec83f8bac1b7707"
+}

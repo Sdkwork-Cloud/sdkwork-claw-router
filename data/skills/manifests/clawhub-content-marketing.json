@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9301,
+  "uuid": "skill-clawhub-content-marketing",
+  "skillKey": "clawhub-content-marketing",
+  "name": "Content Marketing",
+  "summary": "Plan, create, and distribute content with editorial calendars, funnel strategy, and repurposing workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_marketing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Plan, create, and distribute content with editorial calendars, funnel strategy, and repurposing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-marketing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-marketing",
+      "url": "https://clawhub.ai/skills/content-marketing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-marketing",
+    "url": "https://clawhub.ai/skills/content-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-marketing-a26567d068052db6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-marketing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-marketing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d034d91b448674d50b988a8994b8bd797426048065743a580b7e630046a1c899",
+      "artifactSizeBytes": 1851
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T10:59:44.625Z"
+}

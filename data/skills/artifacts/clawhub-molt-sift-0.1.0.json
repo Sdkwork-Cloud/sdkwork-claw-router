@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/molt-sift@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.molt_sift",
+  "skill": {
+    "id": 22933,
+    "skillKey": "clawhub-molt-sift",
+    "name": "Molt Sift"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "molt-sift",
+    "url": "https://clawhub.ai/skills/molt-sift",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/molt-sift-f8e3bdd454c1b56f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validate and extract high-confidence signals from JSON, text, or streams using customizable rules, with schema validation and integrated Solana bounty payments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noizceera",
+      "userId": "publishers:noizceera",
+      "displayName": "NoizceEra",
+      "image": "https://avatars.githubusercontent.com/u/141389471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 456,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772047883478,
+      "changelog": "Initial release of molt-sift: data validation and signal extraction with bounty micro-payment integration.\n\n- Validates raw data (JSON, text, data streams) against schemas and domain-specific rules.\n- Extracts high-confidence signals, cleans data, and outputs quality/reliability scores.\n- CLI, Python library, and HTTP API for validation and bounty processing.\n- Fully integrated with PayAClaw, MoltyGuild, and Clawslist; supports x402 Solana escrow micropayments.\n- Enables agents to auto-claim, process, and get paid for bounty validation jobs.\n- Predefined rule sets for crypto, trading, sentiment, and custom validation tasks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7402ea695e69673a0d79791e9ffb7734350dedf679e33e6e78fbdd393e0d9b4b"
+}

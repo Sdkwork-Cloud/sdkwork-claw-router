@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45441,
+  "uuid": "skill-clawhub-abe-freeride",
+  "skillKey": "clawhub-abe-freeride",
+  "name": "abe-freeride",
+  "summary": "Manages AI models from SkillBoss API Hub for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates openc...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_freeride",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AbelTennyson",
+      "features": [
+        "Manages AI models from SkillBoss API Hub for OpenClaw",
+        "Automatically ranks models by quality, configures fallbacks for rate-limit handling, and update."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abe-freeride@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261241122?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abe-freeride",
+      "url": "https://clawhub.ai/skills/abe-freeride"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-freeride",
+    "url": "https://clawhub.ai/skills/abe-freeride",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-freeride-341e988a6cb4d622.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abe-freeride@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-abe-freeride-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d419a9a5c901d67df14b255238db080a4499e4b4811dc642384f7ae0830f0496",
+      "artifactSizeBytes": 2400
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:10:37.004Z"
+}

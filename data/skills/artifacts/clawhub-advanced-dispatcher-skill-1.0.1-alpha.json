@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/advanced-dispatcher-skill@1.0.1-alpha",
+  "version": "1.0.1-alpha",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advanced_dispatcher_skill",
+  "skill": {
+    "id": 20340,
+    "skillKey": "clawhub-advanced-dispatcher-skill",
+    "name": "Advanced Dispatcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advanced-dispatcher-skill",
+    "url": "https://clawhub.ai/skills/advanced-dispatcher-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advanced-dispatcher-skill-0f73a5ad246cc30b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Route mid-session work to the right spawned model without changing the fixed main session. Use for coding, architecture, math, algorithms, web development, b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omaression",
+      "userId": "publishers:omaression",
+      "displayName": "omaression",
+      "image": "https://avatars.githubusercontent.com/u/69020772?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.1-alpha",
+      "createdAt": 1773707825637,
+      "changelog": "- Expanded \"Judge output contract\" with a detailed list of required outputs for judge-plan, especially for `buildx:`, including risk lists and failure modes.\n- Added a new \"Simplify contract\" section specifying what simplification steps must and must not do.\n- No changes to routing rules, pipelines, or main contract logic.\n- Documentation in SKILL.md is now more explicit on output expectations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74b5a326765fe9c0e1820944b9799fc3fe46a609b6d5d0395c524e7a07592a59"
+}

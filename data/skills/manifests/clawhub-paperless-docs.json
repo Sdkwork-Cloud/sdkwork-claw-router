@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10676,
+  "uuid": "skill-clawhub-paperless-docs",
+  "skillKey": "clawhub-paperless-docs",
+  "name": "Paperless-ngx Document Manager",
+  "summary": "Manage documents in Paperless-ngx - search, upload, tag, and retrieve.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperless_docs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "madmantim",
+      "features": [
+        "Manage documents in Paperless-ngx",
+        "search, upload, tag, and retrieve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paperless-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90958600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paperless-docs",
+      "url": "https://clawhub.ai/skills/paperless-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperless-docs",
+    "url": "https://clawhub.ai/skills/paperless-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperless-docs-540f2d8ccef0482e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paperless-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paperless-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84e2ac4bf8627a018bd3f67787241b5cc09d64906b1817ec12c55ec7c1e2b07b",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T02:51:36.502Z"
+}

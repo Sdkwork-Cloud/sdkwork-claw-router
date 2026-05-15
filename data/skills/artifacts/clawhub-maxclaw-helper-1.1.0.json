@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxclaw-helper@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxclaw_helper",
+  "skill": {
+    "id": 50892,
+    "skillKey": "clawhub-maxclaw-helper",
+    "name": "MaxClaw Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxclaw-helper",
+    "url": "https://clawhub.ai/skills/maxclaw-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxclaw-helper-853b3892497afaca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Usage guidance and runtime diagnostics for MaxClaw / OpenClaw. Activate when: (1) User asks how to use a feature — e.g. 'how to enable Feishu long polling',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krisliu16",
+      "userId": "publishers:krisliu16",
+      "displayName": "Kris",
+      "image": "https://avatars.githubusercontent.com/u/174239318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772940899942,
+      "changelog": "v1.1.0: Bilingual triggers (CN+EN), FAQ moved to MiniMax Feishu Wiki, corrected doc query priority (Feishu Wiki first for MaxClaw-specific issues), fixed Hard Limits formatting, added language reply rule.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e24505b3bf258bb5f1e8c5fc1ad993fabdd4808aee86f121a11ddde046f5a8e0"
+}

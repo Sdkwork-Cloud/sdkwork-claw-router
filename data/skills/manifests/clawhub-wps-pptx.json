@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67195,
+  "uuid": "skill-clawhub-wps-pptx",
+  "skillKey": "clawhub-wps-pptx",
+  "name": "WPS PowerPoint",
+  "summary": "支持创建、读取和编辑.pptx演示文稿文件，包括生成幻灯片、提取内容、修改版式与页面等操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_pptx",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xixihaha123123123123",
+      "features": [
+        "支持创建、读取和编辑.pptx演示文稿文件，包括生成幻灯片、提取内容、修改版式与页面等操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wps-pptx@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176195294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wps-pptx",
+      "url": "https://clawhub.ai/skills/wps-pptx"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-pptx",
+    "url": "https://clawhub.ai/skills/wps-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-pptx-68f0a84137fa78d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wps-pptx@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wps-pptx-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7246e2b81ee9f078dd6cf8ee224b2b9dcf29849aea7fdd5d0f488438075bed8b",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:13:32.812Z"
+}

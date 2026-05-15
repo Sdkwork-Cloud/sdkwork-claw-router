@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-evolving-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_evolving_memory",
+  "skill": {
+    "id": 40738,
+    "skillKey": "clawhub-self-evolving-memory",
+    "name": "self-evolving-memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-evolving-memory",
+    "url": "https://clawhub.ai/skills/self-evolving-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-evolving-memory-8a0c42cce344930a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Orchestrate the OpenClaw memory system so it actually runs reliably in practice. Use when the task involves capturing user preferences, current task state, c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hal-9909",
+      "userId": "s17fca0qrv36ym8v11jnmhnht9845n09",
+      "displayName": "HAL-9909",
+      "image": "https://avatars.githubusercontent.com/u/261329242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775190574723,
+      "changelog": "Version 1.0.0\n\n- Initial release: introduces a comprehensive orchestration layer for the OpenClaw memory system.\n- Defines clear routing, promotion, and hardening rules for handling user preferences, task states, corrections, decisions, and recurring issues across multiple memory layers.\n- Includes a first-run setup protocol for initializing and validating required and recommended memory files.\n- Provides embedding/vector recall support with detailed configuration examples.\n- Establishes hygiene and maintenance workflows for adapting, promoting, and cleaning up memory.\n- Lists trigger phrases and concrete guidance on when and how to apply memory orchestration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96bbf36ae65749fe61a0ea95295d17891212e2687c5c761ff30110b9e5784987"
+}

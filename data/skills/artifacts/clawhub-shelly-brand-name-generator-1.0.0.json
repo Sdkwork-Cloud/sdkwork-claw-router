@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shelly-brand-name-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shelly_brand_name_generator",
+  "skill": {
+    "id": 19697,
+    "skillKey": "clawhub-shelly-brand-name-generator",
+    "name": "Brand Name Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shelly-brand-name-generator",
+    "url": "https://clawhub.ai/skills/shelly-brand-name-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shelly-brand-name-generator-4580c1be32ec34c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate 20 creative brand name ideas for any industry with style and attribute options, including .com domain availability hints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 598,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771792516760,
+      "changelog": "- Initial release of the Shelly Brand Name Generator skill.\n- Generates 20 creative brand name ideas for any specified industry.\n- Names include clear style (invented, compound, metaphor, etc.), vibe, and .com domain availability hint.\n- Supports optional brand attributes and specific naming styles.\n- Outputs 3 wildcard bonus names for extra creative inspiration.\n- Ensures names are easy to pronounce, spell, and remember.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:af0551e9cb45f0af2ff96539950e7ac5d993f73393cedab9b7600141176a9996"
+}

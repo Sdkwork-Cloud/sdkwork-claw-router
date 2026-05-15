@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24740,
+  "uuid": "skill-clawhub-swot-analysis",
+  "skillKey": "clawhub-swot-analysis",
+  "name": "Swot Analysis",
+  "summary": "Conduct a comprehensive SWOT analysis to audit organizational position. Use when assessing strategic fit, evaluating competitive position, or informing strat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swot_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Conduct a comprehensive SWOT analysis to audit organizational position",
+        "Use when assessing strategic fit, evaluating competitive position, or informing strat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swot-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swot-analysis",
+      "url": "https://clawhub.ai/skills/swot-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swot-analysis",
+    "url": "https://clawhub.ai/skills/swot-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swot-analysis-980201aff281fdda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swot-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swot-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84697a7d2eb3e93fbcd176eb1b59fff85fc755cacff973b59395ec8c71981dbb",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T04:20:56.636Z"
+}

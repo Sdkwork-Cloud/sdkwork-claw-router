@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13587,
+  "uuid": "skill-clawhub-copilot",
+  "skillKey": "clawhub-copilot",
+  "name": "Copilot",
+  "summary": "Transform your agent from chatbot to copilot with context persistence, proactive anticipation, and opinionated help across sessions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Transform your agent from chatbot to copilot with context persistence, proactive anticipation,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/copilot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "copilot",
+      "url": "https://clawhub.ai/skills/copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilot",
+    "url": "https://clawhub.ai/skills/copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilot-3ea125d0bff386e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/copilot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-copilot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb021ad540a50ef6c07fcec20bdc85cce1d3fe106fe2ea317426537de5dd0dc4",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T10:31:32.127Z"
+}

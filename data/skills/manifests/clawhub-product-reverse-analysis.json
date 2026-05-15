@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67641,
+  "uuid": "skill-clawhub-product-reverse-analysis",
+  "skillKey": "clawhub-product-reverse-analysis",
+  "name": "Product Reverse Analysis",
+  "summary": "产品逆向分析技能，通过产品界面截图逆向推导业务闭环、技术架构及设计哲学。适用场景：(1) 用户上传产品界面截图并要求分析，(2) 用户请求\"逆向分析这个产品\"，(3) 用户询问\"这个界面的设计逻辑是什么\"，(4) 用户要求\"分析这个产品的业务流程\"，(5) 用户需要理解竞品的产品设计思路，(6) 用户希望从截图中...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.product_reverse_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yz6214589-hash",
+      "features": [
+        "产品逆向分析技能，通过产品界面截图逆向推导业务闭环、技术架构及设计哲学。适用场景：(1) 用户上传产品界面截图并要求分析，(2) 用户请求\"逆向分析这个产品\"，(3) 用户询问\"这个界面的设."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/product-reverse-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250099844?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "product-reverse-analysis",
+      "url": "https://clawhub.ai/skills/product-reverse-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "product-reverse-analysis",
+    "url": "https://clawhub.ai/skills/product-reverse-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/product-reverse-analysis-11c854f73ffd0329.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/product-reverse-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-product-reverse-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e147d3b0cfa81106c481a2957309585ca7daad0961b37f67565cd0525654dadb",
+      "artifactSizeBytes": 2217
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T04:01:09.667Z"
+}

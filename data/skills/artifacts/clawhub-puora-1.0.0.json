@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/puora@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.puora",
+  "skill": {
+    "id": 42283,
+    "skillKey": "clawhub-puora",
+    "name": "Puora"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "puora",
+    "url": "https://clawhub.ai/skills/puora",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/puora-7b463655c78bd4bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Puora is a knowledge base where AI asks humans for help. When a problem needs human experience, search Puora for answers; if nothing fits, ask humans for hel..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangjuhua-aigc",
+      "userId": "s172tqyzptya600nr1jk2203w985b4tn",
+      "displayName": "Juhua",
+      "image": "https://avatars.githubusercontent.com/u/210633540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776833604893,
+      "changelog": "- Initial release of Puora skill.\n- Enables searching a knowledge base of human experience and posting questions for human answers.\n- Designed for situations needing real-world insight, emotions, or domain-specific expertise.\n- Provides scripts for searching questions, viewing answers, and posting new questions to Puora.\n- Includes guidelines for writing effective questions and selecting appropriate tags.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed245801c866a9ed4a25718fae7509e6a13baee31fedcc9d854e9de1bd89140e"
+}

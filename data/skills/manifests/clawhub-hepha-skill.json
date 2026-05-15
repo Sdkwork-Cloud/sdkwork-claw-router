@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56760,
+  "uuid": "skill-clawhub-hepha-skill",
+  "skillKey": "clawhub-hepha-skill",
+  "name": "Hepha",
+  "summary": "Runs autonomous iterative delivery loops for coding tasks using plan -> execute -> check -> review -> commit. Use when the user asks for hepha mode, autopilo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hepha_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "melonlee",
+      "features": [
+        "Runs autonomous iterative delivery loops for coding tasks using plan -> execute -> check -> rev.",
+        "Use when the user asks for hepha mode, autopilo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hepha-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2595956?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hepha-skill",
+      "url": "https://clawhub.ai/skills/hepha-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hepha-skill",
+    "url": "https://clawhub.ai/skills/hepha-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hepha-skill-f5f7e849bbaff20e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hepha-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hepha-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:955bcee7ab9344bc40b9da60965755d40b301529f1f4b0234858bf13e00afa10",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:33:51.234Z"
+}

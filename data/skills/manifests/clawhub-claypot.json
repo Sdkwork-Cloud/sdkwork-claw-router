@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71784,
+  "uuid": "skill-clawhub-claypot",
+  "skillKey": "clawhub-claypot",
+  "name": "Claypot",
+  "summary": "提供关于网红砂锅的推荐清单、打卡路线与指南。用户搜索网红砂锅或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claypot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供关于网红砂锅的推荐清单、打卡路线与指南。用户搜索网红砂锅或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claypot@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claypot",
+      "url": "https://clawhub.ai/skills/claypot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claypot",
+    "url": "https://clawhub.ai/skills/claypot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claypot-ac74649202049dca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claypot@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claypot-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1fef2b73a59eaeb785454d338b7112ddb55b76724843457f8cbe0eda75376a34",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:15:41.768Z"
+}

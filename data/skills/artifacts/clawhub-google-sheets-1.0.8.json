@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-sheets@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_sheets",
+  "skill": {
+    "id": 8459,
+    "skillKey": "clawhub-google-sheets",
+    "name": "Google Sheets"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-sheets",
+    "url": "https://clawhub.ai/skills/google-sheets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-sheets-8d6cb37f3e998e75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Sheets API integration with managed OAuth. Read and write spreadsheet data, create sheets, apply formatting, and manage ranges. Use this skill when us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 13586,
+      "installsAllTime": 53,
+      "installsCurrent": 48,
+      "stars": 12,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1778148311549,
+      "changelog": "- Added CLI installation instructions for Maton using NPM and Homebrew.\n- Included CLI authentication and usage examples for all major operations (auth, connection management, spreadsheet access).\n- Provided CLI command equivalents for core API functions (reading/writing values, batch operations, creating spreadsheets).\n- Clarified Python and manual API key authentication alongside new CLI workflows.\n- Improved examples for specifying connections with both CLI and Python.\n- Documentation now better supports command-line users and highlights Maton CLI integration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c452869be5ee07b53ed8330596754213be334642b6aba854bc7038031b794ac9"
+}

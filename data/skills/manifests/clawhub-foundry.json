@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11049,
+  "uuid": "skill-clawhub-foundry",
+  "skillKey": "clawhub-foundry",
+  "name": "Foundry",
+  "summary": "Self-writing meta-extension that forges new capabilities — researches docs, writes extensions, tools, hooks, and skills",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foundry",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lekt9",
+      "features": [
+        "Self-writing meta-extension that forges new capabilities — researches docs, writes extensions,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/foundry@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3887946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "foundry",
+      "url": "https://clawhub.ai/skills/foundry"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foundry",
+    "url": "https://clawhub.ai/skills/foundry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foundry-dfb316701857783d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/foundry@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-foundry-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40912349ec0c24cbac0b7072df824d0cfda5deebff3a0b112fb6eeae94f0ef96",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T21:17:27.252Z"
+}

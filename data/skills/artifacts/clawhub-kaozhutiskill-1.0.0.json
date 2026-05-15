@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaozhutiskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaozhutiskill",
+  "skill": {
+    "id": 72124,
+    "skillKey": "clawhub-kaozhutiskill",
+    "name": "烤猪蹄大爷的缺陷分析skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaozhutiskill",
+    "url": "https://clawhub.ai/skills/kaozhutiskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaozhutiskill-9cc38b86296d1cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生产缺陷分析专家，提供RCA根因分析、责任定界、相似缺陷归纳、历史查重及缺陷汇总与趋势分析功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wal1234",
+      "userId": "publishers:wal1234",
+      "displayName": "wal1234",
+      "image": "https://avatars.githubusercontent.com/u/73416364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772781667403,
+      "changelog": "defect-hunter 1.0.0 - 首次发布\n\n- 新增生产缺陷分析专家功能，涵盖RCA根因分析、缺陷归类、责任界定、查重及趋势分析\n- 支持5Why法和故障树法进行深度根因分析\n- 能对多条缺陷数据自动聚类、分级统计和输出结构化报告\n- 内置缺陷责任分析与改进建议，自动输出敏感信息脱敏结果\n- 支持缺陷查重、与历史知识库比对及趋势洞察\n- 所有输出均为结构化Markdown，易于周报与管理使用",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee9c226fc596a445a53b8e5a615e930fb118da18cd54215bf42a0efd5071687b"
+}

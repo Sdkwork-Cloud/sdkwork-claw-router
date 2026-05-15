@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21290,
+  "uuid": "skill-clawhub-gumroad-analytics",
+  "skillKey": "clawhub-gumroad-analytics",
+  "name": "Gumroad Analytics",
+  "summary": "Pull daily Gumroad product/sales analytics safely (no raw PII persistence by default).",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gumroad_analytics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Rimsha",
+      "features": [
+        "Pull daily Gumroad product/sales analytics safely (no raw PII persistence by default)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gumroad-analytics@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/703823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gumroad-analytics",
+      "url": "https://clawhub.ai/skills/gumroad-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gumroad-analytics",
+    "url": "https://clawhub.ai/skills/gumroad-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gumroad-analytics-240f767988124dbc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gumroad-analytics@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gumroad-analytics-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f656faf2d516c7e4ea03b0d7337abe307ab572a7a7fe0e7bc083501064e94e33",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T04:48:15.052Z"
+}

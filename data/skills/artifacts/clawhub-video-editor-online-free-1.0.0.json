@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-online-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_online_free",
+  "skill": {
+    "id": 43323,
+    "skillKey": "clawhub-video-editor-online-free",
+    "name": "Video Editor Online Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-online-free",
+    "url": "https://clawhub.ai/skills/video-editor-online-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-online-free-ad4730d84cf10495.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into edited MP4 clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and students use it for editing an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776069142461,
+      "changelog": "Initial release of Video Editor Online Free:\n\n- Upload and edit video clips (MP4, MOV, AVI, WebM, up to 500MB) directly in the browser.\n- Cloud GPU-powered edits: trim, add transitions, text overlays, and export 1080p MP4 without installing software.\n- Automatic session setup and free token acquisition; 7-day use with 100 credits for anonymous users.\n- Supports rapid video processing (30–60 seconds for typical clips).\n- Key workflows: quick edit, batch processing, or iterative refinement with session state saved.\n- Built-in prompts for actions like uploading, exporting, checking status, or viewing credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:45848cf441f6dc7e9a1842ea6ae2397b1813e670d44403bedfd829313c49e29f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24237,
+  "uuid": "skill-clawhub-linkedin-video-dl",
+  "skillKey": "clawhub-linkedin-video-dl",
+  "name": "Linkedin Video Downloader",
+  "summary": "Download videos from public LinkedIn posts as MP4 files without authentication or dependencies, saving them at the best available quality.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_video_dl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpnarchi",
+      "features": [
+        "Download videos from public LinkedIn posts as MP4 files without authentication or dependencies,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkedin-video-dl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142521385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkedin-video-dl",
+      "url": "https://clawhub.ai/skills/linkedin-video-dl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-video-dl",
+    "url": "https://clawhub.ai/skills/linkedin-video-dl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-video-dl-53687353e1f6ca1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkedin-video-dl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkedin-video-dl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf37754aa15910740c1b9ad2848847aa16586b81bbb2977c6dc611812c9a831f",
+      "artifactSizeBytes": 2244
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:33:30.784Z"
+}

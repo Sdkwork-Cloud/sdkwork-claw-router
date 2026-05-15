@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-quick-start@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_quick_start",
+  "skill": {
+    "id": 61591,
+    "skillKey": "clawhub-openclaw-quick-start",
+    "name": "Openclaw Quick Start"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-quick-start",
+    "url": "https://clawhub.ai/skills/openclaw-quick-start",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-quick-start-9e17a5f307a1eb15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 5 分钟快速开始 - 最简化的入门教程。适合：完全新手、想快速体验的用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773523917510,
+      "changelog": "- 全新改版为极简快速引导，突出“一键配置”流程\n- 明确支持 macOS/Linux，自动检测环境\n- 一键安装 OpenClaw 和 5 个必备 Skills\n- 简化步骤，聚焦首次部署和新手教程\n- 增加价格说明，包含视频及微信支持",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:febba4bba9c0ee32ed215cb577534d5b902340c888363abbd9ef5d49fc39fa34"
+}

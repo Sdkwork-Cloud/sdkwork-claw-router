@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19738,
+  "uuid": "skill-clawhub-multi-chat-context-manager",
+  "skillKey": "clawhub-multi-chat-context-manager",
+  "name": "Multi-Chat Context Manager",
+  "summary": "CLI tool to store and retrieve conversation contexts per channel/user.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_chat_context_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Derick",
+      "features": [
+        "CLI tool to store and retrieve conversation contexts per channel/user."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-chat-context-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114499711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-chat-context-manager",
+      "url": "https://clawhub.ai/skills/multi-chat-context-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-chat-context-manager",
+    "url": "https://clawhub.ai/skills/multi-chat-context-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-chat-context-manager-0c69dedce8ebe99f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-chat-context-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-chat-context-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0af07b4cc85510f0be7e4028cfa91146365030e865a6ea90958ca01b4d36d45",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T14:04:12.325Z"
+}

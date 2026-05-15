@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poster-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poster_generator",
+  "skill": {
+    "id": 24280,
+    "skillKey": "clawhub-poster-generator",
+    "name": "poster generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poster-generator",
+    "url": "https://clawhub.ai/skills/poster-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poster-generator-aa86fe00e911a899.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional marketing posters, social media graphics, and event flyers using AI-driven templates, customizable text, colors, and batch output in PN..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774443003245,
+      "changelog": "- Added official support and consulting partner information, including contact details and services, in both English and Chinese.\n- No changes to features, usage, dependencies, or technical documentation.\n- The skill now offers an official channel for technical support, template customization, integration, and training.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ef17e66f3f9c6220a52f7e1fd90543ad1fd9f64bd55d5dcead1dc911026c7eb"
+}

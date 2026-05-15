@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65616,
+  "uuid": "skill-clawhub-docx-builder",
+  "skillKey": "clawhub-docx-builder",
+  "name": "Docx Builder",
+  "summary": "一套基于 docx npm 库的 Word 文档排版样式系统，用于生成带有专业配色、表格、标题层级的 .docx 文档。适用于 PRD、技术方案、项目汇报、会议纪要等结构化文档的模板输出。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Casper",
+      "features": [
+        "一套基于 docx npm 库的 Word 文档排版样式系统，用于生成带有专业配色、表格、标题层级的 .docx 文档。适用于 PRD、技术方案、项目汇报、会议纪要等结构化文档的模板输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docx-builder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4013050?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docx-builder",
+      "url": "https://clawhub.ai/skills/docx-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-builder",
+    "url": "https://clawhub.ai/skills/docx-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-builder-4a38a11e9bffa852.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docx-builder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docx-builder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:378725a556c3d8446db404ea689787ec53d87dd53ef5358cbf3090de757fbc43",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T05:43:41.859Z"
+}

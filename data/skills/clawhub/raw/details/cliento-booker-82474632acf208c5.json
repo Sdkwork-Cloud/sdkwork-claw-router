@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "cliento-booker",
+    "displayName": "Cliento Booker",
+    "summary": "Register Cliento booking pages via URL, check availability, and execute actual service bookings. Use when the user asks to book a haircut, reserve a service,...",
+    "tags": {
+      "latest": "1.0.5"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1774211587355,
+    "updatedAt": 1777622568713
+  },
+  "latestVersion": {
+    "version": "1.0.5",
+    "createdAt": 1774554973738,
+    "changelog": "- Switched backend execution from curl/bash to a dedicated Python script (scripts/cliento.py) for security and reliability.\n- Updated all booking and data-fetching actions to use the Python script, reducing risk of bash/PII injection.\n- Deprecated references/api.md; all required API logic is now encapsulated in the new script.\n- Updated SKILL.md documentation to reflect the new Python-based workflow, including revised action steps and command formats.\n- Updated required binaries metadata from curl to python3.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "patello",
+    "userId": "s178t29f61bmma8whfnmacavhx83eknq",
+    "displayName": "Patrik Ekenberg",
+    "image": "https://avatars.githubusercontent.com/u/31476631?v=4"
+  },
+  "moderation": null
+}

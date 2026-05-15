@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52296,
+  "uuid": "skill-clawhub-aisa-multi-search-engine",
+  "skillKey": "clawhub-aisa-multi-search-engine",
+  "name": "AIsa Multi Search Engine",
+  "summary": "Multi-source search engine powered by AIsa API. Combines Tavily web search, Scholar academic search, Smart hybrid search, and Perplexity deep research — all...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_multi_search_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Multi-source search engine powered by AIsa API",
+        "Combines Tavily web search, Scholar academic search, Smart hybrid search, and Perplexity deep r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-multi-search-engine@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-multi-search-engine",
+      "url": "https://clawhub.ai/skills/aisa-multi-search-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-multi-search-engine",
+    "url": "https://clawhub.ai/skills/aisa-multi-search-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-multi-search-engine-cdb0bad371fd2798.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-multi-search-engine@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-multi-search-engine-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddda073738a5afe725c45f82cd1c1045fecc0455101ada2d5271dd7e640f8921",
+      "artifactSizeBytes": 2601
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T20:08:16.843Z"
+}

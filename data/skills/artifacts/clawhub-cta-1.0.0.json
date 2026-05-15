@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cta@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cta",
+  "skill": {
+    "id": 50137,
+    "skillKey": "clawhub-cta",
+    "name": "Cta Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cta",
+    "url": "https://clawhub.ai/skills/cta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cta-061ab7e7d3b73063.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chicago CTA transit — real-time L train arrivals, bus predictions, service alerts, and route info. Use when the user asks about Chicago public transit, L tra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianleach",
+      "userId": "publishers:brianleach",
+      "displayName": "Brian Leach",
+      "image": "https://avatars.githubusercontent.com/u/1900805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 589,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771718351998,
+      "changelog": "Initial public release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa99cb6393b088ace179b9185b4a90b9e0412be58b945c0982363f6b9b4c0004"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42935,
+  "uuid": "skill-clawhub-best-video",
+  "skillKey": "clawhub-best-video",
+  "name": "Best Video",
+  "summary": "create raw video footage into polished MP4 videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and marketers use it fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.best_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "create raw video footage into polished MP4 videos with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators and marketers use it fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/best-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "best-video",
+      "url": "https://clawhub.ai/skills/best-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "best-video",
+    "url": "https://clawhub.ai/skills/best-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/best-video-5f1ca8bdc08a58be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/best-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-best-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3182dedfb0257cce9e48fc8bffff3cb316447ec4f615cffc156bbecdc751e2be",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T03:52:08.532Z"
+}

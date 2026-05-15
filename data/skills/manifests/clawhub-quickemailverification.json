@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25339,
+  "uuid": "skill-clawhub-quickemailverification",
+  "skillKey": "clawhub-quickemailverification",
+  "name": "Quickemailverification",
+  "summary": "QuickEmailVerification integration. Manage data, records, and automate workflows. Use when the user wants to interact with QuickEmailVerification data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quickemailverification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "QuickEmailVerification integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with QuickEmailVerification data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quickemailverification@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quickemailverification",
+      "url": "https://clawhub.ai/skills/quickemailverification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quickemailverification",
+    "url": "https://clawhub.ai/skills/quickemailverification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quickemailverification-00167af7498920c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quickemailverification@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-quickemailverification-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbc57902570992cb9842df19bbe978034bd22d12910c8da9c2720719fa0eba31",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:54:24.679Z"
+}

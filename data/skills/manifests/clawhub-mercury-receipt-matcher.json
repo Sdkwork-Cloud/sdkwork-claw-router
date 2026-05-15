@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46749,
+  "uuid": "skill-clawhub-mercury-receipt-matcher",
+  "skillKey": "clawhub-mercury-receipt-matcher",
+  "name": "Find missing receipts (requires plow.co)",
+  "summary": "Reconcile a Mercury \"missing receipts\" CSV by finding the original merchant emails in connected Gmail accounts and forwarding them to receipts@mercury.com. U...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mercury_receipt_matcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sam Odio",
+      "features": [
+        "Reconcile a Mercury \"missing receipts\" CSV by finding the original merchant emails in connected."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mercury-receipt-matcher@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95421?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mercury-receipt-matcher",
+      "url": "https://clawhub.ai/skills/mercury-receipt-matcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mercury-receipt-matcher",
+    "url": "https://clawhub.ai/skills/mercury-receipt-matcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mercury-receipt-matcher-8a1e7bbb07783af6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mercury-receipt-matcher@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mercury-receipt-matcher-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f454501e6108c76c6c776edba2639929d391587d9cebe3b267be3b257d26f2ba",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T00:29:24.378Z"
+}

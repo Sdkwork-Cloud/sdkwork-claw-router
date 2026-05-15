@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73196,
+  "uuid": "skill-clawhub-eastmoney-tools",
+  "skillKey": "clawhub-eastmoney-tools",
+  "name": "东方财富金融工具集",
+  "summary": "东方财富金融数据工具集，集成选股、资讯搜索、行情财务查询三大功能。当用户查询 A股、港股、美股相关数据时使用，包括：条件选股、股票推荐、板块成分股；新闻、公告、研报、政策搜索；实时行情、财务指标、公司信息、资金流向等数据查询。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moer",
+      "features": [
+        "东方财富金融数据工具集，集成选股、资讯搜索、行情财务查询三大功能。当用户查询 A股、港股、美股相关数据时使用，包括：条件选股、股票推荐、板块成分股；新闻、公告、研报、政策搜索；实时行情、财务."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-tools@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42177272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-tools",
+      "url": "https://clawhub.ai/skills/eastmoney-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-tools",
+    "url": "https://clawhub.ai/skills/eastmoney-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-tools-60383403054fe68b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-tools@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-tools-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aad13592b2bc3966e3c510b349ee927eca3feae660338a2fea883492799a8629",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:22:32.965Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/farmos-tasks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.farmos_tasks",
+  "skill": {
+    "id": 17985,
+    "skillKey": "clawhub-farmos-tasks",
+    "name": "Farmos Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "farmos-tasks",
+    "url": "https://clawhub.ai/skills/farmos-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/farmos-tasks-be8ca4df3142ce47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage farm work orders and tasks. View assignments, create tasks, update status. Uses integration endpoints (no auth) for reads and authenticated..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianppetty",
+      "userId": "publishers:brianppetty",
+      "displayName": "brianppetty",
+      "image": "https://avatars.githubusercontent.com/u/26852668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 707,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771750857244,
+      "changelog": "Initial release of farmos-tasks skill, providing task and work order management for farms.\n\n- Query and summarize farm work orders and tasks, including assignments and statuses\n- Create, update, assign, and manage tasks via authenticated endpoints\n- Natural language detection for actionable tasks and restock/procurement needs\n- Strict confirmation workflow before automatic task creation\n- Integration with FarmOS API: dashboard stats, filtered lists, templates, and workforce assignments\n- Designed for conversational, hands-free farm operations management",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c99ddc9e6dee50ad9c2861609a7ec7049f68e87d3829125c478a35a9d749aed"
+}

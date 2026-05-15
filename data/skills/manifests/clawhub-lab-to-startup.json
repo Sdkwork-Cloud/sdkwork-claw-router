@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73365,
+  "uuid": "skill-clawhub-lab-to-startup",
+  "skillKey": "clawhub-lab-to-startup",
+  "name": "师生共创模式指导-高校科技成果转化方法论",
+  "summary": "高校师生共创模式指导助手。当用户需要进行科技成果转化、组建师生共创团队、选择共创模式或解决共创过程中的问题时使用此技能。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lab_to_startup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roma",
+      "features": [
+        "高校师生共创模式指导助手。当用户需要进行科技成果转化、组建师生共创团队、选择共创模式或解决共创过程中的问题时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lab-to-startup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105550312?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lab-to-startup",
+      "url": "https://clawhub.ai/skills/lab-to-startup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lab-to-startup",
+    "url": "https://clawhub.ai/skills/lab-to-startup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lab-to-startup-a9c0bf67d4f69013.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lab-to-startup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lab-to-startup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:984b5ffc86b6b59c1baf7961308e02c0dedf05a0b6b22809e8105a62d80b07a9",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T12:31:16.961Z"
+}

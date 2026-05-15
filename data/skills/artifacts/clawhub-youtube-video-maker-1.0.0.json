@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_maker",
+  "skill": {
+    "id": 48041,
+    "skillKey": "clawhub-youtube-video-maker",
+    "name": "Youtube Video Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-maker",
+    "url": "https://clawhub.ai/skills/youtube-video-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-maker-d97a8fbcafea5ff8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished YouTube videos ready to post, without touching a single slider. Upload your video clips or images (MP4, MOV, AVI, WebM, up to 500MB), say someth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777226577489,
+      "changelog": "YouTube Video Maker 1.0.0 — Initial Release\n\n- Create polished, channel-ready YouTube videos from your clips or images, processed fully in the cloud.\n- Easy workflow: upload files, give simple edit/export instructions (“combine my clips, add titles”), and get a 1080p MP4 download link.\n- No manual editing or software required — just drop files and describe your desired outcome.\n- Supports video (MP4, MOV, AVI, WebM), audio, and images up to 500MB per file.\n- Designed for fast-moving YouTubers: process, preview, edit, and export with credits system and automatic session management.\n- Includes error handling, timeline summaries, and API connection for a seamless, responsive editing experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b395f90627d298db65be30000795f740dc3b3d76fc3f7d73fd75997500d44a3"
+}

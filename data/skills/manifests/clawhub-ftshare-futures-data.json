@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62931,
+  "uuid": "skill-clawhub-ftshare-futures-data",
+  "skillKey": "clawhub-ftshare-futures-data",
+  "name": "Skills of A-share futures data released by ft.tech.",
+  "summary": "非凸科技期货数据技能集（market.ft.tech）。覆盖指定交易日合约列表、期货合约基础信息（交易单位、保证金、交割等）、期货 K 线（分钟/日及周月季年聚合）。用户询问期货合约列表、某合约基础信息、期货 K 线或历史行情时使用。用户只给中文名/品种时，先用 futures-lists 做名称到 symbol...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_futures_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn92",
+      "features": [
+        "非凸科技期货数据技能集（market.ft.tech）。覆盖指定交易日合约列表、期货合约基础信息（交易单位、保证金、交割等）、期货 K 线（分钟/日及周月季年聚合）。用户询问期货合约列表、某."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftshare-futures-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17521361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftshare-futures-data",
+      "url": "https://clawhub.ai/skills/ftshare-futures-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-futures-data",
+    "url": "https://clawhub.ai/skills/ftshare-futures-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-futures-data-88b545271e49b309.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftshare-futures-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftshare-futures-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1aa0b4541407c4768df1afc8bdad3d70025ea996ec353daadacb3faaa371d2cd",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:59:49.479Z"
+}

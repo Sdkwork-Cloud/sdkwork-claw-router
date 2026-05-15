@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35475,
+  "uuid": "skill-clawhub-gate-audit",
+  "skillKey": "clawhub-gate-audit",
+  "name": "Gate Audit",
+  "summary": "Use this skill when the user provides AF2, ESMFold, AF3, Boltz-1, SASA, or MD results and needs a Gate 1-4 audit with a Go/Hold/Kill decision.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "barrett-cryptoDNA",
+      "features": [
+        "Use this skill when the user provides AF2, ESMFold, AF3, Boltz-1, SASA, or MD results and needs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247078000?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-audit",
+      "url": "https://clawhub.ai/skills/gate-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-audit",
+    "url": "https://clawhub.ai/skills/gate-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-audit-b0724f0ffbb7b28c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:460a1677d103b3d024061514dcc171e5d7ce4407fc621c8856dc59670b1cf4ef",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:20:45.687Z"
+}

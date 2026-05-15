@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33555,
+  "uuid": "skill-clawhub-humanizer-1",
+  "skillKey": "clawhub-humanizer-1",
+  "name": "Humanizer 1",
+  "summary": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "三昧",
+      "features": [
+        "Remove signs of AI-generated writing from text",
+        "Use when editing or reviewing text to make it sound more natural and human-written",
+        "Based on Wikipedia's comp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanizer-1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22470505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanizer-1",
+      "url": "https://clawhub.ai/skills/humanizer-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-1",
+    "url": "https://clawhub.ai/skills/humanizer-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-1-bbd55adf904b6ef5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanizer-1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d4f40b0244dccf9b9436e93387fe29b015351f756427a9b4a9f8dbd401a2de7",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:08:05.304Z"
+}

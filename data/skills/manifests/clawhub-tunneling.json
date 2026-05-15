@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10725,
+  "uuid": "skill-clawhub-tunneling",
+  "skillKey": "clawhub-tunneling",
+  "name": "tunneling",
+  "summary": "Create free SSH tunnels to expose local ports to the internet using tinyfi.sh. Use when you need to share a locally running app, test webhooks, demo a prototype, or get a public HTTPS URL for any local service — no signup or authentication.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tunneling",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simantak Dabhade",
+      "features": [
+        "Create free SSH tunnels to expose local ports to the internet using tinyfi.sh",
+        "Use when you need to share a locally running app, test webhooks, demo a prototype, or get a pub."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tunneling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67303107?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tunneling",
+      "url": "https://clawhub.ai/skills/tunneling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tunneling",
+    "url": "https://clawhub.ai/skills/tunneling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tunneling-8e1b0bc84f08959b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tunneling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tunneling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:303740f3c6329238b5ea58c3b5bcb43d3859c79bd62a2a0a8391f63951105c4d",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T01:10:48.459Z"
+}

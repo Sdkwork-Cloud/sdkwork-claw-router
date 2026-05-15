@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40508,
+  "uuid": "skill-clawhub-byted-las-image-resample",
+  "skillKey": "clawhub-byted-las-image-resample",
+  "name": "Byted Las Image Resample",
+  "summary": "Downsamples, resizes, and compresses images using Volcengine LAS with multiple interpolation methods (lanczos, bilinear, nearest). Image resizing, image scal...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_las_image_resample",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "Downsamples, resizes, and compresses images using Volcengine LAS with multiple interpolation me.",
+        "Image resizing, image scal..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-las-image-resample@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-las-image-resample",
+      "url": "https://clawhub.ai/skills/byted-las-image-resample"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-las-image-resample",
+    "url": "https://clawhub.ai/skills/byted-las-image-resample",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-las-image-resample-bc0872f6d0229054.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-las-image-resample@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-las-image-resample-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd7aa82201f04498c9133c340e2229f0279f717e7587ada71eac638e9421ecb4",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:38:56.939Z"
+}

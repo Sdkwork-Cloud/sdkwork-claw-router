@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goal-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goal_tracker",
+  "skill": {
+    "id": 11434,
+    "skillKey": "clawhub-goal-tracker",
+    "name": "Goal Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goal-tracker",
+    "url": "https://clawhub.ai/skills/goal-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goal-tracker-5002bb45830ce6b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and log progress on long-term goals with daily updates, milestone marking, MRR tracking, and weekly summaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alti-systems",
+      "userId": "publishers:alti-systems",
+      "displayName": "Alti-Systems",
+      "image": "https://avatars.githubusercontent.com/u/157874759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1743,
+      "installsAllTime": 31,
+      "installsCurrent": 31,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770623602400,
+      "changelog": "Initial release: Track goals with milestones, daily logging, and accountability.\n\n- Supports logging training, business activities, wins, and MRR updates.\n- Mark milestones as complete for multiple goals.\n- Generates an HTML dashboard for goal progress visualization.\n- Provides commands for status checking, weekly summaries, and integration with daily check-ins.\n- Tracks Ironman and $100k MRR goals with clear milestones and routines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2f836bb853a985f0775fb75fe3fb2f344274a251eb13fc23cbccdd59ab0c5026"
+}

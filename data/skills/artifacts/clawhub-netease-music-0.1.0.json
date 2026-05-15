@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/netease-music@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netease_music",
+  "skill": {
+    "id": 69494,
+    "skillKey": "clawhub-netease-music",
+    "name": "Netease Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netease-music",
+    "url": "https://clawhub.ai/skills/netease-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netease-music-2a50a1b6aca3b491.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供网易云音乐公开歌单、歌曲及歌手数据摘要，支持排行榜和作品表现的轻量分析与展示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774224143342,
+      "changelog": "netease-music 0.1.0\n\n- 初始发布，注册“网易云音乐”热门趋势技能\n- 支持公开歌单、歌曲与歌手页的信息检索与数据摘要\n- 提供排行榜、搜索及作品表现的基础数据统计能力\n- 明确合规范围：不下载、不逆向、不突破风控、不批量抓取\n- 推荐仅对公开页面做轻量分析与提醒",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14755fa9512674492df514a796986b05d95217e15e59ac6529e0cdb57478ac90"
+}

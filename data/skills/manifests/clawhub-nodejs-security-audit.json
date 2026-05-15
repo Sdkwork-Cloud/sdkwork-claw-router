@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16201,
+  "uuid": "skill-clawhub-nodejs-security-audit",
+  "skillKey": "clawhub-nodejs-security-audit",
+  "name": "Node.js Security Audit",
+  "summary": "Audit Node.js HTTP servers and web apps for security vulnerabilities. Checks OWASP Top 10, CORS, auth bypass, XSS, path traversal, hardcoded secrets, missing...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nodejs_security_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "npfaerber",
+      "features": [
+        "Audit Node.js HTTP servers and web apps for security vulnerabilities",
+        "Checks OWASP Top 10, CORS, auth bypass, XSS, path traversal, hardcoded secrets, missing..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nodejs-security-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258851131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nodejs-security-audit",
+      "url": "https://clawhub.ai/skills/nodejs-security-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nodejs-security-audit",
+    "url": "https://clawhub.ai/skills/nodejs-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nodejs-security-audit-c0c3e2f75d316398.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nodejs-security-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nodejs-security-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0184d3e4c8edbfa96a3af1087108d124bf0eabc3f3ec9c5bf18611c019f629f",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:26:05.537Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23419,
+  "uuid": "skill-clawhub-calctool",
+  "skillKey": "clawhub-calctool",
+  "name": "Calctool",
+  "summary": "Perform basic, scientific, and financial calculations from the terminal. Use when computing interest, converting units, or solving quick math.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calctool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Perform basic, scientific, and financial calculations from the terminal",
+        "Use when computing interest, converting units, or solving quick math."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calctool@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calctool",
+      "url": "https://clawhub.ai/skills/calctool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calctool",
+    "url": "https://clawhub.ai/skills/calctool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calctool-a4781187eee1dc4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calctool@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-calctool-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8a989ebe039bf75a02ef2b00f21dac42e2db9ca434cee0c0ece945332830fe1b",
+      "artifactSizeBytes": 1817
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:36:38.390Z"
+}

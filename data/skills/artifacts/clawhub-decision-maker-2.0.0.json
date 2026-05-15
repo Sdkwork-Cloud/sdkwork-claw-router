@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decision-maker@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_maker",
+  "skill": {
+    "id": 58884,
+    "skillKey": "clawhub-decision-maker",
+    "name": "Decision Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-maker",
+    "url": "https://clawhub.ai/skills/decision-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-maker-2b1c9b4ec96e5e33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "决策分析工具。利弊对比、加权决策矩阵、盲选消除偏见、决策框架推荐、风险评估。Decision maker with pros-cons analysis, weighted matrix, blind choice, decision frameworks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 658,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773599575,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f21628532f1a2739306267c34be8bc60ea4a782eace6aa018c0a255d8c708d7"
+}

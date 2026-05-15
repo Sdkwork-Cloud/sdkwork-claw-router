@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-optimizer@1.0.18",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_optimizer",
+  "skill": {
+    "id": 8561,
+    "skillKey": "clawhub-token-optimizer",
+    "name": "Tokenoptimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-optimizer",
+    "url": "https://clawhub.ai/skills/token-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-optimizer-de70c15dd3ac5b24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reduce OpenClaw AI costs by 97%. Haiku model routing, free Ollama heartbeats, prompt caching, and budget controls. Go from $1,500/month to $50/month in 5 min..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smartpeopleconnected",
+      "userId": "publishers:smartpeopleconnected",
+      "displayName": "smartpeopleconnected",
+      "image": "https://avatars.githubusercontent.com/u/44413383?v=4"
+    },
+    "stats": {
+      "comments": 9,
+      "downloads": 9705,
+      "installsAllTime": 96,
+      "installsCurrent": 90,
+      "stars": 24,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.0.18",
+      "createdAt": 1771671237453,
+      "changelog": "Remove slack target, default all CLI commands to dry-run, add file modification docs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c2fbb6ee64927f56092b4f90162e19805bbd1dd1608176a3064d4b5075fa62c"
+}

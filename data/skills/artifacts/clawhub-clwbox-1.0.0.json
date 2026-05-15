@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clwbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clwbox",
+  "skill": {
+    "id": 42948,
+    "skillKey": "clawhub-clwbox",
+    "name": "clawbox agenitc file system"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clwbox",
+    "url": "https://clawhub.ai/skills/clwbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clwbox-e76d9b413ff032fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ClawBox CLI to upload, download, organize, search, and share files on ClawBox (clawbox.ink) or a self-hosted ClawBox server. Trigger this skill when..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bennyoooo",
+      "userId": "s17csrc488ddynpdbwvc5r4t358407re",
+      "displayName": "Benny Jiang",
+      "image": "https://avatars.githubusercontent.com/u/32006222?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776146208560,
+      "changelog": "ClawBox 1.0.0 initial release:\n\n- Provides CLI for uploading, downloading, organizing, searching, and sharing files on ClawBox (clawbox.ink) or self-hosted server.\n- Supports semantic file search, token-based authentication, folder organization, and file sharing links.\n- Includes setup steps and command examples for all core operations.\n- Details searchable file formats and free storage limits.\n- Adds troubleshooting, API reference, and self-hosting documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ae65bdb1338ea515a2f5e6c9ce5f373bba7ae2d04487065c134f0922e49d990"
+}

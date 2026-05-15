@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73050,
+  "uuid": "skill-clawhub-construction-material-bid-assistant-lubanlebiao",
+  "skillKey": "clawhub-construction-material-bid-assistant-lubanlebiao",
+  "name": "施工建材采招助手-鲁班乐标",
+  "summary": "施工建材采招助手-鲁班乐标，当查询词包含建材、钢材、管材、机械或特定建筑材料型号时调用，必须调用价格趋势查询和Top品牌接口，输出建材历史单价和主要供应商名单。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.construction_material_bid_assistant_lubanlebiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangppp",
+      "features": [
+        "施工建材采招助手-鲁班乐标，当查询词包含建材、钢材、管材、机械或特定建筑材料型号时调用，必须调用价格趋势查询和Top品牌接口，输出建材历史单价和主要供应商名单。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/construction-material-bid-assistant-lubanlebiao@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/273566082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "construction-material-bid-assistant-lubanlebiao",
+      "url": "https://clawhub.ai/skills/construction-material-bid-assistant-lubanlebiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "construction-material-bid-assistant-lubanlebiao",
+    "url": "https://clawhub.ai/skills/construction-material-bid-assistant-lubanlebiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/construction-material-bid-assistant-lubanlebiao-bf1157ea35cca544.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/construction-material-bid-assistant-lubanlebiao@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-construction-material-bid-assistant-lubanlebiao-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdbe7639bd8b7dea369d74904b9631e749adcfa2cb381292a60d4da6b9887400",
+      "artifactSizeBytes": 2748
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:34:30.292Z"
+}

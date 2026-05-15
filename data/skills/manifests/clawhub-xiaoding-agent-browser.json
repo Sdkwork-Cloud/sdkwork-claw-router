@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34618,
+  "uuid": "skill-clawhub-xiaoding-agent-browser",
+  "skillKey": "clawhub-xiaoding-agent-browser",
+  "name": "Agent Browser",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoding_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "asterisk622",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoding-agent-browser@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4076262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoding-agent-browser",
+      "url": "https://clawhub.ai/skills/xiaoding-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoding-agent-browser",
+    "url": "https://clawhub.ai/skills/xiaoding-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoding-agent-browser-e11cb019c2ec37aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoding-agent-browser@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoding-agent-browser-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3e7c3b6d81c94b36f5900d38a05d8632e69b367f693ce9bfa7c99e16b437ec2",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T07:03:19.963Z"
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14970,
+  "uuid": "skill-clawhub-prediction-bridge",
+  "skillKey": "clawhub-prediction-bridge",
+  "name": "Prediction Bridge Skill",
+  "summary": "Query live prediction market data from the Prediction Bridge API. Use when the user asks about prediction markets, event odds, market prices, whale trades, trader analytics, or news related to prediction markets. Provides semantic search a.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_bridge",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kimCheese888",
+      "features": [
+        "Query live prediction market data from the Prediction Bridge API",
+        "Use when the user asks about prediction markets, event odds, market prices, whale trades, trade.",
+        "Provides semantic search across 9+ platforms (Polymarket, Kalshi, Limitless, Probable, PredictF.",
+        "Run the bundled Python script to fetch real-time data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prediction-bridge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234352345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prediction-bridge",
+      "url": "https://clawhub.ai/skills/prediction-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-bridge",
+    "url": "https://clawhub.ai/skills/prediction-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-bridge-219596217426257b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prediction-bridge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-prediction-bridge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98807ab1e459d3db7c739f9a0d3d01348b257c21584d669e14feb3223becc53e",
+      "artifactSizeBytes": 2394
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:59:50.703Z"
+}

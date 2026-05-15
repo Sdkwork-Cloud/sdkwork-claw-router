@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tavily-search-yourname@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search_yourname",
+  "skill": {
+    "id": 13469,
+    "skillKey": "clawhub-tavily-search-yourname",
+    "name": "Tavily Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search-yourname",
+    "url": "https://clawhub.ai/skills/tavily-search-yourname",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search-yourname-1b8dd999dc4b4367.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yi307520559-droid",
+      "userId": "publishers:yi307520559-droid",
+      "displayName": "yi307520559-droid",
+      "image": "https://avatars.githubusercontent.com/u/247503959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1374,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772619943241,
+      "changelog": "Initial release of Tavily Search skill.\n\n- Provides AI-optimized web search using the Tavily API with clean, relevant results.\n- Supports adjustable number of results, deep research mode, and topic selection (general or news).\n- Includes a tool to extract content from specific URLs.\n- Requires a TAVILY_API_KEY for authentication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:79bc227094035b744f93a2f11ccd0a4302f758cde9e7b259899b80524c97331e"
+}

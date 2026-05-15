@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-bank-card-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_bank_card_query",
+  "skill": {
+    "id": 72507,
+    "skillKey": "clawhub-jike-bank-card-query",
+    "name": "银行卡类型及真伪查询 - 即刻数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-bank-card-query",
+    "url": "https://clawhub.ai/skills/jike-bank-card-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-bank-card-query-f9e37556f3091273.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "银行卡类型及真伪查询。输入银行卡号，查询卡类型、卡名称、卡 BIN、发卡行、银行官网和客服电话，也支持查询银行列表。适用场景：用户说“查一下这个银行卡是什么银行”“这个卡号是信用卡还是借记卡”“查询工商银行列表”等。数据由即刻数据（jikeapi.cn）开放接口提供。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jikeapi-cn",
+      "userId": "s1748e0m2nvjyq8jm7s2y4man185q081",
+      "displayName": "jikeapi",
+      "image": "https://avatars.githubusercontent.com/u/26078515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777432889216,
+      "changelog": "首次发布银行卡类型及真伪查询 Skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:79d369cafd5a12691124002bb3c2ed6b0dfeb14847ba81ed8b8063cfd2ea5a15"
+}

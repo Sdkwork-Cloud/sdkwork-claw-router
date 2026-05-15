@@ -56,7 +56,9 @@ type SettlementDashboardData = {
 
 export class SettlementsService {
   static async fetchDashboardData(params?: Record<string, unknown>): Promise<SettlementDashboardData> {
-    const result = await getClawRouterAppSdkClient().router.fetchDashboardData(optionalSettlementDashboardYear(params?.year));
+    const result = await getClawRouterAppSdkClient().billing.settlements.dashboard.list(
+      toSettlementDashboardQueryParams(params),
+    );
     ensurePlusApiSuccess(result, 'Failed to fetch settlement dashboard');
     const data = readApiRecord(result);
     return {
@@ -66,6 +68,12 @@ export class SettlementsService {
         .map(normalizeBill),
     };
   }
+}
+
+function toSettlementDashboardQueryParams(params: Record<string, unknown> = {}): { year?: number } {
+  return {
+    year: optionalSettlementDashboardYear(params.year),
+  };
 }
 
 function optionalSettlementDashboardYear(value: unknown): number | undefined {

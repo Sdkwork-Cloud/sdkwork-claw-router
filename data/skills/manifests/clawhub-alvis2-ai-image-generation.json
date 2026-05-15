@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42347,
+  "uuid": "skill-clawhub-alvis2-ai-image-generation",
+  "skillKey": "clawhub-alvis2-ai-image-generation",
+  "name": "Ai Image Generation",
+  "summary": "Generate AI images with FLUX, Gemini, Grok, Seedream, Reve and 50+ models via SkillBoss API Hub. Models: FLUX Dev LoRA, FLUX.2 Klein LoRA, Gemini 3 Pro Image...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis2_ai_image_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Generate AI images with FLUX, Gemini, Grok, Seedream, Reve and 50+ models via SkillBoss API Hub",
+        "Models: FLUX Dev LoRA, FLUX.2 Klein LoRA, Gemini 3 Pro Image..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis2-ai-image-generation@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis2-ai-image-generation",
+      "url": "https://clawhub.ai/skills/alvis2-ai-image-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis2-ai-image-generation",
+    "url": "https://clawhub.ai/skills/alvis2-ai-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis2-ai-image-generation-303713b59e4b3326.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis2-ai-image-generation@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis2-ai-image-generation-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17d6dc0dfa0476c5efe0495eb91cddae6eab7a51e84f211f41ad9ae356f328a8",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T07:16:35.297Z"
+}

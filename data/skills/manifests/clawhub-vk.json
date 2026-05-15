@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58643,
+  "uuid": "skill-clawhub-vk",
+  "skillKey": "clawhub-vk",
+  "name": "Вконтакте - публикация постов, фото и видео. Диалоги с посетителями. NodeJS",
+  "summary": "Manage VK.com (Vkontakte) community: post content (text, photos, videos) and handle messages. Use for automating community management via VK API.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vk",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RuslanLanket",
+      "features": [
+        "Manage VK.com (Vkontakte) community: post content (text, photos, videos) and handle messages",
+        "Use for automating community management via VK API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vk@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151464535?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vk",
+      "url": "https://clawhub.ai/skills/vk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vk",
+    "url": "https://clawhub.ai/skills/vk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vk-8630c6c9af0730c3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vk@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vk-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fbea7491f14e17bb9510f7956afdcc139b475251cd4ef20fa0194de78646ffa",
+      "artifactSizeBytes": 2306
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T16:50:26.824Z"
+}

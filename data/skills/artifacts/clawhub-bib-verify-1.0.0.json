@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bib-verify@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bib_verify",
+  "skill": {
+    "id": 28242,
+    "skillKey": "clawhub-bib-verify",
+    "name": "bib-verify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bib-verify",
+    "url": "https://clawhub.ai/skills/bib-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bib-verify-d5982ff725d83690.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify a BibTeX file for hallucinated or fabricated references by cross-checking every entry against CrossRef, arXiv, and DBLP. Reports each reference as ver..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helloml0326",
+      "userId": "s1717yfzsw4pwnmnj95v5nvtms83gr77",
+      "displayName": "helloml0326",
+      "image": "https://avatars.githubusercontent.com/u/18115084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773653646445,
+      "changelog": "- Initial release of bib-verify skill for BibTeX file verification.\n- Verifies each .bib entry by cross-checking with CrossRef, arXiv, and DBLP.\n- Reports entries as verified, suspect (with field-level mismatch details), or not found.\n- Provides quick start commands, relevant options, and result interpretation guide.\n- Designed to help users detect fake, hallucinated, or incorrect citations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:508409fa668149a41129863417ad270156ba8b2ffc82b1d092749e4dfea3ce05"
+}

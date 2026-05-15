@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9440,
+  "uuid": "skill-clawhub-server-health",
+  "skillKey": "clawhub-server-health",
+  "name": "Server Health",
+  "summary": "Comprehensive server health monitoring showing system stats, top processes, OpenClaw gateway status, and running services. Perfect for quick health checks via Telegram or CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_health",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "muslimalfatih",
+      "features": [
+        "Comprehensive server health monitoring showing system stats, top processes, OpenClaw gateway st.",
+        "Perfect for quick health checks via Telegram or CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8471024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-health",
+      "url": "https://clawhub.ai/skills/server-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-health",
+    "url": "https://clawhub.ai/skills/server-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-health-83d27e9b05512061.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d972c103fa15e8bdc57590cbb25288cccb422887fc4f703bdf6585ba919d149",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T00:48:00.054Z"
+}

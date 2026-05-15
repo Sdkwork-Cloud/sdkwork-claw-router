@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43194,
+  "uuid": "skill-clawhub-soulflow",
+  "skillKey": "clawhub-soulflow",
+  "name": "SoulFlow — Agent Teams Workflow Skill",
+  "summary": "General-purpose AI workflow framework for OpenClaw. Build custom multi-step workflows for any task — dev, ops, research, content, or automation. Ships with dev workflow examples.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xtommythomas-dev",
+      "features": [
+        "General-purpose AI workflow framework for OpenClaw",
+        "Build custom multi-step workflows for any task — dev, ops, research, content, or automation",
+        "Ships with dev workflow examples."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/soulflow@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40008904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "soulflow",
+      "url": "https://clawhub.ai/skills/soulflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulflow",
+    "url": "https://clawhub.ai/skills/soulflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulflow-6459b9e93f5d4fbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/soulflow@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-soulflow-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b752eb355788d7b442ae418e3789049ac373768c2cf7bb3bd6fc483c64fb7f2",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T17:44:38.525Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53229,
+  "uuid": "skill-clawhub-archiver",
+  "skillKey": "clawhub-archiver",
+  "name": "Archiver — Streaming Archive Packaging",
+  "summary": "Use the Archiver library for streaming archive packaging in Node.js. Supports creating ZIP/TAR archives, appending content from streams, strings, buffers, fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.archiver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Use the Archiver library for streaming archive packaging in Node.js",
+        "Supports creating ZIP/TAR archives, appending content from streams, strings, buffers, fi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/archiver@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "archiver",
+      "url": "https://clawhub.ai/skills/archiver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "archiver",
+    "url": "https://clawhub.ai/skills/archiver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/archiver-539d1b2d6fe0b8f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/archiver@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-archiver-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc130595e2c684b6023a6abd2be02ba9e8d89b403c1d916ec7c8ce669901c176",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T01:01:46.164Z"
+}

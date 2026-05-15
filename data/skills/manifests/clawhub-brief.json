@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12641,
+  "uuid": "skill-clawhub-brief",
+  "skillKey": "clawhub-brief",
+  "name": "Brief",
+  "summary": "Condense information into actionable briefings. User specifies sources, skill structures the output.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brief",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Condense information into actionable briefings",
+        "User specifies sources, skill structures the output."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brief@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brief",
+      "url": "https://clawhub.ai/skills/brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brief",
+    "url": "https://clawhub.ai/skills/brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brief-29a8825bd242f143.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brief@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-brief-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ae05e1c754529a5b79602937bb25b3a9566f183ae669475c75f926177a1308c",
+      "artifactSizeBytes": 1795
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T16:07:54.705Z"
+}

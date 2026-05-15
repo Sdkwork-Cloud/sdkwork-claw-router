@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abe-expense-tracker-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abe_expense_tracker_pro",
+  "skill": {
+    "id": 45809,
+    "skillKey": "clawhub-abe-expense-tracker-pro",
+    "name": "abe-expense-tracker-pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abe-expense-tracker-pro",
+    "url": "https://clawhub.ai/skills/abe-expense-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abe-expense-tracker-pro-8ae033ee006be5c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track expenses via natural language, get spending summaries, set budgets"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777003718467,
+      "changelog": "Initial release of Expense Tracker Pro.\n\n- Log expenses using natural language (e.g., \"Spent $23.50 on lunch\").\n- Automatic categorization of spending.\n- Track expenses against custom budgets.\n- Get on-demand spending summaries and detailed reports.\n- Persistent data storage with SkillBoss KV.\n- Includes triggers like \"log expense,\" \"budget check,\" and \"expense report.\"",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:96bf3bc3bf643e5105c6ce22a7ae6a374817464588d581f5093ac35e8cfa590b"
+}

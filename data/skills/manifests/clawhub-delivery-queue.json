@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40526,
+  "uuid": "skill-clawhub-delivery-queue",
+  "skillKey": "clawhub-delivery-queue",
+  "name": "Delivery Queue",
+  "summary": "Schedule and send segmented messages in timed intervals to mimic human-like delivery and optimize engagement.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.delivery_queue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iPythoning",
+      "features": [
+        "Schedule and send segmented messages in timed intervals to mimic human-like delivery and optimi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/delivery-queue@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29250610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "delivery-queue",
+      "url": "https://clawhub.ai/skills/delivery-queue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "delivery-queue",
+    "url": "https://clawhub.ai/skills/delivery-queue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/delivery-queue-cf08848111b87353.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/delivery-queue@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-delivery-queue-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f561e2aab049b64ff395152cf9bea44f9bf915c376ca09277d2c42e3b525aa4e",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T09:35:25.879Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20911,
+  "uuid": "skill-clawhub-task-finish-contract",
+  "skillKey": "clawhub-task-finish-contract",
+  "name": "Task Finish Contract",
+  "summary": "Enforce task completion with explicit Goal/Progress/Next state. Prevent mid-task stalls and ensure evidence-based completion.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_finish_contract",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dalomeve",
+      "features": [
+        "Enforce task completion with explicit Goal/Progress/Next state",
+        "Prevent mid-task stalls and ensure evidence-based completion."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-finish-contract@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115125037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-finish-contract",
+      "url": "https://clawhub.ai/skills/task-finish-contract"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-finish-contract",
+    "url": "https://clawhub.ai/skills/task-finish-contract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-finish-contract-30e9e9e450a2ad90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-finish-contract@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-finish-contract-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7085e9d71fdc5ea8493ddf78aff871832ca105ab1010070c4cfd6561ad013b02",
+      "artifactSizeBytes": 2236
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T07:08:30.975Z"
+}

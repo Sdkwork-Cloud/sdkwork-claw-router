@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15235,
+  "uuid": "skill-clawhub-lobster-bio-use",
+  "skillKey": "clawhub-lobster-bio-use",
+  "name": "LobsterBio - Use",
+  "summary": "Analyze biological data using Lobster AI — single-cell RNA-seq, bulk RNA-seq, literature mining, dataset discovery, quality control, and visualization. USE THIS SKILL WHEN: - Analyzing single-cell or bulk RNA-seq data - Searching PubMed/GE.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_bio_use",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cewinharhar",
+      "features": [
+        "Analyze biological data using Lobster AI — single-cell RNA-seq, bulk RNA-seq, literature mining.",
+        "USE THIS SKILL WHEN:",
+        "Analyzing single-cell or bulk RNA-seq data",
+        "Searching PubMed/GEO for papers or datasets"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobster-bio-use@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64527798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobster-bio-use",
+      "url": "https://clawhub.ai/skills/lobster-bio-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-bio-use",
+    "url": "https://clawhub.ai/skills/lobster-bio-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-bio-use-4d4ac7da3fe484b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobster-bio-use@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobster-bio-use-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fccf75ce4174349a86773e6c7e8ccc0e2c616b24204dd48eda7998817a202f9a",
+      "artifactSizeBytes": 2406
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T12:32:23.508Z"
+}

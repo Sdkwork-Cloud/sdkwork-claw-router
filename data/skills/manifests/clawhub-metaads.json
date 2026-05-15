@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45879,
+  "uuid": "skill-clawhub-metaads",
+  "skillKey": "clawhub-metaads",
+  "name": "Meta Ads Api",
+  "summary": "Manage Meta ad campaigns by reading, creating, updating campaigns, ad sets, ads, creatives, and retrieving insights via the Marketing API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metaads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Otman Heddouch",
+      "features": [
+        "Manage Meta ad campaigns by reading, creating, updating campaigns, ad sets, ads, creatives, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metaads@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85652350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metaads",
+      "url": "https://clawhub.ai/skills/metaads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metaads",
+    "url": "https://clawhub.ai/skills/metaads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metaads-1b2989e7d2555b14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metaads@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-metaads-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac4456c2421dd3b125113ba8f509139ab550841808e792e2e084862951f3a082",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T15:01:05.954Z"
+}

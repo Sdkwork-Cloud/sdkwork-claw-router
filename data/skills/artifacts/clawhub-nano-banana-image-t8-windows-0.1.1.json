@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-image-t8-windows@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_image_t8_windows",
+  "skill": {
+    "id": 62956,
+    "skillKey": "clawhub-nano-banana-image-t8-windows",
+    "name": "Nano Banana Image T8"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-image-t8-windows",
+    "url": "https://clawhub.ai/skills/nano-banana-image-t8-windows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-image-t8-windows-59034ef25dbc6954.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用提供的 Nano Banana API Key通过提示词和可选图片生成或编辑图像，支持文生图和图生图模式，结果保存在固定用户目录。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flywhale-666",
+      "userId": "publishers:flywhale-666",
+      "displayName": "flywhale",
+      "image": "https://avatars.githubusercontent.com/u/136772759?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773234575676,
+      "changelog": "- Added detailed SKILL.md documentation describing trigger words, parameter requirements, and usage instructions.\n- Outlined precise steps to run Nano Banana image generation tests, including API key handling and output management.\n- Specified rules for user interaction, required parameters, and error handling scenarios.\n- Provided various command examples for both text-to-image and image-to-image modes.\n- Clarified restrictions on script usage and data sourcing to ensure secure and reliable operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:de8dbc673bb004ec39c9dadf91c3acd4acd2df7201ef97df2de04c45e8867cec"
+}

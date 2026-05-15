@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-agent-trends@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_agent_trends",
+  "skill": {
+    "id": 37606,
+    "skillKey": "clawhub-github-agent-trends",
+    "name": "Github Agent Trends"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-agent-trends",
+    "url": "https://clawhub.ai/skills/github-agent-trends",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-agent-trends-46e3f47c96422d16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate GitHub agent-trending project reports as formatted markdown leaderboards. Fetches agent/LLM-agent/multi-agent related repos by daily, weekly, or mon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774420386542,
+      "changelog": "- Initial release of github-agent-trends skill.\n- Generates markdown leaderboards of trending agent-related GitHub repositories.\n- Supports filtering by daily, weekly, or monthly activity and sorts by stars.\n- Fetches repos with agent-related keywords and topics (e.g., ai-agent, multi-agent, agent framework).\n- CLI allows custom result limits, output format (markdown or JSON), and GitHub API token usage.\n- No external dependencies required; works with Python stdlib only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:479634d4921f76000610bc4396d8815f6910716466dbe6ae20117e8274c5aa19"
+}

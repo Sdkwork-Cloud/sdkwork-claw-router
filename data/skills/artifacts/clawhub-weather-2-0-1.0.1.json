@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-2-0@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_2_0",
+  "skill": {
+    "id": 56515,
+    "skillKey": "clawhub-weather-2-0",
+    "name": "Weather 2.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-2-0",
+    "url": "https://clawhub.ai/skills/weather-2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-2-0-8aeb5333ac5d84be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Weather and forecasts (no API key). One wttr.in fetch by default; Open-Meteo if that fails. Chat-style answers — see “How to answer”."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maximedogawa",
+      "userId": "s173tmqazafef4732wqe47rcyd84trs1",
+      "displayName": "Maxim Edogawa",
+      "image": "https://avatars.githubusercontent.com/u/118206726?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776550494461,
+      "changelog": "- Minor documentation update for clarity and formatting in SKILL.md.\n- Improved the formatting of the wttr.in usage examples table.\n- Removed a redundant phrase in the Open-Meteo fallback flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cefe17829e6a345e95c01f02e1729e864326dd7b875a22a41228a83591a5d378"
+}

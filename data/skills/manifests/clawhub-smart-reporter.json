@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73087,
+  "uuid": "skill-clawhub-smart-reporter",
+  "skillKey": "clawhub-smart-reporter",
+  "name": "智能报告生成器",
+  "summary": "智能报告生成器 - 自动分析数据并生成专业报告。支持多种报告类型（日报、周报、月报、分析报告），可输出到飞书文档或本地文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_reporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LiJie298",
+      "features": [
+        "自动分析数据并生成专业报告。支持多种报告类型（日报、周报、月报、分析报告），可输出到飞书文档或本地文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-reporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20693566?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-reporter",
+      "url": "https://clawhub.ai/skills/smart-reporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-reporter",
+    "url": "https://clawhub.ai/skills/smart-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-reporter-beb46a3c2a7f8c60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-reporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-reporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:568b4712041a2ae99aebda3ca7689eed0f2dd09dd3a44a82068c8c1ebcf8373f",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T07:18:19.448Z"
+}

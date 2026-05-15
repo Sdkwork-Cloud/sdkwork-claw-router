@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18450,
+  "uuid": "skill-clawhub-github-topics",
+  "skillKey": "clawhub-github-topics",
+  "name": "Github Topics",
+  "summary": "Fetches GitHub topic trending repositories. Use when asking about GitHub trending repos or open source projects.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_topics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hjw21century",
+      "features": [
+        "Fetches GitHub topic trending repositories",
+        "Use when asking about GitHub trending repos or open source projects."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-topics@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7070409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-topics",
+      "url": "https://clawhub.ai/skills/github-topics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-topics",
+    "url": "https://clawhub.ai/skills/github-topics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-topics-d3814a2946d45045.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-topics@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-topics-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23b16f3cc7983435f55b3bc1132a9819a9395289881b2e14f8abf445d284ce68",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T15:55:42.045Z"
+}

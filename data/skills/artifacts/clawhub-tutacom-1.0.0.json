@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tutacom@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tutacom",
+  "skill": {
+    "id": 28555,
+    "skillKey": "clawhub-tutacom",
+    "name": "Manage your tuta.com account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tutacom",
+    "url": "https://clawhub.ai/skills/tutacom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tutacom-dfb5c401f5768ff8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send, read, and manage emails via Tuta (formerly Tutanota) encrypted email service. Use when user asks to send emails, check inbox, read mail, or do any emai..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aididmyhomework",
+      "userId": "s172fqj2vpnw0h29p2wrq2dng583jvng",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/81908549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773738463946,
+      "changelog": "Initial release of tuta-mail skill.\n\n- Send, read, and manage emails using the Tuta (formerly Tutanota) encrypted email service.\n- Supports login, listing inbox, reading emails, and sending non-confidential emails via Python CLI client.\n- Session handling with local caching to minimize repeated logins.\n- Credentials are managed via secure environment variables.\n- Tuta-to-Tuta email sending and attachments are not yet supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:795f8e888204ec7ed48769899701f54d6ef77bde26a954e0f3b2ea4be25ef10a"
+}

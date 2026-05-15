@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9729,
+  "uuid": "skill-clawhub-analyst",
+  "skillKey": "clawhub-analyst",
+  "name": "Analyst",
+  "summary": "Extract insights from data with SQL, visualization, and clear communication of findings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyst",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Extract insights from data with SQL, visualization, and clear communication of findings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "analyst",
+      "url": "https://clawhub.ai/skills/analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyst",
+    "url": "https://clawhub.ai/skills/analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyst-f44ceb062e35dfee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1342aa85ae158bd07c19671b51aef6cb516a790cc6dd7f6ae4e5e9636c75be4e",
+      "artifactSizeBytes": 1763
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T22:14:46.354Z"
+}

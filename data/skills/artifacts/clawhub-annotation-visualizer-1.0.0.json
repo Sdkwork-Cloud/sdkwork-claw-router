@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/annotation-visualizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.annotation_visualizer",
+  "skill": {
+    "id": 26625,
+    "skillKey": "clawhub-annotation-visualizer",
+    "name": "Annotation Visualizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "annotation-visualizer",
+    "url": "https://clawhub.ai/skills/annotation-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/annotation-visualizer-b7d4dd7a4b13a3b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visualize bounding boxes and class labels on images with support for COCO, YOLO, VOC, and LabelMe annotation formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingo-318",
+      "userId": "s174azpqkfzaht4rsrns8gsy4983gadk",
+      "displayName": "Mingo_318",
+      "image": "https://avatars.githubusercontent.com/u/62329898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772707479491,
+      "changelog": "Initial release of Annotation Visualizer.\n\n- Visualize bounding boxes and labels on images for COCO, YOLO, VOC, and LabelMe annotation formats.\n- Supports customizable colors per class, label display (class names & confidence), and adjustable box styles (filled or outline).\n- Enables batch processing to visualize entire datasets.\n- Command-line interface with options for color, box thickness, fill, label display, and font size.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6eeff74c03093ec17c99a9386b0cfc6edee5517a69891b7bf261af43b0c268ca"
+}

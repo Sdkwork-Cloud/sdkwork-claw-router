@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34358,
+  "uuid": "skill-clawhub-actblue",
+  "skillKey": "clawhub-actblue",
+  "name": "Actblue",
+  "summary": "Actblue integration. Manage data, records, and automate workflows. Use when the user wants to interact with Actblue data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.actblue",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Actblue integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Actblue data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/actblue@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "actblue",
+      "url": "https://clawhub.ai/skills/actblue"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "actblue",
+    "url": "https://clawhub.ai/skills/actblue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/actblue-c4aee9e4b5773431.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/actblue@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-actblue-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f08c74a066da43e46cad226e2d5c1b879610679a80d2d4e56d380b4cb4d37f57",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:07:55.718Z"
+}

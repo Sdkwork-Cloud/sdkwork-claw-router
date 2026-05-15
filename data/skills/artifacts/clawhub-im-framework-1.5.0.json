@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/im-framework@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.im_framework",
+  "skill": {
+    "id": 21459,
+    "skillKey": "clawhub-im-framework",
+    "name": "IM Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "im-framework",
+    "url": "https://clawhub.ai/skills/im-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/im-framework-f7d55074933e2f33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reference, explain, and apply the Immanent Metaphysics (IM) framework by Forrest Landry. Uses a structured ontology of 767 entities as an index into the live..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kapslap",
+      "userId": "s17ah8ccnpa786fnt7p2y5jmkd83g9wy",
+      "displayName": "kapslap",
+      "image": "https://avatars.githubusercontent.com/u/92482462?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 509,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1774895631587,
+      "changelog": "v1.5.0: Added missing graph.jsonl + schema.yaml + section-anchors.json to references/. Added graph query examples with correct absolute paths. All 4 reference files now bundled: graph.jsonl, whitebook-map.jsonl, schema.yaml, section-anchors.json.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:046d429b9dce3b9d8aeed7f703d951ff434a40ef3d17537aed65303f0b89f0ed"
+}

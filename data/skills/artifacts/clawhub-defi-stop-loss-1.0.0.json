@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/defi-stop-loss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defi_stop_loss",
+  "skill": {
+    "id": 49054,
+    "skillKey": "clawhub-defi-stop-loss",
+    "name": "Decentralized stop-loss orders for DeFi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defi-stop-loss",
+    "url": "https://clawhub.ai/skills/defi-stop-loss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defi-stop-loss-aeaa19543900158d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized stop-loss orders for DeFi. Gasless, oracle-protected, 8 EVM chains supported."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eranp-orbs",
+      "userId": "s1789z9gme6hjt89mbfd852wy183ng7a",
+      "displayName": "Eranp-orbs",
+      "image": "https://avatars.githubusercontent.com/u/76778405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778091552932,
+      "changelog": "Initial release of defi-stop-loss skill providing decentralized, gasless stop-loss orders across major EVM chains.\n\n- Enables setting gasless, non-custodial, oracle-protected stop-loss orders on 8 EVM chains via supported DEXs.\n- Supports full order lifecycle: param normalization, order shaping, signing, submission, querying, and cancellation through clear local instructions.\n- Provides authoritative, chain-specific adapter addresses and relay endpoints for order handling.\n- All workflows and guardrails clearly documented for safe and correct usage.\n- Extensively references local markdown/JSON assets; no external code execution required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6a2846ffe479c6627a06a7f7d3028e6873827ac3314aa42ef12db5b72d4c9942"
+}

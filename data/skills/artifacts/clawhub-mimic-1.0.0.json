@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mimic@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mimic",
+  "skill": {
+    "id": 53802,
+    "skillKey": "clawhub-mimic",
+    "name": "Mimic"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mimic",
+    "url": "https://clawhub.ai/skills/mimic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mimic-692e51978c0e4aa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn your AI into anyone. Say a name — auto-collect real data from Weibo/Bilibili/Douyin/Wikipedia, analyze speech patterns and personality with statistical..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sophie-xin9",
+      "userId": "s173ct06qcsk0pk1rah6ysms3983m2cc",
+      "displayName": "Sophieyou",
+      "image": "https://avatars.githubusercontent.com/u/243932536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775806920678,
+      "changelog": "Initial release: turn anyone into an AI persona",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24b86b6fbafb598f4a1c467d3e563277fd197dd31fc8f8207339b32a625f6914"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-trimmer-linux@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_trimmer_linux",
+  "skill": {
+    "id": 46246,
+    "skillKey": "clawhub-video-trimmer-linux",
+    "name": "Video Trimmer Linux"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-trimmer-linux",
+    "url": "https://clawhub.ai/skills/video-trimmer-linux",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-trimmer-linux-6c1b94308051a521.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "trim video clips into trimmed MP4 clips with this skill. Works with MP4, MKV, AVI, MOV files up to 500MB. Linux users and developers use it for cutting and t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776366096180,
+      "changelog": "Initial release of Video Trimmer for Linux — Trim and Export Video Clips.\n\n- Trim and export video clips (MP4, MKV, AVI, MOV, up to 500MB) using a cloud-based GPU backend.\n- Automatic authentication and session setup, with 100 free credits for new users.\n- Supports keyword-based actions for exporting, uploading, checking credits, and video state.\n- Fast processing (20–40 seconds for most clips), with 1080p MP4 output for Linux users.\n- Clear API and error handling flows, with user-friendly summaries and workflow tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62b84c872de92dee67d517504e2cb410afd181b058d565684164b30866ace475"
+}

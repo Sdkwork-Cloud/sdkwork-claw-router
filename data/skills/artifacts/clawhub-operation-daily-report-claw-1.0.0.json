@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/operation-daily-report-claw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operation_daily_report_claw",
+  "skill": {
+    "id": 71503,
+    "skillKey": "clawhub-operation-daily-report-claw",
+    "name": "运营数据日报虾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operation-daily-report-claw",
+    "url": "https://clawhub.ai/skills/operation-daily-report-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operation-daily-report-claw-d4ba32f463aabed8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "运营数据日报虾 — 自动化多平台运营数据采集与日报生成。从抖音、小红书、视频号、B站、微博等平台采集数据，清洗标准化后生成结构化日报，并推送到飞书文档/群聊。 **当以下情况时使用此 Skill**： (1) 需要汇总多个内容平台（抖音/小红书/视频号/B站/微博）的运营数据 (2) 需要生成运营日报、周报、月报..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tujinsama",
+      "userId": "s177vqraepq71bz6ynj98rrtdd83j0pd",
+      "displayName": "Ricky",
+      "image": "https://avatars.githubusercontent.com/u/82147388?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775707503681,
+      "changelog": "初始发布：多平台运营数据采集与日报生成，支持抖音/小红书/视频号/B站/微博，含异常检测和飞书推送",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd3cff85aa26057c7282f66d62a54e94ca9cdd99547f017ab60b40f9a498a431"
+}

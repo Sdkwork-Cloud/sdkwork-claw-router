@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72610,
+  "uuid": "skill-clawhub-legal-compliance-bundle",
+  "skillKey": "clawhub-legal-compliance-bundle",
+  "name": "中国法律合规AI技能包",
+  "summary": "提供50个面向中国企业的AI法律合规自动化技能，涵盖合同审查、法律问答、劳动合规、知识产权及数据保护等领域。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_compliance_bundle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daimingvip-a11y",
+      "features": [
+        "提供50个面向中国企业的AI法律合规自动化技能，涵盖合同审查、法律问答、劳动合规、知识产权及数据保护等领域。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legal-compliance-bundle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232273827?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legal-compliance-bundle",
+      "url": "https://clawhub.ai/skills/legal-compliance-bundle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-compliance-bundle",
+    "url": "https://clawhub.ai/skills/legal-compliance-bundle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-compliance-bundle-1cf7b01f02a2e2e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legal-compliance-bundle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legal-compliance-bundle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58e70e643976ae643e7d9e499574dfbed6aec46bb4ceaec537f92bb7382c6137",
+      "artifactSizeBytes": 2061
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:48:33.319Z"
+}

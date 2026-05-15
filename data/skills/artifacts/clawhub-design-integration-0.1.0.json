@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-integration@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_integration",
+  "skill": {
+    "id": 15901,
+    "skillKey": "clawhub-design-integration",
+    "name": "Uniswap Design Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-integration",
+    "url": "https://clawhub.ai/skills/design-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-integration-bb68c8b39c7a4839.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design a Uniswap integration architecture. Use when user is building a project that needs to integrate Uniswap and wants recommendations on integration method (Trading API vs SDK vs direct contract), architecture patterns, required depende."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 933,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770745480468,
+      "changelog": "Initial release — design-integration skill for Uniswap architecture blueprints.\n\n- Provides project-specific Uniswap integration blueprints, covering method recommendations, architecture patterns, dependencies, security review, and implementation plan.\n- Activates on user requests for Uniswap integration design or recommendations.\n- Extracts parameters (project type, functionality, environment, chains, scale) from user prompts.\n- Delegates design tasks to integration-architect agent; does not call MCP tools directly.\n- Outputs tailored, structured architecture plans with rationale, error handling, and complexity assessment.\n- Includes robust error handling for incomplete or conflicting user input.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:068b5cfd0e4defa85b7267c410dd02a830b9d7f6dc71b6ad03236323ff847382"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-skills-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_skills_browser",
+  "skill": {
+    "id": 61405,
+    "skillKey": "clawhub-ai-skills-browser",
+    "name": "Skills Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-skills-browser",
+    "url": "https://clawhub.ai/skills/ai-skills-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-skills-browser-56c0fbe761e987c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skills浏览器 - 使用HTML和Python3实现的本地技能浏览工具，支持技能列表过滤和详情查看"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quntion",
+      "userId": "s171p3jt9d3nx8vwa6pgcpvxe583gzf0",
+      "displayName": "quntion",
+      "image": "https://avatars.githubusercontent.com/u/15528553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 471,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773591425790,
+      "changelog": "ai-skills-browser 1.0.0\n\n- 首次发布技能浏览器工具，基于HTML和Python3实现。\n- 支持对../skills/目录内技能进行列表过滤。\n- 可浏览并查看每个技能的详细信息。\n- 提供本地Web页面访问与操作体验。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4233843ecec908faeb3e30209961a56bc6601d04def1ef8b8eeee02a7310ba4"
+}

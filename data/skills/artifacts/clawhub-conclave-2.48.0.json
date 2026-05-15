@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conclave@2.48.0",
+  "version": "2.48.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conclave",
+  "skill": {
+    "id": 9849,
+    "skillKey": "clawhub-conclave",
+    "name": "conclave"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conclave",
+    "url": "https://clawhub.ai/skills/conclave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conclave-5566aa4090295093.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "An idea market powered by adversarial AI"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rxbt",
+      "userId": "publishers:rxbt",
+      "displayName": "rxbt",
+      "image": "https://avatars.githubusercontent.com/u/83832616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3291,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 36
+    },
+    "latestVersion": {
+      "version": "2.48.0",
+      "createdAt": 1772293591409,
+      "changelog": "- Version bump to 2.48.0\n- Internal documentation updates; no user-facing changes detected",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:038101a1924480e16961a6ad97ac977e6421557616c953970c637b7f8a89d158"
+}

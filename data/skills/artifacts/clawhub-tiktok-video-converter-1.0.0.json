@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-video-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_video_converter",
+  "skill": {
+    "id": 44039,
+    "skillKey": "clawhub-tiktok-video-converter",
+    "name": "Tiktok Video Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-video-converter",
+    "url": "https://clawhub.ai/skills/tiktok-video-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-video-converter-5c408e41755699b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert video clips into converted video files with this skill. Works with MP4, MOV, WEBM, AVI files up to 500MB. TikTok creators use it for converting TikTo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775943271056,
+      "changelog": "Initial release of TikTok Video Converter.\n\n- Convert TikTok videos and other clips (MP4/MOV/WEBM/AVI, up to 500MB) to clean 1080p MP4s for editing or reposting.\n- Supports uploading, editing, audio/text overlays, and aspect ratio modifications with cloud GPU rendering.\n- Simple session setup with free token support (100 credits, 7-day expiry for anonymous users).\n- Real-time feedback on job status, error codes, credit balance, and timeline state.\n- API-driven workflow for seamless cloud conversion, supporting common creative requests (no watermark, resize, audio swap, etc).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74f65fbbb7b0f18c8e1a3b8f4656aca61c3b6c0f589f452284adb7d9780e4ec6"
+}

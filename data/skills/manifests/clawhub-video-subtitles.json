@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8580,
+  "uuid": "skill-clawhub-video-subtitles",
+  "skillKey": "clawhub-video-subtitles",
+  "name": "Video Subtitles",
+  "summary": "Generate SRT subtitles from video/audio with translation support. Transcribes Hebrew (ivrit.ai) and English (whisper), translates between languages, burns subtitles into video. Use for creating captions, transcripts, or hardcoded subtitles.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_subtitles",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nimrod Gutman",
+      "features": [
+        "Generate SRT subtitles from video/audio with translation support",
+        "Transcribes Hebrew (ivrit.ai) and English (whisper), translates between languages, burns subtit.",
+        "Use for creating captions, transcripts, or hardcoded subtitles for WhatsApp/social media."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-subtitles@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1540134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-subtitles",
+      "url": "https://clawhub.ai/skills/video-subtitles"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-subtitles",
+    "url": "https://clawhub.ai/skills/video-subtitles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-subtitles-041e8dd00ef93bc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-subtitles@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-subtitles-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4118204b8b6da84375a2cc656e9602775a9ce3348a604eee27f1a6f51f2223f5",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-22T15:25:08.613Z"
+}

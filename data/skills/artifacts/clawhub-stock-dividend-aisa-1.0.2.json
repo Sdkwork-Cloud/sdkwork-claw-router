@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-dividend-aisa@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_dividend_aisa",
+  "skill": {
+    "id": 43160,
+    "skillKey": "clawhub-stock-dividend-aisa",
+    "name": "Stock Dividend AIsa"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-dividend-aisa",
+    "url": "https://clawhub.ai/skills/stock-dividend-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-dividend-aisa-7aec3f41427632d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze read-only dividend metrics for stocks via AIsa API. Provides yield, payout ratio, growth CAGR, safety score, income rating, and Dividend Aristocrat/K..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778162093213,
+      "changelog": "- Clarified that the skill is strictly read-only and does not connect to brokerage accounts or perform trades.\n- Updated skill metadata: new name (\"stock-dividend-aisa\"), homepage, and source links.\n- Improved description to highlight data safety, input validation, and the absence of purchase/order workflows.\n- Revised documentation for clearer usage instructions and permission boundaries.\n- No changes to analysis logic or output structure.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:40bb59d5e285adabdcf5f9696b2e77278b8d4c7f653bb10e5703923a95d57ff9"
+}

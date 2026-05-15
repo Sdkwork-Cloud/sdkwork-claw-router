@@ -16,7 +16,7 @@ async fn admin_finance_route_lists_transactions_and_billing_records() {
 
     let transactions = request_json(
         router.clone(),
-        signed_request("GET", "/backend/v3/api/finance/admin/ledger"),
+        signed_request("GET", "/backend/v3/api/billing/finance/ledger"),
     )
     .await;
     assert_eq!("2000", transactions["code"]);
@@ -37,7 +37,7 @@ async fn admin_finance_route_lists_transactions_and_billing_records() {
 
     let billing = request_json(
         router,
-        signed_request("GET", "/backend/v3/api/router/finance/usage-statements"),
+        signed_request("GET", "/backend/v3/api/billing/finance/usage_statements"),
     )
     .await;
     assert_eq!("2000", billing["code"]);
@@ -62,7 +62,7 @@ async fn admin_finance_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/finance/admin/ledger")
+                .uri("/backend/v3/api/billing/finance/ledger")
                 .body(Body::empty())
                 .unwrap(),
         )

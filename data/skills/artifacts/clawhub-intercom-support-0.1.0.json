@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intercom-support@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intercom_support",
+  "skill": {
+    "id": 54601,
+    "skillKey": "clawhub-intercom-support",
+    "name": "Intercom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intercom-support",
+    "url": "https://clawhub.ai/skills/intercom-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intercom-support-baa109b5e4dd320d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage contacts, conversations, tags, subscriptions, and support or messaging workflows in Intercom — powered by ClawLink."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hith3sh",
+      "userId": "s173vws87a7ss71xf9rq53k5gd8568kv",
+      "displayName": "Hithesh Jay",
+      "image": "https://avatars.githubusercontent.com/u/83839061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778077319601,
+      "changelog": "Initial release — manage Intercom contacts, conversations, and workflows via ClawLink.\n\n- Adds support for managing contacts, conversations, tags, and subscriptions in Intercom through ClawLink integration.\n- Features setup and pairing instructions for secure connection to the user's Intercom account without exposing credentials.\n- Enables live discovery and usage of available Intercom tools via dynamic ClawLink catalog.\n- Includes clear guidelines for confirming actions before writes and handling unsupported capabilities.\n- Provides resource links for ClawLink documentation, verification, and open source code.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5063dd49922e5701bc168262b0634986793e2a9bde6b2e31403b201d6215e61"
+}

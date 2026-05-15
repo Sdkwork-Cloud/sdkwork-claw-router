@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58290,
+  "uuid": "skill-clawhub-qsnctf-practice-dynamic",
+  "skillKey": "clawhub-qsnctf-practice-dynamic",
+  "name": "qsnctf-practice-dynamic",
+  "summary": "获取青少年CTF练习场的排行榜和解题动态。Invoke when user wants to check QSNCTF leaderboard or recent solve activities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qsnctf_practice_dynamic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "末心",
+      "features": [
+        "获取青少年CTF练习场的排行榜和解题动态。Invoke when user wants to check QSNCTF leaderboard or recent solve activit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qsnctf-practice-dynamic@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59173630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qsnctf-practice-dynamic",
+      "url": "https://clawhub.ai/skills/qsnctf-practice-dynamic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qsnctf-practice-dynamic",
+    "url": "https://clawhub.ai/skills/qsnctf-practice-dynamic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qsnctf-practice-dynamic-9f6533e9c55d57e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qsnctf-practice-dynamic@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qsnctf-practice-dynamic-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5f62be2542482b097c0c7d9b5f4018db28afa656fe10187d1b984eefa38f012",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:00:19.756Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-delivery-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_delivery_export",
+  "skill": {
+    "id": 50651,
+    "skillKey": "clawhub-firm-delivery-export",
+    "name": "Firm Delivery Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-delivery-export",
+    "url": "https://clawhub.ai/skills/firm-delivery-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-delivery-export-1c33b9cfd2771791.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post-processing skill for firm-orchestration: converts the structured JSON output of a multi-agent workflow run into real deliverables — GitHub Pull Requests..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772318874468,
+      "changelog": "firm-delivery-export 1.0.0 — initial release:\n\n- Converts structured JSON workflow output into real deliverables: GitHub PRs, Jira or Linear tickets, Markdown reports, project briefs, and structured documents.\n- Acts as a bridge between agent output and team tooling for final delivery.\n- Supports error handling for API rate limits, auth failures, network issues, and schema validation.\n- Requires environment variables for relevant targets (e.g., GITHUB_TOKEN for GitHub, JIRA_API_TOKEN for Jira, LINEAR_API_KEY for Linear).\n- All output to GitHub is created as draft PRs with \"needs-review\" labels to enforce human review.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7da19bf947f9372088395abdd164124b0a3e0b6ac7c33124a43325819d7c21f8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ccw-project-supervisor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccw_project_supervisor",
+  "skill": {
+    "id": 27561,
+    "skillKey": "clawhub-ccw-project-supervisor",
+    "name": "CCW Project Supervisor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccw-project-supervisor",
+    "url": "https://clawhub.ai/skills/ccw-project-supervisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccw-project-supervisor-abb3aa1472618b71.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "supervise software project execution with openclaude and claude code workflow. use when the user wants an ai supervisor to drive workflow-plan, /issue/plan,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "majmunu",
+      "userId": "publishers:majmunu",
+      "displayName": "Majmunu",
+      "image": "https://avatars.githubusercontent.com/u/85326299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773049776583,
+      "changelog": "Initial release.\n\nAdds a reusable supervisor skill for OpenClaude + CCW project delivery.\nCovers stage control across workflow-plan, /issue/plan, /issue/queue, and /issue/execute.\nIncludes planning validation against engineering dependency order, runnable-closure checks, and CLI deviation correction guidance.\nDesigned for greenfield and ongoing software projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb86f4073b5afb8aefaf9553dbce83257c735e426fb891a413fe859b52dce354"
+}

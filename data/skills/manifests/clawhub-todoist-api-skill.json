@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25724,
+  "uuid": "skill-clawhub-todoist-api-skill",
+  "skillKey": "clawhub-todoist-api-skill",
+  "name": "Todoist API",
+  "summary": "Manages Todoist tasks, projects, sections, labels, comments, completed-task reports, activity logs, ID migration, project templates, and sync workflows throu...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tristan Manchester",
+      "features": [
+        "Manages Todoist tasks, projects, sections, labels, comments, completed-task reports, activity l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todoist-api-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todoist-api-skill",
+      "url": "https://clawhub.ai/skills/todoist-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-api-skill",
+    "url": "https://clawhub.ai/skills/todoist-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-api-skill-554bf190302c6255.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todoist-api-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todoist-api-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1077238785bb912586f7af345dbaeb77dc92cb5d94cd1f5d9c60ecdd241168ff",
+      "artifactSizeBytes": 2586
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T11:14:49.241Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13039,
+  "uuid": "skill-clawhub-openclaw-memory-qdrant",
+  "skillKey": "clawhub-openclaw-memory-qdrant",
+  "name": "Openclaw Memory Qdrant",
+  "summary": "Local semantic memory with Qdrant and Transformers.js. Store, search, and recall conversation context using vector embeddings (fully local, no API keys).",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_qdrant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zuiho",
+      "features": [
+        "Local semantic memory with Qdrant and Transformers.js",
+        "Store, search, and recall conversation context using vector embeddings (fully local, no API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-qdrant@1.0.15",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31877877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-qdrant",
+      "url": "https://clawhub.ai/skills/openclaw-memory-qdrant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-qdrant",
+    "url": "https://clawhub.ai/skills/openclaw-memory-qdrant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-qdrant-82bf8d69672ae396.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-qdrant@1.0.15",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-qdrant-1.0.15.json",
+      "version": "1.0.15",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9af3aae4b15f99e143dbf286532f3e1f95fcacf79ac9adce277883768569663",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T19:07:37.148Z"
+}

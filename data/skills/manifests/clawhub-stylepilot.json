@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60067,
+  "uuid": "skill-clawhub-stylepilot",
+  "skillKey": "clawhub-stylepilot",
+  "name": "StylePilot",
+  "summary": "StylePilot 个人衣橱助手。用户拍照存储衣服信息，或询问穿搭搭配（今天穿什么/出行带什么）时激活。不要主动触发，只在用户明确表示需要穿搭建议时使用。 StylePilot is a personal wardrobe assistant. Activate only when the user expli...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stylepilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mars YANG",
+      "features": [
+        "StylePilot 个人衣橱助手。用户拍照存储衣服信息，或询问穿搭搭配（今天穿什么/出行带什么）时激活。不要主动触发，只在用户明确表示需要穿搭建议时使用。 StylePilot is a.",
+        "Activate only when the user expli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stylepilot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62176856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stylepilot",
+      "url": "https://clawhub.ai/skills/stylepilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stylepilot",
+    "url": "https://clawhub.ai/skills/stylepilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stylepilot-0f98195bf1f74eef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stylepilot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stylepilot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:218499b0f9f0cdfa840d068b3c842135fedb69c9c0201c3e84b3e2952a9d1c2f",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:00:45.772Z"
+}

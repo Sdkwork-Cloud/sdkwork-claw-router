@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59171,
+  "uuid": "skill-clawhub-desktop-gui",
+  "skillKey": "clawhub-desktop-gui",
+  "name": "Desktop Gui",
+  "summary": "全桌面 GUI 自动化 — 使用 Python 库 (pyautogui, opencv) + xdotool + scrot，支持鼠标/键盘模拟、截图、视觉识别。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_gui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bai Zhang",
+      "features": [
+        "全桌面 GUI 自动化 — 使用 Python 库 (pyautogui, opencv) + xdotool + scrot，支持鼠标/键盘模拟、截图、视觉识别。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/desktop-gui@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23149199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "desktop-gui",
+      "url": "https://clawhub.ai/skills/desktop-gui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-gui",
+    "url": "https://clawhub.ai/skills/desktop-gui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-gui-62d5a4771ecd6a9a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/desktop-gui@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-desktop-gui-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e1c0d6ddc7b98d61b462eced0c72625e8aa0f91896a9314c1807e79f7933640",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:22:52.197Z"
+}

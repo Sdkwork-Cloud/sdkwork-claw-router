@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-review-fix@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_review_fix",
+  "skill": {
+    "id": 9583,
+    "skillKey": "clawhub-code-review-fix",
+    "name": "code-review-fix"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-review-fix",
+    "url": "https://clawhub.ai/skills/code-review-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-review-fix-3c8b62b8e1ee25a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically review code for bugs, security, style, and performance issues, provide fix suggestions, and optionally apply repairs with explanations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "landyun",
+      "userId": "s17326ze39gn7py4efgty5m0qn83n790",
+      "displayName": "landyun",
+      "image": "https://avatars.githubusercontent.com/u/257961728?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3576,
+      "installsAllTime": 16,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772795990798,
+      "changelog": "Initial release of Code Review & Fix.\n\n- Automatically reviews code for bugs, security, and performance issues\n- Offers automated code fixes and style checking\n- Educational mode available with explanations\n- Supports multiple programming languages\n- Free for first 3 uses; pay-per-use pricing after",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:444886d45a2c40dd32f9beb6d10fecc4a6c2e946d5f83f23e6976ac39588cb7a"
+}

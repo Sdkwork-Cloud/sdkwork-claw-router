@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-llm-wiki@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_llm_wiki",
+  "skill": {
+    "id": 48525,
+    "skillKey": "clawhub-openclaw-llm-wiki",
+    "name": "LLM Wiki"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-llm-wiki",
+    "url": "https://clawhub.ai/skills/openclaw-llm-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-llm-wiki-29eac013fb158d9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and maintain a persistent LLM-maintained knowledge base (wiki) following Andrej Karpathy's pattern. The LLM actively builds and maintains interconnect..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pathanaawej0-dot",
+      "userId": "s17f96pn8019jb6h8ghtgyhbds83sztz",
+      "displayName": "Aawej",
+      "image": "https://avatars.githubusercontent.com/u/234199189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1778051752227,
+      "changelog": "Initial release: LLM Wiki skill for maintaining persistent knowledge base",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25c86b63ec47b735d6d8290cdefaf2782fc06fcd1a3527afbf60f46799982adb"
+}

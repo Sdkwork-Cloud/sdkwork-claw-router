@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14022,
+  "uuid": "skill-clawhub-overleaf-skill",
+  "skillKey": "clawhub-overleaf-skill",
+  "name": "Overleaf",
+  "summary": "Sync and manage Overleaf LaTeX projects from the command line. Pull projects locally, push changes back, compile PDFs, and download compile outputs like .bbl files for arXiv submissions. Use when working with LaTeX, Overleaf, academic pape.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overleaf_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aloth",
+      "features": [
+        "Sync and manage Overleaf LaTeX projects from the command line",
+        "Pull projects locally, push changes back, compile PDFs, and download compile outputs like .bbl.",
+        "Use when working with LaTeX, Overleaf, academic papers, or arXiv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/overleaf-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12732979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "overleaf-skill",
+      "url": "https://clawhub.ai/skills/overleaf-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overleaf-skill",
+    "url": "https://clawhub.ai/skills/overleaf-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overleaf-skill-591e83d12d023367.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/overleaf-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-overleaf-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13bf263af425f1f2a85831815a008c2199ffb0acee4b832082c566423a0af760",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T09:10:56.936Z"
+}

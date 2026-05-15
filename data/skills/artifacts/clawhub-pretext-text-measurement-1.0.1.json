@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pretext-text-measurement@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pretext_text_measurement",
+  "skill": {
+    "id": 67702,
+    "skillKey": "clawhub-pretext-text-measurement",
+    "name": "pretext"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pretext-text-measurement",
+    "url": "https://clawhub.ai/skills/pretext-text-measurement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pretext-text-measurement-5ee08c4b9a29c332.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "精准文本测量与布局引擎（基于开源 Pretext）。无需触碰 DOM，纯算术计算文本像素高度，支持中文、CJK、emoji 等多语言。多用于前端虚拟滚动、AI 生成 UI 布局预计算、Canvas 渲染等场景。当用户需要计算文字在指定宽度下的高度、判断换行行数、或精确布局文本时调用此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "markcookie",
+      "userId": "s173a6b7vatqkph605zqy4jgdh84adc0",
+      "displayName": "Freyr",
+      "image": "https://avatars.githubusercontent.com/u/112866258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775752292717,
+      "changelog": "No changes detected in this version (1.0.1).\n\n- No file changes or documentation updates present compared to previous version.\n- All features, usage, and guidance remain consistent with the prior release.\nPretext Skill 发布信息\n🗂️ ClawHub 填表信息\n表单字段\t填写内容\nSkill 名称\tpretext\nSlug\tpretext-text-measurement\n版本号\t1.0.0\n许可证\tMIT\n作者\tQiuZhenPeng\n分类\tDeveloper Tools / Frontend / Text Processing\n标签（Tags）\ttext-measurement, layout, frontend, virtual-scroll, canvas, chinese-text, i18n, nodejs, ai-ui\nIcon / Emoji\t📐\nGitHub 地址\thttps://github.com/chenglou/pretext\n价格\t免费（Free）\n是否开源\t✅ 是（基于 MIT）\n是否收费\t❌ 否\nClawHub 短简介（≤80 字符）\n无需 DOM，纯算术计算任意文字在指定宽度下的像素高度与行数。\n支持中文、CJK、emoji，零依赖极速运行。\nClawHub 完整产品简介\n## 📐 Pretext — 精准文本测量与布局引擎\n\n> 「不需要 DOM reflow，不需要 setTimeout，不需要把文字渲染出来再量——直接算出来。」\n\n### 这个 Skill 能解决什么问题？\n\n当你开发虚拟滚动列表、聊天应用、AI 生成 UI、Canvas 文本渲染等场景时，必须提前知道每段文字会占据多高。\n\n传统方案要么渲染后量（慢），要么字数估算（不准）。\n\nPretext 的解法：**提前一次性测量每个字符的宽度，之后纯算术遍历——O(n) 时间，零 DOM 操作，结果与浏览器渲染高度一致。**\n\n### 核心能力\n\n- **计算高度**：输入文本 + 字体 + 宽度 → 输出精确像素高度\n- **判断换行**：返回总行数 + 每行具体内容\n- **批量测量**：一次测量 1000 条消息（比 DOM 快 300–600 倍）\n- **逐行坐标**：输出每行的起止位置（用于 Canvas 绘制）\n- **富文本布局**：支持 @提及、代码块、标签等内联样式\n- **DOM 渲染片段**：生成可直接粘贴的逐行 HTML，无需触碰真实 DOM\n\n### 支持语言\n\n中文、CJK（中日韩）、emoji、英文等所有 Unicode 文本。\n\n> ⚠️ 暂不支持 RTL 语言（阿拉伯文、希伯来文）。\n\n### 安装要求\n\n- Node.js v16+\n- 可选：`npm install canvas` — 安装后精度更高，未安装不影响基础功能\n「文件含 emoji（UTF-16 代理对编码），非恶意字符」",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04ac6f1aba099ae5e83545daccf4c1ace3a8b550bfe1401853ce8650ee9602c6"
+}

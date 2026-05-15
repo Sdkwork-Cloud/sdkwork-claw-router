@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10777,
+  "uuid": "skill-clawhub-polymarket-latest-events",
+  "skillKey": "clawhub-polymarket-latest-events",
+  "name": "Polymarket Latest Events",
+  "summary": "Fetch the latest events from Polymarket prediction market. Use when user asks about Polymarket events, prediction markets, trending bets, or wants to see what's new on Polymarket.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_latest_events",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaplora",
+      "features": [
+        "Fetch the latest events from Polymarket prediction market",
+        "Use when user asks about Polymarket events, prediction markets, trending bets, or wants to see."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-latest-events@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257586798?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-latest-events",
+      "url": "https://clawhub.ai/skills/polymarket-latest-events"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-latest-events",
+    "url": "https://clawhub.ai/skills/polymarket-latest-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-latest-events-48f0445ad8b0f755.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-latest-events@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-latest-events-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:862813ffbe68a63c035feeb226e89abb20e55901118e065b2d1bb510c7b1c6ad",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T16:08:33.560Z"
+}

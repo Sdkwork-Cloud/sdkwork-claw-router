@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/promotion-enrollment-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.promotion_enrollment_assistant",
+  "skill": {
+    "id": 42729,
+    "skillKey": "clawhub-promotion-enrollment-assistant",
+    "name": "Promotion Enrollment Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "promotion-enrollment-assistant",
+    "url": "https://clawhub.ai/skills/promotion-enrollment-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/promotion-enrollment-assistant-769f38d9d30be361.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Navigate Amazon Lightning Deal, Best Deal, Coupon, Shoppable Holiday; TikTok Shop Promo Zone; Shopify Discount Rules; Taobao Crowd-Collapse; JD 618; and othe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776092971709,
+      "changelog": "Promotion Enrollment Assistant v1.0.0\n\n- Initial release with support for multiple ecommerce platforms (Amazon, TikTok Shop, JD, Taobao, Shopify, Xiaohongshu).\n- Provides cross-platform comparison of promotion types (Lightning Deal, Coupon, Best Deal, Crowd-Collapse, Flash Sale, etc.).\n- Generates operator-ready promotion enrollment briefs, including eligibility assessment, timeline, checklist, and common rejection reasons.\n- Does not integrate with live seller portals or promotion APIs; relies on user-provided context and heuristics.\n- Outputs all recommendations as markdown briefs for clear operator action.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7890b2231d4590160f70223d2536f2aa6dafdf6e16c5b2a2d359dfe0af3ec63e"
+}

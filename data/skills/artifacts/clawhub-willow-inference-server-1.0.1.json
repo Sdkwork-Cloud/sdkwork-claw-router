@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/willow-inference-server@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.willow_inference_server",
+  "skill": {
+    "id": 22752,
+    "skillKey": "clawhub-willow-inference-server",
+    "name": "Willow Inference Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "willow-inference-server",
+    "url": "https://clawhub.ai/skills/willow-inference-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/willow-inference-server-7745741fc8c712f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local ASR and TTS inference server. Use when the user wants to transcribe audio to text (ASR) or convert text to speech (TTS). Requires a running Willow Infe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deantiwang",
+      "userId": "publishers:deantiwang",
+      "displayName": "DeAnti-",
+      "image": "https://avatars.githubusercontent.com/u/21234945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 433,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773675304304,
+      "changelog": "- Added _meta.json file for metadata support.\n- Updated ASR endpoint example to use /api/asr in documentation.\n- No functional changes to code; documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5821839740ffebd3619aad025a448aaa088b66fa94c86194207fc8667aad05df"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-multifactor-model@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_multifactor_model",
+  "skill": {
+    "id": 63059,
+    "skillKey": "clawhub-a-share-multifactor-model",
+    "name": "A Share Multifactor Model"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-multifactor-model",
+    "url": "https://clawhub.ai/skills/a-share-multifactor-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-multifactor-model-44200a6bf9e5ee44.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股多因子模型/Barra风格因子分析。当用户说\"多因子\"、\"multifactor\"、\"Barra\"、\"因子模型\"、\"风格因子\"、\"XX的因子暴露\"、\"因子收益率\"、\"风险模型\"时触发。基于 cn-stock-data 获取行情和财务数据，构建多因子风险模型，分析因子暴露、因子收益、协方差矩阵。支持研报风格（f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yzswk",
+      "userId": "s17f5wmkcew8e0yrzrr8tjx7bh83h6td",
+      "displayName": "yzswk",
+      "image": "https://avatars.githubusercontent.com/u/14083807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774793107159,
+      "changelog": "Initial release of the A股多因子模型 skill:\n\n- Supports Barra风格与自定义因子的多因子模型分析，自动触发关键词包括“多因子”、“Barra”、“因子模型”等。\n- 集成 cn-stock-data 获取A股行情与财务数据，自动构建因子、因子暴露、收益及协方差。\n- 支持formal（研报）和brief（快速）两种报告风格，按用户需求切换输出细节。\n- 实现因子标准化、去极值、缺失值处理，以及行业/市值中性化处理。\n- 风险模型支持因子协方差（指数加权90天）、特质风险及股票分解分析。\n- 默认剔除ST及上市不足60日新股，行业分类采用申万一级。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:300ed56c64a3cca390524ec5251082fd3068f4aa032f9ee01bb6be20d41bc38d"
+}

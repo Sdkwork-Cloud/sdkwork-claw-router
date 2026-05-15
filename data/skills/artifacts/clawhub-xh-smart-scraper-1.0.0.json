@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xh-smart-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xh_smart_scraper",
+  "skill": {
+    "id": 69897,
+    "skillKey": "clawhub-xh-smart-scraper",
+    "name": "智能网页爬虫"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xh-smart-scraper",
+    "url": "https://clawhub.ai/skills/xh-smart-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xh-smart-scraper-7d5b1f8e8ca2858b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能网页数据采集器。自动识别网页结构，批量抓取列表/表格/详情页数据，支持导出JSON/CSV/Excel。内置反爬策略适配。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cjstate",
+      "userId": "s175qr80gge1jae205hxtmxjbn83g8f1",
+      "displayName": "CJstate",
+      "image": "https://avatars.githubusercontent.com/u/142857225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775893134055,
+      "changelog": "- Initial release of Smart Web Scraper (智能网页数据采集器)\n- Features intelligent structure recognition for list, table, and detail pages\n- Automatically extracts key fields such as titles, prices, and authors\n- Supports anti-crawling strategies: User-Agent rotation, request delay, proxy pool (optional), and auto-retry\n- Exports data in JSON, CSV, Excel, and supports direct database storage (MySQL/MongoDB)\n- Provides command-line and config file usage with sample scenarios",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4263eee16aa7ceb1c5117c812a62d31d2205918742c54622d7590291bae9a129"
+}

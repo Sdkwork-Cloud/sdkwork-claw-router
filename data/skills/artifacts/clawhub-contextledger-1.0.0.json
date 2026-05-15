@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/contextledger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contextledger",
+  "skill": {
+    "id": 56785,
+    "skillKey": "clawhub-contextledger",
+    "name": "知识账本"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contextledger",
+    "url": "https://clawhub.ai/skills/contextledger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contextledger-1a1379fbf503da95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evidence-first knowledge auditing skill that upgrades connected knowledge into an auditable conclusion card. It traces which sources support a conclusion, ma..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775292115608,
+      "changelog": "Launch 知识账本 (ContextLedger), an evidence-first knowledge audit skill that traces which sources support a conclusion, flags stale evidence, surfaces conflicts, and separates evidence from inference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0917657f5eba6888802f9d3d8b1557fbf42da557b5a2aec48e2d6bf528411641"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25011,
+  "uuid": "skill-clawhub-obsidian-wiki",
+  "skillKey": "clawhub-obsidian-wiki",
+  "name": "Obsidian Wiki",
+  "summary": "Build and maintain a compiled LLM Wiki inside an Obsidian vault following Karpathy's pattern. Use when working with an Obsidian vault as a persistent knowled...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_wiki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jérôme Benoit",
+      "features": [
+        "Build and maintain a compiled LLM Wiki inside an Obsidian vault following Karpathy's pattern",
+        "Use when working with an Obsidian vault as a persistent knowled..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-wiki@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6537332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-wiki",
+      "url": "https://clawhub.ai/skills/obsidian-wiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-wiki",
+    "url": "https://clawhub.ai/skills/obsidian-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-wiki-60b1037df992cde7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-wiki@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-wiki-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efa126ef2e95c855a245275260c1caae3292c398ba24c64e298bf1c797973b39",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:11:19.035Z"
+}

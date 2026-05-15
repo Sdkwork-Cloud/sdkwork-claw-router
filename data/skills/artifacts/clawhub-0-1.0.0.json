@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.0",
+  "skill": {
+    "id": 21748,
+    "skillKey": "clawhub-0",
+    "name": "0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "0",
+    "url": "https://clawhub.ai/skills/0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/0-5feceb66ffc86f38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zero represents the origin, the blank slate, the reset button. This skill handles initialization, zero-state operations, default values, infinite loops, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlang-cn",
+      "userId": "s17dqxdtqm3n7dpc7r06vmnqfd83gw7r",
+      "displayName": "openlang",
+      "image": "https://avatars.githubusercontent.com/u/45782174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 497,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773315370858,
+      "changelog": "- Initial release of the “0” skill.\n- Provides tools and concepts for initialization, resets, zero-state operations, handling default/empty values, and infinite loops.\n- Includes cross-language code examples (Bash, Python, JavaScript, Rust) for working with zero or empty values, loops, and safeguards against zero-related errors.\n- Features philosophical and cultural insights on the meaning of zero in technology and life.\n- Offers practical shell commands for project setup, value checking, security (zero trust), and daily reset operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87ff5fde87f445fbea73f856c0555e6b7d156ed8003fbe49a9de6339e5277a9a"
+}

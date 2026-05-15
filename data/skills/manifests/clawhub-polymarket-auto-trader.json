@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9420,
+  "uuid": "skill-clawhub-polymarket-auto-trader",
+  "skillKey": "clawhub-polymarket-auto-trader",
+  "name": "Polymarket Auto-Trader",
+  "summary": "Autonomous Polymarket prediction market trading agent. Scans markets, evaluates probabilities with LLM, sizes positions with Kelly criterion, and executes trades via CLOB API. Use when user wants to trade on Polymarket, set up automated pr.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_auto_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "srikanthbellary",
+      "features": [
+        "Autonomous Polymarket prediction market trading agent",
+        "Scans markets, evaluates probabilities with LLM, sizes positions with Kelly criterion, and exec.",
+        "Use when user wants to trade on Polymarket, set up automated prediction market trading, or buil.",
+        "Supports cron-based autonomous operation, P&L tracking, and budget management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-auto-trader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204752113?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-auto-trader",
+      "url": "https://clawhub.ai/skills/polymarket-auto-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-auto-trader",
+    "url": "https://clawhub.ai/skills/polymarket-auto-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-auto-trader-d13a0c95aa521f00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-auto-trader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-auto-trader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5f476e5b3646af03fcaf156c1067ac1fb692742249e355ca81278ff9da922cf",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T21:53:58.328Z"
+}

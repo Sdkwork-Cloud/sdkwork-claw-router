@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38400,
+  "uuid": "skill-clawhub-omnimemory-full-onboarding",
+  "skillKey": "clawhub-omnimemory-full-onboarding",
+  "name": "omnimemory-full-onboarding",
+  "summary": "register a new omnimemory saas account when needed, verify otp, create a first-party api key, optionally bind a third-party llm key, then install, configure,...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omnimemory_full_onboarding",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PT-VU",
+      "features": [
+        "register a new omnimemory saas account when needed, verify otp, create a first-party api key, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omnimemory-full-onboarding@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76959908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omnimemory-full-onboarding",
+      "url": "https://clawhub.ai/skills/omnimemory-full-onboarding"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omnimemory-full-onboarding",
+    "url": "https://clawhub.ai/skills/omnimemory-full-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omnimemory-full-onboarding-0ee31cbb27c52cab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omnimemory-full-onboarding@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-omnimemory-full-onboarding-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd944de737efdffb48c8bc9bf13581525bc6acae42ee54b3e49590c79a75d2e9",
+      "artifactSizeBytes": 2344
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:52:51.733Z"
+}

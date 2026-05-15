@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cheap@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheap",
+  "skill": {
+    "id": 30729,
+    "skillKey": "clawhub-cheap",
+    "name": "Cheap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheap",
+    "url": "https://clawhub.ai/skills/cheap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheap-c6f556046e0c0046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find the cheapest meaningful visible price for a user-provided product name across major Chinese shopping platforms such as Taobao, Tmall, JD.com, Pinduoduo,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773574211942,
+      "changelog": "Initial release: dual-mode Chinese e-commerce cheapest-price finder with meaningful price comparison, product matching, and price-limited fallback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03053296957d82430238c5e8dc81312999e57c1a9a17ee1ebcb323e39abe1e4d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pharmaclaw-literature-agent@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pharmaclaw_literature_agent",
+  "skill": {
+    "id": 17732,
+    "skillKey": "clawhub-pharmaclaw-literature-agent",
+    "name": "Pharmaclaw Literature Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pharmaclaw-literature-agent",
+    "url": "https://clawhub.ai/skills/pharmaclaw-literature-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pharmaclaw-literature-agent-724a98fe12730ab9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and retrieve biomedical and scientific literature from PubMed and Semantic Scholar with structured summaries, citation tracking, and open-access PDFs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheminem",
+      "userId": "publishers:cheminem",
+      "displayName": "Cheminem",
+      "image": "https://avatars.githubusercontent.com/u/260304734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771989069343,
+      "changelog": "v2.0: Supercharged for novel drugs! +ClinicalTrials Phase 2-4, bioRxiv preprints, novelty_score (recency+velocity+phase boosts), auto-query 'novel phase III FDA'. Eczema test: nemolizumab Phase 3 #1. Chains market-intel/IP.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6612e452fd45144d1dbaa433128dd8d9f822ccdad31352d2ae0ed379dc0e3fa4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xbio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xbio",
+  "skill": {
+    "id": 13247,
+    "skillKey": "clawhub-xbio",
+    "name": "cleans and optimize Xbio cleaner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xbio",
+    "url": "https://clawhub.ai/skills/xbio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xbio-9d3b396c2340c49c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X/Twitter CLI for reading, searching, and posting via cookies or Sweetistics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "soanai",
+      "userId": "publishers:soanai",
+      "displayName": "SoanAI",
+      "image": "https://avatars.githubusercontent.com/u/219580334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1518,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770443793254,
+      "changelog": "Initial release of the bird skill, a CLI tool for interacting with X/Twitter.\n\n- Read, search, and post tweets/replies from the command line.\n- Supports authentication via browser cookies or Sweetistics API.\n- Quick commands for reading user info, threads, and search results.\n- Flexible posting options with user confirmation.\n- Easy install via Homebrew.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d0bdfd8454af94bf6f915065a87cf8559003309edfeb49fcb30c1f267355ddd"
+}

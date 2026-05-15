@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51674,
+  "uuid": "skill-clawhub-exr",
+  "skillKey": "clawhub-exr",
+  "name": "OpenEXR",
+  "summary": "Work with OpenEXR files — inspect channels, extract beauty/RGB passes, decode cryptomatte segmentation (material, object, asset), convert color spaces (ACESc...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oumad",
+      "features": [
+        "Work with OpenEXR files — inspect channels, extract beauty/RGB passes, decode cryptomatte segme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exr@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17836943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exr",
+      "url": "https://clawhub.ai/skills/exr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exr",
+    "url": "https://clawhub.ai/skills/exr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exr-3a762727614ddc21.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exr@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-exr-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e676eecde062475eaf523beccff4ac20189f8f116f2e2454f4a3d4fac9b8bd53",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:53:50.254Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parallel-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_1_0_1",
+  "skill": {
+    "id": 12590,
+    "skillKey": "clawhub-parallel-1-0-1",
+    "name": "Parallel 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-1-0-1",
+    "url": "https://clawhub.ai/skills/parallel-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-1-0-1-8462f864f51878ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-accuracy web search and research via Parallel.ai API. Optimized for AI agents with rich excerpts and citations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pntrivedy",
+      "userId": "publishers:pntrivedy",
+      "displayName": "pntrivedy",
+      "image": "https://avatars.githubusercontent.com/u/848537?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1631,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769438365894,
+      "changelog": "Initial release of the parallel skill for high-accuracy web research.\n\n- Provides web search via the Parallel.ai API optimized for AI agents.\n- Delivers structured results with rich excerpts, citations, and API usage stats.\n- Supports deep research, fact-checking, and multi-hop reasoning tasks.\n- Includes setup instructions for Python SDK and command-line usage examples.\n- Reference links to official documentation and platform included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:781f25ded4bee1dd45959eacc453b9de0deaa1e549a5f2cf3d49003c9c703997"
+}

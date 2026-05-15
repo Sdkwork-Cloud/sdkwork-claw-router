@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64570,
+  "uuid": "skill-clawhub-youtube-to-chinese",
+  "skillKey": "clawhub-youtube-to-chinese",
+  "name": "YouTube to Chinese",
+  "summary": "将提供的 YouTube 视频链接转录成完整中文稿，包含内容摘要和视频核心亮点，便于快速理解和复习。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_to_chinese",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "古 晖",
+      "features": [
+        "将提供的 YouTube 视频链接转录成完整中文稿，包含内容摘要和视频核心亮点，便于快速理解和复习。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-to-chinese@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11729740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-to-chinese",
+      "url": "https://clawhub.ai/skills/youtube-to-chinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-to-chinese",
+    "url": "https://clawhub.ai/skills/youtube-to-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-to-chinese-2d1fd552a8907539.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-to-chinese@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-to-chinese-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63a123bccfb175770f7a38a489745b49fb2bcc92a21dff9c528e6fca4da2630e",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:42:45.722Z"
+}

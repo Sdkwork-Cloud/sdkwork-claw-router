@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dexscreener-cli@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dexscreener_cli",
+  "skill": {
+    "id": 33206,
+    "skillKey": "clawhub-dexscreener-cli",
+    "name": "Dexscreener CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dexscreener-cli",
+    "url": "https://clawhub.ai/skills/dexscreener-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dexscreener-cli-b7cb8d5042f16075.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query DexScreener API for token prices, market data, trending pools, and memecoin categories. Automatically installs @kilincarslan/dexscreener-cli if not pre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zuefer3",
+      "userId": "s17exdyg8htpx9kvrchsb0ebpn85fxg2",
+      "displayName": "zuefer3",
+      "image": "https://avatars.githubusercontent.com/u/241980489?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777025266132,
+      "changelog": "- Update auto-installation command to use @kilincarslan-enterprises/dexscreener-cli (previously @kilincarslan/dexscreener-cli).\n- Update NPM package link to reflect new package name.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdb012b098bbe56f9e07af6345ced4ba1d21c5ce1966a78a6422a007041f4328"
+}

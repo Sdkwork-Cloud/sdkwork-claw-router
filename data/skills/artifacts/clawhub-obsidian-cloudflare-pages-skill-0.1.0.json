@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-cloudflare-pages-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_cloudflare_pages_skill",
+  "skill": {
+    "id": 18863,
+    "skillKey": "clawhub-obsidian-cloudflare-pages-skill",
+    "name": "Obsidian Cloudflare Pages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-cloudflare-pages-skill",
+    "url": "https://clawhub.ai/skills/obsidian-cloudflare-pages-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-cloudflare-pages-skill-a02c8846839d1aed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish selected Obsidian markdown from a vault to a static site and deploy to Cloudflare Pages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davidyoh",
+      "userId": "publishers:davidyoh",
+      "displayName": "David O.",
+      "image": "https://avatars.githubusercontent.com/u/219242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 534,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772665189410,
+      "changelog": "obsidian-cloudflare-pages-skill 0.1.0 – Initial Release\n\n- Publish selected Obsidian or Markdown notes as a static site and deploy to Cloudflare Pages.\n- Provides CLI commands for easy configuration, syncing, building (with Quartz), and deploying.\n- Safety-focused defaults: allowlist publishing, optional frontmatter gate, and private folder exclusion.\n- Supports interactive setup, project initialization, and validation with doctor commands.\n- Environment variables or `.env` files supported for secrets and Cloudflare API tokens.\n- Includes basic optional authentication and best practices for usage and security.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9181d2f0795d79e3d5fc28bc634e089f4a2a37a2d71287dfeb016c1b98b14cf7"
+}

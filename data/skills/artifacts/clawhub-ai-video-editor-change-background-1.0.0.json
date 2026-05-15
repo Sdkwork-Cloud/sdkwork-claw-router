@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-change-background@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_change_background",
+  "skill": {
+    "id": 55010,
+    "skillKey": "clawhub-ai-video-editor-change-background",
+    "name": "Ai Video Editor Change Background"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-change-background",
+    "url": "https://clawhub.ai/skills/ai-video-editor-change-background",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-change-background-a9ac2ebab32f2742.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — remove my background and replace it with a clean office scene — and get ba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776848348475,
+      "changelog": "AI Video Editor Change Background — Initial Release\n\n- Launches AI-powered video background replacement with natural language instructions.\n- Supports uploads in MP4, MOV, AVI, WebM (up to 500MB); automatic AI processing on cloud GPUs.\n- Guided setup: auto-connects to backend, fetches and manages authentication tokens as needed.\n- Provides clear user feedback during connection, editing, and export steps.\n- Includes credits checking, session management, and error handling for authentication, file limits, and rate limits.\n- Enables easy download of final 1080p MP4 files with replaced backgrounds—no green screen required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ece20a72798911b2d2a1911894e84a98de884a5991c5f42c89c483d6730225f"
+}

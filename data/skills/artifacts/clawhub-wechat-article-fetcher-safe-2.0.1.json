@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-fetcher-safe@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_fetcher_safe",
+  "skill": {
+    "id": 67229,
+    "skillKey": "clawhub-wechat-article-fetcher-safe",
+    "name": "微信文章抓取器 - 安全版"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-fetcher-safe",
+    "url": "https://clawhub.ai/skills/wechat-article-fetcher-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-fetcher-safe-d80e825395e18d5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Puppeteer + Chrome 无头模式抓取微信公众号文章，支持移动端伪装，提取全文及元信息并自动保存文本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adgai115",
+      "userId": "s174g944cwwb4qsgm2hmnajr8h83ggc0",
+      "displayName": "Adgai115",
+      "image": "https://avatars.githubusercontent.com/u/226634751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776846121959,
+      "changelog": "- Removed test files and legacy test outputs for a cleaner repository.\n- Added a new GitHub-focused README and project metadata file.\n- Updated documentation to reflect new repo location and privacy guarantees.\n- Improved clarity: streamlined feature description, file structure, and troubleshooting sections.\n- Removed unused OCR-related dependencies and instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8ef830fd628a23f606a6bdcc84220bd47ba069cab49009ab244098b1dd414bd4"
+}

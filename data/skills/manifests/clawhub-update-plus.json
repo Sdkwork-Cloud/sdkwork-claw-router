@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10068,
+  "uuid": "skill-clawhub-update-plus",
+  "skillKey": "clawhub-update-plus",
+  "name": "Update Plus",
+  "summary": "Full backup, update, and restore for OpenClaw - config, workspace, and skills with auto-rollback",
+  "version": "4.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.update_plus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hopyky",
+      "features": [
+        "Full backup, update, and restore for OpenClaw",
+        "config, workspace, and skills with auto-rollback"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/update-plus@4.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166903908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "update-plus",
+      "url": "https://clawhub.ai/skills/update-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "update-plus",
+    "url": "https://clawhub.ai/skills/update-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/update-plus-75dc47ecf1055e85.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/update-plus@4.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-update-plus-4.0.3.json",
+      "version": "4.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88f6616dc4197b483c5416b6bf3bcf29d8beba2d0259c04e4aecdebe231f4176",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T06:38:14.386Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-cash-flow-forecast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_cash_flow_forecast",
+  "skill": {
+    "id": 15861,
+    "skillKey": "clawhub-afrexai-cash-flow-forecast",
+    "name": "Cash Flow Forecast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-cash-flow-forecast",
+    "url": "https://clawhub.ai/skills/afrexai-cash-flow-forecast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-cash-flow-forecast-890974cc2a566e55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a 13-week rolling cash flow forecast from your current balance, expected income, and expenses, highlighting weeks below your cash buffer."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 930,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770966788413,
+      "changelog": "Initial release: Build a detailed 13-week rolling cash flow forecast from real inputs, flagging risk weeks and suggesting actions.\n\n- Accepts actual balances, income, and expenses (fixed and variable) to generate weekly forecasts.\n- Flags when balance dips below user-defined safety buffer.\n- Calculates runway and highlights risk periods with actionable recommendations.\n- Compares best-case vs worst-case income timing scenarios.\n- Clear, direct output format for founders and businesses managing cash flow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:00f8634097836d87127d5e709642cf98460ae3f382533bc2eb00b49c61e7e1de"
+}

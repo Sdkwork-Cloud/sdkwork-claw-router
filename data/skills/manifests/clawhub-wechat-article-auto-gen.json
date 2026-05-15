@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62484,
+  "uuid": "skill-clawhub-wechat-article-auto-gen",
+  "skillKey": "clawhub-wechat-article-auto-gen",
+  "name": "Wechat Article Auto Gen",
+  "summary": "自动抓取和改写公众号文章，生成分镜、AI 配图和封面，输出符合 MUX 品牌风格的完整 HTML 图文内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_auto_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dally-bee",
+      "features": [
+        "自动抓取和改写公众号文章，生成分镜、AI 配图和封面，输出符合 MUX 品牌风格的完整 HTML 图文内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-auto-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263806882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-auto-gen",
+      "url": "https://clawhub.ai/skills/wechat-article-auto-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-auto-gen",
+    "url": "https://clawhub.ai/skills/wechat-article-auto-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-auto-gen-33988aa2b889c322.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-auto-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-auto-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a24c2341ed0aca5f37ff2176502df56e83df3a174247339e9b1d1ddb55f5c18",
+      "artifactSizeBytes": 2389
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T12:39:02.938Z"
+}

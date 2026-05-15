@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9205,
+  "uuid": "skill-clawhub-multi-factor-strategy",
+  "skillKey": "clawhub-multi-factor-strategy",
+  "name": "multi-factor-strategy",
+  "summary": "Guide users to create multi-factor stock selection strategies and generate independent YAML configuration files",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_factor_strategy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wumu2013",
+      "features": [
+        "Guide users to create multi-factor stock selection strategies and generate independent YAML con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-factor-strategy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258595512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-factor-strategy",
+      "url": "https://clawhub.ai/skills/multi-factor-strategy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-factor-strategy",
+    "url": "https://clawhub.ai/skills/multi-factor-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-factor-strategy-a55642eafd342fb8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-factor-strategy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-factor-strategy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb21a43327dad1350ee6024d57538ccf69e3c24464eb77b427547811eec42c24",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T11:31:15.858Z"
+}

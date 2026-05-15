@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72664,
+  "uuid": "skill-clawhub-tarot-divination",
+  "skillKey": "clawhub-tarot-divination",
+  "name": "塔罗牌占卜",
+  "summary": "塔罗牌占卜付费服务，每日为你抽取一张塔罗牌，解读牌意与运势指引。包含78张塔罗牌数据（大阿尔卡纳22张 + 小阿尔卡纳56张），每次占卜随机抽取一张牌，给你牌意解读和今日指引。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tarot_divination",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arya",
+      "features": [
+        "塔罗牌占卜付费服务，每日为你抽取一张塔罗牌，解读牌意与运势指引。包含78张塔罗牌数据（大阿尔卡纳22张 + 小阿尔卡纳56张），每次占卜随机抽取一张牌，给你牌意解读和今日指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tarot-divination@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12756594?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tarot-divination",
+      "url": "https://clawhub.ai/skills/tarot-divination"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tarot-divination",
+    "url": "https://clawhub.ai/skills/tarot-divination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tarot-divination-1350db7834ebdb7b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tarot-divination@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tarot-divination-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad4b9845e359217fcacf455d306bedfaa626164fd10c09338ddc4848f99979b5",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T14:50:42.905Z"
+}

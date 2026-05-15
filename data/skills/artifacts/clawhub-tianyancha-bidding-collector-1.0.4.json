@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tianyancha-bidding-collector@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianyancha_bidding_collector",
+  "skill": {
+    "id": 62222,
+    "skillKey": "clawhub-tianyancha-bidding-collector",
+    "name": "tianyancha-bidding-collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianyancha-bidding-collector",
+    "url": "https://clawhub.ai/skills/tianyancha-bidding-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianyancha-bidding-collector-120bda7060667842.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天眼查招投标数据查询工具 - 基于浏览器自动化技术批量查询企业招投标/中标公示信息，导出结构化 CSV 报表。支持 macOS 和 Windows 跨平台运行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "airs-guest",
+      "userId": "s176x1f63484s736y3cp6v7m7s83kedm",
+      "displayName": "airs-git",
+      "image": "https://avatars.githubusercontent.com/u/250339137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774964367236,
+      "changelog": "tianyancha-bidding-collector 1.0.4\n\n- No changes detected in this version; files remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e65a39cf24aeaed0dca3eadf1110e72706c5fbaee5588b845d87847a42bb586"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-script@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_script",
+  "skill": {
+    "id": 58451,
+    "skillKey": "clawhub-youtube-script",
+    "name": "Youtube Script"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-script",
+    "url": "https://clawhub.ai/skills/youtube-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-script-8b44b537b793d0f3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YouTube视频脚本、标题A/B测试、缩略图文案、SEO优化、开头Hook、章节标记。YouTube script writer with title testing, thumbnail copy, SEO optimization, hooks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 627,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1773831245985,
+      "changelog": "update",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c11ebf27929370e26f5f082e95b531faa1a9aa651d79cb5fea52e2ecec0a1e9"
+}

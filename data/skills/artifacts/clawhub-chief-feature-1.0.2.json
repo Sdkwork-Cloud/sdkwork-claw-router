@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chief-feature@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chief_feature",
+  "skill": {
+    "id": 18975,
+    "skillKey": "clawhub-chief-feature",
+    "name": "Chief Feature Workflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chief-feature",
+    "url": "https://clawhub.ai/skills/chief-feature",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chief-feature-72794a3678ea1ccf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and implement new features in Chief-managed projects using the Chief CLI. Use when asked to create a new PRD, implement a feature with Chief, set up a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nogara",
+      "userId": "publishers:nogara",
+      "displayName": "Luiz Gustavo Nogara",
+      "image": "https://avatars.githubusercontent.com/u/61724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 546,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772209015700,
+      "changelog": "Chief-feature v1.0.1 introduces support for spawning subagents to run multiple feature implementation loops in parallel.\n\n- New recommended workflow to spawn subagents for autonomous Chief runs, supporting parallel PRD implementation.\n- Added guidance on running 2–3 subagents concurrently for optimal throughput and resource usage.\n- Clarified manual vs. autonomous workflows, with detailed subagent instructions.\n- Added tips for resuming progress and proper file committing.\n- Cleaned up and clarified step order, emphasizing best practices for worktree management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c7c2a08d9df5cc8d5267f06f2845d23b43da5883cc6d4e8544c45a163d021cb8"
+}

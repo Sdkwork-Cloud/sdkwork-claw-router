@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66861,
+  "uuid": "skill-clawhub-feishu-bot-manager-cn",
+  "skillKey": "clawhub-feishu-bot-manager-cn",
+  "name": "Feishu Bot Manager CN",
+  "summary": "管理 OpenClaw 中的飞书机器人账户与路由绑定。用于新增飞书机器人账号、把机器人账户级或群聊级绑定到指定 Agent，或在创建新机器人时顺带创建一个全新的独立 Agent 工作区。用户提到“绑定新飞书机器人”“新增飞书机器人”“把机器人绑到某个 Agent”“给某个群绑定 Agent”时使用。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bot_manager_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlexShen",
+      "features": [
+        "管理 OpenClaw 中的飞书机器人账户与路由绑定。用于新增飞书机器人账号、把机器人账户级或群聊级绑定到指定 Agent，或在创建新机器人时顺带创建一个全新的独立 Agent 工作区。用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bot-manager-cn@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73343630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bot-manager-cn",
+      "url": "https://clawhub.ai/skills/feishu-bot-manager-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bot-manager-cn",
+    "url": "https://clawhub.ai/skills/feishu-bot-manager-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bot-manager-cn-18d3286a1f5bc01f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bot-manager-cn@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bot-manager-cn-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d745a97ee525e11e64c91e2237672d8fbc4523096ca348687d99389decc6ee3",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T18:53:46.810Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21740,
+  "uuid": "skill-clawhub-pdf-converter",
+  "skillKey": "clawhub-pdf-converter",
+  "name": "Pdf Converter",
+  "summary": "Convert PDFs to PPTX slides or editable DOCX files with configurable image quality, DPI, file size limit, and batch processing support.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_converter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cscsxx",
+      "features": [
+        "Convert PDFs to PPTX slides or editable DOCX files with configurable image quality, DPI, file s."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-converter@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10043543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-converter",
+      "url": "https://clawhub.ai/skills/pdf-converter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-converter",
+    "url": "https://clawhub.ai/skills/pdf-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-converter-b8d03e73f1af5197.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-converter@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-converter-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a60c216eb18a445782fbbb9c00ef854c1609187172b7cacc0bb244e1f0794491",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:37:37.721Z"
+}

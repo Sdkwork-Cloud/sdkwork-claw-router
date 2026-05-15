@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/orderly-onboarding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orderly_onboarding",
+  "skill": {
+    "id": 29534,
+    "skillKey": "clawhub-orderly-onboarding",
+    "name": "Orderly Onboarding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orderly-onboarding",
+    "url": "https://clawhub.ai/skills/orderly-onboarding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orderly-onboarding-9311274688edcc15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent onboarding for Orderly Network - omnichain perpetual futures infrastructure, MCP server, skills, and developer quickstart"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tarnadas",
+      "userId": "publishers:tarnadas",
+      "displayName": "Mario Reder",
+      "image": "https://avatars.githubusercontent.com/u/5855071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 301,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772814231246,
+      "changelog": "Initial release of orderly-onboarding: Agent onboarding for Orderly Network\n\n- Introduces comprehensive onboarding documentation for Orderly Network's omnichain perpetual futures infrastructure.\n- Outlines when and how to use the skill, highlighting use cases for builders, aggregators, trading desks, and bots.\n- Provides an architectural overview and key advantages, emphasizing liquidity, quick development, and unified orderbook access.\n- Includes detailed guidance on installing and configuring the recommended MCP server for various AI agent clients.\n- Documents commands for installing Orderly agent skills globally, locally, or for specific agents, with descriptions for each available skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe909463693b4c8f1ae9cc65e540934f15e7e92db3265cc72b0c4871163c95ec"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-archive@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_archive",
+  "skill": {
+    "id": 40728,
+    "skillKey": "clawhub-pilot-archive",
+    "name": "Pilot Archive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-archive",
+    "url": "https://clawhub.ai/skills/pilot-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-archive-c13cc206f7fbfade.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Index and search historical data exchanges, messages, and file transfers over Pilot Protocol. Use this skill when: 1. You need to search through past message..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775686412384,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:112829a1c762358382b0350bbc17f3972f0e4f2370f956f81932cbc7aa99b8fe"
+}

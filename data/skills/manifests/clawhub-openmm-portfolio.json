@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22392,
+  "uuid": "skill-clawhub-openmm-portfolio",
+  "skillKey": "clawhub-openmm-portfolio",
+  "name": "OpenMM Portfolio",
+  "summary": "Balance tracking, order overview, and market data across exchanges using OpenMM.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openmm_portfolio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Angelos Kappos",
+      "features": [
+        "Balance tracking, order overview, and market data across exchanges using OpenMM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openmm-portfolio@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9395707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openmm-portfolio",
+      "url": "https://clawhub.ai/skills/openmm-portfolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openmm-portfolio",
+    "url": "https://clawhub.ai/skills/openmm-portfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openmm-portfolio-daf3c5c3462e659f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openmm-portfolio@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openmm-portfolio-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b92a982195e2cf367588e2e91c4a27a8b304811e4d20ef32d87b8c9750577df",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T12:15:50.354Z"
+}

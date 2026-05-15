@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21606,
+  "uuid": "skill-clawhub-gws-gmail-read",
+  "skillKey": "clawhub-gws-gmail-read",
+  "name": "Gws Gmail Read",
+  "summary": "Gmail: Read a message and extract its body or headers.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_gmail_read",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Gmail: Read a message and extract its body or headers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-gmail-read@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-gmail-read",
+      "url": "https://clawhub.ai/skills/gws-gmail-read"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-gmail-read",
+    "url": "https://clawhub.ai/skills/gws-gmail-read",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-gmail-read-b379ab9e49290b0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-gmail-read@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-gmail-read-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d9606fda48a5ff863564c42028e76616b45701ce889fb89fb7077e6595aa8c7",
+      "artifactSizeBytes": 1852
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:34:02.908Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arxiv-translate-email@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_translate_email",
+  "skill": {
+    "id": 66049,
+    "skillKey": "clawhub-arxiv-translate-email",
+    "name": "Arxiv Translate Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-translate-email",
+    "url": "https://clawhub.ai/skills/arxiv-translate-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-translate-email-31f7c5b5d70a5049.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 arXiv 下载论文并翻译为中文，发送至邮箱。当用户说\"下载并翻译论文\"、\"翻译这篇文献\"、\"下载xxx论文并发送到我邮箱\"时使用此技能。支持同步和异步两种模式。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckqiao",
+      "userId": "s179x0mkmvqmf1906vhf1wr6kx83gwph",
+      "displayName": "CkQiao",
+      "image": "https://avatars.githubusercontent.com/u/75972309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775979298073,
+      "changelog": "arxiv-translate-email v1.0.0\n\n- 新增支持从 arXiv 下载论文，自动翻译为中文并通过邮件发送。\n- 支持异步队列（推荐）与同步两种执行模式，串行保护资源。\n- 内置队列管理与任务状态文件，实现任务增删查改与执行。\n- 集成 DeepSeek 翻译和 QQ 邮箱发送，含详细环境与流程说明。\n- 支持主动通过 QQ 消息通知任务完成状态。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1751b2f21f04670c528d864b970f5017de11aff8d0c8ddf1258cfb02a7286286"
+}

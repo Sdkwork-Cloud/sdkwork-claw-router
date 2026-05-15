@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-expert@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_expert",
+  "skill": {
+    "id": 68904,
+    "skillKey": "clawhub-xhs-expert",
+    "name": "Xhs Expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-expert",
+    "url": "https://clawhub.ai/skills/xhs-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-expert-8c12c439d2d59de9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书运营专家技能。能够搜索笔记、采集数据、互动操作（点赞/评论/收藏/关注）， 分析内容趋势，批量运营账号。 当用户要求\"搜索小红书\"、\"小红书运营\"、\"搜索xhs内容\"、\"批量互动\"、 \"分析小红书\"、\"xhs数据分析\"时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mieming1985",
+      "userId": "s17eem2w8aw5ghhj932mfb7m3h83g2tb",
+      "displayName": "mieming1985",
+      "image": "https://avatars.githubusercontent.com/u/128688511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774508667193,
+      "changelog": "Initial release, fully rebuilt based on content-discovery-sdk blueprint.\n\n- Adds note search, detail retrieval, and comment collection capabilities.\n- Enables interactive actions: like, comment, collect, follow (including batch operations).\n- Provides authentication management (login via browser, status check).\n- Implements data statistics and local data queries.\n- Introduces enforced safety checks and confirmation flows for sensitive or batch actions.\n- Resolves all known bugs; fully operational CLI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7687be31e7dbf02749262bf63eebff52ca0d8434192cb05112c182a92e7fab2d"
+}

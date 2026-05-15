@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmaiot@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmaiot",
+  "skill": {
+    "id": 62491,
+    "skillKey": "clawhub-cmaiot",
+    "name": "cmaiot-basic-general-kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmaiot",
+    "url": "https://clawhub.ai/skills/cmaiot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmaiot-313c66c23aed3dd0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询并控制cmaiot平台上的产品和设备，并可获取视频设备的播放地址。cmaiot平台的正式名称是中国移动AIoT平台(iot.10086.cn)。连接需要的产品API Key和产品ID由cmaiot工具保存。目前只支持使用物模型的设备。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ch2925",
+      "userId": "s17fnm34481fag30r5gy3knv2x856gyy",
+      "displayName": "ch2925",
+      "image": "https://avatars.githubusercontent.com/u/46040749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777429935742,
+      "changelog": "cmaiot 1.0.3\n\n- 优化描述，明确平台全称及网址（中国移动AIoT平台(iot.10086.cn)）。\n- 新增命令，支持读取设备实时属性：scripts/cmaiot.js ls productId/deviceName/propertyId。\n- 明确实时属性、设置属性、调用服务为同步接口，需设备在线。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65f4a4b06545b4be56ad5f4657ea937f5ae275bc8bb6b9179a98e309d4128eb2"
+}

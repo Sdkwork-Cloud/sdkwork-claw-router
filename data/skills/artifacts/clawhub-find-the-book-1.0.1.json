@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-the-book@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_the_book",
+  "skill": {
+    "id": 70381,
+    "skillKey": "clawhub-find-the-book",
+    "name": "findTheBook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-the-book",
+    "url": "https://clawhub.ai/skills/find-the-book",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-the-book-abb2ff9d8e90352d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索豆瓣书籍评分、作者和链接，并提供微信读书电子书资源，适合寻找高分书单和深入阅读需求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wintersun661",
+      "userId": "publishers:wintersun661",
+      "displayName": "wintersun661",
+      "image": "https://avatars.githubusercontent.com/u/47968103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1167,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770642792572,
+      "changelog": "- 新增微信读书(WeChat Reading)链接查找功能，方便用户直接访问阅读资源\n- 输出推荐结果时新增微信读书链接（若有），格式更清晰：书名加粗，单独标注豆瓣评分\n- 调整回答格式说明与示例，提升用户体验\n- 技能描述更新，更突出电子书资源查找功能",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3962f4595a1c609b008d86ad6a0b57374a76302de1dba6df40dc59a7a1c5e7a"
+}

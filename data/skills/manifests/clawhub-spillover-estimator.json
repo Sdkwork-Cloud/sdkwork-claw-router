@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33872,
+  "uuid": "skill-clawhub-spillover-estimator",
+  "skillKey": "clawhub-spillover-estimator",
+  "name": "Spillover Estimator",
+  "summary": "Estimate whether one commerce channel is creating measurable spillover into another channel using simple exports, campaign timing, and directional evidence....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spillover_estimator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Estimate whether one commerce channel is creating measurable spillover into another channel usi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spillover-estimator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spillover-estimator",
+      "url": "https://clawhub.ai/skills/spillover-estimator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spillover-estimator",
+    "url": "https://clawhub.ai/skills/spillover-estimator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spillover-estimator-70340f52865d834e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spillover-estimator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spillover-estimator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:380c8e335b4db72dadbb59d9d132792bfced0903ef183d2267c2429ae4b4dfce",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:13:12.872Z"
+}

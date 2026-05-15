@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69281,
+  "uuid": "skill-clawhub-plan-i",
+  "skillKey": "clawhub-plan-i",
+  "name": "Plan I",
+  "summary": "启动一个新的规划流程，创建新的规划文件。",
+  "version": "0.1.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plan_i",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xin Ding",
+      "features": [
+        "启动一个新的规划流程，创建新的规划文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plan-i@0.1.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74651863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plan-i",
+      "url": "https://clawhub.ai/skills/plan-i"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plan-i",
+    "url": "https://clawhub.ai/skills/plan-i",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plan-i-52ea20bd9532b42f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plan-i@0.1.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-plan-i-0.1.9.json",
+      "version": "0.1.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07ad8f82cd59e860757e63fdaf74609ec4030b8106178390ff0a43da8f1fe959",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T11:10:46.954Z"
+}

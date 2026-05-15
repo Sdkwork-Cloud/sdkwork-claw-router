@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58938,
+  "uuid": "skill-clawhub-study-plan",
+  "skillKey": "clawhub-study-plan",
+  "name": "Study Plan",
+  "summary": "学习计划生成器。考研计划、考证规划、每日学习、番茄钟。Study plan generator for exams, certifications, daily schedules. 学习计划、考研计划、备考规划。Use when creating study schedules.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.study_plan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "学习计划生成器。考研计划、考证规划、每日学习、番茄钟。Study plan generator for exams, certifications, daily schedules",
+        "学习计划、考研计划、备考规划。Use when creating study schedules."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/study-plan@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "study-plan",
+      "url": "https://clawhub.ai/skills/study-plan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "study-plan",
+    "url": "https://clawhub.ai/skills/study-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/study-plan-141510894696eafa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/study-plan@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-study-plan-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa3b872d7b477935dd4bd070f55e9e58504ac85ce0313d2709e89ecd1a3ab4d7",
+      "artifactSizeBytes": 1981
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:49:44.062Z"
+}

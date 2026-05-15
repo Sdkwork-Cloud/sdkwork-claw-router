@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terry-blogwatcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terry_blogwatcher",
+  "skill": {
+    "id": 48771,
+    "skillKey": "clawhub-terry-blogwatcher",
+    "name": "BlogWatcher (Terry)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terry-blogwatcher",
+    "url": "https://clawhub.ai/skills/terry-blogwatcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terry-blogwatcher-a354f1f732048b4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor blogs and RSS feeds"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 93,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778095048697,
+      "changelog": "Initial publish with least-privilege access rules",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b98fc38cd7e954a7716882bcebced84a4a63fa5dbdc110885fddfa11d2328002"
+}

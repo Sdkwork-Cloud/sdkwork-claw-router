@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57437,
+  "uuid": "skill-clawhub-memory-manager-pro",
+  "skillKey": "clawhub-memory-manager-pro",
+  "name": "Memory Manager Pro (记忆索引管理)",
+  "summary": "Professional memory indexing and task management system for OpenClaw. Provides three-level indexing (core→project/type→detail), task tracking, keyword mappin...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_manager_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cappuccino",
+      "features": [
+        "Professional memory indexing and task management system for OpenClaw",
+        "Provides three-level indexing (core→project/type→detail), task tracking, keyword mappin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-manager-pro@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31878199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-manager-pro",
+      "url": "https://clawhub.ai/skills/memory-manager-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-manager-pro",
+    "url": "https://clawhub.ai/skills/memory-manager-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-manager-pro-9a1becce44a8eb40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-manager-pro@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-manager-pro-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:95d38d08d7ea99a368c05a3b4cb98d49e10ad6455c0c75631664d44fd8cfbe38",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T13:15:36.038Z"
+}

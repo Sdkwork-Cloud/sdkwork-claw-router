@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/space-autonomy-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.space_autonomy_skill",
+  "skill": {
+    "id": 18002,
+    "skillKey": "clawhub-space-autonomy-skill",
+    "name": "Pydaqua SpaceAutonomySkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "space-autonomy-skill",
+    "url": "https://clawhub.ai/skills/space-autonomy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/space-autonomy-skill-819cb2c4c2ad1d2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous space navigation agent using optical quantum kernels for terrain classification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aadipapp",
+      "userId": "s17dpk5mcc97a4cwfszm5yd0vd83kh02",
+      "displayName": "Krishna Aditya",
+      "image": "https://avatars.githubusercontent.com/u/12190815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 717,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771221662001,
+      "changelog": "Initial release of Space Autonomy Quantum Skill.\n\n- Simulates an autonomous agent for space exploration using optical quantum kernels for terrain classification.\n- Implements strict safety by halting if classification confidence falls below 0.8.\n- Provides a `navigate` command to process sensor readings and recommend actions based on quantum analysis.\n- Supports autonomous decision making between \"Navigate\" and \"Avoid\" modes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4346b505074c991907d086e2f186d1e62db9a5906ac0123e45e9bef9619980a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quo@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quo",
+  "skill": {
+    "id": 9458,
+    "skillKey": "clawhub-quo",
+    "name": "Quo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quo",
+    "url": "https://clawhub.ai/skills/quo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quo-2901529c22b10096.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quo API integration with managed OAuth. Manage calls, messages, contacts, and conversations for your business phone system. Use this skill when users want to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3664,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777589129980,
+      "changelog": "- Changed all API and management endpoints from *.maton.ai/gateway.maton.ai/ctrl.maton.ai to api.maton.ai.\n- Updated Quick Start and code examples to use the new base URL: https://api.maton.ai.\n- Updated connection management (list/create/get/delete) to use https://api.maton.ai endpoint.\n- Added a \"Security & Permissions\" section emphasizing user approval for write operations.\n- LICENSE.txt file was removed.\n- Documentation clarifies Maton now proxies requests (not \"gateway\"), and standardizes connection header usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4ca92d0a6d7b4a3ba82651994c65139a0e62f0d760a21d2dddb9515cd5a4af0"
+}

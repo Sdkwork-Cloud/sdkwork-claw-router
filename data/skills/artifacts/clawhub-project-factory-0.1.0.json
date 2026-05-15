@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-factory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_factory",
+  "skill": {
+    "id": 53881,
+    "skillKey": "clawhub-project-factory",
+    "name": "project-factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-factory",
+    "url": "https://clawhub.ai/skills/project-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-factory-169925f6ec30bc19.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstrap a new OpenClaw automation project using a four-phase workflow: Phase 0 — LLM reasoning: infer project type, flowchart structure, and node draft fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lcking",
+      "userId": "s170101magtqqn27t15vvet6dh85spk0",
+      "displayName": "Alexck",
+      "image": "https://avatars.githubusercontent.com/u/9197287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777476896860,
+      "changelog": "project-factory v0.1.0 — Initial Release\n\n- Introduces a four-phase workflow for bootstrapping OpenClaw automation projects: LLM reasoning, flowchart confirmation, node configuration, and full project scaffold generation.\n- Supports model selection based on project complexity, defaulting to MiniMax-M2.5 (FAST), with optional upgrade to GPT-4.1 (SMART) for complex flows.\n- Automatically parses plain-language project descriptions and synthesizes recommended flowchart and node details.\n- User can confirm, edit, or adjust the generated workflow and flowchart before proceeding.\n- Guided node-by-node configuration, including skill recommendations and credential checks.\n- Ensures outputs (flowcharts, JSON configs) are syntactically valid before progressing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c54a4a5731c0f3571a1e57995366283110131b159b4bf088909d1576a384d60"
+}

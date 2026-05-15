@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/azure-storage-blob-py@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_storage_blob_py",
+  "skill": {
+    "id": 11514,
+    "skillKey": "clawhub-azure-storage-blob-py",
+    "name": "Azure Storage Blob Py"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-storage-blob-py",
+    "url": "https://clawhub.ai/skills/azure-storage-blob-py",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-storage-blob-py-ba1292a4ca63c4bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Azure Blob Storage SDK for Python. Use for uploading, downloading, listing blobs, managing containers, and blob lifecycle. Triggers: \"blob storage\", \"BlobServiceClient\", \"ContainerClient\", \"BlobClient\", \"upload blob\", \"download blob\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thegovind",
+      "userId": "publishers:thegovind",
+      "displayName": "thegovind",
+      "image": "https://avatars.githubusercontent.com/u/18152044?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2010,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769871049258,
+      "changelog": "Initial release of Azure Blob Storage SDK for Python skill.\n\n- Provides in-depth usage guide for uploading, downloading, listing, and managing blobs and containers.\n- Covers client hierarchy (`BlobServiceClient`, `ContainerClient`, `BlobClient`) and authentication using Azure Identity.\n- Includes code samples for all major operations, performance tuning (chunking, parallelism), and SAS token generation.\n- Documents advanced features: blob metadata, content headers, async client usage, and best practices.\n- Lists relevant environment variables and recommended settings for production use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b73bb31027b32a0e34f669e7a995767c5c17aab86a7f7bd1730692f6c48c278"
+}

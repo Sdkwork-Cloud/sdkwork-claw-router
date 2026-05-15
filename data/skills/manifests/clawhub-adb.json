@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57541,
+  "uuid": "skill-clawhub-adb",
+  "skillKey": "clawhub-adb",
+  "name": "ADB",
+  "summary": "Information assistant for ADB 亚洲开发银行. Get mission info, latest reports, member states, and organizational resources.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for ADB 亚洲开发银行",
+        "Get mission info, latest reports, member states, and organizational resources."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adb@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adb",
+      "url": "https://clawhub.ai/skills/adb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adb",
+    "url": "https://clawhub.ai/skills/adb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adb-7e16a033d8a9e716.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adb@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-adb-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4777655e0e363998df604ea70bb400a41109410cbb3ff1368a4b87ba14ebb6d8",
+      "artifactSizeBytes": 1778
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:11:29.923Z"
+}

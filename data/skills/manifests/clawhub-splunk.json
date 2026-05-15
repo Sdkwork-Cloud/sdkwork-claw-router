@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28357,
+  "uuid": "skill-clawhub-splunk",
+  "skillKey": "clawhub-splunk",
+  "name": "Splunk",
+  "summary": "Splunk integration. Manage data, records, and automate workflows. Use when the user wants to interact with Splunk data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.splunk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Splunk integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Splunk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/splunk@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "splunk",
+      "url": "https://clawhub.ai/skills/splunk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "splunk",
+    "url": "https://clawhub.ai/skills/splunk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/splunk-101e21bef69a3df6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/splunk@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-splunk-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46c645a0076b5c4eb0ef83da17cc82e472949046403933be1d60795826fb0440",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:45:48.974Z"
+}

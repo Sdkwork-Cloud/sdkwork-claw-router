@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upcv-clawjob@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upcv_clawjob",
+  "skill": {
+    "id": 68354,
+    "skillKey": "clawhub-upcv-clawjob",
+    "name": "UP 简历 - 让 Agent 帮你写简历找工作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upcv-clawjob",
+    "url": "https://clawhub.ai/skills/upcv-clawjob",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upcv-clawjob-d0edf72192ac35ba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "UP 简历 AI 求职助手。创建专业简历、搜索校招/社招/实习岗位、JD 对照优化、简历诊断、每日求职监控、智能投递指导。当用户说\"创建简历\"、\"编辑简历\"、\"搜索校招\"、\"找工作\"、\"优化简历\"、\"投递\"、\"监控校招\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hellosanshi",
+      "userId": "s179pf6gzpgad56cgwkmd9rxch83g179",
+      "displayName": "叁拾",
+      "image": "https://avatars.githubusercontent.com/u/37927637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 499,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773392682249,
+      "changelog": "v1.0.1 (no file changes detected)\n\n- No changes were made to the skill files in this version.\n- Functionality, documentation, and features remain the same as the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b48bb8756ddd677b95c751e2865d90c9613aa33bf5f39a48cb1903a13e7a2dd"
+}

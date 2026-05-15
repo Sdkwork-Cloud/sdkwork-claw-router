@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/funimation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.funimation",
+  "skill": {
+    "id": 49185,
+    "skillKey": "clawhub-funimation",
+    "name": "Funimation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "funimation",
+    "url": "https://clawhub.ai/skills/funimation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/funimation-664eafb394d7506b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Funimation's role in globalizing Japanese anime through English dubbing and its acquisition by Sony in the streaming market."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 85,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777590477658,
+      "changelog": "- Added initial release of the Funimation skill.\n- Provides an overview of Funimation's journey from a Texas startup to its integration into Sony's Crunchyroll.\n- Highlights Funimation’s pivotal role in localizing anime through English dubbing.\n- Outlines Funimation's influence on the globalization of Japanese anime and the evolution of niche brands into major corporate acquisitions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d332b89e3bfa8b88f8138c5a5123b9378e42bbed85f10957e427044274851b0a"
+}

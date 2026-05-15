@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24580,
+  "uuid": "skill-clawhub-xmtp-agents",
+  "skillKey": "clawhub-xmtp-agents",
+  "name": "XMTP Agents",
+  "summary": "Connect a running agent (OpenClaw, Claude Code, LangChain, custom Python, any agent runtime) to XMTP messaging so people can DM it and get responses that use...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xmtp_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Saul Carlin",
+      "features": [
+        "Connect a running agent (OpenClaw, Claude Code, LangChain, custom Python, any agent runtime) to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xmtp-agents@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/510695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xmtp-agents",
+      "url": "https://clawhub.ai/skills/xmtp-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xmtp-agents",
+    "url": "https://clawhub.ai/skills/xmtp-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xmtp-agents-8439880a2521354f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xmtp-agents@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xmtp-agents-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fdd81a1458078bd889395d8fb66a80bd6462561a652b9e8949d555017976ce1",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:30:23.917Z"
+}

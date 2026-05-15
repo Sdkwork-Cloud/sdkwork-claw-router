@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62512,
+  "uuid": "skill-clawhub-blockbuster-video",
+  "skillKey": "clawhub-blockbuster-video",
+  "name": "Blockbuster Video",
+  "summary": "分析Blockbuster错失流媒体转型机会，详述其实体租赁模式与Netflix订阅制的战略差异及商业失败原因。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockbuster_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "分析Blockbuster错失流媒体转型机会，详述其实体租赁模式与Netflix订阅制的战略差异及商业失败原因。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blockbuster-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blockbuster-video",
+      "url": "https://clawhub.ai/skills/blockbuster-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockbuster-video",
+    "url": "https://clawhub.ai/skills/blockbuster-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockbuster-video-d624e3ac5f571917.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blockbuster-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blockbuster-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c228a97b9efc07d3fb53447aa403cbb85f5496097e5fd55df1db4d1220d47767",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T17:10:10.720Z"
+}

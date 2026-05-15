@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gateway-delayed-restart@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gateway_delayed_restart",
+  "skill": {
+    "id": 60700,
+    "skillKey": "clawhub-gateway-delayed-restart",
+    "name": "Gateway Delayed Restart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gateway-delayed-restart",
+    "url": "https://clawhub.ai/skills/gateway-delayed-restart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gateway-delayed-restart-65925b791281e3a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "延迟指定分钟数重启 OpenClaw Gateway，支持自定义延迟并通过飞书主动通知完成情况。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanl754",
+      "userId": "s173k30k9pte387kbb0b8e16ad83rvn8",
+      "displayName": "hanl754",
+      "image": "https://avatars.githubusercontent.com/u/8143555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773460716641,
+      "changelog": "Delayed restart with completion notification via Feishu",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b57010685b3ede3dea18140dcb01abf9e7d4fef599c11be2bcb0ad9c8a8a85d"
+}

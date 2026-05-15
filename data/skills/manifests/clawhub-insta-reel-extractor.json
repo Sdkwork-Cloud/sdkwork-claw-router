@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42834,
+  "uuid": "skill-clawhub-insta-reel-extractor",
+  "skillKey": "clawhub-insta-reel-extractor",
+  "name": "Instagram Reel Extractor",
+  "summary": "Monitor Instagram DMs for reels. Use when you need to check Instagram DMs for new unread messages containing reels, click them, extract the reel link, and ap...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insta_reel_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Thejas775",
+      "features": [
+        "Monitor Instagram DMs for reels",
+        "Use when you need to check Instagram DMs for new unread messages containing reels, click them,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insta-reel-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58774753?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insta-reel-extractor",
+      "url": "https://clawhub.ai/skills/insta-reel-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insta-reel-extractor",
+    "url": "https://clawhub.ai/skills/insta-reel-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insta-reel-extractor-d5e1a1eef3b0ac0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insta-reel-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-insta-reel-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a99702339e2b9fe2f01be142f01138f94cf8002d2873a7f0ffe169d2f07aea64",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T10:43:48.349Z"
+}

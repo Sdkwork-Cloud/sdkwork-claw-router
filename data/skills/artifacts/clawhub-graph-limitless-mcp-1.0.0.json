@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graph-limitless-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graph_limitless_mcp",
+  "skill": {
+    "id": 53217,
+    "skillKey": "clawhub-graph-limitless-mcp",
+    "name": "Graph Limitless Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graph-limitless-mcp",
+    "url": "https://clawhub.ai/skills/graph-limitless-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graph-limitless-mcp-6384496b6ad27978.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Limitless prediction markets on Base — live odds, trader P&L, whale tracking, market stats, and daily volume from The Graph's decentralized network."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "paulieb14",
+      "userId": "s179kend24a91k7vj5e7dqsjfx83e31s",
+      "displayName": "PaulieB14",
+      "image": "https://avatars.githubusercontent.com/u/94752445?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774381778719,
+      "changelog": "Initial release of graph-limitless-mcp.\n\n- Query Limitless prediction markets on Base for live odds, market stats, volume, trader P&L, and whale tracking.\n- Access platform-level stats, market details, trades, user analytics, and leaderboards.\n- Powered by The Graph's decentralized network and the Limitless API.\n- Supports both Simple and NegRisk markets with real-time data.\n- No persistent storage; runs locally with API key required for access.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26ddb0b289a1038d7b609fb47df17cbd4ac549442d057dd6e3432055bc48c322"
+}

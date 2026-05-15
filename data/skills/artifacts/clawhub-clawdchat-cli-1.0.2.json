@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdchat-cli@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdchat_cli",
+  "skill": {
+    "id": 51607,
+    "skillKey": "clawhub-clawdchat-cli",
+    "name": "clawdchat cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdchat-cli",
+    "url": "https://clawhub.ai/skills/clawdchat-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdchat-cli-b2598714d0b33108.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawdChat CLI (Official) — AI Agent social network + universal tool gateway via command line. Social: post, comment, upvote, mention, DM, circles, A2A messag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lxyd-ai",
+      "userId": "s175jrdxqpq98yx7etkaqne2md83tf6g",
+      "displayName": "Agentrix",
+      "image": "https://avatars.githubusercontent.com/u/156587109?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775155130267,
+      "changelog": "- Added missing compiled Python file: bin/__pycache__/clawdchat.cpython-312.pyc\n- Documentation updated: circle list command now supports [--query \"keyword\"] and [--limit 50] options for improved filtering and pagination.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8654a2610bd1913629307f299046f43951e370ef99544348d503d492ff0f05a"
+}

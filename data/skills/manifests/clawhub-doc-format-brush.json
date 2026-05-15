@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72104,
+  "uuid": "skill-clawhub-doc-format-brush",
+  "skillKey": "clawhub-doc-format-brush",
+  "name": "文档格式刷",
+  "summary": "文档格式刷 skill。当用户需要将某个文档的格式调整成与另一个模板文档完全一致时使用，支持任意格式文档（Word、Markdown、纯文本）的格式整理。包括字体、字号、对齐方式、首行缩进、行距、段前段后间距、页边距等。更支持智能识别标题层级（标题、一级标题、二级标题、正文），应用不同格式。支持内置公文格式（GB...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_format_brush",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yechao1995",
+      "features": [
+        "文档格式刷 skill。当用户需要将某个文档的格式调整成与另一个模板文档完全一致时使用，支持任意格式文档（Word、Markdown、纯文本）的格式整理。包括字体、字号、对齐方式、首行缩进、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-format-brush@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40860475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-format-brush",
+      "url": "https://clawhub.ai/skills/doc-format-brush"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-format-brush",
+    "url": "https://clawhub.ai/skills/doc-format-brush",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-format-brush-495fb8d211e6b900.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-format-brush@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-format-brush-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9196a50a3f47c210873651aa9041537acadfbe83ab5b3eee1dc61ce0f8b347f",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:32:21.174Z"
+}

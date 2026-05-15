@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55183,
+  "uuid": "skill-clawhub-markdown-new-crawl",
+  "skillKey": "clawhub-markdown-new-crawl",
+  "name": "markdown.new/crawl",
+  "summary": "Use `https://markdown.new/crawl/{target_url}` endpoints to recursively crawl a site section and return markdowns. Trigger this skill when the user asks for m...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_new_crawl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ctxinf",
+      "features": [
+        "Use `https://markdown.new/crawl/{target_url}` endpoints to recursively crawl a site section and.",
+        "Trigger this skill when the user asks for m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-new-crawl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136044792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-new-crawl",
+      "url": "https://clawhub.ai/skills/markdown-new-crawl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-new-crawl",
+    "url": "https://clawhub.ai/skills/markdown-new-crawl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-new-crawl-8ba88b29387e07bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-new-crawl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-new-crawl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aabf33961a2dc8c9ad5b95ab90fa6771b659ac971582573007ede83a6524e1e3",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:54:47.978Z"
+}

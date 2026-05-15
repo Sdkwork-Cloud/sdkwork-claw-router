@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57857,
+  "uuid": "skill-clawhub-quick-tts",
+  "skillKey": "clawhub-quick-tts",
+  "name": "Quick TTS",
+  "summary": "Zero-config text-to-speech — give text, get an mp3 file. Handles natural-language voice selection (\"用女声\", \"撒娇语气\", \"生气一点\") and auto-inserts pacing breaks for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_tts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Zero-config text-to-speech — give text, get an mp3 file",
+        "Handles natural-language voice selection (\"用女声\", \"撒娇语气\", \"生气一点\") and auto-inserts pacing breaks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-tts",
+      "url": "https://clawhub.ai/skills/quick-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-tts",
+    "url": "https://clawhub.ai/skills/quick-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-tts-aa794fecc310b147.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b46168d993fcca7412fc06c2240f60d5e4a7d5e4cb62a781ce9f99baf89a52a",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:40:43.749Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57987,
+  "uuid": "skill-clawhub-ai-news-workflow",
+  "skillKey": "clawhub-ai-news-workflow",
+  "name": "AI领域重点企业资讯抓取与简报生成",
+  "summary": "Collect, filter, classify AI industry news, generate Chinese titles and summaries, and export Excel and Word briefs based on company lists and sources.",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nighmat",
+      "features": [
+        "Collect, filter, classify AI industry news, generate Chinese titles and summaries, and export E."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-workflow@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/55906764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-workflow",
+      "url": "https://clawhub.ai/skills/ai-news-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-workflow",
+    "url": "https://clawhub.ai/skills/ai-news-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-workflow-0049ff8faa45930f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-workflow@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-workflow-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fe28b83f25c7e914ed87bb582bc876ab725e10f715b75be530bf33745235a90",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T04:20:38.790Z"
+}

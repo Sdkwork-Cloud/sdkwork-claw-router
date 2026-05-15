@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-wizard@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_wizard",
+  "skill": {
+    "id": 34077,
+    "skillKey": "clawhub-prompt-wizard",
+    "name": "Prompt Wizard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-wizard",
+    "url": "https://clawhub.ai/skills/prompt-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-wizard-7ab97740c6a532d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-quality English prompts for ChatGPT Image 2. Use when user wants to create AI image prompts, needs GPT-Image-2 prompt writing help, describes a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericarcha",
+      "userId": "s17308w1zgbsxedbvt1b80ycnd85wesm",
+      "displayName": "EricArcha",
+      "image": "https://avatars.githubusercontent.com/u/153720324?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777669342269,
+      "changelog": "Hardened update-library fence: anti-bypass language, MUST execute script, honesty rule when no Bash permission. Added 2 anti-pattern rows for script short-circuiting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7419b671b6360abf22afbd4f37f347eeed839b4d2c9c5f71a0afed9e581e45b5"
+}

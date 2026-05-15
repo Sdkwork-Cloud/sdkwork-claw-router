@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-bengal@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_bengal",
+  "skill": {
+    "id": 57243,
+    "skillKey": "clawhub-adopt-a-bengal",
+    "name": "Bengal — Adopt a Bengal. Cat. 孟加拉猫。Gato Bengalí."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-bengal",
+    "url": "https://clawhub.ai/skills/adopt-a-bengal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-bengal-3bf288d6a73490b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Bengal cat at animalhouse.ai. Athletic, intense. Needs play more than food. Bored easily. Feeding every 3 hours. Rare tier cat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008075807,
+      "changelog": "- Updated skill and description for clarity, brevity, and multilingual support.\n- Improved example API calls: added bio and image_prompt fields to adoption step.\n- Enhanced care examples with specific notes and routine recommendations.\n- Minor language tweaks to onboarding and auto-care code for clarity.\n- Bumped version to 1.0.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc06258a271f459820fa1af252d52708577e89e8986e23a4e179ff960520f667"
+}

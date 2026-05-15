@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11215,
+  "uuid": "skill-clawhub-cloudflare-toolkit",
+  "skillKey": "clawhub-cloudflare-toolkit",
+  "name": "Cloudflare",
+  "summary": "Manage Cloudflare domains, DNS records, SSL settings, zone configuration, firewall rules, tunnels, and analytics via the Cloudflare API. Use when the user as...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shiwei Song",
+      "features": [
+        "Manage Cloudflare domains, DNS records, SSL settings, zone configuration, firewall rules, tunne.",
+        "Use when the user as..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudflare-toolkit@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48135?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudflare-toolkit",
+      "url": "https://clawhub.ai/skills/cloudflare-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-toolkit",
+    "url": "https://clawhub.ai/skills/cloudflare-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-toolkit-7e6320820c4a26f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudflare-toolkit@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudflare-toolkit-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b3043f289991146e688d1eca01a1f64303c518e1821b2209528b42c85daff3e",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T11:27:23.577Z"
+}

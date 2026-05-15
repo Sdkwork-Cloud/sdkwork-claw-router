@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52192,
+  "uuid": "skill-clawhub-docs-lookup",
+  "skillKey": "clawhub-docs-lookup",
+  "name": "Docs Lookup",
+  "summary": "Search pre-indexed developer documentation across 10 platforms — Cloudflare, Stripe, Anthropic, OpenAI, Next.js, and more.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docs_lookup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CutTheMustard",
+      "features": [
+        "Search pre-indexed developer documentation across 10 platforms — Cloudflare, Stripe, Anthropic,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docs-lookup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63439451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docs-lookup",
+      "url": "https://clawhub.ai/skills/docs-lookup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docs-lookup",
+    "url": "https://clawhub.ai/skills/docs-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docs-lookup-409b8a78d31af770.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docs-lookup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-docs-lookup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2be5f92598a24d3e4d52a6ec6aad561f90adad56fc43908bf324c98bb77a03be",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T01:00:52.579Z"
+}

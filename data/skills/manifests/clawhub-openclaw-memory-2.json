@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19808,
+  "uuid": "skill-clawhub-openclaw-memory-2",
+  "skillKey": "clawhub-openclaw-memory-2",
+  "name": "Openclaw Memories",
+  "summary": "Agent memory with ALMA meta-learning, LLM fact extraction, and full-text search. Observer calls remote LLM APIs (OpenAI/Anthropic/Gemini). ALMA and Indexer w...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_memory_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Artale",
+      "features": [
+        "Agent memory with ALMA meta-learning, LLM fact extraction, and full-text search",
+        "Observer calls remote LLM APIs (OpenAI/Anthropic/Gemini)",
+        "ALMA and Indexer w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-memory-2@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/117890364?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-memory-2",
+      "url": "https://clawhub.ai/skills/openclaw-memory-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-memory-2",
+    "url": "https://clawhub.ai/skills/openclaw-memory-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-memory-2-294a179c3068eb3a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-memory-2@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-memory-2-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:550ef229658fce0c98da5955fc10fe360de5b55fd0ca44e0023633a5e4a80892",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T13:07:01.130Z"
+}

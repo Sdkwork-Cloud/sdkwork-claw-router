@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54958,
+  "uuid": "skill-clawhub-loom",
+  "skillKey": "clawhub-loom",
+  "name": "Loom",
+  "summary": "Loom — manage video recordings, transcripts, and folders via Developer API",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loom",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Loom — manage video recordings, transcripts, and folders via Developer API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/loom@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "loom",
+      "url": "https://clawhub.ai/skills/loom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loom",
+    "url": "https://clawhub.ai/skills/loom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loom-784a2ddf5d4d61b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/loom@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-loom-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3cef883f45c88062472c4154cadab84e41d49537af08306eb6575b3a621adbb",
+      "artifactSizeBytes": 2197
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T02:52:41.704Z"
+}

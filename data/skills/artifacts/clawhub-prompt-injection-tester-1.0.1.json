@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-injection-tester@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_injection_tester",
+  "skill": {
+    "id": 53400,
+    "skillKey": "clawhub-prompt-injection-tester",
+    "name": "Prompt Injection Tester"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-injection-tester",
+    "url": "https://clawhub.ai/skills/prompt-injection-tester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-injection-tester-08221fe4856668bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test LLM applications for prompt injection vulnerabilities — run attack simulations, evaluate defenses, and generate hardening recommendations for AI systems."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593750700,
+      "changelog": "- No changes detected in this version; documentation, usage, and output remain unchanged.\n- Skill continues to test LLM applications for prompt injection vulnerabilities with structured attack simulations, defense evaluation, and hardening recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcf59c7ab6e4971575552a281822ac06cfd5e21dabbd43aaf68827b0b5553a57"
+}

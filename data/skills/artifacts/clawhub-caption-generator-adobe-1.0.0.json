@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caption-generator-adobe@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_adobe",
+  "skill": {
+    "id": 45462,
+    "skillKey": "clawhub-caption-generator-adobe",
+    "name": "Caption Generator Adobe"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-adobe",
+    "url": "https://clawhub.ai/skills/caption-generator-adobe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-adobe-2ec72483a0a2225b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. video editors and content creators use it for a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776244974815,
+      "changelog": "Initial release of Caption Generator Adobe — Auto-Generate and Burn In Captions.\n\n- Upload MP4, MOV, AVI, or WebM videos up to 500MB to generate AI-powered burned-in captions.\n- No need for Adobe Premiere; cloud-based processing delivers 1080p MP4 files in 30-60 seconds.\n- Supports file upload, caption generation, balance checking, timeline state, and direct exports.\n- Manages backend authentication automatically, including free token setup.\n- Responds to both English and Chinese commands for common actions.\n- Includes error handling for unsupported files, oversized uploads, and account credits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43cfe993108c09ef594fe37767d085149ef053771a5de62cb30f312df216c534"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37260,
+  "uuid": "skill-clawhub-uberduck",
+  "skillKey": "clawhub-uberduck",
+  "name": "Uberduck",
+  "summary": "Uberduck integration. Manage data, records, and automate workflows. Use when the user wants to interact with Uberduck data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uberduck",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Uberduck integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Uberduck data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uberduck@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uberduck",
+      "url": "https://clawhub.ai/skills/uberduck"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uberduck",
+    "url": "https://clawhub.ai/skills/uberduck",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uberduck-1e20c4640c7c64fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uberduck@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-uberduck-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35cb1c64b30fc6cb0a74889ccaa0bb97185a522d5aa1ed53bf545fd8ad968e15",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:07:39.442Z"
+}

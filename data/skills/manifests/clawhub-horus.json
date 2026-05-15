@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17278,
+  "uuid": "skill-clawhub-horus",
+  "skillKey": "clawhub-horus",
+  "name": "horus",
+  "summary": "Register, track, and validate state observations against declared constraints without assuming universal truth or enforcing physical laws.",
+  "version": "7.7.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.horus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "uniaolives",
+      "features": [
+        "Register, track, and validate state observations against declared constraints without assuming."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/horus@7.7.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229535655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "horus",
+      "url": "https://clawhub.ai/skills/horus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "horus",
+    "url": "https://clawhub.ai/skills/horus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/horus-84e55012eb2a2e52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/horus@7.7.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-horus-7.7.7.json",
+      "version": "7.7.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e576d9b0746fd259be04a4bf0545296127e4a589c45d0da7129e16dc319775e0",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T11:38:45.862Z"
+}

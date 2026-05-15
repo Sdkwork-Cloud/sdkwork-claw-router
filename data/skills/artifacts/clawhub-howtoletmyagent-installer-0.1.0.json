@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/howtoletmyagent-installer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.howtoletmyagent_installer",
+  "skill": {
+    "id": 42547,
+    "skillKey": "clawhub-howtoletmyagent-installer",
+    "name": "Howtoletmyagent Installer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "howtoletmyagent-installer",
+    "url": "https://clawhub.ai/skills/howtoletmyagent-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/howtoletmyagent-installer-3b03b1156a39fd99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install companion OpenClaw skills from howtoletmyagent.xyz article URLs or skill manifests."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bullkis1",
+      "userId": "s17c5c6025h8f84radxkteqkth83g3nd",
+      "displayName": "Bullkis1",
+      "image": "https://avatars.githubusercontent.com/u/164766341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774390745832,
+      "changelog": "Initial bootstrap installer release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:175382380f119b567712c3ada46bbe2f1aa7a2264158cf92eecba70ca8f3bd39"
+}

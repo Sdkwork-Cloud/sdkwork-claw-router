@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawd-data-reporter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_data_reporter",
+  "skill": {
+    "id": 27911,
+    "skillKey": "clawhub-clawd-data-reporter",
+    "name": "Data Reporter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-data-reporter",
+    "url": "https://clawhub.ai/skills/clawd-data-reporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-data-reporter-eaf25b926ffc61ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated data reporting and dashboard generation. Connect to databases, APIs, spreadsheets. Generate PDF/PPT/Excel reports with charts. Schedule daily/weekl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fuczy",
+      "userId": "publishers:fuczy",
+      "displayName": "Fuhaolin",
+      "image": "https://avatars.githubusercontent.com/u/107407394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773727079811,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42f0360421c14a495c4e39e6fc973ef888a6c447e18d81a3cbab2dcc478996d1"
+}

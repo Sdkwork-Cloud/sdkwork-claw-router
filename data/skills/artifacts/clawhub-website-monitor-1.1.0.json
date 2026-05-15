@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/website-monitor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.website_monitor",
+  "skill": {
+    "id": 15099,
+    "skillKey": "clawhub-website-monitor",
+    "name": "Website Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "website-monitor",
+    "url": "https://clawhub.ai/skills/website-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/website-monitor-a3380b733a9db27c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight website uptime monitor. Check if URLs are up, measure response times, detect content changes via hashing, and verify expected content. Zero depen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "claudiodrusus",
+      "userId": "publishers:claudiodrusus",
+      "displayName": "claudiodrusus",
+      "image": "https://avatars.githubusercontent.com/u/258132540?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1011,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771785234757,
+      "changelog": "No changes detected for version 1.1.0.\n\n- No file changes or updates from previous version.\n- Functionality, usage, and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b1335bbca00b4a81de5219011520f50a3985c3fef795137d2c8be9a554fc77b1"
+}

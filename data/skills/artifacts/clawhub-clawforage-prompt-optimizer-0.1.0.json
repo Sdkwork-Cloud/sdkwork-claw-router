@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawforage-prompt-optimizer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawforage_prompt_optimizer",
+  "skill": {
+    "id": 30623,
+    "skillKey": "clawhub-clawforage-prompt-optimizer",
+    "name": "ClawForage Prompt Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawforage-prompt-optimizer",
+    "url": "https://clawhub.ai/skills/clawforage-prompt-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawforage-prompt-optimizer-62ac2c66ea098cfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes your conversation transcripts daily to find patterns, suggest SOUL.md improvements, and recommend skills"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dainash",
+      "userId": "publishers:dainash",
+      "displayName": "InspireHub.ai",
+      "image": "https://avatars.githubusercontent.com/u/6275522?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773825081589,
+      "changelog": "Initial release of clawforage-prompt-optimizer.\n\n- Provides daily meta-analysis of user conversation transcripts to identify usage patterns and optimization opportunities.\n- Suggests actionable improvements to SOUL.md, workflow, and skill recommendations based on transcript data.\n- Analyzes repeated questions, tool usage, failures, and cost statistics.\n- Generates structured daily optimization reports for user review, following a clear template.\n- Ensures privacy by summarizing patterns without revealing full message content.\n- Fully read-only and suggestion-based (no automated changes to user data).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19d8b800ecd5ed4d5117866f1a46b90daf8b1aac711252d5f87f87f9113c6934"
+}

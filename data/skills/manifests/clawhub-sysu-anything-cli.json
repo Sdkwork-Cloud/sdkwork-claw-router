@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58569,
+  "uuid": "skill-clawhub-sysu-anything-cli",
+  "skillKey": "clawhub-sysu-anything-cli",
+  "name": "SYSU Anything CLI",
+  "summary": "Use when the user wants SYSU campus help through the SYSU Anything CLI, including natural-language requests such as 查课表、今天有什么课、教务系统、请假、雨课堂作业、ddl、签到、预约健身房、预约体...",
+  "version": "0.3.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sysu_anything_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qybaihe",
+      "features": [
+        "Use when the user wants SYSU campus help through the SYSU Anything CLI, including natural-langu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sysu-anything-cli@0.3.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/137127051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sysu-anything-cli",
+      "url": "https://clawhub.ai/skills/sysu-anything-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sysu-anything-cli",
+    "url": "https://clawhub.ai/skills/sysu-anything-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sysu-anything-cli-63c931b205c05dc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sysu-anything-cli@0.3.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-sysu-anything-cli-0.3.6.json",
+      "version": "0.3.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee044f363973ea696bf2ae6b5af6f4096cd6362de40c7da02b6ddf67d343fa7c",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T04:17:20.947Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67843,
+  "uuid": "skill-clawhub-douyin-to-text",
+  "skillKey": "clawhub-douyin-to-text",
+  "name": "douyin-to-text",
+  "summary": "抖音文案提取。使用场景：(1) 用户要求提取抖音视频文案/字幕 (2) 用户发送抖音分享链接需要转文字 (3) 用户查询积分余额或转写历史。首次使用会自动引导注册。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_to_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xwchris",
+      "features": [
+        "抖音文案提取。使用场景：(1) 用户要求提取抖音视频文案/字幕 (2) 用户发送抖音分享链接需要转文字 (3) 用户查询积分余额或转写历史。首次使用会自动引导注册。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-to-text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13817144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-to-text",
+      "url": "https://clawhub.ai/skills/douyin-to-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-to-text",
+    "url": "https://clawhub.ai/skills/douyin-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-to-text-f10e23205b707cad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-to-text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-to-text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d798c0aaede1dd035151eca8bfc5252cac4524369765b60ad366ac6a8567f26c",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T14:51:20.563Z"
+}

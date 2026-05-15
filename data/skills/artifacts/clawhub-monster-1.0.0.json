@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monster",
+  "skill": {
+    "id": 65492,
+    "skillKey": "clawhub-monster",
+    "name": "Monster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monster",
+    "url": "https://clawhub.ai/skills/monster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monster-beaafa510bcc774b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Monster Energy魔爪能量饮料品牌及其极限运动营销、产品矩阵及市场竞争格局的详细信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776331792383,
+      "changelog": "Initial release introducing Monster Energy brand overview, origin, product lineup, and global market position.\n\n- Comprehensive brand history and key milestones\n- Detailed product lineup table, including Monster Ultra, Java, Juice, and more\n- Overview of global market presence and strategic partnership with Coca-Cola\n- Tables summarizing product series and brand facts for easy reference\n- Suitable for research on energy drink brands, market competition, and marketing strategies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b52aae4d74753d548e47b012b1c094499c50f4428f7b7edff2cc94692e2836de"
+}

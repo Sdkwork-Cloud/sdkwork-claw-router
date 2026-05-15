@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-image-to-video-easemate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_to_video_easemate",
+  "skill": {
+    "id": 45571,
+    "skillKey": "clawhub-ai-image-to-video-easemate",
+    "name": "Ai Image To Video Easemate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-to-video-easemate",
+    "url": "https://clawhub.ai/skills/ai-image-to-video-easemate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-to-video-easemate-1ff1758545d6054f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert still images into animated video clips with this skill. Works with JPG, PNG, WEBP, HEIC files up to 200MB. social media creators use it for convertin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777054917640,
+      "changelog": "Initial release — convert images into 1080p videos powered by AI.\n\n- Upload JPG, PNG, WEBP, or HEIC images up to 200MB and generate animated video clips (MP4).\n- Automatic token/session management; 100 free credits with anonymous access.\n- Full cloud workflow: connect, upload, edit, export, and download via simple chat prompts.\n- Supports timeline editing, BGM, transitions, text overlays, and preview summaries.\n- Built-in credit usage, error handling, and detailed status updates for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:598211690ca28d73a254a8aa03ea2614f39eec5c3a0476af013e8db6b316ed6e"
+}

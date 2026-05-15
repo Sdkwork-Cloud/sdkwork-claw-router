@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65795,
+  "uuid": "skill-clawhub-node-camera",
+  "skillKey": "clawhub-node-camera",
+  "name": "node-camera",
+  "summary": "控制 Node 设备的 USB 摄像头，支持单帧截图、流式推送、停止推流和关闭摄像头。使用场景：(1) 需要快速获取 Node 设备的一帧图像时，(2) 需要远程监控 Node 设备周围环境时，(3) 需要进行视觉识别或拍照截图时。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.node_camera",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lxx328",
+      "features": [
+        "控制 Node 设备的 USB 摄像头，支持单帧截图、流式推送、停止推流和关闭摄像头。使用场景：(1) 需要快速获取 Node 设备的一帧图像时，(2) 需要远程监控 Node 设备周围环境."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/node-camera@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113098458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "node-camera",
+      "url": "https://clawhub.ai/skills/node-camera"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "node-camera",
+    "url": "https://clawhub.ai/skills/node-camera",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/node-camera-423ea1d15296f773.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/node-camera@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-node-camera-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7bc64497a6683b98706850a6ff3274694dbb3e7dd32aa57adbb0e1a9c65309a",
+      "artifactSizeBytes": 2482
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:42:12.673Z"
+}

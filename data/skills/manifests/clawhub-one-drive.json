@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8744,
+  "uuid": "skill-clawhub-one-drive",
+  "skillKey": "clawhub-one-drive",
+  "name": "Microsoft OneDrive",
+  "summary": "OneDrive API integration with managed OAuth via Microsoft Graph. Manage files, folders, and sharing. Use this skill when users want to upload, download, orga...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.one_drive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "OneDrive API integration with managed OAuth via Microsoft Graph",
+        "Manage files, folders, and sharing",
+        "Use this skill when users want to upload, download, orga..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/one-drive@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "one-drive",
+      "url": "https://clawhub.ai/skills/one-drive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "one-drive",
+    "url": "https://clawhub.ai/skills/one-drive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/one-drive-c6e7ef4ddafb1951.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/one-drive@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-one-drive-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74e8b457f03dae87e538938df2e978a1ce71b9413e0504111f1f751a238998ec",
+      "artifactSizeBytes": 2460
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:07:30.568Z"
+}

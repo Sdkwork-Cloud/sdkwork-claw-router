@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/switchbot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.switchbot",
+  "skill": {
+    "id": 12121,
+    "skillKey": "clawhub-switchbot",
+    "name": "SwitchBot Smart Home Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "switchbot",
+    "url": "https://clawhub.ai/skills/switchbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/switchbot-2d3ef4ecbaea279f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control SwitchBot smart home devices (curtains, plugs, lights, locks, etc.) via SwitchBot Cloud API. Use when user asks to open/close curtains, turn on/off lights/plugs, check temperature/humidity, or control any SwitchBot device."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daaab",
+      "userId": "s1734aczwq16mt7vnhrq68bkq5841wa6",
+      "displayName": "Ju Chun Ko",
+      "image": "https://avatars.githubusercontent.com/u/1607280?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1786,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770295477868,
+      "changelog": "Initial release: Control SwitchBot curtains, plugs, lights, and more via Cloud API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8ee39ab97c0bb39af0ac55dfbd759ed559ef916235760b18256f0f28595c476"
+}

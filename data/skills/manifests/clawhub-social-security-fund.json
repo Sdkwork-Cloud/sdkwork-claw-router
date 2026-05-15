@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69961,
+  "uuid": "skill-clawhub-social-security-fund",
+  "skillKey": "clawhub-social-security-fund",
+  "name": "Social Security Fund",
+  "summary": "全国社保公积金查询助手。支持查询社保缴纳记录、公积金余额、五险一金计算、退休金估算。覆盖北京、上海、广州、深圳、杭州、成都等主要城市。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_security_fund",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "testc0de",
+      "features": [
+        "全国社保公积金查询助手。支持查询社保缴纳记录、公积金余额、五险一金计算、退休金估算。覆盖北京、上海、广州、深圳、杭州、成都等主要城市。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-security-fund@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34063790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-security-fund",
+      "url": "https://clawhub.ai/skills/social-security-fund"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-security-fund",
+    "url": "https://clawhub.ai/skills/social-security-fund",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-security-fund-275ef976e205a98e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-security-fund@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-security-fund-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe9a668eedb976b8133306c9c6dfb805194b3d972b2701e6c2be1a2bd1b704a1",
+      "artifactSizeBytes": 2049
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T11:05:32.644Z"
+}

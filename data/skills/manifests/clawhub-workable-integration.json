@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49462,
+  "uuid": "skill-clawhub-workable-integration",
+  "skillKey": "clawhub-workable-integration",
+  "name": "Workable",
+  "summary": "Workable integration. Manage Persons, Organizations, Deals, Leads, Projects, Users and more. Use when the user wants to interact with Workable data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workable_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Workable integration",
+        "Manage Persons, Organizations, Deals, Leads, Projects, Users and more",
+        "Use when the user wants to interact with Workable data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workable-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workable-integration",
+      "url": "https://clawhub.ai/skills/workable-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workable-integration",
+    "url": "https://clawhub.ai/skills/workable-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workable-integration-0ecd8725be2ad08e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workable-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-workable-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c556316ddb797527c34485dd9688cb56ccb26ae00297fc333b22187b7971aebb",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:00:32.636Z"
+}

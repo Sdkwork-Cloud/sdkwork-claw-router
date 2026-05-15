@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/playwright-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.playwright_mcp",
+  "skill": {
+    "id": 8258,
+    "skillKey": "clawhub-playwright-mcp",
+    "name": "Playwright MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "playwright-mcp",
+    "url": "https://clawhub.ai/skills/playwright-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/playwright-mcp-645b26c3f376f049.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation via Playwright MCP server. Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full browser automation workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spiceman161",
+      "userId": "publishers:spiceman161",
+      "displayName": "Spiceman161",
+      "image": "https://avatars.githubusercontent.com/u/45951852?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 39537,
+      "installsAllTime": 524,
+      "installsCurrent": 496,
+      "stars": 145,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770565004575,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:358082ab092695d82b6eddc7673aab6682408205525fb9846e20cf5eaaa381a4"
+}

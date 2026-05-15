@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32514,
+  "uuid": "skill-clawhub-zype",
+  "skillKey": "clawhub-zype",
+  "name": "Zype",
+  "summary": "Zype integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zype data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zype",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Zype integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zype data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zype@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zype",
+      "url": "https://clawhub.ai/skills/zype"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zype",
+    "url": "https://clawhub.ai/skills/zype",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zype-bf18ad040fefe439.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zype@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zype-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dd456753ad2876fb3cdae0886591732a2710660643bdd1c2ef119b978fe006c",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:06:39.336Z"
+}

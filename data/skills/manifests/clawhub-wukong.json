@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69847,
+  "uuid": "skill-clawhub-wukong",
+  "skillKey": "clawhub-wukong",
+  "name": "Wukong — 名人思维蒸馏框架（72变版）",
+  "summary": "名人思维蒸馏与召唤技能。当用户需要用某位名人的思维方式分析问题、制定决策时激活。 触发词：召唤/蒸馏/思维模型/Think Like/像XX一样/XX会怎么做/心智模型/认知框架/决策参考。 支持任意历史人物、商界领袖、科学家、艺术家等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wukong",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingyuan",
+      "features": [
+        "名人思维蒸馏与召唤技能。当用户需要用某位名人的思维方式分析问题、制定决策时激活。 触发词：召唤/蒸馏/思维模型/Think Like/像XX一样/XX会怎么做/心智模型/认知框架/决策参考。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wukong@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267627552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wukong",
+      "url": "https://clawhub.ai/skills/wukong"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wukong",
+    "url": "https://clawhub.ai/skills/wukong",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wukong-650b6d891c6b03d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wukong@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wukong-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0683dac5262b61795569206ab875b71bc5cebb905613a3a5281b999a81862a8f",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T12:20:32.736Z"
+}

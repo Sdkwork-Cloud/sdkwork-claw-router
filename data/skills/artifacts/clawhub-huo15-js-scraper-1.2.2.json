@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huo15-js-scraper@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_js_scraper",
+  "skill": {
+    "id": 61758,
+    "skillKey": "clawhub-huo15-js-scraper",
+    "name": "Huo15 Js Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-js-scraper",
+    "url": "https://clawhub.ai/skills/huo15-js-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-js-scraper-9a55765d7e3d4ae8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "JavaScript渲染网站抓取工具。当需要抓取JS渲染的页面（如企微文档、Vue/React SPA）、企查查企业数据获取）、绕过反爬、或者普通curl/wget/web_fetch无法获取内容的网站时使用此技能。支持Playwright和scrapling双引擎自动切换。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhaobod1",
+      "userId": "s17f6q72skfgyjycm2frgdc8dn83v5mk",
+      "displayName": "Job Zhao",
+      "image": "https://avatars.githubusercontent.com/u/13188275?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1777004121658,
+      "changelog": "No visible changes detected for version 1.2.2 (no file modifications).\n\n- Version bump only; no code or documentation changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a71b2d34ce7a3294cae21a2a2f503910f7f4f7403ee6c2e43b9f51004053995f"
+}

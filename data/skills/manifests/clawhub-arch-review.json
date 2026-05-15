@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55196,
+  "uuid": "skill-clawhub-arch-review",
+  "skillKey": "clawhub-arch-review",
+  "name": "Arch Review",
+  "summary": "Stress-test designs before they ship—constraints, trade-offs, failure modes, and ADR-worthy decisions. Use for ADRs, big refactors, new services, or when ‘it...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arch_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Stress-test designs before they ship—constraints, trade-offs, failure modes, and ADR-worthy dec.",
+        "Use for ADRs, big refactors, new services, or when ‘it..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arch-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arch-review",
+      "url": "https://clawhub.ai/skills/arch-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arch-review",
+    "url": "https://clawhub.ai/skills/arch-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arch-review-5834b0429a4715d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arch-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arch-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51b1976824f465299583b9155ead7b285430b6f71e045c9282a0f0ae22b5f771",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:52:05.006Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-meet@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_meet",
+  "skill": {
+    "id": 33671,
+    "skillKey": "clawhub-claw-meet",
+    "name": "Claw Meet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-meet",
+    "url": "https://clawhub.ai/skills/claw-meet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-meet-3d94f3de1bb0e958.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claw Meet AI meeting assistant. Use when the user wants to prepare for meetings, generate agendas, take smart notes, extract action items, write meeting summ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiwenbing",
+      "userId": "s17ff13sk3g0s0ys10zbbwf0cs83h97j",
+      "displayName": "Wenbing Ji",
+      "image": "https://avatars.githubusercontent.com/u/8498518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773925000705,
+      "changelog": "更新为完整版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b05821d5354e197dd5030939d8fe1a085688895a9f0b942aae5d11de86792490"
+}

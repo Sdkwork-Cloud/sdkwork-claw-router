@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10925,
+  "uuid": "skill-clawhub-meetgeek",
+  "skillKey": "clawhub-meetgeek",
+  "name": "MeetGeek",
+  "summary": "Query MeetGeek meeting intelligence from CLI - list meetings, get AI summaries, transcripts, action items, and search across all your calls with natural language.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetgeek",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shvz",
+      "features": [
+        "Query MeetGeek meeting intelligence from CLI",
+        "list meetings, get AI summaries, transcripts, action items, and search across all your calls wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meetgeek@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3869659?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meetgeek",
+      "url": "https://clawhub.ai/skills/meetgeek"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetgeek",
+    "url": "https://clawhub.ai/skills/meetgeek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetgeek-0b7c2b9b613799dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meetgeek@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-meetgeek-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0ff029cbcc81616b9f11a3b0db6e6fb21016b665e8aaf29244b50a6c4a671a7",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-06T23:35:43.380Z"
+}

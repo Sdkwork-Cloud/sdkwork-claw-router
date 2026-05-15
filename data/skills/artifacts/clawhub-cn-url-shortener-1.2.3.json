@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-url-shortener@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_url_shortener",
+  "skill": {
+    "id": 57490,
+    "skillKey": "clawhub-cn-url-shortener",
+    "name": "Cn Url Shortener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-url-shortener",
+    "url": "https://clawhub.ai/skills/cn-url-shortener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-url-shortener-85de95104d298f05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "$desc"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1777690545362,
+      "changelog": "修复标题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9ac297f15243d0bbf45c6ce5c95ab6a85cedbb17194ef78bd2281518734002f"
+}

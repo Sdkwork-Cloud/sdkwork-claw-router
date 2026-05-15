@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58279,
+  "uuid": "skill-clawhub-agent-office",
+  "skillKey": "clawhub-agent-office",
+  "name": "Agent Office",
+  "summary": "Agent Office：创建本地 AI 员工、office worker、AI employee 与 multi-agent office team。每个员工以独立 HTTP Worker 运行，支持 openclaw / hermes / deerflow / cli / external / stub 六种...",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_office",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jast-hub",
+      "features": [
+        "Agent Office：创建本地 AI 员工、office worker、AI employee 与 multi-agent office team。每个员工以独立 HTTP Worker."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-office@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84546813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-office",
+      "url": "https://clawhub.ai/skills/agent-office"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-office",
+    "url": "https://clawhub.ai/skills/agent-office",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-office-510d247ee3892af5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-office@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-office-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fe267349a8c2bd1933c6df3fb69a8bacb36c7ce47fe1342b262e2a022639d2f",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T00:40:57.273Z"
+}

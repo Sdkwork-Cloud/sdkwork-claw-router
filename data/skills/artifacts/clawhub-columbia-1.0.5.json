@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/columbia@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.columbia",
+  "skill": {
+    "id": 71462,
+    "skillKey": "clawhub-columbia",
+    "name": "Columbia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "columbia",
+    "url": "https://clawhub.ai/skills/columbia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/columbia-1e103fdeb16ccc3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供哥伦比亚大学历史、学院设置、招生、学费资助、知名校友及学术实力等相关查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1776238334017,
+      "changelog": "- 更新了 summary 和 read_when，更加简洁直观\n- 优化信息结构，增加“快速导航”部分，条目更清晰\n- 明确列出使用场景，提升实际应用指导性\n- 提示用户优先查阅官方网站获取最新信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f5d817809900acb33f611934da026da26379958c2fdc186ef4ff29264b1d9f3"
+}

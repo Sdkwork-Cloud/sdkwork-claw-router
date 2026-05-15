@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keep@0.109.0",
+  "version": "0.109.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keep",
+  "skill": {
+    "id": 11211,
+    "skillKey": "clawhub-keep",
+    "name": "Reflective Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keep",
+    "url": "https://clawhub.ai/skills/keep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keep-6ca7ea2feefc88ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reflective Memory"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hughpyle",
+      "userId": "s174stemh4f7w68eeqj22y15c583etgc",
+      "displayName": "hughpyle",
+      "image": "https://avatars.githubusercontent.com/u/150244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2230,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.109.0",
+      "createdAt": 1774351163501,
+      "changelog": "Major update with expanded API, flow-based operations, and enhanced documentation.\n\n- Introduces new flow-based API (`keep_flow`, `keep_prompt`, `keep_help`) with standardized parameters for all operations.\n- Protocol Block now uses flow and prompt tool calls instead of direct CLI commands; protocol integrated as a workspace-local file.\n- Adds support for linking provenance of notes and documents using `informs` / `informed_by` tags.\n- Documented tools, parameters, and search steering mechanisms including temporal filtering and relevance bias.\n- Extensive new documentation and CLI/flow usage references; onboarding and guidance materials significantly updated.\n- System integration models updated (MCP, CLI parity, OpenClaw, Claude Code, Kiro, Codex compatibility).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:810265d8d9ec459c8b46f7fbd7c7b5868613df927d73109ca2d6a654433ca97f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58458,
+  "uuid": "skill-clawhub-content-generator",
+  "skillKey": "clawhub-content-generator",
+  "name": "Content Generator",
+  "summary": "Generate platform-specific shopping and recommendation copy for ecommerce products. Use when the user asks to 生成种草文案、写小红书文案、写抖音口播、写朋友圈推荐、输出多平台商品文案 or adapt c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Generate platform-specific shopping and recommendation copy for ecommerce products",
+        "Use when the user asks to 生成种草文案、写小红书文案、写抖音口播、写朋友圈推荐、输出多平台商品文案 or adapt c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-generator",
+      "url": "https://clawhub.ai/skills/content-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-generator",
+    "url": "https://clawhub.ai/skills/content-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-generator-fb4895e2c45e6a1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2cf63f2c026d169f7bb119217c3c362c1fde30c622230949db89e16978d772a6",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:23:59.347Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49927,
+  "uuid": "skill-clawhub-codai",
+  "skillKey": "clawhub-codai",
+  "name": "Codai",
+  "summary": "Orchestration skill for the codai-dev local environment. Routes user commands to the right plugin (proxy-manager, mysql-manager, postgres-manager, redis-mana...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jair Pereira",
+      "features": [
+        "Orchestration skill for the codai-dev local environment",
+        "Routes user commands to the right plugin (proxy-manager, mysql-manager, postgres-manager, redis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1306512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codai",
+      "url": "https://clawhub.ai/skills/codai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codai",
+    "url": "https://clawhub.ai/skills/codai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codai-fa535ba81897997b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-codai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2817dd39912273185643cbf3da8c7c8d38fc6356487887a225869ce47d57a9c6",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T11:18:43.729Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50479,
+  "uuid": "skill-clawhub-multi-agent-pipeline",
+  "skillKey": "clawhub-multi-agent-pipeline",
+  "name": "Multi Agent Pipeline",
+  "summary": "Generic multi-agent content pipeline — sequential and parallel agent stages with status tracking, error recovery, and progress callbacks. Use when building m...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_agent_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nissan Dookeran",
+      "features": [
+        "Generic multi-agent content pipeline — sequential and parallel agent stages with status trackin.",
+        "Use when building m..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-agent-pipeline@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-agent-pipeline",
+      "url": "https://clawhub.ai/skills/multi-agent-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-agent-pipeline",
+    "url": "https://clawhub.ai/skills/multi-agent-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-agent-pipeline-cbe8a27522a2a4fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-agent-pipeline@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-agent-pipeline-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:90d6a680c002a019ffcc219fd8ca1f34854af06c471a3efe309d769d9ca50e85",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T22:26:48.389Z"
+}

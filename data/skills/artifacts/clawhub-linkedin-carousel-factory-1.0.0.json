@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-carousel-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_carousel_factory",
+  "skill": {
+    "id": 40993,
+    "skillKey": "clawhub-linkedin-carousel-factory",
+    "name": "LinkedIn Carousel Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-carousel-factory",
+    "url": "https://clawhub.ai/skills/linkedin-carousel-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-carousel-factory-e680a23b8c4f1c17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a complete 10-slide LinkedIn carousel JSON with hook-driven, concise content and .NET 8+ code examples for mid-to-senior .NET developers on a chosen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lnguyen1996",
+      "userId": "publishers:lnguyen1996",
+      "displayName": "Lnguyen1996",
+      "image": "https://avatars.githubusercontent.com/u/97846628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774149979091,
+      "changelog": "Initial release of linkedin-carousel-factory skill:\n\n- Generates 10-slide LinkedIn carousel JSONs for .NET developers.\n- Structured slide types and strict formatting: hook, problem, bite-sized content, comparison/warning, and CTA.\n- Accepts topic & goal input; adapts hook angle if not provided.\n- Writes output to a specific Obsidian path for content workflow.\n- Posts draft notification to Discord after carousel generation.\n- Includes self-improvement loop: records what works and revises based on feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01b5aa264fb41629d0968072c0db2088cd1683ada3041461c4c93faf7792fecf"
+}

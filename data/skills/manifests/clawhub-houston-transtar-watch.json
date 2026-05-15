@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22317,
+  "uuid": "skill-clawhub-houston-transtar-watch",
+  "skillKey": "clawhub-houston-transtar-watch",
+  "name": "Houston Transtar Watch",
+  "summary": "Poll Houston TranStar incidents RSS every 10 minutes and WhatsApp me when there are changes.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.houston_transtar_watch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vijay-murugan",
+      "features": [
+        "Poll Houston TranStar incidents RSS every 10 minutes and WhatsApp me when there are changes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/houston-transtar-watch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56683057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "houston-transtar-watch",
+      "url": "https://clawhub.ai/skills/houston-transtar-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "houston-transtar-watch",
+    "url": "https://clawhub.ai/skills/houston-transtar-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/houston-transtar-watch-6ab8533d641453d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/houston-transtar-watch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-houston-transtar-watch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c51eadd8474b1484347c147f8411d4e221f66e587010c7140c8a43f7630247a",
+      "artifactSizeBytes": 2200
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T04:54:27.278Z"
+}

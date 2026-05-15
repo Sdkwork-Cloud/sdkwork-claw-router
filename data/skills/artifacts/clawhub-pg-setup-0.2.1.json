@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pg-setup@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pg_setup",
+  "skill": {
+    "id": 23643,
+    "skillKey": "clawhub-pg-setup",
+    "name": "Pg Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pg-setup",
+    "url": "https://clawhub.ai/skills/pg-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pg-setup-a73808db2e6e66c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when setting up ProxyGate for the first time, installing the CLI, configuring auth (API key or wallet), or connecting to the gateway. Make sure to use th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jwelten",
+      "userId": "s17ea14p7afnh5qnk5d9zdacq183g92p",
+      "displayName": "jwelten",
+      "image": "https://avatars.githubusercontent.com/u/194850832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1774132417134,
+      "changelog": "Sync with CLI v0.2.1 — updated commands, descriptions, and examples",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bed4ec5455862f3e2d0470768c23ba767a6a9495e4a9dfd019a552d6586f3b7f"
+}

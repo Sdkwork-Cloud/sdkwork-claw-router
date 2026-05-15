@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skynet-score@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skynet_score",
+  "skill": {
+    "id": 35081,
+    "skillKey": "clawhub-skynet-score",
+    "name": "Skynet Score"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skynet-score",
+    "url": "https://clawhub.ai/skills/skynet-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skynet-score-089a4349dd62889f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use for searching CertiK Skynet project scores, looking up blockchain project security ratings, comparing score breakdowns, and integrating the public Skynet..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "certik-ai",
+      "userId": "publishers:certik-ai",
+      "displayName": "CertiK",
+      "image": "https://avatars.githubusercontent.com/u/243521631?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773734077305,
+      "changelog": "Initial release of skynet-score skill.\n\n- Search and retrieve CertiK Skynet scores and security ratings for blockchain projects by keyword.\n- Return project score, tier, score breakdowns, and last updated time on user request.\n- List multiple matching projects when results are ambiguous; prompt user to select.\n- Provide integration examples using Python or curl, with guidance on output and API limits.\n- Includes clear documentation for usage, output, and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6dd7ac8d2348a52de801bdcb34702cb2b3338bf1a48af0d5b0128a23d60410f1"
+}

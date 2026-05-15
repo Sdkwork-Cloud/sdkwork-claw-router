@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66421,
+  "uuid": "skill-clawhub-data-parallel-research",
+  "skillKey": "clawhub-data-parallel-research",
+  "name": "Parallel Research",
+  "summary": "有 2 个以上独立研究子课题时使用。将独立课题分派给并行代理同时调研，加速信息收集。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_parallel_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mingginwan",
+      "features": [
+        "有 2 个以上独立研究子课题时使用。将独立课题分派给并行代理同时调研，加速信息收集。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-parallel-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91401222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-parallel-research",
+      "url": "https://clawhub.ai/skills/data-parallel-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-parallel-research",
+    "url": "https://clawhub.ai/skills/data-parallel-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-parallel-research-0d20403537ad4c30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-parallel-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-parallel-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f496fee2fbe82bb5b467ece9c851929cda55c34308aebe01986cdda1a8b16887",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:34:18.975Z"
+}

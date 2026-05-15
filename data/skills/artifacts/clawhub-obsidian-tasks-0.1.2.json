@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-tasks@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_tasks",
+  "skill": {
+    "id": 9643,
+    "skillKey": "clawhub-obsidian-tasks",
+    "name": "Obsidian Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-tasks",
+    "url": "https://clawhub.ai/skills/obsidian-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-tasks-b3f6c7eecf2cf513.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and manage an Obsidian task board with Kanban + Dataview. Creates a Tasks/Board.md pipeline (Backlog/Todo/In Progress/Review/Done), per-task notes with YAML frontmatter (status/priority/category/due), and dashboards via Dataview que."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "larsderidder",
+      "userId": "publishers:larsderidder",
+      "displayName": "larsderidder",
+      "image": "https://avatars.githubusercontent.com/u/1681068?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2893,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1770128105980,
+      "changelog": "Publish under new slug obsidian-tasks (alias of openclaw-obsidian-tasks).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:839913b27e343fd57b9d0f23e947e007c696eb222f30973e9f12c2a6dbe91d85"
+}

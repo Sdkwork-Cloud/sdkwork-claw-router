@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26029,
+  "uuid": "skill-clawhub-formspree",
+  "skillKey": "clawhub-formspree",
+  "name": "Formspree",
+  "summary": "Formspree integration. Manage Forms. Use when the user wants to interact with Formspree data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.formspree",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Formspree integration",
+        "Manage Forms",
+        "Use when the user wants to interact with Formspree data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/formspree@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "formspree",
+      "url": "https://clawhub.ai/skills/formspree"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "formspree",
+    "url": "https://clawhub.ai/skills/formspree",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/formspree-1e1c22388a603e47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/formspree@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-formspree-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efbf013a20b0105fb5b43e2ee32882a0b651a423c37a6df7ce88423a1c95c678",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:49:36.402Z"
+}

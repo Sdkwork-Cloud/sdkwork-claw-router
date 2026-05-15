@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-data-import@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_data_import",
+  "skill": {
+    "id": 28467,
+    "skillKey": "clawhub-excel-data-import",
+    "name": "Excel Data Import"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-data-import",
+    "url": "https://clawhub.ai/skills/excel-data-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-data-import-3195acc23782771d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Import, merge, and transform data from Excel (.xlsx/.csv) files using YAML-driven configuration. Use when the user asks to: (1) import data from Excel/CSV in..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aqbjqtd",
+      "userId": "s176hcamdc143tsm5n5zzqq6f583h359",
+      "displayName": "sniper-one",
+      "image": "https://avatars.githubusercontent.com/u/56232840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773841685012,
+      "changelog": "按 skill-creator 标准全面优化：删除违规文件、精简SKILL.md、统一命名、补充中文触发词",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e48f5d1bae649fcf3fb165de4a8dbfb5efdcec3d542e45b822b18e426eb3a80"
+}

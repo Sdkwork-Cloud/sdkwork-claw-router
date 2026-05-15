@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/membranedev-gmail@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.membranedev_gmail",
+  "skill": {
+    "id": 23638,
+    "skillKey": "clawhub-membranedev-gmail",
+    "name": "DELETE IT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "membranedev-gmail",
+    "url": "https://clawhub.ai/skills/membranedev-gmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/membranedev-gmail-a556b07a16370a1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gmail integration. Manage communication data, records, and workflows. Use when the user wants to interact with Gmail data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "membranedev",
+      "userId": "s17ejzcy4w0v2h2tf7xa3y1mw583eedz",
+      "displayName": "Membrane Dev",
+      "image": "https://avatars.githubusercontent.com/u/147116108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772581798583,
+      "changelog": "- Replaced all previous Gmail integration documentation with a placeholder: \"Dummy skill. Delete it pls\".\n- No feature, functionality, or code changes; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d43fff7842d27ce2741d85cfe585e8f3f21148d16bf515d9bd531fb33e9e3f24"
+}

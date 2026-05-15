@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/continuous-user-research@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.continuous_user_research",
+  "skill": {
+    "id": 18622,
+    "skillKey": "clawhub-continuous-user-research",
+    "name": "Continuous User Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "continuous-user-research",
+    "url": "https://clawhub.ai/skills/continuous-user-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/continuous-user-research-b8338db792c74228.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run longitudinal, in-context diary studies for product teams and convert weekly participant entries into concise User Signals + Recommendations with evidence..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicolas-m-design",
+      "userId": "publishers:nicolas-m-design",
+      "displayName": "NicolasM",
+      "image": "https://avatars.githubusercontent.com/u/60584925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 545,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1772637510354,
+      "changelog": "Metadata coherence remediation: core-only required envs, conditional integration credentials, documented non-secret profile selector, and homepage provenance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:66ddba9d0a3059167fcb84a8fcc148e24fa0efd8d08aaf3d87f2b18f8a512834"
+}

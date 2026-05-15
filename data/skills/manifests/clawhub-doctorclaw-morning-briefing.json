@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53386,
+  "uuid": "skill-clawhub-doctorclaw-morning-briefing",
+  "skillKey": "clawhub-doctorclaw-morning-briefing",
+  "name": "DoctorClaw Morning Briefing",
+  "summary": "Daily morning briefing — emails, calendar, tasks, and weather in one summary. Cron or on-demand.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_morning_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ceobotson-bot",
+      "features": [
+        "Daily morning briefing — emails, calendar, tasks, and weather in one summary",
+        "Cron or on-demand."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doctorclaw-morning-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263067918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doctorclaw-morning-briefing",
+      "url": "https://clawhub.ai/skills/doctorclaw-morning-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-morning-briefing",
+    "url": "https://clawhub.ai/skills/doctorclaw-morning-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-morning-briefing-b72e56a078eebdad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doctorclaw-morning-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doctorclaw-morning-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2009a1935b06d1a9695fe9b666f7a90a0ffff681459c00852de102b96f09d9b1",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T05:30:46.167Z"
+}

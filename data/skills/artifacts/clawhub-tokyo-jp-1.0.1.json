@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tokyo-jp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tokyo_jp",
+  "skill": {
+    "id": 71011,
+    "skillKey": "clawhub-tokyo-jp",
+    "name": "Tokyo Jp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tokyo-jp",
+    "url": "https://clawhub.ai/skills/tokyo-jp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tokyo-jp-3f64dbb82c7895a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供东京旅游景点、文化、美食、住宿、交通及购物娱乐等实用信息和旅行建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295651091,
+      "changelog": "- 全面重写技能文档，聚焦 tokyo-jp 品牌档案与背景介绍\n- 更新摘要与适用场景，去除原有的东京旅游内容\n- 新增品牌概览、核心优势、行业与市场信息等模块\n- 推荐优先查阅官方渠道获取动态信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5359c7206e3dc53d5108a60eb7c1fc9228316b5a07e165d319e1e26045832fbd"
+}

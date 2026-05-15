@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/suno-prompt-tool@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suno_prompt_tool",
+  "skill": {
+    "id": 58317,
+    "skillKey": "clawhub-suno-prompt-tool",
+    "name": "Suno提示词工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suno-prompt-tool",
+    "url": "https://clawhub.ai/skills/suno-prompt-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suno-prompt-tool-102cded4de5b6db7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user wants to generate music with Suno AI, needs help writing Suno prompts, or asks about Suno music creation. (用于用户想要使用 Suno AI 生成音乐、需要帮助编写 Suno 提示..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aimusicalliance",
+      "userId": "s17850hpzbnw3bmhac3d79aws584qhks",
+      "displayName": "AI音乐训练营（SKILL.SUNOAI.WIKI）",
+      "image": "https://avatars.githubusercontent.com/u/273104779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776848949175,
+      "changelog": "- Added detailed documentation on creating high-quality Suno AI music prompts, including explanations of style, mood, instrument, tempo, vocal, theme, mastering, and era parameters.\n- Provided multiple structured prompt templates (concise, descriptive, and story/scene-based) with examples in both English and Chinese.\n- Introduced comprehensive quick-reference tables for genres, moods, instruments, vocal types, mastering options, and eras (with bilingual descriptions).\n- Included advanced tips for mixing styles, specifying eras, referencing artists, songwriting details, production nuances, and mastering keywords.\n- Showcased common use case examples for background, game, cinematic, study, workout, sleep music, and lyric-writing.\n- Expanded on mastering and era application scenarios for professional, streaming, vintage, and modern music production needs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa43bebcc34215c252ffc768533ddec11ce43187fc8bb77c33659f70d3854658"
+}

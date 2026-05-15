@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56083,
+  "uuid": "skill-clawhub-qinglong-skills",
+  "skillKey": "clawhub-qinglong-skills",
+  "name": "Qinglong Skills",
+  "summary": "Manage QingLong (青龙) panel via REST API — cron jobs, environment variables, scripts, dependencies, subscriptions, logs and system operations. Use this skill...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qinglong_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NNNNzs",
+      "features": [
+        "Manage QingLong (青龙) panel via REST API — cron jobs, environment variables, scripts, dependenci.",
+        "Use this skill..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qinglong-skills@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27205495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qinglong-skills",
+      "url": "https://clawhub.ai/skills/qinglong-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qinglong-skills",
+    "url": "https://clawhub.ai/skills/qinglong-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qinglong-skills-57169049e19e6bf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qinglong-skills@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-qinglong-skills-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b591cd5e375d0f75802f49597268c78c6054df2574b126790eaaf750cd1d267",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T07:28:27.238Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bounded-researcher@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bounded_researcher",
+  "skill": {
+    "id": 28918,
+    "skillKey": "clawhub-bounded-researcher",
+    "name": "bounded-researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bounded-researcher",
+    "url": "https://clawhub.ai/skills/bounded-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bounded-researcher-bad52aab105ecdc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bounded evidence-first research workflow for software agents. Use when an agent should reduce uncertainty, localize issues, validate outputs, or summarize ev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leslie-ller",
+      "userId": "publishers:leslie-ller",
+      "displayName": "Leslie-ller",
+      "image": "https://avatars.githubusercontent.com/u/146964748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 304,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773199170914,
+      "changelog": "Initial publish",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3af6775443299f5b577e814c7e18024c15dfa81b4864266f5d322dc4cf1279a8"
+}

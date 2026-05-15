@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catbox-upload@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catbox_upload",
+  "skill": {
+    "id": 10178,
+    "skillKey": "clawhub-catbox-upload",
+    "name": "Upload files to catbox.moe (permanent) or litterbox.catbox.moe (temporary)."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catbox-upload",
+    "url": "https://clawhub.ai/skills/catbox-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catbox-upload-0a2e94c6c64cb110.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload files to catbox.moe (permanent, max 200 MB) or litterbox.catbox.moe (temporary, 1h–72h, max 1 GB) and receive the file URL."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "microck",
+      "userId": "publishers:microck",
+      "displayName": "Microck",
+      "image": "https://avatars.githubusercontent.com/u/45483921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3158,
+      "installsAllTime": 15,
+      "installsCurrent": 15,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769660845775,
+      "changelog": "Initial release of Catbox/Litterbox File Uploader.\n\n- Supports uploading files to catbox.moe (permanent) and litterbox.catbox.moe (temporary).\n- Allows specifying expiry time for Litterbox uploads (1h, 12h, 24h, 72h).\n- Option to upload to Catbox with userhash for account tracking.\n- Provides limits for file size and duration by service.\n- Returns the direct URL of the uploaded file on success.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3d522423e9b6214d681fcb42211bf44861f9d2f8d16b23f60b8230d94bf737a9"
+}

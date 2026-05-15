@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-auto-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_auto_log",
+  "skill": {
+    "id": 22527,
+    "skillKey": "clawhub-health-auto-log",
+    "name": "Health Auto Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-auto-log",
+    "url": "https://clawhub.ai/skills/health-auto-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-auto-log-65c8023d984ac62d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detect and log health data (weight, blood sugar, exercise) to AX3 system. Use when user sends health measurements via WhatsApp or other messagi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "klcintw",
+      "userId": "publishers:klcintw",
+      "displayName": "klcintw",
+      "image": "https://avatars.githubusercontent.com/u/61076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772166761560,
+      "changelog": "Auto-record health data to AX3",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b2a7bb662a2daa87493adae6b431bcc9c6ab19e1a95675168bf51a2a49e6340"
+}

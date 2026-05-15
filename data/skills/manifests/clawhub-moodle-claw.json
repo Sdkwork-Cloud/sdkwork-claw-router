@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35384,
+  "uuid": "skill-clawhub-moodle-claw",
+  "skillKey": "clawhub-moodle-claw",
+  "name": "Moodle Claw",
+  "summary": "Interact with Moodle LMS to browse courses, access learning materials, and answer questions about course content.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodle_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Romain Mellaza",
+      "features": [
+        "Interact with Moodle LMS to browse courses, access learning materials, and answer questions abo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moodle-claw@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88449922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moodle-claw",
+      "url": "https://clawhub.ai/skills/moodle-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodle-claw",
+    "url": "https://clawhub.ai/skills/moodle-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodle-claw-fb4c94961a94c3f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moodle-claw@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moodle-claw-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63e463e0e27c7a51dc5c1331a3bf66c85d4645919db8e240c690ae44e7e4ee97",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T18:10:54.339Z"
+}

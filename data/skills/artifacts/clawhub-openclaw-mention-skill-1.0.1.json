@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-mention-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_mention_skill",
+  "skill": {
+    "id": 43998,
+    "skillKey": "clawhub-openclaw-mention-skill",
+    "name": "Openclaw Mention Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-mention-skill",
+    "url": "https://clawhub.ai/skills/openclaw-mention-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-mention-skill-d88dc1124e7e4c61.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Model-agnostic WhatsApp @mention skill for OpenClaw. Converts @Name, @Phone, @LID to blue clickable WhatsApp mentions with any AI model."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwei1213",
+      "userId": "s17147jhccdq6sjryd1y30fqdd84bn8r",
+      "displayName": "TAN JUN WEI",
+      "image": "https://avatars.githubusercontent.com/u/42743231?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775497231382,
+      "changelog": "- Updated documentation in SKILL.md, mention-guide.md, and README.md for clearer instructions and up-to-date usage guidance.\n- Minor improvements to example commands (e.g., add-member.js usage) for consistency.\n- Clarified steps for finding missing LIDs by referencing credential file patterns.\n- No functional or API changes; documentation and usability refinements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d62e10d5e9c676864b58f9867e56b5ea996a9ff517216ef8cc92d66684af45d"
+}

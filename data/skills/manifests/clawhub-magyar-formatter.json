@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57984,
+  "uuid": "skill-clawhub-magyar-formatter",
+  "skillKey": "clawhub-magyar-formatter",
+  "name": "Magyar Formázás",
+  "summary": "Formáz magyar dátumokat, számokat, pénzösszegeket, telefonszámokat és címeket a helyi magyar szabályok szerint.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magyar_formatter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Izsook",
+      "features": [
+        "Formáz magyar dátumokat, számokat, pénzösszegeket, telefonszámokat és címeket a helyi magyar sz."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magyar-formatter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96597727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magyar-formatter",
+      "url": "https://clawhub.ai/skills/magyar-formatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magyar-formatter",
+    "url": "https://clawhub.ai/skills/magyar-formatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magyar-formatter-4d2f6b145d3764ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magyar-formatter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-magyar-formatter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:394f008f4d42a7d75c1858748fc47bdbf33026a677ec4d4128c0e12e9344608a",
+      "artifactSizeBytes": 1878
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:02:40.356Z"
+}

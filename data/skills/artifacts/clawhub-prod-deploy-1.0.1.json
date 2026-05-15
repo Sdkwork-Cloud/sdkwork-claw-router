@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prod-deploy@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prod_deploy",
+  "skill": {
+    "id": 67267,
+    "skillKey": "clawhub-prod-deploy",
+    "name": "Prod Deploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prod-deploy",
+    "url": "https://clawhub.ai/skills/prod-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prod-deploy-6b21e3e91ab5bcf2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生产环境发布部署自动化技能。用于 SM 交友网站 (zmq-club.com) 的一键发布流程，包括：数据库备份、结构对比、前端构建、代码部署、迁移执行、服务重启、生产验证。Use when 沛哥要求发布生产、部署代码、上线新功能、或执行发布 SOP。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liupeidawn",
+      "userId": "s1700afbx9cd545av77a4rsjhd84gycq",
+      "displayName": "liupeidawn",
+      "image": "https://avatars.githubusercontent.com/u/267358664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775702979104,
+      "changelog": "- 更新一键发布命令，改为使用 skills/prod-deploy/scripts/deploy.py 路径执行主脚本\n- references/QUICK-REFERENCE.md、RELEASE-SOP.md 小幅调整以配合脚本路径变动\n- deploy.py 脚本路径与文档保持一致，目录规范化\n- 其余流程与内容保持一致，使用体验无变更",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9bf2f2365e08e9691fbb2d619eea355be4590269973384dbeb347fb4cd64505f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34400,
+  "uuid": "skill-clawhub-ironclaw-security-guard",
+  "skillKey": "clawhub-ironclaw-security-guard",
+  "name": "IronClaw Security Guard",
+  "summary": "Add lightweight defense-in-depth guardrails to OpenClaw with dangerous-command blocking, prompt-injection detection, secret redaction, and audit logging.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ironclaw_security_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Da Wei",
+      "features": [
+        "Add lightweight defense-in-depth guardrails to OpenClaw with dangerous-command blocking, prompt."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ironclaw-security-guard@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258555668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ironclaw-security-guard",
+      "url": "https://clawhub.ai/skills/ironclaw-security-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ironclaw-security-guard",
+    "url": "https://clawhub.ai/skills/ironclaw-security-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ironclaw-security-guard-c5f7d6e72af30836.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ironclaw-security-guard@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ironclaw-security-guard-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f13e50e416aeb2dfd69ede633f20272365c37681ad4193c9f8a32ec084ed24ed",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T08:11:15.174Z"
+}

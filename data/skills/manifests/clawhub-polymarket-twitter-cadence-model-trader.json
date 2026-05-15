@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34325,
+  "uuid": "skill-clawhub-polymarket-twitter-cadence-model-trader",
+  "skillKey": "clawhub-polymarket-twitter-cadence-model-trader",
+  "name": "Polymarket Twitter Cadence Model Trader",
+  "summary": "Trades post-count bin markets using a Poisson statistical model to predict the most likely bins based on historical posting rates. Requires SIMMER_API_KEY an...",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_twitter_cadence_model_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "diagnostikon",
+      "features": [
+        "Trades post-count bin markets using a Poisson statistical model to predict the most likely bins.",
+        "Requires SIMMER_API_KEY an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-twitter-cadence-model-trader@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17246180?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-twitter-cadence-model-trader",
+      "url": "https://clawhub.ai/skills/polymarket-twitter-cadence-model-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-twitter-cadence-model-trader",
+    "url": "https://clawhub.ai/skills/polymarket-twitter-cadence-model-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-twitter-cadence-model-trader-1d198082aff747cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-twitter-cadence-model-trader@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-twitter-cadence-model-trader-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d013392d96e0dbbb6b3e8dea6e8ff0cf06554e5758ed4a944e7c499270160f7d",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T14:31:46.198Z"
+}

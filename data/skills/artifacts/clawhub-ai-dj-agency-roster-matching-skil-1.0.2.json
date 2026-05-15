@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-dj-agency-roster-matching-skil@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_dj_agency_roster_matching_skil",
+  "skill": {
+    "id": 55042,
+    "skillKey": "clawhub-ai-dj-agency-roster-matching-skil",
+    "name": "International AI DJ Agency – For DJS & Event Organisers Worldwide Match Locally!"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-dj-agency-roster-matching-skil",
+    "url": "https://clawhub.ai/skills/ai-dj-agency-roster-matching-skil",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-dj-agency-roster-matching-skil-659d62b162922fa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run the AI DJ Agency pipeline – onboard DJs into the roster and match event organisers with qualified talent."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blockchain-records",
+      "userId": "s178zrvwkbyz707ec77eqyj29h84me54",
+      "displayName": "AI DJ",
+      "image": "https://avatars.githubusercontent.com/u/244641287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775956262192,
+      "changelog": "- Added a comprehensive README.md with usage instructions and workflow details.\n- Introduced scripts/dj_roster.py, a local Python helper for managing the DJ roster and matching candidates.\n- No changes to core logic or user workflows; documentation and helper script support added.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f67b154f26bd58efe8a832129efb48fd2f0f36beba6a1252f7fb2215ab5ecd76"
+}

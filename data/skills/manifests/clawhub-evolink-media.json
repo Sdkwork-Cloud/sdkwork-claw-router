@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32801,
+  "uuid": "skill-clawhub-evolink-media",
+  "skillKey": "clawhub-evolink-media",
+  "name": "Evolink Media — AI Video, Image & Music Generation",
+  "summary": "AI video, image & music generation. 60+ models — Sora, Veo 3, Kling, Seedance, GPT Image, Suno v5, Hailuo, WAN. Text-to-video, image-to-video, text-to-image,...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolink_media",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvolinkAI",
+      "features": [
+        "AI video, image & music generation",
+        "60+ models — Sora, Veo 3, Kling, Seedance, GPT Image, Suno v5, Hailuo, WAN",
+        "Text-to-video, image-to-video, text-to-image,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evolink-media@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253253881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evolink-media",
+      "url": "https://clawhub.ai/skills/evolink-media"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolink-media",
+    "url": "https://clawhub.ai/skills/evolink-media",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolink-media-fb266de46f815a39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evolink-media@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evolink-media-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78072284f375cab9e9d08392b72d717d987599694f62ad92537ff4267c53dbbf",
+      "artifactSizeBytes": 2652
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T17:38:19.249Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-encyclopedia@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_encyclopedia",
+  "skill": {
+    "id": 30104,
+    "skillKey": "clawhub-openclaw-encyclopedia",
+    "name": "OpenClaw Encyclopedia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-encyclopedia",
+    "url": "https://clawhub.ai/skills/openclaw-encyclopedia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-encyclopedia-c3a9c252c4162ca5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw product/runtime/configuration documentation-first workflow for OpenClaw-specific questions, troubleshooting, command planning, configuration review,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kklouzal",
+      "userId": "s176y11yv9na3nw5afgpj7d13583g123",
+      "displayName": "kklouzal",
+      "image": "https://avatars.githubusercontent.com/u/2928845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774653716552,
+      "changelog": "Security hardening: restrict cache fetches to approved docs URLs, block traversal/query writes, tighten cache-path handling, and add explicit guidance not to store plaintext secrets in encyclopedia notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d4770ee94febe189f4b0c49ef04544c826bc2bb1b110c8e08ec011f7d5d5e42"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarms-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarms_ai",
+  "skill": {
+    "id": 19632,
+    "skillKey": "clawhub-swarms-ai",
+    "name": "openclaw skill for swarms ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarms-ai",
+    "url": "https://clawhub.ai/skills/swarms-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarms-ai-9650c720fbd54564.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and orchestrate multi-agent AI systems using the Swarms API. Use when creating single agents, multi-agent swarms (sequential, concurrent, hierarchical,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "newsoulontheblock",
+      "userId": "publishers:newsoulontheblock",
+      "displayName": "NewSoulOnTheBlock",
+      "image": "https://avatars.githubusercontent.com/u/253271617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772154427166,
+      "changelog": "- Initial release of the swarms-ai skill, providing a comprehensive guide for building and orchestrating multi-agent AI systems with the Swarms API.\n- Supports creation of single agents and swarms (3–10,000+ agents) with multiple architecture patterns (sequential, concurrent, hierarchical, etc.).\n- Includes detailed API endpoint usage, parameters, and Python code examples for single/multi-agent orchestration.\n- Features integration for launching agent tokens on Solana, ATP payment protocol, and publishing to Swarms Marketplace.\n- Provides a quick reference for authentication, available swarm architectures, agent configuration parameters, and related resources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43e249cbc640efeada182c3ae95dcd475053cb7f5dec3fe77083004418ed8126"
+}

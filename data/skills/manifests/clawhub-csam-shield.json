@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19406,
+  "uuid": "skill-clawhub-csam-shield",
+  "skillKey": "clawhub-csam-shield",
+  "name": "Csam Shield",
+  "summary": "Detects, blocks, and reports Child Sexual Abuse Material using AI-driven image, video, and behavior analysis with automatic NCMEC reporting and evidence pres...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csam_shield",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "raghulpasupathi",
+      "features": [
+        "Detects, blocks, and reports Child Sexual Abuse Material using AI-driven image, video, and beha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csam-shield@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15859053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csam-shield",
+      "url": "https://clawhub.ai/skills/csam-shield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csam-shield",
+    "url": "https://clawhub.ai/skills/csam-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csam-shield-a92139f0808a7c03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csam-shield@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csam-shield-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20d0a46b50bd01ede6639446329bace93bd41d0807452bb75c199a13fe1eba21",
+      "artifactSizeBytes": 2581
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:32:28.844Z"
+}

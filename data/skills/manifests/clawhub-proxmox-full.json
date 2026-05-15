@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9478,
+  "uuid": "skill-clawhub-proxmox-full",
+  "skillKey": "clawhub-proxmox-full",
+  "name": "Proxmox Full",
+  "summary": "Complete Proxmox VE management - create/clone/start/stop VMs and LXC containers, manage snapshots, backups, storage, and templates. Use when user wants to manage Proxmox infrastructure, virtual machines, or containers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxmox_full",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mortada Sarheed",
+      "features": [
+        "Complete Proxmox VE management",
+        "create/clone/start/stop VMs and LXC containers, manage snapshots, backups, storage, and templat.",
+        "Use when user wants to manage Proxmox infrastructure, virtual machines, or containers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proxmox-full@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6534633?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proxmox-full",
+      "url": "https://clawhub.ai/skills/proxmox-full"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxmox-full",
+    "url": "https://clawhub.ai/skills/proxmox-full",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxmox-full-d790b36f9e61a68b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proxmox-full@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proxmox-full-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7924c8ab7b90ea658204af9b108ed95e4d498f816e40690fac253c7472582bc2",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T18:26:35.141Z"
+}

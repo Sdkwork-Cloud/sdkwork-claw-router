@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quincy-agentic-paper-digest-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quincy_agentic_paper_digest_skill",
+  "skill": {
+    "id": 46564,
+    "skillKey": "clawhub-quincy-agentic-paper-digest-skill",
+    "name": "Agentic Paper Digest Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quincy-agentic-paper-digest-skill",
+    "url": "https://clawhub.ai/skills/quincy-agentic-paper-digest-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quincy-agentic-paper-digest-skill-0b4eca8215751494.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches and summarizes recent arXiv and Hugging Face papers with Agentic Paper Digest. Use when the user wants a paper digest, a JSON feed of recent papers,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quincygunter",
+      "userId": "s17d0tr1e37k04dr1j7gy5ff0584nmyw",
+      "displayName": "QuincyGunter",
+      "image": "https://avatars.githubusercontent.com/u/260427166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776221041845,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b561e4dcdacbd0dbb5c64cbf320bf641abbd615cc989b6bc51076e74c40b531"
+}

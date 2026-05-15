@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unexpand-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unexpand_tool",
+  "skill": {
+    "id": 49294,
+    "skillKey": "clawhub-unexpand-tool",
+    "name": "Unexpand Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unexpand-tool",
+    "url": "https://clawhub.ai/skills/unexpand-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unexpand-tool-ab2c3f8284a73ea5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert spaces to tabs in text files. Use for consistent indentation and reducing file size by replacing spaces with tabs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778085007459,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb313488798ca129ca5405a8b024478958d8d44a52e3cdd0a8a0889ae8508208"
+}

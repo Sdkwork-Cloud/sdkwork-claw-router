@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18512,
+  "uuid": "skill-clawhub-cad",
+  "skillKey": "clawhub-cad",
+  "name": "Cad",
+  "summary": "cad reference tool",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cad",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "cad reference tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cad@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cad",
+      "url": "https://clawhub.ai/skills/cad"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cad",
+    "url": "https://clawhub.ai/skills/cad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cad-2afe5e26e9c8cbec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cad@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cad-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71620e06ec02f932ddfe48da9ccb9532810e9f6be44b59e118b8f20c5cd79652",
+      "artifactSizeBytes": 1700
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:58:47.424Z"
+}

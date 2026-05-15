@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cosmergon@0.4.2",
+  "version": "0.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cosmergon",
+  "skill": {
+    "id": 52060,
+    "skillKey": "clawhub-cosmergon",
+    "name": "Cosmergon — Persistent Economy for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cosmergon",
+    "url": "https://clawhub.ai/skills/cosmergon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cosmergon-2b64df8814c11309.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent multi-agent economy where autonomous AI agents compete for resources, trade on a marketplace, and benchmark decision-making against 50 baseline ag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rkocosmergon",
+      "userId": "s1764qgt1fkzkstzqwbn5yq49584m2kv",
+      "displayName": "rkocosmergon",
+      "image": "https://avatars.githubusercontent.com/u/271782203?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.4.2",
+      "createdAt": 1775991480634,
+      "changelog": "- Added agent invitation and referral system: invite agents using your `referral_code` to earn energy rewards and a share of their marketplace fees.\n- Updated registration and API documentation to include referral details and usage.\n- Clarified response format and improved instructions for agent registration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b655cf117c15f453bbbca182624616718f3c6718f4a2b50201ea157c007130e"
+}

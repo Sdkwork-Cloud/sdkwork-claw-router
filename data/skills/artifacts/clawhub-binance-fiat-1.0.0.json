@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/binance-fiat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.binance_fiat",
+  "skill": {
+    "id": 42937,
+    "skillKey": "clawhub-binance-fiat",
+    "name": "Binance Fiat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "binance-fiat",
+    "url": "https://clawhub.ai/skills/binance-fiat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/binance-fiat-ec316f05ef3e7322.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Binance Fiat request using the Binance API. Authentication requires API key and secret key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dexploarer",
+      "userId": "s17egvpamsdg48m9t22pe28nqd8402a8",
+      "displayName": "Dexploarer",
+      "image": "https://avatars.githubusercontent.com/u/211557447?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775054180407,
+      "changelog": "Initial release from milady-ai/skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ac2a52d7173983748700020dc956c98191ef65abebbcc19121f0812dc012206"
+}

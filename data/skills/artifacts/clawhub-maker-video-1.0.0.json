@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_video",
+  "skill": {
+    "id": 47028,
+    "skillKey": "clawhub-maker-video",
+    "name": "Maker Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-video",
+    "url": "https://clawhub.ai/skills/maker-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-video-0e4a696cff4e07cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create raw footage into finished video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for turning raw clips..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776444238706,
+      "changelog": "maker-video 1.0.0\n\n- Initial release: transform raw video footage into polished, shareable videos using cloud GPU processing.\n- Supports major video file types (MP4, MOV, AVI, WebM) up to 500MB.\n- Automatic session and token setup; 100 free credits for new users.\n- Efficient workflows for editing, adding music, and exporting as 1080p MP4.\n- Clear error handling, activity feedback, and user guidance built in.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:495edfadfff854e275c84e818f57443f9177483d48622ca0d9bd18b55219db96"
+}

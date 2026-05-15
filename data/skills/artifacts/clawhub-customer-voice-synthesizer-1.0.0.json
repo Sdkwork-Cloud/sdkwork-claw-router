@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-voice-synthesizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_voice_synthesizer",
+  "skill": {
+    "id": 59236,
+    "skillKey": "clawhub-customer-voice-synthesizer",
+    "name": "Customer Voice Synthesizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-voice-synthesizer",
+    "url": "https://clawhub.ai/skills/customer-voice-synthesizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-voice-synthesizer-07a3e5f59498a3c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "聚合客服、销售、评价与访谈中的用户原声，并按 JTBD/阶段组织。；use for customer-voice, jtbd, research workflows；do not use for 泄露用户隐私, 选择性忽略负面声音."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773649261280,
+      "changelog": "Initial release of customer-voice-synthesizer.\n\n- Aggregates customer voices from support, sales, reviews, and interviews, organized by JTBD and stage.\n- Provides structured outputs: user voice, JTBD/stage categorization, pain points, value language, and validation suggestions.\n- Includes clear usage boundaries: avoid privacy leaks, do not ignore negative feedback, advise on high-risk/privileged actions.\n- Supports review-first and checklist output modes, with templates/specs for environments lacking direct script execution.\n- Emphasizes auditability and data sensitivity by default.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b8b4c88ccb03516f429ecb3341df7564009738ee5609c531f11c5f67c71bd8b"
+}

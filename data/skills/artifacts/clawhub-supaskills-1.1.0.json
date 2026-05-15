@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supaskills@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supaskills",
+  "skill": {
+    "id": 17700,
+    "skillKey": "clawhub-supaskills",
+    "name": "SupaSkills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supaskills",
+    "url": "https://clawhub.ai/skills/supaskills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supaskills-4254c95707fb0307.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and load 1,000+ quality-scored expert skills from SupaSkills.ai"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ktdmax",
+      "userId": "publishers:ktdmax",
+      "displayName": "Kill The Dragon",
+      "image": "https://avatars.githubusercontent.com/u/101885409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1771846309583,
+      "changelog": "Security: safe prompt loading, API key warning, error handling",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bac680223b42d769d6e77eac534e448add382eeee23c784cb5c185606ef0bab7"
+}

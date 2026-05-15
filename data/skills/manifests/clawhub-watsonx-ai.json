@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36303,
+  "uuid": "skill-clawhub-watsonx-ai",
+  "skillKey": "clawhub-watsonx-ai",
+  "name": "Watsonx Ai",
+  "summary": "WatsonX AI integration. Manage data, records, and automate workflows. Use when the user wants to interact with WatsonX AI data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.watsonx_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "WatsonX AI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WatsonX AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/watsonx-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "watsonx-ai",
+      "url": "https://clawhub.ai/skills/watsonx-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "watsonx-ai",
+    "url": "https://clawhub.ai/skills/watsonx-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/watsonx-ai-d523e39503b2c374.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/watsonx-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-watsonx-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f937cd177c423e2ae90c20a432d7f7092a5161b6b4e19ad53752c4f82c4704a7",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:10:30.304Z"
+}

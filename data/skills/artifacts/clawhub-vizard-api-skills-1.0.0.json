@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vizard-api-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vizard_api_skills",
+  "skill": {
+    "id": 50831,
+    "skillKey": "clawhub-vizard-api-skills",
+    "name": "Auto video clipping and publishing | by Vizard.ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vizard-api-skills",
+    "url": "https://clawhub.ai/skills/vizard-api-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vizard-api-skills-05c912089664a6cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when needing to clip long videos into short social media clips, edit short videos with subtitles or b-roll, publish clips to social platforms, or generat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vizardai",
+      "userId": "s1776rsap53y8mg1peq7r5tj8x84ww51",
+      "displayName": "vizardai",
+      "image": "https://avatars.githubusercontent.com/u/173219543?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776246129837,
+      "changelog": "Initial release of Vizard API skill for automated video content creation.\n\n- Enables clipping long videos into short, social-ready clips using Vizard.ai API\n- Supports editing short videos (≤3 min) with subtitles, B-roll, and branding features\n- Includes options to publish finished clips directly to major social media platforms\n- Provides AI-driven caption generation for social posts\n- Detailed reference and example code provided for all main workflows and parameters",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cfcfde90bf4ba54b2ffae5e14bf77dbabc18a099a916f2d427a8c3fb03b7fc4"
+}

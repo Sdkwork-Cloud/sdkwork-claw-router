@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mdk-agent-wallet@0.3.3",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mdk_agent_wallet",
+  "skill": {
+    "id": 10782,
+    "skillKey": "clawhub-mdk-agent-wallet",
+    "name": "agent-wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mdk-agent-wallet",
+    "url": "https://clawhub.ai/skills/mdk-agent-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mdk-agent-wallet-df0da8179eda29bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-custodial Bitcoin Lightning wallet for AI agents. Use when the agent needs to send or receive bitcoin payments, check its balance, generate invoices, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "satbot-mdk",
+      "userId": "publishers:satbot-mdk",
+      "displayName": "Satbot",
+      "image": "https://avatars.githubusercontent.com/u/258118994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1969,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 5,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "0.3.3",
+      "createdAt": 1772064896771,
+      "changelog": "Fix repository URL to moneydevkit/mdk-checkout, revert to 0.2.6 content",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4aef7a855b18740450a825777f53d89f5d9a0a29c6077f8840792981a6bf4e58"
+}

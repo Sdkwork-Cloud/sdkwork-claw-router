@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chen-memory-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chen_memory_setup",
+  "skill": {
+    "id": 37704,
+    "skillKey": "clawhub-chen-memory-setup",
+    "name": "Chen Memory Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chen-memory-setup",
+    "url": "https://clawhub.ai/skills/chen-memory-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chen-memory-setup-41cca6144f4a97c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enable and configure Moltbot/Clawdbot memory search for persistent context. Use when setting up memory, fixing \"goldfish brain,\" or helping users configure m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs995279497-byte",
+      "userId": "s1752x7jpsq8e6496yg8h0rps183jrna",
+      "displayName": "cs995279497-byte",
+      "image": "https://avatars.githubusercontent.com/u/254620949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774197626176,
+      "changelog": "- Initial release of the chen-memory-setup skill for Moltbot/Clawdbot.\n- Helps users enable and configure persistent memory search to improve agent context retention.\n- Provides step-by-step setup for MEMORY.md, memory directory structure, and recommended config options.\n- Includes troubleshooting tips for memory search, provider API keys, and context retrieval.\n- Offers sample agent instructions to integrate memory search behaviors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e6e6cc6b7720aafadf5bc0754125c13876721d789842552dcd7ddb346b8a1cf"
+}

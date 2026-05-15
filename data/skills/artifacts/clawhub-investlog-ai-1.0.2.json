@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/investlog-ai@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.investlog_ai",
+  "skill": {
+    "id": 60667,
+    "skillKey": "clawhub-investlog-ai",
+    "name": "InvestLog AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "investlog-ai",
+    "url": "https://clawhub.ai/skills/investlog-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/investlog-ai-42fbb29e941e0649.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美股实时数据研究工具：股价行情、估值分析、财报数据、分析师评级、目标价、内部人交易、国会议员交易、机构持仓、ETF持仓、技术指标、分红拆股、财务健康评分。Real-time US stock research: quotes, valuation, financials, analyst ratings, ins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nblicb",
+      "userId": "s17721bhtpxtbfbe817ftg8gr583k0v4",
+      "displayName": "nblicb",
+      "image": "https://avatars.githubusercontent.com/u/261251184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774140095667,
+      "changelog": "- Updated description to include Chinese content and clarified both Chinese and English language support.\n- Emphasized that 10 free queries are available without requiring an API key.\n- Added Chinese features and usage info directly in the description for better accessibility to Chinese-speaking users.\n- No changes to API usage or technical functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da01e46173361843d4895e03e060ca96488bab32efebeb988581fef6aa8e7ccb"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35709,
+  "uuid": "skill-clawhub-lookml",
+  "skillKey": "clawhub-lookml",
+  "name": "Lookml",
+  "summary": "LookML integration. Manage data, records, and automate workflows. Use when the user wants to interact with LookML data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lookml",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "LookML integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with LookML data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lookml@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lookml",
+      "url": "https://clawhub.ai/skills/lookml"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lookml",
+    "url": "https://clawhub.ai/skills/lookml",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lookml-4f1b988651a6a2c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lookml@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lookml-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cb4d2954ed6e961b8d3ca34a31caaa37ddf5649820f44f5e3b9de4aac04371d",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:09:13.380Z"
+}

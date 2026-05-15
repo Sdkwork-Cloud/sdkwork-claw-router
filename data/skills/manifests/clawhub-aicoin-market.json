@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35112,
+  "uuid": "skill-clawhub-aicoin-market",
+  "skillKey": "clawhub-aicoin-market",
+  "name": "Aicoin Market",
+  "summary": "This skill should be used when the user asks about crypto prices, market data, K-line charts, funding rates, open interest, long/short ratios, whale orders,...",
+  "version": "3.4.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicoin_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "procaross",
+      "features": [
+        "This skill should be used when the user asks about crypto prices, market data, K-line charts, f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aicoin-market@3.4.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50150757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aicoin-market",
+      "url": "https://clawhub.ai/skills/aicoin-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicoin-market",
+    "url": "https://clawhub.ai/skills/aicoin-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicoin-market-175ec88588bb1a69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aicoin-market@3.4.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-aicoin-market-3.4.5.json",
+      "version": "3.4.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:157a6e81940a981de54fb6fc63198ae7ee73371dcbeb2d68ac9468adfb093a36",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:28:11.021Z"
+}

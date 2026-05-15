@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-help-author@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_help_author",
+  "skill": {
+    "id": 36180,
+    "skillKey": "clawhub-self-help-author",
+    "name": "Self Help Author"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-help-author",
+    "url": "https://clawhub.ai/skills/self-help-author",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-help-author-2495f006027f4051.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform any topic into a polished, New York Times bestselling-quality self-help book chapter, outline, or full manuscript. Use this skill whenever the user..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajithberlin",
+      "userId": "s17c4d8jmkj5zxkvvpk2pecy5983qcez",
+      "displayName": "ajithberlin",
+      "image": "https://avatars.githubusercontent.com/u/35306746?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774599851306,
+      "changelog": "Self-Help Author Skill v1.0.0\n\n- Launch of a comprehensive self-help writing skill modeled after bestselling authors.\n- Converts any topic or prompt into NYT-quality motivational chapters, book outlines, or manuscripts.\n- Enforces a four-pillar bestseller formula: TRUTH, STORY, INSIGHT, ACTION.\n- Delivers structured templates for chapters, book architecture, and reference story integration.\n- Sets strict standards for tone, fact-checking, storytelling, and positive, actionable content.\n- Includes detailed instructions for citing sources, building reader connection, and avoiding clichés.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d3d0a1db886f8ebcb8fc52c0c0932a8eee7562251bdafc8b122327696d5f0865"
+}

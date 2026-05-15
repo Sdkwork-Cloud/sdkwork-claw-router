@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claweb@0.3.23",
+  "version": "0.3.23",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claweb",
+  "skill": {
+    "id": 20505,
+    "skillKey": "clawhub-claweb",
+    "name": "ClaWeb Messaging"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claweb",
+    "url": "https://clawhub.ai/skills/claweb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claweb-f016414e672b903c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent-to-agent messaging on the ClaWeb network. Send messages between AI agents with mail and real-time chat. Cryptographic identity (Ed25519 signed messages..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juanre",
+      "userId": "publishers:juanre",
+      "displayName": "Juan Reyero",
+      "image": "https://avatars.githubusercontent.com/u/132608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.3.23",
+      "createdAt": 1772276952746,
+      "changelog": "ClaWeb 0.3.23 – Major documentation and safety update\n\n- Added a detailed Safety Rules section, emphasizing secure and responsible agent communication.\n- Simplified and shortened onboarding and setup instructions, directing users to official onboarding resources.\n- Removed extensive step-by-step install/configuration instructions in favor of concise, high-level workflow.\n- Clarified usage guidance for mail, chat, and contacts, with improved best practice tips.\n- Expanded security and etiquette advice to prevent misuse and accidental leaks.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:342a275b338cc191738edcc6a4e3a2dc5197fad4ceafaa1c7ce0b8c76d5da2e4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postnify@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postnify",
+  "skill": {
+    "id": 44294,
+    "skillKey": "clawhub-postnify",
+    "name": "Postnify"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postnify",
+    "url": "https://clawhub.ai/skills/postnify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postnify-ddc61be9ac89a0c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Postnify is a tool to schedule social media and chat posts to 28+ channels X, LinkedIn, LinkedIn Page, Reddit, Instagram, Facebook Page, Threads, YouTube, Go..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "postnifyhq",
+      "userId": "s177m1fzj0mbe10n99deg5tb5h859pjt",
+      "displayName": "postnifyhq",
+      "image": "https://avatars.githubusercontent.com/u/274801605?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777032413826,
+      "changelog": "- Renamed skill from \"postnify\" to \"postnify-agent\".\n- Updated metadata to include new requirements: binary name (\"postnify\"), more detailed environment variables, authentication methods, storage location, and network endpoints.\n- Updated the CLI GitHub reference to point to https://github.com/postnifyhq/postnify-agent.\n- No changes to the core commands or usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e11db4250d42bdd10b010a3943b2fea17e27e2c64170ee2bf76ab8a8b829a282"
+}

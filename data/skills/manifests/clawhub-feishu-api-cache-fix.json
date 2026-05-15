@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49876,
+  "uuid": "skill-clawhub-feishu-api-cache-fix",
+  "skillKey": "clawhub-feishu-api-cache-fix",
+  "name": "Feishu Api Cache Fix",
+  "summary": "Reduces Feishu API calls from every minute to once every 2 hours by caching bot status, saving 99% of API quota usage.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_api_cache_fix",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bryan-chx",
+      "features": [
+        "Reduces Feishu API calls from every minute to once every 2 hours by caching bot status, saving."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-api-cache-fix@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260039684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-api-cache-fix",
+      "url": "https://clawhub.ai/skills/feishu-api-cache-fix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-api-cache-fix",
+    "url": "https://clawhub.ai/skills/feishu-api-cache-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-api-cache-fix-d4d70b0c935743af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-api-cache-fix@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-api-cache-fix-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6305112559d44e8b8182d2806228e427416aa0e47197eeacd416448c7fb48bad",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T12:48:07.105Z"
+}

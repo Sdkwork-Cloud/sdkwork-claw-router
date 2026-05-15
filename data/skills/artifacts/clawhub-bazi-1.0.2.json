@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bazi@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bazi",
+  "skill": {
+    "id": 70102,
+    "skillKey": "clawhub-bazi",
+    "name": "凡心八字在线排盘，导出AI指令"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bazi",
+    "url": "https://clawhub.ai/skills/bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bazi-a969e98b3fb984d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "计算八字以及大运流年信息，需要性别、ISO 8601 格式的时间两个参数"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahaofan",
+      "userId": "s173b1rm4088xkkbtyp43pamwn84gjze",
+      "displayName": "ahaofan",
+      "image": "https://avatars.githubusercontent.com/u/30693897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 545,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776092422749,
+      "changelog": "更新凡心八字在线排盘后端API的域名地址",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6f0797a5f7a1926a96ac82e67ae0050d826d0be255da7ac130d2578d5bff5192"
+}

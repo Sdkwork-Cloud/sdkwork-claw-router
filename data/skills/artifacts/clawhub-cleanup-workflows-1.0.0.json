@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cleanup-workflows@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanup_workflows",
+  "skill": {
+    "id": 41915,
+    "skillKey": "clawhub-cleanup-workflows",
+    "name": "Cleanup Workflows"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanup-workflows",
+    "url": "https://clawhub.ai/skills/cleanup-workflows",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanup-workflows-ac408cd0dac0a5d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and remove inactive, test, or deprecated workflows from HubSpot. Identifies workflows that have never enrolled contacts, workflows turned off for 90+ d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774546564987,
+      "changelog": "- Initial release of cleanup-workflows skill.\n- Audits HubSpot workflows to identify and remove inactive, test, or deprecated workflows.\n- Flags workflows based on inactivity, zero enrollments, test/draft naming, superseded status, and consistent errors.\n- Provides step-by-step instructions for inventory, review, deletion, documentation, and rollback precautions.\n- Includes tips for organizing and maintaining a clean HubSpot workflow environment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcf75eebf91f6a35f7a13fb77a4f3a94fe463114c9e6aae3830b67dfd3800efc"
+}

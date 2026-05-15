@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8494,
+  "uuid": "skill-clawhub-tavily-web-search-for-openclaw",
+  "skillKey": "clawhub-tavily-web-search-for-openclaw",
+  "name": "Tavily Web Search Skill for OpenClaw 🦀",
+  "summary": "use this when the user asks to search the web, look up recent information, check current events, gather online sources, or research a topic using tavily search.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_web_search_for_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Göktuğ Ceyhan",
+      "features": [
+        "use this when the user asks to search the web, look up recent information, check current events."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-web-search-for-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17319750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-web-search-for-openclaw",
+      "url": "https://clawhub.ai/skills/tavily-web-search-for-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-web-search-for-openclaw",
+    "url": "https://clawhub.ai/skills/tavily-web-search-for-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-web-search-for-openclaw-eec4fe57887af568.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-web-search-for-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-web-search-for-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03baa269e59ba08656190813ad11f0ead8abaa39d0066076050f83da4d060230",
+      "artifactSizeBytes": 2322
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T22:53:30.000Z"
+}

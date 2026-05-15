@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/odps-sql@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.odps_sql",
+  "skill": {
+    "id": 57693,
+    "skillKey": "clawhub-odps-sql",
+    "name": "odps-sql"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "odps-sql",
+    "url": "https://clawhub.ai/skills/odps-sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/odps-sql-3a3564aab85bfa0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to query, analyze, or explore data in Alibaba Cloud ODPS (MaxCompute / 阿里云大数据计算服务). This skill executes SQL queries, lists..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guilongzh",
+      "userId": "s1775t6dxz8zgp1w0k5vyc6v0h83qcds",
+      "displayName": "GuilongZh",
+      "image": "https://avatars.githubusercontent.com/u/24869034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773373992174,
+      "changelog": "- Switched references from \"skill/\" to \"mcp-odps/\" throughout setup, script paths, and documentation.\n- Added metadata section specifying required binaries and environment variables for integration.\n- Updated example paths in setup instructions and SQL reference location.\n- No changes to code or SQL usage; these are documentation updates for consistency and integration requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ae3a04a7c4fc571004f788a179383865a69e38ce2d49b03a138ebfe6452141b"
+}

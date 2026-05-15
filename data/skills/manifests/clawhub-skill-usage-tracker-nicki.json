@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72469,
+  "uuid": "skill-clawhub-skill-usage-tracker-nicki",
+  "skillKey": "clawhub-skill-usage-tracker-nicki",
+  "name": "技能使用记录与统计（Nicki）",
+  "summary": "技能调用记录与统计分析。自动追踪所有技能调用，无需用户操作。支持日/周/月/季/年维度的技能使用统计报告。安装后直接使用，无需配置。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_usage_tracker_nicki",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Superuser-fank",
+      "features": [
+        "技能调用记录与统计分析。自动追踪所有技能调用，无需用户操作。支持日/周/月/季/年维度的技能使用统计报告。安装后直接使用，无需配置。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-usage-tracker-nicki@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118589778?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-usage-tracker-nicki",
+      "url": "https://clawhub.ai/skills/skill-usage-tracker-nicki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-usage-tracker-nicki",
+    "url": "https://clawhub.ai/skills/skill-usage-tracker-nicki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-usage-tracker-nicki-b96e2426f309c554.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-usage-tracker-nicki@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-usage-tracker-nicki-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2fd152bdee75a7dd9a37ece1b7d189c32c3da6fb09910cd1c885680ba1ebbf3",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T18:02:55.229Z"
+}

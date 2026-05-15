@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71492,
+  "uuid": "skill-clawhub-deal-hunter-alert-claw",
+  "skillKey": "clawhub-deal-hunter-alert-claw",
+  "name": "商业捡漏预警虾",
+  "summary": "商业捡漏预警虾 — 商业信息差的极速捕手。监控多平台（闲鱼、链家、阿里拍卖、政府采购网等），第一时间发现低价房产、优质二手货、招标机会，并推送飞书预警。 当以下情况时使用此 Skill： (1) 用户要求监控某平台的低价商品、房产或招标信息 (2) 用户要求设置价格预警阈值（如\"低于市场价30%就通知我\"） (3...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deal_hunter_alert_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ricky",
+      "features": [
+        "商业捡漏预警虾 — 商业信息差的极速捕手。监控多平台（闲鱼、链家、阿里拍卖、政府采购网等），第一时间发现低价房产、优质二手货、招标机会，并推送飞书预警。 当以下情况时使用此 Skill： (."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deal-hunter-alert-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82147388?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deal-hunter-alert-claw",
+      "url": "https://clawhub.ai/skills/deal-hunter-alert-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deal-hunter-alert-claw",
+    "url": "https://clawhub.ai/skills/deal-hunter-alert-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deal-hunter-alert-claw-0dd479311bc717e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deal-hunter-alert-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deal-hunter-alert-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:838025f0fbe57f9d07bd4586c977255673fb4bdd0ace15570c6203d61630e94a",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T11:40:08.259Z"
+}

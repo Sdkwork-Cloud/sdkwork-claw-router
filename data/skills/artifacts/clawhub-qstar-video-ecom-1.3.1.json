@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qstar-video-ecom@1.3.1",
+  "version": "1.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qstar_video_ecom",
+  "skill": {
+    "id": 27116,
+    "skillKey": "clawhub-qstar-video-ecom",
+    "name": "Qstar Video Ecom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qstar-video-ecom",
+    "url": "https://clawhub.ai/skills/qstar-video-ecom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qstar-video-ecom-0f35e097246b4933.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "One-click AI product video generator for Chinese e-commerce, upgraded with advanced creation modes. Use it for classic one-click product videos, single-image..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hubtiger123",
+      "userId": "s17avs6r3s7zvfb1p9vyqf5j0983g4y3",
+      "displayName": "hubtiger123",
+      "image": "https://avatars.githubusercontent.com/u/154433354?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.3.1",
+      "createdAt": 1774680824515,
+      "changelog": "qstar-video-ecom v1.3.1\n\n- Improved image upload handling: now detects if the upload endpoint is unavailable (e.g., returns 404) and falls back to passing public image URLs directly to the generation backend.\n- Clarified that uploaded images must be accessible by the backend (not internal or inaccessible URLs).\n- Updated instructions to avoid retrying unavailable upload endpoints and to ensure public image URLs are used when necessary.\n- Minor wording and behavior clarifications to ensure user expectations match backend capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:075689090ac4795b25fe0b27c1c39f727181147938ab5cad914ffe60343ec674"
+}

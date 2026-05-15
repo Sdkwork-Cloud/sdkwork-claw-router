@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63870,
+  "uuid": "skill-clawhub-draw-paper",
+  "skillKey": "clawhub-draw-paper",
+  "name": "draw-paper",
+  "summary": "从论文解析文件中逐图读取Prompt，调用Gemini生成科研结构图并保存到固定目录",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.draw_paper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "m1ss-cell",
+      "features": [
+        "从论文解析文件中逐图读取Prompt，调用Gemini生成科研结构图并保存到固定目录"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/draw-paper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245515589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "draw-paper",
+      "url": "https://clawhub.ai/skills/draw-paper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "draw-paper",
+    "url": "https://clawhub.ai/skills/draw-paper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/draw-paper-4e576037d73f309a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/draw-paper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-draw-paper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dea66a5346e1cf264d7fe798bc8a8baed8e5beaa05c050f2db0fc2586f7551fd",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T11:37:40.212Z"
+}

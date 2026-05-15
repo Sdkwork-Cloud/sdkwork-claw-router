@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16957,
+  "uuid": "skill-clawhub-autonomy-type-based",
+  "skillKey": "clawhub-autonomy-type-based",
+  "name": "Type-Based Autonomy",
+  "summary": "Type-based autonomous task queue system. Categorizes tasks by type (research, writing, analysis, maintenance) and lets autonomy work only on value-add tasks...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomy_type_based",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "luciusrockwing",
+      "features": [
+        "Type-based autonomous task queue system",
+        "Categorizes tasks by type (research, writing, analysis, maintenance) and lets autonomy work onl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autonomy-type-based@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2353385?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autonomy-type-based",
+      "url": "https://clawhub.ai/skills/autonomy-type-based"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomy-type-based",
+    "url": "https://clawhub.ai/skills/autonomy-type-based",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomy-type-based-87e80a42c607c3d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autonomy-type-based@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autonomy-type-based-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ac4ce3b561100fba9488fdb7264d21051ca9c55ba2bab4f50f04b21de4c4224",
+      "artifactSizeBytes": 2110
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T01:57:19.216Z"
+}

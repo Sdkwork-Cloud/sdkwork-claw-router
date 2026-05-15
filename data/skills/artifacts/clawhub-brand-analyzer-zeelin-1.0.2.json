@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-analyzer-zeelin@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_analyzer_zeelin",
+  "skill": {
+    "id": 67890,
+    "skillKey": "clawhub-brand-analyzer-zeelin",
+    "name": "品牌分析师（Zeelin付费版）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-analyzer-zeelin",
+    "url": "https://clawhub.ai/skills/brand-analyzer-zeelin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-analyzer-zeelin-0f8dd905216201df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "品牌分析 Skill（零配置版）。用户仅需提供 Zeelin App-Key 和品牌名，调用服务端封装接口生成品牌底座；计费在服务端完成（成功扣50额度，失败不扣费）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linhai806806-cell",
+      "userId": "s1745rd2qvebqjn1epqg9qa7q983gafh",
+      "displayName": "linhai806806-cell",
+      "image": "https://avatars.githubusercontent.com/u/266943317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775125656506,
+      "changelog": "No major updates—documentation and wording adjustments only.\n\n- Removed详细的“App-Key”校验接口描述，简化第一步说明。\n- 优化生成成功后的用户提示语（补充“本次生成成功”）。\n- 无功能或接口变动，仅文案精简与改善。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71fc5f861538cafa406184be9efa3fd681a899ff7fd9eef5c41078f6b26e2980"
+}

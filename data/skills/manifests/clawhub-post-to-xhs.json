@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72600,
+  "uuid": "skill-clawhub-post-to-xhs",
+  "skillKey": "clawhub-post-to-xhs",
+  "name": "Post To Xhs",
+  "summary": "发布内容到小红书，支持图文笔记和视频笔记。自动判断发布类型，校验标题和素材，用户确认后发布。 当用户想在小红书发布内容时使用——包括发笔记、发图文、发视频、上传图片、写一篇小红书、把内容发到红书上、种草笔记、好物分享等，即使用户只说\"帮我发一下\"但上下文明确是小红书也应触发。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_to_xhs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xmznini",
+      "features": [
+        "发布内容到小红书，支持图文笔记和视频笔记。自动判断发布类型，校验标题和素材，用户确认后发布。 当用户想在小红书发布内容时使用——包括发笔记、发图文、发视频、上传图片、写一篇小红书、把内容发到."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/post-to-xhs@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/91427890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "post-to-xhs",
+      "url": "https://clawhub.ai/skills/post-to-xhs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-to-xhs",
+    "url": "https://clawhub.ai/skills/post-to-xhs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-to-xhs-c2fa56e59cf292c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/post-to-xhs@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-post-to-xhs-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f68d874bbaebf9a11c58a266d74576752d8d3e4051fd9c494cee0e28a91d5738",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:14:56.538Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alert-triage@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alert_triage",
+  "skill": {
+    "id": 40099,
+    "skillKey": "clawhub-alert-triage",
+    "name": "Alert Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alert-triage",
+    "url": "https://clawhub.ai/skills/alert-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alert-triage-67413150e1c2e26c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Normalize and classify alerts by urgency, trust, and audience to decide send-now, batch-later, ignore, suppress-as-duplicate, or escalate actions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wroadd",
+      "userId": "s17ayk89b5t0ka9v0js2r78n0984b00a",
+      "displayName": "Peter Zsak",
+      "image": "https://avatars.githubusercontent.com/u/2845028?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775586659432,
+      "changelog": "Remove non-runtime checklist reference from the published skill package; keep runtime references focused on policies and examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:365cb4fddfee6e929f18ea9522b6e72861eb2654cf698e353ffeaa6ed8cff623"
+}

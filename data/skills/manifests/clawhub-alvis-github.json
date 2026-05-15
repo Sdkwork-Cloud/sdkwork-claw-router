@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45354,
+  "uuid": "skill-clawhub-alvis-github",
+  "skillKey": "clawhub-alvis-github",
+  "name": "Gh",
+  "summary": "Use the GitHub CLI (gh) to perform core GitHub operations: auth status, repo create/clone/fork, issues, pull requests, releases, and basic repo management. T...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_github",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Use the GitHub CLI (gh) to perform core GitHub operations: auth status, repo create/clone/fork,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-github@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-github",
+      "url": "https://clawhub.ai/skills/alvis-github"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-github",
+    "url": "https://clawhub.ai/skills/alvis-github",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-github-5fcd36250222ec99.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-github@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-github-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:96e144f45bd1ce02b3547b5faa48dd3294e17c2e8c409133c08bd03e38d5d62a",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T00:58:41.873Z"
+}

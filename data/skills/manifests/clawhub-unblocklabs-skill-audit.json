@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29034,
+  "uuid": "skill-clawhub-unblocklabs-skill-audit",
+  "skillKey": "clawhub-unblocklabs-skill-audit",
+  "name": "Skill Audit",
+  "summary": "Audit all installed skills for quality, duplicates, structural issues, and best-practice compliance. Use when asked to review, audit, lint, or check skills f...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unblocklabs_skill_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bill492",
+      "features": [
+        "Audit all installed skills for quality, duplicates, structural issues, and best-practice compli.",
+        "Use when asked to review, audit, lint, or check skills f..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unblocklabs-skill-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257063863?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unblocklabs-skill-audit",
+      "url": "https://clawhub.ai/skills/unblocklabs-skill-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unblocklabs-skill-audit",
+    "url": "https://clawhub.ai/skills/unblocklabs-skill-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unblocklabs-skill-audit-83ca57d792f3f451.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unblocklabs-skill-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-unblocklabs-skill-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88dd9bcdb6630140e141b8f9d6361f123262ad7013946458fb4653c257883fce",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:49:01.109Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59186,
+  "uuid": "skill-clawhub-implementation-readiness-checker",
+  "skillKey": "clawhub-implementation-readiness-checker",
+  "name": "Implementation Readiness Checker",
+  "summary": "检查项目是否具备实施条件，明确缺什么就不该开工。；use for implementation, readiness, delivery workflows；do not use for 为了开工而忽略前提条件, 替代正式项目审批.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.implementation_readiness_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "检查项目是否具备实施条件，明确缺什么就不该开工。；use for implementation, readiness, delivery workflows；do not use for 为."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/implementation-readiness-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "implementation-readiness-checker",
+      "url": "https://clawhub.ai/skills/implementation-readiness-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "implementation-readiness-checker",
+    "url": "https://clawhub.ai/skills/implementation-readiness-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/implementation-readiness-checker-d1f8a436d017e060.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/implementation-readiness-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-implementation-readiness-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b211b27252ae2ddcbe065e4b9eac93f3b1532e6e56196998b514c89ac182a53",
+      "artifactSizeBytes": 2714
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:37:39.744Z"
+}

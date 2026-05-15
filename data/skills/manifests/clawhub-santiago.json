@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45783,
+  "uuid": "skill-clawhub-santiago",
+  "skillKey": "clawhub-santiago",
+  "name": "Santiago",
+  "summary": "Provides travel info, history, culture, and route planning for Santiago, Chile, a modern Andean capital and renowned wine region.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.santiago",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Provides travel info, history, culture, and route planning for Santiago, Chile, a modern Andean."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/santiago@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "santiago",
+      "url": "https://clawhub.ai/skills/santiago"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "santiago",
+    "url": "https://clawhub.ai/skills/santiago",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/santiago-49faaade493be8b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/santiago@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-santiago-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e41780d768aae59b3d60bc9fbd2ec36c7ae3fe2b1d812f03bffd0dfc49cf8ab5",
+      "artifactSizeBytes": 2052
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:25:11.729Z"
+}

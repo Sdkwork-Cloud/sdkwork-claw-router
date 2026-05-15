@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20208,
+  "uuid": "skill-clawhub-clawkeep",
+  "skillKey": "clawhub-clawkeep",
+  "name": "Clawkeep",
+  "summary": "Provides git-powered versioned backups and safe snapshot recovery for workspace files, with automated and manual snapshot options.",
+  "version": "0.2.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawkeep",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TacoDevs",
+      "features": [
+        "Provides git-powered versioned backups and safe snapshot recovery for workspace files, with aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawkeep@0.2.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108839449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawkeep",
+      "url": "https://clawhub.ai/skills/clawkeep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawkeep",
+    "url": "https://clawhub.ai/skills/clawkeep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawkeep-d5a62938d8cea0fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawkeep@0.2.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawkeep-0.2.9.json",
+      "version": "0.2.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbb5ab3e17708f98eeae3acb0655cb93ea76e745a65f98f32ac1302e94776e9f",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T17:26:09.063Z"
+}

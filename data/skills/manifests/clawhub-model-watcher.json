@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34668,
+  "uuid": "skill-clawhub-model-watcher",
+  "skillKey": "clawhub-model-watcher",
+  "name": "AI Model Watcher",
+  "summary": "Discover, store, and inspect AI model catalog entries from one or more sources. Use when the user wants to sync a model catalog into SQLite, see newly discov...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_watcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hoopan",
+      "features": [
+        "Discover, store, and inspect AI model catalog entries from one or more sources",
+        "Use when the user wants to sync a model catalog into SQLite, see newly discov..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/model-watcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26020615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "model-watcher",
+      "url": "https://clawhub.ai/skills/model-watcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-watcher",
+    "url": "https://clawhub.ai/skills/model-watcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-watcher-867f3b420613bd3f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/model-watcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-model-watcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:def149f27057a2e4cab61986d3deda32c3ff0bbfd8fdc7b925237554d5b7dc16",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:21:21.056Z"
+}

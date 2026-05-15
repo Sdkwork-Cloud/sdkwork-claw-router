@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58271,
+  "uuid": "skill-clawhub-zadig",
+  "skillKey": "clawhub-zadig",
+  "name": "zadig",
+  "summary": "⚠️ 需要 ZADIG_API_URL + ZADIG_API_KEY | Zadig DevOps 平台 API 客户端",
+  "version": "4.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zadig",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lilianzhu",
+      "features": [
+        "⚠️ 需要 ZADIG_API_URL + ZADIG_API_KEY | Zadig DevOps 平台 API 客户端"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zadig@4.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11495272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zadig",
+      "url": "https://clawhub.ai/skills/zadig"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zadig",
+    "url": "https://clawhub.ai/skills/zadig",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zadig-47dbad983d6c87c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zadig@4.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zadig-4.0.2.json",
+      "version": "4.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a0f277246680ec015d5d5bb94cb3d93d8bc00eefbcf8adbbef6e68c134828b5",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T09:43:41.450Z"
+}

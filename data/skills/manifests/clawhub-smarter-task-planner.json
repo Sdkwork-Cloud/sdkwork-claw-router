@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66926,
+  "uuid": "skill-clawhub-smarter-task-planner",
+  "skillKey": "clawhub-smarter-task-planner",
+  "name": "smarter-task-planner",
+  "summary": "【Smarter Task Planner】自动创建时间戳任务文件夹，支持步骤规划、检查点保存、中断恢复与进度追踪，确保任务可追溯、可恢复。适用于分析、调研、信息提取、文档生成等需要结构化步骤的任务场景。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smarter_task_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hillsye",
+      "features": [
+        "【Smarter Task Planner】自动创建时间戳任务文件夹，支持步骤规划、检查点保存、中断恢复与进度追踪，确保任务可追溯、可恢复。适用于分析、调研、信息提取、文档生成等需要结构化步."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smarter-task-planner@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62944654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smarter-task-planner",
+      "url": "https://clawhub.ai/skills/smarter-task-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smarter-task-planner",
+    "url": "https://clawhub.ai/skills/smarter-task-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smarter-task-planner-a31557e8aefb96f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smarter-task-planner@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smarter-task-planner-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:341252f178259d49375e52f5f98d8ef9c91ce692b7e8eb08d357c29939e57a48",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T15:35:51.604Z"
+}

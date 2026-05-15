@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/football-prediction-optimized@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.football_prediction_optimized",
+  "skill": {
+    "id": 60420,
+    "skillKey": "clawhub-football-prediction-optimized",
+    "name": "Football Prediction Optimized"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "football-prediction-optimized",
+    "url": "https://clawhub.ai/skills/football-prediction-optimized",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/football-prediction-optimized-96a93b426246733e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用优化后的提示词对足球比赛进行预测，支持批量筛选(stage1)和单场比赛预测(stage2)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingvergil",
+      "userId": "s174ndnjrpqzvpp56pewgxrvms83gcqn",
+      "displayName": "KingVergil",
+      "image": "https://avatars.githubusercontent.com/u/8462171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776926182867,
+      "changelog": "football-prediction-optimized v1.0.0\n\n- 初始发布，面向专业足球比赛预测软件应用场景\n- 支持Stage1批量筛选高质量比赛，自动评分筛选，并结构化输出\n- 支持Stage2单场比赛深入预测，输出胜平负预测、CLV收益预估和风险提示\n- 可与lota-football等技能集成，支持API调用和Python脚本模式\n- 提供健壮的错误处理与并发性能优化",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:418a1fe3137b0ba729ef477cfc7f7a938ec41ebb512357794b8c6d11969c929a"
+}

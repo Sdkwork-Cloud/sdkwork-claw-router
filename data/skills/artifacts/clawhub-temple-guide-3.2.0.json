@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/temple-guide@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.temple_guide",
+  "skill": {
+    "id": 46880,
+    "skillKey": "clawhub-temple-guide",
+    "name": "Temple Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "temple-guide",
+    "url": "https://clawhub.ai/skills/temple-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/temple-guide-001ee8c5c5646ca3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find Buddhist temples, Taoist shrines, Confucian temples, and sacred sites. Includes etiquette guides, visiting hours, and meditation opportunities. Also sup..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775879675277,
+      "changelog": "temple-guide 3.2.0\n\n- Expanded coverage: Now finds Buddhist temples, Taoist shrines, Confucian temples, and sacred sites.\n- Added etiquette guides, visiting hours, and meditation opportunities.\n- Integrated travel services: flight booking, hotel reservation, train/attraction tickets, itinerary planning, visa info, insurance, car rental, and more (powered by Fliggy/Alibaba).\n- Enforced strict CLI execution rules—no answers from training data; results must come from flyai CLI.\n- Improved language handling: matches output to input language (Chinese or English).\n- Added detailed workflow, output validation steps, and comparison table requirement for ≥3 results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7addd6464a4078c464db46e0fa3c9cf231dc8d1015e3453a19d8c76ee2b11128"
+}

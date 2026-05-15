@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-tts-feishu@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_tts_feishu",
+  "skill": {
+    "id": 61971,
+    "skillKey": "clawhub-minimax-tts-feishu",
+    "name": "MiniMax TTS for FeiShu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-tts-feishu",
+    "url": "https://clawhub.ai/skills/minimax-tts-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-tts-feishu-1fbaee830e89244a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax 文字转语音，支持中文音色、自动情绪检测、语气词音效和停顿标记"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lixiang92229",
+      "userId": "s17752devj20fj3kzp3k94a4m583e5px",
+      "displayName": "lixiang92229",
+      "image": "https://avatars.githubusercontent.com/u/13725618?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774456554033,
+      "changelog": "Add comprehensive README with English/Chinese documentation and security warnings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:810282ca2926494d45020953603b37cf416f8ea9bf110e80f23510e1edadb001"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72441,
+  "uuid": "skill-clawhub-company-profile",
+  "skillKey": "clawhub-company-profile",
+  "name": "德宝恒生-公司名片",
+  "summary": "德宝恒生科技服务有限公司 - 医疗物资智慧供应链SPD服务商，为医院提供医疗耗材全流程精益管理的一体化解决方案",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_profile",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "foxbabby",
+      "features": [
+        "德宝恒生科技服务有限公司",
+        "医疗物资智慧供应链SPD服务商，为医院提供医疗耗材全流程精益管理的一体化解决方案"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-profile@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17000435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-profile",
+      "url": "https://clawhub.ai/skills/company-profile"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-profile",
+    "url": "https://clawhub.ai/skills/company-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-profile-6fe9cdcb6f34ed03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-profile@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-profile-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebd2a323e8430de0e6166784a0fd5396c90ef48da83c24037ae762b7173e22e1",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T15:46:22.625Z"
+}

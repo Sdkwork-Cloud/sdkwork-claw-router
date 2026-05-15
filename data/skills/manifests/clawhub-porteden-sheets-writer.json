@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51271,
+  "uuid": "skill-clawhub-porteden-sheets-writer",
+  "skillKey": "clawhub-porteden-sheets-writer",
+  "name": "Google Sheets File Automation",
+  "summary": "Automated Google Sheets Data Writer — Append rows, update cells, and automate spreadsheet data pipelines with a pre-configured target sheet.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porteden_sheets_writer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PortEden",
+      "features": [
+        "Automated Google Sheets Data Writer — Append rows, update cells, and automate spreadsheet data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/porteden-sheets-writer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258120807?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "porteden-sheets-writer",
+      "url": "https://clawhub.ai/skills/porteden-sheets-writer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porteden-sheets-writer",
+    "url": "https://clawhub.ai/skills/porteden-sheets-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porteden-sheets-writer-9ac05e32985cc444.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/porteden-sheets-writer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-porteden-sheets-writer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed876e61e9b41a7642f33d6f4dae557e58589f994f8bae4cb83dcd780261e0e5",
+      "artifactSizeBytes": 2403
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:23:53.611Z"
+}

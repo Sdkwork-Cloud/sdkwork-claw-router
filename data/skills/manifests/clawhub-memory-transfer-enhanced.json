@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26162,
+  "uuid": "skill-clawhub-memory-transfer-enhanced",
+  "skillKey": "clawhub-memory-transfer-enhanced",
+  "name": "Memory Transfer Enhanced",
+  "summary": "Transfer memories between OpenClaw agents with optional topic filtering, supporting sharing mode with role transformation or cloning mode for verbatim copies.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_transfer_enhanced",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codeblackhole",
+      "features": [
+        "Transfer memories between OpenClaw agents with optional topic filtering, supporting sharing mod."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-transfer-enhanced@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39405686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-transfer-enhanced",
+      "url": "https://clawhub.ai/skills/memory-transfer-enhanced"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-transfer-enhanced",
+    "url": "https://clawhub.ai/skills/memory-transfer-enhanced",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-transfer-enhanced-f88c953686fe1048.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-transfer-enhanced@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-transfer-enhanced-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29b3cb6cc4da9c2daee108eb2966525a6853b0b6fa186cf37f6872cd009b27bc",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T07:12:45.586Z"
+}

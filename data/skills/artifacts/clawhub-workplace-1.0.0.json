@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workplace@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workplace",
+  "skill": {
+    "id": 17569,
+    "skillKey": "clawhub-workplace",
+    "name": "Workplace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workplace",
+    "url": "https://clawhub.ai/skills/workplace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workplace-83366499299704fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage multiple workplaces (project directories) with multi-agent orchestration, isolated memory, and inter-agent communication. Use when the user mentions:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dickwu",
+      "userId": "publishers:dickwu",
+      "displayName": "farmerwu",
+      "image": "https://avatars.githubusercontent.com/u/4208695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 766,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771370912640,
+      "changelog": "Initial publish: multi-workplace management with session tracking, Telegram inline UI, agent orchestration, IDE sync",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb85886729349b3c9cf0e16f346b2bf16e74841cb86404eb4ff3e414896fef91"
+}

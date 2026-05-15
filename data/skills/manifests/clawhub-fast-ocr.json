@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70825,
+  "uuid": "skill-clawhub-fast-ocr",
+  "skillKey": "clawhub-fast-ocr",
+  "name": "fast-ocr",
+  "summary": "专业离线票据OCR，支持增值税发票、火车票、飞机票、出租车票等多种票据的高精度结构化识别与批量处理。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fast_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaojiren",
+      "features": [
+        "专业离线票据OCR，支持增值税发票、火车票、飞机票、出租车票等多种票据的高精度结构化识别与批量处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fast-ocr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2235829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fast-ocr",
+      "url": "https://clawhub.ai/skills/fast-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fast-ocr",
+    "url": "https://clawhub.ai/skills/fast-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fast-ocr-f1844dd7c7ec7081.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fast-ocr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fast-ocr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22c4700e7cb00c7e676a4992fa8ad2ab7919c589453a45bf786db9e9feba322e",
+      "artifactSizeBytes": 12678
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:14:27.219Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sardis@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sardis",
+  "skill": {
+    "id": 51877,
+    "skillKey": "clawhub-sardis",
+    "name": "Sardis — Payment OS for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sardis",
+    "url": "https://clawhub.ai/skills/sardis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sardis-221e4764115b6a31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Payment OS for AI agents. Create MPC wallets, execute stablecoin payments with automatic policy enforcement, set spending rules in natural language, check ba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "efedurmaz16",
+      "userId": "s173g6ctqbmcx214s55zqhxs2583mhvc",
+      "displayName": "EfeDurmaz16",
+      "image": "https://avatars.githubusercontent.com/u/75971010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774543558593,
+      "changelog": "v1.1.0: Real API endpoints (X-API-Key auth, /api/v2/ paths), virtual cards, spending mandates, auto-routing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f35d5f41f421193335a3cc03252bf4b1cfc377bc701e7078be472796c4e71fd"
+}

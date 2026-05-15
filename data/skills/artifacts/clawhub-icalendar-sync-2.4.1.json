@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/icalendar-sync@2.4.1",
+  "version": "2.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icalendar_sync",
+  "skill": {
+    "id": 10187,
+    "skillKey": "clawhub-icalendar-sync",
+    "name": "iCalendar Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icalendar-sync",
+    "url": "https://clawhub.ai/skills/icalendar-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icalendar-sync-a88ba72e4b7bca67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure iCloud Calendar operations for OpenClaw with CalDAV and macOS native bridge providers. Use when tasks require calendar listing, event retrieval, event..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h8kxrfp68z-lgtm",
+      "userId": "publishers:h8kxrfp68z-lgtm",
+      "displayName": "h8kxrfp68z-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/247819571?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2573,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 3,
+      "versions": 40
+    },
+    "latestVersion": {
+      "version": "2.4.1",
+      "createdAt": 1772801065318,
+      "changelog": "- Improved documentation in SKILL.md and README.md for clearer usage instructions.\n- Enhanced test coverage with updates to test_calendar.py and test_security.py.\n- Internal refinements in calendar.py for better maintainability.\n- Updated changelog with recent changes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e43b329de0ff579a7fcad1f1ab9931ac293058183cb0e0156d557018c98760d8"
+}

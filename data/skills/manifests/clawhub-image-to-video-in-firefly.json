@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46830,
+  "uuid": "skill-clawhub-image-to-video-in-firefly",
+  "skillKey": "clawhub-image-to-video-in-firefly",
+  "name": "Image To Video In Firefly",
+  "summary": "Get animated video clips ready to post, without touching a single slider. Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_in_firefly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Get animated video clips ready to post, without touching a single slider",
+        "Upload your still images (JPG, PNG, WEBP, HEIC, up to 200MB), say something like \"a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-to-video-in-firefly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-to-video-in-firefly",
+      "url": "https://clawhub.ai/skills/image-to-video-in-firefly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-in-firefly",
+    "url": "https://clawhub.ai/skills/image-to-video-in-firefly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-in-firefly-d8aec4245c3c71b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-to-video-in-firefly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-to-video-in-firefly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:496c55dac515b9ab6b27e6f22fb371c735f986bc6ad294655208a3fe4c552208",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T17:07:23.926Z"
+}

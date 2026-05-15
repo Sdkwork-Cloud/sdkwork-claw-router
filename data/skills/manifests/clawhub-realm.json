@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33083,
+  "uuid": "skill-clawhub-realm",
+  "skillKey": "clawhub-realm",
+  "name": "Realm",
+  "summary": "Realm integration. Manage data, records, and automate workflows. Use when the user wants to interact with Realm data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.realm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Realm integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Realm data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/realm@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "realm",
+      "url": "https://clawhub.ai/skills/realm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "realm",
+    "url": "https://clawhub.ai/skills/realm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/realm-7d4e02d31a7eb0f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/realm@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-realm-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:683b6eba6099872fc647f8e2748a9d7594edc1cbdc8abaf8756656e40df8b663",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:15.484Z"
+}

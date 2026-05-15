@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69431,
+  "uuid": "skill-clawhub-idea-inbox",
+  "skillKey": "clawhub-idea-inbox",
+  "name": "idea-inbox",
+  "summary": "收集“idea:/灵感：”消息到飞书多维表格（默认自动创建新表），用大模型生成AI归纳/类别/标签（支持自动新增标签），并按配置的每日时间（默认10:02，今日新增=0不发）推送当日汇总。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_inbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoxiaoxi",
+      "features": [
+        "收集“idea:/灵感：”消息到飞书多维表格（默认自动创建新表），用大模型生成AI归纳/类别/标签（支持自动新增标签），并按配置的每日时间（默认10:02，今日新增=0不发）推送当日汇总。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idea-inbox@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10021991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idea-inbox",
+      "url": "https://clawhub.ai/skills/idea-inbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-inbox",
+    "url": "https://clawhub.ai/skills/idea-inbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-inbox-8c7280a781fc5ad8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idea-inbox@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-idea-inbox-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ec235d22a19571fe2800a23b65846bd73ee20da85ce14752fe3c98662bf4fd1",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T06:55:15.914Z"
+}

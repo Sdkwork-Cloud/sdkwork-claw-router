@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36321,
+  "uuid": "skill-clawhub-beeple",
+  "skillKey": "clawhub-beeple",
+  "name": "Beeple",
+  "summary": "Beeple integration. Manage data, records, and automate workflows. Use when the user wants to interact with Beeple data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beeple",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Beeple integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Beeple data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beeple@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beeple",
+      "url": "https://clawhub.ai/skills/beeple"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beeple",
+    "url": "https://clawhub.ai/skills/beeple",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beeple-2f0651e330874853.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beeple@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-beeple-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:744bbf65793b15113e9ddbdd9cc2d6eda20f120af1b8c273f3e547cb4bb08b0e",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:13:33.727Z"
+}

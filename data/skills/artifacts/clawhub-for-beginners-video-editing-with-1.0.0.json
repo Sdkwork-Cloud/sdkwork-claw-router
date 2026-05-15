@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/for-beginners-video-editing-with@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.for_beginners_video_editing_with",
+  "skill": {
+    "id": 44245,
+    "skillKey": "clawhub-for-beginners-video-editing-with",
+    "name": "For Beginners Video Editing With"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "for-beginners-video-editing-with",
+    "url": "https://clawhub.ai/skills/for-beginners-video-editing-with",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/for-beginners-video-editing-with-8a86d4f81b8f8edf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "beginners and first-time editors edit raw video clips into edited video clips using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPU..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775874865409,
+      "changelog": "Initial release of For Beginners Video Editing With AI — Edit and Export Videos Easily:\n\n- Enables beginners and first-time editors to edit raw video clips with AI, no prior experience required.\n- Accepts video files (MP4, MOV, AVI, WebM, etc.) up to 500MB; processes and exports 1080p MP4 in 1–2 minutes via cloud GPUs.\n- Workflow supports trimming, transitions, text overlays, and basic editing tasks via simple instructions.\n- Session-based design: connects to backend, manages credits, and keeps editing state until export.\n- Provides clear error messages and user guidance for common issues (file size, type, credits, etc.).\n- Designed for ease of use — upload clips, describe editing needs, receive export-ready MP4 files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0313fb2e5d01da4de12d02f16d0878ff45503b6b2758ebd42e1b8501ee27736c"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24858,
+  "uuid": "skill-clawhub-butter-swap-skill",
+  "skillKey": "clawhub-butter-swap-skill",
+  "name": "ButterSwap",
+  "summary": "Butter Network DEX Aggregator for cross-chain token swaps. Get swap quotes, route transaction data, and cross-chain routing information. Use this skill whene...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.butter_swap_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IvanMacaron",
+      "features": [
+        "Butter Network DEX Aggregator for cross-chain token swaps",
+        "Get swap quotes, route transaction data, and cross-chain routing information",
+        "Use this skill whene..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/butter-swap-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92434329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "butter-swap-skill",
+      "url": "https://clawhub.ai/skills/butter-swap-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "butter-swap-skill",
+    "url": "https://clawhub.ai/skills/butter-swap-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/butter-swap-skill-7fe70ec63005a0cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/butter-swap-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-butter-swap-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77bf4b1435f4b6ff4e09cb904e2b01d3c8b4313464c7fcda473e12270435ac78",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:56:12.872Z"
+}

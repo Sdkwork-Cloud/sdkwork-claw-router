@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13342,
+  "uuid": "skill-clawhub-auto-update",
+  "skillKey": "clawhub-auto-update",
+  "name": "Auto-Update (OpenClaw + Skills)",
+  "summary": "Auto-update OpenClaw and skills with OpenClaw cron, per-skill defaults, backups, and migration-aware summaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_update",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Auto-update OpenClaw and skills with OpenClaw cron, per-skill defaults, backups, and migration-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-update@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-update",
+      "url": "https://clawhub.ai/skills/auto-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-update",
+    "url": "https://clawhub.ai/skills/auto-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-update-1c0f61ffd5c19fb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-update@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-update-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:727a5c146453ab1ccafebb04b3bde4d5e41dae17aa91546ba91256de2d7d05de",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:04:51.401Z"
+}

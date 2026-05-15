@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chinese-holidays@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chinese_holidays",
+  "skill": {
+    "id": 31608,
+    "skillKey": "clawhub-chinese-holidays",
+    "name": "Chinese Holidays"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chinese-holidays",
+    "url": "https://clawhub.ai/skills/chinese-holidays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chinese-holidays-0f545274e1683256.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query Chinese statutory holidays, check if a date is a working day/holiday, and get holiday schedules. Use when the user asks about Chinese holidays, working..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anlinxi",
+      "userId": "s17bqjbzyc7xzd0mc18qdhxes583hbyc",
+      "displayName": "anlinxi",
+      "image": "https://avatars.githubusercontent.com/u/40064822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773791737074,
+      "changelog": "Initial release - Query Chinese statutory holidays",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7591d5e9fcc80bcd060a25313189f9a3efe813a68c049f30919b3dbe92244cd6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12423,
+  "uuid": "skill-clawhub-universal-skills-manager",
+  "skillKey": "clawhub-universal-skills-manager",
+  "name": "Universal Skills Manager",
+  "summary": "The master coordinator for AI skills. Discovers skills from multiple sources (SkillsMP.com, SkillHub, and ClawHub), manages installation, and synchronization...",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_skills_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jacob Ben-David",
+      "features": [
+        "The master coordinator for AI skills",
+        "Discovers skills from multiple sources (SkillsMP.com, SkillHub, and ClawHub), manages installat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/universal-skills-manager@1.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47641890?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "universal-skills-manager",
+      "url": "https://clawhub.ai/skills/universal-skills-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-skills-manager",
+    "url": "https://clawhub.ai/skills/universal-skills-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-skills-manager-2541e4bb41e7d1f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/universal-skills-manager@1.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-universal-skills-manager-1.7.0.json",
+      "version": "1.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10bc1f0cffda047c0297fe8377fce312045d9d07b25de6e5027dc402ab698e6b",
+      "artifactSizeBytes": 2698
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:33:23.136Z"
+}

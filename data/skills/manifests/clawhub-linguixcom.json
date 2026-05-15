@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35166,
+  "uuid": "skill-clawhub-linguixcom",
+  "skillKey": "clawhub-linguixcom",
+  "name": "Linguixcom",
+  "summary": "Linguix.com integration. Manage data, records, and automate workflows. Use when the user wants to interact with Linguix.com data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linguixcom",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Linguix.com integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Linguix.com data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linguixcom@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linguixcom",
+      "url": "https://clawhub.ai/skills/linguixcom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linguixcom",
+    "url": "https://clawhub.ai/skills/linguixcom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linguixcom-916b72109c62e357.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linguixcom@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-linguixcom-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f529eaf8b37d4667f8e395eb68fd9da681c2ef410a0be46e6ddfc64454c4c52c",
+      "artifactSizeBytes": 1850
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:07:39.458Z"
+}

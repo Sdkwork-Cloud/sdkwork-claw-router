@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20148,
+  "uuid": "skill-clawhub-iso-compliance-gap-analysis",
+  "skillKey": "clawhub-iso-compliance-gap-analysis",
+  "name": "Iso Compliance Gap Analysis",
+  "summary": "Perform ISO compliance gap analysis for ISO 27001, ISO 27701, and ISO 42001 standards. Use when assessing ISO certification readiness, information security c...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iso_compliance_gap_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Perform ISO compliance gap analysis for ISO 27001, ISO 27701, and ISO 42001 standards",
+        "Use when assessing ISO certification readiness, information security c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iso-compliance-gap-analysis@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iso-compliance-gap-analysis",
+      "url": "https://clawhub.ai/skills/iso-compliance-gap-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iso-compliance-gap-analysis",
+    "url": "https://clawhub.ai/skills/iso-compliance-gap-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iso-compliance-gap-analysis-698ac0e71a0bc27e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iso-compliance-gap-analysis@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-iso-compliance-gap-analysis-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:814a49272bddb912ec597446cb532a05ad4d49d73afcdd3442339ab43e3e235a",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:10:28.239Z"
+}

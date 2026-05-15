@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60081,
+  "uuid": "skill-clawhub-trump-daily-report",
+  "skillKey": "clawhub-trump-daily-report",
+  "name": "Trump Daily Report",
+  "summary": "每日特朗普动态追踪报告。采集Truth Social/Twitter及美国媒体(Bloomberg/CNBC/Reuters/WSJ/FT)信息，生成中英双语市场分析报告，支持早报(8:00)和晚报(16:00)双时段及收盘对照分析。",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trump_daily_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leon Xue",
+      "features": [
+        "每日特朗普动态追踪报告。采集Truth Social/Twitter及美国媒体(Bloomberg/CNBC/Reuters/WSJ/FT)信息，生成中英双语市场分析报告，支持早报(8:00."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trump-daily-report@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17331219?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trump-daily-report",
+      "url": "https://clawhub.ai/skills/trump-daily-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trump-daily-report",
+    "url": "https://clawhub.ai/skills/trump-daily-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trump-daily-report-059d3fe9617be2d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trump-daily-report@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trump-daily-report-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb3f77fd348be32c8a98f8304593f1dd7abcb4054697635e21e223d6dc78ddc1",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:39:08.949Z"
+}

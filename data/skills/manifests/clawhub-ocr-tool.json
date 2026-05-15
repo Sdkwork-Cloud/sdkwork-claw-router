@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24054,
+  "uuid": "skill-clawhub-ocr-tool",
+  "skillKey": "clawhub-ocr-tool",
+  "name": "When dealing with text within an image, the system automatically recognizes it as an OCR (Optical Character Recognition) task a.",
+  "summary": "OCR (Optical Character Recognition) tool using Tesseract for extracting text from images. Use when: (1) processing screenshots, charts, or documents in image...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liuzhengmcc-debug",
+      "features": [
+        "OCR (Optical Character Recognition) tool using Tesseract for extracting text from images",
+        "Use when: (1) processing screenshots, charts, or documents in image..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocr-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232666821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocr-tool",
+      "url": "https://clawhub.ai/skills/ocr-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-tool",
+    "url": "https://clawhub.ai/skills/ocr-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-tool-4225a7451a348af7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocr-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocr-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6f8ed86c9e887ba003bb0a48f2c57b9012cd6f72b3736629ae43a60372f2387",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:08:43.924Z"
+}

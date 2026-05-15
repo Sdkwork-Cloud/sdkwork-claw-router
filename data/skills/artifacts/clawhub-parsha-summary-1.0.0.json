@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parsha-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parsha_summary",
+  "skill": {
+    "id": 47710,
+    "skillKey": "clawhub-parsha-summary",
+    "name": "Jewish Parsha Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parsha-summary",
+    "url": "https://clawhub.ai/skills/parsha-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parsha-summary-d03b5d600370b2ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a weekly Torah portion (parsha) summary from Sefaria. Provides English summary with optional Hebrew text, verse count, and sample verses. Lightweigh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeperl",
+      "userId": "s179r66g7maj6y0rkwffexrhvs85mrx3",
+      "displayName": "Abraham Perl",
+      "image": "https://avatars.githubusercontent.com/u/6117184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777318191032,
+      "changelog": "- Initial release of parsha-summary: a tool for generating concise weekly Torah portion summaries from Sefaria.\n- Supports parsha detection for the current week, or selection by name.\n- Provides English summary with optional Hebrew text and sample verses.\n- Versatile output modes: plain text or JSON.\n- Configurable summary length for quick overviews or longer outlines.\n- Lightweight alternative focused on just the parsha text and overview, using Hebcal and Sefaria APIs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8415564eb99fc02ddc34b46414a3bae1fa2f6bc47023329378d070ba5763adef"
+}

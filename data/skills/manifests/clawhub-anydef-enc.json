@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56422,
+  "uuid": "skill-clawhub-anydef-enc",
+  "skillKey": "clawhub-anydef-enc",
+  "name": "Anydef Enc",
+  "summary": "Local-Only Agent Data Encryption. High-security MK->KEK->DEK hierarchy for local agent data.",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anydef_enc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anydefai",
+      "features": [
+        "Local-Only Agent Data Encryption",
+        "High-security MK->KEK->DEK hierarchy for local agent data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anydef-enc@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269238572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anydef-enc",
+      "url": "https://clawhub.ai/skills/anydef-enc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anydef-enc",
+    "url": "https://clawhub.ai/skills/anydef-enc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anydef-enc-b2924b09eec28eeb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anydef-enc@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-anydef-enc-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:942e4e3df35be7c0bf34ef2e400a1762f7a827bb79a71cdff90d367c3be0cfff",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T19:40:09.669Z"
+}

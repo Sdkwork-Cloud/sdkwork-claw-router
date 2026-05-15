@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61086,
+  "uuid": "skill-clawhub-boss-agent",
+  "skillKey": "clawhub-boss-agent",
+  "name": "Boss Agent",
+  "summary": "统筹协调各 Agent 任务，分配和跟踪 Ass Agent 与 Ops Agent 工作，汇总并向用户报告整体进展和状态。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pikaqiuyaya",
+      "features": [
+        "统筹协调各 Agent 任务，分配和跟踪 Ass Agent 与 Ops Agent 工作，汇总并向用户报告整体进展和状态。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boss-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146065672?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boss-agent",
+      "url": "https://clawhub.ai/skills/boss-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-agent",
+    "url": "https://clawhub.ai/skills/boss-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-agent-158b5e8038e0dae0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boss-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boss-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdf287cc828c74a2f1663abb012528b55e308bd471f58847f8c7d332389450d6",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:50:30.457Z"
+}

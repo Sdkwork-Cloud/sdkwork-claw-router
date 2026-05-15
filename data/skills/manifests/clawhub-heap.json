@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35695,
+  "uuid": "skill-clawhub-heap",
+  "skillKey": "clawhub-heap",
+  "name": "Heap",
+  "summary": "Heap integration. Manage data, records, and automate workflows. Use when the user wants to interact with Heap data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Heap integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Heap data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heap@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heap",
+      "url": "https://clawhub.ai/skills/heap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heap",
+    "url": "https://clawhub.ai/skills/heap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heap-103a360f285151bf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heap@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-heap-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17c05b7364c08032d235d7dab2c11b8b476594fc420c0f896698dba4336d24e9",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:32:46.194Z"
+}

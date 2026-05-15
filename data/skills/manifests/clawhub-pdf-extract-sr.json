@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22744,
+  "uuid": "skill-clawhub-pdf-extract-sr",
+  "skillKey": "clawhub-pdf-extract-sr",
+  "name": "PDFExtract Pull Text from PDFs",
+  "summary": "Extract clean readable text from PDF files into agent-ready markdown. Multi-page, tables, headers. No external services.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_extract_sr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Extract clean readable text from PDF files into agent-ready markdown",
+        "Multi-page, tables, headers",
+        "No external services."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-extract-sr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-extract-sr",
+      "url": "https://clawhub.ai/skills/pdf-extract-sr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-extract-sr",
+    "url": "https://clawhub.ai/skills/pdf-extract-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-extract-sr-002c2a6b8be60668.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-extract-sr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-extract-sr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b00742630ebf834bfe9e2e8c0c7d20036f501f850751913369b8cd3e64065648",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T21:00:15.011Z"
+}

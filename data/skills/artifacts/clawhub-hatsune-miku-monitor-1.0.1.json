@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hatsune-miku-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hatsune_miku_monitor",
+  "skill": {
+    "id": 61604,
+    "skillKey": "clawhub-hatsune-miku-monitor",
+    "name": "Hatsune Miku Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hatsune-miku-monitor",
+    "url": "https://clawhub.ai/skills/hatsune-miku-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hatsune-miku-monitor-bfa7ed63bb6f4ea4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "初音未来监控器 - 可爱的桌面系统监控工具（GIF动画 + 贴边隐藏 + 一键加速）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1173910773",
+      "userId": "s17dcf62bvfch8ryf56a3vew5583k47q",
+      "displayName": "1173910773",
+      "image": "https://avatars.githubusercontent.com/u/265417424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774408964827,
+      "changelog": "- Improved documentation for easier installation and setup, including clearer instructions for placing custom Hatsune Miku GIFs.\n- Added instructions for using a new install-deps.sh script to automate dependency installation.\n- Clarified and simplified the one-click acceleration (清理加速) feature and GIF image selection logic.\n- Updated systemd auto-start and troubleshooting sections for better clarity.\n- Minor adjustments to feature descriptions and usage steps for improved user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:730dc938a7f4337e893feef29e3a2336700c012db851d372952bd7fd3793166a"
+}

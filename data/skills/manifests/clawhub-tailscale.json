@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8913,
+  "uuid": "skill-clawhub-tailscale",
+  "skillKey": "clawhub-tailscale",
+  "name": "Tailscale",
+  "summary": "Manage Tailscale tailnet via CLI and API. Use when the user asks to \"check tailscale status\", \"list tailscale devices\", \"ping a device\", \"send file via tailscale\", \"tailscale funnel\", \"create auth key\", \"check who's online\", or mentions Ta.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tailscale",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jmagar",
+      "features": [
+        "Manage Tailscale tailnet via CLI and API",
+        "Use when the user asks to \"check tailscale status\", \"list tailscale devices\", \"ping a device\",."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tailscale@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38927646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tailscale",
+      "url": "https://clawhub.ai/skills/tailscale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tailscale",
+    "url": "https://clawhub.ai/skills/tailscale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tailscale-795b104abe3e4134.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tailscale@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tailscale-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:639d3511ae95be12382dee28fb0332e3b51e673da48ec63e5c3dc605858811d8",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T21:19:31.843Z"
+}

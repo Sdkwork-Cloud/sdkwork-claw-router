@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38883,
+  "uuid": "skill-clawhub-daily-loop-runner",
+  "skillKey": "clawhub-daily-loop-runner",
+  "name": "Daily Loop Runner",
+  "summary": "Run one controlled daily project loop for a single active project. Use on: scheduled daily runs, planner-initiated project steps, resuming a project after cl...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_loop_runner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunbinnju-star",
+      "features": [
+        "Run one controlled daily project loop for a single active project",
+        "Use on: scheduled daily runs, planner-initiated project steps, resuming a project after cl..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-loop-runner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258165772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-loop-runner",
+      "url": "https://clawhub.ai/skills/daily-loop-runner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-loop-runner",
+    "url": "https://clawhub.ai/skills/daily-loop-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-loop-runner-f720d6da0f56c8dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-loop-runner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-loop-runner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b72079791ad6c432fb3a6faf01e17e16f7644bd06198a6165c6357cfe565d235",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T12:44:35.133Z"
+}

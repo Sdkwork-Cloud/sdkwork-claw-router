@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50219,
+  "uuid": "skill-clawhub-medical-appointment-prep",
+  "skillKey": "clawhub-medical-appointment-prep",
+  "name": "Medical Appointment Prep",
+  "summary": "This skill organizes your medical appointment details, symptoms, history, questions, and logistics into a concise prep brief without providing medical advice.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_appointment_prep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "This skill organizes your medical appointment details, symptoms, history, questions, and logist."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-appointment-prep@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-appointment-prep",
+      "url": "https://clawhub.ai/skills/medical-appointment-prep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-appointment-prep",
+    "url": "https://clawhub.ai/skills/medical-appointment-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-appointment-prep-3c20e21f82593a31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-appointment-prep@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-appointment-prep-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:186a270a8c2e79661e770d52b3005d0e2828f82a4f5d238ed6e7c588917d978a",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T02:02:10.969Z"
+}

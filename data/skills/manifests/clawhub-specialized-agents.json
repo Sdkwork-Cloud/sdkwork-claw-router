@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8358,
+  "uuid": "skill-clawhub-specialized-agents",
+  "skillKey": "clawhub-specialized-agents",
+  "name": "Specialized Agents",
+  "summary": "Manage and orchestrate 25 specialized AI agents across content, development, QA, personalization, and meta tasks for parallel workflows.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.specialized_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jdalbright",
+      "features": [
+        "Manage and orchestrate 25 specialized AI agents across content, development, QA, personalizatio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/specialized-agents@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219472887?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "specialized-agents",
+      "url": "https://clawhub.ai/skills/specialized-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "specialized-agents",
+    "url": "https://clawhub.ai/skills/specialized-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/specialized-agents-b1be82946310837d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/specialized-agents@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-specialized-agents-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9575b26feb5bf201cd30b4d8c251db550ebec4b3beb0830a0df08563b1754a43",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:44:16.593Z"
+}

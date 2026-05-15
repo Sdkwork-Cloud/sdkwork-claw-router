@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27910,
+  "uuid": "skill-clawhub-aira-smart-search",
+  "skillKey": "clawhub-aira-smart-search",
+  "name": "smart-search",
+  "summary": "Intelligent web search routing across Gemini and Brave APIs with quota management, circuit breaker, and web_fetch fallback. Routes finance queries to Gemini,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aira_smart_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AiraAlfredSF",
+      "features": [
+        "Intelligent web search routing across Gemini and Brave APIs with quota management, circuit brea.",
+        "Routes finance queries to Gemini,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aira-smart-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262962928?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aira-smart-search",
+      "url": "https://clawhub.ai/skills/aira-smart-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aira-smart-search",
+    "url": "https://clawhub.ai/skills/aira-smart-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aira-smart-search-bd747049b389e069.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aira-smart-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aira-smart-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56af4dca015054096e97622b6ae202966eb435f98050f869ba31811ceaf710e9",
+      "artifactSizeBytes": 2600
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T23:11:22.938Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25778,
+  "uuid": "skill-clawhub-aigc",
+  "skillKey": "clawhub-aigc",
+  "name": "gen-joke",
+  "summary": "generate a joke / story / riddle",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lyuns",
+      "features": [
+        "generate a joke / story / riddle"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25722512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigc",
+      "url": "https://clawhub.ai/skills/aigc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigc",
+    "url": "https://clawhub.ai/skills/aigc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigc-820ce1ae77f10779.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04606b3a65f88b90483ba0b97f4edaef0275317dc5ed39d4a60e9525e68bdbaa",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T17:11:59.184Z"
+}

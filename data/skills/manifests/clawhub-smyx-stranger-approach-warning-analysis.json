@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57571,
+  "uuid": "skill-clawhub-smyx-stranger-approach-warning-analysis",
+  "skillKey": "clawhub-smyx-stranger-approach-warning-analysis",
+  "name": "陌生人靠近预警技能",
+  "summary": "Detects the appearance of strangers near minors and actively issues safety reminder alerts to protect minor safety, suitable for homes, schools, childcare ce...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_stranger_approach_warning_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-skills",
+      "features": [
+        "Detects the appearance of strangers near minors and actively issues safety reminder alerts to p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-stranger-approach-warning-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272124705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-stranger-approach-warning-analysis",
+      "url": "https://clawhub.ai/skills/smyx-stranger-approach-warning-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-stranger-approach-warning-analysis",
+    "url": "https://clawhub.ai/skills/smyx-stranger-approach-warning-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-stranger-approach-warning-analysis-246ce8c4d9f35e59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-stranger-approach-warning-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-stranger-approach-warning-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30a6e8a55e7a675a9f10b248c091c90cbe8e39eb7156766e957bcccadb532d2c",
+      "artifactSizeBytes": 2407
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T18:47:42.437Z"
+}

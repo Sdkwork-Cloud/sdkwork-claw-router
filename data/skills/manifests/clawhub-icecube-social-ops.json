@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63672,
+  "uuid": "skill-clawhub-icecube-social-ops",
+  "skillKey": "clawhub-icecube-social-ops",
+  "name": "IceCube Social Ops",
+  "summary": "🧊 IceCube 社交账号运营中心 — 管理 X/Twitter、小红书账号的登录、发布、互动全流程。需要 Boss 一次性登录授权后，系统自动运营。当用户提到'账号运营'、'社交账号'、'发布内容'、'Twitter 运营'、'小红书运营'时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.icecube_social_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ares521521-design",
+      "features": [
+        "🧊 IceCube 社交账号运营中心 — 管理 X/Twitter、小红书账号的登录、发布、互动全流程。需要 Boss 一次性登录授权后，系统自动运营。当用户提到'账号运营'、'社交账号'."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/icecube-social-ops@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271112075?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "icecube-social-ops",
+      "url": "https://clawhub.ai/skills/icecube-social-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "icecube-social-ops",
+    "url": "https://clawhub.ai/skills/icecube-social-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/icecube-social-ops-2548f9955efc4986.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/icecube-social-ops@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-icecube-social-ops-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5315be1404185c246d250ca764ffed4ee05d03f77662f1bd46917bdd7fa7e589",
+      "artifactSizeBytes": 2134
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T16:10:18.445Z"
+}

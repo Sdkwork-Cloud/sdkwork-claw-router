@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27916,
+  "uuid": "skill-clawhub-followin-openapi",
+  "skillKey": "clawhub-followin-openapi",
+  "name": "FollowinOpenAPI",
+  "summary": "Documents Followin OpenAPI endpoints for agent integration. Use when calling feed APIs, channel feeds, trending, category feeds, or integrating with Followin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.followin_openapi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ray",
+      "features": [
+        "Documents Followin OpenAPI endpoints for agent integration",
+        "Use when calling feed APIs, channel feeds, trending, category feeds, or integrating with Follow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/followin-openapi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162131154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "followin-openapi",
+      "url": "https://clawhub.ai/skills/followin-openapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "followin-openapi",
+    "url": "https://clawhub.ai/skills/followin-openapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/followin-openapi-fdc3ff6db4043818.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/followin-openapi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-followin-openapi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0e2b428253f93457cfa0a54f996aa3c802a9700a0c82bcc39e2f883634147e2",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:44:51.679Z"
+}

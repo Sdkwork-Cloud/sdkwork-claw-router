@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28093,
+  "uuid": "skill-clawhub-ghibli-style-skill",
+  "skillKey": "clawhub-ghibli-style-skill",
+  "name": "Ghibli Style Skill",
+  "summary": "Generate studio ghibli ai art generator images with AI via the Neta AI image generation API (free trial at neta.art/open).",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghibli_style_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wkl-nieta",
+      "features": [
+        "Generate studio ghibli ai art generator images with AI via the Neta AI image generation API (fr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ghibli-style-skill@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/187257012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ghibli-style-skill",
+      "url": "https://clawhub.ai/skills/ghibli-style-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghibli-style-skill",
+    "url": "https://clawhub.ai/skills/ghibli-style-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghibli-style-skill-eb0edf6f6414cb14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ghibli-style-skill@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ghibli-style-skill-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:667b3df32779f6f2138bb083c0dca5356182a97e139a117420beefacbc2b3641",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:04:05.106Z"
+}

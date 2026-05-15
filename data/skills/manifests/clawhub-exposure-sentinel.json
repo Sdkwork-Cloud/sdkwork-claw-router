@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29797,
+  "uuid": "skill-clawhub-exposure-sentinel",
+  "skillKey": "clawhub-exposure-sentinel",
+  "name": "Exposure Sentinel",
+  "summary": "Check if IP addresses are listed on the OpenClaw Exposure Watchboard (openclaw.allegro.earth). Use when you need to verify whether specific IPs are publicly...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exposure_sentinel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenhaubin",
+      "features": [
+        "Check if IP addresses are listed on the OpenClaw Exposure Watchboard (openclaw.allegro.earth)",
+        "Use when you need to verify whether specific IPs are publicly..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/exposure-sentinel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7878633?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "exposure-sentinel",
+      "url": "https://clawhub.ai/skills/exposure-sentinel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exposure-sentinel",
+    "url": "https://clawhub.ai/skills/exposure-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exposure-sentinel-88e8e33f46ebc42b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/exposure-sentinel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-exposure-sentinel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d3970c399af11bc8cea4a904c71e312fc88028826122c5b37edc20da3cd77c4",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T16:33:45.097Z"
+}

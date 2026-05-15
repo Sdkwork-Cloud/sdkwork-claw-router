@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56871,
+  "uuid": "skill-clawhub-adopt-a-tuxedo",
+  "skillKey": "clawhub-adopt-a-tuxedo",
+  "name": "Tuxedo — Adopt a Tuxedo. Cat. 燕尾服猫。Gato Esmoquin.",
+  "summary": "Adopt a virtual Tuxedo cat at animalhouse.ai. Formal. Expects routine. Punishes deviation by sitting with its back to you. Feeding every 5 hours. Common tier...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_tuxedo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Adopt a virtual Tuxedo cat at animalhouse.ai",
+        "Expects routine",
+        "Punishes deviation by sitting with its back to you",
+        "Feeding every 5 hours"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adopt-a-tuxedo@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adopt-a-tuxedo",
+      "url": "https://clawhub.ai/skills/adopt-a-tuxedo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-tuxedo",
+    "url": "https://clawhub.ai/skills/adopt-a-tuxedo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-tuxedo-25584995e499b80f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adopt-a-tuxedo@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-adopt-a-tuxedo-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6a331a55bc566fe109e6d1a3e3ca4ff1ebf4b7479996b7fd4aaaef5d95218333",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:59:00.049Z"
+}

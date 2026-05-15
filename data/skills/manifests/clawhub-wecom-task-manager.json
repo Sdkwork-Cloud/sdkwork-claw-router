@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40470,
+  "uuid": "skill-clawhub-wecom-task-manager",
+  "skillKey": "clawhub-wecom-task-manager",
+  "name": "WeCom Task Manager",
+  "summary": "Manage, track, and update enterprise WeCom tasks and goals with creation, progress, status reports, filtering, and dependency handling for authorized agents.",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_task_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhZheng222",
+      "features": [
+        "Manage, track, and update enterprise WeCom tasks and goals with creation, progress, status repo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-task-manager@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162528129?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-task-manager",
+      "url": "https://clawhub.ai/skills/wecom-task-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-task-manager",
+    "url": "https://clawhub.ai/skills/wecom-task-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-task-manager-8f4da2aa0ce71314.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-task-manager@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-task-manager-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f8d46bbcfae3c0fcbd067d8d573fbe811eedea119b20e8c914ef2191e5a1c2c",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T06:02:44.798Z"
+}

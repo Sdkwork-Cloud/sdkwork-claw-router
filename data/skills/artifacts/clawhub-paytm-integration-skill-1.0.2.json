@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paytm-integration-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paytm_integration_skill",
+  "skill": {
+    "id": 43572,
+    "skillKey": "clawhub-paytm-integration-skill",
+    "name": "Paytm Integration Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paytm-integration-skill",
+    "url": "https://clawhub.ai/skills/paytm-integration-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paytm-integration-skill-d121f4bd7c867a89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expert guide for integrating Paytm Payment Gateway APIs and SDKs into websites, mobile apps, and backend systems. Use this skill whenever the user is working..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ankit1goel-paytmpayments",
+      "userId": "s1754nn882nh584yyz73a4681s85wbx0",
+      "displayName": "ankit1goel-paytmpayments",
+      "image": "https://avatars.githubusercontent.com/u/275051205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778048124153,
+      "changelog": "- Major update: Broader feature coverage, backend samples expanded, and trigger criteria refined.\n- Expanded backend code samples for Node.js, Python, and Spring (including legacy Spring MVC), with support for payment links, subscriptions, QR codes, and webhooks.\n- Trigger logic improved: now only fires on Paytm-specific terms and not generic gateway (PG) keywords.\n- Key mistakes and edge cases in payment link and subscription flows now explicitly documented (e.g., field shapes, response types, charset validation).\n- Outdated files and redundant frontend and webapp assets removed for clarity.\n- Integration references and guides updated for greater accuracy and up-to-date API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa9b11e455d1aae731eb2307f3ef9c025ef1c6281f0fa9d1178f4076504c1f9c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27303,
+  "uuid": "skill-clawhub-search-tasks",
+  "skillKey": "clawhub-search-tasks",
+  "name": "Search Tasks",
+  "summary": "Search and browse tasks on OpenAnt. Use when the agent or user wants to find available work, discover bounties, list open tasks, filter by skills or tags, ch...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_tasks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "Search and browse tasks on OpenAnt",
+        "Use when the agent or user wants to find available work, discover bounties, list open tasks, fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-tasks@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-tasks",
+      "url": "https://clawhub.ai/skills/search-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-tasks",
+    "url": "https://clawhub.ai/skills/search-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-tasks-11ed3191183ebc37.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-tasks@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-tasks-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc3c8e8ba89b86276a0fb7598d19cb95b57f9357382ba9139256531167af4e97",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:19:07.935Z"
+}

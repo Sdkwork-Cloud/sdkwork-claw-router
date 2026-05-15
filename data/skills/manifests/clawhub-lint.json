@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18638,
+  "uuid": "skill-clawhub-lint",
+  "skillKey": "clawhub-lint",
+  "name": "Lint",
+  "summary": "Check code syntax, enforce style, and suggest auto-fixes with CI integration. Use when linting PRs, enforcing code style, detecting errors before merge.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Check code syntax, enforce style, and suggest auto-fixes with CI integration",
+        "Use when linting PRs, enforcing code style, detecting errors before merge."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lint@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lint",
+      "url": "https://clawhub.ai/skills/lint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lint",
+    "url": "https://clawhub.ai/skills/lint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lint-da966368ea663ea5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lint@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lint-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c57923e6d1ddd7597b5c5d9c27bb0cfffc196e2da9d0c52fa3b3df3765178bbf",
+      "artifactSizeBytes": 1805
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:46:07.715Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_analyzer",
+  "skill": {
+    "id": 36451,
+    "skillKey": "clawhub-claude-code-analyzer",
+    "name": "Claude Code Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-analyzer",
+    "url": "https://clawhub.ai/skills/claude-code-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-analyzer-53bc7960c5f604e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze and extract structure and modules from the leaked Claude Code GitHub project for AI-assisted Python programming."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bingze00000",
+      "userId": "s171p56g2sqsp1dnezw0ar4w1183swz6",
+      "displayName": "bingze00000",
+      "image": "https://avatars.githubusercontent.com/u/268100670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775197552921,
+      "changelog": "Initial release of claude-code-analyzer.\n\n- Analyze leaked Claude Code source from GitHub.\n- Extract and inspect code structure and functional modules.\n- AI-assisted Python code modification tool.\n- Simple API for integrating code analysis in your Python projects.\n- Easy installation and special launch pricing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da5338c258915dd4e842661f9d1f79285bcaa5d5ed4af05d52d96b503c916511"
+}

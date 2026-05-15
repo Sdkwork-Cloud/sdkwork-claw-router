@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31285,
+  "uuid": "skill-clawhub-word-comments-extractor",
+  "skillKey": "clawhub-word-comments-extractor",
+  "name": "Word Comments Extractor",
+  "summary": "Extract comments from Word documents and format them into standardized review opinions. Auto-matches page numbers, agent-powered semantic polishing. Designed...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_comments_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomyan-Zhang",
+      "features": [
+        "Extract comments from Word documents and format them into standardized review opinions",
+        "Auto-matches page numbers, agent-powered semantic polishing",
+        "Designed..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word-comments-extractor@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269665092?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word-comments-extractor",
+      "url": "https://clawhub.ai/skills/word-comments-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-comments-extractor",
+    "url": "https://clawhub.ai/skills/word-comments-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-comments-extractor-b92ed544f1777299.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word-comments-extractor@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-comments-extractor-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c74c0b9a9d1671dd6aa3161fa51dd990e36c4ed6915eb178af58b25234f362ee",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:54:08.198Z"
+}

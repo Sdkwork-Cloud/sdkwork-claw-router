@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10509,
+  "uuid": "skill-clawhub-secureclaw-skill",
+  "skillKey": "clawhub-secureclaw-skill",
+  "name": "SecureClaw",
+  "summary": "Security skill for OpenClaw agents (7-framework aligned). 15 core rules + automated scripts covering OWASP ASI Top 10, MITRE ATLAS, CoSAI, CSA MAESTRO, and N...",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.secureclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "adversa-ai",
+      "features": [
+        "Security skill for OpenClaw agents (7-framework aligned)",
+        "15 core rules + automated scripts covering OWASP ASI Top 10, MITRE ATLAS, CoSAI, CSA MAESTRO, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/secureclaw-skill@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260643622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "secureclaw-skill",
+      "url": "https://clawhub.ai/skills/secureclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "secureclaw-skill",
+    "url": "https://clawhub.ai/skills/secureclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/secureclaw-skill-ee61b616b1c0c432.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/secureclaw-skill@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-secureclaw-skill-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5958a35970130d4bb5ce17268fc5be5b4be9e2cda871e587f9ca30ec43575f50",
+      "artifactSizeBytes": 2064
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T10:56:38.829Z"
+}

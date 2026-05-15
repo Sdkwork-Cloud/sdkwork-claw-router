@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50555,
+  "uuid": "skill-clawhub-multi-post",
+  "skillKey": "clawhub-multi-post",
+  "name": "Multi-Post",
+  "summary": "Multi-platform content publisher via browser automation. Post text+images to Weibo, Xiaohongshu, Zhihu, Twitter/X, Reddit, V2EX, Douban, LinkedIn, and more —...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JeffChang2024",
+      "features": [
+        "Multi-platform content publisher via browser automation",
+        "Post text+images to Weibo, Xiaohongshu, Zhihu, Twitter/X, Reddit, V2EX, Douban, LinkedIn, and m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166408579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-post",
+      "url": "https://clawhub.ai/skills/multi-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-post",
+    "url": "https://clawhub.ai/skills/multi-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-post-034226401169377a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e78bee4b440f40c333af03b83b020b758a3a51aa6620ab1e43b7b28432b1526b",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T13:56:47.714Z"
+}

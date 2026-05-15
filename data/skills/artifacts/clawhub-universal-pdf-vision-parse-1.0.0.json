@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-pdf-vision-parse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_pdf_vision_parse",
+  "skill": {
+    "id": 20622,
+    "skillKey": "clawhub-universal-pdf-vision-parse",
+    "name": "universal-pdf-vision-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-pdf-vision-parse",
+    "url": "https://clawhub.ai/skills/universal-pdf-vision-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-pdf-vision-parse-5fe17b8a94a47773.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract multilingual document content and language learning notes (French, German, Japanese, Spanish, etc.) from PDFs using multimodal vision (Qwen-VL-Max)...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mingensiie",
+      "userId": "publishers:mingensiie",
+      "displayName": "M Z",
+      "image": "https://avatars.githubusercontent.com/u/3864304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 478,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772500344184,
+      "changelog": "Universal PDF Vision Parser Skill 1.0.0\n\n- Initial release of a high-end, multilingual PDF digitizer for language learning documents.\n- Uses multimodal vision (Qwen-VL-Max) to extract and structure content from complex layouts into Markdown.\n- Supports multiple languages including French, German, Japanese, and Spanish.\n- Converts PDF pages to high-resolution images for accurate text parsing and formatting.\n- Perfect for extracting language notes, bilingual documents, and hard-to-capture formats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0993f5c22c4b8e6bee6170651f4669ed2bf2be7b2aa6e90be4332b1932c658db"
+}

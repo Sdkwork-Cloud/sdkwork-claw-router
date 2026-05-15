@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editor-free-mac@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editor_free_mac",
+  "skill": {
+    "id": 43905,
+    "skillKey": "clawhub-video-editor-free-mac",
+    "name": "Video Editor Free Mac"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editor-free-mac",
+    "url": "https://clawhub.ai/skills/video-editor-free-mac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editor-free-mac-c4a7f9a95d77875d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"tri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776358208096,
+      "changelog": "Initial release of Video Editor Free Mac — AI-powered video editing and export for Mac users.\n\n- Instantly edit and export raw video clips up to 500MB (MP4, MOV, AVI, WebM) using cloud AI—no local installation needed.\n- Simple natural-language prompts for editing (e.g., \"trim the boring parts, add transitions, and export as MP4\").\n- Automatic onboarding: free anonymous authentication with 100 trial credits, valid for 7 days.\n- Fast 1080p MP4 exports, typically ready to download in 1–2 minutes for short clips.\n- Handles multiple formats and common workflows like batch processing and timeline refinement.\n- Built for Mac creators seeking easy, fast edits without paid software.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aabae4c9bc237c9a42f32c93348dbededbc17487e7016c76e1c4113542416060"
+}

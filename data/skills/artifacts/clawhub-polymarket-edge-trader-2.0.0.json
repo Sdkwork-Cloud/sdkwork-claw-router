@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-edge-trader@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_edge_trader",
+  "skill": {
+    "id": 37546,
+    "skillKey": "clawhub-polymarket-edge-trader",
+    "name": "Polymarket Edge Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-edge-trader",
+    "url": "https://clawhub.ai/skills/polymarket-edge-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-edge-trader-886eca9c4c5465d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades the highest-edge active AION Polymarket market matching a query using a user-supplied fair probability, AION context safeguards, and Kelly-style sizing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fivegive249-ship-it",
+      "userId": "s172jk7etnpkb41q5etc69xb0585hn29",
+      "displayName": "fivegive249-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/273296578?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1777464592415,
+      "changelog": "Complete rebuild per AION best practices: enhanced safeguards, daemon polling with jitter, auto-redeem, comprehensive documentation, remixable template pattern",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6aded7d207dfd11a21cc99fbe261d454eabbfe3b73f3e5b405c86a2da2e20cda"
+}

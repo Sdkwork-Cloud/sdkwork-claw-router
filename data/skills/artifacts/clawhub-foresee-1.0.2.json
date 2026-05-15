@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/foresee@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.foresee",
+  "skill": {
+    "id": 68283,
+    "skillKey": "clawhub-foresee",
+    "name": "Foresee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "foresee",
+    "url": "https://clawhub.ai/skills/foresee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/foresee-dad4bc7dfaae38bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供江波龙FORESEE企业级存储产品规格、技术方案、开发资源及销售渠道信息查询服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776238659835,
+      "changelog": "- 优化了使用说明，内容更简洁直观\n- 新增内容导航，明确各类信息模块\n- 增加了典型应用场景示例\n- 对专题名称和语言风格进行了调整，更符合百科格式\n- 保留并强调访问官方网站获取深度信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6ff3eb5d2060096a1a019decebe60d0ff27016bb1b4be9f69424757e1b00cbd"
+}

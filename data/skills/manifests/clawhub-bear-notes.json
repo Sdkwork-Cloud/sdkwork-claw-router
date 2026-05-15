@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8376,
+  "uuid": "skill-clawhub-bear-notes",
+  "skillKey": "clawhub-bear-notes",
+  "name": "Bear Notes",
+  "summary": "Create, search, and manage Bear notes via grizzly CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bear_notes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Create, search, and manage Bear notes via grizzly CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bear-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bear-notes",
+      "url": "https://clawhub.ai/skills/bear-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bear-notes",
+    "url": "https://clawhub.ai/skills/bear-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bear-notes-f688a4b6b3e49f79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bear-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bear-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d2927985a166d5dd8372fab3bed08dbbf8d82ac0d6322e8c170f3cf853defca",
+      "artifactSizeBytes": 1746
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:48:18.356Z"
+}

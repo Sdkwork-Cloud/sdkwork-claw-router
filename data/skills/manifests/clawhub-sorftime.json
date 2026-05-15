@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59821,
+  "uuid": "skill-clawhub-sorftime",
+  "skillKey": "clawhub-sorftime",
+  "name": "sorftime",
+  "summary": "通过 sorftime-cli 调用 Sorftime 跨境电商全量数据接口（Amazon 47 + Shopee 5 + Walmart 14 = 66 个 endpoint）。 当用户或智能体需要：写脚本批量查询 ASIN/类目/关键词/Best Seller/跟卖/子体销量/产品评论， 自定义编排多个接口完...",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sorftime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangfaguo",
+      "features": [
+        "通过 sorftime-cli 调用 Sorftime 跨境电商全量数据接口（Amazon 47 + Shopee 5 + Walmart 14 = 66 个 endpoint）。 当用户或."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sorftime@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15167506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sorftime",
+      "url": "https://clawhub.ai/skills/sorftime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sorftime",
+    "url": "https://clawhub.ai/skills/sorftime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sorftime-b8e3ef863439133f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sorftime@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-sorftime-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82bfbd51511887a105968e08be7b666e7e5dc0d9080be3344e9164e42bc36dbe",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T08:41:02.183Z"
+}

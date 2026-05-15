@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41864,
+  "uuid": "skill-clawhub-whatsapp-happybday",
+  "skillKey": "clawhub-whatsapp-happybday",
+  "name": "WhatsApp HappyBDay",
+  "summary": "Monitor WhatsApp groups to dynamically detect people who should be congratulated. It identifies keywords (e.g., \"birthday\", \"congratulations\") and the person...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_happybday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zero-astro",
+      "features": [
+        "Monitor WhatsApp groups to dynamically detect people who should be congratulated",
+        "It identifies keywords (e.g., \"birthday\", \"congratulations\") and the person..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatsapp-happybday@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269814814?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatsapp-happybday",
+      "url": "https://clawhub.ai/skills/whatsapp-happybday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-happybday",
+    "url": "https://clawhub.ai/skills/whatsapp-happybday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-happybday-a1d12c1f977555eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatsapp-happybday@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatsapp-happybday-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:051c2b608fbc3d1d4220fd3cb66f9e94ecda6f8af41f17b095c134138bbacc3e",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T23:52:56.173Z"
+}

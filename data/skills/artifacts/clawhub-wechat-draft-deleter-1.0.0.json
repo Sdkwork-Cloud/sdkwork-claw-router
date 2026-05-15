@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-draft-deleter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_draft_deleter",
+  "skill": {
+    "id": 61729,
+    "skillKey": "clawhub-wechat-draft-deleter",
+    "name": "wechat draft deleter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-draft-deleter",
+    "url": "https://clawhub.ai/skills/wechat-draft-deleter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-draft-deleter-41847893e3fb3650.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "删除微信公众号草稿箱中的草稿。支持批量删除指定Media ID的草稿。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigkingcn",
+      "userId": "s17enmq05hs7558vfwvpz5rc4s83qtse",
+      "displayName": "Bigkingcn",
+      "image": "https://avatars.githubusercontent.com/u/202888286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773974742816,
+      "changelog": "wechat-draft-deleter v1.0.0\n\n- 首次发布，提供删除微信公众号草稿箱草稿的功能\n- 支持通过Media ID单个、批量及文件方式批量删除草稿\n- 删除前提供安全确认/强制模式，删除结果统计清晰\n- 完善的错误处理与日志提示\n- 适用于草稿清理、版本管理、自动化运维等场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cbdbb198198abbe14468655819df47a1b778465ad7d041966446e522c4378d4f"
+}

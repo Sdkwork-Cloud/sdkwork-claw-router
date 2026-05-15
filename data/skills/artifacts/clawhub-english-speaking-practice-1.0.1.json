@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/english-speaking-practice@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.english_speaking_practice",
+  "skill": {
+    "id": 68582,
+    "skillKey": "clawhub-english-speaking-practice",
+    "name": "English Speaking Practice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "english-speaking-practice",
+    "url": "https://clawhub.ai/skills/english-speaking-practice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/english-speaking-practice-70395af06a9bd151.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "英语口语练习助手，包含对话训练和任务推送两大功能。需要用户发送语音或文字消息且内容与英语练习相关时触发对话训练；定时触发任务推送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zsy000",
+      "userId": "s179xm8hzmjmxmd3k1rtryjvfn83j2gw",
+      "displayName": "Solin·J",
+      "image": "https://avatars.githubusercontent.com/u/44394582?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774416527597,
+      "changelog": "english-speaking-practice 1.0.1\n\n- 改进数据记录示例，增加参数转义提示，降低命令注入风险。\n- 其他内容、功能和逻辑保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32cff3299f1a021982ab4e189d380860567385c0f89004aa6b56c2d3afed9888"
+}

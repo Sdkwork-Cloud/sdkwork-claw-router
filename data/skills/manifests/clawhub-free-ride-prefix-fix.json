@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38254,
+  "uuid": "skill-clawhub-free-ride-prefix-fix",
+  "skillKey": "clawhub-free-ride-prefix-fix",
+  "name": "FreeRide Prefix Fix - Free AI for OpenClaw",
+  "summary": "Fixes OpenClaw's OpenRouter model prefix routing bug for reliable automatic fallback switching using free AI models with proper prefixes.",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_ride_prefix_fix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rongtianhua",
+      "features": [
+        "Fixes OpenClaw's OpenRouter model prefix routing bug for reliable automatic fallback switching."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-ride-prefix-fix@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45085618?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-ride-prefix-fix",
+      "url": "https://clawhub.ai/skills/free-ride-prefix-fix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-ride-prefix-fix",
+    "url": "https://clawhub.ai/skills/free-ride-prefix-fix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-ride-prefix-fix-1c54c024d1c80fe1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-ride-prefix-fix@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-ride-prefix-fix-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fdcf0cc9537bdcc89bb128d72db678b28910720b260eb3df73bb88cf1a0cff2",
+      "artifactSizeBytes": 2053
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T13:35:31.324Z"
+}

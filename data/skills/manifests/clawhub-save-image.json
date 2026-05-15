@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43295,
+  "uuid": "skill-clawhub-save-image",
+  "skillKey": "clawhub-save-image",
+  "name": "Save Image",
+  "summary": "Download images, GIFs, and media from any URL using proper headers, Referer spoofing, and scraping to handle CDNs and social media sources correctly.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bstokes0971",
+      "features": [
+        "Download images, GIFs, and media from any URL using proper headers, Referer spoofing, and scrap."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/save-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73054583?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "save-image",
+      "url": "https://clawhub.ai/skills/save-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-image",
+    "url": "https://clawhub.ai/skills/save-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-image-3ecd87272470519f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/save-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-save-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1e2179772630566c3b26dbbe648c8a94fdd7b80fe85b86766f60ce39f35330b",
+      "artifactSizeBytes": 1938
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T23:35:40.763Z"
+}

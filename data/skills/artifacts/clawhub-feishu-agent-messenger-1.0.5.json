@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-agent-messenger@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_agent_messenger",
+  "skill": {
+    "id": 26933,
+    "skillKey": "clawhub-feishu-agent-messenger",
+    "name": "Feishu Send Message"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-agent-messenger",
+    "url": "https://clawhub.ai/skills/feishu-agent-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-agent-messenger-5beee012d0ce2aab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send messages via Feishu using the current Agent's credentials, supporting private and group chats with independent identity display to solve open_id isolation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pikaqiuyaya",
+      "userId": "s176wweqb7cav4zhkbsred489d83nmt8",
+      "displayName": "pikaqiuyaya",
+      "image": "https://avatars.githubusercontent.com/u/146065672?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774005622703,
+      "changelog": "添加重要说明：调用脚本≠AI 回复，明确说明不要通过 AI 回复 sessions_send，添加正确示例和错误示例对比",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:972d124fdceefa54c828a889c64ca3dc76d95f01fe0c64dc3383dd94abb28f7b"
+}

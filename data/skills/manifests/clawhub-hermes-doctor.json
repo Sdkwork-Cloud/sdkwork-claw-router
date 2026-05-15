@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58552,
+  "uuid": "skill-clawhub-hermes-doctor",
+  "skillKey": "clawhub-hermes-doctor",
+  "name": "Hermes Doctor",
+  "summary": "诊断与抢救 Hermes Agent (NousResearch) 故障 — 401/Authentication Fails、provider 切换后 key 没注入、credential_pool 缺条目、HERMES_HOME 被环境变量重定向、gateway lock、stale config、备份恢复。...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongsheng123132",
+      "features": [
+        "诊断与抢救 Hermes Agent (NousResearch) 故障 — 401/Authentication Fails、provider 切换后 key 没注入、credential."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hermes-doctor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90887123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hermes-doctor",
+      "url": "https://clawhub.ai/skills/hermes-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-doctor",
+    "url": "https://clawhub.ai/skills/hermes-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-doctor-9dcf337f7699da8e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hermes-doctor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hermes-doctor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9520d3c04e4fc067d1a9204d9f17d1ce0238e54a1be586a4c34c04cb0e1061a",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T02:19:03.329Z"
+}

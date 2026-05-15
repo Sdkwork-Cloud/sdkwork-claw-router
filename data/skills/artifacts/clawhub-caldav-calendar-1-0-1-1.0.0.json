@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/caldav-calendar-1-0-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caldav_calendar_1_0_1",
+  "skill": {
+    "id": 12180,
+    "skillKey": "clawhub-caldav-calendar-1-0-1",
+    "name": "Caldav Calendar 1.0.1"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caldav-calendar-1-0-1",
+    "url": "https://clawhub.ai/skills/caldav-calendar-1-0-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caldav-calendar-1-0-1-5c843eaa2ce6f159.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync and query CalDAV calendars (iCloud, Google, Fastmail, Nextcloud, etc.) using vdirsyncer + khal. Works on Linux."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bigdonuts0",
+      "userId": "publishers:bigdonuts0",
+      "displayName": "BIGDONUTS0",
+      "image": "https://avatars.githubusercontent.com/u/197841109?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1692,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770241764253,
+      "changelog": "- Initial release of caldav-calendar skill.\n- Enables syncing and querying CalDAV calendars (iCloud, Google, Fastmail, Nextcloud, etc.) using vdirsyncer and khal on Linux.\n- Provides usage examples for viewing, searching, creating, editing, and deleting events.\n- Includes step-by-step setup instructions for vdirsyncer and khal configuration.\n- Supports scripting with custom output formats and explains caching behavior.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b555be830b4fb7635f237c89fac7b2a9210b73b01065c4eb8d59c809064e7ed8"
+}

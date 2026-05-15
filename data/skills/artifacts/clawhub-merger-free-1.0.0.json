@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/merger-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.merger_free",
+  "skill": {
+    "id": 42705,
+    "skillKey": "clawhub-merger-free",
+    "name": "Merger Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "merger-free",
+    "url": "https://clawhub.ai/skills/merger-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/merger-free-4422e910c8b726f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "combine multiple video clips into seamlessly joined MP4 with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for combin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776914287488,
+      "changelog": "Initial release — combine multiple video clips into a single 1080p MP4 with seamless cloud rendering.\n\n- Supports MP4, MOV, AVI, WebM clips up to 500MB each, no watermarks or forced transitions.\n- Handles authentication and session management automatically (with anonymous token if needed).\n- Quick processing: assembled videos delivered in about 30–60 seconds via remote GPU.\n- User can check credits, upload files, export results, or track current project state through simple commands.\n- Helpful error messages for unsupported files, expired tokens, rate limits, and plan upgrades.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64b36a57e259dd61e2dba4861b1d9cbd5a5f94a1efd6abef37b49b1905107ae1"
+}

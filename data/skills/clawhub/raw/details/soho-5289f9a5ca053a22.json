@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "soho",
+    "displayName": "soho",
+    "summary": "Initiate payments on the SOHO Pay credit layer using EIP-712 signatures.",
+    "tags": {
+      "latest": "1.0.17"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1771504211593,
+    "updatedAt": 1778386818050
+  },
+  "latestVersion": {
+    "version": "1.0.17",
+    "createdAt": 1773530072145,
+    "changelog": "**Summary: Simplified SOHO Pay agent skill, now using local wallet key for all actions and clearer helper scripts.**\n\n- Refactored skill to use a single local PRIVATE_KEY for signing all authorizations (removed support for remote/abstract wallet signers).\n- Added new helper scripts: `register.js`, `repay.js`, and `status.js` for agent registration, credit repayment, and borrower profile/status checks.\n- Removed `src/signer/` logic and old `pay.js` in favor of simplified script structure under `scripts/`.\n- Updated documentation for easier setup, natural-language mapping, and explicit security warnings about PRIVATE_KEY usage.\n- Switched to a plain, default contract set for both Base mainnet and Base Sepolia, with hardcoded addresses and config checks.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "amitbiswas1992",
+    "userId": "publishers:amitbiswas1992",
+    "displayName": "Amit  Biswas",
+    "image": "https://avatars.githubusercontent.com/u/17978637?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778386818050
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_tool",
+  "skill": {
+    "id": 55614,
+    "skillKey": "clawhub-pdf-tool",
+    "name": "pdf-tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-tool",
+    "url": "https://clawhub.ai/skills/pdf-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-tool-3ada8235f8347f33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Split, merge, watermark, and extract text from PDF files — PyPDF2 based."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "martin-sh-ni",
+      "userId": "s17981j1g3tbrrgtr0ft2qjwbh83sfzx",
+      "displayName": "Martin-SH-Ni",
+      "image": "https://avatars.githubusercontent.com/u/271690832?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 241,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775956117573,
+      "changelog": "首发",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f92073bf4e4186f23a66b9b87742cf91a96dcd696cecce6023875cb899f92444"
+}

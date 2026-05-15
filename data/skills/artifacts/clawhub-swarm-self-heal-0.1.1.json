@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/swarm-self-heal@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarm_self_heal",
+  "skill": {
+    "id": 50121,
+    "skillKey": "clawhub-swarm-self-heal",
+    "name": "swarm-self-heal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarm-self-heal",
+    "url": "https://clawhub.ai/skills/swarm-self-heal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarm-self-heal-1b12f9bde2b6d69a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Swarm reliability watchdog for OpenClaw — validates gateway/channel and every lane, performs bounded recovery, and emits auditable receipts."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tkuehnl",
+      "userId": "s1796xcga59f855vmh35x909yh84742a",
+      "displayName": "Todd Kuehnl",
+      "image": "https://avatars.githubusercontent.com/u/25701510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 645,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771784756906,
+      "changelog": "Anvil AI rebrand + labs.anvil-ai.io normalization.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0c7dc242d8dce5fd2167a812e5562fcbd136328f89559dfb84aad22a3d7bdcee"
+}

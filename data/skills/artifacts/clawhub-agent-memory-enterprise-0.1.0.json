@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-enterprise@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_enterprise",
+  "skill": {
+    "id": 38728,
+    "skillKey": "clawhub-agent-memory-enterprise",
+    "name": "Agent Memory Enterprise"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-enterprise",
+    "url": "https://clawhub.ai/skills/agent-memory-enterprise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-enterprise-d533e00dbdaf7627.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enterprise-grade 5-layer agent memory system with routing, scoring, and multi-backend storage. Use when building production AI agents that need persistent me..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "laojun509",
+      "userId": "s175rjaqs0zz2x81vbyxnxb34183rdc1",
+      "displayName": "laojun",
+      "image": "https://avatars.githubusercontent.com/u/26532654?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775740486927,
+      "changelog": "agent-memory-enterprise 0.1.0\n\n- Initial release of an enterprise-grade, 5-layer agent memory system based on Wang Fuqiang’s architecture.\n- Supports context, task, user, knowledge, and experience memory, each with specialized features for persistent and long-term memory.\n- Includes smart memory routing, importance scoring, and selective memory retrieval.\n- Multi-backend storage with PostgreSQL, Redis, and ChromaDB.\n- Designed for production AI agents needing robust, scalable memory systems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:685cbca4ae6c5405133bbfb467af61652fafe3c03e4101f478de658fa844e40b"
+}

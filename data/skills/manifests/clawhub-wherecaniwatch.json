@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18525,
+  "uuid": "skill-clawhub-wherecaniwatch",
+  "skillKey": "clawhub-wherecaniwatch",
+  "name": "WhereCanIWatch",
+  "summary": "Find where to stream any movie or TV show in the US using the WhereCanIWatch.tv API. Use when a user asks \"where can I watch [title]?\", wants streaming avail...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wherecaniwatch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samthewise2855",
+      "features": [
+        "Find where to stream any movie or TV show in the US using the WhereCanIWatch.tv API",
+        "Use when a user asks \"where can I watch [title]?\", wants streaming avail..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wherecaniwatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261645873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wherecaniwatch",
+      "url": "https://clawhub.ai/skills/wherecaniwatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wherecaniwatch",
+    "url": "https://clawhub.ai/skills/wherecaniwatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wherecaniwatch-b3333b83c22bc49d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wherecaniwatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wherecaniwatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0670f103a07f13cd51c3082fa85070181f15437566e1ae3ba1b85c7f78e53e2b",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T08:06:43.350Z"
+}

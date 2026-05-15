@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-vacuum@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_vacuum",
+  "skill": {
+    "id": 71317,
+    "skillKey": "clawhub-memory-vacuum",
+    "name": "Memory Vacuum"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-vacuum",
+    "url": "https://clawhub.ai/skills/memory-vacuum",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-vacuum-0a67a701f7db4892.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "轻量化记忆管理。每日自动分片归档，语义压缩，只保留必要信息。0内存占用，重启不丢。用于用户提到内存、清理、整理记忆、减轻负担等场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujw0214",
+      "userId": "s170dy42phba5mfs38gpqywtpd83h0p8",
+      "displayName": "Primordia",
+      "image": "https://avatars.githubusercontent.com/u/224094441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777745109156,
+      "changelog": "memory-vacuum v1.0.0\n\n- 首次发布：提供轻量化记忆管理系统\n- 日志自动按日期分片归档，避免单一大文件膨胀\n- 对记忆信息自动进行语义压缩与合并，定期精简无效或冗余内容\n- 保证 MEMORY.md 始终小于 50KB，实现零内存占用、重启不丢失必要信息\n- 适用于记忆管理、整理、自动“减负”等多种场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e76b355dda1f09942f74d4a1ecd8f2fba7af4028d6fb53709930fe98133f6291"
+}

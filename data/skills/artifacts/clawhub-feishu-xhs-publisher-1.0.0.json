@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-xhs-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_xhs_publisher",
+  "skill": {
+    "id": 65918,
+    "skillKey": "clawhub-feishu-xhs-publisher",
+    "name": "Feishu → XHS Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-xhs-publisher",
+    "url": "https://clawhub.ai/skills/feishu-xhs-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-xhs-publisher-672c1c9b3072013c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将飞书文档/Wiki 转换为小红书图文帖子，生成竖版图片（1242×1660）并打包成新飞书文档供用户直接发布。 支持深色科技风格（代码块高亮、macOS 窗口样式）和知识卡片风格。 触发词：发布到小红书、转小红书格式、生成小红书图片、小红书排版、xhs-publisher。 输入：飞书文档链接（docx）或 W..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaohuaishu",
+      "userId": "s173m5y90mgr9k15y633tt4awd843sad",
+      "displayName": "xiaohuaishu",
+      "image": "https://avatars.githubusercontent.com/u/14193871?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775125042089,
+      "changelog": "首次发布：飞书文档/Wiki 一键转小红书图文帖。支持深色科技风格图片渲染（1242×1660）、代码块 macOS 窗口截图、自动生成正文摘要和标题备选，最终打包成飞书文档供直接发布。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be7550d17193f8eca8ea0fb5389eb0abc1cdcd31fc2c4df9e4f23539687c19c2"
+}

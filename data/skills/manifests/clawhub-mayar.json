@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37327,
+  "uuid": "skill-clawhub-mayar",
+  "skillKey": "clawhub-mayar",
+  "name": "Mayar",
+  "summary": "Interact with the Mayar payment platform (invoices, products, payments, customers, transactions, webhooks, QR codes) from any AI agent or shell. Zero depende...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mayar",
+      "features": [
+        "Interact with the Mayar payment platform (invoices, products, payments, customers, transactions.",
+        "Zero depende..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mayar@1.0.0",
+      "screenshots": [
+        "https://mayar-web.r2.mayar.id/mayar-icon-1024.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mayar",
+      "url": "https://clawhub.ai/skills/mayar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayar",
+    "url": "https://clawhub.ai/skills/mayar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayar-04731881a30065da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mayar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mayar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f2e5c21d87029314f998848f00281667952ab3e0cba7943c87c6851f44d8ab9",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T06:39:10.283Z"
+}

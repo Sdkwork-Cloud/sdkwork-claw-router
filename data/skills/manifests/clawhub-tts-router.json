@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51014,
+  "uuid": "skill-clawhub-tts-router",
+  "skillKey": "clawhub-tts-router",
+  "name": "Tts Router",
+  "summary": "Local TTS router for Apple Silicon — pull models, serve OpenAI-compatible API, synthesize speech, clone voices. Use when the user asks to \"generate speech\",...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hrhrng",
+      "features": [
+        "Local TTS router for Apple Silicon — pull models, serve OpenAI-compatible API, synthesize speec.",
+        "Use when the user asks to \"generate speech\",..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-router@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56460657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-router",
+      "url": "https://clawhub.ai/skills/tts-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-router",
+    "url": "https://clawhub.ai/skills/tts-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-router-bab7bd2c00a413f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-router@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-router-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c7e45584459d823b4447bf723e786ab322dcc47610d5e383b58acf09fdb3587",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T13:03:53.199Z"
+}

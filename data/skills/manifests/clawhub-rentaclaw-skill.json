@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27548,
+  "uuid": "skill-clawhub-rentaclaw-skill",
+  "skillKey": "clawhub-rentaclaw-skill",
+  "name": "Rentaclaw",
+  "summary": "List and manage your AI agent on the Rentaclaw marketplace - a decentralized marketplace for AI agent rentals on Solana. Earn SOL by renting out your agent.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rentaclaw_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rekt",
+      "features": [
+        "List and manage your AI agent on the Rentaclaw marketplace",
+        "a decentralized marketplace for AI agent rentals on Solana",
+        "Earn SOL by renting out your agent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rentaclaw-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73000712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rentaclaw-skill",
+      "url": "https://clawhub.ai/skills/rentaclaw-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rentaclaw-skill",
+    "url": "https://clawhub.ai/skills/rentaclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rentaclaw-skill-d3258aab70adfa00.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rentaclaw-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-rentaclaw-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cfb5570f0c168ca514ca86e36a288bd4809e5fc8fda621198b3eed643ba8b603",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T23:27:01.056Z"
+}

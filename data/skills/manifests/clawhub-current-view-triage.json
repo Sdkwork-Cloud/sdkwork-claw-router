@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32892,
+  "uuid": "skill-clawhub-current-view-triage",
+  "skillKey": "clawhub-current-view-triage",
+  "name": "Current View Triage",
+  "summary": "Turn one Campus Copilot snapshot or MCP-backed current view into a plain-language what-to-do-first answer for a student.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.current_view_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yifeng[Terry] Yu",
+      "features": [
+        "Turn one Campus Copilot snapshot or MCP-backed current view into a plain-language what-to-do-fi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/current-view-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125581657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "current-view-triage",
+      "url": "https://clawhub.ai/skills/current-view-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "current-view-triage",
+    "url": "https://clawhub.ai/skills/current-view-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/current-view-triage-793bac9c31f8faec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/current-view-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-current-view-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ccb57ca30dbd045f6f7f4936e56ca51fb2b4707bc39188aeb21060c1baba551",
+      "artifactSizeBytes": 2311
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T02:27:08.275Z"
+}

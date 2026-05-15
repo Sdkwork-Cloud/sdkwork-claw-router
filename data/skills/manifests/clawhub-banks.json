@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41901,
+  "uuid": "skill-clawhub-banks",
+  "skillKey": "clawhub-banks",
+  "name": "Banks",
+  "summary": "Find nearby banks. Invoke when user asks for bank branches near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Find nearby banks",
+        "Invoke when user asks for bank branches near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/banks@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "banks",
+      "url": "https://clawhub.ai/skills/banks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banks",
+    "url": "https://clawhub.ai/skills/banks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banks-b9a1602551834723.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/banks@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-banks-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5e79e7be2b018d407595e8d602355589476ea88a9880826de21a6c98730c109f",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:45:21.947Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24155,
+  "uuid": "skill-clawhub-erc20-tokenomics-builder",
+  "skillKey": "clawhub-erc20-tokenomics-builder",
+  "name": "ERC20 Tokenomics Builder",
+  "summary": "Design and model ERC20 tokenomics with vesting schedules, allocation tables, Uniswap liquidity math, and investor documentation for new token launches.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erc20_tokenomics_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Design and model ERC20 tokenomics with vesting schedules, allocation tables, Uniswap liquidity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/erc20-tokenomics-builder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "erc20-tokenomics-builder",
+      "url": "https://clawhub.ai/skills/erc20-tokenomics-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erc20-tokenomics-builder",
+    "url": "https://clawhub.ai/skills/erc20-tokenomics-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erc20-tokenomics-builder-d7c016dda20a16d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/erc20-tokenomics-builder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-erc20-tokenomics-builder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4051d66af55fba09caf8b40e669b5cedc3ac243a03981ccafd333a229750c3a",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:16:33.276Z"
+}

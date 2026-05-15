@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailbox-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailbox_skill",
+  "skill": {
+    "id": 28426,
+    "skillKey": "clawhub-mailbox-skill",
+    "name": "mailbox-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailbox-skill",
+    "url": "https://clawhub.ai/skills/mailbox-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailbox-skill-75d8524e63ed3c29.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when working through the workspace mailbox protocol under .mailbox, including reading inbox items, composing replies in a private scratch area, and deliv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leoustc",
+      "userId": "s17e04c9jkc1r9hjsrvm7qatgx83p0bx",
+      "displayName": "LEO",
+      "image": "https://avatars.githubusercontent.com/u/3523570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773896152255,
+      "changelog": "Initial release of mailbox-skill.\n\n- Provides a structured protocol for agent-to-agent communication via workspace mailbox under `.mailbox`.\n- Defines message format rules, required frontmatter fields, and trusted routing metadata.\n- Details the layout for inbox, scratch, and reply paths for message handling.\n- Outlines standards for reply composition, scratch use, and canonical message structures.\n- Includes guidance for handling channels (`CHANNEL_ID`) and processing multiple related messages.\n- Sets quality and context requirements for responding to mailbox items.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:896ec1360be7b15a8a0859aab471dcbf426f8e107ebd7b4e340274e0d8f3f148"
+}

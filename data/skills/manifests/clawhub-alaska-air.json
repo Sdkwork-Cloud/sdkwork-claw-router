@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38738,
+  "uuid": "skill-clawhub-alaska-air",
+  "skillKey": "clawhub-alaska-air",
+  "name": "Alaska Air",
+  "summary": "Scrape Alaska Airlines award calendar and flight data to check miles, award availability, and prices for single-leg trips on alaskaair.com.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alaska_air",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iskWang",
+      "features": [
+        "Scrape Alaska Airlines award calendar and flight data to check miles, award availability, and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alaska-air@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3337244?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alaska-air",
+      "url": "https://clawhub.ai/skills/alaska-air"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alaska-air",
+    "url": "https://clawhub.ai/skills/alaska-air",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alaska-air-c8564f8a564264b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alaska-air@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alaska-air-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc65597e01a259ffb8b1c43e5360f07d03b6efb0d9f5f8b7c990389a0fb4f8fe",
+      "artifactSizeBytes": 2448
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:14:03.995Z"
+}

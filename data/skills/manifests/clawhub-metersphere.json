@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64717,
+  "uuid": "skill-clawhub-metersphere",
+  "skillKey": "clawhub-metersphere",
+  "name": "MeterSphere",
+  "summary": "本项目将 MeterSphere REST API 与本地脚本能力整合,为 OpenClaw Agent 提供了一套高效、可复用的 Skills,支持自动生成功能用例、接口定义及接口用例,查询组织、项目、模块、用例评审与缺陷关联等信息,简化了测试资产管理流程,提升了团队的自动化效率。",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metersphere",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhao",
+      "features": [
+        "本项目将 MeterSphere REST API 与本地脚本能力整合,为 OpenClaw Agent 提供了一套高效、可复用的 Skills,支持自动生成功能用例、接口定义及接口用例,查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metersphere@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/70558837?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metersphere",
+      "url": "https://clawhub.ai/skills/metersphere"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metersphere",
+    "url": "https://clawhub.ai/skills/metersphere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metersphere-2c8cb50df2dfc312.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metersphere@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-metersphere-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c05e03a55efea19a478c7fdd54b8ecea74a319e1feb7d6c0aebeb86cfcf8622a",
+      "artifactSizeBytes": 2662
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T08:10:54.952Z"
+}

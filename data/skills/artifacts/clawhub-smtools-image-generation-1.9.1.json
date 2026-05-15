@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smtools-image-generation@1.9.1",
+  "version": "1.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smtools_image_generation",
+  "skill": {
+    "id": 24400,
+    "skillKey": "clawhub-smtools-image-generation",
+    "name": "SMTools Image Generation Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smtools-image-generation",
+    "url": "https://clawhub.ai/skills/smtools-image-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smtools-image-generation-db44fe030cefa6b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images from text prompts using AI models via OpenRouter, Kie.ai, or YandexART. Use when the user asks to generate, create, draw, or illustrate an im..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bzsega",
+      "userId": "publishers:bzsega",
+      "displayName": "Sergey Mikhaylov",
+      "image": "https://avatars.githubusercontent.com/u/825538?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 403,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.9.1",
+      "createdAt": 1773554578539,
+      "changelog": "- Add YandexART as a supported provider for image generation.\n- Update description and provider section to include YandexART details.\n- Specify required environment variables for YandexART: YANDEX_IAM_TOKEN and YANDEX_FOLDER_ID.\n- Clarify instructions on when and how to use each provider.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41634bf1f956162862744675bfc0faae3b16462cbe839f11ee4d1de5f8caf109"
+}

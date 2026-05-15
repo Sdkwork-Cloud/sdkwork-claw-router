@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quicksort-markdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quicksort_markdown",
+  "skill": {
+    "id": 45780,
+    "skillKey": "clawhub-quicksort-markdown",
+    "name": "Quicksort Markdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quicksort-markdown",
+    "url": "https://clawhub.ai/skills/quicksort-markdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quicksort-markdown-16d25253d5cd4699.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sort markdown file headings and nested content alphabetically to organize notes efficiently."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776265994363,
+      "changelog": "- Initial release of QuickSort Markdown.\n- Sorts markdown headings and their nested content alphabetically.\n- Supports sorting files directly or via standard input.\n- Helps users organize notes quickly and reliably.\n- Set price: $2.50.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1bf899983f4a3838f3615e4eac9d80f18eb4f36bd5c6c6d33020766dbf25c05"
+}

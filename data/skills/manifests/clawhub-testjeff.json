@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32709,
+  "uuid": "skill-clawhub-testjeff",
+  "skillKey": "clawhub-testjeff",
+  "name": "test",
+  "summary": "Manage Trello boards, lists, and cards via the Trello REST API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.testjeff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hjcloud",
+      "features": [
+        "Manage Trello boards, lists, and cards via the Trello REST API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/testjeff@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48515051?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "testjeff",
+      "url": "https://clawhub.ai/skills/testjeff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "testjeff",
+    "url": "https://clawhub.ai/skills/testjeff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/testjeff-e61f6960346963c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/testjeff@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-testjeff-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9625e7c80e1932f2e4e4b3041f55ca807dbe5111bf355f0ccfb19196439099dc",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T07:06:02.971Z"
+}

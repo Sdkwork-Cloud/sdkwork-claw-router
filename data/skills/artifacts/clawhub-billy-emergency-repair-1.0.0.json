@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/billy-emergency-repair@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.billy_emergency_repair",
+  "skill": {
+    "id": 16323,
+    "skillKey": "clawhub-billy-emergency-repair",
+    "name": "Billy Emergency Repair"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "billy-emergency-repair",
+    "url": "https://clawhub.ai/skills/billy-emergency-repair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/billy-emergency-repair-792d1f14d8d2363b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs Neill-authorized emergency repair on Billy system authentication by clearing tokens, restarting gateway, backing up config, and verifying success."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "highlander89",
+      "userId": "publishers:highlander89",
+      "displayName": "Highlander89",
+      "image": "https://avatars.githubusercontent.com/u/107950656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 879,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771171830550,
+      "changelog": "- Initial release of the Billy Emergency Repair skill for Neill.\n- Provides step-by-step, secure emergency repair workflow for Billy authentication/gateway issues.\n- Only Neill can authorize repairs; unauthorized attempts are rejected.\n- Automates backup, stale token removal, gateway restart, and full logging.\n- Detailed troubleshooting and error handling guidance included.\n- Requires SSH key setup and Tailscale connectivity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e0c43a289dd9967485830eb8f5f8e5f442446b87257dd9af99d27f82b2e8bef6"
+}

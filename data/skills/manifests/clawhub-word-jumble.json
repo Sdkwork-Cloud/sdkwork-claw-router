@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50846,
+  "uuid": "skill-clawhub-word-jumble",
+  "skillKey": "clawhub-word-jumble",
+  "name": "Word Jumble",
+  "summary": "Generate a Word Jumble puzzle — scrambled words with circled letters that spell out a final idiom, plus a cartoon illustration hint and a printable puzzle im...",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_jumble",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marv",
+      "features": [
+        "Generate a Word Jumble puzzle — scrambled words with circled letters that spell out a final idi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/word-jumble@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264330478?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "word-jumble",
+      "url": "https://clawhub.ai/skills/word-jumble"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-jumble",
+    "url": "https://clawhub.ai/skills/word-jumble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-jumble-68d0f5788e07bf35.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/word-jumble@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-word-jumble-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d52c18609135d2870be49960b7b45ea6deb84d1dea30bc162402f9818b300254",
+      "artifactSizeBytes": 2323
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:43:51.618Z"
+}

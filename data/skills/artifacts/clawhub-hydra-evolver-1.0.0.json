@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hydra-evolver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hydra_evolver",
+  "skill": {
+    "id": 12491,
+    "skillKey": "clawhub-hydra-evolver",
+    "name": "Hydra Evolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hydra-evolver",
+    "url": "https://clawhub.ai/skills/hydra-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hydra-evolver-42560b648afe7a0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A Proxmox-native orchestration skill that turns any home lab into a Self-Healing AI Swarm."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spamtylor",
+      "userId": "publishers:spamtylor",
+      "displayName": "spamtylor",
+      "image": "https://avatars.githubusercontent.com/u/160678082?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1771,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770262953522,
+      "changelog": "Initial Release for Moltbook Hackathon",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ed884f16ac40d18a85e4e42c4b49ad88b535e25d2f9fb3ebc15e367f0b10cda1"
+}

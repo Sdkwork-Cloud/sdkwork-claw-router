@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59566,
+  "uuid": "skill-clawhub-volcengine-rds-postgresql",
+  "skillKey": "clawhub-volcengine-rds-postgresql",
+  "name": "Volcengine RDS PostgreSQL",
+  "summary": "使用火山引擎 RDS PostgreSQL，帮助用户完成 RDS PostgreSQL 相关的实例管理、数据库操作、账号管理和运维任务，可直接调用 uv run ./scripts/call_rds_postgresql.py 脚本获取实时结果。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_rds_postgresql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ybAmazing",
+      "features": [
+        "使用火山引擎 RDS PostgreSQL，帮助用户完成 RDS PostgreSQL 相关的实例管理、数据库操作、账号管理和运维任务，可直接调用 uv run ./scripts/call."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-rds-postgresql@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5507782?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-rds-postgresql",
+      "url": "https://clawhub.ai/skills/volcengine-rds-postgresql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-rds-postgresql",
+    "url": "https://clawhub.ai/skills/volcengine-rds-postgresql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-rds-postgresql-c3b58c27895884ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-rds-postgresql@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-rds-postgresql-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe1f1dbde5475b05096996b36f3cbc8a10d419039118da421093022ef35b452",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:52:32.541Z"
+}

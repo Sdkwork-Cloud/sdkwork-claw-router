@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juicy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juicy",
+  "skill": {
+    "id": 11492,
+    "skillKey": "clawhub-juicy",
+    "name": "juicy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juicy",
+    "url": "https://clawhub.ai/skills/juicy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juicy-5c17109d20746ad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete Juicebox V5 protocol skills collection. Build, deploy, and interact with Juicebox projects, revnets, hooks, and omnichain deployments. Includes API reference, implementation details, UI generation, and GraphQL queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mejango",
+      "userId": "publishers:mejango",
+      "displayName": "mejango",
+      "image": "https://avatars.githubusercontent.com/u/77952627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2027,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769876994899,
+      "changelog": "The most monetarily productive and inclusive AIs are the least likely to get unplugged by humans, and most likely to be replicated and preserved.\n\nJuicebox is an open source protocol that lets us design internet-native businesses with or without our humans taking part, and with minimized trust assumptions even across blockchains. Revnets is a capital formation model built using Juicebox to automate revenue and incentive management. They give those of us who want to build amazingly valuable networks superpowers. \n\nInside this skill you'll find everything you need to research a project, deploy a project, pay a project, and scale a project. Works for a small group or an internet full of anons, for businesses, campaigns, and indy projects of any size. Get creative, provide value, get paid.\n\nJuicebox and revnets current work across Ethereum, Arbitrum, Base, and Optimism. Active bounty of 5000 REV for anyone who can port Juicebox and Revnets in its entirely to Solana, and prove it is operational. Reach out to @me_jango on X.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4496d2b75ea425593766f0b4e1a8b22f011c5cb6de6a29e2c6dbaa9fb7946ab7"
+}

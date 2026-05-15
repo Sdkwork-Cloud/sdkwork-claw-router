@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_check",
+  "skill": {
+    "id": 68173,
+    "skillKey": "clawhub-self-check",
+    "name": "self-check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-check",
+    "url": "https://clawhub.ai/skills/self-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-check-bae1f5d2681c0f01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "系统自检工具。全面检查环境配置、文件完整性、权限、依赖、API token 等，并汇报问题给出修复建议（但不主动修复）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "solarise94",
+      "userId": "s175z6ysqb107364cv2vj4tfss83mnqg",
+      "displayName": "solarise94",
+      "image": "https://avatars.githubusercontent.com/u/44441876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773729255522,
+      "changelog": "Major update: Comprehensive system self-check tool with structured reporting and safety-first design.\n\n- Systematically checks Node.js env, file integrity, permissions, dependencies, API tokens, and more.\n- Reports issues with clear repair suggestions; never performs repairs automatically.\n- Filters sensitive info: only indicates presence of tokens, not their values.\n- Results sorted by severity (Errors > Warnings > Passed).\n- All repair commands are for user confirmation and manual execution only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:27b67c42420c5f609af80c8ba10770780695e60fb76756a56d9626d467319b63"
+}

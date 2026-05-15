@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vwu-minimax@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vwu_minimax",
+  "skill": {
+    "id": 25349,
+    "skillKey": "clawhub-vwu-minimax",
+    "name": "vwu.ai MiniMax Models"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vwu-minimax",
+    "url": "https://clawhub.ai/skills/vwu-minimax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vwu-minimax-d5cb107314574dc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call minimax models MiniMax-Hailuo series on vwu.ai with OpenAI-compatible chat completions using your configured API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3273283",
+      "userId": "s175jabaxjxb6749jqkdczqb4n842w5q",
+      "displayName": "a3273283",
+      "image": "https://avatars.githubusercontent.com/u/92772341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773639617254,
+      "changelog": "Initial release - Complete vwu.ai model collection",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0ed834ef4a25846c8a8b89cab21beb4014111288dd4d172746a805ce58de723"
+}

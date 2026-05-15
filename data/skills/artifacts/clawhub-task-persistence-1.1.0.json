@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-persistence@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_persistence",
+  "skill": {
+    "id": 19402,
+    "skillKey": "clawhub-task-persistence",
+    "name": "Task Persistence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-persistence",
+    "url": "https://clawhub.ai/skills/task-persistence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-persistence-066bac10112ee6ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Task continuity, session snapshots, and gateway restart recovery. Use when starting long-running tasks (register them), after gateway restart (check for inte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangdaowan",
+      "userId": "publishers:yangdaowan",
+      "displayName": "DaYu",
+      "image": "https://avatars.githubusercontent.com/u/30426257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 565,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772297204902,
+      "changelog": "Fix: 补全缺失的 task_manager.py 和 main.py；重写 SKILL.md 为 agent 可执行指令格式；完整的任务注册/恢复/完成工作流；所有脚本语法验证通过",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3a595c84175cf082d9c4f93c17a1fd7b97059996fd4b4195f3b12d10cf6946d7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freeapi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freeapi",
+  "skill": {
+    "id": 19254,
+    "skillKey": "clawhub-freeapi",
+    "name": "Freeapi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freeapi",
+    "url": "https://clawhub.ai/skills/freeapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freeapi-462dbf6af4cd61ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect directly to any API using its OpenAPI spec with local API key storage, ensuring private, middleware-free requests from your machine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "numbpill3d",
+      "userId": "publishers:numbpill3d",
+      "displayName": "splicer scorn",
+      "image": "https://avatars.githubusercontent.com/u/146873484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 626,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772162833366,
+      "changelog": "Initial release of freeAPI: The Sovereign Client\n\n- Enables direct execution of OpenAPI/Swagger endpoints from localhost, with no middleware or gateways involved.\n- Keeps API keys fully private by storing them only in your local `.env` file.\n- Provides a guided, conversational method for onboarding and key management—no CLI commands unless preferred.\n- Automatically fetches OpenAPI specs and handles requests based on natural language prompts.\n- Includes CLI support for advanced or power users as an alternative interface.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b46605b85720d6444e947b545f2ab6b749ed56bc9aeee69b4921f41ab13f62ff"
+}

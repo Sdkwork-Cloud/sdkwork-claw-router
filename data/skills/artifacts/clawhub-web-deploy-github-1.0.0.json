@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-deploy-github@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_deploy_github",
+  "skill": {
+    "id": 8712,
+    "skillKey": "clawhub-web-deploy-github",
+    "name": "Web Deploy GitHub Pages"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-deploy-github",
+    "url": "https://clawhub.ai/skills/web-deploy-github",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-deploy-github-1eda3ab97472a2d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and deploy single-page static websites to GitHub Pages with autonomous workflow. Use when building portfolio sites, CV pages, landing pages, or any static web project that needs GitHub Pages deployment. Handles complete workflow fro."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomeksolutions",
+      "userId": "publishers:thomeksolutions",
+      "displayName": "ThomekSolutions",
+      "image": "https://avatars.githubusercontent.com/u/45467926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6957,
+      "installsAllTime": 46,
+      "installsCurrent": 45,
+      "stars": 8,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769721637588,
+      "changelog": "v1.0.0 - Initial Release\n\nFeatures:\n- Complete workflow for creating and deploying static websites to GitHub Pages\n- Automated deployment scripts (init_project.sh, deploy_github_pages.sh)\n- Three ready-to-use templates: base HTML, portfolio/CV, and landing page\n- Comprehensive design patterns and best practices documentation\n- Mobile-first responsive design patterns\n- GitHub Actions integration for automatic deployment\n- Modern CSS and JavaScript patterns\n- Full documentation of autonomous generation workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c618e9d4b4bfeb51c2ae587ba00a8110063f26a543358922821cbb794725ffa6"
+}

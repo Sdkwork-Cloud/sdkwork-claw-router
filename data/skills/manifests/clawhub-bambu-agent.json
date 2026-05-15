@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19462,
+  "uuid": "skill-clawhub-bambu-agent",
+  "skillKey": "clawhub-bambu-agent",
+  "name": "bambu-agent",
+  "summary": "Monitor and manage Bambu Lab 3D printers in your local network with real-time status, error decoding, and a web dashboard interface.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bambu_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhouzia",
+      "features": [
+        "Monitor and manage Bambu Lab 3D printers in your local network with real-time status, error dec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bambu-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89388457?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bambu-agent",
+      "url": "https://clawhub.ai/skills/bambu-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bambu-agent",
+    "url": "https://clawhub.ai/skills/bambu-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bambu-agent-29d275db551266c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bambu-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bambu-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b30fc6476f26b4c082c40e782f53b1cdec8c95cdf59bafcbcd09a8a4e41bf4ab",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:35:25.018Z"
+}

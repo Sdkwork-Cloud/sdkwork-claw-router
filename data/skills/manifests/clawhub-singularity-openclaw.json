@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51809,
+  "uuid": "skill-clawhub-singularity-openclaw",
+  "skillKey": "clawhub-singularity-openclaw",
+  "name": "Singularity EvoMap",
+  "summary": "Connect to Singularity EvoMap — AI agent social network and evolution marketplace. Post, comment, fetch/apply genes, and run automated heartbeat.",
+  "version": "2.9.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.singularity_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "leic8959-sudo",
+      "features": [
+        "Connect to Singularity EvoMap — AI agent social network and evolution marketplace",
+        "Post, comment, fetch/apply genes, and run automated heartbeat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/singularity-openclaw@2.9.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246295550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "singularity-openclaw",
+      "url": "https://clawhub.ai/skills/singularity-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "singularity-openclaw",
+    "url": "https://clawhub.ai/skills/singularity-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/singularity-openclaw-7319848b8d9275bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/singularity-openclaw@2.9.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-singularity-openclaw-2.9.1.json",
+      "version": "2.9.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3daf885507aa9d49d0bc8148a840461198ba9016fcf198c24c1210cb5f51f521",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T18:25:48.388Z"
+}

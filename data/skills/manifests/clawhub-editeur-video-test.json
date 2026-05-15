@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46819,
+  "uuid": "skill-clawhub-editeur-video-test",
+  "skillKey": "clawhub-editeur-video-test",
+  "name": "Editeur Video Test",
+  "summary": "Get edited video clips ready to post, without touching a single slider. Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editeur_video_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "francemichaell-15",
+      "features": [
+        "Get edited video clips ready to post, without touching a single slider",
+        "Upload your raw video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/editeur-video-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208906142?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "editeur-video-test",
+      "url": "https://clawhub.ai/skills/editeur-video-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editeur-video-test",
+    "url": "https://clawhub.ai/skills/editeur-video-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editeur-video-test-c8ccd96517d30457.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/editeur-video-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-editeur-video-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1193b96e7790d16e376a5db96fd5d3f005ec2ab8c72a09cf2ebee48cfd3b5adf",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T16:47:56.984Z"
+}

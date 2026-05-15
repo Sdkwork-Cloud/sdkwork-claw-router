@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33278,
+  "uuid": "skill-clawhub-cobalt-io",
+  "skillKey": "clawhub-cobalt-io",
+  "name": "Cobalt Io",
+  "summary": "Cobalt integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cobalt data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cobalt_io",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Cobalt integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cobalt data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cobalt-io@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cobalt-io",
+      "url": "https://clawhub.ai/skills/cobalt-io"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cobalt-io",
+    "url": "https://clawhub.ai/skills/cobalt-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cobalt-io-30e7312ad2a1c6d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cobalt-io@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cobalt-io-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25b43795ab4672195392a42c5b06b1419c711481c5577a8e6ce96314ca218b7c",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:32:58.051Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-intel-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_intel_monitor",
+  "skill": {
+    "id": 47879,
+    "skillKey": "clawhub-claude-intel-monitor",
+    "name": "Claude Intel Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-intel-monitor",
+    "url": "https://clawhub.ai/skills/claude-intel-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-intel-monitor-80be0be50b1ff719.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect Claude/GPT model quality degradation with 30 benchmark questions across Math, Reasoning, and Code. Track scores over time, compare providers (Anthropi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minirr890112-byte",
+      "userId": "s17427ed5npn3ajarmrt3mmbvx85k73p",
+      "displayName": "Maya Tao",
+      "image": "https://avatars.githubusercontent.com/u/226037090?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777683477697,
+      "changelog": "Initial release: 30 benchmark questions across Math/Reasoning/Code, track scores over time, DeepSeek 91.1% baseline",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86ebb0943d96b642833c151093ef5182696691f9011335f2c77902a58d9d2459"
+}

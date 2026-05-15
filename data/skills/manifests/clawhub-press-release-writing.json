@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16025,
+  "uuid": "skill-clawhub-press-release-writing",
+  "skillKey": "clawhub-press-release-writing",
+  "name": "Press Release Writing",
+  "summary": "Press release writing in AP style with inverted pyramid structure. Covers formatting, datelines, quotes, boilerplates, and fact-checking. Use for: product la...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.press_release_writing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Press release writing in AP style with inverted pyramid structure",
+        "Covers formatting, datelines, quotes, boilerplates, and fact-checking",
+        "Use for: product la..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/press-release-writing@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "press-release-writing",
+      "url": "https://clawhub.ai/skills/press-release-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "press-release-writing",
+    "url": "https://clawhub.ai/skills/press-release-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/press-release-writing-0540bee148c1fdc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/press-release-writing@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-press-release-writing-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49cca92cb6871e656462b008a26d6398086d1721b58bbcf7369baa438b559d71",
+      "artifactSizeBytes": 2540
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:28:16.109Z"
+}

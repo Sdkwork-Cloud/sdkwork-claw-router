@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65238,
+  "uuid": "skill-clawhub-news-noon-digest",
+  "skillKey": "clawhub-news-noon-digest",
+  "name": "News Noon Digest - 新闻午报",
+  "summary": "每日中午12点自动推送新闻午报到QQ和飞书，包含全球热点、科技动态、财经要闻",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_noon_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "每日中午12点自动推送新闻午报到QQ和飞书，包含全球热点、科技动态、财经要闻"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-noon-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-noon-digest",
+      "url": "https://clawhub.ai/skills/news-noon-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-noon-digest",
+    "url": "https://clawhub.ai/skills/news-noon-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-noon-digest-2e750df217380819.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-noon-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-noon-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a48774dac21957fd279b9a65c8ee1918fa15a8cbc43328376f53c27d9cf08b3",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:38:15.230Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gws-workflow-standup-report@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_workflow_standup_report",
+  "skill": {
+    "id": 18482,
+    "skillKey": "clawhub-gws-workflow-standup-report",
+    "name": "Gws Workflow Standup Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-workflow-standup-report",
+    "url": "https://clawhub.ai/skills/gws-workflow-standup-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-workflow-standup-report-e3ed5754539a0ca6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workflow: Today's meetings + open tasks as a standup summary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 568,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982109512,
+      "changelog": "- Updated skill metadata version from 0.22.4 to 0.22.5 in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:555f162e84a629c94cd026f33ce71994e70d573519b941612212ea789ff21f42"
+}

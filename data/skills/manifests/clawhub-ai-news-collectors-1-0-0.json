@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65724,
+  "uuid": "skill-clawhub-ai-news-collectors-1-0-0",
+  "skillKey": "clawhub-ai-news-collectors-1-0-0",
+  "name": "Ai News Collectors 1.0.0",
+  "summary": "AI 新闻聚合与热度排序工具。当用户询问 AI 领域最新动态时触发，如：\"今天有什么 AI 新闻？\"\"总结一下这周的 AI 动态\"\"最近有什么火的 AI 产品？\"\"AI 圈最近在讨论什么？\"。覆盖：新产品发布、研究论文、行业动态、融资新闻、开源项目更新、社区病毒传播现象、AI 工具/Agent 热门项目。输出中文...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_collectors_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kuang k",
+      "features": [
+        "AI 新闻聚合与热度排序工具。当用户询问 AI 领域最新动态时触发，如：\"今天有什么 AI 新闻？\"\"总结一下这周的 AI 动态\"\"最近有什么火的 AI 产品？\"\"AI 圈最近在讨论什么？\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-news-collectors-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9075206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-news-collectors-1-0-0",
+      "url": "https://clawhub.ai/skills/ai-news-collectors-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-collectors-1-0-0",
+    "url": "https://clawhub.ai/skills/ai-news-collectors-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-collectors-1-0-0-863179dc7ee467f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-news-collectors-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-news-collectors-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b20346a7878804bf9e65408ec2a72b652dbe9265a33ff928f7d7988f8050d0e9",
+      "artifactSizeBytes": 2619
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T01:22:10.295Z"
+}

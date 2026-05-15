@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48847,
+  "uuid": "skill-clawhub-food-nutrition-facts-search",
+  "skillKey": "clawhub-food-nutrition-facts-search",
+  "name": "food nutrition facts search",
+  "summary": "Searches nutrition facts, food scores, and packaged product data via public AI-friendly endpoints. Invoke when users ask to find, compare, or inspect foods,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_nutrition_facts_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CharlieX",
+      "features": [
+        "Searches nutrition facts, food scores, and packaged product data via public AI-friendly endpoin.",
+        "Invoke when users ask to find, compare, or inspect foods,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/food-nutrition-facts-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2179160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "food-nutrition-facts-search",
+      "url": "https://clawhub.ai/skills/food-nutrition-facts-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-nutrition-facts-search",
+    "url": "https://clawhub.ai/skills/food-nutrition-facts-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-nutrition-facts-search-ccd93c55d90f7209.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/food-nutrition-facts-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-food-nutrition-facts-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74ddc4f2a01259ffe52c8e38905df0601e04badbd0b9cb617d933cb453f8fc36",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T05:34:31.146Z"
+}

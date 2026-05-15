@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/content-repurposer-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_repurposer_2",
+  "skill": {
+    "id": 37166,
+    "skillKey": "clawhub-content-repurposer-2",
+    "name": "Content Repurposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-repurposer-2",
+    "url": "https://clawhub.ai/skills/content-repurposer-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-repurposer-2-25d0fbb39be6c7d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms existing content into multiple formats - blog posts, social media, emails, video scripts, and more"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huajianjiu000",
+      "userId": "s17f54gbrv7gfj1z72d0e3d24h84b2ep",
+      "displayName": "huajianjiu",
+      "image": "https://avatars.githubusercontent.com/u/163974966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776697065251,
+      "changelog": "- Initial release of Content Repurposer.\n- Transforms a single piece of content into multiple formats, including blog posts, social media (LinkedIn, Twitter/X, Instagram), email newsletters, and video scripts.\n- Supports input customization by original content, target formats, audience, and platform nuances.\n- Designed to maximize the value of existing content for content marketers and creators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fcc0e7a06731d9e3f3da62aba25162dedb88d690b26bf8f4edf02eb6de5b37aa"
+}

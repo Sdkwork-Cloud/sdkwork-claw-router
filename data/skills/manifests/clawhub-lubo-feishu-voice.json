@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49066,
+  "uuid": "skill-clawhub-lubo-feishu-voice",
+  "skillKey": "clawhub-lubo-feishu-voice",
+  "name": "Feishu Voice (NoizAI)",
+  "summary": "Send voice messages to Feishu using NoizAI TTS. Use this whenever the user wants you to speak, send a voice message, or reply with audio on Feishu. Wraps noi...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lubo_feishu_voice",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lubo1012",
+      "features": [
+        "Send voice messages to Feishu using NoizAI TTS",
+        "Use this whenever the user wants you to speak, send a voice message, or reply with audio on Fei.",
+        "Wraps noi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lubo-feishu-voice@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5576747?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lubo-feishu-voice",
+      "url": "https://clawhub.ai/skills/lubo-feishu-voice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lubo-feishu-voice",
+    "url": "https://clawhub.ai/skills/lubo-feishu-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lubo-feishu-voice-9384df92d820290e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lubo-feishu-voice@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lubo-feishu-voice-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bb1f42e20781f9fb9f0b992e480a01fff1da73f6351209d8ace795bbfa609dd",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T15:45:53.359Z"
+}

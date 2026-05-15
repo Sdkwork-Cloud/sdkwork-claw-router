@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12326,
+  "uuid": "skill-clawhub-streme-launcher",
+  "skillKey": "clawhub-streme-launcher",
+  "name": "Streme Token Launcher",
+  "summary": "Launch tokens on Streme (streme.fun) - the streaming token platform on Base. Use when deploying SuperTokens with built-in staking rewards, Uniswap V3 liquidity, and optional vesting vaults. Triggers on \"launch token on streme\", \"deploy str.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.streme_launcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawrencestreme",
+      "features": [
+        "Launch tokens on Streme (streme.fun)",
+        "the streaming token platform on Base",
+        "Use when deploying SuperTokens with built-in staking rewards, Uniswap V3 liquidity, and optiona.",
+        "Triggers on \"launch token on streme\", \"deploy streme token\", \"create supertoken\", or any Streme."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/streme-launcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258558815?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "streme-launcher",
+      "url": "https://clawhub.ai/skills/streme-launcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "streme-launcher",
+    "url": "https://clawhub.ai/skills/streme-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/streme-launcher-c0330705897670c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/streme-launcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-streme-launcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89e783898eb01182300922a2d55db7faf4b375987071dc9993d06385e3e710ae",
+      "artifactSizeBytes": 2468
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T15:56:39.774Z"
+}

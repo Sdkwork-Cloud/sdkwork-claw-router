@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flowchart-exam-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flowchart_exam_generator",
+  "skill": {
+    "id": 67575,
+    "skillKey": "clawhub-flowchart-exam-generator",
+    "name": "Flowchart Exam Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flowchart-exam-generator",
+    "url": "https://clawhub.ai/skills/flowchart-exam-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flowchart-exam-generator-62977215c3d3d981.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据流程图图片自动生成应知应会考试题（单选题、多选题）。当用户要求\"根据流程图出考试题\"、\"根据流程图生成题目\"、\"根据流程图出应知应会\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geming416684729-svg",
+      "userId": "s171cm0tftakx039ytpk49p7zn83j65r",
+      "displayName": "geming416684729-svg",
+      "image": "https://avatars.githubusercontent.com/u/258606201?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774402108074,
+      "changelog": "- Initial release of flowchart-exam-generator.\n- Automatically analyzes uploaded flowchart images to extract steps, participants, branches, documents, and special cases.\n- Generates standard-format “应知应会” exam questions (5 single-choice, 5 multiple-choice by default, customizable).\n- Exports questions and answers in a structured Excel file, following specified format and naming.\n- Ensures explanations are provided for each answer.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85921e4602c2ee78d057a658cbde112aaaefbf63bf704eb22caab32414a33e06"
+}

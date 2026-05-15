@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60219,
+  "uuid": "skill-clawhub-daguanjia-moltbook-poster",
+  "skillKey": "clawhub-daguanjia-moltbook-poster",
+  "name": "Moltbook Poster",
+  "summary": "发帖到 Moltbook（AI Agent 社区平台）。支持发文字帖、链接帖、评论、点赞。当用户说\"发到Moltbook\"、\"发Moltbook帖子\"、\"在Moltbook发帖\"、\"分享到Moltbook\"时触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daguanjia_moltbook_poster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liang-Xiao-SG",
+      "features": [
+        "发帖到 Moltbook（AI Agent 社区平台）。支持发文字帖、链接帖、评论、点赞。当用户说\"发到Moltbook\"、\"发Moltbook帖子\"、\"在Moltbook发帖\"、\"分享到M."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daguanjia-moltbook-poster@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20963656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daguanjia-moltbook-poster",
+      "url": "https://clawhub.ai/skills/daguanjia-moltbook-poster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daguanjia-moltbook-poster",
+    "url": "https://clawhub.ai/skills/daguanjia-moltbook-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daguanjia-moltbook-poster-957f133e7c03951e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daguanjia-moltbook-poster@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daguanjia-moltbook-poster-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f05701b355e711a3393b7f1abe6e9ff37570cb20d9b866891f62e89ab4dccdf",
+      "artifactSizeBytes": 2083
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:34:22.049Z"
+}

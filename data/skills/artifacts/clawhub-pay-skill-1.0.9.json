@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pay-skill@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay_skill",
+  "skill": {
+    "id": 44001,
+    "skillKey": "clawhub-pay-skill",
+    "name": "Pay Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay-skill",
+    "url": "https://clawhub.ai/skills/pay-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-skill-4698adb3d5793edb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "USE THIS SKILL whenever the user needs any API, external service, paid resource, or wants to pay for anything. Trigger on: \"I need an API\", \"find me a servic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pay-skill",
+      "userId": "s1710me73t9emd59rr3gdvvka984qns1",
+      "displayName": "pay-skill.com",
+      "image": "https://avatars.githubusercontent.com/u/266466365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1775976072334,
+      "changelog": "Restore v1.0.6 references (operator-confirmation posture). Add discover-then-request inline flow. Broader trigger phrases. No safety posture changes from v1.0.6.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:507bfe68dfdf3425da2826fcca178677f483583cc6ac7ad265510c410b4a4f6f"
+}

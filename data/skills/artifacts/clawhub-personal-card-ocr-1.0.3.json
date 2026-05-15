@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-card-ocr@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_card_ocr",
+  "skill": {
+    "id": 72087,
+    "skillKey": "clawhub-personal-card-ocr",
+    "name": "Personal Card Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-card-ocr",
+    "url": "https://clawhub.ai/skills/personal-card-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-card-ocr-eacc073c4a288cce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将图片中的文字、身份证、银行卡、社保卡、户口本、出生医学证明、往来港澳通行证、往来台湾通行证、台湾居民来往大陆通行证、港澳居民来往内地通行证等信息识别并提取出来。本技能应在用户需要 OCR 识别图片中的文字，或识别身份证、银行卡、社保卡、户口本、出生医学证明、往来港澳通行证、往来台湾通行证、台湾居民来往大陆通行证..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "scnet-sugon",
+      "userId": "s17aan1jdk93c5398r3ypc523d83hqys",
+      "displayName": "SCNet-sugon",
+      "image": "https://avatars.githubusercontent.com/u/267813088?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776307548908,
+      "changelog": "- Added explicit dependency and environment variable metadata to skill (SKILL.md).\n- Now requires Python 3 and the requests library (see dependencies in SKILL.md).\n- Improved configuration instructions: only manual .env setup is described; added security warning against sharing API key in chat.\n- Added guidance on file permissions for .env.\n- Minor clarifications and formatting improvements to documentation for easier usage and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7cb5d896f135bcb04f8e2e10452b4029e98ef45b773e66296172d41706ff5a1"
+}

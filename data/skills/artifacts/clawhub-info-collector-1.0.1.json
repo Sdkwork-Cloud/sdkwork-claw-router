@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/info-collector@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.info_collector",
+  "skill": {
+    "id": 32357,
+    "skillKey": "clawhub-info-collector",
+    "name": "info-collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "info-collector",
+    "url": "https://clawhub.ai/skills/info-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/info-collector-6148b8f6d0878e93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aggregates and verifies real-time information from multiple public sources on a given topic, delivering a structured, prioritized report within a specified t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "89171",
+      "userId": "s1791hvt2xz62hcm3y0jgdp4a184rs10",
+      "displayName": "89171",
+      "image": "https://avatars.githubusercontent.com/u/11849419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776098351061,
+      "changelog": "info-collector v1.0.1\n\n- No functional or documentation changes; all files remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8de71e7c743a8ba72ae58bb4b425bfee2d8b0e387440829be251a0e440210fb7"
+}

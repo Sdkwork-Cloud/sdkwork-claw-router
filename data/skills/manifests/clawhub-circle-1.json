@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34640,
+  "uuid": "skill-clawhub-circle-1",
+  "skillKey": "clawhub-circle-1",
+  "name": "Circle 1",
+  "summary": "Circle integration. Manage data, records, and automate workflows. Use when the user wants to interact with Circle data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.circle_1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Circle integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Circle data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/circle-1@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "circle-1",
+      "url": "https://clawhub.ai/skills/circle-1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "circle-1",
+    "url": "https://clawhub.ai/skills/circle-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/circle-1-1a44cd877e41a988.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/circle-1@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-circle-1-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:051c199eb1bd84be8f28df197278e6799dc1510a98bde346f98afd8d07dcc3cf",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:30:07.261Z"
+}

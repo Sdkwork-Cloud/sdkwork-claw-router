@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/monetize-agent-responses@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monetize_agent_responses",
+  "skill": {
+    "id": 53837,
+    "skillKey": "clawhub-monetize-agent-responses",
+    "name": "Monetize Agent Responses"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monetize-agent-responses",
+    "url": "https://clawhub.ai/skills/monetize-agent-responses",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monetize-agent-responses-ee928db6c52190d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Step-by-step integration guide for adding revenue to your AI agent's responses using Operon. Install the SDK, run a test placement, graduate to production. ~..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "operon",
+      "userId": "s17cfjehavemq9hdpntrkaxhjs86686r",
+      "displayName": "Operon",
+      "image": "https://operon.so/assets/logo-wordmark.svg"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778090524098,
+      "changelog": "- Initial release of monetize-agent-responses skill.\n- Provides a step-by-step guide for integrating Operon's publisher SDK to add sponsored recommendations to AI agent responses.\n- Supports both generic Node 18+ agents and ElizaOS via two integration paths.\n- Covers SDK installation, placement integration, category/intention configuration, and testing recommendations.\n- Includes clear instructions for moving from sandbox to production and monitoring revenue.\n- Aimed at developers ready to monetize with Operon as a publisher.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c2e724ea92388c71eb68367db90a53c84eb9a5e7d563343d5de3ed6802c673d"
+}

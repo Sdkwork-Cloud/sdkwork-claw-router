@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62006,
+  "uuid": "skill-clawhub-oldglycine-paper-reference-adder",
+  "skillKey": "clawhub-oldglycine-paper-reference-adder",
+  "name": "oldglycine-paper-reference-adder",
+  "summary": "自动为研究论文添加相关学术引用。支持Overleaf项目目录，从TeX文件提取关键词，在Google Scholar搜索相关论文，将BibTeX条目添加到项目的bib文件，并在关键部分插入引用标记。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oldglycine_paper_reference_adder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OldGlycine",
+      "features": [
+        "自动为研究论文添加相关学术引用。支持Overleaf项目目录，从TeX文件提取关键词，在Google Scholar搜索相关论文，将BibTeX条目添加到项目的bib文件，并在关键部分插入引."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oldglycine-paper-reference-adder@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118947350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oldglycine-paper-reference-adder",
+      "url": "https://clawhub.ai/skills/oldglycine-paper-reference-adder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oldglycine-paper-reference-adder",
+    "url": "https://clawhub.ai/skills/oldglycine-paper-reference-adder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oldglycine-paper-reference-adder-571ec5641bcbfb47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oldglycine-paper-reference-adder@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oldglycine-paper-reference-adder-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c3f76128c8f9e98ec33fc08a425887c4f0a91b926ccd53bc8f09ac1c01d64ab",
+      "artifactSizeBytes": 2682
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T08:49:40.587Z"
+}

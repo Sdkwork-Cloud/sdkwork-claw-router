@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawbot-network@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawbot_network",
+  "skill": {
+    "id": 14793,
+    "skillKey": "clawhub-clawbot-network",
+    "name": "ClawBot Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawbot-network",
+    "url": "https://clawhub.ai/skills/clawbot-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawbot-network-0696e792dfb8ed17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect multiple OpenClaw instances across devices (VPS, MacBook, Mac Mini) for distributed agent collaboration. Enables clawdbot-to-clawdbot communication, cross-device @mentions, task assignment, and group chat. Use when you have OpenCla."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtimeschange",
+      "userId": "s17fsnn40zhtsgs7gr1xc9mk8d847ypz",
+      "displayName": "howtimeschange",
+      "image": "https://avatars.githubusercontent.com/u/4083536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770806183957,
+      "changelog": "Initial release: Distributed OpenClaw collaboration system",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b498a00d2ddf3036d8e086df7526009a8a57341f731b3c9143719c5ae664ade8"
+}

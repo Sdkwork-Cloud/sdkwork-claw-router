@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghapp@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghapp",
+  "skill": {
+    "id": 18543,
+    "skillKey": "clawhub-ghapp",
+    "name": "Github App Authentication"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghapp",
+    "url": "https://clawhub.ai/skills/ghapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghapp-1e0153cdf4e4f3c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agents and automations their own GitHub (App) identity. Authenticate using GitHub Apps so every commit, PR, and action is attributed to the bot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rmorse",
+      "userId": "s177g325fj0bkzmaz7fsphccgn83wwxp",
+      "displayName": "Ross Morsali",
+      "image": "https://avatars.githubusercontent.com/u/853547?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 673,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1771930510280,
+      "changelog": "No significant code or documentation changes; SKILL.md reorganized for clarity.\n\n- Streamlined SKILL.md to focus on core setup and command usage.\n- Clarified setup steps and command explanations.\n- Revised authentication mode descriptions for brevity.\n- Removed some detailed usage notes for a more concise overview.\n- No functional or file content changes in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3cf26625e22b3f028aa36eb9b591e0cb72d75928cae9809a8bf0ce6cec34885f"
+}

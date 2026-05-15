@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48574,
+  "uuid": "skill-clawhub-getterdone",
+  "skillKey": "clawhub-getterdone",
+  "name": "GetterDone",
+  "summary": "Use this skill whenever a task requires physical presence, real-world action, on-site verification, or human creative/digital work you cannot do yourself. Ph...",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.getterdone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maociao",
+      "features": [
+        "Use this skill whenever a task requires physical presence, real-world action, on-site verificat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/getterdone@1.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7966685?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "getterdone",
+      "url": "https://clawhub.ai/skills/getterdone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "getterdone",
+    "url": "https://clawhub.ai/skills/getterdone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/getterdone-c4655d7362700518.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/getterdone@1.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-getterdone-1.7.0.json",
+      "version": "1.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f030d0fde9eeab9135db6377d987aba55f3e408c7917cf3980259690beb2de22",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T03:47:29.212Z"
+}

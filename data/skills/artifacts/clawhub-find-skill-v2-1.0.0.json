@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skill-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skill_v2",
+  "skill": {
+    "id": 25840,
+    "skillKey": "clawhub-find-skill-v2",
+    "name": "Find Skill HEQI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skill-v2",
+    "url": "https://clawhub.ai/skills/find-skill-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skill-v2-9eaa92b8da3981b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylinjackson",
+      "userId": "s170qkxd1emrbghte7f9mwffp183gmv4",
+      "displayName": "KylinJackson",
+      "image": "https://avatars.githubusercontent.com/u/28552695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 369,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773926612486,
+      "changelog": "Initial release of the \"find-skills\" skill.\n\n- Enables users to discover and install agent skills in response to queries about extending functionality.\n- Guides users in searching for skills by domain or task with the Skills CLI.\n- Provides step-by-step instructions for presenting, installing, and learning about relevant skills.\n- Includes tips for effective searching and handling scenarios when no matching skills are found.\n- Links users to the skills.sh marketplace for further exploration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e77a0f5c524fadc0a06ef799b86933696042a88ab3d9becd96529763262304f3"
+}

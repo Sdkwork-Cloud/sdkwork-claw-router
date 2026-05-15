@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/im-social-insurance-backpay@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.im_social_insurance_backpay",
+  "skill": {
+    "id": 72595,
+    "skillKey": "clawhub-im-social-insurance-backpay",
+    "name": "内蒙古养老保险补缴计算工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "im-social-insurance-backpay",
+    "url": "https://clawhub.ai/skills/im-social-insurance-backpay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/im-social-insurance-backpay-10598a13f8b381a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "内蒙古养老保险补缴计算工具。用于计算内蒙古地区养老保险补缴金额，包括本金、利息（按月复利计息）、滞纳金等明细。 **触发关键词**：社保补缴、社保补费、补缴、补费、养老保险补缴、社保欠费计算 **使用场景**： 1. 计算历史欠缴养老保险的补缴金额 2. 估算补缴本金、利息、滞纳金明细 3. 对比不同缴费档次（6..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binbin",
+      "userId": "s1782dxvn6h7vsb92bk4fhrg9583k1tb",
+      "displayName": "Beta",
+      "image": "https://avatars.githubusercontent.com/u/276284?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773136849445,
+      "changelog": "- Initial release of im-social-insurance-backpay.\n- Provides calculation tools for Inner Mongolia pension insurance backpay, including principal, interest (monthly compound), and late fees.\n- Supports six payment grade comparisons (60%/80%/100%/150%/200%/300%) and custom monthly base contributions.\n- Displays breakdowns for both individual and company shares, with/without late fees.\n- Allows command-line and Python use with flexible parameters such as custom base, target date, and detailed summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b654d606e5f19ce23ca28bf6bd43e48333de8f10ce4d7007e60412de3550e70d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attio-api@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attio_api",
+  "skill": {
+    "id": 8513,
+    "skillKey": "clawhub-attio-api",
+    "name": "Attio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attio-api",
+    "url": "https://clawhub.ai/skills/attio-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attio-api-3b06ce8def8e54e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Attio API integration with managed OAuth. Manage CRM data including people, companies, and custom objects. Use this skill when users want to create, read, up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 12431,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777592803517,
+      "changelog": "- Updated all API and connection management endpoints to use https://api.maton.ai instead of previous gateway/ctrl URLs.\n- Added a \"Security & Permissions\" section emphasizing that all write operations require explicit user approval.\n- Clarified instructions for specifying the Maton-Connection header when managing multiple connections.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1f09cbda2456d9bde8d5be3c0544f9f14ed40b1bc1aa644c32d0b6a9a00c122"
+}

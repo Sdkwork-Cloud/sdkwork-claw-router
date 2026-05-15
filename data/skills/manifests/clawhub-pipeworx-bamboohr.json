@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44550,
+  "uuid": "skill-clawhub-pipeworx-bamboohr",
+  "skillKey": "clawhub-pipeworx-bamboohr",
+  "name": "Pipeworx bamboohr",
+  "summary": "Access and manage BambooHR employee data, including directory, individual profiles, time-off requests, and employee files via API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_bamboohr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Access and manage BambooHR employee data, including directory, individual profiles, time-off re."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-bamboohr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-bamboohr",
+      "url": "https://clawhub.ai/skills/pipeworx-bamboohr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-bamboohr",
+    "url": "https://clawhub.ai/skills/pipeworx-bamboohr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-bamboohr-78ce69d2ba04fadc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-bamboohr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-bamboohr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa5e101b0e91a9cfef93b77bef3ecc63bff00776e631b5d56429eefb56a62bb1",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:32:24.061Z"
+}

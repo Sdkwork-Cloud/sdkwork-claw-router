@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47643,
+  "uuid": "skill-clawhub-network-tool",
+  "skillKey": "clawhub-network-tool",
+  "name": "Network Tool",
+  "summary": "Display and manage network interfaces, connections, and routing information. Use for network diagnostics and configuration analysis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.network_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display and manage network interfaces, connections, and routing information",
+        "Use for network diagnostics and configuration analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/network-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "network-tool",
+      "url": "https://clawhub.ai/skills/network-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "network-tool",
+    "url": "https://clawhub.ai/skills/network-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/network-tool-95492733e3c653fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/network-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-network-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:901e11d42fe31ad981b5add1f2bef453f6a8e5b1f42beb1cd2468f499840b42b",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T21:10:05.823Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26980,
+  "uuid": "skill-clawhub-checkout-friction-audit",
+  "skillKey": "clawhub-checkout-friction-audit",
+  "name": "Checkout Friction Audit",
+  "summary": "Audit checkout friction points and prioritize fixes that improve completed purchases without increasing risk. Use when the user reports high add-to-cart but...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkout_friction_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Audit checkout friction points and prioritize fixes that improve completed purchases without in.",
+        "Use when the user reports high add-to-cart but..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/checkout-friction-audit@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "checkout-friction-audit",
+      "url": "https://clawhub.ai/skills/checkout-friction-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkout-friction-audit",
+    "url": "https://clawhub.ai/skills/checkout-friction-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkout-friction-audit-619eb01803a60caa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/checkout-friction-audit@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-checkout-friction-audit-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:174e00f61527666f5b8264fc12618f067b6fea2416175ed02bccc72436815dff",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:01:33.275Z"
+}

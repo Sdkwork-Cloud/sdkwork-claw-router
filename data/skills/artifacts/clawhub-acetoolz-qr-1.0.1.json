@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acetoolz-qr@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acetoolz_qr",
+  "skill": {
+    "id": 42034,
+    "skillKey": "clawhub-acetoolz-qr",
+    "name": "AceToolz QR Code Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acetoolz-qr",
+    "url": "https://clawhub.ai/skills/acetoolz-qr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acetoolz-qr-40ccd3999dce6cac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate QR codes for any URL or text instantly using AceToolz. Returns a hosted image URL ready to share in chat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "acetoolz",
+      "userId": "s173hxdx82gzvw16jm4jeemgdx84511j",
+      "displayName": "AceToolz",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775316934295,
+      "changelog": "- Now returns a hosted QR image URL (`qr_image_url`) for easy sharing on chat platforms.\n- Updated instructions: always share the direct image link; only mention the AceToolz website for advanced options.\n- Added explicit OS-specific API call examples (curl for macOS/Linux, PowerShell for Windows).\n- Expanded error handling to cover API unreachability.\n- Clarified that base64 data should only be used on platforms that support it.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5449c0bdd3a969a7c52cbf1e54c67d3dc6c7788fcc9c875fa646316888710290"
+}

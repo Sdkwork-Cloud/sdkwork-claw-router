@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/plaud-unofficial@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plaud_unofficial",
+  "skill": {
+    "id": 11014,
+    "skillKey": "clawhub-plaud-unofficial",
+    "name": "Plaud Unofficial Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plaud-unofficial",
+    "url": "https://clawhub.ai/skills/plaud-unofficial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plaud-unofficial-79ce9053b238eb1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when accessing Plaud voice recorder data (recordings, transcripts, AI summaries) - guides credential setup and provides patterns for plaud_client.py"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leonardsellem",
+      "userId": "publishers:leonardsellem",
+      "displayName": "leonardsellem",
+      "image": "https://avatars.githubusercontent.com/u/2162208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2027,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769416448262,
+      "changelog": "Initial release of the Plaud API skill for voice recorder data access.\n\n- Added plaud_client.py CLI tool for listing, downloading, and managing Plaud recordings, transcripts, and summaries.\n- Provided sample .env.example for credential setup.\n- Included detailed PLAUD_API.md documentation of endpoints and usage.\n- Added requirements.txt listing necessary Python dependencies.\n- Supplied .gitignore for proper version control hygiene.\n- SKILL.md now reflects full instructions for interactive credential setup, file usage from the skill directory, and common usage patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d2774e99ac992f411259f0bf95329c1df893d1995dbff9603b0352ef616037c"
+}

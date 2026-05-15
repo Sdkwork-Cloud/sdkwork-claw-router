@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73507,
+  "uuid": "skill-clawhub-summarize-notes",
+  "skillKey": "clawhub-summarize-notes",
+  "name": "每日笔记深度解读",
+  "summary": "每日笔记深度解读。从笔记目录筛选当日笔记，分类、逐条提炼要点，最后做深度关联分析和洞察挖掘。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YoungAndSure",
+      "features": [
+        "每日笔记深度解读。从笔记目录筛选当日笔记，分类、逐条提炼要点，最后做深度关联分析和洞察挖掘。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/summarize-notes@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20354109?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "summarize-notes",
+      "url": "https://clawhub.ai/skills/summarize-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-notes",
+    "url": "https://clawhub.ai/skills/summarize-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-notes-543db2a35918cdb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/summarize-notes@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-summarize-notes-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e45e2b5b9dabb7ffa41243530b8ccc969dff79196a2c4c99078dad68354236d2",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T02:35:27.772Z"
+}

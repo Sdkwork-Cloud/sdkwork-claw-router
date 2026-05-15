@@ -1,4 +1,4 @@
-import json
+﻿import json
 import re
 import unittest
 from pathlib import Path
@@ -474,8 +474,8 @@ class ModelCatalogStandardContractTest(unittest.TestCase):
             APP_OPENAPI_PATH,
             SCHEMA_COMPONENTS_PATH,
             API_MANIFEST_PATH,
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "index.ts",
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "index.ts",
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "index.ts",
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts",
         ]
 
         for path in paths:

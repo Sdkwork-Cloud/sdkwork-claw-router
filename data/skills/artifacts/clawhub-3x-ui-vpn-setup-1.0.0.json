@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/3x-ui-vpn-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.3x_ui_vpn_setup",
+  "skill": {
+    "id": 19200,
+    "skillKey": "clawhub-3x-ui-vpn-setup",
+    "name": "3x-ui VPN Server Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "3x-ui-vpn-setup",
+    "url": "https://clawhub.ai/skills/3x-ui-vpn-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/3x-ui-vpn-setup-d5d9673f6c3aad51.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete VPN server setup from scratch. Takes a fresh VPS (IP + root + password from hosting provider) through full server hardening and 3x-ui (Xray proxy pa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davydenkovm",
+      "userId": "s172p1n2txqraepx0sjf8pr335840c55",
+      "displayName": "Mikhail",
+      "image": "https://avatars.githubusercontent.com/u/3938593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 519,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772899100696,
+      "changelog": "Initial release of fully automated VPN server deployment skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d5180b7f9e2def58fdc9122f99ee01610010ccfec9e852b277daccf1bb2430e3"
+}

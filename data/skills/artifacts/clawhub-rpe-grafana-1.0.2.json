@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rpe-grafana@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rpe_grafana",
+  "skill": {
+    "id": 16963,
+    "skillKey": "clawhub-rpe-grafana",
+    "name": "rpe-grafana"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rpe-grafana",
+    "url": "https://clawhub.ai/skills/rpe-grafana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rpe-grafana-50fdac4f95f12110.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read current values from Grafana dashboards without knowing the underlying queries. Use when: asked about values visible in a Grafana dashboard (sensor readi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darkstards9",
+      "userId": "publishers:darkstards9",
+      "displayName": "DarkStarDS9",
+      "image": "https://avatars.githubusercontent.com/u/10066128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 803,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772816318265,
+      "changelog": "Fixed API incompatibility",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1e656c91ab635b264c0cebd15ceddac33268c8b27e97fe6310e54660673eb0ad"
+}

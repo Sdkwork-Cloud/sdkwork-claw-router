@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25214,
+  "uuid": "skill-clawhub-checkout",
+  "skillKey": "clawhub-checkout",
+  "name": "Checkout.com - Integrate with Agentic Payments & Wallets",
+  "summary": "Paypal compatible Payments & Wallet - Give your agent spending power. Financial management for Agents and OpenClaw bots.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jononovo",
+      "features": [
+        "Paypal compatible Payments & Wallet",
+        "Give your agent spending power",
+        "Financial management for Agents and OpenClaw bots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/checkout@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22595409?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "checkout",
+      "url": "https://clawhub.ai/skills/checkout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkout",
+    "url": "https://clawhub.ai/skills/checkout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkout-c7761e58969f7edd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/checkout@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-checkout-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da1f0f93c7da31b8b8d76bd34974bdb028b31e15e8a8966059457fe6c10f2bc5",
+      "artifactSizeBytes": 2586
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T17:51:19.687Z"
+}

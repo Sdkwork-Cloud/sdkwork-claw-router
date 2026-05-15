@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-evo@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_evo",
+  "skill": {
+    "id": 49946,
+    "skillKey": "clawhub-review-evo",
+    "name": "ReviewEvo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-evo",
+    "url": "https://clawhub.ai/skills/review-evo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-evo-29bb3a4cd0a67857.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improving code reviewer that learns your codebase over time. Analyzes git history, spots patterns, identifies risk — and gets smarter every run."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "8co",
+      "userId": "s17dqwewnx0p9j18ya34edd63x83jh23",
+      "displayName": "8co",
+      "image": "https://avatars.githubusercontent.com/u/1120377?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 586,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772072935309,
+      "changelog": "Add high-traffic search tags for better discoverability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2c59668ccb04fd629a02bd9017b6143b380819b05351d55e6cdf1ae3f6fe78ec"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doctorclaw-meeting-prep@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_meeting_prep",
+  "skill": {
+    "id": 52109,
+    "skillKey": "clawhub-doctorclaw-meeting-prep",
+    "name": "DoctorClaw Meeting Prep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-meeting-prep",
+    "url": "https://clawhub.ai/skills/doctorclaw-meeting-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-meeting-prep-69ead598a273715e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Meeting prep — pull context on attendees, topics, and action items before every calendar event. Auto or on-demand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ceobotson-bot",
+      "userId": "s179qe3ytytdn9499vw61m1c4h83hhr8",
+      "displayName": "ceobotson-bot",
+      "image": "https://avatars.githubusercontent.com/u/263067918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774357410485,
+      "changelog": "- No changes detected in the code or documentation for this release.\n- Version number updated to 1.0.1 with no other modifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c4c773bb6d08f073701d20169351ae6a8f545353ba81f99ce6cecd21df37710"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-haya@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_haya",
+  "skill": {
+    "id": 43662,
+    "skillKey": "clawhub-find-skills-haya",
+    "name": "Find Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-haya",
+    "url": "https://clawhub.ai/skills/find-skills-haya",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-haya-11bcfd2f90559ccd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hayasam",
+      "userId": "s1748accwgwz1fs5rpy9vrb1zx83kt4s",
+      "displayName": "Haya Samaana",
+      "image": "https://avatars.githubusercontent.com/u/7658783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774212694758,
+      "changelog": "Initial release of find-skills-haya.\n\n- Helps users discover and install agent skills based on their questions or interests in extending capabilities.\n- Explains how to search for, evaluate, and install skills from the open agent skills ecosystem.\n- Provides usage scenarios and tips for effective skill discovery.\n- Includes best practices for recommending quality, reputable skills.\n- Offers guidance on what to do when no relevant skill is found.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:420ce75586c8557122c05954832216038cc53062678e5c785e553710793b4578"
+}

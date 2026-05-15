@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-competitor-alternatives@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_competitor_alternatives",
+  "skill": {
+    "id": 34356,
+    "skillKey": "clawhub-abm-competitor-alternatives",
+    "name": "Competitor Alternatives"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-competitor-alternatives",
+    "url": "https://clawhub.ai/skills/abm-competitor-alternatives",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-competitor-alternatives-e46433257efbf818.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'v..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773907216549,
+      "changelog": "- Added comprehensive guidelines for creating competitor comparison and alternative pages for SEO and sales enablement.\n- Outlined four key comparison formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor.\n- Emphasized principles of honesty, depth, user decision support, and modular content architecture.\n- Provided detailed page structures for each format, including essential sections like TL;DR summaries, pricing analysis, and migration guidance.\n- Specified research best practices and ongoing update processes to ensure accuracy and trustworthiness.\n- Included SEO considerations such as keyword targeting, internal linking strategies, and schema markup recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:48e6e45849a6fb0e52f1cde5cea9c982df717a2c91f9d2da6e4da2464b015575"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59749,
+  "uuid": "skill-clawhub-vibe-coding-cn",
+  "skillKey": "clawhub-vibe-coding-cn",
+  "name": "Vibe Coding Cn",
+  "summary": "AI 团队协作，自动生成完整项目。5 Agent + SPEC.md + Agent 投票审批 + 需求追溯。必须在 OpenClaw 环境中使用。",
+  "version": "4.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_coding_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gotomanutd-dot",
+      "features": [
+        "AI 团队协作，自动生成完整项目。5 Agent + SPEC.md + Agent 投票审批 + 需求追溯。必须在 OpenClaw 环境中使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibe-coding-cn@4.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263017920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibe-coding-cn",
+      "url": "https://clawhub.ai/skills/vibe-coding-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-coding-cn",
+    "url": "https://clawhub.ai/skills/vibe-coding-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-coding-cn-174cd1714319892d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibe-coding-cn@4.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibe-coding-cn-4.1.0.json",
+      "version": "4.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2a97e65b5b01e22f15078fdca1eff10bdf899bcd750e6d3d45ce16b9879deb6",
+      "artifactSizeBytes": 2640
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T13:31:00.438Z"
+}

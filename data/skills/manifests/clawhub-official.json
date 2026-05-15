@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50517,
+  "uuid": "skill-clawhub-official",
+  "skillKey": "clawhub-official",
+  "name": "AgentGo Stealth Browser",
+  "summary": "Automate websites using AgentGo’s cloud browser cluster via Playwright (pinned to playwright@1.51.0), with stealth-friendly configuration intended to reduce...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AgentGo Stealth Browser",
+      "features": [
+        "Automate websites using AgentGo’s cloud browser cluster via Playwright (pinned to playwright@1.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/official@1.0.0",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/official/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "official",
+      "url": "https://clawhub.ai/skills/official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "official",
+    "url": "https://clawhub.ai/skills/official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/official-6896191a14f6c665.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/official@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-official-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f5adf875a3749ba485fd234073ea8b430eb4aa078bb0647396ec66e782c8393",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:29:49.289Z"
+}

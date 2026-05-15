@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/myquant@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myquant",
+  "skill": {
+    "id": 64204,
+    "skillKey": "clawhub-myquant",
+    "name": "myquant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myquant",
+    "url": "https://clawhub.ai/skills/myquant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myquant-2c364ec344f46d4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "掘金量化Python SDK - 事件驱动量化平台，支持A股、期货、期权、ETF、可转债回测与实盘交易。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "coderwpf",
+      "userId": "s170h18zjksf6t82v1asyztbz583hffb",
+      "displayName": "coderwpf",
+      "image": "https://avatars.githubusercontent.com/u/134041140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774260178778,
+      "changelog": "myquant 1.0.3\n\n- Added a demo project directory with two new files: demo_project/README.md and demo_project/demo.py\n- Provides example code and documentation to help users get started quickly with the SDK.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a2c36deb84dee35338a6f2b9fbed9f05f1ef6d795310fe6f685f1b58f970151"
+}

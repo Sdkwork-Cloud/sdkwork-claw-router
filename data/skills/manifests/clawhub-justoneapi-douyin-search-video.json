@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45402,
+  "uuid": "skill-clawhub-justoneapi-douyin-search-video",
+  "skillKey": "clawhub-justoneapi-douyin-search-video",
+  "name": "Douyin (TikTok China) Video Search API",
+  "summary": "Call GET /api/douyin/search-video/v4 for Douyin (TikTok China) Video Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douyin_search_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/douyin/search-video/v4 for Douyin (TikTok China) Video Search through JustOneAPI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-douyin-search-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-douyin-search-video",
+      "url": "https://clawhub.ai/skills/justoneapi-douyin-search-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douyin-search-video",
+    "url": "https://clawhub.ai/skills/justoneapi-douyin-search-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douyin-search-video-36c7d09bf56061e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-douyin-search-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-douyin-search-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:205629b99600c835eb6b503b7c04c668d94474df4b8917eedb23fbd9342221b6",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T19:17:09.200Z"
+}

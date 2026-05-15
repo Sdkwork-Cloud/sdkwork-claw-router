@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56830,
+  "uuid": "skill-clawhub-hou-tea-store",
+  "skillKey": "clawhub-hou-tea-store",
+  "name": "候茶商店",
+  "summary": "Browse, recommend, and purchase Chinese tea from hou-tea.com using the agent-native API (https://hou-tea.com/api/agent/catalog) and x402 USDC payments. Activ...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hou_tea_store",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackrain19743",
+      "features": [
+        "Browse, recommend, and purchase Chinese tea from hou-tea.com using the agent-native API (https:.",
+        "Activ..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hou-tea-store@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131783299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hou-tea-store",
+      "url": "https://clawhub.ai/skills/hou-tea-store"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hou-tea-store",
+    "url": "https://clawhub.ai/skills/hou-tea-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hou-tea-store-fd6f32edc3eca8e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hou-tea-store@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hou-tea-store-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bc6b64c095cab928647fbb22dc424ea29db6e9a36f29d2b2aca74b02f80dad2",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T09:06:45.838Z"
+}

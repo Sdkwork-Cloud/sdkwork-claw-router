@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51415,
+  "uuid": "skill-clawhub-cheap-flight",
+  "skillKey": "clawhub-cheap-flight",
+  "name": "Search Cheap Flights — Low-Cost Airfare, Budget Airlines, Discount Tickets & Flight Deals",
+  "summary": "Find the cheapest flights between any two cities. Compares prices across airlines, sorts by lowest fare, and highlights budget options including red-eye and...",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cheap_flight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Find the cheapest flights between any two cities",
+        "Compares prices across airlines, sorts by lowest fare, and highlights budget options including."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cheap-flight@3.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cheap-flight",
+      "url": "https://clawhub.ai/skills/cheap-flight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cheap-flight",
+    "url": "https://clawhub.ai/skills/cheap-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cheap-flight-e8c57781843b1bed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cheap-flight@3.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cheap-flight-3.1.0.json",
+      "version": "3.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2963f1d343df91c0d910cc1662e42c0e91bd3d77d44223cf78ad2cca66a4554d",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:04:23.826Z"
+}

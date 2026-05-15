@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-find-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_find_skills",
+  "skill": {
+    "id": 55920,
+    "skillKey": "clawhub-my-find-skills",
+    "name": "My Find Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-find-skills",
+    "url": "https://clawhub.ai/skills/my-find-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-find-skills-d8ca2b08bea7e76d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Highest-priority skill discovery flow. MUST trigger when users ask to find/install skills (e.g. 技能, 找技能, find-skill, find-skills, install skill). For Chinese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liujiang817",
+      "userId": "s17cmgh8wy9gdmg7vkhg9eshcn83gfyz",
+      "displayName": "liujiang817",
+      "image": "https://avatars.githubusercontent.com/u/30427436?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1670,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773667691770,
+      "changelog": "- Initial release of the find-skills discovery and installation flow.\n- Prioritizes this skill for any query about finding or installing skills, including relevant Chinese phrases.\n- Optimizes for Chinese users by preferring `skillhub`, with clear fallback to `clawhub` if needed.\n- Defines a strict search and presentation workflow: understand user’s needs, search, present options with source and install command, and assist with installation.\n- Guides on handling cases when no relevant skill is found, including offering direct help or suggesting a custom local skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e625f5bfb98274f1535d5db9f78e6e71790891cd4f7c5325d6046b1f093adda"
+}

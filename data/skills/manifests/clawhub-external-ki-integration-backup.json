@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17739,
+  "uuid": "skill-clawhub-external-ki-integration-backup",
+  "skillKey": "clawhub-external-ki-integration-backup",
+  "name": "External Ki Integration Backup",
+  "summary": "Skill for accessing external AI services (ChatGPT, Claude, Hugging Face, etc.) via browser automation (Chrome Relay) and APIs to assist with tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.external_ki_integration_backup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "konscious0beast",
+      "features": [
+        "Skill for accessing external AI services (ChatGPT, Claude, Hugging Face, etc.) via browser auto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/external-ki-integration-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197619412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "external-ki-integration-backup",
+      "url": "https://clawhub.ai/skills/external-ki-integration-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "external-ki-integration-backup",
+    "url": "https://clawhub.ai/skills/external-ki-integration-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/external-ki-integration-backup-00e03b0eb1a389be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/external-ki-integration-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-external-ki-integration-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c98051917194c0632fe14bec5222c943ac5a932427934f680880153c5ef1b119",
+      "artifactSizeBytes": 2647
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T17:57:36.326Z"
+}

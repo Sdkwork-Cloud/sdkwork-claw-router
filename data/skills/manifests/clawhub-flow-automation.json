@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47267,
+  "uuid": "skill-clawhub-flow-automation",
+  "skillKey": "clawhub-flow-automation",
+  "name": "Automation Workflow",
+  "summary": "Create and manage automation workflows for repetitive tasks. Use when user needs to schedule periodic data sync, chain API calls, set up triggered actions, b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Create and manage automation workflows for repetitive tasks",
+        "Use when user needs to schedule periodic data sync, chain API calls, set up triggered actions,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flow-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flow-automation",
+      "url": "https://clawhub.ai/skills/flow-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-automation",
+    "url": "https://clawhub.ai/skills/flow-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-automation-74d2f2991bca7d24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flow-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flow-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd7eb0f45ed9fc3029cada3e6a6ca8501d5f6b026080bb29e4a8b067929e6089",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:24:35.525Z"
+}

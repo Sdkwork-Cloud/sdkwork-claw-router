@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-text-to-video-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_text_to_video_creator",
+  "skill": {
+    "id": 46312,
+    "skillKey": "clawhub-free-text-to-video-creator",
+    "name": "Free Text To Video Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-text-to-video-creator",
+    "url": "https://clawhub.ai/skills/free-text-to-video-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-text-to-video-creator-0773cdbc24a8ace2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert text prompts into ready-to-share videos with this skill. Works with TXT, DOCX, PDF, plain text files up to 500MB. content creators, marketers, blogge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776072562212,
+      "changelog": "Initial release — Free Text to Video Creator v1.0.0\n\n- Instantly converts text prompts (TXT, DOCX, PDF, plain text up to 500MB) into 1080p MP4 videos using a cloud rendering pipeline.\n- Seamless video generation for content creators, marketers, and bloggers—no filming required.\n- Fast processing (typically 1–2 minutes per video) with free starter credits available via quick token registration.\n- Supports uploads, editing, background music, text overlays, and custom aspect ratios.\n- Exports in popular formats: MP4, MOV, AVI, WEBM, MKV, GIF, JPG, PNG, MP3, WAV, M4A, AAC.\n- Simple commands for downloading, checking credit balance, status updates, and previewing or refining video drafts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:312f6def69e2fb19216df4dfab29360ec62185f6f0d491dc22ca38bf79b5fa80"
+}

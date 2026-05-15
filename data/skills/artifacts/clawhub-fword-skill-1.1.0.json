@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fword-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fword_skill",
+  "skill": {
+    "id": 53397,
+    "skillKey": "clawhub-fword-skill",
+    "name": "Fword Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fword-skill",
+    "url": "https://clawhub.ai/skills/fword-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fword-skill-a8568266f7a965f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered bidirectional Word ↔ LaTeX converter. Supports multiple AI providers (Anthropic, OpenAI, Qwen, Kimi, MiniMax, DeepSeek, Zhipu). Converts Word to c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinzhengxu",
+      "userId": "s173fdcrx8k9sstg9c4frgfqyn83k0gy",
+      "displayName": "Zhengxu (Joshua) Jin",
+      "image": "https://avatars.githubusercontent.com/u/33077399?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774408454782,
+      "changelog": "Add multi-provider support: Anthropic, OpenAI, Qwen, Kimi, MiniMax, DeepSeek, Zhipu",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57107a07222fd25109bb7389eb3d104c14cbc46ac8c27064ef52cec3f0a5376f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72602,
+  "uuid": "skill-clawhub-livestream-commerce",
+  "skillKey": "clawhub-livestream-commerce",
+  "name": "直播带货",
+  "summary": "提供直播带货的可落地指南与SOP。在开展直播带货相关工作时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.livestream_commerce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供直播带货的可落地指南与SOP。在开展直播带货相关工作时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/livestream-commerce@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "livestream-commerce",
+      "url": "https://clawhub.ai/skills/livestream-commerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "livestream-commerce",
+    "url": "https://clawhub.ai/skills/livestream-commerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/livestream-commerce-99c88feb3ec562e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/livestream-commerce@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-livestream-commerce-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1046add521eba418b7a7a3ca5644edebae46105946e02a28349d408d14a2403e",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:43:17.622Z"
+}

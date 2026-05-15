@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toutiao-article-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_article_publish",
+  "skill": {
+    "id": 70052,
+    "skillKey": "clawhub-toutiao-article-publish",
+    "name": "toutiao-article-publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-article-publish",
+    "url": "https://clawhub.ai/skills/toutiao-article-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-article-publish-2811256e3ecab429.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "今日头条（头条号）全链路自动发布技能。支持微头条和头条文章两种内容形式的自动化发布： 覆盖选题 → 写作 → 配图上传 → 发布全流程。 触发关键词：发布文章、头条文章、微头条、头条号发布、发布头条、写文章发布、文章配图。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wtl01",
+      "userId": "s17abxt14v1q25w3rz45acpr7184van0",
+      "displayName": "wtl01",
+      "image": "https://avatars.githubusercontent.com/u/48779693?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776127588541,
+      "changelog": "toutiao-auto-publish-pro v1.0.0\n\n- Initial release of the Toutiao (头条号) full-chain automated publishing skill\n- Supports automated creation and publishing of both 头条 articles and 微头条, including topic selection, writing, image upload, and publishing\n- Utilizes OpenClaw's built-in browser tool for direct browser automation; reuses user browser login state (no repeated login required)\n- Features automated image selection/upload workflow; supports AI-driven illustration decisions and image reuse\n- Provides full documentation for setup, workflow, timing, and troubleshooting\n- No external Python script dependencies; pure browser automation toolchain",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74f668768d418d7562037db16a8c2ae7ec5a9b02cb38dd2a106dc8d51dad9353"
+}

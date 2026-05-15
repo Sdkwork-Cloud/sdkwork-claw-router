@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22958,
+  "uuid": "skill-clawhub-discourse",
+  "skillKey": "clawhub-discourse",
+  "name": "Discourse",
+  "summary": "Discourse integration. Manage Forums. Use when the user wants to interact with Discourse data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discourse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Discourse integration",
+        "Manage Forums",
+        "Use when the user wants to interact with Discourse data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discourse@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discourse",
+      "url": "https://clawhub.ai/skills/discourse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discourse",
+    "url": "https://clawhub.ai/skills/discourse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discourse-bfcf44328d2b807c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discourse@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-discourse-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68faedda110d017ebe7b4588b11e1029e6d0d88d297fc0c9aa73be7b3ae81840",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:24:14.087Z"
+}

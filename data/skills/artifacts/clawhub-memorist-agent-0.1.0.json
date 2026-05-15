@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memorist-agent@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memorist_agent",
+  "skill": {
+    "id": 51106,
+    "skillKey": "clawhub-memorist-agent",
+    "name": "Memorist Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memorist-agent",
+    "url": "https://clawhub.ai/skills/memorist-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memorist-agent-39a61bdbcd818550.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Memorist Agent — helps you capture your parents' and family members' life stories through adaptive interviews via WhatsApp, WeChat, or direct conversation. O..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinghaojia",
+      "userId": "s178ctw1yw1mpyqe81gqd7y1cn84b9ms",
+      "displayName": "YinghaoJia",
+      "image": "https://avatars.githubusercontent.com/u/23326844?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773358913314,
+      "changelog": "Initial release: Capture family life stories through adaptive interviews. Supports WhatsApp, iMessage, Telegram auto-reply and relay mode. Bilingual English/Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d93de9f28a13e60f5ecd7e2f68c5a1043b861be16a6805ab6179e56b5be01126"
+}

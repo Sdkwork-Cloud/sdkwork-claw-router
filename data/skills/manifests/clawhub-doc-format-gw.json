@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68321,
+  "uuid": "skill-clawhub-doc-format-gw",
+  "skillKey": "clawhub-doc-format-gw",
+  "name": "机关公文排版skill",
+  "summary": "公文排版工具 - 根据公文格式规范自动排版Word文档。适用于发送Word文件前进行格式调整。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doc_format_gw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "batduke",
+      "features": [
+        "根据公文格式规范自动排版Word文档。适用于发送Word文件前进行格式调整。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doc-format-gw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210201426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doc-format-gw",
+      "url": "https://clawhub.ai/skills/doc-format-gw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doc-format-gw",
+    "url": "https://clawhub.ai/skills/doc-format-gw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doc-format-gw-863b42d4e496e225.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doc-format-gw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doc-format-gw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78df5fd8e21cf260ff4eed3df76944e4cd92e94e067a598b77ffeea442d18945",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:33:47.729Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56504,
+  "uuid": "skill-clawhub-cloudbypass",
+  "skillKey": "clawhub-cloudbypass",
+  "name": "cloudbypass",
+  "summary": "Use Cloudbypass API (穿云API/穿云) to fetch pages protected by Cloudflare/Turnstile/JS challenge. Use when normal requests fail with challenge/403 and compliant...",
+  "version": "0.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudbypass",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chuanchuan007",
+      "features": [
+        "Use Cloudbypass API (穿云API/穿云) to fetch pages protected by Cloudflare/Turnstile/JS challenge",
+        "Use when normal requests fail with challenge/403 and compliant..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloudbypass@0.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145305514?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloudbypass",
+      "url": "https://clawhub.ai/skills/cloudbypass"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudbypass",
+    "url": "https://clawhub.ai/skills/cloudbypass",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudbypass-e14c59091e9a461e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloudbypass@0.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloudbypass-0.0.5.json",
+      "version": "0.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26e69cee08441873e6bc64d5b05581b985694b26e050792634528ba7f1c47288",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T07:27:51.545Z"
+}

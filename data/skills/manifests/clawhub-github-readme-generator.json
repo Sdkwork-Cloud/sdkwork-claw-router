@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19280,
+  "uuid": "skill-clawhub-github-readme-generator",
+  "skillKey": "clawhub-github-readme-generator",
+  "name": "GitHub README Generator",
+  "summary": "Generate beautiful, professional GitHub README files for your projects. Supports multiple templates, languages, and customization options.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_readme_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Generate beautiful, professional GitHub README files for your projects",
+        "Supports multiple templates, languages, and customization options."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-readme-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-readme-generator",
+      "url": "https://clawhub.ai/skills/github-readme-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-readme-generator",
+    "url": "https://clawhub.ai/skills/github-readme-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-readme-generator-b0a2a5c0539879a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-readme-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-readme-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5ebfa1423c589ccabdb41ef4e3b0874ad14de5887adbf4f4de62e2609d1afa1",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T08:20:42.389Z"
+}

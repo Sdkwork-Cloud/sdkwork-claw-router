@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmdb-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmdb_test",
+  "skill": {
+    "id": 60260,
+    "skillKey": "clawhub-cmdb-test",
+    "name": "Cmdb Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmdb-test",
+    "url": "https://clawhub.ai/skills/cmdb-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmdb-test-f719938a85bf10fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动化 IMyFone CMDB 版本发布到测试环境 - 一键发布应用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "azimao",
+      "userId": "s178jarqsaq7c1rjtvdxnp73m983jpa5",
+      "displayName": "azimao",
+      "image": "https://avatars.githubusercontent.com/u/15764632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774452682312,
+      "changelog": "Initial release of automated CMDB test environment deployment skill.\n\n- One-click automated deployment for specified IMyFone CMDB applications to the test environment.\n- Supports automatic login, branch selection (release2), and environment selection (香港-通用-测试).\n- Handles user input for application name and optional version description.\n- Provides feedback on success and handles common errors such as login issues or application not found.\n- Triggered by phrases like \"发布 icart-api 到测试\" or \"对 xxx 应用进行测试发布\".",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0113fd2d7a901f2e58bca8bebaf38449d9e4721f50159d7a1ea70a0eedfa3dbe"
+}

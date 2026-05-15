@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13277,
+  "uuid": "skill-clawhub-issue-prioritizer",
+  "skillKey": "clawhub-issue-prioritizer",
+  "name": "Issue Prioritizer",
+  "summary": "Prioritize GitHub issues by ROI, solution sanity, and architectural impact. Identifies quick wins, over-engineered proposals, and actionable bugs. Use for is...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.issue_prioritizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glucksberg",
+      "features": [
+        "Prioritize GitHub issues by ROI, solution sanity, and architectural impact",
+        "Identifies quick wins, over-engineered proposals, and actionable bugs",
+        "Use for is..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/issue-prioritizer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80581902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "issue-prioritizer",
+      "url": "https://clawhub.ai/skills/issue-prioritizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "issue-prioritizer",
+    "url": "https://clawhub.ai/skills/issue-prioritizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/issue-prioritizer-370bbad305b61df1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/issue-prioritizer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-issue-prioritizer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97da4b73150a9da1589c04ec22f26c32505b4fb99f6dd472a2d95809543d4df5",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T00:14:24.832Z"
+}

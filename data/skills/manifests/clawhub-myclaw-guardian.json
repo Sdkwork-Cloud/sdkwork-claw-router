@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15802,
+  "uuid": "skill-clawhub-myclaw-guardian",
+  "skillKey": "clawhub-myclaw-guardian",
+  "name": "OpenClaw Guardian by MyClaw.ai",
+  "summary": "Deploy and manage a Guardian watchdog for OpenClaw Gateway. Auto-monitor every 30s, self-repair via doctor --fix, git-based workspace rollback, daily snapsho...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myclaw_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Ye",
+      "features": [
+        "Deploy and manage a Guardian watchdog for OpenClaw Gateway",
+        "Auto-monitor every 30s, self-repair via doctor --fix, git-based workspace rollback, daily snaps."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myclaw-guardian@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121472001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myclaw-guardian",
+      "url": "https://clawhub.ai/skills/myclaw-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myclaw-guardian",
+    "url": "https://clawhub.ai/skills/myclaw-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myclaw-guardian-8081ea38fed03ff0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myclaw-guardian@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-myclaw-guardian-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:905eef45f246ea0104ccdb66665919489ccc2f1a7d61013bbb4e8583680e4dfd",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:38:48.398Z"
+}

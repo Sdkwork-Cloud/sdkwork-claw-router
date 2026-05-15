@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31456,
+  "uuid": "skill-clawhub-burst-sms",
+  "skillKey": "clawhub-burst-sms",
+  "name": "Burst Sms",
+  "summary": "Burst SMS integration. Manage data, records, and automate workflows. Use when the user wants to interact with Burst SMS data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.burst_sms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Burst SMS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Burst SMS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/burst-sms@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "burst-sms",
+      "url": "https://clawhub.ai/skills/burst-sms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "burst-sms",
+    "url": "https://clawhub.ai/skills/burst-sms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/burst-sms-ad6e20faf0b65afb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/burst-sms@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-burst-sms-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fb2662f48b897cb8ea7b81e5aba5a509ccc9f19df223d398d9e72ca1dbde950",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:51.674Z"
+}

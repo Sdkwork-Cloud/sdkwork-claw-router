@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66725,
+  "uuid": "skill-clawhub-bitsoul-ppt-maker",
+  "skillKey": "clawhub-bitsoul-ppt-maker",
+  "name": "bitsoul ppt 制作器",
+  "summary": "将用户的内容一键生成罗振宇风格的ppt演讲稿，当用户需要生成ppt时，输出一个完整科技风格的ppt",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitsoul_ppt_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhi43",
+      "features": [
+        "将用户的内容一键生成罗振宇风格的ppt演讲稿，当用户需要生成ppt时，输出一个完整科技风格的ppt"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitsoul-ppt-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68174337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitsoul-ppt-maker",
+      "url": "https://clawhub.ai/skills/bitsoul-ppt-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitsoul-ppt-maker",
+    "url": "https://clawhub.ai/skills/bitsoul-ppt-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitsoul-ppt-maker-37bd5cfa60dc72d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitsoul-ppt-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitsoul-ppt-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c45abc64ee67a7a4044d562d95aa8802dc258a5c7589c6b2d148ba5327881be3",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:28:44.309Z"
+}

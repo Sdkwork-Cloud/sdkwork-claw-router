@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-search-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_search_skill",
+  "skill": {
+    "id": 67660,
+    "skillKey": "clawhub-xhs-search-skill",
+    "name": "xhs-search-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-search-skill",
+    "url": "https://clawhub.ai/skills/xhs-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-search-skill-5bce0f596d625781.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书关键词调研技能，提供小红书搜索关键词、提取笔记内容和评论的完整工作流。使用 AgentBay 沙箱浏览器 + Playwright 实现登录检测、关键词搜索、笔记结构化提取。当用户提到“帮我在小红书搜/查/看热点/找笔记/提取评论/做舆情分析”时应使用本 skill。首次使用时需要在沙箱浏览器完成登录，后续..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ligoudanblabla",
+      "userId": "s17b8yqap00erj1727k8j1xsv183kph3",
+      "displayName": "李狗蛋",
+      "image": "https://avatars.githubusercontent.com/u/13466705?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 344,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773745907464,
+      "changelog": "xhs-search-skill 1.0.2\n\n- 新增脚本 `scripts/check_env.py`，支持一键检查依赖和 AgentBay API Key/连接配置。\n- 更新文档，明确将环境检查作为入口步骤，缺少 API Key 时需先引导用户配置开通。\n- 全流程梳理：环境检查、登录校验、关键词扩展与确认、再执行搜索/提取及结果摘要。\n- 明确规定不可向用户展示本地中间文件或路径，仅输出结构化分析结论。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fad74000c62b63136806b15d714960c64a59686d1ac000595fd2af32a8cff27e"
+}

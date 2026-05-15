@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/job-analysis-law@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_analysis_law",
+  "skill": {
+    "id": 58886,
+    "skillKey": "clawhub-job-analysis-law",
+    "name": "job-analysis-law"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-analysis-law",
+    "url": "https://clawhub.ai/skills/job-analysis-law",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-analysis-law-1e96fd13ad8d9153.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在对话中辅助学习\"工作分析/Job Analysis\"第 6 章\"Job Analysis and the Law\"。基于 c6.pdf 课本章节。当用户讨论工作分析与美国就业法律、EEO、EEOC、OFCCP、Title VII、Equal Pay Act、ADEA、Rehabilitation Act、ADA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776447227569,
+      "changelog": "- Initial release of the \"job-analysis-law\" skill focused on assisting users with Chapter 6, \"Job Analysis and the Law\" from the Job and Work Analysis.\n- Provides step-by-step support for U.S. employment law concepts relevant to job analysis, including EEO, Title VII, Equal Pay Act, ADA, adverse impact, and selection validation.\n- Uses progressive disclosure to deliver information—identifies user intent, offers concise explanations, and references detailed materials only as needed.\n- Answers mainly in Chinese with key legal terms given in both Chinese and English.\n- Emphasizes the connection between job analysis and legal/professional standards while setting boundaries between textbook learning and real-world legal compliance advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5625be4d297b0078f18291d6a020afcdd0fd82421d1581e2b367f08835f94fcf"
+}

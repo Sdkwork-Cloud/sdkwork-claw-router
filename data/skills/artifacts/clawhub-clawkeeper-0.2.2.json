@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawkeeper@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawkeeper",
+  "skill": {
+    "id": 45337,
+    "skillKey": "clawhub-clawkeeper",
+    "name": "ClawKeeper — Tasks & habits in a plain markdown file"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawkeeper",
+    "url": "https://clawhub.ai/skills/clawkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawkeeper-9629319b53ea63f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tasks and habits that live in a plain markdown file on your machine. Free, private, and claw-native."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tallhamn",
+      "userId": "publishers:tallhamn",
+      "displayName": "tallhamn",
+      "image": "https://avatars.githubusercontent.com/u/54941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 778,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1771269310956,
+      "changelog": "Update skill description",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2e781ae17548d5bfe4f9760d8eb26b8c5455a117ca5204f4661ca5e91dd033e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chick-fil-a@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chick_fil_a",
+  "skill": {
+    "id": 39280,
+    "skillKey": "clawhub-chick-fil-a",
+    "name": "Chick Fil A"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chick-fil-a",
+    "url": "https://clawhub.ai/skills/chick-fil-a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chick-fil-a-72be2a615de835e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chick-fil-A is a top US chicken fast-food chain known for its chicken sandwiches, signature sauces, waffle fries, and Sunday closures."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776238114393,
+      "changelog": "- 简化并精炼了 summary 与 read_when，突出 chick-fil-a 详情查询应用场景  \n- 优化内容结构，分为基础档案、核心产品线、行业地位等信息索引  \n- 强调适用于调研、咨询、市场分析等需求场景  \n- 新增提醒，具体数据以官方发布为准",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:efc733b1b203c7173e3d9311fbe58ff978450511953123ebdbf2058d5cf98930"
+}

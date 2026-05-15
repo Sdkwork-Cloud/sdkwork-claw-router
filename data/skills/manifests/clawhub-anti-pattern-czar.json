@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18140,
+  "uuid": "skill-clawhub-anti-pattern-czar",
+  "skillKey": "clawhub-anti-pattern-czar",
+  "name": "Anti-Pattern Czar",
+  "summary": "Detect and fix TypeScript error handling anti-patterns with state persistence and approval workflows. Use when scanning a codebase for silent error failures,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anti_pattern_czar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glucksberg",
+      "features": [
+        "Detect and fix TypeScript error handling anti-patterns with state persistence and approval work.",
+        "Use when scanning a codebase for silent error failures,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anti-pattern-czar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80581902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anti-pattern-czar",
+      "url": "https://clawhub.ai/skills/anti-pattern-czar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anti-pattern-czar",
+    "url": "https://clawhub.ai/skills/anti-pattern-czar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anti-pattern-czar-52cc4b15804a22b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anti-pattern-czar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anti-pattern-czar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af68b8fad08024a443ae7df54943959f2a356310d3543ea75690974e1c407260",
+      "artifactSizeBytes": 2062
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T04:55:15.839Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-forms-with-forms-ios-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_forms_with_forms_ios_app",
+  "skill": {
+    "id": 37189,
+    "skillKey": "clawhub-google-forms-with-forms-ios-app",
+    "name": "Forms for Google Drive"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-forms-with-forms-ios-app",
+    "url": "https://clawhub.ai/skills/google-forms-with-forms-ios-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-forms-with-forms-ios-app-add5b102dd9a9f7c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Forms API integration with managed OAuth. Create forms, add questions, export responses to Excel, and summarize response data. Use this skill when use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dfaaa",
+      "userId": "s176ywbrxc064rq1jxg32vy48x83ga55",
+      "displayName": "dfaaa",
+      "image": "https://avatars.githubusercontent.com/u/64463763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774316080226,
+      "changelog": "- Initial release: Seamless integration with the Google Forms API using managed OAuth and API key authentication via the Forms for Google Drive iOS App.\n- Features include creating new forms, adding questions, listing and managing forms, retrieving and summarizing responses, and exporting results to Excel.\n- Requires users to obtain a free API key from the companion iOS app for authentication.\n- Includes detailed API reference, error handling guidance, and agent instructions for secure and user-friendly operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:82cadc2e7b1a46af18658aaf05bd592eff0093c7c4ae34f3b7b21f8dd1492d08"
+}

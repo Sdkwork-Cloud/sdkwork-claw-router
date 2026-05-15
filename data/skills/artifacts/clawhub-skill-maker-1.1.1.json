@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-maker@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_maker",
+  "skill": {
+    "id": 20630,
+    "skillKey": "clawhub-skill-maker",
+    "name": "Skill Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-maker",
+    "url": "https://clawhub.ai/skills/skill-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-maker-f3fa66bcd4b44ecd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create new agent skills from scratch. Use when: (1) Building specific capabilities, (2) Converting workflows into reusable skills, (3) Designing skill struct..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kexu9",
+      "userId": "s177fq1kmnfz4mhm2xyw0c9kt183ga2b",
+      "displayName": "KeXu9",
+      "image": "https://avatars.githubusercontent.com/u/147953862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 517,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1772622360477,
+      "changelog": "v1.1.1: Fix metadata format and remove outdated section\n\n- Updated metadata frontmatter key to \"openclaw\" for consistency.\n- Removed the \"Quality Score\" section from the documentation.\n- No functional changes or new features added.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:85a2902667a1edd8844ac055b2d34fe4fe8c6f213cd96c903076f6e4231d7ea8"
+}

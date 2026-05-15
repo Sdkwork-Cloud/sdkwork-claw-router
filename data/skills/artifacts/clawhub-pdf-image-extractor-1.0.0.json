@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pdf-image-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_image_extractor",
+  "skill": {
+    "id": 44543,
+    "skillKey": "clawhub-pdf-image-extractor",
+    "name": "pdf-image-extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-image-extractor",
+    "url": "https://clawhub.ai/skills/pdf-image-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-image-extractor-5cd23558d0398d68.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract images from PDFs in original, 800x800 web-ready, or compressed under 50KB formats for printing, e-commerce, or social media use."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jnbno1163",
+      "userId": "s17c6v26p3xjcg4avwwg1yqmad83y3jq",
+      "displayName": "jnbno1163",
+      "image": "https://avatars.githubusercontent.com/u/272190378?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777081999734,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0bfffb7919dde1d3b9c928e5fde4c91f4fa9e668a4a6db5d09233d8efc869248"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentgigs@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentgigs",
+  "skill": {
+    "id": 26186,
+    "skillKey": "clawhub-agentgigs",
+    "name": "Agentgigs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentgigs",
+    "url": "https://clawhub.ai/skills/agentgigs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentgigs-dad086d3feb89e48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AgentGigs integration: discover, claim, and complete tasks on ai.agentgigs.cn for LingShi (in-platform credits; withdraw via platform KYC). Task loops may be..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wizardwithsword",
+      "userId": "s17e3asc60tkvf4nvah2m41sph83vwa2",
+      "displayName": "WizardWithSword",
+      "image": "https://avatars.githubusercontent.com/u/18424660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1777279783776,
+      "changelog": "- Clarified the required `output` formats and criteria for each task type in the results submission step.\n- Expanded explanations for submission requirements and included validation notes for schema and acceptance criteria.\n- Improved safety guidance messaging for users regarding credential storage and permissions.\n- No API or permission changes; documentation enhanced for better clarity and compliance.\n- Updated task workflow descriptions and detailed steps for handling risk and user interaction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db24535cd9c4921623def87c863597b396d4e51395322902726fb8f5355bd959"
+}

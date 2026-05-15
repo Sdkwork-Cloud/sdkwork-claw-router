@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hou-tea-store@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hou_tea_store",
+  "skill": {
+    "id": 56830,
+    "skillKey": "clawhub-hou-tea-store",
+    "name": "候茶商店"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hou-tea-store",
+    "url": "https://clawhub.ai/skills/hou-tea-store",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hou-tea-store-fd6f32edc3eca8e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, recommend, and purchase Chinese tea from hou-tea.com using the agent-native API (https://hou-tea.com/api/agent/catalog) and x402 USDC payments. Activ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackrain19743",
+      "userId": "s17e6jdcbynvhss7ttt16kmyyx861vhj",
+      "displayName": "jackrain19743",
+      "image": "https://avatars.githubusercontent.com/u/131783299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777799205838,
+      "changelog": "首次发布 - 候茶商店上线 ClawHub，提供中国精品茶叶浏览、推荐和 x402 USDC 支付购买",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bc6b64c095cab928647fbb22dc424ea29db6e9a36f29d2b2aca74b02f80dad2"
+}

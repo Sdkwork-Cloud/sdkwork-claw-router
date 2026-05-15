@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghst",
+  "skill": {
+    "id": 30086,
+    "skillKey": "clawhub-ghst",
+    "name": "ghst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghst",
+    "url": "https://clawhub.ai/skills/ghst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghst-e26a7610cc253b9a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Ghost blogs using the ghst CLI tool. Supports full Ghost Admin API access including posts, pages, members, tags, newsletters, themes, stats, social..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickludlam",
+      "userId": "s17axevwnzhw0vg8qs8f2kvxdn83q1mx",
+      "displayName": "Nick Ludlam",
+      "image": "https://avatars.githubusercontent.com/u/7568?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774719187272,
+      "changelog": "Initial release of the ghst skill.\n\n- Introduces integration with the ghst CLI for full Ghost Admin API support.\n- Enables management of posts, pages, members, tags, newsletters, themes, stats, social web, and more.\n- Requires Ghost site URL and staff access token for authentication, via environment variables or per-skill config.\n- Provides robust agent operation guidelines, including non-interactive and JSON output requirements.\n- Includes references and examples for safe operation, bulk actions, and advanced API usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67e47531c5703e34c0324b1aa27bad1e204d95d87f8b3ef4843ab04360d77dc8"
+}

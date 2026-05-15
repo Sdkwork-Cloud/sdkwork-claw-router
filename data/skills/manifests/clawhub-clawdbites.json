@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11411,
+  "uuid": "skill-clawhub-clawdbites",
+  "skillKey": "clawhub-clawdbites",
+  "name": "ClawdBites",
+  "summary": "Extract recipes from Instagram reels. Use when a user sends an Instagram reel link and wants to get the recipe from the caption. Parses ingredients, instructions, and macros into a clean format.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbites",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kylelol",
+      "features": [
+        "Extract recipes from Instagram reels",
+        "Use when a user sends an Instagram reel link and wants to get the recipe from the caption",
+        "Parses ingredients, instructions, and macros into a clean format."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdbites@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3771774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdbites",
+      "url": "https://clawhub.ai/skills/clawdbites"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbites",
+    "url": "https://clawhub.ai/skills/clawdbites",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbites-0dd64fcd8c7eb938.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdbites@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdbites-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e615806c967efa67d45dd95fe4508507c320dc70ad279bd14ac4710062fa8100",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T01:18:57.720Z"
+}

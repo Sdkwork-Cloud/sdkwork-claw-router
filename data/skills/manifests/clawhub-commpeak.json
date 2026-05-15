@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30908,
+  "uuid": "skill-clawhub-commpeak",
+  "skillKey": "clawhub-commpeak",
+  "name": "Commpeak",
+  "summary": "CommPeak integration. Manage data, records, and automate workflows. Use when the user wants to interact with CommPeak data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.commpeak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "CommPeak integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with CommPeak data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/commpeak@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "commpeak",
+      "url": "https://clawhub.ai/skills/commpeak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "commpeak",
+    "url": "https://clawhub.ai/skills/commpeak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/commpeak-64f7cdbb424591b9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/commpeak@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-commpeak-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d1924d631fb537faf53d9a359aeb13becec572254303e011a9ec2edca5e598a",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:33:47.866Z"
+}

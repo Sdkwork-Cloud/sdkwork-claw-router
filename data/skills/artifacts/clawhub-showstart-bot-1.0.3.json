@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/showstart-bot@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.showstart_bot",
+  "skill": {
+    "id": 72005,
+    "skillKey": "clawhub-showstart-bot",
+    "name": "Showstart Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "showstart-bot",
+    "url": "https://clawhub.ai/skills/showstart-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/showstart-bot-a41e4e12cebeb2aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "秀动演出查询与管理工具。用于查询秀动平台上的演出信息，包括演出详情、城市搜索、分类搜索、风格搜索、艺人搜索、附近演出等功能。当用户需要查找演出信息、了解演出详情、按城市/分类/风格搜索演出、或查找附近演出时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austin-am",
+      "userId": "s17f1awydkat5ccpaaf5fyv20s83kb6b",
+      "displayName": "Austin-AM",
+      "image": "https://avatars.githubusercontent.com/u/32726878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774497264009,
+      "changelog": "Version 1.0.3 of showstart-bot\n\n- No file changes detected in this release.\n- Functionality and documentation remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:05ed9683897cfac7030349d0e0502d7519884549288d2393244fc5e7d1984995"
+}

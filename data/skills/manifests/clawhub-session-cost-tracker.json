@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15727,
+  "uuid": "skill-clawhub-session-cost-tracker",
+  "skillKey": "clawhub-session-cost-tracker",
+  "name": "Session Cost Tracker",
+  "summary": "Track and analyze AI session cost-to-value by logging task, value, and token use to optimize productivity and reduce wasted effort.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_cost_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rushant Ashtputre",
+      "features": [
+        "Track and analyze AI session cost-to-value by logging task, value, and token use to optimize pr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-cost-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107141387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-cost-tracker",
+      "url": "https://clawhub.ai/skills/session-cost-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-cost-tracker",
+    "url": "https://clawhub.ai/skills/session-cost-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-cost-tracker-ccce6e6473a6fb1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-cost-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-cost-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e9182176784120c7253c66df2fd9668a25e7b15bf64a55e9f5ab9f4c473d365",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:18:39.002Z"
+}

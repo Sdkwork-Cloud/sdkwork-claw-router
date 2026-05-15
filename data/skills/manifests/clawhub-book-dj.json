@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13460,
+  "uuid": "skill-clawhub-book-dj",
+  "skillKey": "clawhub-book-dj",
+  "name": "Book DJ",
+  "summary": "Book dj services through Lokuli MCP. Use when user needs to find and book dj. Triggers on requests like \"book a dj\", \"find dj near me\", or any dj service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_dj",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book dj services through Lokuli MCP",
+        "Use when user needs to find and book dj",
+        "Triggers on requests like \"book a dj\", \"find dj near me\", or any dj service request."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-dj@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-dj",
+      "url": "https://clawhub.ai/skills/book-dj"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-dj",
+    "url": "https://clawhub.ai/skills/book-dj",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-dj-02b76fcfe6295c5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-dj@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-dj-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:adbe6d86f4b2d67d2457f8e5d107197901131e37bfa6374c33fe5e796006669f",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:06:08.619Z"
+}

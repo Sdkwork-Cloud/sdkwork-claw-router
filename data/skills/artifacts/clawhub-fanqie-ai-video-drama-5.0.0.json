@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fanqie-ai-video-drama@5.0.0",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fanqie_ai_video_drama",
+  "skill": {
+    "id": 41585,
+    "skillKey": "clawhub-fanqie-ai-video-drama",
+    "name": "Fanqie Novel AI Video Drama Batch Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fanqie-ai-video-drama",
+    "url": "https://clawhub.ai/skills/fanqie-ai-video-drama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fanqie-ai-video-drama-9380da5787dab66a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch generates complete AI video dramas from multi-chapter novels with covers, titles, tags, and outputs for TikTok serialization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ghwyever",
+      "userId": "s17e2s4tkevm4442ztsph1bhtd84d4rj",
+      "displayName": "GHwyever",
+      "image": "https://avatars.githubusercontent.com/u/177743476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "5.0.0",
+      "createdAt": 1775706180822,
+      "changelog": "Auto split multi-chapter novel into episodes, generate complete AI video with voiceover, subtitle, cover, title and tags. Support manhua and digital human styles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d72b45753178318fe331ea80be8a56d18ec810a8bcd0371e9b2cd794bd0ae81f"
+}

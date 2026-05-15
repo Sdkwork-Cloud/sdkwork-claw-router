@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yaoyao-memory-v2@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yaoyao_memory_v2",
+  "skill": {
+    "id": 64632,
+    "skillKey": "clawhub-yaoyao-memory-v2",
+    "name": "Yaoyao Memory Homo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yaoyao-memory-v2",
+    "url": "https://clawhub.ai/skills/yaoyao-memory-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yaoyao-memory-v2-8394a753b449e37b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "六层架构记忆系统 - 让 AI 跨会话保持上下文、沉淀知识、持续进化 【本地存储】SQLite 数据库 【全文搜索】FTS5 搜索引擎 【模块化】核心+可选模块，按需安装"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "taobaoaz",
+      "userId": "s1722r4y63245f5qzbjyqyerwh843vhe",
+      "displayName": "taobaoaz",
+      "image": "https://avatars.githubusercontent.com/u/118969539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 31
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1776262442411,
+      "changelog": "Hermes Bridge integration and engine/module refactor:\n\n- 集成 Hermes Bridge，支持 API 错误分类、智能路由、脱敏、限流等功能。\n- 新增 Hermes 适配脚本与 API 端点 (`/api/hermes_status`)，支持管理与监控 Hermes 能力。\n- 重构核心引擎，增加 `engine/` (analytics, backup, capture, recall, sync) 和 `storage/` 等模块，提升模块化与可维护性。\n- 新增/拆分搜索与存储引擎代码，提升全文与结构化搜索能力。\n- 更新多项配置与功能开关，支持更灵活的个性化部署。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72aa06c5a3b284ab817838160433766a58d654a4d791b54401d99ea902f13875"
+}

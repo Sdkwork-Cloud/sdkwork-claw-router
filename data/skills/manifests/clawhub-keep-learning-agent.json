@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65013,
+  "uuid": "skill-clawhub-keep-learning-agent",
+  "skillKey": "clawhub-keep-learning-agent",
+  "name": "Keep Learning Agent",
+  "summary": "持续学习 Agent - 知识沉淀和经验固化框架。支持学习记录、快速索引、自我修复、经验→模型转化。包含完整模板、索引系统、SOP 流程。让 AI Agent 持续进化，每天进步一点点。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keep_learning_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chow651",
+      "features": [
+        "持续学习 Agent",
+        "知识沉淀和经验固化框架。支持学习记录、快速索引、自我修复、经验→模型转化。包含完整模板、索引系统、SOP 流程。让 AI Agent 持续进化，每天进步一点点。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keep-learning-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155619884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keep-learning-agent",
+      "url": "https://clawhub.ai/skills/keep-learning-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keep-learning-agent",
+    "url": "https://clawhub.ai/skills/keep-learning-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keep-learning-agent-2f94458e86008500.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keep-learning-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keep-learning-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2c52ebad84be220ae35867d6551806a457e3955f310cbd57c6af6050d7ba81ea",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:32:34.744Z"
+}

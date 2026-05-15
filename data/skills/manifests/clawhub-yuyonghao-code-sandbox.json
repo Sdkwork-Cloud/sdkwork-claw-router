@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35761,
+  "uuid": "skill-clawhub-yuyonghao-code-sandbox",
+  "skillKey": "clawhub-yuyonghao-code-sandbox",
+  "name": "Code Sandbox",
+  "summary": "Secure sandbox for executing Node.js, Python, Go, and Rust code with timeout, CPU, and isolated temporary directory constraints.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuyonghao_code_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyonghao-123",
+      "features": [
+        "Secure sandbox for executing Node.js, Python, Go, and Rust code with timeout, CPU, and isolated."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuyonghao-code-sandbox@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267580628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuyonghao-code-sandbox",
+      "url": "https://clawhub.ai/skills/yuyonghao-code-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuyonghao-code-sandbox",
+    "url": "https://clawhub.ai/skills/yuyonghao-code-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuyonghao-code-sandbox-b55ad3441309d8ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuyonghao-code-sandbox@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuyonghao-code-sandbox-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7d0350df0ca059784f76c9b403194d55fc30d8e1f081b989eed734112458656",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:09:06.366Z"
+}

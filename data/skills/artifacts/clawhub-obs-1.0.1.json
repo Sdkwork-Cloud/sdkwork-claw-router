@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obs@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obs",
+  "skill": {
+    "id": 33930,
+    "skillKey": "clawhub-obs",
+    "name": "obs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obs",
+    "url": "https://clawhub.ai/skills/obs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obs-d39ed8b3cea68e3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Open Build Service (OBS) management with full API support for projects, packages, repositories, builds, submit requests, files, users, and search."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidongkl",
+      "userId": "s170sqmtx96w7vj0g1ee234b5583hhtw",
+      "displayName": "wei dong",
+      "image": "https://avatars.githubusercontent.com/u/7512609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774228945765,
+      "changelog": "Updated display name to lowercase",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3cf5af3838a0554c616402a4e794abb1d21bb8cbb5109b24e94d4611682a6adb"
+}

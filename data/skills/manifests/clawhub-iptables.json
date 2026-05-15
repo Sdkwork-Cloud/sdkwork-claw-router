@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34485,
+  "uuid": "skill-clawhub-iptables",
+  "skillKey": "clawhub-iptables",
+  "name": "Iptables",
+  "summary": "Iptables reference tool. Use when working with iptables in sysops contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iptables",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Iptables reference tool",
+        "Use when working with iptables in sysops contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iptables@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iptables",
+      "url": "https://clawhub.ai/skills/iptables"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iptables",
+    "url": "https://clawhub.ai/skills/iptables",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iptables-0f75ba9658721aa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iptables@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iptables-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:735a26299f300028238c2b3dbff29b3ad029cc1427039452592d8a1085192805",
+      "artifactSizeBytes": 1764
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:18:51.010Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9956,
+  "uuid": "skill-clawhub-glab-cli",
+  "skillKey": "clawhub-glab-cli",
+  "name": "Gitlab",
+  "summary": "Interact with GitLab using the `glab` CLI. Use when Claude needs to work with GitLab merge requests, CI/CD pipelines, issues, releases, or make API requests. Supports gitlab.com and self-hosted instances.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glab_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Portavion",
+      "features": [
+        "Interact with GitLab using the `glab` CLI",
+        "Use when Claude needs to work with GitLab merge requests, CI/CD pipelines, issues, releases, or.",
+        "Supports gitlab.com and self-hosted instances."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glab-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156545430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glab-cli",
+      "url": "https://clawhub.ai/skills/glab-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glab-cli",
+    "url": "https://clawhub.ai/skills/glab-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glab-cli-691a58d930294830.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glab-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-glab-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2423b18ca5ff9fd78ff1d986cfc4d9f263aa6b36d4433930ea896e922027c68",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-14T09:01:27.925Z"
+}

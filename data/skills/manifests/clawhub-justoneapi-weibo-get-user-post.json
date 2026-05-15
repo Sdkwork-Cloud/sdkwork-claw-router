@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48589,
+  "uuid": "skill-clawhub-justoneapi-weibo-get-user-post",
+  "skillKey": "clawhub-justoneapi-weibo-get-user-post",
+  "name": "Weibo User Published Posts API",
+  "summary": "Call GET /api/weibo/get-user-post/v1 for Weibo User Published Posts through JustOneAPI with uid.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_weibo_get_user_post",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/weibo/get-user-post/v1 for Weibo User Published Posts through JustOneAPI with uid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-weibo-get-user-post@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-weibo-get-user-post",
+      "url": "https://clawhub.ai/skills/justoneapi-weibo-get-user-post"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-weibo-get-user-post",
+    "url": "https://clawhub.ai/skills/justoneapi-weibo-get-user-post",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-weibo-get-user-post-6ab04528ceb1e7bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-weibo-get-user-post@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-weibo-get-user-post-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82c51006281eac3c40155a6c3135fe3de5cdd29cfb6ea959af6b32531e7b20ee",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T10:01:46.404Z"
+}

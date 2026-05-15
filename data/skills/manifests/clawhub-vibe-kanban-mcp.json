@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21819,
+  "uuid": "skill-clawhub-vibe-kanban-mcp",
+  "skillKey": "clawhub-vibe-kanban-mcp",
+  "name": "Vibe Kanban MCP",
+  "summary": "Control the local vibe-kanban MCP server to list orgs/projects/issues, create/update issues, manage workspaces, and find dashboard ports on macOS.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibe_kanban_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Burak",
+      "features": [
+        "Control the local vibe-kanban MCP server to list orgs/projects/issues, create/update issues, ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vibe-kanban-mcp@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47524842?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vibe-kanban-mcp",
+      "url": "https://clawhub.ai/skills/vibe-kanban-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibe-kanban-mcp",
+    "url": "https://clawhub.ai/skills/vibe-kanban-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibe-kanban-mcp-c1926dd48ad47afb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vibe-kanban-mcp@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vibe-kanban-mcp-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f24f8ac9c77a9153da55843ad868bbf2938488404b4d5402b90298a0e373350c",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T10:54:22.534Z"
+}

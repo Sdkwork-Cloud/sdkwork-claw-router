@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-prospect-researcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_prospect_researcher",
+  "skill": {
+    "id": 13161,
+    "skillKey": "clawhub-afrexai-prospect-researcher",
+    "name": "Prospect Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-prospect-researcher",
+    "url": "https://clawhub.ai/skills/afrexai-prospect-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-prospect-researcher-afefa5843d966ae7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research and qualify B2B prospects using web search. Builds structured profiles with company intel, key contacts, pain points, and engagement recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1218,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770949358559,
+      "changelog": "Initial release – enables systematic B2B prospect research and qualification.\n\n- Builds structured prospect profiles with company overview, recent activity, tech stack, key contacts, pain points, and engagement strategies.\n- Utilizes only public web data; cites sources for transparency and avoids assumptions.\n- Provides clear qualification, contact recommendations, and personalized outreach suggestions.\n- Marks unknown data explicitly and prioritizes recent, specific information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e6d9331a62eaeb670bfa6d919716afc6599f9c552f247871c0071ef0de4274c"
+}

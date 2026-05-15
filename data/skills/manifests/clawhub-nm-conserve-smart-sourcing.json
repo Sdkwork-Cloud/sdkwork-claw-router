@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34497,
+  "uuid": "skill-clawhub-nm-conserve-smart-sourcing",
+  "skillKey": "clawhub-nm-conserve-smart-sourcing",
+  "name": "Nm Conserve Smart Sourcing",
+  "summary": "Select optimal information sources for tool calls and file reads, balancing accuracy with token efficiency",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_conserve_smart_sourcing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Select optimal information sources for tool calls and file reads, balancing accuracy with token."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-conserve-smart-sourcing@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-conserve-smart-sourcing",
+      "url": "https://clawhub.ai/skills/nm-conserve-smart-sourcing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-conserve-smart-sourcing",
+    "url": "https://clawhub.ai/skills/nm-conserve-smart-sourcing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-conserve-smart-sourcing-77d5f052e705c388.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-conserve-smart-sourcing@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-conserve-smart-sourcing-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1c854812ff4284cd1a91f8b4c85dfca9efd8eb9fe8887d5c6e6cdfb1dd41578",
+      "artifactSizeBytes": 1909
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:48.264Z"
+}

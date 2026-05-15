@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bloomin8@2.2.5",
+  "version": "2.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bloomin8",
+  "skill": {
+    "id": 29933,
+    "skillKey": "clawhub-bloomin8",
+    "name": "Bloomin8"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bloomin8",
+    "url": "https://clawhub.ai/skills/bloomin8",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bloomin8-9e3a130181d47498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Push images or markdown to a Bloomin8 e-ink photo frame via cloud API (async) or local BLE+LAN (instant). Scan nearby devices, check status, track delivery,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xander887",
+      "userId": "s17660ynh15fs9fkeza1svf0a184dmcn",
+      "displayName": "xander887",
+      "image": "https://avatars.githubusercontent.com/u/254396565?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.2.5",
+      "createdAt": 1775724667467,
+      "changelog": "Fix small screen size description: 7.5 inch → 7.3 inch",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a438593d0878cb44149e5e35ba39ce9359b51af4af0a096f42fd6d2b403d76b"
+}

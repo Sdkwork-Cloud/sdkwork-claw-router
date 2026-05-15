@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12473,
+  "uuid": "skill-clawhub-discord-voice-memo-upgrade",
+  "skillKey": "clawhub-discord-voice-memo-upgrade",
+  "name": "discord voice memo upgrade",
+  "summary": "Provides a patch for Clawdbot fixing TTS auto-replies on inbound voice memos by disabling block streaming to ensure final payload reaches TTS pipeline.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_voice_memo_upgrade",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "koto9x",
+      "features": [
+        "Provides a patch for Clawdbot fixing TTS auto-replies on inbound voice memos by disabling block."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discord-voice-memo-upgrade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64445724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discord-voice-memo-upgrade",
+      "url": "https://clawhub.ai/skills/discord-voice-memo-upgrade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-voice-memo-upgrade",
+    "url": "https://clawhub.ai/skills/discord-voice-memo-upgrade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-voice-memo-upgrade-7112afbf4f252625.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discord-voice-memo-upgrade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-discord-voice-memo-upgrade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01b30afcb70b6c325797725e4ea44015d574d9db49cdcc14aaed89ea052c781e",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T06:18:15.505Z"
+}

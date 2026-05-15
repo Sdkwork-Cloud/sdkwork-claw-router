@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/setup-stylus-contracts@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_stylus_contracts",
+  "skill": {
+    "id": 28859,
+    "skillKey": "clawhub-setup-stylus-contracts",
+    "name": "Setup Stylus Contracts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-stylus-contracts",
+    "url": "https://clawhub.ai/skills/setup-stylus-contracts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-stylus-contracts-5d7e383c8b5da055.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up a Stylus smart contract project with OpenZeppelin Contracts for Stylus on Arbitrum. Use when users need to: (1) install Rust toolchain and WASM target..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773929770380,
+      "changelog": "Fix display name from probe to proper title",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b363f54b54c57181b0e235e9cff17f30043a4f97d32e566e69fa3a604050e139"
+}

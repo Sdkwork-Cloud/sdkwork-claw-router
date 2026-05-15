@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-free-youtube-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_free_youtube_video",
+  "skill": {
+    "id": 43461,
+    "skillKey": "clawhub-youtube-free-youtube-video",
+    "name": "Youtube Free Youtube Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-free-youtube-video",
+    "url": "https://clawhub.ai/skills/youtube-free-youtube-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-free-youtube-video-0bf357d1b984b613.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 10-minute YouTube video URL into 1080p edited YouTube videos just by typing what you need. Whether it's editing and exporting YouTube videos for free..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775939759331,
+      "changelog": "Initial release of YouTube Free YouTube Video skill:\n\n- Instantly turn 10-minute YouTube video URLs into 1080p edited videos with simple text prompts.\n- Supports free, cloud-based AI video editing — trimming, subtitles, exports, and more.\n- Automatic setup with free 100-credit, 7-day tokens for quick editing and export.\n- Fast workflow: Upload/link your video, describe edits, and download result in 1–2 minutes.\n- Built-in credit, export, and status commands for easy session management.\n- No software or manual timeline editing required; all processing is server-side.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:081061db18d0bf0839e6d06214b576251db42415a1f01f381302d7ca101932a2"
+}

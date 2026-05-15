@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upstage-ocr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upstage_ocr",
+  "skill": {
+    "id": 48619,
+    "skillKey": "clawhub-upstage-ocr",
+    "name": "Upstage Ocr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upstage-ocr",
+    "url": "https://clawhub.ai/skills/upstage-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upstage-ocr-7329f5773f18370f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract plain text with word-level bounding box coordinates from images and scanned documents using Upstage OCR API. Use when user asks to OCR a document, ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "upstage-deployment",
+      "userId": "s176wgta5t9fny3cxc4x84867x863zhs",
+      "displayName": "Upstage Deployment",
+      "image": "https://avatars.githubusercontent.com/u/124652596?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 87,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778085490797,
+      "changelog": "- Initial release of upstage-ocr.\n- Extract plain text and word-level bounding box coordinates from images and scanned documents using the Upstage OCR API.\n- Supports synchronous (≤100 pages) and asynchronous (≤1000 pages) processing.\n- Handles a wide range of formats including JPEG, PNG, BMP, PDF, TIFF, HEIC, DOCX, PPTX, XLSX, HWP, HWPX.\n- Provides examples for both sync and async workflows with details on file output and usage tips.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:822ab2b302d6b8099b088ea419e25f884d49ac3aedb515f52ad1c77662baa42b"
+}

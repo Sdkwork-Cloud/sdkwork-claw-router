@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16888,
+  "uuid": "skill-clawhub-data912",
+  "skillKey": "clawhub-data912",
+  "name": "Data 912 Market Data",
+  "summary": "Query Data912 market data endpoints for Argentina and USA instruments. Use when the user asks for MEP/CCL quotes, live Argentine market panels (stocks, optio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data912",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fermin Rodriguez Penelas",
+      "features": [
+        "Query Data912 market data endpoints for Argentina and USA instruments",
+        "Use when the user asks for MEP/CCL quotes, live Argentine market panels (stocks, optio..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data912@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21282919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data912",
+      "url": "https://clawhub.ai/skills/data912"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data912",
+    "url": "https://clawhub.ai/skills/data912",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data912-d8c1d6cdaacfef89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data912@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data912-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4115314c83ecd6401f7e62b3145bc85258e434672c15b90c9988a766fdbef53e",
+      "artifactSizeBytes": 2378
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T00:54:56.427Z"
+}

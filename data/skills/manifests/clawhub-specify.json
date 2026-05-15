@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36978,
+  "uuid": "skill-clawhub-specify",
+  "skillKey": "clawhub-specify",
+  "name": "Specify",
+  "summary": "Specify integration. Manage data, records, and automate workflows. Use when the user wants to interact with Specify data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.specify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Specify integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Specify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/specify@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "specify",
+      "url": "https://clawhub.ai/skills/specify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "specify",
+    "url": "https://clawhub.ai/skills/specify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/specify-a0aa99c86e2c4dd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/specify@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-specify-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d7494a61764afd77c246a71d17411a802841ff4297ab4ee22eece33c95c5d38",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:02:25.480Z"
+}

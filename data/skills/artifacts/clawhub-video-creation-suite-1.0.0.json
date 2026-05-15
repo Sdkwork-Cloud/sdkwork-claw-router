@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-creation-suite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_creation_suite",
+  "skill": {
+    "id": 60058,
+    "skillKey": "clawhub-video-creation-suite",
+    "name": "视频创作"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-creation-suite",
+    "url": "https://clawhub.ai/skills/video-creation-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-creation-suite-e18aa376e41f1e47.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "video-creation-pro - 从云端仓库同步的技能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anbeime",
+      "userId": "s17dmprx8pgszk44a9h2b9xsh983n2g2",
+      "displayName": "anbeime",
+      "image": "https://avatars.githubusercontent.com/u/52991404?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 554,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772334282243,
+      "changelog": "Initial release of video-creation-pro.\n\n- Introduced a video creation skill synced from a cloud repository.\n- Provides repository link and setup checklist.\n- Users are directed to the cloud repository for full files and documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:708deb56042a99205f229eec685eac71c76ac6f7afaf9a9ab25a6be247ca149a"
+}

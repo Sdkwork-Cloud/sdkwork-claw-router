@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssh-remote-control@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_remote_control",
+  "skill": {
+    "id": 62206,
+    "skillKey": "clawhub-ssh-remote-control",
+    "name": "Ssh Remote Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-remote-control",
+    "url": "https://clawhub.ai/skills/ssh-remote-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-remote-control-bc6d85b86af4894d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SSH远程控制电脑 - 让AI Agent通过SSH连接和操作远程Mac/Linux电脑，无需在被控电脑上安装任何agent工具。一个服务器上的AI，触手伸向多台远程设备。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lixiang92229",
+      "userId": "s17752devj20fj3kzp3k94a4m583e5px",
+      "displayName": "lixiang92229",
+      "image": "https://avatars.githubusercontent.com/u/13725618?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1774948113355,
+      "changelog": "- 更新 metadata 中的 homepage 链接为新的 GitHub 地址\n- 强化了私钥安全警告，提醒务必使用专用密钥对，避免使用日常登录密钥",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21219f21c5044bc60d02b8d66d3a2a0dea4b1858dbe898aa694010256d23d05a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pgmemory@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pgmemory",
+  "skill": {
+    "id": 54609,
+    "skillKey": "clawhub-pgmemory",
+    "name": "Pgmemory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pgmemory",
+    "url": "https://clawhub.ai/skills/pgmemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pgmemory-7a4c9476f3185039.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent semantic memory for OpenClaw agents — PostgreSQL + pgvector"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jbushman",
+      "userId": "publishers:jbushman",
+      "displayName": "jbushman",
+      "image": "https://avatars.githubusercontent.com/u/14206799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772538776743,
+      "changelog": "API key now stored directly in pgmemory.json — no env var setup needed. Scripts resolve key from config first, env var second. Setup wizard prompts to paste key at install time. Startup commands no longer need VOYAGE_API_KEY= prefix.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89f5bff88708350f38cf19909a14a32ed73ebdb81ab5596eeb4ff2edfea66111"
+}

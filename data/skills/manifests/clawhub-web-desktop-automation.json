@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28558,
+  "uuid": "skill-clawhub-web-desktop-automation",
+  "skillKey": "clawhub-web-desktop-automation",
+  "name": "Web + Desktop Automation",
+  "summary": "Use when the user wants browser automation, web scraping, form filling, clicking, or desktop GUI automation, including mixed workflows that move between web...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_desktop_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lurui808",
+      "features": [
+        "Use when the user wants browser automation, web scraping, form filling, clicking, or desktop GU."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-desktop-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174393437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-desktop-automation",
+      "url": "https://clawhub.ai/skills/web-desktop-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-desktop-automation",
+    "url": "https://clawhub.ai/skills/web-desktop-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-desktop-automation-7592fae06124738a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-desktop-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-desktop-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8e4dceffa24c7baeb24a79d707f20f784c3d09f9fbebfe6a5ed8c19aec5729f4",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T04:40:59.578Z"
+}

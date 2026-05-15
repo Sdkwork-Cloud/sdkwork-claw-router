@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15867,
+  "uuid": "skill-clawhub-ai-api-test",
+  "skillKey": "clawhub-ai-api-test",
+  "name": "AI API Test",
+  "summary": "Automates API testing, monitors response times, validates data, checks status codes, performs performance and regression tests, and integrates with CI/CD.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_api_test",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZhangYang",
+      "features": [
+        "Automates API testing, monitors response times, validates data, checks status codes, performs p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-api-test@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16257131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-api-test",
+      "url": "https://clawhub.ai/skills/ai-api-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-api-test",
+    "url": "https://clawhub.ai/skills/ai-api-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-api-test-edc11bbe9bda41c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-api-test@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-api-test-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:016a5a1519cb2d697ea3ef5759196f035e379d641b160318da9450e81dca39c8",
+      "artifactSizeBytes": 1853
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T07:05:17.232Z"
+}

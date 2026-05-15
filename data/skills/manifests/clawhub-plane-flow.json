@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44438,
+  "uuid": "skill-clawhub-plane-flow",
+  "skillKey": "clawhub-plane-flow",
+  "name": "Plane Flow",
+  "summary": "Operate a local/self-hosted Plane workspace for product and project flow management. Use when the user wants to read or update Plane projects, issues, states...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plane_flow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "uncooldog",
+      "features": [
+        "Operate a local/self-hosted Plane workspace for product and project flow management",
+        "Use when the user wants to read or update Plane projects, issues, states..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plane-flow@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7854802?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plane-flow",
+      "url": "https://clawhub.ai/skills/plane-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plane-flow",
+    "url": "https://clawhub.ai/skills/plane-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plane-flow-e9287fe2e12b8b6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plane-flow@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-plane-flow-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac93d3d92d4572837118d88c019802ffcf67627ecf8f4914659c0ff8bbae23b7",
+      "artifactSizeBytes": 2191
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:46:14.300Z"
+}

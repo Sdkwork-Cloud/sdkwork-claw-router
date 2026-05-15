@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jtbd-analyzer-2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jtbd_analyzer_2",
+  "skill": {
+    "id": 47280,
+    "skillKey": "clawhub-jtbd-analyzer-2",
+    "name": "Jtbd Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jtbd-analyzer-2",
+    "url": "https://clawhub.ai/skills/jtbd-analyzer-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jtbd-analyzer-2-6c64a6d6f8fa7b30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Uncover the real \"job\" customers hire your product to do. Goes beyond features to understand functional, emotional, and social motivations. Use when user say..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777262519319,
+      "changelog": "- Initial release of the Jobs-To-Be-Done Analyzer.\n- Helps uncover functional, emotional, and social motivations behind customer decisions.\n- Provides a structured framework and output format for analyzing customer \"jobs\".\n- Includes key questions to guide user interviews and research.\n- Lists integrations with related skills for deeper analysis and ideation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:62ac0699cc5a42290f8f21382dd264b03f308a3f6e9a03bdd70c8e8078d97b50"
+}

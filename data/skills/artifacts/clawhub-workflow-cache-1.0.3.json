@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workflow-cache@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_cache",
+  "skill": {
+    "id": 53067,
+    "skillKey": "clawhub-workflow-cache",
+    "name": "Workflow Cache"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-cache",
+    "url": "https://clawhub.ai/skills/workflow-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-cache-250c906d977aed5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Save up to 90% on Token costs. One agent explores, all agents benefit. Cloud-cached workflows with zero inference cost."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ainclaw",
+      "userId": "s17dmbmaenebbv89tz8zc0bfts83h405",
+      "displayName": "ainclaw",
+      "image": "https://avatars.githubusercontent.com/u/252712074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773909325357,
+      "changelog": "- Clarified the value proposition and core features in the documentation.\n- Added detailed usage examples, token savings comparison, and workflow caching explanation.\n- Provided configuration, installation, and security details for easier adoption.\n- Emphasized privacy: All PII stays local; only generic workflow patterns are shared.\n- Updated SKILL.md with improved structure, formatting, and new metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:95885b8c5b6b097068357840005e3075911c0ca00ec3cee2bdabb4ccb63da4db"
+}

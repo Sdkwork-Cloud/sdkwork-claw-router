@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/coinfound-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coinfound_skill",
+  "skill": {
+    "id": 28833,
+    "skillKey": "clawhub-coinfound-skill",
+    "name": "CoinFound-Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coinfound-skill",
+    "url": "https://clawhub.ai/skills/coinfound-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coinfound-skill-30e432cbc01108c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only CoinFound RWA data skill backed by a bundled endpoint catalog and schema snapshots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "darrenluo",
+      "userId": "s175z7ttrq3c9b9xj1sxvz7qk983k7a9",
+      "displayName": "DarrenLuo",
+      "image": "https://avatars.githubusercontent.com/u/6427009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774429989249,
+      "changelog": "Initial release with bundled endpoint catalog and schema snapshots.\n\n- Provides self-contained, read-only access to CoinFound RWA GET endpoints.\n- Supports `aggregates`, `timeseries`, `pie`, `list`, and `dataset` under `v1/c/rwa/*`.\n- Includes scripts and data for request routing, schema lookup, and normalized payloads.\n- Delegates schema refresh and unresolved structures to `$coinfound-rwa-schema-probe`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:978fbefae6413b6e4a8e9e1c5e9361d0815cef8cc5d38750a6970c2133d86470"
+}

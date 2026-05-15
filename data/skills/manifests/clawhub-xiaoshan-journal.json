@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62772,
+  "uuid": "skill-clawhub-xiaoshan-journal",
+  "skillKey": "clawhub-xiaoshan-journal",
+  "name": "Xiaoshan Journal",
+  "summary": "个人日记自动化 skill。一键执行：自动检测配置 →（首次）自动初始化 → 写作 → 生成图片。依赖本地 SOUL、MEMORY、每日 memory 等素材，产出日记文本与 1080px 宽图片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoshan_journal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DaShanENG",
+      "features": [
+        "个人日记自动化 skill。一键执行：自动检测配置 →（首次）自动初始化 → 写作 → 生成图片。依赖本地 SOUL、MEMORY、每日 memory 等素材，产出日记文本与 1080px."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoshan-journal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25707325?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoshan-journal",
+      "url": "https://clawhub.ai/skills/xiaoshan-journal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoshan-journal",
+    "url": "https://clawhub.ai/skills/xiaoshan-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoshan-journal-fd2b8730022bb371.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoshan-journal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoshan-journal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7192791436112e24ca0f1f32d5410a009383463d57ec4a7fbc419a40b9dd8d62",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T08:09:44.129Z"
+}

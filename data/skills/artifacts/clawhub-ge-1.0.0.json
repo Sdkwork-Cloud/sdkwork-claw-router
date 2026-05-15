@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ge@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ge",
+  "skill": {
+    "id": 72659,
+    "skillKey": "clawhub-ge",
+    "name": "Ge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ge",
+    "url": "https://clawhub.ai/skills/ge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ge-309d20864f274b09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供通用电气（GE）历史、业务拆分、市场地位及核心竞争力的全面信息，助力投资与行业分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776565280361,
+      "changelog": "- GE 于 2024 年拆分为三家独立公司：GE Aerospace、GE Vernova 和 GE HealthCare\n- 新增详细历史时间线，覆盖创立、辉煌、危机与拆分全历程\n- 明确三大核心业务的市场地位与技术优势\n- 补充企业核心护城河、历年关键数据及行业地位\n- 提供拆分后业务结构和比较分析，辅助投资与研究",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6041c57b04c5cc23af0355e7822345411e08cca6d50b61c7d50c837cdc1e40d4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sovereign-id@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sovereign_id",
+  "skill": {
+    "id": 17605,
+    "skillKey": "clawhub-sovereign-id",
+    "name": "Sovereign Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sovereign-id",
+    "url": "https://clawhub.ai/skills/sovereign-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sovereign-id-572b4a100fca8936.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manages decentralized identities, generates pairwise DIDs for B2C, signs mandates for B2B, and provides selective disclosure proofs without revealing private..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tamtunnel",
+      "userId": "publishers:tamtunnel",
+      "displayName": "TamTunnel",
+      "image": "https://avatars.githubusercontent.com/u/186722292?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 762,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771209664012,
+      "changelog": "- Migrated scripts and documentation to a new directory structure under `.agent/skills/identity-sovereign/`\n- Added project metadata and configuration files: `AGENT.md`, `CONTRIBUTING.md`, `README.md`, `package.json`, `skill.json`, `tsconfig.json`\n- Removed old scripts from the root `scripts/` directory\n- No changes to SKILL.md content",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6956bcfc84c5d3a1bfcd672912274c9f801e0e577db72c20edfa1f6ae5dd1e7f"
+}

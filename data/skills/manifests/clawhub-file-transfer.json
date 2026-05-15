@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30742,
+  "uuid": "skill-clawhub-file-transfer",
+  "skillKey": "clawhub-file-transfer",
+  "name": "File Transfer",
+  "summary": "Transfers files intelligently based on chat context with MIME validation and progress tracking, supporting Telegram and extensible channels.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_transfer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ghostwritten",
+      "features": [
+        "Transfers files intelligently based on chat context with MIME validation and progress tracking,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-transfer@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19782612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-transfer",
+      "url": "https://clawhub.ai/skills/file-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-transfer",
+    "url": "https://clawhub.ai/skills/file-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-transfer-305d2615e5ede7b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-transfer@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-transfer-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6540bf776518033c029920fddbf91a26b683c929693380ffdae33bd94d8f4b9d",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:03:35.533Z"
+}

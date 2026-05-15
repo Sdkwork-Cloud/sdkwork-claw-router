@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-pharmacoeconomic-evaluation@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_pharmacoeconomic_evaluation",
+  "skill": {
+    "id": 25389,
+    "skillKey": "clawhub-skill-pharmacoeconomic-evaluation",
+    "name": "Pharmacoeconomic-evaluation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-pharmacoeconomic-evaluation",
+    "url": "https://clawhub.ai/skills/skill-pharmacoeconomic-evaluation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-pharmacoeconomic-evaluation-0dc9614fe5256d37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill provides comprehensive guidance and tools for conducting pharmacoeconomic evaluations including cost-effectiveness analysis (CEA), cost-utility an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tlb1201",
+      "userId": "s179ct7eccxw8fv23vn4gh9jyh83tkds",
+      "displayName": "tlb1201",
+      "image": "https://avatars.githubusercontent.com/u/201767390?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777165335733,
+      "changelog": "- Updated guideline references to \"up-to-date Edition\" for broader applicability.\n- Removed Budget Impact Analysis (BIA) as a core evaluation type and from workflow steps.\n- Revised the time horizon description for chronic diseases to clarify follow-up endpoint (>95% of patients have reached death).\n- Streamlined the workflow and removed references to BIA-specific modeling and calculations.\n- Minor edits for clarity and consistency throughout documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:93e926db5014faf00ef90783c2fa1d27fefea2d42e62c2fc0c42fe83a3559883"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58670,
+  "uuid": "skill-clawhub-ppt-reader",
+  "skillKey": "clawhub-ppt-reader",
+  "name": "PPT Reader",
+  "summary": "Use when user sends a PPT/PPTX file or asks to read PowerPoint content. 适用于：读取PPT文件、解析演示文稿内容、提取幻灯片文本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_reader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jingqiu2180",
+      "features": [
+        "Use when user sends a PPT/PPTX file or asks to read PowerPoint content",
+        "适用于：读取PPT文件、解析演示文稿内容、提取幻灯片文本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ppt-reader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5554120?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ppt-reader",
+      "url": "https://clawhub.ai/skills/ppt-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-reader",
+    "url": "https://clawhub.ai/skills/ppt-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-reader-9b9e0bb6cc120770.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ppt-reader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ppt-reader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0131922883bcb814fa02d95db3414db477b8fc41f32712470e55cf3cb79cf13",
+      "artifactSizeBytes": 1886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:05:03.448Z"
+}

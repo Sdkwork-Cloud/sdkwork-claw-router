@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14916,
+  "uuid": "skill-clawhub-cloud-infra-automation",
+  "skillKey": "clawhub-cloud-infra-automation",
+  "name": "Cloud Infra Automation",
+  "summary": "Automate provisioning and management of AWS, GCP, and Azure infrastructure using Terraform, Ansible, and CloudFormation templates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_infra_automation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "Automate provisioning and management of AWS, GCP, and Azure infrastructure using Terraform, Ans."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cloud-infra-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cloud-infra-automation",
+      "url": "https://clawhub.ai/skills/cloud-infra-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-infra-automation",
+    "url": "https://clawhub.ai/skills/cloud-infra-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-infra-automation-5a902eacff38117b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cloud-infra-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cloud-infra-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:434728d585aef5a5d892c459d4bbe29852d425f9dcdffa526fb216912a183996",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T19:20:22.543Z"
+}

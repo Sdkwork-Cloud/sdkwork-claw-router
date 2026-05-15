@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-reader-skill@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_reader_skill",
+  "skill": {
+    "id": 63933,
+    "skillKey": "clawhub-bilibili-reader-skill",
+    "name": "bilibili-reader-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-reader-skill",
+    "url": "https://clawhub.ai/skills/bilibili-reader-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-reader-skill-9fcd07d0ec913024.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "B站收藏夹视频智能总结：随机选取收藏视频，阅读字幕/评论/弹幕，生成中英双语总结PDF"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mistake-12",
+      "userId": "s17d5kk1hatf6tpr705c86b0rh86b0j9",
+      "displayName": "Ma Zihang",
+      "image": "https://avatars.githubusercontent.com/u/192572519?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 97,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778253821707,
+      "changelog": "修改排版错误",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9045b66a892d9d34573a2af254b98bc4db2b7953f10f31ea5351befb8548bc30"
+}

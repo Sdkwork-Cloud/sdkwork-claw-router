@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34475,
+  "uuid": "skill-clawhub-ctv-ads",
+  "skillKey": "clawhub-ctv-ads",
+  "name": "ctv-ads",
+  "summary": "When the user wants to run CTV, OTT, or streaming TV ads. Also use when the user mentions \"CTV ads,\" \"connected TV,\" \"OTT advertising,\" \"streaming ads,\" \"TV...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctv_ads",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kostja Zhang",
+      "features": [
+        "When the user wants to run CTV, OTT, or streaming TV ads",
+        "Also use when the user mentions \"CTV ads,\" \"connected TV,\" \"OTT advertising,\" \"streaming ads,\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctv-ads@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168074885?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctv-ads",
+      "url": "https://clawhub.ai/skills/ctv-ads"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctv-ads",
+    "url": "https://clawhub.ai/skills/ctv-ads",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctv-ads-68ff2ee542464477.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctv-ads@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctv-ads-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54e652e96197424625ca0ab2101f89be7ec9b943a05b380f3e6ecf634fef7578",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T10:32:29.334Z"
+}

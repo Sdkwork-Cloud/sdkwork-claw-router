@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17536,
+  "uuid": "skill-clawhub-yandex-cli-yax",
+  "skillKey": "clawhub-yandex-cli-yax",
+  "name": "Yandex 360 CLI (Disk, Calendar, Mail)",
+  "summary": "CLI tool for Yandex Disk, Calendar, and Mail via Yandex OAuth API",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_cli_yax",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex",
+      "features": [
+        "CLI tool for Yandex Disk, Calendar, and Mail via Yandex OAuth API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandex-cli-yax@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24612081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandex-cli-yax",
+      "url": "https://clawhub.ai/skills/yandex-cli-yax"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-cli-yax",
+    "url": "https://clawhub.ai/skills/yandex-cli-yax",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-cli-yax-64fcb7e48b1e3548.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandex-cli-yax@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandex-cli-yax-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5f51b4a11405290c52efab347d6468a4057851bb8346e9687032a6f6363b48c",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:29:23.154Z"
+}

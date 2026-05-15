@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31512,
+  "uuid": "skill-clawhub-shopify-runtime",
+  "skillKey": "clawhub-shopify-runtime",
+  "name": "Shopify Runtime",
+  "summary": "Use when the user wants direct Shopify runtime access through one configured store: inspect setup status, search Shopify docs, or execute JavaScript against...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_runtime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mark Yan",
+      "features": [
+        "Use when the user wants direct Shopify runtime access through one configured store: inspect set."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-runtime@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3222125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-runtime",
+      "url": "https://clawhub.ai/skills/shopify-runtime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-runtime",
+    "url": "https://clawhub.ai/skills/shopify-runtime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-runtime-2de23a3cb4b57a47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-runtime@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-runtime-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7216a486e4d7103601996e3d438655a5c306da90dd5b46c136b222c9fc22dd26",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T02:03:36.649Z"
+}

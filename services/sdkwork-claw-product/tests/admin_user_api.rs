@@ -93,7 +93,7 @@ async fn admin_user_route_creates_updates_adjusts_and_deletes() {
         .clone()
         .oneshot(signed_request(
             "POST",
-            "/backend/v3/api/router/users/30/balance-adjustments",
+            "/backend/v3/api/billing/users/30/balance_adjustments",
             r#"{"amount":5,"type":"recharge"}"#,
         ))
         .await

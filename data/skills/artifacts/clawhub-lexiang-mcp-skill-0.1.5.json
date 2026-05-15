@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lexiang-mcp-skill@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lexiang_mcp_skill",
+  "skill": {
+    "id": 64907,
+    "skillKey": "clawhub-lexiang-mcp-skill",
+    "name": "腾讯乐享知识库 Lexiang Knowledge Base"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lexiang-mcp-skill",
+    "url": "https://clawhub.ai/skills/lexiang-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lexiang-mcp-skill-36ee9ca772e01486.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用于访问乐享知识库平台的专用 skill。当用户明确提到「乐享」「lexiang」「知识库」「知识」「文档」等关键词，或用户提供的链接 host 为 lexiangla.com，应优先调用本 skill。本 skill 支持：获取文档内容与元数据、搜索文档内容、查询知识库与目录结构、创建/编辑/移动文档、管理标签..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ajaxhe",
+      "userId": "s17drxagejxg62kqmj6sj9ptcx83m9av",
+      "displayName": "ajaxhe",
+      "image": "https://avatars.githubusercontent.com/u/1539491?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 639,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1774492524016,
+      "changelog": "**Summary:**  \nInitial release with full MCP integration and knowledge base management.\n\n- Added all core project and configuration files for the skill.\n- Full documentation on usage rules, data model, and write safety.\n- Enabled direct invocation of all Lexiang MCP tools (list, search, read, write).\n- AccessToken lifecycle management and multi-tenant support provided.\n- Clarified URL and ID extraction rules.\n- Guidance for user intent identification and safe write operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dae26fc23760511eb491e8660242bb1aedd08cd57b0eab740cee4eb55f1f6792"
+}

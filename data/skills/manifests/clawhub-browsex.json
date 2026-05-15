@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20039,
+  "uuid": "skill-clawhub-browsex",
+  "skillKey": "clawhub-browsex",
+  "name": "the skill to browse X",
+  "summary": "X/Twitter CLI using OpenClaw browser tool. Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, retweeting, replying...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browsex",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "William Xu",
+      "features": [
+        "X/Twitter CLI using OpenClaw browser tool",
+        "Use when the user wants to interact with X/Twitter: reading timeline, posting tweets, liking, r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browsex@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118314584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browsex",
+      "url": "https://clawhub.ai/skills/browsex"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browsex",
+    "url": "https://clawhub.ai/skills/browsex",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browsex-992c7d64703a5bc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browsex@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browsex-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15d1329beb8c28b4a52cd4029c7a72ae37d63d0f02e8ca62c6ce5b622bdfe600",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T04:11:22.835Z"
+}

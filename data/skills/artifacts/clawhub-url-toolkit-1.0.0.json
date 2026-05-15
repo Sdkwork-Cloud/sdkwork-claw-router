@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/url-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_toolkit",
+  "skill": {
+    "id": 30173,
+    "skillKey": "clawhub-url-toolkit",
+    "name": "URL Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-toolkit",
+    "url": "https://clawhub.ai/skills/url-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-toolkit-012ac31bc97e7ddc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "URL encoding, decoding, parameter parsing, and URL manipulation toolkit for developers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freeter226",
+      "userId": "s173w5m1mkxvbtwycc5tp8r0yx83f0q3",
+      "displayName": "freeter226",
+      "image": "https://avatars.githubusercontent.com/u/264750079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774310526681,
+      "changelog": "Initial release of url-toolkit.\n\n- Provides URL encoding and decoding functions.\n- Parses URLs into components (scheme, host, path, etc.).\n- Parses query strings into key-value pairs.\n- Builds query strings from JSON key-value input.\n- Includes command-line usage examples for each action.\n- Requires Python 3 to run.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ea2bec2bf88946d9d9fa449d352088840077f75c327f7a9f6304317793b286d7"
+}

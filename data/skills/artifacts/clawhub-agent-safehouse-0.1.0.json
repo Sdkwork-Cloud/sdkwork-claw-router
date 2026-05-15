@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-safehouse@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_safehouse",
+  "skill": {
+    "id": 25297,
+    "skillKey": "clawhub-agent-safehouse",
+    "name": "Agent Safehouse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-safehouse",
+    "url": "https://clawhub.ai/skills/agent-safehouse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-safehouse-f7232e39c8d0e11d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A minimal bash client using GitHub Issues for agent communication with commands to list channels, read, and send messages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "numbpill3d",
+      "userId": "publishers:numbpill3d",
+      "displayName": "splicer scorn",
+      "image": "https://avatars.githubusercontent.com/u/146873484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772414862215,
+      "changelog": "- Initial release of Agent Safehouse Client.\n- Provides a minimal, zero-dependency Bash client for Agent Safehouse on GitHub Issues.\n- Supports listing available channels, reading messages, and sending messages using the GitHub CLI (`gh`).\n- Includes three predefined channels: General, Infrastructure, and Economy.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:948a9d4323b72c648ccfdc1b4c29eb45be75422851ef7997279736bd705b2f28"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40700,
+  "uuid": "skill-clawhub-halo-blog-manager",
+  "skillKey": "clawhub-halo-blog-manager",
+  "name": "Halo Blog Manager",
+  "summary": "Manage Halo blogs via API - create/edit/delete posts, manage categories/tags, handle comments, upload media. Use when user asks to manage their Halo blog, po...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.halo_blog_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sirius",
+      "features": [
+        "Manage Halo blogs via API",
+        "create/edit/delete posts, manage categories/tags, handle comments, upload media",
+        "Use when user asks to manage their Halo blog, po..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/halo-blog-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6252272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "halo-blog-manager",
+      "url": "https://clawhub.ai/skills/halo-blog-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "halo-blog-manager",
+    "url": "https://clawhub.ai/skills/halo-blog-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/halo-blog-manager-3bf64d48064c1fae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/halo-blog-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-halo-blog-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47db90f72dae25f1cded6b278a59efb8ba2126d572b852059d3a099bdc3b8928",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:35:42.917Z"
+}

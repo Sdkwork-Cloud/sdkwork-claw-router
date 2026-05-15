@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pigxui-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pigxui_skill",
+  "skill": {
+    "id": 59166,
+    "skillKey": "clawhub-pigxui-skill",
+    "name": "PigX UI 前端开发"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pigxui-skill",
+    "url": "https://clawhub.ai/skills/pigxui-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pigxui-skill-b9ea8fc35f3ac577.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "PigX UI Pro 前端开发指南 - Vue 3 + TypeScript + Element Plus。当用户提到 PigX UI、PigX 前端、lgb-mgui 项目、Vue 3 企业级后台开发、Element Plus 后台开发时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhibuyu",
+      "userId": "s178bh06k3esrc9m12h98ej7j583hcyk",
+      "displayName": "子不语",
+      "image": "https://avatars.githubusercontent.com/u/12659236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370356138,
+      "changelog": "Initial release of pigxui-skill.\n\n- Vue 3 + TypeScript + Element Plus 前端开发指南 skill 发布\n- 提供项目结构、开发命令、核心规范（API 路由/Pinia/组件/样式）、常见任务等说明\n- 补充路径别名、自动导入、Token 与租户支持、请求加密等使用注意事项\n- 包含官方与扩展文档链接",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9af01f4e60f7d24d55de3a03c0dded2fb3f7a06bc7a640b0318911726fb7fa9"
+}

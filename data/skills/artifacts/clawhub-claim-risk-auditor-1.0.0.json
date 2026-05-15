@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claim-risk-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claim_risk_auditor",
+  "skill": {
+    "id": 67298,
+    "skillKey": "clawhub-claim-risk-auditor",
+    "name": "claim-risk-auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claim-risk-auditor",
+    "url": "https://clawhub.ai/skills/claim-risk-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claim-risk-auditor-d27b4211c8151cbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检查文案、论文、宣传稿或产品说明中的高风险断言，标出证据缺口并给出更稳妥的改写。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773218100071,
+      "changelog": "Initial release of claim-risk-auditor.\n\n- Checks for high-risk assertions in copy, academic papers, promotional scripts, and product descriptions.\n- Highlights evidence gaps and suggests more cautious rephrasing.\n- Useful for marketing, branding, training, livestream scripts, and academic writing.\n- Supports input via clipboard for quick risk auditing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15570c37f371ff9af0f2b1db70a5132e8664e6ff77c74b19847f66afdf352742"
+}

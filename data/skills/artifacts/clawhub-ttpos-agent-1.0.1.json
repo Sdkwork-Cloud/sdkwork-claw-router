@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ttpos-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ttpos_agent",
+  "skill": {
+    "id": 61629,
+    "skillKey": "clawhub-ttpos-agent",
+    "name": "TTPOS Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ttpos-agent",
+    "url": "https://clawhub.ai/skills/ttpos-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ttpos-agent-2e3fd4381c2194e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 ttpos-agent API 查询 TTPOS 餐饮系统营业数据，生成报表。使用前必须访问 GET /api/v1/query/guide 获取数据查询指南。Use when: 今日营业额、订单统计、支付方式、菜品排行、会员分析、班次汇总、时段分析等。NOT for: 与 TTPOS 数据无关的问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bendaye",
+      "userId": "s178cxqf4pzabaht3fs46j1ybn844cm9",
+      "displayName": "BenDaye",
+      "image": "https://avatars.githubusercontent.com/u/26397675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773899679909,
+      "changelog": "ttpos-agent 1.0.1\n\n- No file changes detected in this version.\n- No modifications made to documentation or code.\n- Functionality and usage remain unchanged from previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:977a1e384f7737b51624d063aad0538066b3a9e043e9dc7d8667dd4a3902d7fb"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39761,
+  "uuid": "skill-clawhub-kern-ai",
+  "skillKey": "clawhub-kern-ai",
+  "name": "Kern Ai",
+  "summary": "Kern AI integration. Manage data, records, and automate workflows. Use when the user wants to interact with Kern AI data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kern_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Kern AI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Kern AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kern-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kern-ai",
+      "url": "https://clawhub.ai/skills/kern-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kern-ai",
+    "url": "https://clawhub.ai/skills/kern-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kern-ai-60cb441693789833.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kern-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-kern-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79a04a8d4c8a043bc1567570605150cea76c44340100ff86f55b6930b0f0e7ed",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:03:32.660Z"
+}

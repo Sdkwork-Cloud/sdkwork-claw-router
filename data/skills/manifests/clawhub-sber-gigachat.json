@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22270,
+  "uuid": "skill-clawhub-sber-gigachat",
+  "skillKey": "clawhub-sber-gigachat",
+  "name": "GigaChat (Sber AI) Proxy",
+  "summary": "Integrate GigaChat (Sber AI) with OpenClaw via gpt2giga proxy",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sber_gigachat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alex",
+      "features": [
+        "Integrate GigaChat (Sber AI) with OpenClaw via gpt2giga proxy"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sber-gigachat@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24612081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sber-gigachat",
+      "url": "https://clawhub.ai/skills/sber-gigachat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sber-gigachat",
+    "url": "https://clawhub.ai/skills/sber-gigachat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sber-gigachat-ea9f90dbba7ed1ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sber-gigachat@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-sber-gigachat-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c18edf5d90346a0780abbdb14761751e8f7e5a35f596564b414da9aa4df86ae",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:41:13.521Z"
+}

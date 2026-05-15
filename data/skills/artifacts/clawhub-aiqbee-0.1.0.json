@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aiqbee@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aiqbee",
+  "skill": {
+    "id": 16847,
+    "skillKey": "clawhub-aiqbee",
+    "name": "Aiqbee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aiqbee",
+    "url": "https://clawhub.ai/skills/aiqbee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aiqbee-b6cb7c367354b498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to your Aiqbee knowledge graph via MCP. Search, create, and link neurons across your architecture, portfolio, and digital strategy brains."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "louisgoodier",
+      "userId": "publishers:louisgoodier",
+      "displayName": "louisgoodier",
+      "image": "https://avatars.githubusercontent.com/u/7064059?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 822,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771147934102,
+      "changelog": "Initial release of the Aiqbee skill:\n\n- Connect your OpenClaw assistant to the Aiqbee knowledge graph via MCP.\n- Search, create, update, and link neurons across architecture, portfolio, and digital strategy brains.\n- Supports OAuth 2.0 authentication—no API keys required.\n- Provides 12 tools covering neuron and relationship management.\n- Includes setup instructions for direct MCP or mcporter integration.\n- Documentation and examples for searching, editing, and organizing knowledge.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:23c4a1c3a518bc54f6edc1524d7e50a40f9bb0733b70c310917d8341c965cd50"
+}

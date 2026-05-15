@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39630,
+  "uuid": "skill-clawhub-idm-downloader",
+  "skillKey": "clawhub-idm-downloader",
+  "name": "idm-downloader",
+  "summary": "Download large files using IDM (Internet Download Manager) on Windows. Use when user wants to download files via URL and prefers IDM, or explicitly requests...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idm_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FoxCATT",
+      "features": [
+        "Download large files using IDM (Internet Download Manager) on Windows",
+        "Use when user wants to download files via URL and prefers IDM, or explicitly requests..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idm-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16402882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idm-downloader",
+      "url": "https://clawhub.ai/skills/idm-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idm-downloader",
+    "url": "https://clawhub.ai/skills/idm-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idm-downloader-602fa827d50ae329.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idm-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idm-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba21a4d6294f1ba10e1b4e32206f0459f8d28e0190e533c69a263f0855dc47cc",
+      "artifactSizeBytes": 2291
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T18:09:23.001Z"
+}

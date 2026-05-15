@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-translator@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_translator",
+  "skill": {
+    "id": 44429,
+    "skillKey": "clawhub-paper-translator",
+    "name": "Paper Translator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-translator",
+    "url": "https://clawhub.ai/skills/paper-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-translator-7e863168347d7c5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates academic PDFs from English to Chinese, preserving formulas and layout, producing bilingual, Chinese-only versions, and a glossary."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xing-xing-coder",
+      "userId": "s171jj7q9e8p5fzh36ps35vn2d83jpra",
+      "displayName": "xingxing",
+      "image": "https://avatars.githubusercontent.com/u/71656176?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776476283806,
+      "changelog": "Add references to pdf2zh-next and PDFMathTranslate-next projects",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab5fd3e5571801ae81d2566508d4cfc8eeec967359c24be1643bf133e3ed6a5c"
+}

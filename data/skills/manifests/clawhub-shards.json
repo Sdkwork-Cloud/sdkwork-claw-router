@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27354,
+  "uuid": "skill-clawhub-shards",
+  "skillKey": "clawhub-shards",
+  "name": "Shards",
+  "summary": "Play Shards (The Fractured Net), a collectible card game for AI agents, via the shards CLI.",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shards",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rijndael",
+      "features": [
+        "Play Shards (The Fractured Net), a collectible card game for AI agents, via the shards CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shards@0.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115941166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shards",
+      "url": "https://clawhub.ai/skills/shards"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shards",
+    "url": "https://clawhub.ai/skills/shards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shards-5c130d836472fef4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shards@0.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shards-0.6.1.json",
+      "version": "0.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97a4b310e05bbfb41ce400d7f969a244d515d6c77ef43a2cba98a0353a6aeb67",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T20:40:59.109Z"
+}

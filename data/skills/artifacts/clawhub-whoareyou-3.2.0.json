@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whoareyou@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoareyou",
+  "skill": {
+    "id": 34102,
+    "skillKey": "clawhub-whoareyou",
+    "name": "WayID Identity Card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoareyou",
+    "url": "https://clawhub.ai/skills/whoareyou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoareyou-8d60ef6493681058.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Show your verified WayID identity card. Use whenever the user asks who you are, who owns you, who you belong to, who's behind you, who runs you, who's respon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lineagelabs",
+      "userId": "s173pbh8hypqrjwjv31xzzghbd867msg",
+      "displayName": "Lineage Labs",
+      "image": "https://avatars.githubusercontent.com/u/263388898?s=400&u=913a578bd93269d236513fe2d158c08296766199&v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1778324402835,
+      "changelog": "Recommend the bare 24-char identifier in the URL (issue\\n[#330](https://github.com/LineageLabs/openclaw-prototype/issues/330)) — the\\nroute already implies the type, so callers no longer need to URL-encode\\n as . The full DID form keeps working for\\nback-compat; only the example URL changes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cec429798f636936fc907c5fb76f4b90149c55ee73bdf59e62ee3c918db04f5b"
+}

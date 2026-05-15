@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desktop-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_control",
+  "skill": {
+    "id": 8241,
+    "skillKey": "clawhub-desktop-control",
+    "name": "Desktop Control"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-control",
+    "url": "https://clawhub.ai/skills/desktop-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-control-f49bec4239fa518e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced desktop automation with mouse, keyboard, and screen control"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matagul",
+      "userId": "publishers:matagul",
+      "displayName": "matagul",
+      "image": "https://avatars.githubusercontent.com/u/94160728?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 52793,
+      "installsAllTime": 476,
+      "installsCurrent": 441,
+      "stars": 332,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770255200863,
+      "changelog": "Version 1.0.0\n\n- Initial release of the Desktop Control skill for OpenClaw.\n- Provides advanced automation: mouse movement/clicks, keyboard input, hotkeys, and typing speed control.\n- Supports screen capture, region-based screenshots, image/template matching, and pixel color detection.\n- Includes window management (list, activate, move, resize, minimize/maximize).\n- Safety features: failsafe abort, logging, approval mode, bounds checks, and emergency pause.\n- Detailed documentation with examples and complete API reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e822a5421f54aa983eec1827578286028539e901547b0a4f8686abcfdcec18d4"
+}

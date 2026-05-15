@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dronemobile@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dronemobile",
+  "skill": {
+    "id": 26388,
+    "skillKey": "clawhub-dronemobile",
+    "name": "DroneMobile"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dronemobile",
+    "url": "https://clawhub.ai/skills/dronemobile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dronemobile-abf646e9832be9dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control vehicles via DroneMobile (Firstech/Compustar remote start systems). Use when the user asks to start their car, stop the engine, lock/unlock doors, op..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bryantegomoh",
+      "userId": "s172jpve568dfnqpcddngz9d8s83sxnk",
+      "displayName": "Bryan Tegomoh, MD, MPH",
+      "image": "https://avatars.githubusercontent.com/u/67350434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773422608589,
+      "changelog": "Remote start, stop, lock, unlock, and status for DroneMobile-connected vehicles via OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cf46333cb942021d80fd64dce194d08371f005ef8d1a40f95317b54fa6b24e7"
+}

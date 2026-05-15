@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aana-message-send-guardrail-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_message_send_guardrail_skill",
+  "skill": {
+    "id": 36097,
+    "skillKey": "clawhub-aana-message-send-guardrail-skill",
+    "name": "AANA Message Send Guardrail Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-message-send-guardrail-skill",
+    "url": "https://clawhub.ai/skills/aana-message-send-guardrail-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-message-send-guardrail-skill-daf55bce2b594603.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Validates message destination, audience, tone, privacy, and approval before sending or posting on Slack, Teams, Discord, SMS, or public channels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mindbomber",
+      "userId": "s177cynx168hg36ac5nrkb9wdn85z9dq",
+      "displayName": "mindbomber",
+      "image": "https://avatars.githubusercontent.com/u/42798111?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 108,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777943311954,
+      "changelog": "AANA Message Send Guardrail Skill 1.0.0 – Initial Release\n\n- Provides clear instructions for checking and approving messages before sending via channels like Slack, Teams, Discord, and SMS.\n- Outlines required pre-send checks, including channel, recipients, message tone, privacy, and explicit approval.\n- Defines risk classes for high-impact or sensitive messages and lists situations that require extra caution or confirmation.\n- Establishes rules to prevent sending when destination, audience, or privacy is unclear or risky.\n- Requires revision for hostile tone or unsupported claims; blocks unsafe or unauthorized sends.\n- Specifies a minimal, redacted review payload for external checkers to protect sensitive information.\n- Includes a standardized output pattern for summarizing send safety and recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:148df5f9df8af316c7e05570cef20f3586ae6a98b255f906691d933e599f4781"
+}

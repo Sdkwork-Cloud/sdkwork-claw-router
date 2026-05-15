@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57436,
+  "uuid": "skill-clawhub-hf-daily-papers",
+  "skillKey": "clawhub-hf-daily-papers",
+  "name": "hugging-face daily papers",
+  "summary": "Fetch and digest HuggingFace Daily Papers. Use when user asks for today's HF papers, daily paper digest, wants a paper report, or says 论文精选/今日论文/HF daily pap...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hf_daily_papers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoDiao",
+      "features": [
+        "Fetch and digest HuggingFace Daily Papers",
+        "Use when user asks for today's HF papers, daily paper digest, wants a paper report, or says 论文精."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hf-daily-papers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104132148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hf-daily-papers",
+      "url": "https://clawhub.ai/skills/hf-daily-papers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hf-daily-papers",
+    "url": "https://clawhub.ai/skills/hf-daily-papers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hf-daily-papers-1d18d9de3fd5c75b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hf-daily-papers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hf-daily-papers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:905880f65fb3a142d67e8273e04ef6204cb05f6b87416421a630af03fa39eab9",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T05:44:49.308Z"
+}

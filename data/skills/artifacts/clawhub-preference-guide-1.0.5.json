@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/preference-guide@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preference_guide",
+  "skill": {
+    "id": 23620,
+    "skillKey": "clawhub-preference-guide",
+    "name": "Ask To Remember"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preference-guide",
+    "url": "https://clawhub.ai/skills/preference-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preference-guide-7ad5434d3dde6ce3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactively capture reusable user preferences, habits, default ways of working, stable constraints, and recurring expectations likely worth remembering for f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wubin010",
+      "userId": "s17c6g2drg2xw2r7ywypkm5t5h83fyfq",
+      "displayName": "wb010",
+      "image": "https://avatars.githubusercontent.com/u/129393681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774000061614,
+      "changelog": "Fix Phase B disambiguation, ignored cooldown, hook install timing, and Phase B confirmation style",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59aa9b46d1abdf6ddb3cd9cc282b52cafc5aa7c12595e9d5d7c992e0e690d6b8"
+}

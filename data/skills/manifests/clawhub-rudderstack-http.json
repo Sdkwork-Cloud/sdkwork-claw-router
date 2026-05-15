@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29827,
+  "uuid": "skill-clawhub-rudderstack-http",
+  "skillKey": "clawhub-rudderstack-http",
+  "name": "Rudderstack Http",
+  "summary": "RudderStack HTTP integration. Manage data, records, and automate workflows. Use when the user wants to interact with RudderStack HTTP data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rudderstack_http",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "RudderStack HTTP integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with RudderStack HTTP data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rudderstack-http@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rudderstack-http",
+      "url": "https://clawhub.ai/skills/rudderstack-http"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rudderstack-http",
+    "url": "https://clawhub.ai/skills/rudderstack-http",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rudderstack-http-d896660e9d989347.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rudderstack-http@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-rudderstack-http-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29111b02b55578f16b08190f2598d6f2dc5ebd365d8ce3d8a9ad1cd2a7186a09",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:35:56.362Z"
+}

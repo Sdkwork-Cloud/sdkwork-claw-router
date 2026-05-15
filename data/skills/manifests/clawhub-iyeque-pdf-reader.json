@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10743,
+  "uuid": "skill-clawhub-iyeque-pdf-reader",
+  "skillKey": "clawhub-iyeque-pdf-reader",
+  "name": "PDF Reader (Iyeque)",
+  "summary": "Extract text, search inside PDFs, and produce summaries.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iyeque_pdf_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iyeque",
+      "features": [
+        "Extract text, search inside PDFs, and produce summaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/iyeque-pdf-reader@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183353210?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "iyeque-pdf-reader",
+      "url": "https://clawhub.ai/skills/iyeque-pdf-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iyeque-pdf-reader",
+    "url": "https://clawhub.ai/skills/iyeque-pdf-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iyeque-pdf-reader-7a6155553a0ab79a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/iyeque-pdf-reader@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-iyeque-pdf-reader-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6335ce8879f170c1980844e162296031e5d5ac0bfb5981f380eb974d765224c",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T11:15:51.970Z"
+}

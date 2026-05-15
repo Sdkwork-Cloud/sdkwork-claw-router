@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73109,
+  "uuid": "skill-clawhub-short-video-script",
+  "skillKey": "clawhub-short-video-script",
+  "name": "短视频脚本创作",
+  "summary": "短视频脚本创作技能。用于生成抖音、快手、B站、视频号等平台的短视频脚本、标题、封面建议。适用于自媒体运营、内容创作需求。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_video_script",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rascal6666",
+      "features": [
+        "短视频脚本创作技能。用于生成抖音、快手、B站、视频号等平台的短视频脚本、标题、封面建议。适用于自媒体运营、内容创作需求。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/short-video-script@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119034145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "short-video-script",
+      "url": "https://clawhub.ai/skills/short-video-script"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-video-script",
+    "url": "https://clawhub.ai/skills/short-video-script",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-video-script-20353aa33af9aa9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/short-video-script@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-short-video-script-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b4447c48d5b992512034cae0e2a6aa38b53f6aad329fddfc7353d6da49bab9b",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T14:30:57.178Z"
+}

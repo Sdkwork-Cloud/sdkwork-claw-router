@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45522,
+  "uuid": "skill-clawhub-pilot-sync",
+  "skillKey": "clawhub-pilot-sync",
+  "name": "Pilot Sync",
+  "summary": "Bidirectional file synchronization between agents over the Pilot Protocol network. Use this skill when: 1. You need to keep directories synchronized between...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Bidirectional file synchronization between agents over the Pilot Protocol network",
+        "Use this skill when: 1",
+        "You need to keep directories synchronized between..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-sync",
+      "url": "https://clawhub.ai/skills/pilot-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-sync",
+    "url": "https://clawhub.ai/skills/pilot-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-sync-e7a42675f977c263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70c951658c365ca6eb4777a3df529300b7e73820859c4b2ec4229da4fc82caa5",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T10:31:37.287Z"
+}

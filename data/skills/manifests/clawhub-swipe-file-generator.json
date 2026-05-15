@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10561,
+  "uuid": "skill-clawhub-swipe-file-generator",
+  "skillKey": "clawhub-swipe-file-generator",
+  "name": "Swipe File Generator",
+  "summary": "Analyzes high-performing content from URLs and builds a swipe file. Use when someone wants to study and deconstruct successful content (articles, tweets, videos) to extract patterns, psychological techniques, and recreatable frameworks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swipe_file_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentchan",
+      "features": [
+        "Analyzes high-performing content from URLs and builds a swipe file",
+        "Use when someone wants to study and deconstruct successful content (articles, tweets, videos) t."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swipe-file-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swipe-file-generator",
+      "url": "https://clawhub.ai/skills/swipe-file-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swipe-file-generator",
+    "url": "https://clawhub.ai/skills/swipe-file-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swipe-file-generator-e258ac4f53802514.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swipe-file-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swipe-file-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6208ab9eb098285654035b16a01b29e60f5ea5e09abd298b18339c55596c77a3",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T06:44:16.005Z"
+}

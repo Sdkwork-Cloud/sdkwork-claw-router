@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16001,
+  "uuid": "skill-clawhub-crabukit",
+  "skillKey": "clawhub-crabukit",
+  "name": "Crabukit",
+  "summary": "Security scanner for OpenClaw skills with Clawdex integration. Analyzes SKILL.md and scripts for dangerous permissions, hardcoded secrets, shell injection vu...",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crabukit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tnbradley",
+      "features": [
+        "Security scanner for OpenClaw skills with Clawdex integration",
+        "Analyzes SKILL.md and scripts for dangerous permissions, hardcoded secrets, shell injection vu.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crabukit@0.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124569157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crabukit",
+      "url": "https://clawhub.ai/skills/crabukit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crabukit",
+    "url": "https://clawhub.ai/skills/crabukit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crabukit-5157c178442801da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crabukit@0.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-crabukit-0.1.3.json",
+      "version": "0.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72a59f6368de6dd6dcfadc480aedb324c6bd95005a6aeaf8aa649d4c65afcbf5",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T00:33:30.393Z"
+}

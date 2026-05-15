@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-skill-name@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_skill_name",
+  "skill": {
+    "id": 42424,
+    "skillKey": "clawhub-my-skill-name",
+    "name": "my-skill-name"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-skill-name",
+    "url": "https://clawhub.ai/skills/my-skill-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-skill-name-007320be227c5a1d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an exis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crystal-k",
+      "userId": "s17ece55gfd83v2xvyz5t07epn84refe",
+      "displayName": "Crystal-k",
+      "image": "https://avatars.githubusercontent.com/u/53135317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776413932101,
+      "changelog": "No file changes or content updates were detected betw1een versions.\n\n- Version incremented to 2.0.0 with no changes to files or documentation.\n- No new features, fixes, or modifications in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74e92529a1b3060f595dd948ac7923c7c2d4cfcf481d05b96d2cf47c01d0d7b2"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29722,
+  "uuid": "skill-clawhub-ifly-pdf-image-ocr",
+  "skillKey": "clawhub-ifly-pdf-image-ocr",
+  "name": "ifly-pdf-image-ocr",
+  "summary": "ifly-pdf&image-ocr skill supporting both image OCR (AI-powered LLM OCR) and PDF document recognition. Use when user asks to OCR images, extract text from ima...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifly_pdf_image_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iflytek AIcloud",
+      "features": [
+        "ifly-pdf&image-ocr skill supporting both image OCR (AI-powered LLM OCR) and PDF document recogn.",
+        "Use when user asks to OCR images, extract text from ima..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifly-pdf-image-ocr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162573515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifly-pdf-image-ocr",
+      "url": "https://clawhub.ai/skills/ifly-pdf-image-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifly-pdf-image-ocr",
+    "url": "https://clawhub.ai/skills/ifly-pdf-image-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifly-pdf-image-ocr-02a42d3ababcf730.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifly-pdf-image-ocr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifly-pdf-image-ocr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:356ecb1b92eb7e524e067826b6349c1f5dd315c557244a4d679ad4c86ecb3fe3",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:22:12.426Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expanso-csv-to-json@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_csv_to_json",
+  "skill": {
+    "id": 14885,
+    "skillKey": "clawhub-expanso-csv-to-json",
+    "name": "Expanso csv-to-json"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-csv-to-json",
+    "url": "https://clawhub.ai/skills/expanso-csv-to-json",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-csv-to-json-5da2e8f6487cf51b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert CSV input into a JSON array of objects using Expanso Edge CLI or MCP pipelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aronchick",
+      "userId": "publishers:aronchick",
+      "displayName": "Expanso",
+      "image": "https://avatars.githubusercontent.com/u/51317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1090,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770753097103,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3b15e7d77edda5d9e6dd9e6d7b47762ab239846198d30fb7e6777e50e45cf374"
+}

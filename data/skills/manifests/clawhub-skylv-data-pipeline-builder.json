@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42451,
+  "uuid": "skill-clawhub-skylv-data-pipeline-builder",
+  "skillKey": "clawhub-skylv-data-pipeline-builder",
+  "name": "Skylv Data Pipeline Builder",
+  "summary": "Build ETL/data pipelines with natural language. Extract from databases/APIs, transform with code, load to destinations. No pipeline framework expertise needed.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skylv_data_pipeline_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Build ETL/data pipelines with natural language",
+        "Extract from databases/APIs, transform with code, load to destinations",
+        "No pipeline framework expertise needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skylv-data-pipeline-builder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skylv-data-pipeline-builder",
+      "url": "https://clawhub.ai/skills/skylv-data-pipeline-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skylv-data-pipeline-builder",
+    "url": "https://clawhub.ai/skills/skylv-data-pipeline-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skylv-data-pipeline-builder-307760dd2b1aa42f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skylv-data-pipeline-builder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skylv-data-pipeline-builder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d422bc9539e4d44e9394a53bb96f8a5d3121af104336b8934accadd3f0200cf",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T23:34:09.374Z"
+}

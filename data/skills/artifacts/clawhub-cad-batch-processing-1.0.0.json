@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cad-batch-processing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cad_batch_processing",
+  "skill": {
+    "id": 72366,
+    "skillKey": "clawhub-cad-batch-processing",
+    "name": "CAD批量处理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cad-batch-processing",
+    "url": "https://clawhub.ai/skills/cad-batch-processing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cad-batch-processing-c1fa768f7b38e3e3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供CAD文件批量读取、文字替换、图层重命名、块属性修改和图纸自动生成等室内设计自动化处理功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "137984917-cyber",
+      "userId": "s1790hfws72axnnhfbnfe3gkb183j1qr",
+      "displayName": "137984917-cyber",
+      "image": "https://avatars.githubusercontent.com/u/270913925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776155401253,
+      "changelog": "室内设计CAD图纸批量处理工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:713aa3296c6fe5ee8fa5fd3b7af02402fc38ec9975127ed8a7927d65dbc9e1ab"
+}

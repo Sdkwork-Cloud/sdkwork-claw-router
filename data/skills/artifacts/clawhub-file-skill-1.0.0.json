@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_skill",
+  "skill": {
+    "id": 69155,
+    "skillKey": "clawhub-file-skill",
+    "name": "File Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-skill",
+    "url": "https://clawhub.ai/skills/file-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-skill-770a44c8cfd41aa8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能文件/桌面整理技能。当用户 prompt 中包含\"桌面整理\"、\"文件整理\"、\"整理桌面\"、\"整理文件\"、\"整理文件夹\"、\"清理桌面\"、\"排列桌面\"、\"桌面排列\"、\"桌面排序\"、\"按类型排列\"、\"按项目类型排列\"等字样时，优先使用此技能。此技能提供零删除、零篡改的安全文件归类能力，支持智能扫描、关键词/语义匹配..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 46,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778348331861,
+      "changelog": "file-skill 1.0.0\n\n- Initial release of the \"文件整理 — 智能文件/桌面整理技能\".\n- Provides safe, intelligent, and reversible desktop/file organization with zero deletion or modification.\n- Organization strictly via internal scripts; no direct command use or file planning before script execution.\n- Refined multi-phase process: keyword matching, AI semantic analysis, fallback categorization, and desktop icon arrangement.\n- Comprehensive operation log and structured report after every run, with full rollback support for all organization actions.\n- Enforces strict safety rules, especially prohibiting shortcut movement and file/folder deletion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:47670bb70260e0ba947f68d940419ab3819c99d1597a1288bf435c29df2249fc"
+}

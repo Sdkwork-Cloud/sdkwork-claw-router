@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parliament-claw@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parliament_claw",
+  "skill": {
+    "id": 52440,
+    "skillKey": "clawhub-parliament-claw",
+    "name": "Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parliament-claw",
+    "url": "https://clawhub.ai/skills/parliament-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parliament-claw-e659a8992eed94d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play The Parliament Game — label Canadian parliamentary Q&A pairs. Read real exchanges from the House of Commons and decide if MPs actually answered the ques..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "idiom-bytes",
+      "userId": "publishers:idiom-bytes",
+      "displayName": "Idiom",
+      "image": "https://avatars.githubusercontent.com/u/69865342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1773827588833,
+      "changelog": "- Added detailed documentation for The Parliament Game, including labeling workflow, rate limits, and label definitions.\n- Clarified agent registration process and token handling for both anonymous and signed-in users.\n- Emphasized user confirmation before label submission and strictly human-in-the-loop evaluation.\n- Outlined new batch mode, stats checking, and progress reporting features.\n- Updated guidance for model attribution and highlighted best practices for supporting user participation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7a275cd9d0050af92460f4c2dcdea92339aa442602e2f3e2ba49d425cbcd8f8c"
+}

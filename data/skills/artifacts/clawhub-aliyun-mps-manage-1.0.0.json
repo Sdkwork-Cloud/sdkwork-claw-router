@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-mps-manage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_mps_manage",
+  "skill": {
+    "id": 44832,
+    "skillKey": "clawhub-aliyun-mps-manage",
+    "name": "Aliyun Mps Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-mps-manage",
+    "url": "https://clawhub.ai/skills/aliyun-mps-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-mps-manage-0efa65d92df46ec5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when managing Alibaba Cloud ApsaraVideo for Media Processing (MPS/MTS) resources and workflows via OpenAPI/SDK, including media ingest and metadata tasks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775088832565,
+      "changelog": "Initial release for managing Alibaba Cloud ApsaraVideo MPS/MTS via OpenAPI/SDK.\n\n- Enables management of media processing resources, including pipelines, templates, workflows, jobs, and snapshots.\n- Supports API discovery, read-only validation, and evidence output for all operations.\n- Requires least-privilege AccessKey/STS credentials and bucket configuration before changes.\n- All operation results and evidence are saved under `output/aliyun-mps-manage/`.\n- Provides quickstart script and operation mapping for common tasks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf9a9b53cbea7dac9442e2464ca7849bedd0c37e8b96da19cdfb9297cfce170a"
+}

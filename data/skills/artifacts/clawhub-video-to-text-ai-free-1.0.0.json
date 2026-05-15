@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-to-text-ai-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_to_text_ai_free",
+  "skill": {
+    "id": 48145,
+    "skillKey": "clawhub-video-to-text-ai-free",
+    "name": "Video To Text Ai Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-to-text-ai-free",
+    "url": "https://clawhub.ai/skills/video-to-text-ai-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-to-text-ai-free-6680f9ce5c245eb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get text transcripts ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"transcr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777742276493,
+      "changelog": "Initial release of Video to Text AI Free — fast, no-cost AI video transcription for content creators.\n\n- Upload MP4, MOV, AVI, or WebM files (≤500MB) and convert video speech to accurate text transcripts\n- Simple workflow: upload → transcribe → export and download 1080p MP4 with transcript overlay\n- Automatic free token generation (100 credits/7 days); no sign-up required\n- Built-in cloud rendering: process jobs in 30–90 seconds per video\n- Clear error handling for file size, type, and authentication issues\n- Designed for creators, students, and journalists needing quick, reliable transcripts without extra steps",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c13e4357c9722e761a262b7d2ccfe76e887ee51a470b8d807882f9abcc475de"
+}

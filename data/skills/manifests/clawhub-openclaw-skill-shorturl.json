@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63094,
+  "uuid": "skill-clawhub-openclaw-skill-shorturl",
+  "skillKey": "clawhub-openclaw-skill-shorturl",
+  "name": "openclaw-skill-shorturl",
+  "summary": "提供短网址生成服务，支持自定义后缀和多种短网址域名选择。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_shorturl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "minecraftxdd",
+      "features": [
+        "提供短网址生成服务，支持自定义后缀和多种短网址域名选择。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-shorturl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38855278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-shorturl",
+      "url": "https://clawhub.ai/skills/openclaw-skill-shorturl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-shorturl",
+    "url": "https://clawhub.ai/skills/openclaw-skill-shorturl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-shorturl-8ba5275b81a42313.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-shorturl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-shorturl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c78a326aa479c0db88178f7b1e64bd2e2cb8347805069fc4540e10bc41c4e11f",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:31:01.046Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40074,
+  "uuid": "skill-clawhub-video-merge",
+  "skillKey": "clawhub-video-merge",
+  "name": "Video Merge",
+  "summary": "Get merged MP4 video ready to post, without touching a single slider. Upload your multiple video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_merge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dsewell-583h0",
+      "features": [
+        "Get merged MP4 video ready to post, without touching a single slider",
+        "Upload your multiple video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-merge@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-merge",
+      "url": "https://clawhub.ai/skills/video-merge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-merge",
+    "url": "https://clawhub.ai/skills/video-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-merge-7b37d69368d5b6e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-merge@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-merge-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75aebe1a3eb86f32cc3b87bb55d0ce7787535ea077a442323f7c710430017b2e",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T00:26:57.024Z"
+}

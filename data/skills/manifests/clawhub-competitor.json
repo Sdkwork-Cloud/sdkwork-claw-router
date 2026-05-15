@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67243,
+  "uuid": "skill-clawhub-competitor",
+  "skillKey": "clawhub-competitor",
+  "name": "Competitor",
+  "summary": "提供竞品分析的可落地指南与SOP。在开展竞品分析相关工作时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "提供竞品分析的可落地指南与SOP。在开展竞品分析相关工作时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor",
+      "url": "https://clawhub.ai/skills/competitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor",
+    "url": "https://clawhub.ai/skills/competitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-c378ee41c2783d08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd6f85aceb7a6ae522aeeaf6984fdea70eb45991de062a544b08d3cbcc84702c",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:06:51.274Z"
+}

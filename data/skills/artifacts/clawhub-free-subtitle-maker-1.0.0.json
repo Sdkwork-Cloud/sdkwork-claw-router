@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-subtitle-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_subtitle_maker",
+  "skill": {
+    "id": 52725,
+    "skillKey": "clawhub-free-subtitle-maker",
+    "name": "Free Subtitle Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-subtitle-maker",
+    "url": "https://clawhub.ai/skills/free-subtitle-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-subtitle-maker-0e2909ce321add1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drop a video and describe your subtitle style — this free-subtitle-maker skill transcribes your audio, formats the captions, and burns them directly into you..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774938828343,
+      "changelog": "- Initial release of Free Subtitle Maker — auto-generate and burn subtitles into any video for free.\n- Supports mp4, mov, avi, webm, mkv (and other formats).  \n- Customize subtitle style: font, size, placement, color, or use defaults.\n- No paid software, file juggling, or separate SRT—get a ready-to-share captioned video file.\n- Seamless workflow: upload video, set preferences, and receive a fully processed file via the NemoVideo backend.\n- Handles session, authentication, credits, and error checking automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:87282ec53d887128aca61ed90888b66481fa133e9d4b5dfe038972d5b8922def"
+}

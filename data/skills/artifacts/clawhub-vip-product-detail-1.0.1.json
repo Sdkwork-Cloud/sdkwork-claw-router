@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vip-product-detail@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vip_product_detail",
+  "skill": {
+    "id": 72736,
+    "skillKey": "clawhub-vip-product-detail",
+    "name": "唯品会商品详情"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vip-product-detail",
+    "url": "https://clawhub.ai/skills/vip-product-detail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vip-product-detail-51de35aaa5a2cb5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "唯品会（vip.com）商品详情查询技能。当用户想查看某件商品的详细信息时触发，包括但不限于：看商品详情、查规格尺码、 看商品图片、查活动优惠、看用户评价、问商品是否打折、确认库存、查品牌介绍等。 支持通过商品ID或商品链接查询，返回完整商品信息：价格、原价、折扣、优惠活动、商品图片、 买家评价、品牌信息等结构化..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vip",
+      "userId": "s176vxvz1gx2q3cq6qyhfd3wa9849vf2",
+      "displayName": "vip",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776259630531,
+      "changelog": "- 修正技能名称描述中的拼写错误（vipshop-product-detail 一致化）。\n- 文档内容无实质更动，仅对技能名称进行标准化处理。\n- 功能、使用流程和输出规范未变，保持与之前版本一致。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41b91d6b60fb73cdb654b0899fd60876fd3531fb03c5ea8abaa909937ed738b2"
+}

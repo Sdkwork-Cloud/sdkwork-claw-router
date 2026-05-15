@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/exa-web-search-nodeskai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.exa_web_search_nodeskai",
+  "skill": {
+    "id": 25457,
+    "skillKey": "clawhub-exa-web-search-nodeskai",
+    "name": "Exa Web Search Nodeskai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "exa-web-search-nodeskai",
+    "url": "https://clawhub.ai/skills/exa-web-search-nodeskai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/exa-web-search-nodeskai-df31772a49e1aeba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NodeSkai's optimized Free AI search via Exa MCP. Enhanced web search for news/info, code search for docs/examples from GitHub/StackOverflow, and deep company..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yumoezhung",
+      "userId": "s178rbmy9m5wbpjezx6k0pxwgs83pnyh",
+      "displayName": "YumoeZhung",
+      "image": "https://avatars.githubusercontent.com/u/49787045?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772682664442,
+      "changelog": "- Initial release of exa-web-search-nodeskai.\n- Offers AI-powered web, code, and company research with no API key required.\n- Supports core tools for web search, code context (from GitHub/Stack Overflow), and company research.\n- Provides optional advanced tools for deeper domain/date-filtered search, profile lookups, and research agents via configuration.\n- Simple setup and usage instructions included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:305cb5020ec9bb598f29de7a40317b86d38c475b15962e84f5a3d6d1a154a381"
+}

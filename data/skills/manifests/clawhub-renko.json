@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34685,
+  "uuid": "skill-clawhub-renko",
+  "skillKey": "clawhub-renko",
+  "name": "Renko",
+  "summary": "Renko reference tool. Use when working with renko in finance contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renko",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Renko reference tool",
+        "Use when working with renko in finance contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/renko@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "renko",
+      "url": "https://clawhub.ai/skills/renko"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renko",
+    "url": "https://clawhub.ai/skills/renko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renko-d311feecaa355fa0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/renko@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-renko-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4eb960a922526ee97809154e6dd723cf9f0befe51082c61008419afc70f17392",
+      "artifactSizeBytes": 1738
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T14:18:15.873Z"
+}

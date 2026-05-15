@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29388,
+  "uuid": "skill-clawhub-tiktok-minis",
+  "skillKey": "clawhub-tiktok-minis",
+  "name": "Tiktok",
+  "summary": "Provides summaries and status updates for public Youku short drama channels and episodes, including rankings, themes, and cast information.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_minis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Provides summaries and status updates for public Youku short drama channels and episodes, inclu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiktok-minis@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiktok-minis",
+      "url": "https://clawhub.ai/skills/tiktok-minis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-minis",
+    "url": "https://clawhub.ai/skills/tiktok-minis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-minis-cbfd680357d13850.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiktok-minis@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiktok-minis-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4521f18095801c6cc96f741a6cc7f66338e9fe913c601774e6b538ecda30a19e",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:06:35.777Z"
+}

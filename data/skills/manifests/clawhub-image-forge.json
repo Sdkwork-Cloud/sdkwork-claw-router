@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62454,
+  "uuid": "skill-clawhub-image-forge",
+  "skillKey": "clawhub-image-forge",
+  "name": "Image Forge",
+  "summary": "画图技能路由中枢（统一入口）。三维路由体系（用途 × 风格 × 主体），双后端调度。 - Signature 风格：10 种有独立 YAML 的视觉方案（构成主义/克莱因/Risograph/故障艺术等） - Rendering 风格：15 种通用渲染技法 modifier（写真/动漫/3D/水彩/赛博朋克等），...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_forge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "陈源泉",
+      "features": [
+        "画图技能路由中枢（统一入口）。三维路由体系（用途 × 风格 × 主体），双后端调度。",
+        "Signature 风格：10 种有独立 YAML 的视觉方案（构成主义/克莱因/Risograph/故障艺术等）",
+        "Rendering 风格：15 种通用渲染技法 modifier（写真/动漫/3D/水彩/赛博朋克等），..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-forge@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84364275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-forge",
+      "url": "https://clawhub.ai/skills/image-forge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-forge",
+    "url": "https://clawhub.ai/skills/image-forge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-forge-c4c40e5c9c67f73e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-forge@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-forge-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10b43921dc15108365d4735fb2b0e9d5854866e884cd5dccc5278249ab71fcb7",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T08:35:22.052Z"
+}

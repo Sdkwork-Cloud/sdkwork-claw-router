@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14036,
+  "uuid": "skill-clawhub-dlazy-kling-audio-clone",
+  "skillKey": "clawhub-dlazy-kling-audio-clone",
+  "name": "Dlazy Kling Audio Clone",
+  "summary": "Generate customized speech that highly restores the timbre by uploading reference audio using Kling Audio Clone.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_kling_audio_clone",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "Generate customized speech that highly restores the timbre by uploading reference audio using K."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-kling-audio-clone@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-kling-audio-clone",
+      "url": "https://clawhub.ai/skills/dlazy-kling-audio-clone"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-kling-audio-clone",
+    "url": "https://clawhub.ai/skills/dlazy-kling-audio-clone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-kling-audio-clone-bdfccd35252369f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-kling-audio-clone@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-kling-audio-clone-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc5eaec603952bee57370aaea40bf1a3f36aef24f709179e3de177acf8d5c11f",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:07:03.572Z"
+}

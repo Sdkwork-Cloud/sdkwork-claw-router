@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/implement-from-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.implement_from_design",
+  "skill": {
+    "id": 64753,
+    "skillKey": "clawhub-implement-from-design",
+    "name": "Implement From Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "implement-from-design",
+    "url": "https://clawhub.ai/skills/implement-from-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/implement-from-design-c0e6886f17b09f5b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 Figma、Sketch、MasterGo、Pixso、墨刀或摹客的设计上下文实现页面或组件，强调复用、设计 Token 映射以及面向生产的前端实现方式，并将实现计划保存为 Markdown 文件。当用户提供设计稿链接、设计选区、截图或要求按设计稿实现组件/页面时自动激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bovinphang",
+      "userId": "s175m64gr8tsfc06cj22czzfys83mp52",
+      "displayName": "Bovin Phang",
+      "image": "https://avatars.githubusercontent.com/u/17447895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774523096858,
+      "changelog": "- No file changes detected in this version.\n- Skill description, review criteria, and output format remain unchanged.\n- Version reported as 1.1.0 in SKILL.md for both current and previous versions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7a483184d3d30eb4abdea6430f845a9e474d105b3dae1ec823dd2fefa862738"
+}

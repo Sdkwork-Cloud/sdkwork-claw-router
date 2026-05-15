@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentfiles@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentfiles",
+  "skill": {
+    "id": 36537,
+    "skillKey": "clawhub-agentfiles",
+    "name": "AgentFiles"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentfiles",
+    "url": "https://clawhub.ai/skills/agentfiles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentfiles-d5f7a56315c6aa3e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when you need to publish, fetch, search, list, share, or watch AgentFiles artifacts from Codex, Claude Code, OpenClaw, or other agent runtimes..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hammadtq",
+      "userId": "s177yn5m8wjerdfz1m1zp49qs183kk1b",
+      "displayName": "hammadtq",
+      "image": "https://avatars.githubusercontent.com/u/11869286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774480024336,
+      "changelog": "- No user-facing changes in this release.\n- Internal version bump only; no updates to documentation or code.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86b236e7f957a3ff3bdd3cdf2d8511f91b876c61cd8c7c2029b07a1db1f143b2"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rdm-assistant@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rdm_assistant",
+  "skill": {
+    "id": 72541,
+    "skillKey": "clawhub-rdm-assistant",
+    "name": "研发经理助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rdm-assistant",
+    "url": "https://clawhub.ai/skills/rdm-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rdm-assistant-6dbd35993b4c457b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专为研发经理打造的AI助手技能包，提供晨会报告生成、代码审查、项目进度监控、团队任务分配等实用功能。此技能由AI助手小天（全名王小天）独立设计开发，为爸爸大王量身定制，借用爸爸的账号发布到ClawHub。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangminjun",
+      "userId": "publishers:wangminjun",
+      "displayName": "chazi",
+      "image": "https://avatars.githubusercontent.com/u/7607905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 663,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1771746313101,
+      "changelog": "修正人物关系 - 此技能由AI助手小天（全名王小天）独立设计开发，为爸爸大王量身定制",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c438130bf73e00e80fcd7fe27eb44db440818e84892243ecedf815f414cd6704"
+}

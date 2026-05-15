@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13540,
+  "uuid": "skill-clawhub-unione-api-skill",
+  "skillKey": "clawhub-unione-api-skill",
+  "name": "Unione - Email API",
+  "summary": "Send transactional and marketing emails via UniOne Email API. Manage email templates, validate email addresses, check delivery statistics, manage suppression...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unione_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "UniOne",
+      "features": [
+        "Send transactional and marketing emails via UniOne Email API",
+        "Manage email templates, validate email addresses, check delivery statistics, manage suppression."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unione-api-skill@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65599616?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unione-api-skill",
+      "url": "https://clawhub.ai/skills/unione-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unione-api-skill",
+    "url": "https://clawhub.ai/skills/unione-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unione-api-skill-dcf88c5028f2ce15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unione-api-skill@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-unione-api-skill-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca0bd98268d7ec4ae772f37791dabbb16d7d933e946b91635d446fc4c0e83d68",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T11:49:53.152Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48533,
+  "uuid": "skill-clawhub-sentry-alert-tuner",
+  "skillKey": "clawhub-sentry-alert-tuner",
+  "name": "Sentry Alert Tuner",
+  "summary": "Reduce Sentry alert fatigue by surgically tuning issue grouping, fingerprint rules, severity mapping, sample rates, before-send filters, sourcemap pipelines,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentry_alert_tuner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Reduce Sentry alert fatigue by surgically tuning issue grouping, fingerprint rules, severity ma."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sentry-alert-tuner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sentry-alert-tuner",
+      "url": "https://clawhub.ai/skills/sentry-alert-tuner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentry-alert-tuner",
+    "url": "https://clawhub.ai/skills/sentry-alert-tuner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentry-alert-tuner-2bf4f3a45ecb0aa0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sentry-alert-tuner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sentry-alert-tuner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:335b5306a33923e2c9ee55aea4ef367ab34dbaab192ce17571c829e6163d6bbd",
+      "artifactSizeBytes": 2614
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T01:07:12.226Z"
+}

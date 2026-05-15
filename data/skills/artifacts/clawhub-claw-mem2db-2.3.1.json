@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-mem2db@2.3.1",
+  "version": "2.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_mem2db",
+  "skill": {
+    "id": 31971,
+    "skillKey": "clawhub-claw-mem2db",
+    "name": "Memory system for claws"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-mem2db",
+    "url": "https://clawhub.ai/skills/claw-mem2db",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-mem2db-57cc2edc59a18e17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give an AI agent persistent semantic memory that survives restarts and compaction. Captures structured observations from tool calls, summarizes sessions (LLM..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ngplateform",
+      "userId": "s174jgevfk7r09cmde3k4renq185fe2a",
+      "displayName": "Meshes & Parallels",
+      "image": "https://avatars.githubusercontent.com/u/93938011?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.3.1",
+      "createdAt": 1777245678840,
+      "changelog": "claw-mem2db 2.3.1\n\n- Updated description and documentation to clarify cue extraction: now explicitly mentions support for English and zh-CN (\"remember this\", \"note this\", etc.) in chat cue detection.\n- Minor metadata update: install procedure now targets version 2.3.1 of @chainofclaw/claw-mem for consistency.\n- No functional changes to code; this is a documentation and metadata update only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:540ec51a7615bfdc0d603bde36acfdcce8573111422f898f706cdd74ed0d5616"
+}

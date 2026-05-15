@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46867,
+  "uuid": "skill-clawhub-qveris-skill",
+  "skillKey": "clawhub-qveris-skill",
+  "name": "Qveris Skill",
+  "summary": "Search and execute dynamic tools via QVeris API. Use when needing to find and call external APIs/tools dynamically (weather, search, data retrieval, stock tr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qveris_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yifei Wang",
+      "features": [
+        "Search and execute dynamic tools via QVeris API",
+        "Use when needing to find and call external APIs/tools dynamically (weather, search, data retrie."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qveris-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198175959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qveris-skill",
+      "url": "https://clawhub.ai/skills/qveris-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qveris-skill",
+    "url": "https://clawhub.ai/skills/qveris-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qveris-skill-cbf7b0bdf08c985f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qveris-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qveris-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3250fd54a8a0d376590821aec425902e42b875cbb4c95b5b13ff1b73160e94c2",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T20:06:23.773Z"
+}

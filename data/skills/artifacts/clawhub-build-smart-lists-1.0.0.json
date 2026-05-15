@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/build-smart-lists@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.build_smart_lists",
+  "skill": {
+    "id": 41557,
+    "skillKey": "clawhub-build-smart-lists",
+    "name": "Build Smart Lists"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "build-smart-lists",
+    "url": "https://clawhub.ai/skills/build-smart-lists",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/build-smart-lists-35c1ee0ab78d551b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create foundational segmented lists for marketing and sales operations. Includes a master sendable list, ICP-based lists, persona lists, engagement lists, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tomgranot",
+      "userId": "s17cmf9jxs7s60v7thhms9w09h83m293",
+      "displayName": "TomGranot",
+      "image": "https://avatars.githubusercontent.com/u/8835035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774542433348,
+      "changelog": "- Initial release introduces the skill for building foundational segmented lists for marketing and sales operations.\n- Enables creation of 10 core active (dynamic) lists, including a master sendable list, ICP-based lists, persona lists, engagement and behavioral lists.\n- Lists update automatically as contact properties change, supporting real-time segmentation.\n- Outlines prerequisites, user requirements interview, and detailed step-by-step instructions for each list.\n- Standardizes segmentation to enable faster, more reliable campaign targeting and sales prioritization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bcd4ad9a810f1ad8229127d8655c5e2b5a23a8a1d807d3b725ec91608839e940"
+}

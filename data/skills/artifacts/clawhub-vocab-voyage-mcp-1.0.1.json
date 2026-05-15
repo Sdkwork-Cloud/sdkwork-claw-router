@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vocab-voyage-mcp@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocab_voyage_mcp",
+  "skill": {
+    "id": 41226,
+    "skillKey": "clawhub-vocab-voyage-mcp",
+    "name": "Vocab Voyage Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocab-voyage-mcp",
+    "url": "https://clawhub.ai/skills/vocab-voyage-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocab-voyage-mcp-2d0fdee254143e4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides vocabulary definitions, quizzes, word lists, study plans, and context explanations for academic and test-prep exams including ISEE, SSAT, SAT, GRE,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jaideepdhanoa",
+      "userId": "s1749xsaeyc40bw9xywdzkfpxs858q96",
+      "displayName": "jaideepdhanoa",
+      "image": "https://avatars.githubusercontent.com/u/219172107?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776797798588,
+      "changelog": "Vocab Voyage MCP Skill 1.0.1\n\n- Adds a comprehensive SKILL.md with usage details, endpoints, supported tools, authentication, and rate limits.\n- Clarifies public and personalized tool access, including how to obtain and use tokens.\n- Documents new and existing REST/NL endpoints for natural-language queries and API access.\n- Describes available vocabulary quiz, definition, study plan, and course-listing tools.\n- Lists supported UI widgets for interactive quiz, definition, and study plan previews.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:314fe4fb2a509207ddbc0fb26ca81e6fba3e030b8e512df080c4166d53b0ce19"
+}

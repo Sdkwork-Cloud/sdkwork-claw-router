@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-text-correct@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_text_correct",
+  "skill": {
+    "id": 68644,
+    "skillKey": "clawhub-llm-text-correct",
+    "name": "llm-text-correct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-text-correct",
+    "url": "https://clawhub.ai/skills/llm-text-correct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-text-correct-23d2e2e79d52595a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户想要**纠正中文文本错误**、**修改拼写错别字**、**修正语法**、**调整标点**、**润色中文句子**、**检查形近字错误**时自动触发。 使用 pycorrector + MacBERT 专业模型进行高精度中文纠错，准确率远高于普通 LLM 直接提示。 支持直接输入一段文字、长文本，或提供文本文件..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangminrui2022",
+      "userId": "s17de4avhxep6e2yxdr6snee9h83v08q",
+      "displayName": "顶尖王牌程序员",
+      "image": "https://avatars.githubusercontent.com/u/11627332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1776696749229,
+      "changelog": "- No changes detected in this version; files remain unchanged.\n- Functionality and behavior are consistent with the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ee40642da67bd220d411559fde7b81ece67f3c0962ef2fc84644ea7bf2491a0"
+}

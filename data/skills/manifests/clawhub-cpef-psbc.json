@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70291,
+  "uuid": "skill-clawhub-cpef-psbc",
+  "skillKey": "clawhub-cpef-psbc",
+  "name": "cpef-psbc",
+  "summary": "中国邮政储蓄银行银企直联接口，支持余额查询、明细查询及支付审核操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpef_psbc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hypersonal",
+      "features": [
+        "中国邮政储蓄银行银企直联接口，支持余额查询、明细查询及支付审核操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpef-psbc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52287774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpef-psbc",
+      "url": "https://clawhub.ai/skills/cpef-psbc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpef-psbc",
+    "url": "https://clawhub.ai/skills/cpef-psbc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpef-psbc-49507ad0091e67f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpef-psbc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpef-psbc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d77eae048fba3828cf74662758f24869f9377879d10cb71642ebedc21e191af5",
+      "artifactSizeBytes": 2108
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:38:14.244Z"
+}

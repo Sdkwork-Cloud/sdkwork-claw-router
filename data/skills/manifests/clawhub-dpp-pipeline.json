@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44379,
+  "uuid": "skill-clawhub-dpp-pipeline",
+  "skillKey": "clawhub-dpp-pipeline",
+  "name": "dpp-pipeline",
+  "summary": "Use when you need to turn a local source video and one product image into a single-product placement video with the DPP pipeline.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dpp_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kotot",
+      "features": [
+        "Use when you need to turn a local source video and one product image into a single-product plac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dpp-pipeline@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7607540?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dpp-pipeline",
+      "url": "https://clawhub.ai/skills/dpp-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dpp-pipeline",
+    "url": "https://clawhub.ai/skills/dpp-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dpp-pipeline-ddb691f40de6f367.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dpp-pipeline@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dpp-pipeline-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d863449f3b00fbdef13578dffa3c733e20c50ad477e151a8394c0bc2bccd8a63",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T03:55:11.239Z"
+}

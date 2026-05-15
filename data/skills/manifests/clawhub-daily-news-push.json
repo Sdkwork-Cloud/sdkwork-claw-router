@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70685,
+  "uuid": "skill-clawhub-daily-news-push",
+  "skillKey": "clawhub-daily-news-push",
+  "name": "daily-news-push",
+  "summary": "通用每日早报自动生成和推送服务。支持任意领域，自动搜索过去24小时指定领域资讯，按固定格式整理推送到指定渠道。支持企业微信、飞书、Webhook多种渠道。触发词：每日早报，早报推送，自动日报，新闻推送。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shoyee94",
+      "features": [
+        "通用每日早报自动生成和推送服务。支持任意领域，自动搜索过去24小时指定领域资讯，按固定格式整理推送到指定渠道。支持企业微信、飞书、Webhook多种渠道。触发词：每日早报，早报推送，自动日报."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-push@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213401871?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-push",
+      "url": "https://clawhub.ai/skills/daily-news-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-push",
+    "url": "https://clawhub.ai/skills/daily-news-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-push-709239a5cf2287ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-push@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-push-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ebea9681cd0af7ffb017dfd2cdc089dd4c00bbac3f2b7a87f14297ff15649cc9",
+      "artifactSizeBytes": 2410
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:27:17.574Z"
+}

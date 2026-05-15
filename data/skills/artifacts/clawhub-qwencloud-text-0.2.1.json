@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwencloud-text@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwencloud_text",
+  "skill": {
+    "id": 35515,
+    "skillKey": "clawhub-qwencloud-text",
+    "name": "qwencloud-text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwencloud-text",
+    "url": "https://clawhub.ai/skills/qwencloud-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwencloud-text-60edf991e629fd55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[QwenCloud] Generate text, have conversations, write code, reason, and call functions with Qwen models. TRIGGER when: user asks to chat with Qwen, generate t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cuixiaoyang123",
+      "userId": "s17a1fxs5ehbx87dzkfs8rs0pn83py7d",
+      "displayName": "Cuixiaoyang123",
+      "image": "https://avatars.githubusercontent.com/u/42457946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 214,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1777558804530,
+      "changelog": "No code or file changes detected in this release.\n\n- Version bump to 0.2.1 with no user-visible changes.\n- Documentation, features, and behavior remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e87ccab151654814d3552f3915e75605c9228fe8627d8fe6f9b832911c3ee94a"
+}

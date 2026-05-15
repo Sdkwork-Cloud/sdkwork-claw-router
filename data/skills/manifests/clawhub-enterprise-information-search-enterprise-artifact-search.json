@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47090,
+  "uuid": "skill-clawhub-enterprise-information-search-enterprise-artifact-search",
+  "skillKey": "clawhub-enterprise-information-search-enterprise-artifact-search",
+  "name": "enterprise-artifact-search",
+  "summary": "Multi-hop evidence search + structured extraction over enterprise artifact datasets (docs/chats/meetings/PRs/URLs). Strong disambiguation to prevent cross-pr...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_information_search_enterprise_artifact_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wu-uk",
+      "features": [
+        "Multi-hop evidence search + structured extraction over enterprise artifact datasets (docs/chats.",
+        "Strong disambiguation to prevent cross-pr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-information-search-enterprise-artifact-search@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199610473?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-information-search-enterprise-artifact-search",
+      "url": "https://clawhub.ai/skills/enterprise-information-search-enterprise-artifact-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-information-search-enterprise-artifact-search",
+    "url": "https://clawhub.ai/skills/enterprise-information-search-enterprise-artifact-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-information-search-enterprise-artifact-search-e470a267c47b279c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-information-search-enterprise-artifact-search@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-information-search-enterprise-artifact-search-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b1fa191ee7fd1c3b9600c6262775612d7c2b73bdb4babce1e2281a15b297344",
+      "artifactSizeBytes": 2168
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:05:58.527Z"
+}

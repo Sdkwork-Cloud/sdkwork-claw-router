@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63666,
+  "uuid": "skill-clawhub-otaku-wiki",
+  "skillKey": "clawhub-otaku-wiki",
+  "name": "Otaku Wiki",
+  "summary": "番剧/角色百科问答：用 AniList API 快速查番、查角色、查声优与作品关联（无需数据库）",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.otaku_wiki",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Robin797860",
+      "features": [
+        "番剧/角色百科问答：用 AniList API 快速查番、查角色、查声优与作品关联（无需数据库）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/otaku-wiki@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199881117?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "otaku-wiki",
+      "url": "https://clawhub.ai/skills/otaku-wiki"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "otaku-wiki",
+    "url": "https://clawhub.ai/skills/otaku-wiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/otaku-wiki-b1d65ae68030b612.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/otaku-wiki@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-otaku-wiki-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f04b176e139e63cf1753901040802c1cc935cd7acc76e5915647b65f8684a498",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T03:25:35.250Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57760,
+  "uuid": "skill-clawhub-smyx-phone-usage-monitoring-analysis",
+  "skillKey": "clawhub-smyx-phone-usage-monitoring-analysis",
+  "name": "职场玩手机智能监测技能",
+  "summary": "Based on computer vision, automatically detects employees playing with phones during work hours, supports real-time video stream and image detection, counts...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smyx_phone_usage_monitoring_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "smyx-sunjinhui",
+      "features": [
+        "Based on computer vision, automatically detects employees playing with phones during work hours."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smyx-phone-usage-monitoring-analysis@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/272464691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smyx-phone-usage-monitoring-analysis",
+      "url": "https://clawhub.ai/skills/smyx-phone-usage-monitoring-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smyx-phone-usage-monitoring-analysis",
+    "url": "https://clawhub.ai/skills/smyx-phone-usage-monitoring-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smyx-phone-usage-monitoring-analysis-40fd13fa9eb18c95.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smyx-phone-usage-monitoring-analysis@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smyx-phone-usage-monitoring-analysis-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07fed00003a638e1a908dc2692e093348285ac1df867305953cdf528b2cedc13",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T11:44:42.436Z"
+}

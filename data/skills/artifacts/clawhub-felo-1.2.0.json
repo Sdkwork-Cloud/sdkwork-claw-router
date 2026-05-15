@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/felo@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo",
+  "skill": {
+    "id": 49661,
+    "skillKey": "clawhub-felo",
+    "name": "Felo AI Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo",
+    "url": "https://clawhub.ai/skills/felo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-64ff074573d32587.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-synthesized web search via Felo API — aggregates 15-40 sources into structured summaries. Use when: (1) researching a topic that needs multi-source synthe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iml885203",
+      "userId": "s17b5ptyw0acm1bkxag081v2dx83m9sc",
+      "displayName": "Logan",
+      "image": "https://avatars.githubusercontent.com/u/17023091?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 604,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772983111775,
+      "changelog": "v1.2.0: Declare FELO_API_KEY in metadata requires.env, add chmod 600 for file-based key storage, fix all security scan findings",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c1512ed206ce71e41e49ba8084136c98bb896b943099875fc4b920793fce429"
+}

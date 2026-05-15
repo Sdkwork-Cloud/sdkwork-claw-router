@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64524,
+  "uuid": "skill-clawhub-cpn-modeling",
+  "skillKey": "clawhub-cpn-modeling",
+  "name": "cpn_modeling_tool",
+  "summary": "从自然语言业务场景描述中自动提取 CPN（着色 Petri 网）模型，输出 JSON、CPN Tools XML（.cpn）和 HTML 可视化三种格式。当用户描述业务流程并提到 CPN、Petri 网、建模、FS 规则、工序依赖、库所、变迁等关键词时触发。也适用于电商订单、餐厅点餐、审批流程、工程工序等场景，即...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpn_modeling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunny",
+      "features": [
+        "从自然语言业务场景描述中自动提取 CPN（着色 Petri 网）模型，输出 JSON、CPN Tools XML（.cpn）和 HTML 可视化三种格式。当用户描述业务流程并提到 CPN、P."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpn-modeling@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19684886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpn-modeling",
+      "url": "https://clawhub.ai/skills/cpn-modeling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpn-modeling",
+    "url": "https://clawhub.ai/skills/cpn-modeling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpn-modeling-ce2a9440e2a8ed41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpn-modeling@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpn-modeling-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91d83eca3780bcd6957029e3ccb5a5e957785d0f0ef7398eb7384c6c78ca1726",
+      "artifactSizeBytes": 2212
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T05:03:13.968Z"
+}

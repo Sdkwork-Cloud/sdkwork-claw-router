@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zero@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zero",
+  "skill": {
+    "id": 16699,
+    "skillKey": "clawhub-zero",
+    "name": "Zero TiDB(Deprecated)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zero",
+    "url": "https://clawhub.ai/skills/zero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zero-f9194e73f9e9459e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create ephemeral TiDB Cloud Zero databases for agent workflows in Technical Preview."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bosn",
+      "userId": "s170tn4qne7dvkhvmbapm5dans83e0m2",
+      "displayName": "Bosn",
+      "image": "https://avatars.githubusercontent.com/u/1892986?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 659,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772253686538,
+      "changelog": "Deprecate this, please use TiDB Cloud Zero instead",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:df6585c17f1b86b3ceb9dd57c27b368429c9335be3b160ae89db9419da236533"
+}

@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "product-picker",
+    "displayName": "product-picker",
+    "summary": "多平台数据加权打分筛选产品工具，针对\"尚品宅配\"品牌家居场景，从小红书、京东、淘宝三平台采集数据并综合评分。触发场景：(1) 选品、产品筛选；(2) 小红书/京东/淘宝数据加权打分；(3) 尚品宅配产品落地评估；(4) 产品热度/转化分析；(5) 询问\"这个产品适合落地吗\"类问题。输出要求：完成评估后，必须将 ....",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "createdAt": 1775006360792,
+    "updatedAt": 1775045507981
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1775044083022,
+    "changelog": "- 新增筛选流程自动化步骤：完成 .md 报告文件飞书发送后，自动询问用户是否要将报告转换为PPT。\n- 用户回复肯定后，自动调用 md-to-nanobanana-ppt 技能，将 Markdown 格式报告转为可用PPT，并支持配色方案选择及分流交付。\n- 输出/保存目录由 `~/.openclaw/workspace/skills/product-picker/output/` 调整为 `~/.openclaw/media/ai-choise/product-picker/`。\n- 飞书文件发送样例命令的本地路径同步更新；相关说明文本、流程步骤增加 PPT 生成及交付的详细规则说明。\n- 原有的评估逻辑、判分方式保持不变，仅流程、目录与交付方式做拓展和优化。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yunni123",
+    "userId": "s17d4pkdsm5dpha1f8ez2msak983g3gd",
+    "displayName": "Heaven",
+    "image": "https://avatars.githubusercontent.com/u/23333359?v=4"
+  },
+  "moderation": null
+}

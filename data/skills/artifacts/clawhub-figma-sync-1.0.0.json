@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_sync",
+  "skill": {
+    "id": 13086,
+    "skillKey": "clawhub-figma-sync",
+    "name": "Figma Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-sync",
+    "url": "https://clawhub.ai/skills/figma-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-sync-0074849bc8c31489.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read Figma files, extract design tokens, generate React Native Expo TS or Web React + Tailwind code, write back to Figma, and diff local models against Figma for minimal patches. Triggers: \"pull figma\", \"sync figma\", \"figma to code\", \"push."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kristinadarroch",
+      "userId": "publishers:kristinadarroch",
+      "displayName": "kristinadarroch",
+      "image": "https://avatars.githubusercontent.com/u/22300685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1563,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770611102933,
+      "changelog": "Initial release: Figma → React Native Expo TS / Web React + Tailwind code generation. Recursive node translation, auto-layout → flexbox, image export, design token extraction, diff support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:efc6f12fc7cc4bd6f704f23099a2061f9d344eb8de765399b304356b91d2390b"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-test@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_test",
+  "skill": {
+    "id": 55315,
+    "skillKey": "clawhub-skills-test",
+    "name": "Skill Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-test",
+    "url": "https://clawhub.ai/skills/skills-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-test-0aef5cbc70a26130.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate and QA a skill before release on ClawHub, skills.sh, and similar directories. Includes the bundled static evaluator `scripts/eval_skill.py` plus gui..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fwwdn",
+      "userId": "s170ex8ttg10hrew681fwjwejh83gvm4",
+      "displayName": "Weiwei Fan",
+      "image": "https://avatars.githubusercontent.com/u/3015434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774011254814,
+      "changelog": "- Added bundled static evaluator script (`scripts/eval_skill.py`) for out-of-the-box quality and readiness checks.\n- Added support for user-defined deterministic and LLM rubric grading via optional workflows, clarified that only the static evaluator is bundled.\n- Introduced an example `eval.yaml` to guide skill regression test suite creation.\n- Updated documentation for clearer separation of bundled vs. optional grading tools, including revised prerequisites and notes about LLM/API key handling.\n- Clarified typical use cases, evaluation modes, and workflow steps for skill QA prior to publication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:356afafc2a7b64e46d102b272eeb4f2c3181cd07219b451124e86db71a683c27"
+}

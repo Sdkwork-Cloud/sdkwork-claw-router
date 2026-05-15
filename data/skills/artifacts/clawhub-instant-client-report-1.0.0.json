@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instant-client-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instant_client_report",
+  "skill": {
+    "id": 53689,
+    "skillKey": "clawhub-instant-client-report",
+    "name": "Instant Client Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instant-client-report",
+    "url": "https://clawhub.ai/skills/instant-client-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instant-client-report-00ce5b73b4e1ec95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a detailed, AI-powered audit report evaluating a prospect’s website, SEO, ads, social media, reputation, tech stack, and competitors to close deals..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 104,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777405520599,
+      "changelog": "Initial release — generate detailed AI-powered prospect audit reports from any website domain in minutes.\n\n- Instantly audits website, SEO, ads, social media, reviews, tech stack, and competitors.\n- Integrates with Apify Actors for comprehensive data collection.\n- Generates structured, professional reports (JSON/Markdown) with scores, actionable insights, and personalized agency pitches.\n- Provides top 5 critical issues and top 5 quick wins based on estimated revenue impact.\n- Designed to help agencies close clients faster by sending pre-call audits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad70f20ca478323e1aae69b5840585f3e9f29021d6c9e85654ed1979573e2e30"
+}

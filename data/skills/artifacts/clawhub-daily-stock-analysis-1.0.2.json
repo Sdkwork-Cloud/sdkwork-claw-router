@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-stock-analysis@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_stock_analysis",
+  "skill": {
+    "id": 11019,
+    "skillKey": "clawhub-daily-stock-analysis",
+    "name": "Daily Stock Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-stock-analysis",
+    "url": "https://clawhub.ai/skills/daily-stock-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-stock-analysis-299b4a291e280412.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deterministic daily stock analysis skill for global equities. Use when users need daily analysis, next-trading-day close prediction, prior forecast review, r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hexavi8",
+      "userId": "s17bccdx9ndspa7v05zjqag21s83m3zd",
+      "displayName": "HeXavi8",
+      "image": "https://avatars.githubusercontent.com/u/51332043?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1624,
+      "installsAllTime": 32,
+      "installsCurrent": 32,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772265206033,
+      "changelog": "Version 1.0.2 – Major update with new file structure, deterministic output rules, and Python script integration.\n\n- Enforces working directory and canonical report/output location for better file management.\n- Integrates required Python scripts for report planning and accuracy calculation.\n- Adds compatibility/minimal modes for environments without Python or with limited resources.\n- Introduces stricter overwrite/versioning logic for daily report files.\n- Adds new reference documents: minimal_mode.md, security.md, sources.md.\n- Streamlines required and optional output fields; mandates actionable self-improvement in every run.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72ff57801e084def4a49973ed9e42ef7940680fea3f6f065c06b27e2c1bc3983"
+}

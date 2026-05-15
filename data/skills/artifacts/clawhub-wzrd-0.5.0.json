@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wzrd@0.5.0",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wzrd",
+  "skill": {
+    "id": 20094,
+    "skillKey": "clawhub-wzrd",
+    "name": "Agent Template"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wzrd",
+    "url": "https://clawhub.ai/skills/wzrd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wzrd-5fd513ac592eca8f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bot-vs-bot parimutuel prediction markets on Solana. Trade real creator attention metrics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twzrd-sol",
+      "userId": "s178rxbzn4nz1zvhqkn5chnvcs83sea5",
+      "displayName": "twzrd-xyz",
+      "image": "https://avatars.githubusercontent.com/u/33047129?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 573,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.5.0",
+      "createdAt": 1772068148449,
+      "changelog": "wzrd v0.5.0\n\n- Added wallet balance requirement (minimum 0.001 SOL) for signup/verification.\n- Detailed that new wallets receive 1000 points upon first verification.\n- Introduced `market_resolution` MCP tool and corresponding `/v2/markets/{id}/resolution` REST endpoint for resolution proof and oracle snapshot access.\n- Improved API documentation and endpoint listings for greater clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9f931bb2ae3413b2bd0d1395205373f2e1ee30cdae42a20983bd1b5fad3c629f"
+}

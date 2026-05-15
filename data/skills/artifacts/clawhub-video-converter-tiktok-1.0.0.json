@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-converter-tiktok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_converter_tiktok",
+  "skill": {
+    "id": 44049,
+    "skillKey": "clawhub-video-converter-tiktok",
+    "name": "Video Converter Tiktok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-converter-tiktok",
+    "url": "https://clawhub.ai/skills/video-converter-tiktok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-converter-tiktok-418c7678262d9c1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get TikTok-ready clips ready to post, without touching a single slider. Upload your video clips (MP4, MOV, AVI, WebM, up to 500MB), say something like \"conve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775926575385,
+      "changelog": "Video Converter TikTok 1.0.0 — Initial Release\n\n- Convert videos (MP4, MOV, AVI, WebM up to 500MB) to vertical 9:16 format optimized for TikTok\n- Simple guided workflow: upload, describe edits, and download 1080p MP4 results\n- Cloud-powered rendering pipeline for fast processing and high compatibility\n- Automatic session setup with free anonymous credits (no manual setup required)\n- Supports track editing, text overlays, background music, and multi-clip workflows\n- Clear feedback for uploads, exports, and common errors with tip summaries",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f56ecf9d55899e70fc56138fdc7ed044a430ae632ea0de9535e2fa29475cfc29"
+}

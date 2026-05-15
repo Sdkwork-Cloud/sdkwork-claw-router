@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agents-infra@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_infra",
+  "skill": {
+    "id": 22724,
+    "skillKey": "clawhub-agents-infra",
+    "name": "Infrastructure for agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-infra",
+    "url": "https://clawhub.ai/skills/agents-infra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-infra-4e91f7dc94e6812f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Infrastructure for AI Agents. Phone, email, Social accounts, compute, domains, and voice calling for AI agents. Pay with USDC on Solana or Base via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xartex",
+      "userId": "s17ac9rr9rxwdz696r2aeqrn05841x94",
+      "displayName": "0xArtex",
+      "image": "https://avatars.githubusercontent.com/u/108491869?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 462,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775044141547,
+      "changelog": "- Added decrypt-email.mjs script for decrypting encrypted AgentOS emails with your wallet key.\n- Updated docs with new CLI commands for phone, email, compute, domain, and wallet management.\n- API pricing and endpoints revised for better transparency and updated service costs.\n- Added support and documentation for email threads, attachments, and webhooks.\n- All email is now end-to-end encrypted; documented how to decrypt using the new script.\n- Authentication clarified: no API keys needed—pay with your wallet to own resources on Solana or Base.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:24bbb262de2cb1de9f3c03e3359bdd0d7e1aa2efe6f85c9084cb538530307e1b"
+}

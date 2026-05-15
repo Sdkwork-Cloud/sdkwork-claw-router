@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edgeiq-network-scanner@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeiq_network_scanner",
+  "skill": {
+    "id": 36340,
+    "skillKey": "clawhub-edgeiq-network-scanner",
+    "name": "Network Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeiq-network-scanner",
+    "url": "https://clawhub.ai/skills/edgeiq-network-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeiq-network-scanner-514ef964bd65652b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs authorized TCP port scanning, service banner grabbing, OS fingerprinting, and host discovery using pure Python without nmap on Windows/WSL/Linux."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edgeiq-labs",
+      "userId": "s17281v95sfy21qznab55m4qb984t38a",
+      "displayName": "EdgeIQLabs",
+      "image": "https://avatars.githubusercontent.com/u/16479432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777136899484,
+      "changelog": "v1.4.0: URGENT FIX — corrected Stripe Payment Link URLs (no suffixes, correct live URLs)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3a34c4c91fe198f8d11afbba77e8f76a8ffb89377bfe7cfe642028b77d34c61"
+}

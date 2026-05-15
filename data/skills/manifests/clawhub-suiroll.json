@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22421,
+  "uuid": "skill-clawhub-suiroll",
+  "skillKey": "clawhub-suiroll",
+  "name": "SUIROLL",
+  "summary": "Provably fair giveaway tool for AI agents on Sui with VRF and Moltbook auth.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suiroll",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abdhilabs",
+      "features": [
+        "Provably fair giveaway tool for AI agents on Sui with VRF and Moltbook auth."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/suiroll@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28172248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "suiroll",
+      "url": "https://clawhub.ai/skills/suiroll"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suiroll",
+    "url": "https://clawhub.ai/skills/suiroll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suiroll-92f3179d609038ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/suiroll@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-suiroll-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0342a469978682ef911e23fa46955a7d5140f438283e09ac2e632ce82f8d954",
+      "artifactSizeBytes": 1739
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T22:41:32.414Z"
+}

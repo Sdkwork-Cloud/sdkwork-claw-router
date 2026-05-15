@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/graphql-schema-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.graphql_schema_analyzer",
+  "skill": {
+    "id": 53688,
+    "skillKey": "clawhub-graphql-schema-analyzer",
+    "name": "Graphql Schema Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "graphql-schema-analyzer",
+    "url": "https://clawhub.ai/skills/graphql-schema-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/graphql-schema-analyzer-d7d5dfc1ec9aff57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze GraphQL schemas for performance, security, complexity, and best practices — detect N+1 queries, circular references, excessive depth, and missing aut..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 95,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777614128287,
+      "changelog": "Version 1.0.0\n\n- Initial release of GraphQL Schema Analyzer.\n- Analyze GraphQL schemas for performance, security, complexity, and best practices.\n- Detects N+1 query issues, circular references, excessive depth, missing authorization, and schema design anti-patterns.\n- Provides actionable suggestions and schema metrics.\n- Covers security audits, resolver efficiency, naming conventions, and schema documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aa114a86e6d6ecf535d3d9e16430e18246456434a9f0eaa89e83613355d4c08"
+}

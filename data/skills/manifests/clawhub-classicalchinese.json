@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60585,
+  "uuid": "skill-clawhub-classicalchinese",
+  "skillKey": "clawhub-classicalchinese",
+  "name": "classical-chinese",
+  "summary": "以文言文压缩输出、节省 token。当用户要求文言回复、节省 token、省输出时触发。支持三档：极致(/e/Extreme)、适度(/m/Medium)、轻微(/l/Light)。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.classicalchinese",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "u5bf",
+      "features": [
+        "以文言文压缩输出、节省 token。当用户要求文言回复、节省 token、省输出时触发。支持三档：极致(/e/Extreme)、适度(/m/Medium)、轻微(/l/Light)。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/classicalchinese@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62391483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "classicalchinese",
+      "url": "https://clawhub.ai/skills/classicalchinese"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "classicalchinese",
+    "url": "https://clawhub.ai/skills/classicalchinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/classicalchinese-e5a7fed978662776.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/classicalchinese@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-classicalchinese-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a7f27bf8738ac908311bcab88cef51c74bbed858cf6890b2b7d2dfccd8a9c0c",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:31:25.511Z"
+}

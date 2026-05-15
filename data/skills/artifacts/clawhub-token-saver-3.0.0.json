@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-saver@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_saver",
+  "skill": {
+    "id": 8800,
+    "skillKey": "clawhub-token-saver",
+    "name": "Token Saver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-saver",
+    "url": "https://clawhub.ai/skills/token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-saver-0d8caeb27737d0c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reduce OpenClaw AI costs with model-aware optimization. Features dynamic compaction presets based on your model's context window, intelligent file compression, and robust model detection with fallback. Supports Claude, GPT-4, Gemini, DeepS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rubenaquispe",
+      "userId": "s17f9rkw2t06cm3ya2a4spns4d83x9jk",
+      "displayName": "Ruben Quispe",
+      "image": "https://avatars.githubusercontent.com/u/44844199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5850,
+      "installsAllTime": 31,
+      "installsCurrent": 30,
+      "stars": 9,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1770425834238,
+      "changelog": "v3: Model-aware optimization with dynamic presets, robust model detection, context window registry for 9+ models",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f1c3223d70422727e5a53bada2dd889ab33dcbebf6c59be11066e1dc9f73168"
+}

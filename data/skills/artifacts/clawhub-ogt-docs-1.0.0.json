@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ogt-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ogt_docs",
+  "skill": {
+    "id": 15569,
+    "skillKey": "clawhub-ogt-docs",
+    "name": "OGT Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ogt-docs",
+    "url": "https://clawhub.ai/skills/ogt-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ogt-docs-c04ab4a127fa562e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Documentation-as-Source-of-Truth workflow. Use when working with projects that use docs/ as the canonical source for definitions, rules, and tasks. Routes to specialized sub-skills for specific documentation types."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eduardou24",
+      "userId": "publishers:eduardou24",
+      "displayName": "EduardoU24",
+      "image": "https://avatars.githubusercontent.com/u/1507317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1006,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770556042461,
+      "changelog": "Initial release of the ogt-docs skill, establishing the Documentation-as-Source-of-Truth workflow.\n\n- Provides guidance for projects using a docs/ folder as the source of definitions, rules, and tasks.\n- Outlines folder structure, entity conventions, signal file standards, and workflow philosophy.\n- Includes quick start instructions and sub-skill references for various documentation and task types.\n- Explains the \"doc-first\" principle: documentation is authoritative over code implementation.\n- Lists available sub-skills for definitions, rules, tasks, social/marketing content, audits, and configuration.\n- Supports initializing new projects and customizing workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa8c4b9558aa27dfa312886fc6d8926fd9cd4285e0371a8aa60066c930370e7d"
+}

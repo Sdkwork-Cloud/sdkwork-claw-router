@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26120,
+  "uuid": "skill-clawhub-meyhem-capabilities",
+  "skillKey": "clawhub-meyhem-capabilities",
+  "name": "Meyhem Capabilities",
+  "summary": "Find the best tool for your task across 22,000+ MCP servers and OpenClaw skills. Ranked by community trust. No API key.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meyhem_capabilities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "c5huracan",
+      "features": [
+        "Find the best tool for your task across 22,000+ MCP servers and OpenClaw skills",
+        "Ranked by community trust",
+        "No API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meyhem-capabilities@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93015898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meyhem-capabilities",
+      "url": "https://clawhub.ai/skills/meyhem-capabilities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meyhem-capabilities",
+    "url": "https://clawhub.ai/skills/meyhem-capabilities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meyhem-capabilities-640ef03694a3421c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meyhem-capabilities@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-meyhem-capabilities-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dea2ad55ffa5598bcc4e30589baac257d1f46854200bfea104f4a681a3451c07",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:32:52.082Z"
+}

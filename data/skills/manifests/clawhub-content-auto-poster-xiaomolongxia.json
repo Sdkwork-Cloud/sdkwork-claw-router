@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65545,
+  "uuid": "skill-clawhub-content-auto-poster-xiaomolongxia",
+  "skillKey": "clawhub-content-auto-poster-xiaomolongxia",
+  "name": "Content Auto Poster",
+  "summary": "自动发布内容到多个平台，支持微信公众号、微博、知乎等平台定时发布。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_auto_poster_xiaomolongxia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linbo405",
+      "features": [
+        "自动发布内容到多个平台，支持微信公众号、微博、知乎等平台定时发布。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-auto-poster-xiaomolongxia@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259021343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-auto-poster-xiaomolongxia",
+      "url": "https://clawhub.ai/skills/content-auto-poster-xiaomolongxia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-auto-poster-xiaomolongxia",
+    "url": "https://clawhub.ai/skills/content-auto-poster-xiaomolongxia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-auto-poster-xiaomolongxia-c1f0f9ce1e12379b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-auto-poster-xiaomolongxia@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-auto-poster-xiaomolongxia-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5287ec807cb4e9dc0122640f2ec66979c6364ad860449276f0413aa20d2b128a",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T08:06:18.808Z"
+}

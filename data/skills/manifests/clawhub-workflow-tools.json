@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20650,
+  "uuid": "skill-clawhub-workflow-tools",
+  "skillKey": "clawhub-workflow-tools",
+  "name": "Workflow Tools",
+  "summary": "Work smarter with loop detection, parallel decisions, and file size analysis",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lee Brown",
+      "features": [
+        "Work smarter with loop detection, parallel decisions, and file size analysis"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-tools@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1395866?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-tools",
+      "url": "https://clawhub.ai/skills/workflow-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-tools",
+    "url": "https://clawhub.ai/skills/workflow-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-tools-5975ec784dc04873.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-tools@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-tools-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3637e273364e621f2055d45f2c22694a7e68a630e553ed4dba10234824c23877",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T20:54:33.071Z"
+}

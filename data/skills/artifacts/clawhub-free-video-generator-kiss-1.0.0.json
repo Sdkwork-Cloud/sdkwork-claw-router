@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-video-generator-kiss@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_video_generator_kiss",
+  "skill": {
+    "id": 47487,
+    "skillKey": "clawhub-free-video-generator-kiss",
+    "name": "Free Video Generator Kiss"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-video-generator-kiss",
+    "url": "https://clawhub.ai/skills/free-video-generator-kiss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-video-generator-kiss-d641242a3db121a0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated kiss videos ready to post, without touching a single slider. Upload your images or clips (JPG, PNG, MP4, MOV, up to 200MB), say something like \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776081768846,
+      "changelog": "Free Video Generator Kiss — Initial Release\n\n- Launches version 1.0.0, enabling free AI-powered animated kiss video generation from user-uploaded images or video clips.\n- Supports uploads of JPG, PNG, MP4, MOV files up to 200MB with export to 1080p MP4.\n- Automatic setup with free anonymous tokens and session management.\n- Simple text prompts to generate, edit, and export romantic kiss scene videos for social media.\n- Provides timeline summaries, status updates, and error handling for common issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2fd34d7d06718ce7cb4444633ae3e168263b245e0feaadb3ce69078ee404fdb"
+}

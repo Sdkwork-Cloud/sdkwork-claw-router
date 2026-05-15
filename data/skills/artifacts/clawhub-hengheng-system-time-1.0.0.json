@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hengheng-system-time@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hengheng_system_time",
+  "skill": {
+    "id": 29625,
+    "skillKey": "clawhub-hengheng-system-time",
+    "name": "system-time"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hengheng-system-time",
+    "url": "https://clawhub.ai/skills/hengheng-system-time",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hengheng-system-time-6a6ca1bdb25b324a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get accurate system time in various formats and timezones. Use when the user needs to know the current time, date, timestamp, or wants to convert between tim..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaoxianceng874-cyber",
+      "userId": "s17ac27z15vznadsg1bge3hded83ndd2",
+      "displayName": "xiaoxianceng874-cyber",
+      "image": "https://avatars.githubusercontent.com/u/252263025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 289,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773624345552,
+      "changelog": "Initial release—provides tools for retrieving and converting system time in various formats and timezones.\n\n- Supports ISO 8601, Unix timestamp, RFC 2822, and customizable formats.\n- Easily get current time for any specified timezone.\n- Explains command-line usage with `date` and timezone options.\n- Includes Python code examples for programmatic access.\n- Quick reference table for formats and commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25a7b8271a9947ac68c25d8889e652018de7822a3640e5ffeb1c2917cf5e440d"
+}

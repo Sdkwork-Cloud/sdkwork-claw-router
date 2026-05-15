@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33337,
+  "uuid": "skill-clawhub-thanksio",
+  "skillKey": "clawhub-thanksio",
+  "name": "Thanksio",
+  "summary": "Thanks.io integration. Manage Persons, Organizations, Addresses, Campaigns, Orders. Use when the user wants to interact with Thanks.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thanksio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Thanks.io integration",
+        "Manage Persons, Organizations, Addresses, Campaigns, Orders",
+        "Use when the user wants to interact with Thanks.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thanksio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thanksio",
+      "url": "https://clawhub.ai/skills/thanksio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thanksio",
+    "url": "https://clawhub.ai/skills/thanksio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thanksio-b8a4b8313abc2a91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thanksio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-thanksio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2a141bf0660f8fb666b8cfc827ca8aac21544fd7dd3650366fa256567874a92",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:04:59.646Z"
+}

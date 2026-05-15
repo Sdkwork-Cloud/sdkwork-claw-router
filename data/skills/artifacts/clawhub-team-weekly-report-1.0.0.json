@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/team-weekly-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_weekly_report",
+  "skill": {
+    "id": 69852,
+    "skillKey": "clawhub-team-weekly-report",
+    "name": "Team Weekly Report Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-weekly-report",
+    "url": "https://clawhub.ai/skills/team-weekly-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-weekly-report-2755523afaf9371a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "团队周报汇总技能。收集组员周报图片，按「部门管理」和「项目管理」两大维度分类汇总，对比本周完成情况与上周计划，生成纯文本团队周报。当用户说\"汇总周报\"、\"整理周报\"、\"生成周报\"、\"这是周报\"（配图）、\"项目进度汇总\"时触发。支持分批收集、持久化存储、纵向对比。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gotoloops",
+      "userId": "s17a1dd85z9g2xe1axhnprv86s83zwan",
+      "displayName": "gotoloops",
+      "image": "https://avatars.githubusercontent.com/u/102290071?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775629441160,
+      "changelog": "team-weekly-report v1.0.0\n\n- 首次发布，支持团队周报的图片收集、分类、归档与纯文本汇总输出\n- 自动将内容分为「部门管理」与「项目管理」两大维度\n- 支持对比上周计划与本周完成，智能标注未达成及新增项\n- 所有数据持久化分周存储，便于历史检索\n- 输出结构清晰、纯文本格式，可直接复制使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:89ab52906450595aefab0aa31eacc324141952489d858eba6d31fa241f83ff5e"
+}

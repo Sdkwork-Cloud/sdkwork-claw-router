@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "compact-test-a",
+    "displayName": "Compact Test A",
+    "summary": "Smart context compaction for OpenClaw agents. 4-phase progressive strategy: Scan, Extract, Check, Compact. Before running /compact, this skill scans tool out...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1775066295303,
+    "updatedAt": 1777527048416
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1775066295303,
+    "changelog": "Smart Compact v1.0.0 — Progressive context compaction with memory preservation\n\n- Implements a 4-phase \"Scan, Extract, Check, Compact\" workflow to prevent data loss before context compression.\n- Automatically reviews large tool outputs, extracts key information, and writes it into dedicated memory files.\n- Generates a detailed pre-compaction checklist highlighting what has been saved or still needs attention.\n- Only proceeds to compacting when user confirms; never overwrites existing memory.\n- Triggered by context nearing limit, user command, or pre-compact actions; fully transparent with users.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "wavmson",
+    "userId": "s1757c42efs3j405hc00csdrxs840yj8",
+    "displayName": "wavmson",
+    "image": "https://avatars.githubusercontent.com/u/127436552?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527048416
+  }
+}

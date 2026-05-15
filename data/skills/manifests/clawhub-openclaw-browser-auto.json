@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62616,
+  "uuid": "skill-clawhub-openclaw-browser-auto",
+  "skillKey": "clawhub-openclaw-browser-auto",
+  "name": "OpenClaw浏览器自动化配置",
+  "summary": "配置OpenClaw连接远程Chrome/CDP浏览器，实现无头浏览器自动化操作与管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_browser_auto",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HappyFee",
+      "features": [
+        "配置OpenClaw连接远程Chrome/CDP浏览器，实现无头浏览器自动化操作与管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-browser-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32046763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-browser-auto",
+      "url": "https://clawhub.ai/skills/openclaw-browser-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-browser-auto",
+    "url": "https://clawhub.ai/skills/openclaw-browser-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-browser-auto-b3e7a4be8d905075.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-browser-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-browser-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c17430c84ea07edaad63d34b49e50a5a7eda83bb76233708e35baea5db24174",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T13:58:26.828Z"
+}

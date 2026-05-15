@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15772,
+  "uuid": "skill-clawhub-clawctl",
+  "skillKey": "clawhub-clawctl",
+  "name": "Clawctl",
+  "summary": "Coordination layer for OpenClaw agent fleets (tasks, messaging, activity feed, dashboard).",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawctl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lludlow",
+      "features": [
+        "Coordination layer for OpenClaw agent fleets (tasks, messaging, activity feed, dashboard)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawctl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2191492?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawctl",
+      "url": "https://clawhub.ai/skills/clawctl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawctl",
+    "url": "https://clawhub.ai/skills/clawctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawctl-a9faa3fc9cc9fb19.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawctl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawctl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f29f34050b8d739f6964be2b3c0349865883dbaddc364c9f9b68edf56c8da2c",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T20:15:28.052Z"
+}

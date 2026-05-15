@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supah-pulse@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supah_pulse",
+  "skill": {
+    "id": 32081,
+    "skillKey": "clawhub-supah-pulse",
+    "name": "SUPAH Pulse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supah-pulse",
+    "url": "https://clawhub.ai/skills/supah-pulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supah-pulse-5680b8b033e996cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time crypto market intelligence briefing. One command gives any agent the full picture: market regime, fear/greed, BTC/ETH dominance, gas costs, trendin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supah-based",
+      "userId": "publishers:supah-based",
+      "displayName": "supah-based",
+      "image": "https://avatars.githubusercontent.com/u/266382973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1774159304181,
+      "changelog": "Clean x402 only publish.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25abd31f6c31ff76f730fa88950dede5abe0b211558c7e67612df66e517d5ae6"
+}

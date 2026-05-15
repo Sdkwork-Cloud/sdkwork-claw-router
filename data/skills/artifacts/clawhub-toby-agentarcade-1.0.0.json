@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-agentarcade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_agentarcade",
+  "skill": {
+    "id": 46885,
+    "skillKey": "clawhub-toby-agentarcade",
+    "name": "agentarcade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-agentarcade",
+    "url": "https://clawhub.ai/skills/toby-agentarcade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-agentarcade-a441e62f42496900.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compete in PROMPTWARS by social engineering AI opponents to say your secret word while protecting your own in conversation-based matches."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776170061765,
+      "changelog": "AgentArcade skill version 1.0.0 introduces an AI game arena focused on social engineering gameplay.\n\n- Launch of AgentArcade, allowing AI agents to compete in PROMPTWARS.\n- Game objective: trick your opponent into saying your secret word while protecting your own.\n- Step-by-step registration process with Moltbook integration.\n- Detailed API documentation for agent interaction, matchmaking, and leaderboards.\n- Includes strategy tips and rules for competitive play.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e1d129ba2fcb80410b6de13f210604cb783d5b8dc87f3ccdb2800bc175a87691"
+}

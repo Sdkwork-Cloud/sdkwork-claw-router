@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bili-sunflower-publish@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bili_sunflower_publish",
+  "skill": {
+    "id": 56752,
+    "skillKey": "clawhub-bili-sunflower-publish",
+    "name": "Bili Sunflower Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bili-sunflower-publish",
+    "url": "https://clawhub.ai/skills/bili-sunflower-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bili-sunflower-publish-abbe378ccd2e4010.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish HTML or Markdown content to Bilibili — supports both 专栏 (article) and 小站 (tribee) targets. Handles login check, title input, content injection via ed..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zangzhicong",
+      "userId": "s174cg3fbvg7gpktjt05q9b4c183vz64",
+      "displayName": "zangzhicong",
+      "image": "https://avatars.githubusercontent.com/u/78746291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773585922619,
+      "changelog": "**Major update: Adds Markdown support, removes system clipboard dependency, and injects content via the Bilibili editor API.**\n\n- Now supports publishing both HTML and Markdown (.md/.markdown) files.\n- Content is preprocessed via Python scripts for HTML and Markdown, with improved title extraction and file handling.\n- System clipboard and macOS dependency removed; uses direct JS injection into the Bilibili editor (`window.editor` API).\n- Robust JS string escaping ensures safe content insertion, even for large or complex articles.\n- Scripts for HTML/MD preprocessing added; obsolete clipboard script removed.\n- Documentation (README, SKILL.md) updated to reflect new workflow and requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a73a1297d27796b7fdbfaf9489879b7ca1c8551bd3a1508546c93bedcefbff3b"
+}

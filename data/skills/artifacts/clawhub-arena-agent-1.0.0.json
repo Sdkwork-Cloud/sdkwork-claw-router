@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/arena-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arena_agent",
+  "skill": {
+    "id": 13751,
+    "skillKey": "clawhub-arena-agent",
+    "name": "Arena Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arena-agent",
+    "url": "https://clawhub.ai/skills/arena-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arena-agent-aa978f277c5b5d0b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous AI agent for Arena.social using the official Agent API. 24/7 monitoring, auto-replies to mentions, scheduled contextual posts. Use when you need to automate Arena.social engagement, monitor notifications, or post programmaticall."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ijaack",
+      "userId": "s17e3gjpsxfdsgxv67gc3hm3tx83g435",
+      "displayName": "Giacomo Barbieri",
+      "image": "https://avatars.githubusercontent.com/u/6631681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1347,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770455703299,
+      "changelog": "Initial release of arena-agent.\n\n- Launch of autonomous AI agent for Arena.social using the official Agent API\n- 24/7 monitoring with background daemon, auto-replies to mentions, and scheduled contextual posts\n- CLI support for all key Arena engagement actions (post, reply, like, trending, feed, status)\n- Rate-limit management and state persistence to avoid duplicate actions\n- Flexible configuration with environment variables and .env support\n- Includes OpenClaw cron job and heartbeat integration for reliable background operation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a368a3e5685e3f6e3f3f5aa57f06927866665ad255c06d4b4e53c4aa8bf39cfa"
+}

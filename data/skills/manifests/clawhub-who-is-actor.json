@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8387,
+  "uuid": "skill-clawhub-who-is-actor",
+  "skillKey": "clawhub-who-is-actor",
+  "name": "Who Is Actor",
+  "summary": "This skill should be used when the user wants to analyze a Git repository and profile each developer's commit habits, work habits, development efficiency, co...",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.who_is_actor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enoyao",
+      "features": [
+        "This skill should be used when the user wants to analyze a Git repository and profile each deve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/who-is-actor@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17243165?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "who-is-actor",
+      "url": "https://clawhub.ai/skills/who-is-actor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "who-is-actor",
+    "url": "https://clawhub.ai/skills/who-is-actor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/who-is-actor-b795c9059b806ac0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/who-is-actor@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-who-is-actor-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0334f92cb9370b20370f76990fb79735dc7c50f89ba47260f129c58d1da4d3b",
+      "artifactSizeBytes": 2171
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:46:03.489Z"
+}

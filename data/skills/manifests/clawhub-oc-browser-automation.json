@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62996,
+  "uuid": "skill-clawhub-oc-browser-automation",
+  "skillKey": "clawhub-oc-browser-automation",
+  "name": "OpenClaw 浏览器自动化",
+  "summary": "浏览器控制工具 - 封装 OpenClaw browser 工具，支持网页自动化、截图、点击输入等操作",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_browser_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaoren36-arch",
+      "features": [
+        "封装 OpenClaw browser 工具，支持网页自动化、截图、点击输入等操作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oc-browser-automation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260357642?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oc-browser-automation",
+      "url": "https://clawhub.ai/skills/oc-browser-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-browser-automation",
+    "url": "https://clawhub.ai/skills/oc-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-browser-automation-7e211c7cc619819c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oc-browser-automation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oc-browser-automation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1f56b041622d827abd12f26b80db13003af0742a21d35f26c1d9d0531d5a90b",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:08:29.223Z"
+}

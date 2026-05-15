@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26337,
+  "uuid": "skill-clawhub-mac-remote-access",
+  "skillKey": "clawhub-mac-remote-access",
+  "name": "Mac Remote Access",
+  "summary": "Diagnose, configure, and recover remote access to a macOS machine over Tailscale. Use when setting up or troubleshooting Mac SSH, Screen Sharing/VNC, RealVNC...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_remote_access",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liu liang",
+      "features": [
+        "Diagnose, configure, and recover remote access to a macOS machine over Tailscale",
+        "Use when setting up or troubleshooting Mac SSH, Screen Sharing/VNC, RealVNC..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mac-remote-access@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131242609?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mac-remote-access",
+      "url": "https://clawhub.ai/skills/mac-remote-access"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-remote-access",
+    "url": "https://clawhub.ai/skills/mac-remote-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-remote-access-4b6ca92ed2de4722.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mac-remote-access@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mac-remote-access-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:91403e0f3c4a8085dc6bca032c4ce95b5842cbf90d79bb71c20e293ca26116af",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:15:24.421Z"
+}

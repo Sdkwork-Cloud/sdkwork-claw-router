@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17248,
+  "uuid": "skill-clawhub-gws-keep",
+  "skillKey": "clawhub-gws-keep",
+  "name": "Gws Keep",
+  "summary": "Manage Google Keep notes.",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gws_keep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "googleworkspace-bot",
+      "features": [
+        "Manage Google Keep notes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gws-keep@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109114539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gws-keep",
+      "url": "https://clawhub.ai/skills/gws-keep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gws-keep",
+    "url": "https://clawhub.ai/skills/gws-keep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gws-keep-c81e0af6d26cf2ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gws-keep@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-gws-keep-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f6036fd606ebad4ff86af77f9ff1ee6fd8929297caec3e1cba35a730058e41ed",
+      "artifactSizeBytes": 1784
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T18:34:18.109Z"
+}

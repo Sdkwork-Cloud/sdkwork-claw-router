@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59515,
+  "uuid": "skill-clawhub-japan-anime-today",
+  "skillKey": "clawhub-japan-anime-today",
+  "name": "今日新番列表",
+  "summary": "查询并整理“今天/指定日期日本动画新番”的播出或官方配信信息，输出中文表格。Use when the user asks for today's Japanese anime releases, 新番时间表, 日本动画今日更新, anime airing today in Japan, or a specific...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.japan_anime_today",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ero",
+      "features": [
+        "查询并整理“今天/指定日期日本动画新番”的播出或官方配信信息，输出中文表格。Use when the user asks for today's Japanese anime release."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/japan-anime-today@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32699574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "japan-anime-today",
+      "url": "https://clawhub.ai/skills/japan-anime-today"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "japan-anime-today",
+    "url": "https://clawhub.ai/skills/japan-anime-today",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/japan-anime-today-30d6e01c26116dc5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/japan-anime-today@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-japan-anime-today-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43ed2bd15d7dabd5a3746e605f477df3466e9351c37f758cb92c3b79970dcc0a",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:45:24.333Z"
+}

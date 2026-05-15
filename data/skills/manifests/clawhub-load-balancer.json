@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51406,
+  "uuid": "skill-clawhub-load-balancer",
+  "skillKey": "clawhub-load-balancer",
+  "name": "Load Balancer",
+  "summary": "Reference tool for devtools — covers intro, quickstart, patterns and more. Quick lookup for Load Balancer concepts, best practices, and implementation patterns.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.load_balancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Reference tool for devtools — covers intro, quickstart, patterns and more",
+        "Quick lookup for Load Balancer concepts, best practices, and implementation patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/load-balancer@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "load-balancer",
+      "url": "https://clawhub.ai/skills/load-balancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "load-balancer",
+    "url": "https://clawhub.ai/skills/load-balancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/load-balancer-e1977f0263b90204.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/load-balancer@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-load-balancer-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8dd62770f9318c82dd6c571f00317bdc57397dcc5e767db77cd53557c1aa270",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:44:01.457Z"
+}

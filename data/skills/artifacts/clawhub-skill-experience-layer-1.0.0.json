@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-experience-layer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_experience_layer",
+  "skill": {
+    "id": 27601,
+    "skillKey": "clawhub-skill-experience-layer",
+    "name": "Skill Experience Layer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-experience-layer",
+    "url": "https://clawhub.ai/skills/skill-experience-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-experience-layer-dd50fd5677ba7c15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-call experience checking + error-driven learning + layered experience storage. Avoid repeating mistakes, get smarter every time. Pre-integrated with self..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jilanfang",
+      "userId": "publishers:jilanfang",
+      "displayName": "jilanfang",
+      "image": "https://avatars.githubusercontent.com/u/214955619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773751875868,
+      "changelog": "Initial release of skill-experience-layer:\n- Adds per-skill, layered experience memory with pre-call mistake checking and error-driven learning.\n- Automatically records mistakes and best practices for each skill to avoid repeating errors.\n- Integrates with self-improving and capability-evolver for continuous, automated improvement.\n- Designed to fit existing memory hierarchy and supports preventive learning before skill invocation.\n- Ensures safe operation: only modifies experience files; never touches core or sensitive system files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff6cd8e30635252b09ffdde3f82912e3f0701ceb0a7c97cf25833b4d4a635b6e"
+}

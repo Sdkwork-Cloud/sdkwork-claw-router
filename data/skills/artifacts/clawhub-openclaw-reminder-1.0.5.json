@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-reminder@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_reminder",
+  "skill": {
+    "id": 11415,
+    "skillKey": "clawhub-openclaw-reminder",
+    "name": "Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-reminder",
+    "url": "https://clawhub.ai/skills/openclaw-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-reminder-371935990205d056.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create one-time reminder tasks using OpenClaw cron. User specifies reminder time and task content in natural language via Discord, and the task result will b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skyan",
+      "userId": "s17582j1ey5mb0fgpa0wc422p583kwn1",
+      "displayName": "Sky Yan",
+      "image": "https://avatars.githubusercontent.com/u/945860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2060,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772245440918,
+      "changelog": "- Added detection and rejection of newlines (\\n) in user task content to improve security.\n- Updated documentation to list newlines as disallowed in task content.\n- Metadata now includes \"session_status\" as a required tool for skill operation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:720bb76ba2cc820b14a8a73a9b8cd07fa8ceb78302965ac3fee47d52fc159f67"
+}

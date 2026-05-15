@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-issue-auto-triage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_issue_auto_triage",
+  "skill": {
+    "id": 59412,
+    "skillKey": "clawhub-github-issue-auto-triage",
+    "name": "GitHub Issue Auto Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-issue-auto-triage",
+    "url": "https://clawhub.ai/skills/github-issue-auto-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-issue-auto-triage-7cccf8f9cd2aadbe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动分类 GitHub Issue，AI 打标签、分配负责人、检测重复、回复 FAQ"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sxliuyu",
+      "userId": "publishers:sxliuyu",
+      "displayName": "SxLiuYu",
+      "image": "https://avatars.githubusercontent.com/u/95198625?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773654927591,
+      "changelog": "Test",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1ae629a7f708248f9480ff07e520b39e703f823746cf948f9e768e808268c1c"
+}

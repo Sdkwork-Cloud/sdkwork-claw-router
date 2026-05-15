@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9479,
+  "uuid": "skill-clawhub-skywork-search",
+  "skillKey": "clawhub-skywork-search",
+  "name": "Skywork Search",
+  "summary": "Skywork Search (skywork) - Search the web for real-time information using the Skywork Search API. Use this skill whenever the user needs up-to-date informati...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skywork_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Skywork AI",
+      "features": [
+        "Skywork Search (skywork)",
+        "Search the web for real-time information using the Skywork Search API",
+        "Use this skill whenever the user needs up-to-date informati..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skywork-search@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5279174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skywork-search",
+      "url": "https://clawhub.ai/skills/skywork-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skywork-search",
+    "url": "https://clawhub.ai/skills/skywork-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skywork-search-66c891f214d7da4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skywork-search@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-skywork-search-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:232512ee7ed53ca57b74a728f717248aeb977361984b95a3febdff57dc14d6b6",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T13:34:41.582Z"
+}

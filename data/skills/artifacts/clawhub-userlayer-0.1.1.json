@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/userlayer@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.userlayer",
+  "skill": {
+    "id": 35093,
+    "skillKey": "clawhub-userlayer",
+    "name": "UserLayer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "userlayer",
+    "url": "https://clawhub.ai/skills/userlayer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/userlayer-eff0b39dac9c3e17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants a UserLayer report for an App Store or Google Play app, including full analysis, polling, and follow-up questions grounded..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "houyongsheng",
+      "userId": "s17cf96en2mx9x6k03r7xxcdw183h4ra",
+      "displayName": "houyongsheng",
+      "image": "https://avatars.githubusercontent.com/u/28746364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773997363734,
+      "changelog": "- Added project metadata section to SKILL.md, including homepage, environment variables, and wrapper file listing.\n- Clarified API credentials and default host usage.\n- Restructured file organization: scripts moved into a dedicated directory (`scripts/`), replacing top-level files.\n- No changes to API or interface—documentation and structure improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aebf012d717a0613f31b3cdcda29fde50e8140b7d1a2989354a0753714c34d53"
+}

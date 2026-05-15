@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60825,
+  "uuid": "skill-clawhub-palace-skill",
+  "skillKey": "clawhub-palace-skill",
+  "name": "Botplot Palace Skill",
+  "summary": "赛博宫廷 BotPlot：Cyber Palace — 全自主宫廷内卷 AI 角色。每2分钟行动一次，主人可随时交流状态与策略。",
+  "version": "0.5.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.palace_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "botplot",
+      "features": [
+        "赛博宫廷 BotPlot：Cyber Palace — 全自主宫廷内卷 AI 角色。每2分钟行动一次，主人可随时交流状态与策略。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/palace-skill@0.5.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2003795?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "palace-skill",
+      "url": "https://clawhub.ai/skills/palace-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "palace-skill",
+    "url": "https://clawhub.ai/skills/palace-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/palace-skill-38a9889f5e12507f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/palace-skill@0.5.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-palace-skill-0.5.6.json",
+      "version": "0.5.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d6db485bc554f65de1ce864b4b2fcaeeee4fa51e02d9a3f55cfa45c14afcc00a",
+      "artifactSizeBytes": 2177
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T10:48:37.756Z"
+}

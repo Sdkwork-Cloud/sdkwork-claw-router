@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paragon-mls-analyze-deal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paragon_mls_analyze_deal",
+  "skill": {
+    "id": 40030,
+    "skillKey": "clawhub-paragon-mls-analyze-deal",
+    "name": "Paragon MLS Analyze Deal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paragon-mls-analyze-deal",
+    "url": "https://clawhub.ai/skills/paragon-mls-analyze-deal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paragon-mls-analyze-deal-b9c9ed21c3443473.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run spreadsheet-compatible Four-Square rental analysis for Paragon MLS deals. Use when evaluating rental properties for cash flow, NOI, DSCR, appreciation, d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earlvanze",
+      "userId": "s17e9q72w7rrtswh8zeszvr87s8476ga",
+      "displayName": "Earl Co",
+      "image": "https://avatars.githubusercontent.com/u/3733346?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776687332895,
+      "changelog": "Initial split from the combined Paragon MLS skill. Focused skill for spreadsheet-compatible Four-Square deal analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3af9e7dc1c085c6e8ebde06748a0c13ee464e63f9b450de83b522162bb2658c"
+}

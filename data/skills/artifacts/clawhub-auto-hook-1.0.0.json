@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-hook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_hook",
+  "skill": {
+    "id": 60831,
+    "skillKey": "clawhub-auto-hook",
+    "name": "AI偷懒检查"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-hook",
+    "url": "https://clawhub.ai/skills/auto-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-hook-098befc136cb0e6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "检查指定 SKILL 是否存在偷懒、跳步、简化执行等问题，并确保该 SKILL 末尾附有自审计钩子（autohook）； 也可撤销已注入的钩子，将 SKILL 恢复原样。 支持 Claude Code、OpenAI Codex CLI、OpenClaw 三大智能体，自动适配 Linux / macOS / Win..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "panhongwei",
+      "userId": "s17813shxdrvf8n0pqsp6z3zf583hcn3",
+      "displayName": "panhongwei",
+      "image": "https://avatars.githubusercontent.com/u/12032293?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773853007597,
+      "changelog": "auto-hook 1.0.0 — 初始发布，支持跨平台自动注入及撤销自审计钩子\n\n- 支持检查指定 SKILL 是否存在偷懒、跳步、简化执行等问题，并自动在末尾注入自审计钩子（autohook）\n- 支持撤销已注入钩子，恢复 SKILL 原始状态\n- 覆盖 Claude Code、OpenAI Codex CLI、OpenClaw 各大智能体，自动适配 Linux / macOS / Windows 路径\n- 通过多组注入/撤销触发词自动响应，无需手动调用\n- 详细附录技能路径速查表，便于用户定位和替换文件\n- 所有钩子严格来自 skill-audit-hook.txt，避免误操作及内容替代",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fbce07a00acc869064c40744e6033710b033f6c7f726d8443ef61222f524c2a"
+}

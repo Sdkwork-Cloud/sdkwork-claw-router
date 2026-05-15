@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doctorclaw-morning-briefing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doctorclaw_morning_briefing",
+  "skill": {
+    "id": 53386,
+    "skillKey": "clawhub-doctorclaw-morning-briefing",
+    "name": "DoctorClaw Morning Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doctorclaw-morning-briefing",
+    "url": "https://clawhub.ai/skills/doctorclaw-morning-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doctorclaw-morning-briefing-b72e56a078eebdad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily morning briefing — emails, calendar, tasks, and weather in one summary. Cron or on-demand."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ceobotson-bot",
+      "userId": "s179qe3ytytdn9499vw61m1c4h83hhr8",
+      "displayName": "ceobotson-bot",
+      "image": "https://avatars.githubusercontent.com/u/263067918?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 380,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773207046167,
+      "changelog": "Initial release of Morning Briefing skill.\n\n- Provides a daily summary including unread emails (top 5 prioritized), today's calendar events, pending tasks, and local weather.\n- Delivers the briefing via Telegram, Discord, or saves to a file; supports both cron scheduling and on-demand use.\n- Fully configurable: set your email, calendar, weather location, task system, delivery channel, timezone, briefing time, and summary format.\n- Flexible integrations: works with Gmail, Google/Apple Calendars, most task managers, and multiple weather sources.\n- Customization options suggested for news, markets, weekends, travel, and more.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2009a1935b06d1a9695fe9b666f7a90a0ffff681459c00852de102b96f09d9b1"
+}

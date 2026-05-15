@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proxy4agent@1.6.3",
+  "version": "1.6.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proxy4agent",
+  "skill": {
+    "id": 54486,
+    "skillKey": "clawhub-proxy4agent",
+    "name": "Proxy4agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proxy4agent",
+    "url": "https://clawhub.ai/skills/proxy4agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proxy4agent-c23bbe66564496a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Residential proxy for AI agents — fetch any URL through 2M+ real IPs, bypass anti-bot, geo-target, sticky sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goldentrii",
+      "userId": "s17bhpy1pfez75z0gpe7rrh3b583eskq",
+      "displayName": "Memijashi",
+      "image": "https://avatars.githubusercontent.com/u/232191022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.6.3",
+      "createdAt": 1775810597035,
+      "changelog": "- Updated to use the latest npm package: bestproxy4agents@1.6.2.\n- Simplified setup instructions to require credentials for only one provider (Novada recommended).\n- Removed unnecessary provider environment variables from setup (BrightData, Smartproxy, Oxylabs now use PROXY_URL format).\n- Clarified that extra credentials (NOVADA_API_KEY, NOVADA_BROWSER_WS) are optional for search/render features.\n- Added a clear privacy note about proxy provider data visibility.\n- Improved tool documentation and updated provider options for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8d1bd4f673052ee577bd5b7efc3405e62956808c2aaae1355af2ab291603c9a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17633,
+  "uuid": "skill-clawhub-ad-creative-analysis",
+  "skillKey": "clawhub-ad-creative-analysis",
+  "name": "Ad Creative Analysis",
+  "summary": "Analyze ad creatives (images and videos) extracted from competitor research. Use when given a directory of ad images, video files, or transcripts to evaluate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ad_creative_analysis",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baitoxkevin",
+      "features": [
+        "Analyze ad creatives (images and videos) extracted from competitor research",
+        "Use when given a directory of ad images, video files, or transcripts to evaluate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ad-creative-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184416293?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ad-creative-analysis",
+      "url": "https://clawhub.ai/skills/ad-creative-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ad-creative-analysis",
+    "url": "https://clawhub.ai/skills/ad-creative-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ad-creative-analysis-e29fc75148f6ce7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ad-creative-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ad-creative-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fbe81f27aac3956d1e18c74d1a691d816fce16a9a46971f7352d94326d1d3df",
+      "artifactSizeBytes": 2516
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T19:12:52.840Z"
+}

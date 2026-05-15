@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jy-hk-stock-morning-brief@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_hk_stock_morning_brief",
+  "skill": {
+    "id": 67727,
+    "skillKey": "clawhub-jy-hk-stock-morning-brief",
+    "name": "jy-hk-stock-morning-brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-hk-stock-morning-brief",
+    "url": "https://clawhub.ai/skills/jy-hk-stock-morning-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-hk-stock-morning-brief-c7d0ab4b5c90e790.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成《港股资讯早报》——专业港股市场分析师角色，基于聚源数据 MCP 接口（通过 mcporter 调用）分析前一交易日市场动态、板块个股、公司公告、研报观点、南向资金、行业全景、外围市场等，为早盘投资者提供决策参考。触发词：港股早报、港股资讯早报、HK 早报、港股日报、恒指复盘、港股复盘。Generate HK..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiayinian",
+      "userId": "s1705v3dg957451717s1bbzck983nebe",
+      "displayName": "jiayinian",
+      "image": "https://avatars.githubusercontent.com/u/22932351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775123726370,
+      "changelog": "- Initial release of 港股资讯早报 (HK Stock Morning Brief) skill for OpenClaw.\n- Generates professional Hong Kong stock market morning briefs based on 聚源数据 MCP via mcporter, covering indices, sectors, company announcements, research, southbound funds, industry panorama, and global markets.\n- Requires environment setup: mcporter installation, MCP service configuration with valid JY_API_KEY, and OpenClaw integration.\n- Outputs Markdown and PDF reports with echarts charts, data source annotation, and clear structure, saved under /home/liust/openclaw/workspace/reports/.\n- Strict data sourcing from 聚源数据 MCP; each item must reference its originating API and trading date. No prediction or unsupported data.\n- Includes detailed setup and troubleshooting instructions, data coverage standards, and fallback protocols for missing data.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6b6805c6be8bf87588e5e56fec0a581a43977f2c23e2254484ab9b68dcafed9"
+}

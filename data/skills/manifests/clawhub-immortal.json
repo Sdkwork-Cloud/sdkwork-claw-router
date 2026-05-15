@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15801,
+  "uuid": "skill-clawhub-immortal",
+  "skillKey": "clawhub-immortal",
+  "name": "Immortal",
+  "summary": "Empowers AI agents with crypto resource vitality assessment. Calls the Majestify API (crypto-health-hub) to compute Sharpe, Sortino, VaR, CVaR, drawdown, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.immortal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Majesty Atenkhu",
+      "features": [
+        "Empowers AI agents with crypto resource vitality assessment",
+        "Calls the Majestify API (crypto-health-hub) to compute Sharpe, Sortino, VaR, CVaR, drawdown, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/immortal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116476408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "immortal",
+      "url": "https://clawhub.ai/skills/immortal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "immortal",
+    "url": "https://clawhub.ai/skills/immortal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/immortal-556f9cb498932264.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/immortal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-immortal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:365ac4fbb529cd05b326d339d97c99cad18ae0348a4e33dcb16c9886881e4c88",
+      "artifactSizeBytes": 1991
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T11:09:01.479Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47402,
+  "uuid": "skill-clawhub-changelog-release-manager",
+  "skillKey": "clawhub-changelog-release-manager",
+  "name": "Changelog Release Manager",
+  "summary": "Generates changelogs from git commit history using conventional commits. Triggers: generate changelog, release notes, changelog.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.changelog_release_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SKY-lv",
+      "features": [
+        "Generates changelogs from git commit history using conventional commits",
+        "Triggers: generate changelog, release notes, changelog."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/changelog-release-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259750852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "changelog-release-manager",
+      "url": "https://clawhub.ai/skills/changelog-release-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "changelog-release-manager",
+    "url": "https://clawhub.ai/skills/changelog-release-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/changelog-release-manager-7f531c93e7434f5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/changelog-release-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-changelog-release-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7beda057f0b0cd871f5123a14216d40c316d3b6fb0f880daa4a2bcfb0e4b1df",
+      "artifactSizeBytes": 2138
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T23:47:32.061Z"
+}

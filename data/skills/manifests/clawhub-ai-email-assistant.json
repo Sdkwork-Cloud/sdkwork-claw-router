@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40095,
+  "uuid": "skill-clawhub-ai-email-assistant",
+  "skillKey": "clawhub-ai-email-assistant",
+  "name": "Email Assistant",
+  "summary": "AI-powered email writing, review, and compliance checking. Generate templates, optimize subject lines, audit for spam triggers, and check CAN-SPAM/GDPR/CASL...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_email_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EvolinkAI",
+      "features": [
+        "AI-powered email writing, review, and compliance checking",
+        "Generate templates, optimize subject lines, audit for spam triggers, and check CAN-SPAM/GDPR/CA."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-email-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/253253881?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-email-assistant",
+      "url": "https://clawhub.ai/skills/ai-email-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-email-assistant",
+    "url": "https://clawhub.ai/skills/ai-email-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-email-assistant-f12a6244ee28a102.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-email-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-email-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc39db91a738377a95865e8c54c78d241c14f4ee4dd34a89a9b23efb161e9729",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T11:23:22.626Z"
+}

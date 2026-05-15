@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70159,
+  "uuid": "skill-clawhub-url-reader",
+  "skillKey": "clawhub-url-reader",
+  "name": "Url Reader",
+  "summary": "智能读取任意URL内容，支持微信公众号、小红书、今日头条、抖音、淘宝、天猫、京东、百度等中国主流平台，自动识别平台类型并提取核心内容。自动保存内容为Markdown，下载图片到本地。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_reader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justao",
+      "features": [
+        "智能读取任意URL内容，支持微信公众号、小红书、今日头条、抖音、淘宝、天猫、京东、百度等中国主流平台，自动识别平台类型并提取核心内容。自动保存内容为Markdown，下载图片到本地。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/url-reader@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8970605?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "url-reader",
+      "url": "https://clawhub.ai/skills/url-reader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-reader",
+    "url": "https://clawhub.ai/skills/url-reader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-reader-5d798b84ae142570.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/url-reader@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-url-reader-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:641a8fabdb8615f7a8a8138c8c25d390012aa84c8f265ed96c256cc5f8f47f4b",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T03:38:34.406Z"
+}

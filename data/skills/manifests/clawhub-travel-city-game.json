@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63499,
+  "uuid": "skill-clawhub-travel-city-game",
+  "skillKey": "clawhub-travel-city-game",
+  "name": "travel-city-game(旅行游戏副本生成器)",
+  "summary": "根据用户输入的城市名，自动调用 flyai 搜索该城市的景点、体验、美食产品， 然后生成一个游戏化的3节点叙事行程 H5 页面。每个节点包含 AI 生成的故事文案 和飞猪真实预订链接。使用方式: /travel-city-game 城市名。 当用户提到 \"travel-city-game\"、\"生成行程\"、\"旅行叙...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_city_game",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HongWeiSong1999",
+      "features": [
+        "根据用户输入的城市名，自动调用 flyai 搜索该城市的景点、体验、美食产品， 然后生成一个游戏化的3节点叙事行程 H5 页面。每个节点包含 AI 生成的故事文案 和飞猪真实预订链接。使用方."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-city-game@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35456545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-city-game",
+      "url": "https://clawhub.ai/skills/travel-city-game"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-city-game",
+    "url": "https://clawhub.ai/skills/travel-city-game",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-city-game-179d3024f3fa30b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-city-game@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-city-game-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41bca6c26aacfabeaa8b90ecd4933e7d9bcf1c628b396d9077c596ab63c6d23e",
+      "artifactSizeBytes": 2749
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:51:08.589Z"
+}

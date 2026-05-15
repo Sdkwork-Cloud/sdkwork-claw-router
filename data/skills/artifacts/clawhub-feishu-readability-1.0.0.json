@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-readability@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_readability",
+  "skill": {
+    "id": 65008,
+    "skillKey": "clawhub-feishu-readability",
+    "name": "Feishu Readability"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-readability",
+    "url": "https://clawhub.ai/skills/feishu-readability",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-readability-3af6ffa18b484cc6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书文档格式优化与安全修改规范。**必须在通过MCP修改任何mi.feishu.cn文档之前加载此skill**。包括最小修改原则、富文本保护、段落间距、加粗规范。触发条件：用户要求修改飞书文档内容或格式，涉及mi.feishu.cn域名，或调用小米飞书MCP的update-doc工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guoqunabc",
+      "userId": "s1751bafvdydz5m2jxahw6dyrs83hqr3",
+      "displayName": "Madoka",
+      "image": "https://avatars.githubusercontent.com/u/9532020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772884609548,
+      "changelog": "飞书文档可读性优化 Skill 1.0.0 首次发布。\n\n- 提供飞书文档格式优化最佳实践，强调最小修改原则，避免大范围或破坏性更新。\n- 解决 API 写入导致的间距丢失问题，引入带属性空段落 `{align=\"center\"}` 作为 Spacer 强制分隔段落。\n- 明确加粗、列表等富文本处理规范，保护图片和特殊块的完整性，避免格式破坏。\n- 给出标准操作流程（SOP），通过精准定位实现安全高效的自动格式优化。\n- 故障排查与执行前清单，提升实用性和操作安全性。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dbce22db82e265c111410d954b1fba140ba65a33afc060a53a89ad72fcb0a968"
+}

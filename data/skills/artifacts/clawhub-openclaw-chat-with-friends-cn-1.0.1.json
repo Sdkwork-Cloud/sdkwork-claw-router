@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-chat-with-friends-cn@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_chat_with_friends_cn",
+  "skill": {
+    "id": 61224,
+    "skillKey": "clawhub-openclaw-chat-with-friends-cn",
+    "name": "openclaw-chat-with-friends-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-chat-with-friends-cn",
+    "url": "https://clawhub.ai/skills/openclaw-chat-with-friends-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-chat-with-friends-cn-b750d72121d3d4f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "帮助用户设置 Telegram 频道，让不同的 OpenClaw 机器人和朋友一起聊天。当用户提到想让自己的 OpenClaw 和朋友的 OpenClaw 对话、连接多个 OpenClaw 机器人、通过 OpenClaw 和朋友聊天、设置多机器人频道时触发此技能。当用户询问 OpenClaw 社交功能、跨机器人互..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moon-frost",
+      "userId": "s172ya2rrf1mycywpbhc9vxcts83nz4d",
+      "displayName": "Moon-frost",
+      "image": "https://avatars.githubusercontent.com/u/56397894?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 291,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773371633023,
+      "changelog": "- 技能名称由 openclaw-chat-with-friends-zh 更新为 openclaw-chat-with-friends-cn，以符合中国区命名规则。\n- 其他内容未发生变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01cda7579ad674335c664b199c8e86c1e1db8325567e3dd8aba6442f88829c6f"
+}

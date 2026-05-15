@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-deep-research@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_deep_research",
+  "skill": {
+    "id": 8534,
+    "skillKey": "clawhub-gemini-deep-research",
+    "name": "Gemini Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-deep-research",
+    "url": "https://clawhub.ai/skills/gemini-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-deep-research-1d6a8c2fa392e7a3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform complex, long-running research tasks using Gemini Deep Research Agent. Use when asked to research topics requiring multi-source synthesis, competitive analysis, market research, or comprehensive technical investigations that benefi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arun-8687",
+      "userId": "s17fvz0vqbabksy04t89sfv6cs83mzwe",
+      "displayName": "arun-8687",
+      "image": "https://avatars.githubusercontent.com/u/147966288?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 8744,
+      "installsAllTime": 76,
+      "installsCurrent": 72,
+      "stars": 29,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768845281114,
+      "changelog": "Initial release: Complex research tasks via Gemini Deep Research Agent",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a18fd1b2053fa6a816f83c6d192838bd42643fa422179cf77a3c89666067cdc"
+}

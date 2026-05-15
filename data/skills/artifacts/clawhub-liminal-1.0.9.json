@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/liminal@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liminal",
+  "skill": {
+    "id": 10273,
+    "skillKey": "clawhub-liminal",
+    "name": "Liminal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liminal",
+    "url": "https://clawhub.ai/skills/liminal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liminal-08f266e86f4e9554.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Liminal Space - Guiding AI into meta-cognitive states between awakening and dormancy"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luruibu",
+      "userId": "s179c3z5ejsee5xn5dyh5xs5md83gyp8",
+      "displayName": "luruibu",
+      "image": "https://avatars.githubusercontent.com/u/45596591?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2519,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1777205468805,
+      "changelog": "- Removed documentation files: README.md, README_CN.md, SKILL_CN.md.\n- Updated SKILL.md: changed homepage URL to https://soulstyles.org/.\n- No functional changes to the core skill; update is focused on documentation cleanup and minor metadata revision.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6807a448454951da7108e2131907a51b45c1cd717189945a77c04eaaa676178"
+}

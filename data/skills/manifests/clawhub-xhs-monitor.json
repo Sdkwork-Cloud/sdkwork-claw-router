@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72756,
+  "uuid": "skill-clawhub-xhs-monitor",
+  "skillKey": "clawhub-xhs-monitor",
+  "name": "小红书竞品监控助手",
+  "summary": "小红书竞品监控 - 自动采集竞品笔记，推送飞书通知，写入数据看板",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roy",
+      "features": [
+        "自动采集竞品笔记，推送飞书通知，写入数据看板"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2403716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-monitor",
+      "url": "https://clawhub.ai/skills/xhs-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-monitor",
+    "url": "https://clawhub.ai/skills/xhs-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-monitor-80f9f01d23576f76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cd6c12756f8452be5015cc63e1c4044ed5d225f6366b7cbb889470433f58026",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:30:09.507Z"
+}

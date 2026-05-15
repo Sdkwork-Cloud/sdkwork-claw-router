@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xie-code-review@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xie_code_review",
+  "skill": {
+    "id": 45043,
+    "skillKey": "clawhub-xie-code-review",
+    "name": "Xie Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xie-code-review",
+    "url": "https://clawhub.ai/skills/xie-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xie-code-review-abfb92a2fb478c08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated code review assistant. Analyzes code changes, PRs, and files for quality issues, best practices, security concerns, and style violations. Provides..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "michealxie001",
+      "userId": "s170w0cbg2mpaewxv2748qq5cx83hwge",
+      "displayName": "michealxie001",
+      "image": "https://avatars.githubusercontent.com/u/231448030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775118628267,
+      "changelog": "Added C/C++ support: code quality, style checks, unsafe functions, header guards",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a39effb552576e82f206d5cfe315973748ba0310fdf3642ebcd87611a1dd8ae6"
+}

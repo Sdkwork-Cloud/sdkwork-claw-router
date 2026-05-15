@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69547,
+  "uuid": "skill-clawhub-file-time-magic",
+  "skillKey": "clawhub-file-time-magic",
+  "name": "file-time-magic",
+  "summary": "文件时间属性修改技能。自动设置文件的创建时间、修改时间、访问时间和编辑时长，确保所有时间逻辑一致且真实可信。 触发场景： - 用户要求修改文件时间属性 - 用户说\"这个文件编辑了X小时\" - 用户说\"把时间改成...\"或\"文件时间要合理\" - 用户指定创建时间或修改时间 - 用户提问\"能不能改文件编辑时长",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_time_magic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "psyhl",
+      "features": [
+        "文件时间属性修改技能。自动设置文件的创建时间、修改时间、访问时间和编辑时长，确保所有时间逻辑一致且真实可信。 触发场景：",
+        "用户要求修改文件时间属性",
+        "用户说\"这个文件编辑了X小时\"",
+        "用户说\"把时间改成...\"或\"文件时间要合理\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-time-magic@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110092079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-time-magic",
+      "url": "https://clawhub.ai/skills/file-time-magic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-time-magic",
+    "url": "https://clawhub.ai/skills/file-time-magic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-time-magic-d10d3ad0cbe4a96f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-time-magic@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-time-magic-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:377307c91de7714f2c16f7b1fee78188cf9cceea86685e4772b605bf81a1607b",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T14:46:49.253Z"
+}

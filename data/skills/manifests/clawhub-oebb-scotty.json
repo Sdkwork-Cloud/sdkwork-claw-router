@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14495,
+  "uuid": "skill-clawhub-oebb-scotty",
+  "skillKey": "clawhub-oebb-scotty",
+  "name": "Scotty - AT Public Transport Service (ÖBB)",
+  "summary": "Austrian rail travel planner (ÖBB Scotty). Use when planning train journeys in Austria, checking departures/arrivals at stations, or looking for service disruptions. Covers ÖBB trains, S-Bahn, regional trains, and connections to neighborin.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oebb_scotty",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "manmal",
+      "features": [
+        "Austrian rail travel planner (ÖBB Scotty)",
+        "Use when planning train journeys in Austria, checking departures/arrivals at stations, or looki.",
+        "Covers ÖBB trains, S-Bahn, regional trains, and connections to neighboring countries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oebb-scotty@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oebb-scotty",
+      "url": "https://clawhub.ai/skills/oebb-scotty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oebb-scotty",
+    "url": "https://clawhub.ai/skills/oebb-scotty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oebb-scotty-b5bfdeb7a582ef02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oebb-scotty@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oebb-scotty-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ff5bea66bf0dc276b50e4a4326b50247372f77fac30bbc6fe5797a935a46bed",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-09T00:05:32.115Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/catchy-headline-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.catchy_headline_generator",
+  "skill": {
+    "id": 69050,
+    "skillKey": "clawhub-catchy-headline-generator",
+    "name": "爆款标题生成器技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "catchy-headline-generator",
+    "url": "https://clawhub.ai/skills/catchy-headline-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/catchy-headline-generator-86373c2cdbda128a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "爆款标题生成器。根据用户输入的内容主题，生成5个不同风格的爆款标题， 适合小红书、抖音、公众号、B站、微博等平台。内置22种标题公式， 自动匹配平台风格，附带点击率预估和发布建议。 当用户提到\"爆款标题\"、\"生成标题\"、\"起标题\"、\"写标题\"、 \"标题优化\"、\"viral title\"、\"clickbait\"时触..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hadderyes",
+      "userId": "s17a2kq52x8vbknwsgszg1005h852pfa",
+      "displayName": "hadderyes",
+      "image": "https://avatars.githubusercontent.com/u/189217632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776500967142,
+      "changelog": "**重大变更：精简结构、核心能力升级，聚焦自动化爆款标题生成。**\n\n- 删除示例案例、各平台标题特点、违规词及案例库等辅助材料，减少参考资源。\n- 核心功能聚焦为：输入主题后自动生成5个不同风格爆款标题，覆盖主流自媒体平台。\n- 明确输出格式，新增内容分析、点击率预估、最佳标题推荐与发布建议。\n- 标准化标题风格库，内置22种标题公式并自动匹配平台特色。\n- 技能触发更智能，支持多种关键词直接激活生成流程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:758ca454bf2c38d12cc4e008f5fc484af2dded55af392edc1e5947f66479e7a4"
+}

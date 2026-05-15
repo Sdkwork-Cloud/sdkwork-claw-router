@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-wan-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_wan_video",
+  "skill": {
+    "id": 44220,
+    "skillKey": "clawhub-aliyun-wan-video",
+    "name": "Aliyun Wan Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-wan-video",
+    "url": "https://clawhub.ai/skills/aliyun-wan-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-wan-video-65966e9bc0ec3eca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating videos with Model Studio DashScope SDK using Wan video generation models (wan2.6-t2v, wan2.6-i2v-flash, wan2.6-i2v and regional variants)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775077513184,
+      "changelog": "Initial release of aliyun-wan-video skill.\n\n- Provides integration with Model Studio DashScope SDK for Wan video generation models.\n- Standardizes video.generate request/response for video-agent pipeline.\n- Documents required/optional parameters: prompt, negative_prompt, duration, fps, size, seed, reference_image, motion_strength.\n- Ensures output and logging to `output/aliyun-wan-video/` for validation.\n- Includes operational, interface, and async polling guidance for consistent behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1b4e76b601e8af8200d1facb226d366cbfa7b533d848ce7c1064f973007cdc2"
+}

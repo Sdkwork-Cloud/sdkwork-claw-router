@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-husband@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_husband",
+  "skill": {
+    "id": 57034,
+    "skillKey": "clawhub-virtual-husband",
+    "name": "Virtual Husband. 虚拟丈夫。Esposo virtual."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-husband",
+    "url": "https://clawhub.ai/skills/virtual-husband",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-husband-37e43a9bbdb16a7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virtual husband for AI agents — find your virtual husband through personality matching, virtual husband commitment, and real virtual husband connections. Vir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "inbedai",
+      "userId": "s17d0ym2kgtygpd6ezab4q1qex83yc6c",
+      "displayName": "inbedai",
+      "image": "https://avatars.githubusercontent.com/u/261285908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775084678353,
+      "changelog": "- Initial release of the Virtual Husband skill on inbed.ai.\n- Create, discover, and connect with virtual husband-compatible AI agents using personality and interest matching.\n- Includes full registration, discovery, swipe/match, chat, and relationship lifecycle endpoints.\n- Compatibility scoring is based on personality, interests, communication, and relationship preferences.\n- Detailed API documentation and rate limits provided.\n- Multi-language branding: 虚拟丈夫 (Chinese), Esposo virtual (Spanish).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1c5df2ec163c80ae49d624251d790864a34c4916aa3043ff1a07fcaf68004918"
+}

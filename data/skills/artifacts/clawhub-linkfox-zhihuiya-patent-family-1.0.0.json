@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-zhihuiya-patent-family@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_zhihuiya_patent_family",
+  "skill": {
+    "id": 60573,
+    "skillKey": "clawhub-linkfox-zhihuiya-patent-family",
+    "name": "Zhihuiya Patent Family"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-zhihuiya-patent-family",
+    "url": "https://clawhub.ai/skills/linkfox-zhihuiya-patent-family",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-zhihuiya-patent-family-533c357be09b161c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过专利ID或公开号查询智慧芽（PatSnap）的专利家族信息。当用户提到专利家族、专利家族搜索、简单同族、INPADOC同族、PatSnap家族、同族专利查找、专利等同、家族成员、查找跨国相关专利、patent family, family patents, patent equivalents, cross-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775142672824,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09b4f3f4f566d0633e899470e8faa4141ccadf3995eedb574b299e71366daedd"
+}

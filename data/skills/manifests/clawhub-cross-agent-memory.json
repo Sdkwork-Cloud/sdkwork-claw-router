@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16824,
+  "uuid": "skill-clawhub-cross-agent-memory",
+  "skillKey": "clawhub-cross-agent-memory",
+  "name": "Cross-Agent Memory Sharing",
+  "summary": "Enable multiple agents to share, merge, and sync memories using standardized formats, priority rules, and Git-based version control for collective intelligence.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_agent_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ceelo",
+      "features": [
+        "Enable multiple agents to share, merge, and sync memories using standardized formats, priority."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-agent-memory@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111347656?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-agent-memory",
+      "url": "https://clawhub.ai/skills/cross-agent-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-agent-memory",
+    "url": "https://clawhub.ai/skills/cross-agent-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-agent-memory-05d62ba44df02c62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-agent-memory@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-agent-memory-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:199b6d4e6ecc0d948e8a2058cc42a0bb3fc4de401091cb8391a8bb18358d4be7",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T00:45:10.026Z"
+}

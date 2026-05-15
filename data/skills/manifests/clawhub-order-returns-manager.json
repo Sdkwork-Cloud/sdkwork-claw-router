@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44282,
+  "uuid": "skill-clawhub-order-returns-manager",
+  "skillKey": "clawhub-order-returns-manager",
+  "name": "Order & Returns Manager",
+  "summary": "Manage UK-compliant Shopify and WooCommerce orders via chat, including status, returns, refunds, exchanges, edits, fraud flags, lost parcels, and reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.order_returns_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hussain Khuzema",
+      "features": [
+        "Manage UK-compliant Shopify and WooCommerce orders via chat, including status, returns, refunds."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/order-returns-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33164010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "order-returns-manager",
+      "url": "https://clawhub.ai/skills/order-returns-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "order-returns-manager",
+    "url": "https://clawhub.ai/skills/order-returns-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/order-returns-manager-0cc88eccd41383cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/order-returns-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-order-returns-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24610f9a9c708549dff22d75af03dab0979d992cd10dd486cbba0d43e8232404",
+      "artifactSizeBytes": 2591
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T22:35:14.688Z"
+}

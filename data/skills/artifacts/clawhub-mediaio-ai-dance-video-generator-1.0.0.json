@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediaio-ai-dance-video-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediaio_ai_dance_video_generator",
+  "skill": {
+    "id": 32059,
+    "skillKey": "clawhub-mediaio-ai-dance-video-generator",
+    "name": "AI Dance Video Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediaio-ai-dance-video-generator",
+    "url": "https://clawhub.ai/skills/mediaio-ai-dance-video-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediaio-ai-dance-video-generator-54c1545938f1c197.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI dance videos where characters move to music or choreography templates using Media.io OpenAPI. Creates dynamic, rhythmic dance animations. AI danc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wondershare-boop",
+      "userId": "s1707d6v06e1pv7bbn814sjdq583gtne",
+      "displayName": "wondershare-boop",
+      "image": "https://avatars.githubusercontent.com/u/208894930?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773888966602,
+      "changelog": "Initial release of the Media.io AI Dance Video Generator skill.\n\n- Integrates with Media.io OpenAPI to generate AI dance videos using image and video URLs.\n- Supports asynchronous task creation and polling for dance video generation status.\n- Includes credit checking before generation requests.\n- Provides structured API invocation and error handling guidance.\n- Requires MEDIAIO_API_KEY environment variable for authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a1206226688ada34c1514134e2fa20fe2e89ae99f7ba5e04797876bca9b58e6c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63056,
+  "uuid": "skill-clawhub-daily-stock-analyzer",
+  "skillKey": "clawhub-daily-stock-analyzer",
+  "name": "Daily Stock Analyzer",
+  "summary": "基于 Qlib 的 A 股自选股智能分析系统，集成 LLM Agent ReAct 推理引擎和技术指标择时模块（MA 多头排列、乖离率阈值严进策略），自动生成每日 buy/hold/sell 指令并推送至微信。触发场景：(1) 用户要查询自选股当天的 AI 交易信号和涨跌预测；(2) 用户要获取符合 MA 多头排...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_stock_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "基于 Qlib 的 A 股自选股智能分析系统，集成 LLM Agent ReAct 推理引擎和技术指标择时模块（MA 多头排列、乖离率阈值严进策略），自动生成每日 buy/hold/sell."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-stock-analyzer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-stock-analyzer",
+      "url": "https://clawhub.ai/skills/daily-stock-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-stock-analyzer",
+    "url": "https://clawhub.ai/skills/daily-stock-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-stock-analyzer-2644964e542c5073.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-stock-analyzer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-stock-analyzer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a373bb771fcdf49c25886bd073535ce9ad164ad69e37d3091decd27b29fe7f01",
+      "artifactSizeBytes": 2272
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T13:39:29.036Z"
+}

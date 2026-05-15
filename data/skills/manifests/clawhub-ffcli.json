@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14556,
+  "uuid": "skill-clawhub-ffcli",
+  "skillKey": "clawhub-ffcli",
+  "name": "Ffcli",
+  "summary": "Query Fireflies.ai meeting data. Use when searching meetings, viewing transcripts, reading AI summaries, extracting action items, or looking up what was disc...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ffcli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ruigomeseu",
+      "features": [
+        "Query Fireflies.ai meeting data",
+        "Use when searching meetings, viewing transcripts, reading AI summaries, extracting action items."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ffcli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5658301?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ffcli",
+      "url": "https://clawhub.ai/skills/ffcli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ffcli",
+    "url": "https://clawhub.ai/skills/ffcli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ffcli-3545777a4b0e1302.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ffcli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ffcli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0d76da4dbb00009fb842d3f71e6af02b0bed5494ffc2f8da45aa1e903dbffcf",
+      "artifactSizeBytes": 2154
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T15:21:05.819Z"
+}

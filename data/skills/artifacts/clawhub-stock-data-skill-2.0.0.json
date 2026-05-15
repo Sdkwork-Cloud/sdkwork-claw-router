@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-data-skill@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_data_skill",
+  "skill": {
+    "id": 11987,
+    "skillKey": "clawhub-stock-data-skill",
+    "name": "stock_data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-data-skill",
+    "url": "https://clawhub.ai/skills/stock-data-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-data-skill-53037387e4097231.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch comprehensive stock data from Simplywall.st. Use when user asks about stock prices, valuation, financials, dividend, or investment analysis for any glo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raufimusaddiq",
+      "userId": "publishers:raufimusaddiq",
+      "displayName": "Raufi Musaddiq",
+      "image": "https://avatars.githubusercontent.com/u/14123151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1695,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773964540438,
+      "changelog": "v2.0.0 - Enhanced extraction: price targets, returns, insider activity, revenue/earnings growth, margins, health metrics, forecasts. 15+ data sections from SimplyWall.st",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a995e6ca0503871fd32a23b55d2b529a40db4736ddf9eda710dac4a9bdb5659"
+}

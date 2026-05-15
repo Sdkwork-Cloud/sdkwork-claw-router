@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gov-financial-intel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_financial_intel",
+  "skill": {
+    "id": 22581,
+    "skillKey": "clawhub-gov-financial-intel",
+    "name": "Gov Financial Intel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-financial-intel",
+    "url": "https://clawhub.ai/skills/gov-financial-intel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-financial-intel-c8bc93059b0ae765.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SEC EDGAR filings, BLS employment stats, and USDA crop prices. 3 tools for federal financial intelligence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "martc03",
+      "userId": "publishers:martc03",
+      "displayName": "Martin",
+      "image": "https://avatars.githubusercontent.com/u/138740843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772210971637,
+      "changelog": "Initial release with real-time federal financial intelligence tools:\n\n- Search SEC EDGAR for company filings (10-K, 10-Q, 8-K, etc).\n- Retrieve BLS employment statistics, including unemployment rate and payrolls.\n- Access USDA crop and commodity prices by state and year.\n- No API keys required; uses free government data sources.\n- Easy setup for integration with mcporter or OpenClaw MCP.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee553d5a4fcff4a42bb818005fa610a75052e108cde98c87a4f85b7e3bd56f1c"
+}

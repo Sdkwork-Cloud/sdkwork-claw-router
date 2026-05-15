@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9612,
+  "uuid": "skill-clawhub-raglite",
+  "skillKey": "clawhub-raglite",
+  "name": "RAGLite",
+  "summary": "Local-first RAG cache: distill docs into structured Markdown, then index/query with Chroma (vector) + ripgrep (keyword).",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raglite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Viraj Sanghvi",
+      "features": [
+        "Local-first RAG cache: distill docs into structured Markdown, then index/query with Chroma (vec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raglite@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22336852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raglite",
+      "url": "https://clawhub.ai/skills/raglite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raglite",
+    "url": "https://clawhub.ai/skills/raglite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raglite-3c4cc13ac04c6fad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raglite@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-raglite-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f84f0b8c0ce993f474da8afa5c7b55a7b11353f9f22dfbe450ea4ed7647af439",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T03:15:16.642Z"
+}

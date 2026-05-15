@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56611,
+  "uuid": "skill-clawhub-tts-autoplay",
+  "skillKey": "clawhub-tts-autoplay",
+  "name": "TTS AutoPlay with Wake Word",
+  "summary": "Auto-play TTS voice files with wake word detection. Only plays audio when user message contains wake words like \"语音\", \"念出来\", \"voice\", etc. Perfect for Webcha...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tts_autoplay",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangZjhz",
+      "features": [
+        "Auto-play TTS voice files with wake word detection",
+        "Only plays audio when user message contains wake words like \"语音\", \"念出来\", \"voice\", etc",
+        "Perfect for Webcha..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tts-autoplay@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141498897?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tts-autoplay",
+      "url": "https://clawhub.ai/skills/tts-autoplay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tts-autoplay",
+    "url": "https://clawhub.ai/skills/tts-autoplay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tts-autoplay-debf5d60f1936276.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tts-autoplay@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tts-autoplay-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3633cb9d7935816351311ccb5d710b1890c522d281c42d6df8b7e4fbed692c9",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:51:48.803Z"
+}

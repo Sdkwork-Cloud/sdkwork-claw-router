@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63844,
+  "uuid": "skill-clawhub-youtube-comment-miner",
+  "skillKey": "clawhub-youtube-comment-miner",
+  "name": "youtube-comment-miner",
+  "summary": "从指定话题的YouTube视频评论中挖掘用户痛点、功能建议与需求，助力竞品分析和市场调研。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_comment_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marc",
+      "features": [
+        "从指定话题的YouTube视频评论中挖掘用户痛点、功能建议与需求，助力竞品分析和市场调研。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-comment-miner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167509925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-comment-miner",
+      "url": "https://clawhub.ai/skills/youtube-comment-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-comment-miner",
+    "url": "https://clawhub.ai/skills/youtube-comment-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-comment-miner-58cb76f1f630a849.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-comment-miner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-comment-miner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e3be276be75fc2c47d7b33c4bcb9e56d294126882e36d6e6090122059af179b",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:21:40.494Z"
+}

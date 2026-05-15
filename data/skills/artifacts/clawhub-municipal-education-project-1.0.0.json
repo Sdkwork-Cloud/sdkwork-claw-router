@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/municipal-education-project@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.municipal_education_project",
+  "skill": {
+    "id": 72689,
+    "skillKey": "clawhub-municipal-education-project",
+    "name": "市级教育课题申报Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "municipal-education-project",
+    "url": "https://clawhub.ai/skills/municipal-education-project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/municipal-education-project-608f7f95b1f18229.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "辅助教师结合本市教育实际，生成贴近教学一线、操作性强且具有地方特色的市级教育课题申报书。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daigxok",
+      "userId": "s1780ks0559aj0a6r3aabws5e983sfvy",
+      "displayName": "math",
+      "image": "https://avatars.githubusercontent.com/u/48268142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776314425256,
+      "changelog": "初始版本：专门针对市级教育课题申报，帮助教师撰写接地气、易实施、有特色的市级课题申报书",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdae93d4230e137c6c0574ace71f05af63e4c3d666975f95a8f4adf76c2d511b"
+}

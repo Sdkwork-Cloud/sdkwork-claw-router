@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screen-capture-hub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_capture_hub",
+  "skill": {
+    "id": 72055,
+    "skillKey": "clawhub-screen-capture-hub",
+    "name": "一个功能强大的屏幕浏览、OCR识别和屏幕分析技能包，专为AI助手设计"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-capture-hub",
+    "url": "https://clawhub.ai/skills/screen-capture-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-capture-hub-a15f22ea483d7d8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "此技能应被用于任何需要捕获屏幕截图、分析屏幕内容或处理屏幕图像的任务。包括：使用Python PIL库捕获整个屏幕或特定区域的截图；保存截图到指定位置；分析截图中的文字内容（支持中英文OCR识别）；对截图进行基本图像处理（裁剪、旋转、调整大小）。当用户提到\"屏幕截图\"、\"截屏\"、\"查看屏幕\"或需要分析屏幕上的内容..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datappt8",
+      "userId": "publishers:datappt8",
+      "displayName": "datappt8",
+      "image": "https://avatars.githubusercontent.com/u/161408840?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 725,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773549800014,
+      "changelog": "openclaw-screen-viewer 1.0.0 – Initial release\n\n- Adds Python-based screen capture and image processing capabilities (full screen or region).\n- Supports screenshot saving, text extraction via OCR (Chinese and English), and basic image editing (crop, rotate, resize).\n- Provides scripts for quick capture, OCR, region selection, and screen content analysis.\n- Includes detailed usage, installation, and troubleshooting instructions for multiple platforms.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba6bf3c562949f01538c48ea026f5799cf53d1445615aa90c8a57565f6d8c7ec"
+}

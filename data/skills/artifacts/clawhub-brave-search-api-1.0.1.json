@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-search-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_search_api",
+  "skill": {
+    "id": 16918,
+    "skillKey": "clawhub-brave-search-api",
+    "name": "Brave Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-search-api",
+    "url": "https://clawhub.ai/skills/brave-search-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-search-api-a4a74e71311dfe03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Brave Search API integration with managed authentication. Search the web, images, news, and videos with privacy-focused search. Use this skill when users wan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 797,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777587189846,
+      "changelog": "- Base API endpoint updated from `gateway.maton.ai` and `ctrl.maton.ai` to `api.maton.ai` for all requests and connection management.\n- References and example code updated to use the new API base URL.\n- New section on Security & Permissions, detailing required user approval for write operations.\n- Clarified instructions for specifying connections when multiple Brave Search accounts are present.\n- Removed the LICENSE.txt file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b52667d527ef39ccf054d48db1725ee24a9ab9b4fa1d05beb728ae7be0ea561"
+}

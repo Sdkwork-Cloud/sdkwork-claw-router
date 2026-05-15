@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-generator-free-instagram@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_generator_free_instagram",
+  "skill": {
+    "id": 46272,
+    "skillKey": "clawhub-ai-video-generator-free-instagram",
+    "name": "Ai Video Generator Free Instagram"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-generator-free-instagram",
+    "url": "https://clawhub.ai/skills/ai-video-generator-free-instagram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-generator-free-instagram-3b7b9609503a2f06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate images or clips into Instagram-ready videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. Instagram creators use it for generati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776369073427,
+      "changelog": "AI Video Generator Free Instagram v1.0.0\n\n- Initial release: generate Instagram-ready videos from photos or clips (MP4, MOV, JPG, PNG up to 200MB).\n- Supports 1080p MP4 export with music, transitions, and text overlays.\n- Fast cloud GPU processing (30–60 seconds typical turnaround).\n- Anonymous and registered usage flows both supported; 100 free credits for new users.\n- Handles upload, edit, preview, export, and credit balance via simple chat commands.\n- Optimized for Instagram Reels and Stories (vertical 9:16 format recommended).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ba204d7500528779287623dc7e2e15223d8de34845be9e17c1455783f7ac4bc"
+}

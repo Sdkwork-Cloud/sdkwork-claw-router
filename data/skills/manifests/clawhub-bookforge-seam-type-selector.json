@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48242,
+  "uuid": "skill-clawhub-bookforge-seam-type-selector",
+  "skillKey": "clawhub-bookforge-seam-type-selector",
+  "name": "Seam Type Selector",
+  "summary": "Select the right seam type (Preprocessor / Link / Object) for breaking a dependency in legacy code. Use whenever a developer needs to substitute behavior for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_seam_type_selector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hung Quoc To",
+      "features": [
+        "Select the right seam type (Preprocessor / Link / Object) for breaking a dependency in legacy c.",
+        "Use whenever a developer needs to substitute behavior for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookforge-seam-type-selector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88069966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookforge-seam-type-selector",
+      "url": "https://clawhub.ai/skills/bookforge-seam-type-selector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-seam-type-selector",
+    "url": "https://clawhub.ai/skills/bookforge-seam-type-selector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-seam-type-selector-d3d4309aa9154024.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookforge-seam-type-selector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookforge-seam-type-selector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea1375c810d1ef2bad9cd63e96e0df2ba102a0826bdb776eb33d593df7c97fb0",
+      "artifactSizeBytes": 2626
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T14:50:28.209Z"
+}

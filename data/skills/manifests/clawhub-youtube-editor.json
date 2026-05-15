@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10453,
+  "uuid": "skill-clawhub-youtube-editor",
+  "skillKey": "clawhub-youtube-editor",
+  "name": "Youtube Editor",
+  "summary": "Automate YouTube video editing: download videos, transcribe with Whisper, analyze content using GPT-4, and create Korean SEO-optimized metadata plus consiste...",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_editor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeong-wooseok",
+      "features": [
+        "Automate YouTube video editing: download videos, transcribe with Whisper, analyze content using."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-editor@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64723774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-editor",
+      "url": "https://clawhub.ai/skills/youtube-editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-editor",
+    "url": "https://clawhub.ai/skills/youtube-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-editor-fc168252b53c99d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-editor@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-editor-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b647c36f3084a615d8c582596e64aa2c1cda628e5f0d093ab338fc218b425d99",
+      "artifactSizeBytes": 2085
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T13:09:02.011Z"
+}

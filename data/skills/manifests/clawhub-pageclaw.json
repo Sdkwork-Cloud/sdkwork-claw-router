@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51882,
+  "uuid": "skill-clawhub-pageclaw",
+  "skillKey": "clawhub-pageclaw",
+  "name": "pageclaw",
+  "summary": "Use when the user wants to turn a page-story markdown file (page-story-*.md) into a polished static HTML page. Trigger for: personal pages, academic homepage...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pageclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ying Xiao",
+      "features": [
+        "Use when the user wants to turn a page-story markdown file (page-story-*.md) into a polished st.",
+        "Trigger for: personal pages, academic homepage..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pageclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56998359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pageclaw",
+      "url": "https://clawhub.ai/skills/pageclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pageclaw",
+    "url": "https://clawhub.ai/skills/pageclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pageclaw-81a40afbb397090f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pageclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pageclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1622972d3a685e0a972cc21046afbf922924f6e1d8aaef567151aedb0417d9a6",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:13:22.624Z"
+}

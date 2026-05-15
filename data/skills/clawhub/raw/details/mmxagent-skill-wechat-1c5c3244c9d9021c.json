@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "mmxagent-skill-wechat",
+    "displayName": "mmxagent-skill-wechat",
+    "summary": "连接个人微信（不是企业微信）。用户说\"连接个人微信\"、\"接入个人微信\"、\"绑定个人微信\"、\"个人微信扫码\"时使用本 skill。注意：如果用户说的是\"企业微信\"或\"企微\"，本 skill 不适用，请使用 wecom-connect skill。一旦匹配本 skill，必须严格按流程执行到底，不得跳步或自由发挥。",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1775120003610,
+    "updatedAt": 1777527084293
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1775632157047,
+    "changelog": "mmxagent-skill-wechat v1.0.3\n\n- 二维码相关步骤（获取+生成）明确要求用命令合并执行，以提高速度，降低过期风险。其它步骤允许分步操作便于排错。\n- 二维码图片展现方式调整为优先存储本地 workspace 文件，CDN 上传仅作为辅助，需用户主动请求时才启用。\n- 新增凭证写入前，先展示账号ID/token等敏感信息，获得用户确认后再落盘，增强安全与可控性。\n- 其他部分进一步细化执行流程，明示各步骤目的与合规要求，加强对包来源、流程禁止项的说明。\n- 绝对禁止事项补充完善，CDN 上传、凭证写入等关键环节限制更严格。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "oreoandyuumi",
+    "userId": "s17306q89d61k87b44tjdj867h8436v2",
+    "displayName": "OreoAndYuumi",
+    "image": "https://avatars.githubusercontent.com/u/169647655?v=4"
+  },
+  "moderation": null
+}

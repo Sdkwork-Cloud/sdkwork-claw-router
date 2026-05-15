@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llmcom@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llmcom",
+  "skill": {
+    "id": 35928,
+    "skillKey": "clawhub-llmcom",
+    "name": "LLMCOM Prompt Compression"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llmcom",
+    "url": "https://clawhub.ai/skills/llmcom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llmcom-6a4128324445377b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compress prompts for Claude Code and Cursor CLI. Reduces tokens by removing filler words and abbreviating terms. Self-contained, no external dependencies req..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shalinda-j",
+      "userId": "s17ap8dfjnk0fyase5ybxvtcws844gxz",
+      "displayName": "Shalinda Jayasinghe",
+      "image": "https://avatars.githubusercontent.com/u/81026438?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776198171217,
+      "changelog": "Self-contained skill. Removed all external code and git clone references. Compression rules now documented directly in SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33b24ce6b53ad897605f1ae4d1e19bab4a8e6f15be64bfe3ca87002a95d6977c"
+}

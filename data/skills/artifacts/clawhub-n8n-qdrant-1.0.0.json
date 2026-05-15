@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n8n-qdrant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n8n_qdrant",
+  "skill": {
+    "id": 39524,
+    "skillKey": "clawhub-n8n-qdrant",
+    "name": "N8N QDrant workflow expert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n8n-qdrant",
+    "url": "https://clawhub.ai/skills/n8n-qdrant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n8n-qdrant-151a2bd904868c77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Expertise in designing, building, and troubleshooting production-grade n8n workflows for Qdrant ingestion, retrieval, hybrid search, and RAG pipelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "encryptshawn",
+      "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+      "displayName": "EncryptShawn",
+      "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775255737157,
+      "changelog": "- Initial release of the n8n + Qdrant: Ingestion & RAG Pipeline Skill.\n- Provides step-by-step guidance for end-to-end Qdrant ingestion and retrieval workflows in n8n.\n- Explains the difference between the Official Qdrant Node and the built-in LangChain Vector Store Node, with clear usage recommendations.\n- Includes pipeline architecture diagrams for both ingestion and RAG retrieval flows.\n- Covers credentials setup for both cloud and local Qdrant deployments.\n- Offers naming conventions, a decision matrix for node selection, and critical rules for robust, production-grade pipelines.\n- Points to detailed documentation for further reference and best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5efe541dda3705f45e0867e78d9f8ed1024e642bf5013104001569ae02d41c33"
+}

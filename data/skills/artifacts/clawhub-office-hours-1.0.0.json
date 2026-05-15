@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/office-hours@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office_hours",
+  "skill": {
+    "id": 67272,
+    "skillKey": "clawhub-office-hours",
+    "name": "office-hours"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office-hours",
+    "url": "https://clawhub.ai/skills/office-hours",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office-hours-55e15162fcc03dc0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "YC式产品思维办公室。用第一性原理拆解产品想法，通过六问逼问法验证需求真伪， 挑战前提假设，生成多种实现方案。输出设计文档而非代码。 Use when: 用户说\"帮我想想这个点子\"、\"这个值不值得做\"、\"brainstorm\"、 \"产品规划\"、\"需求分析\"、\"帮我理清思路\"，或描述一个新的产品/功能想法时。 在任..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lawrencepage",
+      "userId": "s17caawfx1xbpnezhm1248ydm583hc3q",
+      "displayName": "LawrencePage",
+      "image": "https://avatars.githubusercontent.com/u/3185647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 739,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774097794633,
+      "changelog": "I turned Garry Tan's YC-style product thinking framework from OpenClaw into an AgentSkill. Give it a try—it's incredibly powerful.  \nIt deconstructs product ideas with first principles, validates the authenticity of needs through the Six Questions method, challenges assumptions, and generates multiple implementation approaches. The output is a design document, not code.  \nUse when: the user says things like \"help me think through this idea,\" \"is this worth pursuing,\" \"brainstorm,\" \"product planning,\" \"requirements analysis,\" \"help me clarify my thoughts,\" or describes a new product/feature idea. Proactively suggest using it before any code implementation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc175e81c9595497b261beaf76741c4f8404da0a45c3ab8a1e1b74f579b8acab"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73390,
+  "uuid": "skill-clawhub-gooduone-weather",
+  "skillKey": "clawhub-gooduone-weather",
+  "name": "天气查询",
+  "summary": "查询城市天气情况。使用场景：用户询问某个城市的天气、温度、或天气预报时。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gooduone_weather",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gooduone",
+      "features": [
+        "查询城市天气情况。使用场景：用户询问某个城市的天气、温度、或天气预报时。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gooduone-weather@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11918362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gooduone-weather",
+      "url": "https://clawhub.ai/skills/gooduone-weather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gooduone-weather",
+    "url": "https://clawhub.ai/skills/gooduone-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gooduone-weather-cea062746b8ae0c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gooduone-weather@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gooduone-weather-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a9185a21eb3b931ce15b45fb0bd36fe36ad1e1c3f04d55457c35f5f7e7df56a",
+      "artifactSizeBytes": 2133
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T12:58:40.688Z"
+}

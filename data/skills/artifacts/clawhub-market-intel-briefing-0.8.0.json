@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/market-intel-briefing@0.8.0",
+  "version": "0.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_intel_briefing",
+  "skill": {
+    "id": 42121,
+    "skillKey": "clawhub-market-intel-briefing",
+    "name": "Market Intel Briefing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-intel-briefing",
+    "url": "https://clawhub.ai/skills/market-intel-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-intel-briefing-dbbbed2a3314320a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build lean, source-linked, decision-ready market intelligence briefs for a niche, competitor set, company set, jurisdiction comparison, or market theme. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitcanadabrett",
+      "userId": "s179z9xbrcbpqvt6a22em801t983qf9y",
+      "displayName": "GitCanadaBrett",
+      "image": "https://avatars.githubusercontent.com/u/269075000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.8.0",
+      "createdAt": 1775272517104,
+      "changelog": "v0.8.0 — First public release. Practitioner-grade market intelligence briefings with source-linked claims, evidence/inference separation, and actionable commercial recommendations. Refined through 9 evaluation rounds.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b2e5c423fbc9b63506d9caf086e1d9dd1d8747a604df05a27eb4a8294609406"
+}

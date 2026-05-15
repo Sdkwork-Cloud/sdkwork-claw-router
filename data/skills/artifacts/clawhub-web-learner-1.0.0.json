@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-learner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_learner",
+  "skill": {
+    "id": 69956,
+    "skillKey": "clawhub-web-learner",
+    "name": "Web Learner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-learner",
+    "url": "https://clawhub.ai/skills/web-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-learner-d22b0ed19a221884.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自主上网学习技能 - 让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackeven02",
+      "userId": "s17bfcp43p7ed5gq5h70w7ekg183j0me",
+      "displayName": "Jackeven02",
+      "image": "https://avatars.githubusercontent.com/u/199219042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4741,
+      "installsAllTime": 38,
+      "installsCurrent": 36,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771938730814,
+      "changelog": "Web Learner v1.0.0 - 初始发布\n\n- 新技能上线，实现AI自主搜索、浏览和学习互联网知识的能力\n- 支持自动获取新闻、实时信息、天气、股票等多种信息\n- 明确搜索、抓取和浏览策略，优先中文结果\n- 优化错误处理及工具备切换方案\n- 输出结果结构清晰，注明来源，使用简明中文",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8c1f9b943c64e6a222cbb12e33bba9dedc20a65847a8f268e744b1434f9bf240"
+}

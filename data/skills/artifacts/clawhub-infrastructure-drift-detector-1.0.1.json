@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/infrastructure-drift-detector@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.infrastructure_drift_detector",
+  "skill": {
+    "id": 44405,
+    "skillKey": "clawhub-infrastructure-drift-detector",
+    "name": "Infrastructure Drift Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "infrastructure-drift-detector",
+    "url": "https://clawhub.ai/skills/infrastructure-drift-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/infrastructure-drift-detector-b92f07939aa73fdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect drift between Infrastructure-as-Code definitions (Terraform, Pulumi, CloudFormation, CDK) and actual deployed state. Identify untracked resources, man..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777593710174,
+      "changelog": "Version 1.0.1\n\n- No file changes detected; content and functionality remain unchanged.\n- Maintains all commands and documentation as in the previous version.\n- No new features, fixes, or updates in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:441a80cd78016cb7f877740dfeddf7e4ed0d55cfa7696f71b6ec0891e3961c59"
+}

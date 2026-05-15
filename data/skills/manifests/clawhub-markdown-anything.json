@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23345,
+  "uuid": "skill-clawhub-markdown-anything",
+  "skillKey": "clawhub-markdown-anything",
+  "name": "Markdown Anything",
+  "summary": "Convert PDF, DOCX, XLSX, PPTX, images, audio, and 25+ file formats to clean Markdown using the Markdown Anything API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_anything",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aditya Tripathi",
+      "features": [
+        "Convert PDF, DOCX, XLSX, PPTX, images, audio, and 25+ file formats to clean Markdown using the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-anything@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9266227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-anything",
+      "url": "https://clawhub.ai/skills/markdown-anything"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-anything",
+    "url": "https://clawhub.ai/skills/markdown-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-anything-770ae5ce5d368669.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-anything@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-anything-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2e2d11d8de2329ff7f3f20ca504968335bf1c4556cb4f08d033ffcdc0fc437c",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T23:36:08.496Z"
+}

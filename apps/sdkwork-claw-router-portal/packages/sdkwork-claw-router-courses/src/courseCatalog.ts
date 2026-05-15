@@ -18,6 +18,8 @@ export type CourseEngagementSeed = {
 
 export interface Course {
   id: string;
+  contentId?: number;
+  courseCode?: string;
   title: string;
   description: string;
   thumbnail: string;
@@ -33,6 +35,7 @@ export interface Course {
   content?: string;
   price?: number | null;
   isCollection?: boolean;
+  publishedAt?: string;
   relatedCourseIds?: string[];
   engagement?: CourseEngagementSeed;
 }
@@ -57,6 +60,13 @@ export type CourseEngagementMetrics = {
   discussions: string;
 };
 
+export type CourseOverviewSource = {
+  sourceLabel: string;
+  sourceDescription: string;
+  observedAt: string;
+  sourceTables: readonly string[];
+};
+
 export type CourseInfoView = {
   title: string;
   description: string;
@@ -72,8 +82,14 @@ export type CourseLessonView = {
   id: string;
   number: number;
   title: string;
+  description?: string;
   duration: string;
   active: boolean;
+  videoUrl?: string;
+  externalBvid?: string;
+  sourceProvider?: string;
+  content?: string;
+  freePreview?: boolean;
 };
 
 export type CourseChapterView = {
@@ -90,6 +106,7 @@ export type CoursePlaylistView = {
 
 export type CourseVideoView = {
   embedUrl: string | null;
+  sourceProvider?: string;
   unavailableMessage: string;
   title: string;
 };
@@ -129,7 +146,7 @@ export type CoursePublisherView = {
 
 export type CourseDetailViewModel = {
   course: Course;
-  snapshotSource: typeof COURSE_CONTENT_SNAPSHOT_SOURCE;
+  snapshotSource: CourseOverviewSource;
   info: CourseInfoView;
   video: CourseVideoView;
   playlist: CoursePlaylistView;
@@ -153,150 +170,255 @@ export const COURSE_CONTENT_SNAPSHOT_SOURCE = {
 
 export const COURSE_CATALOG: Course[] = [
   {
-    id: 'c1',
-    title: 'Claw Router Fundamentals: Zero to Hero',
-    description: 'Master the core concepts of Claw Router. Learn how to define schemas, set up middleware, and configure performant API resolving.',
-    thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    id: "c1",
+    contentId: 30001001,
+    courseCode: "c1",
+    title: "飞书 CLI 与 Claude Code/Codex 远程开发实战",
+    description: "基于 Bilibili 的飞书 CLI、Claude Code、Codex 课程，覆盖远程开发、Agent 协作、上下文规则和生产任务交付。",
+    thumbnail: "/assets/courses/covers/ai-coding.svg",
     instructor: {
-      name: 'Sarah Chen',
-      avatar: 'https://i.pravatar.cc/150?u=2',
-      title: 'Principal API Architect',
-      bio: 'Designs production API routing systems and developer education programs for enterprise teams.',
+      name: "SDKWork Academy",
+      avatar: "/assets/courses/avatars/sdkwork-academy.svg",
+      title: "AI Coding Curriculum Team",
+      bio: "Curates practical AI coding courses from Bilibili and local tutorial uploads.",
     },
-    duration: '4h 30m',
-    lessonsCount: 24,
+    duration: "3h 20m",
+    lessonsCount: 3,
     rating: 4.9,
-    studentsCount: 15420,
-    level: 'Beginner',
-    category: 'Core Concepts',
-    tags: ['Core', 'Routing'],
-    bilibiliBvid: 'BV1GJ411x7h7',
-    content: "Welcome to Claw Router Fundamentals. This course walks through production-ready routing configuration, schema design, and operational checks.",
+    studentsCount: 3851,
+    level: "Beginner",
+    category: "AI Coding",
+    tags: [
+      "Claude Code",
+      "Codex",
+      "Remote Development",
+      "AI Coding",
+    ],
+    bilibiliBvid: "BV18VX2ByEfA",
+    content: "从飞书 CLI、Claude Code 和 Codex 远程协作入手，把上下文规则、团队流程和真实项目交付连接起来。",
     price: null,
     isCollection: true,
-    relatedCourseIds: ['c2', 'c6'],
+    publishedAt: "2026-05-16T14:00:00Z",
+    relatedCourseIds: [
+      "c2",
+      "c6",
+    ],
     engagement: {
-      likes: 19521,
-      saves: 6820,
-      shares: 2110,
-      discussions: 1240,
+      views: 3851,
+      likes: 155,
+      saves: 22,
+      shares: 11,
     },
   },
   {
-    id: 'c2',
-    title: 'Advanced API Architecture and Design',
-    description: 'Learn how to handle hundreds of endpoints gracefully. We cover spec splitting, dynamic routing, and enterprise-grade security middleware.',
-    thumbnail: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    id: "c2",
+    contentId: 30001002,
+    courseCode: "c2",
+    title: "OpenAI Codex CLI 超级入门教程",
+    description: "面向在线学习的 Codex 课程，覆盖 Codex CLI、IDE 协作、AGENTS.md、代码审查、上下文处理、MCP 和云端任务委派。",
+    thumbnail: "/assets/courses/covers/ai-coding.svg",
     instructor: {
-      name: 'David Smith',
-      avatar: 'https://i.pravatar.cc/150?u=3',
-      title: 'API Platform Lead',
-      bio: 'Builds large-scale gateway architecture and governance systems for distributed engineering teams.',
+      name: "SDKWork Academy",
+      avatar: "/assets/courses/avatars/sdkwork-academy.svg",
+      title: "AI Coding Curriculum Team",
+      bio: "Curates practical AI coding courses from Bilibili and local tutorial uploads.",
     },
-    duration: '6h 15m',
-    lessonsCount: 38,
+    duration: "2h 10m",
+    lessonsCount: 3,
     rating: 4.8,
-    studentsCount: 8312,
-    level: 'Advanced',
-    category: 'Architecture',
-    tags: ['Architecture', 'Security', 'API'],
-    bilibiliBvid: 'BV1hY411N7xL',
-    content: 'A deep course on API surface design, schema evolution, route isolation, and secure platform boundaries.',
-    price: 49.99,
+    studentsCount: 6808,
+    level: "Advanced",
+    category: "AI Coding",
+    tags: [
+      "Codex",
+      "Codex CLI",
+      "AGENTS.md",
+      "MCP",
+      "Security",
+    ],
+    bilibiliBvid: "BV1vsZWBiEyM",
+    content: "学习 Codex 从仓库阅读、代码审查、命令行会话到云端任务委派的完整工程闭环。",
+    price: null,
     isCollection: false,
-    relatedCourseIds: ['c1', 'c5'],
+    publishedAt: "2026-05-16T13:00:00Z",
+    relatedCourseIds: [
+      "c1",
+      "c5",
+    ],
+    engagement: {
+      views: 6808,
+      likes: 984,
+      saves: 269,
+      shares: 85,
+    },
   },
   {
-    id: 'c3',
-    title: 'Real-time Integrations and Webhooks',
-    description: 'Extend your router with WebSockets and Webhooks. This course covers everything from basic event publishing to scalable real-time architectures.',
-    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    id: "c3",
+    contentId: 30001003,
+    courseCode: "c3",
+    title: "Claude Code 从 0 到 1 全攻略",
+    description: "面向真实项目的 Claude Code 课程，从安装授权、Plan Mode、MCP、图片处理、上下文压缩到 Hook、Agent Skill 和 SubAgent。",
+    thumbnail: "/assets/courses/covers/ai-coding.svg",
     instructor: {
-      name: 'Alex Johnson',
-      avatar: 'https://i.pravatar.cc/150?u=1',
-      title: 'Realtime Systems Engineer',
-      bio: 'Specializes in event-driven integration, webhook contracts, and production incident response.',
+      name: "SDKWork Academy",
+      avatar: "/assets/courses/avatars/sdkwork-academy.svg",
+      title: "AI Coding Curriculum Team",
+      bio: "Curates practical AI coding courses from Bilibili and local tutorial uploads.",
     },
-    duration: '3h 45m',
-    lessonsCount: 18,
+    duration: "5h 40m",
+    lessonsCount: 3,
     rating: 4.7,
-    studentsCount: 5210,
-    level: 'Intermediate',
-    category: 'Integrations',
-    tags: ['WebSockets', 'Events'],
-    bilibiliBvid: 'BV1xx411c7mD',
+    studentsCount: 59000,
+    level: "Intermediate",
+    category: "AI Coding",
+    tags: [
+      "Claude Code",
+      "MCP",
+      "Playwright",
+      "Parallel Tasks",
+    ],
+    bilibiliBvid: "BV14rzQB9EJj",
+    content: "把 Claude Code 应用到真实工程系统，系统学习 Plan Mode、MCP、后台任务、图片处理、Hook、Agent Skill 和 SubAgent。",
     price: null,
     isCollection: false,
-    relatedCourseIds: ['c1'],
+    publishedAt: "2026-05-16T12:00:00Z",
+    relatedCourseIds: [
+      "c11",
+      "c21",
+    ],
+    engagement: {
+      views: 59000,
+      likes: 2300,
+      saves: 760,
+      shares: 180,
+    },
   },
   {
-    id: 'c4',
-    title: 'Frontend State Management with Claw',
-    description: 'Deep dive into managing global state and caching API responses effectively on the client side using Claw Router.',
-    thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    id: "c4",
+    contentId: 30001004,
+    courseCode: "c4",
+    title: "DeepSeek + 即梦 AI 图片制作",
+    description: "围绕 DeepSeek + 即梦 AI 生成图片的在线课程，覆盖图片描述词、图片制作、局部重绘、角色一致性和商业海报素材。",
+    thumbnail: "/assets/courses/covers/ai-image-creation.svg",
     instructor: {
-      name: 'Emily Davis',
-      avatar: 'https://i.pravatar.cc/150?u=4',
-      title: 'Frontend Platform Engineer',
-      bio: 'Focuses on typed client architecture, cache strategy, and resilient React application delivery.',
+      name: "SDKWork Creative Lab",
+      avatar: "/assets/courses/avatars/sdkwork-creative-lab.svg",
+      title: "AI Creation Curriculum Team",
+      bio: "Curates image, video, and short drama courses for creators and operators.",
     },
-    duration: '5h 20m',
-    lessonsCount: 30,
+    duration: "1h 45m",
+    lessonsCount: 3,
     rating: 4.9,
-    studentsCount: 11204,
-    level: 'Intermediate',
-    category: 'Frontend',
-    tags: ['State', 'React', 'Caching'],
-    bilibiliBvid: 'BV1GJ411x7h7',
-    price: 29.99,
+    studentsCount: 100000,
+    level: "Intermediate",
+    category: "即梦 AI 图片制作",
+    tags: [
+      "即梦",
+      "图片制作",
+      "AI Painting",
+      "Image Control",
+    ],
+    bilibiliBvid: "BV1oPPheLEw5",
+    content: "从提示词、参考图、局部重绘到角色一致性，构建稳定的即梦 AI 图片制作工作流。",
+    price: null,
     isCollection: true,
-    relatedCourseIds: ['c2'],
+    publishedAt: "2026-05-16T11:00:00Z",
+    relatedCourseIds: [
+      "c14",
+      "c24",
+    ],
+    engagement: {
+      views: 100000,
+      likes: 4100,
+      saves: 1800,
+      shares: 390,
+    },
   },
   {
-    id: 'c5',
-    title: 'Microservices and Distributed Tracing',
-    description: 'Build observability into your distributed API mesh. Learn how to track requests across multiple services seamlessly.',
-    thumbnail: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    id: "c5",
+    contentId: 30001005,
+    courseCode: "c5",
+    title: "即梦 AI 视频制作零基础教程",
+    description: "即梦 AI 视频制作零基础课，覆盖脚本、分镜图、AI 视频生成、配音、音效、剪辑和 AI 漫剧生产流程。",
+    thumbnail: "/assets/courses/covers/ai-video-creation.svg",
     instructor: {
-      name: 'Michael Chen',
-      avatar: 'https://i.pravatar.cc/150?u=5',
-      title: 'Observability Architect',
-      bio: 'Leads service reliability, trace design, and production diagnostics for multi-service platforms.',
+      name: "SDKWork Creative Lab",
+      avatar: "/assets/courses/avatars/sdkwork-creative-lab.svg",
+      title: "AI Creation Curriculum Team",
+      bio: "Curates image, video, and short drama courses for creators and operators.",
     },
-    duration: '8h 10m',
-    lessonsCount: 45,
+    duration: "6h 30m",
+    lessonsCount: 3,
     rating: 4.9,
-    studentsCount: 6420,
-    level: 'Advanced',
-    category: 'DevOps and Observability',
-    tags: ['Tracing', 'Microservices', 'Monitoring'],
-    bilibiliBvid: 'BV1hY411N7xL',
-    price: 99.0,
+    studentsCount: 6097,
+    level: "Advanced",
+    category: "即梦 AI 视频制作",
+    tags: [
+      "即梦",
+      "AI Video",
+      "AI Comics",
+      "视频制作",
+      "Voiceover",
+      "Editing",
+    ],
+    bilibiliBvid: "BV19Z421M7LD",
+    content: "从脚本和分镜到图生视频、配音、音效和成片剪辑，完成一套即梦 AI 视频制作课程。",
+    price: null,
     isCollection: true,
-    relatedCourseIds: ['c2', 'c3'],
+    publishedAt: "2026-05-16T10:00:00Z",
+    relatedCourseIds: [
+      "c6",
+      "c15",
+    ],
+    engagement: {
+      views: 6097,
+      likes: 761,
+      saves: 208,
+      shares: 65,
+    },
   },
   {
-    id: 'c6',
-    title: 'Authentication and Authorization Flows',
-    description: 'Implement secure JWT, OAuth2, and Role-Based Access Control inside your routes with minimal boilerplate.',
-    thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    id: "c6",
+    contentId: 30001006,
+    courseCode: "c6",
+    title: "AI 图片到视频创作工作流",
+    description: "把 AI 图片制作、图生视频、运镜短片、剪辑和本地上传教程资产连接起来的入门课程。",
+    thumbnail: "/assets/courses/covers/ai-video-creation.svg",
     instructor: {
-      name: 'Sarah Chen',
-      avatar: 'https://i.pravatar.cc/150?u=2',
-      title: 'Principal API Architect',
-      bio: 'Designs production API routing systems and developer education programs for enterprise teams.',
+      name: "SDKWork Creative Lab",
+      avatar: "/assets/courses/avatars/sdkwork-creative-lab.svg",
+      title: "AI Creation Curriculum Team",
+      bio: "Curates image, video, and short drama courses for creators and operators.",
     },
-    duration: '4h 00m',
-    lessonsCount: 20,
+    duration: "4h 50m",
+    lessonsCount: 3,
     rating: 4.6,
-    studentsCount: 9340,
-    level: 'Beginner',
-    category: 'Security',
-    tags: ['OAuth', 'JWT', 'RBAC', 'Security'],
-    bilibiliBvid: 'BV1xx411c7mD',
+    studentsCount: 776,
+    level: "Beginner",
+    category: "即梦 AI 视频制作",
+    tags: [
+      "AI Image",
+      "图片制作",
+      "AI Video",
+      "视频制作",
+      "Local Upload",
+      "Security",
+    ],
+    bilibiliBvid: "BV1cS411A7Wp",
+    content: "将 AI 图片制作、图生视频和本地上传教程组合为可复用的短视频生产工作流，并加入素材安全检查。",
     price: null,
     isCollection: false,
-    relatedCourseIds: ['c2'],
+    publishedAt: "2026-05-16T09:00:00Z",
+    relatedCourseIds: [
+      "c15",
+      "c25",
+    ],
+    engagement: {
+      views: 776,
+      likes: 107,
+      saves: 30,
+      shares: 9,
+    },
   },
 ];
 
@@ -507,9 +629,9 @@ function deriveRelatedCourseCards(catalog: readonly Course[], course: Course): C
 
 function deriveCourseComments(course: Course): CourseCommentsView {
   const authors = [
-    ['Maya Lin', 5, 'The schema-first walkthrough made our gateway migration plan much clearer.'],
-    ['Noah Reed', 4, 'Good pacing and useful production checklists for each lesson.'],
-    ['Priya Shah', 3, 'The examples are concise and easy to map to a real routing service.'],
+    ['Maya Lin', 5, 'The Claude Code and Codex workflow made our team standards easier to apply.'],
+    ['Noah Reed', 4, 'Good pacing and practical checks for each AI engineering lesson.'],
+    ['Priya Shah', 3, 'The examples are concise and easy to map to real SDKWork application modules.'],
   ] as const;
 
   return {
@@ -517,7 +639,7 @@ function deriveCourseComments(course: Course): CourseCommentsView {
     items: authors.map(([author, level, body], index) => ({
       id: `${course.id}-comment-${index + 1}`,
       author,
-      avatarUrl: `https://ui-avatars.com/api/?name=${encodeURIComponent(author)}&background=0f172a&color=ffffff`,
+      avatarUrl: '/assets/courses/avatars/learner.svg',
       level,
       body,
       createdAt: `2026-05-0${index + 1} 14:30`,

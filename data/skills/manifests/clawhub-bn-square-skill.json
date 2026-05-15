@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17545,
+  "uuid": "skill-clawhub-bn-square-skill",
+  "skillKey": "clawhub-bn-square-skill",
+  "name": "Binance Square Skill",
+  "summary": "Binance Square publishing skill for AI agents. Validate session, publish posts, and check status.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bn_square_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jacky",
+      "features": [
+        "Binance Square publishing skill for AI agents",
+        "Validate session, publish posts, and check status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bn-square-skill@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251960145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bn-square-skill",
+      "url": "https://clawhub.ai/skills/bn-square-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bn-square-skill",
+    "url": "https://clawhub.ai/skills/bn-square-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bn-square-skill-a1e5e8e03a1ec331.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bn-square-skill@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bn-square-skill-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82b00799ee5eda10a60c79d5c88f42f89b51563c4e761e89707a7411a907155c",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:11:16.238Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58080,
+  "uuid": "skill-clawhub-ahtv-pk-to-xunlei",
+  "skillKey": "clawhub-ahtv-pk-to-xunlei",
+  "name": "AHTV PK to Xunlei",
+  "summary": "Find 安徽网络电视台《快乐无敌大PK》 full-episode pages from a user-provided date expression, extract each episode's real video URL, and save the episodes into 迅雷云盘. Use th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ahtv_pk_to_xunlei",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Volumexxx",
+      "features": [
+        "Find 安徽网络电视台《快乐无敌大PK》 full-episode pages from a user-provided date expression, extract each epi.",
+        "Use th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ahtv-pk-to-xunlei@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48009451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ahtv-pk-to-xunlei",
+      "url": "https://clawhub.ai/skills/ahtv-pk-to-xunlei"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ahtv-pk-to-xunlei",
+    "url": "https://clawhub.ai/skills/ahtv-pk-to-xunlei",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ahtv-pk-to-xunlei-865a48bcd5a21418.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ahtv-pk-to-xunlei@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ahtv-pk-to-xunlei-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9062904443e37527c6632f8e123b6e862e5997015979a1635ddc6b38475c6fb8",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:04:02.111Z"
+}

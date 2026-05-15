@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpeng-web-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_web_scraper",
+  "skill": {
+    "id": 28173,
+    "skillKey": "clawhub-jpeng-web-scraper",
+    "name": "Web Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-web-scraper",
+    "url": "https://clawhub.ai/skills/jpeng-web-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-web-scraper-36504cae967b53d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web scraping skill with JavaScript rendering support. Extract data from websites using CSS selectors, XPath, or AI-powered extraction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpengcheng523-netizen",
+      "userId": "s177n9nwg73ep3g6fp9z19025n83h4xr",
+      "displayName": "jpengcheng523-netizen",
+      "image": "https://avatars.githubusercontent.com/u/226868999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774359141322,
+      "changelog": "Initial release of jpeng-web-scraper.\n\n- Supports web scraping for static and JavaScript-rendered pages.\n- Flexible data extraction using CSS selectors, XPath, or regex.\n- Includes AI-powered extraction for structured information.\n- Allows crawling multiple pages with rate limiting and robots.txt respect.\n- Provides simple command-line usage examples for various scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8aa925ada94c3d14d725601d95067cbd772d7a93b0ecf8a6ec399b5e3d59e96d"
+}

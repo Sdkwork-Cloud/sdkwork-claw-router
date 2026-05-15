@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20954,
+  "uuid": "skill-clawhub-x-grok-to-obsidian",
+  "skillKey": "clawhub-x-grok-to-obsidian",
+  "name": "X Grok to Obsidian",
+  "summary": "Export Grok conversations from X (x.com) via browser-network capture and convert them into Obsidian-ready Markdown files. Use when a user wants to back up Gr...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_grok_to_obsidian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hajekt2",
+      "features": [
+        "Export Grok conversations from X (x.com) via browser-network capture and convert them into Obsi.",
+        "Use when a user wants to back up Gr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-grok-to-obsidian@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7295116?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-grok-to-obsidian",
+      "url": "https://clawhub.ai/skills/x-grok-to-obsidian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-grok-to-obsidian",
+    "url": "https://clawhub.ai/skills/x-grok-to-obsidian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-grok-to-obsidian-2b5dd5ed04004b9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-grok-to-obsidian@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-grok-to-obsidian-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ca9358373b5d8a6ea35f9986b880285aca801a18657a6a54f07061a5b2f62d8",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T21:17:50.402Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lesecurelocal@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lesecurelocal",
+  "skill": {
+    "id": 52497,
+    "skillKey": "clawhub-lesecurelocal",
+    "name": "LeSecure Local/On-Prem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lesecurelocal",
+    "url": "https://clawhub.ai/skills/lesecurelocal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lesecurelocal-b589cddd9aa1104b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LESecure Local/On-Prem — encrypt and decrypt data, files, and folders using the LE desktop tool with layered locks (pin, password, MFA, time lock, geo-locati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "spalgorithm",
+      "userId": "s17d53ebb3krtv13hj8ez12y5d84wmfe",
+      "displayName": "Ladhe's Encryption - LE",
+      "image": "https://avatars.githubusercontent.com/u/196069039?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776346815910,
+      "changelog": "No significant code or rule changes; added extra project info.\n\n- Added project links section with references to source code and cloud alternative.\n- Clarified that no data leaves your machine when using LESecureLocal.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0574c420983eb0843943186caf51ebe728f751a8abcb1917baba21e20d94fd21"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-price@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_price",
+  "skill": {
+    "id": 44925,
+    "skillKey": "clawhub-skill-price",
+    "name": "Skill Price"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-price",
+    "url": "https://clawhub.ai/skills/skill-price",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-price-b439e8d089303903.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user needs to monitor competitor pricing, track market price trends, or analyze price changes. Use when setting up price alerts for specific product..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangm-a3",
+      "userId": "s178tfk08y1fqgtvraxrr20g4h84g03e",
+      "displayName": "WangM-A3",
+      "image": "https://avatars.githubusercontent.com/u/274818589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777535899172,
+      "changelog": "skill-price 1.0.3 changelog:\n\n- Documentation updated: Revised SKILL.md to clarify that only authorized/valid data sources are used for price collection.\n- Removed statements referencing unauthorized website scraping; now only data from customs and authorized B2B platforms is mentioned.\n- No functional or code changes—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:51e6c0ede731e4e8a4f50e18271c901aabdd2919b39a1a3ab8d1590166d1b3f9"
+}

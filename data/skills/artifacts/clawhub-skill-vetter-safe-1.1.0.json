@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-vetter-safe@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_vetter_safe",
+  "skill": {
+    "id": 70841,
+    "skillKey": "clawhub-skill-vetter-safe",
+    "name": "安全审核标准_自动化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-vetter-safe",
+    "url": "https://clawhub.ai/skills/skill-vetter-safe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-vetter-safe-3a598e08d88623fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动扫描skills目录中的Skill文件，进行安全审计、风险评分并提供安装建议，确保安全安装策略执行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tlcyqj2023",
+      "userId": "s17eyg25wdfar2hgps3pfq5z4183gp56",
+      "displayName": "tlcyqj2023",
+      "image": "https://avatars.githubusercontent.com/u/71183635?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774591557559,
+      "changelog": "v1.1.0: 用户原版代码，含可疑关键词检测+风险评分+安装建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e4ff99a737c7cc525bfd20f9602b301fd2acf692ee67f438835bdb47338c2c19"
+}

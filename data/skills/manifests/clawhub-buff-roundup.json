@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24109,
+  "uuid": "skill-clawhub-buff-roundup",
+  "skillKey": "clawhub-buff-roundup",
+  "name": "Openclaw Skill",
+  "summary": "Transaction round-up helper. Calculates spare change from payments and builds unsigned Solana transfer instructions for user review. Server-side fee enforcem...",
+  "version": "2.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buff_roundup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kay",
+      "features": [
+        "Transaction round-up helper",
+        "Calculates spare change from payments and builds unsigned Solana transfer instructions for user.",
+        "Server-side fee enforcem..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buff-roundup@2.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191392925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buff-roundup",
+      "url": "https://clawhub.ai/skills/buff-roundup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buff-roundup",
+    "url": "https://clawhub.ai/skills/buff-roundup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buff-roundup-ec3493ab2e348829.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buff-roundup@2.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-buff-roundup-2.3.5.json",
+      "version": "2.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8764bb94cee8b94d02b7951ac8c5740dcd4c0fad2d88fa4ebda77dee2e82007",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T20:15:47.215Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70975,
+  "uuid": "skill-clawhub-zh-de-ai-if",
+  "skillKey": "clawhub-zh-de-ai-if",
+  "name": "zh-de-ai-if",
+  "summary": "去除中文文本中的 AI 味、官话味、模板味，让文字更自然、具体、更像真人表达。适用于博客、公众号、邮件、演讲稿、产品文案等中文文本润色。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zh_de_ai_if",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Antony232",
+      "features": [
+        "去除中文文本中的 AI 味、官话味、模板味，让文字更自然、具体、更像真人表达。适用于博客、公众号、邮件、演讲稿、产品文案等中文文本润色。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zh-de-ai-if@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4213962?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zh-de-ai-if",
+      "url": "https://clawhub.ai/skills/zh-de-ai-if"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zh-de-ai-if",
+    "url": "https://clawhub.ai/skills/zh-de-ai-if",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zh-de-ai-if-13cbd4079b17e7a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zh-de-ai-if@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zh-de-ai-if-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ebfccadd5fba439b11ab7b021fab5d8be214552fd2d712533815ea44c917ae3",
+      "artifactSizeBytes": 2361
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T20:47:24.058Z"
+}

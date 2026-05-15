@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobster-config@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobster_config",
+  "skill": {
+    "id": 41331,
+    "skillKey": "clawhub-lobster-config",
+    "name": "Lobster Config Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobster-config",
+    "url": "https://clawhub.ai/skills/lobster-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobster-config-d6be98a534aba168.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a step-by-step guide to configure Lobster AI Agent behavior via AGENTS.md, group rules, and skill plugins for optimal interaction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a3152557994-ship-it",
+      "userId": "s173ar224xha1b0e8jxxvg0r2985aes9",
+      "displayName": "a3152557994-ship-it",
+      "image": "https://avatars.githubusercontent.com/u/248589521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776864020866,
+      "changelog": "Initial release: AGENTS.md structure, community best practices, temperature guide",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b887e3c2d07a7f7b93fb6b8153ef1b5256ed2b62544babbc49e2de4ea0f9a86b"
+}

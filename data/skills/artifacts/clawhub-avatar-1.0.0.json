@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/avatar@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avatar",
+  "skill": {
+    "id": 12978,
+    "skillKey": "clawhub-avatar",
+    "name": "Avatar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avatar",
+    "url": "https://clawhub.ai/skills/avatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avatar-87bbe879c7a5f578.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive AI avatar with Simli video rendering and ElevenLabs TTS"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johannes-berggren",
+      "userId": "publishers:johannes-berggren",
+      "displayName": "Johannes-Berggren",
+      "image": "https://avatars.githubusercontent.com/u/10260888?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1514,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770503967734,
+      "changelog": "Initial release: Interactive AI avatar with Simli video and ElevenLabs TTS",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e7dd39af520c88f6f51462eca8423fd70f0979b0a17f651779001188947a58e"
+}

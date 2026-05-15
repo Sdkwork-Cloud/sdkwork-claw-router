@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27853,
+  "uuid": "skill-clawhub-trongrid-trx-info",
+  "skillKey": "clawhub-trongrid-trx-info",
+  "name": "trongrid-trx-info",
+  "summary": "Query TRX token fundamentals including price, supply, burn rate, market cap, staking yield, and network economics. Use when a user asks about TRX price, mark...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trongrid_trx_info",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "greason",
+      "features": [
+        "Query TRX token fundamentals including price, supply, burn rate, market cap, staking yield, and.",
+        "Use when a user asks about TRX price, mark..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trongrid-trx-info@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12513158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trongrid-trx-info",
+      "url": "https://clawhub.ai/skills/trongrid-trx-info"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trongrid-trx-info",
+    "url": "https://clawhub.ai/skills/trongrid-trx-info",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trongrid-trx-info-e9e29ae04b990f0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trongrid-trx-info@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-trongrid-trx-info-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c5c39900b67eacb8e119b29703f215181a552c1814fecaf3b742411ab493178",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:49:25.406Z"
+}

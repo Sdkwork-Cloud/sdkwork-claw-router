@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/operational-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operational_framework",
+  "skill": {
+    "id": 49283,
+    "skillKey": "clawhub-operational-framework",
+    "name": "Operational Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operational-framework",
+    "url": "https://clawhub.ai/skills/operational-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operational-framework-c45d59ef7104f2af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A disciplined, reproducible workflow for AI agents to log decisions, create rollback snapshots, and generate briefings for any change or feature implementation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tstokes06",
+      "userId": "s171822mda19nndswcwcjs1jfs86ahra",
+      "displayName": "Tim",
+      "image": "https://avatars.githubusercontent.com/u/141640156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778272410281,
+      "changelog": "Initial release – generic, community‑ready",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bf0db56cf7170b121b3a0a140664d8059fd2762c0ef976bfd8b65237647bc06"
+}

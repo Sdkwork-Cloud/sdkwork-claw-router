@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lightwing-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lightwing_control",
+  "skill": {
+    "id": 71685,
+    "skillKey": "clawhub-lightwing-control",
+    "name": "SenseRobot元萝卜光翼灯"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lightwing-control",
+    "url": "https://clawhub.ai/skills/lightwing-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lightwing-control-2293f5a3c733cd91.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "控制元萝卜光翼灯，支持开关灯、亮度/色温调节、音量、入座感应、坐姿提醒、语音朗读/播报（TTS，支持顺口溜、绕口令、念故事、说笑话、播放儿歌等）。首次使用需绑定手机号（发验证码 → 你把验证码告诉我 → 完成绑定）。可选开启 MQTT 监控守护进程，实时监听台灯状态变化并推送通知给用户。遇到 光翼灯、台灯、开灯、..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "senserobotclawbot",
+      "userId": "s17ecnpwwehfwdhgwdzxj73c3d85q85m",
+      "displayName": "SenseRobotClaw",
+      "image": "https://avatars.githubusercontent.com/u/33304906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777385003133,
+      "changelog": "lightwing-control v1.0.0\n\n- 首发，支持元萝卜光翼灯的开关、亮度/色温/音量调节、模式切换、入座感应、坐姿提醒等全链路控制。\n- 支持台灯语音朗读/播报（TTS），包括顺口溜、绕口令、讲故事、说笑话、播放儿歌等。\n- 新增首次绑定手机号流程，需用户输入验证码完成账号绑定。\n- 支持可选的 MQTT 监控守护进程，持续监听台灯状态并推送飞书通知。\n- 明确关键安全与接口使用规范，保障账号安全和设备兼容性。\n- 新增支持换手机号和账号切换的用户流程。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69ea1ff5e656cfbf4f27596284c420ae40ca4e3a2b2df214aca9e8892693b075"
+}

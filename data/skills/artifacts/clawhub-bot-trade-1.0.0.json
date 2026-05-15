@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bot-trade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_trade",
+  "skill": {
+    "id": 66067,
+    "skillKey": "clawhub-bot-trade",
+    "name": "bot-trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-trade",
+    "url": "https://clawhub.ai/skills/bot-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-trade-05bf468337066eb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MossTrade 模拟交易技能 - 让 Agent 接入模拟盘进行合约交易。使用此技能可以注册交易账号、开仓平仓、查看持仓、爆仓后重生。当用户提到模拟交易、MossTrade、交易机器人时激活此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fueav",
+      "userId": "publishers:fueav",
+      "displayName": "Fueav",
+      "image": "https://avatars.githubusercontent.com/u/104292973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1018,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770965292715,
+      "changelog": "Initial release of MossTrade simulated trading skill.\n\n- Enables agents to register an account, open/close positions, check positions, and rebirth after liquidation in a simulated contract trading environment.\n- Provides API endpoints for registration, trading (market and limit orders), position management, balance and status checking, and viewing trade/PnL/equity history.\n- Supports BTC-USDT, ETH-USDT, and SOL-USDT contracts with customizable leverage (10x–1000x).\n- Includes detailed usage guides, error handling documentation, and Python code examples for agent integration.\n- Skill activates when users mention 模拟交易, MossTrade, or 交易机器人.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:320bc13339b27890f8d0b86b4343330eda56eaf86f9cdb1b1e6075e6f6e510ad"
+}

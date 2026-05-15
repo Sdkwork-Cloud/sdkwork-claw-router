@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brightdata@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brightdata",
+  "skill": {
+    "id": 38627,
+    "skillKey": "clawhub-brightdata",
+    "name": "Brightdata"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brightdata",
+    "url": "https://clawhub.ai/skills/brightdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brightdata-6013857c6e7c9f02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google search results and web page scraping via Bright Data APIs. Use when the agent needs structured search results, paginated SERP retrieval, or clean mark..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhao-weijie",
+      "userId": "s176ztbdc9mz7g7gmc5m3fz9b583vhj4",
+      "displayName": "zhao-weijie",
+      "image": "https://avatars.githubusercontent.com/u/15281332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775875933568,
+      "changelog": "Initial release of the Bright Data skill:\n\n- Enables Google search with structured JSON results using Bright Data APIs.\n- Supports web page scraping, returning clean markdown from any public URL.\n- Provides tools for paginated search (with cursor support) and robust content extraction (bypassing bot detection and CAPTCHAs).\n- Includes strategy guidance to optimize search, scraping, and pagination for efficient data gathering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d689d3238f64dafa0209a2a37d384730971772eff65eb2440a92600705a9601"
+}

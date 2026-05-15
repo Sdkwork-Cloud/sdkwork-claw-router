@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61866,
+  "uuid": "skill-clawhub-highgo-db",
+  "skillKey": "clawhub-highgo-db",
+  "name": "Highgo Db",
+  "summary": "通过瀚高数据库（HighGo DB）提供的自定义 psycopg2 驱动连接数据库。该驱动已内置于技能中，支持 Python 2.7 和国密 SM4 安全特性。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.highgo_db",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ygp987",
+      "features": [
+        "通过瀚高数据库（HighGo DB）提供的自定义 psycopg2 驱动连接数据库。该驱动已内置于技能中，支持 Python 2.7 和国密 SM4 安全特性。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/highgo-db@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6169889?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "highgo-db",
+      "url": "https://clawhub.ai/skills/highgo-db"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "highgo-db",
+    "url": "https://clawhub.ai/skills/highgo-db",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/highgo-db-6557092f5bbbc875.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/highgo-db@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-highgo-db-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ab2e3dbb2a33b4c98b4514a9605281a6ccb89eecdba9e503b6eda7b4dbbc84b",
+      "artifactSizeBytes": 2319
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T14:12:44.270Z"
+}

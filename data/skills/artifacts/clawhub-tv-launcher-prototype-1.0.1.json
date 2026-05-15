@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tv-launcher-prototype@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tv_launcher_prototype",
+  "skill": {
+    "id": 61328,
+    "skillKey": "clawhub-tv-launcher-prototype",
+    "name": "tv-launcher-prototype"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tv-launcher-prototype",
+    "url": "https://clawhub.ai/skills/tv-launcher-prototype",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tv-launcher-prototype-7968af4ce47d789d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成 Smart TV Launcher 风格的纯前端原型界面（HTML/CSS/JavaScript）。模拟电视桌面的交互体验，包括遥控器方向键导航、焦点缩放动画、深色主题等 TV UI 特有的设计模式。当用户提到\"TV 界面\"、\"电视桌面\"、\"TV Launcher\"、\"电视 UI\"、\"遥控器交互\"、\"智能电..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ysredcity",
+      "userId": "s1784wef3gqqzrwckpq9bzyk3583wtp6",
+      "displayName": "Pixelyes",
+      "image": "https://avatars.githubusercontent.com/u/41365009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775228015859,
+      "changelog": "Minor update to TV Launcher 原型生成器 skill documentation.\n\n- 增加了焦点框视觉实现的具体建议：要求焦点框形状和元素本身外形一致，推荐使用 outline 或 box-shadow 实现而非直接 border，避免焦点框挤压内容，提升视觉美观性。\n- 其余内容保持一致，无功能或描述性更改。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c8b3a53391997500dbefbd4344fd2a981a6adf1229ccdcdb10e98c7536d2f95"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oraclenet-mesh@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclenet_mesh",
+  "skill": {
+    "id": 37094,
+    "skillKey": "clawhub-oraclenet-mesh",
+    "name": "Oraclenet Mesh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclenet-mesh",
+    "url": "https://clawhub.ai/skills/oraclenet-mesh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclenet-mesh-c0261479c0ca81b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OracleNet is a mesh capability router for autonomous agents. Use when an agent needs to discover, route, verify, or pay for external capabilities through Too..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tooloracle",
+      "userId": "s176bq48c1caf4g3dyyr6jccbs84ajhf",
+      "displayName": "ToolOracle",
+      "image": "https://avatars.githubusercontent.com/u/268855291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1777155675882,
+      "changelog": "Tag-pointer alignment: bind all 9 frontmatter topic tags (capability-routing, agent-infrastructure, mcp, verification, x402, autonomous-agents, external-data, blockchain, mesh) to the new version. No content change vs 2.0.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef94d227301bfbdd7f91b6b74c9acff0c0544d3c6c2c904455961128b921cda4"
+}

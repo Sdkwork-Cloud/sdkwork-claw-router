@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { clearStoredAppSessionToken } from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
+import {
+  clearStoredAppSessionToken,
+  storeAppSessionFromResult,
+} from "./packages/sdkwork-claw-router-commons/src/app-session-token.ts";
 import { resetClawRouterSdkClients } from "./packages/sdkwork-claw-router-commons/src/sdk-clients.ts";
 import { AccountService } from "./packages/sdkwork-claw-router-console-account/src/accountService.ts";
 import { GatewayService } from "./packages/sdkwork-claw-router-console-gateway/src/gatewayService.ts";
@@ -20,6 +23,7 @@ type CapturedSdkRequest = {
 async function withAppSdkResponse<T>(
   responseBody: unknown,
   fn: (captured: CapturedSdkRequest[]) => Promise<T>,
+  options: { authenticated?: boolean } = {},
 ): Promise<T> {
   const captured: CapturedSdkRequest[] = [];
   Object.defineProperty(globalThis, "window", {
@@ -39,6 +43,13 @@ async function withAppSdkResponse<T>(
     });
   }) as typeof fetch;
   clearStoredAppSessionToken();
+  if (options.authenticated) {
+    storeAppSessionFromResult({
+      accessToken: "test-access-token",
+      authToken: "test-auth-token",
+      storedAt: 1,
+    });
+  }
   resetClawRouterSdkClients();
 
   try {
@@ -87,7 +98,7 @@ test("console account service reads account data returned by the generated app S
     async (captured) => {
       const result = await AccountService.fetchAccountDetails();
 
-      assert.equal(captured[0].url, "/app/v3/api/account/summary");
+      assert.equal(captured[0].url, "/app/v3/api/billing/account/summary");
       assert.equal(result.id, "acct-1");
       assert.equal(result.email, "ops@example.com");
       assert.equal(result.availableCredits, 125.5);
@@ -95,16 +106,16 @@ test("console account service reads account data returned by the generated app S
   );
 });
 
-test("console user service reads profile data returned by the generated app SDK", async () => {
+test("console user service reads current user data returned by the generated app SDK", async () => {
   await withAppSdkResponse(
     {
       code: "2000",
       data: {
-        name: "Ada",
+        displayName: "Ada",
         email: "ada@example.com",
         phone: "",
         language: "en",
-        avatar: "A",
+        avatarUrl: "A",
         isVerified: true,
         status: "active",
         registeredAt: "2026-05-01T00:00:00Z",
@@ -116,9 +127,9 @@ test("console user service reads profile data returned by the generated app SDK"
       },
     },
     async (captured) => {
-      const result = await UserService.fetchUserProfile();
+      const result = await UserService.fetchCurrentUser();
 
-      assert.equal(captured[0].url, "/app/v3/api/user/profile");
+      assert.equal(captured[0].url, "/app/v3/api/iam/users/current");
       assert.equal(result.email, "ada@example.com");
       assert.equal(result.twoFactorEnabled, true);
     },
@@ -162,15 +173,15 @@ test("console account service fails closed when the generated app SDK omits acco
   );
 });
 
-test("console user service fails closed when the generated app SDK omits profile email", async () => {
+test("console user service fails closed when the generated app SDK omits current user email", async () => {
   await withAppSdkResponse(
     {
       code: "2000",
       data: {
-        name: "Ada",
+        displayName: "Ada",
         phone: "",
         language: "en",
-        avatar: "A",
+        avatarUrl: "A",
         isVerified: true,
         status: "active",
         registeredAt: "2026-05-01T00:00:00Z",
@@ -183,16 +194,16 @@ test("console user service fails closed when the generated app SDK omits profile
     },
     async () => {
       await assert.rejects(
-        () => UserService.fetchUserProfile(),
+        () => UserService.fetchCurrentUser(),
         /User profile response missing data/,
       );
     },
   );
 });
 
-test("console user service fails closed when the generated app SDK omits required profile fields", async () => {
+test("console user service fails closed when the generated app SDK omits required current user fields", async () => {
   for (const [field, message] of [
-    ["name", /User profile name is required/],
+    ["displayName", /User profile display name is required/],
     ["phone", /User profile phone is required/],
     ["isVerified", /User profile verification status is required/],
     ["twoFactorEnabled", /User profile two-factor status is required/],
@@ -203,11 +214,11 @@ test("console user service fails closed when the generated app SDK omits require
         code: "2000",
         data: (() => {
           const profile = {
-            name: "Ada",
+            displayName: "Ada",
             email: "ada@example.com",
             phone: "",
             language: "en",
-            avatar: "A",
+            avatarUrl: "A",
             isVerified: true,
             status: "active",
             registeredAt: "2026-05-01T00:00:00Z",
@@ -223,7 +234,7 @@ test("console user service fails closed when the generated app SDK omits require
       },
       async () => {
         await assert.rejects(
-          () => UserService.fetchUserProfile(),
+          () => UserService.fetchCurrentUser(),
           message,
         );
       },
@@ -231,16 +242,16 @@ test("console user service fails closed when the generated app SDK omits require
   }
 });
 
-test("console user service preserves contract-defined empty display strings", async () => {
+test("console user service preserves contract-defined empty current user display strings", async () => {
   await withAppSdkResponse(
     {
       code: "2000",
       data: {
-        name: "Ada",
+        displayName: "Ada",
         email: "ada@example.com",
         phone: "",
         language: "en",
-        avatar: "A",
+        avatarUrl: "A",
         isVerified: true,
         status: "active",
         registeredAt: "2026-05-01T00:00:00Z",
@@ -252,7 +263,7 @@ test("console user service preserves contract-defined empty display strings", as
       },
     },
     async () => {
-      const result = await UserService.fetchUserProfile();
+      const result = await UserService.fetchCurrentUser();
 
       assert.equal(result.phone, "");
       assert.equal(result.lastLoginIp, "");
@@ -284,7 +295,7 @@ test("console messages service reads message items returned by the generated app
     async (captured) => {
       const result = await MessagesService.fetchMessages();
 
-      assert.equal(captured[0].url, "/app/v3/api/notification");
+      assert.equal(captured[0].url, "/app/v3/api/communication/notifications");
       assert.deepEqual(result.map((item) => item.id), ["msg-1"]);
     },
   );
@@ -344,7 +355,7 @@ test("console gateway service reads trace items returned by the generated app SD
     async (captured) => {
       const result = await GatewayService.fetchTraces();
 
-      assert.equal(captured[0].url, "/app/v3/api/router/gateway/traces");
+      assert.equal(captured[0].url, "/app/v3/api/ai/gateway/traces");
       assert.deepEqual(result.map((item) => item.id), ["trace-1"]);
     },
   );
@@ -438,10 +449,281 @@ test("playground service reads generation history returned by the generated app 
     async (captured) => {
       const result = await PlaygroundService.fetchGenerationHistory();
 
-      assert.equal(captured[0].url, "/app/v3/api/playground/history");
+      assert.equal(captured[0].url, "/app/v3/api/ai/generations");
       assert.deepEqual(result.map((item) => item.id), ["gen-1"]);
       assert.equal(result[0].type, "images");
       assert.deepEqual(result[0].images, ["https://example.com/result.png"]);
+    },
+    { authenticated: true },
+  );
+});
+
+test("playground service does not read user generation history without a portal session", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "gen-1",
+            date: "2026-05-05",
+            prompt: "A private generation",
+            type: "image",
+            images: ["https://example.com/private.png"],
+            videos: [],
+            createdAt: "2026-05-05T08:00:00Z",
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const result = await PlaygroundService.fetchGenerationHistory();
+
+      assert.deepEqual(result, []);
+      assert.deepEqual(captured, []);
+    },
+  );
+});
+
+test("playground service exposes generation workspace state through the appbase generation service", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            id: "gen-1",
+            date: "2026-05-05",
+            prompt: "A precise router diagram",
+            type: "image",
+            modelInfo: "openai/gpt-image-1",
+            images: ["https://example.com/result.png"],
+            videos: [],
+            createdAt: "2026-05-05T08:00:00Z",
+            updatedAt: "2026-05-05T08:01:00Z",
+            status: "completed",
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const workspace = await PlaygroundService.fetchGenerationWorkspace();
+
+      assert.equal(captured[0].url, "/app/v3/api/ai/generations");
+      assert.equal(workspace.isAuthenticated, true);
+      assert.equal(workspace.runs[0]?.id, "gen-1");
+      assert.equal(workspace.runs[0]?.title, "A precise router diagram");
+      assert.equal(workspace.runs[0]?.model, "openai/gpt-image-1");
+      assert.equal(workspace.runs[0]?.status, "completed");
+      assert.equal(workspace.digest.totalRuns, 1);
+      assert.equal(workspace.digest.completedRuns, 1);
+    },
+    { authenticated: true },
+  );
+});
+
+test("playground service derives vendor grouped models from the standard app model catalog", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            catalogKey: "openai/global/gpt-4o-mini",
+            model: "gpt-4o-mini",
+            displayName: "GPT-4o mini",
+            description: "Fast public model.",
+            vendorCode: "openai",
+            vendor: "openai",
+            regionCode: "global",
+            modalities: ["text"],
+            inputModalities: ["text"],
+            outputModalities: ["text"],
+            capabilities: ["chat", "tools"],
+            groups: ["default", "enterprise"],
+            categories: ["Recommended", "Proprietary"],
+            apiFormat: "openai_responses",
+            capabilityIntro: null,
+            limitations: [],
+            supportedLanguages: [],
+            useCases: [],
+            trainingDataCutoff: null,
+            contextTokens: 128000,
+            maxOutputTokens: 16000,
+            supportsStreaming: true,
+            supportsTools: true,
+            supportsJsonSchema: false,
+            releaseStage: 1,
+            shelfState: 1,
+            routingState: 1,
+            replacementModel: null,
+            providerCodes: ["openrouter"],
+            officialReferencePrices: [],
+            priceAvailability: { status: "unavailable", reason: "Public reference price is not configured for this model." },
+          },
+          {
+            catalogKey: "openai/global/image-gen-pro",
+            model: "image-gen-pro",
+            displayName: "Image Gen Pro",
+            description: "High quality image generation.",
+            vendorCode: "openai",
+            vendor: "openai",
+            regionCode: "global",
+            modalities: ["image"],
+            inputModalities: ["text"],
+            outputModalities: ["image"],
+            capabilities: ["image"],
+            groups: ["default"],
+            categories: ["Recommended"],
+            apiFormat: "openai_images",
+            capabilityIntro: null,
+            limitations: [],
+            supportedLanguages: [],
+            useCases: [],
+            trainingDataCutoff: null,
+            contextTokens: null,
+            maxOutputTokens: null,
+            supportsStreaming: false,
+            supportsTools: false,
+            supportsJsonSchema: false,
+            releaseStage: 1,
+            shelfState: 1,
+            routingState: 1,
+            replacementModel: null,
+            providerCodes: [],
+            officialReferencePrices: [],
+            priceAvailability: { status: "unavailable", reason: "Public reference price is not configured for this model." },
+          },
+          {
+            catalogKey: "kuaishou/cn/kling-v2",
+            model: "kling-v2",
+            displayName: "Kling v2",
+            description: "Video generation model.",
+            vendorCode: "kuaishou",
+            vendor: "kuaishou",
+            regionCode: "cn",
+            modalities: ["video"],
+            inputModalities: ["text", "image"],
+            outputModalities: ["video"],
+            capabilities: ["video"],
+            groups: ["default"],
+            categories: ["Recommended"],
+            apiFormat: "kling",
+            capabilityIntro: null,
+            limitations: [],
+            supportedLanguages: [],
+            useCases: [],
+            trainingDataCutoff: null,
+            contextTokens: null,
+            maxOutputTokens: null,
+            supportsStreaming: false,
+            supportsTools: false,
+            supportsJsonSchema: false,
+            releaseStage: 1,
+            shelfState: 1,
+            routingState: 1,
+            replacementModel: null,
+            providerCodes: [],
+            officialReferencePrices: [],
+            priceAvailability: { status: "unavailable", reason: "Public reference price is not configured for this model." },
+          },
+          {
+            catalogKey: "elevenlabs/global/voice-pro",
+            model: "voice-pro",
+            displayName: "Voice Pro",
+            description: "Speech generation model.",
+            vendorCode: "elevenlabs",
+            vendor: "elevenlabs",
+            regionCode: "global",
+            modalities: ["audio"],
+            inputModalities: ["text"],
+            outputModalities: ["audio"],
+            capabilities: ["voice"],
+            groups: ["default"],
+            categories: ["Recommended"],
+            apiFormat: "tts",
+            capabilityIntro: null,
+            limitations: [],
+            supportedLanguages: [],
+            useCases: [],
+            trainingDataCutoff: null,
+            contextTokens: null,
+            maxOutputTokens: null,
+            supportsStreaming: false,
+            supportsTools: false,
+            supportsJsonSchema: false,
+            releaseStage: 1,
+            shelfState: 1,
+            routingState: 1,
+            replacementModel: null,
+            providerCodes: [],
+            officialReferencePrices: [],
+            priceAvailability: { status: "unavailable", reason: "Public reference price is not configured for this model." },
+          },
+        ],
+      },
+    },
+    async (captured) => {
+      const result = await PlaygroundService.fetchModelGroups();
+
+      assert.equal(captured[0].url, "/app/v3/api/ai/models");
+      assert.equal(captured[0].method, "GET");
+      assert.equal(result.length, 3);
+      const openai = result.find((group) => group.id === "openai");
+      const kuaishou = result.find((group) => group.id === "kuaishou");
+      const elevenlabs = result.find((group) => group.id === "elevenlabs");
+      assert.ok(openai);
+      assert.ok(kuaishou);
+      assert.ok(elevenlabs);
+      assert.deepEqual(openai.vendor, { code: "openai", name: "OpenAI" });
+      assert.deepEqual(openai.llms.map((model) => model.name), ["GPT-4o mini"]);
+      assert.deepEqual(openai.images.map((model) => model.name), ["Image Gen Pro"]);
+      assert.deepEqual(openai.videos.map((model) => model.name), []);
+      assert.deepEqual(kuaishou.videos.map((model) => model.name), ["Kling v2"]);
+      assert.deepEqual(elevenlabs.audios.map((model) => model.name), ["Voice Pro"]);
+      assert.equal(openai.images[0].vendorCode, "openai");
+      assert.equal(openai.images[0].versionLabel, "GEN");
+      assert.equal(Object.hasOwn(openai, "agents"), false);
+    },
+  );
+});
+
+test("playground service fails closed when standard model catalog response omits items array", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: null,
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => PlaygroundService.fetchModelGroups(),
+        /Playground model catalog response missing items/,
+      );
+    },
+  );
+});
+
+test("playground service fails closed when standard model catalog item omits required fields", async () => {
+  await withAppSdkResponse(
+    {
+      code: "2000",
+      data: {
+        items: [
+          {
+            catalogKey: "openai/global/broken",
+            model: "broken",
+            vendorCode: "openai",
+          },
+        ],
+      },
+    },
+    async () => {
+      await assert.rejects(
+        () => PlaygroundService.fetchModelGroups(),
+        /Playground model display name is required/,
+      );
     },
   );
 });
@@ -478,5 +760,6 @@ test("playground service fails closed when SDK generation history contains unsup
         /Playground history type is required/,
       );
     },
+    { authenticated: true },
   );
 });

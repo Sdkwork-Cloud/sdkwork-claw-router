@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-stock-watchdog@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_stock_watchdog",
+  "skill": {
+    "id": 52549,
+    "skillKey": "clawhub-ai-stock-watchdog",
+    "name": "AI stock watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-stock-watchdog",
+    "url": "https://clawhub.ai/skills/ai-stock-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-stock-watchdog-a827a19bd29b857b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily monitoring for Indian equity holdings (NSE/BSE) using a documented severity rubric. Silent by default — only surfaces Sev-1 events (governance, cash fl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daveanandraj",
+      "userId": "s179te23bk7xy5t4jmq4tstf8h83g9et",
+      "displayName": "daveanandraj",
+      "image": "https://avatars.githubusercontent.com/u/221209287?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1777835910044,
+      "changelog": "Fresh publish with ai-stock-watchdog slug",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b56c061e7e767c47329d8800219bab7a24500ee3f449552b793d14ce770271c"
+}

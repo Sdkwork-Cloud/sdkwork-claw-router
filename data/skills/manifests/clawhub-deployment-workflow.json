@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63084,
+  "uuid": "skill-clawhub-deployment-workflow",
+  "skillKey": "clawhub-deployment-workflow",
+  "name": "Deployment Workflow",
+  "summary": "一键部署Agent自动化工作流，包含群组管理、定时任务、审核自动化等",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deployment_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wulooongcha",
+      "features": [
+        "一键部署Agent自动化工作流，包含群组管理、定时任务、审核自动化等"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deployment-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270391360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deployment-workflow",
+      "url": "https://clawhub.ai/skills/deployment-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deployment-workflow",
+    "url": "https://clawhub.ai/skills/deployment-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deployment-workflow-8528e018f7e7f2fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deployment-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deployment-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78a22fd102bb527dae8f1b01bc361877a895c64bb37ee8bbaa994a420c84456f",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:11:45.903Z"
+}

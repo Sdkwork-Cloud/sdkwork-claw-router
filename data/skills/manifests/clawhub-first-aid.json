@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20854,
+  "uuid": "skill-clawhub-first-aid",
+  "skillKey": "clawhub-first-aid",
+  "name": "First Aid",
+  "summary": "First aid reference guide with emergency procedures and kit checklists. Use when looking up first aid instructions.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.first_aid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "First aid reference guide with emergency procedures and kit checklists",
+        "Use when looking up first aid instructions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/first-aid@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "first-aid",
+      "url": "https://clawhub.ai/skills/first-aid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "first-aid",
+    "url": "https://clawhub.ai/skills/first-aid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/first-aid-331ecd6b8f8226a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/first-aid@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-first-aid-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e3966265dd856029d6f67144aa1257683c8045d55dd075be70ee4facf1dc37e",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T12:09:43.864Z"
+}

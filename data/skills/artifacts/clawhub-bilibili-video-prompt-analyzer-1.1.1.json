@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bilibili-video-prompt-analyzer@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_video_prompt_analyzer",
+  "skill": {
+    "id": 31089,
+    "skillKey": "clawhub-bilibili-video-prompt-analyzer",
+    "name": "Bilibili AI Video Prompt Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-video-prompt-analyzer",
+    "url": "https://clawhub.ai/skills/bilibili-video-prompt-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-video-prompt-analyzer-04ca7275e27cfb5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Bilibili AI-generated videos to extract/reverse-engineer prompts for imitation and replication. Extracts frames, extracts subtitles, generates detail..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jilanfang",
+      "userId": "publishers:jilanfang",
+      "displayName": "jilanfang",
+      "image": "https://avatars.githubusercontent.com/u/214955619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773856767985,
+      "changelog": "Add subtitle extraction script (supports embedded soft subtitles). Output format updated to production-ready: technical metadata + keyframe prompts (ComfyUI comma format) + scene sequence breakdown + full master prompt + negative prompt. Detailed enough for direct use in Seedance/Kling/Runway with minimal edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca99a188a1eb7193415fff29a947e3c420b2940e3e11c58825b01a23da9cc7c0"
+}

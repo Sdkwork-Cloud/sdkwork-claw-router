@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40044,
+  "uuid": "skill-clawhub-self-improving-agent-orbit",
+  "skillKey": "clawhub-self-improving-agent-orbit",
+  "name": "Self-Improving Agent (ORBIT)",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_agent_orbit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "drivercagropecuaria-cyber",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-improving-agent-orbit@1.0.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258514235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-improving-agent-orbit",
+      "url": "https://clawhub.ai/skills/self-improving-agent-orbit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-agent-orbit",
+    "url": "https://clawhub.ai/skills/self-improving-agent-orbit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-agent-orbit-073f621320548c59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-improving-agent-orbit@1.0.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-improving-agent-orbit-1.0.11.json",
+      "version": "1.0.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb0bd4a796cb09c269d4d2fa8116912b7c738501ab36ec73c6c53d8fba6e6676",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T01:34:45.444Z"
+}

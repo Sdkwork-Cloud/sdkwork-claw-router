@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15724,
+  "uuid": "skill-clawhub-local-llama-tts",
+  "skillKey": "clawhub-local-llama-tts",
+  "name": "Local Llama TTS",
+  "summary": "Local text-to-speech using llama-tts (llama.cpp) and OuteTTS-1.0-0.6B model.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_llama_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuxxin",
+      "features": [
+        "Local text-to-speech using llama-tts (llama.cpp) and OuteTTS-1.0-0.6B model."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-llama-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3779140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-llama-tts",
+      "url": "https://clawhub.ai/skills/local-llama-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-llama-tts",
+    "url": "https://clawhub.ai/skills/local-llama-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-llama-tts-fed729672106066d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-llama-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-llama-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a577d85c6982b3cbdefebc51ee36e03c4bf952a3550c48a73eed6931d11535e3",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T17:43:33.545Z"
+}

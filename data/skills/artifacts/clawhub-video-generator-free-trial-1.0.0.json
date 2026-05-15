@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-generator-free-trial@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_generator_free_trial",
+  "skill": {
+    "id": 44704,
+    "skillKey": "clawhub-video-generator-free-trial",
+    "name": "Video Generator Free Trial"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-generator-free-trial",
+    "url": "https://clawhub.ai/skills/video-generator-free-trial",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-generator-free-trial-93df144325f588d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a short product description and three product photos into 1080p ready-to-share videos just by typing what you need. Whether it's generating short videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776369736292,
+      "changelog": "Version 1.0.0 — Initial Release\n\n- Launches free trial AI video generator for text/image-to-video creation, requiring no editing skills.\n- Enables quick 1080p video exports from product descriptions and images, with an easy cloud-based setup.\n- Provides anonymous authentication for new users with 100 free credits (7-day expiry).\n- Offers clear, intent-based chat commands for upload, video generation, credit checks, downloads, and timeline previews.\n- Includes robust session handling, error codes, and explanations for all common workflows and export formats.\n- Streamlines the process from upload to MP4 download in approximately 1–2 minutes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2a6e970c99fc21904f763a6ad0346a72c7f4c24e1af36f45f8570dd3cf6bfc3"
+}

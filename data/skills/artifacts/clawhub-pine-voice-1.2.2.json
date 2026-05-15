@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pine-voice@1.2.2",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pine_voice",
+  "skill": {
+    "id": 16296,
+    "skillKey": "clawhub-pine-voice",
+    "name": "Pine Voice"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pine-voice",
+    "url": "https://clawhub.ai/skills/pine-voice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pine-voice-e8f4cbcb7db2c315.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your agent a real phone. It dials, waits on hold, negotiates your bills, and returns a full transcript."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bojieli",
+      "userId": "publishers:bojieli",
+      "displayName": "bojieli",
+      "image": "https://avatars.githubusercontent.com/u/1421793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 703,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.2.2",
+      "createdAt": 1771668855478,
+      "changelog": "Fix privacy policy URL. Add auth-check.mjs script. Clarify that authentication is one-time only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1d4c68137a7b4a8b80f10e02b5fe0b4a66c344910fce12d3636e6f3d4f649ac7"
+}

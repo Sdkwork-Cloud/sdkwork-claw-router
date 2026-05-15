@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68386,
+  "uuid": "skill-clawhub-jy-industry-research-summary",
+  "skillKey": "clawhub-jy-industry-research-summary",
+  "name": "jy-industry-research-summary",
+  "summary": "基于聚源数据 MCP 服务获取券商行业研报观点速览，结构化输出行业发展趋势、竞争格局、技术创新、政策环境、投资建议、风险提示等分析维度。使用场景：当用户需要快速了解某行业的券商研报观点、查询特定行业的投资分析、获取行业发展趋势、竞争格局分析、政策解读、投资建议或风险提示时触发。Triggered when use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jy_industry_research_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiayinian",
+      "features": [
+        "基于聚源数据 MCP 服务获取券商行业研报观点速览，结构化输出行业发展趋势、竞争格局、技术创新、政策环境、投资建议、风险提示等分析维度。使用场景：当用户需要快速了解某行业的券商研报观点、查询."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jy-industry-research-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22932351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jy-industry-research-summary",
+      "url": "https://clawhub.ai/skills/jy-industry-research-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jy-industry-research-summary",
+    "url": "https://clawhub.ai/skills/jy-industry-research-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jy-industry-research-summary-0801c8f9b1bf6b8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jy-industry-research-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jy-industry-research-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:652ac2fa0890c8ea72fde04b10525adba18e4fb0fa5d12c7dc95ff4895474b24",
+      "artifactSizeBytes": 2780
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T01:35:53.789Z"
+}

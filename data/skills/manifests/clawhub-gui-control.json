@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35479,
+  "uuid": "skill-clawhub-gui-control",
+  "skillKey": "clawhub-gui-control",
+  "name": "Gui Control",
+  "summary": "Control the GUI desktop on this machine using xdotool, scrot, and Firefox. Use when the user asks to open a browser, visit a website, take a screenshot, clic...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gui_control",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kunal Sharma",
+      "features": [
+        "Control the GUI desktop on this machine using xdotool, scrot, and Firefox",
+        "Use when the user asks to open a browser, visit a website, take a screenshot, clic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gui-control@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250737555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gui-control",
+      "url": "https://clawhub.ai/skills/gui-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gui-control",
+    "url": "https://clawhub.ai/skills/gui-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gui-control-24b45d68e8a79bac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gui-control@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gui-control-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:419764e341773d9b17a0378e16d73f71d95613639a93c97be0d399ad9e40c0d1",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:11:05.740Z"
+}

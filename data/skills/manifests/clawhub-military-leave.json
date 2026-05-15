@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46203,
+  "uuid": "skill-clawhub-military-leave",
+  "skillKey": "clawhub-military-leave",
+  "name": "military-leave",
+  "summary": "Search for military leave flights with armed forces travel options. Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itin...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.military_leave",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Search for military leave flights with armed forces travel options",
+        "Also supports: flight booking, hotel reservation, train tickets, attraction tickets, itin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/military-leave@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "military-leave",
+      "url": "https://clawhub.ai/skills/military-leave"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "military-leave",
+    "url": "https://clawhub.ai/skills/military-leave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/military-leave-08522b673b8856c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/military-leave@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-military-leave-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2164b6b8de271175b30bb8c7dc8669c2728d63c4589a014b3658642651326bfa",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T09:09:29.729Z"
+}

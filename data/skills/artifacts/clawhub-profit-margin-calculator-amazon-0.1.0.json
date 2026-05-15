@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/profit-margin-calculator-amazon@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.profit_margin_calculator_amazon",
+  "skill": {
+    "id": 31127,
+    "skillKey": "clawhub-profit-margin-calculator-amazon",
+    "name": "Profit Margin Calculator Amazon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "profit-margin-calculator-amazon",
+    "url": "https://clawhub.ai/skills/profit-margin-calculator-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/profit-margin-calculator-amazon-dea401c73f8d6421.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon profit margin calculator for sellers. Calculate cost breakdowns, profit margins, break-even points, and get pricing recommendations. Supports single p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774137955875,
+      "changelog": "Initial public release: Comprehensive Amazon FBA profit margin calculator for sellers.\n\n- Analyze product profitability with detailed cost breakdowns, profit margins, break-even points, and pricing recommendations.\n- Supports both single product and batch (multi-SKU) profitability analysis.\n- Accepts key Amazon FBA cost inputs: product cost, shipping, FBA fees, ad spend, storage, and category.\n- Provides clear output: cost breakdown tables, break-even price, margin status, and price recommendations.\n- No API key required; runs on user-provided input for fast, accessible analysis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f12859f2f008a07c903b85fa5910b0cee31bddc21e8cc43c6eed2e742ef4d84"
+}

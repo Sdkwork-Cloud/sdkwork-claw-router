@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63384,
+  "uuid": "skill-clawhub-publish-skill-repo",
+  "skillKey": "clawhub-publish-skill-repo",
+  "name": "publish-skill-repo",
+  "summary": "将当前项目中的 Skill 发布到 GitHub 并同步到 ClawHub。新项目自动走完流程，已有仓库的项目会总结变更、确认提交信息和建议版本号。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_skill_repo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhou Chang",
+      "features": [
+        "将当前项目中的 Skill 发布到 GitHub 并同步到 ClawHub。新项目自动走完流程，已有仓库的项目会总结变更、确认提交信息和建议版本号。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publish-skill-repo@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1515205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publish-skill-repo",
+      "url": "https://clawhub.ai/skills/publish-skill-repo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-skill-repo",
+    "url": "https://clawhub.ai/skills/publish-skill-repo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-skill-repo-5af2b097f4f066ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publish-skill-repo@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-publish-skill-repo-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75d5d8a430c301c72d24f84a0808f8b1747cc6575749ef2d376b6010c7b58713",
+      "artifactSizeBytes": 1946
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T02:40:08.865Z"
+}

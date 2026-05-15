@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/markdown-converter-compdf@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_converter_compdf",
+  "skill": {
+    "id": 8601,
+    "skillKey": "clawhub-markdown-converter-compdf",
+    "name": "Markdown convert"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-converter-compdf",
+    "url": "https://clawhub.ai/skills/markdown-converter-compdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-converter-compdf-e75e63709be91a38.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Process, convert, edit, and extract data from PDF files using the ComPDF Cloud API. Supports format conversion (Word, Excel, Image), page manipulation (merge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "compdf-youna",
+      "userId": "s178t897hzzp9pvkwbav4e2kfs83g980",
+      "displayName": "ComPDF",
+      "image": "https://avatars.githubusercontent.com/u/108785628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 101,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774003801589,
+      "changelog": "- Initial release of markdown-converter-compdf skill.\n- Process, convert, edit, and extract data from PDF files via the ComPDF Cloud API.\n- Supports PDF conversions (to Word, Excel, Image, Markdown), page manipulation, watermarking, compression, OCR, AI extraction, and more.\n- Requires explicit user confirmation before uploading files to external servers.\n- User can provide and optionally save a ComPDF API key for processing.\n- Includes detailed workflow steps for secure, controlled API interaction and clear output formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:36efc95400f0310b0d82361506c657b56edd077fca1da808a2a80d4cf52898ef"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/makefile-build@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.makefile_build",
+  "skill": {
+    "id": 11548,
+    "skillKey": "clawhub-makefile-build",
+    "name": "Makefile & Build"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "makefile-build",
+    "url": "https://clawhub.ai/skills/makefile-build",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/makefile-build-af7e258e20c29f17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write Makefiles for any project type. Use when setting up build automation, defining multi-target builds, managing dependencies between tasks, creating project task runners, or using Make for non-C projects (Go, Python, Docker, Node.js). A."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitgoodordietrying",
+      "userId": "publishers:gitgoodordietrying",
+      "displayName": "gitgoodordietrying",
+      "image": "https://avatars.githubusercontent.com/u/116975874?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1786,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770158618407,
+      "changelog": "Initial release: Make basics, automatic variables, pattern rules, Go/Python/Node/Docker Makefiles, multi-directory builds, Just and Task alternatives",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:311c4e4bea2a05184ef721189587996a8c67200c2c50aace3a084590b0943d70"
+}

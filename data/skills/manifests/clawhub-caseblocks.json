@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35454,
+  "uuid": "skill-clawhub-caseblocks",
+  "skillKey": "clawhub-caseblocks",
+  "name": "Caseblocks",
+  "summary": "Caseblocks integration. Manage data, records, and automate workflows. Use when the user wants to interact with Caseblocks data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caseblocks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Caseblocks integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Caseblocks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caseblocks@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caseblocks",
+      "url": "https://clawhub.ai/skills/caseblocks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caseblocks",
+    "url": "https://clawhub.ai/skills/caseblocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caseblocks-91d7c910c0bcc0d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caseblocks@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-caseblocks-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c42a3b471000d8c81c74be3ae40c286460283876c2cd413224403ca5b748abc",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:16:51.762Z"
+}

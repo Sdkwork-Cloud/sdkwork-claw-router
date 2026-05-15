@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "x402georeport",
+    "displayName": "x402geo",
+    "summary": "Use when an agent needs to run GEO/SEO audits through x402geo.com with payment gating, status tracking, and report delivery via MCP or ACP.",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1775749154617,
+    "updatedAt": 1777527368527
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1776833032731,
+    "changelog": "x402georeport v1.0.2 Changelog\n\n- Updated payment flow to use AgentCash MCP wallet methods (`mcp__agentcash__get_balance`, `mcp__agentcash__fetch`) in place of previous CLI-based wallet commands.\n- Clarified agent instructions for agentic wallet checks, confirmations, and error handling using AgentCash MCP APIs.\n- Added guidance for surfacing deposit links to users via `mcp__agentcash__list_accounts` if wallet balance is insufficient.\n- Improved instructions for both ACP and MCP integration flows, detailing new payment method steps and user communication requirements.\n- No code changes; documentation and workflow instructions updated for new MCP-based payment integration.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "sagztudio",
+    "userId": "s178saz1g10ynxrzxp37xv1fj584g951",
+    "displayName": "Sagar",
+    "image": "https://avatars.githubusercontent.com/u/86024774?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.vt_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527368527
+  }
+}

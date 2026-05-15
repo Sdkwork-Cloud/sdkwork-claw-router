@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-macro-risk-regime-trader@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_macro_risk_regime_trader",
+  "skill": {
+    "id": 32198,
+    "skillKey": "clawhub-polymarket-macro-risk-regime-trader",
+    "name": "Polymarket Macro Risk Regime Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-macro-risk-regime-trader",
+    "url": "https://clawhub.ai/skills/polymarket-macro-risk-regime-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-macro-risk-regime-trader-9c93f4bce56ede0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects macro risk regimes (risk-on vs risk-off) by scanning ALL Polymarket categories simultaneously. When crypto drops, geopolitical escalation rises, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1777386607846,
+      "changelog": "SDK resilience: try/except runt apply_skill_config",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c0096538c379ad464e6a571fd048379b2323a198497155ac260337480e6ebce"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58640,
+  "uuid": "skill-clawhub-chrome-extension-generator",
+  "skillKey": "clawhub-chrome-extension-generator",
+  "name": "Chrome Extension Generator",
+  "summary": "一键生成 Chrome 扩展程序模板，支持 Popup、Background Script、Content Script、Options 页面等多种类型。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_extension_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "一键生成 Chrome 扩展程序模板，支持 Popup、Background Script、Content Script、Options 页面等多种类型。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-extension-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-extension-generator",
+      "url": "https://clawhub.ai/skills/chrome-extension-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-extension-generator",
+    "url": "https://clawhub.ai/skills/chrome-extension-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-extension-generator-2cac6de0a0df010e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-extension-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-extension-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ee0bfbd20cd0f01793c6e6690eec3b27a51a6b1feb093b8749005545ec7ac2c",
+      "artifactSizeBytes": 2488
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T11:30:12.244Z"
+}

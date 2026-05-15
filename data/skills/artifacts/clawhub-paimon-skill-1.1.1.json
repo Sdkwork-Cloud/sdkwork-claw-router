@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paimon-skill@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paimon_skill",
+  "skill": {
+    "id": 69163,
+    "skillKey": "clawhub-paimon-skill",
+    "name": "派蒙.skill - 原神特化 AI 游戏伴侣"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paimon-skill",
+    "url": "https://clawhub.ai/skills/paimon-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paimon-skill-4a3eb07c8d4a8b89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "派蒙 - 原神特化 AI 游戏伴侣。让你的 OpenClaw 直接化身派蒙，实时看到你的游戏截图，给你实时指引，甚至能点击游戏按钮帮你操作。再也不用手动截图到百度贴吧问了——打开圣遗物等培养界面，让派蒙看到你的数值，给你培养建议。此模块为 play-any-game 子模块，依赖父模块核心能力。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cgandgameenginelearner",
+      "userId": "s17bn2bkdv37ff9tba48qe551d83nkc7",
+      "displayName": "CGandGameEngineLearner",
+      "image": "https://avatars.githubusercontent.com/u/103875245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775749419334,
+      "changelog": "原神特化版本，派蒙角色设定与原神按钮模板",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:442e9e6a4cf6ad9dd85d6496b7629a16139ab5c1ee506158afcc9020791c9bf2"
+}

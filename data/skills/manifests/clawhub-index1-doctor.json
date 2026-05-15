@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16087,
+  "uuid": "skill-clawhub-index1-doctor",
+  "skillKey": "clawhub-index1-doctor",
+  "name": "index1 Doctor",
+  "summary": "Diagnose index1 environment - check Python, Ollama, models, index health.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.index1_doctor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gladego",
+      "features": [
+        "Diagnose index1 environment",
+        "check Python, Ollama, models, index health."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/index1-doctor@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258947289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "index1-doctor",
+      "url": "https://clawhub.ai/skills/index1-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "index1-doctor",
+    "url": "https://clawhub.ai/skills/index1-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/index1-doctor-916fd0df01411635.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/index1-doctor@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-index1-doctor-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0ca3245b4d0c3459c73830a67a7324e809653424f9295889f31c327cefcf094",
+      "artifactSizeBytes": 1804
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:59:00.844Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-grant-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_grant_writer",
+  "skill": {
+    "id": 15621,
+    "skillKey": "clawhub-afrexai-grant-writer",
+    "name": "Grant Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-grant-writer",
+    "url": "https://clawhub.ai/skills/afrexai-grant-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-grant-writer-518e14ae93bab256.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Craft complete, tailored grant proposals including needs statement, project narrative, budget justification, evaluation plan, sustainability, and support let..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 978,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770979405066,
+      "changelog": "Initial release — powerful automated grant proposal writer for government, foundation, and corporate funding programs.\n\n- Produces submission-ready applications with tailored sections: needs statement, narrative, budget, evaluation, sustainability, and support letters\n- Follows a standard grant-writing structure including cover letter, executive summary, SMART objectives, and budget justification\n- Incorporates proven grant-scoring tips and avoids common mistakes\n- Adapts drafts to specific funder requirements and priorities\n- Designed to work with AfrexAI Context Packs for enhanced data and industry fit",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b4f8fa8a4acf536e0a9f83152bf2599c30fdbbd63c1f5bdee14a53fa08ab9c14"
+}

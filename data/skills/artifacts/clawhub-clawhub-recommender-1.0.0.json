@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-recommender@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_recommender",
+  "skill": {
+    "id": 27140,
+    "skillKey": "clawhub-clawhub-recommender",
+    "name": "clawhub-recommender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-recommender",
+    "url": "https://clawhub.ai/skills/clawhub-recommender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-recommender-1fa1bdba8728b551.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommends popular and highly-rated skills from ClawHub based on user intent and conversation context. Use for: finding new skills, discovering popular tools..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brandon-zhanghaodong",
+      "userId": "s1700vfgqh2wse90cvbstxsgds83h44v",
+      "displayName": "brandon-zhanghaodong",
+      "image": "https://avatars.githubusercontent.com/u/168083855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773240328516,
+      "changelog": "Initial release of clawhub-recommender.\n\n- Recommends popular and highly-rated ClawHub skills based on user intent and conversation context.\n- Prioritizes skills by popularity, rating, and official status for reliable recommendations.\n- Supports recommendations in categories: Development, Productivity, Communication, and Search.\n- Includes step-by-step workflow for analyzing user needs and providing tailored installation instructions.\n- References curated lists and matching guidelines for accurate, context-based suggestions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1a5e17915dd090c2f677c3e311bb3c761f418d1c5aea452888d53b28f13f238"
+}

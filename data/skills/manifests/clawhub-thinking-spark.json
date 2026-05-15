@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70542,
+  "uuid": "skill-clawhub-thinking-spark",
+  "skillKey": "clawhub-thinking-spark",
+  "name": "Thinking Spark",
+  "summary": "记录思考火花与沉淀的系统。用于用户想要记录临时思考、想法、灵感火花，或者将思考整理沉淀为有条理的内容时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thinking_spark",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianyn1990",
+      "features": [
+        "记录思考火花与沉淀的系统。用于用户想要记录临时思考、想法、灵感火花，或者将思考整理沉淀为有条理的内容时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thinking-spark@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7401433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thinking-spark",
+      "url": "https://clawhub.ai/skills/thinking-spark"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thinking-spark",
+    "url": "https://clawhub.ai/skills/thinking-spark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thinking-spark-71c06dd347ca0b01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thinking-spark@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-thinking-spark-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:478b49c5a77e8b3ab96beed9de36ff45cc33273156c270bb5a66d8635c37259e",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:58:12.228Z"
+}

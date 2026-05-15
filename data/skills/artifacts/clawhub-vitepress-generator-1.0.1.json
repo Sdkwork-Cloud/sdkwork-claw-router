@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vitepress-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vitepress_generator",
+  "skill": {
+    "id": 32270,
+    "skillKey": "clawhub-vitepress-generator",
+    "name": "VitePress Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vitepress-generator",
+    "url": "https://clawhub.ai/skills/vitepress-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vitepress-generator-dbab94441f9657a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Quickly generate static websites using VitePress. Supports installing dependencies, initializing projects, local preview, building, and deployment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774232782774,
+      "changelog": "- Updated documentation for improved clarity and conciseness.\n- Switched all content and descriptions from Chinese to English.\n- Added an explicit \"Feature Overview\" section.\n- Rewrote trigger scenario instructions in English.\n- No changes to logic or functionality; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f7af59ba5fc2bda2219f92958b1ee5717d6f98e75ec6c8ddc9c109e7640dcbe"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27083,
+  "uuid": "skill-clawhub-aioz-storage-skill",
+  "skillKey": "clawhub-aioz-storage-skill",
+  "name": "AIOZ Storage Skill",
+  "summary": "Deploy static websites to AIOZ Storage with built-in templates or custom sites.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aioz_storage_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vinhbui3004",
+      "features": [
+        "Deploy static websites to AIOZ Storage with built-in templates or custom sites."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aioz-storage-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173021430?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aioz-storage-skill",
+      "url": "https://clawhub.ai/skills/aioz-storage-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aioz-storage-skill",
+    "url": "https://clawhub.ai/skills/aioz-storage-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aioz-storage-skill-6db7a4ca9bfbe80e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aioz-storage-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aioz-storage-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:249c511a3fbf2e4673c1171a88ed57b0c7cf91b01d01497446bd7493cc7fa8a6",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:59:38.481Z"
+}

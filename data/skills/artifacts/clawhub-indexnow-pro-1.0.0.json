@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/indexnow-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indexnow_pro",
+  "skill": {
+    "id": 38666,
+    "skillKey": "clawhub-indexnow-pro",
+    "name": "Indexnow Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indexnow-pro",
+    "url": "https://clawhub.ai/skills/indexnow-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indexnow-pro-066a3e27ae9245b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Instant search engine notification via IndexNow protocol. Ping Bing, Yandex, and IndexNow API to index new or updated pages within minutes instead of days. S..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ckchzh",
+      "userId": "s1722v35hsq964bw64ecjw43z583fbex",
+      "displayName": "BytesAgain2",
+      "image": "https://avatars.githubusercontent.com/u/44366898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774316658970,
+      "changelog": "Initial release - IndexNow search engine notification tool",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:732d445db18de34923691a0a8e024b63f7d981f900e2b7bea0d2031430ae07c1"
+}

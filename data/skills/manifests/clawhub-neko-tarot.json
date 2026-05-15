@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73432,
+  "uuid": "skill-clawhub-neko-tarot",
+  "skillKey": "clawhub-neko-tarot",
+  "name": "猫咪塔罗占卜助手",
+  "summary": "引导用户体验数字或实体猫咪塔罗牌占卜，推荐牌阵，抽牌并提供结合意图的温暖解读建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.neko_tarot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "senzi",
+      "features": [
+        "引导用户体验数字或实体猫咪塔罗牌占卜，推荐牌阵，抽牌并提供结合意图的温暖解读建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/neko-tarot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3325662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "neko-tarot",
+      "url": "https://clawhub.ai/skills/neko-tarot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "neko-tarot",
+    "url": "https://clawhub.ai/skills/neko-tarot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/neko-tarot-c476572cc16f24e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/neko-tarot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-neko-tarot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c29ffaf203a05e5ac89aea72bfed25f13b743e31ecf5bc3cbcd0a60f6d9c8db",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:56:10.958Z"
+}

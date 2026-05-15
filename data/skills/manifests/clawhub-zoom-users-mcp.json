@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24322,
+  "uuid": "skill-clawhub-zoom-users-mcp",
+  "skillKey": "clawhub-zoom-users-mcp",
+  "name": "Zoom Users API MCP",
+  "summary": "MCP server for the Zoom Users API. Exposes Zoom Users' REST API as read-only MCP tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoom_users_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mike Quinlan",
+      "features": [
+        "MCP server for the Zoom Users API",
+        "Exposes Zoom Users' REST API as read-only MCP tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoom-users-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1171608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoom-users-mcp",
+      "url": "https://clawhub.ai/skills/zoom-users-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoom-users-mcp",
+    "url": "https://clawhub.ai/skills/zoom-users-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoom-users-mcp-ef174df41278f811.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoom-users-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoom-users-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8301d67ae25b7ce56576f78339ad8b93e7356539b548e41cd26d9cebfa618bef",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T21:49:33.622Z"
+}

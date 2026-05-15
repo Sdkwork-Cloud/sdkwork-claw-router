@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/homey@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.homey",
+  "skill": {
+    "id": 9721,
+    "skillKey": "clawhub-homey",
+    "name": "Homey"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "homey",
+    "url": "https://clawhub.ai/skills/homey",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/homey-e933d7718a744792.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Athom Homey smart home devices via local (LAN/VPN) or cloud APIs. List/control devices, trigger flows, query zones. Works with Homey Pro, Cloud, and Bridge."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxsumrall",
+      "userId": "publishers:maxsumrall",
+      "displayName": "maxsumrall",
+      "image": "https://avatars.githubusercontent.com/u/628843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3113,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1768170409474,
+      "changelog": "- Add `homeycli` wrapper entrypoint to reduce \"permission denied\" issues and automatically install npm deps if missing.\n- Add `homeycli device <name> capabilities` to list settable capabilities.\n- Local onboarding smoothing: `auth set-local` attempts mDNS discovery if address is missing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0fd0ec528dc832fd26d117c45046d3b209ce8ad4c0642791657d828c87c12e1"
+}

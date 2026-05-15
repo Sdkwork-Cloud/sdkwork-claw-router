@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/interview-designer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interview_designer",
+  "skill": {
+    "id": 11528,
+    "skillKey": "clawhub-interview-designer",
+    "name": "Interview Designer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interview-designer",
+    "url": "https://clawhub.ai/skills/interview-designer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interview-designer-ceef8ebc2917f91f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze resumes and design interview strategies using evidence-based methodology. Transforms interview prep from \"read resume → ask questions\" into \"define standard → forensic evidence → future simulation\". Combines Geoff Smart's Topgradin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikonos",
+      "userId": "s17dcg2xgr601r2t7hegjrbh3983gtsc",
+      "displayName": "mikonos",
+      "image": "https://avatars.githubusercontent.com/u/3193323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2228,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770749339448,
+      "changelog": "Initial release: evidence-based interview planning with Scorecard → Forensic → Future",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67e32f42b5a66c974e13f4125bcb948fffe2dc77813f8bb557a2db0c544308b7"
+}

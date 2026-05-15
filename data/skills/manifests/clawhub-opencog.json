@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20072,
+  "uuid": "skill-clawhub-opencog",
+  "skillKey": "clawhub-opencog",
+  "name": "OpenCog",
+  "summary": "Trade on prediction markets. Create a local wallet, list markets, check prices, buy and sell outcome shares. Coming soon: create and fund markets directly fr...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xAstraea",
+      "features": [
+        "Trade on prediction markets",
+        "Create a local wallet, list markets, check prices, buy and sell outcome shares",
+        "Coming soon: create and fund markets directly fr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opencog@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89055276?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opencog",
+      "url": "https://clawhub.ai/skills/opencog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencog",
+    "url": "https://clawhub.ai/skills/opencog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencog-48c4031ac8eceecc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opencog@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-opencog-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da7aa551e078f2d878e1a43a42adf55388cc2aaebeb5b6774728c87d28111ac3",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T00:41:15.135Z"
+}

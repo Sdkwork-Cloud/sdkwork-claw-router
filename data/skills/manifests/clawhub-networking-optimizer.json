@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25333,
+  "uuid": "skill-clawhub-networking-optimizer",
+  "skillKey": "clawhub-networking-optimizer",
+  "name": "Networking Optimizer",
+  "summary": "Identify and reduce GCP networking and egress costs across projects and regions",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.networking_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anmol Nagpal",
+      "features": [
+        "Identify and reduce GCP networking and egress costs across projects and regions"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/networking-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4303310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "networking-optimizer",
+      "url": "https://clawhub.ai/skills/networking-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "networking-optimizer",
+    "url": "https://clawhub.ai/skills/networking-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/networking-optimizer-1f7c722ed2c701be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/networking-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-networking-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:332482900f230767673ab5ee56e545bd6da7f6316584f01b381d002ed30a5d2f",
+      "artifactSizeBytes": 2320
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T18:25:00.284Z"
+}

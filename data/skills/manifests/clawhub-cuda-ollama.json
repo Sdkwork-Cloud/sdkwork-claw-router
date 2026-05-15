@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52563,
+  "uuid": "skill-clawhub-cuda-ollama",
+  "skillKey": "clawhub-cuda-ollama",
+  "name": "Cuda Ollama",
+  "summary": "CUDA Ollama — route Ollama LLM inference across NVIDIA GPUs with automatic CUDA load balancing. CUDA Ollama cluster for RTX 4090, RTX 4080, A100, L40S, H100....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cuda_ollama",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "CUDA Ollama — route Ollama LLM inference across NVIDIA GPUs with automatic CUDA load balancing",
+        "CUDA Ollama cluster for RTX 4090, RTX 4080, A100, L40S, H100...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cuda-ollama@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cuda-ollama",
+      "url": "https://clawhub.ai/skills/cuda-ollama"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cuda-ollama",
+    "url": "https://clawhub.ai/skills/cuda-ollama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cuda-ollama-4b5661e02c9e066c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cuda-ollama@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cuda-ollama-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:760aed181a1909b164aa5abfcf5e46848966b784c2242314f1f680a7d765e810",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:53:38.688Z"
+}

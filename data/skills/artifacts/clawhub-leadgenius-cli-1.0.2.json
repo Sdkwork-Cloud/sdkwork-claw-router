@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/leadgenius-cli@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.leadgenius_cli",
+  "skill": {
+    "id": 52131,
+    "skillKey": "clawhub-leadgenius-cli",
+    "name": "leadgenius cli AI lead management platform"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "leadgenius-cli",
+    "url": "https://clawhub.ai/skills/leadgenius-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/leadgenius-cli-2842ab0ddc6fcfe4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate the LeadGenius Pro Automation API and lgp CLI — ICP management, FSD pipeline automation, lead generation/enrichment/scoring, user provisioning, terri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thierryteisseire",
+      "userId": "s17dybbfwf8xxpxe27hdmjp4y184t53x",
+      "displayName": "thierry teisseire",
+      "image": "https://avatars.githubusercontent.com/u/77529835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776150377622,
+      "changelog": "- Added metadata block to the skill definition, including emoji, homepage, and required environment variables.\n- Shortened and clarified the skill description for improved readability.\n- No changes to functionality or documentation content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0fe0433d8b21db1d79e1ada520e6384d570d2f8f7d93c3a8ea42f66d9b26cd9"
+}

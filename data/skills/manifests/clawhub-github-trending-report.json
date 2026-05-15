@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16259,
+  "uuid": "skill-clawhub-github-trending-report",
+  "skillKey": "clawhub-github-trending-report",
+  "name": "GitHub Trending Report",
+  "summary": "Fetch and generate structured reports on fastest-growing repos, newly popular projects, and hot GitHub topic tags using github-discover CLI.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coderyi",
+      "features": [
+        "Fetch and generate structured reports on fastest-growing repos, newly popular projects, and hot."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-trending-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10682908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-trending-report",
+      "url": "https://clawhub.ai/skills/github-trending-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-report",
+    "url": "https://clawhub.ai/skills/github-trending-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-report-3a6810f2574c8961.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-trending-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-trending-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b3ab900a59e01fabe28e29dd319376b4dbd80ff5d532e3b7a6bf270100ca8e1",
+      "artifactSizeBytes": 2089
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:05:32.615Z"
+}

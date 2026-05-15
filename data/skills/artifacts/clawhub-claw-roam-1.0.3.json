@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-roam@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_roam",
+  "skill": {
+    "id": 11341,
+    "skillKey": "clawhub-claw-roam",
+    "name": "Claw Roam"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-roam",
+    "url": "https://clawhub.ai/skills/claw-roam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-roam-a8aaad03b83314bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync OpenClaw workspace between multiple machines (local Mac and remote VPS) via Git. Enables seamless migration of OpenClaw personality, memory, and skills. Use when user wants to (1) push workspace changes to remote before shutdown, (2)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reed1898",
+      "userId": "s17053w3a6c09bkqzkan106kp1843wcx",
+      "displayName": "Reed",
+      "image": "https://avatars.githubusercontent.com/u/129141816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2072,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770400245422,
+      "changelog": "Add sync command for one-command full sync workflow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f3c1989b04a1b8a89762db2318084848338e4babb1577f5241bbfe4ba9194b75"
+}

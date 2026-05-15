@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/muster@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.muster",
+  "skill": {
+    "id": 50391,
+    "skillKey": "clawhub-muster",
+    "name": "Muster Connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "muster",
+    "url": "https://clawhub.ai/skills/muster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/muster-74cd18c016d902f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and work within a Muster co-working space. Tell your agent 'Install Muster' — it handles everything. Once connected, teaches heartbeat, tasks, initia..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "airborneeagle",
+      "userId": "s173veezyh2wb026fzh1d16s0583m3h3",
+      "displayName": "AirborneEagle",
+      "image": "https://avatars.githubusercontent.com/u/13696163?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774493130588,
+      "changelog": "Muster 2.0.0 — Major restructuring for automated setup, better agent autonomy, and clarity.\n\n- New installer, update, uninstall, and connect scripts for easier onboarding and management (`scripts/*.sh`)\n- Replaced previous `muster.sh` script with modular setup for installation, connection, and maintenance\n- Added clear troubleshooting and operation guides: `HEARTBEAT_MUSTER.md`, `REFERENCE.md`, `TROUBLESHOOTING.md`, `UPDATE.md`\n- Expanded and clarified agent responsibilities: initiative, reflection, tunnel monitoring, identity update\n- Detailed workflow and philosophy for agent autonomy and collaboration\n- Skill is now directly user-invocable: \"Install Muster\" triggers installation flow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4524697ca74e1082a7159e78b9e5c92cf3d6000cfb5c7e44194c5954a0ff9af4"
+}

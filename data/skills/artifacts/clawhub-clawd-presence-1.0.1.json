@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawd-presence@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawd_presence",
+  "skill": {
+    "id": 10195,
+    "skillKey": "clawhub-clawd-presence",
+    "name": "Clawd Presence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawd-presence",
+    "url": "https://clawhub.ai/skills/clawd-presence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawd-presence-ca0b45905706b7f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Physical presence display for AI agents. Shows a customizable monogram (A-Z), status state, and current activity on a dedicated terminal/screen. Provides faster feedback than chat - glance at the display to see what the agent is doing. Use."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "voidcooks",
+      "userId": "publishers:voidcooks",
+      "displayName": "voidcooks",
+      "image": "https://avatars.githubusercontent.com/u/195980960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2594,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769729015501,
+      "changelog": "Initial release: physical presence display for AI agents",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa6edc78100bcc296763edefe362001ac934a504a608548b0e2d2301c6d3f66a"
+}

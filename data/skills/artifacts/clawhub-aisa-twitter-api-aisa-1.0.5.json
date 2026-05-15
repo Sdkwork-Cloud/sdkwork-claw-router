@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-twitter-api-aisa@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_twitter_api_aisa",
+  "skill": {
+    "id": 49606,
+    "skillKey": "clawhub-aisa-twitter-api-aisa",
+    "name": "AIsa Twitter API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-twitter-api-aisa",
+    "url": "https://clawhub.ai/skills/aisa-twitter-api-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-twitter-api-aisa-f3b30e99928ae72a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Twitter/X command center for research, monitoring, watchlists, and approved posting through AIsa. Use when: the user needs one flagship skill for trend track..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baofeng-tech",
+      "userId": "s1709d2takksyrxgx2kpxs3rj18433sv",
+      "displayName": "baofeng-tech",
+      "image": "https://avatars.githubusercontent.com/u/273012742?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1778244945364,
+      "changelog": "- Updated skill description for improved clarity on research, monitoring, watchlists, and secure posting via OAuth.\n- Expanded usage guidance with \"When to use\" and \"When NOT to use\" sections for better workflow selection.\n- Added detailed setup instructions, environment variable requirements, and command examples.\n- Listed supported actions including search, monitoring, watchlists, trend discovery, and secure post publishing.\n- Emphasized security guardrails: no passwords, no browser cookies, and confirmation on post success.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e4ce0dfa6123401432becdb43db9f722e7858081feb053353aeb4676fb4a6a8"
+}

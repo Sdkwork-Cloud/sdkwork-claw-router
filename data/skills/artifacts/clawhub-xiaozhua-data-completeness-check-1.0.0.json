@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaozhua-data-completeness-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaozhua_data_completeness_check",
+  "skill": {
+    "id": 65094,
+    "skillKey": "clawhub-xiaozhua-data-completeness-check",
+    "name": "Data Completeness Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaozhua-data-completeness-check",
+    "url": "https://clawhub.ai/skills/xiaozhua-data-completeness-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaozhua-data-completeness-check-7ff261f9e554aba2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "数据完整性判断机制。通过前晚基准值 vs 早上值对比，判断 Power BI 数据是否回灌完毕。适用于任何有延迟回灌的数据源。避免发送不完整数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirowangl-ops",
+      "userId": "s179h5jf34zret158qs9qjvfh984mbz0",
+      "displayName": "mirowangl-ops",
+      "image": "https://avatars.githubusercontent.com/u/267263361?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775907787676,
+      "changelog": "- Introduced a data completeness checking mechanism based on dual time-point comparison (late night vs. morning values).\n- Outlined decision rules to verify if Power BI data has been fully updated before sending reports, preventing incomplete data delivery.\n- Provided practical reference thresholds for key metrics (e.g., Paid Subs, Revenue) on weekdays and weekends/holidays.\n- Made the approach generalizable for any delayed (T+1) data sources by selecting a key \"sentinel\" metric and establishing experience-based reference ranges.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:34192d56f0a85ba3aa3573fe4b36624b0843b8461c16c504ba91867c58b5bf7d"
+}

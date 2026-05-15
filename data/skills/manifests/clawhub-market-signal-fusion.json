@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22090,
+  "uuid": "skill-clawhub-market-signal-fusion",
+  "skillKey": "clawhub-market-signal-fusion",
+  "name": "Market Signal Fusion",
+  "summary": "Adaptive-language stock-analysis skill that interprets macro and political news, fuses it with retail/social sentiment, applies quantified value fallback rul...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.market_signal_fusion",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yellowzijian",
+      "features": [
+        "Adaptive-language stock-analysis skill that interprets macro and political news, fuses it with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/market-signal-fusion@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14797230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "market-signal-fusion",
+      "url": "https://clawhub.ai/skills/market-signal-fusion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "market-signal-fusion",
+    "url": "https://clawhub.ai/skills/market-signal-fusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/market-signal-fusion-8da722eefce1ca65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/market-signal-fusion@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-market-signal-fusion-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f94de35a6a37111e6bb048b412991b153a1c591eacfd344bddeb4128052ee78d",
+      "artifactSizeBytes": 2769
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T05:34:37.925Z"
+}

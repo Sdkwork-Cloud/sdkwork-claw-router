@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66956,
+  "uuid": "skill-clawhub-hilton",
+  "skillKey": "clawhub-hilton",
+  "name": "Hilton",
+  "summary": "希尔顿酒店集团介绍和预订指南",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hilton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "希尔顿酒店集团介绍和预订指南"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hilton@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hilton",
+      "url": "https://clawhub.ai/skills/hilton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hilton",
+    "url": "https://clawhub.ai/skills/hilton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hilton-8e3f5e915594cdb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hilton@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hilton-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8744956817c18692d449b900158d0f6e9b1d0c90d229590e347c5229350660f2",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:35:26.265Z"
+}

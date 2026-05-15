@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15806,
+  "uuid": "skill-clawhub-content-engine",
+  "skillKey": "clawhub-content-engine",
+  "name": "Content Engine",
+  "summary": "Full-stack content creation pipeline from research to publication. Analyzes top-ranking competitor articles, identifies content gaps, generates SEO-optimized...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arik Tulchinsky",
+      "features": [
+        "Full-stack content creation pipeline from research to publication",
+        "Analyzes top-ranking competitor articles, identifies content gaps, generates SEO-optimized..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42210991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-engine",
+      "url": "https://clawhub.ai/skills/content-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-engine",
+    "url": "https://clawhub.ai/skills/content-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-engine-ac0952f9875376b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:809575cbae6e4a35beefa999bc93b928982366da9f035c240f96d5d43dfef920",
+      "artifactSizeBytes": 2950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:37:03.303Z"
+}

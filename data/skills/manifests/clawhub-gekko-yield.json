@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12341,
+  "uuid": "skill-clawhub-gekko-yield",
+  "skillKey": "clawhub-gekko-yield",
+  "name": "Gekko Yield",
+  "summary": "Earn yield on USDC by supplying to the Moonwell Flagship USDC vault on Base. Use when depositing USDC, withdrawing from the vault, checking position/APY, or generating yield reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gekko_yield",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Serge",
+      "features": [
+        "Earn yield on USDC by supplying to the Moonwell Flagship USDC vault on Base",
+        "Use when depositing USDC, withdrawing from the vault, checking position/APY, or generating yiel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gekko-yield@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22988415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gekko-yield",
+      "url": "https://clawhub.ai/skills/gekko-yield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gekko-yield",
+    "url": "https://clawhub.ai/skills/gekko-yield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gekko-yield-48c39d90eff0c843.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gekko-yield@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gekko-yield-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89f8732b4dd493a4ce87766e2de38fdfce1ae1393eda2cc9ceb3892afd435370",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T13:54:51.096Z"
+}

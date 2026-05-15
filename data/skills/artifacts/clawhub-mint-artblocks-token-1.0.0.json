@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mint-artblocks-token@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mint_artblocks_token",
+  "skill": {
+    "id": 34568,
+    "skillKey": "clawhub-mint-artblocks-token",
+    "name": "Mint Artblocks Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mint-artblocks-token",
+    "url": "https://clawhub.ai/skills/mint-artblocks-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mint-artblocks-token-b342642de889da88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mint (purchase) an Art Blocks token using the artblocks-mcp tools. Use when a user wants to mint, purchase, or buy an Art Blocks NFT, or needs to understand..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryley-o",
+      "userId": "publishers:ryley-o",
+      "displayName": "ryley-o",
+      "image": "https://avatars.githubusercontent.com/u/30364988?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773936849446,
+      "changelog": "- Initial release of the mint-artblocks-token skill.\n- Provides tools and workflow to mint (purchase) Art Blocks tokens, including support for set price, Dutch auction, allowlist, RAM, and holder-gated minters.\n- Includes minting mechanics, project discovery, minter configuration, eligibility checks for gated projects, and transaction building (ETH set price only).\n- Supports multiple chains: Ethereum mainnet, Arbitrum, and Base.\n- Offers guidance on unsupported minter and currency types, allowlist profile checks, and gifting options (purchaseTo).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:86af38eddb2f6b75a2255607cb6a2d8e2913ef31dfdfe883a231d8db19bf9f07"
+}

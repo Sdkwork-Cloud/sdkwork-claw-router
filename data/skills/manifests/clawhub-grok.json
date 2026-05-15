@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9052,
+  "uuid": "skill-clawhub-grok",
+  "skillKey": "clawhub-grok",
+  "name": "xAI Grok Search",
+  "summary": "Search the web and X (Twitter) using xAI's Grok API with real-time access, citations, and image understanding",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christopher Stanley",
+      "features": [
+        "Search the web and X (Twitter) using xAI's Grok API with real-time access, citations, and image."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5520895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok",
+      "url": "https://clawhub.ai/skills/grok"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok",
+    "url": "https://clawhub.ai/skills/grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-add92b9cde2bdbf3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:218a97953525a73dc6bf62002aedae9495fa77de56fca3a025b23059705f39d0",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T07:27:20.493Z"
+}

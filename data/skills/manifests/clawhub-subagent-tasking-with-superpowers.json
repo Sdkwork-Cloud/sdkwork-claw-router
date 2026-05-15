@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59413,
+  "uuid": "skill-clawhub-subagent-tasking-with-superpowers",
+  "skillKey": "clawhub-subagent-tasking-with-superpowers",
+  "name": "子代理任务拆分 + Superpowers",
+  "summary": "子代理任务拆分 + using-superpowers 技能执行。每次 spawn 子代理前必须遵守的铁律。结合 using-superpowers 和 subagent-tasking 规则。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subagent_tasking_with_superpowers",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "weilixiong",
+      "features": [
+        "子代理任务拆分 + using-superpowers 技能执行。每次 spawn 子代理前必须遵守的铁律。结合 using-superpowers 和 subagent-tasking 规."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subagent-tasking-with-superpowers@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37475384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subagent-tasking-with-superpowers",
+      "url": "https://clawhub.ai/skills/subagent-tasking-with-superpowers"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subagent-tasking-with-superpowers",
+    "url": "https://clawhub.ai/skills/subagent-tasking-with-superpowers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subagent-tasking-with-superpowers-00dffcf7ee217206.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subagent-tasking-with-superpowers@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-subagent-tasking-with-superpowers-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0950200ee562ee9528adc7ce50e92626e45d4e484b6c39289a62bf2e02ee7de",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T02:10:34.397Z"
+}

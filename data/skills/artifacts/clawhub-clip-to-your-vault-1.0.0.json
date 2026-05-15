@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clip-to-your-vault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clip_to_your_vault",
+  "skill": {
+    "id": 45942,
+    "skillKey": "clawhub-clip-to-your-vault",
+    "name": "Clip to Your Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clip-to-your-vault",
+    "url": "https://clawhub.ai/skills/clip-to-your-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clip-to-your-vault-f34d22be3c605ddb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Universal web clipper for Obsidian Vault. Saves content from X/Twitter, WeChat, Douyin, Xiaohongshu, GitHub, and generic web pages. Triggers when user sends..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zgissing",
+      "userId": "s17dcm9csmfert9hpmbzv6k9s1841zn2",
+      "displayName": "zGissing",
+      "image": "https://avatars.githubusercontent.com/u/43166576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775041642913,
+      "changelog": "obsidian-clipper 1.0.0\n\n- Initial release: Universal web clipper for Obsidian Vault supporting X/Twitter, WeChat Official Accounts, Douyin, Xiaohongshu, GitHub, and generic web pages.\n- Automatically routes URLs to platform-specific handlers with media download and formatting.\n- Saves notes with local images/videos, content-based tags, and Obsidian wikilinks.\n- Asks for overwrite confirmation on filename conflicts and prompts for a \"why clipped\" reason if context is unclear.\n- Requires simple config file setup on first use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c73cba0f733d9e0738eab0c1f5a09e03884811d6c0cf02675a48f59a80758b61"
+}

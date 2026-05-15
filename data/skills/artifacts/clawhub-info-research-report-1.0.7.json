@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/info-research-report@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.info_research_report",
+  "skill": {
+    "id": 63660,
+    "skillKey": "clawhub-info-research-report",
+    "name": "info-research-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "info-research-report",
+    "url": "https://clawhub.ai/skills/info-research-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/info-research-report-faea13ea2c958f74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "信息调研报告自动化工作流。一键完成：多源搜索 → 深度挖掘 → 政府风格 DOCX 报告生成 → 邮件发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zaferliu",
+      "userId": "s17811q7qrdzkbem6ja8766de583hzx2",
+      "displayName": "Zafer Liu",
+      "image": "https://avatars.githubusercontent.com/u/210259242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1775308947665,
+      "changelog": "增加.env自动加载功能，简化配置流程",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d4b11064af8ce116d2af22984877bb3ffcf049cc834e03311ae208457cf3213"
+}

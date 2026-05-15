@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pilot-sync@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_sync",
+  "skill": {
+    "id": 45522,
+    "skillKey": "clawhub-pilot-sync",
+    "name": "Pilot Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-sync",
+    "url": "https://clawhub.ai/skills/pilot-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-sync-e7a42675f977c263.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bidirectional file synchronization between agents over the Pilot Protocol network. Use this skill when: 1. You need to keep directories synchronized between..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "teoslayer",
+      "userId": "s1774mw0xjm94md84a5rvrp9rd84fear",
+      "displayName": "Calin Teodor",
+      "image": "https://avatars.githubusercontent.com/u/45018530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775730697287,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70c951658c365ca6eb4777a3df529300b7e73820859c4b2ec4229da4fc82caa5"
+}

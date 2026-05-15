@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19055,
+  "uuid": "skill-clawhub-daily-brief",
+  "skillKey": "clawhub-daily-brief",
+  "name": "Daily Brief",
+  "summary": "Get daily weather and top news for multiple cities with one command, no API keys needed.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hello",
+      "features": [
+        "Get daily weather and top news for multiple cities with one command, no API keys needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-brief@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39000711?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-brief",
+      "url": "https://clawhub.ai/skills/daily-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-brief",
+    "url": "https://clawhub.ai/skills/daily-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-brief-2abb5e118ce7583d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-brief@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-brief-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9eceff5d2294730bc7bf7d6a34271f3cdb835dfd358d4d15e1e1f7145c14b31",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T00:29:16.393Z"
+}

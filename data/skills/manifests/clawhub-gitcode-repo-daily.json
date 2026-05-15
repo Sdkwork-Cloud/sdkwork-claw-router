@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58387,
+  "uuid": "skill-clawhub-gitcode-repo-daily",
+  "skillKey": "clawhub-gitcode-repo-daily",
+  "name": "GitCode Repo Daily",
+  "summary": "Generate daily operations reports for GitCode repositories with key metrics, AI summaries and Markdown output. 将 GitCode 上配置的仓库运营数据整理成日报输出；支持关键指标统计、AI 摘要与 Ma...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gitcode_repo_daily",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "do_while_true",
+      "features": [
+        "Generate daily operations reports for GitCode repositories with key metrics, AI summaries and M.",
+        "将 GitCode 上配置的仓库运营数据整理成日报输出；支持关键指标统计、AI 摘要与 Ma..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gitcode-repo-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30582182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gitcode-repo-daily",
+      "url": "https://clawhub.ai/skills/gitcode-repo-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gitcode-repo-daily",
+    "url": "https://clawhub.ai/skills/gitcode-repo-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gitcode-repo-daily-5c6a91c032379bce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gitcode-repo-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gitcode-repo-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:735bd20204bf7d292c97507cdf64f22c3ac06c44b62739482dded8f880650881",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:10:23.143Z"
+}

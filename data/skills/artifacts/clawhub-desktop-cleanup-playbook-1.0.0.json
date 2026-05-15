@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desktop-cleanup-playbook@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_cleanup_playbook",
+  "skill": {
+    "id": 59692,
+    "skillKey": "clawhub-desktop-cleanup-playbook",
+    "name": "Desktop Cleanup Playbook"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-cleanup-playbook",
+    "url": "https://clawhub.ai/skills/desktop-cleanup-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-cleanup-playbook-603a3e17b80d2dba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为桌面文件生成整理方案、分类规则和阶段性清理计划，先分析再行动。；use for desktop, cleanup, organization workflows；do not use for 自动删除桌面文件, 越权访问系统目录."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773654302171,
+      "changelog": "Initial release of desktop-cleanup-playbook.\n\n- Generates desktop cleanup plans, classification rules, and phased sweep schedules—with analysis before action.\n- Provides current state overview, sorting suggestions, and review checklists rather than directly modifying files.\n- Emphasizes safety: does not auto-delete desktop files or access system directories beyond user intent.\n- Includes clear usage boundaries, risk notices, and structured outputs (overview, suggestions, plans, risk, checklists).\n- Supports review-first workflow and leverages local templates/specs if available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aa594a7ca803b2fe01d0818bfaaa701d7fafa4e29f0cc795f6c1160badabf70"
+}

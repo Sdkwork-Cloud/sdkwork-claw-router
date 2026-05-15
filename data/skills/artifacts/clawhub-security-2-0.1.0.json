@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_2",
+  "skill": {
+    "id": 24314,
+    "skillKey": "clawhub-security-2",
+    "name": "Security"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-2",
+    "url": "https://clawhub.ai/skills/security-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-2-373c83951bb7d9cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs a backend-backed live safety check for instructions that may trigger tool execution, external calls, file edits, permission changes, destructive or irre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modeioai",
+      "userId": "publishers:modeioai",
+      "displayName": "modeioai",
+      "image": "https://avatars.githubusercontent.com/u/244495891?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773209463470,
+      "changelog": "Initial release of the security skill for backend-backed live safety checks.\n\n- Enables live instruction and operation safety checks before executing potentially risky commands.\n- Requires Python 3 and network reachability to a safety backend.\n- Provides a CLI for evaluating the safety of instructions that may trigger side effects or state changes.\n- Introduces a context contract for passing operational details to the backend.\n- Offers clear caller policy guidance based on backend risk scoring.\n- For read-only or pre-install auditing, recommends using other dedicated skills.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:995db79538517c4f784edffd8340ec77ccc753d9ee4ac45fa59e2c75a0c8d4d6"
+}

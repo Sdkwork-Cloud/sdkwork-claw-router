@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qa-architecture-auditor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_architecture_auditor",
+  "skill": {
+    "id": 25241,
+    "skillKey": "clawhub-qa-architecture-auditor",
+    "name": "QA Architecture Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-architecture-auditor",
+    "url": "https://clawhub.ai/skills/qa-architecture-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-architecture-auditor-7122e95a82d230c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform forensic-level codebase analysis and generate comprehensive Quality Assurance and Testing Strategy Reports. Acts as Independent Principal QA Architec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shifulegend",
+      "userId": "publishers:shifulegend",
+      "displayName": "ssshhh",
+      "image": "https://avatars.githubusercontent.com/u/41514916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773424238936,
+      "changelog": "Major fix for detection logic and methodology restoration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8d054536ade43159eaf5ec103ba7700e73da9c8f2e624bb5da652e798968e9f"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58943,
+  "uuid": "skill-clawhub-meeting-assistant",
+  "skillKey": "clawhub-meeting-assistant",
+  "name": "Meeting Assistant",
+  "summary": "用于构建和排查 SenseAudio 会议助手，覆盖实时会议转写、说话人区分、实时翻译、会议纪要生成、行动项提取与转录导出。Build and troubleshoot SenseAudio meeting assistants for live meeting transcription, speaker-aw...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "用于构建和排查 SenseAudio 会议助手，覆盖实时会议转写、说话人区分、实时翻译、会议纪要生成、行动项提取与转录导出。Build and troubleshoot SenseAudio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-assistant",
+      "url": "https://clawhub.ai/skills/meeting-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-assistant",
+    "url": "https://clawhub.ai/skills/meeting-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-assistant-d6e923fc0a571dc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e8176011b17a42d3d38deebffba1f05b9fdad6ba2c3abd1365fdb1ac74b9baa",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T15:59:30.815Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57850,
+  "uuid": "skill-clawhub-cosco",
+  "skillKey": "clawhub-cosco",
+  "name": "cosco",
+  "summary": "Information assistant for 中远海运 COSCO. Search products, news, financials, and official resources for 中远海运 COSCO.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cosco",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for 中远海运 COSCO",
+        "Search products, news, financials, and official resources for 中远海运 COSCO."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cosco@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cosco",
+      "url": "https://clawhub.ai/skills/cosco"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cosco",
+    "url": "https://clawhub.ai/skills/cosco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cosco-b769f623cc3a4e1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cosco@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cosco-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c137824ad12442b55364c4a1fdc0061b2c9a3536d801783da34d2fea63c3d0ea",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T12:09:13.140Z"
+}

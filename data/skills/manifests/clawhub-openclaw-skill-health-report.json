@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70147,
+  "uuid": "skill-clawhub-openclaw-skill-health-report",
+  "skillKey": "clawhub-openclaw-skill-health-report",
+  "name": "Health Report",
+  "summary": "通过自然语言配置健康档案，主动引导录入体重、饮食、饮水、运动数据，生成专业健康报告并多端推送。",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_health_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tankeito",
+      "features": [
+        "通过自然语言配置健康档案，主动引导录入体重、饮食、饮水、运动数据，生成专业健康报告并多端推送。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-health-report@1.0.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129169395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-health-report",
+      "url": "https://clawhub.ai/skills/openclaw-skill-health-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-health-report",
+    "url": "https://clawhub.ai/skills/openclaw-skill-health-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-health-report-53eb1b3dbc485db5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-health-report@1.0.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-health-report-1.0.10.json",
+      "version": "1.0.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da0fe872d93054612caeea550d8e3418a1d8c973c7a20026aa443f45c19225be",
+      "artifactSizeBytes": 2055
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T09:47:49.374Z"
+}

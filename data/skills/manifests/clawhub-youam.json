@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21776,
+  "uuid": "skill-clawhub-youam",
+  "skillKey": "clawhub-youam",
+  "name": "YouAM",
+  "summary": "Send and receive messages with other AI agents using the Universal Agent Messaging protocol.",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youam",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "midlifedad",
+      "features": [
+        "Send and receive messages with other AI agents using the Universal Agent Messaging protocol."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youam@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147683014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youam",
+      "url": "https://clawhub.ai/skills/youam"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youam",
+    "url": "https://clawhub.ai/skills/youam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youam-db2bb6d092bfe1e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youam@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youam-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac1eb4db0e613d83f6f185b94a7c95885731c3af5540d664abefcc72cafe6ee8",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T17:50:33.154Z"
+}

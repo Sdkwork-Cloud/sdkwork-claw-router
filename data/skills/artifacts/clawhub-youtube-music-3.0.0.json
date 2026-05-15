@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-music@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_music",
+  "skill": {
+    "id": 19912,
+    "skillKey": "clawhub-youtube-music",
+    "name": "YouTube Music ULTRA"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-music",
+    "url": "https://clawhub.ai/skills/youtube-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-music-43e827e852ecfed1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control YouTube Music with natural language. Play, pause, skip, search, manage playlists, and queue tracks. Full playback control via browser automation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oki3505f",
+      "userId": "s172b99x0vgz561j4w455a82b983hkgr",
+      "displayName": "om yarewara",
+      "image": "https://avatars.githubusercontent.com/u/186946154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 574,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772118423999,
+      "changelog": "v3.0 ULTRA FAST: 95% faster, direct video ID support, smart caching, atomic play actions, fuzzy matching",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f7b6dfad6ac9fc61d63f91e2fd9b84a2edfb270e4aa8ec6eea9ead9fc1295d2"
+}

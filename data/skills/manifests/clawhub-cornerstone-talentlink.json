@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33900,
+  "uuid": "skill-clawhub-cornerstone-talentlink",
+  "skillKey": "clawhub-cornerstone-talentlink",
+  "name": "Cornerstone Talentlink",
+  "summary": "Cornerstone TalentLink integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cornerstone TalentLink data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cornerstone_talentlink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cornerstone TalentLink integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cornerstone TalentLink data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cornerstone-talentlink@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cornerstone-talentlink",
+      "url": "https://clawhub.ai/skills/cornerstone-talentlink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cornerstone-talentlink",
+    "url": "https://clawhub.ai/skills/cornerstone-talentlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cornerstone-talentlink-c49ba870a271c29a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cornerstone-talentlink@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cornerstone-talentlink-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cee3883d50c4a539052bde5a2c0ea2c1142e551a374dcebb7b46d71c172f2058",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:21:00.308Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mick@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mick",
+  "skill": {
+    "id": 66201,
+    "skillKey": "clawhub-wechat-mick",
+    "name": "wechat-mick"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mick",
+    "url": "https://clawhub.ai/skills/wechat-mick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mick-cacdcd60fa326784.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "总结微信公众号文章内容。当用户提供微信公众号文章链接（mp.weixin.qq.com）并要求总结、概括、摘要、快速了解文章内容时使用此 skill。也适用于用户说\"帮我看看这篇文章讲什么\"、\"这篇公众号文章说了啥\"、\"总结一下这个链接\"等请求。只要看到 mp.weixin.qq.com 的链接并且用户想了解内容..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mick2458pan",
+      "userId": "publishers:mick2458pan",
+      "displayName": "mick2458pan",
+      "image": "https://avatars.githubusercontent.com/u/207201517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773338791457,
+      "changelog": "- Initial release of the \"wechat-summary\" skill.\n- Summarizes WeChat official account articles from mp.weixin.qq.com links.\n- Prioritizes using WebFetch to extract full article content; automatically switches to Python script if needed.\n- Generates concise Chinese summaries tailored to article length and key elements.\n- Handles errors gracefully with clear user guidance if content cannot be extracted.\n- Optimized for quickly understanding the main points, data, and suggestions of public account articles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:41da721f177a4e65f68d5066213ec2dac82b31642cef223e732c87cd1c1f942e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/astrill-watchdog@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.astrill_watchdog",
+  "skill": {
+    "id": 20998,
+    "skillKey": "clawhub-astrill-watchdog",
+    "name": "Astrill Watchdog"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "astrill-watchdog",
+    "url": "https://clawhub.ai/skills/astrill-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/astrill-watchdog-22d0408cc615cccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and auto-reconnect Astrill VPN on Ubuntu Linux (deb GUI package). Detects dropped connections via tun interface + ping, then reconnects using Astrill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "littlejakub",
+      "userId": "publishers:littlejakub",
+      "displayName": "LittleJakub",
+      "image": "https://avatars.githubusercontent.com/u/35995921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772891954007,
+      "changelog": "**Major update: Simplified and streamlined Astrill VPN watchdog with updated restart mechanism.**\n\n- Full process restart now uses `pkill astrill` and `setsid /autostart` for reliable recovery and GUI compatibility.\n- Only one reconnect method: kills whole Astrill tree and restarts with proper desktop session variables.\n- Setup and usage instructions simplified; just run `setup.sh` (no sudo needed), systemd user service included.\n- Configuration is now centralized at the top of `astrill-watchdog.sh`, with easy comments for adjusting key options.\n- All relevant paths, files, and commands are clearly listed for transparency and troubleshooting.\n- README.md removed; documentation now included directly in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:479ea259ed050bfc77281358eb6f1b45881b1f49dceb5bc8e982b0a7e9e9fc6e"
+}

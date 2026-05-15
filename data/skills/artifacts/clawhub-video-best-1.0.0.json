@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_best",
+  "skill": {
+    "id": 43760,
+    "skillKey": "clawhub-video-best",
+    "name": "Video Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-best",
+    "url": "https://clawhub.ai/skills/video-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-best-2927326e51baba4e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get optimized MP4 videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776912723035,
+      "changelog": "Video Best 1.0.0 — Initial Release\n\n- Instantly enhance and export videos with automatic AI-driven color correction and noise reduction—no manual editing needed.\n- Upload raw video footage (MP4, MOV, AVI, WebM, up to 500MB) and receive optimized 1080p MP4 files.\n- Streamlined setup with quick authentication and seamless backend connection.\n- Supports fast, credit-based cloud GPU rendering for content creators; shorter clips process faster and use fewer credits.\n- Simple chat commands for uploading, enhancing, status checks, and exports; works with multiple video, audio, and image file types.\n- Error handling, session management, and translation of backend GUI responses into clear, actionable feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eea2d14c9ca627442099e9fe505941c2d856b75df378f9bcf5d3229c902510e8"
+}

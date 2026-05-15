@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10507,
+  "uuid": "skill-clawhub-moltbot-ha",
+  "skillKey": "clawhub-moltbot-ha",
+  "name": "Moltbot Home Assistant",
+  "summary": "Control Home Assistant smart home devices, lights, scenes, and automations via moltbot-ha CLI with configurable safety confirmations.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbot_ha",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iamvaleriofantozzi",
+      "features": [
+        "Control Home Assistant smart home devices, lights, scenes, and automations via moltbot-ha CLI w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbot-ha@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252470287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbot-ha",
+      "url": "https://clawhub.ai/skills/moltbot-ha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbot-ha",
+    "url": "https://clawhub.ai/skills/moltbot-ha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbot-ha-1af9c448c255d302.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbot-ha@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbot-ha-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3c2573a147508772a4ec73fdbf7f00e6dce698fa9b15bf7c783fc00c21c46cf",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T18:14:50.474Z"
+}

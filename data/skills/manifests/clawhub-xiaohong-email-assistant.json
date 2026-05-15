@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69531,
+  "uuid": "skill-clawhub-xiaohong-email-assistant",
+  "skillKey": "clawhub-xiaohong-email-assistant",
+  "name": "Email Assistant",
+  "summary": "智能邮件助手，自动分类邮件，起草专业回复，提取待办事项，生成摘要并按优先级排序，提高办公效率。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohong_email_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "--冷月无心--",
+      "features": [
+        "智能邮件助手，自动分类邮件，起草专业回复，提取待办事项，生成摘要并按优先级排序，提高办公效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohong-email-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26730984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohong-email-assistant",
+      "url": "https://clawhub.ai/skills/xiaohong-email-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohong-email-assistant",
+    "url": "https://clawhub.ai/skills/xiaohong-email-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohong-email-assistant-92c2be73f5cab98d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohong-email-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohong-email-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8b0f05d57971945cd00b450d9ed6343a080856e26267ab67a7752842d74d6db",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:08:11.830Z"
+}

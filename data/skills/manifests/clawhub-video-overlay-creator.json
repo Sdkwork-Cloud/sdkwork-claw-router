@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49421,
+  "uuid": "skill-clawhub-video-overlay-creator",
+  "skillKey": "clawhub-video-overlay-creator",
+  "name": "Video Overlay Creator",
+  "summary": "add video clips into overlay-enhanced videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding text, logo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_overlay_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "add video clips into overlay-enhanced videos with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for adding text, logo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-overlay-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-overlay-creator",
+      "url": "https://clawhub.ai/skills/video-overlay-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-overlay-creator",
+    "url": "https://clawhub.ai/skills/video-overlay-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-overlay-creator-420b7b28127fc716.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-overlay-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-overlay-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06606d521efbc05aadc6f0700c75c5ea6e910d30d2982ae813c089dfd002cdf8",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T11:19:01.845Z"
+}

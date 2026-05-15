@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdmigrate@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdmigrate",
+  "skill": {
+    "id": 17571,
+    "skillKey": "clawhub-clawdmigrate",
+    "name": "clawd-migrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdmigrate",
+    "url": "https://clawhub.ai/skills/clawdmigrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdmigrate-6aa24bb7ab4c46f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Migrate moltbot or clawdbot assets to openclaw by discovering, backing up, migrating, verifying files, and reinstalling openclaw automatically."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "calabiyauman",
+      "userId": "publishers:calabiyauman",
+      "displayName": "calabiyauman",
+      "image": "https://avatars.githubusercontent.com/u/8000533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 755,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1771009297630,
+      "changelog": "v0.2.1: Post-migration file verification and automatic openclaw reinstall",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:414ab433bbade5ae8cefc097679f34eafc848ad8fbef1b9d606b151c7640ba31"
+}

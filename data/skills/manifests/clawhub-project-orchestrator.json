@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10142,
+  "uuid": "skill-clawhub-project-orchestrator",
+  "skillKey": "clawhub-project-orchestrator",
+  "name": "Project Orchestrator",
+  "summary": "AI agent orchestrator with Neo4j knowledge graph, Meilisearch search, and Tree-sitter parsing. Use for coordinating multiple coding agents on complex projects with shared context and plans.",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "reversTeam",
+      "features": [
+        "AI agent orchestrator with Neo4j knowledge graph, Meilisearch search, and Tree-sitter parsing",
+        "Use for coordinating multiple coding agents on complex projects with shared context and plans."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-orchestrator@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4600148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-orchestrator",
+      "url": "https://clawhub.ai/skills/project-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-orchestrator",
+    "url": "https://clawhub.ai/skills/project-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-orchestrator-06cb592007d132ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-orchestrator@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-orchestrator-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:01c2621a901c798de7d15ccd8c837e8ae661cc7e97b73cc808cd175c29722e8d",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T13:07:18.867Z"
+}

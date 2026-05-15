@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42742,
+  "uuid": "skill-clawhub-skill-catalog",
+  "skillKey": "clawhub-skill-catalog",
+  "name": "Skill Index",
+  "summary": "Auto-scan all installed skills, generate a categorized INDEX.md, and keep it in sync via git hooks. Triggers: skill index, scan skills, update index, skill c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_catalog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ken Wang",
+      "features": [
+        "Auto-scan all installed skills, generate a categorized INDEX.md, and keep it in sync via git ho.",
+        "Triggers: skill index, scan skills, update index, skill c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-catalog@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166790577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-catalog",
+      "url": "https://clawhub.ai/skills/skill-catalog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-catalog",
+    "url": "https://clawhub.ai/skills/skill-catalog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-catalog-cf829f3d0f157859.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-catalog@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-catalog-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef3edd8dc99c9a390a5cf99727bbc53363f631c169f6ebd53b967db7917f3cd1",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:55:00.655Z"
+}

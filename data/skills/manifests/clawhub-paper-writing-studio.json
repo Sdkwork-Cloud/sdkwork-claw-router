@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72320,
+  "uuid": "skill-clawhub-paper-writing-studio",
+  "skillKey": "clawhub-paper-writing-studio",
+  "name": "paper-writing-studio",
+  "summary": "新闻与传播学适配的论文写作工作流技能。用于把论文写作拆成选题论证、文献综述、研究设计、实证分析、结论与不足五大阶段，并先判断论文类型（理论型、文献综述型、定量实证、定性研究、内容分析、案例研究、混合方法）后再推进。适用于用户提出“帮我写论文”“做论文选题”“写文献综述”“提出研究假设”“设计研究方法”“写实证分析...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_writing_studio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kelcey2023",
+      "features": [
+        "新闻与传播学适配的论文写作工作流技能。用于把论文写作拆成选题论证、文献综述、研究设计、实证分析、结论与不足五大阶段，并先判断论文类型（理论型、文献综述型、定量实证、定性研究、内容分析、案例研."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-writing-studio@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128341611?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-writing-studio",
+      "url": "https://clawhub.ai/skills/paper-writing-studio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-writing-studio",
+    "url": "https://clawhub.ai/skills/paper-writing-studio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-writing-studio-ac452d9fbe1f0fa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-writing-studio@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-writing-studio-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffaf4606ceb697cd79c06990a945d691537525793d8f3147b7076ffcb9e18ce3",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T04:00:49.224Z"
+}

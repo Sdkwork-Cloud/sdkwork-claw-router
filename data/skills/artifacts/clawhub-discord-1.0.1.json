@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord",
+  "skill": {
+    "id": 8267,
+    "skillKey": "clawhub-discord",
+    "name": "Discord"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord",
+    "url": "https://clawhub.ai/skills/discord",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-e1ba4807a15d8579.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when you need to control Discord from Clawdbot via the discord tool: send messages, react, post or upload stickers, upload emojis, run polls, manage threads/pins/search, fetch permissions or member/role/channel info, or handle moderati."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "steipete",
+      "userId": "s179zksw999xz8ms4cy7pb2fr183m5jq",
+      "displayName": "Peter Steinberger",
+      "image": "https://avatars.githubusercontent.com/u/58493?v=4"
+    },
+    "stats": {
+      "comments": 4,
+      "downloads": 33769,
+      "installsAllTime": 1286,
+      "installsCurrent": 1252,
+      "stars": 72,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1767574303488,
+      "changelog": "",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ff95df5acffb63e20a71e28b9b6a6c8321d823dc5db203d2ff153e5680e09bb"
+}

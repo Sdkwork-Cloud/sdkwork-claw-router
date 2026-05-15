@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39398,
+  "uuid": "skill-clawhub-montreal-opendata",
+  "skillKey": "clawhub-montreal-opendata",
+  "name": "City of Montreal Open Data",
+  "summary": "Access 398+ datasets from the City of Montreal open data portal. Search, fetch, and analyze city data on crime, transit, environment, permits, and more via t...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.montreal_opendata",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ray Chan, PMP",
+      "features": [
+        "Access 398+ datasets from the City of Montreal open data portal",
+        "Search, fetch, and analyze city data on crime, transit, environment, permits, and more via t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/montreal-opendata@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63657868?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "montreal-opendata",
+      "url": "https://clawhub.ai/skills/montreal-opendata"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "montreal-opendata",
+    "url": "https://clawhub.ai/skills/montreal-opendata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/montreal-opendata-aed17612fdd3fa75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/montreal-opendata@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-montreal-opendata-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:431655460f6e59607df697e3d093d91c5ece07e8ae912b8d1b9232102467af4a",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T02:29:57.850Z"
+}

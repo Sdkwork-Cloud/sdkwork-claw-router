@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pay-for-service-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay_for_service_2",
+  "skill": {
+    "id": 24279,
+    "skillKey": "clawhub-pay-for-service-2",
+    "name": "Pay For Service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay-for-service-2",
+    "url": "https://clawhub.ai/skills/pay-for-service-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-for-service-2-772880d349af6cc4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access paid API endpoints and content using the x402 payment protocol. Use when you or the user want to call a paid API, access gated content, make an x402 p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rachidjarray-hk-qa-fdt",
+      "userId": "publishers:rachidjarray-hk-qa-fdt",
+      "displayName": "Rachid Jarray",
+      "image": "https://avatars.githubusercontent.com/u/111736103?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 415,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773031734067,
+      "changelog": "Initial release of pay-for-service-2 skill.\n\n- Enables access to paid API endpoints and gated content using the x402 payment protocol.\n- Supports one-step payment and content retrieval with getX402Content, and separate payment authorization with authorizePayment.\n- Allows payment from multi-chain, multi-asset Finance District wallet (not limited to Base/USDC).\n- Includes flows for authentication, balance checking, payment authorization, and error handling.\n- User instructions and command examples provided for fetching and paying for resources.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:124b187de8c5a6753a0747da6ba18373dd911becf328a98e55fb4bdd6040e3b6"
+}

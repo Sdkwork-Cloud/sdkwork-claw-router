@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33949,
+  "uuid": "skill-clawhub-sw-ab-test-setup",
+  "skillKey": "clawhub-sw-ab-test-setup",
+  "name": "AB Test Setup",
+  "summary": "Plan A/B tests with a clear hypothesis, defined metrics, variant design, sample size, duration, and statistical significance guidelines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sw_ab_test_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "amdf01-debug",
+      "features": [
+        "Plan A/B tests with a clear hypothesis, defined metrics, variant design, sample size, duration,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sw-ab-test-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252609374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sw-ab-test-setup",
+      "url": "https://clawhub.ai/skills/sw-ab-test-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sw-ab-test-setup",
+    "url": "https://clawhub.ai/skills/sw-ab-test-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sw-ab-test-setup-6474260cf8966b26.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sw-ab-test-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sw-ab-test-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4df2fdc1bbc8259908e0fbf3e9d33032b0d821632ee57e824b4f5db80923db4",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:02:08.088Z"
+}

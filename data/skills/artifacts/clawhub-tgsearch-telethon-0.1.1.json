@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tgsearch-telethon@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tgsearch_telethon",
+  "skill": {
+    "id": 20698,
+    "skillKey": "clawhub-tgsearch-telethon",
+    "name": "Tgsearch Telethon"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tgsearch-telethon",
+    "url": "https://clawhub.ai/skills/tgsearch-telethon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tgsearch-telethon-8c0580fb02ecdda2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search public Telegram channels and groups by keyword using an authorized Telethon session, returning up to 50 results as JSON."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirillvrnz",
+      "userId": "publishers:kirillvrnz",
+      "displayName": "Kirill",
+      "image": "https://avatars.githubusercontent.com/u/145931018?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772410571847,
+      "changelog": "- Added metadata file (_meta.json) for the skill.\n- No changes to code or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4385b41a25e7167bd6c82467ec805626087446f31184c6aced866b08443cc0c3"
+}

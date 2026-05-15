@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bug-fixer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bug_fixer",
+  "skill": {
+    "id": 33470,
+    "skillKey": "clawhub-bug-fixer",
+    "name": "Bug Fixer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bug-fixer",
+    "url": "https://clawhub.ai/skills/bug-fixer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bug-fixer-13209792c4771ad0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous bug diagnosis and repair. Use when user reports a bug, error, or unexpected behavior in code or systems."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars82311111",
+      "userId": "s17ft7r4x02ndyd3z98hhdv6zn83w86s",
+      "displayName": "mars82311111",
+      "image": "https://avatars.githubusercontent.com/u/265482749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 237,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774958893242,
+      "changelog": "Initial release of bug-fixer skill.\n\n- Autonomously diagnoses and repairs code or system bugs based on user reports.\n- Supports both full fix workflow and standalone diagnostics via `./scripts/autonomous-fix.sh`.\n- Guides through error collection, root cause analysis, fix application, and verification.\n- Reminds users to back up files, validate fixes, and log repair details for future reference.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ba75c0b80166ef5f524c3de7012bae7c775f8dc3f40a861baa20d44a0807903"
+}

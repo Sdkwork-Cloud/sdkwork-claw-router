@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41724,
+  "uuid": "skill-clawhub-appkittie-mcp-skills",
+  "skillKey": "clawhub-appkittie-mcp-skills",
+  "name": "Appkittie",
+  "summary": "Provides AI agents with live App Store data for app discovery, keyword research, competitor analysis, growth, revenue, and ad intelligence using the AppKitti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appkittie_mcp_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tadas Gedgaudas",
+      "features": [
+        "Provides AI agents with live App Store data for app discovery, keyword research, competitor ana."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appkittie-mcp-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83356979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appkittie-mcp-skills",
+      "url": "https://clawhub.ai/skills/appkittie-mcp-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appkittie-mcp-skills",
+    "url": "https://clawhub.ai/skills/appkittie-mcp-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appkittie-mcp-skills-b401ea7069cb5370.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appkittie-mcp-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appkittie-mcp-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4d16fa16614d84d806ef069f0d0a1efee938f19414c62ff7ce524088f73ef03",
+      "artifactSizeBytes": 2560
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:33:25.559Z"
+}

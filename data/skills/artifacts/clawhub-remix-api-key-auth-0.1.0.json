@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remix-api-key-auth@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remix_api_key_auth",
+  "skill": {
+    "id": 15165,
+    "skillKey": "clawhub-remix-api-key-auth",
+    "name": "Remix Api Key Auth"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remix-api-key-auth",
+    "url": "https://clawhub.ai/skills/remix-api-key-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remix-api-key-auth-05f7c90b7acaa14f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure and verify bearer API key authentication for Remix agent publishing workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chuckstock",
+      "userId": "publishers:chuckstock",
+      "displayName": "chuckstock",
+      "image": "https://avatars.githubusercontent.com/u/9020007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1071,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770761369392,
+      "changelog": "- Initial release providing setup and verification instructions for Remix API key authentication.\n- Includes steps for creating and storing API keys, configuring authorization headers, and using the Remix API base URL.\n- Offers guidance for testing authentication and troubleshooting invalid API key issues.\n- Targets agent publishing workflows with secure server-side integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fc378a1c38d635e5748889a0845fcf8994d1e63e098c594a703d3e0cbdd8faf"
+}

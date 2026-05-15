@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50478,
+  "uuid": "skill-clawhub-patent-retriever-bigquery",
+  "skillKey": "clawhub-patent-retriever-bigquery",
+  "name": "Zeelin Patent Retriever",
+  "summary": "Team ZeeLin’s production-grade patent evidence retrieval skill for Google Patents BigQuery. Converts natural-language research intent into auditable multi-ro...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patent_retriever_bigquery",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yuwen Yang",
+      "features": [
+        "Team ZeeLin’s production-grade patent evidence retrieval skill for Google Patents BigQuery",
+        "Converts natural-language research intent into auditable multi-ro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/patent-retriever-bigquery@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38715200?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "patent-retriever-bigquery",
+      "url": "https://clawhub.ai/skills/patent-retriever-bigquery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patent-retriever-bigquery",
+    "url": "https://clawhub.ai/skills/patent-retriever-bigquery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patent-retriever-bigquery-4fe980a449b68889.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/patent-retriever-bigquery@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-patent-retriever-bigquery-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7392a644c3e711690a5468c10a9307826f09995c97c79d4ddac6c9d627b5ba4b",
+      "artifactSizeBytes": 2712
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:31:40.764Z"
+}

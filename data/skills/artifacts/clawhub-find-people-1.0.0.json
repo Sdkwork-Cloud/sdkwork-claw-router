@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-people@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_people",
+  "skill": {
+    "id": 10477,
+    "skillKey": "clawhub-find-people",
+    "name": "Find People (x402)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-people",
+    "url": "https://clawhub.ai/skills/find-people",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-people-d73295282fd50392.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Open Source Intelligence (OSINT) tool for researching individuals - professional backgrounds, career timelines, due diligence, competitive intelligence, and investor research. Use when users need to research people, verify credentials, or."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tzannetosgiannis",
+      "userId": "publishers:tzannetosgiannis",
+      "displayName": "TzannetosGiannis",
+      "image": "https://avatars.githubusercontent.com/u/32258946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2450,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769695628394,
+      "changelog": "Initial public release of \"find-people\" skill.\n\n- Enables OSINT-powered research on individuals, including professional backgrounds and career timelines.\n- Supports due diligence, competitive intelligence, investor research, and credential verification.\n- Charges $0.15 USDC per request, processed via the x402 protocol on the Base network.\n- Configurable private key setup via environment variable or config file.\n- Provides error handling for payment, missing key, and timeout issues.\n- CLI script for querying and retrieving comprehensive AI-processed reports.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c11a1337fe7e2d75a354cbd7e6ff7e32c2055bb5285a2c3dfa36e1b262fc2e6"
+}

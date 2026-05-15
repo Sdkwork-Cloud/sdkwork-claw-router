@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mqtt-client@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mqtt_client",
+  "skill": {
+    "id": 10535,
+    "skillKey": "clawhub-mqtt-client",
+    "name": "Mqtt Client"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mqtt-client",
+    "url": "https://clawhub.ai/skills/mqtt-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mqtt-client-ab390389b87af62d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This is a simple client for connecting to an mqtt instance"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "enchantedmotorcycle",
+      "userId": "publishers:enchantedmotorcycle",
+      "displayName": "enchantedmotorcycle",
+      "image": "https://avatars.githubusercontent.com/u/88115702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2559,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1770769453609,
+      "changelog": "- Improved environment variable handling: bootstrap.sh now automatically loads .env file for connection details.\n- Updated documentation in SKILL.md to clarify .env loading behavior.\n- No functional changes to core client logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:971fda3dfa475d1f600aff075fc254b0663194ce9c566c8b8387a07afaeacdae"
+}

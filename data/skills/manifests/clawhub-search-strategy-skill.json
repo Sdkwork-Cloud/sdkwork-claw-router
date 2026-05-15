@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62576,
+  "uuid": "skill-clawhub-search-strategy-skill",
+  "skillKey": "clawhub-search-strategy-skill",
+  "name": "Search Strategy Skill",
+  "summary": "智能搜尋策略執行器 - 自動選擇最佳搜尋工具，無需手動判斷。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_strategy_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "https://github.com/account/ssh",
+      "features": [
+        "智能搜尋策略執行器",
+        "自動選擇最佳搜尋工具，無需手動判斷。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-strategy-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/888016?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-strategy-skill",
+      "url": "https://clawhub.ai/skills/search-strategy-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-strategy-skill",
+    "url": "https://clawhub.ai/skills/search-strategy-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-strategy-skill-635b703b9493d9b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-strategy-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-strategy-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:303977b48387deb5f30aab838d845128003536436c9fb5981f748a53c5a31616",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:17:42.957Z"
+}

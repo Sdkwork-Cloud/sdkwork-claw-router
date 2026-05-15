@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onepersoncompany@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onepersoncompany",
+  "skill": {
+    "id": 51610,
+    "skillKey": "clawhub-onepersoncompany",
+    "name": "One Person Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onepersoncompany",
+    "url": "https://clawhub.ai/skills/onepersoncompany",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onepersoncompany-0f57edc50f432414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your personal AI assistant platform — multi-agent orchestration, task management, and autonomous workflow execution for one-person companies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shiyanhui",
+      "userId": "s17eaqmgxy9y905e3xk32nbzx183my80",
+      "displayName": "Lime",
+      "image": "https://avatars.githubusercontent.com/u/7406269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773892106435,
+      "changelog": "Initial release of One Person Company skill.\n\n- Provides multi-agent orchestration for solo founders and one-person teams\n- Enables autonomous task management and workflow execution\n- Supports persistent memory across sessions\n- Requires ONEPERSON_API_KEY environment variable for API access\n- Documentation and setup instructions available at 1person.pro and docs.1person.pro",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:df61e41d663f932f7b261be72c2d9c09f6e9b4f4ce61f376efbbff8ed534376f"
+}

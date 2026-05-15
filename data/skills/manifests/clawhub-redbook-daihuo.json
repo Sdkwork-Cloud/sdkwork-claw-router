@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71610,
+  "uuid": "skill-clawhub-redbook-daihuo",
+  "skillKey": "clawhub-redbook-daihuo",
+  "name": "Redbook Daihuo",
+  "summary": "批量生成小红书宠物带货笔记，包含吸引注意、传递价值、引导转化三部分结构。支持上传产品知识库，通过变量组合生成多篇不同风格的文案，并自动生成对应图片。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redbook_daihuo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gxw975",
+      "features": [
+        "批量生成小红书宠物带货笔记，包含吸引注意、传递价值、引导转化三部分结构。支持上传产品知识库，通过变量组合生成多篇不同风格的文案，并自动生成对应图片。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/redbook-daihuo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236547209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "redbook-daihuo",
+      "url": "https://clawhub.ai/skills/redbook-daihuo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redbook-daihuo",
+    "url": "https://clawhub.ai/skills/redbook-daihuo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redbook-daihuo-afc62ff1367ca24b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/redbook-daihuo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-redbook-daihuo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11a78e73725a538370f3e1d07bac7ace856ee9db502281ba960a8e464008c905",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:51:21.775Z"
+}

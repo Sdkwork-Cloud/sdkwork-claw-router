@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47771,
+  "uuid": "skill-clawhub-justoneapi-imdb-title-critics-review-summary-query",
+  "skillKey": "clawhub-justoneapi-imdb-title-critics-review-summary-query",
+  "name": "IMDb Critics Review Summary API",
+  "summary": "Call GET /api/imdb/title-critics-review-summary-query/v1 for IMDb Critics Review Summary through JustOneAPI with id.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_imdb_title_critics_review_summary_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/imdb/title-critics-review-summary-query/v1 for IMDb Critics Review Summary throug."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-imdb-title-critics-review-summary-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-imdb-title-critics-review-summary-query",
+      "url": "https://clawhub.ai/skills/justoneapi-imdb-title-critics-review-summary-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-imdb-title-critics-review-summary-query",
+    "url": "https://clawhub.ai/skills/justoneapi-imdb-title-critics-review-summary-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-imdb-title-critics-review-summary-query-7fe4a030feb4f255.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-imdb-title-critics-review-summary-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-imdb-title-critics-review-summary-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93b5a69a7d5e07683e7ad2920f739f6e431a3a1ac632f4f56243ab8a4c597f83",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T23:14:46.376Z"
+}

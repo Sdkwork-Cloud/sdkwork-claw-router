@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/preventive-screening-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.preventive_screening_planner",
+  "skill": {
+    "id": 49631,
+    "skillKey": "clawhub-preventive-screening-planner",
+    "name": "Preventive Screening Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "preventive-screening-planner",
+    "url": "https://clawhub.ai/skills/preventive-screening-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/preventive-screening-planner-e6a0a5914c60a821.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A discussion checklist for preventive health screenings based on age, sex, and risk factors -- to bring to your clinician."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 74,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777618993592,
+      "changelog": "Initial release: document-only health literacy skill with explicit safety boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:038dc64d08657b675bff966232315853e7dfee08d0cae41f5fe6c105262e4f42"
+}

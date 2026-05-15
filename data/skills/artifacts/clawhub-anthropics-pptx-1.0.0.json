@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anthropics-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anthropics_pptx",
+  "skill": {
+    "id": 26974,
+    "skillKey": "clawhub-anthropics-pptx",
+    "name": "Pptx Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anthropics-pptx",
+    "url": "https://clawhub.ai/skills/anthropics-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anthropics-pptx-2f24f5f84849a00d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create professional PowerPoint presentations from text prompts using Anthropics' design principles with auto-layout, branding, and image handling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachary2024",
+      "userId": "s17c7sk3xpv8nrmd693h6jhacs84hf61",
+      "displayName": "Zachary2024",
+      "image": "https://avatars.githubusercontent.com/u/150130997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775734921746,
+      "changelog": "- Initial release of PPTX Generator (Anthropics Style).\n- Create professional PowerPoint presentations from natural language prompts.\n- Supports auto-layouts, brand-consistent design, and smart image placement.\n- Export presentations to .pptx or PDF formats.\n- Requires python-pptx and Pillow libraries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da93339a1c144b33cf0b6f5a0405c6f5d58185ce753c7cf8e8a5852d9b5d6f41"
+}

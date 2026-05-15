@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yuqing-push-skill@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuqing_push_skill",
+  "skill": {
+    "id": 72302,
+    "skillKey": "clawhub-yuqing-push-skill",
+    "name": "小爱舆情结果飞书推送"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuqing-push-skill",
+    "url": "https://clawhub.ai/skills/yuqing-push-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuqing-push-skill-35471538e9c327ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从飞书多维表按规则筛选记录，格式化内容并自动推送到指定飞书群机器人Webhook，更新推送状态字段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "frankieway",
+      "userId": "s17ed490z7a9smvan099pss95h83hv41",
+      "displayName": "FrankieWay",
+      "image": "https://avatars.githubusercontent.com/u/25837859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774334243168,
+      "changelog": "支持规则表达式筛选，自定义消息模板",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ab21efb9cf5ec5a61ab88c8d9518e4642f063c174fe6880c10eb48656e96e84"
+}

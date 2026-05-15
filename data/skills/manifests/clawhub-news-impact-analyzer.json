@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22805,
+  "uuid": "skill-clawhub-news-impact-analyzer",
+  "skillKey": "clawhub-news-impact-analyzer",
+  "name": "news-impact-analyzer",
+  "summary": "Input news text and use an LLM to analyze its impact on stock market sectors and concepts (bullish/bearish/neutral) along with the underlying logic.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.news_impact_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fonilye",
+      "features": [
+        "Input news text and use an LLM to analyze its impact on stock market sectors and concepts (bull."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/news-impact-analyzer@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22760497?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "news-impact-analyzer",
+      "url": "https://clawhub.ai/skills/news-impact-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "news-impact-analyzer",
+    "url": "https://clawhub.ai/skills/news-impact-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/news-impact-analyzer-840f123453fd21b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/news-impact-analyzer@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-news-impact-analyzer-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68b8f500b7eb4c8d964f1fc5215a1125768210e6505e0ba1605e3fd82e258dd7",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T06:29:38.261Z"
+}

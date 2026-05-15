@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33735,
+  "uuid": "skill-clawhub-debate-learning-workflow",
+  "skillKey": "clawhub-debate-learning-workflow",
+  "name": "Debate Learning Workflow",
+  "summary": "Run evidence-backed multi-agent debates (A/B/Opponent3/Judge) with 20-40 rounds, loophole analysis, and universal actionable lesson extraction.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.debate_learning_workflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kdylan1010-alt",
+      "features": [
+        "Run evidence-backed multi-agent debates (A/B/Opponent3/Judge) with 20-40 rounds, loophole analy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/debate-learning-workflow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264438177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "debate-learning-workflow",
+      "url": "https://clawhub.ai/skills/debate-learning-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "debate-learning-workflow",
+    "url": "https://clawhub.ai/skills/debate-learning-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/debate-learning-workflow-0af69de747adb3ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/debate-learning-workflow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-debate-learning-workflow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26c6a4870e2e6f81d3f0090c3e8b791884cffaabc8a45c9dd397fd80edc768f0",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T13:51:43.431Z"
+}

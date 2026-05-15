@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19958,
+  "uuid": "skill-clawhub-discogs-sync",
+  "skillKey": "clawhub-discogs-sync",
+  "name": "Discogs Sync",
+  "summary": "Add and remove albums from a Discogs wantlist or collection by artist and album name, master ID, or release ID. Search marketplace pricing for vinyl, CD, and...",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discogs_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin Haney",
+      "features": [
+        "Add and remove albums from a Discogs wantlist or collection by artist and album name, master ID.",
+        "Search marketplace pricing for vinyl, CD, and..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/discogs-sync@0.1.10",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13684640?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "discogs-sync",
+      "url": "https://clawhub.ai/skills/discogs-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discogs-sync",
+    "url": "https://clawhub.ai/skills/discogs-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discogs-sync-2bd77ffe089cc778.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/discogs-sync@0.1.10",
+      "artifactUrl": "data/skills/artifacts/clawhub-discogs-sync-0.1.10.json",
+      "version": "0.1.10",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be9156bbb0523b414afccefabfd6662dbc581ae8397495d45c0a9062334a8134",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T17:14:26.740Z"
+}

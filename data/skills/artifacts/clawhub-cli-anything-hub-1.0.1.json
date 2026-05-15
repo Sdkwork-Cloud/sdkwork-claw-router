@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cli-anything-hub@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cli_anything_hub",
+  "skill": {
+    "id": 14145,
+    "skillKey": "clawhub-cli-anything-hub",
+    "name": "CLI-Hub Skill for CLI-Anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cli-anything-hub",
+    "url": "https://clawhub.ai/skills/cli-anything-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cli-anything-hub-4dfb0b86f983bb9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover agent-native CLIs for professional software. Access the live catalog to find tools for creative workflows, productivity, AI, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuh-yang",
+      "userId": "s178enm6rae73rdk156nrb9b6n83h8xn",
+      "displayName": "Yuhao",
+      "image": "https://avatars.githubusercontent.com/u/43330997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1156,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775836143610,
+      "changelog": "- Added \"Quick Start\" section with direct usage examples for installing and browsing CLIs.\n- Updated live catalog and web hub URLs to https://clianything.cc.\n- Introduced instructions for searching, installing, and viewing CLI details using the new cli-hub interface.\n- Explained how cli-hub wraps pip and manages CLI packages.\n- Refined usage steps and CLI installation commands to use cli-hub, improving clarity and onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2e88a9ec7106fec1c2d09f280ae23eee48d0238d9694503ec6c06a4c732b748"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/waifu-gen-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waifu_gen_skill",
+  "skill": {
+    "id": 43458,
+    "skillKey": "clawhub-waifu-gen-skill",
+    "name": "Waifu Gen Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waifu-gen-skill",
+    "url": "https://clawhub.ai/skills/waifu-gen-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waifu-gen-skill-ed642bcaa9cd9023.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate waifu generator ai images from text descriptions via the Neta AI image generation API (free trial at neta.art/open)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omactiengartelle",
+      "userId": "s1700se1ym0cqwmmannczhx57183gf78",
+      "displayName": "omactiengartelle",
+      "image": "https://avatars.githubusercontent.com/u/258436340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776091208216,
+      "changelog": "waifu-gen-skill 1.0.0\n\n- Initial release.\n- Generate waifu AI images from text descriptions using the Neta AI API.\n- Requires a free API token from neta.art/open.\n- Supports image size options: portrait, landscape, square, tall.\n- Optionally inherit style from a reference image using a UUID.\n- Includes simple Bash/Node.js usage instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfc0222d823e7d532966782a5e5442837d49435e26c9d3a59e663fefdb313740"
+}

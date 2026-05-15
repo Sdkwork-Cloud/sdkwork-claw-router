@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36986,
+  "uuid": "skill-clawhub-todo-accelerator",
+  "skillKey": "clawhub-todo-accelerator",
+  "name": "Todo Accelerator",
+  "summary": "Use when a user needs to add a new task or record a pending to-do item; when prompting an Agent to execute a pending task; during Agent heartbeat events to p...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todo_accelerator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liusining",
+      "features": [
+        "Use when a user needs to add a new task or record a pending to-do item",
+        "when prompting an Agent to execute a pending task",
+        "during Agent heartbeat events to p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todo-accelerator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20436146?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todo-accelerator",
+      "url": "https://clawhub.ai/skills/todo-accelerator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todo-accelerator",
+    "url": "https://clawhub.ai/skills/todo-accelerator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todo-accelerator-8ab330c1e7c05c4e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todo-accelerator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todo-accelerator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c6fd2dbd97074c835567c5018e8d7eb7b377843f688eb09f019e43a4b1afe30",
+      "artifactSizeBytes": 2386
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:52:46.632Z"
+}

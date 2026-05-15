@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/renesas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renesas",
+  "skill": {
+    "id": 68006,
+    "skillKey": "clawhub-renesas",
+    "name": "Renesas"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renesas",
+    "url": "https://clawhub.ai/skills/renesas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renesas-98e929c331516030.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "日本最大半导体公司，2024年营收约110亿美元，全球汽车MCU市场份额18%，产品广泛应用于汽车电子和工业自动化。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776842608080,
+      "changelog": "Renesas skill version 1.0.0 changelog:\n\n- Added detailed company summary, highlighting Renesas’ position as Japan's largest semiconductor firm with strong global rankings in MCU and automotive SoC markets.\n- Included comprehensive company history timeline from inception to 2024 product launches.\n- Provided structured analysis of key business segments: automotive MCU, industrial IoT, power semiconductors, and data center products.\n- Outlined core competitive advantages based on mergers, manufacturing, and customer lock-in.\n- Summarized essential company data: revenue, market share, factory count, and employee numbers.\n- Listed industry impact events and notable facts for context on Renesas’ global significance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:002024c844ef09e6ff400d5d1387a93c2288979d827b4efeaf504eb6347a0e24"
+}

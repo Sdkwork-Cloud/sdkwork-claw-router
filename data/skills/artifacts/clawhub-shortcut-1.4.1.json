@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shortcut@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortcut",
+  "skill": {
+    "id": 10950,
+    "skillKey": "clawhub-shortcut",
+    "name": "Shortcut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortcut",
+    "url": "https://clawhub.ai/skills/shortcut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortcut-8dfea6856769fb4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage stories on Shortcut.com kanban boards. Use when creating, updating, or listing tasks/stories on Shortcut project management boards. Supports creating stories with descriptions and types (feature/bug/chore), updating story status, an."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "catwalksophie",
+      "userId": "publishers:catwalksophie",
+      "displayName": "catwalksophie",
+      "image": "https://avatars.githubusercontent.com/u/257796352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2275,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1770542761309,
+      "changelog": "- Updated documentation in CHANGELOG.md, README.md, and SKILL.md.\n- Removed the file clawhub-submission.md.\n- Incremented version to 1.4.1.\n- No changes to implementation or features; this is strictly a documentation and cleanup update.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e422d938f3d21f1bf33ee3cd64d19c85ecb5a7cf79c81f74171bccaf9845fa65"
+}

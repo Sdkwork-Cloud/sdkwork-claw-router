@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33333,
+  "uuid": "skill-clawhub-supah-token-guardian",
+  "skillKey": "clawhub-supah-token-guardian",
+  "name": "SUPAH Token Guardian",
+  "summary": "Pre-trade token safety scanner for 21+ EVM chains. 6-layer deep scan: contract safety, liquidity health, deployer profiling, holder distribution, trading pat...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supah_token_guardian",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "supah-based",
+      "features": [
+        "Pre-trade token safety scanner for 21+ EVM chains",
+        "6-layer deep scan: contract safety, liquidity health, deployer profiling, holder distribution,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supah-token-guardian@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266382973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supah-token-guardian",
+      "url": "https://clawhub.ai/skills/supah-token-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supah-token-guardian",
+    "url": "https://clawhub.ai/skills/supah-token-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supah-token-guardian-f7c0d4321f9d66a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supah-token-guardian@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supah-token-guardian-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ede098f09616be2c46fcbf3b1a6ea8f9e316db39611f8edf38c29f5dbfe2f06e",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:01:39.437Z"
+}

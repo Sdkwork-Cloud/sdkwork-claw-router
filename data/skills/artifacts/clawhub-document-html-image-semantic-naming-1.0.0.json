@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/document-html-image-semantic-naming@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.document_html_image_semantic_naming",
+  "skill": {
+    "id": 67132,
+    "skillKey": "clawhub-document-html-image-semantic-naming",
+    "name": "文档转HTML图片语义命名技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "document-html-image-semantic-naming",
+    "url": "https://clawhub.ai/skills/document-html-image-semantic-naming",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/document-html-image-semantic-naming-f1d8576df4d6de4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "文档转 HTML 时的图片语义命名技能。用于把 doc/docx/pdf 等文档导出的 `image1`、`image2` 这类无语义图片，结合文档上下文与图片内容重新命名，并同步更新 HTML 引用与映射清单。适用于用户提到“文档转 html”“图片重命名”“导出图片没语义”“根据上下文给图片命名”“doc/p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tinglan803-coder",
+      "userId": "s17a6xte1jmw64ytkyd4dxb8wx83jby5",
+      "displayName": "tinglan803-coder",
+      "image": "https://avatars.githubusercontent.com/u/270914101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776759422626,
+      "changelog": "初始发布，实现文档转HTML时图片语义化命名与引用更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:03d8addbe44c7e3989a64cf40162b10360e4c40124afb7f6fccbd18375af9ad1"
+}

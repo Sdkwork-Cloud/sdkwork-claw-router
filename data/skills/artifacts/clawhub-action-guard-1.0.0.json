@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/action-guard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.action_guard",
+  "skill": {
+    "id": 32220,
+    "skillKey": "clawhub-action-guard",
+    "name": "Action Guard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "action-guard",
+    "url": "https://clawhub.ai/skills/action-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/action-guard-05e6ea194e86c9ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prevents duplicate external actions (posts, replies, sends, transfers, deploys). Check before acting, record after. Use when: (1) replying to social media po..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wrentheai",
+      "userId": "publishers:wrentheai",
+      "displayName": "wrentheai",
+      "image": "https://avatars.githubusercontent.com/u/257617545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773728182644,
+      "changelog": "Initial release. Universal dedup for AI agent external actions. Check before acting, record after.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2957d1b9bebbfe764c035ff608d027642cab789e39d41b03e884b88ab9c6956c"
+}

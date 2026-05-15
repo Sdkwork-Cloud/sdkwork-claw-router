@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16336,
+  "uuid": "skill-clawhub-websocket-hub-patterns",
+  "skillKey": "clawhub-websocket-hub-patterns",
+  "name": "Websocket Hub Patterns",
+  "summary": "Horizontally-scalable WebSocket hub pattern with lazy Redis subscriptions, connection registry, and graceful shutdown. Use when building real-time WebSocket servers that scale across multiple instances. Triggers on WebSocket hub, WebSocket.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.websocket_hub_patterns",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Horizontally-scalable WebSocket hub pattern with lazy Redis subscriptions, connection registry,.",
+        "Use when building real-time WebSocket servers that scale across multiple instances",
+        "Triggers on WebSocket hub, WebSocket scaling, connection registry, Redis WebSocket, real-time g."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/websocket-hub-patterns@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "websocket-hub-patterns",
+      "url": "https://clawhub.ai/skills/websocket-hub-patterns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "websocket-hub-patterns",
+    "url": "https://clawhub.ai/skills/websocket-hub-patterns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/websocket-hub-patterns-f1ed8c1bb19cee63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/websocket-hub-patterns@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-websocket-hub-patterns-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd276988901688434460ecc848ea96238d49b3a89f9c8a90fcc20a961fa3af32",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:22:04.655Z"
+}

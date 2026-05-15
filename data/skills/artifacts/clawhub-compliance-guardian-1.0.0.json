@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compliance-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compliance_guardian",
+  "skill": {
+    "id": 44369,
+    "skillKey": "clawhub-compliance-guardian",
+    "name": "Compliance Guardian"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compliance-guardian",
+    "url": "https://clawhub.ai/skills/compliance-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compliance-guardian-f94e145161b7cf16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tool for real estate agents to screen transactions, collect required FinCEN data, and track filing deadlines for residential property entity sales under FinC..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonbarnato",
+      "userId": "s177ckk7tk364qn2enrrr0es198469q3",
+      "displayName": "jonbarnato",
+      "image": "https://avatars.githubusercontent.com/u/269982131?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775325136473,
+      "changelog": "Initial publish — FinCEN compliance screening skill for real estate",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97ebbeb0d389ba0aefba9756bc11e800560490a3f8e2ea33fb09bea3a52741e9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22619,
+  "uuid": "skill-clawhub-podcast-manager",
+  "skillKey": "clawhub-podcast-manager",
+  "name": "Podcast Manager",
+  "summary": "Find, subscribe to, track, and summarize podcast episodes using public RSS feeds and lightweight local tracking files. Use when a user asks to add/manage pod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pp",
+      "features": [
+        "Find, subscribe to, track, and summarize podcast episodes using public RSS feeds and lightweigh.",
+        "Use when a user asks to add/manage pod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/podcast-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263042322?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "podcast-manager",
+      "url": "https://clawhub.ai/skills/podcast-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-manager",
+    "url": "https://clawhub.ai/skills/podcast-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-manager-489a24b67aea7488.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/podcast-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-podcast-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb99217f9c1b2274e8852d22c34838212ef6e21c51a0056d9c34b9ed42b36af3",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:52:40.419Z"
+}

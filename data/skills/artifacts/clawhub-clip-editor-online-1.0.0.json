@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clip-editor-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clip_editor_online",
+  "skill": {
+    "id": 55353,
+    "skillKey": "clawhub-clip-editor-online",
+    "name": "Clip Editor Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clip-editor-online",
+    "url": "https://clawhub.ai/skills/clip-editor-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clip-editor-online-c40a628b3ed66591.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the best parts, add transitions, and export as a short clip — and get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775960038024,
+      "changelog": "Initial release of Clip Editor Online — rapid AI-powered video editing and export via a simple chat-driven interface.\n\n- Instantly edit and export video clips by describing your desired edits; AI handles trimming, transitions, and export.\n- Supports MP4, MOV, AVI, WebM uploads up to 500MB; export as high-quality 1080p MP4.\n- No need for complex editing software or experience — ideal for quick content creation.\n- Built-in cloud render pipeline delivers results in 30-90 seconds.\n- Handles session management, credits, file uploads, state polling, and error messages seamlessly.\n- Clear guidance provided for common workflows, error handling, and supported formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b8776b0f72494685dc6b6e73c5f7bb2d409d8462ef82ce2ce7b8133e95988c63"
+}

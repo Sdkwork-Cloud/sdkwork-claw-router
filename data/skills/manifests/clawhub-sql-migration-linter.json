@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52473,
+  "uuid": "skill-clawhub-sql-migration-linter",
+  "skillKey": "clawhub-sql-migration-linter",
+  "name": "SQL Migration Linter",
+  "summary": "Lint .sql migration files for common mistakes — missing IF EXISTS guards, UPDATE/DELETE without WHERE, non-idempotent CREATE, missing transaction wrappers, r...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_migration_linter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Lint .sql migration files for common mistakes — missing IF EXISTS guards, UPDATE/DELETE without."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sql-migration-linter@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sql-migration-linter",
+      "url": "https://clawhub.ai/skills/sql-migration-linter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-migration-linter",
+    "url": "https://clawhub.ai/skills/sql-migration-linter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-migration-linter-124c4a759c0d740b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sql-migration-linter@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sql-migration-linter-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d8e8d36bdda3c8445995fb8a7bb02804b5d36c279b11abc3aecd6b8bc46ddec",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:59.959Z"
+}

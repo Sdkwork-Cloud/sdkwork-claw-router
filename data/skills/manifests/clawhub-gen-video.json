@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35688,
+  "uuid": "skill-clawhub-gen-video",
+  "skillKey": "clawhub-gen-video",
+  "name": "Gen Video",
+  "summary": "Build and execute skills.video video generation REST requests from OpenAPI specs. Use when user needs to create, debug, or document video generation calls on...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gen_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skills-video",
+      "features": [
+        "Build and execute skills.video video generation REST requests from OpenAPI specs",
+        "Use when user needs to create, debug, or document video generation calls on..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gen-video@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/gen-video/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gen-video",
+      "url": "https://clawhub.ai/skills/gen-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gen-video",
+    "url": "https://clawhub.ai/skills/gen-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gen-video-cd2df359f814960a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gen-video@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gen-video-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07fbde26eb8ee5a480d73088e6bb96f485070fa10399264e87c365f9dd919612",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:05:52.189Z"
+}

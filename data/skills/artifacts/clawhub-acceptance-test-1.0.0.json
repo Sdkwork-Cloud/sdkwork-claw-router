@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acceptance-test@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acceptance_test",
+  "skill": {
+    "id": 64303,
+    "skillKey": "clawhub-acceptance-test",
+    "name": "Acceptance Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acceptance-test",
+    "url": "https://clawhub.ai/skills/acceptance-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acceptance-test-93010c6cef995a52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "验收测试助手 - 验证系统是否满足业务需求，确保交付质量。 当用户需要以下功能时触发此skill： (1) 业务需求验证 (2) 用户场景测试 (3) 验收标准检查 (4) 客户验收支持 (5) 验收报告生成"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenmeng",
+      "userId": "s176scxxt9cxw1s0gqyexga8hd83qc4r",
+      "displayName": "shenmeng",
+      "image": "https://avatars.githubusercontent.com/u/6897076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 273,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775246259303,
+      "changelog": "Initial release of the acceptance-test skill.\n\n- 提供验收测试助手，支持需求验证、场景测试、验收检查及报告生成\n- 覆盖功能验证、边界与异常场景、性能及权限测试\n- 支持BDD/Gherkin用户场景、角色测试与权限验证\n- 涵盖验收流程：准入、执行、缺陷记录、签字确认和交付物管理\n- 可生成验收报告，包括通过率、风险、质量评估及改进建议\n- 提供标准命令行工作流示例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a839f0db786e0bc45d516f98ca983f5a3b825dc4c01c79ec18991de2919ab2b9"
+}

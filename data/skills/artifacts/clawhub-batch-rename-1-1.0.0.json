@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/batch-rename-1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_rename_1",
+  "skill": {
+    "id": 37148,
+    "skillKey": "clawhub-batch-rename-1",
+    "name": "batch-rename"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-rename-1",
+    "url": "https://clawhub.ai/skills/batch-rename-1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-rename-1-0477b46a88ba1555.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to batch rename multiple files at once. It handles various rename patterns including sequential numbering, find..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1227323804",
+      "userId": "s179076wkft49ej55j8g6bc50n83gvrv",
+      "displayName": "1227323804",
+      "image": "https://avatars.githubusercontent.com/u/43328708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775804804805,
+      "changelog": "- Major update with expanded batch renaming capabilities and pattern support.\n- Added new script (scripts/batch_rename.py) supporting sequential numbering, find/replace, prefix/suffix, regex, extension filtering, and recursive folder processing.\n- Enhanced documentation with detailed usage guides, argument references, workflow steps, and safety notes.\n- Removed old script and test files related to previous image and annotation renaming workflow.\n- Skill now responds to a wider variety of batch rename requests, including multi-language triggers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dd3b1a79050207c91badb2b4677708026b7b04be7784f31184bff0c5870b1bc"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66599,
+  "uuid": "skill-clawhub-xray-bazi",
+  "skillKey": "clawhub-xray-bazi",
+  "name": "Bazi",
+  "summary": "四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业分析。 Use this skill whenever the user asks for 八字、四柱、命理、算命、Bazi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xray_bazi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "四柱八字命理分析。通过交互式步骤收集出生信息（姓名、曾用名、阳历/农历生日、时辰、性别、出生地）， 排出四柱八字，参照经典命理典籍（穷通宝典、三命通会、滴天髓、渊海子平、子平真诠等）进行专业."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xray-bazi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xray-bazi",
+      "url": "https://clawhub.ai/skills/xray-bazi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xray-bazi",
+    "url": "https://clawhub.ai/skills/xray-bazi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xray-bazi-9625c431a1a94dee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xray-bazi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xray-bazi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65e6f01b8ec3074cc433a097bb1d2f1f9b4639861dae2ab749399de99c52182f",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:33:50.120Z"
+}

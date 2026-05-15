@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15220,
+  "uuid": "skill-clawhub-task-planning",
+  "skillKey": "clawhub-task-planning",
+  "name": "Task Planning",
+  "summary": "Plan and organize software development tasks effectively. Use when breaking down features, creating user stories, or planning sprints. Handles task breakdown...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_planning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YumoeZhung",
+      "features": [
+        "Plan and organize software development tasks effectively",
+        "Use when breaking down features, creating user stories, or planning sprints",
+        "Handles task breakdown..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-planning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49787045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-planning",
+      "url": "https://clawhub.ai/skills/task-planning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-planning",
+    "url": "https://clawhub.ai/skills/task-planning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-planning-cb9c2fd051b86584.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-planning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-planning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:578e804ea4b5f6d77358821fb438f1beaf7a8c034de62b2b15ed734197eca37e",
+      "artifactSizeBytes": 2267
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:50:23.363Z"
+}

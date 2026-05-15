@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44670,
+  "uuid": "skill-clawhub-pipelinelint",
+  "skillKey": "clawhub-pipelinelint",
+  "name": "pipelinelint",
+  "summary": "CI/CD pipeline anti-pattern analyzer -- detects hardcoded secrets, missing cache configs, skipped tests, unsafe deployments, no approval gates, and environme...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipelinelint",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "CI/CD pipeline anti-pattern analyzer -",
+        "detects hardcoded secrets, missing cache configs, skipped tests, unsafe deployments, no approva."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipelinelint@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipelinelint",
+      "url": "https://clawhub.ai/skills/pipelinelint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipelinelint",
+    "url": "https://clawhub.ai/skills/pipelinelint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipelinelint-9748e233b531928e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipelinelint@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipelinelint-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cec647e5a4ce989f23ee8ee4f08fac51cd8df4c109954cfd41c005a99254fd5d",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T10:08:24.215Z"
+}

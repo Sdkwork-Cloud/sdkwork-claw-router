@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17058,
+  "uuid": "skill-clawhub-notification",
+  "skillKey": "clawhub-notification",
+  "name": "Notification",
+  "summary": "Manage terminal notifications with scheduling, filtering, and delivery tracking. Use when sending alerts, filtering notifications, confirming delivery.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notification",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Manage terminal notifications with scheduling, filtering, and delivery tracking",
+        "Use when sending alerts, filtering notifications, confirming delivery."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notification@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notification",
+      "url": "https://clawhub.ai/skills/notification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notification",
+    "url": "https://clawhub.ai/skills/notification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notification-1242ab99f6773a84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notification@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-notification-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:621da5780fbbd84db65e1acb879b6815e9c9b5b40c83b8f192697cb5e34b3ac5",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:47:22.654Z"
+}

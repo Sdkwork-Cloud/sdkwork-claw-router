@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dropbox-lite@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropbox_lite",
+  "skill": {
+    "id": 11784,
+    "skillKey": "clawhub-dropbox-lite",
+    "name": "Clawdbot Skill Dropbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropbox-lite",
+    "url": "https://clawhub.ai/skills/dropbox-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropbox-lite-9cfb7352b617847d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload, download, and manage files in Dropbox with automatic OAuth token refresh."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thekie",
+      "userId": "publishers:thekie",
+      "displayName": "thekie",
+      "image": "https://avatars.githubusercontent.com/u/3187582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1801,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771002199491,
+      "changelog": "Fix: Declare required credentials (DROPBOX_APP_KEY, DROPBOX_APP_SECRET, DROPBOX_REFRESH_TOKEN) in package.json metadata",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:206b346da762903565a4f605f6692eec4081a05125aa2e2688400942c86359ee"
+}

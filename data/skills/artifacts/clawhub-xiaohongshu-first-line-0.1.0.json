@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-first-line@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_first_line",
+  "skill": {
+    "id": 60365,
+    "skillKey": "clawhub-xiaohongshu-first-line",
+    "name": "Xiaohongshu First Line"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-first-line",
+    "url": "https://clawhub.ai/skills/xiaohongshu-first-line",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-first-line-e4c9f0fcebfa50bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "「开口第一句」— 帮不擅长社交破冰的人，基于小红书公开内容找到共同兴趣、理解对方风格、生成自然不尬的第一句话。适合想扩展社交圈但不知道怎么自然开口的人。Use when: (1) user shares a xiaohongshu.com or xhslink.com URL and wants help cra..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isolcat",
+      "userId": "publishers:isolcat",
+      "displayName": "isolcat",
+      "image": "https://avatars.githubusercontent.com/u/76111612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773067527364,
+      "changelog": "xiaohongshu-first-line 0.1.0\n\n- Initial public release of a Xiaohongshu-specific social icebreaker skill.\n- Analyzes public Xiaohongshu profiles, bios, tags, and the first 5 posts to craft natural, interest-based opening messages.\n- Uses post content, comment tone, and profile style as evidence to suggest more personalized conversation starters.\n- Supports three intent modes: friendship, romance-leaning, and activity-partner.\n- Includes keyword-based discovery to help users find interesting people on Xiaohongshu and preview them visually.\n- Designed to reduce awkward, generic outreach and make the first message feel more natural, specific, and human.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0daead771f6b9c54f089c432aab58c60548be6e89b593c45a2339c016a36a75c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-stock-pattern-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_stock_pattern_review",
+  "skill": {
+    "id": 66656,
+    "skillKey": "clawhub-a-stock-pattern-review",
+    "name": "A Stock Pattern Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-stock-pattern-review",
+    "url": "https://clawhub.ai/skills/a-stock-pattern-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-stock-pattern-review-288a3a4d05d2c18c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供A股短线复盘框架，分析当天盘面、情绪周期、资金流向及主线，辅以明日操作预案和风险控制建议。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaobao666666666",
+      "userId": "s1765qeddzdkjnngv8ydc0pb71840b53",
+      "displayName": "xiaobao666666666",
+      "image": "https://avatars.githubusercontent.com/u/266047853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776782668643,
+      "changelog": "A股短线交易复盘框架上线\n\n- 提供A股盘面快速复盘结构，包括市场表现、情绪周期、主线资金与明日剧本。\n- 明确情绪周期4阶段，给出关键判断指标及操作建议。\n- 引入主线博弈、容量唯一性和流动性切换等核心理念。\n- 提供剧本化明日操作预案及风险控制清单。\n- 支持多数据源辅助分析与风控标准化。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:361eb5a37fa93750e392bee290e098ad9d9f64a040034d1b8353624a2f862a2b"
+}

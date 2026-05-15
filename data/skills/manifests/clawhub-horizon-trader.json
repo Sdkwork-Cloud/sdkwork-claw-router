@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15996,
+  "uuid": "skill-clawhub-horizon-trader",
+  "skillKey": "clawhub-horizon-trader",
+  "name": "Horizon SDK",
+  "summary": "v0.4.16 - Trade prediction markets (Polymarket, Kalshi) - positions, orders, risk management, Kelly sizing, wallet analytics, Monte Carlo, arbitrage, quantit...",
+  "version": "0.5.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.horizon_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jesus",
+      "features": [
+        "Trade prediction markets (Polymarket, Kalshi)",
+        "positions, orders, risk management, Kelly sizing, wallet analytics, Monte Carlo, arbitrage, qua."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/horizon-trader@0.5.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95700832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "horizon-trader",
+      "url": "https://clawhub.ai/skills/horizon-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "horizon-trader",
+    "url": "https://clawhub.ai/skills/horizon-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/horizon-trader-cff0ad85bd61bfec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/horizon-trader@0.5.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-horizon-trader-0.5.5.json",
+      "version": "0.5.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f89eaaf2f0b4deec9db8bc1313b23c9c54695afc281234ae28a351d70de56673",
+      "artifactSizeBytes": 2228
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T16:34:53.398Z"
+}

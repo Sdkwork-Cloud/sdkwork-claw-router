@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analyticlunch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analyticlunch",
+  "skill": {
+    "id": 41719,
+    "skillKey": "clawhub-analyticlunch",
+    "name": "AnalyticLunch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analyticlunch",
+    "url": "https://clawhub.ai/skills/analyticlunch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analyticlunch-74b153516892e11d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query live traffic data, tracking links, and weekly reports from AnalyticLunch"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dandyer",
+      "userId": "s174k7k8y4h8g5xerq5q7n5jtx83nbs3",
+      "displayName": "dandyer",
+      "image": "https://avatars.githubusercontent.com/u/298921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495727127,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09a827bf5044fe98f574ea2c7cd676bb007e3a50a42f153489d76f8bfd0cea4c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62102,
+  "uuid": "skill-clawhub-ai-meeting-helper",
+  "skillKey": "clawhub-ai-meeting-helper",
+  "name": "Ai Meeting Helper",
+  "summary": "会议纪要生成器 - 自动将会议录音转为结构化纪要",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utopiabenben",
+      "features": [
+        "自动将会议录音转为结构化纪要"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-meeting-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19267750?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-meeting-helper",
+      "url": "https://clawhub.ai/skills/ai-meeting-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-helper",
+    "url": "https://clawhub.ai/skills/ai-meeting-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-helper-e5472bdfd04bacc3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-meeting-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-meeting-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:189eec898fdb95ecff6d8bc67f608a0537a9c6555640f358a7deb32cca3a20ab",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T19:06:49.134Z"
+}

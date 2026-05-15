@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17219,
+  "uuid": "skill-clawhub-weibo-publisher",
+  "skillKey": "clawhub-weibo-publisher",
+  "name": "Weibo Publisher",
+  "summary": "Publish posts to Weibo (Sina Weibo) using browser automation. Use when the user wants to post content to Weibo, share updates on Weibo, publish microblogs, o...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_publisher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azfliao",
+      "features": [
+        "Publish posts to Weibo (Sina Weibo) using browser automation",
+        "Use when the user wants to post content to Weibo, share updates on Weibo, publish microblogs, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weibo-publisher@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4294766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weibo-publisher",
+      "url": "https://clawhub.ai/skills/weibo-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-publisher",
+    "url": "https://clawhub.ai/skills/weibo-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-publisher-5028789fc2af0e81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weibo-publisher@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weibo-publisher-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe3ad8791c25b03196acce08bbbbc52e13cc8605c241fa1bb705489a517316cd",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T07:17:00.780Z"
+}

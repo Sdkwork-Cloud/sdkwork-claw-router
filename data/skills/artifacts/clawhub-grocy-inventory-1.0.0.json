@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grocy-inventory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grocy_inventory",
+  "skill": {
+    "id": 18432,
+    "skillKey": "clawhub-grocy-inventory",
+    "name": "Grocy Inventory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grocy-inventory",
+    "url": "https://clawhub.ai/skills/grocy-inventory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grocy-inventory-c396083e42f1194a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Grocy inventory, shopping list, batteries, and barcodes. Use when user wants to: (1) Check what's in their fridge/pantry, (2) See expiring products, (..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "septianw",
+      "userId": "s172xkyzsz5d9b3rzya0tcgt9983mgz4",
+      "displayName": "septianw",
+      "image": "https://avatars.githubusercontent.com/u/512494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 581,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772678499318,
+      "changelog": "Initial release – manage your Grocy inventory and batteries with essential endpoints.\n\n- Check fridge or pantry stock via the Grocy API.\n- Find and manage products using barcodes (lookup, consume, open, transfer).\n- View and track rechargeable battery status and charging.\n- Example curl commands provided for all supported actions.\n- Connects to a local Grocy instance at http://localhost:14611.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f7738793a00641b7ee8ec8f943e9555e2f637cb33e251fa5d653d7c5c83d5179"
+}

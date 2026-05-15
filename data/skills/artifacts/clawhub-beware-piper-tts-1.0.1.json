@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beware-piper-tts@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beware_piper_tts",
+  "skill": {
+    "id": 15541,
+    "skillKey": "clawhub-beware-piper-tts",
+    "name": "Piper TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beware-piper-tts",
+    "url": "https://clawhub.ai/skills/beware-piper-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beware-piper-tts-55db4e633ca4b277.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local text-to-speech using Piper for voice message delivery. Use when the user asks for voice responses, audio messages, TTS, text-to-speech, voice notes, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bewareofddog",
+      "userId": "publishers:bewareofddog",
+      "displayName": "bewareofddog",
+      "image": "https://avatars.githubusercontent.com/u/261640819?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 998,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771746011510,
+      "changelog": "No code or documentation changes detected.\n\n- Version bump only; no functional or content updates in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:36b4f072f2106a41ea31a4c4bacfa628c4bd261545bc6e896c95e29db019dab0"
+}

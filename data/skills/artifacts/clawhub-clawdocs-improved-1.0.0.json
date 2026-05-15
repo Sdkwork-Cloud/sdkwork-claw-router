@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdocs-improved@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdocs_improved",
+  "skill": {
+    "id": 16267,
+    "skillKey": "clawhub-clawdocs-improved",
+    "name": "Clawdocs Improved"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdocs-improved",
+    "url": "https://clawhub.ai/skills/clawdocs-improved",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdocs-improved-87eae531545c8b96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw documentation expert with config references, errata tracking, search scripts, and decision tree navigation"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sallvainian",
+      "userId": "publishers:sallvainian",
+      "displayName": "Frank",
+      "image": "https://avatars.githubusercontent.com/u/171521906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 886,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771793178484,
+      "changelog": "clawdocs-improved 1.0.0\n\n- Introduced an OpenClaw documentation expert skill with structured config references, errata tracking, and built-in search/fetch scripts.\n- Added a cross-referenced, category-based workflow for accurate configuration help and troubleshooting.\n- Implemented a critical validation process, directing users to check errata and validate configuration changes via log inspection.\n- Provided detailed decision trees, category mapping, and command-line search script usage for efficient doc navigation.\n- Included quick access to validated config snippets and guidelines for citing authoritative sources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:028d5898920d75d86596f23aec7e26f222dcc5a2c70b63a297403f48ababa38c"
+}

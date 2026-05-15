@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-updater-bak-2026-01-28t18-01-13-10-30@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_updater_bak_2026_01_28t18_01_13_10_30",
+  "skill": {
+    "id": 12022,
+    "skillKey": "clawhub-auto-updater-bak-2026-01-28t18-01-13-10-30",
+    "name": "Auto Updater.Bak 2026 01 28T18:01:13+10:30"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-updater-bak-2026-01-28t18-01-13-10-30",
+    "url": "https://clawhub.ai/skills/auto-updater-bak-2026-01-28t18-01-13-10-30",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-updater-bak-2026-01-28t18-01-13-10-30-40e5c073ac3b0697.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically update Clawdbot and all installed skills once daily. Runs via cron, checks for updates, applies them, and messages the user with a summary of what changed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicoataiza",
+      "userId": "publishers:nicoataiza",
+      "displayName": "nicoataiza",
+      "image": "https://avatars.githubusercontent.com/u/65964857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1823,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769585529731,
+      "changelog": "Auto-Updater skill initial release.\n\n- Automatically checks for and applies updates to Clawdbot and all installed skills once per day via cron.\n- Sends a summary message detailing which components were updated and their new versions.\n- Provides quick setup instructions and manual cron configuration options.\n- Includes troubleshooting steps and commands for managing updates and cron jobs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72dccf1992437c0f8850f301dd26acfb760538a15e8e0330083966f5aa6a2006"
+}

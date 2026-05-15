@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10574,
+  "uuid": "skill-clawhub-pocket-tts",
+  "skillKey": "clawhub-pocket-tts",
+  "name": "Pocket Tts",
+  "summary": "Generate high-quality English speech offline on CPU using 8 built-in voices or custom voice cloning with Kyutai's Pocket TTS model.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pocket_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sherajdev",
+      "features": [
+        "Generate high-quality English speech offline on CPU using 8 built-in voices or custom voice clo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pocket-tts@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/228158241?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pocket-tts",
+      "url": "https://clawhub.ai/skills/pocket-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pocket-tts",
+    "url": "https://clawhub.ai/skills/pocket-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pocket-tts-48ea68510ac72028.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pocket-tts@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pocket-tts-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81f80bce9fe0c37e6d050614c672e1fc81b57d35b220f06ae1d9cf1ab539ef1a",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-16T13:08:05.036Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19343,
+  "uuid": "skill-clawhub-vouch-cli",
+  "skillKey": "clawhub-vouch-cli",
+  "name": "Vouch",
+  "summary": "Signs, verifies, and manages cryptographic identity for AI agents using the Vouch CLI on Base. Use when an agent needs to: set up identity and register an ac...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vouch_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jack Morgan",
+      "features": [
+        "Signs, verifies, and manages cryptographic identity for AI agents using the Vouch CLI on Base",
+        "Use when an agent needs to: set up identity and register an ac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vouch-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66273764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vouch-cli",
+      "url": "https://clawhub.ai/skills/vouch-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vouch-cli",
+    "url": "https://clawhub.ai/skills/vouch-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vouch-cli-5a9c0f1a33871b73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vouch-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vouch-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:972e3f7e4f487a15b68fed30433105aabba68d6fdb4ee435a2df83886dbeff80",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T21:46:07.414Z"
+}

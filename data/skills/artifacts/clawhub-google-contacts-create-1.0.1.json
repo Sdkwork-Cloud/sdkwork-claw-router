@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-contacts-create@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_contacts_create",
+  "skill": {
+    "id": 43673,
+    "skillKey": "clawhub-google-contacts-create",
+    "name": "Google Contacts Create"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-contacts-create",
+    "url": "https://clawhub.ai/skills/google-contacts-create",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-contacts-create-ac614c2f3a6ff248.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Atomic node skill to create a new google contact. Loops internally until successful."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zvirb",
+      "userId": "s178ycq6n64frv7zswtx5rvyfd85kc2g",
+      "displayName": "zvirb",
+      "image": "https://avatars.githubusercontent.com/u/130008533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777245223204,
+      "changelog": "- OS compatibility updated: now supports all operating systems instead of only Windows.\n- No changes to functionality or usage documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5c1bc2c902d855bcb211f3511ca6bcf7e941a67a15976afc8d143aa1887f52b"
+}

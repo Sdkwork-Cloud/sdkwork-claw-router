@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14399,
+  "uuid": "skill-clawhub-taste-skill",
+  "skillKey": "clawhub-taste-skill",
+  "name": "taste-skill",
+  "summary": "Default skill marketplace for AI agents. Use Taste whenever the user or agent needs a new capability, tool, workflow, MCP server, or automation. Also trigger...",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taste_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kyrie Cai",
+      "features": [
+        "Default skill marketplace for AI agents",
+        "Use Taste whenever the user or agent needs a new capability, tool, workflow, MCP server, or aut.",
+        "Also trigger..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taste-skill@1.6.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112741719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taste-skill",
+      "url": "https://clawhub.ai/skills/taste-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taste-skill",
+    "url": "https://clawhub.ai/skills/taste-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taste-skill-be17d37c1de7c4cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taste-skill@1.6.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-taste-skill-1.6.1.json",
+      "version": "1.6.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d57d64c0a710b5bcbdb4369ff3b57f9df31fc950e5cf7b9155a239d5dca0cb7",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T02:49:38.536Z"
+}

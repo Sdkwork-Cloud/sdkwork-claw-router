@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25027,
+  "uuid": "skill-clawhub-agent-skill-publisher",
+  "skillKey": "clawhub-agent-skill-publisher",
+  "name": "skill-publisher",
+  "summary": "End-to-end workflow for publishing agent skills to GitHub, ClawdHub, and skills.sh. Handles repo creation, topic tagging, ClawdHub publish, skills.sh index r...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_skill_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bryant24hao",
+      "features": [
+        "End-to-end workflow for publishing agent skills to GitHub, ClawdHub, and skills.sh",
+        "Handles repo creation, topic tagging, ClawdHub publish, skills.sh index r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-skill-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17765408?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-skill-publisher",
+      "url": "https://clawhub.ai/skills/agent-skill-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-skill-publisher",
+    "url": "https://clawhub.ai/skills/agent-skill-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-skill-publisher-69a380b6f50bb800.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-skill-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-skill-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b1df2bf757d92d1cb01ef593b76ebf8dbee84bb09e5206b1e41e11bae496378",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:13:24.756Z"
+}

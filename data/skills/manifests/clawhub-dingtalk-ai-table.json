@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59021,
+  "uuid": "skill-clawhub-dingtalk-ai-table",
+  "skillKey": "clawhub-dingtalk-ai-table",
+  "name": "Dingtalk Ai Table",
+  "summary": "钉钉 AI 表格（多维表）操作技能。使用 mcporter CLI 连接钉钉官方新版 AI 表格 MCP server，基于 baseId / tableId / fieldId / recordId 体系执行 Base、Table、Field、Record 的查询与增删改。适用于创建 AI 表格、搜索表格、读取...",
+  "version": "0.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_ai_table",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marila Wang",
+      "features": [
+        "钉钉 AI 表格（多维表）操作技能。使用 mcporter CLI 连接钉钉官方新版 AI 表格 MCP server，基于 baseId / tableId / fieldId / rec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dingtalk-ai-table@0.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8380339?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dingtalk-ai-table",
+      "url": "https://clawhub.ai/skills/dingtalk-ai-table"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-ai-table",
+    "url": "https://clawhub.ai/skills/dingtalk-ai-table",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-ai-table-e56541c8f1930ee8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dingtalk-ai-table@0.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dingtalk-ai-table-0.6.0.json",
+      "version": "0.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5fd83c1f5bea6f0e0eb95ff0152aceef4850a325ff10eba97fff66db47c2e239",
+      "artifactSizeBytes": 2151
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T14:16:36.414Z"
+}

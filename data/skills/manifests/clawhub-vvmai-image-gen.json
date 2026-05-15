@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23464,
+  "uuid": "skill-clawhub-vvmai-image-gen",
+  "skillKey": "clawhub-vvmai-image-gen",
+  "name": "VVMAI Image Generator",
+  "summary": "Generate images via VVMAI's OpenAI-compatible Images API. Supports nano-banana and gpt-image model series. Default model is nano-banana-pro. Images are NOT s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvmai_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vvmai",
+      "features": [
+        "Generate images via VVMAI's OpenAI-compatible Images API",
+        "Supports nano-banana and gpt-image model series",
+        "Default model is nano-banana-pro",
+        "Images are NOT s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vvmai-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128909761?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vvmai-image-gen",
+      "url": "https://clawhub.ai/skills/vvmai-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvmai-image-gen",
+    "url": "https://clawhub.ai/skills/vvmai-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvmai-image-gen-ab2857b19f80b846.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vvmai-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vvmai-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:612dcc05c8f0629bcccba401fc1ad2645696c695a65cbb8400f8105b29823c38",
+      "artifactSizeBytes": 2136
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:44:07.729Z"
+}

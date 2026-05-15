@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmdlogger@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmdlogger",
+  "skill": {
+    "id": 17211,
+    "skillKey": "clawhub-cmdlogger",
+    "name": "Pywayne Bin Cmdlogger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmdlogger",
+    "url": "https://clawhub.ai/skills/cmdlogger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmdlogger-918d379ffcd77160.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute commands with real-time console output while logging all stdin, stdout, and stderr to a customizable log file for monitoring and debugging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 803,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771106059624,
+      "changelog": "Initial release of cmdlogger: record and forward full I/O for any command.\n\n- Logs stdin, stdout, and stderr to a file with real-time console output.\n- Supports custom log file locations via --log-path.\n- Distinguishes input, output, and error streams in log with clear prefixes.\n- Enables full command execution tracing for debugging, builds, CI/CD, or monitoring.\n- Caution: logs all user input, including sensitive data, for interactive commands.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ddbadda3aba3db6ec3f755aea5bd83feecf94e91b32002930961d6da887fc0b"
+}

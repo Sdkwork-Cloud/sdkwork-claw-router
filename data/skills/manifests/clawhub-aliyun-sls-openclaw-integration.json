@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44723,
+  "uuid": "skill-clawhub-aliyun-sls-openclaw-integration",
+  "skillKey": "clawhub-aliyun-sls-openclaw-integration",
+  "name": "Aliyun Sls Openclaw Integration",
+  "summary": "Use when the user needs to integrate OpenClaw with Alibaba Cloud SLS/Observability, including collector setup, machine groups, indexes, dashboards, collectio...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_sls_openclaw_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Use when the user needs to integrate OpenClaw with Alibaba Cloud SLS/Observability, including c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-sls-openclaw-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-sls-openclaw-integration",
+      "url": "https://clawhub.ai/skills/aliyun-sls-openclaw-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-sls-openclaw-integration",
+    "url": "https://clawhub.ai/skills/aliyun-sls-openclaw-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-sls-openclaw-integration-f9134862c5a97dce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-sls-openclaw-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-sls-openclaw-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b80ea7d6c802f7adea8db0f5ea7a5c70bd4e3c1ee53356459c08eb5e9853e1f",
+      "artifactSizeBytes": 2566
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T02:20:28.193Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reducing-entropy@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reducing_entropy",
+  "skill": {
+    "id": 16410,
+    "skillKey": "clawhub-reducing-entropy",
+    "name": "Reducing Entropy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reducing-entropy",
+    "url": "https://clawhub.ai/skills/reducing-entropy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reducing-entropy-1c79e2f1e62e0f3a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Minimize total codebase size through ruthless simplification. Measure success by final code amount, not effort. Bias toward deletion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 890,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770729989918,
+      "changelog": "Initial release of the reducing-entropy skill, focused on minimizing codebase size and complexity.\n\n- Defines a ruthless simplification mindset for code reviews, refactoring, and feature addition.\n- Outlines a practical checklist and core questions to ensure code reduction.\n- Provides guidance for deleting unnecessary abstractions, files, and code.\n- Includes red flags for common rationalizations that increase entropy.\n- Offers a clear \"never do\" list and actionable quick wins for typical over-complexity patterns.\n- Integrates philosophical references and mindsets to guide decision-making.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6acaf39e0c4a5ad5eada219af761d21908d416634bfbb365f2aa4f8ee8107c8a"
+}

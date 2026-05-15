@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ace-competitions@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ace_competitions",
+  "skill": {
+    "id": 42622,
+    "skillKey": "clawhub-ace-competitions",
+    "name": "Ace Competitions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ace-competitions",
+    "url": "https://clawhub.ai/skills/ace-competitions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ace-competitions-251a035d40396782.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ace competitions agent workflow - search, enter, track competitions. Uses browser automation for form filling, email verification, and competition entry. Int..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stefanferreira",
+      "userId": "s174f5nq8v4pyqpbz80b1gew5d83pkm9",
+      "displayName": "stefanferreira",
+      "image": "https://avatars.githubusercontent.com/u/6356549?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775805246082,
+      "changelog": "Initial release – automates the process of finding, entering, and tracking online competitions via browser automation and dashboard integration.\n\n- Daily automated discovery of high-value competitions from multiple sources.\n- Automated entry process with browser automation, email verification, and entry data management.\n- Comprehensive tracking system with a dashboard, status updates (identified, entered, won, lost, pending), and scheduled cron jobs.\n- Integration with Mission Control for real-time competition stats and progress monitoring.\n- Robust error handling and recovery procedures for issues like CAPTCHAs and form failures.\n- Clear data management, backup routines, and communication protocols with team members.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbd5b7ed77f4d0c6a0446497e9ede96d2417cf8c48068b0bed93097a27780c04"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hk-school-selection@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hk_school_selection",
+  "skill": {
+    "id": 64897,
+    "skillKey": "clawhub-hk-school-selection",
+    "name": "Hk School Selection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hk-school-selection",
+    "url": "https://clawhub.ai/skills/hk-school-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hk-school-selection-9be39fa858b51304.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全方位的香港中小學選校指導技能，涵蓋 512 所學校數據、Banding 分析、升中派位流程、一條龍資訊、不會粵語選校策略等。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wuchenyao-tx",
+      "userId": "s17ds1kwkwa7nkp5r8m9ezmhb1858g22",
+      "displayName": "wuchenyao-tx",
+      "image": "https://avatars.githubusercontent.com/u/267227515?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776791290565,
+      "changelog": "hk-school-selection 1.1.0 introduces enhanced data transparency.\n\n- Added schools.json as a structured school database.\n- Included verification_report.md to improve data reliability and transparency.\n- Updated README.md and SKILL.md with a clear, prominent data accuracy disclaimer and usage guidance.\n- No changes to core features or school selection logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef971ab6532eeae9d2729c4c7645491156464886a6d9a7966be2314685da462b"
+}

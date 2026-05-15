@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10111,
+  "uuid": "skill-clawhub-chrome-devtools",
+  "skillKey": "clawhub-chrome-devtools",
+  "name": "Chrome Devtools",
+  "summary": "Uses Chrome DevTools via MCP for efficient debugging, troubleshooting and browser automation. Use when debugging web pages, automating browser interactions,...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_devtools",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "podcasting101",
+      "features": [
+        "Uses Chrome DevTools via MCP for efficient debugging, troubleshooting and browser automation",
+        "Use when debugging web pages, automating browser interactions,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-devtools@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221718719?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-devtools",
+      "url": "https://clawhub.ai/skills/chrome-devtools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-devtools",
+    "url": "https://clawhub.ai/skills/chrome-devtools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-devtools-6715690dc54ce31d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-devtools@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-devtools-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbedd743c0ee3b006e3a6e7405ea5c8f8629bc431f6b4133a2569def0e1fefe0",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T16:16:34.350Z"
+}

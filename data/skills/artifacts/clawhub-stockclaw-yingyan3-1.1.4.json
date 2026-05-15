@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stockclaw-yingyan3@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockclaw_yingyan3",
+  "skill": {
+    "id": 62483,
+    "skillKey": "clawhub-stockclaw-yingyan3",
+    "name": "股票量化助手，可以获取个股择时量化图，个股行情分析，监控股买卖点变化通知。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockclaw-yingyan3",
+    "url": "https://clawhub.ai/skills/stockclaw-yingyan3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockclaw-yingyan3-43dd0b2608e5c6c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为该股票量化项目提供 OpenClaw 接入说明，支持股票量化图生成、股票行情问答、自然语言 AI 搜股与 WebSocket 实时监控信号推送。凭证须从与本 Skill 同目录的 config.json 中 openclawCredentials 读取：user_id 与 openClaw_api_key 为必..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "woshixihongtu-cyber",
+      "userId": "s17ah1z7p795zzgh5ca8n1pz4s83hy9w",
+      "displayName": "woshixihongtu-cyber",
+      "image": "https://avatars.githubusercontent.com/u/244276180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 378,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1774759458219,
+      "changelog": "stockclaw-yingyan3 1.1.4\n\n- 明确区分并支持两套接口凭证：user_id + openClaw_api_key（用于HTTP请求，必填）、monitor_api_key（仅WebSocket监控，选填）。\n- 凭证管理逻辑优化：首次配置或用户主动更换时写回 config.json，已配置有效时禁止重复索要。\n- 增加对 WebSocket 监控场景下凭证缺失、类型混淆的独立友好提示，引导用户区分监控Key与OpenClaw Key。\n- 详细规范 HTTP与WS调参规则、配置优先级和字段名称映射，避免凭证混用。\n- 统一接口请求示例，强调各凭证作用及结构体字段格式。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eeadefbdfa87a4950253df4454a9e50311efa952ea8fd9a1e6692ca50d0cf05f"
+}

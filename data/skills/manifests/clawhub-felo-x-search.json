@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19266,
+  "uuid": "skill-clawhub-felo-x-search",
+  "skillKey": "clawhub-felo-x-search",
+  "name": "Felo X Search",
+  "summary": "Search X (Twitter) data using Felo X Search API. Use when users ask about X/Twitter users, tweets, trending topics on X, tweet replies, or when explicit comm...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.felo_x_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangzhiming",
+      "features": [
+        "Search X (Twitter) data using Felo X Search API",
+        "Use when users ask about X/Twitter users, tweets, trending topics on X, tweet replies, or when."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/felo-x-search@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48944224?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "felo-x-search",
+      "url": "https://clawhub.ai/skills/felo-x-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "felo-x-search",
+    "url": "https://clawhub.ai/skills/felo-x-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/felo-x-search-53b038403e12d579.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/felo-x-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-felo-x-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d97938c1b9902f635de416bd14ce12a7aa68aef2d0012d40a21ade196f25f2cb",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:28:13.508Z"
+}

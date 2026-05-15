@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61122,
+  "uuid": "skill-clawhub-ai-cost-optimizer-cn",
+  "skillKey": "clawhub-ai-cost-optimizer-cn",
+  "name": "Ai Cost Optimizer",
+  "summary": "AI 模型成本优化器 - 自动计算 API 费用，推荐最优模型，对比 DeepSeek/智谱/通义/GPT 成本。省钱必备工具。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_cost_optimizer_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "AI 模型成本优化器",
+        "自动计算 API 费用，推荐最优模型，对比 DeepSeek/智谱/通义/GPT 成本。省钱必备工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-cost-optimizer-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-cost-optimizer-cn",
+      "url": "https://clawhub.ai/skills/ai-cost-optimizer-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-cost-optimizer-cn",
+    "url": "https://clawhub.ai/skills/ai-cost-optimizer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-cost-optimizer-cn-5a59bf4c5a75823f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-cost-optimizer-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-cost-optimizer-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdfadbbd30c75176b2b854456407cc649e3b010a27638498d1ccafc9fbcc3de0",
+      "artifactSizeBytes": 2401
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T18:44:00.866Z"
+}

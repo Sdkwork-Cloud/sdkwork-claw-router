@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "meat-pollutant-check",
+    "displayName": "meatpollutant牛羊肉罐头污染物超标判定",
+    "summary": "依据GB 5009.5-2025第一法凯氏定氮法，指导畜禽肉蛋白质含量测定全流程，涵盖试剂配制、消解蒸馏、滴定操作及结果计算；当用户需要检测肉类蛋白质、执行凯氏定氮实验、计算蛋白质含量或验证精密度时使用",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1776334761045,
+    "updatedAt": 1777527607108
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1776336126687,
+    "changelog": "**Skill updated to focus on meat protein determination via Kjeldahl method (GB 5009.5-2025):**\n\n- Added guidance for conducting Kjeldahl protein tests in meat per GB 5009.5-2025, covering sample prep, reagent setup, digestion, distillation, titration, and result calculation.\n- Calculation and workflow references moved to new files: `references/kjeldahl-procedure.md` and `scripts/calculate_protein.py`.\n- Removed previous focus on canned meat pollutant/additive limits and associated files.\n- Updated instructions provide detailed stepwise protocol and direct invocation of calculation script for result output and precision verification.\n- Includes comprehensive safety and method notes; references and commands are linked directly to new resource files.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "cloudyxuq",
+    "userId": "s1705xx83pwxdyafv3n4m2r8s183m72a",
+    "displayName": "Tinker",
+    "image": "https://avatars.githubusercontent.com/u/3884483?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527607108
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10544,
+  "uuid": "skill-clawhub-mcp-client",
+  "skillKey": "clawhub-mcp-client",
+  "name": "Mcp Client",
+  "summary": "Model Context Protocol (MCP) client - connect to tools, data sources and services",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_client",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ivan Cetta",
+      "features": [
+        "Model Context Protocol (MCP) client",
+        "connect to tools, data sources and services"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-client@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2672456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-client",
+      "url": "https://clawhub.ai/skills/mcp-client"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-client",
+    "url": "https://clawhub.ai/skills/mcp-client",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-client-f2d6b223bec6c1a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-client@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-client-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d9d3a35dacf43e38eeb8632500bf58f600fc4d99d6609e09d1b272428fc6a83",
+      "artifactSizeBytes": 1792
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:12:52.794Z"
+}

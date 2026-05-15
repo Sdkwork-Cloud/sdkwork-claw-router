@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47927,
+  "uuid": "skill-clawhub-yihui-session-logs",
+  "skillKey": "clawhub-yihui-session-logs",
+  "name": "Session Logs (YiHui)",
+  "summary": "Search and analyze your own session logs (older/parent conversations) using jq.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yihui_session_logs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "辉哥",
+      "features": [
+        "Search and analyze your own session logs (older/parent conversations) using jq."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yihui-session-logs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/197358991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yihui-session-logs",
+      "url": "https://clawhub.ai/skills/yihui-session-logs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yihui-session-logs",
+    "url": "https://clawhub.ai/skills/yihui-session-logs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yihui-session-logs-5930de0880d222fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yihui-session-logs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yihui-session-logs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72f2dd4f2d12183b22d98fa2d0f28bdb8138e2da236d8aa40ebda2b62fbdc476",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T07:28:52.142Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/302ai-api-integration-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.302ai_api_integration_skill",
+  "skill": {
+    "id": 37890,
+    "skillKey": "clawhub-302ai-api-integration-skill",
+    "name": "302ai Api Integration Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "302ai-api-integration-skill",
+    "url": "https://clawhub.ai/skills/302ai-api-integration-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/302ai-api-integration-skill-f9ba71b0e604c9a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ALWAYS use this skill when user needs ANY API functionality (AI models, image generation, video, audio, text processing, etc.). Automatically search 302.AI's..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sharkqwy",
+      "userId": "s1739x1h6640krjk6m5eh6nayn846pa1",
+      "displayName": "sharkqwy",
+      "image": "https://avatars.githubusercontent.com/u/1372795?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775317429574,
+      "changelog": "Initial release of the 302ai-api-integration-skill:\n\n- Provides step-by-step guidance for integrating any of 302.AI's 1400+ APIs.\n- Proactively assists users with API search, selection, and code generation for any AI or API integration request.\n- Requires and manages 302.AI unified API Key from users.\n- Supplies detailed workflow for identifying needs, searching APIs using scripts, retrieving documentation, and generating ready-to-use code.\n- Supports multiple categories: language, image, video, audio, information processing, management, and tools.\n- Enforces best practices for code, API Key security, and error handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2d8d053d845d1c095b999de1a4a4c1fd664c92ae1da564fad7d38f05b6ae04b"
+}

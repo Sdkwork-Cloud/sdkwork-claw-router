@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56056,
+  "uuid": "skill-clawhub-mergeiq",
+  "skillKey": "clawhub-mergeiq",
+  "name": "MergeIQ: Automatically Score & Prioritise PR Complexity for GitLab and GitHub",
+  "summary": "Score the complexity of any GitLab MR or GitHub PR using a 4-dimension framework: Size (20%), Cognitive Load (30%), Review Effort (30%), and Risk/Impact (20%...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mergeiq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "larryfang",
+      "features": [
+        "Score the complexity of any GitLab MR or GitHub PR using a 4-dimension framework: Size (20%), C."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mergeiq@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/672772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mergeiq",
+      "url": "https://clawhub.ai/skills/mergeiq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mergeiq",
+    "url": "https://clawhub.ai/skills/mergeiq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mergeiq-1bf4ca1fe779dff9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mergeiq@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mergeiq-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9ca4ef1bc3da604e067425dd652fae7e02545f3e9c4be68cfee5c5ed142327e",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T05:58:19.806Z"
+}

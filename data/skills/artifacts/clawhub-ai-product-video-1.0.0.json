@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-product-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_product_video",
+  "skill": {
+    "id": 38443,
+    "skillKey": "clawhub-ai-product-video",
+    "name": "Ai Product Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-product-video",
+    "url": "https://clawhub.ai/skills/ai-product-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-product-video-2e89bcade59ce9bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn three product photos and a logo into 1080p polished product videos just by typing what you need. Whether it's creating product showcase videos from phot..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776627697937,
+      "changelog": "- Initial release of AI Product Video v1.0.0.\n- Instantly creates polished 1080p product videos from user photos and a logo; no timeline or export settings required.\n- Seamless cloud-based workflow: upload images, describe your desired result, and receive a rendered video in 1-2 minutes.\n- Built-in credits system with starter token support for new users.\n- Supports multiple common formats for video and images (mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac).\n- Clear error handling, session management, and guided interactions for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c45791a018c35a74e56f88fdc17df6227a7379e8b1cab14f3c832dc746cf70bc"
+}

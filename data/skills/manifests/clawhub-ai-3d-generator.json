@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57408,
+  "uuid": "skill-clawhub-ai-3d-generator",
+  "skillKey": "clawhub-ai-3d-generator",
+  "name": "Ai 3d Generator",
+  "summary": "Génère automatiquement des modèles 3D paramétriques détaillés en Python/Trimesh à partir de descriptions textuelles, avec export STL optimisé.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_3d_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Celluloid",
+      "features": [
+        "Génère automatiquement des modèles 3D paramétriques détaillés en Python/Trimesh à partir de des."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-3d-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67864167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-3d-generator",
+      "url": "https://clawhub.ai/skills/ai-3d-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-3d-generator",
+    "url": "https://clawhub.ai/skills/ai-3d-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-3d-generator-ab87fc38fc820e1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-3d-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-3d-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d621d1fd8a3275218eb5c55141bdb2d0b64630c23106fa28d310c5e31292fb89",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T21:19:10.618Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/get-tweet-replies@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_tweet_replies",
+  "skill": {
+    "id": 52742,
+    "skillKey": "clawhub-get-tweet-replies",
+    "name": "Get Tweet Replies"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-tweet-replies",
+    "url": "https://clawhub.ai/skills/get-tweet-replies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-tweet-replies-9e74dacbd146a8cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user needs to interact with X (Twitter) — searching tweets, looking up users/followers, posting tweets/replies, liking, retweeting, following/un..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xquik",
+      "userId": "s170jwjc10myqbr6rstn6gwcwn849144",
+      "displayName": "Xquik",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776903470652,
+      "changelog": "- Updated Xquik API metadata to reflect the latest version (2.4.2).\n- Adjusted the documented number of REST API endpoints from 122 to 111, and categories from 12 to 10.\n- Added security information about credential handling and sensitive data endpoints.\n- Expanded documentation retrieval sources and framework guides for integration.\n- No functional file or code changes; documentation and metadata improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ed003cfc9ef406b0293a791983b8dbad67b04d6ef3f279bbd339d2b8e656a425"
+}

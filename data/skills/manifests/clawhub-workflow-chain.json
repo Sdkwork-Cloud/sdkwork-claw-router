@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38335,
+  "uuid": "skill-clawhub-workflow-chain",
+  "skillKey": "clawhub-workflow-chain",
+  "name": "Workflow Chain",
+  "summary": "Chain multiple pipeline scripts into a single sequential or parallel workflow. Acts as a \"playlist\" for PrecisionLedger pipeline scripts. Use when a task req...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_chain",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Chain multiple pipeline scripts into a single sequential or parallel workflow",
+        "Acts as a \"playlist\" for PrecisionLedger pipeline scripts",
+        "Use when a task req..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-chain@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-chain",
+      "url": "https://clawhub.ai/skills/workflow-chain"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-chain",
+    "url": "https://clawhub.ai/skills/workflow-chain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-chain-83a5eab49cd5d1c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-chain@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-chain-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:472a90b1a70f8493a2336bf82b68cfac7175513eaf1c60ed195aa4f1c8a4ff41",
+      "artifactSizeBytes": 1908
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T07:32:56.752Z"
+}

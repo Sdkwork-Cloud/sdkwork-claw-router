@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21955,
+  "uuid": "skill-clawhub-safe-skill-advisor",
+  "skillKey": "clawhub-safe-skill-advisor",
+  "name": "Safe Skill Advisor",
+  "summary": "Security Skill Advisor - Protect you from malicious skills on ClawHub. Provides security warnings, tool recommendations, and 30-second self-check checklist.",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_skill_advisor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Crystaria",
+      "features": [
+        "Security Skill Advisor",
+        "Protect you from malicious skills on ClawHub",
+        "Provides security warnings, tool recommendations, and 30-second self-check checklist."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-skill-advisor@1.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105076136?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-skill-advisor",
+      "url": "https://clawhub.ai/skills/safe-skill-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-skill-advisor",
+    "url": "https://clawhub.ai/skills/safe-skill-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-skill-advisor-92636ca9aa505570.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-skill-advisor@1.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-skill-advisor-1.7.0.json",
+      "version": "1.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21065a87d8d198786312f0b74fcb574cb0c9bdddc69c63143cd1dcb0d8126ad7",
+      "artifactSizeBytes": 2513
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T06:33:14.726Z"
+}

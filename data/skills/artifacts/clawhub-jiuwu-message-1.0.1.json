@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiuwu-message@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiuwu_message",
+  "skill": {
+    "id": 72506,
+    "skillKey": "clawhub-jiuwu-message",
+    "name": "久吾消息网关"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiuwu-message",
+    "url": "https://clawhub.ai/skills/jiuwu-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiuwu-message-02930646a0757361.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用久吾消息网关HTTP接口给企业内部联系人发送消息。适用于：(1) 需要向企业内部同事发送通知或提醒时，(2) 需要批量发送内部消息时。当用户要求发送内部通知、提醒同事、向企业员工发消息、或调用消息网关时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "05u",
+      "userId": "s177px78dn0q61h6czbx9784f983kw7v",
+      "displayName": "05u",
+      "image": "https://avatars.githubusercontent.com/u/10990830?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775091842974,
+      "changelog": "- Added initial scripts and requirements files for the skill.\n- Clarified recommended usage: always use scripts/send_message.py, do not call HTTP endpoints directly.\n- Improved documentation for batch sending and typical usage scenarios.\n- Updated parameter descriptions for clarity.\n- Expanded and clarified response format documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a61998db753be7554728339fa7cd91c5e74754f00d8f97d9a365222bf6376cb"
+}

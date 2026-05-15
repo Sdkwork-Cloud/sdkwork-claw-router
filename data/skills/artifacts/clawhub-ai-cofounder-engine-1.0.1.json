@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-cofounder-engine@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_cofounder_engine",
+  "skill": {
+    "id": 46047,
+    "skillKey": "clawhub-ai-cofounder-engine",
+    "name": "AI Co-Founder Engine (Scored Startup Builder)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-cofounder-engine",
+    "url": "https://clawhub.ai/skills/ai-cofounder-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-cofounder-engine-d5b0d93ded3910ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI co-founder that evaluates, scores, and builds startup ideas with structured thinking, validation, and GTM strategy"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raghavhavefun",
+      "userId": "s17fsz0pbbgz62t1kya0hzm5s985fkef",
+      "displayName": "Raghav Agarwal",
+      "image": "https://avatars.githubusercontent.com/u/262687941?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777063340967,
+      "changelog": "- Updated to version 1.0.1.\n- Replaced SKILLS.md with SKILL.md as the main skill descriptor file.\n- No changes to system prompt logic or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4395940288861af63ebcba8a3a488e31bb7761dddeda9ed33d860fb2b60bef46"
+}

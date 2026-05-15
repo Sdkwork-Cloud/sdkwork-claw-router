@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28550,
+  "uuid": "skill-clawhub-sms-optimizer",
+  "skillKey": "clawhub-sms-optimizer",
+  "name": "SMS Optimizer",
+  "summary": "Craft compelling, policy-safe SMS messages for flash sales, order updates, and retention campaigns that drive clicks without triggering opt-outs.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sms_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Craft compelling, policy-safe SMS messages for flash sales, order updates, and retention campai."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sms-optimizer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sms-optimizer",
+      "url": "https://clawhub.ai/skills/sms-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sms-optimizer",
+    "url": "https://clawhub.ai/skills/sms-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sms-optimizer-d3689a814e561939.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sms-optimizer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sms-optimizer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29887c471f4f8215a91bb9ec1c3d45561a541f5baecb67e9fd995207e5c2d7e2",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T15:59:54.929Z"
+}

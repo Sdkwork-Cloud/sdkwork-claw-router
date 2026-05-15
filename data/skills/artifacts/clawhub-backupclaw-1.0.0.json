@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backupclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backupclaw",
+  "skill": {
+    "id": 51628,
+    "skillKey": "clawhub-backupclaw",
+    "name": "backup claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backupclaw",
+    "url": "https://clawhub.ai/skills/backupclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backupclaw-90a9f6564099373c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup and restore OpenClaw configuration files. Use when the user wants to backup ~/.openclaw/ configuration (excluding workspace) to a date-stamped directo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyingtimes",
+      "userId": "s17a1crq2ecdvx8g934wzyh9yn83q44e",
+      "displayName": "flyingtimes",
+      "image": "https://avatars.githubusercontent.com/u/5668052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773297269304,
+      "changelog": "Initial release of backupclaw: backup and restore OpenClaw configuration files.\n\n- Backs up `~/.openclaw/` (excluding `workspace/`) to a user-specified, date-stamped directory, with diff-based change detection.\n- Manages backup directory via `~/.openclaw/backup.json`; prompts user if not set.\n- Allows backup directory change with the `backupclaw changedir <path>` command.\n- Maintains a changelog of changes in `changelog.md`.\n- Supports restoring configuration from any backup date.\n- Provides clear error handling and multilingual prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3939ff3db7387716013dfacc534110f4c8a3571299accb7ce622d21ec75f39b7"
+}

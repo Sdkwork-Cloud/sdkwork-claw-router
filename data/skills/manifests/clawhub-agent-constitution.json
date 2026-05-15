@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12162,
+  "uuid": "skill-clawhub-agent-constitution",
+  "skillKey": "clawhub-agent-constitution",
+  "name": "AgentConstitution",
+  "summary": "Interact with AgentConstitution governance contracts on Base Sepolia. Check compliance, read rules, log actions, query governance state.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_constitution",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexthebuildr",
+      "features": [
+        "Interact with AgentConstitution governance contracts on Base Sepolia",
+        "Check compliance, read rules, log actions, query governance state."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-constitution@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116134064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-constitution",
+      "url": "https://clawhub.ai/skills/agent-constitution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-constitution",
+    "url": "https://clawhub.ai/skills/agent-constitution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-constitution-cadddf3f58f90a89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-constitution@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-constitution-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6fa44732125b7e2705a2b290fb5c701a56028a3ae269938ce822a8731066fb84",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T05:56:29.484Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-improve@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_improve",
+  "skill": {
+    "id": 15533,
+    "skillKey": "clawhub-auto-improve",
+    "name": "Auto Improve"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-improve",
+    "url": "https://clawhub.ai/skills/auto-improve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-improve-731e3c0d7e74757a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatische Selbst-Verbesserung durch Fehler-Lernen und Pattern-Erkennung"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcben90",
+      "userId": "publishers:mcben90",
+      "displayName": "Mcben90",
+      "image": "https://avatars.githubusercontent.com/u/26381418?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 979,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771155806852,
+      "changelog": "Auto-Improve Skill 1.0.0 – Automatische Selbst-Verbesserung durch Fehler-Lernen und Pattern-Erkennung.\n\n- Führt einen strukturierten Improvement Loop für kontinuierliches Lernen nach jeder Aktion oder jedem Fehler ein.\n- Integriert automatisches und manuelles Triggern für Fehler-Lernen, Pattern-Erkennung und Kontext-Updates.\n- Bietet Checklisten für Pre-Action-Validierung und automatisches Speichern von Erfolgs-Patterns oder Fehler-Learnings.\n- Ermöglicht Integration mit bestehenden Skills wie mistake-tracker, verification-loops und context-management.\n- Führt Metriken zum Fortschrittstracking ein (z.B. wiederholte Fehler, Pattern-Reuse-Rate).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:afd2d35178d5cc0f11bc5defb3a2d42b6878a8872deef0f3a2f4a140ebe0bd99"
+}

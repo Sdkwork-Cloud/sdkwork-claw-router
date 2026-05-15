@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dynamics-365@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dynamics_365",
+  "skill": {
+    "id": 53151,
+    "skillKey": "clawhub-openclaw-dynamics-365",
+    "name": "Dynamics 365 CRM"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dynamics-365",
+    "url": "https://clawhub.ai/skills/openclaw-dynamics-365",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dynamics-365-38affed474c78c9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and update CRM records in Microsoft Dynamics 365 — Opportunities, Leads, Contacts, Accounts, and Tasks via Dataverse Web API with Azure AD OAuth 2.0."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vieiradiego",
+      "userId": "s17642v33hcq0j5vvz8xm4pa7s84r3hb",
+      "displayName": "Diego Vieira",
+      "image": "https://avatars.githubusercontent.com/u/13529266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776041312259,
+      "changelog": "Initial release of openclaw-dynamics-365 skill\n\n- Create and update Opportunities, Leads, Contacts, Accounts, and Tasks in Microsoft Dynamics 365 CRM using the Dataverse Web API.\n- Supports intent recognition for common CRM actions based on user input.\n- Maps user-provided fields to appropriate Dynamics 365 entities.\n- Handles authentication via Azure AD OAuth 2.0, with support for token refresh.\n- Provides clear success and error feedback with dynamic record linking.\n- Includes environment variable configuration for secure connection setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d2730554e3ffb9ba5c4573983073a854bd57637b4b0fe239906bf9724f29be5"
+}

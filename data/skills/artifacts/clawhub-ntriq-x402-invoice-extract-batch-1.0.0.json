@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-x402-invoice-extract-batch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_invoice_extract_batch",
+  "skill": {
+    "id": 54611,
+    "skillKey": "clawhub-ntriq-x402-invoice-extract-batch",
+    "name": "Ntriq X402 Invoice Extract Batch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-invoice-extract-batch",
+    "url": "https://clawhub.ai/skills/ntriq-x402-invoice-extract-batch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-invoice-extract-batch-2a6ca4c24e090751.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch extract structured data from up to 500 invoices/receipts. Flat $9.00 USDC via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776193171667,
+      "changelog": "ntriq-x402-invoice-extract-batch 1.0.0 – Initial release\n\n- Batch extraction of structured data (vendor, amounts, line items, dates) from up to 500 invoice or receipt images in a single call.\n- Flat $9.00 USDC payment via x402 protocol on Base mainnet.\n- 100% local inference for enhanced privacy, running on Mac Mini.\n- Supports output language selection (default: English).\n- Simple JSON API with example requests and responses.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b335ba54f5bb0c99b054e2b3188e9b9b3c893ce017cc968bfb8bff7280e72e4c"
+}

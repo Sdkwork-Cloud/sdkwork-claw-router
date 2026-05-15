@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17421,
+  "uuid": "skill-clawhub-calcom",
+  "skillKey": "clawhub-calcom",
+  "name": "Cal.com",
+  "summary": "Interact with the Cal.com API v2 to manage scheduling, bookings, event types, availability, and calendars. Use this skill when building integrations that nee...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calcom",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peer Richelsen",
+      "features": [
+        "Interact with the Cal.com API v2 to manage scheduling, bookings, event types, availability, and.",
+        "Use this skill when building integrations that nee..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/calcom@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8019099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "calcom",
+      "url": "https://clawhub.ai/skills/calcom"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calcom",
+    "url": "https://clawhub.ai/skills/calcom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calcom-ececf65b0e10bfa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/calcom@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-calcom-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:516bc99a1f65dd67431d1c61ca31dc6714f74e6b87483be5917a3341b125672f",
+      "artifactSizeBytes": 2222
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T16:56:13.494Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28592,
+  "uuid": "skill-clawhub-sth-video-gen",
+  "skillKey": "clawhub-sth-video-gen",
+  "name": "STH Video Template Generation",
+  "summary": "Generate vertical 9:16 videos for Sing The Hook song templates using a two-stage pipeline with MCP, trimming, uploading to GCS, and database updates.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sth_video_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yin Zhu",
+      "features": [
+        "Generate vertical 9:16 videos for Sing The Hook song templates using a two-stage pipeline with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sth-video-gen@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96524134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sth-video-gen",
+      "url": "https://clawhub.ai/skills/sth-video-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sth-video-gen",
+    "url": "https://clawhub.ai/skills/sth-video-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sth-video-gen-1580ba7c34a2245c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sth-video-gen@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sth-video-gen-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ab92cb876c879b8f6d3ee61f841dd35d0aae5e0aa1a4d07d5b40157415029e3",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:15:07.023Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_skill",
+  "skill": {
+    "id": 9438,
+    "skillKey": "clawhub-linear-skill",
+    "name": "Linear"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-skill",
+    "url": "https://clawhub.ai/skills/linear-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-skill-52011845c4f5c40b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Linear projects, issues, and tasks via the bundled Node CLI and the official Linear API. Use when you need to read, create, update, or organize Linear..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matrixy",
+      "userId": "publishers:matrixy",
+      "displayName": "MaTriXy",
+      "image": "https://avatars.githubusercontent.com/u/3080139?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3348,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771193471214,
+      "changelog": "Initial release of linear-skill – manage Linear projects and workflows via CLI and API.\n\n- Adds bundled Node.js CLI for Linear project, issue, comment, and label management.\n- Supports authentication via LINEAR_API_KEY environment variable.\n- Provides coverage for teams, projects, issues, comments, states, labels, users.\n- Includes operational best practices and setup guidance in documentation.\n- Offers reference examples and practical workflow suggestions in README and SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7602bb43480b9a2a5c9a047ca28c37f5020c4213f1742a3924b65c2aa192f34b"
+}

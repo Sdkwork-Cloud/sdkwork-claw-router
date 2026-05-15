@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45748,
+  "uuid": "skill-clawhub-island-guide",
+  "skillKey": "clawhub-island-guide",
+  "name": "Island Guide",
+  "summary": "Find the best beaches and islands for swimming, snorkeling, surfing, and sunbathing. Includes water temperature, wave conditions, and nearby facilities. Also...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.island_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiejinsong",
+      "features": [
+        "Find the best beaches and islands for swimming, snorkeling, surfing, and sunbathing",
+        "Includes water temperature, wave conditions, and nearby facilities"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/island-guide@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1642572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "island-guide",
+      "url": "https://clawhub.ai/skills/island-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "island-guide",
+    "url": "https://clawhub.ai/skills/island-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/island-guide-77b9f8b48b53d713.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/island-guide@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-island-guide-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d9e60781a06fcc0bcf14d1bb7d9c92e76d80e6a9f988ed42f1d9d85b760ca485",
+      "artifactSizeBytes": 2539
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:54:04.605Z"
+}

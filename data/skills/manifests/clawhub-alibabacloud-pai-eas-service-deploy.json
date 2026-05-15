@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45818,
+  "uuid": "skill-clawhub-alibabacloud-pai-eas-service-deploy",
+  "skillKey": "clawhub-alibabacloud-pai-eas-service-deploy",
+  "name": "Alibabacloud Pai Eas Service Deploy",
+  "summary": "Deploy AI models as PAI-EAS inference services. Supports LLMs (Qwen, Llama), image gen (SD, SDXL), speech synthesis, and more. When to use: deploy models, cr...",
+  "version": "0.0.1-beta.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_pai_eas_service_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Deploy AI models as PAI-EAS inference services",
+        "Supports LLMs (Qwen, Llama), image gen (SD, SDXL), speech synthesis, and more",
+        "When to use: deploy models, cr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-pai-eas-service-deploy@0.0.1-beta.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-pai-eas-service-deploy",
+      "url": "https://clawhub.ai/skills/alibabacloud-pai-eas-service-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-pai-eas-service-deploy",
+    "url": "https://clawhub.ai/skills/alibabacloud-pai-eas-service-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-pai-eas-service-deploy-44ae6623db27bf55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-pai-eas-service-deploy@0.0.1-beta.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-pai-eas-service-deploy-0.0.1-beta.1.json",
+      "version": "0.0.1-beta.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33434898c19c4aba8ed089bdc1e416a04118d1f7953763a021a9feed2aa11e1d",
+      "artifactSizeBytes": 2607
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:50:32.293Z"
+}

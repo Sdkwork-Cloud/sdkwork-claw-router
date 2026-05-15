@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10340,
+  "uuid": "skill-clawhub-openclaw-tavily-search-0-1-0",
+  "skillKey": "clawhub-openclaw-tavily-search-0-1-0",
+  "name": "Openclaw Tavily Search 0.1.0",
+  "summary": "Web search via Tavily API (alternative to Brave). Use when the user asks to search the web / look up sources / find links and Brave web_search is unavailable...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_tavily_search_0_1_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gyzx",
+      "features": [
+        "Web search via Tavily API (alternative to Brave)",
+        "Use when the user asks to search the web / look up sources / find links and Brave web_search is."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-tavily-search-0-1-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22498299?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-tavily-search-0-1-0",
+      "url": "https://clawhub.ai/skills/openclaw-tavily-search-0-1-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-tavily-search-0-1-0",
+    "url": "https://clawhub.ai/skills/openclaw-tavily-search-0-1-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-tavily-search-0-1-0-b88464b7af5bc6a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-tavily-search-0-1-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-tavily-search-0-1-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97edb6a98554858f36eed3ec46ec9c72104c78b7f1deb33f2bdc7c2cd748947b",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T11:39:02.497Z"
+}

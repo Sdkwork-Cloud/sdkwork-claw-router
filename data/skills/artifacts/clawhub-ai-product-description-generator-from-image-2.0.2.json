@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-product-description-generator-from-image@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_product_description_generator_from_image",
+  "skill": {
+    "id": 40481,
+    "skillKey": "clawhub-ai-product-description-generator-from-image",
+    "name": "Ai Product Description Generator From Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-product-description-generator-from-image",
+    "url": "https://clawhub.ai/skills/ai-product-description-generator-from-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-product-description-generator-from-image-12966519643f5fd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a public product image URL and generate descriptions in 4 styles using Grok Vision AI. Requires XAI_API_KEY env var. Use when creating e-commerce cop..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loutai0307-prog",
+      "userId": "s178me4n5rr0ch93xv584tjyv183s7r1",
+      "displayName": "loutai0307-prog",
+      "image": "https://avatars.githubusercontent.com/u/266760463?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776496806825,
+      "changelog": "Fix: add requires.env frontmatter, add URL validation, registry credential metadata",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8c1f77b1d8380bf14381855d70431d336f5ae99c7ea08bc7ad51ca22a902d68f"
+}

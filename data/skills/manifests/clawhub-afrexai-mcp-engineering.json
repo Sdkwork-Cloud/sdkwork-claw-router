@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20666,
+  "uuid": "skill-clawhub-afrexai-mcp-engineering",
+  "skillKey": "clawhub-afrexai-mcp-engineering",
+  "name": "MCP Engineering",
+  "summary": "Build, integrate, debug, and secure MCP servers and clients in any language, enabling AI agents to call external tools via Model Context Protocol.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_mcp_engineering",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Build, integrate, debug, and secure MCP servers and clients in any language, enabling AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-mcp-engineering@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-mcp-engineering",
+      "url": "https://clawhub.ai/skills/afrexai-mcp-engineering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-mcp-engineering",
+    "url": "https://clawhub.ai/skills/afrexai-mcp-engineering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-mcp-engineering-cc9aab25615d30ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-mcp-engineering@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-mcp-engineering-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76e20fe0e01652eabd91788702fcb9041aca4a8e21cc56fb978c576e3cd113f7",
+      "artifactSizeBytes": 2504
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T21:29:26.298Z"
+}

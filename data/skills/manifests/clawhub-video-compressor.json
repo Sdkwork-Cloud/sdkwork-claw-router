@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29602,
+  "uuid": "skill-clawhub-video-compressor",
+  "skillKey": "clawhub-video-compressor",
+  "name": "Video Compressor",
+  "summary": "Guide users to VideoAny Video Compressor tool to reduce video file size with quality/scale/format controls.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Colin",
+      "features": [
+        "Guide users to VideoAny Video Compressor tool to reduce video file size with quality/scale/form."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-compressor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15179604?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-compressor",
+      "url": "https://clawhub.ai/skills/video-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor",
+    "url": "https://clawhub.ai/skills/video-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-3e9826fabe20681f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-compressor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-compressor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af05300e50df3e357a7498165a4d6527c428d7d1929701693303f401c63c62d5",
+      "artifactSizeBytes": 2241
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T07:22:28.659Z"
+}

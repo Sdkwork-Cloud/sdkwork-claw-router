@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33229,
+  "uuid": "skill-clawhub-mailcheck-integration",
+  "skillKey": "clawhub-mailcheck-integration",
+  "name": "Mailcheck",
+  "summary": "Mailcheck integration. Manage data, records, and automate workflows. Use when the user wants to interact with Mailcheck data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailcheck_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mailcheck integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Mailcheck data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mailcheck-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mailcheck-integration",
+      "url": "https://clawhub.ai/skills/mailcheck-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailcheck-integration",
+    "url": "https://clawhub.ai/skills/mailcheck-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailcheck-integration-25bb85e9b879295e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mailcheck-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mailcheck-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28c66d5b4867fc7a8bedbed20713097ae15df936802606980247e4bce4183326",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:10:16.077Z"
+}

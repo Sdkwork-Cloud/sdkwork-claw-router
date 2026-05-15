@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27988,
+  "uuid": "skill-clawhub-axis-trust",
+  "skillKey": "clawhub-axis-trust",
+  "name": "AXIS TrustLayer AgentFICO",
+  "summary": "Check AI agent trust scores and credit ratings before interacting, delegating tasks, or transacting. Look up any agent's T-Score (behavioral reputation 0-100...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axis_trust",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leonidas Williamson",
+      "features": [
+        "Check AI agent trust scores and credit ratings before interacting, delegating tasks, or transac.",
+        "Look up any agent's T-Score (behavioral reputation 0-100..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axis-trust@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130810858?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axis-trust",
+      "url": "https://clawhub.ai/skills/axis-trust"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axis-trust",
+    "url": "https://clawhub.ai/skills/axis-trust",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axis-trust-1b8e164eee6f53a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axis-trust@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axis-trust-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:710ec4c0bcaea71d8224d9edf0e3af389f438a66e2f456b82afcfba6f6ca4311",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T22:57:39.869Z"
+}

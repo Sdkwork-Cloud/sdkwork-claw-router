@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31113,
+  "uuid": "skill-clawhub-kubernetes-devops-toolkit",
+  "skillKey": "clawhub-kubernetes-devops-toolkit",
+  "name": "Kubernetes DevOps Toolkit",
+  "summary": "Manage, deploy, monitor, and troubleshoot Kubernetes clusters with tools for multi-cluster control, resource monitoring, log aggregation, and Helm support.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kubernetes_devops_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Manage, deploy, monitor, and troubleshoot Kubernetes clusters with tools for multi-cluster cont."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kubernetes-devops-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kubernetes-devops-toolkit",
+      "url": "https://clawhub.ai/skills/kubernetes-devops-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kubernetes-devops-toolkit",
+    "url": "https://clawhub.ai/skills/kubernetes-devops-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kubernetes-devops-toolkit-07b1b0c60d20493a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kubernetes-devops-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kubernetes-devops-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7b2bf6d96f3ad04c0e3b9ccde654961b0bd53052d233611bc8b23ce0f76122a",
+      "artifactSizeBytes": 1958
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:44:08.209Z"
+}

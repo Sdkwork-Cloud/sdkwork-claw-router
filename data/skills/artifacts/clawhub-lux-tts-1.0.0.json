@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lux-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lux_tts",
+  "skill": {
+    "id": 71884,
+    "skillKey": "clawhub-lux-tts",
+    "name": "Lux Tts"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lux-tts",
+    "url": "https://clawhub.ai/skills/lux-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lux-tts-babac00cf4d9a48b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供本地高速、高质量文本转语音服务，支持语音克隆与自动路径管理，无需云端确保隐私安全。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zs15600770520",
+      "userId": "s171ycd1mya73agrjryy07xnd183zwxy",
+      "displayName": "zs15600770520",
+      "image": "https://avatars.githubusercontent.com/u/256583896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773983084737,
+      "changelog": "LuxTTS skill 1.0.0 – Initial Release\n\n- Integrates high-quality, local LuxTTS text-to-speech into OpenClaw.\n- Supports ultra-fast voice generation (up to 150x real-time) and 48kHz audio quality.\n- Adds voice cloning and custom voice management features.\n- Provides detailed installation, configuration, and troubleshooting guidance.\n- Includes tools for batch processing, GPU acceleration, caching, and hybrid TTS fallback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:235e158a24b1da9e513b64f67226de2c8788ed4d7c418b6f602120c387cfb460"
+}

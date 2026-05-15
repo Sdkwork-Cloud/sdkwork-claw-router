@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/new-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.new_app",
+  "skill": {
+    "id": 38077,
+    "skillKey": "clawhub-new-app",
+    "name": "New App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "new-app",
+    "url": "https://clawhub.ai/skills/new-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/new-app-84e693276868f869.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when creating a new internal application from scratch, standardizing a 0-to-1 app build workflow, or helping teammates bootstrap a Next.js/FastAPI/Keyclo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyc-chengzi",
+      "userId": "s1706mh1jx1dv1ef1whatpjz0x83hf34",
+      "displayName": "橙子瓣",
+      "image": "https://avatars.githubusercontent.com/u/12556197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774423843346,
+      "changelog": "New skill for standardized internal app bootstrapping:\n\n- Introduces documentation-driven workflow for creating full-stack internal apps from scratch.\n- Emphasizes requirements gathering, architecture proposals, and milestone-based delivery before coding.\n- Provides reusable standards for API, UX, coding, and workflow documentation.\n- Outlines a step-by-step process for planning, setup, implementation, and validation.\n- Aligns English and Chinese documentation throughout the workflow.\n- Includes common best practices, failure modes to avoid, and expected deliverables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:04bf6bc7794e319ef3cf7cd778c4c102dd5756980161f6aa2bc63be6c8695d4c"
+}

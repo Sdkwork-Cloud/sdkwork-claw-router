@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-resellers@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_resellers",
+  "skill": {
+    "id": 35030,
+    "skillKey": "clawhub-find-resellers",
+    "name": "Find Resellers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-resellers",
+    "url": "https://clawhub.ai/skills/find-resellers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-resellers-a22a8ec9cabdd127.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find resellers, stockists, secondary sellers, and channel resale opportunities for ecommerce and cross-border products. Use when the user wants help identify..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773998779941,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3dea9699812c7ef2b676e23ee66deac128e8724ea4030f3048969b835a1559b2"
+}

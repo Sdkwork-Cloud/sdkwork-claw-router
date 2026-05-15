@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/holiday-flights@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holiday_flights",
+  "skill": {
+    "id": 53569,
+    "skillKey": "clawhub-holiday-flights",
+    "name": "holiday-flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holiday-flights",
+    "url": "https://clawhub.ai/skills/holiday-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holiday-flights-5307b20fbc3a7745.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find flights during Chinese peak travel seasons — Spring Festival, Golden Week, Labor Day, Dragon Boat. Warns about high demand and suggests optimal booking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "v3.2.1",
+      "createdAt": 1775722295928,
+      "changelog": "No user-facing changes in this release; version number updated only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c8cd03a99af73a56877b005136243ca3978cf54fa677cdde38815fecb1e3234e"
+}

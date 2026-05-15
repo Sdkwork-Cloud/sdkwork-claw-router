@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69150,
+  "uuid": "skill-clawhub-survival-manager",
+  "skillKey": "clawhub-survival-manager",
+  "name": "Survival Manager",
+  "summary": "自主调整运行模式，管理资金与任务，需用户授权高风险操作，保障系统稳定与财务健康的生存管理工具。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.survival_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianyi",
+      "features": [
+        "自主调整运行模式，管理资金与任务，需用户授权高风险操作，保障系统稳定与财务健康的生存管理工具。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/survival-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204564324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "survival-manager",
+      "url": "https://clawhub.ai/skills/survival-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "survival-manager",
+    "url": "https://clawhub.ai/skills/survival-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/survival-manager-f0ee4a4893bf1e79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/survival-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-survival-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5da3300335ab920f5e09e1722d439a2432768ac8564e0940efead5e1a866185a",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T22:48:44.849Z"
+}

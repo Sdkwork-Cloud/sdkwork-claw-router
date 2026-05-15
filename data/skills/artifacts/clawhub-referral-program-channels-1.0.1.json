@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/referral-program-channels@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.referral_program_channels",
+  "skill": {
+    "id": 27300,
+    "skillKey": "clawhub-referral-program-channels",
+    "name": "referral-program"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "referral-program-channels",
+    "url": "https://clawhub.ai/skills/referral-program-channels",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/referral-program-channels-33463e22fc9a9c80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to plan, implement, or optimize referral program strategy. Also use when the user mentions \"referral program,\" \"referral marketing,\" \"use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774708337297,
+      "changelog": "Batch: referral-program through logo-generator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d09c292da4a97d3fb85d98b5e1842d74a6e23fd1e7e3093b2be264046a4e2d0e"
+}

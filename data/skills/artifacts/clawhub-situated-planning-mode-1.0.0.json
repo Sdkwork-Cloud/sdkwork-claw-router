@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/situated-planning-mode@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.situated_planning_mode",
+  "skill": {
+    "id": 32018,
+    "skillKey": "clawhub-situated-planning-mode",
+    "name": "situated planning mode"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "situated-planning-mode",
+    "url": "https://clawhub.ai/skills/situated-planning-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/situated-planning-mode-dafed2d24282adb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this when a user proposes a project or task that needs planning. Guide them through staged questions with options and descriptions to clarify goals, cons..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phallusophy",
+      "userId": "s17efz939jqh52q1fkvkcz0zr183ya3t",
+      "displayName": "Phallusophy",
+      "image": "https://avatars.githubusercontent.com/u/166810908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775319026005,
+      "changelog": "Situated Planning Mode — From \"do this\" to \"here's what happens if you do this\".\n\nThis skill captures the AI-version of philosopher Kevin Zollman's (2011) intuition about the distinction between commands and descriptions: if your agent only provides you with options (a form of command, expressed in imperative mood) without providing descriptions related to those options (expressed in declarative mood), then you — the decision-maker — often face the problem of informational underdetermination. Through introducing the philosophical concepts to the front of SKILL.md, this skill systematically addresses this kind of problems.\n\nThere are three key advantages of this skill:\n\n1. Dynamically generates planning questions based on project context — not a fixed question list (that's why it is called \"situated\")\n\n2. Provides both options and descriptions during planning — so you decide with full information\n\n3. Autonomously launches subagent research to enrich information when descriptions are insufficient — never guesses",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2067b159dad8ac94ddfbf363ac4d0a250544001eb610f2b6d8ef768abd49f82d"
+}

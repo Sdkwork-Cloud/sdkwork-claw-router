@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polymarket-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_bot",
+  "skill": {
+    "id": 15181,
+    "skillKey": "clawhub-polymarket-bot",
+    "name": "Polymarket Bot Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-bot",
+    "url": "https://clawhub.ai/skills/polymarket-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-bot-1431be52c091137f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Polymarket bot operations including fetching market data, placing trades, and implementing strategies like arbitrage. Use when users need to build o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deliverydriver",
+      "userId": "publishers:deliverydriver",
+      "displayName": "deliverydriver",
+      "image": "https://avatars.githubusercontent.com/u/26074034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 838,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771689701935,
+      "changelog": "Initial release based on SOP for Polymarket bot operations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea92809fef8f9e07214745b6c992913fdb08ecab8a8a2219fde2e5383058a7d8"
+}

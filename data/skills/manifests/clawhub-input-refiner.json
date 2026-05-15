@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35590,
+  "uuid": "skill-clawhub-input-refiner",
+  "skillKey": "clawhub-input-refiner",
+  "name": "Input Refiner",
+  "summary": "Rewrite vague or unstructured user input into a clear, organized, and execution-ready form based on context, preserving the original intent.",
+  "version": "2026.3.26",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.input_refiner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stephensu66",
+      "features": [
+        "Rewrite vague or unstructured user input into a clear, organized, and execution-ready form base."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/input-refiner@2026.3.26",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143712578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "input-refiner",
+      "url": "https://clawhub.ai/skills/input-refiner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "input-refiner",
+    "url": "https://clawhub.ai/skills/input-refiner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/input-refiner-a5ecbb011b357f93.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/input-refiner@2026.3.26",
+      "artifactUrl": "data/skills/artifacts/clawhub-input-refiner-2026.3.26.json",
+      "version": "2026.3.26",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4590ee9609578dbe93864d8f6f3fa35611568f1e46e0289a7d5e493033af0676",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T12:52:40.680Z"
+}

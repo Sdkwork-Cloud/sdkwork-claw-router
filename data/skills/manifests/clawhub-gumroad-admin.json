@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11504,
+  "uuid": "skill-clawhub-gumroad-admin",
+  "skillKey": "clawhub-gumroad-admin",
+  "name": "Gumroad Admin",
+  "summary": "Gumroad Admin CLI. Check sales, products, and manage discounts.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gumroad_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abakermi",
+      "features": [
+        "Gumroad Admin CLI",
+        "Check sales, products, and manage discounts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gumroad-admin@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60294727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gumroad-admin",
+      "url": "https://clawhub.ai/skills/gumroad-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gumroad-admin",
+    "url": "https://clawhub.ai/skills/gumroad-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gumroad-admin-23d7826a07aa8b75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gumroad-admin@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gumroad-admin-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:453c38c478d2cb0a6ed38fe3d705446252745d6508f50970127948dfe9070cea",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T19:38:38.900Z"
+}

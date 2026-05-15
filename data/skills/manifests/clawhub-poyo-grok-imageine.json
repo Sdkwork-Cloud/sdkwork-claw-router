@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56549,
+  "uuid": "skill-clawhub-poyo-grok-imageine",
+  "skillKey": "clawhub-poyo-grok-imageine",
+  "name": "PoYo Grok Imagine API",
+  "summary": "Grok Imagine video generation on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/submit`; use for `grok-imagine`, text-to-video, image-to-video, 6s/10s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_grok_imageine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolhackboy",
+      "features": [
+        "Grok Imagine video generation on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/submit`",
+        "use for `grok-imagine`, text-to-video, image-to-video, 6s/10s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poyo-grok-imageine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13427145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poyo-grok-imageine",
+      "url": "https://clawhub.ai/skills/poyo-grok-imageine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-grok-imageine",
+    "url": "https://clawhub.ai/skills/poyo-grok-imageine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-grok-imageine-0c7ca186ef130ef1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poyo-grok-imageine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poyo-grok-imageine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:834d44f9e0a5b7ea2cc99d33745cc826169aad4f5a01632f1367141c5652dd7e",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T03:49:57.725Z"
+}

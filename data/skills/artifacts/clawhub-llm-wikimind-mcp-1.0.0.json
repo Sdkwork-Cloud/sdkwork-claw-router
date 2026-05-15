@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-wikimind-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_wikimind_mcp",
+  "skill": {
+    "id": 53244,
+    "skillKey": "clawhub-llm-wikimind-mcp",
+    "name": "LLM-WikiMind MCP Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-wikimind-mcp",
+    "url": "https://clawhub.ai/skills/llm-wikimind-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-wikimind-mcp-80a814a9e05de302.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the LLM-WikiMind MCP server — a local knowledge base built on Karpathy's LLM Wiki pattern. Triggers: install wikimind, setup knowledge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hal-9909",
+      "userId": "s17fca0qrv36ym8v11jnmhnht9845n09",
+      "displayName": "HAL-9909",
+      "image": "https://avatars.githubusercontent.com/u/261329242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776166007318,
+      "changelog": "llm-wikimind-mcp 1.0.0 initial release\n\n- Provides step-by-step setup for a local LLM knowledge base (WikiMind MCP) using Karpathy's LLM Wiki pattern.\n- Enables five MCP tools for knowledge management: wiki_search, wiki_get, wiki_list, wiki_ingest_note, and wiki_domains.\n- Uses BM25 full-text search across Markdown files; no embeddings or cloud required.\n- Includes auto-sync watcher that keeps the knowledge base and tool list up-to-date.\n- Detailed instructions for installation, configuration, troubleshooting, and MCP client registration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b2e93aa4e763632a1f9d2c980d062cd11d657b6c75e614445f2a27c18b0fcbd0"
+}

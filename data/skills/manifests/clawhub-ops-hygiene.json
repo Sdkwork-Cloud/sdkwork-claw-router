@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12966,
+  "uuid": "skill-clawhub-ops-hygiene",
+  "skillKey": "clawhub-ops-hygiene",
+  "name": "Ops Hygiene",
+  "summary": "Standard operating procedures for agent maintenance, security hygiene, and system health. Use when performing periodic checks, security audits, memory maintenance, secret rotation, dependency updates, or any recurring \"housekeeping\" tasks..",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ops_hygiene",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "staybased",
+      "features": [
+        "Standard operating procedures for agent maintenance, security hygiene, and system health",
+        "Use when performing periodic checks, security audits, memory maintenance, secret rotation, depe.",
+        "Also use when setting up automated maintenance schedules or when asked about agent security pos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ops-hygiene@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216957304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ops-hygiene",
+      "url": "https://clawhub.ai/skills/ops-hygiene"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ops-hygiene",
+    "url": "https://clawhub.ai/skills/ops-hygiene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ops-hygiene-8bd29beb100a358c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ops-hygiene@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ops-hygiene-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6be7fcd41de7c2b80b4d750e96d73df8dbe5277e2de3359017acaf4d09a22bfd",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:23:14.136Z"
+}

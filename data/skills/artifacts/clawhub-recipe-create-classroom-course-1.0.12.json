@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recipe-create-classroom-course@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recipe_create_classroom_course",
+  "skill": {
+    "id": 18403,
+    "skillKey": "clawhub-recipe-create-classroom-course",
+    "name": "Recipe Create Classroom Course"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recipe-create-classroom-course",
+    "url": "https://clawhub.ai/skills/recipe-create-classroom-course",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recipe-create-classroom-course-caa6792f453cde6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a Google Classroom course and invite students."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googleworkspace-bot",
+      "userId": "s17d07d7j6wvs7e49gkh2nncms83fh1m",
+      "displayName": "googleworkspace-bot",
+      "image": "https://avatars.githubusercontent.com/u/109114539?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 593,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1774982155489,
+      "changelog": "- Updated metadata version from 0.22.4 to 0.22.5 in SKILL.md.  \n- No changes to functionality or instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffc87c16edef4859b1dae9187d6741bf15d6630e8257916b29097054e6bec627"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41494,
+  "uuid": "skill-clawhub-release-gate",
+  "skillKey": "clawhub-release-gate",
+  "name": "Release Gate",
+  "summary": "Prevents bad deploys by enforcing structured sign-off before any irreversible action. Configurable checklist with named reviewers (Dev, QA, Legal, Product)....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_gate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ferrentinomj-dev",
+      "features": [
+        "Prevents bad deploys by enforcing structured sign-off before any irreversible action",
+        "Configurable checklist with named reviewers (Dev, QA, Legal, Product)...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/release-gate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257645185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "release-gate",
+      "url": "https://clawhub.ai/skills/release-gate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-gate",
+    "url": "https://clawhub.ai/skills/release-gate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-gate-8bfcd78b361deb7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/release-gate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-release-gate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8849c78f1292de42c2bbbdd01b7d1f0ffe528179ecb5d823322eb4e326002b53",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T17:41:51.402Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cryptowallet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cryptowallet",
+  "skill": {
+    "id": 11730,
+    "skillKey": "clawhub-cryptowallet",
+    "name": "CryptoWallet - Multi-Chain Blockchain Wallet Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cryptowallet",
+    "url": "https://clawhub.ai/skills/cryptowallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cryptowallet-b676c22df96a082e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete cryptocurrency wallet management for Web3, DeFi, and blockchain applications. Create and manage EVM (Ethereum, Polygon, BSC, Arbitrum, Optimism, Base, Avalanche) and Solana wallets with encrypted local storage. Query balances for."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gnufoo",
+      "userId": "publishers:gnufoo",
+      "displayName": "gnufoo",
+      "image": "https://avatars.githubusercontent.com/u/18051278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1932,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769611537069,
+      "changelog": "Initial release: Secure multi-chain wallet management for EVM and Solana",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7e5e9f58c5a7f52f67c7b7bbc2aafb181ff4979157a0b55806edad445983914f"
+}

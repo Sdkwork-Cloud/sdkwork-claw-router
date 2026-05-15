@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59477,
+  "uuid": "skill-clawhub-video-remix",
+  "skillKey": "clawhub-video-remix",
+  "name": "video-remix",
+  "summary": "YouTube 视频处理助手 - Gemini 智能分析 + 下载 + 剪辑 + 配音 + 硬字幕合成 + 局域网 HTTP 分享",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_remix",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaoyta",
+      "features": [
+        "YouTube 视频处理助手",
+        "Gemini 智能分析 + 下载 + 剪辑 + 配音 + 硬字幕合成 + 局域网 HTTP 分享"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-remix@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1953700?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-remix",
+      "url": "https://clawhub.ai/skills/video-remix"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-remix",
+    "url": "https://clawhub.ai/skills/video-remix",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-remix-3547d4f787bf2999.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-remix@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-remix-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38327ad69a9da8fc4419ddc452fb613499962ad44354c98b1a93eb526254f0e2",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:35:52.839Z"
+}

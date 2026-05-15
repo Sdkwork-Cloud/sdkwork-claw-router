@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ue-datatable-editor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ue_datatable_editor",
+  "skill": {
+    "id": 52601,
+    "skillKey": "clawhub-ue-datatable-editor",
+    "name": "UE Datatable Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ue-datatable-editor",
+    "url": "https://clawhub.ai/skills/ue-datatable-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ue-datatable-editor-3632c366f52c9758.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user wants to search, view, modify, validate, or import Unreal Engine DataTable data — specifically AI Skills configuratio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mufuxiao515-create",
+      "userId": "s1738zhdzfra70yrzq0fbavcsx83p0a1",
+      "displayName": "mufuxiao515-create",
+      "image": "https://avatars.githubusercontent.com/u/255311337?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774587433178,
+      "changelog": "Version 1.1.0\n\n- Added project and DataTable JSON auto-discovery with the new dt_discover.py script.\n- Updated workflow to start with automatic detection of UE projects/DataTable files; no hardcoded paths needed.\n- README and documentation revised to describe project/tables discovery, making the skill usable on any UE project.\n- dt_import_ue.py updated to support overriding asset base path.\n- Error handling and step-by-step examples now include project discovery flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08039ea1fab860b2d095d57874be56204525fadda1dbf405070e5f9e5c0e378f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yolo-vision-tools@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yolo_vision_tools",
+  "skill": {
+    "id": 18733,
+    "skillKey": "clawhub-yolo-vision-tools",
+    "name": "yolo-vision-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yolo-vision-tools",
+    "url": "https://clawhub.ai/skills/yolo-vision-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yolo-vision-tools-9d3549ca7e2229fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Ultralytics YOLO to perform computer vision tasks, such as detecting people or objects in images and videos, classifying images, estimating human poses,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ruoyu05",
+      "userId": "s177y0fhnrtjdnmkf808k7pvy583kvrt",
+      "displayName": "Ruoyu",
+      "image": "https://avatars.githubusercontent.com/u/94590154?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 646,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1773654793657,
+      "changelog": "**Version 1.2.3 Changelog**\n\n- Clarified where output images and videos are saved by default, specifying the `yolo-vision` folder.\n- Added instructions and examples for setting a custom output directory in both Python and CLI interfaces.\n- Updated comments and examples to reflect output directory changes for all major tasks (detection, segmentation, pose).\n- No breaking changes; usage and core functionality remain the same.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:096387c3b3ba2382e86f8436cb441516ac0edbc12839c70e67978f53e08272d5"
+}

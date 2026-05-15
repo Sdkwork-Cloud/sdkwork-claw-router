@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58137,
+  "uuid": "skill-clawhub-image-quote-overlay",
+  "skillKey": "clawhub-image-quote-overlay",
+  "name": "Image Quote Overlay",
+  "summary": "Tạo ảnh quote có gradient overlay và text từ ảnh cá nhân ngẫu nhiên, hỗ trợ kích thước chuẩn LinkedIn, X, Facebook, WordPress.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_quote_overlay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Quốc MODORO",
+      "features": [
+        "Tạo ảnh quote có gradient overlay và text từ ảnh cá nhân ngẫu nhiên, hỗ trợ kích thước chuẩn Li."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-quote-overlay@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3088362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-quote-overlay",
+      "url": "https://clawhub.ai/skills/image-quote-overlay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-quote-overlay",
+    "url": "https://clawhub.ai/skills/image-quote-overlay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-quote-overlay-b1cf04559c855d03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-quote-overlay@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-quote-overlay-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d139458ae1fda69cf2f52d71c7abe738f9d03ff4dad0d9a1302b87b5f2cb8349",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:27:01.721Z"
+}

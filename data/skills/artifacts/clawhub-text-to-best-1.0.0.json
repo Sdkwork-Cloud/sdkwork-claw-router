@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-best@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_best",
+  "skill": {
+    "id": 46234,
+    "skillKey": "clawhub-text-to-best",
+    "name": "Text To Best"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-best",
+    "url": "https://clawhub.ai/skills/text-to-best",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-best-84ca5d4817168701.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished video clips ready to post, without touching a single slider. Upload your text prompt (TXT, DOCX, PDF, plain text, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775925552339,
+      "changelog": "Initial release of Text to Video — Convert Text Into Shareable Videos.\n\n- Instantly convert text prompts (TXT, DOCX, PDF, up to 500MB) into ready-to-share 1080p MP4 videos.\n- No editing experience needed; simply describe the video you want and receive a polished result in 1-2 minutes.\n- Designed for marketers and creators with a fast cloud GPU rendering pipeline.\n- Built-in balance, export, and session state checking; errors prompt user-friendly recovery steps.\n- Supports multiple file formats: mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac.\n- Robust handling for common workflows and clear, actionable tips for best results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c9265881543aabae917d50de4fabd0d633d2431ea65038d320f20942046682e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38362,
+  "uuid": "skill-clawhub-double",
+  "skillKey": "clawhub-double",
+  "name": "Double",
+  "summary": "Double (formerly Keeper) integration. Manage data, records, and automate workflows. Use when the user wants to interact with Double (formerly Keeper) data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.double",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Double (formerly Keeper) integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Double (formerly Keeper) data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/double@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "double",
+      "url": "https://clawhub.ai/skills/double"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "double",
+    "url": "https://clawhub.ai/skills/double",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/double-2ce06a9e7f8c3e6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/double@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-double-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:144a612d61bbcb1c5a894f335bbb7a05c33f4f78a4334a5d97f7c82b88237619",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:24:55.164Z"
+}

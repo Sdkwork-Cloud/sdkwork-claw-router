@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9971,
+  "uuid": "skill-clawhub-amazon",
+  "skillKey": "clawhub-amazon",
+  "name": "Amazon",
+  "summary": "Navigate Amazon for buying, selling, and affiliating using price tracking, listing optimization, deal analysis, and affiliate link management.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Navigate Amazon for buying, selling, and affiliating using price tracking, listing optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon",
+      "url": "https://clawhub.ai/skills/amazon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon",
+    "url": "https://clawhub.ai/skills/amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-cbc62794911ff31b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d4736f73bd657171ef7c93f005773b5002e0b8e2b9b15d35d300628c6f98ccd",
+      "artifactSizeBytes": 1810
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T20:18:19.146Z"
+}

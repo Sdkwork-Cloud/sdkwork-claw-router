@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-auto-cut@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_auto_cut",
+  "skill": {
+    "id": 53741,
+    "skillKey": "clawhub-ai-video-editor-auto-cut",
+    "name": "Ai Video Editor Auto Cut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-auto-cut",
+    "url": "https://clawhub.ai/skills/ai-video-editor-auto-cut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-auto-cut-5d4cfd9fcd0f9b36.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — automatically cut the silence, remove bad takes, and trim the clip to the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777871179020,
+      "changelog": "Initial release of AI Video Editor Auto Cut:\n\n- Automatically cuts silence, removes bad takes, and trims clips to highlights with a single prompt.\n- Supports video uploads (MP4, MOV, AVI, WebM) up to 500MB.\n- Fast cloud rendering — edited clips ready in 1–2 minutes.\n- Automatic session and API token management on first use.\n- Exports videos in high-quality MP4 (up to 1080p).\n- Ideal for creators seeking quick, hands-free edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b61338d3c10b2013e8a91167a78b6c3abeae8cca444c9500ba1d3d0eb2587731"
+}

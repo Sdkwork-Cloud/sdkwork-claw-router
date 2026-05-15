@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-feishu-workspace@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_feishu_workspace",
+  "skill": {
+    "id": 22531,
+    "skillKey": "clawhub-openclaw-feishu-workspace",
+    "name": "Feishu Workspace"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-feishu-workspace",
+    "url": "https://clawhub.ai/skills/openclaw-feishu-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-feishu-workspace-1626e4a87e4daf79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants to work with Feishu Docs, Wiki, or Bitable for practical team workflows such as meeting notes, knowledge lookup, and project tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaonizhou-crypto",
+      "userId": "s17d6ev4g3ha5jwr0hshzzrdas84gzy7",
+      "displayName": "ClawMaster",
+      "image": "https://avatars.githubusercontent.com/u/259796961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773451904594,
+      "changelog": "Initial release of Feishu Workspace skill.\n\n- Enables workflows with Feishu Docs, Wiki, and Bitable for team productivity.\n- Supports writing, updating, and searching docs, wikis, and structured Bitable records.\n- Provides clear guidelines for preferred workflows and output style.\n- Includes practical use cases (meeting notes, project tracking, action items).\n- Adds transparent failure handling instructions for common access or operation issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f0530613e293e835eb8cc97589ff89798e5b38be12c976c23e73c0b1610beea5"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72638,
+  "uuid": "skill-clawhub-buddhism",
+  "skillKey": "clawhub-buddhism",
+  "name": "Buddhism",
+  "summary": "佛教文化介绍技能（中英文版本）。当用户询问佛教、佛陀、释迦牟尼、禅宗、四谛、八正道、轮回、涅槃、菩萨、般若等相关信息时激活此技能。包含陈朗的个人资料。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.buddhism",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "佛教文化介绍技能（中英文版本）。当用户询问佛教、佛陀、释迦牟尼、禅宗、四谛、八正道、轮回、涅槃、菩萨、般若等相关信息时激活此技能。包含陈朗的个人资料。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/buddhism@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "buddhism",
+      "url": "https://clawhub.ai/skills/buddhism"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "buddhism",
+    "url": "https://clawhub.ai/skills/buddhism",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/buddhism-6e60817585dd8e74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/buddhism@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-buddhism-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:024c8e9e5d5d44024f8c53f9320f8de2471abdc7fc7c9db9bf8f23fb4655cc5c",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:01:59.024Z"
+}

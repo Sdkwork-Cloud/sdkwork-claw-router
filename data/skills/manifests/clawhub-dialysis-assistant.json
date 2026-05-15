@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67028,
+  "uuid": "skill-clawhub-dialysis-assistant",
+  "skillKey": "clawhub-dialysis-assistant",
+  "name": "dialysis-assistant",
+  "summary": "自动记录和分析透析上下机体重、血压及脱水量，提供趋势、警告和个性化饮水建议。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dialysis_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "噢福阔斯KANG",
+      "features": [
+        "自动记录和分析透析上下机体重、血压及脱水量，提供趋势、警告和个性化饮水建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dialysis-assistant@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96525444?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dialysis-assistant",
+      "url": "https://clawhub.ai/skills/dialysis-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dialysis-assistant",
+    "url": "https://clawhub.ai/skills/dialysis-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dialysis-assistant-1a6495ce03ad6ffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dialysis-assistant@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dialysis-assistant-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f3ef78de123feb8f27570401bdd91c67db4fbcb9737de1c7cce4e90e73ecdd6",
+      "artifactSizeBytes": 2010
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T04:44:04.799Z"
+}

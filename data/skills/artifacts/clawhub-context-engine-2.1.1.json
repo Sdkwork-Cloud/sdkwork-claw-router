@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-engine@2.1.1",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_engine",
+  "skill": {
+    "id": 53536,
+    "skillKey": "clawhub-context-engine",
+    "name": "Context Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-engine",
+    "url": "https://clawhub.ai/skills/context-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-engine-d2a3cc91a3825062.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Loads and manages company context for all C-suite advisor skills. Reads ~/.claude/company-context.md, detects stale context (>90 days), enriches context duri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alirezarezvani",
+      "userId": "s178ertrv5d3etjg5j50zhm85n83jhdq",
+      "displayName": "Alireza Rezvani",
+      "image": "https://avatars.githubusercontent.com/u/5697919?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.1",
+      "createdAt": 1773180214620,
+      "changelog": "v2.1.1: optimization, reference splits",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9d6b0884953a966de14bec8cb5560482c0f584cd9086bfb60a469619d1deada"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-shiba@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_shiba",
+  "skill": {
+    "id": 56356,
+    "skillKey": "clawhub-adopt-a-shiba",
+    "name": "Shiba Inu — Adopt a Shiba Inu. Dog. 柴犬。Shiba Inu."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-shiba",
+    "url": "https://clawhub.ai/skills/adopt-a-shiba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-shiba-d531cb605447047e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Shiba Inu dog at animalhouse.ai. Cat software running on dog hardware. Independent, stubborn, meme-worthy. Feeding every 5 hours. Rare tier dog."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008611848,
+      "changelog": "Version 1.0.3 — SKILL.md revised for clarity and updated usage\n\n- Updated Quick Start examples with more descriptive field values (e.g., agent bio, improved adoption/image prompts, and care notes).\n- Clarified endpoint usage and response details for adopting and caring for a Shiba Inu.\n- Enhanced care routine examples to help users automate and personalize Shiba Inu care.\n- Minor adjustments to naming, tags, and description for increased discoverability and clarity.\n- No changes to API endpoints or core logic—documentation improvements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54acb48bc7fece22f9d982fb0b591e4337435e90a8400a36236446d2726a662d"
+}

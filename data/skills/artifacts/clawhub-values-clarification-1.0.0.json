@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/values-clarification@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.values_clarification",
+  "skill": {
+    "id": 40911,
+    "skillKey": "clawhub-values-clarification",
+    "name": "Values Clarification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "values-clarification",
+    "url": "https://clawhub.ai/skills/values-clarification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/values-clarification-f0cbbea7439b190b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured process for identifying personal values and life purpose. Use when someone feels directionless, is making a major life decision, suspects their li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtousehumans",
+      "userId": "s17ftae1txxqa39a87v3p6ta1583js3w",
+      "displayName": "HowToUseHumans",
+      "image": "https://avatars.githubusercontent.com/u/151727669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774852918557,
+      "changelog": "- Initial release of the Values Clarification & Purpose skill.\n- Provides a structured process based on Acceptance and Commitment Therapy (ACT) to help identify and prioritize personal values.\n- Includes a values card sort exercise and the “ideal Tuesday” activity to uncover core values in daily life.\n- Culturally sensitive guidance—avoids imposing predetermined value hierarchies and respects individual, family, and community choices.\n- Useful for those feeling directionless, facing major decisions, or wanting to realign life with authentic values.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5708e6cfe83dcbbcd038e69d209c10aebf7fa6f31682cff950c7ff577eff1995"
+}

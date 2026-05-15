@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webmcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webmcp",
+  "skill": {
+    "id": 10643,
+    "skillKey": "clawhub-webmcp",
+    "name": "WebMCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webmcp",
+    "url": "https://clawhub.ai/skills/webmcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webmcp-83e08620e87b0135.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when browsing or automating web pages that expose tools via the WebMCP API (window.navigator.modelContext). It teaches agents how to discover, inspect, and invoke WebMCP tools on websites instead of relying on DOM."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brunobuddy",
+      "userId": "s17fn456aya8ah2hy2zav8sg6d83ecrm",
+      "displayName": "Bruno Pérez",
+      "image": "https://avatars.githubusercontent.com/u/6626184?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2100,
+      "installsAllTime": 16,
+      "installsCurrent": 14,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770761216586,
+      "changelog": "Initial release of webmcp skill.\n\n- Allows agents to discover, inspect, and invoke website tools exposed via the WebMCP API, as an alternative to DOM scraping.\n- Details detection of WebMCP support, listing and invoking tools, and handling JSON Schema-based tool parameters.\n- Describes user interaction flows for sensitive tool operations.\n- Provides agent workflow for integrating with dynamic, per-page toolsets.\n- Notes limitations: requires browser context, sequential tool execution, dynamic tool registration, and permission gating.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c991f579c5d121afefb91afb47963bc071ac97f960fea0310aba3ad7400844b"
+}

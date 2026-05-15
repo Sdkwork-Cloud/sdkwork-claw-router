@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discount-impact-calculator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discount_impact_calculator",
+  "skill": {
+    "id": 33055,
+    "skillKey": "clawhub-discount-impact-calculator",
+    "name": "Discount Impact Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discount-impact-calculator",
+    "url": "https://clawhub.ai/skills/discount-impact-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discount-impact-calculator-44d5e24c0544c711.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate how discounts affect revenue, margin, conversion assumptions, and allowable acquisition cost so teams can see whether a promotion is actually worth..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leooooooow",
+      "userId": "s17974h9acjg4h7h5djv1hg51d83hcca",
+      "displayName": "LeroyCreates",
+      "image": "https://avatars.githubusercontent.com/u/130833525?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773840116337,
+      "changelog": "Add interactive clarification and Python-script workflow guidance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0201354574c3fd9df468f022ae2972b3d7603d985763bc59774f1cad3b9d35ec"
+}

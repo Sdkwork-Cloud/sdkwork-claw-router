@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kalshi-eth-gas-correlation-trader@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kalshi_eth_gas_correlation_trader",
+  "skill": {
+    "id": 55020,
+    "skillKey": "clawhub-kalshi-eth-gas-correlation-trader",
+    "name": "Kalshi Eth Gas Correlation Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kalshi-eth-gas-correlation-trader",
+    "url": "https://clawhub.ai/skills/kalshi-eth-gas-correlation-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kalshi-eth-gas-correlation-trader-992d47c7f2f6aed2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trades ETH price markets on Kalshi using on-chain gas prices as a bullish/bearish signal. High gas = strong demand = bullish for ETH. Requires SIMMER_API_KEY..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "diagnostikon",
+      "userId": "s17bf2qvfsqakddyh674vczxqs83fcwb",
+      "displayName": "diagnostikon",
+      "image": "https://avatars.githubusercontent.com/u/17246180?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775329943363,
+      "changelog": "Rescan attempt",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:899f1d35062911b890426680d061346e9944fc32c6a4fa05cbb85eaf802d1637"
+}

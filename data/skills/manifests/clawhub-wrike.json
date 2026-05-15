@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18137,
+  "uuid": "skill-clawhub-wrike",
+  "skillKey": "clawhub-wrike",
+  "name": "Wrike",
+  "summary": "Manage Wrike tasks, projects, folders, and comments via the Wrike REST API.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wrike",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tallhamn",
+      "features": [
+        "Manage Wrike tasks, projects, folders, and comments via the Wrike REST API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wrike@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wrike",
+      "url": "https://clawhub.ai/skills/wrike"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wrike",
+    "url": "https://clawhub.ai/skills/wrike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wrike-0549e836108aab45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wrike@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wrike-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62bf7e0368c98a8d6ba9a536571940e3f2ccc51be73f3fa51a86a923b236212f",
+      "artifactSizeBytes": 1718
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T13:03:56.325Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-gateway@1.0.116",
+  "version": "1.0.116",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_gateway",
+  "skill": {
+    "id": 8232,
+    "skillKey": "clawhub-api-gateway",
+    "name": "API Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-gateway",
+    "url": "https://clawhub.ai/skills/api-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-gateway-fae39eb1cfc73239.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to external services through Maton-managed API routes. Use this skill only after the user names the target app, account, and task. Start with read/li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 75918,
+      "installsAllTime": 576,
+      "installsCurrent": 542,
+      "stars": 374,
+      "versions": 117
+    },
+    "latestVersion": {
+      "version": "1.0.116",
+      "createdAt": 1778181573675,
+      "changelog": "- Stricter user consent protocols for non-GET (write, modify, or delete) API calls; require explicit user approval with all request details before proceeding.\n- Updated instructions: Never infer approval for non-GET requests from the original user request—always prompt for confirmation first.\n- New connection creation now explicitly requires user approval specifying the service; do not create connections without user direction.\n- Scope selection guidance tightened: during OAuth, choose only scopes necessary for the current task.\n- Reminders to immediately remove connections after their use if no longer needed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6eb2d8ec62865dce6d1b88afa6493525446fac2662084c3fea826f74bc8c83bd"
+}

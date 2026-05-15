@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20169,
+  "uuid": "skill-clawhub-polymarket-oracle",
+  "skillKey": "clawhub-polymarket-oracle",
+  "name": "Polymarket Oracle",
+  "summary": "Multi-strategy arbitrage and trading bot for Polymarket prediction markets. Scans ALL markets (crypto, politics, sports, economics, entertainment) for parity...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_oracle",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Multi-strategy arbitrage and trading bot for Polymarket prediction markets",
+        "Scans ALL markets (crypto, politics, sports, economics, entertainment) for parity..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-oracle@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-oracle",
+      "url": "https://clawhub.ai/skills/polymarket-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-oracle",
+    "url": "https://clawhub.ai/skills/polymarket-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-oracle-5fb66d63fe9cf7c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-oracle@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-oracle-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:22889ed38970f8b6ce2a0c956f6cd9058ebef8db610f98844b07febe8a51096b",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T21:06:00.156Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65404,
+  "uuid": "skill-clawhub-file-archive-system",
+  "skillKey": "clawhub-file-archive-system",
+  "name": "file-archive-system",
+  "summary": "本地文件归档系统。把习惯、偏好、日程、每日记录和长期知识结构化存放到四层记忆目录，并通过 index.json 建立可检索索引。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_archive_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lingmoon96-dev",
+      "features": [
+        "本地文件归档系统。把习惯、偏好、日程、每日记录和长期知识结构化存放到四层记忆目录，并通过 index.json 建立可检索索引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-archive-system@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250243307?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-archive-system",
+      "url": "https://clawhub.ai/skills/file-archive-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-archive-system",
+    "url": "https://clawhub.ai/skills/file-archive-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-archive-system-82c5c6ee2144c914.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-archive-system@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-archive-system-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23c007d461dc0fcaeb0a36a661dd7947d4a17fd3c0562bcb6a278a8d42fe2aba",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T07:36:48.007Z"
+}

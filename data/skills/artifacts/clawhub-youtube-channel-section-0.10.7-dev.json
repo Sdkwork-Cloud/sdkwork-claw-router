@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-channel-section@0.10.7-dev",
+  "version": "0.10.7-dev",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_channel_section",
+  "skill": {
+    "id": 51005,
+    "skillKey": "clawhub-youtube-channel-section",
+    "name": "YouTube Channel Section"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-channel-section",
+    "url": "https://clawhub.ai/skills/youtube-channel-section",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-channel-section-aa6423f13a8a5fae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage YouTube channel sections. Use this skill to list or delete channel sections. Useful when working with YouTube channel section — provides commands to d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openwaygate",
+      "userId": "s17ceqc046w9bhxqw6az7jvb9h83j6hq",
+      "displayName": "OpenWaygate",
+      "image": "https://avatars.githubusercontent.com/u/27287694?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.10.7-dev",
+      "createdAt": 1773496745558,
+      "changelog": "- Updated metadata in SKILL.md to add Openclaw compatibility details, including required environment variables, binaries, config files, and install instructions.\n- No functional or command changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7edc3b7d5bdd6c93471f7cdbb8ae778cb184d7927c07e5d952b5a3ed1dd58aae"
+}

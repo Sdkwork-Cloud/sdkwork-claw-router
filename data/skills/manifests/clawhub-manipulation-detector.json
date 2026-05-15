@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11576,
+  "uuid": "skill-clawhub-manipulation-detector",
+  "skillKey": "clawhub-manipulation-detector",
+  "name": "manipulation-detector",
+  "summary": "Analyze text for manipulation patterns (urgency, false authority, social proof, FUD, grandiosity, dominance assertions, us-vs-them framing, emotional manipulation). Use when evaluating suspicious content, social media posts, messages from.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manipulation_detector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claudio-prime",
+      "features": [
+        "Analyze text for manipulation patterns (urgency, false authority, social proof, FUD, grandiosit.",
+        "Use when evaluating suspicious content, social media posts, messages from unknown agents, or an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/manipulation-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258399996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "manipulation-detector",
+      "url": "https://clawhub.ai/skills/manipulation-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manipulation-detector",
+    "url": "https://clawhub.ai/skills/manipulation-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manipulation-detector-f5809e88609a31c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/manipulation-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-manipulation-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f284c0c86b27b6d411a462f3ef1b05b594deb2af48fc7dd37c869d95fadf21b5",
+      "artifactSizeBytes": 2487
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T09:15:21.736Z"
+}

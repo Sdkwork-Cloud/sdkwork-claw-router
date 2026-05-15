@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23273,
+  "uuid": "skill-clawhub-vidu-video-publisher",
+  "skillKey": "clawhub-vidu-video-publisher",
+  "name": "24-hour news is automatically generated into AI videos and can be published with one click, provided by the Vidu API.",
+  "summary": "Automatically publish videos to Xiaohongshu, Douyin, WeChat Channels, and Kuaishou with platform-tailored titles and tags via browser automation.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_video_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vidu AI",
+      "features": [
+        "Automatically publish videos to Xiaohongshu, Douyin, WeChat Channels, and Kuaishou with platfor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vidu-video-publisher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25274975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vidu-video-publisher",
+      "url": "https://clawhub.ai/skills/vidu-video-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-video-publisher",
+    "url": "https://clawhub.ai/skills/vidu-video-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-video-publisher-f419f051ec4548d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vidu-video-publisher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vidu-video-publisher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42cc504ffe73d7c6b49a4bb5979957a31ef76da62b1c72563ae208ed59af3b41",
+      "artifactSizeBytes": 2404
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T08:15:33.875Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nansen-holder-analysis@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nansen_holder_analysis",
+  "skill": {
+    "id": 31576,
+    "skillKey": "clawhub-nansen-holder-analysis",
+    "name": "Nansen Holder Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nansen-holder-analysis",
+    "url": "https://clawhub.ai/skills/nansen-holder-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nansen-holder-analysis-2d00905a3fd5803f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Is this token held by quality wallets or retail noise? SM holder ratio, flow breakdown by label, and recent buyer quality."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nansen-devops",
+      "userId": "s174hnr0xtfypzan2x804p4me183nkqz",
+      "displayName": "Nansen AI",
+      "image": "https://avatars.githubusercontent.com/u/93130718?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 255,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773746362275,
+      "changelog": "- Initial release of nansen-holder-analysis.\n- Analyze token holder quality using Nansen CLI.\n- Features include SM (smart money) holder ratio, token flow breakdown by label, and recent buyer quality.\n- Supports flow and holder analysis via token contract address (Ethereum).\n- Highlights red and green flags based on smart money and fresh wallets activity.\n- Requires NANSEN_API_KEY and nansen-cli.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97e5d41f8e148447a1d759d2fae87c000b89025949b69d7c70efae25c6ed505f"
+}

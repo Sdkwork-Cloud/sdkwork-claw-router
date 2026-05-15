@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eir-daily-content-curator@3.119.0",
+  "version": "3.119.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eir_daily_content_curator",
+  "skill": {
+    "id": 49662,
+    "skillKey": "clawhub-eir-daily-content-curator",
+    "name": "Eir Daily Content Curator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eir-daily-content-curator",
+    "url": "https://clawhub.ai/skills/eir-daily-content-curator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eir-daily-content-curator-5a58512130d22a76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily AI news curation — learns interests from your profile, searches the web, delivers structured summaries and daily briefs. Use when: 'set up daily news',..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heyeir",
+      "userId": "s176qbsy6rrtf0nr4v7y8n2ba185a8sw",
+      "displayName": "heyeir",
+      "image": "https://avatars.githubusercontent.com/u/263917053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 300,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "3.119.0",
+      "createdAt": 1777117038442,
+      "changelog": "Bug fixes: API URL normalization, preflight crash, anchor slug validation, encoding fixes. Features: server-side dedup sync, title normalization, cross-language event dedup, API freshness pre-check, output language from API. Cleanup: removed unused translation code, content_slug hash fallback, unified publishTime naming. Docs improved for Job B workflow and multi-language contentGroup rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:718c5990ade6869a4095e35d4723b30db70ec277412dfd3da5a8fc74e0251d5d"
+}

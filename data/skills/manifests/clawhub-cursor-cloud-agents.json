@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13542,
+  "uuid": "skill-clawhub-cursor-cloud-agents",
+  "skillKey": "clawhub-cursor-cloud-agents",
+  "name": "Cursor Cloud Agents",
+  "summary": "Deploy Cursor AI agents to GitHub repos. Automatically write code, generate tests, create documentation, and open PRs using your existing Cursor subscription.",
+  "version": "1.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cursor_cloud_agents",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ParcostaBot",
+      "features": [
+        "Deploy Cursor AI agents to GitHub repos",
+        "Automatically write code, generate tests, create documentation, and open PRs using your existin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cursor-cloud-agents@1.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/232292992?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cursor-cloud-agents",
+      "url": "https://clawhub.ai/skills/cursor-cloud-agents"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cursor-cloud-agents",
+    "url": "https://clawhub.ai/skills/cursor-cloud-agents",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cursor-cloud-agents-a85b5d63d1669443.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cursor-cloud-agents@1.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cursor-cloud-agents-1.3.3.json",
+      "version": "1.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ceacdc1996fe0192843e180f509d88d4f94c1576fe45be1eebf89bc6238d4341",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T03:42:22.127Z"
+}

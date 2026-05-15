@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38325,
+  "uuid": "skill-clawhub-toss-payments-cli",
+  "skillKey": "clawhub-toss-payments-cli",
+  "name": "Toss Payments CLI",
+  "summary": "Command-line tool for Toss Payments API to retrieve payment details and perform full or partial payment cancellations using payment keys.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toss_payments_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Command-line tool for Toss Payments API to retrieve payment details and perform full or partial."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toss-payments-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toss-payments-cli",
+      "url": "https://clawhub.ai/skills/toss-payments-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toss-payments-cli",
+    "url": "https://clawhub.ai/skills/toss-payments-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toss-payments-cli-6ca10719c5df10d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toss-payments-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toss-payments-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b13227c302e09898e05b0283bfe21071b7c69d3490841b1d9fe96269549ccc4",
+      "artifactSizeBytes": 1888
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T00:07:27.411Z"
+}

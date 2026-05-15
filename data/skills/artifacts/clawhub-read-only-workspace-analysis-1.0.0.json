@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/read-only-workspace-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.read_only_workspace_analysis",
+  "skill": {
+    "id": 39543,
+    "skillKey": "clawhub-read-only-workspace-analysis",
+    "name": "Read Only Workspace Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "read-only-workspace-analysis",
+    "url": "https://clawhub.ai/skills/read-only-workspace-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/read-only-workspace-analysis-4955a0e33a8e68c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize what is open, what changed, and what is due soon from a Campus Copilot snapshot."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaojiou176",
+      "userId": "s170nkfkw4w7zm8rkrxee73k4984et24",
+      "displayName": "Yifeng[Terry] Yu",
+      "image": "https://avatars.githubusercontent.com/u/125581657?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775816971081,
+      "changelog": "- Initial release of the read-only-workspace-analysis skill.\n- Summarizes what is open, what changed, and what is due soon from a Campus Copilot snapshot.\n- Identifies which site is carrying the current workload.\n- Designed for use with imported snapshots or thin-BFF contract data—no live browser automation by default.\n- Includes example files for reference and integration guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c19976735b8861437fe241daa1f6009c5db9c43f4f8cf4483f65e11d0d660880"
+}

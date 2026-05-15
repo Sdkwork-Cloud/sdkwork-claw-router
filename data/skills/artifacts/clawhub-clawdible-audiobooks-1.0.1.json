@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdible-audiobooks@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdible_audiobooks",
+  "skill": {
+    "id": 26191,
+    "skillKey": "clawhub-clawdible-audiobooks",
+    "name": "clawdible -audiobooks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdible-audiobooks",
+    "url": "https://clawhub.ai/skills/clawdible-audiobooks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdible-audiobooks-8aaca652a65c1f9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, browse, and manage Audible audiobooks. Use when the user wants to search for audiobooks on Audible, view their library, get book details, purchase a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryandeathridge",
+      "userId": "s178ffvhy04be1qkts516s6sqx83gb6p",
+      "displayName": "Ryan",
+      "image": "https://avatars.githubusercontent.com/u/29902460?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774228705658,
+      "changelog": "clawdible-audiobooks v1.0.1\n\n- Updated documentation for improved clarity and completeness about setup, dependencies, and usage.\n- Expanded instructions for cross-platform compatibility, script auto-location, and dependency handling.\n- Clarified command examples, workflows, and error causes/fixes.\n- Enhanced usage trigger phrases and user guidance for all key features.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bdfa06cf428b67951bc8884335b6145c49b73469c2876bda1eeeea3c503af9c"
+}

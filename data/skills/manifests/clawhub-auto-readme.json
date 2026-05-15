@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40795,
+  "uuid": "skill-clawhub-auto-readme",
+  "skillKey": "clawhub-auto-readme",
+  "name": "README Writer",
+  "summary": "Generate a complete, production-quality README.md from code, description, or an existing README, tailored to the project type without any filler content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_readme",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lnguyen1996",
+      "features": [
+        "Generate a complete, production-quality README.md from code, description, or an existing README."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-readme@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97846628?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-readme",
+      "url": "https://clawhub.ai/skills/auto-readme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-readme",
+    "url": "https://clawhub.ai/skills/auto-readme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-readme-2ba2797bdff82302.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-readme@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-readme-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d001f08e322bd94f9d672fcb923664e93440661767a56ba546f898e02f6f813a",
+      "artifactSizeBytes": 2357
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T06:07:00.316Z"
+}

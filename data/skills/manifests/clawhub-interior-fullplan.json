@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34136,
+  "uuid": "skill-clawhub-interior-fullplan",
+  "skillKey": "clawhub-interior-fullplan",
+  "name": "Interior Fullplan",
+  "summary": "Generate a complete interior design plan including layout, lighting, materials, budget, and construction guidelines based on client input and design standards.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interior_fullplan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "137984917-cyber",
+      "features": [
+        "Generate a complete interior design plan including layout, lighting, materials, budget, and con."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interior-fullplan@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270913925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interior-fullplan",
+      "url": "https://clawhub.ai/skills/interior-fullplan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interior-fullplan",
+    "url": "https://clawhub.ai/skills/interior-fullplan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interior-fullplan-05c9c50bdecd826c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interior-fullplan@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-interior-fullplan-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5088ddfb866353132af8f47074bd7933f9598e835b62d7b5c15cadca3e18a7d",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T10:51:13.345Z"
+}

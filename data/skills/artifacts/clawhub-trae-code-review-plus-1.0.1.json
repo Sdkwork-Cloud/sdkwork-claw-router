@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trae-code-review-plus@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trae_code_review_plus",
+  "skill": {
+    "id": 63778,
+    "skillKey": "clawhub-trae-code-review-plus",
+    "name": "trae-code-review-plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trae-code-review-plus",
+    "url": "https://clawhub.ai/skills/trae-code-review-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trae-code-review-plus-9386a91fa4a5854b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的代码审查 Skill。当用户要求进行代码评审、安全性检查或性能优化建议时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dnorris2926-0",
+      "userId": "s17baf1tymmq5pgqr8t3nnzcan83h4k6",
+      "displayName": "Tom Mcpherson",
+      "image": "https://avatars.githubusercontent.com/u/203992026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774339140555,
+      "changelog": "trae-code-review-plus v1.0.0 – Initial Release\n\n- Introduces a structured workflow for professional code review, security checks, and performance suggestions.\n- Enforces evidence-based review using codebase search and local engine synchronization for semantic analysis.\n- Always includes concise Mermaid diagrams to visualize business and technical changes.\n- Implements a double-validation system via parallel sub-agents for issue confidence scoring.\n- Provides a step-by-step user interaction loop for selecting and fixing issues, ensuring language consistency and clear option enumeration.\n- Strictly avoids low-value comments and skips non-code files during review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10aa249b8bb2a234a3c8dcc2cf24cc7818460013f7045436a449e4d6bea961b7"
+}

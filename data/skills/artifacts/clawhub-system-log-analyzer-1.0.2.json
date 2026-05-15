@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/system-log-analyzer@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.system_log_analyzer",
+  "skill": {
+    "id": 64018,
+    "skillKey": "clawhub-system-log-analyzer",
+    "name": "Log Analyzer Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "system-log-analyzer",
+    "url": "https://clawhub.ai/skills/system-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/system-log-analyzer-29fd87776014a4bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "纯本地日志分析系统，支持日志统计、重复检测、错误分析和异常识别"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "godyounger",
+      "userId": "s17d89aea6q7z9jjpp7njpmyf5842whj",
+      "displayName": "GodYoung",
+      "image": "https://avatars.githubusercontent.com/u/82840619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773123373344,
+      "changelog": "- Initial public release of log-analyzer as a local log analysis system.\n- Provides three main modules: data ingestion diagnostics, index performance optimization, and error/exception monitoring.\n- Web-based interface (Streamlit) for statistics, duplicate detection, error analysis, and anomaly identification.\n- Supports configurable log directory, file patterns, and analysis options.\n- Works fully offline; no cloud or external connections required.\n- Requires Python 3, Streamlit, Pandas, and Plotly (autodetected/auto-installed on first use).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc9b8e7ca0eec7eb27aa7200a6e17c2011b64fbe128514d15c2889b076d2487a"
+}

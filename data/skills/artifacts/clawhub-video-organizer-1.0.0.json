@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-organizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_organizer",
+  "skill": {
+    "id": 69953,
+    "skillKey": "clawhub-video-organizer",
+    "name": "Video Organizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-organizer",
+    "url": "https://clawhub.ai/skills/video-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-organizer-16afe9139ab8fbef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "视频文件批量重命名和整理工具，支持按时间、格式、分辨率等方式整理视频，批量重命名，预览模式和撤销功能！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 339,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772769982851,
+      "changelog": "正式版本发布！视频文件批量重命名和整理工具，支持按时间、格式等方式整理视频，批量重命名，预览模式和撤销功能！",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9d11839917c00e7c4eaa233ad84f1791bc9838c8faabf7cff3a9af141a96fd90"
+}

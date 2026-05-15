@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36007,
+  "uuid": "skill-clawhub-claw-config-backup",
+  "skillKey": "clawhub-claw-config-backup",
+  "name": "openclaw configure backup",
+  "summary": "Backup OpenClaw configuration file with hash-based change detection. Use when user asks to backup, create backup of, or save OpenClaw config (openclaw.json)....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_config_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jay",
+      "features": [
+        "Backup OpenClaw configuration file with hash-based change detection",
+        "Use when user asks to backup, create backup of, or save OpenClaw config (openclaw.json)...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-config-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1488374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-config-backup",
+      "url": "https://clawhub.ai/skills/claw-config-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-config-backup",
+    "url": "https://clawhub.ai/skills/claw-config-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-config-backup-a76bdb620ff467c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-config-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-config-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6443d5b7a08f25665ddcb301ee87d7a4bd96084d2d61c47a6913b6e604275f19",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:39:22.318Z"
+}

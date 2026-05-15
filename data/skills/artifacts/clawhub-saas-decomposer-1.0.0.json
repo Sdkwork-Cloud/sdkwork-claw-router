@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/saas-decomposer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.saas_decomposer",
+  "skill": {
+    "id": 16120,
+    "skillKey": "clawhub-saas-decomposer",
+    "name": "Saas Decomposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "saas-decomposer",
+    "url": "https://clawhub.ai/skills/saas-decomposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/saas-decomposer-45c329598a220c64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Web SaaS service decomposition and AI internalization development plan generation. Analyze existing SaaS to identify functions replaceable by AI agents and e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mupengi-bot",
+      "userId": "s17cb0n67gxg14m41wrqex0hr183j5d2",
+      "displayName": "mupengi-bot",
+      "image": "https://avatars.githubusercontent.com/u/259087580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 906,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771383021365,
+      "changelog": "saas-decomposer 1.0.0\n\n- Initial release providing automated SaaS service decomposition and AI internalization planning.\n- Analyzes existing SaaS offerings, identifies replaceable functions, and assigns AI replaceability scores.\n- Generates detailed internalization roadmaps, including new skill specs, development timelines, and cost comparisons.\n- Supports comparative analysis across multiple SaaS products in the same category.\n- Includes pre-defined industry templates and troubleshooting guides for common analysis challenges.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:38a636daf2f1266ca062125320c6bc42ce2f2e0edc72c2c7078087bc3d2ce522"
+}

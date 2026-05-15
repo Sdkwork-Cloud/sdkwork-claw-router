@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66078,
+  "uuid": "skill-clawhub-1688-item-image-optimizer",
+  "skillKey": "clawhub-1688-item-image-optimizer",
+  "name": "1688 Item Image Optimizer",
+  "summary": "1688 商品图片智能优化助手 —— 打开图片优化页面，为商品主图增加热卖元素。 触发词：优化图片、图片优化、主图优化、商品图片、改图。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.1688_item_image_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "1688 商品图片智能优化助手 —— 打开图片优化页面，为商品主图增加热卖元素。 触发词：优化图片、图片优化、主图优化、商品图片、改图。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/1688-item-image-optimizer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "1688-item-image-optimizer",
+      "url": "https://clawhub.ai/skills/1688-item-image-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "1688-item-image-optimizer",
+    "url": "https://clawhub.ai/skills/1688-item-image-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/1688-item-image-optimizer-7c323f83ad50d063.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/1688-item-image-optimizer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-1688-item-image-optimizer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e011e3fb619a7549481a4740e73550c4ea5521b8bf0f40e0c97c8deb8e1f3458",
+      "artifactSizeBytes": 2426
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:54:11.527Z"
+}

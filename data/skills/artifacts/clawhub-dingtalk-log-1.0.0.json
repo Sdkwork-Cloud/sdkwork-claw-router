@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-log@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_log",
+  "skill": {
+    "id": 63324,
+    "skillKey": "clawhub-dingtalk-log",
+    "name": "dingtalk-log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-log",
+    "url": "https://clawhub.ai/skills/dingtalk-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-log-28c6f2f056a9821b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过钉钉topapi/report/list接口按时间、模板名或员工ID分页查询企业员工日志列表，含日志详情和创建信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "3rdsw",
+      "userId": "s17c74yc1z3r01v173b08yjgyx842pmk",
+      "displayName": "3rdsw",
+      "image": "https://avatars.githubusercontent.com/u/62412876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772787081049,
+      "changelog": "dingtalk-log 1.0.0\n\n- Initial release of the skill for querying DingTalk user logs via the topapi/report/list API.\n- Supports filtering logs by template name, employee userId, and time range.\n- Implements pagination with cursor and size parameters (up to 20 per page, 180 days max range).\n- Requires enterprise internal or third-party enterprise app authorization and access_token handling.\n- Detailed response parsing and error handling guidance included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e2929eb88579cf945c65e76e56fab215334092323396cb413faf0eac3acad37"
+}

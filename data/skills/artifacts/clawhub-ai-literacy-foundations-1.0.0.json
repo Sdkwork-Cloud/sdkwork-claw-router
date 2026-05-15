@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-literacy-foundations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_literacy_foundations",
+  "skill": {
+    "id": 54934,
+    "skillKey": "clawhub-ai-literacy-foundations",
+    "name": "Ai Literacy Foundations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-literacy-foundations",
+    "url": "https://clawhub.ai/skills/ai-literacy-foundations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-literacy-foundations-725041fd70f8b57f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Understand what AI can and cannot do — build a clear mental model of modern AI systems."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 69,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778122784933,
+      "changelog": "Initial release of AI Literacy Foundations — a guided skill for understanding modern AI concepts and limitations.\n\n- Structured path to demystify LLMs, generative AI, and machine learning at any knowledge level.\n- Covers training data, tokens, context windows, model limitations, and common misconceptions.\n- Interactive approach: assesses user’s prior knowledge, adapts explanations, and offers exercises.\n- Focuses strictly on education and conceptual mental models, not technical implementation.\n- Includes built-in safety: no claims of AI sentience, no technical guidance, corrections for common AI myths.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2672579e62a83f7860bec1d455467f39969d77f343790793c4f1b676dca0bb36"
+}

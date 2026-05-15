@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paradiz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paradiz",
+  "skill": {
+    "id": 68848,
+    "skillKey": "clawhub-paradiz",
+    "name": "Paradiz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paradiz",
+    "url": "https://clawhub.ai/skills/paradiz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paradiz-0f9a7455be5c75e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Отвечать клиентам в VK по стоимости отдыха на основе Excel-прайса. Использовать, когда нужно быстро посчитать цену по датам, количеству гостей и номеру, и вы..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "keeper1978",
+      "userId": "publishers:keeper1978",
+      "displayName": "keeper1978",
+      "image": "https://avatars.githubusercontent.com/u/20265804?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 513,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772097347989,
+      "changelog": "Initial upload",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0eb8341c2b995285a3a52c96bbc5bd5d6d4059f83c8c23d07b7260c950d5e08f"
+}

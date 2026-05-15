@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72938,
+  "uuid": "skill-clawhub-score-query",
+  "skillKey": "clawhub-score-query",
+  "name": "学分查询技能",
+  "summary": "学分查询技能",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.score_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bc96",
+      "features": [],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/score-query@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16324255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "score-query",
+      "url": "https://clawhub.ai/skills/score-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "score-query",
+    "url": "https://clawhub.ai/skills/score-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/score-query-13327e39ba700ae6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/score-query@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-score-query-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e5b4fae20bd36bba6214db0010e22a9d65c88e5b5918456aefedfd78122f027",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T06:47:45.860Z"
+}

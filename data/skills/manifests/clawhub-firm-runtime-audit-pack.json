@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26028,
+  "uuid": "skill-clawhub-firm-runtime-audit-pack",
+  "skillKey": "clawhub-firm-runtime-audit-pack",
+  "name": "Firm Runtime Audit Pack",
+  "summary": "Runtime environment and configuration audit pack. Validates Node.js version, secrets workflow, HTTP headers, allowed commands, trusted proxy, disk budget, an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_runtime_audit_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romainsantoli-web",
+      "features": [
+        "Runtime environment and configuration audit pack",
+        "Validates Node.js version, secrets workflow, HTTP headers, allowed commands, trusted proxy, dis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firm-runtime-audit-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246739959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firm-runtime-audit-pack",
+      "url": "https://clawhub.ai/skills/firm-runtime-audit-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-runtime-audit-pack",
+    "url": "https://clawhub.ai/skills/firm-runtime-audit-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-runtime-audit-pack-299d6d3d9fe7c5b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firm-runtime-audit-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firm-runtime-audit-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70067ade16a79dfe0749526a5658157a8c884ee80242401f06bfd63c014635a1",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T22:16:09.394Z"
+}

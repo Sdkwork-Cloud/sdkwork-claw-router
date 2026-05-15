@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33698,
+  "uuid": "skill-clawhub-order-from-whole-foods",
+  "skillKey": "clawhub-order-from-whole-foods",
+  "name": "Order From Whole Foods",
+  "summary": "Order groceries from Whole Foods using browser automation and a saved purchase policy",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.order_from_whole_foods",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chad Newbry",
+      "features": [
+        "Order groceries from Whole Foods using browser automation and a saved purchase policy"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/order-from-whole-foods@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5430767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "order-from-whole-foods",
+      "url": "https://clawhub.ai/skills/order-from-whole-foods"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "order-from-whole-foods",
+    "url": "https://clawhub.ai/skills/order-from-whole-foods",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/order-from-whole-foods-08086285d42d7203.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/order-from-whole-foods@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-order-from-whole-foods-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c13fe18a8763f251f7b72ee8cf65fa6c30c118fd8543927f02149bd997e17dc8",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:51:52.027Z"
+}

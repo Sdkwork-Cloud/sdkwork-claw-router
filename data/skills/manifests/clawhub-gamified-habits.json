@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65025,
+  "uuid": "skill-clawhub-gamified-habits",
+  "skillKey": "clawhub-gamified-habits",
+  "name": "Gamified Habits",
+  "summary": "游戏化习惯养成助手 - 用游戏化的方式培养好习惯，支持打卡、XP 升级、属性面板",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gamified_habits",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanwan2qq",
+      "features": [
+        "游戏化习惯养成助手",
+        "用游戏化的方式培养好习惯，支持打卡、XP 升级、属性面板"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gamified-habits@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10196216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gamified-habits",
+      "url": "https://clawhub.ai/skills/gamified-habits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gamified-habits",
+    "url": "https://clawhub.ai/skills/gamified-habits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gamified-habits-37031164decf7cd6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gamified-habits@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gamified-habits-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3123534171415e1e62ffe79c718179ad382a7ef9768eaba280944f058461a6f7",
+      "artifactSizeBytes": 2166
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:49:04.655Z"
+}

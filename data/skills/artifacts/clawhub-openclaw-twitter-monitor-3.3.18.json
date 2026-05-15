@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-twitter-monitor@3.3.18",
+  "version": "3.3.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_twitter_monitor",
+  "skill": {
+    "id": 39581,
+    "skillKey": "clawhub-openclaw-twitter-monitor",
+    "name": "Openclaw Twitter Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-twitter-monitor",
+    "url": "https://clawhub.ai/skills/openclaw-twitter-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-twitter-monitor-4f4790417049e1f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CT Monitor — Crypto Intelligence Analyst. Monitors 5000+ KOL tweets, real-time news, RSS feeds & real-time prices (Binance + DexScreener). Integrates Binance..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tizerluo",
+      "userId": "publishers:tizerluo",
+      "displayName": "tizerluo",
+      "image": "https://avatars.githubusercontent.com/u/192086140?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 597,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 23
+    },
+    "latestVersion": {
+      "version": "3.3.18",
+      "createdAt": 1772750029078,
+      "changelog": "v3.3.18: add Quick Start Combo Menu - when user asks what the skill can do, AI proactively presents all 10 Combos with trigger phrases and function descriptions in Chinese",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0dc22275eb32e1a86eaf20e2b27dd9069af91b46f6cd2a335c8888c5f8f0d8bf"
+}

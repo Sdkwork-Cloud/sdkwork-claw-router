@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-knowledge-ingest@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_knowledge_ingest",
+  "skill": {
+    "id": 30065,
+    "skillKey": "clawhub-video-knowledge-ingest",
+    "name": "video-knowledge-ingest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-knowledge-ingest",
+    "url": "https://clawhub.ai/skills/video-knowledge-ingest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-knowledge-ingest-2c655857f4939230.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ingest and summarize cross-platform videos into a local knowledge base. Use when working with YouTube, Bilibili, Xiaohongshu, or local media/subtitle files a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "exsusiai",
+      "userId": "s173ebxcxyry2j0pms9w1c9e7583jr9d",
+      "displayName": "Exsusiai",
+      "image": "https://avatars.githubusercontent.com/u/40732564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773763172678,
+      "changelog": "Initial release of video-knowledge-ingest skill.\n\n- Ingests and summarizes videos from YouTube, Bilibili, Xiaohongshu, or local files into a local knowledge base.\n- Fetches subtitles if available; otherwise downloads media and transcribes using Whisper.\n- Generates a text summary and saves transcript, summary, and metadata locally.\n- Handles edge cases including subtitle errors, platform-specific issues, and dependency problems.\n- Intended as the default video-to-summary workflow and for debugging ingestion failures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d801df2b21c785b7724270164ed65b2b16c9add09820d90ee2ec6c52254b370"
+}

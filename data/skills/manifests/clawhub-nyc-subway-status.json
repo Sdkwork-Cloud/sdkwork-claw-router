@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27406,
+  "uuid": "skill-clawhub-nyc-subway-status",
+  "skillKey": "clawhub-nyc-subway-status",
+  "name": "NYC Subway Status",
+  "summary": "Check real-time NYC subway arrivals, track trains, and find stations. Use when user asks about subway times, train status, MTA arrivals, or NYC transit.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nyc_subway_status",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Max Shaw",
+      "features": [
+        "Check real-time NYC subway arrivals, track trains, and find stations",
+        "Use when user asks about subway times, train status, MTA arrivals, or NYC transit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nyc-subway-status@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1162871?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nyc-subway-status",
+      "url": "https://clawhub.ai/skills/nyc-subway-status"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nyc-subway-status",
+    "url": "https://clawhub.ai/skills/nyc-subway-status",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nyc-subway-status-72d73777d5e040b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nyc-subway-status@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nyc-subway-status-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50490899aa0e307f30eac7a6c6bdb74feb366c05a7af155f32245b7329f04b33",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T19:00:55.470Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proactive-claw@1.2.41",
+  "version": "1.2.41",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_claw",
+  "skill": {
+    "id": 14008,
+    "skillKey": "clawhub-proactive-claw",
+    "name": "Proactive Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-claw",
+    "url": "https://clawhub.ai/skills/proactive-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-claw-b10b7d366c4532dc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🦞 The most powerful proactive engine for OpenClaw. Your personal assistant that learns from you and helps you be more productive."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "googlarz",
+      "userId": "s17dtjtrkg232jet8p1nq620ys83g0wf",
+      "displayName": "Dawid Piaskowski",
+      "image": "https://avatars.githubusercontent.com/u/17293217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1542,
+      "installsAllTime": 15,
+      "installsCurrent": 14,
+      "stars": 3,
+      "versions": 50
+    },
+    "latestVersion": {
+      "version": "1.2.41",
+      "createdAt": 1772808141660,
+      "changelog": "- Improved setup flow with new `setup.sh --doctor` and install command helpers.\n- Added `RELEASE_CHECKLIST.md` and requirements files for Google and Nextcloud integrations.\n- Introduced `scripts/quickstart.sh` for faster initial preview runs.\n- Enhanced documentation for manual dependency installation and backend bootstrapping.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f58dbfc2ffd1608657a374acc8450ae87710e7147f150a0b7f303c106a3d056"
+}

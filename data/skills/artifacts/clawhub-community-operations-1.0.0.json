@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/community-operations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.community_operations",
+  "skill": {
+    "id": 45945,
+    "skillKey": "clawhub-community-operations",
+    "name": "Community Operations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "community-operations",
+    "url": "https://clawhub.ai/skills/community-operations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/community-operations-0696941a4fb79c8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design and implement automatic community commenting workflows driven by existing site content, with optional support for automatic posting and multi-account..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xaviermary56",
+      "userId": "s176fp65pxxh36er7py22sjw4h83gnqw",
+      "displayName": "Xavier Mary",
+      "image": "https://avatars.githubusercontent.com/u/225500647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776273429957,
+      "changelog": "- Initial release of community-operations skill, version 1.0.0.\n- Enables the design and implementation of automatic community commenting workflows based on existing site content.\n- Supports content extraction, context-aware comment generation, account rotation, scheduling, and logging.\n- Includes optional moderation handoff before or after comment submission, but does not own moderation policy.\n- Provides structured guidance and templates for extracting content, generating varied comment styles, and enforcing anti-duplication and frequency controls.\n- Lays groundwork for future expansion into automatic posting and campaign scheduling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28fda66e64549c0085a9cb009cb46caa757a977cc161c07a8983a30fa7d02d0b"
+}

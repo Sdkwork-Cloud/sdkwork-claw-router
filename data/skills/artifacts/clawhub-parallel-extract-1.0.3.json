@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parallel-extract@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_extract",
+  "skill": {
+    "id": 11555,
+    "skillKey": "clawhub-parallel-extract",
+    "name": "Parallel Extract"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-extract",
+    "url": "https://clawhub.ai/skills/parallel-extract",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-extract-ee8fa35459ab2836.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "URL content extraction via Parallel API. Extracts clean markdown from webpages, articles, PDFs, and JS-heavy sites. Use for reading specific URLs with LLM-re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "normallygaussian",
+      "userId": "s173n6zpcxryc8pb92y0hgm1f985dyrd",
+      "displayName": "NormallyGaussian",
+      "image": "https://avatars.githubusercontent.com/u/3804139?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2084,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778181643436,
+      "changelog": "- Updated prerequisites to clarify that parallel-cli must be installed and authenticated.\n- Added instructions for handling installation or authentication errors, directing users to https://docs.parallel.ai/integrations/cli.\n- No functional or usage changes to the skill itself.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:22f6f013d7ef492d39ad652a477096fc48d784d533f2b438b7a5633c5b04d8fb"
+}

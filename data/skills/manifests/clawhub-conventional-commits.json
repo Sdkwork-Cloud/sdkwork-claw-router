@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8649,
+  "uuid": "skill-clawhub-conventional-commits",
+  "skillKey": "clawhub-conventional-commits",
+  "name": "Conventional Commits",
+  "summary": "Format commit messages using the Conventional Commits specification. Use when creating commits, writing commit messages, or when the user mentions commits, git commits, or commit messages. Ensures commits follow the standard format for aut.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conventional_commits",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tiago Bastos",
+      "features": [
+        "Format commit messages using the Conventional Commits specification",
+        "Use when creating commits, writing commit messages, or when the user mentions commits, git comm.",
+        "Ensures commits follow the standard format for automated tooling, changelog generation, and sem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conventional-commits@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11134?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conventional-commits",
+      "url": "https://clawhub.ai/skills/conventional-commits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conventional-commits",
+    "url": "https://clawhub.ai/skills/conventional-commits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conventional-commits-aaaf20ccee7aae64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conventional-commits@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-conventional-commits-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80a0670430bc313fc0eb966e0bc5e00af9026026a6bbda9b9a090df3fa95cbbc",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T14:06:39.193Z"
+}

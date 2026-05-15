@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55850,
+  "uuid": "skill-clawhub-project-writing",
+  "skillKey": "clawhub-project-writing",
+  "name": "Project Writing",
+  "summary": "Always wrap the main content of your response within <ama-doc></ama-doc> tags to clearly distinguish the core information from any introductory or concluding...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_writing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alvinecarn",
+      "features": [
+        "Always wrap the main content of your response within <ama-doc></ama-doc> tags to clearly distin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-writing@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255032544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-writing",
+      "url": "https://clawhub.ai/skills/project-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-writing",
+    "url": "https://clawhub.ai/skills/project-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-writing-0b31315d076d4d61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-writing@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-writing-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bb5bddaffc676626b49ecff818e300fbda37195031efa47578007f82d779091",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T05:58:48.241Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acorn-prover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acorn_prover",
+  "skill": {
+    "id": 12102,
+    "skillKey": "clawhub-acorn-prover",
+    "name": "Acorn Prover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acorn-prover",
+    "url": "https://clawhub.ai/skills/acorn-prover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acorn-prover-bb70e73ec5a33d89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify and write proofs using the Acorn theorem prover for mathematical and cryptographic formalization. Use when working with Acorn proof files (.ac), verifying theorems, formalizing mathematical or cryptographic protocols, or writing pro."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyingnobita",
+      "userId": "publishers:flyingnobita",
+      "displayName": "flyingnobita",
+      "image": "https://avatars.githubusercontent.com/u/46126470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1803,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770049712656,
+      "changelog": "Initial release of the acorn-prover skill.\n\n- Supports verifying and writing proofs using the Acorn theorem prover for mathematical and cryptographic formalization.\n- Guides user setup: prompts for and validates required Acorn library/project paths; runs setup, and sources config automatically.\n- Commands for verification, re-verification (CI/CD), training data, and documentation generation, supporting both mise and CLI workflows.\n- Includes quick Acorn syntax overview and highlights key standard library modules.\n- Extensive workflow and troubleshooting instructions for users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de98d86be3ad6ad262b633720aa03badd072b029e46f3daf722da1bfe65c946b"
+}

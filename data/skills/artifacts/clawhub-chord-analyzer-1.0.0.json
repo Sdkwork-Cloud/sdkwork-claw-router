@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chord-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chord_analyzer",
+  "skill": {
+    "id": 32161,
+    "skillKey": "clawhub-chord-analyzer",
+    "name": "Chord Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chord-analyzer",
+    "url": "https://clawhub.ai/skills/chord-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chord-analyzer-15da8be15a9d7de7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze music audio files to extract chord progressions, key signature, tempo, and song structure. Use when user wants to identify chords, analyze a song's h..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ctwww",
+      "userId": "publishers:ctwww",
+      "displayName": "ctwww",
+      "image": "https://avatars.githubusercontent.com/u/60311185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773744989982,
+      "changelog": "Initial release: Extract chord progressions, key signature, and tempo from music audio files using librosa",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6d8a63b843db74b239205eb12e2f33562ddc8c6e07dbfae70b6cf856d6e42b5"
+}

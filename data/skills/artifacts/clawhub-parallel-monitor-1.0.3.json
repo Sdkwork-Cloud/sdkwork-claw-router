@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parallel-monitor@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parallel_monitor",
+  "skill": {
+    "id": 53961,
+    "skillKey": "clawhub-parallel-monitor",
+    "name": "Parallel Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parallel-monitor",
+    "url": "https://clawhub.ai/skills/parallel-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parallel-monitor-07edb68d32a16614.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Continuously track the web for changes via the Parallel Monitor API. Creates a recurring research task that runs on a cadence and emits events on change — wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "normallygaussian",
+      "userId": "s173n6zpcxryc8pb92y0hgm1f985dyrd",
+      "displayName": "NormallyGaussian",
+      "image": "https://avatars.githubusercontent.com/u/3804139?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 81,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778181610972,
+      "changelog": "parallel-monitor 1.0.3\n\n- Added a detailed SKILL.md for usage, prompting, CLI examples, error codes, and best practices.\n- Clarified when to use monitoring versus one-off searches.\n- Outlined support for structured outputs via JSON schema and webhook event delivery.\n- Documented error handling procedures and prerequisites.\n- Included references to official documentation for further information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2059e3c14994b23c2b7e4e870d6e8fb34efea5429eac94a77c89277d30245b0c"
+}

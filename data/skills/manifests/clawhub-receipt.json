@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26753,
+  "uuid": "skill-clawhub-receipt",
+  "skillKey": "clawhub-receipt",
+  "name": "Receipt",
+  "summary": "Scan, categorize, and total receipts for expenses. Use when recording purchases, categorizing spending, balancing monthly totals, forecasting budgets.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.receipt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Scan, categorize, and total receipts for expenses",
+        "Use when recording purchases, categorizing spending, balancing monthly totals, forecasting budg."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/receipt@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "receipt",
+      "url": "https://clawhub.ai/skills/receipt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "receipt",
+    "url": "https://clawhub.ai/skills/receipt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/receipt-6f32860910ca0fb2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/receipt@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-receipt-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b7e9678c17f6e78623f9ab65e1ae515ed2c0c52cf0481feb85eaba4ab76ed32",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:49:24.479Z"
+}

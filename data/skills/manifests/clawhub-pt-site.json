@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21268,
+  "uuid": "skill-clawhub-pt-site",
+  "skillKey": "clawhub-pt-site",
+  "name": "Pt Site",
+  "summary": "Search and download torrents from NexusPHP-based PT sites, then add to qBittorrent. Use when user wants to search a specific PT site, download torrent, or fi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pt_site",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "风起",
+      "features": [
+        "Search and download torrents from NexusPHP-based PT sites, then add to qBittorrent",
+        "Use when user wants to search a specific PT site, download torrent, or fi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pt-site@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/517708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pt-site",
+      "url": "https://clawhub.ai/skills/pt-site"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pt-site",
+    "url": "https://clawhub.ai/skills/pt-site",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pt-site-7e10641704a121de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pt-site@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pt-site-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7223e19fc87fc40c1597a6128b8615fce75180b85ed9210b7da28dba8a37d285",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T18:25:37.494Z"
+}

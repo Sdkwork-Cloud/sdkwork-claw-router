@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dashboard-local@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dashboard_local",
+  "skill": {
+    "id": 25962,
+    "skillKey": "clawhub-openclaw-dashboard-local",
+    "name": "OpenClaw Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dashboard-local",
+    "url": "https://clawhub.ai/skills/openclaw-dashboard-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dashboard-local-5c4e8ebc1adf0809.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants a local visual operations dashboard for OpenClaw, with a cute robot presentation, live status visibility, chat access, efficiency tre..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucaszh7",
+      "userId": "s17fx2mh1ag8b312jbkfmwf0wd83mf3k",
+      "displayName": "LucasZH7",
+      "image": "https://avatars.githubusercontent.com/u/78842967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773333515141,
+      "changelog": "Initial ClawHub publication of the clean OpenClaw Dashboard bundle.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4425ccf9a60c1643014e130da35ed9d733e26a31ebc5035dc7e148ce443a3d77"
+}

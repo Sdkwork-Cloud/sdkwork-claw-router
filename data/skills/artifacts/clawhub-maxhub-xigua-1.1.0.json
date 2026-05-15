@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxhub-xigua@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_xigua",
+  "skill": {
+    "id": 65125,
+    "skillKey": "clawhub-maxhub-xigua",
+    "name": "Maxhub Xigua"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-xigua",
+    "url": "https://clawhub.ai/skills/maxhub-xigua",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-xigua-4a110470d1245b6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "西瓜视频/Xigua平台公开内容搜索与信息查询。当用户提到西瓜视频、xigua、长视频、资讯等相关需求时激活此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiewxx",
+      "userId": "s17364s4d8h82mf2cd7m7g71ms869c1h",
+      "displayName": "Xie Hao",
+      "image": "https://avatars.githubusercontent.com/u/128963651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 62,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778343159680,
+      "changelog": "v1.2.0 - 修复安全审核问题，调整描述和安全声明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e7d2674f3c695aa426fe847c08e2a1bc7053f9feb9204e88a441288485b77db9"
+}

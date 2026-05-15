@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-humanizer-disabled@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_humanizer_disabled",
+  "skill": {
+    "id": 41533,
+    "skillKey": "clawhub-ai-humanizer-disabled",
+    "name": "Ai Humanizer.Disabled"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-humanizer-disabled",
+    "url": "https://clawhub.ai/skills/ai-humanizer-disabled",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-humanizer-disabled-f856cf1370f8b716.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Humanize AI-generated text by detecting and removing patterns typical of LLM output. Rewrites text to sound natural, specific, and human. Uses 28 pattern det..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "robinzorro86",
+      "userId": "s174vx2hb0gqmv86pgw5ppyz7h83gmwv",
+      "displayName": "Robin.Z",
+      "image": "https://avatars.githubusercontent.com/u/132334025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774650748807,
+      "changelog": "- Initial release of the ai-humanizer-disabled skill.\n- Provides clear guidelines and patterns to identify and remove AI-generated writing traits.\n- Detects 28 specific linguistic and stylistic patterns that signify AI-written content.\n- Utilizes a database of 560+ flagged vocabulary terms across multiple tiers.\n- Includes statistical analysis tools to spot typical AI text (burstiness, sentence length, repetition).\n- Offers actionable “before/after” examples and practical advice to help writing sound authentically human.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81605ded1c7869232bd9d9b91df85078efd34290051bbeb9653d0d3d7e6487fc"
+}

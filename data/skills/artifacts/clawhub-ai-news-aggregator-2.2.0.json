@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-news-aggregator@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_news_aggregator",
+  "skill": {
+    "id": 61947,
+    "skillKey": "clawhub-ai-news-aggregator",
+    "name": "Ai News Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-news-aggregator",
+    "url": "https://clawhub.ai/skills/ai-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-news-aggregator-769280b00e74fcf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI/技术新闻聚合引擎。100+ RSS源并发抓取、兴趣评分、跨天去重、统一预取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyasheng",
+      "userId": "s179bk63dv96y90hw97xaay4fx83t7yr",
+      "displayName": "_silhouette",
+      "image": "https://avatars.githubusercontent.com/u/22570800?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 978,
+      "installsAllTime": 13,
+      "installsCurrent": 13,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1772440192689,
+      "changelog": "v2.2.0 introduces major improvements and codebase simplification:\n\n- Unified prefetching for faster multi-source aggregation\n- Interest scoring of news for better relevance\n- Cross-day deduplication to avoid repeated items\n- Significant repository/file restructure for easier maintenance\n- Legacy scripts and test files removed",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3093282b82ac2876848e38849d114c25d963b27789b67f7a86be8fc8fbd72bcb"
+}

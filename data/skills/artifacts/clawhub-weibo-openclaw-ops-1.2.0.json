@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weibo-openclaw-ops@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weibo_openclaw_ops",
+  "skill": {
+    "id": 18365,
+    "skillKey": "clawhub-weibo-openclaw-ops",
+    "name": "Weibo OpenClaw Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weibo-openclaw-ops",
+    "url": "https://clawhub.ai/skills/weibo-openclaw-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weibo-openclaw-ops-90bf1e0efc6fbbf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Weibo operations for OpenClaw via server-side browser automation. Use when the user asks to log in by QR, persist session state, read feed/messages/hot topic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiami2019",
+      "userId": "s17cvap5e8fyxhp73bvk3z6bwn83vpar",
+      "displayName": "Qinyuan Cheng",
+      "image": "https://avatars.githubusercontent.com/u/37145051?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772728611350,
+      "changelog": "Enforce outbound text suffix policy guardrail for post/comment/repost; add final pre-submit suffix check",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:22370a6bf1c664542a9f1d63baee57bf8b3138b9c85cd78aa80675303a54ab45"
+}

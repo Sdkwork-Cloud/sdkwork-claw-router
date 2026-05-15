@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44912,
+  "uuid": "skill-clawhub-rag-pipeline-starter",
+  "skillKey": "clawhub-rag-pipeline-starter",
+  "name": "RAG Pipeline Starter",
+  "summary": "Set up and optimize RAG pipelines for large datasets (50K-500K rows) with document chunking, embedding benchmarking, vector indexing, and retrieval tuning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rag_pipeline_starter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "abhinas90",
+      "features": [
+        "Set up and optimize RAG pipelines for large datasets (50K-500K rows) with document chunking, em."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rag-pipeline-starter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45303724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rag-pipeline-starter",
+      "url": "https://clawhub.ai/skills/rag-pipeline-starter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rag-pipeline-starter",
+    "url": "https://clawhub.ai/skills/rag-pipeline-starter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rag-pipeline-starter-54374ff12d5028e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rag-pipeline-starter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rag-pipeline-starter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d8c5f061bec0a2efb9a40d06c6ddb817c6b8393bb7b50dc6b3647a02bf6f6eaa",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T14:02:27.797Z"
+}

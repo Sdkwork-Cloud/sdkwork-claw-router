@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-swarm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_swarm",
+  "skill": {
+    "id": 46020,
+    "skillKey": "clawhub-travel-swarm",
+    "name": "Travel Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-swarm",
+    "url": "https://clawhub.ai/skills/travel-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-swarm-a1c08a3b98aebbae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrated travel planner combining FlyAI ticket prices, Gaode and Tencent map POI, Meituan food recommendations, and fallback McDonald's options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timo2026",
+      "userId": "s174wprm496tppjgz41wv2b6tn83faym",
+      "displayName": "Timo2026",
+      "image": "https://avatars.githubusercontent.com/u/258531684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775990852806,
+      "changelog": "openclaw-travel-swarm-v8 initial release:\n\n- Integrates multi-platform travel planning with FlyAI, Gaode, Tencent, Meituan, and McDonald's fallback.\n- Supports real-time ticket price search (FlyAI/Fliggy).\n- POI verification with both Gaode and Tencent Maps.\n- Food recommendations via Meituan; fallback to McDonald's.\n- Generates map screenshots.\n- Requires API keys for main functions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c2267a4d6a263f2898413ea55849685157cf2813cc99218d3bd271a94abf67b8"
+}

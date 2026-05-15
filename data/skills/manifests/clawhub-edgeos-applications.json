@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19750,
+  "uuid": "skill-clawhub-edgeos-applications",
+  "skillKey": "clawhub-edgeos-applications",
+  "name": "EdgeOS Applications",
+  "summary": "Apply to an EdgeOS popup city and buy tickets through OpenClaw. Use when users ask to authenticate by email OTP, submit/check popup applications, retrieve ac...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgeos_applications",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Francisco Viñas",
+      "features": [
+        "Apply to an EdgeOS popup city and buy tickets through OpenClaw",
+        "Use when users ask to authenticate by email OTP, submit/check popup applications, retrieve ac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edgeos-applications@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51168713?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edgeos-applications",
+      "url": "https://clawhub.ai/skills/edgeos-applications"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgeos-applications",
+    "url": "https://clawhub.ai/skills/edgeos-applications",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgeos-applications-8aebb80db8a3dfd7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edgeos-applications@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-edgeos-applications-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f129d392368773115210606e583f077ade78095b6d87503b295120cb1f712e81",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T21:44:06.725Z"
+}

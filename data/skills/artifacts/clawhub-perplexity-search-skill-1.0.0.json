@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/perplexity-search-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.perplexity_search_skill",
+  "skill": {
+    "id": 10047,
+    "skillKey": "clawhub-perplexity-search-skill",
+    "name": "Perplexity Search Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "perplexity-search-skill",
+    "url": "https://clawhub.ai/skills/perplexity-search-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/perplexity-search-skill-9866699198b5abb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using Perplexity's Search API for ranked, real-time web results with advanced filtering. Use when you need to search for current information, market research, trending topics, or when Brave Search is unavailable. Supports re."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "m4vf14",
+      "userId": "publishers:m4vf14",
+      "displayName": "M4vF14",
+      "image": "https://avatars.githubusercontent.com/u/242215020?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2805,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770240602168,
+      "changelog": "Initial release: Clean OpenClaw search skill using Perplexity Search API. Features web search with recency filtering, zero dependencies, and security hardening.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:371fd3d8ee19fa11e6d887f3d2af7131d032cadfd89fd91f1c70e40c219706b4"
+}

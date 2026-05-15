@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tongateway@0.9.3",
+  "version": "0.9.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tongateway",
+  "skill": {
+    "id": 41512,
+    "skillKey": "clawhub-tongateway",
+    "name": "Tongateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tongateway",
+    "url": "https://clawhub.ai/skills/tongateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tongateway-54a3a4692b4402fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access TON blockchain tools to check wallet info, tokens, send transfers, resolve .ton names, trade on DEX, and manage autonomous agent wallets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pewpewgogo",
+      "userId": "s17bc65zfqaxk0hcxeq1wnj0m983hwzt",
+      "displayName": "Volodya Plotvinov",
+      "image": "https://avatars.githubusercontent.com/u/10567518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.9.3",
+      "createdAt": 1774370904393,
+      "changelog": "- Added a new README.md file for additional documentation.\n- No changes to functionality or features.\n- Existing documentation in SKILL.md remains unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:069cfd172b0360cd1ca2b17dcbbc0c8042d6af8be153204dd5c61ba2817a06e8"
+}

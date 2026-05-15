@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34398,
+  "uuid": "skill-clawhub-inworld-ai",
+  "skillKey": "clawhub-inworld-ai",
+  "name": "Inworld Ai",
+  "summary": "Inworld AI integration. Manage data, records, and automate workflows. Use when the user wants to interact with Inworld AI data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inworld_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Inworld AI integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Inworld AI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inworld-ai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inworld-ai",
+      "url": "https://clawhub.ai/skills/inworld-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inworld-ai",
+    "url": "https://clawhub.ai/skills/inworld-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inworld-ai-2b2c136e8f488859.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inworld-ai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-inworld-ai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4f97daa8ee8be85b778c949b757036d8fd714935e3a578143986d6ff58d4e05",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:38:17.775Z"
+}

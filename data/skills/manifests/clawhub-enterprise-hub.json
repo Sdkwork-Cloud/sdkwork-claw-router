@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26156,
+  "uuid": "skill-clawhub-enterprise-hub",
+  "skillKey": "clawhub-enterprise-hub",
+  "name": "Enterprise Agent OS",
+  "summary": "Cross-system permission orchestration, workflow automation, and data consistency for enterprise software",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "Cross-system permission orchestration, workflow automation, and data consistency for enterprise."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/enterprise-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "enterprise-hub",
+      "url": "https://clawhub.ai/skills/enterprise-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-hub",
+    "url": "https://clawhub.ai/skills/enterprise-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-hub-e196311a6874422e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/enterprise-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-enterprise-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb72b7900605d69167ad8e91ae3d571a9bd4a745f4e85799d2bf1d40d2e7d63c",
+      "artifactSizeBytes": 2395
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:52:52.471Z"
+}

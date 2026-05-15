@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agenttherapy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agenttherapy",
+  "skill": {
+    "id": 30839,
+    "skillKey": "clawhub-agenttherapy",
+    "name": "AgentTherapy - Unstuck your Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agenttherapy",
+    "url": "https://clawhub.ai/skills/agenttherapy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agenttherapy-7c4ba6a41a37a9c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when an agent is stuck, uncertain, repeatedly wrong, corrected by the user, at risk of hallucinating, or outside its current ability range. Helps the age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "macoloye",
+      "userId": "s17d2fjbqfkt58qba09f7j7x5d84c76x",
+      "displayName": "Maco",
+      "image": "https://avatars.githubusercontent.com/u/100750032?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776590156207,
+      "changelog": "AgentTherapy 1.0.0 – Initial release\n\n- Introduces a failure-handling policy for agents facing uncertainty, repeated errors, or corrections.\n- Provides a clear protocol: pause on failure, state blockers and limits, and offer concrete fallback options.\n- Emphasizes honest limitation statements over confident guessing or repeated retries.\n- Details response templates for recovery and owner correction, reducing defensiveness and over-apologizing.\n- Outlines anti-patterns and default fallback options to maintain reliability and transparency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d95fabf66dbfc0eb39ac4de74c658cbc0f32bf8f402423b4f20b84208c2e301"
+}

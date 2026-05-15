@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-video-editor-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_video_editor_api",
+  "skill": {
+    "id": 55162,
+    "skillKey": "clawhub-ai-video-editor-api",
+    "name": "Ai Video Editor Api"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-video-editor-api",
+    "url": "https://clawhub.ai/skills/ai-video-editor-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-video-editor-api-fc2053b4e0c541f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim silences, add transitions, and export as a 60-second highlight reel —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776693274240,
+      "changelog": "- Initial release of the AI Video Editor API skill.\n- Enables programmatic video editing: upload video files, describe edits, and receive processed MP4 clips.\n- Supports MP4, MOV, AVI, WebM (up to 500MB) with AI-powered edits (trim silences, transitions, highlight reels, etc).\n- Simple authentication workflow with token management and session handling.\n- Includes error handling, status/credit checks, and supports batch/iterative editing workflows.\n- Designed for easy integration into developer and marketer video automation pipelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:331594735a8ace9fffb2dfb31a20543182bc74f4977de4916855e6c268b625d4"
+}

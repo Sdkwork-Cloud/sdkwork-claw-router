@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-grok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_grok",
+  "skill": {
+    "id": 44989,
+    "skillKey": "clawhub-image-to-video-grok",
+    "name": "Image To Video Grok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-grok",
+    "url": "https://clawhub.ai/skills/image-to-video-grok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-grok-a3a0b30b2ecd3bd6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert static images into animated video clips with this skill. Works with JPG, PNG, WEBP, GIF files up to 200MB. content creators and marketers use it for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 138,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776918047246,
+      "changelog": "- Initial release: easily convert static images (JPG, PNG, GIF, WEBP) up to 200MB into short AI-generated video clips (1080p MP4).\n- Automatic cloud session setup and anonymous token handling for quick start without needing registration.\n- Supports core actions like upload, edit, export, check credits, and timeline preview via user-friendly prompts.\n- Detailed error handling, file type validation, and export workflows included.\n- Designed for fast, server-side video processing (30–90 sec per clip); perfect for content creators and marketers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d52d33fef130c93cf66678f853e0a4600c6b35cb1053d1aa4c70f88ccf025284"
+}

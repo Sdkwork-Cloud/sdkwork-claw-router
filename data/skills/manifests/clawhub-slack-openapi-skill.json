@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28080,
+  "uuid": "skill-clawhub-slack-openapi-skill",
+  "skillKey": "clawhub-slack-openapi-skill",
+  "name": "Slack OpenAPI Skill",
+  "summary": "Operate Slack Web API through UXC with a curated OpenAPI schema, bearer-token auth, and messaging-core guardrails.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slack_openapi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Operate Slack Web API through UXC with a curated OpenAPI schema, bearer-token auth, and messagi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slack-openapi-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slack-openapi-skill",
+      "url": "https://clawhub.ai/skills/slack-openapi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slack-openapi-skill",
+    "url": "https://clawhub.ai/skills/slack-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slack-openapi-skill-91613377a298a373.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slack-openapi-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slack-openapi-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66530b3681cfcf4b5bc0c28e17a3d9e5e730b560a42003ef771c7e3fa5fd7a91",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T15:06:39.763Z"
+}

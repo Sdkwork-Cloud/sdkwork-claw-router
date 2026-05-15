@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68472,
+  "uuid": "skill-clawhub-holli-trinity",
+  "skillKey": "clawhub-holli-trinity",
+  "name": "Trinity Evolution Engine",
+  "summary": "每日自动化能力进化工具。运行后会：1）自检发现能力缺陷，2）自动阅读学习，3）生成新洞察，4）验证能力提升。适合希望持续提升AI能力的用户，，每天运行看到具体进步。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.holli_trinity",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hollis9087",
+      "features": [
+        "每日自动化能力进化工具。运行后会：1）自检发现能力缺陷，2）自动阅读学习，3）生成新洞察，4）验证能力提升。适合希望持续提升AI能力的用户，，每天运行看到具体进步。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/holli-trinity@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264116703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "holli-trinity",
+      "url": "https://clawhub.ai/skills/holli-trinity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "holli-trinity",
+    "url": "https://clawhub.ai/skills/holli-trinity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/holli-trinity-e495e64ca5a33871.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/holli-trinity@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-holli-trinity-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:746c035ac0e87e4b00221d0e84dd895e320f7382c77ca357401f5dcdcd74aefe",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T09:07:47.528Z"
+}

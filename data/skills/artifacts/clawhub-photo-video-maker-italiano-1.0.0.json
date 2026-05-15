@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-video-maker-italiano@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_video_maker_italiano",
+  "skill": {
+    "id": 40586,
+    "skillKey": "clawhub-photo-video-maker-italiano",
+    "name": "Photo Video Maker Italiano"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-video-maker-italiano",
+    "url": "https://clawhub.ai/skills/photo-video-maker-italiano",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-video-maker-italiano-30345cf683ef05c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Italian-speaking content creators create photos and images into slideshow video MP4 using this skill. Accepts JPG, PNG, HEIC, MP4 up to 500MB, renders on clo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775868125367,
+      "changelog": "Photo Video Maker Italiano — Initial Release\n\n- Launches first version enabling Italian-speaking users to create slideshow videos from their photos and images.\n- Supports JPG, PNG, HEIC, and MP4 uploads up to 500MB, processes videos at 1080p resolution, and returns MP4 files within 30–60 seconds.\n- Runs entirely in the cloud, requires no local installation, and manages sessions, uploads, exports, and credits automatically.\n- Includes real-time session management, error handling, and user prompt routing for actions like export, balance check, or adding music/transitions.\n- Offers practical usage tips and clear guidance for faster and more accurate video creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc6541e928f268c256b99cde763ecff1f089eade14c67dcfedfcdcb02c2e79f5"
+}

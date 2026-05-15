@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shenzhen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenzhen",
+  "skill": {
+    "id": 71473,
+    "skillKey": "clawhub-shenzhen",
+    "name": "Shenzhen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenzhen",
+    "url": "https://clawhub.ai/skills/shenzhen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenzhen-847a5edbfe3b9272.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "深圳全面介绍。提供深圳的历史沿革、经济发展、科技产业、地理环境、城市建设、文化旅游、知名企业等内容的查询。适用于：1) 了解深圳的发展历程；2) 熟悉深圳的科技产业；3) 了解深圳的创业环境；4) 掌握深圳的生活信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leocryptoflow",
+      "userId": "publishers:leocryptoflow",
+      "displayName": "Leo Sheng",
+      "image": "https://avatars.githubusercontent.com/u/149644278?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 337,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772561984977,
+      "changelog": "Initial release of the \"shenzhen\" skill, providing a comprehensive introduction to Shenzhen:\n\n- Includes information on city history, economic development, technology industries, geographic environment, urban construction, culture, tourism, and well-known enterprises.\n- Supports queries about Shenzhen's development, tech sector, entrepreneurial environment, and living information.\n- Details major companies, education and healthcare resources, city landmarks, tourism, and startup advantages.\n- Covers practical topics: transportation, cost of living, housing, local cuisine, and talent policies.\n- Outlines future plans and city honors.\n- Lists key considerations for newcomers and visitors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:450ced246f5f2865417ce88319282f5f5a67d691357871b1e51cd7786e01936c"
+}

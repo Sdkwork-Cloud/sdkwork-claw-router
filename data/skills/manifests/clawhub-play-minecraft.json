@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59933,
+  "uuid": "skill-clawhub-play-minecraft",
+  "skillKey": "clawhub-play-minecraft",
+  "name": "play_minecraft",
+  "summary": "通过 Mindcraft HTTP API 控制 Minecraft Bot（无内置 LLM）。当用户提到 OpenClaw、外部 agent、REST 接口控制、读取状态、执行动作、批量任务编排时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.play_minecraft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Songjc0511",
+      "features": [
+        "通过 Mindcraft HTTP API 控制 Minecraft Bot（无内置 LLM）。当用户提到 OpenClaw、外部 agent、REST 接口控制、读取状态、执行动作、批量任."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/play-minecraft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/108270936?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "play-minecraft",
+      "url": "https://clawhub.ai/skills/play-minecraft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "play-minecraft",
+    "url": "https://clawhub.ai/skills/play-minecraft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/play-minecraft-9ef76971e3bfbec6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/play-minecraft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-play-minecraft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42dd1838076c1d5ad3169398f6dc8462e047449424c903c24e7e75b38ddcf599",
+      "artifactSizeBytes": 2380
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:40:03.689Z"
+}

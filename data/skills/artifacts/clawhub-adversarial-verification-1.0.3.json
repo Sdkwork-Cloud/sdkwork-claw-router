@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adversarial-verification@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adversarial_verification",
+  "skill": {
+    "id": 66024,
+    "skillKey": "clawhub-adversarial-verification",
+    "name": "Adversarial Verification"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adversarial-verification",
+    "url": "https://clawhub.ai/skills/adversarial-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adversarial-verification-0166e33449733d24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "主动寻找系统漏洞和失败点，执行真实命令验证变更，识别自我借口，确保明确的通过或失败判决。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minijoy-b",
+      "userId": "s179y8gv0p3zewxrc067c9q2cn8470hy",
+      "displayName": "MiniJoy-B",
+      "image": "https://avatars.githubusercontent.com/u/265717845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775337458093,
+      "changelog": "- Update version to 1.0.3 in package.json.\n- No changes to functionality, documentation, or code logic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63aeba1051be32602efca0eea7ea57676413999ac7b52fc9a77d42b4a7c6a2d4"
+}

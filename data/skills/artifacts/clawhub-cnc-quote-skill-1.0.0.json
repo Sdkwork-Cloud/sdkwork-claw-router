@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cnc-quote-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnc_quote_skill",
+  "skill": {
+    "id": 44232,
+    "skillKey": "clawhub-cnc-quote-skill",
+    "name": "Cnc Quote Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnc-quote-skill",
+    "url": "https://clawhub.ai/skills/cnc-quote-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnc-quote-skill-d8b5ae07463098ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered CNC machining quote system with risk detection, material optimization, and multi-channel integration. Built for OpenClaw ecosystem."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timo2026",
+      "userId": "s174wprm496tppjgz41wv2b6tn83faym",
+      "displayName": "Timo2026",
+      "image": "https://avatars.githubusercontent.com/u/258531684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775990822817,
+      "changelog": "cnc-quote-skill v1.0.0 is the initial release—AI-powered CNC machining quote platform with risk detection and multi-channel integration.\n\n- Core quote engine with rule-based pricing and AI risk detection\n- Supports material optimization suggestions\n- Integrates with QQ Bot, Email, and API channels\n- Includes a self-learning RAG-based system with real quote data\n- Easily configurable for multiple manufacturing scenarios",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29686b913c515300f59a239338f100026d9f1a5636f192f843b8f6eed9f9e146"
+}

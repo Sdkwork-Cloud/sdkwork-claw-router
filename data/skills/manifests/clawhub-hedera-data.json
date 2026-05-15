@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51487,
+  "uuid": "skill-clawhub-hedera-data",
+  "skillKey": "clawhub-hedera-data",
+  "name": "Hedera Data API",
+  "summary": "Free Hedera analytics API — token prices, holder data, market caps, volume tracking. The most comprehensive historic Hedera token dataset available. Powered...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hedera_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Free Hedera analytics API — token prices, holder data, market caps, volume tracking",
+        "The most comprehensive historic Hedera token dataset available",
+        "Powered..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hedera-data@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hedera-data",
+      "url": "https://clawhub.ai/skills/hedera-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hedera-data",
+    "url": "https://clawhub.ai/skills/hedera-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hedera-data-245549310f78bf51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hedera-data@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hedera-data-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53473aabf4d795e72638f330c5fafc4406dc40f85bfaa90e13d5c5df17de0ea1",
+      "artifactSizeBytes": 1881
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:21:59.934Z"
+}

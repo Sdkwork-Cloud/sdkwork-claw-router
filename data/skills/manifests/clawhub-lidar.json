@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52197,
+  "uuid": "skill-clawhub-lidar",
+  "skillKey": "clawhub-lidar",
+  "name": "Lidar",
+  "summary": "LiDAR technology reference — point cloud processing, scan types, coordinate systems, and applications. Use when working with LiDAR data, configuring scanners...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lidar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "LiDAR technology reference — point cloud processing, scan types, coordinate systems, and applic.",
+        "Use when working with LiDAR data, configuring scanners..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lidar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lidar",
+      "url": "https://clawhub.ai/skills/lidar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lidar",
+    "url": "https://clawhub.ai/skills/lidar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lidar-4263c537225041cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lidar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lidar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:643f1dc204d9eb8ebbaa15647e355d4c7950e040ffe4fe7cf6cc5952a31914f0",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T11:17:25.783Z"
+}

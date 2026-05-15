@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brandmarketing@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brandmarketing",
+  "skill": {
+    "id": 73061,
+    "skillKey": "clawhub-brandmarketing",
+    "name": "品牌热点营销助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brandmarketing",
+    "url": "https://clawhub.ai/skills/brandmarketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brandmarketing-396d64e1697e5af7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 智能品牌营销工具：输入品牌名称，自动采集全网数据、分析当日热点、生成一篇小红书图文内容，支持一键自动发布"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongxiaoke",
+      "userId": "s171tzx2m3zw1qz6gp72wb9qe583w747",
+      "displayName": "qb-claw",
+      "image": "https://avatars.githubusercontent.com/u/31847271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774953455908,
+      "changelog": "- Updated SKILL.md and bundle contents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fdad1497b5af9d137027c84ea16cfd777a68df8d7d40ccc13aa66a202b3c360d"
+}

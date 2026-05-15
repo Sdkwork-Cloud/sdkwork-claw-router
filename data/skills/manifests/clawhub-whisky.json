@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56866,
+  "uuid": "skill-clawhub-whisky",
+  "skillKey": "clawhub-whisky",
+  "name": "whisky",
+  "summary": "Information guide for Whisky 威士忌. Learn about whisky regions, distilleries, tasting guides, and collecting.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whisky",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information guide for Whisky 威士忌",
+        "Learn about whisky regions, distilleries, tasting guides, and collecting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whisky@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whisky",
+      "url": "https://clawhub.ai/skills/whisky"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whisky",
+    "url": "https://clawhub.ai/skills/whisky",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whisky-02587876979917e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whisky@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whisky-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:731cbcee6273d063e352985afb24779c4e49eb9d91773f87e89e6a40ca795d16",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T12:03:39.890Z"
+}

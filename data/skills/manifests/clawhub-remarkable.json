@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11100,
+  "uuid": "skill-clawhub-remarkable",
+  "skillKey": "clawhub-remarkable",
+  "name": "reMarkable Cloud",
+  "summary": "Send files and web articles to a reMarkable e-ink tablet via the reMarkable Cloud. Upload PDFs, EPUBs, or convert web articles to readable ebooks and send them to the device. Also browse and manage files on the device. Use when the user me.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remarkable",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nickian",
+      "features": [
+        "Send files and web articles to a reMarkable e-ink tablet via the reMarkable Cloud",
+        "Upload PDFs, EPUBs, or convert web articles to readable ebooks and send them to the device",
+        "Also browse and manage files on the device",
+        "Use when the user mentions reMarkable, wants to send an article or document to their e-reader,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remarkable@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/590678?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remarkable",
+      "url": "https://clawhub.ai/skills/remarkable"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remarkable",
+    "url": "https://clawhub.ai/skills/remarkable",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remarkable-113b67b03b8bd3eb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remarkable@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-remarkable-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92ee8fe1a7ab005d31d1a48af837336f06602b69be51a8c3d1f7d6ff996f35bc",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T20:59:07.906Z"
+}

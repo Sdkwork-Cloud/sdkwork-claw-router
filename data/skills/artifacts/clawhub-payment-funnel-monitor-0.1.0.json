@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payment-funnel-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payment_funnel_monitor",
+  "skill": {
+    "id": 56486,
+    "skillKey": "clawhub-payment-funnel-monitor",
+    "name": "Payment Funnel Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payment-funnel-monitor",
+    "url": "https://clawhub.ai/skills/payment-funnel-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payment-funnel-monitor-d387934e03cb7883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor the payment last mile — initiate → success reconciliation → local method gaps — to recover conversion lost to failed checkouts. Use when payment succ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773627110789,
+      "changelog": "- Initial release of payment-funnel-monitor skill.\n- Monitors payment checkout funnel from initiation to authorization outcome to identify and recover conversion lost due to payment failures.\n- Provides error code analysis and actionable recommendations, including local payment method checklist per underperforming country.\n- Focuses on payments with attention to platform/gateway data, country-specific issues, and common error code families.\n- Not designed for non-payment checkout issues or pure accounting reconciliation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db127b852df402d7f787fa6e99a3521e2e1a27e6e71dee71357ed91d4e7153bc"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10879,
+  "uuid": "skill-clawhub-etrade-pelosi-bot",
+  "skillKey": "clawhub-etrade-pelosi-bot",
+  "name": "Etrade Pelosi Bot",
+  "summary": "Mirror congressional stock trades with automated broker execution and risk management",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etrade_pelosi_bot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mainfraame",
+      "features": [
+        "Mirror congressional stock trades with automated broker execution and risk management"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etrade-pelosi-bot@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5190439?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etrade-pelosi-bot",
+      "url": "https://clawhub.ai/skills/etrade-pelosi-bot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etrade-pelosi-bot",
+    "url": "https://clawhub.ai/skills/etrade-pelosi-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etrade-pelosi-bot-743b33731668bed1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etrade-pelosi-bot@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etrade-pelosi-bot-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82b16fefd38b8dca97460c483ee201a746a34dfa7582e61a08df77d194e6dc7b",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T19:56:25.154Z"
+}

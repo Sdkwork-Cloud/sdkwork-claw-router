@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/piano-integration@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.piano_integration",
+  "skill": {
+    "id": 39654,
+    "skillKey": "clawhub-piano-integration",
+    "name": "Piano"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "piano-integration",
+    "url": "https://clawhub.ai/skills/piano-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/piano-integration-161df40a0e7374a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Piano integration. Manage data, records, and automate workflows. Use when the user wants to interact with Piano data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775169338791,
+      "changelog": "Revert refresh marker",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b75128a3d2b732f7b246af182a320c76a7d990acffc4034dd8f0c6e58926e23e"
+}

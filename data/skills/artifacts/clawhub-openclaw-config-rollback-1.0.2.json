@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-config-rollback@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_config_rollback",
+  "skill": {
+    "id": 60123,
+    "skillKey": "clawhub-openclaw-config-rollback",
+    "name": "Config Rollback"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-config-rollback",
+    "url": "https://clawhub.ai/skills/openclaw-config-rollback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-config-rollback-8df652f6b2b10312.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 配置回滚管理 - 备份、超时保护、自动回滚"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "echoflying",
+      "userId": "s1779g2p34ny1twfck85pamqn983ngm8",
+      "displayName": "echoflying",
+      "image": "https://avatars.githubusercontent.com/u/5063007?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773678174141,
+      "changelog": "openclaw-config-rollback 1.0.2\n\n- Added metadata and package files: _meta.json, package.json.\n- Introduced scripts: config-alias.sh, prepare-config-change.sh, rollback-guardian.sh for managing config changes and rollbacks.\n- Updated documentation and usage guide in SKILL.md: simplified usage sections, removed dependency on Node.js, and clarified instructions and best practices.\n- Streamlined related file references and removed/deprecated unnecessary documentation sections.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0684bfc23a815d6706608cb8e411106a0b63c845958fcd23b25e82203ed9e147"
+}

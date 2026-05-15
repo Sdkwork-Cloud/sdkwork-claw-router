@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "data-hub",
+    "displayName": "Data Hub",
+    "summary": "数字货币量化交易系统的内存数据中枢，为多 Agent 提供统一的数据共享层。管理行情(market_state)、指标(indicators)、情报(intelligence)、风控(risk_audit)四个命名空间。Use when: Agent 需要读写共享数据、查询行情/指标/研报/风控状态。NOT fo...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773743483173,
+    "updatedAt": 1778310960122
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773743483173,
+    "changelog": "data-hub 1.0.0 — Initial release\n\n- Provides an in-memory data hub for multi-Agent quantitative trading systems, supporting real-time data sharing across market state, indicators, intelligence, and risk audit.\n- Enforces namespace-specific write permissions for Agents to maintain data integrity.\n- Utilizes Pydantic for input data validation, with LLM-friendly error feedback instead of exceptions.\n- Implements lazy data cleanup on summary access: stale/expired data is detected and marked in-place.\n- Maintains sliding window (max 50 entries) for indicators data to cap memory usage.\n- No persistent storage, historical queries, or direct trading actions; designed solely for real-time shared context.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "johnny-ggao",
+    "userId": "s17218ntvkews2p5xfz8qrwv7s850dmp",
+    "displayName": "Johnny",
+    "image": "https://avatars.githubusercontent.com/u/39037619?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778310960122
+  }
+}

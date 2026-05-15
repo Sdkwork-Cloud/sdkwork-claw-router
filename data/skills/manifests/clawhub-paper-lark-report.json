@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62766,
+  "uuid": "skill-clawhub-paper-lark-report",
+  "skillKey": "clawhub-paper-lark-report",
+  "name": "paper-lark-report",
+  "summary": "全自动科研论文日报/周报生成。通过 arXiv RSS 抓取最新论文，arXiv API 获取完整摘要，LLM 语义评分筛选，生成基于原文的学术报告，推送飞书 Wiki。",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_lark_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeoGoat2004",
+      "features": [
+        "全自动科研论文日报/周报生成。通过 arXiv RSS 抓取最新论文，arXiv API 获取完整摘要，LLM 语义评分筛选，生成基于原文的学术报告，推送飞书 Wiki。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-lark-report@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/115774938?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-lark-report",
+      "url": "https://clawhub.ai/skills/paper-lark-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-lark-report",
+    "url": "https://clawhub.ai/skills/paper-lark-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-lark-report-e74bd2b97fbdc0f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-lark-report@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-lark-report-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:003f77f1b4417c9f7c10c02f41b57e42e8c93be20742deb3a31b532bd5364900",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:31:21.683Z"
+}

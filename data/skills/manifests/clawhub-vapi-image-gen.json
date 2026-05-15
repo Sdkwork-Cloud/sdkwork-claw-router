@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50619,
+  "uuid": "skill-clawhub-vapi-image-gen",
+  "skillKey": "clawhub-vapi-image-gen",
+  "name": "nano-banana、gpt-image",
+  "summary": "Generate images via VAPI's OpenAI-compatible Images API. Supports nano-banana and gpt-image model series. Default model is nano-banana-pro. Images are NOT sa...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vapi_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "popdo",
+      "features": [
+        "Generate images via VAPI's OpenAI-compatible Images API",
+        "Supports nano-banana and gpt-image model series",
+        "Default model is nano-banana-pro",
+        "Images are NOT sa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vapi-image-gen@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30309735?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vapi-image-gen",
+      "url": "https://clawhub.ai/skills/vapi-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vapi-image-gen",
+    "url": "https://clawhub.ai/skills/vapi-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vapi-image-gen-fe2ef88d6c04b61b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vapi-image-gen@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vapi-image-gen-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f91990b5721460e6cb4f828d5698c75b38c73f5694d0a05ad41cde8ce13fc9fb",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T03:47:35.499Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23160,
+  "uuid": "skill-clawhub-context-guardian",
+  "skillKey": "clawhub-context-guardian",
+  "name": "Context Guardian",
+  "summary": "Proactive context monitoring with smart 3-level alerts. Know when to restart before quality degrades.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_guardian",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brucey0017-cloud",
+      "features": [
+        "Proactive context monitoring with smart 3-level alerts",
+        "Know when to restart before quality degrades."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-guardian@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229282410?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-guardian",
+      "url": "https://clawhub.ai/skills/context-guardian"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-guardian",
+    "url": "https://clawhub.ai/skills/context-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-guardian-bcf31602def4e015.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-guardian@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-guardian-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:643b68db32cfacfe1e2f1c54bcf48e74e5aec31db766241da9d321c2d290efb1",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T11:08:53.600Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-integration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_integration",
+  "skill": {
+    "id": 53069,
+    "skillKey": "clawhub-ai-integration",
+    "name": "Ai Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-integration",
+    "url": "https://clawhub.ai/skills/ai-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-integration-ae47bcd8b63ddb12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building AI-powered features with the Claude API or Anthropic SDK — structured outputs, tool calling, streaming, multi-provider routing, multi-agent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmy974",
+      "userId": "s17dfx99gja4hssv5gt91dnmen83st71",
+      "displayName": "Jimmy974",
+      "image": "https://avatars.githubusercontent.com/u/446307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774708639502,
+      "changelog": "ai-integration v1.0.0\n\n- Initial release offering patterns and best practices for integrating the Claude API and Anthropic SDK.\n- Covers single-agent, subagent, and multi-agent orchestration for Next.js, Python, and TypeScript stacks.\n- Provides guidance for structured outputs (Pydantic, Zod), tool/function calling, streaming, agent memory, context management, and RAG pipelines.\n- Includes practical code examples for API integration, tool calling, streaming responses, schema enforcement, and agentic loops.\n- Highlights multi-provider LLM routing, evaluation techniques, and production deployment scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:518ade029f29d949d6ae9893eba06e75bc3a6623aeb543d8743c2d19e94ce123"
+}

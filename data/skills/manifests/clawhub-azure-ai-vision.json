@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28704,
+  "uuid": "skill-clawhub-azure-ai-vision",
+  "skillKey": "clawhub-azure-ai-vision",
+  "name": "Azure Ai Vision",
+  "summary": "Azure AI Vision integration. Manage data, records, and automate workflows. Use when the user wants to interact with Azure AI Vision data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.azure_ai_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Azure AI Vision integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Azure AI Vision data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/azure-ai-vision@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "azure-ai-vision",
+      "url": "https://clawhub.ai/skills/azure-ai-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "azure-ai-vision",
+    "url": "https://clawhub.ai/skills/azure-ai-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/azure-ai-vision-3197f21c974c648f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/azure-ai-vision@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-azure-ai-vision-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a23b738a33c8c8c75c7c9a8186425289dc766d0c2899138f9b8bf1d0a9343fe",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:22:02.668Z"
+}

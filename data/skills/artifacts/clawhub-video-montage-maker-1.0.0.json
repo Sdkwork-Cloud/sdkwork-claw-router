@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-montage-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_montage_maker",
+  "skill": {
+    "id": 45802,
+    "skillKey": "clawhub-video-montage-maker",
+    "name": "Video Montage Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-montage-maker",
+    "url": "https://clawhub.ai/skills/video-montage-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-montage-maker-0258b5c5de24d4f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create video clips into compiled montage video with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. social media creators use it for combining..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777221333271,
+      "changelog": "Video Montage Maker — initial release!\n\n- Combine MP4, MOV, AVI, or WebM clips (up to 500MB each) into a single 1080p MP4 montage\n- Cloud-based, AI-powered editing with session management and automatic free token setup\n- Supports music, transitions, text overlays, and aspect ratio customization for social media workflows\n- Clearly structured workflows for upload, editing, preview, export, and credit management\n- Handles common errors gracefully and guides users through troubleshooting and best practices",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce6c7c7eae831f531bfd0e32ec1a23a61e7919589742ca1add95fb290d832c2f"
+}

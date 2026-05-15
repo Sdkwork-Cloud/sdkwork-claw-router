@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tac-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tac_tool",
+  "skill": {
+    "id": 48016,
+    "skillKey": "clawhub-tac-tool",
+    "name": "Tac Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tac-tool",
+    "url": "https://clawhub.ai/skills/tac-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tac-tool-5f3dc8cf1cfdd7cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Concatenate and display files in reverse line order (last line first). Use for viewing log files from newest entries and reversing file content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777999932639,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9d00e6d7ca53eb2e6fb79ac19888ba5fc04588f2233423112cee157041b8f7e"
+}

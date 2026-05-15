@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mental-health-assistant@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mental_health_assistant",
+  "skill": {
+    "id": 71481,
+    "skillKey": "clawhub-mental-health-assistant",
+    "name": "Mental Health Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mental-health-assistant",
+    "url": "https://clawhub.ai/skills/mental-health-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mental-health-assistant-fe7aadedbc2ebfb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业心理健康支持助手，基于临床心理学与精神医学标准，涵盖循证心理治疗、心理评估、危机干预、精神医学基础。触发词：心理、情绪、焦虑、抑郁、压力、失眠、倾诉、心情不好、想聊聊、冥想、放松、心理测试、自杀、自伤、求助热线、心理评估。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ttoooong",
+      "userId": "publishers:ttoooong",
+      "displayName": "Ttooong",
+      "image": "https://avatars.githubusercontent.com/u/127076394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 470,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774237629068,
+      "changelog": "Added evidence-based therapy modalities (CBT/DBT/ACT/EMDR), psychiatric fundamentals, suicide prevention guide, and professional references",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08f666aa88c1000e616aa1e4ccb4e684968131b0528a7e92a03e0fd25dd58fda"
+}

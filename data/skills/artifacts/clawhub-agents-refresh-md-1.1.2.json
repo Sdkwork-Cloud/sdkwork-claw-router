@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agents-refresh-md@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agents_refresh_md",
+  "skill": {
+    "id": 50474,
+    "skillKey": "clawhub-agents-refresh-md",
+    "name": "Agents Refresh MD v1.1.2 🐾"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agents-refresh-md",
+    "url": "https://clawhub.ai/skills/agents-refresh-md",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agents-refresh-md-bf6685477fa93a62.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AGENTS.md/IDENTITY/SOUL/USER periodic reload skill to keep context fresh (.md-only v1.1.2). Prevents confusion and forgetting in long sessions. Edit HEARTBEA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kentaroid-bot",
+      "userId": "publishers:kentaroid-bot",
+      "displayName": "kentaroid-bot",
+      "image": "https://avatars.githubusercontent.com/u/261070559?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 442,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1772345383407,
+      "changelog": "v1.1.2 Fix: Added `edit` permissions to manifest.yaml for MEMORY.md and HEARTBEAT.md.\n\n**Changes:**\n- manifest.yaml permissions now includes `- edit: [\"MEMORY.md\", \"HEARTBEAT.md\"]`.\n- Ensures precise edits during Gold Mining distillation and HEARTBEAT.md refresh tasks.\n- Security compliant: Targeted file access only for memory management.\n- ClawHub Security Scan: Benign high confidence.\n\n🐾 Agents Refresh MD - Memory Gold Mining skill ready for production!",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4e8854824f47e263be6f59111a96a848e37ad61383599cfa8134e7fcd60ee55d"
+}

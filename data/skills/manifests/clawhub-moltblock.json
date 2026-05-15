@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12225,
+  "uuid": "skill-clawhub-moltblock",
+  "skillKey": "clawhub-moltblock",
+  "name": "Skill",
+  "summary": "Verification gating for AI-generated artifacts. Policy checks to catch dangerous patterns before execution.",
+  "version": "0.11.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltblock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meshailabs",
+      "features": [
+        "Verification gating for AI-generated artifacts",
+        "Policy checks to catch dangerous patterns before execution."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltblock@0.11.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224324308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltblock",
+      "url": "https://clawhub.ai/skills/moltblock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltblock",
+    "url": "https://clawhub.ai/skills/moltblock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltblock-7b2d1e24a84f1668.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltblock@0.11.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltblock-0.11.8.json",
+      "version": "0.11.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b9eb8555773d0e7821dc9c4743e070c30b82b371b9f14b631abd53fb02eafb3",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:18:15.209Z"
+}

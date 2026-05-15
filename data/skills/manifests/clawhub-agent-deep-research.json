@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9575,
+  "uuid": "skill-clawhub-agent-deep-research",
+  "skillKey": "clawhub-agent-deep-research",
+  "name": "Deep Research (Gemini)",
+  "summary": "Async deep research via Gemini Interactions API (no Gemini CLI dependency). RAG-ground queries on local files (--context), preview costs (--dry-run), structu...",
+  "version": "2.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Basit Mustafa",
+      "features": [
+        "Async deep research via Gemini Interactions API (no Gemini CLI dependency)",
+        "RAG-ground queries on local files (--context), preview costs (--dry-run), structu..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-deep-research@2.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1157207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-deep-research",
+      "url": "https://clawhub.ai/skills/agent-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-deep-research",
+    "url": "https://clawhub.ai/skills/agent-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-deep-research-9f9661622b35ef07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-deep-research@2.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-deep-research-2.1.3.json",
+      "version": "2.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a7c4eb9e0fa44691af2bc52cca19236f207bc50c4c4fe700bb4fdda4e78fd8a",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T05:34:16.434Z"
+}

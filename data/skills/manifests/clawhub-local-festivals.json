@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65122,
+  "uuid": "skill-clawhub-local-festivals",
+  "skillKey": "clawhub-local-festivals",
+  "name": "Local Festivals",
+  "summary": "提供非遗活动列表、庙会灯会指南及传统节日文化科普。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_festivals",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供非遗活动列表、庙会灯会指南及传统节日文化科普。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-festivals@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-festivals",
+      "url": "https://clawhub.ai/skills/local-festivals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-festivals",
+    "url": "https://clawhub.ai/skills/local-festivals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-festivals-2fb92a3557d2c8e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-festivals@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-festivals-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac0ca82761b6cba12d40f2652e78d587881587d23d71c490a2b577ea404170dd",
+      "artifactSizeBytes": 2214
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:59:50.915Z"
+}

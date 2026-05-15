@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26496,
+  "uuid": "skill-clawhub-thesaurus",
+  "skillKey": "clawhub-thesaurus",
+  "name": "Thesaurus",
+  "summary": "Look up synonyms, antonyms, and related words with history and export. Use when finding alternatives, checking usage, running drills, analyzing frequency.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thesaurus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Look up synonyms, antonyms, and related words with history and export",
+        "Use when finding alternatives, checking usage, running drills, analyzing frequency."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thesaurus@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thesaurus",
+      "url": "https://clawhub.ai/skills/thesaurus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thesaurus",
+    "url": "https://clawhub.ai/skills/thesaurus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thesaurus-f506fc296dddaaa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thesaurus@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-thesaurus-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdd9cf7e9d3a2ce8adc390abe30cbae624b13113f85e538afab96b716aa599ca",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:52:04.897Z"
+}

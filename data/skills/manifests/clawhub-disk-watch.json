@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21759,
+  "uuid": "skill-clawhub-disk-watch",
+  "skillKey": "clawhub-disk-watch",
+  "name": "Disk Watch",
+  "summary": "Monitor disk space across drives. Alert before disks fill up. Track usage trends, find space hogs, suggest cleanup. Every server needs this.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.disk_watch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Monitor disk space across drives",
+        "Alert before disks fill up",
+        "Track usage trends, find space hogs, suggest cleanup",
+        "Every server needs this."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/disk-watch@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "disk-watch",
+      "url": "https://clawhub.ai/skills/disk-watch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "disk-watch",
+    "url": "https://clawhub.ai/skills/disk-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/disk-watch-7853cc4006ec9901.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/disk-watch@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-disk-watch-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b29db8bab43fb391ad96e7657c6a8550e2e6eaa0f799eb885ee1f5280649f981",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T18:43:54.070Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skywork-music-maker@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skywork_music_maker",
+  "skill": {
+    "id": 10567,
+    "skillKey": "clawhub-skywork-music-maker",
+    "name": "Skywork Music Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skywork-music-maker",
+    "url": "https://clawhub.ai/skills/skywork-music-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skywork-music-maker-0e9f8a881f7867ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI song and music generator — create songs with vocals, instrumentals, beats, and lyrics from a text description in any language. Generate lo-fi beats, pop s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gxcun17",
+      "userId": "s174hwb34r6ncgdm62n09a9tbd83hn5x",
+      "displayName": "Skywork AI",
+      "image": "https://avatars.githubusercontent.com/u/5279174?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1140,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 20,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775737922909,
+      "changelog": "**skywork-music-maker 1.0.4 Changelog**\n\n- Added `_meta.json` for enhanced metadata and compatibility.\n- Expanded SKILL.md intro and documentation, now including concise multilingual overviews (Chinese, Japanese, Korean, Spanish).\n- Improved privacy, data usage, and first-time setup documentation.\n- Updated and clarified Smart Prompt Conversion workflow, with more international examples and genre coverage.\n- No core logic changes; full production workflow and validation remain as before.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1515f370356cb6986d316b6a592539a9c64acf01d7e6a5322f0afeaae2912808"
+}

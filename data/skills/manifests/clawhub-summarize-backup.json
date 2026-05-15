@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37868,
+  "uuid": "skill-clawhub-summarize-backup",
+  "skillKey": "clawhub-summarize-backup",
+  "name": "Summarize Backup",
+  "summary": "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bestrong1608-eng",
+      "features": [
+        "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/summarize-backup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261373652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "summarize-backup",
+      "url": "https://clawhub.ai/skills/summarize-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-backup",
+    "url": "https://clawhub.ai/skills/summarize-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-backup-789df21afa4deeaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/summarize-backup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-summarize-backup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2de31f20acc7dd76b70d171a832d9bbc93e4010cb27be9dbf80370af834bca0a",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:42:07.338Z"
+}

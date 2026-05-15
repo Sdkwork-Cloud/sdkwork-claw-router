@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55549,
+  "uuid": "skill-clawhub-claim-verify",
+  "skillKey": "clawhub-claim-verify",
+  "name": "Verify Claim",
+  "summary": "When any factual claim is made — exchange rates, prices, dates, statistics — verify it against live data before using it.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claim_verify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CutTheMustard",
+      "features": [
+        "When any factual claim is made — exchange rates, prices, dates, statistics — verify it against."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claim-verify@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63439451?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claim-verify",
+      "url": "https://clawhub.ai/skills/claim-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claim-verify",
+    "url": "https://clawhub.ai/skills/claim-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claim-verify-e5a602241bb85fcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claim-verify@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-claim-verify-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc2085e5210acb43f9178ee86b621169809e6862a696863e8dc82b4645f233b6",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T00:59:30.728Z"
+}

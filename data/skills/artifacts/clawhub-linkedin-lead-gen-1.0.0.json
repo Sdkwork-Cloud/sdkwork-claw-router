@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-lead-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_lead_gen",
+  "skill": {
+    "id": 10729,
+    "skillKey": "clawhub-linkedin-lead-gen",
+    "name": "Linkedin Lead Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-lead-gen",
+    "url": "https://clawhub.ai/skills/linkedin-lead-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-lead-gen-2d117a29d2846595.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for, research, and verify non-tech founders on LinkedIn to identify high-value prospects for technology services (Web Dev, ERP, CRM, App Dev, SEO, AI). Generates professional PDF reports. Use when asked to find potential clients or."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harshhmaniya",
+      "userId": "s175kwx0zpt30e740n4xjt60j983yvsj",
+      "displayName": "Harsh Maniya",
+      "image": "https://avatars.githubusercontent.com/u/175545435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1781,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 7,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770274775434,
+      "changelog": "Initial release of linkedin-lead-gen skill.\n\n- Enables search, research, and qualification of non-tech founders on LinkedIn for technology services outreach.\n- Provides a step-by-step workflow: industry targeting, strict candidate filtering, deep profile and website analysis, and detailed needs assessment.\n- Compiles 10 qualified leads into a structured, professional PDF report with actionable insights and pitch ideas.\n- Utilizes browser and web_fetch tools for data gathering and verification.\n- Includes outreach best practices focused on personalization, problem identification, and leveraging local presence.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6524bf29a21afea491b69e83af4bedd35db4f2364bf2236af85ada0fb383bb43"
+}

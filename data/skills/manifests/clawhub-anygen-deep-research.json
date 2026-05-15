@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16000,
+  "uuid": "skill-clawhub-anygen-deep-research",
+  "skillKey": "clawhub-anygen-deep-research",
+  "name": "Deep Research",
+  "summary": "Use this skill any time the user wants in-depth research or comprehensive analysis on any topic. This includes: industry analysis, competitive landscape mapp...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anygen_deep_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AnyGenIO",
+      "features": [
+        "Use this skill any time the user wants in-depth research or comprehensive analysis on any topic",
+        "This includes: industry analysis, competitive landscape mapp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anygen-deep-research@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26993581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anygen-deep-research",
+      "url": "https://clawhub.ai/skills/anygen-deep-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anygen-deep-research",
+    "url": "https://clawhub.ai/skills/anygen-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anygen-deep-research-eb65d8843e9fd2c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anygen-deep-research@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anygen-deep-research-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45fd18ec32b93ff86fc9fb422cca3dd26280cac26a5528a293abd418225f8e7d",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:14:26.646Z"
+}

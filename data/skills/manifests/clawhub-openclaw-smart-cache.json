@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62867,
+  "uuid": "skill-clawhub-openclaw-smart-cache",
+  "skillKey": "clawhub-openclaw-smart-cache",
+  "name": "Openclaw Smart Cache",
+  "summary": "为 OpenClaw 提供高速内存+磁盘双层智能缓存，自动学习常用请求模式并推荐最佳工具方案。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_smart_cache",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "king-nan",
+      "features": [
+        "为 OpenClaw 提供高速内存+磁盘双层智能缓存，自动学习常用请求模式并推荐最佳工具方案。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-smart-cache@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141407435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-smart-cache",
+      "url": "https://clawhub.ai/skills/openclaw-smart-cache"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-smart-cache",
+    "url": "https://clawhub.ai/skills/openclaw-smart-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-smart-cache-94f5c8d2ab986cdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-smart-cache@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-smart-cache-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c856f98c2b73eb6477a00541037421aef1ef2ea1e182e84c0ed93a740af94510",
+      "artifactSizeBytes": 2339
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T16:12:36.507Z"
+}

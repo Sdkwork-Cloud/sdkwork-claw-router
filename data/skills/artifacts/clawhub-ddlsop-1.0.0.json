@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ddlsop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ddlsop",
+  "skill": {
+    "id": 65363,
+    "skillKey": "clawhub-ddlsop",
+    "name": "DataEngineering"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ddlsop",
+    "url": "https://clawhub.ai/skills/ddlsop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ddlsop-416a0092bc904cff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 数据建表规范与流程指导。当用户需要创建数据仓库表（DDL）时使用，支持 DWS/DWD/DIM/ADS 等层级，引导完成工作空间选择、表命名、字段定义、分区策略、生命周期等完整建表流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangyan0722",
+      "userId": "publishers:jiangyan0722",
+      "displayName": "JiangYan0722",
+      "image": "https://avatars.githubusercontent.com/u/165133796?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 362,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773649026061,
+      "changelog": "DDL的SOP",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83cef5c1d55fb3f60d42edfa1cc2961c83f8503818454ab60e8169352fd22640"
+}

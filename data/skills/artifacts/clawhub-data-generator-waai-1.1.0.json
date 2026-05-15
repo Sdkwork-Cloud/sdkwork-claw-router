@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-generator-waai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_generator_waai",
+  "skill": {
+    "id": 58178,
+    "skillKey": "clawhub-data-generator-waai",
+    "name": "Data Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-generator-waai",
+    "url": "https://clawhub.ai/skills/data-generator-waai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-generator-waai-ddfeab6870e29350.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Data Generator / 数据生成器 - Generate training data from user instructions. Input: tool name + command list. Output: JSONL. / 根据用户指令生成训练数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huaibuer",
+      "userId": "s170v8tp8dw4ms0rm7pa0bkc618429c7",
+      "displayName": "HuaiBuer",
+      "image": "https://avatars.githubusercontent.com/u/71966998?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 343,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773900260724,
+      "changelog": "- Added support for generating training data from user instructions using data_generator.py.\n- No changes to documentation or usage examples.\n- Version 1.1.0 focuses on internal improvements or feature extensions in the core Python file.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0ed55c07b70dc5c192b69962a998195605466873d1a85d2d42852dff336010b"
+}

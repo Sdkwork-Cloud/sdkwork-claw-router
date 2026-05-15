@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56736,
+  "uuid": "skill-clawhub-blender-asset-generator",
+  "skillKey": "clawhub-blender-asset-generator",
+  "name": "Blender 资产生成",
+  "summary": "Generates ecommerce/game/teaching 3D assets via Blender scripts (Blender 4.2+ including 5.x). Supports cloud Windows and local machines; reference-image guid...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blender_asset_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yamasite",
+      "features": [
+        "Generates ecommerce/game/teaching 3D assets via Blender scripts (Blender 4.2+ including 5.x)",
+        "Supports cloud Windows and local machines",
+        "reference-image guid..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blender-asset-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10089260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blender-asset-generator",
+      "url": "https://clawhub.ai/skills/blender-asset-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blender-asset-generator",
+    "url": "https://clawhub.ai/skills/blender-asset-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blender-asset-generator-8953219ad40f5979.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blender-asset-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blender-asset-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:476d3ac7a66a206e0bba5176bcbd183469cb5ce7157e0748e41f75ff21c2c323",
+      "artifactSizeBytes": 2630
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T06:39:54.722Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysql-slow-query-analyzer-kay@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_slow_query_analyzer_kay",
+  "skill": {
+    "id": 66482,
+    "skillKey": "clawhub-mysql-slow-query-analyzer-kay",
+    "name": "MySQL慢查询分析器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-slow-query-analyzer-kay",
+    "url": "https://clawhub.ai/skills/mysql-slow-query-analyzer-kay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-slow-query-analyzer-kay-2f632d1dd7977f90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业解析 MySQL EXPLAIN 与慢查询日志，定位性能瓶颈，提供索引与SQL重写优化建议，提高查询性能效率。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenghoo123-png",
+      "userId": "s17dv44xed17vb7n7v728mr4dd846y7m",
+      "displayName": "shenghoo123-png",
+      "image": "https://avatars.githubusercontent.com/u/265226019?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775487242684,
+      "changelog": "bug修复+CLI增强",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:278a6e8f32a08dc414bba9853285e50495d6c78b61d001b9a3ca24638f1401f4"
+}

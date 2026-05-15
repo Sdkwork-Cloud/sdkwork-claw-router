@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9224,
+  "uuid": "skill-clawhub-google-web-search",
+  "skillKey": "clawhub-google-web-search",
+  "name": "Google Web Search",
+  "summary": "Enables grounded question answering by automatically executing the Google Search tool within Gemini models. Use when the required information is recent (post knowledge cutoff) or requires verifiable citation.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_web_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "theoseo",
+      "features": [
+        "Enables grounded question answering by automatically executing the Google Search tool within Ge.",
+        "Use when the required information is recent (post knowledge cutoff) or requires verifiable cita."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-web-search@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25238852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-web-search",
+      "url": "https://clawhub.ai/skills/google-web-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-web-search",
+    "url": "https://clawhub.ai/skills/google-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-web-search-7b42ef5692c70e7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-web-search@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-web-search-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3856c39d374efed9bd400628163c29b98f84de6813990ee9c27a217a626976e",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T06:18:35.799Z"
+}

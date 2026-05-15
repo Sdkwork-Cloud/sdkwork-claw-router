@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9027,
+  "uuid": "skill-clawhub-agent-evaluation",
+  "skillKey": "clawhub-agent-evaluation",
+  "name": "Agent Evaluation",
+  "summary": "Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring—where even top agents achieve less than 50% on real-world benchmarks Use when: agent testing, agent eva.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_evaluation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rustyorb",
+      "features": [
+        "Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliab."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-evaluation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111198602?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-evaluation",
+      "url": "https://clawhub.ai/skills/agent-evaluation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-evaluation",
+    "url": "https://clawhub.ai/skills/agent-evaluation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-evaluation-d3f5aa3e8f667b1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-evaluation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-evaluation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a6d1e6c08416434dd93cdabfcd42f2859e40b08f9b932eed8105f1310064fd4",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T22:07:21.158Z"
+}

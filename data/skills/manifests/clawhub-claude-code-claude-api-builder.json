@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32971,
+  "uuid": "skill-clawhub-claude-code-claude-api-builder",
+  "skillKey": "clawhub-claude-code-claude-api-builder",
+  "name": "Claude API Builder",
+  "summary": "Use when code imports Anthropic SDKs or the user asks to build with the Claude API, Agent SDK, tool use, streaming, files, or batches.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_claude_api_builder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when code imports Anthropic SDKs or the user asks to build with the Claude API, Agent SDK,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-claude-api-builder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-claude-api-builder",
+      "url": "https://clawhub.ai/skills/claude-code-claude-api-builder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-claude-api-builder",
+    "url": "https://clawhub.ai/skills/claude-code-claude-api-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-claude-api-builder-4942d871d3e348c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-claude-api-builder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-claude-api-builder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57fc910b2bd08df00b45c1daf9d78e60d3bb48db2f103d7811e8415f54a64ab6",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:17:38.417Z"
+}

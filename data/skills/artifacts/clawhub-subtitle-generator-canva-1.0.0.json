@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-generator-canva@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_generator_canva",
+  "skill": {
+    "id": 46567,
+    "skillKey": "clawhub-subtitle-generator-canva",
+    "name": "Subtitle Generator Canva"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-generator-canva",
+    "url": "https://clawhub.ai/skills/subtitle-generator-canva",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-generator-canva-e39a2dcfabd19d9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute tutorial video in MP4 format into 1080p captioned video files just by typing what you need. Whether it's adding styled subtitles to videos wi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 124,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776031824969,
+      "changelog": "subtitle-generator-canva 1.0.0 — Initial Release\n\n- Instantly generate and export subtitle-burned 1080p videos from short MP4 clips in under a minute.\n- Seamless session setup with quick, free anonymous token (100 credits, 7 days).\n- Drag-and-drop video uploads; simple text prompts trigger actions (generate, export, preview).\n- Supports common video/audio formats: mp4, mov, avi, webm, mkv, mp3, wav, more.\n- Fast, cloud GPU-accelerated rendering — no local installs needed.\n- Brief setup and clear, actionable feedback throughout; error codes and troubleshooting included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49a2b9d08efb07b32beeeb21a62ae11b3774462f8b6adbfbe856049abb9f5fc8"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70124,
+  "uuid": "skill-clawhub-git-daily-skill",
+  "skillKey": "clawhub-git-daily-skill",
+  "name": "每天工作结束后，一键生成当日所有 Git 仓库的提交日报，支持多仓库扫描",
+  "summary": "今日 Git 提交日报助手 —— 自动扫描当天（含次日凌晨6点前）所有仓库的 commit 记录，生成结构化日报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_daily_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "KenneyChen",
+      "features": [
+        "今日 Git 提交日报助手 —— 自动扫描当天（含次日凌晨6点前）所有仓库的 commit 记录，生成结构化日报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/git-daily-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16686081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "git-daily-skill",
+      "url": "https://clawhub.ai/skills/git-daily-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-daily-skill",
+    "url": "https://clawhub.ai/skills/git-daily-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-daily-skill-86cb684670613ac5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/git-daily-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-git-daily-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c4bdbce6e96e3dc87970b417f9d963585ce9ea13256b33a8298d3dd4b549f5f",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T10:23:49.162Z"
+}

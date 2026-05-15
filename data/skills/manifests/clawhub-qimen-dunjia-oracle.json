@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71354,
+  "uuid": "skill-clawhub-qimen-dunjia-oracle",
+  "skillKey": "clawhub-qimen-dunjia-oracle",
+  "name": "Qimen Dunjia — 奇门遁甲",
+  "summary": "奇门遁甲排盘分析器，基于洛书九宫四层盘面体系（天盘九星、地盘三奇六仪、人盘八门、神盘八神）， 支持时家奇门排盘，用于择时决策和事项预测。当用户提及「奇门遁甲」「奇门」「遁甲」「择时」 「奇门排盘」「奇门预测」时触发。排盘为确定性计算 + LLM 综合解读，无外部 API 依赖。 不适用于：梅花易数、六爻易经、风水...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qimen_dunjia_oracle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eamanc",
+      "features": [
+        "奇门遁甲排盘分析器，基于洛书九宫四层盘面体系（天盘九星、地盘三奇六仪、人盘八门、神盘八神）， 支持时家奇门排盘，用于择时决策和事项预测。当用户提及「奇门遁甲」「奇门」「遁甲」「择时」 「奇门."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qimen-dunjia-oracle@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33925426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qimen-dunjia-oracle",
+      "url": "https://clawhub.ai/skills/qimen-dunjia-oracle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qimen-dunjia-oracle",
+    "url": "https://clawhub.ai/skills/qimen-dunjia-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qimen-dunjia-oracle-7cb2c0ba0bef44a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qimen-dunjia-oracle@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qimen-dunjia-oracle-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fbee5fcafc35eb681dd068ca6e2cfeaf6bbdb3e6ae834bb5e6f5ae42f638ae3",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:56:46.044Z"
+}

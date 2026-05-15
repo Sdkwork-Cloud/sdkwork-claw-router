@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/venetech-news@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.venetech_news",
+  "skill": {
+    "id": 54686,
+    "skillKey": "clawhub-venetech-news",
+    "name": "Venetech News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "venetech-news",
+    "url": "https://clawhub.ai/skills/venetech-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/venetech-news-ffbc9fba60c4ab4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Usa este skill siempre que el usuario pida noticias, actualizaciones, resúmenes o briefings sobre tecnología, startups, inteligencia artificial, fintech, cri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oscarmiranda90",
+      "userId": "publishers:oscarmiranda90",
+      "displayName": "oscarmiranda90",
+      "image": "https://avatars.githubusercontent.com/u/109291323?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 424,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1772820318837,
+      "changelog": "Initial release of VeneTech News: tecnología, startups y ecosistema digital venezolano.\n\n- Proporciona resúmenes editoriales de noticias tech y startups, priorizando el contexto venezolano y latinoamericano.\n- Integra scraping de 8 portales venezolanos y RSS de 6 medios internacionales y regionales.\n- Output por categorías como Startups Venezuela, IA, Fintech/Cripto, Gadgets/Apps, y más, en formato editorial y conciso.\n- Incorpora filtros para destacar noticias relevantes para el ecosistema venezolano.\n- Incluye buenas prácticas: respeto de robots.txt, uso de User-Agent real y rate limiting.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b7e2cfad2dab6b46aadedcf9f8b1116555d227c1acdf6fc6f2f4a194330737f"
+}

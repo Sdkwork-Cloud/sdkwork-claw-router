@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27805,
+  "uuid": "skill-clawhub-review-defect-miner",
+  "skillKey": "clawhub-review-defect-miner",
+  "name": "Review Defect Miner",
+  "summary": "Extract and cluster product defect signals from ecommerce reviews to prioritize quality fixes and address low ratings or negative sentiment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_defect_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Extract and cluster product defect signals from ecommerce reviews to prioritize quality fixes a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/review-defect-miner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "review-defect-miner",
+      "url": "https://clawhub.ai/skills/review-defect-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-defect-miner",
+    "url": "https://clawhub.ai/skills/review-defect-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-defect-miner-b0f95c8146891688.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/review-defect-miner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-review-defect-miner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:baf2e80f78705813660a9ef6c07ac0698d49dbf2fa2eebe36c229da782277584",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T09:40:42.111Z"
+}

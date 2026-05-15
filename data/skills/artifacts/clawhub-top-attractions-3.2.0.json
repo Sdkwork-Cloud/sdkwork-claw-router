@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/top-attractions@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.top_attractions",
+  "skill": {
+    "id": 46970,
+    "skillKey": "clawhub-top-attractions",
+    "name": "Top Attractions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "top-attractions",
+    "url": "https://clawhub.ai/skills/top-attractions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/top-attractions-c8670416af288700.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover the most popular and highest-rated attractions in any city. Shows top-tier POIs with ticket prices, opening hours, and booking links. Also supports:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775974877317,
+      "changelog": "top-attractions v3.2.0 Changelog\n\n- Major rewrite of SKILL.md to emphasize CLI-only execution and strict usage of the flyai command.\n- Added detailed critical execution rules: never answer with training data, always install/verify flyai-cli, must show booking links.\n- Clarified English and Chinese language handling according to user query.\n- Expanded playbooks and scenario triggers for broader coverage (top rated, category, kid-friendly, etc.).\n- Introduced strict output validation and formatting requirements, including markdown comparison tables and booking links.\n- Updated compatibility notes and reference file usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d4182ed6a4a1a49300593217e5b8f471cb36bab2d4b49fd289fb8be17f3a674"
+}

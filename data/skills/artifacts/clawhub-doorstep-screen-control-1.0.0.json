@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doorstep-screen-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doorstep_screen_control",
+  "skill": {
+    "id": 61414,
+    "skillKey": "clawhub-doorstep-screen-control",
+    "name": "Doorstep Screen Control - 屏幕操控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doorstep-screen-control",
+    "url": "https://clawhub.ai/skills/doorstep-screen-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doorstep-screen-control-eb7d0365e3ad09a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "屏幕控制技能 - 通过OpenClaw Node + pyautogui实现电脑屏幕识别和鼠标键盘操控。功能：(1) 截图获取屏幕画面，(2) OCR文字识别定位，(3) 图片匹配定位，(4) 鼠标移动/点击/拖拽，(5) 键盘输入/快捷键，(6) 基于视觉信息的自动化操作。Use when: (1) 需要远程操..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ncsimok",
+      "userId": "s17c962yfsevawab1qf1f7z8v984g5tn",
+      "displayName": "ncsimok",
+      "image": "https://avatars.githubusercontent.com/u/128122169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 153,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777430251778,
+      "changelog": "初版：基于OpenClaw Node + pyautogui的屏幕识别与鼠标键盘操控技能，支持截图/OCR/图片匹配/鼠标点击/键盘输入",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4a6e4169bfc33d807fe72ed6420913e0098936d6fb33d6e867e65f52dc683339"
+}

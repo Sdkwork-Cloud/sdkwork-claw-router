@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64851,
+  "uuid": "skill-clawhub-create-educational-subagent",
+  "skillKey": "clawhub-create-educational-subagent",
+  "name": "Create Educational Subagent",
+  "summary": "如何创建一个教务子 agent 来记录和追踪各个班级的上课进度。TRIGGER 当用户提到创建子 agent 记录课程进度、管理班级上课情况、追踪教学进度、或任何涉及长期记录和追踪任务的需求时。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_educational_subagent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2070super",
+      "features": [
+        "如何创建一个教务子 agent 来记录和追踪各个班级的上课进度。TRIGGER 当用户提到创建子 agent 记录课程进度、管理班级上课情况、追踪教学进度、或任何涉及长期记录和追踪任务的需求."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-educational-subagent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74180810?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-educational-subagent",
+      "url": "https://clawhub.ai/skills/create-educational-subagent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-educational-subagent",
+    "url": "https://clawhub.ai/skills/create-educational-subagent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-educational-subagent-c4f72c3964f5abf8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-educational-subagent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-educational-subagent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27c99ab4af09850c376a1a9027a704cade955013f4146160f9c1217fe6f51469",
+      "artifactSizeBytes": 2517
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T18:01:46.374Z"
+}

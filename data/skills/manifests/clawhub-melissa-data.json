@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32060,
+  "uuid": "skill-clawhub-melissa-data",
+  "skillKey": "clawhub-melissa-data",
+  "name": "Melissa Data",
+  "summary": "Melissa Data integration. Manage data, records, and automate workflows. Use when the user wants to interact with Melissa Data data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.melissa_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Melissa Data integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Melissa Data data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/melissa-data@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "melissa-data",
+      "url": "https://clawhub.ai/skills/melissa-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "melissa-data",
+    "url": "https://clawhub.ai/skills/melissa-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/melissa-data-2f099c5febbc24fe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/melissa-data@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-melissa-data-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0c9533a5b9d28767adddd4720f2a179ea1ae0b21d2f607d443fd2049d249945",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:12:33.363Z"
+}

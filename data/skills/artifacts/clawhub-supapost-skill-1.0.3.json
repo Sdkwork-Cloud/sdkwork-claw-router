@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/supapost-skill@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supapost_skill",
+  "skill": {
+    "id": 38954,
+    "skillKey": "clawhub-supapost-skill",
+    "name": "Supapost"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supapost-skill",
+    "url": "https://clawhub.ai/skills/supapost-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supapost-skill-b413d73e16aff949.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI images and video, build TikTok slideshows, manage AI influencers, and schedule posts to TikTok / Instagram / YouTube / X through the Supapost MCP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "supapost-dev",
+      "userId": "s1725d7bfvsrncq82ffh3newq184txax",
+      "displayName": "Supapost",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777463898500,
+      "changelog": "- Changed all Supapost URLs from .st to .so domains (homepage, API endpoints, documentation, and install instructions).\n- Updated parameter names in workflow/documentation sections from camelCase to snake_case (e.g., `influencerId` → `influencer_id`, `scheduledAt` → `scheduled_at`).\n- No functional/behavioral changes; documentation and environment details only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:21697f0528b2fda50388fded6e639bf70d5bc18575c782d1b28421e4838035da"
+}

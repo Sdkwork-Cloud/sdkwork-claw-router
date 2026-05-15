@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-english-vocab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_english_vocab",
+  "skill": {
+    "id": 22578,
+    "skillKey": "clawhub-daily-english-vocab",
+    "name": "Daily English Vocab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-english-vocab",
+    "url": "https://clawhub.ai/skills/daily-english-vocab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-english-vocab-cc173fb93c5d1098.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Daily English vocabulary and conversation practice via scheduled cron delivery. Sends a daily lesson with two parts: (1) a real-life Small Talk phrase with c..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forkercat",
+      "userId": "publishers:forkercat",
+      "displayName": "Junhao Wang",
+      "image": "https://avatars.githubusercontent.com/u/11157226?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773596156710,
+      "changelog": "Initial release: daily Small Talk + themed vocabulary with 12 rotating categories",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17f26a0a777351e156b592b5b0c1dacd5cb7e7436a08bca46e69a173633af187"
+}

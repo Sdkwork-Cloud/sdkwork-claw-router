@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15135,
+  "uuid": "skill-clawhub-mineru-pdf",
+  "skillKey": "clawhub-mineru-pdf",
+  "name": "Mineru Pdf",
+  "summary": "Parse PDF documents with MinerU MCP to extract text, tables, and formulas. Supports multiple backends including MLX-accelerated inference on Apple Silicon.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mineru_pdf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Etoile04",
+      "features": [
+        "Parse PDF documents with MinerU MCP to extract text, tables, and formulas",
+        "Supports multiple backends including MLX-accelerated inference on Apple Silicon."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mineru-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26150510?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mineru-pdf",
+      "url": "https://clawhub.ai/skills/mineru-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mineru-pdf",
+    "url": "https://clawhub.ai/skills/mineru-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mineru-pdf-4170d466aaee4cbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mineru-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mineru-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffb8dc10a8f123adce7df035fe72763b6d103ebc550cfe8c28faa648f37d27ad",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T05:23:35.748Z"
+}

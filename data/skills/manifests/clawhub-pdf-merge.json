@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66456,
+  "uuid": "skill-clawhub-pdf-merge",
+  "skillKey": "clawhub-pdf-merge",
+  "name": "PDF Merge",
+  "summary": "合并多个 PDF 文件，支持压缩和元数据编辑（本地处理，隐私安全）",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_merge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fly3094",
+      "features": [
+        "合并多个 PDF 文件，支持压缩和元数据编辑（本地处理，隐私安全）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-merge@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23025507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-merge",
+      "url": "https://clawhub.ai/skills/pdf-merge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-merge",
+    "url": "https://clawhub.ai/skills/pdf-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-merge-5673dfbf431d9d41.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-merge@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-merge-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15d477be3ab3ae32a38ad29f57506f007a7f06a14bb66fb3e309e88ca77889da",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:31:59.035Z"
+}

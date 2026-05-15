@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cycling-training-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cycling_training_planner",
+  "skill": {
+    "id": 49543,
+    "skillKey": "clawhub-cycling-training-planner",
+    "name": "Cycling Training Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cycling-training-planner",
+    "url": "https://clawhub.ai/skills/cycling-training-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cycling-training-planner-8d93f6aaebd271ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates personalized cycling training plans with balanced rides, skills drills, indoor alternatives, and event prep based on your goals, bike, terrain, and e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 75,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778161515021,
+      "changelog": "Cycling Training Planner 1.0.0\n\n- Initial release with structured cycling training plan generation for road, gravel, indoor, or recreational riders.\n- Creates personalized, periodized weekly ride schedules with endurance, intensity, recovery, and indoor options.\n- Includes detailed workout instructions, bike handling skill drills, and event-day preparation tips.\n- Clear input requirements: goal/event, bike type, terrain, weekly hours, experience, and trainer access.\n- Emphasizes user safety, legal compliance, and professional consultation for health or bike fit concerns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09a13e110249960c202b47bb9337afac603b27f93e26b992d450e60c9305db81"
+}

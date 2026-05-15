@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34755,
+  "uuid": "skill-clawhub-memcore",
+  "skillKey": "clawhub-memcore",
+  "name": "MemCore",
+  "summary": "Agent long-term memory system with five-layer architecture (Context/Task/User/Knowledge/Experience). Use when building agents that need persistent memory, ta...",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memcore",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "laojun",
+      "features": [
+        "Agent long-term memory system with five-layer architecture (Context/Task/User/Knowledge/Experie.",
+        "Use when building agents that need persistent memory, ta..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memcore@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26532654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memcore",
+      "url": "https://clawhub.ai/skills/memcore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memcore",
+    "url": "https://clawhub.ai/skills/memcore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memcore-628222891cb91a61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memcore@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memcore-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84f7473543e1b422e0c9c86e746ab525729bff45d51e03accdd30a74a0fff6af",
+      "artifactSizeBytes": 2027
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T10:56:17.981Z"
+}

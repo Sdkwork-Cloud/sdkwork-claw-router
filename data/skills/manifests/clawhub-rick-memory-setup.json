@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26084,
+  "uuid": "skill-clawhub-rick-memory-setup",
+  "skillKey": "clawhub-rick-memory-setup",
+  "name": "rick-memory-setup",
+  "summary": "Quickly configure OpenClaw's hierarchical memory system with intelligent writing, retrieval, automated weekly maintenance, and metadata tagging.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rick_memory_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xueylee-dotcom",
+      "features": [
+        "Quickly configure OpenClaw's hierarchical memory system with intelligent writing, retrieval, au."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rick-memory-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260164558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rick-memory-setup",
+      "url": "https://clawhub.ai/skills/rick-memory-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rick-memory-setup",
+    "url": "https://clawhub.ai/skills/rick-memory-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rick-memory-setup-35dd4b016b4766fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rick-memory-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rick-memory-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c1dbc9db1a5064c486d4b51dae2cc2939cf73f9533e3d0035b63e4d5cf17782c",
+      "artifactSizeBytes": 2330
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:50:00.098Z"
+}

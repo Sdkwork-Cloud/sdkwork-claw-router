@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57953,
+  "uuid": "skill-clawhub-colleague-skill",
+  "skillKey": "clawhub-colleague-skill",
+  "name": "colleague-skill",
+  "summary": "Distill a colleague into an AI Skill. Auto-collect Feishu/DingTalk data, generate Work Skill + Persona, with continuous evolution. | 把同事蒸馏成 AI Skill，自动采集飞书/钉...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.colleague_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "titanwings",
+      "features": [
+        "Distill a colleague into an AI Skill",
+        "Auto-collect Feishu/DingTalk data, generate Work Skill + Persona, with continuous evolution",
+        "| 把同事蒸馏成 AI Skill，自动采集飞书/钉..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/colleague-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85022018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "colleague-skill",
+      "url": "https://clawhub.ai/skills/colleague-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "colleague-skill",
+    "url": "https://clawhub.ai/skills/colleague-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/colleague-skill-6f7edf704d3694e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/colleague-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-colleague-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ddf5703ea2da6ef9be4c85bfd758411e8f1f51bec87c0eb45f3fe30c38e80cf2",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T08:29:54.972Z"
+}

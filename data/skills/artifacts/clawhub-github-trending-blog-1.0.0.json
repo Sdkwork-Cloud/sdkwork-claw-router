@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-trending-blog@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_trending_blog",
+  "skill": {
+    "id": 60558,
+    "skillKey": "clawhub-github-trending-blog",
+    "name": "GitHub Trending Blog Pipeline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-trending-blog",
+    "url": "https://clawhub.ai/skills/github-trending-blog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-trending-blog-8fbf33de04004d1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub Trending 监控 → AI摘要分析 → 知识卡片生成 → 公众号技术博客一键创作，自动化技术内容生产工作流"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlszhonglongshen",
+      "userId": "s178jr2zywr30fqk79fnqadhks83gpp0",
+      "displayName": "zlszhonglongshen",
+      "image": "https://avatars.githubusercontent.com/u/9023908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778096582077,
+      "changelog": "- Initial release of github-trending-blog skill.\n- Automates the workflow from GitHub Trending monitoring to WeChat tech blog publishing.\n- Integrates data collection, AI summarization, developer-style card generation, and long-form article creation.\n- Reduces manual content creation time from hours to under 10 minutes.\n- Designed for technical bloggers and content creators to easily track and analyze open source trends.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7dce028b3b76142ede28fd13d5b316be335dadfbc53c9ed9b0e813215c3422fb"
+}

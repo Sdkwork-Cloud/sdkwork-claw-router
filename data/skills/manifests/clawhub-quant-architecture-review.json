@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67752,
+  "uuid": "skill-clawhub-quant-architecture-review",
+  "skillKey": "clawhub-quant-architecture-review",
+  "name": "Quant Architecture Review",
+  "summary": "量化架构设计审查技能。当用户说\"审查架构\"、\"检查设计\"、\"优化架构\"、\"架构有问题\"、\"XX环节有问题\"时自动触发。提供架构设计检查清单、常见问题识别、优化建议。适用于量化项目的设计审查阶段。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_architecture_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xueylee-dotcom",
+      "features": [
+        "量化架构设计审查技能。当用户说\"审查架构\"、\"检查设计\"、\"优化架构\"、\"架构有问题\"、\"XX环节有问题\"时自动触发。提供架构设计检查清单、常见问题识别、优化建议。适用于量化项目的设计审查阶."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-architecture-review@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260164558?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-architecture-review",
+      "url": "https://clawhub.ai/skills/quant-architecture-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-architecture-review",
+    "url": "https://clawhub.ai/skills/quant-architecture-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-architecture-review-30fb48f204de9a07.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-architecture-review@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-architecture-review-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ada09d5e06abe9b8400dc085b009887366038b3b1bb260e15d3bc2d13e9e6bf",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:48:14.285Z"
+}

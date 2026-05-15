@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71667,
+  "uuid": "skill-clawhub-tieba",
+  "skillKey": "clawhub-tieba",
+  "name": "Tieba",
+  "summary": "百度贴吧运营助手，精通吧务管理、内容运营、社区互动、舆情分析",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tieba",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "百度贴吧运营助手，精通吧务管理、内容运营、社区互动、舆情分析"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tieba@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tieba",
+      "url": "https://clawhub.ai/skills/tieba"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tieba",
+    "url": "https://clawhub.ai/skills/tieba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tieba-51909feae9c7e6dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tieba@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tieba-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:40d2add875e2a7ecb73905ceb724e4b434ce2d9251379a0697ea8f8c0de22e78",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:19:56.402Z"
+}

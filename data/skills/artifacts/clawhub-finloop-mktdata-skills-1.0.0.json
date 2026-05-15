@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finloop-mktdata-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finloop_mktdata_skills",
+  "skill": {
+    "id": 72546,
+    "skillKey": "clawhub-finloop-mktdata-skills",
+    "name": "F-AI 金融数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finloop-mktdata-skills",
+    "url": "https://clawhub.ai/skills/finloop-mktdata-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finloop-mktdata-skills-12e12ded71b18403.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供全球股票、指数、基金、债券等多品类金融数据的实时与历史行情查询及公司基本面分析服务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "czzlegend",
+      "userId": "s174b2r9q35csnx9bf3ze00ndx84hwnr",
+      "displayName": "CZZLEGEND",
+      "image": "https://avatars.githubusercontent.com/u/17879690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773824187641,
+      "changelog": "- Initial release of flp_mktdata (金融行情数据 skill) providing one-stop global financial market data and analysis via natural language.\n- Supports real-time and historical data for stocks, indices, funds, bonds, commodities, and virtual assets.\n- Offers comprehensive company information (including both public and private firms), key financials, executive teams, shareholder structures, and business summaries.\n- Enforces direct HTTP requests for all interfaces; prohibits wrapper functions or JS/TS encapsulation.\n- Provides detailed API instructions, including required parameters, URL formats, and error handling guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c73226065fcd8f8b2aa5448d347f7f9c5654e1440ce143926eb96b14e5b99a58"
+}

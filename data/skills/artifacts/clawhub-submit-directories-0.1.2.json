@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/submit-directories@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.submit_directories",
+  "skill": {
+    "id": 22537,
+    "skillKey": "clawhub-submit-directories",
+    "name": "Submit Directories"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "submit-directories",
+    "url": "https://clawhub.ai/skills/submit-directories",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/submit-directories-2ce3d18a7c361dbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when submitting a product to AI/startup directories - covers the full pipeline from collecting product info, analyzing directories, discovering forms, au..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "man0l",
+      "userId": "publishers:man0l",
+      "displayName": "man0l",
+      "image": "https://avatars.githubusercontent.com/u/1413216?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 469,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1773219742745,
+      "changelog": "**Password management and GitHub PR process improvements**\n\n- Clarified password handling: use environment variable only; passwords are now automatically stripped from `submission_plan.json` before saving.\n- Updated setup instructions and prompts to reinforce that real passwords should never be used.\n- Improved documentation for the GitHub PR submission phase: clarified need for `gh` CLI and recommended use of the `SUBMIT_GITHUB_URL` environment variable.\n- Updated the rules to reflect changes in password management and personal data handling.\n- Other minor text clarifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bc976a2edfea14fa045d789696f19dc7318a289bfc3186bd95b0e5033f83612"
+}

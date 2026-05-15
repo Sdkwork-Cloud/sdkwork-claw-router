@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72740,
+  "uuid": "skill-clawhub-ai-flight",
+  "skillKey": "clawhub-ai-flight",
+  "name": "AI机票预订助手",
+  "summary": "AI机票助手 - 实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_flight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "赵瑞宇",
+      "features": [
+        "实现国内航班搜索、舱位查询、预订下单、机票改期、机票退票。适用于用户询问航班、查询机票价格、提交机票订单、改期航班、退票时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-flight@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266894511?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-flight",
+      "url": "https://clawhub.ai/skills/ai-flight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-flight",
+    "url": "https://clawhub.ai/skills/ai-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-flight-5761eff89d59e1e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-flight@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-flight-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:936e9e13b0061131e96bf963ea1aaa9ea48159b181432b01e63850bf4a3ecdc0",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:46:56.800Z"
+}

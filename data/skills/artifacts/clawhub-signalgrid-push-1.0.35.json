@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signalgrid-push@1.0.35",
+  "version": "1.0.35",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signalgrid_push",
+  "skill": {
+    "id": 22043,
+    "skillKey": "clawhub-signalgrid-push",
+    "name": "Signalgrid Push"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signalgrid-push",
+    "url": "https://clawhub.ai/skills/signalgrid-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signalgrid-push-e93d30eeed9b87bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send push notifications to your iOS / Android phones using Signalgrid."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "signalgridco",
+      "userId": "s175xwjw4z1z0prtcbrg1avvrh83knta",
+      "displayName": "Signalgrid",
+      "image": "https://avatars.githubusercontent.com/u/252333881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 468,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 36
+    },
+    "latestVersion": {
+      "version": "1.0.35",
+      "createdAt": 1772992821874,
+      "changelog": "- Minor documentation update: formatting adjustment in the \"Examples\" section of SKILL.md.\n- No changes to code or functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4fca51829b2bea2b63ab706b1e87e4a2816c1612d4478fda22ab5ff70cc279fe"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26025,
+  "uuid": "skill-clawhub-content-publisher",
+  "skillKey": "clawhub-content-publisher",
+  "name": "Content Publisher",
+  "summary": "Publish content to Medium, Dev.to, and Hashnode from markdown files. Handles formatting, SEO optimization, scheduling, and cross-posting with canonical URLs....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Qoohsuan",
+      "features": [
+        "Publish content to Medium, Dev.to, and Hashnode from markdown files",
+        "Handles formatting, SEO optimization, scheduling, and cross-posting with canonical URLs...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81729903?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-publisher",
+      "url": "https://clawhub.ai/skills/content-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-publisher",
+    "url": "https://clawhub.ai/skills/content-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-publisher-56771bfd17574416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50d02e3b3c4f90869cfdcb44d44a5ac920e74882b80c78f28401ab05d922ca69",
+      "artifactSizeBytes": 2004
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:43:06.133Z"
+}

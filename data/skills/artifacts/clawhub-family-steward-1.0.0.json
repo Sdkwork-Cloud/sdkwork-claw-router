@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/family-steward@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.family_steward",
+  "skill": {
+    "id": 26065,
+    "skillKey": "clawhub-family-steward",
+    "name": "Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "family-steward",
+    "url": "https://clawhub.ai/skills/family-steward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/family-steward-a8cb760d008e9983.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered family office management system for ultra-high-net-worth families - manage family members, professional contacts, legal documents, and tasks with..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenstaff",
+      "userId": "s173q0k18pjbw86jqbmsmgkz7h83h3vm",
+      "displayName": "Justin Liu",
+      "image": "https://avatars.githubusercontent.com/u/34432727?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772924482176,
+      "changelog": "Initial release: Family member management, professional contact network, document management, task coordination, and AI agent integration (17 tools). Privacy-first with local JSON storage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dcae2b0e85c276cd0b448010502060518c8f84797f081a876c997f3d42d05efe"
+}

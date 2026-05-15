@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66502,
+  "uuid": "skill-clawhub-opclawtm-skill",
+  "skillKey": "clawhub-opclawtm-skill",
+  "name": "Opclawtm Skill",
+  "summary": "opclawtm 让用户通过 CLI 快速构建 AI Agent 团队协作网络。一键创建团队、接入飞书群聊、编排任务工作流——管理者分配任务、执行者完成工作、审核者验收成果。内置预设资料库，开箱即用。基于 OpenClaw 平台的完整团队协作解决方案。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opclawtm_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "poderosom1",
+      "features": [
+        "opclawtm 让用户通过 CLI 快速构建 AI Agent 团队协作网络。一键创建团队、接入飞书群聊、编排任务工作流——管理者分配任务、执行者完成工作、审核者验收成果。内置预设资料库，."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opclawtm-skill@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128355305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opclawtm-skill",
+      "url": "https://clawhub.ai/skills/opclawtm-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opclawtm-skill",
+    "url": "https://clawhub.ai/skills/opclawtm-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opclawtm-skill-19a853b447542aac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opclawtm-skill@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-opclawtm-skill-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fa74fd46b2e10467b572d351b7e0966f26b8c0876c2f9868c22c3267d16302a8",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:48:07.709Z"
+}

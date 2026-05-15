@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46629,
+  "uuid": "skill-clawhub-findmy-icloud-cli",
+  "skillKey": "clawhub-findmy-icloud-cli",
+  "name": "Find My iCloud CLI",
+  "summary": "Query Apple Find My device and family-device locations through the pyicloud iCloud CLI, using a locally stored Apple ID username in a deterministic state fil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.findmy_icloud_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roland Kákonyi",
+      "features": [
+        "Query Apple Find My device and family-device locations through the pyicloud iCloud CLI, using a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/findmy-icloud-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2691371?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "findmy-icloud-cli",
+      "url": "https://clawhub.ai/skills/findmy-icloud-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "findmy-icloud-cli",
+    "url": "https://clawhub.ai/skills/findmy-icloud-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/findmy-icloud-cli-2980582691275256.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/findmy-icloud-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-findmy-icloud-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:569b11ec2a6b1c17e7908af8352480df00a5807a83a9749518972baab1c2385d",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T09:03:50.959Z"
+}

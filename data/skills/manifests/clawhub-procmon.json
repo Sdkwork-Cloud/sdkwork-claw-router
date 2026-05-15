@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23180,
+  "uuid": "skill-clawhub-procmon",
+  "skillKey": "clawhub-procmon",
+  "name": "Procmon",
+  "summary": "Watch and control running processes in real time. Use when scanning active PIDs, monitoring resource spikes, reporting trees, alerting on crashes.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.procmon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Watch and control running processes in real time",
+        "Use when scanning active PIDs, monitoring resource spikes, reporting trees, alerting on crashes."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/procmon@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "procmon",
+      "url": "https://clawhub.ai/skills/procmon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "procmon",
+    "url": "https://clawhub.ai/skills/procmon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/procmon-d86580392e249926.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/procmon@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-procmon-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e7906a93ff06c641cad2191e7ee90be9385062d1c9e592c984f9c05e91dbb55",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:44:57.368Z"
+}

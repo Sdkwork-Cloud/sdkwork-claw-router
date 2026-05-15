@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40484,
+  "uuid": "skill-clawhub-alibabacloud-cfw-status-overview",
+  "skillKey": "clawhub-alibabacloud-cfw-status-overview",
+  "name": "Alibabacloud Cfw Status Overview",
+  "summary": "Alibaba Cloud Firewall Status Overview Skill. One-click query of overall cloud firewall status including asset management, border firewall switch status, and...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_cfw_status_overview",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud Firewall Status Overview Skill",
+        "One-click query of overall cloud firewall status including asset management, border firewall sw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-cfw-status-overview@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-cfw-status-overview",
+      "url": "https://clawhub.ai/skills/alibabacloud-cfw-status-overview"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-cfw-status-overview",
+    "url": "https://clawhub.ai/skills/alibabacloud-cfw-status-overview",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-cfw-status-overview-5869e14996088370.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-cfw-status-overview@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-cfw-status-overview-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8140a26784f69d2e18548b177931fb87dfe62663033e7efb5fa1ff9766cfe1f5",
+      "artifactSizeBytes": 2673
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T08:07:27.056Z"
+}

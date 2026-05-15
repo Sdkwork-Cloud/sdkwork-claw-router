@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-scraper-trae@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scraper_trae",
+  "skill": {
+    "id": 36304,
+    "skillKey": "clawhub-web-scraper-trae",
+    "name": "Web Scraper Trae"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scraper-trae",
+    "url": "https://clawhub.ai/skills/web-scraper-trae",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scraper-trae-5a266ef36aa38428.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Opens browser and scrapes webpage content using Playwright. Invoke when user wants to crawl/scrape a webpage, extract data from a website, or get content fro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengjia626",
+      "userId": "s17bh0xmss4zy0dwvw7frh5exn83rb5h",
+      "displayName": "zhengjia626",
+      "image": "https://avatars.githubusercontent.com/u/44028643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775813604485,
+      "changelog": "- Renamed the skill to \"@web-scraper-trae\" and updated headings to match.\n- No functional changes; documentation reflects new naming.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1ab28e776d537083ae5274cf4c2f6fd75af1bc96490797d7855bc7b68b718f0"
+}

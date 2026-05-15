@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45982,
+  "uuid": "skill-clawhub-mind-wander",
+  "skillKey": "clawhub-mind-wander",
+  "name": "Mind-Wander",
+  "summary": "Background reasoning agent that autonomously explores open questions using a local LLM (Qwen3.5-9B), a private knowledge graph for dead-end tracking, and Per...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mind_wander",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jebadiahgreenwood",
+      "features": [
+        "Background reasoning agent that autonomously explores open questions using a local LLM (Qwen3.5."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mind-wander@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50560183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mind-wander",
+      "url": "https://clawhub.ai/skills/mind-wander"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mind-wander",
+    "url": "https://clawhub.ai/skills/mind-wander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mind-wander-050055eb190204ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mind-wander@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mind-wander-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5cf4937b270d6507e971cb92684287950086ac0fc618107fa42ed4725011e65a",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T06:01:28.866Z"
+}

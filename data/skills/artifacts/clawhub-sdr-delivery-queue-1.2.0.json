@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sdr-delivery-queue@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdr_delivery_queue",
+  "skill": {
+    "id": 36396,
+    "skillKey": "clawhub-sdr-delivery-queue",
+    "name": "Delivery Queue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdr-delivery-queue",
+    "url": "https://clawhub.ai/skills/sdr-delivery-queue",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdr-delivery-queue-52ea673e55e68a70.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedules and delivers segmented messages with timed delays and retries to simulate human-like communication and avoid spam detection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ipythoning",
+      "userId": "s172w4n5ns9akgj3tg573p1kvx83gtgq",
+      "displayName": "iPythoning",
+      "image": "https://avatars.githubusercontent.com/u/29250610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774461935810,
+      "changelog": "Security: input validation, path traversal fix, safe JSON encoding",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4dbc33670022767792949b7292152ca978f5716b4728d4c9175960618da5d508"
+}

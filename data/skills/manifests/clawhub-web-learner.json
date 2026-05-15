@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69956,
+  "uuid": "skill-clawhub-web-learner",
+  "skillKey": "clawhub-web-learner",
+  "name": "Web Learner",
+  "summary": "自主上网学习技能 - 让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_learner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jackeven02",
+      "features": [
+        "自主上网学习技能",
+        "让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-learner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199219042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-learner",
+      "url": "https://clawhub.ai/skills/web-learner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-learner",
+    "url": "https://clawhub.ai/skills/web-learner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-learner-d22b0ed19a221884.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-learner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-learner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c1f9b943c64e6a222cbb12e33bba9dedc20a65847a8f268e744b1434f9bf240",
+      "artifactSizeBytes": 2310
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:12:10.814Z"
+}

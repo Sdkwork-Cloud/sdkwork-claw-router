@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-monitor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_monitor",
+  "skill": {
+    "id": 12576,
+    "skillKey": "clawhub-self-monitor",
+    "name": "Self Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-monitor",
+    "url": "https://clawhub.ai/skills/self-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-monitor-f627eeb129e83f26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive self-monitoring of infrastructure, services, and health. Tracks disk/memory/load, service health, cron job status, recent errors. Auto-fixes safe i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suryast",
+      "userId": "publishers:suryast",
+      "displayName": "suryast",
+      "image": "https://avatars.githubusercontent.com/u/4986994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1598,
+      "installsAllTime": 14,
+      "installsCurrent": 14,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771755923217,
+      "changelog": "Add premium skills promo links",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9e1ab5efcd9685ff337e98e5cce11cdbe65c216ec1280c6a08c2540462322bc0"
+}

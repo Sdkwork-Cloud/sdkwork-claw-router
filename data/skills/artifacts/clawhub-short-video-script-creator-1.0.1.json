@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/short-video-script-creator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.short_video_script_creator",
+  "skill": {
+    "id": 65184,
+    "skillKey": "clawhub-short-video-script-creator",
+    "name": "Short Video Script Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "short-video-script-creator",
+    "url": "https://clawhub.ai/skills/short-video-script-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/short-video-script-creator-733dafcaf6c388ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短视频核心脚本创作，通过专属参数清晰区分产品信息、口吻对标、内容对标及历史文案，批量生成高质量脚本，原生支持PDF/Word。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsbnb",
+      "userId": "s17d6exthhg7wwbw0z502jz00183kevf",
+      "displayName": "an",
+      "image": "https://avatars.githubusercontent.com/u/208153467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774411069281,
+      "changelog": "short-video-script-creator 1.0.1\n\n- 精简并优化了标准操作流程说明，流程更直接清晰。\n- 合并和删除大量输出历史文档文件，减轻存储负担。\n- 更新并规范参数说明，使用方法与模板更易理解。\n- 简化并统一提示词模板格式，内容行文更紧凑。\n- 移除了多余内容和部分冗余限制说明，使整体文档更精炼。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a3ae61e79b6567c76a772564802cf6409909fe30ffb8ccb473b3eeed66f9797b"
+}

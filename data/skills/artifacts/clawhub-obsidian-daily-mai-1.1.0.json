@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-daily-mai@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_daily_mai",
+  "skill": {
+    "id": 17400,
+    "skillKey": "clawhub-obsidian-daily-mai",
+    "name": "Obsidian Daily Note"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-daily-mai",
+    "url": "https://clawhub.ai/skills/obsidian-daily-mai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-daily-mai-b6e7f289ec7baed4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage Obsidian daily notes. Use when asked to write daily notes, record today's work, log session activities, or create daily summaries. Triggers..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jini92",
+      "userId": "publishers:jini92",
+      "displayName": "jini92",
+      "image": "https://avatars.githubusercontent.com/u/43900848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 634,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772316585975,
+      "changelog": "Full English rewrite: removed personal paths, generic template",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8b1f769e20789cfeb73b9387a6d776c8e3b994bf58512e1e77e50049cf0492e"
+}

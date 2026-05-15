@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbot-skill-update@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_skill_update",
+  "skill": {
+    "id": 9241,
+    "skillKey": "clawhub-clawdbot-skill-update",
+    "name": "Clawdbot Skill Update"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-skill-update",
+    "url": "https://clawhub.ai/skills/clawdbot-skill-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-skill-update-a7480b22280aedf5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive backup, update, and restore workflow with dynamic workspace detection"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pasogott",
+      "userId": "s17bmybdzwfeddh6jg4sh5apjs84xtft",
+      "displayName": "pasogott",
+      "image": "https://avatars.githubusercontent.com/u/23458152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3663,
+      "installsAllTime": 27,
+      "installsCurrent": 27,
+      "stars": 6,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1767863172812,
+      "changelog": "- Added frontmatter metadata block to SKILL.md, including name, description, homepage, and tool requirements.\n- No changes to functionality or workflow; documentation content and usage instructions remain unchanged.\n- New metadata improves discoverability and integration in compatible platforms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2beb48e4b3463a98e0254157cc9d7a79805b1c7c9abcbb4120d2921759957928"
+}

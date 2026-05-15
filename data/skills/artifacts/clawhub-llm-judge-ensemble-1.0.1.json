@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-judge-ensemble@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_judge_ensemble",
+  "skill": {
+    "id": 20749,
+    "skillKey": "clawhub-llm-judge-ensemble",
+    "name": "Llm As Judge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-judge-ensemble",
+    "url": "https://clawhub.ai/skills/llm-judge-ensemble",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-judge-ensemble-f68d77b297ed5da9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build a cost-efficient LLM evaluation ensemble with sampling, tiebreakers, and deterministic validators. Learned from 600+ production runs judging local Olla..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774672899547,
+      "changelog": "Add security_notes: LLM API calls use user's own keys, 85% of runs never make external calls",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:669082db58aad3ecc14e05e7f5da94bd871a40589508ab7aef0ebd446f8ce98c"
+}

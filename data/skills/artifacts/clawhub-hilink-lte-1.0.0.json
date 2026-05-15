@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hilink-lte@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hilink_lte",
+  "skill": {
+    "id": 23830,
+    "skillKey": "clawhub-hilink-lte",
+    "name": "HiLink LTE Modem"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hilink-lte",
+    "url": "https://clawhub.ai/skills/hilink-lte",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hilink-lte-c81ff243d0a08fde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Huawei HiLink USB LTE modems (E3372, E8372, etc.) via REST API. Send/receive SMS, check signal strength, manage SIM PIN, query prepaid balance, and m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "and0r-",
+      "userId": "publishers:and0r-",
+      "displayName": "And0r-",
+      "image": "https://avatars.githubusercontent.com/u/5835294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772936597721,
+      "changelog": "Initial release: Self-managing Huawei HiLink USB LTE modem control. SMS send/receive, signal status, SIM PIN auto-entry, balance check. Auto-initializes interface and PIN on every command.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de31ff19cec91095c1054f3d233ebce302e31b99aefb65d4d7470b467c969f81"
+}

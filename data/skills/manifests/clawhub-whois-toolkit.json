@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31077,
+  "uuid": "skill-clawhub-whois-toolkit",
+  "skillKey": "clawhub-whois-toolkit",
+  "name": "Whois Toolkit",
+  "summary": "Domain WHOIS lookup toolkit for querying registrar, creation/expiry dates, nameservers, status, and registrant info. Use when looking up domain ownership, ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whois_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Wang",
+      "features": [
+        "Domain WHOIS lookup toolkit for querying registrar, creation/expiry dates, nameservers, status,.",
+        "Use when looking up domain ownership, ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whois-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20619402?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whois-toolkit",
+      "url": "https://clawhub.ai/skills/whois-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whois-toolkit",
+    "url": "https://clawhub.ai/skills/whois-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whois-toolkit-9fcaf05e1d2edcbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whois-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whois-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26a4a53878e954a9a0e731aae2ea9c6b8f5f3fcfe33efb9d5241a1ff999809d0",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T13:06:39.787Z"
+}

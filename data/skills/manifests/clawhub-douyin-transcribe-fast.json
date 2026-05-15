@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70896,
+  "uuid": "skill-clawhub-douyin-transcribe-fast",
+  "skillKey": "clawhub-douyin-transcribe-fast",
+  "name": "抖音视频快速转文字",
+  "summary": "抖音视频快速转文字（优化版）。用户发抖音链接，自动提取文案。 特点：本地 Whisper 转录，无需 API Key，零成本，高隐私。 触发词：抖音、转文字、提取文案、视频转录",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_transcribe_fast",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "btboy773",
+      "features": [
+        "抖音视频快速转文字（优化版）。用户发抖音链接，自动提取文案。 特点：本地 Whisper 转录，无需 API Key，零成本，高隐私。 触发词：抖音、转文字、提取文案、视频转录"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-transcribe-fast@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165569661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-transcribe-fast",
+      "url": "https://clawhub.ai/skills/douyin-transcribe-fast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-transcribe-fast",
+    "url": "https://clawhub.ai/skills/douyin-transcribe-fast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-transcribe-fast-235e1c62bc6c79aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-transcribe-fast@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-transcribe-fast-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3aee9aebcdd376e386efb9a1f89ee5b7cdade8680dfcf481e7d40464cfe9fabf",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T09:05:46.103Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11955,
+  "uuid": "skill-clawhub-switchbot-cloudapi",
+  "skillKey": "clawhub-switchbot-cloudapi",
+  "name": "SwitchBot OpenAPI",
+  "summary": "Control and query SwitchBot devices using the official OpenAPI (v1.1). Use when the user asks to list SwitchBot devices, get device status, send commands, or...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.switchbot_cloudapi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "switchbot-dev",
+      "features": [
+        "Control and query SwitchBot devices using the official OpenAPI (v1.1)",
+        "Use when the user asks to list SwitchBot devices, get device status, send commands, or..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/switchbot-cloudapi@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207836319?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "switchbot-cloudapi",
+      "url": "https://clawhub.ai/skills/switchbot-cloudapi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "switchbot-cloudapi",
+    "url": "https://clawhub.ai/skills/switchbot-cloudapi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/switchbot-cloudapi-b65c22794fc232a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/switchbot-cloudapi@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-switchbot-cloudapi-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9b1fa8eb9bd4abaf6d113a503e9c35e49deb895d9403611d717c824f49facc5",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:05:51.344Z"
+}

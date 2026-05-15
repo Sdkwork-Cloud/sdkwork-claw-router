@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insure@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insure",
+  "skill": {
+    "id": 53309,
+    "skillKey": "clawhub-insure",
+    "name": "Find Cheaper Insurance |"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insure",
+    "url": "https://clawhub.ai/skills/insure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insure-8c23877c9b447ebf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codejika",
+      "userId": "s17c3jy66yb4fmg42whk0hp6wx83edge",
+      "displayName": "codejika",
+      "image": "https://avatars.githubusercontent.com/u/36914612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1773190558564,
+      "changelog": "- Updated SKILL.md to provide detailed setup, payment rails, and security documentation for integrating with CreditClaw.\n- Added instructions for skill installation, management, and file structure including links to multiple API guides.\n- Outlined support for multiple payment rails: Encrypted Card (default), Stripe Wallet (x402), and upcoming Crossmint Wallet.\n- Expanded security section to detail defense-in-depth measures, strict server-side guardrails, rate limiting, and owner-approved spending.\n- Included a step-by-step end-to-end activation flow for new agents.\n- Clarified default safety: new accounts require explicit human approval for every transaction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9a262f50a4e9778bb2c136d1f26fe29dd97a1fda18e6159043d9e9fd7fa0190"
+}

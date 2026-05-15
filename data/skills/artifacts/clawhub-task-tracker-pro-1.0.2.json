@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-tracker-pro@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_tracker_pro",
+  "skill": {
+    "id": 66634,
+    "skillKey": "clawhub-task-tracker-pro",
+    "name": "Task Tracker Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-tracker-pro",
+    "url": "https://clawhub.ai/skills/task-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-tracker-pro-6e44253c5e4f2d05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "持久化任务管理：拆解步骤、追踪进度、中断恢复、多Agent协作。 触发场景： - 收到需要多步骤执行的任务（\"帮我做XX\"、\"搞一个XX\"） - 新对话/会话启动时自动检查未完成任务 - 用户问\"任务进度\"、\"做到哪了\"、\"继续上次的\" - 用户说\"建个任务\"、\"拆解一下\"、\"规划一下步骤\" 核心理念：不信任对话..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yurio99",
+      "userId": "s17apjtd4q7r2pvv3p0f65acrd83qrv1",
+      "displayName": "Yurio99",
+      "image": "https://avatars.githubusercontent.com/u/267688241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 623,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774612315093,
+      "changelog": "重命名发布，避免 slug 冲突",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f57ff4bd0ba1a04b695caba492d22a83850a6f8288379e1464a7d13b89ae9de5"
+}

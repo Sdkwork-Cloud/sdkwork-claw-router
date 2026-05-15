@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61024,
+  "uuid": "skill-clawhub-trade-hunter",
+  "skillKey": "clawhub-trade-hunter",
+  "name": "Trade Hunter",
+  "summary": "B2B外贸客户发现技能 - 全球企业数据采集 + BOI评分初筛",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WangM-A3",
+      "features": [
+        "B2B外贸客户发现技能",
+        "全球企业数据采集 + BOI评分初筛"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trade-hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274818589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trade-hunter",
+      "url": "https://clawhub.ai/skills/trade-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-hunter",
+    "url": "https://clawhub.ai/skills/trade-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-hunter-6b37b6b1f4548658.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trade-hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trade-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4413c11c5db194f18c97f95ff7c5ec588669c10f7c81d43d4dd88bde5e674d43",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:30:23.471Z"
+}

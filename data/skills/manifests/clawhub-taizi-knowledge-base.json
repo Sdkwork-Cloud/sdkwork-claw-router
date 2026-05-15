@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61403,
+  "uuid": "skill-clawhub-taizi-knowledge-base",
+  "skillKey": "clawhub-taizi-knowledge-base",
+  "name": "Taizi Knowledge Base",
+  "summary": "个人知识库 - 融合向量检索、实体关系、笔记管理",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_knowledge_base",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tangepier",
+      "features": [
+        "融合向量检索、实体关系、笔记管理"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taizi-knowledge-base@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264827789?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taizi-knowledge-base",
+      "url": "https://clawhub.ai/skills/taizi-knowledge-base"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-knowledge-base",
+    "url": "https://clawhub.ai/skills/taizi-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-knowledge-base-85694dc4dcfb322a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taizi-knowledge-base@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taizi-knowledge-base-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b1e7b242b41d0ff14ba1feb66aaa2889aa9c3f7fa34be583a3f252df9c20a51",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T11:57:46.030Z"
+}

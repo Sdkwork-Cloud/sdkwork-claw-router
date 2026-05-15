@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-paper-figure-skill-factory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_paper_figure_skill_factory",
+  "skill": {
+    "id": 48611,
+    "skillKey": "clawhub-research-paper-figure-skill-factory",
+    "name": "Research Paper Figure Skill Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-paper-figure-skill-factory",
+    "url": "https://clawhub.ai/skills/research-paper-figure-skill-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-paper-figure-skill-factory-d9b7d98834312166.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user wants a research-paper figure Skill Factory: build, patch, package, or use reusable specialized paper-figure-making skills from lawful lite..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c-narcissus",
+      "userId": "s177jw27anm32qt3dm1c7dq0jh851mjz",
+      "displayName": "c-narcissus",
+      "image": "https://avatars.githubusercontent.com/u/168325551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 98,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777997204970,
+      "changelog": "- Improved and clarified documentation in SKILL.md, elaborating required workflows, rules, and step-by-step guidance.\n- Detailed \"Non-Negotiable Contract\" outlining startup plan restrictions, candidate-image workflow, strict text/image separation, and rendering routes.\n- Defined complete two-layer Skill Factory workflow, with explicit step-by-step process requirements and TABLE.\n- Added mandatory conventions for every response, state tracking, and user prompt recommendations.\n- Specified compatibility, tags, and usage metadata for integrations and discoverability.\n- No functional code or logic changes described; this version focuses on specification and operational guarantees.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:37cb937ae322da9caa5ad0f929d973584a47414274745bf516883ad69f7d04ea"
+}

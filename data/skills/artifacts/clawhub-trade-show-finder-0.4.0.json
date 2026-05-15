@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trade-show-finder@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trade_show_finder",
+  "skill": {
+    "id": 57429,
+    "skillKey": "clawhub-trade-show-finder",
+    "name": "Trade Show Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trade-show-finder",
+    "url": "https://clawhub.ai/skills/trade-show-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trade-show-finder-a8d693f44216d1c4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score and compare trade shows to decide where to exhibit, attend, or skip this year. \"Which trade shows should we go to?\" / \"哪些展会值得参加\" / \"Welche Messen lohne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weilun88313",
+      "userId": "s1723bcbr1g507y1ekdjmbyct983h3dw",
+      "displayName": "weilun88313",
+      "image": "https://avatars.githubusercontent.com/u/33587196?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 280,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775030089995,
+      "changelog": "- Expanded description (in English, Chinese, German, Japanese, Spanish) for multilingual search/discovery.\n- Improved keyword richness for trade show selection and evaluation.\n- No changes to workflow or scoring logic.\n- No interface or API changes; this update is documentation/metadata only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:514057bfc81e0efcf4454dd34e0e8f74730ecf132c7c96a0ffa3325c33daf061"
+}

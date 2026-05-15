@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/proposal-generator-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proposal_generator_pro",
+  "skill": {
+    "id": 20074,
+    "skillKey": "clawhub-proposal-generator-pro",
+    "name": "Proposal Generator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proposal-generator-pro",
+    "url": "https://clawhub.ai/skills/proposal-generator-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proposal-generator-pro-b1931f556cb290bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create professional, persuasive proposals from client briefs. Generates structured proposals with executive summaries, scope of work, timelines, pricing tier..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kambrosgroup",
+      "userId": "publishers:kambrosgroup",
+      "displayName": "Karl Ambrosius",
+      "image": "https://avatars.githubusercontent.com/u/38363945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 555,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771818366105,
+      "changelog": "Proposal Generator 1.0.0 – Initial Release\n\n- Create professional, persuasive proposals from client briefs or call notes.\n- Generates structured proposals with executive summary, scope of work, timeline, pricing tiers, and terms.\n- Supports RFP responses, new client pitches, and standardized templates.\n- Quick-start examples and detailed section templates included for fast, consistent proposal creation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db67009dc7ab9eeb0a68101f18a4fa888c07c5d93f135851c0eb56928378885f"
+}

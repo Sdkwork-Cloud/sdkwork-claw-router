@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13056,
+  "uuid": "skill-clawhub-cron-helper",
+  "skillKey": "clawhub-cron-helper",
+  "name": "Cron Helper",
+  "summary": "Schedule and manage recurring tasks for your agent. Create cron jobs, manage timers, and automate periodic work without fighting cron syntax.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_helper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FLY",
+      "features": [
+        "Schedule and manage recurring tasks for your agent",
+        "Create cron jobs, manage timers, and automate periodic work without fighting cron syntax."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258594521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-helper",
+      "url": "https://clawhub.ai/skills/cron-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-helper",
+    "url": "https://clawhub.ai/skills/cron-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-helper-2bb4d2780f35f8fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9d08f281032eceb46addae1844c0baa7f6687af48aa0b0d1f0117a383868dfc",
+      "artifactSizeBytes": 2257
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T20:40:08.198Z"
+}

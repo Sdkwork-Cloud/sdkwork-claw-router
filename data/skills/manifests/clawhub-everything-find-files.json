@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59617,
+  "uuid": "skill-clawhub-everything-find-files",
+  "skillKey": "clawhub-everything-find-files",
+  "name": "Everything 文件搜索",
+  "summary": "使用Everything SDK快速搜索本地文件",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.everything_find_files",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyKungBj",
+      "features": [
+        "使用Everything SDK快速搜索本地文件"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/everything-find-files@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171213703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "everything-find-files",
+      "url": "https://clawhub.ai/skills/everything-find-files"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "everything-find-files",
+    "url": "https://clawhub.ai/skills/everything-find-files",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/everything-find-files-c50384fda6cb8979.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/everything-find-files@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-everything-find-files-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8c792fe643a984b4de4ffd22a119af37e10d797604c5db3bce5059f01550b41",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:36:54.113Z"
+}

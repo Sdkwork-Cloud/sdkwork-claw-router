@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24605,
+  "uuid": "skill-clawhub-oxylabs",
+  "skillKey": "clawhub-oxylabs",
+  "name": "Oxylabs",
+  "summary": "Oxylabs integration. Manage Organizations. Use when the user wants to interact with Oxylabs data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oxylabs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Oxylabs integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Oxylabs data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oxylabs@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oxylabs",
+      "url": "https://clawhub.ai/skills/oxylabs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oxylabs",
+    "url": "https://clawhub.ai/skills/oxylabs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oxylabs-232bdfc7ffb8845e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oxylabs@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-oxylabs-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03a0ef557ecca1eee29d45cf7af8cd8590666d4f9f2790ad3187cd2c03a4003f",
+      "artifactSizeBytes": 1797
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:21:04.406Z"
+}

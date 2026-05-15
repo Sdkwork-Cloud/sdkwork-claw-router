@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49499,
+  "uuid": "skill-clawhub-youtube-shorts-agent",
+  "skillKey": "clawhub-youtube-shorts-agent",
+  "name": "YouTube Shorts Agent",
+  "summary": "Prepare, validate, and explicitly upload YouTube Shorts through the official YouTube Data API with dry-run safety. Use when an AI agent needs setup, usage, s...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_shorts_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David Batista",
+      "features": [
+        "Prepare, validate, and explicitly upload YouTube Shorts through the official YouTube Data API w.",
+        "Use when an AI agent needs setup, usage, s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-shorts-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/624359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-shorts-agent",
+      "url": "https://clawhub.ai/skills/youtube-shorts-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-shorts-agent",
+    "url": "https://clawhub.ai/skills/youtube-shorts-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-shorts-agent-0634fb7e639ff55f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-shorts-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-shorts-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be39e74bf2efe8bede30fa4d0b5e9670a133b317d524fb7612c8917b2eac067e",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:18:25.715Z"
+}

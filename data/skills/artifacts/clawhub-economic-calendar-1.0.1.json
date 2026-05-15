@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/economic-calendar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.economic_calendar",
+  "skill": {
+    "id": 18357,
+    "skillKey": "clawhub-economic-calendar",
+    "name": "Economic Calendar"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "economic-calendar",
+    "url": "https://clawhub.ai/skills/economic-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/economic-calendar-fedf97cf509f456e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch and display filtered macro-economic events from Investing.com with no API key, supporting date range, importance, country, timezone, and JSON output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quantx-heiko",
+      "userId": "s17ey905mpnm9z8xkhn6aw82yh858mqs",
+      "displayName": "quantx-heiko",
+      "image": "https://avatars.githubusercontent.com/u/145019013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 648,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772387650945,
+      "changelog": "Removed MCC-specific references, generalized workflow examples",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebe46899bde99816b15f883123b18e8bd1cff7d5292d061d530efc97ac1a3e6d"
+}

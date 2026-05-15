@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apple-health-sync@0.8.1",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_health_sync",
+  "skill": {
+    "id": 12658,
+    "skillKey": "clawhub-apple-health-sync",
+    "name": "Apple Health Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-health-sync",
+    "url": "https://clawhub.ai/skills/apple-health-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-health-sync-a6b2cea739cfa529.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync encrypted Apple Health data from an iOS device (iPhone, iPad) to OpenClaw."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lukasosterheider",
+      "userId": "s173fc1q26bt9850q6h8w8p9fx83f6m9",
+      "displayName": "Lukas Osterheider",
+      "image": "https://avatars.githubusercontent.com/u/70010152?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1388,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.8.1",
+      "createdAt": 1775729758466,
+      "changelog": "apple-health-sync v0.8.1\n\n- Adjusted data sanitation to allow for more workout insights.\n- No user-facing logic or documentation changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19df2c29c7601d01e0abe7f41c221238050f47e31352a5be2eee33a5d8eb40cd"
+}

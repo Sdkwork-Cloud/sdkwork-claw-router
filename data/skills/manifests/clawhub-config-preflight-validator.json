@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59306,
+  "uuid": "skill-clawhub-config-preflight-validator",
+  "skillKey": "clawhub-config-preflight-validator",
+  "name": "Config Preflight Validator",
+  "summary": "OpenClaw 配置预校验工具。在执行 config.patch 或修改 openclaw.json 前进行本地 Schema 验证，提供具体的错误字段描述。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.config_preflight_validator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "halfmoon82",
+      "features": [
+        "OpenClaw 配置预校验工具。在执行 config.patch 或修改 openclaw.json 前进行本地 Schema 验证，提供具体的错误字段描述。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/config-preflight-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261569221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "config-preflight-validator",
+      "url": "https://clawhub.ai/skills/config-preflight-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "config-preflight-validator",
+    "url": "https://clawhub.ai/skills/config-preflight-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/config-preflight-validator-733e0fdde1e4102d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/config-preflight-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-config-preflight-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48c37aa003cb2d18eb65a577a5aa5967718d0b36cc11051240ba3cf8f30b6fcb",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T00:42:05.814Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38999,
+  "uuid": "skill-clawhub-go-trader",
+  "skillKey": "clawhub-go-trader",
+  "name": "Go Trader",
+  "summary": "Control and monitor the go-trader cryptocurrency trading system with natural language commands for strategies, status, risk, and emergency stops.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.go_trader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cyber leo",
+      "features": [
+        "Control and monitor the go-trader cryptocurrency trading system with natural language commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/go-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/235572637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "go-trader",
+      "url": "https://clawhub.ai/skills/go-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "go-trader",
+    "url": "https://clawhub.ai/skills/go-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/go-trader-0368050b626d916a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/go-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-go-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b7efe0ba9ae903de107ed14bf2b30c85e20847979f0cef7c07656902f852c788",
+      "artifactSizeBytes": 2247
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T00:48:44.688Z"
+}

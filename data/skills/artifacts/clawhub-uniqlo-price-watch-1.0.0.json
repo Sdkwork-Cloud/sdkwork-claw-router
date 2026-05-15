@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uniqlo-price-watch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uniqlo_price_watch",
+  "skill": {
+    "id": 63173,
+    "skillKey": "clawhub-uniqlo-price-watch",
+    "name": "uniqlo-price-watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uniqlo-price-watch",
+    "url": "https://clawhub.ai/skills/uniqlo-price-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uniqlo-price-watch-26a51e0cefebdd9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跟踪 UNIQLO 网站（uniqlo.cn）上的产品价格，将用户关注的商品持久化存储在你的工作目录下 uniqlo/uniqlo-price-watch.csv 中，如果文件缺失则自动创建，并在回答用户前将当前官方产品页面价格与保存的基准价格进行比较。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yjy233",
+      "userId": "publishers:yjy233",
+      "displayName": "yjy233",
+      "image": "https://avatars.githubusercontent.com/u/211994286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774194082605,
+      "changelog": "uniqlo-price-watch v1.0.0\n\n- Initial release: Monitor and track product prices on uniqlo.cn.\n- Saves and updates user-tracked items in uniqlo/uniqlo-price-watch.csv, auto-creating the file if missing.\n- Compares current prices with previously saved baseline prices before responding to users.\n- Supports both API-based (fireCrawl) and browser-based methods to obtain product prices, with browser as fallback.\n- Guides users to confirm the correct product from search results before tracking or updating records.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3b81910ff763c025faac351561c94c601b4bef2f572fe8dfef230d7d21976590"
+}

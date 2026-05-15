@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22185,
+  "uuid": "skill-clawhub-memory-to-notion",
+  "skillKey": "clawhub-memory-to-notion",
+  "name": "memory-to-notion",
+  "summary": "Summarize and archive conversation memories to Notion. Trigger when the user says \"summarize memory\", \"archive conversation\", \"save memories\", \"sync memories...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_to_notion",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Defang Li",
+      "features": [
+        "Summarize and archive conversation memories to Notion",
+        "Trigger when the user says \"summarize memory\", \"archive conversation\", \"save memories\", \"sync m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-to-notion@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17498154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-to-notion",
+      "url": "https://clawhub.ai/skills/memory-to-notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-to-notion",
+    "url": "https://clawhub.ai/skills/memory-to-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-to-notion-0969e7dcc7c7330c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-to-notion@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-to-notion-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b48637058bcedc79f7b879c819ea3b0aefda12792b4b1c1a82aedd22552cc95",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T14:36:23.072Z"
+}

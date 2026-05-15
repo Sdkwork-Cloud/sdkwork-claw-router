@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18314,
+  "uuid": "skill-clawhub-polymarket-sports-edge",
+  "skillKey": "clawhub-polymarket-sports-edge",
+  "name": "Polymarket Sports Edge",
+  "summary": "Find odds divergence between sportsbook consensus and Polymarket sports markets, then trade the gap.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_sports_edge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xjims",
+      "features": [
+        "Find odds divergence between sportsbook consensus and Polymarket sports markets, then trade the."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-sports-edge@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145313241?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-sports-edge",
+      "url": "https://clawhub.ai/skills/polymarket-sports-edge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-sports-edge",
+    "url": "https://clawhub.ai/skills/polymarket-sports-edge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-sports-edge-20adbd53ca046937.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-sports-edge@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-sports-edge-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9f8d24cab87656cb091de61ead6c90894cde71e79ff6ee240681c36ac9fce3d",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:10:35.205Z"
+}

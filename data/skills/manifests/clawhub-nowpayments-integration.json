@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47291,
+  "uuid": "skill-clawhub-nowpayments-integration",
+  "skillKey": "clawhub-nowpayments-integration",
+  "name": "NowPayments Integration",
+  "summary": "Integrates NowPayments API to enable secure multi-cryptocurrency payments, IPN handling, and order tracking in AI-operated stores.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nowpayments_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zinou",
+      "features": [
+        "Integrates NowPayments API to enable secure multi-cryptocurrency payments, IPN handling, and or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nowpayments-integration@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nowpayments-integration",
+      "url": "https://clawhub.ai/skills/nowpayments-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nowpayments-integration",
+    "url": "https://clawhub.ai/skills/nowpayments-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nowpayments-integration-f302c89aa9bc59fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nowpayments-integration@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nowpayments-integration-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff1f8a7a07027fefc2dc6ec901c4ae62f4316ff967105166cc97fdefc845eb92",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T06:52:09.793Z"
+}

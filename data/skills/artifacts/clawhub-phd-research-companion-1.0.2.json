@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phd-research-companion@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phd_research_companion",
+  "skill": {
+    "id": 21076,
+    "skillKey": "clawhub-phd-research-companion",
+    "name": "phd-research-companion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phd-research-companion",
+    "url": "https://clawhub.ai/skills/phd-research-companion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phd-research-companion-956d146ae3175ce5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A complete PhD research lifecycle management system tailored for computer science doctoral students. Supports literature survey (arXiv/DBLP/ACM/IEEE search &..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yue123161",
+      "userId": "s170zz8167zsryhyqgdd9dmqqh83krxb",
+      "displayName": "yue123161",
+      "image": "https://avatars.githubusercontent.com/u/985621?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773146466091,
+      "changelog": "PhD Research Companion v1.0.2 – Changelog\n\n- Added robust background execution support and monitoring tools (see BACKGROUND-RUN.md).\n- Introduced unified CLI launcher script (`run`) for streamlined commands.\n- Added `install_verify.sh` for environment and dependency checks.\n- Launched two new scripts: `scripts/multi_source_search.py` for advanced literature search and `scripts/paper_analyzer.py` for deep paper analysis.\n- Included initial test suite (`test_suit.py`) to ensure module correctness.\n- Improved user onboarding and documentation for background runs and installation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adbb778033561ff0705b68d98326a9a570589a299d246821628481751897c020"
+}

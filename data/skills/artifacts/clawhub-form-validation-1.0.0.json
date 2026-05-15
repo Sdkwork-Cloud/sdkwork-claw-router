@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/form-validation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.form_validation",
+  "skill": {
+    "id": 51296,
+    "skillKey": "clawhub-form-validation",
+    "name": "Form Validation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "form-validation",
+    "url": "https://clawhub.ai/skills/form-validation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/form-validation-0675dc4aee3c4f3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep form validation workflow—schemas, sync vs async rules, UX patterns, accessibility, and server parity. Use when building complex forms, multi-step wizard..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774398298820,
+      "changelog": "form-validation 1.0.0 – Initial release\n\n- Introduces a deep form validation workflow covering schema modeling, validation rule layering, UX/error display timing, accessibility, async/server parity, and testing.\n- Includes a six-stage process: (1) schema, (2) rule layers, (3) UX, (4) accessibility, (5) async/server parity, (6) testing.\n- Provides when-to-use guidelines, server/client parity tips, and a final checklist for implementation quality.\n- Emphasizes accessibility, error mapping, and parity between frontend validation and backend rules.\n- Suggests best practices for wizard forms and integrating with UX writing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66e7322ee9b727565e55bd382374231214c36922705aa44521f9cdc10828b063"
+}

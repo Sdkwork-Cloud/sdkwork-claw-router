@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/libvips-image@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.libvips_image",
+  "skill": {
+    "id": 20796,
+    "skillKey": "clawhub-libvips-image",
+    "name": "Libvips Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "libvips-image",
+    "url": "https://clawhub.ai/skills/libvips-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/libvips-image-e6339b707d15993e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "High-performance image processing with libvips. Use for resizing, converting, watermarking, thumbnails, and batch image operations with low memory usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h1bomb",
+      "userId": "s17374y1qzmey0dqkt8xae780583k6b3",
+      "displayName": "h1bomb",
+      "image": "https://avatars.githubusercontent.com/u/641828?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 537,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772242806060,
+      "changelog": "Initial release of libvips-image: high-performance image processing skill.\n\n- Fast, memory-efficient image operations via libvips/pyvips.\n- Supports resize, crop, thumbnail, convert, rotate, watermark, composite, batch processing, and more.\n- CLI tools for scriptable workflows, cross-platform run scripts for macOS, Linux, and Windows.\n- Comprehensive install instructions with \"one-click\" scripts and support for uv/pip.\n- Handles many formats: JPEG, PNG, WebP, AVIF, HEIC, TIFF, PDF, SVG, RAW, and more.\n- Ideal for large images and batch pipelines with low memory overhead.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:72066c178c04f403feabcadd4cae98edc445fdfaa2aef207c284479a888cb131"
+}

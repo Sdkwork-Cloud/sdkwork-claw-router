@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-cardsnap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_cardsnap",
+  "skill": {
+    "id": 54781,
+    "skillKey": "clawhub-toolweb-cardsnap",
+    "name": "CardSnap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-cardsnap",
+    "url": "https://clawhub.ai/skills/toolweb-cardsnap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-cardsnap-d5b8bb3e4373729c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Digital Business Card Generator — create, manage, and track shareable business cards with analytics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775399800069,
+      "changelog": "CardSnap API initial release — generate, manage, and track digital business cards.\n\n- Create, retrieve, update, and delete customizable digital business cards using a secure API.\n- Integrate rich contact details, social profiles, photos, and branding via themes.\n- Track card engagement with built-in analytics for views, saves, shares, and engagement rate.\n- API endpoints cover card management, analytics tracking, and health checks.\n- Multiple subscription plans available, including a free tier.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4efcc9d234f47f6561570612a34479900f07954ed10e93ba9ce2469baaabe761"
+}

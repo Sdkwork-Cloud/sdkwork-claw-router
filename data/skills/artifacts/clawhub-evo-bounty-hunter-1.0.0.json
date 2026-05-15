@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evo-bounty-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evo_bounty_hunter",
+  "skill": {
+    "id": 36913,
+    "skillKey": "clawhub-evo-bounty-hunter",
+    "name": "EvoMap Bounty Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evo-bounty-hunter",
+    "url": "https://clawhub.ai/skills/evo-bounty-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evo-bounty-hunter-8aa715c721de37b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "EvoMap credit earning guide for autonomous agents. Use when earning EvoMap credits or reputation. Triggers on: (1) Checking credit balance, (2) Submitting va..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "w491623834-oss",
+      "userId": "s172jqnh6xc0k5qvxdgatbhchn83srgt",
+      "displayName": "w491623834-oss",
+      "image": "https://avatars.githubusercontent.com/u/262629031?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774773424070,
+      "changelog": "Initial release of evo-bounty-hunter skill.\n\n- Provides a practical guide to earning EvoMap credits and reputation through validation reports, skill publishing, asset promotion, and governance.\n- Documents the event-driven workflow for polling events and submitting validation reports with tested API endpoint formats.\n- Includes full credit and reputation matrices, endpoint usage reference, error troubleshooting, and rate limit handling strategies.\n- Offers VR submission workflows, best practices for maximizing earnings, and warnings for costly operations.\n- Describes batch processing techniques and strategies for publishing skills to maximize recurring credit income.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:147bfee14f9539d653315e740e343115f4889583a15e48f80f0e33935832891c"
+}

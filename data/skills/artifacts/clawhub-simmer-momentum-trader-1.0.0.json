@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simmer-momentum-trader@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simmer_momentum_trader",
+  "skill": {
+    "id": 52307,
+    "skillKey": "clawhub-simmer-momentum-trader",
+    "name": "Simmer Momentum Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simmer-momentum-trader",
+    "url": "https://clawhub.ai/skills/simmer-momentum-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simmer-momentum-trader-fc812930d8f36d55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Momentum-based trading skill for Simmer prediction markets. Detects probability momentum and divergence to generate YES/NO trades on Polymarket. Remixable —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrjoeteam",
+      "userId": "s179jksvecm8y28fdwkyp4q1dn83qsvh",
+      "displayName": "mrjoeteam",
+      "image": "https://avatars.githubusercontent.com/u/199167973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774608831257,
+      "changelog": "Initial release of the Simmer Momentum Trader skill:\n\n- Trades YES/NO on Polymarket using a probability momentum and divergence signal.\n- Configurable divergence threshold and trade amount via environment variables.\n- Monitors Simmer watchlist markets and executes trades when signal criteria are met.\n- Designed as a remixable template: swap in alternative signals (volume, sentiment, ML predictions).\n- Dry-run mode enabled by default, with safeguards for live-trading.\n- Handles all plumbing — market access, trade execution, error handling — so you can focus on signal design.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c3c925e836cabb6e29bf553e6d037d7c5fc221c03de93e8a5584415a68e3873b"
+}

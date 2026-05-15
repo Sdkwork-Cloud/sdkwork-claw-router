@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16417,
+  "uuid": "skill-clawhub-plsreadme",
+  "skillKey": "clawhub-plsreadme",
+  "name": "plsreadme",
+  "summary": "Share markdown files and text as clean, readable web links via plsreadme.com. Use when someone asks to share a document, README, PRD, proposal, notes, or any markdown as a shareable link. Also triggers for \"create a preview link\", \"share t.",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plsreadme",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FacundoLucci",
+      "features": [
+        "Share markdown files and text as clean, readable web links via plsreadme.com",
+        "Use when someone asks to share a document, README, PRD, proposal, notes, or any markdown as a s.",
+        "Also triggers for \"create a preview link\", \"share this as a page\", or \"make this readable\"",
+        "Requires the plsreadme MCP server (npx plsreadme-mcp)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plsreadme@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/92830973?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plsreadme",
+      "url": "https://clawhub.ai/skills/plsreadme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plsreadme",
+    "url": "https://clawhub.ai/skills/plsreadme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plsreadme-11434bd6836309ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plsreadme@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plsreadme-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62f310566be44790a1a82470511ebc0b8e5a8b7e7ba3bc47687f2b13e8d08901",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T14:20:20.298Z"
+}

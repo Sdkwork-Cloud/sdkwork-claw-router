@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69066,
+  "uuid": "skill-clawhub-travel-planner-plus",
+  "skillKey": "clawhub-travel-planner-plus",
+  "name": "travel-planner-plus",
+  "summary": "为用户生成个性化旅游攻略。当用户要求\"做一份旅游攻略\"、\"帮我规划X天X晚的旅行\"、\"生成某地旅游行程\"、\"制定旅游计划\"时使用此技能。支持国内外各大城市，自动搜索景点/酒店/美食，计算交通路线，生成Word文档并发送给用户。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_planner_plus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ggyybb",
+      "features": [
+        "为用户生成个性化旅游攻略。当用户要求\"做一份旅游攻略\"、\"帮我规划X天X晚的旅行\"、\"生成某地旅游行程\"、\"制定旅游计划\"时使用此技能。支持国内外各大城市，自动搜索景点/酒店/美食，计算交通."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-planner-plus@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61568153?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-planner-plus",
+      "url": "https://clawhub.ai/skills/travel-planner-plus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-planner-plus",
+    "url": "https://clawhub.ai/skills/travel-planner-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-planner-plus-13b4c26faddd62ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-planner-plus@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-planner-plus-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f2766c35b47856439dd07668b58d4e2dff915bde0d21f59689b5b9de5f66d5a",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:46:11.055Z"
+}

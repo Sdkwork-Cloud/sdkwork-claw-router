@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13913,
+  "uuid": "skill-clawhub-bot-email",
+  "skillKey": "clawhub-bot-email",
+  "name": "BotEmail.ai - Free bot email",
+  "summary": "Get an email address without your human. Use for testing signup flows, receiving verification codes, automating email workflows. Free.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bot_email",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "claw-silhouette",
+      "features": [
+        "Get an email address without your human",
+        "Use for testing signup flows, receiving verification codes, automating email workflows"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bot-email@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258522560?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bot-email",
+      "url": "https://clawhub.ai/skills/bot-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bot-email",
+    "url": "https://clawhub.ai/skills/bot-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bot-email-1075b15d15db4aaf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bot-email@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bot-email-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccfb01aeab8823ed8afb2cca72be8c3a074f701fe4c1ab42ff763e0049e09a28",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T13:00:06.952Z"
+}

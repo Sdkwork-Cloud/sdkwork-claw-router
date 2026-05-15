@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23060,
+  "uuid": "skill-clawhub-daily-news-vnexpress",
+  "skillKey": "clawhub-daily-news-vnexpress",
+  "name": "Daily News Vnexpress",
+  "summary": "Fetch the latest trending global news from https://vnexpress.net/rss/{topic}.rss.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_vnexpress",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MrNquyen",
+      "features": [
+        "Fetch the latest trending global news from https://vnexpress.net/rss/{topic}.rss."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-vnexpress@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88378712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-vnexpress",
+      "url": "https://clawhub.ai/skills/daily-news-vnexpress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-vnexpress",
+    "url": "https://clawhub.ai/skills/daily-news-vnexpress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-vnexpress-5ee43703f9286d2e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-vnexpress@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-vnexpress-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f76e7972f3fef9658c4e562d584811f83fbd5ed384c46b38a7b41a7de776e54",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:47:42.653Z"
+}

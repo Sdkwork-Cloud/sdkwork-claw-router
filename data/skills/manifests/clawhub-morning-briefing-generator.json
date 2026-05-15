@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17271,
+  "uuid": "skill-clawhub-morning-briefing-generator",
+  "skillKey": "clawhub-morning-briefing-generator",
+  "name": "Morning Briefing Generator",
+  "summary": "Generates a personalized morning briefing with weather, calendar events, urgent emails, trending topics, health data, news, and priorities to save time.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_briefing_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael-laffin",
+      "features": [
+        "Generates a personalized morning briefing with weather, calendar events, urgent emails, trendin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-briefing-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133843289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-briefing-generator",
+      "url": "https://clawhub.ai/skills/morning-briefing-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-briefing-generator",
+    "url": "https://clawhub.ai/skills/morning-briefing-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-briefing-generator-27b3870769ecd001.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-briefing-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-briefing-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ffbf23d254ad4240738ac73e5b376dd84dc540fa7280ab7108c47ea4f3b9750d",
+      "artifactSizeBytes": 2501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T18:52:14.063Z"
+}

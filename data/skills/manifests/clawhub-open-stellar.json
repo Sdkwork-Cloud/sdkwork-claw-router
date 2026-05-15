@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17124,
+  "uuid": "skill-clawhub-open-stellar",
+  "skillKey": "clawhub-open-stellar",
+  "name": "open-stellar-wallet",
+  "summary": "Manage Stellar wallets, send XLM payments, configure networks, and interact with Soroban smart contracts via the Stellar CLI on testnet or mainnet.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_stellar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sixela33",
+      "features": [
+        "Manage Stellar wallets, send XLM payments, configure networks, and interact with Soroban smart."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-stellar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73858646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-stellar",
+      "url": "https://clawhub.ai/skills/open-stellar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-stellar",
+    "url": "https://clawhub.ai/skills/open-stellar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-stellar-3467d491a613b692.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-stellar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-stellar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb03ae77a016284871abc88e6f3e8290c206f6b4f4ade24336e420dfe6222d64",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T23:44:49.741Z"
+}

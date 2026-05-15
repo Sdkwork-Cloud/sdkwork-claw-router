@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pay-with-any-token@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay_with_any_token",
+  "skill": {
+    "id": 27500,
+    "skillKey": "clawhub-pay-with-any-token",
+    "name": "Pay With Any Token"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay-with-any-token",
+    "url": "https://clawhub.ai/skills/pay-with-any-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-with-any-token-9e0cf5c933e2c55d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pay HTTP 402 payment challenges using tokens via the Tempo CLI and Uniswap Trading API. Use when the user encounters a 402 Payment Required response, needs t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773897272520,
+      "changelog": "Initial release — MPP/x402 HTTP 402 payment flow via Tempo CLI and Uniswap Trading API",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9500b0a2464749f79fe7cd9824bd200e206a50b84498c706f107e5ab5a475fa"
+}

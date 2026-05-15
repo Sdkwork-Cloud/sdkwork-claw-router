@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53849,
+  "uuid": "skill-clawhub-vizboard",
+  "skillKey": "clawhub-vizboard",
+  "name": "Vizboard",
+  "summary": "Generate beautiful, self-contained HTML dashboards and visual pages — architecture diagrams, flowcharts, KPI dashboards, data tables, diff reviews, plan revi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vizboard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "redf426",
+      "features": [
+        "Generate beautiful, self-contained HTML dashboards and visual pages — architecture diagrams, fl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vizboard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63651057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vizboard",
+      "url": "https://clawhub.ai/skills/vizboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vizboard",
+    "url": "https://clawhub.ai/skills/vizboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vizboard-13efd582bdaf591c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vizboard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vizboard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b62c8f5bc4a4e67a47e933dbcdba0b1f62e4c3eff4f80df658dcb0f4c858dda",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T14:25:54.568Z"
+}

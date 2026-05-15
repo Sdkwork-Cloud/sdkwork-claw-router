@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62207,
+  "uuid": "skill-clawhub-bilibili-subtitle-download-skill",
+  "skillKey": "clawhub-bilibili-subtitle-download-skill",
+  "name": "Bilibili Subtitle Downloader",
+  "summary": "下载 Bilibili 视频字幕，将其进行分块以供 LLM（大语言模型）处理，并生成高质量的总结。当用户提供 Bilibili BV 号或 URL，并希望获取视频内容的总结、核心要点或详细的分解时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_subtitle_download_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "达芬奇_Davinci",
+      "features": [
+        "下载 Bilibili 视频字幕，将其进行分块以供 LLM（大语言模型）处理，并生成高质量的总结。当用户提供 Bilibili BV 号或 URL，并希望获取视频内容的总结、核心要点或详细的."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-subtitle-download-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45795384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-subtitle-download-skill",
+      "url": "https://clawhub.ai/skills/bilibili-subtitle-download-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-subtitle-download-skill",
+    "url": "https://clawhub.ai/skills/bilibili-subtitle-download-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-subtitle-download-skill-e6155333f9a8170d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-subtitle-download-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-subtitle-download-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69e7aea77335cd30e7815d015aed7c0a252483210a3b1aa8ef90f3c2b5dc86e5",
+      "artifactSizeBytes": 2552
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-20T16:36:19.570Z"
+}

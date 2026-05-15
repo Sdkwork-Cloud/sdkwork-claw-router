@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67690,
+  "uuid": "skill-clawhub-gequhai-music",
+  "skillKey": "clawhub-gequhai-music",
+  "name": "Gequhai Music",
+  "summary": "搜索和下载歌曲海(gequhai.com)的音乐，支持搜索歌曲、获取下载链接（优先无损/高品质）， 并可一键下载到群晖NAS。当用户询问歌曲、搜索音乐、或想下载歌曲时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gequhai_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anlinxi",
+      "features": [
+        "搜索和下载歌曲海(gequhai.com)的音乐，支持搜索歌曲、获取下载链接（优先无损/高品质）， 并可一键下载到群晖NAS。当用户询问歌曲、搜索音乐、或想下载歌曲时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gequhai-music@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40064822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gequhai-music",
+      "url": "https://clawhub.ai/skills/gequhai-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gequhai-music",
+    "url": "https://clawhub.ai/skills/gequhai-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gequhai-music-4a9f7c8d50c01bbf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gequhai-music@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gequhai-music-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5f900cd53926db52f114f22692c2039eefee13a64445fd275942dafb7126cf0",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T23:55:49.619Z"
+}

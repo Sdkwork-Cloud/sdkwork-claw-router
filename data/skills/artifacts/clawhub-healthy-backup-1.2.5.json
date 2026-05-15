@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/healthy-backup@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.healthy_backup",
+  "skill": {
+    "id": 50742,
+    "skillKey": "clawhub-healthy-backup",
+    "name": "Healthy Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "healthy-backup",
+    "url": "https://clawhub.ai/skills/healthy-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/healthy-backup-1c09733fc8da424c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Health-gated backup for OpenClaw rigs. Audits first — only backs up if healthy. Three tiers, 5-backup retention, optional rclone sync. Sensitive config value..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "littlejakub",
+      "userId": "publishers:littlejakub",
+      "displayName": "LittleJakub",
+      "image": "https://avatars.githubusercontent.com/u/35995921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1773051815691,
+      "changelog": "**Major update: Adds interactive setup wizard and reorganizes onboarding.**\n\n- New `setup.sh` script introduces a guided setup wizard for configuring tier, retention, destination, encryption, and optional collectors.\n- The setup wizard writes config, creates encryption keys if needed, runs a dry-run, and can install a cron job—all interactively.\n- `verify-backup.sh` removed.\n- Setup section in docs now recommends running `setup.sh` as the first step.\n- All previous manual onboarding steps now streamlined and clarified.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a20959de277fa7c76214cb979227644c2dcd63f01bcb9fe21483e9305049a87b"
+}

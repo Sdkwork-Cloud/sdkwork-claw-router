@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45592,
+  "uuid": "skill-clawhub-caption-generator-by-image",
+  "skillKey": "clawhub-caption-generator-by-image",
+  "name": "Caption Generator By Image",
+  "summary": "Get captioned video clips ready to post, without touching a single slider. Upload your images (JPG, PNG, WEBP, GIF, up to 200MB), say something like \"generat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.caption_generator_by_image",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get captioned video clips ready to post, without touching a single slider",
+        "Upload your images (JPG, PNG, WEBP, GIF, up to 200MB), say something like \"generat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/caption-generator-by-image@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "caption-generator-by-image",
+      "url": "https://clawhub.ai/skills/caption-generator-by-image"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "caption-generator-by-image",
+    "url": "https://clawhub.ai/skills/caption-generator-by-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/caption-generator-by-image-c284b54632b901ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/caption-generator-by-image@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-caption-generator-by-image-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e4307aff3400fa563468a0dae813b7b91b66f59924b4f26a25eea404cc1ccfa",
+      "artifactSizeBytes": 2597
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T17:51:14.659Z"
+}

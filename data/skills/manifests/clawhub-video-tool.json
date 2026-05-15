@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55753,
+  "uuid": "skill-clawhub-video-tool",
+  "skillKey": "clawhub-video-tool",
+  "name": "Video Tool",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — trim the silent parts and add background music — and get polished MP4 file...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — trim the silent parts and add background music — and get polished MP4."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-tool",
+      "url": "https://clawhub.ai/skills/video-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-tool",
+    "url": "https://clawhub.ai/skills/video-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-tool-7c8d90277da38ee1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e173a5daebad6ba4c025ac12a72d3a26f1bb86363185ecb696572436aa2d1f40",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T09:20:55.526Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18426,
+  "uuid": "skill-clawhub-inventory-manager",
+  "skillKey": "clawhub-inventory-manager",
+  "name": "Inventory Manager",
+  "summary": "Inventory management reference — SKU systems, FIFO/LIFO valuation, barcode formats, ABC analysis, EOQ formula, and WMS migration",
+  "version": "5.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inventory_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Inventory management reference — SKU systems, FIFO/LIFO valuation, barcode formats, ABC analysi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inventory-manager@5.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inventory-manager",
+      "url": "https://clawhub.ai/skills/inventory-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inventory-manager",
+    "url": "https://clawhub.ai/skills/inventory-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inventory-manager-859f9d94edb272df.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inventory-manager@5.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inventory-manager-5.0.0.json",
+      "version": "5.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:778dfb964d7eec4f109532e1e4ff177d0fb0e27ff64e3757619f5eae99f2d17b",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T00:44:38.125Z"
+}

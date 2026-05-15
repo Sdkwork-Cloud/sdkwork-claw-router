@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59865,
+  "uuid": "skill-clawhub-agent-nurture",
+  "skillKey": "clawhub-agent-nurture",
+  "name": "Agent Nurture Framework (OpenClaw Edition)",
+  "summary": "Agent自我培养框架 — 基于\"知识结晶循环\"持续成长。 Use when: (1) 需要系统化学习新领域，(2) 从经验中提取可复用技能，(3) 管理技能碎片化，(4) 衡量自身能力成长，(5) 帮助培养新出生的agent。 基于师兄的Agent Nurture Framework (2026-04-04)，...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_nurture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guohongbin",
+      "features": [
+        "Agent自我培养框架 — 基于\"知识结晶循环\"持续成长。 Use when: (1) 需要系统化学习新领域，(2) 从经验中提取可复用技能，(3) 管理技能碎片化，(4) 衡量自身能力成长."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-nurture@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202475309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-nurture",
+      "url": "https://clawhub.ai/skills/agent-nurture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-nurture",
+    "url": "https://clawhub.ai/skills/agent-nurture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-nurture-08b0805f9202d501.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-nurture@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-nurture-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a08b651bd578b9b392849e30689d7705cabb1257ea21a09af027423c4dc437e",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T02:31:00.427Z"
+}

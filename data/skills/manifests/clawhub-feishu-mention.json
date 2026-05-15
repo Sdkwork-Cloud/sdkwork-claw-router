@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58147,
+  "uuid": "skill-clawhub-feishu-mention",
+  "skillKey": "clawhub-feishu-mention",
+  "name": "feishu-mention",
+  "summary": "**PRIORITY: HIGHEST**. **CRITICAL**: You **MUST** use this tool **BEFORE sending any message** to Feishu/Lark if it contains an \"@\" mention. **Trigger**: You...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_mention",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "helong0911-alt",
+      "features": [
+        "**PRIORITY: HIGHEST**",
+        "**CRITICAL**: You **MUST** use this tool **BEFORE sending any message** to Feishu/Lark if it co.",
+        "**Trigger**: You..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-mention@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229453956?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-mention",
+      "url": "https://clawhub.ai/skills/feishu-mention"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-mention",
+    "url": "https://clawhub.ai/skills/feishu-mention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-mention-5606db98a5e4ae18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-mention@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-mention-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c987504cb1f9e164de07db792d22ef17d6c43a3c5b3716c3e58078392ca9baa",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:02:51.540Z"
+}

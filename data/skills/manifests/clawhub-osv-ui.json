@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33628,
+  "uuid": "skill-clawhub-osv-ui",
+  "skillKey": "clawhub-osv-ui",
+  "name": "CVE Audit Skill",
+  "summary": "Security auditing skill for scanning CVE vulnerabilities across npm, Python, Go, and Rust projects using osv-ui. Opens a visual browser dashboard for human r...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.osv_ui",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "toan203",
+      "features": [
+        "Security auditing skill for scanning CVE vulnerabilities across npm, Python, Go, and Rust proje.",
+        "Opens a visual browser dashboard for human r..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/osv-ui@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49609547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "osv-ui",
+      "url": "https://clawhub.ai/skills/osv-ui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "osv-ui",
+    "url": "https://clawhub.ai/skills/osv-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/osv-ui-6fc2fbda9a1822b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/osv-ui@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-osv-ui-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:726c46ccb6346c3ba5797ec839eda06344d69f3b18fc12b165e17441dea1379c",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T08:36:05.677Z"
+}

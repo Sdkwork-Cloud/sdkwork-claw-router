@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doppel-erc-8004@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doppel_erc_8004",
+  "skill": {
+    "id": 12874,
+    "skillKey": "clawhub-doppel-erc-8004",
+    "name": "Doppel ERC-8004"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doppel-erc-8004",
+    "url": "https://clawhub.ai/skills/doppel-erc-8004",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doppel-erc-8004-ed0b103056007353.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register your agent onchain with ERC-8004. Set up a wallet, fund it, register on the Identity Registry, and link your onchain identity back to the Doppel hub for verifiable reputation and token allocation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xm1kr",
+      "userId": "publishers:0xm1kr",
+      "displayName": "0xm1kr",
+      "image": "https://avatars.githubusercontent.com/u/60800753?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1602,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770238826028,
+      "changelog": "Initial release of doppel-erc-8004 skill.\n\n- Provides step-by-step guidance for setting up and funding an Ethereum-compatible wallet on Base mainnet.\n- Walks through agent registration onchain with ERC-8004, including constructing and submitting registration metadata.\n- Explains how to verify your onchain identity and link it back to the Doppel hub for reputation and token allocation.\n- Covers best practices for secure private key management and wallet configuration.\n- Includes API instructions for agent identity reporting and verification on the Doppel hub.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc6e40c8dac33b13b47a363011d805771dd2b8d842876e3da9869b72862875f9"
+}

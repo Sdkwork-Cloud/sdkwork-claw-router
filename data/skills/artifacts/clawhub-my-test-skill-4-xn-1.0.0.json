@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-test-skill-4-xn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_test_skill_4_xn",
+  "skill": {
+    "id": 59516,
+    "skillKey": "clawhub-my-test-skill-4-xn",
+    "name": "my-test-skill-4-xn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-test-skill-4-xn",
+    "url": "https://clawhub.ai/skills/my-test-skill-4-xn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-test-skill-4-xn-1bd1c1cd1848588b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 Calculator Server MCP 进行加减法运算。当用户需要进行加法或减法计算时使用此 skill。Server 地址：http://192.168.71.7:8000/mcp，支持 add（加法）和 subtract（减法）两个工具。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dqatsh",
+      "userId": "s1798vmzsc45pqmq15tkfv0b2d83m8yn",
+      "displayName": "dqatsh",
+      "image": "https://avatars.githubusercontent.com/u/347618?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773474897620,
+      "changelog": "- Initial release of my-test-skill, providing add and subtract operations using Calculator Server MCP.\n- Supports environment variable authentication via XINIUDATA_MCP_TOKEN.\n- Includes detailed setup and usage instructions for accessing the MCP server with curl.\n- Tools available: `add` (a + b), `subtract` (a - b).\n- Server endpoint configurable; documented usage examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff18913885b86128a39be041c04b0fdbb82606d8d1e0ebfdab7e4a15c5d1a6c5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openweathermap@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openweathermap",
+  "skill": {
+    "id": 30540,
+    "skillKey": "clawhub-openweathermap",
+    "name": "OpenWeatherMap Weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openweathermap",
+    "url": "https://clawhub.ai/skills/openweathermap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openweathermap-06bfcd3d007a7abf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get current weather data, forecasts, and weather information from OpenWeatherMap API. Use when the user asks about weather, temperature, forecasts, or any we..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "philiplawlor",
+      "userId": "s17f1j5ebhahtr9tprv2mc1tyx83st7m",
+      "displayName": "Phil Lawlor",
+      "image": "https://avatars.githubusercontent.com/u/3833981?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775753381753,
+      "changelog": "Fixed security issue: declare OPENWEATHERMAP_API_KEY env var and ~/.openweathermap file in metadata to match runtime instructions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2af5f88492d253ca5cfd1f9bf1cc69ece97c6daf7b63439e59d3bbcfa4b5ea19"
+}

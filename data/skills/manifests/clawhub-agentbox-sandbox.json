@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25298,
+  "uuid": "skill-clawhub-agentbox-sandbox",
+  "skillKey": "clawhub-agentbox-sandbox",
+  "name": "AgentBox Sandbox",
+  "summary": "answer questions about agentbox cloud sandboxes using the official docs. use when the user wants help with agentbox quickstart, sandbox lifecycle, timeout, c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentbox_sandbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr.Guo",
+      "features": [
+        "answer questions about agentbox cloud sandboxes using the official docs",
+        "use when the user wants help with agentbox quickstart, sandbox lifecycle, timeout, c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentbox-sandbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16954452?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentbox-sandbox",
+      "url": "https://clawhub.ai/skills/agentbox-sandbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentbox-sandbox",
+    "url": "https://clawhub.ai/skills/agentbox-sandbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentbox-sandbox-f231ae079081532c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentbox-sandbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentbox-sandbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd823fdee4074972225e5dedc719b0ad19f328fb4eda185a6b4f167926a6a902",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:24:15.760Z"
+}

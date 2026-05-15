@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "arxiv-to-obsidian",
+    "displayName": "arxiv-to-obsidian",
+    "summary": "当用户要求获取 arXiv 最新 AI 论文、整理今日论文摘要、生成 AI 论文日报、把 arXiv 论文写入 Obsidian、同步文献到今日日记时，使用此 skill。默认来源是 `https://export.arxiv.org/rss/cs.AI`，默认目标是 Obsidian 中的 `402论文资料`...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773991089910,
+    "updatedAt": 1777621663822
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773991089910,
+    "changelog": "arxiv-to-obsidian v1.0.0\n\n- 新增从 arXiv `cs.AI` RSS 获取最新 AI 论文摘要并同步到 Obsidian 指定笔记的功能。\n- 自动获取、翻译、整理最新 10 篇论文，按标准 Markdown 表格格式追加到每日笔记。\n- 严格限制 Obsidian CLI 操作（禁止直接读写文件系统），兼容 obsidian-cli skill。\n- 明确失败处理逻辑，保障数据一致性与安全。\n- 提供辅助脚本供本地 RSS 解析与翻译，所有写入操作均经 Obsidian CLI 实现。",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "senrylee",
+    "userId": "s171hcxt0xcjr89qnhzjsxh3b183smsa",
+    "displayName": "SenryLee",
+    "image": "https://avatars.githubusercontent.com/u/41836813?v=4"
+  },
+  "moderation": null
+}

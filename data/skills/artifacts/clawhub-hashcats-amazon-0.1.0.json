@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hashcats-amazon@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hashcats_amazon",
+  "skill": {
+    "id": 27101,
+    "skillKey": "clawhub-hashcats-amazon",
+    "name": "HashCats Amazon Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hashcats-amazon",
+    "url": "https://clawhub.ai/skills/hashcats-amazon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hashcats-amazon-54197be863a6aefe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "x402 pay-per-call API for Amazon product search, filtering, ranking, detailed extraction, and one-shot \"best products\" recommendations. No API keys required..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hashcatter",
+      "userId": "s17cscphgfc2z19jxatv89t9nh853dqh",
+      "displayName": "HashCatter",
+      "image": "https://avatars.githubusercontent.com/u/274150681?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776891662014,
+      "changelog": "- Initial release of the HashCats Amazon Intelligence skill.\n- Enables agents to perform Amazon product search, filtering, ranking, detailed extraction, and one-shot \"best products\" recommendations via the x402 pay-per-call API.\n- No API keys required; payments handled automatically using USDC (x402 flow).\n- Provides structured JSON outputs for all endpoints, optimized for agent reasoning and composability.\n- Supports endpoints: /search, /filter, /rank, /product-details, and /best.\n- Comprehensive usage instructions, pricing, and documentation links included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e17394737d654f92f502f04f231b3eef7bd51be802eb89dec9c379156ee475c9"
+}

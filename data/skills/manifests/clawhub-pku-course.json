@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56993,
+  "uuid": "skill-clawhub-pku-course",
+  "skillKey": "clawhub-pku-course",
+  "name": "Course",
+  "summary": "PKU Teaching Platform (北大教学网/Blackboard Learn) CLI tool built in Rust. Use this skill when working on the course crate, debugging course commands, adding fea...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pku_course",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjsoj",
+      "features": [
+        "PKU Teaching Platform (北大教学网/Blackboard Learn) CLI tool built in Rust",
+        "Use this skill when working on the course crate, debugging course commands, adding fea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pku-course@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59087896?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pku-course",
+      "url": "https://clawhub.ai/skills/pku-course"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pku-course",
+    "url": "https://clawhub.ai/skills/pku-course",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pku-course-7b3070be63b65215.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pku-course@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pku-course-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8699db99e4b6ad46a10c1129a99e2a5e7921fefa11caacf554360617763e4c1c",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:38:14.544Z"
+}

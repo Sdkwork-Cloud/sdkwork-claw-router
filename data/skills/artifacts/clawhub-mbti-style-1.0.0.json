@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mbti-style@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mbti_style",
+  "skill": {
+    "id": 58089,
+    "skillKey": "clawhub-mbti-style",
+    "name": "MBTI Personality"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mbti-style",
+    "url": "https://clawhub.ai/skills/mbti-style",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mbti-style-165abd9449304f31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"switch personality\", \"change MBTI\", \"set personality to INTJ\", \"切换人格\", \"MBTI人格\", \"换个性格\", \"用ENFP的风格\", \"技术大佬\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codesstar",
+      "userId": "s17ckz7b2xct3122dk4hbjjhkx844cvt",
+      "displayName": "codesstar",
+      "image": "https://avatars.githubusercontent.com/u/90562155?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775188368066,
+      "changelog": "Initial release: 4 presets, 16 MBTI types, 32 custom combos, smart complement matching, bilingual CN/EN",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d518c12d00aeadac2f795e6ab764527817e7c32874589b79901cc54e2eeea71"
+}

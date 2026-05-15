@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ring@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ring",
+  "skill": {
+    "id": 67239,
+    "skillKey": "clawhub-ring",
+    "name": "Ring (Amazon)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ring",
+    "url": "https://clawhub.ai/skills/ring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ring-16b974583155fdcb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "介绍Ring的起源、亚马逊收购及其智能门铃和家庭安全生态系统的商业模式与市场地位。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1777306024801,
+      "changelog": "Initial publish: Smart home security doorbell to Amazon acquisition",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:71a72b4dd0119906efd845e0ccb837c1214c23e1b94ca1f27f6f07ea1a5ea518"
+}

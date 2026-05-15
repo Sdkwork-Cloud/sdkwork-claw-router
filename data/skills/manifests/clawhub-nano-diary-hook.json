@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23937,
+  "uuid": "skill-clawhub-nano-diary-hook",
+  "skillKey": "clawhub-nano-diary-hook",
+  "name": "Nano Diary Hook",
+  "summary": "Post diary entries to a Nano diary platform via webhook. Supports creating new entries and AI-powered merging with existing handwritten diaries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_diary_hook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fengye607",
+      "features": [
+        "Post diary entries to a Nano diary platform via webhook",
+        "Supports creating new entries and AI-powered merging with existing handwritten diaries."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-diary-hook@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11850444?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-diary-hook",
+      "url": "https://clawhub.ai/skills/nano-diary-hook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-diary-hook",
+    "url": "https://clawhub.ai/skills/nano-diary-hook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-diary-hook-b904659ef0af0032.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-diary-hook@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-diary-hook-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:79e24b9683cca94417669b5e3137817bdbf59ddce55d437e43722db22f3ea2f0",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T04:38:50.515Z"
+}

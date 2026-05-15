@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toggl-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toggl_cli",
+  "skill": {
+    "id": 16014,
+    "skillKey": "clawhub-toggl-cli",
+    "name": "Toggl CLI – Time tracking for you and your agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toggl-cli",
+    "url": "https://clawhub.ai/skills/toggl-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toggl-cli-1ea63f7e6ccfa95c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control your Toggl Track workspace via CLI to manage time entries, projects, clients, tasks, tags, workspaces, and user profiles with flexible commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "froemic",
+      "userId": "publishers:froemic",
+      "displayName": "FroeMic",
+      "image": "https://avatars.githubusercontent.com/u/15179255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1406,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770400790700,
+      "changelog": "Interact with your Toggl Track time tracking workspace via the toggl-cli. Start/stop timers, manage time entries, projects, clients, and tags directly from the command line.\n\nStart by creating an account on https://track.toggl.com/",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f382fdd8638ce5e0c3a2a895def30a2327ce9668a0c993387b98c4d650274b3d"
+}

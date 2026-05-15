@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33531,
+  "uuid": "skill-clawhub-artilleryio",
+  "skillKey": "clawhub-artilleryio",
+  "name": "Artilleryio",
+  "summary": "Artillery.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Artillery.io data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.artilleryio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Artillery.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Artillery.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/artilleryio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "artilleryio",
+      "url": "https://clawhub.ai/skills/artilleryio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "artilleryio",
+    "url": "https://clawhub.ai/skills/artilleryio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/artilleryio-4a1da271bd3af2a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/artilleryio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-artilleryio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:302304201b307756d378c70137a6cf45a354b3d4231e4b2f35ae45d24fbdc520",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:11:59.282Z"
+}

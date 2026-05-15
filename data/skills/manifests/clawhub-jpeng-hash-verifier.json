@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43263,
+  "uuid": "skill-clawhub-jpeng-hash-verifier",
+  "skillKey": "clawhub-jpeng-hash-verifier",
+  "name": "hash-verifier",
+  "summary": "Verify data integrity with hashes",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpeng_hash_verifier",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "Verify data integrity with hashes"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jpeng-hash-verifier@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jpeng-hash-verifier",
+      "url": "https://clawhub.ai/skills/jpeng-hash-verifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpeng-hash-verifier",
+    "url": "https://clawhub.ai/skills/jpeng-hash-verifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpeng-hash-verifier-70c870496f657531.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jpeng-hash-verifier@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jpeng-hash-verifier-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:633c2ec63e4102cd124f68ce7cb6e47d8c8a4b9c764fbdd238b0092af8c47eed",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:03:21.040Z"
+}

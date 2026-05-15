@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63854,
+  "uuid": "skill-clawhub-good-memory",
+  "skillKey": "clawhub-good-memory",
+  "name": "Good Memory",
+  "summary": "Session 历史记录恢复技能。Session重置后自动恢复对话上下文，解决系统自动重置导致的\"失忆\"问题。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.good_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acilgit",
+      "features": [
+        "Session 历史记录恢复技能。Session重置后自动恢复对话上下文，解决系统自动重置导致的\"失忆\"问题。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/good-memory@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7995638?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "good-memory",
+      "url": "https://clawhub.ai/skills/good-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "good-memory",
+    "url": "https://clawhub.ai/skills/good-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/good-memory-920be2c36869a525.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/good-memory@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-good-memory-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0186797c20e48454e8b3a4290292db95d08b55b575edcbca42c115a57863ea51",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T03:55:49.383Z"
+}

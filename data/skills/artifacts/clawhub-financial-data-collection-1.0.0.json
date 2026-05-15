@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-data-collection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_data_collection",
+  "skill": {
+    "id": 71123,
+    "skillKey": "clawhub-financial-data-collection",
+    "name": "财政数据采集分析"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-data-collection",
+    "url": "https://clawhub.ai/skills/financial-data-collection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-data-collection-b1d775ce11f71355.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国财政部财政收支数据采集与分析。当用户提到以下场景时使用本 skill：(1) 抓取财政数据 - 触发词：抓取财政数据、采集财政数据、最新财政数据、财政数据采集；(2) 分析财政数据 - 触发词：分析财政数据、分析财政赤字、研究财政收入、对比财政收支。负责运行财政部官网的财政数据采集 pipeline，并对采集..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cy7533",
+      "userId": "s17bc380s9h0gtqmg0ktxb91z183p48r",
+      "displayName": "cy7533",
+      "image": "https://avatars.githubusercontent.com/u/49522916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774592033809,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c93dd369eb263d1d89cd5e22d2e6860dd93bdac44638fa0e5ac90ea5b0fc3d07"
+}

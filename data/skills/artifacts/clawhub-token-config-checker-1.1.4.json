@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/token-config-checker@1.1.4",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_config_checker",
+  "skill": {
+    "id": 60036,
+    "skillKey": "clawhub-token-config-checker",
+    "name": "Token Config Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-config-checker",
+    "url": "https://clawhub.ai/skills/token-config-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-config-checker-ffebdaae9e94fc37.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "批量检测 token / auth JSON 配置文件有效性，并可对 access token 做在线轻量探测，自动输出脱敏报告。适用于排查 Codex/OpenAI/OpenAI 兼容客户端导出的登录配置、会话凭据文件、token 缓存文件。支持把配置分为 valid / no_quota / invalid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe12801",
+      "userId": "s170paks6vj4s9bvx4s1fx60f183gc5d",
+      "displayName": "joe12801",
+      "image": "https://avatars.githubusercontent.com/u/70465495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.4",
+      "createdAt": 1774341540261,
+      "changelog": "Make code defaults public-safe by using OpenAI official probe URL by default and remove private endpoint references from docs and code.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:147b4da0308048179eaba2a4451a22ab892a827ed1298a922ed9640f7f0fc537"
+}

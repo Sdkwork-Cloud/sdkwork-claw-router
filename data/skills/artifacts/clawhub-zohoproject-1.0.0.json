@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zohoproject@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zohoproject",
+  "skill": {
+    "id": 52373,
+    "skillKey": "clawhub-zohoproject",
+    "name": "ZohoProject"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zohoproject",
+    "url": "https://clawhub.ai/skills/zohoproject",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zohoproject-c94933e78aed6043.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Zoho Projects — list portals/projects, create/update/complete tasks, add comments, log time, manage milestones, and query your task list. Requires ZOH..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katprotech",
+      "userId": "s172drmx860gnzz3kxhe96at3183hrdd",
+      "displayName": "katprotech",
+      "image": "https://avatars.githubusercontent.com/u/40672522?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774354934036,
+      "changelog": "- Initial release of the Zoho Projects skill.\n- Manage Zoho Projects: list portals and projects, create/update/complete tasks, add comments, log time, manage milestones, and query tasks.\n- Detailed setup and authentication instructions, including OAuth2 flow and environment variable requirements.\n- Includes API references and example curl commands for all supported actions.\n- Usage tips and troubleshooting guidance for rate limits and regional domains.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee248f82751b0be248aec6b4933a2ea55919b7b1fb5aedce94c22a0e6ad6db3e"
+}

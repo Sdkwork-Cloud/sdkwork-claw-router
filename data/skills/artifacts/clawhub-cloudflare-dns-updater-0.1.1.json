@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloudflare-dns-updater@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloudflare_dns_updater",
+  "skill": {
+    "id": 12222,
+    "skillKey": "clawhub-cloudflare-dns-updater",
+    "name": "Cloudflare Dns Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloudflare-dns-updater",
+    "url": "https://clawhub.ai/skills/cloudflare-dns-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloudflare-dns-updater-3c9912c09298d5d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates or updates a proxied Cloudflare DNS A record. Use when you need to programmatically point a subdomain to an IP address. Takes record name, zone name, and IP address as input."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xieyuanqing",
+      "userId": "publishers:xieyuanqing",
+      "displayName": "xieyuanqing",
+      "image": "https://avatars.githubusercontent.com/u/43878017?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1807,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770369366099,
+      "changelog": "Security fix: Anonymized all examples in SKILL.md to remove private information.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0aecb0c4093b3a4a0aca548436dcbd6e747e276334ab936a0b46f41f2838262e"
+}

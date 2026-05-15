@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26729,
+  "uuid": "skill-clawhub-bitchat",
+  "skillKey": "clawhub-bitchat",
+  "name": "Bitchat",
+  "summary": "Bitchat integration skill for OpenClaw",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitchat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wkyleg",
+      "features": [
+        "Bitchat integration skill for OpenClaw"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitchat@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16677991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitchat",
+      "url": "https://clawhub.ai/skills/bitchat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitchat",
+    "url": "https://clawhub.ai/skills/bitchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitchat-47a66e27e47783b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitchat@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitchat-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44b71a1ea95dfb0912a079e886629cf73c9175bd3e1f3f772a3ec8990a122300",
+      "artifactSizeBytes": 1735
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T04:23:38.925Z"
+}

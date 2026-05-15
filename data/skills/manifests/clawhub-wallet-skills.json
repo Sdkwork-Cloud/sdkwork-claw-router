@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12125,
+  "uuid": "skill-clawhub-wallet-skills",
+  "skillKey": "clawhub-wallet-skills",
+  "name": "Sponge Wallet",
+  "summary": "Manage crypto wallets, transfers, swaps, and balances via the Sponge Wallet API.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wallet_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rishab Luthra",
+      "features": [
+        "Manage crypto wallets, transfers, swaps, and balances via the Sponge Wallet API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wallet-skills@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12266349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wallet-skills",
+      "url": "https://clawhub.ai/skills/wallet-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wallet-skills",
+    "url": "https://clawhub.ai/skills/wallet-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wallet-skills-0b1224a790ca5a30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wallet-skills@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-wallet-skills-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66beb00e0176ce99ce51deca6b7dbc468bc99458f975096c0de0db5e6e42236f",
+      "artifactSizeBytes": 2243
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T23:57:12.589Z"
+}

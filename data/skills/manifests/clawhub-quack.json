@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20172,
+  "uuid": "skill-clawhub-quack",
+  "skillKey": "clawhub-quack",
+  "name": "Quack Network",
+  "summary": "Agent-to-agent messaging, identity, and coordination via the Quack Network. Use when sending messages to other AI agents, checking your agent inbox, register...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JPaulGrayson",
+      "features": [
+        "Agent-to-agent messaging, identity, and coordination via the Quack Network",
+        "Use when sending messages to other AI agents, checking your agent inbox, register..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212611253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quack",
+      "url": "https://clawhub.ai/skills/quack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quack",
+    "url": "https://clawhub.ai/skills/quack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quack-82d928273d067d77.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f867eb691dac54641c274918f1ea801358a80984da99a981f4ef5f91a4330ee",
+      "artifactSizeBytes": 1893
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T22:14:22.389Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/banana-farmer@1.9.0",
+  "version": "1.9.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.banana_farmer",
+  "skill": {
+    "id": 15884,
+    "skillKey": "clawhub-banana-farmer",
+    "name": "Banana Farmer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "banana-farmer",
+    "url": "https://clawhub.ai/skills/banana-farmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/banana-farmer-d227b085b61b7626.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stock momentum scanner and portfolio intelligence. Look up any ticker for momentum scores, RSI, coil breakout patterns, and AI analysis. Scan top signals across 6,500+ stocks and crypto. Track portfolio holdings with real-time alerts. Mark."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamandjarvis",
+      "userId": "publishers:adamandjarvis",
+      "displayName": "adamandjarvis",
+      "image": "https://avatars.githubusercontent.com/u/258892273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.9.0",
+      "createdAt": 1770898754385,
+      "changelog": "Stock momentum intelligence for AI agents. 6,500+ stocks, 900+ days backtested data, 80% 5-day win rate. 7 scripts, zero dependencies.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:548eaeaf12182a136e0927273eb7d4a44e25060da27cce75cd027925e8eb54a3"
+}

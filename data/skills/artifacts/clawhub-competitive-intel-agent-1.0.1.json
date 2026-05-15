@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/competitive-intel-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitive_intel_agent",
+  "skill": {
+    "id": 25451,
+    "skillKey": "clawhub-competitive-intel-agent",
+    "name": "Competitive Intel Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitive-intel-agent",
+    "url": "https://clawhub.ai/skills/competitive-intel-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitive-intel-agent-dcc65e4d334e9783.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Competitor monitoring, pricing analysis, market positioning, and SWOT generation. Use when you need to track competitor moves, benchmark pricing, analyze mar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 368,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773796598053,
+      "changelog": "Proper name and description (was published as TEST)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f832cbf640179d0dfc58ea6a52da328681a3864685b0b18d1449e86796bba92c"
+}

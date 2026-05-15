@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/masonry@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.masonry",
+  "skill": {
+    "id": 30098,
+    "skillKey": "clawhub-masonry",
+    "name": "masonry"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "masonry",
+    "url": "https://clawhub.ai/skills/masonry",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/masonry-ccf7ace31902ec60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to design, optimize, or audit masonry (Pinterest-style) layouts for content display. Also use when the user mentions \"masonry layout,\" \"m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 279,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774793357970,
+      "changelog": "Batch: masonry through footer-generator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e010d6482fc18f764789222cd936799cdb2f22ac754947111e6ee51ddfa26204"
+}

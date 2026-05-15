@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50274,
+  "uuid": "skill-clawhub-fireflies-ai",
+  "skillKey": "clawhub-fireflies-ai",
+  "name": "Fireflies AI",
+  "summary": "Fireflies.ai meeting intelligence — search meetings, get transcripts, action items, summaries, attendee info, and contacts via GraphQL API. No data storage;...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireflies_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Fireflies.ai meeting intelligence — search meetings, get transcripts, action items, summaries,.",
+        "No data storage;..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fireflies-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fireflies-ai",
+      "url": "https://clawhub.ai/skills/fireflies-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireflies-ai",
+    "url": "https://clawhub.ai/skills/fireflies-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireflies-ai-f5dc62285efe5717.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fireflies-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fireflies-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9cb1cb9090df46e8ad66cac734f2df9e57a2f4ffae055fe68c27402287196236",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T04:34:05.877Z"
+}

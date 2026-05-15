@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68549,
+  "uuid": "skill-clawhub-mcdonald-cn",
+  "skillKey": "clawhub-mcdonald-cn",
+  "name": "mcd-cn",
+  "summary": "麦当劳助手 - 查询/领取优惠券、活动日历、餐品营养信息、门店查询",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcdonald_cn",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hiyu",
+      "features": [
+        "查询/领取优惠券、活动日历、餐品营养信息、门店查询"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcdonald-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42704625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcdonald-cn",
+      "url": "https://clawhub.ai/skills/mcdonald-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcdonald-cn",
+    "url": "https://clawhub.ai/skills/mcdonald-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcdonald-cn-15585ff79a12c8b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcdonald-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcdonald-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8783ec187176c9ed8913fa3bc7bddf1c3f7af306a817a5490796d89f0a1dac72",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T11:28:38.825Z"
+}

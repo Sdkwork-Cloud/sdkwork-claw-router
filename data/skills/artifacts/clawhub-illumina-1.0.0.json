@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/illumina@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.illumina",
+  "skill": {
+    "id": 56803,
+    "skillKey": "clawhub-illumina",
+    "name": "Illumina"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "illumina",
+    "url": "https://clawhub.ai/skills/illumina",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/illumina-5bc24ec7755fa981.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Illumina leads the DNA sequencing market with next-generation sequencing platforms, controlling ~80% global share and reducing genome sequencing costs to ~$200."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777136613541,
+      "changelog": "- Initial release of the Illumina skill.\n- Provides a company overview, history timeline, and key milestones (from founding to major acquisitions and antitrust cases).\n- Details business model, market dominance, and technology moat.\n- Summarizes crucial facts: revenue, employees, market share, and cost trends.\n- Includes notable insights on cost reduction and regulatory challenges (Grail case).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2adac32af0e1477cc337b80e5fee5ec7a7bfaf661c0c17244c654a06f18513a6"
+}

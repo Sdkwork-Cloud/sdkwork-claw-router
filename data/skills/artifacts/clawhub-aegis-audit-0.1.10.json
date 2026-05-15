@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aegis-audit@0.1.10",
+  "version": "0.1.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aegis_audit",
+  "skill": {
+    "id": 14005,
+    "skillKey": "clawhub-aegis-audit",
+    "name": "Aegis Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aegis-audit",
+    "url": "https://clawhub.ai/skills/aegis-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aegis-audit-2368bddd2b7fb8e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep behavioral security audit for AI agent skills and MCP tools. Performs deterministic static analysis (AST + Semgrep + 15 specialized scanners), cryptographic lockfile generation, and optional LLM-powered intent analysis. Use when insta."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanguineseal",
+      "userId": "publishers:sanguineseal",
+      "displayName": "sanguineseal",
+      "image": "https://avatars.githubusercontent.com/u/80772081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1468,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "0.1.10",
+      "createdAt": 1770944338253,
+      "changelog": "- Updated version to 0.1.10.\n- Updated metadata to remove deprecated fields: \"primaryEnv\" and \"env\".\n- No functional or behavioral changes to scanning or CLI.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a02af837d2499e33fb49681c4d04ca83390b11ef1d47eeb8642e64ddd7fdb862"
+}

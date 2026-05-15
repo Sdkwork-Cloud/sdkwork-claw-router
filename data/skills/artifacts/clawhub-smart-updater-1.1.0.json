@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-updater@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_updater",
+  "skill": {
+    "id": 24001,
+    "skillKey": "clawhub-smart-updater",
+    "name": "Smart Updater"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-updater",
+    "url": "https://clawhub.ai/skills/smart-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-updater-175ed07047190721.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent upgrade management for OpenClaw skills, extensions, and core. HITL (Human-in-the-Loop) mode: scan installed assets, read changelogs, analyze risk..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuanhui",
+      "userId": "publishers:yuanhui",
+      "displayName": "yuanhui",
+      "image": "https://avatars.githubusercontent.com/u/2963454?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773250933525,
+      "changelog": "feat: SkillHub integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94f9eee6df0a9e0149455ce253036c6d7e0af3e8719fa5f332b1add46538fb6d"
+}

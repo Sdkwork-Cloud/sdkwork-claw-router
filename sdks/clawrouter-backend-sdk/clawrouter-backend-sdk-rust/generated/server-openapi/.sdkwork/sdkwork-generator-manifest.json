@@ -1,0 +1,1731 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "clawrouter-backend-sdk",
+    "version": "0.1.0",
+    "language": "rust",
+    "sdkType": "backend",
+    "packageName": "clawrouter-backend-sdk"
+  },
+  "generatedFiles": [
+    {
+      "path": "bin/publish-core.mjs",
+      "sha256": "6f2419187ee61e34210de8949ec968f5ab9d8bd0c0543e7caba6883198c36185"
+    },
+    {
+      "path": "bin/publish.ps1",
+      "sha256": "eb779f44a5ba8879a9d79c708d0ba4bd412221f102e4430b953f0449327827bf"
+    },
+    {
+      "path": "bin/publish.sh",
+      "sha256": "ae8a89ddb314afce79fe910de28017951c3c31f24a67d72915c4153711173b23"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "7ab790b7b2d054295db842049f9d8b69ec5572ac9d5d7fb6e27900befd4f61a2"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "fb941a0806986a54fc192f98a98f6d9c282b8d350b2b19a3e71dda404e92d545"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7840cc7d2b36ff364ac16c2fc5ec15b861bfe96854eecf81fb59b00edb8b1447"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e2f70c30c073dcf664004f54a406f1ae638dc5ce72e1ee1f7dc6a852bcffbb62"
+    },
+    {
+      "path": "sdkwork-sdk.json",
+      "sha256": "0cd321413fc1bba3ec8f23e75431a61090ed589b2334c898e38c433d9b9fe355"
+    },
+    {
+      "path": "src/api/ai.rs",
+      "sha256": "66404ef54ced8ab3c6f5ff2665a4082011f9e5d770082bfdfee1f70e6e89480e"
+    },
+    {
+      "path": "src/api/base.rs",
+      "sha256": "a946fa11e826ac8d8e6fbf558cad0f9c629bcc29c13deeaad6999825541835d5"
+    },
+    {
+      "path": "src/api/billing.rs",
+      "sha256": "5c6109924c5eff9fc1865bf4475022c6a2e78cd0c6e67f321f87a892c10a5861"
+    },
+    {
+      "path": "src/api/content.rs",
+      "sha256": "440cc9a721b1947dca5c949c4808d8b02c3c933c92ab246f1d89bdf7fc19f5ef"
+    },
+    {
+      "path": "src/api/ecosystem.rs",
+      "sha256": "0b3a22ed3ec87e3ab18ece9882fe61c763b3e3f2ae64d3f8206f72c19c297aca"
+    },
+    {
+      "path": "src/api/iam.rs",
+      "sha256": "f26dd7ca9d47475af1d149dbf4c43c05c12c6a3c7f6020a4591f8aed633ba14e"
+    },
+    {
+      "path": "src/api/integration.rs",
+      "sha256": "f2f4e537eb8f36c5f83ad1ce547ccae442f9a9b2bd7164aea499a63fe848f1c1"
+    },
+    {
+      "path": "src/api/mod.rs",
+      "sha256": "1495d004fcc80ce5b9f8abc08da185d6e6da69ba453b44e12ab73e44ad6dfe5a"
+    },
+    {
+      "path": "src/api/paths.rs",
+      "sha256": "571bc21d9e8c1458979a5bb00adb6ba50a7645837196a4b82a2bcfb87f1ef046"
+    },
+    {
+      "path": "src/api/platform.rs",
+      "sha256": "aa15b0d9d9e3406af04f35552cf6cbb5a71b3815738346e472ad63ad90c1f242"
+    },
+    {
+      "path": "src/api/system.rs",
+      "sha256": "bdf2f7d45f3c53fae7c270484cada7f9b513d644d82cd9cb8d581a3cde746e4f"
+    },
+    {
+      "path": "src/client.rs",
+      "sha256": "1e5a84985425b84bb47b4372e3d8c9c314e09789b8f191b3902c7a85d8584a24"
+    },
+    {
+      "path": "src/http/client.rs",
+      "sha256": "02eef198abaf5dae1711526afd08dc0edf77d7abde98d368e5af15daa8a2ec7f"
+    },
+    {
+      "path": "src/http/mod.rs",
+      "sha256": "fdf16d487ebd9180fb423d5630d4401ff18180721b86636dec085ad83940bb3d"
+    },
+    {
+      "path": "src/lib.rs",
+      "sha256": "c1dab4a8eab2ddc82292e3f238479a05575b5ce8c22925188d911c94925f21c4"
+    },
+    {
+      "path": "src/models/access_groups_create_result.rs",
+      "sha256": "514b32ee73fd448cfcb53cc57dd13f4f2e4a5ec6279bc7c8837d92f5915c76ad"
+    },
+    {
+      "path": "src/models/access_groups_delete_result.rs",
+      "sha256": "cba729fea5964bf4b2664846efdd4da756e80e42d6b72024764ad675779a63c5"
+    },
+    {
+      "path": "src/models/access_groups_list_result.rs",
+      "sha256": "99a9ae1c436aac200af24091177b71a0b288b20de305d582dbc1e62011d99c07"
+    },
+    {
+      "path": "src/models/access_groups_update_result.rs",
+      "sha256": "bf2bf5224b2e75aeae24e77945ae143c047f5c422f687e63363c9740cde4d121"
+    },
+    {
+      "path": "src/models/admin_access_group_create_request.rs",
+      "sha256": "b21d0c15906de3d5b5870270206cd44fefd5039f277215f485f3ffb99472f8b9"
+    },
+    {
+      "path": "src/models/admin_access_group_item.rs",
+      "sha256": "5a4f981335a4dbf63e3e6e7a1f97eba1271c700769dd86f4bbeb459424dba581"
+    },
+    {
+      "path": "src/models/admin_access_group_mutation_response.rs",
+      "sha256": "bdfc2846a7460ee5fb4c3059b2dae5220268f1ecf1c4bfc142e626063841af3e"
+    },
+    {
+      "path": "src/models/admin_access_group_update_request.rs",
+      "sha256": "56d01be73fa630d2f486bed481ec169218502ff631bb34db34f2f0ea0a2a1334"
+    },
+    {
+      "path": "src/models/admin_access_groups_response.rs",
+      "sha256": "c4dd047003997514bfba0952e44a6c76dce0c24a79694844836bb7ed218111e9"
+    },
+    {
+      "path": "src/models/admin_ai_model_create_request.rs",
+      "sha256": "e4d7a05610f45d54b132a5d9c184d77b511323729b1d10cdfb13ae20e4bae2da"
+    },
+    {
+      "path": "src/models/admin_ai_model_item.rs",
+      "sha256": "8d171889e00b51d5711733a53e67784f142086c643bf1fe824a2e8603535e541"
+    },
+    {
+      "path": "src/models/admin_ai_model_mutation_response.rs",
+      "sha256": "7583a07239ea2b266246e281315574a43a5ed952e36adf62a78c55ccd5c88bb9"
+    },
+    {
+      "path": "src/models/admin_ai_model_update_request.rs",
+      "sha256": "623a6dbfd032d79895670bea25252ea80ffa768f1897eb41d1ab90385e02dac4"
+    },
+    {
+      "path": "src/models/admin_ai_models_response.rs",
+      "sha256": "985a7d356a03e37aa82f5a5c6ef9985e2ea1ae39ad4f05af4917a431c365ea3c"
+    },
+    {
+      "path": "src/models/admin_announcement_create_request.rs",
+      "sha256": "ddf4e99a8b339c947b1875e3ae03b39baf7d408e58a5e876697f1516349d3d70"
+    },
+    {
+      "path": "src/models/admin_announcement_item.rs",
+      "sha256": "1e65b96a890681791df9f6b375ca9c215294ed9a6b410463ace6a3dd77149e1b"
+    },
+    {
+      "path": "src/models/admin_announcement_mutation_response.rs",
+      "sha256": "f40581db0f763f9f62461643241947b1b262450bc3dea3851568535262b9845f"
+    },
+    {
+      "path": "src/models/admin_announcement_update_request.rs",
+      "sha256": "1b368c8c47212c1a68e1ddd9dfaf3730d33d868f317e97bed5eb0b641f83757f"
+    },
+    {
+      "path": "src/models/admin_announcements_response.rs",
+      "sha256": "f98608a137faaa27591684a52b9c79c8f576da5f9ef7283f5948bace967c284e"
+    },
+    {
+      "path": "src/models/admin_api_key_create_request.rs",
+      "sha256": "f301b20884791ad27dafe079127069013a95eb20ad65ac32a971931d9bfc12c0"
+    },
+    {
+      "path": "src/models/admin_api_key_create_response.rs",
+      "sha256": "0c6335dafa42fa5580ca6f75959e86a51540c3bfdc43a9b1e8048a8fc085dafa"
+    },
+    {
+      "path": "src/models/admin_api_key_item.rs",
+      "sha256": "50e3d108725aed029b8afee02ff3ef1ad9fe7ed2e958f60a05c9c26d7b74ce24"
+    },
+    {
+      "path": "src/models/admin_api_keys_map_response.rs",
+      "sha256": "1f28c7f3a18d3a50b738f820b34bfb47042ebfd32214e0053a166fde62cc8c14"
+    },
+    {
+      "path": "src/models/admin_app_config_standard.rs",
+      "sha256": "733d3d2a43d154478fad3a9d24959ad729df8b7d5035c296976a3e72b7b53479"
+    },
+    {
+      "path": "src/models/admin_app_config.rs",
+      "sha256": "c5359abb92ff08c4df013893c8c82ee8457cdd2bd45a14734608e0b16293bd4e"
+    },
+    {
+      "path": "src/models/admin_app_create_request.rs",
+      "sha256": "35fc69bb0b81ccbd754cf1bd99906c0fc2a3e606bc145656260c715609cebdce"
+    },
+    {
+      "path": "src/models/admin_app_delete_response.rs",
+      "sha256": "7d20befb799f042884a8a26e6e9d773e720fe45d92540acdaf16063ec5ff7b96"
+    },
+    {
+      "path": "src/models/admin_app_item_response.rs",
+      "sha256": "872a0b33abc03aca85efd5df9717aa4446e5293dbccc4c7856414dadeff066fd"
+    },
+    {
+      "path": "src/models/admin_app_list_response.rs",
+      "sha256": "156cc7fea1f098181d81e1d54afed027c43e9dc93ce59c8891f8ae6f88a528e0"
+    },
+    {
+      "path": "src/models/admin_app_mutation_response.rs",
+      "sha256": "fc316d26973d38e910ee4487bcb15014af7d9286627acb86dffe26f7227d1be1"
+    },
+    {
+      "path": "src/models/admin_app_portal_config.rs",
+      "sha256": "63c52ff414af4f819e17bc59ffea61f691f79a9064a26be7e72b3dfa1eb0f8a9"
+    },
+    {
+      "path": "src/models/admin_app_update_request.rs",
+      "sha256": "2b72720219ef5692fb346b4af3fb0b861baf36bba78495f13b6aa736f3645a1f"
+    },
+    {
+      "path": "src/models/admin_billing_record_item.rs",
+      "sha256": "dc4befb8cfd18eff420849e3f2b9a420130f7ec5b6cfcaaefddb9a784feed566"
+    },
+    {
+      "path": "src/models/admin_billing_records_response.rs",
+      "sha256": "c76f310e89e7144888d28943248498fd38ab9a897942acdf27eb14441f264c21"
+    },
+    {
+      "path": "src/models/admin_capacity_pair.rs",
+      "sha256": "a513b98348e97ff43028273188b96e8966ba2cebabc5f7b614936010f35b03aa"
+    },
+    {
+      "path": "src/models/admin_channel_create_request.rs",
+      "sha256": "c448e2a1e00968dcd6f794953b318e12ffb9b4f677dc68782b968287c0709c8f"
+    },
+    {
+      "path": "src/models/admin_channel_item.rs",
+      "sha256": "5652024fc42dcf6abd0ee56d2ecbc66f1392654db9c2cfb49e37862fd1a12fe5"
+    },
+    {
+      "path": "src/models/admin_channel_mutation_response.rs",
+      "sha256": "d44ddbb174ab1e098fdfc28193c7d3710d317aee64e6a6e37db3ef5d9f29fe6f"
+    },
+    {
+      "path": "src/models/admin_channel_test_response.rs",
+      "sha256": "785cc8995c14672b1b0add1918c3470bf3a7a6c4ad79062c4d697b63797e2f85"
+    },
+    {
+      "path": "src/models/admin_channel_update_request.rs",
+      "sha256": "2d36723e3df4949d70c95ec685170379d024c249c2d6e82ecca3cc2104998995"
+    },
+    {
+      "path": "src/models/admin_channels_response.rs",
+      "sha256": "5d1b79094b4b924918b5a2b17b9f6f637a409930c5213450ceb730aeb5c6f6c1"
+    },
+    {
+      "path": "src/models/admin_count_pair.rs",
+      "sha256": "f0301dfb8b6380146e0da708a5599eecfb51cb1a8d2028819e5c6df01bc3cba5"
+    },
+    {
+      "path": "src/models/admin_coupon_batch_generate_request.rs",
+      "sha256": "f5ebe87543c72813c3d741b04ed6f15b1e284f09e78648a18f4fddf6bfd3d97d"
+    },
+    {
+      "path": "src/models/admin_coupon_batch_generate_response.rs",
+      "sha256": "5f9bd6dc67e1d18c43db446bc90ab7847b95b818ab46c026a6dba129b3b02269"
+    },
+    {
+      "path": "src/models/admin_coupon_batch_item.rs",
+      "sha256": "acf165c544e9d569a5274b9326ce1d2ec7cdf7d619beacd538263d51d0e69c88"
+    },
+    {
+      "path": "src/models/admin_coupon_batches_response.rs",
+      "sha256": "895e22e9bdbe857b636dde3f16aba7eeab9e07e5995c0d8695dacd0c5fb6050e"
+    },
+    {
+      "path": "src/models/admin_coupon_create_request.rs",
+      "sha256": "bc63ab2c38c15fc3956ae004008ce2e2bac9259760a84a2a83cbf597b7142b30"
+    },
+    {
+      "path": "src/models/admin_coupon_item.rs",
+      "sha256": "8933f230619df4db704c05203e9ed355f1d59651577db3b3488cbf0b1ef2b117"
+    },
+    {
+      "path": "src/models/admin_coupon_mutation_response.rs",
+      "sha256": "6a223b762f05c06e227e83001de4d072126a227e78ded2a8731135c1e0a8ea14"
+    },
+    {
+      "path": "src/models/admin_coupons_response.rs",
+      "sha256": "ceab17a4a97ac2a19ee73143a62ef0b5a568ed0f603fcc22dbd2ae3714101334"
+    },
+    {
+      "path": "src/models/admin_dashboard_data_response.rs",
+      "sha256": "cad79c8ee864c9fe1ae89d10bad5f9d6596913e3e37c1bda2dd4296359a036c2"
+    },
+    {
+      "path": "src/models/admin_dashboard_recent_usage_item.rs",
+      "sha256": "9f4ee12156c6d58593b5be17a7c332825b98193e1adbaa1dcce29fa1170d283b"
+    },
+    {
+      "path": "src/models/admin_dashboard_traffic_item.rs",
+      "sha256": "633e511f46623635803cf18156b81683b34762301330b09a1ecb75a8f9aad211"
+    },
+    {
+      "path": "src/models/admin_delete_response.rs",
+      "sha256": "b72de4dd288246559fd996881aefb0e757afa4f3d6c7b3261da41515c51d2360"
+    },
+    {
+      "path": "src/models/admin_firewall_item.rs",
+      "sha256": "72d95a4e1b0a28ae9bf2c3b12c92971c26517e0c58279f97d0fe4be71aa12ba2"
+    },
+    {
+      "path": "src/models/admin_firewall_mutation_response.rs",
+      "sha256": "434d70ac339d33bbd5b3259bc9bb04a6c2ca91c35442361c8e70d56d6a060ffe"
+    },
+    {
+      "path": "src/models/admin_firewall_rule_create_request.rs",
+      "sha256": "e72b1e4b708b2eb4ecf7687e0d85c1d5fa09eae9969df014bf09591a2dedaae4"
+    },
+    {
+      "path": "src/models/admin_firewall_rules_response.rs",
+      "sha256": "f8a1c4736d454b260d039411195b127c113b6f9c4b004997304a29c5982cd675"
+    },
+    {
+      "path": "src/models/admin_ip_limit_create_request.rs",
+      "sha256": "8837477edfaa90c65b239645974ac65e320d95e7e7202e940b18ae262b3668eb"
+    },
+    {
+      "path": "src/models/admin_ip_limits_response.rs",
+      "sha256": "ae79f47c028c51c3b293dad981158540d12f8c7a49363ebd5bfaef6a013103f7"
+    },
+    {
+      "path": "src/models/admin_model_catalog_sync_request.rs",
+      "sha256": "03aa181be26a8380ec80ea8a770d8e70ffdf25f3ec5051bcf050db36123dd89c"
+    },
+    {
+      "path": "src/models/admin_model_catalog_sync_response.rs",
+      "sha256": "2d20188f454a5fe672d2184c7c80ff87f873611d517c6ee35b3ab6dfd46bbfce"
+    },
+    {
+      "path": "src/models/admin_model_limit_create_request.rs",
+      "sha256": "75fad6dbf3fa0686fe2d6e6da211182b599b351e5cb755ff53c35db01b2004a1"
+    },
+    {
+      "path": "src/models/admin_model_limits_response.rs",
+      "sha256": "e1c29ac4cc5843d75c4d0d4627b988e78811e1f51bd4c438adbc1f689abb1413"
+    },
+    {
+      "path": "src/models/admin_model_vendor_create_request.rs",
+      "sha256": "23de53b08e293737ec0cc0ef52c906df563a518dcd1f213c009408623f17fc9d"
+    },
+    {
+      "path": "src/models/admin_model_vendor_item.rs",
+      "sha256": "e1625f56aab8b00658a0d92dfd17ddeea3b88f95c7106bdcc2132433d987ac3d"
+    },
+    {
+      "path": "src/models/admin_model_vendor_mutation_response.rs",
+      "sha256": "f71b71a83c6f61976f4d927bf847fbea608e71f6818203f07015358860fb8a58"
+    },
+    {
+      "path": "src/models/admin_model_vendors_response.rs",
+      "sha256": "1f16c276d2859534cd16231353096c004b53dd2bf8ffb4fe8b328efbca61a812"
+    },
+    {
+      "path": "src/models/admin_monitor_alert_item.rs",
+      "sha256": "fc7eebe90a15707f6ddb38f8a3caa56633abbf70e9312ba57325c80e8b28d304"
+    },
+    {
+      "path": "src/models/admin_monitor_alerts_response.rs",
+      "sha256": "ee579be676b7c7c3e13359fe929c3153b868634c25a7d4e208daac51303f7976"
+    },
+    {
+      "path": "src/models/admin_monitor_node_item.rs",
+      "sha256": "3b183448e3670002b6351a39b3f6e573d654d20389a59994a0d6488c93e999a4"
+    },
+    {
+      "path": "src/models/admin_monitor_nodes_response.rs",
+      "sha256": "34469c5f3d980864ba2085c65b83fd25ecc3ac65e56affb23dd9c5c0b80d0afc"
+    },
+    {
+      "path": "src/models/admin_monitor_performance_item.rs",
+      "sha256": "8404c71bb69148581ce747e258368ccc44f90313e1b5e06b92c4a8eb4aa64fbb"
+    },
+    {
+      "path": "src/models/admin_monitor_performance_response.rs",
+      "sha256": "1d0438f53c3cbd3811804f667991547b390eddb9e9c5fe87826fc48cf563f57e"
+    },
+    {
+      "path": "src/models/admin_pie_chart_item.rs",
+      "sha256": "934370a759c76d32a246dd541855aef5db20bd94fe982856bc6d6d860b8ccde9"
+    },
+    {
+      "path": "src/models/admin_promo_code_item.rs",
+      "sha256": "4e4f4951f52813a8664b99e55b322a7e3c36a99b58a5a48b03121d9543159f33"
+    },
+    {
+      "path": "src/models/admin_promo_code_status_update_request.rs",
+      "sha256": "47965a40fae6c358c93946e447b96b0b4f77b5c977dae631712dd1b4e53e3ab3"
+    },
+    {
+      "path": "src/models/admin_promo_code_status_update_response.rs",
+      "sha256": "fd0c67326d5a10552b4c6c84e7965c058c582b7c9c8d1d8aba0e63028877e570"
+    },
+    {
+      "path": "src/models/admin_promo_codes_response.rs",
+      "sha256": "a21b8294dde7ed0cf498bf030bac65fe47a88f7dc70b452695151def52ac2175"
+    },
+    {
+      "path": "src/models/admin_provider_secret_create_request.rs",
+      "sha256": "0e2fd9fabfb668ec508cdb83b8a201cc1b4765ceba6321f392191671a2f1e0b7"
+    },
+    {
+      "path": "src/models/admin_provider_secret_item.rs",
+      "sha256": "687be831375c9fa5e1ce00af3a98dbf8cb9e7145d4ac4669a4e1376b74c6e06a"
+    },
+    {
+      "path": "src/models/admin_provider_secret_mutation_response.rs",
+      "sha256": "dafb71f596c6c283b0893f2161ae460ceeeae99171e5e73f15f5768c7300a685"
+    },
+    {
+      "path": "src/models/admin_provider_secret_update_request.rs",
+      "sha256": "6f42ffb48e87a32f38315734d5c41d63e9071e021769cb33d155393bfbf84fab"
+    },
+    {
+      "path": "src/models/admin_provider_secrets_response.rs",
+      "sha256": "851d93ec55491e93788cc317e6b5a1ac8e805830c29b81fea5f9bf4ac7537a26"
+    },
+    {
+      "path": "src/models/admin_rate_limit_item.rs",
+      "sha256": "865edf314d97924fc82d467624e7ce527c38720c8aac2a80307a533e132c7eb8"
+    },
+    {
+      "path": "src/models/admin_rate_limit_mutation_response.rs",
+      "sha256": "6162f32edf8c3832a3417234665bf39c577d50df650152a082273118b3b0bd8d"
+    },
+    {
+      "path": "src/models/admin_recharge_record_item.rs",
+      "sha256": "046590862630dc8c53fbe322dad9ce3197dbe47e3545246291a5b4c23125188f"
+    },
+    {
+      "path": "src/models/admin_recharge_records_response.rs",
+      "sha256": "9738f6ca9b2c579eaa7c63ff53b747cd868deb73f64dcf077cc6fd1b48a1100e"
+    },
+    {
+      "path": "src/models/admin_record_log_item.rs",
+      "sha256": "0e353178ce72b7545339d45a199cdac1361bf3cd07d7325772184ed2ec097dc7"
+    },
+    {
+      "path": "src/models/admin_record_logs_response.rs",
+      "sha256": "1a973900e023ce7a26fa5e13c3cd02ad067950936470e2be2d659ceeab050474"
+    },
+    {
+      "path": "src/models/admin_redemption_record_item.rs",
+      "sha256": "790ed9ef78e0f359d3a78a2acbe9a5e6500cba12f3afae5bc03a53a61c2937a7"
+    },
+    {
+      "path": "src/models/admin_redemption_records_response.rs",
+      "sha256": "ef50c128e06ddba3a45019339032e34f7d89226b790a2eca2388f7783ebf6d94"
+    },
+    {
+      "path": "src/models/admin_referral_stat_item.rs",
+      "sha256": "63ddfa525d27315ef4c2f65eeb409d623da0a10faed57d1a1754325a42d072b8"
+    },
+    {
+      "path": "src/models/admin_referral_stats_response.rs",
+      "sha256": "7a73c625cf2611e3168ffe4d6a7b2d6b20615d54281792600e184263eb2977bd"
+    },
+    {
+      "path": "src/models/admin_skill_artifact_create_request.rs",
+      "sha256": "308a1c73b8cec0b5f0cbaf886c7d857bf4356cb5cb571ddc91ec22ff17c808af"
+    },
+    {
+      "path": "src/models/admin_skill_artifact_delete_response.rs",
+      "sha256": "d28fdc7d1831c12658a05415e6ac405ef2c5a1598f6b4215d288ec95759c83d5"
+    },
+    {
+      "path": "src/models/admin_skill_artifact_item.rs",
+      "sha256": "55e75f9dc7ff0f015c189e7fbf89a0307cea06fef9d6a16c0a81ff9e5f5a844e"
+    },
+    {
+      "path": "src/models/admin_skill_artifact_list_response.rs",
+      "sha256": "ca8c45df393a717d519763f15712f18f3310a5aa962d41e30ceafa0eb7c0cd21"
+    },
+    {
+      "path": "src/models/admin_skill_artifact_mutation_response.rs",
+      "sha256": "9099b7f4031385c632434a063253a3652410519825c0a73aa35aafc83ac9a43a"
+    },
+    {
+      "path": "src/models/admin_skill_artifact_update_request.rs",
+      "sha256": "c38b4e0338aad98548201b961d08300da66887d29fa754723992fb093ab9be79"
+    },
+    {
+      "path": "src/models/admin_skill_asset_create_request.rs",
+      "sha256": "09024c234c691c4776abe04db2f737e01ca171d138d57fcbb57e6302daa5da12"
+    },
+    {
+      "path": "src/models/admin_skill_asset_delete_response.rs",
+      "sha256": "c4a79aeb7ae8b51187e2caf8258cbe7126ff016713174f6eb1b04629d976d6a6"
+    },
+    {
+      "path": "src/models/admin_skill_asset_item.rs",
+      "sha256": "2a8e6c7a007fced39f7f7a64ef253f4b87110eb26795226d9bb0d753bf2f3338"
+    },
+    {
+      "path": "src/models/admin_skill_asset_list_response.rs",
+      "sha256": "5a9c0e2344efc14d7551e021452e8badb66e560cb3287d9d1254925cd81c09ff"
+    },
+    {
+      "path": "src/models/admin_skill_asset_mutation_response.rs",
+      "sha256": "fb808f8d74bd4b6ff316b28afe2f31ec00e7b94dde4854ac03eec2caf1804f53"
+    },
+    {
+      "path": "src/models/admin_skill_asset_update_request.rs",
+      "sha256": "1507c6c7467105df0fb58abe3a30e75413f95d34a68a33114a769b87defd1187"
+    },
+    {
+      "path": "src/models/admin_skill_category_create_request.rs",
+      "sha256": "29df771859974f12c2f5df3529549b15f097fddbd899a6be9a2e2a54f13a9495"
+    },
+    {
+      "path": "src/models/admin_skill_category_item.rs",
+      "sha256": "0e0d26b220ca3bb370f99b693291feb25c8201780d93c1e0149de2797e703e21"
+    },
+    {
+      "path": "src/models/admin_skill_category_list_response.rs",
+      "sha256": "1b402728c106768b2ca54a2ac4000c025ae5fd9558c011420cbf35299f55694c"
+    },
+    {
+      "path": "src/models/admin_skill_category_mutation_response.rs",
+      "sha256": "f804d95b66e6345c78a6a4ef411f5d94ebdc8069f387defde256758f6d5409ff"
+    },
+    {
+      "path": "src/models/admin_skill_create_request.rs",
+      "sha256": "879935b16d4438593c1742b76fcae46aa25dcffac472ee308ce3eff073963a1e"
+    },
+    {
+      "path": "src/models/admin_skill_delete_response.rs",
+      "sha256": "888e7fdcd429b86aecfc7b30857ee2d359201c50f5a0e05c70e8c99916d17eb9"
+    },
+    {
+      "path": "src/models/admin_skill_item.rs",
+      "sha256": "d9363e237eab95be7b57cf1a9fa9216a90ebdc0b4747a38e5f4b2035757f6467"
+    },
+    {
+      "path": "src/models/admin_skill_list_response.rs",
+      "sha256": "da994e297be3a44d19ba1c7cb9f4a6d8e1ab54a4498b02aa382ea51e1a94e5c4"
+    },
+    {
+      "path": "src/models/admin_skill_mutation_response.rs",
+      "sha256": "ac3fce3ab6a061b29c098e1285bb9c5d649601f1bcc9ed5ede54cd97ba2badae"
+    },
+    {
+      "path": "src/models/admin_skill_package_create_request.rs",
+      "sha256": "45b9222b4b64c4340e7df38c2ef0a6357b366e34809c979bb4c815197a1bd2f5"
+    },
+    {
+      "path": "src/models/admin_skill_package_delete_response.rs",
+      "sha256": "d03b52ab66875c7d07b32ffe3ca2ace593e5214c1d9b0f8b7cfdb056f713936c"
+    },
+    {
+      "path": "src/models/admin_skill_package_item.rs",
+      "sha256": "c4b8802b1c754c2a8595134ab83add11562f5258b8c2a61481a7b56cd94d5f48"
+    },
+    {
+      "path": "src/models/admin_skill_package_list_response.rs",
+      "sha256": "db6e21f352ccb4dadec1472a072b71dd2e9c7372bc4a8ecc4475096ac278d937"
+    },
+    {
+      "path": "src/models/admin_skill_package_mutation_response.rs",
+      "sha256": "85cf569c33b4e742e30f4a9805fa11e72222ee443a6a25d9dcc3936113ddae09"
+    },
+    {
+      "path": "src/models/admin_skill_package_update_request.rs",
+      "sha256": "993e99faf9b388829b416d1b5c1edf86e946959d7bec8c8c1667c364dd22005d"
+    },
+    {
+      "path": "src/models/admin_skill_review_request.rs",
+      "sha256": "841ec3a9355dcc24f8e397e9ad22bb79ab54ef6a4a5eb42bb075b33af4f1ada3"
+    },
+    {
+      "path": "src/models/admin_skill_update_request.rs",
+      "sha256": "db29afd5df075130a7fb2cab08f1e3a162e089ecf37cf2175fd5f1e96947e1dd"
+    },
+    {
+      "path": "src/models/admin_token_limit_create_request.rs",
+      "sha256": "f1c6f2071be18bafe1bb7f84ce88ae8c7656cb7e041a5dcb296ed2ebd108acac"
+    },
+    {
+      "path": "src/models/admin_token_limits_response.rs",
+      "sha256": "4e4efee3c87cf8001126143af151e20c0ef1f22200ecb521a791360111d43f6f"
+    },
+    {
+      "path": "src/models/admin_transaction_record_item.rs",
+      "sha256": "6a063d38acd199e20f46d76885dec3a4c637b51d8dca1ff28412e2e52f756d17"
+    },
+    {
+      "path": "src/models/admin_transactions_response.rs",
+      "sha256": "55a6b7a2cc74a51e115e088b5c180d7b3c1c27dfb364a0a42008ffbe7e2443d3"
+    },
+    {
+      "path": "src/models/admin_usage_pair.rs",
+      "sha256": "5b63cfdd9dd3995f75ca6948b1b1f5be38e7bf0f390048954e8bde1ba3df7f1f"
+    },
+    {
+      "path": "src/models/admin_user_balance_adjustment_request.rs",
+      "sha256": "9ced5635602038deb91491b25d16f41c3357d6c4f2aed20b375b5e867f87db7e"
+    },
+    {
+      "path": "src/models/admin_user_create_request.rs",
+      "sha256": "2a365699243f58f413d21123282d001892135995621306b989fc131a8df9866e"
+    },
+    {
+      "path": "src/models/admin_user_item.rs",
+      "sha256": "3498d593cd2be79e776384e29680c715ca599ed203cc82960ee8fc0eaa7c5a23"
+    },
+    {
+      "path": "src/models/admin_user_mutation_response.rs",
+      "sha256": "3e22130cad9ce781e8af069679a09ed47bc64ee73bd49c36495e0e62fb8b8fa9"
+    },
+    {
+      "path": "src/models/admin_user_update_request.rs",
+      "sha256": "849e33c200208e1457157b720beb43f9e76bee94c6d5b82cc0b042e43cea01e2"
+    },
+    {
+      "path": "src/models/admin_users_response.rs",
+      "sha256": "b42c176af321b38e5b2987dc6450bbd0d07093dc08329d0991aeab3cf979147f"
+    },
+    {
+      "path": "src/models/ai_billing_meter_record.rs",
+      "sha256": "c2e4e92d709b27ca62377f1b3dc5ace78277700aef5200df1a332354a6f77297"
+    },
+    {
+      "path": "src/models/ai_generation_asset_action_record.rs",
+      "sha256": "9d018baa8166861f5f1aa1c5cddc87c13015ed41632013456ab91b41da1e3b34"
+    },
+    {
+      "path": "src/models/ai_generation_asset_record.rs",
+      "sha256": "4663a6a9100afc7430da4d9a9220c1010777b8c71dbe1285f5cc60a5e69dc6f9"
+    },
+    {
+      "path": "src/models/ai_generation_job_record.rs",
+      "sha256": "e28d3c7e47faddc65d857adba43df886a27624c65688a797bd5f4c25c9da916f"
+    },
+    {
+      "path": "src/models/ai_generation_session_record.rs",
+      "sha256": "2fb3dffbbe9804330bc65ade97d6b2e157e22046d265cd5d16dbc6422a8c1533"
+    },
+    {
+      "path": "src/models/ai_model_capability_record.rs",
+      "sha256": "c6e67bb099968fef090ceb33c4120baeb58e7bcbf7478435abc03f22ee566ae4"
+    },
+    {
+      "path": "src/models/ai_model_catalog_source_record.rs",
+      "sha256": "6277912209a9eaaa9dbfc0ac9f511a4d30646d142f54333392526cb669cc8af1"
+    },
+    {
+      "path": "src/models/ai_model_catalog_sync_run_record.rs",
+      "sha256": "cb63d613e7d54e98973a092c83dd8c88458bc62480c18548c6dcfc859b76deda"
+    },
+    {
+      "path": "src/models/ai_model_family_record.rs",
+      "sha256": "cff12da0f6f51f1266c135d768c646265441601ad71a6e492db97ee7ab99104e"
+    },
+    {
+      "path": "src/models/ai_model_pricing_record.rs",
+      "sha256": "5c277667fb7b7298623ad0dbaed8f03b68eabd4056937165a02a5941e9031e1e"
+    },
+    {
+      "path": "src/models/ai_model_rank_snapshot_record.rs",
+      "sha256": "86d9914df198643ad91385651a8d2035b02826a477cd8eb0e9988d6fe8d8c379"
+    },
+    {
+      "path": "src/models/ai_model_record.rs",
+      "sha256": "7039354636b606f11ce457285b6f1d7730630b98c000858fd274c8f4c136c490"
+    },
+    {
+      "path": "src/models/ai_model_vendor_record.rs",
+      "sha256": "4ffc2a3bdcaec6eb5116d4635d3151353e5f942db2c20589535957fd38a74d2c"
+    },
+    {
+      "path": "src/models/ai_model_vendor_region_record.rs",
+      "sha256": "856b487954f06a07f0dd03af153a3bebd0da60dc5809d3952546cff2eb41c1ad"
+    },
+    {
+      "path": "src/models/ai_pricing_import_snapshot_record.rs",
+      "sha256": "8146b8626f989a425a397e17f9874355f4f14d02923a37228127548dbcfe73d2"
+    },
+    {
+      "path": "src/models/ai_pricing_plan_binding_record.rs",
+      "sha256": "37b1f59d38da8da3698a8668d90e2d9b156054aa1c2aef7b41bf1cb7901153de"
+    },
+    {
+      "path": "src/models/ai_pricing_plan_record.rs",
+      "sha256": "6e7b23589ad9d96eba83997392aa94cfc7a46ea5575595511432ecaf0e7ba743"
+    },
+    {
+      "path": "src/models/ai_pricing_rule_record.rs",
+      "sha256": "5598022b0f58530ce24074d5442a63d3defae1ee97cf16468654da441d2c197a"
+    },
+    {
+      "path": "src/models/ai_pricing_tier_record.rs",
+      "sha256": "e6800790d2305fae425578961415beebd56e5059c3bda2225316b9df1ce556c1"
+    },
+    {
+      "path": "src/models/ai_quota_policy_record.rs",
+      "sha256": "deea2ef49750928316f8a3b0d1b368d69bb8ebfc2b979f2087afae20e68952b1"
+    },
+    {
+      "path": "src/models/ai_rate_limit_bucket_record.rs",
+      "sha256": "5de6012ea54f0b5b6f2ffca63b2461592b086f507eec94c853815a157a0b0667"
+    },
+    {
+      "path": "src/models/ai_request_trace_record.rs",
+      "sha256": "ee603e740e94b622950282e64454d98064344e5e7ee405e0d8e94ccfdb0b02e9"
+    },
+    {
+      "path": "src/models/ai_routing_decision_log_record.rs",
+      "sha256": "02c86bfb7ad190f3c87c6fba86de549eaecd706a61b409d92fb6af424b1a706f"
+    },
+    {
+      "path": "src/models/ai_routing_policy_record.rs",
+      "sha256": "657c478cb91e9cf8bb5907ef7dd4825e412a5ef82a5df701ec1638697edbcbae"
+    },
+    {
+      "path": "src/models/ai_routing_profile_record.rs",
+      "sha256": "bb960c3be665b61e3a6b5162644d5c58474f42d898107eae9f66a665d2219cf0"
+    },
+    {
+      "path": "src/models/ai_routing_rule_record.rs",
+      "sha256": "1d04cb662f036d68e5b013caa279c2ec24440089058b57a3f4b94b077adb1f20"
+    },
+    {
+      "path": "src/models/ai_usage_fact_record.rs",
+      "sha256": "6ba12eacfebf8dfdf73a315c2e210821f72e3450ac9d303fa8c8fa15f0abbce7"
+    },
+    {
+      "path": "src/models/announcements_create_result.rs",
+      "sha256": "a759e44589765661ebe667c841154a634001ac1cad334c4764a2e2b12518edf2"
+    },
+    {
+      "path": "src/models/announcements_delete_result.rs",
+      "sha256": "fa4e172a86815ede3195f72b7da3772690b0e9afcb4148de9d138e200e576f2d"
+    },
+    {
+      "path": "src/models/announcements_list_result.rs",
+      "sha256": "df5ea1ad02a4fae1dbe7772dc1e3972ce2ba148701bf13fae62fd28908436cf4"
+    },
+    {
+      "path": "src/models/announcements_update_result.rs",
+      "sha256": "b66b776c2070de761db842a6c32838a8629824e152d9e3c786d654dec34deae3"
+    },
+    {
+      "path": "src/models/api_keys_create_result.rs",
+      "sha256": "3adf6cd1d6cc7a191d256b616e49da2c04834bc7b422a753ebedddcc53341ccd"
+    },
+    {
+      "path": "src/models/api_keys_delete_result.rs",
+      "sha256": "f97de949ef636ee715e5d06c0f300f36c6f84297f6fea6b684dfddc08851645d"
+    },
+    {
+      "path": "src/models/api_keys_list_result.rs",
+      "sha256": "dd92b12c4b0f55f78281c6c826f807dc8d435c5776a82d4e50b7a9152e77b700"
+    },
+    {
+      "path": "src/models/apps_create_result.rs",
+      "sha256": "a11ba37ecfde4f8fca2bf95bd533bf55951826f9606edf9f49b53db3ac7f16df"
+    },
+    {
+      "path": "src/models/apps_delete_result.rs",
+      "sha256": "fc4bddcdb54d6a4739c1aa353c2563b7eb5153a719332d2c99e8ea0e4a81800c"
+    },
+    {
+      "path": "src/models/apps_disable_result.rs",
+      "sha256": "ffb27a33a6469d34226252690ec36cc488bc4416d0d0532aaef171dc5be0fe7e"
+    },
+    {
+      "path": "src/models/apps_enable_result.rs",
+      "sha256": "08c79b039866608e4acff1a469304d16056a19ba1c18bd3659d6772e76e9c5e8"
+    },
+    {
+      "path": "src/models/apps_list_result.rs",
+      "sha256": "b84ba2b3bb47db79571ae7ddfb2c73460de979275b8e5aa1da707384ecd4f59f"
+    },
+    {
+      "path": "src/models/apps_publish_result.rs",
+      "sha256": "885f3f50fc54089922e7da43ebd64c557479ac3971935ae8177b3307fc4dd571"
+    },
+    {
+      "path": "src/models/apps_retrieve_result.rs",
+      "sha256": "459526945be15fb9d3ec445f492b55cef4c6c323c21d61dbeb3a16d7d2f49456"
+    },
+    {
+      "path": "src/models/apps_unpublish_result.rs",
+      "sha256": "0a8d3e265b2be372c1dc6e932af8ea53cbdfbac4ee4a709fd02222f6264a091c"
+    },
+    {
+      "path": "src/models/apps_update_result.rs",
+      "sha256": "d57d6e273cb01634c6f66d779cffd1d8c9c02440834db9fa9fe248cb7356476b"
+    },
+    {
+      "path": "src/models/channels_create_result.rs",
+      "sha256": "ec0e179a8f7273781eb7e146c54f3d3297e815fce3a3cd4bb2b03151f6ba1c20"
+    },
+    {
+      "path": "src/models/channels_delete_result.rs",
+      "sha256": "8b1839e9e336da32afb5202b459185789bce793c1ae4bfe1be2a2fc749917ec8"
+    },
+    {
+      "path": "src/models/channels_list_result.rs",
+      "sha256": "afae860452266c79b51e67484dcb2b37069449075e04729f291736863db68eb9"
+    },
+    {
+      "path": "src/models/channels_update_result.rs",
+      "sha256": "0abc85abb9427d1bce173b725973a43d134988be186dea0404224b31b25dda4d"
+    },
+    {
+      "path": "src/models/channels_verify_result.rs",
+      "sha256": "2943fcf4ff52ee18e50b0ad33bba6a357279f2464c08de6aa3912a90af5645d5"
+    },
+    {
+      "path": "src/models/commerce_billing_export_record.rs",
+      "sha256": "8f8b43f15639ed2e900347041e3e94a7b30d5802fd018ea24c4a3d0d011b9405"
+    },
+    {
+      "path": "src/models/commerce_usage_pricing_plan_record.rs",
+      "sha256": "62fb3eb8992a6f7f4db8e287f94284fdb53c9de9442192b2670d2b572c134f16"
+    },
+    {
+      "path": "src/models/commerce_usage_settlement_record.rs",
+      "sha256": "1e265e750b4cfd26d5fe31ca19c51410d25c708cc78502e50ab6334fd3395718"
+    },
+    {
+      "path": "src/models/commerce_usage_statement_item_record.rs",
+      "sha256": "e5d0f5f98fe6a5c415e18b80a94092abf2e630b0df4c387dbf40316af8c469b6"
+    },
+    {
+      "path": "src/models/commerce_usage_statement_record.rs",
+      "sha256": "d1a5afadd3dbb543c993580a091b17e02726bd94ae9e9cc995a3dfe1460a880b"
+    },
+    {
+      "path": "src/models/common.rs",
+      "sha256": "fce0239d85066b1c42435ab8c96676ea2d5300e5dcb87c52fd3e33d29a603a5e"
+    },
+    {
+      "path": "src/models/content_announcement_record.rs",
+      "sha256": "f01549f237caa0bc8deef9086816af5e351cc52a2ba7b7cff3f25d156c710066"
+    },
+    {
+      "path": "src/models/content_course_application_record.rs",
+      "sha256": "f89f6ebe789fda16d4bdc9a6842882183f62fc52849f6ba09066825102a678a3"
+    },
+    {
+      "path": "src/models/content_course_lesson_record.rs",
+      "sha256": "6ffdf6d1c3db341030fff5325c4bd4b847eb68139037e3eca01a2c584e0009e5"
+    },
+    {
+      "path": "src/models/content_course_record.rs",
+      "sha256": "fa15a08d4f1b66a846c49ea293242cf1bf8b85935616755dbb2a62857243d630"
+    },
+    {
+      "path": "src/models/content_course_relation_record.rs",
+      "sha256": "230cf06448186cca3d7b50cd7379f2e64f70efe16cf4bc2a9f6d54614342804e"
+    },
+    {
+      "path": "src/models/content_course_section_record.rs",
+      "sha256": "1de32fbcbe67f49754bd4a0515d22d1a682820da1e211a25775ce36cf3f1b4bf"
+    },
+    {
+      "path": "src/models/content_doc_page_record.rs",
+      "sha256": "58a07feae9f9a4f845117f279a9704d1fd61e454feb25207508cde4fba9c7c7e"
+    },
+    {
+      "path": "src/models/content_forum_comment_record.rs",
+      "sha256": "40f992846723f9caf808ae036a6279c3e5dfa3f984286fd4a7210b789547074a"
+    },
+    {
+      "path": "src/models/content_forum_post_record.rs",
+      "sha256": "28647fbd67eb2f60fedba73857399e7f56fc4529c8e795fbd6a12c6a0a381652"
+    },
+    {
+      "path": "src/models/content_openapi_snapshot_record.rs",
+      "sha256": "f9537c15670b6d2a49d0fdc70554547e8510c932223d450d6da7ec163ffbecaf"
+    },
+    {
+      "path": "src/models/content_reaction_record.rs",
+      "sha256": "7a340da938ba9a27675984457efebfe5fe8f0a1995f840f841da9ce3462a090b"
+    },
+    {
+      "path": "src/models/content_sdk_release_record.rs",
+      "sha256": "c00debb22a6215957c898c3ce0e6f4af7902b127e87de16ef3623506e4cc2fd9"
+    },
+    {
+      "path": "src/models/coupon_batches_create_result.rs",
+      "sha256": "9288f8e2cf276eed366767ea9b40a5e1f1269c76ba96bd3228deb465e8f1b5cd"
+    },
+    {
+      "path": "src/models/coupon_batches_list_result.rs",
+      "sha256": "83a79f223e3bd905583c1ee3754ca57cd6c0afa0affb279eecc27b350fb5eb06"
+    },
+    {
+      "path": "src/models/coupon_codes_list_result.rs",
+      "sha256": "eff2b18eaff0588f1a33d070394d3b01e2d418789756ff0bb7953f9f91f53b79"
+    },
+    {
+      "path": "src/models/coupon_codes_status_update_result.rs",
+      "sha256": "aff6271054e4049241098128bfb5f8b3f3e85b34a801a7825abf7364b5494c57"
+    },
+    {
+      "path": "src/models/coupons_create_result.rs",
+      "sha256": "95ac1b25548c69be96d99310abb695b28d85a1a7de8f4b795ee4de53ebe15882"
+    },
+    {
+      "path": "src/models/coupons_delete_result.rs",
+      "sha256": "64eb430f0bfa8f8aaaa80486c94dd364706de6c37d4e12c57662ed08899e96cd"
+    },
+    {
+      "path": "src/models/coupons_list_result.rs",
+      "sha256": "6e0cb28c507ce7700d706034558b3ed1e68a10e8dbb357011107b7f874e02cb8"
+    },
+    {
+      "path": "src/models/dashboard_admin_overview_retrieve_result.rs",
+      "sha256": "7a5b508aca8c71463737cb140b066dcfeecccacfc9c027d9d4e02b9ad2534d13"
+    },
+    {
+      "path": "src/models/field_error.rs",
+      "sha256": "fdba9215c843c04991489e3f1c3710b7d0b6f03a518a5922b296d13265e78cdb"
+    },
+    {
+      "path": "src/models/finance_admin_ledger_list_result.rs",
+      "sha256": "4cd3ea80783637c8842e959df6137f9c867fa2e7cb0d1b934b6b1b3dc822987c"
+    },
+    {
+      "path": "src/models/finance_usage_statements_list_result.rs",
+      "sha256": "eeb40da0b71cc1dcb90102d8e9b35814cf6eb81f75a49d7610ee984744d92781"
+    },
+    {
+      "path": "src/models/firewalls_rules_create_result.rs",
+      "sha256": "7ae22ca6f6ca5257e0f0d350086c43145cba27e944fa32fad4980187732505b4"
+    },
+    {
+      "path": "src/models/firewalls_rules_delete_result.rs",
+      "sha256": "7f188dbd60760bcb493d3bc0855a9e9f4051ebb269e560114d998e1aef90ce10"
+    },
+    {
+      "path": "src/models/firewalls_rules_list_result.rs",
+      "sha256": "2e092f757d882305e7a7e4d57ebc26f73779571de67083f37666c26afce0a522"
+    },
+    {
+      "path": "src/models/iam_audit_event_record.rs",
+      "sha256": "8ecfbc4fb9ab42659bde0c4c32cf0e5a4af9013a59859c43b624e6308c6eb8f2"
+    },
+    {
+      "path": "src/models/iam_credential_record.rs",
+      "sha256": "465a1ce33eddde49b156d81b5f90099a2a0435a77ce365446097f9cb985a7ae4"
+    },
+    {
+      "path": "src/models/iam_gateway_access_policy_record.rs",
+      "sha256": "86040a6171eadee62dbb638b9b7f355e05dba3716940a45d23b81759e62d865c"
+    },
+    {
+      "path": "src/models/iam_gateway_api_key_group_metric_snapshot_record.rs",
+      "sha256": "cfa522f81f7bf03140610886e8c03efa989933749f1a2991b9c4877fe9a88859"
+    },
+    {
+      "path": "src/models/iam_gateway_api_key_group_record.rs",
+      "sha256": "11a3f5322b729d2dc657b064bdc7c008a8bc0e06d171d2e95b63af38e2e81821"
+    },
+    {
+      "path": "src/models/iam_gateway_api_key_record.rs",
+      "sha256": "3bafeb6b2d9a003e53810281677b046248f506008ae873edec79a6b11c0e26b5"
+    },
+    {
+      "path": "src/models/iam_gateway_risk_rule_record.rs",
+      "sha256": "f6bc594c77d28e4c6e58cadfaebf01c75530e0d15cf3fc861766a426982a76a9"
+    },
+    {
+      "path": "src/models/iam_organization_member_record.rs",
+      "sha256": "84f1abcaa183669d7c895a80e69385627962160634568779b52749618dfd01ec"
+    },
+    {
+      "path": "src/models/iam_organization_record.rs",
+      "sha256": "192ba4fee63eb2c3a126f077d78f46319fb9b0c14a5303d2341ea3d3ea85b51b"
+    },
+    {
+      "path": "src/models/iam_security_event_record.rs",
+      "sha256": "8b164165361715d40a5bab045c40abf10b79ea1550a7177ed4a685b23063158c"
+    },
+    {
+      "path": "src/models/iam_session_record.rs",
+      "sha256": "26d0eb430b128a3544b37dfe5c4efaab302e7d0254819ccd68a3792422b36240"
+    },
+    {
+      "path": "src/models/iam_tenant_record.rs",
+      "sha256": "3b03d9838d914ad34181851b6d16bfef153150ab142f21b15dc783c0cbaff533"
+    },
+    {
+      "path": "src/models/iam_user_identity_record.rs",
+      "sha256": "6d606fba951a351d0ebf4f5b93dac0f19eb7003dcf4ef5d6d2323e929b22257f"
+    },
+    {
+      "path": "src/models/iam_user_login_event_record.rs",
+      "sha256": "05e823029327d36b931a8fdcb7424cb42b6ddaa1c9277333625ec06eb266ce6d"
+    },
+    {
+      "path": "src/models/iam_user_preference_record.rs",
+      "sha256": "4e2274f82e0af1dcd4ddf4a2d02d259dc31cb2201ce679ea4de6cbb84da5e233"
+    },
+    {
+      "path": "src/models/iam_user_record.rs",
+      "sha256": "48dcabee0e3395a32cafc0b9ca3ab95bf9f50093bd67a4e38f9e8746c5c734f5"
+    },
+    {
+      "path": "src/models/iam_user_security_setting_record.rs",
+      "sha256": "73fb393ccce9033027c7f66736566351330a504fd372dd6edf74fb7a488b849a"
+    },
+    {
+      "path": "src/models/installation_status_response.rs",
+      "sha256": "1a728ca06ab6483e39649f7401950ea1bf0a2cf2fe2c83e848f63267fa862aeb"
+    },
+    {
+      "path": "src/models/installation_status_retrieve_result.rs",
+      "sha256": "91f17e89362ddf4931c773b35216a3c20a54c89ac5a2b24e717f28f8a87b3cd1"
+    },
+    {
+      "path": "src/models/integration_channel_model_record.rs",
+      "sha256": "467d7623607c178f54b4312b453902e888ffea4a459842803efb45ff33525ccc"
+    },
+    {
+      "path": "src/models/integration_channel_record.rs",
+      "sha256": "d86485f424fe52924d703f54f8a5abe86b14771cf1a3694aac2be639da38c215"
+    },
+    {
+      "path": "src/models/integration_provider_account_record.rs",
+      "sha256": "784a0c198e680af568a244f595a6298cb622ea2a61aeee7bddd3c92f0b81fb23"
+    },
+    {
+      "path": "src/models/integration_provider_health_snapshot_record.rs",
+      "sha256": "805f5bb7ed613f9bc425c696f30a2f76e888dbf90183877583ffa329754139a7"
+    },
+    {
+      "path": "src/models/integration_provider_record.rs",
+      "sha256": "899f44e755be9e3949d4a03265ab243ce6ec864b08ef2ea6b5a770024e34a3ba"
+    },
+    {
+      "path": "src/models/integration_proxy_record.rs",
+      "sha256": "b2bc0828aafddbfa58208252f7985f22aaf5168fdf8183a6ad3f63cfb01a1138"
+    },
+    {
+      "path": "src/models/integration_webhook_endpoint_record.rs",
+      "sha256": "72f86364df5ddc0235ef092f6949606d9a1fef5e42df8a34f74b42aa26f35161"
+    },
+    {
+      "path": "src/models/mod.rs",
+      "sha256": "b5515a4674479437e61d87e9e36274b14a928e93e8b0984148c62199c2d4ccd6"
+    },
+    {
+      "path": "src/models/model_ranking_history_entry.rs",
+      "sha256": "a021404df49f43f91ad197f90d8b870b629433fbe8de97568d139eece518fd4c"
+    },
+    {
+      "path": "src/models/model_ranking_history_point.rs",
+      "sha256": "98df21c837c35f00ba0c4f10bd5d47dd32a5861dcc8a0acdbaa9f4d88deb757b"
+    },
+    {
+      "path": "src/models/model_ranking_item.rs",
+      "sha256": "e616a80aca5e52a53901f04f5b657791c4d261432f4c9ae4b94f1ed24d8bb56d"
+    },
+    {
+      "path": "src/models/model_ranking_refresh_job_history_page.rs",
+      "sha256": "d636edf45c9afe433caabd88ab72a7393644c63aa1b133a940aca7b1cd4aba6d"
+    },
+    {
+      "path": "src/models/model_ranking_refresh_job_item.rs",
+      "sha256": "092f09f0705c2682d2af725e74be21c0ba1e8bddcbe697f043dfac6351d33fdb"
+    },
+    {
+      "path": "src/models/model_ranking_refresh_latest_job.rs",
+      "sha256": "c793a30f7a407e07fc8c09a1114fb0baf852c40361cfd05c001eebaaf1fb80ca"
+    },
+    {
+      "path": "src/models/model_ranking_refresh_status.rs",
+      "sha256": "3516711dfcf5c585ae9ad497ce36cbb37d6b073850321da5236b393fd410703e"
+    },
+    {
+      "path": "src/models/model_ranking_refresh_trigger_request.rs",
+      "sha256": "64e58391bff395d80199ee8ca0dbfa1b189b8b273c8b2827a2625ffd22aa65c4"
+    },
+    {
+      "path": "src/models/model_ranking_refresh_trigger_response.rs",
+      "sha256": "f0b7e9e34a20d1990ed58c55fdd90dd9f37893f90447c34beeb6ac76657c3469"
+    },
+    {
+      "path": "src/models/model_rankings_jobs_list_result.rs",
+      "sha256": "f3dd67523c7ce694b10bbe29ee09e8376c7521c3811377bb88c705b59d0dbc92"
+    },
+    {
+      "path": "src/models/model_rankings_list_result.rs",
+      "sha256": "34b74b6685db1096ba099675ccbe174669fb2c80270890c0bfcc80d495264894"
+    },
+    {
+      "path": "src/models/model_rankings_refresh_result.rs",
+      "sha256": "7a320a5733c03a94467168f183c238596c4e2c48b801467019b519ff4d2e7313"
+    },
+    {
+      "path": "src/models/model_rankings_snapshot.rs",
+      "sha256": "2c67ee04c6c1961eee78e4d8b51a75562b6218129f2d0f93617517aaf5e78a0c"
+    },
+    {
+      "path": "src/models/model_rankings_source.rs",
+      "sha256": "96280a3728746a1fd2c533e29464932b025dee5e29f4c453bdc6fb7801ffe548"
+    },
+    {
+      "path": "src/models/model_rankings_status_retrieve_result.rs",
+      "sha256": "df9e3573f35434148b236ecb8bdbad2251e8c04b1bc7aca66fab6ca8c5aba628"
+    },
+    {
+      "path": "src/models/model_vendors_create_result.rs",
+      "sha256": "95b41966324c5df34a2735e29e71c035a14fd902510eb9d0e01759a0dea0c96c"
+    },
+    {
+      "path": "src/models/model_vendors_list_result.rs",
+      "sha256": "9abea9ecc0ac62724f35ad0b5f5790baa9a5df5b58c186aa3cb31649087587d9"
+    },
+    {
+      "path": "src/models/models_create_result.rs",
+      "sha256": "9c0c9ebc1d62caf1353ccfc8b6aaaecfb83837f9a6de51d4e127f3df9aa64980"
+    },
+    {
+      "path": "src/models/models_delete_result.rs",
+      "sha256": "eb18ccbf49d367c7c6d0c3087f600838e1711659a91f14481d097cbe14d56b25"
+    },
+    {
+      "path": "src/models/models_list_result.rs",
+      "sha256": "12bcb9a7eb6302a63188aea276c693b286eb489460981caeb154e6a2ead56ea8"
+    },
+    {
+      "path": "src/models/models_refresh_result.rs",
+      "sha256": "0af81584041c8dacdcebaa602b226805daf0b306caf94117b569f283701b7133"
+    },
+    {
+      "path": "src/models/models_update_result.rs",
+      "sha256": "27bfac7ac5e9599500fc76ac7bffbf4b171d551c3b84af01d037500c1c212ded"
+    },
+    {
+      "path": "src/models/monitor_alerts_list_result.rs",
+      "sha256": "749ff98b75ec16ebb61627df8ac2682d88e0916a48f95adc3caa86777d22857c"
+    },
+    {
+      "path": "src/models/monitor_nodes_list_result.rs",
+      "sha256": "aed7d6134cca49966893ebeaba0d48569c53767cfe980d1e500be8b0037c44c9"
+    },
+    {
+      "path": "src/models/monitor_performance_list_result.rs",
+      "sha256": "a3ccc218e70b92041507081657ac7a500063fc0714927543085504765cdd0ca3"
+    },
+    {
+      "path": "src/models/no_data.rs",
+      "sha256": "e02f00072c4b3e8656c99cedc6228c758d4bc2bf13aa3385ec3dda4a7db2c8c5"
+    },
+    {
+      "path": "src/models/ops_alert_event_record.rs",
+      "sha256": "5e02109abb87fc0f1654811d5a0a2d1c2344c7b892aec493d3876ec4dbe3b545"
+    },
+    {
+      "path": "src/models/ops_audit_log_record.rs",
+      "sha256": "28069468afa525a37066a2eb72dab7480f0b3f47089a4022124af8e99a5eabb0"
+    },
+    {
+      "path": "src/models/ops_config_snapshot_record.rs",
+      "sha256": "253461b2da9368586a94720eba79da78a6a95aa1c31fa13d48ebe63f463d9565"
+    },
+    {
+      "path": "src/models/ops_coupon_issue_batch_record.rs",
+      "sha256": "5f4b186b1e8b8315fe5b0b1f1d06f7626a859ddb939f7c5997e2debc0f503a84"
+    },
+    {
+      "path": "src/models/ops_gateway_heartbeat_record.rs",
+      "sha256": "9723d89c8d1e773d1f88ee2dc52e480f60c1ada7170d18a3f6fa419ed55f4ea9"
+    },
+    {
+      "path": "src/models/ops_gateway_instance_record.rs",
+      "sha256": "2d79ee0536bb6c059bba8fb2ef1d652d9352384afefd4f2c5374892f581a13e0"
+    },
+    {
+      "path": "src/models/ops_inbox_event_record.rs",
+      "sha256": "9ffb75505771e0534da3092a65cbb135b8c9c6a5c7aa5d0b68d6cd822e884430"
+    },
+    {
+      "path": "src/models/ops_job_execution_record.rs",
+      "sha256": "23cae4b12423dae9a9f71ab4e32dfaaa3eea201a9dc094df6fbbad3595892bc6"
+    },
+    {
+      "path": "src/models/ops_metric_snapshot_record.rs",
+      "sha256": "adfabad4ab2ff26c860ff4daf658d45ef65c2dd9f4fff11b01727b28b7f6dfee"
+    },
+    {
+      "path": "src/models/ops_notification_delivery_record.rs",
+      "sha256": "57befc710427a0e652ce772fa413786e805fa2a469c584d7c9ee2c190dbf6b7c"
+    },
+    {
+      "path": "src/models/ops_notification_message_record.rs",
+      "sha256": "26f3005be213a8a525b746ce0d79bf4a67db16fae5e01550fa60487a135932c5"
+    },
+    {
+      "path": "src/models/ops_outbox_event_record.rs",
+      "sha256": "0ecbd6fef42f8ee92ab916c24efaf0f2b2087dbe274001862bfcbc5b9857ec06"
+    },
+    {
+      "path": "src/models/ops_referral_stat_snapshot_record.rs",
+      "sha256": "e08a865ceadcf92988449d387aedf845bfd7574536b86a95d707a4bf66475696"
+    },
+    {
+      "path": "src/models/plus_account_exchange_config_record.rs",
+      "sha256": "7a44f6107ad48ed5d9cbc378db3153574d95b4145ea12bebd8c11e1a0fa6db30"
+    },
+    {
+      "path": "src/models/plus_account_history_record.rs",
+      "sha256": "684478cbcdc4dd928be0ecb0ae2737c85e6496e1b6658b14619b3a1ab34ed5ac"
+    },
+    {
+      "path": "src/models/plus_account_record.rs",
+      "sha256": "22b576dd3a982dba186997b6ee37bbc8b3af6ffa5a4e524ef6f76074b384ee7a"
+    },
+    {
+      "path": "src/models/plus_agent_skill_package_record.rs",
+      "sha256": "65e64b8a42bcfc560b6a0cc04b963e2bf0d8e9d754eaf8fbb2b4414ebc6eec94"
+    },
+    {
+      "path": "src/models/plus_agent_skill_record.rs",
+      "sha256": "c8a36e597f537faf0ff96e858cf373f81d580477b659ca5fe648a078ac75f845"
+    },
+    {
+      "path": "src/models/plus_api_key_record.rs",
+      "sha256": "b64bb53fc96a700bc405c33bad96000baf3acd116375b1b10c3ac0e34560fcaf"
+    },
+    {
+      "path": "src/models/plus_api_result.rs",
+      "sha256": "98cbfae330aa3979e8410ed2b9eda21e5918fe02b10052efcea567e37512ecfd"
+    },
+    {
+      "path": "src/models/plus_app_record.rs",
+      "sha256": "e83f831022d6981acb39fa4e2d2af845bde9c90c30d2ef98f17eeed6ff92717a"
+    },
+    {
+      "path": "src/models/plus_card_record.rs",
+      "sha256": "2777c0ed2ef3912bb6f991acad7171d491e284d9967fbb63e742ab2ff2210ea6"
+    },
+    {
+      "path": "src/models/plus_card_template_record.rs",
+      "sha256": "55dd06aaefdae88eff5d4baac0ed2eb0833ea8d799efe45152b65e1781cd8ba2"
+    },
+    {
+      "path": "src/models/plus_category_record.rs",
+      "sha256": "325178d697250fa7c21f673abd7a0390b1dcc835b51dc2aed40ea5edbfbedb8e"
+    },
+    {
+      "path": "src/models/plus_channel_account_record.rs",
+      "sha256": "cef79b31f963a54dca8238a8cd169b520c77eabcee36a7ad49b10cd995693f64"
+    },
+    {
+      "path": "src/models/plus_channel_proxy_record.rs",
+      "sha256": "a3e2e05a414c00155ae2987fb8583d987a8579971836c28d5c229505a8375191"
+    },
+    {
+      "path": "src/models/plus_channel_record.rs",
+      "sha256": "e50fce817c78f499a1bff57a74cd6d40e2d0c66e26e40fc4bbdd338b86236f94"
+    },
+    {
+      "path": "src/models/plus_comments_record.rs",
+      "sha256": "31d364fd1bf38f146e30fa6f6f71b8242ce7d2478e7c821fcd2e19e68b266779"
+    },
+    {
+      "path": "src/models/plus_content_vote_record.rs",
+      "sha256": "b200f3ff532f9997a16f88b220bf0fe65754e374684f9696dda3e45e684b2d61"
+    },
+    {
+      "path": "src/models/plus_coupon_record.rs",
+      "sha256": "c2b4eab54b0857cd007f600443cdb88e3bea009dc397b3c8631599e33ced7c81"
+    },
+    {
+      "path": "src/models/plus_coupon_template_record.rs",
+      "sha256": "6e07b4e3f82f4d4f03de199e65366613407e96035ccff3e8583748cc4b619b17"
+    },
+    {
+      "path": "src/models/plus_currency_record.rs",
+      "sha256": "26a6c824b0d7ea2e66eb252a94a41ed3e6d097c29570ab4acdb7b94a7fbc827d"
+    },
+    {
+      "path": "src/models/plus_department_record.rs",
+      "sha256": "186af5520fde9c315d449749a9f11e12d343d11ea538f36edbe28b392ad5cd5f"
+    },
+    {
+      "path": "src/models/plus_exchange_rate_record.rs",
+      "sha256": "a190ef8dba992932daee4353b60caba094bdaa495be83029674d792e9e3aba8e"
+    },
+    {
+      "path": "src/models/plus_favorite_record.rs",
+      "sha256": "717cf5990448a8c8e4e275dd546a9c87fd836e0419585040e94dfce1f1794e4c"
+    },
+    {
+      "path": "src/models/plus_feeds_record.rs",
+      "sha256": "9a043d31594036d569d7a702ff9ce4e815e573841616e09dc608fefe0a12d572"
+    },
+    {
+      "path": "src/models/plus_invitation_code_record.rs",
+      "sha256": "0c4b796970f0a88d5a1e7be78dcdb3e1b8144fe385fe43021b9307fffd6234ed"
+    },
+    {
+      "path": "src/models/plus_invitation_relation_record.rs",
+      "sha256": "cd801eb56fb28b1f39ad11e154b62113f5f18ecc2b006289e79912e5db3b6506"
+    },
+    {
+      "path": "src/models/plus_invoice_item_record.rs",
+      "sha256": "d99cdd6f22e968be9261ec64707706bff7520ee7bba915747803a9cc5f0288f2"
+    },
+    {
+      "path": "src/models/plus_invoice_record_record.rs",
+      "sha256": "fe7a50c9a7111c0c5b9965f650271f9561fc62adcbc432d68fb275377bbc60ed"
+    },
+    {
+      "path": "src/models/plus_invoice_record.rs",
+      "sha256": "f7aeed0d1974eab4a8b58c1cef40dbc2fd370c976ca193d469971472a344893a"
+    },
+    {
+      "path": "src/models/plus_ledger_bridge_record.rs",
+      "sha256": "4e655e5f46d6f8a710242ea0c814ce8fba9f749bbdd8e092db76c60ca6da445d"
+    },
+    {
+      "path": "src/models/plus_member_card_record.rs",
+      "sha256": "979914379e99b424616d09ea6ebf348f7fdae887395c6bfa7e36beedaa608318"
+    },
+    {
+      "path": "src/models/plus_member_level_record.rs",
+      "sha256": "1972466f08186f04a2173a8c60f36dc7f762d58b600a0b6bb973753dfbacfb4e"
+    },
+    {
+      "path": "src/models/plus_oauth_account_record.rs",
+      "sha256": "0c9feee359a475746213a4990e9b58d1c65db0f6bf0fbcf99403edb5c2d3a399"
+    },
+    {
+      "path": "src/models/plus_order_dispatch_rule_record.rs",
+      "sha256": "089363cfeb8d247eb313daf727de98f095b0c06641ab204cf0a5ec5af0c1b0f2"
+    },
+    {
+      "path": "src/models/plus_order_item_record.rs",
+      "sha256": "f5b2743e4e86522918a6314ed7cb79a23a0e8002d98e3292b08a2493c1ce1f9e"
+    },
+    {
+      "path": "src/models/plus_order_record.rs",
+      "sha256": "949c078adae88f297249e3f241e01f2f80a6ec70a826bd58360a41a75819deda"
+    },
+    {
+      "path": "src/models/plus_order_worker_dispatch_profile_record.rs",
+      "sha256": "e21d2e4e19eb2c69dddb37acbcec8fa07ed8006f22b8c30376d96ad2f4a13f35"
+    },
+    {
+      "path": "src/models/plus_organization_member_record.rs",
+      "sha256": "e04a20a3065f9ae7b3675f823c78f3b0052684df3687698bd02ec9b7c940c91c"
+    },
+    {
+      "path": "src/models/plus_organization_record.rs",
+      "sha256": "c310296af2cae61ee34aa6c8413ba1a178d8a8bd9eb439613766786093639fc4"
+    },
+    {
+      "path": "src/models/plus_partner_record.rs",
+      "sha256": "9d5012301d4b8338037f5c6ba9e104ed16a19e3f27a33d0cb07cdd3882c7666b"
+    },
+    {
+      "path": "src/models/plus_payment_record.rs",
+      "sha256": "655a8b137ea07bbfcf2eae5057ebb6641868b300497d7fa644941db2d92ecdac"
+    },
+    {
+      "path": "src/models/plus_payment_webhook_event_record.rs",
+      "sha256": "646aa5f7c5cfaac0c32e1dd018e3ca323a58da94523c29d502cd279964d9c66a"
+    },
+    {
+      "path": "src/models/plus_permission_record.rs",
+      "sha256": "9b183ebd93eac09bceba3cd3a3310237acc502768ff92b73edd9d54a65210bc2"
+    },
+    {
+      "path": "src/models/plus_position_record.rs",
+      "sha256": "74844d6c54411f740d37cb3f014ce205699ad735bf935a8db92d0e041e401e0d"
+    },
+    {
+      "path": "src/models/plus_product_record.rs",
+      "sha256": "bac6bb780521fb353e975a6d135776ffd4abb083b68b0f7d47ff1dd03dcc105b"
+    },
+    {
+      "path": "src/models/plus_refund_record.rs",
+      "sha256": "bdb02890a15246b55866e3d4820d9585acc6c925e4d837e330eef160a1b168ed"
+    },
+    {
+      "path": "src/models/plus_role_permission_record.rs",
+      "sha256": "6a62be1c99edca87fb4797aeb71195426f3a440e05c30aaa0bad3a9abf6c34f0"
+    },
+    {
+      "path": "src/models/plus_role_record.rs",
+      "sha256": "de33a302b6b58553258a5fbb07262f2cb9bea82671ddb3d7ddeab18ddeda3369"
+    },
+    {
+      "path": "src/models/plus_shop_record.rs",
+      "sha256": "4a25cb4385c3dc464cca82636075aed384e20f9553f5ad4f6030feda5e6e3d21"
+    },
+    {
+      "path": "src/models/plus_shopping_cart_item_record.rs",
+      "sha256": "5d5c489e3f41d9cf83cc2f64c71aae0c5acdbfce145c4e712cfa3402367faa6f"
+    },
+    {
+      "path": "src/models/plus_shopping_cart_record.rs",
+      "sha256": "4b38068d979a2dcba15228af1f4ce258464b06663fb940d820c8b1ebbeb4cbd7"
+    },
+    {
+      "path": "src/models/plus_sku_record.rs",
+      "sha256": "5946d0e8a68e818c8fb031c4a75911c6c0f04f9904bd179549835e0eb4242e04"
+    },
+    {
+      "path": "src/models/plus_tenant_record.rs",
+      "sha256": "597de71f3fb0183a1171cef5f429894d65b4c1a8d38f045c8f154fa264ef75e9"
+    },
+    {
+      "path": "src/models/plus_usage_record_record.rs",
+      "sha256": "3df67de13dd10d7bc786817ea51a289e63ac2a317f2738f27809bb9410a78283"
+    },
+    {
+      "path": "src/models/plus_user_address_record.rs",
+      "sha256": "c9e4c7faf0d1a381124e6cd69ebeb34513bc6338851f468156215b8efbeb4ab1"
+    },
+    {
+      "path": "src/models/plus_user_agent_skill_record.rs",
+      "sha256": "ce09180e8da132267971a81b40e0214f499af2ae2b1a3f9b3430e72040e1a576"
+    },
+    {
+      "path": "src/models/plus_user_card_record.rs",
+      "sha256": "38e4589d091ac99679936e01b0e1f25796308c4a04d4bde854e9012fcf91c3e6"
+    },
+    {
+      "path": "src/models/plus_user_coupon_record.rs",
+      "sha256": "2d4a91196eba568a0f5e17fc492e9726f384b42ba953eeae90cb07865bb0e201"
+    },
+    {
+      "path": "src/models/plus_user_record.rs",
+      "sha256": "3342f9869a0f2da95a1c87a75a4d498868d506bbcb5e8b3b60445b2f5ae165a0"
+    },
+    {
+      "path": "src/models/plus_user_role_record.rs",
+      "sha256": "5d1d16f1f10090fb0d5405ec4983178cb74ce4c32e86053f383afd5c81ff3d0f"
+    },
+    {
+      "path": "src/models/plus_vip_benefit_record.rs",
+      "sha256": "a251d248969bde15b77a49dc52681a052a7af56de87f5998c704ac633a2139fc"
+    },
+    {
+      "path": "src/models/plus_vip_benefit_usage_record.rs",
+      "sha256": "96790de9662845129a26319a3e54727d17b74b9179aff83f6cee64b8ab2ac8af"
+    },
+    {
+      "path": "src/models/plus_vip_level_benefit_record.rs",
+      "sha256": "f7fe8057ce640beadedbaf45b3af4771783cc7f213cdc2962df7dfb1c7f929e5"
+    },
+    {
+      "path": "src/models/plus_vip_level_record.rs",
+      "sha256": "b969d610527f0b1136859d1863d7ceb2c2f6134f4664de67a1897c7db5cdd8b2"
+    },
+    {
+      "path": "src/models/plus_vip_pack_group_record.rs",
+      "sha256": "a2db1d1184d243bdff84be2b85ca6877528ec6b5a1be15c7dda9ccd7c646c6da"
+    },
+    {
+      "path": "src/models/plus_vip_pack_record.rs",
+      "sha256": "f68fbd5c0b0ca78e82f4b8772786a10eaa58700f6d6b21b47025e2bcd68d12d3"
+    },
+    {
+      "path": "src/models/plus_vip_point_change_record.rs",
+      "sha256": "54d792ba2be45272585b2ae45cb2393991b3993aeaba6a7bca34c444b6f3ec12"
+    },
+    {
+      "path": "src/models/plus_vip_recharge_method_record.rs",
+      "sha256": "196d76f64c0a09e80ead1d241caf0e32c8c60496f03022470668b417dd2f5c22"
+    },
+    {
+      "path": "src/models/plus_vip_recharge_pack_record.rs",
+      "sha256": "a35556c29eebbf41dbb386424f4efbf6876f2d4798b5154bd9b13dbf119b5f87"
+    },
+    {
+      "path": "src/models/plus_vip_recharge_record.rs",
+      "sha256": "feecf7ca0eff88a88948aa5c6865a23efabc4b6375cf2f610c649d1dc8530877"
+    },
+    {
+      "path": "src/models/plus_vip_user_record.rs",
+      "sha256": "35c9f1ab83d4ee9370e3af8342b58fad24a49512e288e3c5cc6145d2b0ada15d"
+    },
+    {
+      "path": "src/models/problem_detail.rs",
+      "sha256": "82138a7c404c77ec62ded0e0863e9396ddba5bc3984f58e02d3b71ac62ef5a56"
+    },
+    {
+      "path": "src/models/provider_retry_policy.rs",
+      "sha256": "40eb219149e3f74aacd9f3fd9396c8951871917a56bcf47026dff3a5ca100be9"
+    },
+    {
+      "path": "src/models/provider_secrets_create_result.rs",
+      "sha256": "eb546570e8ae3d774f024792f1df2b4da54c68ec2a648a34958081a95048bc43"
+    },
+    {
+      "path": "src/models/provider_secrets_delete_result.rs",
+      "sha256": "64a1f52bf99ac7643c57ee429dfb1c546e36bf9a5154d6d93441b4c33f52d9b9"
+    },
+    {
+      "path": "src/models/provider_secrets_list_result.rs",
+      "sha256": "1073f989a2c9a606ef5aea722083841d873fca704a245f7e061db2bfa6044815"
+    },
+    {
+      "path": "src/models/provider_secrets_update_result.rs",
+      "sha256": "ddc589a89ad12841e3b850ab6633e980ecf444934d1bfd9431ea84f3e1639618"
+    },
+    {
+      "path": "src/models/rate_limits_api_keys_create_result.rs",
+      "sha256": "f13f8adc313d2a81cffee1ecc6a88442454f234e72805b7660fd9e84ba8a8879"
+    },
+    {
+      "path": "src/models/rate_limits_api_keys_list_result.rs",
+      "sha256": "74185d45b3aebec0b31d4bead138add4f8bf5209a8bbe5c0e32dbcf251de385f"
+    },
+    {
+      "path": "src/models/rate_limits_ip_create_result.rs",
+      "sha256": "ed4f274223c85498e372ec556061dc38b3e28a05a0a9b2a489f5c92b2cc9b4b2"
+    },
+    {
+      "path": "src/models/rate_limits_ip_list_result.rs",
+      "sha256": "693957a8658d9064221cfdb87ca106374602acc9587e6f831a24c522a40f6928"
+    },
+    {
+      "path": "src/models/rate_limits_models_create_result.rs",
+      "sha256": "49bef83a755f4b66fb16116ecad99027e76a2c96c536736195092d50b711fcb9"
+    },
+    {
+      "path": "src/models/rate_limits_models_list_result.rs",
+      "sha256": "97877cfa9aa886d893e8406403e7c0bb9e854129ac67b6d0be6052c0e5ffdaca"
+    },
+    {
+      "path": "src/models/records_list_result.rs",
+      "sha256": "a304a680b50684dec454e2fa0465042518afae570e468c486a1f6f392f474afa"
+    },
+    {
+      "path": "src/models/referrals_stats_list_result.rs",
+      "sha256": "fa008ded405dac805a32555b76aff29866290dabcbf4ae1a771eb95d89acf872"
+    },
+    {
+      "path": "src/models/skills_artifacts_create_result.rs",
+      "sha256": "29cd2c0280f6c8718a904ca642062d6bc950a09bfb3a66dc9cb0ff612e914f78"
+    },
+    {
+      "path": "src/models/skills_artifacts_delete_result.rs",
+      "sha256": "9e3aadcc214a79055db6d2939bf41040812db61c00ea381048f118188796babb"
+    },
+    {
+      "path": "src/models/skills_artifacts_list_result.rs",
+      "sha256": "f2a51d980e15e0340e124ae4ab7d502e912a611c17fef52807194e74955aaf2e"
+    },
+    {
+      "path": "src/models/skills_artifacts_retrieve_result.rs",
+      "sha256": "f3d09474582e3b1696b911fa7ab6770a31a0fc7d76ebbf018e416ac406a3507d"
+    },
+    {
+      "path": "src/models/skills_artifacts_update_result.rs",
+      "sha256": "d0c1502b72f3913f68163cdb9cf818863f555f39bf3b885d78b9b19ef06bf9e5"
+    },
+    {
+      "path": "src/models/skills_assets_create_result.rs",
+      "sha256": "c2d9f6789873f6b3897284a7fa425737be0299199f2f420e4d1079f3cf1de1cf"
+    },
+    {
+      "path": "src/models/skills_assets_delete_result.rs",
+      "sha256": "322f124c329cd228293e87b194fc0281530073aaf4f3eaf1c011c4a86542e001"
+    },
+    {
+      "path": "src/models/skills_assets_list_result.rs",
+      "sha256": "df07b2d084c62b9533c64d91227958313e093b65019856ae70b60058b3e8382a"
+    },
+    {
+      "path": "src/models/skills_assets_retrieve_result.rs",
+      "sha256": "cca2343e00f380889ddb2cb7aca8b910f0d47e78f71473bf91684d2480dacabe"
+    },
+    {
+      "path": "src/models/skills_assets_update_result.rs",
+      "sha256": "15dbd3f8d1932566189eb637a173d01b67106b153a969783f21397de672bef6e"
+    },
+    {
+      "path": "src/models/skills_categories_create_result.rs",
+      "sha256": "76efa8d6e078e29d1b350bdefe8610702fede38e46cd19f26737d3f02fb0a8ee"
+    },
+    {
+      "path": "src/models/skills_categories_list_result.rs",
+      "sha256": "a90fc69610c726c4b97942786b45182f1ca2de00d2451625a2c93693c8eddbd9"
+    },
+    {
+      "path": "src/models/skills_create_result.rs",
+      "sha256": "f6b939230a56b35a807488f37a28e3edd9cb598294d07e84aaa643a44f93aa3a"
+    },
+    {
+      "path": "src/models/skills_delete_result.rs",
+      "sha256": "94ea9f67d84fb6f8eb34ea2f191a09185f948fd9030274c53fd8502543782f57"
+    },
+    {
+      "path": "src/models/skills_disable_result.rs",
+      "sha256": "0dbd7b96e2e4a2e6bf7da335731c278279f7972db7e2c5250d8d1f042ec05ee9"
+    },
+    {
+      "path": "src/models/skills_enable_result.rs",
+      "sha256": "6c36fa0d8c5f2e44469fc3fbf0ed3ddaca6263e96e27f64d349c78875738e0b1"
+    },
+    {
+      "path": "src/models/skills_list_result.rs",
+      "sha256": "f675a6805af70e9165a44031e0a396c75903bb706cbdaeca3a309ed0d1e98422"
+    },
+    {
+      "path": "src/models/skills_package_create_result.rs",
+      "sha256": "739eba788ac673a7187d57688c58c818f5c6959e62bc4a8f43abc080f9a4cc5e"
+    },
+    {
+      "path": "src/models/skills_package_delete_result.rs",
+      "sha256": "27fe7d4db898abe11dc9aa449a8fffc41a00b7f8bd1070a2f4819b9184c1fb82"
+    },
+    {
+      "path": "src/models/skills_package_disable_result.rs",
+      "sha256": "b78d1c51aea95e103009a30eac045f4bb9d7de39f44c28326d0f8c5b6d3a5cc7"
+    },
+    {
+      "path": "src/models/skills_package_enable_result.rs",
+      "sha256": "bd8496389aec340b8c84debe31676df1e17f9065ef22dd92f9b6cd86f335bf22"
+    },
+    {
+      "path": "src/models/skills_package_list_result.rs",
+      "sha256": "65250b0f9a9985c2ada20abbc39a6dafc8b967ef0ad4c4565d987c17304a0d8e"
+    },
+    {
+      "path": "src/models/skills_package_retrieve_result.rs",
+      "sha256": "eb5c7c56ef5215249616c214b589741b818b3266ddd4114d05d4de98db99764b"
+    },
+    {
+      "path": "src/models/skills_package_update_result.rs",
+      "sha256": "cbdb46d97ece20731a3821e9aea3af7a9b393dbf7706ebe07350e11b9b401306"
+    },
+    {
+      "path": "src/models/skills_publish_result.rs",
+      "sha256": "507615139975023eb67f47378d1db4bc62b7a083f11c4e68bf5db7e85bd3e218"
+    },
+    {
+      "path": "src/models/skills_retrieve_result.rs",
+      "sha256": "8ffbb8a180c22489638042d004c79e390cbe6c13482bb11fb7fdcfb7ebed1031"
+    },
+    {
+      "path": "src/models/skills_review_approve_result.rs",
+      "sha256": "6f55fc71652ac348f79c8b8f1bdab4d939ac585b0f5bc6a987d559b7ec4a0c88"
+    },
+    {
+      "path": "src/models/skills_review_reject_result.rs",
+      "sha256": "921bcbf4495d781cc94a0da3050f729c3ffcae2ad524b6bedf89f6c5e54fef04"
+    },
+    {
+      "path": "src/models/skills_unpublish_result.rs",
+      "sha256": "b8b84414953c7301dba640a99bef9e433c055a7aa28a4e53c9e95e5a47e46b7e"
+    },
+    {
+      "path": "src/models/skills_update_result.rs",
+      "sha256": "c7cc98ef15c1e146872444f5ba5c4907175df4b7c739502b7bca9896f5bc4158"
+    },
+    {
+      "path": "src/models/studio_catalog_action_record.rs",
+      "sha256": "6a7febc8de92a00cbf7c3dc547c5c8303999c14abb359d0fac3f61032382ec94"
+    },
+    {
+      "path": "src/models/studio_catalog_artifact_record.rs",
+      "sha256": "4d10e8950176d21104fae65d1f49ce15c51169f3d2c36e115c74222461829a6c"
+    },
+    {
+      "path": "src/models/studio_catalog_asset_record.rs",
+      "sha256": "ffc06d4e0e8fcf5c56349559901fe7e2e2ab5ad36c81901b6308654640700ddd"
+    },
+    {
+      "path": "src/models/system_installation_state_record.rs",
+      "sha256": "3a6ac1a2dd1e5a4e2decaa48b18d378e8a4f0d31295c97ac96ed3a10ab285d80"
+    },
+    {
+      "path": "src/models/system_schema_migration_record.rs",
+      "sha256": "53ae4743a03be76ac206b51ea273dfb1578f3685d5c30be6218a2c856b8e445a"
+    },
+    {
+      "path": "src/models/users_balance_adjustments_create_result.rs",
+      "sha256": "5151199ffcd7a5eebc125a8b86a3ca225b7676219091a423529bc7384e03c2c5"
+    },
+    {
+      "path": "src/models/users_coupons_list_result.rs",
+      "sha256": "0bccdd49f12fc16b347f4922eeec0ceb0f8fb49afc8302420be1fbfbe4656058"
+    },
+    {
+      "path": "src/models/users_create_result.rs",
+      "sha256": "8bf1e7d530d27cf2f28e7f9674108b8cd07efb3d4b76ed7e10b6c20e9bc75c63"
+    },
+    {
+      "path": "src/models/users_list_result.rs",
+      "sha256": "847346d73b3fffc73ab787e6d2899251ea9f297ef8644df03d562496e1052900"
+    },
+    {
+      "path": "src/models/users_update_result.rs",
+      "sha256": "b3e733a2c0334246fff46302c546cced7ea16d3be3183edabd898151c9809b52"
+    },
+    {
+      "path": "src/models/vip_recharge_list_result.rs",
+      "sha256": "d1e11c15e8616c70c110d49363d6abf3d9673bbca1779b50ca866a74116200a0"
+    }
+  ],
+  "scaffoldFiles": [
+    "custom/README.md"
+  ],
+  "customRoots": [
+    "custom/"
+  ]
+}

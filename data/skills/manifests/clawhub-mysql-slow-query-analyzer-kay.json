@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66482,
+  "uuid": "skill-clawhub-mysql-slow-query-analyzer-kay",
+  "skillKey": "clawhub-mysql-slow-query-analyzer-kay",
+  "name": "MySQL慢查询分析器",
+  "summary": "专业解析 MySQL EXPLAIN 与慢查询日志，定位性能瓶颈，提供索引与SQL重写优化建议，提高查询性能效率。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_slow_query_analyzer_kay",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "专业解析 MySQL EXPLAIN 与慢查询日志，定位性能瓶颈，提供索引与SQL重写优化建议，提高查询性能效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysql-slow-query-analyzer-kay@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysql-slow-query-analyzer-kay",
+      "url": "https://clawhub.ai/skills/mysql-slow-query-analyzer-kay"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-slow-query-analyzer-kay",
+    "url": "https://clawhub.ai/skills/mysql-slow-query-analyzer-kay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-slow-query-analyzer-kay-2f632d1dd7977f90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysql-slow-query-analyzer-kay@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysql-slow-query-analyzer-kay-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:278a6e8f32a08dc414bba9853285e50495d6c78b61d001b9a3ca24638f1401f4",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T14:54:02.684Z"
+}

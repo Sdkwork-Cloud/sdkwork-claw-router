@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32099,
+  "uuid": "skill-clawhub-digio",
+  "skillKey": "clawhub-digio",
+  "name": "Digio",
+  "summary": "Digio integration. Manage data, records, and automate workflows. Use when the user wants to interact with Digio data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Digio integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Digio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digio@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digio",
+      "url": "https://clawhub.ai/skills/digio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digio",
+    "url": "https://clawhub.ai/skills/digio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digio-37fabfbc13fb5177.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digio@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-digio-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c7b63980366c3a034fc06616548b9dffa2ca225af2a067fa2bf00378c17b24b",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:39:08.945Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/night-shopping@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.night_shopping",
+  "skill": {
+    "id": 51675,
+    "skillKey": "clawhub-night-shopping",
+    "name": "Find Night Shopping — Night Markets, Evening Bazaars, Late-Night Stalls & Street Vendors"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "night-shopping",
+    "url": "https://clawhub.ai/skills/night-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/night-shopping-2017f30bc06cab3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find night markets, food streets, and local culinary hotspots. Discover street food, local specialties, and the best evening food experiences. Also supports:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 114,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1776081746662,
+      "changelog": "Renamed and optimized per naming methodology v3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be31f1333d7c472d1448efa2bf38d07311df7045f0ea866becda98a6ae1dee12"
+}

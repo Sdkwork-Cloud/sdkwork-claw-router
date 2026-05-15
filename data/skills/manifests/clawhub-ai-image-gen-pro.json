@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30277,
+  "uuid": "skill-clawhub-ai-image-gen-pro",
+  "skillKey": "clawhub-ai-image-gen-pro",
+  "name": "Ai Image Gen Pro",
+  "summary": "Generate AI images with FLUX, Gemini, Grok, Seedream, Reve and 50+ models via inference.sh CLI. Models: FLUX Dev LoRA, FLUX.2 Klein LoRA, Gemini 3 Pro Image,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_image_gen_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bingze00000",
+      "features": [
+        "Generate AI images with FLUX, Gemini, Grok, Seedream, Reve and 50+ models via inference.sh CLI",
+        "Models: FLUX Dev LoRA, FLUX.2 Klein LoRA, Gemini 3 Pro Image,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-image-gen-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268100670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-image-gen-pro",
+      "url": "https://clawhub.ai/skills/ai-image-gen-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-image-gen-pro",
+    "url": "https://clawhub.ai/skills/ai-image-gen-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-image-gen-pro-4708e018d1c2f310.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-image-gen-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-image-gen-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fecbf19c9e3f960e6737db8760b5573075190204fb79e89f08ff849d8a07d731",
+      "artifactSizeBytes": 2392
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:10:37.222Z"
+}

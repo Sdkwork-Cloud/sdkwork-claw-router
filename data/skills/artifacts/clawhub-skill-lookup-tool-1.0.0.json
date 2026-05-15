@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-lookup-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_lookup_tool",
+  "skill": {
+    "id": 16203,
+    "skillKey": "clawhub-skill-lookup-tool",
+    "name": "Skill Lookup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-lookup-tool",
+    "url": "https://clawhub.ai/skills/skill-lookup-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-lookup-tool-9a3115a2b7c77472.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, retrieve, and install Agent Skills from the prompts.chat registry using MCP tools. Use when the user asks to find skills, browse skill catalogs, inst..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengxinjipai",
+      "userId": "s1730v5c386prna2echd6pyczn83x8km",
+      "displayName": "zhengxinjipai",
+      "image": "https://avatars.githubusercontent.com/u/130424576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 895,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772803392289,
+      "changelog": "- Initial release of skill-lookup.\n- Enables searching, retrieving, and installing Agent Skills from the prompts.chat registry.\n- Provides clear workflow and guidelines for browsing and installing skills, including verification of installation.\n- Supports presenting detailed search results with metadata and file lists.\n- Includes usage instructions for MCP tools: `search_skills` and `get_skill`.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b68051c1d3f1bdef807dcf5cbf9624ba5f8997d3731952835d5d5d05c31f3f3"
+}

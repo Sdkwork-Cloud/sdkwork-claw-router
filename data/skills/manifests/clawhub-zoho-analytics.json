@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32330,
+  "uuid": "skill-clawhub-zoho-analytics",
+  "skillKey": "clawhub-zoho-analytics",
+  "name": "Zoho Analytics",
+  "summary": "Zoho Analytics integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho Analytics data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_analytics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Zoho Analytics integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho Analytics data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-analytics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-analytics",
+      "url": "https://clawhub.ai/skills/zoho-analytics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-analytics",
+    "url": "https://clawhub.ai/skills/zoho-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-analytics-6b51048f07546fd3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-analytics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-analytics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3e503116daea832dd4d4d351940abefdf1bfc4b4f10369bd69aceafe50ecdb0",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:13:13.377Z"
+}

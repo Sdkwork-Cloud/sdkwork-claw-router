@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31948,
+  "uuid": "skill-clawhub-spc",
+  "skillKey": "clawhub-spc",
+  "name": "Spc",
+  "summary": "spc reference tool",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain1",
+      "features": [
+        "spc reference tool"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spc@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261107384?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spc",
+      "url": "https://clawhub.ai/skills/spc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spc",
+    "url": "https://clawhub.ai/skills/spc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spc-8d2cc5e694bfcbe4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spc@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spc-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f19f6bbc26cf6a8771de8fa3826f31872ca5bb0e52048ea9ea5bfe0cc799ef92",
+      "artifactSizeBytes": 1694
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T02:11:32.730Z"
+}

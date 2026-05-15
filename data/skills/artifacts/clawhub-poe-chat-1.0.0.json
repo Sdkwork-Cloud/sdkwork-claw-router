@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poe-chat@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poe_chat",
+  "skill": {
+    "id": 59416,
+    "skillKey": "clawhub-poe-chat",
+    "name": "Poe Chat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poe-chat",
+    "url": "https://clawhub.ai/skills/poe-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poe-chat-7a6849e792c483b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用 @gemini/@gpt/@claude 等触发词调用 Poe 模型（含 Gemini/GPT/claude/kimi/Deepseek等主流模型），自动选择 model_id 并说明使用了哪一个，支持文件上传。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longmans",
+      "userId": "s176e5w0xgk2ycwqjvkgyeapex840g9j",
+      "displayName": "longman",
+      "image": "https://avatars.githubusercontent.com/u/932025?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1238,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770558980887,
+      "changelog": "- Initial release of poe-chat skill.\n- Supports triggering Poe models (Gemini, GPT, Claude, kimi, Deepseek, etc.) using @keywords.\n- Automatically selects the most appropriate model_id based on user input and explains which model was used.\n- Allows file uploads for model analysis.\n- Includes scripts to list available models and manage API keys.\n- Responses clearly state the specific model used before answering.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ec01aa96e9807023db25dcc98fd49b66fd0d5b7d9f9e22da98c33a2ab17eb074"
+}

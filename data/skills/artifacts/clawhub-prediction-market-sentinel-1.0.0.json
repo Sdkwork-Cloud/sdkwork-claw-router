@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prediction-market-sentinel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prediction_market_sentinel",
+  "skill": {
+    "id": 25762,
+    "skillKey": "clawhub-prediction-market-sentinel",
+    "name": "Prediction Market Sentinel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prediction-market-sentinel",
+    "url": "https://clawhub.ai/skills/prediction-market-sentinel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prediction-market-sentinel-3290c79c61a7c4e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Polymarket prediction market wallets and detect new trades in real-time. Use when tracking whale wallets, detecting new positions, or monitoring pred..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773506717969,
+      "changelog": "Initial release: track prediction market whale wallets, detect new trades via CLOB API, real-time alerts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fb79cfbae2931715bc194b04520a119dc5239488b46d578811ca0affea81a95"
+}

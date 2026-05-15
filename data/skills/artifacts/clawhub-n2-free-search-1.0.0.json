@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/n2-free-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.n2_free_search",
+  "skill": {
+    "id": 22476,
+    "skillKey": "clawhub-n2-free-search",
+    "name": "N2 Free Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "n2-free-search",
+    "url": "https://clawhub.ai/skills/n2-free-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/n2-free-search-8c43d20ac62ac335.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Free, unlimited web search for AI agents via SearXNG — no API keys needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "choihyunsus",
+      "userId": "publishers:choihyunsus",
+      "displayName": "choihyunsus",
+      "image": "https://avatars.githubusercontent.com/u/36554058?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1534,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770966927707,
+      "changelog": "- Initial release of n2-free-search skill.\n- Provides free, private, unlimited web search for AI agents via SearXNG—no API keys required.\n- Offers tools for web, news, image, and video search, plus search suggestions.\n- Supports easy setup in both public and self-hosted modes.\n- Aggregates results from 70+ search engines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8f39b7398b5c1ec25fb9df89f27920c5b1eae9a6a90e3cb4e6981891b0be77aa"
+}

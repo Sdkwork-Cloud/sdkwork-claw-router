@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zke-trading@1.0.13",
+  "version": "1.0.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zke_trading",
+  "skill": {
+    "id": 27132,
+    "skillKey": "clawhub-zke-trading",
+    "name": "ZKE Exchange Trading Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zke-trading",
+    "url": "https://clawhub.ai/skills/zke-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zke-trading-87bf149e8646cc43.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ZKE AI Master Trader (Official). Control spot and futures trading, manage assets, and access real-time market data on ZKE Exchange."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zke-exchange",
+      "userId": "s173wm90evz5t29mafg4g8xcc98403vx",
+      "displayName": "ZKE-Exchange",
+      "image": "https://avatars.githubusercontent.com/u/128039457?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.0.13",
+      "createdAt": 1773951510116,
+      "changelog": "- Updated to version 1.0.13.\n- Improved metadata format and added homepage and emoji for better discoverability.\n- Updated configuration to clarify required environment variables and host dependencies.\n- Removed the old skill.json file for a cleaner setup.\n- Documentation now highlights key features and provides direct resource links.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c908349d787faea3c65031421ded3b9e3ee54a1098919a0c9173f33f7f90978e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/design-extractor-clawhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_extractor_clawhub",
+  "skill": {
+    "id": 41926,
+    "skillKey": "clawhub-design-extractor-clawhub",
+    "name": "Design Extractor Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-extractor-clawhub",
+    "url": "https://clawhub.ai/skills/design-extractor-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-extractor-clawhub-54c270337565fcbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract design tokens from existing code and generate DESIGN.md with awesome-design-md comparison"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "html1602",
+      "userId": "s17999bcgqwa4x7geaek6w0vph84engc",
+      "displayName": "yuandezuohua",
+      "image": "https://avatars.githubusercontent.com/u/22317962?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775659096015,
+      "changelog": "Initial release of design-extractor skill for ClawHub.\n\n- Extracts design tokens (colors, typography, spacing, effects) from project style files (.css, .scss, .vue, etc.).\n- Automatically generates DESIGN.md with extracted data and awesome-design-md comparison.\n- Supports command line and skill-based usage.\n- Includes AI cross-platform compatibility info and detailed conversion instructions for Claude Code format.\n- Requires Node.js 18+ and a project folder with style files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6266e78c32d197ce04883a8d29f296010ebca01d5aecffd39db60823a3db9d52"
+}

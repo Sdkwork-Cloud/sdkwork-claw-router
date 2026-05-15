@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67320,
+  "uuid": "skill-clawhub-send-email-tool",
+  "skillKey": "clawhub-send-email-tool",
+  "name": "Send Email Tool",
+  "summary": "邮件发送工具。配置 SMTP 发件人后，通过脚本发送纯文本或 HTML 邮件，支持附件、抄送、密送。在需要发送邮件通知、报告、自动化邮件时触发。",
+  "version": "2.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.send_email_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flyingtimes",
+      "features": [
+        "邮件发送工具。配置 SMTP 发件人后，通过脚本发送纯文本或 HTML 邮件，支持附件、抄送、密送。在需要发送邮件通知、报告、自动化邮件时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/send-email-tool@2.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5668052?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "send-email-tool",
+      "url": "https://clawhub.ai/skills/send-email-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "send-email-tool",
+    "url": "https://clawhub.ai/skills/send-email-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/send-email-tool-139b9f63e546c898.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/send-email-tool@2.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-send-email-tool-2.5.0.json",
+      "version": "2.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4dd2ca3d24b9111785edb6ab5306e0ed20917939c2d720dcb7f44075019c798",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:34:50.174Z"
+}

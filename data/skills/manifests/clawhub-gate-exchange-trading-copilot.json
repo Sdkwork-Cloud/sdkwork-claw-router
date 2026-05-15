@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22734,
+  "uuid": "skill-clawhub-gate-exchange-trading-copilot",
+  "skillKey": "clawhub-gate-exchange-trading-copilot",
+  "name": "Gate Exchange Trading Copilot",
+  "summary": "Gate Trading Copilot L2. Use when the user wants to execute complex trades, margin borrowing, or query positions and open orders. Triggers on 'market buy', '...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gate_exchange_trading_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gate",
+      "features": [
+        "Gate Trading Copilot L2",
+        "Use when the user wants to execute complex trades, margin borrowing, or query positions and ope.",
+        "Triggers on 'market buy', '..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gate-exchange-trading-copilot@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33109813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gate-exchange-trading-copilot",
+      "url": "https://clawhub.ai/skills/gate-exchange-trading-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gate-exchange-trading-copilot",
+    "url": "https://clawhub.ai/skills/gate-exchange-trading-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gate-exchange-trading-copilot-819c0c8e18c3efcd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gate-exchange-trading-copilot@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-gate-exchange-trading-copilot-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:09fb64dfd34dcae00c1ee95a25eea6168526421dc271f5e9cd1db9ce23b5fec7",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:36:27.389Z"
+}

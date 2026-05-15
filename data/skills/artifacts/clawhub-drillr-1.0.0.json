@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drillr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drillr",
+  "skill": {
+    "id": 22135,
+    "skillKey": "clawhub-drillr",
+    "name": "drillr — Power Terminal for Deep Financial Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drillr",
+    "url": "https://clawhub.ai/skills/drillr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drillr-4201ccd42efb2aa3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Power terminal for deep financial research on US public equities — reason through investment theses, screen for ideas, map supply chains, do forensic account..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yx9966",
+      "userId": "s1734w2a4gfscd8b6r6syw82gs83q0cr",
+      "displayName": "yx9966",
+      "image": "https://avatars.githubusercontent.com/u/61489114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 11,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775806258468,
+      "changelog": "drillr-skill 1.0.0\n\n- Initial release with a safe, read-only research agent for deep financial analysis on US public equities.\n- Supports thesis-driven screening, supply chain mapping, forensic accounting, cross-company data tabulation, earnings call and SEC filing fact lookup, smart money tracking, financial modeling, and event-driven research in plain English.\n- Handles all US-listed public companies (NYSE, NASDAQ, OTC) via a single endpoint; strictly stateless with no local or persistent access.\n- Fully Python stdlib implementation — no third-party dependencies or credential handling required.\n- All responses are streamed as markdown; skill does not write files, spawn processes, or perform side effects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:943642659a2420b94e8bd7f8c381a443de9f922fe8e3b5d695350e02a335737e"
+}

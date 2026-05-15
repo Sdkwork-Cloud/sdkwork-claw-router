@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31461,
+  "uuid": "skill-clawhub-csv-deduper",
+  "skillKey": "clawhub-csv-deduper",
+  "name": "myskill",
+  "summary": "Remove duplicate rows from CSV files by key columns. Use when asked to deduplicate CSVs or keep unique records.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.csv_deduper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yibeiqingtian-ai",
+      "features": [
+        "Remove duplicate rows from CSV files by key columns",
+        "Use when asked to deduplicate CSVs or keep unique records."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/csv-deduper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237400549?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "csv-deduper",
+      "url": "https://clawhub.ai/skills/csv-deduper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "csv-deduper",
+    "url": "https://clawhub.ai/skills/csv-deduper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/csv-deduper-4a71b021f41e2f7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/csv-deduper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-csv-deduper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c239b0abc542aaa840b31a530ba1d72e4356582736137e173cb6ddc1507f02cb",
+      "artifactSizeBytes": 2011
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T00:24:11.642Z"
+}

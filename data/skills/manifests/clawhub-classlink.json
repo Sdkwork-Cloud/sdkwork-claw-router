@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35786,
+  "uuid": "skill-clawhub-classlink",
+  "skillKey": "clawhub-classlink",
+  "name": "Classlink",
+  "summary": "ClassLink integration. Manage data, records, and automate workflows. Use when the user wants to interact with ClassLink data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.classlink",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ClassLink integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with ClassLink data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/classlink@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "classlink",
+      "url": "https://clawhub.ai/skills/classlink"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "classlink",
+    "url": "https://clawhub.ai/skills/classlink",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/classlink-b95fd2aaddc7cf06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/classlink@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-classlink-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3620b4bf3a2935a64dac839d1bdce3b3bf589147a74cd351002829f3fbb8cc69",
+      "artifactSizeBytes": 1847
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:19.106Z"
+}

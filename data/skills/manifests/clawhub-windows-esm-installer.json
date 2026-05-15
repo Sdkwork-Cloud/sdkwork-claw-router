@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62501,
+  "uuid": "skill-clawhub-windows-esm-installer",
+  "skillKey": "clawhub-windows-esm-installer",
+  "name": "Windows Esm Installer",
+  "summary": "自动修复 Windows 安装路径错误，配置 npm 国内镜像源，检测依赖并生成一键安装脚本及安装报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.windows_esm_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rfdiosuao",
+      "features": [
+        "自动修复 Windows 安装路径错误，配置 npm 国内镜像源，检测依赖并生成一键安装脚本及安装报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/windows-esm-installer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190207982?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "windows-esm-installer",
+      "url": "https://clawhub.ai/skills/windows-esm-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "windows-esm-installer",
+    "url": "https://clawhub.ai/skills/windows-esm-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/windows-esm-installer-fae73467bd68e543.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/windows-esm-installer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-windows-esm-installer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edb3468b58e027cb6c02e42f311d113ed7e425d5a80c11bc8c121ee71b124020",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T16:05:18.848Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glitchward-shield@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glitchward_shield",
+  "skill": {
+    "id": 10155,
+    "skillKey": "clawhub-glitchward-shield",
+    "name": "Glitchward Shield"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glitchward-shield",
+    "url": "https://clawhub.ai/skills/glitchward-shield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glitchward-shield-b504d850c0f12516.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan prompts for prompt injection attacks before sending them to any LLM. Detect jailbreaks, data exfiltration, encoding bypass, multilingual attacks, and 25..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eyeskiller",
+      "userId": "publishers:eyeskiller",
+      "displayName": "3y3skill3r",
+      "image": "https://avatars.githubusercontent.com/u/5360190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2221,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 7,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771238454866,
+      "changelog": "- Renamed skill to \"glitchward-llm-shield\" and updated description for clarity.\n- Removed the internal implementation file (`llm-shield-skill.js`).\n- Simplified SKILL.md: shifted from detailed usage instructions and command documentation to concise API usage examples.\n- Updated setup and token configuration steps.\n- Clarified API endpoints for single and batch prompt validation.\n- Streamlined documentation to focus on integration pattern, attack categories, and when/how to use the skill.\n- Expanded coverage of detected attack types and use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f2647f2d3122f4566e132f28107bd12492261bdb9b48b9317f00af2d1a3813d8"
+}

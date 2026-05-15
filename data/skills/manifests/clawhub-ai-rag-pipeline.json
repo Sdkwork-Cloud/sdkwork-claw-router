@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13410,
+  "uuid": "skill-clawhub-ai-rag-pipeline",
+  "skillKey": "clawhub-ai-rag-pipeline",
+  "name": "Ai Rag Pipeline",
+  "summary": "Build RAG (Retrieval Augmented Generation) pipelines with web search and LLMs. Tools: Tavily Search, Exa Search, Exa Answer, Claude, GPT-4, Gemini via OpenRo...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_rag_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ömer Karışman",
+      "features": [
+        "Build RAG (Retrieval Augmented Generation) pipelines with web search and LLMs",
+        "Tools: Tavily Search, Exa Search, Exa Answer, Claude, GPT-4, Gemini via OpenRo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-rag-pipeline@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-rag-pipeline",
+      "url": "https://clawhub.ai/skills/ai-rag-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-rag-pipeline",
+    "url": "https://clawhub.ai/skills/ai-rag-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-rag-pipeline-47ad72ab6160d25a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-rag-pipeline@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-rag-pipeline-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0c7038a4c04caaabc6d7a1ef2d4b250ce50e3f134e58e6d579421b4024ac44e",
+      "artifactSizeBytes": 2362
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T08:23:52.049Z"
+}

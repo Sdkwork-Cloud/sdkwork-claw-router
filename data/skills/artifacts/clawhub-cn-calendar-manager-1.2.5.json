@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cn-calendar-manager@1.2.5",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_calendar_manager",
+  "skill": {
+    "id": 60532,
+    "skillKey": "clawhub-cn-calendar-manager",
+    "name": "日历事件生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-calendar-manager",
+    "url": "https://clawhub.ai/skills/cn-calendar-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-calendar-manager-2af8f4b22620fc73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calendar Manager skill. 自动生成，无人工审查。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "freedompixels",
+      "userId": "s17cmvaw2cy01v6y6fpq1h7yts84k0r0",
+      "displayName": "freedompixels",
+      "image": "https://avatars.githubusercontent.com/u/220853702?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.5",
+      "createdAt": 1777697235588,
+      "changelog": "- Added a metadata block with emoji to SKILL.md.\n- Updated the skill header with English name and a short auto-generation disclaimer.\n- No changes to functionality; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33130f6bb421b155b3d97e0872a3016ed335d69af24b7e0b8a6b4e6f5e497f6d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/newsscraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.newsscraper",
+  "skill": {
+    "id": 58277,
+    "skillKey": "clawhub-newsscraper",
+    "name": "news_scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "newsscraper",
+    "url": "https://clawhub.ai/skills/newsscraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/newsscraper-c59dbeb94a423b83.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when users need to scrape hot news topics from Chinese platforms (微博、知乎、B站、抖音、今日头条、腾讯新闻、澎湃新闻), generate summaries, and cite sources..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13923870749",
+      "userId": "s1779mywk4fa56gq40zgjj788s843cm3",
+      "displayName": "13923870749",
+      "image": "https://avatars.githubusercontent.com/u/216255967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774087165122,
+      "changelog": "Initial release: News Hot Scraper for Chinese platforms.\n\n- Added scripts for scraping (\"news_scraper.py\") and summarizing (\"news_summarizer.py\") hot news from platforms like 微博、知乎、B站、抖音、今日头条、腾讯新闻、澎湃新闻.\n- Supports both API-based and direct scraping approaches.\n- Provides extractive and abstractive summarization methods.\n- Summaries include source citation: title, platform, publish time, original URL.\n- Reference docs for platform scraping strategies and summarization methods included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16e1ce9a189519099f247f70a28f1458c0ac0e351bd44c2e275593751358b39f"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64131,
+  "uuid": "skill-clawhub-ai-market-report",
+  "skillKey": "clawhub-ai-market-report",
+  "name": "ai-market-report",
+  "summary": "AI 陪伴软件市场调研日报全自动生成。适用场景： - 用户说「生成AI陪伴软件类产品市场调研报告」「做一份 AI 陪伴软件日报」 - 用户说「调研 AI companion 市场」「生成 XX 产品的调研报告」 - 用户说「生成AI陪伴市场报告」且涉及 App Store 数据、MAU、营收、估值 - 用户要求「...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_market_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vae2024",
+      "features": [
+        "AI 陪伴软件市场调研日报全自动生成。适用场景：",
+        "用户说「生成AI陪伴软件类产品市场调研报告」「做一份 AI 陪伴软件日报」",
+        "用户说「调研 AI companion 市场」「生成 XX 产品的调研报告」",
+        "用户说「生成AI陪伴市场报告」且涉及 App Store 数据、MAU、营收、估值"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-market-report@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139425829?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-market-report",
+      "url": "https://clawhub.ai/skills/ai-market-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-market-report",
+    "url": "https://clawhub.ai/skills/ai-market-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-market-report-a7796239a777221c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-market-report@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-market-report-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5723f555807f2bdebd67f6c29f7062e532e75244729d1f64d9649d5fd58971c3",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:21:55.297Z"
+}

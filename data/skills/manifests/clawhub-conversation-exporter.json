@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61977,
+  "uuid": "skill-clawhub-conversation-exporter",
+  "skillKey": "clawhub-conversation-exporter",
+  "name": "conversation-exporter",
+  "summary": "对话历史导出工具 - 将 WorkBuddy 的对话历史导出为多种格式（JSON/Markdown/TXT），包含时间线、元数据、统计数据、成就里程碑和 Skills 使用记录，便于归档分析和分享",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conversation_exporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "oxf4vul",
+      "features": [
+        "对话历史导出工具",
+        "将 WorkBuddy 的对话历史导出为多种格式（JSON/Markdown/TXT），包含时间线、元数据、统计数据、成就里程碑和 Skills 使用记录，便于归档分析和分享"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/conversation-exporter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3114727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "conversation-exporter",
+      "url": "https://clawhub.ai/skills/conversation-exporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conversation-exporter",
+    "url": "https://clawhub.ai/skills/conversation-exporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conversation-exporter-038f5784373ebc65.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/conversation-exporter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-conversation-exporter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:78d0cd777225c93c4ac73f3416934f4ead79e5058824ce6aa42296bb8bc08646",
+      "artifactSizeBytes": 2381
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T21:36:16.680Z"
+}

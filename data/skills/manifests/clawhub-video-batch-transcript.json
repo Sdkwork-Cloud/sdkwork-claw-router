@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65440,
+  "uuid": "skill-clawhub-video-batch-transcript",
+  "skillKey": "clawhub-video-batch-transcript",
+  "name": "视频批量转录",
+  "summary": "通用视频批量转录工具 - 支持 1000+ 网站（B 站、YouTube、抖音、Twitch 等），使用 yt-dlp 批量下载视频音频，GPU 加速语音转文字（faster-whisper + CUDA），自动校正专业术语，生成结构化学习笔记。支持断点续传、批量导出、多格式输出、需要登录的网站配置。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_batch_transcript",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "通用视频批量转录工具",
+        "支持 1000+ 网站（B 站、YouTube、抖音、Twitch 等），使用 yt-dlp 批量下载视频音频，GPU 加速语音转文字（faster-whisper + CUDA），自动校正."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-batch-transcript@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-batch-transcript",
+      "url": "https://clawhub.ai/skills/video-batch-transcript"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-batch-transcript",
+    "url": "https://clawhub.ai/skills/video-batch-transcript",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-batch-transcript-66e83ade965824c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-batch-transcript@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-batch-transcript-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd2847bc568bab0b56cdb812582eed53399b90d8d3dd400a36cecad1422247ed",
+      "artifactSizeBytes": 2127
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T13:04:01.356Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38630,
+  "uuid": "skill-clawhub-bytesagain-code-reviewer-cn",
+  "skillKey": "clawhub-bytesagain-code-reviewer-cn",
+  "name": "Bytesagain Code Reviewer Cn",
+  "summary": "Review code files for bugs, security issues, and style problems. Use when auditing Python, JavaScript, Go, or Bash code, checking for injection risks, measur...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_code_reviewer_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loutai0307-prog",
+      "features": [
+        "Review code files for bugs, security issues, and style problems",
+        "Use when auditing Python, JavaScript, Go, or Bash code, checking for injection risks, measur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bytesagain-code-reviewer-cn@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266760463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bytesagain-code-reviewer-cn",
+      "url": "https://clawhub.ai/skills/bytesagain-code-reviewer-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-code-reviewer-cn",
+    "url": "https://clawhub.ai/skills/bytesagain-code-reviewer-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-code-reviewer-cn-6983d97a1fe59852.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bytesagain-code-reviewer-cn@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bytesagain-code-reviewer-cn-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d76c03cc1abe33780f18cd728dd1bd23faccdcb975a39290c4863f7cfbc10a0",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T05:19:33.496Z"
+}

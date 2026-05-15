@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_skill",
+  "skill": {
+    "id": 29784,
+    "skillKey": "clawhub-linkedin-skill",
+    "name": "LinkedIn Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-skill",
+    "url": "https://clawhub.ai/skills/linkedin-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-skill-cdf274ff7305c30f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LinkedIn automation skill — search people and companies, fetch profiles, send messages and InMails, manage connections, create posts, react, comment. Support..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vprudnikoff",
+      "userId": "s1709te2z8y7rctfqzq905smgd85vcfz",
+      "displayName": "Vlad Prudnikov",
+      "image": "https://avatars.githubusercontent.com/u/22860483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 846,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771951887691,
+      "changelog": "Initial release of the LinkedIn automation skill.\n\n- Automate LinkedIn actions via CLI: search people/companies, fetch profiles, send messages and InMails, manage connections, create posts, comment, and react.\n- Sales Navigator support included.\n- Flexible search and filter options for people, companies, and connections.\n- Cloud browser ensures real, non-instant interactions (actions may take 30 seconds to minutes).\n- Machine-readable JSON outputs and robust error reporting by exit codes.\n- Simple authentication required via Linked API tokens.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9edc6a98cf49e9131f1beffe4cd54259452f884f22bd1fe0c6140dff37bd0de4"
+}

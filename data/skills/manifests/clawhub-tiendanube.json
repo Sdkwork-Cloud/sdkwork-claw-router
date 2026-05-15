@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40747,
+  "uuid": "skill-clawhub-tiendanube",
+  "skillKey": "clawhub-tiendanube",
+  "name": "Tiendanube",
+  "summary": "Tiendanube (Nuvemshop) integration. Manage Recordses. Use when the user wants to interact with Tiendanube (Nuvemshop) data.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiendanube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tiendanube (Nuvemshop) integration",
+        "Manage Recordses",
+        "Use when the user wants to interact with Tiendanube (Nuvemshop) data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tiendanube@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tiendanube",
+      "url": "https://clawhub.ai/skills/tiendanube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiendanube",
+    "url": "https://clawhub.ai/skills/tiendanube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiendanube-c5dda15b49f7a5ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tiendanube@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tiendanube-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bd9ba1080a8b8e233c7457be81d47f408570e0f313c8955e561ee7acdaf5cfe",
+      "artifactSizeBytes": 1844
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:53:11.265Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-beike@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_beike",
+  "skill": {
+    "id": 29577,
+    "skillKey": "clawhub-justoneapi-beike",
+    "name": "Beike API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-beike",
+    "url": "https://clawhub.ai/skills/justoneapi-beike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-beike-e88fc1219e5d82a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Beike workflows with JustOneAPI, including resale Housing Details, resale Housing List, and community List."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 290,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776924415612,
+      "changelog": "- Updated generated/operations.json and generated/operations.md to reflect latest API details.\n- No changes to user-facing endpoints or core workflow.\n- Documentation remains unchanged except for possible updates from generated sources.\n- Internal operation reference and metadata refreshed to stay current with API specifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1b7724deacfdc372a54f5b90cc059c7aecb1b933fdcaf7d0cd850028b573164"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/used-market-watch@0.4.1",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.used_market_watch",
+  "skill": {
+    "id": 58839,
+    "skillKey": "clawhub-used-market-watch",
+    "name": "Used Market Watch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "used-market-watch",
+    "url": "https://clawhub.ai/skills/used-market-watch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/used-market-watch-a7331dbfc548e04b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, brief, and monitor Korean used-market listings across 당근마켓, 번개장터, and 중고나라. Use when the user wants 중고 매물 찾아줘, 당근/번장/중고나라 동시 검색, 아이폰/맥북 같은 물건의 신규 매물..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twbeatles",
+      "userId": "s177m68c4t241waawxzycwefcd83jmk7",
+      "displayName": "twbeatles",
+      "image": "https://avatars.githubusercontent.com/u/243789332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.4.1",
+      "createdAt": 1776348415991,
+      "changelog": "Improve natural-language query parsing and ignore local runtime artifacts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:552cd13c7011403da416619a8dbfd909c75bf2bfff113d62541e4780cc9a6f65"
+}

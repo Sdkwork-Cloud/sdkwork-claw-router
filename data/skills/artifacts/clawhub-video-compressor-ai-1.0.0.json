@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-compressor-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_compressor_ai",
+  "skill": {
+    "id": 42312,
+    "skillKey": "clawhub-video-compressor-ai",
+    "name": "Video Compressor Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-compressor-ai",
+    "url": "https://clawhub.ai/skills/video-compressor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-compressor-ai-dd58d2e834666983.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn bulky video files into lean, shareable assets without the quality loss that plagues traditional compression tools. video-compressor-ai analyzes your foo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775033801969,
+      "changelog": "Initial release of Video Compressor AI — advanced, content-aware video compression for creators and professionals.\n\n- Compresses video files using AI-driven optimization to preserve quality while reducing size.\n- Supports multiple formats including H.264, H.265/HEVC, AV1, VP9, and more.\n- Conversational interface adapts compression strategy to user-specified goals (target size, platform, quality).\n- Guides users through upload, compression, export, and credit management seamlessly.\n- Robust error handling for token, session, and file issues.\n- Free plan with 100 trial credits and support for anonymous users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:639ab0194b2746850bd4892995ebe2742ad7832f362d7bab8a7e36572d835075"
+}

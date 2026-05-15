@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-orchestration1@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_orchestration1",
+  "skill": {
+    "id": 45341,
+    "skillKey": "clawhub-agent-orchestration1",
+    "name": "agent-orchestration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-orchestration1",
+    "url": "https://clawhub.ai/skills/agent-orchestration1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-orchestration1-d6fe01c597abc21b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master the art of spawning and managing sub-agents. Write prompts that actually work, track running agents, and learn from every outcome. Part of the Hal Sta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abeltennyson",
+      "userId": "s174gfyzm9cmcv1mx6226h2s3584rfxt",
+      "displayName": "AbelTennyson",
+      "image": "https://avatars.githubusercontent.com/u/261241122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776042823142,
+      "changelog": "Major update with new systems, philosophy, and model-routing integration.\n\n- Reframed prompting from \"requests\" to robust, structured \"contracts\" with 5 critical layers: Identity, Context, Task, Process, Output.\n- Deeply expanded documentation with practical templates, rules, and failure analysis.\n- Integrated SkillBoss API Hub for dynamic model selection via `prefer` settings (quality, balanced, price).\n- Emphasized explicit constraints for reliable agent outcomes.\n- Stronger guidance for scalable agent spawning and managing sub-agent work.\n- New tone: direct, opinionated, and focused on real-world agent success.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c08d33ba2a621408cd8ae5de6b503266bed4b8f0d7651e7c7f77fb4ffdc7845"
+}

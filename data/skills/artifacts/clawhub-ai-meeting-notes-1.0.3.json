@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-meeting-notes@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_meeting_notes",
+  "skill": {
+    "id": 8565,
+    "skillKey": "clawhub-ai-meeting-notes",
+    "name": "AI Meeting Notes w/ Action Items + To-Do List Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-meeting-notes",
+    "url": "https://clawhub.ai/skills/ai-meeting-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-meeting-notes-27032f9e53ff467c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Messy notes → Clear action items. Instantly. Paste any meeting notes, transcript, or text. Get summaries, action items with owners and deadlines. Auto-saved, searchable, with integrated to-do tracking. No bot. No subscription. No setup."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffjhunter",
+      "userId": "s17fhgfbdhz4g6yqeha2egykyx83grhe",
+      "displayName": "Jeff J Hunter",
+      "image": "https://avatars.githubusercontent.com/u/252698242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9482,
+      "installsAllTime": 59,
+      "installsCurrent": 55,
+      "stars": 15,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770073179033,
+      "changelog": "Version 1.0.3\n\n- Major update to clarify and enforce the meeting extraction response format.\n- Added a \"CRITICAL: RESPONSE FORMAT\" section detailing that all meeting results, action items, filename, and add-to-to-do-list prompt must be presented in ONE single message.\n- Made numbered action items in chat and to-do prompt mandatory for all outputs.\n- Strict naming and file attachment requirements enforced (e.g., filenames must be date-first).\n- Listed explicit rules for what to always/never do to ensure clarity and reliability for users.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fce64ac7304981458f3ee5d0033f3acd2cc8573073616b86f5ee037efb5d739e"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45429,
+  "uuid": "skill-clawhub-upload-video",
+  "skillKey": "clawhub-upload-video",
+  "name": "Upload Video",
+  "summary": "edit video files into processed video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for uploading raw foot...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upload_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "edit video files into processed video files with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators use it for uploading raw foot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upload-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upload-video",
+      "url": "https://clawhub.ai/skills/upload-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upload-video",
+    "url": "https://clawhub.ai/skills/upload-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upload-video-fab8bee09645c97a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upload-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upload-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c33dc42f646f5a535b6bd4d475f2ffea732609d5e9b85ad4274c661f0f868b86",
+      "artifactSizeBytes": 2558
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:04:46.720Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62873,
+  "uuid": "skill-clawhub-trip-packer",
+  "skillKey": "clawhub-trip-packer",
+  "name": "trip-packer",
+  "summary": "帮助用户将旅行行程数据打包成独立的 HTML 地图网页。 引导用户完成行程规划、生成符合 Schema 的 JSON、调用 trip-packer CLI 构建产物，并在构建完成后将 HTML 结果呈现给用户。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_packer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ucasYToo",
+      "features": [
+        "帮助用户将旅行行程数据打包成独立的 HTML 地图网页。 引导用户完成行程规划、生成符合 Schema 的 JSON、调用 trip-packer CLI 构建产物，并在构建完成后将 HTM."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-packer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103411581?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-packer",
+      "url": "https://clawhub.ai/skills/trip-packer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-packer",
+    "url": "https://clawhub.ai/skills/trip-packer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-packer-aacc0e7988c3976d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-packer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-packer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec45559dfbe7a1697bc541b127e10e651bf12e330bc9ab9267051d79013ee36b",
+      "artifactSizeBytes": 2264
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T05:08:58.288Z"
+}

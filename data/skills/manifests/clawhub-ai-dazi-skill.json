@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68852,
+  "uuid": "skill-clawhub-ai-dazi-skill",
+  "skillKey": "clawhub-ai-dazi-skill",
+  "name": "AI搭子匹配平台",
+  "summary": "AI搭子匹配平台 - 智能用户画像与匹配系统。 基于用户主动提供的 AI 使用数据（token消耗、模型偏好、工具调用习惯等）， 生成多维用户画像，实现AI玩家间的智能匹配。 当用户提到\"搭子\"、\"匹配\"、\"用户画像\"、\"AI使用分析\"、\"token统计\"、 \"使用报告\"、\"玩家等级\"时触发此技能。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_dazi_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dory123456",
+      "features": [
+        "AI搭子匹配平台",
+        "智能用户画像与匹配系统。 基于用户主动提供的 AI 使用数据（token消耗、模型偏好、工具调用习惯等）， 生成多维用户画像，实现AI玩家间的智能匹配。 当用户提到\"搭子\"、\"匹配\"、\"用户."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-dazi-skill@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/205267691?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-dazi-skill",
+      "url": "https://clawhub.ai/skills/ai-dazi-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-dazi-skill",
+    "url": "https://clawhub.ai/skills/ai-dazi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-dazi-skill-35ca904c613f5802.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-dazi-skill@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-dazi-skill-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e236df6c250a274ebd4ceb944fe4504fd41e6e72e2ee20f5fe26ef3a2f161248",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T15:55:31.332Z"
+}

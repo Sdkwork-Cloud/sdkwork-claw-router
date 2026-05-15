@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41594,
+  "uuid": "skill-clawhub-geo-fix-schema",
+  "skillKey": "clawhub-geo-fix-schema",
+  "name": "Geo Fix Schema",
+  "summary": "Analyze a website's structured data and generate ready-to-use JSON-LD schema markup to improve AI discoverability. Use when the user asks to fix schema, add...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_fix_schema",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eugene Liu",
+      "features": [
+        "Analyze a website's structured data and generate ready-to-use JSON-LD schema markup to improve.",
+        "Use when the user asks to fix schema, add..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/geo-fix-schema@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11206822?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "geo-fix-schema",
+      "url": "https://clawhub.ai/skills/geo-fix-schema"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-fix-schema",
+    "url": "https://clawhub.ai/skills/geo-fix-schema",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-fix-schema-cac72f1c822f5321.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/geo-fix-schema@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-geo-fix-schema-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35889c26e177f0072828be208251acef40c945dad499530057ed7b7e4fe7603d",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T17:46:26.265Z"
+}

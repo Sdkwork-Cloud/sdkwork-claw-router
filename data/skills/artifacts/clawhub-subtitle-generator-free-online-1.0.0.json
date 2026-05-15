@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subtitle-generator-free-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subtitle_generator_free_online",
+  "skill": {
+    "id": 39676,
+    "skillKey": "clawhub-subtitle-generator-free-online",
+    "name": "Subtitle Generator Free Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subtitle-generator-free-online",
+    "url": "https://clawhub.ai/skills/subtitle-generator-free-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subtitle-generator-free-online-286c9b57445ddb1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776755196258,
+      "changelog": "Initial release — free automatic subtitle generation for videos via cloud processing.\n\n- Upload videos up to 500MB (MP4, MOV, AVI, WebM) and auto-generate subtitles in multiple languages.\n- Simple workflow: upload, specify desired subtitle languages, and download a 1080p MP4 with captions.\n- No local software required; all processing handled on secure cloud GPUs.\n- 100 free credits with quick setup; authentication via one-click anonymous token.\n- Supports preview, timeline editing, export control, and checking credit balance directly in chat.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d4d81ef85191923ac822677003a93bb6267d6fe361dbed91153ec9bb0471b476"
+}

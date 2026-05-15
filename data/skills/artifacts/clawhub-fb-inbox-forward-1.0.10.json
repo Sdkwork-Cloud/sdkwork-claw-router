@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fb-inbox-forward@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fb_inbox_forward",
+  "skill": {
+    "id": 50179,
+    "skillKey": "clawhub-fb-inbox-forward",
+    "name": "FB Inbox Forward"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fb-inbox-forward",
+    "url": "https://clawhub.ai/skills/fb-inbox-forward",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fb-inbox-forward-767914c9bf80f2b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Forward Facebook Page inbox messages to your OpenClaw channel in real time. Requires: powershell/pwsh + openclaw CLI. Reads ~/.config/fb-page/credentials.jso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seph1709",
+      "userId": "s173y99zb4sn7mgnw5ttzmgyc983jqrw",
+      "displayName": "seph",
+      "image": "https://avatars.githubusercontent.com/u/65636039?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1772355098908,
+      "changelog": "Improved description for discoverability",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:13bfc7098d1bd4d9d2220524b61c1ab57399df06f0aa1d635ef0ca47e8bfe772"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/srt@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.srt",
+  "skill": {
+    "id": 12421,
+    "skillKey": "clawhub-srt",
+    "name": "SRT"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "srt",
+    "url": "https://clawhub.ai/skills/srt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/srt-3763ca091d9c265b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Korean SRT (Super Rapid Train) search, reservation, and booking management"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "khj809",
+      "userId": "s174pdvs14war16p83z8wekpf583pp3j",
+      "displayName": "Haejoon Kim",
+      "image": "https://avatars.githubusercontent.com/u/19548266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1597,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771687682899,
+      "changelog": "Fix cron delivery for isolated sessions\n  - Replace `--announce` delivery with `--no-deliver` + explicit `message` tool call\n  - Avoids `gateway closed (1008): pairing required` error in isolated cron sessions\n  - Update SKILL.md Step 3/4 with CLI-based cron examples and delivery guidance",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c921a2cde4d6e7b5571c089fea92e58165ce5f58b5a45ec7ea9fa30b7036e07b"
+}

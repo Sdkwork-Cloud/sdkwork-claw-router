@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9903,
+  "uuid": "skill-clawhub-finance-tracker",
+  "skillKey": "clawhub-finance-tracker",
+  "name": "Finance Tracker",
+  "summary": "Track personal expenses with natural language. Log spending, view reports, search transactions. Works with any AI model.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finance_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Salen-Project",
+      "features": [
+        "Track personal expenses with natural language",
+        "Log spending, view reports, search transactions",
+        "Works with any AI model."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finance-tracker@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111636960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finance-tracker",
+      "url": "https://clawhub.ai/skills/finance-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finance-tracker",
+    "url": "https://clawhub.ai/skills/finance-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finance-tracker-594fa998088a647a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finance-tracker@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finance-tracker-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d515f184e471ab3a7daa8894a030a076e34c2db2eeecdb07bbe7d19048fb5c0c",
+      "artifactSizeBytes": 2419
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T05:52:59.589Z"
+}

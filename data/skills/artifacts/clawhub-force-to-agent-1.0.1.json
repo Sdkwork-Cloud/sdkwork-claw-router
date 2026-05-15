@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/force-to-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.force_to_agent",
+  "skill": {
+    "id": 55467,
+    "skillKey": "clawhub-force-to-agent",
+    "name": "Force To Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "force-to-agent",
+    "url": "https://clawhub.ai/skills/force-to-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/force-to-agent-e4a88e6ba54f73f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract AGENTS.md, SOUL.md, TOOLS.md, and an optional openclaw.json patch from pasted custom-GPT markdown, then create a new workspace-<agent> folder and wri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nga-khan",
+      "userId": "s17emfad6pmat2qyzep33hbt9n84041k",
+      "displayName": "nga-khan",
+      "image": "https://avatars.githubusercontent.com/u/221724622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776767481624,
+      "changelog": "**Now creates a separate workspace folder for imported agents instead of overwriting the main workspace.**\n\n- Extracts AGENTS.md, SOUL.md, TOOLS.md, and optional openclaw.json patch from pasted markdown.\n- Creates a new workspace-<agent> folder for the files, preserving the current main workspace.\n- Avoids overwriting any existing workspaces by generating unique folder names when needed.\n- openclaw.json patches only apply within the new workspace, and only if explicitly requested.\n- Reports only short results and new paths after completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bc1586d98318078fcb9ae9f14f4eaa9004357014286bc11407e93267866be7f"
+}

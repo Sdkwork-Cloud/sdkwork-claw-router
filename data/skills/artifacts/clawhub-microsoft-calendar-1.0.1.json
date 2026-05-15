@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/microsoft-calendar@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.microsoft_calendar",
+  "skill": {
+    "id": 35169,
+    "skillKey": "clawhub-microsoft-calendar",
+    "name": "Secure Outlook Calendar & Microsoft 365 integration CLI (with outlook data firewall)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "microsoft-calendar",
+    "url": "https://clawhub.ai/skills/microsoft-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/microsoft-calendar-2c3a223a8602f2b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure Outlook Calendar / Microsoft 365 calendar API CLI. Use when the user wants to list, search, or read Outlook / Microsoft 365 calendar events; creating,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "porteden",
+      "userId": "s17bsdgb41z4bpwzdr5zqz5pah83xy13",
+      "displayName": "PortEden",
+      "image": "https://avatars.githubusercontent.com/u/258120807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777665320868,
+      "changelog": "- Added explicit mention of Exchange support to the skill description.\n- No functionality changes; documentation now clarifies compatibility with Exchange in addition to Outlook and Microsoft 365 calendars.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc5f540da2be5c21521a942741f22faa6b6b9c1d0fc93cb022f5b75a08a0746c"
+}

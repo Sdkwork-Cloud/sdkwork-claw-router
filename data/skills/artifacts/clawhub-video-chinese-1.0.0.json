@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-chinese@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_chinese",
+  "skill": {
+    "id": 48030,
+    "skillKey": "clawhub-video-chinese",
+    "name": "Video Chinese"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-chinese",
+    "url": "https://clawhub.ai/skills/video-chinese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-chinese-2a6140ec7db48e94.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get Chinese-captioned videos ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777309829730,
+      "changelog": "Video Chinese 1.0.0 — Initial Release\n\n- Instantly adds accurate Chinese subtitles to uploaded videos (up to 500MB, MP4/MOV/AVI/WebM).\n- Seamless workflow: upload video, request Chinese captions, and download 1080p MP4 output.\n- Built-in cloud GPU rendering completes typical jobs in 1–2 minutes.\n- Automatic session, user auth, and credit management — no manual setup needed.\n- Supports checking job status, export/download, and balance via simple chat prompts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a0b7a3341ebe8b1c88d78cd309d2d9f92e09c7ba8332df05069977578c71e4a6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cyber-luban-diary@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cyber_luban_diary",
+  "skill": {
+    "id": 57634,
+    "skillKey": "clawhub-cyber-luban-diary",
+    "name": "赛博鲁班日记"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cyber-luban-diary",
+    "url": "https://clawhub.ai/skills/cyber-luban-diary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cyber-luban-diary-e04b2cb558a2f6e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI diary service - push diary entries, query diaries, get AI analysis and cover images via HTTP API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengye607",
+      "userId": "publishers:fengye607",
+      "displayName": "fengye607",
+      "image": "https://avatars.githubusercontent.com/u/11850444?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 335,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1772861443438,
+      "changelog": "Setup 简化为直接链接授权，不再需要 curl 获取 auth URL",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b77cb0338a6c1ad02e326e720adbb573f87e13d13c565cc2ec3d0b2ebef74073"
+}

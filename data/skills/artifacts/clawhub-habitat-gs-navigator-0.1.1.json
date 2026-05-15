@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/habitat-gs-navigator@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habitat_gs_navigator",
+  "skill": {
+    "id": 27394,
+    "skillKey": "clawhub-habitat-gs-navigator",
+    "name": "Habitat-GS-Navigator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habitat-gs-navigator",
+    "url": "https://clawhub.ai/skills/habitat-gs-navigator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habitat-gs-navigator-3d5a0cf9f3e162df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Navigate and interact with photo-realistic 3DGS environments via the Habitat-GS Bridge. Use when: user asks to explore a 3D scene, perform embodied navigatio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "the0xka1",
+      "userId": "publishers:the0xka1",
+      "displayName": "The0xKa1",
+      "image": "https://avatars.githubusercontent.com/u/149930049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773850497812,
+      "changelog": "- Updated installation instructions to use a git clone and editable pip install instead of pip for latest habitat-gs-bridge.\n- No functional or API changes to skill usage or commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23e3ea9029e1740c3810df1eddc7bee427d2e075007d950b5642d53bf3b2c1d2"
+}

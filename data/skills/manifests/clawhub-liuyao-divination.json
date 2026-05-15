@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72569,
+  "uuid": "skill-clawhub-liuyao-divination",
+  "skillKey": "clawhub-liuyao-divination",
+  "name": "六爻预测",
+  "summary": "提供专业六爻预测功能，进行中国传统易学占卜。支持起卦、排盘、纳甲、寻世应、定六亲、配六神及吉凶判断。使用此 skill 可以获得完整的六爻卦象，包含本卦、变卦、世爻应爻、六亲、六神、空亡信息和吉凶预测。触发词：六爻预测、六爻占卜、起卦、排盘、/liuyao",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liuyao_divination",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QiChen",
+      "features": [
+        "提供专业六爻预测功能，进行中国传统易学占卜。支持起卦、排盘、纳甲、寻世应、定六亲、配六神及吉凶判断。使用此 skill 可以获得完整的六爻卦象，包含本卦、变卦、世爻应爻、六亲、六神、空亡信息."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liuyao-divination@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52741374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liuyao-divination",
+      "url": "https://clawhub.ai/skills/liuyao-divination"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liuyao-divination",
+    "url": "https://clawhub.ai/skills/liuyao-divination",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liuyao-divination-cec89ae089bf64e4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liuyao-divination@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-liuyao-divination-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8776439f39c751c45dbf11605005ac909cf0f0946e2052c2712e0edc0b4dd096",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:37:40.767Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/keap@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keap",
+  "skill": {
+    "id": 9375,
+    "skillKey": "clawhub-keap",
+    "name": "Keap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keap",
+    "url": "https://clawhub.ai/skills/keap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keap-4e9dadda705e3f73.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Keap API integration with managed OAuth. Manage contacts, companies, tags, tasks, orders, opportunities, and campaigns for CRM and marketing automation. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3870,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777590898176,
+      "changelog": "- Updated all Keap API and connection management endpoints to use the new https://api.maton.ai base domain (was https://gateway.maton.ai and https://ctrl.maton.ai).\n- Security and permissions information added: all write operations now require explicit user approval and confirmation of target resource.\n- Improved instructions for selecting the specific Keap account connection, and clarified required headers.\n- LICENSE.txt file removed.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5e79a5b7409151d47e81f95ec4fadd2ceef738139b364c00668d2b254b754331"
+}

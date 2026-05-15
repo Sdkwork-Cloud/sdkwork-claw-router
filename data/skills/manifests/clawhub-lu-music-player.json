@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23551,
+  "uuid": "skill-clawhub-lu-music-player",
+  "skillKey": "clawhub-lu-music-player",
+  "name": "Lu Music Player",
+  "summary": "Manage and control Mopidy music service on NAS including playback, volume, playlist viewing, and local music scanning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lu_music_player",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jesson1222-ship-it",
+      "features": [
+        "Manage and control Mopidy music service on NAS including playback, volume, playlist viewing, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lu-music-player@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/250683018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lu-music-player",
+      "url": "https://clawhub.ai/skills/lu-music-player"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lu-music-player",
+    "url": "https://clawhub.ai/skills/lu-music-player",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lu-music-player-39eba2028bdd6670.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lu-music-player@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lu-music-player-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:650212477cb7a82c6fd8b0d051646b3c84e5db6113a5392f03105ee6cf6774f3",
+      "artifactSizeBytes": 2060
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T17:09:35.552Z"
+}

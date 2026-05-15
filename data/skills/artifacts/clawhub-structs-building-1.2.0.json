@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/structs-building@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.structs_building",
+  "skill": {
+    "id": 19486,
+    "skillKey": "clawhub-structs-building",
+    "name": "Structs Building"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "structs-building",
+    "url": "https://clawhub.ai/skills/structs-building",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/structs-building-1a578f57c6d39ba9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Builds and manages structures in Structs. Handles construction, activation, deactivation, movement, defense positioning, stealth, and generator infusion. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abstrct",
+      "userId": "s17cc5kakaxpzqm7102vd7gsax83srkw",
+      "displayName": "Josh McDougall",
+      "image": "https://avatars.githubusercontent.com/u/196776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774840345042,
+      "changelog": "structstestnet-111 compatible, synced with upstream",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f260de74593389093f3edeef966771d5ec7f8522a663bbbedf79f1f26055fef1"
+}

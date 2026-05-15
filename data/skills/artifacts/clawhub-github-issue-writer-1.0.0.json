@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/github-issue-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_issue_writer",
+  "skill": {
+    "id": 30860,
+    "skillKey": "clawhub-github-issue-writer",
+    "name": "GithubIssue"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-issue-writer",
+    "url": "https://clawhub.ai/skills/github-issue-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-issue-writer-4fc5238fc9b5c6f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate structured GitHub issue cards for the WeBuddhist team. Use this when a backend dev needs to document a new or changed endpoint, or when a frontend/a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tech-lo",
+      "userId": "publishers:tech-lo",
+      "displayName": "Tech-lo",
+      "image": "https://avatars.githubusercontent.com/u/94886097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773920608816,
+      "changelog": "Initial release of issue-card-writer for the WeBuddhist team\n\n- Generates structured GitHub issue cards for documenting API endpoints (new, changed, or bugfixes).\n- Accepts OpenAPI/Swagger specs, natural language, inline details, or existing issues to extract endpoint info.\n- Outputs formatted markdown cards tailored for backend, frontend, or app integration needs.\n- Guides user through repo and project selection before creating/linking issues; never auto-creates.\n- Card template ensures consistent, scannable documentation with clear endpoint, request/response, codes, and notes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2753c1ca7633d8862ce51c747dd1e3156dee28619f402654112d9615ef5e0b6"
+}

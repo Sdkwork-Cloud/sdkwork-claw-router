@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/business-blueprint-skill@0.11.1",
+  "version": "0.11.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.business_blueprint_skill",
+  "skill": {
+    "id": 36649,
+    "skillKey": "clawhub-business-blueprint-skill",
+    "name": "Business Blueprint Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "business-blueprint-skill",
+    "url": "https://clawhub.ai/skills/business-blueprint-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/business-blueprint-skill-38ca369e44ebafb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when turning presales requirements, meeting notes, or solution materials into editable business capability blueprints, swimlane flows, and application ar..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaisersong",
+      "userId": "s17e36cy6y9drqxrb49xdqh05d83hqde",
+      "displayName": "Kaiser",
+      "image": "https://avatars.githubusercontent.com/u/4091099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.11.1",
+      "createdAt": 1776878016719,
+      "changelog": "Patch release for poster light theme readability. This update replaces reused dark-palette accents in light-mode poster exports with muted, theme-specific layer fills and badge colors, and adds regression coverage to keep light poster output clean.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6583da47a71d0be0d14745c20f9e4b51e0b70a1c4bc7a7f84a613ad6c7803ce7"
+}

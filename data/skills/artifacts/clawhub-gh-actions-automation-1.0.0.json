@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-actions-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_actions_automation",
+  "skill": {
+    "id": 39746,
+    "skillKey": "clawhub-gh-actions-automation",
+    "name": "Gh Actions Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-actions-automation",
+    "url": "https://clawhub.ai/skills/gh-actions-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-actions-automation-d9cf9ff5645affde.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GitHub Actions workflow generator. Creates CI/CD pipelines for Node.js, Python, Docker. Triggers: github actions, ci cd, workflow, automate build, github ci."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776931883797,
+      "changelog": "Initial release of GitHub Actions workflow generator.\n\n- Generates CI/CD pipelines for Node.js, Python, and Docker projects\n- Automatically detects project type to suggest relevant workflow\n- Provides templates for common workflows (install, test, build)\n- Supports typical triggers: push, pull_request\n- Shares best practices for GitHub Actions setup",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88422490b0173b375af90436d9a2cd0b10608cedf64cf791c5d3a1eb2b70fb6a"
+}

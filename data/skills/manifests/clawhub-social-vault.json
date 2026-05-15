@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58576,
+  "uuid": "skill-clawhub-social-vault",
+  "skillKey": "clawhub-social-vault",
+  "name": "SocialVault",
+  "summary": "社交平台账号凭证管理器。提供登录态获取、AES-256-GCM 加密存储、定时健康监测和自动续期。Use when managing social media account credentials, importing cookies, checking login status, or automating...",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_vault",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LIU",
+      "features": [
+        "社交平台账号凭证管理器。提供登录态获取、AES-256-GCM 加密存储、定时健康监测和自动续期。Use when managing social media account credent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-vault@0.1.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47735347?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-vault",
+      "url": "https://clawhub.ai/skills/social-vault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-vault",
+    "url": "https://clawhub.ai/skills/social-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-vault-d0420933f85935a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-vault@0.1.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-vault-0.1.7.json",
+      "version": "0.1.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:621257a8e2e61fcb412c1ee10daa39e9c38b38a5bc050538d1bf1ecacbb75c9c",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T07:10:00.179Z"
+}

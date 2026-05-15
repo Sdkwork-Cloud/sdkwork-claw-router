@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43211,
+  "uuid": "skill-clawhub-amazon-analysis",
+  "skillKey": "clawhub-amazon-analysis",
+  "name": "Amazon Analysis",
+  "summary": "Amazon seller data analysis tool. Features: market research, product selection, competitor analysis, ASIN evaluation, pricing reference, category research. U...",
+  "version": "1.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apiclaw",
+      "features": [
+        "Amazon seller data analysis tool",
+        "Features: market research, product selection, competitor analysis, ASIN evaluation, pricing ref."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-analysis@1.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268545826?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-analysis",
+      "url": "https://clawhub.ai/skills/amazon-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-analysis",
+    "url": "https://clawhub.ai/skills/amazon-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-analysis-c60aed4b829b1f03.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-analysis@1.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-analysis-1.1.5.json",
+      "version": "1.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfcbf3f7987556f99fb5052ddd17cbaedb3d89ccb181babfd57480b12ca40950",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T12:39:32.060Z"
+}

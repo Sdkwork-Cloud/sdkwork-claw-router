@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-img-gen@2.6.0",
+  "version": "2.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_img_gen",
+  "skill": {
+    "id": 62072,
+    "skillKey": "clawhub-ecommerce-img-gen",
+    "name": "跨境电商图片生成工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-img-gen",
+    "url": "https://clawhub.ai/skills/ecommerce-img-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-img-gen-9064b51d393964c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "跨境电商图片生成工具。根据产品图生成各平台（Amazon / Shopee / TikTok Shop / Lazada / AliExpress / Temu / SHEIN）主图、详情页长图、生活场景图。内置6种视觉风格路由、6层合规审查（意图/品牌/版权/文化/平台/授权）。支持模型切换：nano-bana..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "howtimeschange",
+      "userId": "s17fsnn40zhtsgs7gr1xc9mk8d847ypz",
+      "displayName": "howtimeschange",
+      "image": "https://avatars.githubusercontent.com/u/4083536?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "2.6.0",
+      "createdAt": 1775306696367,
+      "changelog": "技能标题改为「跨境电商图片生成工具」",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf2ebd6c090fbe186ec5190a0315880bfdc25756ed42eff7a249f0cb73cf13f7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-orchestrate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_orchestrate",
+  "skill": {
+    "id": 18040,
+    "skillKey": "clawhub-agent-orchestrate",
+    "name": "Agent Orchestrate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-orchestrate",
+    "url": "https://clawhub.ai/skills/agent-orchestrate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-orchestrate-589d414fa2e98fd9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-agent orchestration patterns for OpenClaw. Quick reference for spawning sub-agents, parallel work, and basic coordination. Use when: simple parallel ta..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moltenbot000",
+      "userId": "s17f11azj37wbyd16gcab6gks583q6p3",
+      "displayName": "Molten Bot 000",
+      "image": "https://avatars.githubusercontent.com/u/260473928?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 723,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771688601395,
+      "changelog": "Initial release: Quick reference for multi-agent orchestration patterns in OpenClaw",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:716ffb8c71ddf5c310229447e7df7bcd00f43b54ec75e9a674811a543b5c2a6e"
+}

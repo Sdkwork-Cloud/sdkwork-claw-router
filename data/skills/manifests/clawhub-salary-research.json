@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62786,
+  "uuid": "skill-clawhub-salary-research",
+  "skillKey": "clawhub-salary-research",
+  "name": "Salary Research",
+  "summary": "薪酬调研助手 - 查询岗位薪酬数据并生成分析报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.salary_research",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wanwan2qq",
+      "features": [
+        "查询岗位薪酬数据并生成分析报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/salary-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10196216?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "salary-research",
+      "url": "https://clawhub.ai/skills/salary-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "salary-research",
+    "url": "https://clawhub.ai/skills/salary-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/salary-research-fd91c0da3a3ae746.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/salary-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-salary-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:396e09e0b0dcab834c7f9c6b55a4550441134564d34e2e69cad83dbdd0265d68",
+      "artifactSizeBytes": 2203
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T04:49:14.991Z"
+}

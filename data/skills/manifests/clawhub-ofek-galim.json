@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29583,
+  "uuid": "skill-clawhub-ofek-galim",
+  "skillKey": "clawhub-ofek-galim",
+  "name": "Ofek Galim",
+  "summary": "Check, monitor, and summarize student homework/tasks from Webtop (SmartSchool), Galim Pro, and Ofek. Use when the user asks to inspect homework, pending task...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ofek_galim",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shaike1",
+      "features": [
+        "Check, monitor, and summarize student homework/tasks from Webtop (SmartSchool), Galim Pro, and.",
+        "Use when the user asks to inspect homework, pending task..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ofek-galim@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72298764?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ofek-galim",
+      "url": "https://clawhub.ai/skills/ofek-galim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ofek-galim",
+    "url": "https://clawhub.ai/skills/ofek-galim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ofek-galim-979cddaf9e58bba4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ofek-galim@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ofek-galim-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b157dc0433ac851035283515f7fe38cb3162cf2096c6f4b53ea12aa97530dc3a",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T10:28:01.614Z"
+}

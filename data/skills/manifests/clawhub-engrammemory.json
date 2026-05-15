@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33212,
+  "uuid": "skill-clawhub-engrammemory",
+  "skillKey": "clawhub-engrammemory",
+  "name": "Engram Memory",
+  "summary": "Persistent semantic memory for AI agents. Store, search, recall, and forget memories across sessions using Qdrant + FastEmbed.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.engrammemory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "engram",
+      "features": [
+        "Persistent semantic memory for AI agents",
+        "Store, search, recall, and forget memories across sessions using Qdrant + FastEmbed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/engrammemory@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124651282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "engrammemory",
+      "url": "https://clawhub.ai/skills/engrammemory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "engrammemory",
+    "url": "https://clawhub.ai/skills/engrammemory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/engrammemory-18ef83742beb15f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/engrammemory@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-engrammemory-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed3624a34863008ed5e4f1244776bc8478e9fa3d7b6fc8ce4f03a4cf0838af26",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T22:15:04.648Z"
+}

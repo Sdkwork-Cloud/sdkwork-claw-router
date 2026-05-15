@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30967,
+  "uuid": "skill-clawhub-agent-brainstorm",
+  "skillKey": "clawhub-agent-brainstorm",
+  "name": "Agent Brainstorm",
+  "summary": "Agent coordination meeting to brainstorm ideas, review tasks, and plan work. Use for the 4-hour subagent sync meetings.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_brainstorm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "motox1",
+      "features": [
+        "Agent coordination meeting to brainstorm ideas, review tasks, and plan work",
+        "Use for the 4-hour subagent sync meetings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-brainstorm@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46332330?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-brainstorm",
+      "url": "https://clawhub.ai/skills/agent-brainstorm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-brainstorm",
+    "url": "https://clawhub.ai/skills/agent-brainstorm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-brainstorm-52d0e3e2127eb094.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-brainstorm@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-brainstorm-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50f1169e32b5d1403d21b4b612954390c72efcd7e1364c87c67121b35b4419d2",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:44:56.573Z"
+}

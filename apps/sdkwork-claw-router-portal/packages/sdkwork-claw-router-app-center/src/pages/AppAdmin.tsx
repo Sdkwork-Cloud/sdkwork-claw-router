@@ -57,10 +57,10 @@ export function AppAdmin() {
   const adminAppQuery = useMemo(() => {
     const normalizedKeyword = keyword.trim();
     return {
-      keyword: normalizedKeyword,
+      searchQuery: normalizedKeyword,
       status: status || undefined,
       marketStatus: marketStatus || undefined,
-      pageNo: 1,
+      page: 1,
       pageSize: 100,
     };
   }, [keyword, marketStatus, status]);

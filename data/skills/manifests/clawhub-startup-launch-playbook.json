@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34256,
+  "uuid": "skill-clawhub-startup-launch-playbook",
+  "skillKey": "clawhub-startup-launch-playbook",
+  "name": "Startup Launch Playbook",
+  "summary": "This skill redirects to [Gingiris Launch Playbook](https://github.com/Gingiris/gingiris-launch)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_launch_playbook",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gingiris",
+      "features": [
+        "This skill redirects to [Gingiris Launch Playbook](https://github.com/Gingiris/gingiris-launch)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/startup-launch-playbook@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260675847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "startup-launch-playbook",
+      "url": "https://clawhub.ai/skills/startup-launch-playbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-launch-playbook",
+    "url": "https://clawhub.ai/skills/startup-launch-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-launch-playbook-01d96392ef16e9fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/startup-launch-playbook@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-startup-launch-playbook-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ce0e7e0f446951901e6f8bdc31464be657fc019fa42700853460fb8a6ab6ffa",
+      "artifactSizeBytes": 1899
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T19:01:01.443Z"
+}

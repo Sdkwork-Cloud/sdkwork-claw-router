@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64930,
+  "uuid": "skill-clawhub-v19-causal-auditor",
+  "skillKey": "clawhub-v19-causal-auditor",
+  "name": "V19 Causal Auditor",
+  "summary": "V19因果审计器 — 自动分析决策链路，识别因果冲突，输出审计建议。源自V19早期迭代版本（V46因果审计器），重新封装为独立Skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v19_causal_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Liuyanfeng1234",
+      "features": [
+        "V19因果审计器 — 自动分析决策链路，识别因果冲突，输出审计建议。源自V19早期迭代版本（V46因果审计器），重新封装为独立Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/v19-causal-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263910752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "v19-causal-auditor",
+      "url": "https://clawhub.ai/skills/v19-causal-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v19-causal-auditor",
+    "url": "https://clawhub.ai/skills/v19-causal-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v19-causal-auditor-a32eea273cea5868.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/v19-causal-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-v19-causal-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec6a9976ba1413c763afe6238c29be7eb78f85666ca006e2ddab0f099f2a4681",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T10:44:00.249Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anyway-traces@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anyway_traces",
+  "skill": {
+    "id": 28827,
+    "skillKey": "clawhub-anyway-traces",
+    "name": "Anyway Traces"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anyway-traces",
+    "url": "https://clawhub.ai/skills/anyway-traces",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anyway-traces-9548fa33b4368237.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adds observability and tracing to AI/LLM applications using the Anyway SDK for monitoring calls to providers like OpenAI and Anthropic."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeremy-any",
+      "userId": "publishers:jeremy-any",
+      "displayName": "jeremy-any",
+      "image": "https://avatars.githubusercontent.com/u/227149577?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 316,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773886509880,
+      "changelog": "Initial release: Introduces the Anyway Traces skill for AI coding agents.\n\n- Provides a skill file for instrumenting AI/LLM applications with Anyway's observability SDK.\n- Supports both Python and JavaScript (Node.js) SDKs.\n- Links to complete and topic-specific documentation for installation, configuration, and tracing.\n- Includes essential usage rules and best practices for integrating the SDK.\n- Enables agents to add tracing, workflow spans, or monitoring to apps using major LLM providers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c528e56415b096d3f0fccbbce64ff3a5740ad7c6e87f76c48160e8296e297cea"
+}

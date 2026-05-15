@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mingdao@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mingdao",
+  "skill": {
+    "id": 68362,
+    "skillKey": "clawhub-mingdao",
+    "name": "Mingdao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mingdao",
+    "url": "https://clawhub.ai/skills/mingdao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mingdao-532adcf858f14145.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "明道云低代码助手，精通应用搭建、工作流、数据管理、开放API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangifonly",
+      "userId": "publishers:zhangifonly",
+      "displayName": "zhangifonly",
+      "image": "https://avatars.githubusercontent.com/u/121886591?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 423,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773653057958,
+      "changelog": "- Added a new section on custom pages, including key components and page design patterns.\n- Expanded the Open API documentation with Python client examples and detailed filter syntax.\n- Introduced a \"Usage Scenarios\" section to highlight best use cases (CRM, project management, etc.).\n- Provided best practice guidelines for worksheet design, workflow design, and permission management.\n- Improved overall structure for easier navigation and more comprehensive platform coverage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b7149c8046dea18e77bf02ca0177ed1c8a6d1b9c0f9b935b4047e386385854a4"
+}

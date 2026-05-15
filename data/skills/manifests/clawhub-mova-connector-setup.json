@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35713,
+  "uuid": "skill-clawhub-mova-connector-setup",
+  "skillKey": "clawhub-mova-connector-setup",
+  "name": "Mova Connector Setup",
+  "summary": "Help the user connect their real business systems (ERP, CRM, AML, market data, etc.) to MOVA by registering custom connector endpoints. Trigger when the user...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_connector_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergii Miasoiedov",
+      "features": [
+        "Help the user connect their real business systems (ERP, CRM, AML, market data, etc.) to MOVA by.",
+        "Trigger when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mova-connector-setup@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258828376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mova-connector-setup",
+      "url": "https://clawhub.ai/skills/mova-connector-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-connector-setup",
+    "url": "https://clawhub.ai/skills/mova-connector-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-connector-setup-998f8154eaf92d08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mova-connector-setup@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mova-connector-setup-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eb26fcd8ad516e91714289ffb9a37d8ed3909610d223baf235a0392e91c4fc8",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:51:16.762Z"
+}

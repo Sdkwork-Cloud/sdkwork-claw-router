@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stocks@4.2.0",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stocks",
+  "skill": {
+    "id": 10646,
+    "skillKey": "clawhub-stocks",
+    "name": "Stocks and Financial Data Pull"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stocks",
+    "url": "https://clawhub.ai/skills/stocks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stocks-1ef8f25405f82682.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stock and Crypto Data information pull skill. 56+ financial data tools via Yahoo Finance. Auto-routes stock prices, fundamentals, earnings, dividends, option..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lkcair",
+      "userId": "s17dc29qb7h6rm492183de2gx585sqtw",
+      "displayName": "lkcair",
+      "image": "https://avatars.githubusercontent.com/u/53916882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2279,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 34
+    },
+    "latestVersion": {
+      "version": "4.2.0",
+      "createdAt": 1777495128959,
+      "changelog": "- Removed the REFERENCES.md file, streamlining skill documentation.\n- No changes to user-facing features or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:caa8eabc4120d70882e7e846fff908d50ccbf5031558a5017e14b30c1dd95c25"
+}

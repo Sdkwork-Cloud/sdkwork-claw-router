@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40664,
+  "uuid": "skill-clawhub-claude-code-batch-migration-orchestrator",
+  "skillKey": "clawhub-claude-code-batch-migration-orchestrator",
+  "name": "Batch Migration Orchestrator",
+  "summary": "Use when the user wants a large, mechanical change split into many independent units and executed in parallel with isolated workers and PRs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_batch_migration_orchestrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wimi321",
+      "features": [
+        "Use when the user wants a large, mechanical change split into many independent units and execut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-batch-migration-orchestrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34830250?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-batch-migration-orchestrator",
+      "url": "https://clawhub.ai/skills/claude-code-batch-migration-orchestrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-batch-migration-orchestrator",
+    "url": "https://clawhub.ai/skills/claude-code-batch-migration-orchestrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-batch-migration-orchestrator-5b2e8af9921fa80c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-batch-migration-orchestrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-batch-migration-orchestrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ab9d257b9eb1e1b4cb4b038bf3210cf2386fe9bc7c24a541c2847e2d24c8e71",
+      "artifactSizeBytes": 2066
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T16:17:27.866Z"
+}

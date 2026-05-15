@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/home-organizer@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.home_organizer",
+  "skill": {
+    "id": 60669,
+    "skillKey": "clawhub-home-organizer",
+    "name": "Home Organizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "home-organizer",
+    "url": "https://clawhub.ai/skills/home-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/home-organizer-135f8767109983ee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "家居收纳整理。断舍离、收纳方案、空间规划、季节整理、搬家清单、极简生活。Home organization with decluttering, storage. 收纳、整理、断舍离。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 444,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773773861190,
+      "changelog": "v2.5 standard: Use-when desc, homepage, source, security fix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50b567dbb5cbbea42ffadfe526d6a51680d68603a93f3f94e261ef59090a8495"
+}

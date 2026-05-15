@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42286,
+  "uuid": "skill-clawhub-sanfrancisco-today-festivalevents-agent",
+  "skillKey": "clawhub-sanfrancisco-today-festivalevents-agent",
+  "name": "Sanfrancisco Today Festivalevents Agent",
+  "summary": "Harvests, indexes, and searches today's festivals and events in San Francisco.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanfrancisco_today_festivalevents_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anthony Assi",
+      "features": [
+        "Harvests, indexes, and searches today's festivals and events in San Francisco."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sanfrancisco-today-festivalevents-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41215706?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sanfrancisco-today-festivalevents-agent",
+      "url": "https://clawhub.ai/skills/sanfrancisco-today-festivalevents-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanfrancisco-today-festivalevents-agent",
+    "url": "https://clawhub.ai/skills/sanfrancisco-today-festivalevents-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanfrancisco-today-festivalevents-agent-4dc447fbbcf55614.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sanfrancisco-today-festivalevents-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sanfrancisco-today-festivalevents-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18c9f58bc60398bd729ec7144dbcd68ed396d7ac42e6aefdbbb6f990cd276c35",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T00:35:46.029Z"
+}

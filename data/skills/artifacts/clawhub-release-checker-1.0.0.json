@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/release-checker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.release_checker",
+  "skill": {
+    "id": 63782,
+    "skillKey": "clawhub-release-checker",
+    "name": "release-checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "release-checker",
+    "url": "https://clawhub.ai/skills/release-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/release-checker-88ef39510ef4fd8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一体化发版兼容性检查工具。自动分析 Git diff 检测发版兼容性，通过代码智能识别推送中心/Gateway/配置变更，自动检测 SQL 脚本兼容性并生成多数据库版本，输出完整的 TODO 清单和 Markdown 报告。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qfann",
+      "userId": "s173kbpfnwbg2xh36xqn03fy0s84djfx",
+      "displayName": "QFann",
+      "image": "https://avatars.githubusercontent.com/u/39287764?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775560299554,
+      "changelog": "Release-checker 1.0.0 初始版本发布：\n\n- 新增一体化发版兼容性检查功能，自动分析 Git diff 变更内容。\n- 支持自动智能识别推送中心、Gateway、配置变更等核心组件。\n- 内置 SQL 兼容性检测及 MySQL → PostgreSQL/Oracle 自动转换，包含多项规则校验。\n- 自动生成详细的 TODO 清单和 Markdown 发版兼容性报告。\n- 支持 MyBatis-Plus、Spring Cloud、Java 及多数据库项目场景。\n- 提供便捷的用户交互，辅助确认和补充变更详情。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb48ba82cf8ee4775d38bfeb8789bdef827581905332abbaf9eb579b0bed2f26"
+}

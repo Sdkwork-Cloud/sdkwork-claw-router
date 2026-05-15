@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34798,
+  "uuid": "skill-clawhub-aana-publication-check",
+  "skillKey": "clawhub-aana-publication-check",
+  "name": "AANA Publication Check Skill",
+  "summary": "Ensures content for public release is authorized, accurate, privacy-safe, permissioned, scoped, and quality-checked before publishing or sharing.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aana_publication_check",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mindbomber",
+      "features": [
+        "Ensures content for public release is authorized, accurate, privacy-safe, permissioned, scoped,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aana-publication-check@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42798111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aana-publication-check",
+      "url": "https://clawhub.ai/skills/aana-publication-check"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aana-publication-check",
+    "url": "https://clawhub.ai/skills/aana-publication-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aana-publication-check-0f723ff69f9f99be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aana-publication-check@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aana-publication-check-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69789c9ec5709edf70afd675dedbad0012203263075ac7c2dfed02c56a791618",
+      "artifactSizeBytes": 2574
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T01:29:35.061Z"
+}

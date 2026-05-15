@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-ppt-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_ppt_gen",
+  "skill": {
+    "id": 35441,
+    "skillKey": "clawhub-ai-ppt-gen",
+    "name": "Presentation Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-ppt-gen",
+    "url": "https://clawhub.ai/skills/ai-ppt-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-ppt-gen-72501c6c4e9fbad9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI presentation generator that creates professional slides from outlines using Tree of Thoughts for content organization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "banxian87",
+      "userId": "s1725nf8jgsbz5gj0nmfh3vkk5843csb",
+      "displayName": "banxian87",
+      "image": "https://avatars.githubusercontent.com/u/264314218?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775105056407,
+      "changelog": "Initial release of Presentation Maker:\n\n- Instantly generates professional slide decks from user outlines.\n- Uses Tree of Thoughts for structured content organization.\n- Suggests layouts and color schemes for enhanced design.\n- Optimizes messaging for clarity and conciseness.\n- Supports export to PPTX, PDF, and Google Slides formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1d062df5791f9d99df19221d503469ead0e50103fc17f183a104a8fae9259fe3"
+}

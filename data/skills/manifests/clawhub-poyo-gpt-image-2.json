@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57171,
+  "uuid": "skill-clawhub-poyo-gpt-image-2",
+  "skillKey": "clawhub-poyo-gpt-image-2",
+  "name": "Free GPT Image 2",
+  "summary": "GPT Image 2 generation and editing on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/submit`; use for `gpt-image-2`, `gpt-image-2-edit`, text-to-image,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_gpt_image_2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolhackboy",
+      "features": [
+        "GPT Image 2 generation and editing on PoYo / poyo.ai via `https://api.poyo.ai/api/generate/subm.",
+        "use for `gpt-image-2`, `gpt-image-2-edit`, text-to-image,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poyo-gpt-image-2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13427145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poyo-gpt-image-2",
+      "url": "https://clawhub.ai/skills/poyo-gpt-image-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-gpt-image-2",
+    "url": "https://clawhub.ai/skills/poyo-gpt-image-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-gpt-image-2-eb29249a66d8ac5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poyo-gpt-image-2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poyo-gpt-image-2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92ea12da1788a99458991a0ba02b0012937b99b915c7c62accd5a8ae76a84edc",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T11:33:15.094Z"
+}

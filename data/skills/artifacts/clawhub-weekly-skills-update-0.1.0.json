@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weekly-skills-update@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_skills_update",
+  "skill": {
+    "id": 59686,
+    "skillKey": "clawhub-weekly-skills-update",
+    "name": "Weekly Skills Update"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-skills-update",
+    "url": "https://clawhub.ai/skills/weekly-skills-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-skills-update-4bf1733d910169d7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每周自动更新技能并推送摘要。当收到\"执行技能每周更新\"或\"skills-weekly-update\"触发时，运行 clawhub update --all 并更新 SKILLS_INDEX.md，最后推送摘要给用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ken0122",
+      "userId": "s170ntc5h08ctgsn8k7d18mvqx83xnrg",
+      "displayName": "ken0122",
+      "image": "https://avatars.githubusercontent.com/u/49142720?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 458,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772502696075,
+      "changelog": "- 初始发布：实现每周自动触发技能更新并推送简要摘要。\n- 支持通过多种消息内容激活更新流程。\n- 自动统计并反馈更新结果（成功、已最新、失败数量）。\n- 如技能列表有变动，自动维护与更新 SKILLS_INDEX.md。\n- 发生错误（命令不存在、更新失败、网络问题）时提供提示与重试机制。\n- 摘要支持定制化格式，包括更新时间、详细更新列表及下次提醒。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:07e217f0a97f3c6f6c2007e2d61ace5a2ab1bf7d964bedea08a4fc2c704e6458"
+}

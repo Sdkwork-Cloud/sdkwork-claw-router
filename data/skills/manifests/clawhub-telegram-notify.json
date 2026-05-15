@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14513,
+  "uuid": "skill-clawhub-telegram-notify",
+  "skillKey": "clawhub-telegram-notify",
+  "name": "Telegram Notify",
+  "summary": "Send Telegram direct message alerts for trade entry, exit, and self-heal events with rate limiting and customizable templates.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_notify",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "motivationationdaily",
+      "features": [
+        "Send Telegram direct message alerts for trade entry, exit, and self-heal events with rate limit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/telegram-notify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213118378?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "telegram-notify",
+      "url": "https://clawhub.ai/skills/telegram-notify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-notify",
+    "url": "https://clawhub.ai/skills/telegram-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-notify-a9d867aae19a3f57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/telegram-notify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-telegram-notify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56dcdfc14d93f195cc4ae7462c2c205584eb1f0441e2e70f78f133612d07261d",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:40:59.522Z"
+}

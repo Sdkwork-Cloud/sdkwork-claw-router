@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mysteel-bidsupply@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysteel_bidsupply",
+  "skill": {
+    "id": 69552,
+    "skillKey": "clawhub-mysteel-bidsupply",
+    "name": "Mysteel_BidSupply"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysteel-bidsupply",
+    "url": "https://clawhub.ai/skills/mysteel-bidsupply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysteel-bidsupply-95683bc8d6f12755.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持钢材供需现货信息查询与招投标数据检索；当用户需要找采购方、找供应方、查询招投标信息或发现项目机会时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyb92",
+      "userId": "s17d21gfp0r1h8zzn0syb7f90583gsct",
+      "displayName": "mysteel",
+      "image": "https://avatars.githubusercontent.com/u/49762508?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774351251977,
+      "changelog": "API_KEY获取地址：\n访问 大宗商品行业 Skills 开放平台(https://data.mysteel.com/skills/index.html)，选择所需 Skill 进入详情页。点击 【获取密钥】即可。\n配置方式：对话中直接告诉OpenClaw",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a8c9a8297c9c8de0ce35e63aed6bd18e2f051f7692e01b74c340596eb347dfa"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68964,
+  "uuid": "skill-clawhub-openclaw-backup-tool",
+  "skillKey": "clawhub-openclaw-backup-tool",
+  "name": "OpenClaw 备份还原工具",
+  "summary": "OpenClaw 备份还原工具。每次安装调试功能前自动备份，支持终端一键还原和重启。让技术小白也能放心折腾。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_backup_tool",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haohanyang92",
+      "features": [
+        "OpenClaw 备份还原工具。每次安装调试功能前自动备份，支持终端一键还原和重启。让技术小白也能放心折腾。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-backup-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/61062925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-backup-tool",
+      "url": "https://clawhub.ai/skills/openclaw-backup-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-backup-tool",
+    "url": "https://clawhub.ai/skills/openclaw-backup-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-backup-tool-c6a0344b918367fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-backup-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-backup-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aca39a0c726196459825d0c6e110f0b99409bbdfe92a07479e081a6a2da753a1",
+      "artifactSizeBytes": 2367
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T13:15:53.682Z"
+}

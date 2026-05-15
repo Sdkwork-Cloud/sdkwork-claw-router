@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22898,
+  "uuid": "skill-clawhub-massblogger",
+  "skillKey": "clawhub-massblogger",
+  "name": "massbloger",
+  "summary": "Manage and automate multiple WordPress sites via Massblogger MCP server with AI content generation, editing, publishing, and bulk operations, no local instal...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.massblogger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "klitmose",
+      "features": [
+        "Manage and automate multiple WordPress sites via Massblogger MCP server with AI content generat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/massblogger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/114300911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "massblogger",
+      "url": "https://clawhub.ai/skills/massblogger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "massblogger",
+    "url": "https://clawhub.ai/skills/massblogger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/massblogger-a650b932c59f2611.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/massblogger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-massblogger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0344b492a4961d8618032de34be7ab5537f2dd0afeb89f5cf2336ef59ad5dc5",
+      "artifactSizeBytes": 2627
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T07:09:34.978Z"
+}

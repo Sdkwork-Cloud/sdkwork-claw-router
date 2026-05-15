@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56868,
+  "uuid": "skill-clawhub-ifly-text-proofread",
+  "skillKey": "clawhub-ifly-text-proofread",
+  "name": "ifly-text-proofread",
+  "summary": "iFlytek Official Document Proofreading (公文校对) — detect and correct errors in Chinese text including typos, punctuation, word order, factual mistakes, sensiti...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifly_text_proofread",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iflytek AIcloud",
+      "features": [
+        "iFlytek Official Document Proofreading (公文校对) — detect and correct errors in Chinese text inclu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifly-text-proofread@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/162573515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifly-text-proofread",
+      "url": "https://clawhub.ai/skills/ifly-text-proofread"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifly-text-proofread",
+    "url": "https://clawhub.ai/skills/ifly-text-proofread",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifly-text-proofread-aa404253914a6c86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifly-text-proofread@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifly-text-proofread-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a5eeea66c0675e3145ef7ae0786c8aec7dfa4c56b402a6f86e6d6c313fdb6c5",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:17:01.918Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69716,
+  "uuid": "skill-clawhub-evidence-anchor",
+  "skillKey": "clawhub-evidence-anchor",
+  "name": "Evidence Anchor",
+  "summary": "标准化定义和验收项目证据锚点，确保长期记忆可验证、可追溯、可复用，支持多层级证据及定期复核流程。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evidence_anchor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangwill2023",
+      "features": [
+        "标准化定义和验收项目证据锚点，确保长期记忆可验证、可追溯、可复用，支持多层级证据及定期复核流程。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evidence-anchor@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259636428?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evidence-anchor",
+      "url": "https://clawhub.ai/skills/evidence-anchor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evidence-anchor",
+    "url": "https://clawhub.ai/skills/evidence-anchor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evidence-anchor-35d49124a14fd74b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evidence-anchor@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evidence-anchor-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63ce9994ce943081ca136f23173df4d53d87255bbc0e48d8c2acf95f639adce6",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T14:11:20.116Z"
+}

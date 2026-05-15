@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 import json
 from pathlib import Path
 
@@ -43,11 +43,11 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
             / "src"
             / "announcementService.ts"
         ).read_text(encoding="utf-8")
-        announcements_api = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "api" / "announcements.ts"
+        router_api = (
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "api" / "content.ts"
         ).read_text(encoding="utf-8")
         type_exports = (
-            ROOT / "sdks" / "clawrouter-backend-sdk" / "src" / "types" / "index.ts"
+            ROOT / "sdks" / "clawrouter-backend-sdk" / "clawrouter-backend-sdk-typescript" / "src" / "types" / "index.ts"
         ).read_text(encoding="utf-8")
 
         for token in [
@@ -55,8 +55,9 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
             "AdminAnnouncementUpdateRequest",
             "toCreateAnnouncementRequest",
             "toUpdateAnnouncementRequest",
-            "requestHeaders('admin-announcement-create')",
-            "requestHeaders('admin-announcement-update')",
+            "requestParams('admin-announcement-create')",
+            "requestParams('admin-announcement-update')",
+            "createRequestToken(scope)",
         ]:
             self.assertIn(token, service)
 
@@ -65,25 +66,26 @@ class AdminAnnouncementRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("as unknown as Record<string, unknown>", service)
 
         self.assertIn(
-            "async addAnnouncement(body: AdminAnnouncementCreateRequest, headers?: Record<string, string>): Promise<AddAnnouncementResult>",
-            announcements_api,
+            "async create(body: AdminAnnouncementCreateRequest, params?: ContentAnnouncementsCreateParams): Promise<AnnouncementsCreateResult>",
+            router_api,
         )
         self.assertIn(
-            "async updateAnnouncement(announcementId: string | number, body: AdminAnnouncementUpdateRequest, headers?: Record<string, string>): Promise<UpdateAnnouncementResult>",
-            announcements_api,
+            "async update(announcementId: string, body: AdminAnnouncementUpdateRequest, params?: ContentAnnouncementsUpdateParams): Promise<AnnouncementsUpdateResult>",
+            router_api,
         )
-        self.assertNotIn("async addAnnouncement(body?: OperationRequest): Promise<PlusApiResult>", announcements_api)
+        self.assertNotIn("async create(body?: OperationRequest): Promise<PlusApiResult>", router_api)
         self.assertNotIn(
-            "async updateAnnouncement(announcementId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
-            announcements_api,
+            "async update(announcementId: string | number, body?: OperationRequest): Promise<PlusApiResult>",
+            router_api,
         )
+        self.assertNotIn("headers?: Record<string, string>", router_api)
 
         for token in [
             "AdminAnnouncementCreateRequest",
             "AdminAnnouncementUpdateRequest",
             "AdminAnnouncementMutationResponse",
-            "AddAnnouncementResult",
-            "UpdateAnnouncementResult",
+            "AnnouncementsCreateResult",
+            "AnnouncementsUpdateResult",
         ]:
             self.assertIn(f"export type {{ {token} }}", type_exports)
 

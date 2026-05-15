@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dolphindb-basic@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dolphindb_basic",
+  "skill": {
+    "id": 67519,
+    "skillKey": "clawhub-dolphindb-basic",
+    "name": "DolphinDB 基础操作技能"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dolphindb-basic",
+    "url": "https://clawhub.ai/skills/dolphindb-basic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dolphindb-basic-8714ad244c6a41ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持DolphinDB数据库的基本创建、插入、查询、更新和删除操作，涵盖分布式和内存表管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ugpoor",
+      "userId": "s177qqrp481qedfn5w9m5nmte183ge14",
+      "displayName": "superStupidBear",
+      "image": "https://avatars.githubusercontent.com/u/6762468?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775116692124,
+      "changelog": "v1.4.0：添加强制环境检测流程，支持全局包装器调用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b17bace0b0175cffbdd5a9c84c4557aa71e295cd0c133b3579ca311376b04876"
+}

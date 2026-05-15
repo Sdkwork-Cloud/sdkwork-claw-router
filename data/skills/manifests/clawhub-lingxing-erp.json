@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56206,
+  "uuid": "skill-clawhub-lingxing-erp",
+  "skillKey": "clawhub-lingxing-erp",
+  "name": "领星 ERP",
+  "summary": "Integrate with Lingxing ERP to query today's orders, product inventory, and retrieve product lists via OpenClaw.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lingxing_erp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wengjianmin19850412",
+      "features": [
+        "Integrate with Lingxing ERP to query today's orders, product inventory, and retrieve product li."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lingxing-erp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267980481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lingxing-erp",
+      "url": "https://clawhub.ai/skills/lingxing-erp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lingxing-erp",
+    "url": "https://clawhub.ai/skills/lingxing-erp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lingxing-erp-570e8e6125be07a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lingxing-erp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lingxing-erp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:160709d542cd567022fffae550b49a40e61f2276b08d70ac466074f01d93ed48",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:01:53.729Z"
+}

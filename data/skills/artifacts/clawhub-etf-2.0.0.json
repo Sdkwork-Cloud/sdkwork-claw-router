@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/etf@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etf",
+  "skill": {
+    "id": 24683,
+    "skillKey": "clawhub-etf",
+    "name": "Etf"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etf",
+    "url": "https://clawhub.ai/skills/etf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etf-58c35f0cffaa2510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze ETF holdings, compare fund metrics, and review sector allocation data. Use when screening ETFs, comparing ratios, or tracking allocations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bytesagain3",
+      "userId": "s17b0rz2zaqen3pqpq807a6q6983fgq5",
+      "displayName": "bytesagain3",
+      "image": "https://avatars.githubusercontent.com/u/218212813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773795019478,
+      "changelog": "Domain-specific upgrade",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:897a0bb316a9a86122b19382b6aa7e633e2a5b0b7c82eb74c6d0f189282c9902"
+}

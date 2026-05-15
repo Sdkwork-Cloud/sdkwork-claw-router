@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/whatsapp-video-mockup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatsapp_video_mockup",
+  "skill": {
+    "id": 11515,
+    "skillKey": "clawhub-whatsapp-video-mockup",
+    "name": "WhatsApp video maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatsapp-video-mockup",
+    "url": "https://clawhub.ai/skills/whatsapp-video-mockup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatsapp-video-mockup-2bbc528856bbfab2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create animated WhatsApp chat videos with realistic iPhone, dark mode UI, typing indicators, read receipts, and auto-scrolling for social media formats."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danpeg",
+      "userId": "publishers:danpeg",
+      "displayName": "danpeg",
+      "image": "https://avatars.githubusercontent.com/u/134135?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1990,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768988598325,
+      "changelog": "Initial release of WhatsApp Video Skill — create animated WhatsApp-style chat videos for social media.\n\n- Realistic iPhone frame with Dynamic Island and WhatsApp dark mode UI\n- Supports message animations, typing indicator, link previews, read receipts, and sound effects\n- Fully customizable messages, formatting, and timing for each chat bubble\n- Optimized 4:5 aspect ratio, large fonts, and auto-scrolling for mobile viewing\n- Includes setup instructions, how-to guide, and tips for best results",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:deb048742964da05592989c1d89cae2aa85b77cc0f667cdb7fcfb302119464b8"
+}

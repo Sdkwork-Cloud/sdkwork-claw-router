@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15140,
+  "uuid": "skill-clawhub-shopify-admin",
+  "skillKey": "clawhub-shopify-admin",
+  "name": "Shopify Admin",
+  "summary": "Shopify Admin API CLI for orders, products, customers, and store management. Uses REST and GraphQL APIs with environment-based authentication.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robsanna",
+      "features": [
+        "Shopify Admin API CLI for orders, products, customers, and store management",
+        "Uses REST and GraphQL APIs with environment-based authentication."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-admin@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32909143?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-admin",
+      "url": "https://clawhub.ai/skills/shopify-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-admin",
+    "url": "https://clawhub.ai/skills/shopify-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-admin-b6d78b28e0434623.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-admin@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-admin-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43efcff75a4ab068ea0c5566f6aa94a25ce79fbe93d9bfcbd0c389cb18e4fd02",
+      "artifactSizeBytes": 1994
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T12:56:38.366Z"
+}

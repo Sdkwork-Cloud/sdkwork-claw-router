@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-amazon-store-report@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_amazon_store_report",
+  "skill": {
+    "id": 64181,
+    "skillKey": "clawhub-linkfox-amazon-store-report",
+    "name": "Amazon Store Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-amazon-store-report",
+    "url": "https://clawhub.ai/skills/linkfox-amazon-store-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-amazon-store-report-d26d99f071f02600.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "亚马逊店铺报告自动化获取技能，支持库存报告、订单报告、销售流量报告、FBA报告、财务结算报告等95+种报告类型的全流程自动获取（请求→轮询→下载→解压）；完成后默认启动本机短时HTTP服务，生成extractedFileHttpUrl供浏览器下载已解压文件。本技能依赖 linkfox-amazon-store-a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778206730160,
+      "changelog": "Update from 1.0.0 to 1.0.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60a39e6e2fef46d3c46ad539b4711116982aac97f909551ad7efca18cb58633c"
+}

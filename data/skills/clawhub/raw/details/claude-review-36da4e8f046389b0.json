@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "claude-review",
+    "displayName": "claude-review",
+    "summary": "Self-review quality gate using Claude CLI. When the user says 'review your work', 'use review-work', or 'check your output', run review-work with the task su...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 472,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1773140284025,
+    "updatedAt": 1778306348551
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1773218147415,
+    "changelog": "**Major update: Improved self-review flow, adds automatic mistake tracking, and changes review command.**\n\n- Replaces per-file reviewing with a single `review-work` command using `--context` and, if relevant, `--skill`.\n- Reviewer now checks against skill requirements (if skill used) and past mistakes (via auto-included LESSONS.md).\n- Automatic logging of critical/major issues to LESSONS.md for future mistake checking.\n- Do not prompt user for review arguments; auto-detect output path and skill used.\n- Adjusted rules and workflow to support the new command signature and learning process.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "paperboardofficial",
+    "userId": "publishers:paperboardofficial",
+    "displayName": "PaperBoardOfficial",
+    "image": "https://avatars.githubusercontent.com/u/151846514?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306348551
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50273,
+  "uuid": "skill-clawhub-umea-lunch",
+  "skillKey": "clawhub-umea-lunch",
+  "name": "Umeå Lunch",
+  "summary": "Get today's lunch menus from restaurants in Umeå. Use when asking about lunch, restaurants, or food in Umeå. Fetches live data from umealunchguide.se.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.umea_lunch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Simskii",
+      "features": [
+        "Get today's lunch menus from restaurants in Umeå",
+        "Use when asking about lunch, restaurants, or food in Umeå",
+        "Fetches live data from umealunchguide.se."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/umea-lunch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16743435?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "umea-lunch",
+      "url": "https://clawhub.ai/skills/umea-lunch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "umea-lunch",
+    "url": "https://clawhub.ai/skills/umea-lunch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/umea-lunch-0d12f84f3df26d6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/umea-lunch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-umea-lunch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1bd89abc55c65483d64451657049acb9e9e539d839e83a7d93f293e47ecaddca",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T10:37:13.939Z"
+}

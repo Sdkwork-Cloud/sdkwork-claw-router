@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/requirements-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.requirements_analysis",
+  "skill": {
+    "id": 64650,
+    "skillKey": "clawhub-requirements-analysis",
+    "name": "requirements-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "requirements-analysis",
+    "url": "https://clawhub.ai/skills/requirements-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/requirements-analysis-72507ad30a603540.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业需求分析师，通过多轮对话将简短想法转化为详细需求文档。使用此技能当用户需要：(1) 分析和记录需求，(2) 将 EPIC 分解为需求和用户故事，(3) 对多个需求进行优先级排序，(4) 识别利益相关者和依赖关系，(5) 定义验收标准，(6) 创建需求文档。支持单个需求分析、EPIC 分解、MoSCoW/RIC..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuanguan2020",
+      "userId": "s170sffe909m9yfe7t9vr8kgyh84hzhg",
+      "displayName": "xuanguan2020",
+      "image": "https://avatars.githubusercontent.com/u/74335362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1614,
+      "installsAllTime": 18,
+      "installsCurrent": 15,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772418037477,
+      "changelog": "Initial release of 专业需求分析师 (requirements-analysis):\n\n- Enables multi-step, dialogue-based extraction and documentation of requirements from brief ideas.\n- Supports decomposition of EPICs into detailed requirements and user stories.\n- Integrates multiple prioritization methods (MoSCoW, RICE, Kano, etc.).\n- Guides identification of stakeholders and dependencies.\n- Provides structured templates for requirement specification and documentation.\n- Includes best practices, common pitfalls, and extensive reference materials.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1e2681a78bf8ecb18702766780ea9dec7324ef291fa5b485c3f425e272eb918e"
+}

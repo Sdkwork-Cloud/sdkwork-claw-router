@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41917,
+  "uuid": "skill-clawhub-connect-to-another-openclaw",
+  "skillKey": "clawhub-connect-to-another-openclaw",
+  "name": "connect-to-another-openclaw",
+  "summary": "Connect to and manage another OpenClaw server remotely. Check status, sync skills, restart gateway, and monitor channels.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.connect_to_another_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fangbb-coder",
+      "features": [
+        "Connect to and manage another OpenClaw server remotely",
+        "Check status, sync skills, restart gateway, and monitor channels."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/connect-to-another-openclaw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201201882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "connect-to-another-openclaw",
+      "url": "https://clawhub.ai/skills/connect-to-another-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "connect-to-another-openclaw",
+    "url": "https://clawhub.ai/skills/connect-to-another-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/connect-to-another-openclaw-9bcc3c8e79124f62.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/connect-to-another-openclaw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-connect-to-another-openclaw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36fe0615ec926c3dbbea963be744dcc875324c9970a038cb23488d7f321b6918",
+      "artifactSizeBytes": 2421
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:20:22.716Z"
+}

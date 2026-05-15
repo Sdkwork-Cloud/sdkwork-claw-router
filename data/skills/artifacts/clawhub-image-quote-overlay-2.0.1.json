@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-quote-overlay@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_quote_overlay",
+  "skill": {
+    "id": 58137,
+    "skillKey": "clawhub-image-quote-overlay",
+    "name": "Image Quote Overlay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-quote-overlay",
+    "url": "https://clawhub.ai/skills/image-quote-overlay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-quote-overlay-b1cf04559c855d03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tạo ảnh quote có gradient overlay và text từ ảnh cá nhân ngẫu nhiên, hỗ trợ kích thước chuẩn LinkedIn, X, Facebook, WordPress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quoc-modoro",
+      "userId": "s177asetdwpw053jq3nsfb8pp183ssca",
+      "displayName": "Quốc MODORO",
+      "image": "https://avatars.githubusercontent.com/u/3088362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1777562821721,
+      "changelog": "- Added example configuration file: config.example.sh\n- Added usage examples documentation: examples/README.md\n- No changes to skill functionality; this update only adds sample and documentation files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d139458ae1fda69cf2f52d71c7abe738f9d03ff4dad0d9a1302b87b5f2cb8349"
+}

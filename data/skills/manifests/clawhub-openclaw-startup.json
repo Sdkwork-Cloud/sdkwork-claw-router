@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33012,
+  "uuid": "skill-clawhub-openclaw-startup",
+  "skillKey": "clawhub-openclaw-startup",
+  "name": "Openclaw Startup",
+  "summary": "First-run setup wizard for new OpenClaw agents. Interviews the user to generate a tailored SOUL.md, scaffolds memory architecture, installs recommended crons...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_startup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "First-run setup wizard for new OpenClaw agents",
+        "Interviews the user to generate a tailored SOUL.md, scaffolds memory architecture, installs rec."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-startup@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-startup",
+      "url": "https://clawhub.ai/skills/openclaw-startup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-startup",
+    "url": "https://clawhub.ai/skills/openclaw-startup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-startup-a5ccc40566216198.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-startup@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-startup-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c90d6e9d07ad52a3054a95e1463fd08beeba3c48fb76b7185d9b7ad404e5d9a",
+      "artifactSizeBytes": 2190
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T10:25:51.168Z"
+}

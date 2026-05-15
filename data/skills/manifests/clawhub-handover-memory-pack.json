@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59399,
+  "uuid": "skill-clawhub-handover-memory-pack",
+  "skillKey": "clawhub-handover-memory-pack",
+  "name": "Handover Memory Pack",
+  "summary": "为人员离岗或项目交接整理显性与隐性知识，减少信息流失。；use for handover, knowledge-transfer, memory workflows；do not use for 泄露不该交接的密钥, 省略高风险事项.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.handover_memory_pack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "为人员离岗或项目交接整理显性与隐性知识，减少信息流失。；use for handover, knowledge-transfer, memory workflows；do not use f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/handover-memory-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "handover-memory-pack",
+      "url": "https://clawhub.ai/skills/handover-memory-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "handover-memory-pack",
+    "url": "https://clawhub.ai/skills/handover-memory-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/handover-memory-pack-e2175b2affca9e88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/handover-memory-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-handover-memory-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e47307083895c43b5f8ff9991864048ac2db6cfceaeb12a598be167eb46323ff",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:37:22.860Z"
+}

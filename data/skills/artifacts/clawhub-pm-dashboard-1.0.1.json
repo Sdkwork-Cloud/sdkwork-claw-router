@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm-dashboard@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_dashboard",
+  "skill": {
+    "id": 35185,
+    "skillKey": "clawhub-pm-dashboard",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-dashboard",
+    "url": "https://clawhub.ai/skills/pm-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-dashboard-3028f6b6846ae39d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a real-time dashboard to visualize AI agent project progress, decision trees, and test results, with commands to manage and configure the dashboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sakilmostak",
+      "userId": "s17ec1p0vfwbxhh5nzdrqkqyn983mmzq",
+      "displayName": "Sakilmostak",
+      "image": "https://avatars.githubusercontent.com/u/73734619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774553442503,
+      "changelog": "- Added a metadata section with a custom emoji to SKILL.md\n- No functional or command changes; documentation update only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:135711a0835ef252ab4563199d80e62e15058637b197b514b854576144a8909c"
+}

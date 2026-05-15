@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69536,
+  "uuid": "skill-clawhub-jd-coupon",
+  "skillKey": "clawhub-jd-coupon",
+  "name": "jd-coupon",
+  "summary": "京东优惠券中心 - 优惠券搜索领取、已领券管理、凑单计算器、优惠叠加规则、到期提醒",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jd_coupon",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "naive-white-expert",
+      "features": [
+        "优惠券搜索领取、已领券管理、凑单计算器、优惠叠加规则、到期提醒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jd-coupon@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130733538?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jd-coupon",
+      "url": "https://clawhub.ai/skills/jd-coupon"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jd-coupon",
+    "url": "https://clawhub.ai/skills/jd-coupon",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jd-coupon-179ba7f336492384.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jd-coupon@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jd-coupon-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07d9032310c012a87409db2aeae9aae4ff4ef81b1953544ad89d6eb45aefa687",
+      "artifactSizeBytes": 2425
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:15:45.956Z"
+}

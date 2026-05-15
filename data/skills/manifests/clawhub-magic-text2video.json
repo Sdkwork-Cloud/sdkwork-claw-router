@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25056,
+  "uuid": "skill-clawhub-magic-text2video",
+  "skillKey": "clawhub-magic-text2video",
+  "name": "magic-text2video",
+  "summary": "Create a text-to-video job from user-provided copy. Submits to the remote video service via one API key.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magic_text2video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyuangao",
+      "features": [
+        "Create a text-to-video job from user-provided copy",
+        "Submits to the remote video service via one API key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magic-text2video@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259281994?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magic-text2video",
+      "url": "https://clawhub.ai/skills/magic-text2video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magic-text2video",
+    "url": "https://clawhub.ai/skills/magic-text2video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magic-text2video-f05c543b2639c1c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magic-text2video@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-magic-text2video-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8a4bdbcff951635868edca7704ba69fb26c7273138dd7236e9705b0e3f25066",
+      "artifactSizeBytes": 2246
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T13:20:28.761Z"
+}

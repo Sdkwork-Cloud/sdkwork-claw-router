@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62198,
+  "uuid": "skill-clawhub-laosi-notion",
+  "skillKey": "clawhub-laosi-notion",
+  "name": "Notion助手",
+  "summary": "Notion API助手 - 创建和管理Notion页面、数据库，支持笔记和知识管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.laosi_notion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "Notion API助手",
+        "创建和管理Notion页面、数据库，支持笔记和知识管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/laosi-notion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "laosi-notion",
+      "url": "https://clawhub.ai/skills/laosi-notion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "laosi-notion",
+    "url": "https://clawhub.ai/skills/laosi-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/laosi-notion-cb5a01f1ef75e66e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/laosi-notion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-laosi-notion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ce0729c10699c2a541a97a8cac8a95a516d5767f4aa6e6b98df9ee92f11261c",
+      "artifactSizeBytes": 2129
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:23:51.414Z"
+}

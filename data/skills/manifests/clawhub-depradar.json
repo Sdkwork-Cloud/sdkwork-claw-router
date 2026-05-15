@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41925,
+  "uuid": "skill-clawhub-depradar",
+  "skillKey": "clawhub-depradar",
+  "name": "Dep Radar",
+  "summary": "Dependency breaking-change radar. Use this skill when the user wants to check for breaking changes, outdated dependencies, upgrade risks, or migration issues...",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.depradar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tarun Khatri",
+      "features": [
+        "Dependency breaking-change radar",
+        "Use this skill when the user wants to check for breaking changes, outdated dependencies, upgrad."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/depradar@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84188088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "depradar",
+      "url": "https://clawhub.ai/skills/depradar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "depradar",
+    "url": "https://clawhub.ai/skills/depradar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/depradar-e4182ee44794aec9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/depradar@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-depradar-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0621296b64a04a2c511d805c0ab16cfb8d968b9db97dbb40f777362585cd85b0",
+      "artifactSizeBytes": 1906
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:57:03.903Z"
+}

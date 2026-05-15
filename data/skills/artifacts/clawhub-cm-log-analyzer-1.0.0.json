@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cm-log-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cm_log_analyzer",
+  "skill": {
+    "id": 49540,
+    "skillKey": "clawhub-cm-log-analyzer",
+    "name": "Log Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cm-log-analyzer",
+    "url": "https://clawhub.ai/skills/cm-log-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cm-log-analyzer-845b110b35279ce5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze application logs to produce actionable error digests with pattern detection, severity classification, trend analysis, and remediation recommendations..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 76,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777621285031,
+      "changelog": "- Initial release of Log Analyzer skill.\n- Supports auto-detection of multiple log formats (syslog, JSON, Apache/Nginx, Python tracebacks, Docker, and generic timestamped).\n- Features actionable error digests with pattern grouping, severity classification, trend analysis, and remediation recommendations.\n- Command-line interface offers filtering by time, severity, and output options (text, JSON, markdown).\n- Includes guidance for incident investigation, health checks, and deep dive log analysis.\n- Provides exit codes for CI/CD integration and error pattern references for remediation steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02909755096d0a28ebdd14b4233a82c6da0b2cc6a0a12edf9ea949314ae17e62"
+}

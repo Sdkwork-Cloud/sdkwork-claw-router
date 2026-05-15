@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shared-bike@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shared_bike",
+  "skill": {
+    "id": 66010,
+    "skillKey": "clawhub-shared-bike",
+    "name": "Shared Bike"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shared-bike",
+    "url": "https://clawhub.ai/skills/shared-bike",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shared-bike-ac38fb9eb8b548b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供哈啰/美团单车扫码开锁、骑行范围及计费指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mikeclaw007",
+      "userId": "s173n2mnssqbs3ebpdz3b52ssh83gshx",
+      "displayName": "mikeclaw007",
+      "image": "https://avatars.githubusercontent.com/u/265502950?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773886835893,
+      "changelog": "Shared Bike 0.1.0 introduces the core features for sharing bike travel guidance:\n\n- Supports scanning QR codes to unlock HelloBike/Meituan bikes, provides riding areas and pricing instructions.\n- Includes travel mode and preference filters (e.g., high-speed rail, self-driving, preferential, comfort).\n- Offers info on ticket availability, real-time flight updates, weather alerts, and local tips.\n- Quick response to data changes for transport hubs and inventory.\n- Safety and travel reminders included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39c2b730f34d4ca2e69feee190fd46ba1434da3a9c51cd3025839c3ff3f207bf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/campbell@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.campbell",
+  "skill": {
+    "id": 43084,
+    "skillKey": "clawhub-campbell",
+    "name": "Campbell"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "campbell",
+    "url": "https://clawhub.ai/skills/campbell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/campbell-a0e97f685e2a4e6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed history and brand insights on Campbell Soup, including its products, art collaborations, market strategy, and business evolution since 1869."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777028875545,
+      "changelog": "- 首发版本，介绍 Campbell Soup 的品牌历史、主力产品、商业模式和子品牌（含V8、Pepperidge Farm等）。\n- 包含关键历史时间线、重大并购、与安迪沃霍尔波普艺术的联名传奇。\n- 提供业务聚焦、零食独立等最新战略动态（2024年分拆）。\n- 总结公司护城河、核心财务数据、趣味轶事等。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e27c3bdde3e08f0ad1ee6036729bce12dc3a20ebc79b1f169d1a7d44a27e03d4"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44441,
+  "uuid": "skill-clawhub-qui-email-send",
+  "skillKey": "clawhub-qui-email-send",
+  "name": "qui-email-send",
+  "summary": "Send a quick email via SkillBoss API Hub without a local mail client.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qui_email_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QuincyGunter",
+      "features": [
+        "Send a quick email via SkillBoss API Hub without a local mail client."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qui-email-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260427166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qui-email-send",
+      "url": "https://clawhub.ai/skills/qui-email-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qui-email-send",
+    "url": "https://clawhub.ai/skills/qui-email-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qui-email-send-0bcc76b4b046e566.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qui-email-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qui-email-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fc2ef3c7357de7a92bcfbf0323404b6453ec7ff1fc2f5ededfcda052729bd64",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T03:41:53.947Z"
+}

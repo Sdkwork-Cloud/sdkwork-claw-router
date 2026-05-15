@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-git-backup@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_git_backup",
+  "skill": {
+    "id": 28893,
+    "skillKey": "clawhub-openclaw-git-backup",
+    "name": "OpenClaw Git Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-git-backup",
+    "url": "https://clawhub.ai/skills/openclaw-git-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-git-backup-0352f9de034c94cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, update, validate, or troubleshoot automated git backup workflows for OpenClaw repositories. Use when a user wants a scheduled commit-and-push backup..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blacktor-tor",
+      "userId": "s172vavdk4788r8qap5mxcydn583hqca",
+      "displayName": "BlackTor-tor",
+      "image": "https://avatars.githubusercontent.com/u/104402822?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774455498450,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f66a28c3f789d54b8b6439a178256935de19eade5a47ebea49ff7d702b3b0e5"
+}

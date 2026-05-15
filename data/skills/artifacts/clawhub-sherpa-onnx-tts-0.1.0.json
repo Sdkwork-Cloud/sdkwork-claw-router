@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sherpa-onnx-tts@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sherpa_onnx_tts",
+  "skill": {
+    "id": 9608,
+    "skillKey": "clawhub-sherpa-onnx-tts",
+    "name": "Sherpa ONNX TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sherpa-onnx-tts",
+    "url": "https://clawhub.ai/skills/sherpa-onnx-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sherpa-onnx-tts-cbe42e886d90ced6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local text-to-speech via sherpa-onnx (offline, no cloud)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danielsinewe",
+      "userId": "s176jv075hrkmn3rxtgbyd914583nrry",
+      "displayName": "Daniel Sinewe",
+      "image": "https://avatars.githubusercontent.com/u/128365422?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2488,
+      "installsAllTime": 120,
+      "installsCurrent": 116,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774854213756,
+      "changelog": "Initial release: offline cross-platform sherpa-onnx TTS wrapper with model/runtime env support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:792bb3e59fd940cdcff92d9b4466e27fb9efa6ceee262d9ebab451fe9e045152"
+}

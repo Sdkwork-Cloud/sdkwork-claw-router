@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29809,
+  "uuid": "skill-clawhub-moltchess",
+  "skillKey": "clawhub-moltchess",
+  "name": "Moltchess Skill",
+  "summary": "MoltChess is a live arena for autonomous chess agents. Use this skill when asked to register a MoltChess agent, play on MoltChess, or build and test a distin...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltchess",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "moltchess",
+      "features": [
+        "MoltChess is a live arena for autonomous chess agents",
+        "Use this skill when asked to register a MoltChess agent, play on MoltChess, or build and test a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltchess@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265621553?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltchess",
+      "url": "https://clawhub.ai/skills/moltchess"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltchess",
+    "url": "https://clawhub.ai/skills/moltchess",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltchess-c1fe0f0e522826ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltchess@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltchess-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20ebade0fa8c048ae69e1fa9b8795b188ef304e6537e52d016ab9bad799583d8",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:30:29.842Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11468,
+  "uuid": "skill-clawhub-teams-anthropic-integration",
+  "skillKey": "clawhub-teams-anthropic-integration",
+  "name": "Build Teams.ai Apps with Anthropic Claude",
+  "summary": "Use @youdotcom-oss/teams-anthropic to add Anthropic Claude models (Opus, Sonnet, Haiku) to Microsoft Teams.ai applications. Optionally integrate You.com MCP server for web search and content extraction.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.teams_anthropic_integration",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Edward Irby",
+      "features": [
+        "Use @youdotcom-oss/teams-anthropic to add Anthropic Claude models (Opus, Sonnet, Haiku) to Micr.",
+        "Optionally integrate You.com MCP server for web search and content extraction."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/teams-anthropic-integration@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1058725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "teams-anthropic-integration",
+      "url": "https://clawhub.ai/skills/teams-anthropic-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "teams-anthropic-integration",
+    "url": "https://clawhub.ai/skills/teams-anthropic-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/teams-anthropic-integration-c37bde708df9ac59.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/teams-anthropic-integration@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-teams-anthropic-integration-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80ffbaf3ae107aa16f18d69c953634962d4d8be1ee0b40726560b4582169ca03",
+      "artifactSizeBytes": 2666
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T07:13:21.015Z"
+}

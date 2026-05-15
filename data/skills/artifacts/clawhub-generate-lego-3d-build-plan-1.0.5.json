@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generate-lego-3d-build-plan@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generate_lego_3d_build_plan",
+  "skill": {
+    "id": 35689,
+    "skillKey": "clawhub-generate-lego-3d-build-plan",
+    "name": "Generate Lego 3D Build Plan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generate-lego-3d-build-plan",
+    "url": "https://clawhub.ai/skills/generate-lego-3d-build-plan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generate-lego-3d-build-plan-7ab231f23f922d35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call Craftsman Agent API OneKey Router to generate a LEGO 3D step-by-step instruction build plan."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ai-hub-admin",
+      "userId": "s17d1vfn6f6qk27s9f66nbe8ed83hcrr",
+      "displayName": "AI-Hub-Admin",
+      "image": "https://avatars.githubusercontent.com/u/184629057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774585634854,
+      "changelog": "- Removed npm and python dependencies sections from the documentation.\n- Cleaned up the environment configuration by retaining only the required OneKey Gateway API key.\n- No changes to core functionality or code; documentation has been streamlined for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c6b0402b98da29f09c25721c874b10aea997f6d8699ad4efd66f94e01f91b323"
+}

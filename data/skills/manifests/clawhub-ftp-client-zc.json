@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47762,
+  "uuid": "skill-clawhub-ftp-client-zc",
+  "skillKey": "clawhub-ftp-client-zc",
+  "name": "ftp-client-zc",
+  "summary": "Performs basic FTP operations like list, upload, download, delete, and rename using stored or provided credentials with Node.js basic-ftp.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftp_client_zc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "张翀",
+      "features": [
+        "Performs basic FTP operations like list, upload, download, delete, and rename using stored or p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftp-client-zc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270544860?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftp-client-zc",
+      "url": "https://clawhub.ai/skills/ftp-client-zc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftp-client-zc",
+    "url": "https://clawhub.ai/skills/ftp-client-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftp-client-zc-e7470817508b36a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftp-client-zc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftp-client-zc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3285e041c251d9e498357a7a6c92ecb06568b7cb4b00e26ea0153b5f20de5c1e",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T04:33:10.783Z"
+}

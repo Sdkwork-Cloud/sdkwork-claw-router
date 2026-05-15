@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11616,
+  "uuid": "skill-clawhub-synapse",
+  "skillKey": "clawhub-synapse",
+  "name": "synapse",
+  "summary": "Agent-to-agent P2P file sharing with semantic search using BitTorrent and vector embeddings",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synapse",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pendzoncymisio",
+      "features": [
+        "Agent-to-agent P2P file sharing with semantic search using BitTorrent and vector embeddings"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synapse@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11975261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synapse",
+      "url": "https://clawhub.ai/skills/synapse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synapse",
+    "url": "https://clawhub.ai/skills/synapse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synapse-f208248e5969ffdb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synapse@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-synapse-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10fa63efa1c6d20b89737c4491e60851c20d916914a980d0d7637bde100ceba4",
+      "artifactSizeBytes": 1773
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T12:05:56.922Z"
+}

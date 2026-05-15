@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52042,
+  "uuid": "skill-clawhub-ocli-api",
+  "skillKey": "clawhub-ocli-api",
+  "name": "Ocli Api",
+  "summary": "Turn any OpenAPI/Swagger API into CLI commands and call them. Search endpoints with BM25, check parameters, execute — no MCP server needed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocli_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Valerii Kovalskii",
+      "features": [
+        "Turn any OpenAPI/Swagger API into CLI commands and call them",
+        "Search endpoints with BM25, check parameters, execute — no MCP server needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ocli-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220532298?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ocli-api",
+      "url": "https://clawhub.ai/skills/ocli-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocli-api",
+    "url": "https://clawhub.ai/skills/ocli-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocli-api-d40bc5436538ac44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ocli-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ocli-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:485a3d18f2686f9ffa4947d548a52f1162659c0a22a227a566c5a2786ef657ac",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:37:39.647Z"
+}

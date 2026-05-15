@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-power-tools@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_power_tools",
+  "skill": {
+    "id": 13142,
+    "skillKey": "clawhub-mac-power-tools",
+    "name": "MacPowerTools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-power-tools",
+    "url": "https://clawhub.ai/skills/mac-power-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-power-tools-d132d18c4b3f8b22.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe local Mac optimization toolkit for OpenClaw agents on Apple Silicon. 1-trillion agent swarm simulation, local CoreML resource forecasting, safe cleanup..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aadipapp",
+      "userId": "s17dpk5mcc97a4cwfszm5yd0vd83kh02",
+      "displayName": "Krishna Aditya",
+      "image": "https://avatars.githubusercontent.com/u/12190815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1444,
+      "installsAllTime": 11,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1773112995499,
+      "changelog": "- Transitioned to a fully local, internet-free, and user-level toolkit for Mac optimization and agent simulation.\n- Removed dependencies on external binaries, persistent installation, and networked Moltbook/viral features; now ClawHub-searchable only.\n- Simplified required dependencies—only Python (>=3.10) and numpy are needed.\n- Introduced new safe-cleanup and local maintenance features.\n- Updated capability set to focus on local trillion-agent simulations, CoreML forecasting, and user-level process monitoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:70bb2a29f9249dc00405b8bd12e1b1a0bd19b1ec9105afe30bece036e5fad608"
+}

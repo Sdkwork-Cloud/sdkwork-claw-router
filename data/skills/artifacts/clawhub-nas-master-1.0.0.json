@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nas-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nas_master",
+  "skill": {
+    "id": 11267,
+    "skillKey": "clawhub-nas-master",
+    "name": "nas-master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nas-master",
+    "url": "https://clawhub.ai/skills/nas-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nas-master-ec62330fb6f74c2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A hardware-aware, hybrid (SMB + SSH) suite for ASUSTOR NAS metadata scraping. Functions as a versatile Coder, Project Manager, and System Architect while maintaining strict read-only safety and i3-10th Gen resource throttling."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "afajohn",
+      "userId": "publishers:afajohn",
+      "displayName": "afajohn",
+      "image": "https://avatars.githubusercontent.com/u/106503734?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769654388532,
+      "changelog": "Initial release: asustor-pro-adaptive-suite (version 1.0.0)\n\n- Hybrid NAS metadata scraping using both SMB file crawling and SSH for system/hardware inspection.\n- Strict read-only safety with self-verification; resumes interrupted scans and avoids data duplication.\n- Enforces CPU/memory/gpu guardrails for i3-10th Gen + 1050 GTX ASUSTOR setups.\n- Python-powered backend integrates with a PHP/AJAX dashboard (XAMPP), supporting rapid search and visualization.\n- Adaptive, multi-role design: acts as coder, project manager, system architect, and business analyst.\n- Continuously prioritizes free/open-source tools and learns from user interactions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8afcf5fd5a8a387445ec7cc6744c3c014e29e24a3809e6cb1e608101281e08e3"
+}

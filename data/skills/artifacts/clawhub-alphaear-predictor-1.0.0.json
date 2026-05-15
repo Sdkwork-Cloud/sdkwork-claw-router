@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alphaear-predictor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphaear_predictor",
+  "skill": {
+    "id": 37693,
+    "skillKey": "clawhub-alphaear-predictor",
+    "name": "alphaear-predictor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphaear-predictor",
+    "url": "https://clawhub.ai/skills/alphaear-predictor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphaear-predictor-7f19476d1306ddd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Market prediction skill using Kronos. Use when user needs finance market time-series forecasting or news-aware finance market adjustments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouzhonglu8-png",
+      "userId": "s17fc97saqx9w7mhqhm8bqe1ss840tq5",
+      "displayName": "zhouzhonglu8-png",
+      "image": "https://avatars.githubusercontent.com/u/266468406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775046142129,
+      "changelog": "AlphaEar Predictor 1.0.0 - Initial Release\n\n- Added market prediction capabilities using the Kronos model for time-series forecasting.\n- Introduced workflow for base quantitative forecast and news-driven subjective adjustment.\n- Provided configurable support for custom and default Kronos model weights.\n- Added requirement for an embedding model, with customizable environment variables.\n- Documented required Python dependencies for operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dfdcbcd19d6ca72fb1ef1bbd331ce088eccc92592b80fb4cdb62cce0d32ab85"
+}

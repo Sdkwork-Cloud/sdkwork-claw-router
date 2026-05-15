@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rmn-visualizer@1.1.2",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rmn_visualizer",
+  "skill": {
+    "id": 17604,
+    "skillKey": "clawhub-rmn-visualizer",
+    "name": "RMN Visualizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rmn-visualizer",
+    "url": "https://clawhub.ai/skills/rmn-visualizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rmn-visualizer-cfc59e10ee07a81c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Visualize your AI Agent's 5-layer recursive memory network from local files with an interactive D3.js force-directed graph in a Node.js server."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weidadong2359",
+      "userId": "publishers:weidadong2359",
+      "displayName": "ceelo",
+      "image": "https://avatars.githubusercontent.com/u/111347656?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 752,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.2",
+      "createdAt": 1771809158852,
+      "changelog": "Fix: install command uses clawhub install rmn-visualizer (without username prefix)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1b6b04f12804ed07eac13e46d407ad432066c665bc2694171976ca328628db0d"
+}

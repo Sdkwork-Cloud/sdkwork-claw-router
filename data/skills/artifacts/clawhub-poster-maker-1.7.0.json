@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/poster-maker@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poster_maker",
+  "skill": {
+    "id": 62532,
+    "skillKey": "clawhub-poster-maker",
+    "name": "Poster Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poster-maker",
+    "url": "https://clawhub.ai/skills/poster-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poster-maker-f389315ba22cdc79.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 海报制作大师。三种模式：风格复刻、创意生成、直播预告海报。含产品原图还原方法论和生成脚本。Nano Banana Pro 生成，支持 Ofox/OpenRouter。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dizhu",
+      "userId": "s177gp8b3q1v25nzahp7d5adzh83sy4z",
+      "displayName": "dizhu",
+      "image": "https://avatars.githubusercontent.com/u/3749687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1776804157071,
+      "changelog": "Restored scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38534a454ed2cf26ae2a1ca679705233cb03efe01f6d5caeff58b3f54ce70982"
+}

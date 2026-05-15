@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tradebot-alpha@0.1.14",
+  "version": "0.1.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tradebot_alpha",
+  "skill": {
+    "id": 34784,
+    "skillKey": "clawhub-tradebot-alpha",
+    "name": "Tradebot Alpha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tradebot-alpha",
+    "url": "https://clawhub.ai/skills/tradebot-alpha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tradebot-alpha-ed9d8701af108338.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read-only signal fetcher for TradeBot Alpha API. Subscription required for Pro tier."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zalcmann",
+      "userId": "s17am1774f4wrp9qhb4pzg8g6583whfv",
+      "displayName": "zalcmann",
+      "image": "https://avatars.githubusercontent.com/u/13640097?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 15
+    },
+    "latestVersion": {
+      "version": "0.1.14",
+      "createdAt": 1774873343412,
+      "changelog": "Fixed README: removed incorrect /etc/openclaw/tradebot-alpha.env reference, now documents --key CLI flag usage matching actual code behavior",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe82c0298269bbbe24336cd62f3eae71068e0399016e93ea5c6cd39c84e48bdb"
+}

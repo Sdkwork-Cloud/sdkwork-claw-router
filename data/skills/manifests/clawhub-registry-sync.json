@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28943,
+  "uuid": "skill-clawhub-registry-sync",
+  "skillKey": "clawhub-registry-sync",
+  "name": "registry-sync",
+  "summary": "Keep the Feishu registry sheet in sync whenever a new local skill, workflow, or template is created or significantly updated. Use when a new skill is added u...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.registry_sync",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "G-Hanasq",
+      "features": [
+        "Keep the Feishu registry sheet in sync whenever a new local skill, workflow, or template is cre.",
+        "Use when a new skill is added u..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/registry-sync@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74138794?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "registry-sync",
+      "url": "https://clawhub.ai/skills/registry-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "registry-sync",
+    "url": "https://clawhub.ai/skills/registry-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/registry-sync-9ebd444fbd7c4788.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/registry-sync@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-registry-sync-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb3875f98540c924f0ebe2efdb5f822df1bbe8434f4a0bb7732b34863eac0170",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:59:54.839Z"
+}

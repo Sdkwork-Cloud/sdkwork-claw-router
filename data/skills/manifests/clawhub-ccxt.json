@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17462,
+  "uuid": "skill-clawhub-ccxt",
+  "skillKey": "clawhub-ccxt",
+  "name": "ccxt",
+  "summary": "Interact with 100+ cryptocurrency exchanges — fetch markets, order books, tickers, place orders, check balances, and more using the CCXT CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccxt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pablo Criado-Perez",
+      "features": [
+        "Interact with 100+ cryptocurrency exchanges — fetch markets, order books, tickers, place orders."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccxt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12142844?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccxt",
+      "url": "https://clawhub.ai/skills/ccxt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccxt",
+    "url": "https://clawhub.ai/skills/ccxt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccxt-c019332551f8d666.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccxt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccxt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c75b1c91058ceb47ceb9d3096d0e1cdf0db904d501df9b5dd9484f6696fdb97",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T00:44:35.003Z"
+}

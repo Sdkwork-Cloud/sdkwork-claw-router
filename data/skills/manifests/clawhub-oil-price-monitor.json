@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68223,
+  "uuid": "skill-clawhub-oil-price-monitor",
+  "skillKey": "clawhub-oil-price-monitor",
+  "name": "Oil Price Monitor",
+  "summary": "监测国内成品油价格调整窗口，提供调价提醒及当前油价查询，助用户合理安排加油时间和预算。",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oil_price_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeffrey Teng",
+      "features": [
+        "监测国内成品油价格调整窗口，提供调价提醒及当前油价查询，助用户合理安排加油时间和预算。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oil-price-monitor@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22231692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oil-price-monitor",
+      "url": "https://clawhub.ai/skills/oil-price-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oil-price-monitor",
+    "url": "https://clawhub.ai/skills/oil-price-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oil-price-monitor-439dff6c50fc78f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oil-price-monitor@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-oil-price-monitor-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d28fcded9654c07c8905744af4fff8247a847b9c915ecd0039751e90babf70a",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T07:44:34.815Z"
+}

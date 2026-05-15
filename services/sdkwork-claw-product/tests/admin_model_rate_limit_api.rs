@@ -24,7 +24,7 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate-limits/models")
+                .uri("/backend/v3/api/router/rate_limits/models")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -53,7 +53,7 @@ async fn admin_model_rate_limit_route_creates_and_lists_model_limits() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/rate-limits/models")
+                .uri("/backend/v3/api/router/rate_limits/models")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -85,7 +85,7 @@ async fn admin_model_rate_limit_route_rejects_invalid_model_without_calling_stor
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate-limits/models")
+                .uri("/backend/v3/api/router/rate_limits/models")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -117,7 +117,7 @@ async fn admin_model_rate_limit_route_rejects_invalid_limit_without_calling_stor
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/router/rate-limits/models")
+                .uri("/backend/v3/api/router/rate_limits/models")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -148,7 +148,7 @@ async fn admin_model_rate_limit_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/router/rate-limits/models")
+                .uri("/backend/v3/api/router/rate_limits/models")
                 .body(Body::empty())
                 .unwrap(),
         )

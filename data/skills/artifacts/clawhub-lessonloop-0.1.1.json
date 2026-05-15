@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lessonloop@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lessonloop",
+  "skill": {
+    "id": 34067,
+    "skillKey": "clawhub-lessonloop",
+    "name": "LessonLoop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lessonloop",
+    "url": "https://clawhub.ai/skills/lessonloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lessonloop-d232d4f5f7090a2b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight experience-capture and behavior-hardening for Goat. Use when the user explicitly gives corrective feedback, says to remember or avoid something,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevengaojn2010",
+      "userId": "s174gb7q5vyet4f0fa8bth77ss857v1e",
+      "displayName": "stevengaojn2010",
+      "image": "https://avatars.githubusercontent.com/u/240868319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776700389012,
+      "changelog": "Tighten LessonLoop naming and make it easier to apply in real workflows.\\n\\n- Renames skill metadata to LessonLoop consistently\\n- Adds scripts/apply_lesson.py to write daily memory and structured event logs in one step\\n- Updates docs to reflect the new one-step workflow\\n- Sets the project license to MIT-0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b9056c95c544ca469942fccfc175b400f03598f7455d1e759aefea24f93824d"
+}

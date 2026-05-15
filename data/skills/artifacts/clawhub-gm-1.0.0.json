@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gm@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gm",
+  "skill": {
+    "id": 72563,
+    "skillKey": "clawhub-gm",
+    "name": "Gm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gm",
+    "url": "https://clawhub.ai/skills/gm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gm-a474219e5e9503c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供关于gm品牌的背景信息、发展历程、核心产品及全球市场和竞争格局的详细档案介绍。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 149,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776242891360,
+      "changelog": "- 首发版本，提供 gm 品牌档案查询与简介\n- 概述 gm 的行业地位、核心业务和竞争优势\n- 支持快速了解及深入探索 gm 相关信息\n- 指明获取权威信息的官方途径",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54e5e74c9be5ec4d7cc4f952f917d7ca6ef88ca7ae5870cb7ea8cc7d76ceb221"
+}

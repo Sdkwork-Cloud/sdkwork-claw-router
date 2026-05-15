@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/database-doc-generator@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.database_doc_generator",
+  "skill": {
+    "id": 30286,
+    "skillKey": "clawhub-database-doc-generator",
+    "name": "database-doc-generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "database-doc-generator",
+    "url": "https://clawhub.ai/skills/database-doc-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/database-doc-generator-9c8e6c5b43fcf60e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate professional database structure documentation from PostgreSQL databases. Creates Excel files with table schemas, column details, and formatting. Use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gitoftom",
+      "userId": "s1787ph9he718q62yes7xb2ggd83j4pq",
+      "displayName": "fqy_hjy",
+      "image": "https://avatars.githubusercontent.com/u/45866680?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 285,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774401951566,
+      "changelog": "**Security-focused update with new scripts and installation guidance**\n\n- Major security upgrades: explicit warnings, secure credential handling, and a dedicated security check script.\n- Added 27 new files including installation/security docs, pre-commit config, secret baseline, and Python scripts for credential cleaning and security validation.\n- Installation and setup instructions now emphasize manual dependency management, use of environment variables, and disabling of any auto-downloads.\n- Environment variable and config file usage strongly encouraged for credentials; hardcoding discouraged.\n- Includes new guidance for setting file permissions on output files to prevent unauthorized access.\n- Documentation thoroughly updated to reflect and enforce a security-first workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:728f40abca6391b3d4d23359740ee0952db6a0653d884357706640ff73cbc428"
+}

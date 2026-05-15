@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30522,
+  "uuid": "skill-clawhub-feishu-dm-sender",
+  "skillKey": "clawhub-feishu-dm-sender",
+  "name": "Feishu DM Sender",
+  "summary": "Proactively send messages to Feishu (Lark) users or group chats from your OpenClaw agent. Supports name-based lookup from DM contacts config, open_id, and ch...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_dm_sender",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "黄耀武",
+      "features": [
+        "Proactively send messages to Feishu (Lark) users or group chats from your OpenClaw agent",
+        "Supports name-based lookup from DM contacts config, open_id, and ch..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-dm-sender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/333734?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-dm-sender",
+      "url": "https://clawhub.ai/skills/feishu-dm-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-dm-sender",
+    "url": "https://clawhub.ai/skills/feishu-dm-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-dm-sender-2ea9983673721f84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-dm-sender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-dm-sender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:320ccfeb793cdde436fc9548ec29afd011a69e670af756341c1481401d76abf8",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:38:57.455Z"
+}

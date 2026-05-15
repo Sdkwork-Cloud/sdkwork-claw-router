@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmic-skill-scanner-darwin-arm64@0.8.0",
+  "version": "0.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmic_skill_scanner_darwin_arm64",
+  "skill": {
+    "id": 59316,
+    "skillKey": "clawhub-cmic-skill-scanner-darwin-arm64",
+    "name": "CMIC Skill Scanner (macOS ARM64)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmic-skill-scanner-darwin-arm64",
+    "url": "https://clawhub.ai/skills/cmic-skill-scanner-darwin-arm64",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmic-skill-scanner-darwin-arm64-b5f902fc5801c20b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "使用内置 Rust 引擎审计待安装的 skill 包或归档，并可选桥接外部 scanner。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cyzlmh",
+      "userId": "s171nn815hk3s0ht69bn9d96hn858ye2",
+      "displayName": "cyzlmh",
+      "image": "https://avatars.githubusercontent.com/u/24603258?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.8.0",
+      "createdAt": 1776792726013,
+      "changelog": "Major update and rebranding with enhanced trust and configurability.\n\n- Renamed from \"cmic-skill-scanner\" to \"skillscan-wrapper\"\n- Updated description and documentation for clarity and bilingual usage (English/Chinese)\n- Emphasized local operation, checksum verification, and open-source trust model\n- Optional features (`--upload-url`, `--engine external`) are disabled by default and require explicit user configuration\n- Enhanced documentation for permissions, usage workflow, and binary/source integrity\n- Binary version bumped to 0.8.0; old version info and tags removed",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd9e9c51e9c9d0a4f203112742d4f59751fe8f19bc539e5e8c0accb731a70ff0"
+}

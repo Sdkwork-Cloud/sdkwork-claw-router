@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24566,
+  "uuid": "skill-clawhub-plashboard-admin",
+  "skillKey": "clawhub-plashboard-admin",
+  "name": "Plashboard Admin",
+  "summary": "Manage plashboard templates and autonomously convert natural-language dashboard requests into plashboard tool actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plashboard_admin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhytabest",
+      "features": [
+        "Manage plashboard templates and autonomously convert natural-language dashboard requests into p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plashboard-admin@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138134396?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plashboard-admin",
+      "url": "https://clawhub.ai/skills/plashboard-admin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plashboard-admin",
+    "url": "https://clawhub.ai/skills/plashboard-admin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plashboard-admin-f2d8a4cfb849aab9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plashboard-admin@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plashboard-admin-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2463c93757248dee8821fcbb3fc095c42cffd67908987c9995643e6afd177df3",
+      "artifactSizeBytes": 1854
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T17:26:34.782Z"
+}

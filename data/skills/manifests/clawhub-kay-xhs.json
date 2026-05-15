@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62937,
+  "uuid": "skill-clawhub-kay-xhs",
+  "skillKey": "clawhub-kay-xhs",
+  "name": "Kay Xhs",
+  "summary": "小红书全自动内容创作工作流 - 从爆款研究到草稿发布的完整 pipeline。 使用场景：(1) 研究小红书爆款笔记风格和趋势，(2) 生成 AI 图片/漫画/封面，(3) 自动发布到小红书草稿箱。 **依赖**: 需要安装 kay-image skill 并配置 KIE_API_KEY",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kay_xhs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "papayalove",
+      "features": [
+        "小红书全自动内容创作工作流",
+        "从爆款研究到草稿发布的完整 pipeline。 使用场景：(1) 研究小红书爆款笔记风格和趋势，(2) 生成 AI 图片/漫画/封面，(3) 自动发布到小红书草稿箱。 **依赖**: 需要安."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kay-xhs@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47357227?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kay-xhs",
+      "url": "https://clawhub.ai/skills/kay-xhs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kay-xhs",
+    "url": "https://clawhub.ai/skills/kay-xhs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kay-xhs-76293bbf71687699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kay-xhs@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-kay-xhs-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f75ea72c42a97804c3a9a296bfd1a06554bee1c31c214ca29ac1e1e331836faf",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T03:31:54.466Z"
+}

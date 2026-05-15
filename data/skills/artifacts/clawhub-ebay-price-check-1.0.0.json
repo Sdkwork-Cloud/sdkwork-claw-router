@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ebay-price-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ebay_price_check",
+  "skill": {
+    "id": 25219,
+    "skillKey": "clawhub-ebay-price-check",
+    "name": "Ebay Price Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ebay-price-check",
+    "url": "https://clawhub.ai/skills/ebay-price-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ebay-price-check-2578e0fbb9b96630.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search eBay for current and sold item prices, providing price range, shipping, condition filters, and price history summaries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kl0nlutiy",
+      "userId": "publishers:kl0nlutiy",
+      "displayName": "KL0nLutiy",
+      "image": "https://avatars.githubusercontent.com/u/5372884?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 393,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773437448558,
+      "changelog": "eBay Price Check Skill 1.0.0\n\n- Initial release.\n- Search eBay for items by keyword.\n- Retrieve current listing prices and sold (historical) prices.\n- Analyze price ranges (minimum, maximum, average).\n- Include shipping cost information.\n- Filter results by item condition (new, used, refurbished).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23387ab2124594e676adc357225b27e65f263bac5b2616449cd0d8badc79d26e"
+}

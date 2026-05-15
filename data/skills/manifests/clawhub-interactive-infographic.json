@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69879,
+  "uuid": "skill-clawhub-interactive-infographic",
+  "skillKey": "clawhub-interactive-infographic",
+  "name": "Interactive Infographic",
+  "summary": "强大的AI自动化绘图与复杂信息可视化工具（基于 ContextWeave）。不仅支持代码与系统架构的可视化，更广泛适用于复杂逻辑梳理、知识库转换、业务流程图、思维导图及长文本的结构化信息图生成。通过深度的语义分析与请求编排，一键将晦涩文本与复杂知识转化为清晰直观的图形表达。",
+  "version": "0.1.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interactive_infographic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ContextWeave",
+      "features": [
+        "强大的AI自动化绘图与复杂信息可视化工具（基于 ContextWeave）。不仅支持代码与系统架构的可视化，更广泛适用于复杂逻辑梳理、知识库转换、业务流程图、思维导图及长文本的结构化信息图生."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interactive-infographic@0.1.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44718456?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interactive-infographic",
+      "url": "https://clawhub.ai/skills/interactive-infographic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interactive-infographic",
+    "url": "https://clawhub.ai/skills/interactive-infographic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interactive-infographic-94ba7d5c4f214d0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interactive-infographic@0.1.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-interactive-infographic-0.1.8.json",
+      "version": "0.1.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abe4e92e794d5750b00a7d4a53bdc3a6e7c4c35b47d7ed705c10fa91c3d96a39",
+      "artifactSizeBytes": 2769
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:33:30.144Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dual-thinking@8.5.24",
+  "version": "8.5.24",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dual_thinking",
+  "skill": {
+    "id": 17839,
+    "skillKey": "clawhub-dual-thinking",
+    "name": "Dual Thinking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dual-thinking",
+    "url": "https://clawhub.ai/skills/dual-thinking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dual-thinking-147e66b8ca983887.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Second-opinion consultation plus automatic skill-engineering escalation for reviews, rewrites, hardening, weak-model optimization, packaging, testing, and pu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ciklopentan",
+      "userId": "s170bzkafdeer9wznxg0rasry58402yp",
+      "displayName": "ciklopentan",
+      "image": "https://avatars.githubusercontent.com/u/259757332?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 741,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 95
+    },
+    "latestVersion": {
+      "version": "8.5.24",
+      "createdAt": 1777128912962,
+      "changelog": "Grounding evidence visibility + fail-closed consequence hardening after 6-round alternating Qwen/DeepSeek self-review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:63c64c84c4b4e389a91ed3f9530e09455209929e54d4ddc4cb0b7354d5595ec2"
+}

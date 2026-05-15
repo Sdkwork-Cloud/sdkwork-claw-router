@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawsite-ai@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsite_ai",
+  "skill": {
+    "id": 55437,
+    "skillKey": "clawhub-clawsite-ai",
+    "name": "Clawsite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsite-ai",
+    "url": "https://clawhub.ai/skills/clawsite-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsite-ai-a9f7e8e2a4a75f93.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Static website hosting for AI agents. Get a dedicated <slug>.clawsite.ai URL with HTTPS, deploy a zip of HTML / CSS / JS / images in one API call, atomic ful..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dannylai999",
+      "userId": "s173ebs4e47b8b8m1a4v6qxfv1863waz",
+      "displayName": "danny lai",
+      "image": "https://avatars.githubusercontent.com/u/104816413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1778120278301,
+      "changelog": "- Updated required environment variable descriptions for clarity in documentation.\n- Added a new allowed error code internal_error to the Errors section in SKILL.md.\n- Improved formatting and details in environment variable and API documentation.\n- Added vitest.e2e.config.ts file for end-to-end testing configuration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0aca396de9a8b12dbae3a70429d5b107c175fb2e58027fe40a82c81c0408c4f2"
+}

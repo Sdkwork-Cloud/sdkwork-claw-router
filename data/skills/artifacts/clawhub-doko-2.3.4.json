@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/doko@2.3.4",
+  "version": "2.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doko",
+  "skill": {
+    "id": 19457,
+    "skillKey": "clawhub-doko",
+    "name": "Read, Search & Extract Web Pages by Dokobot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doko",
+    "url": "https://clawhub.ai/skills/doko",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doko-b4850919f34df576.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and extract content from any web page using a real Chrome browser — including SPAs, JavaScript-rendered sites, and complex dynamic pages. Use when fetch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dokobot",
+      "userId": "s17esfnwxf1rkrtg602btxj6rh84bv5d",
+      "displayName": "Dokobot",
+      "image": "https://avatars.githubusercontent.com/u/259291194?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 872,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 21
+    },
+    "latestVersion": {
+      "version": "2.3.4",
+      "createdAt": 1776824645382,
+      "changelog": "- CLI command syntax updated: now uses dokobot <command> (e.g., dokobot read, dokobot search) instead of dokobot doko <command>.\n- Added new core command: download images, for downloading images (including private/lazy-loaded images) from web pages.\n- Included instructions for reporting bugs or feature requests directly via dokobot feedback.\n- Updated core commands and examples to reflect new usage patterns and capabilities.\n- Version metadata updated to 2.3.4.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4da003786beca1d3c239ace2c7cfdb729dfb29316373d70db7d86cf48bd2b2e6"
+}

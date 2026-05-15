@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dinstein-tech-news-digest@3.15.0",
+  "version": "3.15.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dinstein_tech_news_digest",
+  "skill": {
+    "id": 23197,
+    "skillKey": "clawhub-dinstein-tech-news-digest",
+    "name": "Dinstein Tech News Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dinstein-tech-news-digest",
+    "url": "https://clawhub.ai/skills/dinstein-tech-news-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dinstein-tech-news-digest-bd649113ebcf597c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate tech news digests with unified source model, quality scoring, and multi-format output. Six-source data collection from RSS feeds, Twitter/X KOLs, Gi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "asterisk622",
+      "userId": "s173mcfqgv1rmb5wmeby2t2cfs83g23w",
+      "displayName": "asterisk622",
+      "image": "https://avatars.githubusercontent.com/u/4076262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 429,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.15.0",
+      "createdAt": 1773644532711,
+      "changelog": "- Added detailed documentation for setup, configuration, and script usage to SKILL.md.\n- Clarified environment variables and backend selection for Twitter/X and web search.\n- Expanded instructions for customizing sources and topics.\n- Documented all scripts and pipelines, including parallel fetching, deduplication, and fallback mechanisms.\n- Updated examples for digest generation and template usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b874c4d71c3fb6c1009d0b46e33550cc18056f2908f2de387db175a4f3bbbf5"
+}

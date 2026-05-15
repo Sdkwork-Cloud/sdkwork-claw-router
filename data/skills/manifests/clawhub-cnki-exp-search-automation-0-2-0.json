@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66353,
+  "uuid": "skill-clawhub-cnki-exp-search-automation-0-2-0",
+  "skillKey": "clawhub-cnki-exp-search-automation-0-2-0",
+  "name": "Cnki Exp Search Automation 0.2.0",
+  "summary": "CNKI（中国知网）高级搜索自动化技能。使用浏览器自动化技术搜索文献并获取结果列表及摘要信息。建议在有头浏览器环境下使用以便于处理反机器人验证。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnki_exp_search_automation_0_2_0",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangyingzhuangk",
+      "features": [
+        "CNKI（中国知网）高级搜索自动化技能。使用浏览器自动化技术搜索文献并获取结果列表及摘要信息。建议在有头浏览器环境下使用以便于处理反机器人验证。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnki-exp-search-automation-0-2-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16957705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnki-exp-search-automation-0-2-0",
+      "url": "https://clawhub.ai/skills/cnki-exp-search-automation-0-2-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnki-exp-search-automation-0-2-0",
+    "url": "https://clawhub.ai/skills/cnki-exp-search-automation-0-2-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnki-exp-search-automation-0-2-0-fdf4a998fcafbb18.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnki-exp-search-automation-0-2-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnki-exp-search-automation-0-2-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42cf434beed34b5d2fb298bf6afb54b8961d004c2c53e6a2ce1da63d5a9cff13",
+      "artifactSizeBytes": 2603
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T01:59:40.728Z"
+}

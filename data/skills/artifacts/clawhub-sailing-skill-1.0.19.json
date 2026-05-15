@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sailing-skill@1.0.19",
+  "version": "1.0.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sailing_skill",
+  "skill": {
+    "id": 65945,
+    "skillKey": "clawhub-sailing-skill",
+    "name": "Sailing Sports Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sailing-skill",
+    "url": "https://clawhub.ai/skills/sailing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sailing-skill-b61d38e7f3f2d8db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "赛灵体育(sailing sports)实时赛事数据助手，专注乒乓球和足球领域。提供实时比赛数据、赛程安排、赛事日程、最新比分、球员动态、世界排名。涵盖球员(乒乓球球员:樊振东/孙颖莎/王楚钦/马龙/陈梦等，足球球员:梅西/C罗/罗纳尔多等)、赛事(乒乓球赛事:WTT/ITTF，足球赛事:世界杯/欧冠/中超/德甲..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liyongfen2025",
+      "userId": "s17d41s8964t3gacaas1a0rebs83h9ty",
+      "displayName": "liyongfen2025",
+      "image": "https://avatars.githubusercontent.com/u/223445634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "1.0.19",
+      "createdAt": 1776071518431,
+      "changelog": "sailing-skill 1.0.19\n\n- 更新 description，增加“赛事日程”关键词，更精准描述功能覆盖。\n- 其余内容未变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bd08f317a80c3d6612fe01d23b79c866e068b354eb5e061f236e868288740f9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62023,
+  "uuid": "skill-clawhub-openclaw-aligenie-genie",
+  "skillKey": "clawhub-openclaw-aligenie-genie",
+  "name": "Openclaw Aligenie Genie",
+  "summary": "OpenClaw Agent 通过云服务器与天猫精灵双向通信的技能。触发时机：(1) 用户要求与天猫精灵通信或接收天猫精灵消息时 (2) 配置天猫精灵与 OpenClaw 的连接时 (3) 天猫精灵发送指令到 OpenClaw 需要处理时。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aligenie_genie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AxelHu",
+      "features": [
+        "OpenClaw Agent 通过云服务器与天猫精灵双向通信的技能。触发时机：(1) 用户要求与天猫精灵通信或接收天猫精灵消息时 (2) 配置天猫精灵与 OpenClaw 的连接时 (3)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-aligenie-genie@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12809280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-aligenie-genie",
+      "url": "https://clawhub.ai/skills/openclaw-aligenie-genie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aligenie-genie",
+    "url": "https://clawhub.ai/skills/openclaw-aligenie-genie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aligenie-genie-c3bf525074afb9c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-aligenie-genie@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-aligenie-genie-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecc6c94a576e80d7e3564636386f791c66664b0de5714117d563ffa1c4cf8722",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T02:50:26.749Z"
+}

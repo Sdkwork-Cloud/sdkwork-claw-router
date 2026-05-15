@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58945,
+  "uuid": "skill-clawhub-cinmoore-skill-devices",
+  "skillKey": "clawhub-cinmoore-skill-devices",
+  "name": "Cinmoore Skill Devices",
+  "summary": "神眸智能设备控制技能：整合设备控制、视频录制、事件查询、VLM分析等原子能力，支持AI意图理解与自动化组合。Invoke when user wants to control devices, analyze video, query events, or understand device capabilities.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cinmoore_skill_devices",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "buaalingming",
+      "features": [
+        "神眸智能设备控制技能：整合设备控制、视频录制、事件查询、VLM分析等原子能力，支持AI意图理解与自动化组合。Invoke when user wants to control devices."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cinmoore-skill-devices@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20924045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cinmoore-skill-devices",
+      "url": "https://clawhub.ai/skills/cinmoore-skill-devices"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cinmoore-skill-devices",
+    "url": "https://clawhub.ai/skills/cinmoore-skill-devices",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cinmoore-skill-devices-c6cb3e20c60ba843.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cinmoore-skill-devices@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cinmoore-skill-devices-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:20d1edfe4f1e04b2401b0ac2446568966c827607dc24502252536f41aac9f776",
+      "artifactSizeBytes": 2553
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:38:20.978Z"
+}

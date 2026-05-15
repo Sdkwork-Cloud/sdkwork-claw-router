@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49602,
+  "uuid": "skill-clawhub-storage-cleanup",
+  "skillKey": "clawhub-storage-cleanup",
+  "name": "Storage Cleanup",
+  "summary": "One-command disk cleanup for macOS and Linux — trash, caches, temp files, old kernels, snap revisions, Homebrew, Docker, and Xcode artifacts. Use when user a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.storage_cleanup",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "camopel",
+      "features": [
+        "One-command disk cleanup for macOS and Linux — trash, caches, temp files, old kernels, snap rev.",
+        "Use when user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/storage-cleanup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18227220?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "storage-cleanup",
+      "url": "https://clawhub.ai/skills/storage-cleanup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "storage-cleanup",
+    "url": "https://clawhub.ai/skills/storage-cleanup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/storage-cleanup-29a7495534fd1825.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/storage-cleanup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-storage-cleanup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dfe4fd7ab6706e820d02f7357241723a9d6c09fd0c06800fd7656058b4d79d7f",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T03:03:43.464Z"
+}

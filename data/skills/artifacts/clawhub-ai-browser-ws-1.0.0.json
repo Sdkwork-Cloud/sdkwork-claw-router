@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-browser-ws@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_browser_ws",
+  "skill": {
+    "id": 64775,
+    "skillKey": "clawhub-ai-browser-ws",
+    "name": "AI浏览器WebSocket控制"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-browser-ws",
+    "url": "https://clawhub.ai/skills/ai-browser-ws",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-browser-ws-78e4e677045d02b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 WebSocket 控制真实浏览器，实现导航、点击、输入、截图、DOM 获取等完整自动化操作。特点：真正的浏览器内核 (Chromium)、WebSocket 实时控制、支持无头/有头模式、自动重连机制。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linbo405",
+      "userId": "s17404ahym3v74cyh9f41zw9s183h5ga",
+      "displayName": "linbo405",
+      "image": "https://avatars.githubusercontent.com/u/259021343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776071586258,
+      "changelog": "AI Browser 1.0.0 – Initial release\n\n- 支持通过 WebSocket 实时控制 Chromium 浏览器，实现导航、点击、输入、截图、DOM 获取等自动化操作\n- 提供无头/有头模式切换及自动重连机制\n- 简单的多标签页管理\n- 首次启动自动下载 Chromium\n- 完善的消息格式与接口文档",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:15081c299550efb10de610aba7832766cb68fb8de5ae922c8b64a19ca187d120"
+}

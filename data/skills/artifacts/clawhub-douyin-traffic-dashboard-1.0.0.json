@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-traffic-dashboard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_traffic_dashboard",
+  "skill": {
+    "id": 73653,
+    "skillKey": "clawhub-douyin-traffic-dashboard",
+    "name": "抖音流量分配大盘"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-traffic-dashboard",
+    "url": "https://clawhub.ai/skills/douyin-traffic-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-traffic-dashboard-cdc24e8e66d76fea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "分析抖音各类内容的播放量占比与流量分布趋势。查询抖音内容分类播放数据、流量排名、赛道流量对比、流量大盘趋势时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allinherog-star",
+      "userId": "s170csjxstq1phf1asrb2pb1kh83zy7a",
+      "displayName": "allinherog-star",
+      "image": "https://avatars.githubusercontent.com/u/243965348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774931395560,
+      "changelog": "分析抖音各类内容的播放量占比与流量分布趋势。查询抖音内容分类播放数据、流量排名、赛道流量对比、流量大盘趋势时使用此技能。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1e45b17c91db6ace979dbb212e3a5547ccbb3bfc0bc4fa98099afd37ee98d54"
+}

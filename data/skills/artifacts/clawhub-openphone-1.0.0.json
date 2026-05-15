@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openphone@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openphone",
+  "skill": {
+    "id": 40725,
+    "skillKey": "clawhub-openphone",
+    "name": "OpenPhone"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openphone",
+    "url": "https://clawhub.ai/skills/openphone",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openphone-dccba33d2178ac0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage business phone calls, SMS, and contacts via OpenPhone API. Use when asked to send a text message, list calls or messages, look up conversation history..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dwhite-oss",
+      "userId": "s1774sw0egvy8t13mcss727fy183qs7m",
+      "displayName": "dwhite-oss",
+      "image": "https://avatars.githubusercontent.com/u/256912923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774638500106,
+      "changelog": "High-quality API skill by SkillPlexAI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:550c6bbf0d04522a64fa9ee793981db55e6a9c98156de709770b29457e643dbf"
+}

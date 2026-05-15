@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69007,
+  "uuid": "skill-clawhub-accountingonfeishu",
+  "skillKey": "clawhub-accountingonfeishu",
+  "name": "AccountingOnFeishu",
+  "summary": "帮用户快速记录日常支出和收入到飞书多维表格。支持文字记账和图片小票 OCR 解析。首次使用时会学习用户已有的记账本习惯，或引导新建记账本。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountingonfeishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haojie0114-lang",
+      "features": [
+        "帮用户快速记录日常支出和收入到飞书多维表格。支持文字记账和图片小票 OCR 解析。首次使用时会学习用户已有的记账本习惯，或引导新建记账本。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accountingonfeishu@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264591413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accountingonfeishu",
+      "url": "https://clawhub.ai/skills/accountingonfeishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountingonfeishu",
+    "url": "https://clawhub.ai/skills/accountingonfeishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountingonfeishu-c5d2ed191cc5ac2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accountingonfeishu@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-accountingonfeishu-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6ce5c398ed63c0c2cfa56ca62f44c98085448653bb05a88aa2f4ee33ec5570f",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T16:08:18.369Z"
+}

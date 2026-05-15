@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57432,
+  "uuid": "skill-clawhub-weixin-setup",
+  "skillKey": "clawhub-weixin-setup",
+  "name": "微信 ClawBot 插件安装",
+  "summary": "Install and connect the WeChat ClawBot (微信ClawBot) channel plugin for OpenClaw. Patches qrcode-terminal to output scannable image URLs instead of ASCII QR co...",
+  "version": "5.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weixin_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "skyfox",
+      "features": [
+        "Install and connect the WeChat ClawBot (微信ClawBot) channel plugin for OpenClaw",
+        "Patches qrcode-terminal to output scannable image URLs instead of ASCII QR co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weixin-setup@5.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5194500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weixin-setup",
+      "url": "https://clawhub.ai/skills/weixin-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weixin-setup",
+    "url": "https://clawhub.ai/skills/weixin-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weixin-setup-217ed740fa46aa7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weixin-setup@5.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-weixin-setup-5.0.1.json",
+      "version": "5.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:015a28d6488aa58019953d04952992315b8fdbfbbc00713ea6538ebe524fb399",
+      "artifactSizeBytes": 1896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T05:07:38.286Z"
+}

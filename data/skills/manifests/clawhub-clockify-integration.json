@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22955,
+  "uuid": "skill-clawhub-clockify-integration",
+  "skillKey": "clawhub-clockify-integration",
+  "name": "Clockify",
+  "summary": "Clockify integration. Manage Users, Reports. Use when the user wants to interact with Clockify data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clockify_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Clockify integration",
+        "Manage Users, Reports",
+        "Use when the user wants to interact with Clockify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clockify-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clockify-integration",
+      "url": "https://clawhub.ai/skills/clockify-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clockify-integration",
+    "url": "https://clawhub.ai/skills/clockify-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clockify-integration-c49a62b7155738e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clockify-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-clockify-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7bb30693a08b627549942b80c294648cb7321f4105c24d515bb54fe4e499b58",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:51.829Z"
+}

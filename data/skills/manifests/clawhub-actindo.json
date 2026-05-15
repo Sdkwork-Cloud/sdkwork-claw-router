@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35109,
+  "uuid": "skill-clawhub-actindo",
+  "skillKey": "clawhub-actindo",
+  "name": "Actindo",
+  "summary": "Actindo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Actindo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.actindo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Actindo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Actindo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/actindo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "actindo",
+      "url": "https://clawhub.ai/skills/actindo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "actindo",
+    "url": "https://clawhub.ai/skills/actindo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/actindo-149bdf8a7c6495f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/actindo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-actindo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:68bd2fb655d786bd30c1bffbfb0c68ca0eaa08851aad16caf060da18aeed3e17",
+      "artifactSizeBytes": 1829
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:07:58.725Z"
+}

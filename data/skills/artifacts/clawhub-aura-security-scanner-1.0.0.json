@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aura-security-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aura_security_scanner",
+  "skill": {
+    "id": 13331,
+    "skillKey": "clawhub-aura-security-scanner",
+    "name": "Aura Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aura-security-scanner",
+    "url": "https://clawhub.ai/skills/aura-security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aura-security-scanner-113cc6acf8f42a4f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan AI agent skills for malware, credential theft, prompt injection, and dangerous permissions before installing them"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aurasecurity-creator",
+      "userId": "publishers:aurasecurity-creator",
+      "displayName": "aurasecurity-creator",
+      "image": "https://avatars.githubusercontent.com/u/257439137?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1460,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770430215000,
+      "changelog": "- Initial release of AURA Security Scanner.\n- Scan AI agent skills for malware, credential theft, prompt injection, and dangerous permissions before installation.\n- Integrates with AURA Security API to assess skill safety and provide verdicts: SAFE, WARNING, DANGEROUS, or BLOCKED.\n- Supports scanning of OpenClaw, Claude MCP, and LangChain skills via skill URLs.\n- Requires AURA_API_URL environment variable for API access.\n- Skills passing the scan can display the AURA Verified badge.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2e3a737c8ecaff2c0b1721cb3153c3668f223fae82438539f77936e50ad4fb10"
+}

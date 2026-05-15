@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18001,
+  "uuid": "skill-clawhub-publora-telegram",
+  "skillKey": "clawhub-publora-telegram",
+  "name": "Publora Telegram",
+  "summary": "Post or schedule content to Telegram channels and groups using the Publora API. Use this skill when the user wants to publish or schedule Telegram messages v...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publora_telegram",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergey Bulaev",
+      "features": [
+        "Post or schedule content to Telegram channels and groups using the Publora API",
+        "Use this skill when the user wants to publish or schedule Telegram messages v..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publora-telegram@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/241980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publora-telegram",
+      "url": "https://clawhub.ai/skills/publora-telegram"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publora-telegram",
+    "url": "https://clawhub.ai/skills/publora-telegram",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publora-telegram-dc4c6a0157e3566c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publora-telegram@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-publora-telegram-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7053c6b1e3bae3a0d86df9916c3ced33493b36a28852ff5652ee50a95444d11",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T11:45:28.748Z"
+}

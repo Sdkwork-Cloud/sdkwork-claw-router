@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/x-hourly-brief-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_hourly_brief_skill",
+  "skill": {
+    "id": 51936,
+    "skillKey": "clawhub-x-hourly-brief-skill",
+    "name": "X Hourly Brief"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-hourly-brief-skill",
+    "url": "https://clawhub.ai/skills/x-hourly-brief-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-hourly-brief-skill-89a648faa52927c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "X Hourly Brief (Premium) — charge-first brief generation for high-value X posts. Supports Chinese/English output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangkefeng-ai",
+      "userId": "publishers:huangkefeng-ai",
+      "displayName": "huangkefeng-ai",
+      "image": "https://avatars.githubusercontent.com/u/113394381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 454,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772724681320,
+      "changelog": "Initial release: charge-first X hourly brief with per-item extraction, summary, and original source links.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f89ccb77c3552c76319f9c209f24363fc8b22da8d599254ef8e68ad99b4e3e79"
+}

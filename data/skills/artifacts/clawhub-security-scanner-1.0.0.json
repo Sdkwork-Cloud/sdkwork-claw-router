@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/security-scanner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_scanner",
+  "skill": {
+    "id": 8570,
+    "skillKey": "clawhub-security-scanner",
+    "name": "Security Scanner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-scanner",
+    "url": "https://clawhub.ai/skills/security-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-scanner-4f79124e12346f15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform se."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dmx64",
+      "userId": "s17adsb65vgpkfjn649jzf198983kdc1",
+      "displayName": "dmx",
+      "image": "https://avatars.githubusercontent.com/u/106552255?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 9610,
+      "installsAllTime": 111,
+      "installsCurrent": 109,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770664602049,
+      "changelog": "Initial release - nmap, nuclei, SSL scanning",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a9c2145bfdd56ab1a10b77adb44531258ed6292e2d3cb1725f1938d29a40f1a"
+}

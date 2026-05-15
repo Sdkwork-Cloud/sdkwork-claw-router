@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12275,
+  "uuid": "skill-clawhub-warden-studio-deploy",
+  "skillKey": "clawhub-warden-studio-deploy",
+  "name": "Deploy Agent on Warden Studio",
+  "summary": "Use Warden Studio (studio.wardenprotocol.org) via browser automation to register/publish a Community Agent to the Warden Agent Hub. Use when you need to (1) log in to Studio, (2) create/submit an agent listing, (3) configure API URL/auth,.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warden_studio_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kryptopaid",
+      "features": [
+        "Use Warden Studio (studio.wardenprotocol.org) via browser automation to register/publish a Comm.",
+        "Use when you need to (1) log in to Studio, (2) create/submit an agent listing, (3) configure AP.",
+        "Designed for safe, repeatable publishing with explicit confirmation gates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warden-studio-deploy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81397547?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warden-studio-deploy",
+      "url": "https://clawhub.ai/skills/warden-studio-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warden-studio-deploy",
+    "url": "https://clawhub.ai/skills/warden-studio-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warden-studio-deploy-e8826d03a442cc6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warden-studio-deploy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-warden-studio-deploy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b5a70a0e7c2714ff112c38414e23f96a7df08fa3aa5e5a5fe973069cacdccc00",
+      "artifactSizeBytes": 2609
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T01:54:52.595Z"
+}

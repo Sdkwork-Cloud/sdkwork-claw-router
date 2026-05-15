@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/southwest@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.southwest",
+  "skill": {
+    "id": 60981,
+    "skillKey": "clawhub-southwest",
+    "name": "Southwest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "southwest",
+    "url": "https://clawhub.ai/skills/southwest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/southwest-7f692bc6ed459316.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "西南航空公司指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776295616327,
+      "changelog": "- Updated skill summary and structure for a more concise and general overview of Southwest.\n- Added clear guidance on when to use the skill and what information can be found.\n- Outlined key points: brand history, core services, global presence, recent news/strategy.\n- Suggested practical use cases such as market research and background checks.\n- Emphasized using official and authoritative sources for up-to-date information.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2bc926fdcd2ed036dadc71df4a38631ebe7f0f3d98aae260c011c40079ad14e5"
+}

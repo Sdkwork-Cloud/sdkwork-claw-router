@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_builder",
+  "skill": {
+    "id": 37182,
+    "skillKey": "clawhub-excel-builder",
+    "name": "Excel Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-builder",
+    "url": "https://clawhub.ai/skills/excel-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-builder-92fea9ddb4c492ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build .xlsx files with formulas, merged cells, data validation, conditional formatting, pivot tables, and charts. Use when creating Excel spreadsheets, finan..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimmy974",
+      "userId": "s17dfx99gja4hssv5gt91dnmen83st71",
+      "displayName": "Jimmy974",
+      "image": "https://avatars.githubusercontent.com/u/446307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774708594123,
+      "changelog": "Initial release of excel-builder.\n\n- Build .xlsx files with formulas, merged cells, data validation, conditional formatting, pivot tables, and charts.\n- Supports both openpyxl (read/write existing files) and xlsxwriter (create new files with advanced charting).\n- Designed for generating structured spreadsheets, financial tables, data entry forms, and formatted reports.\n- Offers output validation, example usage patterns, and installation/error handling guidance.\n- Returns absolute path to generated .xlsx file and summary of included sheets.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:58e2437572c4376eb0f46feaa9d6ba0930ba1f07f9073b0990c1aae5b9d5e8aa"
+}

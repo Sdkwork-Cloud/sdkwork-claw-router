@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-builder@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_builder",
+  "skill": {
+    "id": 8647,
+    "skillKey": "clawhub-skill-builder",
+    "name": "Skill Builder / Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-builder",
+    "url": "https://clawhub.ai/skills/skill-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-builder-0ca851fe55c21ee0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create high-quality skills with modular structure, progressive disclosure, and token-efficient design."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 6619,
+      "installsAllTime": 95,
+      "installsCurrent": 89,
+      "stars": 20,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1772061099771,
+      "changelog": "Added description examples table, security checklist, and improved traps with fixes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea92445b82e3d1cad714535eb7bb85bdb98eab764b45b96d866017e45c294471"
+}

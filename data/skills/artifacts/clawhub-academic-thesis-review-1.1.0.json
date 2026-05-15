@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/academic-thesis-review@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.academic_thesis_review",
+  "skill": {
+    "id": 18268,
+    "skillKey": "clawhub-academic-thesis-review",
+    "name": "Academic Thesis Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "academic-thesis-review",
+    "url": "https://clawhub.ai/skills/academic-thesis-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/academic-thesis-review-37b44bf777368c0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-round review skill for Chinese management-oriented master's theses, especially MBA, MEM, and MPA, with applicability to similar professional and applie..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wmpluto",
+      "userId": "s173da2pj33cyksj0bq4t2qnvh83v5ap",
+      "displayName": "wmpluto",
+      "image": "https://avatars.githubusercontent.com/u/5803423?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774791387807,
+      "changelog": "Version 1.1.0\n\n- Added detailed instructions for storing extracted plain text files in a `review_artifacts` directory with timestamped filenames.\n- Enhanced iterative review mode: clarified issue injection strategy to prevent anchoring bias, separating independent discovery (Phase A) from historical verification (Phase B) in Round 2.\n- Specified that prior global issues are not injected into Round 1 of iterative mode; instead, they are redistributed for per-chapter verification in Round 2.\n- Updated the process for handling prior issues and clarified anti-shortcut rules, requiring systematic checklist coverage for discovery before verification.\n- Removed the `.gitignore` file from the repository.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f8feffd7fcd88961682dbfe4c38bcb11ff029d768876f85f8c60ee0997c2f0b"
+}

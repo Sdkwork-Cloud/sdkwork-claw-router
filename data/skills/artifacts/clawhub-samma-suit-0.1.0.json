@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/samma-suit@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.samma_suit",
+  "skill": {
+    "id": 19590,
+    "skillKey": "clawhub-samma-suit",
+    "name": "Sammā Suit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "samma-suit",
+    "url": "https://clawhub.ai/skills/samma-suit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/samma-suit-41a746a5b451426c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Add 8 security governance layers to your OpenClaw agent — budget controls, permissions, audit logging, kill switch, identity signing, skill vetting, process isolation, and gateway protection."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onezeroeight-ai",
+      "userId": "publishers:onezeroeight-ai",
+      "displayName": "OneZeroEight-ai",
+      "image": "https://avatars.githubusercontent.com/u/196463009?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1583,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770488657013,
+      "changelog": "Initial release of samma-suit: security governance for OpenClaw\n\n- Adds 8 security layers: budget controls, permissions, audit logging, kill switch, identity signing, skill vetting, process isolation, and gateway protection.\n- Provides OpenClaw lifecycle enforcement through plugin hooks.\n- User-invocable; requires SAMMA_API_KEY environment variable.\n- Includes installation and configuration guidance in SKILL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2fd4fa41e75373bbbc1b1a2187305c85de2693c8871d0bd7b5d595204e4c440d"
+}

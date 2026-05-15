@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68728,
+  "uuid": "skill-clawhub-cron-system-manager",
+  "skillKey": "clawhub-cron-system-manager",
+  "name": "Cron System Manager",
+  "summary": "雨晴定时任务系统管理器。当需要检查cron任务状态、修改任务配置、排查重复职责、优化任务安排时触发此技能。也是主人确认的\"主动发现+解决问题\"能力核心。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron_system_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tianheihei002",
+      "features": [
+        "雨晴定时任务系统管理器。当需要检查cron任务状态、修改任务配置、排查重复职责、优化任务安排时触发此技能。也是主人确认的\"主动发现+解决问题\"能力核心。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cron-system-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193375545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cron-system-manager",
+      "url": "https://clawhub.ai/skills/cron-system-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron-system-manager",
+    "url": "https://clawhub.ai/skills/cron-system-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-system-manager-baf7b3dd20f44a73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cron-system-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cron-system-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2214b44e153ff56b12efa773536317252984cd24da8542ab6dfef0c936b45791",
+      "artifactSizeBytes": 2544
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:40:27.963Z"
+}

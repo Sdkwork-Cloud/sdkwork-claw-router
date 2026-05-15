@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15520,
+  "uuid": "skill-clawhub-approvals-ui",
+  "skillKey": "clawhub-approvals-ui",
+  "name": "Approve new channels, and connections to openclaw ui and terminal",
+  "summary": "Web dashboard to approve OpenClaw device and channel pairings, manage connections, and access a live terminal from your browser.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.approvals_ui",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dr1nnas",
+      "features": [
+        "Web dashboard to approve OpenClaw device and channel pairings, manage connections, and access a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/approvals-ui@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/172433234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "approvals-ui",
+      "url": "https://clawhub.ai/skills/approvals-ui"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "approvals-ui",
+    "url": "https://clawhub.ai/skills/approvals-ui",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/approvals-ui-d8c58bdb34fd609e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/approvals-ui@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-approvals-ui-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29c33020f241e89e7bb210e3e462a0508202398a336e7f771c73d8a818adddb7",
+      "artifactSizeBytes": 2418
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T23:13:55.587Z"
+}

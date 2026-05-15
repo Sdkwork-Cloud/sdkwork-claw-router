@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/looop@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.looop",
+  "skill": {
+    "id": 29806,
+    "skillKey": "clawhub-looop",
+    "name": "looop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "looop",
+    "url": "https://clawhub.ai/skills/looop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/looop-02cb25ee143e3024.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claude Automated Development Toolkit - Decompose requirements documents, single files, or inline text into detailed task lists and automatically execute in l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "caesargattuso",
+      "userId": "s17ej72f0pesej3c1zbge90x9s856xg2",
+      "displayName": "caesargattuso",
+      "image": "https://avatars.githubusercontent.com/u/10957907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 295,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776931401404,
+      "changelog": "No user-visible changes in this version.\n- Changelog note: No file changes detected; SKILL.md appears unchanged except for truncation at the end. Functionality and parameters remain as previously described.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6db5aac0eeafb7ca602a0728f09c1124d5642e53d51850d7f282d86a3dd18b97"
+}

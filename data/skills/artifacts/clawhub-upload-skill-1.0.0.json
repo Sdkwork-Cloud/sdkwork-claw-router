@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upload-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upload_skill",
+  "skill": {
+    "id": 29690,
+    "skillKey": "clawhub-upload-skill",
+    "name": "Upload Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upload-skill",
+    "url": "https://clawhub.ai/skills/upload-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upload-skill-42c5fcecd34f9113.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage test payment links including one-time, recurring, plans, multi-product, custom, pay-what-you-want, and discount options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yaggit",
+      "userId": "publishers:yaggit",
+      "displayName": "yaggit",
+      "image": "https://avatars.githubusercontent.com/u/72143254?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773827495392,
+      "changelog": "Initial release of upload-skill.\n\n- Create and manage test payment links with support for one-time, recurring, custom plans, and multiple products.\n- Strict input validation, error handling, and security rules defined.\n- Sandbox/test environment only; no real payment processing occurs.\n- Extensive link configuration and advanced feature options included.\n- Output contract: Always return raw, structured JSON without commentary.\n- Supports webhook management, extensibility, and testing guidelines.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29aefa550e40037c52ea6e71d5fcee7d5c3af49d73053946e4f7576bf2417b85"
+}

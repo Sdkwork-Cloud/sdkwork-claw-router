@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplead@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplead",
+  "skill": {
+    "id": 36301,
+    "skillKey": "clawhub-uplead",
+    "name": "Uplead"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplead",
+    "url": "https://clawhub.ai/skills/uplead",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplead-ca4aebb2a413fc0e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "UpLead integration. Manage data, records, and automate workflows. Use when the user wants to interact with UpLead data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gora050",
+      "userId": "s178embtbbq5jnxba7hj83fa8583e8h7",
+      "displayName": "Vlad Ursul",
+      "image": "https://avatars.githubusercontent.com/u/4161345?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775707620139,
+      "changelog": "Auto sync from membranedev/application-skills",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b3f21749220b4671cc3f96ade7f626a27d0f6d83e2834fc2e8e9e5e2139ed527"
+}

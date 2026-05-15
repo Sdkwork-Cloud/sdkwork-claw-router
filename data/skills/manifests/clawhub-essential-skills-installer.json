@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63291,
+  "uuid": "skill-clawhub-essential-skills-installer",
+  "skillKey": "clawhub-essential-skills-installer",
+  "name": "Essential Skills Installer",
+  "summary": "一键安装 OpenClaw 必备技能。适用于新用户入门和快速部署。触发词：安装必备技能、一键安装、初始化技能。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.essential_skills_installer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qianduoduo8021",
+      "features": [
+        "一键安装 OpenClaw 必备技能。适用于新用户入门和快速部署。触发词：安装必备技能、一键安装、初始化技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/essential-skills-installer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42595612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "essential-skills-installer",
+      "url": "https://clawhub.ai/skills/essential-skills-installer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "essential-skills-installer",
+    "url": "https://clawhub.ai/skills/essential-skills-installer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/essential-skills-installer-674fd9b7542bdf34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/essential-skills-installer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-essential-skills-installer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8053ba0907ce3ab82fadf28181480dad2d70b2fa515d11894e0f22b33dc595b",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T04:31:12.223Z"
+}

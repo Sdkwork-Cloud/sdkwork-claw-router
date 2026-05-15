@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58774,
+  "uuid": "skill-clawhub-api-key-auditor",
+  "skillKey": "clawhub-api-key-auditor",
+  "name": "api-key-auditor",
+  "summary": "扫描 ~/.openclaw/workspace/skills 目录下所有文件中的硬编码 API Key、Token、Secret，检查是否已集成到 openclaw.json env.vars，并可自动将未集成的凭证迁移进去。Use when user asks to audit/check/scan for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_key_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lemonGGGit",
+      "features": [
+        "扫描 ~/.openclaw/workspace/skills 目录下所有文件中的硬编码 API Key、Token、Secret，检查是否已集成到 openclaw.json env.va."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-key-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36196725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-key-auditor",
+      "url": "https://clawhub.ai/skills/api-key-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-key-auditor",
+    "url": "https://clawhub.ai/skills/api-key-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-key-auditor-ae0628ee98cb009d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-key-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-key-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5311a32290238257c3d34a2eecbaf2fbeff6f0f0e04b3c1159de6e86ad362819",
+      "artifactSizeBytes": 2582
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:37:37.232Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postfast@1.8.3",
+  "version": "1.8.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postfast",
+  "skill": {
+    "id": 9803,
+    "skillKey": "clawhub-postfast",
+    "name": "Openclaw Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postfast",
+    "url": "https://clawhub.ai/skills/postfast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postfast-37c353fd43c2de04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Schedule and manage social media posts across TikTok, Instagram, Facebook, X (Twitter), YouTube, LinkedIn, Threads, Bluesky, Pinterest, Telegram, and Google..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peturgeorgievv",
+      "userId": "s1704hp9prr9dzt8w0tefw1g8x83vpew",
+      "displayName": "peturgeorgievv",
+      "image": "https://avatars.githubusercontent.com/u/50354476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2612,
+      "installsAllTime": 6,
+      "installsCurrent": 4,
+      "stars": 7,
+      "versions": 20
+    },
+    "latestVersion": {
+      "version": "1.8.3",
+      "createdAt": 1778011562337,
+      "changelog": "Add 'Common mistake' callout to draft section: status is a top-level field, not per-post. Putting it inside the post object causes API to default to SCHEDULED and reject request for missing scheduledAt.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:957c1e110a6d12ff7211cef59d974b29128d79eadd1ef7473d3eddf6218c5643"
+}

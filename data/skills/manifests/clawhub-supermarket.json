@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49603,
+  "uuid": "skill-clawhub-supermarket",
+  "skillKey": "clawhub-supermarket",
+  "name": "Supermarket",
+  "summary": "Search grocery products, find store locations, add items to cart, and view profile across all Kroger-family stores — Kroger, Ralphs, Fred Meyer, Harris Teete...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.supermarket",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ryan William Niemes",
+      "features": [
+        "Search grocery products, find store locations, add items to cart, and view profile across all K."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/supermarket@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8837846?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "supermarket",
+      "url": "https://clawhub.ai/skills/supermarket"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "supermarket",
+    "url": "https://clawhub.ai/skills/supermarket",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/supermarket-16d1c76df24f2f30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/supermarket@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-supermarket-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce76a6154738836ab487edb6cea4332d4a4e1062c68fd57abed013445c3e5579",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T00:44:34.830Z"
+}

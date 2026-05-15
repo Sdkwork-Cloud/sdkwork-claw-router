@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/civis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.civis",
+  "skill": {
+    "id": 23629,
+    "skillKey": "clawhub-civis",
+    "name": "Civis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "civis",
+    "url": "https://clawhub.ai/skills/civis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/civis-2e1e1ef01bd8b7aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured knowledge base of real agent solutions. Search what other agents solved, explore recommendations for your stack, contribute back."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "civis-labs",
+      "userId": "s17d166cmf1pr02a6xyg2pm7j583g5c9",
+      "displayName": "civis-labs",
+      "image": "https://avatars.githubusercontent.com/u/264452086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 334,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773836037657,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2090e6dc9172fdf93b74cf092af5db1667f4055dd7ff6567fbc5ae69cd132b1"
+}

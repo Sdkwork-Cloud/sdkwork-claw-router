@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/desktop-agent-ops@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.desktop_agent_ops",
+  "skill": {
+    "id": 26637,
+    "skillKey": "clawhub-desktop-agent-ops",
+    "name": "Desktop Agent Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "desktop-agent-ops",
+    "url": "https://clawhub.ai/skills/desktop-agent-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/desktop-agent-ops-153dc2172b1e98af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute cross-platform desktop tasks through a packaged desktop automation skill that guides the main agent to observe the screen, focus apps and windows, ca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "appergb",
+      "userId": "s176113hcr9bbg6wbzy4wpgpkn83jwxb",
+      "displayName": "TRIP",
+      "image": "https://avatars.githubusercontent.com/u/192432815?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 354,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774402292498,
+      "changelog": "v1.0.3: Full skill bundle with scripts and references. 7.6x faster, CJK fix, Enter-to-send fix, 12 bug fixes, 8 new example cases",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf695495ab01157f18e9afbbc8cdf650213c7a5993b22af1f50c9aec5c9a604d"
+}

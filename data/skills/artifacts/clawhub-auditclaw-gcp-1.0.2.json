@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auditclaw-gcp@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auditclaw_gcp",
+  "skill": {
+    "id": 19232,
+    "skillKey": "clawhub-auditclaw-gcp",
+    "name": "AuditClaw Gcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auditclaw-gcp",
+    "url": "https://clawhub.ai/skills/auditclaw-gcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auditclaw-gcp-70ccb23345b253ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GCP compliance evidence collection for auditclaw-grc. 12 read-only checks across Cloud Storage, firewall, IAM, logging, KMS, DNS, BigQuery, Compute, and Clou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mailnike",
+      "userId": "s17ee5y8kxe1zfx1t7te9wcgzx83j215",
+      "displayName": "Nikhil Jathar",
+      "image": "https://avatars.githubusercontent.com/u/22786232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 628,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771212549399,
+      "changelog": "- Added homepage and source fields for improved skill metadata.\n- Updated install metadata to specify pip installation from scripts/requirements.txt.\n- Listed \"GOOGLE_APPLICATION_CREDENTIALS\" as a required environment variable for clarity.\n- No changes to functionality or code; documentation and metadata improvements only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:465005a0166823fc7947ee7b090bb9f2fea00c90acc0d1c5f54f01b9c6489f65"
+}

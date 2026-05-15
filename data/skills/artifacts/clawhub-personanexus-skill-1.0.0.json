@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personanexus-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personanexus_skill",
+  "skill": {
+    "id": 22071,
+    "skillKey": "clawhub-personanexus-skill",
+    "name": "PersonaNexus ClawHub Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personanexus-skill",
+    "url": "https://clawhub.ai/skills/personanexus-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personanexus-skill-857914f535d24180.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build structured AI agent personalities using OCEAN, DISC, and Jungian frameworks. Define traits, communication styles, guardrails, and compile to system pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcrowan3",
+      "userId": "publishers:jcrowan3",
+      "displayName": "jcrowan3",
+      "image": "https://avatars.githubusercontent.com/u/257114276?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 387,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772243530793,
+      "changelog": "Initial release of PersonaNexus 1.0.0:\n\n- Define rich AI agent personalities using OCEAN, DISC, and Jungian frameworks, or canonical trait presets.\n- Validate YAML agent identity files against a strict schema.\n- Compile agent identities to system prompts for multiple LLM platforms, including OpenAI, Anthropic, OpenClaw, and more.\n- Includes both a Python API and a CLI for validating, compiling, and scaffolding agent personalities.\n- Tools for mapping between OCEAN, DISC, and Jungian types and extracting preset personalities.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1865e399d8fcc6a4fd32a118d419a3162aec6c728ec7637c72734449f7991042"
+}

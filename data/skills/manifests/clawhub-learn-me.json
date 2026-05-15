@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18214,
+  "uuid": "skill-clawhub-learn-me",
+  "skillKey": "clawhub-learn-me",
+  "name": "Learn me",
+  "summary": "Learn me: Lets OpenClaw proactively learn more about you through natural conversation.",
+  "version": "0.5.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_me",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yevhen Diachenko",
+      "features": [
+        "Learn me: Lets OpenClaw proactively learn more about you through natural conversation."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-me@0.5.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23141571?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-me",
+      "url": "https://clawhub.ai/skills/learn-me"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-me",
+    "url": "https://clawhub.ai/skills/learn-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-me-e806b0c5049f8db5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-me@0.5.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-me-0.5.2.json",
+      "version": "0.5.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a126c70a537e0f6d10842c911ed9a6eb93c3b9c8e36c7cff31d36338bce1ac6",
+      "artifactSizeBytes": 1932
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T18:18:24.532Z"
+}

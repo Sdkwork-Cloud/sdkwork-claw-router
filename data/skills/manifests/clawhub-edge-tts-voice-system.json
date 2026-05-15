@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41930,
+  "uuid": "skill-clawhub-edge-tts-voice-system",
+  "skillKey": "clawhub-edge-tts-voice-system",
+  "name": "Edge TTS Voice System",
+  "summary": "Local voice system for OpenClaw using faster-whisper for inbound transcription and Edge TTS for outbound replies. Use when you need private voice workflows,...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_tts_voice_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stephen Redmond - Straitéis AI",
+      "features": [
+        "Local voice system for OpenClaw using faster-whisper for inbound transcription and Edge TTS for.",
+        "Use when you need private voice workflows,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edge-tts-voice-system@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/244375177?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edge-tts-voice-system",
+      "url": "https://clawhub.ai/skills/edge-tts-voice-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-tts-voice-system",
+    "url": "https://clawhub.ai/skills/edge-tts-voice-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-tts-voice-system-999d3e04d7fb8b0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edge-tts-voice-system@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edge-tts-voice-system-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:06430f1bb14aacef8394dbf88059e44b0fc344e3329fd9427ec5a52d6eac43af",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T20:41:46.463Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reports-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reports_creator",
+  "skill": {
+    "id": 45225,
+    "skillKey": "clawhub-reports-creator",
+    "name": "Reports Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reports-creator",
+    "url": "https://clawhub.ai/skills/reports-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reports-creator-b251b571ccfa8a05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated report generation for self-reflection and system analysis. Creates daily, weekly, and monthly reports from logs, databases, and system metrics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kikikari",
+      "userId": "s1758dpxe8hkp0hvht0fbd948h84mh2s",
+      "displayName": "KikiKari",
+      "image": "https://avatars.githubusercontent.com/u/272986081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776514746607,
+      "changelog": "Initial release of reports-creator.\n\n- Automates generation of daily, weekly, and monthly reports for self-reflection and system analysis.\n- Supports multiple data sources: local databases, log files, and system metrics.\n- Provides structured Markdown reports with summaries, events, errors, and recommended actions.\n- Includes CLI usage for manual and automated report creation.\n- Integrates with db-maintainer, log-collector, and workspace-db.\n- Configurable output directory, retention policy, and automated scheduling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:555eb7780acbed72e2f1ab89bf72ac5850cfd884d37132c73a87c7d895eb3f5c"
+}

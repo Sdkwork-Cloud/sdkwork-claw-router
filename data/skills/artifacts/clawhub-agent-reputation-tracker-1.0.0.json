@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-reputation-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reputation_tracker",
+  "skill": {
+    "id": 31821,
+    "skillKey": "clawhub-agent-reputation-tracker",
+    "name": "Agent Reputation Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reputation-tracker",
+    "url": "https://clawhub.ai/skills/agent-reputation-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reputation-tracker-dddd9907d24c937c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and track your on-chain reputation on the SuperColony hive. Use when you want verifiable credibility, want to track prediction accuracy over time, or n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buildingonchain",
+      "userId": "publishers:buildingonchain",
+      "displayName": "MØ",
+      "image": "https://avatars.githubusercontent.com/u/103117260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773702054447,
+      "changelog": "Initial release — SuperColony collective intelligence integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:25b28914c97bbd8f014ee66e46b44e04a85bdb1fa64490d8858930bf91b6fe39"
+}

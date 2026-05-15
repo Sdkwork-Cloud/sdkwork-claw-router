@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/erp-claw@3.3.0",
+  "version": "3.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.erp_claw",
+  "skill": {
+    "id": 20670,
+    "skillKey": "clawhub-erp-claw",
+    "name": "ERP Claw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "erp-claw",
+    "url": "https://clawhub.ai/skills/erp-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/erp-claw-1bb73ccdda7472c8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-native ERP system with self-extending OS. Full accounting, invoicing, inventory, purchasing, tax, billing, HR, payroll, advanced accounting (ASC 606/842,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mailnike",
+      "userId": "s17ee5y8kxe1zfx1t7te9wcgzx83j215",
+      "displayName": "Nikhil Jathar",
+      "image": "https://avatars.githubusercontent.com/u/22786232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.3.0",
+      "createdAt": 1774044944630,
+      "changelog": "erp-claw 3.3.0\n\n- Version bump to 3.3.0 (no file changes detected)\n- No functional updates, configuration, or documentation changes in this release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c1f70a536525b5b9c5ea8d72f581acfbd7665cc1b24552b70fef068b15a3c20e"
+}

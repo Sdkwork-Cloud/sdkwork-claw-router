@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42362,
+  "uuid": "skill-clawhub-coding-agent-cp3d",
+  "skillKey": "clawhub-coding-agent-cp3d",
+  "name": "Coding Agent",
+  "summary": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.coding_agent_cp3d",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process",
+        "Use when: (1) building/creating new features or apps, (2) reviewing PRs (sp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/coding-agent-cp3d@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "coding-agent-cp3d",
+      "url": "https://clawhub.ai/skills/coding-agent-cp3d"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "coding-agent-cp3d",
+    "url": "https://clawhub.ai/skills/coding-agent-cp3d",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/coding-agent-cp3d-0fa3189f8e2252b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/coding-agent-cp3d@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-coding-agent-cp3d-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c3fa4e69e8f9887de3917bd8133f9e7df3a957317edbb47a7099d1e69d853dc",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T11:43:01.987Z"
+}

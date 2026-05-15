@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/akshare-stock-tmp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akshare_stock_tmp",
+  "skill": {
+    "id": 67217,
+    "skillKey": "clawhub-akshare-stock-tmp",
+    "name": "Akshare Stock.Tmp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akshare-stock-tmp",
+    "url": "https://clawhub.ai/skills/akshare-stock-tmp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akshare-stock-tmp-3a8d3fc7f3473ffc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股量化数据分析工具，基于AkShare库获取A股行情、财务数据、板块信息等。用于回答关于A股股票查询、行情数据、财务分析、选股等问题。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hexx89",
+      "userId": "s171e4p2mkq25g4zhp8egwt49983za9n",
+      "displayName": "hexx89",
+      "image": "https://avatars.githubusercontent.com/u/139135892?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773897621737,
+      "changelog": "Initial release of A股量化数据分析工具 based on AkShare:\n\n- Provides real-time A股行情、历史K线、财务数据、板块/行业分析等多种数据接口\n- Includes demo code for core features: 行情查询、财务分析、资金流向、龙虎榜、新股申购、融资融券\n- Offers 常用股票代码速查表\n- Suggests baostock as an alternative if AkShare cannot be used\n- Lists usage notes and troubleshooting tips",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6357bbf0a6b759e9bf1503db368af46694d9b59a3564793e7c9a8969475490f"
+}

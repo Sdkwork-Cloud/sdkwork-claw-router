@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34507,
+  "uuid": "skill-clawhub-prisma-integration",
+  "skillKey": "clawhub-prisma-integration",
+  "name": "Prisma",
+  "summary": "Prisma integration. Manage data, records, and automate workflows. Use when the user wants to interact with Prisma data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prisma_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Prisma integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Prisma data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prisma-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prisma-integration",
+      "url": "https://clawhub.ai/skills/prisma-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prisma-integration",
+    "url": "https://clawhub.ai/skills/prisma-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prisma-integration-0fb0a01033fc3da4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prisma-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-prisma-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0298be69912d7d78a6225575a23f7e4bd4867e7627ec1e6eec673340ba9c2870",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:52:51.769Z"
+}

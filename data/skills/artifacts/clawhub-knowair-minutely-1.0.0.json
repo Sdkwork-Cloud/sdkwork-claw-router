@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowair-minutely@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowair_minutely",
+  "skill": {
+    "id": 57278,
+    "skillKey": "clawhub-knowair-minutely",
+    "name": "KnowAir Minutely 明气分钟级降水"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowair-minutely",
+    "url": "https://clawhub.ai/skills/knowair-minutely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowair-minutely-76e47c02180809c2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get minute-level precipitation forecast for the next 2 hours via the Caiyun Weather API. Returns precipitation intensity at 1-minute intervals and 30-minute..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shuowang-ai",
+      "userId": "publishers:shuowang-ai",
+      "displayName": "Shuo Wang",
+      "image": "https://avatars.githubusercontent.com/u/16516703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 287,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773324030926,
+      "changelog": "Initial release of KnowAir Minutely: minute-level precipitation forecast for China.\n\n- Provides 2-hour, 1-minute interval precipitation forecasts using Caiyun Weather API.\n- Returns rainfall intensity and 30-minute probability data.\n- Designed for coverage in major Chinese cities.\n- Requires Caiyun API token and Python 3.\n- Includes command-line usage instructions and clear failure handling messages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1405ef003c3ac1610497360e699ce3eb084155e5436fe0ebce619bd37aaeba78"
+}

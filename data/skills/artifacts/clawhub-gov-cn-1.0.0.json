@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gov-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gov_cn",
+  "skill": {
+    "id": 71983,
+    "skillKey": "clawhub-gov-cn",
+    "name": "Gov Cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gov-cn",
+    "url": "https://clawhub.ai/skills/gov-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gov-cn-f18df5f0d8d8436a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供中国政府政策、机构信息与政务服务查询，助您获取最新官方政务数据与办事指南。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775957373104,
+      "changelog": "中国政府网技能发布 —— 提供权威政务服务与官方信息查询。\n\n- 查询国务院政策、部委文件及政务服务指南\n- 获取政府机构设置、职能介绍和官方统计数据\n- 支持政策文件检索与留言咨询等互动功能\n- 信息内容以中国政府网发布为准",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14c5f940be32a0b0ae5bcda49f3eeaefced16f6a0771e08560dcf2fb3173eabc"
+}

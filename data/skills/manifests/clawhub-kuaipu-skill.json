@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67693,
+  "uuid": "skill-clawhub-kuaipu-skill",
+  "skillKey": "clawhub-kuaipu-skill",
+  "name": "Kuaipu Skill",
+  "summary": "自动化快普系统登录、验证码识别、自动操作和审批流程查询等。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaipu_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chldong",
+      "features": [
+        "自动化快普系统登录、验证码识别、自动操作和审批流程查询等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kuaipu-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24600269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kuaipu-skill",
+      "url": "https://clawhub.ai/skills/kuaipu-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaipu-skill",
+    "url": "https://clawhub.ai/skills/kuaipu-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaipu-skill-27d22e6ce56a5fb4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kuaipu-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kuaipu-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe9670e7768c0db082470c3328144189a54f5052642fe257cca0f070cb06685f",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:35:23.858Z"
+}

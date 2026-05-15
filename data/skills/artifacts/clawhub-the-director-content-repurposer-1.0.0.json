@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-director-content-repurposer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_director_content_repurposer",
+  "skill": {
+    "id": 37871,
+    "skillKey": "clawhub-the-director-content-repurposer",
+    "name": "Content Repurposer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-director-content-repurposer",
+    "url": "https://clawhub.ai/skills/the-director-content-repurposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-director-content-repurposer-f58e687b635490b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transforms long-form content into concise, platform-tailored social posts optimized for LinkedIn, Twitter, and Instagram engagement."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "di5cip1e",
+      "userId": "s17ewhty0883w7qaxe537w985583mxaf",
+      "displayName": "di5cip1e",
+      "image": "https://avatars.githubusercontent.com/u/87604837?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774565629220,
+      "changelog": "Initial release - Transforms content for LinkedIn, Twitter, Instagram",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9f584fea7afccc362e63004874ecacab76bd461d83ddcf10d58326288b01b27"
+}

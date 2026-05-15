@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/l6-learning-accelerator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.l6_learning_accelerator",
+  "skill": {
+    "id": 42556,
+    "skillKey": "clawhub-l6-learning-accelerator",
+    "name": "L6 Learning Accelerator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "l6-learning-accelerator",
+    "url": "https://clawhub.ai/skills/l6-learning-accelerator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/l6-learning-accelerator-49282a45f94b1b05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides time-aware memory retrieval by combining vector similarity with temporal relevance and tracks learning progress for enhanced study management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyblhl",
+      "userId": "publishers:wyblhl",
+      "displayName": "wyblhl",
+      "image": "https://avatars.githubusercontent.com/u/262313295?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774158067435,
+      "changelog": "Initial release of l6-learning-accelerator.\n\n- Implements 2-signal fusion retrieval (vector similarity + temporal relevance) for intelligent context access.\n- Adds temporal routing to detect and process time-related queries.\n- Includes progress tracking and reporting for learning sessions.\n- Pure JavaScript; no external dependencies.\n- Offers multiple trigger phrases for flexible activation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b0f68c6d8b70408f4b5f2d698c9d80ae180e225c8954d9067e215ea86a8f2605"
+}

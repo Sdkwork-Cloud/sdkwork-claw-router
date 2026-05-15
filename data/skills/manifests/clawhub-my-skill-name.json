@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42424,
+  "uuid": "skill-clawhub-my-skill-name",
+  "skillKey": "clawhub-my-skill-name",
+  "name": "my-skill-name",
+  "summary": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an exis...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_skill_name",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Crystal-k",
+      "features": [
+        "Create, edit, improve, or audit AgentSkills",
+        "Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-skill-name@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/53135317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-skill-name",
+      "url": "https://clawhub.ai/skills/my-skill-name"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-skill-name",
+    "url": "https://clawhub.ai/skills/my-skill-name",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-skill-name-007320be227c5a1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-skill-name@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-skill-name-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74e92529a1b3060f595dd948ac7923c7c2d4cfcf481d05b96d2cf47c01d0d7b2",
+      "artifactSizeBytes": 2070
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T08:18:52.101Z"
+}

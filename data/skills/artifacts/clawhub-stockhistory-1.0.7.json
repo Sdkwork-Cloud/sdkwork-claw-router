@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stockhistory@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stockhistory",
+  "skill": {
+    "id": 67729,
+    "skillKey": "clawhub-stockhistory",
+    "name": "Stock Historical Data Query - 股票历史行情查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stockhistory",
+    "url": "https://clawhub.ai/skills/stockhistory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stockhistory-32762f7a2ec8df02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "按代码与时间范围查历史日线，或查列表与详情，便于 K 线与走势分析。当用户说：宁德时代最近一年 K 线数据？这只股票过去一年最高最低价？或类似历史行情问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 9,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1775209933885,
+      "changelog": "- 技能名称与描述优化，更直观体现用法和适用场景\n- 用法说明增加典型问题举例，方便用户理解何时调用本技能\n- 其它说明和推荐用法更侧重实际检索历史行情与K线分析\n- 无代码变更，仅文档内容更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:973d6df2357a8f4caf03883e24e57b17373a7dbcc9a0d172d21c3f9a30bade6e"
+}

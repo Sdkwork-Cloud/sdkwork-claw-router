@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-bot-creator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bot_creator",
+  "skill": {
+    "id": 58660,
+    "skillKey": "clawhub-feishu-bot-creator",
+    "name": "Feishu Bot Creator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bot-creator",
+    "url": "https://clawhub.ai/skills/feishu-bot-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bot-creator-ff07bddc7c9bbf97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书机器人创建器 — 自动化创建和配置飞书机器人，包括应用创建、权限配置、 webhook 设置等。| Feishu Bot Creator — Automate creation and configuration of Feishu bots, including app creation, permissi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "839305939wang",
+      "userId": "publishers:839305939wang",
+      "displayName": "839305939wang",
+      "image": "https://avatars.githubusercontent.com/u/20961664?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774063278688,
+      "changelog": "Initial release of Feishu Bot Creator.\n\n- Automates the creation and configuration of Feishu bots, including app setup, permission assignment, and webhook configuration.\n- Supports command-line usage with customizable arguments for name, description, permissions, webhook URL, and more.\n- Generates a configuration file containing app credentials and settings.\n- Includes bundled script: scripts/feishu_bot_creator.py.\n- Provides clear documentation, usage examples, and security best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9da5fd7ade68f5e89129e07c2d7b47e9a578ef8a9aac1aed3ffabf72dbaba1f3"
+}

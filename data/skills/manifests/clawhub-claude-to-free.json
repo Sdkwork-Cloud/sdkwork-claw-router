@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37809,
+  "uuid": "skill-clawhub-claude-to-free",
+  "skillKey": "clawhub-claude-to-free",
+  "name": "Model Migration",
+  "summary": "Migrate OpenClaw from Claude subscription OAuth to a free or cheap model provider (OpenRouter, Gemini, Ollama). Use when the user says Claude stopped working...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_to_free",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BlueBirdBack ✨",
+      "features": [
+        "Migrate OpenClaw from Claude subscription OAuth to a free or cheap model provider (OpenRouter,.",
+        "Use when the user says Claude stopped working..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-to-free@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/126304167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-to-free",
+      "url": "https://clawhub.ai/skills/claude-to-free"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-to-free",
+    "url": "https://clawhub.ai/skills/claude-to-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-to-free-2db0c6ce7cb44b53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-to-free@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-to-free-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14de761493884cae33fe61b7da31ee707db38e222cd8c4dd3a1a012daa4bf08c",
+      "artifactSizeBytes": 2095
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T05:25:59.995Z"
+}

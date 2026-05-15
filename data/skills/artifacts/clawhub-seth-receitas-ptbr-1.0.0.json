@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seth-receitas-ptbr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seth_receitas_ptbr",
+  "skill": {
+    "id": 55916,
+    "skillKey": "clawhub-seth-receitas-ptbr",
+    "name": "Seth Receitas Ptbr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seth-receitas-ptbr",
+    "url": "https://clawhub.ai/skills/seth-receitas-ptbr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seth-receitas-ptbr-ea38cb26daf399f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Busca receitas em português do Brasil (pt-BR) via Wikilivros + TheMealDB. Gera receitas originais quando necessário."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "runawaydevil",
+      "userId": "publishers:runawaydevil",
+      "displayName": "runawaydevil",
+      "image": "https://avatars.githubusercontent.com/u/8763225?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772711704815,
+      "changelog": "- Primeira versão da skill lançada\n- Busca receitas em português do Brasil usando Wikilivros e TheMealDB\n- Gera receita original caso não encontre resultados adequados nas fontes\n- Permite pesquisar, obter específicas, sugerir por ingredientes e receber receita aleatória via linha de comando\n- Inclui informações nutricionais opcionais\n- Retorna resultados sempre em pt-BR e com atribuição às fontes",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d050ed9d09ba48307f6febf778910c1d77c07dc18c6939c4f830c489e876723a"
+}

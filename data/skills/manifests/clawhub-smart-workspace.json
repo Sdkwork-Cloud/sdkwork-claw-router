@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72281,
+  "uuid": "skill-clawhub-smart-workspace",
+  "skillKey": "clawhub-smart-workspace",
+  "name": "Smart Workspace",
+  "summary": "轻量化的项目文件管理技能。自动管理智能体工作区，根据任务关键词匹配项目历史，全自动执行，无需确认。避免文件混乱，大大增强智能体的项目管理能力。支持文件整理、文件夹管理、项目追踪、自动归档、工作区清理等功能。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_workspace",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yaoweizhang",
+      "features": [
+        "轻量化的项目文件管理技能。自动管理智能体工作区，根据任务关键词匹配项目历史，全自动执行，无需确认。避免文件混乱，大大增强智能体的项目管理能力。支持文件整理、文件夹管理、项目追踪、自动归档、工."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-workspace@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13679904?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-workspace",
+      "url": "https://clawhub.ai/skills/smart-workspace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-workspace",
+    "url": "https://clawhub.ai/skills/smart-workspace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-workspace-f6b92f176fecb4ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-workspace@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-workspace-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:69a0bd87b82cdd8797a776eb480d4630bb35218f3f91a80749f3b3d53d7a63db",
+      "artifactSizeBytes": 2535
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T03:20:16.240Z"
+}

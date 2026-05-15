@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33134,
+  "uuid": "skill-clawhub-customer-experience",
+  "skillKey": "clawhub-customer-experience",
+  "name": "Customer Experience",
+  "summary": "Map and analyze customer experience touchpoints. Use for improving satisfaction, loyalty, and customer journey optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_experience",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linuszz",
+      "features": [
+        "Map and analyze customer experience touchpoints",
+        "Use for improving satisfaction, loyalty, and customer journey optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/customer-experience@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46770204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "customer-experience",
+      "url": "https://clawhub.ai/skills/customer-experience"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-experience",
+    "url": "https://clawhub.ai/skills/customer-experience",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-experience-117f7dc968c825f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/customer-experience@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-customer-experience-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e31aa719c84e6dca0a0610d4924fba026c3ce2c337ff5ecaa306944679143ade",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:42:10.196Z"
+}

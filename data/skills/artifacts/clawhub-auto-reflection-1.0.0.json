@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-reflection@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_reflection",
+  "skill": {
+    "id": 60707,
+    "skillKey": "clawhub-auto-reflection",
+    "name": "Auto Reflection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-reflection",
+    "url": "https://clawhub.ai/skills/auto-reflection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-reflection-bc4b515d8c0f8cb7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动执行深度反思和学习优化。每 5 轮自动深度反思，能力评估自动更新，学习计划自动调整，知识图谱自动优化。 Triggers: reflection, 反思，auto-reflection, 能力评估，learning optimization, 学习优化"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wyblhl",
+      "userId": "publishers:wyblhl",
+      "displayName": "wyblhl",
+      "image": "https://avatars.githubusercontent.com/u/262313295?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774158044285,
+      "changelog": "Initial release: Auto reflection every 5 rounds with capability assessment",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:071290462d989ede2b379fd71802b398f093eaafde18b193837a0f882aa8742a"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/md2word@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.md2word",
+  "skill": {
+    "id": 64986,
+    "skillKey": "clawhub-md2word",
+    "name": "Markdown to Word"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "md2word",
+    "url": "https://clawhub.ai/skills/md2word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/md2word-03708fa2793772ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Markdown转Word文档技能。将Markdown文档转换为符合中文排版标准的专业格式Word文档，支持多种预设格式。适用于正式文档、论文、报告等需要规范排版的文档转换。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cat-xierluo",
+      "userId": "s179ghx665dhgcsrdzyss2am0x83g7nf",
+      "displayName": "xierluo",
+      "image": "https://avatars.githubusercontent.com/u/66555304?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775919592265,
+      "changelog": "支持外部URL图片下载嵌入，调整图片显示比例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8be730dccfbeb652d23a2b280d312e80783913dcfab5653a5419fc5abab17a83"
+}

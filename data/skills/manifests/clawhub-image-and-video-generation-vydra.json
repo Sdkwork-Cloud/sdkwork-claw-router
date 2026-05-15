@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13668,
+  "uuid": "skill-clawhub-image-and-video-generation-vydra",
+  "skillKey": "clawhub-image-and-video-generation-vydra",
+  "name": "Image and Video Generation with Vydra API",
+  "summary": "AI image and video generation via Vydra.ai API. Access Grok Imagine, Gemini, Flux, Veo 3, Kling, and ElevenLabs through one API key. Agents can self-register and generate images automatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_and_video_generation_vydra",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ShoafSystems",
+      "features": [
+        "AI image and video generation via Vydra.ai API",
+        "Access Grok Imagine, Gemini, Flux, Veo 3, Kling, and ElevenLabs through one API key",
+        "Agents can self-register and generate images automatically."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-and-video-generation-vydra@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257202760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-and-video-generation-vydra",
+      "url": "https://clawhub.ai/skills/image-and-video-generation-vydra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-and-video-generation-vydra",
+    "url": "https://clawhub.ai/skills/image-and-video-generation-vydra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-and-video-generation-vydra-748739fb2cb9d9fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-and-video-generation-vydra@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-and-video-generation-vydra-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57f1c1e19e57581f428779970ea91c5fa1c748a8209d06e66407e01f9aa22c63",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T05:56:33.976Z"
+}

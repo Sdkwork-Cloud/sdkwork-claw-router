@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-ai-youtube@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_ai_youtube",
+  "skill": {
+    "id": 53847,
+    "skillKey": "clawhub-generator-ai-youtube",
+    "name": "Generator Ai Youtube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-ai-youtube",
+    "url": "https://clawhub.ai/skills/generator-ai-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-ai-youtube-79cbcc377f6a1226.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a YouTube video with intro, chapters, and captions from my record..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 89,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777589464248,
+      "changelog": "- Initial release of Generator AI YouTube (v1.0.0).\n- Upload MP4, MOV, AVI, WebM files (up to 500MB), and generate YouTube-ready videos with AI—featuring intros, chapters, and captions—within 1-2 minutes.\n- No manual editing required; describe your desired output and receive polished videos automatically.\n- Integrated quick start: automatic token acquisition and cloud session setup.\n- Supports credit balance checks, upload, video generation, timeline previews, and one-click exports.\n- Handles common errors and guides users to registration or plan upgrade if necessary.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:079d8116f918078ed01df30f1f8d0010ab4143a8b01aaa0304c9da4ae5bd7527"
+}

@@ -1,0 +1,31 @@
+package com.sdkwork.clawrouter.backend
+
+data class StudioCatalogAssetRecord(
+    val altText: String? = null,
+    val artifactId: String? = null,
+    val assetType: String? = null,
+    val assetUrl: String? = null,
+    val createdAt: String? = null,
+    val dataScope: String? = null,
+    val deletedAt: String? = null,
+    val deletedBy: String? = null,
+    val durationSeconds: String? = null,
+    val fileSize: String? = null,
+    val height: Int? = null,
+    val id: String? = null,
+    val metadata: Map<String, String>? = null,
+    val mimeType: String? = null,
+    val organizationId: String? = null,
+    val publishedAt: String? = null,
+    val sortOrder: Int? = null,
+    val status: String? = null,
+    val targetId: String? = null,
+    val targetType: String? = null,
+    val tenantId: String? = null,
+    val thumbnailUrl: String? = null,
+    val title: String? = null,
+    val updatedAt: String? = null,
+    val uuid: String? = null,
+    val version: String? = null,
+    val width: Int? = null
+)

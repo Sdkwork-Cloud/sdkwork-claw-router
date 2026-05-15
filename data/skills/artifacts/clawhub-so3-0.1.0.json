@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/so3@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.so3",
+  "skill": {
+    "id": 20631,
+    "skillKey": "clawhub-so3",
+    "name": "Pywayne Vio So3"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "so3",
+    "url": "https://clawhub.ai/skills/so3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/so3-4bd36327efa725f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SO(3) rotation matrix utilities including Lie group/ Lie algebra operations, rotation representation conversions, skew-symmetric matrix operations, and rotat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangyendt",
+      "userId": "publishers:wangyendt",
+      "displayName": "wangyendt",
+      "image": "https://avatars.githubusercontent.com/u/18455758?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 547,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771374985895,
+      "changelog": "Initial release of pywayne-vio-so3: an SO(3) rotation matrix utility library\n\n- Provides core SO(3) operations including validation, multiplication, inversion, and difference.\n- Supports skew-symmetric matrix construction and extraction for 3D vectors.\n- Includes conversion functions between rotation matrix, quaternion, axis-angle, and Euler angles.\n- Implements Lie group/algebra Log and Exp mappings for SO(3)/so(3).\n- Supports single and batch operations for most functions.\n- Adds SO(3) rotation averaging capability.\n- Depends on numpy, qmt, and scipy.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f2cc4f3cc037d98104bc2688a9fe697162e7ee2b5101d3e7dbf22aba0007fc4"
+}

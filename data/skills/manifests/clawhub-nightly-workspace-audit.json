@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53228,
+  "uuid": "skill-clawhub-nightly-workspace-audit",
+  "skillKey": "clawhub-nightly-workspace-audit",
+  "name": "Nightly Workspace Audit",
+  "summary": "Nightly workspace audit — auto-discover file dependencies by scanning all workspace files for cross-references, manage HOT/WARM/COLD memory tiers, detect orp...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nightly_workspace_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hong Pengfei",
+      "features": [
+        "Nightly workspace audit — auto-discover file dependencies by scanning all workspace files for c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nightly-workspace-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35634481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nightly-workspace-audit",
+      "url": "https://clawhub.ai/skills/nightly-workspace-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nightly-workspace-audit",
+    "url": "https://clawhub.ai/skills/nightly-workspace-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nightly-workspace-audit-ee502e930058c297.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nightly-workspace-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nightly-workspace-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:236bcd79c71da413a857d414d8cc5b357155e03639952f55c99941295bffc535",
+      "artifactSizeBytes": 2054
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T03:41:53.090Z"
+}

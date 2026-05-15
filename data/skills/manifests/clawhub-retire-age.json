@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68406,
+  "uuid": "skill-clawhub-retire-age",
+  "skillKey": "clawhub-retire-age",
+  "name": "retire_age",
+  "summary": "根据用户的职位信息、性别、出生年月计算该用户的退休时间",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.retire_age",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ACFFF",
+      "features": [
+        "根据用户的职位信息、性别、出生年月计算该用户的退休时间"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/retire-age@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32565864?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "retire-age",
+      "url": "https://clawhub.ai/skills/retire-age"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "retire-age",
+    "url": "https://clawhub.ai/skills/retire-age",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/retire-age-508f4e5d60cce2cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/retire-age@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-retire-age-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bd4b3cc3972e5a6f6f426237a36d792c89c8db12ed4efc0fa24f8024d93c6a7",
+      "artifactSizeBytes": 2163
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:57:26.929Z"
+}

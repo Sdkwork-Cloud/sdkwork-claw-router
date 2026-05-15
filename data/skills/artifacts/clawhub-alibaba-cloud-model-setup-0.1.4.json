@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibaba-cloud-model-setup@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibaba_cloud_model_setup",
+  "skill": {
+    "id": 11952,
+    "skillKey": "clawhub-alibaba-cloud-model-setup",
+    "name": "Alibaba Cloud Model Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibaba-cloud-model-setup",
+    "url": "https://clawhub.ai/skills/alibaba-cloud-model-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibaba-cloud-model-setup-a6fb87501ee698fb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure OpenClaw to use Alibaba Cloud Bailian provider (Pay-As-You-Go or Coding Plan) through a strict interactive flow. Supports 5 site options and flagsh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "extraterrest",
+      "userId": "s17c17a2e992dacvjcg11mx3fh83t99j",
+      "displayName": "extraterrest",
+      "image": "https://avatars.githubusercontent.com/u/2050923?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1837,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1772433681593,
+      "changelog": "Alibaba Cloud Model Setup 0.1.4 — major update with Coding Plan support and improved model/site options.\n\n- Fixed provider name typo: now consistently \"bailian\" (was \"balian\").\n- Added support for both Pay-As-You-Go and Coding Plan subscriptions, with 5 site endpoints instead of 3.\n- Expanded and clarified available model list: flagship Qwen series, new Qwen3 models, and Coding Plan–exclusive third-party models.\n- Updated workflow: choose plan type, select site, improved API key validation and model selection steps.\n- Example config output and validation steps refreshed for new provider name, models, and plan logic.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6e6c6bc09c67596c5a94a0dd60fd4e93d0cc77b1f424c350ce3907cd77761e49"
+}

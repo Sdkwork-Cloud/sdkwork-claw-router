@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41921,
+  "uuid": "skill-clawhub-craftsman-agent-3d-generation",
+  "skillKey": "clawhub-craftsman-agent-3d-generation",
+  "name": "Craftsman Agent 3D Generation Skills",
+  "summary": "Turn prompts or ideas into 3D assembly/build plans such as LEGO Minecraft via the Craftsman Agent API (OneKey Gateway or local server). Use when generating b...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.craftsman_agent_3d_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AI-Hub-Admin",
+      "features": [
+        "Turn prompts or ideas into 3D assembly/build plans such as LEGO Minecraft via the Craftsman Age.",
+        "Use when generating b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/craftsman-agent-3d-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/184629057?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "craftsman-agent-3d-generation",
+      "url": "https://clawhub.ai/skills/craftsman-agent-3d-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "craftsman-agent-3d-generation",
+    "url": "https://clawhub.ai/skills/craftsman-agent-3d-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/craftsman-agent-3d-generation-93cbfc724a455470.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/craftsman-agent-3d-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-craftsman-agent-3d-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1c9b964d4e62d599ac3c865cd13eec0eb98bf289d84e247a001e3b7cf566cf1",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:32:40.238Z"
+}

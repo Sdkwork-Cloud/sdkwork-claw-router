@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-fact-checker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_fact_checker",
+  "skill": {
+    "id": 28421,
+    "skillKey": "clawhub-geo-fact-checker",
+    "name": "Geo Fact Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-fact-checker",
+    "url": "https://clawhub.ai/skills/geo-fact-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-fact-checker-3a697a170e757fda.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GEO-focused fact-checking and evidence collection assistant for written content. Use this skill whenever the user wants to verify factual claims (numbers, da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoly-geo",
+      "userId": "publishers:geoly-geo",
+      "displayName": "GEOLY AI",
+      "image": "https://avatars.githubusercontent.com/u/70360114?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773107714569,
+      "changelog": "Initial release — introduces a GEO-focused fact-checking assistant for rigorous content verification and evidence collection.\n\n- Identifies and extracts significant factual claims for enhanced trust (numbers, dates, rankings, market data, quotes).\n- Guides the verification of claims using authoritative and up-to-date sources, with prioritization of accuracy and transparency.\n- Documents workflow: extract claims, plan checks, run fact checks, compare evidence, classify results, and propose robust corrections.\n- Explicitly flags outdated, unclear, or contradicted information, suggesting clear, evidence-backed improvements.\n- Optimized for use with AI-citable content: reports, comparison pages, and data-driven articles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59cecc31690819eda60eee6a430196fd0ba3712b4f253f2c8c82d1d3d75e2665"
+}

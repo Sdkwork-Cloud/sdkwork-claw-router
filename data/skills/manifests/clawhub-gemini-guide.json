@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59295,
+  "uuid": "skill-clawhub-gemini-guide",
+  "skillKey": "clawhub-gemini-guide",
+  "name": "Gemini Guide",
+  "summary": "Google Gemini API 开发助手，精通 Gemini Pro/Flash、多模态、函数调用、上下文缓存",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "Google Gemini API 开发助手，精通 Gemini Pro/Flash、多模态、函数调用、上下文缓存"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemini-guide@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemini-guide",
+      "url": "https://clawhub.ai/skills/gemini-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-guide",
+    "url": "https://clawhub.ai/skills/gemini-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-guide-1297ffe78d87d75a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemini-guide@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemini-guide-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0db183e998e01f3a5ef2944877fb50c7a33d67ae5990f51728c09839eb79de0",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:48:42.475Z"
+}

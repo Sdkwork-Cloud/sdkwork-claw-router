@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40561,
+  "uuid": "skill-clawhub-klemenska-security-auditor",
+  "skillKey": "clawhub-klemenska-security-auditor",
+  "name": "Klemenska Security Auditor",
+  "summary": "Scan and audit installed skills for security risks, suspicious patterns, and permission overreach. Use when: (1) before installing a new skill; (2) periodica...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.klemenska_security_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "klemenska",
+      "features": [
+        "Scan and audit installed skills for security risks, suspicious patterns, and permission overrea.",
+        "Use when: (1) before installing a new skill",
+        "(2) periodica..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/klemenska-security-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62469076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "klemenska-security-auditor",
+      "url": "https://clawhub.ai/skills/klemenska-security-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "klemenska-security-auditor",
+    "url": "https://clawhub.ai/skills/klemenska-security-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/klemenska-security-auditor-5e3c30720d0f1f6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/klemenska-security-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-klemenska-security-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:05071f7f5339c939c3f685c3d8924e3be5e7ab050c22114e3e099086c87bfe03",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:35:00.550Z"
+}

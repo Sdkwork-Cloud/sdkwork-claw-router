@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/media-cluster@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.media_cluster",
+  "skill": {
+    "id": 26288,
+    "skillKey": "clawhub-media-cluster",
+    "name": "media-cluster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "media-cluster",
+    "url": "https://clawhub.ai/skills/media-cluster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/media-cluster-fe989d1f4c2960de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically crawls Chinese social media by keyword, summarizes content, generates a markdown report, and produces a short voice summary using TTS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "q1lin570",
+      "userId": "publishers:q1lin570",
+      "displayName": "q1lin570",
+      "image": "https://avatars.githubusercontent.com/u/249899486?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774089416947,
+      "changelog": "**Improved cross-platform compatibility and simplified environment variable handling.**\n\n- Updated documentation to provide separate setup instructions for Windows and macOS/Linux, improving clarity for all users.\n- Voice API key and options are now read from environment variables instead of requiring a `.env` file.\n- Removed the unused `.env` template file.\n- Clarified that shell scripts are recommended for macOS/Linux and not for Windows; Windows users should follow manual steps.\n- General documentation cleanup for conciseness and easier onboarding.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9faf6d3d40a5f8ea62ed0de25a69d968a99c09c42f386ae7cd0bce40853e14ac"
+}

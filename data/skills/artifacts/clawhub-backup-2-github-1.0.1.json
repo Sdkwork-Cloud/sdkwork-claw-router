@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/backup-2-github@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.backup_2_github",
+  "skill": {
+    "id": 27377,
+    "skillKey": "clawhub-backup-2-github",
+    "name": "Backup 2 Github"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "backup-2-github",
+    "url": "https://clawhub.ai/skills/backup-2-github",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/backup-2-github-f67db058ddaf47ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup personalized OpenClaw configuration and user data to a GitHub repo with single-commit history and optional dry-run preview."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangbb-coder",
+      "userId": "s1785c5d9savzszf3ahrfcv00183m3g0",
+      "displayName": "fangbb-coder",
+      "image": "https://avatars.githubusercontent.com/u/201201882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773812726069,
+      "changelog": "Remove personal references, make generic",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f28db46540b02882b75c916d9ea2971cf0a4fd3829873c7b9a7dbe75d51e881b"
+}

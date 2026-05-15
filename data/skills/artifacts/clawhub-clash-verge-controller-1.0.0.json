@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clash-verge-controller@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clash_verge_controller",
+  "skill": {
+    "id": 60261,
+    "skillKey": "clawhub-clash-verge-controller",
+    "name": "Clash Verge Controller"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clash-verge-controller",
+    "url": "https://clawhub.ai/skills/clash-verge-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clash-verge-controller-c9739affc8ae990a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clash Verge 外部控制（RESTful API）技能。基于 mihomo 内核，提供完整的 API 调用指南、配置说明和代码示例。 当用户提到以下场景时触发： - Clash Verge 外部控制、RESTful API、远程管理 - 通过 API 切换节点、查看连接、管理规则 - clash-verg..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gyaoshi",
+      "userId": "s17f9y2gqkj8cdgy24renhwscd85tstf",
+      "displayName": "yaoshi",
+      "image": "https://avatars.githubusercontent.com/u/9128533?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 78,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777525146768,
+      "changelog": "Initial release of clash-verge-controller.\n\n- Provides RESTful API control for Clash Verge based on the mihomo (Clash.Meta) core.\n- Includes comprehensive configuration instructions, API call examples, and code samples in Python and Node.js.\n- Supports node switching, connection monitoring, rule management, proxy info retrieval, delay testing, kernel restart, and more via API.\n- Details security best practices and setup requirements.\n- Links to detailed API reference and official documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8da9ba0b1c99d11da6e28ca9918e2002db2aba6b494072fbc63acb05a9d8f8c5"
+}

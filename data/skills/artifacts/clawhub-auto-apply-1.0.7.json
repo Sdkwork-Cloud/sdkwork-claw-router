@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-apply@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_apply",
+  "skill": {
+    "id": 22140,
+    "skillKey": "clawhub-auto-apply",
+    "name": "Automate your Job Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-apply",
+    "url": "https://clawhub.ai/skills/auto-apply",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-apply-a8e56d6d04715a41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate your job search and application process with Mokaru. Search thousands of jobs, tailor your resume to each role, track applications through your pipe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vndck",
+      "userId": "s175xgk7ycdmgy5xha2fmc408s83kbw9",
+      "displayName": "VNDCK",
+      "image": "https://avatars.githubusercontent.com/u/39057307?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1776611560355,
+      "changelog": "No user-visible changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f33fb053778658678aa8fdddf4db3287e3b512cf1c6d09d373a3c62cb10b02c8"
+}

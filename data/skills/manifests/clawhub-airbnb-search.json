@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11605,
+  "uuid": "skill-clawhub-airbnb-search",
+  "skillKey": "clawhub-airbnb-search",
+  "name": "Airbnb Search",
+  "summary": "Search Airbnb listings with prices, ratings, and direct links. No user API key required (uses Airbnb's public frontend API key). Use when searching for Airbnb stays, vacation rentals, or accommodation pricing.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airbnb_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaron Levin",
+      "features": [
+        "Search Airbnb listings with prices, ratings, and direct links",
+        "No user API key required (uses Airbnb's public frontend API key)",
+        "Use when searching for Airbnb stays, vacation rentals, or accommodation pricing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/airbnb-search@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8488209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "airbnb-search",
+      "url": "https://clawhub.ai/skills/airbnb-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airbnb-search",
+    "url": "https://clawhub.ai/skills/airbnb-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airbnb-search-ca77c1613fec3947.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/airbnb-search@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-airbnb-search-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:493c34d19c2b4e3c0cfc6d42a9ca706afc0f63090a62505212f9ef750a2ddf24",
+      "artifactSizeBytes": 1999
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:46:55.535Z"
+}

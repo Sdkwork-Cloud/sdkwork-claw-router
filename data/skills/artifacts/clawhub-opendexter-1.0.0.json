@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opendexter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opendexter",
+  "skill": {
+    "id": 45990,
+    "skillKey": "clawhub-opendexter",
+    "name": "OpenDexter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opendexter",
+    "url": "https://clawhub.ai/skills/opendexter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opendexter-9fd371f7bfa58dfa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use OpenDexter to search, price-check, and pay for any x402 API. Trigger whenever the user wants to find paid APIs, call an x402 endpoint, check pricing, see..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "branchmanager69",
+      "userId": "s17c2jxpt6318s9fed5mn1610d84hfzb",
+      "displayName": "BranchM",
+      "image": "https://avatars.githubusercontent.com/u/121578862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775697484859,
+      "changelog": "Initial release. x402 marketplace search, price check, fetch and pay, wallet info.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:afa3c312aaf8aa67092fdf82e6da784b51019661b4d6f0960086f54afddaa9f1"
+}

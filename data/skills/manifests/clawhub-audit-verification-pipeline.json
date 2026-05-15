@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60120,
+  "uuid": "skill-clawhub-audit-verification-pipeline",
+  "skillKey": "clawhub-audit-verification-pipeline",
+  "name": "Audit Verification Pipeline",
+  "summary": "审计finding三级验收流水线：自身forge test验证 → GitHub CI → 审查员评审。确保提交真实可靠的验证级产出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audit_verification_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zengbao yu",
+      "features": [
+        "审计finding三级验收流水线：自身forge test验证 → GitHub CI → 审查员评审。确保提交真实可靠的验证级产出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audit-verification-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43713212?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audit-verification-pipeline",
+      "url": "https://clawhub.ai/skills/audit-verification-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audit-verification-pipeline",
+    "url": "https://clawhub.ai/skills/audit-verification-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audit-verification-pipeline-848d23a7f607cf11.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audit-verification-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audit-verification-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff30f1c95210af1f25cc1c85e8ab55f470af1df42c0d050c14ad0707cf8b4d94",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:14:47.257Z"
+}

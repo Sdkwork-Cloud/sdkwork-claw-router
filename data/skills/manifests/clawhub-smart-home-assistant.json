@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33510,
+  "uuid": "skill-clawhub-smart-home-assistant",
+  "skillKey": "clawhub-smart-home-assistant",
+  "name": "Smart Home Assistant",
+  "summary": "Monitor and analyze Home Assistant energy consumption. Use when the user asks about power usage, energy monitoring, consumption by room/area, or wants to gen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_home_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Lum",
+      "features": [
+        "Monitor and analyze Home Assistant energy consumption",
+        "Use when the user asks about power usage, energy monitoring, consumption by room/area, or wants."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-home-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/211891?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-home-assistant",
+      "url": "https://clawhub.ai/skills/smart-home-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-home-assistant",
+    "url": "https://clawhub.ai/skills/smart-home-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-home-assistant-e167f2faeffb46d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-home-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-home-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e49c38e21f9ec9443966b923ab86b937aade2345fdb523470121b70987409473",
+      "artifactSizeBytes": 4731
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T09:25:24.767Z"
+}

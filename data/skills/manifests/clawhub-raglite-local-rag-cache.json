@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12620,
+  "uuid": "skill-clawhub-raglite-local-rag-cache",
+  "skillKey": "clawhub-raglite-local-rag-cache",
+  "name": "RAGLite",
+  "summary": "Local-first RAG cache: distill docs into structured Markdown, then index/query with Chroma + hybrid search (vector + keyword).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raglite_local_rag_cache",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Viraj Sanghvi",
+      "features": [
+        "Local-first RAG cache: distill docs into structured Markdown, then index/query with Chroma + hy."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/raglite-local-rag-cache@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22336852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "raglite-local-rag-cache",
+      "url": "https://clawhub.ai/skills/raglite-local-rag-cache"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raglite-local-rag-cache",
+    "url": "https://clawhub.ai/skills/raglite-local-rag-cache",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raglite-local-rag-cache-2b8e4d9b56632a3b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/raglite-local-rag-cache@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-raglite-local-rag-cache-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6554469f8518c16a63715a07494018eea619e01e0d0e1eec5fc7f0e98ca8fe77",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T04:15:13.473Z"
+}

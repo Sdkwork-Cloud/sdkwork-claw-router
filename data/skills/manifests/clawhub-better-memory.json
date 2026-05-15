@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55070,
+  "uuid": "skill-clawhub-better-memory",
+  "skillKey": "clawhub-better-memory",
+  "name": "Better Memory",
+  "summary": "One-shot smart installation and ongoing maintenance for a native OpenClaw memory stack with L1 daily logs (`memory/YYYY-MM-DD.md`), L2 sidecar summaries, and...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.better_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fuuuuujichaos",
+      "features": [
+        "One-shot smart installation and ongoing maintenance for a native OpenClaw memory stack with L1."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/better-memory@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266231952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "better-memory",
+      "url": "https://clawhub.ai/skills/better-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "better-memory",
+    "url": "https://clawhub.ai/skills/better-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/better-memory-5642ccf71c79fc66.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/better-memory@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-better-memory-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba01b795999f2b6966f90a67083ba1725b2ff4398728805fa7cea2c58b032ecd",
+      "artifactSizeBytes": 2724
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T16:28:38.649Z"
+}

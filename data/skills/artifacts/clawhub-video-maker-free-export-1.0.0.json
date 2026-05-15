@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-free-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_free_export",
+  "skill": {
+    "id": 40761,
+    "skillKey": "clawhub-video-maker-free-export",
+    "name": "Video Maker Free Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-free-export",
+    "url": "https://clawhub.ai/skills/video-maker-free-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-free-export-8014140e91ccc53c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute product demo clip into 1080p exported MP4 videos just by typing what you need. Whether it's editing and exporting finished videos without a p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776758205952,
+      "changelog": "Initial release of Video Maker Free Export — fast, no-subscription AI editing with free MP4 export.\n\n- Instantly edit and export up to 2-minute video clips as 1080p MP4s without a paid account\n- Automated session and token management: on first run, skill auto-acquires a 7-day, 100-credit anonymous token\n- Upload, edit, and export using natural language instructions—no manual timelines or export settings\n- All editing and rendering handled securely via cloud GPU; supports popular video, audio, and image formats\n- Actions for export, credits, upload, and session status mapped directly from user intent\n- Handles errors, credits, large file limits, and provides step-by-step feedback throughout the workflow",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b21e17b41a11b14f5dbc1b7df14dff4570d004e0069e650f0a4a61ece613a1bf"
+}

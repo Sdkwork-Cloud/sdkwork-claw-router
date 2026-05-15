@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40525,
+  "uuid": "skill-clawhub-dele-deploy",
+  "skillKey": "clawhub-dele-deploy",
+  "name": "Dele Deploy",
+  "summary": "Deploy local HTML/frontend files to Dele (dele.fun) and get a live URL",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dele_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "del-zhenwu",
+      "features": [
+        "Deploy local HTML/frontend files to Dele (dele.fun) and get a live URL"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dele-deploy@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56623710?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dele-deploy",
+      "url": "https://clawhub.ai/skills/dele-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dele-deploy",
+    "url": "https://clawhub.ai/skills/dele-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dele-deploy-d87814899c07db6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dele-deploy@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-dele-deploy-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:985bd38205cc488a17ca54518e8d382882be176d7640c821e822b96337f1b800",
+      "artifactSizeBytes": 2183
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:42:52.376Z"
+}

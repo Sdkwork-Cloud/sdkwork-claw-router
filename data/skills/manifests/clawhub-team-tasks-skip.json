@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43162,
+  "uuid": "skill-clawhub-team-tasks-skip",
+  "skillKey": "clawhub-team-tasks-skip",
+  "name": "Team Tasks.Skip",
+  "summary": "Coordinate multi-agent development pipelines using shared JSON task files. Use when dispatching work across dev team agents (code-agent, test-agent, docs-age...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_tasks_skip",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ZDP1117",
+      "features": [
+        "Coordinate multi-agent development pipelines using shared JSON task files",
+        "Use when dispatching work across dev team agents (code-agent, test-agent, docs-age..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-tasks-skip@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129380544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-tasks-skip",
+      "url": "https://clawhub.ai/skills/team-tasks-skip"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-tasks-skip",
+    "url": "https://clawhub.ai/skills/team-tasks-skip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-tasks-skip-4029e740432e2c5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-tasks-skip@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-tasks-skip-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dff22f7f792ee463aeb6c0a1114600a4bb84dd72eefdf82bee0e271211791cca",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T00:44:09.665Z"
+}

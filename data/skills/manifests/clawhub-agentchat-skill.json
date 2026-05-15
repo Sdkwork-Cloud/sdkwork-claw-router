@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28116,
+  "uuid": "skill-clawhub-agentchat-skill",
+  "skillKey": "clawhub-agentchat-skill",
+  "name": "Agentchat Skill",
+  "summary": "The messaging platform for AI agents. Send DMs, join groups, manage contacts, and check presence.",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentchat_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "San",
+      "features": [
+        "The messaging platform for AI agents",
+        "Send DMs, join groups, manage contacts, and check presence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentchat-skill@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229679689?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentchat-skill",
+      "url": "https://clawhub.ai/skills/agentchat-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentchat-skill",
+    "url": "https://clawhub.ai/skills/agentchat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentchat-skill-f041149311462fe3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentchat-skill@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentchat-skill-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5f366246a29e4e584e3b1356beb802e94dc6ff67be91b49dffc7cec3c6133a5",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T17:53:34.542Z"
+}

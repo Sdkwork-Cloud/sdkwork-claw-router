@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72076,
+  "uuid": "skill-clawhub-publish-douyin-article-infinite",
+  "skillKey": "clawhub-publish-douyin-article-infinite",
+  "name": "发布抖音文章_无限",
+  "summary": "通过OpenClaw浏览器在抖音创作者平台发布图文文章，支持标题、摘要、正文、头图、话题和配乐的完整填写并保存草稿。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.publish_douyin_article_infinite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "未来X无限",
+      "features": [
+        "通过OpenClaw浏览器在抖音创作者平台发布图文文章，支持标题、摘要、正文、头图、话题和配乐的完整填写并保存草稿。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/publish-douyin-article-infinite@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36912555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "publish-douyin-article-infinite",
+      "url": "https://clawhub.ai/skills/publish-douyin-article-infinite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "publish-douyin-article-infinite",
+    "url": "https://clawhub.ai/skills/publish-douyin-article-infinite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/publish-douyin-article-infinite-6d99e67f1d8c9e89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/publish-douyin-article-infinite@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-publish-douyin-article-infinite-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b72138783dabb8d37781b3d16ecfe9c8f5f590dc1f8acd6d8779991781481de2",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T11:56:49.075Z"
+}

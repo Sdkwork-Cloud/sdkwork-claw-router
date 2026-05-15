@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/suppr-academic-search-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suppr_academic_search_skills",
+  "skill": {
+    "id": 68654,
+    "skillKey": "clawhub-suppr-academic-search-skills",
+    "name": "超能文献-AI文档翻译与学术检索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suppr-academic-search-skills",
+    "url": "https://clawhub.ai/skills/suppr-academic-search-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suppr-academic-search-skills-9f2986d9be4c80f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "超能文献（Suppr）学术文献检索 API。当用户需要检索学术论文、查找 PubMed 文献、搜索研究资料时激活。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zjg678",
+      "userId": "s17af8835m60vx8n5hjefzrnqx8493zm",
+      "displayName": "Jianguang Zheng",
+      "image": "https://avatars.githubusercontent.com/u/35589061?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775400909927,
+      "changelog": "AI-powered MCP server combining document translation and academic literature search. Translates PDF, Word, Excel, PPT, TXT, and HTML between 13 languages. Searches PubMed for research papers via semantic natural language queries, returning DOI, impact factor, citation data, and more. Install: npx suppr-mcp. Homepage: https://suppr.wilddata.cn",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4018b99a575799020bd255c9637e0eabc20dc1f77c65ad28cd2075641a159226"
+}

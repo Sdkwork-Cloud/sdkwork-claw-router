@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9888,
+  "uuid": "skill-clawhub-openclaw-checkpoint",
+  "skillKey": "clawhub-openclaw-checkpoint",
+  "name": "OpenClaw Checkpoint - Personal AI Assistant Backup & Recovery (Github)",
+  "summary": "Backup and restore OpenClaw workspace state and agents across machines using git. Enables disaster recovery by syncing SOUL.md, MEMORY.md, memory files, cron...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_checkpoint",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anthony Francis",
+      "features": [
+        "Backup and restore OpenClaw workspace state and agents across machines using git",
+        "Enables disaster recovery by syncing SOUL.md, MEMORY.md, memory files, cron..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-checkpoint@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3010099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-checkpoint",
+      "url": "https://clawhub.ai/skills/openclaw-checkpoint"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-checkpoint",
+    "url": "https://clawhub.ai/skills/openclaw-checkpoint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-checkpoint-2d87b36497bf8d87.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-checkpoint@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-checkpoint-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4929e59ae002ee336be817f4c232cbae01fd6be8cf03c268959b3c6bb00b95b",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T10:57:47.814Z"
+}

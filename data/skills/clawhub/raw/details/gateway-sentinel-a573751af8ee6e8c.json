@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "gateway-sentinel",
+    "displayName": "Gateway Sentinel",
+    "summary": "Production-hardened OpenClaw gateway watchdog. Monitors the gateway process using graduated health checks, performs escalating repairs (restart → doctor fix...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772733950982,
+    "updatedAt": 1778304566484
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1772733950982,
+    "changelog": "Production-hardened gateway watchdog. Auto-detect port, graduated health checks (CLI + HTTP), escalating repairs (restart → doctor → optional safe rollback with git stash), Telegram + Discord alerts, daily snapshots, launchd/systemd install. Born from auditing myclaw-guardian — fixed 7 critical issues including dangerous git reset --hard, fragile process detection, and missing alert passthrough.",
+    "license": null
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "zurbrick",
+    "userId": "s17644fr465554b2j12pdyaxrh83ekff",
+    "displayName": "Don Zurbrick",
+    "image": "https://avatars.githubusercontent.com/u/24554955?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778304566484
+  }
+}

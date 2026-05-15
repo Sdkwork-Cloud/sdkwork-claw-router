@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72546,
+  "uuid": "skill-clawhub-finloop-mktdata-skills",
+  "skillKey": "clawhub-finloop-mktdata-skills",
+  "name": "F-AI 金融数据",
+  "summary": "提供全球股票、指数、基金、债券等多品类金融数据的实时与历史行情查询及公司基本面分析服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finloop_mktdata_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CZZLEGEND",
+      "features": [
+        "提供全球股票、指数、基金、债券等多品类金融数据的实时与历史行情查询及公司基本面分析服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finloop-mktdata-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17879690?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finloop-mktdata-skills",
+      "url": "https://clawhub.ai/skills/finloop-mktdata-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finloop-mktdata-skills",
+    "url": "https://clawhub.ai/skills/finloop-mktdata-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finloop-mktdata-skills-12e12ded71b18403.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finloop-mktdata-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finloop-mktdata-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c73226065fcd8f8b2aa5448d347f7f9c5654e1440ce143926eb96b14e5b99a58",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T08:56:27.641Z"
+}

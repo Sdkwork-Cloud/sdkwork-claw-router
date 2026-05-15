@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54561,
+  "uuid": "skill-clawhub-jlm-coffee",
+  "skillKey": "clawhub-jlm-coffee",
+  "name": "Jlm Coffee",
+  "summary": "Search Jerusalem specialty coffee shops by name, amenities, ratings, and opening hours. Use when user asks about \"coffee in Jerusalem\", \"Jerusalem cafe\", \"בי...",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jlm_coffee",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexpolonsky",
+      "features": [
+        "Search Jerusalem specialty coffee shops by name, amenities, ratings, and opening hours",
+        "Use when user asks about \"coffee in Jerusalem\", \"Jerusalem cafe\", \"בי..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jlm-coffee@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7319921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jlm-coffee",
+      "url": "https://clawhub.ai/skills/jlm-coffee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jlm-coffee",
+    "url": "https://clawhub.ai/skills/jlm-coffee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jlm-coffee-afae08effa6d6421.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jlm-coffee@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jlm-coffee-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b6cb50a166d398bbda2928b7d0192da1f2b92d5d9d350eb45a42164e7c78da37",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T07:13:27.510Z"
+}

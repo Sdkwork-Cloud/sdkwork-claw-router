@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/puppeteer-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.puppeteer_1_0_0",
+  "skill": {
+    "id": 34009,
+    "skillKey": "clawhub-puppeteer-1-0-0",
+    "name": "Puppeteer@1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "puppeteer-1-0-0",
+    "url": "https://clawhub.ai/skills/puppeteer-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/puppeteer-1-0-0-d64dc914c8817ee7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Chrome and Chromium with Puppeteer for scraping, testing, screenshots, and browser workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1215656",
+      "userId": "s17c1ken71c0q0ry08ba12sa7h83kspt",
+      "displayName": "1215656",
+      "image": "https://avatars.githubusercontent.com/u/255043115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774431688347,
+      "changelog": "Initial release of Puppeteer skill for browser automation.\n\n- Provides setup and architecture guidance for automating Chrome/Chromium with Puppeteer.\n- Includes best practice rules for selectors, waiting, navigation, viewport, popups, error handling, and rate limiting.\n- Details common pitfalls and troubleshooting tips for scraping and testing workflows.\n- Ensures local-only data storage for privacy and security.\n- Lists related skills and ways to provide feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:77fd6e5ab7d224e15ce6a94ad0cd5f6d63dd226dc43f3a85834c20e51eb58303"
+}

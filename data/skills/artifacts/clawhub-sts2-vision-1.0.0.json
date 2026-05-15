@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sts2-vision@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sts2_vision",
+  "skill": {
+    "id": 63894,
+    "skillKey": "clawhub-sts2-vision",
+    "name": "Sts2 Vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sts2-vision",
+    "url": "https://clawhub.ai/skills/sts2-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sts2-vision-293ae84f544bf1ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "杀戮尖塔2视觉识别DPS监控系统 - 通过屏幕捕获和OCR识别实时监控战斗数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "erebuscry",
+      "userId": "publishers:erebuscry",
+      "displayName": "ErebusCry",
+      "image": "https://avatars.githubusercontent.com/u/45029552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773811102775,
+      "changelog": "Initial release of sts2-vision-monitor:\n\n- Captures game window screenshots for Slay The Spire 2.\n- Uses OCR to recognize key combat data (HP, damage, etc.) in real time.\n- Calculates and displays DPS statistics during gameplay.\n- Supports calibration of data regions (ROI) on screen.\n- Outputs combat data and DPS reports in JSON format.\n- Includes example config and required dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca9b33538b99f2235bf19c76c6b9b90afafd6e20925371a5fe0b8c7e544e14d8"
+}

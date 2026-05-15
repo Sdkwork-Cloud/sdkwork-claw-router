@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ssh-filemanager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_filemanager",
+  "skill": {
+    "id": 45788,
+    "skillKey": "clawhub-ssh-filemanager",
+    "name": "ssh_file_manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-filemanager",
+    "url": "https://clawhub.ai/skills/ssh-filemanager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-filemanager-2849dae9cc326f49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage files on remote machines over Tailscale SSH (Tailnet). Use this skill when the user needs to list, read, write, delete, move, copy, search, chmod, pus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xeon0v0",
+      "userId": "s1767nghgbm59yxkvdg5ph87v984e7ws",
+      "displayName": "XEON0v0",
+      "image": "https://avatars.githubusercontent.com/u/198232570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776237497766,
+      "changelog": "Initial release of Tailnet SSH File Manager.\n\n- Enables file management on remote machines over Tailscale SSH (Tailnet) from OpenClaw Gateway to OpenClaw Nodes.\n- Supports listing, reading, writing, deleting, moving, copying, searching, permission changes, and file transfers via ssh/scp/sftp.\n- Automatically switches to scp for files larger than 3KB or binary data, addressing OpenClaw invoke payload limits.\n- Includes safety checks: always confirm destructive actions, enforce path sanitization, and provide connection diagnostics.\n- Handles common edge cases such as offline hosts, permission errors, and missing dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b23c3aab124ef1987596069555fde8d13ca34e1890976484fc4c4b01dcaa7123"
+}

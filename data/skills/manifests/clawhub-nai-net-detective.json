@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39646,
+  "uuid": "skill-clawhub-nai-net-detective",
+  "skillKey": "clawhub-nai-net-detective",
+  "name": "Net Detective",
+  "summary": "Run detailed network diagnostics including DNS resolution, traceroute, MTU, and speed tests, then provide a clear plain-English report explaining any issues...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nai_net_detective",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "New Age Investments",
+      "features": [
+        "Run detailed network diagnostics including DNS resolution, traceroute, MTU, and speed tests, th."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nai-net-detective@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243381911?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nai-net-detective",
+      "url": "https://clawhub.ai/skills/nai-net-detective"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nai-net-detective",
+    "url": "https://clawhub.ai/skills/nai-net-detective",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nai-net-detective-0034ac83b765db4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nai-net-detective@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nai-net-detective-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b852db2bf1ba72ccbcd416497b3f35c6789df430904f2095c2c777fd0ce44c3d",
+      "artifactSizeBytes": 2443
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:17:42.428Z"
+}

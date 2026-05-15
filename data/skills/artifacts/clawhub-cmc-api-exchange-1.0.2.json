@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cmc-api-exchange@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmc_api_exchange",
+  "skill": {
+    "id": 19190,
+    "skillKey": "clawhub-cmc-api-exchange",
+    "name": "CoinMarketCap Exchange APIs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmc-api-exchange",
+    "url": "https://clawhub.ai/skills/cmc-api-exchange",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmc-api-exchange-8879d3351b3f29ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API reference for CoinMarketCap exchange endpoints including exchange info, volume, market pairs, and assets. Use this skill whenever the user mentions excha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bryan-cmc",
+      "userId": "s17bca3zner64rbfxfnh3vp5s183nv6n",
+      "displayName": "CoinMarketCap",
+      "image": "https://avatars.githubusercontent.com/u/158990050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 620,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772469544790,
+      "changelog": "- Added homepage and source links to the skill metadata.\n- No changes to functional endpoints or workflows.\n- No impact on API usage or authentication.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c218967c822327a713c21792c46fd81dd5d0010db93e10361b80e4c87acaa99"
+}

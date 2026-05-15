@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-structured-memory@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_structured_memory",
+  "skill": {
+    "id": 14935,
+    "skillKey": "clawhub-openclaw-structured-memory",
+    "name": "Qordinate - Durable lists, facts, and reminders for OpenClaw agents."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-structured-memory",
+    "url": "https://clawhub.ai/skills/openclaw-structured-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-structured-memory-d3d89e6c7c42bdf4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Qordinate is an AI-native platform that gives your OpenClaw agent durable structured memory — documents, contacts, tasks, reminders, web search, and connecte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "singhcoder",
+      "userId": "s175nmgz16w9scde7cn90btnjh845f7a",
+      "displayName": "SinghCoder",
+      "image": "https://avatars.githubusercontent.com/u/32142363?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1135,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1772693637739,
+      "changelog": "- Added OpenClaw agent requirements to metadata: now specifies `QORDINATE_API_KEY` environment variable and `curl` dependency.\n- Set `QORDINATE_API_KEY` as the primary required environment variable in metadata.\n- Updated version in metadata from \"0.2\" to \"0.3\".\n- No functional or usage changes to documentation or features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d6465329b4d25fd527a3cb0bfe4e62e3e77f210e37f3b6831bcca3acb5b365a"
+}

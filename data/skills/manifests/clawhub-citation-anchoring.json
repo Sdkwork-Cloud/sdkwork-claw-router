@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57294,
+  "uuid": "skill-clawhub-citation-anchoring",
+  "skillKey": "clawhub-citation-anchoring",
+  "name": "Citation Anchoring",
+  "summary": "Regression-check citation anchoring (citations stay in the same subsection) to prevent “polish drift” that breaks claim→evidence alignment. **Trigger**: cita...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.citation_anchoring",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WILLOSCAR",
+      "features": [
+        "Regression-check citation anchoring (citations stay in the same subsection) to prevent “polish.",
+        "**Trigger**: cita..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/citation-anchoring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63443351?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "citation-anchoring",
+      "url": "https://clawhub.ai/skills/citation-anchoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "citation-anchoring",
+    "url": "https://clawhub.ai/skills/citation-anchoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/citation-anchoring-3b2ef601b1f7f678.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/citation-anchoring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-citation-anchoring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7f1f9c45c82f7e2fc72e9b41d87d1e217f662befdcd8947e78f6b2f5776f56e",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:29:25.599Z"
+}

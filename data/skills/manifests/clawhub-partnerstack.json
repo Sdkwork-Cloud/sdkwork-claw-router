@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30816,
+  "uuid": "skill-clawhub-partnerstack",
+  "skillKey": "clawhub-partnerstack",
+  "name": "Partnerstack",
+  "summary": "PartnerStack integration. Manage Organizations, Leads, Projects, Users, Goals, Filters. Use when the user wants to interact with PartnerStack data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.partnerstack",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "PartnerStack integration",
+        "Manage Organizations, Leads, Projects, Users, Goals, Filters",
+        "Use when the user wants to interact with PartnerStack data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/partnerstack@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "partnerstack",
+      "url": "https://clawhub.ai/skills/partnerstack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "partnerstack",
+    "url": "https://clawhub.ai/skills/partnerstack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/partnerstack-d7192cbd67d2a7cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/partnerstack@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-partnerstack-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e33ecb9341c07718ba2555ef69d0fe0d2feb2e0887d0213277062b1a91518007",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:09.547Z"
+}

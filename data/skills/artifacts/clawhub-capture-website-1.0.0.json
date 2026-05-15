@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/capture-website@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.capture_website",
+  "skill": {
+    "id": 17388,
+    "skillKey": "clawhub-capture-website",
+    "name": "Capture Website"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "capture-website",
+    "url": "https://clawhub.ai/skills/capture-website",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/capture-website-30f1bd6abbae90d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture website screenshots from the command line. Use when user wants to take screenshots of any URL (Twitter, news sites, webpages) and send them via Disco..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "silencezx007",
+      "userId": "s17f4tg67bac1gw7vpqg5x0b4185vtkh",
+      "displayName": "Aaron",
+      "image": "https://avatars.githubusercontent.com/u/153520957?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 774,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771993267869,
+      "changelog": "Initial release of capture-website skill:\n\n- Capture website screenshots directly from the command line.\n- Supports popular options like full-page capture, device emulation, dark mode, and delays.\n- Saves screenshots to a local workspace directory for further sharing.\n- Integrates with services like Discord and Feishu to send screenshots.\n- Requires capture-website-cli to be installed globally via npm.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10d1a01992a38384794553b52c124a566b89bde5731fc777fc7bb9a662d904a7"
+}

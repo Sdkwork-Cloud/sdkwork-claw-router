@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60625,
+  "uuid": "skill-clawhub-agent-summary",
+  "skillKey": "clawhub-agent-summary",
+  "name": "Agent Summary",
+  "summary": "Agent进度摘要系统，定期检查子Agent状态并生成简短进度报告。参考Claude Code的AgentSummary机制，每30秒对子Agent生成3-5词状态摘要。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangxiaofei860208-source",
+      "features": [
+        "Agent进度摘要系统，定期检查子Agent状态并生成简短进度报告。参考Claude Code的AgentSummary机制，每30秒对子Agent生成3-5词状态摘要。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260913269?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-summary",
+      "url": "https://clawhub.ai/skills/agent-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-summary",
+    "url": "https://clawhub.ai/skills/agent-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-summary-7d64e5fae1985056.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4aed440627a884bc544d216913419db432da1765c9648e0106e46e7b654bff9",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T11:18:44.550Z"
+}

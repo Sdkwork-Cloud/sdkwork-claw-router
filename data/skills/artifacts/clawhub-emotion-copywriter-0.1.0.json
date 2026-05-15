@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/emotion-copywriter@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emotion_copywriter",
+  "skill": {
+    "id": 67718,
+    "skillKey": "clawhub-emotion-copywriter",
+    "name": "Emotion Copywriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emotion-copywriter",
+    "url": "https://clawhub.ai/skills/emotion-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emotion-copywriter-a6d8906fb14f3595.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于情绪心理学，生成贴合用户情绪的社交媒体文案，支持多平台、多情绪类型精准触达共鸣。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huajianjiu000",
+      "userId": "s17f54gbrv7gfj1z72d0e3d24h84b2ep",
+      "displayName": "huajianjiu",
+      "image": "https://avatars.githubusercontent.com/u/163974966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776744242004,
+      "changelog": "Initial release of emotion-copywriter—an emotional copywriting generation tool for social media.\n\n- Supports multiple emotion types with scenario triggers and typical phrasing\n- Provides structured copywriting templates (three-part, contrast, self-deprecating, punchline)\n- Includes rhetorical techniques to enhance emotional impact\n- Adapts copy content for major platforms like Weibo, WeChat Moments, Xiaohongshu, and Instagram\n- Outputs complete copywriting samples and optimization suggestions\n- Predicts emotional resonance and viral potential",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64d1c82345c78f7c6f22e2e21acff63ac49b3606109d649e54d0f7aad5c82203"
+}

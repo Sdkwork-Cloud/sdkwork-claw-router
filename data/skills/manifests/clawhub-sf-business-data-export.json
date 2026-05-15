@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45533,
+  "uuid": "skill-clawhub-sf-business-data-export",
+  "skillKey": "clawhub-sf-business-data-export",
+  "name": "sf-business-data-export",
+  "summary": "Export Salesforce business data into business-readable Excel files from natural-language requests. Use when pull large Salesforce datasets beyond Report limi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sf_business_data_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Evonne528",
+      "features": [
+        "Export Salesforce business data into business-readable Excel files from natural-language reques.",
+        "Use when pull large Salesforce datasets beyond Report limi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sf-business-data-export@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57257415?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sf-business-data-export",
+      "url": "https://clawhub.ai/skills/sf-business-data-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sf-business-data-export",
+    "url": "https://clawhub.ai/skills/sf-business-data-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sf-business-data-export-01af632bfe54a923.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sf-business-data-export@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sf-business-data-export-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e37b2b8ef72b286d5f72f37062e43e8901f2924aad624e560d95970129ef31ef",
+      "artifactSizeBytes": 2595
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T08:33:58.618Z"
+}

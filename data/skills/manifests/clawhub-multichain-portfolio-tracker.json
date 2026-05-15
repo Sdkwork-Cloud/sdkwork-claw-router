@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45408,
+  "uuid": "skill-clawhub-multichain-portfolio-tracker",
+  "skillKey": "clawhub-multichain-portfolio-tracker",
+  "name": "Multichain Portfolio Tracker",
+  "summary": "Track multi-chain crypto portfolio with real-time prices, P&L, and alerts. Supports EVM (Ethereum, Base, Arbitrum, Polygon, Optimism), Solana, and manual ent...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multichain_portfolio_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JimmyClanker",
+      "features": [
+        "Track multi-chain crypto portfolio with real-time prices, P&L, and alerts",
+        "Supports EVM (Ethereum, Base, Arbitrum, Polygon, Optimism), Solana, and manual ent..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multichain-portfolio-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258324489?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multichain-portfolio-tracker",
+      "url": "https://clawhub.ai/skills/multichain-portfolio-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multichain-portfolio-tracker",
+    "url": "https://clawhub.ai/skills/multichain-portfolio-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multichain-portfolio-tracker-7d1f230466a14819.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multichain-portfolio-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multichain-portfolio-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29419a916d9b9e32d1de44b383e26ad98c33651d546856772212b42aee250763",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T08:37:49.417Z"
+}

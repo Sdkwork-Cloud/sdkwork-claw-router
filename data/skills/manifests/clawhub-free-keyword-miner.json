@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33214,
+  "uuid": "skill-clawhub-free-keyword-miner",
+  "skillKey": "clawhub-free-keyword-miner",
+  "name": "Free Keyword Miner",
+  "summary": "Free keyword research using Google PAA, Autocomplete, Reddit discussions, and Bing. No paid API needed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_keyword_miner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lal24886695",
+      "features": [
+        "Free keyword research using Google PAA, Autocomplete, Reddit discussions, and Bing",
+        "No paid API needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/free-keyword-miner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260325320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "free-keyword-miner",
+      "url": "https://clawhub.ai/skills/free-keyword-miner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-keyword-miner",
+    "url": "https://clawhub.ai/skills/free-keyword-miner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-keyword-miner-70757696c7846ceb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/free-keyword-miner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-free-keyword-miner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8435d4c1212842bc4d8da1b358d020e2ab69b4490b9105b4923cfd11e7b12bee",
+      "artifactSizeBytes": 2417
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:25:15.207Z"
+}

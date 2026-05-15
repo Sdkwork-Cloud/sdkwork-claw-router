@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/steam@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.steam",
+  "skill": {
+    "id": 10201,
+    "skillKey": "clawhub-steam",
+    "name": "Steam Games CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "steam",
+    "url": "https://clawhub.ai/skills/steam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/steam-3f1f29444c093e28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, filter, and discover games in a Steam library. Filter by playtime, reviews, Steam Deck compatibility, genres, and tags. Use when user asks about their Steam games, what to play, game recommendations, or Steam Deck compatible games."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjrussell",
+      "userId": "publishers:mjrussell",
+      "displayName": "Matt Russell",
+      "image": "https://avatars.githubusercontent.com/u/1641895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2671,
+      "installsAllTime": 13,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1767918634480,
+      "changelog": "Initial release: Browse Steam library with filters for playtime, reviews, Deck compatibility, tags, and genres",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:260242b2fd5941deeec4497c8928c8e97fefaef898634de0fb802d186c5b67b2"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36751,
+  "uuid": "skill-clawhub-whatcounts",
+  "skillKey": "clawhub-whatcounts",
+  "name": "Whatcounts",
+  "summary": "WhatCounts integration. Manage data, records, and automate workflows. Use when the user wants to interact with WhatCounts data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whatcounts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "WhatCounts integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with WhatCounts data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whatcounts@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whatcounts",
+      "url": "https://clawhub.ai/skills/whatcounts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whatcounts",
+    "url": "https://clawhub.ai/skills/whatcounts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whatcounts-ec3bad2531d75f34.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whatcounts@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-whatcounts-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fe1d7ad4c2a9d2fd320d953f40ddcfd030ba9b38b1c7fa9d47058c5a732b29d",
+      "artifactSizeBytes": 1848
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:01:43.718Z"
+}

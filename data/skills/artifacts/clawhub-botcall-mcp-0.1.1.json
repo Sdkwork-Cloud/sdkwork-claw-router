@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/botcall-mcp@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.botcall_mcp",
+  "skill": {
+    "id": 39359,
+    "skillKey": "clawhub-botcall-mcp",
+    "name": "botcall-mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "botcall-mcp",
+    "url": "https://clawhub.ai/skills/botcall-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/botcall-mcp-bddd1df51f56e473.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your AI agent a real phone number for SMS verification. Provisions numbers, receives SMS, and extracts verification codes via the botcall API. Requires..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danecodes",
+      "userId": "s17eb5v49d2ssj3k7jhyeqmjh5848c6n",
+      "displayName": "Dane Hesseldahl",
+      "image": "https://avatars.githubusercontent.com/u/3585881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775375711736,
+      "changelog": "botcall-mcp v0.1.1\n\n- Initial release: Provision real phone numbers, receive SMS, and extract verification codes via the botcall API.\n- Supports phone number management (provision, list, release).\n- Includes tools for retrieving SMS inbox and verification codes.\n- Usage stats and environment variable setup documented.\n- Requires a BOTCALL_API_KEY from botcall.io to operate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:703c500eed7c4b1729fc1a0b3861ddd59f90f4be31de42b2c2468d14309386f9"
+}

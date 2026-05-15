@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72852,
+  "uuid": "skill-clawhub-material-to-prd",
+  "skillKey": "clawhub-material-to-prd",
+  "name": "基于图片/物料解析生成PRD文档，为互联网产品经理编写结构化、策略驱动的产品需求文档",
+  "summary": "基于提供的图片或物料，自动提取文本与结构，生成符合标准、可直接开发执行的互联网产品需求文档（PRD）。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.material_to_prd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sssssHaoa",
+      "features": [
+        "基于提供的图片或物料，自动提取文本与结构，生成符合标准、可直接开发执行的互联网产品需求文档（PRD）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/material-to-prd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124231573?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "material-to-prd",
+      "url": "https://clawhub.ai/skills/material-to-prd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "material-to-prd",
+    "url": "https://clawhub.ai/skills/material-to-prd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/material-to-prd-c36e75b12eacf082.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/material-to-prd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-material-to-prd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1033d8816960b88be10c958d756f729df91ddb9f8daf87e310b9b816ef79bd14",
+      "artifactSizeBytes": 2590
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:23:34.175Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chat-deepseek@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chat_deepseek",
+  "skill": {
+    "id": 21418,
+    "skillKey": "clawhub-chat-deepseek",
+    "name": "Chat DeepSeek by Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chat-deepseek",
+    "url": "https://clawhub.ai/skills/chat-deepseek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chat-deepseek-6970221c725cb7fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "openclaw browser open https://chat.deepseek.com and login it, then input questions from user's messages, extract response of deepseek chat to reply user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qidu",
+      "userId": "s1716ddt8wrq7dhxd61hprgpgs83q1qw",
+      "displayName": "christo",
+      "image": "https://avatars.githubusercontent.com/u/1757861?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 479,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773072262263,
+      "changelog": "Version 1.0.0 — Initial Release of Chat DeepSeek Browsing Automation Skill\n\n- Switched from direct DeepSeek API + script interface to full browser automation.\n- Implements login via QR code snapshot, message input via DOM automation, and output extraction from the DeepSeek chat web UI.\n- Removed API-based usage (config.env, scripts/chat.js) in favor of browser/manual login with no LLM or API key requirements.\n- Added detailed documentation for all browser automation steps, use cases, and limitations.\n- Provided multiple aliases for easier skill invocation.\n- Now replies with raw page text (not LLM-processed).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94e5c1b2efc003ef52f2da9f21dd9ef769605d9f3baf0f653d61bb3406969d96"
+}

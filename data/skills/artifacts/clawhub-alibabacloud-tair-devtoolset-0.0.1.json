@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-tair-devtoolset@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_tair_devtoolset",
+  "skill": {
+    "id": 38740,
+    "skillKey": "clawhub-alibabacloud-tair-devtoolset",
+    "name": "Alibabacloud Tair Devtoolset"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-tair-devtoolset",
+    "url": "https://clawhub.ai/skills/alibabacloud-tair-devtoolset",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-tair-devtoolset-68e5a8203f1a42a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alicloud Service Scenario-Based Skill. Create Tair Enterprise Edition instance and configure public network access using Aliyun CLI. Triggers: \"tair\", \"creat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1775721502895,
+      "changelog": "- Initial release of the alibabacloud-tair-devtoolset skill.\n- Automates creation of Alibaba Cloud Tair Enterprise Edition instances and configuration of public network access using Aliyun CLI.\n- Provides strict parameter confirmation, security, and workflow constraints to ensure safe and repeatable deployments.\n- Includes step-by-step guidance for installation, authentication, RAM policies, troubleshooting, and success verification.\n- Requires use of all-in-one create-and-connect script; direct CLI improvisation is not permitted.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:adb8562605b16906d33a8d828b5e289fd0677f28a39a8d933b8aed3fd6a78ff4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/groupon-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.groupon_skill",
+  "skill": {
+    "id": 11626,
+    "skillKey": "clawhub-groupon-skill",
+    "name": "Groupon Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "groupon-skill",
+    "url": "https://clawhub.ai/skills/groupon-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/groupon-skill-3a3de3ee0be12aa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find discounted local deals on Groupon for services and activities like oil changes, massages, fitness, dining, and entertainment by city and category."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dejimarquis",
+      "userId": "publishers:dejimarquis",
+      "displayName": "dejimarquis",
+      "image": "https://avatars.githubusercontent.com/u/16407679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1969,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770255628264,
+      "changelog": "- Improved example deal presentations for clarity, using simplified formatting without emojis or markdown.\n- Added clearer examples for presenting multiple deals in a list.\n- Enhanced sample user responses with improved formatting to make information easier to scan.\n- No functional logic or file-level changes detected; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3bd8d787c267b65f4ff37bd203ae62180a606229b11f2bec22f224c49efa30f5"
+}

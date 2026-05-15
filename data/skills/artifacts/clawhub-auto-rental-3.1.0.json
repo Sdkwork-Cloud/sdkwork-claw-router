@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-rental@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_rental",
+  "skill": {
+    "id": 53843,
+    "skillKey": "clawhub-auto-rental",
+    "name": "Auto Rental"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-rental",
+    "url": "https://clawhub.ai/skills/auto-rental",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-rental-75b682c5c321ffe5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and compare car rentals — sedans, SUVs, and luxury vehicles with insurance options, pickup locations, and best rates for self-driving adventures. Also s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiejinsong",
+      "userId": "s177qj362rbw4294hgs3hdvhgx83m2hm",
+      "displayName": "xiejinsong",
+      "image": "https://avatars.githubusercontent.com/u/1642572?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1775974817453,
+      "changelog": "- Major rewrite: Now strictly requires all results from the flyai CLI, with zero reliance on training data or external sources.\n- Enforces a robust execution workflow: environment checks, CLI installation if missing, and strict output validation before responding.\n- Adds multi-scenario playbooks (city, airport, SUV rental, etc.) for precise parameter mapping and execution.\n- Bookable result requirement: every rental option must have an actual [Book]({detailUrl}) link—no link, no show.\n- New output formatting rules: summary first, comparison table for 3+ offers, and mandatory brand tag.\n- Enhanced usage guidance and safety rules to ensure only real-time data is provided to users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac93bf7bf37f70e182b070edf6fa8d7ad026a4d819c189f37b86710512eb62ab"
+}

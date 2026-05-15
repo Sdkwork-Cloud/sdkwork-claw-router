@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54524,
+  "uuid": "skill-clawhub-hr-assistant",
+  "skillKey": "clawhub-hr-assistant",
+  "name": "HR助手",
+  "summary": "Smart HR Assistant for Chinese small and medium businesses. Handles employee roster management, organizational structure, monthly payroll calculation (indivi...",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hr_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stoned0516",
+      "features": [
+        "Smart HR Assistant for Chinese small and medium businesses",
+        "Handles employee roster management, organizational structure, monthly payroll calculation (indi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hr-assistant@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23628988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hr-assistant",
+      "url": "https://clawhub.ai/skills/hr-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hr-assistant",
+    "url": "https://clawhub.ai/skills/hr-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hr-assistant-ed43021005604208.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hr-assistant@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-hr-assistant-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4daa80fefe232f2b9bdbb00ee2b2c9fe804b7c228017d08c2d3b82d313115da",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T06:16:57.450Z"
+}

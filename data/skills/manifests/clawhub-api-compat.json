@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51355,
+  "uuid": "skill-clawhub-api-compat",
+  "skillKey": "clawhub-api-compat",
+  "name": "Api Compat",
+  "summary": "Change public APIs without breaking clients—versioning schemes, additive vs breaking changes, deprecation windows, and comms. Use when shipping breaking chan...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_compat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codenova58",
+      "features": [
+        "Change public APIs without breaking clients—versioning schemes, additive vs breaking changes, d.",
+        "Use when shipping breaking chan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/api-compat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191358186?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "api-compat",
+      "url": "https://clawhub.ai/skills/api-compat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-compat",
+    "url": "https://clawhub.ai/skills/api-compat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-compat-af5658f7e3fe0315.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/api-compat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-api-compat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e443bbe62c938fd8a4e271ba789606b508a8d52b202152ef99e9a724930f5a00",
+      "artifactSizeBytes": 2140
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T16:51:59.594Z"
+}

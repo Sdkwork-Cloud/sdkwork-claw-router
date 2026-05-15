@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quote0@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quote0",
+  "skill": {
+    "id": 15159,
+    "skillKey": "clawhub-quote0",
+    "name": "Quote/0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quote0",
+    "url": "https://clawhub.ai/skills/quote0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quote0-64a1f7a8e6dc6b3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control MindReset Dot Quote/0 through the local quote0.js script and Dot Developer Platform APIs. Use when the user asks to configure Quote/0, push text/imag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangguangzhou",
+      "userId": "s17fxh9wsbfa5mkmchr2b69wmd85vgxt",
+      "displayName": "Jerry Zhou",
+      "image": "https://avatars.githubusercontent.com/u/61733195?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 771,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771956482459,
+      "changelog": "Add openclaw metadata (requires.env + primaryEnv) to align registry credential/env declarations",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c91c512c601ba3bff73814e34d105078d6b9c2c319906870e389bf84e42a313"
+}

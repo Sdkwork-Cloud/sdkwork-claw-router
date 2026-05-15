@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11968,
+  "uuid": "skill-clawhub-smart-home",
+  "skillKey": "clawhub-smart-home",
+  "name": "Smart Home",
+  "summary": "Set up, automate, secure, and troubleshoot smart home devices with protocol selection, network isolation, and ecosystem-agnostic automation patterns.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_home",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Set up, automate, secure, and troubleshoot smart home devices with protocol selection, network."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-home@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-home",
+      "url": "https://clawhub.ai/skills/smart-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-home",
+    "url": "https://clawhub.ai/skills/smart-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-home-30192a145a86abd1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-home@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-home-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34e324f80df54f623f0ef09f2c5a384e399fc3c354093bfcfbce71047c34e2a7",
+      "artifactSizeBytes": 1846
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T20:51:32.967Z"
+}

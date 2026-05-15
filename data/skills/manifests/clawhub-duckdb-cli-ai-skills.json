@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9170,
+  "uuid": "skill-clawhub-duckdb-cli-ai-skills",
+  "skillKey": "clawhub-duckdb-cli-ai-skills",
+  "name": "DuckDB CLI skills",
+  "summary": "DuckDB CLI specialist for SQL analysis, data processing and file conversion. Use for SQL queries, CSV/Parquet/JSON analysis, database queries, or data conversion. Triggers on \"duckdb\", \"sql\", \"query\", \"data analysis\", \"parquet\", \"convert d.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duckdb_cli_ai_skills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CamelSprout",
+      "features": [
+        "DuckDB CLI specialist for SQL analysis, data processing and file conversion",
+        "Use for SQL queries, CSV/Parquet/JSON analysis, database queries, or data conversion",
+        "Triggers on \"duckdb\", \"sql\", \"query\", \"data analysis\", \"parquet\", \"convert data\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duckdb-cli-ai-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212315591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duckdb-cli-ai-skills",
+      "url": "https://clawhub.ai/skills/duckdb-cli-ai-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duckdb-cli-ai-skills",
+    "url": "https://clawhub.ai/skills/duckdb-cli-ai-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duckdb-cli-ai-skills-67e2e41435aae969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duckdb-cli-ai-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-duckdb-cli-ai-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ae835586b774829fb4cc09aff7f42290773a60c69180328838b8593f2842d03",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-24T09:43:34.673Z"
+}

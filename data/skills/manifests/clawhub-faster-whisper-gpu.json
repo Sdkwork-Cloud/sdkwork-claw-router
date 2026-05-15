@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18644,
+  "uuid": "skill-clawhub-faster-whisper-gpu",
+  "skillKey": "clawhub-faster-whisper-gpu",
+  "name": "Faster Whisper Gpu",
+  "summary": "High-performance local speech-to-text transcription using Faster Whisper with NVIDIA GPU acceleration. Transcribe audio files locally without sending data to...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faster_whisper_gpu",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Felipe Oliveira",
+      "features": [
+        "High-performance local speech-to-text transcription using Faster Whisper with NVIDIA GPU accele.",
+        "Transcribe audio files locally without sending data to..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/faster-whisper-gpu@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15194662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "faster-whisper-gpu",
+      "url": "https://clawhub.ai/skills/faster-whisper-gpu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faster-whisper-gpu",
+    "url": "https://clawhub.ai/skills/faster-whisper-gpu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faster-whisper-gpu-9744c6f5d99857ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/faster-whisper-gpu@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-faster-whisper-gpu-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dfdfdf3bf53d003bfd9d724282e2cf061e4113b93760aa29d94cd07a56bd6a2",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T09:38:12.156Z"
+}

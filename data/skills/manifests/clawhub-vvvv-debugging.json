@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25436,
+  "uuid": "skill-clawhub-vvvv-debugging",
+  "skillKey": "clawhub-vvvv-debugging",
+  "name": "Vvvv Debugging",
+  "summary": "Set up debugging for vvvv gamma C# node projects -- generate VS Code launch.json and tasks.json configurations, attach debugger to running vvvv, configure Vi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvv_debugging",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tebjan Halm",
+      "features": [
+        "Set up debugging for vvvv gamma C# node projects -",
+        "generate VS Code launch.json and tasks.json configurations, attach debugger to running vvvv, co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vvvv-debugging@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1094716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vvvv-debugging",
+      "url": "https://clawhub.ai/skills/vvvv-debugging"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvv-debugging",
+    "url": "https://clawhub.ai/skills/vvvv-debugging",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvv-debugging-480c2df10e5868ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vvvv-debugging@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vvvv-debugging-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3995f356de3264331df07d97f6b86fc5b98e2d62722c26bf2d73c39c7e3a2a20",
+      "artifactSizeBytes": 1867
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:08:55.728Z"
+}

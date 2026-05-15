@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9062,
+  "uuid": "skill-clawhub-vocal-chat",
+  "skillKey": "clawhub-vocal-chat",
+  "name": "Vocal Chat",
+  "summary": "Handles voice-to-voice conversations on WhatsApp. Automatically transcribes incoming audio and responds with local TTS audio. Use when the user wants to \"talk\" instead of type.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocal_chat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rubén Fernández Boullón",
+      "features": [
+        "Handles voice-to-voice conversations on WhatsApp",
+        "Automatically transcribes incoming audio and responds with local TTS audio",
+        "Use when the user wants to \"talk\" instead of type."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vocal-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98909961?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vocal-chat",
+      "url": "https://clawhub.ai/skills/vocal-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocal-chat",
+    "url": "https://clawhub.ai/skills/vocal-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocal-chat-88b8bad2d232d79d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vocal-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vocal-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:35b3357bb6568a98888b81742c907a337c5df994140beccd4ac1b3e25bd916c7",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T13:17:37.432Z"
+}

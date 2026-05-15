@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29078,
+  "uuid": "skill-clawhub-swiftfindrefs",
+  "skillKey": "clawhub-swiftfindrefs",
+  "name": "swiftfindrefs",
+  "summary": "Use swiftfindrefs (IndexStoreDB) to list every Swift source file referencing a symbol. Mandatory for “find references”, “fix missing imports”, and cross-module refactors. Do not replace with grep/rg or IDE search.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swiftfindrefs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "michaelversus",
+      "features": [
+        "Use swiftfindrefs (IndexStoreDB) to list every Swift source file referencing a symbol",
+        "Mandatory for “find references”, “fix missing imports”, and cross-module refactors",
+        "Do not replace with grep/rg or IDE search."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swiftfindrefs@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10232018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swiftfindrefs",
+      "url": "https://clawhub.ai/skills/swiftfindrefs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swiftfindrefs",
+    "url": "https://clawhub.ai/skills/swiftfindrefs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swiftfindrefs-9b6d5733ebbb5d01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swiftfindrefs@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-swiftfindrefs-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bab688f7a2939900ca229b042c1485229feb8c888651331a783d445e21ee1d06",
+      "artifactSizeBytes": 2107
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T20:36:56.984Z"
+}

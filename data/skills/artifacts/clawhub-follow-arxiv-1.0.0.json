@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/follow-arxiv@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_arxiv",
+  "skill": {
+    "id": 69527,
+    "skillKey": "clawhub-follow-arxiv",
+    "name": "follow-arxiv"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-arxiv",
+    "url": "https://clawhub.ai/skills/follow-arxiv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-arxiv-ce3ac1091f5e0b14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索过去一段用户指定的时间内arxiv上某题材的论文，并可以下载，阅读，深度分析特定论文。在用户请求处理arxiv平台论文，或想要得到最新的论文概要时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "champagne315",
+      "userId": "s1735vqsmht346mkbdtjpmaz5983h0vv",
+      "displayName": "champagne315",
+      "image": "https://avatars.githubusercontent.com/u/201896687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776569684388,
+      "changelog": "Initial release with onboarded configuration and structured workflow for tracking and analyzing arXiv papers.\n\n- Provides onboarding process for customizing search time window, keywords, and language (中文, English, Bilingual).\n- Supports daily arXiv paper tracking, summary generation, and in-depth analysis of selected papers.\n- All data processing and configuration handled locally via CLI commands, wrapped in a unified flow.\n- Allows flexible configuration management, including search area, language, report style, and result limits via CLI.\n- Facilitates full control over daily and deep analysis prompt templates, with reset and customization support.\n- Ensures secure, dependency-checked, and context-driven paper handling with clear user interaction steps.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5808a62b4626dc8171a522e87c23764b426f004e06319dbfebfb191694f75968"
+}

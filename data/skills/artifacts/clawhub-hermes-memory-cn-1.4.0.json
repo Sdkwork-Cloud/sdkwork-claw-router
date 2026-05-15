@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hermes-memory-cn@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hermes_memory_cn",
+  "skill": {
+    "id": 71028,
+    "skillKey": "clawhub-hermes-memory-cn",
+    "name": "Hermes Memory CN"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hermes-memory-cn",
+    "url": "https://clawhub.ai/skills/hermes-memory-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hermes-memory-cn-15728cf065357d60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "给AI装一个「人脑级」记忆系统。它能记住你说过的一切重要信息，下次聊天自动想起来。 不用云端、不用API Key、不花一分钱——全部数据存在你自己的电脑上。 说「记住这个」它就记住，问「我上次说了什么」它就找到。自动整理、自动遗忘过时信息。 适合：想让自己的AI助手拥有长期记忆的用户。 触发词：记忆、记住、之前说..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dream978",
+      "userId": "s17872q6gv9w4rw8hsn3fzefhd856e17",
+      "displayName": "DREAM978",
+      "image": "https://avatars.githubusercontent.com/u/14180057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1776904796407,
+      "changelog": "新增Skill进化系统：重复模式自动检测(≥3次)、skill草案生成、用户确认升级",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf2c57cb72a9f5a242770acb7850450beeedfcc466f86fd06419159e05eb27cf"
+}

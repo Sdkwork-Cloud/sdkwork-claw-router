@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10246,
+  "uuid": "skill-clawhub-earnings-calendar",
+  "skillKey": "clawhub-earnings-calendar",
+  "name": "Earnings Calendar",
+  "summary": "This skill retrieves upcoming earnings announcements for US stocks using the Financial Modeling Prep (FMP) API. Use this when the user requests earnings calendar data, wants to know which companies are reporting earnings in the upcoming we.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.earnings_calendar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Veera",
+      "features": [
+        "This skill retrieves upcoming earnings announcements for US stocks using the Financial Modeling.",
+        "Use this when the user requests earnings calendar data, wants to know which companies are repor.",
+        "The skill focuses on mid-cap and above companies (over $2B market cap) that have significant ma.",
+        "Supports multiple environments (CLI, Desktop, Web) with flexible API key management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/earnings-calendar@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/119089869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "earnings-calendar",
+      "url": "https://clawhub.ai/skills/earnings-calendar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "earnings-calendar",
+    "url": "https://clawhub.ai/skills/earnings-calendar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/earnings-calendar-6becb22475358104.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/earnings-calendar@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-earnings-calendar-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7302739146a92d7bd8fb5f3b135992c75faabca319b716806888d43773bbbbb",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T14:43:09.819Z"
+}

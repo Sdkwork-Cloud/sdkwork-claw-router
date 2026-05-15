@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62482,
+  "uuid": "skill-clawhub-solidot-push",
+  "skillKey": "clawhub-solidot-push",
+  "name": "Solidot 资讯推送",
+  "summary": "抓取 Solidot 热门和最新文章，推送到飞书",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solidot_push",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "n0nsense",
+      "features": [
+        "抓取 Solidot 热门和最新文章，推送到飞书"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solidot-push@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49099455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solidot-push",
+      "url": "https://clawhub.ai/skills/solidot-push"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solidot-push",
+    "url": "https://clawhub.ai/skills/solidot-push",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solidot-push-a6935a4ba8d6a8f1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solidot-push@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solidot-push-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b63ec1606db881346d8ff549bbda458572ebde8edb2a20a7c8528c08845956d2",
+      "artifactSizeBytes": 1772
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T10:42:12.592Z"
+}

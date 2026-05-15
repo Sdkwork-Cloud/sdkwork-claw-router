@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-saver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_saver",
+  "skill": {
+    "id": 64298,
+    "skillKey": "clawhub-instagram-saver",
+    "name": "instagram-saver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-saver",
+    "url": "https://clawhub.ai/skills/instagram-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-saver-a7a22da963ac37db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "當使用者貼上 Instagram 連結時，自動下載該貼文的所有高解析度圖片與影片。使用 Cobalt API 進行解析，支援多圖貼文，若為私人帳號會自動回報。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenleung1205",
+      "userId": "publishers:kenleung1205",
+      "displayName": "BIS1205",
+      "image": "https://avatars.githubusercontent.com/u/256096402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 882,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771577418155,
+      "changelog": "Initial release of instagram-saver:\n\n- Automatically downloads all high-resolution images and videos from an Instagram post when a link is provided.\n- Uses the Cobalt API for media retrieval; supports carousel (multi-image) posts.\n- Automatically informs the user if a link is from a private account.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:be261518cbed64c6758b0ece17514227912bb80bfc8f7285561166c810fe6984"
+}

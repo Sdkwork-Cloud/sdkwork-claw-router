@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/spendex-ai-router@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spendex_ai_router",
+  "skill": {
+    "id": 51774,
+    "skillKey": "clawhub-spendex-ai-router",
+    "name": "Spendex AI Router"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spendex-ai-router",
+    "url": "https://clawhub.ai/skills/spendex-ai-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spendex-ai-router-7bc30574400d4bb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Smart AI router — automatically picks the best & cheapest LLM for every prompt. BYOK, tracks costs, enforces budgets. Supports 25+ providers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ldws123",
+      "userId": "publishers:ldws123",
+      "displayName": "LdwS123",
+      "image": "https://avatars.githubusercontent.com/u/129743608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773288485462,
+      "changelog": "Initial release: smart BYOK LLM routing with cost tracking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2f47ddee958b2ee0c09b7fee384fa9efcde95995941ad6439c1f92a9e0bfc353"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69159,
+  "uuid": "skill-clawhub-hik-cloud-open-device-channel-management",
+  "skillKey": "clawhub-hik-cloud-open-device-channel-management",
+  "name": "海康云眸设备通道管理",
+  "summary": "调用海康云眸开放平台设备通道管理接口，包括查询设备下通道列表、同步设备下通道、修改通道名称和同步设备通道名称。用户提到通道列表、通道同步、通道重命名、channelNo、channelName 等场景时使用。本技能自动处理 access_token 获取与刷新，不向用户暴露 token 调用流程。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hik_cloud_open_device_channel_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hik-cloud",
+      "features": [
+        "调用海康云眸开放平台设备通道管理接口，包括查询设备下通道列表、同步设备下通道、修改通道名称和同步设备通道名称。用户提到通道列表、通道同步、通道重命名、channelNo、channelNam."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hik-cloud-open-device-channel-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269703506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hik-cloud-open-device-channel-management",
+      "url": "https://clawhub.ai/skills/hik-cloud-open-device-channel-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hik-cloud-open-device-channel-management",
+    "url": "https://clawhub.ai/skills/hik-cloud-open-device-channel-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hik-cloud-open-device-channel-management-213d3faca6b59f7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hik-cloud-open-device-channel-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hik-cloud-open-device-channel-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:719288292df9ca1a13928c3ff5cf1706b5cea9128ddcfa2233d05117ec609a8f",
+      "artifactSizeBytes": 2296
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:58:57.453Z"
+}

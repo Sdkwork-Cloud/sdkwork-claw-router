@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lametric-cli@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lametric_cli",
+  "skill": {
+    "id": 17749,
+    "skillKey": "clawhub-lametric-cli",
+    "name": "Lametric Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lametric-cli",
+    "url": "https://clawhub.ai/skills/lametric-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lametric-cli-48a452ee4fc1b50c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control LaMetric TIME/SKY smart displays from the command line. Use when sending notifications, controlling device brightness/volume, managing timers, or dis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dedene",
+      "userId": "publishers:dedene",
+      "displayName": "dedene",
+      "image": "https://avatars.githubusercontent.com/u/90413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 730,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771266284860,
+      "changelog": "- Removed the requirement for the LAMETRIC_DEVICE environment variable in the skill metadata.\n- Updated the metadata section to only require the lametric binary for operation.\n- No workflow or usage changes to documentation content.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:479a4e227b227d1005810ce22785d7c43f23fdfe1a4aa7e2e8eecbf3a58ca5a6"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40928,
+  "uuid": "skill-clawhub-alibabacloud-dataworks-data-quality",
+  "skillKey": "clawhub-alibabacloud-dataworks-data-quality",
+  "name": "Alibabacloud Dataworks Data Quality",
+  "summary": "DataWorks Data Quality (Read-Only): Query rule templates, data quality monitors (scans), alert rules, and scan run records/logs. Uses aliyun CLI to call data...",
+  "version": "0.0.1-beta.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_dataworks_data_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "DataWorks Data Quality (Read-Only): Query rule templates, data quality monitors (scans), alert.",
+        "Uses aliyun CLI to call data..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-dataworks-data-quality@0.0.1-beta.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-dataworks-data-quality",
+      "url": "https://clawhub.ai/skills/alibabacloud-dataworks-data-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-dataworks-data-quality",
+    "url": "https://clawhub.ai/skills/alibabacloud-dataworks-data-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-dataworks-data-quality-29a5823ab369b08a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-dataworks-data-quality@0.0.1-beta.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-dataworks-data-quality-0.0.1-beta.2.json",
+      "version": "0.0.1-beta.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8267b2ddbac396fd81f0d31f4e03ac635561afa7716a01fc3e185cc0a9667ec",
+      "artifactSizeBytes": 2619
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T02:15:44.865Z"
+}

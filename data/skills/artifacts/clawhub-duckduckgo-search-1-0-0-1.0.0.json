@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duckduckgo-search-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duckduckgo_search_1_0_0",
+  "skill": {
+    "id": 14294,
+    "skillKey": "clawhub-duckduckgo-search-1-0-0",
+    "name": "Duckduckgo Search 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duckduckgo-search-1-0-0",
+    "url": "https://clawhub.ai/skills/duckduckgo-search-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duckduckgo-search-1-0-0-81408cbed3ab5c5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs web searches using DuckDuckGo to retrieve real-time information from the internet. Use when the user needs to search for current events, documentati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omprasad122007-rgb",
+      "userId": "publishers:omprasad122007-rgb",
+      "displayName": "omprasad122007-rgb",
+      "image": "https://avatars.githubusercontent.com/u/260436802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1118,
+      "installsAllTime": 12,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771401516802,
+      "changelog": "Initial release of DuckDuckGo Search Skill.\n\n- Provides web search functionality using DuckDuckGo for real-time information retrieval.\n- Supports text, news, image, video, instant answer, suggestions, and map searches.\n- No API key required; privacy-focused and does not track users.\n- Includes example scripts for performing and customizing searches in Python.\n- Offers configuration for region, safesearch, timelimit, and additional search parameters.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6a1e7a606ba02063a72f3706b38e9767278089d3b7c9a613f828f2bdf22bdaf7"
+}

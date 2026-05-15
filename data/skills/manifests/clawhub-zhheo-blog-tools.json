@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71059,
+  "uuid": "skill-clawhub-zhheo-blog-tools",
+  "skillKey": "clawhub-zhheo-blog-tools",
+  "name": "张洪Heo博客助手",
+  "summary": "与张洪Heo的智能体（洪墨AI）进行聊天或搜索文章。支持文章搜索、今日热门、标签/分类获取、装备与项目查询。 触发词：张洪Heo、博客、博主、张洪、Heo。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhheo_blog_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhheo",
+      "features": [
+        "与张洪Heo的智能体（洪墨AI）进行聊天或搜索文章。支持文章搜索、今日热门、标签/分类获取、装备与项目查询。 触发词：张洪Heo、博客、博主、张洪、Heo。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhheo-blog-tools@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33177975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhheo-blog-tools",
+      "url": "https://clawhub.ai/skills/zhheo-blog-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhheo-blog-tools",
+    "url": "https://clawhub.ai/skills/zhheo-blog-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhheo-blog-tools-134c2d9fe4824aff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhheo-blog-tools@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhheo-blog-tools-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:335f02ee73e6341e9cb8f807a1df6a9765060136ac3354f2e73a2634f5227779",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:12:05.627Z"
+}

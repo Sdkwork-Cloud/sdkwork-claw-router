@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29544,
+  "uuid": "skill-clawhub-tettra",
+  "skillKey": "clawhub-tettra",
+  "name": "Tettra",
+  "summary": "Tettra integration. Manage data, records, and automate workflows. Use when the user wants to interact with Tettra data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tettra",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Tettra integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Tettra data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tettra@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tettra",
+      "url": "https://clawhub.ai/skills/tettra"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tettra",
+    "url": "https://clawhub.ai/skills/tettra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tettra-ffb7b5078a1384b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tettra@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tettra-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6940a5599f95a7ca3b929a03d031f12b1bc7f331f13dcee0ca4ddfe9207870bf",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:52:11.341Z"
+}

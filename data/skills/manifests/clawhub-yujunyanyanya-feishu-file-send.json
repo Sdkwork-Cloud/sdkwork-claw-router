@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58532,
+  "uuid": "skill-clawhub-yujunyanyanya-feishu-file-send",
+  "skillKey": "clawhub-yujunyanyanya-feishu-file-send",
+  "name": "Feishu File Send",
+  "summary": "飞书文件发送标准流程 | Reliable Feishu file sending workflow. 解决附件发送失败、用户收不到文件、mediaLocalRoots 路径限制等问题。 Fixes missing attachments, mediaLocalRoots path issues, and com...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yujunyanyanya_feishu_file_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yujunyanyanya",
+      "features": [
+        "飞书文件发送标准流程 | Reliable Feishu file sending workflow",
+        "解决附件发送失败、用户收不到文件、mediaLocalRoots 路径限制等问题。 Fixes missing attachments, mediaLocalRoots path issue."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yujunyanyanya-feishu-file-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208439037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yujunyanyanya-feishu-file-send",
+      "url": "https://clawhub.ai/skills/yujunyanyanya-feishu-file-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yujunyanyanya-feishu-file-send",
+    "url": "https://clawhub.ai/skills/yujunyanyanya-feishu-file-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yujunyanyanya-feishu-file-send-39ac470faa84e96f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yujunyanyanya-feishu-file-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yujunyanyanya-feishu-file-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25299ae16787c5632f1d9d722feb43026d73cfec4e638c52d74553262464cfd0",
+      "artifactSizeBytes": 2150
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T04:54:44.226Z"
+}

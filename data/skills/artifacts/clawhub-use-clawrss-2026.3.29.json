@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-clawrss@2026.3.29",
+  "version": "2026.3.29",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_clawrss",
+  "skill": {
+    "id": 41852,
+    "skillKey": "clawhub-use-clawrss",
+    "name": "Use ClawRSS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-clawrss",
+    "url": "https://clawhub.ai/skills/use-clawrss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-clawrss-887b624ad899377a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the ClawRSS OpenClaw plugin to manage RSS feeds, persist web results, pull saved items, work with digest articles, and send Apple push notifications afte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ipocket-app",
+      "userId": "s1758v3bmwygjsdzfwfqmstytx83s4mr",
+      "displayName": "iPocket-APP",
+      "image": "https://avatars.githubusercontent.com/u/263816419?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 161,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2026.3.29",
+      "createdAt": 1774722574683,
+      "changelog": "- Updated documentation to clarify workflows for feeds, search & persistence, pulling & marking items, digests, and push notifications.\n- Explicitly detailed required workspace usage and tool mapping for all ClawRSS operations.\n- Added clear response expectations, including validation steps and user input requirements.\n- Provided guidance on handling missing ClawRSS plugin scenarios.\n- Improved instructions for correct tool calls and response handling to avoid common mistakes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f89ea64a2a12094e759fd9418899331c1b9c812c48da92ae8c0cb853d971fcca"
+}

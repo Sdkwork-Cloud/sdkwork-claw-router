@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-3d-generation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_3d_generation",
+  "skill": {
+    "id": 18429,
+    "skillKey": "clawhub-ai-3d-generation",
+    "name": "AI 3D generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-3d-generation",
+    "url": "https://clawhub.ai/skills/ai-3d-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-3d-generation-3d41fade53ba1408.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, convert, and download AI-generated 3D models using Neural4D APIs. Optimized for commercial pipelines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "6e6e6e",
+      "userId": "s179srcd87f3c5j9yvt32hv5jn83keb8",
+      "displayName": "6e6e6e",
+      "image": "https://avatars.githubusercontent.com/u/11614835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 572,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773120912907,
+      "changelog": "Initial release of AI 3D Generation.\n\n- Generate 3D models from text prompts or images using Neural4D APIs.\n- Supports image matting and image-to-3D workflow.\n- Enable format conversion to STL, FBX, GLB, OBJ or USDZ for manufacturing pipelines.\n- Includes point consumption tracking and asynchronous polling for job completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f00fc68e5fd59f5028e2adb41b3831b29a058eaeb146bb6406be8f0f23707266"
+}

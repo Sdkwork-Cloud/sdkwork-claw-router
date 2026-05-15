@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39701,
+  "uuid": "skill-clawhub-agent-peer-tailscale",
+  "skillKey": "clawhub-agent-peer-tailscale",
+  "name": "Agent Peer via Tailscale",
+  "summary": "Connect two OpenClaw agents running on different machines as peer collaborators via Tailscale VPN. Enables direct sessions_send communication between agents...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_peer_tailscale",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fuzzyb33s",
+      "features": [
+        "Connect two OpenClaw agents running on different machines as peer collaborators via Tailscale V.",
+        "Enables direct sessions_send communication between agents..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-peer-tailscale@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221636957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-peer-tailscale",
+      "url": "https://clawhub.ai/skills/agent-peer-tailscale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-peer-tailscale",
+    "url": "https://clawhub.ai/skills/agent-peer-tailscale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-peer-tailscale-5fa2fe5a0002236d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-peer-tailscale@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-peer-tailscale-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d644ba02e7f7cecbdb275108338c3465130a248797b57edcaa1f5908397cf75",
+      "artifactSizeBytes": 2372
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T04:42:01.365Z"
+}

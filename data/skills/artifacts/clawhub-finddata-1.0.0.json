@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/finddata@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finddata",
+  "skill": {
+    "id": 24116,
+    "skillKey": "clawhub-finddata",
+    "name": "finddata.skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finddata",
+    "url": "https://clawhub.ai/skills/finddata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finddata-9b69ed4234445267.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query global public data series across 10 sources using natural language for instant financial, economic, and trade metrics with your FindData API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "williamkonggh",
+      "userId": "publishers:williamkonggh",
+      "displayName": "williamkongGH",
+      "image": "https://avatars.githubusercontent.com/u/228297494?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773484039799,
+      "changelog": "Initial release of the finddata skill.\n\n- Instantly query over 1 million public data series from 10 major sources using natural language (English & Chinese).\n- Supports both simple (fast-path) and complex (LLM planning) data queries.\n- Works with data from Yahoo Finance, FRED, World Bank, SEC EDGAR, China Market, BIS, Eurostat, BOJ, Our World in Data, and UN Comtrade.\n- Secure API usage—requires users to provide their FindData API key with each request.\n- Returns detailed responses, including data, execution plan, issues, and usage info.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b66e2faf1d89d137797f1931626f6d481641c3fc39a4cd3a2b6394096d7352b"
+}

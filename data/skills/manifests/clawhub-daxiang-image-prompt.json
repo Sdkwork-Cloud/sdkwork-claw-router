@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64754,
+  "uuid": "skill-clawhub-daxiang-image-prompt",
+  "skillKey": "clawhub-daxiang-image-prompt",
+  "name": "Daxiang Image Prompt",
+  "summary": "生成符合手绘插画风格的两段式中文配图Prompt，具体描述场景内容，固定包含横向21:9构图和卡通元素风格说明。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daxiang_image_prompt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daxiangnaoyang",
+      "features": [
+        "生成符合手绘插画风格的两段式中文配图Prompt，具体描述场景内容，固定包含横向21:9构图和卡通元素风格说明。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daxiang-image-prompt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223295173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daxiang-image-prompt",
+      "url": "https://clawhub.ai/skills/daxiang-image-prompt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daxiang-image-prompt",
+    "url": "https://clawhub.ai/skills/daxiang-image-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daxiang-image-prompt-b1ebc67826fe1c55.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daxiang-image-prompt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daxiang-image-prompt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:335ef01a1328cec10fb2f7c83c7fee79b7683f07bce113d5e34cf6273e6d84a0",
+      "artifactSizeBytes": 2622
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T03:23:17.700Z"
+}

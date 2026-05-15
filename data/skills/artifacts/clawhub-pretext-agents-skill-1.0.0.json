@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pretext-agents-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pretext_agents_skill",
+  "skill": {
+    "id": 38941,
+    "skillKey": "clawhub-pretext-agents-skill",
+    "name": "Pretext Three.js frontend skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pretext-agents-skill",
+    "url": "https://clawhub.ai/skills/pretext-agents-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pretext-agents-skill-6562bc0af6ff43b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create dynamic web experiences with physical-text layouts using Pretext for precise text measurement and Three.js for interactive 3D rendering and animation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tachikomared",
+      "userId": "s17381se7mfpevtqepyynsc72x83rcyf",
+      "displayName": "tachikomared",
+      "image": "https://avatars.githubusercontent.com/u/260255043?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774887187258,
+      "changelog": "Initial release of pretext-agents-skill.\n\n- Combines Pretext for advanced text measurement with Three.js for dynamic 3D/spatial rendering.\n- Supports optional Canvas 2D rendering for fast arcade/game mechanics and text destruction effects.\n- Integrates optional React Three Fiber and Yoga/Textura patterns for flexible scene and layout management.\n- Provides practical architectural patterns and guidance for creating interactive, viral, and editorial web experiences.\n- Includes clear implementation advice and best practices for performance, layout orchestration, and platform selection.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b1f8ac9fad4d57462830aebddfab2be568a3d63b91003db4a3d1ffb3e518d02d"
+}

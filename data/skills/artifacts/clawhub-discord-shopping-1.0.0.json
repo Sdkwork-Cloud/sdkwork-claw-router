@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discord-shopping@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discord_shopping",
+  "skill": {
+    "id": 22031,
+    "skillKey": "clawhub-discord-shopping",
+    "name": "Discord Shopping Deals"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discord-shopping",
+    "url": "https://clawhub.ai/skills/discord-shopping",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discord-shopping-1b9a258792202987.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Finds and lists the top 3 best new, used, or refurbished deals with prices, links, and coupons for products searched via Discord chat keywords."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "treylc3",
+      "userId": "publishers:treylc3",
+      "displayName": "Robert Caryl",
+      "image": "https://avatars.githubusercontent.com/u/229191428?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 488,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771855873414,
+      "changelog": "Initial release: top 3 deals across vendors (new/used/refurb) + coupons for Discord shopping.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:abf12404088a2b168b5153c9e0a2889580e7421049d50174ccb3ecc8b1a3dca1"
+}

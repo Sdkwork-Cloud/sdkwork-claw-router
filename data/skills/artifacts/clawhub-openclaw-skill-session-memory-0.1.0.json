@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-session-memory@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_session_memory",
+  "skill": {
+    "id": 24310,
+    "skillKey": "clawhub-openclaw-skill-session-memory",
+    "name": "Openclaw Skill Session Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-session-memory",
+    "url": "https://clawhub.ai/skills/openclaw-skill-session-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-session-memory-f84d97e3aee0e95d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically saves conversations daily with sensitive data redacted and supports fast keyword search across recent sessions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiaotucodes",
+      "userId": "publishers:qiaotucodes",
+      "displayName": "魏然",
+      "image": "https://avatars.githubusercontent.com/u/42764079?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772453491175,
+      "changelog": "Initial release of session memory skill:\n\n- Automatically records session conversations and saves them daily in markdown files.\n- Sensitive information (emails, phone numbers, API keys, etc.) is redacted for privacy.\n- Provides fast keyword search using regular expressions without loading entire files.\n- Includes CLI tools for searching keywords, setting time range, and listing recent session files.\n- Conversation logs are organized by date and contain summaries for easy review.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6135efc28fd9f67c6c1ac69d50c53fa2f1f126933e07a81b12da6da94e3d4e16"
+}

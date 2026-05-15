@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73358,
+  "uuid": "skill-clawhub-taobaoke-tool",
+  "skillKey": "clawhub-taobaoke-tool",
+  "name": "淘宝客全能工具箱",
+  "summary": "提供淘宝、京东、拼多多商品链接转链、跨平台比价、一键价保及佣金追踪的实用工具箱。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobaoke_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuhaichao87",
+      "features": [
+        "提供淘宝、京东、拼多多商品链接转链、跨平台比价、一键价保及佣金追踪的实用工具箱。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobaoke-tool@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13478972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobaoke-tool",
+      "url": "https://clawhub.ai/skills/taobaoke-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobaoke-tool",
+    "url": "https://clawhub.ai/skills/taobaoke-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobaoke-tool-644e014458c4c46f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobaoke-tool@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobaoke-tool-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16e030498844e27dfdf21e09ab1ee60f495353a8e78b9192fa4db6f8c848f592",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:00:25.152Z"
+}

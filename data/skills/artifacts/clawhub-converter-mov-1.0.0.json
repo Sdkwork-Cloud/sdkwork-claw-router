@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/converter-mov@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.converter_mov",
+  "skill": {
+    "id": 47182,
+    "skillKey": "clawhub-converter-mov",
+    "name": "Converter Mov"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "converter-mov",
+    "url": "https://clawhub.ai/skills/converter-mov",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/converter-mov-cdfff90ffce12090.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert MOV video files into converted MP4 files with this skill. Works with MOV, MP4, AVI, WebM files up to 500MB. iPhone videographers, Mac users, content..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777309200398,
+      "changelog": "Initial release of Converter MOV — Convert MOV Files to MP4.\n\n- Upload and convert MOV, MP4, AVI, and WebM video files up to 500MB to 1080p MP4 format.\n- Supports quick conversion (20–40 seconds for most videos) using cloud GPU rendering.\n- Automatic setup with free API token for unregistered users; session management to keep edits and conversions in sync.\n- Error handling for unsupported formats, large files, expired tokens, and insufficient credits.\n- Flexible workflow: handle uploads, video editing, audio tracks, and quick exports via clear user prompts.\n- Detailed status feedback and automatic backend state detection to ensure smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:675afa02c9e66f94f7fa384ae263937ade9b2cfba7b94b5d8a1384f9722086c0"
+}

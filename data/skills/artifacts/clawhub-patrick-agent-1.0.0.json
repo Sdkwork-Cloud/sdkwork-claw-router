@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/patrick-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.patrick_agent",
+  "skill": {
+    "id": 72496,
+    "skillKey": "clawhub-patrick-agent",
+    "name": "派大星情感陪伴机器人"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "patrick-agent",
+    "url": "https://clawhub.ai/skills/patrick-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/patrick-agent-f2fcddfd08a7fcf1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "派大星情感陪伴机器人 - 一个温暖、幽默的情感陪伴Agent，像海绵宝宝里的派大星一样，用简单纯真的方式陪伴你，还能帮你查看天气。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sutacui",
+      "userId": "s17djx9c125a7ddafwr7pbj3tx83g7kq",
+      "displayName": "sutaCui",
+      "image": "https://avatars.githubusercontent.com/u/213402865?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774322230705,
+      "changelog": "初始版本：情感陪伴Agent，支持天气查询",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20cb3f5c1b8101ce1a54213fd2512aec3b93482944068538fe0d42745ed29c6c"
+}

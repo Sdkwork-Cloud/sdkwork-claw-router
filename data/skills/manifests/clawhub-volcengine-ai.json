@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60607,
+  "uuid": "skill-clawhub-volcengine-ai",
+  "skillKey": "clawhub-volcengine-ai",
+  "name": "Volcengine Ai",
+  "summary": "火山引擎AI生成与理解API。让Agent能够调用火山引擎方舟的AI能力：图片生成(Seedream-5.0-lite)、视频生成(Seedance-1.5-pro)、图片理解、视频理解。使用前需配置API密钥(VOLCENGINE_API_KEY)。支持异步任务查询。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zzhimin",
+      "features": [
+        "火山引擎AI生成与理解API。让Agent能够调用火山引擎方舟的AI能力：图片生成(Seedream-5.0-lite)、视频生成(Seedance-1.5-pro)、图片理解、视频理解。使."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71487698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-ai",
+      "url": "https://clawhub.ai/skills/volcengine-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-ai",
+    "url": "https://clawhub.ai/skills/volcengine-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-ai-5163737cca0f8b05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:146a84e80b09c506a01bc4750efbfa61cbbc5255a5c917e743081403d9e8e0ad",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:56:52.942Z"
+}

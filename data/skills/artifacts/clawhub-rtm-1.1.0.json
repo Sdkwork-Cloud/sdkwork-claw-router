@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rtm@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtm",
+  "skill": {
+    "id": 16846,
+    "skillKey": "clawhub-rtm",
+    "name": "Remember The Milk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtm",
+    "url": "https://clawhub.ai/skills/rtm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtm-e972eb37db271fb3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Remember The Milk tasks — list, add, complete, delete, search, prioritize, tag, move, and annotate tasks with notes. Use when the user asks about tasks, todos, to-do lists, reminders, or Remember The Milk."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maxdraki",
+      "userId": "publishers:maxdraki",
+      "displayName": "maxdraki",
+      "image": "https://avatars.githubusercontent.com/u/3703338?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 978,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770883220993,
+      "changelog": "Address security review: declare required env vars and token file in metadata, add security section documenting credential handling, token storage, network scope, and permission level.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d48129c3d70c17914b6cc0d622d835568fa2aa40aee465f6cb2618928f286ade"
+}

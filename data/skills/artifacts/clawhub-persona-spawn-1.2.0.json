@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-spawn@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_spawn",
+  "skill": {
+    "id": 27162,
+    "skillKey": "clawhub-persona-spawn",
+    "name": "Persona Spawn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-spawn",
+    "url": "https://clawhub.ai/skills/persona-spawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-spawn-941c88a2f33d0533.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Spawn subagents with personas from a local workspace library or the Emblem persona marketplace. Use when a task needs a different voice, expertise, or operat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "decentraliser",
+      "userId": "s17avd3wyfhj48wa3z905w7d5983g6m7",
+      "displayName": "Decentraliser🌵",
+      "image": "https://avatars.githubusercontent.com/u/36499647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 353,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773558389819,
+      "changelog": "Add persona override directive, shared context_files support, deterministic prompt builder, starter bootstrap, and improved persona import flow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8af4b5bb1b66f848d8b38ed0c2f32492273d15c54a112254056b700f5e918d7e"
+}

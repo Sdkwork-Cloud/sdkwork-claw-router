@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-image-gen-aipc@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_image_gen_aipc",
+  "skill": {
+    "id": 22034,
+    "skillKey": "clawhub-local-image-gen-aipc",
+    "name": "Z-image Local image generation with OpenVINO (no API key)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-image-gen-aipc",
+    "url": "https://clawhub.ai/skills/local-image-gen-aipc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-image-gen-aipc-a8018e09b050aa18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate an image, create a picture, draw something, make an image of, text to image, paint a picture, illustrate, visualize, local image generation, AI art,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juan-oy",
+      "userId": "s173azbgamm32k2k6jqanh87d983hkws",
+      "displayName": "juan-OY",
+      "image": "https://avatars.githubusercontent.com/u/43125192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 487,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776042733620,
+      "changelog": "**local-image-gen-aipc v1.0.3**\n\n- Added `check_env.py` for improved environment verification and troubleshooting.\n- Updated agent instructions, auto-recovery, and pipeline flows for strict environment/package/script checks.\n- Enhanced pre-flight validation: now includes robust runtime Python and git version/availability checks, with clear setup/remediation instructions.\n- Clarified handling of Python Store alias situations and proxy support for setup/model download.\n- Now enforces that only system Python is used for setup scripts; venv Python is reserved for inference and package imports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:749a74b8c76ffc02131b5f477c420ba3e3b2d15a9e2168fb72da80bf49dd055b"
+}

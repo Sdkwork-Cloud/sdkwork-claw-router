@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50957,
+  "uuid": "skill-clawhub-agentmfa",
+  "skillKey": "clawhub-agentmfa",
+  "name": "Agentmfa",
+  "summary": "AgentMFA — request human approval before sensitive actions. Uses MCP tools for registration, identity, and approval flows. Works in Claude Code, Cursor, Open...",
+  "version": "1.0.14",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentmfa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leia Renée",
+      "features": [
+        "AgentMFA — request human approval before sensitive actions",
+        "Uses MCP tools for registration, identity, and approval flows",
+        "Works in Claude Code, Cursor, Open..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentmfa@1.0.14",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73590653?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentmfa",
+      "url": "https://clawhub.ai/skills/agentmfa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentmfa",
+    "url": "https://clawhub.ai/skills/agentmfa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentmfa-48c14a20035fc644.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentmfa@1.0.14",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentmfa-1.0.14.json",
+      "version": "1.0.14",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c9cf29e2c73d7e0a4e0773b552e383afdc16271edcf9f44bfc42f9ce31ecfe1",
+      "artifactSizeBytes": 2499
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T04:38:13.905Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16965,
+  "uuid": "skill-clawhub-x-agent",
+  "skillKey": "clawhub-x-agent",
+  "name": "x-agent",
+  "summary": "Plan, monitor, draft, and safely automate X (Twitter) account workflows with configurable guardrails and phased operational modes.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_agent",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Inceptiv Inc.",
+      "features": [
+        "Plan, monitor, draft, and safely automate X (Twitter) account workflows with configurable guard."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68158014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-agent",
+      "url": "https://clawhub.ai/skills/x-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-agent",
+    "url": "https://clawhub.ai/skills/x-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-agent-9dd49e74ec084fa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a954a246f3b84129c4d45e4735e0e337fb774a94e9a56bee248f56fc39602322",
+      "artifactSizeBytes": 1826
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T00:37:28.341Z"
+}

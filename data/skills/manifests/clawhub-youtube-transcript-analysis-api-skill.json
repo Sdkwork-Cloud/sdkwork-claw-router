@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36868,
+  "uuid": "skill-clawhub-youtube-transcript-analysis-api-skill",
+  "skillKey": "clawhub-youtube-transcript-analysis-api-skill",
+  "name": "youtube-transcript-analysis-api-skill",
+  "summary": "This skill helps users extract YouTube video transcripts and perform deep competitive analysis on the content. Agent should proactively apply this skill when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_transcript_analysis_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "browser-act",
+      "features": [
+        "This skill helps users extract YouTube video transcripts and perform deep competitive analysis.",
+        "Agent should proactively apply this skill when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-transcript-analysis-api-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209727774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-transcript-analysis-api-skill",
+      "url": "https://clawhub.ai/skills/youtube-transcript-analysis-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-transcript-analysis-api-skill",
+    "url": "https://clawhub.ai/skills/youtube-transcript-analysis-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-transcript-analysis-api-skill-6c362162a7898b49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-transcript-analysis-api-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-transcript-analysis-api-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7692cd6ab3e7341405ee20b55faeacce32cfc511e081d15ffef4b653281c337b",
+      "artifactSizeBytes": 2743
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:11:19.849Z"
+}

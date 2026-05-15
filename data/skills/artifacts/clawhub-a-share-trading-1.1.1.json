@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a-share-trading@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_trading",
+  "skill": {
+    "id": 71340,
+    "skillKey": "clawhub-a-share-trading",
+    "name": "A股数据SKILL"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-trading",
+    "url": "https://clawhub.ai/skills/a-share-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-trading-dd98269ed467553f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询A股实时行情、历史数据、技术指标、事件、资金面与个股行业信息。Use when 用户提到股票代码、板块、技术分析、财务指标、指数成分、交易日历、宏观数据或个股所属行业。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shouldnotappearcalm",
+      "userId": "s1746yykccqhx5c0wye32wcx3183nm3h",
+      "displayName": "calm",
+      "image": "https://avatars.githubusercontent.com/u/20592210?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 710,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775750710952,
+      "changelog": "- 补充了项目 GitHub 地址到文档参考部分。\n- 其余内容保持不变，无功能和接口变更。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8314f3552c0e370d2aefc43cda8bf9f89d44928f744f660ac8ff11f0938e10d"
+}

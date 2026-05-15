@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vita-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vita_app",
+  "skill": {
+    "id": 50333,
+    "skillKey": "clawhub-vita-app",
+    "name": "VITA — Longevity Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vita-app",
+    "url": "https://clawhub.ai/skills/vita-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vita-app-0dc2f910bd6e932a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access the user's personal health data from VITA, their longevity platform. Use this when the user asks about their health, how they're feeling today, sleep,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dobrinalexandru",
+      "userId": "s176b68pg32nx4p853n0gyrga984dd4m",
+      "displayName": "Alex Dobrin",
+      "image": "https://avatars.githubusercontent.com/u/7482862?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 501,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772310692937,
+      "changelog": "Initial release of vita-app skill.\n\n- Connects to VITA to provide users with personal health data and daily AI insights.\n- Supports fetching today’s AI summary, wearable metrics (Oura/WHOOP), and active supplement protocols.\n- Includes setup instructions for API key and environment configuration.\n- Describes three main actions: get_daily_insight, get_todays_outlook, and get_protocols.\n- Outlines recommended usage patterns for querying and presenting health data.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dc5263338dcacc483f161c6692a66f49eb463cfad52ead68dd3bc0682bacab9a"
+}

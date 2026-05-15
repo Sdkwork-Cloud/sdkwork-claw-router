@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/goai-image-gen@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goai_image_gen",
+  "skill": {
+    "id": 38260,
+    "skillKey": "clawhub-goai-image-gen",
+    "name": "GoAI Image Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goai-image-gen",
+    "url": "https://clawhub.ai/skills/goai-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goai-image-gen-61e60447664583df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI images via GoAI API. Use when the user asks to create, generate, draw, edit, render, or make images, pictures, illustrations, posters, avatars, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goai",
+      "userId": "s17bth0ecttg4hrp00qrv4evbs83scf8",
+      "displayName": "GoAI",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774700344752,
+      "changelog": "No files were changed in this release.  \nVersion bump from 0.3.0 to 1.0.1 with no functional or documentation updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d0117d2f268d7f614efdae1cd99adc03922100fc38d53dabd8c7b2841376bc43"
+}

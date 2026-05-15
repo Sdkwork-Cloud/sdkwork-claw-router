@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17757,
+  "uuid": "skill-clawhub-tronscan-token-scanner",
+  "skillKey": "clawhub-tronscan-token-scanner",
+  "name": "TronScan Token Scanner",
+  "summary": "Scan TRON tokens for total supply, market cap, price, rating, launch time, holders. Includes TRX: TRX price, TRX supply, market cap, daily net change, and su...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tronscan_token_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BigFrog",
+      "features": [
+        "Scan TRON tokens for total supply, market cap, price, rating, launch time, holders",
+        "Includes TRX: TRX price, TRX supply, market cap, daily net change, and su..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tronscan-token-scanner@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/142767282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tronscan-token-scanner",
+      "url": "https://clawhub.ai/skills/tronscan-token-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tronscan-token-scanner",
+    "url": "https://clawhub.ai/skills/tronscan-token-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tronscan-token-scanner-44449f53c4911178.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tronscan-token-scanner@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-tronscan-token-scanner-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86ca2ae4b71ba64fc649d08748fbe39c10cf88b64b27167eed6e8811c40e397c",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:25:40.653Z"
+}

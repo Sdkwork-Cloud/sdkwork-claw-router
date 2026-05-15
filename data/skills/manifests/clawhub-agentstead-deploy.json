@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19351,
+  "uuid": "skill-clawhub-agentstead-deploy",
+  "skillKey": "clawhub-agentstead-deploy",
+  "name": "Agentstead Deploy",
+  "summary": "Deploy OpenClaw AI agents to AgentStead cloud hosting. Use when a user wants to deploy a sub-agent on AgentStead, connect Telegram/Discord, and launch quickl...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentstead_deploy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Agentstead",
+      "features": [
+        "Deploy OpenClaw AI agents to AgentStead cloud hosting",
+        "Use when a user wants to deploy a sub-agent on AgentStead, connect Telegram/Discord, and launch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentstead-deploy@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261048716?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentstead-deploy",
+      "url": "https://clawhub.ai/skills/agentstead-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentstead-deploy",
+    "url": "https://clawhub.ai/skills/agentstead-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentstead-deploy-780a732146579987.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentstead-deploy@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentstead-deploy-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24cf99ba3f0c1c10c80dc7a53e7c238ca1441fd8434f6139f72ccec6d51d9b33",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T14:41:16.878Z"
+}

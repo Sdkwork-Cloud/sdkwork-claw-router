@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-strategic-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_strategic_analyzer",
+  "skill": {
+    "id": 38382,
+    "skillKey": "clawhub-instagram-strategic-analyzer",
+    "name": "Instagram Strategic Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-strategic-analyzer",
+    "url": "https://clawhub.ai/skills/instagram-strategic-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-strategic-analyzer-7bad0cbd6056a234.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes artist profiles to generate Instagram post ideas, storytelling concepts, captions, and content strategies for musical branding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilprato",
+      "userId": "s17cc68qb4bcsf98m0z08nx01s855dcb",
+      "displayName": "ILPRATO",
+      "image": "https://avatars.githubusercontent.com/u/150068751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776637857066,
+      "changelog": "- Initial release of Instagram Strategic Analyzer for Il Prato.\n- Analyzes artist profiles and generates tailored Instagram content strategies.\n- Provides post ideas, storytelling concepts, and artistic branding suggestions.\n- Outputs include content ideas, captions, and creative direction.\n- Optimized for emotionally rich, narrative-driven musical content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:449e3efa3e5c92c5e2fa6a102aece0bf84067ec912b095c1ba3dadb8ff0558be"
+}

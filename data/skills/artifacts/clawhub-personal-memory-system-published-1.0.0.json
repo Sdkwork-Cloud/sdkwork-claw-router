@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/personal-memory-system-published@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_memory_system_published",
+  "skill": {
+    "id": 63539,
+    "skillKey": "clawhub-personal-memory-system-published",
+    "name": "Personal Memory System Published"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-memory-system-published",
+    "url": "https://clawhub.ai/skills/personal-memory-system-published",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-memory-system-published-99a3f42f61201c78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个自动化、双层记忆系统，用于持久化和可查询个人知识。它将用户在 MEMORY.md 中的长期记忆，自动同步到 SQLite 数据库 memory.db，实现“自然语言 → SQL 查询”的智能检索。 **使用场景**： (1) 用户需要查询“我过去对 AI 模型的看法？” (2) 用户希望系统自动记录重要决策，..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awublack",
+      "userId": "s179k4wcec3dghbaskqd8r6d9584pvct",
+      "displayName": "awublack",
+      "image": "https://avatars.githubusercontent.com/u/22994037?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775957510720,
+      "changelog": "- 发布 1.0.0 初始版本：自动化个人记忆持久化与查询系统\n- MEMORY.md 内容自动同步到本地 SQLite 数据库，方便结构化检索\n- 支持通过自然语言提问，自动转为 SQL 查询并返回相关记忆\n- 实现与 Obsidian 和 Git 的无缝集成，本地数据安全、可版本控制\n- 无需外部 API，全部数据本地存储，保障隐私与安全",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5db9b6a6dcc47f37b36148624a104a836ceb73325201776a18b0f4e1cca062a6"
+}

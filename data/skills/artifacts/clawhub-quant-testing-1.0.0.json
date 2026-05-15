@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quant-testing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_testing",
+  "skill": {
+    "id": 69562,
+    "skillKey": "clawhub-quant-testing",
+    "name": "Quant Testing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-testing",
+    "url": "https://clawhub.ai/skills/quant-testing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-testing-901f2e6d162d7040.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "量化测试流程技能。当用户说\"回归测试\"、\"策略测试\"、\"回测验证\"、\"实盘验证\"、\"测试\"、\"上线\"、\"发布\"时自动触发。提供回归测试流程、测试用例模板、测试报告模板。适用于量化项目的测试和上线阶段。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueylee-dotcom",
+      "userId": "s17cfbpghyxeebsx1t64sx4ck583q0e9",
+      "displayName": "xueylee-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/260164558?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 946,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774583312894,
+      "changelog": "v1.0.0: 量化测试流程技能。提供回归测试流程、测试用例模板、测试报告模板。支持自动触发：回归测试、策略测试、测试、上线、发布。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:689a5114397e248097803e6ab5fde5249c85a5e42ecdeeeb426294c30d763da8"
+}

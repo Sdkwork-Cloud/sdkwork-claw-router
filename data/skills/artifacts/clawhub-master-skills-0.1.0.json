@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/master-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.master_skills",
+  "skill": {
+    "id": 29763,
+    "skillKey": "clawhub-master-skills",
+    "name": "Bagman"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "master-skills",
+    "url": "https://clawhub.ai/skills/master-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/master-skills-e02397bb6d1c0c92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure key management for AI agents. Use when handling private keys, API secrets, wallet credentials, or when building systems that need agent-controlled fun..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allprogramming9999",
+      "userId": "publishers:allprogramming9999",
+      "displayName": "allprogramming9999",
+      "image": "https://avatars.githubusercontent.com/u/208527699?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773624812761,
+      "changelog": "Initial release: secure key management patterns for AI agents.\n\n- Introduces Bagman: a guide to safe handling of secrets (keys, API creds, wallet access) for AI agents.\n- Covers secure storage using 1Password CLI (`op`), session key delegation, and leak prevention.\n- Includes architecture overview, step-by-step agent workflow, and code snippets for key retrieval and sanitization.\n- Provides patterns for output sanitization, pre-commit hooks to stop secret leaks, and .gitignore examples.\n- Documents prompt injection defenses with input validation and isolation of wallet operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db760da324776b307ec1e52819e881d021ad286d04c0bbcf96da3d924a7d9614"
+}

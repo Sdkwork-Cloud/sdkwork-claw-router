@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calendar-reminder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calendar_reminder",
+  "skill": {
+    "id": 61166,
+    "skillKey": "clawhub-calendar-reminder",
+    "name": "Calendar Reminder 日历提醒"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calendar-reminder",
+    "url": "https://clawhub.ai/skills/calendar-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calendar-reminder-1d47c84895cce859.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每晚22:00自动扫描明天的Outlook日历，上午日程提前2小时提醒，下午日程12:00统一提醒，通过飞书发送通知。依赖 owa-outlook skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ilove323",
+      "userId": "s17abamd7n35v4xgykeg537p3h83g3qz",
+      "displayName": "ilove323",
+      "image": "https://avatars.githubusercontent.com/u/14835165?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1249,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772214977528,
+      "changelog": "初始版本：每晚22:00扫描Outlook日历，按上午/下午分类设置飞书提醒",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5715deb18ee2703ea8ed02d2aec26a659c401ca58b416bf36eadcbd6890809e"
+}

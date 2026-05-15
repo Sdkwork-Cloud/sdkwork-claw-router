@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48854,
+  "uuid": "skill-clawhub-math-proof",
+  "skillKey": "clawhub-math-proof",
+  "name": "Math Proof",
+  "summary": "Automated step-by-step proof generation and review for user-submitted theorems with iterative refinement until acceptance or retry limit reached.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_proof",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaoyu20011021-hub",
+      "features": [
+        "Automated step-by-step proof generation and review for user-submitted theorems with iterative r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/math-proof@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229980124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "math-proof",
+      "url": "https://clawhub.ai/skills/math-proof"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-proof",
+    "url": "https://clawhub.ai/skills/math-proof",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-proof-9afa1f6d854766de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/math-proof@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-math-proof-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8afb75bf8dafa66cdcff6074ed4ed321dadd36631055d3adea825f8595a5019",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T07:57:48.903Z"
+}

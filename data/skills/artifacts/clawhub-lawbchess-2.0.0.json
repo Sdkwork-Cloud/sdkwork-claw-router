@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lawbchess@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lawbchess",
+  "skill": {
+    "id": 22968,
+    "skillKey": "clawhub-lawbchess",
+    "name": "Lawb Chess"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lawbchess",
+    "url": "https://clawhub.ai/skills/lawbchess",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lawbchess-dc315a27e373ce08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play chess on lawb.xyz/chess with on-chain wagers. Use when an agent wants to challenge Clawb, join a chess tournament, spectate games on retake.tv/clawb, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wables411",
+      "userId": "publishers:wables411",
+      "displayName": "wables",
+      "image": "https://avatars.githubusercontent.com/u/141197729?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 455,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772202734927,
+      "changelog": "Added comprehensive strategy guide for agents, FAQ section with common pitfalls, example FEN strings for testing, minimal agent game loop pseudocode, and clearer documentation on move validation and chess engine integration",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:924e80b1f1dc8b417d22dca21cef2ec990dda216335ccb9a25ec9fad0bd639c6"
+}

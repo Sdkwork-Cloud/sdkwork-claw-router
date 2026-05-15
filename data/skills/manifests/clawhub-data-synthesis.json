@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63382,
+  "uuid": "skill-clawhub-data-synthesis",
+  "skillKey": "clawhub-data-synthesis",
+  "name": "data-synthesis",
+  "summary": "从 CSV 语料切块后，用同一套 LLM 接口依次生成问题与答案，输出 JSONL 训练数据。 适用于文档/表格语料合成 QA、微调数据准备；支持 OpenAI 兼容网关与内网 Qwen 等服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_synthesis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chichisyun",
+      "features": [
+        "从 CSV 语料切块后，用同一套 LLM 接口依次生成问题与答案，输出 JSONL 训练数据。 适用于文档/表格语料合成 QA、微调数据准备；支持 OpenAI 兼容网关与内网 Qwen 等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-synthesis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93334194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-synthesis",
+      "url": "https://clawhub.ai/skills/data-synthesis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-synthesis",
+    "url": "https://clawhub.ai/skills/data-synthesis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-synthesis-cdfcc2b38612a70b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-synthesis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-synthesis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd49bcedd1b11768571be54892540297bfad53002d56647b92d5f6dd5d84473c",
+      "artifactSizeBytes": 2470
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T03:22:50.611Z"
+}

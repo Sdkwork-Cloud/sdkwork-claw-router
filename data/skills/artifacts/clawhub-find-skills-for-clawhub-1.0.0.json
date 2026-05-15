@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/find-skills-for-clawhub@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_skills_for_clawhub",
+  "skill": {
+    "id": 13853,
+    "skillKey": "clawhub-find-skills-for-clawhub",
+    "name": "Find Skills for ClawHub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-skills-for-clawhub",
+    "url": "https://clawhub.ai/skills/find-skills-for-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-skills-for-clawhub-d854b35425b6a8ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search for and discover OpenClaw skills from ClawHub (the official skill registry). Activate when user asks about finding skills, installing skills, or wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrjordandu",
+      "userId": "publishers:mrjordandu",
+      "displayName": "Jordandu",
+      "image": "https://avatars.githubusercontent.com/u/16203311?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1200,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772620213024,
+      "changelog": "初始版本1.0.0：提供ClawHub技能搜索和发现功能，包含跨平台脚本和完善的错误处理",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b271656488dc4e87410f19d52fc39de34ea65b6fe58711d7f8d893d2a6a60d01"
+}

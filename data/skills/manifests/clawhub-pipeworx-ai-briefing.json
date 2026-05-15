@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44671,
+  "uuid": "skill-clawhub-pipeworx-ai-briefing",
+  "skillKey": "clawhub-pipeworx-ai-briefing",
+  "name": "Pipeworx ai-briefing",
+  "summary": "Provides daily updates and searchable insights on AI tools, models, servers, APIs, SDKs, frameworks, and industry news.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_ai_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Provides daily updates and searchable insights on AI tools, models, servers, APIs, SDKs, framew."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-ai-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-ai-briefing",
+      "url": "https://clawhub.ai/skills/pipeworx-ai-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-ai-briefing",
+    "url": "https://clawhub.ai/skills/pipeworx-ai-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-ai-briefing-3463638d3b9978b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-ai-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-ai-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:392f569e3ee05086309d1fc1d7d41d794f8cf99b1e8d326bea57eed0a91314c3",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:28:26.195Z"
+}

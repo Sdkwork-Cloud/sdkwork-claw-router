@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13421,
+  "uuid": "skill-clawhub-habits",
+  "skillKey": "clawhub-habits",
+  "name": "Habits",
+  "summary": "Build a personal habit tracking system with streaks, reviews, and progression.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habits",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal habit tracking system with streaks, reviews, and progression."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/habits@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "habits",
+      "url": "https://clawhub.ai/skills/habits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habits",
+    "url": "https://clawhub.ai/skills/habits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habits-d68cffa59de9dff4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/habits@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-habits-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8098a9e7264237e00547fc7bf56d930e5e9ae45c41ad50420b7f6c49492bf91b",
+      "artifactSizeBytes": 1745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T23:48:58.144Z"
+}

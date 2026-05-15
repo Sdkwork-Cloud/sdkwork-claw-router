@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-tools-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_tools_skill",
+  "skill": {
+    "id": 63115,
+    "skillKey": "clawhub-research-tools-skill",
+    "name": "Research Tools Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-tools-skill",
+    "url": "https://clawhub.ai/skills/research-tools-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-tools-skill-c1d6aac4b71289d4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科研工具包 - 包含文献搜索、数据分析、代码开发等科研常用工具"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonjiang96",
+      "userId": "s17fq15k7sdb88g363jaeev86h84br7b",
+      "displayName": "Jiang Junwei",
+      "image": "https://avatars.githubusercontent.com/u/45134245?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775465826048,
+      "changelog": "Research Tools Skill 1.0.0 – Initial Release\n\n- Launches an integrated toolkit for researchers, supporting literature search, data analysis, and code development.\n- Includes ready-to-use commands for finding papers, extracting summaries, analyzing data, and generating code.\n- Supports workflows spanning literature review, method reproduction, experiment design, and result analysis.\n- Applicable to a wide range of research fields, including computer science, AI, biomedical, physics, engineering, and social sciences.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12c865afd23658a26f2213791347814ba0a8b376fb6c7da16bfd81e6750cfc44"
+}

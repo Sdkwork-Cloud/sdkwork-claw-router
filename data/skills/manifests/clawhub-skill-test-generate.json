@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63058,
+  "uuid": "skill-clawhub-skill-test-generate",
+  "skillKey": "clawhub-skill-test-generate",
+  "name": "Skill Test Generate",
+  "summary": "为任意 Agent Skill 自动生成 SFT 级别的功能测试用例，JSON 格式结构化输出。适用于生成测试用例、测试Skill、SFT测试、功能验证、技能测试、测试生成等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_test_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "uv0xab",
+      "features": [
+        "为任意 Agent Skill 自动生成 SFT 级别的功能测试用例，JSON 格式结构化输出。适用于生成测试用例、测试Skill、SFT测试、功能验证、技能测试、测试生成等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-test-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54772011?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-test-generate",
+      "url": "https://clawhub.ai/skills/skill-test-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-test-generate",
+    "url": "https://clawhub.ai/skills/skill-test-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-test-generate-fb00bd2f3edd65da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-test-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-test-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63e2b192d1baa254e78176f823f35cd458637424af9611405b133f0876ce0323",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T01:57:07.632Z"
+}

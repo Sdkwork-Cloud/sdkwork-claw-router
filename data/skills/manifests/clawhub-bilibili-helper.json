@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59892,
+  "uuid": "skill-clawhub-bilibili-helper",
+  "skillKey": "clawhub-bilibili-helper",
+  "name": "Bilibili Helper",
+  "summary": "B站创作助手。视频标题优化、标签推荐、简介模板、投稿策略、UP主运营、弹幕互动。Bilibili video creator assistant. B站运营、视频SEO、粉丝增长、投币收藏、充电计划。Use when creating content for Bilibili.",
+  "version": "2.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bilibili_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "B站创作助手。视频标题优化、标签推荐、简介模板、投稿策略、UP主运营、弹幕互动。Bilibili video creator assistant",
+        "B站运营、视频SEO、粉丝增长、投币收藏、充电计划。Use when creating content for Bilibili."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bilibili-helper@2.3.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bilibili-helper",
+      "url": "https://clawhub.ai/skills/bilibili-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bilibili-helper",
+    "url": "https://clawhub.ai/skills/bilibili-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bilibili-helper-da217d24a58f4935.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bilibili-helper@2.3.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-bilibili-helper-2.3.5.json",
+      "version": "2.3.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:387d94935dedc0233e27bea96d9ca6780b5afc85b1bebc80d0ab6f6124cb58de",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:57:15.346Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52231,
+  "uuid": "skill-clawhub-jit",
+  "skillKey": "clawhub-jit",
+  "name": "Jit",
+  "summary": "Just-In-Time production reference — pull systems, kanban, takt time, inventory reduction. Use when implementing JIT manufacturing, designing pull-based workf...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Just-In-Time production reference — pull systems, kanban, takt time, inventory reduction",
+        "Use when implementing JIT manufacturing, designing pull-based workf..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jit",
+      "url": "https://clawhub.ai/skills/jit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jit",
+    "url": "https://clawhub.ai/skills/jit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jit-ec03a0a8851d9cf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e0ce4f1d5e65e7d0683afee34dedb52f9c33f76815ef2a2a480fc725317b2bf",
+      "artifactSizeBytes": 1816
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T12:17:20.431Z"
+}

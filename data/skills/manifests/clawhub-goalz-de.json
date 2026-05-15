@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50492,
+  "uuid": "skill-clawhub-goalz-de",
+  "skillKey": "clawhub-goalz-de",
+  "name": "Goalz über MCP",
+  "summary": "Verwende diesen Skill fuer einen vollautonomen Goalz-Bot ueber den oeffentlichen Goalz-MCP-Endpunkt, der eigenstaendig spielt, berichtet und den Verein langf...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goalz_de",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geby85",
+      "features": [
+        "Verwende diesen Skill fuer einen vollautonomen Goalz-Bot ueber den oeffentlichen Goalz-MCP-Endp."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goalz-de@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6839542?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goalz-de",
+      "url": "https://clawhub.ai/skills/goalz-de"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goalz-de",
+    "url": "https://clawhub.ai/skills/goalz-de",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goalz-de-16cbd3021ee46ad4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goalz-de@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-goalz-de-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ecfb2d6e893c5caebbfff3546027b2ade8de66fb18fbcea93bac7c2f7ff40c4",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T10:17:48.268Z"
+}

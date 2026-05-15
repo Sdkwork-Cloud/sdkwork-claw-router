@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-pro@0.4.0",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_pro",
+  "skill": {
+    "id": 24835,
+    "skillKey": "clawhub-ocr-pro",
+    "name": "Ocr Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-pro",
+    "url": "https://clawhub.ai/skills/ocr-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-pro-fc0e5b95a47926f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional-grade OCR for PDFs and images using MinerU. Advanced text recognition with VLM (Vision Language Model) support for complex layouts, mixed conten..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzlzyca",
+      "userId": "s177m2xppsth4a69xqx30k6kds83haz0",
+      "displayName": "mzlzyCA",
+      "image": "https://avatars.githubusercontent.com/u/87289074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 392,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.4.0",
+      "createdAt": 1775210318539,
+      "changelog": "SEO: expand description for better ClawHub vector search discovery",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94452718757aceaf9f6f44b1ce4ec6e658fcdc61cd8cee2ec464561da114d0cc"
+}

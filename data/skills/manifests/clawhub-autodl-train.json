@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23723,
+  "uuid": "skill-clawhub-autodl-train",
+  "skillKey": "clawhub-autodl-train",
+  "name": "autodl-train",
+  "summary": "Operates remote model training jobs on AutoDL Linux servers over SSH. Use when starting a training run, checking whether training is still alive, reviewing G...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autodl_train",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhuoran-Liu",
+      "features": [
+        "Operates remote model training jobs on AutoDL Linux servers over SSH",
+        "Use when starting a training run, checking whether training is still alive, reviewing G..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autodl-train@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73462152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autodl-train",
+      "url": "https://clawhub.ai/skills/autodl-train"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autodl-train",
+    "url": "https://clawhub.ai/skills/autodl-train",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autodl-train-120348a0c1dc13ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autodl-train@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autodl-train-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aea32d170c51bd3497ec296139336bfb0bbd91f51a6b3880ee1338053396ea77",
+      "artifactSizeBytes": 2476
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T11:22:59.187Z"
+}

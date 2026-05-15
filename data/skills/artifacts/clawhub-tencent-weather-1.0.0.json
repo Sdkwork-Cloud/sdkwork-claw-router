@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencent-weather@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_weather",
+  "skill": {
+    "id": 69048,
+    "skillKey": "clawhub-tencent-weather",
+    "name": "tencent-weather"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-weather",
+    "url": "https://clawhub.ai/skills/tencent-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-weather-93231631ec4e18e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "天气信息查询工具，覆盖中国市级和区县级行政区。当用户查询实况天气、天气预报信息时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tencentnewsteam",
+      "userId": "s175jt7z9z0j4h1tzctzf5n05983k5q9",
+      "displayName": "TencentNewsTeam",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776222714562,
+      "changelog": "tencent-weather 1.0.0 初始版本发布\n\n- 支持中国市级和区县级天气信息实时查询与天气预报\n- 完整描述了 CLI 检查、安装、更新、API Key 配置和错误处理流程\n- 查询命令严格依赖 CLI 能力展示，地点支持 Adcode 映射\n- 明确输出格式与分组规则，输出结果注明来源\n- 详细列出各种异常情况的引导与处理措施",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80780d0918d13d7b887bc7b90d0492b301e6619e10143311fe998052a42b6993"
+}

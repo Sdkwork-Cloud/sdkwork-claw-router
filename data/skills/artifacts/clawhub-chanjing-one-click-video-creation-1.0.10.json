@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chanjing-one-click-video-creation@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chanjing_one_click_video_creation",
+  "skill": {
+    "id": 61718,
+    "skillKey": "clawhub-chanjing-one-click-video-creation",
+    "name": "Chanjing One Click Video Creation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chanjing-one-click-video-creation",
+    "url": "https://clawhub.ai/skills/chanjing-one-click-video-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chanjing-one-click-video-creation-32eb51d18a57c536.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用户输入选题或工作流，自动生成完整短视频成片（文案、分镜、数字人口播与 AI 画面混剪）；调用 Chanjing Open API 与同仓库子技能脚本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binkes",
+      "userId": "s17dzfw0aahqzz6dr91bzpma4h83gh5n",
+      "displayName": "BinKes",
+      "image": "https://avatars.githubusercontent.com/u/7719663?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1774684221857,
+      "changelog": "Version 1.0.10\n\n- Added detailed intermediate and result output files including scene and concat states (e.g., `final_concat.txt`, `scene_times.json`, `tts_state.json`, `workflow_result.json`).\n- Updated `SKILL.md` to simplify and clarify environment variable descriptions and remove redundant tables.\n- Adjusted environment variable handling in documentation to specify only optional overlays, matching current script logic.\n- No changes to core features or inputs/outputs; all new files aid pipeline transparency and debugging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b33154c93f077f0f54ffe92f08089f92535be71621c6c5cc445eeda52099a29"
+}

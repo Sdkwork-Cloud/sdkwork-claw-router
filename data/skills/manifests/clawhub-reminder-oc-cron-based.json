@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46003,
+  "uuid": "skill-clawhub-reminder-oc-cron-based",
+  "skillKey": "clawhub-reminder-oc-cron-based",
+  "name": "Reminder OC Cron Based",
+  "summary": "Create, inspect, and cancel OpenClaw cron-based chat reminders. Use when the user asks for a reminder at a specific time or after a delay, wants to list pend...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reminder_oc_cron_based",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AngHu666",
+      "features": [
+        "Create, inspect, and cancel OpenClaw cron-based chat reminders",
+        "Use when the user asks for a reminder at a specific time or after a delay, wants to list pend..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reminder-oc-cron-based@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47818318?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reminder-oc-cron-based",
+      "url": "https://clawhub.ai/skills/reminder-oc-cron-based"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reminder-oc-cron-based",
+    "url": "https://clawhub.ai/skills/reminder-oc-cron-based",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reminder-oc-cron-based-908c2c4b8ed0df3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reminder-oc-cron-based@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-reminder-oc-cron-based-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3753ad1b1f57d19ba2454710691785574858b8058a10a093065c9198a1053733",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T11:48:03.470Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64153,
+  "uuid": "skill-clawhub-baostock-tt-skills",
+  "skillKey": "clawhub-baostock-tt-skills",
+  "name": "baostock_tt_skills",
+  "summary": "获取A股历史K线数据、季频财务数据、宏观经济数据、板块成分股等",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baostock_tt_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jasonpro22",
+      "features": [
+        "获取A股历史K线数据、季频财务数据、宏观经济数据、板块成分股等"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baostock-tt-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50792084?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baostock-tt-skills",
+      "url": "https://clawhub.ai/skills/baostock-tt-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baostock-tt-skills",
+    "url": "https://clawhub.ai/skills/baostock-tt-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baostock-tt-skills-25ac2ec20279dd53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baostock-tt-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-baostock-tt-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1b2543b0d4731927f7cddd2a5a29a1b4d08038df228fc3900e8c6b32bca1da3",
+      "artifactSizeBytes": 2013
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T06:22:05.261Z"
+}

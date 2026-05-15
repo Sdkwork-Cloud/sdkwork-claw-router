@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54082,
+  "uuid": "skill-clawhub-instantly-campaigns",
+  "skillKey": "clawhub-instantly-campaigns",
+  "name": "Instantly",
+  "summary": "Manage cold email campaigns, leads, analytics, tags, and workspace actions in Instantly — powered by ClawLink.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instantly_campaigns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Manage cold email campaigns, leads, analytics, tags, and workspace actions in Instantly — power."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instantly-campaigns@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instantly-campaigns",
+      "url": "https://clawhub.ai/skills/instantly-campaigns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instantly-campaigns",
+    "url": "https://clawhub.ai/skills/instantly-campaigns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instantly-campaigns-5845806ebcd10bb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instantly-campaigns@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-instantly-campaigns-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:13b85fcdd577f67769a01cfe26de740fccb9c138a5d3059c2c7f213db0a5ae7c",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T20:30:08.469Z"
+}

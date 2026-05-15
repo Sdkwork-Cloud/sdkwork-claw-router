@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-scraper-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_scraper_skill",
+  "skill": {
+    "id": 36419,
+    "skillKey": "clawhub-web-scraper-skill",
+    "name": "Web Scraper Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-scraper-skill",
+    "url": "https://clawhub.ai/skills/web-scraper-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-scraper-skill-61f17c6411026804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill to scrape, crawl, or extract data from websites using Apify or Firecrawl APIs. Trigger whenever the user wants to: scrape a URL, crawl a websi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abhishekj9621",
+      "userId": "s1751yz1cbsqn3pc7sqpc0ytq983k7kg",
+      "displayName": "Abhishek Jaiswal",
+      "image": "https://avatars.githubusercontent.com/u/215396960?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775130019418,
+      "changelog": "Initial release of the web-scraper-skill for website data extraction using Apify and Firecrawl APIs.\n\n- Enables scraping, crawling, and mapping of websites, and extracting data and content in various formats.\n- Supports both Firecrawl (single-page and site-wide scraping, markdown output) and Apify (specialized/pre-built actors for social, e-commerce, maps, etc.).\n- Provides quick decision guidance for choosing the appropriate API based on user needs.\n- Includes authentication instructions, API references, and example code patterns for common tasks.\n- Outlines best practices and error handling for robust web data extraction workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8bd77fba0742b63ba108321305d0a52ca59710955aaf19284a1c51edcd11074f"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17716,
+  "uuid": "skill-clawhub-antigravity-bridge",
+  "skillKey": "clawhub-antigravity-bridge",
+  "name": "Antigravity Bridge",
+  "summary": "One-directional knowledge bridge from Google Antigravity IDE to OpenClaw. Syncs only .md documentation files from Antigravity projects into OpenClaw workspac...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.antigravity_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hein Tonny Køien",
+      "features": [
+        "One-directional knowledge bridge from Google Antigravity IDE to OpenClaw",
+        "Syncs only .md documentation files from Antigravity projects into OpenClaw workspac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/antigravity-bridge@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20846272?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "antigravity-bridge",
+      "url": "https://clawhub.ai/skills/antigravity-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "antigravity-bridge",
+    "url": "https://clawhub.ai/skills/antigravity-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/antigravity-bridge-c013474c65d0515c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/antigravity-bridge@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-antigravity-bridge-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c613c4310805843f6c718d384d1bd7fa407c07a215bb31c98a3066563f1df248",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T23:17:05.653Z"
+}

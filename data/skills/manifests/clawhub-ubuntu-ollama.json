@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53129,
+  "uuid": "skill-clawhub-ubuntu-ollama",
+  "skillKey": "clawhub-ubuntu-ollama",
+  "name": "Ubuntu Ollama",
+  "summary": "Ubuntu Ollama — run Ollama on Ubuntu with fleet routing across multiple Ubuntu machines. Ubuntu Ollama setup with apt, systemd, and NVIDIA CUDA. Route Ollama...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ubuntu_ollama",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Ubuntu Ollama — run Ollama on Ubuntu with fleet routing across multiple Ubuntu machines",
+        "Ubuntu Ollama setup with apt, systemd, and NVIDIA CUDA",
+        "Route Ollama..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ubuntu-ollama@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ubuntu-ollama",
+      "url": "https://clawhub.ai/skills/ubuntu-ollama"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ubuntu-ollama",
+    "url": "https://clawhub.ai/skills/ubuntu-ollama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ubuntu-ollama-9a2377b95e25a89b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ubuntu-ollama@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ubuntu-ollama-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d14fad17a1894ea671dafa7f623d888553bae46bdbdd52d4fdcfae85444e4e3a",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T00:12:20.882Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vigilance@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vigilance",
+  "skill": {
+    "id": 37264,
+    "skillKey": "clawhub-vigilance",
+    "name": "Vigilance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vigilance",
+    "url": "https://clawhub.ai/skills/vigilance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vigilance-6077e63824e7f482.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Evaluate-before-Execute (EBE) guardrail for OpenClaw agents. Issues a mandatory GO / NO-GO decision before any high-stakes tool call. Enforces child-safety p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sanjeet-toosi",
+      "userId": "s17bbe45jkphpd0sbc75rz11qn83h65f",
+      "displayName": "sanjeet-toosi",
+      "image": "https://avatars.githubusercontent.com/u/139010128?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 189,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774127866196,
+      "changelog": "**Major update: Initial release of the agent-sentinel skill (Evaluate-before-Execute guardrail for OpenClaw agents).**\n\n- Introduces a mandatory evaluation layer (\"agent-sentinel\") enforcing safety and compliance before any high-stakes tool call.\n- Implements strict GO / NO-GO decisions (ALLOW, BLOCK, ADVISE) for critical actions—booking, payment, web search, and shell commands—based on user and safety policy specified in SENTINEL_CONFIG.md.\n- Provides a clear command-line interface and response schema; emits structured JSON decisions with severity and suggested alternatives.\n- Enforces robust child-safety, budget, and travel preferences via a configurable policy file.\n- Includes explicit user override and advisory protocols for handling preference and policy violations.\n- Complete documentation of configuration, invocation, and decision handling in the new SKILL.md.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14d79db10ac4d3b1586bb4b07e68dfee0493bc080b0dadf4439a8d877348df02"
+}

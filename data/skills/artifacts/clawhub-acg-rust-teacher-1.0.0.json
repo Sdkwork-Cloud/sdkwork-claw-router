@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acg-rust-teacher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acg_rust_teacher",
+  "skill": {
+    "id": 62601,
+    "skillKey": "clawhub-acg-rust-teacher",
+    "name": "ACG-Rust 教学工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acg-rust-teacher",
+    "url": "https://clawhub.ai/skills/acg-rust-teacher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acg-rust-teacher-06c6260cbd4afb09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ACG 视角 Rust 所有权系统教学工具，通过动漫类比（ReZero、Fate 等）讲解 Rust 核心概念，降低学习门槛。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eightroad",
+      "userId": "publishers:eightroad",
+      "displayName": "eightroad",
+      "image": "https://avatars.githubusercontent.com/u/11894570?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 388,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772466182418,
+      "changelog": "ACG 视角 Rust 所有权系统教学",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:34a508ea5c7dbcf5a7301e43aab38473cfc82abf484b8d6a3b4ea59909afe659"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19744,
+  "uuid": "skill-clawhub-uf2-net",
+  "skillKey": "clawhub-uf2-net",
+  "name": "uf2.net URL Shortener",
+  "summary": "Create, manage, and track custom short URLs with uf2.net API; links never expire and provide click counts and public stats via simple REST calls.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uf2_net",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "S. Rob Beck",
+      "features": [
+        "Create, manage, and track custom short URLs with uf2.net API",
+        "links never expire and provide click counts and public stats via simple REST calls."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uf2-net@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/69795066?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uf2-net",
+      "url": "https://clawhub.ai/skills/uf2-net"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uf2-net",
+    "url": "https://clawhub.ai/skills/uf2-net",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uf2-net-b03a904f2c5e5241.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uf2-net@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-uf2-net-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c817c02dd3e168af26656a8d29a9ef0a94de25243d7ead2832713aff5257972",
+      "artifactSizeBytes": 2294
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T17:21:24.631Z"
+}

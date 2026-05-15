@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46279,
+  "uuid": "skill-clawhub-auto-quote-mailer",
+  "skillKey": "clawhub-auto-quote-mailer",
+  "name": "medal-email-quote",
+  "summary": "General-purpose ecommerce inquiry email automation skill. Periodically fetches customer inquiry emails, detects and translates languages, stores email data l...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_quote_mailer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fankcoder",
+      "features": [
+        "General-purpose ecommerce inquiry email automation skill",
+        "Periodically fetches customer inquiry emails, detects and translates languages, stores email da."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-quote-mailer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12791032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-quote-mailer",
+      "url": "https://clawhub.ai/skills/auto-quote-mailer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-quote-mailer",
+    "url": "https://clawhub.ai/skills/auto-quote-mailer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-quote-mailer-a5e7b6ad0163234c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-quote-mailer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-quote-mailer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41441450fb3bf1e70e9848964ea13e4944bf5e5341ab7eb2d44d5155ef19a1ce",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:07:06.887Z"
+}

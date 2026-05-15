@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46557,
+  "uuid": "skill-clawhub-ntriq-vision-product-analyzer-mcp",
+  "skillKey": "clawhub-ntriq-vision-product-analyzer-mcp",
+  "name": "Ntriq Vision Product Analyzer Mcp",
+  "summary": "Analyze product images: identify items, extract specs, compare features, generate descriptions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_vision_product_analyzer_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntriq",
+      "features": [
+        "Analyze product images: identify items, extract specs, compare features, generate descriptions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ntriq-vision-product-analyzer-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/215101248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ntriq-vision-product-analyzer-mcp",
+      "url": "https://clawhub.ai/skills/ntriq-vision-product-analyzer-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-vision-product-analyzer-mcp",
+    "url": "https://clawhub.ai/skills/ntriq-vision-product-analyzer-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-vision-product-analyzer-mcp-b5dc1f67ec532bea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ntriq-vision-product-analyzer-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ntriq-vision-product-analyzer-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1dda54c13408cbf71afdafdb3f6d85c907b20ed621bdd137ea726f12de8e8070",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T19:00:23.654Z"
+}

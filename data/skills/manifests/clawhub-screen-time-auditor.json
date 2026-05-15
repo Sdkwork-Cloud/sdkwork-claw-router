@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43154,
+  "uuid": "skill-clawhub-screen-time-auditor",
+  "skillKey": "clawhub-screen-time-auditor",
+  "name": "Screen Time Auditor",
+  "summary": "Help users audit and analyze screen habits by device, app, and time to identify triggers and create a realistic one-week reduction plan.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_time_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Help users audit and analyze screen habits by device, app, and time to identify triggers and cr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/screen-time-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "screen-time-auditor",
+      "url": "https://clawhub.ai/skills/screen-time-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-time-auditor",
+    "url": "https://clawhub.ai/skills/screen-time-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-time-auditor-6c41750f93e2ac5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/screen-time-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-screen-time-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f327d9a6db523e6c32a893fef01550871455e428f354f04d77e752f7572153f5",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:01:01.529Z"
+}

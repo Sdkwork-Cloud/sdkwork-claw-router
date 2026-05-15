@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/api-design@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.api_design",
+  "skill": {
+    "id": 12916,
+    "skillKey": "clawhub-api-design",
+    "name": "Api Design"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "api-design",
+    "url": "https://clawhub.ai/skills/api-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/api-design-bb4bcefa0fb388da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "REST API design patterns including resource naming, status codes, pagination, filtering, error responses, versioning, and rate limiting for production APIs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shateily",
+      "userId": "s177wzkppvac3hhjg47k0xyy9n843fgf",
+      "displayName": "shateily",
+      "image": "https://avatars.githubusercontent.com/u/18416911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1350,
+      "installsAllTime": 27,
+      "installsCurrent": 25,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772160704843,
+      "changelog": "- Initial release of the \"api-design\" skill, providing practical REST API design patterns and conventions for production use.\n- Covers resource naming, HTTP methods, and appropriate status codes.\n- Includes best practices for pagination (offset and cursor-based), filtering, sorting, and error response formats.\n- Describes guidelines for authentication, authorization, versioning, and rate limiting strategies.\n- Supplies code examples and implementation notes for common API scenarios.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:172c8a9b11226df4522c492a8362b7cbd2a8e0c967d37c691d2a845f9ba894fc"
+}

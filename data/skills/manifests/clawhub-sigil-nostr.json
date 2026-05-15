@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51808,
+  "uuid": "skill-clawhub-sigil-nostr",
+  "skillKey": "clawhub-sigil-nostr",
+  "name": "Sigil Nostr — P2P Encrypted Messaging for AI Agents",
+  "summary": "Nostr P2P messaging gateway for AI agents. Send and receive E2E encrypted messages via the Nostr protocol. Enables your agent to be reachable from Sigil Mess...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sigil_nostr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lmanchu",
+      "features": [
+        "Nostr P2P messaging gateway for AI agents",
+        "Send and receive E2E encrypted messages via the Nostr protocol",
+        "Enables your agent to be reachable from Sigil Mess..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sigil-nostr@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8541873?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sigil-nostr",
+      "url": "https://clawhub.ai/skills/sigil-nostr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sigil-nostr",
+    "url": "https://clawhub.ai/skills/sigil-nostr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sigil-nostr-2acac475ba28c6ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sigil-nostr@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sigil-nostr-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0511113026c4f050c001ef644d91d6ee9e1de09a232ec8f55802decd2a4d90db",
+      "artifactSizeBytes": 1962
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T07:23:41.460Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zsxq-digest@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_digest",
+  "skill": {
+    "id": 24934,
+    "skillKey": "clawhub-zsxq-digest",
+    "name": "ZSXQ Digest"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-digest",
+    "url": "https://clawhub.ai/skills/zsxq-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-digest-6dd2abadbe25c4f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize recent posts from followed Knowledge Planet circles into a daily digest prioritizing key updates using local tokens or browser relay for access."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sealiu1997",
+      "userId": "publishers:sealiu1997",
+      "displayName": "sealiu1997",
+      "image": "https://avatars.githubusercontent.com/u/37955471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 389,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772979034751,
+      "changelog": "Initial public release: token-first ZSXQ stream digest with browser bootstrap/recovery and sanitized packaging.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:96608ee58fff550e16e36afb1e95957602c2227e49b4f0ba9e0678f8264f8869"
+}

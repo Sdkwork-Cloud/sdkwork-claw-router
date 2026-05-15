@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43802,
+  "uuid": "skill-clawhub-browser-video-generation",
+  "skillKey": "clawhub-browser-video-generation",
+  "name": "Browser Video Generation",
+  "summary": "Get ready-to-share videos ready to post, without touching a single slider. Upload your text prompts (MP4, MOV, WebM, GIF, up to 500MB), say something like \"g...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_video_generation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Get ready-to-share videos ready to post, without touching a single slider",
+        "Upload your text prompts (MP4, MOV, WebM, GIF, up to 500MB), say something like \"g..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-video-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-video-generation",
+      "url": "https://clawhub.ai/skills/browser-video-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-video-generation",
+    "url": "https://clawhub.ai/skills/browser-video-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-video-generation-26d43d89ab14ba0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-video-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-video-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a6455ad85edb4bf923c963e2a04ea073cebea9f8fd612b89408c8eb5cd420c6",
+      "artifactSizeBytes": 2467
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T11:13:03.177Z"
+}

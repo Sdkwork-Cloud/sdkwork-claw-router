@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46223,
+  "uuid": "skill-clawhub-ray-delivery-diagnosis",
+  "skillKey": "clawhub-ray-delivery-diagnosis",
+  "name": "Ray Delivery Diagnosis",
+  "summary": "Automates delivery lane scans every 4 hours to detect failures, classify issues, update recovery tickets, and attempt specified recovery actions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ray_delivery_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "X-RayLuan",
+      "features": [
+        "Automates delivery lane scans every 4 hours to detect failures, classify issues, update recover."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ray-delivery-diagnosis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/150766707?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ray-delivery-diagnosis",
+      "url": "https://clawhub.ai/skills/ray-delivery-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ray-delivery-diagnosis",
+    "url": "https://clawhub.ai/skills/ray-delivery-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ray-delivery-diagnosis-0377df67275b1f7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ray-delivery-diagnosis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ray-delivery-diagnosis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c490c7d4d3f856439777ba6a66f850dd9289d705109be17cf38a017475b6aa9",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T09:23:46.777Z"
+}

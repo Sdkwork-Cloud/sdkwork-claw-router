@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ctf-forensics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_forensics",
+  "skill": {
+    "id": 30140,
+    "skillKey": "clawhub-ctf-forensics",
+    "name": "Ctf Forensics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-forensics",
+    "url": "https://clawhub.ai/skills/ctf-forensics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-forensics-76665d0bbe55fa6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides digital forensics and signal analysis techniques for CTF challenges. Use when analyzing disk images, memory dumps, event logs, network captures, cry..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gandli",
+      "userId": "s17c214vqwcqpk2wczqpbmyngd83xsas",
+      "displayName": "gandli",
+      "image": "https://avatars.githubusercontent.com/u/85359251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 278,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774845547994,
+      "changelog": "- Initial release of ctf-forensics skill, providing a comprehensive quick reference for digital forensics and signal analysis in CTF challenges.\n- Includes command-line tool suggestions and setup for Linux and macOS.\n- Links to focused reference files covering disk, memory, network, steganography, hardware signals, Linux app/browser artifacts, 3D printing, and blockchain forensics.\n- Quick start bash commands provided for file, disk, memory, and log analysis.\n- Guidance on when to pivot to other specialized skills (crypto, malware, web, misc, osint, reverse engineering) based on findings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7f5d96a94ffd14d4fced899d235fe602d597d0bfd5fe57ec7c5f87ce15d5b3ab"
+}

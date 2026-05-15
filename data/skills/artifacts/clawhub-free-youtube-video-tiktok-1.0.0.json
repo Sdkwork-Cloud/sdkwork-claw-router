@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-youtube-video-tiktok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_youtube_video_tiktok",
+  "skill": {
+    "id": 40400,
+    "skillKey": "clawhub-free-youtube-video-tiktok",
+    "name": "Free Youtube Video Tiktok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-youtube-video-tiktok",
+    "url": "https://clawhub.ai/skills/free-youtube-video-tiktok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-youtube-video-tiktok-6b006e61fce92191.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get short TikTok clips ready to post, without touching a single slider. Upload your YouTube or video clips (MP4, MOV, WebM, AVI, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775926262810,
+      "changelog": "Initial release — free and easy YouTube-to-TikTok video conversion.\n\n- Instantly convert YouTube or uploaded video clips (MP4, MOV, WebM, AVI, up to 500MB) into TikTok-ready, captioned clips.\n- Automatically applies vertical 9:16 crop and outputs high-quality 1080p MP4.\n- Simple workflow: upload/URL, describe your edit (e.g., “cut into short TikTok clips with captions”), and download your result.\n- No software or account needed; free credits provided with anonymous token (valid for 7 days).\n- Seamlessly handles credits, status, export, and common error conditions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:871b965cda71b54591ff54861a6f5d32ab12af062bd6df954c9ee2c29db2197c"
+}

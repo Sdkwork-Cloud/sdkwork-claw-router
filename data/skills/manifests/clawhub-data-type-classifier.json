@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14768,
+  "uuid": "skill-clawhub-data-type-classifier",
+  "skillKey": "clawhub-data-type-classifier",
+  "name": "Data Type Classifier",
+  "summary": "Classify construction data by type (structured, unstructured, semi-structured). Analyze data sources and recommend appropriate storage/processing methods",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_type_classifier",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "datadrivenconstruction",
+      "features": [
+        "Classify construction data by type (structured, unstructured, semi-structured)",
+        "Analyze data sources and recommend appropriate storage/processing methods"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-type-classifier@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94158709?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-type-classifier",
+      "url": "https://clawhub.ai/skills/data-type-classifier"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-type-classifier",
+    "url": "https://clawhub.ai/skills/data-type-classifier",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-type-classifier-3a01f2ca48db1072.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-type-classifier@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-type-classifier-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a478ffb678c9dfdf2b65ec8aa222e6126d5afabbabe6fc45409e5c061800a02f",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T15:37:42.010Z"
+}

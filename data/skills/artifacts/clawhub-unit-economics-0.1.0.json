@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unit-economics@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unit_economics",
+  "skill": {
+    "id": 19814,
+    "skillKey": "clawhub-unit-economics",
+    "name": "Unit Economics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unit-economics",
+    "url": "https://clawhub.ai/skills/unit-economics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unit-economics-34ee5dcc86caea74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate, understand, and improve the unit economics of a solopreneur business. Use when figuring out if the business is actually profitable per customer, w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jk-0001",
+      "userId": "s172spfmwsf80c1ymt8rffcz9h83gbzb",
+      "displayName": "Jatin Khatri",
+      "image": "https://avatars.githubusercontent.com/u/103896999?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 491,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772430623497,
+      "changelog": "Initial release – calculate, interpret, and improve unit economics for solopreneurs.\n\n- Guides users through CAC, LTV, payback period, and contribution margin calculations.\n- Provides clear formulas, real-world examples, and benchmarks for healthy, concerning, and critical metrics.\n- Offers actionable levers to improve unit economics, prioritized by impact.\n- Includes monthly dashboard templates for ongoing tracking.\n- Covers both subscription and non-subscription business models.\n- Designed to trigger on key phrases like \"unit economics,\" \"LTV,\" \"CAC,\" \"payback period,\" and related profitability questions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a006e7f1fee47ab4ec1a99c7df1faeddd51c18e5a1e98dab959d9946bf2d476"
+}

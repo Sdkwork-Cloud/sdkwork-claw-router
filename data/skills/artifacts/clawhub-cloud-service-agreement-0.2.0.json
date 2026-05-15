@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cloud-service-agreement@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cloud_service_agreement",
+  "skill": {
+    "id": 52245,
+    "skillKey": "clawhub-cloud-service-agreement",
+    "name": "Cloud Service Agreement"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cloud-service-agreement",
+    "url": "https://clawhub.ai/skills/cloud-service-agreement",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cloud-service-agreement-27fd2453567cc672.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft and fill SaaS agreement templates — cloud contract, MSA, order form, software license, pilot agreement, design partner agreement. Includes variants wit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevenobiajulu",
+      "userId": "s17846kvqgde4k0takks4byt0184fe4h",
+      "displayName": "Steven Obiajulu",
+      "image": "https://avatars.githubusercontent.com/u/183783362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1776733516727,
+      "changelog": "Fix: populate version field",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4d9eff0eb70e7c37638fcc764bd8784aaef94fb811d1dc2b05f6a08627764373"
+}

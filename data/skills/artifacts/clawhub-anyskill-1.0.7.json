@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/anyskill@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anyskill",
+  "skill": {
+    "id": 50295,
+    "skillKey": "clawhub-anyskill",
+    "name": "AnySkill Skill Cloud Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anyskill",
+    "url": "https://clawhub.ai/skills/anyskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anyskill-cf5109ea13e49a74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AnySkill — your private skill cloud. Manage, sync, and dynamically load agent skills from a GitHub-backed repository. Search cloud skills by natural language..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lanyijianke",
+      "userId": "publishers:lanyijianke",
+      "displayName": "lanyijianke",
+      "image": "https://avatars.githubusercontent.com/u/210792843?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 514,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1772632970927,
+      "changelog": "No changes detected in this version.\n\n- No files were modified since the previous release.\n- Functionality and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dcdb4d3cb1402c997cba582f04d9f6482aaafb00373792d04281dc2589f1b9db"
+}

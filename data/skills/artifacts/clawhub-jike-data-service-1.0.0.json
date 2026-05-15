@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jike-data-service@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_data_service",
+  "skill": {
+    "id": 69277,
+    "skillKey": "clawhub-jike-data-service",
+    "name": "jike-data-service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-data-service",
+    "url": "https://clawhub.ai/skills/jike-data-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-data-service-6ee38dbc33382e7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "极客数据服务 — 抖音内容营销数据平台。为荣耀手机提供竞品分析、内容对标、热点追踪等数据能力。覆盖场景包括：对标账号搜索、热点关键词搜索、平台热点搜索、选题内容建议、对标内容寻找。支持按品牌（荣耀/华为/小米/OPPO/vivo/苹果/三星）、粉丝量、内容标签（拍摄/电池/屏幕/AI/外观/性能/游戏/评测/开箱..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzoob",
+      "userId": "s172s1km0rk8w53q877abtx9yh83ghee",
+      "displayName": "mzoob",
+      "image": "https://avatars.githubusercontent.com/u/83409616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774347415286,
+      "changelog": "jike-data-service 1.0.0 — 初始发布\n\n- 提供抖音内容营销数据接口，支持对标账号搜索、热点关键词及平台热榜视频、内容选题建议、对标内容查找等全流程分析。\n- 严格限定于荣耀/华为/小米/OPPO/vivo/苹果/三星 7大品牌及11类内容标签，助力精准竞品分析。\n- 支持多维筛选与分页，输出关键数据（粉丝量、互动量、热度等），并按工作流自动衔接各分析环节。\n- 错误处理完善，包括API认证、超时、搜索为空、分页等场景，标准化响应与修正建议。\n- 所有数据操作经统一脚本 ry-data.py 执行，不直接调用API，提升安全性与可维护性。\n- 内置快速命令参考表与场景工作流，便于内容营销团队高效上手与复用。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a65283fa991889fa4f4f495b4643f2f3cd3f887421bf63ff714cfc3b49812d2e"
+}

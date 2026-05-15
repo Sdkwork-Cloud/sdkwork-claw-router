@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35962,
+  "uuid": "skill-clawhub-securitytrails",
+  "skillKey": "clawhub-securitytrails",
+  "name": "Securitytrails",
+  "summary": "SecurityTrails integration. Manage data, records, and automate workflows. Use when the user wants to interact with SecurityTrails data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.securitytrails",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "SecurityTrails integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with SecurityTrails data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/securitytrails@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "securitytrails",
+      "url": "https://clawhub.ai/skills/securitytrails"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "securitytrails",
+    "url": "https://clawhub.ai/skills/securitytrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/securitytrails-e40badfb1c3abc17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/securitytrails@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-securitytrails-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c8a412e97b621d7f4fe966e34c5e04fff27bc89755879a6b488b5b59e6bdaa09",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:58:09.116Z"
+}

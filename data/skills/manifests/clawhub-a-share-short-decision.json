@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56294,
+  "uuid": "skill-clawhub-a-share-short-decision",
+  "skillKey": "clawhub-a-share-short-decision",
+  "name": "A股短线交易决策 A Share Short Term Decision",
+  "summary": "A-share short-term trading decision skill for 1-5 day horizon. Use when you need market sentiment, sector rotation, strong stock scanning, capital flow confi...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a_share_short_decision",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kenera",
+      "features": [
+        "A-share short-term trading decision skill for 1-5 day horizon",
+        "Use when you need market sentiment, sector rotation, strong stock scanning, capital flow confi.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/a-share-short-decision@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25951063?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "a-share-short-decision",
+      "url": "https://clawhub.ai/skills/a-share-short-decision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a-share-short-decision",
+    "url": "https://clawhub.ai/skills/a-share-short-decision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a-share-short-decision-c759e8bd0b4b33b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/a-share-short-decision@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-a-share-short-decision-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c9ed7e60e89206b0d289e8879575fc47a83184fe040903601182f76fee5115a4",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T03:59:37.797Z"
+}

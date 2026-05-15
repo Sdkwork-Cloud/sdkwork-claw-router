@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iqdb@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iqdb",
+  "skill": {
+    "id": 14932,
+    "skillKey": "clawhub-iqdb",
+    "name": "IQDB"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iqdb",
+    "url": "https://clawhub.ai/skills/iqdb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iqdb-e538bba2dbd25d80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "On-chain immutable data storage using IQ Labs tech stack (IQDB, hanLock, x402). Use when building Solana-based persistent storage, on-chain databases, tamper-evident records, password-encoded data, or paid file inscription. Triggers on tas."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emanz1",
+      "userId": "publishers:emanz1",
+      "displayName": "Rocket",
+      "image": "https://avatars.githubusercontent.com/u/127072685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1110,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770620233998,
+      "changelog": "On-chain immutable data storage on Solana via IQ Labs SDK. Mainnet live.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6578e3666f4ac995ac58152744cf59e6387fe20b09a87724e611c137e34b5456"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42655,
+  "uuid": "skill-clawhub-civitai-api",
+  "skillKey": "clawhub-civitai-api",
+  "name": "Civitai API",
+  "summary": "Query the Civitai public REST API to search models, inspect creators, fetch model or version details, reverse-lookup models by hash, list images or tags, and...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.civitai_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Stanislav Stankovic",
+      "features": [
+        "Query the Civitai public REST API to search models, inspect creators, fetch model or version de."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/civitai-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1871432?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "civitai-api",
+      "url": "https://clawhub.ai/skills/civitai-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "civitai-api",
+    "url": "https://clawhub.ai/skills/civitai-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/civitai-api-e33455f6656b747f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/civitai-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-civitai-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c257b445005a92e18793633e27bf95270d7eea297566bd4d95b8e8398f03a489",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T16:37:01.241Z"
+}

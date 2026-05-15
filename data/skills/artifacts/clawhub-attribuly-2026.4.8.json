@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/attribuly@2026.4.8",
+  "version": "2026.4.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.attribuly",
+  "skill": {
+    "id": 20405,
+    "skillKey": "clawhub-attribuly",
+    "name": "Shopify/WooCommerce Marketing Partner: Attribuly AllyClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "attribuly",
+    "url": "https://clawhub.ai/skills/attribuly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/attribuly-e50300144e34c4da.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI marketing partner for DTC ecommerce. Combines multiple diagnostic and optimization skills powered by Attribuly first-party data."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexchulee",
+      "userId": "s17d614fw8hpgscg96w5rr397983hhmp",
+      "displayName": "Alex@Attribuly",
+      "image": "https://avatars.githubusercontent.com/u/243460526?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2026.4.8",
+      "createdAt": 1775721980416,
+      "changelog": "- Added `homepage` and `source` fields with links to Attribuly and its GitHub repository.\n- Removed the API key check and onboarding protocol details from the main documentation, streamlining guidance for setup and usage.\n- Reorganized the interaction flow for greater clarity, starting directly with client onboarding instead of API key handling.\n- No code or logic changes detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab25a1029239ce046a8881b2fa6eb7c77d45cf0984e5546fc5e45fe158bbf175"
+}

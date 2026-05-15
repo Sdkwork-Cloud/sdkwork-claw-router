@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9024,
+  "uuid": "skill-clawhub-session-memory",
+  "skillKey": "clawhub-session-memory",
+  "name": "Session Memory",
+  "summary": "Persistent memory toolkit for AI agents. Save context, recall with relevance scoring, consolidate insights, track decisions across sessions. Features importa...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sway Liu",
+      "features": [
+        "Persistent memory toolkit for AI agents",
+        "Save context, recall with relevance scoring, consolidate insights, track decisions across sessi.",
+        "Features importa..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-memory@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5630262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-memory",
+      "url": "https://clawhub.ai/skills/session-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-memory",
+    "url": "https://clawhub.ai/skills/session-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-memory-8fa1fc4da7c64337.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-memory@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-memory-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:16d449b924f767085a5c6501da25a7f6a2a1aed19ec4f814fb72e2ccbc323de9",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T03:35:06.157Z"
+}

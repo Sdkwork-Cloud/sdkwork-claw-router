@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taizi-alicloud-ai-image@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_alicloud_ai_image",
+  "skill": {
+    "id": 27264,
+    "skillKey": "clawhub-taizi-alicloud-ai-image",
+    "name": "Taizi Alicloud Ai Image"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-alicloud-ai-image",
+    "url": "https://clawhub.ai/skills/taizi-alicloud-ai-image",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-alicloud-ai-image-252317bd3dee62e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images with Model Studio DashScope SDK using Qwen Image generation models (qwen-image-max, qwen-image-plus-2026-01-09). Use when implementing or doc..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fresh3",
+      "userId": "publishers:fresh3",
+      "displayName": "fresh3",
+      "image": "https://avatars.githubusercontent.com/u/23310067?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773633756764,
+      "changelog": "taizi-alicloud-ai-image v1.0.0\n\n- Initial release: Standardizes image generation using Alibaba Cloud Model Studio Qwen Image models via DashScope SDK.\n- Defines a normalized `image.generate` request/response mapping for consistent integration.\n- Supports key parameters: prompt, negative_prompt, size, style, seed, and reference_image.\n- Provides quickstart examples for CLI and Python, error handling guidance, and operational tips.\n- Includes detailed usage instructions for Telegram (and other channel) delivery, caching, and output location.\n- Clearly documents supported model names: `qwen-image-max` and `qwen-image-plus-2026-01-09`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f3a1e3fdec9a3fe4fc43b2041a4a0d104e95fdd38f9015afb687641bff8e2b9f"
+}

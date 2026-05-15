@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-chiropractor@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_chiropractor",
+  "skill": {
+    "id": 13006,
+    "skillKey": "clawhub-book-chiropractor",
+    "name": "Book Chiropractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-chiropractor",
+    "url": "https://clawhub.ai/skills/book-chiropractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-chiropractor-8a0e612f31a1fccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book chiropractor services through Lokuli MCP. Use when user needs to find and book chiropractor. Triggers on requests like \"book a chiropractor\", \"find chiropractor near me\", or any chiropractor service request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1496,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770339939976,
+      "changelog": "Fixed display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a2e43693ce489cb5e812f426f50f8ffc51abe11a65076ff6c076a0bc5aae0a32"
+}

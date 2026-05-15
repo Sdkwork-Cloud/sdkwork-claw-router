@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69869,
+  "uuid": "skill-clawhub-dangaoss-cake",
+  "skillKey": "clawhub-dangaoss-cake",
+  "name": "蛋糕叔叔商城点单助手",
+  "summary": "蛋叔商城（dangaoss.com）蛋糕、甜品、鲜花订购助手。完全使用curl请求，无需MCP代理。当用户想要购买蛋糕、甜品、零食、鲜花等商品，或提到\"蛋叔\"、\"蛋糕\"、\"下单\"、\"订购\"等关键词时触发此 Skill。支持地址管理、商品搜索、生成下单链接。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dangaoss_cake",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhang1058",
+      "features": [
+        "蛋叔商城（dangaoss.com）蛋糕、甜品、鲜花订购助手。完全使用curl请求，无需MCP代理。当用户想要购买蛋糕、甜品、零食、鲜花等商品，或提到\"蛋叔\"、\"蛋糕\"、\"下单\"、\"订购\"等."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dangaoss-cake@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32298256?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dangaoss-cake",
+      "url": "https://clawhub.ai/skills/dangaoss-cake"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dangaoss-cake",
+    "url": "https://clawhub.ai/skills/dangaoss-cake",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dangaoss-cake-1742e9b59b5a54af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dangaoss-cake@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dangaoss-cake-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:107071ef342ae9b56f40020b95d88c623f60f55abc1c14d6ad63ae2621e7178e",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:46:47.125Z"
+}

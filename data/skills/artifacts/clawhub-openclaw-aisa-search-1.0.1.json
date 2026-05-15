@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-search@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_search",
+  "skill": {
+    "id": 16261,
+    "skillKey": "clawhub-openclaw-aisa-search",
+    "name": "Verified Research Engine (Web + Academic + Confidence Score)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-search",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-search-59816de54e48e953.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent search for agents. Multi-source retrieval across web, scholar, Tavily, and Perplexity Sonar models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chaimengphp",
+      "userId": "s176gjzd7rb2en9j7fcxwyp5qs83gbwb",
+      "displayName": "chaimengphp",
+      "image": "https://avatars.githubusercontent.com/u/18716845?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 908,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773813754385,
+      "changelog": "**Adds Perplexity Sonar answer-generation endpoints and removes deprecated full text/smart search.**\n\n- Integrated new Perplexity Sonar family endpoints (sonar, sonar-pro, sonar-reasoning-pro, sonar-deep-research) for answer generation with citations.\n- Removed deprecated `/search/full` and `/search/smart` endpoints from docs and workflow.\n- Updated documentation and examples to focus on Perplexity Sonar APIs for advanced, citation-rich searches and deep research reports.\n- Adjusted quick start and Python client instructions to cover new endpoints and usage.\n- Slight metadata update: new emoji and clarified description.\n- All other structured search (web, scholar, Tavily) endpoints remain supported.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c451d5d1c12c98ce99d64d3efd1afa74d5c0bd09bc6e7ffe55cc4db5f4f9f7a8"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51197,
+  "uuid": "skill-clawhub-msmtp-send",
+  "skillKey": "clawhub-msmtp-send",
+  "name": "msmtp-send",
+  "summary": "Send plain-text emails using your local msmtp config (Gmail app password already set up in ~/.msmtprc). Strictly send-only; no reading, fetching, or inbox ac...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.msmtp_send",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "izombix",
+      "features": [
+        "Send plain-text emails using your local msmtp config (Gmail app password already set up in ~/.m.",
+        "Strictly send-only",
+        "no reading, fetching, or inbox ac..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/msmtp-send@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148559652?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "msmtp-send",
+      "url": "https://clawhub.ai/skills/msmtp-send"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "msmtp-send",
+    "url": "https://clawhub.ai/skills/msmtp-send",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/msmtp-send-d853ca5511c6d6c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/msmtp-send@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-msmtp-send-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a0340386a01bb8053a0ea7c2f29e84c681195a3e83bc14f22e73da5a6c13897",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T22:00:40.015Z"
+}

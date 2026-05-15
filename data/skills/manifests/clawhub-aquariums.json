@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73491,
+  "uuid": "skill-clawhub-aquariums",
+  "skillKey": "clawhub-aquariums",
+  "name": "网红水族馆",
+  "summary": "提供关于网红水族馆的推荐清单、打卡路线与指南。用户搜索网红水族馆或规划相关出行时调用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aquariums",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供关于网红水族馆的推荐清单、打卡路线与指南。用户搜索网红水族馆或规划相关出行时调用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aquariums@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aquariums",
+      "url": "https://clawhub.ai/skills/aquariums"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aquariums",
+    "url": "https://clawhub.ai/skills/aquariums",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aquariums-eaa14c7eeb2ec2f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aquariums@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aquariums-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b277403ef1dd3bbfd28628d0f17ec71dc34a7a9173409720103bb82a10a6ba74",
+      "artifactSizeBytes": 2215
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T23:49:02.826Z"
+}

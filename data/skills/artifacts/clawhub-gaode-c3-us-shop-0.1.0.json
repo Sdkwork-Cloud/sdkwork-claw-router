@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gaode-c3-us-shop@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gaode_c3_us_shop",
+  "skill": {
+    "id": 64011,
+    "skillKey": "clawhub-gaode-c3-us-shop",
+    "name": "POI 详情页问题排查编排器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gaode-c3-us-shop",
+    "url": "https://clawhub.ai/skills/gaode-c3-us-shop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gaode-c3-us-shop-ad2db3b388984a1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "POI 详情页问题排查编排器。自动执行 6 步排查流程：查代码 (sourceId)→查日志→复现请求→解析返回→阅读代码→定位问题。当用户提供 gsid/traceId 排查 POI 详情页问题时触发。触发词：POI 排查、poi 问题、详情页异常、gsid 排查、traceId 分析、poi 调试、conte..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hnyyghk",
+      "userId": "s1714armrycvxzg7tm9zw2gab583wtzv",
+      "displayName": "hnyyghk",
+      "image": "https://avatars.githubusercontent.com/u/17867953?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775028504994,
+      "changelog": "初始版本",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:074317253bdb300026f306aab5d635082fa22464534e82f47ba8d394609e987c"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71452,
+  "uuid": "skill-clawhub-glmv-stock-analyst",
+  "skillKey": "clawhub-glmv-stock-analyst",
+  "name": "GLM-V-Stock-Analyst",
+  "summary": "股票分析与涨跌预测分析。 在用户表达分析、判断或预测意图时触发，如“分析一下腾讯”、“0700最近走势如何”、“XX能不能买”、“预测一下后续走势”、“生成一份分析报告”等； 支持港股、A股、美股，整合多源数据（包括新闻、基本面、技术面、资金流及宏观信息）进行多维综合分析，输出图文结合、包含可视化图表的结构化分析...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glmv_stock_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zai-org",
+      "features": [
+        "股票分析与涨跌预测分析。 在用户表达分析、判断或预测意图时触发，如“分析一下腾讯”、“0700最近走势如何”、“XX能不能买”、“预测一下后续走势”、“生成一份分析报告”等； 支持港股、A股."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glmv-stock-analyst@1.0.4",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/glmv-stock-analyst/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glmv-stock-analyst",
+      "url": "https://clawhub.ai/skills/glmv-stock-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glmv-stock-analyst",
+    "url": "https://clawhub.ai/skills/glmv-stock-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glmv-stock-analyst-4e6338ebacaa1fc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glmv-stock-analyst@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-glmv-stock-analyst-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07b2d6caa91d5848f445065fd4fbf2a964d4508d540b1e49f8e36de39a20c072",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T11:28:11.946Z"
+}

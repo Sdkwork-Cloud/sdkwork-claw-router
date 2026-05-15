@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "api-device-status",
+    "displayName": "Closeli Open Device status Query",
+    "summary": "Closeli Device Status Query API. Used to query the current status of specified devices and supports determining whether a device is online, offline, or sleep...",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 257,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1775636171877,
+    "updatedAt": 1778048809441
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1778048670629,
+    "changelog": "- The skill now exclusively reads configuration from the persistent file `~/.openclaw/.env`; environment variables are no longer used for API key or gateway settings.\n- Security and configuration instructions updated to clarify file permissions and clarify that OpenClaw clients write the `.env` file.\n- Command-line flag `--api-key` can temporarily override the file-based API key if provided.\n- Environment variable fallback and settings like `AI_GATEWAY_NO_ENV_FILE` are no longer supported.\n- Documentation streamlined for clarity, mentioning that users must use least-privilege credentials stored in the shared config file.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "closeli-open",
+    "userId": "s172478539f67qvabn0t45gp6d83h9bm",
+    "displayName": "CloseliOpenTeam",
+    "image": "https://avatars.githubusercontent.com/u/269688672?v=4"
+  },
+  "moderation": null
+}

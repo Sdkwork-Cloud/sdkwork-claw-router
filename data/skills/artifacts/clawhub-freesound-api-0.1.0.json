@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/freesound-api@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.freesound_api",
+  "skill": {
+    "id": 37604,
+    "skillKey": "clawhub-freesound-api",
+    "name": "Freesound API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "freesound-api",
+    "url": "https://clawhub.ai/skills/freesound-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/freesound-api-e57b3820ce369f54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up and use Freesound API access from a local Windows OpenClaw workspace with OAuth login, local credential storage, and sound search helpers. Use when th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stanestane",
+      "userId": "s17b2gdwmr6qr85ytdwbxw09q183g4ys",
+      "displayName": "Stanislav Stankovic",
+      "image": "https://avatars.githubusercontent.com/u/1871432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 195,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1776712318242,
+      "changelog": "Initial public release: localhost OAuth setup, search filters, sound details, original downloads, and preview downloads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b61a0c86fe85db04c6ee4dfecb3314da953357bcf4d8ded4ed50b12876468e9"
+}

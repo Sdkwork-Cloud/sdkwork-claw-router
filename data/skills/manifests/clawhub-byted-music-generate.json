@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39964,
+  "uuid": "skill-clawhub-byted-music-generate",
+  "skillKey": "clawhub-byted-music-generate",
+  "name": "Byted Music Generate",
+  "summary": "Generate music using Volcengine Imagination API. Supports vocal songs, instrumental BGM, and lyrics generation. Use when the user wants to create songs, back...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_music_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "Generate music using Volcengine Imagination API",
+        "Supports vocal songs, instrumental BGM, and lyrics generation",
+        "Use when the user wants to create songs, back..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-music-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-music-generate",
+      "url": "https://clawhub.ai/skills/byted-music-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-music-generate",
+    "url": "https://clawhub.ai/skills/byted-music-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-music-generate-3afeedd77232d7fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-music-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-music-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:608875be3d24e005d515d4749117226914c47892de3419d57bc069bf994315fd",
+      "artifactSizeBytes": 2511
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:12:04.750Z"
+}

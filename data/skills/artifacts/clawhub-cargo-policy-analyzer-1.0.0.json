@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cargo-policy-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cargo_policy_analyzer",
+  "skill": {
+    "id": 73678,
+    "skillKey": "clawhub-cargo-policy-analyzer",
+    "name": "航空货运政策分析器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cargo-policy-analyzer",
+    "url": "https://clawhub.ai/skills/cargo-policy-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cargo-policy-analyzer-1e7d43ddf1857afd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "搜索并分析中国各省航空货运落地最新优惠政策，进行多维度对比，生成综合性分析报告。当用户需要了解航空货运政策、对比不同省份政策优势、获取投资选址参考时触发此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kvy",
+      "userId": "publishers:kvy",
+      "displayName": "kvy",
+      "image": "https://avatars.githubusercontent.com/u/6206283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 351,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772634463033,
+      "changelog": "初始版本",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d90ba6c4647dee0bb5241e1aede1cfa0912bd3ac226688aad760d8d0e1f05d08"
+}

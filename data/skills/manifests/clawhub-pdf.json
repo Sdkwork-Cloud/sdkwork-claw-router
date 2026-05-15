@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8276,
+  "uuid": "skill-clawhub-pdf",
+  "skillKey": "clawhub-pdf",
+  "name": "Pdf",
+  "summary": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF docume.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awspace",
+      "features": [
+        "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, mergi.",
+        "When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131568675?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf",
+      "url": "https://clawhub.ai/skills/pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf",
+    "url": "https://clawhub.ai/skills/pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-c35b21d6ca39aa7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:077776e7821bcc20826420cb79ff01f06cf0b83bfa616d2beaaf8793954891be",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-31T08:24:15.729Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-dispatch@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_dispatch",
+  "skill": {
+    "id": 35205,
+    "skillKey": "clawhub-task-dispatch",
+    "name": "Task Dispatch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-dispatch",
+    "url": "https://clawhub.ai/skills/task-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-dispatch-4b41a8747de1e463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Task scheduling and dispatching for task boards. Use when setting up periodic task dispatch, checking for dispatchable tasks, creating subagents to execute t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cccaptain0129",
+      "userId": "s170y6s62m4n9knpm3zwnn3fax83kt6n",
+      "displayName": "CCCaptain0129",
+      "image": "https://avatars.githubusercontent.com/u/262947617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1774511119706,
+      "changelog": "新增 ClawBoard 部署引导、环境检测、服务启动、配置向导功能",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cad0cc4747359076e7e68ee0d62f11192d2b36a1ac4ad01f06bebc6d448ba0b"
+}

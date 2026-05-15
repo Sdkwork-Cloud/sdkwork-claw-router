@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-animation-generator-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_animation_generator_free",
+  "skill": {
+    "id": 46132,
+    "skillKey": "clawhub-ai-animation-generator-free",
+    "name": "Ai Animation Generator Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-animation-generator-free",
+    "url": "https://clawhub.ai/skills/ai-animation-generator-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-animation-generator-free-4303f962ffeac8b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get animated video clips ready to post, without touching a single slider. Upload your text prompts or images (MP4, MOV, PNG, JPG, up to 200MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776184370037,
+      "changelog": "Initial release of AI Animation Generator Free — create animations from simple text prompts or images.\n\n- Instantly generate 1080p MP4 animation clips from your descriptions, no drawing or complex tools required.\n- Supports uploading text, images (PNG, JPG), and videos (MP4, MOV) up to 200MB.\n- Free access: automatically handles authentication and anonymous tokens for up to 100 free credits.\n- Includes seamless workflows: upload, edit, preview, and export finished videos in minutes.\n- Works entirely in the cloud — no software installation or GPU needed.\n- Robust error handling, support for multiple formats, and live session management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2fe53dcacc794cd3ce2088105e2ad4d781ac4b51334f2bd4847427b8ef5505ad"
+}

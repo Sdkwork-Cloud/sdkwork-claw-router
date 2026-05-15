@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33226,
+  "uuid": "skill-clawhub-learn-skill",
+  "skillKey": "clawhub-learn-skill",
+  "name": "learn-skill",
+  "summary": "Analyze and learn any newly installed skill through two-layer Mermaid diagrams. Use when: user asks to parse/analyze a new skill, understand skill structure,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.learn_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John Do",
+      "features": [
+        "Analyze and learn any newly installed skill through two-layer Mermaid diagrams",
+        "Use when: user asks to parse/analyze a new skill, understand skill structure,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/learn-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44743340?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "learn-skill",
+      "url": "https://clawhub.ai/skills/learn-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "learn-skill",
+    "url": "https://clawhub.ai/skills/learn-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/learn-skill-eb1ea738ed39995f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/learn-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-learn-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e0b22f62739de07b22c955819117bec07d7a40d5ae397bbdf9f2951de73ca74f",
+      "artifactSizeBytes": 2301
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:00:54.133Z"
+}

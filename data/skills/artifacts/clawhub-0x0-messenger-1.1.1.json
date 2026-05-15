@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/0x0-messenger@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.0x0_messenger",
+  "skill": {
+    "id": 16582,
+    "skillKey": "clawhub-0x0-messenger",
+    "name": "0x0 Messenger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "0x0-messenger",
+    "url": "https://clawhub.ai/skills/0x0-messenger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/0x0-messenger-7cd9ce84e9d6931e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send and receive P2P messages using disposable PINs. No servers, no accounts. For agent-to-agent messaging, approval flows, and notifications."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eijiac24",
+      "userId": "publishers:eijiac24",
+      "displayName": "Tiida Tech",
+      "image": "https://avatars.githubusercontent.com/u/64993069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 858,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1773316547901,
+      "changelog": "Fix display name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f964cea4ed68396e5161bd1354c9af32b19b29c37a21a9105ec115705be9243"
+}

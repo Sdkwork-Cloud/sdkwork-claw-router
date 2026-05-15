@@ -176,7 +176,7 @@ test("console api key service fetches keys through the generated app SDK and nor
       const result = await ApiKeyService.fetchKeys();
 
       assert.equal(captured.length, 1);
-      assert.equal(captured[0].url, "/app/v3/api/router/api-keys");
+      assert.equal(captured[0].url, "/app/v3/api/iam/api_keys");
       assert.equal(captured[0].method, "GET");
       assert.deepEqual(result.keys.map((key) => key.id), ["key-1"]);
       assert.deepEqual(result.groups.map((group) => group.code), ["default"]);
@@ -212,7 +212,7 @@ test("console api key service creates keys through the generated app SDK with re
       assert.equal(result.rawKey, "sk-live-created-secret");
       assert.equal(result.key.id, "key-2");
       assert.equal(captured.length, 1);
-      assert.equal(captured[0].url, "/app/v3/api/router/api-keys");
+      assert.equal(captured[0].url, "/app/v3/api/iam/api_keys");
       assert.equal(captured[0].method, "POST");
       assert.match(captured[0].body, /"name":"Created"/);
       assert.match(captured[0].headers["idempotency-key"], /^create-api-key-/);

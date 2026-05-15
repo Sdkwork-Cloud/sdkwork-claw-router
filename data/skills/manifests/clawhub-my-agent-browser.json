@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24088,
+  "uuid": "skill-clawhub-my-agent-browser",
+  "skillKey": "clawhub-my-agent-browser",
+  "name": "My Agent Browser",
+  "summary": "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liujiang817",
+      "features": [
+        "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/my-agent-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30427436?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "my-agent-browser",
+      "url": "https://clawhub.ai/skills/my-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-agent-browser",
+    "url": "https://clawhub.ai/skills/my-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-agent-browser-4b027ac035589911.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/my-agent-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-my-agent-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d4cf242d9a86bb2dd63f85f92d452586014566f91e674f5b8ec03ec83f2aa95",
+      "artifactSizeBytes": 2631
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:28:00.405Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29085,
+  "uuid": "skill-clawhub-ai-stock-analyst",
+  "skillKey": "clawhub-ai-stock-analyst",
+  "name": "AI Stock Analyst",
+  "summary": "AI-powered Chinese A-share stock analyst. Fetches real-time market data, technical indicators, valuations, and news via AkShare, then generates scored invest...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_stock_analyst",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ChandlerChien",
+      "features": [
+        "AI-powered Chinese A-share stock analyst",
+        "Fetches real-time market data, technical indicators, valuations, and news via AkShare, then gen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-stock-analyst@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123870275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-stock-analyst",
+      "url": "https://clawhub.ai/skills/ai-stock-analyst"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-stock-analyst",
+    "url": "https://clawhub.ai/skills/ai-stock-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-stock-analyst-7272dffec5dc25d5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-stock-analyst@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-stock-analyst-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed3488e43618e5dd3cce5e367e0b41fb9cec33af5db54ade6f655f2266be9130",
+      "artifactSizeBytes": 2433
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:02:38.055Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16482,
+  "uuid": "skill-clawhub-dj-set-ripper",
+  "skillKey": "clawhub-dj-set-ripper",
+  "name": "DJ set ripper",
+  "summary": "Download individual songs from a DJ set or mix. Given a link from YouTube, SoundCloud, Mixcloud, or 1001Tracklists, extract the tracklist from the page descr...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dj_set_ripper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "robin",
+      "features": [
+        "Download individual songs from a DJ set or mix",
+        "Given a link from YouTube, SoundCloud, Mixcloud, or 1001Tracklists, extract the tracklist from."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dj-set-ripper@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12162433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dj-set-ripper",
+      "url": "https://clawhub.ai/skills/dj-set-ripper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dj-set-ripper",
+    "url": "https://clawhub.ai/skills/dj-set-ripper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dj-set-ripper-694111ec5ce9a28f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dj-set-ripper@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dj-set-ripper-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4740b65b646504eae051814f335d8d7662a495e2851355323d67cf0795754b49",
+      "artifactSizeBytes": 1869
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T05:43:19.089Z"
+}

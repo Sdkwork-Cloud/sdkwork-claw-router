@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58362,
+  "uuid": "skill-clawhub-workspace-zip-backup",
+  "skillKey": "clawhub-workspace-zip-backup",
+  "name": "Workspace Zip Backup",
+  "summary": "OpenClaw workspace 核心 markdown 文件快速压缩备份与还原工具，只备份 .md 文件并保持文件夹结构 | Fast backup & restore tool for OpenClaw workspace core markdown files, preserves directory...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_zip_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rory",
+      "features": [
+        "OpenClaw workspace 核心 markdown 文件快速压缩备份与还原工具，只备份 .md 文件并保持文件夹结构 | Fast backup & restore tool fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workspace-zip-backup@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/740817?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workspace-zip-backup",
+      "url": "https://clawhub.ai/skills/workspace-zip-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-zip-backup",
+    "url": "https://clawhub.ai/skills/workspace-zip-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-zip-backup-e881a1f1c537af60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workspace-zip-backup@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workspace-zip-backup-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85b45293078e5c9c3bd1335b2705763b78ed1d8b800cf4c71c756e8ba4713fa7",
+      "artifactSizeBytes": 2437
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T04:05:06.611Z"
+}

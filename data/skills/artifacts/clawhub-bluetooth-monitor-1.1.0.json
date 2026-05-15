@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bluetooth-monitor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bluetooth_monitor",
+  "skill": {
+    "id": 62209,
+    "skillKey": "clawhub-bluetooth-monitor",
+    "name": "蓝牙设备监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bluetooth-monitor",
+    "url": "https://clawhub.ai/skills/bluetooth-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bluetooth-monitor-eef85c5bfb3e51f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "蓝牙设备监控 / Bluetooth Device Monitor - 查看Mac已连接的蓝牙设备列表，支持配对、连接、断开操作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "franky0617",
+      "userId": "publishers:franky0617",
+      "displayName": "franky0617",
+      "image": "https://avatars.githubusercontent.com/u/257217961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1992,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1769732280271,
+      "changelog": "新增电量显示功能，使用system_profiler获取蓝牙设备电量",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ded53581c70b839ec53d2b06134a2260daab56a9bcb80a26a13b9e7e4818a321"
+}

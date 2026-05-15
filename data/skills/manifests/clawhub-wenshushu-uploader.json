@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63703,
+  "uuid": "skill-clawhub-wenshushu-uploader",
+  "skillKey": "clawhub-wenshushu-uploader",
+  "name": "Wenshushu File Uploader",
+  "summary": "文叔叔文件上传技能，自动上传文件到文叔叔并生成分享链接和取件码",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wenshushu_uploader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "阿晨聊技术",
+      "features": [
+        "文叔叔文件上传技能，自动上传文件到文叔叔并生成分享链接和取件码"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wenshushu-uploader@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26523525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wenshushu-uploader",
+      "url": "https://clawhub.ai/skills/wenshushu-uploader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wenshushu-uploader",
+    "url": "https://clawhub.ai/skills/wenshushu-uploader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wenshushu-uploader-a3cfab4d1b4e6332.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wenshushu-uploader@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wenshushu-uploader-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:057a10c1f0cd492a66e2c0a0a9dc70213c3487204f5de976fe58c7b91dadc50b",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:00:29.624Z"
+}

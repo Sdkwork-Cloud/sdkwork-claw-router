@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-x@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_x",
+  "skill": {
+    "id": 63624,
+    "skillKey": "clawhub-self-improving-x",
+    "name": "self-improving-x (support multi-agent)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-x",
+    "url": "https://clawhub.ai/skills/self-improving-x",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-x-c797f3935b9422ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "捕获学习成果、错误和纠正，以实现持续改进，当出现以下情况，使用本技能： (1) 命令或操作意外失败， (2) 用户纠正 '不，那是错的...'，'实际上...'）， (3) 用户请求不存在的功能， (4) 外部 API 或工具失败， (5) 意识到其知识已过时或不正确， (6) 发现更好的方法处理重复任务。在执行..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seepine",
+      "userId": "s178wtg0j876g7q1nbwv4a8sx583g782",
+      "displayName": "seepine",
+      "image": "https://avatars.githubusercontent.com/u/93666053?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774709858794,
+      "changelog": "**Major overhaul: Simplifies and restructures self-improving workflow, focusing on separate, structured markdown logs for learning, errors, and feature requests.**\n\n- Replaces large, complex workspace memory and heartbeat files with modular `.learnings/` markdown files: `LEARNINGS.md`, `ERRORS.md`, `FEATURE_REQUESTS.md`.\n- Removes previous architecture (`memory.md`, `heartbeat-state.md`, `corrections.md`, etc.) and many supporting rules/templates; instead, provides clear logging templates and file sample usage.\n- Adds ready-to-copy asset templates and real-world examples for error, learning, and feature request logs.\n- Establishes a repeatable process for promoting widely-applicable learnings to core workflow/config files (e.g., `AGENTS.md`, `SOUL.md`, `TOOLS.md`).\n- Clarifies when and how to log, review, promote, and extract knowledge as reusable project skills.\n- Reduces setup complexity, modularizes logs, and enables easier review, prioritization, and automation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:46c0a65a2f7f08232adc447cca3ae5909fe9981aa7c84e8a4e17d3fd08efcdc6"
+}

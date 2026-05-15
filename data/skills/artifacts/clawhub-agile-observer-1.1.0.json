@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agile-observer@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agile_observer",
+  "skill": {
+    "id": 27225,
+    "skillKey": "clawhub-agile-observer",
+    "name": "Agile Observer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agile-observer",
+    "url": "https://clawhub.ai/skills/agile-observer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agile-observer-6a256eec418a471d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactive agile metrics and team health analysis for Trello and Jira boards. Computes cycle time, throughput, WIP, sprint burndown, aging work items, and blo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olivermonneke",
+      "userId": "publishers:olivermonneke",
+      "displayName": "Oliver Monneke",
+      "image": "https://avatars.githubusercontent.com/u/6167250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 342,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773551868519,
+      "changelog": "v1.1.0: Removed bundled scripts to avoid false-positive security flags. Skill now provides pure reference-based guidance — the agent builds API calls itself using the documented patterns. Same metrics, same output, cleaner approach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ede954dcfe0f1370f198ccb2513a1fe6f41681e694d9c95d4037a21be5290f75"
+}

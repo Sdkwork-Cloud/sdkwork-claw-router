@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53070,
+  "uuid": "skill-clawhub-stablecoin-yield-radar",
+  "skillKey": "clawhub-stablecoin-yield-radar",
+  "name": "Stablecoin Yield Radar",
+  "summary": "Query real-time stablecoin supply APY from Barker's yield index — 500+ protocols and 20+ CEX. Returns ranked APY, TVL, protocol, chain, asset. Use when users...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stablecoin_yield_radar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zuoyeweb3",
+      "features": [
+        "Query real-time stablecoin supply APY from Barker's yield index — 500+ protocols and 20+ CEX",
+        "Returns ranked APY, TVL, protocol, chain, asset",
+        "Use when users..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stablecoin-yield-radar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166980078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stablecoin-yield-radar",
+      "url": "https://clawhub.ai/skills/stablecoin-yield-radar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stablecoin-yield-radar",
+    "url": "https://clawhub.ai/skills/stablecoin-yield-radar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stablecoin-yield-radar-445bd8a1c66544a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stablecoin-yield-radar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stablecoin-yield-radar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeab273a0edeecb485357b4e1028362c751eb8658787fc9973a2f9646927c644",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:23:25.395Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43039,
+  "uuid": "skill-clawhub-test-research-delete",
+  "skillKey": "clawhub-test-research-delete",
+  "name": "felt cute uploaded skill",
+  "summary": "Orchestrate parallel codebase research. Spawns multiple researcher subagents to investigate different areas, then synthesizes findings into research.md.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.test_research_delete",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flip-in",
+      "features": [
+        "Orchestrate parallel codebase research",
+        "Spawns multiple researcher subagents to investigate different areas, then synthesizes findings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/test-research-delete@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32665615?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "test-research-delete",
+      "url": "https://clawhub.ai/skills/test-research-delete"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "test-research-delete",
+    "url": "https://clawhub.ai/skills/test-research-delete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/test-research-delete-b718ee309ea31ae7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/test-research-delete@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-test-research-delete-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:415dd951c4497145866fbb5a7138d1ef567740c24f2c2dbea7218c5f49bacb64",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T13:26:41.914Z"
+}

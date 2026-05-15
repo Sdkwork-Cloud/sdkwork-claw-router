@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "dev-project-manager",
+    "displayName": "Dev Project Manager",
+    "summary": "Comprehensive AI Project Manager skill for software development. Use this skill whenever the PM agent needs to: engage with clients about new or existing sof...",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 270,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1776014916879,
+    "updatedAt": 1777506494961
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1777506416271,
+    "changelog": "**Summary:** Heartbeat process and workspace file management expanded and clarified; new rules enforce robust, low-cost, and minimal-risk heartbeat checks.\n\nUpdated to work with the Openclaw Projects and Build a dev team skills more cohesively   |   https://clawhub.ai/encryptshawn/openclaw-projects   |  https://clawhub.ai/encryptshawn/build-dev-team\n\n- Heartbeat sessions now use a dedicated, cheapest-available model (not the PM agent's primary model); OpenRouter minimax model preferred if configured.\n- Heartbeat logic strictly references a pre-recorded HEARTBEAT.md for Asana project and section GIDs, eliminating in-session discovery or browsing.\n- Workspace file set expanded: now expects USER.md, TOOLS.md, HEARTBEAT.md, and AGENTS.md (all read-only, credentials never stored).\n- Heartbeat process must fail fast and never escalate or retry on failure; failure stops the session without workflow loops.\n- Minor format and protocol clarifications for multi-project management, session communication, and dependency skill installation instructions.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "encryptshawn",
+    "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+    "displayName": "EncryptShawn",
+    "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+  },
+  "moderation": null
+}

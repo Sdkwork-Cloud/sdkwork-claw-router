@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41931,
+  "uuid": "skill-clawhub-edgecomputing-ats",
+  "skillKey": "clawhub-edgecomputing-ats",
+  "name": "EdgeComputing ATS Analyzer",
+  "summary": "Analyzes EdgeComputing ATS (Automatic Ticket System) codebase architecture, device protocols, and business logic. Invoke when user asks about ATS project str...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edgecomputing_ats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason-ATS",
+      "features": [
+        "Analyzes EdgeComputing ATS (Automatic Ticket System) codebase architecture, device protocols, a.",
+        "Invoke when user asks about ATS project str..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edgecomputing-ats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254844955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edgecomputing-ats",
+      "url": "https://clawhub.ai/skills/edgecomputing-ats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edgecomputing-ats",
+    "url": "https://clawhub.ai/skills/edgecomputing-ats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edgecomputing-ats-62b7fc6287d04c14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edgecomputing-ats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-edgecomputing-ats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5083f3de60d8943f3710a24375ff7a7e40aafd09db85b2081724fc6411668b6",
+      "artifactSizeBytes": 2271
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T15:24:10.731Z"
+}

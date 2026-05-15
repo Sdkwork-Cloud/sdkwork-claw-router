@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45968,
+  "uuid": "skill-clawhub-godfery-yt",
+  "skillKey": "clawhub-godfery-yt",
+  "name": "youtube",
+  "summary": "Search YouTube videos, get channel info, fetch video details and transcripts using SkillBoss API Hub or yt-dlp fallback.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.godfery_yt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TobeyRebecca",
+      "features": [
+        "Search YouTube videos, get channel info, fetch video details and transcripts using SkillBoss AP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/godfery-yt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260428668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "godfery-yt",
+      "url": "https://clawhub.ai/skills/godfery-yt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "godfery-yt",
+    "url": "https://clawhub.ai/skills/godfery-yt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/godfery-yt-c472cb00b2cc79e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/godfery-yt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-godfery-yt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:196c7c8dd4773dc6af03f0abc48fbc71123e6973361a96eb0722494315add341",
+      "artifactSizeBytes": 2336
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T05:08:44.883Z"
+}

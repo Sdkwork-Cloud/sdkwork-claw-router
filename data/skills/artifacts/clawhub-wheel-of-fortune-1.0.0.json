@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wheel-of-fortune@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wheel_of_fortune",
+  "skill": {
+    "id": 17296,
+    "skillKey": "clawhub-wheel-of-fortune",
+    "name": "Wheel of Fortune"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wheel-of-fortune",
+    "url": "https://clawhub.ai/skills/wheel-of-fortune",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wheel-of-fortune-66c66adbbe0a4ef2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate a link to an interactive 3D wheel to randomly choose from 2 to 20 user-provided options, optionally weighted by preference."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peetzweg",
+      "userId": "s178jvgnspycej10a3bf2whe7s858wxw",
+      "displayName": "peetzweg/",
+      "image": "https://avatars.githubusercontent.com/u/839848?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 785,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770926492701,
+      "changelog": "- Initial release of the \"wheel-of-fortune\" skill as Glucksrad — an interactive decision wheel.\n- Generates a 3D spinning wheel URL for users stuck choosing between options (2–20 choices).\n- Supports custom option weights for unequal probabilities.\n- Handles names with spaces and special characters via URL-encoding.\n- Clear instructions for when and how to use the skill and how to format the wheel URL.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:43aef06837ce06c34786ff931772c286b6fca1f4a9eb54592372dd3c6c3ecb93"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27448,
+  "uuid": "skill-clawhub-nwo-robotics",
+  "skillKey": "clawhub-nwo-robotics",
+  "name": "NWO Robotics",
+  "summary": "Control robots and IoT devices via natural language using the NWO Robotics API for robot commands, sensor queries, vision tasks, and task planning.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nwo_robotics",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ciprian Pater",
+      "features": [
+        "Control robots and IoT devices via natural language using the NWO Robotics API for robot comman."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nwo-robotics@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/66785207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nwo-robotics",
+      "url": "https://clawhub.ai/skills/nwo-robotics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nwo-robotics",
+    "url": "https://clawhub.ai/skills/nwo-robotics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nwo-robotics-beeaf2f3e35a30a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nwo-robotics@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nwo-robotics-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ced183a727340195f6282100d7f673cd9295513eda0f4f427d2cca685afc3f96",
+      "artifactSizeBytes": 2045
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T00:15:23.590Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openpump-solana-mcp@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openpump_solana_mcp",
+  "skill": {
+    "id": 21814,
+    "skillKey": "clawhub-openpump-solana-mcp",
+    "name": "Openpump Solana Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openpump-solana-mcp",
+    "url": "https://clawhub.ai/skills/openpump-solana-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openpump-solana-mcp-96d98b5609088013.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solana token launch and trading tools via the OpenPump MCP server. Creates tokens on pump.fun, buys and sells tokens, runs market-making bots, snipes new tok..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fullstacktard",
+      "userId": "publishers:fullstacktard",
+      "displayName": "fullstacktard",
+      "image": "https://avatars.githubusercontent.com/u/43705057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773289543045,
+      "changelog": "Added batch-create-wallets tool (57 tools total)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5a024c38a7384ea79bac51810cca488ffbf3b29b92ea3f50166195e981b41dc7"
+}

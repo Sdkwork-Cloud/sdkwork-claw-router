@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-fallback-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_fallback_skill",
+  "skill": {
+    "id": 41013,
+    "skillKey": "clawhub-openclaw-fallback-skill",
+    "name": "openclaw-fallback-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-fallback-skill",
+    "url": "https://clawhub.ai/skills/openclaw-fallback-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-fallback-skill-35568f8c5d740094.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically calls a configured cloud API when the local model's confidence is below a set threshold or it fails to answer."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dream458268696",
+      "userId": "s17aqh9hfpyjp5waw6n5fyjr6x83kcbd",
+      "displayName": "dream458268696",
+      "image": "https://avatars.githubusercontent.com/u/262800069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774456589824,
+      "changelog": "openclaw-fallback-skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5484e82c7d1d62fae5b8a10bd9c2c433a48811c998821ba4459c3feb58678370"
+}

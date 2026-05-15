@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51449,
+  "uuid": "skill-clawhub-auto-evolution",
+  "skillKey": "clawhub-auto-evolution",
+  "name": "Auto Evolution (Hybrid Mode)",
+  "summary": "Multi-agent auto-evolution system with hybrid mode — orchestrate review-execute-audit loops with 4 roles (Coordinator, Reviewer, Executor, Auditor). Supports...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_evolution",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "Multi-agent auto-evolution system with hybrid mode — orchestrate review-execute-audit loops wit.",
+        "Supports..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-evolution@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-evolution",
+      "url": "https://clawhub.ai/skills/auto-evolution"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-evolution",
+    "url": "https://clawhub.ai/skills/auto-evolution",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-evolution-fe2aecd28e842f36.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-evolution@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-evolution-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:370e90bb30aac87c91f00a9f2cdc882fce2375e1a87383d6be8c52358978c0fa",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T03:12:42.979Z"
+}

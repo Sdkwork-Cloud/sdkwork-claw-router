@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32392,
+  "uuid": "skill-clawhub-wachete",
+  "skillKey": "clawhub-wachete",
+  "name": "Wachete",
+  "summary": "Wachete integration. Manage data, records, and automate workflows. Use when the user wants to interact with Wachete data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wachete",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Wachete integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Wachete data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wachete@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wachete",
+      "url": "https://clawhub.ai/skills/wachete"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wachete",
+    "url": "https://clawhub.ai/skills/wachete",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wachete-41199f00fe3dcd63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wachete@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-wachete-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f6c587f68eb98cc40cc40bb67c0e7b3ab4857bc8e01e91ff37df2e3772cb7c4",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:59:52.465Z"
+}

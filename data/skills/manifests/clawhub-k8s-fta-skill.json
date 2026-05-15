@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64224,
+  "uuid": "skill-clawhub-k8s-fta-skill",
+  "skillKey": "clawhub-k8s-fta-skill",
+  "name": "K8s Fta Skill",
+  "summary": "基于FTA故障树分析法的Kubernetes问题定位和修复工具。当用户遇到k8s集群问题、Pod运行异常、服务访问失败、RBAC权限问题、DNS解析失败、OOMKilled、健康检查失败、网络策略限制、存储挂载问题、HPA扩展问题、API Server连接问题等情况时，使用此技能自动执行kubectl命令进行故障...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_fta_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yejinlei",
+      "features": [
+        "基于FTA故障树分析法的Kubernetes问题定位和修复工具。当用户遇到k8s集群问题、Pod运行异常、服务访问失败、RBAC权限问题、DNS解析失败、OOMKilled、健康检查失败、网."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/k8s-fta-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1418455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "k8s-fta-skill",
+      "url": "https://clawhub.ai/skills/k8s-fta-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-fta-skill",
+    "url": "https://clawhub.ai/skills/k8s-fta-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-fta-skill-9de16d9159325422.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/k8s-fta-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-k8s-fta-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:416540d21117bb4cc9b2a1df9ec47afd99c407bca61d9648890aa2b9d2b06e66",
+      "artifactSizeBytes": 2743
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T04:46:03.701Z"
+}

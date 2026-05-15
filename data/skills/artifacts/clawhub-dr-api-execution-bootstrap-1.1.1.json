@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dr-api-execution-bootstrap@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dr_api_execution_bootstrap",
+  "skill": {
+    "id": 35573,
+    "skillKey": "clawhub-dr-api-execution-bootstrap",
+    "name": "dr-api-execution-bootstrap"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dr-api-execution-bootstrap",
+    "url": "https://clawhub.ai/skills/dr-api-execution-bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dr-api-execution-bootstrap-952dab183dceefbb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bootstrap and enforce fast direct API execution in a workspace. Use when you want an agent to run API calls directly in-session, avoid unnecessary subagents,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniel-refahi-ikara",
+      "userId": "s177xe2n6zt5z29v51zpxrnx9183wyda",
+      "displayName": "Daniel Refahi",
+      "image": "https://avatars.githubusercontent.com/u/201202982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 213,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776385830718,
+      "changelog": "Rename display name to match slug.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bf1286c9a821e8fe17716812f38c8c88ae0dd46aa72b3bf34004febd71e151f"
+}

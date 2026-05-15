@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/golang-code-review@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.golang_code_review",
+  "skill": {
+    "id": 25267,
+    "skillKey": "clawhub-golang-code-review",
+    "name": "golang-code-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "golang-code-review",
+    "url": "https://clawhub.ai/skills/golang-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/golang-code-review-61ddd6caf84689ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides comprehensive Golang code reviews for Git merge commits, checking format, quality, best practices, security, and generating detailed Markdown reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "knifean",
+      "userId": "publishers:knifean",
+      "displayName": "knifeAn",
+      "image": "https://avatars.githubusercontent.com/u/32318545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773734405271,
+      "changelog": "Initial release of golang-code-review-axd.\n\n- Released version 1.0.0.\n- Provides code review capabilities for Go (Golang) projects.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9165bc2fda73d3dacd4aea5fc4da5ca89a6dfeab53e4752c32e95858a275260c"
+}

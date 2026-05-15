@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49605,
+  "uuid": "skill-clawhub-advisor-finder",
+  "skillKey": "clawhub-advisor-finder",
+  "name": "Advisor Finder",
+  "summary": "Find and analyze potential academic advisors, supervisors, or faculty for a target university, school, department, or research direction. Use when the user a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.advisor_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ntsl-ye",
+      "features": [
+        "Find and analyze potential academic advisors, supervisors, or faculty for a target university,.",
+        "Use when the user a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/advisor-finder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271961752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "advisor-finder",
+      "url": "https://clawhub.ai/skills/advisor-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "advisor-finder",
+    "url": "https://clawhub.ai/skills/advisor-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/advisor-finder-405379b75693faad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/advisor-finder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-advisor-finder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fbb45c966623134f7fb89edcbe85859293eb8ff7686cad9c7fa32b1e7c7aab24",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T08:35:09.408Z"
+}

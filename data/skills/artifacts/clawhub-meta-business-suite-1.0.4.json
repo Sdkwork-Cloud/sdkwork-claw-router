@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-business-suite@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_business_suite",
+  "skill": {
+    "id": 13174,
+    "skillKey": "clawhub-meta-business-suite",
+    "name": "Meta Business Suite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-business-suite",
+    "url": "https://clawhub.ai/skills/meta-business-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-business-suite-fcc98927163b2fd2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Meta Business Suite automation via Graph API. Use this skill when: (1) Publishing posts to Facebook Pages (2) Scheduling Facebook posts (3) Publishing to Ins..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nachx639",
+      "userId": "publishers:nachx639",
+      "displayName": "Nachx639",
+      "image": "https://avatars.githubusercontent.com/u/71144023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1032,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 5,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1771801505005,
+      "changelog": "Remove APP_SECRET/APP_ID references from skill instructions. Add homepage. Simplify token renewal docs.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ab0dcf88ab9c4c2c1df84c51a218dee2bdb5c065cb384c28a753a05a089d19e3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-three-manuals-generator@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_three_manuals_generator",
+  "skill": {
+    "id": 62862,
+    "skillKey": "clawhub-openclaw-three-manuals-generator",
+    "name": "OpenClaw 三本说明书生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-three-manuals-generator",
+    "url": "https://clawhub.ai/skills/openclaw-three-manuals-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-three-manuals-generator-c3d4d780099af2b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过对话引导帮助用户确定AI搭档需求，生成个性化的SOUL.md、USER.md和AGENTS.md三本说明书。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jack-long-2022",
+      "userId": "s17aare0m0rq39d9cswdf6zcan83s2bv",
+      "displayName": "Jack-Long-2022",
+      "image": "https://avatars.githubusercontent.com/u/128901973?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 88,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777608859383,
+      "changelog": "v1.1.0: 英文触发词+快速模式+完整对话示例+输出验证",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5985cb9a0fbdcf769b981cd4d451747bcb69907a22bc6ddf5be2e6071a6148c0"
+}

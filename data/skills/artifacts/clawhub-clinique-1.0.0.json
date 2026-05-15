@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clinique@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clinique",
+  "skill": {
+    "id": 53982,
+    "skillKey": "clawhub-clinique",
+    "name": "Clinique"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clinique",
+    "url": "https://clawhub.ai/skills/clinique",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clinique-df876e7801ac592f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clinique is an Estée Lauder skincare brand pioneering fragrance-free, dermatologist-developed products and the iconic three-step skincare routine since 1968."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777323780048,
+      "changelog": "- 首个版本发布，介绍倩碧品牌历史、定位及三步曲护肤理念\n- 涵盖品牌起源、时间线、商业模式与核心产品特色\n- 分析无香/抗过敏定位及竞争护城河\n- 收录关键品牌数据及有趣历史事实",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5d52ac58cec25d6b8ca5293fb4384d1b1476b0be403d8a3e78a55e22aa5b56ce"
+}

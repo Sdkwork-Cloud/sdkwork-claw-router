@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ews-email@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ews_email",
+  "skill": {
+    "id": 19480,
+    "skillKey": "clawhub-ews-email",
+    "name": "Ews Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ews-email",
+    "url": "https://clawhub.ai/skills/ews-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ews-email-448a9da935ad249c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI to manage enterprise Outlook emails via Exchange Web Services (EWS). Use ews-mail.py to list, read, reply, forward, search, send, move, delete emails and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guyun94",
+      "userId": "s17drtw9ms8jkd228ea3khx48n83gh5c",
+      "displayName": "guyun94",
+      "image": "https://avatars.githubusercontent.com/u/32215857?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773038581495,
+      "changelog": "v1.2.0: Linux headless server support - auto EncryptedKeyring with KEYRING_CRYPTFILE_PASSWORD",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:334db8e9645ba8cb2d720f0a4f1dcab72e80f1355b8b58934076e7680c440c83"
+}

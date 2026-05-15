@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70064,
+  "uuid": "skill-clawhub-cn-life-toolkit",
+  "skillKey": "clawhub-cn-life-toolkit",
+  "name": "CN Life Toolkit - 中国生活服务工具包",
+  "summary": "中国生活服务工具包，支持天气查询（街道级）、限行提醒、油价查询、快递物流跟踪、公交换乘查询等日常生活服务。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_life_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp3d1455926-svg",
+      "features": [
+        "中国生活服务工具包，支持天气查询（街道级）、限行提醒、油价查询、快递物流跟踪、公交换乘查询等日常生活服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-life-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268315927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-life-toolkit",
+      "url": "https://clawhub.ai/skills/cn-life-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-life-toolkit",
+    "url": "https://clawhub.ai/skills/cn-life-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-life-toolkit-58d765d2e69f1d5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-life-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-life-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76084378f18108dc6fa17105b903219e2142a7bf6b930b54f7b5a9f4d5f208b5",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T05:48:48.641Z"
+}

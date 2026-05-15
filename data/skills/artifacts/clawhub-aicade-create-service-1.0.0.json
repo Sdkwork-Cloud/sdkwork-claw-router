@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aicade-create-service@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicade_create_service",
+  "skill": {
+    "id": 44334,
+    "skillKey": "clawhub-aicade-create-service",
+    "name": "aicade-create-service"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicade-create-service",
+    "url": "https://clawhub.ai/skills/aicade-create-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicade-create-service-0ea754aa1e25e471.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when registering, updating, querying, or disabling aicade service-management APIs under /services, especially when preparing service metadata, billing, r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aicadegalaxy",
+      "userId": "s17cm5twfsb6tdgf0kfjnve25x83rm26",
+      "displayName": "aicadegalaxy",
+      "image": "https://avatars.githubusercontent.com/u/201355035?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777189867847,
+      "changelog": "aicade-create-service 1.0.0\n\n- Initial release with guided flows for registering, updating, querying, and disabling aicade services via /services endpoints.\n- Checks for required local environment variables (AICADE_API_KEY, AICADE_WALLET_ADDRESS) before prompting users.\n- Collects registration data through multi-step confirmations to ensure correct service metadata, billing, rate limits, and auth configuration.\n- Validates critical fields and prevents common mistakes before generating curl requests or Node.js command examples.\n- Includes clear workflow guidance and API reference usage for consistent, error-resistant service management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b8f2e263e04a7a2464d919314bf5f1793149432f9e258e63ae8e4a00890d33d"
+}

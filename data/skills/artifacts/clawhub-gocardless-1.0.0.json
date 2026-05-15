@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gocardless@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gocardless",
+  "skill": {
+    "id": 50674,
+    "skillKey": "clawhub-gocardless",
+    "name": "GoCardless Agentic Payment | Give your Agent a CreditCard with this Partner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gocardless",
+    "url": "https://clawhub.ai/skills/gocardless",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gocardless-eae7b6a87227a57c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GoCardless compatible Payments & Wallet - Give your agent spending power. Financial management for Agents and OpenClaw bots."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773338688144,
+      "changelog": "CreditClaw for Agents & OpenClaw — Secure, owner-approved financial management.\n\n- Major initial release bringing GoCardless-compatible payments via CreditClaw platform.\n- Secure owner card usage: Agents can accept card details, perform purchases with strict approval guardrails.\n- Integrated USDC x402 stablecoin wallet (with Stripe funding) for AI-based payments.\n- Storefront/product management features allow bots to sell digital/physical products.\n- Rigorous security: per-transaction and daily/monthly spend limits, AES-256 encryption, real-time owner notifications, single-use claim tokens.\n- Extensive documentation and API guides accessible directly from CreditClaw URLs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:26f2fe03757d9860bea79b7a130ddb79e82000de9dfff6bf7dc794cc450e3942"
+}

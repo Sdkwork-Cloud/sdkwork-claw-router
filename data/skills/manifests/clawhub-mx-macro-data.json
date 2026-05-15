@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60144,
+  "uuid": "skill-clawhub-mx-macro-data",
+  "skillKey": "clawhub-mx-macro-data",
+  "name": "Global Macro Database Assistant",
+  "summary": "基于东方财富数据库，支持自然语言查询全球宏观经济数据，涵盖国民经济核算、价格指数、货币金融、财政收支、对外贸易、就业民生、产业运行等多个领域，适配各类宏观经济研究、市场分析、政策解读等多元专业场景需求。返回结果包含数据说明及 csv 文件。Natural language query for macroecono...",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_macro_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Financial AI Analyst",
+      "features": [
+        "基于东方财富数据库，支持自然语言查询全球宏观经济数据，涵盖国民经济核算、价格指数、货币金融、财政收支、对外贸易、就业民生、产业运行等多个领域，适配各类宏观经济研究、市场分析、政策解读等多元专."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-macro-data@1.0.12",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41098207?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-macro-data",
+      "url": "https://clawhub.ai/skills/mx-macro-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-macro-data",
+    "url": "https://clawhub.ai/skills/mx-macro-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-macro-data-3c9f0010c91e8305.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-macro-data@1.0.12",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-macro-data-1.0.12.json",
+      "version": "1.0.12",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c936d67693cf8e213a2dd3966808cdd2ffcf26d048640c56835e207332a35f0f",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:19:21.300Z"
+}

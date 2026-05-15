@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37541,
+  "uuid": "skill-clawhub-openclaw-gemini-cli",
+  "skillKey": "clawhub-openclaw-gemini-cli",
+  "name": "OpenGemini CLI",
+  "summary": "Use the local Gemini CLI for one-shot prompts, structured JSON output, shell-assisted research, and delegated AI-to-AI workflows on this Linux host. Use when...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gemini_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hiromps",
+      "features": [
+        "Use the local Gemini CLI for one-shot prompts, structured JSON output, shell-assisted research,.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-gemini-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48875637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-gemini-cli",
+      "url": "https://clawhub.ai/skills/openclaw-gemini-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gemini-cli",
+    "url": "https://clawhub.ai/skills/openclaw-gemini-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gemini-cli-c9058019b211bdf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-gemini-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gemini-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bad49f06f591f9d5e0c5bcc41a862caf07abfef7dc59b1f07a4ef2a2fce01b70",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:04:13.999Z"
+}

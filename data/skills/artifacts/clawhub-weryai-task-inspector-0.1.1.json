@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weryai-task-inspector@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weryai_task_inspector",
+  "skill": {
+    "id": 33879,
+    "skillKey": "clawhub-weryai-task-inspector",
+    "name": "WeryAI Task Inspector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weryai-task-inspector",
+    "url": "https://clawhub.ai/skills/weryai-task-inspector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weryai-task-inspector-92d5cb19c217a5fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inspect, query, summarize, and debug WeryAI task IDs and batch IDs through the official task query endpoints. Use when you need to query WeryAI task status,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "weryai-developer",
+      "userId": "s17csvx4ax7kyjt70t862cpp4d83h5hh",
+      "displayName": "WeryAI-Developer",
+      "image": "https://avatars.githubusercontent.com/u/254698481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774363867783,
+      "changelog": "weryai-task-inspector v0.1.1\n\n- No file changes detected in this version.\n- No modifications to functionality or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee7d9dbced0f5e0b5942a197684246b9ef382a7904a486868a50c08e6e7f0003"
+}

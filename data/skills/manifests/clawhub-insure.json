@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53309,
+  "uuid": "skill-clawhub-insure",
+  "skillKey": "clawhub-insure",
+  "name": "Find Cheaper Insurance |",
+  "summary": "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approval.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insure",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codejika",
+      "features": [
+        "Let your agent shop online with guardrailed wallets, multiple payment methods, and owner approv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/insure@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36914612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "insure",
+      "url": "https://clawhub.ai/skills/insure"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insure",
+    "url": "https://clawhub.ai/skills/insure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insure-8c23877c9b447ebf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/insure@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-insure-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9a262f50a4e9778bb2c136d1f26fe29dd97a1fda18e6159043d9e9fd7fa0190",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:55:58.564Z"
+}

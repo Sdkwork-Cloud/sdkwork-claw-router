@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-content-tailor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_content_tailor",
+  "skill": {
+    "id": 68948,
+    "skillKey": "clawhub-ai-content-tailor",
+    "name": "Ai Content Tailor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-content-tailor",
+    "url": "https://clawhub.ai/skills/ai-content-tailor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-content-tailor-23563e600387762d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速将文章智能改写成公众号、小红书、知乎、抖音四个平台适配版本，保持核心观点并符合平台风格要求。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "utopiabenben",
+      "userId": "s17cnh4v6k2vf1742dfy2z5vj183qz0q",
+      "displayName": "utopiabenben",
+      "image": "https://avatars.githubusercontent.com/u/19267750?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773601790388,
+      "changelog": "- Initial release of ai-content-tailor.\n- Instantly repurpose any article for WeChat Official Account, Xiaohongshu, Zhihu, and Douyin.\n- Supports automatic platform-specific tone, structure, and formatting adjustments using LLM.\n- Batch processing, preview mode, and selective platform output available.\n- Simple CLI with options for tone, model, and output directory.\n- Retains original article’s core ideas while optimizing for each platform’s style.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4480558e45fafdbb77bd290ed81df54a42207fc8bebd55455cf9f932fb0afdfe"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59686,
+  "uuid": "skill-clawhub-weekly-skills-update",
+  "skillKey": "clawhub-weekly-skills-update",
+  "name": "Weekly Skills Update",
+  "summary": "每周自动更新技能并推送摘要。当收到\"执行技能每周更新\"或\"skills-weekly-update\"触发时，运行 clawhub update --all 并更新 SKILLS_INDEX.md，最后推送摘要给用户。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weekly_skills_update",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ken0122",
+      "features": [
+        "每周自动更新技能并推送摘要。当收到\"执行技能每周更新\"或\"skills-weekly-update\"触发时，运行 clawhub update --all 并更新 SKILLS_INDEX.."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weekly-skills-update@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49142720?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weekly-skills-update",
+      "url": "https://clawhub.ai/skills/weekly-skills-update"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weekly-skills-update",
+    "url": "https://clawhub.ai/skills/weekly-skills-update",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weekly-skills-update-4bf1733d910169d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weekly-skills-update@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weekly-skills-update-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07e217f0a97f3c6f6c2007e2d61ace5a2ab1bf7d964bedea08a4fc2c704e6458",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T01:51:36.075Z"
+}

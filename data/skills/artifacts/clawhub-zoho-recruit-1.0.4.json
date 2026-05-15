@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zoho-recruit@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_recruit",
+  "skill": {
+    "id": 8517,
+    "skillKey": "clawhub-zoho-recruit",
+    "name": "Zoho Recruit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-recruit",
+    "url": "https://clawhub.ai/skills/zoho-recruit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-recruit-cdd93e313f83f901.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Zoho Recruit API integration with managed OAuth. Manage candidates, job openings, interviews, and recruitment workflows. Use this skill when users want to re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 3,
+      "downloads": 12307,
+      "installsAllTime": 8,
+      "installsCurrent": 6,
+      "stars": 3,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1777591325424,
+      "changelog": "- Changed all API and connection management URLs from gateway.maton.ai and ctrl.maton.ai to api.maton.ai.\n- Clarified connection management instructions and response JSON to use generic `{connection_id}` placeholders.\n- Added a Security & Permissions section emphasizing that all write operations require explicit user approval.\n- Updated connection header usage guidance: always include `Maton-Connection` if you have multiple connections.\n- Removed legacy references and unused LICENSE.txt for cleaner distribution.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3549502d6868f0e0d358b4b92515c0a0d1202c63245a5016d9f4d796742f803b"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65956,
+  "uuid": "skill-clawhub-ai-llm-data-automation",
+  "skillKey": "clawhub-ai-llm-data-automation",
+  "name": "LLM数据自动化",
+  "summary": "用自然语言描述数据处理需求，LLM自动生成Python/Pandas代码。无需深厚编程基础即可处理Excel/CSV数据、提取PDF内容、清洗BIM数据，构建自动化数据管道。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_llm_data_automation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yesong-Hue",
+      "features": [
+        "用自然语言描述数据处理需求，LLM自动生成Python/Pandas代码。无需深厚编程基础即可处理Excel/CSV数据、提取PDF内容、清洗BIM数据，构建自动化数据管道。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-llm-data-automation@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/277589485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-llm-data-automation",
+      "url": "https://clawhub.ai/skills/ai-llm-data-automation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-llm-data-automation",
+    "url": "https://clawhub.ai/skills/ai-llm-data-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-llm-data-automation-84c54e7c96010b1e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-llm-data-automation@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-llm-data-automation-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e2ee475bc70dace88d829facf21d131a2b684274d32736b67771f7822be6846b",
+      "artifactSizeBytes": 2074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T08:19:56.494Z"
+}

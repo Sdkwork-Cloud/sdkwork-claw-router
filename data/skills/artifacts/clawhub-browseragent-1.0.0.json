@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browseragent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browseragent",
+  "skill": {
+    "id": 22825,
+    "skillKey": "clawhub-browseragent",
+    "name": "BrowserAgent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browseragent",
+    "url": "https://clawhub.ai/skills/browseragent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browseragent-6cec6d6f47a9f7af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation with human-like behavior. Use when: sites require JavaScript, login sessions, form filling, clicking, scrolling, or complex interactions...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lesliepie",
+      "userId": "s171832gkkbwdw00cz5mqc1zcs83p33m",
+      "displayName": "LesliePie",
+      "image": "https://avatars.githubusercontent.com/u/24803273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773976101908,
+      "changelog": "Initial release: browser automation with Playwright and human-like behavior",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81883781bddc35f5e3b8a57dd04119317b5983fb1cdf6a4175b0bd920f744dfc"
+}

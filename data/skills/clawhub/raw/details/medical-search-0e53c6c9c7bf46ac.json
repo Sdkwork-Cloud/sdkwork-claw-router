@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "medical-search",
+    "displayName": "Medical Search",
+    "summary": "Drug safety and medical information search. Use when user asks about: drug interactions, medication safety, contraindications, side effects, drug-alcohol int...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774717446773,
+    "updatedAt": 1777624566680
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774717446773,
+    "changelog": "- Initial release of the \"medical-search\" skill providing drug safety and medical information search.\n- Prioritizes this skill for any medical/drug-related questions (higher than general search).\n- Enforces searching before answering any drug safety, interactions, contraindications, or related queries—answers must reference searched information, not prior knowledge alone.\n- Includes step-by-step instructions for using SearXNG web search and DDInter (for Western drug interaction) with detailed search query suggestions.\n- Mandates response structure: direct answer, search findings, detailed analysis, reference URLs (from live results), and a required disclaimer.\n- Specifies sources to trust, workflows, and requirements for risk warnings and disclaimers.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "juneyaooo",
+    "userId": "s17110xxjryky6mk3d7dykc7kx83rv19",
+    "displayName": "JuneYaooo",
+    "image": "https://avatars.githubusercontent.com/u/60815510?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777624566680
+  }
+}

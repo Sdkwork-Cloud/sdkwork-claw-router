@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-evalscope@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_evalscope",
+  "skill": {
+    "id": 50856,
+    "skillKey": "clawhub-skill-evalscope",
+    "name": "EvalScope"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-evalscope",
+    "url": "https://clawhub.ai/skills/skill-evalscope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-evalscope-7afb575856ed2f1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translates natural language requests into evalscope CLI commands. Core capabilities: (1) Model accuracy evaluation (eval) — runs 156+ benchmarks (Math, Codin..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunnglin",
+      "userId": "s1761s7z34s8x82798c1j9x6js83gzw5",
+      "displayName": "Yunlin Mao",
+      "image": "https://avatars.githubusercontent.com/u/42505434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774430164232,
+      "changelog": "No code changes; skill description clarified for accuracy and scope.\n\n- Expanded the skill description to concisely enumerate core EvalScope capabilities: model evaluation, performance benchmarking, benchmark discovery, and results visualization.\n- Clarified trigger scenarios for when this skill should be invoked.\n- No changes to CLI guidance, workflows, or example commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b5e61dbf266cb16e9b3f8ba8f7a7135d8c57bb21223f419b78921623826a173"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/math-viz@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_viz",
+  "skill": {
+    "id": 70942,
+    "skillKey": "clawhub-math-viz",
+    "name": "Math Viz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-viz",
+    "url": "https://clawhub.ai/skills/math-viz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-viz-283516a5d2037085.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将抽象数学题目转化为交互式HTML可视化，支持二维几何、三维几何、函数图像、动点轨迹等动态演示和实时数值显示。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abill6688",
+      "userId": "s17agnr2zmrtvxzk2rja8qzehs85pg3m",
+      "displayName": "ABill6688",
+      "image": "https://avatars.githubusercontent.com/u/275390810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777794784484,
+      "changelog": "新增输出后强制验证流程 + verify_output.sh 验证脚本 + 常见陷阱修复指南 + jsxgraph-patterns.md 新增第12章避坑指南",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee2cc93571ed5aa05c085f18486028bf65e847e05da2ddb104b7547d48c29e1c"
+}

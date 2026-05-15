@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10267,
+  "uuid": "skill-clawhub-personal-genomics",
+  "skillKey": "clawhub-personal-genomics",
+  "name": "Personal Genomics",
+  "summary": "Analyze raw DNA data from consumer genetics services (23andMe, AncestryDNA, etc.). Extract health markers, pharmacogenomics, traits, ancestry composition, ancient DNA comparisons, and generate comprehensive reports. Uses open-source bioinf.",
+  "version": "4.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_genomics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wkyleg",
+      "features": [
+        "Analyze raw DNA data from consumer genetics services (23andMe, AncestryDNA, etc.)",
+        "Extract health markers, pharmacogenomics, traits, ancestry composition, ancient DNA comparisons.",
+        "Uses open-source bioinformatics tools locally — no data leaves your machine."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-genomics@4.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16677991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-genomics",
+      "url": "https://clawhub.ai/skills/personal-genomics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-genomics",
+    "url": "https://clawhub.ai/skills/personal-genomics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-genomics-6627b41da5b3540d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-genomics@4.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-genomics-4.2.0.json",
+      "version": "4.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc45f1906c95f848a11ae5f8e91ff86338fcd9c88ae74ed25569e22e7c2c59e1",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T05:11:32.039Z"
+}

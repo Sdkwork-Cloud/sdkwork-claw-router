@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65948,
+  "uuid": "skill-clawhub-task-delegator",
+  "skillKey": "clawhub-task-delegator",
+  "name": "task-delegator",
+  "summary": "任务委派模式 - 自动将所有需要使用工具的任务委派给子 agent 处理。始终用于：搜索、浏览、读写文件、代码执行、API 调用、数据分析。绝不用于：闲聊、无需工具的简单问答、确认事项。触发短语：委托这个 OR 当任何工具操作需要时隐式触发。核心行为：使用 sessions_spawn() 配合 cleanup:...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_delegator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ekko",
+      "features": [
+        "自动将所有需要使用工具的任务委派给子 agent 处理。始终用于：搜索、浏览、读写文件、代码执行、API 调用、数据分析。绝不用于：闲聊、无需工具的简单问答、确认事项。触发短语：委托这个 O."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-delegator@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152005280?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-delegator",
+      "url": "https://clawhub.ai/skills/task-delegator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-delegator",
+    "url": "https://clawhub.ai/skills/task-delegator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-delegator-c059c5e893760909.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-delegator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-delegator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba357b84b098db63d480d8f9b00f550ab951683976e0292a0159b1a988eea4d3",
+      "artifactSizeBytes": 2447
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:24:44.094Z"
+}

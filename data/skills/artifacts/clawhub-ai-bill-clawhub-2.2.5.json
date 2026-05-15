@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-bill-clawhub@2.2.5",
+  "version": "2.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_bill_clawhub",
+  "skill": {
+    "id": 12915,
+    "skillKey": "clawhub-ai-bill-clawhub",
+    "name": "Ai Bill Clawhub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-bill-clawhub",
+    "url": "https://clawhub.ai/skills/ai-bill-clawhub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-bill-clawhub-562794adebfaa4d2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time AI API usage tracking and cost monitoring for OpenClaw. Track spending across OpenAI, Claude, Gemini, Kimi, DeepSeek, and Grok with live dashboard...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fumarole16-afk",
+      "userId": "s173d08w22yad43b0tnhzbyta183v30h",
+      "displayName": "fumarole16-afk",
+      "image": "https://avatars.githubusercontent.com/u/256977228?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1580,
+      "installsAllTime": 4,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.2.5",
+      "createdAt": 1771596801851,
+      "changelog": "**Improved structure and file management for AI Bill Intelligence**\n\n- Migrated all app and data files into a dedicated app/ directory for better organization.\n- Updated configuration and usage documentation, with clearer setup and agent instructions.\n- Expanded support for managing multiple AI providers and billing modes.\n- Skill now explicitly manages key data files for usage, pricing, balances, and logs.\n- Multiple new files added for improved dashboard assets, collector operation, and service scripts.\n- Removed obsolete root-level files to reduce clutter.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9a38f724485df33dd7ab96d3c6251f6376080f32be075138ac72c0c791dd7a4a"
+}

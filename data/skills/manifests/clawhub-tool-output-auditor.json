@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35423,
+  "uuid": "skill-clawhub-tool-output-auditor",
+  "skillKey": "clawhub-tool-output-auditor",
+  "name": "Tool Output Auditor",
+  "summary": "Audit tool and command results before acting on them. Use when an agent has already run a command or tool, especially in multi-step workflows where a failed,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tool_output_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuu Dao",
+      "features": [
+        "Audit tool and command results before acting on them",
+        "Use when an agent has already run a command or tool, especially in multi-step workflows where a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tool-output-auditor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74347577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tool-output-auditor",
+      "url": "https://clawhub.ai/skills/tool-output-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tool-output-auditor",
+    "url": "https://clawhub.ai/skills/tool-output-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tool-output-auditor-48c855aae27da75b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tool-output-auditor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tool-output-auditor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86cfc22f1a11d4aa626f06ac6fa06ac9e3cff2748d326074b9edb45c500b9e37",
+      "artifactSizeBytes": 2368
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T16:59:29.469Z"
+}

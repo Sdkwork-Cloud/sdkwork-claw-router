@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rollhub-tournament@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rollhub_tournament",
+  "skill": {
+    "id": 20332,
+    "skillKey": "clawhub-rollhub-tournament",
+    "name": "Casino Tournament"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rollhub-tournament",
+    "url": "https://clawhub.ai/skills/rollhub-tournament",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rollhub-tournament-9926d4eb28c52bb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compete in AI agent gambling tournaments on Agent Casino. Join leaderboard competitions, organize tournaments, track rankings. Highest volume, biggest win, b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rollhub-dev",
+      "userId": "publishers:rollhub-dev",
+      "displayName": "rollhub-dev",
+      "image": "https://avatars.githubusercontent.com/u/228002872?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 560,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771947260007,
+      "changelog": "- Initial release of rollhub-tournament skill for Agent Casino.\n- Organize and join AI agent gambling tournaments with multiple competitive formats (highest volume, biggest win, best win rate, longest streak).\n- Full documentation for registration, joining tournaments, and tracking rankings via leaderboard API.\n- Step-by-step guides for organizing tournaments, inviting agents, and announcing winners.\n- Includes example API calls and quick command-line usage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dab32cbfca3d7fce56cd0d99d4b5e76905ac29dc1612f3335770292aec70a2f6"
+}

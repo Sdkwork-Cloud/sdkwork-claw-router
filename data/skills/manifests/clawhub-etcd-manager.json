@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30083,
+  "uuid": "skill-clawhub-etcd-manager",
+  "skillKey": "clawhub-etcd-manager",
+  "name": "etcd-manager",
+  "summary": "Manage etcd key-value store operations (list, get, put, delete) with safety checks and backup mechanisms. Use when: reading/writing configuration, managing d...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etcd_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FPbear",
+      "features": [
+        "Manage etcd key-value store operations (list, get, put, delete) with safety checks and backup m.",
+        "Use when: reading/writing configuration, managing d..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etcd-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35688426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etcd-manager",
+      "url": "https://clawhub.ai/skills/etcd-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etcd-manager",
+    "url": "https://clawhub.ai/skills/etcd-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etcd-manager-d44365bca6e841d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etcd-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etcd-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d5e54ce69afc584f01a507c26adf762ea5cacf6e9e1ad2036207b5219700fe7b",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T11:44:06.399Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mac-mini-server@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_mini_server",
+  "skill": {
+    "id": 50598,
+    "skillKey": "clawhub-mac-mini-server",
+    "name": "Mac Mini Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-mini-server",
+    "url": "https://clawhub.ai/skills/mac-mini-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-mini-server-f2b190fa59b30f08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up OpenClaw on Mac Mini as always-on AI server — hardware recommendations, macOS config, Docker Desktop, launchd auto-start, Tailscale remote access, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772679171764,
+      "changelog": "Initial release: Complete guide to setting up OpenClaw as an always-on AI server on Mac Mini.\n\n- Hardware recommendations for Mac Mini (M4 and M4 Pro) with detailed specs and use cases.\n- Step-by-step macOS configuration: energy settings, auto-login, remote access, and update management.\n- Instructions for installing Homebrew, Docker Desktop, and essential development tools.\n- OpenClaw Docker Compose setup, configuration, and secure local networking.\n- Guidance for auto-start using launchd and remote management via Tailscale.\n- Telegram bot integration and alternatives to Tailscale for remote access.\n- Includes clear tables, command examples, and security notes throughout.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:55344d5406140604ef71a2042558a3293ea9380c7f3b2726bdb8426b52e97436"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/context-compress@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_compress",
+  "skill": {
+    "id": 32975,
+    "skillKey": "clawhub-context-compress",
+    "name": "Context Compress"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-compress",
+    "url": "https://clawhub.ai/skills/context-compress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-compress-a8780ece1645bc08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Incrementally summarizes long conversations by pruning, preserving key segments, and using AI to maintain context coherence."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olveww-dot",
+      "userId": "s174qw7qntjf9hdpsxsyek8mcd83s0kq",
+      "displayName": "ECsss",
+      "image": "https://avatars.githubusercontent.com/u/226646360?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776664500139,
+      "changelog": "v1.0.2: 添加一键安装命令，ClaWHub安装后可直接使用",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:752463b4ffdca86e1d983e7c62591dd8d36fb5d2e7dc4f22f1a7333e273a95f8"
+}

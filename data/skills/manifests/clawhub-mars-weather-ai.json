@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43407,
+  "uuid": "skill-clawhub-mars-weather-ai",
+  "skillKey": "clawhub-mars-weather-ai",
+  "name": "Mars Weather AI",
+  "summary": "Get current weather and forecasts (no API key required).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mars_weather_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mars82311111",
+      "features": [
+        "Get current weather and forecasts (no API key required)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mars-weather-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265482749?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mars-weather-ai",
+      "url": "https://clawhub.ai/skills/mars-weather-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mars-weather-ai",
+    "url": "https://clawhub.ai/skills/mars-weather-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mars-weather-ai-9810d2a3fb76e079.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mars-weather-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mars-weather-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b2b757d8ea03fa57d04f71cccc58e41229e3a72b467aa39b76c189b03a10e25",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T13:18:10.446Z"
+}

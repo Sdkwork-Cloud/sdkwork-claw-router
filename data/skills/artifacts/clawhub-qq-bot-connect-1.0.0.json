@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qq-bot-connect@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_bot_connect",
+  "skill": {
+    "id": 63675,
+    "skillKey": "clawhub-qq-bot-connect",
+    "name": "QQ-Bot-connect"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-bot-connect",
+    "url": "https://clawhub.ai/skills/qq-bot-connect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-bot-connect-5080b9d3d4a175fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "QQBot 消息主动推送技能。当需要向 QQ 用户或群发送消息时使用此技能。支持：(1) 主动发送消息到 QQ 对话框 (2) 发送图片/语音/文件等富媒体 (3) 群发消息。触发词：发送 QQ、推送 QQ、QQ 消息、发送到 QQ、QQ 发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jcduann",
+      "userId": "s173cprb2rdz35cbmbyapqfjtx83vw7g",
+      "displayName": "JCDuann",
+      "image": "https://avatars.githubusercontent.com/u/269719394?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 645,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775266399526,
+      "changelog": "qq-bot-connect 1.0.0 初始版本发布\n\n- 支持主动发送消息到 QQ 用户或群聊，包括文本和富媒体（图片、语音、文件等）\n- 提供消息发送格式与 target/channel 参数规范\n- 配置方法详述，支持自定义 openid 和 groupid\n- 附带常见问题说明和操作流程\n- 触发词包括“发送 QQ”、“推送 QQ”、“QQ 消息”等",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:374bee0a0f95d1ce44973f14610a5e6c874319e0dc2c93306659b34ad1c6cbe8"
+}

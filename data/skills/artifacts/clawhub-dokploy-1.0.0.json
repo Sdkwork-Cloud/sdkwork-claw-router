@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dokploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dokploy",
+  "skill": {
+    "id": 9655,
+    "skillKey": "clawhub-dokploy",
+    "name": "Dokploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dokploy",
+    "url": "https://clawhub.ai/skills/dokploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dokploy-ef765fe591697f81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Dokploy deployments, projects, applications, and domains via the Dokploy API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joshuarileydev",
+      "userId": "publishers:joshuarileydev",
+      "displayName": "JoshuaRileyDev",
+      "image": "https://avatars.githubusercontent.com/u/59296334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3094,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1768668846190,
+      "changelog": "Initial release of dokploy: manage Dokploy deployments, projects, applications, and domains via command-line and API.\n\n- Provides CLI commands for project, application, deployment, and domain management\n- Fully documented configuration, including API key and connection setup\n- Supports listing, creating, updating, and deleting projects, applications, and domains\n- Application deployment, logs, and environment variable management included\n- Utility commands to check API status and view current config\n- API endpoints and required tools (`curl`, `jq`) are listed in documentation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ea6c03c1c12e279ca6bd1d07d37e232bffa2ed55ebf1653cca1ab599f24caa3"
+}

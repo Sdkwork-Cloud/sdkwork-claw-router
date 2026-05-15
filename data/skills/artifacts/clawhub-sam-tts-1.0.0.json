@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sam-tts@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sam_tts",
+  "skill": {
+    "id": 14685,
+    "skillKey": "clawhub-sam-tts",
+    "name": "SAM TTS"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sam-tts",
+    "url": "https://clawhub.ai/skills/sam-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sam-tts-bb35ad71386393e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate retro robotic speech audio using SAM (Software Automatic Mouth), the classic C64 text-to-speech synthesizer. Use for /sam command to generate voice messages. Supports /sam on/off toggle mode where all responses are spoken in SAM v."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fourthdensity",
+      "userId": "publishers:fourthdensity",
+      "displayName": "fourthdensity",
+      "image": "https://avatars.githubusercontent.com/u/71754266?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 952,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770884385028,
+      "changelog": "Initial release with toggle mode, voice parameters, and platform integration guide",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca070e4fb76744dbb2d40f7d860f243b294bfd9a7a14028b788be21c78f95dff"
+}

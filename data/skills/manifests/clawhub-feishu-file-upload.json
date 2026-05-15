@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51351,
+  "uuid": "skill-clawhub-feishu-file-upload",
+  "skillKey": "clawhub-feishu-file-upload",
+  "name": "Feishu File Upload",
+  "summary": "Upload and send local files to Feishu chats. Requires Feishu app credentials (app_id/app_secret) in ~/.openclaw/openclaw.json. Use when user asks to send/sha...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_file_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brucezhu888",
+      "features": [
+        "Upload and send local files to Feishu chats",
+        "Requires Feishu app credentials (app_id/app_secret) in ~/.openclaw/openclaw.json",
+        "Use when user asks to send/sha..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-file-upload@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130302745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-file-upload",
+      "url": "https://clawhub.ai/skills/feishu-file-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-file-upload",
+    "url": "https://clawhub.ai/skills/feishu-file-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-file-upload-90dc43f7d46cc278.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-file-upload@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-file-upload-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a502a6299aad5b56f387972d62bdda37741331e621b1d3bbd7d4319f1d44841",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T09:53:54.270Z"
+}

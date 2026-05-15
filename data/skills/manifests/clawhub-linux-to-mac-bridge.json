@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56361,
+  "uuid": "skill-clawhub-linux-to-mac-bridge",
+  "skillKey": "clawhub-linux-to-mac-bridge",
+  "name": "Linux To Mac Bridge",
+  "summary": "Legacy combined bridge skill for Linux-to-Mac wrapper installs. Prefer the newer split skills `macos-bridge` for Mac-owned CLIs and `homebrew-bridge` for Hom...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linux_to_mac_bridge",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Matthew Murphy",
+      "features": [
+        "Legacy combined bridge skill for Linux-to-Mac wrapper installs",
+        "Prefer the newer split skills `macos-bridge` for Mac-owned CLIs and `homebrew-bridge` for Hom..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linux-to-mac-bridge@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110652790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linux-to-mac-bridge",
+      "url": "https://clawhub.ai/skills/linux-to-mac-bridge"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linux-to-mac-bridge",
+    "url": "https://clawhub.ai/skills/linux-to-mac-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linux-to-mac-bridge-993eb5e2fd448f6e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linux-to-mac-bridge@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-linux-to-mac-bridge-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b8d9842e3218db14139486597a9d7870d830f95168284c28b8a542c3f0dc60c",
+      "artifactSizeBytes": 1979
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:16:41.691Z"
+}

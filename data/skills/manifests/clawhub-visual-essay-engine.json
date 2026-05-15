@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22356,
+  "uuid": "skill-clawhub-visual-essay-engine",
+  "skillKey": "clawhub-visual-essay-engine",
+  "name": "Visual Essay Engine",
+  "summary": "Transform AIGC images into a structured visual essay with narrative sequencing, bilingual captions, artist statements, and Instagram-ready packaging.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_essay_engine",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MiLab",
+      "features": [
+        "Transform AIGC images into a structured visual essay with narrative sequencing, bilingual capti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-essay-engine@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105380387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-essay-engine",
+      "url": "https://clawhub.ai/skills/visual-essay-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-essay-engine",
+    "url": "https://clawhub.ai/skills/visual-essay-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-essay-engine-31d0188129e56fb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-essay-engine@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-essay-engine-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b811950886f72ad328ca569fb5a97f9ce19b79de06f48981078bfd9541bb51bc",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:01:09.025Z"
+}

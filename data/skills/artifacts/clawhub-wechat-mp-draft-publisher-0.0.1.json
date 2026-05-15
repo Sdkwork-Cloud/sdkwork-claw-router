@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-mp-draft-publisher@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_draft_publisher",
+  "skill": {
+    "id": 42182,
+    "skillKey": "clawhub-wechat-mp-draft-publisher",
+    "name": "wechat-mp-draft-publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-draft-publisher",
+    "url": "https://clawhub.ai/skills/wechat-mp-draft-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-draft-publisher-60dfdfdf7989e522.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish WeChat Official Account draft articles through a packaged CLI executable that wraps WeChat API calls. Use when the user wants to publish or create a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mesus",
+      "userId": "s173pyzx6qrsc9be7zpmdr1q4h83tmjm",
+      "displayName": "Mesus",
+      "image": "https://avatars.githubusercontent.com/u/18209480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774769872233,
+      "changelog": "Initial release of WeChat MP Draft Publisher.\n\n- Publish WeChat Official Account draft articles via a packaged CLI that enforces the sequence: getAuth → uploadArticleImage → uploadCoverImage → addDraft.\n- Supports specifying the executable by local path, environment variable, or automatic download from GitHub Releases.\n- Requires local credentials and prepared article content/image files.\n- Outputs publishing results in structured JSON; prints errors to stderr.\n- Provides example usage for various integration options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbc040d3b3645509f4be061ce39e4387738f2ceed3f57d628cca23a2dee80ff6"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30343,
+  "uuid": "skill-clawhub-meetingpulse",
+  "skillKey": "clawhub-meetingpulse",
+  "name": "Meetingpulse",
+  "summary": "MeetingPulse integration. Manage Organizations. Use when the user wants to interact with MeetingPulse data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meetingpulse",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "MeetingPulse integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with MeetingPulse data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meetingpulse@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meetingpulse",
+      "url": "https://clawhub.ai/skills/meetingpulse"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meetingpulse",
+    "url": "https://clawhub.ai/skills/meetingpulse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meetingpulse-724c0c9e0a623edf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meetingpulse@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-meetingpulse-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7434290a79d643740ba77b15e8cac953a724c03fee29f6f156f9982028bb231",
+      "artifactSizeBytes": 1842
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:12:26.993Z"
+}

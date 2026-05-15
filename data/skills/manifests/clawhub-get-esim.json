@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14344,
+  "uuid": "skill-clawhub-get-esim",
+  "skillKey": "clawhub-get-esim",
+  "name": "Buy a travel eSIM - via x402 USDC Base Wallet",
+  "summary": "Purchase travel eSIM data plans using USDC on Base Mainnet or Sepolia testnet via x402, with eSIM delivery via a QR code installation page.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_esim",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inthaiguy",
+      "features": [
+        "Purchase travel eSIM data plans using USDC on Base Mainnet or Sepolia testnet via x402, with eS."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-esim@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6215578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-esim",
+      "url": "https://clawhub.ai/skills/get-esim"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-esim",
+    "url": "https://clawhub.ai/skills/get-esim",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-esim-5daf34fe1564ebff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-esim@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-esim-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d35bbee0a1af94186a58f3ab0d1d583fd3e907e8c28d48a564051dc92f5eb202",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T23:56:46.295Z"
+}

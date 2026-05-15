@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyperx-data-api@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperx_data_api",
+  "skill": {
+    "id": 51333,
+    "skillKey": "clawhub-hyperx-data-api",
+    "name": "HyperX Data API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperx-data-api",
+    "url": "https://clawhub.ai/skills/hyperx-data-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperx-data-api-f08097a629c3b072.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when building apps with HyperX Data API — Hyperliquid wallet analytics, market data, Twitter/news feeds. Triggers on: \"HyperX API\", \"data-api.hyperx.trad..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hyperxtrade",
+      "userId": "publishers:hyperxtrade",
+      "displayName": "hyperxtrade",
+      "image": "https://avatars.githubusercontent.com/u/262957249?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773317293486,
+      "changelog": "Fix: API Token获取方式改为引导用户到hyperx.trade Settings页面申请",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2eeefea468de440134d5f0288b1878a677d87b1fcba0c54acdc12ffa9f30eac3"
+}

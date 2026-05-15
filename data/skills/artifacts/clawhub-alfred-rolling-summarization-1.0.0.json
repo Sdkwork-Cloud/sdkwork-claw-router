@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alfred-rolling-summarization@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alfred_rolling_summarization",
+  "skill": {
+    "id": 40927,
+    "skillKey": "clawhub-alfred-rolling-summarization",
+    "name": "Alfred Rolling Summarization"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alfred-rolling-summarization",
+    "url": "https://clawhub.ai/skills/alfred-rolling-summarization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alfred-rolling-summarization-82ae510620b3529d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactively updates a concise session summary every 15 turns or on tool loops to manage context size and preserve key decisions and progress."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sabatech-dev",
+      "userId": "s17744qg40e40hm1vgh48kebwd85dc1k",
+      "displayName": "lJokerl",
+      "image": "https://avatars.githubusercontent.com/u/55234541?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776966588051,
+      "changelog": "Proactive context management: rolling summaries, tool loop guard, SESSION-STATE integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cee07b138f320fc5f022022f8c4e4dabb1f37fe740e3a79b2aaeafe07970713"
+}

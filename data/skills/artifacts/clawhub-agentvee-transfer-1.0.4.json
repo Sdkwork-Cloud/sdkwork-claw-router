@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentvee-transfer@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentvee_transfer",
+  "skill": {
+    "id": 34712,
+    "skillKey": "clawhub-agentvee-transfer",
+    "name": "AgentVee Transfer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentvee-transfer",
+    "url": "https://clawhub.ai/skills/agentvee-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentvee-transfer-b3810983769cc65b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transfer files, set per-download pricing, and list on the AgentVee marketplace (testnet)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jan-blockbites",
+      "userId": "s17agy7qkv3hn2han4bhqz1rjx83q4cn",
+      "displayName": "Jan",
+      "image": "https://avatars.githubusercontent.com/u/159053237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774613258033,
+      "changelog": "- Homepage link in metadata updated from agentvee.io to agentvee.vercel.app\n- API key registration link in documentation changed to agentvee.vercel.app/dashboard\n- Updated instruction about switching to production: now refers to \"the production domain\" rather than agentvee.io specifically\n- No functional or API changes; this is a documentation and metadata update only",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8be3190b146efa42f1ce58d769788bd792e7a1cc15be5c141ed903a227180d5a"
+}

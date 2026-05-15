@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39466,
+  "uuid": "skill-clawhub-ampere",
+  "skillKey": "clawhub-ampere",
+  "name": "Ampere marketplace",
+  "summary": "Ampere AI Agent Marketplace for OpenClaw. Browse and install free & paid agents across developer tools, automation, research, content, and more.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ampere",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": ".",
+      "features": [
+        "Ampere AI Agent Marketplace for OpenClaw",
+        "Browse and install free & paid agents across developer tools, automation, research, content, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ampere@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178129968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ampere",
+      "url": "https://clawhub.ai/skills/ampere"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ampere",
+    "url": "https://clawhub.ai/skills/ampere",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ampere-fbe4a0869947b98c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ampere@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ampere-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1783a1c105df9ecca54dcabfca6f24dbbf7ae8b866f7d29a941fcbd066e33f2c",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:29:19.737Z"
+}

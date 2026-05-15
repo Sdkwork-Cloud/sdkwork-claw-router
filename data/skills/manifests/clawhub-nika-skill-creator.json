@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28347,
+  "uuid": "skill-clawhub-nika-skill-creator",
+  "skillKey": "clawhub-nika-skill-creator",
+  "name": "Nika Skill Creator",
+  "summary": "Create or update Nika platform skills (main doc + sub docs) that follow Nika constraints (two-level docs, @sub-doc references, no path/extension references)....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nika_skill_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "typewrong",
+      "features": [
+        "Create or update Nika platform skills (main doc + sub docs) that follow Nika constraints (two-l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nika-skill-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20751657?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nika-skill-creator",
+      "url": "https://clawhub.ai/skills/nika-skill-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nika-skill-creator",
+    "url": "https://clawhub.ai/skills/nika-skill-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nika-skill-creator-b858d62052f4847d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nika-skill-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nika-skill-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14b5e9b19b18becc902ed67e6065024fa1a955129f8da8c86b45e9f27a4d762c",
+      "artifactSizeBytes": 2340
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T12:42:58.561Z"
+}

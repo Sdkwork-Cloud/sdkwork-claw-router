@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68106,
+  "uuid": "skill-clawhub-ccf-events",
+  "skillKey": "clawhub-ccf-events",
+  "name": "ccf-events",
+  "summary": "查询 CCF 近期活动、会议和通知。当用户询问 CCF 近期活动、会议通知、即将举办的研讨会、一个月内将举办的会议、刚刚结束的会议等信息时使用此 skill。",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccf_events",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BY",
+      "features": [
+        "查询 CCF 近期活动、会议和通知。当用户询问 CCF 近期活动、会议通知、即将举办的研讨会、一个月内将举办的会议、刚刚结束的会议等信息时使用此 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccf-events@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7272725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccf-events",
+      "url": "https://clawhub.ai/skills/ccf-events"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccf-events",
+    "url": "https://clawhub.ai/skills/ccf-events",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccf-events-cdb6a61106eb7590.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccf-events@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccf-events-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0605c8e903122fff44a714c9c4c336fe050dfa75950bdb0147c5cf58f67cff7",
+      "artifactSizeBytes": 2155
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T07:48:20.267Z"
+}

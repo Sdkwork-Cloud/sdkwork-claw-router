@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31301,
+  "uuid": "skill-clawhub-bigcommerce",
+  "skillKey": "clawhub-bigcommerce",
+  "name": "Bigcommerce",
+  "summary": "BigCommerce integration. Manage Products, Customers, Orders, Carts, Coupons, GiftCertificates and more. Use when the user wants to interact with BigCommerce...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bigcommerce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "BigCommerce integration",
+        "Manage Products, Customers, Orders, Carts, Coupons, GiftCertificates and more",
+        "Use when the user wants to interact with BigCommerce..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bigcommerce@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bigcommerce",
+      "url": "https://clawhub.ai/skills/bigcommerce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bigcommerce",
+    "url": "https://clawhub.ai/skills/bigcommerce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bigcommerce-40e1ee44b7c96bc9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bigcommerce@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bigcommerce-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2a6f883521d654c79a74d002a84a58b83ca62066e47eb6beb8724baf261df08c",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:23:26.121Z"
+}

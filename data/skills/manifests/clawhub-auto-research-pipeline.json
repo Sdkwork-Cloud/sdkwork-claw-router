@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59633,
+  "uuid": "skill-clawhub-auto-research-pipeline",
+  "skillKey": "clawhub-auto-research-pipeline",
+  "name": "Auto Research Pipeline",
+  "summary": "从 AutoResearch 到完整项目的全自动流水线（实验 → 多 Agent 编排 → 技能封装）",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_research_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fireflywwj",
+      "features": [
+        "从 AutoResearch 到完整项目的全自动流水线（实验 → 多 Agent 编排 → 技能封装）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-research-pipeline@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16712752?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-research-pipeline",
+      "url": "https://clawhub.ai/skills/auto-research-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-research-pipeline",
+    "url": "https://clawhub.ai/skills/auto-research-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-research-pipeline-1bde0538dc0db155.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-research-pipeline@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-research-pipeline-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac5c1b346a68e7e7e79ca4d8f5237c27aa6b59b70d5f064278198b66e8c4efc1",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:28:06.242Z"
+}

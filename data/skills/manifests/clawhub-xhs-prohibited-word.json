@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71409,
+  "uuid": "skill-clawhub-xhs-prohibited-word",
+  "skillKey": "clawhub-xhs-prohibited-word",
+  "name": "xhs-prohibited-word（小红书违禁词查询）",
+  "summary": "当用户需要查询小红书平台违禁词、检查笔记或推广文案是否含敏感词、限流词，或希望获得标红结果、安全替换词与「仅替换违禁词后的优化文案」时使用；能力摘要：文本 / 文件 / 网页多路输入（图片需先 OCR 成文本），脚本检测与固定三板块输出，并按规范写入可下载的纯文本优化文案文件。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_prohibited_word",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "if530770",
+      "features": [
+        "当用户需要查询小红书平台违禁词、检查笔记或推广文案是否含敏感词、限流词，或希望获得标红结果、安全替换词与「仅替换违禁词后的优化文案」时使用；能力摘要：文本 / 文件 / 网页多路输入（图片需."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xhs-prohibited-word@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46310539?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xhs-prohibited-word",
+      "url": "https://clawhub.ai/skills/xhs-prohibited-word"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-prohibited-word",
+    "url": "https://clawhub.ai/skills/xhs-prohibited-word",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-prohibited-word-3a33bdc904658636.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xhs-prohibited-word@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xhs-prohibited-word-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82985cddf940882498341f803fc1fbc57ec2ef71c59ea51da760274bff9c021f",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T08:35:59.090Z"
+}

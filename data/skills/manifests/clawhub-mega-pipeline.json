@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60958,
+  "uuid": "skill-clawhub-mega-pipeline",
+  "skillKey": "clawhub-mega-pipeline",
+  "name": "全闭环管道",
+  "summary": "全闭环自动化管道 — Hunter→Skill Factory→Orchestrator→Dashboard→Profit。将Phase 1-3所有组件串联为自动运行的超级管道。核心能力：(1) 一键全流程 (2) 定时自动运行 (3) 异常自愈 (4) 利润报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mega_pipeline",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Freeman88-tch",
+      "features": [
+        "全闭环自动化管道 — Hunter→Skill Factory→Orchestrator→Dashboard→Profit。将Phase 1-3所有组件串联为自动运行的超级管道。核心能力：(."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mega-pipeline@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212022282?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mega-pipeline",
+      "url": "https://clawhub.ai/skills/mega-pipeline"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mega-pipeline",
+    "url": "https://clawhub.ai/skills/mega-pipeline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mega-pipeline-2e934a2c5d711f81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mega-pipeline@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mega-pipeline-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b5b754f9391b5b6be9a77902a5dd2210fb617f0c1ec7a8a69f19b72e696a68c",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T07:55:26.553Z"
+}

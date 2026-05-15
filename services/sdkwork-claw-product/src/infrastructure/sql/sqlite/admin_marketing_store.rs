@@ -3,11 +3,14 @@ use sqlx::{Row, Sqlite, SqlitePool, Transaction};
 use crate::domain::{DomainError, DomainResult};
 use crate::ports::{
     AdminCouponBatchItem, AdminCouponItem, AdminMarketingCommandFuture, AdminMarketingStore,
-    AdminPromoCodeItem, AdminRechargeRecordItem, AdminRedemptionRecordItem, AdminReferralStatItem,
-    CreateAdminCouponCommand, DeleteAdminCouponCommand, GenerateAdminCouponBatchCommand,
+    AdminPromoCodeItem, AdminRechargePackageItem, AdminRechargePackageStatus,
+    AdminRechargeRecordItem, AdminRedemptionRecordItem, AdminReferralStatItem,
+    CreateAdminCouponCommand, CreateAdminRechargePackageCommand, DeleteAdminCouponCommand,
+    DeleteAdminRechargePackageCommand, GenerateAdminCouponBatchCommand,
     ListAdminCouponBatchesQuery, ListAdminCouponsQuery, ListAdminPromoCodesQuery,
-    ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery, ListAdminReferralStatsQuery,
-    UpdateAdminPromoCodeStatusCommand,
+    ListAdminRechargePackagesQuery, ListAdminRechargeRecordsQuery, ListAdminRedemptionRecordsQuery,
+    ListAdminReferralStatsQuery, UpdateAdminPromoCodeStatusCommand,
+    UpdateAdminRechargePackageCommand,
 };
 
 const COUPON_TYPE_AMOUNT: i64 = 1;
@@ -24,6 +27,9 @@ const BATCH_GENERATION_STATUS_COMPLETED: i64 = 2;
 const TARGET_TYPE_COUPON: i32 = 71;
 const TARGET_TYPE_COUPON_BATCH: i32 = 72;
 const TARGET_TYPE_PROMO_CODE: i32 = 73;
+const TARGET_TYPE_RECHARGE_PACKAGE: i32 = 74;
+const RECHARGE_PACKAGE_TYPE: i64 = 2;
+const RECHARGE_PRODUCT_CATEGORY_ID: i64 = 1;
 
 #[derive(Debug, Clone)]
 struct PromoCodeStatusFact {
@@ -259,6 +265,163 @@ impl AdminMarketingStore for SqliteAdminMarketingStore {
         query: ListAdminRechargeRecordsQuery,
     ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargeRecordItem>> {
         Box::pin(async move { list_recharge_records(&self.pool, query).await })
+    }
+
+    fn list_recharge_packages<'a>(
+        &'a self,
+        query: ListAdminRechargePackagesQuery,
+    ) -> AdminMarketingCommandFuture<'a, Vec<AdminRechargePackageItem>> {
+        Box::pin(async move { list_recharge_packages(&self.pool, query).await })
+    }
+
+    fn create_recharge_package<'a>(
+        &'a self,
+        command: CreateAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargePackageItem> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error(
+                    "failed to begin recharge package creation transaction",
+                    error,
+                )
+            })?;
+            let package_id = insert_recharge_package(&mut tx, &command).await?;
+            sync_recharge_package_product_for_create(&mut tx, &command).await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "create_recharge_package",
+                TARGET_TYPE_RECHARGE_PACKAGE,
+                package_id,
+                serde_json::json!({
+                    "action": "create_recharge_package",
+                    "packageId": package_id,
+                    "rmb": &command.rmb,
+                    "bonus": command.bonus,
+                    "status": recharge_package_status_label(command.status)
+                }),
+            )
+            .await?;
+            let item = load_recharge_package_by_id(
+                &mut tx,
+                package_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("created recharge package could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error(
+                    "failed to commit recharge package creation transaction",
+                    error,
+                )
+            })?;
+            Ok(item)
+        })
+    }
+
+    fn update_recharge_package<'a>(
+        &'a self,
+        command: UpdateAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, AdminRechargePackageItem> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin recharge package update transaction", error)
+            })?;
+            let previous_rmb = load_recharge_package_amount(
+                &mut tx,
+                command.package_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?;
+            let updated = update_recharge_package_row(&mut tx, &command).await?;
+            if !updated {
+                return Err(DomainError::not_found("recharge package was not found"));
+            }
+            sync_recharge_package_product_for_update(&mut tx, &command, previous_rmb.as_deref())
+                .await?;
+            insert_audit_log(
+                &mut tx,
+                &command.audit_log_uuid,
+                &command.request_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+                command.subject.operator_id,
+                command.subject.operator_type,
+                "update_recharge_package",
+                TARGET_TYPE_RECHARGE_PACKAGE,
+                command.package_id,
+                serde_json::json!({
+                    "action": "update_recharge_package",
+                    "packageId": command.package_id,
+                    "rmb": &command.rmb,
+                    "bonus": command.bonus,
+                    "status": recharge_package_status_label(command.status)
+                }),
+            )
+            .await?;
+            let item = load_recharge_package_by_id(
+                &mut tx,
+                command.package_id,
+                command.subject.tenant_id,
+                command.subject.organization_id,
+            )
+            .await?
+            .ok_or_else(|| DomainError::new("updated recharge package could not be reloaded"))?;
+            tx.commit().await.map_err(|error| {
+                store_error(
+                    "failed to commit recharge package update transaction",
+                    error,
+                )
+            })?;
+            Ok(item)
+        })
+    }
+
+    fn delete_recharge_package<'a>(
+        &'a self,
+        command: DeleteAdminRechargePackageCommand,
+    ) -> AdminMarketingCommandFuture<'a, bool> {
+        Box::pin(async move {
+            let mut tx = self.pool.begin().await.map_err(|error| {
+                store_error("failed to begin recharge package delete transaction", error)
+            })?;
+            let deleted = soft_delete_recharge_package(&mut tx, &command).await?;
+            if deleted {
+                disable_recharge_product_and_sku_for_amount(&mut tx, &command).await?;
+                insert_audit_log(
+                    &mut tx,
+                    &command.audit_log_uuid,
+                    &command.request_id,
+                    command.subject.tenant_id,
+                    command.subject.organization_id,
+                    command.subject.operator_id,
+                    command.subject.operator_type,
+                    "delete_recharge_package",
+                    TARGET_TYPE_RECHARGE_PACKAGE,
+                    command.package_id,
+                    serde_json::json!({
+                        "action": "delete_recharge_package",
+                        "packageId": command.package_id,
+                        "deleted": true
+                    }),
+                )
+                .await?;
+            }
+            tx.commit().await.map_err(|error| {
+                store_error(
+                    "failed to commit recharge package delete transaction",
+                    error,
+                )
+            })?;
+            Ok(deleted)
+        })
     }
 
     fn list_referral_stats<'a>(
@@ -1064,6 +1227,452 @@ async fn list_recharge_records(
         .collect()
 }
 
+async fn list_recharge_packages(
+    pool: &SqlitePool,
+    query: ListAdminRechargePackagesQuery,
+) -> DomainResult<Vec<AdminRechargePackageItem>> {
+    let mut sql = String::from(
+        r#"
+        SELECT
+            CAST(id AS TEXT) AS id,
+            CAST(price AS TEXT) AS rmb,
+            COALESCE(point_amount, 0) AS bonus
+        FROM plus_vip_recharge_pack
+        WHERE tenant_id = ?
+          AND organization_id = ?
+        "#,
+    );
+    if query.status.is_some() {
+        sql.push_str(" AND status = ?");
+    } else {
+        sql.push_str(" AND status >= 0");
+    }
+    sql.push_str(" ORDER BY COALESCE(sort_weight, 0) ASC, id ASC LIMIT 500");
+
+    let mut query_builder = sqlx::query(&sql)
+        .bind(query.subject.tenant_id)
+        .bind(query.subject.organization_id);
+    if let Some(status) = query.status {
+        query_builder = query_builder.bind(recharge_package_status_code(status));
+    }
+    let rows = query_builder
+        .fetch_all(pool)
+        .await
+        .map_err(|error| store_error("failed to list recharge packages", error))?;
+
+    rows.iter().map(recharge_package_from_row).collect()
+}
+
+async fn insert_recharge_package(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &CreateAdminRechargePackageCommand,
+) -> DomainResult<i64> {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_vip_recharge_pack
+            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, app_id, name, description, price, point_amount, vip_duration_days, status, sort_weight, valid_from, valid_to, remark, recharge_type)
+        VALUES
+            (?, ?, ?, 0, ?, ?, 1, 1, ?, '', ?, ?, NULL, ?, 0, NULL, NULL, '', ?)
+        "#,
+    )
+    .bind(&command.package_uuid)
+    .bind(&command.requested_at)
+    .bind(&command.requested_at)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .bind(recharge_package_name(&command.rmb))
+    .bind(&command.rmb)
+    .bind(command.bonus)
+    .bind(recharge_package_status_code(command.status))
+    .bind(RECHARGE_PACKAGE_TYPE)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create recharge package", error))?;
+
+    sqlx::query_scalar("SELECT last_insert_rowid()")
+        .fetch_one(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to read created recharge package id", error))
+}
+
+async fn update_recharge_package_row(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminRechargePackageCommand,
+) -> DomainResult<bool> {
+    let result = sqlx::query(
+        r#"
+        UPDATE plus_vip_recharge_pack
+        SET name = ?,
+            price = ?,
+            point_amount = ?,
+            status = ?,
+            recharge_type = ?,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND status >= 0
+        "#,
+    )
+    .bind(recharge_package_name(&command.rmb))
+    .bind(&command.rmb)
+    .bind(command.bonus)
+    .bind(recharge_package_status_code(command.status))
+    .bind(RECHARGE_PACKAGE_TYPE)
+    .bind(&command.requested_at)
+    .bind(command.package_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update recharge package", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+async fn soft_delete_recharge_package(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminRechargePackageCommand,
+) -> DomainResult<bool> {
+    let result = sqlx::query(
+        r#"
+        UPDATE plus_vip_recharge_pack
+        SET status = ?,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND status >= 0
+        "#,
+    )
+    .bind(COUPON_STATUS_DELETED)
+    .bind(&command.requested_at)
+    .bind(command.package_id)
+    .bind(command.subject.tenant_id)
+    .bind(command.subject.organization_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to delete recharge package", error))?;
+    Ok(result.rows_affected() > 0)
+}
+
+async fn load_recharge_package_amount(
+    tx: &mut Transaction<'_, Sqlite>,
+    package_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<String>> {
+    let value: Option<String> = sqlx::query_scalar(
+        r#"
+        SELECT CAST(price AS TEXT)
+        FROM plus_vip_recharge_pack
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+        LIMIT 1
+        "#,
+    )
+    .bind(package_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load recharge package amount", error))?;
+    value
+        .as_deref()
+        .map(|amount| canonical_money_string(amount, "recharge package rmb"))
+        .transpose()
+}
+
+async fn load_recharge_package_by_id(
+    tx: &mut Transaction<'_, Sqlite>,
+    package_id: i64,
+    tenant_id: i64,
+    organization_id: i64,
+) -> DomainResult<Option<AdminRechargePackageItem>> {
+    let row = sqlx::query(
+        r#"
+        SELECT
+            CAST(id AS TEXT) AS id,
+            CAST(price AS TEXT) AS rmb,
+            COALESCE(point_amount, 0) AS bonus
+        FROM plus_vip_recharge_pack
+        WHERE id = ?
+          AND tenant_id = ?
+          AND organization_id = ?
+          AND status >= 0
+        LIMIT 1
+        "#,
+    )
+    .bind(package_id)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to load recharge package", error))?;
+
+    row.as_ref().map(recharge_package_from_row).transpose()
+}
+
+async fn sync_recharge_package_product_for_create(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &CreateAdminRechargePackageCommand,
+) -> DomainResult<()> {
+    let product_id = insert_recharge_product(
+        tx,
+        &command.product_uuid,
+        &command.requested_at,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        &command.rmb,
+        command.status,
+    )
+    .await?;
+    insert_recharge_sku(
+        tx,
+        &command.sku_uuid,
+        &command.requested_at,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+        product_id,
+        &command.rmb,
+        command.status,
+    )
+    .await
+}
+
+async fn sync_recharge_package_product_for_update(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &UpdateAdminRechargePackageCommand,
+    previous_rmb: Option<&str>,
+) -> DomainResult<()> {
+    let product_id = if let Some(previous_rmb) = previous_rmb {
+        find_recharge_product_for_amount(tx, previous_rmb).await?
+    } else {
+        None
+    };
+    let product_id = if product_id.is_some() {
+        product_id
+    } else {
+        find_recharge_product_for_amount(tx, &command.rmb).await?
+    };
+    if let Some(product_id) = product_id {
+        update_recharge_product_and_sku(
+            tx,
+            product_id,
+            &command.requested_at,
+            &command.rmb,
+            command.status,
+        )
+        .await
+    } else {
+        let product_id = insert_recharge_product(
+            tx,
+            &command.product_uuid,
+            &command.requested_at,
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            &command.rmb,
+            command.status,
+        )
+        .await?;
+        insert_recharge_sku(
+            tx,
+            &command.sku_uuid,
+            &command.requested_at,
+            command.subject.tenant_id,
+            command.subject.organization_id,
+            product_id,
+            &command.rmb,
+            command.status,
+        )
+        .await
+    }
+}
+
+async fn disable_recharge_product_and_sku_for_amount(
+    tx: &mut Transaction<'_, Sqlite>,
+    command: &DeleteAdminRechargePackageCommand,
+) -> DomainResult<()> {
+    let Some(rmb) = load_recharge_package_amount(
+        tx,
+        command.package_id,
+        command.subject.tenant_id,
+        command.subject.organization_id,
+    )
+    .await?
+    else {
+        return Ok(());
+    };
+    if let Some(product_id) = find_recharge_product_for_amount(tx, &rmb).await? {
+        update_recharge_product_and_sku(
+            tx,
+            product_id,
+            &command.requested_at,
+            &rmb,
+            AdminRechargePackageStatus::Inactive,
+        )
+        .await?;
+    }
+    Ok(())
+}
+
+async fn insert_recharge_product(
+    tx: &mut Transaction<'_, Sqlite>,
+    uuid: &str,
+    requested_at: &str,
+    tenant_id: i64,
+    organization_id: i64,
+    rmb: &str,
+    status: AdminRechargePackageStatus,
+) -> DomainResult<i64> {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_product
+            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, user_id, title, code, subtitle, resources, price, original_price, stock, sales_count, status, on_sale_at, description, tags, category_id, base_attributes, spec_attributes)
+        VALUES
+            (?, ?, ?, 0, ?, ?, 1, NULL, ?, ?, '', '{}', ?, ?, 999999, 0, ?, ?, '', 'billing,recharge', ?, '{}', '{}')
+        "#,
+    )
+    .bind(uuid)
+    .bind(requested_at)
+    .bind(requested_at)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(recharge_package_name(rmb))
+    .bind(recharge_product_code(rmb))
+    .bind(rmb)
+    .bind(rmb)
+    .bind(recharge_package_status_code(status))
+    .bind(requested_at)
+    .bind(RECHARGE_PRODUCT_CATEGORY_ID)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create recharge product", error))?;
+
+    sqlx::query_scalar("SELECT last_insert_rowid()")
+        .fetch_one(&mut **tx)
+        .await
+        .map_err(|error| store_error("failed to read created recharge product id", error))
+}
+
+async fn insert_recharge_sku(
+    tx: &mut Transaction<'_, Sqlite>,
+    uuid: &str,
+    requested_at: &str,
+    tenant_id: i64,
+    organization_id: i64,
+    product_id: i64,
+    rmb: &str,
+    status: AdminRechargePackageStatus,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        INSERT INTO plus_sku
+            (uuid, created_at, updated_at, v, tenant_id, organization_id, data_scope, product_id, sku_code, name, title, price, original_price, stock, sales, status, image, specs)
+        VALUES
+            (?, ?, ?, 0, ?, ?, 1, ?, ?, ?, ?, ?, ?, 999999, 0, ?, '', ?)
+        "#,
+    )
+    .bind(uuid)
+    .bind(requested_at)
+    .bind(requested_at)
+    .bind(tenant_id)
+    .bind(organization_id)
+    .bind(product_id)
+    .bind(recharge_sku_code(rmb))
+    .bind(recharge_package_name(rmb))
+    .bind(recharge_package_name(rmb))
+    .bind(rmb)
+    .bind(rmb)
+    .bind(recharge_package_status_code(status))
+    .bind(recharge_sku_specs(rmb))
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to create recharge sku", error))?;
+    Ok(())
+}
+
+async fn find_recharge_product_for_amount(
+    tx: &mut Transaction<'_, Sqlite>,
+    rmb: &str,
+) -> DomainResult<Option<i64>> {
+    sqlx::query_scalar(
+        r#"
+        SELECT pr.id
+        FROM plus_product pr
+        JOIN plus_sku s ON s.product_id = pr.id
+        WHERE CAST(s.price AS TEXT) = CAST(? AS TEXT)
+          AND pr.status >= 0
+          AND s.status >= 0
+        ORDER BY pr.id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(rmb)
+    .fetch_optional(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to find recharge product", error))
+}
+
+async fn update_recharge_product_and_sku(
+    tx: &mut Transaction<'_, Sqlite>,
+    product_id: i64,
+    requested_at: &str,
+    rmb: &str,
+    status: AdminRechargePackageStatus,
+) -> DomainResult<()> {
+    sqlx::query(
+        r#"
+        UPDATE plus_product
+        SET title = ?,
+            price = ?,
+            original_price = ?,
+            status = ?,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE id = ?
+        "#,
+    )
+    .bind(recharge_package_name(rmb))
+    .bind(rmb)
+    .bind(rmb)
+    .bind(recharge_package_status_code(status))
+    .bind(requested_at)
+    .bind(product_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update recharge product", error))?;
+
+    sqlx::query(
+        r#"
+        UPDATE plus_sku
+        SET name = ?,
+            title = ?,
+            price = ?,
+            original_price = ?,
+            status = ?,
+            specs = ?,
+            updated_at = ?,
+            v = COALESCE(v, 0) + 1
+        WHERE product_id = ?
+        "#,
+    )
+    .bind(recharge_package_name(rmb))
+    .bind(recharge_package_name(rmb))
+    .bind(rmb)
+    .bind(rmb)
+    .bind(recharge_package_status_code(status))
+    .bind(recharge_sku_specs(rmb))
+    .bind(requested_at)
+    .bind(product_id)
+    .execute(&mut **tx)
+    .await
+    .map_err(|error| store_error("failed to update recharge sku", error))?;
+    Ok(())
+}
+
 async fn list_referral_stats(
     pool: &SqlitePool,
     query: ListAdminReferralStatsQuery,
@@ -1337,6 +1946,96 @@ fn recharge_status_label(status: i64) -> DomainResult<&'static str> {
             "unsupported admin recharge status: {value}"
         ))),
     }
+}
+
+fn recharge_package_from_row(
+    row: &sqlx::sqlite::SqliteRow,
+) -> DomainResult<AdminRechargePackageItem> {
+    let rmb = canonical_money_string(&string_cell(row, "rmb"), "recharge package rmb")?;
+    let bonus = integer_cell(row, "bonus").max(0);
+    Ok(AdminRechargePackageItem {
+        id: string_cell(row, "id"),
+        points: recharge_base_points(&rmb)? + bonus,
+        rmb,
+        bonus,
+    })
+}
+
+fn recharge_package_status_code(status: AdminRechargePackageStatus) -> i64 {
+    match status {
+        AdminRechargePackageStatus::Active => COUPON_STATUS_ACTIVE,
+        AdminRechargePackageStatus::Inactive => COUPON_STATUS_INACTIVE,
+    }
+}
+
+fn recharge_package_status_label(status: AdminRechargePackageStatus) -> &'static str {
+    match status {
+        AdminRechargePackageStatus::Active => "active",
+        AdminRechargePackageStatus::Inactive => "inactive",
+    }
+}
+
+fn recharge_base_points(amount: &str) -> DomainResult<i64> {
+    let cents = money_cents(amount)?;
+    Ok(((cents + 5) / 10).max(1))
+}
+
+fn canonical_money_string(value: &str, field_name: &str) -> DomainResult<String> {
+    let cents = money_cents(value)
+        .map_err(|_| DomainError::new(format!("invalid {field_name}: {value}")))?;
+    Ok(format!("{}.{:02}", cents / 100, cents.rem_euclid(100)))
+}
+
+fn money_cents(amount: &str) -> DomainResult<i64> {
+    let amount = amount.trim().trim_start_matches('$').replace(',', "");
+    if amount.is_empty() || amount.starts_with('-') {
+        return Err(DomainError::new("invalid money amount"));
+    }
+    let mut parts = amount.split('.');
+    let whole = parts
+        .next()
+        .unwrap_or_default()
+        .parse::<i64>()
+        .map_err(|_| DomainError::new("invalid money amount"))?;
+    let fraction = parts.next().unwrap_or_default();
+    if parts.next().is_some() || fraction.len() > 2 {
+        return Err(DomainError::new("invalid money amount"));
+    }
+    let mut padded = fraction.to_owned();
+    while padded.len() < 2 {
+        padded.push('0');
+    }
+    let cents = if padded.is_empty() {
+        0
+    } else {
+        padded
+            .parse::<i64>()
+            .map_err(|_| DomainError::new("invalid money amount"))?
+    };
+    let total = whole
+        .checked_mul(100)
+        .and_then(|value| value.checked_add(cents))
+        .ok_or_else(|| DomainError::new("invalid money amount"))?;
+    if total <= 0 {
+        return Err(DomainError::new("invalid money amount"));
+    }
+    Ok(total)
+}
+
+fn recharge_package_name(rmb: &str) -> String {
+    format!("Points recharge {rmb}")
+}
+
+fn recharge_product_code(rmb: &str) -> String {
+    format!("points-recharge-{}", rmb.replace('.', "-"))
+}
+
+fn recharge_sku_code(rmb: &str) -> String {
+    format!("points-recharge-sku-{}", rmb.replace('.', "-"))
+}
+
+fn recharge_sku_specs(rmb: &str) -> String {
+    format!(r#"{{"amount":"{rmb}"}}"#)
 }
 
 fn batch_no(prefix: &str, batch_uuid: &str) -> String {

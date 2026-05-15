@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35464,
+  "uuid": "skill-clawhub-duo-security",
+  "skillKey": "clawhub-duo-security",
+  "name": "Duo Security",
+  "summary": "Duo Security integration. Manage data, records, and automate workflows. Use when the user wants to interact with Duo Security data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duo_security",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Duo Security integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Duo Security data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/duo-security@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "duo-security",
+      "url": "https://clawhub.ai/skills/duo-security"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duo-security",
+    "url": "https://clawhub.ai/skills/duo-security",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duo-security-bf5fa9db0d266619.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/duo-security@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-duo-security-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74cde2c247240a01a993c3967f53dd1c513a130ca0a1dcb0e782f40f0f38de35",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:25:05.635Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flash-sale-hunting@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flash_sale_hunting",
+  "skill": {
+    "id": 67299,
+    "skillKey": "clawhub-flash-sale-hunting",
+    "name": "Flash Sale"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flash-sale-hunting",
+    "url": "https://clawhub.ai/skills/flash-sale-hunting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flash-sale-hunting-b655bfbf8b688414.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供各大电商整点秒杀、抢购助手及预售玩法解析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 263,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773762429959,
+      "changelog": "Flash Sale skill initial release:\n\n- 提供各大电商整点秒杀、抢购助手及预售玩法解析。\n- 支持多维度筛选：类别、场景、设备、功能状态等。\n- 返回关键操作摘要、功能亮点、状态追踪及安全建议。\n- 覆盖实时/离线、授权/VIP特权、免费等不同使用状态。\n- 定期结合产品迭代与社区反馈进行内容更新。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb3735dfa7bafb84485374ed416972546e8dcd7401910cc1e664a36764025eb7"
+}

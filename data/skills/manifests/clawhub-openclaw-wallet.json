@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13295,
+  "uuid": "skill-clawhub-openclaw-wallet",
+  "skillKey": "clawhub-openclaw-wallet",
+  "name": "Openclaw Wallet",
+  "summary": "Multi-chain wallet and trading tools for AI agents. Provides 27 tools for: wallet management (create, balance, export keys), token swaps with flexible amounts ($100, 50%, max), cross-chain bridges, DEX market data (trending, volume, gainer.",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loomlay",
+      "features": [
+        "Multi-chain wallet and trading tools for AI agents",
+        "Provides 27 tools for: wallet management (create, balance, export keys), token swaps with flexi.",
+        "Supports Solana and EVM chains",
+        "Use when agents need to interact with wallets, execute trades, research tokens, or launch token."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-wallet@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159767839?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-wallet",
+      "url": "https://clawhub.ai/skills/openclaw-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-wallet",
+    "url": "https://clawhub.ai/skills/openclaw-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-wallet-5282b6e91572640e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-wallet@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-wallet-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a01c596cd87366a0f9393f0052a5e160b7a03c773271af13a49eb89f3e1e700",
+      "artifactSizeBytes": 2315
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T12:25:32.613Z"
+}

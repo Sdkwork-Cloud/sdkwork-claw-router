@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evernote-note@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evernote_note",
+  "skill": {
+    "id": 70955,
+    "skillKey": "clawhub-evernote-note",
+    "name": "印象笔记"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evernote-note",
+    "url": "https://clawhub.ai/skills/evernote-note",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evernote-note-02edd6583695f6fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "印象笔记 API skill，用于管理用户的印象笔记。支持搜索笔记、浏览笔记本、获取笔记内容、新建笔记和追加内容。 当用户提到印象笔记、Evernote、笔记、备忘录、记事、知识库，或者想要查找、阅读、创建、编辑笔记内容时，使用此 skill。 即使用户没有明确说\"笔记\"，只要意图涉及个人文档的存取（如\"帮我记一..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "heavenchenggong",
+      "userId": "s17amramj5c2r6twkcwycahxr183gtks",
+      "displayName": "heavenchenggong",
+      "image": "https://avatars.githubusercontent.com/u/259799383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 379,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774230348817,
+      "changelog": "初始发布：支持搜索、浏览、读取、新建、追加笔记",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:55866658525bb32d0af8472b8676ba3a42c61af8405959f7b5dee488c89f1de7"
+}

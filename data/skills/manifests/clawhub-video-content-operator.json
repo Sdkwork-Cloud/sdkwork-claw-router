@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42611,
+  "uuid": "skill-clawhub-video-content-operator",
+  "skillKey": "clawhub-video-content-operator",
+  "name": "Video Content Operator",
+  "summary": "Help creators decide what video content to make, how to package it for platforms, select source material, and plan their next content moves.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_content_operator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fischerlam",
+      "features": [
+        "Help creators decide what video content to make, how to package it for platforms, select source."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-content-operator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/168167263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-content-operator",
+      "url": "https://clawhub.ai/skills/video-content-operator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-content-operator",
+    "url": "https://clawhub.ai/skills/video-content-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-content-operator-88560565bbed0e02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-content-operator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-content-operator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:deda201fa9c8cd8d205a151788f566f914b6778a8108007c40981dc596498f56",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T07:27:54.463Z"
+}

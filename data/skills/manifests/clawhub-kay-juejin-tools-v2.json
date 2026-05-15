@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73555,
+  "uuid": "skill-clawhub-kay-juejin-tools-v2",
+  "skillKey": "clawhub-kay-juejin-tools-v2",
+  "name": "掘金发布技能",
+  "summary": "帮助用户在掘金平台注册、登录，编写、编辑、预览及发布技术文章，支持文章分类、标签和专栏管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kay_juejin_tools_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "帮助用户在掘金平台注册、登录，编写、编辑、预览及发布技术文章，支持文章分类、标签和专栏管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kay-juejin-tools-v2@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kay-juejin-tools-v2",
+      "url": "https://clawhub.ai/skills/kay-juejin-tools-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kay-juejin-tools-v2",
+    "url": "https://clawhub.ai/skills/kay-juejin-tools-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kay-juejin-tools-v2-cd77c55e851b1243.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kay-juejin-tools-v2@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kay-juejin-tools-v2-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8fdef457648c197f3f24ca8011f74fb96680a72dbbf098731d2b9057bcd34b28",
+      "artifactSizeBytes": 1940
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T14:00:54.851Z"
+}

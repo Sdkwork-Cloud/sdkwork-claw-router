@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64853,
+  "uuid": "skill-clawhub-daily-market-insight",
+  "skillKey": "clawhub-daily-market-insight",
+  "name": "Daily Market Insight",
+  "summary": "每日市场洞察报告生成系统。使用多Agent协作：新闻采集→分析→市场趋势预测→飞书文档报告。每天10:00自动运行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_market_insight",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rui Chen",
+      "features": [
+        "每日市场洞察报告生成系统。使用多Agent协作：新闻采集→分析→市场趋势预测→飞书文档报告。每天10:00自动运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-market-insight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58624449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-market-insight",
+      "url": "https://clawhub.ai/skills/daily-market-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-market-insight",
+    "url": "https://clawhub.ai/skills/daily-market-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-market-insight-90326ff0f4d5dbfd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-market-insight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-market-insight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d99b6a59b2f0697d102bedbb85a2fc8f125deeca3d3bdcf72155a7404aa94524",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T06:14:10.143Z"
+}

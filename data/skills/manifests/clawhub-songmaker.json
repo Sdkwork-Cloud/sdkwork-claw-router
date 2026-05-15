@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51282,
+  "uuid": "skill-clawhub-songmaker",
+  "skillKey": "clawhub-songmaker",
+  "name": "Songmaker",
+  "summary": "Generate a complete song from a text description — AI writes lyrics then composes music. Use when users want to create a song, turn a description into audio,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.songmaker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "scikkk",
+      "features": [
+        "Generate a complete song from a text description — AI writes lyrics then composes music",
+        "Use when users want to create a song, turn a description into audio,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/songmaker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77485593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "songmaker",
+      "url": "https://clawhub.ai/skills/songmaker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "songmaker",
+    "url": "https://clawhub.ai/skills/songmaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/songmaker-2a3ecfcde4678889.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/songmaker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-songmaker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be98143820565654244c8501a6033af8199525c9f979c5e108f2c516e327787a",
+      "artifactSizeBytes": 2192
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T06:56:09.382Z"
+}

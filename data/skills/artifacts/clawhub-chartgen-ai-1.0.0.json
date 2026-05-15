@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chartgen-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chartgen_ai",
+  "skill": {
+    "id": 32040,
+    "skillKey": "clawhub-chartgen-ai",
+    "name": "ChartGen AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chartgen-ai",
+    "url": "https://clawhub.ai/skills/chartgen-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chartgen-ai-dd7f003b3551178a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants to create visualizations (charts, dashboards, diagrams, Gantt, PPT), analyze data (Excel/CSV upload, cross-file analysis,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chartgen-ai",
+      "userId": "s1760v3fs4sg6tdv3k9gq9792h83h5yy",
+      "displayName": "ChartGen AI",
+      "image": "https://avatars.githubusercontent.com/u/128801127?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 258,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774323466230,
+      "changelog": "Official ChartGen AI skill — one-stop data visualization solution with intelligent chart recommendations and multi-format support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e81ea51249857b7b4bc7d01dbd119d3e0dd3dae327237c7ad5599d25e633a319"
+}

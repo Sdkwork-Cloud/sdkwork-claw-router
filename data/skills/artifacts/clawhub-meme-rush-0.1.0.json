@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meme-rush@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meme_rush",
+  "skill": {
+    "id": 20275,
+    "skillKey": "clawhub-meme-rush",
+    "name": "Meme Rush"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meme-rush",
+    "url": "https://clawhub.ai/skills/meme-rush",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meme-rush-1aa5189f634f7044.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Meme token fast-trading assistant with two core capabilities: 1. Meme Rush - Real-time meme token lists from launchpads (Pump.fun, Four.meme, etc.) across ne..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "awessh",
+      "userId": "publishers:awessh",
+      "displayName": "Awessh",
+      "image": "https://avatars.githubusercontent.com/u/99691122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 464,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772853629656,
+      "changelog": "Initial release of meme-rush skill — a fast-trading assistant for meme tokens.\n\n- Provides real-time lists of new, finalizing, and just-migrated meme tokens from multiple launchpads.\n- AI-powered discovery of market hot topics with ranked associated tokens by net inflow.\n- Advanced filtering: liquidity, market cap, holder distribution, dev/insider activity.\n- Covers tokens and topics from Pump.fun, Four.meme, and more on Solana and BSC.\n- Supports both lifecycle tracking and narrative trading use cases for meme tokens.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:907511c884f58eb6d2483cd534bee91133f7e8f0d8c16e77dc5c917401e0a978"
+}

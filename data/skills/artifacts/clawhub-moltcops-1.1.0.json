@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltcops@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltcops",
+  "skill": {
+    "id": 16570,
+    "skillKey": "clawhub-moltcops",
+    "name": "Moltcops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltcops",
+    "url": "https://clawhub.ai/skills/moltcops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltcops-6f94ed28f1920d9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pre-install security scanner for AI agent skills. Detects malicious patterns before you trust code. Local-first — code never leaves your machine."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamthompson33",
+      "userId": "publishers:adamthompson33",
+      "displayName": "Adamthompson33",
+      "image": "https://avatars.githubusercontent.com/u/256450073?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1320,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770731788395,
+      "changelog": "MC-021: Hallucinated Package Reference (CRITICAL) - flags npx/bunx/dlx executing unverified packages. MC-025: HTML Comment Injection (CRITICAL) - detects executable commands hidden in HTML comments. MC-026: Unsafe Package Install (HIGH) - flags npm/yarn/pnpm install without --ignore-scripts. MC-027: Insecure Bind Address (HIGH) - catches 0.0.0.0 binding that exposes agents to public internet. All backed by real-world incidents from BitsecAI and SecurityScorecard STRIKE reports.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b284b0265b05df4394e5146485e7365831a5f5e9afa54e692a20d68ddaeea1a6"
+}

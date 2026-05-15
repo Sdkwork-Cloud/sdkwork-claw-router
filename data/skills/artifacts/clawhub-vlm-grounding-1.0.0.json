@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vlm-grounding@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vlm_grounding",
+  "skill": {
+    "id": 28447,
+    "skillKey": "clawhub-vlm-grounding",
+    "name": "vlm-grounding"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vlm-grounding",
+    "url": "https://clawhub.ai/skills/vlm-grounding",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vlm-grounding-60254027e7c28287.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use GLM-4.7V's multimodal grounding capability to detect and locate objects/text in images. Activate when user asks to find, locate, detect, or ground specif..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qijimrc",
+      "userId": "s17dxhxp6n7b66j7evz56mb7zn83w4q2",
+      "displayName": "Ji Qi",
+      "image": "https://avatars.githubusercontent.com/u/28889175?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 325,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773909716294,
+      "changelog": "- Initial release of multimodal grounding skill using GLM-4.7V.\n- Supports detecting and locating objects, text, and UI elements in images with bounding box outputs.\n- Provides end-to-end workflow: model API call, bounding box parsing, and visualization on images.\n- Includes robust parsing for various bracket styles and auto-renormalization of coordinates.\n- Triggers automatically on grounding-related user requests in both English and Chinese.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:94d1169685b65e2a8c1d33651cfb13d2dba0bb5df4d35c7d2abdc9a3e167a793"
+}

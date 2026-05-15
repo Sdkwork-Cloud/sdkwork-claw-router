@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8761,
+  "uuid": "skill-clawhub-claude-code-usage",
+  "skillKey": "clawhub-claude-code-usage",
+  "name": "Claude Code Usage",
+  "summary": "Check Claude Code OAuth usage limits (session & weekly quotas). Use when user asks about Claude Code usage, remaining limits, rate limits, or how much Claude usage they have left. Includes automated session refresh reminders and reset dete.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "azaidi94",
+      "features": [
+        "Check Claude Code OAuth usage limits (session & weekly quotas)",
+        "Use when user asks about Claude Code usage, remaining limits, rate limits, or how much Claude u.",
+        "Includes automated session refresh reminders and reset detection monitoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-usage@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23562021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-usage",
+      "url": "https://clawhub.ai/skills/claude-code-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-usage",
+    "url": "https://clawhub.ai/skills/claude-code-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-usage-e246302c256df34a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-usage@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-usage-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81effa5cc67e4c6a526a612330b59bc6708359df1bd95603f3dd86a0c234f2eb",
+      "artifactSizeBytes": 2172
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-22T00:19:23.079Z"
+}

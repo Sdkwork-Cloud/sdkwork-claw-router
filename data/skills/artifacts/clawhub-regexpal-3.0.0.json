@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/regexpal@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.regexpal",
+  "skill": {
+    "id": 25146,
+    "skillKey": "clawhub-regexpal",
+    "name": "Regexpal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "regexpal",
+    "url": "https://clawhub.ai/skills/regexpal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/regexpal-8c99b0233bd277d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test and debug regex patterns against sample text. Use when checking match groups, validating patterns, generating replacements, linting syntax."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1773917053421,
+      "changelog": "v3.0.0: rewrite",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66beca8118f9bf78f70015302447fc472c94fec7a27acc07429159cbc4149467"
+}

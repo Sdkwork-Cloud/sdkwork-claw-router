@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-smart-context@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_smart_context",
+  "skill": {
+    "id": 40627,
+    "skillKey": "clawhub-claw-smart-context",
+    "name": "Claw Smart Context"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-smart-context",
+    "url": "https://clawhub.ai/skills/claw-smart-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-smart-context-b184092e6c8c8150.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Token-efficient agent behavior — response sizing, context pruning, tool efficiency, and delegation"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joe3112",
+      "userId": "s172y1e80pcr2bagr6x2z8meg583f477",
+      "displayName": "Joseph Sagiv",
+      "image": "https://avatars.githubusercontent.com/u/4700617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 963,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771661870006,
+      "changelog": "Initial publish under new name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1229c18f608e574edf3c2e7730876d347165b7853707651908509c104d95f29c"
+}

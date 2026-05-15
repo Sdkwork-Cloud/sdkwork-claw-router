@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16092,
+  "uuid": "skill-clawhub-agentscale",
+  "skillKey": "clawhub-agentscale",
+  "name": "AgentScale",
+  "summary": "Deploy web apps and APIs to a public URL with a single command.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentscale",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "João Bonchristiano",
+      "features": [
+        "Deploy web apps and APIs to a public URL with a single command."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentscale@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47366914?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentscale",
+      "url": "https://clawhub.ai/skills/agentscale"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentscale",
+    "url": "https://clawhub.ai/skills/agentscale",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentscale-cb1b7fb37c48145c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentscale@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentscale-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dd89a8f863881f6f2c23c90f6a82cd094493056415b12b815a9c4be79f49003",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T05:16:14.018Z"
+}

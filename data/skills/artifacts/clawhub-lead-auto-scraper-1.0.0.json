@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lead-auto-scraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_auto_scraper",
+  "skill": {
+    "id": 23204,
+    "skillKey": "clawhub-lead-auto-scraper",
+    "name": "Lead Auto Scraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-auto-scraper",
+    "url": "https://clawhub.ai/skills/lead-auto-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-auto-scraper-3e9c52b040f6f9ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates lead discovery using geolocation and Google Places, builds dynamic sites, and sends personalized emails with automated follow-ups for effective out..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mandebiko5-star",
+      "userId": "s170712qydmhhdhj3vzzrrcfw983shw9",
+      "displayName": "mandebiko",
+      "image": "https://avatars.githubusercontent.com/u/235498406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 448,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772544574683,
+      "changelog": "- Initial release of Lead Automation Skill.\n- Automates lead discovery using geolocation and Google Places APIs.\n- Builds dynamic websites with customizable templates for each lead.\n- Sends personalized outreach emails via SMTP relay with high deliverability.\n- Implements automated follow-up email sequences to re-engage unresponsive leads.\n- Streamlines the entire lead generation, website creation, and email outreach process for optimized workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5415ae4e08f2f192d2efc37f9f9134d839733ff3e91a6e0c1b1cb15f71363862"
+}

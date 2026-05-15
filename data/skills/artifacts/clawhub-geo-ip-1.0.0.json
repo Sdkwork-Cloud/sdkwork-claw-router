@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/geo-ip@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.geo_ip",
+  "skill": {
+    "id": 11196,
+    "skillKey": "clawhub-geo-ip",
+    "name": "Geo Ip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "geo-ip",
+    "url": "https://clawhub.ai/skills/geo-ip",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/geo-ip-1a303dcebb6b1c55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Look up geographic location for any IP address"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xejrax",
+      "userId": "publishers:xejrax",
+      "displayName": "Xejrax",
+      "image": "https://avatars.githubusercontent.com/u/148405630?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2115,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770135715136,
+      "changelog": "Initial publish",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4baec9a4f118a67b65c83cdcb3980c0506005b0351ad6721b1872549650e5edc"
+}

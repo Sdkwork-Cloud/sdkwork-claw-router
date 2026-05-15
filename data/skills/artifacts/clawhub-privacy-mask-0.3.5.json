@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/privacy-mask@0.3.5",
+  "version": "0.3.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.privacy_mask",
+  "skill": {
+    "id": 48871,
+    "skillKey": "clawhub-privacy-mask",
+    "name": "Privacy Mask"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "privacy-mask",
+    "url": "https://clawhub.ai/skills/privacy-mask",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/privacy-mask-6d307853cd1b2fc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Mask, redact, anonymize and censor sensitive information (PII) in screenshots and images — phone numbers, emails, IDs, API keys, crypto wallets, credit cards..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fullstackcrew-alpha",
+      "userId": "s17djqk7zj0fdfym4x8znsttz583hv9k",
+      "displayName": "fullstackcrew-alpha",
+      "image": "https://avatars.githubusercontent.com/u/249457019?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 569,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.3.5",
+      "createdAt": 1774322723797,
+      "changelog": "Fix suspicious security flag: exclude SUBMISSIONS.md containing example API key strings",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe18a267502a8adefa93a8df62b79deeef7cda0f6656acaae262f5147dee86a0"
+}

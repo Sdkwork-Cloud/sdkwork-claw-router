@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tourism-guide-harvester@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tourism_guide_harvester",
+  "skill": {
+    "id": 73660,
+    "skillKey": "clawhub-tourism-guide-harvester",
+    "name": "旅游攻略多平台抓取助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tourism-guide-harvester",
+    "url": "https://clawhub.ai/skills/tourism-guide-harvester",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tourism-guide-harvester-9e419fa6b89f074e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从小红书、马蜂窝、携程和微信公众号等多平台抓取评分最高的旅游攻略，按优先级和时间权重整合输出详尽综合攻略文档。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whhh1994",
+      "userId": "s17ezpw1yngek3v1p8tw828bex84rra9",
+      "displayName": "whhh1994",
+      "image": "https://avatars.githubusercontent.com/u/74339286?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1777000730012,
+      "changelog": "v1.5.0: Phase4六步法详细版 + Phase5清理提醒(需用户批准+trash优先) + 三文件分离精简token(降~65%) + 11项关键约束全部保留",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57f32819ac5199f6337caafcc67ea6e5d73567058642c1157b905e769e8c3d6d"
+}

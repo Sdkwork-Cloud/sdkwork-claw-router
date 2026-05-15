@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-sorftime-research-market-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_sorftime_research_market_skill",
+  "skill": {
+    "id": 61037,
+    "skillKey": "clawhub-amazon-sorftime-research-market-skill",
+    "name": "amazon-sorftime-research-market-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-sorftime-research-market-skill",
+    "url": "https://clawhub.ai/skills/amazon-sorftime-research-market-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-sorftime-research-market-skill-e20ec282d4317cab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于Sorftime MCP的深度选品调研。通过LLM Agent执行多维度分析：数据采集→属性标注→交叉分析→竞品VOC→壁垒评估→选品决策评估。交互式执行，输出Markdown报告和Dashboard看板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangdabiao",
+      "userId": "s1751q8y7zg7g4cphjx57122f183hzq4",
+      "displayName": "liangdabiao",
+      "image": "https://avatars.githubusercontent.com/u/1232260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774337710626,
+      "changelog": "- Initial release of the amazon-sorftime-research-market-skill (Version 1.0.0)\n- Enables interactive, in-depth product research based on Sorftime MCP with an LLM agent for multi-stage analysis.\n- Splits research workflow into two phases: automated data collection (via scripts) and LLM-driven stepwise analysis (property annotation, cross analysis, VOC, barriers, final evaluation).\n- Outputs both structured Markdown reports and a web dashboard; scripts handle only data gathering and rendering.\n- Includes dashboard completeness checks and clear API usage documentation for robust, repeatable workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3d23134aebdff762c38a1371384f319c99968302d7fb849d502b713a57d99857"
+}

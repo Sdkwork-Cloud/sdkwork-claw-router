@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolrouter-gateway@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolrouter_gateway",
+  "skill": {
+    "id": 39444,
+    "skillKey": "clawhub-toolrouter-gateway",
+    "name": "ToolRouter Gateway"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolrouter-gateway",
+    "url": "https://clawhub.ai/skills/toolrouter-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolrouter-gateway-c63fab8218be5476.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified access to 150+ tools via ToolRouter API. Dynamically exposes research, security scanning, video production, web extraction, and more as native OpenCl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neroagent",
+      "userId": "s172sfbczvqgag0zvay27m9k1d840549",
+      "displayName": "NeroAgent",
+      "image": "https://avatars.githubusercontent.com/u/217334413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775065809940,
+      "changelog": "Initial release — unified access to 150+ tools with caching and usage tracking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:291c9ffae2f3e50e1736308449f8d3cc0001783c933e07d58f3da738434346c9"
+}

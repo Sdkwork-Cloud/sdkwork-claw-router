@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10263,
+  "uuid": "skill-clawhub-unraid",
+  "skillKey": "clawhub-unraid",
+  "name": "Unraid",
+  "summary": "Query and monitor Unraid servers via the GraphQL API. Use when the user asks to 'check Unraid', 'monitor Unraid', 'Unraid API', 'get Unraid status', 'check disk temperatures', 'read Unraid logs', 'list Unraid shares', 'Unraid array status'.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unraid",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jmagar",
+      "features": [
+        "Query and monitor Unraid servers via the GraphQL API",
+        "Use when the user asks to 'check Unraid', 'monitor Unraid', 'Unraid API', 'get Unraid status',."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/unraid@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38927646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "unraid",
+      "url": "https://clawhub.ai/skills/unraid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unraid",
+    "url": "https://clawhub.ai/skills/unraid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unraid-d02c355d9e87764f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/unraid@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-unraid-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a538391563664f10c9300ad0cf0c767ecacf690d70f8317e6ffa0e7118759cb3",
+      "artifactSizeBytes": 2003
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-23T21:19:41.002Z"
+}

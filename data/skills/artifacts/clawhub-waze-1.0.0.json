@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/waze@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waze",
+  "skill": {
+    "id": 56702,
+    "skillKey": "clawhub-waze",
+    "name": "Waze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waze",
+    "url": "https://clawhub.ai/skills/waze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waze-83d512876997e675.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gera links de navegação do Waze para qualquer destino: endereços, nomes de estabelecimentos, locais de compromissos na agenda. Use sempre que o usuário menci..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dicasdomaroto-maker",
+      "userId": "publishers:dicasdomaroto-maker",
+      "displayName": "dicasdomaroto-maker",
+      "image": "https://avatars.githubusercontent.com/u/232255358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772855257221,
+      "changelog": "Initial release — generates Waze navigation links for any destination, integrates with briefings, and handles vague location requests.\n\n- Generates Waze deep links that open routes for specific addresses, establishments, or agenda events.\n- Finds user city for accurate local establishment search; never assumes location.\n- Resolves vague destinations (like \"posto mais próximo\") to the nearest match in the user's city before generating the link.\n- Automatically embeds Waze links in morning briefings when events have a location.\n- Presents links in clean, clickable markdown format for best experience on messaging platforms.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4de28959115037bb53f318ece57a931f848186eb4c5d1c8f5e1c66f9fde47ed"
+}

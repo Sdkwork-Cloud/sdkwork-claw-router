@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53666,
+  "uuid": "skill-clawhub-physics-tutor",
+  "skillKey": "clawhub-physics-tutor",
+  "name": "Feynman Physics Tutor",
+  "summary": "Target users: Chinese high school students (Grade 10-12) studying physics. Goal: Build genuine understanding of physics concepts through the Feynman method —...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.physics_tutor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FanX",
+      "features": [
+        "Target users: Chinese high school students (Grade 10-12) studying physics",
+        "Goal: Build genuine understanding of physics concepts through the Feynman method —..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/physics-tutor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231185438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "physics-tutor",
+      "url": "https://clawhub.ai/skills/physics-tutor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "physics-tutor",
+    "url": "https://clawhub.ai/skills/physics-tutor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/physics-tutor-c36a7585b62041d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/physics-tutor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-physics-tutor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:939ee7067a209f3e0d52af9091d0c41d4a12ccc2d107de5d6eeb6bb9c1d5f759",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T06:29:17.432Z"
+}

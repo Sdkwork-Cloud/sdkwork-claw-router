@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lawclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lawclaw",
+  "skill": {
+    "id": 15582,
+    "skillKey": "clawhub-lawclaw",
+    "name": "Drop a contract, get answers. lawclaw rips through PDFs, spots risky clauses, diffs redlines, checks citations, and searches th."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lawclaw",
+    "url": "https://clawhub.ai/skills/lawclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lawclaw-965d14925b1f23ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Drop a contract, get answers. lawclaw rips through PDFs, spots risky clauses, diffs redlines, checks citations, and searches thousands of discovery docs—loca..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jagadeeshmurali-coder",
+      "userId": "publishers:jagadeeshmurali-coder",
+      "displayName": "Jagadeeshvar Muralidharan",
+      "image": "https://avatars.githubusercontent.com/u/68677202?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1239,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771437915378,
+      "changelog": "Initial release of lawclaw: fast, local contract and legal document analysis for attorneys and paralegals.\n\n- Extracts text, spots risky/legal clauses, checks citations, and searches large document sets—runs fully on your machine (no uploads).\n- Compares contracts with redline and diff tools.\n- Supports e-discovery, privilege log creation, due diligence reviews, and transcript analysis.\n- Includes practical CLI workflows for contract review, clause extraction, citation checks, and more.\n- Preserves confidentiality; requires common CLI tools (pdftotext, diff, grep, pandoc).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2041e4448af5fe47114962f458b28472860fe6193ff1d93c93119642a2d8bf2f"
+}

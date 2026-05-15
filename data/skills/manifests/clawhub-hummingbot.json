@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20426,
+  "uuid": "skill-clawhub-hummingbot",
+  "skillKey": "clawhub-hummingbot",
+  "name": "Hummingbot",
+  "summary": "Agent skill that faithfully reproduces Hummingbot CLI commands (connect, balance, create, start, stop, status, history) via Hummingbot API. V1 focuses on cor...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hummingbot",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Feng",
+      "features": [
+        "Agent skill that faithfully reproduces Hummingbot CLI commands (connect, balance, create, start.",
+        "V1 focuses on cor..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hummingbot@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1795030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hummingbot",
+      "url": "https://clawhub.ai/skills/hummingbot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hummingbot",
+    "url": "https://clawhub.ai/skills/hummingbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hummingbot-5f93bf90dc63da3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hummingbot@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hummingbot-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80d3410b5bcad4ffb79ad0827cf288b01d8483eefa8c132c5b83667d6a338d52",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T21:49:37.028Z"
+}

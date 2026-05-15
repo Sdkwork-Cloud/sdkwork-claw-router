@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72984,
+  "uuid": "skill-clawhub-community-group-buy",
+  "skillKey": "clawhub-community-group-buy",
+  "name": "社区团购",
+  "summary": "提供多多买菜/美团优选次日提货及优惠抢购指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.community_group_buy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供多多买菜/美团优选次日提货及优惠抢购指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/community-group-buy@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "community-group-buy",
+      "url": "https://clawhub.ai/skills/community-group-buy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "community-group-buy",
+    "url": "https://clawhub.ai/skills/community-group-buy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/community-group-buy-25c6b6df6e6100cd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/community-group-buy@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-community-group-buy-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d893facdae948702acacae0c2886e7b44c44e068a06e2c96831151300eb26cb4",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:36:04.849Z"
+}

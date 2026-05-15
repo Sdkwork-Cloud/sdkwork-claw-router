@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19529,
+  "uuid": "skill-clawhub-percept-listen",
+  "skillKey": "clawhub-percept-listen",
+  "name": "Percept Listen",
+  "summary": "Captures ambient audio from wearable devices, transcribes locally, and streams searchable, speaker-tagged conversation data to your OpenClaw agent.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.percept_listen",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jarvis563",
+      "features": [
+        "Captures ambient audio from wearable devices, transcribes locally, and streams searchable, spea."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/percept-listen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258515214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "percept-listen",
+      "url": "https://clawhub.ai/skills/percept-listen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "percept-listen",
+    "url": "https://clawhub.ai/skills/percept-listen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/percept-listen-a7e531430e8c5962.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/percept-listen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-percept-listen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9392307f842a9e0aa8825ab171db23156845e83baf65795e0d8479d81bf1d73c",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T18:23:20.868Z"
+}

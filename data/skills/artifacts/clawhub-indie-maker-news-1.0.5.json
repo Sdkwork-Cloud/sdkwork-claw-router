@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/indie-maker-news@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indie_maker_news",
+  "skill": {
+    "id": 69630,
+    "skillKey": "clawhub-indie-maker-news",
+    "name": "Indie Maker News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indie-maker-news",
+    "url": "https://clawhub.ai/skills/indie-maker-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indie-maker-news-d731a5d05f9bd0a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "独行者 Daily - 变现雷达。读对一条新闻，少走一年弯路。每天5分钟，给创业者装上商业雷达。聚焦一人公司、副业、创业变现资讯，智能分类，行动导向。用户下载即能用，无需本地部署！"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kylnwu",
+      "userId": "s1702znpjvc7ezfa9fcs8tjg4183sdf8",
+      "displayName": "kylnwu",
+      "image": "https://avatars.githubusercontent.com/u/74576340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1777341196139,
+      "changelog": "更新文档：补充10个数据源说明，说明B站/抖音等后续规划",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e3d7baba0ad6ea35d1d5dc71d17fb80ad85c8162f93696abe73bb582f6c55464"
+}

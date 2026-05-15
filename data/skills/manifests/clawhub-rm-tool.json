@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48730,
+  "uuid": "skill-clawhub-rm-tool",
+  "skillKey": "clawhub-rm-tool",
+  "name": "Rm Tool",
+  "summary": "Remove files and directories permanently. Use for file deletion, cleanup, and disk space management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rm_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Remove files and directories permanently",
+        "Use for file deletion, cleanup, and disk space management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rm-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rm-tool",
+      "url": "https://clawhub.ai/skills/rm-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rm-tool",
+    "url": "https://clawhub.ai/skills/rm-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rm-tool-6eeb5e78db9b9f70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rm-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rm-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:170c140e0fb9f3c3feee81fda0d317773d02f30399217ffa02ca63e1e346a004",
+      "artifactSizeBytes": 1771
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T21:30:05.056Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70339,
+  "uuid": "skill-clawhub-threads-skill",
+  "skillKey": "clawhub-threads-skill",
+  "name": "threads-skill",
+  "summary": "Threads 平台全自動化操作套件。觸發詞：登錄、登出、檢查登錄、是否已登錄、切換帳號、清除Cookie、多帳號管理、搜索、查找、瀏覽首頁、刷一下、抓帖子、獲取帖子、看帖子詳情、查看用戶、用戶主頁、歷史回復、發帖、發布、寫帖子、po文、發Thread、帶圖發帖、點讚、轉發、回覆、評論、關注、批量回覆、批量評論、...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.threads_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gaojiongwenv587-beep",
+      "features": [
+        "Threads 平台全自動化操作套件。觸發詞：登錄、登出、檢查登錄、是否已登錄、切換帳號、清除Cookie、多帳號管理、搜索、查找、瀏覽首頁、刷一下、抓帖子、獲取帖子、看帖子詳情、查看用戶、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/threads-skill@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/239295002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "threads-skill",
+      "url": "https://clawhub.ai/skills/threads-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "threads-skill",
+    "url": "https://clawhub.ai/skills/threads-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/threads-skill-7fe5395e54578732.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/threads-skill@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-threads-skill-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:296936b5fef7088572135882a14da9c99aef32fac4c49325240ef331649a9eb6",
+      "artifactSizeBytes": 2584
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T06:23:33.525Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-recovery-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_recovery_manager",
+  "skill": {
+    "id": 51440,
+    "skillKey": "clawhub-openclaw-recovery-manager",
+    "name": "OpenClaw Configuration Management & Emergency Recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-recovery-manager",
+    "url": "https://clawhub.ai/skills/openclaw-recovery-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-recovery-manager-d49731114b943740.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw Configuration Management & Emergency Recovery — configuration, skills, and projects snapshot &recovery for OpenClaw. Use this skill whenever the use..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "encryptshawn",
+      "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+      "displayName": "EncryptShawn",
+      "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776973524054,
+      "changelog": "### v1.0.1 — Restart command auto-detection introduced\n\n- Added `scripts/detect-restart-command.mjs` for automatic detection of the appropriate OpenClaw gateway restart command.\n- Updated setup instructions and documentation to emphasize detection (not asking) of the restart method, improving reliability across environments.\n- Ensures safer recovery by probing for systemd, Docker, and container PID 1 before prompting the user.\n- No changes to existing snapshot, restore, or watchdog operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f078c01a6bd477119791d5904d2acfd4965282f30da90560bc5656410b0958b8"
+}

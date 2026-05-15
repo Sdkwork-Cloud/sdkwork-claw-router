@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nano-banana-pro-pptx@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_banana_pro_pptx",
+  "skill": {
+    "id": 29061,
+    "skillKey": "clawhub-nano-banana-pro-pptx",
+    "name": "nano banana pro pptx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-banana-pro-pptx",
+    "url": "https://clawhub.ai/skills/nano-banana-pro-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-banana-pro-pptx-69716f11149cb313.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate PowerPoint presentations with AI images using Gemini. Each slide is a full-bleed image. Use for creating visual presentations, slideshows, or image-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jinpeng",
+      "userId": "s170wg0ggktrb92h9v7f87zdyd83hzng",
+      "displayName": "Jinpeng",
+      "image": "https://avatars.githubusercontent.com/u/347816?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774002473315,
+      "changelog": "- Updated documentation to clarify how the script selects the API key and base URL, specifying the order of precedence and error behavior if not provided.\n- No changes to code—documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0b014dc1389f187f94aaa129056536d5ac9ac61dde46b97cd5440c2c0763b6ff"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lovart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lovart",
+  "skill": {
+    "id": 63196,
+    "skillKey": "clawhub-lovart",
+    "name": "lovart skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lovart",
+    "url": "https://clawhub.ai/skills/lovart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lovart-f7f87acc7dfc3615.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "与 Lovart.ai API 集成，生成 AI 设计、图片和视频。支持图像生成、图像编辑、视频创建和模板工作流。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mendynew",
+      "userId": "s1729cb94jpz9e70mhw7njbyks83kdfk",
+      "displayName": "mendynew",
+      "image": "https://avatars.githubusercontent.com/u/4647009?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774438832380,
+      "changelog": "lovart 1.0.0 首次发布，集成 Lovart.ai API，实现强大 AI 设计生成能力。\n\n- 支持 AI 图像生成、图像编辑、视频创作与模板工作流\n- 多模型支持，包括 Flux 和 Stable Diffusion\n- 提供详细 API 文档与调用示例，方便开发集成\n- 覆盖商业使用、定价与安全合规说明\n- 包含实用提示词建议和错误处理最佳实践",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b78811f718bdd052b693ec9cf086f406847740e63d7fcf84b7c52a52c08ad117"
+}

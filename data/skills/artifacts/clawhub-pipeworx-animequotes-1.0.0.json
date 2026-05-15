@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pipeworx-animequotes@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_animequotes",
+  "skill": {
+    "id": 55991,
+    "skillKey": "clawhub-pipeworx-animequotes",
+    "name": "Pipeworx animequotes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-animequotes",
+    "url": "https://clawhub.ai/skills/pipeworx-animequotes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-animequotes-9ab06fe6a31db74a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AnimeQuotes MCP — wraps animechan.io (free, no auth)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucegutman",
+      "userId": "s17cvgtez7j4kg9j5x0713jyyx84as33",
+      "displayName": "Bruce Gutman",
+      "image": "https://avatars.githubusercontent.com/u/138315805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775494926566,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:046f00f817224939cb2134184ead393478d037cdf1c90987105906b7d47e27a7"
+}

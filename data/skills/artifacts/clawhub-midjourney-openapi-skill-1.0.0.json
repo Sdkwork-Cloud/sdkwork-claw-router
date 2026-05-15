@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/midjourney-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.midjourney_openapi_skill",
+  "skill": {
+    "id": 56123,
+    "skillKey": "clawhub-midjourney-openapi-skill",
+    "name": "Midjourney Image Generator – Use Midjourney v7 to Create AI-Generated Images – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "midjourney-openapi-skill",
+    "url": "https://clawhub.ai/skills/midjourney-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/midjourney-openapi-skill-d920294050ab7d20.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Midjourney image generator — create high-quality images using Midjourney v6.1, v7, or Niji 6"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776691601618,
+      "changelog": "- Initial release of the Midjourney image generator skill.\n- Generate high-quality images using Midjourney v6.1, v7, or Niji 6 models.\n- Supports reference images, model selection, and aspect ratio customization.\n- Requires a WeShop API key for authentication; checks the WESHOP_API_KEY environment variable before prompting the user.\n- Includes secure API key handling guidelines—API key should only be used with openapi.weshop.ai endpoints.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b682eb6593e7e15da70ababa74a7054cb1aaeca9ce8232df3a78c1b90c353115"
+}

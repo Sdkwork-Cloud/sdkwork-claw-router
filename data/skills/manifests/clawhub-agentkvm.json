@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27017,
+  "uuid": "skill-clawhub-agentkvm",
+  "skillKey": "clawhub-agentkvm",
+  "name": "AgentKVM",
+  "summary": "Control physical devices (phones, PCs, Macs) through NanoKVM-USB hardware. Use this skill whenever the user asks you to interact with a physical screen, take...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentkvm",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "iamtwz",
+      "features": [
+        "Control physical devices (phones, PCs, Macs) through NanoKVM-USB hardware",
+        "Use this skill whenever the user asks you to interact with a physical screen, take..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentkvm@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12372712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentkvm",
+      "url": "https://clawhub.ai/skills/agentkvm"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentkvm",
+    "url": "https://clawhub.ai/skills/agentkvm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentkvm-333881078011827d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentkvm@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentkvm-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21500959757c376f56912b24137f3efd755f0de87f270151c92243d9ff6ed657",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T17:20:40.162Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-collab-protocol@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_collab_protocol",
+  "skill": {
+    "id": 65570,
+    "skillKey": "clawhub-human-collab-protocol",
+    "name": "Human-Agent Collaboration Protocol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-collab-protocol",
+    "url": "https://clawhub.ai/skills/human-collab-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-collab-protocol-2d99f706aa10c619.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "人机协作协议执行器。以用户为主体，主动发起与一人或多人的沟通时触发。 触发词示例：我要组织个会、我约了XXX、我要和XXX沟通、我要去见XXX、我明天要见XXX。 会后触发：刚开完XXX的会、发来妙记链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nonvnet-ux",
+      "userId": "s172gq5g75h3vwjgmkvk7r68dn84nrf6",
+      "displayName": "nonvnet-ux",
+      "image": "https://avatars.githubusercontent.com/u/266907881?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776330283865,
+      "changelog": "v1.1: Context Card定位修正——是发给所有参与者的共享文档，用于信息对称，不是内部文档。输出两部分：Context Card（发给参与者）+ 协作Prompt（用户自用）。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9e935b401a2bc798ad45cabf49262e2eec7f3c6639f2a6f4e8cb183a60d1e06"
+}

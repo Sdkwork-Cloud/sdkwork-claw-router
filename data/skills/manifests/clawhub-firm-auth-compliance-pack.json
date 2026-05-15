@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24792,
+  "uuid": "skill-clawhub-firm-auth-compliance-pack",
+  "skillKey": "clawhub-firm-auth-compliance-pack",
+  "name": "Firm Auth Compliance Pack",
+  "summary": "Authentication and compliance audit pack. OAuth 2.1/OIDC Discovery, token scope enforcement, tool deprecation lifecycle, circuit breaker, GDPR residency, DID...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_auth_compliance_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romainsantoli-web",
+      "features": [
+        "Authentication and compliance audit pack",
+        "OAuth 2.1/OIDC Discovery, token scope enforcement, tool deprecation lifecycle, circuit breaker,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firm-auth-compliance-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246739959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firm-auth-compliance-pack",
+      "url": "https://clawhub.ai/skills/firm-auth-compliance-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-auth-compliance-pack",
+    "url": "https://clawhub.ai/skills/firm-auth-compliance-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-auth-compliance-pack-1f3a60a65f8736fc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firm-auth-compliance-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firm-auth-compliance-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d3468eb9a2182c9163c23ff016b10462becaf0c1f3b905bfb7722099e025fe6",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T00:17:28.551Z"
+}

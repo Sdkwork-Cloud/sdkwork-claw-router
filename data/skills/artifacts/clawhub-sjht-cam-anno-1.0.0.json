@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sjht-cam-anno@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sjht_cam_anno",
+  "skill": {
+    "id": 65771,
+    "skillKey": "clawhub-sjht-cam-anno",
+    "name": "sjht-cam-anno"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sjht-cam-anno",
+    "url": "https://clawhub.ai/skills/sjht-cam-anno",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sjht-cam-anno-4e618913beb002c3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安防摄像头视频 VL 模型微调数据集标注工具。用于从安防摄像头视频中提取关键帧、分析视频内容、生成结构化标注（含环境/人物/行为/风险描述），并输出符合 dataset.jsonl 格式的微调训练数据。Use when 用户需要对安防摄像头视频进行数据标注、生成 VL 模型训练数据集、处理 /root/hair-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aowind",
+      "userId": "s17e2hs6k66nxhxkrdn7bf8p5183h1rw",
+      "displayName": "Aowind",
+      "image": "https://avatars.githubusercontent.com/u/26450413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 264,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773814381176,
+      "changelog": "# Changelog — hair-cam-anno\n\n所有格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，\n版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。\n\n---\n\n## [0.1.0] — 2026-03-18\n\n### 新增\n- 初始版本发布\n- **视频帧提取脚本** `scripts/extract_frames.py`\n  - 基于 ffmpeg，支持 mp4/avi/mkv/mov/flv/wmv/webm 格式\n  - 可配置提取帧率（默认 0.5 fps）和每视频最大帧数（默认 4 帧）\n  - 自动生成 `manifest.json`（含视频元信息：分辨率、时长、帧数、编码格式）\n- **dataset.jsonl 构建脚本** `scripts/build_jsonl.py`\n  - 读取 `annotations.json`，生成符合 VL 模型微调规范的 `dataset.jsonl`\n  - 内置自动验证：字段完整性、标签合法性、风险等级合法性、simple_description 长度（≤20字）、description 长度（≥50字）\n- **System Prompt 模板** `references/system-prompt.md`\n  - 定义 VL 模型角色、6 步分析流程、JSON 输出格式约束\n  - 包含 15 个预定义场景标签（system_suggest_0 ~ system_suggest_14）\n  - 风险等级：none / low / medium / high\n- **标签与风险等级参考** `references/labels-reference.md`\n  - 15 个标签定义与含义说明\n  - 4 级风险等级定义及典型场景\n  - 数据集类别要求（物体/行为动作/环境）数量标准\n- **SKILL.md** 技能主文件\n  - 三步工作流程：帧提取 → 逐视频分析标注 → 汇总生成 dataset.jsonl\n  - 标签选择规则指导",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:217778a2167475c79c5cf8e79ab286003f1e7f348ed4a1dfba039fee452a83a3"
+}

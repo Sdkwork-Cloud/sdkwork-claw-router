@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-mention@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_mention",
+  "skill": {
+    "id": 58147,
+    "skillKey": "clawhub-feishu-mention",
+    "name": "feishu-mention"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-mention",
+    "url": "https://clawhub.ai/skills/feishu-mention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-mention-5606db98a5e4ae18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "**PRIORITY: HIGHEST**. **CRITICAL**: You **MUST** use this tool **BEFORE sending any message** to Feishu/Lark if it contains an \"@\" mention. **Trigger**: You..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "helong0911-alt",
+      "userId": "publishers:helong0911-alt",
+      "displayName": "helong0911-alt",
+      "image": "https://avatars.githubusercontent.com/u/229453956?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 396,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1773388971540,
+      "changelog": "- Initial publication of repository, including all source files and Git metadata\n- Updated SKILL.md to add `write` permission for the workspace cache path (`~/.openclaw/workspace/cache/feishu_mentions/**/*`)\n- No changes to user-facing features or APIs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c987504cb1f9e164de07db792d22ef17d6c43a3c5b3716c3e58078392ca9baa"
+}

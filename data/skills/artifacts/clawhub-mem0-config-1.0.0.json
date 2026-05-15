@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mem0-config@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mem0_config",
+  "skill": {
+    "id": 20695,
+    "skillKey": "clawhub-mem0-config",
+    "name": "Mem0 Config"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mem0-config",
+    "url": "https://clawhub.ai/skills/mem0-config",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mem0-config-f89ff9e90f8bc73b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install, configure, diagnose, and operate the openclaw-mem0 long-term memory plugin for OpenClaw agents. Use when the user wants to set up mem0 memory (platf..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nyrosveil",
+      "userId": "s173b6e7n9d6bbwmcff3awg7z583hhs3",
+      "displayName": "Cuong Pahm",
+      "image": "https://avatars.githubusercontent.com/u/167317755?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 532,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772257885289,
+      "changelog": "Initial release. Full install guide (platform + OSS mode), Qdrant/Ollama setup, historyDbPath fix for macOS LaunchAgent SQLITE_CANTOPEN crash loop, CLI usage, agent tools, and troubleshooting reference.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:83331584afeaa8ec439c91f2c810b4275403dbe0e05812ce585f492d86afedf8"
+}

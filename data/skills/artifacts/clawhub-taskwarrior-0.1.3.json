@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taskwarrior@0.1.3",
+  "version": "0.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taskwarrior",
+  "skill": {
+    "id": 15606,
+    "skillKey": "clawhub-taskwarrior",
+    "name": "taskwarrior"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taskwarrior",
+    "url": "https://clawhub.ai/skills/taskwarrior",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taskwarrior-b42519909d080b2f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Workspace-local task management powered by Taskwarrior. Add, organize, and track tasks by project, tags, due dates, and priority with all data stored inside..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aghareza",
+      "userId": "publishers:aghareza",
+      "displayName": "Ali Aghareza",
+      "image": "https://avatars.githubusercontent.com/u/27026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 882,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.3",
+      "createdAt": 1771471836240,
+      "changelog": "- Added skill metadata specifying required binaries and supported installation methods (apt, brew).\n- No functional changes to core behavior or workflow.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f957a5b50539704b59c19f57ffa9b0eb98ae8a40827ed238031e59afdfb9027"
+}

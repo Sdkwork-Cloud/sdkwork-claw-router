@@ -176,7 +176,7 @@ test("admin user service reads created API key data returned by the generated ba
     async (captured) => {
       const result = await UserService.createApiKey({ userId: 42, name: "Production Key" });
 
-      assert.equal(captured[0].url, "/backend/v3/api/apikey");
+      assert.equal(captured[0].url, "/backend/v3/api/iam/api_keys");
       assert.equal(captured[0].method, "POST");
       assert.equal(result.key.id, "admin-key-1");
       assert.equal(result.rawKey, "sk-admin-secret");

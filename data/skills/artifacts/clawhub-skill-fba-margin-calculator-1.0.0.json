@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-fba-margin-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_fba_margin_calculator",
+  "skill": {
+    "id": 50710,
+    "skillKey": "clawhub-skill-fba-margin-calculator",
+    "name": "Amazon FBA Margin Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-fba-margin-calculator",
+    "url": "https://clawhub.ai/skills/skill-fba-margin-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-fba-margin-calculator-343ece0391227d5f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculates Amazon UAE FBA fees, net margin, and DG risk for CJ Dropshipping products, ranking by margin % and generating detailed markdown and JSON reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zero2ai-hub",
+      "userId": "s17a1b8dv4hc6x68q9m057m67n83ryrt",
+      "displayName": "Zero2Ai",
+      "image": "https://avatars.githubusercontent.com/u/244362887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 386,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773098160875,
+      "changelog": "Initial release. FBA fee estimator + margin ranker for CJ Dropshipping → Amazon UAE.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9dbc26ffd99e1b6b30538083018a3f24f577e288f214bfd234e74e8dcb8dc774"
+}

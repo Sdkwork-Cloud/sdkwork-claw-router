@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-contact-finder@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_contact_finder",
+  "skill": {
+    "id": 22217,
+    "skillKey": "clawhub-openclaw-skill-contact-finder",
+    "name": "Contact Finder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-contact-finder",
+    "url": "https://clawhub.ai/skills/openclaw-skill-contact-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-contact-finder-659ebceab37fd211.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find professional emails and contacts from a name + company/domain using SerpAPI + OpenAI GPT-4o-mini."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrnsmh",
+      "userId": "publishers:mrnsmh",
+      "displayName": "Marouane",
+      "image": "https://avatars.githubusercontent.com/u/25495967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772156486077,
+      "changelog": "- Initial release of contact-finder skill.\n- Find professional emails and contacts from a name and company/domain using SerpAPI and OpenAI GPT-4o-mini.\n- Supports company, domain, name (optional), and output format options.\n- Returns contacts with email, LinkedIn, job title, and confidence level.\n- Includes setup instructions and environment variable configuration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b21e566316c99e9b6d413d162eb1052ef83c2c17de433d15ef5aae2dd696c4ea"
+}

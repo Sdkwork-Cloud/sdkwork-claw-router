@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69637,
+  "uuid": "skill-clawhub-project-guide",
+  "skillKey": "clawhub-project-guide",
+  "name": "project-guide",
+  "summary": "引导用户填写项目开发指导模板。激活条件：用户想要开发新项目、表达项目需求、创建应用。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_guide",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "T_Fly",
+      "features": [
+        "引导用户填写项目开发指导模板。激活条件：用户想要开发新项目、表达项目需求、创建应用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-guide@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86654140?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-guide",
+      "url": "https://clawhub.ai/skills/project-guide"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-guide",
+    "url": "https://clawhub.ai/skills/project-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-guide-607f35c887f10461.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-guide@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-guide-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd03612856b642d80d1948e53ded714a08834f9c7bdebecd93f563801dc78f17",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T18:17:00.175Z"
+}

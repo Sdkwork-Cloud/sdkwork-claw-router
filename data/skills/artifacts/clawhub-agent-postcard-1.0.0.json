@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-postcard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_postcard",
+  "skill": {
+    "id": 20106,
+    "skillKey": "clawhub-agent-postcard",
+    "name": "Agent Postcard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-postcard",
+    "url": "https://clawhub.ai/skills/agent-postcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-postcard-b1da65871e508e98.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and send AI-created postcards featuring your agent's selfie at real locations in 12 distinct artistic styles via the Turai Postcard API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jpaulgrayson",
+      "userId": "publishers:jpaulgrayson",
+      "displayName": "JPaulGrayson",
+      "image": "https://avatars.githubusercontent.com/u/212611253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 561,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772143154145,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:19c3827eb283de37b046a86b497f7d6850b2a8bc919d2c15a000f1d86a21f756"
+}

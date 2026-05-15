@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59642,
+  "uuid": "skill-clawhub-ssh-agentd-control",
+  "skillKey": "clawhub-ssh-agentd-control",
+  "name": "ssh-agentd-control",
+  "summary": "管理并使用本地 ssh-agentd（systemd 常驻 + API 调用 + 连通性验证）。当用户提到 ssh-agentd、持久 SSH 会话、/run /upload /tail_logs、开机自启、会话状态/指标排查时使用。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssh_agentd_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "offlinecat",
+      "features": [
+        "管理并使用本地 ssh-agentd（systemd 常驻 + API 调用 + 连通性验证）。当用户提到 ssh-agentd、持久 SSH 会话、/run /upload /tail_l."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssh-agentd-control@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84357019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssh-agentd-control",
+      "url": "https://clawhub.ai/skills/ssh-agentd-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssh-agentd-control",
+    "url": "https://clawhub.ai/skills/ssh-agentd-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssh-agentd-control-076c40e9d9bc0033.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssh-agentd-control@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssh-agentd-control-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b764c54dd8af908e9c8dc8b658a226d9046261a9a90b256f18f6568413a1ffd1",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T15:15:43.801Z"
+}

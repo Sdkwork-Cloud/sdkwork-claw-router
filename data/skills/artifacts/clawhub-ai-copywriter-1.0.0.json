@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-copywriter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_copywriter",
+  "skill": {
+    "id": 62086,
+    "skillKey": "clawhub-ai-copywriter",
+    "name": "Ai Copywriter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-copywriter",
+    "url": "https://clawhub.ai/skills/ai-copywriter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-copywriter-8aaa12d30b5d4601.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 文案改写、润色、生成（小红书风格）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huangfeng1995",
+      "userId": "s176ebdy7m6zcheacary38c7dh83hhtj",
+      "displayName": "huangfeng1995",
+      "image": "https://avatars.githubusercontent.com/u/113488508?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774231948897,
+      "changelog": "AI 文案助手 1.0.0 发布，专为小红书风格文案改写和生成设计：\n\n- 支持将原始素材一键改写为小红书风格文案\n- 自动生成吸引人的标题与正文，优化内容结构\n- 智能推荐热门话题标签\n- 所有输出均遵循“温暖专业+专业科普”人设要求\n- 兼容配套工具：配图和完整内容生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ed2e1fdcde6087cad3669a2285cb4c76a06a05b19cb1319ba5d925fcb52aac0"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9702,
+  "uuid": "skill-clawhub-sulada-knowledge-base",
+  "skillKey": "clawhub-sulada-knowledge-base",
+  "name": "knowledge-base",
+  "summary": "Manage a personal knowledge base by adding, searching, organizing, and reviewing articles, links, and notes with tags and natural language queries.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sulada_knowledge_base",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HankSU7889",
+      "features": [
+        "Manage a personal knowledge base by adding, searching, organizing, and reviewing articles, link."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sulada-knowledge-base@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32285831?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sulada-knowledge-base",
+      "url": "https://clawhub.ai/skills/sulada-knowledge-base"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sulada-knowledge-base",
+    "url": "https://clawhub.ai/skills/sulada-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sulada-knowledge-base-d08341e94af1350d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sulada-knowledge-base@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sulada-knowledge-base-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b48aad988f9f5af47243d2ce65d71a5960e2d241d2335984d5cc7b3dd4597a1d",
+      "artifactSizeBytes": 2230
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:19:44.020Z"
+}

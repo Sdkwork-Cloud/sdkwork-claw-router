@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68359,
+  "uuid": "skill-clawhub-social-push-semi",
+  "skillKey": "clawhub-social-push-semi",
+  "name": "Social Push Semi",
+  "summary": "小红书半自动发布脚手架：自动生成文案、自动抽封面图、产出发布包；最后由人工确认发布。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_push_semi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yugulugulu",
+      "features": [
+        "小红书半自动发布脚手架：自动生成文案、自动抽封面图、产出发布包；最后由人工确认发布。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/social-push-semi@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/141218505?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "social-push-semi",
+      "url": "https://clawhub.ai/skills/social-push-semi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-push-semi",
+    "url": "https://clawhub.ai/skills/social-push-semi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-push-semi-80c5ee83e7a7c643.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/social-push-semi@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-social-push-semi-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c8bebc4952e773f34874093939cdc9707b6a16037adb998463a4e4346d4912a",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:39:47.196Z"
+}

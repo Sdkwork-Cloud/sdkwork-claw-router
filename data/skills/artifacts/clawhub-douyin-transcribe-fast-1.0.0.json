@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-transcribe-fast@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_transcribe_fast",
+  "skill": {
+    "id": 70896,
+    "skillKey": "clawhub-douyin-transcribe-fast",
+    "name": "抖音视频快速转文字"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-transcribe-fast",
+    "url": "https://clawhub.ai/skills/douyin-transcribe-fast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-transcribe-fast-235e1c62bc6c79aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音视频快速转文字（优化版）。用户发抖音链接，自动提取文案。 特点：本地 Whisper 转录，无需 API Key，零成本，高隐私。 触发词：抖音、转文字、提取文案、视频转录"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "btboy773",
+      "userId": "s17apw867g9rw8kh97d9s1w6s583khgd",
+      "displayName": "btboy773",
+      "image": "https://avatars.githubusercontent.com/u/165569661?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774429546103,
+      "changelog": "- 首发版本，实现抖音视频本地极速转文字。\n- 支持用户发送抖音链接或视频文件，自动提取音频并本地 Whisper 转录，无需 API Key。\n- 依赖 Python、ffmpeg 和 openai-whisper（本地安装，无外部请求，保护隐私）。\n- 多模型选择（tiny/base/small）兼顾转录速度与质量，灵活适配短/中/长视频场景。\n- 零成本，离线可用，完整支持隐私敏感和网络受限环境。\n- 提供详细安装教程、使用流程与常见问题排查。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3aee9aebcdd376e386efb9a1f89ee5b7cdade8680dfcf481e7d40464cfe9fabf"
+}

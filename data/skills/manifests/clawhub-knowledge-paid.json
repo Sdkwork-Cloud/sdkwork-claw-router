@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64501,
+  "uuid": "skill-clawhub-knowledge-paid",
+  "skillKey": "clawhub-knowledge-paid",
+  "name": "Knowledge Paid",
+  "summary": "提供得到/知乎盐选等付费专栏、精品讲座获取指南。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_paid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "提供得到/知乎盐选等付费专栏、精品讲座获取指南。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/knowledge-paid@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "knowledge-paid",
+      "url": "https://clawhub.ai/skills/knowledge-paid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-paid",
+    "url": "https://clawhub.ai/skills/knowledge-paid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-paid-061554a642a2262b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/knowledge-paid@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-knowledge-paid-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f24fa4ef3db500f096387b5e5dd80460ca658fe5729a0cb9d2de8c678c3a234e",
+      "artifactSizeBytes": 2202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:48:41.250Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63270,
+  "uuid": "skill-clawhub-qqbot-multi-account",
+  "skillKey": "clawhub-qqbot-multi-account",
+  "name": "QQBot Multi-Account",
+  "summary": "QQBot 多账号运维排障技能。用于 OpenClaw 多 Bot、多 Agent 场景下的账号绑定检查、重复会话诊断、主动发送与本地插件打包导出。触发词：QQBot多账号、双机器人、双Agent、账号绑定、重复会话、appId隔离。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qqbot_multi_account",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Naluko",
+      "features": [
+        "QQBot 多账号运维排障技能。用于 OpenClaw 多 Bot、多 Agent 场景下的账号绑定检查、重复会话诊断、主动发送与本地插件打包导出。触发词：QQBot多账号、双机器人、双Ag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qqbot-multi-account@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81939781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qqbot-multi-account",
+      "url": "https://clawhub.ai/skills/qqbot-multi-account"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qqbot-multi-account",
+    "url": "https://clawhub.ai/skills/qqbot-multi-account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qqbot-multi-account-699728695a60aa05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qqbot-multi-account@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-qqbot-multi-account-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a97235bb518339bf437c79cd955d708c38bff3f6f5bc25b8efd0ed75516489d",
+      "artifactSizeBytes": 2063
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T14:06:23.118Z"
+}

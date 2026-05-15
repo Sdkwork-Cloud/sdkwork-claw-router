@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28266,
+  "uuid": "skill-clawhub-score",
+  "skillKey": "clawhub-score",
+  "name": "Score",
+  "summary": "Track game scores, brackets, and player statistics. Use when recording results, scoring rounds, ranking leaderboards, reviewing game history, computing stats.",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.score",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "Track game scores, brackets, and player statistics",
+        "Use when recording results, scoring rounds, ranking leaderboards, reviewing game history, compu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/score@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "score",
+      "url": "https://clawhub.ai/skills/score"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "score",
+    "url": "https://clawhub.ai/skills/score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/score-a575b79868a2336d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/score@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-score-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5747a0bc162473a70fbdc4ef46603c75dd7aec7db103a9504ca7e5b73f3a987",
+      "artifactSizeBytes": 1818
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T10:50:00.445Z"
+}

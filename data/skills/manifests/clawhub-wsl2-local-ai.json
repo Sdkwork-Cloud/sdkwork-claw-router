@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52379,
+  "uuid": "skill-clawhub-wsl2-local-ai",
+  "skillKey": "clawhub-wsl2-local-ai",
+  "name": "Wsl2 Local Ai",
+  "summary": "WSL2 Local AI — run LLMs on Windows via WSL2 with NVIDIA GPU passthrough. WSL2 AI development with Ollama, CUDA, and Docker. WSL2 Ollama fleet routing for Wi...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wsl2_local_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "WSL2 Local AI — run LLMs on Windows via WSL2 with NVIDIA GPU passthrough",
+        "WSL2 AI development with Ollama, CUDA, and Docker",
+        "WSL2 Ollama fleet routing for Wi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wsl2-local-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wsl2-local-ai",
+      "url": "https://clawhub.ai/skills/wsl2-local-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wsl2-local-ai",
+    "url": "https://clawhub.ai/skills/wsl2-local-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wsl2-local-ai-d203f858836e41f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wsl2-local-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wsl2-local-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a30e6b187201209e635eec9e2e5821f6b4b548630db47cf74e90dab34eb72553",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:54:05.582Z"
+}

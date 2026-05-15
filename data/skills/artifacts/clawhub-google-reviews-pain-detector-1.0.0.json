@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-reviews-pain-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_reviews_pain_detector",
+  "skill": {
+    "id": 27955,
+    "skillKey": "clawhub-google-reviews-pain-detector",
+    "name": "Google Reviews Pain Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-reviews-pain-detector",
+    "url": "https://clawhub.ai/skills/google-reviews-pain-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-reviews-pain-detector-e13a1de09b5a325a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes Google reviews for businesses to identify pain words related to missed calls and poor phone coverage, scoring lead quality for AI receptionist sales."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayjjimenez",
+      "userId": "publishers:jayjjimenez",
+      "displayName": "JayJJimenez",
+      "image": "https://avatars.githubusercontent.com/u/79680021?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772744255292,
+      "changelog": "- Initial release of Google Reviews Pain Detector.\n- Scrapes Google and Google Maps reviews for a given business.\n- Detects key \"pain words\" that indicate missed calls or poor phone coverage.\n- Outputs pain word matches, example review snippets, and a pain score (0–10).\n- Supports scanning individual businesses or the full Master Lead List, with options to save hot leads and output JSON.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fab08b8277995cb20da41e4b1bdf3a74d9d61df4b7d2f89fab2bb6d23de060db"
+}

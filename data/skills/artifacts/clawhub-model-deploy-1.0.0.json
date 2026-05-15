@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-deploy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_deploy",
+  "skill": {
+    "id": 23936,
+    "skillKey": "clawhub-model-deploy",
+    "name": "Model Deploy Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-deploy",
+    "url": "https://clawhub.ai/skills/model-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-deploy-a66b6ad8db1e50ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users request to deploy LLMs (Qwen, DeepSeek, etc.) on specified GPU servers and start the model service. This skill can Download models..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wangwei1237",
+      "userId": "s1720re4ts26jyz6fexjgpe7s583g3gb",
+      "displayName": "Wang Wei",
+      "image": "https://avatars.githubusercontent.com/u/3480154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 425,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773492808864,
+      "changelog": "Initial release of model-deploy skill.\n\n- Deploy large language models (LLMs) like Qwen and DeepSeek on specified GPU servers.\n- Supports downloading models via ModelScope and launching the vLLM inference service.\n- Uses a deployment script with parameters for environment, port, GPU count, proxy, and model storage path.\n- Requires passwordless SSH and pre-installed Miniconda on the target server.\n- Provides troubleshooting tips for common deployment issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c1f8fcd10a13050d5f246789a2209a7ce6e2cbb546e8c3bfb5065e7168ae48d"
+}

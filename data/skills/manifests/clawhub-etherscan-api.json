@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20642,
+  "uuid": "skill-clawhub-etherscan-api",
+  "skillKey": "clawhub-etherscan-api",
+  "name": "Etherscan",
+  "summary": "Use when you need to query Etherscan API V2 for onchain activity, contract metadata, ABI/source retrieval, proxy implementation discovery, and transaction/lo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.etherscan_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David",
+      "features": [
+        "Use when you need to query Etherscan API V2 for onchain activity, contract metadata, ABI/source."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/etherscan-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104078303?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "etherscan-api",
+      "url": "https://clawhub.ai/skills/etherscan-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "etherscan-api",
+    "url": "https://clawhub.ai/skills/etherscan-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/etherscan-api-198ba4fe0ef20d9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/etherscan-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-etherscan-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:205fd14bc9cd1a2d354a263709367a16678f8dd71b2caeea9891fee4a7d5a960",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T02:50:16.650Z"
+}

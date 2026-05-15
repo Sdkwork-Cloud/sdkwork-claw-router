@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26835,
+  "uuid": "skill-clawhub-aviationstack-cli",
+  "skillKey": "clawhub-aviationstack-cli",
+  "name": "Aviationstack Cli",
+  "summary": "Manage AviationStack via CLI - flights, airports, airlines, routes. Use when user mentions 'aviationstack', 'flight search', 'airport lookup', 'airline searc...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aviationstack_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Melvyn",
+      "features": [
+        "Manage AviationStack via CLI",
+        "flights, airports, airlines, routes",
+        "Use when user mentions 'aviationstack', 'flight search', 'airport lookup', 'airline searc..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aviationstack-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56388157?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aviationstack-cli",
+      "url": "https://clawhub.ai/skills/aviationstack-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aviationstack-cli",
+    "url": "https://clawhub.ai/skills/aviationstack-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aviationstack-cli-3daae479bdd8a537.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aviationstack-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aviationstack-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55abce39b8987636d3df9c6c4cd3f17e17f20a7599f0ae90ad70cb2c6cf5e6ba",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T16:50:58.063Z"
+}

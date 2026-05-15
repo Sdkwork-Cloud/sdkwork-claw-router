@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37085,
+  "uuid": "skill-clawhub-modesty-asr",
+  "skillKey": "clawhub-modesty-asr",
+  "name": "asr",
+  "summary": "Fast, accurate automatic speech-to-text transcription supporting 100 languages from URLs or local files via SkillBoss API Hub.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_asr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ModestyRichards",
+      "features": [
+        "Fast, accurate automatic speech-to-text transcription supporting 100 languages from URLs or loc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/modesty-asr@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261238899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "modesty-asr",
+      "url": "https://clawhub.ai/skills/modesty-asr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-asr",
+    "url": "https://clawhub.ai/skills/modesty-asr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-asr-a1d9c5c1ed0c8426.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/modesty-asr@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-modesty-asr-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25055a447206ac4752732d23b29700510e37f8755b8b34b5654eb2e844af71b1",
+      "artifactSizeBytes": 2025
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T05:17:39.126Z"
+}

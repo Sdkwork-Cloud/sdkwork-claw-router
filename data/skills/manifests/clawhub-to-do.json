@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18783,
+  "uuid": "skill-clawhub-to-do",
+  "skillKey": "clawhub-to-do",
+  "name": "To-Do",
+  "summary": "Give your AI the power to act in the future. Schedule delayed prompts and one-off reminders that automatically wake the agent up at an exact moment to execut...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.to_do",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DevLumuz",
+      "features": [
+        "Give your AI the power to act in the future",
+        "Schedule delayed prompts and one-off reminders that automatically wake the agent up at an exact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/to-do@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/124409412?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "to-do",
+      "url": "https://clawhub.ai/skills/to-do"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "to-do",
+    "url": "https://clawhub.ai/skills/to-do",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/to-do-eb03c63a37dce69b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/to-do@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-to-do-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ab7228a6b5d44309b15de03c75cc0ddab98029f5cf8b7da8700c763a0ea78f8",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T23:26:29.267Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27337,
+  "uuid": "skill-clawhub-group-chats",
+  "skillKey": "clawhub-group-chats",
+  "name": "Group Chats",
+  "summary": "Rules and behavior guidelines for participating in group chats (Discord, Slack, etc.).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_chats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "FlayZz",
+      "features": [
+        "Rules and behavior guidelines for participating in group chats (Discord, Slack, etc.)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/group-chats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45981623?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "group-chats",
+      "url": "https://clawhub.ai/skills/group-chats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-chats",
+    "url": "https://clawhub.ai/skills/group-chats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-chats-e5bead128e00a824.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/group-chats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-group-chats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1078237d6f3ffe2cf1207dc3281f50416ef3af34e3e81be3bb77605530c95d80",
+      "artifactSizeBytes": 2225
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T09:56:56.889Z"
+}

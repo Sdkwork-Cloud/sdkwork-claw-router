@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64285,
+  "uuid": "skill-clawhub-mac-app-launcher",
+  "skillKey": "clawhub-mac-app-launcher",
+  "name": "mac-app-launcher",
+  "summary": "查询和打开 macOS 应用程序。通过关键词搜索已安装的 App，并使用 open 命令启动。 当用户要求查找、搜索、列出、打开某个 Mac 应用程序时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mac_app_launcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wei.wu",
+      "features": [
+        "查询和打开 macOS 应用程序。通过关键词搜索已安装的 App，并使用 open 命令启动。 当用户要求查找、搜索、列出、打开某个 Mac 应用程序时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mac-app-launcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3362483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mac-app-launcher",
+      "url": "https://clawhub.ai/skills/mac-app-launcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mac-app-launcher",
+    "url": "https://clawhub.ai/skills/mac-app-launcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mac-app-launcher-0272766ba388c0a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mac-app-launcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mac-app-launcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0a3cad95947431623ec91ae37d93a1e573574d32e4d9bd33d73661bb5219e6c3",
+      "artifactSizeBytes": 2360
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:17:36.214Z"
+}

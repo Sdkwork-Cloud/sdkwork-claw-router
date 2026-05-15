@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34835,
+  "uuid": "skill-clawhub-imap-smtp-mail",
+  "skillKey": "clawhub-imap-smtp-mail",
+  "name": "IMAP SMTP Email",
+  "summary": "Read and send email via IMAP/SMTP using local Node scripts. Use when the agent needs to check inboxes, fetch email content, search messages, download attachm...",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imap_smtp_mail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Umbra",
+      "features": [
+        "Read and send email via IMAP/SMTP using local Node scripts",
+        "Use when the agent needs to check inboxes, fetch email content, search messages, download attac."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imap-smtp-mail@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35642940?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imap-smtp-mail",
+      "url": "https://clawhub.ai/skills/imap-smtp-mail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imap-smtp-mail",
+    "url": "https://clawhub.ai/skills/imap-smtp-mail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imap-smtp-mail-baf5c8d975306fec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imap-smtp-mail@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-imap-smtp-mail-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efddf2aaec2b41066f5f4576fa874efc2774c9c709e76f849cbdfbbc2c694fb2",
+      "artifactSizeBytes": 2602
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T18:38:29.106Z"
+}

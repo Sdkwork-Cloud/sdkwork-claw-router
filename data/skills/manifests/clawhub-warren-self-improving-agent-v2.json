@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37265,
+  "uuid": "skill-clawhub-warren-self-improving-agent-v2",
+  "skillKey": "clawhub-warren-self-improving-agent-v2",
+  "name": "Self Improving Agent",
+  "summary": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau...",
+  "version": "3.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warren_self_improving_agent_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chengyz3327-design",
+      "features": [
+        "Captures learnings, errors, and corrections to enable continuous improvement",
+        "Use when: (1) A command or operation fails unexpectedly, (2) User corrects Clau..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warren-self-improving-agent-v2@3.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227573499?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warren-self-improving-agent-v2",
+      "url": "https://clawhub.ai/skills/warren-self-improving-agent-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warren-self-improving-agent-v2",
+    "url": "https://clawhub.ai/skills/warren-self-improving-agent-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warren-self-improving-agent-v2-fe423a24154be5f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warren-self-improving-agent-v2@3.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-warren-self-improving-agent-v2-3.0.7.json",
+      "version": "3.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c03b78bf2566687a3e47c533397df6460645cb90761297283227314884ff343",
+      "artifactSizeBytes": 2557
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T18:46:15.211Z"
+}

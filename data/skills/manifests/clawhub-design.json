@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10050,
+  "uuid": "skill-clawhub-design",
+  "skillKey": "clawhub-design",
+  "name": "Design",
+  "summary": "Auto-learns your visual preferences. Adapts to UI, graphics, video, and any creative work.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Auto-learns your visual preferences",
+        "Adapts to UI, graphics, video, and any creative work."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/design@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "design",
+      "url": "https://clawhub.ai/skills/design"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design",
+    "url": "https://clawhub.ai/skills/design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-a77de8a6daa11295.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/design@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-design-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df2d7883baa4a539f293e7538918c5191aff407cbd0008c6f07ed13fb302f32f",
+      "artifactSizeBytes": 1794
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T12:44:14.716Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-threadsctl@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_threadsctl",
+  "skill": {
+    "id": 33775,
+    "skillKey": "clawhub-openclaw-threadsctl",
+    "name": "openclaw-threadsctl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-threadsctl",
+    "url": "https://clawhub.ai/skills/openclaw-threadsctl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-threadsctl-590a4f8547da01ca.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Threads accounts, OAuth connect URLs, drafts, and publishing through the local threadsctl CLI. Use when the user wants to post to Threads, create or p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dladislav201",
+      "userId": "s17dc87t9f6520wbc4b429xs2x84ag7y",
+      "displayName": "Vladyslav Dobrodii",
+      "image": "https://avatars.githubusercontent.com/u/198456264?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 233,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1777746260809,
+      "changelog": "openclaw-threadsctl 1.0.3\n\n- Added support and workflow guidance for publishing Threads carousel (multi-photo) posts and media spoilers.\n- Updated documentation to include `publish carousel`, multi-image file/url options, and the `--spoiler` flag for eligible media.\n- Clarified media rules for carousel vs. single-image posts and handling of spoilers in carousels.\n- Improved skill description and use-case coverage.\n- Removed the outdated `examples.md` file; all scenarios are now included directly in the main documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cc0233b1e4a411a3c181e1d660ad8e5f4a7f0aa6fa4286c43c44fe27d9f8d03"
+}

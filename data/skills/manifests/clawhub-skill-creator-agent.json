@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12599,
+  "uuid": "skill-clawhub-skill-creator-agent",
+  "skillKey": "clawhub-skill-creator-agent",
+  "name": "Skill Creator",
+  "summary": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an exis...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_creator_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "utromaya-code",
+      "features": [
+        "Create, edit, improve, or audit AgentSkills",
+        "Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-creator-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/254962629?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-creator-agent",
+      "url": "https://clawhub.ai/skills/skill-creator-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-creator-agent",
+    "url": "https://clawhub.ai/skills/skill-creator-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-creator-agent-82abfbd759477ede.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-creator-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-creator-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:746656f0038bafaa316e224df58b14430a3401977ce9f51d8c8a570a43008e4c",
+      "artifactSizeBytes": 2605
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T20:13:42.441Z"
+}

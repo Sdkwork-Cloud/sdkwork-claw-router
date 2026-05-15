@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32718,
+  "uuid": "skill-clawhub-163-email-monitor",
+  "skillKey": "clawhub-163-email-monitor",
+  "name": "163 Email Monitor",
+  "summary": "Connect to 163/126/yeah.net (Coremail) email via IMAP, read inbox, search emails, and send emails via SMTP. Activate when user asks to check email, read mail...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.163_email_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Emory Sermon",
+      "features": [
+        "Connect to 163/126/yeah.net (Coremail) email via IMAP, read inbox, search emails, and send emai.",
+        "Activate when user asks to check email, read mail..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/163-email-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17738440?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "163-email-monitor",
+      "url": "https://clawhub.ai/skills/163-email-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "163-email-monitor",
+    "url": "https://clawhub.ai/skills/163-email-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/163-email-monitor-68a7ca8acaed14b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/163-email-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-163-email-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21da1a3263a3e25647583636b6e49a9f1e8a13c439e433a77ebd17ce2c3eaeca",
+      "artifactSizeBytes": 2018
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T06:58:28.128Z"
+}

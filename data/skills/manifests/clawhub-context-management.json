@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14704,
+  "uuid": "skill-clawhub-context-management",
+  "skillKey": "clawhub-context-management",
+  "name": "Context Management",
+  "summary": "Manage AI agent context window consumption, prevent compaction death spirals, and enforce sub-agent spawn policies. Use when: (1) context is filling up and w...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_management",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marcus-daemon",
+      "features": [
+        "Manage AI agent context window consumption, prevent compaction death spirals, and enforce sub-a.",
+        "Use when: (1) context is filling up and w..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258891021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-management",
+      "url": "https://clawhub.ai/skills/context-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-management",
+    "url": "https://clawhub.ai/skills/context-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-management-1fa4db586da03507.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07fe794f5c4ea17608924342390057dd83acf31c4cff01ef67c4638d1f7ffca2",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T16:00:21.429Z"
+}

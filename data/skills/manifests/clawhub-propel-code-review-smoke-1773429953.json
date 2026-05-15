@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26608,
+  "uuid": "skill-clawhub-propel-code-review-smoke-1773429953",
+  "skillKey": "clawhub-propel-code-review-smoke-1773429953",
+  "name": "Propel Code Review Smoke",
+  "summary": "Run async diff-based code reviews using the Propel Review API, poll for completion, retrieve structured findings, and send comment feedback. Use when reviewi...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.propel_code_review_smoke_1773429953",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jason (Yue) Zhang",
+      "features": [
+        "Run async diff-based code reviews using the Propel Review API, poll for completion, retrieve st.",
+        "Use when reviewi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/propel-code-review-smoke-1773429953@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2001781?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "propel-code-review-smoke-1773429953",
+      "url": "https://clawhub.ai/skills/propel-code-review-smoke-1773429953"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "propel-code-review-smoke-1773429953",
+    "url": "https://clawhub.ai/skills/propel-code-review-smoke-1773429953",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/propel-code-review-smoke-1773429953-3908762c8b8e036e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/propel-code-review-smoke-1773429953@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-propel-code-review-smoke-1773429953-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:542dfbda540211561f9f1cbddeeafd8e26e15dfc6bc661a237286a9cf306f245",
+      "artifactSizeBytes": 2029
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T19:25:57.883Z"
+}

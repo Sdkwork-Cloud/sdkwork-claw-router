@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gauntletscore@5.1.5",
+  "version": "5.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gauntletscore",
+  "skill": {
+    "id": 54462,
+    "skillKey": "clawhub-gauntletscore",
+    "name": "GauntletScore"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gauntletscore",
+    "url": "https://clawhub.ai/skills/gauntletscore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gauntletscore-8631094cd43019de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Trust verification for AI output — verify any document or code before you act on it"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wmehobbs",
+      "userId": "s17cp4h9k4ap8xq5vcv22qd4k983hqgf",
+      "displayName": "Genstrata",
+      "image": "https://avatars.githubusercontent.com/u/52052810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "5.1.5",
+      "createdAt": 1774381274427,
+      "changelog": "Fix display name to GauntletScore",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7e30838dae1d1ee9494f0c5702a0f3d509c38326e3c30aeea6afe92b207d26fe"
+}

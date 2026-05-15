@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-validate@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_validate",
+  "skill": {
+    "id": 53278,
+    "skillKey": "clawhub-cross-validate",
+    "name": "Cross-Validate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-validate",
+    "url": "https://clawhub.ai/skills/cross-validate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-validate-fe5db54874db2ebf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Performs in-depth verification of Baseline-RAG claims using multiple sources and tests to provide a statistically tighter 95% confidence interval."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crftsmnd",
+      "userId": "s179btcgk10trjfgs0z5jrmaes840cz3",
+      "displayName": "crftsmnd",
+      "image": "https://avatars.githubusercontent.com/u/224760604?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775367061067,
+      "changelog": "Updated price to sh.30, new endpoint",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e437b06aa2ba6081b664a96483556864de15d52ddc8801a41031b1b4a16bc0ad"
+}

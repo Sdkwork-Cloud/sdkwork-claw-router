@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codexmonitor@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codexmonitor",
+  "skill": {
+    "id": 9401,
+    "skillKey": "clawhub-codexmonitor",
+    "name": "Codexmonitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codexmonitor",
+    "url": "https://clawhub.ai/skills/codexmonitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codexmonitor-e656e1b2b4d83d11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "List/inspect/watch local OpenAI Codex sessions (CLI + VS Code) using the CodexMonitor Homebrew formula. Reads sessions from ~/.codex/sessions by default (or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "odrobnik",
+      "userId": "s175mv7e1vzhser8sz79yq23fd83h54z",
+      "displayName": "Oliver Drobnik",
+      "image": "https://avatars.githubusercontent.com/u/333270?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3779,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 8,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1772570403147,
+      "changelog": "fix: use /Users/oliver/clawd for workspace root to preserve symlink paths",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3633ee0f023f5e562dc82ca7b5bb2f6a0b1223ae65e5198a0c3067cb55c6ef2"
+}

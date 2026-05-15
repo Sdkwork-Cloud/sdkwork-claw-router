@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57584,
+  "uuid": "skill-clawhub-ifind-finance-data",
+  "skillKey": "clawhub-ifind-finance-data",
+  "name": "ifind-finance-data/同花顺金融数据",
+  "summary": "iFinD (同花顺) financial data query - query stocks, funds, macroeconomics, industry economics, news and announcements. Supports smart stock/fund screening, fina...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ifind_finance_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kooui",
+      "features": [
+        "iFinD (同花顺) financial data query",
+        "query stocks, funds, macroeconomics, industry economics, news and announcements",
+        "Supports smart stock/fund screening, fina..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ifind-finance-data@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35019576?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ifind-finance-data",
+      "url": "https://clawhub.ai/skills/ifind-finance-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ifind-finance-data",
+    "url": "https://clawhub.ai/skills/ifind-finance-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ifind-finance-data-fef2f4e4596464bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ifind-finance-data@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ifind-finance-data-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27de424a651cdaf9464728ec120d35540e04ff6a64d83a60d161397bb3d1ed2b",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:33:30.308Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-md-maker@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_md_maker",
+  "skill": {
+    "id": 14121,
+    "skillKey": "clawhub-soul-md-maker",
+    "name": "SOUL.md Maker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-md-maker",
+    "url": "https://clawhub.ai/skills/soul-md-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-md-maker-42de93821e9a4a39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SOUL.md Maker — the personality builder for OpenClaw agents. Browse 12 pre-built souls, build your own with a guided interview (Quick or Deep), blend persona..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jeffjhunter",
+      "userId": "s17fhgfbdhz4g6yqeha2egykyx83grhe",
+      "displayName": "Jeff J Hunter",
+      "image": "https://avatars.githubusercontent.com/u/252698242?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1067,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 7,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1771464890553,
+      "changelog": "soul-md-maker v1.0.5\n-Virus Total being a pain in the ass and flagging it as suspicious therefore a slight bump\n- Version bump to 1.0.5.  \n- No file or content changes detected in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a33b7490e8cb64e8ab5cbbc140c7c5096e2a337cdef2c0fa2a304fb7b6f68b4"
+}

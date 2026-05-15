@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14028,
+  "uuid": "skill-clawhub-notebooklm-cli-cookies",
+  "skillKey": "clawhub-notebooklm-cli-cookies",
+  "name": "NotebookLM CLI Cookies",
+  "summary": "Search and answer questions over documents already uploaded to NotebookLM using the nlm CLI. Use when users ask to find information, summarize sources, or query a specific NotebookLM notebook.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notebooklm_cli_cookies",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lhquangit",
+      "features": [
+        "Search and answer questions over documents already uploaded to NotebookLM using the nlm CLI",
+        "Use when users ask to find information, summarize sources, or query a specific NotebookLM noteb."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notebooklm-cli-cookies@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107824779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notebooklm-cli-cookies",
+      "url": "https://clawhub.ai/skills/notebooklm-cli-cookies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notebooklm-cli-cookies",
+    "url": "https://clawhub.ai/skills/notebooklm-cli-cookies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notebooklm-cli-cookies-f14a573461b3eead.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notebooklm-cli-cookies@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-notebooklm-cli-cookies-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:073623a91334a2bef6dd94d56d81ab2aee9a7032711be07c15122d989ca786ec",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T12:55:33.980Z"
+}

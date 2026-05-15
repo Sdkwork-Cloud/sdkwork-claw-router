@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15986,
+  "uuid": "skill-clawhub-find-slills",
+  "skillKey": "clawhub-find-slills",
+  "name": "find-slills",
+  "summary": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is loo.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_slills",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rumengkai",
+      "features": [
+        "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"fi.",
+        "This skill should be used when the user is looking for functionality that might exist as an ins."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-slills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17810454?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-slills",
+      "url": "https://clawhub.ai/skills/find-slills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-slills",
+    "url": "https://clawhub.ai/skills/find-slills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-slills-feaa44bb26b4faf6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-slills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-slills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb2f673de82e08d88dd7e7c525d21ba69b2bb412397ff60ee8cdeb39e1844a60",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T06:09:29.717Z"
+}

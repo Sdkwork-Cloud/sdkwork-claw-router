@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sp-global@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sp_global",
+  "skill": {
+    "id": 63175,
+    "skillKey": "clawhub-sp-global",
+    "name": "Sp Global"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sp-global",
+    "url": "https://clawhub.ai/skills/sp-global",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sp-global-ad8fd37075520c0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "标普500指数的运营方，14.5万亿美元被动资产的基准"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 116,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777241184257,
+      "changelog": "- 首次发布 sp-global 技能，版本 1.0.0\n- 提供标普全球及其核心业务、发展历史、数据、竞争地位等全面介绍\n- 适合分析全球金融信息行业格局、指数投资基础设施和金融数据终端市场价值\n- 覆盖标普500指数、标普评级、IHS Markit 数据服务等核心内容",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43682b5a7192fcafba9742094962499a87dab25c8cbd6db625df864923b4828f"
+}

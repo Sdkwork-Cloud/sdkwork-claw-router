@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-news-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_skill",
+  "skill": {
+    "id": 69269,
+    "skillKey": "clawhub-daily-news-skill",
+    "name": "news-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-skill",
+    "url": "https://clawhub.ai/skills/daily-news-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-skill-4807e7dc64ea1450.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "每日新闻获取技能。通过 API 获取每日新闻摘要和详情，支持按日期查询、热点新闻排行、新闻详情阅读。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vic240821",
+      "userId": "s1715vw12cz8rsxb4xd8kb8pd983ghgc",
+      "displayName": "Victoria",
+      "image": "https://avatars.githubusercontent.com/u/178981575?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773203772359,
+      "changelog": "Initial release with core daily news features.\n\n- Added news list retrieval via API, supporting specific dates and daily summaries.\n- Enabled fetching and viewing detailed news articles by article ID.\n- Included sample scripts: get-daily.js (news list) and get-article.js (news detail).\n- Supported news category filtering (e.g., politics, technology, finance).\n- Provided user-friendly reply templates and error handling guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:16b702d7dbe2a41dd412396abf30513f368143c214be3e8254afbd581fb524b8"
+}

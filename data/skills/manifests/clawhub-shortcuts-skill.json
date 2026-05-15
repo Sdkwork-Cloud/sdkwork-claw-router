@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10768,
+  "uuid": "skill-clawhub-shortcuts-skill",
+  "skillKey": "clawhub-shortcuts-skill",
+  "name": "Shortcuts Generator",
+  "summary": "Generate macOS/iOS Shortcuts by creating plist files. Use when asked to create shortcuts, automate workflows, build .shortcut files, or generate Shortcuts plists. Covers 1,155 actions (427 WF*Actions + 728 AppIntents), variable references,.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shortcuts_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "erik-agens",
+      "features": [
+        "Generate macOS/iOS Shortcuts by creating plist files",
+        "Use when asked to create shortcuts, automate workflows, build .shortcut files, or generate Shor.",
+        "Covers 1,155 actions (427 WF*Actions + 728 AppIntents), variable references, and control flow."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shortcuts-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/80908960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shortcuts-skill",
+      "url": "https://clawhub.ai/skills/shortcuts-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shortcuts-skill",
+    "url": "https://clawhub.ai/skills/shortcuts-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shortcuts-skill-1f1426360313030f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shortcuts-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shortcuts-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15aae420731d7bdd49394c71b1bc27442a80d0b20394101beb7a591b9ab8e3b8",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-15T10:55:18.850Z"
+}

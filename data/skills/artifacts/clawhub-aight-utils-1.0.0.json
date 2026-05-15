@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aight-utils@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aight_utils",
+  "skill": {
+    "id": 40098,
+    "skillKey": "clawhub-aight-utils",
+    "name": "Aight Utils"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aight-utils",
+    "url": "https://clawhub.ai/skills/aight-utils",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aight-utils-9af6ede3671d0aa0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Native Aight app integration for creating reminders, tasks, triggers, and items. Use when user mentions deadlines, reminders, tasks, or tracking."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vincenthhao",
+      "userId": "publishers:vincenthhao",
+      "displayName": "Vincenthhao",
+      "image": "https://avatars.githubusercontent.com/u/211823993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774196628510,
+      "changelog": "- Initial release of aight-utils, providing native integration with the Aight iOS app.\n- Supports creation of reminders, tasks, deadlines, and tracked items using structured JSON.\n- Automatically parses natural language dates into ISO 8601 format for scheduling.\n- Enforces consistent ID and label conventions for easy categorization and tracking.\n- Handles updates to item status, including marking tasks as done or cancelled.\n- Includes fallback error handling to log failures and add items to memory if creation fails.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:245058e6c9de2b634af7a23bf23d087f4e352efefefc9b8fea968de71b41044e"
+}

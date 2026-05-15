@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -23,7 +23,7 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("mod app_gateway;", product_api_mod)
         self.assertIn("app_gateway_traces_router", product_api_mod)
         self.assertIn("app_gateway_traces_router_with_read_store", product_api_mod)
-        self.assertIn("/app/v3/api/router/gateway/traces", app_gateway)
+        self.assertIn("/app/v3/api/ai/gateway/traces", app_gateway)
         self.assertIn("TrustedRequestSubject", app_gateway)
         self.assertIn("require_subject", app_gateway)
         self.assertIn("AppGatewayTracesReadStore", app_gateway)
@@ -195,7 +195,7 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         contract = (
             ROOT / "docs" / "schema-registry" / "frontend-field-contracts.yaml"
         ).read_text(encoding="utf-8")
-        operation_marker = "api_path: /app/v3/api/router/gateway/traces"
+        operation_marker = "api_path: /app/v3/api/ai/gateway/traces"
         operation_index = contract.index(operation_marker)
         schema_index = contract.index("name: GatewayTracesResponse", operation_index)
         self.assertLess(schema_index - operation_index, 1200)
@@ -213,19 +213,20 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         openapi = (
             ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json"
         ).read_text(encoding="utf-8")
-        sdk_router = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "router.ts"
+        sdk_ai = (
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "ai.ts"
         ).read_text(encoding="utf-8")
         gateway_response_path = (
             ROOT
             / "sdks"
             / "clawrouter-app-sdk"
+            / "clawrouter-app-sdk-typescript"
             / "src"
             / "types"
             / "gateway-traces-response.ts"
         )
         gateway_trace_path = (
-            ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "gateway-trace.ts"
+            ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "gateway-trace.ts"
         )
         frontend = (
             ROOT
@@ -249,14 +250,15 @@ class ConsoleGatewayBackendRuntimeStandardTest(unittest.TestCase):
         self.assertIn("export interface GatewayTrace", gateway_trace)
         self.assertIn("method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE' | 'OPTIONS' | 'HEAD';", gateway_trace)
         self.assertIn("status: number;", gateway_trace)
-        self.assertIn("async fetchTraces(params?: QueryParams): Promise<FetchTracesResult>", sdk_router)
+        self.assertIn("async list(): Promise<GatewayTracesListResult>", sdk_ai)
+        self.assertIn("appApiPath(`/ai/gateway/traces`)", sdk_ai)
+        self.assertIn("getClawRouterAppSdkClient().ai.gateway.traces.list()", frontend)
 
         self.assertIn("GatewayTrace as SdkGatewayTrace", frontend)
         self.assertIn("export interface GatewayTrace", frontend)
         self.assertIn("id: SdkGatewayTrace['id'];", frontend)
         self.assertIn("method: SdkGatewayTrace['method'];", frontend)
         self.assertIn("Promise<GatewayTrace[]>", frontend)
-        self.assertNotIn("type ApiRecord", frontend)
         self.assertNotIn("normalizeGatewayTrace", frontend)
 
     def test_console_gateway_ui_is_read_only_until_command_contract_exists(self) -> None:

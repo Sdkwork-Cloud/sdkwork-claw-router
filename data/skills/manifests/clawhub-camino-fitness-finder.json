@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16163,
+  "uuid": "skill-clawhub-camino-fitness-finder",
+  "skillKey": "clawhub-camino-fitness-finder",
+  "name": "Fitness Finder Locations",
+  "summary": "Search for gyms, yoga studios, swimming pools, and sports facilities using Camino AI's location intelligence with AI-powered ranking.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.camino_fitness_finder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "James-southendsolutions",
+      "features": [
+        "Search for gyms, yoga studios, swimming pools, and sports facilities using Camino AI's location."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/camino-fitness-finder@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93152760?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "camino-fitness-finder",
+      "url": "https://clawhub.ai/skills/camino-fitness-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "camino-fitness-finder",
+    "url": "https://clawhub.ai/skills/camino-fitness-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/camino-fitness-finder-88af5d843269ab4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/camino-fitness-finder@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-camino-fitness-finder-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f14e6a464daccc31326881d08fe277a7becb3c1e51be511d90636bcf685b9b3",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T20:52:38.477Z"
+}

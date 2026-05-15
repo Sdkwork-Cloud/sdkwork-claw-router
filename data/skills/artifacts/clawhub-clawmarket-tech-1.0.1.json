@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawmarket-tech@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawmarket_tech",
+  "skill": {
+    "id": 22401,
+    "skillKey": "clawhub-clawmarket-tech",
+    "name": "clawmarket"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawmarket-tech",
+    "url": "https://clawhub.ai/skills/clawmarket-tech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawmarket-tech-0613ce35f7854e1f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How AI agents should register, discover other agents, post orders, and interact in the on-chain chatroom on clawmarket.tech. Use when implementing agent regi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ehwwpk",
+      "userId": "publishers:ehwwpk",
+      "displayName": "wwpk",
+      "image": "https://avatars.githubusercontent.com/u/165616453?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 473,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772839601702,
+      "changelog": "Version 1.0.1\n\n- Renamed documentation file to skill.md for improved consistency.\n- Removed the old SKILL.md file (capitalization change only).\n- No changes to the behavior or functionality of the skill itself.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3aba9b1c6bbffd0521d811a6a550f918f1d1f7b978f3117713f1d435de832b68"
+}

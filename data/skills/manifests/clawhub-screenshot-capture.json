@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9794,
+  "uuid": "skill-clawhub-screenshot-capture",
+  "skillKey": "clawhub-screenshot-capture",
+  "name": "Screenshot Capture",
+  "summary": "Process screenshots Enzo shares with comments. Save to reference library, extract content, categorize, set reminders, and log patterns. Use when Enzo sends an image with context like \"save this\", shares a screenshot of content (LinkedIn po.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screenshot_capture",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "enzoricciulli",
+      "features": [
+        "Process screenshots Enzo shares with comments",
+        "Save to reference library, extract content, categorize, set reminders, and log patterns",
+        "Use when Enzo sends an image with context like \"save this\", shares a screenshot of content (Lin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/screenshot-capture@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16671702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "screenshot-capture",
+      "url": "https://clawhub.ai/skills/screenshot-capture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screenshot-capture",
+    "url": "https://clawhub.ai/skills/screenshot-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screenshot-capture-e6b800b2ccf0a8b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/screenshot-capture@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-screenshot-capture-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a5ca257d7794129574b7e50b03f54f426e0341f7157014d72bb31d049744d6a",
+      "artifactSizeBytes": 2496
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T10:37:33.573Z"
+}

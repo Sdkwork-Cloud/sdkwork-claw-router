@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-web-cpu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_web_cpu",
+  "skill": {
+    "id": 60962,
+    "skillKey": "clawhub-agent-web-cpu",
+    "name": "Agent Web Cpu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-web-cpu",
+    "url": "https://clawhub.ai/skills/agent-web-cpu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-web-cpu-9cd31ecbe68c5a6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "transweb.cn AI Agent 智能执行套件。支持单应用执行、多应用串联流水线（前一个输出作为后一个输入）、自动匹配或创建应用。全程浏览器自动化，输出 Markdown 文档。 Keywords: AI Agent, transweb, 执行应用, 创建应用, 串联, 流水线, pipeline, 博文..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liuwenjin",
+      "userId": "s1755ap70chfawqz17z652msrd840gxc",
+      "displayName": "Transweb",
+      "image": "https://avatars.githubusercontent.com/u/13214234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 167,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775019885827,
+      "changelog": "Initial release of agent-web-cpu — AI Agent execution suite for transweb.cn.\n\n- Supports single-app execution and multi-app pipeline workflows with automated app matching/creation.\n- Full browser automation: fills forms, triggers generation, extracts results, and saves output as Markdown files.\n- Built-in app registry management: add/remove/list apps with custom rules and input parsing.\n- Robust error handling, permission checks, and browser tool dependency warnings.\n- Smart execution flow: input length, element selectors, timeouts, and tab management all automated.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:acb62278d5f3b96549a4628c72867ac458ef937303cce47de915b0952ade32a3"
+}

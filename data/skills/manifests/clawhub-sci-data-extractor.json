@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20012,
+  "uuid": "skill-clawhub-sci-data-extractor",
+  "skillKey": "clawhub-sci-data-extractor",
+  "name": "Sci Data Extractor",
+  "summary": "AI-powered tool for extracting structured data from scientific literature PDFs",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sci_data_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JackKuo666",
+      "features": [
+        "AI-powered tool for extracting structured data from scientific literature PDFs"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sci-data-extractor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41313632?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sci-data-extractor",
+      "url": "https://clawhub.ai/skills/sci-data-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sci-data-extractor",
+    "url": "https://clawhub.ai/skills/sci-data-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sci-data-extractor-166c715cc605c3ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sci-data-extractor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sci-data-extractor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:044b73585f2368623e43a3bd1ee23f52caa01feb446eae06d3ecd7d51d517a0e",
+      "artifactSizeBytes": 2317
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T09:56:55.291Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fangtian-amap@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fangtian_amap",
+  "skill": {
+    "id": 58741,
+    "skillKey": "clawhub-fangtian-amap",
+    "name": "高德地图 (Fangtian)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fangtian-amap",
+    "url": "https://clawhub.ai/skills/fangtian-amap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fangtian-amap-6a497fc27999f12b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "高德地图 API 调用工具，返回原始 JSON 数据。Use when users ask about 天气、地址、坐标、周边、路线、导航、打车、行程 in China. Commands: weather, geo, regeo, search, around, detail, route, distance,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fangtianwd",
+      "userId": "publishers:fangtianwd",
+      "displayName": "Fangtianwd",
+      "image": "https://avatars.githubusercontent.com/u/42469250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 480,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773453142206,
+      "changelog": "首次发布：支持12个命令（天气、地理编码、搜索、路线规划、导航链接等）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b94505a93bac0000e29f511338dd6fe1abbde9bd877c85b31080c95399fec2c0"
+}

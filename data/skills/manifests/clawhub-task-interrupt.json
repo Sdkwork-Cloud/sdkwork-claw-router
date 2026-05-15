@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73512,
+  "uuid": "skill-clawhub-task-interrupt",
+  "skillKey": "clawhub-task-interrupt",
+  "name": "任务打断机制",
+  "summary": "管理和中断长时间运行任务，支持用户命令终止、资源清理和任务状态保存，防止任务卡死或无限执行。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_interrupt",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guyxlouspg",
+      "features": [
+        "管理和中断长时间运行任务，支持用户命令终止、资源清理和任务状态保存，防止任务卡死或无限执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-interrupt@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258257222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-interrupt",
+      "url": "https://clawhub.ai/skills/task-interrupt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-interrupt",
+    "url": "https://clawhub.ai/skills/task-interrupt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-interrupt-86cd02b6b9458723.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-interrupt@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-interrupt-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:00f8426f712b9727fe9376c969573faa8012a8e0016913d0ded728026ea2cc00",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T03:23:03.301Z"
+}

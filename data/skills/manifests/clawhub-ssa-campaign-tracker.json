@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67728,
+  "uuid": "skill-clawhub-ssa-campaign-tracker",
+  "skillKey": "clawhub-ssa-campaign-tracker",
+  "name": "Campaign Tracker",
+  "summary": "客户开发信追踪与分析 — 自动归档发送记录、匹配客户回复、生成效果分析报告、优化邮件模板",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_campaign_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "客户开发信追踪与分析 — 自动归档发送记录、匹配客户回复、生成效果分析报告、优化邮件模板"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssa-campaign-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssa-campaign-tracker",
+      "url": "https://clawhub.ai/skills/ssa-campaign-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-campaign-tracker",
+    "url": "https://clawhub.ai/skills/ssa-campaign-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-campaign-tracker-5e3fa8a1da602613.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssa-campaign-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssa-campaign-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f273af48f1e1a70dd15f822cf6a8c66a7e85f5507628386bd90a1f4c5016dcd7",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:44:18.384Z"
+}

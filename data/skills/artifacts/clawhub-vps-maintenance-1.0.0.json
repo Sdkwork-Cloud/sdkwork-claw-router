@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vps-maintenance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vps_maintenance",
+  "skill": {
+    "id": 67401,
+    "skillKey": "clawhub-vps-maintenance",
+    "name": "VPS 维护配置"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vps-maintenance",
+    "url": "https://clawhub.ai/skills/vps-maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vps-maintenance-65e8abd6cd3461b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "VPS 服务器维护与优化配置。用于：(1) 新 VPS 入手后的初始化配置，(2) 服务器安全加固， (3) 系统性能优化，(4) 日常维护任务。包含 SSH 加固、防火墙配置、性能调优、时间同步等完整流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiaowenzhou",
+      "userId": "publishers:xiaowenzhou",
+      "displayName": "xiaowenzhou",
+      "image": "https://avatars.githubusercontent.com/u/17638553?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 447,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772845812661,
+      "changelog": "初始版本：VPS 入手后的完整优化配置",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d9a75ca0a232b974ebf1f3199dd65bee062e33d0e4980aeeb50f6f8cf23270c"
+}

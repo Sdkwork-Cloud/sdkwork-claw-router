@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/recall-local@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recall_local",
+  "skill": {
+    "id": 50953,
+    "skillKey": "clawhub-recall-local",
+    "name": "Recall Local"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recall-local",
+    "url": "https://clawhub.ai/skills/recall-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recall-local-0ec792c14da814b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local memory search for OpenClaw agents. Runs a lightweight Node.js server that indexes all files in ~/clawd/memory/ plus MEMORY.md and WORKING.md, then expo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wrentheai",
+      "userId": "publishers:wrentheai",
+      "displayName": "wrentheai",
+      "image": "https://avatars.githubusercontent.com/u/257617545?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 399,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773764865943,
+      "changelog": "- Initial release of recall-local: a local memory search tool for OpenClaw agents.\n- Indexes all files in ~/clawd/memory/ (plus MEMORY.md and WORKING.md) and provides fast keyword search.\n- Runs a lightweight Node.js server with both web UI and API at http://localhost:3456.\n- No external dependencies—everything stays on your machine, no API keys required.\n- Includes setup instructions for launch-on-login and manual start options.\n- Web interface and API support searching agent logs, session history, and decisions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2cb56763be741f7144f662ecb70654b96bfea75670c8f97ae1c19ec0e2179cca"
+}

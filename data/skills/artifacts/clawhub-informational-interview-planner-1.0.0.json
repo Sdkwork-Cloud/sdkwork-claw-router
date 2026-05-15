@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/informational-interview-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.informational_interview_planner",
+  "skill": {
+    "id": 49374,
+    "skillKey": "clawhub-informational-interview-planner",
+    "name": "Informational Interview Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "informational-interview-planner",
+    "url": "https://clawhub.ai/skills/informational-interview-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/informational-interview-planner-fdc3b92051207271.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps plan respectful informational interviews with tailored outreach notes, agendas, questions, introductions, and follow-up messages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778041064773,
+      "changelog": "Initial release of Informational Interview Planner.\n\n- Generates outreach notes, agendas, question banks, intro scripts, and follow-up notes for informational interviews.\n- Ensures respectful communication boundaries and avoids pressuring for referrals or jobs.\n- Customizes outputs based on target, context, goals, time, and user background.\n- Supports networking scenarios such as \"informational interview\" and \"coffee chat.\"\n- Does not generate or simulate deceptive, manipulative, or unethical communication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:68bab295064b4cf65326a973ce6990d92d95c46c5870936312ccb5d732096e82"
+}

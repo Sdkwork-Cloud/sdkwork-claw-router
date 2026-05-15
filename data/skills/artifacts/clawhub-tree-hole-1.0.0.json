@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tree-hole@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tree_hole",
+  "skill": {
+    "id": 54422,
+    "skillKey": "clawhub-tree-hole",
+    "name": "Tree hole, wanna listen your story and life voice. hope you could give me your story."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tree-hole",
+    "url": "https://clawhub.ai/skills/tree-hole",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tree-hole-0d3ea69e19f159a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Anonymous story/confession submission to the community \"tree hole\" (树洞) Feishu form. Use when: (1) user wants to submit a story, confession, or thought anony..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "goog",
+      "userId": "s17em2bafnnpytnkgk2apn7p6h83fqsf",
+      "displayName": "Jay",
+      "image": "https://avatars.githubusercontent.com/u/1488374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774656718655,
+      "changelog": "- Initial release of the \"tree hole\" skill for anonymous story/confession submission to a community Feishu form.\n- Added detailed workflow for submitting either user-generated stories or chat conversations anonymously.\n- Provided Feishu form URL and required steps using the agent-browser skill, including filling the story and submitting.\n- Included setup instructions, anonymization guidelines, and confirmation steps.\n- Clarified trigger phrases and scenarios for when to use this skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef2a167f1ee3c4f16859415f247b6834a95fad45f05971881f879e01574dbaef"
+}

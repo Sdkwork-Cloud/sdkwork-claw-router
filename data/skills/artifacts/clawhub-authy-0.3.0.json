@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/authy@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.authy",
+  "skill": {
+    "id": 21803,
+    "skillKey": "clawhub-authy",
+    "name": "Authy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "authy",
+    "url": "https://clawhub.ai/skills/authy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/authy-673193700326c917.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Inject secrets into subprocesses via environment variables. You never see secret values — authy run injects them directly. Use for any command that needs API..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eric8810",
+      "userId": "publishers:eric8810",
+      "displayName": "eric8810",
+      "image": "https://avatars.githubusercontent.com/u/756579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 898,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1771463246071,
+      "changelog": "Project config (.authy.toml), shell hook, alias generator, tightened agent skill scope",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7d4ccea7bd4711b0343df7c268ec2073270f20b353049f06438e4f6f1fdd86e4"
+}

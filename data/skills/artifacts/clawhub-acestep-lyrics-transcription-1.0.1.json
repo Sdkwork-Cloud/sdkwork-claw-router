@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acestep-lyrics-transcription@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acestep_lyrics_transcription",
+  "skill": {
+    "id": 15378,
+    "skillKey": "clawhub-acestep-lyrics-transcription",
+    "name": "acestep-lyrics-transcription"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acestep-lyrics-transcription",
+    "url": "https://clawhub.ai/skills/acestep-lyrics-transcription",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acestep-lyrics-transcription-096b7a03e0894de6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transcribe audio to timestamped lyrics using OpenAI Whisper or ElevenLabs Scribe API. Outputs LRC, SRT, or JSON with word-level timestamps. Use when users want to transcribe songs, generate LRC files, or extract lyrics with timestamps from."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dumoedss",
+      "userId": "publishers:dumoedss",
+      "displayName": "Sayo",
+      "image": "https://avatars.githubusercontent.com/u/10694619?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1025,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770954358271,
+      "changelog": "- config.example default provider change to elevenlabs",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:25b8bc061c8da1ad5924df13e23b3d3c5291109aac73136b0cb6ab3c75996f23"
+}

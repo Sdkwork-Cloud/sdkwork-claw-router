@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-improving-session@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_improving_session",
+  "skill": {
+    "id": 37116,
+    "skillKey": "clawhub-self-improving-session",
+    "name": "Extracts durable workflow preferences and project conventions from a session, then proposes the smallest valid update to global."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-improving-session",
+    "url": "https://clawhub.ai/skills/self-improving-session",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-improving-session-3d739cf45e022129.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extracts durable workflow preferences and project conventions from a session, then proposes the smallest valid update to global or project CLAUDE.md files. T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lq434239",
+      "userId": "s1728p25v3hyr2n7qt74s00r7h84ecm4",
+      "displayName": "TaiChangXieBuWan",
+      "image": "https://avatars.githubusercontent.com/u/29980602?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776157903564,
+      "changelog": "self-improving-session 1.0.3: Major ruleset and scope tightening\n\n- Greatly clarifies what counts as a durable, reusable session rule versus noise.\n- Splits rules by confidence level with clear thresholds for `[tentative]`, `[stable]`, and correction markers.\n- Adds explicit rule budget guidance to reduce `CLAUDE.md` bloat (max ~20 global, ~15 project-specific rules).\n- Now prefers merging, replacing, or compressing over appending near-duplicates; often proposes zero net change.\n- New reference file `references/rule-quality.md` explains what should be learned or skipped.\n- Removes embedded session-end automation instructions from core docs (now in README only).\n- Stronger, briefer, and safer rule extraction and merge policies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cf0054c4582b949549e808acb992413d6c62a086d1daf2eb7aae18fcf343d79"
+}

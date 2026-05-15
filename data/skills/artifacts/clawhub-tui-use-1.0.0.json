@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tui-use@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tui_use",
+  "skill": {
+    "id": 34613,
+    "skillKey": "clawhub-tui-use",
+    "name": "TUI USE"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tui-use",
+    "url": "https://clawhub.ai/skills/tui-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tui-use-6a62d1a2137ffa89.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate TUI (terminal user interface) programs through the tui-agent CLI tool. Use this skill whenever the user asks to interact with, automate, control, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zbflcy",
+      "userId": "s1779erq6c4824ch6wh9gezb5d84z6vk",
+      "displayName": "zbflcy",
+      "image": "https://avatars.githubusercontent.com/u/35026090?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776304251959,
+      "changelog": "tui-use 1.0.0 – initial release\n\n- Introduces tui-agent CLI tool for automating and controlling terminal user interface (TUI) programs.\n- Supports starting, stopping, and managing multiple TUI application sessions.\n- Provides commands for screen capture, text typing, special key presses, and clipboard-style paste.\n- Enables mouse operations including click and scroll in TUI sessions.\n- Adds robust waiting mechanisms for program states and screen stability.\n- Documents best practices and example workflows for tools like vim and nano.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18441d29f70ecac3b0cf4599d3ef7063d236a52b8101d34e059a3a1d743f6902"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pandoc-docx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pandoc_docx",
+  "skill": {
+    "id": 60332,
+    "skillKey": "clawhub-pandoc-docx",
+    "name": "pandoc-docx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pandoc-docx",
+    "url": "https://clawhub.ai/skills/pandoc-docx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pandoc-docx-cbe300f065ca8df1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持使用 pandoc 在 Word (.docx) 与 Markdown 及多种格式之间进行双向转换，保留主要格式和图片。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mo-yuhua",
+      "userId": "s17avctgwctc01vs9adtct6fv983gge4",
+      "displayName": "fuyabing6803",
+      "image": "https://avatars.githubusercontent.com/u/71486928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774097312010,
+      "changelog": "Initial release of pandoc-docx skill.\n\n- Enables bidirectional conversion between Word (.docx) and Markdown using pandoc.\n- Supports format conversion among .docx, .md, .pdf, .txt, .html, and .epub.\n- Includes scripts for reading, writing, converting, and editing documents, with batch processing and image extraction.\n- Dependency and compatibility details provided, including optional tools for .doc and PDF support.\n- Documents usage scenarios, best practices, and potential format conversion limitations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:946a7a60e364401b9a82cf69ebc9a4b44fd46e0aadb33fb9eed2580e9564ee27"
+}

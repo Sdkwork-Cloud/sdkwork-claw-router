@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fmtwiki@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fmtwiki",
+  "skill": {
+    "id": 62194,
+    "skillKey": "clawhub-fmtwiki",
+    "name": "FMTWiki — 肠菌移植专业知识库"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fmtwiki",
+    "url": "https://clawhub.ai/skills/fmtwiki",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fmtwiki-d9e49ed33baa8781.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FMTWiki 肠菌移植专业知识库运营与维护 Skill。 触发场景（精确匹配）： - 用户说\"更新FMTWiki\"、\"更新知识库\"、\"刷新词条\" - 用户提到具体疾病词条（rCDI/UC/CD/ASD等）+ \"更新\"或\"补充\" - 用户说\"发布新文献\"、\"添加PubMed\"、\"补充论文\" - 用户说\"给FMTW..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zmy1006-sudo",
+      "userId": "s178943e0sqbs17b9qd9x38x7583wvdq",
+      "displayName": "mingyuan",
+      "image": "https://avatars.githubusercontent.com/u/267627552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776177097698,
+      "changelog": "Initial release: 面向临床医生的FMT垂直领域循证知识库，含14个适应证、21个研究团队、19个AI应用、PubMed文献追踪、M-DQA双代理质量审核",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a22a44d7610fa8a7812ad71259d47ca0170ef274862c8adc25e7c1cbf538340"
+}

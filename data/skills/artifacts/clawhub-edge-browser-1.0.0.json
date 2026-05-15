@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/edge-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edge_browser",
+  "skill": {
+    "id": 18320,
+    "skillKey": "clawhub-edge-browser",
+    "name": "Edge Browser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edge-browser",
+    "url": "https://clawhub.ai/skills/edge-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edge-browser-fa45e6c6332429df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Microsoft Edge browser to fetch web pages and extract content. Use when the user wants to access a specific URL using Edge browser instead of Chrome,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meikowo",
+      "userId": "publishers:meikowo",
+      "displayName": "Meikowo",
+      "image": "https://avatars.githubusercontent.com/u/162448853?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 680,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772373859708,
+      "changelog": "Initial release: Use Microsoft Edge browser to fetch web pages when Chrome is unavailable",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:06cb47610aae2019014f8f13b4056fef026ce51a1bdaa57e5d876e976ec3472a"
+}

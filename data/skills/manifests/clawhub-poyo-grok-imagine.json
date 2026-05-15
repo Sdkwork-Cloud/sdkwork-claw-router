@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50866,
+  "uuid": "skill-clawhub-poyo-grok-imagine",
+  "skillKey": "clawhub-poyo-grok-imagine",
+  "name": "Grok Imagine API",
+  "summary": "Use PoYo AI Grok Imagine Video for short text-to-video and image-to-video generation with motion-style controls through the `https://api.poyo.ai/api/generate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poyo_grok_imagine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "coolhackboy",
+      "features": [
+        "Use PoYo AI Grok Imagine Video for short text-to-video and image-to-video generation with motio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poyo-grok-imagine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13427145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poyo-grok-imagine",
+      "url": "https://clawhub.ai/skills/poyo-grok-imagine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poyo-grok-imagine",
+    "url": "https://clawhub.ai/skills/poyo-grok-imagine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poyo-grok-imagine-f8cc8bd59df58634.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poyo-grok-imagine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poyo-grok-imagine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71d07145f01a05335f7fa5525799ee570e8bf5a966bbd132008becd3b61e5132",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T12:03:04.022Z"
+}

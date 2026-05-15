@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/treemd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.treemd",
+  "skill": {
+    "id": 48735,
+    "skillKey": "clawhub-treemd",
+    "name": "treemd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "treemd",
+    "url": "https://clawhub.ai/skills/treemd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/treemd-fba69744cc7f8686.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Markdown document analysis and navigation using the treemd CLI. Use when exploring markdown structure (heading trees, section extraction), querying markdown..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wei840222",
+      "userId": "s172jjkptk3smy0bv40ssjrz7n83fpys",
+      "displayName": "wei",
+      "image": "https://avatars.githubusercontent.com/u/17737823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 94,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778075769728,
+      "changelog": "Initial release: markdown document analysis and navigation with treemd CLI",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c688d1c0285ae41762a47945e4070911bb05160a863c6e2501cda13f044829ed"
+}

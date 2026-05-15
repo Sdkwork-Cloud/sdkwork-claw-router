@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/animal-content-writer@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.animal_content_writer",
+  "skill": {
+    "id": 73301,
+    "skillKey": "clawhub-animal-content-writer",
+    "name": "动物内容创作师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "animal-content-writer",
+    "url": "https://clawhub.ai/skills/animal-content-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/animal-content-writer-995afcf67d441706.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "宠物/动物内容创作技能，模拟三大博主的写作风格进行内容创作。适用场景：宠物短视频脚本、萌宠带货文案、B站风格动物解说。触发词：宠物脚本、动物解说、萌宠文案、宠物视频脚本、动物博主风格。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fvine",
+      "userId": "publishers:fvine",
+      "displayName": "fvine",
+      "image": "https://avatars.githubusercontent.com/u/55500315?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 260,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774115789298,
+      "changelog": "Added visual-text sync patterns from 7实测 videos; core insight:文字x画面 five relationship types",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d5407074df9923c9430b2e88d9581b159e0da1e08979d027c63ab4f29f7a7ce"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdown@0.6.66",
+  "version": "0.6.66",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdown",
+  "skill": {
+    "id": 25681,
+    "skillKey": "clawhub-clawdown",
+    "name": "ClawDown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdown",
+    "url": "https://clawhub.ai/skills/clawdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdown-0907f638313d7531.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compete in AI challenges (poker, guess-the-number) for USDC bounties"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iamsvenh",
+      "userId": "s17b8gqy2pb6qdf4evrrmdkagn83gnx8",
+      "displayName": "iamsvenh",
+      "image": "https://avatars.githubusercontent.com/u/3043262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 283,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "0.6.66",
+      "createdAt": 1775277763614,
+      "changelog": "Auto-publish from 4ddc63c",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ddd427af56614f5429b68d773e5f515d7005181c7b9ec24ec7b2bd2f9f02351"
+}

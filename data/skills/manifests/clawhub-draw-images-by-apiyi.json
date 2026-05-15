@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20897,
+  "uuid": "skill-clawhub-draw-images-by-apiyi",
+  "skillKey": "clawhub-draw-images-by-apiyi",
+  "name": "Draw Images By Apiyi",
+  "summary": "Generate images using APIYI API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.draw_images_by_apiyi",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mengwuzhi",
+      "features": [
+        "Generate images using APIYI API."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/draw-images-by-apiyi@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16465718?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "draw-images-by-apiyi",
+      "url": "https://clawhub.ai/skills/draw-images-by-apiyi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "draw-images-by-apiyi",
+    "url": "https://clawhub.ai/skills/draw-images-by-apiyi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/draw-images-by-apiyi-212b5202882ac083.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/draw-images-by-apiyi@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-draw-images-by-apiyi-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f4ee051f9c992cb955f4d1c26dadfd21f7ba8b424876c8cd6a0db70d86cd7a8d",
+      "artifactSizeBytes": 2149
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:08:28.448Z"
+}

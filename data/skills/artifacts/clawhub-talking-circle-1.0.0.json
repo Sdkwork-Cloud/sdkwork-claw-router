@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/talking-circle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talking_circle",
+  "skill": {
+    "id": 20153,
+    "skillKey": "clawhub-talking-circle",
+    "name": "Talking Circle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talking-circle",
+    "url": "https://clawhub.ai/skills/talking-circle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talking-circle-6e52c87d2bbb6353.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create animated talking-circle videos (Telegram-style round video messages) from avatar frame images and audio. Supports audio-to-video and text-to-video via..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rai220",
+      "userId": "publishers:rai220",
+      "displayName": "Rai220",
+      "image": "https://avatars.githubusercontent.com/u/1329774?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 469,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772548756890,
+      "changelog": "Initial release of talking-circle: animate circular avatar videos from audio and frame images.\n\n- Create Telegram-style talking-circle (round) video messages from four avatar images and audio, with lip-sync and blink.\n- Supports audio-to-video and text-to-video workflows.\n- Text-to-video mode supports ElevenLabs or SaluteSpeech (Sber) TTS; also works with audio from any TTS engine.\n- Detailed instructions for frame preparation, TTS setup, and usage examples provided.\n- No API key needed if providing your own audio file.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4d2d60951473d68b50599e848059714c10db7d6ab6199cde8f944dbf5a3aab19"
+}

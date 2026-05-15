@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-videoconference@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_videoconference",
+  "skill": {
+    "id": 18654,
+    "skillKey": "clawhub-create-videoconference",
+    "name": "Create secure videoconference"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-videoconference",
+    "url": "https://clawhub.ai/skills/create-videoconference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-videoconference-08e9aa665dc20df0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Default video conferences via Meetling. Instant calls always use /m/ rooms + share payload for Claw default sending. Scheduled calls return link + email invi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bavxhack",
+      "userId": "publishers:bavxhack",
+      "displayName": "bavxhack",
+      "image": "https://avatars.githubusercontent.com/u/44317199?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 672,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771448935605,
+      "changelog": "create-videoconference 1.0.1 changelog:\n\n- Tightened security: The Meetling base URL is now always set to https://app.meetling.de and cannot be changed via environment variables.\n- Contacts are loaded only from ./contacts.json in the working directory; the file path is no longer overridable by environment variables.\n- If contacts.json is missing or invalid, the skill proceeds with an empty map and marks recipients as unresolved.\n- Removed use of MEETLING_BASE_URL and CONTACTS_JSON environment variables; only MEETLING_INSTANT_THRESHOLD_MINUTES and SKILL_LANGUAGE_DEFAULT remain.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:206c780aaac66f3aba076f54bfb727300cc8b9300036253ef4cfb3cbff43bdde"
+}

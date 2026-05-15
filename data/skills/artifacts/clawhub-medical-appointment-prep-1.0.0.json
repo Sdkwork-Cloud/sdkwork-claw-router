@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-appointment-prep@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_appointment_prep",
+  "skill": {
+    "id": 50219,
+    "skillKey": "clawhub-medical-appointment-prep",
+    "name": "Medical Appointment Prep"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-appointment-prep",
+    "url": "https://clawhub.ai/skills/medical-appointment-prep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-appointment-prep-3c20e21f82593a31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill organizes your medical appointment details, symptoms, history, questions, and logistics into a concise prep brief without providing medical advice."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 0,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778378530969,
+      "changelog": "Initial release: helps users prepare for any type of medical appointment by organizing symptoms, history, logistics, and questions.\n\n- Guides users through gathering appointment basics, detailed symptom logs, and medical history.\n- Generates a prioritized list of questions to ask their provider.\n- Provides a logistics checklist for documents, pre-visit steps, and setup (including telehealth).\n- Supplies a post-appointment note template for recording outcomes and next steps.\n- Includes clear safety boundaries: does not provide medical advice or diagnoses, and urges emergency care if urgent symptoms are noted.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:186a270a8c2e79661e770d52b3005d0e2828f82a4f5d238ed6e7c588917d978a"
+}

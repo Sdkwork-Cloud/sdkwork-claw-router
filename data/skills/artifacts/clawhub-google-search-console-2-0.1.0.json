@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/google-search-console-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_search_console_2",
+  "skill": {
+    "id": 22179,
+    "skillKey": "clawhub-google-search-console-2",
+    "name": "Google Search Console"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-search-console-2",
+    "url": "https://clawhub.ai/skills/google-search-console-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-search-console-2-73b66c2ea69abc8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to analyze Google Search Console data, use GSC API, or interpret search performance. Also use when the user mentions \"GSC,\" \"Search Conso..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773228672023,
+      "changelog": "Initial release of google-search-console skill.\n\n- Provides detailed guidance for analyzing Google Search Console (GSC) data, including performance metrics, indexing, technical insights, and best practices.\n- Explains GSC terminology, key reports, workflows, and interpretation tips for clicks, impressions, CTR, and average position.\n- Outlines methodologies for chart reading, trend investigation, report exporting, and data correlation.\n- Summarizes title tag and meta description optimization, CTR benchmarks, and actionable next steps for common GSC issues and reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ad4c98167e0b6a9844605782f30dfceba69ee6b78f4c0f8cc719210b65888d08"
+}

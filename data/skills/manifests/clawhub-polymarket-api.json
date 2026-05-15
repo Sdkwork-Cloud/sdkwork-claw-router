@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8619,
+  "uuid": "skill-clawhub-polymarket-api",
+  "skillKey": "clawhub-polymarket-api",
+  "name": "Polymarket API",
+  "summary": "Query Polymarket prediction markets. Use for questions about prediction markets, betting odds, market prices, event probabilities, or when user asks about Polymarket data.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Danny Shmueli",
+      "features": [
+        "Query Polymarket prediction markets",
+        "Use for questions about prediction markets, betting odds, market prices, event probabilities, o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4062328?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-api",
+      "url": "https://clawhub.ai/skills/polymarket-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-api",
+    "url": "https://clawhub.ai/skills/polymarket-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-api-6d1e9df7c293a4b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54948870a9efb3f986c8b1f6b66003ac7cf795a1289481711cf6268aad2231b0",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T12:03:06.284Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69011,
+  "uuid": "skill-clawhub-bailian-usage-proxy",
+  "skillKey": "clawhub-bailian-usage-proxy",
+  "name": "Bailian Usage Proxy",
+  "summary": "阿里百炼大模型平台的多人共享账号用量统计代理服务。用于解决公司共用阿里百炼账号时无法区分个人用量的问题。当用户需要：1) 部署阿里百炼用量统计代理，2) 统计多人Token用量和调用次数，3) 管理大模型API调用配额时激活此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bailian_usage_proxy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bjmfjoy",
+      "features": [
+        "阿里百炼大模型平台的多人共享账号用量统计代理服务。用于解决公司共用阿里百炼账号时无法区分个人用量的问题。当用户需要：1) 部署阿里百炼用量统计代理，2) 统计多人Token用量和调用次数，3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bailian-usage-proxy@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264989835?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bailian-usage-proxy",
+      "url": "https://clawhub.ai/skills/bailian-usage-proxy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bailian-usage-proxy",
+    "url": "https://clawhub.ai/skills/bailian-usage-proxy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bailian-usage-proxy-15c2bc56cccc9a90.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bailian-usage-proxy@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bailian-usage-proxy-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bafe97ec1edf1b7324d61f8bdf531b61a65ec2a62eb58877c444e0e16ada573",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T03:55:08.107Z"
+}

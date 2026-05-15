@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/island-flight@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.island_flight",
+  "skill": {
+    "id": 47353,
+    "skillKey": "clawhub-island-flight",
+    "name": "island-flight"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "island-flight",
+    "url": "https://clawhub.ai/skills/island-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/island-flight-5460b25c277836e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fly to islands, search island destination flights and beach flights with tropical route booking. Also supports: flight booking, hotel reservation, train tick..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1777158736510,
+      "changelog": "- Major overhaul of SKILL.md to clarify execution flow, critical rules, and parameter mapping.\n- Enforced strict CLI-only responses with explicit \"[Book]({detailUrl})\" link requirement for every flight result.\n- Added step-by-step workflow: environment check, parameter collection, CLI execution, output formatting, and validation.\n- Included detailed parameter tables, scenario-triggered playbooks, and popular island mappings for accuracy.\n- Expanded usage examples, output formatting standards, and hard guidelines against fabricating or using training data.\n- Strengthened references to supporting documents for templates, playbooks, and recovery procedures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ff095a3e6f2b36afdebf2ce8fbce291902e0b0b3c27fcaa4ddb0b5e5b8d12f6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-listing-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_listing_analyzer",
+  "skill": {
+    "id": 62168,
+    "skillKey": "clawhub-amazon-listing-analyzer",
+    "name": "Amazon Listing Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-listing-analyzer",
+    "url": "https://clawhub.ai/skills/amazon-listing-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-listing-analyzer-891695a5e9d41e88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为中阶 Amazon 卖家提供 Listing 健康度诊断、关键词分析、竞品对标及结构化优化建议，助力提升销售表现。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776074714079,
+      "changelog": "Amazon Listing Analyzer 1.0.0\n\n- Initial release of Amazon Listing Analyzer for mid-level Amazon sellers ($5k–$200k/month, 1–5 years experience)\n- Provides listing health score, keyword analysis, competitor benchmarking, and structured optimization suggestions\n- All outputs are reference advice generated from built-in rules and templates; no real-time API data\n- Supports JSON and conversational inputs for multiple analysis types\n- Enforces safety: no external API calls, no storage of sensitive info, input length restriction (≤10,000 chars)\n- Unified JSON output structure across all modules",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07ae0879edab6165ceca014dfbf2c571f2794ffcab1dfa8eef583a35fa17bd0f"
+}

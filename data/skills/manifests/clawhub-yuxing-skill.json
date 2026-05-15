@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31600,
+  "uuid": "skill-clawhub-yuxing-skill",
+  "skillKey": "clawhub-yuxing-skill",
+  "name": "good skill",
+  "summary": "This skill should be used when the user says \"test skill\", \"run test skill\", or asks to demonstrate the test skill. It is a simple hello-world skill for test...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yuxing_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhaoyuxing",
+      "features": [
+        "This skill should be used when the user says \"test skill\", \"run test skill\", or asks to demonst.",
+        "It is a simple hello-world skill for test..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yuxing-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22659377?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yuxing-skill",
+      "url": "https://clawhub.ai/skills/yuxing-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yuxing-skill",
+    "url": "https://clawhub.ai/skills/yuxing-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yuxing-skill-a3d22485f2c63577.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yuxing-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yuxing-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55659c397b84818ecbc4b9feee1368976446ef37067308b5f532ccf827e38bb1",
+      "artifactSizeBytes": 1868
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:41:01.531Z"
+}

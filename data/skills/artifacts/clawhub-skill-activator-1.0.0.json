@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-activator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_activator",
+  "skill": {
+    "id": 60512,
+    "skillKey": "clawhub-skill-activator",
+    "name": "Skill 激活器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-activator",
+    "url": "https://clawhub.ai/skills/skill-activator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-activator-07c14ec28d10495e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill 激活器——帮助用户发现自动化需求、匹配已有 Skill、融合生成新 Skill。 解决\"装了 OpenClaw 不知道用来做什么\"的核心问题。 Use when: (1) User says \"帮我看看能自动化什么\", \"我能用 OpenClaw 做什么\", \"帮我体检\", \"激活\", \"scan m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "love5209",
+      "userId": "s17drazk8a84damrtzsh9m1fy983zj1v",
+      "displayName": "Love5209",
+      "image": "https://avatars.githubusercontent.com/u/5616433?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774924833756,
+      "changelog": "首次发布：需求发现 + 智能匹配 + Skill 融合生成",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:475a2e703abd35dfd8996349572cbbd441e8de2bddd5e87a0ffe8302222df06d"
+}

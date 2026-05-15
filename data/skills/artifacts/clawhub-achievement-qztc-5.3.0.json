@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/achievement-qztc@5.3.0",
+  "version": "5.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.achievement_qztc",
+  "skill": {
+    "id": 62105,
+    "skillKey": "clawhub-achievement-qztc",
+    "name": "achievement-qztc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "achievement-qztc",
+    "url": "https://clawhub.ai/skills/achievement-qztc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/achievement-qztc-17d4ea6f36bd5c88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "课程目标达成情况分析表生成工具 v5.3（仅供QZTC内部使用）。Generator+Reviewer双模式，支持Pipeline一键生成+审查。权重和目标配置均从模板动态读取。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alukardo",
+      "userId": "s17dr9jhz019p73csqa13j2a7s842698",
+      "displayName": "林捷",
+      "image": "https://avatars.githubusercontent.com/u/8422650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 363,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "5.3.0",
+      "createdAt": 1775752365793,
+      "changelog": "v5.3.0: 修复get_template_dir() expanduser bug；添加.clawhubignore忽略config.env",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20bf35972e09b6a0eb60c34855e519ac269b6caee12bafffb8f04869c434e748"
+}

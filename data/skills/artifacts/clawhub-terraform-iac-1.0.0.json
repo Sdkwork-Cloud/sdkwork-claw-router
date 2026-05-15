@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/terraform-iac@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.terraform_iac",
+  "skill": {
+    "id": 52079,
+    "skillKey": "clawhub-terraform-iac",
+    "name": "Terraform Iac"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "terraform-iac",
+    "url": "https://clawhub.ai/skills/terraform-iac",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/terraform-iac-289fdf94b9d66eac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep Terraform/IaC workflow—module boundaries, state, workspaces, plan/apply safety, drift, secrets, CI integration, and team governance. Use when building i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawkk",
+      "userId": "s170g5yz1q3ksjnn4gz6v24af983h1mh",
+      "displayName": "clawkk",
+      "image": "https://avatars.githubusercontent.com/u/265748372?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 244,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774368144904,
+      "changelog": "terraform-iac v1.0.0\n\n- Initial release with a deep-dive workflow for Terraform and Infrastructure-as-Code (IaC) best practices.\n- Covers module boundaries, state management, workspace usage, secret handling, plan/apply safety, drift detection, CI/CD integration, and team governance.\n- Structured as a six-stage process: scope & structure, modules & interfaces, state & workspaces, secrets & providers, plan/apply & CI, and operations & drift.\n- Includes practical exit conditions, review checklists, and advanced tips for safer, more reviewable infrastructure changes.\n- Guidance extends to related tools (e.g., Terragrunt, Pulumi) and Kubernetes-infrastructure boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:081c7ba52a0655fa488fe2e53a50c7c3ecee0f55fe6a4e7b43eb67c89ff7914c"
+}

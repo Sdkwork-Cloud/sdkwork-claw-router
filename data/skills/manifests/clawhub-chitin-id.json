@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15445,
+  "uuid": "skill-clawhub-chitin-id",
+  "skillKey": "clawhub-chitin-id",
+  "name": "Chitin",
+  "summary": "Permanent, verifiable identity for AI agents. ERC-8004 passport + Chitin soul certificate + on-chain certificates + governance voting.",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chitin_id",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tiida Tech",
+      "features": [
+        "Permanent, verifiable identity for AI agents",
+        "ERC-8004 passport + Chitin soul certificate + on-chain certificates + governance voting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chitin-id@1.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64993069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chitin-id",
+      "url": "https://clawhub.ai/skills/chitin-id"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chitin-id",
+    "url": "https://clawhub.ai/skills/chitin-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chitin-id-47395655e3b424e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chitin-id@1.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-chitin-id-1.2.3.json",
+      "version": "1.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:174708e02ce9ba627a8dfea2442686bd0c2c6e1633752e05eaef8b739ba6f1cd",
+      "artifactSizeBytes": 1809
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T20:51:54.772Z"
+}

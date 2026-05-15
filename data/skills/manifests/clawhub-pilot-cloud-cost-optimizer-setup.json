@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44433,
+  "uuid": "skill-clawhub-pilot-cloud-cost-optimizer-setup",
+  "skillKey": "clawhub-pilot-cloud-cost-optimizer-setup",
+  "name": "Pilot Cloud Cost Optimizer Setup",
+  "summary": "Deploy a cloud cost optimization pipeline with 4 agents. Use this skill when: 1. User wants to set up a FinOps or cloud cost optimization pipeline 2. User is...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_cloud_cost_optimizer_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Deploy a cloud cost optimization pipeline with 4 agents",
+        "Use this skill when: 1",
+        "User wants to set up a FinOps or cloud cost optimization pipeline 2",
+        "User is..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-cloud-cost-optimizer-setup@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-cloud-cost-optimizer-setup",
+      "url": "https://clawhub.ai/skills/pilot-cloud-cost-optimizer-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-cloud-cost-optimizer-setup",
+    "url": "https://clawhub.ai/skills/pilot-cloud-cost-optimizer-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-cloud-cost-optimizer-setup-8a00282177a08d76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-cloud-cost-optimizer-setup@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-cloud-cost-optimizer-setup-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f6838c6c9c8dab62a50e9015d73032851d95521d84ebcfbc5f043761086607f",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T20:28:45.265Z"
+}

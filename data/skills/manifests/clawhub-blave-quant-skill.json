@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58247,
+  "uuid": "skill-clawhub-blave-quant-skill",
+  "skillKey": "clawhub-blave-quant-skill",
+  "name": "Blave Quant Skill",
+  "summary": "Use for: (1) Blave market alpha data — 籌碼集中度 Holder Concentration, 多空力道 Taker Intensity, 巨鯨警報 Whale Hunter, 擠壓動能 Squeeze Momentum, 市場方向 Market Direction, 資金稀...",
+  "version": "1.6.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blave_quant_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tseng Wei-Yu",
+      "features": [
+        "Use for: (1) Blave market alpha data — 籌碼集中度 Holder Concentration, 多空力道 Taker Intensity, 巨鯨警報 W."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blave-quant-skill@1.6.11",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158068248?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blave-quant-skill",
+      "url": "https://clawhub.ai/skills/blave-quant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blave-quant-skill",
+    "url": "https://clawhub.ai/skills/blave-quant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blave-quant-skill-f0a6025df99bcf12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blave-quant-skill@1.6.11",
+      "artifactUrl": "data/skills/artifacts/clawhub-blave-quant-skill-1.6.11.json",
+      "version": "1.6.11",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e4bebf95e1d28072824b4d793c2f8252ac35e1e481de9ac061f90f68b2683c7",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T08:15:45.218Z"
+}

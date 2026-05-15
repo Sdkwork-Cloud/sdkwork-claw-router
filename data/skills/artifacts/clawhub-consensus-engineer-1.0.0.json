@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/consensus-engineer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consensus_engineer",
+  "skill": {
+    "id": 29709,
+    "skillKey": "clawhub-consensus-engineer",
+    "name": "consensus-engineer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consensus-engineer",
+    "url": "https://clawhub.ai/skills/consensus-engineer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consensus-engineer-3d3aba0606d57045.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI solution architect for consensus-tools. Interactive multi-step skill that analyzes your project, recommends consensus-tools integration, scaffolds setup,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaicianflone",
+      "userId": "s173yh69sk2g7jzav29e74412s83qaga",
+      "displayName": "Kai Cianflone",
+      "image": "https://avatars.githubusercontent.com/u/30943151?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 296,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774055284053,
+      "changelog": "Initial release: 6-phase interactive skill with llms.txt (2,200+ lines), guard/wrapper/hybrid pattern detection, LangChain adapter, AI SDK middleware, template system (createGuardTemplate, createPolicyTemplate, createWrapperTemplate). Supersedes consensus-interact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:06b953a7c8b05d31f1cd9ad9d331eaef5c566932e0917c1b8790cc438447b505"
+}

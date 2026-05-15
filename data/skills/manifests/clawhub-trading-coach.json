@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64701,
+  "uuid": "skill-clawhub-trading-coach",
+  "skillKey": "clawhub-trading-coach",
+  "name": "Trading Coach",
+  "summary": "🏆 AI交易复盘教练 — 把你的券商CSV变成可执行的改进洞察！ 自动FIFO配对持仓，8维度质量评分(入场/出场/趋势/风险...)，10维度AI洞察。 支持富途(中/英)、老虎、中信、华泰等主流券商。 触发条件: 用户提供交易CSV、要求分析交易表现、评估交易质量、生成复盘报告、 计算盈亏统计、识别交易模式问题、\"帮我复盘\"、\"分析我的交易\"。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_coach",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BENZEMA",
+      "features": [
+        "🏆 AI交易复盘教练 — 把你的券商CSV变成可执行的改进洞察！ 自动FIFO配对持仓，8维度质量评分(入场/出场/趋势/风险...)，10维度AI洞察。 支持富途(中/英)、老虎、中信、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trading-coach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43908081?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trading-coach",
+      "url": "https://clawhub.ai/skills/trading-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-coach",
+    "url": "https://clawhub.ai/skills/trading-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-coach-1605fc1732bd172e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trading-coach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trading-coach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50ca6e24299f43315c077f72cbb1aa6c8382e9b0945f0946eb820c4f715a73b9",
+      "artifactSizeBytes": 2813
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T04:51:38.748Z"
+}

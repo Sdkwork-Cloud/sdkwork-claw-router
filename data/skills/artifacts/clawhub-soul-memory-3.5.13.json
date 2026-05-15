@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-memory@3.5.13",
+  "version": "3.5.13",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_memory",
+  "skill": {
+    "id": 58544,
+    "skillKey": "clawhub-soul-memory",
+    "name": "Soul Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-memory",
+    "url": "https://clawhub.ai/skills/soul-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-memory-7cfa51afa6818d14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent memory management system v3.5.13 - 修復 heartbeat-trigger.py 改用上次 heartbeat 到現在的增量窗口抓取 important context，避免固定 3 小時窗口遺漏與重掃。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kingofqin2026",
+      "userId": "s17ettags7atqtc9w4wkamex3983s6gj",
+      "displayName": "kingofqin2026",
+      "image": "https://avatars.githubusercontent.com/u/261905121?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 974,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.5.13",
+      "createdAt": 1776852799266,
+      "changelog": "v3.5.13: 修復 heartbeat-trigger.py 改用上次 heartbeat 到現在的增量窗口抓取 important context，避免固定 3 小時窗口遺漏與重掃。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:709fcbc8bd0b9ac7479301074f9b7905b5ff3232c33bf1b69e3393ea6c998819"
+}

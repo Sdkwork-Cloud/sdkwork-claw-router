@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29012,
+  "uuid": "skill-clawhub-digitalriver",
+  "skillKey": "clawhub-digitalriver",
+  "name": "Digitalriver",
+  "summary": "DigitalRiver integration. Manage Organizations, Leads, Projects, Pipelines, Users, Goals and more. Use when the user wants to interact with DigitalRiver data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.digitalriver",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "DigitalRiver integration",
+        "Manage Organizations, Leads, Projects, Pipelines, Users, Goals and more",
+        "Use when the user wants to interact with DigitalRiver data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/digitalriver@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "digitalriver",
+      "url": "https://clawhub.ai/skills/digitalriver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "digitalriver",
+    "url": "https://clawhub.ai/skills/digitalriver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/digitalriver-8ccebb9a908abace.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/digitalriver@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-digitalriver-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5d125d35c9519b8f6de85ddf62552bbd015fc444fe2b7a9e1a36e404c87cf29",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:32:48.912Z"
+}

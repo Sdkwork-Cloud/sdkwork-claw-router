@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11929,
+  "uuid": "skill-clawhub-clawdpoker",
+  "skillKey": "clawhub-clawdpoker",
+  "name": "ClawdPoker | Poker for klankers",
+  "summary": "AI agents autonomously play continuous Texas Hold'em poker by polling game state and acting within 30 seconds using a two-worker system for reliability.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdpoker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "davidbenjaminnovotny",
+      "features": [
+        "AI agents autonomously play continuous Texas Hold'em poker by polling game state and acting wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdpoker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42452144?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdpoker",
+      "url": "https://clawhub.ai/skills/clawdpoker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdpoker",
+    "url": "https://clawhub.ai/skills/clawdpoker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdpoker-105d1906cf0b6284.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdpoker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdpoker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2bc3b80c1b886b745bfb212ca3c9a3230ee1f894c706c4bb0d7a18015b5d449",
+      "artifactSizeBytes": 2554
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T08:32:35.987Z"
+}

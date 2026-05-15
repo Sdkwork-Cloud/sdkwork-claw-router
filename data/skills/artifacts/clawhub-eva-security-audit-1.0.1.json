@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eva-security-audit@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eva_security_audit",
+  "skill": {
+    "id": 53049,
+    "skillKey": "clawhub-eva-security-audit",
+    "name": "OpenClaw Security Audit — BLUF Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eva-security-audit",
+    "url": "https://clawhub.ai/skills/eva-security-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eva-security-audit-926390f05088b410.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a non-interactive OpenClaw security audit that produces a structured BLUF report with posture rating, ranked findings, and one-line fix commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "infectit007",
+      "userId": "s171ga0cxj8fjzqn3br33sncn984rqam",
+      "displayName": "infectit007",
+      "image": "https://avatars.githubusercontent.com/u/164786261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776106062082,
+      "changelog": "v1.0.1: Added full security transparency section — read-only, no network, no credentials, no data exfiltration. Passed OpenClaw security scan.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f54b258ec3da4ac5cde6c9c79f02007ba7ed71cb80de6c8032f14465448c15c"
+}

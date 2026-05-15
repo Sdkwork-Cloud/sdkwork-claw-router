@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-realtime-hot-rise@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_realtime_hot_rise",
+  "skill": {
+    "id": 73253,
+    "skillKey": "clawhub-douyin-realtime-hot-rise",
+    "name": "抖音热点上升榜"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-realtime-hot-rise",
+    "url": "https://clawhub.ai/skills/douyin-realtime-hot-rise",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-realtime-hot-rise-325a984f1a19038f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户在抖音上寻找正在走红的视频、涨粉最快的话题、实时飙升榜单、新晋爆款内容，或想了解\"哪些视频在抖音火起来了\"、\"最近抖音流行什么\"时，使用此技能。此技能专用于抖音内容热度上升趋势分析，不适用于微博热搜、快手热点、达人搜索、视频播放量统计或情感分析等其他场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "allinherog-star",
+      "userId": "s170csjxstq1phf1asrb2pb1kh83zy7a",
+      "displayName": "allinherog-star",
+      "image": "https://avatars.githubusercontent.com/u/243965348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774937215556,
+      "changelog": "当用户在抖音上寻找正在走红的视频、涨粉最快的话题、实时飙升榜单、新晋爆款内容，或想了解\"哪些视频在抖音火起来了\"、\"最近抖音流行什么\"时，使用此技能。此技能专用于抖音内容热度上升趋势分析，不适用于微博热搜、快手热点、达人搜索、视频播放量统计或情感分析等其他场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6aa7413174db183e2b29322e6bc24357b978567105d23f903eb132626dd67f59"
+}

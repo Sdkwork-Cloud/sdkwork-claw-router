@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thoughtful@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thoughtful",
+  "skill": {
+    "id": 11392,
+    "skillKey": "clawhub-thoughtful",
+    "name": "Thoughtful"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thoughtful",
+    "url": "https://clawhub.ai/skills/thoughtful",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thoughtful-63c6ce2675dc8f8d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your thoughtful companion for WhatsApp - remembers what matters, helps you stay present in your relationships."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "regalstreak",
+      "userId": "s175b1k0z33n2zr6w18ekhmenx8434z5",
+      "displayName": "Neil Agarwal",
+      "image": "https://avatars.githubusercontent.com/u/7759208?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2059,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1770385130274,
+      "changelog": "Updated: Enhanced SKILL.md documentation with 3x daily sync schedule, cron setup details, and improved first-time setup flow",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0ba82187ebf22e67ee08d1a9f50e1469b54958f73ddba3e58c31ba833cbf894d"
+}

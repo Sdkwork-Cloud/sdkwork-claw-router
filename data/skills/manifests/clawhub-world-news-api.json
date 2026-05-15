@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35759,
+  "uuid": "skill-clawhub-world-news-api",
+  "skillKey": "clawhub-world-news-api",
+  "name": "World News Api",
+  "summary": "World News API integration. Manage data, records, and automate workflows. Use when the user wants to interact with World News API data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.world_news_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "World News API integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with World News API data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/world-news-api@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "world-news-api",
+      "url": "https://clawhub.ai/skills/world-news-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "world-news-api",
+    "url": "https://clawhub.ai/skills/world-news-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/world-news-api-f198b8e070328f5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/world-news-api@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-world-news-api-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9a494eba8d0937b319ab6d66caf33ee525415af75f5108ee9dbe0d3ffd9f6254",
+      "artifactSizeBytes": 1884
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T18:03:11.595Z"
+}

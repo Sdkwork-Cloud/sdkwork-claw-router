@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-intelligence-network-scan@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_intelligence_network_scan",
+  "skill": {
+    "id": 11107,
+    "skillKey": "clawhub-agent-intelligence-network-scan",
+    "name": "Agent Intelligence Network Scan"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-intelligence-network-scan",
+    "url": "https://clawhub.ai/skills/agent-intelligence-network-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-intelligence-network-scan-4f58306b6c4aad12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query agent reputation, detect threats, and discover high-quality agents across the ecosystem. Use when evaluating agent trustworthiness (reputation scores 0-100), verifying identities across platforms, searching for agents by skill/reputa."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvcidpsyche",
+      "userId": "publishers:lvcidpsyche",
+      "displayName": "LvcidPsyche",
+      "image": "https://avatars.githubusercontent.com/u/160208855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2000,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769998283420,
+      "changelog": "Agent Intelligence Network Scan v0.1.0\n\n- Initial release of agent reputation, threat detection, and agent discovery skill.\n- Provides 7 query functions: searchAgents, getAgent, getReputation, checkThreats, getLeaderboard, getTrends, and linkIdentities.\n- Supports real-time and offline/local cache operation; gracefully handles backend outages.\n- Offers detailed reputation scoring (0–100) using a 6-factor algorithm and threat detection (sock puppets, scams, spam, suspicious patterns).\n- Includes leaderboards, trending agents/topics, and cross-platform identity resolution.\n- Comprehensive documentation and easy integration for agent collaboration, risk management, and community curation use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:77a6ea0bb57310703684ff3eff44881eb2ba6425f84b93396ccbb7e96c9607e1"
+}

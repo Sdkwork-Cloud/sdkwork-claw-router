@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25963,
+  "uuid": "skill-clawhub-payroll-reconciliation",
+  "skillKey": "clawhub-payroll-reconciliation",
+  "name": "Payroll GL Reconciliation",
+  "summary": "Reconcile QuickBooks Online payroll GL accounts against payroll provider reports (Gusto, ADP, Paychex) across 12 categories. Produces an 8-tab Excel workbook...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payroll_reconciliation",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Reconcile QuickBooks Online payroll GL accounts against payroll provider reports (Gusto, ADP, P.",
+        "Produces an 8-tab Excel workbook..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payroll-reconciliation@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payroll-reconciliation",
+      "url": "https://clawhub.ai/skills/payroll-reconciliation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payroll-reconciliation",
+    "url": "https://clawhub.ai/skills/payroll-reconciliation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payroll-reconciliation-a2af873610c5eb89.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payroll-reconciliation@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-payroll-reconciliation-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41d066658cd74d1010ef4ae801370d34eae605ffb3aec8b69547d1e48bd0b6cf",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T08:02:15.205Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62192,
+  "uuid": "skill-clawhub-browser-collector",
+  "skillKey": "clawhub-browser-collector",
+  "name": "Browser Collector",
+  "summary": "浏览器自动化+数据采集框架。支持Playwright控制、DdddOcr验证码识别、东方财富/雪球/AKShare金融数据采集。反爬对抗、UA池、代理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wjl1004",
+      "features": [
+        "浏览器自动化+数据采集框架。支持Playwright控制、DdddOcr验证码识别、东方财富/雪球/AKShare金融数据采集。反爬对抗、UA池、代理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2220037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-collector",
+      "url": "https://clawhub.ai/skills/browser-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-collector",
+    "url": "https://clawhub.ai/skills/browser-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-collector-f701211555f98cab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a509c7e15edbe74afaddb5fcdd7169515c96cb6a5df2d695ce87f8957d013bae",
+      "artifactSizeBytes": 2374
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T17:19:57.308Z"
+}

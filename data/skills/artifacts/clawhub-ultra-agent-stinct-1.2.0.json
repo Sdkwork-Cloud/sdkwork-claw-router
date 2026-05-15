@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ultra-agent-stinct@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ultra_agent_stinct",
+  "skill": {
+    "id": 16194,
+    "skillKey": "clawhub-ultra-agent-stinct",
+    "name": "Ultra Agent Stinct"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ultra-agent-stinct",
+    "url": "https://clawhub.ai/skills/ultra-agent-stinct",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ultra-agent-stinct-52cd56ddfc6e4496.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomously handle coding tasks including writing, debugging, refactoring, testing, and git operations upon user request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "grimmjoww",
+      "userId": "s176t90ekw2zm3tq7zw73w904d83w8w2",
+      "displayName": "grimmjoww578",
+      "image": "https://avatars.githubusercontent.com/u/20139622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 916,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771093264369,
+      "changelog": "Internal debugging instinct - activates when agent hits bugs during tasks",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61d761ed9de833d1e67de47d8003d6eb613292936ccd2ff2144ef30758dec2c9"
+}

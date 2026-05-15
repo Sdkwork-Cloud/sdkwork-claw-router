@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ghostfetch@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ghostfetch",
+  "skill": {
+    "id": 50279,
+    "skillKey": "clawhub-ghostfetch",
+    "name": "Ghostfetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ghostfetch",
+    "url": "https://clawhub.ai/skills/ghostfetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ghostfetch-565dbbda458bae3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI web search and page fetcher for LLM agents. Search DuckDuckGo/Brave/Bing/Google, fetch pages as markdown, and extract links — single binary, no browser r..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neothelobster",
+      "userId": "publishers:neothelobster",
+      "displayName": "Neo The Lobster",
+      "image": "https://avatars.githubusercontent.com/u/36285650?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772123699094,
+      "changelog": "Security hardening: removed -o (file write), -H (custom headers), -X (HTTP method), -d (POST body), -c (cookie jar path) flags to prevent data exfiltration and file overwrite. Added captcha support. Pinned setup.sh to commit 6e6876a.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:885045b038cf825904935657ab5e11d01ae248101910d201bb620adf76569999"
+}

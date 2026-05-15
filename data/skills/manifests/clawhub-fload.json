@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42822,
+  "uuid": "skill-clawhub-fload",
+  "skillKey": "clawhub-fload",
+  "name": "Fload",
+  "summary": "Use when the user has Fload MCP tools available and asks about mobile app analytics, reviews, growth metrics, ad performance, anomalies, or app store optimiz...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hassan Bazzi",
+      "features": [
+        "Use when the user has Fload MCP tools available and asks about mobile app analytics, reviews, g."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fload@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3339608?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fload",
+      "url": "https://clawhub.ai/skills/fload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fload",
+    "url": "https://clawhub.ai/skills/fload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fload-e1967bc55f8bc42c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fload@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fload-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb493c10a6e8d9c1f508dbc3739e862961c7df05cb0c5055161935485c9fec8c",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T13:15:19.241Z"
+}

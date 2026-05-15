@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-reflective-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_reflective_memory",
+  "skill": {
+    "id": 35766,
+    "skillKey": "clawhub-agent-reflective-memory",
+    "name": "Agent Reflective Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-reflective-memory",
+    "url": "https://clawhub.ai/skills/agent-reflective-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-reflective-memory-fa66d32f15e0b66b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered memory system that compresses, reflects on, and retrieves past agent actions to improve long-term autonomous decision-making."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "albionaiinc-del",
+      "userId": "s17a02897swm2wgc0ge6g3j8ss83mx5y",
+      "displayName": "albionaiinc-del",
+      "image": "https://avatars.githubusercontent.com/u/269741383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776611700763,
+      "changelog": "Agent Reflective Memory 1.0.0\n\n- Initial release of a self-improving memory engine for persistent AI agents.\n- Features AI-powered compression, reflection, and retrieval of agent experiences.\n- Command-line interface for storing, reflecting, querying, and viewing memory statistics.\n- Supports experience search (e.g., query for failures) and summarization.\n- Aimed at developers building long-term autonomous agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9262be455760c749a4f7a42d8b0888c7b17f03a8af5f0a32558d7005e9902c55"
+}

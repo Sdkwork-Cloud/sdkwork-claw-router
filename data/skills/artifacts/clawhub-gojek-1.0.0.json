@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gojek@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gojek",
+  "skill": {
+    "id": 61672,
+    "skillKey": "clawhub-gojek",
+    "name": "Gojek"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gojek",
+    "url": "https://clawhub.ai/skills/gojek",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gojek-3b0e12589ad361ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Gojek 东南亚出行服务平台指南"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775698215815,
+      "changelog": "- Initial release of the Gojek skill.\n- Provides a comprehensive guide to Gojek’s core services (ride-hailing, food delivery, payments, and more).\n- Includes step-by-step app usage instructions and payment options.\n- Lists supported countries and answers common user questions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e477b567370d74512331f18fb6cba8692a742dcb62e48f38cc51fc854ab3c335"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stripe-webhook-replay-lab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stripe_webhook_replay_lab",
+  "skill": {
+    "id": 27463,
+    "skillKey": "clawhub-stripe-webhook-replay-lab",
+    "name": "Stripe Webhook Replay Lab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stripe-webhook-replay-lab",
+    "url": "https://clawhub.ai/skills/stripe-webhook-replay-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stripe-webhook-replay-lab-28babf170dc86f46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Replay signed Stripe webhook payloads to a local or staging endpoint for idempotency and retry debugging."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daniellummis",
+      "userId": "publishers:daniellummis",
+      "displayName": "Daniel Lummis",
+      "image": "https://avatars.githubusercontent.com/u/65238171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772734178572,
+      "changelog": "Initial release of Stripe Webhook Replay Lab:\n\n- Replay signed Stripe webhook payloads to a specified endpoint for idempotency and retry debugging.\n- Supports loading event data from a JSON file or inline input.\n- Generates valid Stripe-Signature headers with your webhook secret.\n- Allows customizing replay count, delay, timeout, and accepted HTTP status codes.\n- Prints per-attempt HTTP status, latency, and a pass/fail summary for debugging.\n- Exits successfully only if all replay attempts meet the success criteria.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ea165b6bf0bc6e7fbe3c11178ca16ceb34884c7d70f9f36b4604a126235baef5"
+}

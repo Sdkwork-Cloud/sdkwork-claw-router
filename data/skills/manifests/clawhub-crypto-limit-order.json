@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54767,
+  "uuid": "skill-clawhub-crypto-limit-order",
+  "skillKey": "clawhub-crypto-limit-order",
+  "name": "Crypto limit orders — gasless, non-custodial",
+  "summary": "Crypto limit orders. Gasless, oracle-protected execution across 8 EVM chains.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crypto_limit_order",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eranp-orbs",
+      "features": [
+        "Crypto limit orders",
+        "Gasless, oracle-protected execution across 8 EVM chains."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crypto-limit-order@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/76778405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crypto-limit-order",
+      "url": "https://clawhub.ai/skills/crypto-limit-order"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crypto-limit-order",
+    "url": "https://clawhub.ai/skills/crypto-limit-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crypto-limit-order-687caae9d9a0141e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crypto-limit-order@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crypto-limit-order-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6064d0ed6a37a93edac5c040d8d8be5f885d94903d9dbeab26929ebdcf68d33c",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T07:21:18.311Z"
+}

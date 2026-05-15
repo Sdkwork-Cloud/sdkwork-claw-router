@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/evernote-yinxiang@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evernote_yinxiang",
+  "skill": {
+    "id": 63368,
+    "skillKey": "clawhub-evernote-yinxiang",
+    "name": "Evernote Yinxiang"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evernote-yinxiang",
+    "url": "https://clawhub.ai/skills/evernote-yinxiang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evernote-yinxiang-819849e873bb09ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "印象笔记（Yinxiang/Evernote）集成技能。用于创建、读取、搜索、删除笔记，以及管理笔记本和标签。当用户提到\"印象笔记\"、\"evernote\"、\"创建笔记到印象笔记\"、\"搜索印象笔记\"、\"查看笔记\"、\"笔记同步\"、\"保存到印象笔记\"时触发。仅依赖 requests，无需安装 evernote SDK。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vikingr2023",
+      "userId": "s170f7ctfggr0v9wa5pf9earsx83webz",
+      "displayName": "Vikingr2023",
+      "image": "https://avatars.githubusercontent.com/u/134819297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774889300161,
+      "changelog": "Initial release of 印象笔记（Yinxiang/Evernote） integration skill:\n\n- Create, read, search, and delete notes via Yinxiang REST API.\n- Manage notebooks and tags.\n- Simple CLI tool with JSON output for all operations.\n- Requires only requests (no Evernote SDK needed).\n- Clear setup instructions for developer token and environment configuration.\n- Supports trigger phrases like \"印象笔记\", \"evernote\", \"保存到印象笔记\", etc.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fee128c181a815bc52313ffd2eb6ed6e8f3a5f8a20926932e44f224c6d4e4eb"
+}

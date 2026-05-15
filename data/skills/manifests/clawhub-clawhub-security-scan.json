@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42946,
+  "uuid": "skill-clawhub-clawhub-security-scan",
+  "skillKey": "clawhub-clawhub-security-scan",
+  "name": "ClawHub Security Scan",
+  "summary": "Pre-publish security scan for ClawHub skills - Scans code for patterns that might get flagged as suspicious and gives fixing suggestions.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_security_scan",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuyiyuleyuli-cloud",
+      "features": [
+        "Pre-publish security scan for ClawHub skills",
+        "Scans code for patterns that might get flagged as suspicious and gives fixing suggestions."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-security-scan@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269500533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-security-scan",
+      "url": "https://clawhub.ai/skills/clawhub-security-scan"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-security-scan",
+    "url": "https://clawhub.ai/skills/clawhub-security-scan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-security-scan-16b999d94e78bc1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-security-scan@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-security-scan-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec5cfec8ce5590769c0f0e1c25d2bce0a72b03ee26286083136e01aa0ebade49",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:48:11.896Z"
+}

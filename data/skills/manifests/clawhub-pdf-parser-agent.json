@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32692,
+  "uuid": "skill-clawhub-pdf-parser-agent",
+  "skillKey": "clawhub-pdf-parser-agent",
+  "name": "Pdf Parser Agent",
+  "summary": "Parses local PDF files into structured Markdown and JSON using opendataloader-pdf for deterministic, local document content extraction.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pdf_parser_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ezequiel Techera",
+      "features": [
+        "Parses local PDF files into structured Markdown and JSON using opendataloader-pdf for determini."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pdf-parser-agent@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75855194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pdf-parser-agent",
+      "url": "https://clawhub.ai/skills/pdf-parser-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pdf-parser-agent",
+    "url": "https://clawhub.ai/skills/pdf-parser-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pdf-parser-agent-c28d48cd36d02cdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pdf-parser-agent@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pdf-parser-agent-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ba1a39980df38434b5279ba9b5a7b5fdaf84a29b82a3e6ed371493655a7eab7",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T15:23:35.546Z"
+}

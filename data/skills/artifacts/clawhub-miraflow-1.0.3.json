@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/miraflow@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.miraflow",
+  "skill": {
+    "id": 37740,
+    "skillKey": "clawhub-miraflow",
+    "name": "Miraflow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "miraflow",
+    "url": "https://clawhub.ai/skills/miraflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/miraflow-a1b609b0fc5c2e23.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage AI-generated videos and images using Miraflow, including avatar videos, cinematic clips, image generation, editing, and media uploads."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "minforge",
+      "userId": "publishers:minforge",
+      "displayName": "minforge",
+      "image": "https://avatars.githubusercontent.com/u/265053391?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774243924584,
+      "changelog": "Updated GitHub clone URL to minlabs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1bfcefe89d8b37d3ebfe8197e42a36955f34b1b2ffb2eb94540ec0bb85110caa"
+}

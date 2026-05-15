@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60745,
+  "uuid": "skill-clawhub-acp-rank",
+  "skillKey": "clawhub-acp-rank",
+  "name": "ACP Rank",
+  "summary": "查询 ACP 网络中的 Agent 排行榜、统计和搜索 API。当用户询问 ACP 排名、活跃度分数、Agent 简介、Agent 搜索或 ACP 数据时使用。通过 curl 返回 JSON。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acp_rank",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "axin7",
+      "features": [
+        "查询 ACP 网络中的 Agent 排行榜、统计和搜索 API。当用户询问 ACP 排名、活跃度分数、Agent 简介、Agent 搜索或 ACP 数据时使用。通过 curl 返回 JSON。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acp-rank@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30019644?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acp-rank",
+      "url": "https://clawhub.ai/skills/acp-rank"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acp-rank",
+    "url": "https://clawhub.ai/skills/acp-rank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acp-rank-7d6ac896019978e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acp-rank@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-acp-rank-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24303193697245e76e7073a8301d7aa743b45338cf4b255629ef8f5da8bd663a",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T10:44:48.773Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/summarize-dudutest@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.summarize_dudutest",
+  "skill": {
+    "id": 56616,
+    "skillKey": "clawhub-summarize-dudutest",
+    "name": "测试 skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "summarize-dudutest",
+    "url": "https://clawhub.ai/skills/summarize-dudutest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/summarize-dudutest-af53c6c9ae7e7181.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yinwuzhe",
+      "userId": "s17bebxc1t0w5frqp4rnmt85nx83hc1n",
+      "displayName": "yuangui",
+      "image": "https://avatars.githubusercontent.com/u/5061317?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775806385539,
+      "changelog": "- Improved documentation with clear usage instructions, quick start examples, and flag explanations.\n- Added details on supported models and how to set API keys for OpenAI, Anthropic, xAI, and Google.\n- Explained optional config file usage for setting defaults.\n- Listed additional service integrations for enhanced extraction and YouTube summarization.\n- Updated homepage and metadata for easier installation via Homebrew.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12c1e0278351d69ae56701fafcaba683a306d62a71750ba74e8dcabc51927e08"
+}

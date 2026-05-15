@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62954,
+  "uuid": "skill-clawhub-omni-channel-agent",
+  "skillKey": "clawhub-omni-channel-agent",
+  "name": "Omni Channel Agent",
+  "summary": "全渠道选品 Agent — 拉齐社媒端、SEO端、投放端数据，帮助运营同学确定待上线需求。触发词：选品、社媒热点、SEO调研、竞品广告、Facebook Ads、TikTok趋势。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.omni_channel_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lygjoey",
+      "features": [
+        "全渠道选品 Agent — 拉齐社媒端、SEO端、投放端数据，帮助运营同学确定待上线需求。触发词：选品、社媒热点、SEO调研、竞品广告、Facebook Ads、TikTok趋势。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/omni-channel-agent@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/234766358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "omni-channel-agent",
+      "url": "https://clawhub.ai/skills/omni-channel-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "omni-channel-agent",
+    "url": "https://clawhub.ai/skills/omni-channel-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/omni-channel-agent-9d0b9964b8952106.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/omni-channel-agent@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-omni-channel-agent-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f475d16f58f03a913423b49e41d587af75f10d9e3e9745f622b1ea6684b22b2d",
+      "artifactSizeBytes": 2494
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T14:48:42.083Z"
+}

@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "file-transfer-thru-local-workspace",
+    "displayName": "file-transfer-thru-local-workspace",
+    "summary": "通过网页上传下载文件至本地 workspace，支持智能认证、文件管理及技能包浏览下载，文件不离开本地服务器。",
+    "tags": {
+      "latest": "3.1.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773193342240,
+    "updatedAt": 1778306630406
+  },
+  "latestVersion": {
+    "version": "3.1.1",
+    "createdAt": 1773193342240,
+    "changelog": "file-transfer-thru-local-workspace v3.1.1\n\n- 修复技能包下载超时问题，打包时自动排除 node_modules 目录，大幅减少包体积\n- 技能列表下载按钮优化，统一使用 iframe 方式下载\n- 提升安全性，移除 systemd 服务文件中的硬编码 token\n- 技能包体积优化，从约 700KB 降至约 30KB",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "chengwang86",
+    "userId": "publishers:chengwang86",
+    "displayName": "chengwang86",
+    "image": "https://avatars.githubusercontent.com/u/22303971?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778306630406
+  }
+}

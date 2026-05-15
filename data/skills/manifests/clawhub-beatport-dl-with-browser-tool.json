@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46407,
+  "uuid": "skill-clawhub-beatport-dl-with-browser-tool",
+  "skillKey": "clawhub-beatport-dl-with-browser-tool",
+  "name": "Beatport Download via Browser Tool",
+  "summary": "Download purchased tracks from Beatport using the openclaw headless browser tool (CDP). Handles login, authentication via NextAuth, enabling downloads in hea...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beatport_dl_with_browser_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "esanle",
+      "features": [
+        "Download purchased tracks from Beatport using the openclaw headless browser tool (CDP)",
+        "Handles login, authentication via NextAuth, enabling downloads in hea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/beatport-dl-with-browser-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10616740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "beatport-dl-with-browser-tool",
+      "url": "https://clawhub.ai/skills/beatport-dl-with-browser-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beatport-dl-with-browser-tool",
+    "url": "https://clawhub.ai/skills/beatport-dl-with-browser-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beatport-dl-with-browser-tool-a2b8b5bbec450874.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/beatport-dl-with-browser-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-beatport-dl-with-browser-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe260ed10a370ca3db51a21f3579f888731a60a21998c9331971685eb669115",
+      "artifactSizeBytes": 2043
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T23:52:40.489Z"
+}

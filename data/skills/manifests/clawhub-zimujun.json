@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63874,
+  "uuid": "skill-clawhub-zimujun",
+  "skillKey": "clawhub-zimujun",
+  "name": "字幕菌",
+  "summary": "字幕菌（zimujun）：从主流视频平台链接提取视频文案/字幕文本。适用于 YouTube、TikTok/抖音、小红书、Bilibili 等平台。",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zimujun",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kyris wu",
+      "features": [
+        "字幕菌（zimujun）：从主流视频平台链接提取视频文案/字幕文本。适用于 YouTube、TikTok/抖音、小红书、Bilibili 等平台。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zimujun@1.0.18",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5120703?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zimujun",
+      "url": "https://clawhub.ai/skills/zimujun"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zimujun",
+    "url": "https://clawhub.ai/skills/zimujun",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zimujun-0bae37a78644ce08.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zimujun@1.0.18",
+      "artifactUrl": "data/skills/artifacts/clawhub-zimujun-1.0.18.json",
+      "version": "1.0.18",
+      "runtime": "metadata",
+      "checksumHash": "sha256:666ab2a4a81dccc3adab6af9ee89c12f46f2388a48f4c308881aaa81ee8167a4",
+      "artifactSizeBytes": 2033
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:20:36.277Z"
+}

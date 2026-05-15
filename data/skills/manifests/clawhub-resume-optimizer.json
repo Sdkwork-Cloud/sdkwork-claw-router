@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9735,
+  "uuid": "skill-clawhub-resume-optimizer",
+  "skillKey": "clawhub-resume-optimizer",
+  "name": "Resume Optimizer",
+  "summary": "Professional resume builder with PDF export, ATS optimization, and analysis capabilities. Use when users need to (1) Create new resumes from scratch, (2) Customize/tailor existing resumes for specific roles, (3) Analyze resumes and provide.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomsTools",
+      "features": [
+        "Professional resume builder with PDF export, ATS optimization, and analysis capabilities",
+        "Use when users need to (1) Create new resumes from scratch, (2) Customize/tailor existing resum.",
+        "Supports chronological, functional, and combination resume formats."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-optimizer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/167941621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-optimizer",
+      "url": "https://clawhub.ai/skills/resume-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-optimizer",
+    "url": "https://clawhub.ai/skills/resume-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-optimizer-317d7565625a9813.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-optimizer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-optimizer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80df2919a3f7055e625f418fd6d619b66f3cfa5232d22ef54797524ee9dfbe5e",
+      "artifactSizeBytes": 1984
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-25T23:21:59.390Z"
+}

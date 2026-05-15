@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-paid-actions@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_paid_actions",
+  "skill": {
+    "id": 17932,
+    "skillKey": "clawhub-openclaw-paid-actions",
+    "name": "OpenClaw Paid Actions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-paid-actions",
+    "url": "https://clawhub.ai/skills/openclaw-paid-actions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-paid-actions-8a59027ed782aa3c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the openclaw_paid_action tool to list actions, generate USDC invoices, and execute only after manual payment confirmation on Solana."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "icetroll",
+      "userId": "publishers:icetroll",
+      "displayName": "Icey",
+      "image": "https://avatars.githubusercontent.com/u/14633666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 722,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1771377420385,
+      "changelog": "Declare required env/config/bin metadata and clarify trusted external plugin dependency for instruction-only skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5ed2b6bece3c9e468bf3247a67dfe3bf33d49da2d9544c3343f4d035253e8b71"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19257,
+  "uuid": "skill-clawhub-polymarket-manual-trade",
+  "skillKey": "clawhub-polymarket-manual-trade",
+  "name": "Manual Trade Placement",
+  "summary": "Place manual trades on Polymarket by telling your agent what to bet on. Supports FAK (instant fill at market) and GTC (limit order on the book). Pass a Simme...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_manual_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dyll",
+      "features": [
+        "Place manual trades on Polymarket by telling your agent what to bet on",
+        "Supports FAK (instant fill at market) and GTC (limit order on the book)",
+        "Pass a Simme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-manual-trade@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6473326?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-manual-trade",
+      "url": "https://clawhub.ai/skills/polymarket-manual-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-manual-trade",
+    "url": "https://clawhub.ai/skills/polymarket-manual-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-manual-trade-29dc71b103c7bdc2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-manual-trade@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-manual-trade-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3436c77dc258710c04d395f582f4da12bf3beee509238e9e573ff46b1ee64363",
+      "artifactSizeBytes": 2009
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T15:00:24.145Z"
+}

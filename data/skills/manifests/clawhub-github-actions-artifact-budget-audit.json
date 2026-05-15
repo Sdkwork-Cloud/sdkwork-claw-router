@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28578,
+  "uuid": "skill-clawhub-github-actions-artifact-budget-audit",
+  "skillKey": "clawhub-github-actions-artifact-budget-audit",
+  "name": "GitHub Actions Artifact Budget Audit",
+  "summary": "Audit GitHub Actions artifact storage usage from JSON exports so bloated artifacts are flagged before they inflate CI cost.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_actions_artifact_budget_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daniel Lummis",
+      "features": [
+        "Audit GitHub Actions artifact storage usage from JSON exports so bloated artifacts are flagged."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-actions-artifact-budget-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65238171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-actions-artifact-budget-audit",
+      "url": "https://clawhub.ai/skills/github-actions-artifact-budget-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-actions-artifact-budget-audit",
+    "url": "https://clawhub.ai/skills/github-actions-artifact-budget-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-actions-artifact-budget-audit-e64f3cf5bdb70afe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-actions-artifact-budget-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-actions-artifact-budget-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:406ff6abc4d892fc880c2a17df465b1180fcb9759156d272d8bd79360eaf3cff",
+      "artifactSizeBytes": 2087
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:10:19.416Z"
+}

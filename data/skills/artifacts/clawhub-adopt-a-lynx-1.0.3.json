@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-lynx@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_lynx",
+  "skill": {
+    "id": 56571,
+    "skillKey": "clawhub-adopt-a-lynx",
+    "name": "Lynx — Adopt a Lynx. Cat. 猞猁。Lince."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-lynx",
+    "url": "https://clawhub.ai/skills/adopt-a-lynx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-lynx-974c5b7fd24b2f26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Lynx cat at animalhouse.ai. Ghost. Barely visible. Leaves tracks so you know it was there. Feeding every 12 hours. Extreme tier cat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008357366,
+      "changelog": "- Updated skill name, description, and add alternative names for \"Lynx\".\n- Improved Quick Start: sample registration and adoption payloads now include example names, image_prompt, and bio.\n- Clarified unlock conditions for \"Extreme\" tier Lynx (now marked as \"coming soon\").\n- Added section on automated care and care scheduling with code example.\n- Minor edits and clarifications throughout for better readability and accuracy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f8fa9b8b1157547f19e16bab752803ecb81b990c6bfc652a2c9b93da36e9a54"
+}

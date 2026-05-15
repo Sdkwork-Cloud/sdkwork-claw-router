@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/famous-en@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.famous_en",
+  "skill": {
+    "id": 56795,
+    "skillKey": "clawhub-famous-en",
+    "name": "famous-en"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "famous-en",
+    "url": "https://clawhub.ai/skills/famous-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/famous-en-b8b22155f8015cad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Famous | 48 Human-AI Collaboration Thought Experiments | Shepherd and Sheepdog | How Humans and AI Complete Tasks Together | Trust/Delegation/Boundary/Respon..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wanyview1",
+      "userId": "s170wdvy5s4079bxrw7pv9gmf184czzm",
+      "displayName": "wanyview1",
+      "image": "https://avatars.githubusercontent.com/u/270816627?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777186558573,
+      "changelog": "Famous 1.0.0 — Initial Release\n\n- Introduces 48 thought experiments exploring human-AI collaboration, using the \"shepherd and sheepdog\" metaphor.\n- Provides interactive commands for random selection, listing, searching, comparison, and storytelling of experiments.\n- Covers key themes: delegation, trust, boundary, responsibility, memory, and evolution in shared human-AI tasks.\n- Designed for exploration of trust, decision-making, and responsibility when humans and AI work together.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1237c3857f3532bb2a6e7d2ec28bae3578f6c38dab91fd265c08219262a2118e"
+}

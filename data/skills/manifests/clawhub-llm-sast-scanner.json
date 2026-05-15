@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30930,
+  "uuid": "skill-clawhub-llm-sast-scanner",
+  "skillKey": "clawhub-llm-sast-scanner",
+  "name": "llm-sast-scanner",
+  "summary": "General-purpose Static Application Security Testing (SAST) skill for code vulnerability analysis. Trigger when the user asks to: \"analyze code for vulnerabil...",
+  "version": "1.3.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_sast_scanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SunWeb3Sec",
+      "features": [
+        "General-purpose Static Application Security Testing (SAST) skill for code vulnerability analysis",
+        "Trigger when the user asks to: \"analyze code for vulnerabil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/llm-sast-scanner@1.3.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/107249780?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "llm-sast-scanner",
+      "url": "https://clawhub.ai/skills/llm-sast-scanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-sast-scanner",
+    "url": "https://clawhub.ai/skills/llm-sast-scanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-sast-scanner-41583c1372f2d00b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/llm-sast-scanner@1.3.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-llm-sast-scanner-1.3.2.json",
+      "version": "1.3.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c76b63f4761bc1433973ec32390cf5f8d343240d1d1e83170033faf268a928b",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T05:16:46.878Z"
+}

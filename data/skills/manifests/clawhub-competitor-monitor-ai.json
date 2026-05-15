@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73097,
+  "uuid": "skill-clawhub-competitor-monitor-ai",
+  "skillKey": "clawhub-competitor-monitor-ai",
+  "name": "竞品数据定时监控",
+  "summary": "竞品数据定时监控Skill，定时访问指定电商或社交平台页面，抓取点赞、评论、销量等数据，检测数据异常波动（如出现爆款），自动截图并发送提醒通知。适用于竞品分析、市场监控、爆款发现等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.competitor_monitor_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rumu14",
+      "features": [
+        "竞品数据定时监控Skill，定时访问指定电商或社交平台页面，抓取点赞、评论、销量等数据，检测数据异常波动（如出现爆款），自动截图并发送提醒通知。适用于竞品分析、市场监控、爆款发现等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/competitor-monitor-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/116565375?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "competitor-monitor-ai",
+      "url": "https://clawhub.ai/skills/competitor-monitor-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "competitor-monitor-ai",
+    "url": "https://clawhub.ai/skills/competitor-monitor-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/competitor-monitor-ai-22c06bd7ebde9886.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/competitor-monitor-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-competitor-monitor-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:260c508bb77d904f9db6ebc46ac19f8214ecbe115775054e2411a471f56db57b",
+      "artifactSizeBytes": 2775
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T14:49:46.227Z"
+}

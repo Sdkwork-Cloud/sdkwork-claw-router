@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-telegram-setup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_telegram_setup",
+  "skill": {
+    "id": 13616,
+    "skillKey": "clawhub-openclaw-telegram-setup",
+    "name": "Openclaw Telegram Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-telegram-setup",
+    "url": "https://clawhub.ai/skills/openclaw-telegram-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-telegram-setup-feffdc5bef85d2ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure a Telegram Bot with OpenClaw in 10 minutes to enable free, worldwide AI messaging with command, group, and webhook support."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1388,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774051071930,
+      "changelog": "OpenClaw Telegram Setup – Initial Release\n\n- Provides step-by-step guide for configuring Telegram Bot as a message channel in OpenClaw.\n- Supports both personal and group chat integration via allowedChatIds.\n- Includes command customization and webhook setup instructions.\n- Addresses common troubleshooting questions.\n- Lists contact options for free setup assistance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e99c887e632cf4946387040587b1ae4bc81e8b9dbc8e068f8c2a7bd8e6643d7a"
+}

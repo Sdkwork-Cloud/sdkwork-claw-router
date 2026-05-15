@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-context-bridge@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_context_bridge",
+  "skill": {
+    "id": 20656,
+    "skillKey": "clawhub-local-context-bridge",
+    "name": "Local Context Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-context-bridge",
+    "url": "https://clawhub.ai/skills/local-context-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-context-bridge-b5f3617dc6b9c4eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search local personal and internal documents (Word, Excel, PDF, Markdown) using semantic keywords. Use this tool when the user asks about local files, privat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whyischen",
+      "userId": "s174rqbye16fq8xdw8ntz8yd3983g4nh",
+      "displayName": "whyischen",
+      "image": "https://avatars.githubusercontent.com/u/25917825?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 544,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1774316231711,
+      "changelog": "Version 1.0.10\n\n- Added an explicit note in the installation section that cbridge-agent is open-source, runs fully locally, and poses zero data leakage risk.\n- Provided a direct link to the project’s GitHub repo within the installation steps.\n- All other functionality, best practices, and usage instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b1a14781ea83426009b0bf3030d6e2b1d21f6c21a48418cbe4511ef02881392"
+}

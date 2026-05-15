@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brics@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brics",
+  "skill": {
+    "id": 71309,
+    "skillKey": "clawhub-brics",
+    "name": "brics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brics",
+    "url": "https://clawhub.ai/skills/brics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brics-29f18b224571ec49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "金砖国家合作机制 - 新兴市场国家合作平台，成员包括中国、俄罗斯、印度、巴西、南非等"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775052010041,
+      "changelog": "- 首个发布版本，介绍金砖国家（BRICS）合作机制和最新成员。\n- 梳理创始及新成员国，更新至2024年扩员情况。\n- 总结发展历程、经济与全球治理等主要合作领域。\n- 说明组织原则、运作方式及年度峰会机制。\n- 提供常见用例和权威数据参考。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d2c180610254fec1eef4df874b9db38bf493756e24807f3dc59d5efcaed4033b"
+}

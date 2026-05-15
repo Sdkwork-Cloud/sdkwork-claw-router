@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21689,
+  "uuid": "skill-clawhub-openclaw-vps-deploy",
+  "skillKey": "clawhub-openclaw-vps-deploy",
+  "name": "OpenClaw VPS Deploy",
+  "summary": "Deploy a custom OpenClaw repo (official or forked) to a Hostinger VPS and make it accessible via the cloud. Use when setting up a new OpenClaw instance on a...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_vps_deploy",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "Deploy a custom OpenClaw repo (official or forked) to a Hostinger VPS and make it accessible vi.",
+        "Use when setting up a new OpenClaw instance on a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-vps-deploy@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-vps-deploy",
+      "url": "https://clawhub.ai/skills/openclaw-vps-deploy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-vps-deploy",
+    "url": "https://clawhub.ai/skills/openclaw-vps-deploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-vps-deploy-9b6aa052657d9129.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-vps-deploy@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-vps-deploy-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e59c38434f053759794d0685a46ed16579d4c794be9f8dd5d6e78076deb67594",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T05:16:50.522Z"
+}

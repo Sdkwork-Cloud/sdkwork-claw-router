@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65643,
+  "uuid": "skill-clawhub-sevo",
+  "skillKey": "clawhub-sevo",
+  "name": "SEVO",
+  "summary": "SEVO — Agent 研发流水线。14 阶段全链路交付：需求规格 → 门禁评审 → 测试用例 → 验收编写 → 架构契约 → 编码实现 → 独立审计 → 回归验证 → 发布门禁 → 部署 → 终验 → 交付账本。",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sevo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuchangxu",
+      "features": [
+        "SEVO — Agent 研发流水线。14 阶段全链路交付：需求规格 → 门禁评审 → 测试用例 → 验收编写 → 架构契约 → 编码实现 → 独立审计 → 回归验证 → 发布门禁 → 部署."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sevo@1.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259125079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sevo",
+      "url": "https://clawhub.ai/skills/sevo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sevo",
+    "url": "https://clawhub.ai/skills/sevo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sevo-7351004dd393cf9b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sevo@1.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sevo-1.5.1.json",
+      "version": "1.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a521bb5307e9d8fdda67ffa90335f11bb0f45a5c604a99da925d6f0cea8356f6",
+      "artifactSizeBytes": 1944
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T07:51:52.376Z"
+}

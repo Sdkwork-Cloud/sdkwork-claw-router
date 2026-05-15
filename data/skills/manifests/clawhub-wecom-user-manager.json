@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68631,
+  "uuid": "skill-clawhub-wecom-user-manager",
+  "skillKey": "clawhub-wecom-user-manager",
+  "name": "wecom-user-manager",
+  "summary": "企业微信用户管理技能。支持管理员添加用户权限，用户首次登录自动激活。包含完整的用户生命周期管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wecom_user_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xtechmerge.AI",
+      "features": [
+        "企业微信用户管理技能。支持管理员添加用户权限，用户首次登录自动激活。包含完整的用户生命周期管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wecom-user-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/176652150?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wecom-user-manager",
+      "url": "https://clawhub.ai/skills/wecom-user-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wecom-user-manager",
+    "url": "https://clawhub.ai/skills/wecom-user-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wecom-user-manager-7262605e2a84cc2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wecom-user-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wecom-user-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b499b8ec14f59654eb90ab46303d9f2b290909857310d5bbcbf10670d6663154",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T02:19:11.813Z"
+}

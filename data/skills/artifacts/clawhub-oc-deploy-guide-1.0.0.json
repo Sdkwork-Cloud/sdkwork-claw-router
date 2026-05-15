@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oc-deploy-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oc_deploy_guide",
+  "skill": {
+    "id": 45883,
+    "skillKey": "clawhub-oc-deploy-guide",
+    "name": "OpenClaw Deploy Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oc-deploy-guide",
+    "url": "https://clawhub.ai/skills/oc-deploy-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oc-deploy-guide-8d842d298d9d1f1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Interactive deployment guide for OpenClaw local capabilities. Walks through installing the Memory Stack (qmd + LosslessClaw), vid2md, WeChat plugin, and main..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ottoprua",
+      "userId": "s17ftzwhab48d0z5sdvd5eecdd83zfaf",
+      "displayName": "OttoPrua",
+      "image": "https://avatars.githubusercontent.com/u/66740910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775120240333,
+      "changelog": "Interactive deployment guide: memory stack (qmd + LosslessClaw), vid2md, WeChat plugin, maintenance cron jobs. Confirmation gates between each phase.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1b8770f5c0e54367d6c611adac9095c4fa8d41fc648daaee510e63a1c1863085"
+}

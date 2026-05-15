@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-channel-income-tracker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_channel_income_tracker",
+  "skill": {
+    "id": 20530,
+    "skillKey": "clawhub-multi-channel-income-tracker",
+    "name": "Multi-Channel Income Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-channel-income-tracker",
+    "url": "https://clawhub.ai/skills/multi-channel-income-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-channel-income-tracker-5a2a1895e00bfa2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and analyze income and expenses from multiple sources with automatic categorization, ROI calculation, and detailed reports."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dagangtj",
+      "userId": "publishers:dagangtj",
+      "displayName": "dagangtj",
+      "image": "https://avatars.githubusercontent.com/u/65108318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 530,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772495688839,
+      "changelog": "Initial release - Track income from multiple sources with ROI analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:02cfe3f7f71a30100a7bc2b4b77baa7fa78600ad8dc58e03546ca4c80a0e0491"
+}

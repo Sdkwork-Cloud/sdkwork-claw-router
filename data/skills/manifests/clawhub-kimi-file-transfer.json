@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70346,
+  "uuid": "skill-clawhub-kimi-file-transfer",
+  "skillKey": "clawhub-kimi-file-transfer",
+  "name": "Kimi文件传输",
+  "summary": "将本地最多5个文件发送到当前Kimi对话中供用户下载，支持任意类型文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kimi_file_transfer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chongjie-ran",
+      "features": [
+        "将本地最多5个文件发送到当前Kimi对话中供用户下载，支持任意类型文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kimi-file-transfer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/198864991?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kimi-file-transfer",
+      "url": "https://clawhub.ai/skills/kimi-file-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kimi-file-transfer",
+    "url": "https://clawhub.ai/skills/kimi-file-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kimi-file-transfer-526883285e4ea6b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kimi-file-transfer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kimi-file-transfer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5236de4fdcbba18c3bf609c21dd7e8ea8abe6dbe726aabc4b024234aff93c63f",
+      "artifactSizeBytes": 1858
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T11:40:11.660Z"
+}

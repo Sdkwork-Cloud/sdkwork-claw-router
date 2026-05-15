@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40501,
+  "uuid": "skill-clawhub-betamarketradar",
+  "skillKey": "clawhub-betamarketradar",
+  "name": "Beta Market Radar",
+  "summary": "Real-time market scanning and alert system. Monitors SPX, major indices, VIX, and key crypto prices. Generates alerts when significant levels are crossed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.betamarketradar",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Real-time market scanning and alert system",
+        "Monitors SPX, major indices, VIX, and key crypto prices",
+        "Generates alerts when significant levels are crossed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/betamarketradar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "betamarketradar",
+      "url": "https://clawhub.ai/skills/betamarketradar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "betamarketradar",
+    "url": "https://clawhub.ai/skills/betamarketradar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/betamarketradar-6bb39489e97157e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/betamarketradar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-betamarketradar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b58e2b278826820d91be157492837a8073dde5de6c34ba3ad8da028a10b8a78",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T08:39:33.913Z"
+}

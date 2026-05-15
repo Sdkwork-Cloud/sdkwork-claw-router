@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49145,
+  "uuid": "skill-clawhub-eric-docker-helper",
+  "skillKey": "clawhub-eric-docker-helper",
+  "name": "Docker Helper",
+  "summary": "Manage Docker containers, images, volumes, networks, and Docker Compose projects. Use when the user wants to: (1) List/start/stop/restart Docker containers,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eric_docker_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ericlooi504",
+      "features": [
+        "Manage Docker containers, images, volumes, networks, and Docker Compose projects",
+        "Use when the user wants to: (1) List/start/stop/restart Docker containers,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eric-docker-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/275256771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eric-docker-helper",
+      "url": "https://clawhub.ai/skills/eric-docker-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eric-docker-helper",
+    "url": "https://clawhub.ai/skills/eric-docker-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eric-docker-helper-945bce324ffd8b42.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eric-docker-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eric-docker-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e35700d820f7e2d9fff08da0b6fca38bfb58e3bf9eb9e17b38f66055375b849",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T03:13:58.192Z"
+}

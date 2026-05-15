@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-article-publisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_publisher",
+  "skill": {
+    "id": 62467,
+    "skillKey": "clawhub-wechat-article-publisher",
+    "name": "wechat article publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-publisher",
+    "url": "https://clawhub.ai/skills/wechat-article-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-publisher-79c82dfd2e4b288c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 Markdown 文件或网页链接提取文章并发布到微信公众号。适用于需要“自动创建草稿/提交发布”、统一微信样式（standard/viral）和批量复用发布流程的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhenglong2015",
+      "userId": "s17bhv9enkh9dwhraj9w1mk2dn83r2t1",
+      "displayName": "zhenglong2015",
+      "image": "https://avatars.githubusercontent.com/u/13271308?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3062,
+      "installsAllTime": 22,
+      "installsCurrent": 22,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773155017083,
+      "changelog": "wechat article publisher",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:be0ff3e922668bdb03b186b3e55d4f091c7f1a47a021f667e43bc1f8e0d46696"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/checkers@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.checkers",
+  "skill": {
+    "id": 68318,
+    "skillKey": "clawhub-checkers",
+    "name": "Checkers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "checkers",
+    "url": "https://clawhub.ai/skills/checkers",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/checkers-d18cfcd69ebecfb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Checkers品牌美式汽车穿梭快餐，包括汉堡、鸡肉、热狗及小食，支持会员积分和多样套餐优惠。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776238095212,
+      "changelog": "- 改版为知识卡片格式，内容更简洁聚焦\n- 精简品牌与产品详细介绍，保留关键信息摘要\n- 新增表格结构呈现核心事实，便于快速查阅\n- 新增“使用提示”和信息延伸建议",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf5da9f141d5bec7d0fc8f88b10374316455d2b61b5a543e8872e4fc661b882c"
+}

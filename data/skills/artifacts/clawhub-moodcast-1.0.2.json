@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moodcast@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moodcast",
+  "skill": {
+    "id": 10545,
+    "skillKey": "clawhub-moodcast",
+    "name": "MoodCast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moodcast",
+    "url": "https://clawhub.ai/skills/moodcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moodcast-ac72990f4a0447aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Transform any text into emotionally expressive audio with ambient soundscapes using ElevenLabs v3 audio tags and Sound Effects API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashutosh887",
+      "userId": "s173p3j6zj8d5j6f7qw63p37vn849r42",
+      "displayName": "Ashutosh Jha",
+      "image": "https://avatars.githubusercontent.com/u/71774735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2292,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769673751850,
+      "changelog": "## Moodcast 1.0.2 Changelog\n\n- Updated documentation in README.md for clarity and up-to-date usage instructions.\n- Minor edits and improvements to code comments and help text in scripts/moodcast.py for better usability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f2b1ffb07316ed5b92c9cf414f3addfde3c44d106aacafcb91a09a2633fa498"
+}

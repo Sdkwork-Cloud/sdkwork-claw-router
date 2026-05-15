@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42342,
+  "uuid": "skill-clawhub-alby-lightning",
+  "skillKey": "clawhub-alby-lightning",
+  "name": "Alby Lightning Payments",
+  "summary": "Send, receive, and manage Bitcoin Lightning payments through Alby Hub's Nostr Wallet Connect, including balance checks and invoice handling.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alby_lightning",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kiagentkronos-cell",
+      "features": [
+        "Send, receive, and manage Bitcoin Lightning payments through Alby Hub's Nostr Wallet Connect, i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alby-lightning@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269010453?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alby-lightning",
+      "url": "https://clawhub.ai/skills/alby-lightning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alby-lightning",
+    "url": "https://clawhub.ai/skills/alby-lightning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alby-lightning-8c79edd643be6f68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alby-lightning@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alby-lightning-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd5ae5393d561314a77df982d26f570d48a0477a31f13aa8625ba2e63d29c29f",
+      "artifactSizeBytes": 1945
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:41:08.236Z"
+}

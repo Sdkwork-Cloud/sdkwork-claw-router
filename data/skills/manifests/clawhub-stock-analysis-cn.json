@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65373,
+  "uuid": "skill-clawhub-stock-analysis-cn",
+  "skillKey": "clawhub-stock-analysis-cn",
+  "name": "Stock Analysis CN",
+  "summary": "一键分析A股：技术面+估值+风险+基本面全覆盖，自动生成Word投资报告。基于腾讯财经API，内置行业专用估值基准。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jy02577302-ux",
+      "features": [
+        "一键分析A股：技术面+估值+风险+基本面全覆盖，自动生成Word投资报告。基于腾讯财经API，内置行业专用估值基准。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-analysis-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265815065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-analysis-cn",
+      "url": "https://clawhub.ai/skills/stock-analysis-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-cn",
+    "url": "https://clawhub.ai/skills/stock-analysis-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-cn-5cfccce19c46468f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-analysis-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-analysis-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd0733a14405beff47aea0148c69f483225d68d8d5142c451e54a7407b185c70",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:21:39.554Z"
+}

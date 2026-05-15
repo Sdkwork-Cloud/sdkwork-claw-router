@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/file-bug-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_bug_report",
+  "skill": {
+    "id": 47759,
+    "skillKey": "clawhub-file-bug-report",
+    "name": "OpenClaw Bug Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-bug-report",
+    "url": "https://clawhub.ai/skills/file-bug-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-bug-report-c555b20024b401f0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create triage-ready OpenClaw GitHub issue drafts for reports that an agent is slow, broken, not responding, tool-starved, degraded, or \"not as smart.\" Use wh..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "100yenadmin",
+      "userId": "s17b82a1f40fwepa72qw6dhmrd8605j2",
+      "displayName": "Eva",
+      "image": "https://avatars.githubusercontent.com/u/239388517?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777848886179,
+      "changelog": "Initial release: conservative OpenClaw diagnostics collection, duplicate issue search guidance, and triage-ready GitHub issue drafting workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cc6c90317317f473ad8035b2d1d0394580288a7828156406c19482ef0fb5b7b"
+}

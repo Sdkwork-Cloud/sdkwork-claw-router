@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73564,
+  "uuid": "skill-clawhub-zhoubao-yuebao",
+  "skillKey": "clawhub-zhoubao-yuebao",
+  "name": "周报月报生成",
+  "summary": "自动生成结构化周报、月报及项目报告，支持飞书文档输出，多模板、多格式、自定义编辑与进度可视化。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhoubao_yuebao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jpengcheng523-netizen",
+      "features": [
+        "自动生成结构化周报、月报及项目报告，支持飞书文档输出，多模板、多格式、自定义编辑与进度可视化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhoubao-yuebao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226868999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhoubao-yuebao",
+      "url": "https://clawhub.ai/skills/zhoubao-yuebao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhoubao-yuebao",
+    "url": "https://clawhub.ai/skills/zhoubao-yuebao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhoubao-yuebao-12d0fc70652bab9c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhoubao-yuebao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhoubao-yuebao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97b1113ffc1d9aa5e332c4b7cbcd8580ec1187a68ed25c0c3bfdea38b4335556",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:14:57.679Z"
+}

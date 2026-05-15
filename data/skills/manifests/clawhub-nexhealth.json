@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30692,
+  "uuid": "skill-clawhub-nexhealth",
+  "skillKey": "clawhub-nexhealth",
+  "name": "Nexhealth",
+  "summary": "NexHealth integration. Manage data, records, and automate workflows. Use when the user wants to interact with NexHealth data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexhealth",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "NexHealth integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with NexHealth data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexhealth@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexhealth",
+      "url": "https://clawhub.ai/skills/nexhealth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexhealth",
+    "url": "https://clawhub.ai/skills/nexhealth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexhealth-abda0ff85ce37fc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexhealth@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexhealth-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1495307af1322d1a24f4bca67deb971d331b83b46ab723e847c6d115fcef5d1f",
+      "artifactSizeBytes": 1839
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:17:41.418Z"
+}

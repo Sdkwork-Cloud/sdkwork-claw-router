@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24128,
+  "uuid": "skill-clawhub-open-ontologies",
+  "skillKey": "clawhub-open-ontologies",
+  "name": "Open Ontologies",
+  "summary": "AI-native ontology engineering using 39+ MCP tools backed by an in-memory Oxigraph triple store. Build, validate, query, and govern RDF/OWL ontologies with a...",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_ontologies",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fabio-rovai",
+      "features": [
+        "AI-native ontology engineering using 39+ MCP tools backed by an in-memory Oxigraph triple store",
+        "Build, validate, query, and govern RDF/OWL ontologies with a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-ontologies@0.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/146086869?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-ontologies",
+      "url": "https://clawhub.ai/skills/open-ontologies"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-ontologies",
+    "url": "https://clawhub.ai/skills/open-ontologies",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-ontologies-9c3735746ea5ec2d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-ontologies@0.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-ontologies-0.5.1.json",
+      "version": "0.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bb0e2d21b03c9dfe589f5fc83664e364b899eb6bd473e5cba5f146ff1c8e319",
+      "artifactSizeBytes": 2358
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T20:38:07.722Z"
+}

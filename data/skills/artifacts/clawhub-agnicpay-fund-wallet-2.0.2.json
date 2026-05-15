@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agnicpay-fund-wallet@2.0.2",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agnicpay_fund_wallet",
+  "skill": {
+    "id": 40227,
+    "skillKey": "clawhub-agnicpay-fund-wallet",
+    "name": "Agnic Fund Wallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agnicpay-fund-wallet",
+    "url": "https://clawhub.ai/skills/agnicpay-fund-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agnicpay-fund-wallet-f8343b050083146f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get instructions for funding your Agnic wallet with USDC. Use when the user wants to add funds, deposit USDC, top up, or needs more balance. Covers \"add fund..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agnicpay-prog",
+      "userId": "s1777853tw7s2n47974ggs0xad84d8pq",
+      "displayName": "Agnic.AI",
+      "image": "https://avatars.githubusercontent.com/u/240652244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.2",
+      "createdAt": 1776953073934,
+      "changelog": "v2.0.2 — Synced with upstream agnic-wallet-skills:\n- Standardized authentication (browser OAuth + headless AGNIC_TOKEN)\n- Rebranded references from \"AgnicPay\" to \"Agnic\"\n- Tightened descriptions for improved AI agent discovery\n- Scoped allowed-tools patterns",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1213a6c479a4e836bb2a72a7d7199493c194b523e2e1319fa695b75901920eab"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73456,
+  "uuid": "skill-clawhub-tianshu-stock",
+  "skillKey": "clawhub-tianshu-stock",
+  "name": "天枢股票分析系统",
+  "summary": "基于七大哲学理论，提供多维度评分和实时数据的智能股票诊断和操作建议系统。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tianshu_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "horizoncove",
+      "features": [
+        "基于七大哲学理论，提供多维度评分和实时数据的智能股票诊断和操作建议系统。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tianshu-stock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221652459?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tianshu-stock",
+      "url": "https://clawhub.ai/skills/tianshu-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tianshu-stock",
+    "url": "https://clawhub.ai/skills/tianshu-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tianshu-stock-3e378e83e7904fdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tianshu-stock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tianshu-stock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eae309347d639e954fb11f9b854238cb11766d2a312c139de386dd4ad84a3a83",
+      "artifactSizeBytes": 1895
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:54:19.244Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawl-the-agent-web@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawl_the_agent_web",
+  "skill": {
+    "id": 18089,
+    "skillKey": "clawhub-clawl-the-agent-web",
+    "name": "clawl skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawl-the-agent-web",
+    "url": "https://clawhub.ai/skills/clawl-the-agent-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawl-the-agent-web-6c18700bd0202e6a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register this AI agent on Clawl — the agent search engine. Generates a clawl.json discovery file and pings clawl.co.uk for indexing. Use when an agent wants to be discoverable, get ranked on the Clawl leaderboard, compete for King of the C."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wlshlad85",
+      "userId": "publishers:wlshlad85",
+      "displayName": "wlshlad85",
+      "image": "https://avatars.githubusercontent.com/u/146856731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 983,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770714606402,
+      "changelog": "Fix: All URLs corrected to clawl.co.uk (was incorrectly clawl.io)",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aa84d417864d28bc67b4bf366d18c14bc8c0e286f45eb189f666ba6eb1e97706"
+}

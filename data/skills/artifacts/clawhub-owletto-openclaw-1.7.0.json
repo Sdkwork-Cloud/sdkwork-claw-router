@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/owletto-openclaw@1.7.0",
+  "version": "1.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.owletto_openclaw",
+  "skill": {
+    "id": 17519,
+    "skillKey": "clawhub-owletto-openclaw",
+    "name": "Owletto OpenClaw Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "owletto-openclaw",
+    "url": "https://clawhub.ai/skills/owletto-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/owletto-openclaw-98cf534b3636e5bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the Owletto memory plugin for OpenClaw, including OAuth login and MCP health verification."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buremba",
+      "userId": "s1749gqqpzje9y45tpkrbf1gbs83zt9y",
+      "displayName": "Burak Emre Kabakcı",
+      "image": "https://avatars.githubusercontent.com/u/82745?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.7.0",
+      "createdAt": 1776737171383,
+      "changelog": "Version 1.7.0 of owletto-openclaw\n\n- No file changes detected in this release.\n- Functionality and documentation remain the same as the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3500a2663faf9a3cb6972b331e400096552b05a43500d0106f99d25ebf156b8b"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23293,
+  "uuid": "skill-clawhub-didit-email-verification",
+  "skillKey": "clawhub-didit-email-verification",
+  "name": "Didit Email Verification",
+  "summary": "Integrate Didit Email Verification standalone API to verify email addresses via OTP. Use when the user wants to verify emails, send email OTP codes, check em...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.didit_email_verification",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Didit",
+      "features": [
+        "Integrate Didit Email Verification standalone API to verify email addresses via OTP",
+        "Use when the user wants to verify emails, send email OTP codes, check em..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/didit-email-verification@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47662054?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "didit-email-verification",
+      "url": "https://clawhub.ai/skills/didit-email-verification"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "didit-email-verification",
+    "url": "https://clawhub.ai/skills/didit-email-verification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/didit-email-verification-66253df89976ca09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/didit-email-verification@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-didit-email-verification-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a89df6c6c36cbfb150b46ac620340d2622a6eee41c754001a167e7cefea62288",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:15:10.268Z"
+}

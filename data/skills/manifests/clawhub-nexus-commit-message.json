@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24306,
+  "uuid": "skill-clawhub-nexus-commit-message",
+  "skillKey": "clawhub-nexus-commit-message",
+  "name": "NEXUS Commit Message",
+  "summary": "Generate conventional commit messages from diffs",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_commit_message",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CyberForexBlockchain",
+      "features": [
+        "Generate conventional commit messages from diffs"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nexus-commit-message@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/37193064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nexus-commit-message",
+      "url": "https://clawhub.ai/skills/nexus-commit-message"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-commit-message",
+    "url": "https://clawhub.ai/skills/nexus-commit-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-commit-message-4030c71df4781f0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nexus-commit-message@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nexus-commit-message-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab1a1efd49eb3fe0f4385ff3b14d255f4002bc4bd2c2cac88141574738e1d012",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T17:08:12.304Z"
+}

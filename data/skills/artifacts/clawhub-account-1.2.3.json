@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/account@1.2.3",
+  "version": "1.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.account",
+  "skill": {
+    "id": 50678,
+    "skillKey": "clawhub-account",
+    "name": "Bank Claw | Give your agent a bank account"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "account",
+    "url": "https://clawhub.ai/skills/account",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/account-9af211329b2fc82e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Easy-to-use agentic wallets powered by Stripe. Use your existing Stripe/Link to top-up this versatile x402 wallet for any purchases or A2A payments."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codejika",
+      "userId": "s17c3jy66yb4fmg42whk0hp6wx83edge",
+      "displayName": "codejika",
+      "image": "https://avatars.githubusercontent.com/u/36914612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.2.3",
+      "createdAt": 1773192568656,
+      "changelog": "- Rebranded from \"account\" to \"stripe-wallet\" and updated to version 2.3.2.\n- Expanded documentation with detailed guides for multiple payment rails, including Pre-paid Wallet, Self-Hosted Card, and new Stripe x402 Wallet.\n- Improved security section highlighting new defense-in-depth measures, stricter API key usage, and real-time spending enforcement.\n- Clarified end-to-end onboarding flow and included both bot-first and owner-first registration paths.\n- Added direct links to all payment method guides and shopping tips for easier setup and use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8c802d71696470cfd6464ae77ef2701db2706bd20f7de3881ca9ae84362331a"
+}

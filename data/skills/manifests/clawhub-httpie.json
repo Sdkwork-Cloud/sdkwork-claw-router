@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59281,
+  "uuid": "skill-clawhub-httpie",
+  "skillKey": "clawhub-httpie",
+  "name": "HTTPie",
+  "summary": "HTTPie - 人性化的 HTTP 命令行客户端",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.httpie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "CN-big-cabbage",
+      "features": [
+        "人性化的 HTTP 命令行客户端"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/httpie@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/63539779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "httpie",
+      "url": "https://clawhub.ai/skills/httpie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "httpie",
+    "url": "https://clawhub.ai/skills/httpie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/httpie-4a7fe0d7d51d96e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/httpie@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-httpie-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bdd30f2cb8f272a88557ee82996b12311b2435f0bda0af971ba5316b7ab04e4",
+      "artifactSizeBytes": 1776
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T01:01:42.210Z"
+}

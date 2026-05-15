@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18811,
+  "uuid": "skill-clawhub-openclaw-github-sync",
+  "skillKey": "clawhub-openclaw-github-sync",
+  "name": "Openclaw Github Sync",
+  "summary": "Keep an OpenClaw agent's non-sensitive context (selected memory, MD files, notes, and custom skills) under version control in a separate Git repository for r...",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_github_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brad Vincent",
+      "features": [
+        "Keep an OpenClaw agent's non-sensitive context (selected memory, MD files, notes, and custom sk."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-github-sync@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1409490?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-github-sync",
+      "url": "https://clawhub.ai/skills/openclaw-github-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-github-sync",
+    "url": "https://clawhub.ai/skills/openclaw-github-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-github-sync-0808d6023911c142.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-github-sync@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-github-sync-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bffdb8e1488c5ec39e06d93e06295f93e07a70683002c8b954b5bf1087d9dd37",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T19:50:42.877Z"
+}

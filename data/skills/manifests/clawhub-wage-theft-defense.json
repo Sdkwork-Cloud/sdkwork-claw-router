@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41686,
+  "uuid": "skill-clawhub-wage-theft-defense",
+  "skillKey": "clawhub-wage-theft-defense",
+  "name": "Wage Theft Defense",
+  "summary": "Tools for identifying, documenting, and recovering stolen wages. Use when someone suspects unpaid overtime, tip theft, minimum wage violations, off-the-clock...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wage_theft_defense",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Tools for identifying, documenting, and recovering stolen wages",
+        "Use when someone suspects unpaid overtime, tip theft, minimum wage violations, off-the-clock..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wage-theft-defense@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wage-theft-defense",
+      "url": "https://clawhub.ai/skills/wage-theft-defense"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wage-theft-defense",
+    "url": "https://clawhub.ai/skills/wage-theft-defense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wage-theft-defense-48d12fcfa5f8dbee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wage-theft-defense@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wage-theft-defense-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b4f4e8bcd0ad9219c24631bff0df427cef02471512052e5a53935b81882e979",
+      "artifactSizeBytes": 2685
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:42:28.020Z"
+}

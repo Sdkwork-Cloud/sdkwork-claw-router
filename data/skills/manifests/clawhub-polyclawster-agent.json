@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32799,
+  "uuid": "skill-clawhub-polyclawster-agent",
+  "skillKey": "clawhub-polyclawster-agent",
+  "name": "Polyclawster",
+  "summary": "Trade on Polymarket prediction markets. Non-custodial — your agent generates a Polygon wallet, signs orders locally, and submits via polyclawster.com relay (...",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyclawster_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilya",
+      "features": [
+        "Trade on Polymarket prediction markets",
+        "Non-custodial — your agent generates a Polygon wallet, signs orders locally, and submits via po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polyclawster-agent@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72158359?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polyclawster-agent",
+      "url": "https://clawhub.ai/skills/polyclawster-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyclawster-agent",
+    "url": "https://clawhub.ai/skills/polyclawster-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyclawster-agent-facc5a59048fe3a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polyclawster-agent@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-polyclawster-agent-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:417576ab255d14b04936bc9ab4dfad361aa33d2c2226e399b0400310c26cc2dd",
+      "artifactSizeBytes": 2189
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T16:53:16.616Z"
+}

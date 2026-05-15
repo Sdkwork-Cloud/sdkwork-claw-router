@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/options-strategies-lite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.options_strategies_lite",
+  "skill": {
+    "id": 38690,
+    "skillKey": "clawhub-options-strategies-lite",
+    "name": "Options Strategies Lite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "options-strategies-lite",
+    "url": "https://clawhub.ai/skills/options-strategies-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/options-strategies-lite-4f9d3a203f85110a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Options strategy selector and plain-English guide to 5 core strategies. Tell me your market outlook and I'll point you to the right strategy. Covers covered..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jseale",
+      "userId": "s171t6g1emqadaw7pgjh8z0qgs83yqmy",
+      "displayName": "jseale",
+      "image": "https://avatars.githubusercontent.com/u/3369929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 185,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774974116625,
+      "changelog": "Free strategy selector. Upgrade for Greeks and adjustments at agentofalpha.com",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e54e17f29e3bb0ce2e821f31b855b06e3e12e222dadfce11f23c5404b5bfb084"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-m3e@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_m3e",
+  "skill": {
+    "id": 25138,
+    "skillKey": "clawhub-memory-m3e",
+    "name": "memory-m3e - Semantic Memory Plugin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-m3e",
+    "url": "https://clawhub.ai/skills/memory-m3e",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-m3e-cace5645d9622c1b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Semantic memory plugin using m3e-large embeddings with SQLite storage, supporting storage, retrieval, and deletion via cosine similarity search in pure JS."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kalalxy",
+      "userId": "publishers:kalalxy",
+      "displayName": "kalalxy",
+      "image": "https://avatars.githubusercontent.com/u/32028169?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 395,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773728230603,
+      "changelog": "Initial release of memory-m3e:\n\n- Adds semantic memory plugin using m3e-large embedding API (1536 dimensions).\n- Supports persistent storage with SQLite.\n- Pure JavaScript cosine similarity search (no native dependencies).\n- Automatic index refresh every 10 minutes.\n- Provides three tools: memory_store, memory_recall, and memory_forget.\n- Includes performance metrics and flexible configuration options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e458c129e7e4d9a23256b225170232dc4ef5dc6670eab8ecdd1196bff18c73a"
+}

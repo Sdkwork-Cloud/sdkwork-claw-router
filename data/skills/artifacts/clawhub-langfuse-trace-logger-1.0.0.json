@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/langfuse-trace-logger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.langfuse_trace_logger",
+  "skill": {
+    "id": 42557,
+    "skillKey": "clawhub-langfuse-trace-logger",
+    "name": "Langfuse Trace Logger"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "langfuse-trace-logger",
+    "url": "https://clawhub.ai/skills/langfuse-trace-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/langfuse-trace-logger-3854987c5c3c68f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Log subagent task completions as Langfuse traces for replay, evaluation, and cost analysis. Called during session-wrap Phase 4. Supports backfill, tag-based..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nissan",
+      "userId": "s17f2fw07zktjmcgagf5c29tbd83rt7v",
+      "displayName": "Nissan Dookeran",
+      "image": "https://avatars.githubusercontent.com/u/12583?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774682275048,
+      "changelog": "New skill: Langfuse trace logging and observability for agent pipelines",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b709dea455336cc1127c5b175e214f4eb550c72f3a7764e726b2036e1ae4dc96"
+}

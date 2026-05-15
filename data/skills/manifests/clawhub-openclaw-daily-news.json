@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63972,
+  "uuid": "skill-clawhub-openclaw-daily-news",
+  "skillKey": "clawhub-openclaw-daily-news",
+  "name": "OpenClaw每日资讯汇总",
+  "summary": "全面收集、整理和分析OpenClaw开源AI智能体相关的每日资讯动态。支持自动搜索、分类整理、风险评估和报告生成。使用场景包括：(1) 生成OpenClaw当日资讯汇总报告；(2) 分析OpenClaw安全风险趋势；(3) 跟踪OpenClaw产业生态发展；(4) 监控OpenClaw技术社区进展；(5) 提供O...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_daily_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fashion",
+      "features": [
+        "全面收集、整理和分析OpenClaw开源AI智能体相关的每日资讯动态。支持自动搜索、分类整理、风险评估和报告生成。使用场景包括：(1) 生成OpenClaw当日资讯汇总报告；(2) 分析Op."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-daily-news@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42791429?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-daily-news",
+      "url": "https://clawhub.ai/skills/openclaw-daily-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-daily-news",
+    "url": "https://clawhub.ai/skills/openclaw-daily-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-daily-news-cfbafee23a67fa4a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-daily-news@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-daily-news-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:122ec155332ed6066a21aa3087e6253157dce20812c54e346c62afb30c2448ab",
+      "artifactSizeBytes": 2648
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:43:40.404Z"
+}

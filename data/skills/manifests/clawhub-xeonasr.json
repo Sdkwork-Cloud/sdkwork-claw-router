@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19815,
+  "uuid": "skill-clawhub-xeonasr",
+  "skillKey": "clawhub-xeonasr",
+  "name": "xeon_asr",
+  "summary": "Automatically converts received voice messages to text via an external ASR service, supporting multiple audio formats and integrating with OpenClaw.",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xeonasr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aurora2035",
+      "features": [
+        "Automatically converts received voice messages to text via an external ASR service, supporting."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xeonasr@0.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17526552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xeonasr",
+      "url": "https://clawhub.ai/skills/xeonasr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xeonasr",
+    "url": "https://clawhub.ai/skills/xeonasr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xeonasr-9555fcd32c79df4f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xeonasr@0.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-xeonasr-0.1.4.json",
+      "version": "0.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34ddfa11184551ac9adc684b3f37496c69eca86ef2ccc83c477b978d2dfbf5ad",
+      "artifactSizeBytes": 2349
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T13:21:32.755Z"
+}

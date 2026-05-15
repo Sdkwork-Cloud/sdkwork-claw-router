@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creator-course-outline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creator_course_outline",
+  "skill": {
+    "id": 59451,
+    "skillKey": "clawhub-creator-course-outline",
+    "name": "Creator Course Outline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creator-course-outline",
+    "url": "https://clawhub.ai/skills/creator-course-outline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creator-course-outline-621e4930dca425f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "为创作者课程生成模块结构、单元目标、作业与里程碑。；use for course, creator, curriculum workflows；do not use for 承诺学员结果, 替代正式教学设计评审."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "52yuanchangxing",
+      "userId": "s178sqjkywrs4vbnfcrr7wx7f583gef5",
+      "displayName": "vx：17605205782",
+      "image": "https://avatars.githubusercontent.com/u/39086567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 317,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773640772773,
+      "changelog": "creator-course-outline 1.0.0 initial release\n\n- Generate module structures, unit objectives, assignments, and milestones for creator courses.\n- Prioritizes course outline, goals, and common learner challenges based on user inputs.\n- Outputs a review-ready draft and action checklist; clearly lists missing info for user confirmation.\n- Remains read-only, auditable, and safe by default; does not promise learner results or replace formal instructional review.\n- Includes usage rules and standard output structure for consistency.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e161ea4ce0611e7c66eb4eadaa515d1d5ed4dfa7aac8bf3c6020925111f62138"
+}

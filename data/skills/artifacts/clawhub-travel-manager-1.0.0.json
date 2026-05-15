@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/travel-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_manager",
+  "skill": {
+    "id": 8910,
+    "skillKey": "clawhub-travel-manager",
+    "name": "Travel Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-manager",
+    "url": "https://clawhub.ai/skills/travel-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-manager-22dc686b723b87ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive travel planning, booking, and management skill. Use when needing to plan international trips, manage multi-destination itineraries, handle family travel logistics, optimize travel costs, and coordinate complex travel arrangem."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alvarobcmed",
+      "userId": "publishers:alvarobcmed",
+      "displayName": "alvarobcmed",
+      "image": "https://avatars.githubusercontent.com/u/181783373?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5283,
+      "installsAllTime": 36,
+      "installsCurrent": 30,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770221563265,
+      "changelog": "Initial release of travel-manager skill with comprehensive travel planning features.\n\n- Supports international trip planning and multi-destination itineraries\n- Handles family travel logistics and age-specific needs\n- Offers cost optimization and travel document management\n- Includes defined workflow for efficient travel coordination\n- Provides references for family travel and international document requirements",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4c6dd3b150f3c97e11fc090d97034e561ce682c5947570895b6d3c854dd23791"
+}

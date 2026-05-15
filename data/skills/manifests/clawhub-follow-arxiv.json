@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69527,
+  "uuid": "skill-clawhub-follow-arxiv",
+  "skillKey": "clawhub-follow-arxiv",
+  "name": "follow-arxiv",
+  "summary": "搜索过去一段用户指定的时间内arxiv上某题材的论文，并可以下载，阅读，深度分析特定论文。在用户请求处理arxiv平台论文，或想要得到最新的论文概要时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_arxiv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "champagne315",
+      "features": [
+        "搜索过去一段用户指定的时间内arxiv上某题材的论文，并可以下载，阅读，深度分析特定论文。在用户请求处理arxiv平台论文，或想要得到最新的论文概要时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/follow-arxiv@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201896687?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "follow-arxiv",
+      "url": "https://clawhub.ai/skills/follow-arxiv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-arxiv",
+    "url": "https://clawhub.ai/skills/follow-arxiv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-arxiv-ce3ac1091f5e0b14.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/follow-arxiv@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-follow-arxiv-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5808a62b4626dc8171a522e87c23764b426f004e06319dbfebfb191694f75968",
+      "artifactSizeBytes": 2691
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T03:34:44.388Z"
+}

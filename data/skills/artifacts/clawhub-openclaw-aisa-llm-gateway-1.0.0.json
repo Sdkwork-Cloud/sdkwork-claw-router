@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-aisa-llm-gateway@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_aisa_llm_gateway",
+  "skill": {
+    "id": 11486,
+    "skillKey": "clawhub-openclaw-aisa-llm-gateway",
+    "name": "One API key for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-aisa-llm-gateway",
+    "url": "https://clawhub.ai/skills/openclaw-aisa-llm-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-aisa-llm-gateway-53db27720e7c9244.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified LLM Gateway - One API for 70+ AI models. Route to GPT, Claude, Gemini, Qwen, Deepseek, Grok and more with a single API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xjordansg-yolo",
+      "userId": "s17eqxzhby6aqcv44tccm6dqh583fznj",
+      "displayName": "0xjordansg-yolo",
+      "image": "https://avatars.githubusercontent.com/u/249538244?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1590,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 5,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770383804766,
+      "changelog": "Initial release of unified LLM Gateway.\n\n- Provides a single API key to access 70+ LLMs (e.g., GPT-4, Claude-3, Gemini, Qwen, Deepseek, Grok) via a unified, OpenAI-compatible API.\n- Enables multi-model chat, side-by-side comparisons, and automatic fallback between models.\n- Supports advanced features: streaming, vision/image analysis, and function calling.\n- Includes a CLI tool and minimal Python SDK for easy integration and usage.\n- Centralized billing, model switching, and usage tracking across all supported providers.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b760c63484a31caf5072bbf36a776021b75223529d4cb05817ec5d7d1de538d5"
+}

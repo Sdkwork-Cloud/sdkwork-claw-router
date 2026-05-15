@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45202,
+  "uuid": "skill-clawhub-kaspacom-dex-mcp",
+  "skillKey": "clawhub-kaspacom-dex-mcp",
+  "name": "KaspaCom DEX MCP",
+  "summary": "Use KaspaCom DEX through the KaspaCom DeFi MCP/CLI for pair discovery, token pricing, swaps, and liquidity management on IGRA and Kasplex. Trigger on request...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaspacom_dex_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marciano147",
+      "features": [
+        "Use KaspaCom DEX through the KaspaCom DeFi MCP/CLI for pair discovery, token pricing, swaps, an.",
+        "Trigger on request..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kaspacom-dex-mcp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89093969?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kaspacom-dex-mcp",
+      "url": "https://clawhub.ai/skills/kaspacom-dex-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaspacom-dex-mcp",
+    "url": "https://clawhub.ai/skills/kaspacom-dex-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaspacom-dex-mcp-eecd26b6db5297f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kaspacom-dex-mcp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kaspacom-dex-mcp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:447155eb315a0852bc48c2594ef5a978810c2ebb5d517b7c3d794d482b57ab60",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T15:28:36.466Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71426,
+  "uuid": "skill-clawhub-juhe-speech-generate",
+  "skillKey": "clawhub-juhe-speech-generate",
+  "name": "AI语音合成TTS - 聚合数据",
+  "summary": "AI语音合成（文本转语音）。将指定文本合成为语音文件并返回下载链接。使用场景：用户说\"把这段文字转成语音\"、\"帮我生成一段语音\"、\"用甜美的声音朗读这段话\"、\"把这个文案合成音频\"、\"用英文女声读一下这句话\"等。通过聚合数据（juhe.cn）API实时合成，支持多种拟人音色、多语言及方言，可选下载音频文件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_speech_generate",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "juhe-skills",
+      "features": [
+        "AI语音合成（文本转语音）。将指定文本合成为语音文件并返回下载链接。使用场景：用户说\"把这段文字转成语音\"、\"帮我生成一段语音\"、\"用甜美的声音朗读这段话\"、\"把这个文案合成音频\"、\"用英文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/juhe-speech-generate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203600343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "juhe-speech-generate",
+      "url": "https://clawhub.ai/skills/juhe-speech-generate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-speech-generate",
+    "url": "https://clawhub.ai/skills/juhe-speech-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-speech-generate-20b204235286c8db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/juhe-speech-generate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-juhe-speech-generate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1eb84e614956751e62b243433625396ab95d6747027e90456440a4ca790a1ec",
+      "artifactSizeBytes": 2567
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T10:38:49.055Z"
+}

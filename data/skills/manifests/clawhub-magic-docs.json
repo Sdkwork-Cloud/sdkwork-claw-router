@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61557,
+  "uuid": "skill-clawhub-magic-docs",
+  "skillKey": "clawhub-magic-docs",
+  "name": "Magic Docs",
+  "summary": "自动更新的活文档。在 Markdown 文件开头加 `<!-- MAGIC DOC -->` 标记，Agent 会在每轮对话后自动检测是否需要更新该文档，并写入新发现的信息。灵感来自 Claude Code 的 Magic Docs 机制。触发词：magic doc、活文档、自动更新文档、auto doc。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.magic_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wavmson",
+      "features": [
+        "自动更新的活文档。在 Markdown 文件开头加 `<!-",
+        "MAGIC DOC -->` 标记，Agent 会在每轮对话后自动检测是否需要更新该文档，并写入新发现的信息。灵感来自 Claude Code 的 Magic Docs 机制。触发词：mag."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/magic-docs@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/127436552?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "magic-docs",
+      "url": "https://clawhub.ai/skills/magic-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "magic-docs",
+    "url": "https://clawhub.ai/skills/magic-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/magic-docs-0966b41f7e87c2ba.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/magic-docs@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-magic-docs-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff4ed6de4e530a04fcbaf2a55910704145dbc890833eebee299b863244c2f59e",
+      "artifactSizeBytes": 2473
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T11:59:05.366Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/firm-orchestration@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_orchestration",
+  "skill": {
+    "id": 19467,
+    "skillKey": "clawhub-firm-orchestration",
+    "name": "Firm Orchestration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-orchestration",
+    "url": "https://clawhub.ai/skills/firm-orchestration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-orchestration-993be3678c8c085e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pyramid multi-agent orchestration for OpenClaw: routes objectives from a CEO agent down through departments, services and employees via sessions_send / sessi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "romainsantoli-web",
+      "userId": "publishers:romainsantoli-web",
+      "displayName": "romainsantoli-web",
+      "image": "https://avatars.githubusercontent.com/u/246739959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772323850361,
+      "changelog": "Initial release of firm-orchestration 1.0.0:\n\n- Implements the A2A (Agent-to-Agent) pyramid orchestration pattern for OpenClaw.\n- Enables CEO agent to delegate objectives down through departments, services, and employees using OpenClaw session tools.\n- Features a parallel, contract-based dispatch and convergence protocol modeled after real-world team practices.\n- Ensures outputs are validated, merged in dependency order, and documented with run summaries and disclaimers.\n- Built-in safeguards: session management, schema validation, rate limits, and no external calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db750e447daf925f8f0a60fafb9394cd79f17d2d5daf013645622b7784184434"
+}

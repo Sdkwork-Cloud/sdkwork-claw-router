@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58312,
+  "uuid": "skill-clawhub-crewai-multi-agent",
+  "skillKey": "clawhub-crewai-multi-agent",
+  "name": "Crewai Multi Agent",
+  "summary": "CrewAI 多智能体框架：role-goal-backstory 声明智能体，sequential / hierarchical 双流程，ReAct 与 OpenAI native function-calling 双 tool 循环，统一 Memory + 5 个原生 LLM provider + Lit C...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crewai_multi_agent",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "CrewAI 多智能体框架：role-goal-backstory 声明智能体，sequential / hierarchical 双流程，ReAct 与 OpenAI native fun."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crewai-multi-agent@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crewai-multi-agent",
+      "url": "https://clawhub.ai/skills/crewai-multi-agent"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crewai-multi-agent",
+    "url": "https://clawhub.ai/skills/crewai-multi-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crewai-multi-agent-5c5343ae91f9f2b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crewai-multi-agent@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-crewai-multi-agent-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0ff3ec3ff5a33cf38fa92c184b9d8882f35c70b0a14fc4fcb71609b9130558a",
+      "artifactSizeBytes": 2067
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T09:38:57.198Z"
+}

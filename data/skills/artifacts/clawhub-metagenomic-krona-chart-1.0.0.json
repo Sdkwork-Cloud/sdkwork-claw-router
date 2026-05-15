@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metagenomic-krona-chart@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metagenomic_krona_chart",
+  "skill": {
+    "id": 55427,
+    "skillKey": "clawhub-metagenomic-krona-chart",
+    "name": "Metagenomic Krona Chart"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metagenomic-krona-chart",
+    "url": "https://clawhub.ai/skills/metagenomic-krona-chart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metagenomic-krona-chart-49a7cbe9137418cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze data with `metagenomic-krona-chart` using a reproducible workflow, explicit validation, and structured outputs for review-ready interpretation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774589408883,
+      "changelog": "metagenomic-krona-chart 1.0.0 – Initial release\n\n- Provides a reproducible workflow to generate interactive Krona (sunburst) charts for taxonomic abundance in metagenomic samples.\n- Validates inputs explicitly and supports fallback/error reporting pathways for incomplete requests.\n- Accepts data in common formats (Kraken2, Bracken, or custom TSV) and outputs interactive HTML visualizations.\n- Implements structured outputs with clear handling of inputs, assumptions, and results for review-ready usage.\n- Includes audit-ready, self-contained commands and detailed documentation for setup, execution, and risk assessment.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbf87e799f87dc60c29a8fa8bb7b9ab027623f77e037b71a1ce83c240b7849a6"
+}

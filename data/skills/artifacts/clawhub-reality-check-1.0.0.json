@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reality-check@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reality_check",
+  "skill": {
+    "id": 44677,
+    "skillKey": "clawhub-reality-check",
+    "name": "Reality Check"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reality-check",
+    "url": "https://clawhub.ai/skills/reality-check",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reality-check-7db6733ad6dd567e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prevent bad strategic decisions by surfacing assumptions, testing feasibility, and exposing critical flaws before execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mzfshark",
+      "userId": "s17c7t947t48hg8ymjbywz1th583y2n6",
+      "displayName": "Mauricio Z.",
+      "image": "https://avatars.githubusercontent.com/u/26634695?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777052276506,
+      "changelog": "Initial release of the reality-check skill for strategic decision validation.\n\n- Surfaces explicit and implicit assumptions in plans.\n- Assesses each assumption for truth criteria, cheapest test, and failure risk.\n- Ranks weakest links based on impact and evidence.\n- Evaluates feasibility, critical flaws, and gives a 0–100 viability score.\n- Recommends whether to proceed, revise, or stop, plus next validation steps.\n- Focuses on separating evidence from hypothesis and prioritizes realism over optimism.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b9c648b545484c880d04dc229451a881bc0ec7c7adec4a9e9f77764b46bd494d"
+}

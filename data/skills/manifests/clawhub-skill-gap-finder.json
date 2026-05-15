@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59144,
+  "uuid": "skill-clawhub-skill-gap-finder",
+  "skillKey": "clawhub-skill-gap-finder",
+  "name": "Skill Gap Finder",
+  "summary": "扫描现有 Skill 套装，找重复、缺口、职责冲突和最该补的空位。；use for skills, bundle, analysis workflows；do not use for 臆造目录内容, 直接删除 skill.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_gap_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "扫描现有 Skill 套装，找重复、缺口、职责冲突和最该补的空位。；use for skills, bundle, analysis workflows；do not use for 臆造目."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-gap-finder@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-gap-finder",
+      "url": "https://clawhub.ai/skills/skill-gap-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-gap-finder",
+    "url": "https://clawhub.ai/skills/skill-gap-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-gap-finder-370014db660488b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-gap-finder@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-gap-finder-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7497df9f8453ec978046bc0f9a47a42bdec1364de731ba4be8d8611fe542bfbc",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:40:44.599Z"
+}

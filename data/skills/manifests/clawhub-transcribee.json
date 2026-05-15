@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9674,
+  "uuid": "skill-clawhub-transcribee",
+  "skillKey": "clawhub-transcribee",
+  "name": "Transcribee 🐝",
+  "summary": "Transcribe YouTube videos and local audio/video files with speaker diarization. Use when user asks to transcribe a YouTube URL, podcast, video, or audio file. Outputs clean speaker-labeled transcripts ready for LLM analysis.",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.transcribee",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itsfabioroma",
+      "features": [
+        "Transcribe YouTube videos and local audio/video files with speaker diarization",
+        "Use when user asks to transcribe a YouTube URL, podcast, video, or audio file",
+        "Outputs clean speaker-labeled transcripts ready for LLM analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/transcribee@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94720877?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "transcribee",
+      "url": "https://clawhub.ai/skills/transcribee"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "transcribee",
+    "url": "https://clawhub.ai/skills/transcribee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/transcribee-05ad58bd57afd42b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/transcribee@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-transcribee-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db91ce0ead53dd0f4cf5055f41b04e4f48d161904210891c7e08e20e4c0d43b7",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T20:05:35.760Z"
+}

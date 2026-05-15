@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65928,
+  "uuid": "skill-clawhub-ai-poison-guard",
+  "skillKey": "clawhub-ai-poison-guard",
+  "name": "Ai Poison Guard",
+  "summary": "AI 投毒内容过滤助手。检测和识别 GEO 投毒内容，验证信息来源可信度，标记潜在虚假信息，保护用户免受 AI 投毒攻击。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_poison_guard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "testc0de",
+      "features": [
+        "AI 投毒内容过滤助手。检测和识别 GEO 投毒内容，验证信息来源可信度，标记潜在虚假信息，保护用户免受 AI 投毒攻击。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-poison-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34063790?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-poison-guard",
+      "url": "https://clawhub.ai/skills/ai-poison-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-poison-guard",
+    "url": "https://clawhub.ai/skills/ai-poison-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-poison-guard-5671b914c41efd2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-poison-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-poison-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23bed766ee8cf3634cb5aac5feb7026a8ec248f33dd8a552842ca771b15d6bca",
+      "artifactSizeBytes": 1955
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:03:16.162Z"
+}

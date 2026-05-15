@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51738,
+  "uuid": "skill-clawhub-dcl-provenance-tracker",
+  "skillKey": "clawhub-dcl-provenance-tracker",
+  "name": "DCL Provenance Tracker — Supply Chain & Version Drift Verifier",
+  "summary": "Verify the integrity and version history of any ClawHub skill after an update. After ClawHavoc incidents where thousands of skills silently changed behavior...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dcl_provenance_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dari Rinch",
+      "features": [
+        "Verify the integrity and version history of any ClawHub skill after an update",
+        "After ClawHavoc incidents where thousands of skills silently changed behavior..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dcl-provenance-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161933416?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dcl-provenance-tracker",
+      "url": "https://clawhub.ai/skills/dcl-provenance-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dcl-provenance-tracker",
+    "url": "https://clawhub.ai/skills/dcl-provenance-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dcl-provenance-tracker-6270f79eb3939aaa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dcl-provenance-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dcl-provenance-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a315a0a33dd321bee7e2afeddb37e10910cacba608155b59f6538c85374f3f77",
+      "artifactSizeBytes": 2660
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T03:04:30.728Z"
+}

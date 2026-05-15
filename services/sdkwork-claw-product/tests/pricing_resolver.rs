@@ -79,6 +79,7 @@ fn resolves_customer_price_from_api_key_group_plan_and_official_reference() {
             model: "openai/global/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
+            channel_id: None,
         })
         .unwrap();
 
@@ -113,6 +114,78 @@ fn resolves_customer_price_from_api_key_group_plan_and_official_reference() {
 }
 
 #[test]
+fn resolves_upstream_cost_for_the_selected_provider_channel() {
+    let mut catalog = catalog_with_openai_model();
+    catalog.add_provider_route(
+        ModelProviderRoute::new(
+            "gpt-4o-mini",
+            "openrouter",
+            3002,
+            "openai/global/gpt-4o-mini-premium",
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini"),
+    );
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.125000").unwrap(),
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini")
+        .for_provider("openrouter", 3002),
+    );
+    let resolver = PricingResolver::new(&catalog);
+
+    let resolved = resolver
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "openai/global/gpt-4o-mini".to_owned(),
+            billing_meter: BillingMeter::LlmInputToken,
+            provider_code: Some("openrouter".to_owned()),
+            channel_id: Some(3002),
+        })
+        .unwrap();
+
+    assert_eq!(
+        "0.125000",
+        resolved
+            .upstream_cost
+            .unwrap()
+            .unit_price
+            .to_fixed_string(6)
+    );
+}
+
+#[test]
+fn rejects_selected_channel_that_is_not_a_provider_route_for_the_model() {
+    let mut catalog = catalog_with_openai_model();
+    catalog.add_price(
+        ModelPrice::new(
+            "gpt-4o-mini",
+            PriceSide::UpstreamCost,
+            BillingMeter::LlmInputToken,
+            Money::usd("0.125000").unwrap(),
+        )
+        .with_catalog_key("openai/global/gpt-4o-mini")
+        .for_provider("openrouter", 9999),
+    );
+    let resolver = PricingResolver::new(&catalog);
+
+    let error = resolver
+        .resolve(ResolveModelPriceQuery {
+            api_key_id: 100,
+            model: "openai/global/gpt-4o-mini".to_owned(),
+            billing_meter: BillingMeter::LlmInputToken,
+            provider_code: Some("openrouter".to_owned()),
+            channel_id: Some(9999),
+        })
+        .unwrap_err();
+
+    assert!(error.to_string().contains("channel 9999"));
+}
+
+#[test]
 fn explicit_plan_customer_price_overrides_official_reference_and_keeps_group_multiplier() {
     let mut catalog = catalog_with_openai_model();
     catalog.add_price(
@@ -134,6 +207,7 @@ fn explicit_plan_customer_price_overrides_official_reference_and_keeps_group_mul
             model: "openai/global/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::LlmInputToken,
             provider_code: Some("openrouter".to_owned()),
+            channel_id: None,
         })
         .unwrap();
 
@@ -168,6 +242,7 @@ fn supports_non_token_meter_without_new_pricing_table_shape() {
             model: "openai/global/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::ApiResult,
             provider_code: None,
+            channel_id: None,
         })
         .unwrap();
 
@@ -189,6 +264,7 @@ fn missing_price_returns_a_domain_error_instead_of_fake_success() {
             model: "openai/global/gpt-4o-mini".to_owned(),
             billing_meter: BillingMeter::VideoOutputSecond,
             provider_code: None,
+            channel_id: None,
         })
         .unwrap_err();
 

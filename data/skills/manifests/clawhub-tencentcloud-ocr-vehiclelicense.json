@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68458,
+  "uuid": "skill-clawhub-tencentcloud-ocr-vehiclelicense",
+  "skillKey": "clawhub-tencentcloud-ocr-vehiclelicense",
+  "name": "TencentCloud VehicleLicense OCR",
+  "summary": "腾讯云行驶证识别(VehicleLicenseOCR)接口调用技能。当用户需要识别行驶证图片主页（车牌号码、车辆类型、所有人、住址、使用性质、品牌型号、识别代码、发动机号、注册日期、发证日期）或副页（号牌号码、档案编号、核定载人数、总质量、整备质量、核定载质量、外廓尺寸、准牵引总质量、备注、检验记录）信息时,应使...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_ocr_vehiclelicense",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tencent-ocr",
+      "features": [
+        "腾讯云行驶证识别(VehicleLicenseOCR)接口调用技能。当用户需要识别行驶证图片主页（车牌号码、车辆类型、所有人、住址、使用性质、品牌型号、识别代码、发动机号、注册日期、发证日期."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentcloud-ocr-vehiclelicense@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246965649?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentcloud-ocr-vehiclelicense",
+      "url": "https://clawhub.ai/skills/tencentcloud-ocr-vehiclelicense"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-ocr-vehiclelicense",
+    "url": "https://clawhub.ai/skills/tencentcloud-ocr-vehiclelicense",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-ocr-vehiclelicense-e3b246b4e46a13fb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentcloud-ocr-vehiclelicense@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentcloud-ocr-vehiclelicense-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49d70a32117f032b236cbb6b313e82dbe39435e65d9a3370933549550591370e",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:41:39.528Z"
+}

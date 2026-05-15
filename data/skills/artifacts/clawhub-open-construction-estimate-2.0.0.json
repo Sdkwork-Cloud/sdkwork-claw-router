@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/open-construction-estimate@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_construction_estimate",
+  "skill": {
+    "id": 11561,
+    "skillKey": "clawhub-open-construction-estimate",
+    "name": "Open Construction Estimate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-construction-estimate",
+    "url": "https://clawhub.ai/skills/open-construction-estimate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-construction-estimate-f3a2f3608914364f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and utilize open construction pricing databases. Match BIM elements to standardized work items, calculate costs using public unit price databases with 55,000+ work items."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "datadrivenconstruction",
+      "userId": "publishers:datadrivenconstruction",
+      "displayName": "datadrivenconstruction",
+      "image": "https://avatars.githubusercontent.com/u/94158709?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1863,
+      "installsAllTime": 4,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770998510351,
+      "changelog": "**Major update with advanced work item matching features and expanded database integration.**\n\n- Added semantic matching engine using TF-IDF and sentence embeddings for accurate BIM-to-cost item mapping.\n- Supports filtering and searching across 55,000+ open construction work items from multiple public pricing databases.\n- Flexible API for matching BIM elements to standardized cost items, including CSI MasterFormat categorization.\n- Detailed documentation, code examples, and database schema included for quick integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7a5ac5fd57b1be059cc3a3019c02751c8d49e8d5efe5bc8c6fcfa17c2cc13d74"
+}

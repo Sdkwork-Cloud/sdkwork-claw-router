@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-rough-cut@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_rough_cut",
+  "skill": {
+    "id": 37881,
+    "skillKey": "clawhub-video-rough-cut",
+    "name": "Video Rough Cut"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-rough-cut",
+    "url": "https://clawhub.ai/skills/video-rough-cut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-rough-cut-15c99cf6e62e1007.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill for fast rough-cut cleanup of a single talking-head or voiceover video using the local B-Roll Studio rough-cut pipeline. It uploads one raw vi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tiepige8",
+      "userId": "s1731ejtwtz61g1e8kxq14jsn183r6mk",
+      "displayName": "tiepige8",
+      "image": "https://avatars.githubusercontent.com/u/134497289?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774690902611,
+      "changelog": "Initial release extracted from the current B-Roll Studio rough-cut pipeline.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fdc8379528ae2a09f9f541763743cbeb12df33c1b1624f82b49a5264c49b2ec"
+}

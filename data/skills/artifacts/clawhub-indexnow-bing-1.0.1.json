@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/indexnow-bing@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.indexnow_bing",
+  "skill": {
+    "id": 61289,
+    "skillKey": "clawhub-indexnow-bing",
+    "name": "IndexNow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "indexnow-bing",
+    "url": "https://clawhub.ai/skills/indexnow-bing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/indexnow-bing-f6f1533fecb3ac57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 IndexNow 协议向搜索引擎（Bing、Yandex、Naver 等）提交 URL，加速页面收录。使用场景： (1) 用户想要提交新页面或更新的页面给搜索引擎 (2) 用户说\"提交收录\"、\"indexnow\"、\"提交给 Bing\"、\"加速收录\" (3) 用户需要从 sitemap 批量提交所有 URL..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "domainrankhq",
+      "userId": "s172bj7whzm2b117ty5r2h4h2n861gxh",
+      "displayName": "domainrankhq",
+      "image": "https://avatars.githubusercontent.com/u/275320542?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 109,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777800683406,
+      "changelog": "Fix: url_encode() now passes URL as argument to Python to prevent code injection; add more info link",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc808f048033d8a0436ac0a0a1722330b25e24ef2fb205b1360cbe2ead8825c1"
+}

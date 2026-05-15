@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70816,
+  "uuid": "skill-clawhub-baichuan-ai",
+  "skillKey": "clawhub-baichuan-ai",
+  "name": "Baichuan Ai",
+  "summary": "整理并摘要百川大模型公开页面的模型能力、定价、文档目录与示例等信息，提供轻量级内容汇总服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baichuan_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "整理并摘要百川大模型公开页面的模型能力、定价、文档目录与示例等信息，提供轻量级内容汇总服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baichuan-ai@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baichuan-ai",
+      "url": "https://clawhub.ai/skills/baichuan-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baichuan-ai",
+    "url": "https://clawhub.ai/skills/baichuan-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baichuan-ai-65c4c1e587deb102.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baichuan-ai@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baichuan-ai-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb97997e4b99599599cb84ee451342d9cfd2295711e9e9b4535eaa2cc38da719",
+      "artifactSizeBytes": 2195
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T18:16:36.232Z"
+}

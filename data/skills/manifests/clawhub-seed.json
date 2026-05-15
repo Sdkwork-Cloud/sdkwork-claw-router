@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54042,
+  "uuid": "skill-clawhub-seed",
+  "skillKey": "clawhub-seed",
+  "name": "Seed",
+  "summary": "Grow firmware on any hardware through HTTP — upload C, compile on device, apply with watchdog rollback",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seed",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Awis13",
+      "features": [
+        "Grow firmware on any hardware through HTTP — upload C, compile on device, apply with watchdog r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seed@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41254059?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seed",
+      "url": "https://clawhub.ai/skills/seed"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seed",
+    "url": "https://clawhub.ai/skills/seed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seed-19b25856e1c150ca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seed@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-seed-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a1d7aa59491a3a28d5332a542be08ae30b882afe0037c604f5c258472efd29f",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T20:29:31.818Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slides-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slides_generator",
+  "skill": {
+    "id": 20753,
+    "skillKey": "clawhub-slides-generator",
+    "name": "Slides Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slides-generator",
+    "url": "https://clawhub.ai/skills/slides-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slides-generator-d9417436bc9ddd09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create Hummingbot-branded PDF slides from markdown with Mermaid diagram support. Use for presentations, decks, and technical documentation with professional..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fengtality",
+      "userId": "s17e4dmyqswjyz0b64xsrbe1r585g65b",
+      "displayName": "Michael Feng",
+      "image": "https://avatars.githubusercontent.com/u/1795030?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 529,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772239315625,
+      "changelog": "Initial release: Hummingbot-branded PDF slides from markdown with Mermaid diagram support.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:513eecc036ec0718e2519fe56778ec85e8e1396428cb9efc66776e19ace3d770"
+}

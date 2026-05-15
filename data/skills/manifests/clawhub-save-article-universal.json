@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61060,
+  "uuid": "skill-clawhub-save-article-universal",
+  "skillKey": "clawhub-save-article-universal",
+  "name": "Save Article Universal",
+  "summary": "通用微信公众号文章保存工具。支持多种笔记应用（Obsidian、Miaoyan、Notion 等），自动抓取文章、生成摘要、保存为 Markdown。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.save_article_universal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vlalamoon",
+      "features": [
+        "通用微信公众号文章保存工具。支持多种笔记应用（Obsidian、Miaoyan、Notion 等），自动抓取文章、生成摘要、保存为 Markdown。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/save-article-universal@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56936308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "save-article-universal",
+      "url": "https://clawhub.ai/skills/save-article-universal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "save-article-universal",
+    "url": "https://clawhub.ai/skills/save-article-universal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/save-article-universal-0a0bc2fd1998ffc1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/save-article-universal@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-save-article-universal-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3043177fb0fb305ebacc1af0adf5b34b003d591538c7f99447c4ec13cc2ff878",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:38:20.490Z"
+}

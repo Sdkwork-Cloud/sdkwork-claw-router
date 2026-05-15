@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13952,
+  "uuid": "skill-clawhub-yt-digest",
+  "skillKey": "clawhub-yt-digest",
+  "name": "YouTube Digest",
+  "summary": "Extract transcripts, summaries, chapters, and key moments from public YouTube videos without needing an API key.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yt_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0xRaini",
+      "features": [
+        "Extract transcripts, summaries, chapters, and key moments from public YouTube videos without ne."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yt-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/190923101?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yt-digest",
+      "url": "https://clawhub.ai/skills/yt-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yt-digest",
+    "url": "https://clawhub.ai/skills/yt-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yt-digest-0a5a7eb4599e28f5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yt-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yt-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e5376bc48281afd68d121216f77387ee640db4e2fc2a77fd3a49c6cf066a1b98",
+      "artifactSizeBytes": 2186
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T17:25:26.933Z"
+}

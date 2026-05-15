@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-update-merge@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_update_merge",
+  "skill": {
+    "id": 17534,
+    "skillKey": "clawhub-safe-update-merge",
+    "name": "Safe Update/Merge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-update-merge",
+    "url": "https://clawhub.ai/skills/safe-update-merge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-update-merge-119e93f4a70320cc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safely merge upstream OpenClaw updates without destroying plugin/skill injections, custom UI tabs, or workspace features. Two-phase: Phase 1 (automated) merg..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick-software",
+      "userId": "s172zy52hz8d9fxcmyr9padghd842s7c",
+      "displayName": "maverick-software",
+      "image": "https://avatars.githubusercontent.com/u/85259593?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 739,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1772557075650,
+      "changelog": "Add hourly auto-run enable/disable dropdown to the OpenClaw Update modal. Toggle reads cron job state on open and calls cron.update to enable/disable the Safe Merge Update Check job. Manual trigger (Run Safe Merge button) still works regardless of toggle state.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e653d92b385150878f280982a5137bf147d71c85b85c335c351304b7f8e67eaf"
+}

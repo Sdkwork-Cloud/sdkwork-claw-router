@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/use-cliche-data-in-docs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.use_cliche_data_in_docs",
+  "skill": {
+    "id": 36521,
+    "skillKey": "clawhub-use-cliche-data-in-docs",
+    "name": "Use Cliche Data in Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "use-cliche-data-in-docs",
+    "url": "https://clawhub.ai/skills/use-cliche-data-in-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/use-cliche-data-in-docs-80d7b592bbd8f0e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ensure documentation and examples use only generic, cliche placeholder data. Use when writing README files, updating docs folders, creating example code snip..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jhauga",
+      "userId": "s17ch25466qc0g2bcymk2dr8zx83pfny",
+      "displayName": "John Haugabook",
+      "image": "https://avatars.githubusercontent.com/u/10998676?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774646511343,
+      "changelog": "- Initial release of the skill enforcing use of generic, cliche placeholder data in all documentation and code examples.\n- Prevents accidental exposure of real names, emails, domains, organization details, or sensitive information in public-facing docs.\n- Provides clear guidance on when and how to substitute placeholder data in READMEs, docs folders, code comments, and changelogs.\n- Lists approved examples of cliche placeholder data for people, organizations, addresses, and more.\n- Outlines the strict boundary between where real implementation data is allowed (private files) and where only placeholders must be used (public docs and committed examples).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a85bb5063930cef00d95d679f132464afdae4cc41117c65d446478d3ec5fd66e"
+}

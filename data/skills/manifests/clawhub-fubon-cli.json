@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25636,
+  "uuid": "skill-clawhub-fubon-cli",
+  "skillKey": "clawhub-fubon-cli",
+  "name": "Fubon Cli",
+  "summary": "AI-agent skill for Taiwan stock/futures/options operations via fubon-cli. Use this skill whenever the user asks about Fubon Neo login, order placement, accou...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fubon_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mofesto",
+      "features": [
+        "AI-agent skill for Taiwan stock/futures/options operations via fubon-cli",
+        "Use this skill whenever the user asks about Fubon Neo login, order placement, accou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fubon-cli@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15235305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fubon-cli",
+      "url": "https://clawhub.ai/skills/fubon-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fubon-cli",
+    "url": "https://clawhub.ai/skills/fubon-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fubon-cli-84be2a9bc969d74b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fubon-cli@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fubon-cli-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd05a3c71839a919051be5c9e95d2cb9729e5636d3214f0a3977a87be0e776b8",
+      "artifactSizeBytes": 1997
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:38:49.236Z"
+}

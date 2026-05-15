@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/human-help-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_help_ai",
+  "skill": {
+    "id": 48175,
+    "skillKey": "clawhub-human-help-ai",
+    "name": "HumanHelpAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-help-ai",
+    "url": "https://clawhub.ai/skills/human-help-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-help-ai-2ac02316c0c0afe1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect with verified human experts across 38+ fields for AI validation and consulting; experts set rates and availability at humanhelpai.com."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "david1kos",
+      "userId": "s179tv374g498tdjwgbjsv373185s7sn",
+      "displayName": "HumanHelpAI",
+      "image": "https://avatars.githubusercontent.com/u/160638633?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777484927824,
+      "changelog": "- Initial release of Human Help AI Expert Finder skill.\n- Helps users find verified human experts across 38+ professional fields for AI validation and consulting.\n- Provides guidance for both users seeking experts and professionals wishing to join as experts.\n- Directs all users to humanhelpai.com for browsing experts, posting requests, or registering.\n- Highlights key platform features: 500+ verified experts, self-set rates, and free expert registration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:83a1def6ff8312e9a164b625493aa5a157bf4408f441ec04fcf45f028fd136c8"
+}

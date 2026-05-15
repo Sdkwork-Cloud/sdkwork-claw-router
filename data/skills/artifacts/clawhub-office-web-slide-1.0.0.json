@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/office-web-slide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.office_web_slide",
+  "skill": {
+    "id": 64773,
+    "skillKey": "clawhub-office-web-slide",
+    "name": "web-slide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "office-web-slide",
+    "url": "https://clawhub.ai/skills/office-web-slide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/office-web-slide-baab329ae798c1e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "网页端 Slide 生成 Skill。当用户需要制作演示文稿（Slide / PPT / 演示）、生成幻灯片、创建展示页面时触发。 用户提供素材或通过对话引导，Agent 自动生成可在浏览器中直接打开的交互式 HTML Slide。 支持多种布局类型、16 套高品质预设主题（8 风格 × 浅色/深色，含液态玻璃/..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "balancegsr",
+      "userId": "s17cm1yepabm59eqd7k7adjc6x83hgcb",
+      "displayName": "Balancegogogo",
+      "image": "https://avatars.githubusercontent.com/u/24697086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774796021032,
+      "changelog": "Initial release of office-web-slide: a browser-based HTML slide generator\n\n- Generates interactive web slides (HTML) based on user-provided content and style preferences.\n- Features a parallel \"three-bucket\" workflow guiding users to supply content, structure, and visual style.\n- Offers 16 preset modern themes (8 styles × light/dark), advanced layouts, charts, and entrance animations.\n- Strictly prevents metadata, user profiles, and sources from leaking into slide content.\n- Includes a complete workflow: theme selection (visual picker), template-based HTML assembly, comprehensive visual QA, and split output for large slide decks.\n- Supports data visualization (SVG, Chart.js, ECharts), localized theme customization, and component-based extension.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db001d7845d2814c3c5d7883b7c5be997f9e09be3617c9e59a41325a19c54003"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-flight@2.4.1",
+  "version": "2.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_flight",
+  "skill": {
+    "id": 10413,
+    "skillKey": "clawhub-book-flight",
+    "name": "Search and Book Flights"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-flight",
+    "url": "https://clawhub.ai/skills/book-flight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-flight-9f363f5469e6500c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find, book, and change flights for your human via email. One message, and done. (by BonBook)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aszelem",
+      "userId": "s177vcycx57xgzjcc9hme3y2kd841x4f",
+      "displayName": "BonBook",
+      "image": "https://avatars.githubusercontent.com/u/95665008?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2410,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "2.4.1",
+      "createdAt": 1770849578950,
+      "changelog": "Version 2.4.1\n\n- Added detailed Publisher Provenance section with domain verification, company registration, and contact information.\n- Clarified data handling in email and website channels, specifying exactly what PII and payment information is (and is not) included or exchanged.\n- Updated PERSISTENCE and PRIVILEGE to outline backend data retention by BonBook, emphasizing no sensitive data in agent-accessible channels.\n- Enhanced CREDENTIALS and security explanations to specify PCI-DSS compliance, 3DS payment, and strong encryption for sensitive web-form data.\n- Minor clarifications and consistency improvements throughout documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b079f25511ac951ac6684a052073d91ff2bb48873f884d68e9432963fb333257"
+}

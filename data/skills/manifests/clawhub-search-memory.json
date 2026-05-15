@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12420,
+  "uuid": "skill-clawhub-search-memory",
+  "skillKey": "clawhub-search-memory",
+  "name": "search-memory",
+  "summary": "Local-first memory search and indexing for Openclaw. Use when you need to (1) index memory files, (2) search memory from the CLI, or (3) wire a slash command for memory lookup.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.search_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Trumppo",
+      "features": [
+        "Local-first memory search and indexing for Openclaw",
+        "Use when you need to (1) index memory files, (2) search memory from the CLI, or (3) wire a slas."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/search-memory@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9217263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "search-memory",
+      "url": "https://clawhub.ai/skills/search-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "search-memory",
+    "url": "https://clawhub.ai/skills/search-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/search-memory-3e22904158bfed6f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/search-memory@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-search-memory-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b061e2d4401b62c00402b20cc57a4356631e4f6dff34430cf2674ec1f522aba5",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T17:58:11.171Z"
+}

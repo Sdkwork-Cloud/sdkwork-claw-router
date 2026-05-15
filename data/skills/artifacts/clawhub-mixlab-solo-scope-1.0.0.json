@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mixlab-solo-scope@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mixlab_solo_scope",
+  "skill": {
+    "id": 60072,
+    "skillKey": "clawhub-mixlab-solo-scope",
+    "name": "MIXLAB Solo Scope（每日简报）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mixlab-solo-scope",
+    "url": "https://clawhub.ai/skills/mixlab-solo-scope",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mixlab-solo-scope-fd83fd636e68ee95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从 Solo Scope RSS（https://www.mixdao.world/feed）拉取条目，按主题整理成 3～6 类，每类生成 140 字核心价值摘要，并附每条原标题与 URL 输出简报。由 Agent 自行完成拉取、整理、写简报。触发示例：「做 Solo Scope」「mixlab Solo Sco..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shadowcz007",
+      "userId": "publishers:shadowcz007",
+      "displayName": "shadowcz007",
+      "image": "https://avatars.githubusercontent.com/u/12645064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 687,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771417761196,
+      "changelog": "Initial release of mixlab-solo-scope.\n\n- Fetches entries from Solo Scope RSS feed and categorizes them into 3–6 concise topic groups.\n- For each group, automatically generates a 140-character core value summary and lists original titles with URLs.\n- Provides a ready-to-use Markdown report format.\n- Designed for efficient, actionable briefings tailored for solo founders and small teams.\n- Triggerable with several short commands related to Solo Scope or mixdao feeds.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bcfc485f33e7db83d14e445f5625387ab942f04aac87d1cd05822a87d933bcbc"
+}

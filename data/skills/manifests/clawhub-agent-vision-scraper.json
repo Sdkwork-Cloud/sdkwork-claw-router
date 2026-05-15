@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16955,
+  "uuid": "skill-clawhub-agent-vision-scraper",
+  "skillKey": "clawhub-agent-vision-scraper",
+  "name": "Agent Vision Scraper",
+  "summary": "Dockerized AI-powered web scraper using Playwright with virtual display and vision-based captcha solving, no third-party captcha services needed.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_vision_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tedtalk",
+      "features": [
+        "Dockerized AI-powered web scraper using Playwright with virtual display and vision-based captch."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-vision-scraper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249558148?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-vision-scraper",
+      "url": "https://clawhub.ai/skills/agent-vision-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-vision-scraper",
+    "url": "https://clawhub.ai/skills/agent-vision-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-vision-scraper-f97735cef24ff4bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-vision-scraper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-vision-scraper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52615eb14a3db334eea503ffe6f3c7078d6d6fc5a6dde1eb783128e31a0f12c4",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T07:07:07.564Z"
+}

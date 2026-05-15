@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/url-shortener-mobile@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.url_shortener_mobile",
+  "skill": {
+    "id": 44811,
+    "skillKey": "clawhub-url-shortener-mobile",
+    "name": "url-shortener-mobile"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "url-shortener-mobile",
+    "url": "https://clawhub.ai/skills/url-shortener-mobile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/url-shortener-mobile-2aba9b252ecfc289.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Guide for shortening any URL via public web services. Use whenever the user asks to shorten, abbreviate, or create a shareable link from a long URL. This ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tmiu",
+      "userId": "s171c34sfgwfjyth5xm2v80mfx84xqsf",
+      "displayName": "Tae-Min Choi",
+      "image": "https://avatars.githubusercontent.com/u/41322227?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776236887795,
+      "changelog": "\"Describe what changed\":\n  Restructure as instructions-only guide. The on-device QuickJS fetch's                                                                                                                                                                                 \n  network fingerprint gets rejected by shortener anti-bot filters. This\n  version documents how the agent should use the existing http_fetch                                                                                                                                                                                    \n  tool (different HTTP stack) with da.gd / cleanuri fallbacks.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42e598526c4903aefd1d18cdf9605a1799dac94d23755a49bf755188a9994c14"
+}

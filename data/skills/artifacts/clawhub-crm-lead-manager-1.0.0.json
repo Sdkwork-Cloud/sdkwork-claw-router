@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/crm-lead-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crm_lead_manager",
+  "skill": {
+    "id": 23669,
+    "skillKey": "clawhub-crm-lead-manager",
+    "name": "Ads CRM Leads"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crm-lead-manager",
+    "url": "https://clawhub.ai/skills/crm-lead-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crm-lead-manager-c4c81d6c1c2bdf96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage ad-generated leads and pipeline routing from Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, and landing-page funnels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 434,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772509913234,
+      "changelog": "crm-lead-manager 1.0.0\n\n- Initial release focused on managing ad-generated leads and pipeline routing from digital ad platforms.\n- Supports Meta (Facebook/Instagram), Google Ads, TikTok Ads, YouTube Ads, and landing-page funnels.\n- Implements lead scoring, routing SLA, and follow-up cadence purpose-built for advertising workflows.\n- Enforces data validation, routing logic, channel-specific recommendations, and measurable action plans.\n- Includes explicit platform guidance, example workflows, risk alerts, and structured escalation processes.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a3900b78482db3fde37bfee6fc506fae4e67ac26feff77a249862457936f1b5"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61015,
+  "uuid": "skill-clawhub-hunterserach",
+  "skillKey": "clawhub-hunterserach",
+  "name": "Hunter Search v1.0",
+  "summary": "用于调用奇安信 Hunter OpenAPI 进行资产批量导出。用户提到 Hunter、资产测绘、批量导出、task_id 下载文件等需求时优先加载本 skill。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hunterserach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bigass",
+      "features": [
+        "用于调用奇安信 Hunter OpenAPI 进行资产批量导出。用户提到 Hunter、资产测绘、批量导出、task_id 下载文件等需求时优先加载本 skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hunterserach@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51010852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hunterserach",
+      "url": "https://clawhub.ai/skills/hunterserach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hunterserach",
+    "url": "https://clawhub.ai/skills/hunterserach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hunterserach-dd118d72774430ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hunterserach@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hunterserach-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8eb06d7df8ef691e6694a0fa9f3c2bcdf2575fa3515e1521686af559962bcb1a",
+      "artifactSizeBytes": 3501
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T06:52:20.965Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63264,
+  "uuid": "skill-clawhub-bmap-jsapi-three",
+  "skillKey": "clawhub-bmap-jsapi-three",
+  "name": "baidu-map-jsapi-three",
+  "summary": "使用 MapV-Three 构建专业的 3D 地图和 GIS 应用 - 基于 Z-up 坐标系的 3D 地图库，支持地图编辑、测量工具、要素绘制、数据管理等地理可视化功能。适用于创建地图编辑器、测量工具、空间数据可视化等 Web-GIS 应用。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bmap_jsapi_three",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "baidu-map",
+      "features": [
+        "使用 MapV-Three 构建专业的 3D 地图和 GIS 应用",
+        "基于 Z-up 坐标系的 3D 地图库，支持地图编辑、测量工具、要素绘制、数据管理等地理可视化功能。适用于创建地图编辑器、测量工具、空间数据可视化等 Web-GIS 应用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bmap-jsapi-three@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/221660310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bmap-jsapi-three",
+      "url": "https://clawhub.ai/skills/bmap-jsapi-three"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bmap-jsapi-three",
+    "url": "https://clawhub.ai/skills/bmap-jsapi-three",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bmap-jsapi-three-b234c0dcbc180935.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bmap-jsapi-three@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-bmap-jsapi-three-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8966a343298a979d1ca9dd192a6af7490ccfa921b135d494434ae6239da59b12",
+      "artifactSizeBytes": 2112
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:43:15.079Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13511,
+  "uuid": "skill-clawhub-uk-prayer-times",
+  "skillKey": "clawhub-uk-prayer-times",
+  "name": "UK Prayer Times",
+  "summary": "Get instant, accurate Islamic prayer times for any UK location. Auto-detects your city or accepts any UK location name (cities, towns, boroughs). Handles typos with smart fuzzy search. Shows Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha tim.",
+  "version": "1.4.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uk_prayer_times",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clinicode",
+      "features": [
+        "Get instant, accurate Islamic prayer times for any UK location",
+        "Auto-detects your city or accepts any UK location name (cities, towns, boroughs)",
+        "Handles typos with smart fuzzy search",
+        "Shows Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha times in 12-hour format"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/uk-prayer-times@1.4.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/212307185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "uk-prayer-times",
+      "url": "https://clawhub.ai/skills/uk-prayer-times"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uk-prayer-times",
+    "url": "https://clawhub.ai/skills/uk-prayer-times",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uk-prayer-times-d6a64f1da8703620.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/uk-prayer-times@1.4.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-uk-prayer-times-1.4.4.json",
+      "version": "1.4.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18ac4eaa4c47412757a24731be6dd162ed0cb08df4027a3a946c409a9f77fdca",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T22:43:21.270Z"
+}

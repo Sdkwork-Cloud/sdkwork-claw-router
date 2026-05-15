@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56846,
+  "uuid": "skill-clawhub-adele",
+  "skillKey": "clawhub-adele",
+  "name": "Adele",
+  "summary": "Information assistant for Adele 阿黛尔. Get biography, latest news, career highlights, and social media updates.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adele",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for Adele 阿黛尔",
+        "Get biography, latest news, career highlights, and social media updates."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adele@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adele",
+      "url": "https://clawhub.ai/skills/adele"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adele",
+    "url": "https://clawhub.ai/skills/adele",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adele-3e4e823f00a094bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adele@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-adele-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73f5dccb48d11d818e568d798cd773c17d0487d30df56e84e5c00e309d70e9de",
+      "artifactSizeBytes": 1779
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T23:11:35.295Z"
+}

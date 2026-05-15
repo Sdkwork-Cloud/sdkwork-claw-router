@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-photo-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_photo_video",
+  "skill": {
+    "id": 52738,
+    "skillKey": "clawhub-youtube-photo-video",
+    "name": "Youtube Photo Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-photo-video",
+    "url": "https://clawhub.ai/skills/youtube-photo-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-photo-video-00f8f0bff69658c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn these photos into a YouTube slideshow video with transitions and musi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775920918002,
+      "changelog": "- Initial release of YouTube Photo Video skill.\n- Instantly turns your uploaded photos into YouTube-ready slideshow videos with music and transitions—no editing software needed.\n- Supports JPG, PNG, WEBP, HEIC files up to 200MB; export as 1080p MP4 in 30–60 seconds.\n- Automatic setup: handles token generation and secure connection for cloud video processing.\n- Easily check credits, upload files, edit, preview timeline, and export via simple chat commands.\n- Clear error handling for unsupported files, token/session issues, and export limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0572f622b31ece7872e64a5e2a07b4fe68e88c11ba94148c7a087b19904dbce2"
+}

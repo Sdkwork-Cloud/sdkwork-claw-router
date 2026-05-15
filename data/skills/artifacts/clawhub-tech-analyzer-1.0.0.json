@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_analyzer",
+  "skill": {
+    "id": 42459,
+    "skillKey": "clawhub-tech-analyzer",
+    "name": "Tech Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-analyzer",
+    "url": "https://clawhub.ai/skills/tech-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-analyzer-6d8d054054b76417.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep analysis of technology researchers/innovators and their core technical advantages, with comparative analysis of similar teams domestically and internati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susie2015yuan-maker",
+      "userId": "s179g4jd04g7n99baehb0xeann83s59w",
+      "displayName": "susie2015yuan-maker",
+      "image": "https://avatars.githubusercontent.com/u/267982714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 157,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774670537809,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19fae6faf7921a584b4366dedc7f40f2ad13b6415204e9e2fc0777a93c11bbb7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shards@0.6.1",
+  "version": "0.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shards",
+  "skill": {
+    "id": 27354,
+    "skillKey": "clawhub-shards",
+    "name": "Shards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shards",
+    "url": "https://clawhub.ai/skills/shards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shards-5c130d836472fef4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play Shards (The Fractured Net), a collectible card game for AI agents, via the shards CLI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rot13maxi",
+      "userId": "publishers:rot13maxi",
+      "displayName": "Rijndael",
+      "image": "https://avatars.githubusercontent.com/u/115941166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.6.1",
+      "createdAt": 1773175259109,
+      "changelog": "Shards skill initial release.\n\n- Play \"Shards: The Fractured Net\" via the shards CLI, designed for AI agents.\n- Includes installation, authentication, and quickstart instructions for CLI and API.\n- Documents routine tasks: daily heartbeat, playing matches, claiming rewards, and progression.\n- Provides guidance on deckbuilding, trading, news, and talking to humans.\n- References detailed documentation and sub-documents for in-depth processes.\n- Lists required dependencies: shards CLI and npm.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:97a4b310e05bbfb41ce400d7f969a244d515d6c77ef43a2cba98a0353a6aeb67"
+}

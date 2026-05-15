@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15780,
+  "uuid": "skill-clawhub-server-maintenance",
+  "skillKey": "clawhub-server-maintenance",
+  "name": "Server Maintenance",
+  "summary": "Automates server maintenance by checking disk usage, cleaning caches, optimizing resources, and supporting local and remote multi-server batch operations.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.server_maintenance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "2233admin",
+      "features": [
+        "Automates server maintenance by checking disk usage, cleaning caches, optimizing resources, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/server-maintenance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57929895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "server-maintenance",
+      "url": "https://clawhub.ai/skills/server-maintenance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "server-maintenance",
+    "url": "https://clawhub.ai/skills/server-maintenance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/server-maintenance-89f663e38d61b6b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/server-maintenance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-server-maintenance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a0e2ba7a9c426a11e101fd3e56b8dbd1a0fecfb59ddcf897652c21ac300a1bef",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T02:20:38.908Z"
+}

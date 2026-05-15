@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61665,
+  "uuid": "skill-clawhub-task-decomposer-skill",
+  "skillKey": "clawhub-task-decomposer-skill",
+  "name": "task-decomposer-skill",
+  "summary": "任务拆解技能 - 将需求分解为可执行的最小任务单元。 使用场景：(1) 需求分析时拆解任务 (2) 项目规划时细化工作 (3) 估算工时 (4) 制定迭代计划。 支持技术栈：Java/Spring Boot、Node.js、Python、Go、前端项目。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_decomposer_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "whisky",
+      "features": [
+        "将需求分解为可执行的最小任务单元。 使用场景：(1) 需求分析时拆解任务 (2) 项目规划时细化工作 (3) 估算工时 (4) 制定迭代计划。 支持技术栈：Java/Spring Boot、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-decomposer-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34331997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-decomposer-skill",
+      "url": "https://clawhub.ai/skills/task-decomposer-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-decomposer-skill",
+    "url": "https://clawhub.ai/skills/task-decomposer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-decomposer-skill-72f221feee87af5d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-decomposer-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-decomposer-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:daf21adc0efbf969ea509c61b9e40b6137394edff2790c1c434fd12b667dfa62",
+      "artifactSizeBytes": 2886
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T09:29:54.128Z"
+}

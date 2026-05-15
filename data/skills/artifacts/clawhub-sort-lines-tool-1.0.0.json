@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sort-lines-tool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sort_lines_tool",
+  "skill": {
+    "id": 47583,
+    "skillKey": "clawhub-sort-lines-tool",
+    "name": "Sort Lines Tool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sort-lines-tool",
+    "url": "https://clawhub.ai/skills/sort-lines-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sort-lines-tool-a1869a09ced520f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sort lines of text alphabetically or numerically. Use for data organization, list management, and text file preparation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dinghaibin",
+      "userId": "s170ed26v1mh4qzy7v9cnn7msx85mrn1",
+      "displayName": "BIN",
+      "image": "https://avatars.githubusercontent.com/u/9191597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 112,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777912210699,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b61be5984138e6e83fc3ae5f03d825cf06ed6529955be303f44e1b5974e2528"
+}

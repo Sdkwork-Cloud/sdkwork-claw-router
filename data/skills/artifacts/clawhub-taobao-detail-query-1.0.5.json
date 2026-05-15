@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-detail-query@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_detail_query",
+  "skill": {
+    "id": 72817,
+    "skillKey": "clawhub-taobao-detail-query",
+    "name": "阿里商品详情查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-detail-query",
+    "url": "https://clawhub.ai/skills/taobao-detail-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-detail-query-b145f82abe5dd536.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询阿里平台（淘宝/天猫）商品详情，支持商品ID或链接输入，返回详情数据"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yjcia",
+      "userId": "s173vkmtzsr1xwwnsp3hpg0ccd83gxf3",
+      "displayName": "YanJun",
+      "image": "https://avatars.githubusercontent.com/u/3753405?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1775021210785,
+      "changelog": "- Added a new API reference documentation file (references/api_reference.md).\n- Updated SKILL.md to remove duplicated sections related to edge case handling and API usage, streamlining the documentation for clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c0e40394ddd363f51482e99a25c4c23b0ee5807ea3174239552d1859d643a52"
+}

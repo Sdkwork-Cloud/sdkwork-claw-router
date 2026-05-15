@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71959,
+  "uuid": "skill-clawhub-context-handoff",
+  "skillKey": "clawhub-context-handoff",
+  "name": "Context Handoff",
+  "summary": "保存和恢复聊天上下文到本地文件。用于用户想在切换账号、清空 session、重新开会话、跨会话延续项目时，把当前会话级上下文或项目级摘要落盘并在之后恢复。也用于列出已有的会话上下文槽位或项目摘要，并按更新时间排序返回最近使用项。触发词包括：保存当前上下文、保存会话摘要、保存项目摘要、记下这次讨论、切号前保存、恢复...",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_handoff",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bayllech",
+      "features": [
+        "保存和恢复聊天上下文到本地文件。用于用户想在切换账号、清空 session、重新开会话、跨会话延续项目时，把当前会话级上下文或项目级摘要落盘并在之后恢复。也用于列出已有的会话上下文槽位或项目."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-handoff@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22362346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-handoff",
+      "url": "https://clawhub.ai/skills/context-handoff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-handoff",
+    "url": "https://clawhub.ai/skills/context-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-handoff-6a59f897ed851b9e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-handoff@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-handoff-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75783a8ee9b74780d49b4b5a18cae6e1a7d4ebbfc614bc28d0d843170ffaf1af",
+      "artifactSizeBytes": 2237
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:05:04.529Z"
+}

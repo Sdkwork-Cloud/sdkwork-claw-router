@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64440,
+  "uuid": "skill-clawhub-x-hot-topics-daily",
+  "skillKey": "clawhub-x-hot-topics-daily",
+  "name": "X Hot Topics Daily",
+  "summary": "每日追踪并推送 X（x.com）热点话题新闻简报。用于用户要求“每天定时看 X 热点”“按指定话题抓取热门帖”“用 browser 方式监控 X 趋势”时。默认覆盖 AI、LLM、社会热点（中国/新加坡/美国）五个主题。重点输出“最低成本 know-what 版”：2 条必知 + 3 条可忽略 + 10 分钟行动，帮助用户抗 FOMO，而不是只罗列标题。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_hot_topics_daily",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hmzo",
+      "features": [
+        "每日追踪并推送 X（x.com）热点话题新闻简报。用于用户要求“每天定时看 X 热点”“按指定话题抓取热门帖”“用 browser 方式监控 X 趋势”时。默认覆盖 AI、LLM、社会热点（."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-hot-topics-daily@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26140960?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-hot-topics-daily",
+      "url": "https://clawhub.ai/skills/x-hot-topics-daily"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-hot-topics-daily",
+    "url": "https://clawhub.ai/skills/x-hot-topics-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-hot-topics-daily-ff818a2d696f1119.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-hot-topics-daily@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-hot-topics-daily-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfa5477b4d2830d1a95bf62131e7b51c5ee1758a8a08898b83f15eca1d39f2f5",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T10:13:49.947Z"
+}

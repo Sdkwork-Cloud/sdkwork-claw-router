@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sardis-cards@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sardis_cards",
+  "skill": {
+    "id": 21249,
+    "skillKey": "clawhub-sardis-cards",
+    "name": "Sardis Cards"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sardis-cards",
+    "url": "https://clawhub.ai/skills/sardis-cards",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sardis-cards-54b91107c88125e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Virtual card issuance and management for AI agents to make real-world purchases"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "efedurmaz16",
+      "userId": "s173g6ctqbmcx214s55zqhxs2583mhvc",
+      "displayName": "EfeDurmaz16",
+      "image": "https://avatars.githubusercontent.com/u/75971010?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 416,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772972682136,
+      "changelog": "Initial release of sardis-cards, enabling virtual card issuance and management for AI agents:\n\n- Issue and manage virtual cards with customizable spending and merchant controls.\n- Instantly freeze/unfreeze cards and respond to suspicious activity with automatic fraud detection.\n- Monitor real-time transactions, set per-transaction/daily/monthly limits, and view transaction history.\n- Securely retrieve masked or full card details and comply with strict security policies.\n- Provides API examples and bash scripts for common card operations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b769d71f2973c89421ec91fdab9f18f870cb61122555246ec502c42851439f40"
+}

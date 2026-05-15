@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grok-image-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_image_generate",
+  "skill": {
+    "id": 61006,
+    "skillKey": "clawhub-grok-image-generate",
+    "name": "grok_image_generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-image-generate",
+    "url": "https://clawhub.ai/skills/grok-image-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-image-generate-b4f0e528402f40fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Grok Imagine 生成用户描述的图片，并指导保存及发送至飞书的完整流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "279458179",
+      "userId": "s172tnbzze795e1dcwzac5127983pqdg",
+      "displayName": "xiaohuozi",
+      "image": "https://avatars.githubusercontent.com/u/79885733?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1685,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773448573646,
+      "changelog": "- Removed web and X (Twitter) search functionality using the Grok API.\n- Added new skill for generating images with Grok Imagine based on user prompts.\n- Provided detailed step-by-step instructions (in Chinese) for opening the Grok Imagine page, entering prompts, generating, downloading, and sending AI-generated images.\n- Included sample code and recommended workflows for saving images locally and sharing them via Feishu.\n- Noted requirements, typical issues, and best practices for image saving, naming, and automation workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e3eed5a0650bebe873eafb3e2c9f1e86474373da032a10383f179148764dda8"
+}

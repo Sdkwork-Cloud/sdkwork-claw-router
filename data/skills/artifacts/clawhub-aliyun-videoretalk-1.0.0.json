@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aliyun-videoretalk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_videoretalk",
+  "skill": {
+    "id": 55529,
+    "skillKey": "clawhub-aliyun-videoretalk",
+    "name": "Aliyun Videoretalk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-videoretalk",
+    "url": "https://clawhub.ai/skills/aliyun-videoretalk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-videoretalk-4e0f0c6fe8ec6682.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when replacing lip sync in existing videos with Alibaba Cloud Model Studio VideoRetalk (`videoretalk`). Use when creating dubbed videos, replacing narrat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cinience",
+      "userId": "s1707avh05gnzr3g6e3m9ka6fh840rtd",
+      "displayName": "cinience",
+      "image": "https://avatars.githubusercontent.com/u/557426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775077478659,
+      "changelog": "- Initial release of the aliyun-videoretalk skill for Alibaba Cloud Model Studio VideoRetalk.\n- Enables automated lip sync replacement in person videos with new speech tracks.\n- Supports video and audio input URLs, multi-face selection, and optional video extension.\n- Outputs all request payloads, settings, and process snapshots for transparency.\n- Async-only API with polling, requiring an API key and public media URLs.\n- Includes operational guidance for best results and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3fba6187618b9a9388b0b5e68bb10c61b33cdd8775de90079825d609490fcbf1"
+}

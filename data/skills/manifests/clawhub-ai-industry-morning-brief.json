@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60319,
+  "uuid": "skill-clawhub-ai-industry-morning-brief",
+  "skillKey": "clawhub-ai-industry-morning-brief",
+  "name": "ai-morning-brief",
+  "summary": "AI 日报 - 自动抓取 LLM/Agent 领域热点信息，生成结构化中文简报。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_industry_morning_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "519989179",
+      "features": [
+        "自动抓取 LLM/Agent 领域热点信息，生成结构化中文简报。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-industry-morning-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67303934?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-industry-morning-brief",
+      "url": "https://clawhub.ai/skills/ai-industry-morning-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-industry-morning-brief",
+    "url": "https://clawhub.ai/skills/ai-industry-morning-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-industry-morning-brief-ddc04da037e5eb24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-industry-morning-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-industry-morning-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:735edf22b4e6aaf56c91d55ab5d4ab9fc431203bdd407b6c81c061c642d81015",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T03:09:37.473Z"
+}

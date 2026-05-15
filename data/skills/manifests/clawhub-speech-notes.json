@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71606,
+  "uuid": "skill-clawhub-speech-notes",
+  "skillKey": "clawhub-speech-notes",
+  "name": "Speech Notes",
+  "summary": "将录音/语音转写为结构化演讲纪要。适用于：会议讲话、内部分享、演讲录音的转写整理。 触发条件：用户发送音频文件并要求整理/转写/纪要，或要求将已有转写文本整理成结构化纪要。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech_notes",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Madoka",
+      "features": [
+        "将录音/语音转写为结构化演讲纪要。适用于：会议讲话、内部分享、演讲录音的转写整理。 触发条件：用户发送音频文件并要求整理/转写/纪要，或要求将已有转写文本整理成结构化纪要。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speech-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9532020?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speech-notes",
+      "url": "https://clawhub.ai/skills/speech-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech-notes",
+    "url": "https://clawhub.ai/skills/speech-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech-notes-c09228ccca595493.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speech-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-speech-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6aef7029871f0e7de6572c983b58e9c7dfe10817f424d5eec251b6b19f650b0e",
+      "artifactSizeBytes": 2477
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:56:44.928Z"
+}

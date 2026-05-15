@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31216,
+  "uuid": "skill-clawhub-active-trail",
+  "skillKey": "clawhub-active-trail",
+  "name": "Active Trail",
+  "summary": "Active Trail integration. Manage data, records, and automate workflows. Use when the user wants to interact with Active Trail data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.active_trail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Active Trail integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Active Trail data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/active-trail@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "active-trail",
+      "url": "https://clawhub.ai/skills/active-trail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "active-trail",
+    "url": "https://clawhub.ai/skills/active-trail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/active-trail-e4029a80623ed704.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/active-trail@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-active-trail-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8012d796a1fd4c30d3afc8cad1e3d69cf2828d31dbb45b88e7244853db62840d",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:08:06.049Z"
+}

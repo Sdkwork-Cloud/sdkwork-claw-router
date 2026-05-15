@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdbot-logs-litiao@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_logs_litiao",
+  "skill": {
+    "id": 28090,
+    "skillKey": "clawhub-clawdbot-logs-litiao",
+    "name": "Clawdbot Logs Litiao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-logs-litiao",
+    "url": "https://clawhub.ai/skills/clawdbot-logs-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-logs-litiao-3b2f51654bfaa155.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Clawdbot logs and diagnostics. Use when the user asks about bot performance, response times, errors, session stats, token usage, API costs, or wants..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "litiao1224",
+      "userId": "publishers:litiao1224",
+      "displayName": "litiao1224",
+      "image": "https://avatars.githubusercontent.com/u/183017089?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 323,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773691087418,
+      "changelog": "Bug fixes and improvements with -litiao suffix",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:172c8419e8bcf43aceb261453cf2df8adef1670cae1384749cf0a9872a4f3fac"
+}

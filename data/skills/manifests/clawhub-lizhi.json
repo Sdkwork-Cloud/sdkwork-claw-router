@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71896,
+  "uuid": "skill-clawhub-lizhi",
+  "skillKey": "clawhub-lizhi",
+  "name": "Lizhi",
+  "summary": "提供荔枝FM公开节目及播客数据摘要、榜单统计和搜索结果，支持关键词检索和节目表现对比分析。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lizhi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "提供荔枝FM公开节目及播客数据摘要、榜单统计和搜索结果，支持关键词检索和节目表现对比分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lizhi@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lizhi",
+      "url": "https://clawhub.ai/skills/lizhi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lizhi",
+    "url": "https://clawhub.ai/skills/lizhi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lizhi-352b1ddbb552ac9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lizhi@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lizhi-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0537f060c113b22b42af7a1c27f717662eed3eea981d5725916272dd50e27f95",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:19:05.757Z"
+}

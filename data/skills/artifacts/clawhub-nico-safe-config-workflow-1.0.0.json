@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nico-safe-config-workflow@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nico_safe_config_workflow",
+  "skill": {
+    "id": 67972,
+    "skillKey": "clawhub-nico-safe-config-workflow",
+    "name": "安全配置流程 (Nico)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nico-safe-config-workflow",
+    "url": "https://clawhub.ai/skills/nico-safe-config-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nico-safe-config-workflow-dbd49b1435a8b226.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全修改 OpenClaw 配置文件，自动检查、修复并验证修改，确保配置有效且系统稳定运行。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicoxia",
+      "userId": "publishers:nicoxia",
+      "displayName": "nicoxia",
+      "image": "https://avatars.githubusercontent.com/u/7669766?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772122058028,
+      "changelog": "初始版本：安全的配置修改流程，包含 doctor --fix 兜底、热重载验证、双重保险机制",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3673a60c8d26a3d0710c1b1573b1de5b79aaac1955037c0253e9fa2a5e1b7ac0"
+}

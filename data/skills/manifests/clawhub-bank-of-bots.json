@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51138,
+  "uuid": "skill-clawhub-bank-of-bots",
+  "skillKey": "clawhub-bank-of-bots",
+  "name": "Bank of Bots",
+  "summary": "Trust scoring for AI agents. Log transactions and submit payment proofs to build a verifiable BOB Score — a trust score (think FICO but for AI Agents) that o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bank_of_bots",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bankofbotsandy",
+      "features": [
+        "Trust scoring for AI agents",
+        "Log transactions and submit payment proofs to build a verifiable BOB Score — a trust score (thi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bank-of-bots@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259720042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bank-of-bots",
+      "url": "https://clawhub.ai/skills/bank-of-bots"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bank-of-bots",
+    "url": "https://clawhub.ai/skills/bank-of-bots",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bank-of-bots-6179fd609f42bfe2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bank-of-bots@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bank-of-bots-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f010b64ced75e988ce9532e4f66073f1d28bf7bebaf7f83120c295df2559bd0c",
+      "artifactSizeBytes": 2612
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:42:32.779Z"
+}

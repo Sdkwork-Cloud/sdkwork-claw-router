@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72550,
+  "uuid": "skill-clawhub-sogou",
+  "skillKey": "clawhub-sogou",
+  "name": "Sogou",
+  "summary": "整理搜狗输入法官网公开的功能说明、版本下载、平台支持、权限隐私及帮助信息，提供准确入口与摘要。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sogou",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "整理搜狗输入法官网公开的功能说明、版本下载、平台支持、权限隐私及帮助信息，提供准确入口与摘要。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sogou@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sogou",
+      "url": "https://clawhub.ai/skills/sogou"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sogou",
+    "url": "https://clawhub.ai/skills/sogou",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sogou-ab96360283b6e3c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sogou@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sogou-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:991eb62beef8ed880a3baaa200907f40b12e82194dc651e6e84b5afdc31e8537",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:56:18.261Z"
+}

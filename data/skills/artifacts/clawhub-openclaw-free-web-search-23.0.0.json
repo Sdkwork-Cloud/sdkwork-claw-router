@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-free-web-search@23.0.0",
+  "version": "23.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_free_web_search",
+  "skill": {
+    "id": 11575,
+    "skillKey": "clawhub-openclaw-free-web-search",
+    "name": "Zero Api Key Web Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-free-web-search",
+    "url": "https://clawhub.ai/skills/openclaw-free-web-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-free-web-search-35163efb415a59c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw skill for source-backed web search, page reading, and evidence-aware claim checking. No API keys required by default; optional providers can be enab..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wd041216-bit",
+      "userId": "s17djcs4rd60zq6rxnpn9xv3d583g4ew",
+      "displayName": "Da Wei",
+      "image": "https://avatars.githubusercontent.com/u/258555668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1849,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 2,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "23.0.0",
+      "createdAt": 1777798353463,
+      "changelog": "v23: multi-engine SERP (7 engines via Bright Data), Web Unlocker for blocked pages with auto-fallback on 403/429, production-unlock profile, MCP server engine param",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff1ec6df0530072098342049cdc8ef0f7a5acaddba244d44f5d73fff71e51fdd"
+}

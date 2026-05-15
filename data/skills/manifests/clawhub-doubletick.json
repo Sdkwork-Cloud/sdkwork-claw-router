@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24640,
+  "uuid": "skill-clawhub-doubletick",
+  "skillKey": "clawhub-doubletick",
+  "name": "DoubleTick",
+  "summary": "Send tracked emails via Gmail and check if they were opened.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubletick",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cseguinlz",
+      "features": [
+        "Send tracked emails via Gmail and check if they were opened."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubletick@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4228448?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubletick",
+      "url": "https://clawhub.ai/skills/doubletick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubletick",
+    "url": "https://clawhub.ai/skills/doubletick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubletick-ad15232e515562b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubletick@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubletick-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:314909eee94536a00314884550e899876213fe77c2bda02013ccb20b1cf809a6",
+      "artifactSizeBytes": 1894
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:16:34.002Z"
+}

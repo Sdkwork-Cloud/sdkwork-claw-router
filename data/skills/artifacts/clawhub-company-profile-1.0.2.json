@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/company-profile@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_profile",
+  "skill": {
+    "id": 72441,
+    "skillKey": "clawhub-company-profile",
+    "name": "德宝恒生-公司名片"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-profile",
+    "url": "https://clawhub.ai/skills/company-profile",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-profile-6fe9cdcb6f34ed03.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "德宝恒生科技服务有限公司 - 医疗物资智慧供应链SPD服务商，为医院提供医疗耗材全流程精益管理的一体化解决方案"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "foxbabby",
+      "userId": "s170vw3vmays8rdcn6v2mmax8h84s98z",
+      "displayName": "foxbabby",
+      "image": "https://avatars.githubusercontent.com/u/17000435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776181582625,
+      "changelog": "优化搜索关键词：补充医疗/SPD/耗材管理/智慧供应链/零库存/GPO 等 20+ 触发词，更新官网为 www.dbhs.com.cn",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ebd2a323e8430de0e6166784a0fd5396c90ef48da83c24037ae762b7173e22e1"
+}

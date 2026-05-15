@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16505,
+  "uuid": "skill-clawhub-postman",
+  "skillKey": "clawhub-postman",
+  "name": "Postman",
+  "summary": "Build, test, and automate APIs with Postman collections, environments, and Newman CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postman",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build, test, and automate APIs with Postman collections, environments, and Newman CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/postman@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "postman",
+      "url": "https://clawhub.ai/skills/postman"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postman",
+    "url": "https://clawhub.ai/skills/postman",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postman-045ddeb7f631b771.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/postman@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-postman-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43e7a9385604df4ccb5a51f4de02836fb32f4a23de47e9fe89df4d7450b7027a",
+      "artifactSizeBytes": 1814
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T10:59:06.646Z"
+}

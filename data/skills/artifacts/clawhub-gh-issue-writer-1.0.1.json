@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-issue-writer@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_issue_writer",
+  "skill": {
+    "id": 47963,
+    "skillKey": "clawhub-gh-issue-writer",
+    "name": "GitHub Issue Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-issue-writer",
+    "url": "https://clawhub.ai/skills/gh-issue-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-issue-writer-e7e7f68dcf4bbbbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Draft well-structured GitHub issues from a description, error, or idea. Supports bug reports, feature requests, enhancements, and tasks. Optionally submits d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djc00p",
+      "userId": "s17akx17qd32yxnr1065qq0kdd83h2c3",
+      "displayName": "Deonte Cooper",
+      "image": "https://avatars.githubusercontent.com/u/45864171?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777355636941,
+      "changelog": "Fix: declare GH_TOKEN as primaryEnv, add git + curl to required bins. Add prerequisite note clarifying drafting works without credentials; only submission requires gh/GH_TOKEN/git.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:abd51bbf0fec972db3b866b93250abe15838b42c6cfd9630829649d8fb4269ef"
+}

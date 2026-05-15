@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oecd@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oecd",
+  "skill": {
+    "id": 70500,
+    "skillKey": "clawhub-oecd",
+    "name": "Oecd"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oecd",
+    "url": "https://clawhub.ai/skills/oecd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oecd-6b1c64c81e672e6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球38国组成的国际经济组织，制定全球经济政策标准，发布经济数据和PISA教育评估报告，推动税改和AI治理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776618524491,
+      "changelog": "OECD Skill 1.0.0 Changelog\n\n- 首次发布，系统性梳理 OECD 组织背景、核心职能与发展历程\n- 覆盖历史时间线、业务结构、核心护城河及关键数据\n- 明确适用场景：投资分析、行业对比、上下游调研等\n- 增补行业地位、国际影响力及主要政策成果\n- 提供一站式了解全球经济政策制定者的权威信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d0b5534286b5180eb41e7f49ea511db6a280ae7b64d91e54567dd555ee05953"
+}

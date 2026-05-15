@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58826,
+  "uuid": "skill-clawhub-shenmeng-agent-harness",
+  "skillKey": "clawhub-shenmeng-agent-harness",
+  "name": "Agent Harness",
+  "summary": "Agent Harness管理工具 - 创建、配置和使用ACP (Agent Coding Platform) harness进行代码开发。支持Claude Code、Codex、Gemini CLI等主流AI编码助手。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_agent_harness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "Agent Harness管理工具",
+        "创建、配置和使用ACP (Agent Coding Platform) harness进行代码开发。支持Claude Code、Codex、Gemini CLI等主流AI编码助手。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-agent-harness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-agent-harness",
+      "url": "https://clawhub.ai/skills/shenmeng-agent-harness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-agent-harness",
+    "url": "https://clawhub.ai/skills/shenmeng-agent-harness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-agent-harness-c13e5d1e5ff4566c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-agent-harness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-agent-harness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f303b038ca57350bf5b33b45c8f1c52d4ab28efc0c5e6f9632aad6c69056ee96",
+      "artifactSizeBytes": 2549
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:45:47.795Z"
+}

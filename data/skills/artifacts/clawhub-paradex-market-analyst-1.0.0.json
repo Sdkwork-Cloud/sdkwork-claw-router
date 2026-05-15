@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paradex-market-analyst@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paradex_market_analyst",
+  "skill": {
+    "id": 42861,
+    "skillKey": "clawhub-paradex-market-analyst",
+    "name": "Market Analyst"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paradex-market-analyst",
+    "url": "https://clawhub.ai/skills/paradex-market-analyst",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paradex-market-analyst-70c011832a21e8ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Technical analysis, market screening, and regime classification for Paradex perpetual futures markets. Computes indicators (RSI, MACD, Bollinger Bands, ATR,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sv",
+      "userId": "s17emvq60g2t4ve39162cg0z8x8407rg",
+      "displayName": "Sergey Vidyuk",
+      "image": "https://avatars.githubusercontent.com/u/14086?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775020874449,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6d5bfbb1b309deb93092ff21e3ec86f454d11b4134a4515d9d498f1a6f0639b8"
+}

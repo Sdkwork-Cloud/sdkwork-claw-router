@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25605,
+  "uuid": "skill-clawhub-restart-task-recovery",
+  "skillKey": "clawhub-restart-task-recovery",
+  "name": "Restart Task Recovery",
+  "summary": "Preserve and resume in-progress multi-agent work across OpenClaw config patch/apply restarts. Use when a restart is required during active tasks, when users...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restart_task_recovery",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SwiftKing100",
+      "features": [
+        "Preserve and resume in-progress multi-agent work across OpenClaw config patch/apply restarts",
+        "Use when a restart is required during active tasks, when users..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/restart-task-recovery@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16414610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "restart-task-recovery",
+      "url": "https://clawhub.ai/skills/restart-task-recovery"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restart-task-recovery",
+    "url": "https://clawhub.ai/skills/restart-task-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restart-task-recovery-0aa88faddd60f440.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/restart-task-recovery@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-restart-task-recovery-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6b12bea42543888e12deed9027e650b22be0eebbe0cc29fc5a91a1c33236faa",
+      "artifactSizeBytes": 2081
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:49:35.545Z"
+}

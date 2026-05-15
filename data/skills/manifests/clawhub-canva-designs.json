@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54635,
+  "uuid": "skill-clawhub-canva-designs",
+  "skillKey": "clawhub-canva-designs",
+  "name": "Canva via ClawLink",
+  "summary": "Create designs, upload assets, export content, and manage brand templates in Canva — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canva_designs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Create designs, upload assets, export content, and manage brand templates in Canva — powered by."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/canva-designs@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "canva-designs",
+      "url": "https://clawhub.ai/skills/canva-designs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canva-designs",
+    "url": "https://clawhub.ai/skills/canva-designs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canva-designs-c0219be6e6bb181f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/canva-designs@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-canva-designs-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52385c0d589235de96697d4146eb9590001749c8a73163f32253cb2446ded896",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-05T17:30:02.186Z"
+}

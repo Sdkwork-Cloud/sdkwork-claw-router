@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25571,
+  "uuid": "skill-clawhub-bmi",
+  "skillKey": "clawhub-bmi",
+  "name": "Bmi",
+  "summary": "Calculate BMI, log weight entries, and chart body composition trends. Use when tracking fitness progress, setting weight goals, or reviewing data.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bmi",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Calculate BMI, log weight entries, and chart body composition trends",
+        "Use when tracking fitness progress, setting weight goals, or reviewing data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bmi@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bmi",
+      "url": "https://clawhub.ai/skills/bmi"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bmi",
+    "url": "https://clawhub.ai/skills/bmi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bmi-8a865efd6c90c1c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bmi@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bmi-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b274c16f891fcec310a96faa10fc59fe01c93e9cb1b7b1fd468d5209c6d3fee8",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:44:54.499Z"
+}

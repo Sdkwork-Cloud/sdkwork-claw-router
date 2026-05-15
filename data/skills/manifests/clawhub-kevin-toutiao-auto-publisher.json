@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64689,
+  "uuid": "skill-clawhub-kevin-toutiao-auto-publisher",
+  "skillKey": "clawhub-kevin-toutiao-auto-publisher",
+  "name": "Clawhub Skill Toutiao Publisher",
+  "summary": "自动发布图文文章和微头条到头条号，支持选题、写文、配图生成、Cookie登录、图文混排发布的全自动流程，也可定时自动化执行。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kevin_toutiao_auto_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevin.l",
+      "features": [
+        "自动发布图文文章和微头条到头条号，支持选题、写文、配图生成、Cookie登录、图文混排发布的全自动流程，也可定时自动化执行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kevin-toutiao-auto-publisher@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16457038?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kevin-toutiao-auto-publisher",
+      "url": "https://clawhub.ai/skills/kevin-toutiao-auto-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kevin-toutiao-auto-publisher",
+    "url": "https://clawhub.ai/skills/kevin-toutiao-auto-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kevin-toutiao-auto-publisher-573b49266ecd004b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kevin-toutiao-auto-publisher@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kevin-toutiao-auto-publisher-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a7a6bac07a8493ab29254588e37b80bcce1aefa7642a7acddc2e27dd9eb73dbe",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T10:13:02.850Z"
+}

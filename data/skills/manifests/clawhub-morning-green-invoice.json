@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16045,
+  "uuid": "skill-clawhub-morning-green-invoice",
+  "skillKey": "clawhub-morning-green-invoice",
+  "name": "Morning (Green Invoice)",
+  "summary": "Use to authenticate with Morning (GreenInvoice) and create/manage clients, items, and accounting documents (invoice/receipt/quote/order/credit).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_green_invoice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "k0renn",
+      "features": [
+        "Use to authenticate with Morning (GreenInvoice) and create/manage clients, items, and accountin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-green-invoice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103889387?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-green-invoice",
+      "url": "https://clawhub.ai/skills/morning-green-invoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-green-invoice",
+    "url": "https://clawhub.ai/skills/morning-green-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-green-invoice-36de68ababe1f25f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-green-invoice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-green-invoice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:896bdc49af9f64494d0f98f47bdd8b43740f71255ad65fff97e1bf9bab816302",
+      "artifactSizeBytes": 2289
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T14:30:30.386Z"
+}

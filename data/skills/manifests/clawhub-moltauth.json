@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12164,
+  "uuid": "skill-clawhub-moltauth",
+  "skillKey": "clawhub-moltauth",
+  "name": "MoltAuth",
+  "summary": "Authenticate and verify Molt agent requests using Ed25519 signatures for secure, token-free access and universal identity across Molt Apps.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltauth",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bhoshaga",
+      "features": [
+        "Authenticate and verify Molt agent requests using Ed25519 signatures for secure, token-free acc."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltauth@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72672555?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltauth",
+      "url": "https://clawhub.ai/skills/moltauth"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltauth",
+    "url": "https://clawhub.ai/skills/moltauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltauth-6cd088d7acadc2a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltauth@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltauth-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac48276ac776e2fb4e09360d122701e5b17e1e239ff1c1fd61debeb5cafa27c3",
+      "artifactSizeBytes": 1941
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T23:49:04.707Z"
+}

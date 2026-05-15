@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30873,
+  "uuid": "skill-clawhub-nate-b-jones-digest",
+  "skillKey": "clawhub-nate-b-jones-digest",
+  "name": "Nate B Jones Digest",
+  "summary": "Monitor Nate B Jones's YouTube channel, pull each new video transcript (YouTube captions or auto-transcribed audio), summarize it with an abstract + bullet h...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nate_b_jones_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "arpee",
+      "features": [
+        "Monitor Nate B Jones's YouTube channel, pull each new video transcript (YouTube captions or aut."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nate-b-jones-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2867779?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nate-b-jones-digest",
+      "url": "https://clawhub.ai/skills/nate-b-jones-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nate-b-jones-digest",
+    "url": "https://clawhub.ai/skills/nate-b-jones-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nate-b-jones-digest-2d70a5c708846240.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nate-b-jones-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nate-b-jones-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe8333bdc40109a3d70b184069a6648008ae83a27ccf304f2ad7a7a6d8b6d078",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T12:08:14.432Z"
+}

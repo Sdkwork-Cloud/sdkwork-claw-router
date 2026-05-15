@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36207,
+  "uuid": "skill-clawhub-web-distiller",
+  "skillKey": "clawhub-web-distiller",
+  "name": "Web Distiller",
+  "summary": "Fetch agent-ready cleaned Markdown from the Distiller API instead of relying on raw webpage fetches.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_distiller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "edwardyen724-g",
+      "features": [
+        "Fetch agent-ready cleaned Markdown from the Distiller API instead of relying on raw webpage fet."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-distiller@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/65644998?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-distiller",
+      "url": "https://clawhub.ai/skills/web-distiller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-distiller",
+    "url": "https://clawhub.ai/skills/web-distiller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-distiller-884b229eb4394a80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-distiller@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-distiller-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7fc0a8c17cbc2a2c21ba621e75873b2881a63c7d969101de2a2fb1fe115eb4c",
+      "artifactSizeBytes": 2324
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T08:33:24.056Z"
+}

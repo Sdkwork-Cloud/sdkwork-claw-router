@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slash-tokens@0.34.3",
+  "version": "0.34.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slash_tokens",
+  "skill": {
+    "id": 53085,
+    "skillKey": "clawhub-slash-tokens",
+    "name": "Slash Tokens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slash-tokens",
+    "url": "https://clawhub.ai/skills/slash-tokens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slash-tokens-a7f4a88db77270e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CLI proxy that reduces LLM token consumption by 60-90%. Prefix any dev command with 'rtk' to get filtered, compact output. Use for all Bash commands to save..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "2233admin",
+      "userId": "s17146zc2bhwqgxe6pp8t34acs83rnqt",
+      "displayName": "2233admin",
+      "image": "https://avatars.githubusercontent.com/u/57929895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 177,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.34.3",
+      "createdAt": 1775075853325,
+      "changelog": "Add origin story — how one dev cut their Claude Code bill from $200 to $40/month",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:219d9c8711a6c9cdd80ea270440da771f2d02827da646c082eaec13fcdae84f8"
+}

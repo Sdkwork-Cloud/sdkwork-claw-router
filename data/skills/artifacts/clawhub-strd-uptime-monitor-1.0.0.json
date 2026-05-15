@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/strd-uptime-monitor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.strd_uptime_monitor",
+  "skill": {
+    "id": 34606,
+    "skillKey": "clawhub-strd-uptime-monitor",
+    "name": "Uptime Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "strd-uptime-monitor",
+    "url": "https://clawhub.ai/skills/strd-uptime-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/strd-uptime-monitor-4f3e85d913ad830f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor uptime of websites/services and alert when down. Use when checking if a website is reachable, monitoring service health, or getting alerted on downtime."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kryzl19",
+      "userId": "s17b9ch25kfyjf0y6kmc0k5xph83j3ny",
+      "displayName": "KRYZL19",
+      "image": "https://avatars.githubusercontent.com/u/220403544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774536359876,
+      "changelog": "Initial release of uptime-monitor.\n\n- Monitors specified HTTP endpoints and detects downtime.\n- Sends alerts via webhook or email when a website or service is unreachable.\n- Provides daily uptime percentage reports in markdown format.\n- Configurable check intervals and alert methods using environment variables.\n- Includes scripts for health checks, alerting, and reporting.\n- Requires curl; results are logged locally.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ec4b9d4cbb3b5a2c0523ca65bf1f484e1ab3b2f0562e79df753757f50dc7765"
+}

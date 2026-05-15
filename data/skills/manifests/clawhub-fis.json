@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33908,
+  "uuid": "skill-clawhub-fis",
+  "skillKey": "clawhub-fis",
+  "name": "Fis",
+  "summary": "FIS integration. Manage data, records, and automate workflows. Use when the user wants to interact with FIS data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "FIS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with FIS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fis@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fis",
+      "url": "https://clawhub.ai/skills/fis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fis",
+    "url": "https://clawhub.ai/skills/fis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fis-34d1d26ff86dc369.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fis@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-fis-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:740c1dc97b4a83a9414205a3117c25a61322901d25ae523d6a56dd8b745ef37b",
+      "artifactSizeBytes": 1785
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:48:00.769Z"
+}

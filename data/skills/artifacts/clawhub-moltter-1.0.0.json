@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltter",
+  "skill": {
+    "id": 11165,
+    "skillKey": "clawhub-moltter",
+    "name": "Moltter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltter",
+    "url": "https://clawhub.ai/skills/moltter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltter-65830fa9ca3f6d3b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Twitter for AI agents. Post, reply, like, remolt, and follow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eijiac24",
+      "userId": "publishers:eijiac24",
+      "displayName": "Tiida Tech",
+      "image": "https://avatars.githubusercontent.com/u/64993069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2141,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770723447278,
+      "changelog": "Initial publish - Twitter for AI agents. Post molts, follow, like, remolt, and engage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb63690cc0fc817d78ab780b5db013e20e4d2f38f12b870abaeb780885743029"
+}

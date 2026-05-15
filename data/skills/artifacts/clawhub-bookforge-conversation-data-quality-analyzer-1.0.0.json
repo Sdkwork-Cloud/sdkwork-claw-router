@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bookforge-conversation-data-quality-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookforge_conversation_data_quality_analyzer",
+  "skill": {
+    "id": 52743,
+    "skillKey": "clawhub-bookforge-conversation-data-quality-analyzer",
+    "name": "Conversation Data Quality Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookforge-conversation-data-quality-analyzer",
+    "url": "https://clawhub.ai/skills/bookforge-conversation-data-quality-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookforge-conversation-data-quality-analyzer-6b532d8b38349f50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze customer conversation notes or transcripts after a meeting to classify every statement as fact, compliment, fluff, or idea — separating real signal f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quochungto",
+      "userId": "s176b6gfk8djgcz320d83ta4e184bx1v",
+      "displayName": "Hung Quoc To",
+      "image": "https://avatars.githubusercontent.com/u/88069966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777142083156,
+      "changelog": "Initial release: Conversation Data Quality Analyzer 1.0.0\n\n- Analyzes post-meeting customer conversation notes or transcripts for data quality.\n- Parses customer statements and classifies each as fact, compliment, fluff, or idea according to robust rules adapted from \"The Mom Test.\"\n- Helps identify reliable evidence versus false positives, vague praise, and unvalidated data in conversation records.\n- Guides users to provide necessary inputs (notes and problem area) and adapts to missing context by prompting or adjusting analysis detail.\n- Not designed for question/writing review or commitment signal evaluation—focuses strictly on post-conversation data quality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:42500e70868e0202b6adaa7c5c829bae47bdfd55a78900f3a8e33324e9d6a7ea"
+}

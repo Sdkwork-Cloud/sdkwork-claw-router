@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36401,
+  "uuid": "skill-clawhub-sina-market",
+  "skillKey": "clawhub-sina-market",
+  "name": "Sina Market",
+  "summary": "Fetch and inspect market data from Sina Finance public webpage resources across multiple market types. Use when a user wants A-share quotes, Hong Kong stock...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sina_market",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yonglongjinhao-max",
+      "features": [
+        "Fetch and inspect market data from Sina Finance public webpage resources across multiple market.",
+        "Use when a user wants A-share quotes, Hong Kong stock..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sina-market@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268529732?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sina-market",
+      "url": "https://clawhub.ai/skills/sina-market"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sina-market",
+    "url": "https://clawhub.ai/skills/sina-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sina-market-de40e2357690f4b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sina-market@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sina-market-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b96a836126ac19310e55d1b25aa69127123656624e785aff172c2a7ac414ce8",
+      "artifactSizeBytes": 1872
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T12:07:02.133Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42438,
+  "uuid": "skill-clawhub-qa-prep-partner",
+  "skillKey": "clawhub-qa-prep-partner",
+  "name": "Q&A Prep Partner",
+  "summary": "Predict challenging questions for presentations and prepare responses",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qa_prep_partner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Predict challenging questions for presentations and prepare responses"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qa-prep-partner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qa-prep-partner",
+      "url": "https://clawhub.ai/skills/qa-prep-partner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qa-prep-partner",
+    "url": "https://clawhub.ai/skills/qa-prep-partner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qa-prep-partner-28de3967f2431106.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qa-prep-partner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qa-prep-partner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84ee7852b6fddcecff3233ab31cb94dfafd40f156e7747f270305546d93a4efe",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T01:32:45.169Z"
+}

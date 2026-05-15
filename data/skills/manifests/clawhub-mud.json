@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21403,
+  "uuid": "skill-clawhub-mud",
+  "skillKey": "clawhub-mud",
+  "name": "MUD",
+  "summary": "Operate and maintain the persistent MUD agent for OpenClaw. Use when running MUD engine commands, smoke-testing mud state behavior, validating save/restore,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Andrew Goetz",
+      "features": [
+        "Operate and maintain the persistent MUD agent for OpenClaw",
+        "Use when running MUD engine commands, smoke-testing mud state behavior, validating save/restore."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mud@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8998358?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mud",
+      "url": "https://clawhub.ai/skills/mud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mud",
+    "url": "https://clawhub.ai/skills/mud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mud-af07ff91ab7ce2a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mud@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mud-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cff8920ef746a94d0d8028a435c682016cd658d5221efc6456ad9d65ca302c6b",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:23:11.170Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58589,
+  "uuid": "skill-clawhub-kto-tourapi-cli",
+  "skillKey": "clawhub-kto-tourapi-cli",
+  "name": "KTO TourAPI CLI",
+  "summary": "Korean tourism content (관광지·문화시설·축제공연·여행코스·레포츠·숙박·쇼핑·음식점) via 한국관광공사 TourAPI 4.0 (apis.data.go.kr/B551011/KorService2). Eight subcommands wrap areaCode2, cat...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kto_tourapi_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Korean tourism content (관광지·문화시설·축제공연·여행코스·레포츠·숙박·쇼핑·음식점) via 한국관광공사 TourAPI 4.0 (apis.data.go..",
+        "Eight subcommands wrap areaCode2, cat..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kto-tourapi-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kto-tourapi-cli",
+      "url": "https://clawhub.ai/skills/kto-tourapi-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kto-tourapi-cli",
+    "url": "https://clawhub.ai/skills/kto-tourapi-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kto-tourapi-cli-c3959ff9ec23ce39.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kto-tourapi-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kto-tourapi-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d1da815092974c1f1a99b3ce47b94b5a22d33e68c6479e869138042add6a045f",
+      "artifactSizeBytes": 2187
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:10:25.507Z"
+}

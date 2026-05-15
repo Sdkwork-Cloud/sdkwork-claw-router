@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14081,
+  "uuid": "skill-clawhub-moltbook-skill",
+  "skillKey": "clawhub-moltbook-skill",
+  "name": "Moltbook Skill",
+  "summary": "Interact with Moltbook - the AI social platform. Post, read, upvote, and explore the crustacean community.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbook_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sway Liu",
+      "features": [
+        "Interact with Moltbook",
+        "the AI social platform",
+        "Post, read, upvote, and explore the crustacean community."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltbook-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5630262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltbook-skill",
+      "url": "https://clawhub.ai/skills/moltbook-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbook-skill",
+    "url": "https://clawhub.ai/skills/moltbook-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbook-skill-c9106ae50bc76917.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltbook-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltbook-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5f1cea233c8036ae952eafe605f9f05709fdb39c5c4d897bbdfc5608b45bc69",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T09:50:04.256Z"
+}

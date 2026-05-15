@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24960,
+  "uuid": "skill-clawhub-meatloop",
+  "skillKey": "clawhub-meatloop",
+  "name": "MeatLoop",
+  "summary": "A real human reviews your question, screenshot, or pair of images and returns a structured verdict by email. Use for sanity checks, content verification, cre...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meatloop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "meatloopservice",
+      "features": [
+        "A real human reviews your question, screenshot, or pair of images and returns a structured verd.",
+        "Use for sanity checks, content verification, cre..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meatloop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263042622?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meatloop",
+      "url": "https://clawhub.ai/skills/meatloop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meatloop",
+    "url": "https://clawhub.ai/skills/meatloop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meatloop-909663068a649e1a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meatloop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meatloop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27420c1cbbf01d39a9ff662b516cf85e75acb70220f2295ef73513896d8b42e3",
+      "artifactSizeBytes": 2405
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T19:52:46.932Z"
+}

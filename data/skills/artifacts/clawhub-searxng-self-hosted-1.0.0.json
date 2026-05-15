@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/searxng-self-hosted@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.searxng_self_hosted",
+  "skill": {
+    "id": 10423,
+    "skillKey": "clawhub-searxng-self-hosted",
+    "name": "SearXNG Self-Hosted Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "searxng-self-hosted",
+    "url": "https://clawhub.ai/skills/searxng-self-hosted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/searxng-self-hosted-163b1eb21c2cac92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search the web using a self-hosted SearXNG instance. Privacy-respecting metasearch that aggregates results from multiple engines."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clockworksquirrel",
+      "userId": "publishers:clockworksquirrel",
+      "displayName": "clockworksquirrel",
+      "image": "https://avatars.githubusercontent.com/u/186874634?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2515,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769532185737,
+      "changelog": "- Updated skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:781c737d9931ce614029ae2238c923f6929dcbbe08b9ec1cf703373015d948ff"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-handoff@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_handoff",
+  "skill": {
+    "id": 14889,
+    "skillKey": "clawhub-session-handoff",
+    "name": "Session Handoff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-handoff",
+    "url": "https://clawhub.ai/skills/session-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-handoff-bf299f37279221e1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "WHAT: Create comprehensive handoff documents that enable fresh AI agents to seamlessly continue work with zero ambiguity. Solves long-running agent context exhaustion problem. WHEN: (1) User requests handoff/memory/context save, (2) Contex."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1049,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770730224592,
+      "changelog": "Initial release: provides structured workflows for creating and resuming session handoffs to prevent context loss in long-running tasks.\n\n- Introduces CREATE and RESUME workflows for saving and restoring project state.\n- Scripts for scaffold generation, validation, listing, and staleness checking included.\n- Defines handoff document quality criteria and automated validation with scoring.\n- Supports chained handoffs for projects requiring ongoing context preservation.\n- Adds clear guidance to prevent secrets leakage and enforce handoff completeness.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ecb4999478abf8eb8e5bb59d070fa5e57547cdc24fb96f3d23853e219ff5ab09"
+}

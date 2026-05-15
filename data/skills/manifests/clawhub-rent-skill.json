@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72576,
+  "uuid": "skill-clawhub-rent-skill",
+  "skillKey": "clawhub-rent-skill",
+  "name": "飞猪租车智能推荐助手",
+  "summary": "飞猪租车智能推荐助手。根据用户出行需求（人数、目的地、时间、品牌偏好）推荐最适合的租车车型，支持调用飞猪租车Mtop API查询实时库存。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rent_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maqianqiandegithup",
+      "features": [
+        "飞猪租车智能推荐助手。根据用户出行需求（人数、目的地、时间、品牌偏好）推荐最适合的租车车型，支持调用飞猪租车Mtop API查询实时库存。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rent-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46557289?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rent-skill",
+      "url": "https://clawhub.ai/skills/rent-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rent-skill",
+    "url": "https://clawhub.ai/skills/rent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rent-skill-f7160db1d91c9fb3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rent-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rent-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8369402ef9020f551feb7e7d483abbf83c3823a943f0fa2a3c8b4ee438c4e44e",
+      "artifactSizeBytes": 2465
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T11:55:53.965Z"
+}

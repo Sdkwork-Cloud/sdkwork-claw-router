@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-memory-system@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_memory_system",
+  "skill": {
+    "id": 64804,
+    "skillKey": "clawhub-openclaw-agent-memory-system",
+    "name": "Agent Memory System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-memory-system",
+    "url": "https://clawhub.ai/skills/openclaw-agent-memory-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-memory-system-d329c77e1c2ae6f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Agent 记忆系统设计助手。构建长期记忆、短期记忆、情景记忆架构。触发词：记忆、memory、上下文管理、上下文窗口。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775695692116,
+      "changelog": "Agent memory system initial release — supports multi-layered memory management for agents.\n\n- Implements short-term, long-term, semantic, and procedural memory architecture with context management.\n- Provides TypeScript core class for storing, retrieving, and consolidating agent memories using SQLite and vector search (Chroma).\n- Includes routines for context window building, memory importance scoring, and automatic short→long-term compression & forgetting.\n- Supports memory tagging, usage count, timestamp, and flexible storage for persistent agent learning.\n- Chinese documentation and usage examples included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd8dd6874fec54385e4e353cff8b5ccf327760579e42f1298e1fa5a0b2f6c790"
+}

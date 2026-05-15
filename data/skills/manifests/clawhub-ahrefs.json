@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14178,
+  "uuid": "skill-clawhub-ahrefs",
+  "skillKey": "clawhub-ahrefs",
+  "name": "Ahrefs Complete SEO Suite",
+  "summary": "Complete Ahrefs API integration for SEO analysis. Covers Site Explorer (domains, backlinks, rankings), Keywords Explorer (search volume, difficulty, SERP ana...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ahrefs",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "geozhu",
+      "features": [
+        "Complete Ahrefs API integration for SEO analysis",
+        "Covers Site Explorer (domains, backlinks, rankings), Keywords Explorer (search volume, difficul."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ahrefs@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41639383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ahrefs",
+      "url": "https://clawhub.ai/skills/ahrefs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ahrefs",
+    "url": "https://clawhub.ai/skills/ahrefs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ahrefs-50b7110eceb6157f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ahrefs@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ahrefs-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc854c140ce9eece11e430404237e0d5b8b427e7536347ea4e174269260092b0",
+      "artifactSizeBytes": 2044
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-18T06:10:49.282Z"
+}

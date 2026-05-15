@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73341,
+  "uuid": "skill-clawhub-meeting-minutes-assistant",
+  "skillKey": "clawhub-meeting-minutes-assistant",
+  "name": "会议纪要助手",
+  "summary": "会议纪要助手。自动整理会议内容、提取关键讨论点、生成结构化会议纪要、识别待办事项并支持多渠道推送。当用户需要：记录会议、整理会议纪要、提取会议待办、生成会议摘要、将纪要推送到企业微信/飞书/钉钉时使用此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_minutes_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xuyongliang",
+      "features": [
+        "会议纪要助手。自动整理会议内容、提取关键讨论点、生成结构化会议纪要、识别待办事项并支持多渠道推送。当用户需要：记录会议、整理会议纪要、提取会议待办、生成会议摘要、将纪要推送到企业微信/飞书/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-minutes-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105618971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-minutes-assistant",
+      "url": "https://clawhub.ai/skills/meeting-minutes-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-minutes-assistant",
+    "url": "https://clawhub.ai/skills/meeting-minutes-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-minutes-assistant-4807c7852a617c2f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-minutes-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-minutes-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7bce049e3c0a44040078b9963e110f342f87f42988d72095f1055b459fa74e0",
+      "artifactSizeBytes": 2113
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:47:39.802Z"
+}

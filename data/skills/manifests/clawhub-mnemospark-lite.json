@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48373,
+  "uuid": "skill-clawhub-mnemospark-lite",
+  "skillKey": "clawhub-mnemospark-lite",
+  "name": "mnemospark-lite Cloud File Storage",
+  "summary": "Use this skill when OpenClaw needs to store files in mnemospark-lite, pay the x402 upload flow, complete uploads, list wallet-scoped uploads, fetch download...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mnemospark_lite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pawlsclick",
+      "features": [
+        "Use this skill when OpenClaw needs to store files in mnemospark-lite, pay the x402 upload flow,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mnemospark-lite@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68655253?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mnemospark-lite",
+      "url": "https://clawhub.ai/skills/mnemospark-lite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mnemospark-lite",
+    "url": "https://clawhub.ai/skills/mnemospark-lite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mnemospark-lite-c549fbfb6bb2dbc4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mnemospark-lite@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mnemospark-lite-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9461238794306fb6a58acdccbec18c1dcf8f19c9635ff06b3e08f4bf5c73e63f",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T12:45:32.756Z"
+}

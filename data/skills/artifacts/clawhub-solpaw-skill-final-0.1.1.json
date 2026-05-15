@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solpaw-skill-final@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solpaw_skill_final",
+  "skill": {
+    "id": 15832,
+    "skillKey": "clawhub-solpaw-skill-final",
+    "name": "Solpaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solpaw-skill-final",
+    "url": "https://clawhub.ai/skills/solpaw-skill-final",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solpaw-skill-final-cec258b466187490.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Launch Solana tokens on Pump.fun via the SolPaw platform. 0.1 SOL one-time fee. Your wallet is the onchain creator."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lvcidpsyche",
+      "userId": "publishers:lvcidpsyche",
+      "displayName": "LvcidPsyche",
+      "image": "https://avatars.githubusercontent.com/u/160208855?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 963,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1770691087025,
+      "changelog": "- Initial public release of SolPaw skill (v0.1.1).\n- Allows launching Solana tokens on Pump.fun via the SolPaw platform for a 0.1 SOL one-time fee.\n- Ensures tokens are launched using your agent's wallet as the onchain creator.\n- Supports image uploads, IPFS metadata handling, and Pump.fun deployment in local mode.\n- Enforces a 1 token launch per agent per 24 hours limit.\n- Full instructions and TypeScript SDK usage examples included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dfce8ba3f536584005fec0e59936d99a4414433e97b82224b3220e83b58b3222"
+}

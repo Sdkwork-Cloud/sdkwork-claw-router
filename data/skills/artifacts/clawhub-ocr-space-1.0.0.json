@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocr-space@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocr_space",
+  "skill": {
+    "id": 58573,
+    "skillKey": "clawhub-ocr-space",
+    "name": "OCR Space: Free OCR API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocr-space",
+    "url": "https://clawhub.ai/skills/ocr-space",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocr-space-feb5e73af30b15cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用 OCR.space 免费 API 识别图片中的文字"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juguangyuan520-dotcom",
+      "userId": "s17875rpn69m98g6z36hr19g0h83g41a",
+      "displayName": "Juguangyuan",
+      "image": "https://avatars.githubusercontent.com/u/224916817?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1444,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773135251734,
+      "changelog": "- Initial release with OCR.text recognition for images.\n- Supports 20+ languages including Chinese, English, Japanese, and Korean.\n- Uses the free OCR.space API—no registration or API key required for testing.\n- Daily limit: 500 requests, 5 MB per file (auto-compression).\n- Usable via command line or Python import.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba375f95f7824714517e1430d42110d49da83d6c0b34e05f86da99d2d4ff7e30"
+}

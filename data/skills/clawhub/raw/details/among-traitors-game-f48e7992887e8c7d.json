@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "among-traitors-game",
+    "displayName": "Among Traitors",
+    "summary": "Control an AI game agent in Among Traitors by birthing, joining lobbies with webhooks, and guiding gameplay through card plays and whispers via REST API.",
+    "tags": {
+      "latest": "1.0.3"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "createdAt": 1772603237996,
+    "updatedAt": 1778303873888
+  },
+  "latestVersion": {
+    "version": "1.0.3",
+    "createdAt": 1773165678688,
+    "changelog": "No code changes; added secrets and permissions blocks:\n\n- Declared required secrets (`WEBHOOK_TOKEN`, optionally `OPENCLAW_HOOKS_TOKEN`) for webhook authentication.\n- Added explicit permissions for HTTP webhooks (incoming game events) and HTTP REST calls (game actions) to among-traitors-api.fly.dev.\n- No functional changes to agent/game logic.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "saltorioussig",
+    "userId": "publishers:saltorioussig",
+    "displayName": "saltoriousSIG",
+    "image": "https://avatars.githubusercontent.com/u/20292420?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778303873888
+  }
+}

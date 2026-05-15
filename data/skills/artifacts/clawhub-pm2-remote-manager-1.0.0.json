@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm2-remote-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm2_remote_manager",
+  "skill": {
+    "id": 35290,
+    "skillKey": "clawhub-pm2-remote-manager",
+    "name": "PM2 Remote Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm2-remote-manager",
+    "url": "https://clawhub.ai/skills/pm2-remote-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm2-remote-manager-35ff3108cd883a17.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SSH-based PM2 service management for remote servers. List processes, restart/stop services, view logs, monitor CPU/memory usage, and perform common PM2 opera..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qoohsuan",
+      "userId": "s17716vf8bh77s3vpavep1kzfn83msft",
+      "displayName": "Qoohsuan",
+      "image": "https://avatars.githubusercontent.com/u/81729903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774495512145,
+      "changelog": "Initial release: Remote PM2 management via SSH",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dcec8c1fbdb03b86210dec12ed19cb09df67a639a3bb7a3b5ccfa6218f685364"
+}

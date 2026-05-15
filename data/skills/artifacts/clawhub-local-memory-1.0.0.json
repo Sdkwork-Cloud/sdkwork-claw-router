@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_memory",
+  "skill": {
+    "id": 62469,
+    "skillKey": "clawhub-local-memory",
+    "name": "Local Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-memory",
+    "url": "https://clawhub.ai/skills/local-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-memory-0db17eccc0b1a342.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "本地向量记忆工具，替代内置 memory 工具。使用 ChromaDB + BGE-small-zh 实现完全离线的语义记忆存储和检索。使用场景：(1) 存储重要信息到长期记忆，(2) 语义搜索历史记忆，(3) 删除特定记忆。触发词：记住、记忆、recall、memory、forget。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangmu-git2",
+      "userId": "publishers:liangmu-git2",
+      "displayName": "liangmu-git2",
+      "image": "https://avatars.githubusercontent.com/u/59187617?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 483,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773374901628,
+      "changelog": "Initial release: ChromaDB + BGE-small-zh local vector memory for OpenClaw. Fully offline semantic memory store/recall/forget.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29d1b5de444acea39b371c07b92ce5482c0eafd65daed1a3f28809921b56ec61"
+}

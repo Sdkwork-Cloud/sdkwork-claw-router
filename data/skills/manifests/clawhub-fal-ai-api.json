@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23168,
+  "uuid": "skill-clawhub-fal-ai-api",
+  "skillKey": "clawhub-fal-ai-api",
+  "name": "fal.ai",
+  "summary": "fal.ai API integration with managed API key authentication. Run AI models for image generation, video generation, audio processing, and more. Use this skill...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fal_ai_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "fal.ai API integration with managed API key authentication",
+        "Run AI models for image generation, video generation, audio processing, and more",
+        "Use this skill..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fal-ai-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fal-ai-api",
+      "url": "https://clawhub.ai/skills/fal-ai-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fal-ai-api",
+    "url": "https://clawhub.ai/skills/fal-ai-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fal-ai-api-125db78e3404952c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fal-ai-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fal-ai-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1e0c86206602761aecfdec9f8ce4fea79280eb3ec677bfea39b7ab3216daa7b",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:48:45.371Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26309,
+  "uuid": "skill-clawhub-pathe-movie",
+  "skillKey": "clawhub-pathe-movie",
+  "name": "Pathé Movie Skill",
+  "summary": "Lookup Pathé Netherlands movies, posters, descriptions, cinemas, and showtimes via the Pathé JSON APIs. Trigger when the user mentions a Pathé movie/show, wants a poster, asks about a description/rating, or requests showtimes for a specifi.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pathe_movie",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "humboldtjs",
+      "features": [
+        "Lookup Pathé Netherlands movies, posters, descriptions, cinemas, and showtimes via the Pathé JS.",
+        "Trigger when the user mentions a Pathé movie/show, wants a poster, asks about a description/rat."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pathe-movie@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1548232?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pathe-movie",
+      "url": "https://clawhub.ai/skills/pathe-movie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pathe-movie",
+    "url": "https://clawhub.ai/skills/pathe-movie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pathe-movie-6efcc27625a156e8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pathe-movie@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pathe-movie-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d84f479152aaf269c17ad2c79de232addebf553c94b7d28f3170f1fc9b070650",
+      "artifactSizeBytes": 2697
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T10:47:26.553Z"
+}

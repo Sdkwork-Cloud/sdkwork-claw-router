@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69474,
+  "uuid": "skill-clawhub-eqxiu-h5creator",
+  "skillKey": "clawhub-eqxiu-h5creator",
+  "name": "易企秀H5制作",
+  "summary": "易企秀 AIGC H5 创作工具，通过对话引导用户填写信息，自动生成翻页 H5 邀请函、营销海报、表单问卷等作品。 当用户想要生成/制作/创建 H5 页面时使用此 Skill，包括婚礼邀请函、会议邀请函、年会海报、节日祝福等场景。 核心功能： 1. 品类选择——从易企秀支持的 H5 品类中选定（邀请函/海报/表单...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eqxiu_h5creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EQXIU",
+      "features": [
+        "易企秀 AIGC H5 创作工具，通过对话引导用户填写信息，自动生成翻页 H5 邀请函、营销海报、表单问卷等作品。 当用户想要生成/制作/创建 H5 页面时使用此 Skill，包括婚礼邀请函.",
+        "品类选择——从易企秀支持的 H5 品类中选定（邀请函/海报/表单..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eqxiu-h5creator@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/eqxiu-h5creator/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eqxiu-h5creator",
+      "url": "https://clawhub.ai/skills/eqxiu-h5creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eqxiu-h5creator",
+    "url": "https://clawhub.ai/skills/eqxiu-h5creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eqxiu-h5creator-b006198159065f0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eqxiu-h5creator@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-eqxiu-h5creator-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d53b7130f1b2fdba1741ab54b790511a1a6ac671c688171f1c0f62eccd354111",
+      "artifactSizeBytes": 2515
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:06:33.428Z"
+}

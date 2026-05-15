@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61039,
+  "uuid": "skill-clawhub-auto-monitor",
+  "skillKey": "clawhub-auto-monitor",
+  "name": "Auto Monitor - System Monitoring",
+  "summary": "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xaiohuangningde",
+      "features": [
+        "主动监控系统状态。定期检查服务器健康，主动汇报，无需等待指令。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143916959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-monitor",
+      "url": "https://clawhub.ai/skills/auto-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-monitor",
+    "url": "https://clawhub.ai/skills/auto-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-monitor-5f3677e4adbdc83d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecb0107fe2f72f5f92e8b2fcbc9332ae18f2a1eda833c5502cf199b2ae15853c",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T03:40:03.799Z"
+}

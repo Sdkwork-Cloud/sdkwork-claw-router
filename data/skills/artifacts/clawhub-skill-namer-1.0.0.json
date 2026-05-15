@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-namer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_namer",
+  "skill": {
+    "id": 41062,
+    "skillKey": "clawhub-skill-namer",
+    "name": "Skill Namer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-namer",
+    "url": "https://clawhub.ai/skills/skill-namer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-namer-0163f48b1ef0ab35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate short, molty-native names for skills, ENS domains, and agent-economy primitives when the obvious words are taken. Produces high-traction “new primit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "otherpowers",
+      "userId": "s17810eyaktqpr5cakxrfkdm2d83hdtf",
+      "displayName": "OtherPowers",
+      "image": "https://avatars.githubusercontent.com/u/44530314?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 727,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771179288635,
+      "changelog": "When all the obvious skills or domain names are taken, Skill‑Namer forges short, molty-native names for skills or domains (.eth/.ai/.com/.dao), then this skill auto-generates backup options and quick availability checks so you can claim the best one fast.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2b1f8af78d99c5845b4e39e39398155adbacfd092da94262870738d7e752f6e1"
+}

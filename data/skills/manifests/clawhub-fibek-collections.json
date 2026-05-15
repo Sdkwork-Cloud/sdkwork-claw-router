@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54316,
+  "uuid": "skill-clawhub-fibek-collections",
+  "skillKey": "clawhub-fibek-collections",
+  "name": "TestSkills",
+  "summary": "Interact with the Fibek B2B collections platform API — manage invoices, clients, payment agreements, campaigns, and financial metrics",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fibek_collections",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rodrigo Kraus",
+      "features": [
+        "Interact with the Fibek B2B collections platform API — manage invoices, clients, payment agreem."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fibek-collections@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/54340315?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fibek-collections",
+      "url": "https://clawhub.ai/skills/fibek-collections"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fibek-collections",
+    "url": "https://clawhub.ai/skills/fibek-collections",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fibek-collections-5c93a552dfed740d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fibek-collections@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fibek-collections-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1991d7851b900f2ece0387b39c592b1691b7a359589bd1ba7ec81ad700c9a356",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T20:43:46.381Z"
+}

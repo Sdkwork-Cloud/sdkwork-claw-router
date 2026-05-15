@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41922,
+  "uuid": "skill-clawhub-create-segment-lists",
+  "skillKey": "clawhub-create-segment-lists",
+  "name": "Create Segment Lists",
+  "summary": "Create business segment lists in HubSpot for customers, partners, competitors, employees, ICP tiers, and industries. Enables segment-based targeting, suppres...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_segment_lists",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Create business segment lists in HubSpot for customers, partners, competitors, employees, ICP t.",
+        "Enables segment-based targeting, suppres..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/create-segment-lists@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "create-segment-lists",
+      "url": "https://clawhub.ai/skills/create-segment-lists"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-segment-lists",
+    "url": "https://clawhub.ai/skills/create-segment-lists",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-segment-lists-e372471e3811e1fd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/create-segment-lists@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-create-segment-lists-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a510e6cd5fa2af1a3bfe4f4f4fa3333eb4ec95139770d54b33e8f3ef0aa99791",
+      "artifactSizeBytes": 2449
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T17:36:27.793Z"
+}

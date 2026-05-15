@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63648,
+  "uuid": "skill-clawhub-jimeng-image-gen",
+  "skillKey": "clawhub-jimeng-image-gen",
+  "name": "Jimeng AI Image Generation",
+  "summary": "即梦 AI 图片生成技能（火山引擎图片生成 4.0）。当用户想要 AI 生成图片、文生图、图生图、 字体设计、海报制作时使用。支持场景： - \"帮我生成一张图片：...\" - \"用即梦画一张 16:9 的科技感壁纸\" - \"字体设计：新年快乐，红色背景\" - \"把这张图的背景换成星空\" - \"生成一组表情包\" -...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jimeng_image_gen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "多动朕",
+      "features": [
+        "即梦 AI 图片生成技能（火山引擎图片生成 4.0）。当用户想要 AI 生成图片、文生图、图生图、 字体设计、海报制作时使用。支持场景：",
+        "\"帮我生成一张图片：...\"",
+        "\"用即梦画一张 16:9 的科技感壁纸\"",
+        "\"字体设计：新年快乐，红色背景\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jimeng-image-gen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34393112?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jimeng-image-gen",
+      "url": "https://clawhub.ai/skills/jimeng-image-gen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jimeng-image-gen",
+    "url": "https://clawhub.ai/skills/jimeng-image-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jimeng-image-gen-f58b2b0d5e038196.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jimeng-image-gen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jimeng-image-gen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf904c6d60d65b2f247b610dbc6f91045fa9502f5b5f6add4f032aa9053ec9d4",
+      "artifactSizeBytes": 2346
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T18:53:56.503Z"
+}

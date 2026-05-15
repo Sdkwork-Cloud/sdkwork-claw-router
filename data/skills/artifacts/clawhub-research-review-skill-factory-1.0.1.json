@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/research-review-skill-factory@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.research_review_skill_factory",
+  "skill": {
+    "id": 46960,
+    "skillKey": "clawhub-research-review-skill-factory",
+    "name": "Research Review Skill Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "research-review-skill-factory",
+    "url": "https://clawhub.ai/skills/research-review-skill-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/research-review-skill-factory-b2a584cffad79da4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build custom peer-review skills for specific research areas, problem families, and method combinations using OpenReview evidence. Use when Codex needs a comp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "c-narcissus",
+      "userId": "s177jw27anm32qt3dm1c7dq0jh851mjz",
+      "displayName": "c-narcissus",
+      "image": "https://avatars.githubusercontent.com/u/168325551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777923188692,
+      "changelog": "- No user-visible changes; version updated without file modifications.\n- Functionality, workflow, and documentation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f65244fe16df4790ef11bcc07f42429f32dfb56133b23e93e6e4addd5082457b"
+}

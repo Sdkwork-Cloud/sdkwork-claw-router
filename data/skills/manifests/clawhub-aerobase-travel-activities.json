@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19670,
+  "uuid": "skill-clawhub-aerobase-travel-activities",
+  "skillKey": "clawhub-aerobase-travel-activities",
+  "name": "Aerobase Travel Activities",
+  "summary": "Discover near-airport and destination activities with ratings, reviews, and booking context",
+  "version": "3.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aerobase_travel_activities",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aerobase",
+      "features": [
+        "Discover near-airport and destination activities with ratings, reviews, and booking context"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aerobase-travel-activities@3.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95127236?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aerobase-travel-activities",
+      "url": "https://clawhub.ai/skills/aerobase-travel-activities"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aerobase-travel-activities",
+    "url": "https://clawhub.ai/skills/aerobase-travel-activities",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aerobase-travel-activities-5a6797fcb747f3b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aerobase-travel-activities@3.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aerobase-travel-activities-3.2.1.json",
+      "version": "3.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:671cd330250b21cb25f355b2f1196f004cf3aeffb311d8eeb5a2c68da88a8133",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T00:34:38.827Z"
+}

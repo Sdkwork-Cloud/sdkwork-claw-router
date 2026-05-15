@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-ceo@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_ceo",
+  "skill": {
+    "id": 64864,
+    "skillKey": "clawhub-solo-ceo",
+    "name": "Solo CEO"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-ceo",
+    "url": "https://clawhub.ai/skills/solo-ceo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-ceo-82f6f3634100fa69.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一人公司主 Agent 技能。当用户希望 AI 作为\"主控 CEO Agent\"协调多个预建的长期员工 Agent 完成任务时触发。适用于：任务拆分与分发、多 Agent 协作对话、模拟真实公司沟通流程（最多5轮对话）、最终汇总报告给用户。核心能力：CEO Agent 理解任务、将任务分发给员工 Agents、收..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moistenxx",
+      "userId": "publishers:moistenxx",
+      "displayName": "Moistenxx",
+      "image": "https://avatars.githubusercontent.com/u/242734902?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 303,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1774017899791,
+      "changelog": "新增 Phase 0 用工类型判断规则：自动区分长期工和 subagent 场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:60d46fbcca87299f1430360fd72a7a74c02cbdc3afc88a2b950185890476663b"
+}

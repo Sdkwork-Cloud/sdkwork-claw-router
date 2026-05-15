@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63087,
+  "uuid": "skill-clawhub-d4-world-boss",
+  "skillKey": "clawhub-d4-world-boss",
+  "name": "D4 World Boss Tracker",
+  "summary": "暗黑4世界BOSS刷新时间查询。使用 @D4世界boss 或询问暗黑4世界boss时触发。自动获取踩蘑菇地图的世界BOSS刷新时间，并询问是否设置定时提醒。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.d4_world_boss",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Crazzies",
+      "features": [
+        "暗黑4世界BOSS刷新时间查询。使用 @D4世界boss 或询问暗黑4世界boss时触发。自动获取踩蘑菇地图的世界BOSS刷新时间，并询问是否设置定时提醒。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/d4-world-boss@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258517530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "d4-world-boss",
+      "url": "https://clawhub.ai/skills/d4-world-boss"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "d4-world-boss",
+    "url": "https://clawhub.ai/skills/d4-world-boss",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/d4-world-boss-900916965c749c31.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/d4-world-boss@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-d4-world-boss-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bab8acfc103bd277b7e0dcef547a210d722c41ff5e37c47a77601f755df1f4e8",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T03:19:54.185Z"
+}

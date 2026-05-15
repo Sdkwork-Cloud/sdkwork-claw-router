@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openviking-korean@3.1.0",
+  "version": "3.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openviking_korean",
+  "skill": {
+    "id": 61815,
+    "skillKey": "clawhub-openviking-korean",
+    "name": "TokenSaver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openviking-korean",
+    "url": "https://clawhub.ai/skills/openviking-korean",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openviking-korean-3227225fe4e2e86d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "한국어에 최적화된 OpenViking 기반 컨텍스트 DB로 토큰 91% 절감, 계층 구조 메모리 관리 및 자동 압축 기능을 제공합니다."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dorongss",
+      "userId": "s17585vadf2yee7jh1xrdphs1x83gqys",
+      "displayName": "dorongss",
+      "image": "https://avatars.githubusercontent.com/u/157365330?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "3.1.0",
+      "createdAt": 1774782007401,
+      "changelog": "v3.1: 한영겸용 지원 + Async + orjson + LRU",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:157cacf99d2cb249068141a1f66e1c3a99e442474530d483b948bedbed68988e"
+}

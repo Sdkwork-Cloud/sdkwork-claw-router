@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-report-delivery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_report_delivery",
+  "skill": {
+    "id": 27295,
+    "skillKey": "clawhub-paper-report-delivery",
+    "name": "Paper Report Delivery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-report-delivery",
+    "url": "https://clawhub.ai/skills/paper-report-delivery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-report-delivery-4c04e02184e76e13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build, automate, or maintain a daily paper-report delivery pipeline that collects papers, selects A/B groups, generates Chinese summaries and detailed innova..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanwu-fan",
+      "userId": "publishers:fanwu-fan",
+      "displayName": "FanWu-fan",
+      "image": "https://avatars.githubusercontent.com/u/42673083?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773653717493,
+      "changelog": "中文简短说明                                                                                                      \n - 自动化论文日报生成与投递：可读 HTML、Telegram 消息版、本地归档、HTML 优先回退正文。                             \n                                                                                                                   \n English Short Blurb                                                                                               \n - Automate daily paper digests with readable HTML, Telegram-ready message chunks, local archiving, and HTML-first \n delivery with text fallback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:068a41b7bacd6b2622a7f4501639987ec19781503410aa2795e7c43104b7c043"
+}

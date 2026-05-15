@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17985,
+  "uuid": "skill-clawhub-farmos-tasks",
+  "skillKey": "clawhub-farmos-tasks",
+  "name": "Farmos Tasks",
+  "summary": "Query and manage farm work orders and tasks. View assignments, create tasks, update status. Uses integration endpoints (no auth) for reads and authenticated...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.farmos_tasks",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brianppetty",
+      "features": [
+        "Query and manage farm work orders and tasks",
+        "View assignments, create tasks, update status",
+        "Uses integration endpoints (no auth) for reads and authenticated..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/farmos-tasks@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26852668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "farmos-tasks",
+      "url": "https://clawhub.ai/skills/farmos-tasks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "farmos-tasks",
+    "url": "https://clawhub.ai/skills/farmos-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/farmos-tasks-be8ca4df3142ce47.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/farmos-tasks@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-farmos-tasks-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c99ddc9e6dee50ad9c2861609a7ec7049f68e87d3829125c478a35a9d749aed",
+      "artifactSizeBytes": 2414
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T09:00:57.244Z"
+}

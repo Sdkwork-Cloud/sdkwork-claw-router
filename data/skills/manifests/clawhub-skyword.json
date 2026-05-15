@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36728,
+  "uuid": "skill-clawhub-skyword",
+  "skillKey": "clawhub-skyword",
+  "name": "Skyword",
+  "summary": "Skyword integration. Manage data, records, and automate workflows. Use when the user wants to interact with Skyword data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skyword",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Skyword integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Skyword data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skyword@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skyword",
+      "url": "https://clawhub.ai/skills/skyword"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skyword",
+    "url": "https://clawhub.ai/skills/skyword",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skyword-894f45dbd38fe2ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skyword@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-skyword-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b3695323cdc59246adb018550e0724b983924c3b84bc99a83238ccce2052d55a",
+      "artifactSizeBytes": 1821
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:42:59.152Z"
+}

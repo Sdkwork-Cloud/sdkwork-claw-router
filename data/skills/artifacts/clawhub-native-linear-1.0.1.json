@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/native-linear@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.native_linear",
+  "skill": {
+    "id": 11148,
+    "skillKey": "clawhub-native-linear",
+    "name": "Native Linear"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "native-linear",
+    "url": "https://clawhub.ai/skills/native-linear",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/native-linear-5b27a72b738a8978.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and manage Linear issues, projects, cycles, and teams via the Linear GraphQL API. Use when you need to list or create issues, check cycle status, manag..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codeninja23",
+      "userId": "s173w4sv23s5bb8w4kjv1t143n842den",
+      "displayName": "codeninja23",
+      "image": "https://avatars.githubusercontent.com/u/34013241?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 683,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 16,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771928112332,
+      "changelog": "Update display name to Native Linear",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9bd3b17e95220ed750ab8463db9df2e643a6a65f1439f65f2f025b159d31ddc4"
+}

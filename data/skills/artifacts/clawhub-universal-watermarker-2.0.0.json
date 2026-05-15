@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/universal-watermarker@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.universal_watermarker",
+  "skill": {
+    "id": 29125,
+    "skillKey": "clawhub-universal-watermarker",
+    "name": "Universal Watermarker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "universal-watermarker",
+    "url": "https://clawhub.ai/skills/universal-watermarker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/universal-watermarker-2ac430840ea60647.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adds customizable text watermarks with adjustable opacity and layout to PDFs and images, saving results with wm_ prefix in the original folder."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cribug",
+      "userId": "s1724t52dvfrm25thgned50qxx84d9r1",
+      "displayName": "cribug",
+      "image": "https://avatars.githubusercontent.com/u/13611588?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1775668754390,
+      "changelog": "Universal Watermarker 2.0.0 is a major upgrade with expanded features and more precise customization:\n\n- 新增 `diagonal` 模式，默认采用左下至右上的对角水印，自动完美覆盖各类文档。\n- 支持 `scale` 参数，实现水印自动响应式缩放。\n- 增加 `color` 参数，可自定义水印颜色，或启用智能亮度水印切换（`auto_adjust`）。\n- 支持自定义字体文件路径（`font_path`），实现全内嵌兼容，杜绝乱码与移位。\n- 详细完善模式说明，支持 PDF 与主流图片混批操作。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92f0f218d345a2d9532dd3047c65869d10204bed03d4a6ccb18ceae4b1184725"
+}

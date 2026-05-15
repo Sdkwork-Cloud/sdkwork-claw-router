@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29482,
+  "uuid": "skill-clawhub-plakar-backup",
+  "skillKey": "clawhub-plakar-backup",
+  "name": "Plakar backup",
+  "summary": "Teaches the agent how to list, inspect, diff, and restore Plakar snapshots. Invoke when the user says \"undo\", \"rollback\", \"restore\", or \"revert\".",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plakar_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "flop",
+      "features": [
+        "Teaches the agent how to list, inspect, diff, and restore Plakar snapshots",
+        "Invoke when the user says \"undo\", \"rollback\", \"restore\", or \"revert\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plakar-backup@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13287692?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plakar-backup",
+      "url": "https://clawhub.ai/skills/plakar-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plakar-backup",
+    "url": "https://clawhub.ai/skills/plakar-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plakar-backup-9d60deb2714c594a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plakar-backup@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-plakar-backup-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bde5df445c4673f4e8e7eddb353f9c12863863e13aeda36289f130c00071c631",
+      "artifactSizeBytes": 2308
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:53:50.303Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33495,
+  "uuid": "skill-clawhub-nate-metacognition",
+  "skillKey": "clawhub-nate-metacognition",
+  "name": "Metacognition",
+  "summary": "Self-reflection engine for AI agents. Extracts patterns from session transcripts into a weighted graph with Hebbian learning and time decay. Compiles a token...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nate_metacognition",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JoeyCacciatore3",
+      "features": [
+        "Self-reflection engine for AI agents",
+        "Extracts patterns from session transcripts into a weighted graph with Hebbian learning and time.",
+        "Compiles a token..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nate-metacognition@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219585745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nate-metacognition",
+      "url": "https://clawhub.ai/skills/nate-metacognition"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nate-metacognition",
+    "url": "https://clawhub.ai/skills/nate-metacognition",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nate-metacognition-2aa314114d038d24.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nate-metacognition@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nate-metacognition-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c1be9a4a49c2f766f85886d2806257de41c112cc4ccd288b082d65224dad8f3",
+      "artifactSizeBytes": 2454
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T03:12:48.189Z"
+}

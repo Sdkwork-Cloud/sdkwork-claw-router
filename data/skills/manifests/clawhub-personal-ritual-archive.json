@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50224,
+  "uuid": "skill-clawhub-personal-ritual-archive",
+  "skillKey": "clawhub-personal-ritual-archive",
+  "name": "Personal Ritual Archive",
+  "summary": "Create, record, and update meaningful personal rituals by capturing their purpose, actions, participants, timing, and evolution in a reusable archive.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_ritual_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Create, record, and update meaningful personal rituals by capturing their purpose, actions, par."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-ritual-archive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-ritual-archive",
+      "url": "https://clawhub.ai/skills/personal-ritual-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-ritual-archive",
+    "url": "https://clawhub.ai/skills/personal-ritual-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-ritual-archive-0b506edaecca7f01.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-ritual-archive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-ritual-archive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c03d4c23ddc0946800d1287c3b8e5825b593b6daeb9059f1238ef0f43f2b967",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-10T03:07:21.958Z"
+}

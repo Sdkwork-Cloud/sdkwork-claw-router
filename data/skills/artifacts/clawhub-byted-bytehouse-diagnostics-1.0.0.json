@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-bytehouse-diagnostics@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_bytehouse_diagnostics",
+  "skill": {
+    "id": 65484,
+    "skillKey": "clawhub-byted-bytehouse-diagnostics",
+    "name": "Byted Bytehouse Diagnostics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-bytehouse-diagnostics",
+    "url": "https://clawhub.ai/skills/byted-bytehouse-diagnostics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-bytehouse-diagnostics-da4d2ab7b01c791d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ByteHouse集群诊断和健康检查工具，用于检查ByteHouse集群健康状态、诊断集群问题和异常、查看集群节点状态、分析集群性能指标。当用户需要检查ByteHouse集群健康状态、诊断集群问题和异常、查看集群节点状态、分析集群性能指标时，使用此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 147,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774526768829,
+      "changelog": "byted-bytehouse-diagnostics v1.0.0\n\n- 首次发布，提供ByteHouse集群健康检查和诊断能力\n- 支持集群节点状态检测、副本及数据分区一致性检查、系统表完整性校验\n- 提供查询历史分析，包括慢查询、查询性能趋势和错误识别\n- 诊断结果以报告形式输出，包含健康状态、节点指标及查询统计\n- 依赖bytehouse-mcp skill，复用其ByteHouse连接配置",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bebfde0883b74af787bf940af362f3147f91e6eeceb78c1b05ac07aa1e679bff"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70923,
+  "uuid": "skill-clawhub-quant-trading-signals",
+  "skillKey": "clawhub-quant-trading-signals",
+  "name": "量化交易信号",
+  "summary": "量化交易信号系统。基于MACD、RSI、KDJ、均线、布林带等技术指标生成买卖信号。支持港股、美股、加密货币。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quant_trading_signals",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sanduan003",
+      "features": [
+        "量化交易信号系统。基于MACD、RSI、KDJ、均线、布林带等技术指标生成买卖信号。支持港股、美股、加密货币。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quant-trading-signals@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125126230?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quant-trading-signals",
+      "url": "https://clawhub.ai/skills/quant-trading-signals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quant-trading-signals",
+    "url": "https://clawhub.ai/skills/quant-trading-signals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quant-trading-signals-ca8f69c772708fab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quant-trading-signals@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-quant-trading-signals-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74e87bb92b8dc96d8fea65b8176b9585022dcfb383b0bdf28e2517bc4ca5df12",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:53:40.893Z"
+}

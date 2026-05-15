@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/locker-vault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.locker_vault",
+  "skill": {
+    "id": 45101,
+    "skillKey": "clawhub-locker-vault",
+    "name": "Locker Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "locker-vault",
+    "url": "https://clawhub.ai/skills/locker-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/locker-vault-28559e81d66c4f10.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure credential and secrets management for OpenClaw agents using Locker Secrets Manager. Provides read-only and read-write vault access with in-memory cach..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moskoweb",
+      "userId": "s173c87jrhz6e80efw6wddv4tx84e427",
+      "displayName": "Alan Mosko",
+      "image": "https://avatars.githubusercontent.com/u/6052272?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775682647453,
+      "changelog": "locker-vault v1.0.0\n\n- Introduces secure credential and secrets management for OpenClaw agents via Locker Secrets Manager.\n- Provides both read-only and read-write vault access with fine-grained permission boundaries.\n- Implements in-memory caching layer with configurable TTL to reduce vault API/CLI calls and latency.\n- Enforces the use of vault references (`vault://SECRET_KEY_NAME`) instead of exposing raw values.\n- Ensures credential values are never leaked — secrets are masked in all outputs and logs.\n- Designed for easy setup and integration by wrapping the Locker CLI and requiring no external Node.js dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3259042c02315c2af9892c354394502e51a4714cf894df5d5d4f98a7703013ed"
+}

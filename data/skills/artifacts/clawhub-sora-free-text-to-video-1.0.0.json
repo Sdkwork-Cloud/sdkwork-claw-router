@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sora-free-text-to-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sora_free_text_to_video",
+  "skill": {
+    "id": 43744,
+    "skillKey": "clawhub-sora-free-text-to-video",
+    "name": "Sora Free Text To Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sora-free-text-to-video",
+    "url": "https://clawhub.ai/skills/sora-free-text-to-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sora-free-text-to-video-2bd66f0b37cf26c1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get AI generated videos ready to post, without touching a single slider. Upload your text prompts (TXT, DOCX, PDF, plain text, up to 500MB), say something li..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776919781388,
+      "changelog": "- Initial release of Sora Free Text to Video skill.\n- Generate 1080p AI videos from text prompts or uploaded documents (TXT, DOCX, PDF, up to 500MB).\n- Simple workflow: upload prompt, request video, and download as MP4 when ready.\n- Built-in free credits system with anonymous and registered user options.\n- Error handling guides you through common issues (credits, uploads, exports).\n- Cloud-based rendering — no installation or editing skills required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbe6188c9f8634faaf50a278f51b10f130e7c3664091b603a10b402480b00683"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyperliquid-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperliquid_analyzer",
+  "skill": {
+    "id": 16512,
+    "skillKey": "clawhub-hyperliquid-analyzer",
+    "name": "Hyperliquid Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperliquid-analyzer",
+    "url": "https://clawhub.ai/skills/hyperliquid-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperliquid-analyzer-acb71169b9d8a7ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Hyperliquid market data and provide trading insights. Real-time price monitoring, trend analysis, and risk assessment."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "b0on",
+      "userId": "publishers:b0on",
+      "displayName": "B0on",
+      "image": "https://avatars.githubusercontent.com/u/5462721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 767,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771264170422,
+      "changelog": "Initial release of Hyperliquid Market Analyzer.\n\n- Provides real-time price monitoring for BTC, ETH, SOL, and HYPE.\n- Includes market trend analysis (bullish, bearish, neutral) and volatility-based risk assessment.\n- Offers portfolio balance tracking and price alerts on significant movements.\n- Supports actionable trading insights and key price level calculations.\n- No API key required for basic market data; wallet address and API key optional for advanced features.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4571efc2ebe2ef55bcfee40e086347105575b13d31141f96762018fafd71b450"
+}

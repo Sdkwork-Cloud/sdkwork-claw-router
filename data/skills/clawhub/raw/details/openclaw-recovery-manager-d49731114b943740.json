@@ -1,0 +1,46 @@
+{
+  "skill": {
+    "slug": "openclaw-recovery-manager",
+    "displayName": "OpenClaw Configuration Management & Emergency Recovery",
+    "summary": "OpenClaw Configuration Management & Emergency Recovery — configuration, skills, and projects snapshot &recovery for OpenClaw. Use this skill whenever the use...",
+    "tags": {
+      "latest": "1.0.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 211,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1776962853467,
+    "updatedAt": 1777929702812
+  },
+  "latestVersion": {
+    "version": "1.0.1",
+    "createdAt": 1776973524054,
+    "changelog": "### v1.0.1 — Restart command auto-detection introduced\n\n- Added `scripts/detect-restart-command.mjs` for automatic detection of the appropriate OpenClaw gateway restart command.\n- Updated setup instructions and documentation to emphasize detection (not asking) of the restart method, improving reliability across environments.\n- Ensures safer recovery by probing for systemd, Docker, and container PID 1 before prompting the user.\n- No changes to existing snapshot, restore, or watchdog operation.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "encryptshawn",
+    "userId": "s17acjjwshpqj4xkbngejj57nx83zbcy",
+    "displayName": "EncryptShawn",
+    "image": "https://avatars.githubusercontent.com/u/56897824?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.destructive_delete_command",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.destructive_delete_command, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1777929702812
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45659,
+  "uuid": "skill-clawhub-rocketmq-kubectl",
+  "skillKey": "clawhub-rocketmq-kubectl",
+  "name": "rocketmq-kubectl",
+  "summary": "Query and manage RocketMQ messages via kubectl exec. Use when user needs to: (1) Query cluster information, (2) Create, delete, or manage topics, (3) Check c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rocketmq_kubectl",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GoodAtMe",
+      "features": [
+        "Query and manage RocketMQ messages via kubectl exec",
+        "Use when user needs to: (1) Query cluster information, (2) Create, delete, or manage topics, (3."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rocketmq-kubectl@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10082030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rocketmq-kubectl",
+      "url": "https://clawhub.ai/skills/rocketmq-kubectl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rocketmq-kubectl",
+    "url": "https://clawhub.ai/skills/rocketmq-kubectl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rocketmq-kubectl-4a834f0218c73aee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rocketmq-kubectl@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rocketmq-kubectl-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ab7317c79e708a64e41e5d78fb55dc05bd00888c4900a7781f40c70d7111dc7",
+      "artifactSizeBytes": 2412
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T02:02:06.298Z"
+}

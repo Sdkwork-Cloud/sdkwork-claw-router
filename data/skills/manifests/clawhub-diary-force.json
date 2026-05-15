@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68853,
+  "uuid": "skill-clawhub-diary-force",
+  "skillKey": "clawhub-diary-force",
+  "name": "Diary Force",
+  "summary": "每晚 23:00 自动催日记 + 思维模型分析 + 内化记忆。**强制型习惯养成工具**，适合有写日记习惯但经常拖延的人。包含 6 种思维模型深度分析，将日常经历转化为结构化认知。",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diary_force",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zylorra",
+      "features": [
+        "每晚 23:00 自动催日记 + 思维模型分析 + 内化记忆。**强制型习惯养成工具**，适合有写日记习惯但经常拖延的人。包含 6 种思维模型深度分析，将日常经历转化为结构化认知。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diary-force@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111432771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diary-force",
+      "url": "https://clawhub.ai/skills/diary-force"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diary-force",
+    "url": "https://clawhub.ai/skills/diary-force",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diary-force-91fa4203cdc41723.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diary-force@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diary-force-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:034841c62302eb8219223780561f3ecdd3133ff207e20c39182227db0e23f991",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T12:27:35.951Z"
+}

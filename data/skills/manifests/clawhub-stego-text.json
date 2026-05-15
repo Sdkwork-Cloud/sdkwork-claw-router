@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51399,
+  "uuid": "skill-clawhub-stego-text",
+  "skillKey": "clawhub-stego-text",
+  "name": "Stego Text — Steganographic Message Encoding for AI Agents",
+  "summary": "Encode and decode hidden messages within natural-looking text using steganographic techniques. Use when asked to hide a message in text, encode a secret mess...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stego_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Morpheis",
+      "features": [
+        "Encode and decode hidden messages within natural-looking text using steganographic techniques",
+        "Use when asked to hide a message in text, encode a secret mess..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stego-text@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6878926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stego-text",
+      "url": "https://clawhub.ai/skills/stego-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stego-text",
+    "url": "https://clawhub.ai/skills/stego-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stego-text-14120d4a608dc5e3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stego-text@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-stego-text-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6928a5ca28a1348585794520021b10ad67fdffa97071bff8fd21da30acc1f59e",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T20:24:12.665Z"
+}

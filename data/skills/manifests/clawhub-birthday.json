@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73021,
+  "uuid": "skill-clawhub-birthday",
+  "skillKey": "clawhub-birthday",
+  "name": "birthday",
+  "summary": "处理中文生日提醒场景，支持从中国身份证号码提取生日、按农历或公历保存生日、为每条记录设置独立的提前提醒天数，并生成当天或未来几天的提醒结果。当用户要实现、维护或运行“农历生日提醒”“身份证生日解析”“生日台账管理”“生日到期检查”这类任务时使用此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.birthday",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "web3aivc",
+      "features": [
+        "处理中文生日提醒场景，支持从中国身份证号码提取生日、按农历或公历保存生日、为每条记录设置独立的提前提醒天数，并生成当天或未来几天的提醒结果。当用户要实现、维护或运行“农历生日提醒”“身份证生."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/birthday@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/122167631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "birthday",
+      "url": "https://clawhub.ai/skills/birthday"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "birthday",
+    "url": "https://clawhub.ai/skills/birthday",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/birthday-0422d42c689b7e80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/birthday@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-birthday-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dd806e2c1bffabe03c274e219c04415799576175db529c5ef5aaced1159905da",
+      "artifactSizeBytes": 2538
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T10:37:58.466Z"
+}

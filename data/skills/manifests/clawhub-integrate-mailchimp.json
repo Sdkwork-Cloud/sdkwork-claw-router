@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32755,
+  "uuid": "skill-clawhub-integrate-mailchimp",
+  "skillKey": "clawhub-integrate-mailchimp",
+  "name": "Mailchimp",
+  "summary": "Mailchimp integration. Manage marketing automation data, records, and workflows. Use when the user wants to interact with Mailchimp data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_mailchimp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Mailchimp integration",
+        "Manage marketing automation data, records, and workflows",
+        "Use when the user wants to interact with Mailchimp data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-mailchimp@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-mailchimp",
+      "url": "https://clawhub.ai/skills/integrate-mailchimp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-mailchimp",
+    "url": "https://clawhub.ai/skills/integrate-mailchimp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-mailchimp-0ba94971efe6d6ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-mailchimp@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-mailchimp-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8deabaf4ed266e3852f91cb1a20f49092a9e27506f5a3ba9071d6ac593841380",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:36:57.134Z"
+}

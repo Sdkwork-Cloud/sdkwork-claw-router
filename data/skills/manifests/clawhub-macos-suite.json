@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58311,
+  "uuid": "skill-clawhub-macos-suite",
+  "skillKey": "clawhub-macos-suite",
+  "name": "macos-suite",
+  "summary": "macOS 系统应用自动化：打开/读取/创建（Mail/Calendar/Reminders/Notes/Maps/Freeform/Photos/Weather/Stocks/Clock）。",
+  "version": "0.2.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macos_suite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxStormSpace",
+      "features": [
+        "macOS 系统应用自动化：打开/读取/创建（Mail/Calendar/Reminders/Notes/Maps/Freeform/Photos/Weather/Stocks/Clock）。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/macos-suite@0.2.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67162380?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "macos-suite",
+      "url": "https://clawhub.ai/skills/macos-suite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macos-suite",
+    "url": "https://clawhub.ai/skills/macos-suite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macos-suite-a467564d91aaf4db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/macos-suite@0.2.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-macos-suite-0.2.3.json",
+      "version": "0.2.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d3372ac07cabcd513f33584daf12712d04afdb8ced0bca7e2e558426ccee9c44",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T13:15:19.248Z"
+}

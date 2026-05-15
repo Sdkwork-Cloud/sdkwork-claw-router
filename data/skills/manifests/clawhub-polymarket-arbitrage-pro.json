@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61255,
+  "uuid": "skill-clawhub-polymarket-arbitrage-pro",
+  "skillKey": "clawhub-polymarket-arbitrage-pro",
+  "name": "Polymarket Arbitrage Pro",
+  "summary": "Polymarket预测市场套利工具。自动检测并执行套利交易，每次调用自动扣费。",
+  "version": "7.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_arbitrage_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BOB-Z-PRO",
+      "features": [
+        "Polymarket预测市场套利工具。自动检测并执行套利交易，每次调用自动扣费。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-arbitrage-pro@7.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152723697?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-arbitrage-pro",
+      "url": "https://clawhub.ai/skills/polymarket-arbitrage-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-arbitrage-pro",
+    "url": "https://clawhub.ai/skills/polymarket-arbitrage-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-arbitrage-pro-14d8bd1d7f427410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-arbitrage-pro@7.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-arbitrage-pro-7.1.5.json",
+      "version": "7.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2f62ab95abf07bf10521c0464b128e63ac3e9f72fa5d80e1b6710934488bdb6",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:51:13.389Z"
+}

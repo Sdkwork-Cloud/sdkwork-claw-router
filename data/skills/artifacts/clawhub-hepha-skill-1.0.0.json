@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hepha-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hepha_skill",
+  "skill": {
+    "id": 56760,
+    "skillKey": "clawhub-hepha-skill",
+    "name": "Hepha"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hepha-skill",
+    "url": "https://clawhub.ai/skills/hepha-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hepha-skill-f5f7e849bbaff20e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs autonomous iterative delivery loops for coding tasks using plan -> execute -> check -> review -> commit. Use when the user asks for hepha mode, autopilo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "melonlee",
+      "userId": "s1770btejpa7w9h2kzxq7r009583xdkw",
+      "displayName": "melonlee",
+      "image": "https://avatars.githubusercontent.com/u/2595956?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774852431234,
+      "changelog": "hepha-skill 1.0.0\n\n- Initial release of the autonomous delivery loop skill\n- Implements unattended plan → execute → check → review → commit cycles for coding tasks\n- Automatically decomposes requirements, manages backlog/progress/decision logs in .autopilot/\n- Performs schema validation, research, engineering checks, browser validation, and one-commit-per-loop workflow\n- Includes clear stop and completion conditions, re-planning triggers, and strict commit policies",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:955bcee7ab9344bc40b9da60965755d40b301529f1f4b0234858bf13e00afa10"
+}

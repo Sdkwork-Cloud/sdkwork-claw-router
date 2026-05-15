@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "geo-fix-llmstxt",
+    "displayName": "Geo Fix Llmstxt",
+    "summary": "Generate llms.txt and llms-full.txt files for a website to improve AI discoverability. Use when the user asks to create llms.txt, generate llms.txt, fix llms...",
+    "tags": {
+      "ai-visibility": "1.2.0",
+      "geo": "1.2.0",
+      "latest": "1.2.0",
+      "seo": "1.2.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1775407668275,
+    "updatedAt": 1777527201692
+  },
+  "latestVersion": {
+    "version": "1.2.0",
+    "createdAt": 1775411171167,
+    "changelog": "**New security controls for untrusted content; minor specification clarifications.**\n\n- Added explicit rules for handling all fetched site content as untrusted data to prevent prompt injection.\n- Now warns and ignores any agent-style instructions found in HTML, robots.txt, sitemaps, or existing llms.txt.\n- No other core workflow or output changes.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "enzyme2013",
+    "userId": "s1769p76b5b6v79bsajk42ash9840ed9",
+    "displayName": "Eugene Liu",
+    "image": "https://avatars.githubusercontent.com/u/11206822?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.prompt_injection_instructions"
+    ],
+    "summary": "Detected: suspicious.prompt_injection_instructions",
+    "engineVersion": "v2.4.5",
+    "updatedAt": 1777527201692
+  }
+}

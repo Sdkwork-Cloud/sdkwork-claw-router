@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-3d-model-maker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_3d_model_maker",
+  "skill": {
+    "id": 58463,
+    "skillKey": "clawhub-ai-3d-model-maker",
+    "name": "Ai Intelligent 3d Model Generation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-3d-model-maker",
+    "url": "https://clawhub.ai/skills/ai-3d-model-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-3d-model-maker-1e0454c51507eda7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 3D模型生成，文生3D + 图片转3D。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yang1002378395-cmyk",
+      "userId": "s17627rpbb3atq3mbfabqbgtm983g9et",
+      "displayName": "yang1002378395-cmyk",
+      "image": "https://avatars.githubusercontent.com/u/261632147?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774774925649,
+      "changelog": "- Initial release of AI 3D模型生成 skill.\n- Supports text-to-3D and image-to-3D model generation.\n- Includes model optimization and smart material generation features.\n- Enables batch model processing.\n- Provides flexible pricing plans for different user needs.\n- Applicable for game development, VR/AR, architecture, and product design.\n- Built with Python and FastAPI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f01d7f27bd7e6c4e36fcc019b25cea983cbd6dbaeb552f10a380719a777fcee"
+}

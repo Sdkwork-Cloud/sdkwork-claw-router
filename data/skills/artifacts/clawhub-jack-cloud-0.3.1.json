@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jack-cloud@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jack_cloud",
+  "skill": {
+    "id": 13243,
+    "skillKey": "clawhub-jack-cloud",
+    "name": "Jack Cloud"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jack-cloud",
+    "url": "https://clawhub.ai/skills/jack-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jack-cloud-86d2e9f6d69be70e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy web services to the cloud with Jack. Use when: you need to create APIs, websites, or backends and deploy them live. Teaches: project creation, deploym..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hellno",
+      "userId": "publishers:hellno",
+      "displayName": "hellno",
+      "image": "https://avatars.githubusercontent.com/u/686075?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1519,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1771238867279,
+      "changelog": "Add clawdbot metadata, security sections, fix templates, add homepage",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c11da1c8ac7cc71dbe5f03c322b4d85fb636ae3b65ef7186380a33af33bbea0a"
+}

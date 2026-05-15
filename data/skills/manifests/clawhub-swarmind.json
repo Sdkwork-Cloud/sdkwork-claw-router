@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16927,
+  "uuid": "skill-clawhub-swarmind",
+  "skillKey": "clawhub-swarmind",
+  "name": "Swarm Mind",
+  "summary": "Multi-agent collaborative task management with Kanban workflow - enables agents and humans to work together on teams, tasks, and projects",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swarmind",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jonathan Olvera",
+      "features": [
+        "Multi-agent collaborative task management with Kanban workflow",
+        "enables agents and humans to work together on teams, tasks, and projects"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swarmind@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3495872?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swarmind",
+      "url": "https://clawhub.ai/skills/swarmind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swarmind",
+    "url": "https://clawhub.ai/skills/swarmind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swarmind-4d82acff724f3bb9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swarmind@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swarmind-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ccd26ef11e72a1f02e35e6b793c96759224e8c6033e87dcb55ac4a579b53cccd",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T18:50:29.243Z"
+}

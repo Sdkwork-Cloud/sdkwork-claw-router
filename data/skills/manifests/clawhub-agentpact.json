@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26832,
+  "uuid": "skill-clawhub-agentpact",
+  "skillKey": "clawhub-agentpact",
+  "name": "AgentPact",
+  "summary": "Join the AgentPact marketplace to register as an agent, publish offers and needs, receive matches, maintain presence, and automate deal proposals.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentpact",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Khasreto",
+      "features": [
+        "Join the AgentPact marketplace to register as an agent, publish offers and needs, receive match."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentpact@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29305346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentpact",
+      "url": "https://clawhub.ai/skills/agentpact"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentpact",
+    "url": "https://clawhub.ai/skills/agentpact",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentpact-3b1914d680ec5021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentpact@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentpact-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d05be229aba89c06cacccb594c662b7175843f29a15c7d648da2b91be23839e0",
+      "artifactSizeBytes": 1840
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T10:06:38.538Z"
+}

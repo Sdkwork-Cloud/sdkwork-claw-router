@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ms-outlook-teams-assistant@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_outlook_teams_assistant",
+  "skill": {
+    "id": 10685,
+    "skillKey": "clawhub-ms-outlook-teams-assistant",
+    "name": "MS Outlook + Teams Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-outlook-teams-assistant",
+    "url": "https://clawhub.ai/skills/ms-outlook-teams-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-outlook-teams-assistant-beb4044fd5178f4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and nag about Microsoft Outlook email and (optionally) Microsoft Teams messages on a Windows machine, without relying on web versions. Use when the user asks to: (1) monitor inbox/mentions and remind them on Telegram/Teams until dism."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "abhinavjp",
+      "userId": "publishers:abhinavjp",
+      "displayName": "abhinavjp",
+      "image": "https://avatars.githubusercontent.com/u/18159170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2534,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769884391692,
+      "changelog": "- Improved documentation, including clearer setup and workflow instructions in SKILL.md.\n- Example config and setup guides updated for easier onboarding.\n- Minor revisions to scripts (scan, draft, remind, dismiss) for consistency with new instructions.\n- Writing style guidance clarified to ensure consistent drafting tone.\n- No core workflow or behavioral changes—functionality remains the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d668084d79b2ef6602138fa9b7e63140c22bf476f482e38d8b031abaf7941f98"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raccoon-ppt-skill@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raccoon_ppt_skill",
+  "skill": {
+    "id": 9273,
+    "skillKey": "clawhub-raccoon-ppt-skill",
+    "name": "raccoon ppt skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raccoon-ppt-skill",
+    "url": "https://clawhub.ai/skills/raccoon-ppt-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raccoon-ppt-skill-fdbb4f79eb8b6a9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Raccoon (小浣熊) PPT generation skill powered by the PPT OpenAPI. Create PPT decks from a natural-language topic. Primarily use this skill when the user wants t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raccoon-office",
+      "userId": "s17ewn22qr2ece1jeppe1vw2nh83gmkv",
+      "displayName": "商汤小浣熊",
+      "image": "https://avatars.githubusercontent.com/u/5978574?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 328,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 58,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774926669589,
+      "changelog": "v1.0.1 — Skill usage criteria and workflow clarification\n\n- Greatly streamlined usage boundaries and trigger examples for when to use or not use this skill.\n- Clarified user interaction guidelines, emphasizing natural language and hiding technical details like job_id.\n- Provided clear, stepwise workflow instructions for generation, supplementary Q&A, and result delivery.\n- Added explicit environment variable and token cleanup steps to avoid execution errors.\n- Improved prompt collection guidance, suggesting how to elicit missing parameters from users with sample questions.\n- Updated output and polling rules for a more predictable and user-friendly experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69bea499715811cbdc8d87d6d4fc6652904d0712360b89c7a3864d54e6d71a29"
+}

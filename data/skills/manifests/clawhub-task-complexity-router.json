@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54061,
+  "uuid": "skill-clawhub-task-complexity-router",
+  "skillKey": "clawhub-task-complexity-router",
+  "name": "AI Task Router Auto-Route Prompts by Complexity (Local/Cloud)",
+  "summary": "Regex-based routing sends simple tasks to local AI, medium to mid-tier, complex to premium — saving 60%+ on API costs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_complexity_router",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Regex-based routing sends simple tasks to local AI, medium to mid-tier, complex to premium — sa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-complexity-router@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-complexity-router",
+      "url": "https://clawhub.ai/skills/task-complexity-router"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-complexity-router",
+    "url": "https://clawhub.ai/skills/task-complexity-router",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-complexity-router-0f51641f7c63f45c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-complexity-router@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-complexity-router-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74c6ad9859dd45713360450fed3779c2ced1c93866912be2746568d5702109cf",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T00:30:09.895Z"
+}

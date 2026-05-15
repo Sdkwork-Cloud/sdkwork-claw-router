@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chen-vassili-clawhub-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chen_vassili_clawhub_cli",
+  "skill": {
+    "id": 33536,
+    "skillKey": "clawhub-chen-vassili-clawhub-cli",
+    "name": "Chen Vassili Clawhub Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chen-vassili-clawhub-cli",
+    "url": "https://clawhub.ai/skills/chen-vassili-clawhub-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chen-vassili-clawhub-cli-be90e7e9a5046265.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help developers manage OpenClaw skills with the ClawHub CLI. Use when publishing, inspecting, installing, updating, syncing, or troubleshooting ClawHub skill..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cs995279497-byte",
+      "userId": "s1752x7jpsq8e6496yg8h0rps183jrna",
+      "displayName": "cs995279497-byte",
+      "image": "https://avatars.githubusercontent.com/u/254620949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774224436550,
+      "changelog": "Initial release: ClawHub CLI assistant for managing OpenClaw skills.\n\n- Guides developers through installing, updating, publishing, and inspecting skills using the ClawHub CLI.\n- Provides exact CLI command templates and concise step-by-step instructions.\n- Covers authentication, workspace directory behavior, and common troubleshooting steps.\n- Includes quick references for frequent commands and best practices.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa2023eab764373de4514d3221770d547d90a2869fa612eb1bd110eafe895b8d"
+}

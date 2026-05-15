@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/git-daily-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.git_daily_skill",
+  "skill": {
+    "id": 70124,
+    "skillKey": "clawhub-git-daily-skill",
+    "name": "每天工作结束后，一键生成当日所有 Git 仓库的提交日报，支持多仓库扫描"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "git-daily-skill",
+    "url": "https://clawhub.ai/skills/git-daily-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/git-daily-skill-86cb684670613ac5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "今日 Git 提交日报助手 —— 自动扫描当天（含次日凌晨6点前）所有仓库的 commit 记录，生成结构化日报。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kenneychen",
+      "userId": "s172wr62phy25gqj1rwq2jp8d583pah7",
+      "displayName": "KenneyChen",
+      "image": "https://avatars.githubusercontent.com/u/16686081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775816629162,
+      "changelog": "gitpulse 1.0.0 – Generate daily Git commit reports across all repositories.\n\n- Scans all Git repositories under a specified root, aggregating commits from 06:00 today to 06:00 the next day.\n- Supports natural language triggers (e.g. \"今日提交\", \"git日报\") for fast, one-command activation.\n- Summarizes per-repo commit counts, commit details, activity statistics and provides an AI-generated daily comment.\n- Core script (gitpulse.py) requires only Python standard library, no third-party dependencies.\n- Flexible usage with command-line options for root directory, date selection, and output format (text/JSON).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c4bdbce6e96e3dc87970b417f9d963585ce9ea13256b33a8298d3dd4b549f5f"
+}

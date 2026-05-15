@@ -9,6 +9,7 @@ const portalRoot = __dirname;
 const portalRequire = createRequire(path.join(portalRoot, 'package.json'));
 const React = portalRequire('react');
 const { renderToStaticMarkup } = portalRequire('react-dom/server');
+const { MemoryRouter } = portalRequire('react-router-dom');
 const ts = portalRequire('typescript');
 
 function stripAnimationProps(props) {
@@ -157,10 +158,14 @@ const endpoint = {
 
 test('api reference playground SSR renders actionable parameter DOM controls', () => {
   const html = renderToStaticMarkup(
-    React.createElement(ApiPlayground, {
-      endpoint,
-      onClose: () => undefined,
-    }),
+    React.createElement(
+      MemoryRouter,
+      { initialEntries: ['/api-reference'] },
+      React.createElement(ApiPlayground, {
+        endpoint,
+        onClose: () => undefined,
+      }),
+    ),
   );
 
   assert.match(html, /API Playground/);

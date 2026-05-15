@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kuaidi-query@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kuaidi_query",
+  "skill": {
+    "id": 22895,
+    "skillKey": "clawhub-kuaidi-query",
+    "name": "Kuaidi Query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kuaidi-query",
+    "url": "https://clawhub.ai/skills/kuaidi-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kuaidi-query-e7d3079746c6b0cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query logistics tracking information via Track123 API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "djttt",
+      "userId": "s1737v04f3pzcc0b071gjmv0e1842m36",
+      "displayName": "Djttt",
+      "image": "https://avatars.githubusercontent.com/u/77910823?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 437,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773669590667,
+      "changelog": "- Added _meta.json, config.json, and package-lock.json files.\n- No changes to code or documentation content.\n- Version update to 1.0.3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9740a9b788d2b63be5e94b23af61dfd7ebba491fa97998d90489518a3f266e9a"
+}

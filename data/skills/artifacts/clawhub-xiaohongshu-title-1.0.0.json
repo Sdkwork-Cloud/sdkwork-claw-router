@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-title@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_title",
+  "skill": {
+    "id": 9118,
+    "skillKey": "clawhub-xiaohongshu-title",
+    "name": "xiaohongshu-title"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-title",
+    "url": "https://clawhub.ai/skills/xiaohongshu-title",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-title-319e400d27566ad1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Maximize CTR (Click-Through Rate) by leveraging emotional hooks and platform algorithms."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gxkim",
+      "userId": "publishers:gxkim",
+      "displayName": "GXKIM",
+      "image": "https://avatars.githubusercontent.com/u/125621025?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4243,
+      "installsAllTime": 36,
+      "installsCurrent": 31,
+      "stars": 4,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770688183979,
+      "changelog": "- Initial release of xiaohongshu-title skill focused on maximizing CTR with emotional optimization and platform-specific logic.\n- Introduced 8 main content categories to tailor title style and tone.\n- Integrated a strategic asset system featuring a high-CTR diction library, title formulas, and compliance checks.\n- Automated title generation workflow: category mapping, asset retrieval, drafting, AI-content filtering, and output curation.\n- Ensured all outputs pass quality constraints (length, banned words, emoji usage).\n- Output delivers 5 high-performing titles with strategy tags and one quick cover image suggestion.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c3d0ef84779b899cd8bd0c6612326d2175f12d6e553ed7594b5bbc7b21ba771e"
+}

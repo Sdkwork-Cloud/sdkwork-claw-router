@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40513,
+  "uuid": "skill-clawhub-codex-handoff-skill",
+  "skillKey": "clawhub-codex-handoff-skill",
+  "name": "Codex Handoff (OpenClaw Plans, Codex Codex, OpenClaw Judges)",
+  "summary": "Offload finalized coding plans to Codex CLI for automated execution. Use when: user says \"hand off to codex\", \"let codex do it\", \"offload to codex\", runs /co...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codex_handoff_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "philipbankier",
+      "features": [
+        "Offload finalized coding plans to Codex CLI for automated execution",
+        "Use when: user says \"hand off to codex\", \"let codex do it\", \"offload to codex\", runs /co..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/codex-handoff-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17358075?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "codex-handoff-skill",
+      "url": "https://clawhub.ai/skills/codex-handoff-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codex-handoff-skill",
+    "url": "https://clawhub.ai/skills/codex-handoff-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codex-handoff-skill-189b5a971955bd53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/codex-handoff-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-codex-handoff-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b7f97ab31584cf2d074463eb21bdc33e12b2e208a6ff70fd9d0fb5cd5c6085f",
+      "artifactSizeBytes": 2099
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T03:05:08.041Z"
+}

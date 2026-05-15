@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shell-image-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shell_image_video",
+  "skill": {
+    "id": 58395,
+    "skillKey": "clawhub-shell-image-video",
+    "name": "Shell Image Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shell-image-video",
+    "url": "https://clawhub.ai/skills/shell-image-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shell-image-video-e822305e55cb9f02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "RunningHub AI 工作流集成 — 图片换脸、Wan2.2 动作迁移、动作迁移升级版、150帧高清舞蹈视频。Use when asked about face swap, motion transfer, dance video generation, or RunningHub workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lygjoey",
+      "userId": "s175wf0vsc41q23086cnaf6tj583t17x",
+      "displayName": "lygjoey",
+      "image": "https://avatars.githubusercontent.com/u/234766358?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1245,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774796342228,
+      "changelog": "Initial release with integrated RunningHub AI workflows for image and video generation:\n\n- Supports face swap, advanced motion transfer, and high-quality dance video creation.\n- Workflow API integration enables digital human video, mouth-sync, comparison GIF/video, and extended lip sync.\n- Sample commands and usage instructions provided for each workflow.\n- Built-in error handling guidance and recommended media specs for best results.\n- Preconfigured API Key and dependency notes included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f493ebebc91222cf688562f3ddee400de93f6b3d667b58fea2939d1ce763b4fc"
+}

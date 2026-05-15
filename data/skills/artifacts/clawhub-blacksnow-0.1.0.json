@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blacksnow@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blacksnow",
+  "skill": {
+    "id": 12607,
+    "skillKey": "clawhub-blacksnow",
+    "name": "Blacksnow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blacksnow",
+    "url": "https://clawhub.ai/skills/blacksnow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blacksnow-201ce9317de85c3d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detects pre-news ambient risk signals across human, legal, and operational systems and converts them into machine-readable, tradable risk primitives."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sieershafilone",
+      "userId": "publishers:sieershafilone",
+      "displayName": "Sieer Shafi Lone",
+      "image": "https://avatars.githubusercontent.com/u/88551954?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1725,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770451653208,
+      "changelog": "BlackSnow 0.1.0 – Initial Release\n\n- Launches an economic sensor skill for early, pre-news ambient risk detection.\n- Ingests fragmented, legally accessible data across operational, legal, and human systems.\n- Applies ontology fusion, Bayesian accumulation, and forecasting for predictive risk vector surfacing.\n- Structures outputs as machine-readable, tradable primitives for finance, insurance, logistics, and policy use.\n- Clearly defines allowed/forbidden data sources, monetization tiers, and compliance/ethical constraints.\n- Lists integration points and status as sandbox, gated onboarding, and requiring audit.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8adaaea9b6ac6fe11d8ea69a1414712717504eca349912cac1aa88103fb855e2"
+}

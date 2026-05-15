@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/avoid-ai-writing@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avoid_ai_writing",
+  "skill": {
+    "id": 18310,
+    "skillKey": "clawhub-avoid-ai-writing",
+    "name": "Avoid AI Writing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avoid-ai-writing",
+    "url": "https://clawhub.ai/skills/avoid-ai-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avoid-ai-writing-0edc033673f64874.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and rewrite content to remove AI writing patterns (\"AI-isms\"). Use this skill when asked to \"remove AI-isms,\" \"clean up AI writing,\" \"edit writing for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "conorbronsdon",
+      "userId": "s172m2zdbgh5vmfq5p93bfnx9583g6wp",
+      "displayName": "Conor Bronsdon",
+      "image": "https://avatars.githubusercontent.com/u/120674402?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 692,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1774327997823,
+      "changelog": "v3.0.0: severity tiers, context profiles, 4 new patterns, agentskills.io compliance",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:447c6d1cc9280592c55b7003f77352a525f39182612d304cc48e17ce4aa6436e"
+}

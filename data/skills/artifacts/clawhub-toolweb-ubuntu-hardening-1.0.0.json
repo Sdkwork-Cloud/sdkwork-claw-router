@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-ubuntu-hardening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_ubuntu_hardening",
+  "skill": {
+    "id": 41670,
+    "skillKey": "clawhub-toolweb-ubuntu-hardening",
+    "name": "Ubuntu Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-ubuntu-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-ubuntu-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-ubuntu-hardening-8e94a662ac2623b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates professional Linux security hardening configuration files for Ubuntu systems with customizable options."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774889375134,
+      "changelog": "Initial release of the Ubuntu Linux Security Hardening Tool.\n\n- Generates professional Ubuntu hardening configuration files based on customizable options.\n- Supports multiple security categories: kernel, firewall, authentication, services, and audit.\n- Provides endpoints for health check, hardening configuration generation, and option discovery.\n- Returns ready-to-use config files with detailed summaries and compliance framework mappings (CIS, NIST).\n- Includes transparent pricing plans and comprehensive documentation for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5f850e4194377e25b4419b6fe2445c2fbe8442db44b2b631db9bd3af635d986"
+}

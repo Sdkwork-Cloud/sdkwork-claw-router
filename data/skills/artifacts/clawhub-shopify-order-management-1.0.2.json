@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopify-order-management@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_order_management",
+  "skill": {
+    "id": 17621,
+    "skillKey": "clawhub-shopify-order-management",
+    "name": "Shopify Order Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-order-management",
+    "url": "https://clawhub.ai/skills/shopify-order-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-order-management-90f23b2cb3c197ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Shopify order lifecycle management with new order handling, status sync, low-stock alerts, abandoned cart recovery, and daily sales reports. 5 production-rea..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhmalvi",
+      "userId": "publishers:mhmalvi",
+      "displayName": "Muhammad H.M. Alvi",
+      "image": "https://avatars.githubusercontent.com/u/74125579?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 751,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772560843685,
+      "changelog": "Fix: strip residual n8n metadata, fix process.env to $env, add webhook HMAC validation, add crosspost auth",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e853cf6233c301b4e5359c1469eca911cf84cf631ae05e60807f59b1123f43a4"
+}

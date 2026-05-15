@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/parse-deodao-shared-link@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parse_deodao_shared_link",
+  "skill": {
+    "id": 70485,
+    "skillKey": "clawhub-parse-deodao-shared-link",
+    "name": "Parse Dedao"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parse-deodao-shared-link",
+    "url": "https://clawhub.ai/skills/parse-deodao-shared-link",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parse-deodao-shared-link-e23956e8de348c27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "解析\"得到\"笔记分享链接（支持提取正文和下载图片）。自动提取得到（dedao.cn）分享链接的正文内容，并支持将文章中的图片保存到本地。当用户发送得到笔记分享链接时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ymsha88",
+      "userId": "s1776zcgfvgjp13rd24q5abjxs83h41e",
+      "displayName": "ymsha88",
+      "image": "https://avatars.githubusercontent.com/u/132578116?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 193,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774596547120,
+      "changelog": "增加下载关键图片",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6ef07420e0b2fd141194e078995d077c207f1385ac13b04366abd1bfebbe00ef"
+}

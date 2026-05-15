@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-im@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_im",
+  "skill": {
+    "id": 66350,
+    "skillKey": "clawhub-feishu-im",
+    "name": "feishu-im"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-im",
+    "url": "https://clawhub.ai/skills/feishu-im",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-im-2b56f8c5e8271eb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书消息与群管理 Skill。发送消息、建群、置顶、加急、撤回、群菜单/Tab/公告等 25+ 项 IM 能力。当需要通过飞书发送消息、管理群聊、操作群成员或配置群功能时使用此 Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunnyyao2222-eng",
+      "userId": "publishers:sunnyyao2222-eng",
+      "displayName": "sunnyyao2222-eng",
+      "image": "https://avatars.githubusercontent.com/u/255113599?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1020,
+      "installsAllTime": 12,
+      "installsCurrent": 12,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770938949904,
+      "changelog": "Initial release of feishu-im Skill.\n\n- Provides 25+ Feishu IM and group management capabilities, including message sending, group creation, PIN/retract/urgent actions, menu/Tab/announcement management, and more.\n- Comprehensive API references and best practices for all key IM and group operations.\n- Details required permissions for all supported features.\n- Includes practical implementation notes and error code explanations.\n- Supports advanced functions such as feed cards, group widgets, and real-time data sync.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f69b19118b75f9f4f9cef62c55e1ac2b78d10e5e59c7e1b6fc35248db066267c"
+}

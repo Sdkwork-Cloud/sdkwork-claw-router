@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webchat-image-support@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webchat_image_support",
+  "skill": {
+    "id": 28113,
+    "skillKey": "clawhub-webchat-image-support",
+    "name": "WebChat Image Support"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webchat-image-support",
+    "url": "https://clawhub.ai/skills/webchat-image-support",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webchat-image-support-29cbfe027aa1a455.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enables agents to detect and analyze images sent via WebChat or other channels using vision-capable models or fallback media processing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "styoha",
+      "userId": "s17a21ezzpbzwcjqfp6ryapsrh83v8s1",
+      "displayName": "styoha",
+      "image": "https://avatars.githubusercontent.com/u/265061284?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774796235012,
+      "changelog": "- Initial release of universal image understanding for OpenClaw agents.\n- Automatically detects and processes images from any supported chat channel.\n- Compatible with any vision-enabled model (Claude, MiniMax, OpenAI, Gemini), with fallback to OpenClaw’s media pipeline if unavailable.\n- Supports analysis of multiple images per message.\n- No special commands needed—just send images for instant interpretation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f4bb81cb4a3fa5086203867afaaaa2084b3f2262981d2b68ece924ba3709eeb"
+}

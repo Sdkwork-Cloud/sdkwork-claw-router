@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72130,
+  "uuid": "skill-clawhub-jobhound",
+  "skillKey": "clawhub-jobhound",
+  "name": "更适合中国宝宝体质的全程求职陪跑skill",
+  "summary": "求职陪跑全流程助手——覆盖简历解析、岗位发现与评估、定制简历生成、 面试全阶段准备（自我介绍/JD拆解、岗位背景调研、面试押题、模拟面试、 笔试准备）、面试复盘、Offer评估与薪资谈判、投递跟踪管理。 适用于中国校招/实习市场（牛客网、实习僧、BOSS直聘、拉勾等）， 也适配其他地区。覆盖产品经理、运营、市场、...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jobhound",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "EARFQUAKE",
+      "features": [
+        "求职陪跑全流程助手——覆盖简历解析、岗位发现与评估、定制简历生成、 面试全阶段准备（自我介绍/JD拆解、岗位背景调研、面试押题、模拟面试、 笔试准备）、面试复盘、Offer评估与薪资谈判、投."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jobhound@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263862037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jobhound",
+      "url": "https://clawhub.ai/skills/jobhound"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jobhound",
+    "url": "https://clawhub.ai/skills/jobhound",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jobhound-6e953c469963b3e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jobhound@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jobhound-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da57dd4017815b7ad732735652e4608e51ea0c6ea768f298e4a10a6fab876b93",
+      "artifactSizeBytes": 2931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T10:11:40.796Z"
+}

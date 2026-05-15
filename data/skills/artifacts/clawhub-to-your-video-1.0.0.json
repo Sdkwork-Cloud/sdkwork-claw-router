@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/to-your-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.to_your_video",
+  "skill": {
+    "id": 47232,
+    "skillKey": "clawhub-to-your-video",
+    "name": "To Your Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "to-your-video",
+    "url": "https://clawhub.ai/skills/to-your-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/to-your-video-5509dcc2d85c755a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 2-minute MP4 uploaded from your desktop into 1080p edited video file just by typing what you need. Whether it's applying AI edits and enhancements to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "susan4731-wilfordf",
+      "userId": "s1782w3wqej6a5gnp3w63eb80184cckp",
+      "displayName": "susan4731-wilfordf",
+      "image": "https://avatars.githubusercontent.com/u/208907675?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 117,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776487180399,
+      "changelog": "Initial release of To Your Video — upload any short MP4 and apply AI edits via natural language.\n\n- Upload a 2-minute MP4 and describe the desired edits to generate a 1080p video in 30–90 seconds.\n- No timeline dragging or export settings required; just type your editing instructions.\n- Handles subtitles, trimming, overlays, background music, and more via AI-based workflow.\n- Automatic connection to backend and free token setup for new users (100 credits, valid 7 days).\n- Supports status checks, credit balance, and easy download links.\n- Clear error handling for expired tokens, credit issues, file sizes, and accepted formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:54ac32b6c6993f9f7fe30cfc461d9b984dc7968eb0a835e1f509dc11d1ca516f"
+}

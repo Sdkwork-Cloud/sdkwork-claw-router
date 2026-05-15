@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-community-buying-04-supply-chain@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_community_buying_04_supply_chain",
+  "skill": {
+    "id": 71526,
+    "skillKey": "clawhub-local-community-buying-04-supply-chain",
+    "name": "04 Supply Chain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-community-buying-04-supply-chain",
+    "url": "https://clawhub.ai/skills/local-community-buying-04-supply-chain",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-community-buying-04-supply-chain-edfb5e41acaee343.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "社区团购供应链与采购管理全链路技能包。涵盖供应商开发、资质审核、评分卡、采购谈判、仓储管理、配送履约及配套工具。适用于平台采购负责人、供应链管理者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nic-yuan",
+      "userId": "s17601s6pc41mkraa1bkeshfx983kdsw",
+      "displayName": "nic-yuan",
+      "image": "https://avatars.githubusercontent.com/u/195308903?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777622016628,
+      "changelog": "Initial release: Comprehensive supply chain and procurement management playbook for community group buying.\n\n- Covers supplier development, qualification review, tiered management, procurement negotiation tactics, warehouse management, delivery fulfillment, and supporting tools.\n- Provides detailed supplier grading standards, upgrade/downgrade paths, and evaluation criteria.\n- Includes practical pricing and negotiation strategies for various product categories and platform models.\n- Contains full SOPs for supplier sourcing, qualification, testing, negotiation, and contracting.\n- Offers a robust supplier scoring card (with Python example) to standardize supplier assessment and management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ef531956512ccde278889ed7d5ea337a634e23dca958c6084b0684554526ea4e"
+}

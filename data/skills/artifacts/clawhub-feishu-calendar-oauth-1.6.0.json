@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-calendar-oauth@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_calendar_oauth",
+  "skill": {
+    "id": 69805,
+    "skillKey": "clawhub-feishu-calendar-oauth",
+    "name": "飞书日历管理"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-calendar-oauth",
+    "url": "https://clawhub.ai/skills/feishu-calendar-oauth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-calendar-oauth-e59d28e6150bd2f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "飞书日历管理技能。支持查询日程、创建/更新/删除事件、设置重复规则。触发条件：(1) 询问今天/明天/某天的日程 (2) 创建日程/添加会议/新建事件 (3) 更新或删除日程 (4) 设置重复提醒（生日、周会等）(5) 查看日历/日程安排。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinkingmanyangyang",
+      "userId": "s17dnm4vghteaekk90fs55krrn83geac",
+      "displayName": "thinkingmanyangyang",
+      "image": "https://avatars.githubusercontent.com/u/49185363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1774022960233,
+      "changelog": "优化SKILL.md结构，精简内容；更新OAuth配置指南和API使用指南；修复路径问题",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c3e061c2367915e3eddf67ae28c51079c707270142b41ef92c2bd70166629a6"
+}

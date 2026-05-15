@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/seo-keyword-researcher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_keyword_researcher",
+  "skill": {
+    "id": 20175,
+    "skillKey": "clawhub-seo-keyword-researcher",
+    "name": "Seo Keyword Researcher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-keyword-researcher",
+    "url": "https://clawhub.ai/skills/seo-keyword-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-keyword-researcher-92fd67149bc845fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research SEO keywords for any topic and generate a complete article brief with primary keyword, secondary keywords, competition analysis, article structure,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kryzl19",
+      "userId": "s17b9ch25kfyjf0y6kmc0k5xph83j3ny",
+      "displayName": "KRYZL19",
+      "image": "https://avatars.githubusercontent.com/u/220403544?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 459,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774451965669,
+      "changelog": "Initial release of SEO Keyword Researcher\n\n- Research SEO keywords for any topic and generate a detailed article brief.\n- Includes competitor analysis, keyword clustering, and article structure generation.\n- Provides actionable SEO recommendations and suggested internal links.\n- Outputs briefs in markdown with primary/secondary keywords and meta description.\n- Designed for content planning, keyword analysis, and strategy for TechStack.dev.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b0d4bdcb335806727f682d742987bf4c784f628afcb5a0be8ab87a8e2f65af3"
+}

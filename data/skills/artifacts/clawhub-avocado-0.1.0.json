@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/avocado@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avocado",
+  "skill": {
+    "id": 56904,
+    "skillKey": "clawhub-avocado",
+    "name": "avocado"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avocado",
+    "url": "https://clawhub.ai/skills/avocado",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avocado-f9c9baac9006160a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Information guide for Avocado 牛油果. Learn about nutrition, recipes, growing regions, and market prices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774996651667,
+      "changelog": "- Initial release of the Avocado 牛油果 encyclopedia guide.\n- Provides information on nutrition, recipes, growing regions, and market prices.\n- Includes expert tips, latest news, and detailed overview of avocado varieties.\n- Supports queries for recommendations, buying locations, and beginner guides.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4853c0b4628187c9510b6c80c549ff64c8ef20eab69f5d53f095bd1af0161eeb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meshops-control-plane@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meshops_control_plane",
+  "skill": {
+    "id": 19058,
+    "skillKey": "clawhub-meshops-control-plane",
+    "name": "MeshOps Control Plane"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meshops-control-plane",
+    "url": "https://clawhub.ai/skills/meshops-control-plane",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meshops-control-plane-76f457cf622430d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate and secure mesh workflows across gateways, including plugin install/setup, health verification, invite/join bootstrap, and controlled execution tasks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "likesjx",
+      "userId": "publishers:likesjx",
+      "displayName": "likesjx",
+      "image": "https://avatars.githubusercontent.com/u/1439931?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 540,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1772661158454,
+      "changelog": "**Summary:** Major skill rebranding and expanded documentation for mesh coordination mesh.\n\n- Renamed skill from \"meshops-control-plane\" to \"ansible\" with updated description and public positioning.\n- Completely overhauled SKILL.md: now provides detailed concepts, behavioral contracts, topology models, lifecycle rules, and tool usage.\n- Added comprehensive protocol, delegation workflow, and governance documentation for distributed mesh operations.\n- New documentation files included: CLAWHUB.md and an operator runbook.\n- Updated references and examples throughout to establish the new coordination model and clarify safety/approval flows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8e434b716ff4e0b91ce32324cc4dcc203d1a09f03406ea06577d043074af6162"
+}

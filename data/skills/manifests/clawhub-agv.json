@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27671,
+  "uuid": "skill-clawhub-agv",
+  "skillKey": "clawhub-agv",
+  "name": "Agv",
+  "summary": "Automated guided vehicle route planner. Use when json agv tasks, csv agv tasks, checking agv status.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Automated guided vehicle route planner",
+        "Use when json agv tasks, csv agv tasks, checking agv status."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agv@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agv",
+      "url": "https://clawhub.ai/skills/agv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agv",
+    "url": "https://clawhub.ai/skills/agv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agv-cce9d0b77372ab46.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agv@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agv-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:796a6d85d0e5dc92fc46ebd656da3da4a9fa6740d3c8204a65761dd606dd7592",
+      "artifactSizeBytes": 1754
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T19:19:26.122Z"
+}

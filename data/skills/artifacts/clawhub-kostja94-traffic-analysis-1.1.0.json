@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kostja94-traffic-analysis@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kostja94_traffic_analysis",
+  "skill": {
+    "id": 31997,
+    "skillKey": "clawhub-kostja94-traffic-analysis",
+    "name": "traffic-analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kostja94-traffic-analysis",
+    "url": "https://clawhub.ai/skills/kostja94-traffic-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kostja94-traffic-analysis-78cb79a3c57cc26e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to analyze website traffic sources, attribution, or dark traffic. Also use when the user mentions \"traffic sources,\" \"dark traffic,\" \"dir..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 259,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773678474919,
+      "changelog": "Automated batch sync",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:040d3d03d9dbfe75ce813deb023b888cb9809136bbf566807c554ea4bc308252"
+}

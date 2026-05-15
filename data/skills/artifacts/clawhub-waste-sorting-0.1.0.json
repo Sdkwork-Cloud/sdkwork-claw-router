@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/waste-sorting@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waste_sorting",
+  "skill": {
+    "id": 73241,
+    "skillKey": "clawhub-waste-sorting",
+    "name": "垃圾分类"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waste-sorting",
+    "url": "https://clawhub.ai/skills/waste-sorting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waste-sorting-7bb7d9b9edd40863.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供各类废弃物分类、上门回收及知识科普指引。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773761851351,
+      "changelog": "Initial release of the “垃圾分类” skill.\n\n- 提供各类废弃物分类方法、回收服务和相关知识科普指引\n- 支持按类别、场景和功能进行筛选\n- 返回操作流程、亮点功能及安全提示等关键信息\n- 提供示例请求，便于用户快速上手\n- 内容将随产品迭代及用户反馈持续更新",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e7f5f315255d7b7c8695298198ae338613daeeaa4360f416c5fc25908a0caff"
+}

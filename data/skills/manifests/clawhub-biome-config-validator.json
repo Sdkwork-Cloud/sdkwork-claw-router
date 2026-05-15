@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37700,
+  "uuid": "skill-clawhub-biome-config-validator",
+  "skillKey": "clawhub-biome-config-validator",
+  "name": "Biome Config Validator",
+  "summary": "Validate and lint Biome (biome.json) configuration files for structure, rule conflicts, deprecated options, and best practices. 22 rules across structure, li...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.biome_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate and lint Biome (biome.json) configuration files for structure, rule conflicts, depreca.",
+        "22 rules across structure, li..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/biome-config-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "biome-config-validator",
+      "url": "https://clawhub.ai/skills/biome-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "biome-config-validator",
+    "url": "https://clawhub.ai/skills/biome-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/biome-config-validator-f3e6ab07b66dda67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/biome-config-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-biome-config-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ae1e5a7e65df7700ddf8e20e39e668d1f309fddddaba34568fedf0a90f925ab",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:00:00.664Z"
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12143,
+  "uuid": "skill-clawhub-pikaboard",
+  "skillKey": "clawhub-pikaboard",
+  "name": "PikaBoard",
+  "summary": "Interact with PikaBoard task management API. Use when creating, updating, listing, or managing tasks. Agent-first kanban for AI teams. Triggers on: tasks, kanban, board, todo, backlog, sprint.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pikaboard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "angelstreet",
+      "features": [
+        "Interact with PikaBoard task management API",
+        "Use when creating, updating, listing, or managing tasks",
+        "Agent-first kanban for AI teams",
+        "Triggers on: tasks, kanban, board, todo, backlog, sprint."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pikaboard@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/405908?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pikaboard",
+      "url": "https://clawhub.ai/skills/pikaboard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pikaboard",
+    "url": "https://clawhub.ai/skills/pikaboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pikaboard-eb110c09a8852f51.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pikaboard@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-pikaboard-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdd335c638c8f10ddee2addb959a99e25bbceacc1a7e3dd7c18cff529510a8eb",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T21:57:21.040Z"
+}

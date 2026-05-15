@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yihui-session-logs@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yihui_session_logs",
+  "skill": {
+    "id": 47927,
+    "skillKey": "clawhub-yihui-session-logs",
+    "name": "Session Logs (YiHui)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yihui-session-logs",
+    "url": "https://clawhub.ai/skills/yihui-session-logs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yihui-session-logs-5930de0880d222fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search and analyze your own session logs (older/parent conversations) using jq."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1yihui",
+      "userId": "s17dkj69epg7yy8vn06c46hemn85dcap",
+      "displayName": "辉哥",
+      "image": "https://avatars.githubusercontent.com/u/197358991?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777361332142,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72f2dd4f2d12183b22d98fa2d0f28bdb8138e2da236d8aa40ebda2b62fbdc476"
+}

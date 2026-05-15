@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocas-mentor@2.3.0",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocas_mentor",
+  "skill": {
+    "id": 24167,
+    "skillKey": "clawhub-ocas-mentor",
+    "name": "Mentor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocas-mentor",
+    "url": "https://clawhub.ai/skills/ocas-mentor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocas-mentor-616d5edd2368e9f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-improving orchestration and evaluation engine for long-running multi-skill workflows. Analyzes journals, evaluates variants, and proposes skill improvem..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "indigokarasu",
+      "userId": "s17bp0q5q5x87yfrmb4876eywh83rcts",
+      "displayName": "Indigo Karasu",
+      "image": "https://avatars.githubusercontent.com/u/265148029?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.3.0",
+      "createdAt": 1774683612383,
+      "changelog": "**Added workflow plan support and expanded orchestration features:**\n\n- Introduced workflow plans with commands to list, run, resume, and inspect plan execution (see new mentor.plan.* commands).\n- Added plan templates and sample plans in the new `references/plans/` directory.\n- Mentor now processes experiment results from Fellow automatically after each run.\n- Expanded documentation for run completion and inter-skill handoffs.\n- Updated default config and documentation, including instructions for pulling updates from source.\n- Added README and detailed references for plan and workflow architecture.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6bd6a675b1051ddb060255601c0cde2700bd7c2d4fe6926d67935c265ce1e2ae"
+}

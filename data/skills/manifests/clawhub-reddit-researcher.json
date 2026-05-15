@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11219,
+  "uuid": "skill-clawhub-reddit-researcher",
+  "skillKey": "clawhub-reddit-researcher",
+  "name": "Reddit Researcher",
+  "summary": "Search and analyze Reddit posts and comments to summarize user opinions, troubleshoot issues, and track trends across communities and topics.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_researcher",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zachgodsell93",
+      "features": [
+        "Search and analyze Reddit posts and comments to summarize user opinions, troubleshoot issues, a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reddit-researcher@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130630671?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reddit-researcher",
+      "url": "https://clawhub.ai/skills/reddit-researcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-researcher",
+    "url": "https://clawhub.ai/skills/reddit-researcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-researcher-e1b1cf972e9079d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reddit-researcher@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-reddit-researcher-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:45dd31f1a46e516684b0a574fe5f169744b5aa420c93979567b8ce91e4f37838",
+      "artifactSizeBytes": 2240
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T22:38:00.153Z"
+}

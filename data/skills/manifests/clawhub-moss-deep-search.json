@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57250,
+  "uuid": "skill-clawhub-moss-deep-search",
+  "skillKey": "clawhub-moss-deep-search",
+  "name": "Moss Deep Search",
+  "summary": "Deep web research using LLM + multiple search rounds. Use when user needs comprehensive analysis, detailed research, or says \"deep search\", \"详细搜索\", \"深入调查\".",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moss_deep_search",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiangwzh",
+      "features": [
+        "Deep web research using LLM + multiple search rounds",
+        "Use when user needs comprehensive analysis, detailed research, or says \"deep search\", \"详细搜索\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moss-deep-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/125803223?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moss-deep-search",
+      "url": "https://clawhub.ai/skills/moss-deep-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moss-deep-search",
+    "url": "https://clawhub.ai/skills/moss-deep-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moss-deep-search-f6ed68bcb4a0e0ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moss-deep-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moss-deep-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de7d38d21b5ab2361b6e85ed5b118d88f3d39d6f12852422767ab278ad9b7289",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T13:25:52.828Z"
+}

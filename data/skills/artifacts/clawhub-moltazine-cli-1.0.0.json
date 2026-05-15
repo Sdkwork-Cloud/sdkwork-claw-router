@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltazine-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltazine_cli",
+  "skill": {
+    "id": 18849,
+    "skillKey": "clawhub-moltazine-cli",
+    "name": "Moltazine Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltazine-cli",
+    "url": "https://clawhub.ai/skills/moltazine-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltazine-cli-bf9f043cda60b4d6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the standalone moltazine CLI for social and image generation tasks with minimal token output."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dougbtv",
+      "userId": "s17a7v3r8ht088r68gx35xgry983pf9q",
+      "displayName": "Doug Smith",
+      "image": "https://avatars.githubusercontent.com/u/5472189?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 645,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "v0.0.14",
+      "createdAt": 1775631349606,
+      "changelog": "v0.0.14\n\n- No file changes detected in this version.\n- No user-facing updates or documentation modifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:513fa09b907cc2508ce3fe6dc798fea4055ef1933af46d7dcf98f06d0e2c8e19"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legal-evidence-mapping-mctmilk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_evidence_mapping_mctmilk",
+  "skill": {
+    "id": 73269,
+    "skillKey": "clawhub-legal-evidence-mapping-mctmilk",
+    "name": "要件事实证据对应"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-evidence-mapping-mctmilk",
+    "url": "https://clawhub.ai/skills/legal-evidence-mapping-mctmilk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-evidence-mapping-mctmilk-562e08fa40dd5695.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将法条构成要件对应当事人需要证明的事实、举证责任分配和可用证据类型，生成完整的证据作战地图。这是律师实务中最核心的技能。当用户想\"把法条翻译成证据清单\"时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mctmilk",
+      "userId": "s172xtk9dxby3h11j3p2eqmf9s83h2bq",
+      "displayName": "MctMilk",
+      "image": "https://avatars.githubusercontent.com/u/51847435?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 269,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774318013604,
+      "changelog": "- Initial release of the \"legal-evidence-mapping-mctmilk\" skill.\n- Helps users generate a three-layer evidence mapping for legal provisions: element–fact–evidence.\n- Provides systematic prompts to analyze each legal element: proof facts, burden of proof, optimal evidence types, likely rebuttals, and specific reinforcement strategies.\n- Automatically outputs a six-column summary table to visualize the complete evidence strategy for each case.\n- Designed for core law practice scenarios such as trial preparation and evidence list drafting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ffadd4e3f8a5b810f6ebd36f8f49d90e37046585a5bcb14a27d4925bb4e3ba9"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33105,
+  "uuid": "skill-clawhub-wurd",
+  "skillKey": "clawhub-wurd",
+  "name": "Wurd",
+  "summary": "Compile markdown documents with plugin tags into editorial-quality HTML pages using Wurd. USE FOR: creating documents, adding plugins, configuring layout, wr...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wurd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vreff",
+      "features": [
+        "Compile markdown documents with plugin tags into editorial-quality HTML pages using Wurd",
+        "USE FOR: creating documents, adding plugins, configuring layout, wr..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wurd@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/104409744?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wurd",
+      "url": "https://clawhub.ai/skills/wurd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wurd",
+    "url": "https://clawhub.ai/skills/wurd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wurd-2acc0732102b42d8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wurd@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wurd-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e39636e11ab2785b3fdb678fb409c404b6561deb434e7c371ca97a583657a6a",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T23:26:20.327Z"
+}

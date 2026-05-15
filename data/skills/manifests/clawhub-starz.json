@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47584,
+  "uuid": "skill-clawhub-starz",
+  "skillKey": "clawhub-starz",
+  "name": "Starz",
+  "summary": "Starz is a Lionsgate-owned pay TV and streaming service focusing on niche adult and urban dramas like Power and Outlander with integrated content production...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.starz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Starz is a Lionsgate-owned pay TV and streaming service focusing on niche adult and urban drama."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/starz@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "starz",
+      "url": "https://clawhub.ai/skills/starz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "starz",
+    "url": "https://clawhub.ai/skills/starz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/starz-bac446c21c3ff55d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/starz@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-starz-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:059b433e85a5e0f31d5bbf04a150466b0f5489b240c9b875006c2bc1b4dd471c",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:04:08.208Z"
+}

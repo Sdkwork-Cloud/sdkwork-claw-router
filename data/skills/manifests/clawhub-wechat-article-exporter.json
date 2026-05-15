@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66379,
+  "uuid": "skill-clawhub-wechat-article-exporter",
+  "skillKey": "clawhub-wechat-article-exporter",
+  "name": "WeChat Article Exporter",
+  "summary": "微信公众号推文长截图导出工具。支持多种链接格式，自动处理懒加载图片、视频占位符、底部工具栏遮挡等问题。触发词：微信文章导出、公众号截图、推文保存、mp.weixin.qq.com。",
+  "version": "3.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_exporter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "benzking",
+      "features": [
+        "微信公众号推文长截图导出工具。支持多种链接格式，自动处理懒加载图片、视频占位符、底部工具栏遮挡等问题。触发词：微信文章导出、公众号截图、推文保存、mp.weixin.qq.com。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-exporter@3.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2979921?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-exporter",
+      "url": "https://clawhub.ai/skills/wechat-article-exporter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-exporter",
+    "url": "https://clawhub.ai/skills/wechat-article-exporter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-exporter-d7b3ce5c02c1a040.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-exporter@3.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-exporter-3.3.0.json",
+      "version": "3.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10718659bd01788eef70c2013c1b1b23c38d8e590787930ffc3077213aeeb4be",
+      "artifactSizeBytes": 2157
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T09:35:06.990Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67175,
+  "uuid": "skill-clawhub-logics-parsing",
+  "skillKey": "clawhub-logics-parsing",
+  "name": "Logics-Parsing阿里文档解析",
+  "summary": "阿里文档智能解析工具 - 将PDF/图片转结构化HTML。支持复杂布局、公式识别、化学结构、代码块、流程图、乐谱等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.logics_parsing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SMS",
+      "features": [
+        "阿里文档智能解析工具",
+        "将PDF/图片转结构化HTML。支持复杂布局、公式识别、化学结构、代码块、流程图、乐谱等。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/logics-parsing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33817483?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "logics-parsing",
+      "url": "https://clawhub.ai/skills/logics-parsing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "logics-parsing",
+    "url": "https://clawhub.ai/skills/logics-parsing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/logics-parsing-f2c086024cdd5ca9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/logics-parsing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-logics-parsing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60918e3d09ac819db7b126c7e9f3ac53baa5886f6c02c0cc18dadb8912614e48",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T09:14:22.713Z"
+}

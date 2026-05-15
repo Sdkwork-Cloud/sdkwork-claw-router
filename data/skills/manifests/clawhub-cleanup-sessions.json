@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64785,
+  "uuid": "skill-clawhub-cleanup-sessions",
+  "skillKey": "clawhub-cleanup-sessions",
+  "name": "Cleanup Sessions",
+  "summary": "清理已中止且48小时未更新的子 agent 会话及过期备份文件，释放磁盘空间并同步更新索引文件。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanup_sessions",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "phenixMiao",
+      "features": [
+        "清理已中止且48小时未更新的子 agent 会话及过期备份文件，释放磁盘空间并同步更新索引文件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cleanup-sessions@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25549326?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cleanup-sessions",
+      "url": "https://clawhub.ai/skills/cleanup-sessions"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanup-sessions",
+    "url": "https://clawhub.ai/skills/cleanup-sessions",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanup-sessions-2d8f51729962a59b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cleanup-sessions@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cleanup-sessions-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f1fd4ea8f2a0d386e36674e3e1aef60544d871f8b8141620378d961669fd9ad",
+      "artifactSizeBytes": 1975
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T17:13:54.167Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/life-scheduler@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.life_scheduler",
+  "skill": {
+    "id": 70453,
+    "skillKey": "clawhub-life-scheduler",
+    "name": "Life Scheduler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "life-scheduler",
+    "url": "https://clawhub.ai/skills/life-scheduler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/life-scheduler-84fd72e5df2730b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让 AI Agent 拥有持续的虚拟生活状态——每天自动生成穿搭、日程、心情，注入对话上下文，使 Agent 像真人一样在过日子。适用于拟人化伴侣、角色扮演、虚拟偶像等需要生活连续性的 Agent。触发词：日程、今天做了什么、穿了什么、状态、心情、生成日程、刷新状态、换个今日安排、创意池、穿搭风格池、事件池。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "t-chen-cn",
+      "userId": "s17cnn7xx2e8xnw010vh26q07x85pkgs",
+      "displayName": "T-Chen-CN",
+      "image": "https://avatars.githubusercontent.com/u/115991373?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778148288917,
+      "changelog": "fix: output target changed from STATE.md to HEARTBEAT.md for OpenClaw compatibility",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:024a3ffc32e8531831412912d3960c6dbf015521cfddbb71dc7afb9429b5bbfa"
+}

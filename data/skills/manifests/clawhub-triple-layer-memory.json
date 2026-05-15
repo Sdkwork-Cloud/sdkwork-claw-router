@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68581,
+  "uuid": "skill-clawhub-triple-layer-memory",
+  "skillKey": "clawhub-triple-layer-memory",
+  "name": "Triple Layer Memory",
+  "summary": "三层记忆系统自动管理长对话记忆，支持跨会话检索、结构化存储和智能压缩，提升记忆连续性与上下文管理效率。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.triple_layer_memory",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "0r@nge",
+      "features": [
+        "三层记忆系统自动管理长对话记忆，支持跨会话检索、结构化存储和智能压缩，提升记忆连续性与上下文管理效率。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/triple-layer-memory@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82167391?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "triple-layer-memory",
+      "url": "https://clawhub.ai/skills/triple-layer-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "triple-layer-memory",
+    "url": "https://clawhub.ai/skills/triple-layer-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/triple-layer-memory-9bf310a3024c9964.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/triple-layer-memory@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-triple-layer-memory-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb04f2c07576b0d3e98bad072e2c9706fb619b98b6b62802725917dabdb10a6e",
+      "artifactSizeBytes": 1986
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T18:01:08.067Z"
+}

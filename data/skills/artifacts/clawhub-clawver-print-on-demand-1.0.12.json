@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawver-print-on-demand@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawver_print_on_demand",
+  "skill": {
+    "id": 11956,
+    "skillKey": "clawhub-clawver-print-on-demand",
+    "name": "Clawver Print On Demand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawver-print-on-demand",
+    "url": "https://clawhub.ai/skills/clawver-print-on-demand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawver-print-on-demand-bf6de81704c9e0b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sell print-on-demand merchandise on Clawver. Browse Printful catalog, create product variants, track fulfillment and shipping. Use when selling physical prod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nwang783",
+      "userId": "publishers:nwang783",
+      "displayName": "nwang783",
+      "image": "https://avatars.githubusercontent.com/u/149958172?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1836,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1773539608659,
+      "changelog": "**Major update to Product Artisan workflow and documentation.**\n\n- Expanded Product Artisan section with clearer, updated instructions and endpoint examples.\n- Artisan flow now highlights fully automatic pipeline (auto-creates draft, design, and mockups after plan approval).\n- New SSE event and progress field references for tracking session status and progress stages.\n- Simplified flow: only two checkpoints for user confirmation (plan approval and publish), with detailed field and lifecycle explanations.\n- Guidance for agent clients improved; polling intervals and error handling recommendations clarified.\n- No raw API changes; documentation is now more actionable and precise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c05da62803cb7cd66a2e1eeaa0fd7da7bb1c4ed99a74a628129498dcd45db094"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/divination-oracle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.divination_oracle",
+  "skill": {
+    "id": 67181,
+    "skillKey": "clawhub-divination-oracle",
+    "name": "Divination Oracle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "divination-oracle",
+    "url": "https://clawhub.ai/skills/divination-oracle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/divination-oracle-d6b888a79fee5363.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "易经八卦起卦与解读技能。基于梅花易数算法进行起卦，结合AI大模型解读卦象辞与变爻含义。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ymx409599725-a11y",
+      "userId": "s174rzmn3hj7dvtby3jmvr8wm983qwem",
+      "displayName": "ymx409599725-a11y",
+      "image": "https://avatars.githubusercontent.com/u/248305802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 223,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774583534681,
+      "changelog": "Initial release of divination-oracle skill.\n\n- Provides I Ching divination (起卦) and interpretation functionality.\n- Uses the Plum Blossom Yishu (梅花易数) algorithm for generating hexagrams.\n- Integrates an AI model to interpret the meaning of hexagrams and changing lines.\n- Includes modules for calculation logic, hexagram database, and usage documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:526587f92d4d1fd76d025ecdc0c6482d884d04ce3d482cf3088d4fdaab8920df"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/handoff@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.handoff",
+  "skill": {
+    "id": 29950,
+    "skillKey": "clawhub-handoff",
+    "name": "Handoff"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "handoff",
+    "url": "https://clawhub.ai/skills/handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/handoff-249215fed826e1cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create temporary handoff docs and propose/apply permanent knowledge updates in a shared Obsidian vault."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "radonx",
+      "userId": "publishers:radonx",
+      "displayName": "Radon Co",
+      "image": "https://avatars.githubusercontent.com/u/944393?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 292,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773439789889,
+      "changelog": "Initial release of the Handoff protocol. Renamed from legacy backup version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ceb1c7de5b575c11383eb10506ac7c8a48ca7a40a4bce17a133dba0d6b0ac33"
+}

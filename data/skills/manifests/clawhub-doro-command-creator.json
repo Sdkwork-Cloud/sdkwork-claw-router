@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20146,
+  "uuid": "skill-clawhub-doro-command-creator",
+  "skillKey": "clawhub-doro-command-creator",
+  "name": "Doro Command Creator",
+  "summary": "WHAT: Create Claude Code slash commands - reusable markdown workflows invoked with /command-name. WHEN: User wants to create, make, or add a slash command. U...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doro_command_creator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mus Titou",
+      "features": [
+        "WHAT: Create Claude Code slash commands",
+        "reusable markdown workflows invoked with /command-name",
+        "WHEN: User wants to create, make, or add a slash command"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doro-command-creator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27785308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doro-command-creator",
+      "url": "https://clawhub.ai/skills/doro-command-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doro-command-creator",
+    "url": "https://clawhub.ai/skills/doro-command-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doro-command-creator-8bd8b16d0d745a33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doro-command-creator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doro-command-creator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d40d8a97f8bd16ec1b869805cae99c162307567873fdc4ba7fb71d0e9e95c921",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T06:41:54.767Z"
+}

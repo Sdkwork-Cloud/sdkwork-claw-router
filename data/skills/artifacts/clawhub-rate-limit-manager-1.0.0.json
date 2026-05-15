@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rate-limit-manager@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rate_limit_manager",
+  "skill": {
+    "id": 46868,
+    "skillKey": "clawhub-rate-limit-manager",
+    "name": "Rate Limit Manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rate-limit-manager",
+    "url": "https://clawhub.ai/skills/rate-limit-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rate-limit-manager-121d7dcca3864067.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage and enforce API request rate limits and quotas with adaptive throttling, multi-service support, alerts, and usage visualization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777327274775,
+      "changelog": "- Initial release of the rate-limit-manager skill.\n- Supports multiple rate limiting algorithms: token bucket, sliding window, and fixed window.\n- Includes quota management with daily, weekly, and monthly options.\n- Manages rate limits across multiple APIs simultaneously.\n- Adaptive throttling reacts to 429 responses.\n- Provides dashboard visualization and usage alerts.\n- Features smart retry logic with exponential backoff.\n- Optional Redis support for distributed rate limiting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2e501b7cafed48ec62312d07ea9f3f0f1be2d07182b4f1407742dcbf8866450c"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24342,
+  "uuid": "skill-clawhub-joke-api",
+  "skillKey": "clawhub-joke-api",
+  "name": "Joke Api",
+  "summary": "Access diverse jokes by category, language, and type with filters for safe content using the free JokeAPI without requiring registration or an API key.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joke_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Djttt",
+      "features": [
+        "Access diverse jokes by category, language, and type with filters for safe content using the fr."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joke-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77910823?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joke-api",
+      "url": "https://clawhub.ai/skills/joke-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joke-api",
+    "url": "https://clawhub.ai/skills/joke-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joke-api-92e0d5dd8d44daab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joke-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-joke-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2d122044a11d2f6578fccb81cb2c9032e9dafc558873a347c5db0ad20619e249",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T13:59:45.682Z"
+}

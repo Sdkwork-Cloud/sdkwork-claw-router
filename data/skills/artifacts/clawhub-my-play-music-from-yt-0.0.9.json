@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/my-play-music-from-yt@0.0.9",
+  "version": "0.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.my_play_music_from_yt",
+  "skill": {
+    "id": 11749,
+    "skillKey": "clawhub-my-play-music-from-yt",
+    "name": "Play Music from YouTube"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "my-play-music-from-yt",
+    "url": "https://clawhub.ai/skills/my-play-music-from-yt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/my-play-music-from-yt-bedc41575fdf3068.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Play music on YouTube via browser automation with playwright-cli. Use when the user wants to: (1) play a specific song (e.g. 'play Money Money Money by ABBA') (2) play songs by an artist as a playlist or mix (e.g. 'play Jay Chou's songs')."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whodidthese",
+      "userId": "publishers:whodidthese",
+      "displayName": "whodidthese",
+      "image": "https://avatars.githubusercontent.com/u/205400652?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2015,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.0.9",
+      "createdAt": 1770510872884,
+      "changelog": "- SKILL.md: Improved formatting and readability in the description section, using YAML multiline and a clearer bullet/numbered list.\n- No behavioral changes to skill logic—documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:095830567ff4774cbf971a119071d473862b7fe0a52f43db7f71d6016d92d0b4"
+}

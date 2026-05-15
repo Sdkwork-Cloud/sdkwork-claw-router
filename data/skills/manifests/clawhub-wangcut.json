@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68349,
+  "uuid": "skill-clawhub-wangcut",
+  "skillKey": "clawhub-wangcut",
+  "name": "秦丝旺剪 - AI智能视频剪辑",
+  "summary": "秦丝智能视频剪辑APP的API集成，用于创建和管理AI视频剪辑任务。 TRIGGER when: 用户请求创建视频、生成视频剪辑、查看视频任务列表、下载剪辑结果、等待任务完成、配置旺剪账号。 触发词: \"创建视频\"、\"视频剪辑\"、\"生成视频\"、\"查看任务\"、\"下载视频\"、\"等待视频\"、\"配置旺剪\"、\"旺剪账号\"、...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wangcut",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HuangJT",
+      "features": [
+        "秦丝智能视频剪辑APP的API集成，用于创建和管理AI视频剪辑任务。 TRIGGER when: 用户请求创建视频、生成视频剪辑、查看视频任务列表、下载剪辑结果、等待任务完成、配置旺剪账号。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wangcut@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10482201?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wangcut",
+      "url": "https://clawhub.ai/skills/wangcut"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wangcut",
+    "url": "https://clawhub.ai/skills/wangcut",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wangcut-0c8784e6a92ff6b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wangcut@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wangcut-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2948c501df546c621378992f2d6b26e1df2e01fec1a9b62aeee6f174e3d17c8e",
+      "artifactSizeBytes": 2595
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:16:40.474Z"
+}

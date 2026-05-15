@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21590,
+  "uuid": "skill-clawhub-openweather",
+  "skillKey": "clawhub-openweather",
+  "name": "OpenWeather",
+  "summary": "Get current weather, hourly forecasts, and 8-day daily forecasts for any location worldwide using OpenWeather One Call API 3.0. Use when the user asks about...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openweather",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Joshua Ensley",
+      "features": [
+        "Get current weather, hourly forecasts, and 8-day daily forecasts for any location worldwide usi.",
+        "Use when the user asks about..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openweather@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159086557?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openweather",
+      "url": "https://clawhub.ai/skills/openweather"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openweather",
+    "url": "https://clawhub.ai/skills/openweather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openweather-ac4fb7193f6d6c0d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openweather@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openweather-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43d4d0915cc171bf55dd02a32e8006466913fe89cf26623b93283d5c2c3cdc57",
+      "artifactSizeBytes": 5547
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T07:26:51.738Z"
+}

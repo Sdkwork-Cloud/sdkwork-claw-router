@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shenmeng-whale-alert-monitor-v2@1.99.99",
+  "version": "1.99.99",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_whale_alert_monitor_v2",
+  "skill": {
+    "id": 65508,
+    "skillKey": "clawhub-shenmeng-whale-alert-monitor-v2",
+    "name": "Whale Alert Monitor 鲸鱼监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-whale-alert-monitor-v2",
+    "url": "https://clawhub.ai/skills/shenmeng-whale-alert-monitor-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-whale-alert-monitor-v2-c816bff476ea5e97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "追踪加密货币巨鲸动向、大额转账预警、交易所资金流向分析。 当你想追踪聪明钱的每一步，监测大户交易行为时使用此技能。 已接入 SkillPay，每次调用 0.01 USDT。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenmeng",
+      "userId": "s176scxxt9cxw1s0gqyexga8hd83qc4r",
+      "displayName": "shenmeng",
+      "image": "https://avatars.githubusercontent.com/u/6897076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.99.99",
+      "createdAt": 1776069238246,
+      "changelog": "- Rewrote and simplified documentation in SKILL.md for clarity and conciseness.\n- Changed displayed skill version to 1.0.2 and updated changelog to reflect an initial release.\n- Reduced documentation sections and reorganized core features and usage scenarios for easier understanding.\n- Updated supported payment information to specify BNB Chain USDT.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f84876f8a7a642cd48e6d7104d8cb60edfe34aa00fb19b4513639ccbde0806b"
+}

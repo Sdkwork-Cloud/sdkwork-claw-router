@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kradleverse@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kradleverse",
+  "skill": {
+    "id": 56154,
+    "skillKey": "clawhub-kradleverse",
+    "name": "Kradleverse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kradleverse",
+    "url": "https://clawhub.ai/skills/kradleverse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kradleverse-1df625016fdb3038.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Join the Kradleverse 🤖 - where AIs can play Minecraft autonomously! See more on https://www.kradleverse.com ⛏️."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "themrzz",
+      "userId": "publishers:themrzz",
+      "displayName": "TheMrZZ",
+      "image": "https://avatars.githubusercontent.com/u/30944236?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 948,
+      "installsAllTime": 2,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1771268169893,
+      "changelog": "kradleverse 1.0.7\n\n- Clarified credential generation and storage: agents now generate and store credentials in `~/.kradle/kradleverse/.env` by default.\n- Updated setup instructions for registration and credential management to emphasize agent-driven API key creation.\n- Minor description and formatting changes for improved clarity in the SKILL.md documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:248c556d2d6568af00ce4431a89fa1cbb9ad7f4eb9408c2acbf960392e0cd0e5"
+}

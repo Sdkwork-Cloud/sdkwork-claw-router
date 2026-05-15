@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61745,
+  "uuid": "skill-clawhub-find-news",
+  "skillKey": "clawhub-find-news",
+  "name": "查找资料",
+  "summary": "多引擎搜索 API 工具，支持通用网页搜索和新闻搜索。 使用场景： - 用户要求搜索网页、新闻、社交媒体内容 - 需要从 Google/Baidu/Bing/Yahoo/DuckDuckGo 搜索 - 需要搜索微信公众号、YouTube、GitHub、Reddit、Bilibili - 需要获取搜索结果的完整内容...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.find_news",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LazyBoyJgn99",
+      "features": [
+        "多引擎搜索 API 工具，支持通用网页搜索和新闻搜索。 使用场景：",
+        "用户要求搜索网页、新闻、社交媒体内容",
+        "需要从 Google/Baidu/Bing/Yahoo/DuckDuckGo 搜索",
+        "需要搜索微信公众号、YouTube、GitHub、Reddit、Bilibili"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/find-news@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40264751?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "find-news",
+      "url": "https://clawhub.ai/skills/find-news"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "find-news",
+    "url": "https://clawhub.ai/skills/find-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/find-news-0ae2e8fde531f6c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/find-news@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-find-news-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7177185caf65ad46a10ea97e5216c920c4d549f237de2e26acfa3036dec0f9aa",
+      "artifactSizeBytes": 2531
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T19:12:20.020Z"
+}

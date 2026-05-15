@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56380,
+  "uuid": "skill-clawhub-fnnas-download",
+  "skillKey": "clawhub-fnnas-download",
+  "name": "FeiNiu NAS Download Manager",
+  "summary": "Manage qBittorrent download tasks on 飞牛NAS - list torrents and add magnet links",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fnnas_download",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qiang.zhou",
+      "features": [
+        "Manage qBittorrent download tasks on 飞牛NAS",
+        "list torrents and add magnet links"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fnnas-download@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1035635?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fnnas-download",
+      "url": "https://clawhub.ai/skills/fnnas-download"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fnnas-download",
+    "url": "https://clawhub.ai/skills/fnnas-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fnnas-download-550c139656402566.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fnnas-download@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fnnas-download-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a120c56d55c9591de62ae27e10daadafe2089edfd2d84b90ffbddfe5c200910",
+      "artifactSizeBytes": 2158
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T15:24:12.002Z"
+}

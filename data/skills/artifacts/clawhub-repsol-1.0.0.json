@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/repsol@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repsol",
+  "skill": {
+    "id": 69959,
+    "skillKey": "clawhub-repsol",
+    "name": "Repsol"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repsol",
+    "url": "https://clawhub.ai/skills/repsol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repsol-8569380a47798846.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Repsol公司概要、业务布局、能源转型策略及财务状况，支持查询西班牙及拉美能源市场信息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 135,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776388230789,
+      "changelog": "- 首次发布，系统性介绍 Repsol（雷普索尔）作为西班牙及拉美市场的综合能源巨头。\n- 详细梳理了公司历史、业务布局、财务表现及全球运营版图。\n- 突出 Repsol 在可再生能源、生物燃料、氢能等低碳转型领域的战略与进展。\n- 对比欧洲主要油气公司，并提供与拉美地区独特联系的视角。\n- 明确列出公司 2050 年净零排放承诺及阶段性减排目标。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:776f22e807279d275a1eeb35a88d48b8e43eef38856386078e4ef9e845e4e5e4"
+}

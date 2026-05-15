@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shenmeng-whale-alert-monitor-v3@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_whale_alert_monitor_v3",
+  "skill": {
+    "id": 65353,
+    "skillKey": "clawhub-shenmeng-whale-alert-monitor-v3",
+    "name": "Whale Alert Monitor 大户监控"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-whale-alert-monitor-v3",
+    "url": "https://clawhub.ai/skills/shenmeng-whale-alert-monitor-v3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-whale-alert-monitor-v3-93521bfd6359166c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "虚拟币大户账户预警监测助手 - 实时监控鲸鱼钱包动向、大额转账、交易所资金流向。 当用户需要以下功能时触发此skill： (1) 监控特定大户/鲸鱼钱包的交易活动 (2) 追踪大额资金流入/流出交易所 (3) 设置自定义阈值的大额转账预警 (4) 分析鲸鱼持仓变化和积累/派发模式 (5) 接收Telegram/D..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shenmeng",
+      "userId": "s176scxxt9cxw1s0gqyexga8hd83qc4r",
+      "displayName": "shenmeng",
+      "image": "https://avatars.githubusercontent.com/u/6897076?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775350366371,
+      "changelog": "- Initial release of Whale Alert Monitor Skill, providing real-time monitoring of whale wallets, large transfers, and exchange flows.\n- Supports wallet activity tracking, customizable transfer alert thresholds, multi-chain coverage, and graded alert notifications via Telegram/Discord/Webhook.\n- Features holding analysis (including cost estimates and unrealized P&L), behavioral pattern recognition (accumulation, distribution, wash trading), and historical alert logging.\n- Includes configurable workflows, ready-to-use monitoring scripts, and integrated payment via SkillPay (0.01 USDT per call, BNB Chain USDT).\n- Offers best practices, built-in exchange wallet libraries, and detailed risk warnings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a72cd04dc97cd576cd1894ce71d52e3cb125a9893fc20a19328ca2f0a4815600"
+}

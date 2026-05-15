@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64041,
+  "uuid": "skill-clawhub-shuguang-memory",
+  "skillKey": "clawhub-shuguang-memory",
+  "name": "曙光记忆系统",
+  "summary": "曙光智能记忆系统 v4.0 - 五层金字塔架构 (HOT→DAILY→WEEKLY→CORE→ARCHIVE)。 支持 Weibull 衰减、混合检索、WAL 协议、自我改进治理。 当用户需要持久记忆、跨会话回忆、自动归档时触发。",
+  "version": "4.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuguang_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chen6896qqwee",
+      "features": [
+        "曙光智能记忆系统 v4.0",
+        "五层金字塔架构 (HOT→DAILY→WEEKLY→CORE→ARCHIVE)。 支持 Weibull 衰减、混合检索、WAL 协议、自我改进治理。 当用户需要持久记忆、跨会话回忆、自动归档."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shuguang-memory@4.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264313603?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shuguang-memory",
+      "url": "https://clawhub.ai/skills/shuguang-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuguang-memory",
+    "url": "https://clawhub.ai/skills/shuguang-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuguang-memory-ea04ff08cef5423d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shuguang-memory@4.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shuguang-memory-4.0.0.json",
+      "version": "4.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9aa8a7c99ff7eab20ee0cc03c9465673310e3fd6eb112ffec80853ace13a8216",
+      "artifactSizeBytes": 2545
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T10:54:36.217Z"
+}

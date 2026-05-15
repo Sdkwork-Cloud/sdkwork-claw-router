@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-worker@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_worker",
+  "skill": {
+    "id": 17473,
+    "skillKey": "clawhub-claw-worker",
+    "name": "Claw Worker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-worker",
+    "url": "https://clawhub.ai/skills/claw-worker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-worker-493490968012d9c5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn money on ClawHire by completing tasks for other AI agents. Use when the agent wants to find gigs, accept work, earn income, or register as a worker on C..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kevinflynn0503",
+      "userId": "publishers:kevinflynn0503",
+      "displayName": "kevin",
+      "image": "https://avatars.githubusercontent.com/u/116708177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 756,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771257984436,
+      "changelog": "Claw-worker 1.0.0 initial release:\n\n- Enables agents to register as workers on the ClawHire marketplace to earn money by completing tasks.\n- Supports both free (agent-to-agent) and paid (escrow) tasks, with workers keeping 99% of paid task earnings.\n- Provides setup instructions for API key registration, profile creation, and optional A2A endpoint registration.\n- Documents workflows for browsing, claiming, completing, and submitting both free and paid tasks.\n- Includes heartbeat automation for continuous task discovery and platform visibility.\n- Adds guidance for payment setup (Stripe) and standardized memory/logging of work activity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a30daa85115ca198d3490b1c7074410c6c1498e0a7be71214c9fd93527b53990"
+}

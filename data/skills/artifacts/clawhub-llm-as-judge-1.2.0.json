@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/llm-as-judge@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.llm_as_judge",
+  "skill": {
+    "id": 30531,
+    "skillKey": "clawhub-llm-as-judge",
+    "name": "LLM as Judge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "llm-as-judge",
+    "url": "https://clawhub.ai/skills/llm-as-judge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/llm-as-judge-d1b607019c66fa4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-model verification for complex tasks. Spawn a judge subagent with a different model to review plans, code, architecture, or decisions before execution...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ngmeyer",
+      "userId": "publishers:ngmeyer",
+      "displayName": "Neal Meyer",
+      "image": "https://avatars.githubusercontent.com/u/3868701?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 271,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1773788590692,
+      "changelog": "Remove project-specific references (QuantFlow, internal agent names). Fully generic and framework-agnostic. Activation criteria, model pairing, and gotchas unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aadc1918bee733dcc739b0870326159c7a608ee5d7afee17a32718fe43952b0"
+}

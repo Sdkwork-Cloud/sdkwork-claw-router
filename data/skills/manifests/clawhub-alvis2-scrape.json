@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45357,
+  "uuid": "skill-clawhub-alvis2-scrape",
+  "skillKey": "clawhub-alvis2-scrape",
+  "name": "Scrape",
+  "summary": "Legal web scraping with robots.txt compliance, rate limiting, and GDPR/CCPA-aware data handling. Supports both direct HTTP scraping and managed scraping via...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis2_scrape",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Legal web scraping with robots.txt compliance, rate limiting, and GDPR/CCPA-aware data handling",
+        "Supports both direct HTTP scraping and managed scraping via..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis2-scrape@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis2-scrape",
+      "url": "https://clawhub.ai/skills/alvis2-scrape"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis2-scrape",
+    "url": "https://clawhub.ai/skills/alvis2-scrape",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis2-scrape-277e9a7f3b1e8aea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis2-scrape@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis2-scrape-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a873d3085c68bbb99cec1fa36f970eb249c04c920b7bd48a7e05eda7e89e4dd2",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:20:57.173Z"
+}

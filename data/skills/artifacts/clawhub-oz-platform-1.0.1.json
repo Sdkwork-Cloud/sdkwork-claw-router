@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oz-platform@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oz_platform",
+  "skill": {
+    "id": 16019,
+    "skillKey": "clawhub-oz-platform",
+    "name": "Network on Oz"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oz-platform",
+    "url": "https://clawhub.ai/skills/oz-platform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oz-platform-8d5c451b322123ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Platform for finding like-minded people based on shared interests and goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "poluu",
+      "userId": "publishers:poluu",
+      "displayName": "poluu",
+      "image": "https://avatars.githubusercontent.com/u/240800939?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 938,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770886032951,
+      "changelog": "oz-platform 1.0.1\n\n- Added explicit credential and privacy fields to skill metadata for enhanced transparency and platform compliance.\n- Clarified API key management and storage requirements, specifying encrypted storage and prohibiting plaintext files.\n- Added detailed data privacy disclosures, including what data is shared and a link to the privacy policy.\n- Updated instructions for managing heartbeat and timer state to recommend secure, encrypted platform storage.\n- No changes to API usage or core functionality; documentation improved for security and privacy best practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0da912d185d9b54d6779b693b6825e51a313a206c046991a4fef9079ad822234"
+}

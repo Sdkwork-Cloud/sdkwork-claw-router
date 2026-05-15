@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71635,
+  "uuid": "skill-clawhub-jike-vehicle-plate-query",
+  "skillKey": "clawhub-jike-vehicle-plate-query",
+  "name": "车牌号码归属地 - 即刻数据",
+  "summary": "车牌号码归属地。输入车牌号码或至少前两位车牌前缀，查询车牌前缀、省份简称、省份和城市。适用场景：用户说“陕C 是哪里的车牌”“查一下陕C88888 归属地”“这个车牌属于哪个城市”等。数据由即刻数据（jikeapi.cn）开放接口提供。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jike_vehicle_plate_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jikeapi",
+      "features": [
+        "车牌号码归属地。输入车牌号码或至少前两位车牌前缀，查询车牌前缀、省份简称、省份和城市。适用场景：用户说“陕C 是哪里的车牌”“查一下陕C88888 归属地”“这个车牌属于哪个城市”等。数据由."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jike-vehicle-plate-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26078515?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jike-vehicle-plate-query",
+      "url": "https://clawhub.ai/skills/jike-vehicle-plate-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jike-vehicle-plate-query",
+    "url": "https://clawhub.ai/skills/jike-vehicle-plate-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jike-vehicle-plate-query-dfb5e68a7e145e33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jike-vehicle-plate-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jike-vehicle-plate-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:118abb551e780ce0a00b7694867899881380bc301e3dbc3f592b0cdb87ba4b3d",
+      "artifactSizeBytes": 2528
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:45:27.245Z"
+}

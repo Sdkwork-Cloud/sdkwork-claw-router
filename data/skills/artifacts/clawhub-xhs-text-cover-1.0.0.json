@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xhs-text-cover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xhs_text_cover",
+  "skill": {
+    "id": 71865,
+    "skillKey": "clawhub-xhs-text-cover",
+    "name": "Xhs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xhs-text-cover",
+    "url": "https://clawhub.ai/skills/xhs-text-cover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xhs-text-cover-a912690c82a30343.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书全能助手 — 文案生成、封面制作、内容发布与管理。当用户要求写小红书笔记、生成小红书文案/标题/封面、发小红书、搜索小红书、评论点赞收藏等任何小红书相关操作时使用。支持一站式从文案创作到自动发布的完整流程。封面图使用纯ImageMagick生成，无需API配置。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luckychay",
+      "userId": "s170j0m2kdmws681e9nh4b6twh83jvtc",
+      "displayName": "Xuanying Chen",
+      "image": "https://avatars.githubusercontent.com/u/55084546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775659492241,
+      "changelog": "- 首次发布：多功能小红书助手，支持文案生成、封面图制作、内容发布与全流程管理。\n- 标题、正文和封面图创作三步走，每步需用户确认，文案和图片均可本地自动生成，无需API。\n- 支持一键发布到小红书平台、搜索内容、评论互动、点赞、收藏、帖子/用户详情获取等操作，全部本地执行。\n- 发布功能严格区分正文与话题标签，标签需单独通过参数传递，规范防止违规。\n- 所有平台操作均使用云端MCP服务Streamable HTTP接口，登录流程友好支持扫码。\n- 丰富工具列表与详细命令参数，助力内容创作和账号运营全闭环。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00e8268d43b70048041c97c8e4060c7ebaefad010bdc9dd93c3f828a5a3bf5de"
+}

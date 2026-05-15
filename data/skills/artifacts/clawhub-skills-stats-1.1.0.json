@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-stats@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_stats",
+  "skill": {
+    "id": 21080,
+    "skillKey": "clawhub-skills-stats",
+    "name": "Clawhub Skills Stats"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-stats",
+    "url": "https://clawhub.ai/skills/skills-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-stats-d04d0b60ea00727c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query any ClawHub skill's statistics (stars, downloads, current installs, all-time installs) via curl and the public ClawHub API. Use when: user asks about a..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tjefferson",
+      "userId": "s170z4mt16txtqsqz0ea9rph3183f336",
+      "displayName": "Jeff",
+      "image": "https://avatars.githubusercontent.com/u/2939233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772192742832,
+      "changelog": "- Improved description for clarity and to better match usage scenarios (popularity, stats, comparisons).\n- Now requires both curl and python3 for stat queries.\n- Documentation is more concise and focused on usage: querying single skills, batch comparison, and searching by keyword.\n- Pruned detailed introductory content; emphasizes quick commands and precise instructions.\n- Notes and API response example are now summarized for brevity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:daae47fa149cc39f88572204598c93456a69e5a843710d8d294831b61fea262e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pz@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pz",
+  "skill": {
+    "id": 18881,
+    "skillKey": "clawhub-pz",
+    "name": "Paperzilla CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pz",
+    "url": "https://clawhub.ai/skills/pz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pz-917adf1964c27721.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Paperzilla CLI lets you search, filter, and browse AI-curated academic papers by project, requiring a Paperzilla account for authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pors",
+      "userId": "s1726anyehf7sx1t7vgh6pjnr183vjsp",
+      "displayName": "Mark Pors 🦖",
+      "image": "https://avatars.githubusercontent.com/u/1078320?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 644,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771604474452,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9bc9257be05d36cbf2a42cc3186f130a1deeac11382481a0f42a50ec9b88a957"
+}

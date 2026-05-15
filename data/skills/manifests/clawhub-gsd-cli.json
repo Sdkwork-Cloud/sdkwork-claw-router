@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56494,
+  "uuid": "skill-clawhub-gsd-cli",
+  "skillKey": "clawhub-gsd-cli",
+  "name": "GSD CLI (→ gsd-orchestrator)",
+  "summary": "Redirect — install `gsd-orchestrator` instead. This skill exists to reserve the name. The full orchestration skill with subprocess patterns, exit code handli...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gsd_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "glittercowboy",
+      "features": [
+        "Redirect — install `gsd-orchestrator` instead",
+        "This skill exists to reserve the name",
+        "The full orchestration skill with subprocess patterns, exit code handli..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gsd-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/186001655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gsd-cli",
+      "url": "https://clawhub.ai/skills/gsd-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gsd-cli",
+    "url": "https://clawhub.ai/skills/gsd-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gsd-cli-027c4bb95727e796.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gsd-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gsd-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c6f5818511f0ba7d00e78146e306318269d769af349274b11c2e3c3fa27c02a5",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T22:10:35.300Z"
+}

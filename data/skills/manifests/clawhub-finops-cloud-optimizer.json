@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53871,
+  "uuid": "skill-clawhub-finops-cloud-optimizer",
+  "skillKey": "clawhub-finops-cloud-optimizer",
+  "name": "Finops Cloud Optimizer",
+  "summary": "Analyze cloud spend across AWS/GCP/Azure — identify waste, recommend rightsizing, spot idle resources, and produce actionable savings plans with projected do...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.finops_cloud_optimizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Analyze cloud spend across AWS/GCP/Azure — identify waste, recommend rightsizing, spot idle res."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/finops-cloud-optimizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "finops-cloud-optimizer",
+      "url": "https://clawhub.ai/skills/finops-cloud-optimizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "finops-cloud-optimizer",
+    "url": "https://clawhub.ai/skills/finops-cloud-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/finops-cloud-optimizer-d59c7fdb3e03fcbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/finops-cloud-optimizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-finops-cloud-optimizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:445f6454c5cb715e69031ebde0e2eda913e8e8b6aa71c3d0c237b6dbb5e9b12d",
+      "artifactSizeBytes": 2493
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T04:38:07.399Z"
+}

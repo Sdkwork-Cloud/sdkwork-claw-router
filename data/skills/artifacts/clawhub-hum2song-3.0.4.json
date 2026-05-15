@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hum2song@3.0.4",
+  "version": "3.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hum2song",
+  "skill": {
+    "id": 27835,
+    "skillKey": "clawhub-hum2song",
+    "name": "Hum2Song"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hum2song",
+    "url": "https://clawhub.ai/skills/hum2song",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hum2song-c26bd58fe5d721aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hum2Song turns a hummed or sung melody into a complete song with local audio processing, MIDI extraction, and optional AI-assisted arrangement, without uploa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "3.0.4",
+      "createdAt": 1775093443072,
+      "changelog": "Add explicit frontmatter description so ClawHub refreshes the public summary in English.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3f1d2e368a138f96307d37c4043ed80d54782fe749b4d9903de1d92fd40112c6"
+}

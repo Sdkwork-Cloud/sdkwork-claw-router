@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/book-carpet-cleaning@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_carpet_cleaning",
+  "skill": {
+    "id": 13173,
+    "skillKey": "clawhub-book-carpet-cleaning",
+    "name": "Book Carpet Cleaning"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-carpet-cleaning",
+    "url": "https://clawhub.ai/skills/book-carpet-cleaning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-carpet-cleaning-dc84e369ecaefd6e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Book carpet-cleaning services through Lokuli MCP. Use when user needs to find and book carpet-cleaning. Triggers on requests like \"book a carpet-cleaning\", \"find carpet-cleaning near me\", or any carpet-cleaning service request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "edwardrodriguez703-design",
+      "userId": "publishers:edwardrodriguez703-design",
+      "displayName": "Lokuli",
+      "image": "https://avatars.githubusercontent.com/u/224194606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1542,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770339916201,
+      "changelog": "Fixed display name",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b9ee8a0fd81127110016370ca16977aeff56fc76be1c2e09c98024710e3d87c5"
+}

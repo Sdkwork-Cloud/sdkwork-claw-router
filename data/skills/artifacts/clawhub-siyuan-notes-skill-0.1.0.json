@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/siyuan-notes-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.siyuan_notes_skill",
+  "skill": {
+    "id": 65027,
+    "skillKey": "clawhub-siyuan-notes-skill",
+    "name": "Siyuan Notes Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "siyuan-notes-skill",
+    "url": "https://clawhub.ai/skills/siyuan-notes-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/siyuan-notes-skill-5666dbc57b1c2d35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "思源笔记工具——搜索、阅读、编辑、组织用户的笔记。Use when user says: 搜索笔记、查找文档、打开文档、阅读笔记、编辑笔记、创建文档、修改块、思源笔记、SiYuan、整理文档、管理标签、Daily Note、反向链接、最近修改、PMF补丁、SQL查询blocks。不要用于与思源笔记无关的通用编程或..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fanxing-6",
+      "userId": "s17f92jarwvc4bqnnxdben1y7h83zqb9",
+      "displayName": "fanxing",
+      "image": "https://avatars.githubusercontent.com/u/73698197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 440,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773416867133,
+      "changelog": "siyuan-notes-skill v0.1.0\n\n- Initial release with detailed usage guide in SKILL.md.\n- Supports searching, reading, editing, organizing, and querying notes in SiYuan.\n- Includes command strategy selection, write safety protocol, and comprehensive command reference.\n- Provides step-by-step examples for common patterns like searching, editing, inserting, and restructuring notes.\n- Clarifies intent-based best practices to prevent data loss and version conflicts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:69f30b0bba133a55f8ba11ad642c6603230ef1335a72b7b58cce3406324fca2b"
+}

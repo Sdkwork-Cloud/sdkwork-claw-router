@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dianju-ofd-tools@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dianju_ofd_tools",
+  "skill": {
+    "id": 40265,
+    "skillKey": "clawhub-dianju-ofd-tools",
+    "name": "dianju-ofd-tools"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dianju-ofd-tools",
+    "url": "https://clawhub.ai/skills/dianju-ofd-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dianju-ofd-tools-0c81b514c23a143e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Convert local PDF and OFD files to each other and extract text content from OFD files with temporary download links provided."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stmmer",
+      "userId": "s1703tjrdgwffs1gn2v4rcvq7h83g84e",
+      "displayName": "stmm",
+      "image": "https://avatars.githubusercontent.com/u/13455706?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774350403008,
+      "changelog": "Initial release of dianju-ofd-tools.\n\n- Convert local PDF files to OFD format and vice versa.\n- Extract text content from local OFD files.\n- Simple CLI usage with parameters for file paths.\n- Returns temporary download links for converted files.\n- Includes content extraction returning JSON arrays for OFD files.\n- Support for error handling and logging options.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ac23355fc71263984f9808523b1862a79a6c1685947dbc701228aeea4bd78aa3"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45118,
+  "uuid": "skill-clawhub-pipeworx-asana",
+  "skillKey": "clawhub-pipeworx-asana",
+  "name": "Pipeworx asana",
+  "summary": "Access and manage Asana workspaces, projects, and tasks via API calls for listing, searching, retrieving details, and creating tasks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_asana",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Access and manage Asana workspaces, projects, and tasks via API calls for listing, searching, r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-asana@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-asana",
+      "url": "https://clawhub.ai/skills/pipeworx-asana"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-asana",
+    "url": "https://clawhub.ai/skills/pipeworx-asana",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-asana-93c72a3bf7b60969.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-asana@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-asana-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0d9027961a5ebf9dbf70fd61766a1688083349bd54b23dcdf6ec489bca7b1ee",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T23:31:58.111Z"
+}

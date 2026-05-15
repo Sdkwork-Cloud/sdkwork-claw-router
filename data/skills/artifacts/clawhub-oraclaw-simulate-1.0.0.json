@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oraclaw-simulate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oraclaw_simulate",
+  "skill": {
+    "id": 34415,
+    "skillKey": "clawhub-oraclaw-simulate",
+    "name": "Oraclaw Simulate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oraclaw-simulate",
+    "url": "https://clawhub.ai/skills/oraclaw-simulate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oraclaw-simulate-4fd203923d224e11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monte Carlo simulation for AI agents. Run thousands of probabilistic scenarios to model risk, forecast revenue, estimate project timelines, and quantify unce..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whatsonyourmind",
+      "userId": "s1742adj1ngn7vhc26tve4753183j86s",
+      "displayName": "Whatsonyourmind",
+      "image": "https://avatars.githubusercontent.com/u/248369826?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774612937870,
+      "changelog": "- Initial release of oraclaw-simulate.\n- Monte Carlo simulation tool for AI agents to model risk, revenue, timelines, and uncertainty.\n- Supports six distribution types: normal, lognormal, uniform, triangular, beta, exponential.\n- Provides scenario results including mean, standard deviation, percentiles, and histograms.\n- API access requires ORACLAW_API_KEY; pricing starts at $0.05 per simulation (1K iterations).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f7757a45f2ef86dc8f6727022fa90f5f96d8aa0cdfb9f00d77189f6b94e62e75"
+}

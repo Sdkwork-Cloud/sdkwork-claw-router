@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decision-recorder@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decision_recorder",
+  "skill": {
+    "id": 22762,
+    "skillKey": "clawhub-decision-recorder",
+    "name": "Decision Recorder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decision-recorder",
+    "url": "https://clawhub.ai/skills/decision-recorder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decision-recorder-3229d312e2eb49b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Record, review, search, and analyze decisions from technical work, product work, team discussions, and personal planning. Use when the user wants to capture..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773378169401,
+      "changelog": "Update documentation to English.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:176dd9261a8bcffd354a6079de039435efd274cb70c35cf2238322d3020ab0b8"
+}

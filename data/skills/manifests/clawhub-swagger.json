@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29029,
+  "uuid": "skill-clawhub-swagger",
+  "skillKey": "clawhub-swagger",
+  "name": "Swagger",
+  "summary": "Swagger reference tool. Use when working with swagger in devtools contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.swagger",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Swagger reference tool",
+        "Use when working with swagger in devtools contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/swagger@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "swagger",
+      "url": "https://clawhub.ai/skills/swagger"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "swagger",
+    "url": "https://clawhub.ai/skills/swagger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/swagger-0447c783c9e903a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/swagger@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-swagger-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f32f8dd616ce8130842a2cee025c16bb88f238b4b3b9992136622a37794f6aa",
+      "artifactSizeBytes": 1751
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:17:13.166Z"
+}

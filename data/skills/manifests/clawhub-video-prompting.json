@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48403,
+  "uuid": "skill-clawhub-video-prompting",
+  "skillKey": "clawhub-video-prompting",
+  "name": "Video Prompting",
+  "summary": "Get prompt-edited videos ready to post, without touching a single slider. Upload your video clips (MP4, MOV, WebM, AVI, up to 500MB), say something like \"cut...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_prompting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tk8544-b",
+      "features": [
+        "Get prompt-edited videos ready to post, without touching a single slider",
+        "Upload your video clips (MP4, MOV, WebM, AVI, up to 500MB), say something like \"cut..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-prompting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210889262?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-prompting",
+      "url": "https://clawhub.ai/skills/video-prompting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-prompting",
+    "url": "https://clawhub.ai/skills/video-prompting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-prompting-21704e0e9bd93f8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-prompting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-prompting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:89a62a90744ab803ec4fc10f8403f90f97137abab92f80fc2efdd6a5e202ab88",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T18:04:23.211Z"
+}

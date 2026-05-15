@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hn-podcast-transcriber@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hn_podcast_transcriber",
+  "skill": {
+    "id": 48798,
+    "skillKey": "clawhub-hn-podcast-transcriber",
+    "name": "HN Podcast Transcriber"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hn-podcast-transcriber",
+    "url": "https://clawhub.ai/skills/hn-podcast-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hn-podcast-transcriber-1c7cf73e06d87ebb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically fetch, transcribe, and archive Hacker News podcast episodes (Hacker News Morning Brief). Use when the user wants to set up a podcast transcript..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "terrycarter1985",
+      "userId": "s17brwfrqyjhbjgadkvar20h8x8492g8",
+      "displayName": "terrycarter1985",
+      "image": "https://avatars.githubusercontent.com/u/1542987?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778100718518,
+      "changelog": "Initial release: auto-fetch, transcribe, and archive Hacker News Morning Brief podcast episodes",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59817d4d9b4a310a8b026291d3cfea61e71be11262285fc7ddf5594bcea16b8f"
+}

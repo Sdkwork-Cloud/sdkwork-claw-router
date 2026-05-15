@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brand-protection-ebay@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brand_protection_ebay",
+  "skill": {
+    "id": 28370,
+    "skillKey": "clawhub-brand-protection-ebay",
+    "name": "Brand Protection Ebay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brand-protection-ebay",
+    "url": "https://clawhub.ai/skills/brand-protection-ebay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brand-protection-ebay-c7c4c05f81882c33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "eBay brand protection toolkit. Detect unauthorized sellers, counterfeits, and VeRO violations. Includes price monitoring, trademark abuse detection, VeRO com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phheng",
+      "userId": "s17cnrtda4fqzdjza3g2hx20bs83f18z",
+      "displayName": "Henk Nie",
+      "image": "https://avatars.githubusercontent.com/u/44972754?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773996752323,
+      "changelog": "Initial release of the brand-protection-ebay skill.\n\n- Detect unauthorized sellers and counterfeits on eBay.\n- Monitor prices for MAP (Minimum Advertised Price) violations.\n- Identify potential trademark abuse in listing titles and descriptions.\n- Generate VeRO complaint templates and enforcement guides.\n- No API key required for use.\n- Includes step-by-step action workflow and risk level categorization.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:49c06f76087111bc2e124ab9df33c511b8b7a63332073175c3792c4a4e3064cb"
+}

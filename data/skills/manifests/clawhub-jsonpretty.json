@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34837,
+  "uuid": "skill-clawhub-jsonpretty",
+  "skillKey": "clawhub-jsonpretty",
+  "name": "Jsonpretty",
+  "summary": "Format, validate, query, flatten, and analyze JSON data. Use when asked to pretty-print JSON, validate JSON syntax, query nested JSON with dot-notation, flat...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jsonpretty",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rogue-agent1",
+      "features": [
+        "Format, validate, query, flatten, and analyze JSON data",
+        "Use when asked to pretty-print JSON, validate JSON syntax, query nested JSON with dot-notation,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jsonpretty@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259556880?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jsonpretty",
+      "url": "https://clawhub.ai/skills/jsonpretty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jsonpretty",
+    "url": "https://clawhub.ai/skills/jsonpretty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jsonpretty-af2ad06322805cfc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jsonpretty@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jsonpretty-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e710b906907e0ef9b992e15aedd0b465e4b3d2e877c1571c00c943ae7273f059",
+      "artifactSizeBytes": 2302
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T21:03:18.114Z"
+}

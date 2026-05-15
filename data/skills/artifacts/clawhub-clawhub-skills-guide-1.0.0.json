@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skills-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skills_guide",
+  "skill": {
+    "id": 63603,
+    "skillKey": "clawhub-clawhub-skills-guide",
+    "name": "ClawHub Skills Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skills-guide",
+    "url": "https://clawhub.ai/skills/clawhub-skills-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skills-guide-4283b733f6860103.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIC团队ClawHub技能管理指南。当用户询问\"如何发布技能\"、\"怎么搜索技能\"、\"s和skills区别\"、\"如何安装技能\"、\"技能格式要求\"、\"SKILL.md怎么写\"、\"怎么验证技能\"等ClawHub相关问题时触发。包含技能发现、安装、发布、验证全流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chii726",
+      "userId": "s1720f1cgaye3x6vyqth0m648d83wtvw",
+      "displayName": "Chii726",
+      "image": "https://avatars.githubusercontent.com/u/224948000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 90,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777871404921,
+      "changelog": "AIC团队ClawHub技能管理指南，含s/skills澄清、发布流程、校验工具",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4aac994adcbc3e711330fb484378bfb6e9c85400552a4a202a503be5a60f7e16"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69930,
+  "uuid": "skill-clawhub-web-learner-1-0-0",
+  "skillKey": "clawhub-web-learner-1-0-0",
+  "name": "Web Learner 1.0.0",
+  "summary": "自主上网学习技能 - 让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_learner_1_0_0",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "332054781",
+      "features": [
+        "自主上网学习技能",
+        "让 AI 能够主动搜索、浏览和从互联网获取知识。当用户要求了解最新信息、学习新知识、查询新闻、获取某个主题的详细信息，或需要从网络上获取数据时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-learner-1-0-0@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18734411?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-learner-1-0-0",
+      "url": "https://clawhub.ai/skills/web-learner-1-0-0"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-learner-1-0-0",
+    "url": "https://clawhub.ai/skills/web-learner-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-learner-1-0-0-e5ec42c36cac6d05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-learner-1-0-0@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-learner-1-0-0-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fca0ecb15bdd279529f59e64e23004ddda3203003e9170269e125dbec1f338de",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T08:40:01.668Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52371,
+  "uuid": "skill-clawhub-eth-node",
+  "skillKey": "clawhub-eth-node",
+  "name": "Ethereum Node",
+  "summary": "Manage Ethereum execution client nodes — start, stop, sync status, peers, logs, config",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eth_node",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "J. Campbell",
+      "features": [
+        "Manage Ethereum execution client nodes — start, stop, sync status, peers, logs, config"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eth-node@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/363026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eth-node",
+      "url": "https://clawhub.ai/skills/eth-node"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eth-node",
+    "url": "https://clawhub.ai/skills/eth-node",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eth-node-adb97988aebd2493.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eth-node@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eth-node-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62d2e704ec606e00809ec7bb55b637953403eaa4ece18d864e6168aae3c20765",
+      "artifactSizeBytes": 2248
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T05:24:36.921Z"
+}

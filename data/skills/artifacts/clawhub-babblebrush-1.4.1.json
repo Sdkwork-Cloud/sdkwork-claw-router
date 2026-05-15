@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/babblebrush@1.4.1",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.babblebrush",
+  "skill": {
+    "id": 20918,
+    "skillKey": "clawhub-babblebrush",
+    "name": "babbleBrush"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "babblebrush",
+    "url": "https://clawhub.ai/skills/babblebrush",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/babblebrush-7f9dd61eca4a9dbc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and iteratively edit images. Supports storage, UI for manual editing, history, version branching, time travel, reference images, and multiple AI mod..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kivs",
+      "userId": "publishers:kivs",
+      "displayName": "kivS",
+      "image": "https://avatars.githubusercontent.com/u/3810567?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.4.1",
+      "createdAt": 1772390052818,
+      "changelog": "- Added Openclaw metadata to declare BABBLEBRUSH_API_KEY as a required environment variable.\n- No other user-facing changes or API updates.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:068be1fa41a16882a55914740cf3733d82c33ee083412ff5961c4e9eab96ccd7"
+}

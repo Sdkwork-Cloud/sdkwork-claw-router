@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12725,
+  "uuid": "skill-clawhub-glance",
+  "skillKey": "clawhub-glance",
+  "name": "Glance",
+  "summary": "Create, update, and manage Glance dashboard widgets. Use when user wants to: add something to their dashboard, create a widget, track data visually, show metrics/stats, display API data, or monitor usage.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glance",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "acfranzen",
+      "features": [
+        "Create, update, and manage Glance dashboard widgets",
+        "Use when user wants to: add something to their dashboard, create a widget, track data visually,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glance@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29310979?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glance",
+      "url": "https://clawhub.ai/skills/glance"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glance",
+    "url": "https://clawhub.ai/skills/glance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glance-e776a070909341e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glance@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-glance-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b39f99b70810e14570d43f1bc0b91e719440dbbdfd2a2f57526add486f0ade8b",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T16:56:10.244Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/farmos-observations@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.farmos_observations",
+  "skill": {
+    "id": 17971,
+    "skillKey": "clawhub-farmos-observations",
+    "name": "Farmos Observations"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "farmos-observations",
+    "url": "https://clawhub.ai/skills/farmos-observations",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/farmos-observations-1ff331306ae3895f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and create field observations and AI-processed captures. Photos, voice notes, and text notes from the field."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianppetty",
+      "userId": "publishers:brianppetty",
+      "displayName": "brianppetty",
+      "image": "https://avatars.githubusercontent.com/u/26852668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 708,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771750847032,
+      "changelog": "Initial release of the farmos-observations skill: fast capture and querying of field observations for FarmOS, supporting AI-powered extraction from notes, photos, and voice reports.\n\n- Query and log field observations like pest, disease, weed, crop condition, weather, soil, and equipment issues.\n- Accepts multiple input types: text, photos, and voice notes.\n- Uses AI to classify and extract field, equipment, observation type, severity, and location from reports.\n- Provides counts and summaries (with context) of observations; flags low/incomplete data and backend issues.\n- Offers to create observations when issues are mentioned in conversation; always asks for confirmation.\n- Integrates with FarmOS APIs, including JWT-authenticated endpoints for creating and listing observations.\n- Notifies users if the observations service is down or unresponsive.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0514898d1fce7507444afd386fb81a57a8c94763b13ee0f3ada53723610483ab"
+}

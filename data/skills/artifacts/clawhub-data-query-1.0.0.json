@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-query@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_query",
+  "skill": {
+    "id": 71099,
+    "skillKey": "clawhub-data-query",
+    "name": "data-query"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-query",
+    "url": "https://clawhub.ai/skills/data-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-query-b87139645c108031.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通用自然语言转SQL与可视化页面生成技能。当用户使用自然语言查询数据，或需要生成带图表的数据看板页面时调用本技能。技能基于挂载的知识库上下文直接生成SQL，验证后生成可部署的HTML图表页面。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ylyuanlu",
+      "userId": "s17ehd8m86ey3swrbvzcd2g7ns84hzk9",
+      "displayName": "ylyuanlu",
+      "image": "https://avatars.githubusercontent.com/u/9746050?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 181,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775743670673,
+      "changelog": "Initial release: NL→SQL cockpit generation skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f1afdba52f0e8460f9c7bd865c0f5511de996a0c8b9da04100403ef2a1495f19"
+}

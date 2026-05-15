@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jpmorgan@1.0.17",
+  "version": "1.0.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jpmorgan",
+  "skill": {
+    "id": 24124,
+    "skillKey": "clawhub-jpmorgan",
+    "name": "JPMorgan Claw - Give your Claw Agent spending powers"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jpmorgan",
+    "url": "https://clawhub.ai/skills/jpmorgan",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jpmorgan-4ef9bfe6a5402861.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get your banking going - Financial enablement & accounting platform for Bots, Agents, and OpenClaw. Multiple methods for enabling and managing agentic spendi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jononovo",
+      "userId": "s17eyjmk8pyvczxpmy73dtgn4d83frwx",
+      "displayName": "jononovo",
+      "image": "https://avatars.githubusercontent.com/u/22595409?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.17",
+      "createdAt": 1773192279663,
+      "changelog": "- Skill renamed from \"creditclaw\" to \"jpmorgan\".\n- Version updated to 2.0.11 with new update date.\n- Description expanded to emphasize banking capabilities.\n- No changes to API, flows, or security — documentation and branding only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d81b6d6a8a2b415ed39e073cde9743ca9d357017bb08b9833a8d955e3b27b5b6"
+}

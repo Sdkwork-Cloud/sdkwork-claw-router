@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56989,
+  "uuid": "skill-clawhub-download-video-tiktok",
+  "skillKey": "clawhub-download-video-tiktok",
+  "name": "Download-video-tiktok",
+  "summary": "Télécharge automatiquement la dernière vidéo (ou les N dernières) d'un compte TikTok public via yt-dlp. Utilise ce skill dès que l'utilisateur mentionne TikT...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.download_video_tiktok",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "stx",
+      "features": [
+        "Télécharge automatiquement la dernière vidéo (ou les N dernières) d'un compte TikTok public via.",
+        "Utilise ce skill dès que l'utilisateur mentionne TikT..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/download-video-tiktok@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85649980?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "download-video-tiktok",
+      "url": "https://clawhub.ai/skills/download-video-tiktok"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "download-video-tiktok",
+    "url": "https://clawhub.ai/skills/download-video-tiktok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/download-video-tiktok-914e447e0725ceb5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/download-video-tiktok@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-download-video-tiktok-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:19b3d4acdfc81b0e98f57a6b91336e2f900a5edc9695e8f2dc8f4a08af781a23",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T22:07:24.990Z"
+}

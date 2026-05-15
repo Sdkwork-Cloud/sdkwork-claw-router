@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33852,
+  "uuid": "skill-clawhub-payment-402",
+  "skillKey": "clawhub-payment-402",
+  "name": "payment-402",
+  "summary": "Access protected APIs and digital resources via the x402 \"Payment Required\" protocol on Base L2. This skill automates cryptographic handshakes and USDC micro...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payment_402",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PayNodeLabs",
+      "features": [
+        "Access protected APIs and digital resources via the x402 \"Payment Required\" protocol on Base L2",
+        "This skill automates cryptographic handshakes and USDC micro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/payment-402@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/payment-402/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "payment-402",
+      "url": "https://clawhub.ai/skills/payment-402"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payment-402",
+    "url": "https://clawhub.ai/skills/payment-402",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payment-402-c80e173c7ed75ee7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/payment-402@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-payment-402-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd4fea122f7c6c2a30916e1afffddc7048f664f81647e163a7500dafb7a8d80a",
+      "artifactSizeBytes": 2355
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T17:31:32.888Z"
+}

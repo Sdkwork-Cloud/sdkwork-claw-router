@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59234,
+  "uuid": "skill-clawhub-automatic-skill",
+  "skillKey": "clawhub-automatic-skill",
+  "name": "Automatic Skill",
+  "summary": "每日 Skill 自动工厂 — 让 openclaw 和 Claude 完全自主地调研、设计、生成、测试并发布全新 skill，全程零人工介入。内置 10 阶段流水线（Research → Design → SEO → Create → Review → Self-Run → Self-Check → Uploa...",
+  "version": "1.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automatic_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Cosmos Fang",
+      "features": [
+        "每日 Skill 自动工厂 — 让 openclaw 和 Claude 完全自主地调研、设计、生成、测试并发布全新 skill，全程零人工介入。内置 10 阶段流水线（Research →."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automatic-skill@1.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255512740?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automatic-skill",
+      "url": "https://clawhub.ai/skills/automatic-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automatic-skill",
+    "url": "https://clawhub.ai/skills/automatic-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automatic-skill-77aeaefa09282306.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automatic-skill@1.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-automatic-skill-1.4.1.json",
+      "version": "1.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3e93b6a7413fd9cb34d150157df244ce157784f421b97268c05c3680e4f0d4d",
+      "artifactSizeBytes": 2256
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T14:04:54.588Z"
+}

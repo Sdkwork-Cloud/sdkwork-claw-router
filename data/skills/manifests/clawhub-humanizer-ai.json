@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41153,
+  "uuid": "skill-clawhub-humanizer-ai",
+  "skillKey": "clawhub-humanizer-ai",
+  "name": "Humanizer AI",
+  "summary": "Identify and eliminate traces of AI-generated text, making writing sound more natural and human.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.humanizer_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Identify and eliminate traces of AI-generated text, making writing sound more natural and human."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/humanizer-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "humanizer-ai",
+      "url": "https://clawhub.ai/skills/humanizer-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "humanizer-ai",
+    "url": "https://clawhub.ai/skills/humanizer-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/humanizer-ai-508bde57fe88fe81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/humanizer-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-humanizer-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0ba18c8a9283cece87d15b7eb793dd66855cf0021b5f6aacf446fc47dd647e38",
+      "artifactSizeBytes": 2098
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T02:09:34.822Z"
+}

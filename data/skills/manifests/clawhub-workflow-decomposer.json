@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68332,
+  "uuid": "skill-clawhub-workflow-decomposer",
+  "skillKey": "clawhub-workflow-decomposer",
+  "name": "Workflow Decomposer",
+  "summary": "工作流任务拆解与模型编排技能。使用场景：(1) 收到复杂工作任务需要拆解为可执行步骤，(2) 需要为不同步骤选择最合适的模型，(3) 需要跟踪工作流进度和模型使用情况，(4) 长时间任务卡住需要问题诊断和解决方案。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_decomposer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lpj18337105261",
+      "features": [
+        "工作流任务拆解与模型编排技能。使用场景：(1) 收到复杂工作任务需要拆解为可执行步骤，(2) 需要为不同步骤选择最合适的模型，(3) 需要跟踪工作流进度和模型使用情况，(4) 长时间任务卡住."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-decomposer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49014847?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-decomposer",
+      "url": "https://clawhub.ai/skills/workflow-decomposer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-decomposer",
+    "url": "https://clawhub.ai/skills/workflow-decomposer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-decomposer-fc921c6d07abae09.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-decomposer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-decomposer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:04d823a6bc4f98dbc2701046fa2967479af9e6948153ed197974013f3eaa1119",
+      "artifactSizeBytes": 2491
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T05:33:19.951Z"
+}

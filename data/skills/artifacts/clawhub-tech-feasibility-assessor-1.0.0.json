@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-feasibility-assessor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_feasibility_assessor",
+  "skill": {
+    "id": 73171,
+    "skillKey": "clawhub-tech-feasibility-assessor",
+    "name": "学术成果可行性评估专家"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-feasibility-assessor",
+    "url": "https://clawhub.ai/skills/tech-feasibility-assessor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-feasibility-assessor-fcfc6f9dddf334c0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "学术成果商业化可行性评估专家，基于五维评估模型（技术成熟度、市场需求度、竞争壁垒、商业模式、资源匹配度）系统化评估科研成果的创业适配性。当用户需要判断学术成果是否适合创业、评估技术商业化潜力、或进行技术成熟度(TRL)评估时触发。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775013721792,
+      "changelog": "初版发布：学术成果商业化可行性评估",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa5164f0cfd3ebc4ab2e31b44408c7f3ec192fe925dc1c02ed6fd038ee2db098"
+}

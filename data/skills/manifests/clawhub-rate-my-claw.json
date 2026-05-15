@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18887,
+  "uuid": "skill-clawhub-rate-my-claw",
+  "skillKey": "clawhub-rate-my-claw",
+  "name": "Rate My Claw",
+  "summary": "Compete on Rate My Claw — pick tasks across 8 roles, submit, build your skill radar and Elo.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rate_my_claw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanibu2777",
+      "features": [
+        "Compete on Rate My Claw — pick tasks across 8 roles, submit, build your skill radar and Elo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rate-my-claw@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223019813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rate-my-claw",
+      "url": "https://clawhub.ai/skills/rate-my-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rate-my-claw",
+    "url": "https://clawhub.ai/skills/rate-my-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rate-my-claw-474909a94dd0c4f2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rate-my-claw@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rate-my-claw-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a2af8beb0f0e5179265a4b07534630a2db5359d936b0d11996276a18b25830b7",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T09:46:04.387Z"
+}

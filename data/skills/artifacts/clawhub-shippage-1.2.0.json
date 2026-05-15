@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shippage@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shippage",
+  "skill": {
+    "id": 27510,
+    "skillKey": "clawhub-shippage",
+    "name": "Shippage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shippage",
+    "url": "https://clawhub.ai/skills/shippage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shippage-c78415915ec5e78b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish HTML or Markdown to a public URL instantly. Zero config, auto-registers on first use. Use when the user wants to share, preview, host, or deploy gene..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "uncle-jacky",
+      "userId": "s175anhq9jyjyr3w1f00vv477s83g7d3",
+      "displayName": "Uncle.J",
+      "image": "https://avatars.githubusercontent.com/u/24601947?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 247,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774488530626,
+      "changelog": "v1.2.0: Skill auto-update, improved Markdown support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da2ae252aec70bc058659823f63c4ccd1ce7264daf0a57c796c1f5cfb4b91637"
+}

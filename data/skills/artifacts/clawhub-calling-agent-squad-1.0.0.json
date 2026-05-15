@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/calling-agent-squad@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.calling_agent_squad",
+  "skill": {
+    "id": 26979,
+    "skillKey": "clawhub-calling-agent-squad",
+    "name": "Calling Agent Squad"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "calling-agent-squad",
+    "url": "https://clawhub.ai/skills/calling-agent-squad",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/calling-agent-squad-e58a254b2dd80c57.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Activate a multi-agent team (the Squad) to manage complex projects, business tasks, or development workflows. The squad includes a Manager, Architect, Coder,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arbiger",
+      "userId": "s1732cq4rp0w069f4r17c1gerx83kb98",
+      "displayName": "arbiger",
+      "image": "https://avatars.githubusercontent.com/u/4034191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773812797571,
+      "changelog": "- Initial release of the calling-agent-squad skill.\n- Activate a multi-agent team (Manager, Architect, Coder, Reviewer, Observer) to handle complex projects or workflows.\n- Supports two modes: Standard (single-agent roleplay) and Full (spawns real sub-agents in separate workspaces).\n- Each agent uses individual SOUL.md and IDENTITY.md personas for specialized tasks.\n- Projects and all deliverables are organized and saved to structured folders for tracking.\n- Includes clear setup, usage, and maintenance instructions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a41ecb8c999c190880aed7c13ccc47acc563a13c32636d30ccd8809a940c99a"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62508,
+  "uuid": "skill-clawhub-dispute-letter",
+  "skillKey": "clawhub-dispute-letter",
+  "name": "Dispute Letter",
+  "summary": "纠纷投诉信生成。消费者投诉、房东纠纷、劳动争议、保险理赔、银行投诉。Dispute letter generator. 投诉信、纠纷、维权。",
+  "version": "2.3.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dispute_letter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "纠纷投诉信生成。消费者投诉、房东纠纷、劳动争议、保险理赔、银行投诉。Dispute letter generator",
+        "投诉信、纠纷、维权。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dispute-letter@2.3.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dispute-letter",
+      "url": "https://clawhub.ai/skills/dispute-letter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dispute-letter",
+    "url": "https://clawhub.ai/skills/dispute-letter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dispute-letter-69b90eef3d2f07f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dispute-letter@2.3.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-dispute-letter-2.3.7.json",
+      "version": "2.3.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5947dfbbc29d1abc1c8f060f2fcfb2a27433f6030da2bc2e50131ac422a71b68",
+      "artifactSizeBytes": 1942
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:50:05.140Z"
+}

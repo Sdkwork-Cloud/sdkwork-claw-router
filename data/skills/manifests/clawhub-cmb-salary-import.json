@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65540,
+  "uuid": "skill-clawhub-cmb-salary-import",
+  "skillKey": "clawhub-cmb-salary-import",
+  "name": "Cmb Salary Import",
+  "summary": "招商银行工资批量导入工具。当用户提到\"招行工资导入\"、\"工资表导入银行模板\"、\"AgencyPayment\"、\"批量代发\"、\"工资文件导入银行\"时触发。功能：将工资表（工资.xlsx）中的税后实发金额、姓名、银行卡号、开户行等信息，不改格式地填入银行代发模板（AgencyPayment.xlsx）。支持：读取任意...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cmb_salary_import",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loverun321",
+      "features": [
+        "招商银行工资批量导入工具。当用户提到\"招行工资导入\"、\"工资表导入银行模板\"、\"AgencyPayment\"、\"批量代发\"、\"工资文件导入银行\"时触发。功能：将工资表（工资.xlsx）中的税."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cmb-salary-import@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222489895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cmb-salary-import",
+      "url": "https://clawhub.ai/skills/cmb-salary-import"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cmb-salary-import",
+    "url": "https://clawhub.ai/skills/cmb-salary-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cmb-salary-import-bca1b23bb1acc2d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cmb-salary-import@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cmb-salary-import-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61187fa29565af90e683be6d7741e2379d789ec839ba49da7a6ddf67ff8411da",
+      "artifactSizeBytes": 2201
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T03:05:14.927Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53537,
+  "uuid": "skill-clawhub-poetry-daily-art",
+  "skillKey": "clawhub-poetry-daily-art",
+  "name": "Poetry Daily Art",
+  "summary": "Generate daily Chinese classical poetry art cards — AI-generated landscape painting paired with poem text, delivered to chat. Use when the user asks for poet...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.poetry_daily_art",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lava-lake",
+      "features": [
+        "Generate daily Chinese classical poetry art cards — AI-generated landscape painting paired with.",
+        "Use when the user asks for poet..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/poetry-daily-art@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64721503?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "poetry-daily-art",
+      "url": "https://clawhub.ai/skills/poetry-daily-art"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "poetry-daily-art",
+    "url": "https://clawhub.ai/skills/poetry-daily-art",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/poetry-daily-art-f6ab2b6dbc8d9d22.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/poetry-daily-art@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-poetry-daily-art-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:66d80bf8e6e7199f0e64a9f2bd3afc2a07ffda721342de55888b5e840a25f960",
+      "artifactSizeBytes": 2295
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T16:20:32.993Z"
+}

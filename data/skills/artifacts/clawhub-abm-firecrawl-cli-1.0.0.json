@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/abm-firecrawl-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abm_firecrawl_cli",
+  "skill": {
+    "id": 30238,
+    "skillKey": "clawhub-abm-firecrawl-cli",
+    "name": "Firecrawl Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abm-firecrawl-cli",
+    "url": "https://clawhub.ai/skills/abm-firecrawl-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abm-firecrawl-cli-9eb0ae22b1bd1a55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to scrape, crawl, or extract content from websites. Also use when the user mentions 'scrape site,' 'crawl website,' 'extract content,' 'w..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mariokarras",
+      "userId": "s1714hxad423m02rtb4r6n2vmn83e4f5",
+      "displayName": "Mario Karras",
+      "image": "https://avatars.githubusercontent.com/u/199292356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 276,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773979213557,
+      "changelog": "Initial release of firecrawl-cli skill.\n\n- Supports all core Firecrawl CLI commands: scrape, crawl, crawl-status, map, search, agent, and extract.\n- Clearly explains command selection, options, and step-by-step workflows for scraping, crawling, sitemap discovery, structured data extraction, and autonomous web data gathering.\n- Provides usage examples and output formatting guidance.\n- Includes context-checking instructions for product marketing scenarios.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7f749638bab0659e4f5500ef12a83ddd46bad7fe78ab38686ec1f81210ab198"
+}

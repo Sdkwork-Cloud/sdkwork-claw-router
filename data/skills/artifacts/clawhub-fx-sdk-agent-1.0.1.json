@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fx-sdk-agent@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fx_sdk_agent",
+  "skill": {
+    "id": 37304,
+    "skillKey": "clawhub-fx-sdk-agent",
+    "name": "Fx Sdk Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fx-sdk-agent",
+    "url": "https://clawhub.ai/skills/fx-sdk-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fx-sdk-agent-19f24f50bdaebb67.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use FX Protocol TypeScript SDK (fx-sdk) to query positions (getPositions returns PositionInfo[] with rawColls, rawDebts, rawCollsToken, rawDebtsToken, decima..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huwangtao123",
+      "userId": "s177tfgra08q7jx1jd5mt7vkas83qhrv",
+      "displayName": "Tao Wang",
+      "image": "https://avatars.githubusercontent.com/u/3118467?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774582750590,
+      "changelog": "fx-sdk-agent 1.0.1\n\n- Improved skill documentation with detailed method usage, input requirements, and canonical agent integration workflows.\n- Added clear step-by-step workflow for agent-based SDK integration, including transaction sequencing and post-execution checks.\n- Consolidated token constraints, error handling, and token address mapping for cross-chain and fxSAVE operations.\n- Provided agent tool interop guidelines for type-safe input parsing from agent-tools.json payloads.\n- Enumerated canonical SDK method map and output structure for reliable code generation and troubleshooting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:101c793a57cbe506d72e82a69966655f5806abdd1b00dcbfe39e5be1f3577982"
+}

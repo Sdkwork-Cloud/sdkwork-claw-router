@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64630,
+  "uuid": "skill-clawhub-skill-shield-007",
+  "skillKey": "clawhub-skill-shield-007",
+  "name": "skill scan and detect risk",
+  "summary": "OpenClaw扩展安全管理系统。扫描已安装扩展的安全风险，提供allowlist策略控制，在使用高风险扩展前进行风险提示。适用于安全管理、风险评估、权限控制场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_shield_007",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jayhe",
+      "features": [
+        "OpenClaw扩展安全管理系统。扫描已安装扩展的安全风险，提供allowlist策略控制，在使用高风险扩展前进行风险提示。适用于安全管理、风险评估、权限控制场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-shield-007@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5572745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-shield-007",
+      "url": "https://clawhub.ai/skills/skill-shield-007"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-shield-007",
+    "url": "https://clawhub.ai/skills/skill-shield-007",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-shield-007-98c338d89655420d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-shield-007@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-shield-007-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cad876f49631fd8d080daea369a2ea8c181d01acd67345cdac3f9ccf5ab4a800",
+      "artifactSizeBytes": 2713
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T01:52:01.308Z"
+}

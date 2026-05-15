@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48660,
+  "uuid": "skill-clawhub-technitium-dns",
+  "skillKey": "clawhub-technitium-dns",
+  "name": "Technitium DNS",
+  "summary": "Monitor and inspect Technitium DNS Server via its HTTP API. Use for read-only health checks, DNS stats, zones, DHCP leases, token/session validation, and pro...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technitium_dns",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yngvarr_75",
+      "features": [
+        "Monitor and inspect Technitium DNS Server via its HTTP API",
+        "Use for read-only health checks, DNS stats, zones, DHCP leases, token/session validation, and p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/technitium-dns@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34965103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "technitium-dns",
+      "url": "https://clawhub.ai/skills/technitium-dns"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technitium-dns",
+    "url": "https://clawhub.ai/skills/technitium-dns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technitium-dns-5b834dc76d43a269.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/technitium-dns@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-technitium-dns-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c35563245211b86d19fd6c4992233e5bcde8d64a70e2857c6976830cd1134756",
+      "artifactSizeBytes": 1923
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T19:16:45.362Z"
+}

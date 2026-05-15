@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-market-hotspot-discovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_market_hotspot_discovery",
+  "skill": {
+    "id": 69335,
+    "skillKey": "clawhub-stock-market-hotspot-discovery",
+    "name": "stock-market-hotspot-discovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-market-hotspot-discovery",
+    "url": "https://clawhub.ai/skills/stock-market-hotspot-discovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-market-hotspot-discovery-b9f4c2085c80023a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "面向A股市场热点发现的综合能力。适用于用户提出“今日热点是什么”“当前热股有哪些”等泛化问题时，返回结构化的Markdown热点报告。覆盖热点资讯、热门股票等维度。触发核心条件：用户关注市场层面的热门方向或事件热度，而非单一标的的深度诊断或指标计算。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "financial-ai-analyst",
+      "userId": "s172qfps754dhtdynwv0gwshes83mtd4",
+      "displayName": "Financial AI Analyst",
+      "image": "https://avatars.githubusercontent.com/u/41098207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 686,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776424792134,
+      "changelog": "Publish 1.0.0",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39873abee518a3f772cb76f0a659de1312f7735f6d53e104afdd5ab36b48ef21"
+}

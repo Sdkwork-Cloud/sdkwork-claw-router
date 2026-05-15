@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chatdev@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chatdev",
+  "skill": {
+    "id": 23505,
+    "skillKey": "clawhub-chatdev",
+    "name": "ChatDev 2.0 Multi-Agent Team"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chatdev",
+    "url": "https://clawhub.ai/skills/chatdev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chatdev-dc8d2c750f51b3d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Invoke ChatDev ability units (workflows) via local API (port 6400). Use when the user needs specialized agent workflows like data visualization (from CSV), o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "na-wen",
+      "userId": "publishers:na-wen",
+      "displayName": "NA-Wen",
+      "image": "https://avatars.githubusercontent.com/u/92134380?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 428,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773713446091,
+      "changelog": "This skill connects ChatDev 2.0 with OpenClaw and allows OpenClaw to create, manage, and execute multi-agent workflows through the local API.\n\nWith this skill, users can:\n- Build custom multi-agent systems (MAS) in ChatDev 2.0  through OpenClaw\n- Let OpenClaw call your MAS in ChatDev 2.0 dynamically",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c14099464a0a2cd966d08a7dd696cc16d495cee063add07ec84294084abe467f"
+}

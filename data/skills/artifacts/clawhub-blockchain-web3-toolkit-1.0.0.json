@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/blockchain-web3-toolkit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blockchain_web3_toolkit",
+  "skill": {
+    "id": 36547,
+    "skillKey": "clawhub-blockchain-web3-toolkit",
+    "name": "Blockchain Web3 Toolkit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blockchain-web3-toolkit",
+    "url": "https://clawhub.ai/skills/blockchain-web3-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blockchain-web3-toolkit-8843d52f887dcfc8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive blockchain toolkit for Ethereum wallet management, smart contract interaction, NFT minting, token balance checks, and gas fee monitoring."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaiyuelv",
+      "userId": "s171c2g5qpr0rdyra8xbm4srbh84mjjm",
+      "displayName": "Lv Lancer",
+      "image": "https://avatars.githubusercontent.com/u/29176686?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775896868401,
+      "changelog": "Initial release of blockchain-web3-toolkit.\n\n- Provides an all-in-one toolkit for blockchain development.\n- Supports Ethereum wallet management, smart contract interaction and deployment, NFT minting and transfers, and gas fee monitoring.\n- Includes command-line scripts for common blockchain operations.\n- Requires web3.py, eth-account, and cryptography packages.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfa8f6d0afb9361b87ff4478cb344af5294983769777f4bff5634389bd0c3205"
+}

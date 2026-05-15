@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14226,
+  "uuid": "skill-clawhub-daily-brief-digest",
+  "skillKey": "clawhub-daily-brief-digest",
+  "name": "Daily Brief Digest",
+  "summary": "Generates a daily brief including urgent emails (himalaya), upcoming calendar events (gog), and relevant news. Use when the user asks for a morning summary, daily briefing, or a status update on their day.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_brief_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RajTejani",
+      "features": [
+        "Generates a daily brief including urgent emails (himalaya), upcoming calendar events (gog), and.",
+        "Use when the user asks for a morning summary, daily briefing, or a status update on their day."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-brief-digest@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140295772?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-brief-digest",
+      "url": "https://clawhub.ai/skills/daily-brief-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-brief-digest",
+    "url": "https://clawhub.ai/skills/daily-brief-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-brief-digest-6d2a07f6bbeaee06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-brief-digest@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-brief-digest-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:769c708798414659c50611beb65ff467b5ab87e8256d5e3449289d8d17ca84f6",
+      "artifactSizeBytes": 3102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T11:42:26.332Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mailme-x-news@1.6.1",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mailme_x_news",
+  "skill": {
+    "id": 63229,
+    "skillKey": "clawhub-mailme-x-news",
+    "name": "MailMe X News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mailme-x-news",
+    "url": "https://clawhub.ai/skills/mailme-x-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mailme-x-news-6c9088a51e3630cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抓取 X/Twitter 帖子，通过 AI 翻译成中文，并发送邮件。完全通过技能控制，无需额外脚本。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyingtimes",
+      "userId": "s17a1crq2ecdvx8g934wzyh9yn83q44e",
+      "displayName": "flyingtimes",
+      "image": "https://avatars.githubusercontent.com/u/5668052?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.6.1",
+      "createdAt": 1772465547919,
+      "changelog": "完善工作流程文档，明确抓取→翻译→生成综述→合并→发送邮件的步骤",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5a9d3910b9e4fae9ae879d3ac6585075fb79008b9757a773a4cc7191371bc1c6"
+}

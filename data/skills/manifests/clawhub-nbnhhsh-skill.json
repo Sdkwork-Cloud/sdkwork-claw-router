@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28179,
+  "uuid": "skill-clawhub-nbnhhsh-skill",
+  "skillKey": "clawhub-nbnhhsh-skill",
+  "name": "Nbnhhsh Skill",
+  "summary": "Translate Chinese pinyin initialisms and internet abbreviations to their possible full Chinese meanings, supporting multiple terms at once.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nbnhhsh_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "黑川眠也",
+      "features": [
+        "Translate Chinese pinyin initialisms and internet abbreviations to their possible full Chinese."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nbnhhsh-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60620843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nbnhhsh-skill",
+      "url": "https://clawhub.ai/skills/nbnhhsh-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nbnhhsh-skill",
+    "url": "https://clawhub.ai/skills/nbnhhsh-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nbnhhsh-skill-ea05244b0ed8ced0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nbnhhsh-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nbnhhsh-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e670aa6ae55c07739dbeb363163076b196bf7ea9999bc8891ce34530cc4113ab",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T11:12:00.061Z"
+}

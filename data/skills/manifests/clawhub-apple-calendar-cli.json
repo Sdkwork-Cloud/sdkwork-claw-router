@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12174,
+  "uuid": "skill-clawhub-apple-calendar-cli",
+  "skillKey": "clawhub-apple-calendar-cli",
+  "name": "Apple Calendar CLI",
+  "summary": "Manage Apple Calendar events on macOS 14+ using apple-calendar-cli: list, get, create, update, and delete events with ISO 8601 date support.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_calendar_cli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sichengchen",
+      "features": [
+        "Manage Apple Calendar events on macOS 14+ using apple-calendar-cli: list, get, create, update,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-calendar-cli@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20486755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-calendar-cli",
+      "url": "https://clawhub.ai/skills/apple-calendar-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-calendar-cli",
+    "url": "https://clawhub.ai/skills/apple-calendar-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-calendar-cli-8d8c12c332556f7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-calendar-cli@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-calendar-cli-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d63a07c23c393422cb1208f483c437799b7227ff83cd77ddcb9d49ac16decb0",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T20:34:40.970Z"
+}

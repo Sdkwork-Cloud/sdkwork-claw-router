@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17550,
+  "uuid": "skill-clawhub-hotel-pricer",
+  "skillKey": "clawhub-hotel-pricer",
+  "name": "Hotel Pricer",
+  "summary": "Search hotels by city, dates, and guests using Amadeus API, returning availability and pricing in JSON format via a Go CLI tool.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hotel_pricer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jrojas537",
+      "features": [
+        "Search hotels by city, dates, and guests using Amadeus API, returning availability and pricing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hotel-pricer@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26755668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hotel-pricer",
+      "url": "https://clawhub.ai/skills/hotel-pricer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hotel-pricer",
+    "url": "https://clawhub.ai/skills/hotel-pricer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hotel-pricer-044dfce6a3d7d8e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hotel-pricer@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hotel-pricer-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6d7975ea7439462b195dba05983026a08d3bb8a85219855788ecf1ba0261c0dc",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T01:57:10.329Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/iex-cloud@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.iex_cloud",
+  "skill": {
+    "id": 23547,
+    "skillKey": "clawhub-iex-cloud",
+    "name": "IEX Cloud CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "iex-cloud",
+    "url": "https://clawhub.ai/skills/iex-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/iex-cloud-bdaef1e39f513202.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when a task needs IEX Cloud market data through the REST API (quotes, charts, fundamentals, market lists, and batch calls), including secure t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oscraters",
+      "userId": "publishers:oscraters",
+      "displayName": "oscraters",
+      "image": "https://avatars.githubusercontent.com/u/93680161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772293747459,
+      "changelog": "- Added OpenClaw metadata and homepage fields in SKILL.md for enhanced integration and discoverability.\n- Introduced explicit guidance for OpenClaw secrets management and agent token injection.\n- Updated authentication documentation to clarify environment variable precedence and security practices.\n- Improved CLI documentation with warnings and guardrails for trusted base URL overrides.\n- Added two files: registry-metadata.json and scripts/validate_registry_metadata.py.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2a87585d5ece89e378b872037ec55eeba40cd85eabaf2bc75a4b04a0b0879228"
+}

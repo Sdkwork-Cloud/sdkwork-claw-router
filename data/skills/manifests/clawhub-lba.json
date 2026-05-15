@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24162,
+  "uuid": "skill-clawhub-lba",
+  "skillKey": "clawhub-lba",
+  "name": "LBA",
+  "summary": "Automate Linear.app workflows in the OpenClaw-managed browser profile using browser tool actions (open, navigate, snapshot, act). Use when users want UI-base...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lba",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hassam",
+      "features": [
+        "Automate Linear.app workflows in the OpenClaw-managed browser profile using browser tool action.",
+        "Use when users want UI-base..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lba@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/206915949?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lba",
+      "url": "https://clawhub.ai/skills/lba"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lba",
+    "url": "https://clawhub.ai/skills/lba",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lba-fd536ed9bb9b886b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lba@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lba-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:026970e4e2a0818739a16503d4b3a42c1f8139035e6f97997d2837b10650b79d",
+      "artifactSizeBytes": 2548
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T01:05:34.521Z"
+}

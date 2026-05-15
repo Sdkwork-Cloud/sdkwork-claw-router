@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-immediate-ack@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_immediate_ack",
+  "skill": {
+    "id": 23133,
+    "skillKey": "clawhub-openclaw-immediate-ack",
+    "name": "OpenClaw Immediate Ack"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-immediate-ack",
+    "url": "https://clawhub.ai/skills/openclaw-immediate-ack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-immediate-ack-2a8853a032453142.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when configuring OpenClaw chat channels to send an immediate acknowledgement before the main reply starts. Supports Feishu and DingTalk, includes bilingu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sallyxie2026",
+      "userId": "s17734wca1dxps119jynt3nm8d83k9ej",
+      "displayName": "sallyxie2026",
+      "image": "https://avatars.githubusercontent.com/u/261160993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 341,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773244993870,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7cfb1f8ac455574114f28daf31c8c39848a952b645b5943ea24a74aee870902"
+}

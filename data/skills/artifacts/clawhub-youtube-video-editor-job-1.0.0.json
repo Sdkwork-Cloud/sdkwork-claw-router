@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-editor-job@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_editor_job",
+  "skill": {
+    "id": 38226,
+    "skillKey": "clawhub-youtube-video-editor-job",
+    "name": "Youtube Video Editor Job"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-editor-job",
+    "url": "https://clawhub.ai/skills/youtube-video-editor-job",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-editor-job-58f737689dd2dcb0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get polished YouTube videos ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776751994056,
+      "changelog": "YouTube Video Editor — Edit and Export YouTube Videos v1.0.0\n\n- Initial release for cloud-based YouTube video editing.\n- Upload raw footage (up to 500MB), request edits (e.g., \"cut dead air, add transitions\"), and get a 1080p MP4 export ready to post.\n- Automatic handling of authentication (token/session creation) and backend connections.\n- Supports key actions: upload, credits check, export, and timeline state inquiry.\n- Error handling and backend response translation for smooth user experience.\n- No need for manual controls or sliders—simply describe what you want.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:59b5d9dd6f1839bb309662a77aeead5ea9952bd9640c3e0fbfe85a41d35e0a2c"
+}

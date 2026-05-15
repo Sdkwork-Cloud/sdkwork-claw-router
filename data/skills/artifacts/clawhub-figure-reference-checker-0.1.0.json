@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figure-reference-checker@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figure_reference_checker",
+  "skill": {
+    "id": 31317,
+    "skillKey": "clawhub-figure-reference-checker",
+    "name": "Figure Reference Checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figure-reference-checker",
+    "url": "https://clawhub.ai/skills/figure-reference-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figure-reference-checker-019f365ef512c9f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Check figure references in manuscripts"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773992741354,
+      "changelog": "Initial release of Figure Reference Checker.\n\n- Checks consistency of figure references in manuscripts\n- Detects orphaned figure references and flags missing citations\n- Verifies figure-label consistency\n- Accepts path to manuscript file as input\n- Includes built-in risk assessment and security checklist\n- No additional Python packages required",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7d31bbdd95ca7fd85c25dbd082781a3fa7367140dd289f98b36d22b874a40e2a"
+}

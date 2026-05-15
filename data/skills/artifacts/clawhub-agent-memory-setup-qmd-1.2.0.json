@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-memory-setup-qmd@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_memory_setup_qmd",
+  "skill": {
+    "id": 18004,
+    "skillKey": "clawhub-agent-memory-setup-qmd",
+    "name": "Agent Memory Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-memory-setup-qmd",
+    "url": "https://clawhub.ai/skills/agent-memory-setup-qmd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-memory-setup-qmd-92f72552c8f55ff0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Set up the full OpenClaw agent memory system with 3-tier memory (HOT/WARM/COLD), daily logs, semantic search (QMD), and lossless context management (Lossless..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "autosolutionsai-didac",
+      "userId": "s17bcfandyj4x34cq7g7db179h83h3a8",
+      "displayName": "Didac",
+      "image": "https://avatars.githubusercontent.com/u/202002756?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 605,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1774908546813,
+      "changelog": "Round 2: Added cross-platform support (macOS/WSL), config explanations, recovery guidance, Lossless Claw usage workflow, migration guide, multi-agent/multi-context workspace guidance, long-term maintenance, simplified structure",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:463950ee219512c8304638a0e4d1f78f7b3d0b8890da9f88bcb5dd9cafb5a808"
+}

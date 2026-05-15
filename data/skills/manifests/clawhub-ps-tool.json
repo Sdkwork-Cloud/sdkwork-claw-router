@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48861,
+  "uuid": "skill-clawhub-ps-tool",
+  "skillKey": "clawhub-ps-tool",
+  "name": "Ps Tool",
+  "summary": "Display information about active processes. Use for monitoring running programs, checking resource usage, and system diagnostics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ps_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BIN",
+      "features": [
+        "Display information about active processes",
+        "Use for monitoring running programs, checking resource usage, and system diagnostics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ps-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9191597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ps-tool",
+      "url": "https://clawhub.ai/skills/ps-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ps-tool",
+    "url": "https://clawhub.ai/skills/ps-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ps-tool-b0ff6474328a7559.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ps-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ps-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:26ee90e57bc054389adbe6ed7aee1253fd7087317f530c504079765c87619ebe",
+      "artifactSizeBytes": 1800
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:10:10.628Z"
+}

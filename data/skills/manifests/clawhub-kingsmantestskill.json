@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72391,
+  "uuid": "skill-clawhub-kingsmantestskill",
+  "skillKey": "clawhub-kingsmantestskill",
+  "name": "mytestskill",
+  "summary": "每天定时汇总\"昨天\"的10条民航相关新闻，输出结构化快速总览，并通过邮件发送给指定收件人。触发词：民航新闻晨报、昨日民航新闻、每日航空资讯、民航日报、航空新闻摘要。不处理会议、审批、待办、文档编辑等任务，不处理非民航领域资讯。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kingsmantestskill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wuyun1118",
+      "features": [
+        "每天定时汇总\"昨天\"的10条民航相关新闻，输出结构化快速总览，并通过邮件发送给指定收件人。触发词：民航新闻晨报、昨日民航新闻、每日航空资讯、民航日报、航空新闻摘要。不处理会议、审批、待办、文."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kingsmantestskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274429591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kingsmantestskill",
+      "url": "https://clawhub.ai/skills/kingsmantestskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kingsmantestskill",
+    "url": "https://clawhub.ai/skills/kingsmantestskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kingsmantestskill-5b99941374c62e88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kingsmantestskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kingsmantestskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c692db0f827bcece17e4fa534b2aa6884a7d5ccceb3861d30ac0cbc447e87433",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:45:51.228Z"
+}

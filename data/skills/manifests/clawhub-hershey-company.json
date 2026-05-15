@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69058,
+  "uuid": "skill-clawhub-hershey-company",
+  "skillKey": "clawhub-hershey-company",
+  "name": "Hershey Company",
+  "summary": "提供好时公司的历史、业务模式、市场地位及治理结构，助力分析美国糖果行业和健康消费趋势。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hershey_company",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供好时公司的历史、业务模式、市场地位及治理结构，助力分析美国糖果行业和健康消费趋势。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hershey-company@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hershey-company",
+      "url": "https://clawhub.ai/skills/hershey-company"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hershey-company",
+    "url": "https://clawhub.ai/skills/hershey-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hershey-company-3dc5cbcaf63fb81b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hershey-company@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hershey-company-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bd40c9e5ba9008a61e05e107e9cbfa4d728cca93f00d569de949852bf3c2621",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T21:03:12.920Z"
+}

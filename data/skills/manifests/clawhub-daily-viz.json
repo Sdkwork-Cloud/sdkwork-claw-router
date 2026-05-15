@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23029,
+  "uuid": "skill-clawhub-daily-viz",
+  "skillKey": "clawhub-daily-viz",
+  "name": "daily-viz",
+  "summary": "Daily life tracking and data visualization. Record mood, exercise, sleep, work hours and generate beautiful charts and insights. Perfect for habit building a...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_viz",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pearlene Ullo",
+      "features": [
+        "Daily life tracking and data visualization",
+        "Record mood, exercise, sleep, work hours and generate beautiful charts and insights",
+        "Perfect for habit building a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-viz@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130150746?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-viz",
+      "url": "https://clawhub.ai/skills/daily-viz"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-viz",
+    "url": "https://clawhub.ai/skills/daily-viz",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-viz-466f5fe4d4878b6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-viz@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-viz-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:15a5ab62d3617d5ce83a80488a85a12acb917cb8585c6b381618d8d416ffa69d",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T19:13:50.075Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yixiaoer-publish@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yixiaoer_publish",
+  "skill": {
+    "id": 72822,
+    "skillKey": "clawhub-yixiaoer-publish",
+    "name": "蚁小二"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yixiaoer-publish",
+    "url": "https://clawhub.ai/skills/yixiaoer-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yixiaoer-publish-5db075e58e62745a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "蚁小二支持 50 + 平台一键分发、多账号矩阵管理、团队协作与数据统计，适配图文、短视频等内容，覆盖全平台客户端，助力个人与企业高效运营新媒体矩阵。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yixiaoer888",
+      "userId": "s170j1wz88sqwhgk334bgxdq0n842trn",
+      "displayName": "yixiaoer888",
+      "image": "https://avatars.githubusercontent.com/u/269128115?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1775123905330,
+      "changelog": "Initial release of yixiaoer-publish skill.\n\n- 支持 50+ 平台一键分发，覆盖图文、短视频等多媒体内容。\n- 提供多账号矩阵管理、团队协作与数据统计功能。\n- 采用 DTO 驱动的 API 调用方式，接口参数严格文档化，统一通过 api.ts 脚本执行。\n- 资源上传、账号、内容发布、分析统计等能力统一指令入口。\n- 平台名称、资源格式等均需严格遵守官方定义和数据规范。\n- 内置敏感信息管理，支持云发布（publishChannel: cloud）。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:349b663e7e6ebc6d4297aee85e2ca1a90a580d2f5120d85c24980d1dc57bbcb6"
+}

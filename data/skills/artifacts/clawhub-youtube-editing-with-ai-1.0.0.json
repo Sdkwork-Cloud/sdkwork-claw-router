@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-editing-with-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_editing_with_ai",
+  "skill": {
+    "id": 55059,
+    "skillKey": "clawhub-youtube-editing-with-ai",
+    "name": "Youtube Editing With Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-editing-with-ai",
+    "url": "https://clawhub.ai/skills/youtube-editing-with-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-editing-with-ai-fd181073807f2460.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — cut dead air, add transitions, and generate chapter titles automatically —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775939850474,
+      "changelog": "YouTube Editing with AI — Version 1.0.0\n\n- Initial release offering fast, AI-powered YouTube video editing and export.\n- Upload raw footage (MP4, MOV, AVI, WebM, up to 500MB) and describe the edits you want; AI handles the rest automatically.\n- Supports smart editing features: remove dead air, add transitions, and generate chapter titles in minutes.\n- Seamless setup with automatic authentication and cloud render pipeline; no software installation required.\n- Export polished videos in popular formats (including 1080p MP4) for direct YouTube upload.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:50648159cb7770469531db9766d985c84edd2aedad6051b9fb736bfbe552ae72"
+}

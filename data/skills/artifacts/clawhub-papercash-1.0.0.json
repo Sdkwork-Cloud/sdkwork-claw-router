@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/papercash@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.papercash",
+  "skill": {
+    "id": 65118,
+    "skillKey": "clawhub-papercash",
+    "name": "PaperCash — 论文全流程辅助 Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "papercash",
+    "url": "https://clawhub.ai/skills/papercash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/papercash-272c3a01039b769b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "论文全流程辅助: 8源检索、综述生成、查重预检、降AI率、参考文献格式化、Word导出"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jesseovo",
+      "userId": "s17ac23ngcx8m1v8rfzddmvc718433gx",
+      "displayName": "Jesse",
+      "image": "https://avatars.githubusercontent.com/u/153301783?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776827700496,
+      "changelog": "PaperCash 1.0.0 — 论文全流程辅助工具上线\n\n- 支持8大数据源的论文检索与评分排序展示。\n- 一键生成结构化综述，含引用与背景对比，支持Word导出。\n- 提供大纲生成、学术扩写、润色等写作辅助功能。\n- 集成查重预检和AI生成内容降重（降AI率）工具。\n- 支持参考文献一键格式化（GB/T 7714、APA、BibTeX等）。\n- 内置格式检查与多源可用性诊断工具。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6965cdb9845c8c866d05907c288fa320793e48b2fc0c460ccdc59c799cb5911c"
+}

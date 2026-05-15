@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59840,
+  "uuid": "skill-clawhub-linkfox-fastmoss-top-selling",
+  "skillKey": "clawhub-linkfox-fastmoss-top-selling",
+  "name": "FastMoss TikTok Top Selling",
+  "summary": "通过FastMoss数据查询TikTok全球电商市场的热销商品排行榜，支持按日/周/月维度和类目维度分析。当用户提到TikTok热销榜、TikTok爆品排行、TikTok销量排行、TikTok GMV排名、TikTok类目热销、TikTok选品周报、TikTok top-selling rankings, Tik...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_fastmoss_top_selling",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "通过FastMoss数据查询TikTok全球电商市场的热销商品排行榜，支持按日/周/月维度和类目维度分析。当用户提到TikTok热销榜、TikTok爆品排行、TikTok销量排行、TikTo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-fastmoss-top-selling@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-fastmoss-top-selling",
+      "url": "https://clawhub.ai/skills/linkfox-fastmoss-top-selling"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-fastmoss-top-selling",
+    "url": "https://clawhub.ai/skills/linkfox-fastmoss-top-selling",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-fastmoss-top-selling-a9cc067fec436b96.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-fastmoss-top-selling@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-fastmoss-top-selling-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e64e982dbe0f8b08c9f1da3c3f451fc22dd36e91edf13fd42e1a5613eabb9852",
+      "artifactSizeBytes": 2125
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T01:41:36.191Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57990,
+  "uuid": "skill-clawhub-last30days-zh",
+  "skillKey": "clawhub-last30days-zh",
+  "name": "Last30days Zh",
+  "summary": "聚合最近 30 天的 Reddit、X/Twitter、YouTube、TikTok、Instagram、Hacker News、Polymarket 和 web search 结果. Use when: the user needs recent multi-source research across the...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.last30days_zh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "聚合最近 30 天的 Reddit、X/Twitter、YouTube、TikTok、Instagram、Hacker News、Polymarket 和 web search 结果",
+        "Use when: the user needs recent multi-source research across the..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/last30days-zh@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "last30days-zh",
+      "url": "https://clawhub.ai/skills/last30days-zh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "last30days-zh",
+    "url": "https://clawhub.ai/skills/last30days-zh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/last30days-zh-d9331912c6fab230.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/last30days-zh@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-last30days-zh-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b38f1156618a76380d72e76ccabaa13a96b0a91af6e5d3397b9d6fe5267be1ab",
+      "artifactSizeBytes": 2373
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T12:58:15.357Z"
+}

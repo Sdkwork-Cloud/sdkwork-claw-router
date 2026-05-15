@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53679,
+  "uuid": "skill-clawhub-project-nirvana-skill",
+  "skillKey": "clawhub-project-nirvana-skill",
+  "name": "Nirvana Skill",
+  "summary": "Privacy-preserving context stripper for OpenClaw. Strip SOUL/USER/MEMORY before cloud API calls. Assumes you have your own local LLM. Saves 85%+ tokens, prot...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_nirvana_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shiva&G",
+      "features": [
+        "Privacy-preserving context stripper for OpenClaw",
+        "Strip SOUL/USER/MEMORY before cloud API calls",
+        "Assumes you have your own local LLM",
+        "Saves 85%+ tokens, prot..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project-nirvana-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268223005?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project-nirvana-skill",
+      "url": "https://clawhub.ai/skills/project-nirvana-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-nirvana-skill",
+    "url": "https://clawhub.ai/skills/project-nirvana-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-nirvana-skill-a22cc1a6b75c8a7a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project-nirvana-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-nirvana-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:796e3e2e5a1f7cf7eb530ae06b5a0027075261e2684903555426a843329efd19",
+      "artifactSizeBytes": 2469
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T19:54:17.011Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70675,
+  "uuid": "skill-clawhub-yandex-smart-home",
+  "skillKey": "clawhub-yandex-smart-home",
+  "name": "Управление устройствами умного дома Яндекса (Алиса) через официальный IoT API",
+  "summary": "Управление устройствами умного дома Яндекса (Алиса) через официальный IoT API. Позволяет получать список устройств, читать их состояние, включать/выключать и...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yandex_smart_home",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dimaonline",
+      "features": [
+        "Управление устройствами умного дома Яндекса (Алиса) через официальный IoT API",
+        "Позволяет получать список устройств, читать их состояние, включать/выключать и..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yandex-smart-home@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35094556?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yandex-smart-home",
+      "url": "https://clawhub.ai/skills/yandex-smart-home"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yandex-smart-home",
+    "url": "https://clawhub.ai/skills/yandex-smart-home",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yandex-smart-home-f0702c5c31f90369.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yandex-smart-home@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-yandex-smart-home-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:76bbc7377131207c7a8a74a9c446580626e8ed6a0720a72e58fd5875b9f68fd3",
+      "artifactSizeBytes": 2698
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:06:00.646Z"
+}

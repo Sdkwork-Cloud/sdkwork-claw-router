@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amtk-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amtk_skill",
+  "skill": {
+    "id": 62371,
+    "skillKey": "clawhub-amtk-skill",
+    "name": "AMtkSkill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amtk-skill",
+    "url": "https://clawhub.ai/skills/amtk-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amtk-skill-369887a2a1835ccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A 股行情数据技能：从 Tushare 抓取数据、查询行情估值、技术分析（均线/RSI/MACD/布林带）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lhkong7",
+      "userId": "s170dvt6qg9p8kw4f9b2kwht3n850efj",
+      "displayName": "LHKong7",
+      "image": "https://avatars.githubusercontent.com/u/70605154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776495608341,
+      "changelog": "amtk-skill 1.0.0\n\n- Initial release providing A股行情数据工具集。\n- 支持 Tushare 抓取数据、本地查询行情估值、技术分析（均线/RSI/MACD/布林带/复权/收益统计）。\n- 包含完善参数说明与脚本用法，涵盖数据抓取、查询、分析场景。\n- 提供常见故障排查与数据表结构/指标解读说明。\n- 可通过 Bash(uv run *) 等工具调用，适合自动化或命令行场景。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4e7ceb5bf5eadb9500bd53b2b1ffd979291b9b95ee633f6d69b076a34fcc5dde"
+}

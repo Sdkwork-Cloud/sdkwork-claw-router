@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/project-code-standard@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project_code_standard",
+  "skill": {
+    "id": 61463,
+    "skillKey": "clawhub-project-code-standard",
+    "name": "Project Code Standard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project-code-standard",
+    "url": "https://clawhub.ai/skills/project-code-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-code-standard-ca9cd15174c49d99.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "此 skill 用于检查、执行和修复项目代码规范。当用户需要为项目建立代码风格标准、 检查代码是否符合规范、自动修复格式问题、生成代码质量报告，或在 Code Review 中验证提交是否满足团队规范时激活。支持 Python (PEP8/black/ruff)、JavaScript/ TypeScript (E..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "forestxiecode",
+      "userId": "publishers:forestxiecode",
+      "displayName": "forestxieCode",
+      "image": "https://avatars.githubusercontent.com/u/43224707?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 528,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772591575676,
+      "changelog": "Initial release of project-code-standard — a tool for checking, enforcing, and fixing code standards across projects.\n\n- Supports Python (PEP8/black/ruff), JavaScript/TypeScript (ESLint/Prettier), and general project rules (naming, comments, structure).\n- Identifies project type, runs appropriate lint/format checks, and summarizes results in a markdown report.\n- Offers automated fixes with user confirmation.\n- Can generate starter configuration files for new projects.\n- Respects existing project lint configurations and avoids modifying files without explicit approval.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:acce4ab954822e65a13e909326523f51a1b118befba8e5e142b58e487a145378"
+}

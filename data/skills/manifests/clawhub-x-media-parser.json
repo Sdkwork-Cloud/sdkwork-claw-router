@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60110,
+  "uuid": "skill-clawhub-x-media-parser",
+  "skillKey": "clawhub-x-media-parser",
+  "name": "X Media Parser",
+  "summary": "解析 X/Twitter 帖子，获取图片和视频的下载直链。使用 vxtwitter API，无需登录。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_media_parser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ingress",
+      "features": [
+        "解析 X/Twitter 帖子，获取图片和视频的下载直链。使用 vxtwitter API，无需登录。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-media-parser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42857023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-media-parser",
+      "url": "https://clawhub.ai/skills/x-media-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-media-parser",
+    "url": "https://clawhub.ai/skills/x-media-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-media-parser-3547ed90bebd123e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-media-parser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-media-parser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:779afe20c73c3de8456d979025cde2dc008e826bfda954b5ad3c5411745b909e",
+      "artifactSizeBytes": 2259
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T07:03:53.384Z"
+}

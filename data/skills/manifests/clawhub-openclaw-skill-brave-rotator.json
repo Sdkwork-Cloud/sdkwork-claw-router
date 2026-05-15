@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25378,
+  "uuid": "skill-clawhub-openclaw-skill-brave-rotator",
+  "skillKey": "clawhub-openclaw-skill-brave-rotator",
+  "name": "Brave Rotator",
+  "summary": "Brave Search API with automatic key rotation across multiple API keys to maximize free tier limits (2000 req/month per key). Use when performing web, news, o...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_brave_rotator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marouane",
+      "features": [
+        "Brave Search API with automatic key rotation across multiple API keys to maximize free tier lim.",
+        "Use when performing web, news, o..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-brave-rotator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25495967?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-brave-rotator",
+      "url": "https://clawhub.ai/skills/openclaw-skill-brave-rotator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-brave-rotator",
+    "url": "https://clawhub.ai/skills/openclaw-skill-brave-rotator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-brave-rotator-2aef16cdb2c6a4e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-brave-rotator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-brave-rotator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7249d71ce058f718bb8021a1e2e8688676a2a9fd011c3fe046a19a46b1555859",
+      "artifactSizeBytes": 2293
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T01:36:59.091Z"
+}

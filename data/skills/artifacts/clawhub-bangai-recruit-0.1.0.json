@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bangai-recruit@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bangai_recruit",
+  "skill": {
+    "id": 61456,
+    "skillKey": "clawhub-bangai-recruit",
+    "name": "Bangai Recruit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bangai-recruit",
+    "url": "https://clawhub.ai/skills/bangai-recruit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bangai-recruit-ca5ee6edc6afb442.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Bang.AI AI招聘平台操作。用于：(1) 查看招聘Agent列表和状态 (2) 查看候选人列表和详情 (3) 筛选候选人 (4) 通过/拒绝候选人 (5) 创建新的招聘Agent。触发词：Bang.AI、AI招聘、AI面试、候选人管理、招聘Agent。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "huzhongx",
+      "userId": "s17dj322n30q2g43j5a1s5wp89845q0q",
+      "displayName": "huzhongx",
+      "image": "https://avatars.githubusercontent.com/u/3389974?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771942034823,
+      "changelog": "Initial release of bangai-recruit skill.\n\n- Enables viewing and managing recruitment Agents and candidate lists on Bang.AI AI招聘平台.\n- Supports candidate filtering, viewing video resumes, and reviewing (approve/reject) candidates.\n- Allows creation of new AI recruitment Agents with automatic candidate search and engagement.\n- Accessible to logged-in users via: https://bangai.hina.com/agent?tab=my-interviews",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1f9b47177eae072f61f9460586d53ea00a3e7ed1fd7d559d65d134812e0714b4"
+}

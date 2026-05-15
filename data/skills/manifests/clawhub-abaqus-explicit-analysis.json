@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65458,
+  "uuid": "skill-clawhub-abaqus-explicit-analysis",
+  "skillKey": "clawhub-abaqus-explicit-analysis",
+  "name": "Abaqus Explicit Analysis",
+  "summary": "Abaqus/Explicit 显式动力学分析专用技能。覆盖跌落、冲击、爆炸、成形等瞬态非线性问题。包含建模要点、材料/单元/接触设置、稳定性控制、能量平衡验证和常见坑点排查。",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.abaqus_explicit_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jimmy",
+      "features": [
+        "Abaqus/Explicit 显式动力学分析专用技能。覆盖跌落、冲击、爆炸、成形等瞬态非线性问题。包含建模要点、材料/单元/接触设置、稳定性控制、能量平衡验证和常见坑点排查。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/abaqus-explicit-analysis@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/229549400?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "abaqus-explicit-analysis",
+      "url": "https://clawhub.ai/skills/abaqus-explicit-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "abaqus-explicit-analysis",
+    "url": "https://clawhub.ai/skills/abaqus-explicit-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/abaqus-explicit-analysis-3f03a38a194c0263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/abaqus-explicit-analysis@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-abaqus-explicit-analysis-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7ef4091960e2b0b6ba9677a2766a2021e23e9c85df0e6ef00931c8d6533cb51",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:09:29.030Z"
+}

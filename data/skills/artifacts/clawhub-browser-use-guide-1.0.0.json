@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-use-guide@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use_guide",
+  "skill": {
+    "id": 61884,
+    "skillKey": "clawhub-browser-use-guide",
+    "name": "browser-use AI浏览器自动化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use-guide",
+    "url": "https://clawhub.ai/skills/browser-use-guide",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-guide-ca6ccdb5827f3a4b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让AI代理控制浏览器自动化网页操作。支持 Claude/GPT/Gemini/Ollama，可执行填表、购物、搜索等任务。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777367424344,
+      "changelog": "- 初始版本发布，集成 browser-use 详细安装、配置与快速上手指南。\n- 支持 AI 代理自动化网页操作，包括自动填表、购物、比价与多平台集成。\n- 提供本地与云端模式、LLM 多模型选择及 API Key 配置说明。\n- 覆盖 CLI 命令、自定义工具、认证持久化与 OpenClaw 集成用法。\n- 包含常见问题排查、费用说明及注意事项，适合新手与进阶用户。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:43a83456b6903cecd62a0632ed554e2cd76548576385efbd8b6ed76d332ff734"
+}

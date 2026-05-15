@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-appdeploy@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_appdeploy",
+  "skill": {
+    "id": 40064,
+    "skillKey": "clawhub-toby-appdeploy",
+    "name": "appdeploy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-appdeploy",
+    "url": "https://clawhub.ai/skills/toby-appdeploy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-appdeploy-bb35be92502893b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy web apps with backend APIs, database, file storage, AI operations, authentication, realtime, and cron jobs. Use when the user asks to deploy or publis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 173,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776230213622,
+      "changelog": "Version 1.0.2 of the toby-appdeploy skill\n\n- No file changes detected in this release.\n- Functionality, usage, and documentation remain unchanged from the previous version.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:67018399ca6432ab758897511027be39299c6801283b531b3203a99631b10106"
+}

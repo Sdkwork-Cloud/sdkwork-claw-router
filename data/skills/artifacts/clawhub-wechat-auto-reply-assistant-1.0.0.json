@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-auto-reply-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_auto_reply_assistant",
+  "skill": {
+    "id": 14175,
+    "skillKey": "clawhub-wechat-auto-reply-assistant",
+    "name": "wechat-auto-reply-assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-auto-reply-assistant",
+    "url": "https://clawhub.ai/skills/wechat-auto-reply-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-auto-reply-assistant-63c4cd357d3785f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates polite, context-aware reply suggestions for WeChat messages to assist in personal chats, customer support, and AI response planning."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zionfusu",
+      "userId": "publishers:zionfusu",
+      "displayName": "nanshen",
+      "image": "https://avatars.githubusercontent.com/u/16756443?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1040,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772242945033,
+      "changelog": "wechat-auto-reply 1.0.0\n\n- Replaced legacy SKILL.md with a simplified and clarified skill.md, focusing on reply suggestion functionality.\n- Added wechat_reply.txt sample or supporting file.\n- Updated documentation: clarified that this skill only generates reply suggestions and does not directly interact with WeChat.\n- Improved use case descriptions and input/output explanations for broader applicability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ddff5c4833f37b87d76cdf41f76127dd09014b0db198f89f96f583ae7e3b6fb0"
+}

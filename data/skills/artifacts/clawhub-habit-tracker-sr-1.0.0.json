@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/habit-tracker-sr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.habit_tracker_sr",
+  "skill": {
+    "id": 25750,
+    "skillKey": "clawhub-habit-tracker-sr",
+    "name": "HabitTracker Conversational Habit Tracking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "habit-tracker-sr",
+    "url": "https://clawhub.ai/skills/habit-tracker-sr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/habit-tracker-sr-3f00566a05fa316a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track daily habits through agent conversation. Streaks, reminders, weekly reports. Did you exercise today? With accountability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "theshadowrose",
+      "userId": "s1736mx5m1zt9qzh6fvzvffnhh83hgf8",
+      "displayName": "Shadow Rose",
+      "image": "https://avatars.githubusercontent.com/u/262919821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773187208896,
+      "changelog": "Initial upload",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84ec4c260ffff294eadf61ff950575a16341cb311d66cba3a8c207d5dfd878e4"
+}

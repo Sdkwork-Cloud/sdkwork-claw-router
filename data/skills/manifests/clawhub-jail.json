@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36135,
+  "uuid": "skill-clawhub-jail",
+  "skillKey": "clawhub-jail",
+  "name": "Jail",
+  "summary": "Jail reference tool. Use when working with jail in sysops contexts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "Jail reference tool",
+        "Use when working with jail in sysops contexts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jail",
+      "url": "https://clawhub.ai/skills/jail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jail",
+    "url": "https://clawhub.ai/skills/jail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jail-7d72fa8065e24a58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f7a4f58922e5636433ad3f12c7fd15664bb0c70eedcb0e6ade53846a9cf7bb4",
+      "artifactSizeBytes": 1722
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T22:18:35.905Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10887,
+  "uuid": "skill-clawhub-fireflies-api",
+  "skillKey": "clawhub-fireflies-api",
+  "name": "Fireflies.ai",
+  "summary": "Fireflies.ai GraphQL API integration with managed OAuth. Access meeting transcripts, summaries, users, contacts, and AI-powered meeting analysis. Use this sk...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireflies_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "byungkyu",
+      "features": [
+        "Fireflies.ai GraphQL API integration with managed OAuth",
+        "Access meeting transcripts, summaries, users, contacts, and AI-powered meeting analysis",
+        "Use this sk..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fireflies-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16563684?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fireflies-api",
+      "url": "https://clawhub.ai/skills/fireflies-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireflies-api",
+    "url": "https://clawhub.ai/skills/fireflies-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireflies-api-bcb60932993c9342.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fireflies-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fireflies-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f2c263ac6829c7b053783f5e7293e0bfe5eaf6e20730801dd8347b164e12e215",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T22:42:04.338Z"
+}

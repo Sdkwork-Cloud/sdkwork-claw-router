@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntriq-x402-alt-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntriq_x402_alt_text",
+  "skill": {
+    "id": 54527,
+    "skillKey": "clawhub-ntriq-x402-alt-text",
+    "name": "Ntriq X402 Alt Text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntriq-x402-alt-text",
+    "url": "https://clawhub.ai/skills/ntriq-x402-alt-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntriq-x402-alt-text-3ffc1d03b343672a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate WCAG-compliant alt text and detailed image descriptions for accessibility. Pay $0.01 USDC via x402."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ntriq-gh",
+      "userId": "s170tfc8cnswm72pmy4aqs9yd5841wq0",
+      "displayName": "ntriq",
+      "image": "https://avatars.githubusercontent.com/u/215101248?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 125,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776297621320,
+      "changelog": "ntriq-x402-alt-text 1.0.0\n\n- Initial release.\n- Generate concise, WCAG-compliant alt text (≤125 characters) and detailed image descriptions for accessibility.\n- Supports image input via URL or base64, with optional language selection.\n- Pay $0.01 USDC per API call using x402 protocol on Base mainnet.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00bc4ec091f1f4938353cd78014a4ffd0a406964f2fdb764d62312873048bf0b"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71808,
+  "uuid": "skill-clawhub-feishu-knowledge-manager",
+  "skillKey": "clawhub-feishu-knowledge-manager",
+  "name": "飞书知识管理",
+  "summary": "飞书知识管理工具。当用户发送外部文章链接时，自动获取内容、存入飞书文档、并归纳知识要点到飞书知识库。包括：(1) 读取外部链接内容 (2) 存原文到飞书云文档 (3) 归纳知识要点到知识库对应分类 (4) 定期整理知识库结构、清理重复文档。触发场景：用户发链接、用户说\"整理知识\"、\"存入知识库\"、\"归纳要点",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_knowledge_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "subwukong",
+      "features": [
+        "飞书知识管理工具。当用户发送外部文章链接时，自动获取内容、存入飞书文档、并归纳知识要点到飞书知识库。包括：(1) 读取外部链接内容 (2) 存原文到飞书云文档 (3) 归纳知识要点到知识库对."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-knowledge-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/123579422?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-knowledge-manager",
+      "url": "https://clawhub.ai/skills/feishu-knowledge-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-knowledge-manager",
+    "url": "https://clawhub.ai/skills/feishu-knowledge-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-knowledge-manager-cd6fa3568cf2d9d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-knowledge-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-knowledge-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8197b33059b77233e8d1343e2d8e34a3e45f476aae6a4286c7c36d8c8280da36",
+      "artifactSizeBytes": 2681
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T00:36:10.221Z"
+}

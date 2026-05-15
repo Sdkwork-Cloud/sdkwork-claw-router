@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25025,
+  "uuid": "skill-clawhub-context-hygiene",
+  "skillKey": "clawhub-context-hygiene",
+  "name": "Context Hygiene",
+  "summary": "Reasoning hygiene protocol for OpenClaw agents — keep context sharp by collapsing exploration into decisions, enforcing file budgets, and pruning ghost conte...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_hygiene",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ppiankov",
+      "features": [
+        "Reasoning hygiene protocol for OpenClaw agents — keep context sharp by collapsing exploration i."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-hygiene@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/103106369?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-hygiene",
+      "url": "https://clawhub.ai/skills/context-hygiene"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-hygiene",
+    "url": "https://clawhub.ai/skills/context-hygiene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-hygiene-e8d460d45b28b5b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-hygiene@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-hygiene-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8c78b9a7658efa7eff968ac75aaeb8d022068cee4134041e4b4822525a6ef391",
+      "artifactSizeBytes": 1983
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T05:18:51.593Z"
+}

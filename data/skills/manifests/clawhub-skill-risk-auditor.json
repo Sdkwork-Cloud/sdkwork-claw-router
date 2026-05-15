@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51085,
+  "uuid": "skill-clawhub-skill-risk-auditor",
+  "skillKey": "clawhub-skill-risk-auditor",
+  "name": "Skill Risk Auditor",
+  "summary": "Comprehensive pre-install guard that audits third-party skills across nine risk areas — covering semantic integrity, supply chain, secrets, data exfiltration...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_risk_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaofang Yang",
+      "features": [
+        "Comprehensive pre-install guard that audits third-party skills across nine risk areas — coverin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-risk-auditor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128906103?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-risk-auditor",
+      "url": "https://clawhub.ai/skills/skill-risk-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-risk-auditor",
+    "url": "https://clawhub.ai/skills/skill-risk-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-risk-auditor-9fe86f4f3de9cfcf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-risk-auditor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-risk-auditor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd17eaf944d0a788203861daf9c751c7b348f66e81c8b6af6004f07863b4d13d",
+      "artifactSizeBytes": 2599
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:25:46.818Z"
+}

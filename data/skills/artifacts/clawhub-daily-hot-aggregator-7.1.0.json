@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-hot-aggregator@7.1.0",
+  "version": "7.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_hot_aggregator",
+  "skill": {
+    "id": 66793,
+    "skillKey": "clawhub-daily-hot-aggregator",
+    "name": "Daily Hot Aggregator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-hot-aggregator",
+    "url": "https://clawhub.ai/skills/daily-hot-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-hot-aggregator-5eb74e69533d9e78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🔥 一键获取全平台热榜！B站+抖音+微博+头条，一站搞定所有热点。自媒体运营必备！免费使用，定制开发请联系作者。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq853632587",
+      "userId": "s17dwzvbvbwhww06k4jsp30agd83qghw",
+      "displayName": "蓝天",
+      "image": "https://avatars.githubusercontent.com/u/49087597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 309,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "7.1.0",
+      "createdAt": 1774762055863,
+      "changelog": "优化企微群推送：支持Markdown表格格式、webhook方式、去除推广信息",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e18e9055b350b3a5c9223e9ffc143690170b54defc0e3b2695f361131f10a1bf"
+}

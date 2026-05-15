@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25230,
+  "uuid": "skill-clawhub-memory-auto",
+  "skillKey": "clawhub-memory-auto",
+  "name": "Memory Auto Archive",
+  "summary": "Automatically archives daily chat logs with keyword highlights and optional AI summaries into organized memory files without manual setup.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yanshijun607-png",
+      "features": [
+        "Automatically archives daily chat logs with keyword highlights and optional AI summaries into o."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/memory-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257959567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "memory-auto",
+      "url": "https://clawhub.ai/skills/memory-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-auto",
+    "url": "https://clawhub.ai/skills/memory-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-auto-5718c1f178ccc7ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/memory-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-memory-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:410fe56cf8e4e43b1d78b45f0bf403a73c4631f12cc5fab5a830606d749ffbcf",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T11:05:27.398Z"
+}

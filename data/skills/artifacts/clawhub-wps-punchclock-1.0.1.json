@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wps-punchclock@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_punchclock",
+  "skill": {
+    "id": 12445,
+    "skillKey": "clawhub-wps-punchclock",
+    "name": "dxh141130"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-punchclock",
+    "url": "https://clawhub.ai/skills/wps-punchclock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-punchclock-d4e228e7237b9e5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate punching time in/out on WPS Time / NetTime (wpstime.com NetTime). Use for phrases like setup punchclock/configure punchclock/set up time clock, clock in/clock out, start break/end break, start lunch/end lunch, check status/status.."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dxh141130",
+      "userId": "publishers:dxh141130",
+      "displayName": "dxh141130",
+      "image": "https://avatars.githubusercontent.com/u/21978948?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1788,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770354952138,
+      "changelog": "- Shortened and simplified skill description and action trigger phrases.\n- Standardized punch action keywords to English only.\n- Clarified and condensed workflow steps and outputs.\n- Updated guidance for message replies and confirmation flows.\n- Kept all credential storage, setup, and compatibility details intact.\n- No changes to automation logic or operational requirements.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e3d8a2f0bf32b7338f38eac113d9d4676d331bdd0ce68bc7d4eb2ef356372aa0"
+}

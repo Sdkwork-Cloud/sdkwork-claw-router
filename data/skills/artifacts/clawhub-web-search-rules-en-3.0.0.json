@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web-search-rules-en@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_search_rules_en",
+  "skill": {
+    "id": 30011,
+    "skillKey": "clawhub-web-search-rules-en",
+    "name": "Web Search Rules"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-search-rules-en",
+    "url": "https://clawhub.ai/skills/web-search-rules-en",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-search-rules-en-91e357016967bae7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage web search result knowledge capture with safe URL rules, staging, user confirmation, archiving, audit logs, and multi-platform adapters for IMA, Tence..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "englandtong",
+      "userId": "s1712yyvmw7t8z7nqxpz1ydfad8540a4",
+      "displayName": "EnglandTong",
+      "image": "https://avatars.githubusercontent.com/u/221670156?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 190,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1778338374955,
+      "changelog": "Version 3.0.0 introduces a safer, more auditable, and extensible approach to web search rule management across multiple knowledge platforms.\n\n- Adds support for new platforms: Feishu Wiki, DingTalk Docs, and custom adapters, alongside IMA, Tencent Docs, Obsidian, and NotebookLM.\n- Moves configuration and audit log storage to `~/.skill-config/web-search-rules-en/` with explicit migration guidance for legacy configs.\n- Implements a strict security model: local staging by default, no credential storage, and double-confirmation for risky operations (cloud upload, deletion, migration, browser automation).\n- Formalizes an audit log for all write, archive, migration, and deletion actions.\n- Provides a structured rule engine with conflict handling, normalization, prioritized classification, and user override checks.\n- Includes extensive reference guides for platform adapters, safe operations, and migration workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a7b1cb4c84e1c76feb862684bce8636d5dd1b2591b1314b372f57a9054db236"
+}

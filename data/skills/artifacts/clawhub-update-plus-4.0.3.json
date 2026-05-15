@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/update-plus@4.0.3",
+  "version": "4.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.update_plus",
+  "skill": {
+    "id": 10068,
+    "skillKey": "clawhub-update-plus",
+    "name": "Update Plus"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "update-plus",
+    "url": "https://clawhub.ai/skills/update-plus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/update-plus-75dc47ecf1055e85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full backup, update, and restore for OpenClaw - config, workspace, and skills with auto-rollback"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hopyky",
+      "userId": "publishers:hopyky",
+      "displayName": "hopyky",
+      "image": "https://avatars.githubusercontent.com/u/166903908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2795,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "4.0.3",
+      "createdAt": 1769841494386,
+      "changelog": "v4.0.3: Check updates before backup, use curl for connection check",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:88f6616dc4197b483c5416b6bf3bcf29d8beba2d0259c04e4aecdebe231f4176"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ppt-generate-and-edit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ppt_generate_and_edit",
+  "skill": {
+    "id": 56933,
+    "skillKey": "clawhub-ppt-generate-and-edit",
+    "name": "PPT生成与修改"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ppt-generate-and-edit",
+    "url": "https://clawhub.ai/skills/ppt-generate-and-edit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ppt-generate-and-edit-65b7c87deed2fd18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and edit PowerPoint files with python-pptx, including slide creation, text replacement, and image replacement while preserving layout. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zicheng354-tech",
+      "userId": "s17axd4605y1yr3vh8vscykxdd83qe8a",
+      "displayName": "zicheng354-tech",
+      "image": "https://avatars.githubusercontent.com/u/266782569?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776235231459,
+      "changelog": "- Initial release of ppt-generate-and-edit skill.\n- Generate PowerPoint files from structured input with customizable slides and optional AI-generated images.\n- Update existing PPT files by replacing text and images while preserving original slide layouts.\n- Modular Python structure with separate modules for creation, editing, image services, and utilities.\n- Simple API for agents with clear input/output specifications.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:531376a833b4357f6b45ac8552ace9eeeece99df4b9ba29e6fc7f3a2d3e29f8b"
+}

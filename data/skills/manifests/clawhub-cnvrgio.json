@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38029,
+  "uuid": "skill-clawhub-cnvrgio",
+  "skillKey": "clawhub-cnvrgio",
+  "name": "Cnvrgio",
+  "summary": "Cnvrg.io integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cnvrg.io data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cnvrgio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cnvrg.io integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cnvrg.io data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cnvrgio@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cnvrgio",
+      "url": "https://clawhub.ai/skills/cnvrgio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cnvrgio",
+    "url": "https://clawhub.ai/skills/cnvrgio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cnvrgio-7048f96c54798e5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cnvrgio@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cnvrgio-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d0137e87a31c7bb72a45af974dc88f1007932376cf7783780adff8c846d0164",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:19:28.455Z"
+}

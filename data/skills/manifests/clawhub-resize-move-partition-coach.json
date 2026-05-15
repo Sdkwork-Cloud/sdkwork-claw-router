@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23999,
+  "uuid": "skill-clawhub-resize-move-partition-coach",
+  "skillKey": "clawhub-resize-move-partition-coach",
+  "name": "Resize Move Partition Coach",
+  "summary": "Resize or Move Partitions for Low Space - Reclaim drive capacity when unallocated space is limited or non-adjacent.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resize_move_partition_coach",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "贺照云",
+      "features": [
+        "Resize or Move Partitions for Low Space",
+        "Reclaim drive capacity when unallocated space is limited or non-adjacent."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resize-move-partition-coach@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28618229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resize-move-partition-coach",
+      "url": "https://clawhub.ai/skills/resize-move-partition-coach"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resize-move-partition-coach",
+    "url": "https://clawhub.ai/skills/resize-move-partition-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resize-move-partition-coach-0dbcf90a3776c3b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resize-move-partition-coach@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-resize-move-partition-coach-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b6a083ccc37317337c04a00aa660957816bfbfc3d0e028124e651a46b77c55c",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T07:51:21.916Z"
+}

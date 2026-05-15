@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10381,
+  "uuid": "skill-clawhub-pptx-2",
+  "skillKey": "clawhub-pptx-2",
+  "name": "Pptx",
+  "summary": "Create, edit, and analyze .pptx presentation files, including slide content, layouts, comments, speaker notes, and theme details.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pptx_2",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhenda Xie",
+      "features": [
+        "Create, edit, and analyze .pptx presentation files, including slide content, layouts, comments,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pptx-2@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56947550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pptx-2",
+      "url": "https://clawhub.ai/skills/pptx-2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pptx-2",
+    "url": "https://clawhub.ai/skills/pptx-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pptx-2-21338689ededd8ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pptx-2@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pptx-2-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afed8be6dcc5af880e0dc704f869aca9da4dd333e28cbf00801d5ea885022c5c",
+      "artifactSizeBytes": 2371
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T05:15:14.626Z"
+}

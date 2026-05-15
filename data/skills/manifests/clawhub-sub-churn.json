@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52936,
+  "uuid": "skill-clawhub-sub-churn",
+  "skillKey": "clawhub-sub-churn",
+  "name": "Sub Churn",
+  "summary": "Monitor subscription commerce for churn risk—blend account activity signals, payment failure (dunning) tracking, and retention flows including compensation o...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sub_churn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RIJOY-AI",
+      "features": [
+        "Monitor subscription commerce for churn risk—blend account activity signals, payment failure (d."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sub-churn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219251023?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sub-churn",
+      "url": "https://clawhub.ai/skills/sub-churn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sub-churn",
+    "url": "https://clawhub.ai/skills/sub-churn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sub-churn-102267e3b66480cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sub-churn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sub-churn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0512928d67fcd56a0bbf9b20de7882024189e042744b47795360a87b1be8f54f",
+      "artifactSizeBytes": 2507
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T02:13:35.260Z"
+}

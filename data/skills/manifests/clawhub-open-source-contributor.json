@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34152,
+  "uuid": "skill-clawhub-open-source-contributor",
+  "skillKey": "clawhub-open-source-contributor",
+  "name": "Open Source Contributor",
+  "summary": "Autonomously scouts GitHub for beginner issues, writes fixes by complexity, tests, and submits PRs while enforcing safety and approval thresholds.",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.open_source_contributor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wahaj Ahmed",
+      "features": [
+        "Autonomously scouts GitHub for beginner issues, writes fixes by complexity, tests, and submits."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/open-source-contributor@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57330918?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "open-source-contributor",
+      "url": "https://clawhub.ai/skills/open-source-contributor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "open-source-contributor",
+    "url": "https://clawhub.ai/skills/open-source-contributor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/open-source-contributor-87421d8ec9fe85a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/open-source-contributor@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-open-source-contributor-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e98f725c623fb4129df0b95cfa079a108ef31bfe472515decc7802c2e34e1496",
+      "artifactSizeBytes": 2079
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T19:17:50.751Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47966,
+  "uuid": "skill-clawhub-google-web-fonts",
+  "skillKey": "clawhub-google-web-fonts",
+  "name": "Google Web Fonts",
+  "summary": "Use the Google Fonts API to add fonts to web pages.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_web_fonts",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Use the Google Fonts API to add fonts to web pages."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-web-fonts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-web-fonts",
+      "url": "https://clawhub.ai/skills/google-web-fonts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-web-fonts",
+    "url": "https://clawhub.ai/skills/google-web-fonts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-web-fonts-fa0949e4ee57f848.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-web-fonts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-web-fonts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1770241f10365fe2a963a61afec36b0a242805a51bd2c33de072c0a14bae8d76",
+      "artifactSizeBytes": 2181
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T01:38:20.368Z"
+}

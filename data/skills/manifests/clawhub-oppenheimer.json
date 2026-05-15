@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70230,
+  "uuid": "skill-clawhub-oppenheimer",
+  "skillKey": "clawhub-oppenheimer",
+  "name": "Oppenheimer",
+  "summary": "提供罗伯特·奥本海默的生平、曼哈顿计划领导经历及核时代科学与道德挑战的详细信息。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oppenheimer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供罗伯特·奥本海默的生平、曼哈顿计划领导经历及核时代科学与道德挑战的详细信息。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/oppenheimer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "oppenheimer",
+      "url": "https://clawhub.ai/skills/oppenheimer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oppenheimer",
+    "url": "https://clawhub.ai/skills/oppenheimer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oppenheimer-e48f8e6f01c81b10.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/oppenheimer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-oppenheimer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10b2535f0573a35c0746cbf643eb661eba1b2ceee7b7697b069a4cb4f171849f",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T19:46:50.051Z"
+}

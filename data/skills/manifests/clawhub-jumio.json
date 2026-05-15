@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30591,
+  "uuid": "skill-clawhub-jumio",
+  "skillKey": "clawhub-jumio",
+  "name": "Jumio",
+  "summary": "Jumio integration. Manage data, records, and automate workflows. Use when the user wants to interact with Jumio data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jumio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Jumio integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Jumio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jumio@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jumio",
+      "url": "https://clawhub.ai/skills/jumio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jumio",
+    "url": "https://clawhub.ai/skills/jumio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jumio-d0ff1b858684d7dd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jumio@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jumio-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cb61003edf4d0856e8db79f028423187d96aca4fa515e7cff6fc84de8469317",
+      "artifactSizeBytes": 1803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:02:51.120Z"
+}

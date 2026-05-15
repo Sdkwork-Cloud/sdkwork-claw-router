@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zotero-browse@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zotero_browse",
+  "skill": {
+    "id": 34272,
+    "skillKey": "clawhub-zotero-browse",
+    "name": "zotero-browse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zotero-browse",
+    "url": "https://clawhub.ai/skills/zotero-browse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zotero-browse-bbfe137118246544.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browse, search, and read papers from a local Zotero library. Use when the user wants to: (1) Search their Zotero library by title, author, or keyword, (2) Re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lyononthemoon",
+      "userId": "s176n00v4h79nx039v3kx5445d83mfhs",
+      "displayName": "Liang Guo",
+      "image": "https://avatars.githubusercontent.com/u/168323888?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775785228536,
+      "changelog": "No functional or documentation changes in this release.\n\n- Version bump to 1.0.1 with no detected file modifications.\n- All existing workflows, features, and usage remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6352d1dca8bc239d648204cdb42cfc93d8ae91bf75d6cffcefc901182e7216bc"
+}

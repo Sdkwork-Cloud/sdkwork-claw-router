@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cron@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cron",
+  "skill": {
+    "id": 8724,
+    "skillKey": "clawhub-cron",
+    "name": "Cron"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cron",
+    "url": "https://clawhub.ai/skills/cron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cron-c374eea599bb3c50.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first recurring schedule engine for reminders, repeated tasks, and time-based execution plans. Use whenever the user mentions recurring timing, repetit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "projectsnowwork",
+      "userId": "publishers:projectsnowwork",
+      "displayName": "ProjectSnowWork",
+      "image": "https://avatars.githubusercontent.com/u/216470608?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 6547,
+      "installsAllTime": 87,
+      "installsCurrent": 82,
+      "stars": 6,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773303797509,
+      "changelog": "Cron@1.0.0: Local-first recurring schedule engine for repeated tasks, routines, and time-based execution. Added daily/weekly/monthly/interval jobs, pause/resume controls, and next-run visibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7839aaba7676361820933c59c673f5e6fc59db6e3716d6fd0a2d66306cf8f319"
+}

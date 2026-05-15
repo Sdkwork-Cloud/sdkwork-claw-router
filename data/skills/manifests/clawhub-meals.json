@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14039,
+  "uuid": "skill-clawhub-meals",
+  "skillKey": "clawhub-meals",
+  "name": "Meals",
+  "summary": "Build a personal meal planning system with weekly plans, shopping lists, and dietary tracking.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meals",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build a personal meal planning system with weekly plans, shopping lists, and dietary tracking."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meals@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meals",
+      "url": "https://clawhub.ai/skills/meals"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meals",
+    "url": "https://clawhub.ai/skills/meals",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meals-f146172c0036ebca.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meals@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-meals-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db9ee8bd78974adcc9fb9a73c8390dfd728b9c3afc2d8b9fa60193a7633c6c6d",
+      "artifactSizeBytes": 1754
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:04:53.168Z"
+}

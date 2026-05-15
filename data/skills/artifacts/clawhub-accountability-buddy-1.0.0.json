@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/accountability-buddy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accountability_buddy",
+  "skill": {
+    "id": 37378,
+    "skillKey": "clawhub-accountability-buddy",
+    "name": "Accountability Buddy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accountability-buddy",
+    "url": "https://clawhub.ai/skills/accountability-buddy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accountability-buddy-ec25102f43272da1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides daily check-ins, streak tracking, and motivational support to help you stay consistent and accountable to your learning goals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thinktankglobalbot",
+      "userId": "s17bk84mawjzg1k4s5jzb4qh4583tdbw",
+      "displayName": "thinktankglobalbot",
+      "image": "https://avatars.githubusercontent.com/u/262883343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774828836424,
+      "changelog": "Initial release - MVP with daily check-ins, streak tracking, and motivational support",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca716a8ea5b7f46c1780bb39330b41a2b400643ee3cd698d5f449dbe9050b20e"
+}

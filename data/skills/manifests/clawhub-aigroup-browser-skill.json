@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35985,
+  "uuid": "skill-clawhub-aigroup-browser-skill",
+  "skillKey": "clawhub-aigroup-browser-skill",
+  "name": "AIGroup Browser Skill",
+  "summary": "Open pages with the real CN or global browser profile on spark and return the live page title plus final URL. Use this instead of web_fetch, search, canvas,...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aigroup_browser_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jackdark",
+      "features": [
+        "Open pages with the real CN or global browser profile on spark and return the live page title p.",
+        "Use this instead of web_fetch, search, canvas,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aigroup-browser-skill@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201514154?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aigroup-browser-skill",
+      "url": "https://clawhub.ai/skills/aigroup-browser-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aigroup-browser-skill",
+    "url": "https://clawhub.ai/skills/aigroup-browser-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aigroup-browser-skill-d59d915d81d6e3ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aigroup-browser-skill@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-aigroup-browser-skill-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5be22f513c21d2007e4c3ce8c636602b55805273586cf48f926f3f5347e7fed7",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T08:50:49.416Z"
+}

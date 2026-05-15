@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65693,
+  "uuid": "skill-clawhub-maxclaw-doctor",
+  "skillKey": "clawhub-maxclaw-doctor",
+  "name": "maxclaw-doctor",
+  "summary": "帮助用户使用openclaw时提供文件保护，所有文件操作均建立版本索引，支持删除恢复和修改回滚",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxclaw_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OreoAndYuumi",
+      "features": [
+        "帮助用户使用openclaw时提供文件保护，所有文件操作均建立版本索引，支持删除恢复和修改回滚"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxclaw-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/169647655?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxclaw-doctor",
+      "url": "https://clawhub.ai/skills/maxclaw-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxclaw-doctor",
+    "url": "https://clawhub.ai/skills/maxclaw-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxclaw-doctor-56bc36fde6720e2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxclaw-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxclaw-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5287c1c52997422d28b36659ff676bc028e28e431f9328567a8fecb659c26fcc",
+      "artifactSizeBytes": 2456
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:24:11.763Z"
+}

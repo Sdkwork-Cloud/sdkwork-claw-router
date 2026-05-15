@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16235,
+  "uuid": "skill-clawhub-flight-pricer",
+  "skillKey": "clawhub-flight-pricer",
+  "name": "Flight Pricer",
+  "summary": "Command-line tool to search flight prices using Duffel API with options for dates, passengers, stops, and cabin class.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flight_pricer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jrojas537",
+      "features": [
+        "Command-line tool to search flight prices using Duffel API with options for dates, passengers,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flight-pricer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26755668?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flight-pricer",
+      "url": "https://clawhub.ai/skills/flight-pricer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flight-pricer",
+    "url": "https://clawhub.ai/skills/flight-pricer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flight-pricer-a5cc828bfb1e7ce7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flight-pricer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-flight-pricer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74db74632d1b82afa50d67f3120c15872daa303d4e90f13d0a81790f4d97a725",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T01:57:25.469Z"
+}

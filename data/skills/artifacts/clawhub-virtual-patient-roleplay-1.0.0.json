@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-patient-roleplay@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_patient_roleplay",
+  "skill": {
+    "id": 31594,
+    "skillKey": "clawhub-virtual-patient-roleplay",
+    "name": "Virtual Patient Roleplay"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-patient-roleplay",
+    "url": "https://clawhub.ai/skills/virtual-patient-roleplay",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-patient-roleplay-af507039df84e0e7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Simulate standardized patient encounters for medical training, supporting OSCE-style history-taking practice, communication skills rehearsal, and educational..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775036246690,
+      "changelog": "Initial release of virtual-patient-roleplay.\n\n- Simulates standardized patient encounters for medical training and OSCE-style practice.\n- Supports history-taking, communication skills rehearsal, and structured debriefing.\n- Provides patient responses based on scenario, learner input, and difficulty level.\n- Includes robust scope boundaries to prevent use for real clinical triage or treatment.\n- Offers clear educational disclaimers and field-level input validation.\n- Provides manual fallback and error handling for unsupported scenarios or script failures.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5b7c0173bf929a90d95ac5f97efd8775e16c2e98ff9a0b19a4ebe26cc94bdc4e"
+}

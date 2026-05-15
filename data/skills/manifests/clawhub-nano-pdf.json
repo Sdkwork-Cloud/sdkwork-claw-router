@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8225,
+  "uuid": "skill-clawhub-nano-pdf",
+  "skillKey": "clawhub-nano-pdf",
+  "name": "Nano Pdf",
+  "summary": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nano_pdf",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Peter Steinberger",
+      "features": [
+        "Edit PDFs with natural-language instructions using the nano-pdf CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nano-pdf@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nano-pdf",
+      "url": "https://clawhub.ai/skills/nano-pdf"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nano-pdf",
+    "url": "https://clawhub.ai/skills/nano-pdf",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nano-pdf-e7ab4753dc3cd4e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nano-pdf@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nano-pdf-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6cb22248ab4538282a07d9335c40a68cd08518d3e9103a5aab2a297b0c3d65de",
+      "artifactSizeBytes": 1749
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-04T16:49:19.433Z"
+}

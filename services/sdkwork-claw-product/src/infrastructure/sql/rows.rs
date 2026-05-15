@@ -2,7 +2,9 @@ use crate::domain::{
     AiModel, AiModelPublicMetadata, ApiKeyGroup, ApiKeyGroupMetricSnapshot, BillingMeter,
     DecimalValue, DomainError, DomainResult, GatewayAccessPolicy, GatewayApiKey, ModelPrice,
     ModelProviderRoute, ModelVendor, ModelVendorDefinition, Money, PriceSide, PricingPlan,
-    ProviderRetryPolicy, QuotaPolicy,
+    ProviderAccountPoolRoute, ProviderAuthProfile, ProviderRetryPolicy, QuotaPolicy,
+    RouteCandidate, RoutingCapability, RoutingFallbackMode, RoutingPolicy, RoutingPolicyScope,
+    RoutingRule,
 };
 
 pub struct ModelVendorRow {
@@ -115,28 +117,54 @@ pub struct ModelProviderRouteRow {
     pub provider_model: String,
     pub base_url: Option<String>,
     pub secret_ref: Option<String>,
+    pub auth_type: Option<String>,
+    pub auth_config_json: Option<String>,
     pub timeout_ms: Option<i64>,
     pub retry_policy_json: Option<String>,
 }
 
+pub struct ProviderAccountPoolRouteRow {
+    pub provider_code: String,
+    pub channel_id: i64,
+    pub base_url: Option<String>,
+    pub secret_ref: Option<String>,
+    pub auth_type: Option<String>,
+    pub auth_config_json: Option<String>,
+    pub timeout_ms: Option<i64>,
+    pub retry_policy_json: Option<String>,
+}
+
+impl ProviderAccountPoolRouteRow {
+    pub fn try_into_domain(self) -> DomainResult<ProviderAccountPoolRoute> {
+        let timeout_ms = parse_timeout_ms(self.timeout_ms)?;
+        let retry_policy = parse_retry_policy(self.retry_policy_json)?;
+        let auth_profile = ProviderAuthProfile::from_account_config(
+            &self.provider_code,
+            self.auth_type.as_deref(),
+            self.auth_config_json.as_deref(),
+        )?;
+
+        Ok(ProviderAccountPoolRoute {
+            provider_code: self.provider_code,
+            channel_id: self.channel_id,
+            base_url: self.base_url,
+            secret_ref: self.secret_ref,
+            auth_profile,
+            timeout_ms,
+            retry_policy,
+        })
+    }
+}
+
 impl ModelProviderRouteRow {
     pub fn try_into_domain(self) -> DomainResult<ModelProviderRoute> {
-        let timeout_ms = match self.timeout_ms {
-            Some(timeout_ms) if timeout_ms <= 0 => {
-                return Err(DomainError::new(format!(
-                    "integration_channel.timeout_ms must be positive when configured: {timeout_ms}"
-                )));
-            }
-            Some(timeout_ms) => Some(u64::try_from(timeout_ms).map_err(|error| {
-                DomainError::new(format!("invalid integration_channel.timeout_ms: {error}"))
-            })?),
-            None => None,
-        };
-        let retry_policy = self
-            .retry_policy_json
-            .filter(|value| !value.trim().is_empty())
-            .map(|value| ProviderRetryPolicy::from_json_str(&value))
-            .transpose()?;
+        let timeout_ms = parse_timeout_ms(self.timeout_ms)?;
+        let retry_policy = parse_retry_policy(self.retry_policy_json)?;
+        let auth_profile = ProviderAuthProfile::from_account_config(
+            &self.provider_code,
+            self.auth_type.as_deref(),
+            self.auth_config_json.as_deref(),
+        )?;
 
         Ok(ModelProviderRoute {
             catalog_key: self.catalog_key,
@@ -146,8 +174,107 @@ impl ModelProviderRouteRow {
             provider_model: self.provider_model,
             base_url: self.base_url,
             secret_ref: self.secret_ref,
+            auth_profile,
             timeout_ms,
             retry_policy,
+        })
+    }
+}
+
+fn parse_timeout_ms(timeout_ms: Option<i64>) -> DomainResult<Option<u64>> {
+    match timeout_ms {
+        Some(timeout_ms) if timeout_ms <= 0 => Err(DomainError::new(format!(
+            "integration_channel.timeout_ms must be positive when configured: {timeout_ms}"
+        ))),
+        Some(timeout_ms) => Ok(Some(u64::try_from(timeout_ms).map_err(|error| {
+            DomainError::new(format!("invalid integration_channel.timeout_ms: {error}"))
+        })?)),
+        None => Ok(None),
+    }
+}
+
+fn parse_retry_policy(
+    retry_policy_json: Option<String>,
+) -> DomainResult<Option<ProviderRetryPolicy>> {
+    retry_policy_json
+        .filter(|value| !value.trim().is_empty())
+        .map(|value| ProviderRetryPolicy::from_json_str(&value))
+        .transpose()
+}
+
+pub struct RoutingPolicyRow {
+    pub id: i64,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub policy_code: String,
+    pub policy_scope: i32,
+    pub subject_id: Option<i64>,
+    pub capability: Option<i32>,
+    pub default_profile_id: Option<i64>,
+    pub fallback_mode: Option<i32>,
+}
+
+impl RoutingPolicyRow {
+    pub fn try_into_domain(self) -> DomainResult<RoutingPolicy> {
+        Ok(RoutingPolicy {
+            id: self.id,
+            tenant_id: self.tenant_id,
+            organization_id: self.organization_id,
+            policy_code: self.policy_code,
+            policy_scope: RoutingPolicyScope::from_code(self.policy_scope)?,
+            subject_id: self.subject_id,
+            capability: self
+                .capability
+                .map(RoutingCapability::from_code)
+                .transpose()?,
+            default_profile_id: self.default_profile_id,
+            fallback_mode: self
+                .fallback_mode
+                .map(RoutingFallbackMode::from_code)
+                .transpose()?,
+        })
+    }
+}
+
+pub struct RoutingRuleRow {
+    pub id: i64,
+    pub tenant_id: i64,
+    pub organization_id: i64,
+    pub profile_id: i64,
+    pub rule_code: String,
+    pub priority: i32,
+    pub match_expression_json: String,
+    pub target_model: Option<String>,
+    pub candidate_channels_json: String,
+    pub fallback_chain_json: String,
+    pub constraints_json: String,
+}
+
+impl RoutingRuleRow {
+    pub fn try_into_domain(self) -> DomainResult<RoutingRule> {
+        Ok(RoutingRule {
+            id: self.id,
+            tenant_id: self.tenant_id,
+            organization_id: self.organization_id,
+            profile_id: self.profile_id,
+            rule_code: self.rule_code,
+            priority: self.priority,
+            match_expression: parse_json_value(
+                &self.match_expression_json,
+                "ai_routing_rule.match_expression",
+            )?,
+            target_model: self
+                .target_model
+                .filter(|target_model| !target_model.trim().is_empty()),
+            candidate_channels: parse_route_candidates(
+                &self.candidate_channels_json,
+                "ai_routing_rule.candidate_channels",
+            )?,
+            fallback_chain: parse_route_candidates(
+                &self.fallback_chain_json,
+                "ai_routing_rule.fallback_chain",
+            )?,
+            constraints: parse_json_value(&self.constraints_json, "ai_routing_rule.constraints")?,
         })
     }
 }
@@ -315,6 +442,68 @@ fn parse_string_array(value: &str, field_name: &str) -> DomainResult<Vec<String>
             "invalid {field_name} json array from database row: {error}"
         ))
     })
+}
+
+fn parse_json_value(value: &str, field_name: &str) -> DomainResult<serde_json::Value> {
+    serde_json::from_str(value).map_err(|error| {
+        DomainError::new(format!(
+            "invalid {field_name} json value from database row: {error}"
+        ))
+    })
+}
+
+fn parse_route_candidates(value: &str, field_name: &str) -> DomainResult<Vec<RouteCandidate>> {
+    let value = parse_json_value(value, field_name)?;
+    let serde_json::Value::Array(items) = value else {
+        return Err(DomainError::new(format!(
+            "{field_name} must be a json array"
+        )));
+    };
+
+    items
+        .into_iter()
+        .enumerate()
+        .map(|(index, value)| parse_route_candidate(value, field_name, index))
+        .collect()
+}
+
+fn parse_route_candidate(
+    value: serde_json::Value,
+    field_name: &str,
+    index: usize,
+) -> DomainResult<RouteCandidate> {
+    let serde_json::Value::Object(object) = value else {
+        return Err(DomainError::new(format!(
+            "{field_name}[{index}] must be a json object"
+        )));
+    };
+
+    let channel_id = object
+        .get("channel_id")
+        .or_else(|| object.get("channelId"))
+        .and_then(serde_json::Value::as_i64)
+        .ok_or_else(|| {
+            DomainError::new(format!(
+                "{field_name}[{index}] must contain integer channel_id"
+            ))
+        })?;
+    if channel_id <= 0 {
+        return Err(DomainError::new(format!(
+            "{field_name}[{index}].channel_id must be positive"
+        )));
+    }
+
+    let weight = object
+        .get("weight")
+        .and_then(serde_json::Value::as_i64)
+        .unwrap_or(0);
+    if weight < 0 {
+        return Err(DomainError::new(format!(
+            "{field_name}[{index}].weight must be non-negative"
+        )));
+    }
+
+    Ok(RouteCandidate::new(channel_id, weight))
 }
 
 fn parse_price_side(value: &str) -> DomainResult<PriceSide> {

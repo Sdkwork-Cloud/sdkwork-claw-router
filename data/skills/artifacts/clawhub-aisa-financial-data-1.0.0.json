@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-financial-data@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_financial_data",
+  "skill": {
+    "id": 16475,
+    "skillKey": "clawhub-aisa-financial-data",
+    "name": "AIsa Financial Data"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-financial-data",
+    "url": "https://clawhub.ai/skills/aisa-financial-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-financial-data-71f09545e6d6f449.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query real-time and historical financial data across equities and crypto—prices, market moves, metrics, and trends for analysis, alerts, and reporting."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisapay",
+      "userId": "s17fk6ed1hxsakf921v2wh4g8n842987",
+      "displayName": "AIsaPay",
+      "image": "https://avatars.githubusercontent.com/u/239797396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1447,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770272532777,
+      "changelog": "AIsaFinancialData 1.0.0 – Unified real-time and historical data for stocks and crypto\n\n- Query real-time and historical prices, metrics, news, and financials for both equities and cryptocurrencies.\n- Supports advanced market screening, earnings analysis, insider trades, institutional ownership, and SEC filings.\n- Fast API and Python client usage—helpers for portfolio monitoring, trend analysis, and alerts.\n- Crypto and stock tickers unified with clear usage instructions.\n- Simple API key authentication, ready for integration or command-line use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0d772df1fbf38e92aeb8f2b8441612c9538fc678c237d1e22dede3e5dc8a911d"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62909,
+  "uuid": "skill-clawhub-xiaoming-mood-tracker",
+  "skillKey": "clawhub-xiaoming-mood-tracker",
+  "name": "Mood Tracker",
+  "summary": "情绪追踪 - 情绪记录、模式分析、改善建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_mood_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "情绪记录、模式分析、改善建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoming-mood-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoming-mood-tracker",
+      "url": "https://clawhub.ai/skills/xiaoming-mood-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-mood-tracker",
+    "url": "https://clawhub.ai/skills/xiaoming-mood-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-mood-tracker-1d32aa98b66c432c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoming-mood-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoming-mood-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1a7ecdfb0e7dfe71a39f504b609008b9052e1c571f43d89fb67a9680e3ac0dd",
+      "artifactSizeBytes": 1843
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T19:29:48.516Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29305,
+  "uuid": "skill-clawhub-xueqiu-combo-report",
+  "skillKey": "clawhub-xueqiu-combo-report",
+  "name": "Xueqiu Combo Report",
+  "summary": "End-to-end workflow for Xueqiu self-selected combo analysis from scraped or self-selected combo holdings batches through final ranking and PDF export. Use wh...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xueqiu_combo_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ning-kun",
+      "features": [
+        "End-to-end workflow for Xueqiu self-selected combo analysis from scraped or self-selected combo.",
+        "Use wh..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xueqiu-combo-report@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/181131131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xueqiu-combo-report",
+      "url": "https://clawhub.ai/skills/xueqiu-combo-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xueqiu-combo-report",
+    "url": "https://clawhub.ai/skills/xueqiu-combo-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xueqiu-combo-report-fee8e2f119fe1883.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xueqiu-combo-report@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xueqiu-combo-report-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:419834c1c6f297e60442571df195fec51711b0fd30a03b84aa85b245d0f16ab2",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T01:38:55.821Z"
+}

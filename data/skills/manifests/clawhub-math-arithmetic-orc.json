@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69643,
+  "uuid": "skill-clawhub-math-arithmetic-orc",
+  "skillKey": "clawhub-math-arithmetic-orc",
+  "name": "arithmetic-orc",
+  "summary": "识别图片中的K12算式（加减乘除、竖式计算、分数、方程等），返回结构化文本结果。 支持手写体和印刷体，可拒绝非算式图片。 触发条件：用户要求识别算式、数学题、计算题图片，或上传数学题图片时调用。 关键词：算式识别、数学题、OCR、竖式计算、ArithmeticOCR",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.math_arithmetic_orc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hzheigege",
+      "features": [
+        "识别图片中的K12算式（加减乘除、竖式计算、分数、方程等），返回结构化文本结果。 支持手写体和印刷体，可拒绝非算式图片。 触发条件：用户要求识别算式、数学题、计算题图片，或上传数学题图片时调."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/math-arithmetic-orc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7932520?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "math-arithmetic-orc",
+      "url": "https://clawhub.ai/skills/math-arithmetic-orc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "math-arithmetic-orc",
+    "url": "https://clawhub.ai/skills/math-arithmetic-orc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/math-arithmetic-orc-96b5005753b8bea8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/math-arithmetic-orc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-math-arithmetic-orc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:36e668703718ed9e86d33a5aa09753a8a2c81c792821e6b2a654e2d3240d1355",
+      "artifactSizeBytes": 2457
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T08:38:52.986Z"
+}

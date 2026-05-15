@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clone-farm-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clone_farm_detector",
+  "skill": {
+    "id": 19442,
+    "skillKey": "clawhub-clone-farm-detector",
+    "name": "Clone Farm Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clone-farm-detector",
+    "url": "https://clawhub.ai/skills/clone-farm-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clone-farm-detector-0332771a4a32085f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps detect clone farming and reputation gaming in AI agent marketplaces. Identifies near-duplicate skills that wash IDs, batch-publish patterns, and artifi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 613,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771735819990,
+      "changelog": "- Initial release of clone-farm-detector.\n- Detects clone farming and reputation gaming in AI agent marketplaces.\n- Flags near-duplicate skills, batch publishing patterns, ID washing, cross-citation rings, and metadata templating.\n- Accepts skills, publisher IDs, or search terms as input.\n- Outputs risk ratings, similarity clusters, timeline analysis, and evidence summaries.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:afc2db7ccf3597a659a2ab5695179c0c1778eab6261d77446a710691dd6297b7"
+}

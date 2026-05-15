@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27941,
+  "uuid": "skill-clawhub-aliyun-speech-transcriber",
+  "skillKey": "clawhub-aliyun-speech-transcriber",
+  "name": "Aliyun Speech Transcriber",
+  "summary": "Transcribe publicly accessible audio or video URLs with Aliyun speech services. Use when the user wants speech-to-text via Aliyun DashScope, needs transcript...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aliyun_speech_transcriber",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chenggongdu",
+      "features": [
+        "Transcribe publicly accessible audio or video URLs with Aliyun speech services",
+        "Use when the user wants speech-to-text via Aliyun DashScope, needs transcript..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aliyun-speech-transcriber@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38181431?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aliyun-speech-transcriber",
+      "url": "https://clawhub.ai/skills/aliyun-speech-transcriber"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aliyun-speech-transcriber",
+    "url": "https://clawhub.ai/skills/aliyun-speech-transcriber",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aliyun-speech-transcriber-a31b9843beeb682f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aliyun-speech-transcriber@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aliyun-speech-transcriber-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0d0e8013a2f2e07f19872a47911c87cd95f2285ddde5b8bd3613b726c6a8726d",
+      "artifactSizeBytes": 2462
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T00:39:35.443Z"
+}

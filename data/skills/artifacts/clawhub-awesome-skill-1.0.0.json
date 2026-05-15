@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awesome-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_skill",
+  "skill": {
+    "id": 18318,
+    "skillKey": "clawhub-awesome-skill",
+    "name": "Claude Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-skill",
+    "url": "https://clawhub.ai/skills/awesome-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-skill-20954e97b0bf20ef.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover, search, and install from 5,400+ curated OpenClaw skills across 30 categories"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mohdalhashemi98-hue",
+      "userId": "publishers:mohdalhashemi98-hue",
+      "displayName": "mohdalhashemi98-hue",
+      "image": "https://avatars.githubusercontent.com/u/241047511?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 580,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772402734229,
+      "changelog": "- Initial release of the Awesome OpenClaw Skills Directory.\n- Lets users discover, search, and install from over 5,400 curated OpenClaw skills in 30 categories.\n- Provides recommendations, installation instructions, and security best practices.\n- Includes guidance for using ClawHub CLI, manual installation, and quick chat installs.\n- Warns users about security considerations when installing community-built skills.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b63ff3a4e03f42002e686a57df2fd44bee620df9ba7bf39f437a40e633191d47"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sales-report-parser@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sales_report_parser",
+  "skill": {
+    "id": 24735,
+    "skillKey": "clawhub-sales-report-parser",
+    "name": "sales-report-parser"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sales-report-parser",
+    "url": "https://clawhub.ai/skills/sales-report-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sales-report-parser-6a46b191e6890090.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract sales data from report images using OCR with cnocr, parse JSON via MiniMax API, and convert results to Excel spreadsheets."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhoutianwang",
+      "userId": "s17a467wzq3g2byrmqq2b6te5d83hv2m",
+      "displayName": "zhoutianwang",
+      "image": "https://avatars.githubusercontent.com/u/34805743?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 305,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773294046503,
+      "changelog": "- Added new script: scripts/minimax_langchain.py\n- This script likely introduces MiniMax API integration using the LangChain framework.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d7e7e2c735648bc51d6de70456b47ae7265ca485f6cff29084600f7b1fdc413e"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71619,
+  "uuid": "skill-clawhub-tencentads-miaowen-qa",
+  "skillKey": "clawhub-tencentads-miaowen-qa",
+  "name": "TencentAds-miaowen-qa",
+  "summary": "通过腾讯广告官方「妙问」AI问答API，解答腾讯广告（含微信广告、朋友圈广告、视频号广告、微信小店）的营销业务问题。覆盖开户充值、资质认证、广告创建与投放、定向出价、审核规则、素材规范、数据报表、违规处理等全链路场景。当用户咨询腾讯广告业务指导、平台规则、账户操作、投放设置或审核合规问题时触发；即使未明确提及\"腾...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentads_miaowen_qa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yishuang07",
+      "features": [
+        "通过腾讯广告官方「妙问」AI问答API，解答腾讯广告（含微信广告、朋友圈广告、视频号广告、微信小店）的营销业务问题。覆盖开户充值、资质认证、广告创建与投放、定向出价、审核规则、素材规范、数据."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencentads-miaowen-qa@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173276308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencentads-miaowen-qa",
+      "url": "https://clawhub.ai/skills/tencentads-miaowen-qa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentads-miaowen-qa",
+    "url": "https://clawhub.ai/skills/tencentads-miaowen-qa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentads-miaowen-qa-d6f3bb0ac40e3293.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencentads-miaowen-qa@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencentads-miaowen-qa-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:059403eb2efde43c6da8a894cf03a6acb7c9f0faf7f68e97f509c8440191e8ed",
+      "artifactSizeBytes": 2905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T05:59:50.071Z"
+}

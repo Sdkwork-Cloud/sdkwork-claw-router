@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60820,
+  "uuid": "skill-clawhub-remote-disk-mount",
+  "skillKey": "clawhub-remote-disk-mount",
+  "name": "Remote Disk Mount",
+  "summary": "远程磁盘挂载工具，支持 SMB/CIFS、FTP、SFTP、WebDAV 协议挂载远程共享到本地目录。当用户需要：(1) 挂载 Windows/Samba 共享，(2) 挂载 FTP/SFTP 服务器，(3) 挂载 WebDAV 存储，(4) 将远程存储映射为本地磁盘使用时触发此技能。",
+  "version": "0.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remote_disk_mount",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leochens",
+      "features": [
+        "远程磁盘挂载工具，支持 SMB/CIFS、FTP、SFTP、WebDAV 协议挂载远程共享到本地目录。当用户需要：(1) 挂载 Windows/Samba 共享，(2) 挂载 FTP/SFT."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remote-disk-mount@0.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30434852?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remote-disk-mount",
+      "url": "https://clawhub.ai/skills/remote-disk-mount"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remote-disk-mount",
+    "url": "https://clawhub.ai/skills/remote-disk-mount",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remote-disk-mount-a984c9eda5d127c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remote-disk-mount@0.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-remote-disk-mount-0.4.0.json",
+      "version": "0.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:296cd7c9ddcb567289fbe93d8ab08b0dd26c52cff37293b76cd7b1a5f3712577",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T05:56:20.405Z"
+}

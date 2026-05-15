@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-core@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_core",
+  "skill": {
+    "id": 8483,
+    "skillKey": "clawhub-agent-browser-core",
+    "name": "Agent Browser Core"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-core",
+    "url": "https://clawhub.ai/skills/agent-browser-core",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-core-695bde8d4b084247.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw skill for the agent-browser CLI (Rust-based with Node.js fallback) enabling AI-friendly web automation with snapshots, refs, and structured commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codedao12",
+      "userId": "s17ax1y7n44r8sjagk48sw25bx84nzpq",
+      "displayName": "codedao12",
+      "image": "https://avatars.githubusercontent.com/u/249323427?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 10835,
+      "installsAllTime": 80,
+      "installsCurrent": 72,
+      "stars": 21,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770369553491,
+      "changelog": "- Added comprehensive safety guidelines in a new `agent-browser-safety.md` reference file.\n- Updated orientation and documentation links to include safety and high-risk operation controls.\n- Introduced \"Safe mode defaults\" section to the main documentation, outlining recommended restrictions for secure automation.\n- Revised supporting references to clarify safe usage practices.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5aa90ce5e99704b33d5edd623779bd3497f90b3cf797a94eeafd0fc3956e0ac5"
+}

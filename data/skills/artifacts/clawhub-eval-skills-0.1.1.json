@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eval-skills@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eval_skills",
+  "skill": {
+    "id": 19819,
+    "skillKey": "clawhub-eval-skills",
+    "name": "Eval Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eval-skills",
+    "url": "https://clawhub.ai/skills/eval-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eval-skills-be00cb08ee6f3e77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent Skill unit testing framework. A framework-agnostic toolkit for discovering, scaffolding, selecting, evaluating, and reporting on AI skills. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "islinxu",
+      "userId": "publishers:islinxu",
+      "displayName": "Hertz",
+      "image": "https://avatars.githubusercontent.com/u/59380685?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 579,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1772350490951,
+      "changelog": "Initial public release with core evaluation framework and CLI.\n\n- Released framework-agnostic toolkit for discovering, scaffolding, selecting, evaluating, and reporting on AI skills.\n- CLI commands: find, create, eval, select, run, report, and init for full project workflow.\n- Included built-in and custom benchmark support with sample benchmarks and skill examples.\n- Multi-format report generation: JSON, markdown, HTML, and diff for regression detection.\n- CI/CD integration guide and comprehensive documentation provided.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6884eb0d11d8b1ee1764ff2f3461d21a795080412143f6e7a59ed008d8a6c74d"
+}

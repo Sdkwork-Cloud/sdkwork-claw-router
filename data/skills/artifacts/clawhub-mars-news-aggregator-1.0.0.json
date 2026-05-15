@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mars-news-aggregator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mars_news_aggregator",
+  "skill": {
+    "id": 65091,
+    "skillKey": "clawhub-mars-news-aggregator",
+    "name": "News Aggregator Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mars-news-aggregator",
+    "url": "https://clawhub.ai/skills/mars-news-aggregator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mars-news-aggregator-7411a3c3b608b5a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "国内外社会、科技、军事新闻汇总。自动搜索、筛选、整理新闻要点。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars82311111",
+      "userId": "s17ft7r4x02ndyd3z98hhdv6zn83w86s",
+      "displayName": "mars82311111",
+      "image": "https://avatars.githubusercontent.com/u/265482749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 145,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774958951936,
+      "changelog": "Initial release of mars-news-aggregator.\n\n- Aggregates domestic and international social, technology, and military news.\n- Automatically searches, filters, and summarizes key points from multiple reputable news sources.\n- Implements credibility rules prioritizing official and authoritative sources.\n- Outputs structured summaries categorized by news type.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7313930c88469aa2665ae367eefa126e8ae6b8c3a1062ca8fd17991ce163d57e"
+}

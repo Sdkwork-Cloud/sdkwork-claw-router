@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25748,
+  "uuid": "skill-clawhub-firm-reliability-pack",
+  "skillKey": "clawhub-firm-reliability-pack",
+  "name": "Firm Reliability Pack",
+  "summary": "Reliability probing and documentation sync pack. Gateway health probing, documentation sync validation, channel audit, and ADR generation. 4 reliability tools.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.firm_reliability_pack",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "romainsantoli-web",
+      "features": [
+        "Reliability probing and documentation sync pack",
+        "Gateway health probing, documentation sync validation, channel audit, and ADR generation",
+        "4 reliability tools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/firm-reliability-pack@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246739959?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "firm-reliability-pack",
+      "url": "https://clawhub.ai/skills/firm-reliability-pack"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "firm-reliability-pack",
+    "url": "https://clawhub.ai/skills/firm-reliability-pack",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/firm-reliability-pack-8704622ce9ca82aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/firm-reliability-pack@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-firm-reliability-pack-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3526d60758734637717e80d7f07122bb5f85877ccecf5c9369c1bb4e7220ae7",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T12:41:30.446Z"
+}

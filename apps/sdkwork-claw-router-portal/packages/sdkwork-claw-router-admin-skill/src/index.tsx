@@ -89,8 +89,8 @@ export function SkillAdmin() {
     try {
       const [nextCategories, nextPackages, nextSkills] = await Promise.all([
         AdminSkillService.fetchSkillCategories(),
-        AdminSkillService.fetchSkillPackages({ pageNo: 1, pageSize: 100 }),
-        AdminSkillService.fetchSkills({ pageNo: 1, pageSize: 100 }),
+        AdminSkillService.fetchSkillPackages({ page: 1, pageSize: 100 }),
+        AdminSkillService.fetchSkills({ page: 1, pageSize: 100 }),
       ]);
       setCategories(nextCategories);
       setPackages(nextPackages);

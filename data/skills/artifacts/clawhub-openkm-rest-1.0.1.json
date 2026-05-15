@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openkm-rest@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openkm_rest",
+  "skill": {
+    "id": 11656,
+    "skillKey": "clawhub-openkm-rest",
+    "name": "OpenKM Document Management"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openkm-rest",
+    "url": "https://clawhub.ai/skills/openkm-rest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openkm-rest-e7597071ea72f97c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenKM Document Management via REST API (folders, documents, metadata, versioning, search, workflows)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pes0",
+      "userId": "publishers:pes0",
+      "displayName": "pes0",
+      "image": "https://avatars.githubusercontent.com/u/11735198?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1549,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 5,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770487103568,
+      "changelog": "No user-visible changes in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d873ff545d51cdd7bd67ea3a7fa517f30221a69de6cfd3630c5ae8ecf6501198"
+}

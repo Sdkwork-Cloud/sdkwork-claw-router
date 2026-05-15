@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-browser-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_browser_automation",
+  "skill": {
+    "id": 17040,
+    "skillKey": "clawhub-linear-browser-automation",
+    "name": "Linear Browser Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-browser-automation",
+    "url": "https://clawhub.ai/skills/linear-browser-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-browser-automation-675da346297d8037.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Linear.app workflows in the OpenClaw-managed browser profile using browser tool actions (open, navigate, snapshot, act). Use when users want UI-base..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hassam-powerhouse",
+      "userId": "publishers:hassam-powerhouse",
+      "displayName": "Hassam",
+      "image": "https://avatars.githubusercontent.com/u/206915949?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 754,
+      "installsAllTime": 7,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772042243703,
+      "changelog": "Initial release of Linear Browser Automation skill for OpenClaw-managed browser.\n\n- Automates Linear.app workflows via UI actions in a dedicated, managed browser profile.\n- Strict required-input policies for all actions: always ask for and confirm key fields (team, issue, state, etc.) before proceeding.\n- Supports: opening Linear, searching/filtering issues, creating/editing issues with confirmation, moving issue state with enforced allowed values, adding comments, bulk triage, and visual state verification.\n- Automatic handling of authentication state and seamless resumption after login within the persistent browser profile.\n- Provides built-in safety checks, confirmation prompts before destructive changes, and validation for allowed priorities and states.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:35349bd329ca5543fc934342e4f87e0149d3ea6d1346377b090ae054785abe26"
+}

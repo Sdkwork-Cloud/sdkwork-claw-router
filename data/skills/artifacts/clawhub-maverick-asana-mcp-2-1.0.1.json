@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-asana-mcp-2@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_asana_mcp_2",
+  "skill": {
+    "id": 41796,
+    "skillKey": "clawhub-maverick-asana-mcp-2",
+    "name": "Asana mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-asana-mcp-2",
+    "url": "https://clawhub.ai/skills/maverick-asana-mcp-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-asana-mcp-2-212d67b82ac51190.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage Asana tasks, projects, portfolios, goals, and team workspaces via Asana's hosted MCP server (https://mcp.asana.com/v2/mcp). Use when the user asks abo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 150,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778147629421,
+      "changelog": "No notable changes detected in this version.\n\n- Version number and skill name updated (now maverick-asana-mcp-2, version 1.0.1)\n- No changes to files or functionality",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:faba350940eb633d9884ec106cd3dc8416004e2953153aa56e568c2ab192da19"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-music-video@1.2.4",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_music_video",
+  "skill": {
+    "id": 12679,
+    "skillKey": "clawhub-ai-music-video",
+    "name": "AI Music Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-music-video",
+    "url": "https://clawhub.ai/skills/ai-music-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-music-video-e355ebaf9e7ec0f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI music videos end-to-end. Creates music with Suno (sunoapi.org), generates visuals with OpenAI/Seedream/Google/Seedance, and assembles into music..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gprecious",
+      "userId": "publishers:gprecious",
+      "displayName": "Taejin Yoo",
+      "image": "https://avatars.githubusercontent.com/u/12422929?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1500,
+      "installsAllTime": 10,
+      "installsCurrent": 10,
+      "stars": 1,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.2.4",
+      "createdAt": 1771292199703,
+      "changelog": "Security fix: shell injection in assemble_mv.sh (filename escaping for ffmpeg concat lists), subtitle path escaping, python3 safe argv passing, SUNO_CALLBACK_URL restricted to https only",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f1227e55d08e7de6bba36e60160e3bbfa66f393c937e55e0b6923104120c43da"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59070,
+  "uuid": "skill-clawhub-sign-off",
+  "skillKey": "clawhub-sign-off",
+  "name": "Sign-Off",
+  "summary": "在每次完整输出后追加个性化落款签名。像对讲机的 Over，让用户明确知道 AI 说完了。Use when completing any response or after tool calls return results.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sign_off",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Z35th3rJJ",
+      "features": [
+        "在每次完整输出后追加个性化落款签名。像对讲机的 Over，让用户明确知道 AI 说完了。Use when completing any response or after tool call."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sign-off@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192316922?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sign-off",
+      "url": "https://clawhub.ai/skills/sign-off"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sign-off",
+    "url": "https://clawhub.ai/skills/sign-off",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sign-off-da292880b7ecdd49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sign-off@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sign-off-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c61cfbf902c88d780b4d507904aef873a314f8ffeb3c003703682544eb33ebab",
+      "artifactSizeBytes": 1934
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T13:56:08.213Z"
+}

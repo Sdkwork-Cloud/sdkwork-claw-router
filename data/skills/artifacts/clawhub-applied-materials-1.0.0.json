@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/applied-materials@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.applied_materials",
+  "skill": {
+    "id": 66828,
+    "skillKey": "clawhub-applied-materials",
+    "name": "Applied Materials"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "applied-materials",
+    "url": "https://clawhub.ai/skills/applied-materials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/applied-materials-e526d936a4f2fa5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球领先的半导体设备供应商，提供沉积、刻蚀、CMP等关键制造设备，支撑现代芯片工厂运营。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777064690670,
+      "changelog": "- 首次发布 Applied Materials 技能，系统性梳理其行业地位与发展历程。\n- 提供从1967年至2024年关键发展时间线，涵盖技术突破、市场扩张与营收数据。\n- 详述商业模式、护城河及全球市场份额。\n- 汇总2024年公司核心数据（营收、员工、研发投入等）。\n- 增加趣味公司轶事，提升可读性。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e4840c43614d2d167886a33ddcdc8cb57e3631fda0a193f095cba06254063e8"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kaggle-api@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaggle_api",
+  "skill": {
+    "id": 22929,
+    "skillKey": "clawhub-kaggle-api",
+    "name": "Kaggle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaggle-api",
+    "url": "https://clawhub.ai/skills/kaggle-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaggle-api-7c374c65ba0ce97e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Kaggle API integration with managed authentication. Access datasets, models, competitions, and kernels. Use this skill when users want to search, download, o..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "byungkyu",
+      "userId": "s174c3s2kc1ehqj1ytzntezj2983e2aj",
+      "displayName": "byungkyu",
+      "image": "https://avatars.githubusercontent.com/u/16563684?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772703259464,
+      "changelog": "- Initial release: Kaggle API integration with managed authentication via Maton.\n- Enables searching, downloading, and interacting with Kaggle datasets, models, competitions, and notebooks.\n- Authentication is streamlined using a Maton API key, no direct Kaggle API key handling required in requests.\n- Includes robust connection management: list, create, and delete Kaggle authentications through `ctrl.maton.ai`.\n- Provides ready-to-use Python examples and clear reference for key Kaggle API endpoints (list/get/download datasets, models, competitions, kernels, etc.).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4f15c22a9966bb057e7bc63708d5527046b75fca3018f30070db445184946d4f"
+}

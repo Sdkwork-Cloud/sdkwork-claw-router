@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21151,
+  "uuid": "skill-clawhub-morning-coffee-briefing",
+  "skillKey": "clawhub-morning-coffee-briefing",
+  "name": "Morning Coffee Briefing",
+  "summary": "Daily morning briefing skill. Reads your TASKS.md and memory files, synthesizes a prioritized day plan, and sends it to you via Telegram so you start the day...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_coffee_briefing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kevdogg102396-afk",
+      "features": [
+        "Daily morning briefing skill",
+        "Reads your TASKS.md and memory files, synthesizes a prioritized day plan, and sends it to you v."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/morning-coffee-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257070288?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "morning-coffee-briefing",
+      "url": "https://clawhub.ai/skills/morning-coffee-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-coffee-briefing",
+    "url": "https://clawhub.ai/skills/morning-coffee-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-coffee-briefing-0e6b49face49132f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/morning-coffee-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-morning-coffee-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:07627f228ef758539033cf27a8aef246805afeb760f2bc85cfdc73c2720c738f",
+      "artifactSizeBytes": 2329
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:08:35.471Z"
+}

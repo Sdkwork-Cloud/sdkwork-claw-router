@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-jau771@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_jau771",
+  "skill": {
+    "id": 41242,
+    "skillKey": "clawhub-agent-browser-jau771",
+    "name": "Agent Browser Jau771"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-jau771",
+    "url": "https://clawhub.ai/skills/agent-browser-jau771",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-jau771-e0b1337d98c001e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jau771",
+      "userId": "s179ztkwhp6qzb63f2x5b25v3583h3g4",
+      "displayName": "Jau771",
+      "image": "https://avatars.githubusercontent.com/u/125131170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774327469423,
+      "changelog": "Agent Browser 1.0.0 – Initial Release\n\n- Fast Rust-based headless browser automation CLI with Node.js fallback.\n- Enables AI agents to navigate, interact with, and extract data from web pages using structured commands.\n- Supports advanced web automation features: navigation, interaction (click/type), snapshots, form filling, testing, screenshots, PDF generation, video recording, and more.\n- Includes semantic locators, state management, network controls, and storage/cookie handling.\n- Provides a comprehensive command suite for browser control via CLI.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d5ac5fdd251f7ac4708a96f9c7a85f2a74dff7a61f60069a4e16de83f18aded8"
+}

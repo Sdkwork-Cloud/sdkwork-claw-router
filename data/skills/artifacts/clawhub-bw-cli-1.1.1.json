@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bw-cli@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bw_cli",
+  "skill": {
+    "id": 12866,
+    "skillKey": "clawhub-bw-cli",
+    "name": "Bitwarden CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bw-cli",
+    "url": "https://clawhub.ai/skills/bw-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bw-cli-9770a6a81dbe2eac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Securely interact with Bitwarden password manager via the bw CLI. Covers authentication (login/unlock/logout), vault operations (list/get/create/edit/delete..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0x7466",
+      "userId": "publishers:0x7466",
+      "displayName": "TFM",
+      "image": "https://avatars.githubusercontent.com/u/7838269?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1605,
+      "installsAllTime": 3,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771097879303,
+      "changelog": "feat: unlock-first workflow for better performance. Try unlock first (fast path), fall back to login only when vault not initialized. Reduces unnecessary API calls.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1a931173da01b4ac030c07e9b525eadd5164d0d7355f3637ec29a78520e97db5"
+}

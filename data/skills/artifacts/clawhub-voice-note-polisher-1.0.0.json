@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-note-polisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_note_polisher",
+  "skill": {
+    "id": 71391,
+    "skillKey": "clawhub-voice-note-polisher",
+    "name": "Voice Note Polisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-note-polisher",
+    "url": "https://clawhub.ai/skills/voice-note-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-note-polisher-799f255ab4aaaa97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将语音转录文本整理成目标格式的书面内容。凡是输入内容明显是口语化的——包括语音转录、口述笔记、随口说的想法、会议后的口头复盘——都应触发此 skill。支持的触发短语包括\"帮我整理成…\"\"帮我把接下来我说的话整理成…\"，目标格式包括备忘录、任务清单、中文邮件回复、英文邮件回复、英文口语、消息草稿、公众号写作提纲。..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "naplesblue",
+      "userId": "s174tdccpabnaejjh01pa5yca183qz6x",
+      "displayName": "naplesblue",
+      "image": "https://avatars.githubusercontent.com/u/44143000?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774614387259,
+      "changelog": "Initial release of the voice-note-polisher skill.\n\n- Transforms spoken, informal, or transcribed text into clear, written formats.\n- Supports multiple output modes: memo, task list, Chinese/English email reply, natural spoken English, message draft, and WeChat article outlines.\n- Automatically detects trigger phrases and target formats, with fallback to default de-oralized Chinese if no mode is specified.\n- Cleans up filler words, incomplete sentences, redundancies, and messy logic while preserving original intent and tone.\n- Outputs text directly in the chosen format, with no explanatory or meta content.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6b3e8076dc3feb85ee6f41f3c90e99d057f3452a557e33f7656ff7f6eb5d5df9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/westockdata@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.westockdata",
+  "skill": {
+    "id": 72657,
+    "skillKey": "clawhub-westockdata",
+    "name": "腾讯自选股数据工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "westockdata",
+    "url": "https://clawhub.ai/skills/westockdata",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/westockdata-e0dbc2693dcd1180.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询A股、港股、美股个股/指数/ETF的详细数据，包括：K线/分时、财务报表（三大报表多期查询，支持跨市场批量对比）、资金流向、技术指标、筹码分析、股东结构、分红除权、业绩预告、公司简况、ETF基金数据（详情/持仓/净值）；以及大盘指数、行业/板块行情、板块成份股、板块区间涨幅排行、指数成份股、热搜、新股日历、投..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "westock-skills",
+      "userId": "s177h4av34ez56sjtwmbv85c1d8508hd",
+      "displayName": "westock-skills",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776426380409,
+      "changelog": "**v1.0.1 Changelog**\n\n- 更新核心命令所有示例的 `westock-data-clawhub` 版本号至 1.0.4。\n- 新增安全说明，详细说明包来源、哈希、供应链风险与审慎建议。\n- 明确 `westock-data-clawhub@1.0.4` 安全信息，包含 integrity 校验值与发布渠道说明。\n- 其余指令结构、接口与功能未改变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bbc9f1366e2282b4d45d0d735113009723b6f94ba7ec7f57de074ce8d9d82318"
+}

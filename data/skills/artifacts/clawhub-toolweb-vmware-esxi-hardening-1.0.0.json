@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toolweb-vmware-esxi-hardening@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toolweb_vmware_esxi_hardening",
+  "skill": {
+    "id": 44043,
+    "skillKey": "clawhub-toolweb-vmware-esxi-hardening",
+    "name": "VMware Esxi Hardening"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toolweb-vmware-esxi-hardening",
+    "url": "https://clawhub.ai/skills/toolweb-vmware-esxi-hardening",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toolweb-vmware-esxi-hardening-c7ab9facb7254804.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional VMware ESXi 8.0 security configuration generator that produces hardened configuration files based on industry best practices."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774987747897,
+      "changelog": "VMware ESXi Security Hardening Tool 1.0.0 – Initial Release\n\n- Launches an API service to generate VMware ESXi 8.0 security hardening configurations aligned with industry best practices.\n- Supports flexible hardening profiles selectable by category (firewall, authentication, logging, services).\n- Delivers configuration files (YAML, firewall rules, audit policies) with a detailed summary of applied policies.\n- Provides endpoints for health checks, generating configurations, and listing available hardening options.\n- Includes tiered pricing for Free, Developer, Professional, and Enterprise usage plans.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9be5c5876c8857b3e86fb274aa93053ac0a2d5060e45b11def74bcf58f4303a"
+}

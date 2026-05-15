@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51349,
+  "uuid": "skill-clawhub-dropmail",
+  "skillKey": "clawhub-dropmail",
+  "name": "DropMail – disposable email manager",
+  "summary": "Manage disposable email addresses using GuerrillaMail. Use when a user wants to create a temporary/throwaway email address, check a disposable inbox for mess...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dropmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikolay",
+      "features": [
+        "Manage disposable email addresses using GuerrillaMail",
+        "Use when a user wants to create a temporary/throwaway email address, check a disposable inbox f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dropmail@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/98195072?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dropmail",
+      "url": "https://clawhub.ai/skills/dropmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dropmail",
+    "url": "https://clawhub.ai/skills/dropmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dropmail-b3c85180c351a51b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dropmail@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dropmail-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b42a7486b16e5dac834f8728b1aeef2be264e541dde5f3122f57c612d24f112a",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T13:41:53.539Z"
+}

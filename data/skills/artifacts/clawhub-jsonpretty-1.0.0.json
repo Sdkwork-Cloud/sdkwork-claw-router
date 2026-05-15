@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jsonpretty@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jsonpretty",
+  "skill": {
+    "id": 34837,
+    "skillKey": "clawhub-jsonpretty",
+    "name": "Jsonpretty"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jsonpretty",
+    "url": "https://clawhub.ai/skills/jsonpretty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jsonpretty-af2ad06322805cfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Format, validate, query, flatten, and analyze JSON data. Use when asked to pretty-print JSON, validate JSON syntax, query nested JSON with dot-notation, flat..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogue-agent1",
+      "userId": "s1712mz6nx5trtnxw701pn7ajd83ph8x",
+      "displayName": "rogue-agent1",
+      "image": "https://avatars.githubusercontent.com/u/259556880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 210,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774645398114,
+      "changelog": "- Initial release of jsonpretty, a pure Python tool for JSON formatting and analysis.\n- Supports pretty-printing, validation with error messages, dot-notation querying (including array indices), and flattening of nested JSON.\n- Provides JSON structure statistics: key count, maximum depth, data type summary, and byte size.\n- Includes compact (minify) and key-sorting output modes.\n- Works with files or stdin; zero external dependencies required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e710b906907e0ef9b992e15aedd0b465e4b3d2e877c1571c00c943ae7273f059"
+}

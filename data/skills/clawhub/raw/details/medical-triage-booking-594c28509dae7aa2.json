@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "medical-triage-booking",
+    "displayName": "medical-triage-booking",
+    "summary": "面向C端医疗导诊。根据用户主诉、病史等信息先做安全分流和挂号科室判断，再从内置医院数据中筛选最适合的医院/科室/医生 Top 3；随后给出北京114/京通挂号提示、挂号后提醒建议，以及基于百度地图的到院路线规划链接。",
+    "tags": {
+      "latest": "1.0.2"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 346,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "createdAt": 1773831547638,
+    "updatedAt": 1778311862346
+  },
+  "latestVersion": {
+    "version": "1.0.2",
+    "createdAt": 1773892501641,
+    "changelog": "- Updated the hospital route planning workflow to clarify and split the coordinate fetching and mapping steps.\n- Added an explicit step for converting both user and hospital locations into map coordinates before route planning.\n- Enhanced instructions: geolocation step now includes user prompt if IP-based location lookup fails.\n- Overall process flow for route generation is more detailed and modular.\n- No code or metadata changes; changes limited to SKILL.md documentation.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "sunlinlin-aragon",
+    "userId": "s17c4cacz03n2ffyeshhpf96ed83jcry",
+    "displayName": "sunlinlin-aragon",
+    "image": "https://avatars.githubusercontent.com/u/15337197?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778311862346
+  }
+}

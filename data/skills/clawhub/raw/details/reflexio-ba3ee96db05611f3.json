@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "reflexio",
+    "displayName": "Reflexio",
+    "summary": "Captures user facts and procedural corrections into .reflexio/ so the agent learns across sessions. Use when: (1) user states a preference, fact, config, or...",
+    "tags": {
+      "latest": "1.0.10"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 235,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 11
+    },
+    "createdAt": 1776286105998,
+    "updatedAt": 1777527590058
+  },
+  "latestVersion": {
+    "version": "1.0.10",
+    "createdAt": 1776843720084,
+    "changelog": "**Reflexio v1.0.10 — Major re-architecture: now runs fully local, storing all memory in .reflexio/ using only OpenClaw primitives.**\n\n- Replaced previous server-based design and network-dependent hooks with a native, file-backed skill under the new reflexio-embedded name.\n- Adds agent-initialization logic: probes and, if approved, auto-configures active-memory and .reflexio/ path registration per agent.\n- Introduces `reflexio_write_profile`, `reflexio_write_playbook`, and `reflexio_search` tools for profile/playbook management and retrieval.\n- Documents strict signals and capture requirements (triggers, confirmation/patterns, safety, TTL handling).\n- Removes network hops, external LLM/service dependencies, and credential prompts: all operation is now fully local and transparent.\n- Expanded documentation for first-use setup, data safety, and degraded mode operation if configuration steps are declined.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "yyiilluu",
+    "userId": "s1752wxw7gr3fp8fs91zp3thxn84w528",
+    "displayName": "Yi Lu",
+    "image": "https://avatars.githubusercontent.com/u/8951613?v=4"
+  },
+  "moderation": null
+}

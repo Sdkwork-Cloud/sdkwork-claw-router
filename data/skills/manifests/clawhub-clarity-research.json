@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21283,
+  "uuid": "skill-clawhub-clarity-research",
+  "skillKey": "clawhub-clarity-research",
+  "name": "Clarity Research",
+  "summary": "Search protein folding research data from Clarity Protocol. Use when the user asks to search variants, query protein research, find fold results, or explore...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clarityprotocol",
+      "features": [
+        "Search protein folding research data from Clarity Protocol",
+        "Use when the user asks to search variants, query protein research, find fold results, or explor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clarity-research@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255743260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clarity-research",
+      "url": "https://clawhub.ai/skills/clarity-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-research",
+    "url": "https://clawhub.ai/skills/clarity-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-research-b9ee55328d8fa9f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clarity-research@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clarity-research-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:839a4850f0428aff4d93d8f1df7b7feca006197591825896e110640d73e5f170",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T21:41:23.162Z"
+}

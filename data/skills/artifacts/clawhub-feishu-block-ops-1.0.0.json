@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-block-ops@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_block_ops",
+  "skill": {
+    "id": 25541,
+    "skillKey": "clawhub-feishu-block-ops",
+    "name": "Feishu Block Ops"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-block-ops",
+    "url": "https://clawhub.ai/skills/feishu-block-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-block-ops-b99dcd08571656f1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Low-level Feishu document block operations via REST API. Use when feishu_doc built-in actions are insufficient: batch update cells, precise position insert,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deadblue22",
+      "userId": "publishers:deadblue22",
+      "displayName": "deadblue",
+      "image": "https://avatars.githubusercontent.com/u/448649?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772605566752,
+      "changelog": "feishu-block-ops 1.0.0\n\n- Initial release providing direct Feishu document block operations via REST API.\n- Supports batch cell updates, precise positioned inserts, block tree traversal, table row/column manipulation, and in-place image replacement.\n- Enables advanced use cases not covered by the standard feishu_doc actions.\n- Detailed usage instructions, rate limits, API reference, and common patterns included in documentation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cf7bc86275da707c07679a8c4bba747caf722dba689599d3a2c162bff129a242"
+}

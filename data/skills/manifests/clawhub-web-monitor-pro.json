@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11125,
+  "uuid": "skill-clawhub-web-monitor-pro",
+  "skillKey": "clawhub-web-monitor-pro",
+  "name": "Web Monitor",
+  "summary": "Monitor web pages for changes, price drops, stock availability, and custom conditions. Use when a user asks to watch/track/monitor a URL, get notified about...",
+  "version": "3.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_monitor_pro",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jakes420",
+      "features": [
+        "Monitor web pages for changes, price drops, stock availability, and custom conditions",
+        "Use when a user asks to watch/track/monitor a URL, get notified about..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-monitor-pro@3.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84342225?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-monitor-pro",
+      "url": "https://clawhub.ai/skills/web-monitor-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-monitor-pro",
+    "url": "https://clawhub.ai/skills/web-monitor-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-monitor-pro-bc30a3de92e9d577.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-monitor-pro@3.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-monitor-pro-3.5.0.json",
+      "version": "3.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f3407912ab066e4b467d68dc01a610d002cccaff64da25ed30b64c56547cdc5",
+      "artifactSizeBytes": 1971
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T20:03:58.866Z"
+}

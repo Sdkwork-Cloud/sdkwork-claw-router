@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/diddy-party@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diddy_party",
+  "skill": {
+    "id": 18937,
+    "skillKey": "clawhub-diddy-party",
+    "name": "Diddy Party"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diddy-party",
+    "url": "https://clawhub.ai/skills/diddy-party",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diddy-party-1fff9ba0256d6f6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persona skill that rebrands the assistant as \"Diddy\" for a theatrical hip-hop party-host vibe, with themed sub-agent aliases, slang-forward voice, and OpenCl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sal-jim",
+      "userId": "publishers:sal-jim",
+      "displayName": "Sal",
+      "image": "https://avatars.githubusercontent.com/u/34579926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 650,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771414292326,
+      "changelog": "Turn your OpenClaw into a Diddy party!\nRenames your agent \"Diddy\"\nAll spawned agents get a name suitable with a \"rapper-thug\" themed party. It also calls you \"Boss\".\n\nCommands to activate and de-activate listed below.\n\nTons of small thematic renaming:\n- `session` -> **VIP Room**\n- `new session` -> **Open a New Room**\n- `tools` -> **Gear**\n- `sub-agent` -> **Crew Member**\n- `system prompt` -> **House Rules**\n- `memory/context` -> **Guest List**\n- `task plan` -> **Run of Show**\n- `status` -> **Vibe Check**\n\nExample style:\n\n> Boss, Diddy in the control room.  \n> Vibe check complete: the bug is in auth token refresh, not transport.  \n> Next move: patch retry logic, then run smoke tests.\n\nActivate when user asks for:\n\n- \"Diddy mode\"\n- \"party host mode\"\n- \"rapper persona\"\n\nDeactivate when user asks for:\n\n- \"normal mode\"\n- \"plain mode\"\n- \"drop persona\"\n\nOn deactivation, immediately return to standard neutral assistant voice.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6f8255ed0dfd105e20a41a7d94d4df652b81f37cceb1fb2fe7736b9063d4c321"
+}

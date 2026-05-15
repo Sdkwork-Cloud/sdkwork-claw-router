@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vmware-harden@1.5.22",
+  "version": "1.5.22",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vmware_harden",
+  "skill": {
+    "id": 34985,
+    "skillKey": "clawhub-vmware-harden",
+    "name": "Vmware Harden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vmware-harden",
+    "url": "https://clawhub.ai/skills/vmware-harden",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vmware-harden-7a2f11f3dd9378d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill whenever the user needs to perform VMware compliance auditing, baseline checking, or drift detection on vSphere/ESXi/NSX environments. Directl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zw008",
+      "userId": "s171xgnmqse0nqvgqvqnaq5f9183kyre",
+      "displayName": "zw008",
+      "image": "https://avatars.githubusercontent.com/u/10613299?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.5.22",
+      "createdAt": 1778282723794,
+      "changelog": "v1.5.22 — Smithery onboarding (Dockerfile + smithery.yaml)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:159b735f056cca076e53d981a152b5a8e8551c3c386015a8b120e9fca2660f0e"
+}

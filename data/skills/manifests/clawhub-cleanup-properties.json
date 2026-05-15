@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41564,
+  "uuid": "skill-clawhub-cleanup-properties",
+  "skillKey": "clawhub-cleanup-properties",
+  "name": "Cleanup Properties",
+  "summary": "Archive or delete unused custom properties across all HubSpot object types (contacts, companies, deals). Identifies Salesforce sync properties, test/temp pro...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cleanup_properties",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TomGranot",
+      "features": [
+        "Archive or delete unused custom properties across all HubSpot object types (contacts, companies.",
+        "Identifies Salesforce sync properties, test/temp pro..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cleanup-properties@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8835035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cleanup-properties",
+      "url": "https://clawhub.ai/skills/cleanup-properties"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cleanup-properties",
+    "url": "https://clawhub.ai/skills/cleanup-properties",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cleanup-properties-6c1f6a3b45a9c5c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cleanup-properties@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cleanup-properties-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8acb3bc2ed34d585f64072ca59189c1e7ce96f0d891d00b1857b48b99d09676",
+      "artifactSizeBytes": 2432
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T17:35:54.684Z"
+}

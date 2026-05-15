@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mpps-attestation@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mpps_attestation",
+  "skill": {
+    "id": 28586,
+    "skillKey": "clawhub-mpps-attestation",
+    "name": "Mpps Attestation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mpps-attestation",
+    "url": "https://clawhub.ai/skills/mpps-attestation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mpps-attestation-36681080d9c8b149.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create tamper-proof receipts for AI agent work. Hash artifacts or action manifests, POST to api.mpps.io, get an HSM-signed receipt. No API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gdlg-ai",
+      "userId": "s17ezaavy0xkzn6w1e4xf1yhdx85w0rf",
+      "displayName": "gdlg-ai",
+      "image": "https://avatars.githubusercontent.com/u/230083513?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 322,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1777650816405,
+      "changelog": "Reposition skill around tamper-proof agent action receipts and add /v1/receipts examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e8c0498204bf41c7a35189ce94983280a4869bf4ba32838b0fa56f83a17f28d6"
+}

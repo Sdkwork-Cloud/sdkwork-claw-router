@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-generator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_generator",
+  "skill": {
+    "id": 72547,
+    "skillKey": "clawhub-idea-generator",
+    "name": "idea-generator。超级深度思考-创意生成系统。通过多轮迭代筛选高分创意，每轮步骤：需求分析-信息搜集-洞察分析-创意生成-反馈-下一轮。项目集中了可视化的网页端。安装后在前端输入“启动创意工作台”即可启动服务。"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-generator",
+    "url": "https://clawhub.ai/skills/idea-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-generator-dc695b36cf82e42a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创意工作台启动器。当用户说「启动创意工作台」「打开工作台」「开启工作台」时激活。负责启动工作台服务并返回访问链接，创意生成由用户在工作台网页中操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sunnyxiaoli",
+      "userId": "s17ctg0b1jrvb3ykj2nv1jt6a1849rj8",
+      "displayName": "sunnyxiaoli",
+      "image": "https://avatars.githubusercontent.com/u/205262667?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 202,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776605368539,
+      "changelog": "- B站（Bilibili）成为唯一的社交内容搜索平台，小红书平台被移除，每轮网络搜索仅限百度和B站。\n- 新增搜索流程说明：每轮搜索词条要聚焦某个洞察或优秀案例，避免泛泛而谈，且需发散思维，不单一死磕某个方向。\n- 每轮的搜索平台数量由3减为2，相应调整了browser用法说明。\n- 技术结构未变，核心流程依然保持按轮次依赖和状态门控规则。\n- 新增脚本相关配置和日志文件：.server_port、.trigger_agent、server.log。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5f0530dcb4d9a06452490c86ed51ce27e75b15b2cd4053df5ce084400141bdf5"
+}

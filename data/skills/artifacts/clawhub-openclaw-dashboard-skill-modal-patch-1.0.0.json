@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-dashboard-skill-modal-patch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_dashboard_skill_modal_patch",
+  "skill": {
+    "id": 41482,
+    "skillKey": "clawhub-openclaw-dashboard-skill-modal-patch",
+    "name": "OpenClaw Dashboard Skill Modal Patch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-dashboard-skill-modal-patch",
+    "url": "https://clawhub.ai/skills/openclaw-dashboard-skill-modal-patch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-dashboard-skill-modal-patch-10daa6039371d72c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Repair the OpenClaw Control UI Skills modal when clicking a skill row does nothing and DevTools shows a showModal InvalidStateError because the dialog is not..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danrudy33",
+      "userId": "s173a0xtabc6wcdkbz6q6jd90n849bk9",
+      "displayName": "danrudy33",
+      "image": "https://avatars.githubusercontent.com/u/265958261?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775362573236,
+      "changelog": "- Initial release of the openclaw-dashboard-skill-modal-patch skill.\n- Fixes the issue where the Skills page modal does not open and DevTools reports \"showModal InvalidStateError\" due to the dialog not being in the document.\n- Provides step-by-step instructions to patch the UI bundle and resolve the modal open bug.\n- Includes troubleshooting notes for future OpenClaw builds if asset filenames change.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:468bc146344aec8b430b2d7675c0fd3cce439847fd013a2a4cae50cc2159ad13"
+}

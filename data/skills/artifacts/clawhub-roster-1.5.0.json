@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/roster@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.roster",
+  "skill": {
+    "id": 15530,
+    "skillKey": "clawhub-roster",
+    "name": "Roster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "roster",
+    "url": "https://clawhub.ai/skills/roster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/roster-c6836f7ad1c4da8a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates weekly shift rosters (KW-JSON) from CSV availability data and pushes them to GitHub."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kleberbaum",
+      "userId": "s179y7p0xkfm2kf6ncqxegwrzd84dvzm",
+      "displayName": "kleberbaum",
+      "image": "https://avatars.githubusercontent.com/u/26285351?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1000,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1775576594668,
+      "changelog": "Added domain glossary, multi-slot logic, minor group checks, group formation algorithm",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd90ccf80a49ffc00145ae21f7a74a44d43b65bf86b6818257f495cd00ee587f"
+}

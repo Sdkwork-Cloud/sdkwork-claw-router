@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49547,
+  "uuid": "skill-clawhub-feishu-sheet-links",
+  "skillKey": "clawhub-feishu-sheet-links",
+  "name": "Feishu Sheet Links",
+  "summary": "Extract all hyperlinks from a public Feishu spreadsheet across all sheet tabs, and optionally batch-download the linked articles as Markdown files. Use when...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_sheet_links",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wangyan",
+      "features": [
+        "Extract all hyperlinks from a public Feishu spreadsheet across all sheet tabs, and optionally b.",
+        "Use when..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-sheet-links@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3444324?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-sheet-links",
+      "url": "https://clawhub.ai/skills/feishu-sheet-links"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-sheet-links",
+    "url": "https://clawhub.ai/skills/feishu-sheet-links",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-sheet-links-e680eec703024944.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-sheet-links@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-sheet-links-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bc89e52e6bbf0752996131bd0aeb2097d7d6a640977621080a9b57a16b52fac0",
+      "artifactSizeBytes": 1993
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T07:54:54.817Z"
+}

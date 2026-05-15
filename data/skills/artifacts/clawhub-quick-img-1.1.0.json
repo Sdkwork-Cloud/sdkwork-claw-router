@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quick-img@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_img",
+  "skill": {
+    "id": 27593,
+    "skillKey": "clawhub-quick-img",
+    "name": "Quick Img V2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-img",
+    "url": "https://clawhub.ai/skills/quick-img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-img-eca43f5862b3ecee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images using curl and the SkillBoss API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "marjoriebroad",
+      "userId": "s17evr8hna69xbf4mv5z0nppgx84m26f",
+      "displayName": "MarjorieBroad",
+      "image": "https://avatars.githubusercontent.com/u/260425366?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773218089445,
+      "changelog": "Added JS hello script",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:974d35fa59a926198bf94904162efe182c4aafec13bad04a7aa594ca7a3a7930"
+}

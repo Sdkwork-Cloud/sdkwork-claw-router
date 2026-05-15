@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63906,
+  "uuid": "skill-clawhub-bi2-report-generator",
+  "skillKey": "clawhub-bi2-report-generator",
+  "name": "Bi2 Report Generator",
+  "summary": "根据PPTX截图提取经营数据，自动生成并保存BI2事业部多维度HTML格式经营分析报告，并发送至飞书用户。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bi2_report_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Richard052317",
+      "features": [
+        "根据PPTX截图提取经营数据，自动生成并保存BI2事业部多维度HTML格式经营分析报告，并发送至飞书用户。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bi2-report-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265495226?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bi2-report-generator",
+      "url": "https://clawhub.ai/skills/bi2-report-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bi2-report-generator",
+    "url": "https://clawhub.ai/skills/bi2-report-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bi2-report-generator-2c24e9a48b9df94c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bi2-report-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bi2-report-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7affdec6c82f2f7ab6dddd95efaaaaab417c2ca45e50b94fee8282bcd004dc97",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T03:59:27.407Z"
+}

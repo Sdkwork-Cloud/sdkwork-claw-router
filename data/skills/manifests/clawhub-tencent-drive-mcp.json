@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58115,
+  "uuid": "skill-clawhub-tencent-drive-mcp",
+  "skillKey": "clawhub-tencent-drive-mcp",
+  "name": "Tencent Drive(Weiyun) MCP",
+  "summary": "微云网盘 MCP 接口完整技能。包含 weiyun.list、weiyun.list_by_category、weiyun.download、weiyun.delete、weiyun.upload、weiyun.gen_share_link、weiyun.rename_file、weiyun.rename_dir...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_drive_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "振云 (Percy)",
+      "features": [
+        "微云网盘 MCP 接口完整技能。包含 weiyun.list、weiyun.list_by_category、weiyun.download、weiyun.delete、weiyun.upl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-drive-mcp@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5087001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-drive-mcp",
+      "url": "https://clawhub.ai/skills/tencent-drive-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-drive-mcp",
+    "url": "https://clawhub.ai/skills/tencent-drive-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-drive-mcp-4f1ac8e092619db9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-drive-mcp@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-drive-mcp-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42682783425a50629817e13aa01f9e781c4d44f1407717a9272f4972fe18302c",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T08:11:16.967Z"
+}

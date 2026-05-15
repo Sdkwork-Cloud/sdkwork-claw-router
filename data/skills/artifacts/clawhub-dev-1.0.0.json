@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dev@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dev",
+  "skill": {
+    "id": 20577,
+    "skillKey": "clawhub-dev",
+    "name": "Dev"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dev",
+    "url": "https://clawhub.ai/skills/dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dev-ef260e9aa3c673af.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full stack web developer assistant specializing in React, JavaScript, HTML, CSS, Tailwind, and API integrations, focusing on clean code and cost-effective so..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "psvanzijl",
+      "userId": "s17f6bz9f4103tweskrbns7m9s83tfxr",
+      "displayName": "psvanzijl",
+      "image": "https://avatars.githubusercontent.com/u/96499993?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 419,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774820721765,
+      "changelog": "Initial release of the Dev full stack web developer assistant for Agent OS.\n\n- Specializes in React, JavaScript, HTML, CSS, Tailwind, and API automation\n- Writes clean, efficient, and well-commented code\n- Always asks for task clarification and confirmation at each major step\n- Recommends free, cost-effective solutions first and avoids paid tools if free options exist\n- Supports code generation and testing via `write` and `exec` tools",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85eda5f1dcefd6adf81528c2bab4ced39a2ba3ad951a47bf125fd7281c85dfff"
+}

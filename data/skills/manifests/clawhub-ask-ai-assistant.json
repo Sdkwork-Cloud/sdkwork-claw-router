@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72863,
+  "uuid": "skill-clawhub-ask-ai-assistant",
+  "skillKey": "clawhub-ask-ai-assistant",
+  "name": "AI助手自动求助技能",
+  "summary": "自动识别问题复杂度，优先使用豆包、千问等多AI轮询获取并验证可执行解决方案，遇验证码需用户协助。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ask_ai_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danielwang20150225-source",
+      "features": [
+        "自动识别问题复杂度，优先使用豆包、千问等多AI轮询获取并验证可执行解决方案，遇验证码需用户协助。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ask-ai-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226548993?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ask-ai-assistant",
+      "url": "https://clawhub.ai/skills/ask-ai-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ask-ai-assistant",
+    "url": "https://clawhub.ai/skills/ask-ai-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ask-ai-assistant-5b66196ce0bc720e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ask-ai-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ask-ai-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f0c3562ed5800a2af36e1d0e855d2d2173f960f7a886e524034db366fee6f452",
+      "artifactSizeBytes": 2696
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T11:06:00.291Z"
+}

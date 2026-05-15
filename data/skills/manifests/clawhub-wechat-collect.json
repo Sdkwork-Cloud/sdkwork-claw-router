@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55487,
+  "uuid": "skill-clawhub-wechat-collect",
+  "skillKey": "clawhub-wechat-collect",
+  "name": "Wechat Collect",
+  "summary": "Fetch a public WeChat article URL, archive the raw HTML, and convert the article into a stage-1 compatible brief in `content-production/inbox/`. Use when Cod...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_collect",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Abigale-cyber",
+      "features": [
+        "Fetch a public WeChat article URL, archive the raw HTML, and convert the article into a stage-1.",
+        "Use when Cod..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-collect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/237663252?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-collect",
+      "url": "https://clawhub.ai/skills/wechat-collect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-collect",
+    "url": "https://clawhub.ai/skills/wechat-collect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-collect-7924015d23666fa6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-collect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-collect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c82db01a4bc78bc093f2b224a13fabc7fe753120e81867f18ed3f5419230defc",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T15:19:04.210Z"
+}

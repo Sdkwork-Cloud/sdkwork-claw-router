@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47457,
+  "uuid": "skill-clawhub-youtube-video-subtitle-generator",
+  "skillKey": "clawhub-youtube-video-subtitle-generator",
+  "name": "Youtube Video Subtitle Generator",
+  "summary": "generate YouTube video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers use it for adding subtit...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_subtitle_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "generate YouTube video files into captioned video files with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "YouTubers use it for adding subtit..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-video-subtitle-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-video-subtitle-generator",
+      "url": "https://clawhub.ai/skills/youtube-video-subtitle-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-subtitle-generator",
+    "url": "https://clawhub.ai/skills/youtube-video-subtitle-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-subtitle-generator-d2ea379fc15d56b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-video-subtitle-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-video-subtitle-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9008163b54ed14ff2514d85a6aa5f4b53ebe14338491a3b0eaad3c3171c8ad7e",
+      "artifactSizeBytes": 2636
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T17:42:53.932Z"
+}

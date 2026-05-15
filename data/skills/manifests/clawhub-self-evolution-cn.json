@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62300,
+  "uuid": "skill-clawhub-self-evolution-cn",
+  "skillKey": "clawhub-self-evolution-cn",
+  "name": "Self Evolution Cn",
+  "summary": "多 agent 自我进化系统，自动记录学习、错误和功能需求，支持多 agent 统计和自动提升",
+  "version": "2.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_evolution_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cheney",
+      "features": [
+        "多 agent 自我进化系统，自动记录学习、错误和功能需求，支持多 agent 统计和自动提升"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/self-evolution-cn@2.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246393767?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "self-evolution-cn",
+      "url": "https://clawhub.ai/skills/self-evolution-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-evolution-cn",
+    "url": "https://clawhub.ai/skills/self-evolution-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-evolution-cn-fd3f1ee277575f0a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/self-evolution-cn@2.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-self-evolution-cn-2.1.1.json",
+      "version": "2.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ae3767580a8248c59740f1cd7aac93c4ad81af7e2dacbe38d9d9e3cb18bb6b2",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:03:28.845Z"
+}

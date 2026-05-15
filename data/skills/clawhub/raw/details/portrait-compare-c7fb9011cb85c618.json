@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "portrait-compare",
+    "displayName": "portrait-compare",
+    "summary": "人脸识别与相似度比对 skill。当用户上传两张照片并询问\"是否为同一个人\"、\"人脸相似度\"、\"人脸比对\"、\"人脸识别\"、\"两张图片是不是同一个人\"，或需要计算两张人脸照片的相似度分数时，必须使用此 skill。 适用场景：人证比对、照片对比、身份核验、人脸匹配等任务。即使用户只是说\"帮我看看这两张照片是不是同一...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774362546201,
+    "updatedAt": 1777623163100
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774362546201,
+    "changelog": "Initial release of portrait-compare skill for face recognition and similarity comparison\n\n- Enables face detection and similarity comparison between two uploaded photos.\n- Supports two algorithm modes: high-precision ONNX (YuNet + SFace) and general-purpose (Haar Cascade + HOG).\n- Automatically selects the optimal algorithm based on environment and available models.\n- Provides clear user-facing judgment and similarity score interpretation.\n- Handles edge cases such as multiple/no faces, unreadable images, and offers user guidance for each.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xavierjiezou",
+    "userId": "s1753byez28asgw04kpbp9v2qs83hx80",
+    "displayName": "TuringParty",
+    "image": "https://avatars.githubusercontent.com/u/43515350?v=4"
+  },
+  "moderation": null
+}

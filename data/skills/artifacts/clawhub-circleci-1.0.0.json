@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/circleci@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.circleci",
+  "skill": {
+    "id": 51906,
+    "skillKey": "clawhub-circleci",
+    "name": "Circleci"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "circleci",
+    "url": "https://clawhub.ai/skills/circleci",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/circleci-d3566809b85a6169.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CircleCI CI/CD — manage pipelines, workflows, jobs, and insights via REST API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 820,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771639500642,
+      "changelog": "Initial release — command-line tool for managing CircleCI via REST API.\n\n- Supports managing pipelines, workflows, jobs, and insights.\n- Multiple commands available: list, get, trigger, cancel, and rerun for pipelines, workflows, jobs, and more.\n- Outputs JSON by default; human-readable formatting available with --human flag.\n- Requires only a CircleCI personal API token (no dependencies).\n- Includes full command reference and examples for quick start.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ded05aaa3fb3626b0ca9ba079e28a29e2f82cbaf1cdd90c1590f35561045985"
+}

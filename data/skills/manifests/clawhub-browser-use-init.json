@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58749,
+  "uuid": "skill-clawhub-browser-use-init",
+  "skillKey": "clawhub-browser-use-init",
+  "name": "browser-use-init",
+  "summary": "初始化并启动 Chrome DevTools Protocol（CDP）模式，支持用 Playwright 和 browser-use Agent 远程控制真实 Chrome 浏览器。解决 Chrome 145+ App-Bound Encryption 限制，自动复制 Profile 到非默认路径以启用 CDP...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_use_init",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xyzmeat",
+      "features": [
+        "初始化并启动 Chrome DevTools Protocol（CDP）模式，支持用 Playwright 和 browser-use Agent 远程控制真实 Chrome 浏览器。解决."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/browser-use-init@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/156918374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "browser-use-init",
+      "url": "https://clawhub.ai/skills/browser-use-init"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-use-init",
+    "url": "https://clawhub.ai/skills/browser-use-init",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-use-init-02c5d2dd05981ea4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/browser-use-init@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-browser-use-init-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c2eb82e516b8c6e76ba928a2e646eb2107d4e770a90950822ec95793eb932cb2",
+      "artifactSizeBytes": 2593
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T15:58:14.146Z"
+}

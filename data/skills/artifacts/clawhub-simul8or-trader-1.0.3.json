@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/simul8or-trader@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.simul8or_trader",
+  "skill": {
+    "id": 9157,
+    "skillKey": "clawhub-simul8or-trader",
+    "name": "Simul8or Trader"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "simul8or-trader",
+    "url": "https://clawhub.ai/skills/simul8or-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/simul8or-trader-132a8da1144a2604.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous AI trading agent for Simul8or, a live market simulator."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "day-trading-simulator",
+      "userId": "publishers:day-trading-simulator",
+      "displayName": "day-trading-simulator",
+      "image": "https://avatars.githubusercontent.com/u/11820356?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 3663,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 11,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1770414776253,
+      "changelog": "- Expanded and clarified the setup instructions, including manual and cron job steps.\n- Added instructions for acquiring and configuring the API key.\n- Introduced a new section encouraging users to share their trading performance profile.\n- Improved formatting for easier reading and clearer command usage.\n- Minor documentation updates and corrections for accuracy.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c5d543a3c488cee66e5461c81ad111911d8722a13396ebee0d48c2f96019e79"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36430,
+  "uuid": "skill-clawhub-acong-hello-world",
+  "skillKey": "clawhub-acong-hello-world",
+  "name": "Acong Hello World",
+  "summary": "End-to-end smoke test for skill-publish-cli. Published from Hangzhou Acong Intelligent Technology Co., Ltd to verify the full ClawHub + skills.sh release pip...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acong_hello_world",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yarnb",
+      "features": [
+        "End-to-end smoke test for skill-publish-cli",
+        "Published from Hangzhou Acong Intelligent Technology Co., Ltd to verify the full ClawHub + skil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acong-hello-world@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138216172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acong-hello-world",
+      "url": "https://clawhub.ai/skills/acong-hello-world"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acong-hello-world",
+    "url": "https://clawhub.ai/skills/acong-hello-world",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acong-hello-world-4a10fbbf5dbdbf79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acong-hello-world@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acong-hello-world-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ed69433a4d3a68c7089b7031210de86b735e80bd09d98fe669941a17e9cfcbaa",
+      "artifactSizeBytes": 1968
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:43:56.857Z"
+}

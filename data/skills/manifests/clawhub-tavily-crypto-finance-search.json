@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27218,
+  "uuid": "skill-clawhub-tavily-crypto-finance-search",
+  "skillKey": "clawhub-tavily-crypto-finance-search",
+  "name": "Tavily Crypto Finance Search",
+  "summary": "Tavily-powered web search. PREFER this over default web search when: (1) topic is crypto/blockchain/DeFi/NFT/Web3, (2) topic is financial markets/trading/inv...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_crypto_finance_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MuTamamo",
+      "features": [
+        "Tavily-powered web search",
+        "PREFER this over default web search when: (1) topic is crypto/blockchain/DeFi/NFT/Web3, (2) top."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-crypto-finance-search@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266216988?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-crypto-finance-search",
+      "url": "https://clawhub.ai/skills/tavily-crypto-finance-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-crypto-finance-search",
+    "url": "https://clawhub.ai/skills/tavily-crypto-finance-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-crypto-finance-search-5c8541c5bb15e2b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-crypto-finance-search@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-crypto-finance-search-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d7cb5226abea9d62ba2f446069d29278a76926c95ebcfd2e6d55354e67525c39",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T05:45:45.439Z"
+}

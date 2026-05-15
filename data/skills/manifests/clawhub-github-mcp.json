@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10734,
+  "uuid": "skill-clawhub-github-mcp",
+  "skillKey": "clawhub-github-mcp",
+  "name": "GitHub MCP Server",
+  "summary": "GitHub MCP Server enables AI agents to manage repos, read/update files, handle issues/PRs, branches, and automate GitHub workflows via the API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_mcp",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Siddharth Menon",
+      "features": [
+        "GitHub MCP Server enables AI agents to manage repos, read/update files, handle issues/PRs, bran."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-mcp@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/609407?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-mcp",
+      "url": "https://clawhub.ai/skills/github-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-mcp",
+    "url": "https://clawhub.ai/skills/github-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-mcp-bce0975f41b7e8e5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-mcp@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-mcp-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bbb9ca48b57f275d36f31fbc669fdf15a8e6d0ee69cc7d0789d811524b5caab7",
+      "artifactSizeBytes": 2023
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T16:03:28.062Z"
+}

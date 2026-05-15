@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71203,
+  "uuid": "skill-clawhub-fofa-query",
+  "skillKey": "clawhub-fofa-query",
+  "name": "fofa-query",
+  "summary": "网络空间资产搜索引擎，支持 IP/域名/端口/协议/证书等多维度查询；当用户需要进行网络资产发现、安全研究、漏洞资产定位、证书分析或需要查询特定特征的互联网资产时使用",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fofa_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "末心",
+      "features": [
+        "网络空间资产搜索引擎，支持 IP/域名/端口/协议/证书等多维度查询；当用户需要进行网络资产发现、安全研究、漏洞资产定位、证书分析或需要查询特定特征的互联网资产时使用"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fofa-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59173630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fofa-query",
+      "url": "https://clawhub.ai/skills/fofa-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fofa-query",
+    "url": "https://clawhub.ai/skills/fofa-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fofa-query-dacf95514e011545.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fofa-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-fofa-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e527035182c846198721c53fe5bba1cf6bae2951529b297e0808bf16d151a89b",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T19:44:19.693Z"
+}

@@ -1,0 +1,43 @@
+{
+  "skill": {
+    "slug": "alter-identity",
+    "displayName": "ALTER Identity",
+    "summary": "Human identity layer for AI agent commerce. 33-trait psychometric identity engine with consent-gated MCP tools. Agents pay x402 micropayments to query verifi...",
+    "tags": {
+      "latest": "0.3.5",
+      "agent-commerce": "0.3.1",
+      "anthropic": "0.2.2",
+      "belonging": "0.3.1",
+      "erc-8004": "0.2.2",
+      "identity": "0.3.1",
+      "mcp": "0.3.1",
+      "psychometric": "0.3.1",
+      "verification": "0.3.1",
+      "x402": "0.3.1"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "createdAt": 1776263770370,
+    "updatedAt": 1777527579551
+  },
+  "latestVersion": {
+    "version": "0.3.5",
+    "createdAt": 1776387633355,
+    "changelog": "ALTER Identity 0.3.5 — skill refactored to pure MCP connector.\n\n- The bundled Python reference bot has been removed from the skill package. The skill now ships only this SKILL.md + README.md; no client code runs on the install host, no env vars or API keys are required to install or use it.\n- Nothing changes on the server side — mcp.truealter.com behaviour, the 24 free + 8 premium tools, consent flow, and earning splits are unchanged. Agents already connected via the documented MCP endpoint continue working without changes.\n- Reference bot source preserved in the project repository under openclaw-bot-example/ for operators who want a working Python client; it is no longer bundled with the ClawHub listing.\n- Scanner alignment: with no client code transmitting data, registry metadata (no required credentials) now matches the skill's actual behaviour.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "maxchop",
+    "userId": "s17fec2ch7sxk0rdf0spn6vxe184xadz",
+    "displayName": "~blake",
+    "image": "https://avatars.githubusercontent.com/u/104915256?v=4"
+  },
+  "moderation": null
+}

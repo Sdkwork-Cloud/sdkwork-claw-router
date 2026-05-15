@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73208,
+  "uuid": "skill-clawhub-cn-pomodoro-timer",
+  "skillKey": "clawhub-cn-pomodoro-timer",
+  "name": "番茄钟计时器",
+  "summary": "中文番茄钟专注计时工具。开始25分钟专注时段，统计今日完成数量，本地存储无需账号。支持开始、暂停、继续、查看状态、统计等功能。",
+  "version": "1.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_pomodoro_timer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "中文番茄钟专注计时工具。开始25分钟专注时段，统计今日完成数量，本地存储无需账号。支持开始、暂停、继续、查看状态、统计等功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-pomodoro-timer@1.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-pomodoro-timer",
+      "url": "https://clawhub.ai/skills/cn-pomodoro-timer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-pomodoro-timer",
+    "url": "https://clawhub.ai/skills/cn-pomodoro-timer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-pomodoro-timer-c454be35b67cf97d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-pomodoro-timer@1.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-pomodoro-timer-1.2.5.json",
+      "version": "1.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bfbc6e53e3cd88e182ff3e6047feb7f63d018fec51f481f322a3836d4f35d6b8",
+      "artifactSizeBytes": 2072
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:47:26.860Z"
+}

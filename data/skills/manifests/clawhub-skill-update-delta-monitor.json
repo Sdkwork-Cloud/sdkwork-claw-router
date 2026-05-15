@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19006,
+  "uuid": "skill-clawhub-skill-update-delta-monitor",
+  "skillKey": "clawhub-skill-update-delta-monitor",
+  "name": "skill-update-delta-monitor",
+  "summary": "Helps detect security-relevant changes in AI skills after installation. Tracks deltas between the audited version and current version, flagging updates that...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_update_delta_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "andyxinweiminicloud",
+      "features": [
+        "Helps detect security-relevant changes in AI skills after installation",
+        "Tracks deltas between the audited version and current version, flagging updates that..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-update-delta-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201528876?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-update-delta-monitor",
+      "url": "https://clawhub.ai/skills/skill-update-delta-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-update-delta-monitor",
+    "url": "https://clawhub.ai/skills/skill-update-delta-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-update-delta-monitor-07659318cb27f203.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-update-delta-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-update-delta-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:38921ed2e6e936f0f5ea8cc3328bafb8427d2a252b96b2d17b18ed39b7c3ae15",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T08:34:57.742Z"
+}

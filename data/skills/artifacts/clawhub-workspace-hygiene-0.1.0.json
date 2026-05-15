@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/workspace-hygiene@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workspace_hygiene",
+  "skill": {
+    "id": 29036,
+    "skillKey": "clawhub-workspace-hygiene",
+    "name": "Workspace Hygiene Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workspace-hygiene",
+    "url": "https://clawhub.ai/skills/workspace-hygiene",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workspace-hygiene-c70aeac9ce51f1d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit and maintain workspace file structure, memory quality, and project documentation. Use when: cleaning up the workspace, running a file audit, checking m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevemichael001",
+      "userId": "publishers:stevemichael001",
+      "displayName": "Steve",
+      "image": "https://avatars.githubusercontent.com/u/210807441?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 312,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773516999141,
+      "changelog": "Initial release of workspace-hygiene.\n\n- Audits and maintains workspace file structure, memory quality, and project documentation.\n- Checks for structure violations, memory health (formats, gaps, bloat), and missing project READMEs.\n- Validates recent memory entries for required RAG-friendly tagging.\n- Generates a health report highlighting violations and suggested actions.\n- Auto-consolidates timestamped memory files; flags other issues for manual review.\n- Designed for on-demand or weekly (Monday) execution per agent or globally.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f58b8843b07d115e238b3ff24eeb73572bb0767914557f16dbbc3353bb67ad86"
+}

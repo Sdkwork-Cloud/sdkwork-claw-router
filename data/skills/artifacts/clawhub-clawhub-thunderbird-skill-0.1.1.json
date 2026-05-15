@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-thunderbird-skill@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_thunderbird_skill",
+  "skill": {
+    "id": 27382,
+    "skillKey": "clawhub-clawhub-thunderbird-skill",
+    "name": "Thunderbird"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-thunderbird-skill",
+    "url": "https://clawhub.ai/skills/clawhub-thunderbird-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-thunderbird-skill-e162e52f3e1d22b9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read and search local Mozilla Thunderbird mail storage on disk. Use when working with Thunderbird profiles, extracting emails from local folders or IMAP cach..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "komelt",
+      "userId": "s174t07mepg1ydqaj7m9s718nd84kj50",
+      "displayName": "Tilen Komel",
+      "image": "https://avatars.githubusercontent.com/u/46865859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773310313024,
+      "changelog": "Thunderbird skill 0.1.1 introduces attachment search and improves profile discovery.\n\n- Added support for searching, listing, and saving email attachments (`--has-attachment`, `--attachment-name`, `--list-attachments`, `--save-attachments`)\n- Updated documentation with new attachment-related options and usage examples\n- Enhanced profile auto-discovery for both Windows and Linux\n- Clarified date interpretation for `--since` and `--until` options\n- Added new guidance on attachment interaction policy in the documentation\n- New README.md file included",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7721e6b46f512508213c62f64fa4387c99a024767f23c30e6c82932656b28438"
+}

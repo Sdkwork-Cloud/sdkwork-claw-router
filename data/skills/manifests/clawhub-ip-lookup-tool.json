@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68145,
+  "uuid": "skill-clawhub-ip-lookup-tool",
+  "skillKey": "clawhub-ip-lookup-tool",
+  "name": "IP Lookup Tool",
+  "summary": "查询当前公网 IP、城市位置（含中文名）和运营商。当用户问“我的 IP 是多少”“我现在的 IP 地址”“我在哪个城市上网”这类问题时使用。优先返回公网出口 IP，而不是局域网 IP。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ip_lookup_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daguniang",
+      "features": [
+        "查询当前公网 IP、城市位置（含中文名）和运营商。当用户问“我的 IP 是多少”“我现在的 IP 地址”“我在哪个城市上网”这类问题时使用。优先返回公网出口 IP，而不是局域网 IP。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ip-lookup-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25029849?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ip-lookup-tool",
+      "url": "https://clawhub.ai/skills/ip-lookup-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ip-lookup-tool",
+    "url": "https://clawhub.ai/skills/ip-lookup-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ip-lookup-tool-78b6a59878f53de7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ip-lookup-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ip-lookup-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:50ffb08edf6496a64e4b42052ac803e1b96d04696b0785fbf1261244e69c26d0",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:10:54.944Z"
+}

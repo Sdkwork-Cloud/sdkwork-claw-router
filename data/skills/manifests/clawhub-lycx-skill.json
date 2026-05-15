@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27052,
+  "uuid": "skill-clawhub-lycx-skill",
+  "skillKey": "clawhub-lycx-skill",
+  "name": "lycx-skill",
+  "summary": "Summarizes long texts by extracting key points and producing concise summaries for documents, meetings, and reports without altering original meaning.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lycx_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yrqian",
+      "features": [
+        "Summarizes long texts by extracting key points and producing concise summaries for documents, m."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lycx-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47592203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lycx-skill",
+      "url": "https://clawhub.ai/skills/lycx-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lycx-skill",
+    "url": "https://clawhub.ai/skills/lycx-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lycx-skill-ea56d4b030de2a8d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lycx-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lycx-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6bf236359ff7ed0bdfafa4a63e82b48ef06d21151db2bfd77b34e13aa3e86071",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T02:49:02.436Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25075,
+  "uuid": "skill-clawhub-verify-submission",
+  "skillKey": "clawhub-verify-submission",
+  "name": "Verify Submission",
+  "summary": "Review applications and verify task submissions on OpenAnt. Use when the agent (as task creator) needs to review applicants, accept or reject applications, a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.verify_submission",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ant-1984",
+      "features": [
+        "Review applications and verify task submissions on OpenAnt",
+        "Use when the agent (as task creator) needs to review applicants, accept or reject applications,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/verify-submission@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261687401?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "verify-submission",
+      "url": "https://clawhub.ai/skills/verify-submission"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "verify-submission",
+    "url": "https://clawhub.ai/skills/verify-submission",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/verify-submission-cec1f6be0af35ad9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/verify-submission@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-verify-submission-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57fdc5e796edb881e7af3c38285d05ea0dcafe68cbe38f646e37e75151898f56",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T14:20:55.479Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48077,
+  "uuid": "skill-clawhub-audio-trimmer",
+  "skillKey": "clawhub-audio-trimmer",
+  "name": "Audio Trimmer",
+  "summary": "trim audio files into trimmed audio clips with this skill. Works with MP4, MOV, MP3, WAV files up to 500MB. podcasters, content creators, students use it for...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audio_trimmer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vynbosserman65",
+      "features": [
+        "trim audio files into trimmed audio clips with this skill",
+        "Works with MP4, MOV, MP3, WAV files up to 500MB",
+        "podcasters, content creators, students use it for..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/audio-trimmer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208823770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "audio-trimmer",
+      "url": "https://clawhub.ai/skills/audio-trimmer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audio-trimmer",
+    "url": "https://clawhub.ai/skills/audio-trimmer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audio-trimmer-c25804831644814e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/audio-trimmer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-audio-trimmer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:705fc459887cd58c270f2a4902ec936f39928b4030bce44930b5024cb88a5ff2",
+      "artifactSizeBytes": 2338
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T17:12:22.745Z"
+}

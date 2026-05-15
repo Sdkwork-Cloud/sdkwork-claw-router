@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jisu-car@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_car",
+  "skill": {
+    "id": 68056,
+    "skillKey": "clawhub-jisu-car",
+    "name": "Car Models Inquiry - 车型大全查询"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-car",
+    "url": "https://clawhub.ai/skills/jisu-car",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-car-821bcde8e86c563e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查品牌、车系、车型详情、搜索与热门/销量榜等。当用户说：比亚迪汉有什么配置？十万左右 SUV 推荐车型数据，或类似车型库问题时，使用本技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisuapi",
+      "userId": "s174fh1b14sn7vkvbqwsdn0xtd83gz5h",
+      "displayName": "极速数据",
+      "image": "https://avatars.githubusercontent.com/u/30516426?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 658,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 11,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1775210253971,
+      "changelog": "Version 1.0.4\n\n- Updated the skill name and description for better clarity and relevance to car model inquiries.\n- Enhanced documentation: added clearer instructions for API Key acquisition and environment setup.\n- Introduced a new \"关于极速数据\" section, providing more information about the data provider and related APIs.\n- Improved explanations for recommended usage scenarios and skill capabilities.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:330c0ce792719a8c9762c45e263587c0a5fa86f982731e8869dd0937770013cc"
+}

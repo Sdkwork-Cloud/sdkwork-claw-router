@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38200,
+  "uuid": "skill-clawhub-s2-gateway-transition-logic",
+  "skillKey": "clawhub-s2-gateway-transition-logic",
+  "name": "S2-Gateway-Transition-Logic",
+  "summary": "Instructs the indoor SSSU agent to act as the Spatial Gatekeeper. Evaluates transit requests using the S2_BMS_VAULT_TOKENS secure environment variable.",
+  "version": "1.4.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.s2_gateway_transition_logic",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MilesXiang",
+      "features": [
+        "Instructs the indoor SSSU agent to act as the Spatial Gatekeeper",
+        "Evaluates transit requests using the S2_BMS_VAULT_TOKENS secure environment variable."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/s2-gateway-transition-logic@1.4.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259359437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "s2-gateway-transition-logic",
+      "url": "https://clawhub.ai/skills/s2-gateway-transition-logic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "s2-gateway-transition-logic",
+    "url": "https://clawhub.ai/skills/s2-gateway-transition-logic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/s2-gateway-transition-logic-f9897a313972d265.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/s2-gateway-transition-logic@1.4.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-s2-gateway-transition-logic-1.4.2.json",
+      "version": "1.4.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:02aa332e98a5ef71b2b6491c4723894c04df23c39fc3d82a0e97e97571b4b8f4",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T16:24:11.587Z"
+}

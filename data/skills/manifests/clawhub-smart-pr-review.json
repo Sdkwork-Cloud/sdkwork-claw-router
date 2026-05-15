@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52583,
+  "uuid": "skill-clawhub-smart-pr-review",
+  "skillKey": "clawhub-smart-pr-review",
+  "name": "Smart PR Review",
+  "summary": "Opinionated AI code reviewer — not a yes-machine. 6-layer deep review (logic, edge cases, performance, security, maintainability, architecture) with Devil's...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_pr_review",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fullstackcrew-alpha",
+      "features": [
+        "Opinionated AI code reviewer — not a yes-machine",
+        "6-layer deep review (logic, edge cases, performance, security, maintainability, architecture) w."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-pr-review@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249457019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-pr-review",
+      "url": "https://clawhub.ai/skills/smart-pr-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-pr-review",
+    "url": "https://clawhub.ai/skills/smart-pr-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-pr-review-d9bb23f00b25784b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-pr-review@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-pr-review-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee622271c1484d61b6fb2ae2bfef2b50c24c4260d04a3b211bfab233fd9b5616",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T09:28:48.120Z"
+}

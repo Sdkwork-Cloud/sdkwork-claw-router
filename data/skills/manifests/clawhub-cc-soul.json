@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50448,
+  "uuid": "skill-clawhub-cc-soul",
+  "skillKey": "clawhub-cc-soul",
+  "name": "Clawhub Skill",
+  "summary": "Zero-vector AI memory engine with self-learning. LOCOMO 76.2% (4th place). 15 original algorithms, open source (MIT).",
+  "version": "3.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cc_soul",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wenroudeyu-collab",
+      "features": [
+        "Zero-vector AI memory engine with self-learning",
+        "LOCOMO 76.2% (4th place)",
+        "15 original algorithms, open source (MIT)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cc-soul@3.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263342295?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cc-soul",
+      "url": "https://clawhub.ai/skills/cc-soul"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cc-soul",
+    "url": "https://clawhub.ai/skills/cc-soul",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cc-soul-b072a457b9a089a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cc-soul@3.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-cc-soul-3.2.5.json",
+      "version": "3.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c61679c3fecdef9dc2d5c7c8ecc86349307e16db8b9b1b62987176aa42d93a4c",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T14:06:27.427Z"
+}

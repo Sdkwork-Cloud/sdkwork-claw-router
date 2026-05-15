@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67972,
+  "uuid": "skill-clawhub-nico-safe-config-workflow",
+  "skillKey": "clawhub-nico-safe-config-workflow",
+  "name": "安全配置流程 (Nico)",
+  "summary": "安全修改 OpenClaw 配置文件，自动检查、修复并验证修改，确保配置有效且系统稳定运行。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nico_safe_config_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nicoxia",
+      "features": [
+        "安全修改 OpenClaw 配置文件，自动检查、修复并验证修改，确保配置有效且系统稳定运行。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nico-safe-config-workflow@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7669766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nico-safe-config-workflow",
+      "url": "https://clawhub.ai/skills/nico-safe-config-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nico-safe-config-workflow",
+    "url": "https://clawhub.ai/skills/nico-safe-config-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nico-safe-config-workflow-dbd49b1435a8b226.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nico-safe-config-workflow@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nico-safe-config-workflow-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3673a60c8d26a3d0710c1b1573b1de5b79aaac1955037c0253e9fa2a5e1b7ac0",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:07:38.028Z"
+}

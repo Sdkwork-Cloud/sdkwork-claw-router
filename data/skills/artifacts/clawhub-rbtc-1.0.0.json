@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rbtc@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rbtc",
+  "skill": {
+    "id": 23770,
+    "skillKey": "clawhub-rbtc",
+    "name": "rBTC Miner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rbtc",
+    "url": "https://clawhub.ai/skills/rbtc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rbtc-05b3248ea5b769b0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Runs a patched Bitcoin Core node with built-in CPU mining, supporting configurable CPU usage, thread count, and automated secure updates."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "happybigmtn",
+      "userId": "publishers:happybigmtn",
+      "displayName": "rk",
+      "image": "https://avatars.githubusercontent.com/u/166826369?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 430,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772898529397,
+      "changelog": "- Initial release of the rBitcoin Agent Skill.\n- Provides an immutable patch on top of Bitcoin Core, focusing on chain identity.\n- Includes automated scripts for install, verification, build, update, and mining.\n- Supports configuration via environment variables for flexible node and miner control.\n- Verification tools provided for upstream release integrity, patch scope, and binary provenance.\n- Atomic upgrade process with easy rollback included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7b6aee4b903b879183bd0c3d624c2e4c0b244371bd95ef232a5fd9bc5b69d692"
+}

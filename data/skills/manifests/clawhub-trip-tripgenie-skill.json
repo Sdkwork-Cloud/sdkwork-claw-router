@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54502,
+  "uuid": "skill-clawhub-trip-tripgenie-skill",
+  "skillKey": "clawhub-trip-tripgenie-skill",
+  "name": "TripGenie",
+  "summary": "Use for any travel question — hotels, flights, trains, attractions, destinations, and travel tips worldwide.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_tripgenie_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "trips-ai",
+      "features": [
+        "Use for any travel question — hotels, flights, trains, attractions, destinations, and travel ti."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trip-tripgenie-skill@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266933695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trip-tripgenie-skill",
+      "url": "https://clawhub.ai/skills/trip-tripgenie-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-tripgenie-skill",
+    "url": "https://clawhub.ai/skills/trip-tripgenie-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-tripgenie-skill-e950c40cca709624.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trip-tripgenie-skill@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-trip-tripgenie-skill-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c72f6a3de63e3fed1a5b57416b3cee7d2134229c59237fcfad0c75f1ba328a78",
+      "artifactSizeBytes": 2284
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T14:20:02.903Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/codesession@2.5.1",
+  "version": "2.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.codesession",
+  "skill": {
+    "id": 10475,
+    "skillKey": "clawhub-codesession",
+    "name": "Codesession"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "codesession",
+    "url": "https://clawhub.ai/skills/codesession",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/codesession-f11e89754d89ce28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "codesession (codesession-cli, code session, code-session) — Track AI agent session costs, tokens, file changes, and git commits. Works with Claude Code, Open..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brian-mwirigi",
+      "userId": "publishers:brian-mwirigi",
+      "displayName": "brian-mwirigi",
+      "image": "https://avatars.githubusercontent.com/u/195305597?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2871,
+      "installsAllTime": 9,
+      "installsCurrent": 8,
+      "stars": 3,
+      "versions": 31
+    },
+    "latestVersion": {
+      "version": "2.5.1",
+      "createdAt": 1772894847227,
+      "changelog": "**Summary:** v2.5.1 introduces one-line session runs, new dashboard features, and multi-project context.\n\n- Added `cs run <command>` for streamlined session tracking, proxying, and cost summary in a single step\n- Introduced `cs today` for multi-project session context\n- Dashboard gains a Help tab for easier guidance\n- Maintains support for Codex pricing, with security and stability fixes\n- Documentation and descriptions updated to reflect new capabilities",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a1092ba9dc6ddf36fcfe12f29b04d58af963dac205592fb54305f63f46d34184"
+}

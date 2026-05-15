@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55338,
+  "uuid": "skill-clawhub-proactive-ops-monitor",
+  "skillKey": "clawhub-proactive-ops-monitor",
+  "name": "Proactive Ops Monitor",
+  "summary": "Proactive operations monitoring for OpenClaw agents. Tracks token utilization, memory layer health, and generates alerts. Provides `/health` dashboard and au...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proactive_ops_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "NeroAgent",
+      "features": [
+        "Proactive operations monitoring for OpenClaw agents",
+        "Tracks token utilization, memory layer health, and generates alerts",
+        "Provides `/health` dashboard and au..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proactive-ops-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217334413?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proactive-ops-monitor",
+      "url": "https://clawhub.ai/skills/proactive-ops-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proactive-ops-monitor",
+    "url": "https://clawhub.ai/skills/proactive-ops-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proactive-ops-monitor-0a7324a050b820f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proactive-ops-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proactive-ops-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da85ad0047a1ac98e2b61621549a58d4f6c252c4900eddf49391a998f6667885",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T17:21:13.000Z"
+}

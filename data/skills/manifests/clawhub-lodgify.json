@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31412,
+  "uuid": "skill-clawhub-lodgify",
+  "skillKey": "clawhub-lodgify",
+  "name": "Lodgify",
+  "summary": "Lodgify integration. Manage Properties, Channels, Users. Use when the user wants to interact with Lodgify data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lodgify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Lodgify integration",
+        "Manage Properties, Channels, Users",
+        "Use when the user wants to interact with Lodgify data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lodgify@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lodgify",
+      "url": "https://clawhub.ai/skills/lodgify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lodgify",
+    "url": "https://clawhub.ai/skills/lodgify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lodgify-491d6dae1f7902c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lodgify@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-lodgify-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82d38b892bd89006ddf3f193d216f0e48341d0edb25dc0103375f759d8d06b39",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:42:25.951Z"
+}

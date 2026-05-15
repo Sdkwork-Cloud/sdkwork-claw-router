@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/compound-eng-code-review@4.0.1",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_code_review",
+  "skill": {
+    "id": 23856,
+    "skillKey": "clawhub-compound-eng-code-review",
+    "name": "ia-code-review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-code-review",
+    "url": "https://clawhub.ai/skills/compound-eng-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-code-review-c445b4c46b4edd63.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structured code reviews with severity-ranked findings and deep multi-agent mode. Use when performing a code review, auditing code quality, or critiquing PRs,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iliaal",
+      "userId": "s17bcar8wq0xhegs0ny6f57ypd8484bw",
+      "displayName": "Ilia Alshanetsky",
+      "image": "https://avatars.githubusercontent.com/u/158724?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "4.0.1",
+      "createdAt": 1778195786595,
+      "changelog": "v4.0.1",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:543e81f0343d58a1ec9a0a4ec9445151c894eee07138f978636c6ae0840b529a"
+}

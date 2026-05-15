@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thesis-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thesis_writer",
+  "skill": {
+    "id": 67661,
+    "skillKey": "clawhub-thesis-writer",
+    "name": "Thesis Writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thesis-writer",
+    "url": "https://clawhub.ai/skills/thesis-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thesis-writer-ce61f460d4d68981.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "兼容版学位论文写作助手，支持章节扩写、一致性修订、导师意见落实及术语统一管理，已整合至 paper 技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jirboy",
+      "userId": "s172kehers3wd9ajz7fymawqnn843cz8",
+      "displayName": "JIRBOY",
+      "image": "https://avatars.githubusercontent.com/u/49422297?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776426778531,
+      "changelog": "- 功能整合：学位论文写作已并入 paper 统一入口技能，原命令自动兼容并转发。\n- 推荐用法升级：建议通过 paper thesis 命令进行论文撰写和各类智能处理。\n- 保持兼容性：原 thesis 命令用法依然可用，不影响旧工作流。\n- 新增详细迁移指南和推荐工作区结构示例，便于衔接新旧用法。\n- 明确写作硬性规范，强调学术表达、数据真实性和术语统一。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:519692041e0e3adb1196856bf12cdc6ba040062b45daa665bb51130f51731275"
+}

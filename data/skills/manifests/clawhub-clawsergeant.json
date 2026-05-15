@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23855,
+  "uuid": "skill-clawhub-clawsergeant",
+  "skillKey": "clawhub-clawsergeant",
+  "name": "ClawSergeant",
+  "summary": "Train autonomous OpenClaw AI agents through LLM-guided curriculum design and multi-turn dialogue evaluation. Use this skill whenever the user wants to train,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsergeant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "M. Y.",
+      "features": [
+        "Train autonomous OpenClaw AI agents through LLM-guided curriculum design and multi-turn dialogu.",
+        "Use this skill whenever the user wants to train,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsergeant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/40628975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsergeant",
+      "url": "https://clawhub.ai/skills/clawsergeant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsergeant",
+    "url": "https://clawhub.ai/skills/clawsergeant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsergeant-e7910ee1027e7c0c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsergeant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsergeant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f64472eba09c7e7914c779db29f1b9b1b9fe172a47834fce1c15aefc082b3e2",
+      "artifactSizeBytes": 2387
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:17:52.270Z"
+}

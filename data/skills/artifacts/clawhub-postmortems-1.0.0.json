@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/postmortems@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.postmortems",
+  "skill": {
+    "id": 52787,
+    "skillKey": "clawhub-postmortems",
+    "name": "Postmortems"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "postmortems",
+    "url": "https://clawhub.ai/skills/postmortems",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/postmortems-0f2bfc3cc032dd9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deep blameless postmortem workflow—timeline, impact, root cause vs contributing factors, what went well/poorly, action items with owners, and follow-through...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codenova58",
+      "userId": "s173fekm3yw84k7gp861dme7dd83gvyf",
+      "displayName": "codenova58",
+      "image": "https://avatars.githubusercontent.com/u/191358186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774370610073,
+      "changelog": "- Initial release of the \"postmortems\" skill with a structured, blameless postmortem workflow.\n- Six clear stages: scope & audience, timeline & impact, root cause vs contributing factors, what worked/what didn’t, action items (owners/dates), communication and follow-up.\n- Emphasis on owned, specific actions and psychological safety to drive learning and reliability culture.\n- Includes tips for tailoring depth to severity, linking to metrics, and guidance for sensitive/security incidents.\n- Comprehensive checklist ensures clarity, accountability, and scheduled follow-up.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8fa14e4bc7488e28109e262d7f03dd92a1d430b6c268d1622842e172141383f9"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltbot-satellite-copilot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltbot_satellite_copilot",
+  "skill": {
+    "id": 11880,
+    "skillKey": "clawhub-moltbot-satellite-copilot",
+    "name": "Satellite Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltbot-satellite-copilot",
+    "url": "https://clawhub.ai/skills/moltbot-satellite-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltbot-satellite-copilot-e08fcb992cb3ce9d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Predict satellite passes (NOAA APT, METEOR LRPT, ISS) for a configured latitude/longitude and send WhatsApp alerts with manual dish alignment info (AOS/LOS azimuth+elevation, track direction, inclination). Use when setting up or operating."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "davestarling",
+      "userId": "s17apwn8xbv293fb55xn9nxch983ksby",
+      "displayName": "davestarling",
+      "image": "https://avatars.githubusercontent.com/u/1181807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1888,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769960707097,
+      "changelog": "- Initial release of radio-copilot skill, designed for planning and alerting on NOAA APT, METEOR LRPT, and ISS satellite passes for SDR reception.\n- Predicts and alerts on satellite passes for a set latitude/longitude, including manual dish alignment information (AOS/LOS azimuth/elevation, track direction, inclination).\n- Supports configuration of NORAD IDs, minimum elevation, alert lead time, and capture/decode automation hooks.\n- Integrates with WhatsApp for pass alert notifications.\n- Zero-AI operation by default; SDR capture and decode automation hooks provided but disabled until configured.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61070a56a1b2b7d96bb0b7c5dbec627b0e5b0026e664f057c218c58e5e834930"
+}

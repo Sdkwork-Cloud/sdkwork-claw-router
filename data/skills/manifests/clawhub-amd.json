@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29313,
+  "uuid": "skill-clawhub-amd",
+  "skillKey": "clawhub-amd",
+  "name": "Amd",
+  "summary": "Information assistant for AMD. Search products, news, financials, and official resources for AMD.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amd",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Information assistant for AMD",
+        "Search products, news, financials, and official resources for AMD."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amd@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amd",
+      "url": "https://clawhub.ai/skills/amd"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amd",
+    "url": "https://clawhub.ai/skills/amd",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amd-240389f4b730bad4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amd@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-amd-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:489d2decfdc047fd5531cf6b6e1d811fb2b4b681f9e0402ffbf36f213c91a57d",
+      "artifactSizeBytes": 1835
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:00:08.335Z"
+}

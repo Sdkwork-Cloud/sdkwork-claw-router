@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/movie-maker-free-no-login@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.movie_maker_free_no_login",
+  "skill": {
+    "id": 55419,
+    "skillKey": "clawhub-movie-maker-free-no-login",
+    "name": "Movie Maker Free No Login"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "movie-maker-free-no-login",
+    "url": "https://clawhub.ai/skills/movie-maker-free-no-login",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/movie-maker-free-no-login-8bf4121aa1158cb1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — combine my clips into a movie with transitions and background music — and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 123,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776362566822,
+      "changelog": "- Initial release of \"Movie Maker Free No Login\".\n- Users can upload video clips or images (up to 500MB each) and describe the movie they want to create.\n- No registration or payment required; session and free credits are handled automatically.\n- Supports quick editing, combining clips with transitions and background music, and exporting as high-quality 1080p MP4 (and other formats).\n- Includes clear guidance, automatic API session/token management, and user-friendly error handling for uploads and exports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0c2c8933449a4d724fb70d8280c0ba06ee25f47daa0f646ab40ec9600074ac5c"
+}

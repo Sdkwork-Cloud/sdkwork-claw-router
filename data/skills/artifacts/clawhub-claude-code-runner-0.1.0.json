@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-runner@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_runner",
+  "skill": {
+    "id": 12521,
+    "skillKey": "clawhub-claude-code-runner",
+    "name": "Claude Code Runner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-runner",
+    "url": "https://clawhub.ai/skills/claude-code-runner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-runner-35f31786a805fd6b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Execute programming tasks via Claude Code using PTY-based invocation. Handles non-TTY environments, auto-responds to prompts, and manages file synchronization."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lhl09120",
+      "userId": "publishers:lhl09120",
+      "displayName": "holenlin",
+      "image": "https://avatars.githubusercontent.com/u/10335642?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1550,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772176425525,
+      "changelog": "- Repository and installation instructions updated to use the new \"claude-code-runner-en\" directory and URL.\n- No functional or API changes. Documentation reflects the new project path for cloning and script access.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f078c3036d93d720d3a0e67106f3cfb64d0206428b0890f5f281cc6e3d2b5b2f"
+}

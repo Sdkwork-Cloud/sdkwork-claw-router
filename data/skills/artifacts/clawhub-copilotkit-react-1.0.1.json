@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/copilotkit-react@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.copilotkit_react",
+  "skill": {
+    "id": 16159,
+    "skillKey": "clawhub-copilotkit-react",
+    "name": "CopilotKit React Best Practices"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "copilotkit-react",
+    "url": "https://clawhub.ai/skills/copilotkit-react",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/copilotkit-react-9a4520680a985c12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CopilotKit React best practices for agentic applications. Use when writing, reviewing, or refactoring React code that uses CopilotKit hooks (useAgent, useFro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "generaljerel",
+      "userId": "publishers:generaljerel",
+      "displayName": "Jerel",
+      "image": "https://avatars.githubusercontent.com/u/85066839?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 812,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772171186979,
+      "changelog": "**CopilotKit React Patterns 2.0.0 – Major update for v2 API support**\n\n- Expanded guidance to cover both v1 (`@copilotkit/react-core`) and v2 (`@copilotkit/react-core/v2`) APIs.\n- Updated provider setup and rules for the new `CopilotKit` provider and `CoAgent` routing.\n- Revised agent/state rules to reflect new hooks (`useCopilotAction`, `useCopilotReadable`) and best practices.\n- Adjusted tool integration advice for v2 API patterns (including Zod schemas and new render prop usage).\n- Added version-specific suggestions handling and clarified API differences in recommendations.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:11365996cb96953c6e14cdb0a0515dbae41fd17ceeabd796f908b85f54e66f68"
+}

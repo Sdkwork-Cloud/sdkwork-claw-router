@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22380,
+  "uuid": "skill-clawhub-bexio-integration",
+  "skillKey": "clawhub-bexio-integration",
+  "name": "Bexio",
+  "summary": "Bexio integration. Manage Organizations, Users. Use when the user wants to interact with Bexio data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bexio_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Bexio integration",
+        "Manage Organizations, Users",
+        "Use when the user wants to interact with Bexio data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bexio-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bexio-integration",
+      "url": "https://clawhub.ai/skills/bexio-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bexio-integration",
+    "url": "https://clawhub.ai/skills/bexio-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bexio-integration-bf271ca531411021.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bexio-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-bexio-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9dc9605ac65c1eb95edc1d0215080984626a47c2c88b28562a5747ca5a4c11e2",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:13:46.470Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37950,
+  "uuid": "skill-clawhub-limacharlie",
+  "skillKey": "clawhub-limacharlie",
+  "name": "Limacharlie",
+  "summary": "LimaCharlie integration. Manage data, records, and automate workflows. Use when the user wants to interact with LimaCharlie data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.limacharlie",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "LimaCharlie integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with LimaCharlie data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/limacharlie@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "limacharlie",
+      "url": "https://clawhub.ai/skills/limacharlie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "limacharlie",
+    "url": "https://clawhub.ai/skills/limacharlie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/limacharlie-c41e1b4e23d52fa4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/limacharlie@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-limacharlie-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:776e6cf82531bddb67c217e330cfc7ac9cce0421a94040305b839214de38ab20",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:07:29.037Z"
+}

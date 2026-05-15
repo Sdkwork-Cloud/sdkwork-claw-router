@@ -1,4 +1,4 @@
-import unittest
+﻿import unittest
 from pathlib import Path
 
 
@@ -18,7 +18,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         )
 
         self.assertIn("operation: fetchCheckoutStatus", contract)
-        self.assertIn("api_path: /app/v3/api/payments/checkout/{orderNo}", contract)
+        self.assertIn("api_path: /app/v3/api/billing/payments/checkout/{orderNo}", contract)
         self.assertIn("read_sources: [plus_order, plus_payment, plus_vip_recharge]", contract)
 
         self.assertTrue(
@@ -50,7 +50,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         self.assertIn("CheckoutStatusSnapshot", checkout_port)
         self.assertIn("load_checkout_status", checkout_port)
 
-        self.assertIn('"/app/v3/api/payments/checkout/{order_no}"', app_checkout)
+        self.assertIn('"/app/v3/api/billing/payments/checkout/{order_no}"', app_checkout)
         self.assertIn("Path(order_no): Path<String>", app_checkout)
         self.assertIn("validate_checkout_order_no", app_checkout)
         self.assertIn("checkout order number must not be empty", app_checkout)
@@ -256,9 +256,9 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
             / "index.ts"
         ).read_text(encoding="utf-8")
 
-        self.assertIn("getClawRouterAppSdkClient().payment.fetchCheckoutStatus", checkout_service)
+        self.assertIn("getClawRouterAppSdkClient().billing.payments.checkout.retrieve", checkout_service)
         self.assertIn("requiredSafePathSegment(orderNo, 'orderNo')", checkout_service)
-        self.assertIn(".payment.fetchCheckoutStatus(normalizedOrderNo)", checkout_service)
+        self.assertIn(".billing.payments.checkout.retrieve(normalizedOrderNo)", checkout_service)
         self.assertIn("readRequiredString(item, 'orderNo', 'Checkout order number is required')", checkout_service)
         self.assertIn("readRequiredMoneyString(item, 'amount', 'Checkout amount is required', 'Checkout amount must be a money string')", checkout_service)
         self.assertIn("readRequiredNonNegativeNumber(item, 'points', 'Checkout points are required')", checkout_service)
@@ -267,6 +267,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         self.assertNotIn("fetch('/app/v3/api", checkout_service)
         self.assertNotIn("axios", checkout_service)
         self.assertNotIn(".payment.fetchCheckoutStatus(orderNo)", checkout_service)
+        self.assertNotIn(".payment.fetchCheckoutStatus", checkout_service)
         self.assertNotIn(".payments.fetchCheckoutStatus", checkout_service)
         self.assertNotIn("amount: readMoneyString(item, 'amount')", checkout_service)
         self.assertNotIn("points: readNumber(item, 'points')", checkout_service)
@@ -324,7 +325,7 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
         openapi = (ROOT / "generated" / "openapi" / "clawrouter-app-openapi.json").read_text(
             encoding="utf-8"
         )
-        payments_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "api" / "payment.ts").read_text(
+        billing_api = (ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "api" / "billing.ts").read_text(
             encoding="utf-8"
         )
         checkout_service = (
@@ -339,16 +340,28 @@ class CheckoutRuntimeStandardTest(unittest.TestCase):
 
         self.assertIn("name: CheckoutStatusResponse", contract)
         self.assertIn('"CheckoutStatusResponse"', openapi)
-        self.assertIn('"FetchCheckoutStatusResult"', openapi)
+        self.assertIn('"PaymentsCheckoutRetrieveResult"', openapi)
         self.assertIn('"$ref": "#/components/schemas/CheckoutStatusResponse"', openapi)
         self.assertIn(
-            "async fetchCheckoutStatus(orderNo: string | number, params?: QueryParams): Promise<FetchCheckoutStatusResult>",
-            payments_api,
+            "async retrieve(orderNo: string): Promise<PaymentsCheckoutRetrieveResult>",
+            billing_api,
         )
-        self.assertIn("get<FetchCheckoutStatusResult>", payments_api)
-        self.assertNotIn("fetchCheckoutStatus(orderNo: string | number, params?: QueryParams): Promise<PlusApiResult>", payments_api)
+        self.assertIn("get<PaymentsCheckoutRetrieveResult>", billing_api)
+        self.assertIn("public readonly checkout: BillingPaymentsCheckoutApi;", billing_api)
+        self.assertFalse(
+            (
+                ROOT
+                / "sdks"
+                / "clawrouter-app-sdk"
+                / "clawrouter-app-sdk-typescript"
+                / "src"
+                / "api"
+                / "payment.ts"
+            ).exists()
+        )
+        self.assertNotIn("fetchCheckoutStatus(orderNo: string | number, params?: QueryParams): Promise<PlusApiResult>", billing_api)
 
-        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "src" / "types" / "fetch-checkout-status-result.ts"
+        result_path = ROOT / "sdks" / "clawrouter-app-sdk" / "clawrouter-app-sdk-typescript" / "src" / "types" / "payments-checkout-retrieve-result.ts"
         self.assertTrue(result_path.exists())
         self.assertIn("data?: CheckoutStatusResponse;", result_path.read_text(encoding="utf-8"))
 

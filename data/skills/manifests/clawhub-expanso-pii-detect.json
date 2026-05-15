@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15325,
+  "uuid": "skill-clawhub-expanso-pii-detect",
+  "skillKey": "clawhub-expanso-pii-detect",
+  "name": "Expanso pii-detect",
+  "summary": "Detect personally identifiable information (PII) in text using Expanso Edge pipelines for CLI, MCP server, or cloud deployment.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expanso_pii_detect",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Expanso",
+      "features": [
+        "Detect personally identifiable information (PII) in text using Expanso Edge pipelines for CLI,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/expanso-pii-detect@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/51317?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "expanso-pii-detect",
+      "url": "https://clawhub.ai/skills/expanso-pii-detect"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expanso-pii-detect",
+    "url": "https://clawhub.ai/skills/expanso-pii-detect",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expanso-pii-detect-5d0ba1a8ccff71d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/expanso-pii-detect@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-expanso-pii-detect-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2630de547784c778ee63dd645f30b90906bb4839b651bdc1bf7b1119de8df39b",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T19:50:58.839Z"
+}

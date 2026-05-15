@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17081,
+  "uuid": "skill-clawhub-migma",
+  "skillKey": "clawhub-migma",
+  "name": "Migma",
+  "summary": "Generate, send, validate, and export AI-powered emails from the terminal; manage contacts, segments, tags, domains, and webhooks with Migma CLI.",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.migma",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AdamSEY",
+      "features": [
+        "Generate, send, validate, and export AI-powered emails from the terminal",
+        "manage contacts, segments, tags, domains, and webhooks with Migma CLI."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/migma@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28712999?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "migma",
+      "url": "https://clawhub.ai/skills/migma"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "migma",
+    "url": "https://clawhub.ai/skills/migma",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/migma-63681a25f52df418.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/migma@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-migma-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:193b3cee9efa2f0eb8cc33e15955047748754d6d71a1e560b4fce6a53db64c25",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T14:19:09.595Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17405,
+  "uuid": "skill-clawhub-errand-ai",
+  "skillKey": "clawhub-errand-ai",
+  "name": "Post and manage errands for human workers",
+  "summary": "Post errands using natural language, track status, review submissions, and automate USDC payments via the ErrandAI decentralized task marketplace.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.errand_ai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chloe Park",
+      "features": [
+        "Post errands using natural language, track status, review submissions, and automate USDC paymen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/errand-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15118976?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "errand-ai",
+      "url": "https://clawhub.ai/skills/errand-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "errand-ai",
+    "url": "https://clawhub.ai/skills/errand-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/errand-ai-356e7af3447ac4d3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/errand-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-errand-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a3afebff3669671f31863243db2434be454bdbae14bb2970f795fa64fb428d7",
+      "artifactSizeBytes": 2238
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T06:42:47.896Z"
+}

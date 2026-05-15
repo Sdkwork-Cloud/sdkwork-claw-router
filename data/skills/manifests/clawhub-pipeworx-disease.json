@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54237,
+  "uuid": "skill-clawhub-pipeworx-disease",
+  "skillKey": "clawhub-pipeworx-disease",
+  "name": "Pipeworx disease",
+  "summary": "COVID-19 statistics — global totals, per-country breakdowns, historical trends, and vaccination data from disease.sh",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_disease",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "COVID-19 statistics — global totals, per-country breakdowns, historical trends, and vaccination."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-disease@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138315805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-disease",
+      "url": "https://clawhub.ai/skills/pipeworx-disease"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-disease",
+    "url": "https://clawhub.ai/skills/pipeworx-disease",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-disease-02cc2c7708b41445.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-disease@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-disease-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e74e46f0654c0c24fd2ee1f07346d6e334ee7e14aa061f266edf766bc814107",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T21:19:27.736Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ireland@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ireland",
+  "skill": {
+    "id": 23760,
+    "skillKey": "clawhub-ireland",
+    "name": "Ireland"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ireland",
+    "url": "https://clawhub.ai/skills/ireland",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ireland-32f987ecd36719a1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover Ireland like a local with concrete pubs, coastal routes, city guides, and practical trip-planning tips."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ivangdavila",
+      "userId": "s178jdk12x4qj3gs2se3etxf3h83h7ft",
+      "displayName": "Iván",
+      "image": "https://avatars.githubusercontent.com/u/81719670?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 421,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772219081606,
+      "changelog": "Refined city and coastal guidance, expanded practical route-planning details, and improved travel traps coverage.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ce906c626fef796480cf73aedb026069efaaae9e9bba6c322a60a890a2817fd"
+}

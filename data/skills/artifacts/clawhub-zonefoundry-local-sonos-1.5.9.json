@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zonefoundry-local-sonos@1.5.9",
+  "version": "1.5.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zonefoundry_local_sonos",
+  "skill": {
+    "id": 54690,
+    "skillKey": "clawhub-zonefoundry-local-sonos",
+    "name": "Zonefoundry Local Sonos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zonefoundry-local-sonos",
+    "url": "https://clawhub.ai/skills/zonefoundry-local-sonos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zonefoundry-local-sonos-cbb992b0feb70bab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when an agent needs to control Sonos through ZoneFoundry `zf` on a same-LAN node. Start with readiness checks, then map user requests to safe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kisssam6886",
+      "userId": "s17c24dwcz7mzwnwrm1qegz9h583pnk9",
+      "displayName": "kisssam6886",
+      "image": "https://avatars.githubusercontent.com/u/67624459?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 22
+    },
+    "latestVersion": {
+      "version": "1.5.9",
+      "createdAt": 1774106158758,
+      "changelog": "Automated sync from GitHub Actions",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e9e49b8e0e5b694ae9f60661ecf5a64af7ae371d9671a67e2ca336b996f6ab44"
+}

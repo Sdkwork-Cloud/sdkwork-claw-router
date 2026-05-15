@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27578,
+  "uuid": "skill-clawhub-musicgenerator",
+  "skillKey": "clawhub-musicgenerator",
+  "name": "MusicGenerator",
+  "summary": "AI music generation assistant powered by MakebestMusic. Use when user wants to create AI-generated music, songs, or audio tracks. Perfect for content creator...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musicgenerator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MakeBestMusic",
+      "features": [
+        "AI music generation assistant powered by MakebestMusic",
+        "Use when user wants to create AI-generated music, songs, or audio tracks",
+        "Perfect for content creator..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/musicgenerator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219227592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "musicgenerator",
+      "url": "https://clawhub.ai/skills/musicgenerator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musicgenerator",
+    "url": "https://clawhub.ai/skills/musicgenerator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musicgenerator-308fc382dc4001c5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/musicgenerator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-musicgenerator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ac65f15c3fc0d6726fdaced863d34b6143fd24fcc7b0cf426eb82666f54a5ce",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:29:40.014Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-notes@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_notes",
+  "skill": {
+    "id": 20696,
+    "skillKey": "clawhub-memory-notes",
+    "name": "Memory Notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-notes",
+    "url": "https://clawhub.ai/skills/memory-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-notes-92be50b71501d8d5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "How to write well-structured Basic Memory notes: frontmatter, observations with semantic categories, relations with wiki-links, and best practices for buildi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "phernandez",
+      "userId": "publishers:phernandez",
+      "displayName": "Paul Hernandez",
+      "image": "https://avatars.githubusercontent.com/u/60959?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 533,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773281253062,
+      "changelog": "memory-notes v0.1.0\n\n- Initial release documenting how to write structured notes for Basic Memory.\n- Covers required note anatomy: frontmatter, body/context, observations, and relations.\n- Explains observation syntax, semantic categories, and tagging for better knowledge graph structure.\n- Details types of relations, wiki-links, and best practices for linking notes.\n- Describes use of memory:// URLs for navigating and building context in the knowledge graph.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f9d6156d4e5a22fb60d84b7622269f18c313289193f63412156a679ea9d71216"
+}

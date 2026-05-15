@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gene2ai-openclaw-skill@0.1.5",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gene2ai_openclaw_skill",
+  "skill": {
+    "id": 17565,
+    "skillKey": "clawhub-gene2ai-openclaw-skill",
+    "name": "Gene2ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gene2ai-openclaw-skill",
+    "url": "https://clawhub.ai/skills/gene2ai-openclaw-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gene2ai-openclaw-skill-ae31574b1a66b45d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Your personal health data hub for AI agents. Query genomic insights, upload medical documents, record daily health metrics, explore genomic-lab cross-referen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gangchen",
+      "userId": "publishers:gangchen",
+      "displayName": "OmicsIO",
+      "image": "https://avatars.githubusercontent.com/u/431516?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 646,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "0.1.5",
+      "createdAt": 1773328915061,
+      "changelog": "**Summary:**  \nAdds mandatory user consent before using Gene2AI health profile data in conversations.\n\n- When health topics arise, the agent now asks the user for consent before referencing Gene2AI profile data for the first time in a session.\n- Once consent is given, personalized health data can be used proactively for the rest of the session without asking again.\n- If the user declines, health data is only referenced on explicit request.\n- No functional or API changes; documentation updated in the skill guide.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:530247d4153b6c76bde5b456bc98c20d44524e359ddf6a8d1861e9f44aa168d6"
+}

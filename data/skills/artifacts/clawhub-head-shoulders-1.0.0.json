@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/head-shoulders@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.head_shoulders",
+  "skill": {
+    "id": 54015,
+    "skillKey": "clawhub-head-shoulders",
+    "name": "Head Shoulders"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "head-shoulders",
+    "url": "https://clawhub.ai/skills/head-shoulders",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/head-shoulders-3a2bd3b996f8a1fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Head Shoulders is P&G's pioneering anti-dandruff shampoo brand, leading the global market for 50+ years with a 40% share and strong scientific backing."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 111,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777327373949,
+      "changelog": "- 首次发布，介绍Head & Shoulders从1961年诞生到全球领导的创新历程\n- 总结宝洁如何通过技术创新和市场策略统治去屑洗发水品类50年\n- 覆盖关键历史节点、商业模式、护城河与核心数据\n- 包括中国市场本地化与品牌广告的有趣事实",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:194f40c8b37c29807a7c249bd01f005576d38d1fd23632dee5fcff4d2660f0fa"
+}

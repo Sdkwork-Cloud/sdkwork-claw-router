@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8567,
+  "uuid": "skill-clawhub-reminder",
+  "skillKey": "clawhub-reminder",
+  "name": "Reminder",
+  "summary": "Capture natural-language events, save to your workspace, and schedule Telegram reminders with automatic cron notifications and upcoming event queries.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reminder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Reed",
+      "features": [
+        "Capture natural-language events, save to your workspace, and schedule Telegram reminders with a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reminder@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129141816?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reminder",
+      "url": "https://clawhub.ai/skills/reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reminder",
+    "url": "https://clawhub.ai/skills/reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reminder-9ce7011ab48f26c2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reminder@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-reminder-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af4103ae2afcef1eb378f984d339910cccaad2dc45fe353e74b83e6e89ca336f",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T17:33:31.200Z"
+}

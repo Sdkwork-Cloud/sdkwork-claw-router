@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/conflux-wallet-skill@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.conflux_wallet_skill",
+  "skill": {
+    "id": 38030,
+    "skillKey": "clawhub-conflux-wallet-skill",
+    "name": "Conflux Wallet Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "conflux-wallet-skill",
+    "url": "https://clawhub.ai/skills/conflux-wallet-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/conflux-wallet-skill-cda95aebbef5cd1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Self-sovereign EVM wallet for AI agents. Use when the user wants to create a crypto wallet, check balances, send ETH or ERC20 tokens, swap tokens, or interac..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pana",
+      "userId": "s17app77ebwjg2md8fycz57q6s83h0af",
+      "displayName": "Pana",
+      "image": "https://avatars.githubusercontent.com/u/552081?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777254771046,
+      "changelog": "- Added support for Conflux-specific token swaps using a new script (`src/swap-cfx.js`).\n- Updated swap instructions: always use `swap-cfx.js` for Conflux swaps, `swap.js` for other chains.\n- Clarified usage for native and wrapped tokens on Conflux in swap commands.\n- Existing functionality and safety rules unchanged for sending, contract interaction, and balance queries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0ef25ce51fbc92891b4f8999c75f8e76aef605edbf2869a18adfea325cb0caea"
+}

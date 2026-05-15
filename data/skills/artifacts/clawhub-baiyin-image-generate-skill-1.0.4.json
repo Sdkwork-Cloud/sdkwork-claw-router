@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baiyin-image-generate-skill@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baiyin_image_generate_skill",
+  "skill": {
+    "id": 66117,
+    "skillKey": "clawhub-baiyin-image-generate-skill",
+    "name": "baiyin-image-generate-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baiyin-image-generate-skill",
+    "url": "https://clawhub.ai/skills/baiyin-image-generate-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baiyin-image-generate-skill-c9141ca6feb573de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持通过百音开放平台选择模型，按参数逐步配置，生成文字或参考图辅助的图片，并查询任务状态和结果链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuping520",
+      "userId": "s179mk3pmxbx96yfcenhqxzm6984v4ak",
+      "displayName": "baiyin",
+      "image": "https://avatars.githubusercontent.com/u/63402476?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1776679298796,
+      "changelog": "- 认证环境变量从 BAIYIN_OPEN_KEY 改为 BAIYIN_API_KEY，相关描述同步修改\n- 移除对 BAIYIN_OPEN_URL 的说明（仅保留 BASE_URL 相关内容）\n- 仅在缺少 BAIYIN_API_KEY 时提示用户提供 API Key\n- 其余参数收集、接口、交互规则等无变动",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb5f02d2f8d63444ea57030f97c6a0dcda617dc9dd95f282afe858445f2467a2"
+}

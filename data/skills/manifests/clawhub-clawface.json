@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54822,
+  "uuid": "skill-clawhub-clawface",
+  "skillKey": "clawhub-clawface",
+  "name": "Clawface",
+  "summary": "Start the Clawface 3D avatar web UI — serves a local web page the user opens in their browser",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawface",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nmfisher",
+      "features": [
+        "Start the Clawface 3D avatar web UI — serves a local web page the user opens in their browser"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawface@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7238578?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawface",
+      "url": "https://clawhub.ai/skills/clawface"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawface",
+    "url": "https://clawhub.ai/skills/clawface",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawface-02b0e24760c8dfff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawface@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawface-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc0a0ade39ef7635a55d5d5d8af30157817018dbfe4091df58aec1433cf828a3",
+      "artifactSizeBytes": 1863
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T10:54:44.147Z"
+}

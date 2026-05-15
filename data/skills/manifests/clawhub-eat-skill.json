@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68031,
+  "uuid": "skill-clawhub-eat-skill",
+  "skillKey": "clawhub-eat-skill",
+  "name": "干饭 skill",
+  "summary": "干饭决策助手。帮你决定今天吃什么，发现附近餐馆，一键生成餐馆 Skill。 支持 /eat 系列命令。问\"吃什么\"、\"附近有什么吃的\"、\"帮我选\"时触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eat_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hash panda",
+      "features": [
+        "干饭决策助手。帮你决定今天吃什么，发现附近餐馆，一键生成餐馆 Skill。 支持 /eat 系列命令。问\"吃什么\"、\"附近有什么吃的\"、\"帮我选\"时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eat-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/110599333?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eat-skill",
+      "url": "https://clawhub.ai/skills/eat-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eat-skill",
+    "url": "https://clawhub.ai/skills/eat-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eat-skill-b6aa854a0457b3be.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eat-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eat-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:70cdec8f0cc2a626f5b993b8e41cccb50e7a9768d1a77b039e71f31fa81edea5",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T12:13:06.060Z"
+}

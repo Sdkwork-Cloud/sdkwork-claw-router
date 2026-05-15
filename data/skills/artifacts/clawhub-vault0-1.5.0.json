@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vault0@1.5.0",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vault0",
+  "skill": {
+    "id": 15860,
+    "skillKey": "clawhub-vault0",
+    "name": "Vault-0: Agent Security, Monitor & x402 Wallet for OpenClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vault0",
+    "url": "https://clawhub.ai/skills/vault0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vault0-a343e4b22f2b7484.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security suite for OpenClaw agents. Encrypted secret storage (AES-256-GCM), real-time activity monitoring via gateway WebSocket, policy enforcement, and native x402 payment wallet with EIP-3009 signing. Secure API keys, watch agent behavio."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlhugly",
+      "userId": "publishers:dlhugly",
+      "displayName": "DLhugly",
+      "image": "https://avatars.githubusercontent.com/u/46699413?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1129,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.5.0",
+      "createdAt": 1770879130550,
+      "changelog": "Release v1.5.0. See https://github.com/0-Vault/Vault-0/releases/tag/v1.5.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7efc11dd1989cdd0b1903ea522ae052445f44aa572b2c137de7c949a051540f6"
+}

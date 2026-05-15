@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11102,
+  "uuid": "skill-clawhub-evm-wallet-clawcast",
+  "skillKey": "clawhub-evm-wallet-clawcast",
+  "name": "ClawCast Crypto Wallet: Keys, Balances & Transactions",
+  "summary": "This skill is focused on crypto/EVM wallet operations and transaction workflows using cast. It covers wallet creation, importing or generating keys, checking balances, sending coins or tokens, monitoring tokens, creating and verifying tran.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evm_wallet_clawcast",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "te_za",
+      "features": [
+        "This skill is focused on crypto/EVM wallet operations and transaction workflows using cast",
+        "It covers wallet creation, importing or generating keys, checking balances, sending coins or to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evm-wallet-clawcast@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112280042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evm-wallet-clawcast",
+      "url": "https://clawhub.ai/skills/evm-wallet-clawcast"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evm-wallet-clawcast",
+    "url": "https://clawhub.ai/skills/evm-wallet-clawcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evm-wallet-clawcast-4374d3da51da79bb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evm-wallet-clawcast@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-evm-wallet-clawcast-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e96d1c0dd329437bcbb7745a08e9608d0bc98db55663252d5ee20dfb65df9511",
+      "artifactSizeBytes": 2216
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T03:40:32.436Z"
+}

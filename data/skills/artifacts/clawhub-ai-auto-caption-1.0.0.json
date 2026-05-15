@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-auto-caption@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_auto_caption",
+  "skill": {
+    "id": 44482,
+    "skillKey": "clawhub-ai-auto-caption",
+    "name": "Ai Auto Caption"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-auto-caption",
+    "url": "https://clawhub.ai/skills/ai-auto-caption",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-auto-caption-4e0e969fddb2c632.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this ai-auto-caption skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers and content creators..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775894130907,
+      "changelog": "AI Auto Caption — initial release.\n\n- Instantly add AI-generated captions to videos (MP4, MOV, AVI, WebM up to 500MB) with cloud GPU processing.\n- Automatic setup: obtains and renews anonymous session tokens for up to 100 free credits per week.\n- Simple workflow: just upload a video and describe the captions/languages needed; export as 1080p MP4 in 30–90 seconds.\n- Full support for multi-language subtitles, batch file handling, and iterative editing with persistent session timeline.\n- Includes robust error handling, session management, and credit tracking.\n- Designed for YouTubers and content creators to quickly add captions/subtitles for accessibility and reach.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:17ed89cd1c857648fc82f718b2d846244cac6c00d5dc2d58c9baea9bcb4f6017"
+}

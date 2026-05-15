@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64974,
+  "uuid": "skill-clawhub-wittiot-device-skill",
+  "skillKey": "clawhub-wittiot-device-skill",
+  "name": "wittiot-device-skill",
+  "summary": "WittIoT气象站数据查询，支持WittStation系列气象站，提供实时温湿度、气压、光照、风速风向、降雨量等传感器数据查询，以及24小时/7天/30天历史趋势查询。也支持通过设备短码（shortcode）免登录查询公开气象站数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wittiot_device_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WittIoT",
+      "features": [
+        "WittIoT气象站数据查询，支持WittStation系列气象站，提供实时温湿度、气压、光照、风速风向、降雨量等传感器数据查询，以及24小时/7天/30天历史趋势查询。也支持通过设备短码（."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wittiot-device-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268098296?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wittiot-device-skill",
+      "url": "https://clawhub.ai/skills/wittiot-device-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wittiot-device-skill",
+    "url": "https://clawhub.ai/skills/wittiot-device-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wittiot-device-skill-f79cb993516f8f02.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wittiot-device-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wittiot-device-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4a03247a02384e82c94cb37411de96a4c30e230a8eb1bb8d46d3002e59e2d8f",
+      "artifactSizeBytes": 2500
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T01:31:25.933Z"
+}

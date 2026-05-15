@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49329,
+  "uuid": "skill-clawhub-integrate-nutshell",
+  "skillKey": "clawhub-integrate-nutshell",
+  "name": "Nutshell",
+  "summary": "Nutshell integration. Manage Leads, Persons, Organizations, Deals, Projects, Activities and more. Use when the user wants to interact with Nutshell data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.integrate_nutshell",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Nutshell integration",
+        "Manage Leads, Persons, Organizations, Deals, Projects, Activities and more",
+        "Use when the user wants to interact with Nutshell data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/integrate-nutshell@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "integrate-nutshell",
+      "url": "https://clawhub.ai/skills/integrate-nutshell"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "integrate-nutshell",
+    "url": "https://clawhub.ai/skills/integrate-nutshell",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/integrate-nutshell-eba43cb98904eb1c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/integrate-nutshell@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-integrate-nutshell-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7663779d7a5325b3c057e7ce9f8dd950c37259b13c23a693e7e69414688aad53",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T14:58:58.774Z"
+}

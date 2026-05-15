@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71684,
+  "uuid": "skill-clawhub-fukuoka",
+  "skillKey": "clawhub-fukuoka",
+  "name": "Fukuoka",
+  "summary": "日本福冈城市指南 — 九州门户、亚洲创业中心、豚骨拉面发源地。当用户询问九州旅行、日本创业签证时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fukuoka",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "日本福冈城市指南 — 九州门户、亚洲创业中心、豚骨拉面发源地。当用户询问九州旅行、日本创业签证时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fukuoka@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fukuoka",
+      "url": "https://clawhub.ai/skills/fukuoka"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fukuoka",
+    "url": "https://clawhub.ai/skills/fukuoka",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fukuoka-d1d5eab8bb6b07cb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fukuoka@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-fukuoka-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ff0ba7708192207441d872f7972e78e30be3fbdad081dd1dbfa0708f64a201b",
+      "artifactSizeBytes": 2281
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T13:05:40.221Z"
+}

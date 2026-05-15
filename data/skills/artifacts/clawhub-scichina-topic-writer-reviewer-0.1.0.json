@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/scichina-topic-writer-reviewer@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.scichina_topic_writer_reviewer",
+  "skill": {
+    "id": 68441,
+    "skillKey": "clawhub-scichina-topic-writer-reviewer",
+    "name": "科普智创审校助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "scichina-topic-writer-reviewer",
+    "url": "https://clawhub.ai/skills/scichina-topic-writer-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/scichina-topic-writer-reviewer-aa2dbc8ad003e5cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "科普智创审校助手。当用户提到「科普中国热点创作」「科普工作」「热点采集与科普写作」或类似意图时激活。执行以下流程：(1) 监控 kepuchina.cn 整理热门文章与关键字；(2) 根据关键字为用户拟写科普文章；(3) 执行科学性审查与引用来源核查，防止大模型幻觉。英文名：SciChina Topic Writ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "binhuatochina",
+      "userId": "s17978fxq3qme7k13kf74jmbmd83g86y",
+      "displayName": "binhuatochina",
+      "image": "https://avatars.githubusercontent.com/u/164600322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775367042673,
+      "changelog": "首次发布：创建流程使用服务科普工作",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:19fc9d94db9f2b32ea3e4a8d88df4b740f1b25c55809910f7f8ae08dcd82fb62"
+}

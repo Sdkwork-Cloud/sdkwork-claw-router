@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49920,
+  "uuid": "skill-clawhub-tavily-search1",
+  "skillKey": "clawhub-tavily-search1",
+  "name": "tavily-search",
+  "summary": "AI-optimized web search via Tavily API. Returns concise, relevant results for AI agents.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tavily_search1",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cp33333333333",
+      "features": [
+        "AI-optimized web search via Tavily API",
+        "Returns concise, relevant results for AI agents."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tavily-search1@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219774774?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tavily-search1",
+      "url": "https://clawhub.ai/skills/tavily-search1"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tavily-search1",
+    "url": "https://clawhub.ai/skills/tavily-search1",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tavily-search1-d9594250e1d81421.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tavily-search1@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tavily-search1-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ef2c369edd9f8cef92df1a6903e56fcc3f0beb0ad43f153e4477df5df4bb477",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:10:55.749Z"
+}

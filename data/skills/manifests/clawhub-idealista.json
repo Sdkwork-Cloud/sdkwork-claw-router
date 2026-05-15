@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11597,
+  "uuid": "skill-clawhub-idealista",
+  "skillKey": "clawhub-idealista",
+  "name": "Idealista",
+  "summary": "Query Idealista API via idealista-cli (OAuth2 client credentials).",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idealista",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quifago",
+      "features": [
+        "Query Idealista API via idealista-cli (OAuth2 client credentials)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idealista@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2972550?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idealista",
+      "url": "https://clawhub.ai/skills/idealista"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idealista",
+    "url": "https://clawhub.ai/skills/idealista",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idealista-b8bb1888454f2ffd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idealista@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idealista-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bacc017866aa245d84301e7bf90b002515946f4375c2e661dd9b2dbcabab544",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-17T09:41:12.777Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50378,
+  "uuid": "skill-clawhub-lean-engine",
+  "skillKey": "clawhub-lean-engine",
+  "name": "LEAN Engine — Algorithmic Trading",
+  "summary": "Run QuantConnect LEAN backtests and manage US equity algorithm development. Use when asked to backtest a trading strategy, run a LEAN algorithm, analyze back...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lean_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yinliang Chen",
+      "features": [
+        "Run QuantConnect LEAN backtests and manage US equity algorithm development",
+        "Use when asked to backtest a trading strategy, run a LEAN algorithm, analyze back..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lean-engine@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/72800166?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lean-engine",
+      "url": "https://clawhub.ai/skills/lean-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lean-engine",
+    "url": "https://clawhub.ai/skills/lean-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lean-engine-479fc66c779c56f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lean-engine@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lean-engine-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e2b4977540fbc02ceda38bb8507c2437476314ae53cc059011b4f1ca61ff30e",
+      "artifactSizeBytes": 2205
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T21:03:11.962Z"
+}

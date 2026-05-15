@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33121,
+  "uuid": "skill-clawhub-algomo",
+  "skillKey": "clawhub-algomo",
+  "name": "Algomo",
+  "summary": "Algomo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Algomo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.algomo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Algomo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Algomo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/algomo@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "algomo",
+      "url": "https://clawhub.ai/skills/algomo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "algomo",
+    "url": "https://clawhub.ai/skills/algomo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/algomo-b7cd2a9efe7274a6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/algomo@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-algomo-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f206609f9954d5510a24d5cfb01b640d9e7dabdba08b17f9fffe1fc02945c6cb",
+      "artifactSizeBytes": 1802
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T21:44:25.910Z"
+}

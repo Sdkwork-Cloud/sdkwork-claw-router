@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18136,
+  "uuid": "skill-clawhub-solanaprox",
+  "skillKey": "clawhub-solanaprox",
+  "name": "Solanaprox",
+  "summary": "Pay-per-request AI model access via Solana/USDC using a Phantom wallet address. Query Claude and GPT models without API keys. Wallet-native authentication wi...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solanaprox",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "unixlamadev-spec",
+      "features": [
+        "Pay-per-request AI model access via Solana/USDC using a Phantom wallet address",
+        "Query Claude and GPT models without API keys",
+        "Wallet-native authentication wi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/solanaprox@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/251052015?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "solanaprox",
+      "url": "https://clawhub.ai/skills/solanaprox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solanaprox",
+    "url": "https://clawhub.ai/skills/solanaprox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solanaprox-9bcb7cf596a92410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/solanaprox@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-solanaprox-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1825c43cab36f681fc70c2b1a5df96496b6b785c0c8dd97cffd374735a8001db",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T18:34:46.526Z"
+}

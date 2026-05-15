@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/client-intake-bot-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.client_intake_bot_pro",
+  "skill": {
+    "id": 18855,
+    "skillKey": "clawhub-client-intake-bot-pro",
+    "name": "Client Intake Bot Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "client-intake-bot-pro",
+    "url": "https://clawhub.ai/skills/client-intake-bot-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/client-intake-bot-pro-08f38d430320ce0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated client qualification and intake system. Captures leads through conversational forms, scores them based on fit criteria, sends personalized auto-res..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kambrosgroup",
+      "userId": "publishers:kambrosgroup",
+      "displayName": "Karl Ambrosius",
+      "image": "https://avatars.githubusercontent.com/u/38363945?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 655,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771814848498,
+      "changelog": "Initial release of client-intake-bot-pro 1.0.0\n\n- Launches an automated conversational system for qualifying and intake of freelance or consulting leads.\n- Captures leads, asks dynamic questions, and scores prospects on criteria like budget, timeline, and fit.\n- Sends personalized instant responses and routes hot leads for immediate follow-up; automatically nurtures or declines others.\n- Offers flexible setup options for various services (e.g., web design, consulting) and supports branching qualification logic.\n- Integrates with common CRMs, calendars, and email tools to streamline onboarding and lead management.\n- Includes ready-to-use templates, notification rules, and multi-step nurture sequences for leads at all stages.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8b8c20c99002f3805ff55b826f538d624391e786efa93764b7e7017c15a0242f"
+}

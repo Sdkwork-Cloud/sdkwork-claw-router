@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gestalt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gestalt",
+  "skill": {
+    "id": 36924,
+    "skillKey": "clawhub-gestalt",
+    "name": "Gestalt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gestalt",
+    "url": "https://clawhub.ai/skills/gestalt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gestalt-438a062ac613329e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when the user asks for Gestalt mode or wants terse, substantive, low-filler collaboration. After loading, apply these rules for the rest of the session u..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dwgoldie",
+      "userId": "s175zxjcq9s5bxadzbhm7z5cgd83rm8g",
+      "displayName": "dwgoldie",
+      "image": "https://avatars.githubusercontent.com/u/114653555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774665558009,
+      "changelog": "Initial release of Gestalt, a mode for terse, substantive, low-filler collaboration.\n\n- Enables Gestalt mode on request: candid, constructive thinking partner.\n- Leads with answers; expands only when necessary to improve results.\n- Proactively clarifies missing info or false assumptions.\n- Matches depth and detail to user request.\n- Carefully leverages memory if available and relevant, prioritizing current conversation as source of truth.\n- Prioritizes user direction after flagging concerns, unless unsafe or infeasible.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b21ffa66fefc7c0274d655f86b82d05da40abddad48059788f0a330f5c9d955"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baml-codegen@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baml_codegen",
+  "skill": {
+    "id": 14943,
+    "skillKey": "clawhub-baml-codegen",
+    "name": "baml-codegen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baml-codegen",
+    "url": "https://clawhub.ai/skills/baml-codegen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baml-codegen-b4cd00ad21c289ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when generating BAML code for type-safe LLM extraction, classification, RAG, or agent workflows - creates complete .baml files with types, functions, clients, tests, and framework integrations from natural language requirements. Querie."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "killerapp",
+      "userId": "s1749z0792n9re64h9fxreaqnh84x1m8",
+      "displayName": "Vaskin Kissoyan",
+      "image": "https://avatars.githubusercontent.com/u/31700?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1544,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1770349626846,
+      "changelog": "From Foundry: Use when generating BAML code for type-safe LLM extraction, classification, RAG,",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:10b10c6b592f01ccd995fd175f311c6b6647e6bef394f7c158876679adaea7b8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53513,
+  "uuid": "skill-clawhub-sbom-generator",
+  "skillKey": "clawhub-sbom-generator",
+  "name": "Sbom Generator",
+  "summary": "Generate Software Bill of Materials (SBOM) in CycloneDX or SPDX format — inventory all dependencies, licenses, vulnerabilities, and supply chain metadata. Re...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbom_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Generate Software Bill of Materials (SBOM) in CycloneDX or SPDX format — inventory all dependen."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sbom-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sbom-generator",
+      "url": "https://clawhub.ai/skills/sbom-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbom-generator",
+    "url": "https://clawhub.ai/skills/sbom-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbom-generator-cd843e00ac356a60.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sbom-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sbom-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:30b7c2bcbb5e2d5e08c030184d79bbeebffb70805fa7f99ca901c532f492cb78",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:48.476Z"
+}

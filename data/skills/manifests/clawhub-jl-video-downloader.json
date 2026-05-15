@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69099,
+  "uuid": "skill-clawhub-jl-video-downloader",
+  "skillKey": "clawhub-jl-video-downloader",
+  "name": "jl-video-downloader",
+  "summary": "多平台视频下载和文案提取工具。支持抖音、快手、小红书、B站、YouTube等平台的视频下载和语音转文字功能。当用户需要下载视频、提取视频文案或批量处理视频时激活此技能。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jl_video_downloader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pycoder",
+      "features": [
+        "多平台视频下载和文案提取工具。支持抖音、快手、小红书、B站、YouTube等平台的视频下载和语音转文字功能。当用户需要下载视频、提取视频文案或批量处理视频时激活此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jl-video-downloader@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149787002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jl-video-downloader",
+      "url": "https://clawhub.ai/skills/jl-video-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jl-video-downloader",
+    "url": "https://clawhub.ai/skills/jl-video-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jl-video-downloader-1d22f81b7506b4e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jl-video-downloader@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jl-video-downloader-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c222338315850555f4cdfefecfd48dad71e881af806925f8fa66c2869d4cd17",
+      "artifactSizeBytes": 2439
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T02:14:35.616Z"
+}

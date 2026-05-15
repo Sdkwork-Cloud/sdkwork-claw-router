@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/data-harvester-v2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_harvester_v2",
+  "skill": {
+    "id": 21626,
+    "skillKey": "clawhub-data-harvester-v2",
+    "name": "Data Harvester Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-harvester-v2",
+    "url": "https://clawhub.ai/skills/data-harvester-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-harvester-v2-172ca3f739437337.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Batch web scraping for competitor analysis, price monitoring and market research"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windy-001-crypto",
+      "userId": "s1736ky0sjf4n07k892nb8555n83gn8g",
+      "displayName": "windy-001-crypto",
+      "image": "https://avatars.githubusercontent.com/u/258460660?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 502,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772468078967,
+      "changelog": "Full feature version - batch scraping, competitor analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:37df34d10c79eded89124ceb9a53992de6533ed6de3160562718d199255d9522"
+}

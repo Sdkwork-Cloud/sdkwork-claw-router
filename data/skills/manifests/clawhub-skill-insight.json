@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51162,
+  "uuid": "skill-clawhub-skill-insight",
+  "skillKey": "clawhub-skill-insight",
+  "name": "Skill Insight",
+  "summary": "Understand what your AI agent's skills are actually being used for — with usage reports, success/failure tracking, and unused-skill recommendations. Part of...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YY",
+      "features": [
+        "Understand what your AI agent's skills are actually being used for — with usage reports, succes.",
+        "Part of..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-insight@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18640028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-insight",
+      "url": "https://clawhub.ai/skills/skill-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-insight",
+    "url": "https://clawhub.ai/skills/skill-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-insight-9a5ee186aaefe0d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-insight@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-insight-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5245fa8d084407c0b79933bda9b2b70c67d2444a507ea3e4954ee1fbf7d7216d",
+      "artifactSizeBytes": 2179
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:22:21.211Z"
+}

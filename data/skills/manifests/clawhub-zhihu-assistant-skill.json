@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66145,
+  "uuid": "skill-clawhub-zhihu-assistant-skill",
+  "skillKey": "clawhub-zhihu-assistant-skill",
+  "name": "Zhihu Assistant",
+  "summary": "知乎热榜抓取与回答草稿生成助手 - 自动抓取知乎热榜，使用 AI 生成优质回答草稿，推送到飞书审核",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zhihu_assistant_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wolf master",
+      "features": [
+        "知乎热榜抓取与回答草稿生成助手",
+        "自动抓取知乎热榜，使用 AI 生成优质回答草稿，推送到飞书审核"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zhihu-assistant-skill@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18202519?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zhihu-assistant-skill",
+      "url": "https://clawhub.ai/skills/zhihu-assistant-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zhihu-assistant-skill",
+    "url": "https://clawhub.ai/skills/zhihu-assistant-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zhihu-assistant-skill-0feb51f1e3135ba8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zhihu-assistant-skill@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-zhihu-assistant-skill-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:111f73a8284e1a4fb3f95f5ba5fbe600ed695987c4177215892771045b469049",
+      "artifactSizeBytes": 2232
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T13:14:32.244Z"
+}

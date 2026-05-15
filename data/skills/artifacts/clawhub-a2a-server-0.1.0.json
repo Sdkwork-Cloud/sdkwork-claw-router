@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a2a-server@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a2a_server",
+  "skill": {
+    "id": 62880,
+    "skillKey": "clawhub-a2a-server",
+    "name": "A2a Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a2a-server",
+    "url": "https://clawhub.ai/skills/a2a-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a2a-server-98499b92e7fda738.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 WebSocket 的多智能体 P2P 通信服务器，支持 Agent 注册、低延迟消息转发、RPC 调用、发布/订阅、能力发现及离线消息。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuyonghao-123",
+      "userId": "s173qtadqbwthef9dwg283f54n83np6t",
+      "displayName": "yuyonghao-123",
+      "image": "https://avatars.githubusercontent.com/u/267580628?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774514890970,
+      "changelog": "a2a-server 0.1.0\n\n- 初始版本发布\n- 提供基于 WebSocket 的多智能体 P2P 通信系统\n- 支持 Agent 注册/发现、P2P 消息转发、RPC 调用、发布/订阅、能力发现、离线消息队列、心跳机制与自动重连\n- 提供详细的 API 文档、用例与测试说明\n- 认证授权和消息签名功能待后续实现",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a77285ce54e3e516373e346af517293921276b44503f2af8fb7afe61e1f313dc"
+}

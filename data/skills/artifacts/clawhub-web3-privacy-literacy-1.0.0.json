@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/web3-privacy-literacy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web3_privacy_literacy",
+  "skill": {
+    "id": 49636,
+    "skillKey": "clawhub-web3-privacy-literacy",
+    "name": "Web3 Privacy Literacy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web3-privacy-literacy",
+    "url": "https://clawhub.ai/skills/web3-privacy-literacy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web3-privacy-literacy-7d83545413f9b8cd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explains the Web3 privacy landscape - what is public on-chain, what privacy tools exist, and how to think about personal privacy tradeoffs - without recommen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 73,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778181549539,
+      "changelog": "Web3 Privacy Literacy 1.0.0 – Initial Release\n\n- Introduces a skill to help users understand privacy concepts in Web3, focusing on what data is public, types of privacy tools, and privacy tradeoffs.\n- Provides structured guidance and checklists based solely on user-supplied information; does not recommend specific tools or provide legal/financial advice.\n- Outputs include clear sections: current understanding, what is public by default, information leak examples, privacy tool spectrum, threat model worksheet, hygiene checklist, information gaps, verification checklist, and a plain-English takeaway.\n- Strong safety boundaries: no code execution, wallet integration, on-chain queries, or handling of sensitive information; refuses requests for verification or advice beyond structuring user concerns.\n- Response style prioritizes clarity, labeling of assumptions, qualitative language, and user safety warnings.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:945541e4fd1b3566681fed44c92abaeb38a2be0458679d0e58144b5fa4c842d2"
+}

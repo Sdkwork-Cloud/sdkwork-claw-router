@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/serper-v@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.serper_v",
+  "skill": {
+    "id": 11364,
+    "skillKey": "clawhub-serper-v",
+    "name": "serper-v"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "serper-v",
+    "url": "https://clawhub.ai/skills/serper-v",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/serper-v-19f544eeeed52eeb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional search (news, places, maps, reviews, scholar, patents) and bulk scraping via Serper API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vinitngr",
+      "userId": "s17efxx8n6cnq1vkbt2mxs5p4n83kb2d",
+      "displayName": "Vinit",
+      "image": "https://avatars.githubusercontent.com/u/152802686?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1943,
+      "installsAllTime": 4,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1770491574497,
+      "changelog": "- Removed six files, including source code, configuration, and test files.\n- Added SETUP.md with setup or installation details.\n- No user-facing feature changes documented; this update focuses on project structure cleanup.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8b2c419b2aed0b4b67eaf648790400af06b699f10d2e506a928b66f9f424f79"
+}

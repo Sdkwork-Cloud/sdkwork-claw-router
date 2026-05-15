@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cross-asset-intelligence@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_asset_intelligence",
+  "skill": {
+    "id": 39610,
+    "skillKey": "clawhub-cross-asset-intelligence",
+    "name": "Cross-Asset Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-asset-intelligence",
+    "url": "https://clawhub.ai/skills/cross-asset-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-asset-intelligence-2e0357edc60307b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-asset financial analysis API combining crypto and traditional markets. BTC vs S&P500/NASDAQ/Nikkei225/DAX correlation, cross-market risk score (0-100),..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sugacrypto",
+      "userId": "s17exbpwxn1kj47nzxx5ct5pmh84e91t",
+      "displayName": "Suga",
+      "image": "https://avatars.githubusercontent.com/u/157933205?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775660635245,
+      "changelog": "Soften trigger keywords for scanner false positive. Remove EVM_PRIVATE_KEY references. Add Security & Privacy section. Update insight tier pricing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:481a4b16d39d08df97c230aa3091e5ec955d1f6b05b7c393e4f94e0857fc7b4d"
+}

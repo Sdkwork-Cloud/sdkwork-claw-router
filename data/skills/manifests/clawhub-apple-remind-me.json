@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9635,
+  "uuid": "skill-clawhub-apple-remind-me",
+  "skillKey": "clawhub-apple-remind-me",
+  "name": "Apple Reminder",
+  "summary": "Natural language reminders that create actual Apple Reminders.app entries (macOS-native)",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_remind_me",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Pedro Gonzalez",
+      "features": [
+        "Natural language reminders that create actual Apple Reminders.app entries (macOS-native)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-remind-me@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/19900049?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-remind-me",
+      "url": "https://clawhub.ai/skills/apple-remind-me"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-remind-me",
+    "url": "https://clawhub.ai/skills/apple-remind-me",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-remind-me-607d2e8a1fa45278.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-remind-me@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-remind-me-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cbaa3ef33133ecf439170018de4786ccc14dcb715ac0b50d0e4bb296f2ce898f",
+      "artifactSizeBytes": 1953
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T19:24:05.023Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15155,
+  "uuid": "skill-clawhub-clawring",
+  "skillKey": "clawhub-clawring",
+  "name": "clawr.ing",
+  "summary": "Make real phone calls. Replaces the voice-call plugin with a managed service that needs no setup. Use for wake-up calls, reminders, alerts, or when the user...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawring",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marcospgp",
+      "features": [
+        "Make real phone calls",
+        "Replaces the voice-call plugin with a managed service that needs no setup",
+        "Use for wake-up calls, reminders, alerts, or when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawring@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3464445?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawring",
+      "url": "https://clawhub.ai/skills/clawring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawring",
+    "url": "https://clawhub.ai/skills/clawring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawring-e449f925d3cc0b28.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawring@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawring-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:409dce690a6d9cfe5981ee44d55b82c28254f3ac4009543e446ed7bf4f4640c3",
+      "artifactSizeBytes": 2012
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T16:14:49.215Z"
+}

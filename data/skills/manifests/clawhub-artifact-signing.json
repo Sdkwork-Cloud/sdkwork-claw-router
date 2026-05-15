@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28089,
+  "uuid": "skill-clawhub-artifact-signing",
+  "skillKey": "clawhub-artifact-signing",
+  "name": "Artifact Signing",
+  "summary": "A skill to sign artifacts using a digital certificate and private key.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.artifact_signing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raj Aryan",
+      "features": [
+        "A skill to sign artifacts using a digital certificate and private key."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/artifact-signing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73771884?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "artifact-signing",
+      "url": "https://clawhub.ai/skills/artifact-signing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "artifact-signing",
+    "url": "https://clawhub.ai/skills/artifact-signing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/artifact-signing-7415c2e941934294.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/artifact-signing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-artifact-signing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9212a283c50d533d2f251950ec03de567369e523d4a3ef7f50eb81721f1ade32",
+      "artifactSizeBytes": 2104
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:04:11.543Z"
+}

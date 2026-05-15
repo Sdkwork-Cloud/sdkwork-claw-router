@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18379,
+  "uuid": "skill-clawhub-gecko-terminal",
+  "skillKey": "clawhub-gecko-terminal",
+  "name": "Gecko Terminal API",
+  "summary": "Query GeckoTerminal market data - networks, DEXes, pools, tokens, OHLCV, trades, and trending/new pools.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gecko_terminal",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ben",
+      "features": [
+        "Query GeckoTerminal market data",
+        "networks, DEXes, pools, tokens, OHLCV, trades, and trending/new pools."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gecko-terminal@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6516437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gecko-terminal",
+      "url": "https://clawhub.ai/skills/gecko-terminal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gecko-terminal",
+    "url": "https://clawhub.ai/skills/gecko-terminal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gecko-terminal-daa7c9d1d8de41ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gecko-terminal@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gecko-terminal-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c951b5db8515228c141f26255a8fc3a01a100fae8fff80fc5c892738522714d",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T16:39:26.681Z"
+}

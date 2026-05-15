@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/redbookskill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.redbookskill",
+  "skill": {
+    "id": 66229,
+    "skillKey": "clawhub-redbookskill",
+    "name": "redbook skill1.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "redbookskill",
+    "url": "https://clawhub.ai/skills/redbookskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/redbookskill-bbedbf4268627a49.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "定时采集近24小时小红书低粉爆款果茶咖啡健康饮品热点，生成手机友好HTML报告并自动推送飞书群。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yuheng0330",
+      "userId": "s17cz7p2fgq3dqcxk2057rzagx83hsnf",
+      "displayName": "yuheng0330",
+      "image": "https://avatars.githubusercontent.com/u/43717485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773905921906,
+      "changelog": "**重大更新：Skill 全面重构为定时推送小红书饮品热点日报的自动化工具**\n\n- 任务切换为每日定时采集小红书近24小时果茶/咖啡/健康饮品类低粉爆款热点，生成手机友好 HTML 选题报告并推送飞书群\n- 增加多重品牌排除和仅输出普通人可复用选题方向的智能过滤\n- 支持关键参数自定义（采集关键词、排除品牌词、作者最大粉丝量、输出热点数等）\n- 强化配置文档，详细说明前置准备、火山引擎对接和异常排查\n- 移除所有原 CLI 相关源码，仅保留自动日报输出相关核心和报告模板",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:986e209b3c0ab139001b31311b53dc6278f4f42690580425ec00fbc82c08851d"
+}

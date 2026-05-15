@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ios-animation-code-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ios_animation_code_review",
+  "skill": {
+    "id": 31849,
+    "skillKey": "clawhub-ios-animation-code-review",
+    "name": "Ios Animation Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ios-animation-code-review",
+    "url": "https://clawhub.ai/skills/ios-animation-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ios-animation-code-review-9af7f24dbd63ad35.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews iOS animation code for correctness, performance, accessibility, and Apple API best practices. Use when reviewing .swift files containing animation co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 251,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831200566,
+      "changelog": "- Added a \"Hard gates (sequence)\" section outlining objective, step-by-step review gates before reporting findings.\n- Clarified the review process to require explicit inventory and re-anchoring before emitting issues.\n- Stated pass conditions and required cross-checking with reference files for framework-specific claims.\n- No changes made to the checklist, output format, or references—process guidance only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9d932203147447cd3ba843be77fc1661dcbbb80d4560a20e5794745f747cb972"
+}

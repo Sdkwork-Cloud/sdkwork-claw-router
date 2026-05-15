@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29070,
+  "uuid": "skill-clawhub-todoist-litiao",
+  "skillKey": "clawhub-todoist-litiao",
+  "name": "Todoist Litiao",
+  "summary": "Manage tasks and projects in Todoist. Use when user asks about tasks, to-dos, reminders, or productivity.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todoist_litiao",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "litiao1224",
+      "features": [
+        "Manage tasks and projects in Todoist",
+        "Use when user asks about tasks, to-dos, reminders, or productivity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/todoist-litiao@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183017089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "todoist-litiao",
+      "url": "https://clawhub.ai/skills/todoist-litiao"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todoist-litiao",
+    "url": "https://clawhub.ai/skills/todoist-litiao",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todoist-litiao-6f08235252c12cbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/todoist-litiao@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-todoist-litiao-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81c70e395b166b7be76509314227a560d03197ab598041e787863bb085d2ba42",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:08:24.869Z"
+}

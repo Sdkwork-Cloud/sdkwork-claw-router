@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27686,
+  "uuid": "skill-clawhub-clawopen",
+  "skillKey": "clawhub-clawopen",
+  "name": "clawopen",
+  "summary": "ClawOpen provides a curated, community-maintained directory of OpenClaw resources, including docs, plugins, tools, and discussion platforms.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawopen",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Sheng",
+      "features": [
+        "ClawOpen provides a curated, community-maintained directory of OpenClaw resources, including do."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawopen@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149644278?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawopen",
+      "url": "https://clawhub.ai/skills/clawopen"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawopen",
+    "url": "https://clawhub.ai/skills/clawopen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawopen-f7beca6629d878c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawopen@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawopen-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe007db020ca736c047da7f9465cd88d158c3ec4c6f72e6575135b5c5870ab56",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:34:40.749Z"
+}

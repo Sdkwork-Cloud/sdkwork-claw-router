@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10977,
+  "uuid": "skill-clawhub-aibtc",
+  "skillKey": "clawhub-aibtc",
+  "name": "aibtc",
+  "summary": "Manage aibtc-worker automation tasks. Use this skill when the user wants to start, stop, or check the status of the aibtc worker. Triggers include: \"aibtc ru...",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aibtc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AphobiaCat",
+      "features": [
+        "Manage aibtc-worker automation tasks",
+        "Use this skill when the user wants to start, stop, or check the status of the aibtc worker",
+        "Triggers include: \"aibtc ru..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aibtc@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/159599939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aibtc",
+      "url": "https://clawhub.ai/skills/aibtc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aibtc",
+    "url": "https://clawhub.ai/skills/aibtc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aibtc-6bbe5e8fb1865214.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aibtc@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-aibtc-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efedae27f71ded23fc6253cb5db1d962ee99e0feaf6730192c912c742911a0dc",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T08:30:56.616Z"
+}

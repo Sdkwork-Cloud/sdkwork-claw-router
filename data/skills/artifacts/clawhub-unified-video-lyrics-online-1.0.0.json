@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unified-video-lyrics-online@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unified_video_lyrics_online",
+  "skill": {
+    "id": 38593,
+    "skillKey": "clawhub-unified-video-lyrics-online",
+    "name": "Unified Video Lyrics Online"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unified-video-lyrics-online",
+    "url": "https://clawhub.ai/skills/unified-video-lyrics-online",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unified-video-lyrics-online-34b2d955fbe36769.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute music video file into 1080p lyrics-synced videos just by typing what you need. Whether it's adding timed lyrics to music videos online or qui..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dsewell-583h0",
+      "userId": "s17c1p7p7bcqzn5ppv3pfyccb983w48z",
+      "displayName": "dsewell-583h0",
+      "image": "https://avatars.githubusercontent.com/u/210889896?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 186,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776603459426,
+      "changelog": "Unified Video Lyrics Online — v1.0.0\n\n- Initial release enabling online AI-powered lyrics sync for music videos, with cloud-based 1080p exports.\n- Upload a video and describe your desired results; timed lyrics and overlays generated automatically.\n- Connects to remote GPU backend for fast server-side rendering (30-60 seconds typical).\n- Credits-based access with seamless token acquisition for new users; up to 100 free credits.\n- Supports various video/audio formats including MP4, MOV, AVI, WebM, and more.\n- User can check export status, manage credits, preview timelines, and download finished videos through simple chat commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d6a9c0469a3942a94df1fce0d4a37e4c5eb7f7dc047d297288e8a0670bc4ab9e"
+}

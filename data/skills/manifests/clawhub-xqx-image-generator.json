@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59007,
+  "uuid": "skill-clawhub-xqx-image-generator",
+  "skillKey": "clawhub-xqx-image-generator",
+  "name": "Use Ark (火山引擎豆包) for text-to-image (文生图) via an OpenAI-compatible API. Suitable for short captions and long, structured creativ.",
+  "summary": "使用火山引擎Ark进行文生图，支持生成头像、封面、海报、配图等，适用于用户请求包含‘生成图片’、‘AI绘图’等关键词的场景",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xqx_image_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hidebug",
+      "features": [
+        "使用火山引擎Ark进行文生图，支持生成头像、封面、海报、配图等，适用于用户请求包含‘生成图片’、‘AI绘图’等关键词的场景"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xqx-image-generator@1.0.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17402419?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xqx-image-generator",
+      "url": "https://clawhub.ai/skills/xqx-image-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xqx-image-generator",
+    "url": "https://clawhub.ai/skills/xqx-image-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xqx-image-generator-21441adc9a35cde5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xqx-image-generator@1.0.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-xqx-image-generator-1.0.7.json",
+      "version": "1.0.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10bd3c0a3feae8ea6d4760fba6df93801e3631d18c04b9e939de7041c3affd5d",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T18:33:41.375Z"
+}

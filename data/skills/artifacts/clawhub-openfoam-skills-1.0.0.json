@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openfoam-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openfoam_skills",
+  "skill": {
+    "id": 33080,
+    "skillKey": "clawhub-openfoam-skills",
+    "name": "openfoam-skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openfoam-skills",
+    "url": "https://clawhub.ai/skills/openfoam-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openfoam-skills-0b5d56c6e54d731f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate, review, debug, and recover OpenFOAM case files for CFD workflows. Use when working with OpenFOAM dictionaries, case structure, turbulence fields, b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fzj1214",
+      "userId": "s179j2kvrhsfwb68gnram8e99s83heyk",
+      "displayName": "fzj",
+      "image": "https://avatars.githubusercontent.com/u/183976049?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 243,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774011891801,
+      "changelog": "Initial release of hpc-openfoam skill for OpenFOAM CFD workflows.\n\n- Guides users through generating, reviewing, debugging, and recovering OpenFOAM case files.\n- Provides stepwise workflow references for case setup, solver selection, boundary conditions, turbulence models, and cluster execution.\n- Includes guardrails to prevent common input errors and case instability.\n- Supplies reusable case templates and checklists for minimal working setups.\n- Summarizes outputs with solver family, modified files, validation steps, and recovery advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0be67ef410debb430b3fe277dc3554fe99ca21cf4485b143483a77280188b1b8"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55217,
+  "uuid": "skill-clawhub-upkuajing-sms-tool",
+  "skillKey": "clawhub-upkuajing-sms-tool",
+  "name": "UpKuaJing SMS messaging tool, send bulk SMS and monitor delivery reports with instant task tracking. UpKuaJing helps marketers,.",
+  "summary": "Official skill for upkuajing (跨境魔方). SMS tool API for sending SMS and tracking SMS task status. Includes SMS sending, task list, and task record list APIs.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upkuajing_sms_tool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Upkuajing",
+      "features": [
+        "Official skill for upkuajing (跨境魔方)",
+        "SMS tool API for sending SMS and tracking SMS task status",
+        "Includes SMS sending, task list, and task record list APIs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/upkuajing-sms-tool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269088559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "upkuajing-sms-tool",
+      "url": "https://clawhub.ai/skills/upkuajing-sms-tool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upkuajing-sms-tool",
+    "url": "https://clawhub.ai/skills/upkuajing-sms-tool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upkuajing-sms-tool-2e03af828608b8a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/upkuajing-sms-tool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-upkuajing-sms-tool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9074c37c72fb4ea53e274958ba450de491bfbe281632982a3949bfaeebcfe3e8",
+      "artifactSizeBytes": 2021
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T11:42:02.295Z"
+}

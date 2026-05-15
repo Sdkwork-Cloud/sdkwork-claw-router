@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/runstr-analytics@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.runstr_analytics",
+  "skill": {
+    "id": 26295,
+    "skillKey": "clawhub-runstr-analytics",
+    "name": "Runstr analytics"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "runstr-analytics",
+    "url": "https://clawhub.ai/skills/runstr-analytics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/runstr-analytics-4430d6140de5bc39.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Advanced RUNSTR fitness analytics with trend analysis, performance insights, training recommendations, and correlation tracking. Analyzes workout history, ha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "katla50",
+      "userId": "s170adyct6h0kbvpw131eceky183gy70",
+      "displayName": "Katla",
+      "image": "https://avatars.githubusercontent.com/u/95768615?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773479683433,
+      "changelog": "Version 1.0.1 – Security improvements for private key handling and local data protection\n\n- Requires RUNSTR_NSEC to be set as an environment variable for all usage.\n- Nostr private key (nsec) is now handled exclusively via stdin for enhanced security—never exposed on command line or process lists.\n- Local cache and database files are created with strict permissions (0700/0600) to improve data privacy.\n- Expanded \"Security Considerations\" and installation recommendations in documentation.\n- No file or code changes detected; changelog reflects documentation and operational requirements only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a6dfc1a0865aedd793d64f4112c66c3b2aecdc6a2d7bb22d4483a97141fa601"
+}

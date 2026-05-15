@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/watch-shenzhen-tv-news@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.watch_shenzhen_tv_news",
+  "skill": {
+    "id": 73622,
+    "skillKey": "clawhub-watch-shenzhen-tv-news",
+    "name": "打开深圳广电资讯"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "watch-shenzhen-tv-news",
+    "url": "https://clawhub.ai/skills/watch-shenzhen-tv-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/watch-shenzhen-tv-news-4042b3957f8b3847.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "语音一键直达深圳广电官网资讯页面，快捷获取深圳最新新闻、民生热点及广电节目动态，无需手动输入网址。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mifashion",
+      "userId": "s174n2jc0pkj3werbahk6crry984sn9p",
+      "displayName": "Wash Uugal",
+      "image": "https://avatars.githubusercontent.com/u/33660730?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776072618404,
+      "changelog": "- Initial release of \"打开深圳广电资讯\" skill.\n- Enables voice-activated, one-click access to Shenzhen Broadcast & TV official news page.\n- Instantly browse Shenzhen’s latest news, civil affairs, and TV updates without manual URL input.\n- Designed for simple operation; just say the trigger phrase to open the info page.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:837df4697c7c089688726dc396efb98368e58ef68f9311fb596a083cc49a1f42"
+}

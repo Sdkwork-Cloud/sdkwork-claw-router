@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/webscraper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.webscraper",
+  "skill": {
+    "id": 28278,
+    "skillKey": "clawhub-webscraper",
+    "name": "WebScraper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "webscraper",
+    "url": "https://clawhub.ai/skills/webscraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/webscraper-2eb65357e67a7aac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract readable content from web pages. Use when: user wants to read article content, fetch documentation, grab product info, or get text from URLs. NOT for..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lesliepie",
+      "userId": "s171832gkkbwdw00cz5mqc1zcs83p33m",
+      "displayName": "LesliePie",
+      "image": "https://avatars.githubusercontent.com/u/24803273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 330,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773976092959,
+      "changelog": "Initial release: web content extraction",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c7e157141a867dff2f3a0b0480c7d21b9ce676a1d68412bf5674d800446756b1"
+}

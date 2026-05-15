@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-platform-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_platform_publish",
+  "skill": {
+    "id": 67609,
+    "skillKey": "clawhub-multi-platform-publish",
+    "name": "Multi Platform Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-platform-publish",
+    "url": "https://clawhub.ai/skills/multi-platform-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-platform-publish-3ffde3fa36a8465c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据不同平台要求，生成符合尺寸和风格的封面图、详情长图及文案，支持微信公众号、小红书、抖音和B站发布内容。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhuchenggong19851114-design",
+      "userId": "s175hh7wvdt1z18hr1txy3da4h83haab",
+      "displayName": "zhuchenggong19851114-design",
+      "image": "https://avatars.githubusercontent.com/u/266258234?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776159840307,
+      "changelog": "Initial release of multi-platform-publish skill.\n\n- Supports generating platform-optimized images and copy for WeChat Official Accounts, Xiaohongshu, Douyin/Video Accounts, and Bilibili.\n- Details per-platform image size, aspect ratio, and copywriting style requirements.\n- Introduces HTML template rendering for flexible multi-platform cover images.\n- Provides step-by-step guide for workflow from requirement collection to output.\n- Includes checklists and templates for common use cases and pre-publish review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:758d43da7e25056b796a1d1a8c6ca96ce3b313e6ab3b389e0283df6f681a2296"
+}

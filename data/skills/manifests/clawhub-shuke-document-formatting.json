@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63692,
+  "uuid": "skill-clawhub-shuke-document-formatting",
+  "skillKey": "clawhub-shuke-document-formatting",
+  "name": "Shuke Document Formatting",
+  "summary": "数科公司文印格式自动化工具包。自动按照数科公司文印格式要求（方正小标宋简体、仿宋GB2312、楷体GB2312、黑体等字体，28字/行，22行/页）格式化Word文档并生成PDF。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shuke_document_formatting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shuchang",
+      "features": [
+        "数科公司文印格式自动化工具包。自动按照数科公司文印格式要求（方正小标宋简体、仿宋GB2312、楷体GB2312、黑体等字体，28字/行，22行/页）格式化Word文档并生成PDF。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shuke-document-formatting@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3664971?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shuke-document-formatting",
+      "url": "https://clawhub.ai/skills/shuke-document-formatting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shuke-document-formatting",
+    "url": "https://clawhub.ai/skills/shuke-document-formatting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shuke-document-formatting-8234cd94340623c8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shuke-document-formatting@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-shuke-document-formatting-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9f4c07b1bffb1de10c8a42226c4d112f38e4e88cb3b5828db1574ecccf73d1f",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T09:48:17.483Z"
+}

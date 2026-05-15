@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45762,
+  "uuid": "skill-clawhub-multi-search-aisa",
+  "skillKey": "clawhub-multi-search-aisa",
+  "name": "multi-search-aisa",
+  "summary": "Run multi-source evidence gathering with confidence scoring across web, academic, Tavily, and synthesis layers via AISA. Use when: the user needs a comprehen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_search_aisa",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Run multi-source evidence gathering with confidence scoring across web, academic, Tavily, and s.",
+        "Use when: the user needs a comprehen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/multi-search-aisa@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "multi-search-aisa",
+      "url": "https://clawhub.ai/skills/multi-search-aisa"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-search-aisa",
+    "url": "https://clawhub.ai/skills/multi-search-aisa",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-search-aisa-26924d871719ca13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/multi-search-aisa@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-multi-search-aisa-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d60260703ec89444d32587628e73f085ecbcdd7837a4f4d31f4ce72b25c6193",
+      "artifactSizeBytes": 2390
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T10:52:46.374Z"
+}

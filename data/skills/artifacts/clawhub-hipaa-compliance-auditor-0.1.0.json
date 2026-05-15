@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hipaa-compliance-auditor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hipaa_compliance_auditor",
+  "skill": {
+    "id": 33916,
+    "skillKey": "clawhub-hipaa-compliance-auditor",
+    "name": "Hipaa Compliance Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hipaa-compliance-auditor",
+    "url": "https://clawhub.ai/skills/hipaa-compliance-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hipaa-compliance-auditor-16c708d7cb138083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically detect and de-identify PII (Personal Identifiable Information) and PHI (Protected Health Information) from clinical/medical text to ensure HIPA..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aipoch-ai",
+      "userId": "s17fjw78yq6wtd4ep6zsaxwrn983hznr",
+      "displayName": "AIpoch",
+      "image": "https://avatars.githubusercontent.com/u/258999481?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 231,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774242807464,
+      "changelog": "Initial release: HIPAA Compliance Auditor skill introduced.\n\n- Automatically detects and de-identifies PII and PHI in clinical/medical text for HIPAA compliance.\n- Supports 18 HIPAA identifier categories, with context-aware detection and NLP.\n- Provides audit logs for all redactions and confidence scoring for manual review.\n- Usable via command line and Python API with customizable parameters.\n- Includes detailed technical documentation, output formats, and risk assessment.\n- Requires manual QA before use in compliance workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1ebe25a502367f700c24c2ab02abbbafe905a6b1d9089a0e8e4b093ab52e3051"
+}

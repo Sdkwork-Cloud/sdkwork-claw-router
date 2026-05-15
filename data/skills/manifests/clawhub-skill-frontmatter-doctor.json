@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58516,
+  "uuid": "skill-clawhub-skill-frontmatter-doctor",
+  "skillKey": "clawhub-skill-frontmatter-doctor",
+  "name": "Skill Frontmatter Doctor",
+  "summary": "修复 frontmatter、metadata、requires、install 和目录结构问题，贴合当前 OpenClaw 规范。；use for skills, frontmatter, validation workflows；do not use for 编造不存在的字段, 忽略单行 JSON 约束.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_frontmatter_doctor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "修复 frontmatter、metadata、requires、install 和目录结构问题，贴合当前 OpenClaw 规范。；use for skills, frontmatter,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-frontmatter-doctor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-frontmatter-doctor",
+      "url": "https://clawhub.ai/skills/skill-frontmatter-doctor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-frontmatter-doctor",
+    "url": "https://clawhub.ai/skills/skill-frontmatter-doctor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-frontmatter-doctor-7d09c57502a6aaf0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-frontmatter-doctor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-frontmatter-doctor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f8f61db9ae4459822c5d1872b3b7125fcf998dfaef68e3812930200c9660c364",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T02:40:16.682Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pigbun-rednote@0.8.1",
+  "version": "0.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pigbun_rednote",
+  "skill": {
+    "id": 68636,
+    "skillKey": "clawhub-pigbun-rednote",
+    "name": "PigBun RedNote"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pigbun-rednote",
+    "url": "https://clawhub.ai/skills/pigbun-rednote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pigbun-rednote-d52bf745d6e20f31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书AI运营工具，支持搜索、发布笔记，评论管理，社交互动及数据分析的一站式自动化解决方案。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pigbun-ai",
+      "userId": "publishers:pigbun-ai",
+      "displayName": "PigBun-AI",
+      "image": "https://avatars.githubusercontent.com/u/261591371?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 688,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.8.1",
+      "createdAt": 1772017690333,
+      "changelog": "Version 0.8.1 of pigbun-rednote\n\n- No file changes detected in this release.\n- All features and documentation remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:3ccee6a30198a26824105296f0ce23161ef86d9091beb14eb958ec926f30acd5"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73350,
+  "uuid": "skill-clawhub-dialectical-analysis",
+  "skillKey": "clawhub-dialectical-analysis",
+  "name": "辩证分析",
+  "summary": "通过多代理辩论，结合知识增强和多维度评分，生成高质量、经考验的商业分析与可行性评估报告。",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dialectical_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "philonis",
+      "features": [
+        "通过多代理辩论，结合知识增强和多维度评分，生成高质量、经考验的商业分析与可行性评估报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dialectical-analysis@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3388405?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dialectical-analysis",
+      "url": "https://clawhub.ai/skills/dialectical-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dialectical-analysis",
+    "url": "https://clawhub.ai/skills/dialectical-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dialectical-analysis-acff2a0841ea933d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dialectical-analysis@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dialectical-analysis-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a6adeb19dd9177a9a3909d62c646327a18f056c861c16f897357a2a9a0e4f87c",
+      "artifactSizeBytes": 2167
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T06:09:24.439Z"
+}

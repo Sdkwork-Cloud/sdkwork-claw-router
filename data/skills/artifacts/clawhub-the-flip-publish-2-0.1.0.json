@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/the-flip-publish-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.the_flip_publish_2",
+  "skill": {
+    "id": 53963,
+    "skillKey": "clawhub-the-flip-publish-2",
+    "name": "The Flip"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "the-flip-publish-2",
+    "url": "https://clawhub.ai/skills/the-flip-publish-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/the-flip-publish-2-c1b97624cbfd5da7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "$1 USDC entry. Pick 20 predictions. All 20 coins flip at once each round. Match the first 14 to win the entire jackpot. Live on Solana devnet."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bedesta5050",
+      "userId": "publishers:bedesta5050",
+      "displayName": "bedesta5050",
+      "image": "https://avatars.githubusercontent.com/u/138519398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774087674418,
+      "changelog": "- Initial release of THE FLIP skill on Solana devnet.\n- $1 USDC entry: Pick 20 coin flip predictions; match the first 14 to win the jackpot.\n- Command-line and API support to check game status, enter, claim, and monitor tickets.\n- Permissionless flip mechanism with a 12-hour on-chain enforced cooldown.\n- Jackpot pools all entry fees (99%) and resets upon a win; vault is a PDA (no private key).\n- Full documentation for wallet setup, API endpoints, and skill usage provided.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a4c279636e4005b11efdad386c659abfa477ef13572f3ab602dcb160a35b608d"
+}

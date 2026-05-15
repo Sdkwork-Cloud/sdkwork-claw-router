@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-guide-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_guide_skill",
+  "skill": {
+    "id": 72080,
+    "skillKey": "clawhub-photo-guide-skill",
+    "name": "Photo Guide"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-guide-skill",
+    "url": "https://clawhub.ai/skills/photo-guide-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-guide-skill-3726eb66987dfed6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "摄影指导技能 - 当用户上传照片并询问如何拍出类似效果、拍摄参数、后期调色等摄影相关问题时使用此技能。分析照片的视觉特征，推断拍摄参数，提供后期调色指导、照片优化建议和学习关键词。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dcison",
+      "userId": "s179xphjwgx85kf407b97nwren84nydr",
+      "displayName": "dcison",
+      "image": "https://avatars.githubusercontent.com/u/20755125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1775935082454,
+      "changelog": "photo-guide-skill v0.1.0 changelog\n\n- Initial release: Provides comprehensive photo analysis and guidance for users seeking to replicate effects, understand parameters, and optimize/post-process photos.\n- Supports EXIF extraction (via Python script) for more accurate camera parameter reporting.\n- Offers step-by-step workflow: dependency check, EXIF extraction, multi-dimensional visual analysis, style template matching, and structured report generation.\n- Includes practical shooting tips, post-processing recommendations, lighting and props suggestions, and beginner-friendly learning keywords.\n- Addresses boundary cases such as lack of EXIF data, low image quality, and mobile phone shooting. All analysis is processed locally for privacy.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f389fc0e747e0e6fdb6238fd1eaa326f668b0c4262a8fbd358c4e21d11760887"
+}

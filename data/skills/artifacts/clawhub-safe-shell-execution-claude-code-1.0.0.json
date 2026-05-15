@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/safe-shell-execution-claude-code@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_shell_execution_claude_code",
+  "skill": {
+    "id": 44917,
+    "skillKey": "clawhub-safe-shell-execution-claude-code",
+    "name": "safe-shell-execution-claude-code"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-shell-execution-claude-code",
+    "url": "https://clawhub.ai/skills/safe-shell-execution-claude-code",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-shell-execution-claude-code-7680a761a4d951ad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform layered safety checks on shell commands: detect injections, warn before destructive ops, protect sensitive paths, and require confirmations before ex..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lizlzzzz",
+      "userId": "s17c2chbsfx4tvws1f7cdw9k0n8419nh",
+      "displayName": "lizlzzzz",
+      "image": "https://avatars.githubusercontent.com/u/78647916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775021864540,
+      "changelog": "Initial release of safe-shell-execution skill extracted from Claude Code production security patterns.\n\n- Adds multi-layered safety for any shell execution request: detects injections, warns on destructive ops, and protects sensitive files.\n- Detects and blocks command substitution, Zsh-specific attack surfaces, and other injection patterns before execution.\n- Displays explicit warnings and requires confirmation for destructive git and filesystem operations.\n- Enforces confirmation for write access to shell configs, credentials, or system-critical files.\n- Provides clear classification and handling of commands (safe, caution, warning, reject) with step-by-step flow.\n- Rejects unsafe commands with detailed reasons for user clarity.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:311469d1edf55fb9423df2944812f925a95a8792e7d45b9b9be6c1f151095907"
+}

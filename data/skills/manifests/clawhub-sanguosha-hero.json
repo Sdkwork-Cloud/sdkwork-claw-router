@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71507,
+  "uuid": "skill-clawhub-sanguosha-hero",
+  "skillKey": "clawhub-sanguosha-hero",
+  "name": "sanguosha-hero",
+  "summary": "三国杀标准版武将技能查询。当用户询问三国杀武将的技能时使用此技能。触发关键词包括：三国杀、武将技能、查武将、技能查询，以及直接提到武将名（如\"赵云\"、\"诸葛亮\"、\"张飞\"等）并询问其技能、能力、效果的场景。支持自然语言提问，如\"赵云有什么技能\"、\"查一下诸葛亮的技能\"、\"三国杀 张飞 技能\"等。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sanguosha_hero",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cpufreestyle",
+      "features": [
+        "三国杀标准版武将技能查询。当用户询问三国杀武将的技能时使用此技能。触发关键词包括：三国杀、武将技能、查武将、技能查询，以及直接提到武将名（如\"赵云\"、\"诸葛亮\"、\"张飞\"等）并询问其技能、能."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sanguosha-hero@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128972788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sanguosha-hero",
+      "url": "https://clawhub.ai/skills/sanguosha-hero"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sanguosha-hero",
+    "url": "https://clawhub.ai/skills/sanguosha-hero",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sanguosha-hero-c5fbd735e7e2d1d0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sanguosha-hero@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sanguosha-hero-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdd33c41aca3798540eed35ff07e993d488c0fe881d51814701d648a6e9b318f",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T08:48:50.958Z"
+}

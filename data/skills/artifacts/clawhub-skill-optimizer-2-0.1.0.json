@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-optimizer-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_optimizer_2",
+  "skill": {
+    "id": 37772,
+    "skillKey": "clawhub-skill-optimizer-2",
+    "name": "Skill Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-optimizer-2",
+    "url": "https://clawhub.ai/skills/skill-optimizer-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-optimizer-2-990fb946293043a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze the current conversation history and local installed skills to identify missed skill triggers, overlapping or duplicate skills, weak metadata, stale..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangchenchen",
+      "userId": "s17drjhz7c0z9v49020y55hazh83xkch",
+      "displayName": "zhangchenchen",
+      "image": "https://avatars.githubusercontent.com/u/12166250?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773971883627,
+      "changelog": "Initial release of Skill Optimizer — a tool for auditing, optimizing, and managing skill sets and trigger quality.\n\n- Audits conversation history and local skill directories for missed triggers, duplicates, metadata issues, risky or stale skills, workflow problems, and overlap.\n- Produces a structured audit report with evidence and an actionable queue for user decisions.\n- Suggests fixes, merges, deletions, or keeping skills; edits only after user confirmation.\n- Enforces strict, user-facing action options: Fix, Merge, Delete, or Keep and Skip.\n- Designed for safety: no silent edits, deletion confirmations, and nuanced recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29a273117111e9767be818becc64539ae18f228e373f54884e06f8a50dc6f397"
+}

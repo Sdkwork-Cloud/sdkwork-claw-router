@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-odps-quota-manage@0.0.3",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_odps_quota_manage",
+  "skill": {
+    "id": 37478,
+    "skillKey": "clawhub-alibabacloud-odps-quota-manage",
+    "name": "Alibabacloud Odps Quota Manage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-odps-quota-manage",
+    "url": "https://clawhub.ai/skills/alibabacloud-odps-quota-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-odps-quota-manage-6d4175f7fa6b9dd1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MaxCompute Quota Management Skill. Use for managing MaxCompute/ODPS quota resources including pay-as-you-go quota creation, query, and listing operations. Tr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.3",
+      "createdAt": 1776912196323,
+      "changelog": "alibabacloud-odps-quota-manage v0.0.3\n\n- Added mandatory use of Aliyun CLI \"ai-mode\" for skill execution; requires enabling/disabling at session start/end.\n- Updated installation requirements: Aliyun CLI >= 3.3.3 and explicit maxcompute plugin version management.\n- All CLI commands must include a custom User-Agent: \"AlibabaCloud-Agent-Skills/alibabacloud-odps-quota-manage\".\n- Improved parameter confirmation rules: every user-customizable parameter must be explicitly confirmed before running commands.\n- Command naming standardized—use kebab-case (e.g., create-quota, list-quotas, query-quota); deprecated/incorrect commands forbidden.\n- Documentation and references updated for new setup and workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c535261b097bad5411575ed6214fb26fd018cc0fb2192867bdcb880027a8ec1c"
+}

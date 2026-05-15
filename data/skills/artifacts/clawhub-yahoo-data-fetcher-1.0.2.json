@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/yahoo-data-fetcher@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoo_data_fetcher",
+  "skill": {
+    "id": 9220,
+    "skillKey": "clawhub-yahoo-data-fetcher",
+    "name": "yahoo fetch data of stonks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoo-data-fetcher",
+    "url": "https://clawhub.ai/skills/yahoo-data-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoo-data-fetcher-1587d6cd662a906d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch real-time stock quotes from Yahoo Finance."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noypearl",
+      "userId": "publishers:noypearl",
+      "displayName": "noypearl",
+      "image": "https://avatars.githubusercontent.com/u/11259340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4276,
+      "installsAllTime": 21,
+      "installsCurrent": 21,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1769697440374,
+      "changelog": "- Renamed skill from \"stock-quote\" to \"yahoo-data-fetcher\".\n- Replaced implementation file (`stock-quote.js` removed; `index.js` and `package.json` added).\n- Updated documentation for improved clarity and normalized JSON output.\n- Enhanced input flexibility with expanded examples.\n- Unified command and output details for easier use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:aefa2ee6904fa112e3c9c0a45d01334e59c4c644677cbbef5e377d2e69495d85"
+}

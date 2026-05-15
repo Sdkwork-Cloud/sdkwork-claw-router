@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63837,
+  "uuid": "skill-clawhub-ftshare-hk-data",
+  "skillKey": "clawhub-ftshare-hk-data",
+  "name": "Skills of HK-share data released by ft.tech.",
+  "summary": "港股数据技能集（market.ft.tech）。覆盖公司介绍、分页估值分析（PE/PB/PS/股息率）、单票基础视图（板块/上市状态/市值/股本）、日/月/季/年 K 线（历史k线，T日18点更新当日数据）（前复权/不复权）。用户询问港股公司简介、港股估值、市盈率市净率、港股基础信息、市值总股本、港股 K 线/日...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ftshare_hk_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shawn92",
+      "features": [
+        "港股数据技能集（market.ft.tech）。覆盖公司介绍、分页估值分析（PE/PB/PS/股息率）、单票基础视图（板块/上市状态/市值/股本）、日/月/季/年 K 线（历史k线，T日18."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ftshare-hk-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17521361?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ftshare-hk-data",
+      "url": "https://clawhub.ai/skills/ftshare-hk-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ftshare-hk-data",
+    "url": "https://clawhub.ai/skills/ftshare-hk-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ftshare-hk-data-3ef6bc357f98bb8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ftshare-hk-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ftshare-hk-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4704938cf351ebd280a7cc46fefded738d94a9cd2615e02cbf2c03df9d5cc505",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T12:18:47.852Z"
+}

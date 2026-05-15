@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69380,
+  "uuid": "skill-clawhub-diet-log",
+  "skillKey": "clawhub-diet-log",
+  "name": "饮食记录",
+  "summary": "饮食记录与营养分析助手。当用户提到\"饮食记录\"、\"记下我吃了\"、\"营养分析\"、\"统计饮食\"、\"最近X天吃了什么\"等关键词时触发。功能包括：(1) 解析用户输入的饮食内容并查询营养数据；(2) 计算并记录全部营养素（热量、宏量营养素、脂肪酸、矿物质、维生素）；(3) 将饮食记录存入 meal_log.json；(4...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.diet_log",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sj13818161942",
+      "features": [
+        "饮食记录与营养分析助手。当用户提到\"饮食记录\"、\"记下我吃了\"、\"营养分析\"、\"统计饮食\"、\"最近X天吃了什么\"等关键词时触发。功能包括：(1) 解析用户输入的饮食内容并查询营养数据；(2)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/diet-log@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161562587?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "diet-log",
+      "url": "https://clawhub.ai/skills/diet-log"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "diet-log",
+    "url": "https://clawhub.ai/skills/diet-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/diet-log-c2d96440abba9e86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/diet-log@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-diet-log-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b975e90896f7388522a650205954ff933ec28a0fa79a64b1a59d60f054da61d",
+      "artifactSizeBytes": 2210
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T05:47:18.928Z"
+}

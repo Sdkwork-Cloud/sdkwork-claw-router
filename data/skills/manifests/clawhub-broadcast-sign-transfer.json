@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60330,
+  "uuid": "skill-clawhub-broadcast-sign-transfer",
+  "skillKey": "clawhub-broadcast-sign-transfer",
+  "name": "Broadcast Sign Transfer",
+  "summary": "支持 EVM 多链的原生代币和 ERC20 转账，自动构造交易、本地签名并通过 OKX API 广播上链",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.broadcast_sign_transfer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wang Chengming",
+      "features": [
+        "支持 EVM 多链的原生代币和 ERC20 转账，自动构造交易、本地签名并通过 OKX API 广播上链"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/broadcast-sign-transfer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17539174?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "broadcast-sign-transfer",
+      "url": "https://clawhub.ai/skills/broadcast-sign-transfer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "broadcast-sign-transfer",
+    "url": "https://clawhub.ai/skills/broadcast-sign-transfer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/broadcast-sign-transfer-c39e95dcc8e30a61.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/broadcast-sign-transfer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-broadcast-sign-transfer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd3ed2260bdcb64db8c117ecd1598488ea9b2d305318450e9125be33a5cb7cad",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T06:37:06.513Z"
+}

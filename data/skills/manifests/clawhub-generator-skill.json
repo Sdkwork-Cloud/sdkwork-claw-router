@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53512,
+  "uuid": "skill-clawhub-generator-skill",
+  "skillKey": "clawhub-generator-skill",
+  "name": "Generator Skill",
+  "summary": "Skip the learning curve of professional editing software. Describe what you want — generate a 30-second video of a sunset beach scene with upbeat background...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "Skip the learning curve of professional editing software",
+        "Describe what you want — generate a 30-second video of a sunset beach scene with upbeat backgro."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/generator-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "generator-skill",
+      "url": "https://clawhub.ai/skills/generator-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-skill",
+    "url": "https://clawhub.ai/skills/generator-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-skill-cf0b18fc63418bcb.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/generator-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-generator-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:421dfb847395d4c15125fe041cd633efa5d10d57b6e9454a558fffed9bae13ea",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T15:39:26.087Z"
+}

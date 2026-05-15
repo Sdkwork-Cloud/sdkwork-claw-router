@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/masterchef@0.6.2",
+  "version": "0.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.masterchef",
+  "skill": {
+    "id": 49805,
+    "skillKey": "clawhub-masterchef",
+    "name": "masterchef"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "masterchef",
+    "url": "https://clawhub.ai/skills/masterchef",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/masterchef-9bb15a7629fbda28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recipe and ingredient query assistant. Use when users ask how to cook X, X recipe, what can I make with X, I have X what can I cook, how to make X, or mentio..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yummy-chat",
+      "userId": "s1712s93y1pz1czhqsyh476gpx866gzh",
+      "displayName": "yummy",
+      "image": "https://avatars.githubusercontent.com/u/253081582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 66,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.6.2",
+      "createdAt": 1778231530254,
+      "changelog": "MasterChef 1.0.0 — Major release with expanded language support and improved instructions\n\n- Now supports both ingredient-based and dish-name recipe queries with clear separation of modes.\n- Full bilingual workflow: Translates user input from English to Chinese for API calls, and Chinese responses back to user’s language.\n- Chinese input/output now passes through with no translation or alteration.\n- Detailed error handling for common API responses (404, 422, 502, network issues).\n- Improved output formatting instructions, including grouping, use of emojis, and dish highlighting.\n- Enhanced usage and intent detection guidance for a better user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5cbfb8e2608619b16c29cfcac9883ade3257ca9131b4205577f5f05bfebe6596"
+}

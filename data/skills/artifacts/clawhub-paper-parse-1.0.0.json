@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-parse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_parse",
+  "skill": {
+    "id": 68271,
+    "skillKey": "clawhub-paper-parse",
+    "name": "Paper Parse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-parse",
+    "url": "https://clawhub.ai/skills/paper-parse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-parse-e1ec78a232c20d75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "对用户提供的任何学术论文（PDF附件或URL）进行双模式深度研读。当用户请求分析、研读、解读或总结一篇学术论文时，使用此技能。一次性生成两份报告：Part A 面向研究者的深度专业解析，Part B 面向快速理解的核心逻辑与价值提炼。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sterlingfrank1",
+      "userId": "s17b6b70t7g2pbcgs3tk0endj983mqm3",
+      "displayName": "Sterlingfrank1",
+      "image": "https://avatars.githubusercontent.com/u/175074472?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3754,
+      "installsAllTime": 19,
+      "installsCurrent": 18,
+      "stars": 9,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770790375436,
+      "changelog": "Initial release of paper-parse skill:\n\n- Deeply analyzes any academic paper (PDF or URL) and generates two types of reports in one file.\n- Part A: Provides a detailed, professional, researcher-focused analysis.\n- Part B: Extracts the core logic, key findings, and value in a concise, insight-driven summary.\n- Ensures academic rigor, theoretical depth, and complete reproduction of the paper’s arguments and data.\n- Reports always follow a dual-mode output format separated by '---' and are delivered as a single Markdown file.\n- Clear workflow with mandatory full-paper read, interim structured analysis, and templated final report.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:087947e10c92b4ebd94fbfe9b204fa64233ab75b89ea37899f64d9e07e89f59e"
+}

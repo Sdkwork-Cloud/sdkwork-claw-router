@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upstream-material-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upstream_material_analysis",
+  "skill": {
+    "id": 72442,
+    "skillKey": "clawhub-upstream-material-analysis",
+    "name": "上游材料股研究框架"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upstream-material-analysis",
+    "url": "https://clawhub.ai/skills/upstream-material-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upstream-material-analysis-0043b609f6ce299e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "上游材料股研究框架。对不直接面向终端的上游材料公司（铜箔/衬底/晶体/树脂/玻纤/载板基材等）进行系统化深度分析。用于：(1)梳理上游材料在产业链中的位置和传导路径，(2)量化供需格局和价格弹性，(3)测算材料放量对标的公司利润结构的影响，(4)对比同赛道竞争者形成投资判断。触发词：上游材料分析、材料股研究、供应..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "seanweisean",
+      "userId": "s170vve213a2f768grj55dkk6s83m7n0",
+      "displayName": "SeanWeiSean",
+      "image": "https://avatars.githubusercontent.com/u/17775798?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777537228424,
+      "changelog": "初版：6步研究方法论+量价测算模板+载体铜箔完整案例",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f8b1291946690c36323d0a45d9319774a5846ba090d45a5a1af270e3860fbae3"
+}

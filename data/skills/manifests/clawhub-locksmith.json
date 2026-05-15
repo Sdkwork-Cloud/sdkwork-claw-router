@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64537,
+  "uuid": "skill-clawhub-locksmith",
+  "skillKey": "clawhub-locksmith",
+  "name": "Locksmith Service",
+  "summary": "提供公安备案开锁、智能锁安装升级及紧急求援预约指引。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.locksmith",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mikeclaw007",
+      "features": [
+        "提供公安备案开锁、智能锁安装升级及紧急求援预约指引。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/locksmith@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265502950?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "locksmith",
+      "url": "https://clawhub.ai/skills/locksmith"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "locksmith",
+    "url": "https://clawhub.ai/skills/locksmith",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/locksmith-b8bb11bf4529d505.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/locksmith@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-locksmith-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f99573708d10d8e2850251bb0e6b7edae884a2e93f24ff09a537f031fe29cdf",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:20:59.381Z"
+}

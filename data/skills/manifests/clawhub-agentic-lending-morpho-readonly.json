@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49573,
+  "uuid": "skill-clawhub-agentic-lending-morpho-readonly",
+  "skillKey": "clawhub-agentic-lending-morpho-readonly",
+  "name": "Agentic Lending Morpho Readonly",
+  "summary": "Read-only Morpho-first agentic lending planning for Api3-backed markets. Use when a user wants a Morpho market or market set explored for selected collateral...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentic_lending_morpho_readonly",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dave",
+      "features": [
+        "Read-only Morpho-first agentic lending planning for Api3-backed markets",
+        "Use when a user wants a Morpho market or market set explored for selected collateral..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentic-lending-morpho-readonly@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49767509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentic-lending-morpho-readonly",
+      "url": "https://clawhub.ai/skills/agentic-lending-morpho-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentic-lending-morpho-readonly",
+    "url": "https://clawhub.ai/skills/agentic-lending-morpho-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentic-lending-morpho-readonly-e32363a4ce8c2506.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentic-lending-morpho-readonly@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentic-lending-morpho-readonly-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7be0eb8b336c23ae32e92982f7721a5e17f7b5d8e48685ce0cda6f4e920f29af",
+      "artifactSizeBytes": 2038
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T11:12:12.510Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45966,
+  "uuid": "skill-clawhub-get-to-it",
+  "skillKey": "clawhub-get-to-it",
+  "name": "Get To It",
+  "summary": "AI-powered personal secretary for task management and goal tracking. Gives you a Top 3 daily brief, captures ideas, tracks momentum, adapts to your available...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.get_to_it",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fong-Yu (Yang) Lin",
+      "features": [
+        "AI-powered personal secretary for task management and goal tracking",
+        "Gives you a Top 3 daily brief, captures ideas, tracks momentum, adapts to your available..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/get-to-it@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112368064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "get-to-it",
+      "url": "https://clawhub.ai/skills/get-to-it"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "get-to-it",
+    "url": "https://clawhub.ai/skills/get-to-it",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/get-to-it-e86a164deb413b43.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/get-to-it@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-get-to-it-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:64de2aeb2ebb36253f98958ec06430b6dcafeb44e15caa2a530c5784294552c3",
+      "artifactSizeBytes": 2622
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T06:12:02.651Z"
+}

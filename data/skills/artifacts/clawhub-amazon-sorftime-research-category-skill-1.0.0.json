@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-sorftime-research-category-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_sorftime_research_category_skill",
+  "skill": {
+    "id": 62614,
+    "skillKey": "clawhub-amazon-sorftime-research-category-skill",
+    "name": "amazon-sorftime-research-category-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-sorftime-research-category-skill",
+    "url": "https://clawhub.ai/skills/amazon-sorftime-research-category-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-sorftime-research-category-skill-f38dda6516de9a60.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "亚马逊品类自动化选品分析技能。通过五维评分模型对亚马逊品类进行深度市场调研，生成Markdown分析报告。当用户使用 /category-selection 命令或提出'分析XX品类'、'XX品类市场调研'、'XX品类选品'等需求时触发此技能。支持配置分析数量，默认Top20。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "liangdabiao",
+      "userId": "s1751q8y7zg7g4cphjx57122f183hzq4",
+      "displayName": "liangdabiao",
+      "image": "https://avatars.githubusercontent.com/u/1232260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 347,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772769519348,
+      "changelog": "Amazon Sorftime Research Category Selection Skill v1.0.0\n\n- 首次发布：亚马逊品类自动化选品分析工具，基于五维评分模型，自动生成Markdown分析报告。\n- 支持 '/category-selection' 命令及自然语言触发，默认分析Top20产品，可配置数量。\n- 工作流自动化：一键执行数据采集、分析与报告输出，含详细命令行用法与常见NodeID参考。\n- 明确分析方法论与评分标准，覆盖市场规模、潜力、竞争、壁垒和利润五大核心指标。\n- 报告输出含Markdown、Excel和可视化仪表板，多格式数据导出，支撑深度市场决策。\n- 工具链完备，详列API调用格式、脚本说明及数据处理细节，方便定制与扩展。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e251b31fb22983e3ae035678ee15cd9734a029e8b8177fc431a4063624cd262d"
+}

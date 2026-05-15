@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54180,
+  "uuid": "skill-clawhub-bet",
+  "skillKey": "clawhub-bet",
+  "name": "Make Bets | With your creditCard",
+  "summary": "Let your agent shop on Amazon with guardrailed wallets and owner approval.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bet",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codejika",
+      "features": [
+        "Let your agent shop on Amazon with guardrailed wallets and owner approval."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36914612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bet",
+      "url": "https://clawhub.ai/skills/bet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bet",
+    "url": "https://clawhub.ai/skills/bet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bet-0ae467cc10e077a1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:14c9f8dd642ce7aaccf0aa4a00504adfcc64e18f9423af03e1444d3c904e5eb8",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T00:49:28.742Z"
+}

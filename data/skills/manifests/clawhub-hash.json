@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17864,
+  "uuid": "skill-clawhub-hash",
+  "skillKey": "clawhub-hash",
+  "name": "Hash",
+  "summary": "Generate MD5 and SHA checksums, verify integrity, and compare hash values. Use when computing checksums, verifying downloads, or comparing hash outputs.",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hash",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain-lab",
+      "features": [
+        "Generate MD5 and SHA checksums, verify integrity, and compare hash values",
+        "Use when computing checksums, verifying downloads, or comparing hash outputs."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hash@3.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271735676?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hash",
+      "url": "https://clawhub.ai/skills/hash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hash",
+    "url": "https://clawhub.ai/skills/hash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hash-d04b98f48e8f8bcc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hash@3.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hash-3.0.1.json",
+      "version": "3.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c743bfd16aeb56d64de03e575106c6c54b0a4216f7cd4b487e934407d46b2e31",
+      "artifactSizeBytes": 1861
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T09:53:24.029Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64840,
+  "uuid": "skill-clawhub-peacock",
+  "skillKey": "clawhub-peacock",
+  "name": "Peacock",
+  "summary": "Peacock 是 NBC环球旗下流媒体平台，提供免费增值模式，涵盖NBC节目、环球电影、英超和WWE等独家内容。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peacock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "Peacock 是 NBC环球旗下流媒体平台，提供免费增值模式，涵盖NBC节目、环球电影、英超和WWE等独家内容。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peacock@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peacock",
+      "url": "https://clawhub.ai/skills/peacock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peacock",
+    "url": "https://clawhub.ai/skills/peacock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peacock-a095c7713e337faa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peacock@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-peacock-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9c04279733de7df009e56f7ee5b55deddc393d77fe2b0a5d829592ede1799de2",
+      "artifactSizeBytes": 2279
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T19:47:28.602Z"
+}

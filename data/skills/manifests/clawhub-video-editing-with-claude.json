@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43606,
+  "uuid": "skill-clawhub-video-editing-with-claude",
+  "skillKey": "clawhub-video-editing-with-claude",
+  "name": "Video Editing With Claude",
+  "summary": "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_claude",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mhogan2013-9",
+      "features": [
+        "Get edited MP4 clips ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-editing-with-claude@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208827708?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-editing-with-claude",
+      "url": "https://clawhub.ai/skills/video-editing-with-claude"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-claude",
+    "url": "https://clawhub.ai/skills/video-editing-with-claude",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-claude-ac1a41290bb8a649.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-editing-with-claude@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-editing-with-claude-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db19c561735532b048648c95e863a5b17b2d8026389f7d67f3a2287a6b2b3656",
+      "artifactSizeBytes": 2580
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T18:30:57.019Z"
+}

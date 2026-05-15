@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sogni-agent@1.5.16",
+  "version": "1.5.16",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sogni_agent",
+  "skill": {
+    "id": 55735,
+    "skillKey": "clawhub-sogni-agent",
+    "name": "Sogni Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sogni-agent",
+    "url": "https://clawhub.ai/skills/sogni-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sogni-agent-2f75d81c2a2f583f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images **and videos** using Sogni AI's decentralized network, with local credential/config files and optional local media inputs. Ask the agent to \"..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krunkosaurus",
+      "userId": "s17a6dgbyf4ysy7e96vhtamwgs85s7fe",
+      "displayName": "Mauvis Ledford",
+      "image": "https://avatars.githubusercontent.com/u/20738?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1118,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.5.16",
+      "createdAt": 1773225869172,
+      "changelog": "Harden ClawHub packaging, remove runtime package.json dependency, and restrict MCP auto-download hosts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6c01da0c9295ed5bc75e17cd1916c09b12a662839d578cd914bfe73b733c2fdf"
+}

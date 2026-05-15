@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33090,
+  "uuid": "skill-clawhub-smarty",
+  "skillKey": "clawhub-smarty",
+  "name": "Smarty",
+  "summary": "Smarty integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Smarty data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smarty",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Smarty integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Smarty data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smarty@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smarty",
+      "url": "https://clawhub.ai/skills/smarty"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smarty",
+    "url": "https://clawhub.ai/skills/smarty",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smarty-98642d70fa952b57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smarty@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-smarty-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:88c926ab6c2b101c481c6674b4e815be4e8963686ead11e260de45cd39847996",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:01:12.200Z"
+}

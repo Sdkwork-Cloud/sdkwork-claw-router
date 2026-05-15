@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19095,
+  "uuid": "skill-clawhub-clawditor",
+  "skillKey": "clawhub-clawditor",
+  "name": "Clawditor",
+  "summary": "Audit an OpenClaw agent workspace and generate standardized evaluation reports, scores, and patches. Use when asked to review memory quality, retrieval effic...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Theylon",
+      "features": [
+        "Audit an OpenClaw agent workspace and generate standardized evaluation reports, scores, and pat.",
+        "Use when asked to review memory quality, retrieval effic..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/27952472?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawditor",
+      "url": "https://clawhub.ai/skills/clawditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawditor",
+    "url": "https://clawhub.ai/skills/clawditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawditor-9c2e298205136ee6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23d0bfa875459957634e4f62deea369c262606d93818a04c0877bad959dec25c",
+      "artifactSizeBytes": 2510
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T12:33:46.087Z"
+}

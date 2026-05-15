@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vibevideo-io@2.0.1",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vibevideo_io",
+  "skill": {
+    "id": 43048,
+    "skillKey": "clawhub-vibevideo-io",
+    "name": "VibeVideoIO AI Script to Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vibevideo-io",
+    "url": "https://clawhub.ai/skills/vibevideo-io",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vibevideo-io-41b9b9355eab677d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill has been migrated to https://clawhub.ai/vibevideo/vibevideo-core. Use the new skill page instead of the old vibevideo-io entry."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brainchen",
+      "userId": "s175z9xpqbkf1ss9n51xn6kv0984zvg8",
+      "displayName": "Zhenghang Chen",
+      "image": "https://avatars.githubusercontent.com/u/24735241?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.0.1",
+      "createdAt": 1776421400555,
+      "changelog": "- Updated migration information to point to the new skill location: https://clawhub.ai/vibevideo/vibevideo-core.\n- Updated links and instructions to reflect the new destination.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72c424f27931f5f684adc653ab351304fbdc85f37c8c194125e3339e8b0d41f9"
+}

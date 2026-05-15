@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64895,
+  "uuid": "skill-clawhub-shenmeng-whale-alert-monitor",
+  "skillKey": "clawhub-shenmeng-whale-alert-monitor",
+  "name": "Whale Alert Monitor 鲸鱼监控",
+  "summary": "追踪加密货币巨鲸动向、大额转账预警、交易所资金流向分析。 当你想追踪聪明钱的每一步，监测大户交易行为时使用此技能。 已接入 SkillPay，每次调用 0.01 USDT。",
+  "version": "2026.4.15-100",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shenmeng_whale_alert_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenmeng",
+      "features": [
+        "追踪加密货币巨鲸动向、大额转账预警、交易所资金流向分析。 当你想追踪聪明钱的每一步，监测大户交易行为时使用此技能。 已接入 SkillPay，每次调用 0.01 USDT。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shenmeng-whale-alert-monitor@2026.4.15-100",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6897076?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shenmeng-whale-alert-monitor",
+      "url": "https://clawhub.ai/skills/shenmeng-whale-alert-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shenmeng-whale-alert-monitor",
+    "url": "https://clawhub.ai/skills/shenmeng-whale-alert-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shenmeng-whale-alert-monitor-1f0ff645b7f54a48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shenmeng-whale-alert-monitor@2026.4.15-100",
+      "artifactUrl": "data/skills/artifacts/clawhub-shenmeng-whale-alert-monitor-2026.4.15-100.json",
+      "version": "2026.4.15-100",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d588a49950e34853c1629f2496f065121b9b5220853ac2ddceb5b3e494eed490",
+      "artifactSizeBytes": 2090
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T06:16:43.538Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-maker-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_maker_generator",
+  "skill": {
+    "id": 48226,
+    "skillKey": "clawhub-video-maker-generator",
+    "name": "Video Maker Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-maker-generator",
+    "url": "https://clawhub.ai/skills/video-maker-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-maker-generator-f4873bbd842b4cf8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate images or clips into ready-to-share videos with this skill. Works with MP4, MOV, JPG, PNG files up to 500MB. marketers and content creators use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 103,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777741491454,
+      "changelog": "Video Maker Generator 1.0.0 — Initial Release\n\n- Generate and export videos from images or video clips, up to 500MB, in 1-2 minutes via cloud GPUs.\n- Supports MP4, MOV, JPG, PNG input; outputs 1080p MP4 for easy sharing.\n- No manual editing needed—prompt with desired outcome, including music or text overlays.\n- Handles authentication, session management, uploads, editing, and exports automatically.\n- Built-in error handling for common issues like expired tokens, missing credits, and unsupported files.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1a71851314544585b709dc28a34d0aa045520e2c5a25b953f8fce6d75bb5def2"
+}

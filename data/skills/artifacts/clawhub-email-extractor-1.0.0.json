@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-extractor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_extractor",
+  "skill": {
+    "id": 22384,
+    "skillKey": "clawhub-email-extractor",
+    "name": "Email Extractor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-extractor",
+    "url": "https://clawhub.ai/skills/email-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-extractor-ba6a03f21f8e32a2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract and deduplicate up to 20 email addresses from any webpage URL or plain text content."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "loverun321",
+      "userId": "s17bn6068w1enskxy8393kgbax83jhkc",
+      "displayName": "loverun321",
+      "image": "https://avatars.githubusercontent.com/u/222489895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 474,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772729636310,
+      "changelog": "Initial release of Email Extractor skill.\n\n- Extracts email addresses from URLs or plain text.\n- Automatically deduplicates results.\n- Returns up to 20 unique email addresses per extraction.\n- Clear example responses provided.\n- Priced at 0.001 USDT per extraction.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f88174db76ca0ff4a83cb264b90814999f7a46762e3665868b6a5904ec876614"
+}

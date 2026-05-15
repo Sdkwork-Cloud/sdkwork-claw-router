@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26313,
+  "uuid": "skill-clawhub-alphalens-api",
+  "skillKey": "clawhub-alphalens-api",
+  "name": "AlphaLens API",
+  "summary": "Use this skill whenever the user wants to discover companies, search for products, build market maps, manage pipelines, or run enrichment workflows using Alp...",
+  "version": "1.0.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphalens_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "WalidMustapha",
+      "features": [
+        "Use this skill whenever the user wants to discover companies, search for products, build market."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alphalens-api@1.0.21",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148945003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alphalens-api",
+      "url": "https://clawhub.ai/skills/alphalens-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphalens-api",
+    "url": "https://clawhub.ai/skills/alphalens-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphalens-api-a658af987f70c435.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alphalens-api@1.0.21",
+      "artifactUrl": "data/skills/artifacts/clawhub-alphalens-api-1.0.21.json",
+      "version": "1.0.21",
+      "runtime": "metadata",
+      "checksumHash": "sha256:688a14b072acefcf614513e824927df4452bf53a3a02cd8e70cfb5619d3c67c2",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:12:10.938Z"
+}

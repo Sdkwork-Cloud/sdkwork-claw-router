@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33348,
+  "uuid": "skill-clawhub-aicoin-hyperliquid",
+  "skillKey": "clawhub-aicoin-hyperliquid",
+  "name": "Aicoin Hyperliquid",
+  "summary": "This skill should be used when the user asks about Hyperliquid whale positions, Hyperliquid liquidations, Hyperliquid open interest, Hyperliquid trader analy...",
+  "version": "3.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aicoin_hyperliquid",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "procaross",
+      "features": [
+        "This skill should be used when the user asks about Hyperliquid whale positions, Hyperliquid liq."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aicoin-hyperliquid@3.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50150757?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aicoin-hyperliquid",
+      "url": "https://clawhub.ai/skills/aicoin-hyperliquid"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aicoin-hyperliquid",
+    "url": "https://clawhub.ai/skills/aicoin-hyperliquid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aicoin-hyperliquid-2545d8fe5aefb13a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aicoin-hyperliquid@3.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-aicoin-hyperliquid-3.2.4.json",
+      "version": "3.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1e7d442bfa12a741463460e84e7ac40343da9a16b4ea11b6dcdb8d88a122f03f",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T16:42:24.783Z"
+}

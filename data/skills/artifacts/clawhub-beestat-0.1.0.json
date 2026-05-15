@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beestat@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beestat",
+  "skill": {
+    "id": 11433,
+    "skillKey": "clawhub-beestat",
+    "name": "Beestat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beestat",
+    "url": "https://clawhub.ai/skills/beestat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beestat-063963165b3bb081.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query ecobee thermostat data via Beestat API including temperature, humidity, air quality (CO2, VOC), sensors, and HVAC runtime. Use when user asks about home temperature, thermostat status, air quality, or heating/cooling usage."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjrussell",
+      "userId": "publishers:mjrussell",
+      "displayName": "Matt Russell",
+      "image": "https://avatars.githubusercontent.com/u/1641895?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2043,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1767896959947,
+      "changelog": "Initial release - ecobee thermostat via Beestat API",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:74c103e8a2bbe887c3ca6061ec66139b0fc8766ea487a3327e8f5747dddb8538"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lap-advisormanagementclient@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lap_advisormanagementclient",
+  "skill": {
+    "id": 39875,
+    "skillKey": "clawhub-lap-advisormanagementclient",
+    "name": "Lap Advisormanagementclient"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lap-advisormanagementclient",
+    "url": "https://clawhub.ai/skills/lap-advisormanagementclient",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lap-advisormanagementclient-c1543f3954553a3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AdvisorManagementClient API skill. Use when working with AdvisorManagementClient for providers, subscriptions, {resourceUri}. Covers 15 endpoints."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mickmicksh",
+      "userId": "s173hdss607zbfxv4jxwj0ae0583wwjt",
+      "displayName": "mickmicksh",
+      "image": "https://avatars.githubusercontent.com/u/214470470?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 164,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774862080318,
+      "changelog": "Initial release of lap-advisormanagementclient.\n\n- Provides AdvisorManagementClient API integration with 15 endpoints across providers, subscriptions, and resourceUri groups\n- Supports OAuth2 authentication and API key setup via ADVISORMANAGEMENTCLIENT_API_KEY\n- Includes metadata, configuration, recommendations, suppressions, and operations endpoints for Azure Advisor\n- Offers basic usage guidance, endpoint matching patterns, and CLI support instructions\n- Reference to full API specifications for advanced integration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ffc0b6f3994f7eb44a4b1e50b0c1df4cf46c31edf86ac3e95906b3edcc1ee104"
+}

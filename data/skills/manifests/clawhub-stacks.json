@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32502,
+  "uuid": "skill-clawhub-stacks",
+  "skillKey": "clawhub-stacks",
+  "name": "Stacks",
+  "summary": "Stacks integration. Manage data, records, and automate workflows. Use when the user wants to interact with Stacks data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stacks",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Stacks integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Stacks data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stacks@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stacks",
+      "url": "https://clawhub.ai/skills/stacks"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stacks",
+    "url": "https://clawhub.ai/skills/stacks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stacks-b4f4e6c4e52c1f6b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stacks@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-stacks-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ae4d928fe2a3ef36e01dd070bad8503ac5775dd2c0f257f5b4bc61b29b3f9e3",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:46:47.097Z"
+}

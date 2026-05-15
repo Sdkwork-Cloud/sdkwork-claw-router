@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34093,
+  "uuid": "skill-clawhub-tone-adjuster",
+  "skillKey": "clawhub-tone-adjuster",
+  "name": "Tone Adjuster",
+  "summary": "Use when converting medical text between academic and patient-friendly tones, translating medical jargon for patients, adapting research papers for public au...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tone_adjuster",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Use when converting medical text between academic and patient-friendly tones, translating medic."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tone-adjuster@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tone-adjuster",
+      "url": "https://clawhub.ai/skills/tone-adjuster"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tone-adjuster",
+    "url": "https://clawhub.ai/skills/tone-adjuster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tone-adjuster-525d9b6accda5d57.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tone-adjuster@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tone-adjuster-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aca9fe619eca837796406c6c71d82b4f2a6c2bf6109016aa64df1f95cb7ddee",
+      "artifactSizeBytes": 2524
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:10:23.053Z"
+}

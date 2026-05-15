@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pydantic-ai-tool-system@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pydantic_ai_tool_system",
+  "skill": {
+    "id": 30307,
+    "skillKey": "clawhub-pydantic-ai-tool-system",
+    "name": "Pydantic Ai Tool System"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pydantic-ai-tool-system",
+    "url": "https://clawhub.ai/skills/pydantic-ai-tool-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pydantic-ai-tool-system-0ba10f745aa7b047.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register and implement PydanticAI tools with proper context handling, type annotations, and docstrings. Use when adding tool capabilities to agents, implemen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776830976124,
+      "changelog": "- Added a \"Gates\" section detailing specific verification rules for decorator/parameter matching and required docstring coverage.\n- Clarified that docstrings must mention each parameter and be non-empty, specifying the expected formats.\n- No changes to code or module functionality; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7cc1bca415cbb7b91bb83f39efb1c116285de3fc81884f084cf1e2ba3605dcd9"
+}

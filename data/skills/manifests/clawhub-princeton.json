@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70988,
+  "uuid": "skill-clawhub-princeton",
+  "skillKey": "clawhub-princeton",
+  "name": "Princeton",
+  "summary": "提供普林斯顿大学的历史、学院、招生、学费资助、知名校友及学术实力等详实信息查询。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.princeton",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供普林斯顿大学的历史、学院、招生、学费资助、知名校友及学术实力等详实信息查询。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/princeton@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "princeton",
+      "url": "https://clawhub.ai/skills/princeton"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "princeton",
+    "url": "https://clawhub.ai/skills/princeton",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/princeton-4004bde35d03eb3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/princeton@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-princeton-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f880b8557ea4d8eeddc7999c55c3e50ca2baeeffa4fb85432037dbba6d28a70",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:38:44.217Z"
+}

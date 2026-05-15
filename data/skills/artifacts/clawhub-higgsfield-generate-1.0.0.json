@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/higgsfield-generate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.higgsfield_generate",
+  "skill": {
+    "id": 45859,
+    "skillKey": "clawhub-higgsfield-generate",
+    "name": "Higgsfield Generate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "higgsfield-generate",
+    "url": "https://clawhub.ai/skills/higgsfield-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/higgsfield-generate-83652738e8583c31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images and videos via Higgsfield AI through 30+ models including Nano Banana 2, Soul V2, Veo 3.1, Kling 3.0, Seedance 2.0, Flux 2, GPT Image 2, plus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "higgsfield",
+      "userId": "s17f8fwnpnszqskag8vjqhx1ts862976",
+      "displayName": "Yerzat Dulat",
+      "image": "https://avatars.githubusercontent.com/u/24421551?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777911637784,
+      "changelog": "- Initial release of higgsfield-generate for image and video generation via Higgsfield AI, supporting 30+ models.\n- Supports a wide range of tasks: text-to-image, image-to-image, image-to-video, reference-based generation, and branded ad creation through Marketing Studio.\n- Automatic model selection and input handling with concise, user-friendly interaction rules.\n- Includes dedicated workflows and parameter flags for both generic generation and branded ad content (avatars, products, marketing videos/images).\n- Ensures easy CLI installation, authentication, and result retrieval, delivering output URLs with brief summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9af19f692ddfbc536fe1b10b0a1fe1375c6d9da0eae96758956c95f11a88964d"
+}

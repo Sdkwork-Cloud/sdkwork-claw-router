@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23177,
+  "uuid": "skill-clawhub-obsidian-notes",
+  "skillKey": "clawhub-obsidian-notes",
+  "name": "Obsidian Notes",
+  "summary": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangzhifeng",
+      "features": [
+        "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/obsidian-notes@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84281124?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "obsidian-notes",
+      "url": "https://clawhub.ai/skills/obsidian-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-notes",
+    "url": "https://clawhub.ai/skills/obsidian-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-notes-1f550c992d2e66b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/obsidian-notes@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-obsidian-notes-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:702d2327a4526e6e98183c5c6739180b5d6f772c69b18a29ab85e04db2d81a9d",
+      "artifactSizeBytes": 1967
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T03:33:55.630Z"
+}

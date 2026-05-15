@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38505,
+  "uuid": "skill-clawhub-parser-expert",
+  "skillKey": "clawhub-parser-expert",
+  "name": "Parser Expert",
+  "summary": "Parser Expert integration. Manage data, records, and automate workflows. Use when the user wants to interact with Parser Expert data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.parser_expert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Parser Expert integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Parser Expert data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/parser-expert@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "parser-expert",
+      "url": "https://clawhub.ai/skills/parser-expert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "parser-expert",
+    "url": "https://clawhub.ai/skills/parser-expert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/parser-expert-9c22965516fc6861.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/parser-expert@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-parser-expert-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5a42383e4fe8c009558ba44616f0d642eec394cfa6e9cc1560d2d8a66baf2427",
+      "artifactSizeBytes": 1875
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:22:00.032Z"
+}

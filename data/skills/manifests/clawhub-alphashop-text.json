@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68387,
+  "uuid": "skill-clawhub-alphashop-text",
+  "skillKey": "clawhub-alphashop-text",
+  "name": "alphashop-text",
+  "summary": "AlphaShop（遨虾）文本处理 API 工具集。支持3个接口：大模型文本翻译、 生成商品多语言卖点、生成商品多语言标题。 触发场景：翻译文本、文字翻译、多语言翻译、生成卖点、商品卖点、 多语言卖点、生成标题、商品标题、多语言标题、SEO标题、 AlphaShop文本、遨虾文本处理。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphashop_text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1688AiInfra",
+      "features": [
+        "AlphaShop（遨虾）文本处理 API 工具集。支持3个接口：大模型文本翻译、 生成商品多语言卖点、生成商品多语言标题。 触发场景：翻译文本、文字翻译、多语言翻译、生成卖点、商品卖点、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alphashop-text@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266033968?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alphashop-text",
+      "url": "https://clawhub.ai/skills/alphashop-text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphashop-text",
+    "url": "https://clawhub.ai/skills/alphashop-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphashop-text-bea794d96b5744c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alphashop-text@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alphashop-text-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cc5ba737c0b6488da1390beb97d79da5502ccb97b42419cf1b6d305f0dfa5a70",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T10:02:11.963Z"
+}

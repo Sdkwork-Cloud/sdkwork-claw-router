@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26322,
+  "uuid": "skill-clawhub-clawdoctor-openclaw",
+  "skillKey": "clawhub-clawdoctor-openclaw",
+  "name": "ClawDoctor",
+  "summary": "Monitors OpenClaw health with real-time status, one-click fixes, security scans, and a web dashboard supporting Chinese and English.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdoctor_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ECsss",
+      "features": [
+        "Monitors OpenClaw health with real-time status, one-click fixes, security scans, and a web dash."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdoctor-openclaw@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226646360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdoctor-openclaw",
+      "url": "https://clawhub.ai/skills/clawdoctor-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdoctor-openclaw",
+    "url": "https://clawhub.ai/skills/clawdoctor-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdoctor-openclaw-76b6feabbd035776.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdoctor-openclaw@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdoctor-openclaw-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e872462fbf93d62bfa9226901ba79ad9bb0a1ce98418cb83b8fc8b57a17a67a",
+      "artifactSizeBytes": 1885
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T13:15:03.764Z"
+}

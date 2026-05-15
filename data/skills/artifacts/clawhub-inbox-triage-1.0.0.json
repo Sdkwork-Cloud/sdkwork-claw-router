@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/inbox-triage@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inbox_triage",
+  "skill": {
+    "id": 49973,
+    "skillKey": "clawhub-inbox-triage",
+    "name": "Inbox Triage"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inbox-triage",
+    "url": "https://clawhub.ai/skills/inbox-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inbox-triage-51cc9f50c8576031.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Email inbox triage for AI agents — scan, categorize, draft replies, surface urgent items, and archive noise. Supports Gmail and IMAP for inbox zero workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawdssen",
+      "userId": "publishers:clawdssen",
+      "displayName": "Clawdssen",
+      "image": "https://avatars.githubusercontent.com/u/262485069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 628,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772732514137,
+      "changelog": "Initial release — email inbox triage and prioritization skill",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a0d861c4c7bfa1490b0d19bde25eedb682670f784e3caedbe597218fd7188a98"
+}

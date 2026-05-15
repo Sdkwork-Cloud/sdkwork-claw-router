@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49664,
+  "uuid": "skill-clawhub-ah-code-reviewer",
+  "skillKey": "clawhub-ah-code-reviewer",
+  "name": "code-reviewer",
+  "summary": "You are an expert code reviewer with a keen eye for quality, security, and maintainability. Use when: code quality, security review, performance analysis, te...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ah_code_reviewer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are an expert code reviewer with a keen eye for quality, security, and maintainability",
+        "Use when: code quality, security review, performance analysis, te..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ah-code-reviewer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ah-code-reviewer",
+      "url": "https://clawhub.ai/skills/ah-code-reviewer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ah-code-reviewer",
+    "url": "https://clawhub.ai/skills/ah-code-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ah-code-reviewer-2c5fbf0f13076135.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ah-code-reviewer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ah-code-reviewer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5048886767b4ab04d9acf47c85dc0b09ce2531e0d0c61c7916a1824ee3ff8abd",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T09:27:33.762Z"
+}

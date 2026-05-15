@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chart-master@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chart_master",
+  "skill": {
+    "id": 26581,
+    "skillKey": "clawhub-chart-master",
+    "name": "Chart Master"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chart-master",
+    "url": "https://clawhub.ai/skills/chart-master",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chart-master-56c464251397ab54.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate precise financial charts (candlestick, OHLC, line) for stocks, indices, and crypto using Python. Use when the user requests a visual chart, technica..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ericw12",
+      "userId": "publishers:ericw12",
+      "displayName": "ericw12",
+      "image": "https://avatars.githubusercontent.com/u/7267645?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 335,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773548763612,
+      "changelog": "Chart Master v1.0.0 – Initial Release\n\n- Generate high-quality financial charts (candlestick, OHLC, line, etc.) for stocks, indices, and crypto.\n- Python-based workflow using `yfinance`, `mplfinance`, and `pandas`.\n- Supports configurable date ranges, intervals, chart types, visual styles, and moving averages.\n- Saves chart as a PNG and outputs the file path.\n- Optimized for user requests needing visual technical analysis or price history plots.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:81248707a261f2d07c5e012dc84da37b8ba4c878d86ff145f7a1eb660438623c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/remover-from-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remover_from_video",
+  "skill": {
+    "id": 48000,
+    "skillKey": "clawhub-remover-from-video",
+    "name": "Remover From Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remover-from-video",
+    "url": "https://clawhub.ai/skills/remover-from-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remover-from-video-41fde7c78a1ec207.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into cleaned video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators, marketers, YouTubers use it fo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777335588677,
+      "changelog": "Remover from Video — Initial Release\n\n- Launches AI-powered cloud tool for removing objects, watermarks, or logos from video clips up to 500MB (MP4, MOV, AVI, WebM supported).\n- Automated session setup and authentication, with 100 free credits for new users on first use.\n- Handles object removal in 1–2 minutes per clip, returning 1080p MP4 files.\n- Supports bulk uploads and iterative editing within a session.\n- Clear, user-friendly error handling and step-by-step guidance for uploads, exports, and edits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0dd1d8beba6957cbb03a3290e22e91de0d21bc2e80a5ee7b91194f023283214f"
+}

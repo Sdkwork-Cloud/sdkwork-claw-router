@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64865,
+  "uuid": "skill-clawhub-fitconverter",
+  "skillKey": "clawhub-fitconverter",
+  "name": "fitconverter",
+  "summary": "运动健康转换工具。华为、Zepp、小米、vivo、三星、Keep、悦跑圈、RQrun、动动、行者运动记录导出后，可通过运动健康转换工具转换成fit、tcx、gpx、kml格式文件同步导入高驰、佳明、RQrun、Strava等主流运动平。 运动记录转换工具、运动记忆、运动数据转换、fitconverter、华为运动...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fitconverter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Daozhao",
+      "features": [
+        "运动健康转换工具。华为、Zepp、小米、vivo、三星、Keep、悦跑圈、RQrun、动动、行者运动记录导出后，可通过运动健康转换工具转换成fit、tcx、gpx、kml格式文件同步导入高驰."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fitconverter@1.0.2",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/fitconverter/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fitconverter",
+      "url": "https://clawhub.ai/skills/fitconverter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fitconverter",
+    "url": "https://clawhub.ai/skills/fitconverter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fitconverter-b8c70e722b9b6aee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fitconverter@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fitconverter-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:51b7f918b3b833425f6bb4b87196433a7b5577bd2e5396ba6d9a4b06390d3d83",
+      "artifactSizeBytes": 2262
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T23:23:48.167Z"
+}

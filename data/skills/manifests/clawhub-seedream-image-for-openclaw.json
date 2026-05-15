@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63423,
+  "uuid": "skill-clawhub-seedream-image-for-openclaw",
+  "skillKey": "clawhub-seedream-image-for-openclaw",
+  "name": "Seedream",
+  "summary": "使用火山引擎 Seedream-4.5 API 生成高质量图片。适用于文生图、图生图以及生成关联组图的场景。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seedream_image_for_openclaw",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yu Xie",
+      "features": [
+        "使用火山引擎 Seedream-4.5 API 生成高质量图片。适用于文生图、图生图以及生成关联组图的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seedream-image-for-openclaw@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18566621?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seedream-image-for-openclaw",
+      "url": "https://clawhub.ai/skills/seedream-image-for-openclaw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seedream-image-for-openclaw",
+    "url": "https://clawhub.ai/skills/seedream-image-for-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seedream-image-for-openclaw-581b70c05ab5bbf1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seedream-image-for-openclaw@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seedream-image-for-openclaw-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:43be522e9adbc15b7e30514f7e6164dd1758281cbec843153fe2a28bced28203",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T11:46:58.051Z"
+}

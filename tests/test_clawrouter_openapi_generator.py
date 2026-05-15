@@ -8,6 +8,12 @@ from tools.clawrouter_openapi_generator import ClawRouterOpenApiGenerator
 
 
 class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
+    def assertDescribedSchemaRef(self, schema: dict[str, object], expected_ref: str) -> None:
+        self.assertEqual([{"$ref": expected_ref}], schema.get("allOf"))
+        self.assertIsInstance(schema.get("description"), str)
+        self.assertNotEqual("", schema.get("description", "").strip())
+        self.assertNotIn("$ref", schema)
+
     def write_manifest(self, root: Path) -> Path:
         manifest = root / "generated" / "api" / "api-contract-manifest.json"
         manifest.parent.mkdir(parents=True, exist_ok=True)
@@ -31,61 +37,79 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/app/store/categories",
+                            "api_path": "/app/v3/api/platform/store/categories",
                             "operation": "getCategories",
-                            "tag": "app",
+                            "operation_id": "store.categories.list",
+                            "tag": "platform",
+                            "sdk_domain": "platform",
                             "kind": "read",
                             "module": "app-center",
                             "path_params": [],
                             "source": "apps/portal/appService.ts",
                             "read_sources": ["plus_app"],
                             "write_tables": [],
+                            "query_parameters_declared": True,
+                            "query_parameters": [],
                         },
                         {
                             "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/skills/categories",
+                            "api_path": "/app/v3/api/ecosystem/skills/categories",
                             "operation": "getCategories",
-                            "tag": "skills",
+                            "operation_id": "categories.list",
+                            "tag": "ecosystem",
+                            "sdk_domain": "ecosystem",
                             "kind": "read",
                             "module": "skills-hub",
                             "path_params": [],
                             "source": "apps/portal/skillService.ts",
                             "read_sources": ["agent_skill"],
                             "write_tables": [],
+                            "query_parameters_declared": True,
+                            "query_parameters": [],
                         },
                         {
                             "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/model-vendors",
+                            "api_path": "/app/v3/api/ai/model_vendors",
                             "operation": "fetchModelVendors",
-                            "tag": "models",
+                            "operation_id": "modelVendors.list",
+                            "tag": "ai",
+                            "sdk_domain": "intelligence",
                             "kind": "read",
                             "module": "models",
                             "path_params": [],
                             "source": "apps/portal/modelService.ts",
                             "read_sources": ["ai_model_vendor"],
                             "write_tables": [],
+                            "query_parameters_declared": True,
+                            "query_parameters": [],
                         },
                         {
                             "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/model-vendors/{vendorCode}",
+                            "api_path": "/app/v3/api/ai/model_vendors/{vendorCode}",
                             "operation": "getModelVendor",
-                            "tag": "models",
+                            "operation_id": "modelVendors.retrieve",
+                            "tag": "ai",
+                            "sdk_domain": "intelligence",
                             "kind": "read",
                             "module": "models",
                             "path_params": ["vendorCode"],
                             "source": "apps/portal/modelService.ts",
                             "read_sources": ["ai_model_vendor"],
                             "write_tables": [],
+                            "query_parameters_declared": True,
+                            "query_parameters": [],
                         },
                         {
                             "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/model-vendors",
+                            "api_path": "/app/v3/api/ai/model_vendors",
                             "operation": "fetchModelVendorsForRankings",
-                            "tag": "models",
+                            "operation_id": "modelVendors.list",
+                            "tag": "ai",
+                            "sdk_domain": "intelligence",
                             "kind": "read",
                             "module": "rankings",
                             "path_params": [],
@@ -97,9 +121,11 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "POST",
-                            "api_path": "/app/v3/api/coupons/redeem",
+                            "api_path": "/app/v3/api/billing/coupons/redeem",
                             "operation": "redeemCoupon",
-                            "tag": "coupons",
+                            "operation_id": "coupons.redeem",
+                            "tag": "billing",
+                            "sdk_domain": "commerce",
                             "kind": "action",
                             "module": "billing",
                             "path_params": [],
@@ -109,16 +135,71 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         },
                         {
                             "api_surface": "app",
+                            "api_method": "POST",
+                            "api_path": "/app/v3/api/content/feeds/{id}/collect",
+                            "operation": "collectForumFeed",
+                            "operation_id": "feeds.collect",
+                            "tag": "content",
+                            "sdk_domain": "content",
+                            "kind": "action",
+                            "module": "forum",
+                            "path_params": ["id"],
+                            "source": "apps/portal/forumService.ts",
+                            "read_sources": ["plus_feeds", "plus_favorite"],
+                            "write_tables": ["plus_favorite", "plus_feeds"],
+                            "request_id_header": True,
+                            "request_body_required": False,
+                            "query_parameters_declared": True,
+                            "query_parameters": [
+                                {
+                                    "name": "folderId",
+                                    "schema": {"type": "integer", "format": "int64", "minimum": 1},
+                                }
+                            ],
+                            "response_schema": {
+                                "name": "ForumFeedItem",
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": False,
+                                    "required": ["id", "title"],
+                                    "properties": {
+                                        "id": {"type": "string"},
+                                        "title": {"type": "string"},
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            "api_surface": "app",
+                            "api_method": "DELETE",
+                            "api_path": "/app/v3/api/content/comments/{commentId}",
+                            "operation": "deleteForumComment",
+                            "operation_id": "comments.delete",
+                            "tag": "content",
+                            "sdk_domain": "content",
+                            "kind": "delete",
+                            "module": "forum",
+                            "path_params": ["commentId"],
+                            "source": "apps/portal/forumService.ts",
+                            "read_sources": ["plus_comments"],
+                            "write_tables": ["plus_comments"],
+                        },
+                        {
+                            "api_surface": "app",
                             "api_method": "GET",
-                            "api_path": "/app/v3/api/coupons/my",
+                            "api_path": "/app/v3/api/billing/coupons/mine",
                             "operation": "fetchRedeemHistory",
-                            "tag": "coupons",
+                            "operation_id": "coupons.mine.list",
+                            "tag": "billing",
+                            "sdk_domain": "commerce",
                             "kind": "read",
                             "module": "billing",
                             "path_params": [],
                             "source": "apps/portal/billingService.ts",
                             "read_sources": ["plus_user_coupon", "plus_coupon"],
                             "write_tables": [],
+                            "query_parameters_declared": True,
+                            "query_parameters": [],
                             "response_schema": {
                                 "name": "BillingRedeemHistoryResponse",
                                 "schema": {
@@ -142,9 +223,11 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         {
                             "api_surface": "app",
                             "api_method": "POST",
-                            "api_path": "/app/v3/api/router/api-keys",
+                            "api_path": "/app/v3/api/iam/api_keys",
                             "operation": "createKey",
-                            "tag": "router",
+                            "operation_id": "apiKeys.create",
+                            "tag": "iam",
+                            "sdk_domain": "iam",
                             "kind": "create",
                             "module": "console-api-keys",
                             "path_params": [],
@@ -161,6 +244,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                                     "properties": {
                                         "name": {"type": "string", "maxLength": 128},
                                         "group": {"type": "string", "maxLength": 64},
+                                        "note": {"type": "string", "nullable": True},
                                     },
                                 },
                             },
@@ -180,15 +264,45 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                         {
                             "api_surface": "backend",
                             "api_method": "PATCH",
-                            "api_path": "/backend/v3/api/router/announcements/{announcementId}",
+                            "api_path": "/backend/v3/api/content/announcements/{announcementId}",
                             "operation": "updateAnnouncement",
-                            "tag": "announcements",
+                            "operation_id": "announcements.update",
+                            "tag": "content",
+                            "sdk_domain": "content",
                             "kind": "update",
                             "module": "admin-announcement",
                             "path_params": ["announcementId"],
                             "source": "apps/portal/announcementService.ts",
                             "read_sources": ["content_announcement"],
                             "write_tables": ["content_announcement"],
+                        },
+                        {
+                            "api_surface": "app",
+                            "api_method": "POST",
+                            "api_path": "/app/v3/api/auth/qr_login_codes",
+                            "operation": "generateLoginQrCode",
+                            "operation_id": "loginQrCodes.create",
+                            "tag": "auth",
+                            "sdk_domain": "auth",
+                            "kind": "create",
+                            "module": "login",
+                            "path_params": [],
+                            "source": "apps/portal/authController.ts",
+                            "read_sources": [],
+                            "write_tables": [],
+                            "request_body_required": False,
+                            "response_schema": {
+                                "name": "IamLoginQrCodeResponse",
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": False,
+                                    "required": ["qrKey", "qrContent"],
+                                    "properties": {
+                                        "qrKey": {"type": "string", "minLength": 1, "maxLength": 128},
+                                        "qrContent": {"type": "string", "minLength": 1, "maxLength": 2048},
+                                    },
+                                },
+                            },
                         },
                         {
                             "api_surface": "openai_v1",
@@ -233,6 +347,18 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
                       required:
                         - vendor_code
                         - enabled
+                    ProviderRetryPolicy:
+                      type: object
+                      properties:
+                        maxAttempts:
+                          type: integer
+                          minimum: 1
+                    NullableRetryCarrier:
+                      type: object
+                      properties:
+                        retryPolicy:
+                          $ref: '#/components/schemas/ProviderRetryPolicy'
+                          nullable: true
                 """
             ).strip()
             + "\n",
@@ -249,19 +375,45 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             app_spec = generator.generate("app")
             backend_spec = generator.generate("backend")
 
-            self.assertEqual("3.0.3", app_spec["openapi"])
+            self.assertEqual("3.1.2", app_spec["openapi"])
             self.assertEqual("SDKWork Claw Router App API", app_spec["info"]["title"])
             self.assertEqual("SdkworkAppClient", app_spec["x-sdk-client"])
             self.assertEqual("http://localhost:18082", app_spec["servers"][0]["url"])
-            self.assertIn("/app/v3/api/coupons/redeem", app_spec["paths"])
-            self.assertNotIn("/backend/v3/api/router/announcements/{announcementId}", app_spec["paths"])
+            self.assertIn("/app/v3/api/billing/coupons/redeem", app_spec["paths"])
+            self.assertNotIn("/backend/v3/api/content/announcements/{announcementId}", app_spec["paths"])
             self.assertNotIn("/v1/chat/completions", app_spec["paths"])
 
             self.assertEqual("SDKWork Claw Router Backend API", backend_spec["info"]["title"])
             self.assertEqual("SdkworkBackendClient", backend_spec["x-sdk-client"])
             self.assertEqual("http://localhost:18081", backend_spec["servers"][0]["url"])
-            self.assertIn("/backend/v3/api/router/announcements/{announcementId}", backend_spec["paths"])
-            self.assertNotIn("/app/v3/api/coupons/redeem", backend_spec["paths"])
+            self.assertIn("/backend/v3/api/content/announcements/{announcementId}", backend_spec["paths"])
+            self.assertNotIn("/app/v3/api/billing/coupons/redeem", backend_spec["paths"])
+
+    def test_emits_problem_detail_error_responses_and_domain_extensions(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(root)
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            operation = app_spec["paths"]["/app/v3/api/iam/api_keys"]["post"]
+            schemas = app_spec["components"]["schemas"]
+
+            self.assertIn("ProblemDetail", schemas)
+            self.assertNotIn("ErrorResponse", schemas)
+            self.assertEqual("iam", operation["x-sdkwork-domain"])
+            self.assertEqual("apiKeys", operation["x-sdkwork-resource"])
+            for status in ("400", "401", "500"):
+                response = operation["responses"][status]
+                self.assertIn("application/problem+json", response["content"])
+                self.assertEqual(
+                    {"$ref": "#/components/schemas/ProblemDetail"},
+                    response["content"]["application/problem+json"]["schema"],
+                )
+
+            problem_detail = schemas["ProblemDetail"]
+            self.assertEqual(["type", "title", "status"], problem_detail["required"])
+            self.assertIn("traceId", problem_detail["properties"])
+            self.assertIn("errors", problem_detail["properties"])
 
     def test_emits_path_parameters_request_body_and_query_marker(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -269,24 +421,82 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_manifest(root)
 
             backend_spec = ClawRouterOpenApiGenerator(root=root).generate("backend")
-            operation = backend_spec["paths"]["/backend/v3/api/router/announcements/{announcementId}"]["patch"]
+            operation = backend_spec["paths"]["/backend/v3/api/content/announcements/{announcementId}"]["patch"]
 
-            self.assertEqual("updateAnnouncement", operation["operationId"])
+            self.assertEqual("announcements.update", operation["operationId"])
             self.assertEqual("announcementId", operation["parameters"][0]["name"])
             self.assertEqual("path", operation["parameters"][0]["in"])
             self.assertTrue(operation["parameters"][0]["required"])
             self.assertEqual(
-                {"$ref": "#/components/schemas/OperationRequest"},
+                {"$ref": "#/components/schemas/AnnouncementsUpdateRequest"},
                 operation["requestBody"]["content"]["application/json"]["schema"],
             )
             self.assertEqual(
-                {"$ref": "#/components/schemas/PlusApiResult"},
+                {"$ref": "#/components/schemas/AnnouncementsUpdateResult"},
                 operation["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            backend_schemas = backend_spec["components"]["schemas"]
+            self.assertIn("AnnouncementsUpdateResult", backend_schemas)
+            self.assertIn("NoData", backend_schemas)
+            self.assertEqual({"code", "msg", "message", "data"}, set(backend_schemas["PlusApiResult"]["properties"]))
+            self.assertDescribedSchemaRef(
+                backend_schemas["AnnouncementsUpdateResult"]["properties"]["data"],
+                "#/components/schemas/NoData",
             )
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            query_operation = app_spec["paths"]["/app/v3/api/app/store/categories"]["get"]
-            self.assertIn({"name": "pageNo", "in": "query", "required": False, "schema": {"type": "integer", "format": "int32"}}, query_operation["parameters"])
+            query_operation = app_spec["paths"]["/app/v3/api/platform/store/categories"]["get"]
+            self.assertEqual([], query_operation["parameters"])
+
+            self.assertNotIn("/app/v3/api/content/feeds/{feedId}/collect", app_spec["paths"])
+            post_query_operation = app_spec["paths"]["/app/v3/api/content/feeds/{id}/collect"]["post"]
+            self.assertIn(
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": True,
+                    "schema": {"type": "string"},
+                    "description": "Id path parameter.",
+                },
+                post_query_operation["parameters"],
+            )
+            self.assertIn(
+                {
+                    "name": "folderId",
+                    "in": "query",
+                    "required": False,
+                    "schema": {"type": "integer", "format": "int64", "minimum": 1},
+                    "description": "Folder id query parameter.",
+                },
+                post_query_operation["parameters"],
+            )
+            self.assertNotIn("requestBody", post_query_operation)
+
+    def test_void_operation_uses_operation_result_with_no_data_schema(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(root)
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            delete_operation = app_spec["paths"]["/app/v3/api/content/comments/{commentId}"]["delete"]
+            schemas = app_spec["components"]["schemas"]
+
+            self.assertEqual(
+                {"$ref": "#/components/schemas/CommentsDeleteResult"},
+                delete_operation["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertIn("CommentsDeleteResult", schemas)
+            self.assertIn("NoData", schemas)
+            self.assertEqual({"code", "msg", "message", "data"}, set(schemas["PlusApiResult"]["properties"]))
+            self.assertDescribedSchemaRef(
+                schemas["CommentsDeleteResult"]["properties"]["data"],
+                "#/components/schemas/NoData",
+            )
+            for schema_name, schema in schemas.items():
+                properties = schema.get("properties") if isinstance(schema, dict) else None
+                if isinstance(properties, dict):
+                    with self.subTest(schema_name=schema_name):
+                        self.assertNotIn(None, properties.values())
 
     def test_operation_payload_schemas_drive_request_and_response_components(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -294,7 +504,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_manifest(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/router/api-keys"]["post"]
+            operation = app_spec["paths"]["/app/v3/api/iam/api_keys"]["post"]
             schemas = app_spec["components"]["schemas"]
 
             self.assertEqual(
@@ -303,16 +513,207 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             )
             self.assertTrue(operation["requestBody"]["required"])
             self.assertEqual(
-                {"$ref": "#/components/schemas/CreateKeyResult"},
+                {"$ref": "#/components/schemas/ApiKeysCreateResult"},
                 operation["responses"]["200"]["content"]["application/json"]["schema"],
             )
             self.assertEqual(["name", "group"], schemas["CreateApiKeyRequest"]["required"])
             self.assertEqual(128, schemas["CreateApiKeyRequest"]["properties"]["name"]["maxLength"])
-            self.assertEqual(
-                {"$ref": "#/components/schemas/CreateApiKeyResponse"},
-                schemas["CreateKeyResult"]["properties"]["data"],
+            self.assertDescribedSchemaRef(
+                schemas["ApiKeysCreateResult"]["properties"]["data"],
+                "#/components/schemas/CreateApiKeyResponse",
             )
             self.assertEqual(["item", "rawKey"], schemas["CreateApiKeyResponse"]["required"])
+
+            qr_result = schemas["LoginQrCodesCreateResult"]
+            self.assertDescribedSchemaRef(
+                qr_result["properties"]["data"],
+                "#/components/schemas/IamLoginQrCodeResponse",
+            )
+            self.assertEqual(
+                ["qrKey", "qrContent"],
+                schemas["IamLoginQrCodeResponse"]["required"],
+            )
+
+    def test_multipart_file_targets_are_exposed_as_operation_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = self.write_manifest(root)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["operations"].append(
+                {
+                    "api_surface": "app",
+                    "api_method": "POST",
+                    "api_path": "/app/v3/api/courses/applications/videos",
+                    "operation": "uploadCourseApplicationVideo",
+                    "operation_id": "applications.videos.create",
+                    "tag": "content",
+                    "kind": "create",
+                    "module": "courses",
+                    "path_params": [],
+                    "source": "apps/portal/courseService.ts",
+                    "read_sources": [],
+                    "write_tables": [],
+                    "file_targets": ["course_application_video_uploads"],
+                    "request_content_type": "multipart/form-data",
+                    "request_schema": {
+                        "name": "CourseApplicationVideoUploadRequest",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": False,
+                            "required": ["file"],
+                            "properties": {
+                                "file": {"type": "string", "format": "binary"},
+                            },
+                        },
+                    },
+                    "response_schema": {
+                        "name": "CourseApplicationVideoUploadResponse",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": False,
+                            "required": ["videoUrl"],
+                            "properties": {
+                                "videoUrl": {"type": "string"},
+                            },
+                        },
+                    },
+                }
+            )
+            manifest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            operation = app_spec["paths"]["/app/v3/api/courses/applications/videos"]["post"]
+
+            self.assertEqual(
+                {"$ref": "#/components/schemas/CourseApplicationVideoUploadRequest"},
+                operation["requestBody"]["content"]["multipart/form-data"]["schema"],
+            )
+            self.assertEqual(["course_application_video_uploads"], operation["x-file-targets"])
+            self.assertIn("File targets course_application_video_uploads.", operation["description"])
+
+    def test_registration_schema_preserves_required_verification_code(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = self.write_manifest(root)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["operations"].append(
+                {
+                    "api_surface": "app",
+                    "api_method": "POST",
+                    "api_path": "/app/v3/api/auth/registrations",
+                    "operation": "register",
+                    "operation_id": "registrations.create",
+                    "tag": "auth",
+                    "kind": "create",
+                    "module": "auth",
+                    "path_params": [],
+                    "source": "apps/portal/authController.ts",
+                    "request_id_header": True,
+                    "read_sources": ["iam_user", "iam_user_identity", "iam_credential"],
+                    "write_tables": ["iam_user", "iam_user_identity", "iam_credential", "iam_session"],
+                    "request_schema": {
+                        "name": "IamRegistrationCreateRequest",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": False,
+                            "required": ["username", "password", "verificationCode"],
+                            "properties": {
+                                "username": {"type": "string", "minLength": 1, "maxLength": 128},
+                                "password": {"type": "string", "minLength": 1, "maxLength": 128},
+                                "verificationCode": {"type": "string", "maxLength": 32},
+                            },
+                        },
+                    },
+                }
+            )
+            manifest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            operation = app_spec["paths"]["/app/v3/api/auth/registrations"]["post"]
+            schema = app_spec["components"]["schemas"]["IamRegistrationCreateRequest"]
+
+            self.assertEqual("registrations.create", operation["operationId"])
+            self.assertEqual(
+                {"$ref": "#/components/schemas/IamRegistrationCreateRequest"},
+                operation["requestBody"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual(["username", "password", "verificationCode"], schema["required"])
+            self.assertEqual("string", schema["properties"]["verificationCode"]["type"])
+
+    def test_false_request_body_required_marks_declared_request_schema_as_optional_body(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / "generated" / "api" / "api-contract-manifest.json"
+            manifest.parent.mkdir(parents=True, exist_ok=True)
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema": {"version": "0.1.0"},
+                        "sdk_boundaries": {
+                            "app": {
+                                "api_prefix": "/app/v3/api",
+                                "sdk_client": "SdkworkAppClient",
+                                "sdk_family": "app",
+                            },
+                            "backend": {
+                                "api_prefix": "/backend/v3/api",
+                                "sdk_client": "SdkworkBackendClient",
+                                "sdk_family": "backend",
+                            },
+                        },
+                        "operations": [
+                            {
+                                "api_surface": "backend",
+                                "api_method": "POST",
+                                "api_path": "/backend/v3/api/platform/apps/{appId}/enable",
+                                "operation": "enableApp",
+                                "operation_id": "apps.enable",
+                                "tag": "platform",
+                                "kind": "action",
+                                "module": "app-center",
+                                "path_params": ["appId"],
+                                "source": "apps/portal/adminAppService.ts",
+                                "read_sources": ["plus_app"],
+                                "write_tables": ["plus_app"],
+                                "request_body_required": False,
+                                "request_schema": {
+                                    "name": "EnableAppRequest",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "properties": {},
+                                    },
+                                },
+                                "response_schema": {
+                                    "name": "AdminAppMutationResponse",
+                                    "schema": {
+                                        "type": "object",
+                                        "additionalProperties": False,
+                                        "required": ["item"],
+                                        "properties": {
+                                            "item": {
+                                                "type": "object",
+                                                "additionalProperties": True,
+                                            }
+                                        },
+                                    },
+                                },
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            backend_spec = ClawRouterOpenApiGenerator(root=root).generate("backend")
+            operation = backend_spec["paths"]["/backend/v3/api/platform/apps/{appId}/enable"]["post"]
+
+            self.assertEqual(
+                {"$ref": "#/components/schemas/EnableAppRequest"},
+                operation["requestBody"]["content"]["application/json"]["schema"],
+            )
+            self.assertFalse(operation["requestBody"]["required"])
+            self.assertIn("EnableAppRequest", backend_spec["components"]["schemas"])
 
     def test_array_response_schema_drives_result_data_component(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -320,16 +721,16 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_manifest(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/coupons/my"]["get"]
+            operation = app_spec["paths"]["/app/v3/api/billing/coupons/mine"]["get"]
             schemas = app_spec["components"]["schemas"]
 
             self.assertEqual(
-                {"$ref": "#/components/schemas/FetchRedeemHistoryResult"},
+                {"$ref": "#/components/schemas/CouponsMineListResult"},
                 operation["responses"]["200"]["content"]["application/json"]["schema"],
             )
-            self.assertEqual(
-                {"$ref": "#/components/schemas/BillingRedeemHistoryResponse"},
-                schemas["FetchRedeemHistoryResult"]["properties"]["data"],
+            self.assertDescribedSchemaRef(
+                schemas["CouponsMineListResult"]["properties"]["data"],
+                "#/components/schemas/BillingRedeemHistoryResponse",
             )
             self.assertEqual("array", schemas["BillingRedeemHistoryResponse"]["type"])
             self.assertEqual(
@@ -352,7 +753,17 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             schema = app_spec["components"]["schemas"]["AiModelVendorRecord"]
             self.assertEqual(["vendor_code", "enabled"], schema["required"])
             self.assertEqual(64, schema["properties"]["vendor_code"]["maxLength"])
-            self.assertIn("OperationRequest", app_spec["components"]["schemas"])
+            self.assertNotIn("OperationRequest", app_spec["components"]["schemas"])
+            self.assertIn("CouponsRedeemRequest", app_spec["components"]["schemas"])
+            self.assertEqual(
+                {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "description": "Explicit empty request body for redeem coupon.",
+                    "properties": {},
+                },
+                app_spec["components"]["schemas"]["CouponsRedeemRequest"],
+            )
 
     def test_get_single_read_source_uses_record_response_wrapper(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -361,17 +772,18 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_schema_components(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/model-vendors"]["get"]
+            operation = app_spec["paths"]["/app/v3/api/ai/model_vendors"]["get"]
 
             self.assertEqual(
-                {"$ref": "#/components/schemas/FetchModelVendorsResult"},
+                {"$ref": "#/components/schemas/ModelVendorsListResult"},
                 operation["responses"]["200"]["content"]["application/json"]["schema"],
             )
-            result_schema = app_spec["components"]["schemas"]["FetchModelVendorsResult"]
+            result_schema = app_spec["components"]["schemas"]["ModelVendorsListResult"]
             self.assertEqual(
                 {
                     "type": "array",
                     "items": {"$ref": "#/components/schemas/AiModelVendorRecord"},
+                    "description": "Data field on model vendors list result.",
                 },
                 result_schema["properties"]["data"],
             )
@@ -384,19 +796,19 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_schema_components(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/model-vendors/{vendorCode}"]["get"]
+            operation = app_spec["paths"]["/app/v3/api/ai/model_vendors/{vendorCode}"]["get"]
 
             self.assertEqual(
-                {"$ref": "#/components/schemas/GetModelVendorResult"},
+                {"$ref": "#/components/schemas/ModelVendorsRetrieveResult"},
                 operation["responses"]["200"]["content"]["application/json"]["schema"],
             )
-            result_schema = app_spec["components"]["schemas"]["GetModelVendorResult"]
-            self.assertEqual(
-                {"$ref": "#/components/schemas/AiModelVendorRecord"},
+            result_schema = app_spec["components"]["schemas"]["ModelVendorsRetrieveResult"]
+            self.assertDescribedSchemaRef(
                 result_schema["properties"]["data"],
+                "#/components/schemas/AiModelVendorRecord",
             )
 
-    def test_duplicate_operation_ids_are_made_unique_per_surface(self) -> None:
+    def test_dotted_operation_ids_are_structural_and_unique_per_surface(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_manifest(root)
@@ -409,8 +821,9 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             ]
 
             self.assertEqual(len(operation_ids), len(set(operation_ids)))
-            self.assertIn("appGetCategories", operation_ids)
-            self.assertIn("skillsGetCategories", operation_ids)
+            self.assertIn("store.categories.list", operation_ids)
+            self.assertIn("categories.list", operation_ids)
+            self.assertTrue(all("." in operation_id for operation_id in operation_ids))
 
     def test_skips_non_exposed_frontend_derived_operations(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -418,10 +831,29 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_manifest(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/model-vendors"]["get"]
+            operation = app_spec["paths"]["/app/v3/api/ai/model_vendors"]["get"]
 
-            self.assertEqual("fetchModelVendors", operation["operationId"])
+            self.assertEqual("modelVendors.list", operation["operationId"])
             self.assertNotIn("FetchModelVendorsForRankingsResult", app_spec["components"]["schemas"])
+
+    def test_get_operations_do_not_receive_default_query_parameters(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = self.write_manifest(root)
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            operation = next(
+                item
+                for item in payload["operations"]
+                if item["operation"] == "fetchModelVendors"
+            )
+            operation.pop("query_parameters_declared", None)
+            operation.pop("query_parameters", None)
+            manifest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            generated_operation = app_spec["paths"]["/app/v3/api/ai/model_vendors"]["get"]
+
+            self.assertEqual([], generated_operation["parameters"])
 
     def test_generates_friendly_summary_and_contract_description(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -429,7 +861,7 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.write_manifest(root)
 
             app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
-            operation = app_spec["paths"]["/app/v3/api/model-vendors"]["get"]
+            operation = app_spec["paths"]["/app/v3/api/ai/model_vendors"]["get"]
 
             self.assertEqual("List model vendors", operation["summary"])
             self.assertNotEqual(operation["operationId"], operation["summary"])
@@ -437,6 +869,150 @@ class ClawRouterOpenApiGeneratorTest(unittest.TestCase):
             self.assertIn("List model vendors.", operation["description"])
             self.assertIn("Reads ai_model_vendor.", operation["description"])
 
+    def test_normalizes_openapi_reference_quality_for_sdk_docs(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(root)
+            self.write_schema_components(root)
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            schemas = app_spec["components"]["schemas"]
+
+            tag_names = {tag["name"] for tag in app_spec["tags"]}
+            self.assertIn("platform", tag_names)
+            self.assertTrue(all(tag.get("description") for tag in app_spec["tags"]))
+            self.assertEqual([{"AuthToken": [], "SdkworkAccessToken": []}], app_spec["security"])
+            self.assertEqual(
+                {"type": "http", "scheme": "bearer", "bearerFormat": "SDKWork auth token"},
+                app_spec["components"]["securitySchemes"]["AuthToken"],
+            )
+            self.assertEqual(
+                {"type": "apiKey", "in": "header", "name": "Sdkwork-Access-Token"},
+                app_spec["components"]["securitySchemes"]["SdkworkAccessToken"],
+            )
+
+            redeem_operation = app_spec["paths"]["/app/v3/api/billing/coupons/redeem"]["post"]
+            self.assertEqual(
+                {"$ref": "#/components/schemas/CouponsRedeemRequest"},
+                redeem_operation["requestBody"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/CouponsRedeemResult"},
+                redeem_operation["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertIn("CouponsRedeemResult", schemas)
+            self.assertDescribedSchemaRef(
+                schemas["CouponsRedeemResult"]["properties"]["data"],
+                "#/components/schemas/NoData",
+            )
+            self.assertTrue(redeem_operation["requestBody"]["description"])
+
+            create_key_operation = app_spec["paths"]["/app/v3/api/iam/api_keys"]["post"]
+            self.assertEqual(
+                {"$ref": "#/components/schemas/ApiKeysCreateResult"},
+                create_key_operation["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+
+            path_operation = app_spec["paths"]["/app/v3/api/ai/model_vendors/{vendorCode}"]["get"]
+            self.assertTrue(path_operation["parameters"][0]["description"])
+            query_operation = app_spec["paths"]["/app/v3/api/platform/store/categories"]["get"]
+            self.assertEqual([], query_operation["parameters"])
+
+            self.assertTrue(schemas["CreateApiKeyRequest"]["description"])
+            self.assertTrue(schemas["CreateApiKeyRequest"]["properties"]["name"]["description"])
+            self.assertEqual("string", schemas["CreateApiKeyRequest"]["properties"]["note"]["type"])
+            self.assertTrue(schemas["CreateApiKeyRequest"]["properties"]["note"]["nullable"])
+
+            self.assertTrue(schemas["AiModelVendorRecord"]["description"])
+            self.assertFalse(schemas["AiModelVendorRecord"]["additionalProperties"])
+            self.assertTrue(schemas["AiModelVendorRecord"]["properties"]["vendor_code"]["description"])
+
+            self.assertNotIn("OperationRequest", schemas)
+            self.assertNotIn("OperationResponse", schemas)
+            self.assertNotIn("PageResult", schemas)
+            self.assertNotIn("ErrorResponse", schemas)
+            self.assertIn("ProblemDetail", schemas)
+            self.assertIn("NoData", schemas)
+            self.assertIn("CouponsRedeemRequest", schemas)
+            self.assertIn("JsonValue", schemas)
+            self.assertIn("JsonNull", schemas)
+            self.assertEqual({"code", "msg", "message", "data"}, set(schemas["PlusApiResult"]["properties"]))
+            self.assertDescribedSchemaRef(
+                schemas["PlusApiResult"]["properties"]["data"],
+                "#/components/schemas/NoData",
+            )
+
+            nullable_ref = schemas["NullableRetryCarrier"]["properties"]["retryPolicy"]
+            self.assertEqual(
+                [
+                    {
+                        "allOf": [{"$ref": "#/components/schemas/ProviderRetryPolicy"}],
+                        "description": "Retry policy field on nullable retry carrier.",
+                    },
+                    {
+                        "allOf": [{"$ref": "#/components/schemas/JsonNull"}],
+                        "description": "Null variant accepted by retry policy.",
+                    },
+                ],
+                nullable_ref["oneOf"],
+            )
+            self.assertNotIn("$ref", nullable_ref)
+            self.assertNotIn("nullable", nullable_ref)
+
+    def test_success_responses_always_use_operation_results_with_explicit_data(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_manifest(root)
+            self.write_schema_components(root)
+
+            app_spec = ClawRouterOpenApiGenerator(root=root).generate("app")
+            backend_spec = ClawRouterOpenApiGenerator(root=root).generate("backend")
+
+            self.assertEqual(
+                {"$ref": "#/components/schemas/ApiKeysCreateResult"},
+                app_spec["paths"]["/app/v3/api/iam/api_keys"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/FeedsCollectResult"},
+                app_spec["paths"]["/app/v3/api/content/feeds/{id}/collect"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/CouponsRedeemResult"},
+                app_spec["paths"]["/app/v3/api/billing/coupons/redeem"]["post"]["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/CommentsDeleteResult"},
+                app_spec["paths"]["/app/v3/api/content/comments/{commentId}"]["delete"]["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            self.assertEqual(
+                {"$ref": "#/components/schemas/AnnouncementsUpdateResult"},
+                backend_spec["paths"]["/backend/v3/api/content/announcements/{announcementId}"]["patch"]["responses"]["200"]["content"]["application/json"]["schema"],
+            )
+            for surface, spec in (("app", app_spec), ("backend", backend_spec)):
+                schemas = spec["components"]["schemas"]
+                self.assertNotIn("OperationRequest", schemas)
+                self.assertNotIn("OperationResponse", schemas)
+                self.assertNotIn("PageResult", schemas)
+                self.assertIn("NoData", schemas)
+                self.assertEqual({"code", "msg", "message", "data"}, set(schemas["PlusApiResult"]["properties"]))
+                self.assertDescribedSchemaRef(
+                    schemas["PlusApiResult"]["properties"]["data"],
+                    "#/components/schemas/NoData",
+                )
+                for path, path_item in spec["paths"].items():
+                    for method, operation in path_item.items():
+                        with self.subTest(surface=surface, method=method, path=path):
+                            schema = operation["responses"]["200"]["content"]["application/json"]["schema"]
+                            self.assertNotEqual("#/components/schemas/OperationResponse", schema.get("$ref"))
+                            self.assertTrue(schema.get("$ref", "").endswith("Result"))
+                            component_name = schema["$ref"].rsplit("/", 1)[-1]
+                            self.assertIn(component_name, schemas)
+                            self.assertIn("data", schemas[component_name]["properties"])
+                for component_name, schema in schemas.items():
+                    if component_name == "PlusApiResult" or not component_name.endswith("Result") or not isinstance(schema, dict):
+                        continue
+                    with self.subTest(surface=surface, result=component_name):
+                        self.assertIn("data", schema["properties"])
     def test_writes_and_checks_specs(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

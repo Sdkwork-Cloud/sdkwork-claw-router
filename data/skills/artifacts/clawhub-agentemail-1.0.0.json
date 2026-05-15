@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentemail@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentemail",
+  "skill": {
+    "id": 22757,
+    "skillKey": "clawhub-agentemail",
+    "name": "Agentemail"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentemail",
+    "url": "https://clawhub.ai/skills/agentemail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentemail-c63afe34c3291cb5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "API-first email platform designed for AI agents. Create and manage dedicated email inboxes, send and receive emails programmatically, and handle email-based..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mayapower",
+      "userId": "publishers:mayapower",
+      "displayName": "mayapower",
+      "image": "https://avatars.githubusercontent.com/u/1064217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 3,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772728862621,
+      "changelog": "AgentMail 1.0.0 – Initial Release\n\n- Launches an API-first email platform designed for AI agents, with programmatic inbox creation and management.\n- Supports sending and receiving emails (including attachments) programmatically.\n- Integrates real-time processing via webhooks for incoming messages.\n- Provides core features like semantic search, automatic labeling, and structured data extraction.\n- Includes security guidance for filtering trusted senders to mitigate prompt injection risks.\n- Offers Python SDK, scripts, and documentation for rapid onboarding and workflow integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f8bbafd59e7e33a735454684226051345ca2e2bcf34b26f904b74d7fcf1225d"
+}

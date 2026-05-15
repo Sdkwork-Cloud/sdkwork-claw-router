@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69825,
+  "uuid": "skill-clawhub-sbti-personality-test",
+  "skillKey": "clawhub-sbti-personality-test",
+  "name": "MBTI 已过时。这是一个非专业、纯玩梗的测试",
+  "summary": "SBTI 恶搞人格测试数据包 - 极简暗黑风格的 MBTI 恶搞测试数据，包含20道搞笑题目、5种人格结果、15个维度定义。纯数据文件，适合自定义前端实现。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sbti_personality_test",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Socialite UCL LJH",
+      "features": [
+        "SBTI 恶搞人格测试数据包",
+        "极简暗黑风格的 MBTI 恶搞测试数据，包含20道搞笑题目、5种人格结果、15个维度定义。纯数据文件，适合自定义前端实现。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sbti-personality-test@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270577937?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sbti-personality-test",
+      "url": "https://clawhub.ai/skills/sbti-personality-test"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sbti-personality-test",
+    "url": "https://clawhub.ai/skills/sbti-personality-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sbti-personality-test-75a1041092473c80.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sbti-personality-test@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-sbti-personality-test-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a01b9bf2436a4519f39888e087b4964697f8dbb955d66164ab505976533f453a",
+      "artifactSizeBytes": 2411
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T16:13:45.489Z"
+}

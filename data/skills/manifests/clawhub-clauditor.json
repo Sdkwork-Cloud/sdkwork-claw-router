@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10434,
+  "uuid": "skill-clawhub-clauditor",
+  "skillKey": "clawhub-clauditor",
+  "name": "Clauditor",
+  "summary": "Tamper-resistant audit watchdog for Clawdbot agents. Detects and logs suspicious filesystem activity with HMAC-chained evidence.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clauditor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "apollostreetcompany",
+      "features": [
+        "Tamper-resistant audit watchdog for Clawdbot agents",
+        "Detects and logs suspicious filesystem activity with HMAC-chained evidence."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clauditor@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/171311035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clauditor",
+      "url": "https://clawhub.ai/skills/clauditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clauditor",
+    "url": "https://clawhub.ai/skills/clauditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clauditor-d13abfe1acf7d0da.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clauditor@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-clauditor-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:462e6ecc46db89168bf463a3146936ab168fe91e524e339cecd8f145ffcb7619",
+      "artifactSizeBytes": 2001
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T02:28:01.135Z"
+}

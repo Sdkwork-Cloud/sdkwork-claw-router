@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9771,
+  "uuid": "skill-clawhub-design-system-creation",
+  "skillKey": "clawhub-design-system-creation",
+  "name": "Design System Creation",
+  "summary": "Complete workflow for creating distinctive design systems from scratch. Orchestrates aesthetic documentation, token architecture, components, and motion. Use when starting a new design system or refactoring an existing one. Triggers on cre.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.design_system_creation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "Complete workflow for creating distinctive design systems from scratch",
+        "Orchestrates aesthetic documentation, token architecture, components, and motion",
+        "Use when starting a new design system or refactoring an existing one",
+        "Triggers on create design system, design tokens, design system setup, visual identity, theming."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/design-system-creation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "design-system-creation",
+      "url": "https://clawhub.ai/skills/design-system-creation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "design-system-creation",
+    "url": "https://clawhub.ai/skills/design-system-creation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/design-system-creation-0b0f8bbbfcbf21bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/design-system-creation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-design-system-creation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:17ed3187c3e9c8d32afafb2aaaae0c472937b44790d5e5034459e73c19c811a0",
+      "artifactSizeBytes": 2512
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:02:34.194Z"
+}

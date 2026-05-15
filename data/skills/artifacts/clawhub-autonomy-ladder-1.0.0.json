@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/autonomy-ladder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autonomy_ladder",
+  "skill": {
+    "id": 46280,
+    "skillKey": "clawhub-autonomy-ladder",
+    "name": "Autonomy Ladder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autonomy-ladder",
+    "url": "https://clawhub.ai/skills/autonomy-ladder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autonomy-ladder-b9ad2fb18940e50f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A 3-tier decision framework that defines when your AI agent should act independently, report with detail, or ask before proceeding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "joeytbuilds",
+      "userId": "s173ct4s9vjmy94k3snzkkefh184hh1e",
+      "displayName": "JoeyTbuilds",
+      "image": "https://avatars.githubusercontent.com/u/272441554?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776283414672,
+      "changelog": "- Initial release of the autonomy-ladder skill, providing a 3-tier framework for agent decision-making autonomy.\n- Outlines clear guidelines for when agents should act independently, report actions with detail, or request approval.\n- Includes practical tiered examples and instructions for integrating the framework into MEMORY.md, SOUL.md, and HEARTBEAT.md.\n- Offers processes for expanding or updating the ladder as agent trust grows.\n- Highlights common mistakes and best practices for effective deployment and review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2a0dabab99bc9d8e6589ea9abfe759b47732553500e24cd4c055a1b5133b25d7"
+}

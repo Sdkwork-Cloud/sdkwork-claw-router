@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25903,
+  "uuid": "skill-clawhub-img2img",
+  "skillKey": "clawhub-img2img",
+  "name": "Img2img",
+  "summary": "Generate images from text descriptions using DALL-E 3 while adhering to usage policies and avoiding realistic human faces.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.img2img",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Binko",
+      "features": [
+        "Generate images from text descriptions using DALL-E 3 while adhering to usage policies and avoi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/img2img@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3785017?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "img2img",
+      "url": "https://clawhub.ai/skills/img2img"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "img2img",
+    "url": "https://clawhub.ai/skills/img2img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/img2img-78011dc55a5e9c8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/img2img@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-img2img-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b88d774923c698824d76b0abbc311414a83a2d3ae4478be3a713f879cbe81eb",
+      "artifactSizeBytes": 2162
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T16:07:19.595Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/acmg-variant-classification@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acmg_variant_classification",
+  "skill": {
+    "id": 52028,
+    "skillKey": "clawhub-acmg-variant-classification",
+    "name": "ACMG Variant Classifier"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acmg-variant-classification",
+    "url": "https://clawhub.ai/skills/acmg-variant-classification",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acmg-variant-classification-2839555df296be84.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Standard workflow for ACMG/AMP germline small-variant classification — collect evidence, assign criteria, detect conflicts, and produce a review-ready classi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alex4xu",
+      "userId": "s17d80kx07s0e7j93699kst27983vzjk",
+      "displayName": "Alex4Xu",
+      "image": "https://avatars.githubusercontent.com/u/53885882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774769685927,
+      "changelog": "Initial release of ACMG Variant Classification workflow skill.\n\n- Provides a guided, interview-style ACMG/AMP variant interpretation workflow for germline SNVs/indels.\n- Collects and normalizes all essential variant and clinical information stepwise.\n- Assigns ACMG/AMP criteria with clear tracking, prevents double counting, and handles evidence conflicts.\n- Applies ACMG combination logic for provisional classification, summarizing facts and outstanding needs at each step.\n- Includes templates and scripts for evidence intake and classification logic.\n- Clearly states safety and review limitations: outputs are decision support, not final clinical diagnosis.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:92d3a426ac81d4549aec324b4e7e217714a18c485a0365aa966b14a1cd10bc93"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16266,
+  "uuid": "skill-clawhub-clap-trader",
+  "skillKey": "clawhub-clap-trader",
+  "name": "Clap Trader",
+  "summary": "A skill for OpenClaw to research crypto market trends (technical & sentiment) and trade ETH on Binance.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clap_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dymx101",
+      "features": [
+        "A skill for OpenClaw to research crypto market trends (technical & sentiment) and trade ETH on."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clap-trader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3862533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clap-trader",
+      "url": "https://clawhub.ai/skills/clap-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clap-trader",
+    "url": "https://clawhub.ai/skills/clap-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clap-trader-9a48bdd1aaf0f359.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clap-trader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clap-trader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0baacfff99bf3bcf27ec14225c69c340e426b20624b1e3f1ca459dbe840d8693",
+      "artifactSizeBytes": 2224
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T11:02:33.752Z"
+}

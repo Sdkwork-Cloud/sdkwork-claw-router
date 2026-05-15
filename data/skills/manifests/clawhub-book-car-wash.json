@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13098,
+  "uuid": "skill-clawhub-book-car-wash",
+  "skillKey": "clawhub-book-car-wash",
+  "name": "Book Car Wash",
+  "summary": "Book car-wash services through Lokuli MCP. Use when user needs to find and book car-wash. Triggers on requests like \"book a car-wash\", \"find car-wash near me\", or any car-wash service request.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_car_wash",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lokuli",
+      "features": [
+        "Book car-wash services through Lokuli MCP",
+        "Use when user needs to find and book car-wash",
+        "Triggers on requests like \"book a car-wash\", \"find car-wash near me\", or any car-wash service r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-car-wash@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/224194606?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-car-wash",
+      "url": "https://clawhub.ai/skills/book-car-wash"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-car-wash",
+    "url": "https://clawhub.ai/skills/book-car-wash",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-car-wash-75864f2e24a46263.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-car-wash@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-car-wash-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa054358a85e22f7cd506d2920583a4f687b1503cd413972a09ab5ff266bbc49",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T01:04:28.029Z"
+}

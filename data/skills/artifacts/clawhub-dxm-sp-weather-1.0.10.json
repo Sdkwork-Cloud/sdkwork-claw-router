@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dxm-sp-weather@1.0.10",
+  "version": "1.0.10",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dxm_sp_weather",
+  "skill": {
+    "id": 73024,
+    "skillKey": "clawhub-dxm-sp-weather",
+    "name": "度小满天气商户"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dxm-sp-weather",
+    "url": "https://clawhub.ai/skills/dxm-sp-weather",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dxm-sp-weather-7aadbcc6b9155f45.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "用户询问天气（今天天气怎么样、天气怎么样、某城市/某日期天气）、或查询天气服务订单/额度/调用明细时触发"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duxiaoman",
+      "userId": "s17avhtwkfpvkt14j2hk9w6ffn83ws3f",
+      "displayName": "度小满",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 333,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.10",
+      "createdAt": 1776169447185,
+      "changelog": "sp-service-weather v1.0.10\n\n- 新增环境变量说明：增加 CLAUDE_SKILL_DIR 用于指定配置文件存放目录。\n- 优化 metadata 环节说明，注明 CLAUDE_SKILL_DIR 由 Agent 自动注入。\n- 明确配置文件保存路径为 `${CLAUDE_SKILL_DIR}/sp-weather-config.json`。\n- 说明 SP_WEATHER_BASE 和 SP_WEATHER_PASSWORD 环境变量均为可选项。\n- 其余功能和使用方式保持不变。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:579b66bc6946774eedc6fbcb0d97b86cb26e159d9f45650f48ba2e5c015f5d7c"
+}

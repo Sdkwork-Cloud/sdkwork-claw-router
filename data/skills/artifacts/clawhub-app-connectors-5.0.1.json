@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/app-connectors@5.0.1",
+  "version": "5.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_connectors",
+  "skill": {
+    "id": 53179,
+    "skillKey": "clawhub-app-connectors",
+    "name": "App Connectors"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-connectors",
+    "url": "https://clawhub.ai/skills/app-connectors",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-connectors-4e8252c667e4b996.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect your AI agent to 1000+ apps — discover tools, manage OAuth connections, execute actions, and provide a self-service connector dashboard."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ts-sz",
+      "userId": "s175gewjv8dyj5rds7pmycdbbd83w1rg",
+      "displayName": "ts-sz",
+      "image": "https://avatars.githubusercontent.com/u/19378290?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 208,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "5.0.1",
+      "createdAt": 1775256196354,
+      "changelog": "v5.0.1: Simplify to in-chat flow. Drop dashboard dependency. /apps shows clean list via v1 API. User types app name to connect. Framework-agnostic.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5166eafaee4009f56a0defef3498dbd88b0422646df2d5aed62c75310cb6d517"
+}

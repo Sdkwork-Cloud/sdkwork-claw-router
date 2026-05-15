@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8865,
+  "uuid": "skill-clawhub-monitoring",
+  "skillKey": "clawhub-monitoring",
+  "name": "Monitoring",
+  "summary": "Set up observability for applications and infrastructure with metrics, logs, traces, and alerts.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.monitoring",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Set up observability for applications and infrastructure with metrics, logs, traces, and alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/monitoring@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "monitoring",
+      "url": "https://clawhub.ai/skills/monitoring"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "monitoring",
+    "url": "https://clawhub.ai/skills/monitoring",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/monitoring-14a2326b6bb54f40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/monitoring@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-monitoring-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bad3a419f984f168b3ad40e1231b1e5f3eabf484199c1eda8dadbf885a088317",
+      "artifactSizeBytes": 1792
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T18:09:01.223Z"
+}

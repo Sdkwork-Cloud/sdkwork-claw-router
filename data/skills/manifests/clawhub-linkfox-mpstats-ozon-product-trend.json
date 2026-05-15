@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63466,
+  "uuid": "skill-clawhub-linkfox-mpstats-ozon-product-trend",
+  "skillKey": "clawhub-linkfox-mpstats-ozon-product-trend",
+  "name": "Mpstats Ozon Product Trend",
+  "summary": "MPSTATS Ozon 俄罗斯站单个 SKU 的分日时间序列表现。按日期粒度返回一个 Ozon 商品的销量、价格、库存、评分等指标，可选附带搜索位次/可见性数据，用于验证增长趋势、季节性、异常波动。当用户提到 Ozon 趋势、Ozon 销量趋势、Ozon 价格走势、Ozon 分日数据、Ozon 库存走势、Ozo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_mpstats_ozon_product_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linkfox-ai",
+      "features": [
+        "MPSTATS Ozon 俄罗斯站单个 SKU 的分日时间序列表现。按日期粒度返回一个 Ozon 商品的销量、价格、库存、评分等指标，可选附带搜索位次/可见性数据，用于验证增长趋势、季节性、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/linkfox-mpstats-ozon-product-trend@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267242260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "linkfox-mpstats-ozon-product-trend",
+      "url": "https://clawhub.ai/skills/linkfox-mpstats-ozon-product-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-mpstats-ozon-product-trend",
+    "url": "https://clawhub.ai/skills/linkfox-mpstats-ozon-product-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-mpstats-ozon-product-trend-d2a6529e4d63f523.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/linkfox-mpstats-ozon-product-trend@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-linkfox-mpstats-ozon-product-trend-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cdfd286a52d93615e9ed73e3cb5b861fc95c098396cd93caab2d205ea9de7f84",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T05:40:08.035Z"
+}

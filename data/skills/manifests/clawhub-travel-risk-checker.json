@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59541,
+  "uuid": "skill-clawhub-travel-risk-checker",
+  "skillKey": "clawhub-travel-risk-checker",
+  "name": "Transit Risk Assessment & Delay Hotel Recommendations & Last-Mile Transport Check",
+  "summary": "旅行交通风险检查助手，提供转机风险评估、延误酒店推荐、最后一公里交通检查三大核心功能",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.travel_risk_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mlyjqx",
+      "features": [
+        "旅行交通风险检查助手，提供转机风险评估、延误酒店推荐、最后一公里交通检查三大核心功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/travel-risk-checker@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16434470?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "travel-risk-checker",
+      "url": "https://clawhub.ai/skills/travel-risk-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "travel-risk-checker",
+    "url": "https://clawhub.ai/skills/travel-risk-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/travel-risk-checker-d6566f270738c745.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/travel-risk-checker@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-travel-risk-checker-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5bf4681fad14331e522825ac42e9ffc48a0efd354fb3572befcdfaa05624b34",
+      "artifactSizeBytes": 2122
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T09:05:19.773Z"
+}

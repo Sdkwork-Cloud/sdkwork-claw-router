@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34146,
+  "uuid": "skill-clawhub-nm-conserve-bloat-detector",
+  "skillKey": "clawhub-nm-conserve-bloat-detector",
+  "name": "Nm Conserve Bloat Detector",
+  "summary": "Detect codebase bloat via progressive analysis: dead code, duplication, complexity, and doc bloat",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_conserve_bloat_detector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Detect codebase bloat via progressive analysis: dead code, duplication, complexity, and doc blo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-conserve-bloat-detector@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-conserve-bloat-detector",
+      "url": "https://clawhub.ai/skills/nm-conserve-bloat-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-conserve-bloat-detector",
+    "url": "https://clawhub.ai/skills/nm-conserve-bloat-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-conserve-bloat-detector-dd873896c735c854.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-conserve-bloat-detector@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-conserve-bloat-detector-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c72d7bf28c468d86b221e61bc46dc58b02e73ff5d9a83da90f0f89aa23229e30",
+      "artifactSizeBytes": 1900
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:16:30.588Z"
+}

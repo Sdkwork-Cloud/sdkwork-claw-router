@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39194,
+  "uuid": "skill-clawhub-bet-slip-parser",
+  "skillKey": "clawhub-bet-slip-parser",
+  "name": "Bet Slip Parser",
+  "summary": "Parse bet slips from text, natural language, or screenshots into structured JSON. Extracts stake, odds, bet type, selection, and sportsbook. Supports singles...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bet_slip_parser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rsquaredsolutions2026",
+      "features": [
+        "Parse bet slips from text, natural language, or screenshots into structured JSON",
+        "Extracts stake, odds, bet type, selection, and sportsbook",
+        "Supports singles..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bet-slip-parser@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217474775?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bet-slip-parser",
+      "url": "https://clawhub.ai/skills/bet-slip-parser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bet-slip-parser",
+    "url": "https://clawhub.ai/skills/bet-slip-parser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bet-slip-parser-0f48b7874a9cb38b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bet-slip-parser@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bet-slip-parser-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aa3ece00060a5ab0364b66ca576ace1c8e6177284fd7d57fbd1766147c9d4fa7",
+      "artifactSizeBytes": 1948
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T23:11:12.196Z"
+}

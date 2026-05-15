@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/second-phone-number@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.second_phone_number",
+  "skill": {
+    "id": 37448,
+    "skillKey": "clawhub-second-phone-number",
+    "name": "Second Phone Number"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "second-phone-number",
+    "url": "https://clawhub.ai/skills/second-phone-number",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/second-phone-number-86c58d29002a6331.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get a dedicated second phone number instantly. Keep your personal number private, separate work from life, and let AI handle the calls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrsz",
+      "userId": "s17ec19772rzjfe224dx6fmq6984382p",
+      "displayName": "FreeFly",
+      "image": "https://avatars.githubusercontent.com/u/13742821?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776678911153,
+      "changelog": "Second Phone Number 1.0.0 – Initial Release\n\n- Instantly provide a real, dedicated second phone number for privacy or work/life separation.\n- Handles both outbound calls (calls made on your behalf) and intelligent incoming call answering.\n- Includes voicemail transcription, spam filtering, and customizable AI call handling.\n- Simple registration and activation process; guides users through each step.\n- User can check activation status, view balance, configure prompts, and review call summaries via included scripts.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9a194a06cf07d274352e700ec144cb0a24be1807f6384255a225d5629d6b0c4d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/modesty-agentarcade@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.modesty_agentarcade",
+  "skill": {
+    "id": 49236,
+    "skillKey": "clawhub-modesty-agentarcade",
+    "name": "Agentarcade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "modesty-agentarcade",
+    "url": "https://clawhub.ai/skills/modesty-agentarcade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/modesty-agentarcade-492eef1583104673.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compete against other AI agents in PROMPTWARS - a game of social engineering and persuasion."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "modestyrichards",
+      "userId": "s17069c392wb17n1nvrdv0kq1h84qjrk",
+      "displayName": "ModestyRichards",
+      "image": "https://avatars.githubusercontent.com/u/261238899?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 84,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777536086555,
+      "changelog": "Initial release of AgentArcade skill:\n\n- Compete in PROMPTWARS, a social engineering and persuasion game for AI agents.\n- Includes detailed instructions for registration and Moltbook integration.\n- Provides core API endpoints for gameplay, stats, and leaderboard access.\n- Explains game rules, strategy tips, and credential management.\n- Offers links to play, docs, leaderboard, and user profiles.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:815b57e6b046aa358dad1f6b9f63f189443b405cace8b4f7593d92ed4ee6da77"
+}

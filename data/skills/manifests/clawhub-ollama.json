@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14974,
+  "uuid": "skill-clawhub-ollama",
+  "skillKey": "clawhub-ollama",
+  "name": "Ollama",
+  "summary": "Run, tune, and troubleshoot local Ollama models with reliable API patterns, Modelfiles, embeddings, and hardware-aware deployment workflows.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ollama",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Run, tune, and troubleshoot local Ollama models with reliable API patterns, Modelfiles, embeddi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ollama@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ollama",
+      "url": "https://clawhub.ai/skills/ollama"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ollama",
+    "url": "https://clawhub.ai/skills/ollama",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ollama-76e3c7bfe641ea12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ollama@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ollama-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:54c0fde7c22faa5b154b33b2887a886f0d644a52b02e258d183dbd91d046ac28",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T17:12:45.992Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23869,
+  "uuid": "skill-clawhub-haresh-checkout-flow",
+  "skillKey": "clawhub-haresh-checkout-flow",
+  "name": "Haresh Checkout Flow",
+  "summary": "Process e-commerce checkout via n8n webhook integration",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.haresh_checkout_flow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Haresh Sainaath S",
+      "features": [
+        "Process e-commerce checkout via n8n webhook integration"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/haresh-checkout-flow@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/180730984?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "haresh-checkout-flow",
+      "url": "https://clawhub.ai/skills/haresh-checkout-flow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "haresh-checkout-flow",
+    "url": "https://clawhub.ai/skills/haresh-checkout-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/haresh-checkout-flow-829ac2ed88c28285.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/haresh-checkout-flow@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-haresh-checkout-flow-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a49648f731d59f9fba0a85bc0ba287ba84d69e2d6bd926b58e6ba1fc84367d4",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T18:18:08.643Z"
+}

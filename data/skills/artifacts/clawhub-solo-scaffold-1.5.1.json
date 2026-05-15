@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/solo-scaffold@1.5.1",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.solo_scaffold",
+  "skill": {
+    "id": 36310,
+    "skillKey": "clawhub-solo-scaffold",
+    "name": "Scaffold"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "solo-scaffold",
+    "url": "https://clawhub.ai/skills/solo-scaffold",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/solo-scaffold-1c00c92d08f3b6ff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate complete project from PRD + stack template — directory structure, configs, CLAUDE.md, git repo, and GitHub push. Use when user says \"scaffold projec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fortunto2",
+      "userId": "publishers:fortunto2",
+      "displayName": "Rust",
+      "image": "https://avatars.githubusercontent.com/u/1236751?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 797,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.5.1",
+      "createdAt": 1771711635848,
+      "changelog": "Universalize: remove project-specific references, add SearXNG recommendation",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05f58676c99649a51b998a9ad37a8e8577a5c510a9ad72593641839b3a76eb9e"
+}

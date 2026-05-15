@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67282,
+  "uuid": "skill-clawhub-tencent-vod",
+  "skillKey": "clawhub-tencent-vod",
+  "name": "Tencent VOD",
+  "summary": "腾讯云 VOD（云点播）操作命令生成专用助手。只要用户的请求涉及 VOD 的任何具体操作，必须触发此 Skill，包括但不限于：【上传】本地视频/音频/图片上传、URL拉取上传到VOD、设置过期时间/SessionId去重/存储路径/按应用名上传；【媒体处理】转码/极速高清/截图/雪碧图/视频增强/真人增强/漫剧...",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencent_vod",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tencent-mpaas-skills",
+      "features": [
+        "腾讯云 VOD（云点播）操作命令生成专用助手。只要用户的请求涉及 VOD 的任何具体操作，必须触发此 Skill，包括但不限于：【上传】本地视频/音频/图片上传、URL拉取上传到VOD、设置."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tencent-vod@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270562592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tencent-vod",
+      "url": "https://clawhub.ai/skills/tencent-vod"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencent-vod",
+    "url": "https://clawhub.ai/skills/tencent-vod",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencent-vod-48b5021c6fb54422.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tencent-vod@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-tencent-vod-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5eb6f33df83a416a6877abac34179cf0a17e0a479cabddff95494bb9c9b3aeef",
+      "artifactSizeBytes": 2742
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T09:54:47.246Z"
+}

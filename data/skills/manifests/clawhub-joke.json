@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72901,
+  "uuid": "skill-clawhub-joke",
+  "skillKey": "clawhub-joke",
+  "name": "Joke",
+  "summary": "讲笑话、说段子、来点幽默。当用户要求讲笑话、来个段子、说点好笑的、逗我开心、或任何需要幽默内容的场景时触发此技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.joke",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Merle",
+      "features": [
+        "讲笑话、说段子、来点幽默。当用户要求讲笑话、来个段子、说点好笑的、逗我开心、或任何需要幽默内容的场景时触发此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/joke@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5094638?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "joke",
+      "url": "https://clawhub.ai/skills/joke"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "joke",
+    "url": "https://clawhub.ai/skills/joke",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/joke-a2fa4cfad054c30d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/joke@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-joke-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57dc3f870c850408b57dabc8a10750c800861c3cf7806fadedd1cb580a3ab1fa",
+      "artifactSizeBytes": 2258
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T08:25:52.504Z"
+}

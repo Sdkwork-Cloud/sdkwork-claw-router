@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9332,
+  "uuid": "skill-clawhub-hetzner-cloud",
+  "skillKey": "clawhub-hetzner-cloud",
+  "name": "Hetzner Cloud CLI",
+  "summary": "Hetzner Cloud CLI for managing servers, volumes, firewalls, networks, DNS, and snapshots.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hetzner_cloud",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pasogott",
+      "features": [
+        "Hetzner Cloud CLI for managing servers, volumes, firewalls, networks, DNS, and snapshots."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hetzner-cloud@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23458152?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hetzner-cloud",
+      "url": "https://clawhub.ai/skills/hetzner-cloud"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hetzner-cloud",
+    "url": "https://clawhub.ai/skills/hetzner-cloud",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hetzner-cloud-963d4882385a86a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hetzner-cloud@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hetzner-cloud-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9b77b8d583c8be6232524f37da4a6e2ff47cf72cc6d4cc338279e0338f77ae68",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-10T19:47:28.605Z"
+}

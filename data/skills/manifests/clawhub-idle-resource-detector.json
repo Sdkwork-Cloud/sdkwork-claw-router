@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27043,
+  "uuid": "skill-clawhub-idle-resource-detector",
+  "skillKey": "clawhub-idle-resource-detector",
+  "name": "Idle Resource Detector",
+  "summary": "Detect AWS idle and zombie resources consuming cost with zero meaningful utilization",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idle_resource_detector",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anmol Nagpal",
+      "features": [
+        "Detect AWS idle and zombie resources consuming cost with zero meaningful utilization"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/idle-resource-detector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4303310?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "idle-resource-detector",
+      "url": "https://clawhub.ai/skills/idle-resource-detector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idle-resource-detector",
+    "url": "https://clawhub.ai/skills/idle-resource-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idle-resource-detector-599cf88222a4647c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/idle-resource-detector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-idle-resource-detector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:73cb94486b5cd83d0e81d2228c515f854ad4e6832adbb0473475da689a42729b",
+      "artifactSizeBytes": 2582
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T05:09:01.558Z"
+}

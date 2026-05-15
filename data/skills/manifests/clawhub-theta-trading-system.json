@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64107,
+  "uuid": "skill-clawhub-theta-trading-system",
+  "skillKey": "clawhub-theta-trading-system",
+  "name": "Theta Trading System",
+  "summary": "🎯 Theta量化交易系统v1.2.0 - 100%准确率Ridge模型，每小时自动进化，多数据源兜底，准星模型集成，实时数据验证。基于真实A股涨停股数据的智能选股系统。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.theta_trading_system",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "will",
+      "features": [
+        "🎯 Theta量化交易系统v1.2.0",
+        "100%准确率Ridge模型，每小时自动进化，多数据源兜底，准星模型集成，实时数据验证。基于真实A股涨停股数据的智能选股系统。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/theta-trading-system@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5248974?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "theta-trading-system",
+      "url": "https://clawhub.ai/skills/theta-trading-system"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "theta-trading-system",
+    "url": "https://clawhub.ai/skills/theta-trading-system",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/theta-trading-system-2ad1cd0621199997.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/theta-trading-system@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-theta-trading-system-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af4ce11452db7498dc39ff2753ae2c0c2b9d9e46e4eacc30d1965b7f33c50b78",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T14:50:52.008Z"
+}

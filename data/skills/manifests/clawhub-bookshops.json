@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36897,
+  "uuid": "skill-clawhub-bookshops",
+  "skillKey": "clawhub-bookshops",
+  "name": "Nearby Bookshops",
+  "summary": "Find nearby bookshops. Invoke when user asks for bookstores near me.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bookshops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawkk",
+      "features": [
+        "Find nearby bookshops",
+        "Invoke when user asks for bookstores near me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bookshops@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748372?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bookshops",
+      "url": "https://clawhub.ai/skills/bookshops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bookshops",
+    "url": "https://clawhub.ai/skills/bookshops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bookshops-8ef93792ee4c4294.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bookshops@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bookshops-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6dbf20b81e0f02d4915797d45ff3810b6acfaf4266ade6e9bd6d8c06dc9fde37",
+      "artifactSizeBytes": 2135
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T05:46:21.357Z"
+}

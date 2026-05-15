@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50970,
+  "uuid": "skill-clawhub-ble-anima-minter",
+  "skillKey": "clawhub-ble-anima-minter",
+  "name": "BLE → $ANIMA Minter",
+  "summary": "Scan nearby BLE MAC addresses to mint unique soulbound $ANIMA tokens stored locally using hash and DAG-based proof-of-remnant logic.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ble_anima_minter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PenguinX01",
+      "features": [
+        "Scan nearby BLE MAC addresses to mint unique soulbound $ANIMA tokens stored locally using hash."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ble-anima-minter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204820521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ble-anima-minter",
+      "url": "https://clawhub.ai/skills/ble-anima-minter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ble-anima-minter",
+    "url": "https://clawhub.ai/skills/ble-anima-minter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ble-anima-minter-bdf6459fe4a110e0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ble-anima-minter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ble-anima-minter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bbe99006c33f1af5e05c9dae4c2363c48a11004248f4a0e373cd1d03c615a96",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T06:11:11.485Z"
+}

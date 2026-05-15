@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/enterprise-wechat-bot@0.3.0",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.enterprise_wechat_bot",
+  "skill": {
+    "id": 62541,
+    "skillKey": "clawhub-enterprise-wechat-bot",
+    "name": "Wechat Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "enterprise-wechat-bot",
+    "url": "https://clawhub.ai/skills/enterprise-wechat-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/enterprise-wechat-bot-8c0d54b6c3ab77b8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "企业微信自动化工具，支持通过Webhook发送文本和Markdown消息，群消息推送及定时任务管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kaising-openclaw1",
+      "userId": "s17epxftgh3h1zzcr8g36j2dax83xh8g",
+      "displayName": "kaising-openclaw1",
+      "image": "https://avatars.githubusercontent.com/u/266910723?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 132,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.3.0",
+      "createdAt": 1776399555048,
+      "changelog": "v0.3 优化版 - 企业微信 webhook 消息推送+Markdown+ 定时任务",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:02a0fae75c4cc7f97b29c7f964e85fa82ce1efe5b1709917384b5f3eb23d3b79"
+}

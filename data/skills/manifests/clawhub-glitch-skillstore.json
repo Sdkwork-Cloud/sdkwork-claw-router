@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16502,
+  "uuid": "skill-clawhub-glitch-skillstore",
+  "skillKey": "clawhub-glitch-skillstore",
+  "name": "Skillstore",
+  "summary": "Search, install, and create OpenClaw skills with intelligent matching across known, local, and GitHub repositories.",
+  "version": "2026.2.17",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glitch_skillstore",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Glitch",
+      "features": [
+        "Search, install, and create OpenClaw skills with intelligent matching across known, local, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/glitch-skillstore@2026.2.17",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258746291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "glitch-skillstore",
+      "url": "https://clawhub.ai/skills/glitch-skillstore"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glitch-skillstore",
+    "url": "https://clawhub.ai/skills/glitch-skillstore",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glitch-skillstore-cb4c7626f290577f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/glitch-skillstore@2026.2.17",
+      "artifactUrl": "data/skills/artifacts/clawhub-glitch-skillstore-2026.2.17.json",
+      "version": "2026.2.17",
+      "runtime": "metadata",
+      "checksumHash": "sha256:360782e9685a18841443bd6ee2b78f6ec0fd6844df0969c5975e54cc22f25184",
+      "artifactSizeBytes": 2442
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T13:57:06.950Z"
+}

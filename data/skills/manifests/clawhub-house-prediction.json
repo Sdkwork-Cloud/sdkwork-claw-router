@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73569,
+  "uuid": "skill-clawhub-house-prediction",
+  "skillKey": "clawhub-house-prediction",
+  "name": "房产预测系统",
+  "summary": "结构化的房产市场分析预测系统，收集政策、成交量、土拍、经济数据，预测房价趋势并给出个性化买卖建议",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.house_prediction",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aaronxx",
+      "features": [
+        "结构化的房产市场分析预测系统，收集政策、成交量、土拍、经济数据，预测房价趋势并给出个性化买卖建议"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/house-prediction@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14012939?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "house-prediction",
+      "url": "https://clawhub.ai/skills/house-prediction"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "house-prediction",
+    "url": "https://clawhub.ai/skills/house-prediction",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/house-prediction-47ea5d066d2470f9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/house-prediction@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-house-prediction-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb81d1f59233441598cb8f3912c50a95f3c1ddb0f23e0f651d2b51a6643afc93",
+      "artifactSizeBytes": 2304
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T15:26:14.309Z"
+}

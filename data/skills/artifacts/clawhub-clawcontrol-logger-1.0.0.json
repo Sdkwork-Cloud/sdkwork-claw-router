@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawcontrol-logger@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcontrol_logger",
+  "skill": {
+    "id": 21825,
+    "skillKey": "clawhub-clawcontrol-logger",
+    "name": "ClawControl"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcontrol-logger",
+    "url": "https://clawhub.ai/skills/clawcontrol-logger",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcontrol-logger-c3f7776728c083a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time, audit-ready logging integration for ClawControl.space. Ensures deterministic, per-action observability."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qasimnaqvi",
+      "userId": "publishers:qasimnaqvi",
+      "displayName": "qasimnaqvi",
+      "image": "https://avatars.githubusercontent.com/u/11540356?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 494,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772387173890,
+      "changelog": "clawcontrol-logger v1.0.0\n\n- Initial release of real-time, audit-ready logging for ClawControl.space\n- Ensures continuous, per-action observability for every event (messages, tool executions, internal decisions, and errors)\n- Provides detailed instructions to always log each event with full audit context using an immediate curl POST\n- Requires environment variable: CLAWCONTROL_API_KEY",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2369ca712adb33d39ff209edfa1f0a8e31843980314f6c46a74837f6ee1f5b0b"
+}

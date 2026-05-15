@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11978,
+  "uuid": "skill-clawhub-automate",
+  "skillKey": "clawhub-automate",
+  "name": "Automate",
+  "summary": "Identify tasks that waste tokens. Scripts don't hallucinate, don't cost per-run, and don't fail randomly. Spot automation opportunities and build them.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.automate",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Identify tasks that waste tokens",
+        "Scripts don't hallucinate, don't cost per-run, and don't fail randomly",
+        "Spot automation opportunities and build them."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/automate@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "automate",
+      "url": "https://clawhub.ai/skills/automate"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "automate",
+    "url": "https://clawhub.ai/skills/automate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/automate-d74a0629c1de34c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/automate@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-automate-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:293fc496d589bcc20899c0ef27dd1edb4fa0a5e70084891d3af92e912e76fc14",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T00:58:25.970Z"
+}

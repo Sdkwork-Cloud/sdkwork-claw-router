@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37607,
+  "uuid": "skill-clawhub-github-repo-quickstart",
+  "skillKey": "clawhub-github-repo-quickstart",
+  "name": "Github repository quickstart",
+  "summary": "Use when the user wants a fast, low-friction onboarding guide for an unfamiliar GitHub repository. Trigger when a GitHub repo URL is provided, or when the us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.github_repo_quickstart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "starquakee",
+      "features": [
+        "Use when the user wants a fast, low-friction onboarding guide for an unfamiliar GitHub reposito.",
+        "Trigger when a GitHub repo URL is provided, or when the us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/github-repo-quickstart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99738745?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "github-repo-quickstart",
+      "url": "https://clawhub.ai/skills/github-repo-quickstart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "github-repo-quickstart",
+    "url": "https://clawhub.ai/skills/github-repo-quickstart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/github-repo-quickstart-717a546e76ea7856.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/github-repo-quickstart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-github-repo-quickstart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:61b858c2838371a4b94b26d81ae7f9852d70dccb252a2be0cff2994224526fc0",
+      "artifactSizeBytes": 2560
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:14:06.903Z"
+}

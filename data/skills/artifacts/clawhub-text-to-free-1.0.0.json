@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_free",
+  "skill": {
+    "id": 41663,
+    "skillKey": "clawhub-text-to-free",
+    "name": "Text To Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-free",
+    "url": "https://clawhub.ai/skills/text-to-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-free-0be26d7de05007f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert text prompt into generated video clips with this skill. Works with TXT, DOCX, PDF, plain text files up to 200MB. content creators use it for generati..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775925356068,
+      "changelog": "- Initial release of the Text to Free Video skill.\n- Generate 1080p MP4 video clips from text prompts, scripts, or files (TXT, DOCX, PDF, up to 200MB).\n- Automatic setup and anonymous token handling for new users.\n- Cloud GPU rendering pipeline processes and returns videos in 1–2 minutes.\n- Supports file upload, balance checks, export, and timeline state with clear error handling.\n- Guides users through common workflows like upload, quick edit, batch, and iterative video refinement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a290c1902dc0c35254607bf540b62529f8e533d4c6ea126ca91b0c649f6d4c18"
+}

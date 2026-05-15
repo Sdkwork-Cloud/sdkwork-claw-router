@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drink-water-reminder-yikailucas@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drink_water_reminder_yikailucas",
+  "skill": {
+    "id": 21126,
+    "skillKey": "clawhub-drink-water-reminder-yikailucas",
+    "name": "Drink Water Reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drink-water-reminder-yikailucas",
+    "url": "https://clawhub.ai/skills/drink-water-reminder-yikailucas",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drink-water-reminder-yikailucas-b3e329672c2d0a14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, manage, and remove periodic hydration reminders via OpenClaw cron jobs. Use when users ask for recurring drink-water reminders (e.g. every 1 minute /..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yikailucas",
+      "userId": "s172e5yn44ye22ycc4mcyn76k583hwa8",
+      "displayName": "Lucas",
+      "image": "https://avatars.githubusercontent.com/u/32409911?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 521,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772516006710,
+      "changelog": "Initial release: create/list/remove periodic hydration reminders via OpenClaw cron.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:89aef67b570fbbf9591e9c7bec589707255fb0bfc6f0ac755e4519fdea15d032"
+}

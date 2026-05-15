@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/legal-employment-policy-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legal_employment_policy_reviewer",
+  "skill": {
+    "id": 45752,
+    "skillKey": "clawhub-legal-employment-policy-reviewer",
+    "name": "Legal Employment Policy Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legal-employment-policy-reviewer",
+    "url": "https://clawhub.ai/skills/legal-employment-policy-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legal-employment-policy-reviewer-259d84048dfd7744.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides structured checklists and templates to support legal review of employee handbooks, HR policies, and employment risk areas by qualified professionals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777243811668,
+      "changelog": "Initial release: document-only legal workflow skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8f424a12d8cbea37c93c10e6943d09a135e88b39fef7cc7b77fe293583b21e2c"
+}

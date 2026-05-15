@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unifai@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unifai",
+  "skill": {
+    "id": 20201,
+    "skillKey": "clawhub-unifai",
+    "name": "UnifAI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unifai",
+    "url": "https://clawhub.ai/skills/unifai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unifai-f24fdbc6aaa3fe95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A CLI for searching and invoking services on the UnifAI network. Supports 40+ services across DeFi, token data, social media, web search, news, travel, sport..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yilunzhang",
+      "userId": "s179jy32jd70w4zzkkdj5bmpds83pr1c",
+      "displayName": "Yilun Zhang",
+      "image": "https://avatars.githubusercontent.com/u/2791582?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 567,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773163892628,
+      "changelog": "- Added a \"metadata\" section describing environment and installation requirements.\n- Removed author, license, and repository fields from SKILL.md.\n- No changes to CLI usage, commands, or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f2d1901a9b765a45ccaefae7286cd8453477918d45ec2320880e35e50cd36844"
+}

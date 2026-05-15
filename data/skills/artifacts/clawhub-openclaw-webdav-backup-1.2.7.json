@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-webdav-backup@1.2.7",
+  "version": "1.2.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_webdav_backup",
+  "skill": {
+    "id": 31864,
+    "skillKey": "clawhub-openclaw-webdav-backup",
+    "name": "OpenClaw WebDAV Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-webdav-backup",
+    "url": "https://clawhub.ai/skills/openclaw-webdav-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-webdav-backup-0b10aaa1218ada6f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Backup and restore an OpenClaw workspace with incremental backups, integrity verification, health checks, optional config encryption and optional WebDAV uplo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ifox2046",
+      "userId": "s17d14e6rk2v1zr37rpkpk0znh83nfy5",
+      "displayName": "ifox2046",
+      "image": "https://avatars.githubusercontent.com/u/2927211?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 261,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.2.7",
+      "createdAt": 1775468831880,
+      "changelog": "Add restore verification mode (--verify-restore/--test-restore), validate checksums and encrypted config recovery safely, and remove internal ROADMAP.md from published package.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:29e9365472b6bd9cd2111d68c022787ae06feb710b0edf66802beceaf5646b20"
+}

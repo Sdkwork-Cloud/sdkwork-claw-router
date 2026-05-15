@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20927,
+  "uuid": "skill-clawhub-skillscout",
+  "skillKey": "clawhub-skillscout",
+  "name": "SkillScout",
+  "summary": "Find and evaluate OpenClaw AI skills by trust score and security reviews before installation or recommendation.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillscout",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nashbot67",
+      "features": [
+        "Find and evaluate OpenClaw AI skills by trust score and security reviews before installation or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillscout@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260785123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillscout",
+      "url": "https://clawhub.ai/skills/skillscout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillscout",
+    "url": "https://clawhub.ai/skills/skillscout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillscout-fe2afb4b4c6480b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillscout@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillscout-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b9dfd5f4a40986f497ba69b6da66b71fe0b76d301f80429453cd9a5a16d00b1",
+      "artifactSizeBytes": 2282
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-28T06:59:15.314Z"
+}

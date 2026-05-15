@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fu-shi-planner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fu_shi_planner",
+  "skill": {
+    "id": 71600,
+    "skillKey": "clawhub-fu-shi-planner",
+    "name": "伏矢·路径魄"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fu-shi-planner",
+    "url": "https://clawhub.ai/skills/fu-shi-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fu-shi-planner-5c742633cf05d004.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "伏矢·路径魄 - AI任务规划与策略拆解，让AI像修士一样精准规划、执行、复盘"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lt8899789",
+      "userId": "s179v8xedkc48zhrn16wqqz5ad83h8b8",
+      "displayName": "无为上人",
+      "image": "https://avatars.githubusercontent.com/u/269488520?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775935517976,
+      "changelog": "- Initial release of fu-shi-planner (伏矢·路径魄) skill.\n- Provides AI-powered task decomposition, strategy selection, path optimization, and progress tracking.\n- Outputs structured task breakdown reports including key paths, risk points, and resource needs.\n- Supports multiple planning strategies: greedy, divide-and-conquer, backtracking, dynamic programming.\n- Includes a complexity assessment model and dependency mapping.\n- Designed for complex project planning, resource allocation, risk management, and progress monitoring.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e80d91a690c654cde974fb12da561b1e2beb0eb3fa28401bffe685e964da32de"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/risk-metrics-calculation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.risk_metrics_calculation",
+  "skill": {
+    "id": 21115,
+    "skillKey": "clawhub-risk-metrics-calculation",
+    "name": "Risk Metrics Calculation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "risk-metrics-calculation",
+    "url": "https://clawhub.ai/skills/risk-metrics-calculation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/risk-metrics-calculation-5e62035936b4dddd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Calculate portfolio risk metrics including VaR, CVaR, Sharpe, Sortino, and drawdown analysis. Use when measuring portfolio risk, implementing risk limits, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhengxinjipai",
+      "userId": "s1730v5c386prna2echd6pyczn83x8km",
+      "displayName": "zhengxinjipai",
+      "image": "https://avatars.githubusercontent.com/u/130424576?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 493,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772790924481,
+      "changelog": "Initial release — comprehensive portfolio risk metrics calculator.\n\n- Calculates key risk metrics: VaR, CVaR, Sharpe ratio, Sortino ratio, Calmar ratio, beta, volatility, drawdown.\n- Supports historical, parametric, and Cornish-Fisher VaR methods.\n- Provides drawdown and drawdown duration analysis.\n- Includes functions for risk-adjusted and relative performance measures (e.g., Omega ratio, information ratio).\n- Designed for integration in portfolio risk reporting, risk limits, and monitoring systems.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ef9c951e00e1b4d30b57689a5131b410cdf7a4950c2198828de06a57955bfdbd"
+}

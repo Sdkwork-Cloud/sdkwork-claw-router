@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-profile-roast@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_profile_roast",
+  "skill": {
+    "id": 31047,
+    "skillKey": "clawhub-linkedin-profile-roast",
+    "name": "AI Roast Linkedin Profile"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-profile-roast",
+    "url": "https://clawhub.ai/skills/linkedin-profile-roast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-profile-roast-78c354b1d204b36f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrapes a LinkedIn profile and generates a savage audio roast about being replaced by AI."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuanyuzhou98",
+      "userId": "s17frw4jd7r335yybcmcakyayd83nwf2",
+      "displayName": "xuanyuzhou98",
+      "image": "https://avatars.githubusercontent.com/u/22252341?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 272,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773670800710,
+      "changelog": "- Added homepage and repository links to the skill metadata.\n- Updated installation instructions to use npx constants-skills and npm.\n- Specified required environment variables, primary credential, and authentication steps.\n- Updated internal metadata to reflect new dependencies and requirements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c64ba1e661a79df4e333994d2b96a53ad3c5695c23338fe099beabea9129d807"
+}

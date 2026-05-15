@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/comfyui-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comfyui_generator",
+  "skill": {
+    "id": 38548,
+    "skillKey": "clawhub-comfyui-generator",
+    "name": "ComfyUI Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comfyui-generator",
+    "url": "https://clawhub.ai/skills/comfyui-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comfyui-generator-002758801f18ef16.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate AI images and perform style transfers via ComfyUI with batch processing and automated workflow management through OpenClaw integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nl108",
+      "userId": "s17csp78tfb8e19wbsvvbm7kb584ckvc",
+      "displayName": "nl108",
+      "image": "https://avatars.githubusercontent.com/u/43090644?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775546840129,
+      "changelog": "- Initial release of the ComfyUI Generator Skill.\n- Integrates OpenClaw with ComfyUI for AI media generation.\n- Supports text-to-image, style transfer, batch processing, and automated archiving.\n- Provides environment variable and workflow file setup instructions.\n- Includes example OpenClaw commands and Python usage samples.\n- Adds troubleshooting and configuration guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a17902c03a2d7ee09c0049851719a21b372e7f7c6a6ccf8ea1cac0ec5393685f"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57793,
+  "uuid": "skill-clawhub-pincaimao-jd-assistants",
+  "skillKey": "clawhub-pincaimao-jd-assistants",
+  "name": "聘才猫（Pincaimao）JD 助手",
+  "summary": "聘才猫 - JD 助手 Use when calling Pincaimao JD Assistant API to generate job postings from job descriptions or generate structured job tags from job titles. Requi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pincaimao_jd_assistants",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "聘才猫（Pincaimao）",
+      "features": [
+        "JD 助手 Use when calling Pincaimao JD Assistant API to generate job postings from job description.",
+        "Requi..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pincaimao-jd-assistants@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/pincaimao-jd-assistants/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pincaimao-jd-assistants",
+      "url": "https://clawhub.ai/skills/pincaimao-jd-assistants"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pincaimao-jd-assistants",
+    "url": "https://clawhub.ai/skills/pincaimao-jd-assistants",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pincaimao-jd-assistants-84975455f90750e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pincaimao-jd-assistants@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pincaimao-jd-assistants-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:df6c174145f1abf7d77c12c9f951ae770f2d294c0356645b54a6dd8524b83787",
+      "artifactSizeBytes": 2086
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T07:15:42.960Z"
+}

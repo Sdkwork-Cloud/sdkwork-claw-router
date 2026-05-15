@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60177,
+  "uuid": "skill-clawhub-sdd-plan-human-verify",
+  "skillKey": "clawhub-sdd-plan-human-verify",
+  "name": "SDD Plan Human Verify",
+  "summary": "从已完成的 spec-plan.md 生成验收清单，包含 [A]/[H] 子步骤，覆盖所有验证项用于 AI 驱动验收。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sdd_plan_human_verify",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mahingbun-dev",
+      "features": [
+        "从已完成的 spec-plan.md 生成验收清单，包含 [A]/[H] 子步骤，覆盖所有验证项用于 AI 驱动验收。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sdd-plan-human-verify@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174362089?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sdd-plan-human-verify",
+      "url": "https://clawhub.ai/skills/sdd-plan-human-verify"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sdd-plan-human-verify",
+    "url": "https://clawhub.ai/skills/sdd-plan-human-verify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sdd-plan-human-verify-7be2a13ae0ba9be6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sdd-plan-human-verify@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sdd-plan-human-verify-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc4f45e606f33878310eee026176944ff96ef380971d7753b8515f6b2ce41740",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T02:08:09.421Z"
+}

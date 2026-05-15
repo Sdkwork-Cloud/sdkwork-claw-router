@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29783,
+  "uuid": "skill-clawhub-zoho-salesiq",
+  "skillKey": "clawhub-zoho-salesiq",
+  "name": "Zoho Salesiq",
+  "summary": "Zoho SalesIQ integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho SalesIQ data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_salesiq",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Zoho SalesIQ integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho SalesIQ data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-salesiq@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-salesiq",
+      "url": "https://clawhub.ai/skills/zoho-salesiq"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-salesiq",
+    "url": "https://clawhub.ai/skills/zoho-salesiq",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-salesiq-7f6981794452d835.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-salesiq@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-salesiq-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9c8581424eabc0b2be2d8b73685a4eb6582b6e70ee459ae58f859855dd071a6",
+      "artifactSizeBytes": 1874
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:13:48.866Z"
+}

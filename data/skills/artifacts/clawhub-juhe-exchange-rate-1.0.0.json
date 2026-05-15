@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/juhe-exchange-rate@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.juhe_exchange_rate",
+  "skill": {
+    "id": 66843,
+    "skillKey": "clawhub-juhe-exchange-rate",
+    "name": "Exchange Rate - 全球货币汇率换算"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "juhe-exchange-rate",
+    "url": "https://clawhub.ai/skills/juhe-exchange-rate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/juhe-exchange-rate-d73d327806ae80e0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球汇率查询与货币换算。根据货币代码查询实时汇率、换算金额。使用场景：用户说\"查一下汇率\"、\"美元兑人民币\"、\"100美元等于多少人民币\"、\"USD兑换CNY\"、\"汇率多少\"等。通过聚合数据（juhe.cn）API 实时查询，支持 120+ 种货币，数据仅供参考。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juhemcp",
+      "userId": "s177jncsg336bzyjhff66cjn8n83j6jg",
+      "displayName": "juhe-skills",
+      "image": "https://avatars.githubusercontent.com/u/203600343?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774427014916,
+      "changelog": "- 首次发布 juhe-exchange-rate 汇率查询与货币换算技能  \n- 支持通过货币代码查询实时汇率，换算金额，覆盖 120+ 种货币  \n- 提供命令行脚本和API调用方式  \n- 内置详细用法说明、常见错误处理与示例输出  \n- 需配置聚合数据（juhe.cn）API Key  \n- 适用于需要全球汇率参考和货币换算的用户场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd519ee737e2aa31bac181d559168da686d1dcafd54ba8922bb4a08cce6802b5"
+}

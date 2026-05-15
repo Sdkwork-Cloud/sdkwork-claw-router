@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61245,
+  "uuid": "skill-clawhub-deep-research-cli",
+  "skillKey": "clawhub-deep-research-cli",
+  "name": "Deep Research",
+  "summary": "深度多步网页研究。迭代搜索、页面抓取、综合分析，生成带引用的 Markdown 报告。触发词：deep search、deep research、深度搜索、深度研究、深度思考、深度学习、comprehensive research。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yangsjt",
+      "features": [
+        "深度多步网页研究。迭代搜索、页面抓取、综合分析，生成带引用的 Markdown 报告。触发词：deep search、deep research、深度搜索、深度研究、深度思考、深度学习、co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-cli@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/50203653?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-cli",
+      "url": "https://clawhub.ai/skills/deep-research-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-cli",
+    "url": "https://clawhub.ai/skills/deep-research-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-cli-42a0bdc818db498b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-cli@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-cli-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8d68f70265edd988be220543030800609a5897da3fd7afa94328e42c7dcf78be",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T10:52:33.799Z"
+}

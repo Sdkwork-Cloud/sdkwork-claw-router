@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62728,
+  "uuid": "skill-clawhub-chrome-mcp",
+  "skillKey": "clawhub-chrome-mcp",
+  "name": "Chrome Mcp",
+  "summary": "通过 Chrome DevTools MCP 控制本机 Chrome 浏览器（已登录的真实会话）。 适用场景： - 浏览、阅读任意网页内容 - 操作 X (Twitter)：浏览 feed、发推文、转帖、点赞、删帖 - 操作任何需要登录的网站（保留已有登录状态） - 截图、读取页面结构、执行 JS - \"帮我看看...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_mcp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lumint",
+      "features": [
+        "通过 Chrome DevTools MCP 控制本机 Chrome 浏览器（已登录的真实会话）。 适用场景：",
+        "浏览、阅读任意网页内容",
+        "操作 X (Twitter)：浏览 feed、发推文、转帖、点赞、删帖",
+        "操作任何需要登录的网站（保留已有登录状态）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-mcp@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4189041?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-mcp",
+      "url": "https://clawhub.ai/skills/chrome-mcp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-mcp",
+    "url": "https://clawhub.ai/skills/chrome-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-mcp-baabd9b813de67d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-mcp@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-mcp-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8575a35a7e3b714622af42d31f935b770ecd47f438aeb053f04a6d53582b9957",
+      "artifactSizeBytes": 2716
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T12:57:05.559Z"
+}

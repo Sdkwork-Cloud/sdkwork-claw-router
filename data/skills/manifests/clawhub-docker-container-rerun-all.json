@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44375,
+  "uuid": "skill-clawhub-docker-container-rerun-all",
+  "skillKey": "clawhub-docker-container-rerun-all",
+  "name": "docker-container-rerun-all",
+  "summary": "Sequentially check and optionally update all docker run containers that already have fixed recreate commands recorded in long-term memory. Use when the user...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_container_rerun_all",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HongWei Jiang",
+      "features": [
+        "Sequentially check and optionally update all docker run containers that already have fixed recr.",
+        "Use when the user..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-container-rerun-all@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11488705?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-container-rerun-all",
+      "url": "https://clawhub.ai/skills/docker-container-rerun-all"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-container-rerun-all",
+    "url": "https://clawhub.ai/skills/docker-container-rerun-all",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-container-rerun-all-228fe51ff825864d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-container-rerun-all@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-container-rerun-all-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7da20678b40bb6d31cbd5a81774bbf387181df9973398c16b472bee77da2178f",
+      "artifactSizeBytes": 2069
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T10:49:12.897Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71416,
+  "uuid": "skill-clawhub-mio-smart-chat",
+  "skillKey": "clawhub-mio-smart-chat",
+  "name": "Mio智能聊天",
+  "summary": "基于用户习惯动态判断空闲状态，主动发起对话并智能识别任务分类分发给子Agent处理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mio_smart_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "libaiqwq",
+      "features": [
+        "基于用户习惯动态判断空闲状态，主动发起对话并智能识别任务分类分发给子Agent处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mio-smart-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/136383329?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mio-smart-chat",
+      "url": "https://clawhub.ai/skills/mio-smart-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mio-smart-chat",
+    "url": "https://clawhub.ai/skills/mio-smart-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mio-smart-chat-fa735596fd895ce4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mio-smart-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mio-smart-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:965179adaf1898c968508696d8df15fccb96a49e6b665307f44da3561d50e7eb",
+      "artifactSizeBytes": 2270
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T07:14:19.307Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68291,
+  "uuid": "skill-clawhub-toutiao-agent-skill",
+  "skillKey": "clawhub-toutiao-agent-skill",
+  "name": "Toutiao Agent Skill",
+  "summary": "提供头条号自动内容发布、菜价数据追踪、收益优化及运营知识库，专注菜价与民生领域的自动化运营技能。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_agent_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jhhjwei",
+      "features": [
+        "提供头条号自动内容发布、菜价数据追踪、收益优化及运营知识库，专注菜价与民生领域的自动化运营技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/toutiao-agent-skill@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8869856?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "toutiao-agent-skill",
+      "url": "https://clawhub.ai/skills/toutiao-agent-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-agent-skill",
+    "url": "https://clawhub.ai/skills/toutiao-agent-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-agent-skill-2c89343dfb602a40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/toutiao-agent-skill@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-toutiao-agent-skill-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:57199239377bd8909f50c95905a544d6add2438d27336bdf828c9fb39c1f903c",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T01:15:01.202Z"
+}

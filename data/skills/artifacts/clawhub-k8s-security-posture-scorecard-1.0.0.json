@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/k8s-security-posture-scorecard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.k8s_security_posture_scorecard",
+  "skill": {
+    "id": 25547,
+    "skillKey": "clawhub-k8s-security-posture-scorecard",
+    "name": "Kubernetes Security Posture Scorecard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "k8s-security-posture-scorecard",
+    "url": "https://clawhub.ai/skills/k8s-security-posture-scorecard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/k8s-security-posture-scorecard-d06822c3637d931d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Assess Kubernetes cluster security posture across 30 controls covering RBAC, workload security, network policies, IaC, runtime monitoring, and secrets manage..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krishnakumarmahadevan-cmd",
+      "userId": "s177cvva4qaee9r80e44xt5cqx83ga38",
+      "displayName": "ToolWeb",
+      "image": "https://avatars.githubusercontent.com/u/245780162?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773810666086,
+      "changelog": "Initial release of k8s-security-posture-scorecard.\n\n- Assess Kubernetes clusters across 30 security controls in 7 domains, including RBAC, workload security, network policies, IaC, runtime monitoring, and secrets management.\n- Provides an overall security score, domain-level grades, critical findings, and a prioritized remediation roadmap.\n- Requires use of the ToolWeb API and TOOLWEB_API_KEY for all assessments; local/manual evaluation is not supported.\n- Supports all major platforms (Linux, macOS, Windows) and common managed Kubernetes offerings (EKS, AKS, GKE, On-Prem).\n- Designed for Kubernetes security audits, CIS Benchmark checks, and security posture reporting for cloud native environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:39b495e02906174b1cbdac3573c1529785fa634c0980577eb0fbd26bf03ee55e"
+}

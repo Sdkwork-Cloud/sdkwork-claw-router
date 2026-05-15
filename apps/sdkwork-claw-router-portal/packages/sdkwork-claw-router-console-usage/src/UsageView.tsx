@@ -25,18 +25,18 @@ const readOnlyUsageActions =
 type UsageLogStatus = 'all' | 'success' | 'error';
 
 type UsageLogQueryState = {
-  pageNo: number;
+  page: number;
   pageSize: number;
-  keyword: string;
+  searchQuery: string;
   status: UsageLogStatus;
   startTime: string;
   endTime: string;
 };
 
 const defaultUsageLogQuery: UsageLogQueryState = {
-  pageNo: 1,
+  page: 1,
   pageSize: DEFAULT_PAGE_SIZE,
-  keyword: '',
+  searchQuery: '',
   status: 'all',
   startTime: '',
   endTime: '',
@@ -48,15 +48,15 @@ function getUsageLoadErrorMessage(error: unknown, fallback: string): string {
 
 function buildUsageLogQuery(query: UsageLogQueryState): Record<string, string | number> {
   const params: Record<string, string | number> = {
-    pageNo: query.pageNo,
+    page: query.page,
     pageSize: query.pageSize,
   };
-  const keyword = query.keyword.trim();
+  const searchQuery = query.searchQuery.trim();
   const startTime = query.startTime.trim();
   const endTime = query.endTime.trim();
 
-  if (keyword) {
-    params.keyword = keyword;
+  if (searchQuery) {
+    params.searchQuery = searchQuery;
   }
   if (query.status !== 'all') {
     params.status = query.status;
@@ -79,10 +79,10 @@ export function UsageView() {
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  const pageNo = query.pageNo;
+  const page = query.page;
   const pageSize = query.pageSize;
   const pageCount = Math.max(1, Math.ceil(totalLogs / pageSize));
-  const visibleStart = usageLogs.length > 0 ? (pageNo - 1) * pageSize + 1 : 0;
+  const visibleStart = usageLogs.length > 0 ? (page - 1) * pageSize + 1 : 0;
   const visibleEnd = usageLogs.length > 0 ? visibleStart + usageLogs.length - 1 : 0;
   const loadedCostTotal = sumDecimalStrings(usageLogs.map(log => log.cost), 6);
   const loadedTokenTotal = usageLogs.reduce((sum, log) => sum + log.inputTokens + log.outputTokens, 0);
@@ -122,7 +122,7 @@ export function UsageView() {
   const applyFilters = useCallback(() => {
     const nextQuery = {
       ...draftQuery,
-      pageNo: 1,
+      page: 1,
     };
     setDraftQuery(nextQuery);
     setQuery(nextQuery);
@@ -133,11 +133,11 @@ export function UsageView() {
     setQuery(defaultUsageLogQuery);
   }, []);
 
-  const goToPage = useCallback((targetPageNo: number) => {
-    const nextPageNo = Math.min(Math.max(1, targetPageNo), pageCount);
+  const goToPage = useCallback((targetPage: number) => {
+    const nextPage = Math.min(Math.max(1, targetPage), pageCount);
     const nextQuery = {
       ...query,
-      pageNo: nextPageNo,
+      page: nextPage,
     };
     setDraftQuery(nextQuery);
     setQuery(nextQuery);
@@ -221,8 +221,8 @@ export function UsageView() {
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
           <input
             type="text"
-            value={draftQuery.keyword}
-            onChange={(event) => updateDraftQuery({ keyword: event.target.value })}
+            value={draftQuery.searchQuery}
+            onChange={(event) => updateDraftQuery({ searchQuery: event.target.value })}
             placeholder="Search key, model, request, path..."
             className="w-full bg-slate-50 dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 pl-9 pr-4 py-2 rounded-lg text-sm focus:outline-none focus:border-lobster-500 focus:ring-1 focus:ring-lobster-500/20 text-slate-800 dark:text-white transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-sm md:shadow-none"
           />
@@ -449,20 +449,20 @@ export function UsageView() {
             Showing {visibleStart} - {visibleEnd} of {totalLogs}
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-slate-500 mr-2">Page {pageNo} / {pageCount}</span>
+            <span className="text-slate-500 mr-2">Page {page} / {pageCount}</span>
             <button
               type="button"
-              disabled={pageNo <= 1 || loading}
-              onClick={() => void goToPage(pageNo - 1)}
+              disabled={page <= 1 || loading}
+              onClick={() => void goToPage(page - 1)}
               className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 disabled:opacity-50"
             >
               <ChevronRight className="w-3.5 h-3.5 rotate-180" />
             </button>
-            <span className="w-7 h-7 flex items-center justify-center rounded bg-blue-600 text-white font-medium">{pageNo}</span>
+            <span className="w-7 h-7 flex items-center justify-center rounded bg-blue-600 text-white font-medium">{page}</span>
             <button
               type="button"
-              disabled={pageNo >= pageCount || loading}
-              onClick={() => void goToPage(pageNo + 1)}
+              disabled={page >= pageCount || loading}
+              onClick={() => void goToPage(page + 1)}
               className="w-7 h-7 flex items-center justify-center rounded border border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-white/5 disabled:opacity-50"
             >
               <ChevronRight className="w-3.5 h-3.5" />
@@ -473,7 +473,7 @@ export function UsageView() {
                 const nextPageSize = Number(event.target.value);
                 const nextQuery = {
                   ...draftQuery,
-                  pageNo: 1,
+                  page: 1,
                   pageSize: nextPageSize,
                 };
                 setDraftQuery(nextQuery);

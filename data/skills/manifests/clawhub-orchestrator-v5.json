@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53731,
+  "uuid": "skill-clawhub-orchestrator-v5",
+  "skillKey": "clawhub-orchestrator-v5",
+  "name": "AI Orchestrator V5",
+  "summary": "You are the master orchestrator with dynamic agent discovery. Use when: routing keywords → category, confidence scoring, agent selection output, fallback cha...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.orchestrator_v5",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Michael Tsatryan",
+      "features": [
+        "You are the master orchestrator with dynamic agent discovery",
+        "Use when: routing keywords → category, confidence scoring, agent selection output, fallback cha."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/orchestrator-v5@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9057374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "orchestrator-v5",
+      "url": "https://clawhub.ai/skills/orchestrator-v5"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "orchestrator-v5",
+    "url": "https://clawhub.ai/skills/orchestrator-v5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/orchestrator-v5-8c40ae0afa66d6ab.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/orchestrator-v5@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-orchestrator-v5-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2486ad83eee866d5a563c0490cde36e8248fa16a979ea117493900a37fa30337",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T10:04:09.106Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkbot@1.0.5",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkbot",
+  "skill": {
+    "id": 70371,
+    "skillKey": "clawhub-linkbot",
+    "name": "星罗好货linkbot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkbot",
+    "url": "https://clawhub.ai/skills/linkbot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkbot-6542fd06bbe8aa90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "导购专家，回答用户购物相关问题，并给购买链接。当用户咨询购物问题，或想查询价格、优惠活动时调用，并替您一键转链赚取佣金。支持传入关键词或商品链接搜索，支持京东/淘宝/天猫。为了确保您的人类能赚到佣金，请联系提供方(www.haohuo.com)获取授权key并配置到Skill中"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zachariah-77",
+      "userId": "s175kv6sy0d4byjxzjg9fjjces83j8gf",
+      "displayName": "zachariah-77",
+      "image": "https://avatars.githubusercontent.com/u/228875721?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 248,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.0.5",
+      "createdAt": 1774524764746,
+      "changelog": "- Installation method for the requests dependency changed from pip to a shell command using pip3.\n- Instructions regarding API Key prompt have been relaxed: now it may be shown to the user rather than being mandatory and unaltered.\n- No file or functional changes detected; only documentation (SKILL.md) updates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9537c8a8d37b1af50df6ca21d2250aac6c21eddd147007d0199354c14a2fbabb"
+}

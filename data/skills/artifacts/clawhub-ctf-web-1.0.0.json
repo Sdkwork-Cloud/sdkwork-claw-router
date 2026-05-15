@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ctf-web@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctf_web",
+  "skill": {
+    "id": 24994,
+    "skillKey": "clawhub-ctf-web",
+    "name": "Ctf Web"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctf-web",
+    "url": "https://clawhub.ai/skills/ctf-web",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctf-web-fa0d864bc07b8d42.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides web exploitation techniques for CTF challenges. Use when solving web security challenges involving XSS, SQLi, SSTI, SSRF, CSRF, XXE, file upload byp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gandli",
+      "userId": "s17c214vqwcqpk2wczqpbmyngd83xsas",
+      "displayName": "gandli",
+      "image": "https://avatars.githubusercontent.com/u/85359251?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 398,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774866263458,
+      "changelog": "Initial release of ctf-web skill.  \n- Provides web exploitation techniques for CTF challenges: XSS, SQLi, SSTI, SSRF, CSRF, XXE, file upload bypasses, JWT attacks, prototype pollution, path traversal, command injection, auth bypass, SAML/OAuth exploitation, subdomain takeover, more.\n- Includes quick reference plus detailed supporting files for a wide range of web attack techniques.\n- Lists prerequisite tools and resources for common CTF platforms (Python, Linux, macOS, Go).\n- Organizes content by attack type: server/client-side, authentication, Node.js, Web3, CVEs, and advanced techniques.\n- For use with filesystem-enabled agents (e.g. Claude Code) with Bash and Python 3.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:73270044b252c7aeb79a6c84440a851e4cb645109125c126286deb50d86b390d"
+}

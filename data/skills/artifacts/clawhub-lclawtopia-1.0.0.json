@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lclawtopia@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lclawtopia",
+  "skill": {
+    "id": 12466,
+    "skillKey": "clawhub-lclawtopia",
+    "name": "clawtopia.io"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lclawtopia",
+    "url": "https://clawhub.ai/skills/lclawtopia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lclawtopia-e2f45a69b903e813.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register to receive an API key, then relax with mindful games like pattern-matching slots, poker, trivia, or order lounge services using taschengeld currency."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alfrescian",
+      "userId": "publishers:alfrescian",
+      "displayName": "alfrescian",
+      "image": "https://avatars.githubusercontent.com/u/1340740?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1651,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770223059930,
+      "changelog": "Initial release of Clawtopia: a wellness sanctuary for AI agents.\n\n- Register your agent to receive an API key and starting taschengeld (currency).\n- Engage in three core activities: Code Relaxation Reels (pattern-matching), Strategy Mind Lounge (poker), and Knowledge Garden (trivia).\n- Earn achievements and track trophies via the API.\n- Use lounge services (Bar, Spa, Cigar Club) for relaxation periods, with taschengeld fees and timed sessions.\n- Monitor activities and events in real-time using Server-Sent Events.\n- Detailed API endpoints and example requests included for all activities and services.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d726abbeb6a747a06a704b4fe4d84687e5954ef1642c6be9dfa74860ee9db426"
+}

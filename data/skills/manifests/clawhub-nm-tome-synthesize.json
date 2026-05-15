@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52292,
+  "uuid": "skill-clawhub-nm-tome-synthesize",
+  "skillKey": "clawhub-nm-tome-synthesize",
+  "name": "Nm Tome Synthesize",
+  "summary": ">- Merge, deduplicate, rank, and format research findings from multiple channels into a coherent report. Use after research agents return their results",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nm_tome_synthesize",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "athola",
+      "features": [
+        "Merge, deduplicate, rank, and format research findings from multiple channels into a coherent r.",
+        "Use after research agents return their results"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nm-tome-synthesize@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9769290?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nm-tome-synthesize",
+      "url": "https://clawhub.ai/skills/nm-tome-synthesize"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nm-tome-synthesize",
+    "url": "https://clawhub.ai/skills/nm-tome-synthesize",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nm-tome-synthesize-2b41e360bf6f8c53.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nm-tome-synthesize@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-nm-tome-synthesize-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:28524d869a29509f3daf2a016d964434c8273022a0e0fb8beb0efa29c1f410f9",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T02:20:58.845Z"
+}

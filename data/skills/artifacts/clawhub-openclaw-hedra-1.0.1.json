@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-hedra@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_hedra",
+  "skill": {
+    "id": 45112,
+    "skillKey": "clawhub-openclaw-hedra",
+    "name": "Hedra"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-hedra",
+    "url": "https://clawhub.ai/skills/openclaw-hedra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-hedra-cf1d3e6469431c7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images, videos, and lip-synced talking avatar videos from text prompts using Hedra AI models via the OpenClaw plugin."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mattstvartak",
+      "userId": "s174fjmhexjwzbsb48rbzm64z9844vj1",
+      "displayName": "Matt Stvartak",
+      "image": "https://avatars.githubusercontent.com/u/2431910?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775266712422,
+      "changelog": "Hedra Plugin for OpenClaw 1.0.1\n\n- Adds AI-powered image, video, and talking avatar generation for OpenClaw using Hedra.\n- Supports text-to-image, text-to-video, image-to-video, and portrait-to-talking-avatar tasks.\n- Tools for listing Hedra AI models and TTS voices, plus checking credit balance.\n- Simple configuration via openclaw.json or HEDRA_API_KEY environment.\n- Detailed feature descriptions and usage examples provided in documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1cc0f442014bc3f0db300762a08f4b714384f51f9fa4babf7f8aca89dc4fe217"
+}

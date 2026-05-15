@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38152,
+  "uuid": "skill-clawhub-dux-soup-integration",
+  "skillKey": "clawhub-dux-soup-integration",
+  "name": "Dux Soup",
+  "summary": "Dux Soup integration. Manage data, records, and automate workflows. Use when the user wants to interact with Dux Soup data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dux_soup_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Dux Soup integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Dux Soup data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dux-soup-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dux-soup-integration",
+      "url": "https://clawhub.ai/skills/dux-soup-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dux-soup-integration",
+    "url": "https://clawhub.ai/skills/dux-soup-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dux-soup-integration-46c2cfe7d247bba1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dux-soup-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-dux-soup-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:537c8b7b79e2cd9c1bc4022650d71dd5363e5b52f26a0d4f39deb4270ac499ec",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:41:47.764Z"
+}

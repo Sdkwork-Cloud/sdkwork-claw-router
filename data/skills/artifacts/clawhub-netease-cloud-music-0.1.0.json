@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/netease-cloud-music@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.netease_cloud_music",
+  "skill": {
+    "id": 67068,
+    "skillKey": "clawhub-netease-cloud-music",
+    "name": "Netease Cloud Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "netease-cloud-music",
+    "url": "https://clawhub.ai/skills/netease-cloud-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/netease-cloud-music-eb8ffcd930e2f77f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供网易云音乐公开歌单、歌曲和歌手的播放及互动数据摘要，支持排行榜和作品表现分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mike47512",
+      "userId": "s17916ncgb6bpm0fs1wdm6932d83gha4",
+      "displayName": "mike47512",
+      "image": "https://avatars.githubusercontent.com/u/199718167?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 582,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773877600603,
+      "changelog": "netease-cloud-music 0.1.0\n\n- 初始版本，注册“网易云音乐热门趋势”技能\n- 支持歌单、歌曲、歌手主页的播放、收藏、评论等公开信息摘要\n- 提供排行榜、搜索及歌手主页等入口的轻量数据分析流程示例\n- 明确合规边界，不支持下载、接口逆向或批量采集\n- 输出字段涵盖曲目、歌单、歌手在公开页的主要表现数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:070ff565aeca7908aae17fa2bc3770809fa2bd7aca4e8348160e8180537f00ea"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62064,
+  "uuid": "skill-clawhub-awublack-openclaw-agent-browser",
+  "skillKey": "clawhub-awublack-openclaw-agent-browser",
+  "name": "Awublack Openclaw Agent Browser",
+  "summary": "这是 openclaw-agent-browser 的官方、安全、本地化实现，由用户 awublack 维护。它调用你本地安装的 agent-browser CLI，安全地访问网页，提取标题和内容，并返回结构化摘要，让 AI 助手能理解并总结网页信息。 **使用场景**： (1) 用户要求：“帮我查看一下我的技能...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awublack_openclaw_agent_browser",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "awublack",
+      "features": [
+        "这是 openclaw-agent-browser 的官方、安全、本地化实现，由用户 awublack 维护。它调用你本地安装的 agent-browser CLI，安全地访问网页，提取标题."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/awublack-openclaw-agent-browser@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22994037?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "awublack-openclaw-agent-browser",
+      "url": "https://clawhub.ai/skills/awublack-openclaw-agent-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awublack-openclaw-agent-browser",
+    "url": "https://clawhub.ai/skills/awublack-openclaw-agent-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awublack-openclaw-agent-browser-a7c3313e4311d90f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/awublack-openclaw-agent-browser@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-awublack-openclaw-agent-browser-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bce15fc6e4dd8c39849dd881a65656e1a4d87e1d94f430f8a7c9adc5fd452260",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:50:29.356Z"
+}

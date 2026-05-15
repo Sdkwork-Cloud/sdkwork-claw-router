@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ahrefs-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ahrefs_mcp",
+  "skill": {
+    "id": 16316,
+    "skillKey": "clawhub-ahrefs-mcp",
+    "name": "Ahrefs MCP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ahrefs-mcp",
+    "url": "https://clawhub.ai/skills/ahrefs-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ahrefs-mcp-c9ca25f49661e0de.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access Ahrefs SEO data for site analysis, keyword research, backlink and competitor insights, rank tracking, and technical SEO audits via MCP integration."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jonathan-sokol",
+      "userId": "publishers:jonathan-sokol",
+      "displayName": "jonathan-sokol",
+      "image": "https://avatars.githubusercontent.com/u/179392854?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 891,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771087296008,
+      "changelog": "Initial release of ahrefs-mcp skill.\n\n- Provides real-time access to Ahrefs SEO data via the Model Context Protocol (MCP)\n- Supports keyword research, backlink analysis, domain/site audits, content exploration, rank tracking, and competitive analysis\n- Guides users on setup, usage workflows, and common SEO analysis tasks\n- Includes instructions for handling missing MCP connections and managing API usage limits\n- Emphasizes actionable insights, best practices, and efficient query design for effective SEO analysis",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c86f94c09f76aee823490f7d07fa73301be7ad172fa3fd948196768185986ef9"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63225,
+  "uuid": "skill-clawhub-wacai-index-official-website-demand-dev",
+  "skillKey": "clawhub-wacai-index-official-website-demand-dev",
+  "name": "wacai-index-official-website-demand-dev",
+  "summary": "修改官网项目代码并同步需求文档。用于用户提供一大段产品需求、项目路径和可选分支后，将其写入指定项目目录下的 productdemand.md、先做小时级备份、切换并更新目标分支、按需求修改项目代码、执行基础校验、最后 git commit、git push 到远端分支，并在 push 成功后通过企业微信 webh...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wacai_index_official_website_demand_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shidengyun",
+      "features": [
+        "修改官网项目代码并同步需求文档。用于用户提供一大段产品需求、项目路径和可选分支后，将其写入指定项目目录下的 productdemand.md、先做小时级备份、切换并更新目标分支、按需求修改项."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wacai-index-official-website-demand-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7777003?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wacai-index-official-website-demand-dev",
+      "url": "https://clawhub.ai/skills/wacai-index-official-website-demand-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wacai-index-official-website-demand-dev",
+    "url": "https://clawhub.ai/skills/wacai-index-official-website-demand-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wacai-index-official-website-demand-dev-bd4d93c9bdbcb82f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wacai-index-official-website-demand-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wacai-index-official-website-demand-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a07c981c4f7d9e877eddf4d67879b38466985c0317621e376cbb7e3c843d7685",
+      "artifactSizeBytes": 2896
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T08:27:07.358Z"
+}

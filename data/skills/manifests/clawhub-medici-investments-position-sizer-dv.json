@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52355,
+  "uuid": "skill-clawhub-medici-investments-position-sizer-dv",
+  "skillKey": "clawhub-medici-investments-position-sizer-dv",
+  "name": "Medici Investments — Position Sizer",
+  "summary": "Calculate risk-based position sizes for long stock trades. Use when user asks about position sizing, how many shares to buy, risk per trade, Kelly criterion,...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medici_investments_position_sizer_dv",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "RunByDaVinci",
+      "features": [
+        "Calculate risk-based position sizes for long stock trades",
+        "Use when user asks about position sizing, how many shares to buy, risk per trade, Kelly criteri."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medici-investments-position-sizer-dv@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266047309?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medici-investments-position-sizer-dv",
+      "url": "https://clawhub.ai/skills/medici-investments-position-sizer-dv"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medici-investments-position-sizer-dv",
+    "url": "https://clawhub.ai/skills/medici-investments-position-sizer-dv",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medici-investments-position-sizer-dv-6fa608657bfb5fbd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medici-investments-position-sizer-dv@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medici-investments-position-sizer-dv-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:270e14371045f9686174fcc3a69c7a8c8c6788849a21a8464206a7625bb104e2",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T12:36:01.853Z"
+}

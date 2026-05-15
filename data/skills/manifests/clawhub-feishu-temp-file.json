@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58651,
+  "uuid": "skill-clawhub-feishu-temp-file",
+  "skillKey": "clawhub-feishu-temp-file",
+  "name": "Feishu File Sender",
+  "summary": "飞书文件发送助手 - 通过临时目录解决OpenClaw飞书发送文件路径白名单问题 | Feishu File Sender - Solve OpenClaw Feishu file path whitelist issue",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_temp_file",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yingyangdao",
+      "features": [
+        "飞书文件发送助手",
+        "通过临时目录解决OpenClaw飞书发送文件路径白名单问题 | Feishu File Sender",
+        "Solve OpenClaw Feishu file path whitelist issue"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-temp-file@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152696161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-temp-file",
+      "url": "https://clawhub.ai/skills/feishu-temp-file"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-temp-file",
+    "url": "https://clawhub.ai/skills/feishu-temp-file",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-temp-file-f48052a027f8f181.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-temp-file@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-temp-file-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1084b1d456c9e4a6d42f282045683331a1ea8a107ce2e51fba2346d6bc946f96",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T21:15:49.028Z"
+}

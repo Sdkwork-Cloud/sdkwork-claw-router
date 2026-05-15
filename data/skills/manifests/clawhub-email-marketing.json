@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8803,
+  "uuid": "skill-clawhub-email-marketing",
+  "skillKey": "clawhub-email-marketing",
+  "name": "Email Marketing",
+  "summary": "Email deliverability, list management, sequences, segmentation, and campaign optimization.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_marketing",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Email deliverability, list management, sequences, segmentation, and campaign optimization."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-marketing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-marketing",
+      "url": "https://clawhub.ai/skills/email-marketing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-marketing",
+    "url": "https://clawhub.ai/skills/email-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-marketing-f1b9002af6ca0074.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-marketing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-marketing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3a1196399a24972259b88f551fc108231e02170d7583479a54232f1b7352f2cd",
+      "artifactSizeBytes": 1822
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T10:42:00.956Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-notion@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_notion",
+  "skill": {
+    "id": 40578,
+    "skillKey": "clawhub-obsidian-notion",
+    "name": "obsidian to notion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-notion",
+    "url": "https://clawhub.ai/skills/obsidian-notion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-notion-d84a66379e04ac90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sync Markdown files from Obsidian to a Notion database, preserving rich text, tables, lists, code blocks, callouts, quotes, and managing page updates via ups..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "molaters",
+      "userId": "s176kk0n336654jy4eewe7dse183htwj",
+      "displayName": "Michael Slater",
+      "image": "https://avatars.githubusercontent.com/u/98645259?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774344127280,
+      "changelog": "obsidian-notion 1.0.0\n\n- Initial release: Sync Markdown files from Obsidian to a Notion database with rich text and block type mapping.\n- Supports upsert strategy (delete-then-insert on same-title pages, auto-deduplication).\n- Preserves bold, italic, code, links, tables, callouts, quotes, equations, and more.\n- Simple configuration: set Notion API token, DB ID, Obsidian vault path, included/excluded directories.\n- Matches Markdown elements to native Notion blocks, including support for callout types and proper annotation structures.\n- Provides error handling guidance and data pre-processing rules for robust operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a521e3be3788081d007e55d51d476ff78f8773964a09b8d14fff5f81e281bbfd"
+}

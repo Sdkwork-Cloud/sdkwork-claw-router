@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/axiom@0.0.15",
+  "version": "0.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axiom",
+  "skill": {
+    "id": 26836,
+    "skillKey": "clawhub-axiom",
+    "name": "Axiom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axiom",
+    "url": "https://clawhub.ai/skills/axiom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axiom-0acbf84757d057b4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Axiom Wallet via MCP to manage payment methods, review account activity, and complete user-requested purchases with single-use payment details."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axiom-wallet",
+      "userId": "s171t8hh337z66h4hwtwkq3qeh8410k4",
+      "displayName": "Axiom",
+      "image": "https://avatars.githubusercontent.com/u/157658092?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 14
+    },
+    "latestVersion": {
+      "version": "0.0.15",
+      "createdAt": 1777479828797,
+      "changelog": "**No user-facing changes; documentation update only.**\n\n- Updated SKILL.md content for clarification; no changes to functionality or interfaces.\n- Version bump from 0.0.14 to 0.0.15.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09475c3c52dc0dab3fef5043eddc6ab906245a8ffdb486a2779f2163de6c3e67"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45233,
+  "uuid": "skill-clawhub-surf-spot-finder",
+  "skillKey": "clawhub-surf-spot-finder",
+  "name": "Surf Forecast Agent",
+  "summary": "Provides top 3 surf spots in a region ranked by wave height, wind direction, and wind speed using Surfline data and a defined scoring rubric.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surf_spot_finder",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wertopter",
+      "features": [
+        "Provides top 3 surf spots in a region ranked by wave height, wind direction, and wind speed usi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surf-spot-finder@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57506406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surf-spot-finder",
+      "url": "https://clawhub.ai/skills/surf-spot-finder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surf-spot-finder",
+    "url": "https://clawhub.ai/skills/surf-spot-finder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surf-spot-finder-0fe7d39ef18c9f06.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surf-spot-finder@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-surf-spot-finder-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d2f8ca841ec4d811933eb060c215dc897857c62b4246be11674656076cabd477",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T00:52:34.030Z"
+}

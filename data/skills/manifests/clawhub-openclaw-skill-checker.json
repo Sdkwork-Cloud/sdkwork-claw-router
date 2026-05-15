@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35946,
+  "uuid": "skill-clawhub-openclaw-skill-checker",
+  "skillKey": "clawhub-openclaw-skill-checker",
+  "name": "Openclaw Skill Checker",
+  "summary": "Security vetting protocol before installing any AI agent skill. Red flag detection for credential theft, obfuscated code, exfiltration. Risk classification L...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_checker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mr-Liu-lang",
+      "features": [
+        "Security vetting protocol before installing any AI agent skill",
+        "Red flag detection for credential theft, obfuscated code, exfiltration",
+        "Risk classification L..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-skill-checker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258955458?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-skill-checker",
+      "url": "https://clawhub.ai/skills/openclaw-skill-checker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-checker",
+    "url": "https://clawhub.ai/skills/openclaw-skill-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-checker-a607be11458f5d69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-skill-checker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-skill-checker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de10dca37ec17e3eab9f1ee4fa5e81768d0da3743e595edbdbde5b938d345cf6",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T09:52:35.426Z"
+}

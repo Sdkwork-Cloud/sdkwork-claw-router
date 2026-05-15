@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ipfs-server@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ipfs_server",
+  "skill": {
+    "id": 50293,
+    "skillKey": "clawhub-ipfs-server",
+    "name": "IPFS Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ipfs-server",
+    "url": "https://clawhub.ai/skills/ipfs-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ipfs-server-fe998838ca723bed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full IPFS node operations — install, configure, pin content, publish IPNS, manage peers, and run gateway services"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "apexfork",
+      "userId": "publishers:apexfork",
+      "displayName": "J. Campbell",
+      "image": "https://avatars.githubusercontent.com/u/363026?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 766,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771219685344,
+      "changelog": "Initial release of ipfs-server skill: Full IPFS node operations\n\n- Provides step-by-step guides to install, initialize, and configure an IPFS node.\n- Supports content management, including adding files, pinning, garbage collection, and remote pinning services.\n- Covers publishing via IPNS, DNSLink integration, and updating published content.\n- Includes network configuration: swarm/peer management, bootstrap nodes, and private networks.\n- Details full gateway operations, advanced performance tuning, and security best practices.\n- Offers monitoring, troubleshooting, and log management tips for server admins.\n- Intended for users wanting command-line control of a full IPFS node, beyond simple content browsing.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2398d1dcf5e5e3e0c52f5e50a271a4073c2ae3d33d555b59253f6aaa4fc8526c"
+}

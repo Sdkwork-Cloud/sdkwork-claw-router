@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linear-graphql-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linear_graphql_skill",
+  "skill": {
+    "id": 25644,
+    "skillKey": "clawhub-linear-graphql-skill",
+    "name": "Linear Graphql Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linear-graphql-skill",
+    "url": "https://clawhub.ai/skills/linear-graphql-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linear-graphql-skill-575a1dbb3517b299.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate Linear workspace issues, projects, and teams through Linear GraphQL API using UXC. Use when tasks require querying or creating issues, managing proje..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jolestar",
+      "userId": "s1769rm50f8wvzw550m22hg10x83gkem",
+      "displayName": "jolestar",
+      "image": "https://avatars.githubusercontent.com/u/77268?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772843305693,
+      "changelog": "Initial release of Linear GraphQL Skill\n\n- Provides CLI-based access to Linear workspace issues, projects, and teams via the Linear GraphQL API using UXC.\n- Supports both Personal API Key and OAuth authentication, with detailed setup instructions for each.\n- Includes examples for querying and managing issues, projects, and teams.\n- Offers troubleshooting guidance for common authentication and command-line issues.\n- Emphasizes guardrails for safe automation and best practices in API interaction.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7f2ce7d3dac3fe08b5a7d555d7c014f9e8033f95d60b1f0b2de89ac441710e9e"
+}

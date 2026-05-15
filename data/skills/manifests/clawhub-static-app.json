@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12652,
+  "uuid": "skill-clawhub-static-app",
+  "skillKey": "clawhub-static-app",
+  "name": "Static App",
+  "summary": "Deploy static websites to Static.app hosting. Use when the user wants to deploy, upload, or host a static site on Static.app. Triggers on phrases like \"deploy to static.app\", \"upload to static\", \"host on static.app\", \"static.app deploy\", o.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.static_app",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Roman Frank",
+      "features": [
+        "Deploy static websites to Static.app hosting",
+        "Use when the user wants to deploy, upload, or host a static site on Static.app",
+        "Triggers on phrases like \"deploy to static.app\", \"upload to static\", \"host on static.app\", \"sta."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/static-app@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/575482?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "static-app",
+      "url": "https://clawhub.ai/skills/static-app"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "static-app",
+    "url": "https://clawhub.ai/skills/static-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/static-app-5b5dda7e04e27985.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/static-app@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-static-app-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:428662c6190a754bca7d69f676371774ec350bfc6ba1eeb78dbb5fcda4757d7e",
+      "artifactSizeBytes": 2146
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T11:30:37.894Z"
+}

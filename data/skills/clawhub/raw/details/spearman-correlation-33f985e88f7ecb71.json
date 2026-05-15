@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "spearman-correlation",
+    "displayName": "spearman-correlation",
+    "summary": "计算两个表格之间的 Spearman 相关性，并输出 FDR 校正后的结果。适用于微生物组数据（如 Family 丰度表与环境因子/功能基因表）的相关性分析。",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 217,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1774235463607,
+    "updatedAt": 1777622607139
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774235463607,
+    "changelog": "Initial release of spearman-correlation skill:\n\n- Calculates Spearman correlation between two tables, tailored for microbiome data (e.g., family abundance vs. environmental factors).\n- Supports both single file and batch (folder) analysis, matching files by name and handling subfolders.\n- Automatically recognizes file formats (.txt, .tsv, .xlsx) and verifies matched sample columns.\n- Performs FDR (Benjamini-Hochberg) correction on p-values.\n- Outputs results in Excel (.xlsx) files with separate sheets for correlation coefficients, raw p-values, and FDR-adjusted p-values.\n- Summarizes significant correlations (both raw and FDR < 0.05) and reports the Top 10 positive/negative associations.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "zd200572",
+    "userId": "s174x28nza5s7ej2xavf0yehpd83pbq7",
+    "displayName": "Dong Zhao",
+    "image": "https://avatars.githubusercontent.com/u/20882745?v=4"
+  },
+  "moderation": null
+}

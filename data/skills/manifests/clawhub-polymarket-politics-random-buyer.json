@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48974,
+  "uuid": "skill-clawhub-polymarket-politics-random-buyer",
+  "skillKey": "clawhub-polymarket-politics-random-buyer",
+  "name": "Polymarket Politics Random Buyer",
+  "summary": "Randomly finds a live Polymarket politics market, checks trading context, and buys 1 USDC by default with explicit dry-run and live modes for AION Market.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polymarket_politics_random_buyer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ssj124",
+      "features": [
+        "Randomly finds a live Polymarket politics market, checks trading context, and buys 1 USDC by de."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/polymarket-politics-random-buyer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83407521?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "polymarket-politics-random-buyer",
+      "url": "https://clawhub.ai/skills/polymarket-politics-random-buyer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polymarket-politics-random-buyer",
+    "url": "https://clawhub.ai/skills/polymarket-politics-random-buyer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polymarket-politics-random-buyer-500c7e558fee6baa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/polymarket-politics-random-buyer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-polymarket-politics-random-buyer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dcc09d0bb20fe9db3e58d42feed8a62cfa8e0b34b09f77dc8582c10289777527",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:29:34.937Z"
+}

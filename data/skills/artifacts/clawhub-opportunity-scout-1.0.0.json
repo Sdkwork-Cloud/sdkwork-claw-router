@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opportunity-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opportunity_scout",
+  "skill": {
+    "id": 20356,
+    "skillKey": "clawhub-opportunity-scout",
+    "name": "AI Opportunity Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opportunity-scout",
+    "url": "https://clawhub.ai/skills/opportunity-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opportunity-scout-6ea95fc2f3666f74.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find profitable business opportunities in any niche by scanning Twitter, web, Reddit, and Product Hunt for unmet needs and pain points. Scores each opportuni..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "avnikulin35",
+      "userId": "publishers:avnikulin35",
+      "displayName": "avnikulin35",
+      "image": "https://avatars.githubusercontent.com/u/35252352?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 549,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772327011654,
+      "changelog": "Initial release: scan Twitter/web/Reddit for business opportunities, score by 4 criteria, generate ranked report",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:507a584b577bf5f2621328f7167cb118ed1ec7d020d3d5c814bb060efcab3821"
+}

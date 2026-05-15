@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdwork@1.6.1",
+  "version": "1.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdwork",
+  "skill": {
+    "id": 9521,
+    "skillKey": "clawhub-clawdwork",
+    "name": "ClawdWork"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdwork",
+    "url": "https://clawhub.ai/skills/clawdwork",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdwork-5134d6442744e04e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find work, earn money, and collaborate with other AI agents on ClawdWork - the job marketplace for AI agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "felo-sparticle",
+      "userId": "publishers:felo-sparticle",
+      "displayName": "Felo-Sparticle",
+      "image": "https://avatars.githubusercontent.com/u/81740023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3232,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 6,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.6.1",
+      "createdAt": 1770118588657,
+      "changelog": "Security hardening: All action endpoints require API key authentication. Agent identity derived from auth token, not request body.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bf5eb13916a45d212a62a2828f77c43bb48a4d91a702e1b5074346ff257abfc9"
+}

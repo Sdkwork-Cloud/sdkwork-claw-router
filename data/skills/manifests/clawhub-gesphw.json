@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71950,
+  "uuid": "skill-clawhub-gesphw",
+  "skillKey": "clawhub-gesphw",
+  "name": "GESP作业生成器",
+  "summary": "为GESP等级考试生成作业卷子，包含选择/判断/编程题。知识点定制，答案随机分布防猜测。触发：生成作业、出题、制作练习卷。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gesphw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fslong",
+      "features": [
+        "为GESP等级考试生成作业卷子，包含选择/判断/编程题。知识点定制，答案随机分布防猜测。触发：生成作业、出题、制作练习卷。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gesphw@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25819806?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gesphw",
+      "url": "https://clawhub.ai/skills/gesphw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gesphw",
+    "url": "https://clawhub.ai/skills/gesphw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gesphw-ca643c880ca7df7c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gesphw@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gesphw-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b8d71e31d38835b8626ca8165d3b384d41583a210163e425ff2f58c09c30ae95",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T16:41:21.811Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68115,
+  "uuid": "skill-clawhub-kelly-criterion",
+  "skillKey": "clawhub-kelly-criterion",
+  "name": "kelly-criterion",
+  "summary": "凯利公式仓位管理系统 — 用数学公式计算最优下注比例，实现长期资金最大化增长。当用户说「凯利公式」「仓位管理」「最优仓位」「凯利半仓」「Kelly Criterion」「破产风险」时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kelly_criterion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danpian1",
+      "features": [
+        "凯利公式仓位管理系统 — 用数学公式计算最优下注比例，实现长期资金最大化增长。当用户说「凯利公式」「仓位管理」「最优仓位」「凯利半仓」「Kelly Criterion」「破产风险」时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kelly-criterion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/87922625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kelly-criterion",
+      "url": "https://clawhub.ai/skills/kelly-criterion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kelly-criterion",
+    "url": "https://clawhub.ai/skills/kelly-criterion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kelly-criterion-9be3a98d28392fbe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kelly-criterion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kelly-criterion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:191a3fb00885b907e2be8650a086735960281eb18bdd1a3ec1e1e7abf91ca92d",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T07:50:45.130Z"
+}

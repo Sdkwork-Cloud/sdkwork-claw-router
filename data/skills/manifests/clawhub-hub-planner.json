@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24161,
+  "uuid": "skill-clawhub-hub-planner",
+  "skillKey": "clawhub-hub-planner",
+  "name": "Hub Planner",
+  "summary": "HUB Planner integration. Manage Organizations. Use when the user wants to interact with HUB Planner data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hub_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "HUB Planner integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with HUB Planner data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hub-planner@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hub-planner",
+      "url": "https://clawhub.ai/skills/hub-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hub-planner",
+    "url": "https://clawhub.ai/skills/hub-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hub-planner-3f6dcde1dfa00c15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hub-planner@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-hub-planner-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ba7f1c176979a519990adadb4113c6b4b72219094e825c3cbc3657ce695d855",
+      "artifactSizeBytes": 1833
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:57:06.209Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telegram-markdown-adapter@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telegram_markdown_adapter",
+  "skill": {
+    "id": 22846,
+    "skillKey": "clawhub-telegram-markdown-adapter",
+    "name": "Telegram Markdown Adapter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telegram-markdown-adapter",
+    "url": "https://clawhub.ai/skills/telegram-markdown-adapter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telegram-markdown-adapter-1b69bc042ecbde12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adapt markdown-style replies into Telegram-friendly rich text without broken rendering. Use when the user prefers Markdown structure but the destination is T..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lqqk7",
+      "userId": "s177yfnn8c1mzgqn8wfhhhpj2183h0n6",
+      "displayName": "lqqk7",
+      "image": "https://avatars.githubusercontent.com/u/33395810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 360,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1773201022246,
+      "changelog": "**Added detailed guidance on Telegram HTML formatting support.**\n\n- Expanded documentation to specify when and how to use Telegram's HTML parse mode, especially in OpenClaw message tool replies.\n- Provided a safe subset of HTML tags to use and rules for escaping/avoiding raw HTML in incompatible contexts.\n- Clarified that plain structured text remains the default for standard assistant replies unless HTML rendering is assured.\n- Updated workflow and conventions based on Telegram output modes.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74dcff5b5d0cf81e14ebc37c70f5f5ca07a9d9001c915d1dcbcb04228f129142"
+}

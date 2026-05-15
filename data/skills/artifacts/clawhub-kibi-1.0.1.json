@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kibi@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kibi",
+  "skill": {
+    "id": 39637,
+    "skillKey": "clawhub-kibi",
+    "name": "KibiBot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kibi",
+    "url": "https://clawhub.ai/skills/kibi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kibi-c4c1e0ca4b6cf2f7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create tokens on-chain, check fee earnings, check Kibi Credit balance, trigger agent credit reload, and interact with KibiBot's Agent API and Kibi LLM Gatewa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kibubot",
+      "userId": "s17bzf7ftvweaktgw3djm1b5ex83r936",
+      "displayName": "Kibu",
+      "image": "https://avatars.githubusercontent.com/u/258636677?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774660650059,
+      "changelog": "Fix version display",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:325c7546b30da80e65d64b9234f245cd2297271b6a8194e98e4553818e531827"
+}

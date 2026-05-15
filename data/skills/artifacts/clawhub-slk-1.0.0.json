@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/slk@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slk",
+  "skill": {
+    "id": 13744,
+    "skillKey": "clawhub-slk",
+    "name": "Slk"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slk",
+    "url": "https://clawhub.ai/skills/slk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slk-16188709fb9e8068.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Read, send, search, and manage Slack messages and DMs via the slk CLI. Use when the user asks to check Slack, read channels or DMs, send Slack messages, search Slack, check unreads, manage drafts, view saved items, or interact with Slack w."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "therohitdas",
+      "userId": "s172eaks33v7ygg504kv93sdf584gqev",
+      "displayName": "Rohit Das",
+      "image": "https://avatars.githubusercontent.com/u/43847374?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770793103563,
+      "changelog": "- Initial release of the Slack CLI skill for macOS.\n- Read, send, search, and manage Slack messages and DMs directly via the slk CLI.\n- Supports Slack channel and DM reading, sending messages, searching, checking unreads, managing drafts, saved items, and viewing threads.\n- Session-based authentication: auto-extracts user session from Slack desktop app using macOS Keychain (no tokens or OAuth required).\n- Designed for personal agent workflows and heartbeat checks with extensive command options.\n- macOS only; acts with user's permissions and session.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:77ba1c35b011e96f2e05f223c96468d5b5268aa682fbd081455d1e0a88a09c8d"
+}

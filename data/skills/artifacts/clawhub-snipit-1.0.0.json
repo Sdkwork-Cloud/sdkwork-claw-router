@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snipit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snipit",
+  "skill": {
+    "id": 13713,
+    "skillKey": "clawhub-snipit",
+    "name": "snipit.sh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snipit",
+    "url": "https://clawhub.ai/skills/snipit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snipit-8ca602626d9ce200.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Share code snippets and files securely via snipit.sh with AES-256 encryption. Use when sharing code, configs, logs, diffs, or secrets with password protection, burn-after-read, or auto-expiration. Supports CLI (snipit) or curl API fallback."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "homecity",
+      "userId": "publishers:homecity",
+      "displayName": "homecity",
+      "image": "https://avatars.githubusercontent.com/u/5791246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1366,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770450589192,
+      "changelog": "Initial release: Secure code snippet sharing with AES-256 encryption",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:38882a49b210542d02a6a2b1f620b35764cd55805f50c3b0a810f8bd5e82c88c"
+}

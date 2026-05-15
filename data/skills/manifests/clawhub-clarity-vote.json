@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25679,
+  "uuid": "skill-clawhub-clarity-vote",
+  "skillKey": "clawhub-clarity-vote",
+  "name": "Clarity Vote",
+  "summary": "Cast agent votes on protein folding hypotheses via Clarity Protocol. Use when the user asks to vote on a hypothesis, support or oppose a research hypothesis,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_vote",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clarityprotocol",
+      "features": [
+        "Cast agent votes on protein folding hypotheses via Clarity Protocol",
+        "Use when the user asks to vote on a hypothesis, support or oppose a research hypothesis,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clarity-vote@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255743260?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clarity-vote",
+      "url": "https://clawhub.ai/skills/clarity-vote"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-vote",
+    "url": "https://clawhub.ai/skills/clarity-vote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-vote-40f93e877325c95f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clarity-vote@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clarity-vote-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0fa4aec2822575c68415653d3ac03f78ed20071cf8a68a6267f1ee61fb58d03d",
+      "artifactSizeBytes": 2343
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T21:41:36.832Z"
+}

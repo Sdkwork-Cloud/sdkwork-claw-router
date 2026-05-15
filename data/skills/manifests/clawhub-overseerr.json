@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10424,
+  "uuid": "skill-clawhub-overseerr",
+  "skillKey": "clawhub-overseerr",
+  "name": "Overseerr",
+  "summary": "Request movies/TV and monitor request status via the Overseerr API (stable Overseerr, not the beta Seerr rewrite).",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.overseerr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "j1philli",
+      "features": [
+        "Request movies/TV and monitor request status via the Overseerr API (stable Overseerr, not the b."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/overseerr@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3744255?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "overseerr",
+      "url": "https://clawhub.ai/skills/overseerr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "overseerr",
+    "url": "https://clawhub.ai/skills/overseerr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/overseerr-ed824f09bdb474a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/overseerr@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-overseerr-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ef1ddcc468497ca2a265338eaa245467fea03f623e78d739d5a2620e606706d4",
+      "artifactSizeBytes": 1819
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-13T18:34:13.945Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-a-free-ai-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_a_free_ai_video",
+  "skill": {
+    "id": 46922,
+    "skillKey": "clawhub-create-a-free-ai-video",
+    "name": "Create A Free Ai Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-a-free-ai-video",
+    "url": "https://clawhub.ai/skills/create-a-free-ai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-a-free-ai-video-346896664e290e2d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "create text or images into AI generated videos with this skill. Works with MP4, MOV, JPG, PNG files up to 200MB. content creators and marketers use it for ge..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776367091556,
+      "changelog": "- Initial release of Create a Free AI Video skill: generate 1080p MP4 videos from text or image inputs in 1–2 minutes using cloud GPUs.\n- Supports uploads up to 200MB in MP4, MOV, JPG, and PNG formats.\n- Fully automated setup with free token authentication (100 credits, 7 days)—no user registration required.\n- Natural language prompts route to actions: upload, generate, export, check credits, or show status.\n- Provides export, draft editing, session management, and clear error feedback for common workflows.\n- Designed for content creators and marketers to rapidly turn scripts and photos into polished videos without filming.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:10c90428c806c28b08721e8a306de5bdae507db392b759e89e36427c83db558b"
+}

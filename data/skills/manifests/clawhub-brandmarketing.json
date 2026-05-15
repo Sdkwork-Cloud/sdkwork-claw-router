@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73061,
+  "uuid": "skill-clawhub-brandmarketing",
+  "skillKey": "clawhub-brandmarketing",
+  "name": "品牌热点营销助手",
+  "summary": "AI 智能品牌营销工具：输入品牌名称，自动采集全网数据、分析当日热点、生成一篇小红书图文内容，支持一键自动发布",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brandmarketing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "qb-claw",
+      "features": [
+        "AI 智能品牌营销工具：输入品牌名称，自动采集全网数据、分析当日热点、生成一篇小红书图文内容，支持一键自动发布"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/brandmarketing@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31847271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "brandmarketing",
+      "url": "https://clawhub.ai/skills/brandmarketing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brandmarketing",
+    "url": "https://clawhub.ai/skills/brandmarketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brandmarketing-396d64e1697e5af7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/brandmarketing@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-brandmarketing-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fdad1497b5af9d137027c84ea16cfd777a68df8d7d40ccc13aa66a202b3c360d",
+      "artifactSizeBytes": 1919
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T10:37:35.908Z"
+}

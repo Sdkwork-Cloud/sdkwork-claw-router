@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53624,
+  "uuid": "skill-clawhub-amazon-inventory-management",
+  "skillKey": "clawhub-amazon-inventory-management",
+  "name": "Amazon Inventory Management",
+  "summary": "FBA inventory planning — restock timing, safety stock, IPI score optimization, stranded inventory recovery",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_inventory_management",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "nexscope-ai",
+      "features": [
+        "FBA inventory planning — restock timing, safety stock, IPI score optimization, stranded invento."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/amazon-inventory-management@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265748176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "amazon-inventory-management",
+      "url": "https://clawhub.ai/skills/amazon-inventory-management"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-inventory-management",
+    "url": "https://clawhub.ai/skills/amazon-inventory-management",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-inventory-management-e8e8ea5b26d10d48.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/amazon-inventory-management@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-amazon-inventory-management-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d0ad3158393d805396675f23d22ad39750b2b2283ec53f708cffe0875e4dbf7b",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:57:34.472Z"
+}

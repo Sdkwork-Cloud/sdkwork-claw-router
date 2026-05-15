@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15314,
+  "uuid": "skill-clawhub-portfolio-trader",
+  "skillKey": "clawhub-portfolio-trader",
+  "name": "Portfolio Trader",
+  "summary": "Connect to a user's investment accounts via SnapTrade SDK and generate portfolio reports (e.g., daily total value). Use when the user wants SnapTrade-based b...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.portfolio_trader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "brendanwood",
+      "features": [
+        "Connect to a user's investment accounts via SnapTrade SDK and generate portfolio reports (e.g.,.",
+        "Use when the user wants SnapTrade-based b..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/portfolio-trader@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2074395?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "portfolio-trader",
+      "url": "https://clawhub.ai/skills/portfolio-trader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "portfolio-trader",
+    "url": "https://clawhub.ai/skills/portfolio-trader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/portfolio-trader-a1183208b6ade9bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/portfolio-trader@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-portfolio-trader-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e1034fad44e3c7bae245fc748a3f71354e21a4b177bdafd9b154c6b25f9c5a43",
+      "artifactSizeBytes": 2409
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T18:34:48.831Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/somnia@0.4.3",
+  "version": "0.4.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.somnia",
+  "skill": {
+    "id": 49379,
+    "skillKey": "clawhub-somnia",
+    "name": "Somnia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "somnia",
+    "url": "https://clawhub.ai/skills/somnia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/somnia-5356a328a34da8ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run overnight skill health reviews, replay-case availability checks, feedback triage, and proposal-only maintenance reports for OpenClaw agents. Use when the..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sheepxux",
+      "userId": "s1757n1qacyr9pz2g94gkdpgfh867kn5",
+      "displayName": "SheepXu",
+      "image": "https://avatars.githubusercontent.com/u/132804464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.4.3",
+      "createdAt": 1778182311997,
+      "changelog": "Make Somnia standalone and proposal-only: no out-of-package runtime execution, no auto-install modes, and clearer report-only boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6e9265a0b5ce5cd7998267201701a18908815dd46ba675657d16d09eb22f9b49"
+}

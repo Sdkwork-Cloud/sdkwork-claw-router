@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66533,
+  "uuid": "skill-clawhub-boss-greeting-message",
+  "skillKey": "clawhub-boss-greeting-message",
+  "name": "boss-greeting message",
+  "summary": "BOSS直聘打招呼语生成器。调用 boss-cli 获取目标职位详情，分析岗位核心要求， 再对照用户简历找出最匹配的经历，生成一段不超过200字的个性化打招呼语。 当用户说\"帮我写打招呼语\"、\"投这个岗位怎么打招呼\"、\"生成boss打招呼\"等时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boss_greeting_message",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bifang988",
+      "features": [
+        "BOSS直聘打招呼语生成器。调用 boss-cli 获取目标职位详情，分析岗位核心要求， 再对照用户简历找出最匹配的经历，生成一段不超过200字的个性化打招呼语。 当用户说\"帮我写打招呼语\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boss-greeting-message@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269688853?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boss-greeting-message",
+      "url": "https://clawhub.ai/skills/boss-greeting-message"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boss-greeting-message",
+    "url": "https://clawhub.ai/skills/boss-greeting-message",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boss-greeting-message-40089c9f0ab46889.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boss-greeting-message@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-boss-greeting-message-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:810a29915abb248d96221a1ffea43cc9111f61436414fcd5084283b2ee1130fd",
+      "artifactSizeBytes": 2649
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T07:06:37.235Z"
+}

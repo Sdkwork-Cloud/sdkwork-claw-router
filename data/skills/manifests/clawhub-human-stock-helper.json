@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62977,
+  "uuid": "skill-clawhub-human-stock-helper",
+  "skillKey": "clawhub-human-stock-helper",
+  "name": "Human Stock Helper",
+  "summary": "为股票交易者提供理性分析、技术计算和策略执行提醒。基于AKShare、yfinance、pandas-ta等工具，帮助用户冰冷、果决地执行交易决策。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.human_stock_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaxHou_12",
+      "features": [
+        "为股票交易者提供理性分析、技术计算和策略执行提醒。基于AKShare、yfinance、pandas-ta等工具，帮助用户冰冷、果决地执行交易决策。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/human-stock-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/202257032?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "human-stock-helper",
+      "url": "https://clawhub.ai/skills/human-stock-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "human-stock-helper",
+    "url": "https://clawhub.ai/skills/human-stock-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/human-stock-helper-ae54d5c8c119d11b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/human-stock-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-human-stock-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6983268ca152c663ee9add3d8ece6d2cc5ab5c130313976b46512cbbfebc265a",
+      "artifactSizeBytes": 2459
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T08:31:29.565Z"
+}

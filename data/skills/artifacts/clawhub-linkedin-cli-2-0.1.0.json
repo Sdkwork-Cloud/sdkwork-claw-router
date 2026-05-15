@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-cli-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_cli_2",
+  "skill": {
+    "id": 19737,
+    "skillKey": "clawhub-linkedin-cli-2",
+    "name": "Linkedin Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-cli-2",
+    "url": "https://clawhub.ai/skills/linkedin-cli-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-cli-2-bc8ba967d35488b6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Post to LinkedIn using the official API v2. Uses OAuth tokens so only post when explicitly asked or scheduled."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xmythril",
+      "userId": "publishers:0xmythril",
+      "displayName": "0xmythril",
+      "image": "https://avatars.githubusercontent.com/u/9655885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 494,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772556370263,
+      "changelog": "Initial release of linkedin-cli-2\n\n- Post to LinkedIn using the official API v2 with OAuth authentication.\n- Requires explicit user action or scheduling for posting; does not post speculatively.\n- Provides commands to authenticate, verify authentication, post text updates, share URLs, and delete posts.\n- Credentials are stored securely in a local config file with restricted permissions.\n- No telemetry, no postinstall scripts, and minimal dependencies for improved security.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f5fc6d7f4001e0ec8df852cba1f461d9d3635359d9efe68f822e10a1fab5b0e1"
+}

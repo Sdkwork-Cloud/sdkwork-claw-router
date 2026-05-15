@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13727,
+  "uuid": "skill-clawhub-food-cal-order",
+  "skillKey": "clawhub-food-cal-order",
+  "name": "Food Calendar Order",
+  "summary": "Order food delivery via browser automation, triggered by calendar events. Supports two modes — Direct (specific service + restaurant) and Discovery (criteria...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.food_cal_order",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ThisIsJeron",
+      "features": [
+        "Order food delivery via browser automation, triggered by calendar events",
+        "Supports two modes — Direct (specific service + restaurant) and Discovery (criteria..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/food-cal-order@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14175797?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "food-cal-order",
+      "url": "https://clawhub.ai/skills/food-cal-order"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "food-cal-order",
+    "url": "https://clawhub.ai/skills/food-cal-order",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/food-cal-order-21cee8978bb6036e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/food-cal-order@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-food-cal-order-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae589b17c10c2b952ee10216ac77b27255bec34e88fb8bb17510aea49ecdc1bd",
+      "artifactSizeBytes": 2030
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T08:15:03.809Z"
+}

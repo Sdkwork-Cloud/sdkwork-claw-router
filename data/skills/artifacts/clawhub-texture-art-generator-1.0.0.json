@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/texture-art-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.texture_art_generator",
+  "skill": {
+    "id": 52295,
+    "skillKey": "clawhub-texture-art-generator",
+    "name": "Texture Art Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "texture-art-generator",
+    "url": "https://clawhub.ai/skills/texture-art-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/texture-art-generator-87f78a3b878bb628.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate stunning satisfying texture art and hyperrealistic material images — glass, crystal, liquid, jelly, wax, soap, and iridescent surfaces captured in b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 200,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775605324276,
+      "changelog": "Initial release of texture-art-generator.\n\n- Generate hyperrealistic macro images of materials like glass, crystal, jelly, wax, soap, and more.\n- Ideal for ASMR creators, product backgrounds, and social media content.\n- Uses the Neta AI image generation API (requires free trial token).\n- Supports prompt input, size options, and style inheritance via reference images.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6a94094de3ea1f3b2f31c961f6cc5d36a728faf8129f4e263b5e5de21ee9229"
+}

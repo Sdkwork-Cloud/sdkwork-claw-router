@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24460,
+  "uuid": "skill-clawhub-doubao-ata-subtitle",
+  "skillKey": "clawhub-doubao-ata-subtitle",
+  "name": "Volcengine Ata Subtitle",
+  "summary": "Generate subtitles with automatic time alignment using Volcengine ATA API. Use when the user wants to: (1) add time-aligned subtitles to videos, (2) convert...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.doubao_ata_subtitle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BlackEight4752",
+      "features": [
+        "Generate subtitles with automatic time alignment using Volcengine ATA API",
+        "Use when the user wants to: (1) add time-aligned subtitles to videos, (2) convert..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/doubao-ata-subtitle@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188832251?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "doubao-ata-subtitle",
+      "url": "https://clawhub.ai/skills/doubao-ata-subtitle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "doubao-ata-subtitle",
+    "url": "https://clawhub.ai/skills/doubao-ata-subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/doubao-ata-subtitle-c41a684388dffc2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/doubao-ata-subtitle@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-doubao-ata-subtitle-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b5ca6c384f6295820b34794d3292e2481a67585a7f848e09df1df82746a06a6",
+      "artifactSizeBytes": 2359
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T14:26:39.463Z"
+}

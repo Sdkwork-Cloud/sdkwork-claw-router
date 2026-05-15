@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alipay-notify@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alipay_notify",
+  "skill": {
+    "id": 66369,
+    "skillKey": "clawhub-alipay-notify",
+    "name": "支付宝支付异步通知助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alipay-notify",
+    "url": "https://clawhub.ai/skills/alipay-notify",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alipay-notify-39dad91e154c6dc3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支付宝异步通知中继：本地开发无公网 IP 也能收到支付宝异步通知。 Skill 自包含 CLI 脚本，安装后 Agent 自动执行注册 → 获取 notify_url → 实时监听 → 查看原始报文 → 本地验签全流程。 仅依赖 Python 3，无需部署服务端。仅限联调环境。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangke091",
+      "userId": "s177gngaptt3t6abdqhdvarmwx84msa8",
+      "displayName": "zhangke091",
+      "image": "https://avatars.githubusercontent.com/u/28504641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776012486548,
+      "changelog": "alipay-notify 1.0.1\n\n- No code or documentation changes detected in this release.\n- Version bump only; functionality and usage remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0967f9c4d8e8d39e7fd2348a42174ca28f9b004eeec02b814559eb88347d67ad"
+}

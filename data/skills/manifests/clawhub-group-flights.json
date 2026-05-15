@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47275,
+  "uuid": "skill-clawhub-group-flights",
+  "skillKey": "clawhub-group-flights",
+  "name": "group-flights",
+  "summary": "Book group flights, team travel tickets and corporate group booking with 10+ passenger discounts and bulk fare deals. Also supports: flight booking, hotel re...",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.group_flights",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dingtom336-gif",
+      "features": [
+        "Book group flights, team travel tickets and corporate group booking with 10+ passenger discount.",
+        "Also supports: flight booking, hotel re..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/group-flights@3.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/256118512?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "group-flights",
+      "url": "https://clawhub.ai/skills/group-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "group-flights",
+    "url": "https://clawhub.ai/skills/group-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/group-flights-51bd6b57edc9b8e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/group-flights@3.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-group-flights-3.2.0.json",
+      "version": "3.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:042fd0b94ff50d63983c2878882ff496647f6af57cef50a7ceef36e62455a050",
+      "artifactSizeBytes": 2434
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T22:54:26.735Z"
+}

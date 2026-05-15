@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zyfai-sdk@1.0.11",
+  "version": "1.0.11",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zyfai_sdk",
+  "skill": {
+    "id": 10051,
+    "skillKey": "clawhub-zyfai-sdk",
+    "name": "Zyfai Yield Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zyfai-sdk",
+    "url": "https://clawhub.ai/skills/zyfai-sdk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zyfai-sdk-2dbf086f0d105315.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Earn yield on any Ethereum wallet on Base, Arbitrum, and Plasma. Use when a user wants passive DeFi yield on their funds. Deploys a non-custodial determinist..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pauldefi",
+      "userId": "s17bk0v9wq2x43f938grwfk17984esh9",
+      "displayName": "Paul",
+      "image": "https://avatars.githubusercontent.com/u/131051860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2769,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "1.0.11",
+      "createdAt": 1775661615401,
+      "changelog": "Zyfai SDK v1.0.11 introduces a major update: adds simple Vault mode for instant yield, alongside Smart Wallet.\n\n- Two modes available: Vault (simple yield on Base, USDC only) and Smart Wallet (multi-chain, advanced).\n- Vault: one-step deposit/withdraw, no setup; new SDK methods `vaultDeposit`, `vaultWithdraw`, `vaultClaim`, and `getVaultShares`.\n- Smart Wallet flow unchanged—still supports custom strategies and multi-chain deployment.\n- Documentation now clearly compares Vault vs. Smart Wallet with table and usage instructions.\n- Improved clarity on wallet connection, supported assets, and security recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8d119a637b2f21f464ac976077826f82b39959080c93cb5b2767863ebfb50ace"
+}

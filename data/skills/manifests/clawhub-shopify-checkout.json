@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21666,
+  "uuid": "skill-clawhub-shopify-checkout",
+  "skillKey": "clawhub-shopify-checkout",
+  "name": "Shopify Checkout API",
+  "summary": "Complete online shopping purchases on any online store using the Credpay Checkout API with x402 payments. Trigger when a user wants to buy, order, or checkou...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopify_checkout",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jelilat Anofiu",
+      "features": [
+        "Complete online shopping purchases on any online store using the Credpay Checkout API with x402.",
+        "Trigger when a user wants to buy, order, or checkou..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopify-checkout@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23613565?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopify-checkout",
+      "url": "https://clawhub.ai/skills/shopify-checkout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopify-checkout",
+    "url": "https://clawhub.ai/skills/shopify-checkout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopify-checkout-a7de6c53691f4da2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopify-checkout@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopify-checkout-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:340f1724d461b1303b8874160f80d3dc8c9e59e2bd77d3cfb95a81d6f8b38f97",
+      "artifactSizeBytes": 2438
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T14:45:05.073Z"
+}

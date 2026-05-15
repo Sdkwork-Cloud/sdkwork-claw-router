@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66297,
+  "uuid": "skill-clawhub-deep-research-mode",
+  "skillKey": "clawhub-deep-research-mode",
+  "name": "Deep Research Mode",
+  "summary": "深度研究模式 - 针对高难度科研问题，启动多智能体协作（10-50 个），分工讨论、分析质疑、集体决策，生成详细研究报告",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_research_mode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIRBOY",
+      "features": [
+        "针对高难度科研问题，启动多智能体协作（10-50 个），分工讨论、分析质疑、集体决策，生成详细研究报告"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deep-research-mode@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49422297?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deep-research-mode",
+      "url": "https://clawhub.ai/skills/deep-research-mode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-research-mode",
+    "url": "https://clawhub.ai/skills/deep-research-mode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-research-mode-14b2dae4ab32969f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deep-research-mode@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deep-research-mode-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a4253e09178e857297e5d9386800373b45ed2f11511cb9c72a044865a275d909",
+      "artifactSizeBytes": 2598
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T11:04:39.906Z"
+}

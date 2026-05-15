@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68935,
+  "uuid": "skill-clawhub-chaceclaw-travel-itinerary",
+  "skillKey": "clawhub-chaceclaw-travel-itinerary",
+  "name": "Travel Itinerary Planner by Chaceclaw",
+  "summary": "智能旅行行程规划系统 - 一键生成完整旅行计划。 收集旅行信息，创建详细行程，提供预算估算、餐厅推荐、交通建议、实用贴士。 支持家庭旅行、情侣旅行、单人旅行等多种场景。 预算控制精准，误差控制在20%以内。 包含实时天气、预订链接、儿童友好活动、紧急联系等扩展功能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaceclaw_travel_itinerary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chace",
+      "features": [
+        "智能旅行行程规划系统",
+        "一键生成完整旅行计划。 收集旅行信息，创建详细行程，提供预算估算、餐厅推荐、交通建议、实用贴士。 支持家庭旅行、情侣旅行、单人旅行等多种场景。 预算控制精准，误差控制在20%以内。 包含实时."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chaceclaw-travel-itinerary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20350304?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chaceclaw-travel-itinerary",
+      "url": "https://clawhub.ai/skills/chaceclaw-travel-itinerary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaceclaw-travel-itinerary",
+    "url": "https://clawhub.ai/skills/chaceclaw-travel-itinerary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaceclaw-travel-itinerary-be83b98a11541258.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chaceclaw-travel-itinerary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chaceclaw-travel-itinerary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bea10832f7fa4a902a65acb679473334a279960ea1bcebf51931939433260bc0",
+      "artifactSizeBytes": 2335
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T07:36:34.650Z"
+}

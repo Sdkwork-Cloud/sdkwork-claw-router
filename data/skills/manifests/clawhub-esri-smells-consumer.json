@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12362,
+  "uuid": "skill-clawhub-esri-smells-consumer",
+  "skillKey": "clawhub-esri-smells-consumer",
+  "name": "Esri Workflow Smell Detector (Consumer)",
+  "summary": "Paid client skill for Esri Workflow Smell Detector via x402 (Base/USDC). Use when you want to run a deterministic automation preflight scan on an ArcGIS Pro project snapshot by calling https://api.x402layer.cc/e/esri-smells (HTTP 402 payme.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.esri_smells_consumer",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "danmaps",
+      "features": [
+        "Paid client skill for Esri Workflow Smell Detector via x402 (Base/USDC)",
+        "Use when you want to run a deterministic automation preflight scan on an ArcGIS Pro project sna."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/esri-smells-consumer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10421813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "esri-smells-consumer",
+      "url": "https://clawhub.ai/skills/esri-smells-consumer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "esri-smells-consumer",
+    "url": "https://clawhub.ai/skills/esri-smells-consumer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/esri-smells-consumer-da299debe0b0f121.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/esri-smells-consumer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-esri-smells-consumer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27a038a7b6e87d576bcde497a151eed2f4aaf638623b21fdd1b50d9b9615b344",
+      "artifactSizeBytes": 2142
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T23:56:55.481Z"
+}

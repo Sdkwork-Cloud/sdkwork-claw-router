@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/health-data-reviewer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.health_data_reviewer",
+  "skill": {
+    "id": 49512,
+    "skillKey": "clawhub-health-data-reviewer",
+    "name": "Health Data Reviewer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "health-data-reviewer",
+    "url": "https://clawhub.ai/skills/health-data-reviewer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/health-data-reviewer-4a9e2ca0c9c7869c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Organize your personal health logs, wearables data, and notes into clear, non-diagnostic summaries for personal reflection or clinician review."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 77,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777618997079,
+      "changelog": "Initial release: document-only health literacy skill with explicit safety boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6cb17b5727a39b4865f778549bc86fc16ac629ee58706231be08e7cbedddeb18"
+}

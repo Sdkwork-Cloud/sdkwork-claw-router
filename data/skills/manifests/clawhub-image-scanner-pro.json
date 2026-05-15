@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29197,
+  "uuid": "skill-clawhub-image-scanner-pro",
+  "skillKey": "clawhub-image-scanner-pro",
+  "name": "Image Scanner Pro",
+  "summary": "Scan image folders and use Gemini 2.0 Flash to analyze and categorize photos by photography attributes like composition, lighting, and style.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_scanner_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mrxolin",
+      "features": [
+        "Scan image folders and use Gemini 2.0 Flash to analyze and categorize photos by photography att."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-scanner-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242124723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-scanner-pro",
+      "url": "https://clawhub.ai/skills/image-scanner-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-scanner-pro",
+    "url": "https://clawhub.ai/skills/image-scanner-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-scanner-pro-9a7e2ddd0c420921.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-scanner-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-scanner-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f7c975a8d7cf467fb9edd242f45b2bf8b56510d8f55b7f67a325f8f1a8537924",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T08:18:46.437Z"
+}

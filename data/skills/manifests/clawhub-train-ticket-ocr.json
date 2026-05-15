@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68480,
+  "uuid": "skill-clawhub-train-ticket-ocr",
+  "skillKey": "clawhub-train-ticket-ocr",
+  "name": "Train Ticket Ocr",
+  "summary": "支持从火车票中识别出发站、到达站、车次、座位号、票价、乘车日期、身份证号及售票点信息",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.train_ticket_ocr",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SCNet-sugon",
+      "features": [
+        "支持从火车票中识别出发站、到达站、车次、座位号、票价、乘车日期、身份证号及售票点信息"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/train-ticket-ocr@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267813088?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "train-ticket-ocr",
+      "url": "https://clawhub.ai/skills/train-ticket-ocr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "train-ticket-ocr",
+    "url": "https://clawhub.ai/skills/train-ticket-ocr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/train-ticket-ocr-265bd2adc328b8ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/train-ticket-ocr@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-train-ticket-ocr-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:81f03350c21111841d77776a230269f8350cba8466e2755f3774be9bd84a8a83",
+      "artifactSizeBytes": 2429
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:15:02.410Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/screen-time-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.screen_time_auditor",
+  "skill": {
+    "id": 43154,
+    "skillKey": "clawhub-screen-time-auditor",
+    "name": "Screen Time Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "screen-time-auditor",
+    "url": "https://clawhub.ai/skills/screen-time-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/screen-time-auditor-6c41750f93e2ac5c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Help users audit and analyze screen habits by device, app, and time to identify triggers and create a realistic one-week reduction plan."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 152,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776214861529,
+      "changelog": "- Initial release of Screen Time Auditor, a tool for manually auditing and reducing problematic screen habits.\n- Helps estimate usage by device/app, identify triggers, and map out worst \"leakage zones.\"\n- Guides users to distinguish between functional use and unconscious or emotional screen time.\n- Supports creating friction, replacement habits, and realistic phone-free periods.\n- Includes a structured workflow and output format for actionable, non-judgmental audit results.\n- Emphasizes practical, humane reduction strategies—one week at a time.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f327d9a6db523e6c32a893fef01550871455e428f354f04d77e752f7572153f5"
+}

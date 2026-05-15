@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14679,
+  "uuid": "skill-clawhub-akaunting",
+  "skillKey": "clawhub-akaunting",
+  "name": "Akaunting",
+  "summary": "Interact with Akaunting open-source accounting software via REST API. Use for creating invoices, tracking income/expenses, managing accounts, and bookkeeping automation. Triggers on accounting, bookkeeping, invoicing, expenses, income trac.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.akaunting",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liekzejaws",
+      "features": [
+        "Interact with Akaunting open-source accounting software via REST API",
+        "Use for creating invoices, tracking income/expenses, managing accounts, and bookkeeping automat.",
+        "Triggers on accounting, bookkeeping, invoicing, expenses, income tracking, or Akaunting mention."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/akaunting@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214710755?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "akaunting",
+      "url": "https://clawhub.ai/skills/akaunting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "akaunting",
+    "url": "https://clawhub.ai/skills/akaunting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/akaunting-997569cd8165841c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/akaunting@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-akaunting-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48b0f0c7dd03b184cbe494776b369915cb54bec245e0e8b8a9f9ff01df2272f4",
+      "artifactSizeBytes": 2316
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T03:17:56.433Z"
+}

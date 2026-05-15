@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15847,
+  "uuid": "skill-clawhub-grok-browser",
+  "skillKey": "clawhub-grok-browser",
+  "name": "Grok Browser",
+  "summary": "Query Grok AI via browser automation. Use when you need to ask Grok questions, get AI responses, or use Grok's DeepSearch/Think features. Copies response tex...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grok_browser",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eason Chen",
+      "features": [
+        "Query Grok AI via browser automation",
+        "Use when you need to ask Grok questions, get AI responses, or use Grok's DeepSearch/Think featu.",
+        "Copies response tex..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/grok-browser@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43432631?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "grok-browser",
+      "url": "https://clawhub.ai/skills/grok-browser"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grok-browser",
+    "url": "https://clawhub.ai/skills/grok-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grok-browser-1568148d607c52d1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/grok-browser@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-grok-browser-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:34f7fab3b3aa98e81d889084d44f34c1982563a682349a4d8ea13212d6b6758d",
+      "artifactSizeBytes": 1857
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T17:15:48.655Z"
+}

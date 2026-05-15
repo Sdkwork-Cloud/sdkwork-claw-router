@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/chaoji-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaoji_skills",
+  "skill": {
+    "id": 46292,
+    "skillKey": "clawhub-chaoji-skills",
+    "name": "Chaoji Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaoji-skills",
+    "url": "https://clawhub.ai/skills/chaoji-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaoji-skills-ebb7eafe7b0653e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Routes requests to appropriate Chaoji AI scene skills for virtual try-on, image cutout, image-to-image generation, or direct command execution."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "matabear-wyx",
+      "userId": "s1726rj4vnmwpf548xxa093dps83p0wh",
+      "displayName": "matabear-wyx",
+      "image": "https://avatars.githubusercontent.com/u/128615473?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775207065330,
+      "changelog": "chaoji-skills 1.0.0\n\n- Initial release providing root routing for ChaoJi AI skills.\n- Routes user requests to scene-specific skills: chaoji-tryon, chaoji-tryon-fast, chaoji-tryon-shoes, chaoji-cutout, chaoji-img2img, and chaoji-tools.\n- Enforces minimal, routing-only permissions at the root level; scene skills handle their own broader permissions.\n- Implements detailed intent routing rules, explicit clarification questions for ambiguous \"try on\" requests, and method selection based on natural language.\n- Built-in security and instruction safety rules to prevent misuse or unauthorized disclosures.\n- Error handling offers actionable user guidance for credential or authorization problems.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6995df7405ebfda45918236ecc376ae05452dda3cfbd3f2da407103945fa2186"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53778,
+  "uuid": "skill-clawhub-hunter",
+  "skillKey": "clawhub-hunter",
+  "name": "Hunter",
+  "summary": "Hunter.io — email finder, email verifier, domain search, author finder, and lead management.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hunter",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aiwithabidi",
+      "features": [
+        "Hunter.io — email finder, email verifier, domain search, author finder, and lead management."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hunter@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208891229?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hunter",
+      "url": "https://clawhub.ai/skills/hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hunter",
+    "url": "https://clawhub.ai/skills/hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hunter-e9a63a4eb15738ae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hunter@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hunter-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9393ce4adaa436887bf40205696a6ee886d1d6f29220cb93de5a1df0dec37cf",
+      "artifactSizeBytes": 2176
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T10:54:44.659Z"
+}

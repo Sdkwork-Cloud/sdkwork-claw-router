@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42585,
+  "uuid": "skill-clawhub-rizzforms",
+  "skillKey": "clawhub-rizzforms",
+  "name": "rizzforms",
+  "summary": "Create forms, configure webhook delivery, manage submissions, and generate embed HTML using the RizzForms API and bundled CLI. Use this skill whenever the us...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rizzforms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Blair Anderson",
+      "features": [
+        "Create forms, configure webhook delivery, manage submissions, and generate embed HTML using the.",
+        "Use this skill whenever the us..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rizzforms@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/955736?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rizzforms",
+      "url": "https://clawhub.ai/skills/rizzforms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rizzforms",
+    "url": "https://clawhub.ai/skills/rizzforms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rizzforms-fa51393012bbbaf4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rizzforms@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rizzforms-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1a754df7e5f774981240046352dbcd24cd8b760adc9991f890c8533643e6680a",
+      "artifactSizeBytes": 2416
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T00:38:07.752Z"
+}

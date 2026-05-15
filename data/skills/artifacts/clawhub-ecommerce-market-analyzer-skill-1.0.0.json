@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ecommerce-market-analyzer-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_market_analyzer_skill",
+  "skill": {
+    "id": 31687,
+    "skillKey": "clawhub-ecommerce-market-analyzer-skill",
+    "name": "ecommerce-market-analyzer-skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-market-analyzer-skill",
+    "url": "https://clawhub.ai/skills/ecommerce-market-analyzer-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-market-analyzer-skill-fbf4b9b1306f0d77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scrape e-commerce homepages from multiple websites in a target market, handle popups automatically, capture screenshots and HTML, extract product data, and g..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nepp-an",
+      "userId": "s176sbavw2ncw3zj1jax6ecgz1845aqh",
+      "displayName": "nepp",
+      "image": "https://avatars.githubusercontent.com/u/11534641?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 253,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773901302975,
+      "changelog": "E-commerce Market Analyzer 1.0.0 – initial release\n\n- Automates scraping of multiple e-commerce homepages, with popup/dialog handling for German and international sites.\n- Captures full-page screenshots and HTML, normalizes product price formats, and extracts product/category data.\n- Includes a step-by-step workflow: setup and scrape, visual analysis, data extraction, and comprehensive market report generation.\n- Provides templates, parsing guides, selector references, and output/report quality metrics for replicable market analysis.\n- Supports bilingual (e.g., German-English) report generation and offers troubleshooting steps for common scraping issues.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:848a1afa136bf7d0605ed56d98dc2707df52f04bbe491de38e64e999ae4d397e"
+}

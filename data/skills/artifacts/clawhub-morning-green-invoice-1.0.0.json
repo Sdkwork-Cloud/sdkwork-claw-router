@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/morning-green-invoice@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.morning_green_invoice",
+  "skill": {
+    "id": 16045,
+    "skillKey": "clawhub-morning-green-invoice",
+    "name": "Morning (Green Invoice)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "morning-green-invoice",
+    "url": "https://clawhub.ai/skills/morning-green-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/morning-green-invoice-36de68ababe1f25f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use to authenticate with Morning (GreenInvoice) and create/manage clients, items, and accounting documents (invoice/receipt/quote/order/credit)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "k0renn",
+      "userId": "publishers:k0renn",
+      "displayName": "k0renn",
+      "image": "https://avatars.githubusercontent.com/u/103889387?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 934,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770647430386,
+      "changelog": "Initial release of the \"morning\" skill for GreenInvoice integration:\n\n- Authenticate with Morning (GreenInvoice) via API key credentials.\n- Create and update clients and items.\n- Create accounting documents (invoice, receipt, quote, order, credit, debit).\n- Retrieve resource IDs and document links if available.\n- Includes validation, error handling, and default values for currency and language.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:896bdc49af9f64494d0f98f47bdd8b43740f71255ad65fff97e1bf9bab816302"
+}

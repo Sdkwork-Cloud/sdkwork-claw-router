@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24797,
+  "uuid": "skill-clawhub-medical-conference",
+  "skillKey": "clawhub-medical-conference",
+  "name": "NoahAI medical conference query",
+  "summary": "Search medical conference and presentation databases. Use this skill whenever the user asks about medical conferences, academic conferences, session abstract...",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_conference",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yichen",
+      "features": [
+        "Search medical conference and presentation databases",
+        "Use this skill whenever the user asks about medical conferences, academic conferences, session."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-conference@1.0.8",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3349426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-conference",
+      "url": "https://clawhub.ai/skills/medical-conference"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-conference",
+    "url": "https://clawhub.ai/skills/medical-conference",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-conference-a4058e1a2a254884.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-conference@1.0.8",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-conference-1.0.8.json",
+      "version": "1.0.8",
+      "runtime": "metadata",
+      "checksumHash": "sha256:33933544f957e3eb3deafe4b185c6233d32f6b14a02663f8ecd661d0f7da3766",
+      "artifactSizeBytes": 2250
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-19T15:05:23.583Z"
+}

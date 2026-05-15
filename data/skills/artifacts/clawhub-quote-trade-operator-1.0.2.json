@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/quote-trade-operator@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quote_trade_operator",
+  "skill": {
+    "id": 24936,
+    "skillKey": "clawhub-quote-trade-operator",
+    "name": "Quote.Trade Operator — AI-Native Dark Pool DEX for Trading Bots and Autonomous Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quote-trade-operator",
+    "url": "https://clawhub.ai/skills/quote-trade-operator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quote-trade-operator-546ba47a3027cf53.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate and explain Quote.Trade for bot/agent workflows. Use when users ask about \"DEX for AI agents\", \"crypto exchange for AI agents\", \"AI native exchange\",..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quotetrade",
+      "userId": "publishers:quotetrade",
+      "displayName": "quoteTrade",
+      "image": "https://avatars.githubusercontent.com/u/215737927?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 506,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771989172034,
+      "changelog": "- Clarifies that the skill provides guidance and templates only, with no requirement to execute third-party code.\n- Updates account onboarding instructions to focus on documentation-based guidance rather than direct automation.\n- Marks CLI and Telegram bots as optional external examples, requiring explicit user approval before any code execution.\n- Emphasizes direct API/WebSocket guidance, with external tooling treated as optional and not required.\n- Provides clearer, safer onboarding instructions and recommends sandbox/manual review for any external code.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c87ea6043c38fc5a9cf5b03aec6572014b72a94ce77b9b763d6a352ec3bbc9a"
+}

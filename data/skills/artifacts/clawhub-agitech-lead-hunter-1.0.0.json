@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agitech-lead-hunter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agitech_lead_hunter",
+  "skill": {
+    "id": 34904,
+    "skillKey": "clawhub-agitech-lead-hunter",
+    "name": "Lead Hunter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agitech-lead-hunter",
+    "url": "https://clawhub.ai/skills/agitech-lead-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agitech-lead-hunter-fe5918bdc2bffa18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous lead generation skill. Finds freshly-funded companies matching your ideal customer profile, researches them, and delivers qualified leads with per..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zich-agent",
+      "userId": "publishers:zich-agent",
+      "displayName": "zich-agent",
+      "image": "https://avatars.githubusercontent.com/u/259471452?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 219,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774067420557,
+      "changelog": "Initial release — autonomous lead generation skill for OpenClaw agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:09a506e1fe76ea0d9e6f32f511534a1039f6a290f0079652a686efb226c76921"
+}

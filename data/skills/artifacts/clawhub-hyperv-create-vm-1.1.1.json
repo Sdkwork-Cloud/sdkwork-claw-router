@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hyperv-create-vm@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperv_create_vm",
+  "skill": {
+    "id": 28581,
+    "skillKey": "clawhub-hyperv-create-vm",
+    "name": "Hyperv Create Vm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperv-create-vm",
+    "url": "https://clawhub.ai/skills/hyperv-create-vm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperv-create-vm-6bd4eb638eb2b39b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create Ubuntu 24.04 VMs on Windows Hyper-V from cloud images with cloud-init. Handles all the gotchas: sparse VHDX fix, hv_netvsc network config, permissions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "solomonneas",
+      "userId": "s175vcq9b774xbehtq2py4r5vn83f1k2",
+      "displayName": "Solomon Neas",
+      "image": "https://avatars.githubusercontent.com/u/41877493?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774098492013,
+      "changelog": "Declared credential and tool requirements in frontmatter: SSH access, admin privileges, VM_PASSWORD env var, genisoimage, qemu-img. Fixes scanner flag for missing credential declarations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:74d966a6bd70cd48b5db91fbaf829ca1d97db868b3668c386104401db187a547"
+}

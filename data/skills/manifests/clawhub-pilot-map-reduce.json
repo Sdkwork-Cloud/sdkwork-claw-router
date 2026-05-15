@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45776,
+  "uuid": "skill-clawhub-pilot-map-reduce",
+  "skillKey": "clawhub-pilot-map-reduce",
+  "name": "Pilot Map Reduce",
+  "summary": "Distributed map-reduce over agent swarms for parallel data processing. Use this skill when: 1. You need to process large datasets across multiple workers 2....",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pilot_map_reduce",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Calin Teodor",
+      "features": [
+        "Distributed map-reduce over agent swarms for parallel data processing",
+        "Use this skill when: 1",
+        "You need to process large datasets across multiple workers 2...."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pilot-map-reduce@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45018530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pilot-map-reduce",
+      "url": "https://clawhub.ai/skills/pilot-map-reduce"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pilot-map-reduce",
+    "url": "https://clawhub.ai/skills/pilot-map-reduce",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pilot-map-reduce-4ad78f03a2d3022d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pilot-map-reduce@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pilot-map-reduce-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:060e08413480025867fc9c457d59cf4aea0c2c35ec74f7329c47f4ba0d6c8174",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T05:23:29.701Z"
+}

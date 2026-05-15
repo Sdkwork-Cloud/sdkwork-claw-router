@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27798,
+  "uuid": "skill-clawhub-instacart",
+  "skillKey": "clawhub-instacart",
+  "name": "Instacart",
+  "summary": "Build Instacart recipe pages, shopping lists, and retailer lookups with MCP, REST, secure auth, and launch-ready integration rules.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instacart",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Build Instacart recipe pages, shopping lists, and retailer lookups with MCP, REST, secure auth,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/instacart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "instacart",
+      "url": "https://clawhub.ai/skills/instacart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instacart",
+    "url": "https://clawhub.ai/skills/instacart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instacart-5ba14c9c0738b2e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/instacart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-instacart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f33ad179691083163dc067fbfa07b476001c68e0197ca24f4680983402798fa0",
+      "artifactSizeBytes": 1897
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T00:34:02.590Z"
+}

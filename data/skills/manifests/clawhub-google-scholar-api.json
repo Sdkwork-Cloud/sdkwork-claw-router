@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63497,
+  "uuid": "skill-clawhub-google-scholar-api",
+  "skillKey": "clawhub-google-scholar-api",
+  "name": "Google Scholar API",
+  "summary": "通过 SerpAPI 实现 Google Scholar 学术论文检索和下载。使用场景包括：1) 通过关键词搜索学术论文，2) 获取论文详细信息（标题、作者、摘要、年份、引用次数），3) 下载可用的 PDF 文件，4) 批量检索相关文献，5) 按年份、引用数等条件筛选论文。需要 SerpAPI 密钥（可从 ser...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.google_scholar_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MaiiNor",
+      "features": [
+        "通过 SerpAPI 实现 Google Scholar 学术论文检索和下载。使用场景包括：1) 通过关键词搜索学术论文，2) 获取论文详细信息（标题、作者、摘要、年份、引用次数），3) 下."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/google-scholar-api@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/138784610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "google-scholar-api",
+      "url": "https://clawhub.ai/skills/google-scholar-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "google-scholar-api",
+    "url": "https://clawhub.ai/skills/google-scholar-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/google-scholar-api-fcf614583540a249.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/google-scholar-api@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-google-scholar-api-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e21533d60e089d5da4bc4465898dd797f0da7cca94f0ca5b61aa875b8d85d350",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T16:01:48.777Z"
+}

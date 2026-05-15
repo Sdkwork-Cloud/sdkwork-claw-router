@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontend-backend-flow-test@0.3.1",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_backend_flow_test",
+  "skill": {
+    "id": 36348,
+    "skillKey": "clawhub-frontend-backend-flow-test",
+    "name": "Frontend Backend Flow Test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-backend-flow-test",
+    "url": "https://clawhub.ai/skills/frontend-backend-flow-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-backend-flow-test-1abfb10f1bb12170.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit-first frontend-backend contract analyzer for static API compatibility checks. Compare frontend request behavior with backend endpoint contracts, DTO hi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlawnsdk",
+      "userId": "s1730edese23d16a0yj8gsqwdn83k2ry",
+      "displayName": "jalim",
+      "image": "https://avatars.githubusercontent.com/u/85921424?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.3.1",
+      "createdAt": 1774595939646,
+      "changelog": "Clarify product stance: audit-first, not a real API regression framework. Strengthen README/LIVE-MODE wording, add safer generate_tests.py messaging, require --allow-writes for write-capable helper generation, and improve output-dir creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b8b223d3f5c9286fe5a66f00e9d6644b52e81e9a220e9bd594fb486d586043b"
+}

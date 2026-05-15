@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51782,
+  "uuid": "skill-clawhub-heroku-platform-api",
+  "skillKey": "clawhub-heroku-platform-api",
+  "name": "Heroku Platform API",
+  "summary": "Full-featured Heroku Platform API v3 skill for managing application lifecycle directly via HTTPS — zero CLI dependency. Requires: HEROKU_API_KEY environment...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.heroku_platform_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nick Nguyen",
+      "features": [
+        "Full-featured Heroku Platform API v3 skill for managing application lifecycle directly via HTTP.",
+        "Requires: HEROKU_API_KEY environment..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/heroku-platform-api@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/21102218?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "heroku-platform-api",
+      "url": "https://clawhub.ai/skills/heroku-platform-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "heroku-platform-api",
+    "url": "https://clawhub.ai/skills/heroku-platform-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/heroku-platform-api-2d666906708cd4f3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/heroku-platform-api@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-heroku-platform-api-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c5486463528595ca95abade7c9e0d2026d93dd1988f0b0b888af3960c9067f85",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T16:17:04.148Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32896,
+  "uuid": "skill-clawhub-deepsleep",
+  "skillKey": "clawhub-deepsleep",
+  "name": "DeepSleep",
+  "summary": "Two-phase daily memory persistence for AI agents. v3.0: unified pack+dispatch cron, smart silence handling, memory importance tiers, cross-group correlation,...",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepsleep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JeffChang2024",
+      "features": [
+        "Two-phase daily memory persistence for AI agents",
+        "v3.0: unified pack+dispatch cron, smart silence handling, memory importance tiers, cross-group."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepsleep@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166408579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepsleep",
+      "url": "https://clawhub.ai/skills/deepsleep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepsleep",
+    "url": "https://clawhub.ai/skills/deepsleep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepsleep-25c7fea84756edec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepsleep@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepsleep-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2e9282ff81e55d728452fa6ecf881a129dcd5e57d82d03e85af8dbfb0cc889fe",
+      "artifactSizeBytes": 2017
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T04:18:05.082Z"
+}

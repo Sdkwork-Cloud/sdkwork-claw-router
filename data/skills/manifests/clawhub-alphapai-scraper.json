@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70688,
+  "uuid": "skill-clawhub-alphapai-scraper",
+  "skillKey": "clawhub-alphapai-scraper",
+  "name": "AlphaPai 评论抓取",
+  "summary": "登录 Alpha派并抓取最近 N 小时点评，保存原文、结构化归档并建立本地索引；也可以用精确检索、向量检索或混合检索查询最近 N 天的历史点评库并生成手机友好摘要，可选发送到飞书。",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alphapai_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawdbotrr",
+      "features": [
+        "登录 Alpha派并抓取最近 N 小时点评，保存原文、结构化归档并建立本地索引；也可以用精确检索、向量检索或混合检索查询最近 N 天的历史点评库并生成手机友好摘要，可选发送到飞书。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alphapai-scraper@0.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/263910996?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alphapai-scraper",
+      "url": "https://clawhub.ai/skills/alphapai-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alphapai-scraper",
+    "url": "https://clawhub.ai/skills/alphapai-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alphapai-scraper-3169a3bede606996.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alphapai-scraper@0.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alphapai-scraper-0.2.0.json",
+      "version": "0.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:62990684c728c4db1d1385e46ef866246dd8b0b7d8817652e8d83f51f60edd26",
+      "artifactSizeBytes": 2035
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T10:43:20.747Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-skill-keychain-access@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_skill_keychain_access",
+  "skill": {
+    "id": 26291,
+    "skillKey": "clawhub-openclaw-skill-keychain-access",
+    "name": "Keychain Access"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-skill-keychain-access",
+    "url": "https://clawhub.ai/skills/openclaw-skill-keychain-access",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-skill-keychain-access-3bf9b1cfe96c4e14.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "macOS Keychain helpers (list/get/set/delete) via the security CLI. Trigger this skill when the user needs to inspect, store, update, or remove generic passwo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ppopen",
+      "userId": "publishers:ppopen",
+      "displayName": "pp",
+      "image": "https://avatars.githubusercontent.com/u/263042322?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772930905186,
+      "changelog": "Skills Factory publish batch retry",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e29e05080997a21351e8afd51d25c85ce9b4d4e151e089a82d7164a4a296b3f6"
+}

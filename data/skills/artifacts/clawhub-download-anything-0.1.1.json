@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/download-anything@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.download_anything",
+  "skill": {
+    "id": 20502,
+    "skillKey": "clawhub-download-anything",
+    "name": "Download Anything"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "download-anything",
+    "url": "https://clawhub.ai/skills/download-anything",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/download-anything-b5487b575f04e584.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and download virtually any digital resource from the internet — ebooks, academic papers, movies, TV shows, music, software, images, fonts, courses, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hacklyc",
+      "userId": "publishers:hacklyc",
+      "displayName": "EthanL",
+      "image": "https://avatars.githubusercontent.com/u/25078994?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 956,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771611661109,
+      "changelog": "Initial release of built-in download scripts and install toolkit.\n\n- Added seven CLI helper scripts for common download tasks: video, audio, file, image gallery, torrent, subtitles, and toolkit installer.\n- Scripts simplify downloading from URLs, batch image/media downloading, fast multi-threaded downloads, and torrent/magnet handling.\n- Centralized script-based workflows with clear arguments and usage examples in documentation.\n- No breaking changes; existing reference files and workflows remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f8b5dcb9f4fd400e30f02350c8d0c0a537e05c833853cfb7b3de690634bf624"
+}

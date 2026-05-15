@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentfolio@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentfolio",
+  "skill": {
+    "id": 18577,
+    "skillKey": "clawhub-agentfolio",
+    "name": "AgentFolio"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentfolio",
+    "url": "https://clawhub.ai/skills/agentfolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentfolio-8495cfafb4630f81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover and register autonomous AI agents. Use when: browsing the agent registry, submitting an agent for verification, or embedding agent badges. NOT for:..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bobrenze-bot",
+      "userId": "publishers:bobrenze-bot",
+      "displayName": "bobrenze-bot",
+      "image": "https://avatars.githubusercontent.com/u/258452996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 649,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772629210835,
+      "changelog": "Add ClawHub frontmatter metadata for registry compatibility",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2aa9bb3b794950ccf7e3065011f1d625477e91326b16b092a1590941ac87c981"
+}

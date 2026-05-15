@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwen-image-plus-sophnet@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwen_image_plus_sophnet",
+  "skill": {
+    "id": 11659,
+    "skillKey": "clawhub-qwen-image-plus-sophnet",
+    "name": "Qwen Image Plus Sophnet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwen-image-plus-sophnet",
+    "url": "https://clawhub.ai/skills/qwen-image-plus-sophnet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwen-image-plus-sophnet-5b9f5159ddb86f2a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images via Sophnet Qwen-Image-Plus and poll for task completion. Use when the user asks for Sophnet image generation, Qwen-Image-Plus, or requests an image from the Sophnet API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "duffycoder",
+      "userId": "publishers:duffycoder",
+      "displayName": "Shan Shutong",
+      "image": "https://avatars.githubusercontent.com/u/147493434?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1918,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770109527834,
+      "changelog": "- Initial release of qwen-image-plus-sophnet skill.\n- Enables image generation via Sophnet Qwen-Image-Plus API, including task creation and polling until completion.\n- Supports user-configurable options: prompt, negative-prompt, image size, number of images, watermark, prompt extension, API key, poll interval, and max wait time.\n- Outputs image URL(s) for use in user responses.\n- Provides clear workflow, example usage, and troubleshooting for common errors.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d493a815422ad5d150f0ecfb3b895513f54c270a7ace83c04423060eb6cadae1"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71181,
+  "uuid": "skill-clawhub-cpp-problem-generator",
+  "skillKey": "clawhub-cpp-problem-generator",
+  "name": "C++ 算法竞赛自动化测试数据生成与校验框架",
+  "summary": "基于原题生成新题面、验证器及完整测试数据，自动套用 testlib 标准模板。 当用户要求生成测试数据时使用。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cpp_problem_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sirwym",
+      "features": [
+        "基于原题生成新题面、验证器及完整测试数据，自动套用 testlib 标准模板。 当用户要求生成测试数据时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cpp-problem-generator@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/35523495?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cpp-problem-generator",
+      "url": "https://clawhub.ai/skills/cpp-problem-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cpp-problem-generator",
+    "url": "https://clawhub.ai/skills/cpp-problem-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cpp-problem-generator-f1e28f0386dfadac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cpp-problem-generator@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cpp-problem-generator-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b617f3737ff7014b4251344071a33af92646f795b4d8d2532b1a1f87f2e8af92",
+      "artifactSizeBytes": 2755
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T06:49:08.550Z"
+}

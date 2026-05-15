@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68843,
+  "uuid": "skill-clawhub-clean-desktop",
+  "skillKey": "clawhub-clean-desktop",
+  "name": "clean-desktop",
+  "summary": "自动分类移动桌面文件到图片、文档、压缩包文件夹，支持预览模式避免实际修改。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clean_desktop",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "578499893",
+      "features": [
+        "自动分类移动桌面文件到图片、文档、压缩包文件夹，支持预览模式避免实际修改。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clean-desktop@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26110046?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clean-desktop",
+      "url": "https://clawhub.ai/skills/clean-desktop"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clean-desktop",
+    "url": "https://clawhub.ai/skills/clean-desktop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clean-desktop-168b66a9580bc614.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clean-desktop@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clean-desktop-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75c539403b906f5a721165d4c91bce03084f1f11ca74b29ff855b8e6d0e603e3",
+      "artifactSizeBytes": 2233
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T01:34:12.408Z"
+}

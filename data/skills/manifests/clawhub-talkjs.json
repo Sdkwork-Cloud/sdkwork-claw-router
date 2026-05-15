@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36616,
+  "uuid": "skill-clawhub-talkjs",
+  "skillKey": "clawhub-talkjs",
+  "name": "Talkjs",
+  "summary": "TalkJS integration. Manage data, records, and automate workflows. Use when the user wants to interact with TalkJS data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.talkjs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "TalkJS integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with TalkJS data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/talkjs@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "talkjs",
+      "url": "https://clawhub.ai/skills/talkjs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "talkjs",
+    "url": "https://clawhub.ai/skills/talkjs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/talkjs-12d90aadeeb68b8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/talkjs@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-talkjs-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:441675f14c722c6da6e96937aee88ad065ba01287b432dd9a0f98c2eb89092fe",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:50:05.474Z"
+}

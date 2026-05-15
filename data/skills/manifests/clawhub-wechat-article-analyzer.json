@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67830,
+  "uuid": "skill-clawhub-wechat-article-analyzer",
+  "skillKey": "clawhub-wechat-article-analyzer",
+  "name": "Wechat Article Analyzer",
+  "summary": "微信公众号文章深度分析工具。 当用户发送微信公众号文章链接时，可以读取文章内容并进行深度分析。 功能：自动提取文章标题和正文、提取时间线、识别关键人物/公司、提取核心事实、进行主题分析、生成报告。 支持输出格式：Markdown 报告、OpenCLI 适配器、JSON 数据。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_article_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teenyboy",
+      "features": [
+        "微信公众号文章深度分析工具。 当用户发送微信公众号文章链接时，可以读取文章内容并进行深度分析。 功能：自动提取文章标题和正文、提取时间线、识别关键人物/公司、提取核心事实、进行主题分析、生成."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-article-analyzer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7332164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-article-analyzer",
+      "url": "https://clawhub.ai/skills/wechat-article-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-article-analyzer",
+    "url": "https://clawhub.ai/skills/wechat-article-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-article-analyzer-60257dec4eefee3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-article-analyzer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-article-analyzer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bf805930b470012e4acb244f37d5291e68929576a989fb3fe09d43bada44727",
+      "artifactSizeBytes": 2572
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T16:10:42.233Z"
+}

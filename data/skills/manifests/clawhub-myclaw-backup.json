@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12778,
+  "uuid": "skill-clawhub-myclaw-backup",
+  "skillKey": "clawhub-myclaw-backup",
+  "name": "myclaw-backup",
+  "summary": "Backup and restore all OpenClaw configuration, agent memory, skills, and workspace data. Part of the MyClaw.ai (https://myclaw.ai/skills) open skills ecosyst...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.myclaw_backup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Leo Ye",
+      "features": [
+        "Backup and restore all OpenClaw configuration, agent memory, skills, and workspace data",
+        "Part of the MyClaw.ai (https://myclaw.ai/skills) open skills ecosyst..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/myclaw-backup@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121472001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "myclaw-backup",
+      "url": "https://clawhub.ai/skills/myclaw-backup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "myclaw-backup",
+    "url": "https://clawhub.ai/skills/myclaw-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/myclaw-backup-675d7f9214c33593.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/myclaw-backup@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-myclaw-backup-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f936a06c7846c7c36ed639a032e9121a96454207e11ecb7e1d732c1f1b46d3b2",
+      "artifactSizeBytes": 1907
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T07:13:04.896Z"
+}

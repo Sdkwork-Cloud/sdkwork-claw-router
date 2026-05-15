@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21601,
+  "uuid": "skill-clawhub-deepwiki-mcp-skill",
+  "skillKey": "clawhub-deepwiki-mcp-skill",
+  "name": "DeepWiki MCP Skill",
+  "summary": "Ask questions and read documentation about any GitHub repository using DeepWiki MCP. Use when you need to understand a codebase, find specific APIs, or get c...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deepwiki_mcp_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Ask questions and read documentation about any GitHub repository using DeepWiki MCP",
+        "Use when you need to understand a codebase, find specific APIs, or get c..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deepwiki-mcp-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deepwiki-mcp-skill",
+      "url": "https://clawhub.ai/skills/deepwiki-mcp-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deepwiki-mcp-skill",
+    "url": "https://clawhub.ai/skills/deepwiki-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deepwiki-mcp-skill-4a79f7f6f121c4ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deepwiki-mcp-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-deepwiki-mcp-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a3c64fea274bbb1dd39972b4c2019c7a237fcb94d62fbd025b4d0b091177f2e1",
+      "artifactSizeBytes": 2327
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T15:25:47.285Z"
+}

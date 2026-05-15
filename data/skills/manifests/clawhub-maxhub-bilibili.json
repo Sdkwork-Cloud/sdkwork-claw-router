@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62308,
+  "uuid": "skill-clawhub-maxhub-bilibili",
+  "skillKey": "clawhub-maxhub-bilibili",
+  "name": "Maxhub Bilibili",
+  "summary": "B站/Bilibili平台B站视频数据、UP主分析与弹幕采集。当用户提到b站、bilibili、弹幕、视频、番剧等相关需求时激活此Skill。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_bilibili",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xie Hao",
+      "features": [
+        "B站/Bilibili平台B站视频数据、UP主分析与弹幕采集。当用户提到b站、bilibili、弹幕、视频、番剧等相关需求时激活此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxhub-bilibili@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128963651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxhub-bilibili",
+      "url": "https://clawhub.ai/skills/maxhub-bilibili"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-bilibili",
+    "url": "https://clawhub.ai/skills/maxhub-bilibili",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-bilibili-ced76564cb37d4af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxhub-bilibili@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxhub-bilibili-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c6b34a89bc9d512f7db9f480e3b0147192b86652dd23775dc9e9df3c27911ae",
+      "artifactSizeBytes": 1933
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:50:50.893Z"
+}

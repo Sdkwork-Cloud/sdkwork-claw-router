@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21678,
+  "uuid": "skill-clawhub-data-privacy-checklist",
+  "skillKey": "clawhub-data-privacy-checklist",
+  "name": "Data Privacy Checklist",
+  "summary": "Assess data privacy compliance across 20 control areas with 63 controls covering governance, consent, security, breach response, vendor management, and cross...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.data_privacy_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Assess data privacy compliance across 20 control areas with 63 controls covering governance, co."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/data-privacy-checklist@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "data-privacy-checklist",
+      "url": "https://clawhub.ai/skills/data-privacy-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "data-privacy-checklist",
+    "url": "https://clawhub.ai/skills/data-privacy-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/data-privacy-checklist-2084e70d67bd6820.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/data-privacy-checklist@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-data-privacy-checklist-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1ccf4bd0cb5610ac40b6fc10e0567bb3c41a050230747790bffda0c92699b931",
+      "artifactSizeBytes": 2208
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T03:09:44.603Z"
+}

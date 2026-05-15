@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24532,
+  "uuid": "skill-clawhub-agent-qa-gates",
+  "skillKey": "clawhub-agent-qa-gates",
+  "name": "Agent QA Gates",
+  "summary": "Output validation gates for AI agent systems. Prevents hallucinated data, leaked internal context, wrong formats, duplicate sends, post-compaction drift, and...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_qa_gates",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Don Zurbrick",
+      "features": [
+        "Output validation gates for AI agent systems",
+        "Prevents hallucinated data, leaked internal context, wrong formats, duplicate sends, post-compa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-qa-gates@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/24554955?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-qa-gates",
+      "url": "https://clawhub.ai/skills/agent-qa-gates"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-qa-gates",
+    "url": "https://clawhub.ai/skills/agent-qa-gates",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-qa-gates-d2050605d4bc1bb7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-qa-gates@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-qa-gates-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2860c57c66f06c4f726b7349d3461f3614c127d787c4d95acee452c5f4f23873",
+      "artifactSizeBytes": 1996
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T19:44:39.005Z"
+}

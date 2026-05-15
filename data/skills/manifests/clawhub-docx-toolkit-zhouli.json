@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39860,
+  "uuid": "skill-clawhub-docx-toolkit-zhouli",
+  "skillKey": "clawhub-docx-toolkit-zhouli",
+  "name": "Docx Toolkit",
+  "summary": "Extract text, tables, and images from .docx and legacy .doc files. Handles large documents, CJK text, and complex table structures. Includes deduplication an...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docx_toolkit_zhouli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "onlyloveher",
+      "features": [
+        "Extract text, tables, and images from .docx and legacy .doc files",
+        "Handles large documents, CJK text, and complex table structures",
+        "Includes deduplication an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docx-toolkit-zhouli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/972832?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docx-toolkit-zhouli",
+      "url": "https://clawhub.ai/skills/docx-toolkit-zhouli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docx-toolkit-zhouli",
+    "url": "https://clawhub.ai/skills/docx-toolkit-zhouli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docx-toolkit-zhouli-5705d9b6d304b809.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docx-toolkit-zhouli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docx-toolkit-zhouli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:211b7b4416ecec47eab2cae9dc91542d627deb9dc1eae0c7ec12c6b3e45374cf",
+      "artifactSizeBytes": 2376
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T04:04:31.163Z"
+}

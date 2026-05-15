@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/drawing-bak@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawing_bak",
+  "skill": {
+    "id": 30289,
+    "skillKey": "clawhub-drawing-bak",
+    "name": "Drawing.Bak"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawing-bak",
+    "url": "https://clawhub.ai/skills/drawing-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawing-bak-990f32b438ba2d4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate children's drawings and coloring pages with modular prompts, style packs, and print-ready constraints across image models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "12357851",
+      "userId": "s170eqsx6mcdwwq987j2g40ahs83kfe4",
+      "displayName": "12357851",
+      "image": "https://avatars.githubusercontent.com/u/200716084?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773814108131,
+      "changelog": "Initial release of the Drawing skill for generating children's drawings and coloring pages.\n\n- Modular prompt protocol for clean, print-ready outputs across multiple image models\n- Style packs, coloring-page rules, and kid-safe constraints by age group\n- Memory system for user preferences, winning prompts, and character/scene continuity\n- Model-portable adapters for OpenClaw and user-configured image models\n- Fast prompt starters and detailed protocols for different use cases (color, coloring page, educational)\n- Security note: only prompt text and reference images are sent out",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a5a0b684fea482eff975a820055203f96eda7f66320f57588af379728b5082f5"
+}

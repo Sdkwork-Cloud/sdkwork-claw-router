@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-aging-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_aging_openapi_skill",
+  "skill": {
+    "id": 55940,
+    "skillKey": "clawhub-ai-aging-openapi-skill",
+    "name": "AI Age Progression Generator - Free Online AI Age Filter – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-aging-openapi-skill",
+    "url": "https://clawhub.ai/skills/ai-aging-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-aging-openapi-skill-983662e260ec1114.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI age progression — transform a portrait to show how the person will look older"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775813631095,
+      "changelog": "ai-aging-openapi-skill 1.0.0\n\n- Initial release introducing AI-powered age progression for portrait photos.\n- Integrates with WeShop OpenAPI to transform a portrait and visualize age progression.\n- Requires a WeShop API key; uses secure HTTPS requests to openapi.weshop.ai.\n- Supports custom aging instructions and batch generation (1–16 images).\n- Includes endpoints for image upload, run initiation, and run status polling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b5c4aed60e1f4553ad8c122a758657cae90899ef203589d41e33172a048ce7ba"
+}

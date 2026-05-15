@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55752,
+  "uuid": "skill-clawhub-clawsaver",
+  "skillKey": "clawhub-clawsaver",
+  "name": "Clawsaver",
+  "summary": "Reduce model API costs by 20–40% through intelligent message batching. Buffer related messages, send once.",
+  "version": "1.4.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawsaver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ragesaq",
+      "features": [
+        "Reduce model API costs by 20–40% through intelligent message batching",
+        "Buffer related messages, send once."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawsaver@1.4.7",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11304287?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawsaver",
+      "url": "https://clawhub.ai/skills/clawsaver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawsaver",
+    "url": "https://clawhub.ai/skills/clawsaver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawsaver-923d439cc6b7c3ea.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawsaver@1.4.7",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawsaver-1.4.7.json",
+      "version": "1.4.7",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ee59e58b622e19d1ed828bf290d5ec56d7d9af8a2d6a6431c164c0869845bb4e",
+      "artifactSizeBytes": 1865
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T19:12:22.504Z"
+}

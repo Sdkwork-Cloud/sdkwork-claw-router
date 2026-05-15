@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aisa-media-gen@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_media_gen",
+  "skill": {
+    "id": 12312,
+    "skillKey": "clawhub-aisa-media-gen",
+    "name": "AIsa Media Gen"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-media-gen",
+    "url": "https://clawhub.ai/skills/aisa-media-gen",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-media-gen-d09440cc6b37b78c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate images & videos with AIsa. Gemini 3 Pro Image (image) + Qwen Wan 2.6 (video) via one API key."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aisapay",
+      "userId": "s17fk6ed1hxsakf921v2wh4g8n842987",
+      "displayName": "AIsaPay",
+      "image": "https://avatars.githubusercontent.com/u/239797396?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1716,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770273878956,
+      "changelog": "Initial release of openclaw-media-gen (aisa-media-gen):\n\n- Generate images with Gemini 3 Pro Image and videos with Qwen Wan 2.6 using a single API key.\n- Provides API and curl examples for image and video generation.\n- Includes guidance for Python client usage for both image and video workflows.\n- Requires only Python3, curl, and your AISA_API_KEY environment variable.\n- Full API documentation references included for quick integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67a89c0c98792d8adaaf26c3dd6a18c4272d90631b8ae259ff6a9545a2bc5b46"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-relay-browser@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_relay_browser",
+  "skill": {
+    "id": 50806,
+    "skillKey": "clawhub-claw-relay-browser",
+    "name": "Claw Relay — Browser Access for AI Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-relay-browser",
+    "url": "https://clawhub.ai/skills/claw-relay-browser",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-relay-browser-db18e869d5ea8bb8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control a remote browser through Claw Relay using the CLI client. Use when you need to navigate authenticated websites, click buttons, fill forms, take scree..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andreagriffiths11",
+      "userId": "s178f3ak2k2fbna91qkszrmzt583vpp2",
+      "displayName": "acolombiadev",
+      "image": "https://avatars.githubusercontent.com/u/20666190?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 329,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774803890529,
+      "changelog": "Initial release. Gives AI agents controlled access to a real browser with token auth, scoped permissions, site allowlists, and audit logging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c00a17f1b20209298a439feda3458cc8981dbc197c1678b1a27deb17c322948c"
+}

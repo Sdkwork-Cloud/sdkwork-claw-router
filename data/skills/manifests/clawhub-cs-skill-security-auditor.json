@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22998,
+  "uuid": "skill-clawhub-cs-skill-security-auditor",
+  "skillKey": "clawhub-cs-skill-security-auditor",
+  "name": "skill-security-auditor",
+  "summary": "Security audit and vulnerability scanner for AI agent skills before installation. Use when: (1) evaluating a skill from an untrusted source, (2) auditing a s...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cs_skill_security_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alireza Rezvani",
+      "features": [
+        "Security audit and vulnerability scanner for AI agent skills before installation",
+        "Use when: (1) evaluating a skill from an untrusted source, (2) auditing a s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cs-skill-security-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5697919?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cs-skill-security-auditor",
+      "url": "https://clawhub.ai/skills/cs-skill-security-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cs-skill-security-auditor",
+    "url": "https://clawhub.ai/skills/cs-skill-security-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cs-skill-security-auditor-07579730e7fb90a3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cs-skill-security-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cs-skill-security-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e61ca9c307924f9ff03eac9bcac9ead72ac8a0ca16af03819eb3138cec320a0",
+      "artifactSizeBytes": 1987
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T15:51:00.012Z"
+}

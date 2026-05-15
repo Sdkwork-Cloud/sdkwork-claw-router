@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/amazon-pricing-strategy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.amazon_pricing_strategy",
+  "skill": {
+    "id": 28745,
+    "skillKey": "clawhub-amazon-pricing-strategy",
+    "name": "Amazon Pricing Strategy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "amazon-pricing-strategy",
+    "url": "https://clawhub.ai/skills/amazon-pricing-strategy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/amazon-pricing-strategy-48156c58983c3baa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Amazon pricing strategy and repricing agent. Set competitive prices, build repricing rules, analyze Buy Box win rate, plan promotional pricing, and balance m..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mguozhen",
+      "userId": "s170nk66cz4zpwnnsv8bxksrp983f82k",
+      "displayName": "mguozhen",
+      "image": "https://avatars.githubusercontent.com/u/1411875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 298,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774076572880,
+      "changelog": "Initial release — provides a comprehensive Amazon pricing strategy agent.\n\n- Offers step-by-step pricing strategies for every product life stage: launch, growth, mature, and decline.\n- Includes built-in commands for price analysis, Buy Box strategy, repricing rules, price elasticity, and promotional planning.\n- Details data requirements: COGS, sales velocity, competitor prices, Buy Box rate, margin targets, and product stage.\n- Contains clear frameworks for calculating price floor, setting repricing logic, and running seasonal or event-based promotions.\n- Designed for both private label brands and resellers to optimize for revenue, profit, and Buy Box win rate.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae24bf3628f6879539f65f21180211398711986af9848d5c348573c9730bb5d6"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66129,
+  "uuid": "skill-clawhub-daily-news-summary",
+  "skillKey": "clawhub-daily-news-summary",
+  "name": "每日新闻总结",
+  "summary": "每日从多个权威新闻来源（BBC RSS、南华早报、36氪、TechCrunch、The Verge、Microsoft/NVIDIA官方博客等）抓取最新资讯，自动生成四板块新闻日报：国际重要新闻、中国重要新闻、AI重要新闻、AI科技巨头动态。输出带原文链接的Markdown文件。当用户需要生成每日新闻摘要、科技资...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_news_summary",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MZCnyhhd",
+      "features": [
+        "每日从多个权威新闻来源（BBC RSS、南华早报、36氪、TechCrunch、The Verge、Microsoft/NVIDIA官方博客等）抓取最新资讯，自动生成四板块新闻日报：国际重要."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-news-summary@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140940693?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-news-summary",
+      "url": "https://clawhub.ai/skills/daily-news-summary"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-news-summary",
+    "url": "https://clawhub.ai/skills/daily-news-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-news-summary-b3322303af7ac73d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-news-summary@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-news-summary-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8cf722b6e7cdaffc3fad02602a6632dbef22fe848a59304154a94724a9584975",
+      "artifactSizeBytes": 2239
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-25T14:17:09.780Z"
+}

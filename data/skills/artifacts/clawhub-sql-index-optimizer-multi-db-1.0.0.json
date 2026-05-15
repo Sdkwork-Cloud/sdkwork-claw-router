@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sql-index-optimizer-multi-db@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sql_index_optimizer_multi_db",
+  "skill": {
+    "id": 60817,
+    "skillKey": "clawhub-sql-index-optimizer-multi-db",
+    "name": "当用户希望“通过建表语句 + 慢 SQL 自动优化索引”时使用此 Skill，支持 MySQL、Oracle、PostgreSQL。脚本使用 Python，自动解析 DDL 与慢 SQL 中的 WHERE/JOIN/ORDER BY 列，生成候选索引及对."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sql-index-optimizer-multi-db",
+    "url": "https://clawhub.ai/skills/sql-index-optimizer-multi-db",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sql-index-optimizer-multi-db-941094591ed4504d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户希望“通过建表语句 + 慢 SQL 自动优化索引”时使用此 Skill，支持 MySQL、Oracle、PostgreSQL。脚本使用 Python，自动解析 DDL 与慢 SQL 中的 WHERE/JOIN/ORDER BY 列，生成候选索引及对应数据库的 CREATE INDEX 语句，并输出到文件。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "houyalei",
+      "userId": "s17ag52d73jtm6bc6hp0tv0pa984d0qt",
+      "displayName": "houyalei",
+      "image": "https://avatars.githubusercontent.com/u/25092614?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775532585242,
+      "changelog": "Initial release for automated SQL index optimization on MySQL, Oracle, and PostgreSQL.\n\n- Parses table DDL and slow SQL statements to suggest candidate indexes.\n- Generates CREATE INDEX statements tailored to the target database.\n- Outputs results to markdown or JSON file, including reasons and statistics.\n- Supports prioritizing composite indexes and avoids redundant suggestions.\n- Provides guidance for final verification and notes on index impact.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:32849ef08cbb27f4666f75200ba284be06ba9bbb50a2fffb12e362238b0065e2"
+}

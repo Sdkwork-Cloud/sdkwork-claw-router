@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/virtual-voice-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.virtual_voice_ai",
+  "skill": {
+    "id": 55242,
+    "skillKey": "clawhub-virtual-voice-ai",
+    "name": "Virtual voice builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "virtual-voice-ai",
+    "url": "https://clawhub.ai/skills/virtual-voice-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/virtual-voice-ai-282066d155ff1573.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Wires a real microphone through an AI brain (STT → LLM → TTS) and routes the output to a virtual audio cable so apps like Google Meet hear the processed voic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suhas12345685-pro",
+      "userId": "s17abdwncj5c6fetqnszj56zh983t0n4",
+      "displayName": "Suhas Rudra",
+      "image": "https://avatars.githubusercontent.com/u/265854920?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 169,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774800533175,
+      "changelog": "Initial release of virtual-voice-ai skill.\n\n- Guides users through building a real-time audio interception pipeline in Node.js using mic input, AI processing, and virtual audio output.\n- Provides step-by-step instructions for OS and dependency setup, audio device discovery, and stress-tested script execution.\n- Enforces key rules for audio handling, such as mandatory resampling, TTS buffering, and strict compatibility requirements.\n- Includes a kill switch function for safely stopping the pipeline.\n- Supplies environment variable requirements and progressive documentation for easy setup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:628cb63c1a822f2a8694e0ce94dca8ddc9447add6754395e01e18745c5a427e7"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/medical-terms@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_terms",
+  "skill": {
+    "id": 17923,
+    "skillKey": "clawhub-medical-terms",
+    "name": "Medical Terms"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-terms",
+    "url": "https://clawhub.ai/skills/medical-terms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-terms-3bb4fcf831201150.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Explain medical terminology, lab results, diagnoses, and prescription abbreviations in plain everyday language. Use when users encounter confusing medical wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiwenbing",
+      "userId": "s17ff13sk3g0s0ys10zbbwf0cs83h97j",
+      "displayName": "Wenbing Ji",
+      "image": "https://avatars.githubusercontent.com/u/8498518?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 704,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773725497395,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9e65786ffc13f0e2e204bb6af5b500c03e472e12d830ee75288285c788caa570"
+}

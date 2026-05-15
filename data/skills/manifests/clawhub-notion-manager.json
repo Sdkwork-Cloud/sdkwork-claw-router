@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21637,
+  "uuid": "skill-clawhub-notion-manager",
+  "skillKey": "clawhub-notion-manager",
+  "name": "Notion Manager",
+  "summary": "Production-ready Notion API client for SaaS workflows. Create/read/update pages, query data sources, append blocks.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.notion_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tomas Mikula",
+      "features": [
+        "Production-ready Notion API client for SaaS workflows",
+        "Create/read/update pages, query data sources, append blocks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/notion-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18463926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "notion-manager",
+      "url": "https://clawhub.ai/skills/notion-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "notion-manager",
+    "url": "https://clawhub.ai/skills/notion-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/notion-manager-d9d011565c7847f7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/notion-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-notion-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b4027194dc62ebbad5061f87e0167104fe99e60a96f88f2be30b77798f9ce4b3",
+      "artifactSizeBytes": 2261
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:43:57.131Z"
+}

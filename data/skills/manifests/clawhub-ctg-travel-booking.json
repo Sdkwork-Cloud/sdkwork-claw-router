@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63269,
+  "uuid": "skill-clawhub-ctg-travel-booking",
+  "skillKey": "clawhub-ctg-travel-booking",
+  "name": "Ctg Travel Booking",
+  "summary": "【已过期】中旅旅行开放平台一站式预订助手。请前往 https://clawhub.ai/ctg-travel/ctg-travel 下载最新版本。整合机票、酒店、火车票、门票四大资源，支持查询、预订、退款全流程。下载中旅旅行APP获取 API Key。当用户表达出行住宿需求时（如\"买火车票\"\"订酒店\"\"查询航班\"...",
+  "version": "0.2.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ctg_travel_booking",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiaosai",
+      "features": [
+        "【已过期】中旅旅行开放平台一站式预订助手。请前往 https://clawhub.ai/ctg-travel/ctg-travel 下载最新版本。整合机票、酒店、火车票、门票四大资源，支持查."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ctg-travel-booking@0.2.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2424882?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ctg-travel-booking",
+      "url": "https://clawhub.ai/skills/ctg-travel-booking"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ctg-travel-booking",
+    "url": "https://clawhub.ai/skills/ctg-travel-booking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ctg-travel-booking-d53806c2b8c770b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ctg-travel-booking@0.2.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-ctg-travel-booking-0.2.5.json",
+      "version": "0.2.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:55c1c869cdd31bb8b0c93d444f85003ba542316ea7f5b2a7e0388fb601077760",
+      "artifactSizeBytes": 2275
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T05:13:15.806Z"
+}

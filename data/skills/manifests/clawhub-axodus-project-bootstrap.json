@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45267,
+  "uuid": "skill-clawhub-axodus-project-bootstrap",
+  "skillKey": "clawhub-axodus-project-bootstrap",
+  "name": "Project Bootstrap",
+  "summary": "Bootstrap new projects with predictable structure and validation commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.axodus_project_bootstrap",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mauricio Z.",
+      "features": [
+        "Bootstrap new projects with predictable structure and validation commands."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/axodus-project-bootstrap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26634695?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "axodus-project-bootstrap",
+      "url": "https://clawhub.ai/skills/axodus-project-bootstrap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "axodus-project-bootstrap",
+    "url": "https://clawhub.ai/skills/axodus-project-bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/axodus-project-bootstrap-ee17cb81c957b294.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/axodus-project-bootstrap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-axodus-project-bootstrap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c1f98345988ccceda98c92c73a4420c3151e79633deecbcd8af338437879601",
+      "artifactSizeBytes": 2314
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T13:07:57.406Z"
+}

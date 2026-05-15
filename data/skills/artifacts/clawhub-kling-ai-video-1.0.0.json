@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kling-ai-video@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kling_ai_video",
+  "skill": {
+    "id": 55275,
+    "skillKey": "clawhub-kling-ai-video",
+    "name": "Kling Ai Video"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kling-ai-video",
+    "url": "https://clawhub.ai/skills/kling-ai-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kling-ai-video-ebdc988aa369f28d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — animate this image into a 5-second cinematic video clip — and get AI gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 207,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776695600672,
+      "changelog": "- Initial release of Kling AI Video skill.\n- Enables AI-generated video creation from text prompts or uploaded images/videos.\n- Supports major formats (JPG, PNG, MP4, MOV) up to 200MB per file.\n- Streamlined cloud-based workflow: upload, describe the animation, receive downloadable 1080p MP4 in minutes.\n- Includes video editing features (aspect ratio, text overlays, audio tracks) via natural language commands.\n- Automatically manages authentication, session creation, and error handling for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:08f8301f0470718357d7fc0c4f0abcda764c9bc02349901d212147496acee217"
+}

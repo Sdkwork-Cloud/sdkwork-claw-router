@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-plus-sync@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_plus_sync",
+  "skill": {
+    "id": 63863,
+    "skillKey": "clawhub-memory-plus-sync",
+    "name": "Memory Plus Sync"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-plus-sync",
+    "url": "https://clawhub.ai/skills/memory-plus-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-plus-sync-3d82d3f768b69bba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "实现飞书、微信、Telegram 等多渠道消息采集与同步，统一存储到官方 SQLite，支持实时监控、告警及自动恢复。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lewistouchtech",
+      "userId": "s173ymz9r7py6602zkr8hfna7d83kq7x",
+      "displayName": "Lewis&Eva",
+      "image": "https://avatars.githubusercontent.com/u/254896013?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1776447219662,
+      "changelog": "v2.0.0 重大升级：MCP服务器、三代理验证、智能去重、批量处理等高级功能\n\n🚀 新功能：\n1. MCP 服务器集成 (7个标准化工具)\n2. 三代理验证机制 (准确率93%)\n3. 智能去重功能 (基于哈希和语义相似度)\n4. 批量处理支持 (并发处理+错误恢复)\n5. 版本控制系统 (完整变更历史)\n6. 健康度监控 (60秒间隔自动检查)\n7. 故障自动修复 (自动重连/客户端重置)\n\n🔧 技术架构升级：\n- 后端：FastAPI + Uvicorn\n- 验证：三代理并行处理 + 仲裁机制\n- 存储：三级存储架构 (L1/L2/L3)\n- 监控：实时健康检查 + 告警系统\n- 集成：无缝对接 OpenClaw 记忆系统\n\n📊 性能指标：\n- 准确率：93% (超越 Mem0 65%, 字节跳动 70%)\n- 响应时间：8ms (远低于 30s 目标)\n- 稳定性：95% (长时间运行测试)\n- 集成测试：100% 通过率\n\n🎯 向后兼容性：\n- 保留原有同步功能\n- 兼容原有命令行接口\n- 支持渐进式升级",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:262fabf694ba9e8bf1e37851263441f04daf72f3cdcabfc77d209f444081d872"
+}

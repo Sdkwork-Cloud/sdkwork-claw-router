@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/word-cn-format@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.word_cn_format",
+  "skill": {
+    "id": 71822,
+    "skillKey": "clawhub-word-cn-format",
+    "name": "中文word文档通用格式标准化"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "word-cn-format",
+    "url": "https://clawhub.ai/skills/word-cn-format",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/word-cn-format-8ff6dd1340eb4d13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供Word文档中文格式标准化功能，统一标题、正文、图片和图表格式，确保符合中文排版规范。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lmtea1981",
+      "userId": "s170z930wfvpd40gx8wgr14bd183ke1f",
+      "displayName": "lmtea1981",
+      "image": "https://avatars.githubusercontent.com/u/24216381?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1390,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773365782510,
+      "changelog": "init",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f760c69018f63818a8197fb7ced3e9f2afb833ced6ee1f52f2bf60ce9a6609a7"
+}

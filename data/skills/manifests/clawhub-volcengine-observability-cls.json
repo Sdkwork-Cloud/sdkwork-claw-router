@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15009,
+  "uuid": "skill-clawhub-volcengine-observability-cls",
+  "skillKey": "clawhub-volcengine-observability-cls",
+  "name": "Volcengine Observability Cls",
+  "summary": "Log query and troubleshooting workflows with Volcengine CLS. Use when users need error analysis, time-range queries, aggregation dashboards, or incident diagnostics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volcengine_observability_cls",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cinience",
+      "features": [
+        "Log query and troubleshooting workflows with Volcengine CLS",
+        "Use when users need error analysis, time-range queries, aggregation dashboards, or incident dia."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volcengine-observability-cls@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/557426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volcengine-observability-cls",
+      "url": "https://clawhub.ai/skills/volcengine-observability-cls"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volcengine-observability-cls",
+    "url": "https://clawhub.ai/skills/volcengine-observability-cls",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volcengine-observability-cls-0728160aa08299a9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volcengine-observability-cls@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-volcengine-observability-cls-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:727ecf880cae10ed4ffd48538bf04d218c4f4d0a59211206e0f075a21fe98068",
+      "artifactSizeBytes": 2036
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T00:24:35.381Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17635,
+  "uuid": "skill-clawhub-chaoschain-ace",
+  "skillKey": "clawhub-chaoschain-ace",
+  "name": "ChaosChain ACE (Phase 0)",
+  "summary": "Authorize autonomous x402 API payments with bounded, wallet-funded session keys under strict policy limits in ACE Phase 0 without credit lines.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chaoschain_ace",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "SumeetChougule",
+      "features": [
+        "Authorize autonomous x402 API payments with bounded, wallet-funded session keys under strict po."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chaoschain-ace@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/101477214?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chaoschain-ace",
+      "url": "https://clawhub.ai/skills/chaoschain-ace"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chaoschain-ace",
+    "url": "https://clawhub.ai/skills/chaoschain-ace",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chaoschain-ace-e9d1ee9fdc9d94d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chaoschain-ace@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-chaoschain-ace-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:72a3b6c2b951d331cf468d73568abd8c35e9d367f4d8f027e2410066283ccf39",
+      "artifactSizeBytes": 2532
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-14T09:05:02.566Z"
+}

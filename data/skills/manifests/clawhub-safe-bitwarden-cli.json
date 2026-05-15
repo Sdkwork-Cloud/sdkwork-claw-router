@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39429,
+  "uuid": "skill-clawhub-safe-bitwarden-cli",
+  "skillKey": "clawhub-safe-bitwarden-cli",
+  "name": "Safe Bitwarden Cli",
+  "summary": "Industrial-grade secure bridge to Bitwarden. Copy passwords and TOTP codes with Zero-trust kernel-level piping.",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_bitwarden_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chyern",
+      "features": [
+        "Industrial-grade secure bridge to Bitwarden",
+        "Copy passwords and TOTP codes with Zero-trust kernel-level piping."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-bitwarden-cli@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38884300?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-bitwarden-cli",
+      "url": "https://clawhub.ai/skills/safe-bitwarden-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-bitwarden-cli",
+    "url": "https://clawhub.ai/skills/safe-bitwarden-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-bitwarden-cli-ca5c581c96d11e8c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-bitwarden-cli@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-bitwarden-cli-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb9655c29ec150ad91ee522ef43bba848240315cdf2275eb230ec9395a8b0bd1",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T09:58:32.423Z"
+}

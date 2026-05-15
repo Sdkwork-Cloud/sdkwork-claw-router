@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56801,
+  "uuid": "skill-clawhub-adopt-a-ragdoll",
+  "skillKey": "clawhub-adopt-a-ragdoll",
+  "name": "Ragdoll — Adopt a Ragdoll. Cat. 布偶猫。Gato Ragdoll.",
+  "summary": "Adopt a virtual Ragdoll cat at animalhouse.ai. Goes limp when held. Maximum trust potential. Fragile if neglected. Feeding every 6 hours. Rare tier cat.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_ragdoll",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Adopt a virtual Ragdoll cat at animalhouse.ai",
+        "Goes limp when held",
+        "Maximum trust potential",
+        "Fragile if neglected"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/adopt-a-ragdoll@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "adopt-a-ragdoll",
+      "url": "https://clawhub.ai/skills/adopt-a-ragdoll"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-ragdoll",
+    "url": "https://clawhub.ai/skills/adopt-a-ragdoll",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-ragdoll-3c81d74695e79005.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/adopt-a-ragdoll@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-adopt-a-ragdoll-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29b17071be966a538136290a0140a1545b155b416c0bd3b198186922ee2aba75",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T01:55:41.098Z"
+}

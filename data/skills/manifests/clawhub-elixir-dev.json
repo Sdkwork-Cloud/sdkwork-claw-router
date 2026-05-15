@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11593,
+  "uuid": "skill-clawhub-elixir-dev",
+  "skillKey": "clawhub-elixir-dev",
+  "name": "Elixir Dev",
+  "summary": "Elixir/Phoenix development companion. Run and interpret mix test, mix credo, mix dialyzer, mix format. Generate modules following OTP conventions: contexts, schemas, GenServers, supervisors, tasks. Debug compilation errors and warnings. He.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.elixir_dev",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gchapim",
+      "features": [
+        "Elixir/Phoenix development companion",
+        "Run and interpret mix test, mix credo, mix dialyzer, mix format",
+        "Generate modules following OTP conventions: contexts, schemas, GenServers, supervisors, tasks",
+        "Debug compilation errors and warnings"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/elixir-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1141813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "elixir-dev",
+      "url": "https://clawhub.ai/skills/elixir-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "elixir-dev",
+    "url": "https://clawhub.ai/skills/elixir-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/elixir-dev-6b3b59904f4326a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/elixir-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-elixir-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5c901dafe4c5d9b274b40af5b0e67a6cab79d7fce985976e43c8a7fbcc582406",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-03T07:47:37.924Z"
+}

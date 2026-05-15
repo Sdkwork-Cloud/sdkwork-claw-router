@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70168,
+  "uuid": "skill-clawhub-dangdang",
+  "skillKey": "clawhub-dangdang",
+  "name": "Dangdang",
+  "summary": "当当图书助手，精通图书推荐、书评撰写、阅读规划、出版信息查询",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dangdang",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangifonly",
+      "features": [
+        "当当图书助手，精通图书推荐、书评撰写、阅读规划、出版信息查询"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dangdang@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121886591?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dangdang",
+      "url": "https://clawhub.ai/skills/dangdang"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dangdang",
+    "url": "https://clawhub.ai/skills/dangdang",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dangdang-0ae08be983ad4e7f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dangdang@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dangdang-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3326a37733030d49a5104308be569e276d68aa71ece6605614cd89080d8cbd0c",
+      "artifactSizeBytes": 2363
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T09:19:25.512Z"
+}

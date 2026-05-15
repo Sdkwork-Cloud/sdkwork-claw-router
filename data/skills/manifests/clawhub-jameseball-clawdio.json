@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15104,
+  "uuid": "skill-clawhub-jameseball-clawdio",
+  "skillKey": "clawhub-jameseball-clawdio",
+  "name": "Clawdio",
+  "summary": "Secure P2P communication for AI agents. Noise XX handshake, XChaCha20-Poly1305 encryption, connection consent, human verification. Zero central servers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jameseball_clawdio",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JamesEBall",
+      "features": [
+        "Secure P2P communication for AI agents",
+        "Noise XX handshake, XChaCha20-Poly1305 encryption, connection consent, human verification",
+        "Zero central servers."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jameseball-clawdio@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73405337?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jameseball-clawdio",
+      "url": "https://clawhub.ai/skills/jameseball-clawdio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jameseball-clawdio",
+    "url": "https://clawhub.ai/skills/jameseball-clawdio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jameseball-clawdio-f7bbcb9ec698f133.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jameseball-clawdio@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jameseball-clawdio-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03de127f27dff1ec51bca2bcda79b05f03b88e6fa442a3819954c024768a1229",
+      "artifactSizeBytes": 1992
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T04:34:15.080Z"
+}

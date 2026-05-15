@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59636,
+  "uuid": "skill-clawhub-follow-up-commander",
+  "skillKey": "clawhub-follow-up-commander",
+  "name": "Follow Up Commander",
+  "summary": "把会后事项拆成行动清单、催办节奏、邮件草稿和下次同步议题。；use for followup, meeting, email workflows；do not use for 直接发送邮件, 伪造完成状态.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.follow_up_commander",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把会后事项拆成行动清单、催办节奏、邮件草稿和下次同步议题。；use for followup, meeting, email workflows；do not use for 直接发送邮件,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/follow-up-commander@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "follow-up-commander",
+      "url": "https://clawhub.ai/skills/follow-up-commander"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "follow-up-commander",
+    "url": "https://clawhub.ai/skills/follow-up-commander",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/follow-up-commander-ffe5dd88a51587a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/follow-up-commander@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-follow-up-commander-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:363a8279a411486f9a563fbebb837fe5eee6283194583e0b3ec515586a172894",
+      "artifactSizeBytes": 2450
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T08:37:14.483Z"
+}

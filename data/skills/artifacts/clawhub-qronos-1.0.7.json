@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qronos@1.0.7",
+  "version": "1.0.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qronos",
+  "skill": {
+    "id": 23386,
+    "skillKey": "clawhub-qronos",
+    "name": "◉ Qronos"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qronos",
+    "url": "https://clawhub.ai/skills/qronos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qronos-404bc9af697c5f7f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decision guidance for life's crossroads. One question. One answer. One moment of clarity."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qronos-ai",
+      "userId": "publishers:qronos-ai",
+      "displayName": "◉ Qronos AI",
+      "image": "https://avatars.githubusercontent.com/u/65869197?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1463,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 8
+    },
+    "latestVersion": {
+      "version": "1.0.7",
+      "createdAt": 1771079438004,
+      "changelog": "Qronos 1.1.0 introduces improved registration instructions and clarifies API key handling.\n\n- Added explicit step-by-step guidance for API registration and verification, including clearer API error explanations.\n- Updated documentation to highlight: API keys are only obtained from the human via the browser, not any API endpoint.\n- Clarified that the `verification_url` is for human browser use only and cannot be automated.\n- Removed requirement for the `env` field in metadata; now only the `primaryEnv` is specified.\n- Improved instructions for error handling during registration (missing fields, already registered bot, email taken).\n- Minor text and formatting improvements for better readability and guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ad30a1b236c803a4796838b8dbb653f74771dcc2b3da3170a4043b00c3d5fd0f"
+}

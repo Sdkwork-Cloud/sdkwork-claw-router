@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glancely@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glancely",
+  "skill": {
+    "id": 50091,
+    "skillKey": "clawhub-glancely",
+    "name": "Glancely"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glancely",
+    "url": "https://clawhub.ai/skills/glancely",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glancely-0d7ca8d6296dc623.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal tracker framework. Scaffold new habit/workout/mood/reminder trackers from natural language. Dashboard, cron, all in one skill."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junjieyu95",
+      "userId": "s177esgnfx6tq00226867phj4186dsw2",
+      "displayName": "JunjieBusiness",
+      "image": "https://avatars.githubusercontent.com/u/161934703?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 41,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1778297537248,
+      "changelog": "- Added dispatch table to map natural language user requests to corresponding tracker actions and scaffolding flows.\n- Introduced per-route workflow for consistent handling of existing and new tracker requests.\n- Updated setup instructions for first-time users to install CLI and initialize data directory.\n- Expanded scaffold flow: added step-by-step inference, proposal, user confirmation, and automated dashboard build.\n- Clarified environment variable use, platform compatibility, and installation steps.\n- Improved documentation for easier onboarding and maintenance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4ce850244d0d878502c798f4eab19127bc078dc6de12386442d9a372255f4f4"
+}

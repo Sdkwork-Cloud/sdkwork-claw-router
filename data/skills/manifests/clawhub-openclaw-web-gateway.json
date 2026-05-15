@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23237,
+  "uuid": "skill-clawhub-openclaw-web-gateway",
+  "skillKey": "clawhub-openclaw-web-gateway",
+  "name": "Web Gateway",
+  "summary": "Minimal Flask-based multi-user chat interface enabling OpenClaw HTTP integration with persistent UI state and optional Google Maps support.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_web_gateway",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jeanne0r",
+      "features": [
+        "Minimal Flask-based multi-user chat interface enabling OpenClaw HTTP integration with persisten."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-web-gateway@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59070805?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-web-gateway",
+      "url": "https://clawhub.ai/skills/openclaw-web-gateway"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-web-gateway",
+    "url": "https://clawhub.ai/skills/openclaw-web-gateway",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-web-gateway-9ee6a96e06747b30.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-web-gateway@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-web-gateway-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7a940bae0a7799fed299e5c3213c6bc88dc986fa7b01a5ae4ef0b47b3db49950",
+      "artifactSizeBytes": 2383
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T08:13:27.809Z"
+}

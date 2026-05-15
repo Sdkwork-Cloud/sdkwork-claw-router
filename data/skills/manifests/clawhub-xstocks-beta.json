@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38110,
+  "uuid": "skill-clawhub-xstocks-beta",
+  "skillKey": "clawhub-xstocks-beta",
+  "name": "xstocks-beta",
+  "summary": "Search, list, and resolve xStocks tokens on Solana mainnet, and list wallet holdings; use with Jupiter for price and trading functionality.",
+  "version": "0.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xstocks_beta",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manuel Hidalgo",
+      "features": [
+        "Search, list, and resolve xStocks tokens on Solana mainnet, and list wallet holdings",
+        "use with Jupiter for price and trading functionality."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xstocks-beta@0.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220928694?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xstocks-beta",
+      "url": "https://clawhub.ai/skills/xstocks-beta"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xstocks-beta",
+    "url": "https://clawhub.ai/skills/xstocks-beta",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xstocks-beta-aff2700babb800bd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xstocks-beta@0.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-xstocks-beta-0.0.3.json",
+      "version": "0.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b257beda88a6aeca9f9c96c846691dd8294791f3498acce9c9cf8ddfe6a2eec",
+      "artifactSizeBytes": 2325
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T00:00:03.472Z"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42659,
+  "uuid": "skill-clawhub-cludo-integration",
+  "skillKey": "clawhub-cludo-integration",
+  "name": "Cludo",
+  "summary": "Cludo integration. Manage data, records, and automate workflows. Use when the user wants to interact with Cludo data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cludo_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Cludo integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Cludo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cludo-integration@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cludo-integration",
+      "url": "https://clawhub.ai/skills/cludo-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cludo-integration",
+    "url": "https://clawhub.ai/skills/cludo-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cludo-integration-bbfa12811176136a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cludo-integration@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cludo-integration-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:278f0646b4ac382e1217cee6e9addcca91eef5de5fad013bbc64461ac71ecfcc",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:19:25.301Z"
+}

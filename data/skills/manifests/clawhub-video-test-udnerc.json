@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43184,
+  "uuid": "skill-clawhub-video-test-udnerc",
+  "skillKey": "clawhub-video-test-udnerc",
+  "name": "Video Test Udnerc",
+  "summary": "Get processed test video ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_test_udnerc",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "peandrover adam",
+      "features": [
+        "Get processed test video ready to post, without touching a single slider",
+        "Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something lik..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-test-udnerc@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257755799?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-test-udnerc",
+      "url": "https://clawhub.ai/skills/video-test-udnerc"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-test-udnerc",
+    "url": "https://clawhub.ai/skills/video-test-udnerc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-test-udnerc-a666d547250a0519.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-test-udnerc@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-test-udnerc-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dbf15c706972b23ab65a95b2cffaf8d5dbe810d26b80e685bbf45ada12f14df8",
+      "artifactSizeBytes": 2466
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T23:14:40.937Z"
+}

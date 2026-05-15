@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gpt-image2-ppt@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gpt_image2_ppt",
+  "skill": {
+    "id": 37190,
+    "skillKey": "clawhub-gpt-image2-ppt",
+    "name": "Gpt Image2 Ppt Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gpt-image2-ppt",
+    "url": "https://clawhub.ai/skills/gpt-image2-ppt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gpt-image2-ppt-c7df9d198849f9a7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate visually striking PPT slides via OpenAI's gpt-image-2 -- 10 curated styles (Spatial Glass / Tech Blue / Editorial Mono / Dark Aurora / Risograph / W..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juneyaooo",
+      "userId": "s17110xxjryky6mk3d7dykc7kx83rv19",
+      "displayName": "JuneYaooo",
+      "image": "https://avatars.githubusercontent.com/u/60815510?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1778330306263,
+      "changelog": "Add 3 new styles: dark-dashboard, magazine-minimal, nature-cinematic; add generate_ppt.py",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9ac93a051610f43ba539a833e286bd8a12500c4a24453cd0aef8d8eff9f3288"
+}

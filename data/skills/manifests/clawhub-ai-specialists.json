@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17044,
+  "uuid": "skill-clawhub-ai-specialists",
+  "skillKey": "clawhub-ai-specialists",
+  "name": "Ai Specialists",
+  "summary": "Interact with AI Specialists via the AI Specialists Hub MCP endpoint. Use when the user asks about any of their AI specialists (e.g. Ruby, Peter, Benjamin, M...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_specialists",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Erik Ashby",
+      "features": [
+        "Interact with AI Specialists via the AI Specialists Hub MCP endpoint",
+        "Use when the user asks about any of their AI specialists (e.g",
+        "Ruby, Peter, Benjamin, M..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-specialists@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13504002?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-specialists",
+      "url": "https://clawhub.ai/skills/ai-specialists"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-specialists",
+    "url": "https://clawhub.ai/skills/ai-specialists",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-specialists-fb5e79b5e57f585b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-specialists@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-specialists-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:257c2c74968c5a2400c0b913758c20df4a8f65a3e3f326f37d8f7a357aa0c4c7",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-21T15:30:11.516Z"
+}

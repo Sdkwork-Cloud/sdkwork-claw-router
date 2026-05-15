@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59243,
+  "uuid": "skill-clawhub-skill-compressor",
+  "skillKey": "clawhub-skill-compressor",
+  "name": "skill-compressor 精简技能*减少token",
+  "summary": "压缩 skill 降 token 成本。用户说 /skill-compressor 或要求优化/压缩/瘦身 skill 时触发。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_compressor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "David0Ming",
+      "features": [
+        "压缩 skill 降 token 成本。用户说 /skill-compressor 或要求优化/压缩/瘦身 skill 时触发。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-compressor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/153109935?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-compressor",
+      "url": "https://clawhub.ai/skills/skill-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-compressor",
+    "url": "https://clawhub.ai/skills/skill-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-compressor-17a3378a30ae1dc0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-compressor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-compressor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e958aa3fef75239001aed20a65d082c0c3c902979d12731c3f94d14ee2eaf51",
+      "artifactSizeBytes": 2428
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T09:16:26.741Z"
+}

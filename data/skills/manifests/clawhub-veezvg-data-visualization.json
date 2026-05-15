@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64549,
+  "uuid": "skill-clawhub-veezvg-data-visualization",
+  "skillKey": "clawhub-veezvg-data-visualization",
+  "name": "Data Visualization",
+  "summary": "根据数据类型智能选择图表，并按统一规范生成专业 Python matplotlib 可视化代码。 支持三套专业风格模板：BCG（默认绿色简洁风）、The Economist（红线+青蓝媒体风）、McKinsey（亮青+浅灰咨询风）。 触发场景：用户需要可视化数据、生成图表、画图、制作柱状图/折线图/饼图/散点图/...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.veezvg_data_visualization",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "veezVg",
+      "features": [
+        "根据数据类型智能选择图表，并按统一规范生成专业 Python matplotlib 可视化代码。 支持三套专业风格模板：BCG（默认绿色简洁风）、The Economist（红线+青蓝媒体风."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/veezvg-data-visualization@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/97422187?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "veezvg-data-visualization",
+      "url": "https://clawhub.ai/skills/veezvg-data-visualization"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "veezvg-data-visualization",
+    "url": "https://clawhub.ai/skills/veezvg-data-visualization",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/veezvg-data-visualization-87c2a798ae81283b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/veezvg-data-visualization@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-veezvg-data-visualization-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7e2723760597a847c36895f9ced32b5ed2332c57fc5f36d23e7695f73771b82c",
+      "artifactSizeBytes": 2727
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T03:22:27.227Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/luxury-hotel@3.2.0",
+  "version": "3.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.luxury_hotel",
+  "skill": {
+    "id": 46333,
+    "skillKey": "clawhub-luxury-hotel",
+    "name": "Luxury Hotel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "luxury-hotel",
+    "url": "https://clawhub.ai/skills/luxury-hotel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/luxury-hotel-063db4deb9654921.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Discover premium 5-star hotels and luxury resorts. Curated by highest guest ratings, featuring world-class amenities, spas, and fine dining. Also supports: f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dingtom336-gif",
+      "userId": "s17aepsh6v86z2ajsq3ng9tgm983g9pt",
+      "displayName": "dingtom336-gif",
+      "image": "https://avatars.githubusercontent.com/u/256118512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "3.2.0",
+      "createdAt": 1775739035216,
+      "changelog": "**Major update enforcing strict CLI-based hotel data retrieval and output formatting:**\n\n- All hotel recommendations must be sourced exclusively from the flyai CLI; answers from training data are prohibited.\n- Added detailed step-by-step execution rules for environment checks, parameter collection, CLI invocation, and result formatting.\n- Every result must include a real booking link (`[Book]({detailUrl})`), ensuring data authenticity.\n- Enhanced usage and output rules to guarantee accuracy: always show a brand tag, structured comparison, and never fabricate or use static information.\n- Expanded supported travel services: now includes flight, train, attraction tickets, itinerary, visa, car rental, insurance, and more via Fliggy.\n- Improved parameter list and scenario-specific playbooks for precise user intent mapping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:827c304bd60dc9c288a52b9951504c8accd0b100a34a7fe9d42512a90bd0be96"
+}

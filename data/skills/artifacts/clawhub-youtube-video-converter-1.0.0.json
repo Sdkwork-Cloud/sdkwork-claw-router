@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-video-converter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_video_converter",
+  "skill": {
+    "id": 36529,
+    "skillKey": "clawhub-youtube-video-converter",
+    "name": "Youtube Video Converter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-video-converter",
+    "url": "https://clawhub.ai/skills/youtube-video-converter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-video-converter-a8ae3e68e324fe11.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert YouTube video links into converted MP4 files with this skill. Works with MP4, WebM, AVI, MOV files up to 500MB. YouTubers use it for converting YouTu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 205,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775938568003,
+      "changelog": "Initial release of YouTube Video Converter.\n\n- Convert YouTube videos to 1080p MP4, MOV, AVI, or WebM files (up to 500MB).\n- Automatic token/session setup; supports both registered and anonymous users.\n- Cloud-based processing with status updates and error handling (e.g., expired token, file too large).\n- Query credits, upload URLs/files, and manage video export/downloads via clear commands.\n- Includes intent matching for common actions (convert, credits, export, upload, status).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9f5d48c0340eee9d56a2933747842733c13bcc794d1986b243e3dc419f38bd97"
+}

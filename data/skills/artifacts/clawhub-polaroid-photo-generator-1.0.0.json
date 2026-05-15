@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polaroid-photo-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polaroid_photo_generator",
+  "skill": {
+    "id": 55018,
+    "skillKey": "clawhub-polaroid-photo-generator",
+    "name": "Polaroid Photo Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polaroid-photo-generator",
+    "url": "https://clawhub.ai/skills/polaroid-photo-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polaroid-photo-generator-5730f85273422db4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI polaroid photo generator — create retro instant-film photos with authentic vintage color, film grain, and '70s–'80s aesthetic. Perfect for nostalgic portr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "blammectrappora",
+      "userId": "s17e1t07j9b4mkk29p15qwbst983hdan",
+      "displayName": "blammectrappora",
+      "image": "https://avatars.githubusercontent.com/u/258436334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774846716873,
+      "changelog": "Initial release of the AI Polaroid Photo Generator.\n\n- Generate retro instant-film photos with vintage color, film grain, and '70s–'80s aesthetics.\n- Supports portrait, landscape, square, and tall formats.\n- Option to use reference images for style inheritance.\n- Requires a free Neta API token to use.\n- Easy CLI integration and quick start instructions included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e57460927eecf8ed4b46fdfbd10a05ca5cd3b8bdc3433c06b561b49da5595382"
+}

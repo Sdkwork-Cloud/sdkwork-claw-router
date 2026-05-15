@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17645,
+  "uuid": "skill-clawhub-video-crawler",
+  "skillKey": "clawhub-video-crawler",
+  "name": "Video Crawler",
+  "summary": "Extract videos from Douyin and Twitter by providing platform and URL, outputting the downloaded video file or an error message.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_crawler",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ly5201314gjx",
+      "features": [
+        "Extract videos from Douyin and Twitter by providing platform and URL, outputting the downloaded."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-crawler@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/204307131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-crawler",
+      "url": "https://clawhub.ai/skills/video-crawler"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-crawler",
+    "url": "https://clawhub.ai/skills/video-crawler",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-crawler-d76ccb15f656b1b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-crawler@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-crawler-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb096580f4c38d82be52c9f8a082ac2e84a3d36da5c64dc1104c774f7fe2352b",
+      "artifactSizeBytes": 2156
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-25T04:22:18.443Z"
+}

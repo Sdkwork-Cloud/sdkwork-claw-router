@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pm-copilot@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm_copilot",
+  "skill": {
+    "id": 30352,
+    "skillKey": "clawhub-pm-copilot",
+    "name": "PM Copilot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm-copilot",
+    "url": "https://clawhub.ai/skills/pm-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm-copilot-f5ea5978531a7aee.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "General product-management copilot that acts as the default entry point for PM work. Use when the user has a broad PM request, mixed product materials, or wa..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanao",
+      "userId": "s177hqx76kczqptqa408q7pcbn83mys8",
+      "displayName": "ryanao",
+      "image": "https://avatars.githubusercontent.com/u/9943807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 274,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1774552024716,
+      "changelog": "Initial release: PM copilot + structured PM workflow system for context building, PRDs, feedback synthesis, competitor analysis, meeting summaries, brainstorming, critique, and workflow routing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c4dba24ca5656618d60eb7a180d57904ef506b2dd7f5d7e52c7906c70783a9d7"
+}

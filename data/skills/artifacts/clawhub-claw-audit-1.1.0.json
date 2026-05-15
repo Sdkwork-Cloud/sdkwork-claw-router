@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-audit@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_audit",
+  "skill": {
+    "id": 15311,
+    "skillKey": "clawhub-claw-audit",
+    "name": "Claw Audit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-audit",
+    "url": "https://clawhub.ai/skills/claw-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-audit-26a3415ffbb3061a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Security scanner and hardening tool for OpenClaw. Use when the user asks about security, wants to scan installed skills for malware or vulnerabilities, audit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "u45362",
+      "userId": "publishers:u45362",
+      "displayName": "u45362",
+      "image": "https://avatars.githubusercontent.com/u/168991362?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 725,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 3,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772033078107,
+      "changelog": "v1.1.0",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:277071eb0fe2543d1becb46e4393a50b1594dda1b7f06213d7921828d6bfd527"
+}

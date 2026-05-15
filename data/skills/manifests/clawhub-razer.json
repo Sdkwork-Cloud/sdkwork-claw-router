@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72534,
+  "uuid": "skill-clawhub-razer",
+  "skillKey": "clawhub-razer",
+  "name": "Razer",
+  "summary": "提供雷蛇电竞外设产品信息、选购建议、技术支持和价格查询，覆盖鼠标、键盘、耳机和笔记本等设备。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.razer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供雷蛇电竞外设产品信息、选购建议、技术支持和价格查询，覆盖鼠标、键盘、耳机和笔记本等设备。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/razer@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "razer",
+      "url": "https://clawhub.ai/skills/razer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "razer",
+    "url": "https://clawhub.ai/skills/razer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/razer-ce37c0e0a0281596.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/razer@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-razer-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94882de9b278db14a22f9e6c89a741275e96a32c1ae55a680f5e6189d81d0df3",
+      "artifactSizeBytes": 2164
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T23:26:02.658Z"
+}

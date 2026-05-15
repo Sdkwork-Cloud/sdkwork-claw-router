@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51040,
+  "uuid": "skill-clawhub-hederatoolbox",
+  "skillKey": "clawhub-hederatoolbox",
+  "name": "HederaToolbox",
+  "summary": "Query live Hedera blockchain data — token prices, whale movements, HCS topics, governance proposals, identity/KYC screening, and smart contract analysis. Pay...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hederatoolbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mountainmystic",
+      "features": [
+        "Query live Hedera blockchain data — token prices, whale movements, HCS topics, governance propo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hederatoolbox@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/89867943?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hederatoolbox",
+      "url": "https://clawhub.ai/skills/hederatoolbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hederatoolbox",
+    "url": "https://clawhub.ai/skills/hederatoolbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hederatoolbox-a5418fb603a17a15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hederatoolbox@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-hederatoolbox-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:088d084e909030e073c0886e5f5921812d3a6c5101636cb1e48d031a4f9a026e",
+      "artifactSizeBytes": 2253
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T21:15:05.319Z"
+}

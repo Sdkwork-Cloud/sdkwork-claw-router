@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toby-generate-annual-impact-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toby_generate_annual_impact_report",
+  "skill": {
+    "id": 45137,
+    "skillKey": "clawhub-toby-generate-annual-impact-report",
+    "name": "generate-annual-impact-report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toby-generate-annual-impact-report",
+    "url": "https://clawhub.ai/skills/toby-generate-annual-impact-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toby-generate-annual-impact-report-9f6a417c9d1d0520.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a visual impact report from program data. Use when working on reporting for nonprofits, NGOs, fundraisers."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobeyrebecca",
+      "userId": "s17a4w4rxr2w5b31z6gnpnqg2184msz0",
+      "displayName": "TobeyRebecca",
+      "image": "https://avatars.githubusercontent.com/u/260428668?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 137,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777359466056,
+      "changelog": "Initial release of \"Generate Annual Impact Report\" skill:\n\n- Enables creation of visual impact reports from program data.\n- Designed for nonprofits, NGOs, and fundraisers.\n- Guides users through a workflow from clarifying goals to refining output.\n- Integrates chat, presentation, and image generation APIs.\n- Offers a suggested prompt and SEO keywords for visibility.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5ca514b462a4d0c2e696985901f3f3597ba799e3949e35fe3c0663084764ae56"
+}

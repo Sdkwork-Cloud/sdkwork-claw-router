@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9262,
+  "uuid": "skill-clawhub-db-query",
+  "skillKey": "clawhub-db-query",
+  "name": "MYSQL QUERY",
+  "summary": "Query project databases with automatic SSH tunnel management. Use when you need to execute SQL queries against configured databases, especially those accessi...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.db_query",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zenixp",
+      "features": [
+        "Query project databases with automatic SSH tunnel management",
+        "Use when you need to execute SQL queries against configured databases, especially those accessi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/db-query@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83453021?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "db-query",
+      "url": "https://clawhub.ai/skills/db-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "db-query",
+    "url": "https://clawhub.ai/skills/db-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/db-query-b3d6fad70a2267a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/db-query@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-db-query-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:21fe4dd423b845387226cd3379df2cfffc60b1fb8ff384a744f2e4bf8b3a65c6",
+      "artifactSizeBytes": 2265
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T10:05:03.109Z"
+}

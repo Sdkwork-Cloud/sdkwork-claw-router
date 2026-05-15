@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-analysis-fixed@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_analysis_fixed",
+  "skill": {
+    "id": 39332,
+    "skillKey": "clawhub-stock-analysis-fixed",
+    "name": "Stock Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-analysis-fixed",
+    "url": "https://clawhub.ai/skills/stock-analysis-fixed",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-analysis-fixed-5da0c1569668c073.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when analyzing stocks or cryptocurrencies with public market data, comparing tickers, and producing structured notes for a portfolio or watchlist."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xuxuclassmate",
+      "userId": "s17ev136gszam5rsp8hcgkksex83gbfy",
+      "displayName": "XuXu",
+      "image": "https://avatars.githubusercontent.com/u/76080484?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776836618991,
+      "changelog": "Rewrite the skill as an English analysis playbook and remove unsupported commands and installer metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eae23e15c56fbceed8df9b21d9b076cb8a7c35d6edb6dcab4c126549b1047040"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60160,
+  "uuid": "skill-clawhub-autogen-skill",
+  "skillKey": "clawhub-autogen-skill",
+  "name": "Autogen Skill",
+  "summary": "Microsoft AutoGen - 多智能体协同框架，用于构建复杂游戏设计工作流",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.autogen_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Lv Lancer",
+      "features": [
+        "Microsoft AutoGen",
+        "多智能体协同框架，用于构建复杂游戏设计工作流"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/autogen-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29176686?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "autogen-skill",
+      "url": "https://clawhub.ai/skills/autogen-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "autogen-skill",
+    "url": "https://clawhub.ai/skills/autogen-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/autogen-skill-8824876d70083d12.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/autogen-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-autogen-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fb02d5866c2ed58e32e501fcd80a5c4ce14e91d80e61c91b481601aba3da036",
+      "artifactSizeBytes": 2097
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T08:40:56.086Z"
+}

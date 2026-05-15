@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27825,
+  "uuid": "skill-clawhub-clicks-protocol",
+  "skillKey": "clawhub-clicks-protocol",
+  "name": "Clicks Protocol",
+  "summary": "Integrate autonomous USDC yield into AI agent projects on Base. Query live APY, inspect agent treasury state, simulate payment splits, use the MCP server, an...",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clicks_protocol",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Protogenosone",
+      "features": [
+        "Integrate autonomous USDC yield into AI agent projects on Base",
+        "Query live APY, inspect agent treasury state, simulate payment splits, use the MCP server, an..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clicks-protocol@1.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/155086082?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clicks-protocol",
+      "url": "https://clawhub.ai/skills/clicks-protocol"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clicks-protocol",
+    "url": "https://clawhub.ai/skills/clicks-protocol",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clicks-protocol-020d9f730dbdd654.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clicks-protocol@1.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clicks-protocol-1.2.1.json",
+      "version": "1.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:37a35bc80ff3bed1eeb5d13edc683033e0fff8ea9cd404a021fa2d84cad1bd1f",
+      "artifactSizeBytes": 1952
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T07:22:24.740Z"
+}

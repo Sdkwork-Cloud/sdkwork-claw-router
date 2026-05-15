@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35470,
+  "uuid": "skill-clawhub-feedback-collector",
+  "skillKey": "clawhub-feedback-collector",
+  "name": "Feedback Collector",
+  "summary": "Collects and processes user feedback on task completion. Use after important tasks to ask if the result was satisfactory.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feedback_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wqz666",
+      "features": [
+        "Collects and processes user feedback on task completion",
+        "Use after important tasks to ask if the result was satisfactory."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feedback-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/56181584?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feedback-collector",
+      "url": "https://clawhub.ai/skills/feedback-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feedback-collector",
+    "url": "https://clawhub.ai/skills/feedback-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feedback-collector-51d62db5240f4710.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feedback-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feedback-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71d7b73acf9f0c8f41c45f3243217122cf9908e35c6fc993c327369684cac172",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:21:20.066Z"
+}

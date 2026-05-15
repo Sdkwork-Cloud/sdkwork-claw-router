@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72368,
+  "uuid": "skill-clawhub-interior-budget-auto",
+  "skillKey": "clawhub-interior-budget-auto",
+  "name": "室内设计自动预算生成器",
+  "summary": "根据DXF户型图和设计师历史报价自动生成符合本地市场的完整家装工装预算Excel，支持楼层空间分配，保留原模板格式。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.interior_budget_auto",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "137984917-cyber",
+      "features": [
+        "根据DXF户型图和设计师历史报价自动生成符合本地市场的完整家装工装预算Excel，支持楼层空间分配，保留原模板格式。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/interior-budget-auto@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270913925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "interior-budget-auto",
+      "url": "https://clawhub.ai/skills/interior-budget-auto"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "interior-budget-auto",
+    "url": "https://clawhub.ai/skills/interior-budget-auto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/interior-budget-auto-de80ba915ffc2d8f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/interior-budget-auto@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-interior-budget-auto-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de6bb89d5a5d668148be510fb01bd5ee86649f6c3c0b0db22022747b14809a59",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T08:30:36.839Z"
+}

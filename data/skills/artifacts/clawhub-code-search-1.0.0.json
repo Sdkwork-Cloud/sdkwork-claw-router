@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/code-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.code_search",
+  "skill": {
+    "id": 19387,
+    "skillKey": "clawhub-code-search",
+    "name": "Code Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "code-search",
+    "url": "https://clawhub.ai/skills/code-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/code-search-911815c7a32001e6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search codebase contents, filenames, or directory structures using ripgrep, fd, and tree with filters for file types, context, depth, and result limits."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yanxingang",
+      "userId": "publishers:yanxingang",
+      "displayName": "Yanxingang",
+      "image": "https://avatars.githubusercontent.com/u/17355243?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 576,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772076080001,
+      "changelog": "Initial release: grep/glob/tree via ripgrep, fd, tree",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1679787eaf5aad060ea6b032a1433555e7b382bb9504313349834dbb5feb010c"
+}

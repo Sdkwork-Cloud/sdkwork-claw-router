@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58920,
+  "uuid": "skill-clawhub-vue-component-generator",
+  "skillKey": "clawhub-vue-component-generator",
+  "name": "Vue Component Generator",
+  "summary": "生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整 Vue 组件代码。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vue_component_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "生成 Vue 3 组件模板，支持 Composition API、Options API、TypeScript、SFC 单文件组件，一键生成完整 Vue 组件代码。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vue-component-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vue-component-generator",
+      "url": "https://clawhub.ai/skills/vue-component-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vue-component-generator",
+    "url": "https://clawhub.ai/skills/vue-component-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vue-component-generator-286b346e9fe03bda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vue-component-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vue-component-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ff17aca7af11b4a5419631412c245e42a31d1b6feabdedf4e061e449515e503",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:10:57.357Z"
+}

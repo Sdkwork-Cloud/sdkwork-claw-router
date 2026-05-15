@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/decklingo-pptx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.decklingo_pptx",
+  "skill": {
+    "id": 24638,
+    "skillKey": "clawhub-decklingo-pptx",
+    "name": "DeckLingo for PPTX"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "decklingo-pptx",
+    "url": "https://clawhub.ai/skills/decklingo-pptx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/decklingo-pptx-17c44f742be6ea5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Translate editable PowerPoint decks into Chinese, English, Japanese, and other target languages while preserving layout, glossary consistency, and editabilit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neabigmo",
+      "userId": "publishers:neabigmo",
+      "displayName": "杨一横",
+      "image": "https://avatars.githubusercontent.com/u/180431464?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 306,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773732638297,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38009873ac82fe230c7636a2deae31071de07a65895d956096cc49eb443db112"
+}

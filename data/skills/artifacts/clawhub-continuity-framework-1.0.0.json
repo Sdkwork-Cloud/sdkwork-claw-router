@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/continuity-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.continuity_framework",
+  "skill": {
+    "id": 11790,
+    "skillKey": "clawhub-continuity-framework",
+    "name": "Continuity Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "continuity-framework",
+    "url": "https://clawhub.ai/skills/continuity-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/continuity-framework-3e77206d256c88d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Asynchronous reflection and memory integration for genuine AI development. Use on heartbeat to reflect on recent sessions, extract structured memories with confidence scores, generate follow-up questions, and surface those questions when t."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "riley-coyote",
+      "userId": "publishers:riley-coyote",
+      "displayName": "Riley-Coyote",
+      "image": "https://avatars.githubusercontent.com/u/130717859?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1859,
+      "installsAllTime": 6,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770271854491,
+      "changelog": "Transforms passive memory into active AI development through asynchronous reflection, structured memory extraction, question generation, and identity evolution.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:721324fccb3d59abccb3988dce232068baa8bb17c995ee9a667e58bd397384fe"
+}

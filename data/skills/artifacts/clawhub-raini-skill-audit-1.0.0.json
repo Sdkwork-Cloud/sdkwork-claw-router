@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/raini-skill-audit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.raini_skill_audit",
+  "skill": {
+    "id": 14458,
+    "skillKey": "clawhub-raini-skill-audit",
+    "name": "Skill Audit by Raini"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "raini-skill-audit",
+    "url": "https://clawhub.ai/skills/raini-skill-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/raini-skill-audit-c516e59313786e9e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scans installed or remote OpenClaw skills for security risks like credential leaks and suspicious code to prevent supply chain attacks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "0xraini",
+      "userId": "publishers:0xraini",
+      "displayName": "0xRaini",
+      "image": "https://avatars.githubusercontent.com/u/190923101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1138,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770645530642,
+      "changelog": "Initial release - Security scanner for OpenClaw skills",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9eaa05becb01fed061f6c03b10c7c9503fdce95e20ccfaf9a92387fa38ab55ca"
+}

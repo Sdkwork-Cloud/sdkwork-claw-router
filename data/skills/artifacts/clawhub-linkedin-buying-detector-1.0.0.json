@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkedin-buying-detector@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkedin_buying_detector",
+  "skill": {
+    "id": 44771,
+    "skillKey": "clawhub-linkedin-buying-detector",
+    "name": "Linkedin Buying Detector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkedin-buying-detector",
+    "url": "https://clawhub.ai/skills/linkedin-buying-detector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkedin-buying-detector-20fdb958e225adfc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Detect LinkedIn hiring and growth signals to identify B2B companies ready to buy now and auto-generate personalized outreach messages."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nicemaths123",
+      "userId": "s1712r4n6m9xg8vc5g0ta16m7x83mfjv",
+      "displayName": "nicemaths123",
+      "image": "https://avatars.githubusercontent.com/u/244252350?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774989898356,
+      "changelog": "Initial release — detect real-time B2B buying signals and generate AI-personalized outreach based on LinkedIn/job data.\n\n- Identifies companies with urgent buying intent using LinkedIn job postings and growth indicators.\n- Scores leads (Hot/Warm/Cold) based on hiring, tech, funding, and competitor signals.\n- Finds decision maker contacts and generates tailored email & LinkedIn messages using Claude AI.\n- Exports leads to CSV, JSON, Notion, Airtable, or CRM; integrates with Slack and email alerts.\n- Simple setup with clear inputs; leverages Apify-powered LinkedIn & news scraping.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:993a595d7674da5563fd280e7014d8692b1a06ca821747cbddc340e5b43c5c55"
+}

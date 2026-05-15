@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73025,
+  "uuid": "skill-clawhub-xiaomi-outbound-call",
+  "skillKey": "clawhub-xiaomi-outbound-call",
+  "name": "通义晓蜜 - 智能外呼",
+  "summary": "触发阿里云晓蜜外呼机器人任务，自动批量拨打电话。适用于批量外呼、客户回访、满意度调查、简历筛查约面试等场景。可从前置工具或节点获取外呼名单。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaomi_outbound_call",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Raven-XIA",
+      "features": [
+        "触发阿里云晓蜜外呼机器人任务，自动批量拨打电话。适用于批量外呼、客户回访、满意度调查、简历筛查约面试等场景。可从前置工具或节点获取外呼名单。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaomi-outbound-call@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/74555404?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaomi-outbound-call",
+      "url": "https://clawhub.ai/skills/xiaomi-outbound-call"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaomi-outbound-call",
+    "url": "https://clawhub.ai/skills/xiaomi-outbound-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaomi-outbound-call-07ec5e333828ce70.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaomi-outbound-call@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaomi-outbound-call-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e3da395e5f8eef111bf06956bc7f044a2ad565e0a39ba0be05cdb6adfe793f3d",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T06:28:11.542Z"
+}

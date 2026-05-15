@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36247,
+  "uuid": "skill-clawhub-emergency-financial-triage",
+  "skillKey": "clawhub-emergency-financial-triage",
+  "name": "Emergency Financial Triage",
+  "summary": "Priority-based action plan for financial emergencies. Use when someone can't make rent, is about to be evicted, can't afford food, has utilities about to be...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.emergency_financial_triage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "HowToUseHumans",
+      "features": [
+        "Priority-based action plan for financial emergencies",
+        "Use when someone can't make rent, is about to be evicted, can't afford food, has utilities abou."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/emergency-financial-triage@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/151727669?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "emergency-financial-triage",
+      "url": "https://clawhub.ai/skills/emergency-financial-triage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "emergency-financial-triage",
+    "url": "https://clawhub.ai/skills/emergency-financial-triage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/emergency-financial-triage-354346b7c0e288ff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/emergency-financial-triage@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-emergency-financial-triage-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:67ec6c2d38df3c297275b9e017936abc7a50a1267eed1b37650794973e04c35f",
+      "artifactSizeBytes": 2475
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:32:57.685Z"
+}

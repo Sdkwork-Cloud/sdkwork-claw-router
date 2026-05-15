@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dlazy-seedream-4-5@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_seedream_4_5",
+  "skill": {
+    "id": 14465,
+    "skillKey": "clawhub-dlazy-seedream-4-5",
+    "name": "Dlazy Seedream 4.5"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-seedream-4-5",
+    "url": "https://clawhub.ai/skills/dlazy-seedream-4-5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-seedream-4-5-6696c88331d51e2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate smooth, high-quality videos with Doubao Seedream 4.5. Supports text-to-video and image-to-video."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dlazyai",
+      "userId": "s170j1ymymrxasgd00dsk7tckx84cf45",
+      "displayName": "dlazy",
+      "image": "https://avatars.githubusercontent.com/u/274158181?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 9
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1778076626190,
+      "changelog": "- Bumped version to 1.1.1.\n- Documentation updates in SKILL.md and SKILL-cn.md; no changes to commands or functionality.\n- No user-facing command, API, or feature changes in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca37e8ca4d429e5f1c9494b84cac598ca6e2815807929c4d9bc5f01fa18a0f15"
+}

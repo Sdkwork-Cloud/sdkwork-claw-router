@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/next-cache-components@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.next_cache_components",
+  "skill": {
+    "id": 17299,
+    "skillKey": "clawhub-next-cache-components",
+    "name": "Next Cache Components"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "next-cache-components",
+    "url": "https://clawhub.ai/skills/next-cache-components",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/next-cache-components-a84fe83206677584.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Next.js 16 Cache Components - PPR, use cache directive, cacheLife, cacheTag, updateTag"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tuanvidev",
+      "userId": "s179baf9cy52rfsxrbtpv7hjfx83hmf9",
+      "displayName": "vi.dev",
+      "image": "https://avatars.githubusercontent.com/u/114379606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 7,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771519277141,
+      "changelog": "Initial release: Brings Next.js 16 Cache Components support for Partial Prerendering (PPR) and advanced caching directives.\n\n- Adds `cacheComponents` config flag to enable cache components (supersedes experimental.ppr).\n- Supports `use cache` directive at file, component, or function level for caching async data.\n- Introduces `cacheLife`, `cacheTag`, and `updateTag` helpers for powerful cache profiles and invalidation.\n- Documents cache key generation, restrictions, and migration from earlier Next.js caching APIs.\n- Provides examples for static, cached, and dynamic content mixing within a page.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8a20ca7fa7a9febdc66118134ace363a36013c301754dd818eaa2f4c8b9a0305"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/marsbit-news@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.marsbit_news",
+  "skill": {
+    "id": 25596,
+    "skillKey": "clawhub-marsbit-news",
+    "name": "Marsbit News"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "marsbit-news",
+    "url": "https://clawhub.ai/skills/marsbit-news",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/marsbit-news-1b815e3c5db04d92.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Retrieve the latest and searched crypto, blockchain, and Web3 news articles and flash updates from Marsbit with full content on request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "archjian",
+      "userId": "s17cz3avee9s3zqr84cjfp8wps83j3te",
+      "displayName": "archjian",
+      "image": "https://avatars.githubusercontent.com/u/168331967?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 385,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773227511584,
+      "changelog": "Marsbit News Skill 1.0.1\n\n- No code or documentation changes detected in this version.\n- Functionality, API usage, and user response behavior remain unchanged.\n- This release is functionally identical to version 1.0.0.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14851a0d373f1e722002d08576bde1d80bd0d1d420b3d54e6c2f51ae333a9800"
+}

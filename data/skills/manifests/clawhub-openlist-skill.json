@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30216,
+  "uuid": "skill-clawhub-openlist-skill",
+  "skillKey": "clawhub-openlist-skill",
+  "name": "openlist",
+  "summary": "Execute safe file operations via OpenList API with preview-apply workflow for browsing, moving, renaming, deleting, offline tasks, and audit logging.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openlist_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "okami-horo",
+      "features": [
+        "Execute safe file operations via OpenList API with preview-apply workflow for browsing, moving,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openlist-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128959727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openlist-skill",
+      "url": "https://clawhub.ai/skills/openlist-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openlist-skill",
+    "url": "https://clawhub.ai/skills/openlist-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openlist-skill-fb556d52657b53de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openlist-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openlist-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f5b82cb8f9a9ecb711d8084140c095f984dbab7cffb7e64004274824e2da8f34",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T09:38:20.952Z"
+}

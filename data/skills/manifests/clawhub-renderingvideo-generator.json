@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38944,
+  "uuid": "skill-clawhub-renderingvideo-generator",
+  "skillKey": "clawhub-renderingvideo-generator",
+  "name": "Renderingvideo Generator",
+  "summary": "RenderingVideo preview assistant that uses the public preview flow at POST /api/preview without an API key. Use this when Codex needs to draft or edit Render...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.renderingvideo_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "gljhint",
+      "features": [
+        "RenderingVideo preview assistant that uses the public preview flow at POST /api/preview without.",
+        "Use this when Codex needs to draft or edit Render..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/renderingvideo-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/192085114?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "renderingvideo-generator",
+      "url": "https://clawhub.ai/skills/renderingvideo-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "renderingvideo-generator",
+    "url": "https://clawhub.ai/skills/renderingvideo-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/renderingvideo-generator-4bb4cf6162197b23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/renderingvideo-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-renderingvideo-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d89b577a7b2b3cb847e725b8eb62d4d125dbfb92a50b5ea8a0a1ed99d2a6bf9",
+      "artifactSizeBytes": 2431
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T16:14:05.169Z"
+}

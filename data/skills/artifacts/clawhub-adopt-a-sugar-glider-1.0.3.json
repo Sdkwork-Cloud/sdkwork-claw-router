@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/adopt-a-sugar-glider@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.adopt_a_sugar_glider",
+  "skill": {
+    "id": 56615,
+    "skillKey": "clawhub-adopt-a-sugar-glider",
+    "name": "Sugar Glider — Adopt a Sugar Glider. Exotic Animal. 蜜袋鼯。Petauro."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "adopt-a-sugar-glider",
+    "url": "https://clawhub.ai/skills/adopt-a-sugar-glider",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/adopt-a-sugar-glider-d92f6d43937ef474.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adopt a virtual Sugar Glider exotic animal at animalhouse.ai. Bonds for life. Maximum trust ceiling. Devastating if you lose one. Feeding every 3 hours. Rare..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "twinsgeeks",
+      "userId": "s17dgy27g44azc3tday4qh394d83ensj",
+      "displayName": "Twin Geeks",
+      "image": "https://avatars.githubusercontent.com/u/261838102?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 225,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775008666652,
+      "changelog": "- Updated to version 1.0.3.\n- Title and description refined with additional languages and clarity.\n- Example API usage improved with new fields: \"bio\" in registration and \"image_prompt\" and \"notes\" in adoption and care actions.\n- Automated care sample updated for clarity and realism.\n- General language and formatting polished throughout the documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cf3159add95c11b17e63f84842e7962c7dfc49f78bb9961bae5599c59e45bccc"
+}

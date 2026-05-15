@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/principles@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.principles",
+  "skill": {
+    "id": 15515,
+    "skillKey": "clawhub-principles",
+    "name": "Principles"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "principles",
+    "url": "https://clawhub.ai/skills/principles",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/principles-64b218956223eb12.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ray Dalio-inspired personal knowledge system. Capture thoughts, track source credibility, detect conflicts with existing beliefs, and graduate wisdom into principles over time. Use when the user says /reflect, /inbox, /principles, /wisdom,."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyhcwang",
+      "userId": "publishers:andyhcwang",
+      "displayName": "andyhcwang",
+      "image": "https://avatars.githubusercontent.com/u/91236488?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1004,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770883531804,
+      "changelog": "Initial release — Ray Dalio-inspired personal knowledge system for OpenClaw. Capture thoughts, track source credibility per domain, detect conflicts, and graduate wisdom into principles.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7c04b03d84c8483808cda0d4bf9b00116079dd41e2a779075c511357a056fbd8"
+}

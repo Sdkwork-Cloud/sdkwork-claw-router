@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/startup-validator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.startup_validator",
+  "skill": {
+    "id": 29738,
+    "skillKey": "clawhub-startup-validator",
+    "name": "Startup Validator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "startup-validator",
+    "url": "https://clawhub.ai/skills/startup-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/startup-validator-2019d803ea00ad82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Structures early startup validation with commands for idea, competitive analysis, and MVP planning plus a standardized reporting template."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 267,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774421228140,
+      "changelog": "- Initial release of startup-validator (formerly idea-validator), focused on structured startup idea validation workflows.\n- Provides commands for validation (`validate`), competitive analysis (`compete`), and MVP planning (`mvp`), each with guidance and template outputs.\n- Includes a detailed reporting template for consistent, actionable validation reports.\n- Offers references and best practices for founders and indie hackers performing early PMF and market-fit analysis.\n- Old skill name (`idea-validator`) now migrated; all usage should shift to `startup-validator`.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:859391ab8643974a2dcc7c9f273ad6dc69384a43be5d65dbbf04750defbe6cb0"
+}

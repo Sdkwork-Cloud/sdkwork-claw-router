@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70788,
+  "uuid": "skill-clawhub-nec",
+  "skillKey": "clawhub-nec",
+  "name": "Nec",
+  "summary": "提供日本电气 NEC 的公司信息、产品及技术介绍，以及市场地位与竞品对比分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供日本电气 NEC 的公司信息、产品及技术介绍，以及市场地位与竞品对比分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nec@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nec",
+      "url": "https://clawhub.ai/skills/nec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nec",
+    "url": "https://clawhub.ai/skills/nec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nec-9d9b90817fc39231.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nec@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nec-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f0a53711a7a8d48059e9f2b5a7b3015b571329b4237948fff3f861b85e4c042",
+      "artifactSizeBytes": 2051
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T13:12:55.080Z"
+}

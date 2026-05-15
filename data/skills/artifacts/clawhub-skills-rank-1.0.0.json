@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skills-rank@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skills_rank",
+  "skill": {
+    "id": 30267,
+    "skillKey": "clawhub-skills-rank",
+    "name": "Clawhub Skills Rank"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skills-rank",
+    "url": "https://clawhub.ai/skills/skills-rank",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skills-rank-aab7efc2b3b1ca04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Track and monitor the search ranking position of any ClawHub skill across multiple keywords. Check where your skill ranks for 'stock price', 'todo app', etc...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tjefferson",
+      "userId": "s170z4mt16txtqsqz0ea9rph3183f336",
+      "displayName": "Jeff",
+      "image": "https://avatars.githubusercontent.com/u/2939233?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773679802710,
+      "changelog": "clawhub-skill-rank v1.0.0 – Initial Release\n\n- Track and monitor search ranking of any ClawHub skill across multiple keywords.\n- Supports single and batch keyword rank checks, competitor comparison, and top N results display.\n- Provides summary tables in text/markdown and machine-readable JSON export.\n- Useful for SEO monitoring, keyword performance tracking, and skill rank comparisons.\n- Handles search edge cases such as missing results, rate limits, and network errors gracefully.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fe6d90c4a565328ffe3ce5d4bbd022915b3a16a7ce510f335de16139b4929324"
+}

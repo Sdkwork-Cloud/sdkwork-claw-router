@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39368,
+  "uuid": "skill-clawhub-company-creator",
+  "skillKey": "clawhub-company-creator",
+  "name": "Company Creator",
+  "summary": "Create agent company packages conforming to the Agent Companies specification (agentcompanies/v1). Use when a user wants to create a new agent company from s...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.company_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "marlowne12",
+      "features": [
+        "Create agent company packages conforming to the Agent Companies specification (agentcompanies/v.",
+        "Use when a user wants to create a new agent company from s..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/company-creator@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/173687138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "company-creator",
+      "url": "https://clawhub.ai/skills/company-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "company-creator",
+    "url": "https://clawhub.ai/skills/company-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/company-creator-8016075140d717af.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/company-creator@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-company-creator-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:907b411cdfc66d76bb5a13029e1c2608d90fa8985312a34fb59c24cc9e3765ee",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T14:27:05.589Z"
+}

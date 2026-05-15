@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/manual-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.manual_ai",
+  "skill": {
+    "id": 62259,
+    "skillKey": "clawhub-manual-ai",
+    "name": "Manual AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "manual-ai",
+    "url": "https://clawhub.ai/skills/manual-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/manual-ai-a4f74204074192cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当自动 AI API 调用失败时，通过人机协作完成任务。 支持 6 个核心 AI 平台：Gemini、Google AI、ChatGPT、豆包、千问、NotebookLM。 提供智能平台推荐、提示词优化、批量任务支持。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "luhuiwang",
+      "userId": "s17cm863rkcbmtkmgn8xbqmd5d83hg7j",
+      "displayName": "Luhui WANG",
+      "image": "https://avatars.githubusercontent.com/u/44135132?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 204,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774333382376,
+      "changelog": "首次发布：支持 Gemini、Google AI、ChatGPT、豆包、千问、NotebookLM 六大平台",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3addd2f39db195bd6b81579d3af98221f10bfad73e368c0a105fdd9e70b8e3a6"
+}

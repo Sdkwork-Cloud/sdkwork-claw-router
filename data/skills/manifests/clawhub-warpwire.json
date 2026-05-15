@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36417,
+  "uuid": "skill-clawhub-warpwire",
+  "skillKey": "clawhub-warpwire",
+  "name": "Warpwire",
+  "summary": "Warpwire integration. Manage data, records, and automate workflows. Use when the user wants to interact with Warpwire data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.warpwire",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Warpwire integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Warpwire data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/warpwire@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "warpwire",
+      "url": "https://clawhub.ai/skills/warpwire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "warpwire",
+    "url": "https://clawhub.ai/skills/warpwire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/warpwire-d22dada28cd4c97b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/warpwire@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-warpwire-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2aa89a044b70cfb2a7113001cdd92ce05a9acb8230a5c69aff6afcac916d1c6d",
+      "artifactSizeBytes": 1838
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:10:26.824Z"
+}

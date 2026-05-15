@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9921,
+  "uuid": "skill-clawhub-skiplagged-flights",
+  "skillKey": "clawhub-skiplagged-flights",
+  "name": "Skiplagged Flights",
+  "summary": "Use when the user asks to \"find flights\", \"compare itineraries\", \"search hidden-city routes\", \"check cheapest dates\", \"explore destinations\", \"search hotels\"...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skiplagged_flights",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wzs",
+      "features": [
+        "Use when the user asks to \"find flights\", \"compare itineraries\", \"search hidden-city routes\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skiplagged-flights@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/599145?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skiplagged-flights",
+      "url": "https://clawhub.ai/skills/skiplagged-flights"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skiplagged-flights",
+    "url": "https://clawhub.ai/skills/skiplagged-flights",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skiplagged-flights-0b7e4d22744b9b73.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skiplagged-flights@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-skiplagged-flights-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1f3db779617bd8475a655730f285fa9455a6fb1ad023d607873f2916b7f22004",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T15:48:08.248Z"
+}

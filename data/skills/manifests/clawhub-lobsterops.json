@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30639,
+  "uuid": "skill-clawhub-lobsterops",
+  "skillKey": "clawhub-lobsterops",
+  "name": "LobsterOps",
+  "summary": "AI Agent Observability & Debug Console - flight recorder and debug console for autonomous AI systems",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobsterops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Noel DeLisle",
+      "features": [
+        "AI Agent Observability & Debug Console",
+        "flight recorder and debug console for autonomous AI systems"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lobsterops@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216012997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lobsterops",
+      "url": "https://clawhub.ai/skills/lobsterops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobsterops",
+    "url": "https://clawhub.ai/skills/lobsterops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobsterops-a48c63110c3df290.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lobsterops@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-lobsterops-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:75f17ddf5c3876cc03e4cdd9ba3641ef70d5dc57b26cfb691acc0e4a7d93a661",
+      "artifactSizeBytes": 1887
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T17:30:11.001Z"
+}

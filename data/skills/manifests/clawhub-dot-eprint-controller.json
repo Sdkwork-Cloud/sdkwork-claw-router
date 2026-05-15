@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62404,
+  "uuid": "skill-clawhub-dot-eprint-controller",
+  "skillKey": "clawhub-dot-eprint-controller",
+  "name": "dot eprint Quote/0",
+  "summary": "控制 Dot. 电子墨水屏设备——查询状态、推送文本/图像、管理内容",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dot_eprint_controller",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "johnqxu",
+      "features": [
+        "电子墨水屏设备——查询状态、推送文本/图像、管理内容"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dot-eprint-controller@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10542712?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dot-eprint-controller",
+      "url": "https://clawhub.ai/skills/dot-eprint-controller"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dot-eprint-controller",
+    "url": "https://clawhub.ai/skills/dot-eprint-controller",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dot-eprint-controller-49565852a2cfea83.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dot-eprint-controller@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dot-eprint-controller-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7310f96274521deaabb9aab206f2b3f9a5000c00c4fb0ff46b861f6393126e3e",
+      "artifactSizeBytes": 2260
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T13:11:44.516Z"
+}

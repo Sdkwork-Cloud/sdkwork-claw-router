@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/baidu-smart-search@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baidu_smart_search",
+  "skill": {
+    "id": 40375,
+    "skillKey": "clawhub-baidu-smart-search",
+    "name": "Baidu Smart Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baidu-smart-search",
+    "url": "https://clawhub.ai/skills/baidu-smart-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baidu-smart-search-5700baad07f78250.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Call Baidu Qianfan web search APIs to search the live web with AppBuilder credentials and return structured results. Use when a task specifically needs Baidu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "windrunner20",
+      "userId": "s17e6vrn90gyc8zcjhcspvscp583gdtc",
+      "displayName": "Winrunner_20",
+      "image": "https://avatars.githubusercontent.com/u/65005620?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1774612074077,
+      "changelog": "Rename display and canonical slug to Baidu Smart Search",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:edf19e1857939e134a7be260b8a48751b5bbce1de83eabecb8053e92e46c0328"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48914,
+  "uuid": "skill-clawhub-mongoose-schema-auditor",
+  "skillKey": "clawhub-mongoose-schema-auditor",
+  "name": "Mongoose Schema Auditor",
+  "summary": "Audit Mongoose schema definitions for best practices, performance, and data integrity. Checks schema design, indexing strategy, population efficiency, lean q...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mongoose_schema_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Audit Mongoose schema definitions for best practices, performance, and data integrity",
+        "Checks schema design, indexing strategy, population efficiency, lean q..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mongoose-schema-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mongoose-schema-auditor",
+      "url": "https://clawhub.ai/skills/mongoose-schema-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mongoose-schema-auditor",
+    "url": "https://clawhub.ai/skills/mongoose-schema-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mongoose-schema-auditor-2fea40a498e16663.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mongoose-schema-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mongoose-schema-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e8d25c7e7b01bc4f1f62fdb12faab1abb7c0c81b8099394aff6ae74d2cf31c8b",
+      "artifactSizeBytes": 2506
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T08:41:56.894Z"
+}

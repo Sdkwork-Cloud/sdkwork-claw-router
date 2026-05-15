@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-pair@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_pair",
+  "skill": {
+    "id": 24143,
+    "skillKey": "clawhub-ai-pair",
+    "name": "Ai Pair"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-pair",
+    "url": "https://clawhub.ai/skills/ai-pair",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-pair-57e7b6e3e661a8f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Pair Collaboration Skill. Coordinate multiple AI models to work together: one creates (Author/Developer), two others review (Codex + Gemini). Works for co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axtonliu",
+      "userId": "publishers:axtonliu",
+      "displayName": "Axton",
+      "image": "https://avatars.githubusercontent.com/u/34881731?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 418,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773100896418,
+      "changelog": "ai-pair 0.1.0 – Initial Release\n\n- Introduces an AI pair-collaboration skill coordinating heterogeneous agent teams for creative and development projects.\n- Supports two team types: Dev Team (developer, codex-reviewer, gemini-reviewer) and Content Team (author, codex-reviewer, gemini-reviewer).\n- Provides structured commands to start/stop teams and manage workflow.\n- Implements multi-model reviewing (Codex + Gemini) for broader feedback coverage.\n- Includes robust team setup, agent role prompts, and explicit semi-automatic review workflow ensuring user control at every step.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8a5057a105a96a6d039862342272ae3cfa40b287525639dee7cfb4e18695037c"
+}

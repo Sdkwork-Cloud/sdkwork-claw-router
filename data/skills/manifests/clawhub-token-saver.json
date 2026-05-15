@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8800,
+  "uuid": "skill-clawhub-token-saver",
+  "skillKey": "clawhub-token-saver",
+  "name": "Token Saver",
+  "summary": "Reduce OpenClaw AI costs with model-aware optimization. Features dynamic compaction presets based on your model's context window, intelligent file compression, and robust model detection with fallback. Supports Claude, GPT-4, Gemini, DeepS.",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.token_saver",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ruben Quispe",
+      "features": [
+        "Reduce OpenClaw AI costs with model-aware optimization",
+        "Features dynamic compaction presets based on your model's context window, intelligent file comp.",
+        "Supports Claude, GPT-4, Gemini, DeepSeek, and more."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/token-saver@3.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44844199?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "token-saver",
+      "url": "https://clawhub.ai/skills/token-saver"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "token-saver",
+    "url": "https://clawhub.ai/skills/token-saver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/token-saver-0d8caeb27737d0c7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/token-saver@3.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-token-saver-3.0.0.json",
+      "version": "3.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5f1c3223d70422727e5a53bada2dd889ab33dcbebf6c59be11066e1dc9f73168",
+      "artifactSizeBytes": 2048
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T00:57:14.238Z"
+}

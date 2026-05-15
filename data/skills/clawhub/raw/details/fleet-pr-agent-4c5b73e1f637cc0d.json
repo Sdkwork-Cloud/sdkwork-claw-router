@@ -1,0 +1,37 @@
+{
+  "skill": {
+    "slug": "fleet-pr-agent",
+    "displayName": "Fleet PR Agent",
+    "summary": "Multi-repo PR monitoring and triage agent. Scans GitHub repos for open PRs, prioritizes by staleness/review status/CI state, and generates a structured Markd...",
+    "tags": {
+      "github": "1.1.0",
+      "latest": "1.1.0",
+      "monitoring": "1.1.0",
+      "pr": "1.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 187,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "createdAt": 1774641602221,
+    "updatedAt": 1777624282459
+  },
+  "latestVersion": {
+    "version": "1.1.0",
+    "createdAt": 1774642476049,
+    "changelog": "- Introduced a pure Python triage script (`scripts/triage.py`)—no external dependencies required.\n- Full migration from shell script to Python for PR triage logic; run via `python3 scripts/triage.py`.\n- Now supports concurrent scanning and reporting for multiple repositories in a single run.\n- Documentation updated to reflect Python usage, new requirements, and improved portability.\n- Architecture section added, clarifying standard library-only usage and cross-platform compatibility.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "lanxevo3",
+    "userId": "s177815d2cqzf9rjmm2fy9a82583hpt2",
+    "displayName": "lanxevo3",
+    "image": "https://avatars.githubusercontent.com/u/77862787?v=4"
+  },
+  "moderation": null
+}

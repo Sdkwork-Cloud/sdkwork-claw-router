@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43746,
+  "uuid": "skill-clawhub-stablecoin-chain-explorer",
+  "skillKey": "clawhub-stablecoin-chain-explorer",
+  "name": "Stablecoin Chain Explorer",
+  "summary": "Explore stablecoin TVL distribution and yield opportunities by blockchain. Query which chains have the most stablecoins, compare cross-chain yields, and find...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stablecoin_chain_explorer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zuoyeweb3",
+      "features": [
+        "Explore stablecoin TVL distribution and yield opportunities by blockchain",
+        "Query which chains have the most stablecoins, compare cross-chain yields, and find..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stablecoin-chain-explorer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/166980078?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stablecoin-chain-explorer",
+      "url": "https://clawhub.ai/skills/stablecoin-chain-explorer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stablecoin-chain-explorer",
+    "url": "https://clawhub.ai/skills/stablecoin-chain-explorer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stablecoin-chain-explorer-c428b82ddb65e2a5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stablecoin-chain-explorer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stablecoin-chain-explorer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a5a554806237f0893bd9cff15a2ba12fe0b71060d011fb5183d87bd1c4786e57",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T20:29:25.016Z"
+}

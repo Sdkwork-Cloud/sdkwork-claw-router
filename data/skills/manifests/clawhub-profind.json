@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64619,
+  "uuid": "skill-clawhub-profind",
+  "skillKey": "clawhub-profind",
+  "name": "ProFind",
+  "summary": "ProFind macOS 文件搜索技能 — 毫秒级索引搜索、文件内容全文检索、按大小/日期/类型筛选、批量操作",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.profind",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve-Shi-Web",
+      "features": [
+        "ProFind macOS 文件搜索技能 — 毫秒级索引搜索、文件内容全文检索、按大小/日期/类型筛选、批量操作"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/profind@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/57715648?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "profind",
+      "url": "https://clawhub.ai/skills/profind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "profind",
+    "url": "https://clawhub.ai/skills/profind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/profind-d4116dfa076e3e3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/profind@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-profind-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:757d8c078f37097158498b2c46e232d929bd517e3d3ca766724cf4a7a5b7af0a",
+      "artifactSizeBytes": 1911
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T03:19:07.006Z"
+}

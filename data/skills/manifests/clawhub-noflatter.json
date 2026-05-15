@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57925,
+  "uuid": "skill-clawhub-noflatter",
+  "skillKey": "clawhub-noflatter",
+  "name": "第三人称 NoFlatter · Anti-Sycophancy / 第三人称改写",
+  "summary": "Official 第三人称 NoFlatter skill. Reframes requests into a neutral third-person brief so AI becomes less sycophantic, less leading, and more objectively useful.",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.noflatter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sheygoodbai",
+      "features": [
+        "Official 第三人称 NoFlatter skill",
+        "Reframes requests into a neutral third-person brief so AI becomes less sycophantic, less leadin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/noflatter@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/143479205?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "noflatter",
+      "url": "https://clawhub.ai/skills/noflatter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "noflatter",
+    "url": "https://clawhub.ai/skills/noflatter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/noflatter-48d18085205e1c86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/noflatter@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-noflatter-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:497ccde32c81c1a367f1ac7695bf94e099555cbc946172f3406e40df87ac2b3b",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T20:26:50.758Z"
+}

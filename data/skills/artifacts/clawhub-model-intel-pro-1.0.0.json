@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/model-intel-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.model_intel_pro",
+  "skill": {
+    "id": 16667,
+    "skillKey": "clawhub-model-intel-pro",
+    "name": "Model Intel Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "model-intel-pro",
+    "url": "https://clawhub.ai/skills/model-intel-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/model-intel-pro-6e64ffff8891454b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Live LLM model pricing and capabilities from OpenRouter. List top models, search by name, compare side-by-side, find best model for a use case, check pricing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 851,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771140081254,
+      "changelog": "Live LLM model pricing and capabilities from OpenRouter",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:21e5909a0e0ccec30adad1675bfc30b0f4c261aaaef6f709e5a15d90c76f5962"
+}

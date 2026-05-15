@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35608,
+  "uuid": "skill-clawhub-openclaw-session-grep",
+  "skillKey": "clawhub-openclaw-session-grep",
+  "name": "OpenClaw Session Grep",
+  "summary": "Search local OpenClaw session and transcript history with the openclaw-session-grep CLI. Use when debugging prior conversations, tool usage, cron behavior, p...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_session_grep",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Paul Frederiksen",
+      "features": [
+        "Search local OpenClaw session and transcript history with the openclaw-session-grep CLI",
+        "Use when debugging prior conversations, tool usage, cron behavior, p..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-session-grep@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/908172?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-session-grep",
+      "url": "https://clawhub.ai/skills/openclaw-session-grep"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-session-grep",
+    "url": "https://clawhub.ai/skills/openclaw-session-grep",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-session-grep-cd0c690cffe9b239.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-session-grep@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-session-grep-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:aeb48086584b373eaa56580785bdc3736bab0d3a9b42178ebd04d1de08595feb",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:06:43.504Z"
+}

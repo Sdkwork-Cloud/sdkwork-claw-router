@@ -25,7 +25,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app")
+                .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -60,7 +60,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
         .oneshot(
             Request::builder()
                 .method("PUT")
-                .uri("/backend/v3/api/app/1")
+                .uri("/backend/v3/api/platform/apps/1")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -86,10 +86,26 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
     );
 
     for (path, expected_status, expected_market_status) in [
-        ("/backend/v3/api/app/1/publish", "ACTIVE", "PUBLISHED"),
-        ("/backend/v3/api/app/1/disable", "INACTIVE", "PUBLISHED"),
-        ("/backend/v3/api/app/1/enable", "ACTIVE", "PUBLISHED"),
-        ("/backend/v3/api/app/1/offline", "ACTIVE", "OFFLINE"),
+        (
+            "/backend/v3/api/platform/apps/1/publish",
+            "ACTIVE",
+            "PUBLISHED",
+        ),
+        (
+            "/backend/v3/api/platform/apps/1/disable",
+            "INACTIVE",
+            "PUBLISHED",
+        ),
+        (
+            "/backend/v3/api/platform/apps/1/enable",
+            "ACTIVE",
+            "PUBLISHED",
+        ),
+        (
+            "/backend/v3/api/platform/apps/1/offline",
+            "ACTIVE",
+            "OFFLINE",
+        ),
     ] {
         let response = router
             .clone()
@@ -120,7 +136,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
         .oneshot(
             Request::builder()
                 .method("GET")
-                .uri("/backend/v3/api/app/1")
+                .uri("/backend/v3/api/platform/apps/1")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -141,7 +157,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app/list")
+                .uri("/backend/v3/api/platform/apps/list")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -167,7 +183,7 @@ async fn admin_app_route_manages_plus_apps_and_market_state() {
         .oneshot(
             Request::builder()
                 .method("DELETE")
-                .uri("/backend/v3/api/app/1")
+                .uri("/backend/v3/api/platform/apps/1")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
                 .header("x-sdkwork-user-id", "30")
@@ -207,7 +223,7 @@ async fn admin_app_route_rejects_missing_trusted_subject() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app/list")
+                .uri("/backend/v3/api/platform/apps/list")
                 .body(Body::from("{}"))
                 .unwrap(),
         )
@@ -231,7 +247,7 @@ async fn admin_app_route_rejects_invalid_payload_without_calling_store() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app")
+                .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -256,67 +272,67 @@ async fn admin_app_route_rejects_invalid_runtime_status_without_calling_store() 
     for (method, uri, request_body, expected_fragment) in [
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Lowercase Runtime Status","status":"active","config":{"standard":{"appKey":"lowercase-runtime-status"}}}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Enabled Runtime Status","status":"ENABLED","config":{"standard":{"appKey":"enabled-runtime-status"}}}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Numeric Runtime Status","status":"1","config":{"standard":{"appKey":"numeric-runtime-status"}}}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Published Runtime Status","status":"PUBLISHED","config":{"standard":{"appKey":"published-runtime-status"}}}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Offline Runtime Status","status":"OFFLINE","config":{"standard":{"appKey":"offline-runtime-status"}}}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"name":"Published Runtime Status","status":"PUBLISHED"}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"name":"Offline Runtime Status","status":"OFFLINE"}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"status":"PUBLISHED"}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"status":"active"}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"status":"ENABLED"}"#,
             "status",
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"status":"1"}"#,
             "status",
         ),
@@ -355,32 +371,32 @@ async fn admin_app_route_rejects_invalid_market_status_without_calling_store() {
     for (method, uri, request_body) in [
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Lowercase Market Status","marketStatus":"published","config":{"standard":{"appKey":"lowercase-market-status"}}}"#,
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Active Market Status","marketStatus":"ACTIVE","config":{"standard":{"appKey":"active-market-status"}}}"#,
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Numeric Market Status","marketStatus":"1","config":{"standard":{"appKey":"numeric-market-status"}}}"#,
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"marketStatus":"published"}"#,
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"marketStatus":"ACTIVE"}"#,
         ),
         (
             "POST",
-            "/backend/v3/api/app/list",
+            "/backend/v3/api/platform/apps/list",
             r#"{"marketStatus":"1"}"#,
         ),
     ] {
@@ -439,7 +455,7 @@ async fn admin_app_route_rejects_reserved_config_shapes_without_calling_store() 
             .oneshot(
                 Request::builder()
                     .method("POST")
-                    .uri("/backend/v3/api/app")
+                    .uri("/backend/v3/api/platform/apps")
                     .header("content-type", "application/json")
                     .header("x-sdkwork-tenant-id", "10")
                     .header("x-sdkwork-organization-id", "20")
@@ -463,43 +479,43 @@ async fn admin_app_route_requires_standard_app_key_on_create_and_update_config()
     for (method, uri, request_body, expected_fragment) in [
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Missing App Key"}"#,
             "config.standard.appKey is required",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Missing App Key","config":{"standard":{}}}"#,
             "config.standard.appKey is required",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Uppercase App Key","config":{"standard":{"appKey":"Admin-App"}}}"#,
             "appKey must use lowercase kebab-case",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Underscore App Key","config":{"standard":{"appKey":"admin_app"}}}"#,
             "appKey must use lowercase kebab-case",
         ),
         (
             "POST",
-            "/backend/v3/api/app",
+            "/backend/v3/api/platform/apps",
             r#"{"name":"Colon App Key","config":{"standard":{"appKey":"admin:app"}}}"#,
             "appKey must use lowercase kebab-case",
         ),
         (
             "PUT",
-            "/backend/v3/api/app/1",
+            "/backend/v3/api/platform/apps/1",
             r#"{"config":{"standard":{}}}"#,
             "config.standard.appKey is required",
         ),
         (
             "PUT",
-            "/backend/v3/api/app/1",
+            "/backend/v3/api/platform/apps/1",
             r#"{"config":{"standard":{"appKey":"admin_app"}}}"#,
             "appKey must use lowercase kebab-case",
         ),
@@ -550,7 +566,7 @@ async fn admin_app_route_accepts_market_status_independently_from_runtime_status
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app")
+                .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -583,7 +599,7 @@ async fn admin_app_publish_does_not_change_runtime_status() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app")
+                .uri("/backend/v3/api/platform/apps")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")
@@ -604,7 +620,7 @@ async fn admin_app_publish_does_not_change_runtime_status() {
         .oneshot(
             Request::builder()
                 .method("POST")
-                .uri("/backend/v3/api/app/1/publish")
+                .uri("/backend/v3/api/platform/apps/1/publish")
                 .header("content-type", "application/json")
                 .header("x-sdkwork-tenant-id", "10")
                 .header("x-sdkwork-organization-id", "20")

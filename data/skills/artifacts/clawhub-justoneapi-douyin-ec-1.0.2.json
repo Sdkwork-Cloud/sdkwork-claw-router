@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/justoneapi-douyin-ec@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douyin_ec",
+  "skill": {
+    "id": 39758,
+    "skillKey": "clawhub-justoneapi-douyin-ec",
+    "name": "Douyin E-commerce API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douyin-ec",
+    "url": "https://clawhub.ai/skills/justoneapi-douyin-ec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douyin-ec-b677a01a86817b56.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze Douyin E-commerce workflows with JustOneAPI, including item Details."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "justoneapi",
+      "userId": "s17ayjxfh4atw7gc7dgat7n40x845p6b",
+      "displayName": "justoneapi",
+      "image": "https://avatars.githubusercontent.com/u/139095138?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776924435605,
+      "changelog": "- Operation name updated from getItemDetailV1 to getDouyinEcItemDetailV1\n- Documentation and references updated to reflect the new operation name across all files\n- No changes to inputs, outputs, or authentication requirements\n- Usage instructions and API references now point to the correct operation name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:07e6a8de2755a61ba1a4df79d9c22ba6365b023173c87c60237564a3700e99aa"
+}

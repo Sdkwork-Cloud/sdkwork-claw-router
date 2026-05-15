@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22379,
+  "uuid": "skill-clawhub-alchemy-official",
+  "skillKey": "clawhub-alchemy-official",
+  "name": "Alchemy Official",
+  "summary": "Access Alchemy's multi-chain APIs for tokens, NFTs, transfers, prices, portfolios, simulations, webhooks, and Solana via API key or agentic gateway.",
+  "version": "1.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alchemy_official",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alchemy",
+      "features": [
+        "Access Alchemy's multi-chain APIs for tokens, NFTs, transfers, prices, portfolios, simulations,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alchemy-official@1.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83442423?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alchemy-official",
+      "url": "https://clawhub.ai/skills/alchemy-official"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alchemy-official",
+    "url": "https://clawhub.ai/skills/alchemy-official",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alchemy-official-c7c85dc3d882370c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alchemy-official@1.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alchemy-official-1.1.2.json",
+      "version": "1.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fb27a4f6d06d53b0fb366df727c8468d0c20434dadd498fc151232fda003c297",
+      "artifactSizeBytes": 1926
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T22:03:21.718Z"
+}

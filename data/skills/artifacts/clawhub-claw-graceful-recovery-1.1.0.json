@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-graceful-recovery@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_graceful_recovery",
+  "skill": {
+    "id": 63184,
+    "skillKey": "clawhub-claw-graceful-recovery",
+    "name": "claw-graceful-recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-graceful-recovery",
+    "url": "https://clawhub.ai/skills/claw-graceful-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-graceful-recovery-c0c277b1c3dc5e06.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Claw 微信指令权限错误恢复。当 AI 通过微信接收用户指令后，执行操作遭遇 权限拒绝、系统限制或访问被拒，导致任务卡住、循环重试或无法继续接受新指令时触发。 触发词：权限不足、没有权限、Permission denied、EACCES、Operation not permitted、 拒绝访问、卡住了、无响应..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brandon114",
+      "userId": "s176p07sp583e38r4dgs0jqdqs83jtar",
+      "displayName": "Brandon114",
+      "image": "https://avatars.githubusercontent.com/u/53056581?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1777997497457,
+      "changelog": "Version 1.1.0\n\n- 新增 i18n 多语言支持相关文件：i18n-en-references/error-signals.md, i18n-en-references/feedback-templates.md, i18n/en.md\n- 文档结构未变，主流程保持不变\n- 信号列表与反馈模板分离为独立可国际化文件\n- 为后续多语言扩展打下基础",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2b18cbc6e24cbca70b312cc20ba16e3eca370e7d4bd6b15cafe991b9bced633c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meta-harness-evolver@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meta_harness_evolver",
+  "skill": {
+    "id": 43556,
+    "skillKey": "clawhub-meta-harness-evolver",
+    "name": "Meta-Harness Evolver"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meta-harness-evolver",
+    "url": "https://clawhub.ai/skills/meta-harness-evolver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meta-harness-evolver-f4ab54c737840a09.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "End-to-end Meta-Harness evolution for Hoss (OpenClaw agent). Runs nightly at 3 AM via OpenClaw cron. Reads Hoss's current workspace configs (SOUL.md, IDENTIT..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tylerdotai",
+      "userId": "s175dzw0p3n0d9nddapydgeg9583pg3m",
+      "displayName": "Tyler",
+      "image": "https://avatars.githubusercontent.com/u/265649192?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 139,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774929292137,
+      "changelog": "Initial release: nightly Meta-Harness outer-loop evolution for OpenClaw agents",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f3be4cc9f252a246495235be76f86dff8168d0b241230e8320fbeb985f0b1e6"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flow-test@0.0.1",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flow_test",
+  "skill": {
+    "id": 28968,
+    "skillKey": "clawhub-flow-test",
+    "name": "flow test"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flow-test",
+    "url": "https://clawhub.ai/skills/flow-test",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flow-test-985daf9db0f27076.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Designs agent-evaluated flow tests for browser tasks, LLM outputs, and tool workflows. Invoke when exact asserts are brittle and semantic success matters mor..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qipengguo",
+      "userId": "s170pr38p1397r6p2bxqgmp6p583hzq7",
+      "displayName": "QipengGuo",
+      "image": "https://avatars.githubusercontent.com/u/8382210?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.0.1",
+      "createdAt": 1774374974364,
+      "changelog": "- Initial release of the \"flow-test\" skill for agent-evaluated testing of browser tasks, LLM outputs, and tool workflows.\n- Provides a structured approach for designing tests where exact asserts are brittle and semantic success is more important than literal equality.\n- Introduces clear guidelines for when to use flow tests versus traditional assertions.\n- Defines an evidence-based evaluation process, including deterministic checks, semantic rubrics, and a bounded verdict system (`pass`, `fail`, `needs_review`).\n- Includes output templates and deliverable requirements for consistent test design.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b97551025b1dd5807d7aa86f84dcfeb23b5bc38c4be7d3f575640574a39e2d02"
+}

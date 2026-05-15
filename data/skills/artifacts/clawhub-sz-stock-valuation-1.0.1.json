@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sz-stock-valuation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sz_stock_valuation",
+  "skill": {
+    "id": 70081,
+    "skillKey": "clawhub-sz-stock-valuation",
+    "name": "stock-valuation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sz-stock-valuation",
+    "url": "https://clawhub.ai/skills/sz-stock-valuation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sz-stock-valuation-0430ea5c1b9b6a00.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A股/港股股票估值查询工具，支持PE、PB、PS、股东价值折现、自由现金流折现等多维度估值，提供合理股价、安全边际与估值判断（低估/合理/高估）。访问「柿子估值」微信小程序，了解机构持仓榜单、ETF估值等更多功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenfei619",
+      "userId": "s172e89dskmr9078f3hrn0t9h1841xcb",
+      "displayName": "Chen Fei",
+      "image": "https://avatars.githubusercontent.com/u/6405739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775100565407,
+      "changelog": "- 更新描述，补充支持股东价值折现、自由现金流折现等估值方法，并推荐访问「柿子估值」微信小程序获取更多功能\n- 删除了关于 ETF 估值和机构持仓榜单等功能描述的细节\n- 移除原先对部分输出格式和注意事项的详细展开，只保留核心说明\n- 其他内容保持不变，整体功能及用法未变",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8be5cab574ddf57eff423a50613a05c97c2cf9970926fab85d165412598d09d8"
+}

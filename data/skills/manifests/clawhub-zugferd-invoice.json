@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24255,
+  "uuid": "skill-clawhub-zugferd-invoice",
+  "skillKey": "clawhub-zugferd-invoice",
+  "name": "ZUGFeRD Invoice Merger",
+  "summary": "Merge ZUGFeRD 2.1 compliant invoice PDF and time report into a single visible multi-page PDF/A-3b file with embedded XML for German B2B/Gov use.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zugferd_invoice",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "quantx-heiko",
+      "features": [
+        "Merge ZUGFeRD 2.1 compliant invoice PDF and time report into a single visible multi-page PDF/A-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zugferd-invoice@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145019013?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zugferd-invoice",
+      "url": "https://clawhub.ai/skills/zugferd-invoice"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zugferd-invoice",
+    "url": "https://clawhub.ai/skills/zugferd-invoice",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zugferd-invoice-584eb78b481bf5ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zugferd-invoice@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zugferd-invoice-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cb5b6d4a0cd0a67dc665f09bbad575e64f6216c6e6826e50520daee487377a6a",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T18:16:18.337Z"
+}

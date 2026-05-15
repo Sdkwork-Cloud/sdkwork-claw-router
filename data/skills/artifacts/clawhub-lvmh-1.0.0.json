@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lvmh@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lvmh",
+  "skill": {
+    "id": 69700,
+    "skillKey": "clawhub-lvmh",
+    "name": "Lvmh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lvmh",
+    "url": "https://clawhub.ai/skills/lvmh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lvmh-6a74a560ffd34b04.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "全球最大奢侈品集团，拥有75+顶级品牌，涵盖时装皮具、美妆、腕表珠宝和精选零售，2024年营收约862亿欧元。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776569233503,
+      "changelog": "- 首次发布 LVMH 技能，系统梳理全球最大奢侈品集团概况\n- 涵盖集团历史时间线、业务结构、核心护城河、关键数据\n- 支持查询公司基本信息、行业地位、商业模式分析与投资参考\n- 收录 2024 年营收、品牌矩阵及重大收购事件要点",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7bce2a9c2c34553baada9eb58f0719f1acd5a625a1eb1754af653571052ffb81"
+}

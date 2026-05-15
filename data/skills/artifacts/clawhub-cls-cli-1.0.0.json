@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cls-cli@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cls_cli",
+  "skill": {
+    "id": 46294,
+    "skillKey": "clawhub-cls-cli",
+    "name": "CLS CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cls-cli",
+    "url": "https://clawhub.ai/skills/cls-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cls-cli-9286431b9bd653d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Command-line tool for managing Tencent Cloud CLS: install, configure, search logs, manage topics, alarms, dashboards, machine groups, and collectors."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "trumphuang",
+      "userId": "s174wte4paj7439nwd5fpcjgks83jv79",
+      "displayName": "trump",
+      "image": "https://avatars.githubusercontent.com/u/42159347?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776177581407,
+      "changelog": "Initial release: 腾讯云CLS日志服务命令行工具，面向AI Agent设计，支持日志检索、告警、仪表盘、采集配置等",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:65b637585add534dd16a77f5fd5c95393f926d82cfa7103833f38a4d6aa3cfc7"
+}

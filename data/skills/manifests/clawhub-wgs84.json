@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34269,
+  "uuid": "skill-clawhub-wgs84",
+  "skillKey": "clawhub-wgs84",
+  "name": "wgs84",
+  "summary": "Explain and work with the WGS 84 coordinate system for GPS-style longitude/latitude data, including EPSG:4326 usage, axis-order checks, range validation, UTM...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wgs84",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jvy",
+      "features": [
+        "Explain and work with the WGS 84 coordinate system for GPS-style longitude/latitude data, inclu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wgs84@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5337221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wgs84",
+      "url": "https://clawhub.ai/skills/wgs84"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wgs84",
+    "url": "https://clawhub.ai/skills/wgs84",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wgs84-6b02dd6c327214e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wgs84@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wgs84-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:148c5a22c8e0c41be3422dd44e504b238df07e3a1ec44984d9365909dec6fbf9",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T01:22:32.278Z"
+}

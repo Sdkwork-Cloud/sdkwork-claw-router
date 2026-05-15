@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podcast-video-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podcast_video_free",
+  "skill": {
+    "id": 55426,
+    "skillKey": "clawhub-podcast-video-free",
+    "name": "Podcast Video Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podcast-video-free",
+    "url": "https://clawhub.ai/skills/podcast-video-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podcast-video-free-d8bcf799b2384b52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — turn my podcast audio into a video with waveform animation and captions —..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776604707692,
+      "changelog": "Podcast Video Free — Initial Release\n\n- Convert podcast audio (MP3, WAV) or video files (MP4, MOV) up to 500MB into video with waveform animation and captions—ideal for fast publishing to YouTube or social media.\n- No complex editing required; describe your desired output and receive a ready-to-download 1080p MP4 in 1–2 minutes.\n- Automatic setup with free 7-day API token (100 credits)–no account needed.\n- Supports batch processing, editing, and iterative workflows within a session.\n- Cloud rendering pipeline includes status updates, error handling, and credit management.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c48b000ed96da1aed2ddb3e4bf12c8ff3bc7d1ea7f7a04e36d9ac0a3e289279d"
+}

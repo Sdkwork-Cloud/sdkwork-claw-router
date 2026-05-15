@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58153,
+  "uuid": "skill-clawhub-china-bankcard",
+  "skillKey": "clawhub-china-bankcard",
+  "name": "China Bankcard",
+  "summary": "中国银行卡号解析与验证。Use when the user provides a Chinese bank card number and wants to identify the issuing bank, card type (借记卡/信用卡), card organization (银联/Visa/Mas...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_bankcard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "中国银行卡号解析与验证。Use when the user provides a Chinese bank card number and wants to identify the iss."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-bankcard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-bankcard",
+      "url": "https://clawhub.ai/skills/china-bankcard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-bankcard",
+    "url": "https://clawhub.ai/skills/china-bankcard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-bankcard-02c3e746e8e47697.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-bankcard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-bankcard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52dbff3a839a31e07f238cf702f4910e6857583fda0323333d595424167e09a9",
+      "artifactSizeBytes": 2341
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T12:50:32.849Z"
+}

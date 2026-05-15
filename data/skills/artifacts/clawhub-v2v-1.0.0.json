@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/v2v@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.v2v",
+  "skill": {
+    "id": 37366,
+    "skillKey": "clawhub-v2v",
+    "name": "V2V"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "v2v",
+    "url": "https://clawhub.ai/skills/v2v",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/v2v-0bea73ad4f823a78.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Placeholder skill for video-to-video workflows on skills.video. Use when the user is asking about v2v generation and the concrete API contract has not been i..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "skills-video",
+      "userId": "s1794jxnsph7h4dfc4rt0wtmbn83hba0",
+      "displayName": "skills-video",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774345063878,
+      "changelog": "v2v 1.0.0 - Initial placeholder release\n\n- Introduced as a placeholder skill for video-to-video (v2v) workflows on skills.video.\n- Clearly notifies users that v2v functionality is not yet implemented.\n- Avoids guessing request structure or API parameters—does not support real v2v requests yet.\n- Recommends checking for model-specific documentation if required.\n- Will be updated to a full workflow once an API contract is available.\n- Related placeholder skills referenced: video-generation, i2v, i2i.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28c0004c5b2fe1eceefedb4e5e4d40659458983d165a5697f0672474382476d6"
+}

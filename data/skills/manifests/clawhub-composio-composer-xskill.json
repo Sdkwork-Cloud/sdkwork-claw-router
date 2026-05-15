@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21001,
+  "uuid": "skill-clawhub-composio-composer-xskill",
+  "skillKey": "clawhub-composio-composer-xskill",
+  "name": "Composio Composer Xskill",
+  "summary": "Enables posting tweets to Twitter/X through Composio's integration platform via HTTP and BeautifulSoup. Use when posting tweets or integrating with Composio.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.composio_composer_xskill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "austindixson",
+      "features": [
+        "Enables posting tweets to Twitter/X through Composio's integration platform via HTTP and Beauti.",
+        "Use when posting tweets or integrating with Composio."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/composio-composer-xskill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52183161?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "composio-composer-xskill",
+      "url": "https://clawhub.ai/skills/composio-composer-xskill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "composio-composer-xskill",
+    "url": "https://clawhub.ai/skills/composio-composer-xskill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/composio-composer-xskill-1c7c13aaafc437b4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/composio-composer-xskill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-composio-composer-xskill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f15db21a116b169ddbe7c301173c5ae02f6962921fba5ed1bcfc646c03a6ec30",
+      "artifactSizeBytes": 2423
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-27T13:05:00.708Z"
+}

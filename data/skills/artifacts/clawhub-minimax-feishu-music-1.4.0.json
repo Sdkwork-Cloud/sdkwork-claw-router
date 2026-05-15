@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-feishu-music@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_feishu_music",
+  "skill": {
+    "id": 39022,
+    "skillKey": "clawhub-minimax-feishu-music",
+    "name": "MiniMax Feishu Music"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-feishu-music",
+    "url": "https://clawhub.ai/skills/minimax-feishu-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-feishu-music-d1ac12b6993e9b5a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate themed music with lyrics using MiniMax music-2.6 and send as a high-quality MP3 audio attachment to a Feishu user."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "raydoomed",
+      "userId": "s1793ae330e8wwb5pepxqvhbvs83gsdh",
+      "displayName": "xRay",
+      "image": "https://avatars.githubusercontent.com/u/57515812?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1775892039591,
+      "changelog": "Add music-cover mode: --cover parameter for reference audio, lyrics-swap functionality, updated examples and documentation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0a0398569d6a31be7d73f7a495dc2b660513b0483bb0a8aa554580047404201c"
+}

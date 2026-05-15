@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/helm-chart-auditor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helm_chart_auditor",
+  "skill": {
+    "id": 54080,
+    "skillKey": "clawhub-helm-chart-auditor",
+    "name": "Helm Chart Auditor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helm-chart-auditor",
+    "url": "https://clawhub.ai/skills/helm-chart-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helm-chart-auditor-f9efba5f9301b0ce.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Audit Helm charts for security, best practices, template correctness, and production readiness — check values, templates, hooks, dependencies, and RBAC."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777617600219,
+      "changelog": "Initial release of Helm Chart Auditor.\n\n- Audits Helm charts for security issues, best practices adherence, template correctness, and production readiness.\n- Reviews key files: Chart.yaml, values.yaml, templates, hooks, RBAC resources, and dependencies.\n- Identifies critical issues like containers running as root, missing resource limits, and insecure values.\n- Checks for template quality, required values, standard labeling, and proper use of Helm features.\n- Assesses production readiness, including health probes, PodDisruptionBudgets, and autoscaling configuration.\n- Evaluates values schema and documentation for development and production use cases.\n- Provides clear, actionable output with prioritized findings and best practice acknowledgements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e356a8a7239b27e18a5c74873c0b1d61226385ab2dbdf77c0518ad62572ad1f4"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/intrinsic-value-calculator@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.intrinsic_value_calculator",
+  "skill": {
+    "id": 73182,
+    "skillKey": "clawhub-intrinsic-value-calculator",
+    "name": "内在价值计算器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "intrinsic-value-calculator",
+    "url": "https://clawhub.ai/skills/intrinsic-value-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/intrinsic-value-calculator-417a2573c3b66333.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "［何时使用］当用户需要计算企业内在价值时；当用户问\"这只股票值多少钱\"时；当进行多方法估值对比时；当需要敏感性分析时"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lj22503",
+      "userId": "s17dhbyrvq4rmpz7c0cg1y9yrs83nsxz",
+      "displayName": "lj22503",
+      "image": "https://avatars.githubusercontent.com/u/170225356?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 277,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773922285688,
+      "changelog": "按 v2.0 标准重构",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b759b6c6ef0a290e1af9984be1dd74aa40e768291489ee41bf16e4f7184756a1"
+}

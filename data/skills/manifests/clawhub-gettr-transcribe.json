@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19358,
+  "uuid": "skill-clawhub-gettr-transcribe",
+  "skillKey": "clawhub-gettr-transcribe",
+  "name": "Gettr Transcribe",
+  "summary": "Download audio from a GETTR post or streaming page and transcribe it locally with MLX Whisper on Apple Silicon (with timestamps via VTT). Use when given a GE...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gettr_transcribe",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Kevin37Li",
+      "features": [
+        "Download audio from a GETTR post or streaming page and transcribe it locally with MLX Whisper o.",
+        "Use when given a GE..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gettr-transcribe@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44332462?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gettr-transcribe",
+      "url": "https://clawhub.ai/skills/gettr-transcribe"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gettr-transcribe",
+    "url": "https://clawhub.ai/skills/gettr-transcribe",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gettr-transcribe-85dfd32f4804a71b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gettr-transcribe@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gettr-transcribe-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d34ec804799cd645ea84c6d23ee5677bb7bbea94de1cae1e1dfa6f2695cf781c",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T21:24:12.826Z"
+}

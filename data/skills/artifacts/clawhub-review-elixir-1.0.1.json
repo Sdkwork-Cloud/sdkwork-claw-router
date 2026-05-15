@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/review-elixir@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.review_elixir",
+  "skill": {
+    "id": 39236,
+    "skillKey": "clawhub-review-elixir",
+    "name": "Review Elixir"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "review-elixir",
+    "url": "https://clawhub.ai/skills/review-elixir",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/review-elixir-860a6ddc13b52317.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive Elixir/Phoenix code review with optional parallel agents"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776831117148,
+      "changelog": "**Adds strict pre-issue gates for scope, linter, protocol, and evidence to ensure review quality and reproducibility.**\n\n- Introduces four \"Hard gates\" (scope, linter, protocol, evidence) that must be passed in order before reporting any issues.\n- Clarifies that an explicit file list must be printed or declared empty before proceeding; fabricated issue reports are disallowed.\n- Requires explicit linter (formatter, Credo, Dialyzer) run status to be reported, and never flags linter-passing style lines as issues.\n- Mandates that all Critical/Major issues be cross-checked against the verification protocol and code context at FILE:LINE.\n- Strengthens verification steps before and after reviews to prevent speculative or unsubstantiated reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b8342ba1562b568eb75c29b5a9b204c17036fde8c26460c66c1bcd3fd465520"
+}

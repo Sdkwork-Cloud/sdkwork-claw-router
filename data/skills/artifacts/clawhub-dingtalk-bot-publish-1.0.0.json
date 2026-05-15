@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/dingtalk-bot-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dingtalk_bot_publish",
+  "skill": {
+    "id": 61704,
+    "skillKey": "clawhub-dingtalk-bot-publish",
+    "name": "Dingtalk Bot Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dingtalk-bot-publish",
+    "url": "https://clawhub.ai/skills/dingtalk-bot-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dingtalk-bot-publish-74f4de7214d0739a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "调用钉钉开放平台API，支持用户搜索/详情/查询、部门管理（搜索/详情/子部门/用户列表/父部门）、机器人单聊消息发送、群聊消息发送、群内机器人列表查询、Stream模式事件推送、多会话隔离管理等核心功能。Use when needing to search DingTalk users or departmen..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zaohon",
+      "userId": "publishers:zaohon",
+      "displayName": "Zao_hon",
+      "image": "https://avatars.githubusercontent.com/u/17217613?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 714,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772077401757,
+      "changelog": "Initial release of dingtalk-api skill with full DingTalk enterprise integration:\n\n- Supports user search/details, department management, and group bot listing\n- Enables both traditional API and recommended Stream mode for event push and multi-session isolation\n- Supports single/group chat robot messaging, OA approval management, and real-time event processing\n- Provides detailed error handling, environment variable setup, and security best practices\n- Multi-session architecture ensures per-user conversational isolation and memory persistence",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:246706e5e79ca16ab1529b2030e9deb54598c61a5dfcdc037eb6eda3601e496c"
+}

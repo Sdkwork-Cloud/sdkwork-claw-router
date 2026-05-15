@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28234,
+  "uuid": "skill-clawhub-whoop-health",
+  "skillKey": "clawhub-whoop-health",
+  "name": "WHOOP Health",
+  "summary": "Fetch, analyze, and visualize WHOOP wearable health data via the WHOOP Developer API v2. Use when the user wants to connect their WHOOP band, retrieve recove...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoop_health",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JIAWEI YIN",
+      "features": [
+        "Fetch, analyze, and visualize WHOOP wearable health data via the WHOOP Developer API v2",
+        "Use when the user wants to connect their WHOOP band, retrieve recove..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoop-health@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/38063596?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoop-health",
+      "url": "https://clawhub.ai/skills/whoop-health"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoop-health",
+    "url": "https://clawhub.ai/skills/whoop-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoop-health-b2b1ba844407c21d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoop-health@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoop-health-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:570d894d6b81efcb5d3109f25390bf2ff8c27924388c0a20f5dc42ce2e5c2347",
+      "artifactSizeBytes": 1961
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T05:57:21.354Z"
+}

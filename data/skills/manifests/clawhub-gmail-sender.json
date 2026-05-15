@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17116,
+  "uuid": "skill-clawhub-gmail-sender",
+  "skillKey": "clawhub-gmail-sender",
+  "name": "Gmail Sender",
+  "summary": "Send emails via Gmail SMTP using a Python CLI tool with Google App Password for alerts, notifications, and automated reports.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gmail_sender",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Junkai Xue",
+      "features": [
+        "Send emails via Gmail SMTP using a Python CLI tool with Google App Password for alerts, notific."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gmail-sender@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6695617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gmail-sender",
+      "url": "https://clawhub.ai/skills/gmail-sender"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gmail-sender",
+    "url": "https://clawhub.ai/skills/gmail-sender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gmail-sender-a955b5196107b150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gmail-sender@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gmail-sender-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f84e9a496f212a91a1132d3f7a62a885977c8c68d04340c0f7564b87b1708e8",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T06:29:03.842Z"
+}

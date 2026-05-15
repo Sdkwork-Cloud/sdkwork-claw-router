@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56817,
+  "uuid": "skill-clawhub-tonghuashun-ifind",
+  "skillKey": "clawhub-tonghuashun-ifind",
+  "name": "同花顺 iFinD 接入 Skill",
+  "summary": "Use when the user needs Tonghuashun iFinD market, report, factor, screening, calendar, or other financial data, and all data must come from iFinD after succe...",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tonghuashun_ifind",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wu Bo Yu",
+      "features": [
+        "Use when the user needs Tonghuashun iFinD market, report, factor, screening, calendar, or other."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tonghuashun-ifind@0.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/95729350?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tonghuashun-ifind",
+      "url": "https://clawhub.ai/skills/tonghuashun-ifind"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tonghuashun-ifind",
+    "url": "https://clawhub.ai/skills/tonghuashun-ifind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tonghuashun-ifind-caede797931db7f6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tonghuashun-ifind@0.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-tonghuashun-ifind-0.5.1.json",
+      "version": "0.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c4f707c6482a5e7c2daf42c2d872cbd91bc70648940f2c850b7073b64aaab37",
+      "artifactSizeBytes": 2039
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-26T10:17:50.573Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mediacrawler-skill@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mediacrawler_skill",
+  "skill": {
+    "id": 62940,
+    "skillKey": "clawhub-mediacrawler-skill",
+    "name": "Media Crawler"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mediacrawler-skill",
+    "url": "https://clawhub.ai/skills/mediacrawler-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mediacrawler-skill-bce4536f0a705867.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 MediaCrawler 的多平台公开信息采集工具，支持安装、命令行运行、WebUI、结果定位与常用任务模板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "excalibur9527",
+      "userId": "s171x6qq5n03ywxpx979e1r43s85ce07",
+      "displayName": "Excalibur9527",
+      "image": "https://avatars.githubusercontent.com/u/126892847?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1091,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1773202740178,
+      "changelog": "- Improved documentation with clearer usage instructions, more examples, and template commands for common tasks.\n- Added scripts/show_results.sh for quickly locating result files in the data directory.\n- Updated supported platforms section with standardized platform codes.\n- Added details on various data storage formats and how to configure the save path.\n- README and setup instructions refined for easier installation and operation.\n- Manifest and metadata updated to reflect new capabilities and usage patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bc0d8f0e0421fd385340071b0fbb10815f50c2803eef99e2c64b18583dbd028b"
+}

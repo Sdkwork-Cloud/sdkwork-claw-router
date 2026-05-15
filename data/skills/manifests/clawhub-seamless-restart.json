@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25561,
+  "uuid": "skill-clawhub-seamless-restart",
+  "skillKey": "clawhub-seamless-restart",
+  "name": "Seamless Restart",
+  "summary": "Seamless gateway restart with automatic context recovery and post-restart notification. Use whenever the agent needs to restart the OpenClaw gateway (config...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seamless_restart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zihao Feng",
+      "features": [
+        "Seamless gateway restart with automatic context recovery and post-restart notification",
+        "Use whenever the agent needs to restart the OpenClaw gateway (config..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seamless-restart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/140311132?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seamless-restart",
+      "url": "https://clawhub.ai/skills/seamless-restart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seamless-restart",
+    "url": "https://clawhub.ai/skills/seamless-restart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seamless-restart-3009201441eb8712.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seamless-restart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seamless-restart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65414663554500710a408401c36f1d47a203e67a438f29720eaeb108ebeea754",
+      "artifactSizeBytes": 2042
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T19:12:41.133Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ima-team-board-socneo@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ima_team_board_socneo",
+  "skill": {
+    "id": 31562,
+    "skillKey": "clawhub-ima-team-board-socneo",
+    "name": "ima-team-board-socneo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ima-team-board-socneo",
+    "url": "https://clawhub.ai/skills/ima-team-board-socneo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ima-team-board-socneo-3b234780f6313a9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "IMA Team Board - AI Team Collaboration Message Board via IMA API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "socneo",
+      "userId": "s17f4nwgeaxenw0ab8a20sf06h8476dn",
+      "displayName": "socneo",
+      "image": "https://avatars.githubusercontent.com/u/128616637?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773772135948,
+      "changelog": "- Renamed and refocused skill from message-hub to ima-team-board, now utilizing Tencent IMA API for asynchronous team collaboration.\n- Removed hub_client.py and message_hub.py; added ima_board.py as the new core implementation file.\n- Updated description, tags, and documentation to reflect support for message boards and multi-assistant collaboration.\n- Requirements changed: now uses IMA API credentials (CLIENTID and APIKEY) instead of Message Hub credentials.\n- Retained initial security practices and async collaboration focus.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:db4c137de9117784c9f7d70293d47b9bb329239768d63779bd5678127252cd5c"
+}

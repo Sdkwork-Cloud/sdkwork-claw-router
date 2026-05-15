@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-search@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_search",
+  "skill": {
+    "id": 57860,
+    "skillKey": "clawhub-clawhub-skill-search",
+    "name": "Clawhub Skill Search"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-search",
+    "url": "https://clawhub.ai/skills/clawhub-skill-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-search-092f870878d2a174.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when users need help finding, discovering, or selecting OpenClaw skills from the Clawhub marketplace. Triggers include: '哪个技能适合', '怎么找到', '技能搜..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "earthwalking",
+      "userId": "s17c22xptvm4zbcs3vbdf4mwj583hzep",
+      "displayName": "Roma",
+      "image": "https://avatars.githubusercontent.com/u/105550312?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773538409136,
+      "changelog": "Initial release of clawhub-skill-search — a comprehensive skill discovery and selection guide for OpenClaw.\n\n- Provides triggers and matching logic to help users find suitable skills for 238+ OpenClaw use cases.\n- Includes task-to-skill mapping, skill comparisons, and practical usage guides for popular research/analysis skills.\n- Offers troubleshooting steps for skill issues and guidance for ambiguous user requests.\n- Supports output-based, domain-based, and task-type-based skill categorization.\n- Contains FAQ and advanced search tips for effective skill discovery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fc97c6e85d65190026b2742acb66ecf3cb42175f2ff14eb9a67747189ab07b01"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawdef@1.3.0",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdef",
+  "skill": {
+    "id": 52238,
+    "skillKey": "clawhub-clawdef",
+    "name": "ClawDef"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdef",
+    "url": "https://clawhub.ai/skills/clawdef",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdef-b06552df7e5f737e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ClawDef — Self-hosted Token optimization dashboard for OpenClaw. Tracks token usage, estimates costs, auto-switches to cheapest model, provides one-click pro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gs921302",
+      "userId": "s173yjfzfhky4h8gctzqnm7zz183h9cg",
+      "displayName": "ClawDef",
+      "image": "https://avatars.githubusercontent.com/u/30767799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.3.0",
+      "createdAt": 1774336889036,
+      "changelog": "review-fix: configPaths提升到metadata顶层,npm install去掉--no-audit和错误抑制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80639cad38f3b3745028d4221e3f7a4a0ea327103d00e46f44ac4fcb136fa9bf"
+}

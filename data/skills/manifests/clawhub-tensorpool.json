@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 43441,
+  "uuid": "skill-clawhub-tensorpool",
+  "skillKey": "clawhub-tensorpool",
+  "name": "tensorpool",
+  "summary": "This skill helps users migrate their local machine learning scripts to run on TensorPool GPU clusters using the interactive cluster workflow (tp ssh). Use th...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tensorpool",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tycho-Svoboda",
+      "features": [
+        "This skill helps users migrate their local machine learning scripts to run on TensorPool GPU cl.",
+        "Use th..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tensorpool@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/28027012?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tensorpool",
+      "url": "https://clawhub.ai/skills/tensorpool"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tensorpool",
+    "url": "https://clawhub.ai/skills/tensorpool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tensorpool-ba7b1f87eb118c5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tensorpool@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tensorpool-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ba2314d418b1e094a604d107dc98fb10e348422e8e695a9c3678b4841847cf9",
+      "artifactSizeBytes": 2573
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T22:19:55.044Z"
+}

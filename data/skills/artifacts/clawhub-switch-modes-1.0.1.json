@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/switch-modes@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.switch_modes",
+  "skill": {
+    "id": 13630,
+    "skillKey": "clawhub-switch-modes",
+    "name": "Switch Modes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "switch-modes",
+    "url": "https://clawhub.ai/skills/switch-modes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/switch-modes-62503c74654d404d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Switch between AI models dynamically to optimize costs and performance. Use when the user says mode commands like \"eco mode\", \"balanced mode\", \"smart mode\", or \"max mode\", or when they want to check their current mode with \"/modes status\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "serudda",
+      "userId": "publishers:serudda",
+      "displayName": "serudda",
+      "image": "https://avatars.githubusercontent.com/u/10075532?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1393,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770582256906,
+      "changelog": "Version 1.0.1 – Minor update\n\n- Added reference documentation file: REFERENCE.md\n- Removed sample/example configuration file: example-config.json",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e562f6f3e79b11f58d3b810e8a133b3a4d8f13ac53ecb3eba2b3487b6b5a896c"
+}

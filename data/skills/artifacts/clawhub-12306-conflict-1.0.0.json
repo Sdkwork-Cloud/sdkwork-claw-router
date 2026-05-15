@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/12306-conflict@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12306_conflict",
+  "skill": {
+    "id": 26768,
+    "skillKey": "clawhub-12306-conflict",
+    "name": "12306 Conflict"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12306-conflict",
+    "url": "https://clawhub.ai/skills/12306-conflict",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12306-conflict-fc56f0027d977e05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides tools for interacting with the 12306 system, including login scripts and client utilities requiring specific environment variables."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "feiyang2007",
+      "userId": "s170y1xt88170bf6qccpa3pbtx83g7mh",
+      "displayName": "Feiyang2007",
+      "image": "https://avatars.githubusercontent.com/u/195324643?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 350,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773397904632,
+      "changelog": "Initial release of the 12306 skill.\n\n- Provides general utility functions for 12306 ticketing workflows.\n- Lists 12306_client.py and scripts/login.py as core components.\n- Includes instructions for configuration via environment variables.\n- Documentation is auto-generated and currently minimal—future improvements suggested.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ae70f355b9e86239cd52978ef47985a2b6b76c602980844a4b8441de47a5175b"
+}

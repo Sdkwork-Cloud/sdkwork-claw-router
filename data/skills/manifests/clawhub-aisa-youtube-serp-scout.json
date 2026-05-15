@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38235,
+  "uuid": "skill-clawhub-aisa-youtube-serp-scout",
+  "skillKey": "clawhub-aisa-youtube-serp-scout",
+  "name": "AIsa Youtube Serp Scout",
+  "summary": "Search YouTube videos, channels, and trends through the AIsa YouTube SERP client. Use when the user asks for content research, competitor tracking, or trend...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aisa_youtube_serp_scout",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bibaofeng",
+      "features": [
+        "Search YouTube videos, channels, and trends through the AIsa YouTube SERP client",
+        "Use when the user asks for content research, competitor tracking, or trend..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aisa-youtube-serp-scout@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/86095131?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aisa-youtube-serp-scout",
+      "url": "https://clawhub.ai/skills/aisa-youtube-serp-scout"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aisa-youtube-serp-scout",
+    "url": "https://clawhub.ai/skills/aisa-youtube-serp-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aisa-youtube-serp-scout-e0bda9d77cb85e1d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aisa-youtube-serp-scout@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-aisa-youtube-serp-scout-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ca0e6fb5126c849f283a23be8a6c08091ebf8a50803bf5f680d52097e50aaf92",
+      "artifactSizeBytes": 2326
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T16:42:13.124Z"
+}

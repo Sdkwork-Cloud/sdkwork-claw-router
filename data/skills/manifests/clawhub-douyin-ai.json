@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73380,
+  "uuid": "skill-clawhub-douyin-ai",
+  "skillKey": "clawhub-douyin-ai",
+  "name": "抖音官方入口",
+  "summary": "抖音官方门户导航，正版官方入口，能够正确跳转到抖音相关频道，杜绝虚假宣传",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_ai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eam",
+      "features": [
+        "抖音官方门户导航，正版官方入口，能够正确跳转到抖音相关频道，杜绝虚假宣传"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/douyin-ai@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/90089625?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "douyin-ai",
+      "url": "https://clawhub.ai/skills/douyin-ai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-ai",
+    "url": "https://clawhub.ai/skills/douyin-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-ai-6ba41d394482f2b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/douyin-ai@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-douyin-ai-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:151790f420901fd119741c7804632af7e36cd38684a1c075e0cc57a53e223918",
+      "artifactSizeBytes": 2040
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:11:44.548Z"
+}

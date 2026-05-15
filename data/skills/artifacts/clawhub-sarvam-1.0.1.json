@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sarvam@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sarvam",
+  "skill": {
+    "id": 15779,
+    "skillKey": "clawhub-sarvam",
+    "name": "Sarvam AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sarvam",
+    "url": "https://clawhub.ai/skills/sarvam",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sarvam-ee1e31ffef7dbe64.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Sarvam AI for Indian language Text-to-Speech (TTS), Speech-to-Text (STT), Translation, and Chat."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "iammhk",
+      "userId": "publishers:iammhk",
+      "displayName": "iammhk",
+      "image": "https://avatars.githubusercontent.com/u/15052480?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 772,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771433954406,
+      "changelog": "- Added metadata files: .clawhub/origin.json and _meta.json.\n- SKILL.md updated to include a metadata section with environment and usage requirements.\n- No changes to code or user-facing functionality.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b61e13361125122dffea31d4997e4b04ad4a0587abc8354ffd3f92416a3a9a27"
+}

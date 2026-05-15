@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-subtitle@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_subtitle",
+  "skill": {
+    "id": 44584,
+    "skillKey": "clawhub-add-subtitle",
+    "name": "Add Subtitle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-subtitle",
+    "url": "https://clawhub.ai/skills/add-subtitle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-subtitle-4b720287e0ddcf82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add video files into captioned video files with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. YouTubers, content creators, marketers use it f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776916995575,
+      "changelog": "Initial release of add-subtitle 1.0.0:\n\n- Generate and embed subtitles automatically into video files (MP4, MOV, AVI, WebM; up to 500MB).\n- Cloud-based captioning pipeline delivers 1080p MP4 exports in 30–90 seconds.\n- Automatic token/session management for quick setup — anonymous usage with 100 free credits.\n- Supports batch uploads, English auto-synced captions, and common edit commands (upload, export, check credits).\n- Clear guidance on status, supported formats, error handling, and user feedback.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3c44a8f87b1add1050f74da373849d62d7624c6d5a8c524011ddf1d0707f1031"
+}

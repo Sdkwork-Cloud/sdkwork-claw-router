@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11586,
+  "uuid": "skill-clawhub-surrealdb-knowledge-graph-memory",
+  "skillKey": "clawhub-surrealdb-knowledge-graph-memory",
+  "name": "Self-improving Agent Memory Upgrade (SurrealDB)",
+  "summary": "A comprehensive knowledge graph memory system with semantic search, episodic memory, working memory, automatic context injection, and per-agent isolation.",
+  "version": "2.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.surrealdb_knowledge_graph_memory",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "maverick-software",
+      "features": [
+        "A comprehensive knowledge graph memory system with semantic search, episodic memory, working me."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/surrealdb-knowledge-graph-memory@2.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85259593?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "surrealdb-knowledge-graph-memory",
+      "url": "https://clawhub.ai/skills/surrealdb-knowledge-graph-memory"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "surrealdb-knowledge-graph-memory",
+    "url": "https://clawhub.ai/skills/surrealdb-knowledge-graph-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/surrealdb-knowledge-graph-memory-6e06a867ad28dd6a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/surrealdb-knowledge-graph-memory@2.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-surrealdb-knowledge-graph-memory-2.3.0.json",
+      "version": "2.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bf2cd4c1169c1960fdcb4edaa6bf1d31cbeb0a4a297c64975755cfcd4f76e30",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T22:03:47.748Z"
+}

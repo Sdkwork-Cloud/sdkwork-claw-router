@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawhub-skill-install@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_install",
+  "skill": {
+    "id": 21807,
+    "skillKey": "clawhub-clawhub-skill-install",
+    "name": "clawhub-skill-install"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-install",
+    "url": "https://clawhub.ai/skills/clawhub-skill-install",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-install-b95b0e732241efb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically install skills from ClawHub with retry logic. Handles rate limits (waits 10s and retries), auto-confirms prompts (--force), and stops after 30..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "z448577223",
+      "userId": "publishers:z448577223",
+      "displayName": "z448577223",
+      "image": "https://avatars.githubusercontent.com/u/11867810?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 485,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773124025437,
+      "changelog": "# ClawHub Skill Install\n\nAutomatically install skills from ClawHub with retry logic.\n\n## Features\n- Handles rate limits (waits 10s and retries)\n- Auto-confirms prompts (--force)\n- 30-minute timeout protection\n- Logs attempts and elapsed time\n\n## Usage\nWhen user provides a skill name, run:\nbash /path/to/scripts/install_skill.sh <skill-name>",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a50d77580ae6bf2f3e9b63b84db111b909f6a86f080a6a8aa3527a00b5522d2d"
+}

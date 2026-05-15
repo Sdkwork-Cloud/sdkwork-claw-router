@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/psilo@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.psilo",
+  "skill": {
+    "id": 46358,
+    "skillKey": "clawhub-psilo",
+    "name": "psilo"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "psilo",
+    "url": "https://clawhub.ai/skills/psilo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/psilo-e7c0f5ca0c012c86.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when an agent needs to: (1) create on-chain escrow contracts via EscrowFactory, (2) release escrowed funds via arbiter-signed transactions, an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pakt",
+      "userId": "s17f0v6ymb4p2rsbfr0ksbbhks84xfsm",
+      "displayName": "Pakt",
+      "image": null
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 126,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776213236823,
+      "changelog": "- Updated the skill name to \"psilo\" (was \"pakt-escrow-api\").\n- Added a new \"Security and Transparency Checklist\" clarifying capability scope, prohibited behaviors, credential handling, data storage, and network use.\n- Emphasized safeguards for autonomous agent use, including user confirmations and allowlisting.\n- All escrow API capabilities and authentication instructions are unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fb21ff8b71bb203c618faf0a3b88744996cdfcc7c3514dc6e0ca339b639fd034"
+}

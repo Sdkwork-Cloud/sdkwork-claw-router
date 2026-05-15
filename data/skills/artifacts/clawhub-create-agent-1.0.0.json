@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/create-agent@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.create_agent",
+  "skill": {
+    "id": 18503,
+    "skillKey": "clawhub-create-agent",
+    "name": "Create Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "create-agent",
+    "url": "https://clawhub.ai/skills/create-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/create-agent-1b8a5a6d13f46c58.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Creates new Overstory agents for Overclaw by updating all seven integration points (config, manifest, agent-def, gateway prompt, task_router, generate_agent_..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 595,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772111283389,
+      "changelog": "- Initial release of the Create Agent skill for Overclaw.\n- Automates creation and registration of new Overstory agents, updating all seven required integration points.\n- Supports both manual agent creation and analysis-driven agent suggestions from logs, troubleshooting files, mulch, and project structure.\n- Provides `create_agent.py` CLI tool with validation, dry-run, and rollback options.\n- Includes helper script `analyze_agent_needs.py` for suggesting agent needs based on project resources.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6ce00e85ade8d8c2e0bf79ae14ad8ec86c1c34f38a0ead4835f447fe1682b6d6"
+}

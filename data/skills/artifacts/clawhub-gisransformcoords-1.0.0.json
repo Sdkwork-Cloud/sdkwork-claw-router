@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gisransformcoords@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gisransformcoords",
+  "skill": {
+    "id": 61574,
+    "skillKey": "clawhub-gisransformcoords",
+    "name": "坐标转换"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gisransformcoords",
+    "url": "https://clawhub.ai/skills/gisransformcoords",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gisransformcoords-fc1f28cc49c99173.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "支持GeoJSON格式点线面数据在WGS84（经纬度）和Web Mercator（EPSG:3857）坐标系间批量转换，适用WebGIS和GPS数据处理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pointgh",
+      "userId": "publishers:pointgh",
+      "displayName": "pointGH",
+      "image": "https://avatars.githubusercontent.com/u/20871034?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 367,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773236850777,
+      "changelog": "去去去凄凄切切",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca6f2426cb06267414caeb9bfce778b2192a28881aadbb22a366cac2da231ef3"
+}

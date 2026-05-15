@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62291,
+  "uuid": "skill-clawhub-agent-config-validator",
+  "skillKey": "clawhub-agent-config-validator",
+  "name": "Agent Config Validator",
+  "summary": "OpenClaw Agent配置验证器 - 自动检查openclaw.json与agent核心文档的一致性，检测过时引用，生成诊断报告并支持自动修复。当新增/调整agent或修改核心文档后使用此技能确保配置完整性。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_config_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "StarAI-2026",
+      "features": [
+        "OpenClaw Agent配置验证器",
+        "自动检查openclaw.json与agent核心文档的一致性，检测过时引用，生成诊断报告并支持自动修复。当新增/调整agent或修改核心文档后使用此技能确保配置完整性。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-config-validator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261541634?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-config-validator",
+      "url": "https://clawhub.ai/skills/agent-config-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-config-validator",
+    "url": "https://clawhub.ai/skills/agent-config-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-config-validator-b36ace4b6e8dc428.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-config-validator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-config-validator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9e81010c4af57b380aed2b0cf060267198053c30722d36c47b1da2d47312ae78",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T22:10:40.759Z"
+}

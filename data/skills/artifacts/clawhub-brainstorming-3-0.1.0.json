@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brainstorming-3@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brainstorming_3",
+  "skill": {
+    "id": 24148,
+    "skillKey": "clawhub-brainstorming-3",
+    "name": "Brainstorming"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brainstorming-3",
+    "url": "https://clawhub.ai/skills/brainstorming-3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brainstorming-3-c2d7ae6e3b420328.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yunnanwenshan",
+      "userId": "publishers:yunnanwenshan",
+      "displayName": "chali",
+      "image": "https://avatars.githubusercontent.com/u/25746415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772598879750,
+      "changelog": "- Initial release of the brainstorming skill for structured creative design.\n- Enforces a strict process before any implementation: explore context, clarify requirements, propose approaches, and validate the design with user approval.\n- Prevents skipping design on any project, regardless of perceived simplicity.\n- Requires incremental user approval at each stage, with clear documentation expectations.\n- Implementation action may only begin after a user-approved design and transition to the writing-plans skill.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a3e243e4604321655da50029677676bdac003a040211c9d93126e28330f30e23"
+}

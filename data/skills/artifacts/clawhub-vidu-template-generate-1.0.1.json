@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vidu-template-generate@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_template_generate",
+  "skill": {
+    "id": 58791,
+    "skillKey": "clawhub-vidu-template-generate",
+    "name": "Vidu API special effects generation capability, with over 400 built-in effect templates covering styles such as transformation,."
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-template-generate",
+    "url": "https://clawhub.ai/skills/vidu-template-generate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-template-generate-81c09f4a8fa1a965.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Vidu AI 场景特效生成。支持389个预设特效模板，包括华丽变身、情人节、风格魔盒、缤纷佳节等。对话式调用，自动匹配模板。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "x-jihua",
+      "userId": "s1784btgjdbcht1279h27zwrcs83g5md",
+      "displayName": "Vidu AI",
+      "image": "https://avatars.githubusercontent.com/u/25274975?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 321,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773993907017,
+      "changelog": "Initial release of vidu-template-generate.\n\n- Introduces Vidu AI scene effect generator with 389 preset templates (e.g., transformations, Valentine’s, festivals, and fun effects)  \n- Conversational interface matching user requests to templates automatically  \n- Strict requirement: Only user-uploaded photos may be used (reminds user to upload if missing)  \n- API domain auto-selected based on user language (China: api.vidu.cn, other: api.vidu.com)  \n- Includes detailed instructions for template categories, parameters, and CLI/API usage  \n- Robust error handling and output standards with Markdown file references and 24hr video link validity",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:57e7c369c2827d051549cffa600b76867823442ae6d03fa89eab4ed210dcd5c4"
+}

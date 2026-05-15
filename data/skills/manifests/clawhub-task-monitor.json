@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9109,
+  "uuid": "skill-clawhub-task-monitor",
+  "skillKey": "clawhub-task-monitor",
+  "name": "Task Monitor",
+  "summary": "Real-time web dashboard for OpenClaw sessions and background tasks. Mobile-responsive with auto-refresh.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_monitor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jorgermp",
+      "features": [
+        "Real-time web dashboard for OpenClaw sessions and background tasks",
+        "Mobile-responsive with auto-refresh."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-monitor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1401249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-monitor",
+      "url": "https://clawhub.ai/skills/task-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-monitor",
+    "url": "https://clawhub.ai/skills/task-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-monitor-c03508fb9a814409.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-monitor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-monitor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:da8cd9a49e277565f0731537d624e469dc046458911d868c4484f3b6795af8b7",
+      "artifactSizeBytes": 2334
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T16:17:42.894Z"
+}

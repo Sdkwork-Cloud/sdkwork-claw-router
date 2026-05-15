@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/financial-close-checklist@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.financial_close_checklist",
+  "skill": {
+    "id": 27793,
+    "skillKey": "clawhub-financial-close-checklist",
+    "name": "Financial Close Checklist"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "financial-close-checklist",
+    "url": "https://clawhub.ai/skills/financial-close-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/financial-close-checklist-7bacf93a923e1fc9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate and track month-end and quarter-end financial close processes for accounting firms and finance teams. Generates customizable close checklists, assig..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 331,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1773926345439,
+      "changelog": "Fix display name from slug to proper title",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6be4f6c3ea9eca95ee81de2c1e6e0e61ab83bc291243d2b3e0d471a10496435f"
+}

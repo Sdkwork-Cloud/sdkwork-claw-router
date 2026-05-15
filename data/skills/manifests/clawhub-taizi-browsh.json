@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30315,
+  "uuid": "skill-clawhub-taizi-browsh",
+  "skillKey": "clawhub-taizi-browsh",
+  "name": "Taizi Browsh",
+  "summary": "A modern text-based browser. Renders web pages in the terminal using headless Firefox.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taizi_browsh",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "fresh3",
+      "features": [
+        "A modern text-based browser",
+        "Renders web pages in the terminal using headless Firefox."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taizi-browsh@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/23310067?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taizi-browsh",
+      "url": "https://clawhub.ai/skills/taizi-browsh"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taizi-browsh",
+    "url": "https://clawhub.ai/skills/taizi-browsh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taizi-browsh-7267c83b064bf8ed.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taizi-browsh@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-taizi-browsh-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fe01f5d81019a4998447b955b9d83306ba6f7904f243af335c340c02a3125cc6",
+      "artifactSizeBytes": 2071
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T04:02:44.508Z"
+}

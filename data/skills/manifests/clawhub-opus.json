@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20501,
+  "uuid": "skill-clawhub-opus",
+  "skillKey": "clawhub-opus",
+  "name": "opus",
+  "summary": "Auto-route tasks to the cheapest Claude model that works correctly. Three-tier progression: Haiku → Sonnet → Opus. Classify before responding. HAIKU (default): factual Q&A, greetings, reminders, status checks, lookups, simple file ops, hea.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opus",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "VictorKing2005",
+      "features": [
+        "Auto-route tasks to the cheapest Claude model that works correctly",
+        "Three-tier progression: Haiku → Sonnet → Opus",
+        "Classify before responding",
+        "HAIKU (default): factual Q&A, greetings, reminders, status checks, lookups, simple file ops, he."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/opus@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/105199857?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "opus",
+      "url": "https://clawhub.ai/skills/opus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opus",
+    "url": "https://clawhub.ai/skills/opus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opus-e12ce8285efc67c6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/opus@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-opus-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db99380f2752058963b51c578ef7f69102a2aedbc9de357d809055e2b61f09c7",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T05:48:43.203Z"
+}

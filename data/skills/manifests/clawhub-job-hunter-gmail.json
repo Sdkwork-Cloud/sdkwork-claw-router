@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65038,
+  "uuid": "skill-clawhub-job-hunter-gmail",
+  "skillKey": "clawhub-job-hunter-gmail",
+  "name": "Job Hunter Gmail",
+  "summary": "自动管理简历和求职信模板，记录职位投递及状态，通过 Gmail 自动发送并分类求职邮件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_hunter_gmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hsyhph",
+      "features": [
+        "自动管理简历和求职信模板，记录职位投递及状态，通过 Gmail 自动发送并分类求职邮件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-hunter-gmail@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73018559?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-hunter-gmail",
+      "url": "https://clawhub.ai/skills/job-hunter-gmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-hunter-gmail",
+    "url": "https://clawhub.ai/skills/job-hunter-gmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-hunter-gmail-7f521ec304236807.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-hunter-gmail@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-hunter-gmail-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49bff2c7149fc263743a16abdf6f7f449065631a67bce36c656792a4ef14bf16",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T09:30:04.685Z"
+}

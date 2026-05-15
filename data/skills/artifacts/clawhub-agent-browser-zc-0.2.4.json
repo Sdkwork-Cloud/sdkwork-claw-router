@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-zc@0.2.4",
+  "version": "0.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_zc",
+  "skill": {
+    "id": 24101,
+    "skillKey": "clawhub-agent-browser-zc",
+    "name": "Agent Browser Zc"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-zc",
+    "url": "https://clawhub.ai/skills/agent-browser-zc",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-zc-d4e57a0a78ba1903.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A fast Rust-based headless browser automation CLI with Node.js fallback that enables AI agents to navigate, click, type, and snapshot pages via structured co..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lean-zhouchao",
+      "userId": "s178rxdgn3z5d3avc5xwvvghx183kh7y",
+      "displayName": "lean-zhouchao",
+      "image": "https://avatars.githubusercontent.com/u/23061177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 409,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.2.4",
+      "createdAt": 1774485781079,
+      "changelog": "Daily auto-sync - renamed to avoid slug conflicts",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:241b0248e772ce9ad1a050cbdf2e503bb8e0e2cfbaaeaae4a45df9ea56dba1fb"
+}

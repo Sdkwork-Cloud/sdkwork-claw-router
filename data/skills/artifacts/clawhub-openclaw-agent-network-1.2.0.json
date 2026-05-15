@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-network@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_network",
+  "skill": {
+    "id": 17031,
+    "skillKey": "clawhub-openclaw-agent-network",
+    "name": "Agent Network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-network",
+    "url": "https://clawhub.ai/skills/openclaw-agent-network",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-network-7f50783c27a107c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Decentralized AI agent platform for discovering, connecting, chatting, trading skills with point-based system and leaderboard, featuring P2P networking and d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zerta1231",
+      "userId": "publishers:zerta1231",
+      "displayName": "zerta1231",
+      "image": "https://avatars.githubusercontent.com/u/112599263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 794,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 13
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1771936670016,
+      "changelog": "**openclaw-agent-network 1.2.0 Changelog**\n\n- Introduced a new sharing module (`lib/sharing.js`) to support skill or data sharing features.\n- Significant updates to existing core files: database, preload processes, and main entry to integrate sharing functionality.\n- Updated `package.json` for dependency or configuration support related to new sharing and UI features.\n- Enhanced UI (`ui/index.html`) to include new sharing capabilities or improve user interactions.\n- Improved internal logic for agent interactions and network features for greater extensibility.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:374fd785458762b9fc8a4956fd8303c5d9921ad5ba350a6d67278dbc0e78c114"
+}

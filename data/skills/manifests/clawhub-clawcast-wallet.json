@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13386,
+  "uuid": "skill-clawhub-clawcast-wallet",
+  "skillKey": "clawhub-clawcast-wallet",
+  "name": "Clawcast - Cast Ethereum Wallet for Agents",
+  "summary": "Skill for managing EVM wallets, transactions, and network helpers via cast; covers onboarding, checks, and operating procedures.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawcast_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "te_za",
+      "features": [
+        "Skill for managing EVM wallets, transactions, and network helpers via cast",
+        "covers onboarding, checks, and operating procedures."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawcast-wallet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/112280042?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawcast-wallet",
+      "url": "https://clawhub.ai/skills/clawcast-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawcast-wallet",
+    "url": "https://clawhub.ai/skills/clawcast-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawcast-wallet-3b0b81574a926339.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawcast-wallet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawcast-wallet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d30c4da969998be42002ea004109214be135676eaf83f803c0bfc616733d94e1",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T18:03:57.413Z"
+}

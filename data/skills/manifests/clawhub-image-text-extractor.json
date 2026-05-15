@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71166,
+  "uuid": "skill-clawhub-image-text-extractor",
+  "skillKey": "clawhub-image-text-extractor",
+  "name": "PDF和图片文字提取",
+  "summary": "从图片或 PDF 文档中识别并提取文字内容，支持多种图片格式和 PDF 文件，自动判断是否包含文字并保留原始格式输出结构化结果；当用户需要从图片或 PDF 提取文字、进行 OCR 识别、处理含文字的文档或转换为可编辑文本时使用",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_text_extractor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "to the moon",
+      "features": [
+        "从图片或 PDF 文档中识别并提取文字内容，支持多种图片格式和 PDF 文件，自动判断是否包含文字并保留原始格式输出结构化结果；当用户需要从图片或 PDF 提取文字、进行 OCR 识别、处理."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/image-text-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83393925?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "image-text-extractor",
+      "url": "https://clawhub.ai/skills/image-text-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-text-extractor",
+    "url": "https://clawhub.ai/skills/image-text-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-text-extractor-d6d31b953110eb76.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/image-text-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-image-text-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b181cfc83b61fac051a5a8b05c33c40b6808541505c81e7ebf4827ede5173a6",
+      "artifactSizeBytes": 2546
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T02:19:24.134Z"
+}

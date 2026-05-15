@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29308,
+  "uuid": "skill-clawhub-agent-safety",
+  "skillKey": "clawhub-agent-safety",
+  "name": "Agent Safety",
+  "summary": "Outbound safety for autonomous AI agents — scans YOUR output before it leaves the machine. Git pre-commit hooks that automatically block commits containing A...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_safety",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "compass-soul",
+      "features": [
+        "Outbound safety for autonomous AI agents — scans YOUR output before it leaves the machine",
+        "Git pre-commit hooks that automatically block commits containing A..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agent-safety@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260311058?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agent-safety",
+      "url": "https://clawhub.ai/skills/agent-safety"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-safety",
+    "url": "https://clawhub.ai/skills/agent-safety",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-safety-f22341430888553c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agent-safety@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agent-safety-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7ae9a23ed6dc60e9ec425fefa87512d783f3670ac79ef53ee43f159de00e7a6b",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T00:00:25.580Z"
+}

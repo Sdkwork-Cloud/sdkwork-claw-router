@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37614,
+  "uuid": "skill-clawhub-illumidesk",
+  "skillKey": "clawhub-illumidesk",
+  "name": "Illumidesk",
+  "summary": "Illumidesk integration. Manage Organizations. Use when the user wants to interact with Illumidesk data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.illumidesk",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Illumidesk integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Illumidesk data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/illumidesk@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "illumidesk",
+      "url": "https://clawhub.ai/skills/illumidesk"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "illumidesk",
+    "url": "https://clawhub.ai/skills/illumidesk",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/illumidesk-925cc9b23049c6b6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/illumidesk@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-illumidesk-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:86a4c7b96e124b3bb828215c86fb45b17a95497f2f3f05e98d483c9313994fce",
+      "artifactSizeBytes": 1806
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T22:14:48.361Z"
+}

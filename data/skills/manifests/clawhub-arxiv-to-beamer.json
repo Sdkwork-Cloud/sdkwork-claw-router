@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53928,
+  "uuid": "skill-clawhub-arxiv-to-beamer",
+  "skillKey": "clawhub-arxiv-to-beamer",
+  "name": "arxiv-to-beamer",
+  "summary": "Given an arxiv identifier or arxiv abs/pdf URL, download the LaTeX source (or, if PDF-only, fall back to MinerU's PDF -> Markdown API), ask an OpenRouter mod...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.arxiv_to_beamer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "buaa42wxy",
+      "features": [
+        "Given an arxiv identifier or arxiv abs/pdf URL, download the LaTeX source (or, if PDF-only, fal."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/arxiv-to-beamer@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/48406770?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "arxiv-to-beamer",
+      "url": "https://clawhub.ai/skills/arxiv-to-beamer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "arxiv-to-beamer",
+    "url": "https://clawhub.ai/skills/arxiv-to-beamer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/arxiv-to-beamer-3a79f8e2cb8b5a67.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/arxiv-to-beamer@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-arxiv-to-beamer-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2f12c2fb42c6a2a7a3cbec3fa452b25e1e50a7b937604c9e19ee629533a97b30",
+      "artifactSizeBytes": 2000
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:43:51.554Z"
+}

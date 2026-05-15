@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66911,
+  "uuid": "skill-clawhub-qq-email-manager",
+  "skillKey": "clawhub-qq-email-manager",
+  "name": "QQ Email Manager",
+  "summary": "企业邮箱管理（腾讯企业邮箱）。触发场景：用户说\"查邮件\"、\"发邮件\"、\"回复邮件\"、\"转发邮件\"、 \"邮件列表\"、\"未读邮件\"、\"搜索邮件\"、\"邮箱统计\"、\"标记已读\"等邮箱相关操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qq_email_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangmu-git2",
+      "features": [
+        "企业邮箱管理（腾讯企业邮箱）。触发场景：用户说\"查邮件\"、\"发邮件\"、\"回复邮件\"、\"转发邮件\"、 \"邮件列表\"、\"未读邮件\"、\"搜索邮件\"、\"邮箱统计\"、\"标记已读\"等邮箱相关操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qq-email-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59187617?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qq-email-manager",
+      "url": "https://clawhub.ai/skills/qq-email-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qq-email-manager",
+    "url": "https://clawhub.ai/skills/qq-email-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qq-email-manager-84a7cfa554642bdc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qq-email-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-qq-email-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad10eb0072cdcbeb15ce3526658c420ba838c7c18df0798942b9a9c46f097f33",
+      "artifactSizeBytes": 2078
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T04:46:52.527Z"
+}

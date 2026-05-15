@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/barclays@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.barclays",
+  "skill": {
+    "id": 71221,
+    "skillKey": "clawhub-barclays",
+    "name": "Barclays"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "barclays",
+    "url": "https://clawhub.ai/skills/barclays",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/barclays-71f566aba763fb76.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "提供巴克莱银行的公司介绍、产品服务、市场数据、全球布局及最新动态等信息查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 180,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776232911820,
+      "changelog": "- Updated SKILL.md to include the current version number (1.0.4) in metadata.\n- No changes to content or functionality.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9cd5ce7f1160fa940255afca9bc434f9649578a3f3dd43b16af011022283a63d"
+}

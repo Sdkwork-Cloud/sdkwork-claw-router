@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26999,
+  "uuid": "skill-clawhub-qualaroo",
+  "skillKey": "clawhub-qualaroo",
+  "name": "Qualaroo",
+  "summary": "Qualaroo integration. Manage Surveys, Questions, Answers. Use when the user wants to interact with Qualaroo data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qualaroo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Qualaroo integration",
+        "Manage Surveys, Questions, Answers",
+        "Use when the user wants to interact with Qualaroo data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/qualaroo@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "qualaroo",
+      "url": "https://clawhub.ai/skills/qualaroo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qualaroo",
+    "url": "https://clawhub.ai/skills/qualaroo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qualaroo-310fca9c4d37dce2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/qualaroo@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-qualaroo-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:695fe02b30e490c6e7890be39c4a066ecff40d0491a9e92673a03144fb1a7cf5",
+      "artifactSizeBytes": 1828
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:54:11.234Z"
+}

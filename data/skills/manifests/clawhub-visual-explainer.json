@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24744,
+  "uuid": "skill-clawhub-visual-explainer",
+  "skillKey": "clawhub-visual-explainer",
+  "name": "Visual Explainer",
+  "summary": "Generate beautiful, self-contained HTML pages that visually explain systems, code changes, plans, and data. Use when the user asks for a diagram, architectur...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_explainer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bengii",
+      "features": [
+        "Generate beautiful, self-contained HTML pages that visually explain systems, code changes, plan.",
+        "Use when the user asks for a diagram, architectur..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/visual-explainer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14150418?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "visual-explainer",
+      "url": "https://clawhub.ai/skills/visual-explainer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-explainer",
+    "url": "https://clawhub.ai/skills/visual-explainer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-explainer-b55f94c7f698fab4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/visual-explainer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-visual-explainer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3e1f9dcb3edcfb40bcdceaab7b22fa756e061a8b6774305e9744876dc7c49db5",
+      "artifactSizeBytes": 2690
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T16:48:35.132Z"
+}

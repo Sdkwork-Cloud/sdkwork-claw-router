@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36494,
+  "uuid": "skill-clawhub-pm2-gateway-restart",
+  "skillKey": "clawhub-pm2-gateway-restart",
+  "name": "PM2 Gateway Restart",
+  "summary": "Use PM2 to reliably restart OpenClaw gateway on Windows. Use when the user wants to restart the OpenClaw gateway, fix port conflicts, or recover from a crash...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pm2_gateway_restart",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zitao666",
+      "features": [
+        "Use PM2 to reliably restart OpenClaw gateway on Windows",
+        "Use when the user wants to restart the OpenClaw gateway, fix port conflicts, or recover from a."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pm2-gateway-restart@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39297924?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pm2-gateway-restart",
+      "url": "https://clawhub.ai/skills/pm2-gateway-restart"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pm2-gateway-restart",
+    "url": "https://clawhub.ai/skills/pm2-gateway-restart",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pm2-gateway-restart-c32f742d03c63c91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pm2-gateway-restart@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pm2-gateway-restart-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f9dcf320c3bcb966d7a0bd10659fff6965a32729bb6eb1bef77681bb9a58e45",
+      "artifactSizeBytes": 2312
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:34:49.588Z"
+}

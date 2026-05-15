@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31793,
+  "uuid": "skill-clawhub-reachmail",
+  "skillKey": "clawhub-reachmail",
+  "name": "Reachmail",
+  "summary": "ReachMail integration. Manage Campaigns, Templates, Reports, Users, Roles. Use when the user wants to interact with ReachMail data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reachmail",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "ReachMail integration",
+        "Manage Campaigns, Templates, Reports, Users, Roles",
+        "Use when the user wants to interact with ReachMail data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/reachmail@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "reachmail",
+      "url": "https://clawhub.ai/skills/reachmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reachmail",
+    "url": "https://clawhub.ai/skills/reachmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reachmail-fd487b74c8811a58.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/reachmail@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-reachmail-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:219d06ead735c8f59f2c978cc5beeac6dd7a3443b55d821ffe0acae4837c3c66",
+      "artifactSizeBytes": 1853
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:55:08.430Z"
+}

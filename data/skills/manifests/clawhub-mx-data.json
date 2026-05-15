@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71164,
+  "uuid": "skill-clawhub-mx-data",
+  "skillKey": "clawhub-mx-data",
+  "name": "Mx Data",
+  "summary": "基于东方财富权威数据库及实时行情数据的金融数据查询 Skill，支持行情、财务、关系与经营类信息的自然语言查询，避免模型使用过时或不准确的金融数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xpmars",
+      "features": [
+        "基于东方财富权威数据库及实时行情数据的金融数据查询 Skill，支持行情、财务、关系与经营类信息的自然语言查询，避免模型使用过时或不准确的金融数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-data@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5851203?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-data",
+      "url": "https://clawhub.ai/skills/mx-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-data",
+    "url": "https://clawhub.ai/skills/mx-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-data-5a2ebbb1f7cdf6d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-data@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-data-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3700e8b739e696cbc3b5441bc445d0975d3d7f42e9af80bee69ca8cbde4f48c7",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-14T04:55:57.680Z"
+}

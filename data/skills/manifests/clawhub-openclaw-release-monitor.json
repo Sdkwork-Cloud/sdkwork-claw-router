@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38930,
+  "uuid": "skill-clawhub-openclaw-release-monitor",
+  "skillKey": "clawhub-openclaw-release-monitor",
+  "name": "OpenClaw Version Monitor",
+  "summary": "Check OpenClaw release notes from GitHub, show highlights and categorized changes translated to the user's language.",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_release_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jeff",
+      "features": [
+        "Check OpenClaw release notes from GitHub, show highlights and categorized changes translated to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-release-monitor@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2939233?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-release-monitor",
+      "url": "https://clawhub.ai/skills/openclaw-release-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-release-monitor",
+    "url": "https://clawhub.ai/skills/openclaw-release-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-release-monitor-204f15366f063496.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-release-monitor@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-release-monitor-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c040d5f625b548751fab8910a2023b2d04944711a0457c901847d0554c20b95",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T15:37:09.119Z"
+}

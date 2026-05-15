@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tga-analyze@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tga_analyze",
+  "skill": {
+    "id": 42755,
+    "skillKey": "clawhub-tga-analyze",
+    "name": "TGA Analyze"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tga-analyze",
+    "url": "https://clawhub.ai/skills/tga-analyze",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tga-analyze-6699628ebac7e46e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Logs into TGA (hortorgames), parses projectId and dashboardId from panel URL, downloads report zip via API, unzips to tga-downloads/, and analyzes all xlsx f..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xifengxi",
+      "userId": "s17ef3s8xd36kfphpkkyvxx80n8456x1",
+      "displayName": "xifengxi",
+      "image": "https://avatars.githubusercontent.com/u/10802972?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775217771899,
+      "changelog": "Initial release of tga-analyze: Log in, download, and analyze TGA reports.\n\n- Logs into TGA using credentials and cookies from `.env`, with token caching for efficiency.\n- Parses `projectId` and `dashboardId` from the TGA dashboard URL provided by the user.\n- Downloads report zip via TGA API, supporting resume (taskId) and robust progress polling.\n- Automatically unzips report into a dedicated directory for analysis.\n- Analyzes all `.xlsx` files in the extracted report using Python pandas, generating structured summaries.\n- Provides detailed workflow and usage instructions in SKILL.md for smooth operation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2c059e5710b891edff143d846a6b9bbcf5126bf674989ff6c3f5f72ab0ce3eb3"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/huaweicloud-api-docs@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huaweicloud_api_docs",
+  "skill": {
+    "id": 38898,
+    "skillKey": "clawhub-huaweicloud-api-docs",
+    "name": "HuaweiCloud API Docs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huaweicloud-api-docs",
+    "url": "https://clawhub.ai/skills/huaweicloud-api-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huaweicloud-api-docs-0d3c2693b79f6c3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find and summarize official Huawei Cloud API documentation from Huawei Cloud Help Center and Huawei Cloud developer properties. Use when the user asks about..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "stevetdp",
+      "userId": "s175261s0xvkyprt3f0vdgxm8h84hkx6",
+      "displayName": "stevetdp",
+      "image": "https://avatars.githubusercontent.com/u/67769961?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 183,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1776131512953,
+      "changelog": "Rewrite the skill in English and add official Huawei Cloud entry links for no-web fallback",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:12a1b7d0fe8d97df2c62bacec8d3dbb037575946d40fbe76fff94d7ca1fc8e25"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52658,
+  "uuid": "skill-clawhub-workflow-audit",
+  "skillKey": "clawhub-workflow-audit",
+  "name": "Workflow Audit",
+  "summary": "Conduct a structured operational audit — identify friction points, map workflows, quantify waste, and produce a priority-ranked automation blueprint with ROI...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.workflow_audit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adebayo Dawodu",
+      "features": [
+        "Conduct a structured operational audit — identify friction points, map workflows, quantify wast."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/workflow-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4356024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "workflow-audit",
+      "url": "https://clawhub.ai/skills/workflow-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "workflow-audit",
+    "url": "https://clawhub.ai/skills/workflow-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/workflow-audit-fdf5bae84a5b5f32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/workflow-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-workflow-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:293ffb3a3770d4a0cd90df2a86d1a4ecf955ffff52db8f2829fc9565d4a2958c",
+      "artifactSizeBytes": 1960
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T05:22:00.506Z"
+}

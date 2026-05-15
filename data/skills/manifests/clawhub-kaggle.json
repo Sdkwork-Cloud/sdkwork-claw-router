@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13279,
+  "uuid": "skill-clawhub-kaggle",
+  "skillKey": "clawhub-kaggle",
+  "name": "Kaggle",
+  "summary": "Unified Kaggle skill. Use when the user mentions kaggle, kaggle.com, Kaggle competitions, datasets, models, notebooks, GPUs, TPUs, badges, or anything Kaggle...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kaggle",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shepsci",
+      "features": [
+        "Unified Kaggle skill",
+        "Use when the user mentions kaggle, kaggle.com, Kaggle competitions, datasets, models, notebooks."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kaggle@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189026006?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kaggle",
+      "url": "https://clawhub.ai/skills/kaggle"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kaggle",
+    "url": "https://clawhub.ai/skills/kaggle",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kaggle-e839e162d8106fe3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kaggle@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kaggle-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:65d77eb1118a768e504532b334fad99cb7ff48b74c1eec9adc9b4c85a1ec1569",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T19:10:56.239Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57478,
+  "uuid": "skill-clawhub-offerclaw-cv-writing",
+  "skillKey": "clawhub-offerclaw-cv-writing",
+  "name": "OfferClaw留学申请简历助手",
+  "summary": "Writes study abroad admissions CVs and resumes, primarily for master's applications. Covers education, research, internships, publications, and awards. Suppo...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.offerclaw_cv_writing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OfferClaw",
+      "features": [
+        "Writes study abroad admissions CVs and resumes, primarily for master's applications",
+        "Covers education, research, internships, publications, and awards",
+        "Suppo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/offerclaw-cv-writing@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/offerclaw-cv-writing/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "offerclaw-cv-writing",
+      "url": "https://clawhub.ai/skills/offerclaw-cv-writing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "offerclaw-cv-writing",
+    "url": "https://clawhub.ai/skills/offerclaw-cv-writing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/offerclaw-cv-writing-04f676d46ecd88e2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/offerclaw-cv-writing@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-offerclaw-cv-writing-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ffba9e1f1324e679e29e00d6685235cf849a6525d29dffff2eb341848206d42",
+      "artifactSizeBytes": 2290
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T13:06:23.300Z"
+}

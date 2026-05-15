@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/post-tiktok-short-videos-infinite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.post_tiktok_short_videos_infinite",
+  "skill": {
+    "id": 73264,
+    "skillKey": "clawhub-post-tiktok-short-videos-infinite",
+    "name": "发布抖音短视频_无限"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "post-tiktok-short-videos-infinite",
+    "url": "https://clawhub.ai/skills/post-tiktok-short-videos-infinite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/post-tiktok-short-videos-infinite-4718c2ba427a84fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在抖音创作者平台发布短视频。触发场景：发布抖音视频、上传抖音视频、抖音发布视频、发抖音视频。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "infiniteask",
+      "userId": "s17216b1ga5w96cebjk8rat7sd84f2qj",
+      "displayName": "未来X无限",
+      "image": "https://avatars.githubusercontent.com/u/36912555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776600798301,
+      "changelog": "Initial release – supports automated Douyin (TikTok China) short video posting with full UI operation steps.\n\n- Enables video upload, title & description input, cover selection, collection choice, and AI declaration on Douyin Creator Platform.\n- Uses OpenClaw Chrome browser for all automated web actions; start and navigate via specified commands.\n- Includes detailed automation steps for file selection using pyautogui and tkinter, supporting Chinese file paths.\n- Ensures each topic/tag is added and confirmed via on-screen selection for correct addition.\n- Sets permission controls and AI content declaration as required.\n- Saves video as draft with \"暂存离开\" instead of immediate publishing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f53a9055475d6d1c575e9e4a3b692d49319a70a31d86826e38fe76870eda91e6"
+}

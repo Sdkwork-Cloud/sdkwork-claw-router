@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taste-shakespeare@2.0.3",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taste_shakespeare",
+  "skill": {
+    "id": 51515,
+    "skillKey": "clawhub-taste-shakespeare",
+    "name": "Taste Shakespeare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taste-shakespeare",
+    "url": "https://clawhub.ai/skills/taste-shakespeare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taste-shakespeare-79af955b9b299f4c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aesthetic skill for AI agents — Shakespeare's literary voice and dramatic language. Style tokens and creative direction distilled from 111 works."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnyzijianwu",
+      "userId": "s17a1mx7rkn57crw0x09zwte8n83nxm6",
+      "displayName": "johnnyzijianwu",
+      "image": "https://avatars.githubusercontent.com/u/109778160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "2.0.3",
+      "createdAt": 1775100415169,
+      "changelog": "Renamed display name to Taste Shakespeare",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bf97a1acdcbebd3add6cfccbffa5e53af3787c8fc581a05bac0acdd259e900c8"
+}

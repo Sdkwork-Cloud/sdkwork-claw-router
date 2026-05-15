@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mayar-payment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mayar_payment",
+  "skill": {
+    "id": 11261,
+    "skillKey": "clawhub-mayar-payment",
+    "name": "Mayar Payment Integration"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mayar-payment",
+    "url": "https://clawhub.ai/skills/mayar-payment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mayar-payment-cb96a471f2163044.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Mayar.id payments to create invoices, generate payment links, track Indonesian payment methods, manage subscriptions, and automate payment workflows."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ahsanatha",
+      "userId": "publishers:ahsanatha",
+      "displayName": "ahsanatha",
+      "image": "https://avatars.githubusercontent.com/u/12840926?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2218,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769837086941,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da73619d62c350bd560000d98ae9b38fd1edaae53b2333d077cdfda076919ba5"
+}

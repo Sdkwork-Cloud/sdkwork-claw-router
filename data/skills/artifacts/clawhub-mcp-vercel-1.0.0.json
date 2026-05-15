@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-vercel@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_vercel",
+  "skill": {
+    "id": 28344,
+    "skillKey": "clawhub-mcp-vercel",
+    "name": "MCP Vercel"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-vercel",
+    "url": "https://clawhub.ai/skills/mcp-vercel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-vercel-09d76e7fc545701c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy a remote MCP server on Vercel with Next.js and mcp-handler. Use this skill whenever the user wants to create an MCP server, deploy MCP to Vercel, set..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lucaperret",
+      "userId": "s170p3gn5cv7fnt54xggm88a4s83f8ny",
+      "displayName": "Luca",
+      "image": "https://avatars.githubusercontent.com/u/1887122?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 327,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773963138532,
+      "changelog": "Initial release of mcp-vercel.\n\n- Guides users to deploy a remote MCP server on Vercel using Next.js and mcp-handler.\n- Provides setup instructions, including tool registration and deployment steps.\n- Explains correct routing, parameter annotation, and safety best practices for MCP tools.\n- Details deployment caveats specific to Vercel’s serverless environment.\n- Includes tips for authentication and publishing to Smithery.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aafbdd5b10cccc2838b7a07042846efc30435d424fd5b3b5489cce2e6888351d"
+}

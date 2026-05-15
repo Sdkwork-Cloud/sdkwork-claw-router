@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31932,
+  "uuid": "skill-clawhub-mx-toolbox",
+  "skillKey": "clawhub-mx-toolbox",
+  "name": "Mx Toolbox",
+  "summary": "Mx Toolbox integration. Manage Organizations. Use when the user wants to interact with Mx Toolbox data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_toolbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Mx Toolbox integration",
+        "Manage Organizations",
+        "Use when the user wants to interact with Mx Toolbox data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mx-toolbox@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mx-toolbox",
+      "url": "https://clawhub.ai/skills/mx-toolbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-toolbox",
+    "url": "https://clawhub.ai/skills/mx-toolbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-toolbox-1989880ed14a4e5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mx-toolbox@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mx-toolbox-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e9a30a16349adb13dad58fb53aaf0a7e362f4772e96f519c7a9c0ad64d22fb7c",
+      "artifactSizeBytes": 1824
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:16:12.429Z"
+}

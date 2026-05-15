@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71830,
+  "uuid": "skill-clawhub-vocab-deep-dive",
+  "skillKey": "clawhub-vocab-deep-dive",
+  "name": "Vocab Deep Dive - 单词深度解析",
+  "summary": "深度解析英语单词的全方位学习信息。当用户提供单词并需要完整的学习资料时使用。包括释义、用法、搭配、例句、同反义词、词根词缀、易错点、雅思考点等。适用于词汇学习、备考复习、写作口语提升场景。",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vocab_deep_dive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shaojie66",
+      "features": [
+        "深度解析英语单词的全方位学习信息。当用户提供单词并需要完整的学习资料时使用。包括释义、用法、搭配、例句、同反义词、词根词缀、易错点、雅思考点等。适用于词汇学习、备考复习、写作口语提升场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vocab-deep-dive@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/73728610?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vocab-deep-dive",
+      "url": "https://clawhub.ai/skills/vocab-deep-dive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vocab-deep-dive",
+    "url": "https://clawhub.ai/skills/vocab-deep-dive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vocab-deep-dive-d10bb45a184f4185.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vocab-deep-dive@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-vocab-deep-dive-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3369e6bc1fc7e0f58a30aea29c59934e28c2fdb5cd9426bc99981b0dae28a969",
+      "artifactSizeBytes": 2105
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T16:23:48.558Z"
+}

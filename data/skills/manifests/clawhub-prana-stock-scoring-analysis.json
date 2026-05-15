@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65667,
+  "uuid": "skill-clawhub-prana-stock-scoring-analysis",
+  "skillKey": "clawhub-prana-stock-scoring-analysis",
+  "name": "Prana A股财务分析助手",
+  "summary": "通过调用Prana平台上的远程 agent 执行 A股财务分析助手，并将结果返回给调用方",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prana_stock_scoring_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "goCyberTrade",
+      "features": [
+        "通过调用Prana平台上的远程 agent 执行 A股财务分析助手，并将结果返回给调用方"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/prana-stock-scoring-analysis@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219055106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "prana-stock-scoring-analysis",
+      "url": "https://clawhub.ai/skills/prana-stock-scoring-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prana-stock-scoring-analysis",
+    "url": "https://clawhub.ai/skills/prana-stock-scoring-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prana-stock-scoring-analysis-25b6157bd37cc5c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/prana-stock-scoring-analysis@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-prana-stock-scoring-analysis-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5297afa98a1e50331eb290aaf6f3313e3f0adb11850d1d184cc4e9cd68fe16d6",
+      "artifactSizeBytes": 2676
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-01T00:50:15.758Z"
+}

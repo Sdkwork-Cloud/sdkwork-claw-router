@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/f1-formula@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.f1_formula",
+  "skill": {
+    "id": 54166,
+    "skillKey": "clawhub-f1-formula",
+    "name": "F1 Formula"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "f1-formula",
+    "url": "https://clawhub.ai/skills/f1-formula",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/f1-formula-c41e393384ad44eb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides in-depth insights into F1’s history, global growth, business model, impact of Drive to Survive, and effects of the budget cap on competition."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 92,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777597874495,
+      "changelog": "- 首次发布 F1 主题技能，覆盖运动史、商业模式、关键数据等核心内容  \n- 展示1950-2024历年重大事件时间线  \n- 深入解析F1商业结构、收入分配及预算帽政策  \n- 特别强调《Drive to Survive》对北美及全球观众激增的影响  \n- 收录独特赛车科技趣闻和新一代粉丝增长数据",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c9d876229cd893b0420cb1824b99129fd59bf229c4733bf959489153c297b69d"
+}

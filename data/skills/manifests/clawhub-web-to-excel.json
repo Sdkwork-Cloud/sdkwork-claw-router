@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65209,
+  "uuid": "skill-clawhub-web-to-excel",
+  "skillKey": "clawhub-web-to-excel",
+  "name": "Web to Excel",
+  "summary": "从网页抓取结构化数据并填写到任意 Excel 文件的通用技能。 触发场景： - 用户说\"帮我把网页上的参数填到 Excel\"、\"从网站抓数据到表格\"、 \"网页参数录入 Excel\"、\"爬取数据并填写 Excel\"、或任何类似表达 - 用户提供网址和 Excel 文件，要求自动抓取并填写 - 批量从多个网页抓取数据...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_to_excel",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Oreosofat",
+      "features": [
+        "从网页抓取结构化数据并填写到任意 Excel 文件的通用技能。 触发场景：",
+        "用户说\"帮我把网页上的参数填到 Excel\"、\"从网站抓数据到表格\"、 \"网页参数录入 Excel\"、\"爬取数据并填写 Excel\"、或任何类似表达",
+        "用户提供网址和 Excel 文件，要求自动抓取并填写",
+        "批量从多个网页抓取数据..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-to-excel@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/174687294?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-to-excel",
+      "url": "https://clawhub.ai/skills/web-to-excel"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-to-excel",
+    "url": "https://clawhub.ai/skills/web-to-excel",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-to-excel-22dbb15d12ffeb27.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-to-excel@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-to-excel-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bcb6568ad80d4b629061f31f099ec96194091723fcd1c703530d08bbcd76b548",
+      "artifactSizeBytes": 2707
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T04:08:59.285Z"
+}

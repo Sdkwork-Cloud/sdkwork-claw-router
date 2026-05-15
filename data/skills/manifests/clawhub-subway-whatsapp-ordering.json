@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49525,
+  "uuid": "skill-clawhub-subway-whatsapp-ordering",
+  "skillKey": "clawhub-subway-whatsapp-ordering",
+  "name": "Subway Restaurant Agent",
+  "summary": "A ThumbGate-hardened WhatsApp ordering agent for QSRs, featuring smart upsells and inventory awareness.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subway_whatsapp_ordering",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "IgorGanapolsky",
+      "features": [
+        "A ThumbGate-hardened WhatsApp ordering agent for QSRs, featuring smart upsells and inventory aw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/subway-whatsapp-ordering@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/201209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "subway-whatsapp-ordering",
+      "url": "https://clawhub.ai/skills/subway-whatsapp-ordering"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subway-whatsapp-ordering",
+    "url": "https://clawhub.ai/skills/subway-whatsapp-ordering",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subway-whatsapp-ordering-07049182b9c42d75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/subway-whatsapp-ordering@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-subway-whatsapp-ordering-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f9dc6b6c44e953187b473268147f632723871391af8e8625bb65fe194cffc6e",
+      "artifactSizeBytes": 2175
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T18:30:53.036Z"
+}

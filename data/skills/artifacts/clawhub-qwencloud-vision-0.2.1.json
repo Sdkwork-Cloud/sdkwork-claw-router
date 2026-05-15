@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/qwencloud-vision@0.2.1",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.qwencloud_vision",
+  "skill": {
+    "id": 32434,
+    "skillKey": "clawhub-qwencloud-vision",
+    "name": "qwencloud-vision"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "qwencloud-vision",
+    "url": "https://clawhub.ai/skills/qwencloud-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/qwencloud-vision-92e8d3fad0cedd95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "[QwenCloud] Understand images and videos with Qwen vision models. TRIGGER when: user wants to analyze, describe, or extract information from images or videos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cuixiaoyang123",
+      "userId": "s17a1fxs5ehbx87dzkfs8rs0pn83py7d",
+      "displayName": "Cuixiaoyang123",
+      "image": "https://avatars.githubusercontent.com/u/42457946?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 232,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "0.2.1",
+      "createdAt": 1777558490907,
+      "changelog": "No file changes detected in this version.\n\n- No updates or code changes were made for version 0.2.1.\n- Functionality, behavior, and documentation remain unchanged from the previous release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9b00c977e0b53803b76d35031c520e8e34d52f9873ad86391399842c687573a9"
+}

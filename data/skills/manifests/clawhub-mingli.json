@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29039,
+  "uuid": "skill-clawhub-mingli",
+  "skillKey": "clawhub-mingli",
+  "name": "AsianSeeker - Openclaw FortuneTeller",
+  "summary": "Mingli (命理) — Multi-system daily horoscope: Western astrology (natal chart + transits), Ba-Zi / Four Pillars (Bát Tự), numerology, I Ching (Kinh Dịch). Kerykeion + astronomyapi.com. Telegram delivery.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mingli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lukebaze",
+      "features": [
+        "Mingli (命理) — Multi-system daily horoscope: Western astrology (natal chart + transits), Ba-Zi /.",
+        "Kerykeion + astronomyapi.com",
+        "Telegram delivery."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mingli@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67284748?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mingli",
+      "url": "https://clawhub.ai/skills/mingli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mingli",
+    "url": "https://clawhub.ai/skills/mingli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mingli-de6e6a7d2644e941.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mingli@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-mingli-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49cf39318673df681262676cf3b6cb339f8a07b88eb380ff35226986e944c7a5",
+      "artifactSizeBytes": 2026
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T10:48:12.103Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9802,
+  "uuid": "skill-clawhub-hn-digest",
+  "skillKey": "clawhub-hn-digest",
+  "name": "HN Digest",
+  "summary": "Fetch and send Hacker News front-page posts on demand. Use when the user asks for HN, says 'hn', 'pull HN', 'hn 10', or specifies a topic like 'hn health', 'hn hacking', or 'hn tech'. Sends N (default 5) posts as individual messages with T.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hn_digest",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cpojer",
+      "features": [
+        "Fetch and send Hacker News front-page posts on demand",
+        "Use when the user asks for HN, says 'hn', 'pull HN', 'hn 10', or specifies a topic like 'hn hea.",
+        "Sends N (default 5) posts as individual messages with Title + Link",
+        "Exclude crypto."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hn-digest@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13352?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hn-digest",
+      "url": "https://clawhub.ai/skills/hn-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hn-digest",
+    "url": "https://clawhub.ai/skills/hn-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hn-digest-343a7ac0cd2136db.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hn-digest@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hn-digest-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f90baec9dcfbcfa3078b4e20ef70c1b1b60afd0a70e92e407ef84627b83f7765",
+      "artifactSizeBytes": 2019
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T23:59:56.122Z"
+}

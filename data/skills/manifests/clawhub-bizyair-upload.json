@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61926,
+  "uuid": "skill-clawhub-bizyair-upload",
+  "skillKey": "clawhub-bizyair-upload",
+  "name": "BizyAir 文件上传",
+  "summary": "BizyAir 文件上传助手。当用户需要将本地图片、音频、视频等资源上传到 BizyAir 服务器时使用此技能。支持快速上传并获取可访问的 URL。触发场景：用户提到\"上传到 BizyAir\"、\"BizyAir 上传\"、\"上传图片到 BizyAir\"，或者需要获取 BizyAir input resource U...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bizyair_upload",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bozoyan",
+      "features": [
+        "BizyAir 文件上传助手。当用户需要将本地图片、音频、视频等资源上传到 BizyAir 服务器时使用此技能。支持快速上传并获取可访问的 URL。触发场景：用户提到\"上传到 BizyAir."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bizyair-upload@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4261158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bizyair-upload",
+      "url": "https://clawhub.ai/skills/bizyair-upload"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bizyair-upload",
+    "url": "https://clawhub.ai/skills/bizyair-upload",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bizyair-upload-b1b15351ead4bc40.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bizyair-upload@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bizyair-upload-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b9db5aebcf63ea3ab409d284a55d0e7f8739b19e87b4064b7b797102cbe1234b",
+      "artifactSizeBytes": 2354
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T14:03:54.395Z"
+}

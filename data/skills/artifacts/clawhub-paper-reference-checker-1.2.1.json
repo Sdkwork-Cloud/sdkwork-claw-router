@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-reference-checker@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_reference_checker",
+  "skill": {
+    "id": 18194,
+    "skillKey": "clawhub-paper-reference-checker",
+    "name": "paper reference checker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-reference-checker",
+    "url": "https://clawhub.ai/skills/paper-reference-checker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-reference-checker-5672656715ff3ecd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "This skill should be used when the user asks to \"check paper citations\", \"verify references\", \"detect fake citations\", \"validate bibliography\", \"check if pap..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "benchen4395",
+      "userId": "s1795w7m8k5ktqp240wcq01neh84bpdt",
+      "displayName": "Ben Chen",
+      "image": "https://avatars.githubusercontent.com/u/25900964?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 311,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 4,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1775562186757,
+      "changelog": "v1.2.1: Minor version bump with packaging improvements",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e2742c77587bae56691db29dba8a4fb07a030658a1400286eec53781593bc083"
+}

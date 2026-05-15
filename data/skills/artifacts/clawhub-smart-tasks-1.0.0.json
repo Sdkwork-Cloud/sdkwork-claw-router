@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-tasks@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_tasks",
+  "skill": {
+    "id": 42004,
+    "skillKey": "clawhub-smart-tasks",
+    "name": "Smart Tasks"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-tasks",
+    "url": "https://clawhub.ai/skills/smart-tasks",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-tasks-8228ca29f4ec5fe4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Intelligent task management using workspace markdown files. Natural language CRUD via chat, context-aware reminders, priority briefings, and weekly reviews...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dgkim311",
+      "userId": "s17f07vnrek6376aknx29e5he5842w17",
+      "displayName": "dgkim311",
+      "image": "https://avatars.githubusercontent.com/u/256553609?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775137428635,
+      "changelog": "Initial release: natural language task CRUD, priority briefings, deadline tracking, weekly reviews",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:feb23c250b626b33e5c58a2500f02f4538d83d0a8b8e409288fb7564b4b94b54"
+}

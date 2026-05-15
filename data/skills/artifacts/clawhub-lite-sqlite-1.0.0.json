@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lite-sqlite@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lite_sqlite",
+  "skill": {
+    "id": 16088,
+    "skillKey": "clawhub-lite-sqlite",
+    "name": "Lite Sqlite"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lite-sqlite",
+    "url": "https://clawhub.ai/skills/lite-sqlite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lite-sqlite-9d66a15fca5893bb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fast lightweight local SQLite database for OpenClaw agents with minimal RAM and storage usage. Use when creating or managing SQLite databases for storing age..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "omprasad122007-rgb",
+      "userId": "publishers:omprasad122007-rgb",
+      "displayName": "omprasad122007-rgb",
+      "image": "https://avatars.githubusercontent.com/u/260436802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 909,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771404667030,
+      "changelog": "Initial release of lite-sqlite — a lightweight, fast, and low-memory SQLite database wrapper for OpenClaw agents.\n\n- Provides zero-setup, file-based local database with 2–5MB RAM footprint.\n- Supports in-memory mode, WAL mode, connection pooling, and automatic schema migration.\n- Includes built-in functions for backup/restore, query and batch operations, and index management.\n- Features predefined schemas for agent memos, session logs, and caching with TTL.\n- Offers best practices and performance optimization recommendations for agent developers.\n- Documents advanced options like auto-backup, schema migration tools, and guidance on switching to DuckDB for analytics.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e350f77da4e25c93b8c607e339d67d316e4828b545034facdb2c400eabcb80f6"
+}

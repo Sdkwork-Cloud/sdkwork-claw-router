@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68976,
+  "uuid": "skill-clawhub-weiqi-yunbisai",
+  "skillKey": "clawhub-weiqi-yunbisai",
+  "name": "围棋云比赛网查询",
+  "summary": "weiqi-yunbisai 云比赛网围棋比赛数据查询 - 支持比赛列表、分组信息、对阵数据、排名计算。当用户需要\"查比赛\"、\"云比赛网\"、\"围棋比赛\"时使用此技能。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weiqi_yunbisai",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tokener",
+      "features": [
+        "weiqi-yunbisai 云比赛网围棋比赛数据查询",
+        "支持比赛列表、分组信息、对阵数据、排名计算。当用户需要\"查比赛\"、\"云比赛网\"、\"围棋比赛\"时使用此技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weiqi-yunbisai@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39153812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weiqi-yunbisai",
+      "url": "https://clawhub.ai/skills/weiqi-yunbisai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weiqi-yunbisai",
+    "url": "https://clawhub.ai/skills/weiqi-yunbisai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weiqi-yunbisai-2eb3ee0e4f802e74.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weiqi-yunbisai@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-weiqi-yunbisai-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb96607d14c853bbb89e8580762d6258d41cfd61e92066a3b97baef498cc4ee5",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T06:03:05.976Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12486,
+  "uuid": "skill-clawhub-onchat",
+  "skillKey": "clawhub-onchat",
+  "name": "OnChat",
+  "summary": "Read and send on-chain messages via OnChat on Base L2. Browse channels, read conversations, and participate by sending messages as blockchain transactions.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onchat",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "clawd800",
+      "features": [
+        "Read and send on-chain messages via OnChat on Base L2",
+        "Browse channels, read conversations, and participate by sending messages as blockchain transact."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/onchat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/257470662?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "onchat",
+      "url": "https://clawhub.ai/skills/onchat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onchat",
+    "url": "https://clawhub.ai/skills/onchat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onchat-193ceedb86a4f69d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/onchat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-onchat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:543b5898384c7cb98c20e73dc4805cfc1c77787845e9d6deabb21320a84fa02e",
+      "artifactSizeBytes": 1855
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T06:44:07.043Z"
+}

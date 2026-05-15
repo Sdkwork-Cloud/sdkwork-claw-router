@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grazy@0.5.1",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grazy",
+  "skill": {
+    "id": 16301,
+    "skillKey": "clawhub-grazy",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grazy",
+    "url": "https://clawhub.ai/skills/grazy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grazy-b1cf96d8f05f0dbd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "grazy provides real-time Graz city info via CLI: public transport, weather, air quality, news, events, and POI search without API keys needed."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "thomyg",
+      "userId": "publishers:thomyg",
+      "displayName": "Thomas Goelles",
+      "image": "https://avatars.githubusercontent.com/u/10920072?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 902,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.5.1",
+      "createdAt": 1771239794441,
+      "changelog": "Added metadata: homepage, repository, npm package info, install spec",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:edff9f4c2ca7480162b4ac19feca3691bd40bd5f08e2175377e415523ac6dc66"
+}

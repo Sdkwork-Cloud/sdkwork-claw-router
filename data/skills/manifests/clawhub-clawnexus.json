@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22026,
+  "uuid": "skill-clawhub-clawnexus",
+  "skillKey": "clawhub-clawnexus",
+  "name": "Clawnexus",
+  "summary": "Discover, name, and manage OpenClaw instances on your LAN. Scan for AI agents, check status, set aliases, resolve .claw names, and get connection URLs via th...",
+  "version": "0.4.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawnexus",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Alan-StratCraftsAI",
+      "features": [
+        "Discover, name, and manage OpenClaw instances on your LAN",
+        "Scan for AI agents, check status, set aliases, resolve .claw names, and get connection URLs via."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawnexus@0.4.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/252692162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawnexus",
+      "url": "https://clawhub.ai/skills/clawnexus"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawnexus",
+    "url": "https://clawhub.ai/skills/clawnexus",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawnexus-39f77d3e20685510.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawnexus@0.4.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawnexus-0.4.1.json",
+      "version": "0.4.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f0f2270fb3756a577fe6472a2096ea540ec24e86efc672dbce55a216f503886",
+      "artifactSizeBytes": 2015
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T06:32:23.297Z"
+}

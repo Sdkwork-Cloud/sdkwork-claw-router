@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snyk-agent-scan-compliance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snyk_agent_scan_compliance",
+  "skill": {
+    "id": 55203,
+    "skillKey": "clawhub-snyk-agent-scan-compliance",
+    "name": "Snyk Agent Scan Compliance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snyk-agent-scan-compliance",
+    "url": "https://clawhub.ai/skills/snyk-agent-scan-compliance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snyk-agent-scan-compliance-a76a7d29bb1fbe31.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Compliance expert for snyk-agent-scan — the agent skill file scanner — NOT for other Snyk CLI tools (snyk test, snyk code SAST, snyk iac, snyk container). Fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samber",
+      "userId": "s173arkhs3131fq5jf769qq75583hdgt",
+      "displayName": "Samuel Berthe",
+      "image": "https://avatars.githubusercontent.com/u/2951285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775858531398,
+      "changelog": "Initial release of skill-authoring compliance guidance for snyk-agent-scan.\n\n- Provides comprehensive reference and best practices for resolving W011 (third-party content), W012 (malicious URLs), and W001 (prompt injection) alerts.\n- Clarifies scope: applies to skill authoring and editing, not code/infrastructure findings.\n- Details passive rewriting strategies; never suppress or delete information.\n- Includes remediation order, typical false positive conditions, and pre-authoring checklist to minimize scan failures.\n- Usage and installation guidance specific to `snyk-agent-scan`, including how to triage scans in local and CI environments.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:603f4bd046252c17e294e2dac10096bf99803eb66072055182d7e86e31b7a0a8"
+}

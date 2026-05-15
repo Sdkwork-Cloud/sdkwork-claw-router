@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bitget-poolx-monitor@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitget_poolx_monitor",
+  "skill": {
+    "id": 23083,
+    "skillKey": "clawhub-bitget-poolx-monitor",
+    "name": "Bitget Poolx Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitget-poolx-monitor",
+    "url": "https://clawhub.ai/skills/bitget-poolx-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitget-poolx-monitor-fdf870e6c37183ab.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor Bitget PoolX for new staking projects using r.jina.ai to bypass Cloudflare. Detect ETH, BTC, SOL and other pool launches."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itonlyforfun-ai",
+      "userId": "publishers:itonlyforfun-ai",
+      "displayName": "itonlyforfun-AI",
+      "image": "https://avatars.githubusercontent.com/u/260163371?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 431,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772781735590,
+      "changelog": "**Cloudflare bypass improved with r.jina.ai**\n\n- Switched to using r.jina.ai for Cloudflare bypass—no Playwright required\n- Faster and more reliable monitoring of Bitget PoolX staking projects\n- Updated main script to bitget-monitor.py\n- Tag \"jina\" added, and usage examples revised for simplicity\n- Documentation and output examples updated accordingly",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:da93655f99c98b5f7cadc6f53374d6acaaf43722223e10ea46b2077caed6b8b1"
+}

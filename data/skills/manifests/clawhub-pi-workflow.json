@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19060,
+  "uuid": "skill-clawhub-pi-workflow",
+  "skillKey": "clawhub-pi-workflow",
+  "name": "Pi Workflow Orchestration",
+  "summary": "Workflow orchestration for Pi's task management, self-improvement, and code quality standards. Use when starting new projects, managing multi-step tasks (3+...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pi_workflow",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kai-tw",
+      "features": [
+        "Workflow orchestration for Pi's task management, self-improvement, and code quality standards",
+        "Use when starting new projects, managing multi-step tasks (3+..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pi-workflow@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7111917?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pi-workflow",
+      "url": "https://clawhub.ai/skills/pi-workflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pi-workflow",
+    "url": "https://clawhub.ai/skills/pi-workflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pi-workflow-22f6e332f2cc793c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pi-workflow@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pi-workflow-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e011bd627af63d3dbe24b9dde923a412cedc6ce4b6534753a594fabb7f7d6950",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T16:31:19.724Z"
+}

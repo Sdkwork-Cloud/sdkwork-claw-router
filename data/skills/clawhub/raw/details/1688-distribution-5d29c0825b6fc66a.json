@@ -1,0 +1,48 @@
+{
+  "skill": {
+    "slug": "1688-distribution",
+    "displayName": "1688 Distribution",
+    "summary": "1688 分销唯一主入口。选品铺货、订单管理、知识库查询、店铺绑定，涵盖分销全链路。当用户提到铺货、选品、分销、上架、查订单、催发、旺旺、发货流程、绑店时触发。不要在用户仅询问非1688业务（如闲聊、天气、翻译等无关话题）时触发。",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1778035314490,
+    "updatedAt": 1778035607652
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1778035314490,
+    "changelog": "Initial release of the 1688-distribution skill — unified entry for all 1688 distribution business workflows.\n\n- Provides a single command-line interface for product selection/distribution, order management, knowledge-base query, and shop binding.\n- Strict output, error-handling, and compliance rules: no fabricated data, no unauthorized brand distribution, no extra suggestions or guidance in user responses.\n- Requires reference.md to be read before any business CLI is executed, ensuring command schema accuracy.\n- Automatic, silent handling of Access Key (AK) authorization; never exposes AK details or links to users.\n- Covers full flow for product selection, shop confirmation, distribution, order queries, risk handling, and knowledge search, with explicit markdown output formats.\n- Includes comprehensive, codified business restrictions and exception handling to ensure compliance with 1688 distribution requirements.",
+    "license": "MIT-0"
+  },
+  "metadata": {
+    "os": null,
+    "systems": null
+  },
+  "owner": {
+    "handle": "1688aiinfra",
+    "userId": "s177df9srv6z2y0gd1kw90rern83hzxb",
+    "displayName": "1688AiInfra",
+    "image": "https://avatars.githubusercontent.com/u/266033968?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious, suspicious.vt_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778035607652
+  }
+}

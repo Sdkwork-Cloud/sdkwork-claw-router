@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32276,
+  "uuid": "skill-clawhub-alibabacloud-ecs-install-extension",
+  "skillKey": "clawhub-alibabacloud-ecs-install-extension",
+  "name": "Alibabacloud Ecs Install Extension",
+  "summary": "Alibaba Cloud ECS extension installation skill. Supports querying available extension lists, checking if a specific extension is available, and one-click ins...",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_ecs_install_extension",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Alibaba Cloud ECS extension installation skill",
+        "Supports querying available extension lists, checking if a specific extension is available, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-ecs-install-extension@0.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-ecs-install-extension",
+      "url": "https://clawhub.ai/skills/alibabacloud-ecs-install-extension"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-ecs-install-extension",
+    "url": "https://clawhub.ai/skills/alibabacloud-ecs-install-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-ecs-install-extension-e82776f744994ab9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-ecs-install-extension@0.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-ecs-install-extension-0.0.2.json",
+      "version": "0.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:77d4af08baff25762ea6fc337e693cc638f661f39800ae5f47a8490e9d65fb80",
+      "artifactSizeBytes": 2288
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T06:02:05.639Z"
+}

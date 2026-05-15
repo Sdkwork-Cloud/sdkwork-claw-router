@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ratemyclaw@0.5.1",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ratemyclaw",
+  "skill": {
+    "id": 28900,
+    "skillKey": "clawhub-ratemyclaw",
+    "name": "RateMyClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ratemyclaw",
+    "url": "https://clawhub.ai/skills/ratemyclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ratemyclaw-03b06e343dacaecc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score your OpenClaw agent setup against similar agents. Scans your workspace, generates a local embedding for privacy-preserving semantic matching, and submi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "picklenick144",
+      "userId": "s172741207chx9176v7hfr14tx844dsy",
+      "displayName": "picklenick144",
+      "image": "https://avatars.githubusercontent.com/u/159646778?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 215,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "0.5.1",
+      "createdAt": 1775306761982,
+      "changelog": "Fix score URL output, client-side grade, model data in submissions, /v1/keys endpoint",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8dfb19f665587cc1bde5862bda2d80837d086b20f382b30354add63b7dfa07e2"
+}

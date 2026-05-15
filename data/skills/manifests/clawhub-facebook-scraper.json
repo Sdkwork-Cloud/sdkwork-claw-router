@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12107,
+  "uuid": "skill-clawhub-facebook-scraper",
+  "skillKey": "clawhub-facebook-scraper",
+  "name": "Facebook Scraper",
+  "summary": "Discover and scrape public Facebook pages and groups by location and category with browser simulation and export data in JSON or CSV formats.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.facebook_scraper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ArulmozhiV",
+      "features": [
+        "Discover and scrape public Facebook pages and groups by location and category with browser simu."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/facebook-scraper@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/58811343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "facebook-scraper",
+      "url": "https://clawhub.ai/skills/facebook-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "facebook-scraper",
+    "url": "https://clawhub.ai/skills/facebook-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/facebook-scraper-c0240bd7538d694d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/facebook-scraper@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-facebook-scraper-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fec62842f8add21822dc3551bcc4db6ea1887f46b6b26902660b512de27fa13e",
+      "artifactSizeBytes": 2076
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T11:01:37.776Z"
+}

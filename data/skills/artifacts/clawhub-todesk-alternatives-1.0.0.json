@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/todesk-alternatives@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.todesk_alternatives",
+  "skill": {
+    "id": 61353,
+    "skillKey": "clawhub-todesk-alternatives",
+    "name": "ToDesk Alternatives"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "todesk-alternatives",
+    "url": "https://clawhub.ai/skills/todesk-alternatives",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/todesk-alternatives-446405d7ce7bc590.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "安全免费开源的ToDesk替代远程控制工具推荐。RustDesk/SPyRFC/UltraVNC等，主打安全、开源、无广告，适合程序员和电脑用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "smseow001",
+      "userId": "s17a72fh5mgpvvs3dm2ax0yq8984pnqc",
+      "displayName": "SMS",
+      "image": "https://avatars.githubusercontent.com/u/33817483?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776488076988,
+      "changelog": "- 首次发布 1.0.0 版本，推荐安全免费开源的 ToDesk 平替方案。\n- 详细介绍 RustDesk、UltraVNC、TigerVNC 和 SPyRFC 的特点与适用人群。\n- 提供易懂的对比表格，方便用户选择。\n- 强调隐私安全和自建中继服务器等最佳实践。\n- 补充 RustDesk + Tailscale 低延迟安全连接建议。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:227d814f94e9bef361fb73c8c3bededc67eecb22ffa9b52b4ee82f9e442fa3f5"
+}

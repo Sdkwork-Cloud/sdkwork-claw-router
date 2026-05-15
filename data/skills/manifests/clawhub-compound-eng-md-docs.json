@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23609,
+  "uuid": "skill-clawhub-compound-eng-md-docs",
+  "skillKey": "clawhub-compound-eng-md-docs",
+  "name": "ia-md-docs",
+  "summary": "Manages project documentation: CLAUDE.md, AGENTS.md, README.md, CONTRIBUTING.md. Use when asked to update, create, or init these context files. Not for gener...",
+  "version": "4.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.compound_eng_md_docs",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ilia Alshanetsky",
+      "features": [
+        "Manages project documentation: CLAUDE.md, AGENTS.md, README.md, CONTRIBUTING.md",
+        "Use when asked to update, create, or init these context files",
+        "Not for gener..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/compound-eng-md-docs@4.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/158724?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "compound-eng-md-docs",
+      "url": "https://clawhub.ai/skills/compound-eng-md-docs"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "compound-eng-md-docs",
+    "url": "https://clawhub.ai/skills/compound-eng-md-docs",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/compound-eng-md-docs-db59dc49f9b71cae.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/compound-eng-md-docs@4.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-compound-eng-md-docs-4.0.1.json",
+      "version": "4.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49adf7a7ae76348f2f52fe761318c445381973009e59c6824fed339431262f72",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T23:16:39.038Z"
+}

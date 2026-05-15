@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14700,
+  "uuid": "skill-clawhub-js-eyes",
+  "skillKey": "clawhub-js-eyes",
+  "name": "Js Eyes",
+  "summary": "Install, configure, verify, and troubleshoot JS Eyes browser automation for OpenClaw.",
+  "version": "2.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.js_eyes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JS",
+      "features": [
+        "Install, configure, verify, and troubleshoot JS Eyes browser automation for OpenClaw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/js-eyes@2.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5433500?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "js-eyes",
+      "url": "https://clawhub.ai/skills/js-eyes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "js-eyes",
+    "url": "https://clawhub.ai/skills/js-eyes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/js-eyes-df4bac749cb11c32.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/js-eyes@2.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-js-eyes-2.7.0.json",
+      "version": "2.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:afe239db7545aec1486e33760ae7179fc9d27ab4de487b00761a5619e1bb9368",
+      "artifactSizeBytes": 1756
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T09:16:21.532Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task-progress-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_progress_report",
+  "skill": {
+    "id": 70745,
+    "skillKey": "clawhub-task-progress-report",
+    "name": "Task Progress Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-progress-report",
+    "url": "https://clawhub.ai/skills/task-progress-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-progress-report-ad08a8c4ac833873.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在运行长任务时，同步开启\"任务进展汇报\"功能，定时输出当前任务进展情况。当用户提到\"汇报进展\"、\"定时报告\"、\"任务进度\"、\"长时间运行\"、\"监控任务状态\"或需要了解长时间任务的执行情况时，使用此技能。特别适用于模型蒸馏、数据训练、批量处理、爬虫任务等需要长时间运行的场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cheffly",
+      "userId": "s17695bv9jqafe799rkm6w61w183g7a4",
+      "displayName": "cheffly",
+      "image": "https://avatars.githubusercontent.com/u/124015408?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 364,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773402355426,
+      "changelog": "- Initial release of \"任务进展汇报\" (Task Progress Report) skill.\n- Adds scheduled progress reporting for long-running tasks (e.g., model training, data processing).\n- Provides concise in-chat summaries and detailed markdown reports saved to a fixed location.\n- Supports customizable reporting intervals and key checkpoints.\n- Includes example scenarios and best practice recommendations.\n- Integrates with helper scripts for automated report generation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f61f366f2326ae5303833086ba63f638ea4900bf1c123ef223e7502710f4c321"
+}

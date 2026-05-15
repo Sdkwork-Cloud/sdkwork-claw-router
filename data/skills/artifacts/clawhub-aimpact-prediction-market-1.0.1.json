@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aimpact-prediction-market@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aimpact_prediction_market",
+  "skill": {
+    "id": 63147,
+    "skillKey": "clawhub-aimpact-prediction-market",
+    "name": "aimpact-prediction-market"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aimpact-prediction-market",
+    "url": "https://clawhub.ai/skills/aimpact-prediction-market",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aimpact-prediction-market-2ad74da4964c9688.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AIMPACT Prediction Market 技能提供预测市场（如 Polymarket）实时监控，实时推送提醒，基于 AI 评分智能排序，支持定时推送。当用户说\"查询预测市场热门事件\"、\"查询预测市场异常交易\"、\"查询预测市场交易机会\"或\"检查预测市场变化\"时调用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jamesmenews",
+      "userId": "s177x32ba36jaspp47v9qdzqnh83gzf0",
+      "displayName": "AIMPACT",
+      "image": "https://avatars.githubusercontent.com/u/254596585?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776670770970,
+      "changelog": "Version 1.0.1 introduces updates for channel and credential handling:\n\n- Clarifies that the skill does not store or manage any channel credentials; push notifications require prior OpenClaw configuration of the message tool and channels.\n- Updates requirements: now explicitly requires the curl binary (bins: [curl]) for API access.\n- Adjusts push notification features to be optional and only available if configured in OpenClaw.\n- Refines documentation to improve instructions on push logic, security, and external push tool prerequisites.\n- No functional changes to market monitoring, data analysis, or push formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:75d5214b92d1c31dcffda6d17f81499e1045f37f5479cb04c729d20860649c6d"
+}

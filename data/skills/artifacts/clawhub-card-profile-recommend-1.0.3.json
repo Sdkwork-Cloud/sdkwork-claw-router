@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/card-profile-recommend@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.card_profile_recommend",
+  "skill": {
+    "id": 54670,
+    "skillKey": "clawhub-card-profile-recommend",
+    "name": "Card Profile Recommend"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "card-profile-recommend",
+    "url": "https://clawhub.ai/skills/card-profile-recommend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/card-profile-recommend-a485308086b485df.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze a multi-card portfolio — grade each card (MVP / Keep / Consider Dropping), recommend 2–3 new additions with churning strategy, apply issuer rules (Ch..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiahongc",
+      "userId": "s17bwps1v7fqm560253grqacxn83kpf2",
+      "displayName": "jiahongc",
+      "image": "https://avatars.githubusercontent.com/u/61323260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 374,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776259453738,
+      "changelog": "Refresh published skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4ded1b4625ebe60106afcf56667ca50cc8b3a39c9c0af9d4919da27a57ebc4e9"
+}

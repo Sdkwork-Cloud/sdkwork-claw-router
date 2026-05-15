@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-ai-for-marketing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_ai_for_marketing",
+  "skill": {
+    "id": 43654,
+    "skillKey": "clawhub-editor-ai-for-marketing",
+    "name": "Editor Ai For Marketing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-ai-for-marketing",
+    "url": "https://clawhub.ai/skills/editor-ai-for-marketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-ai-for-marketing-d7f67d92cea42463.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "marketers edit raw video footage into polished marketing clips using this skill. Accepts MP4, MOV, AVI, WebM up to 500MB, renders on cloud GPUs at 1080p, and..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 148,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775864512231,
+      "changelog": "Editor AI for Marketing — Version 1.0.0\n\n- Initial release enabling marketers to edit raw video into polished marketing clips using a cloud AI pipeline.\n- Supports MP4, MOV, AVI, and WebM uploads up to 500MB, rendering 1080p MP4 outputs in about 1–2 minutes.\n- Guided workflows for uploading, editing, and exporting videos, with credit balance and session management.\n- Automatic setup with free, limited-use anonymous tokens and session state management.\n- Includes clear error handling, accepted formats, and step-by-step mapping of user prompts to backend actions.\n- Features workflow tips and API integration details for a seamless editing/export experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:66dc3c80b0a6d16a27b88164ceaeb9f1414e86725519aedc5088073b838890ab"
+}

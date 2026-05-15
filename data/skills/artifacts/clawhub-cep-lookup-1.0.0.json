@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cep-lookup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cep_lookup",
+  "skill": {
+    "id": 31673,
+    "skillKey": "clawhub-cep-lookup",
+    "name": "Brazilian CEP using the ViaCEP API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cep-lookup",
+    "url": "https://clawhub.ai/skills/cep-lookup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cep-lookup-5135d86d4ce7563e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Looks up address data for a Brazilian CEP using the ViaCEP API."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guilherme-funchal",
+      "userId": "s176npbn6g49p5s2zdkez9psys83ycjz",
+      "displayName": "Guilherme Funchal da Silva",
+      "image": "https://avatars.githubusercontent.com/u/1153557?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775586019524,
+      "changelog": "- Initial release of cep-lookup skill.\n- Fetches Brazilian address data by CEP using the ViaCEP API.\n- Returns street, neighborhood, city, state, and complement when available.\n- Handles invalid CEP formats, not found errors, and network issues with clear messages.\n- Requires Node.js, npm, and the axios library for HTTP requests.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:750394838982055ad8782b208b65d48bc25715d03f543d079d815578bf8e7271"
+}

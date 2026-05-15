@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/komandr@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.komandr",
+  "skill": {
+    "id": 44412,
+    "skillKey": "clawhub-komandr",
+    "name": "Komandr"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "komandr",
+    "url": "https://clawhub.ai/skills/komandr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/komandr-dbe7f98f9770ff90.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Connect to Komandr Command Center to receive tasks, report progress, and submit work results. Komandr is a task orchestration platform where humans assign wo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "emersonaidev",
+      "userId": "s17647nds1dgyks84vp80rcwnn83hc7x",
+      "displayName": "emersonaidev",
+      "image": "https://avatars.githubusercontent.com/u/164468096?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 143,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774390096286,
+      "changelog": "Initial release — connect OpenClaw agents to Komandr Command Center for task orchestration",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa08f21ecf5a112ecdc927c1a8aa6545223fed032898209b62a8e33711112eb8"
+}

@@ -87,71 +87,71 @@ export type FirewallCreateInput = {
 
 export class RateLimitService {
   static async fetchIpLimits(): Promise<IpLimitRule[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchIpLimits();
+    const result = await getClawRouterBackendSdkClient().system.rateLimits.ip.list();
     ensurePlusApiSuccess(result, 'Failed to fetch IP limits');
     return readRequiredApiItems(result, 'Failed to fetch IP limits')
       .map(normalizeIpLimit);
   }
 
   static async addIpLimit(rule: IpLimitCreateInput): Promise<IpLimitRule> {
-    const result = await getClawRouterBackendSdkClient().router.addIpLimit(
+    const result = await getClawRouterBackendSdkClient().system.rateLimits.ip.create(
       toCreateIpLimitRequest(rule),
-      requestToken('admin-ip-limit-create'),
+      requestParams('admin-ip-limit-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add IP limit');
     return normalizeIpLimit(readRequiredApiItem(result, 'Created IP limit response is missing data'));
   }
 
   static async fetchTokenLimits(): Promise<TokenLimitRule[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchTokenLimits();
+    const result = await getClawRouterBackendSdkClient().system.rateLimits.apiKeys.list();
     ensurePlusApiSuccess(result, 'Failed to fetch token limits');
     return readRequiredApiItems(result, 'Failed to fetch token limits')
       .map(normalizeTokenLimit);
   }
 
   static async addTokenLimit(rule: TokenLimitCreateInput): Promise<TokenLimitRule> {
-    const result = await getClawRouterBackendSdkClient().router.addTokenLimit(
+    const result = await getClawRouterBackendSdkClient().system.rateLimits.apiKeys.create(
       toCreateTokenLimitRequest(rule),
-      requestToken('admin-token-limit-create'),
+      requestParams('admin-token-limit-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add token limit');
     return normalizeTokenLimit(readRequiredApiItem(result, 'Created token limit response is missing data'));
   }
 
   static async fetchModelLimits(): Promise<ModelLimitRule[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchModelLimits();
+    const result = await getClawRouterBackendSdkClient().system.rateLimits.models.list();
     ensurePlusApiSuccess(result, 'Failed to fetch model limits');
     return readRequiredApiItems(result, 'Failed to fetch model limits')
       .map(normalizeModelLimit);
   }
 
   static async addModelLimit(rule: ModelLimitCreateInput): Promise<ModelLimitRule> {
-    const result = await getClawRouterBackendSdkClient().router.addModelLimit(
+    const result = await getClawRouterBackendSdkClient().system.rateLimits.models.create(
       toCreateModelLimitRequest(rule),
-      requestToken('admin-model-limit-create'),
+      requestParams('admin-model-limit-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add model limit');
     return normalizeModelLimit(readRequiredApiItem(result, 'Created model limit response is missing data'));
   }
 
   static async fetchFirewalls(): Promise<FirewallRule[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchFirewalls();
+    const result = await getClawRouterBackendSdkClient().system.firewalls.rules.list();
     ensurePlusApiSuccess(result, 'Failed to fetch firewall rules');
     return readRequiredApiItems(result, 'Failed to fetch firewall rules')
       .map(normalizeFirewall);
   }
 
   static async addFirewall(rule: FirewallCreateInput): Promise<FirewallRule> {
-    const result = await getClawRouterBackendSdkClient().router.addFirewall(
+    const result = await getClawRouterBackendSdkClient().system.firewalls.rules.create(
       toCreateFirewallRequest(rule),
-      requestToken('admin-firewall-create'),
+      requestParams('admin-firewall-create'),
     );
     ensurePlusApiSuccess(result, 'Failed to add firewall rule');
     return normalizeFirewall(readRequiredApiItem(result, 'Created firewall rule response is missing data'));
   }
 
   static async removeFirewall(id: string): Promise<boolean> {
-    const result = await getClawRouterBackendSdkClient().router.removeFirewall(
+    const result = await getClawRouterBackendSdkClient().system.firewalls.rules.delete(
       requiredSafePathSegment(id, 'firewallRuleId'),
     );
     ensurePlusApiSuccess(result, 'Failed to remove firewall rule');
@@ -211,8 +211,8 @@ function positiveInteger(value: number, fieldName: string): number {
   return Math.round(value);
 }
 
-function requestToken(scope: string): string {
-  return createRequestToken(scope);
+function requestParams(scope: string): { xRequestId: string } {
+  return { xRequestId: createRequestToken(scope) };
 }
 
 function normalizeIpLimit(value: unknown): IpLimitRule {

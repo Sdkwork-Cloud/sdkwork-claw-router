@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-ai-tiktok@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_ai_tiktok",
+  "skill": {
+    "id": 43234,
+    "skillKey": "clawhub-editor-ai-tiktok",
+    "name": "Editor Ai Tiktok"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-ai-tiktok",
+    "url": "https://clawhub.ai/skills/editor-ai-tiktok",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-ai-tiktok-346e7a2238a63c9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit raw video clips into TikTok-ready clips with this editor-ai-tiktok skill. Works with MP4, MOV, AVI, WebM files up to 500MB. TikTok creators use it for e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775859414238,
+      "changelog": "AI TikTok video editing skill — first release.\n\n- Edit raw video clips into TikTok-ready 1080p MP4s via cloud GPU processing.\n- Supports MP4, MOV, AVI, and WebM files up to 500MB.\n- Automatic session and token setup; 100 free credits for new users.\n- Handles editing, uploads, exports, credit checks, and workflow management.\n- Streamlined prompt-to-action mapping for fast, creator-friendly editing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c45cbace9eedb66405e3def4ff822a9498217437aa2a777c00aa7f4df465cf4e"
+}

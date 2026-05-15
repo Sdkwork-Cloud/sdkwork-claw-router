@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16903,
+  "uuid": "skill-clawhub-openclaw-updater",
+  "skillKey": "clawhub-openclaw-updater",
+  "name": "OpenClaw Updater",
+  "summary": "Safely update OpenClaw with pre-flight checks and rollback support. Use when updating OpenClaw, checking for updates, or recovering from a failed update. Han...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_updater",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "San Chen",
+      "features": [
+        "Safely update OpenClaw with pre-flight checks and rollback support",
+        "Use when updating OpenClaw, checking for updates, or recovering from a failed update"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-updater@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/133654?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-updater",
+      "url": "https://clawhub.ai/skills/openclaw-updater"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-updater",
+    "url": "https://clawhub.ai/skills/openclaw-updater",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-updater-c0c11389725b55d9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-updater@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-updater-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:de7bcfd6f6cbbacf413e64e7b8bab0fbf34d6659e8eb183eeaa7091040d00d5a",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T09:35:46.892Z"
+}

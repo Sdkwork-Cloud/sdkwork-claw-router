@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26252,
+  "uuid": "skill-clawhub-apophenia-guard",
+  "skillKey": "clawhub-apophenia-guard",
+  "name": "Apophenia Guard",
+  "summary": "A cognitive bias interceptor for debugging sessions. Detects when you're seeing patterns that aren't there, chasing red herrings, or letting confirmation bia...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apophenia_guard",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John DeVere Cooley",
+      "features": [
+        "A cognitive bias interceptor for debugging sessions",
+        "Detects when you're seeing patterns that aren't there, chasing red herrings, or letting confirm."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apophenia-guard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75928463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apophenia-guard",
+      "url": "https://clawhub.ai/skills/apophenia-guard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apophenia-guard",
+    "url": "https://clawhub.ai/skills/apophenia-guard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apophenia-guard-6f23a18674a021b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apophenia-guard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apophenia-guard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3c290c0672fa083507a0227c1132b7ab20e91ac913c557d7a69461b4578e4047",
+      "artifactSizeBytes": 1890
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T21:07:51.772Z"
+}

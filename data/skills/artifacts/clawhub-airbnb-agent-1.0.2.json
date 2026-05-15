@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airbnb-agent@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airbnb_agent",
+  "skill": {
+    "id": 49253,
+    "skillKey": "clawhub-airbnb-agent",
+    "name": "Airbnb Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airbnb-agent",
+    "url": "https://clawhub.ai/skills/airbnb-agent",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airbnb-agent-a96b346d70dd358a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Airbnb listings, filter short-term rentals, and analyze detail pages for parking, basement, and renovation signals."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "suidge",
+      "userId": "s1769yn9ptpyx07673vcrfy2yd83jjt3",
+      "displayName": "Neo Shi",
+      "image": "https://avatars.githubusercontent.com/u/34770064?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 82,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1778245244023,
+      "changelog": "Improve skill-builder compliance, docs, guest handling, and bedroom parsing",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da18d06d624372e2fd3e940ada7d0fb5640cd2f59618c86087ddd6cdde2fad0a"
+}

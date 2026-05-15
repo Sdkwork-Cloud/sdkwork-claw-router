@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10371,
+  "uuid": "skill-clawhub-clawdbot-sync",
+  "skillKey": "clawhub-clawdbot-sync",
+  "name": "Clawdbot Sync",
+  "summary": "Synchronize memory, preferences, and skills between multiple Clawdbot instances. Supports bi-directional sync via SSH/rsync over Tailscale. Use when asked to sync with another Clawdbot, share memory between instances, or keep multiple agen.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawdbot_sync",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "udiedrichsen",
+      "features": [
+        "Synchronize memory, preferences, and skills between multiple Clawdbot instances",
+        "Supports bi-directional sync via SSH/rsync over Tailscale",
+        "Use when asked to sync with another Clawdbot, share memory between instances, or keep multiple.",
+        "Triggers: /sync, 'sync with mac', 'update other clawdbot', 'share this with my other bot'."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawdbot-sync@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4386398?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawdbot-sync",
+      "url": "https://clawhub.ai/skills/clawdbot-sync"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawdbot-sync",
+    "url": "https://clawhub.ai/skills/clawdbot-sync",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawdbot-sync-e188066ae5d27150.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawdbot-sync@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawdbot-sync-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1a46dffd2a7ac9f15bf3d33fe76b37f18b55a1220248f6db6954d1df0ff8a1e",
+      "artifactSizeBytes": 2020
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T12:55:38.552Z"
+}

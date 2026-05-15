@@ -1,4 +1,4 @@
-# sdkwork-claw-router Rust Runtime and SDK Integration Standard
+﻿# sdkwork-claw-router Rust Runtime and SDK Integration Standard
 
 ## 1. Purpose
 
@@ -154,7 +154,7 @@ The service/wrapper layer may:
 The service/wrapper layer must not:
 
 - call `fetch`, `axios`, or generic request helpers for app/backend business endpoints
-- manually build `Authorization` or `Access-Token` headers in feature modules
+- manually build `Authorization` or `Sdkwork-Access-Token` headers in feature modules
 - fork generated DTOs to hide missing SDK methods
 - return fake success for missing backend behavior
 - change UI visuals while replacing transport

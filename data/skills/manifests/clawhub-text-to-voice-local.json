@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29122,
+  "uuid": "skill-clawhub-text-to-voice-local",
+  "skillKey": "clawhub-text-to-voice-local",
+  "name": "Text to Voice Local",
+  "summary": "Local text-to-voice generation for OpenClaw workspaces using a canonical txt-to-mp3 pipeline. Use when the user wants to turn any prepared text into voice, a...",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_voice_local",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ildar",
+      "features": [
+        "Local text-to-voice generation for OpenClaw workspaces using a canonical txt-to-mp3 pipeline",
+        "Use when the user wants to turn any prepared text into voice, a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-to-voice-local@1.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1042845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-to-voice-local",
+      "url": "https://clawhub.ai/skills/text-to-voice-local"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-voice-local",
+    "url": "https://clawhub.ai/skills/text-to-voice-local",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-voice-local-27491284ab96fa33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-to-voice-local@1.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-to-voice-local-1.4.0.json",
+      "version": "1.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cd98afc305c3cb70c27f2ea6313d446ab893014f3f16f79a904f6c70aa7915ab",
+      "artifactSizeBytes": 1980
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-06T19:53:20.768Z"
+}

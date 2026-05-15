@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shutdown@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shutdown",
+  "skill": {
+    "id": 28990,
+    "skillKey": "clawhub-shutdown",
+    "name": "shutdown"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shutdown",
+    "url": "https://clawhub.ai/skills/shutdown",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shutdown-08434ba9cdf55a02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Safe shutdown/reboot workflow for local or remote machines. Use when the user asks to power off, restart, schedule shutdown, cancel shutdown, or perform pre-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jvy",
+      "userId": "s17drhqvqmrfz94tm5320kfgj983kf7m",
+      "displayName": "jvy",
+      "image": "https://avatars.githubusercontent.com/u/5337221?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 313,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773501133436,
+      "changelog": "- Initial release of safe shutdown and reboot workflow.\n- Supports local and remote machines across macOS, Linux (systemd), and Windows.\n- Requires explicit user confirmation for all shutdown, reboot, scheduling, and cancellation actions.\n- Performs safety pre-checks to warn about connected users and running processes before proceeding.\n- Provides clear, platform-specific commands and confirmation patterns, including for Chinese users.\n- Emphasizes session safety and never operates on multiple machines or runs destructive actions without explicit instruction.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e779e1fa5bc8b82fbab492c1516e3507ff06298a2ae7731b59756ce01b92917b"
+}

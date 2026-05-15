@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50605,
+  "uuid": "skill-clawhub-email-digest",
+  "skillKey": "clawhub-email-digest",
+  "name": "Email Digest",
+  "summary": "Smart email categorizer and digest formatter for agents. Pass fetched emails as an array — get back a prioritized daily brief with urgent, action needed, and...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_digest",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Shadow Rose",
+      "features": [
+        "Smart email categorizer and digest formatter for agents",
+        "Pass fetched emails as an array — get back a prioritized daily brief with urgent, action needed."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-digest@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262919821?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-digest",
+      "url": "https://clawhub.ai/skills/email-digest"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-digest",
+    "url": "https://clawhub.ai/skills/email-digest",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-digest-9fc3db0d173c2f0e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-digest@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-digest-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2735b227c3d603d8ca6b5b6f140a992ca746a4e3664e8d4a13c1b713744d83f2",
+      "artifactSizeBytes": 2384
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T20:07:11.599Z"
+}

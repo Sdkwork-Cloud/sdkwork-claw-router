@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/visual-automation@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.visual_automation",
+  "skill": {
+    "id": 19532,
+    "skillKey": "clawhub-visual-automation",
+    "name": "Visual Automation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "visual-automation",
+    "url": "https://clawhub.ai/skills/visual-automation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/visual-automation-301a382ea6595124.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates Blender via Python scripts to create 3D assets, renders, and animations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flayzz",
+      "userId": "publishers:flayzz",
+      "displayName": "FlayZz",
+      "image": "https://avatars.githubusercontent.com/u/45981623?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 498,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773568628866,
+      "changelog": "- Initial release of the visual_automation skill.\n- Automates Blender using Python scripts to generate 3D assets, renders, and animations.\n- Supports script generation, headless/background rendering, and web-friendly export formats (GLB/GLTF).\n- Provides best practices for quality visuals, including procedural texturing, HDRI lighting, and optimal camera angles.\n- Integrates directly with project asset folders for seamless workflow.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11a691046a6bfb7fa964ca562c5a2b5fb10694c66a94f07c5e20776b9cdc22d4"
+}

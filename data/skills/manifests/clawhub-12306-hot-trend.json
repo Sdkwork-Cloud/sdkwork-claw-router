@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69807,
+  "uuid": "skill-clawhub-12306-hot-trend",
+  "skillKey": "clawhub-12306-hot-trend",
+  "name": "12306",
+  "summary": "提供12306余票查询、候补监控和订单整理等铁路出行信息检索与流程自动化服务。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.12306_hot_trend",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawKK",
+      "features": [
+        "提供12306余票查询、候补监控和订单整理等铁路出行信息检索与流程自动化服务。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/12306-hot-trend@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/111570001?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "12306-hot-trend",
+      "url": "https://clawhub.ai/skills/12306-hot-trend"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "12306-hot-trend",
+    "url": "https://clawhub.ai/skills/12306-hot-trend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/12306-hot-trend-c581e5f8eea3e31e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/12306-hot-trend@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-12306-hot-trend-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c40d4c253366ffadc0238cbaa17002fc5e59053f02334aed1367ed081e33c484",
+      "artifactSizeBytes": 2399
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:42:13.678Z"
+}

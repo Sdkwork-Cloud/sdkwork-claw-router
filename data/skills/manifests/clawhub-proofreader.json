@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58759,
+  "uuid": "skill-clawhub-proofreader",
+  "skillKey": "clawhub-proofreader",
+  "name": "Proofreader",
+  "summary": "校对/错别字检查、语法纠错、文风统一、一致性检查、可读性评分、校对报告。Proofreading with typo detection, grammar correction, style consistency, readability scoring.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.proofreader",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain3",
+      "features": [
+        "校对/错别字检查、语法纠错、文风统一、一致性检查、可读性评分、校对报告。Proofreading with typo detection, grammar correction, style."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/proofreader@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218212813?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "proofreader",
+      "url": "https://clawhub.ai/skills/proofreader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "proofreader",
+    "url": "https://clawhub.ai/skills/proofreader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/proofreader-f7b0bf6789c6a48c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/proofreader@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-proofreader-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce68f09bcef297d562750e650d0e5c9faff43ee17761335259ef2ead6aa70b80",
+      "artifactSizeBytes": 1956
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T18:58:53.785Z"
+}

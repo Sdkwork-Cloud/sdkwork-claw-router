@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58919,
+  "uuid": "skill-clawhub-dayplanner",
+  "skillKey": "clawhub-dayplanner",
+  "name": "Dayplanner",
+  "summary": "日程规划工具。周计划、月计划、时间块、会议安排、截止日期管理、工作生活平衡。Calendar planner with weekly, monthly, time-blocking, meeting scheduling, deadline management.",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dayplanner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "BytesAgain2",
+      "features": [
+        "日程规划工具。周计划、月计划、时间块、会议安排、截止日期管理、工作生活平衡。Calendar planner with weekly, monthly, time-blocking, mee."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dayplanner@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44366898?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dayplanner",
+      "url": "https://clawhub.ai/skills/dayplanner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dayplanner",
+    "url": "https://clawhub.ai/skills/dayplanner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dayplanner-edc442353a2aaa86.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dayplanner@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-dayplanner-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:016bb6e2856bd064606e6468e4c3a63eeae072f00f46b3f0a918f875157653e0",
+      "artifactSizeBytes": 1905
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T02:18:05.438Z"
+}

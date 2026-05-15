@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66201,
+  "uuid": "skill-clawhub-wechat-mick",
+  "skillKey": "clawhub-wechat-mick",
+  "name": "wechat-mick",
+  "summary": "总结微信公众号文章内容。当用户提供微信公众号文章链接（mp.weixin.qq.com）并要求总结、概括、摘要、快速了解文章内容时使用此 skill。也适用于用户说\"帮我看看这篇文章讲什么\"、\"这篇公众号文章说了啥\"、\"总结一下这个链接\"等请求。只要看到 mp.weixin.qq.com 的链接并且用户想了解内容...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mick",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mick2458pan",
+      "features": [
+        "总结微信公众号文章内容。当用户提供微信公众号文章链接（mp.weixin.qq.com）并要求总结、概括、摘要、快速了解文章内容时使用此 skill。也适用于用户说\"帮我看看这篇文章讲什么\"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mick@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/207201517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mick",
+      "url": "https://clawhub.ai/skills/wechat-mick"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mick",
+    "url": "https://clawhub.ai/skills/wechat-mick",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mick-cacdcd60fa326784.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mick@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mick-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:41da721f177a4e65f68d5066213ec2dac82b31642cef223e732c87cd1c1f942e",
+      "artifactSizeBytes": 2590
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T18:06:31.457Z"
+}

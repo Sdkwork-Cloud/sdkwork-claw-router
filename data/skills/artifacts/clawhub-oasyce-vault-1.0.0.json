@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/oasyce-vault@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.oasyce_vault",
+  "skill": {
+    "id": 51626,
+    "skillKey": "clawhub-oasyce-vault",
+    "name": "Oasyce Vault"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "oasyce-vault",
+    "url": "https://clawhub.ai/skills/oasyce-vault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/oasyce-vault-a6cbc98cf0c7f443.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Local-first data asset manager — scan, classify, and report on your data before deciding what to share. Use when user mentions scanning files, classifying da..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shangri-la-0428",
+      "userId": "s1791vsdtaspreqpc9p341911x83h813",
+      "displayName": "Shangri-la-0428",
+      "image": "https://avatars.githubusercontent.com/u/236340319?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 297,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773425832133,
+      "changelog": "Local-first data asset manager. Scan, classify, report — know what you have before you share.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:759686fccee1e8a61827d1e6b9cc17279b47129cbdd26bb62a2a5d9e390d6699"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57574,
+  "uuid": "skill-clawhub-hwp-batch-convert",
+  "skillKey": "clawhub-hwp-batch-convert",
+  "name": "Hwp Batch Convert",
+  "summary": "Batch-convert 한컴 한글 문서(HWP/HWPX) on Windows into PDF and other export formats with a Korean-friendly automation workflow. Use when the user asks for 이 폴더 hwp...",
+  "version": "0.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hwp_batch_convert",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "twbeatles",
+      "features": [
+        "Batch-convert 한컴 한글 문서(HWP/HWPX) on Windows into PDF and other export formats with a Korean-fri.",
+        "Use when the user asks for 이 폴더 hwp..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hwp-batch-convert@0.2.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/243789332?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hwp-batch-convert",
+      "url": "https://clawhub.ai/skills/hwp-batch-convert"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hwp-batch-convert",
+    "url": "https://clawhub.ai/skills/hwp-batch-convert",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hwp-batch-convert-ef332c32ab6f50ce.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hwp-batch-convert@0.2.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hwp-batch-convert-0.2.1.json",
+      "version": "0.2.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1d8a38cea543ad1343e787a78da76ae82f9f204e91b24541dd220032d8b380af",
+      "artifactSizeBytes": 1998
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:37:48.339Z"
+}

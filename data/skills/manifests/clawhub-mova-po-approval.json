@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30100,
+  "uuid": "skill-clawhub-mova-po-approval",
+  "skillKey": "clawhub-mova-po-approval",
+  "name": "Mova Po Approval",
+  "summary": "Submit a purchase order for automated risk analysis and procurement approval via MOVA HITL. Trigger when the user mentions a PO number, asks to approve/revie...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mova_po_approval",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sergii Miasoiedov",
+      "features": [
+        "Submit a purchase order for automated risk analysis and procurement approval via MOVA HITL",
+        "Trigger when the user mentions a PO number, asks to approve/revie..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mova-po-approval@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258828376?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mova-po-approval",
+      "url": "https://clawhub.ai/skills/mova-po-approval"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mova-po-approval",
+    "url": "https://clawhub.ai/skills/mova-po-approval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mova-po-approval-71bbe8fff9628d9d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mova-po-approval@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mova-po-approval-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c451e20e72b7f7de3479ec7c9420907088928fe5335acbba010cec904189f328",
+      "artifactSizeBytes": 1930
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T14:50:00.842Z"
+}

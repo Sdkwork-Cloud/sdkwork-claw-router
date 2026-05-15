@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/multi-model-critique@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.multi_model_critique",
+  "skill": {
+    "id": 23302,
+    "skillKey": "clawhub-multi-model-critique",
+    "name": "Multi Model Critique"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "multi-model-critique",
+    "url": "https://clawhub.ai/skills/multi-model-critique",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/multi-model-critique-345fc5d101859e2e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use multiple models in a 4-step cycle of drafting, cross-critique, revision, and synthesis to generate higher-quality answers for complex, high-stakes queries."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "prairiedoggg",
+      "userId": "publishers:prairiedoggg",
+      "displayName": "prairiedoggg",
+      "image": "https://avatars.githubusercontent.com/u/128138739?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 436,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772187449013,
+      "changelog": "Security patch: validate and sanitize untrusted question/constraints inputs, block prompt-injection control phrases, validate model/agent mapping formats, and add runtime guardrails for orchestration plan generation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:97099290a8f5d73ffc4079b124aae30a9fd8ad0957c57ccaa3a477b9f142b01b"
+}

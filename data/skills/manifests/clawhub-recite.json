@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18147,
+  "uuid": "skill-clawhub-recite",
+  "skillKey": "clawhub-recite",
+  "name": "Recite",
+  "summary": "AI-powered receipt scanning that renames files by date/vendor, extracts transaction details, and logs them in a dynamic bookkeeping CSV.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.recite",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "rivradev",
+      "features": [
+        "AI-powered receipt scanning that renames files by date/vendor, extracts transaction details, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/recite@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/236536346?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "recite",
+      "url": "https://clawhub.ai/skills/recite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "recite",
+    "url": "https://clawhub.ai/skills/recite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/recite-16be882827ec3f5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/recite@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-recite-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3ea475c591d0f37e86b4bbc4f355ccb6bf0dad679750ba3567ab9f5f18878439",
+      "artifactSizeBytes": 1898
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T01:39:45.689Z"
+}

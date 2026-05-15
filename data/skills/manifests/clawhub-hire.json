@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11336,
+  "uuid": "skill-clawhub-hire",
+  "skillKey": "clawhub-hire",
+  "name": "Hire",
+  "summary": "Interactive hiring wizard to set up a new AI team member. Guides the user through role design via conversation, generates agent identity files, and optionally sets up performance reviews. Use when the user wants to hire, add, or set up a n.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hire",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "larsderidder",
+      "features": [
+        "Interactive hiring wizard to set up a new AI team member",
+        "Guides the user through role design via conversation, generates agent identity files, and optio.",
+        "Use when the user wants to hire, add, or set up a new AI agent, team member, or assistant",
+        "Triggers on phrases like \"hire\", \"add an agent\", \"I need help with X\" (implying a new role), or."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hire@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1681068?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hire",
+      "url": "https://clawhub.ai/skills/hire"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hire",
+    "url": "https://clawhub.ai/skills/hire",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hire-bf90ace460be6649.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hire@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hire-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:370a34507659472edece465bdb6b155995eda1c9cc526728b900033ec17dd2a8",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T08:12:40.866Z"
+}

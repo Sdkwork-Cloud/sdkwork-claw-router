@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46779,
+  "uuid": "skill-clawhub-video-insight",
+  "skillKey": "clawhub-video-insight",
+  "name": "Video Insight",
+  "summary": "Cross-platform video transcript extraction and optional AI summarization for YouTube and Bilibili. GPU auto-detect. Transcript-first with opt-in LLM summary.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_insight",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huuuwnnn-droid",
+      "features": [
+        "Cross-platform video transcript extraction and optional AI summarization for YouTube and Bilibi.",
+        "GPU auto-detect",
+        "Transcript-first with opt-in LLM summary."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/video-insight@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242397261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "video-insight",
+      "url": "https://clawhub.ai/skills/video-insight"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-insight",
+    "url": "https://clawhub.ai/skills/video-insight",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-insight-0f425c3c2094c45f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/video-insight@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-video-insight-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:efc7314523eb9db8962f61ae2855dcf3af0169b7d2a7df1cb5db5a150d1d25d1",
+      "artifactSizeBytes": 1879
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T08:17:49.106Z"
+}

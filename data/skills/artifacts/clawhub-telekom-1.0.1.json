@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/telekom@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.telekom",
+  "skill": {
+    "id": 63998,
+    "skillKey": "clawhub-telekom",
+    "name": "Telekom"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "telekom",
+    "url": "https://clawhub.ai/skills/telekom",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/telekom-ecddf9a511a725f5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "欧洲最大电信集团，2024年营收约1140亿欧元，T-Mobile美国业务贡献超过半数利润，覆盖1.2亿用户。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1776936374034,
+      "changelog": "- Removed the SKILL.md file from the telekom skill package.\n- No changes to code or functionality. This update is documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:114be673e44ad5648fd0acd213cf77d6c97d562d4fffb5207d6205a4282d6959"
+}

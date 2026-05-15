@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18038,
+  "uuid": "skill-clawhub-afrexai-payroll-audit",
+  "skillKey": "clawhub-afrexai-payroll-audit",
+  "name": "Payroll Compliance Audit",
+  "summary": "Performs comprehensive payroll audits including worker classification, overtime, tax withholding accuracy, compliance checklists, and generates detailed repo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_payroll_audit",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Performs comprehensive payroll audits including worker classification, overtime, tax withholdin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-payroll-audit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-payroll-audit",
+      "url": "https://clawhub.ai/skills/afrexai-payroll-audit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-payroll-audit",
+    "url": "https://clawhub.ai/skills/afrexai-payroll-audit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-payroll-audit-4da4f46da14a58b3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-payroll-audit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-payroll-audit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bdc0adcab759f6f0a346b5c5df4c8fa8929b1a9dc0690fc5fe4fd6006ad6c11d",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T12:13:04.826Z"
+}

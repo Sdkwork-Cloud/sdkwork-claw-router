@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60843,
+  "uuid": "skill-clawhub-xbridge-ext-helper",
+  "skillKey": "clawhub-xbridge-ext-helper",
+  "name": "xbridge-ext-helper",
+  "summary": "帮助开发者在 xbridge3 框架中使用扩展字段（Extension Fields）。当用户需要： - 添加新的扩展字段到交易表 - 创建国家特定的扩展字段（如越南、马来西亚等） - 配置 @EntityColumnSchema 注解 - 使用 ExtensionUtils 读取/设置扩展字段 - 理解索引字段...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xbridge_ext_helper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dongwangwangyangyan",
+      "features": [
+        "帮助开发者在 xbridge3 框架中使用扩展字段（Extension Fields）。当用户需要：",
+        "添加新的扩展字段到交易表",
+        "创建国家特定的扩展字段（如越南、马来西亚等）",
+        "配置 @EntityColumnSchema 注解"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xbridge-ext-helper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/41669222?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xbridge-ext-helper",
+      "url": "https://clawhub.ai/skills/xbridge-ext-helper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xbridge-ext-helper",
+    "url": "https://clawhub.ai/skills/xbridge-ext-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xbridge-ext-helper-2a7c884c0c4fe1c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xbridge-ext-helper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xbridge-ext-helper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bd4fd20e1faaf2b1c61417ae1e79549344b5871663f4ce816d54e841994e4659",
+      "artifactSizeBytes": 2745
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T03:12:51.112Z"
+}

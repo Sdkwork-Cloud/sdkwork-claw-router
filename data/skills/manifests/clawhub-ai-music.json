@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21750,
+  "uuid": "skill-clawhub-ai-music",
+  "skillKey": "clawhub-ai-music",
+  "name": "Ai Music",
+  "summary": "AI music generation assistant powered by MakebestMusic. Use when user wants to create AI-generated music, songs, or audio tracks. Perfect for content creator...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_music",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MakeBestMusic",
+      "features": [
+        "AI music generation assistant powered by MakebestMusic",
+        "Use when user wants to create AI-generated music, songs, or audio tracks",
+        "Perfect for content creator..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-music@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219227592?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-music",
+      "url": "https://clawhub.ai/skills/ai-music"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-music",
+    "url": "https://clawhub.ai/skills/ai-music",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-music-01b0b1c15240e88d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-music@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-music-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4fb7f2e9c85aeab5d428a52a39b41de3d6b7f83691e31e037203c7344c91003",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T11:33:01.758Z"
+}

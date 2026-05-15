@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50899,
+  "uuid": "skill-clawhub-x-tweet-speedread-skill",
+  "skillKey": "clawhub-x-tweet-speedread-skill",
+  "name": "X Tweet Speedread",
+  "summary": "X Tweet Speedread (Premium) — instant English brief for any X post. Charge-first direct mode via SkillPay (0.001 USDT/call).",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.x_tweet_speedread_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huangkefeng-ai",
+      "features": [
+        "X Tweet Speedread (Premium) — instant English brief for any X post",
+        "Charge-first direct mode via SkillPay (0.001 USDT/call)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/x-tweet-speedread-skill@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/113394381?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "x-tweet-speedread-skill",
+      "url": "https://clawhub.ai/skills/x-tweet-speedread-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "x-tweet-speedread-skill",
+    "url": "https://clawhub.ai/skills/x-tweet-speedread-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/x-tweet-speedread-skill-561186044ac3ac79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/x-tweet-speedread-skill@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-x-tweet-speedread-skill-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:92c20460c7078791f222edc106e401569932e82e686d04a357f1f2ab7d52fd06",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T15:05:42.712Z"
+}

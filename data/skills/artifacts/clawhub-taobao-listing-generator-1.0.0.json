@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taobao-listing-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_listing_generator",
+  "skill": {
+    "id": 72386,
+    "skillKey": "clawhub-taobao-listing-generator",
+    "name": "淘宝Listing生成器"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-listing-generator",
+    "url": "https://clawhub.ai/skills/taobao-listing-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-listing-generator-d897f391c8ba4e82.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "快速根据商品信息生成符合淘宝、天猫、闲鱼和拼多多规则的优化商品标题、主图文案、详情描述和标签关键词。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jessabuivolova-sketch",
+      "userId": "s17dn61gfmse8re058np93xbcs844nyd",
+      "displayName": "jessabuivolova-sketch",
+      "image": "https://avatars.githubusercontent.com/u/260901069?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775536535546,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6e0b0a66a7de6d331cd51b72e361d5cdb233b187f6d470d9b8a11a0264ae557"
+}

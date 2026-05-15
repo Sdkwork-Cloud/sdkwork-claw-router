@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39593,
+  "uuid": "skill-clawhub-aika-gps",
+  "skillKey": "clawhub-aika-gps",
+  "name": "Aika Gps",
+  "summary": "Retrieve and track technicians' real-time GPS location, find nearest technician, calculate distance and ETA, and create geofences for job monitoring.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aika_gps",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "comphone",
+      "features": [
+        "Retrieve and track technicians' real-time GPS location, find nearest technician, calculate dist."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/aika-gps@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/217798704?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "aika-gps",
+      "url": "https://clawhub.ai/skills/aika-gps"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aika-gps",
+    "url": "https://clawhub.ai/skills/aika-gps",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aika-gps-624457ed73c8d7ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/aika-gps@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-aika-gps-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:46cead5475fd2df0c279083ab52dd145c80d8784ca907f6293926e0f50c517bf",
+      "artifactSizeBytes": 2220
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T03:57:06.270Z"
+}

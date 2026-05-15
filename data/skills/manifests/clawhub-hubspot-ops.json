@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54529,
+  "uuid": "skill-clawhub-hubspot-ops",
+  "skillKey": "clawhub-hubspot-ops",
+  "name": "HubSpot",
+  "summary": "Manage contacts, deals, companies, campaigns, and CRM workflows in HubSpot — powered by ClawLink.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hubspot_ops",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hithesh Jay",
+      "features": [
+        "Manage contacts, deals, companies, campaigns, and CRM workflows in HubSpot — powered by ClawLin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hubspot-ops@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83839061?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hubspot-ops",
+      "url": "https://clawhub.ai/skills/hubspot-ops"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hubspot-ops",
+    "url": "https://clawhub.ai/skills/hubspot-ops",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hubspot-ops-305179deb86a4fa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hubspot-ops@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hubspot-ops-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8f40b65e9deff384a5831615f01c66c9a5bfdea205da85f8f909e8d06125a0c",
+      "artifactSizeBytes": 2300
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T15:18:23.713Z"
+}

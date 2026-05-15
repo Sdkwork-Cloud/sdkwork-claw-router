@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/generator-for-free@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.generator_for_free",
+  "skill": {
+    "id": 48676,
+    "skillKey": "clawhub-generator-for-free",
+    "name": "Generator For Free"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "generator-for-free",
+    "url": "https://clawhub.ai/skills/generator-for-free",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/generator-for-free-707b0e6bc7e587dd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "generate video clips or images into ready-to-share videos with this skill. Works with MP4, MOV, JPG, PNG files up to 500MB. content creators and marketers us..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 96,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777392999337,
+      "changelog": "generator-for-free 1.0.0\n\n- Initial release: generate and export 1080p MP4 videos for free from your images or video clips.\n- Supports MP4, MOV, JPG, PNG files up to 500MB—no software installs required.\n- Fast processing (30–60 seconds/video) on cloud GPUs with 100 free credits via anonymous login.\n- Simple workflow: upload files → describe your video → receive ready-to-download result.\n- Handles aspect ratio, text overlays, audio/background music, and batch/bulk operations.\n- Clear error/status messages and robust handling of session, credits, and export flows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:28362ec5ac51558470122b02c5cf20db4419a236d26c522c7ffcd8abcedd228f"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-earnings-review@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_earnings_review",
+  "skill": {
+    "id": 68540,
+    "skillKey": "clawhub-stock-earnings-review",
+    "name": "Earnings Review Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-earnings-review",
+    "url": "https://clawhub.ai/skills/stock-earnings-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-earnings-review-810d4f1be1b87a18.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "依托东方财富数据库，面向沪深京港美五大市场的上市公司/股票，生成业绩点评类输出（含财报分析、业绩解读）。 当用户明确提出业绩点评、财报分析、业绩解读需求，或出现「业绩点评」「财报点评」「业绩分析」「季报/半年报/年报点评」「财务分析」「盈利分析」「业绩解读」等表述时，应触发本 Skill。 用户点名具体公司/股票..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "financial-ai-analyst",
+      "userId": "s172qfps754dhtdynwv0gwshes83mtd4",
+      "displayName": "Financial AI Analyst",
+      "image": "https://avatars.githubusercontent.com/u/41098207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 7836,
+      "installsAllTime": 11,
+      "installsCurrent": 11,
+      "stars": 6,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1776424773126,
+      "changelog": "Publish 1.0.3",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:257f66bf72789fe7592682085869bbd7f299e244f5fb086b62b0c6ce9723c7c8"
+}

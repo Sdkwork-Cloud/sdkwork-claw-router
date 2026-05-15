@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-translate-cli-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_translate_cli_skill",
+  "skill": {
+    "id": 56209,
+    "skillKey": "clawhub-ai-translate-cli-skill",
+    "name": "AI Image Translator – Translate Text from Images Instantly with AI – CLI-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-translate-cli-skill",
+    "url": "https://clawhub.ai/skills/ai-translate-cli-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-translate-cli-skill-24215fedf7416310.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI image text translator — translate text in an image to another language while preserving design"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776579170277,
+      "changelog": "ai-translate-cli-skill 1.0.0\n\n- Initial release of a CLI tool to translate all text in an image to another language while preserving the original design and layout.\n- Requires installation of weshop-cli and setting the WESHOP_API_KEY environment variable.\n- Main command: weshop ai-translate --image <path>, with options for custom translation prompts and batch processing.\n- Input and output formats are clearly documented, with security best practices for API key usage.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f5cdb7bafb9eee1c727f7f05a9d9550664558b1cc118d78a9a2304ee7e956ace"
+}

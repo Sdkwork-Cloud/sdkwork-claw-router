@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/obsidian-notes@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.obsidian_notes",
+  "skill": {
+    "id": 23177,
+    "skillKey": "clawhub-obsidian-notes",
+    "name": "Obsidian Notes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "obsidian-notes",
+    "url": "https://clawhub.ai/skills/obsidian-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/obsidian-notes-1f550c992d2e66b3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "164149043",
+      "userId": "s177zb34kayy7w3qer1j78f7e985z2v5",
+      "displayName": "zhangzhifeng",
+      "image": "https://avatars.githubusercontent.com/u/84281124?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 410,
+      "installsAllTime": 4,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773718435630,
+      "changelog": "- Fixed typographical inconsistencies in documentation (apostrophe and quote usage)\n- No functional changes; only documentation has been updated for clarity and consistency",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:702d2327a4526e6e98183c5c6739180b5d6f772c69b18a29ab85e04db2d81a9d"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/beancount-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.beancount_skill",
+  "skill": {
+    "id": 10205,
+    "skillKey": "clawhub-beancount-skill",
+    "name": "Personal Finance Beancount"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "beancount-skill",
+    "url": "https://clawhub.ai/skills/beancount-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/beancount-skill-f9be9c3bba44400b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Professional personal finance advisor specializing in plain-text accounting with Beancount and Fava. Use when users need help with: (1) Analyzing spending habits and financial patterns from Beancount files, (2) Creating or understanding Be."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "y1feng200156",
+      "userId": "publishers:y1feng200156",
+      "displayName": "y1feng200156",
+      "image": "https://avatars.githubusercontent.com/u/1840653?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2636,
+      "installsAllTime": 16,
+      "installsCurrent": 16,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770560543215,
+      "changelog": "personal-finance-beancount 0.1.0 – Initial release\n\n- Professional financial advisor skill focused on Beancount and Fava plain-text accounting\n- Supports analysis of Beancount files, interpretation of Fava reports, and Beancount syntax assistance\n- Provides financial planning, budgeting, and investment education based on user data and needs\n- Offers tailored recommendations, metrics, and best practices while maintaining professional and ethical standards\n- Adapts communication to user’s language and financial literacy level",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2d25357a3358417ebb218e9de1c63f74d606a6359a362452603b650516b7cafc"
+}

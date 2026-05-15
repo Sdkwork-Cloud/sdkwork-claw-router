@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13650,
+  "uuid": "skill-clawhub-bioinformatics",
+  "skillKey": "clawhub-bioinformatics",
+  "name": "Bioinformatics",
+  "summary": "Analyze DNA, RNA, and protein sequences with alignment, variant calling, and expression analysis pipelines.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bioinformatics",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Analyze DNA, RNA, and protein sequences with alignment, variant calling, and expression analysi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bioinformatics@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bioinformatics",
+      "url": "https://clawhub.ai/skills/bioinformatics"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bioinformatics",
+    "url": "https://clawhub.ai/skills/bioinformatics",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bioinformatics-ec641b7cd3ef73a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bioinformatics@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bioinformatics-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6472e35f8aa145c8e332a8c06935dbb4129c32942257b79374253015312184cc",
+      "artifactSizeBytes": 1832
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-22T13:09:14.104Z"
+}

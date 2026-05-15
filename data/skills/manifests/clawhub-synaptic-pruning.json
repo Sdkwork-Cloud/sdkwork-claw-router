@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51098,
+  "uuid": "skill-clawhub-synaptic-pruning",
+  "skillKey": "clawhub-synaptic-pruning",
+  "name": "Synaptic Pruning",
+  "summary": "Identifies vestigial code — not just unused imports, but dead feature branches still compiled, zombie configurations nobody reads, orphaned tests that valida...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.synaptic_pruning",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "John DeVere Cooley",
+      "features": [
+        "Identifies vestigial code — not just unused imports, but dead feature branches still compiled,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/synaptic-pruning@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/75928463?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "synaptic-pruning",
+      "url": "https://clawhub.ai/skills/synaptic-pruning"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "synaptic-pruning",
+    "url": "https://clawhub.ai/skills/synaptic-pruning",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/synaptic-pruning-f8ff2ebdc37b2711.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/synaptic-pruning@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-synaptic-pruning-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3279d1ef382b87e23df2ea6da51008a92ffde6cec69a76a9fd242cc72369f3fa",
+      "artifactSizeBytes": 1973
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T20:02:09.413Z"
+}

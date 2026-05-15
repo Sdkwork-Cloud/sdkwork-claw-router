@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maxhub-douyin@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_douyin",
+  "skill": {
+    "id": 63876,
+    "skillKey": "clawhub-maxhub-douyin",
+    "name": "Maxhub Douyin"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-douyin",
+    "url": "https://clawhub.ai/skills/maxhub-douyin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-douyin-77c1b607fd851df8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "抖音/Douyin平台数据采集与智能分析。当用户提到抖音、douyin、短视频、直播、达人等相关需求时激活此Skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xiewxx",
+      "userId": "s17364s4d8h82mf2cd7m7g71ms869c1h",
+      "displayName": "Xie Hao",
+      "image": "https://avatars.githubusercontent.com/u/128963651?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 144,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1778341854120,
+      "changelog": "v1.1.1 - 修复YAML元数据格式，统一repository地址",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00f1416842b532357f3d87c7566550bc1e601a7342f9dc1772044e4e050c482a"
+}

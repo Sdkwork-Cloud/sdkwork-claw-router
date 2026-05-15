@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65217,
+  "uuid": "skill-clawhub-presentation-maker",
+  "skillKey": "clawhub-presentation-maker",
+  "name": "Presentation Maker",
+  "summary": "自动将结构化Markdown大纲转为符合演示标准的HTML幻灯片，包含封面、目录、内容及总结页，支持图表可视化和交互操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.presentation_maker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vincentlau2046-sudo",
+      "features": [
+        "自动将结构化Markdown大纲转为符合演示标准的HTML幻灯片，包含封面、目录、内容及总结页，支持图表可视化和交互操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/presentation-maker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259013171?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "presentation-maker",
+      "url": "https://clawhub.ai/skills/presentation-maker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "presentation-maker",
+    "url": "https://clawhub.ai/skills/presentation-maker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/presentation-maker-e82d6c54b007ad2c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/presentation-maker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-presentation-maker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7bfccc0542c1c23d17d147194fb8e655cc9cf03f900b0d4ba5ecbfa722429dc6",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-28T16:49:17.646Z"
+}

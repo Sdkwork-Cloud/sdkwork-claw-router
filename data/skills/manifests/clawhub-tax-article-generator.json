@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22981,
+  "uuid": "skill-clawhub-tax-article-generator",
+  "skillKey": "clawhub-tax-article-generator",
+  "name": "South African Tax Article Generator",
+  "summary": "Generate South African tax/VAT/SARS compliance articles",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tax_article_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Carl Luis Olivier",
+      "features": [
+        "Generate South African tax/VAT/SARS compliance articles"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tax-article-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/178078524?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tax-article-generator",
+      "url": "https://clawhub.ai/skills/tax-article-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tax-article-generator",
+    "url": "https://clawhub.ai/skills/tax-article-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tax-article-generator-aa99a3018ae8b64d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tax-article-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tax-article-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b3c4f8c84c6d4d26fe5e5109a87bf8568d13c89ac0984294a10455effce125b",
+      "artifactSizeBytes": 1891
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-04T06:42:58.987Z"
+}

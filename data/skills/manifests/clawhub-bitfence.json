@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30784,
+  "uuid": "skill-clawhub-bitfence",
+  "skillKey": "clawhub-bitfence",
+  "name": "Bitfence - pre-transaction risk infrastructure for AI agents operating on-chain",
+  "summary": "Provides pre-transaction risk assessments for token trades on Solana and Base, returning safety recommendations via rapid, paid oracle queries.",
+  "version": "0.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bitfence",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bilsbys",
+      "features": [
+        "Provides pre-transaction risk assessments for token trades on Solana and Base, returning safety."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bitfence@0.5.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265898507?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bitfence",
+      "url": "https://clawhub.ai/skills/bitfence"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bitfence",
+    "url": "https://clawhub.ai/skills/bitfence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bitfence-a683d9092c9d46b7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bitfence@0.5.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-bitfence-0.5.1.json",
+      "version": "0.5.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac884c4fb17477e65f4569a401758332dde6f0f29e0b154f4877e0401f40f063",
+      "artifactSizeBytes": 2683
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T21:16:34.422Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62993,
+  "uuid": "skill-clawhub-metric-skill",
+  "skillKey": "clawhub-metric-skill",
+  "name": "MicroService Metric Skill",
+  "summary": "分析 Java 业务代码，识别监控指标项，提供指标定义、标签建议及采集方案，支持AOP类补充参考。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metric_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Azr",
+      "features": [
+        "分析 Java 业务代码，识别监控指标项，提供指标定义、标签建议及采集方案，支持AOP类补充参考。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/metric-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/219217028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "metric-skill",
+      "url": "https://clawhub.ai/skills/metric-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metric-skill",
+    "url": "https://clawhub.ai/skills/metric-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metric-skill-9b5b60ffded6b621.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/metric-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-metric-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d715f602c2c44640a54d12f5f479367b38b6e48eb949ad5e766078551e33fed5",
+      "artifactSizeBytes": 2577
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:26:38.819Z"
+}

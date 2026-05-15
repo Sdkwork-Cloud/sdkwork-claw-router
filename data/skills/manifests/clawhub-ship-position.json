@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66464,
+  "uuid": "skill-clawhub-ship-position",
+  "skillKey": "clawhub-ship-position",
+  "name": "HiFleet Claw",
+  "summary": "查询并展示船舶实时及历史位置，支持AIS报位、锚地和靠泊状态管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ship_position",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charleiWang",
+      "features": [
+        "查询并展示船舶实时及历史位置，支持AIS报位、锚地和靠泊状态管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ship-position@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/20695841?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ship-position",
+      "url": "https://clawhub.ai/skills/ship-position"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ship-position",
+    "url": "https://clawhub.ai/skills/ship-position",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ship-position-4e7ba127a03999a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ship-position@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ship-position-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4e2293aeb75dacc12a321d42074ba073f3097bb7c8dcfb4de15db6aaca751eb2",
+      "artifactSizeBytes": 2276
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T05:09:10.065Z"
+}

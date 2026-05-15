@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "contract-audit-stream",
+    "displayName": "contract audit",
+    "summary": "使用合同审核流式接口（SSE）批量审核合同（链接或文件上传），甲/乙方视角可选，需携带 api_key；部署域名 https://dyinsight.cn，接口 /api/v1/skills/contract/audit。Triggers on phrases like \"审核合同\", \"audit contra...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 1
+    },
+    "createdAt": 1774248379386,
+    "updatedAt": 1777622723466
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1774248379386,
+    "changelog": "Initial release of contract-audit-stream.\n\n- Supports batch contract auditing via SSE, using either file links (JSON) or direct file upload (multipart).\n- Requires selection of audit perspective (甲方/PARTY_JIA or 乙方/PARTY_YI) and a valid api_key.\n- Enforces file count (≤5) and size (≤5MB for uploads) limits, with strict server-side validation.\n- SSE stream provides progress and result events, including error reporting.\n- Includes production-ready curl examples and clear prompt recommendations.\n- Implements pre-flight check: prevents real requests if api_key is missing or not configured in config.json, and prompts the user to update their api_key.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "tzz-v",
+    "userId": "s173k1pzm3jc44bz6fj1m6fwnh84c4q8",
+    "displayName": "tzz",
+    "image": "https://avatars.githubusercontent.com/u/45192602?v=4"
+  },
+  "moderation": null
+}

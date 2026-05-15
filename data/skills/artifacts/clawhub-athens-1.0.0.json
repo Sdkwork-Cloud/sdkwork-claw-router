@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/athens@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.athens",
+  "skill": {
+    "id": 70405,
+    "skillKey": "clawhub-athens",
+    "name": "Athens"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "athens",
+    "url": "https://clawhub.ai/skills/athens",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/athens-be217770533ff039.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "雅典是希腊首都，拥有7000年历史，是西方文明摇篮、地中海重要航运、金融和旅游中心。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776569097358,
+      "changelog": "- 首发版本，详细介绍雅典的历史、经济结构和核心竞争优势\n- 增加了历史大事时间线，便于快速了解关键发展节点\n- 梳理旅游、航运、金融、科技等主要产业格局和市场地位\n- 总结“护城河”优势，突出雅典不可复制的文化遗产与地缘地位\n- 提供多项关键城市数据，便于投资与行业分析\n- 补充了值得关注的历史典故与城市趣闻",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4297d63a85822df6078c824ff27f531a90a6f0006579f0bd7117027c311e51c8"
+}

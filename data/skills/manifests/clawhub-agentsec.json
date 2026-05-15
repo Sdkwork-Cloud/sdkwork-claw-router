@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26833,
+  "uuid": "skill-clawhub-agentsec",
+  "skillKey": "clawhub-agentsec",
+  "name": "Agentsec",
+  "summary": "Audit AI agent skills for security vulnerabilities. Use when scanning installed skills against the OWASP Agentic Skills Top 10, checking skills before runnin...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentsec",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Markeljan",
+      "features": [
+        "Audit AI agent skills for security vulnerabilities",
+        "Use when scanning installed skills against the OWASP Agentic Skills Top 10, checking skills bef."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentsec@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12901349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentsec",
+      "url": "https://clawhub.ai/skills/agentsec"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentsec",
+    "url": "https://clawhub.ai/skills/agentsec",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentsec-c7df355103f53acf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentsec@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentsec-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a45b47acf9c2aa6eaebf940a8fc3ae8ab4ff0b66ef812d0da70fef682bf75d66",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T15:56:03.899Z"
+}

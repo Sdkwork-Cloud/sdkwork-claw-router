@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 37919,
+  "uuid": "skill-clawhub-crezco",
+  "skillKey": "clawhub-crezco",
+  "name": "Crezco",
+  "summary": "Crezco integration. Manage data, records, and automate workflows. Use when the user wants to interact with Crezco data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.crezco",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Crezco integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Crezco data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/crezco@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "crezco",
+      "url": "https://clawhub.ai/skills/crezco"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "crezco",
+    "url": "https://clawhub.ai/skills/crezco",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/crezco-0b9ff9735e9a0352.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/crezco@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-crezco-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5ba685759dfb570d131c4e8f80fc4af635ed87ad7aedad68c34ede6413e10576",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:21:25.917Z"
+}

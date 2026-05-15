@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/frontend-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.frontend_builder",
+  "skill": {
+    "id": 17905,
+    "skillKey": "clawhub-frontend-builder",
+    "name": "Frontend Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "frontend-builder",
+    "url": "https://clawhub.ai/skills/frontend-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/frontend-builder-affd386b3427e046.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates production-ready React TSX frontend components from natural-language UI goals for non-programmers, including setup instructions and dependencies."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "h4gen",
+      "userId": "s1789vg92zcrdcbajdp87fjxsh8487xv",
+      "displayName": "Hagen Hoferichter",
+      "image": "https://avatars.githubusercontent.com/u/12556763?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 724,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771082435332,
+      "changelog": "Initial release: Major upgrade from general frontend guidance to a meta-skill for generating ready-to-use React UI.\n\n- Combines frontend-design-ultimate, shadcn-ui, and react-expert for orchestrated code generation.\n- Produces a single TSX file plus explicit setup and dependency instructions, tailored for non-programmers.\n- Collects detailed UI requirements and upstream skills' outputs for robust design, theming, and TypeScript logic.\n- Includes rigorous guardrails for missing dependencies, output quality, and adaptation notes.\n- Adds references/inspected-skills.md for internal skill inspection tracking.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ebf8c2c510349b10cb6b34edd5dcd91ffdf45d0181257ab36dcae6bef4bd499b"
+}

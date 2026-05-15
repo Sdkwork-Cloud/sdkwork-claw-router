@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opencli-skills@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opencli_skills",
+  "skill": {
+    "id": 25479,
+    "skillKey": "clawhub-opencli-skills",
+    "name": "opencli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opencli-skills",
+    "url": "https://clawhub.ai/skills/opencli-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opencli-skills-7b7a32fcab3c88b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetch data from social, video, and news websites using OpenCLI by reusing Chrome login sessions without API keys."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hellotombruce",
+      "userId": "s179dmqakgtv007y0c71js6dy583hew1",
+      "displayName": "张贝",
+      "image": "https://avatars.githubusercontent.com/u/20532802?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 377,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773997347387,
+      "changelog": "No changes detected in this version.\n\n- Version updated from 1.0.0 to 1.0.1.\n- No modifications were made to any files.\n- Functionality and documentation remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d17dd73eaa598469c1f301be91fe8c48bef3e82226ed2257498649bfb87e5c6b"
+}

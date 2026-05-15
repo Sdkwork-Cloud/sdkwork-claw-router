@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30260,
+  "uuid": "skill-clawhub-plsql-package-analysis",
+  "skillKey": "clawhub-plsql-package-analysis",
+  "name": "SP Analysis in PL/SQL Package",
+  "summary": "You are an expert in Oracle SQL. Search the SP (Stored Procedure) name from the chatbox in the SQL package and analyze. LLM base model temperature should be...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.plsql_package_analysis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JohnsRun",
+      "features": [
+        "You are an expert in Oracle SQL",
+        "Search the SP (Stored Procedure) name from the chatbox in the SQL package and analyze",
+        "LLM base model temperature should be..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/plsql-package-analysis@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46471763?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "plsql-package-analysis",
+      "url": "https://clawhub.ai/skills/plsql-package-analysis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "plsql-package-analysis",
+    "url": "https://clawhub.ai/skills/plsql-package-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/plsql-package-analysis-dc9b96cdd21aaab9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/plsql-package-analysis@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-plsql-package-analysis-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:74131c0668241e1b35a3babbcd99fe9cefca05245f4c1ab232dd92ce823b0ad6",
+      "artifactSizeBytes": 2481
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T07:48:06.287Z"
+}

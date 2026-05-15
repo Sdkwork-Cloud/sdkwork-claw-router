@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50516,
+  "uuid": "skill-clawhub-chrome-use",
+  "skillKey": "clawhub-chrome-use",
+  "name": "Chrome Use",
+  "summary": "Use chrome-use when standard web access (fetch/web search) fails due to Cloudflare challenges, CAPTCHAs, JavaScript-rendered content, or bot detection — or w...",
+  "version": "0.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.chrome_use",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "cnlangzi",
+      "features": [
+        "Use chrome-use when standard web access (fetch/web search) fails due to Cloudflare challenges,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/chrome-use@0.1.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/347651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "chrome-use",
+      "url": "https://clawhub.ai/skills/chrome-use"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "chrome-use",
+    "url": "https://clawhub.ai/skills/chrome-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/chrome-use-69d4c51ddf7b653a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/chrome-use@0.1.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-chrome-use-0.1.5.json",
+      "version": "0.1.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:24d192fae77b04bc4a43577f6387ca0e194d54d3e95e9f8d46481ccc92a81d88",
+      "artifactSizeBytes": 2226
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T04:34:10.348Z"
+}

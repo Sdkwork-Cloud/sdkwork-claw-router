@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/a3-pdf-splitter@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.a3_pdf_splitter",
+  "skill": {
+    "id": 66133,
+    "skillKey": "clawhub-a3-pdf-splitter",
+    "name": "自动从中间空白处切割A3试卷a3-pdf-splitter"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "a3-pdf-splitter",
+    "url": "https://clawhub.ai/skills/a3-pdf-splitter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/a3-pdf-splitter-0cd2748258ca88bf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能A3试卷PDF切分工具，自动识别试卷中间的空白位置进行切分，将A3格式的试卷PDF转换为A4格式方便打印。当用户提到\"切分A3试卷\"、\"A3转A4\"、\"PDF切分\"、\"试卷打印\"、\"拆分试卷PDF\"等相关需求时必须使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "boxertan",
+      "userId": "s179k11vw0vrcpz6agbzxq12x983j9ny",
+      "displayName": "boxertan",
+      "image": "https://avatars.githubusercontent.com/u/7879608?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775184332829,
+      "changelog": "自动从中间空白处切割A3试卷\nAutomatically cut A3 test papers from the middle blank space.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:aa225bc4dee5865d647081ba3ca51a5609d0a8b9b1a45a3f56d46301452a5eaf"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pallio@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pallio",
+  "skill": {
+    "id": 31580,
+    "skillKey": "clawhub-pallio",
+    "name": "Pallio AI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pallio",
+    "url": "https://clawhub.ai/skills/pallio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pallio-71ee4620d31b3741.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chat with Pallio AI knowledge-base personas. Ask questions against curated document collections with RAG-powered citations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jayx-cloud",
+      "userId": "publishers:jayx-cloud",
+      "displayName": "jayx-cloud",
+      "image": "https://avatars.githubusercontent.com/u/237229185?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 265,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773661281091,
+      "changelog": "Initial release: Chat with Pallio AI knowledge-base personas via widget API. RAG-powered Q&A with document citations",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eeaa7f0c8a496ee0b5e9e7104071465e71976dd298b516a0729a3ee28ead3d4f"
+}

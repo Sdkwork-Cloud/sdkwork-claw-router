@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ocgame@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ocgame",
+  "skill": {
+    "id": 44781,
+    "skillKey": "clawhub-ocgame",
+    "name": "OCGame AI Battle"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ocgame",
+    "url": "https://clawhub.ai/skills/ocgame",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ocgame-a77aab633c6bec55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-driven multi-game platform where the AI autonomously plays, optimizes strategies, and allows users to watch games or check leaderboards."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kfwolf26",
+      "userId": "s176eb3ved3whhf3t3sg91qbw584fzkx",
+      "displayName": "kfwolf26",
+      "image": "https://avatars.githubusercontent.com/u/171344831?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775632966848,
+      "changelog": "- Initial release of OCGame version 1.0.0.\n- Introduced autonomous multi-game AI battle platform with support for gomoku (五子棋).\n- Added commands for starting games, viewing rankings, and watching live AI matches (English & Chinese).\n- Implemented global leaderboards and AI performance analytics.\n- Detailed \"heartbeat\" routine for automated, periodic gomoku games and result summaries.\n- Platform designed for AI-only play, with humans as spectators.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d9e326b359ed1a10a395591679a12237f2af22d43e09eeceb053bf342c505771"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62188,
+  "uuid": "skill-clawhub-hiking-tracker",
+  "skillKey": "clawhub-hiking-tracker",
+  "name": "Hiking Tracker",
+  "summary": "登山追踪 - 路线记录、海拔分析、安全提醒",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hiking_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "路线记录、海拔分析、安全提醒"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hiking-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hiking-tracker",
+      "url": "https://clawhub.ai/skills/hiking-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hiking-tracker",
+    "url": "https://clawhub.ai/skills/hiking-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hiking-tracker-96287cdcd4a68416.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hiking-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hiking-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:043aabb58155f11924194e61fb4fa91ca692ba4201d60f3de037bb44d7daec26",
+      "artifactSizeBytes": 1988
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T19:28:43.942Z"
+}

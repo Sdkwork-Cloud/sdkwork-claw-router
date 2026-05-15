@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fumi-agent-starter-kit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fumi_agent_starter_kit",
+  "skill": {
+    "id": 60423,
+    "skillKey": "clawhub-fumi-agent-starter-kit",
+    "name": "Agent Starter Kit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fumi-agent-starter-kit",
+    "url": "https://clawhub.ai/skills/fumi-agent-starter-kit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fumi-agent-starter-kit-225611a249483e81.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClawエージェントの構築に必要なすべてのテンプレートを含むスターターキット。SOUL.md, IDENTITY.md, AGENTS.md, USER.md, HEARTBEAT.mdの完全なテンプレートとカスタマイズガイド。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hirofumiko",
+      "userId": "publishers:hirofumiko",
+      "displayName": "HiroFumiko",
+      "image": "https://avatars.githubusercontent.com/u/45387273?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 294,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773861047636,
+      "changelog": "Initial release of the OpenClaw agent-starter-kit.\n\n- Provides a complete set of starter templates for building OpenClaw agents: SOUL.md, IDENTITY.md, AGENTS.md, USER.md, and HEARTBEAT.md.\n- Includes customization guides and sample agent configurations.\n- Step-by-step instructions for setup and agent launch.\n- Designed to be beginner-friendly, with clearly organized templates and practical usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dd02549ccfd79861e4f9ff887fab67258473dfc9378549636bbb08eec3a448e0"
+}

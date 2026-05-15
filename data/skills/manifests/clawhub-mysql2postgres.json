@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29955,
+  "uuid": "skill-clawhub-mysql2postgres",
+  "skillKey": "clawhub-mysql2postgres",
+  "name": "MySQL to PostgreSQL Migration",
+  "summary": "Use this skill when migrating a project's database layer from MySQL to PostgreSQL. Covers SQL dialect conversion (MyBatis XML / raw SQL), ORM configuration (...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql2postgres",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LawrenceHe",
+      "features": [
+        "Use this skill when migrating a project's database layer from MySQL to PostgreSQL",
+        "Covers SQL dialect conversion (MyBatis XML / raw SQL), ORM configuration (..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysql2postgres@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11674490?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysql2postgres",
+      "url": "https://clawhub.ai/skills/mysql2postgres"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql2postgres",
+    "url": "https://clawhub.ai/skills/mysql2postgres",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql2postgres-16f6361adcf2e229.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysql2postgres@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysql2postgres-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d51a58430c3b7c367f86282a6801e929b6734eaa404f2d6423a67bfdcdd1529",
+      "artifactSizeBytes": 2148
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T07:42:58.147Z"
+}

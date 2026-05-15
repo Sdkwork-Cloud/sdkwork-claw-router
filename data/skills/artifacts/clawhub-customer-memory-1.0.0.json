@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/customer-memory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.customer_memory",
+  "skill": {
+    "id": 44618,
+    "skillKey": "clawhub-customer-memory",
+    "name": "Customer Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "customer-memory",
+    "url": "https://clawhub.ai/skills/customer-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/customer-memory-a7f2f96b745b0438.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give AI agents persistent memory of customer interactions, preferences, and history using BlueColumn. Use when building customer support agents, sales agents..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bluecolumnconsulting-lgtm",
+      "userId": "s17bvy8gx9dwzphyvevmeh94nh84v4wz",
+      "displayName": "bluecolumnconsulting-lgtm",
+      "image": "https://avatars.githubusercontent.com/u/243032714?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 131,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776370103809,
+      "changelog": "Persistent customer interaction history for support and sales agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1dd2689205ddb63b74419fcab7260481cca729b52e56b9fa00b560866f52f525"
+}

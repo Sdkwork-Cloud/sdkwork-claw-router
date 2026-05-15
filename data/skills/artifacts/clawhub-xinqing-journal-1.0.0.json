@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xinqing-journal@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xinqing_journal",
+  "skill": {
+    "id": 68485,
+    "skillKey": "clawhub-xinqing-journal",
+    "name": "Xinqing Journal"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xinqing-journal",
+    "url": "https://clawhub.ai/skills/xinqing-journal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xinqing-journal-931335367248e083.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "心情日记 — 智能情绪追踪器，通过自然语言记录中文日记、自动识别7种情绪、 1-10分评分、智能标签提取，生成日/周/月报告和趋势分析。 数据纯本地JSON存储，零网络请求，保护隐私。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dyby99-gif",
+      "userId": "publishers:dyby99-gif",
+      "displayName": "dyby99-gif",
+      "image": "https://avatars.githubusercontent.com/u/257656835?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772433866809,
+      "changelog": "v1.0.0: 首次发布。支持中文自然语言日记记录、7种情绪自动识别（长关键词优先匹配）、1-10评分、8类标签提取、日/周/月报告+趋势分析、匿名导出、文件权限隐私保护（600/700）。58个单元测试全部通过。",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6c9845d032e393c6b715c250a9f0b058505226d70ed2358eb2378bf4b61dbfdd"
+}

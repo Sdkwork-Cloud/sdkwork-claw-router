@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59253,
+  "uuid": "skill-clawhub-lead-qualification-notes",
+  "skillKey": "clawhub-lead-qualification-notes",
+  "name": "Lead Qualification Notes",
+  "summary": "把销售线索信息整理成资格判断、关键问题、风险项与下一步建议。；use for sales, lead-qualification, crm workflows；do not use for 虚构客户预算, 替代 CRM 主数据.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_qualification_notes",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vx：17605205782",
+      "features": [
+        "把销售线索信息整理成资格判断、关键问题、风险项与下一步建议。；use for sales, lead-qualification, crm workflows；do not use for."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-qualification-notes@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/39086567?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-qualification-notes",
+      "url": "https://clawhub.ai/skills/lead-qualification-notes"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-qualification-notes",
+    "url": "https://clawhub.ai/skills/lead-qualification-notes",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-qualification-notes-8a943fa2ba6d7324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-qualification-notes@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-qualification-notes-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7f16d47b202a86eb8e3e61498581ec91618a082bbff234ffec044bc898eeab8",
+      "artifactSizeBytes": 2486
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T03:28:04.849Z"
+}

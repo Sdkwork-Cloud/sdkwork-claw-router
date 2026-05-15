@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61351,
+  "uuid": "skill-clawhub-trading-briefing",
+  "skillKey": "clawhub-trading-briefing",
+  "name": "Trading Briefing",
+  "summary": "每日加密货币交易综合简报。当用户说\"早报\"、\"简报\"、\"今天市场怎么样\"、\"交易情况\"、\"检查交易系统\"、\"系统状态\"、\"trading status\"、\"daily briefing\"时触发。自动聚合：(1) BTC/ETH主流币价格 (2) 实盘机器人状态 (3) 持仓盈亏 (4) 系统健康 (5) 策略发现...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trading_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "huiLI203",
+      "features": [
+        "每日加密货币交易综合简报。当用户说\"早报\"、\"简报\"、\"今天市场怎么样\"、\"交易情况\"、\"检查交易系统\"、\"系统状态\"、\"trading status\"、\"daily briefing\"时触."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trading-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/242090028?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trading-briefing",
+      "url": "https://clawhub.ai/skills/trading-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trading-briefing",
+    "url": "https://clawhub.ai/skills/trading-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trading-briefing-ec8f6f5b0e550f3d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trading-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-trading-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:25e59b8a2fe4e12317fc39977f4ad4c716aa1b0515b3d0fb69e7f0beaa789d34",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T23:00:43.324Z"
+}

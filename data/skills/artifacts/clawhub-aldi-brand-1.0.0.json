@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/aldi-brand@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.aldi_brand",
+  "skill": {
+    "id": 49360,
+    "skillKey": "clawhub-aldi-brand",
+    "name": "Aldi Brand"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "aldi-brand",
+    "url": "https://clawhub.ai/skills/aldi-brand",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/aldi-brand-1c12326804826288.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "ALDI is a German discount retailer known for minimal SKUs, mostly private labels, and extreme cost control across 12,000+ global stores."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 80,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778173525700,
+      "changelog": "- 首次发布 Aldi 品牌档案，全面介绍其历史、商业模式与成本控制核心优势\n- 涵盖全球发展时间线、主要经营策略、自有品牌占比及极简SKU模式\n- 提供关键数据：门店数量、覆盖国家和年营收\n- 收录独特运营细节与有趣事实，便于了解Aldi的行业颠覆性做法",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:dc4a3f8abb1cec11131bc91cb4685b3f6d4bfd7acd3feabed4a7a03a50c45f4c"
+}

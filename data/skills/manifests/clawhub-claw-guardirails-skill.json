@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24150,
+  "uuid": "skill-clawhub-claw-guardirails-skill",
+  "skillKey": "clawhub-claw-guardirails-skill",
+  "name": "ClawGuardrails",
+  "summary": "Enforces guarded execution with safe_exec, safe_send, and safe_action. Use when a task may run shell commands, send channel messages, or call external APIs/a...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_guardirails_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Timo",
+      "features": [
+        "Enforces guarded execution with safe_exec, safe_send, and safe_action",
+        "Use when a task may run shell commands, send channel messages, or call external APIs/a..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claw-guardirails-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/152583228?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claw-guardirails-skill",
+      "url": "https://clawhub.ai/skills/claw-guardirails-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-guardirails-skill",
+    "url": "https://clawhub.ai/skills/claw-guardirails-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-guardirails-skill-5cd1dcbd62cfc535.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claw-guardirails-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claw-guardirails-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:56da95afd8749d7ec8c371c5a8dad65ba7610e19ce156019f229993f14ddb8d7",
+      "artifactSizeBytes": 2382
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-26T18:56:20.615Z"
+}

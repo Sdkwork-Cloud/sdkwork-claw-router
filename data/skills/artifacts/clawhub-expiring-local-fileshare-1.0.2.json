@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/expiring-local-fileshare@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.expiring_local_fileshare",
+  "skill": {
+    "id": 15498,
+    "skillKey": "clawhub-expiring-local-fileshare",
+    "name": "Expiring Local Fileshare"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "expiring-local-fileshare",
+    "url": "https://clawhub.ai/skills/expiring-local-fileshare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/expiring-local-fileshare-6ea42a38b8db1578.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lets OpenClaw safely share single files from its local workspace via expiring, tokenized HTTP links (local-network/VPN only). Hours are configurable (default..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tradmangh",
+      "userId": "s17aaegq3rafytyraeyc72bkjx83twpg",
+      "displayName": "Thomas J. Radman",
+      "image": "https://avatars.githubusercontent.com/u/4415781?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 985,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771363834076,
+      "changelog": "Docs: add disable/uninstall instructions; clarify stopping active shares and removal.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5f7850219ac8c2214ebd64dea0e2630177c620d6f41a71579b394cfdbc733bfb"
+}

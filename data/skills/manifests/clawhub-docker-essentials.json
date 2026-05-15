@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8302,
+  "uuid": "skill-clawhub-docker-essentials",
+  "skillKey": "clawhub-docker-essentials",
+  "name": "Docker Essentials",
+  "summary": "Essential Docker commands and workflows for container management, image operations, and debugging.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.docker_essentials",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Arnarsson",
+      "features": [
+        "Essential Docker commands and workflows for container management, image operations, and debuggi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/docker-essentials@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/96142966?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "docker-essentials",
+      "url": "https://clawhub.ai/skills/docker-essentials"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "docker-essentials",
+    "url": "https://clawhub.ai/skills/docker-essentials",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/docker-essentials-9753d4f23b5ea71d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/docker-essentials@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-docker-essentials-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3f9a0b678eb3f814f2e87acbc74338386a478bd397e7e1e4295edf89dc381400",
+      "artifactSizeBytes": 2242
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-29T13:07:20.015Z"
+}

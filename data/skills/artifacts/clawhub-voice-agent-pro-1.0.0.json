@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voice-agent-pro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voice_agent_pro",
+  "skill": {
+    "id": 17430,
+    "skillKey": "clawhub-voice-agent-pro",
+    "name": "Voice Agent Builder Pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voice-agent-pro",
+    "url": "https://clawhub.ai/skills/voice-agent-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voice-agent-pro-de63234b35b8ede9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and manage Voice AI agents using Vapi, Bland.ai, or Retell. Create agents, configure voices, set prompts, make outbound calls, and retrieve transcripts..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aiwithabidi",
+      "userId": "publishers:aiwithabidi",
+      "displayName": "aiwithabidi",
+      "image": "https://avatars.githubusercontent.com/u/208891229?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 770,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771147658199,
+      "changelog": "- Initial public release of voice-agent-pro (Voice Agent Builder).\n- Build, configure, and manage Voice AI agents using Vapi, Bland.ai, and Retell platforms.\n- Provides command-line tools to create agents, make outbound calls, manage phone numbers, and retrieve call transcripts.\n- Includes a detailed platform comparison and workflow guide for agent creation.\n- Supports advanced features such as custom LLM integration, multi-provider TTS, and CRM/calendar/knowledge base integration patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:db87e62ab1a2c9e0f1bd7df12ba57edf8f87806ea602e1d5be861a53ee000590"
+}

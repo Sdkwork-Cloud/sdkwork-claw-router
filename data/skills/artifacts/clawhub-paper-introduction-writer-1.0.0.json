@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-introduction-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_introduction_writer",
+  "skill": {
+    "id": 61413,
+    "skillKey": "clawhub-paper-introduction-writer",
+    "name": "paper-introduction-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-introduction-writer",
+    "url": "https://clawhub.ai/skills/paper-introduction-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-introduction-writer-0af81f0c2d3159cb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据论文主题、背景、前人研究、gap、方法和结果，按 Glasman-Deal《Science Research Writing》的四组件/十一句式模型生成、修改或注释研究论文 Introduction；支持英文稿、中文功能注释、段落提纲、已有引言修改和 §1.6 的 250-350 词短引言练习。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776798483774,
+      "changelog": "paper-introduction-writer v1.0.0\n\n- Initial release of the Paper Introduction Writer skill.\n- Generates, revises, or annotates academic paper introductions using Glasman-Deal’s 4-component/11-sentence model.\n- Supports English drafts, Chinese functional annotations, paragraph outlines, revision of existing introductions, and short introduction exercises (250-350 words) per §1.6.\n- Interactive workflow collects paper topic, field, gap, method, and contribution before writing.\n- Offers discipline-specific templates and ensures logical, well-structured introductions with proper academic conventions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:64e248c6a62f5b394ec33846039c1284df2c4fc15af9e47b208880a6cc05790e"
+}

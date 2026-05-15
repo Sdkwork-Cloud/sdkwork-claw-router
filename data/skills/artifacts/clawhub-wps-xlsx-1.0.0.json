@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wps-xlsx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wps_xlsx",
+  "skill": {
+    "id": 66870,
+    "skillKey": "clawhub-wps-xlsx",
+    "name": "WPS Excel Processing"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wps-xlsx",
+    "url": "https://clawhub.ai/skills/wps-xlsx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wps-xlsx-99c66abb88e8962b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "创建、编辑或分析 .xlsx / .xlsm / .csv / .tsv 文件。当用户要求生成、处理、下载 Excel 表格，或提及表格文件名/路径并希望对其操作时，使用本技能。包括：打开、读取、编辑、修复已有文件（增列、计算、格式化、图表、数据清洗），从零或其他数据源创建新表格，以及表格格式间的转换。对于结构混..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xixihaha123123123123",
+      "userId": "s172gcva854bewaha4hwd8xj4s852cyf",
+      "displayName": "xixihaha123123123123",
+      "image": "https://avatars.githubusercontent.com/u/176195294?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776515477459,
+      "changelog": "Initial release - WPS Excel processing skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5c496dc715566a5fc9a09316e9b081f1b2d4ff9f8d1601d66236a3dd2a944ad5"
+}

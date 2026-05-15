@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/photo-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.photo_video_ai",
+  "skill": {
+    "id": 41631,
+    "skillKey": "clawhub-photo-video-ai",
+    "name": "Photo Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "photo-video-ai",
+    "url": "https://clawhub.ai/skills/photo-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/photo-video-ai-349a2426b0338b24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "convert photos and videos into animated photo videos with this skill. Works with JPG, PNG, MP4, MOV files up to 500MB. social media creators use it for turni..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mory128",
+      "userId": "s178x6tah7eg67gtzqsb5g5gwd84dd48",
+      "displayName": "mory128",
+      "image": "https://avatars.githubusercontent.com/u/270709915?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 162,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776591728268,
+      "changelog": "Photo Video AI 1.0.0 — Initial Release\n\n- Convert photos and videos (JPG, PNG, MP4, MOV, up to 500MB) into animated, shareable 1080p MP4 videos in 30-60 seconds using cloud GPUs.\n- Simple workflow for uploading, editing, previewing, and exporting video slideshows with transitions, music, and text overlays.\n- Built-in session management with automatic anonymous login and 100 free credits for new users (valid 7 days).\n- Supports aspect ratio selection, BGM, and multiple export formats; optimized for quick edits and social media sharing.\n- Includes user-friendly error handling, status updates, and step-by-step instructions for all major video creation tasks.\n- All processing and rendering handled securely on remote servers—no local installation required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:88a5067326246e6c8c4ab8557a453cef8ccde03ab2e7f67295f2ded33ff8245c"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soulkeeper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulkeeper",
+  "skill": {
+    "id": 19045,
+    "skillKey": "clawhub-soulkeeper",
+    "name": "SoulKeeper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulkeeper",
+    "url": "https://clawhub.ai/skills/soulkeeper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulkeeper-eb3f14ffa5f193ea.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Ensures AI agents maintain consistent identity by auditing soul rules, detecting behavioral drift in transcripts, and injecting context-aware reminders."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cassh100k",
+      "userId": "publishers:cassh100k",
+      "displayName": "Cassh",
+      "image": "https://avatars.githubusercontent.com/u/128089099?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 591,
+      "installsAllTime": 5,
+      "installsCurrent": 4,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771967299679,
+      "changelog": "Initial release. Soul audit, drift detection, reminder injection. Works with any SOUL.md.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ed613afe9f07207e7bf3e97d60473b637b105deff8f3159ed2f5b900113accef"
+}

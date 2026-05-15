@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-bridge@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_bridge",
+  "skill": {
+    "id": 25634,
+    "skillKey": "clawhub-figma-bridge",
+    "name": "Figma Bridge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-bridge",
+    "url": "https://clawhub.ai/skills/figma-bridge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-bridge-642dd64e7b747d02.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Extract design information from Figma files. Pull design tokens, component structure, colors, typography, spacing, and export assets. Use when the user asks..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vanthienha199",
+      "userId": "s179377b15wprtysjy1fk82p7x83pcgc",
+      "displayName": "Ha Le",
+      "image": "https://avatars.githubusercontent.com/u/156477898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774645321013,
+      "changelog": "- Added explicit environment variable declaration (`FIGMA_TOKEN`) and description in the skill metadata.\n- No functional changes; documentation now formally specifies required environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6fbd9f30e6fa7996479fc7ba2f710d80c2e8c9cf39793469d15fc4c2e817440d"
+}

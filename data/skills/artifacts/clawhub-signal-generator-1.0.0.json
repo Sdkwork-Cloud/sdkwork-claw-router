@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/signal-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.signal_generator",
+  "skill": {
+    "id": 11919,
+    "skillKey": "clawhub-signal-generator",
+    "name": "Signal Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "signal-generator",
+    "url": "https://clawhub.ai/skills/signal-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/signal-generator-175e7ef3851c5fa7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate trading signals using BB Breakout or RSI Reversal strategies and send automated alerts to Discord, Telegram, or custom channels."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nititepfirm",
+      "userId": "publishers:nititepfirm",
+      "displayName": "nititepfirm",
+      "image": "https://avatars.githubusercontent.com/u/29335243?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 1956,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770032070862,
+      "changelog": "Initial release - BB Breakout & RSI Reversal strategies",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:292239cbc156ff540cb787f709e10ea656905e476d3ee3945a376f8a847ccc43"
+}

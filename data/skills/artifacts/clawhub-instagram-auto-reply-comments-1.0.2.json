@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/instagram-auto-reply-comments@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.instagram_auto_reply_comments",
+  "skill": {
+    "id": 34062,
+    "skillKey": "clawhub-instagram-auto-reply-comments",
+    "name": "Instagram auto reply comments with DMs"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "instagram-auto-reply-comments",
+    "url": "https://clawhub.ai/skills/instagram-auto-reply-comments",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/instagram-auto-reply-comments-a7d8d5749fefeaa2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate Instagram comment-to-DM funnels using the Upload-Post API. Auto-reply to Instagram comments with private DMs, build lead capture funnels, and set up..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mutonby",
+      "userId": "s17b9v88r12afdc07m58vw83rh83kd72",
+      "displayName": "mutonby",
+      "image": "https://avatars.githubusercontent.com/u/30499505?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 229,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774801431556,
+      "changelog": "- Added explicit OpenClaw integration metadata, specifying required environment variable (UPLOAD_POST_API_KEY) and dependency on curl.\n- Removed separate homepage, author, and source fields from the root metadata and moved homepage under `openclaw`.\n- No changes to API, documentation, or skill behavior; purely metadata updates for deployment compatibility.\n- Version number remains unchanged (1.0.0).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e1b0c0d6ad24abbee31f01d706e370febdd51ef319da93d3397fc5d27ba2169"
+}

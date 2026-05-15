@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11011,
+  "uuid": "skill-clawhub-jo4",
+  "skillKey": "clawhub-jo4",
+  "name": "Modern URL shortening with QR codes and detailed analytics",
+  "summary": "URL shortener, QR code generator, and link analytics API. Create short links, generate QR codes, and track click analytics.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jo4",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "anandrathnas",
+      "features": [
+        "URL shortener, QR code generator, and link analytics API",
+        "Create short links, generate QR codes, and track click analytics."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jo4@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154821941?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jo4",
+      "url": "https://clawhub.ai/skills/jo4"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jo4",
+    "url": "https://clawhub.ai/skills/jo4",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jo4-285566a823530de6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jo4@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jo4-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6b9a128bcda7bcc6fcab7db879c5b6c9c71fc8375b42b07a569963f2cd0b7fe8",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-01T10:27:13.884Z"
+}

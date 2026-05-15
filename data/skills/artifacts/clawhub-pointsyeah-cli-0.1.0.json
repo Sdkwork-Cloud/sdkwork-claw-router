@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/pointsyeah-cli@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pointsyeah_cli",
+  "skill": {
+    "id": 22245,
+    "skillKey": "clawhub-pointsyeah-cli",
+    "name": "Pointsyeah Cli"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pointsyeah-cli",
+    "url": "https://clawhub.ai/skills/pointsyeah-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pointsyeah-cli-6964d1359691e5d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate PointsYeah search URLs for flights and hotels via a CLI without scraping or private API calls, providing deep links to open in a browser."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chenyuan99",
+      "userId": "s17ej20pbgf1t4n63yvq27gzh183fzvq",
+      "displayName": "Yuan Chen",
+      "image": "https://avatars.githubusercontent.com/u/25518100?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 381,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773489790913,
+      "changelog": "Initial release of pointsyeah-cli.\n\n- Provides a CLI to generate deep link search URLs for PointsYeah flights and hotels.\n- Supports specifying parameters like dates, cities, guests, and cabin for flights/hotels.\n- Includes options to open generated URLs directly in your browser.\n- Does not scrape or call private APIs—creates only valid PointsYeah search links.\n- Installation and usage instructions included for uv and development/testing.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0f94c7c4cbb3dae465a560466eaeb9b955e620e66838df63667e9d582215b29"
+}

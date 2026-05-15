@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55200,
+  "uuid": "skill-clawhub-cv-driven-job-hunter",
+  "skillKey": "clawhub-cv-driven-job-hunter",
+  "name": "Job Hunter",
+  "summary": "Asiste en una búsqueda laboral proactiva basada en el CV del usuario — analiza perfil, sugiere banda salarial, escanea boards y career pages, califica matche...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cv_driven_job_hunter",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Guillmar Ortiz",
+      "features": [
+        "Asiste en una búsqueda laboral proactiva basada en el CV del usuario — analiza perfil, sugiere."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cv-driven-job-hunter@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4306159?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cv-driven-job-hunter",
+      "url": "https://clawhub.ai/skills/cv-driven-job-hunter"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cv-driven-job-hunter",
+    "url": "https://clawhub.ai/skills/cv-driven-job-hunter",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cv-driven-job-hunter-b38e3c4516e935a4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cv-driven-job-hunter@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cv-driven-job-hunter-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d96fba1fe3f6f36e7d025b54a0ff8488734fc97ae82d1e10f41853822081e93",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-03T00:27:14.747Z"
+}

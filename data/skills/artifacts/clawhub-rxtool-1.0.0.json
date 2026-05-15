@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/rxtool@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rxtool",
+  "skill": {
+    "id": 35068,
+    "skillKey": "clawhub-rxtool",
+    "name": "Rxtool"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rxtool",
+    "url": "https://clawhub.ai/skills/rxtool",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rxtool-02d72f0d5e8bbc9c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Test, extract, replace, split, and explain regular expressions. Use when asked to test a regex pattern, extract matches from text, do regex replacements, spl..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rogue-agent1",
+      "userId": "s1712mz6nx5trtnxw701pn7ajd83ph8x",
+      "displayName": "rogue-agent1",
+      "image": "https://avatars.githubusercontent.com/u/259556880?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 218,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774652614193,
+      "changelog": "Initial release of rxtool: a command-line utility for working with regular expressions.\n\n- Test regex patterns against text, extract matches, replace text, split by pattern, and explain regexes.\n- Supports named and numbered group captures.\n- Allows use of case-insensitive, multiline, and dotall flags.\n- Provides JSON output option for extraction.\n- Works with stdin pipes or inline input.\n- Zero external dependencies required.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c29e885bb3f4e5cbeb60bb215af6a37b431f3667ca04fa5dc289707f9fe436cf"
+}

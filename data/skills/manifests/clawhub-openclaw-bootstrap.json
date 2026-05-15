@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24392,
+  "uuid": "skill-clawhub-openclaw-bootstrap",
+  "skillKey": "clawhub-openclaw-bootstrap",
+  "name": "OpenClaw Bootstrap",
+  "summary": "One-command bootstrap for new OpenClaw installations. Sets up workspace files, self-evolution system (.learnings + hooks + crons), and community skills. Use...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_bootstrap",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DjangoZH",
+      "features": [
+        "One-command bootstrap for new OpenClaw installations",
+        "Sets up workspace files, self-evolution system (.learnings + hooks + crons), and community skil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-bootstrap@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/118959600?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-bootstrap",
+      "url": "https://clawhub.ai/skills/openclaw-bootstrap"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-bootstrap",
+    "url": "https://clawhub.ai/skills/openclaw-bootstrap",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-bootstrap-09760e8a2f47e6d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-bootstrap@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-bootstrap-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9c329add722a5961be8eda98d861acb34943f66edb4cb9543d3b7c112d46a96",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:00:59.807Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maverick-pipedrive-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maverick_pipedrive_mcp",
+  "skill": {
+    "id": 47288,
+    "skillKey": "clawhub-maverick-pipedrive-mcp",
+    "name": "Pipedrive mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maverick-pipedrive-mcp",
+    "url": "https://clawhub.ai/skills/maverick-pipedrive-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maverick-pipedrive-mcp-ccf6de6f977b7883.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search, read, and update Pipedrive deals, contacts, organizations, activities, pipelines, and sales workflows via Pipedrive's hosted MCP server (https://mcp...."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "maverick",
+      "userId": "s17b4scyfsybdcep8c0034pgs186087n",
+      "displayName": "Maverick",
+      "image": "https://avatars.githubusercontent.com/u/261420589"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 105,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778006912407,
+      "changelog": "maverick-pipedrive-mcp 1.0.0\n\n- Initial release providing integration with Pipedrive CRM via Pipedrive's hosted MCP server.\n- Enables search, read, and update operations for deals, contacts, organizations, activities, pipelines, and sales workflows.\n- Includes robust authentication and dependency management, with automatic token provisioning and clear installation instructions.\n- Offers structured output with improved error handling for tool calls.\n- Emphasizes safety by requiring confirmation before write operations and explaining proper usage of environment tokens and dependencies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:174a4d4451b00869596b398c6290e092b76be8b0ebccef8519626b15cdd525fa"
+}

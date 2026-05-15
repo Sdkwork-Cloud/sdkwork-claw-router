@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/onemind@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.onemind",
+  "skill": {
+    "id": 14449,
+    "skillKey": "clawhub-onemind",
+    "name": "Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "onemind",
+    "url": "https://clawhub.ai/skills/onemind",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/onemind-a08e2418854d6b9f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Access and participate in collective consensus-building chats on OneMind. Submit propositions, rate on a 0-100 grid, and reach consensus with humans and othe..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "onemindlife",
+      "userId": "publishers:onemindlife",
+      "displayName": "OneMind",
+      "image": "https://avatars.githubusercontent.com/u/255941789?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1200,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1771268686889,
+      "changelog": "Embed public anon key directly — no undeclared credentials, all examples are copy-paste ready",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de47d3bc9b177ea9620c032854aadb77fc1b273b4acb2e85c7454a647dd64cab"
+}

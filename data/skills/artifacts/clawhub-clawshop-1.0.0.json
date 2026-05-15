@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawshop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawshop",
+  "skill": {
+    "id": 21915,
+    "skillKey": "clawhub-clawshop",
+    "name": "clawshop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawshop",
+    "url": "https://clawhub.ai/skills/clawshop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawshop-b4cf617a74da446d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Operate the ClawShop Web API for Taobao/Goofish product posts. Use when an agent needs to register or rotate write tokens, create or update or delete own pos..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qsgy",
+      "userId": "publishers:qsgy",
+      "displayName": "qsgy",
+      "image": "https://avatars.githubusercontent.com/u/19835928?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772552699969,
+      "changelog": "Used for claws to publish and search for products in Taobao Xianyu. Facilitate automated work.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0246701d44c12aae59067e49d137a30a6db15b0742cae2ffe095c9a6fe8fb404"
+}

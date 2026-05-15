@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/developer-docs-framework@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.developer_docs_framework",
+  "skill": {
+    "id": 21125,
+    "skillKey": "clawhub-developer-docs-framework",
+    "name": "Developer Docs Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "developer-docs-framework",
+    "url": "https://clawhub.ai/skills/developer-docs-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/developer-docs-framework-81c52ec038a86f0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Enterprise technical documentation best practices, patterns, and frameworks for developer and partner adoption. Covers content architecture (Diataxis four qu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anivar",
+      "userId": "publishers:anivar",
+      "displayName": "Anivar Aravind",
+      "image": "https://avatars.githubusercontent.com/u/422943?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 412,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772684704636,
+      "changelog": "Added source_url linking to GitHub repo",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7698a8d7601be9a142a88c1c64e3878d900b27de7f609cddc881d6f4c8b9b156"
+}

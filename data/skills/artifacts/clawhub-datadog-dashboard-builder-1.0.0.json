@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/datadog-dashboard-builder@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.datadog_dashboard_builder",
+  "skill": {
+    "id": 53433,
+    "skillKey": "clawhub-datadog-dashboard-builder",
+    "name": "Datadog Dashboard Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "datadog-dashboard-builder",
+    "url": "https://clawhub.ai/skills/datadog-dashboard-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/datadog-dashboard-builder-ef4161905e16c1e5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Design Datadog dashboards and monitors — recommend metrics, widget layouts, alerting thresholds, and SLO definitions. Analyze existing dashboards for blind s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "charlie-morrison",
+      "userId": "s17cttbdxry5kkyafjw983mq8s83p4y3",
+      "displayName": "charlie-morrison",
+      "image": "https://avatars.githubusercontent.com/u/271589886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 99,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777592915298,
+      "changelog": "Initial release of Datadog Dashboard Builder.\n\n- Guides users in designing Datadog dashboards and monitors from scratch or auditing existing ones.\n- Recommends metrics, widget layouts, alert thresholds, and SLO definitions tailored to service types and criticality.\n- Provides detailed dashboard layout patterns and widget configuration best practices.\n- Includes templates for common alert monitors and guidelines for SLO targets by service tier.\n- Offers a systematic dashboard audit checklist to improve observability and reduce noise.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a8b07901f6af5583bcb0d0b352c2f693001d71f6efab5670ae52f2a72f229dd0"
+}

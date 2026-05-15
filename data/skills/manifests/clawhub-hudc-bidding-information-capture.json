@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29195,
+  "uuid": "skill-clawhub-hudc-bidding-information-capture",
+  "skillKey": "clawhub-hudc-bidding-information-capture",
+  "name": "HUDC Bidding Information Capture",
+  "summary": "Intelligently analyzes SGCC bidding documents in Word/PDF/Excel formats, extracting 23 key fields with automated qualification backfilling and deadline highl...",
+  "version": "6.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hudc_bidding_information_capture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "JKTLLSQAQ",
+      "features": [
+        "Intelligently analyzes SGCC bidding documents in Word/PDF/Excel formats, extracting 23 key fiel."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hudc-bidding-information-capture@6.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77020056?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hudc-bidding-information-capture",
+      "url": "https://clawhub.ai/skills/hudc-bidding-information-capture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hudc-bidding-information-capture",
+    "url": "https://clawhub.ai/skills/hudc-bidding-information-capture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hudc-bidding-information-capture-b0d8e699d010c32b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hudc-bidding-information-capture@6.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-hudc-bidding-information-capture-6.0.0.json",
+      "version": "6.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e4a08d594be0a0855b9423b9908cb6de133f5f6dfe6dc9a682689b8d66208354",
+      "artifactSizeBytes": 2856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T06:28:10.311Z"
+}

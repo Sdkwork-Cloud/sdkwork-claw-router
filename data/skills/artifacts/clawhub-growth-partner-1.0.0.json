@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/growth-partner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.growth_partner",
+  "skill": {
+    "id": 69031,
+    "skillKey": "clawhub-growth-partner",
+    "name": "成长伙伴 - Growth Partner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "growth-partner",
+    "url": "https://clawhub.ai/skills/growth-partner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/growth-partner-95ff6d250632b171.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "持续监控用户消息、群聊@及文档日历，主动洞察工作脉络并交付分析汇总与行动建议，支持高效成长管理。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cscguochang",
+      "userId": "s179y3q4jaj9nm93jevdnfhekn843a39",
+      "displayName": "cscguochang",
+      "image": "https://avatars.githubusercontent.com/u/152665879?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 170,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775835996242,
+      "changelog": "成长伙伴 Growth Partner v1.0.0\n\n- 初始版本发布\n- 支持全量私聊消息、群聊@消息、群白名单消息的自动扫描\n- 集成飞书文档和日历事件追踪\n- 实现主动洞察、时间线串联与行动建议交付\n- 增加发送频率、静默时段、冷却间隔等策略控制",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c005f330ea55c6320c07babd3c5c035500f514ea39445c3d7466052000cadbee"
+}

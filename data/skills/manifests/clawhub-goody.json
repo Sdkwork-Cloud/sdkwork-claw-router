@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 25129,
+  "uuid": "skill-clawhub-goody",
+  "skillKey": "clawhub-goody",
+  "name": "Goody",
+  "summary": "Goody integration. Manage Organizations, Pipelines, Projects, Users, Goals, Filters. Use when the user wants to interact with Goody data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goody",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Goody integration",
+        "Manage Organizations, Pipelines, Projects, Users, Goals, Filters",
+        "Use when the user wants to interact with Goody data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goody@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goody",
+      "url": "https://clawhub.ai/skills/goody"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goody",
+    "url": "https://clawhub.ai/skills/goody",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goody-5582172dd5aff881.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goody@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-goody-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5d918ebeb45ae68adc83f36ccc614138a385b54fea063ba1226af1755119e934",
+      "artifactSizeBytes": 1831
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:30:28.665Z"
+}

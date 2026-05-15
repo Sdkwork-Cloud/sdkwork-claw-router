@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/opusflame-deep-research@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.opusflame_deep_research",
+  "skill": {
+    "id": 17126,
+    "skillKey": "clawhub-opusflame-deep-research",
+    "name": "OpusFlame Deep Research"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "opusflame-deep-research",
+    "url": "https://clawhub.ai/skills/opusflame-deep-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/opusflame-deep-research-3d6c8b82eeca0b97.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Autonomous multi-model deep research with framework-driven reasoning. Spawns 4 parallel model agents (Gemini 2.5 Pro, o3, Opus, MiniMax), each applies best-p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "leadingot",
+      "userId": "publishers:leadingot",
+      "displayName": "LeadingOT",
+      "image": "https://avatars.githubusercontent.com/u/40451339?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 583,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1771994042570,
+      "changelog": "v2.0: Multi-model parallel research (Gemini+o3+Opus+MiniMax), framework-driven reasoning with 12+ strategy frameworks, agreement matrix cross-validation, confidence scoring",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ee88f2c3a6a872e7ecf002d8120911540e001a2d35be44f1501d6aeb90700a51"
+}

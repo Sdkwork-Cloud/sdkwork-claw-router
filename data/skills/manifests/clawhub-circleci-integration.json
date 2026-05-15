@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23287,
+  "uuid": "skill-clawhub-circleci-integration",
+  "skillKey": "clawhub-circleci-integration",
+  "name": "Circleci",
+  "summary": "CircleCI integration. Manage Projects, Users, Organizations. Use when the user wants to interact with CircleCI data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.circleci_integration",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "CircleCI integration",
+        "Manage Projects, Users, Organizations",
+        "Use when the user wants to interact with CircleCI data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/circleci-integration@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "circleci-integration",
+      "url": "https://clawhub.ai/skills/circleci-integration"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "circleci-integration",
+    "url": "https://clawhub.ai/skills/circleci-integration",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/circleci-integration-77a6b07f91616db6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/circleci-integration@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-circleci-integration-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4b222c9d032ad444ef00e813663d07beddef947a50bfe9779b9752d9f7a0f710",
+      "artifactSizeBytes": 1903
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:18:15.593Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-meeting-call@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_meeting_call",
+  "skill": {
+    "id": 66589,
+    "skillKey": "clawhub-feishu-meeting-call",
+    "name": "Feishu Meeting Call"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-meeting-call",
+    "url": "https://clawhub.ai/skills/feishu-meeting-call",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-meeting-call-69fe421f87ebe7fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过飞书发送加急消息提醒用户。支持应用内加急和电话加急（真正打电话到手机）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "daxiangnaoyang",
+      "userId": "s170b044ecgtt1cej83h1mfz6h83maqg",
+      "displayName": "daxiangnaoyang",
+      "image": "https://avatars.githubusercontent.com/u/223295173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 174,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775013595156,
+      "changelog": "- Major update: Improved documentation and user guidance for setup and emergency notification.\n- Added detailed first-time configuration instructions for required environment variables and permissions.\n- Clarified steps for notifying yourself or others, including user identification via phone/email and open_id lookup.\n- Provided troubleshooting table for common errors and explicit instructions for application/permission setup on Feishu.\n- Specified supported urgent methods (in-app urgent push and real phone call).\n- Outlined all required Feishu app permissions for proper use.\n- Included new quick start guide, usage scenarios, and sample feedback formats for notification results.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:596dd79e5ed3ab2fc3733077e691e2d387554df2c9a475b9a5a0ce2c69cde711"
+}

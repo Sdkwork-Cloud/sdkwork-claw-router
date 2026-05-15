@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71928,
+  "uuid": "skill-clawhub-jal",
+  "skillKey": "clawhub-jal",
+  "name": "Jal",
+  "summary": "提供日本航空（JAL）航班查询、预订、值机、里程管理、升舱和贵宾室服务的全面支持。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jal",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供日本航空（JAL）航班查询、预订、值机、里程管理、升舱和贵宾室服务的全面支持。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jal@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jal",
+      "url": "https://clawhub.ai/skills/jal"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jal",
+    "url": "https://clawhub.ai/skills/jal",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jal-3b21bb93057d47c4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jal@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-jal-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5dacefc9ecbdcce7d6f042598ea8433a06427b297bf99a2adf66516edd2b59b0",
+      "artifactSizeBytes": 2131
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T12:42:27.491Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/idea-coach@0.2.0",
+  "version": "0.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.idea_coach",
+  "skill": {
+    "id": 10596,
+    "skillKey": "clawhub-idea-coach",
+    "name": "Idea Coach"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "idea-coach",
+    "url": "https://clawhub.ai/skills/idea-coach",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/idea-coach-f85bceff9a9840fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered idea/problem/challenge manager with GitHub integration. Captures, categorizes, reviews, and helps ship ideas to repos."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "udiedrichsen",
+      "userId": "publishers:udiedrichsen",
+      "displayName": "udiedrichsen",
+      "image": "https://avatars.githubusercontent.com/u/4386398?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2425,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.2.0",
+      "createdAt": 1770022097561,
+      "changelog": "Major update: Added comprehensive GitHub integration and expanded idea management capabilities.\n\n- Introduced GitHub integration: link ideas to repos, create repos, and sync as issues.\n- Added new commands for capturing, updating, reviewing, dropping, and viewing idea stats.\n- Implemented detailed status flow and review cycles based on idea importance and energy.\n- Ideas can now be categorized as ideas, problems, or challenges.\n- All commands and usage examples are documented for both chat and CLI.\n- Enhanced data storage with interaction logs and GitHub metadata.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:67b6fd7092217dcd07b32e0c6909c015641c824aa67362862a7b86e2999712a0"
+}

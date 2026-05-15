@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-summary-scripted@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_summary_scripted",
+  "skill": {
+    "id": 39416,
+    "skillKey": "clawhub-paper-summary-scripted",
+    "name": "paper-summary-scripted"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-summary-scripted",
+    "url": "https://clawhub.ai/skills/paper-summary-scripted",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-summary-scripted-61af674bcbbebaa1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "download arxiv paper pdfs or accept local paper files with a preprocessing script, then extract text, clean text, and generate a summary version, detailed ve..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "crw0149",
+      "userId": "s17ckavvarmhsxcagbbpj76tzx856ye2",
+      "displayName": "CRW0149",
+      "image": "https://avatars.githubusercontent.com/u/144223119?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776683205067,
+      "changelog": "- Initial release of the \"paper-summary-scripted\" skill.\n- Supports deterministic preprocessing of arXiv PDF URLs or local paper files before summarization.\n- Runs a four-stage workflow: summary generation, detailed version, contribution extraction, and a final consistency/quality check.\n- Uses a bundled script to ensure text extraction and cleaning before generation.\n- Strictly avoids web page/HTML parsing; only works with PDFs.\n- Provides robust error handling and manifest awareness for incomplete or failed extractions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3ba10d02a770e9abc52b7b2ab3206f867f63fb8cb106faca29fc1b39277738ac"
+}

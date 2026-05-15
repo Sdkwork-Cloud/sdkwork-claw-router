@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64174,
+  "uuid": "skill-clawhub-okx-data-collector",
+  "skillKey": "clawhub-okx-data-collector",
+  "name": "Okx Data Collector",
+  "summary": "采集和分析OKX交易所的实时tick及多周期历史K线数据，支持策略需求分析和存储容量预估。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_data_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "superStupidBear",
+      "features": [
+        "采集和分析OKX交易所的实时tick及多周期历史K线数据，支持策略需求分析和存储容量预估。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-data-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6762468?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-data-collector",
+      "url": "https://clawhub.ai/skills/okx-data-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-data-collector",
+    "url": "https://clawhub.ai/skills/okx-data-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-data-collector-71c8b26232188cc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-data-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-data-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:db3ae145f2826d3947bc5793a41a56f29f8fd0bbe07963f0e3d7883184ec7e06",
+      "artifactSizeBytes": 2273
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T12:28:51.426Z"
+}

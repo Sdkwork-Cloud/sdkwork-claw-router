@@ -178,16 +178,28 @@ pub fn admin_app_router_with_store(
     entity_uuid_generator: Arc<dyn EntityUuidGenerator + Send + Sync>,
 ) -> Router {
     Router::new()
-        .route("/backend/v3/api/app/list", post(fetch_apps))
-        .route("/backend/v3/api/app", post(create_app))
+        .route("/backend/v3/api/platform/apps/list", post(fetch_apps))
+        .route("/backend/v3/api/platform/apps", post(create_app))
         .route(
-            "/backend/v3/api/app/{app_id}",
+            "/backend/v3/api/platform/apps/{app_id}",
             get(fetch_app).put(update_app).delete(delete_app),
         )
-        .route("/backend/v3/api/app/{app_id}/enable", post(enable_app))
-        .route("/backend/v3/api/app/{app_id}/disable", post(disable_app))
-        .route("/backend/v3/api/app/{app_id}/publish", post(publish_app))
-        .route("/backend/v3/api/app/{app_id}/offline", post(offline_app))
+        .route(
+            "/backend/v3/api/platform/apps/{app_id}/enable",
+            post(enable_app),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/{app_id}/disable",
+            post(disable_app),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/{app_id}/publish",
+            post(publish_app),
+        )
+        .route(
+            "/backend/v3/api/platform/apps/{app_id}/offline",
+            post(offline_app),
+        )
         .with_state(AdminAppState {
             store,
             entity_uuid_generator,

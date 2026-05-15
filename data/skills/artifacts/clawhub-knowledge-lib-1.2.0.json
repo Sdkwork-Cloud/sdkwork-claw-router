@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/knowledge-lib@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.knowledge_lib",
+  "skill": {
+    "id": 33376,
+    "skillKey": "clawhub-knowledge-lib",
+    "name": "Knowledge Lib"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "knowledge-lib",
+    "url": "https://clawhub.ai/skills/knowledge-lib",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/knowledge-lib-4a11c9323ac3e00e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Personal knowledge wiki manager. Organizes notes into structured .md wiki with concept pages, summaries, and cross-references. Activate when user says \"add t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lifei68801",
+      "userId": "s17aqaaq83dwh8634acxtaty8x83hxsq",
+      "displayName": "lifei68801",
+      "image": "https://avatars.githubusercontent.com/u/130719648?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1775360229083,
+      "changelog": "v1.2.0 - Full English translation, removed all Chinese content",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fef893819e2363229e3ccc5c1ae07a83fec55fb17a5aba2986ba6bad13a8b8cf"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44176,
+  "uuid": "skill-clawhub-seo-product-auditor",
+  "skillKey": "clawhub-seo-product-auditor",
+  "name": "SEO Product Auditor",
+  "summary": "Scan Shopify or WooCommerce product listings to score SEO by 10 criteria, identify weak listings, generate fix priorities, and optionally rewrite UK English...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.seo_product_auditor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Hussain Khuzema",
+      "features": [
+        "Scan Shopify or WooCommerce product listings to score SEO by 10 criteria, identify weak listing."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/seo-product-auditor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33164010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "seo-product-auditor",
+      "url": "https://clawhub.ai/skills/seo-product-auditor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "seo-product-auditor",
+    "url": "https://clawhub.ai/skills/seo-product-auditor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/seo-product-auditor-20068463079d09a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/seo-product-auditor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-seo-product-auditor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:767598ba5556dae2d735d4da4231e11a724715012d956cc259a2f503a125dcb7",
+      "artifactSizeBytes": 2114
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-12T21:26:28.095Z"
+}

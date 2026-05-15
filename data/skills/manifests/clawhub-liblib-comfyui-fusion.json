@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42558,
+  "uuid": "skill-clawhub-liblib-comfyui-fusion",
+  "skillKey": "clawhub-liblib-comfyui-fusion",
+  "name": "liblib-comfyui-fusion",
+  "summary": "Generate product background fusion images via LiblibAI ComfyUI app API using signed AccessKey/SecretKey requests. Use when user asks for Liblib Comfy app gen...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.liblib_comfyui_fusion",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zhangmin",
+      "features": [
+        "Generate product background fusion images via LiblibAI ComfyUI app API using signed AccessKey/S.",
+        "Use when user asks for Liblib Comfy app gen..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/liblib-comfyui-fusion@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109673506?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "liblib-comfyui-fusion",
+      "url": "https://clawhub.ai/skills/liblib-comfyui-fusion"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "liblib-comfyui-fusion",
+    "url": "https://clawhub.ai/skills/liblib-comfyui-fusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/liblib-comfyui-fusion-61114ca2e2c0409d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/liblib-comfyui-fusion@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-liblib-comfyui-fusion-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7b0eb9d84fae9e6f67fdd57250778891a965f97f208c709a2d68d347e64ab096",
+      "artifactSizeBytes": 2463
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T09:54:24.377Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31896,
+  "uuid": "skill-clawhub-xiaohongshu-keyword-collector",
+  "skillKey": "clawhub-xiaohongshu-keyword-collector",
+  "name": "Xiaohongshu Suggest Keywords",
+  "summary": "Automatically accesses Xiaohongshu's Explore page via browser automation, inputs keywords into the search bar, and collects the list of related keywords from...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_keyword_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Automatically accesses Xiaohongshu's Explore page via browser automation, inputs keywords into."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaohongshu-keyword-collector@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaohongshu-keyword-collector",
+      "url": "https://clawhub.ai/skills/xiaohongshu-keyword-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-keyword-collector",
+    "url": "https://clawhub.ai/skills/xiaohongshu-keyword-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-keyword-collector-369c0e346681b1cc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaohongshu-keyword-collector@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaohongshu-keyword-collector-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7612ba3b231619253d2917f7cb345b416f024edd953454b60e8c9677fd798030",
+      "artifactSizeBytes": 2397
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-23T01:34:05.902Z"
+}

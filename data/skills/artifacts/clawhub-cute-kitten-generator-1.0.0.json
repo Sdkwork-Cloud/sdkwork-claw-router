@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cute-kitten-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cute_kitten_generator",
+  "skill": {
+    "id": 50743,
+    "skillKey": "clawhub-cute-kitten-generator",
+    "name": "Cute Kitten Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cute-kitten-generator",
+    "url": "https://clawhub.ai/skills/cute-kitten-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cute-kitten-generator-5bc2cd4ffed3927e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate high-detail cute kitten/animal images using ComfyUI local workflow. Use when user wants to create adorable animal photos with high clarity (1536×153..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "farmerboybi-bot",
+      "userId": "publishers:farmerboybi-bot",
+      "displayName": "farmerboybi-bot",
+      "image": "https://avatars.githubusercontent.com/u/263736108?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 406,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773779338108,
+      "changelog": "Cute Kitten Generator 1.0.0 – Initial Release\n\n- Generate high-quality, detailed images of cute kittens and other small animals using a local ComfyUI workflow.\n- Uses fixed settings: 1536×1536 resolution, 100 steps, RealVisXL V5.0 model, and detailed fur rendering in home-like scenes.\n- Customizable prompts: Choose animal type, scene, and lighting to create personalized images.\n- Includes step-by-step guides for image generation and sending results via WhatsApp.\n- Offers options for higher clarity with upscaling workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cc84a284a45544dd0b348ade9c4714aaa5364232c0540fc47fa3e5d942279220"
+}

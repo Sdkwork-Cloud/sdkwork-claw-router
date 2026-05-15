@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cofounder-im@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cofounder_im",
+  "skill": {
+    "id": 19520,
+    "skillKey": "clawhub-cofounder-im",
+    "name": "OpenClaw Cofounder Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cofounder-im",
+    "url": "https://clawhub.ai/skills/cofounder-im",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cofounder-im-13ad721d7990d9be.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pull startup project data and AI-generated build specifications from CoFounder.im. Use when a user wants to build a project that was validated and planned on..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexfilatov",
+      "userId": "publishers:alexfilatov",
+      "displayName": "Alex Filatov",
+      "image": "https://avatars.githubusercontent.com/u/138589?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 587,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772139538981,
+      "changelog": "Automated publish from commit 42161fdd24e76ba13704d11873738a667ea8a21d",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:de2e71548d8c30ca4d32adfd4a8725b6b908b437bcd03d1af8b446c942a7dd54"
+}

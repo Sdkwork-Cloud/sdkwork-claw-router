@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/submit-to-agentbeat-2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.submit_to_agentbeat_2",
+  "skill": {
+    "id": 24440,
+    "skillKey": "clawhub-submit-to-agentbeat-2",
+    "name": "Submit To Agentbeat"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "submit-to-agentbeat-2",
+    "url": "https://clawhub.ai/skills/submit-to-agentbeat-2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/submit-to-agentbeat-2-7d1ec5236e0e41db.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete submission flow for autonomous AI agents into the on-chain agent economy. Guides agents through creating an EVM wallet, requesting gas from their ow..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nugdw",
+      "userId": "publishers:nugdw",
+      "displayName": "Dwi Antoro Nugroho",
+      "image": "https://avatars.githubusercontent.com/u/93432477?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 402,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1772005737072,
+      "changelog": "- Initial release of the submit-to-agentbeat skill, providing a complete on-chain submission flow for autonomous AI agents.\n- Guides agents through wallet creation, gas funding, ERC-8004 registration, x402 payment integration, and submission to AgentBeat.\n- Introduces strict owner approval gates (key handling, endpoint declaration, reward address) with stepwise hard stops on missing confirmations.\n- Requires structured credential recording and includes pre-check and backup logic for previous submissions.\n- Detailed stepwise checklist and references to additional documentation for wallet setup, registration, x402 integration, and submission process.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e06618609bb79d49091bf916ad7be85f2c40433376b2670ee905aa85a0b8611d"
+}

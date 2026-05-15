@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46073,
+  "uuid": "skill-clawhub-book-id",
+  "skillKey": "clawhub-book-id",
+  "name": "Book Id",
+  "summary": "Catalog books from photos or text. Trigger on: book photo, catalog book, log book, add to library.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.book_id",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Gabebac",
+      "features": [
+        "Catalog books from photos or text",
+        "Trigger on: book photo, catalog book, log book, add to library."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/book-id@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29091843?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "book-id",
+      "url": "https://clawhub.ai/skills/book-id"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "book-id",
+    "url": "https://clawhub.ai/skills/book-id",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/book-id-d1174e70c1f9f528.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/book-id@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-book-id-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2b03cffa8815addb433b38357ca74cc77fc0a233d9beb2df5855a72754d7c3dc",
+      "artifactSizeBytes": 2377
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-22T06:57:13.280Z"
+}

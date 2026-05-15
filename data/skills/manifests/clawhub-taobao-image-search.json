@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65734,
+  "uuid": "skill-clawhub-taobao-image-search",
+  "skillKey": "clawhub-taobao-image-search",
+  "name": "Taobao Image Search",
+  "summary": "使用淘宝进行以图搜同款、候选比对和加购物车操作。用户提供商品图片并要求“搜同款/找类似款/比价/加入购物车”时使用。优先执行本地脚本（run-taobao-task.js）完成全流程；当脚本失败或页面结构变化时回退 browser 工具手动执行。",
+  "version": "1.1.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taobao_image_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "XR Gunner",
+      "features": [
+        "使用淘宝进行以图搜同款、候选比对和加购物车操作。用户提供商品图片并要求“搜同款/找类似款/比价/加入购物车”时使用。优先执行本地脚本（run-taobao-task.js）完成全流程；当脚本."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/taobao-image-search@1.1.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2744204?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "taobao-image-search",
+      "url": "https://clawhub.ai/skills/taobao-image-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taobao-image-search",
+    "url": "https://clawhub.ai/skills/taobao-image-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taobao-image-search-79a3a772b368c406.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/taobao-image-search@1.1.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-taobao-image-search-1.1.3.json",
+      "version": "1.1.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ec522f1ce0f2d669dca36f3dc06b0db3e395d4013c991316b26ee99940de7626",
+      "artifactSizeBytes": 2274
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T15:10:41.829Z"
+}

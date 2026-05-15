@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34308,
+  "uuid": "skill-clawhub-implementing-architecture",
+  "skillKey": "clawhub-implementing-architecture",
+  "name": "Implementing Architecture",
+  "summary": "Use when: about to write code and docs/architecture/ exists with STATUS: APPROVED in architecture.yaml. Not when: no approved architecture yet (use compiling...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.implementing_architecture",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "inetgas",
+      "features": [
+        "Use when: about to write code and docs/architecture/ exists with STATUS: APPROVED in architectu.",
+        "Not when: no approved architecture yet (use compiling..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/implementing-architecture@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271354125?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "implementing-architecture",
+      "url": "https://clawhub.ai/skills/implementing-architecture"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "implementing-architecture",
+    "url": "https://clawhub.ai/skills/implementing-architecture",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/implementing-architecture-f29c4832b650c768.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/implementing-architecture@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-implementing-architecture-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2311b272cce23ffa30f0d5e2cd1c8408859cbc89e8eed526ebadea55c0fdcb58",
+      "artifactSizeBytes": 2579
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T19:05:19.128Z"
+}

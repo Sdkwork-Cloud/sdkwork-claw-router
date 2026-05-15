@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40959,
+  "uuid": "skill-clawhub-costco-inventory-monitor",
+  "skillKey": "clawhub-costco-inventory-monitor",
+  "name": "costco-inventory-monitor",
+  "summary": "Monitor Costco inventory by ZIP and run it safely with OpenClaw cron. Keep secrets outside the skill directory.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.costco_inventory_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Weiping Cai",
+      "features": [
+        "Monitor Costco inventory by ZIP and run it safely with OpenClaw cron",
+        "Keep secrets outside the skill directory."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/costco-inventory-monitor@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/33973679?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "costco-inventory-monitor",
+      "url": "https://clawhub.ai/skills/costco-inventory-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "costco-inventory-monitor",
+    "url": "https://clawhub.ai/skills/costco-inventory-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/costco-inventory-monitor-e7318668d06079d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/costco-inventory-monitor@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-costco-inventory-monitor-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b0d248fcadf8877f282c0ab7a0b0ba9d63dd28192e59d71f4c2497e52439a2c2",
+      "artifactSizeBytes": 2413
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T12:19:21.711Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10956,
+  "uuid": "skill-clawhub-cookidoo",
+  "skillKey": "clawhub-cookidoo",
+  "name": "Clawdbot Skill Cookidoo",
+  "summary": "Access Cookidoo (Thermomix) recipes, shopping lists, and meal planning via the unofficial cookidoo-api Python package. Use for viewing recipes, weekly plans, favorites, and syncing ingredients to shopping lists.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cookidoo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "thekie",
+      "features": [
+        "Access Cookidoo (Thermomix) recipes, shopping lists, and meal planning via the unofficial cooki.",
+        "Use for viewing recipes, weekly plans, favorites, and syncing ingredients to shopping lists."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cookidoo@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/3187582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cookidoo",
+      "url": "https://clawhub.ai/skills/cookidoo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cookidoo",
+    "url": "https://clawhub.ai/skills/cookidoo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cookidoo-11436f69fe5416bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cookidoo@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cookidoo-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ae6b6377e4edd7e9d55a2bb156ee3f8364b97996bf8dec3553a5bfad9b23921a",
+      "artifactSizeBytes": 1966
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T16:51:52.433Z"
+}

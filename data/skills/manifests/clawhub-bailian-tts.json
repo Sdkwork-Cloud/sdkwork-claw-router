@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57281,
+  "uuid": "skill-clawhub-bailian-tts",
+  "skillKey": "clawhub-bailian-tts",
+  "name": "bailian-tts",
+  "summary": "Generate speech audio with 阿里云百炼 TTS via the `bailian-cli` npm package. Use when users ask to convert text to voice, choose voices/languages, batch-generate...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bailian_tts",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hackerpl",
+      "features": [
+        "Generate speech audio with 阿里云百炼 TTS via the `bailian-cli` npm package",
+        "Use when users ask to convert text to voice, choose voices/languages, batch-generate..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bailian-tts@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1684321?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bailian-tts",
+      "url": "https://clawhub.ai/skills/bailian-tts"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bailian-tts",
+    "url": "https://clawhub.ai/skills/bailian-tts",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bailian-tts-48a286b8122354d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bailian-tts@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bailian-tts-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94cafbc032791f53ff0632de1675a84819096b5b84c678813804db1349ac0eeb",
+      "artifactSizeBytes": 2268
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-06T09:32:15.670Z"
+}

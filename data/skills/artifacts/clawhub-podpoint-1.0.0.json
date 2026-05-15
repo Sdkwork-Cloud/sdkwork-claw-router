@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/podpoint@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.podpoint",
+  "skill": {
+    "id": 14445,
+    "skillKey": "clawhub-podpoint",
+    "name": "Podpoint"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "podpoint",
+    "url": "https://clawhub.ai/skills/podpoint",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/podpoint-3a89f1d5d05f52fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitors live status of a Pod Point charger’s connectors A and B, reporting current availability and changes without requiring authentication."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zoranjurcevic",
+      "userId": "publishers:zoranjurcevic",
+      "displayName": "zoranjurcevic",
+      "image": "https://avatars.githubusercontent.com/u/75725531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1754,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770075649277,
+      "changelog": "- Initial release of Pod Point Watcher skill.\n- Monitors live status of a specific Pod Point charging pod using the public status endpoint.\n- Tracks both connectors A and B for charging and availability status changes.\n- Detects transitions from Charging → Available and when both connectors are free.\n- Can return current charger status or wait and notify upon status changes.\n- No authentication or API keys required.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:959a4dffc4bf1a6e6a91bfc0ed8733b66827d1ef4de1205a390324874af553a8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35960,
+  "uuid": "skill-clawhub-resume-context",
+  "skillKey": "clawhub-resume-context",
+  "name": "Resume Context",
+  "summary": "ALWAYS use this skill (never memory_search or exec alone) when the user asks about coding sessions, recent dev work, project briefings, or developer notes. T...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_context",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Nikhil Yachareni",
+      "features": [
+        "ALWAYS use this skill (never memory_search or exec alone) when the user asks about coding sessi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/resume-context@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/99355528?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "resume-context",
+      "url": "https://clawhub.ai/skills/resume-context"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-context",
+    "url": "https://clawhub.ai/skills/resume-context",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-context-73d7837e43de6600.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/resume-context@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-resume-context-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dc0ce34c62c8466dc3657ee6a524b375a4645a3dc1518eb03c414859a74cfb90",
+      "artifactSizeBytes": 2223
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T21:35:01.784Z"
+}

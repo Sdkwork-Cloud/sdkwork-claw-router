@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/fcp-assistant@2.2.0",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fcp_assistant",
+  "skill": {
+    "id": 58098,
+    "skillKey": "clawhub-fcp-assistant",
+    "name": "FCP Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fcp-assistant",
+    "url": "https://clawhub.ai/skills/fcp-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fcp-assistant-af9fa682cdaf9596.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Auto video production, TTS voiceover, media management, batch export | AI 自动成片、TTS 配音、素材管理、批量导出. Triggers: FCP, Final Cut, make video, auto video, voiceover,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lasbder-ops",
+      "userId": "s17a11s26t9d14h2a405cg9a5183jvhs",
+      "displayName": "lasbder-ops",
+      "image": "https://avatars.githubusercontent.com/u/251972173?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 176,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.2.0",
+      "createdAt": 1774435259786,
+      "changelog": "🌐 v2.2: English first, Chinese second — bilingual docs reordered for international audience",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13703483331c0914cd7522080a2c1ee0e4751643f4b19648a040a2a32f226ce3"
+}

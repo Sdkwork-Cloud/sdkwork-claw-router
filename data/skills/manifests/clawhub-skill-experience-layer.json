@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27601,
+  "uuid": "skill-clawhub-skill-experience-layer",
+  "skillKey": "clawhub-skill-experience-layer",
+  "name": "Skill Experience Layer",
+  "summary": "Pre-call experience checking + error-driven learning + layered experience storage. Avoid repeating mistakes, get smarter every time. Pre-integrated with self...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_experience_layer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jilanfang",
+      "features": [
+        "Pre-call experience checking + error-driven learning + layered experience storage",
+        "Avoid repeating mistakes, get smarter every time",
+        "Pre-integrated with self..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-experience-layer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/214955619?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-experience-layer",
+      "url": "https://clawhub.ai/skills/skill-experience-layer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-experience-layer",
+    "url": "https://clawhub.ai/skills/skill-experience-layer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-experience-layer-dd50fd5677ba7c15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-experience-layer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-experience-layer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ff6cd8e30635252b09ffdde3f82912e3f0701ceb0a7c97cf25833b4d4a635b6e",
+      "artifactSizeBytes": 2461
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:51:15.868Z"
+}

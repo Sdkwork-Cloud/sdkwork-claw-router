@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55378,
+  "uuid": "skill-clawhub-profit-margin-analyzer",
+  "skillKey": "clawhub-profit-margin-analyzer",
+  "name": "Profit Margin Analyzer",
+  "summary": "Calculate true per-product profitability by mapping all cost layers — COGS, platform fees, payment processing, shipping, returns, and advertising — to reveal...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.profit_margin_analyzer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LeroyCreates",
+      "features": [
+        "Calculate true per-product profitability by mapping all cost layers — COGS, platform fees, paym."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/profit-margin-analyzer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130833525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "profit-margin-analyzer",
+      "url": "https://clawhub.ai/skills/profit-margin-analyzer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "profit-margin-analyzer",
+    "url": "https://clawhub.ai/skills/profit-margin-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/profit-margin-analyzer-98163712cfb2538d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/profit-margin-analyzer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-profit-margin-analyzer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5834cc9b684d1b85092bacbe3d005923123617b19484a13270f92bd191bbc0a7",
+      "artifactSizeBytes": 2610
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-07T16:38:36.873Z"
+}

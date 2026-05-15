@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forjd-browse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forjd_browse",
+  "skill": {
+    "id": 39744,
+    "skillKey": "clawhub-forjd-browse",
+    "name": "Browse"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forjd-browse",
+    "url": "https://clawhub.ai/skills/forjd-browse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forjd-browse-a3ffe9f20b801a33.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danjdewhurst",
+      "userId": "s170rwnagdvthghebyg9v7m3s183qr7r",
+      "displayName": "danjdewhurst",
+      "image": "https://avatars.githubusercontent.com/u/25198612?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 175,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774651342213,
+      "changelog": "Initial release of the \"browse\" skill — a browser automation CLI for AI agents.\n\n- Enables navigation, form filling, clicking, screenshots, data extraction, web app testing, and automation via command line.\n- Exposes a wide set of browser control and query commands, organized by category (navigate, interact, observe, assert, etc.).\n- Employs a reference (\"ref\") system for targeting elements, with clear workflow guidance.\n- Session management supports named and isolated contexts for parallel or independent interactions.\n- Designed for use cases like UI testing, health checks, accessibility/a11y, performance, compliance, and more.\n- Comprehensive documentation included for all available commands and structured usage patterns.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:eb5f11d1c9b1f61e29ab62f520307844db2263ef97be0e55e6981fcb8adb71ad"
+}

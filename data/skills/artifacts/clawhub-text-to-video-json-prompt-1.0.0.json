@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-json-prompt@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_json_prompt",
+  "skill": {
+    "id": 52705,
+    "skillKey": "clawhub-text-to-video-json-prompt",
+    "name": "Text To Video Json Prompt"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-json-prompt",
+    "url": "https://clawhub.ai/skills/text-to-video-json-prompt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-json-prompt-e1d5771741b8ce01.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — generate a 15-second video from this JSON prompt describing a sunset beach..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 159,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776031538236,
+      "changelog": "- Initial release of text-to-video-json-prompt skill.\n- Generate 15-second AI videos from natural language or structured (JSON, TXT, CSV, YAML) prompts; ideal for developers and content creators.\n- Automatic setup with free token support for up to 100 credits, no installation required.\n- Supports input upload up to 500MB and video export in multiple formats (mp4, mov, avi, webm, etc.).\n- Integrated cloud GPU rendering pipeline with workflows for editing, batch processing, and iterative refinement.\n- Clear guidance for command routing and error handling included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:568c71caaa851fc077511451aa128a4ce2620cac6e57bcda7ba64bc1468bf7a2"
+}

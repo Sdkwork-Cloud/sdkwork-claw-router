@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/wechat-to-xiaohongshu@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_to_xiaohongshu",
+  "skill": {
+    "id": 22474,
+    "skillKey": "clawhub-wechat-to-xiaohongshu",
+    "name": "WeChat to Xiaohongshu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-to-xiaohongshu",
+    "url": "https://clawhub.ai/skills/wechat-to-xiaohongshu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-to-xiaohongshu-e51d8651873a883a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically migrate WeChat Official Account articles to Xiaohongshu (Little Red Book). Use when the user wants to (1) cross-post published WeChat articles..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ibmhonghao",
+      "userId": "publishers:ibmhonghao",
+      "displayName": "ibmhonghao",
+      "image": "https://avatars.githubusercontent.com/u/262624744?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773127910025,
+      "changelog": "- Initial release: Automates migration of WeChat Official Account articles to Xiaohongshu.\n- Supports fetching, importing, formatting, tagging, and publishing articles with no manual intervention.\n- Provides step-by-step workflow and troubleshooting guidance.\n- Requires OpenClaw Browser Relay extension for browser automation.\n- Customizable hashtags and publishing options included.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d1fcea792c42db52b87afc465659afbe6433a0565b398d15ff2daae83174127a"
+}

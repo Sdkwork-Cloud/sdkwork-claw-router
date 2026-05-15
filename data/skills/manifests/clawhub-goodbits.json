@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31243,
+  "uuid": "skill-clawhub-goodbits",
+  "skillKey": "clawhub-goodbits",
+  "name": "Goodbits",
+  "summary": "Goodbits integration. Manage Organizations, Leads, Projects, Users. Use when the user wants to interact with Goodbits data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.goodbits",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Goodbits integration",
+        "Manage Organizations, Leads, Projects, Users",
+        "Use when the user wants to interact with Goodbits data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/goodbits@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "goodbits",
+      "url": "https://clawhub.ai/skills/goodbits"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "goodbits",
+    "url": "https://clawhub.ai/skills/goodbits",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/goodbits-31c45ad10731beff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/goodbits@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-goodbits-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4c6a8577d76628c6155de9dfdb9e93fce5cefd7fad7c8655762571dede07fbd0",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:52:50.322Z"
+}

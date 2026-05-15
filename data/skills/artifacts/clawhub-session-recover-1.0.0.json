@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-recover@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_recover",
+  "skill": {
+    "id": 63338,
+    "skillKey": "clawhub-session-recover",
+    "name": "Session Recover"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-recover",
+    "url": "https://clawhub.ai/skills/session-recover",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-recover-8882445f6036cb77.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "短期记忆恢复技能。用于快速回顾当前 session 或上一个 session 的完整内容。适用于：想知道\"这次 session 聊了什么\"、session 被意外重置后需要恢复上下文、或想提取对话精华。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "axelhu",
+      "userId": "s172yaxxd2drm0sc92554g9aq983hegj",
+      "displayName": "AxelHu",
+      "image": "https://avatars.githubusercontent.com/u/12809280?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 194,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774595528483,
+      "changelog": "session-recover v1.0.0\n\n- Initial release of the session-recover skill for short-term memory retrieval.\n- Enables users to quickly review the content of the current or previous session, including after unexpected resets.\n- Supports summarizing session highlights, extracting key points, and listing unfinished tasks.\n- Provides command-line steps for locating, parsing, and extracting information from session JSONL files.\n- Includes a standardized output format for session recall reports.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8530b277d257d158f76fae6baf4b3f53f0d906c47838303231420fb9ad95e165"
+}

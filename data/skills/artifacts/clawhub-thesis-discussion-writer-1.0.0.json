@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/thesis-discussion-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thesis_discussion_writer",
+  "skill": {
+    "id": 46968,
+    "skillKey": "clawhub-thesis-discussion-writer",
+    "name": "thesis-discussion-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thesis-discussion-writer",
+    "url": "https://clawhub.ai/skills/thesis-discussion-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thesis-discussion-writer-caf6be85c22a4cb6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Write detailed, academically rigorous Chinese discussion chapters or discussion sections for theses, dissertations, and undergraduate papers from a user's fi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "junwugit",
+      "userId": "s171bkct515qe194zt2r7s6fs1851hns",
+      "displayName": "John Do",
+      "image": "https://avatars.githubusercontent.com/u/44743340?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777399497023,
+      "changelog": "Initial release of thesis-discussion-writer skill:\n\n- Generates detailed, academically rigorous Chinese discussion chapters for theses and dissertations based on user-supplied findings, frameworks, literature, and requirements.\n- Outputs the full 第五章讨论 or 讨论与结论 section, including study summary, finding-by-finding discussion, integration with theory/literature, implications, recommendations, and conclusions.\n- Adapts structure and style based on thesis type (quantitative, qualitative, mixed methods, literature review, intervention-design, etc.).\n- Does not invent findings or implications; provides frameworks and exact material requests if user input is incomplete.\n- Strictly focused on the discussion chapter—avoids methodology, results, literature review, or unsupported conclusions.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fbd746359f5217c230fd6f84810a40ffdf3d75eef01e76fed43f1a169910bf0e"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unraid@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unraid",
+  "skill": {
+    "id": 10263,
+    "skillKey": "clawhub-unraid",
+    "name": "Unraid"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unraid",
+    "url": "https://clawhub.ai/skills/unraid",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unraid-d02c355d9e87764f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Query and monitor Unraid servers via the GraphQL API. Use when the user asks to 'check Unraid', 'monitor Unraid', 'Unraid API', 'get Unraid status', 'check disk temperatures', 'read Unraid logs', 'list Unraid shares', 'Unraid array status'."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jmagar",
+      "userId": "publishers:jmagar",
+      "displayName": "jmagar",
+      "image": "https://avatars.githubusercontent.com/u/38927646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2750,
+      "installsAllTime": 9,
+      "installsCurrent": 9,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769203181002,
+      "changelog": "- Added a version field to SKILL.md header (version 1.0.1).\n- No other content changes; documentation and usage remain unchanged.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a538391563664f10c9300ad0cf0c767ecacf690d70f8317e6ffa0e7118759cb3"
+}

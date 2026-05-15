@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34944,
+  "uuid": "skill-clawhub-json-wizard",
+  "skillKey": "clawhub-json-wizard",
+  "name": "JSON Wizard",
+  "summary": "JSON formatting, validation, and conversion tool. Format, compress, validate JSON, and convert between JSON and YAML.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.json_wizard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freeter226",
+      "features": [
+        "JSON formatting, validation, and conversion tool",
+        "Format, compress, validate JSON, and convert between JSON and YAML."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/json-wizard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264750079?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "json-wizard",
+      "url": "https://clawhub.ai/skills/json-wizard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "json-wizard",
+    "url": "https://clawhub.ai/skills/json-wizard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/json-wizard-513439979e3d620d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/json-wizard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-json-wizard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:44812966e6f0e08db622a7d40fa6a4fa3dbfec03ce8f38b7c2fd417540879673",
+      "artifactSizeBytes": 1883
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:55:21.419Z"
+}

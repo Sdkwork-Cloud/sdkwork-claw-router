@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mjzj-sp@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mjzj_sp",
+  "skill": {
+    "id": 71774,
+    "skillKey": "clawhub-mjzj-sp",
+    "name": "卖家之家(跨境电商)服务商搜索"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mjzj-sp",
+    "url": "https://clawhub.ai/skills/mjzj-sp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mjzj-sp-bd57113ab652f31b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "卖家之家(跨境电商)服务商搜索"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mjzj-tec",
+      "userId": "s17es690n9v279chvp249srv3d83v0s4",
+      "displayName": "mjzj-tec",
+      "image": "https://avatars.githubusercontent.com/u/263673237?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 445,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774801135324,
+      "changelog": "- 新增“服务商 → 私信”流程说明：明确可用返回的 userSlug 字段快速发起私信，并指明调用流程及鉴权要求。\n- 意图路由提示词补充：在服务商查询后，可直接用 userSlug 发私信（需 mjzj-msg Skill）。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e0a914306a896dd5c8e411e2adcac569035ff784735f48fcfc7f1ad2e64a0ab0"
+}

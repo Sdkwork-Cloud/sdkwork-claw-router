@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-to-video-explicit-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_to_video_explicit_ai",
+  "skill": {
+    "id": 45861,
+    "skillKey": "clawhub-image-to-video-explicit-ai",
+    "name": "Image To Video Explicit Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-to-video-explicit-ai",
+    "url": "https://clawhub.ai/skills/image-to-video-explicit-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-to-video-explicit-ai-bc67e5a741f2842b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a single character illustration or photo into 1080p animated video clips just by typing what you need. Whether it's converting adult images into animate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776063416742,
+      "changelog": "- Initial release of \"Image to Video Explicit AI\" — instantly animate static images or character illustrations into 1080p video clips via cloud AI processing.\n- Simple upload and prompt system: users describe the animation needed and receive a rendered video in 1–3 minutes.\n- Automated cloud backend setup on first use; supports anonymous sessions with free credits (requires no manual token management).\n- One-click export to MP4 and common formats, with timeline-based action mapping for edits, credits, and status.\n- Built-in error handling and progress updates, including session management and helpful prompts for common issues.\n- Supports quick edits, batch processing, and iterative workflows, optimized for adult and explicit content transformation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4b1c287d1b8b29fcb58089f2fa4eef1e15ce240df1d4759e8688d7ea2e933668"
+}

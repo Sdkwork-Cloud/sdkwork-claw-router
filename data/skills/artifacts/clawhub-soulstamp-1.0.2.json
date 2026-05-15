@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soulstamp@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soulstamp",
+  "skill": {
+    "id": 11673,
+    "skillKey": "clawhub-soulstamp",
+    "name": "Soulstamp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soulstamp",
+    "url": "https://clawhub.ai/skills/soulstamp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soulstamp-4e4d86db5c26ebd4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The stamp doesn't lie. It tells a different truth. Instead of rules, forge your AI a past — a coherent history that makes its behaviors intrinsic, not imposed. Based on Brandon Sanderson's The Emperor's Soul."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brucko",
+      "userId": "publishers:brucko",
+      "displayName": "brucko",
+      "image": "https://avatars.githubusercontent.com/u/9703240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2290,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1770084370456,
+      "changelog": "soulstamp 1.0.2 Changelog\n\n- Added frontmatter to SKILL.md with name and description for improved discoverability.\n- No changes to skill logic or commands; documentation content remains the same.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bad0e2df72b673178bf7e73c870e00a782673aaad8d9dc06b5e20ab8009af37f"
+}

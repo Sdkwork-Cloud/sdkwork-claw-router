@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claw-wallet-pro@0.1.4",
+  "version": "0.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claw_wallet_pro",
+  "skill": {
+    "id": 24040,
+    "skillKey": "clawhub-claw-wallet-pro",
+    "name": "ClawWallet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claw-wallet-pro",
+    "url": "https://clawhub.ai/skills/claw-wallet-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claw-wallet-pro-85d37da21e4cc641.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A multi-chain wallet skill for AI agents, with local sandbox signing, secure PIN handling, and configurable risk controls."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clawwalletteam",
+      "userId": "s1762dw6jgxyy7szp96tfc9r2h83pzpp",
+      "displayName": "Claw Wallet",
+      "image": "https://avatars.githubusercontent.com/u/266640306?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 222,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "0.1.4",
+      "createdAt": 1775719724790,
+      "changelog": "No significant code changes detected in this release.\n\n- Updated metadata and privilege policy to clarify that explicit user confirmation is required for reinstall, upgrade, and uninstall.\n- Adjusted description in the registry metadata; no functionality or install process changes.\n- Documentation and policy notes remain consistent with prior guidance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:11c1177fafe17dcb4b1f0ff81c01dc4e4c849ad421c48102f997ed8f0f96236e"
+}

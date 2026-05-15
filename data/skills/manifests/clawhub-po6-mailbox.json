@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34863,
+  "uuid": "skill-clawhub-po6-mailbox",
+  "skillKey": "clawhub-po6-mailbox",
+  "name": "PO6 Mailbox",
+  "summary": "Manage PO6 email aliases, mailbox, and landing pages via the PO6 MCP server. Use when the user wants to read, send, search, compose, reply, or forward emails...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.po6_mailbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Winston T",
+      "features": [
+        "Manage PO6 email aliases, mailbox, and landing pages via the PO6 MCP server",
+        "Use when the user wants to read, send, search, compose, reply, or forward emails..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/po6-mailbox@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1245582?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "po6-mailbox",
+      "url": "https://clawhub.ai/skills/po6-mailbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "po6-mailbox",
+    "url": "https://clawhub.ai/skills/po6-mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/po6-mailbox-ab4e55593f05573a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/po6-mailbox@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-po6-mailbox-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7c94a7c959022c9bc918e12f7fba66e9f97e05fbe65700f88a842b66fa5fd2ce",
+      "artifactSizeBytes": 1928
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:42:25.039Z"
+}

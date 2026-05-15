@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sentry-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sentry_ai",
+  "skill": {
+    "id": 20774,
+    "skillKey": "clawhub-sentry-ai",
+    "name": "sentry-ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sentry-ai",
+    "url": "https://clawhub.ai/skills/sentry-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sentry-ai-2bf2a21914636082.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Solana/Base Multi-Chain Meme Scanner & Auditor (Anti-Rug)"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qiyun154-cyber",
+      "userId": "publishers:qiyun154-cyber",
+      "displayName": "qiyun154-cyber",
+      "image": "https://avatars.githubusercontent.com/u/250053882?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 538,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771834799755,
+      "changelog": "Initial release of Sentry-AI: a multi-chain meme token scanner and auditor.\n\n- Real-time monitoring of new tokens on Solana and Base chains via DEX integration.\n- Automated static code audit and dynamic on-chain surveillance.\n- Provides risk scoring based on code security, liquidity ratio, and social metrics.\n- Supports configurable take-profit/stop-loss and smart gas optimization.\n- Free and Pro subscription tiers available.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:427f54d1bed14f2859029c6fb02036c4745af9b48d2d172a688787cd31021edb"
+}

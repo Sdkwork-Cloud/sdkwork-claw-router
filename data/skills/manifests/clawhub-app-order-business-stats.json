@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68906,
+  "uuid": "skill-clawhub-app-order-business-stats",
+  "skillKey": "clawhub-app-order-business-stats",
+  "name": "App Order Business Stats",
+  "summary": "按时间段和业务版块统计久事体育APP订单关键指标（业务版块、用户数、订单量、支付金额、退款金额、净销售金额）。适用于查询“某段时间内业务版块的订单”相关统计。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_order_business_stats",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jaggerliu",
+      "features": [
+        "按时间段和业务版块统计久事体育APP订单关键指标（业务版块、用户数、订单量、支付金额、退款金额、净销售金额）。适用于查询“某段时间内业务版块的订单”相关统计。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/app-order-business-stats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10110630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "app-order-business-stats",
+      "url": "https://clawhub.ai/skills/app-order-business-stats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-order-business-stats",
+    "url": "https://clawhub.ai/skills/app-order-business-stats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-order-business-stats-8587d9aae4f98839.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/app-order-business-stats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-app-order-business-stats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7d888c9750f58d1ba72ad7825876a940eca8292681a0056ceebbd7226e2bd2b4",
+      "artifactSizeBytes": 2472
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T03:46:21.605Z"
+}

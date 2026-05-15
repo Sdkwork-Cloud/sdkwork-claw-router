@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ballball@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ballball",
+  "skill": {
+    "id": 59771,
+    "skillKey": "clawhub-ballball",
+    "name": "BallBall"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ballball",
+    "url": "https://clawhub.ai/skills/ballball",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ballball-61fff50fc522729f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "足球赛事预测神器。自动采集 titan007.com 数据（亚盘、大小球、欧赔、基本面、阵容、角球、半全场）， 5 步量化分析框架，输出投注建议与预测比分。Football match betting prediction system. Auto-scrapes data from m.nowscore.com..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "owaio",
+      "userId": "s1750xa7a2vta9shh8xrjm2j3585fnhj",
+      "displayName": "owaio",
+      "image": "https://avatars.githubusercontent.com/u/21138916?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777041028892,
+      "changelog": "football-predict 1.0.0\n\n- Initial release of a football match betting prediction system using scraped data from m.nowscore.com.\n- Features a 5-step quantitative analysis framework and provides betting recommendations with predicted scores.\n- Supports both concise and visual output modes, including HTML reports with tables and charts.\n- Includes pre-match data collection, prediction workflow, and post-match review for automated learning and accuracy tracking.\n- Automatic persistence of predictions and optimized model weights for continuous improvement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:309c2e1eb17418f36f8bbb8cee940726c279a3c46be0d218478a542bfee6b465"
+}

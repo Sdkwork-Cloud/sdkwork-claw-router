@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66634,
+  "uuid": "skill-clawhub-task-tracker-pro",
+  "skillKey": "clawhub-task-tracker-pro",
+  "name": "Task Tracker Pro",
+  "summary": "持久化任务管理：拆解步骤、追踪进度、中断恢复、多Agent协作。 触发场景： - 收到需要多步骤执行的任务（\"帮我做XX\"、\"搞一个XX\"） - 新对话/会话启动时自动检查未完成任务 - 用户问\"任务进度\"、\"做到哪了\"、\"继续上次的\" - 用户说\"建个任务\"、\"拆解一下\"、\"规划一下步骤\" 核心理念：不信任对话...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task_tracker_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yurio99",
+      "features": [
+        "持久化任务管理：拆解步骤、追踪进度、中断恢复、多Agent协作。 触发场景：",
+        "收到需要多步骤执行的任务（\"帮我做XX\"、\"搞一个XX\"）",
+        "新对话/会话启动时自动检查未完成任务",
+        "用户问\"任务进度\"、\"做到哪了\"、\"继续上次的\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/task-tracker-pro@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/267688241?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "task-tracker-pro",
+      "url": "https://clawhub.ai/skills/task-tracker-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task-tracker-pro",
+    "url": "https://clawhub.ai/skills/task-tracker-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-tracker-pro-6e44253c5e4f2d05.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/task-tracker-pro@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-task-tracker-pro-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f57ff4bd0ba1a04b695caba492d22a83850a6f8288379e1464a7d13b89ae9de5",
+      "artifactSizeBytes": 2169
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T11:51:55.093Z"
+}

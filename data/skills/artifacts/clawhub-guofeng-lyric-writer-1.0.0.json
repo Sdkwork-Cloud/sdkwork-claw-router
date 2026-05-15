@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/guofeng-lyric-writer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guofeng_lyric_writer",
+  "skill": {
+    "id": 33980,
+    "skillKey": "clawhub-guofeng-lyric-writer",
+    "name": "guofeng-lyric-writer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guofeng-lyric-writer",
+    "url": "https://clawhub.ai/skills/guofeng-lyric-writer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guofeng-lyric-writer-ccbf4431c948b161.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create traditional Chinese-style (Guofeng) lyrics with classical imagery, vocabulary substitution, rhyme schemes, and poetic techniques. Use when creating Gu..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "followaf",
+      "userId": "s17e2r7mkqz4413yfz4nf56wjs83xq88",
+      "displayName": "followaf",
+      "image": "https://avatars.githubusercontent.com/u/100986905?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 230,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775555934735,
+      "changelog": "- Initial release of Guofeng Lyric Writer skill.\n- Generates traditional Chinese-style lyrics using classical imagery, vocabulary, rhyme, and poetic techniques.\n- Guides composition with clear workflow: theme recognition, imagery selection, vocabulary application, rhyme & rhythm structuring, and polishing.\n- Emphasizes authenticity, coherence, musicality, and emotional depth.\n- Provides detailed reference file usage and output format for consistent lyric creation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd6a07db70e49949b9c43eeb6dc527cd4b6c336bdb647778a5c39f417e01d3cc"
+}

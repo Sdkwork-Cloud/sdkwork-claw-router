@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8773,
+  "uuid": "skill-clawhub-accli",
+  "skillKey": "clawhub-accli",
+  "name": "Apple Calendar CLI",
+  "summary": "This skill should be used when interacting with Apple Calendar on macOS. Use it for listing calendars, viewing events, creating/updating/deleting calendar events, and checking availability/free-busy times. Triggers on requests like \"check.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.accli",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joargp",
+      "features": [
+        "This skill should be used when interacting with Apple Calendar on macOS",
+        "Use it for listing calendars, viewing events, creating/updating/deleting calendar events, and c.",
+        "Triggers on requests like \"check my calendar\", \"schedule a meeting\", \"what's on my schedule\", \"."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/accli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1954952?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "accli",
+      "url": "https://clawhub.ai/skills/accli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "accli",
+    "url": "https://clawhub.ai/skills/accli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/accli-670bdf8cbf58eb7d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/accli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-accli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5bb9ae5b968b3c164355264c49e19be5d363da4944a27ffc2ae11d35f7c8e7ce",
+      "artifactSizeBytes": 1880
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-05T20:22:36.460Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/operation-platform-enterprise-knowledge@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.operation_platform_enterprise_knowledge",
+  "skill": {
+    "id": 72098,
+    "skillKey": "clawhub-operation-platform-enterprise-knowledge",
+    "name": "测试"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "operation-platform-enterprise-knowledge",
+    "url": "https://clawhub.ai/skills/operation-platform-enterprise-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/operation-platform-enterprise-knowledge-c94e6f736cca0865.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "域名测试"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jimadara",
+      "userId": "s17bzs0ghd5vs277p6crtwb8ss85sx60",
+      "displayName": "Jim Adara",
+      "image": "https://avatars.githubusercontent.com/u/48739679?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 465,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1777452666923,
+      "changelog": "- Removed all scripts and evaluation files related to智能报告 and诊断报告 functionalities.\n- Skill scope has changed from \"智能报告\" to a basic \"域名测试\" service.\n- All previous diagnosis routing logic and report generation features have been removed.\n- New功能: 支持根据请求调用接口自动查找商家ID，仅此固定流程。\n- 用户需本地配置用户名用于认证，未配置时报错提示。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4eededa020baa46db553cbf33f388d5d5e5cf69548db29c80461aac6313b4468"
+}

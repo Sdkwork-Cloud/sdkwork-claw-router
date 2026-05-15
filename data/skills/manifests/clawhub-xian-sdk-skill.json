@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17646,
+  "uuid": "skill-clawhub-xian-sdk-skill",
+  "skillKey": "clawhub-xian-sdk-skill",
+  "name": "Xian SDK",
+  "summary": "Build applications on the Xian blockchain using the xian-py Python SDK. Use when developing apps that interact with Xian — wallets, transactions, smart contracts, state queries, token transfers. Covers sync and async patterns.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xian_sdk_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Endogen",
+      "features": [
+        "Build applications on the Xian blockchain using the xian-py Python SDK",
+        "Use when developing apps that interact with Xian — wallets, transactions, smart contracts, stat.",
+        "Covers sync and async patterns."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xian-sdk-skill@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/226475?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xian-sdk-skill",
+      "url": "https://clawhub.ai/skills/xian-sdk-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xian-sdk-skill",
+    "url": "https://clawhub.ai/skills/xian-sdk-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xian-sdk-skill-10f27b2601b3895e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xian-sdk-skill@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xian-sdk-skill-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:82913e19a4b2647f908cf7397b75c9a022f456f2b0b0ebe5cc2f57ffe0bfbe26",
+      "artifactSizeBytes": 2440
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T00:47:11.948Z"
+}

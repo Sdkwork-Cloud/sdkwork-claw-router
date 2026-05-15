@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21991,
+  "uuid": "skill-clawhub-weavmail",
+  "skillKey": "clawhub-weavmail",
+  "name": "weavmail",
+  "summary": "Use weavmail CLI to manage emails for the current task. Use when you need to read, send, reply to, or move emails as part of completing a task.",
+  "version": "1.0.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weavmail",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yan-ke Guo",
+      "features": [
+        "Use weavmail CLI to manage emails for the current task",
+        "Use when you need to read, send, reply to, or move emails as part of completing a task."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/weavmail@1.0.5",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52509957?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "weavmail",
+      "url": "https://clawhub.ai/skills/weavmail"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weavmail",
+    "url": "https://clawhub.ai/skills/weavmail",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weavmail-b6b1a9d308c916f8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/weavmail@1.0.5",
+      "artifactUrl": "data/skills/artifacts/clawhub-weavmail-1.0.5.json",
+      "version": "1.0.5",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bef26e4b570909d8e61c831bca7d6aed976c4efd44d248369fb24973beea6e83",
+      "artifactSizeBytes": 2285
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:26:09.004Z"
+}

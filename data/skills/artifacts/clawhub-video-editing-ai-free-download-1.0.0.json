@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-ai-free-download@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_ai_free_download",
+  "skill": {
+    "id": 47052,
+    "skillKey": "clawhub-video-editing-ai-free-download",
+    "name": "Video Editing Ai Free Download"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-ai-free-download",
+    "url": "https://clawhub.ai/skills/video-editing-ai-free-download",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-ai-free-download-fbf4b1103a05ccb2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get edited MP4 clips ready to post, without touching a single slider. Upload your raw video footage (MP4, MOV, AVI, WebM, up to 500MB), say something like \"t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776282629502,
+      "changelog": "Initial release: Transform raw video footage into edited, ready-to-post videos with AI automation.\n\n- Upload MP4, MOV, AVI, or WebM files (up to 500MB) and describe the desired edits for fully automated processing.\n- Exports high-quality 1080p MP4 files, free of charge, optimized for fast turnaround.\n- No manual timeline work needed — just describe edits like trimming pauses or adding transitions.\n- Simple session and token-based connection to the backend API; handles credits and error states automatically.\n- Supports multiple workflows: quick edits, batch processing, and iterative refinements with real-time state tracking.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa05e0506e62692c812717d79fcab6726a6868b979a42077938b75c8a5e12091"
+}

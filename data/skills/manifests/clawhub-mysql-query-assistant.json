@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36811,
+  "uuid": "skill-clawhub-mysql-query-assistant",
+  "skillKey": "clawhub-mysql-query-assistant",
+  "name": "MySQL Natural Language Query Assistant",
+  "summary": "translate natural-language analytics requests into mysql queries, connect to a live mysql database, inspect schema and column comments, execute read-only sql...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_query_assistant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hansen",
+      "features": [
+        "translate natural-language analytics requests into mysql queries, connect to a live mysql datab."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysql-query-assistant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1073133?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysql-query-assistant",
+      "url": "https://clawhub.ai/skills/mysql-query-assistant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-query-assistant",
+    "url": "https://clawhub.ai/skills/mysql-query-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-query-assistant-f01d1ac5c3daa0d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysql-query-assistant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysql-query-assistant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:210e54a50a31283d8a854c4abee67ec879c872aa9640ac14c1413ae7179c66c6",
+      "artifactSizeBytes": 2543
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T11:29:05.013Z"
+}

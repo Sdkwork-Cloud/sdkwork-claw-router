@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64406,
+  "uuid": "skill-clawhub-meeting-copilot",
+  "skillKey": "clawhub-meeting-copilot",
+  "name": "Meeting Copilot",
+  "summary": "会议运营 Copilot — 支持会前 briefing 生成、会中结构化纪要整理、会后待办追踪与 follow-up 草稿。面向需要系统性管理会议全生命周期的职场人士。提供 boss mode（向上汇报视角）和 executor mode（向下追踪视角）两种输出格式。⚠️ 不提供实时语音转录、日历集成或自动提醒。",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_copilot",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "会议运营 Copilot — 支持会前 briefing 生成、会中结构化纪要整理、会后待办追踪与 follow-up 草稿。面向需要系统性管理会议全生命周期的职场人士。提供 boss mo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/meeting-copilot@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "meeting-copilot",
+      "url": "https://clawhub.ai/skills/meeting-copilot"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-copilot",
+    "url": "https://clawhub.ai/skills/meeting-copilot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-copilot-186a1dda9723820b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/meeting-copilot@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-meeting-copilot-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8da0b33db1816cd67f90ab5e7093646ec767620be3969f474236346381a2fab0",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T23:07:21.491Z"
+}

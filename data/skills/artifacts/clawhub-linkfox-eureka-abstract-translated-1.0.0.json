@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-eureka-abstract-translated@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_eureka_abstract_translated",
+  "skill": {
+    "id": 63323,
+    "skillKey": "clawhub-linkfox-eureka-abstract-translated",
+    "name": "Eureka Abstract Translated"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-eureka-abstract-translated",
+    "url": "https://clawhub.ai/skills/linkfox-eureka-abstract-translated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-eureka-abstract-translated-0d1dcd7a33c75004.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过Eureka专利数据平台获取专利标题和摘要的翻译版本。当用户要求专利摘要翻译、专利标题翻译、翻译后的专利摘要、其他语言的专利内容、中文/英文/日文的专利摘要，或需要通过专利ID或公开号查询特定专利的摘要、标题、Eureka专利摘要、patent abstract translation, patent tit..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 119,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776430397632,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:44f9723466f64c82e9ecdbed1200dc3b357562255233a18b49f1e4affb4d5e74"
+}

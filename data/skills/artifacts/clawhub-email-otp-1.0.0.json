@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-otp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_otp",
+  "skill": {
+    "id": 24997,
+    "skillKey": "clawhub-email-otp",
+    "name": "Email OTP"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-otp",
+    "url": "https://clawhub.ai/skills/email-otp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-otp-17bd3b2b6521b7cf.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create temporary email addresses and monitor for registration OTP codes or validation links"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "etopro",
+      "userId": "s178q1hzxayjcr55ynjn7nwxn183n2zx",
+      "displayName": "etopro",
+      "image": "https://avatars.githubusercontent.com/u/39183555?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 397,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772305045126,
+      "changelog": "Initial release of email-otp skill.\n\n- Create temporary email addresses using the mail.tm API (no API key needed).\n- Automatically extract OTP codes and validation links from incoming emails.\n- Command-line interface to create accounts, monitor inboxes, filter/send OTPs, and list available domains.\n- Stores all state and credentials securely in `~/.tempmail_otp/`.\n- Saves most recent OTP and verification link to dedicated files for easy retrieval.\n- Includes flexible filtering (sender, subject, custom regex) and robust error handling.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:587640587024f847eb026197d0c0b747fa66b1f858e68df0a5e133e939a0f4b5"
+}

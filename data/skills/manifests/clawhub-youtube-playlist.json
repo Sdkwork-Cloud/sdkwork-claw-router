@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9886,
+  "uuid": "skill-clawhub-youtube-playlist",
+  "skillKey": "clawhub-youtube-playlist",
+  "name": "youtube-playlist",
+  "summary": "Use when a YouTube playlist is involved: pasted playlist links or IDs, requests to list playlist videos, browse playlist contents, or work through a playlist...",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_playlist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rohit Das",
+      "features": [
+        "Use when a YouTube playlist is involved: pasted playlist links or IDs, requests to list playlis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-playlist@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/43847374?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-playlist",
+      "url": "https://clawhub.ai/skills/youtube-playlist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-playlist",
+    "url": "https://clawhub.ai/skills/youtube-playlist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-playlist-51c8559b140888aa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-playlist@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-playlist-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:664befc17e77363a052484698d4baea2b778e475837442330e9e81e9878da7d5",
+      "artifactSizeBytes": 2037
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T15:05:43.353Z"
+}

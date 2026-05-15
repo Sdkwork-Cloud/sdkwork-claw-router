@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/suno-music-composer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.suno_music_composer",
+  "skill": {
+    "id": 66675,
+    "skillKey": "clawhub-suno-music-composer",
+    "name": "SUNO音乐创作速查表"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "suno-music-composer",
+    "url": "https://clawhub.ai/skills/suno-music-composer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/suno-music-composer-8cade21fe687172b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "🎶🎵 SUNO音乐创作速查表 - 完整的AI音乐创作指南，包含171+个元标签和\"骨架+血肉\"协同创作体系"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "260335325why-prog",
+      "userId": "publishers:260335325why-prog",
+      "displayName": "260335325why-prog",
+      "image": "https://avatars.githubusercontent.com/u/263957934?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 481,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773684184514,
+      "changelog": "Initial release - Complete SUNO AI music composition guide with 171+ meta-tags and skeleton-flesh collaborative creation system",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:76b7aadbe2745bd9805ae8099508940aa427373557dde12daaf6e12f9f3aaef8"
+}

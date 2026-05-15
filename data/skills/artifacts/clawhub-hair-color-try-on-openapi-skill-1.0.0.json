@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hair-color-try-on-openapi-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hair_color_try_on_openapi_skill",
+  "skill": {
+    "id": 56502,
+    "skillKey": "clawhub-hair-color-try-on-openapi-skill",
+    "name": "Hair Color Try On – Try Hair Colors Online Free – API-powered"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hair-color-try-on-openapi-skill",
+    "url": "https://clawhub.ai/skills/hair-color-try-on-openapi-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hair-color-try-on-openapi-skill-721bb4f84823def9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hair color try-on — change a person's hair color while preserving hairstyle and details"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sparkleming",
+      "userId": "s173eywkn9gkx5va9p2tb6kh5h843s3s",
+      "displayName": "sparkleMing",
+      "image": "https://avatars.githubusercontent.com/u/38350996?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 146,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776442100494,
+      "changelog": "- Initial release of hair color try-on skill.\n- Allows users to change a person's hair color in a portrait while preserving hairstyle and details.\n- Requires API key for authentication; environment variable support (`WESHOP_API_KEY`).\n- Supports image upload and custom color instructions.\n- Provides clear security guidance for safe API key use.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2483709520a90d5ebd0d0ea3791be3ff52079988966aca9e0e210cfbb57a9f96"
+}

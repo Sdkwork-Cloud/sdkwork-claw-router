@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54559,
+  "uuid": "skill-clawhub-xcard-trade",
+  "skillKey": "clawhub-xcard-trade",
+  "name": "xcard trade",
+  "summary": "Trade crypto perpetual futures on XCard — view positions, place orders, monitor funding rates, and manage margin.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xcard_trade",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sss3000",
+      "features": [
+        "Trade crypto perpetual futures on XCard — view positions, place orders, monitor funding rates,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xcard-trade@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11779945?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xcard-trade",
+      "url": "https://clawhub.ai/skills/xcard-trade"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xcard-trade",
+    "url": "https://clawhub.ai/skills/xcard-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xcard-trade-384bcc9d0a100a69.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xcard-trade@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xcard-trade-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:324683b2e1522437d4847c19c1704fd989f9aba8a7f88cd8fe543afebaa5d08a",
+      "artifactSizeBytes": 2227
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T10:41:53.074Z"
+}

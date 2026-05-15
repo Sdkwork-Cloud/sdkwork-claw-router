@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16144,
+  "uuid": "skill-clawhub-option-calculator",
+  "skillKey": "clawhub-option-calculator",
+  "name": "Option Calculator",
+  "summary": "Price options, compute Greeks, and plot P&L diagrams with exercise analysis. Use when pricing options, calculating Greeks, visualizing profit-loss curves.",
+  "version": "2.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.option_calculator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bytesagain4",
+      "features": [
+        "Price options, compute Greeks, and plot P&L diagrams with exercise analysis",
+        "Use when pricing options, calculating Greeks, visualizing profit-loss curves."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/option-calculator@2.4.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/218210530?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "option-calculator",
+      "url": "https://clawhub.ai/skills/option-calculator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "option-calculator",
+    "url": "https://clawhub.ai/skills/option-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/option-calculator-bfb7b2e91edf22b1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/option-calculator@2.4.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-option-calculator-2.4.0.json",
+      "version": "2.4.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:60560ae40249d370079ecf5b8a2b875d82e7a614feca3a1997c0da05752ccfc4",
+      "artifactSizeBytes": 1990
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T00:14:24.924Z"
+}

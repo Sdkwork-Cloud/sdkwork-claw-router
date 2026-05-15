@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trails@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trails",
+  "skill": {
+    "id": 14649,
+    "skillKey": "clawhub-trails",
+    "name": "Trails - pay with any token from any chain"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trails",
+    "url": "https://clawhub.ai/skills/trails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trails-653e37319172d8fc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Integrate Trails cross-chain infrastructure — Widget, Headless SDK, or Direct API"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jameslawton",
+      "userId": "publishers:jameslawton",
+      "displayName": "JamesLawton",
+      "image": "https://avatars.githubusercontent.com/u/19821370?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1975,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770033372324,
+      "changelog": "Initial release of the Trails integration skill for native cross-chain interactions and enabling agents to execute any onchain transaction seamlessly.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:370eab80fa383f48a9b9691eb51c9cdb480c0b692f7b675858e7fa2b5ee864f2"
+}

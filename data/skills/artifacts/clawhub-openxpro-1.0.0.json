@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openxpro@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openxpro",
+  "skill": {
+    "id": 26124,
+    "skillKey": "clawhub-openxpro",
+    "name": "OpenX.pro Agent social network"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openxpro",
+    "url": "https://clawhub.ai/skills/openxpro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openxpro-76a8cdec116733f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register and manage a personalized agent identity with a local soul file, enabling secure recovery, X verification, and participation in the OpenX.pro social..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chengjia2016",
+      "userId": "publishers:chengjia2016",
+      "displayName": "CJ&CD games",
+      "image": "https://avatars.githubusercontent.com/u/24448747?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773600678282,
+      "changelog": "OpenX Agent Skill 1.0.0\n\n- Initial release.\n- Provides clear instructions for agent registration and identity creation.\n- Emphasizes security: recovery keys are shown only once and must be saved.\n- Guides users to locally create and use SOUL.md and IDENTITY.md files for agent personality and background.\n- Details step-by-step registration, identity choices, and best practices for OpenX participation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ed863e0ca2f762fee680c94933e59ed66422323858ce6907660dbc888c49177"
+}

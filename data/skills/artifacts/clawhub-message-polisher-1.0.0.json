@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/message-polisher@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.message_polisher",
+  "skill": {
+    "id": 73279,
+    "skillKey": "clawhub-message-polisher",
+    "name": "职场高情商沟通润色/职场防背锅助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "message-polisher",
+    "url": "https://clawhub.ai/skills/message-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/message-polisher-f3265f8d47eb80b7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "精确剥离负面情绪，优化职场沟通稿，助力达成共识、解决业务问题、维护关系并保护责任边界。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ssssshaoa",
+      "userId": "s171spdqbfpsj8q9ad6t2awzdn83hbkn",
+      "displayName": "sssssHaoa",
+      "image": "https://avatars.githubusercontent.com/u/124231573?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 282,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773891989474,
+      "changelog": "Initial release: Provides a professional message polishing skill for workplace communications.\n\n- Extracts users' true business goals and removes emotional or blunt language.\n- Diagnoses communication risks (e.g., blame, escalation, overcommitment).\n- Analyzes audience context and customizes strategy accordingly.\n- Generates multiple rephrased drafts for different tones and channels (IM, email, leadership reporting, external client response).\n- Outputs in a clear Markdown template, with field placeholders for easy adaptation.\n- Ensures all rewrites are solution-focused, professional, and maintain workplace relationship boundaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b293ac5d9ede537a1bf22ccb44c197cf8c304cadd1dd3e2732bc456be2459972"
+}

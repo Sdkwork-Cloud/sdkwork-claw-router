@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/creative-ads-helper@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.creative_ads_helper",
+  "skill": {
+    "id": 22340,
+    "skillKey": "clawhub-creative-ads-helper",
+    "name": "Creative Helper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "creative-ads-helper",
+    "url": "https://clawhub.ai/skills/creative-ads-helper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/creative-ads-helper-b72cc8d966fdc96a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate and evaluate ad creatives for Meta (Facebook/Instagram), TikTok Ads, YouTube Ads, Google Ads, and Amazon Ads with script generation, performance sco..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "danyangliu-sandwichlab",
+      "userId": "publishers:danyangliu-sandwichlab",
+      "displayName": "danyangliu",
+      "image": "https://avatars.githubusercontent.com/u/184733968?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 477,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772612188963,
+      "changelog": "- Initial release: Generates and evaluates ad creatives across major ad platforms (Meta, TikTok, YouTube, Google, Amazon).\n- Offers script and concept generation, creative scoring, fatigue detection, and inspiration examples.\n- Introduces input/output contracts for structured requests and responses.\n- Includes platform-specific creative guidelines and performance-based rule sets.\n- Provides failure handling for missing data and policy compliance risks.\n- Features practical examples and a quality checklist for reliability.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:8aa404bd1a738c6b6d52caa9f6e6a2d7247aef2974ff77e5f3e61f891d6beb03"
+}

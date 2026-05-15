@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72650,
+  "uuid": "skill-clawhub-guangdong-medical-record-sql",
+  "skillKey": "clawhub-guangdong-medical-record-sql",
+  "name": "广东省病案统计管理系统SQL查询大师",
+  "summary": "精通广东省病案统计管理系统所有表结构，支持门诊、住院、急诊、手术等多维度SQL查询与统计分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.guangdong_medical_record_sql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "liangnan",
+      "features": [
+        "精通广东省病案统计管理系统所有表结构，支持门诊、住院、急诊、手术等多维度SQL查询与统计分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/guangdong-medical-record-sql@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2580449?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "guangdong-medical-record-sql",
+      "url": "https://clawhub.ai/skills/guangdong-medical-record-sql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "guangdong-medical-record-sql",
+    "url": "https://clawhub.ai/skills/guangdong-medical-record-sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/guangdong-medical-record-sql-4a5cc49ef4257699.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/guangdong-medical-record-sql@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-guangdong-medical-record-sql-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4bca61e40423596ce659c944f25971c8cec3385187f0b4449c2c3825b35c35b9",
+      "artifactSizeBytes": 2530
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T08:51:43.507Z"
+}

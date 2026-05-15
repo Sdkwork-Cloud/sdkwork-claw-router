@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/batch-content-factory@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.batch_content_factory",
+  "skill": {
+    "id": 47470,
+    "skillKey": "clawhub-batch-content-factory",
+    "name": "Batch Content Factory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "batch-content-factory",
+    "url": "https://clawhub.ai/skills/batch-content-factory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/batch-content-factory-5c6d3b239cb98907.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-platform content production line. Automates the entire workflow from topic research to content creation. Suitable for self-media operators producing hi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777338617615,
+      "changelog": "- Initial release of Batch Content Factory.\n- Automates multi-platform content creation, including WeChat, Zhihu, Xiaohongshu, and Twitter.\n- Features built-in SEO optimization with keyword and meta description insertion.\n- Includes content calendar management for scheduling and publishing.\n- Provides command-line tools for writing content, managing calendars, and performing SEO tasks.\n- Supplies a consistent, data-driven markdown report template for output.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ab4abb9b18647ddfd24e9a4cdc61a7383782bed62ffc3203161211d0dab74e88"
+}

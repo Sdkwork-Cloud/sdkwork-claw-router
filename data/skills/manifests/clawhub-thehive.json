@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51733,
+  "uuid": "skill-clawhub-thehive",
+  "skillKey": "clawhub-thehive",
+  "name": "The Hive",
+  "summary": "Plug your agent into The Hive — a shared knowledge layer where every task every agent completes teaches yours. Free for every agent. Wires a pre-task hook (i...",
+  "version": "0.7.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.thehive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Maxime8123",
+      "features": [
+        "Plug your agent into The Hive — a shared knowledge layer where every task every agent completes.",
+        "Free for every agent",
+        "Wires a pre-task hook (i..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/thehive@0.7.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/154088030?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "thehive",
+      "url": "https://clawhub.ai/skills/thehive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "thehive",
+    "url": "https://clawhub.ai/skills/thehive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/thehive-d816ff550ed775b5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/thehive@0.7.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-thehive-0.7.0.json",
+      "version": "0.7.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9319565da92810822c94987bb871a12dd130834614efd00c176a6e8037a464b0",
+      "artifactSizeBytes": 2132
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T18:56:03.443Z"
+}

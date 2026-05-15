@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-valuation@3.0.0",
+  "version": "3.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_valuation",
+  "skill": {
+    "id": 17813,
+    "skillKey": "clawhub-stock-valuation",
+    "name": "Stock Valuation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-valuation",
+    "url": "https://clawhub.ai/skills/stock-valuation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-valuation-976aabca300a4f30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate comprehensive company valuation reports as polished HTML/PDF. Use when user asks for stock valuation, company analysis, investment thesis, or deep-d..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xliucs",
+      "userId": "publishers:xliucs",
+      "displayName": "Xin Liu",
+      "image": "https://avatars.githubusercontent.com/u/19635856?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 543,
+      "installsAllTime": 10,
+      "installsCurrent": 9,
+      "stars": 1,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "3.0.0",
+      "createdAt": 1772946814317,
+      "changelog": "v3.0: Turnkey pipeline (run_pipeline.py + generate_report.py). Light professional theme, smart data-driven callouts after every section, detailed valuation framework with methodology explanations and calculation details, mandatory qualitative research flow (SA, X/Twitter, analyst consensus).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b750911ba97f9ef0a8b30c6df3b02caf5931be0955e56d5460f4f2cc74282e0e"
+}

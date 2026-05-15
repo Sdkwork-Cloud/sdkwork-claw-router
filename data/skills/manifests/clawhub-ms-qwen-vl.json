@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62068,
+  "uuid": "skill-clawhub-ms-qwen-vl",
+  "skillKey": "clawhub-ms-qwen-vl",
+  "name": "Ms Qwen Vl",
+  "summary": "调用魔搭社区（ModelScope）Qwen3-VL 多模态 API 进行视觉解析。使用 OpenAI SDK 兼容方式调用，支持图片内容描述、OCR 文字提取、视觉问答、对象检测等功能。用户提到\"魔搭\"、\"ModelScope\"、\"Qwen-VL\"、\"多模态视觉\"、\"解析图片\"等关键词时应触发。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ms_qwen_vl",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "crocketc",
+      "features": [
+        "调用魔搭社区（ModelScope）Qwen3-VL 多模态 API 进行视觉解析。使用 OpenAI SDK 兼容方式调用，支持图片内容描述、OCR 文字提取、视觉问答、对象检测等功能。用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ms-qwen-vl@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/161925045?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ms-qwen-vl",
+      "url": "https://clawhub.ai/skills/ms-qwen-vl"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ms-qwen-vl",
+    "url": "https://clawhub.ai/skills/ms-qwen-vl",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ms-qwen-vl-fcdb88ea95629550.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ms-qwen-vl@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ms-qwen-vl-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:53629b3920e8a8fee9be1906ce2207768500f0dadf714777943268914c49fdd5",
+      "artifactSizeBytes": 2509
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:18:06.128Z"
+}

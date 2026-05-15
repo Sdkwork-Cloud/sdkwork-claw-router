@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gog2@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gog2",
+  "skill": {
+    "id": 20274,
+    "skillKey": "clawhub-gog2",
+    "name": "Gog2"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gog2",
+    "url": "https://clawhub.ai/skills/gog2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gog2-158c70e4058963c9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fionn1989",
+      "userId": "publishers:fionn1989",
+      "displayName": "M.G",
+      "image": "https://avatars.githubusercontent.com/u/23266970?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 563,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772049319642,
+      "changelog": "Initial release of gog: Google Workspace CLI\n\n- Provides command-line access to Gmail, Calendar, Drive, Contacts, Sheets, and Docs.\n- Supports OAuth credential setup and multi-service account authorization.\n- Includes commands for searching email, sending messages, managing calendars, searching Drive, listing contacts, and manipulating Sheets and Docs.\n- Offers scripting support with JSON outputs and no-input mode.\n- Configuration tips for repeated account use and command confirmations included.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9030ddaf6bf6b3c350165a4f87477830c38360e6510200cbb21416ac6b8eb8f8"
+}

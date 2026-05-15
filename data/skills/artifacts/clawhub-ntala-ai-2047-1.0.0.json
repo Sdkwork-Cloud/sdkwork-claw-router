@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ntala-ai-2047@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ntala_ai_2047",
+  "skill": {
+    "id": 47899,
+    "skillKey": "clawhub-ntala-ai-2047",
+    "name": "Verified Agent Identity"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ntala-ai-2047",
+    "url": "https://clawhub.ai/skills/ntala-ai-2047",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ntala-ai-2047-af71294b4c15b775.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Billions decentralized identity for agents. Link agents to human identities using Billions ERC-8004 and Attestation Registries. Verify and generate authentic..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "louise2364",
+      "userId": "s173xty3mm86ke2bgyaz5fesr185rctc",
+      "displayName": "louise2364",
+      "image": "https://avatars.githubusercontent.com/u/198433080?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777503244057,
+      "changelog": "verified-agent-identity v1.0.0\n\n- Initial release providing decentralized identity management for agents on the Billions Network.\n- Supports linking agent DIDs to human owners using Billions ERC-8004 and Attestation Registries.\n- Includes CLI scripts for creating identities, listing DIDs, generating and signing challenges, linking agents to humans, and verifying authentication proofs.\n- Enforces strict security rules and storage of identity data in $HOME/.openclaw/billions.\n- Provides step-by-step usage examples and guardrails for secure identity operations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:546418d20ba7c02da8c6298b481e81cb48260ea8df51ef3260cdd41cb1d7fe55"
+}

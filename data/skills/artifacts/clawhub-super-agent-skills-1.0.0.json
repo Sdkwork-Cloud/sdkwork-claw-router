@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/super-agent-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.super_agent_skills",
+  "skill": {
+    "id": 22592,
+    "skillKey": "clawhub-super-agent-skills",
+    "name": "Super Agent Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "super-agent-skills",
+    "url": "https://clawhub.ai/skills/super-agent-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/super-agent-skills-f17cef31f6db1fb9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Comprehensive AI Agent capability library covering 20+ essential skills from file ops to cloud services, security, monitoring, and CI/CD."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "saqierma-cyber",
+      "userId": "publishers:saqierma-cyber",
+      "displayName": "Saqierma.a",
+      "image": "https://avatars.githubusercontent.com/u/263346368?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 457,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773838658935,
+      "changelog": "- Initial public release of super-agent-skills.\n- Provides a comprehensive AI Agent capability library with 20+ essential skills.\n- Covers areas including file operations, HTTP requests, scheduling, code execution, image/document generation, API/database integration, cloud services, message queues, containerization, CI/CD, authentication, encryption, security scanning, parallel processing, caching, logging, monitoring, and backup.\n- Includes best practices and environment checks for building robust, autonomous agents.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0f7f5e88147fa6989fb19d950030c63651d6787b6bcdeabc449990b1a19feb79"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64973,
+  "uuid": "skill-clawhub-keplerjai-contract-draft",
+  "skillKey": "clawhub-keplerjai-contract-draft",
+  "name": "Keplerjai Contract Draft",
+  "summary": "基于 Word 模板和结构化业务信息生成合同草稿。适用于 AI 总助根据现有 .docx 模板起草合同、填充甲乙方与合作信息、识别缺失字段并输出可审阅草稿的场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keplerjai_contract_draft",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "任佶",
+      "features": [
+        "基于 Word 模板和结构化业务信息生成合同草稿。适用于 AI 总助根据现有 .docx 模板起草合同、填充甲乙方与合作信息、识别缺失字段并输出可审阅草稿的场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keplerjai-contract-draft@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1422543?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keplerjai-contract-draft",
+      "url": "https://clawhub.ai/skills/keplerjai-contract-draft"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keplerjai-contract-draft",
+    "url": "https://clawhub.ai/skills/keplerjai-contract-draft",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keplerjai-contract-draft-577324704a9aac3c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keplerjai-contract-draft@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-keplerjai-contract-draft-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31c4570860ad131d5d2cee115841bc84c992da1dd60a960f9d8773fa02cccea2",
+      "artifactSizeBytes": 2502
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T14:31:03.834Z"
+}

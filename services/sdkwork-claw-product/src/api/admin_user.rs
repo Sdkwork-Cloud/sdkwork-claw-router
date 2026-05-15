@@ -110,7 +110,7 @@ pub fn admin_user_router_with_store(
             delete(delete_api_key),
         )
         .route(
-            "/backend/v3/api/router/users/{user_id}/balance-adjustments",
+            "/backend/v3/api/billing/users/{user_id}/balance_adjustments",
             post(adjust_balance),
         )
         .with_state(AdminUserState {

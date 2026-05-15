@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mmxagent-skill-manager@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mmxagent_skill_manager",
+  "skill": {
+    "id": 65577,
+    "skillKey": "clawhub-mmxagent-skill-manager",
+    "name": "mmxagent-skill-manager"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mmxagent-skill-manager",
+    "url": "https://clawhub.ai/skills/mmxagent-skill-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mmxagent-skill-manager-2fbad9feab77c697.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "一个管理所有maxclaw内部skill的技能，主要实时管理所有安装维护im的skill以及一些官方自己维护的skill。当用户做某些操作时，可以翻看这个技能内容，看看有没有一些官方的更新内容来辅助操作。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "oreoandyuumi",
+      "userId": "s17306q89d61k87b44tjdj867h8436v2",
+      "displayName": "OreoAndYuumi",
+      "image": "https://avatars.githubusercontent.com/u/169647655?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 188,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775631656956,
+      "changelog": "- 增加了“禁止静默安装”要求，需获用户同意后才可安装或更新官方 skill。\n- 明确提示用户安装/更新用途，并需用户确认才执行操作。\n- 优化官方 skill 安装和更新的操作指引描述。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bef82ba89488ea465baf8b000cba3d4cf0a237b5323e2b9e0ed17a9f043b8407"
+}

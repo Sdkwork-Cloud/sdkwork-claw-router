@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/faceu@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.faceu",
+  "skill": {
+    "id": 33548,
+    "skillKey": "clawhub-faceu",
+    "name": "Faceu"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "faceu",
+    "url": "https://clawhub.ai/skills/faceu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/faceu-1ab178b5d295212c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "FaceU skill organizes publicly available information on templates, editing features, export specs, help docs, and pricing from faceu.com."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "codekungfu",
+      "userId": "s174hbct7jzfnq4tb6w04gnans83gh5h",
+      "displayName": "ClawKK",
+      "image": "https://avatars.githubusercontent.com/u/111570001?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 236,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773931545067,
+      "changelog": "Initial release of the FaceU skill.\n\n- Registers the “FaceU激萌” skill for public information organization.\n- Provides guidelines for extracting and summarizing official site, templates, features, help, and pricing details.\n- Clearly outlines boundaries: no account actions, copyright bypass, or paid resource access.\n- Lists common use cases such as template and capability summaries, export specs, and plan info extraction.\n- Emphasizes compliance: only processes public data; respects copyright and platform policies.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b60053a0206d0798ac3ed40c594e6ec0b5f13af4b1fe8b8d05d79a653ddcdb8b"
+}

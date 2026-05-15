@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 52157,
+  "uuid": "skill-clawhub-rtk-compressor",
+  "skillKey": "clawhub-rtk-compressor",
+  "name": "Rtk Compressor",
+  "summary": "Intelligently compress CLI outputs by removing comments, blanks, and redundancies to reduce token usage by 60-90% while preserving key info.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rtk_compressor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Efficiency97",
+      "features": [
+        "Intelligently compress CLI outputs by removing comments, blanks, and redundancies to reduce tok."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rtk-compressor@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26136099?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rtk-compressor",
+      "url": "https://clawhub.ai/skills/rtk-compressor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rtk-compressor",
+    "url": "https://clawhub.ai/skills/rtk-compressor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rtk-compressor-90d16a4348b025d7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rtk-compressor@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-rtk-compressor-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0196c48ad9b1d15495b3656fb3750cbdba38debf098a6e7ea354745f1edd4b9d",
+      "artifactSizeBytes": 2218
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T14:04:57.642Z"
+}

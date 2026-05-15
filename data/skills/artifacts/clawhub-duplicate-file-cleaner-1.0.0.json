@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/duplicate-file-cleaner@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.duplicate_file_cleaner",
+  "skill": {
+    "id": 73609,
+    "skillKey": "clawhub-duplicate-file-cleaner",
+    "name": "电脑清理大师"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "duplicate-file-cleaner",
+    "url": "https://clawhub.ai/skills/duplicate-file-cleaner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/duplicate-file-cleaner-279409f8e299daf0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "扫描并识别计算机中的重复文件，提供智能整理建议；当用户需要清理重复文件、释放磁盘空间或整理照片库时使用"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ludiansheng",
+      "userId": "s17c0dxa6k34zcd8tx5x7a8x3d83hdw7",
+      "displayName": "ludiansheng",
+      "image": "https://avatars.githubusercontent.com/u/269368209?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775642031415,
+      "changelog": "Initial release of duplicate-file-cleaner skill.\n\n- Scans specified directories to identify exact duplicate files using content hashing.\n- Provides structured reports with duplicate file groups and disk space analysis.\n- Suggests intelligent file retention strategies based on file paths and modified times.\n- Supports customizable options for minimum file size and file type filtering.\n- Generates deletion scripts and offers backup recommendations to ensure safe cleanup.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2946258e4e106ecca62a5753bd1c5bcbf47bc5a7d7fd817f1420361801ce787c"
+}

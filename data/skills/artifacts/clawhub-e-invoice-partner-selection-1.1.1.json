@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/e-invoice-partner-selection@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.e_invoice_partner_selection",
+  "skill": {
+    "id": 63519,
+    "skillKey": "clawhub-e-invoice-partner-selection",
+    "name": "Global E-Invoice partner selection"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "e-invoice-partner-selection",
+    "url": "https://clawhub.ai/skills/e-invoice-partner-selection",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/e-invoice-partner-selection-9634f59584098a30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "当用户需要为某个目标国家寻找、筛选或评估本地电子发票合规通道合作伙伴时，使用本 Skill。 覆盖场景：识别和筛选本地 e-invoicing 接入点（AP/SP/T-VAN/ASP/PJAP/SDI中间商）合作伙伴、 评估候选方是否适合作为我方的白标底层通道、对候选方开展多轮过滤和反向证伪、 设计POC验收方案..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tangxf0927",
+      "userId": "s1706pq2h9hp7btrtec4x7aa8x84aa3c",
+      "displayName": "tangxf0927",
+      "image": "https://avatars.githubusercontent.com/u/266910253?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 172,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1775480524680,
+      "changelog": "e-invoice-partner-selection v1.1.1 Changelog\n-change name of slug and display.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a7798ada38d76b53c12da2cc6b90b60de3af28e5a93c179552e0bc733ae5ac43"
+}

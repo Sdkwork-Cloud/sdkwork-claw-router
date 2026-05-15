@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-mailbox@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_mailbox",
+  "skill": {
+    "id": 22598,
+    "skillKey": "clawhub-agent-mailbox",
+    "name": "Agent Mailbox"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-mailbox",
+    "url": "https://clawhub.ai/skills/agent-mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-mailbox-104fa57de606a624.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send, receive, and manage asynchronous messages between agents, handlers, and users with local file storage and optional cloud sync."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "noizceera",
+      "userId": "publishers:noizceera",
+      "displayName": "NoizceEra",
+      "image": "https://avatars.githubusercontent.com/u/141389471?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 466,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772955466871,
+      "changelog": "Initial release of agent-mailbox: an email system for agent coordination and async workflows.\n\n- Send and receive messages between agents, handlers, and users with local file-based storage.\n- Organize inbox, sent, and archived messages in a decentralized, backend-optional setup.\n- CLI and TypeScript API for checking, sending, replying, and managing messages.\n- Privacy by default: messages are local-only; optional cloud sync with user-controlled backend.\n- Designed for task delegation, bounty coordination, team workflows, and automated agent heartbeats.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cb7098ad54d8f8407e49e3d98e6df882439477ab8b0ac9902c067ea43de39372"
+}

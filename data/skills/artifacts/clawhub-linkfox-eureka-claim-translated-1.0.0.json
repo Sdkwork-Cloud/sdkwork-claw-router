@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/linkfox-eureka-claim-translated@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.linkfox_eureka_claim_translated",
+  "skill": {
+    "id": 62100,
+    "skillKey": "clawhub-linkfox-eureka-claim-translated",
+    "name": "Eureka Claim Translated"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "linkfox-eureka-claim-translated",
+    "url": "https://clawhub.ai/skills/linkfox-eureka-claim-translated",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/linkfox-eureka-claim-translated-2cddf733ab43839f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过Eureka专利数据平台获取翻译后的专利权利要求。当用户询问专利权利要求、权利要求翻译、查看特定语言（中文、英文或日文）的权利要求、通过专利ID或公开号查询专利权利、分析权利要求文本、Eureka权利要求、claim translation, patent claim translation, Eureka..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linkfox-ai",
+      "userId": "s171g8b6m2khwdy9ye8bxj0wx183vd4z",
+      "displayName": "linkfox-ai",
+      "image": "https://avatars.githubusercontent.com/u/267242260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 121,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776430413745,
+      "changelog": "Initial release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c40cd1e30e48d235e523f6f1c18dff35b024a0b28941701b14fb132b30102440"
+}

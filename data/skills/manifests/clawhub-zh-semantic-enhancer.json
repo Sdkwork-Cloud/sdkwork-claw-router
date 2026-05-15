@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68975,
+  "uuid": "skill-clawhub-zh-semantic-enhancer",
+  "skillKey": "clawhub-zh-semantic-enhancer",
+  "name": "Zh Semantic Enhancer",
+  "summary": "中文语义理解增强技能。通过多层语义解析、文化上下文识别、方言适配、歧义消解等模块，提升OpenClaw对中文用户意图的理解准确率，支持成语/俗语/网络用语/行业术语的智能识别，非简单翻译型处理。",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zh_semantic_enhancer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "joe",
+      "features": [
+        "中文语义理解增强技能。通过多层语义解析、文化上下文识别、方言适配、歧义消解等模块，提升OpenClaw对中文用户意图的理解准确率，支持成语/俗语/网络用语/行业术语的智能识别，非简单翻译型处."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zh-semantic-enhancer@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26564438?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zh-semantic-enhancer",
+      "url": "https://clawhub.ai/skills/zh-semantic-enhancer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zh-semantic-enhancer",
+    "url": "https://clawhub.ai/skills/zh-semantic-enhancer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zh-semantic-enhancer-69a110ccfd7fd4ee.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zh-semantic-enhancer@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zh-semantic-enhancer-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c7c59433532cd7afef95f9be3a0993ba89a11820497a6083084e660d472da3b4",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T01:53:12.539Z"
+}

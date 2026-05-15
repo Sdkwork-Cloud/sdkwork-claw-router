@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/subscription-renewal-health@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.subscription_renewal_health",
+  "skill": {
+    "id": 54825,
+    "skillKey": "clawhub-subscription-renewal-health",
+    "name": "Subscription Renewal Health"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "subscription-renewal-health",
+    "url": "https://clawhub.ai/skills/subscription-renewal-health",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/subscription-renewal-health-389e62968e28ebd8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor recurring-billing and subscription business health — pool volatility, churn, and payment failure — then output dunning and retention email series gro..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 288,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773627702546,
+      "changelog": "- Initial release of subscription-renewal-health skill for monitoring subscription business health and automating dunning and retention communications.\n- Tracks subscription pool volatility, churn rate, failed payments, and recovery after dunning.\n- Outputs structured health tables, payment failure reasons, and detailed retention email series grounded in compensation psychology.\n- Requires subscription context; not designed for single-order or pure transaction cases.\n- Includes clear workflow, context-gathering prompts, and examples of compliant compensation-based messaging.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2d8621c534a806f9a7cf354e6fc475990d1a1f0cf25bf17decb286e61c711994"
+}

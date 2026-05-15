@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/airemove-watermark@0.1.7",
+  "version": "0.1.7",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.airemove_watermark",
+  "skill": {
+    "id": 23282,
+    "skillKey": "clawhub-airemove-watermark",
+    "name": "AI Remove Watermark"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "airemove-watermark",
+    "url": "https://clawhub.ai/skills/airemove-watermark",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/airemove-watermark-98f765f63d45765b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Remove watermarks from images through the Airemovewatermark API. Use when an agent needs to remove a watermark from a local image file or remote image URL, p..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "isees",
+      "userId": "s178pe5mrzzy59tetzrpes4kan83gbf7",
+      "displayName": "isees",
+      "image": "https://avatars.githubusercontent.com/u/19368794?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 345,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.7",
+      "createdAt": 1774006310892,
+      "changelog": "- Updated required environment variables: now only requires API_KEY, with API_BASE_URL optional.\n- Simplified and clarified setup and configuration instructions.\n- Changed download behavior: downloading is now opt-in via --download true.\n- Updated guidance to prefer output_url and clarified recommended command usage.\n- Streamlined workflow and example commands for clarity and user-friendliness.\n- Removed references and support for REMOVE_WATERMARK_API_KEY and REMOVE_WATERMARK_BASE_URL.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7c184b9f688a31ac129456318ef4391dbbf3144ecb21869db865f497d635eac9"
+}

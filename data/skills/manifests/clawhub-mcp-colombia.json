@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50606,
+  "uuid": "skill-clawhub-mcp-colombia",
+  "skillKey": "clawhub-mcp-colombia",
+  "name": "MCP Colombia",
+  "summary": "MCP Colombia Hub — aggregates Colombian services via MCP protocol. Soulprint identity verification integrated — verify Colombian users before sensitive opera...",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_colombia",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Manuel Felipe Arias",
+      "features": [
+        "MCP Colombia Hub — aggregates Colombian services via MCP protocol",
+        "Soulprint identity verification integrated — verify Colombian users before sensitive opera..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mcp-colombia@1.0.9",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83845062?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mcp-colombia",
+      "url": "https://clawhub.ai/skills/mcp-colombia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-colombia",
+    "url": "https://clawhub.ai/skills/mcp-colombia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-colombia-6a2c97afc1ef8a81.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mcp-colombia@1.0.9",
+      "artifactUrl": "data/skills/artifacts/clawhub-mcp-colombia-1.0.9.json",
+      "version": "1.0.9",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9ff087c3bcc90c8f74f78ddd98f2e744c880b20af8fab5ba89d09664cbe1571a",
+      "artifactSizeBytes": 1963
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T04:03:53.213Z"
+}

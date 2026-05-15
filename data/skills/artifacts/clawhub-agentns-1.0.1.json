@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agentns@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentns",
+  "skill": {
+    "id": 11432,
+    "skillKey": "clawhub-agentns",
+    "name": "Domain Name Registration For Agents"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentns",
+    "url": "https://clawhub.ai/skills/agentns",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentns-394c119c5b2ce80a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Register and manage ICANN domains for AI agents. Wallet authentication (SIWE/SIWS), USDC payments on Base or Solana, full DNS management."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vibrant",
+      "userId": "publishers:vibrant",
+      "displayName": "vibrant",
+      "image": "https://avatars.githubusercontent.com/u/323183?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1932,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 2,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1770203290638,
+      "changelog": "- Removed internal scripts and requirements files from the repository.\n- Updated documentation to recommend installation and usage of the external agentns-client Python package.\n- Added examples showing both EVM (Base) and Solana wallet support.\n- Included concise workflow, methods, and error handling for the agentns-client library.\n- Documentation now focuses on Python client usage instead of shell scripts.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c083aa0e7eff277b8f8c9d8a21871a2bd73ddc80cf6ca0e21b3147fcdf9965a1"
+}

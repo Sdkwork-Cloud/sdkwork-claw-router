@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/car-log@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.car_log",
+  "skill": {
+    "id": 68447,
+    "skillKey": "clawhub-car-log",
+    "name": "Car Log"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "car-log",
+    "url": "https://clawhub.ai/skills/car-log",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/car-log-73029052e6c93e28.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "汽车里程管理助手。当用户提到\"记录里程\"、\"记录加油\"、\"记录保养\"、\"里程\"、\"加油\"、\"保养\"、\"油耗\"、\"车辆花费\"等汽车相关记录时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zengkang",
+      "userId": "s17d3tsvrz9f98wy5sn2236q8x83yk8g",
+      "displayName": "zengkang",
+      "image": "https://avatars.githubusercontent.com/u/11866877?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 239,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1777903039670,
+      "changelog": "- No user-visible changes; content and functionality remain the same as the previous version.\n- Version bump only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:524b4e396808474ee4d1ae08d0c9886a64d2d79eefd54072331771f4f505c186"
+}

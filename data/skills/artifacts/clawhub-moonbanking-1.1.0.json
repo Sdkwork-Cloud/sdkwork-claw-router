@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moonbanking@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moonbanking",
+  "skill": {
+    "id": 11904,
+    "skillKey": "clawhub-moonbanking",
+    "name": "Moon Banking"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moonbanking",
+    "url": "https://clawhub.ai/skills/moonbanking",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moonbanking-f4832f34effa4265.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Full access to Moon Banking API endpoints for data about every bank on Earth, including stories, votes, scores, search, country overviews, world overview, crypto-friendliness, and more. Requires MOON_BANKING_API_KEY env var."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "juanwall",
+      "userId": "publishers:juanwall",
+      "displayName": "juanwall",
+      "image": "https://avatars.githubusercontent.com/u/15603363?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1881,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1770852832408,
+      "changelog": "- Added a new endpoint: `/banks/by-hostname` to retrieve banks by hostname, including support for hostname normalization and matching against alternative hostnames.\n- Introduced a `homepage` field with a public skill documentation link.\n- Expanded metadata and requires sections to specify API key requirements and sensitive credential handling.\n- Minor updates to endpoint examples and documentation for clarity.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a1de7caadf277c82e49d5b7e3be37da2bec336003fc274c2671aef695819a0a"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66880,
+  "uuid": "skill-clawhub-ecommerce-openclaw-skills",
+  "skillKey": "clawhub-ecommerce-openclaw-skills",
+  "name": "E-commerce Skills",
+  "summary": "提供电商产品选品调研、市场竞争分析与内容生成，支持淘宝、拼多多、抖音、小红书、1688平台操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ecommerce_openclaw_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GaoBai",
+      "features": [
+        "提供电商产品选品调研、市场竞争分析与内容生成，支持淘宝、拼多多、抖音、小红书、1688平台操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ecommerce-openclaw-skills@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/88292533?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ecommerce-openclaw-skills",
+      "url": "https://clawhub.ai/skills/ecommerce-openclaw-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ecommerce-openclaw-skills",
+    "url": "https://clawhub.ai/skills/ecommerce-openclaw-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ecommerce-openclaw-skills-3f69fcc688c11cd5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ecommerce-openclaw-skills@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ecommerce-openclaw-skills-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:533c5c19fe9a11e2f4b1d6c6fdc9e9c13309c1d021ff5eea58516cc67bd15374",
+      "artifactSizeBytes": 2804
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T20:35:13.742Z"
+}

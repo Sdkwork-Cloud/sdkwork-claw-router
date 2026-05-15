@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57806,
+  "uuid": "skill-clawhub-web-fetcher",
+  "skillKey": "clawhub-web-fetcher",
+  "name": "Web Fetcher",
+  "summary": "Smart web content fetcher - articles and videos from WeChat, Feishu, Bilibili, Zhihu, Toutiao, YouTube, etc. Triggers: '抓取文章', '下载网页', '保存文章', 'fetch URL', '...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web_fetcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alexxiong",
+      "features": [
+        "Smart web content fetcher",
+        "articles and videos from WeChat, Feishu, Bilibili, Zhihu, Toutiao, YouTube, etc",
+        "Triggers: '抓取文章', '下载网页', '保存文章', 'fetch URL', '..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web-fetcher@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/45865830?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web-fetcher",
+      "url": "https://clawhub.ai/skills/web-fetcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web-fetcher",
+    "url": "https://clawhub.ai/skills/web-fetcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web-fetcher-414aec806b93339c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web-fetcher@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-web-fetcher-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f1ef5c98a687de9aa52be88fd61e811610e2148f74f5d01dcb92b5524ab003c8",
+      "artifactSizeBytes": 1931
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T05:13:27.957Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/resume-generator-cn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.resume_generator_cn",
+  "skill": {
+    "id": 62320,
+    "skillKey": "clawhub-resume-generator-cn",
+    "name": "resume-generator-cn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "resume-generator-cn",
+    "url": "https://clawhub.ai/skills/resume-generator-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/resume-generator-cn-255950ed2478ae66.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "简历生成器 - AI 驱动的中英文简历生成、优化、模板（简历中国版）"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "guohongbin-git",
+      "userId": "s171qwkar0v16rk324ta5jz7wd83ts19",
+      "displayName": "Guohongbin",
+      "image": "https://avatars.githubusercontent.com/u/202475309?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1327,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771485069205,
+      "changelog": "- Initial release of resume-generator-cn.\n- AI-powered resume creation and optimization, supporting Chinese and English.\n- Multiple resume templates for technical and product roles.\n- Includes ATS keyword optimization features and suggestions.\n- Provides usage instructions for resume generation, optimization, and export.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d2bcf5b71c391b435fb2c0633e43b7ae98cf3766197e060f776ecb2a2f2f1c7b"
+}

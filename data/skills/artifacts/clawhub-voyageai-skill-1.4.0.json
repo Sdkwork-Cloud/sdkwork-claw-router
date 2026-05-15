@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/voyageai-skill@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.voyageai_skill",
+  "skill": {
+    "id": 11924,
+    "skillKey": "clawhub-voyageai-skill",
+    "name": "Voyage AI CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "voyageai-skill",
+    "url": "https://clawhub.ai/skills/voyageai-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/voyageai-skill-e99e95ce88eb2405.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Voyage AI embedding and reranking CLI integrated with MongoDB Atlas Vector Search. Use for: generating text embeddings, reranking search results, storing embeddings in Atlas, performing vector similarity search, creating vector search inde."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mrlynn",
+      "userId": "publishers:mrlynn",
+      "displayName": "Michael Lynn",
+      "image": "https://avatars.githubusercontent.com/u/192552?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1965,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1770124519386,
+      "changelog": "- Added comprehensive SKILL.md documentation detailing all features, setup instructions, environment variables, and command references.\n- Included usage examples for embeddings, reranking, vector search, model management, batch ingestion, and more.\n- Documented common workflows for typical vector search and retrieval use cases.\n- Listed global flags and linked reference guides for models and vector search patterns.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a23db15407faccbd4dbc1482a74ffb6e8b8007ed1847af3e5bd6ffe2b113a2ac"
+}

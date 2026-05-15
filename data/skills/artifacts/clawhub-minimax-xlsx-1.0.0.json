@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/minimax-xlsx@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.minimax_xlsx",
+  "skill": {
+    "id": 9197,
+    "skillKey": "clawhub-minimax-xlsx",
+    "name": "Minimax Xlsx"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "minimax-xlsx",
+    "url": "https://clawhub.ai/skills/minimax-xlsx",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/minimax-xlsx-475d472744f84be8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "MiniMax spreadsheet production system. Engage for any task that involves tabular data, numeric analysis, or spreadsheet generation. Supports XLSX/XLSM/CSV th..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "krisliu16",
+      "userId": "publishers:krisliu16",
+      "displayName": "Kris",
+      "image": "https://avatars.githubusercontent.com/u/174239318?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3626,
+      "installsAllTime": 107,
+      "installsCurrent": 106,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772859367560,
+      "changelog": "minimax-xlsx 1.0.0 initial release:\n\n- Provides a robust Python + .NET toolkit for spreadsheet production, including openpyxl/pandas automation and formula validation via LibreOffice.\n- CLI suite (MiniMaxXlsx) supports recalculation, formula error checks, OpenXML conformance, info extraction, and structured PivotTable/chart generation.\n- Enforces rigorous five-phase workflow covering data provenance, workbook blueprints, dynamic formulas, and explicit numeric/currency formatting.\n- Includes strict guidance for handling cross-table lookups, array formulas, and external data references.\n- Supplementary guides for pivots, charts, and styling are available on demand.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:e4d0f4cf98c057c75b5a1bb5e8563b26b3c1b26de7a249cb79b7878d6f6315bc"
+}

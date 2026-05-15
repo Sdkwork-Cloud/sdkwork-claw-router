@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tabtab@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tabtab",
+  "skill": {
+    "id": 34779,
+    "skillKey": "clawhub-tabtab",
+    "name": "TabTab Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tabtab",
+    "url": "https://clawhub.ai/skills/tabtab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tabtab-b9da01b622732c08.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use TabTab to run AI-powered tasks in a sandboxed multi-agent environment. Supported capabilities: - General agent: open-ended tasks, writing, research, summ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bjwswang",
+      "userId": "s1759fgr96nqnjvwbcc9x736ts83jsv4",
+      "displayName": "TabTabAI",
+      "image": "https://avatars.githubusercontent.com/u/30621793?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 221,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774255308917,
+      "changelog": "TabTab Skill 1.0.4 Changelog\n\n- Expanded the description to clearly list supported capabilities, including general agent tasks, data analysis, web scraping, chart and slide generation, database Q&A, and more.\n- Added new metadata categories for data analysis, research, and scraping.\n- No code or script changes; update is limited to documentation and skill metadata.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:30ad952bc3e78d8626b0620aa62cfead2dfad266f7fe6084cd558417ebcaee32"
+}

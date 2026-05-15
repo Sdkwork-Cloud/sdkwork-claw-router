@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tiktok-publisher@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tiktok_publisher",
+  "skill": {
+    "id": 37255,
+    "skillKey": "clawhub-tiktok-publisher",
+    "name": "Tiktok Publisher"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tiktok-publisher",
+    "url": "https://clawhub.ai/skills/tiktok-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tiktok-publisher-33428789271d6a30.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish videos and photo carousels to TikTok. Use when the user says 'post to TikTok', 'upload TikTok video', 'create TikTok post', 'publish TikTok carousel'..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "snoopyrain",
+      "userId": "s17caa3d3hyz4mwjdj866q0we983qd7s",
+      "displayName": "snoopyrain",
+      "image": "https://avatars.githubusercontent.com/u/9717776?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 179,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1774622352284,
+      "changelog": "Add detailed Security & Data Handling",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:459c5dcd4eb07ad6a1610206c18efed8e1b18a8db0f79e05c12ef3efe4b54ccd"
+}

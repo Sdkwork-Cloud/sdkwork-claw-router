@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15164,
+  "uuid": "skill-clawhub-paperzilla",
+  "skillKey": "clawhub-paperzilla",
+  "name": "Paperzilla",
+  "summary": "Use the Paperzilla CLI (pz) to browse research projects and feeds, inspect canonical papers and project recommendations, leave feedback, export JSON, and gen...",
+  "version": "0.3.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paperzilla",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Mark Pors 🦖",
+      "features": [
+        "Use the Paperzilla CLI (pz) to browse research projects and feeds, inspect canonical papers and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paperzilla@0.3.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1078320?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paperzilla",
+      "url": "https://clawhub.ai/skills/paperzilla"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paperzilla",
+    "url": "https://clawhub.ai/skills/paperzilla",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paperzilla-1f3025af86075306.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paperzilla@0.3.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-paperzilla-0.3.1.json",
+      "version": "0.3.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:706308c020ada67a6f757a06a2e0da1a6ae0d72f1ee08217a44c3448597318a2",
+      "artifactSizeBytes": 1972
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-02T15:19:37.133Z"
+}

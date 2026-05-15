@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/deep-read-analysis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deep_read_analysis",
+  "skill": {
+    "id": 70879,
+    "skillKey": "clawhub-deep-read-analysis",
+    "name": "Deep Read"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deep-read-analysis",
+    "url": "https://clawhub.ai/skills/deep-read-analysis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deep-read-analysis-ac37d0cd08adf769.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于研究方法深度分析书籍，提炼核心观点、金句，生成实际应用指导和关联常青笔记。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhubao315",
+      "userId": "s17ajr11es8p0560t2ywfsst2x83gkwb",
+      "displayName": "zhubao315",
+      "image": "https://avatars.githubusercontent.com/u/1206487?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 197,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774346626419,
+      "changelog": "Initial release of Deep Read.\n\n- Provides research-driven deep analysis of books, extracting core insights and key quotes.\n- Accepts book title, optional file, and user notes for personalized output.\n- Generates author info, creation context, book outline, content analysis, application guidance, and related evergreen notes.\n- Supports linking user notes to new evergreen notes for better knowledge management.\n- Tags: deep-reading, knowledge-management, research-driven, book-analysis, insights.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e07e67f8b3cca51c74ceacebe24571365422cdaf232c3e68ad4b5ae8ab4db230"
+}

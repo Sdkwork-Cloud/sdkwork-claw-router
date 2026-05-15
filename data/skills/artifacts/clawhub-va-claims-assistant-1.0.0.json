@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/va-claims-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.va_claims_assistant",
+  "skill": {
+    "id": 32945,
+    "skillKey": "clawhub-va-claims-assistant",
+    "name": "VA Claims Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "va-claims-assistant",
+    "url": "https://clawhub.ai/skills/va-claims-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/va-claims-assistant-c41c54ae99af139b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Research and guide VA disability claims for U.S. military veterans. Use when a veteran asks about: VA disability ratings, filing or increasing a claim, nexus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vanyanski",
+      "userId": "publishers:vanyanski",
+      "displayName": "Vanyanski",
+      "image": "https://avatars.githubusercontent.com/u/265104057?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 245,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773703203967,
+      "changelog": "- Initial release of va-claims-assistant skill.\n- Guides U.S. military veterans through the entire VA disability claims process, from initial filing to Board of Veterans Appeals.\n- Provides tools and references for combined rating calculations, nexus letters, condition research, and required documents.\n- Includes workflow for claim type selection, evidence gathering, and appeal strategies.\n- Details C&P exam preparation and PACT Act eligibility for toxic exposure benefits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:98b2f256b5092d283c4612286fb34f68afee3ad27c9bf8a8715a6c37a52fdd85"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24931,
+  "uuid": "skill-clawhub-yahoo-claw",
+  "skillKey": "clawhub-yahoo-claw",
+  "name": "YahooClaw",
+  "summary": "Yahoo Finance API integration for OpenClaw. Use when users ask for stock prices, company financials, historical data, dividends, or market data. Supports rea...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.yahoo_claw",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ClawMem.com",
+      "features": [
+        "Yahoo Finance API integration for OpenClaw",
+        "Use when users ask for stock prices, company financials, historical data, dividends, or market.",
+        "Supports rea..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/yahoo-claw@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262811572?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "yahoo-claw",
+      "url": "https://clawhub.ai/skills/yahoo-claw"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "yahoo-claw",
+    "url": "https://clawhub.ai/skills/yahoo-claw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/yahoo-claw-b286d64ced4d74a0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/yahoo-claw@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-yahoo-claw-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bf14fa3efa88dcd188d731d01222830b66863e05654a2066e6595b5109a65f0f",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T10:40:18.074Z"
+}

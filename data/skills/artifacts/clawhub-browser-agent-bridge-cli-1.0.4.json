@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/browser-agent-bridge-cli@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.browser_agent_bridge_cli",
+  "skill": {
+    "id": 20406,
+    "skillKey": "clawhub-browser-agent-bridge-cli",
+    "name": "Browser Agent Bridge CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "browser-agent-bridge-cli",
+    "url": "https://clawhub.ai/skills/browser-agent-bridge-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/browser-agent-bridge-cli-3a7b1b6d436893f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when you need to control or make actions on the user's chrome tab."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nmadeleidev",
+      "userId": "s1750ew1ttxt7tdcp7qj670vk983m28d",
+      "displayName": "Gregory Potemkin",
+      "image": "https://avatars.githubusercontent.com/u/57456890?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 556,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1773979870019,
+      "changelog": "- Clarified that the operator token can be passed via the --token flag or the BRIDGE_OPERATOR_TOKEN environment variable.\n- Updated CLI usage examples to explicitly demonstrate passing --token for clarity.\n- No functional or code changes; documentation only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0e14897527d88e5579f234e32c7096cbffcfc220a36c8d3d1353c71205ae090f"
+}

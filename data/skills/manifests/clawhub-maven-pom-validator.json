@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36942,
+  "uuid": "skill-clawhub-maven-pom-validator",
+  "skillKey": "clawhub-maven-pom-validator",
+  "name": "Maven Pom Validator",
+  "summary": "Validate and lint Maven pom.xml files for structure, dependencies, plugins, and best practices. Use when asked to lint, validate, check, or audit pom.xml fil...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maven_pom_validator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "charlie-morrison",
+      "features": [
+        "Validate and lint Maven pom.xml files for structure, dependencies, plugins, and best practices",
+        "Use when asked to lint, validate, check, or audit pom.xml fil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maven-pom-validator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271589886?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maven-pom-validator",
+      "url": "https://clawhub.ai/skills/maven-pom-validator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maven-pom-validator",
+    "url": "https://clawhub.ai/skills/maven-pom-validator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maven-pom-validator-b072ee6e908e3d0b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maven-pom-validator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-maven-pom-validator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fae616accd4e0078ac852e55f9e864ceadb04bc5d83f0a3ce30e25a242105107",
+      "artifactSizeBytes": 2080
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-01T00:02:04.377Z"
+}

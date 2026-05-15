@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ironclaw-outreach-sequencer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ironclaw_outreach_sequencer",
+  "skill": {
+    "id": 28914,
+    "skillKey": "clawhub-ironclaw-outreach-sequencer",
+    "name": "Ironclaw Outreach Sequencer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ironclaw-outreach-sequencer",
+    "url": "https://clawhub.ai/skills/ironclaw-outreach-sequencer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ironclaw-outreach-sequencer-15a97258d6039a9b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and manage multi-step outreach sequences — LinkedIn messages, cold emails, and follow-ups with personalization. Use when asked to \"send outreach\", \"cr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "aspenas",
+      "userId": "publishers:aspenas",
+      "displayName": "Patrick Smith",
+      "image": "https://avatars.githubusercontent.com/u/25066580?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 825,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771340072600,
+      "changelog": "Outreach sequencer v1.0.0 — initial release.\n\n- Create and manage multi-step outreach sequences across LinkedIn and email with built-in personalization.\n- Includes ready-to-use sequence templates for LinkedIn, cold email, and multi-channel outreach.\n- Personalizes messages per-lead using DuckDB profile data and specific message generation rules.\n- Automates execution, message delivery, and status tracking via DuckDB.\n- Enforces safety (send limits, opt-out, compliance) and provides analytics after each run.\n- Supports scheduled/automated outreach execution through cron integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:cfecb7774eb51681b6a9203dee7f41224a284ddcb97e526990c16067c1bc069f"
+}

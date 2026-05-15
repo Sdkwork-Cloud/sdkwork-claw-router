@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/xiaohongshu-mcporter-publish@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaohongshu_mcporter_publish",
+  "skill": {
+    "id": 63715,
+    "skillKey": "clawhub-xiaohongshu-mcporter-publish",
+    "name": "小红书图文发布"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaohongshu-mcporter-publish",
+    "url": "https://clawhub.ai/skills/xiaohongshu-mcporter-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaohongshu-mcporter-publish-eaa8a63ceca0b534.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "小红书创作者平台写帖子：mcporter 调用 chrome-devtools-mcp 操作浏览器，禁止 browser 工具。上传图片、填写标题正文，发布由用户手动完成。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yewenwu1",
+      "userId": "publishers:yewenwu1",
+      "displayName": "YEWENWU1",
+      "image": "https://avatars.githubusercontent.com/u/53512982?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1330,
+      "installsAllTime": 7,
+      "installsCurrent": 7,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772437604486,
+      "changelog": "Initial release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b32be08ba5864ca571c0a21fad2dfd183375f08febf5a4d3b095dee503288b44"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46896,
+  "uuid": "skill-clawhub-wechat-mp-article-publisher",
+  "skillKey": "clawhub-wechat-mp-article-publisher",
+  "name": "WeChat Official Account Article Auto-Publisher",
+  "summary": "Complete the creation, editing, and publishing of WeChat Official Account articles through browser automation simulating manual operation. No API key require...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.wechat_mp_article_publisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "OpenLark",
+      "features": [
+        "Complete the creation, editing, and publishing of WeChat Official Account articles through brow.",
+        "No API key require..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/wechat-mp-article-publisher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260858787?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "wechat-mp-article-publisher",
+      "url": "https://clawhub.ai/skills/wechat-mp-article-publisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "wechat-mp-article-publisher",
+    "url": "https://clawhub.ai/skills/wechat-mp-article-publisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/wechat-mp-article-publisher-56ffbbe92605927a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/wechat-mp-article-publisher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-wechat-mp-article-publisher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c3f8439cfee6e710f928466d0e0320681058b29ff44f2cdd00bb9e9a0a034bdc",
+      "artifactSizeBytes": 2537
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T01:58:53.957Z"
+}

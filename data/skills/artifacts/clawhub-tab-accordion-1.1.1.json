@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tab-accordion@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tab_accordion",
+  "skill": {
+    "id": 31522,
+    "skillKey": "clawhub-tab-accordion",
+    "name": "tab-accordion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tab-accordion",
+    "url": "https://clawhub.ai/skills/tab-accordion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tab-accordion-4a2a94790b3c5bc1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "When the user wants to add or optimize tab or accordion components for content organization. Also use when the user mentions \"tab component,\" \"accordion,\" \"e..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kostja94",
+      "userId": "s172p99xpjz6dy9bjqbs8x8d0x83hc45",
+      "displayName": "Kostja Zhang",
+      "image": "https://avatars.githubusercontent.com/u/168074885?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 256,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1774777044141,
+      "changelog": "Batch: tab-accordion through popup-generator",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:91fa6057f1c7cc2ae8331c3d8f430119a4ac7a68486f5ef8f1b89369efca52b1"
+}

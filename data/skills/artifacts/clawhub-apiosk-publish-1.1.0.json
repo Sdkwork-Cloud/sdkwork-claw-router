@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/apiosk-publish@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apiosk_publish",
+  "skill": {
+    "id": 17255,
+    "skillKey": "clawhub-apiosk-publish",
+    "name": "Apiosk Publish"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apiosk-publish",
+    "url": "https://clawhub.ai/skills/apiosk-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apiosk-publish-bd24bcb1d8bc32fe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Publish and manage Apiosk gateway listings with signed wallet authentication, listing-group aware categorization, and update/delete operations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "obcraft",
+      "userId": "publishers:obcraft",
+      "displayName": "obcraft",
+      "image": "https://avatars.githubusercontent.com/u/26278348?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 798,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772134346428,
+      "changelog": "signed wallet auth for register/update/mine/delete and listing-group mapping updates",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:f33dab4e690415db78cc5d2b1162ce5a3df7eb490900b77a4d24090d6fa1134f"
+}

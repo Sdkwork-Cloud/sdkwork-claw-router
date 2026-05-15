@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 35891,
+  "uuid": "skill-clawhub-blocked-page-fallback",
+  "skillKey": "clawhub-blocked-page-fallback",
+  "name": "Blocked Page Fallback",
+  "summary": "Recover when a web page is thin, blocked, JS-heavy, region-limited, or fetch-incompatible by switching to lawful fallback paths instead of stopping early.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.blocked_page_fallback",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1477009639zw-blip",
+      "features": [
+        "Recover when a web page is thin, blocked, JS-heavy, region-limited, or fetch-incompatible by sw."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/blocked-page-fallback@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266505725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "blocked-page-fallback",
+      "url": "https://clawhub.ai/skills/blocked-page-fallback"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "blocked-page-fallback",
+    "url": "https://clawhub.ai/skills/blocked-page-fallback",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/blocked-page-fallback-72d219141abfb25c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/blocked-page-fallback@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-blocked-page-fallback-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c74f61473f8e195350f5b62e81f235ab036c3088f060fa6f2af0eb795eb26f39",
+      "artifactSizeBytes": 2402
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T21:11:29.429Z"
+}

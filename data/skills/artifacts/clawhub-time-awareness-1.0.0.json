@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/time-awareness@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.time_awareness",
+  "skill": {
+    "id": 28027,
+    "skillKey": "clawhub-time-awareness",
+    "name": "Time Awareness"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "time-awareness",
+    "url": "https://clawhub.ai/skills/time-awareness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/time-awareness-d33478ee29431a0a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides accurate current time, market hours, timezone conversions, and prevents stale data by verifying time before responses."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "geoffguides",
+      "userId": "s17fg4wg59ccbjdxmb9n8jktq983mks2",
+      "displayName": "geoffguides",
+      "image": "https://avatars.githubusercontent.com/u/165811177?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 286,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774558650151,
+      "changelog": "Initial release of the Deep Research skill.\n\n- Multi-source research assistant synthesizing web, academic, video, forum, and current event data.\n- Built-in tools: DuckDuckGo, YouTube Content, arXiv, Reddit, browser-based paywall bypass.\n- Supports quick research, deep dive analysis, comparisons, trend tracking, and custom formats.\n- Structured output with confidence ratings, source citing, and actionable insights.\n- Optional API integration for NewsAPI, weather, and finance context.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f59eba15b9e6cc605cca4ba9564037bb064655bac935166640db8358badfc02"
+}

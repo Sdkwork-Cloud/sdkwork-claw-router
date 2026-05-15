@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62657,
+  "uuid": "skill-clawhub-cryptofolio",
+  "skillKey": "clawhub-cryptofolio",
+  "name": "cryptofolio",
+  "summary": "加密资产管理助手 - 通过对话记录持仓、交易、理财，支持导出 CSV/Excel",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cryptofolio",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Christina Fanxy",
+      "features": [
+        "加密资产管理助手",
+        "通过对话记录持仓、交易、理财，支持导出 CSV/Excel"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cryptofolio@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/85915516?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cryptofolio",
+      "url": "https://clawhub.ai/skills/cryptofolio"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cryptofolio",
+    "url": "https://clawhub.ai/skills/cryptofolio",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cryptofolio-6b0a3298eae5307b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cryptofolio@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-cryptofolio-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f567ce1a2fcae1b664c03b823562a0773353dc60f2ecf6a5b57ecaadb40a5d44",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T15:26:44.637Z"
+}

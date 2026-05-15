@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20372,
+  "uuid": "skill-clawhub-personal-cfo",
+  "skillKey": "clawhub-personal-cfo",
+  "name": "Openclaw Skill",
+  "summary": "AI-powered personal finance management system - track expenses, manage budgets, analyze spending patterns, and get smart financial recommendations",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_cfo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Justin Liu",
+      "features": [
+        "AI-powered personal finance management system",
+        "track expenses, manage budgets, analyze spending patterns, and get smart financial recommendati."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-cfo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34432727?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-cfo",
+      "url": "https://clawhub.ai/skills/personal-cfo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-cfo",
+    "url": "https://clawhub.ai/skills/personal-cfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-cfo-5974d1dc6ff073de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-cfo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-cfo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f65b5a2be97acb10c7ea3145e1585b20d6e9406ec1ac10f38691059e626df15",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T22:28:08.873Z"
+}

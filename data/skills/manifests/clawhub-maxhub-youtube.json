@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62202,
+  "uuid": "skill-clawhub-maxhub-youtube",
+  "skillKey": "clawhub-maxhub-youtube",
+  "name": "Maxhub Youtube",
+  "summary": "YouTube/YouTube平台YouTube视频、频道、评论与播放列表数据采集。当用户提到youtube、视频、频道、评论、播放列表等相关需求时激活此Skill。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maxhub_youtube",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xie Hao",
+      "features": [
+        "YouTube/YouTube平台YouTube视频、频道、评论与播放列表数据采集。当用户提到youtube、视频、频道、评论、播放列表等相关需求时激活此Skill。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/maxhub-youtube@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/128963651?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "maxhub-youtube",
+      "url": "https://clawhub.ai/skills/maxhub-youtube"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maxhub-youtube",
+    "url": "https://clawhub.ai/skills/maxhub-youtube",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maxhub-youtube-270a5407ab391496.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/maxhub-youtube@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-maxhub-youtube-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4891f835e63f63fb673b65f4a6b58bffee3a8293b2d539fdb04df7dd1c67a56c",
+      "artifactSizeBytes": 1947
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T15:51:56.939Z"
+}

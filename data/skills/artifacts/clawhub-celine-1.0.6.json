@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/celine@1.0.6",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.celine",
+  "skill": {
+    "id": 69563,
+    "skillKey": "clawhub-celine",
+    "name": "Celine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "celine",
+    "url": "https://clawhub.ai/skills/celine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/celine-c06f5d9112e70a05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "查询 Celine 法国奢侈品牌的产品信息、门店位置、新品发布及设计师资讯，提供时尚购物建议和价格查询。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 203,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.0.6",
+      "createdAt": 1776238076310,
+      "changelog": "- 改进了文档结构和表达，使关键信息更直观易查\n- 用“快速导航”和图标强调主要内容模块\n- 优化“何时使用”场景描述，突出实用性\n- 简化了提示，鼓励直接查阅官方网站",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f91e366159b739eb60f7dfd6d2039d94cca8ecbc877c93720a02dee830ff5d17"
+}

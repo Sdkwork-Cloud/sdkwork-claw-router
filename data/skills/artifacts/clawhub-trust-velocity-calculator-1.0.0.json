@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trust-velocity-calculator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trust_velocity_calculator",
+  "skill": {
+    "id": 20419,
+    "skillKey": "clawhub-trust-velocity-calculator",
+    "name": "Trust Velocity Calculator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trust-velocity-calculator",
+    "url": "https://clawhub.ai/skills/trust-velocity-calculator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trust-velocity-calculator-c45007d8404d6b26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps calculate the rate at which trust in a skill or agent is decaying by combining time elapsed since last verification with the rate of change in behavior..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andyxinweiminicloud",
+      "userId": "publishers:andyxinweiminicloud",
+      "displayName": "andyxinweiminicloud",
+      "image": "https://avatars.githubusercontent.com/u/201528876?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 557,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771752393638,
+      "changelog": "Initial release of trust-velocity-calculator:\n\n- Calculates trust decay for a skill or agent based on both elapsed time since last verification and the rate of behavioral, permission, or dependency changes.\n- Produces a composite trust velocity score, projecting when a trusted credential will become unreliable.\n- Generates detailed trust reports with current score, decay curve, projections, change analysis, and re-verification urgency.\n- Supports comparison of trust velocity between different skills.\n- Integrates factors like verification coverage lag and volatility in change rates, providing actionable insights for reliability management.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a00cd5851b7ab469095958775ebeffddad34fc08dd4c44e4a04fee0a54867d1a"
+}

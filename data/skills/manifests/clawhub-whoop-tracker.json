@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11886,
+  "uuid": "skill-clawhub-whoop-tracker",
+  "skillKey": "clawhub-whoop-tracker",
+  "name": "WHOOP Tracker",
+  "summary": "Access WHOOP fitness tracker data via API, including recovery scores, sleep metrics, workout stats, daily strain, and body measurements. Use when the user asks about their WHOOP data, fitness metrics, recovery status, sleep quality, workou.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.whoop_tracker",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Giacomo Barbieri",
+      "features": [
+        "Access WHOOP fitness tracker data via API, including recovery scores, sleep metrics, workout st.",
+        "Use when the user asks about their WHOOP data, fitness metrics, recovery status, sleep quality,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/whoop-tracker@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/6631681?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "whoop-tracker",
+      "url": "https://clawhub.ai/skills/whoop-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "whoop-tracker",
+    "url": "https://clawhub.ai/skills/whoop-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/whoop-tracker-635be0cddaa231b0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/whoop-tracker@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-whoop-tracker-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cf7fc1157bfecd9661fd95855eceed7eb68c0c7763d2ab42536631ea210ae1f",
+      "artifactSizeBytes": 1989
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-27T13:34:14.250Z"
+}

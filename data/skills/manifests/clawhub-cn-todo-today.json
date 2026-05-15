@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59905,
+  "uuid": "skill-clawhub-cn-todo-today",
+  "skillKey": "clawhub-cn-todo-today",
+  "name": "今日待办生成器",
+  "summary": "cn-todo-today。纯Python标准库，无需API Key。",
+  "version": "1.2.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cn_todo_today",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freedompixels",
+      "features": [
+        "cn-todo-today。纯Python标准库，无需API Key。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cn-todo-today@1.2.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/220853702?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cn-todo-today",
+      "url": "https://clawhub.ai/skills/cn-todo-today"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cn-todo-today",
+    "url": "https://clawhub.ai/skills/cn-todo-today",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cn-todo-today-2eeae1093e08a0fa.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cn-todo-today@1.2.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-cn-todo-today-1.2.4.json",
+      "version": "1.2.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4c4958576605b558582634a7c5817be27c7214ef4e135c77896cfa293eae417",
+      "artifactSizeBytes": 1864
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-02T04:42:33.521Z"
+}

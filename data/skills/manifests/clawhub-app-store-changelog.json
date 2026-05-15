@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8930,
+  "uuid": "skill-clawhub-app-store-changelog",
+  "skillKey": "clawhub-app-store-changelog",
+  "name": "App Store Changelog",
+  "summary": "Create user-facing App Store release notes by collecting and summarizing all user-impacting changes since the last git tag (or a specified ref). Use when asked to generate a comprehensive release changelog, App Store \"What's New\" text, or.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.app_store_changelog",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dimillian",
+      "features": [
+        "Create user-facing App Store release notes by collecting and summarizing all user-impacting cha.",
+        "Use when asked to generate a comprehensive release changelog, App Store \"What's New\" text, or r."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/app-store-changelog@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/535509?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "app-store-changelog",
+      "url": "https://clawhub.ai/skills/app-store-changelog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "app-store-changelog",
+    "url": "https://clawhub.ai/skills/app-store-changelog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/app-store-changelog-c3351aff88d33fc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/app-store-changelog@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-app-store-changelog-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8b38597a7ef9e14a5d68490802630f490db43104ff0ead3b396c721006835418",
+      "artifactSizeBytes": 1977
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-08T09:02:35.875Z"
+}

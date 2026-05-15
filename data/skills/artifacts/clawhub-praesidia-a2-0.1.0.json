@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/praesidia-a2@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.praesidia_a2",
+  "skill": {
+    "id": 13443,
+    "skillKey": "clawhub-praesidia-a2",
+    "name": "Praesidia"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "praesidia-a2",
+    "url": "https://clawhub.ai/skills/praesidia-a2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/praesidia-a2-7b80f22f2d65fa26.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Verify AI agents, check trust scores (0-100), fetch A2A agent cards, discover marketplace agents, apply guardrails for security and compliance. Use when user mentions agent verification, trust scores, agent discovery, A2A protocol, agent i."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "msoica",
+      "userId": "publishers:msoica",
+      "displayName": "msoica",
+      "image": "https://avatars.githubusercontent.com/u/13220606?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1452,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770315744874,
+      "changelog": "Initial release of praesidia-a2 for agent verification, trust scoring, discovery, and guardrails.\n\n- Verify AI agents and check trust scores (0-100) for security and compliance.\n- Discover marketplace agents matching specified tasks or capabilities.\n- Fetch A2A (agent-to-agent) standard protocol cards and agent identity details.\n- List, apply, and check guardrails for content moderation and policy enforcement.\n- Access and use guardrail templates for security, compliance, content, and brand safety.\n- Validate specific content against configured guardrails to assess policy compliance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d8a1bb2285d68f597013eff14dc7257e79ad2a32471d0a4ef13b89211db82615"
+}

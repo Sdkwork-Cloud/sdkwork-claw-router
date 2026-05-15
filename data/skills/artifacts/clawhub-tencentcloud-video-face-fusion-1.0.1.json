@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tencentcloud-video-face-fusion@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tencentcloud_video_face_fusion",
+  "skill": {
+    "id": 67273,
+    "skillKey": "clawhub-tencentcloud-video-face-fusion",
+    "name": "TencentCloud Video Face Fusion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tencentcloud-video-face-fusion",
+    "url": "https://clawhub.ai/skills/tencentcloud-video-face-fusion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tencentcloud-video-face-fusion-074d2c48d8f866bd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过提取两张人脸核心特征并实现自然融合，支持多种风格适配，提升创意互动性和内容传播力，广泛应用于创意营销、娱乐互动和社交分享场景。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neck-cn",
+      "userId": "s172ywgxmjx97dsa2kkf2ckbps83mvn1",
+      "displayName": "败毒",
+      "image": "https://avatars.githubusercontent.com/u/37149246?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 427,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1773062128526,
+      "changelog": "Initial release of tencentcloud-video-face-fusion.\n\n- Provides video face fusion by merging user face images into template videos with high quality.\n- Supports one-stop task (submit + auto poll), job submission only, and job query only modes.\n- Includes detailed environment setup and Agent execution instructions for automation.\n- Offers example commands and usage for single/multiple face fusion.\n- Supports securely using Tencent Cloud API keys through environment variables.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:105093faef602a21c267ba9c429cdb7c0166f17e1b69e5978b48104db7cf4298"
+}

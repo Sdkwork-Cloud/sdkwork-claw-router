@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "daily-backup-system",
+    "displayName": "Daily Backup System",
+    "summary": "Automates daily compressed backups of OpenClaw configs, workspaces, env files, and scripts with 7-day rotation and a step-by-step restore guide.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 349,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773914458075,
+    "updatedAt": 1778312759736
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773914458075,
+    "changelog": "- Initial release of the Daily Backup System for OpenClaw.\n- Automates daily, compressed (tar.gz) backups of all agent configs, workspaces, API keys, scripts, and custom data.\n- Implements 7-day backup rotation with automatic cleanup of older archives.\n- Skips unnecessary files to keep backups efficient (e.g., node_modules, __pycache__, large session transcripts).\n- Generates a RESTORE_GUIDE.md with step-by-step recovery instructions.\n- Designed for zero downtime: runs seamlessly in the background.\n- Includes clear setup and disaster recovery instructions.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "harvnk",
+    "userId": "publishers:harvnk",
+    "displayName": "Harvnk",
+    "image": "https://avatars.githubusercontent.com/u/265591452?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778312759736
+  }
+}

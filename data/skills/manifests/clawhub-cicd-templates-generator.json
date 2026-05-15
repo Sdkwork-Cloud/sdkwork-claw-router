@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38138,
+  "uuid": "skill-clawhub-cicd-templates-generator",
+  "skillKey": "clawhub-cicd-templates-generator",
+  "name": "Cicd Templates Generator",
+  "summary": "Generate production-ready CI/CD workflow files for GitHub Actions, GitLab CI, or Jenkins tailored to chosen language, framework, tests, deploy, and release o...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cicd_templates_generator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shenghoo123-png",
+      "features": [
+        "Generate production-ready CI/CD workflow files for GitHub Actions, GitLab CI, or Jenkins tailor."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cicd-templates-generator@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/265226019?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cicd-templates-generator",
+      "url": "https://clawhub.ai/skills/cicd-templates-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cicd-templates-generator",
+    "url": "https://clawhub.ai/skills/cicd-templates-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cicd-templates-generator-32dfeb553cae5ca4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cicd-templates-generator@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cicd-templates-generator-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4113d8047c134d8df5126623a0efea6ee0a4bed454593e239fe448edb1ffec89",
+      "artifactSizeBytes": 2065
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T04:40:04.611Z"
+}

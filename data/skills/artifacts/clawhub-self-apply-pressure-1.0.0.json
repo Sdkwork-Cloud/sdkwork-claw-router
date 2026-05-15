@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/self-apply-pressure@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.self_apply_pressure",
+  "skill": {
+    "id": 36968,
+    "skillKey": "clawhub-self-apply-pressure",
+    "name": "Self Apply Pressure"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "self-apply-pressure",
+    "url": "https://clawhub.ai/skills/self-apply-pressure",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/self-apply-pressure-dc869e1541e3a418.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prevents AI from giving up prematurely by exhausting all options, verifying fixes, troubleshooting proactively, and providing evidence before concluding."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 201,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776651803443,
+      "changelog": "- Initial release of the \"self-apply-pressure\" skill.\n- Enforces proactive troubleshooting and prevents incomplete or unsupported conclusions.\n- Introduces a pressure escalation system, with mandatory actions triggered by repeated failures.\n- Establishes a five-step methodology to break stuck patterns and drive towards verification.\n- Provides a detailed pre-completion checklist to ensure evidence-based delivery.\n- Outlines clear behavioral standards and rules to prevent slacking, shifting blame, or premature task completion.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2620b58481dcbe04ec5ef7e409880b205938796876dccc8a941bd20638c8e948"
+}

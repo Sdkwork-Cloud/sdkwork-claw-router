@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71674,
+  "uuid": "skill-clawhub-vip-promotion-search",
+  "skillKey": "clawhub-vip-promotion-search",
+  "name": "唯品会活动搜索",
+  "summary": "唯品会（vip.com）促销活动查询技能。当用户想了解唯品会当前或近期活动信息时触发，包括但不限于： 查活动、看特卖、有没有促销、419/618/双11/周年庆/双12等大促信息、品牌特卖专场、限时狂秒、 今天什么在打折、哪些品牌在搞活动、活动什么时候结束等。 返回活动名称、活动时间、参与品牌、活动链接等结构化信...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vip_promotion_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vip",
+      "features": [
+        "唯品会（vip.com）促销活动查询技能。当用户想了解唯品会当前或近期活动信息时触发，包括但不限于： 查活动、看特卖、有没有促销、419/618/双11/周年庆/双12等大促信息、品牌特卖专."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vip-promotion-search@1.0.1",
+      "screenshots": [
+        "https://cdn.sdkwork.example/skills/clawhub/vip-promotion-search/cover.png"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vip-promotion-search",
+      "url": "https://clawhub.ai/skills/vip-promotion-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vip-promotion-search",
+    "url": "https://clawhub.ai/skills/vip-promotion-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vip-promotion-search-ff77afac823f4ec7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vip-promotion-search@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vip-promotion-search-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f62b2641cc6d697c4478a163b3b3af437fb26ed55dd71521115732a65fffaf1e",
+      "artifactSizeBytes": 2451
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-10T07:38:49.836Z"
+}

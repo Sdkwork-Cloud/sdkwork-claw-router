@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59322,
+  "uuid": "skill-clawhub-huo15-openclaw-openai-knowledge-base",
+  "skillKey": "clawhub-huo15-openclaw-openai-knowledge-base",
+  "name": "Huo15 Openclaw Openai Knowledge Base",
+  "summary": "基于 Karpathy LLM Knowledge Bases 方案。raw → LLM编译 → wiki，LLM 当 librarian 维护双链/索引/日志/合成式问答，支持 Obsidian 同步、知识图谱、微信公众号/GitHub 多源入库，以及 agent/shared 双作用域。触发词：知识库、入库、...",
+  "version": "2.8.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.huo15_openclaw_openai_knowledge_base",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Job Zhao",
+      "features": [
+        "基于 Karpathy LLM Knowledge Bases 方案。raw → LLM编译 → wiki，LLM 当 librarian 维护双链/索引/日志/合成式问答，支持 Obsid."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/huo15-openclaw-openai-knowledge-base@2.8.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/13188275?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "huo15-openclaw-openai-knowledge-base",
+      "url": "https://clawhub.ai/skills/huo15-openclaw-openai-knowledge-base"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "huo15-openclaw-openai-knowledge-base",
+    "url": "https://clawhub.ai/skills/huo15-openclaw-openai-knowledge-base",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/huo15-openclaw-openai-knowledge-base-fc409f39991251d6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/huo15-openclaw-openai-knowledge-base@2.8.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-huo15-openclaw-openai-knowledge-base-2.8.0.json",
+      "version": "2.8.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:71c86e792506f06e8e3452d4db94ae512293e8e6e36cc396dffc2b0a8bd32eb9",
+      "artifactSizeBytes": 2787
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-04T02:24:34.292Z"
+}

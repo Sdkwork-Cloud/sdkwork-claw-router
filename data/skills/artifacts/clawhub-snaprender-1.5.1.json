@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/snaprender@1.5.1",
+  "version": "1.5.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.snaprender",
+  "skill": {
+    "id": 20402,
+    "skillKey": "clawhub-snaprender",
+    "name": "SnapRender"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "snaprender",
+    "url": "https://clawhub.ai/skills/snaprender",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/snaprender-4ffce3e45551a17e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Give your agent eyes on the web — screenshot any URL as an image file. Supports device emulation (iPhone, iPad, Pixel, MacBook), dark mode, full-page scroll,..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "user0856",
+      "userId": "s17e7672gb2hphcyvze6v2g6h184h465",
+      "displayName": "User0856",
+      "image": "https://avatars.githubusercontent.com/u/42377378?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1131,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.5.1",
+      "createdAt": 1778112343034,
+      "changelog": "Update free tier from 500 to 200 screenshots/month",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:99d3386f661a892b19077123e69e38ba4864d6270e69f4af5e8c78d999ddfd0c"
+}

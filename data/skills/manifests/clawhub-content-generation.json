@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9522,
+  "uuid": "skill-clawhub-content-generation",
+  "skillKey": "clawhub-content-generation",
+  "name": "Content Generation",
+  "summary": "Generate high-quality content across multiple formats. Create articles, reports, social media posts, marketing copy, and other content types with professiona...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_generation",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tobisamaa",
+      "features": [
+        "Generate high-quality content across multiple formats",
+        "Create articles, reports, social media posts, marketing copy, and other content types with prof."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-generation@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/62774845?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-generation",
+      "url": "https://clawhub.ai/skills/content-generation"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-generation",
+    "url": "https://clawhub.ai/skills/content-generation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-generation-e6094f5807b1761d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-generation@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-generation-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:98428989b95a78c70564acabfffe002d8058d542c7c4775d9e1b54e26d86610e",
+      "artifactSizeBytes": 2347
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T20:05:17.777Z"
+}

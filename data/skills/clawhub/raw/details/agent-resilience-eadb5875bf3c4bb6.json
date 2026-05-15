@@ -1,0 +1,44 @@
+{
+  "skill": {
+    "slug": "agent-resilience",
+    "displayName": "agent resilience",
+    "summary": "Agent resilience patterns for surviving context loss, capturing critical details, and self-improvement. Use when: starting complex/long sessions, asked to 'r...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 383,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773399762471,
+    "updatedAt": 1778308039159
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1773399762471,
+    "changelog": "Initial release providing resilient patterns for agent memory and self-improvement:\n\n- Introduces Write-Ahead Logging (WAL) for capturing corrections, key decisions, and details before responding.\n- Specifies structure and use of `SESSION-STATE.md` as active task memory.\n- Details the working buffer protocol for handling potential context loss in long sessions.\n- Defines compaction and recovery steps to restore state from logs and buffers.\n- Includes guardrails for self-improvement and a checklist for session reliability.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "xinian5216",
+    "userId": "publishers:xinian5216",
+    "displayName": "xinian5216",
+    "image": "https://avatars.githubusercontent.com/u/59920440?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778308039159
+  }
+}

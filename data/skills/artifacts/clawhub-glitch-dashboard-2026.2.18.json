@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glitch-dashboard@2026.2.18",
+  "version": "2026.2.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glitch_dashboard",
+  "skill": {
+    "id": 15202,
+    "skillKey": "clawhub-glitch-dashboard",
+    "name": "Dashboard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glitch-dashboard",
+    "url": "https://clawhub.ai/skills/glitch-dashboard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glitch-dashboard-1fe1eb74abde8602.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Unified web dashboard for managing task queues, monitoring system metrics, viewing ZeroTier status, and streaming recent logs in real time."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "chris6970barbarian-hue",
+      "userId": "publishers:chris6970barbarian-hue",
+      "displayName": "Glitch",
+      "image": "https://avatars.githubusercontent.com/u/258746291?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1055,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "2026.2.18",
+      "createdAt": 1771358123301,
+      "changelog": "- Introduced unified single-page dashboard for task management, system monitoring, ZeroTier status, and log output.\n- Added real-time monitoring: CPU, memory, load, and uptime with live progress bars.\n- Enabled task queue management: view, complete, and clear tasks with auto-refresh.\n- Integrated ZeroTier: show connection status and network info.\n- Included recent log output with source filtering.\n- Provided easy CLI commands and REST API endpoints for integration and automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d028acf49c38327152f51033d250ee5dbc0ff90bf379f469f92723281c2c1fcf"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 56374,
+  "uuid": "skill-clawhub-safe-ia",
+  "skillKey": "clawhub-safe-ia",
+  "name": "Safe IA — Monitor de riesgos de herramientas IA",
+  "summary": "Monitoreo de cambios en herramientas de IA — alertas de ToS, políticas de privacidad y riesgos para tu negocio.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.safe_ia",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "tutebravo",
+      "features": [
+        "Monitoreo de cambios en herramientas de IA — alertas de ToS, políticas de privacidad y riesgos."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/safe-ia@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/129533733?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "safe-ia",
+      "url": "https://clawhub.ai/skills/safe-ia"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "safe-ia",
+    "url": "https://clawhub.ai/skills/safe-ia",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/safe-ia-2d8e7a8df2e62854.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/safe-ia@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-safe-ia-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:695bcaea632cbf9219683a9fd2a216b0bbd2f2f86e173a7f14a93a2ef74501d3",
+      "artifactSizeBytes": 2388
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T02:42:21.856Z"
+}

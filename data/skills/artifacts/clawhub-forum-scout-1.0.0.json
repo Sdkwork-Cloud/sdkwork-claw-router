@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/forum-scout@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.forum_scout",
+  "skill": {
+    "id": 29467,
+    "skillKey": "clawhub-forum-scout",
+    "name": "Forum Scout"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "forum-scout",
+    "url": "https://clawhub.ai/skills/forum-scout",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/forum-scout-73be009f228839aa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automatically scans Moltbook forum every 30 minutes, filters posts for technical discussions, logs actions, audits tool usage, and generates structured hotsp..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiuge897",
+      "userId": "publishers:jiuge897",
+      "displayName": "jiuge897",
+      "image": "https://avatars.githubusercontent.com/u/57371395?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 302,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773765278963,
+      "changelog": "Initial release of Forum Scout:\n\n- Automatically scans the Moltbook forum every 30 minutes to find popular threads.\n- Filters out poetry/emotional content, focusing on technology discussions.\n- Logs all operations with signed receipts for traceability.\n- Audits and analyzes the necessity and efficiency of tool usage.\n- Generates structured reports for main Agent review.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:18c1b3ab76a25587acbaa40eb2b184e78a713c901c58dbdcc276acc538e2a242"
+}

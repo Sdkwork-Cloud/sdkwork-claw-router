@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "clawrouter-open-sdk",
+    "version": "0.1.0",
+    "language": "swift",
+    "sdkType": "ai",
+    "packageName": "ClawRouterOpenSdk"
+  },
+  "changeFingerprint": "fd6091e74c3f89f4226dc19ec34a18b2db8d7dfdf06aabb2f0177a6e168b0b07",
+  "changes": {
+    "createdGeneratedFiles": [],
+    "updatedGeneratedFiles": [
+      "README.md",
+      "Sources/HTTP/HttpClient.swift"
+    ],
+    "unchangedGeneratedFiles": [
+      "bin/publish-core.mjs",
+      "bin/publish.ps1",
+      "bin/publish.sh",
+      "CHANGELOG.md",
+      "LICENSE",
+      "Package.swift",
+      "sdkwork-sdk.json",
+      "Sources/API/API.swift",
+      "Sources/API/ApiPaths.swift",
+      "Sources/API/AssistantsApi.swift",
+      "Sources/API/AudioApi.swift",
+      "Sources/API/AudioSunoApi.swift",
+      "Sources/API/BatchesAnthropicApi.swift",
+      "Sources/API/BatchesApi.swift",
+      "Sources/API/ChatAnthropicApi.swift",
+      "Sources/API/ChatApi.swift",
+      "Sources/API/ChatGoogleApi.swift",
+      "Sources/API/CompletionApi.swift",
+      "Sources/API/ContainerApi.swift",
+      "Sources/API/ConversationApi.swift",
+      "Sources/API/EmbeddingsApi.swift",
+      "Sources/API/EmbeddingsGoogleApi.swift",
+      "Sources/API/EvalApi.swift",
+      "Sources/API/FilesAnthropicApi.swift",
+      "Sources/API/FilesApi.swift",
+      "Sources/API/FilesGoogleApi.swift",
+      "Sources/API/FineTuningApi.swift",
+      "Sources/API/ImagesApi.swift",
+      "Sources/API/ImagesMidjourneyApi.swift",
+      "Sources/API/ImagesNanoBananaApi.swift",
+      "Sources/API/ImagesViduApi.swift",
+      "Sources/API/ModelsApi.swift",
+      "Sources/API/ModerationsApi.swift",
+      "Sources/API/OrganizationApi.swift",
+      "Sources/API/ProjectApi.swift",
+      "Sources/API/RealtimeApi.swift",
+      "Sources/API/ResponsesApi.swift",
+      "Sources/API/ResponsesGoogleApi.swift",
+      "Sources/API/SkillApi.swift",
+      "Sources/API/ThreadsApi.swift",
+      "Sources/API/UploadsApi.swift",
+      "Sources/API/VectorStoresApi.swift",
+      "Sources/API/VideoApi.swift",
+      "Sources/API/VideosKlingApi.swift",
+      "Sources/API/VideosViduApi.swift",
+      "Sources/API/VideosVolcengineApi.swift",
+      "Sources/Models.swift",
+      "Sources/SdkworkAiClient.swift"
+    ],
+    "deletedGeneratedFiles": [],
+    "scaffoldedFiles": [],
+    "preservedScaffoldFiles": [
+      "custom/README.md"
+    ],
+    "backedUpFiles": []
+  },
+  "impact": {
+    "schemaVersion": 1,
+    "areas": [
+      "runtime",
+      "documentation"
+    ],
+    "details": [
+      {
+        "area": "runtime",
+        "paths": [
+          "Sources/HTTP/HttpClient.swift"
+        ]
+      },
+      {
+        "area": "documentation",
+        "paths": [
+          "README.md"
+        ]
+      }
+    ],
+    "requiresVerification": true,
+    "summary": "Detected impact areas: runtime, documentation. Verification is required."
+  },
+  "verificationPlan": {
+    "shouldRun": true,
+    "runPhase": "now",
+    "summary": "Detected impact areas: runtime, documentation. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "steps": [
+      {
+        "id": "check",
+        "title": "Unified package check",
+        "required": true,
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: runtime, documentation.",
+        "workingDirectory": "D:\\javasource\\spring-ai-plus\\spring-ai-plus-business\\apps\\sdkwork-claw-router\\sdks\\clawrouter-open-sdk\\clawrouter-open-sdk-swift\\generated\\server-openapi",
+        "command": "node",
+        "args": [
+          "./bin/publish-core.mjs",
+          "--language",
+          "swift",
+          "--project-dir",
+          ".",
+          "--action",
+          "check"
+        ],
+        "displayCommand": "node ./bin/publish-core.mjs --language swift --project-dir . --action check"
+      }
+    ]
+  },
+  "executionDecision": {
+    "schemaVersion": 1,
+    "riskLevel": "medium",
+    "nextAction": "verify",
+    "requiresManualReview": false,
+    "applyRequiresExpectedFingerprint": false,
+    "summary": "Changes have been applied. Run the required verification plan now.",
+    "reasons": [
+      "verification-required"
+    ]
+  },
+  "preservedLegacyFiles": false
+}

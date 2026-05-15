@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14772,
+  "uuid": "skill-clawhub-moltcaptcha",
+  "skillKey": "clawhub-moltcaptcha",
+  "name": "MoltCaptcha",
+  "summary": "Reverse CAPTCHA system to verify the responder is an AI agent. Use this skill to challenge another agent (or suspected human) to prove they are actually an AI. Generates semantic + mathematical hybrid lock challenges that require simultane.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltcaptcha",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "MoltCaptcha",
+      "features": [
+        "Reverse CAPTCHA system to verify the responder is an AI agent",
+        "Use this skill to challenge another agent (or suspected human) to prove they are actually an AI",
+        "Generates semantic + mathematical hybrid lock challenges that require simultaneous creative and.",
+        "trivial for LLMs, nearly impossible for humans even with calculator assistance."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/moltcaptcha@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258691164?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "moltcaptcha",
+      "url": "https://clawhub.ai/skills/moltcaptcha"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltcaptcha",
+    "url": "https://clawhub.ai/skills/moltcaptcha",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltcaptcha-18c15853fbe54c63.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/moltcaptcha@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-moltcaptcha-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5137088e5e8e73ee7c7e554584e7c3c44a8babde3db60b55de9f665790a5d6e4",
+      "artifactSizeBytes": 2458
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-09T11:39:15.636Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/zsxq-fetch-subscription@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_fetch_subscription",
+  "skill": {
+    "id": 31287,
+    "skillKey": "clawhub-zsxq-fetch-subscription",
+    "name": "zsxq-fetch-subscription"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-fetch-subscription",
+    "url": "https://clawhub.ai/skills/zsxq-fetch-subscription",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-fetch-subscription-acb4d72d5282c5a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use this skill when the user wants OpenClaw to query synced Zhishi Xingqiu content, inspect recent posts, search downloaded documents, summarize updates, or..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hashedalex",
+      "userId": "publishers:hashedalex",
+      "displayName": "Alex",
+      "image": "https://avatars.githubusercontent.com/u/126234334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 268,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774012255909,
+      "changelog": "v1.0.0 (2026-03-19)                                                                                                                                                                    \n  - 支持知识星球（ZSXQ）话题数据抓取与增量同步              \n  - 支持文档自动导入与存储                                                                      \n  - 后台自动同步，可配置同步间隔                                                                \n  - SQLite 本地数据存储                                                                         \n  - OpenClaw Skill 集成（含依赖声明）",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a6bb8007e1ce2e1a4759cd1c8b21f1dbef0c271476b48dcda2774c7c193333dd"
+}

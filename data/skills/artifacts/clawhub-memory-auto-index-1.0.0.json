@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memory-auto-index@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memory_auto_index",
+  "skill": {
+    "id": 61258,
+    "skillKey": "clawhub-memory-auto-index",
+    "name": "Memory Auto Index"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memory-auto-index",
+    "url": "https://clawhub.ai/skills/memory-auto-index",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memory-auto-index-7a0a607ac580be0d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "自动为 MEMORY.md 和 memory/ 目录下的记忆文件添加索引条目，支持标签分类和关键决策追踪"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengnessly",
+      "userId": "s17c49z65097738pce7c2fq8f183m3zc",
+      "displayName": "Mengnessly",
+      "image": "https://avatars.githubusercontent.com/u/127611906?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776335556782,
+      "changelog": "memory-auto-index 1.0.0\n\n- Initial release with automatic indexing for MEMORY.md and memory/ files.\n- Supports tag extraction, key decision tracking, and duplicate entry prevention.\n- Provides both script-based and automatic trigger operation modes.\n- Introduces a predefined tag system and index formatting conventions.\n- Includes maintenance scripts for cleaning up invalid references and updating line numbers.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:2ccb92170218ab711975677a31ac7559dabeaf5b240be303060f34e4e79a9eac"
+}

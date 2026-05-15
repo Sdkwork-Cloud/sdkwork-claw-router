@@ -1,0 +1,47 @@
+{
+  "skill": {
+    "slug": "personaldatahub",
+    "displayName": "Personaldatahub",
+    "summary": "Pull personal data (emails, issues) and propose outbound actions (drafts, replies) through the PersonalDataHub access control gateway. Data is filtered, reda...",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 600,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1772020124946,
+    "updatedAt": 1778388137718
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1772020124946,
+    "changelog": "Initial release of PersonalDataHub.\n\n- Enables secure access to personal data from Gmail, GitHub, and other sources via an access control gateway.\n- Data access and outbound actions are filtered, redacted, and staged based on owner-defined policies.\n- Supports pulling emails, drafting/replying/sending emails, and searching GitHub issues and pull requests (all require respective OAuth connections).\n- All outbound actions require explicit owner approval before execution.\n- Includes MCP server for tool discovery and fallback to direct API usage.\n- Automated setup and configuration for easy installation and integration.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "haojian",
+    "userId": "publishers:haojian",
+    "displayName": "Haojian Jin",
+    "image": "https://avatars.githubusercontent.com/u/991519?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.env_credential_access",
+      "suspicious.llm_suspicious",
+      "suspicious.potential_exfiltration",
+      "suspicious.vt_suspicious"
+    ],
+    "summary": "Detected: suspicious.env_credential_access, suspicious.llm_suspicious, suspicious.potential_exfiltration (+1 more)",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778388137718
+  }
+}

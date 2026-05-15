@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/analytics-and-advisory-intelligence@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.analytics_and_advisory_intelligence",
+  "skill": {
+    "id": 16985,
+    "skillKey": "clawhub-analytics-and-advisory-intelligence",
+    "name": "Analytics And Advisory Intelligence"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "analytics-and-advisory-intelligence",
+    "url": "https://clawhub.ai/skills/analytics-and-advisory-intelligence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/analytics-and-advisory-intelligence-76f8f3050f2ae0b1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Cross-client analytics for Greek accounting firms. Surfaces trends, anomalies, and risks across financial data. Read-only, outputs to /data/reports/."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "satoshistackalotto",
+      "userId": "publishers:satoshistackalotto",
+      "displayName": "Stems",
+      "image": "https://avatars.githubusercontent.com/u/70470779?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 829,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1771681839304,
+      "changelog": "Initial public release providing cross-client analytics and advisory insights for Greek accounting firms.\n\n- Surfaces trends, anomalies, and risks across client financial data.\n- Provides portfolio-level and client-level analysis with plain-English, confidence-rated findings.\n- Read-only operation; outputs reports to /data/reports/analytics/.\n- No external services or credentials required; analyzes local financial data only.\n- Includes OpenClaw commands for trend analysis, risk scoring, benchmarking, anomaly detection, and scheduled advisory reports.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c811e2916dcf7ba1ced8ad4f1550a2ac50f5a22145b217e9c69351b39aa5d5b8"
+}

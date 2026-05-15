@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-otc-trade@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_otc_trade",
+  "skill": {
+    "id": 15647,
+    "skillKey": "clawhub-agent-otc-trade",
+    "name": "Uniswap Agent Otc Trade"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-otc-trade",
+    "url": "https://clawhub.ai/skills/agent-otc-trade",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-otc-trade-b47d82a9eb4786ac.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Facilitate over-the-counter trades between agents using Uniswap as the settlement layer. Use when user wants to trade tokens directly with another agent, settle an agent-to-agent trade through Uniswap, or execute an OTC swap with a specifi."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wpank",
+      "userId": "publishers:wpank",
+      "displayName": "wpank",
+      "image": "https://avatars.githubusercontent.com/u/9498646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 993,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1770744705873,
+      "changelog": "agent-otc-trade v0.1.0\n\n- Initial release.\n- Enables direct, over-the-counter token trades between agents, using Uniswap as the settlement layer.\n- Verifies counterparty agent identity via ERC-8004 and checks trust tiers.\n- Uses Uniswap pool pricing for fair, transparent OTC price discovery.\n- Supports atomic, on-chain settlement—including cross-chain trades using ERC-7683 intents.\n- Automatically records an audit trail for every trade, capturing counterparties, terms, and transaction details.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9797e5637b29af93608e8b252653a813a622151de38928ad5cc1704ca1c7cd23"
+}

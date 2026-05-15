@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14948,
+  "uuid": "skill-clawhub-cascadeflow",
+  "skillKey": "clawhub-cascadeflow",
+  "name": "cascadeflow: Cost + Latency Reduction",
+  "summary": "OpenClaw-native domain cascading. Use when users need cost/latency reduction via cascading, domain-aware model assignment, OpenClaw-native event handling, an...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cascadeflow",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sascha Buehrle",
+      "features": [
+        "OpenClaw-native domain cascading",
+        "Use when users need cost/latency reduction via cascading, domain-aware model assignment, OpenCl."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cascadeflow@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47737812?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cascadeflow",
+      "url": "https://clawhub.ai/skills/cascadeflow"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cascadeflow",
+    "url": "https://clawhub.ai/skills/cascadeflow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cascadeflow-3a559be66e115163.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cascadeflow@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-cascadeflow-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6f48ff58c8252d0a7f9cf7cb0bcb219c52757aa55b63e5fe6dd461624b57b92c",
+      "artifactSizeBytes": 2034
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T09:45:29.095Z"
+}

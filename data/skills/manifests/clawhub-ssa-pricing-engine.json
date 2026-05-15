@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61877,
+  "uuid": "skill-clawhub-ssa-pricing-engine",
+  "skillKey": "clawhub-ssa-pricing-engine",
+  "name": "Pricing Engine",
+  "summary": "动态定价引擎 — 根据 LME 铜价、数量阶梯、客户等级、实时汇率自动计算报价，集成 quotation-workflow 生成报价单",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ssa_pricing_engine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Jaden's built a claw",
+      "features": [
+        "动态定价引擎 — 根据 LME 铜价、数量阶梯、客户等级、实时汇率自动计算报价，集成 quotation-workflow 生成报价单"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ssa-pricing-engine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/64246343?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ssa-pricing-engine",
+      "url": "https://clawhub.ai/skills/ssa-pricing-engine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ssa-pricing-engine",
+    "url": "https://clawhub.ai/skills/ssa-pricing-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ssa-pricing-engine-2e9450c6241d1804.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ssa-pricing-engine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ssa-pricing-engine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ea7bc75f43fe65e82d54ff0a411b813c7097907eb5fa9bad4e2d372e9337bbc2",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T10:44:33.963Z"
+}

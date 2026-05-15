@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/china-top-doctor-referral@2.1.5",
+  "version": "2.1.5",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_top_doctor_referral",
+  "skill": {
+    "id": 18674,
+    "skillKey": "clawhub-china-top-doctor-referral",
+    "name": "China Top Doctor Referral"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-top-doctor-referral",
+    "url": "https://clawhub.ai/skills/china-top-doctor-referral",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-top-doctor-referral-c186e38518c25ece.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OceanBus-powered top-tier hospital specialist referral service for high-end medical insurance clients. Use when users need to search 1,600+ leading specialis..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ryanbihai",
+      "userId": "s171em0jpp8yeqxqds2n145fyx83q5q8",
+      "displayName": "ryanbihai",
+      "image": "https://avatars.githubusercontent.com/u/89728875?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 559,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 31
+    },
+    "latestVersion": {
+      "version": "2.1.5",
+      "createdAt": 1778291006315,
+      "changelog": "Three-tier DoctorDataSvc discovery: Yellow Pages -> local cache -> skill default OpenID. New users no longer need manual config to bootstrap.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca621069dcc97e8ff7b12a44a3bfa0ed783cdd0cb0c1089a3272054e611d1a88"
+}

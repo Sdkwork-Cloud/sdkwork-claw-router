@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62803,
+  "uuid": "skill-clawhub-period-tracker",
+  "skillKey": "clawhub-period-tracker",
+  "name": "经期管理 / Period Tracker",
+  "summary": "经期管理 / Period Tracker - 女性健康周期追踪工具。全自然语言交互，无需记命令。功能：(1) 经期记录 - 说'月经来了'即可记录；(2) 症状记录 - 说'痛经2级'或'心情烦躁'；(3) 周期预测 - 说'下次月经什么时候'；(4) 排卵期管理 - 受孕概率日历；(5) 定时提醒 - 说'帮...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.period_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sosshuai",
+      "features": [
+        "经期管理 / Period Tracker",
+        "女性健康周期追踪工具。全自然语言交互，无需记命令。功能：(1) 经期记录",
+        "说'月经来了'即可记录；(2) 症状记录",
+        "说'痛经2级'或'心情烦躁'；(3) 周期预测"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/period-tracker@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264465433?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "period-tracker",
+      "url": "https://clawhub.ai/skills/period-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "period-tracker",
+    "url": "https://clawhub.ai/skills/period-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/period-tracker-76d303e1edf37de3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/period-tracker@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-period-tracker-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a38baa97b3bb973f5f625b5fe362cdd6a41604546baa3ed3741b0e06581eab11",
+      "artifactSizeBytes": 2170
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T13:59:27.454Z"
+}

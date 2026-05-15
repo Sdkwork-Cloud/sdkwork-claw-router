@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-to-video-ai-japanese@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_to_video_ai_japanese",
+  "skill": {
+    "id": 45910,
+    "skillKey": "clawhub-text-to-video-ai-japanese",
+    "name": "Text To Video Ai Japanese"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-to-video-ai-japanese",
+    "url": "https://clawhub.ai/skills/text-to-video-ai-japanese",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-to-video-ai-japanese-eee792fb8a4583d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a three-sentence Japanese product description into 1080p Japanese text videos just by typing what you need. Whether it's generating videos from Japanese..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 130,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776351733003,
+      "changelog": "- Initial release of Text to Video AI Japanese.\n- Instantly generate 1080p videos from Japanese product descriptions or text prompts.\n- Automatic cloud rendering—no manual timeline or export settings required.\n- Starter credits granted if no API token is detected; sessions managed seamlessly.\n- Supports video uploads, custom backgrounds, audio tracks, and text overlays.\n- Simple commands for export, credit balance, state viewing, and uploads.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01e953eb61c00e935e56326f406a9bf2e04bf41b24d7e3e0f9e5c1f15eac4064"
+}

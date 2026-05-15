@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vanemarketing@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vanemarketing",
+  "skill": {
+    "id": 72955,
+    "skillKey": "clawhub-vanemarketing",
+    "name": "品牌热点营销助手"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vanemarketing",
+    "url": "https://clawhub.ai/skills/vanemarketing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vanemarketing-3890469f52a52596.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI 智能品牌营销工具：输入品牌名称，自动采集全网数据、分析当日热点、生成小红书图文内容"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dongxiaoke",
+      "userId": "s171tzx2m3zw1qz6gp72wb9qe583w747",
+      "displayName": "qb-claw",
+      "image": "https://avatars.githubusercontent.com/u/31847271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 129,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774852288515,
+      "changelog": "Vane Marketing - 品牌热点营销助手 1.0.0\n\n- 首次发布：输入品牌名称，自动采集全网数据、分析当日热点、AI生成小红书风格图文内容。\n- 强制 App-Key 验证和余额检测，确保安全用量。\n- 每次生成内容消耗100额度，余额不足或验证失败将有友好提示。\n- 全流程覆盖：品牌分析、热点匹配、内容输出，含风险提醒与错误处理说明。\n- 明确建议手动发布至小红书，避免因自动代理发布导致账号风险。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:210b947c5c34592d9c55dfa87ae48d686789df76b6bf9a759cece93295836e5c"
+}

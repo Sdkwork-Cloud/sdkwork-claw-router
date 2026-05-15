@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/social-sentiment@1.4.0",
+  "version": "1.4.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.social_sentiment",
+  "skill": {
+    "id": 9233,
+    "skillKey": "clawhub-social-sentiment",
+    "name": "Social Sentiment"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "social-sentiment",
+    "url": "https://clawhub.ai/skills/social-sentiment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/social-sentiment-2bc4fc2314c59461.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sentiment analysis for brands and products across Twitter, Reddit, and Instagram. Monitor public opinion, track brand reputation, detect PR crises, surface complaints and praise at scale — analyze 70K+ posts with bulk CSV export and Python."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "atyachin",
+      "userId": "s17ds4vnj4xesk3c3hvqm5wr5x85pztp",
+      "displayName": "Avital Yachin",
+      "image": "https://avatars.githubusercontent.com/u/2669531?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 4335,
+      "installsAllTime": 12,
+      "installsCurrent": 11,
+      "stars": 4,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.4.0",
+      "createdAt": 1770892695608,
+      "changelog": "Added setup section, removed curl",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b3bb8ba1e9145493588c70d342c07ea28ca21b869417d3dcbff2b0f08f047409"
+}

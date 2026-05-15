@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63921,
+  "uuid": "skill-clawhub-openclaw-setup-service",
+  "skillKey": "clawhub-openclaw-setup-service",
+  "name": "OpenClaw安装服务",
+  "summary": "快速安装和配置 OpenClaw，支持微信、飞书、钉钉 Channel 设置及心跳和自动化任务管理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_setup_service",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "快速安装和配置 OpenClaw，支持微信、飞书、钉钉 Channel 设置及心跳和自动化任务管理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-setup-service@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-setup-service",
+      "url": "https://clawhub.ai/skills/openclaw-setup-service"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-setup-service",
+    "url": "https://clawhub.ai/skills/openclaw-setup-service",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-setup-service-84093523d9ffef17.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-setup-service@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-setup-service-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4d9646d90213fe1bc2953bb89b5b28c358fc303733d60e1f9d4304632d177b77",
+      "artifactSizeBytes": 1922
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T13:54:26.207Z"
+}

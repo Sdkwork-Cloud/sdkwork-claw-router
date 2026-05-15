@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41093,
+  "uuid": "skill-clawhub-appearance-score",
+  "skillKey": "clawhub-appearance-score",
+  "name": "appearance score",
+  "summary": "Multi-face appearance / attractiveness scoring: POST multipart image to Synerunify predict API. Apply when the user asks in English (e.g. face attractiveness...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.appearance_score",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "QiusHosens",
+      "features": [
+        "Multi-face appearance / attractiveness scoring: POST multipart image to Synerunify predict API",
+        "Apply when the user asks in English (e.g",
+        "face attractiveness..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/appearance-score@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10720972?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "appearance-score",
+      "url": "https://clawhub.ai/skills/appearance-score"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "appearance-score",
+    "url": "https://clawhub.ai/skills/appearance-score",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/appearance-score-33aab1b645c3c410.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/appearance-score@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-appearance-score-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:11b772ad0f5540c48690bb46afa267317e4ac2a58f359dacbb5b76fa74f25cc1",
+      "artifactSizeBytes": 2309
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-26T14:47:40.766Z"
+}

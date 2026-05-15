@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44328,
+  "uuid": "skill-clawhub-ai-subtitles-extension",
+  "skillKey": "clawhub-ai-subtitles-extension",
+  "name": "Ai Subtitles Extension",
+  "summary": "Get captioned video files ready to post, without touching a single slider. Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_subtitles_extension",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "linmillsd7",
+      "features": [
+        "Get captioned video files ready to post, without touching a single slider",
+        "Upload your video files (MP4, MOV, AVI, WebM, up to 500MB), say something like \"ad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ai-subtitles-extension@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/208832666?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ai-subtitles-extension",
+      "url": "https://clawhub.ai/skills/ai-subtitles-extension"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-subtitles-extension",
+    "url": "https://clawhub.ai/skills/ai-subtitles-extension",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-subtitles-extension-98c1ec9954d62529.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ai-subtitles-extension@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-ai-subtitles-extension-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:93371dfdf7c2973e0b220b87671b4ac077ea3b63eeeee862895a76c469a6d1fa",
+      "artifactSizeBytes": 2490
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T19:43:04.583Z"
+}

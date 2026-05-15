@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ashare@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ashare",
+  "skill": {
+    "id": 56878,
+    "skillKey": "clawhub-ashare",
+    "name": "A股市场数据"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ashare",
+    "url": "https://clawhub.ai/skills/ashare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ashare-d3d10dde7a66adfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use AKShare to answer Chinese market-data questions about A-shares, China indexes, open-end mutual funds, macro indicators, macro calendar events, and financ..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nickdeep1234",
+      "userId": "publishers:nickdeep1234",
+      "displayName": "Nick deep234",
+      "image": "https://avatars.githubusercontent.com/u/85147711?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 451,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773411014137,
+      "changelog": "Initial release of ashare skill.\n\n- Provides structured answers to Chinese market-data questions about A-shares, indexes, funds, macro indicators, and news using AKShare datasets.\n- Supports fixed set of commands for real-time quotes, historical data, profiles, macro series, calendars, and news flashes.\n- Enforces strict command-line invocation of AKShare scripts; no raw request execution or ad-hoc Python code.\n- Replies in Chinese, summarizing the most relevant data from returned results.\n- Relays installation commands for missing dependencies and handles ambiguous symbols transparently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23be0c4278668cff9f6c24edb277b9a9fe4ec1cc7803678d33d8080b641f9c27"
+}

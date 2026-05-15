@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59301,
+  "uuid": "skill-clawhub-imou-device-manage",
+  "skillKey": "clawhub-imou-device-manage",
+  "name": "Imou Open Device Manage",
+  "summary": "Imou/乐橙设备管理。支持查看账号设备列表、设备详情（序列号/型号/在离线/名称/通道）、按序列号查询、修改设备或通道名称。 Use for requests in any language (e.g. 中文/English) about listing or managing Imou/乐橙 cloud de...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.imou_device_manage",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Imou-OpenPlatform",
+      "features": [
+        "Imou/乐橙设备管理。支持查看账号设备列表、设备详情（序列号/型号/在离线/名称/通道）、按序列号查询、修改设备或通道名称。 Use for requests in any languag.",
+        "中文/English) about listing or managing Imou/乐橙 cloud de..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/imou-device-manage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/188283209?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "imou-device-manage",
+      "url": "https://clawhub.ai/skills/imou-device-manage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "imou-device-manage",
+    "url": "https://clawhub.ai/skills/imou-device-manage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/imou-device-manage-66d32f9ab1a95b13.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/imou-device-manage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-imou-device-manage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:326149d9206f36aba189c1c6e181569bdb125169b3978ca04ab699da9b1f1e97",
+      "artifactSizeBytes": 2435
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:30:55.198Z"
+}

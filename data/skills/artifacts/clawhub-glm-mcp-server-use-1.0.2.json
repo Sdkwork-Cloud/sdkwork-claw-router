@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/glm-mcp-server-use@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.glm_mcp_server_use",
+  "skill": {
+    "id": 37934,
+    "skillKey": "clawhub-glm-mcp-server-use",
+    "name": "GLM MCP Server Use"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "glm-mcp-server-use",
+    "url": "https://clawhub.ai/skills/glm-mcp-server-use",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/glm-mcp-server-use-40f9c91e176bccfd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "GLM MCP Server Use for OpenClaw. Configure and use the 4 official Z.AI / GLM MCP servers (vision, web search, web reader, zread) with environment-variable AP..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "conanwhf",
+      "userId": "s17630t4f4mg47rk0nkkr09cf983xw8x",
+      "displayName": "conanwhf",
+      "image": "https://avatars.githubusercontent.com/u/14151735?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 192,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1775838370363,
+      "changelog": "Improve search discoverability: update summary + tags with glm, Z.AI, MCP, vision, web search, web reader, zread, OpenClaw, GLM MCP Server Use",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4f111e36b86d8e1be66840e050d6e66a544651a37a273257a108d6d18a300f57"
+}

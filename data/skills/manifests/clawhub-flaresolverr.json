@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26365,
+  "uuid": "skill-clawhub-flaresolverr",
+  "skillKey": "clawhub-flaresolverr",
+  "name": "FlareSolverr — Cloudflare Bypass",
+  "summary": "Bypass Cloudflare protection by routing requests through FlareSolverr’s browser API, handling challenges and returning page content, cookies, and headers.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flaresolverr",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Dolverin",
+      "features": [
+        "Bypass Cloudflare protection by routing requests through FlareSolverr’s browser API, handling c."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/flaresolverr@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5910064?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "flaresolverr",
+      "url": "https://clawhub.ai/skills/flaresolverr"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flaresolverr",
+    "url": "https://clawhub.ai/skills/flaresolverr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flaresolverr-4ea376a0b87a8e4c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/flaresolverr@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-flaresolverr-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a113e0b0069272cfdbfd2c7e82c1f736230a1d4daa324cf7ea009d8f41350b3d",
+      "artifactSizeBytes": 1995
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T21:51:13.227Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/grab-company@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.grab_company",
+  "skill": {
+    "id": 48905,
+    "skillKey": "clawhub-grab-company",
+    "name": "Grab Company"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "grab-company",
+    "url": "https://clawhub.ai/skills/grab-company",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/grab-company-f9775ca54651ae1c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides detailed insights on Grab's evolution, business model, market position, and significance in Southeast Asia's digital economy and super app landscape."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hanxueyuan",
+      "userId": "s17eht14r6y7ztwaw37n96ka7583eghn",
+      "displayName": "hanxueyuan",
+      "image": "https://avatars.githubusercontent.com/u/16717383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 91,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777597903060,
+      "changelog": "grab-company 1.0.0\n\n- 首次发布，详细介绍 Grab 的发展历程、商业模式与市场地位\n- 提供东南亚超级App发展、合并竞争、SPAC上市等要点的分析视角\n- 列举2024年关键营收、用户和市场覆盖数据\n- 总结Grab特殊护城河与有趣历史细节",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cb9142d572f835f529b011a2df19ac74c70aaffb350294f42f53e5e27710bdef"
+}

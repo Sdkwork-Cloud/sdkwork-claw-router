@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jx-reminder@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jx_reminder",
+  "skill": {
+    "id": 35274,
+    "skillKey": "clawhub-jx-reminder",
+    "name": "reminder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jx-reminder",
+    "url": "https://clawhub.ai/skills/jx-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jx-reminder-162305c1efea1c41.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Capture events in natural language, save to workspace, and schedule Telegram reminders with customizable offsets and query support for upcoming events."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kirkraman",
+      "userId": "s171c4e2zwz2yy69j6tp9xcfc184vnxz",
+      "displayName": "KirkRaman",
+      "image": "https://avatars.githubusercontent.com/u/255880392?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 216,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1776680572750,
+      "changelog": "Version 1.0.2 of jx-reminder\n\n- Version bump only; no file changes detected.\n- No new features, fixes, or modifications in this release.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ce680cdc42e2e4bc29fc1bd4c93cd3029941575e04796f6781fe6194eb2c6796"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28602,
+  "uuid": "skill-clawhub-anki-card-creator",
+  "skillKey": "clawhub-anki-card-creator",
+  "name": "Anki Card Creator",
+  "summary": "Convert medical textbook content, lecture notes, and study materials into Anki flashcards using spaced repetition optimization. Supports multiple card types...",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.anki_card_creator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AIpoch",
+      "features": [
+        "Convert medical textbook content, lecture notes, and study materials into Anki flashcards using.",
+        "Supports multiple card types..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/anki-card-creator@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258999481?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "anki-card-creator",
+      "url": "https://clawhub.ai/skills/anki-card-creator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "anki-card-creator",
+    "url": "https://clawhub.ai/skills/anki-card-creator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/anki-card-creator-4ba5805e4d47f8c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/anki-card-creator@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-anki-card-creator-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:011481694cfe4e0ba35e15ab0c329c934225b0469d0d0fca2de49a803489f02f",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T01:18:13.914Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 46184,
+  "uuid": "skill-clawhub-justoneapi-douyin-search-user",
+  "skillKey": "clawhub-justoneapi-douyin-search-user",
+  "name": "Douyin (TikTok China) User Search API",
+  "summary": "Call GET /api/douyin/search-user/v2 for Douyin (TikTok China) User Search through JustOneAPI with keyword.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_douyin_search_user",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/douyin/search-user/v2 for Douyin (TikTok China) User Search through JustOneAPI wi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-douyin-search-user@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-douyin-search-user",
+      "url": "https://clawhub.ai/skills/justoneapi-douyin-search-user"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-douyin-search-user",
+    "url": "https://clawhub.ai/skills/justoneapi-douyin-search-user",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-douyin-search-user-65290d230cdcd355.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-douyin-search-user@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-douyin-search-user-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ce1a2fea07951ddddf5687b784e109a521f6c00ea279bd292d2bb8e0de4cb08a",
+      "artifactSizeBytes": 1949
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T19:16:56.113Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-team-builder@3.6.1",
+  "version": "3.6.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_team_builder",
+  "skill": {
+    "id": 22251,
+    "skillKey": "clawhub-openclaw-team-builder",
+    "name": "Openclaw Team Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-team-builder",
+    "url": "https://clawhub.ai/skills/openclaw-team-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-team-builder-c9dc0e9b283c298b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Manage OpenClaw agent teams — add agents, deploy templates, health check, auto-fix, view org tree, rollback, goal-driven team suggestion. Use when user menti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eggyrooch-blip",
+      "userId": "s1714n78j6me0w8cs9asre19sd83mtzf",
+      "displayName": "eggyrooch-blip",
+      "image": "https://avatars.githubusercontent.com/u/226265806?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 869,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 1,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "3.6.1",
+      "createdAt": 1772757162481,
+      "changelog": "- Internal shell script improvements in team-builder.sh for stability and reliability\n- No changes to features, user-facing CLI, or documentation\n- All workflows, parameters, and output formats remain the same",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fff8d6ebcd35e653b18767c839feffbb58a0ff2a5bfac2e4a3c99e3831258aaf"
+}

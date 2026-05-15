@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/restart-task-recovery@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.restart_task_recovery",
+  "skill": {
+    "id": 25605,
+    "skillKey": "clawhub-restart-task-recovery",
+    "name": "Restart Task Recovery"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "restart-task-recovery",
+    "url": "https://clawhub.ai/skills/restart-task-recovery",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/restart-task-recovery-0aa88faddd60f440.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Preserve and resume in-progress multi-agent work across OpenClaw config patch/apply restarts. Use when a restart is required during active tasks, when users..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "swiftking100",
+      "userId": "s179kwg47gaxk97e6cedk1a37d83m5qq",
+      "displayName": "SwiftKing100",
+      "image": "https://avatars.githubusercontent.com/u/16414610?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 375,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773046175545,
+      "changelog": "Initial public release: V1-V6 restart recovery workflow with checkpointing, resume planning, risk gating, execution plan generation, and smoke test script.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6b12bea42543888e12deed9027e650b22be0eebbe0cc29fc5a91a1c33236faa"
+}

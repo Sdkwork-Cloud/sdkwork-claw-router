@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68395,
+  "uuid": "skill-clawhub-lead-scraper",
+  "skillKey": "clawhub-lead-scraper",
+  "name": "lead-scraper",
+  "summary": "自动抓取潜在客户信息 - 智能线索抓取工具，支持多平台客户信息采集、清洗、去重、分类",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lead_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wensen2024",
+      "features": [
+        "自动抓取潜在客户信息",
+        "智能线索抓取工具，支持多平台客户信息采集、清洗、去重、分类"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lead-scraper@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/160041531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lead-scraper",
+      "url": "https://clawhub.ai/skills/lead-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lead-scraper",
+    "url": "https://clawhub.ai/skills/lead-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lead-scraper-e9de008af0b7227d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lead-scraper@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-lead-scraper-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:734a5e02b2737faf07795f0800f608d418c03485dfbdc79cb5026020f96dff2c",
+      "artifactSizeBytes": 1834
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T06:41:44.013Z"
+}

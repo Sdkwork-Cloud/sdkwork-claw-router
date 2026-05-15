@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alibabacloud-polardb-ai-assistant@0.0.2",
+  "version": "0.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_polardb_ai_assistant",
+  "skill": {
+    "id": 34189,
+    "skillKey": "clawhub-alibabacloud-polardb-ai-assistant",
+    "name": "Alibabacloud Polardb Ai Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-polardb-ai-assistant",
+    "url": "https://clawhub.ai/skills/alibabacloud-polardb-ai-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-polardb-ai-assistant-974e80ca08deda80.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Alibaba Cloud PolarDB Database AI Assistant. For PolarDB MySQL/PostgreSQL cluster management, performance diagnostics, parameter tuning, slow SQL analysis, b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sdk-team",
+      "userId": "s173swjet2yrebzqrp6hjkvmy583mxef",
+      "displayName": "alibabacloud-skills-team",
+      "image": "https://avatars.githubusercontent.com/u/49941014?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 227,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.0.2",
+      "createdAt": 1776825587154,
+      "changelog": "**Summary:** v0.0.2 introduces strict CLI version requirements, mandatory AI-mode settings, and user-agent enforcement for skill execution.\n\n- Increased minimum Aliyun CLI requirement to version 3.3.3.\n- Enforced inclusion of a custom user-agent string in all CLI commands.\n- Introduced mandatory AI-mode enablement and disablement at appropriate workflow points.\n- Updated installation and upgrade steps; users must update plugins and use a new CLI setup script.\n- Expanded installation instructions for improved reliability and compliance.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f596d116f7a03ccae8d6284368ae5a25cd58cce6a2b6f44c2c93ea7cc1e7e441"
+}

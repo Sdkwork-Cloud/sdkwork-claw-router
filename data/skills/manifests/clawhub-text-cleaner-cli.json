@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62842,
+  "uuid": "skill-clawhub-text-cleaner-cli",
+  "skillKey": "clawhub-text-cleaner-cli",
+  "name": "text-cleaner-cli",
+  "summary": "清理文本中的多余空格、空行和行尾空白。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_cleaner_cli",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "askjda",
+      "features": [
+        "清理文本中的多余空格、空行和行尾空白。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/text-cleaner-cli@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/94748630?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "text-cleaner-cli",
+      "url": "https://clawhub.ai/skills/text-cleaner-cli"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-cleaner-cli",
+    "url": "https://clawhub.ai/skills/text-cleaner-cli",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-cleaner-cli-402dfd7a75a2ed72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/text-cleaner-cli@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-text-cleaner-cli-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:80696b7262c7b989093d3e010a67a3efb369bc49c14d2de5e9c28130e2f85cfe",
+      "artifactSizeBytes": 2139
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T16:43:17.610Z"
+}

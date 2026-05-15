@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-recommend@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_recommend",
+  "skill": {
+    "id": 65798,
+    "skillKey": "clawhub-stock-recommend",
+    "name": "Stock Recommend By News 股票推荐-支持 A股、港股、美股"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-recommend",
+    "url": "https://clawhub.ai/skills/stock-recommend",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-recommend-fc59ec76d7e31c52.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "根据最新国际新闻分析并预测A股、港股或美股中可能异动的股票，提供原因和相关新闻链接。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "violin",
+      "userId": "s17b8830ffp148n81g4serr7a983s0fn",
+      "displayName": "joeyang",
+      "image": "https://avatars.githubusercontent.com/u/1055133?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1848,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773243192223,
+      "changelog": "- Initial release of the stock-recommend skill.\n- Analyzes recent international news to predict likely large stock moves in A-shares, Hong Kong, or US markets.\n- Returns a structured report including key headlines, bullish/bearish stock picks with reasons and news links, and investment notes.\n- Provides clear market-specific focus points and emphasizes use of timely, source-linked news.\n- Designed for objective news-based insights; avoids direct investment recommendations.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01dc9a64055831b6419990a87e693862560c2506898d14558275e25f2dd59e8a"
+}

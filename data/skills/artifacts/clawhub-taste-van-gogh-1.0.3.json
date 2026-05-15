@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/taste-van-gogh@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.taste_van_gogh",
+  "skill": {
+    "id": 51178,
+    "skillKey": "clawhub-taste-van-gogh",
+    "name": "Taste Van Gogh"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "taste-van-gogh",
+    "url": "https://clawhub.ai/skills/taste-van-gogh",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/taste-van-gogh-52283d574798d718.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Aesthetic skill for AI agents — Van Gogh's Post-Impressionist visual language. Style tokens, anti-tokens, and creative direction distilled from 843 works."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "johnnyzijianwu",
+      "userId": "s17a1mx7rkn57crw0x09zwte8n83nxm6",
+      "displayName": "johnnyzijianwu",
+      "image": "https://avatars.githubusercontent.com/u/109778160?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 275,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1775099901098,
+      "changelog": "Quality refinement: replaced subject-based style tokens with transferable aesthetic qualities. Expanded anti-tokens with explanations. Updated color palette reference to OKLCH format.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:277cf4bec8b041723622adde297bcac4887d78157a36a35547a17b73197991e2"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73013,
+  "uuid": "skill-clawhub-entropy-manager",
+  "skillKey": "clawhub-entropy-manager",
+  "name": "熵管理系统",
+  "summary": "熵管理系统 - 原创技能。用于管理和控制AI会话中的熵（无序度），包括上下文精简、状态重置、注意力聚焦等功能。适用于长时间会话、复杂任务、多步骤工作流等场景。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.entropy_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "534422530",
+      "features": [
+        "原创技能。用于管理和控制AI会话中的熵（无序度），包括上下文精简、状态重置、注意力聚焦等功能。适用于长时间会话、复杂任务、多步骤工作流等场景。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/entropy-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/82763531?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "entropy-manager",
+      "url": "https://clawhub.ai/skills/entropy-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "entropy-manager",
+    "url": "https://clawhub.ai/skills/entropy-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/entropy-manager-b572e84d069dcfff.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/entropy-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-entropy-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:52f1dd81c576c88a7ce711895577b5f46dc33d106602b7aa67c4f60c4bfaa5d5",
+      "artifactSizeBytes": 2022
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T04:50:28.802Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16541,
+  "uuid": "skill-clawhub-kroger-api-skill",
+  "skillKey": "clawhub-kroger-api-skill",
+  "name": "Kroger Api.Skill",
+  "summary": "Search Kroger/QFC products, manage cart, check pickup availability, and create pickup orders using the official Kroger API.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kroger_api_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jasonahorn",
+      "features": [
+        "Search Kroger/QFC products, manage cart, check pickup availability, and create pickup orders us."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kroger-api-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9679065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kroger-api-skill",
+      "url": "https://clawhub.ai/skills/kroger-api-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kroger-api-skill",
+    "url": "https://clawhub.ai/skills/kroger-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kroger-api-skill-72220a2b4aaa0e7e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kroger-api-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kroger-api-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0bc4b076f5ae528892ed401ba05ec8a23cdfc948709615b29a97bb6529ae9563",
+      "artifactSizeBytes": 2332
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T01:31:13.724Z"
+}

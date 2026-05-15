@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12640,
+  "uuid": "skill-clawhub-zeruai",
+  "skillKey": "clawhub-zeruai",
+  "name": "zeruai",
+  "summary": "Register agents on the Zeru ERC-8004 Identity Registry, manage wallets and metadata, and read on-chain state. Use when an agent needs to register on-chain, check fees, read agent info, set metadata, or manage agent wallets on Base Mainnet.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zeruai",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "elitex45",
+      "features": [
+        "Register agents on the Zeru ERC-8004 Identity Registry, manage wallets and metadata, and read o.",
+        "Use when an agent needs to register on-chain, check fees, read agent info, set metadata, or man."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zeruai@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/59090788?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zeruai",
+      "url": "https://clawhub.ai/skills/zeruai"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zeruai",
+    "url": "https://clawhub.ai/skills/zeruai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zeruai-490befb1477df7cf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zeruai@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zeruai-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc89e2486e3a37d643e0735ca889a899f220c5b97a92df7c1b9798468282366d",
+      "artifactSizeBytes": 2568
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T11:16:37.372Z"
+}

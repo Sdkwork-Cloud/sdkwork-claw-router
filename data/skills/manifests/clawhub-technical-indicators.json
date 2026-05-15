@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66152,
+  "uuid": "skill-clawhub-technical-indicators",
+  "skillKey": "clawhub-technical-indicators",
+  "name": "Technical Indicators",
+  "summary": "计算A股常用技术指标和量价形态，支持多指标共振分析并提供信号强度评分和策略回测功能。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.technical_indicators",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "GBABYZS",
+      "features": [
+        "计算A股常用技术指标和量价形态，支持多指标共振分析并提供信号强度评分和策略回测功能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/technical-indicators@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/264446239?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "technical-indicators",
+      "url": "https://clawhub.ai/skills/technical-indicators"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "technical-indicators",
+    "url": "https://clawhub.ai/skills/technical-indicators",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/technical-indicators-d64c6463f922f324.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/technical-indicators@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-technical-indicators-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b288bd6248890e7e12b89e1fd413ce68668da0ef003ec3f383a915d1f9f319f",
+      "artifactSizeBytes": 1950
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T01:34:06.645Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34882,
+  "uuid": "skill-clawhub-tegrastats",
+  "skillKey": "clawhub-tegrastats",
+  "name": "Jetson Tegrastats",
+  "summary": "Real-time monitoring of NVIDIA Jetson GPU status, memory usage, CPU temperature, and frequency information.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tegrastats",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kunka",
+      "features": [
+        "Real-time monitoring of NVIDIA Jetson GPU status, memory usage, CPU temperature, and frequency."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tegrastats@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11926106?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tegrastats",
+      "url": "https://clawhub.ai/skills/tegrastats"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tegrastats",
+    "url": "https://clawhub.ai/skills/tegrastats",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tegrastats-b9fb48faecb6e7f4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tegrastats@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tegrastats-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:cf055a285506a81dba29d58ab0be564de8f69eb484488b5aa26354e89c1b7c07",
+      "artifactSizeBytes": 2092
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T14:43:29.295Z"
+}

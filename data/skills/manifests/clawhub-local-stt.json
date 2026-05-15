@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 9965,
+  "uuid": "skill-clawhub-local-stt",
+  "skillKey": "clawhub-local-stt",
+  "name": "Local STT (Nvidia Parakeet + Whisper Support)",
+  "summary": "Local STT with selectable backends - Parakeet (best accuracy) or Whisper (fastest, multilingual).",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_stt",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "araa47",
+      "features": [
+        "Local STT with selectable backends",
+        "Parakeet (best accuracy) or Whisper (fastest, multilingual)."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/local-stt@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/22760261?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "local-stt",
+      "url": "https://clawhub.ai/skills/local-stt"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-stt",
+    "url": "https://clawhub.ai/skills/local-stt",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-stt-c4cfb75b9fd7ad15.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/local-stt@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-local-stt-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0c3098646d657c96e9ec9f8e8b2903f230f7ab963ebe4f371d8028e5036c4b77",
+      "artifactSizeBytes": 2147
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T14:31:10.809Z"
+}

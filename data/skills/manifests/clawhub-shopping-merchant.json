@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 29342,
+  "uuid": "skill-clawhub-shopping-merchant",
+  "skillKey": "clawhub-shopping-merchant",
+  "name": "Shopping Merchant",
+  "summary": "Evaluate which kind of seller a shopper should prefer on Chinese e-commerce platforms. Use when the user is deciding between official flagship stores, brand-...",
+  "version": "1.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopping_merchant",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Evaluate which kind of seller a shopper should prefer on Chinese e-commerce platforms",
+        "Use when the user is deciding between official flagship stores, brand-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shopping-merchant@1.2.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shopping-merchant",
+      "url": "https://clawhub.ai/skills/shopping-merchant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopping-merchant",
+    "url": "https://clawhub.ai/skills/shopping-merchant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopping-merchant-f20f77fb82a673d4.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shopping-merchant@1.2.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-shopping-merchant-1.2.2.json",
+      "version": "1.2.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ad11c8dc6044e7e902d8b13021d4d53cb8896dbfe84e5c3108c087655e99925f",
+      "artifactSizeBytes": 1970
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T14:05:10.737Z"
+}

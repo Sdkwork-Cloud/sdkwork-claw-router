@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40193,
+  "uuid": "skill-clawhub-slugname",
+  "skillKey": "clawhub-slugname",
+  "name": "showname",
+  "summary": "Search X (Twitter) posts using the xAI API. Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X, or find social med...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.slugname",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kssbox",
+      "features": [
+        "Search X (Twitter) posts using the xAI API",
+        "Use when the user wants to find tweets, search X/Twitter, look up what people are saying on X,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/slugname@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/29111946?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "slugname",
+      "url": "https://clawhub.ai/skills/slugname"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "slugname",
+    "url": "https://clawhub.ai/skills/slugname",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/slugname-63680ddbf2ace483.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/slugname@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-slugname-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4be62463780f74abb425d8d85a0315efd7baf265211f94f487de5ff4698ea660",
+      "artifactSizeBytes": 2184
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T14:30:58.491Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skill-ios-setup@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_ios_setup",
+  "skill": {
+    "id": 39432,
+    "skillKey": "clawhub-skill-ios-setup",
+    "name": "iOS Setup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-ios-setup",
+    "url": "https://clawhub.ai/skills/skill-ios-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-ios-setup-eb47fd0db06a7cfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Sets up the OpenClaw iOS app by deploying the stats server, configuring access via domain/nginx, Tailscale, LAN, or manual setup, and provides connection det..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parham-dev",
+      "userId": "s17fm1564vvd8ywyah6zf73ccd83wn34",
+      "displayName": "Parham Majdabadi",
+      "image": "https://avatars.githubusercontent.com/u/8505643?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 178,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1774907112507,
+      "changelog": "Security: token passed via env not shell string (fixes process listing exposure). Fix: workspace auto-detected at runtime, no hardcoded agent name, searches common paths for stats_server.py.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:84e4bccfefa29e16a9313f28027e893d26675384ea0299bb436a2ad8bec15962"
+}

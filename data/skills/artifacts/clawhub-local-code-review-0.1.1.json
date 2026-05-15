@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/local-code-review@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.local_code_review",
+  "skill": {
+    "id": 63689,
+    "skillKey": "clawhub-local-code-review",
+    "name": "Local Cpp Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "local-code-review",
+    "url": "https://clawhub.ai/skills/local-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/local-code-review-7b08b1e13a9ee1ed.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "遍历指定本地目录，对所有 C/C++ 源代码进行生产就绪性审查、质量检查及潜在漏洞分析。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhouzy-creator",
+      "userId": "s174enc8xnnpwsvz16pg3ge6rx8573mb",
+      "displayName": "zhouzy-creator",
+      "image": "https://avatars.githubusercontent.com/u/80381240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 228,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1776843473287,
+      "changelog": "- Added local-code-reviewer.md to provide an explicit interaction template.\n- No changes to main logic or review procedures. \n- Improves clarity for usage by specifying context placeholders.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:674770082701bc7fa5860cc4fe513c891a8efc047de81fa964ad1baeae3c2c60"
+}

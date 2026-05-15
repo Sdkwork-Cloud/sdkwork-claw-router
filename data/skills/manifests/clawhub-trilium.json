@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12502,
+  "uuid": "skill-clawhub-trilium",
+  "skillKey": "clawhub-trilium",
+  "name": "Trilium",
+  "summary": "Manage Trilium Notes by reading, searching, and creating notes via the ETAPI with provided server URL and ETAPI token.",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trilium",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mtbf999",
+      "features": [
+        "Manage Trilium Notes by reading, searching, and creating notes via the ETAPI with provided serv."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/trilium@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203152504?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "trilium",
+      "url": "https://clawhub.ai/skills/trilium"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trilium",
+    "url": "https://clawhub.ai/skills/trilium",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trilium-56ec1e34c0dc7b52.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/trilium@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-trilium-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:416fadaa75fe264eafa72a54424f01b7c2a16de725702ac9ba52f5bd6bef8908",
+      "artifactSizeBytes": 1901
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-11T18:46:15.382Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65407,
+  "uuid": "skill-clawhub-incident-report-cn",
+  "skillKey": "clawhub-incident-report-cn",
+  "name": "Incident Report Generator",
+  "summary": "按照用户提供的信息收集线上故障的详细数据，生成结构化的故障异常报告，支持中英文输出。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_report_cn",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "freepengyang",
+      "features": [
+        "按照用户提供的信息收集线上故障的详细数据，生成结构化的故障异常报告，支持中英文输出。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/incident-report-cn@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/18629902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "incident-report-cn",
+      "url": "https://clawhub.ai/skills/incident-report-cn"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-report-cn",
+    "url": "https://clawhub.ai/skills/incident-report-cn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-report-cn-62e4d7686bd5371b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/incident-report-cn@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-incident-report-cn-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e401e828bd5ab8cc1f5a985cc27752034c766a38c03c5650c08ffb6748a74550",
+      "artifactSizeBytes": 2453
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-27T09:02:32.370Z"
+}

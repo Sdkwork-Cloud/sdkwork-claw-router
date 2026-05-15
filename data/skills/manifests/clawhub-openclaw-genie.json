@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48493,
+  "uuid": "skill-clawhub-openclaw-genie",
+  "skillKey": "clawhub-openclaw-genie",
+  "name": "Openclaw Genie",
+  "summary": "Use when the user asks about OpenClaw — installation, configuration, agents, channels, memory, tools, hooks, skills, deployment, Docker, multi-agent, OAuth,...",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_genie",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Fabricio Cavalcante",
+      "features": [
+        "Use when the user asks about OpenClaw — installation, configuration, agents, channels, memory,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-genie@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7094035?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-genie",
+      "url": "https://clawhub.ai/skills/openclaw-genie"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-genie",
+    "url": "https://clawhub.ai/skills/openclaw-genie",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-genie-add46488bffd88ac.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-genie@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-genie-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f20378a96dd9f03e6801d50c197a5625c76bfb286435b7ab3aabfb2f0365bb22",
+      "artifactSizeBytes": 2059
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T13:13:26.343Z"
+}

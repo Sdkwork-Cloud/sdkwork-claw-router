@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41662,
+  "uuid": "skill-clawhub-speech2text",
+  "skillKey": "clawhub-speech2text",
+  "name": "speech2text",
+  "summary": "Automatically converts speech messages in ogg/wav/mp3/m4a formats to text using offline Faster-Whisper with ffmpeg format conversion.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.speech2text",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "lqwall26",
+      "features": [
+        "Automatically converts speech messages in ogg/wav/mp3/m4a formats to text using offline Faster-."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/speech2text@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/203224360?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "speech2text",
+      "url": "https://clawhub.ai/skills/speech2text"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "speech2text",
+    "url": "https://clawhub.ai/skills/speech2text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/speech2text-aea08e4175ed546e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/speech2text@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-speech2text-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3cbb3053ad35fcd52b191b0d1eb9aca00b255148c1aab39b3eb31da0246daecb",
+      "artifactSizeBytes": 2234
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T14:13:42.728Z"
+}

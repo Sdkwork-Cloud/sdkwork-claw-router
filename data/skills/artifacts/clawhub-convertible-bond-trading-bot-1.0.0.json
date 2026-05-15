@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/convertible-bond-trading-bot@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.convertible_bond_trading_bot",
+  "skill": {
+    "id": 63428,
+    "skillKey": "clawhub-convertible-bond-trading-bot",
+    "name": "Convertible Bond Trading Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "convertible-bond-trading-bot",
+    "url": "https://clawhub.ai/skills/convertible-bond-trading-bot",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/convertible-bond-trading-bot-c3fd0499bdfac4e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "可转债自动交易机器人，止跌企稳智能选股，上涨趋势自动高抛低吸，自带回测功能，年化收益30%+。每次调用0.01USDT。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "baolige2023",
+      "userId": "s178gkabx9xktcpczv45y79fv583ha0j",
+      "displayName": "baolige2023",
+      "image": "https://avatars.githubusercontent.com/u/166877406?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 226,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774338445798,
+      "changelog": "- Initial release of convertible-bond-trading-bot.\n- Features “止跌企稳” intelligent bond picking model with automatic trading and parameter customization.\n- Includes backtesting, real-time WeChat/email alerts, strong risk controls, and forced redemption/loss protections.\n- Supports automated trading via API integration and provides detailed trading statistics.\n- Payment per usage or lifetime license options available.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:735bc6a6cadfefa40b27c0037ba6576f7136f816fb8445098e3efcf8e4834005"
+}

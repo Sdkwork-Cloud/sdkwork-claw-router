@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71756,
+  "uuid": "skill-clawhub-stock-industry-collector",
+  "skillKey": "clawhub-stock-industry-collector",
+  "name": "螃蟹投研-股票行业Collector",
+  "summary": "收集A股某行业全部上市公司资料，包括代码、名称、交易所、行业、财务数据（ROE、毛利率、净利率、资产负债率、现金流、增长率）、控股股东及持股比例",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_industry_collector",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wtjjacobj",
+      "features": [
+        "收集A股某行业全部上市公司资料，包括代码、名称、交易所、行业、财务数据（ROE、毛利率、净利率、资产负债率、现金流、增长率）、控股股东及持股比例"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/stock-industry-collector@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68179406?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "stock-industry-collector",
+      "url": "https://clawhub.ai/skills/stock-industry-collector"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-industry-collector",
+    "url": "https://clawhub.ai/skills/stock-industry-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-industry-collector-a07041b97e67d364.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/stock-industry-collector@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-stock-industry-collector-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:916518af614b891df3a1913901ac3a25d721b9df0ec8cca721ba8f77980691a7",
+      "artifactSizeBytes": 2103
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T08:40:37.648Z"
+}

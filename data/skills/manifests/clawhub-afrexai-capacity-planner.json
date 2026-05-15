@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16908,
+  "uuid": "skill-clawhub-afrexai-capacity-planner",
+  "skillKey": "clawhub-afrexai-capacity-planner",
+  "name": "Capacity Planner",
+  "summary": "Analyzes team size, workload, and pipeline data to forecast capacity, identify bottlenecks, and recommend actions 4-8 weeks before crises occur.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_capacity_planner",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "1kalin",
+      "features": [
+        "Analyzes team size, workload, and pipeline data to forecast capacity, identify bottlenecks, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/afrexai-capacity-planner@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15705344?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "afrexai-capacity-planner",
+      "url": "https://clawhub.ai/skills/afrexai-capacity-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-capacity-planner",
+    "url": "https://clawhub.ai/skills/afrexai-capacity-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-capacity-planner-6b16eacc2cfbcd79.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/afrexai-capacity-planner@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-afrexai-capacity-planner-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fc9c139efd5998d7cfbcffb5d4f8168b8c97a8aea181387f5723d1dd386990fa",
+      "artifactSizeBytes": 2393
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T08:13:29.206Z"
+}

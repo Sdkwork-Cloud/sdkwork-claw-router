@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-editing-with-francais@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_editing_with_francais",
+  "skill": {
+    "id": 41519,
+    "skillKey": "clawhub-video-editing-with-francais",
+    "name": "Video Editing With Francais"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-editing-with-francais",
+    "url": "https://clawhub.ai/skills/video-editing-with-francais",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-editing-with-francais-56d1de5b0bba6535.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into French-captioned videos with this video-editing-with-francais skill. Works with MP4, MOV, AVI, WebM files up to 500MB. French-speaking..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775873208238,
+      "changelog": "Initial release of Video Editing with Français.\n\n- Enables editing of video files (MP4, MOV, AVI, WebM up to 500MB) with automatic French subtitles or dubbing.\n- Designed for French-speaking creators and educators to add French captions or translations.\n- Fast cloud processing (1–2 minutes per video) with results delivered as 1080p MP4.\n- Supports direct uploads, video editing commands, and session-based workflow.\n- Includes credit management, export, and session state features within an integrated cloud render pipeline.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9ed022186e9043a06efcc6708c97675a33d327d992017ef2becd029af4ca15f2"
+}

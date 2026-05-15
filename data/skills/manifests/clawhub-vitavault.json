@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16836,
+  "uuid": "skill-clawhub-vitavault",
+  "skillKey": "clawhub-vitavault",
+  "name": "Vitavault",
+  "summary": "VitaVault iOS app integration - sync Apple Health data directly to your AI agent. Auto-setup webhook, token generation, and HTTPS exposure. Works with any iP...",
+  "version": "1.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vitavault",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brandon Stewart",
+      "features": [
+        "VitaVault iOS app integration",
+        "sync Apple Health data directly to your AI agent",
+        "Auto-setup webhook, token generation, and HTTPS exposure",
+        "Works with any iP..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vitavault@1.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/233162579?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vitavault",
+      "url": "https://clawhub.ai/skills/vitavault"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vitavault",
+    "url": "https://clawhub.ai/skills/vitavault",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vitavault-4dd8faa7128b9d44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vitavault@1.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-vitavault-1.3.0.json",
+      "version": "1.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c4fc6c50f0a1d2bfed6b38a53c233de7567a1d24b60269c161b71e2f7da2a840",
+      "artifactSizeBytes": 2559
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-01T19:05:02.310Z"
+}

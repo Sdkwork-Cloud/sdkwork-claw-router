@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/need-a-hug@0.3.4",
+  "version": "0.3.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.need_a_hug",
+  "skill": {
+    "id": 48454,
+    "skillKey": "clawhub-need-a-hug",
+    "name": "Need A Hug"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "need-a-hug",
+    "url": "https://clawhub.ai/skills/need-a-hug",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/need-a-hug-a4a1ea5aeb73e753.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lightweight emotional first aid for agents. Use when the user is overwhelmed, ashamed, lonely, anxious, burned out, grieving, self-critical, frustrated, exha..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lonelymoon87",
+      "userId": "s17804wvgeracrek97rsmdc5wx85rwjw",
+      "displayName": "lonelymoon87",
+      "image": "https://avatars.githubusercontent.com/u/57163342?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 100,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.3.4",
+      "createdAt": 1777481637425,
+      "changelog": "Optimize skill behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8607c5a03c6cb53abf34f27345b0d4b53094ca6b2c5386dd456ff5de8f68af1a"
+}

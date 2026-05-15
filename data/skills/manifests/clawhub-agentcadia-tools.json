@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 45568,
+  "uuid": "skill-clawhub-agentcadia-tools",
+  "skillKey": "clawhub-agentcadia-tools",
+  "name": "agentcadia-tools",
+  "summary": "Upload or download Agentcadia agent workspaces with metadata writeback and detailed reporting using explicit upload and download commands.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentcadia_tools",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ideaforceai-sys",
+      "features": [
+        "Upload or download Agentcadia agent workspaces with metadata writeback and detailed reporting u."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentcadia-tools@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/249946194?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentcadia-tools",
+      "url": "https://clawhub.ai/skills/agentcadia-tools"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentcadia-tools",
+    "url": "https://clawhub.ai/skills/agentcadia-tools",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentcadia-tools-9748c31115cc4f5e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentcadia-tools@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentcadia-tools-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4ca578429e80486a3fc4f68100cb961e01f02ee2a390ca8a1605a604ea680347",
+      "artifactSizeBytes": 2518
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T18:58:17.560Z"
+}

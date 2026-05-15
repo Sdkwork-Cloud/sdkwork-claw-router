@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17198,
+  "uuid": "skill-clawhub-os-activity",
+  "skillKey": "clawhub-os-activity",
+  "name": "OS Activity",
+  "summary": "Personalize your openclaw by learning your operating system activity.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.os_activity",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xiaobao",
+      "features": [
+        "Personalize your openclaw by learning your operating system activity."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/os-activity@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14367819?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "os-activity",
+      "url": "https://clawhub.ai/skills/os-activity"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "os-activity",
+    "url": "https://clawhub.ai/skills/os-activity",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/os-activity-b5eaecaeeb6dc683.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/os-activity@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-os-activity-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0b509240e964d29839295dfd0b0d64aea8c8cdf469978425b3d8e70b28d6ba6b",
+      "artifactSizeBytes": 2101
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T07:38:05.113Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lawsuit@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lawsuit",
+  "skill": {
+    "id": 20795,
+    "skillKey": "clawhub-lawsuit",
+    "name": "Lawsuit"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lawsuit",
+    "url": "https://clawhub.ai/skills/lawsuit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lawsuit-b85b91c53558d46d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "The Sovereign Litigation Protocol (SLP-2026). A recursive, high-fidelity framework for autonomous advocacy, multi-jurisdictional discovery, and the algorithm..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agimodel",
+      "userId": "publishers:agimodel",
+      "displayName": "AGImodel",
+      "image": "https://avatars.githubusercontent.com/u/216470445?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 527,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772996655368,
+      "changelog": "Genesis release of the SLP-2026 Protocol",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bb63e69bbdf81b6186d67454b6efaf8de428633dc6b8961f9e625c1382967fee"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/feishu-cli-export@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_cli_export",
+  "skill": {
+    "id": 61484,
+    "skillKey": "clawhub-feishu-cli-export",
+    "name": "Feishu Cli Export"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-cli-export",
+    "url": "https://clawhub.ai/skills/feishu-cli-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-cli-export-d2e645bd4e28b5fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将飞书文档或知识库文档导出为 Markdown 文件，或导出为 PDF/Word 等格式（异步任务）。 当用户请求\"导出文档\"、\"导出为 Markdown\"、\"转换为 Markdown\"、\"保存为 md\"、 \"导出 PDF\"、\"导出 Word\"、\"下载文档\"时使用。 本技能专注于导出操作。从本地 DOCX 文件导..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "giswilson",
+      "userId": "publishers:giswilson",
+      "displayName": "GISwilson",
+      "image": "https://avatars.githubusercontent.com/u/11484101?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 338,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773908256742,
+      "changelog": "feishu-cli-export v1.0.0\n\n- 首次发布，支持将飞书文档和知识库文档导出为本地 Markdown 文件，或导出为 PDF/Word（异步任务）。\n- 支持图片、画板下载，文本高亮、Front Matter、@用户等多种导出格式和选项。\n- 支持权限检查与多种错误处理提示，兼容文档/知识库多种 URL 格式。\n- 提供详细使用示例、参数说明和常见问题解答，覆盖 Markdown/PDF/Word 等主流需求。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fd3aa367323840343e2911e9e56b97cdaa0fb96e95a902c7d387e7e1049a707e"
+}

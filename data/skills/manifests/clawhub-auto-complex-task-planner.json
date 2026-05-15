@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63775,
+  "uuid": "skill-clawhub-auto-complex-task-planner",
+  "skillKey": "clawhub-auto-complex-task-planner",
+  "name": "auto-complex-task-planner",
+  "summary": "自动复杂任务规划器。智能判断任务复杂度，自动创建子 agent 执行，支持优先级队列、任务模板、进度追踪、增强质量审核。 使用场景： - \"帮我调研 XXX\"（复杂调研任务） - \"开发一个 XXX 功能\"（开发任务） - \"批量处理 XXX\"（批量操作） - \"生成 XXX 报告/文档\"（文档生成） - \"紧急...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_complex_task_planner",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sixtysixsone",
+      "features": [
+        "自动复杂任务规划器。智能判断任务复杂度，自动创建子 agent 执行，支持优先级队列、任务模板、进度追踪、增强质量审核。 使用场景：",
+        "\"帮我调研 XXX\"（复杂调研任务）",
+        "\"开发一个 XXX 功能\"（开发任务）",
+        "\"批量处理 XXX\"（批量操作）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/auto-complex-task-planner@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/93070188?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "auto-complex-task-planner",
+      "url": "https://clawhub.ai/skills/auto-complex-task-planner"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-complex-task-planner",
+    "url": "https://clawhub.ai/skills/auto-complex-task-planner",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-complex-task-planner-90dda9a3241c335c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/auto-complex-task-planner@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-auto-complex-task-planner-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7fb04d6688bb845002a5bd966e35d1be25a236b84d3a4b9d79d4edf220c9093f",
+      "artifactSizeBytes": 3202
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T14:31:18.599Z"
+}

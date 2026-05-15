@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49729,
+  "uuid": "skill-clawhub-daum-toy-search",
+  "skillKey": "clawhub-daum-toy-search",
+  "name": "Daum Toy Search",
+  "summary": "High-performance, multi-source Korean search API aggregating Daum/Kakao News, Encyclopedia, and Web results in a Perplexity-compatible format.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daum_toy_search",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sung Kim",
+      "features": [
+        "High-performance, multi-source Korean search API aggregating Daum/Kakao News, Encyclopedia, and."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daum-toy-search@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/901975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daum-toy-search",
+      "url": "https://clawhub.ai/skills/daum-toy-search"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daum-toy-search",
+    "url": "https://clawhub.ai/skills/daum-toy-search",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daum-toy-search-6e89f91d85fec170.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daum-toy-search@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daum-toy-search-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ac9e5a4a026a4a29c84b5a9ecf33462cf95066a6cade3c5301065967d857f5e0",
+      "artifactSizeBytes": 2263
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T21:33:02.098Z"
+}

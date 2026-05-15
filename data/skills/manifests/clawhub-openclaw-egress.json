@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13547,
+  "uuid": "skill-clawhub-openclaw-egress",
+  "skillKey": "clawhub-openclaw-egress",
+  "name": "Openclaw Egress",
+  "summary": "Network data loss prevention for agent workspaces. Scans skills and files for outbound URLs, data exfiltration endpoints, suspicious domains, and network function calls. Maps every external connection. Free alert layer — upgrade to opencla.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_egress",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AtlasPA",
+      "features": [
+        "Network data loss prevention for agent workspaces",
+        "Scans skills and files for outbound URLs, data exfiltration endpoints, suspicious domains, and.",
+        "Maps every external connection",
+        "Free alert layer — upgrade to openclaw-egress-pro for blocking, quarantine, and URL allowlists."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-egress@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/231540010?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-egress",
+      "url": "https://clawhub.ai/skills/openclaw-egress"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-egress",
+    "url": "https://clawhub.ai/skills/openclaw-egress",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-egress-8c1628f12c3bdecc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-egress@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-egress-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0f257608bfc39031b82a5d6548da451b0deacba8276b28ef74d95d0441c6c050",
+      "artifactSizeBytes": 2235
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-12T10:26:18.690Z"
+}

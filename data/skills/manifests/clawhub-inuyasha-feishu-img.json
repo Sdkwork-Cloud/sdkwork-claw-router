@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58143,
+  "uuid": "skill-clawhub-inuyasha-feishu-img",
+  "skillKey": "clawhub-inuyasha-feishu-img",
+  "name": "Feishu Image Sender 飞书发图指南",
+  "summary": "Feishu IM messaging operations: send messages, images, files to users and groups via Bot API. Activate when user mentions: 飞书发图、发送图片、飞书消息、im:resource、image_k...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.inuyasha_feishu_img",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jiao yang",
+      "features": [
+        "Feishu IM messaging operations: send messages, images, files to users and groups via Bot API",
+        "Activate when user mentions: 飞书发图、发送图片、飞书消息、im:resource、image_k..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/inuyasha-feishu-img@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/179995636?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "inuyasha-feishu-img",
+      "url": "https://clawhub.ai/skills/inuyasha-feishu-img"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "inuyasha-feishu-img",
+    "url": "https://clawhub.ai/skills/inuyasha-feishu-img",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/inuyasha-feishu-img-0275950ab43fa468.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/inuyasha-feishu-img@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-inuyasha-feishu-img-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4fb1dd7681d0ece81fdb08a603f12bd9a666691441b4283a85141bf191433e38",
+      "artifactSizeBytes": 1974
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T03:38:36.479Z"
+}

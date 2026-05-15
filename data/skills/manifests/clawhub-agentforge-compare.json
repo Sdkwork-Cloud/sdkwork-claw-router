@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27321,
+  "uuid": "skill-clawhub-agentforge-compare",
+  "skillKey": "clawhub-agentforge-compare",
+  "name": "OpenClaw AgentForge Compare",
+  "summary": "AI coding tool comparison MCP server -- compare Claude Code vs Cursor vs Windsurf vs Devin vs Copilot side-by-side with feature matrices, pricing breakdowns,...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agentforge_compare",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "YedanYagami",
+      "features": [
+        "AI coding tool comparison MCP server -",
+        "compare Claude Code vs Cursor vs Windsurf vs Devin vs Copilot side-by-side with feature matrice."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/agentforge-compare@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262255698?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "agentforge-compare",
+      "url": "https://clawhub.ai/skills/agentforge-compare"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agentforge-compare",
+    "url": "https://clawhub.ai/skills/agentforge-compare",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agentforge-compare-99d8849267c88678.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/agentforge-compare@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-agentforge-compare-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:495025fb72b5c9285ff14a2dedf14d0ca8a366f6c4f9b63823260a470dd667a8",
+      "artifactSizeBytes": 2046
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T02:10:48.125Z"
+}

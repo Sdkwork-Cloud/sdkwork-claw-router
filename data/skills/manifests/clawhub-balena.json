@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32403,
+  "uuid": "skill-clawhub-balena",
+  "skillKey": "clawhub-balena",
+  "name": "Balena",
+  "summary": "Balena integration. Manage data, records, and automate workflows. Use when the user wants to interact with Balena data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.balena",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Balena integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Balena data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/balena@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "balena",
+      "url": "https://clawhub.ai/skills/balena"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "balena",
+    "url": "https://clawhub.ai/skills/balena",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/balena-dd61d62a47e5d130.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/balena@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-balena-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5160518bf1b6926f03447a7a41e2572aeabcaec4c2ccc04487a3516c03b28694",
+      "artifactSizeBytes": 1820
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T15:13:11.196Z"
+}

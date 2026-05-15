@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mcp-chrome@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mcp_chrome",
+  "skill": {
+    "id": 13698,
+    "skillKey": "clawhub-mcp-chrome",
+    "name": "mcp-chrome"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mcp-chrome",
+    "url": "https://clawhub.ai/skills/mcp-chrome",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mcp-chrome-5bfb5e89a50c644c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Control Chrome browser with AI using MCP protocol. Use when users want to automate browser tasks, take screenshots, fill forms, click elements, navigate page..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "femto",
+      "userId": "publishers:femto",
+      "displayName": "femto",
+      "image": "https://avatars.githubusercontent.com/u/6938?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1049,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 3,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1771847474485,
+      "changelog": "- Added comprehensive SKILL.md with clear setup instructions, usage examples, and tool documentation.\n- Detailed feature comparison with Playwright MCP and outlined unique advantages.\n- Provided troubleshooting tips and multi-client support information.\n- Listed over 20 available browser automation tools and their descriptions.\n- Included resource links for GitHub, npm, and releases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:7bd571995b0c4f1bb58c7f6a63dac0d042faf867d37cc44109a121a1bf5adf03"
+}

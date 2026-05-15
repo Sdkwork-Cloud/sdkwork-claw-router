@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weread-import@0.3.9",
+  "version": "0.3.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weread_import",
+  "skill": {
+    "id": 20952,
+    "skillKey": "clawhub-weread-import",
+    "name": "WeRead Import"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weread-import",
+    "url": "https://clawhub.ai/skills/weread-import",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weread-import-34b7471107514795.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Export WeRead highlights and notes into Markdown files, usually into an Obsidian Reading folder. Use when the user asks to import or sync WeRead books, re-re..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gnixner",
+      "userId": "s17c5ysg14ykhktcbd5e90gh3s83gqk4",
+      "displayName": "GNIXNER",
+      "image": "https://avatars.githubusercontent.com/u/44546560?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 520,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 17
+    },
+    "latestVersion": {
+      "version": "0.3.9",
+      "createdAt": 1775700189208,
+      "changelog": "- Added new script: scripts/wait-browser-managed-ready.mjs\n- This script supports readiness checks or coordination for the managed browser mode.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ba6dd037488c23cdcbbfbfa4977e4f51ee85b02b5a8966dc3e4b69b11ee6da4f"
+}

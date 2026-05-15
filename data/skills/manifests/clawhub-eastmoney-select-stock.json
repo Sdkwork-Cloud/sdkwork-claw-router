@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 69595,
+  "uuid": "skill-clawhub-eastmoney-select-stock",
+  "skillKey": "clawhub-eastmoney-select-stock",
+  "name": "eastmoney skills",
+  "summary": "本 Skill 支持基于股票选股条件（行情指标、财务指标等）筛选满足条件的股票；可查询指定行业/板块内的股票、上市公司，以及板块指数的成分股；同时支持股票、上市公司、板块/指数推荐等相关任务，避免大模型在选股时使用过时信息。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eastmoney_select_stock",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "eastmoney_dev",
+      "features": [
+        "本 Skill 支持基于股票选股条件（行情指标、财务指标等）筛选满足条件的股票；可查询指定行业/板块内的股票、上市公司，以及板块指数的成分股；同时支持股票、上市公司、板块/指数推荐等相关任务."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eastmoney-select-stock@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/109639273?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eastmoney-select-stock",
+      "url": "https://clawhub.ai/skills/eastmoney-select-stock"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eastmoney-select-stock",
+    "url": "https://clawhub.ai/skills/eastmoney-select-stock",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eastmoney-select-stock-e6e72f69a4b19759.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eastmoney-select-stock@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-eastmoney-select-stock-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f64699ffdc9bdcddd9acd6c650917ff0fc71db10be981b9efc35b0ff0b47455",
+      "artifactSizeBytes": 2503
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T02:01:10.383Z"
+}

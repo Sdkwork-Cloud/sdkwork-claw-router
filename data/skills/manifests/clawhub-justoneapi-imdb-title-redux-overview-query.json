@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 47895,
+  "uuid": "skill-clawhub-justoneapi-imdb-title-redux-overview-query",
+  "skillKey": "clawhub-justoneapi-imdb-title-redux-overview-query",
+  "name": "IMDb Redux Overview API",
+  "summary": "Call GET /api/imdb/title-redux-overview-query/v1 for IMDb Redux Overview through JustOneAPI with id.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.justoneapi_imdb_title_redux_overview_query",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "justoneapi",
+      "features": [
+        "Call GET /api/imdb/title-redux-overview-query/v1 for IMDb Redux Overview through JustOneAPI wit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/justoneapi-imdb-title-redux-overview-query@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/139095138?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "justoneapi-imdb-title-redux-overview-query",
+      "url": "https://clawhub.ai/skills/justoneapi-imdb-title-redux-overview-query"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "justoneapi-imdb-title-redux-overview-query",
+    "url": "https://clawhub.ai/skills/justoneapi-imdb-title-redux-overview-query",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/justoneapi-imdb-title-redux-overview-query-fa84aaa7dd71f893.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/justoneapi-imdb-title-redux-overview-query@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-justoneapi-imdb-title-redux-overview-query-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb8cbf6c9136f77445509d9a076146ab916c92303bd7671f641bd393f9314ef6",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T22:15:33.244Z"
+}

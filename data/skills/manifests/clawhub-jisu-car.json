@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68056,
+  "uuid": "skill-clawhub-jisu-car",
+  "skillKey": "clawhub-jisu-car",
+  "name": "Car Models Inquiry - 车型大全查询",
+  "summary": "查品牌、车系、车型详情、搜索与热门/销量榜等。当用户说：比亚迪汉有什么配置？十万左右 SUV 推荐车型数据，或类似车型库问题时，使用本技能。",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jisu_car",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "极速数据",
+      "features": [
+        "查品牌、车系、车型详情、搜索与热门/销量榜等。当用户说：比亚迪汉有什么配置？十万左右 SUV 推荐车型数据，或类似车型库问题时，使用本技能。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jisu-car@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/30516426?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jisu-car",
+      "url": "https://clawhub.ai/skills/jisu-car"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jisu-car",
+    "url": "https://clawhub.ai/skills/jisu-car",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jisu-car-821bcde8e86c563e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jisu-car@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-jisu-car-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:330c0ce792719a8c9762c45e263587c0a5fa86f982731e8869dd0937770013cc",
+      "artifactSizeBytes": 2318
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T09:57:33.971Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 21338,
+  "uuid": "skill-clawhub-consultant",
+  "skillKey": "clawhub-consultant",
+  "name": "Consultant",
+  "summary": "Diagnose business problems, scope engagements, and deliver decision-ready recommendations with measurable outcomes and executable plans.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.consultant",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Iván",
+      "features": [
+        "Diagnose business problems, scope engagements, and deliver decision-ready recommendations with."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/consultant@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/81719670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "consultant",
+      "url": "https://clawhub.ai/skills/consultant"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "consultant",
+    "url": "https://clawhub.ai/skills/consultant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/consultant-4087b6426d9adf2b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/consultant@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-consultant-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f0a054e73f7395fd7a792203d4f3ff58d9fa4a3424a76f7429357ec9eb5426f",
+      "artifactSizeBytes": 1924
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T23:15:44.228Z"
+}

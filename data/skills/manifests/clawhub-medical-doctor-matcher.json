@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70440,
+  "uuid": "skill-clawhub-medical-doctor-matcher",
+  "skillKey": "clawhub-medical-doctor-matcher",
+  "name": "medical-doctor",
+  "summary": "当用户需要根据主诉、病史、地区和就诊偏好，推荐最合适的医院与医生，并在可行时生成模拟挂号与陪诊安排时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.medical_doctor_matcher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sunlinlin-aragon",
+      "features": [
+        "当用户需要根据主诉、病史、地区和就诊偏好，推荐最合适的医院与医生，并在可行时生成模拟挂号与陪诊安排时使用。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/medical-doctor-matcher@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/15337197?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "medical-doctor-matcher",
+      "url": "https://clawhub.ai/skills/medical-doctor-matcher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "medical-doctor-matcher",
+    "url": "https://clawhub.ai/skills/medical-doctor-matcher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/medical-doctor-matcher-0e5a9d0fb3b5c23a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/medical-doctor-matcher@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-medical-doctor-matcher-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4aa80648965c3ecfc5510dd9a854a2778ea87528429cfdb26154befbe7353bcd",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T12:19:28.710Z"
+}

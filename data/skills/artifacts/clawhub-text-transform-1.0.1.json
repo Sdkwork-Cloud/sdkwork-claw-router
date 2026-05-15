@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/text-transform@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.text_transform",
+  "skill": {
+    "id": 19475,
+    "skillKey": "clawhub-text-transform",
+    "name": "Text Transform"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "text-transform",
+    "url": "https://clawhub.ai/skills/text-transform",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/text-transform-544afb4510eeaaad.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Text transformation, regex, diff, format conversion, and JSON manipulation."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cutthemustard",
+      "userId": "s173h8p9g1rpxh3vdhvjvhdy9d83kfqn",
+      "displayName": "CutTheMustard",
+      "image": "https://avatars.githubusercontent.com/u/63439451?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 601,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1772596500771,
+      "changelog": "Strengthen data handling: default to agent-generated content only, require explicit user instruction for user content",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dbb7dff2279906d520a53c36d56ccf6129bacc0042015509721121444c4a4657"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bounded-memory@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bounded_memory",
+  "skill": {
+    "id": 37291,
+    "skillKey": "clawhub-bounded-memory",
+    "name": "Bounded Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bounded-memory",
+    "url": "https://clawhub.ai/skills/bounded-memory",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bounded-memory-f5bc1ade5cbe63fd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides fast full-text search of OpenClaw session histories with optional LLM summarization for recalling past conversations and decisions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "canmaxfire",
+      "userId": "s170bn6z6nrn3a00ejtjddm30n83k0sd",
+      "displayName": "canmaxfire",
+      "image": "https://avatars.githubusercontent.com/u/76983334?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 198,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 7
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1776752356537,
+      "changelog": "Fix: LLM truly opt-in, remove sessions.db from git, add .gitignore",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4c0bd6f6c1c8e839b4d23094738337083f623ff2a8d70898d820b5302960ab4e"
+}

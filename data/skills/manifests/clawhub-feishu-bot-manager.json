@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58104,
+  "uuid": "skill-clawhub-feishu-bot-manager",
+  "skillKey": "clawhub-feishu-bot-manager",
+  "name": "Feishu Bot Manager",
+  "summary": "Manage Feishu bots in OpenClaw configuration. Supports add, delete, update, list, and info operations. Triggers on phrases like \"添加飞书机器人\", \"删除飞书机器人\", \"修改飞书机器...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.feishu_bot_manager",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xiangxinag-princess",
+      "features": [
+        "Manage Feishu bots in OpenClaw configuration",
+        "Supports add, delete, update, list, and info operations",
+        "Triggers on phrases like \"添加飞书机器人\", \"删除飞书机器人\", \"修改飞书机器..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/feishu-bot-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227394837?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "feishu-bot-manager",
+      "url": "https://clawhub.ai/skills/feishu-bot-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "feishu-bot-manager",
+    "url": "https://clawhub.ai/skills/feishu-bot-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/feishu-bot-manager-f4ce92eb3ed41f97.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/feishu-bot-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-feishu-bot-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6b607e92bd66ab321dd1f14a39465e93318454675eb884db54c45e8a68fe449",
+      "artifactSizeBytes": 2050
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T14:58:39.780Z"
+}

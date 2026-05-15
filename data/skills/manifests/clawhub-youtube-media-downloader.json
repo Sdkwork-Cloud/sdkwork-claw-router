@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 13926,
+  "uuid": "skill-clawhub-youtube-media-downloader",
+  "skillKey": "clawhub-youtube-media-downloader",
+  "name": "YouTube Media Downloader",
+  "summary": "Download audio (MP3) and video (MP4) files from YouTube URLs. Use when users want to convert YouTube videos to files, extract music/songs, download videos fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_media_downloader",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Xander Rey",
+      "features": [
+        "Download audio (MP3) and video (MP4) files from YouTube URLs",
+        "Use when users want to convert YouTube videos to files, extract music/songs, download videos fo."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/youtube-media-downloader@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/84536926?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "youtube-media-downloader",
+      "url": "https://clawhub.ai/skills/youtube-media-downloader"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-media-downloader",
+    "url": "https://clawhub.ai/skills/youtube-media-downloader",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-media-downloader-6a28fcfc50f39643.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/youtube-media-downloader@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-youtube-media-downloader-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49b62e44d54f023fa448d7269a4ed59cfb86c463282579c001f71f8c846843fe",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T01:54:13.508Z"
+}

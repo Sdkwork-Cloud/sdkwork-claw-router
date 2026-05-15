@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38455,
+  "uuid": "skill-clawhub-boxed-http-server",
+  "skillKey": "clawhub-boxed-http-server",
+  "name": "Boxed HTTP Server",
+  "summary": "WebAssembly sandbox static HTTP server with HTTP Basic auth and proxy support. Use when starting a static file server, configuring HTTP authentication, setti...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.boxed_http_server",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "guyoung",
+      "features": [
+        "WebAssembly sandbox static HTTP server with HTTP Basic auth and proxy support",
+        "Use when starting a static file server, configuring HTTP authentication, setti..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/boxed-http-server@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1448308?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "boxed-http-server",
+      "url": "https://clawhub.ai/skills/boxed-http-server"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "boxed-http-server",
+    "url": "https://clawhub.ai/skills/boxed-http-server",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/boxed-http-server-9517ced35e1eb6d2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/boxed-http-server@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-boxed-http-server-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:47b2e2f96b32ef97fb418dc2263834bdfd22d4f82efb6fcf33fabab2e67fb480",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T16:39:39.038Z"
+}

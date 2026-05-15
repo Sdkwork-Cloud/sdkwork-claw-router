@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67030,
+  "uuid": "skill-clawhub-credit-lgd-model",
+  "skillKey": "clawhub-credit-lgd-model",
+  "name": "Credit Lgd Model",
+  "summary": "构建并训练 LGD（违约损失率）机器学习模型，支持基于历史违约数据的信用风险量化评估与预测。",
+  "version": "0.3.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.credit_lgd_model",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tang Weigang",
+      "features": [
+        "构建并训练 LGD（违约损失率）机器学习模型，支持基于历史违约数据的信用风险量化评估与预测。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/credit-lgd-model@0.3.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/259277235?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "credit-lgd-model",
+      "url": "https://clawhub.ai/skills/credit-lgd-model"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "credit-lgd-model",
+    "url": "https://clawhub.ai/skills/credit-lgd-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/credit-lgd-model-e5a1e332d1706b44.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/credit-lgd-model@0.3.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-credit-lgd-model-0.3.3.json",
+      "version": "0.3.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:dee5b77f9080397486c2c3ccd284d471e832925cf8c5af583b09f19b23b7fdd3",
+      "artifactSizeBytes": 2016
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-23T14:24:23.847Z"
+}

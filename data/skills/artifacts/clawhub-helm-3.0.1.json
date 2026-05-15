@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/helm@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.helm",
+  "skill": {
+    "id": 20583,
+    "skillKey": "clawhub-helm",
+    "name": "Helm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "helm",
+    "url": "https://clawhub.ai/skills/helm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/helm-ab14d3faa25e917e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create, lint, template, and package Kubernetes Helm charts with checks. Use when scaffolding charts, linting templates, or packaging chart releases."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 518,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1773914032191,
+      "changelog": "v3.0.1: SKILL.md rewritten to match new script commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f233ead0591342140d06fe468b1c4b87c67e6609f40c362fa65d3092a133ba0f"
+}

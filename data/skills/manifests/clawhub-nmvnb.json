@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 32495,
+  "uuid": "skill-clawhub-nmvnb",
+  "skillKey": "clawhub-nmvnb",
+  "name": "SEEK",
+  "summary": "Manages free AI models from OpenRouter for OpenClaw. Automatically ranks models by quality, configures fallbacks for rate-limit handling, and updates opencla...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nmvnb",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pz33y",
+      "features": [
+        "Manages free AI models from OpenRouter for OpenClaw",
+        "Automatically ranks models by quality, configures fallbacks for rate-limit handling, and update."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nmvnb@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/193047069?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nmvnb",
+      "url": "https://clawhub.ai/skills/nmvnb"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nmvnb",
+    "url": "https://clawhub.ai/skills/nmvnb",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nmvnb-a8d564225e00276a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nmvnb@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-nmvnb-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:851ac9adc3f4fd22922a7822505c8fa818ba53dd9a012e911933267506fae92a",
+      "artifactSizeBytes": 2350
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T13:22:20.700Z"
+}

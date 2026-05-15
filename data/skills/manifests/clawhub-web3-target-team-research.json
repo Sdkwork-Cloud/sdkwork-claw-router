@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12994,
+  "uuid": "skill-clawhub-web3-target-team-research",
+  "skillKey": "clawhub-web3-target-team-research",
+  "name": "Web3 Target Team Research",
+  "summary": "Find crypto/web3 teams with $10M+ funding and verified Telegram contacts. Use when hunting for crypto leads, building contact lists, researching funded startups, or prospecting web3 companies. Spawns parallel subagent hunters to search VC.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.web3_target_team_research",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "shwchlorine",
+      "features": [
+        "Find crypto/web3 teams with $10M+ funding and verified Telegram contacts",
+        "Use when hunting for crypto leads, building contact lists, researching funded startups, or pros.",
+        "Spawns parallel subagent hunters to search VC portfolios and verify TG handles."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/web3-target-team-research@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44778771?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "web3-target-team-research",
+      "url": "https://clawhub.ai/skills/web3-target-team-research"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "web3-target-team-research",
+    "url": "https://clawhub.ai/skills/web3-target-team-research",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/web3-target-team-research-8c4f003395bafba8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/web3-target-team-research@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-web3-target-team-research-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:85473e4e6e6fcb090ee3f60c1998733a054704124c6f1c9c31ab762cc8c3c4ac",
+      "artifactSizeBytes": 2117
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-26T03:47:46.730Z"
+}

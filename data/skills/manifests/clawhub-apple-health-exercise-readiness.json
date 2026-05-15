@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63852,
+  "uuid": "skill-clawhub-apple-health-exercise-readiness",
+  "skillKey": "clawhub-apple-health-exercise-readiness",
+  "name": "apple-health-exercise-readiness",
+  "summary": "查询苹果健康当日数据，分析身体状况是否适合锻炼，给出四档建议（重度/中度/轻度/建议休息）并附详细说明。使用 Python 处理数据。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.apple_health_exercise_readiness",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "LynnShaw",
+      "features": [
+        "查询苹果健康当日数据，分析身体状况是否适合锻炼，给出四档建议（重度/中度/轻度/建议休息）并附详细说明。使用 Python 处理数据。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/apple-health-exercise-readiness@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/11351097?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "apple-health-exercise-readiness",
+      "url": "https://clawhub.ai/skills/apple-health-exercise-readiness"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "apple-health-exercise-readiness",
+    "url": "https://clawhub.ai/skills/apple-health-exercise-readiness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/apple-health-exercise-readiness-7fbbfc77920a7d23.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/apple-health-exercise-readiness@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-apple-health-exercise-readiness-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1c3cbc0d1e9fa4c5bcaf1aac6349d9fe1e0adfafc6d308d15b0e3408f4b1e28b",
+      "artifactSizeBytes": 2688
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-05T08:59:45.448Z"
+}

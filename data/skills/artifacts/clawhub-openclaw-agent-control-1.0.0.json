@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-agent-control@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_agent_control",
+  "skill": {
+    "id": 18132,
+    "skillKey": "clawhub-openclaw-agent-control",
+    "name": "OpenClaw Agent Control Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-agent-control",
+    "url": "https://clawhub.ai/skills/openclaw-agent-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-agent-control-b61fd39e7070dadb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Deploy and start OpenClaw Agent Control with one command (backend + frontend) using skill-based workflow."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jiangagentlabs",
+      "userId": "publishers:jiangagentlabs",
+      "displayName": "Jiang_AgentLabs",
+      "image": "https://avatars.githubusercontent.com/u/61495056?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 585,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772733130900,
+      "changelog": "- Initial release of openclaw-agent-control skill.\n- Deploys and starts both backend and frontend with a single command.\n- Supports repository cloning/updating and health checks.\n- Offers customizable environment variables for deployment.\n- Provides quick validation steps for both frontend and backend.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:5de09f7cbf0b3736eb277aca69ce4dbfc1a451a812ef60dafd1a669515674ec2"
+}

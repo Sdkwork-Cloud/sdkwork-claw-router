@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18962,
+  "uuid": "skill-clawhub-jiraandconfluence-skill",
+  "skillKey": "clawhub-jiraandconfluence-skill",
+  "name": "Jiraandconfluence Skill",
+  "summary": "Automates retrieval and summary of Jira Cloud issues and Confluence Cloud pages using secure API tokens for improved workflow insights.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiraandconfluence_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Samuel Porras",
+      "features": [
+        "Automates retrieval and summary of Jira Cloud issues and Confluence Cloud pages using secure AP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/jiraandconfluence-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1246874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "jiraandconfluence-skill",
+      "url": "https://clawhub.ai/skills/jiraandconfluence-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiraandconfluence-skill",
+    "url": "https://clawhub.ai/skills/jiraandconfluence-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiraandconfluence-skill-dd4df937f78ce44d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/jiraandconfluence-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-jiraandconfluence-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c90ecda11348b3412c6d60706388c4fd3560060b2b8b0985d73e8e8dafb93a3b",
+      "artifactSizeBytes": 2366
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-23T10:56:47.340Z"
+}

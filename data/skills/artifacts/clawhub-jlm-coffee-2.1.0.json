@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jlm-coffee@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jlm_coffee",
+  "skill": {
+    "id": 54561,
+    "skillKey": "clawhub-jlm-coffee",
+    "name": "Jlm Coffee"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jlm-coffee",
+    "url": "https://clawhub.ai/skills/jlm-coffee",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jlm-coffee-afae08effa6d6421.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Jerusalem specialty coffee shops by name, amenities, ratings, and opening hours. Use when user asks about \"coffee in Jerusalem\", \"Jerusalem cafe\", \"בי..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "alexpolonsky",
+      "userId": "publishers:alexpolonsky",
+      "displayName": "alexpolonsky",
+      "image": "https://avatars.githubusercontent.com/u/7319921?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 511,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1772090007510,
+      "changelog": "- Version updated to 2.1.0 (no other changes detected)\n- No file changes or feature additions in this release",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b6cb50a166d398bbda2928b7d0192da1f2b92d5d9d350eb45a42164e7c78da37"
+}

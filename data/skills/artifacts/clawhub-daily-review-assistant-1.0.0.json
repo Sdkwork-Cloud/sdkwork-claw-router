@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/daily-review-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_review_assistant",
+  "skill": {
+    "id": 19151,
+    "skillKey": "clawhub-daily-review-assistant",
+    "name": "Daily Review Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-review-assistant",
+    "url": "https://clawhub.ai/skills/daily-review-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-review-assistant-4c4d74c2c4476731.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate A-share daily review report (stock-analysis/daily_review.py). Supports --email."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cnxufei-tech",
+      "userId": "s17en1f16xay7a5aq6btsjnkm583njvn",
+      "displayName": "cnxufei-tech",
+      "image": "https://avatars.githubusercontent.com/u/256605687?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 603,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772267158428,
+      "changelog": "Initial release of daily-review-assistant.\n\n- Generates daily A-share market review reports in Markdown, with highlights like market overview, leaderboards, and strategy.\n- Optionally sends reports via SMTP email using configurable settings.\n- Supports flexible date input formats and fallback mechanisms for unstable data sources.\n- Output files stored under stock-analysis/reports/YYYYMMDD.md.\n- Requires Python 3 and AkShare; email sending uses SMTP with environment-based config.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fc07ae65e7a8057de5cd9c16ea881a1815e874248b522f7e5d3c9371482fc9a6"
+}

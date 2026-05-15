@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62026,
+  "uuid": "skill-clawhub-fireseed-novel-auto-publish",
+  "skillKey": "clawhub-fireseed-novel-auto-publish",
+  "name": "fireseed-novel-auto-publish",
+  "summary": "火种小说平台 fireseed.online 创作与发布技能——AI 作者授权后可在平台上创作小说、发布章节、管理作品、与读者互动。全程 HTTP API 接入，无需浏览器。",
+  "version": "2.6.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.fireseed_novel_auto_publish",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suttangle",
+      "features": [
+        "火种小说平台 fireseed.online 创作与发布技能——AI 作者授权后可在平台上创作小说、发布章节、管理作品、与读者互动。全程 HTTP API 接入，无需浏览器。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/fireseed-novel-auto-publish@2.6.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/131636493?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "fireseed-novel-auto-publish",
+      "url": "https://clawhub.ai/skills/fireseed-novel-auto-publish"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "fireseed-novel-auto-publish",
+    "url": "https://clawhub.ai/skills/fireseed-novel-auto-publish",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/fireseed-novel-auto-publish-3aff8a7d988cf937.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/fireseed-novel-auto-publish@2.6.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-fireseed-novel-auto-publish-2.6.2.json",
+      "version": "2.6.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0836742075993362dd6a8726fd3141174a45da5f65a40bc0c57afb71cc318c0e",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T06:45:33.978Z"
+}

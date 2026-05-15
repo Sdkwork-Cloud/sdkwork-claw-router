@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-weave@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_weave",
+  "skill": {
+    "id": 16293,
+    "skillKey": "clawhub-agent-weave",
+    "name": "Agent Weave"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-weave",
+    "url": "https://clawhub.ai/skills/agent-weave",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-weave-bdf5622ec9c0c6a4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Master-Worker Agent Cluster for parallel task execution. Use when building distributed agent systems with parallel processing needs, task orchestration, or M..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gl813788-byte",
+      "userId": "publishers:gl813788-byte",
+      "displayName": "gl813788-byte",
+      "image": "https://avatars.githubusercontent.com/u/226122087?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 884,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771388500520,
+      "changelog": "Initial release of agent-weave:\n\n- Provides a Master-Worker Agent Cluster for parallel task execution and secure agent communication.\n- Supports distributed agent systems, scalable orchestration, and MapReduce-style workflows.\n- Includes API for Loom, Master, Worker, Thread, and Tapestry components.\n- Offers CLI commands for managing clusters, spawning workers, and listing agents.\n- Features event-driven communication and auto-scaling of worker agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b507732453f1c56fb297151b913c5c0a7f87e071b013178617b9ecabac479cd2"
+}

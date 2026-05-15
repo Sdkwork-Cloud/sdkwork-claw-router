@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/byted-airesearch-videoeval@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_airesearch_videoeval",
+  "skill": {
+    "id": 38023,
+    "skillKey": "clawhub-byted-airesearch-videoeval",
+    "name": "Byted Airesearch Videoeval"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-airesearch-videoeval",
+    "url": "https://clawhub.ai/skills/byted-airesearch-videoeval",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-airesearch-videoeval-d43ad1af8283580d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create and check long-running video material evaluation tasks. Use this skill when the user wants to submit videos for evaluation, check an existing video ev..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "volcengine-skills",
+      "userId": "s17bcxs73bckd3eercvtn6cmsx83g5kg",
+      "displayName": "volcengine-skills",
+      "image": "https://avatars.githubusercontent.com/u/260939792?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 191,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774515297860,
+      "changelog": "byted-airesearch-videoeval 1.0.0 – initial release\n\n- Adds the ability to create and check progress/results of long-running video material evaluation tasks.\n- Supports submission of 1–50 local MP4 videos per evaluation task, with strict validation on format and size (max 50MB each).\n- Provides task listing and querying of individual task details, with natural-language summaries of status and results.\n- Requires API key authentication; prompts user for API key if missing.\n- Upload and task-creation are internal to the orchestration workflow—generic video uploads are not supported.\n- Clear error messages for invalid inputs and actionable feedback for all supported commands.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:c683bcfd86307209329f19b32cef34ec1b62af2e52a0cf5a6e11a6dbd0bdfe05"
+}

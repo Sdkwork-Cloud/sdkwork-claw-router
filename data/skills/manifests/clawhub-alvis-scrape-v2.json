@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42497,
+  "uuid": "skill-clawhub-alvis-scrape-v2",
+  "skillKey": "clawhub-alvis-scrape-v2",
+  "name": "Scrape",
+  "summary": "Legal web scraping with robots.txt compliance, rate limiting, and GDPR/CCPA-aware data handling. Supports both direct HTTP scraping and managed scraping via...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alvis_scrape_v2",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AlvisDunlop",
+      "features": [
+        "Legal web scraping with robots.txt compliance, rate limiting, and GDPR/CCPA-aware data handling",
+        "Supports both direct HTTP scraping and managed scraping via..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alvis-scrape-v2@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/255881479?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alvis-scrape-v2",
+      "url": "https://clawhub.ai/skills/alvis-scrape-v2"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alvis-scrape-v2",
+    "url": "https://clawhub.ai/skills/alvis-scrape-v2",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alvis-scrape-v2-a8fc37a29cc6c3e6.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alvis-scrape-v2@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-alvis-scrape-v2-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f240668ccd3cf75e636de7823698ac5d03390956e54b717a474c74ea0a226261",
+      "artifactSizeBytes": 2118
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-16T02:03:01.406Z"
+}

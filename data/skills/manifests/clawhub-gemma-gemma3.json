@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51734,
+  "uuid": "skill-clawhub-gemma-gemma3",
+  "skillKey": "clawhub-gemma-gemma3",
+  "name": "Gemma Gemma3",
+  "summary": "Gemma 3 by Google — run Gemma 3 (4B, 12B, 27B) across your local device fleet. Google's most capable open model with 128K context, strong coding, and multili...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemma_gemma3",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Twin Geeks",
+      "features": [
+        "Gemma 3 by Google — run Gemma 3 (4B, 12B, 27B) across your local device fleet",
+        "Google's most capable open model with 128K context, strong coding, and multili..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gemma-gemma3@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261838102?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gemma-gemma3",
+      "url": "https://clawhub.ai/skills/gemma-gemma3"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemma-gemma3",
+    "url": "https://clawhub.ai/skills/gemma-gemma3",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemma-gemma3-8b086327749adc88.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gemma-gemma3@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-gemma-gemma3-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4f319a04de92fb8abeed02820adc376d53d0b46e4c996373f4585f4416e2d537",
+      "artifactSizeBytes": 1978
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T22:18:14.122Z"
+}

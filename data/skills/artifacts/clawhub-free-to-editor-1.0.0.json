@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/free-to-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.free_to_editor",
+  "skill": {
+    "id": 38997,
+    "skillKey": "clawhub-free-to-editor",
+    "name": "Free To Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "free-to-editor",
+    "url": "https://clawhub.ai/skills/free-to-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/free-to-editor-c9efec425fdeb36a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 3-minute unedited interview recording into 1080p polished edited clips just by typing what you need. Whether it's editing raw footage into a finished..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francemichaell-15",
+      "userId": "s17d9c8b33h4a82h5bxd4dadd584dke7",
+      "displayName": "francemichaell-15",
+      "image": "https://avatars.githubusercontent.com/u/208906142?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776742726438,
+      "changelog": "- Initial release of Free to Editor — AI-powered video editing workflow.\n- Upload raw footage, describe edits, and export 1080p videos in 1-2 minutes without timeline work.\n- Automated cloud-based processing with support for cut, background music, text, aspect ratio, and more.\n- Simple setup: automatic token retrieval and session creation.\n- Official support for export formats: mp4, mov, avi, webm, mkv, jpg, png, gif, webp, mp3, wav, m4a, aac.\n- Built-in error handling for common issues, including token expiry and file limits.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b95d2522a4a0a23696d2a171d6799da06581ad927621d8bd943f00e8b700abe"
+}

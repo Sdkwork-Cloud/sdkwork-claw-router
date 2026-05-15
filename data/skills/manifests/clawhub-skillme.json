@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28510,
+  "uuid": "skill-clawhub-skillme",
+  "skillKey": "clawhub-skillme",
+  "name": "SkillMe",
+  "summary": "Use when user asks to find, search, add, or install skills, or discover agent capabilities. Also triggers on 'install skills', 'add skills', 'is there a skil...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skillme",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Eric Su",
+      "features": [
+        "Use when user asks to find, search, add, or install skills, or discover agent capabilities",
+        "Also triggers on 'install skills', 'add skills', 'is there a skil..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skillme@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60202455?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skillme",
+      "url": "https://clawhub.ai/skills/skillme"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skillme",
+    "url": "https://clawhub.ai/skills/skillme",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skillme-b62b141a4d567a1f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skillme@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skillme-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b87664577269ce887d04430dcde9b5b60d175c3c29754f375f7da44d5a850060",
+      "artifactSizeBytes": 1882
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T17:37:25.303Z"
+}

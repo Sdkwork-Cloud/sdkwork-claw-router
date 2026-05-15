@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-swarm@1.7.19",
+  "version": "1.7.19",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_swarm",
+  "skill": {
+    "id": 9808,
+    "skillKey": "clawhub-agent-swarm",
+    "name": "Agent Swarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-swarm",
+    "url": "https://clawhub.ai/skills/agent-swarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-swarm-8503efa580bd94bc.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "IMPORTANT: OpenRouter is required. Routes tasks to the right model and always delegates work through sessions_spawn."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "austindixson",
+      "userId": "s17472vm40hmrgybr4rdjmet6h84bcs0",
+      "displayName": "austindixson",
+      "image": "https://avatars.githubusercontent.com/u/52183161?v=4"
+    },
+    "stats": {
+      "comments": 2,
+      "downloads": 2683,
+      "installsAllTime": 28,
+      "installsCurrent": 24,
+      "stars": 4,
+      "versions": 18
+    },
+    "latestVersion": {
+      "version": "1.7.19",
+      "createdAt": 1772995821159,
+      "changelog": "No file changes detected in this release.\n\n- Version number updated to 1.7.19; no code or documentation changes found.\n- Behavior and features remain the same as the previous version.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:61ad5b00ddd54f624c1ccc84f52249217629cbb718dad4b3748365d8f04613e6"
+}

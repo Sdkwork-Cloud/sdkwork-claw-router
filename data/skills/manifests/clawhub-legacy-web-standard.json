@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62418,
+  "uuid": "skill-clawhub-legacy-web-standard",
+  "skillKey": "clawhub-legacy-web-standard",
+  "name": "Legacy Web Standard",
+  "summary": "针对 JavaScript + jQuery + HTML/CSS 传统前端项目的开发与维护规范。当用户在非框架项目中工作，涉及 jQuery、原生 JS、传统多页面应用（MPA）、模板引擎渲染页面、或维护遗留代码时自动激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.legacy_web_standard",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bovin Phang",
+      "features": [
+        "针对 JavaScript + jQuery + HTML/CSS 传统前端项目的开发与维护规范。当用户在非框架项目中工作，涉及 jQuery、原生 JS、传统多页面应用（MPA）、模板引擎."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/legacy-web-standard@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/17447895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "legacy-web-standard",
+      "url": "https://clawhub.ai/skills/legacy-web-standard"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "legacy-web-standard",
+    "url": "https://clawhub.ai/skills/legacy-web-standard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/legacy-web-standard-e1b7e3c669bcec91.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/legacy-web-standard@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-legacy-web-standard-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:18af1931d232853554aa67d3cb69690b5ecd20b2258e1040646fdc48a413b13b",
+      "artifactSizeBytes": 2523
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T02:04:24.682Z"
+}

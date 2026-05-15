@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28349,
+  "uuid": "skill-clawhub-okx-exchange-websocket-skill",
+  "skillKey": "clawhub-okx-exchange-websocket-skill",
+  "name": "OKX Exchange WebSocket Skill",
+  "summary": "Subscribe to OKX public exchange WebSocket channels through UXC raw WebSocket mode for ticker, trade, book, and candle events with explicit subscribe frames.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.okx_exchange_websocket_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "jolestar",
+      "features": [
+        "Subscribe to OKX public exchange WebSocket channels through UXC raw WebSocket mode for ticker,."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/okx-exchange-websocket-skill@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/77268?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "okx-exchange-websocket-skill",
+      "url": "https://clawhub.ai/skills/okx-exchange-websocket-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "okx-exchange-websocket-skill",
+    "url": "https://clawhub.ai/skills/okx-exchange-websocket-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/okx-exchange-websocket-skill-df71fc1dc1b8e162.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/okx-exchange-websocket-skill@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-okx-exchange-websocket-skill-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1026063c2746ebd8e57f204d5afc6ae98a6eba1e45c7f6c07b9805fd87d6e1d4",
+      "artifactSizeBytes": 2342
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-15T23:24:15.850Z"
+}

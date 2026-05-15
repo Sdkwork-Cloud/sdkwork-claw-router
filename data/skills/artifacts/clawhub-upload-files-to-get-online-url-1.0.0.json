@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/upload-files-to-get-online-url@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.upload_files_to_get_online_url",
+  "skill": {
+    "id": 24253,
+    "skillKey": "clawhub-upload-files-to-get-online-url",
+    "name": "Tencent Cloud Image Hosting (Upload files to get online URLs)"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "upload-files-to-get-online-url",
+    "url": "https://clawhub.ai/skills/upload-files-to-get-online-url",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/upload-files-to-get-online-url-60799fae1582672b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Upload files to Tencent Cloud COS (Cloud Object Storage). Use when the user needs to upload images, documents, or any files to Tencent Cloud COS. Supports en..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "parsonssss",
+      "userId": "s175dke9r3zvcmp4r59ytqhrq583gseh",
+      "displayName": "parsonssss",
+      "image": "https://avatars.githubusercontent.com/u/34808813?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772719961159,
+      "changelog": "This skill uploads files (images, documents, videos, etc.) to Tencent Cloud COS (Cloud Object Storage). It supports\n  configuration via environment variables or command‑line arguments, generates a unique object key automatically, and\n  returns both a direct URL and a signed URL (24‑hour expiry) for private buckets. Ideal for building simple image\n  hosting or file sharing workflows.\n\n  Primary use cases\n\n  - Upload images and get shareable URLs\n  - Host documents/videos on Tencent COS\n  - Generate signed URLs for private buckets\n  - Automate asset hosting in scripts or pipelines\n\n  Inputs\n\n  - File path to upload\n  - Tencent Cloud Secret ID / Secret Key\n  - COS bucket name\n  - COS region\n  - Optional upload path prefix\n\n  Outputs\n\n  - Direct URL: https://{bucket}.cos.{region}.myqcloud.com/{key}\n  - Signed URL (24‑hour expiration)\n  - COS object key\n\n  Requirements\n\n  - Tencent Cloud COS credentials\n  - Node.js runtime\n  - Access to target bucket and region",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:082ddbe4542653c51a529604b4355d818393d826449412278869cc38fc436c32"
+}

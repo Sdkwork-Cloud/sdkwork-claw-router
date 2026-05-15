@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49747,
+  "uuid": "skill-clawhub-personal-document-organizer",
+  "skillKey": "clawhub-personal-document-organizer",
+  "name": "Personal Document Organizer",
+  "summary": "Build a findable, tiered personal document system. Know what you have, where it is, and what you'd grab in an emergency.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.personal_document_organizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "haidong",
+      "features": [
+        "Build a findable, tiered personal document system",
+        "Know what you have, where it is, and what you'd grab in an emergency."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/personal-document-organizer@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/144880725?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "personal-document-organizer",
+      "url": "https://clawhub.ai/skills/personal-document-organizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "personal-document-organizer",
+    "url": "https://clawhub.ai/skills/personal-document-organizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/personal-document-organizer-b31113ad64f8fdf9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/personal-document-organizer@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-personal-document-organizer-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a8a74cfaed5bf34c2e7b24d55d0c0e4403cf3bdfe80fd5c31b0668a2f7b3ddb8",
+      "artifactSizeBytes": 2415
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T22:47:09.108Z"
+}

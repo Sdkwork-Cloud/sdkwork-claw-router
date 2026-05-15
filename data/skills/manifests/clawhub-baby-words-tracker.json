@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71430,
+  "uuid": "skill-clawhub-baby-words-tracker",
+  "skillKey": "clawhub-baby-words-tracker",
+  "name": "Baby Words Tracker",
+  "summary": "记录和追踪宝宝学说话过程的智能助手。当用户说\"记宝宝说/说了\"或\"记录宝宝词汇\"时自动触发。支持多种语言（普通话、粤语、英语等），自动分类统计单字词、双字词、三字词和句子，支持括号标注法（如\"（手）机\"表示宝宝只发了\"机\"字），自动同步到飞书云文档，并生成语言发展报告。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.baby_words_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suiclaw",
+      "features": [
+        "记录和追踪宝宝学说话过程的智能助手。当用户说\"记宝宝说/说了\"或\"记录宝宝词汇\"时自动触发。支持多种语言（普通话、粤语、英语等），自动分类统计单字词、双字词、三字词和句子，支持括号标注法（如."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/baby-words-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/268068597?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "baby-words-tracker",
+      "url": "https://clawhub.ai/skills/baby-words-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "baby-words-tracker",
+    "url": "https://clawhub.ai/skills/baby-words-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/baby-words-tracker-42cd675cc8e61588.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/baby-words-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-baby-words-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f9b8fb0c179955cc14b5c854c2c66874ccc23d83c75acf71cf2e3c5f89e381cd",
+      "artifactSizeBytes": 2657
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-09T05:36:26.092Z"
+}

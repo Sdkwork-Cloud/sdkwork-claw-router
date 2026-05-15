@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61143,
+  "uuid": "skill-clawhub-smart-illustrator",
+  "skillKey": "clawhub-smart-illustrator",
+  "name": "Smart Illustrator",
+  "summary": "智能配图与 PPT 信息图生成器。支持三种模式：(1) 文章配图模式 - 分析文章内容，生成插图；(2) PPT/Slides 模式 - 生成批量信息图；(3) Cover 模式 - 生成封面图。所有模式默认生成图片，`--prompt-only` 只输出 prompt。支持 Bento Grid 功能展示图风格...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_illustrator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Axton",
+      "features": [
+        "智能配图与 PPT 信息图生成器。支持三种模式：(1) 文章配图模式",
+        "分析文章内容，生成插图；(2) PPT/Slides 模式",
+        "生成批量信息图；(3) Cover 模式",
+        "生成封面图。所有模式默认生成图片，`--prompt-only` 只输出 prompt。支持 Bento Grid 功能展示图风格..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smart-illustrator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/34881731?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smart-illustrator",
+      "url": "https://clawhub.ai/skills/smart-illustrator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-illustrator",
+    "url": "https://clawhub.ai/skills/smart-illustrator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-illustrator-5ff887bbbaddef33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smart-illustrator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-smart-illustrator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0e40c65951bfa8b3b3a58bde180408e9ae741a0dc7167b91ef88f52e5bc1c913",
+      "artifactSizeBytes": 2687
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T23:52:02.068Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12379,
+  "uuid": "skill-clawhub-asl-control",
+  "skillKey": "clawhub-asl-control",
+  "name": "Allstar Link node control ASL3 (ASL3 Node Control)",
+  "summary": "Monitor and control AllStar Link amateur radio nodes via REST API",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.asl_control",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Josh",
+      "features": [
+        "Monitor and control AllStar Link amateur radio nodes via REST API"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/asl-control@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/189254375?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "asl-control",
+      "url": "https://clawhub.ai/skills/asl-control"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "asl-control",
+    "url": "https://clawhub.ai/skills/asl-control",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/asl-control-954772be39a653dc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/asl-control@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-asl-control-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c315644ff5bde136e63738575b054704b4bf7c871598e4795858d25b9d1cf1c2",
+      "artifactSizeBytes": 2269
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-05T01:58:45.479Z"
+}

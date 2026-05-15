@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/smart-spawn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smart_spawn",
+  "skill": {
+    "id": 49528,
+    "skillKey": "clawhub-smart-spawn",
+    "name": "Smart Spawn"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smart-spawn",
+    "url": "https://clawhub.ai/skills/smart-spawn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smart-spawn-bbd958d6a5b588f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Pick the best AI model for any task using the Smart Spawn API. No plugin needed — just HTTP requests to ss.deeflect.com/api."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "deeflect",
+      "userId": "publishers:deeflect",
+      "displayName": "deeflect",
+      "image": "https://avatars.githubusercontent.com/u/220824206?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 781,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771366993458,
+      "changelog": "smart-spawn-api v1.0.0\n\n- Initial public release of the Smart Spawn API.\n- Instantly pick the best AI model for any task by simple HTTP requests—no plugin required.\n- Supports model recommendation, comparison, browsing, and complex task decomposition.\n- Multiple endpoints: /api/pick, /api/recommend, /api/compare, /api/models, /api/decompose, /api/swarm, /api/status.\n- Flexible parameters for task, budget, exclusions, and context to fine-tune model selection.\n- Built-in error handling and fallback strategies for reliable workflow integration.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68e2986cf3cf526ce30a2b5fb45542e0ceac41b1d772582eda2feeabf7ba1863"
+}

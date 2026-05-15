@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 64046,
+  "uuid": "skill-clawhub-xqant-daily-market-report",
+  "skillKey": "clawhub-xqant-daily-market-report",
+  "name": "xqant daily market report",
+  "summary": "每日15:30生成大盘走势、行业涨跌、债券市场及固收+赛道预测的市场简报，含风险提示和成交量分析。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xqant_daily_market_report",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wesdaliang",
+      "features": [
+        "每日15:30生成大盘走势、行业涨跌、债券市场及固收+赛道预测的市场简报，含风险提示和成交量分析。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xqant-daily-market-report@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/42329123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xqant-daily-market-report",
+      "url": "https://clawhub.ai/skills/xqant-daily-market-report"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xqant-daily-market-report",
+    "url": "https://clawhub.ai/skills/xqant-daily-market-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xqant-daily-market-report-ab939931a32fbd94.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xqant-daily-market-report@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xqant-daily-market-report-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:462c66f6f264257d59f65544581cc45970598132427992d96a85f1c8363d7580",
+      "artifactSizeBytes": 2305
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T15:37:14.732Z"
+}

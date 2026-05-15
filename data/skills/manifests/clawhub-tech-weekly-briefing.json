@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23442,
+  "uuid": "skill-clawhub-tech-weekly-briefing",
+  "skillKey": "clawhub-tech-weekly-briefing",
+  "name": "Tech Weekly Briefing",
+  "summary": "Generate weekly tech news briefings from 6 major English tech media sources (TechCrunch, The Verge, Wired, Ars Technica, MIT Technology Review, The Informati...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_weekly_briefing",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Zhe (Phil) Yang",
+      "features": [
+        "Generate weekly tech news briefings from 6 major English tech media sources (TechCrunch, The Ve."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tech-weekly-briefing@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/860739?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tech-weekly-briefing",
+      "url": "https://clawhub.ai/skills/tech-weekly-briefing"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-weekly-briefing",
+    "url": "https://clawhub.ai/skills/tech-weekly-briefing",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-weekly-briefing-d8fdbe4d8767936a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tech-weekly-briefing@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-tech-weekly-briefing-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:29d0dd6272c900b50d76362d3b2ff1638e1ec6897f3942fb4e95135977baa06c",
+      "artifactSizeBytes": 2130
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T16:07:43.750Z"
+}

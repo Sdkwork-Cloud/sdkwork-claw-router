@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 54004,
+  "uuid": "skill-clawhub-popai-presentation-slides",
+  "skillKey": "clawhub-popai-presentation-slides",
+  "name": "PopAI Presentation Slides",
+  "summary": "Create presentations (PPT) using PopAI API. Use when asked to create slides, presentations, decks, or PPT content. Has built-in research capabilities — just...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.popai_presentation_slides",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PopAi",
+      "features": [
+        "Create presentations (PPT) using PopAI API",
+        "Use when asked to create slides, presentations, decks, or PPT content",
+        "Has built-in research capabilities — just..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/popai-presentation-slides@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/269385660?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "popai-presentation-slides",
+      "url": "https://clawhub.ai/skills/popai-presentation-slides"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "popai-presentation-slides",
+    "url": "https://clawhub.ai/skills/popai-presentation-slides",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/popai-presentation-slides-822c58b0cf790aad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/popai-presentation-slides@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-popai-presentation-slides-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3084600dbd2ab28c22dce19d9f06884a19bbe005a5fe9905c8e8ceac65f50ddd",
+      "artifactSizeBytes": 2529
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-09T09:34:06.847Z"
+}

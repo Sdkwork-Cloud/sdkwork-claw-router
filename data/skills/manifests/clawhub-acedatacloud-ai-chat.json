@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34275,
+  "uuid": "skill-clawhub-acedatacloud-ai-chat",
+  "skillKey": "clawhub-acedatacloud-ai-chat",
+  "name": "Ai Chat",
+  "summary": "Access 50+ LLM models through a unified OpenAI-compatible API via AceDataCloud. Use when you need chat completions from GPT, Claude, Gemini, DeepSeek, Grok,...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.acedatacloud_ai_chat",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Germey",
+      "features": [
+        "Access 50+ LLM models through a unified OpenAI-compatible API via AceDataCloud",
+        "Use when you need chat completions from GPT, Claude, Gemini, DeepSeek, Grok,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/acedatacloud-ai-chat@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/8678661?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "acedatacloud-ai-chat",
+      "url": "https://clawhub.ai/skills/acedatacloud-ai-chat"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "acedatacloud-ai-chat",
+    "url": "https://clawhub.ai/skills/acedatacloud-ai-chat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/acedatacloud-ai-chat-ebbd354afc021ef3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/acedatacloud-ai-chat@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-acedatacloud-ai-chat-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d4d1c00f7678d8facae565b55d0b06a2c38f55fd7e47bde61576e979d33dcbc5",
+      "artifactSizeBytes": 2352
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-22T03:37:09.793Z"
+}

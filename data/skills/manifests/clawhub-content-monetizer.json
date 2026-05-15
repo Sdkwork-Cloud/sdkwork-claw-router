@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68179,
+  "uuid": "skill-clawhub-content-monetizer",
+  "skillKey": "clawhub-content-monetizer",
+  "name": "Content Monetizer",
+  "summary": "分析文章、视频或代码内容，评估价值并推荐最佳平台与变现方式，实现多渠道内容收益最大化。",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.content_monetizer",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yang1002378395-cmyk",
+      "features": [
+        "分析文章、视频或代码内容，评估价值并推荐最佳平台与变现方式，实现多渠道内容收益最大化。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/content-monetizer@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261632147?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "content-monetizer",
+      "url": "https://clawhub.ai/skills/content-monetizer"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "content-monetizer",
+    "url": "https://clawhub.ai/skills/content-monetizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/content-monetizer-0553863ce5050266.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/content-monetizer@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-content-monetizer-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3bf6cb86c4fd2aed51d7cce20ca90a78190ac16367366d41e9835089bed93d72",
+      "artifactSizeBytes": 1910
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-16T06:48:38.775Z"
+}

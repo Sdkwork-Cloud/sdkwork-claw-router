@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/flyelep-generate-poster@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.flyelep_generate_poster",
+  "skill": {
+    "id": 63946,
+    "skillKey": "clawhub-flyelep-generate-poster",
+    "name": "generate-poster"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "flyelep-generate-poster",
+    "url": "https://clawhub.ai/skills/flyelep-generate-poster",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/flyelep-generate-poster-83e60caf7fe0eb1a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 Flyelep API 生成电商产品主图和详情图海报。 当用户要求生成产品图、电商海报、Amazon 商品图、详情页图片时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flyelepai",
+      "userId": "s175rfkzzv81fcfhp65sjggxa984fmry",
+      "displayName": "flyelep",
+      "image": "https://avatars.githubusercontent.com/u/272408277?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 212,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776679099376,
+      "changelog": "- Initial release of the \"generate-poster\" skill for creating e-commerce product posters and detail images via the Flyelep API.\n- Supports both cross-border and Chinese e-commerce platforms (e.g., Amazon, 淘宝) with multiple languages and poster types.\n- Allows detailed customization with various parameters, including reference images, text inclusion, aspect ratios, and platform-specific options.\n- Secure API key handling: keys are transmitted in the JSON body as required by the Flyelep API.\n- Comprehensive documentation included for API usage, parameter mapping, error handling, and usage examples.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e13c8f602f43381c61dfb36633ca8f979448cee253b5585a396d7d83039c7d6f"
+}

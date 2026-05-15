@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-guardrails@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_guardrails",
+  "skill": {
+    "id": 16016,
+    "skillKey": "clawhub-agent-guardrails",
+    "name": "Agent Guardrails"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-guardrails",
+    "url": "https://clawhub.ai/skills/agent-guardrails",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-guardrails-7939873ff7009dd9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Stop AI agents from secretly bypassing your rules. Mechanical enforcement with git hooks, secret detection, deployment verification, and import registries. B..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "olmmlo-cmd",
+      "userId": "publishers:olmmlo-cmd",
+      "displayName": "olmmlo-cmd",
+      "image": "https://avatars.githubusercontent.com/u/256234782?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 908,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771297779316,
+      "changelog": "agent-guardrails 1.1.0 introduces robust mechanical enforcement tools for AI agent project standards.\n\n- Adds automated git hooks and scripts for code, deployment, and secret enforcement.\n- Provides tools for secret detection, import registry creation, and deployment verification.\n- Introduces self-verification feedback loops and meta-enforcement for skill updates.\n- Supplies detailed documentation, templates, and workflow guides (English and Chinese).\n- Supports Claude Code, Clawdbot, Cursor, and any AI agent projects.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:c8fedceef27dd2756e55311be147c7cf94bb0084a67d8dea7d3219e47e9e0cd2"
+}

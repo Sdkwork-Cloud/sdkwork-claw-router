@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/stock-financial-analysis-quant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.stock_financial_analysis_quant",
+  "skill": {
+    "id": 71560,
+    "skillKey": "clawhub-stock-financial-analysis-quant",
+    "name": "Stock Financial Analysis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "stock-financial-analysis-quant",
+    "url": "https://clawhub.ai/skills/stock-financial-analysis-quant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/stock-financial-analysis-quant-cfcbab3e47b79ccb.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "专业的股票金融分析技能。当用户需要寻找短线交易机会、分析股票筹码分布、获取买入卖出信号、分析上证指数筹码变化、进行上市公司基本面分析、研究主营业务、行业发展、竞争环境、财务分析、估值分析，或提供上市公司财务报告要求综合分析时使用此技能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "13008170831",
+      "userId": "s17a8k8zk3mx2y89t8bfexbxth842c7b",
+      "displayName": "13008170831",
+      "image": "https://avatars.githubusercontent.com/u/178714365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 234,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775123209878,
+      "changelog": "Initial release of stock-financial-analysis skill:\n\n- Provides professional stock financial analysis, including both technical (short-term trading) and fundamental (company basics, industry, valuation) analysis.\n- Supports scenarios such as short-term trade opportunity detection, buy/sell signal references, and comprehensive company and industry research.\n- Outputs structured analyses, including technical indicators, financial data, valuation, and summary reports.\n- Designed to be used as an analysis reference and not as direct investment advice.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:80938c530c8555ab77c0091b142705d815baa3bceea9c910b37ab43a231d7632"
+}

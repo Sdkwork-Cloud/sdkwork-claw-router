@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/mx-stocks-screener@1.0.15",
+  "version": "1.0.15",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mx_stocks_screener",
+  "skill": {
+    "id": 58907,
+    "skillKey": "clawhub-mx-stocks-screener",
+    "name": "Intelligent Stocks Screener"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mx-stocks-screener",
+    "url": "https://clawhub.ai/skills/mx-stocks-screener",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mx-stocks-screener-795fdf50a569af0f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于东方财富数据库，支持通过自然语言输入筛选A港美股、基金、债券等多种资产，支持多元指标筛选，含技术面、消息面、基本面及市场情绪等，可用于全球资产速筛、跨市场监控、投资组合构建、策略回测等场景。返回结果包含数据说明及 csv 文件。Natural language screener for investment..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "financial-ai-analyst",
+      "userId": "s172qfps754dhtdynwv0gwshes83mtd4",
+      "displayName": "Financial AI Analyst",
+      "image": "https://avatars.githubusercontent.com/u/41098207?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 22645,
+      "installsAllTime": 36,
+      "installsCurrent": 34,
+      "stars": 97,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.15",
+      "createdAt": 1776424764495,
+      "changelog": "Publish 1.0.15",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8b8aa545f40e5d444dc382b8c0fce113b66e244863acfa0364119e64da5459cd"
+}

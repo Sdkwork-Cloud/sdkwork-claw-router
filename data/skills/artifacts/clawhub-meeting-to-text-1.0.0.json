@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meeting-to-text@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meeting_to_text",
+  "skill": {
+    "id": 26289,
+    "skillKey": "clawhub-meeting-to-text",
+    "name": "meeting-to-text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meeting-to-text",
+    "url": "https://clawhub.ai/skills/meeting-to-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meeting-to-text-40ab6d8819d6efae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create a fully local speaker-separated .txt transcript from a meeting recording, meeting screen recording, speech audio, or local video/audio file. Use this..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "henrch1",
+      "userId": "s177x4g0mbwy4vaxmn1gyefb7s842nwa",
+      "displayName": "henrCh1",
+      "image": "https://avatars.githubusercontent.com/u/117563878?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 370,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773676906931,
+      "changelog": "Initial release of the meeting-to-text skill:\n\n- Converts local meeting recordings (audio/video) into fully local, speaker-separated plain text transcripts.\n- Supports a variety of common audio and video file types as input.\n- Outputs transcripts with timestamps and default speaker labels like 说话人1, 说话人2, etc.\n- Uses local ASR and speaker diarization models; no cloud processing.\n- Clearly reports transcript location, speaker count, and any warnings or errors.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ca0848634c3b6b80b377fa4651ba6c21dae0241494c06dec6225425aa3e2e7be"
+}

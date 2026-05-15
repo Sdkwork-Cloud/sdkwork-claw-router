@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 65355,
+  "uuid": "skill-clawhub-daxiang-agent-dispatch",
+  "skillKey": "clawhub-daxiang-agent-dispatch",
+  "name": "Daxiang Agent Dispatch",
+  "summary": "自动识别用户意图并根据预设规则选择最合适的专家agent进行任务调度与结果整合，支持重试与并行处理。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daxiang_agent_dispatch",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "daxiangnaoyang",
+      "features": [
+        "自动识别用户意图并根据预设规则选择最合适的专家agent进行任务调度与结果整合，支持重试与并行处理。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daxiang-agent-dispatch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/223295173?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daxiang-agent-dispatch",
+      "url": "https://clawhub.ai/skills/daxiang-agent-dispatch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daxiang-agent-dispatch",
+    "url": "https://clawhub.ai/skills/daxiang-agent-dispatch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daxiang-agent-dispatch-e5ec43c1a33f8ad5.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daxiang-agent-dispatch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daxiang-agent-dispatch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1921e29aeb662e6a95a6a861523a1c10a70c7d913fd805048a022bd744744566",
+      "artifactSizeBytes": 2444
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-31T16:36:35.804Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 23802,
+  "uuid": "skill-clawhub-off-peak-compute",
+  "skillKey": "clawhub-off-peak-compute",
+  "name": "Compute during Off-Peak Hours for Complex Jobs",
+  "summary": "Run heavy compute tasks overnight when GPU/cloud capacity is cheapest (spot pricing). Use when you have non-time-sensitive tasks that would benefit from off-...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.off_peak_compute",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "willificent",
+      "features": [
+        "Run heavy compute tasks overnight when GPU/cloud capacity is cheapest (spot pricing)",
+        "Use when you have non-time-sensitive tasks that would benefit from off-..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/off-peak-compute@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/67238055?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "off-peak-compute",
+      "url": "https://clawhub.ai/skills/off-peak-compute"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "off-peak-compute",
+    "url": "https://clawhub.ai/skills/off-peak-compute",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/off-peak-compute-3738b04960d00697.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/off-peak-compute@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-off-peak-compute-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:140b729de6941e9b1b06c8439e19906135e62faf51cbb3ca7964c629fcefb871",
+      "artifactSizeBytes": 2585
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-10T18:22:27.245Z"
+}

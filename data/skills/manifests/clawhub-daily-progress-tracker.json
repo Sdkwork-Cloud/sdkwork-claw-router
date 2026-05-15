@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67987,
+  "uuid": "skill-clawhub-daily-progress-tracker",
+  "skillKey": "clawhub-daily-progress-tracker",
+  "name": "daily-progress-tracker",
+  "summary": "帮助用户进行每日工作汇总，生成结构化的日报。当用户提到「日报」「工作总结」「今日汇报」「总结今天」时激活。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.daily_progress_tracker",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yying01",
+      "features": [
+        "帮助用户进行每日工作汇总，生成结构化的日报。当用户提到「日报」「工作总结」「今日汇报」「总结今天」时激活。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/daily-progress-tracker@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5052485?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "daily-progress-tracker",
+      "url": "https://clawhub.ai/skills/daily-progress-tracker"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "daily-progress-tracker",
+    "url": "https://clawhub.ai/skills/daily-progress-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/daily-progress-tracker-82ea8217a1388e5b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/daily-progress-tracker@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-daily-progress-tracker-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:63e97cb6d937e39a0af01e8ebec9ee9bd66562db78d8a66743b6db1e55c8299c",
+      "artifactSizeBytes": 1913
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T11:59:13.345Z"
+}

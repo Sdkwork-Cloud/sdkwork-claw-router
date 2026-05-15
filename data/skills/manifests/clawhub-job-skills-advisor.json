@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 73370,
+  "uuid": "skill-clawhub-job-skills-advisor",
+  "skillKey": "clawhub-job-skills-advisor",
+  "name": "求职技能顾问",
+  "summary": "帮助求职者分析目标岗位所需技能，评估技能差距，规划学习路径及面试准备建议。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.job_skills_advisor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "pxyyqm626529-afk",
+      "features": [
+        "帮助求职者分析目标岗位所需技能，评估技能差距，规划学习路径及面试准备建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/job-skills-advisor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/240408574?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "job-skills-advisor",
+      "url": "https://clawhub.ai/skills/job-skills-advisor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "job-skills-advisor",
+    "url": "https://clawhub.ai/skills/job-skills-advisor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/job-skills-advisor-6a664a048bb4cc68.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/job-skills-advisor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-job-skills-advisor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8764ff1b8d20717d98d3fe7256854236642fc18bd99a467da49415b0bfeac369",
+      "artifactSizeBytes": 2161
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T08:30:16.009Z"
+}

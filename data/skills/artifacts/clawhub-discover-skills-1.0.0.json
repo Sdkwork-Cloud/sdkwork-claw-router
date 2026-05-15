@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/discover-skills@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.discover_skills",
+  "skill": {
+    "id": 25577,
+    "skillKey": "clawhub-discover-skills",
+    "name": "Find Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "discover-skills",
+    "url": "https://clawhub.ai/skills/discover-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/discover-skills-48c6422e192cbbba.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Helps users discover and install agent skills when they ask questions like how do I do X. And also 50+ models for image generation, video generation, text-to..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "quincygunter",
+      "userId": "s17d0tr1e37k04dr1j7gy5ff0584nmyw",
+      "displayName": "QuincyGunter",
+      "image": "https://avatars.githubusercontent.com/u/260427166?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 384,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773294529840,
+      "changelog": "Initial release of find-skills (SkillBoss) for discovering and installing agent skills, plus unified API access to 50+ AI models.\n\n- Helps users find, discover, and install agent skills by natural language prompt.\n- Provides unified API access to 50+ AI models for image, video, text-to-speech, speech-to-text, music, chat, web search, document parsing, email, SMS, and more.\n- Supports multiple providers (Bedrock, OpenAI, Vertex, ElevenLabs, Replicate, Minimax, etc.) with both direct model invocation and smart routing.\n- Detailed usage examples and API parameters for chat, image, video, TTS, STT, music, background removal, document processing, web search, email, and SMS verification.\n- Requires SKILLBOSS_API_KEY for authentication.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7ffb28a0d26f33dae871023c7cb1719a3987ebbe3e256f992760a7c3b721431b"
+}

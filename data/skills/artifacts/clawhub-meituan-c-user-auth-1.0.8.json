@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/meituan-c-user-auth@1.0.8",
+  "version": "1.0.8",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.meituan_c_user_auth",
+  "skill": {
+    "id": 69648,
+    "skillKey": "clawhub-meituan-c-user-auth",
+    "name": "美团C端用户Agent认证工具"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "meituan-c-user-auth",
+    "url": "https://clawhub.ai/skills/meituan-c-user-auth",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/meituan-c-user-auth-329372236116b5f9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "美团C端用户Agent认证工具。为需要美团用户身份的 Skill（如发券、查订单等）提供手机号验证码登录认证，管理用户Token，实现“一次认证、持续有效”。当其他 Skill 需要校验用户身份、获取用户Token时，作为前置认证模块调用。触发词：美团登录、用户认证、手机号验证、发送验证码、获取Token、切换账..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "meituan-zhengchang",
+      "userId": "s17fethzc10zc827afrzysq9s583h5wh",
+      "displayName": "meituan-zhengchang",
+      "image": "https://avatars.githubusercontent.com/u/131349149?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 318,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 10
+    },
+    "latestVersion": {
+      "version": "1.0.8",
+      "createdAt": 1776675989370,
+      "changelog": "No functional changes in this version.  \n- No file modifications detected.\n- Only metadata fields added to SKILL.md.  \n- Skill version and core instructions remain unchanged.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13ac2746a199085036b87185a549c05e1e9ce12aef298b2dc94fc866b10aa68f"
+}

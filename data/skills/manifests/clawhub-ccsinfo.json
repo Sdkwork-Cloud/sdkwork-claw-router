@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10909,
+  "uuid": "skill-clawhub-ccsinfo",
+  "skillKey": "clawhub-ccsinfo",
+  "name": "Ccsinfo",
+  "summary": "Query and analyze Claude Code session data from a remote server. Use when asked to inspect Claude Code sessions, view conversation history, check tool calls,...",
+  "version": "0.1.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ccsinfo",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Meni Yakove",
+      "features": [
+        "Query and analyze Claude Code session data from a remote server",
+        "Use when asked to inspect Claude Code sessions, view conversation history, check tool calls,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ccsinfo@0.1.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/441263?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ccsinfo",
+      "url": "https://clawhub.ai/skills/ccsinfo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ccsinfo",
+    "url": "https://clawhub.ai/skills/ccsinfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ccsinfo-b02740a17f6860ec.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ccsinfo@0.1.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-ccsinfo-0.1.6.json",
+      "version": "0.1.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:be77500ae39531230c7ff4e486d840f186901bd0814550b1f4155dd18cee4036",
+      "artifactSizeBytes": 1892
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-15T09:56:14.521Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/sophie-optimizer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sophie_optimizer",
+  "skill": {
+    "id": 10128,
+    "skillKey": "clawhub-sophie-optimizer",
+    "name": "Sophie Optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sophie-optimizer",
+    "url": "https://clawhub.ai/skills/sophie-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sophie-optimizer-03361f047ada4c48.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automated context health management for OpenClaw. Monitors token usage, snapshots memory, and resets sessions to maintain performance. Authored by Sophie."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zayresz",
+      "userId": "publishers:zayresz",
+      "displayName": "zAyresz",
+      "image": "https://avatars.githubusercontent.com/u/94035365?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2818,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769885263245,
+      "changelog": "- Initial release of Sophie Optimizer for OpenClaw.\n- Monitors session token usage and automates context health management.\n- Archives current state snapshots and updates long-term memory.\n- Performs automated session resets to maintain performance.\n- Run manually or automatically via scheduler (e.g., cron).",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4cbd577f669a5f0ac0af857b2f99bdac4f7cf87d528e444b444723c7dda74c58"
+}

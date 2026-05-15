@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66132,
+  "uuid": "skill-clawhub-btpanel-phpsite",
+  "skillKey": "clawhub-btpanel-phpsite",
+  "name": "btpanel phpsite 宝塔面板PHP网站",
+  "summary": "宝塔面板 PHP 网站管理技能，提供站点创建、删除、启停、PHP 版本切换、域名管理、SSL 证书管理、伪静态管理、数据库管理等功能",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.btpanel_phpsite",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "aapanel.com",
+      "features": [
+        "宝塔面板 PHP 网站管理技能，提供站点创建、删除、启停、PHP 版本切换、域名管理、SSL 证书管理、伪静态管理、数据库管理等功能"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/btpanel-phpsite@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31841517?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "btpanel-phpsite",
+      "url": "https://clawhub.ai/skills/btpanel-phpsite"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "btpanel-phpsite",
+    "url": "https://clawhub.ai/skills/btpanel-phpsite",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/btpanel-phpsite-f1853484ed43e758.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/btpanel-phpsite@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-btpanel-phpsite-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0793270a0d8b343dcbad20be188bcbdeeca087678a86233cdc848391025d2a80",
+      "artifactSizeBytes": 2278
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T04:17:55.858Z"
+}

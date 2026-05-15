@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/douyin-comment@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.douyin_comment",
+  "skill": {
+    "id": 65608,
+    "skillKey": "clawhub-douyin-comment",
+    "name": "Douyin Comment Bot"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "douyin-comment",
+    "url": "https://clawhub.ai/skills/douyin-comment",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/douyin-comment-3bf55d1595d7709a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "在抖音（douyin.com）上搜索指定关键词的热门视频并发布评论。当用户说「抖音评论」「在抖音上搜 XX 发评论」「抖音互动」「执行：抖音 XX 热门 N 条评论」等涉及抖音搜索+评论的任务时触发本 skill。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mars82311111",
+      "userId": "s17ft7r4x02ndyd3z98hhdv6zn83w86s",
+      "displayName": "mars82311111",
+      "image": "https://avatars.githubusercontent.com/u/265482749?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 246,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774958918522,
+      "changelog": "- Initial release of the douyin-comment skill.\n- Enables automated search for specified keywords and posting of comments on popular Douyin videos.\n- Streamlined flow: completes search, video selection, commenting, and submission in 3–4 browser steps.\n- Incorporates robust error handling, including auto-restart of browser gateway on timeout.\n- Designed for efficiency and stability, supporting high-quality, context-relevant commenting.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5af338e3954996742e29fff340082c371246434c384cd0cea4e83e6dc3af8e90"
+}

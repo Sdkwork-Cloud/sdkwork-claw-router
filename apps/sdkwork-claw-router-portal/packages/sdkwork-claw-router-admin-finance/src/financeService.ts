@@ -32,14 +32,14 @@ export interface BillingRecord {
 
 export class FinanceService {
   static async fetchTransactions(): Promise<TransactionRecord[]> {
-    const result = await getClawRouterBackendSdkClient().finance.fetchTransactions();
+    const result = await getClawRouterBackendSdkClient().billing.finance.ledger.list();
     ensurePlusApiSuccess(result, 'Failed to fetch transactions');
     return readRequiredApiItems(result, 'Failed to fetch transactions')
       .map(normalizeTransaction);
   }
 
   static async fetchBilling(): Promise<BillingRecord[]> {
-    const result = await getClawRouterBackendSdkClient().router.fetchBilling();
+    const result = await getClawRouterBackendSdkClient().billing.finance.usageStatements.list();
     ensurePlusApiSuccess(result, 'Failed to fetch billing records');
     return readRequiredApiItems(result, 'Failed to fetch billing records')
       .map(normalizeBillingRecord);

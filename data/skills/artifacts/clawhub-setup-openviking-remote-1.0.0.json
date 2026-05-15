@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/setup-openviking-remote@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.setup_openviking_remote",
+  "skill": {
+    "id": 44558,
+    "skillKey": "clawhub-setup-openviking-remote",
+    "name": "Setup OpenViking Remote Memory"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "setup-openviking-remote",
+    "url": "https://clawhub.ai/skills/setup-openviking-remote",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/setup-openviking-remote-8d03a327b35b6bc2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Install and configure the OpenViking long-term memory plugin for OpenClaw via natural conversation. Covers the full lifecycle: environment check, plugin inst..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linqiang391",
+      "userId": "s1758ytwe8t73f6tf7cydrdcdn83zbs8",
+      "displayName": "LinQiang391",
+      "image": "https://avatars.githubusercontent.com/u/67096907?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 142,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776876226498,
+      "changelog": "Initial release: agent-driven OpenViking plugin installation via natural conversation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:5fc0c3ae5889dc28bb540db5e31b9f5b66a416eb42efcf08936b44391ac9e6da"
+}

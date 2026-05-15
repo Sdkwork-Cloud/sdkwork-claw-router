@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ralph-wiggum-loop@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ralph_wiggum_loop",
+  "skill": {
+    "id": 57120,
+    "skillKey": "clawhub-ralph-wiggum-loop",
+    "name": "Ralph Wiggum Loop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ralph-wiggum-loop",
+    "url": "https://clawhub.ai/skills/ralph-wiggum-loop",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ralph-wiggum-loop-350a5958a0616d75.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Iteracyjnie doskonali kod lub tekst AI, wykrywając i naprawiając błędy, optymalizacje, bezpieczeństwo i styl w maksymalnie trzech krokach."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nerua1",
+      "userId": "s178f4bnw35dnxc3ymhvgf114983yzer",
+      "displayName": "nerua1",
+      "image": "https://avatars.githubusercontent.com/u/271220546?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 136,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776028651624,
+      "changelog": "- Initial release of the Ralph Wiggum - AI Loop Technique skill.\n- Enables automated, iterative code or text improvement using an LLM via a Generator > Critic > Fixer > Verifier loop.\n- Provides a bash script (`ralph-loop.sh`) with options for file, inline code, custom prompts, iteration limit, output format, and model selection.\n- Includes a modular architecture and Python API for direct integration.\n- Comprehensive documentation with usage examples, troubleshooting, and detailed prompt engineering.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a9931c38b8731417f23be90dc2f4107bd6c4f6f67fe79fc050e1e4714bd535f0"
+}

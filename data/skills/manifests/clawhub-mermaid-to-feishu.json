@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62847,
+  "uuid": "skill-clawhub-mermaid-to-feishu",
+  "skillKey": "clawhub-mermaid-to-feishu",
+  "name": "Mermaid 转飞书图片 Canvas 渲染版",
+  "summary": "自动将 Mermaid 代码通过浏览器 Canvas 渲染为 PNG 图片并上传发送到飞书对话，实现图表可视化展示。",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mermaid_to_feishu",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "icesumer-lgtm",
+      "features": [
+        "自动将 Mermaid 代码通过浏览器 Canvas 渲染为 PNG 图片并上传发送到飞书对话，实现图表可视化展示。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mermaid-to-feishu@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262824601?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mermaid-to-feishu",
+      "url": "https://clawhub.ai/skills/mermaid-to-feishu"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mermaid-to-feishu",
+    "url": "https://clawhub.ai/skills/mermaid-to-feishu",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mermaid-to-feishu-9c003de67d3b2dde.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mermaid-to-feishu@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-mermaid-to-feishu-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:49be3eef66f889b2d3b2a6fedfadb97185e22aad6bb1fded34d556b030fad2bc",
+      "artifactSizeBytes": 1969
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T04:13:28.465Z"
+}

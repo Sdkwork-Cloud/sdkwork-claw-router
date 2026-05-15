@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ai-a11y-guardian@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ai_a11y_guardian",
+  "skill": {
+    "id": 71680,
+    "skillKey": "clawhub-ai-a11y-guardian",
+    "name": "AI无障碍合规守护者"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ai-a11y-guardian",
+    "url": "https://clawhub.ai/skills/ai-a11y-guardian",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ai-a11y-guardian-0587b2a0fd1bf498.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI辅助无障碍合规守护者 — 自动化检测网页/移动端H5的无障碍问题，生成修复建议并出具合规报告"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zlszhonglongshen",
+      "userId": "s178jr2zywr30fqk79fnqadhks83gpp0",
+      "displayName": "zlszhonglongshen",
+      "image": "https://avatars.githubusercontent.com/u/9023908?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777059802690,
+      "changelog": "AI辅助无障碍合规守护者首发上线，自动检测网页/H5无障碍问题并生成修复报告：\n\n- 支持自动化检测网页及移动端H5页面的无障碍（Accessibility）问题，符合WCAG 2.1/2.2标准\n- 输出结构化问题清单、操作性修复建议及可视化合规报告卡片\n- 支持批量URL扫描、动态渲染（含JS、Shadow DOM）、静态HTML及截图分析\n- 可自定义检测等级（AA/AAA）与输出格式（卡片/列表）\n- 适用于政务、教育、电商、金融等高合规场景",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b435569a7325dcfad4119043d69cb09c5cec1b536316f134d4097cd67ced6d1c"
+}

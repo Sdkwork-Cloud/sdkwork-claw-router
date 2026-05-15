@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/weather-fetch@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.weather_fetch",
+  "skill": {
+    "id": 61275,
+    "skillKey": "clawhub-weather-fetch",
+    "name": "Weather Fetch"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "weather-fetch",
+    "url": "https://clawhub.ai/skills/weather-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/weather-fetch-2abd8e4d53d242c7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中国天气数据抓取工具 - 从 weathercn.com 抓取实时天气数据，支持全国城市。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "wndagg",
+      "userId": "s172zy7r78dr8st9ztk9kt75q585yc0n",
+      "displayName": "wNDAGG",
+      "image": "https://avatars.githubusercontent.com/u/180063893?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 118,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777707403652,
+      "changelog": "Initial release of weather-fetch\n\n- Fetches real-time weather data from weathercn.com for any city in China\n- Outputs temperature, humidity, pressure, visibility, sunrise/sunset times, wind, and AQI\n- Uses Playwright for automated data extraction\n- Simple command-line usage with city name as input\n- Free to use, open source, donations welcome",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cfdb7f82982669efcc22b55a611edc836ce95a6d449f505481ca294500f6e096"
+}

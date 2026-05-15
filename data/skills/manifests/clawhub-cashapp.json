@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53351,
+  "uuid": "skill-clawhub-cashapp",
+  "skillKey": "clawhub-cashapp",
+  "name": "CashClaw | Give your agent a wallet or credit card",
+  "summary": "Cash App Pay integration skill. Accept payments via Cash App — the #1 personal finance app in the U.S. Covers the Network API, Customer Request API, Manageme...",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cashapp",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "codejika",
+      "features": [
+        "Cash App Pay integration skill",
+        "Accept payments via Cash App — the #1 personal finance app in the U.S",
+        "Covers the Network API, Customer Request API, Manageme..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cashapp@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/36914612?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cashapp",
+      "url": "https://clawhub.ai/skills/cashapp"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cashapp",
+    "url": "https://clawhub.ai/skills/cashapp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cashapp-87f7a01549bbb3c1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cashapp@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-cashapp-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2ff0813b6921612c78d4dccaa97f84432d653ef9e7500334ea00b2d7385d5662",
+      "artifactSizeBytes": 2348
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-11T02:50:40.525Z"
+}

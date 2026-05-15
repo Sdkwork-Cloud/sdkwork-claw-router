@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/task@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.task",
+  "skill": {
+    "id": 8889,
+    "skillKey": "clawhub-task",
+    "name": "Task"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "task",
+    "url": "https://clawhub.ai/skills/task",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/task-0ebb429fa86d481c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Tasker docstore task management via tool-dispatch. Use for task lists, due today/overdue, week planning, add/move/complete, or explicit /task commands."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "amirbrooks",
+      "userId": "publishers:amirbrooks",
+      "displayName": "amirbrooks",
+      "image": "https://avatars.githubusercontent.com/u/224349976?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 5795,
+      "installsAllTime": 43,
+      "installsCurrent": 41,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769123617767,
+      "changelog": "Initial release of the task skill for natural-language task management.\n\n- Handles task management requests by dispatching commands to Tasker via tool-dispatch.\n- Supports natural language to CLI arg translation; passes through explicit /task commands.\n- Produces human-friendly, chat-optimized outputs by default (Telegram/WhatsApp compatible).\n- Implements logic for parsing multi-part task titles/details/dates when explicit separators are used.\n- Supports intuitive mappings for today’s tasks, week planning, adding/completing tasks, and project/task board views.\n- Falls back to selector resolution when task references are ambiguous, always hiding machine IDs from output.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:0cf85d4f9c137483c6eae41433a853f99cb1208975b69fef916382ff0468ca41"
+}

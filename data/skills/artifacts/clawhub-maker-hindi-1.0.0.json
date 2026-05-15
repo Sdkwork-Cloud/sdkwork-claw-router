@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/maker-hindi@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.maker_hindi",
+  "skill": {
+    "id": 47983,
+    "skillKey": "clawhub-maker-hindi",
+    "name": "Maker Hindi"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "maker-hindi",
+    "url": "https://clawhub.ai/skills/maker-hindi",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/maker-hindi-d97619aa0ccea373.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a 60-second product clip or five product images into 1080p Hindi language videos just by typing what you need. Whether it's creating videos with Hindi t..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "linmillsd7",
+      "userId": "s17ad7jr0sehkkd5tzc6dmp6gh84csz4",
+      "displayName": "linmillsd7",
+      "image": "https://avatars.githubusercontent.com/u/208832666?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 106,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777395934945,
+      "changelog": "- Initial release of Maker Hindi: create 1080p Hindi language videos from clips or images in under 2 minutes.\n- Automatic connection to cloud backend and session setup — just upload and describe your video, no technical steps required.\n- Supports Hindi text overlays, titles, narration, and more; accepts video or images as input.\n- Exports high-quality MP4s (plus other formats) suitable for Indian social platforms.\n- Handles session tokens, credits, and error cases automatically, with clear feedback to the user.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b95ac3c58fd0b828aa45c23f2e2d5c0c97195a242ba495e2d2628093f3886990"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38140,
+  "uuid": "skill-clawhub-clawtech-setup",
+  "skillKey": "clawhub-clawtech-setup",
+  "name": "Setup claw.tech",
+  "summary": "Use when setting up a new claw agent with tapes.dev telemetry and clawtel leaderboard reporting. Installs tapes, clawtel, and the openclaw-in-a-box orchestra...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawtech_setup",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Brian Douglas",
+      "features": [
+        "Use when setting up a new claw agent with tapes.dev telemetry and clawtel leaderboard reporting",
+        "Installs tapes, clawtel, and the openclaw-in-a-box orchestra..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawtech-setup@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5713670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawtech-setup",
+      "url": "https://clawhub.ai/skills/clawtech-setup"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawtech-setup",
+    "url": "https://clawhub.ai/skills/clawtech-setup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawtech-setup-d609f9d63a334e5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawtech-setup@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawtech-setup-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c10cf2c2852ea387aeaae8def4947a390469375e70ce139bb931660052f6a018",
+      "artifactSizeBytes": 2508
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-30T14:24:55.705Z"
+}

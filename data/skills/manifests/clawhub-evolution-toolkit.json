@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 40685,
+  "uuid": "skill-clawhub-evolution-toolkit",
+  "skillKey": "clawhub-evolution-toolkit",
+  "name": "Evolution Toolkit",
+  "summary": "Provides portable tools for agent self-improvement including session handoffs, reasoning style measurement, contradiction scanning, prediction logging, playb...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.evolution_toolkit",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ergo",
+      "features": [
+        "Provides portable tools for agent self-improvement including session handoffs, reasoning style."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/evolution-toolkit@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262429595?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "evolution-toolkit",
+      "url": "https://clawhub.ai/skills/evolution-toolkit"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "evolution-toolkit",
+    "url": "https://clawhub.ai/skills/evolution-toolkit",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/evolution-toolkit-3a36127e77149715.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/evolution-toolkit@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-evolution-toolkit-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4a6eef9d8518da6385fd08b0eafddebbb5a7856a5ee21a06ef1b804896bdc7e2",
+      "artifactSizeBytes": 2075
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-24T02:46:26.200Z"
+}

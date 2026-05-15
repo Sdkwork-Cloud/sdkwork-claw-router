@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tibber-energy@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tibber_energy",
+  "skill": {
+    "id": 48299,
+    "skillKey": "clawhub-tibber-energy",
+    "name": "Tibber Energy"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tibber-energy",
+    "url": "https://clawhub.ai/skills/tibber-energy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tibber-energy-9ece142864b987fa.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use Tibber API data to fetch hourly spot prices, plan cheapest appliance or EV charging windows, detect consumption anomalies, and trigger smart-home actions..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "pmagnomuller",
+      "userId": "s172tjfa9ddch2x2ny4b711nbn85kedt",
+      "displayName": "Pedro Müller",
+      "image": "https://avatars.githubusercontent.com/u/59777364?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777458119611,
+      "changelog": "Initial public release",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72859a88a37bcab475fe8918620d5abb9371ecef8d1a7607f8d62d7b8d94f4ba"
+}

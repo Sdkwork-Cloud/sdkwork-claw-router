@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 72247,
+  "uuid": "skill-clawhub-zsxq-fetch",
+  "skillKey": "clawhub-zsxq-fetch",
+  "name": "知识星球帖子抓取助手",
+  "summary": "知识星球帖子抓取助手 — 自动抓取指定星球的最新帖子，支持全部/仅精华两种筛选模式，支持通过帖子链接或 ID 获取单条帖子详情，支持多星球配置。本 Skill 应在用户需要查看、汇总或检索知识星球内容时使用。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zsxq_fetch",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steve Joe",
+      "features": [
+        "知识星球帖子抓取助手 — 自动抓取指定星球的最新帖子，支持全部/仅精华两种筛选模式，支持通过帖子链接或 ID 获取单条帖子详情，支持多星球配置。本 Skill 应在用户需要查看、汇总或检索知."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zsxq-fetch@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/7801053?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zsxq-fetch",
+      "url": "https://clawhub.ai/skills/zsxq-fetch"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zsxq-fetch",
+    "url": "https://clawhub.ai/skills/zsxq-fetch",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zsxq-fetch-81b979abdb02e757.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zsxq-fetch@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zsxq-fetch-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:4afd8f854247e60f905a71ebdda9f47694ca60c51f638ac788395f7423b478e7",
+      "artifactSizeBytes": 2077
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T04:06:40.666Z"
+}

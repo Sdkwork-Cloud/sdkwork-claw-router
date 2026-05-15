@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62420,
+  "uuid": "skill-clawhub-bizyair-images",
+  "skillKey": "clawhub-bizyair-images",
+  "name": "BizyAir API出图",
+  "summary": "基于 BizyAir 异步 API 的模块化图片生成助手，支持多工作流模板（web_app_id）动态切换与自定义传参。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bizyair_images",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "bozoyan",
+      "features": [
+        "基于 BizyAir 异步 API 的模块化图片生成助手，支持多工作流模板（web_app_id）动态切换与自定义传参。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/bizyair-images@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4261158?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "bizyair-images",
+      "url": "https://clawhub.ai/skills/bizyair-images"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bizyair-images",
+    "url": "https://clawhub.ai/skills/bizyair-images",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bizyair-images-68a59e9480cd8a64.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/bizyair-images@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-bizyair-images-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a1eeb94abb127d714d28e9c33e06f1d697ffd98dfd032170f2fa0e07a3c3e936",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T09:54:09.089Z"
+}

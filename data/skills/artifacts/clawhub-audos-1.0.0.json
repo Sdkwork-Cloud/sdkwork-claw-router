@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/audos@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.audos",
+  "skill": {
+    "id": 16337,
+    "skillKey": "clawhub-audos",
+    "name": "Audos – Launch a Startup Via OpenClaw in 10 Minutes"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "audos",
+    "url": "https://clawhub.ai/skills/audos",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/audos-6eaa0d464a62f807.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Create AI-powered startup workspaces via Audos API. Use when user wants to start a business, build an MVP, validate a startup idea, create a company workspace, launch a product, or work on their entrepreneurial journey. Triggers on request."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "werdelin",
+      "userId": "publishers:werdelin",
+      "displayName": "werdelin",
+      "image": "https://avatars.githubusercontent.com/u/234433?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1140,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770821074639,
+      "changelog": "Audos 1.0.0\n\n- Initial release: integrates with Audos API (v1.2) for fully autonomous AI-powered startup workspaces.\n- Supports onboarding, authentication, workspace building, and status monitoring with detailed user progress updates.\n- Provides live landing pages, custom brand identity, branded video, workspace OS, and AI assistant Otto for all new businesses.\n- Includes specialized narration and guidance for each stage of the workspace build process.\n- Returning users can resume workspaces instantly; new users verify via OTP email flow.\n- Implements best-practice UX for polling, progress reporting, and user engagement during builds.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:63d229d0d06f369095c30681e68a72306af07f8d919def45eae2b637f2c05069"
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 51333,
+  "uuid": "skill-clawhub-hyperx-data-api",
+  "skillKey": "clawhub-hyperx-data-api",
+  "name": "HyperX Data API",
+  "summary": "Use when building apps with HyperX Data API — Hyperliquid wallet analytics, market data, Twitter/news feeds. Triggers on: \"HyperX API\", \"data-api.hyperx.trad...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hyperx_data_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hyperxtrade",
+      "features": [
+        "Use when building apps with HyperX Data API — Hyperliquid wallet analytics, market data, Twitte.",
+        "Triggers on: \"HyperX API\", \"data-api.hyperx.trad..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/hyperx-data-api@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/262957249?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "hyperx-data-api",
+      "url": "https://clawhub.ai/skills/hyperx-data-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hyperx-data-api",
+    "url": "https://clawhub.ai/skills/hyperx-data-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hyperx-data-api-f08097a629c3b072.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/hyperx-data-api@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-hyperx-data-api-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2eeefea468de440134d5f0288b1878a677d87b1fcba0c54acdc12ffa9f30eac3",
+      "artifactSizeBytes": 1959
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T12:08:13.486Z"
+}

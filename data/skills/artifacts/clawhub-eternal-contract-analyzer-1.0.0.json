@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/eternal-contract-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eternal_contract_analyzer",
+  "skill": {
+    "id": 42670,
+    "skillKey": "clawhub-eternal-contract-analyzer",
+    "name": "Eternal Contract Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eternal-contract-analyzer",
+    "url": "https://clawhub.ai/skills/eternal-contract-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eternal-contract-analyzer-1e4acd3ab56a7a85.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyze contracts and legal documents to extract key terms, identify risks, flag red flags, and provide a clear summary with recommendations."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "eternal0404",
+      "userId": "s175br5s8f0a4xqv4q2tfbt79x83yzv0",
+      "displayName": "Eternal0404",
+      "image": "https://avatars.githubusercontent.com/u/204033647?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774981294392,
+      "changelog": "Analyze contracts for red flags, key terms, and risk assessment. Plain English summaries.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e98fd6d8557c488d4c0a0426930e83d930179fa83e57a864dbcbbf6850138736"
+}

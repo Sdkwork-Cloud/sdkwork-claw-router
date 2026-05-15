@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 57649,
+  "uuid": "skill-clawhub-china-vision",
+  "skillKey": "clawhub-china-vision",
+  "name": "china-vision",
+  "summary": "多模态图片理解工具。Use when user wants to analyze, describe, or understand images using AI vision models. Supports scene analysis, object recognition, chart interpret...",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.china_vision",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToBeWin",
+      "features": [
+        "多模态图片理解工具。Use when user wants to analyze, describe, or understand images using AI vision models",
+        "Supports scene analysis, object recognition, chart interpret..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/china-vision@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/145168989?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "china-vision",
+      "url": "https://clawhub.ai/skills/china-vision"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "china-vision",
+    "url": "https://clawhub.ai/skills/china-vision",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/china-vision-f0d761f4e287f173.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/china-vision@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-china-vision-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0b1d04ea37930fdb2321fa11e00cce7877eec83829406ee05603da6d5c64b42",
+      "artifactSizeBytes": 2032
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-29T00:16:08.075Z"
+}

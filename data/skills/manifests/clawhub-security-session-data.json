@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58151,
+  "uuid": "skill-clawhub-security-session-data",
+  "skillKey": "clawhub-security-session-data",
+  "name": "安全权限工程师 会话配置与数据保护",
+  "summary": "Security engineer skill for session configuration, area isolation, sensitive-state handling, and data-protection boundaries.",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_session_data",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aiweline",
+      "features": [
+        "Security engineer skill for session configuration, area isolation, sensitive-state handling, an."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-session-data@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32635766?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-session-data",
+      "url": "https://clawhub.ai/skills/security-session-data"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-session-data",
+    "url": "https://clawhub.ai/skills/security-session-data",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-session-data-590028e0fe35565e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-session-data@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-session-data-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:23b6a5877f69b4b5e10c46fedf79d64abd8c64605c8bbd6b784a7de08dc5cd4f",
+      "artifactSizeBytes": 1954
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-08T03:20:50.662Z"
+}

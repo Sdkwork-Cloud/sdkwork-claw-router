@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-model@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_model",
+  "skill": {
+    "id": 46151,
+    "skillKey": "clawhub-claude-code-model",
+    "name": "claude-code-model"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-model",
+    "url": "https://clawhub.ai/skills/claude-code-model",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-model-58a36cc97a625a55.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Configure Claude Code to use custom models (DeepSeek, GLM, Qwen, etc.). Use when user wants to change Claude Code's model, switch API provider, or set up cus..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "moonbird0423",
+      "userId": "s17fk5zy38chw36qwd44p9yqs985hfn1",
+      "displayName": "MoonBird0423",
+      "image": "https://avatars.githubusercontent.com/u/33125887?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 127,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777086618110,
+      "changelog": "Configure Claude Code to use custom models (DeepSeek, GLM, Qwen, etc.). Switch API provider, set custom endpoints, update environment variables and config files automatically.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:0d64dcaadc6f10766a2f04e06ec052ed65cb332a8c4f106351e0094db89e39b4"
+}

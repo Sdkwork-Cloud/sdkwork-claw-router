@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 22384,
+  "uuid": "skill-clawhub-email-extractor",
+  "skillKey": "clawhub-email-extractor",
+  "name": "Email Extractor",
+  "summary": "Extract and deduplicate up to 20 email addresses from any webpage URL or plain text content.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_extractor",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "loverun321",
+      "features": [
+        "Extract and deduplicate up to 20 email addresses from any webpage URL or plain text content."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/email-extractor@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/222489895?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "email-extractor",
+      "url": "https://clawhub.ai/skills/email-extractor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-extractor",
+    "url": "https://clawhub.ai/skills/email-extractor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-extractor-ba6a03f21f8e32a2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/email-extractor@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-email-extractor-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f88174db76ca0ff4a83cb264b90814999f7a46762e3665868b6a5904ec876614",
+      "artifactSizeBytes": 2082
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-05T16:53:56.310Z"
+}

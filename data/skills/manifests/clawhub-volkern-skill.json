@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27611,
+  "uuid": "skill-clawhub-volkern-skill",
+  "skillKey": "clawhub-volkern-skill",
+  "name": "Volkern MCP Server",
+  "summary": "Automate Volkern CRM operations including lead management, appointment scheduling, task tracking, service catalog, WhatsApp messaging, sales pipeline, quotat...",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.volkern_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "DeXpertmx",
+      "features": [
+        "Automate Volkern CRM operations including lead management, appointment scheduling, task trackin."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/volkern-skill@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/191903111?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "volkern-skill",
+      "url": "https://clawhub.ai/skills/volkern-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "volkern-skill",
+    "url": "https://clawhub.ai/skills/volkern-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/volkern-skill-51d4c3fcd4176f5a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/volkern-skill@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-volkern-skill-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:548d6922ddb2b2f65e00edc3d063dfae537636c89f35a0cbc4c970d564c29111",
+      "artifactSizeBytes": 2420
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T15:14:38.217Z"
+}

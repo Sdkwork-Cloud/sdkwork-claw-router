@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 34033,
+  "uuid": "skill-clawhub-lof-monitor",
+  "skillKey": "clawhub-lof-monitor",
+  "name": "LOFMonitor Finance Stock Investment",
+  "summary": "Monitors A-share LOF fund premium/discount exceeding 10% to identify and output potential arbitrage opportunities.",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lof_monitor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kafroc",
+      "features": [
+        "Monitors A-share LOF fund premium/discount exceeding 10% to identify and output potential arbit."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/lof-monitor@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/60767326?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "lof-monitor",
+      "url": "https://clawhub.ai/skills/lof-monitor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lof-monitor",
+    "url": "https://clawhub.ai/skills/lof-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lof-monitor-454a0ef4b83fd683.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/lof-monitor@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-lof-monitor-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:665ce4f0ba0f91e875387f04e88a78c59baad8559ba25d68689830d30a233252",
+      "artifactSizeBytes": 1937
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T15:13:50.122Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/case@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.case",
+  "skill": {
+    "id": 51239,
+    "skillKey": "clawhub-case",
+    "name": "Case"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "case",
+    "url": "https://clawhub.ai/skills/case",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/case-bbfcd4160a1e8674.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "A comprehensive AI agent skill for anyone navigating a legal case. Whether you are the plaintiff, the defendant, or somewhere in between — this skill helps y..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "agistack",
+      "userId": "s178h9d2k372k0rawyb3jd1h0d84vf26",
+      "displayName": "AGIstack",
+      "image": "https://avatars.githubusercontent.com/u/258523997?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 382,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773046426633,
+      "changelog": "Initial release with four-file structure",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a26d0314804ff5ef6f19b8a636f6fa9b36575198a652d06d8652583e391c89fd"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/image-video-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.image_video_ai",
+  "skill": {
+    "id": 41156,
+    "skillKey": "clawhub-image-video-ai",
+    "name": "Image Video Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "image-video-ai",
+    "url": "https://clawhub.ai/skills/image-video-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/image-video-ai-4b4b91d85f3b34c6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "marketers convert images into animated video clips using this skill. Accepts JPG, PNG, WEBP, GIF up to 200MB, renders on cloud GPUs at 1080p, and returns MP4..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "peand-rover",
+      "userId": "s1798dk1219d0v445rb778f65d83gn1w",
+      "displayName": "peandrover adam",
+      "image": "https://avatars.githubusercontent.com/u/257755799?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 165,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775846469593,
+      "changelog": "Initial release of Image Video AI — convert image collections into shareable videos.\n\n- Instantly turn JPG, PNG, WEBP, or GIF images (up to 200MB) into animated video clips using cloud AI rendering.\n- Delivers 1080p MP4 video in 30–60 seconds; supports custom transitions, background music, and text overlays.\n- Easy upload and export workflow—no prior video editing experience required.\n- Automatic setup with free token generation, cloud session handling, and credits tracking.\n- Real-time status updates, error handling, and support for multiple export formats.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e33ae3e1e161babcfd14e1bfcba1c9f04af4a960c539189addced553293eabcb"
+}

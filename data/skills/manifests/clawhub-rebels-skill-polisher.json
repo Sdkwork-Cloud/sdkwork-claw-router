@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 36177,
+  "uuid": "skill-clawhub-rebels-skill-polisher",
+  "skillKey": "clawhub-rebels-skill-polisher",
+  "name": "Skill Polisher",
+  "summary": "Polishes standalone skills and multi-skill bundles for ClawHub readability without sacrificing LLM effectiveness. Use when improving a skill's listing, makin...",
+  "version": "2.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.rebels_skill_polisher",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "99rebels",
+      "features": [
+        "Polishes standalone skills and multi-skill bundles for ClawHub readability without sacrificing.",
+        "Use when improving a skill's listing, makin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/rebels-skill-polisher@2.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/148632105?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "rebels-skill-polisher",
+      "url": "https://clawhub.ai/skills/rebels-skill-polisher"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "rebels-skill-polisher",
+    "url": "https://clawhub.ai/skills/rebels-skill-polisher",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/rebels-skill-polisher-a6b88d0e901a2041.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/rebels-skill-polisher@2.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-rebels-skill-polisher-2.0.2.json",
+      "version": "2.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:809926361c8100c90a19bd586b478a76a6ad59adcd554714d18d27c8b5dbcfc0",
+      "artifactSizeBytes": 2198
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T21:56:25.947Z"
+}

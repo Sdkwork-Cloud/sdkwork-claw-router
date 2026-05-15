@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38922,
+  "uuid": "skill-clawhub-musestream",
+  "skillKey": "clawhub-musestream",
+  "name": "AI-Music-Stream",
+  "summary": "Generate AI music from text prompts and stream continuously in-browser with a shareable player URL; all tracks are saved locally in a library.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.musestream",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "browser.automation"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ju-Chiang Wang",
+      "features": [
+        "Generate AI music from text prompts and stream continuously in-browser with a shareable player.",
+        "all tracks are saved locally in a library."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/musestream@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9029902?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "musestream",
+      "url": "https://clawhub.ai/skills/musestream"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "musestream",
+    "url": "https://clawhub.ai/skills/musestream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/musestream-e8efe8753db7529a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/musestream@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-musestream-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:681b77a710679229522c7284334a4d1bc31a9d342312a017666d78461e3f1c9f",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-25T00:07:08.990Z"
+}

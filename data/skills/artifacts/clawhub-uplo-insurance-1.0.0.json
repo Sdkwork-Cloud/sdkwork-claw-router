@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/uplo-insurance@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.uplo_insurance",
+  "skill": {
+    "id": 28399,
+    "skillKey": "clawhub-uplo-insurance",
+    "name": "Uplo Insurance"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "uplo-insurance",
+    "url": "https://clawhub.ai/skills/uplo-insurance",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/uplo-insurance-010b5a73044f72f6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI-powered insurance knowledge management. Search policy documents, claims records, underwriting guidelines, and actuarial data with structured extraction."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "roojenkins",
+      "userId": "publishers:roojenkins",
+      "displayName": "RooJenkins",
+      "image": "https://avatars.githubusercontent.com/u/47111622?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 326,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774001372365,
+      "changelog": "uplo-insurance 1.0.0\n\n- Initial release of AI-powered insurance knowledge management skill.\n- Enables structured search across policy documents, claims records, underwriting guidelines, and actuarial data.\n- Provides workflows for complex claim coverage determinations and state regulatory filing compliance.\n- Introduces tools for precise policy language search, contextual knowledge queries, directive review, organization context export, and flagging outdated materials.\n- Offers insurance-specific tips for accuracy, regulatory compliance, and sensitive data handling.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f921666adf1ea2c6d4be3ad205dfc0492d9224a6e4cb6fa93d203002b89fc4ca"
+}

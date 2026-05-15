@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gemini-deep-research-1-0-0@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gemini_deep_research_1_0_0",
+  "skill": {
+    "id": 20833,
+    "skillKey": "clawhub-gemini-deep-research-1-0-0",
+    "name": "Gemini Deep Research 1.0.0"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gemini-deep-research-1-0-0",
+    "url": "https://clawhub.ai/skills/gemini-deep-research-1-0-0",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gemini-deep-research-1-0-0-dd1c2f701aa74d24.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Perform complex, long-running research tasks using Gemini Deep Research Agent. Use when asked to research topics requiring multi-source synthesis, competitiv..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lion504",
+      "userId": "publishers:lion504",
+      "displayName": "Lion504",
+      "image": "https://avatars.githubusercontent.com/u/178696698?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 486,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771971270465,
+      "changelog": "- Initial release of gemini-deep-research skill.\n- Enables complex, multi-source research using the Gemini Deep Research Agent.\n- Supports systematic web search, multi-step query breakdown, and comprehensive reporting.\n- Offers streaming progress updates and customizable output formats.\n- Requires a Gemini API key from Google AI Studio for use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fe1f7224e53548953be39e2ef58ba033d8a8cdbfb1a03fffa6cc8ff24b4e9724"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66316,
+  "uuid": "skill-clawhub-novel-scraper",
+  "skillKey": "clawhub-novel-scraper",
+  "name": "Novel Scraper",
+  "summary": "智能小说抓取工具，支持自动翻页、分页补全、章节号自动解析。 使用 curl+BeautifulSoup 抓取笔趣阁等小说网站，输出格式化 TXT 文件。 默认每 10 章合并为一个文档，避免文件零散分布。 自动检测分页并补全，智能跳过非小说内容（作者感言、抽奖预告等）。 Use when: 抓取网络小说章节、批量...",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.novel_scraper",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yuzhihui886",
+      "features": [
+        "智能小说抓取工具，支持自动翻页、分页补全、章节号自动解析。 使用 curl+BeautifulSoup 抓取笔趣阁等小说网站，输出格式化 TXT 文件。 默认每 10 章合并为一个文档，避免."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/novel-scraper@1.6.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/213567314?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "novel-scraper",
+      "url": "https://clawhub.ai/skills/novel-scraper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "novel-scraper",
+    "url": "https://clawhub.ai/skills/novel-scraper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/novel-scraper-8d3ff2f46140e29b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/novel-scraper@1.6.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-novel-scraper-1.6.0.json",
+      "version": "1.6.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:03b4edcf23e414f7ae2e4e7c532e8693831daf991b7a1294c0d0b04380252242",
+      "artifactSizeBytes": 2207
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-04T09:36:58.600Z"
+}

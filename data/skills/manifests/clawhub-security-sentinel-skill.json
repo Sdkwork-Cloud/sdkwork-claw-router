@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 8569,
+  "uuid": "skill-clawhub-security-sentinel-skill",
+  "skillKey": "clawhub-security-sentinel-skill",
+  "name": "Anti-Injection-Skill",
+  "summary": "Detect prompt injection, jailbreak, role-hijack, and system extraction attempts. Applies multi-layer defense with semantic analysis and penalty scoring.",
+  "version": "2.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.security_sentinel_skill",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Wesley Armando",
+      "features": [
+        "Detect prompt injection, jailbreak, role-hijack, and system extraction attempts",
+        "Applies multi-layer defense with semantic analysis and penalty scoring."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/security-sentinel-skill@2.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130360599?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "security-sentinel-skill",
+      "url": "https://clawhub.ai/skills/security-sentinel-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "security-sentinel-skill",
+    "url": "https://clawhub.ai/skills/security-sentinel-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/security-sentinel-skill-cacabc28cd0eab8b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/security-sentinel-skill@2.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-security-sentinel-skill-2.0.3.json",
+      "version": "2.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c0bc4c1a5578dadb93cd1f83110e37e36d7f4d0c2c6b4b15290d8ddf09444156",
+      "artifactSizeBytes": 2111
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-19T15:29:39.461Z"
+}

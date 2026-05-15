@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/phoenix-code-review@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.phoenix_code_review",
+  "skill": {
+    "id": 35286,
+    "skillKey": "clawhub-phoenix-code-review",
+    "name": "Phoenix Code Review"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "phoenix-code-review",
+    "url": "https://clawhub.ai/skills/phoenix-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/phoenix-code-review-acac42b7acb3ba96.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Reviews Phoenix code for controller patterns, context boundaries, routing, and plugs. Use when reviewing Phoenix apps, checking controllers, routers, or cont..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "anderskev",
+      "userId": "s17b1fzefm8nj8j1sdkzrze7gn83pfrg",
+      "displayName": "Kevin Anderson",
+      "image": "https://avatars.githubusercontent.com/u/17010022?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 206,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1776831113285,
+      "changelog": "- Added a \"Gates\" section outlining required step-by-step evidence, cross-check, and verification protocols before reporting findings.\n- Updated references to the review verification protocol for improved accuracy.\n- Clarified that issues should not be reported until all gates are passed, emphasizing anti-false-positive checks.\n- No functional or logic changes to checklists or core review rules.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:00be1af76d8fabc36aa98810d4d881f4151ed7a92b6f0a280e7979f0edb641f9"
+}

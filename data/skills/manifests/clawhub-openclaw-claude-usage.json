@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 15595,
+  "uuid": "skill-clawhub-openclaw-claude-usage",
+  "skillKey": "clawhub-openclaw-claude-usage",
+  "name": "Claude Usage Release",
+  "summary": "Check Claude Max plan usage limits by launching Claude Code and running /usage. Use when the user asks about Claude plan usage, remaining quota, rate limits,...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_claude_usage",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Chunhua Liao",
+      "features": [
+        "Check Claude Max plan usage limits by launching Claude Code and running /usage",
+        "Use when the user asks about Claude plan usage, remaining quota, rate limits,..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-claude-usage@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1627206?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-claude-usage",
+      "url": "https://clawhub.ai/skills/openclaw-claude-usage"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-claude-usage",
+    "url": "https://clawhub.ai/skills/openclaw-claude-usage",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-claude-usage-8210d5dd242ff039.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-claude-usage@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-claude-usage-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e7ec5cf8850276a90b16a9c55158b1d3f6526d9429b3afc525c1cc374c64c1cd",
+      "artifactSizeBytes": 2102
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T22:00:26.668Z"
+}

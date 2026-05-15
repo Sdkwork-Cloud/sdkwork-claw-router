@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 68144,
+  "uuid": "skill-clawhub-byted-text-to-speech",
+  "skillKey": "clawhub-byted-text-to-speech",
+  "name": "Byted Text To Speech",
+  "summary": "将文本合成为语音（TTS）。使用火山引擎豆包语音合成 API，支持流式合成、多种音色、语速/音调/音量调节、Markdown 过滤和 LaTeX 公式播报。当用户需要把文字转成语音、生成朗读音频、配音、旁白、播报，或提到「文字转语音」「TTS」「语音合成」「朗读」「配音」时使用本技能。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.byted_text_to_speech",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "volcengine-skills",
+      "features": [
+        "将文本合成为语音（TTS）。使用火山引擎豆包语音合成 API，支持流式合成、多种音色、语速/音调/音量调节、Markdown 过滤和 LaTeX 公式播报。当用户需要把文字转成语音、生成朗读."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/byted-text-to-speech@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/260939792?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "byted-text-to-speech",
+      "url": "https://clawhub.ai/skills/byted-text-to-speech"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "byted-text-to-speech",
+    "url": "https://clawhub.ai/skills/byted-text-to-speech",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/byted-text-to-speech-5c3dd9a1034587de.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/byted-text-to-speech@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-byted-text-to-speech-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd0cb2ac0f2f07ddf73df9cc5236705e6c2e563ce9ebb7e93a0d784ac06b95d6",
+      "artifactSizeBytes": 2562
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T07:37:43.872Z"
+}

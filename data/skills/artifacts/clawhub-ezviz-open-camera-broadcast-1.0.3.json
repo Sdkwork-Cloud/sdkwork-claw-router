@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ezviz-open-camera-broadcast@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ezviz_open_camera_broadcast",
+  "skill": {
+    "id": 63400,
+    "skillKey": "clawhub-ezviz-open-camera-broadcast",
+    "name": "Ezviz Open Camera Broadcast"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ezviz-open-camera-broadcast",
+    "url": "https://clawhub.ai/skills/ezviz-open-camera-broadcast",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ezviz-open-camera-broadcast-098e3733948cc6d3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "萤石语音广播技能。支持本地音频文件上传或文本转语音，实现语音内容下发到设备播放。 Use when: 需要向萤石设备发送语音通知、广播、提醒等音频内容。 ⚠️ 安全要求：必须设置 EZVIZ_APP_KEY 和 EZVIZ_APP_SECRET 环境变量，使用最小权限凭证。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ezviz-open",
+      "userId": "s174s8a00r18xwt2q5p7j85f5183gavv",
+      "displayName": "EzvizOpenTeam",
+      "image": "https://avatars.githubusercontent.com/u/16202450?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 390,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1773835582070,
+      "changelog": "## ezviz-open-camera-broadcast v1.0.3 Changelog\n\n- Clarified in documentation that OpenClaw config files (`~/.openclaw/*.json`) may be read for Ezviz credentials, but only as a fallback if environment variables are not set.\n- Added explicit warning that environment variable credentials have the highest priority and fully override config files, improving security transparency.\n- Expanded metadata to include more configuration details and file permissions for token cache.\n- Improved safety guidance in documentation to recommend exclusively using environment variables, with clear risk mitigation notes about config file discovery.\n- No code changes in this release; documentation and metadata updates only.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:56c650de3ff286b59a632bc077ef48ec5c6dc12f805c2a9d4cd19f0b7ebe9fb8"
+}

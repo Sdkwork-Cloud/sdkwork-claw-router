@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/metra@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.metra",
+  "skill": {
+    "id": 50181,
+    "skillKey": "clawhub-metra",
+    "name": "Metra Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "metra",
+    "url": "https://clawhub.ai/skills/metra",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/metra-dada9cfc53f62c46.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Chicago Metra commuter rail — real-time train arrivals, vehicle tracking, service alerts, and schedule info for all 11 Metra lines serving the Chicago metrop..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brianleach",
+      "userId": "publishers:brianleach",
+      "displayName": "Brian Leach",
+      "image": "https://avatars.githubusercontent.com/u/1900805?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 596,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771779553332,
+      "changelog": "Initial release: Real-time Chicago Metra commuter rail data — train arrivals, vehicle tracking, service alerts, schedules, and fare calculation for all 11 Metra lines.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6dc8ee4db39704f484a9cd410365567d899c06a2ea2999f6df61e2f254c231c4"
+}

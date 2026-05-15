@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/toutiao-mcp-skill@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.toutiao_mcp_skill",
+  "skill": {
+    "id": 65210,
+    "skillKey": "clawhub-toutiao-mcp-skill",
+    "name": "Toutiao Mcp"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "toutiao-mcp-skill",
+    "url": "https://clawhub.ai/skills/toutiao-mcp-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/toutiao-mcp-skill-9bd2d675b259120f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "通过 MCP 协议操作今日头条平台，支持内容发布、账号管理等功能"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sipingme",
+      "userId": "s17867zbqf69d0mb2yqzym6nmh83hrxm",
+      "displayName": "PING SI",
+      "image": "https://avatars.githubusercontent.com/u/19371897?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 348,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773998651902,
+      "changelog": "toutiao-mcp-skill v0.1.0\n\n- Initial release of the MCP skill for 今日头条.\n- Supports account login, logout, and status checks.\n- Enables publishing of articles and micro posts (微头条), with image and tag support.\n- Provides batch publishing of 小红书 data to 今日头条.\n- Includes usage documentation, SOPs, and sample data formats.\n- Requires installation of the toutiao-mcp MCP server and Chromium browser.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da543edd5ac0acf52bd34366be4ed91ddff8ebb08c56dd76d31d49cb0d4e476b"
+}

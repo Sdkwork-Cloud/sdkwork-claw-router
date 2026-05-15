@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 41341,
+  "uuid": "skill-clawhub-nemoclaw-email-policy",
+  "skillKey": "clawhub-nemoclaw-email-policy",
+  "name": "Nemoclaw Email Policy",
+  "summary": "Enforce email safety policies at the network level with NemoClaw. Use when user says \"email policy,\" \"send guardrail,\" \"prevent accidental send,\" \"email allo...",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nemoclaw_email_policy",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Steven Obiajulu",
+      "features": [
+        "Enforce email safety policies at the network level with NemoClaw",
+        "Use when user says \"email policy,\" \"send guardrail,\" \"prevent accidental send,\" \"email allo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/nemoclaw-email-policy@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183783362?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "nemoclaw-email-policy",
+      "url": "https://clawhub.ai/skills/nemoclaw-email-policy"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nemoclaw-email-policy",
+    "url": "https://clawhub.ai/skills/nemoclaw-email-policy",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nemoclaw-email-policy-11ff846e0e615aa1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/nemoclaw-email-policy@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-nemoclaw-email-policy-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6ef1b088982085fe9582e675628469e7e39066c38d8cf23a5c3d08b7c3107aae",
+      "artifactSizeBytes": 1957
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T02:58:29.659Z"
+}

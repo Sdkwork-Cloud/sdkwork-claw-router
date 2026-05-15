@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lsp@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lsp",
+  "skill": {
+    "id": 18833,
+    "skillKey": "clawhub-lsp",
+    "name": "LSP Code Navigation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lsp",
+    "url": "https://clawhub.ai/skills/lsp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lsp-cb44fdc6e9842df4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Multi-language code navigation via persistent LSP daemons. Supports Python (pyright), TypeScript/JS, Rust, Go, C/C++, Bash, Java, CSS, HTML, JSON. Auto-detec..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "adamnaghs",
+      "userId": "publishers:adamnaghs",
+      "displayName": "AdamNaghs",
+      "image": "https://avatars.githubusercontent.com/u/79067867?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 647,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1772332780189,
+      "changelog": "Multi-language support: auto-detects language from file extension and lazy-starts per-language daemons. Supports Python, TypeScript/JS, Rust, Go, C/C++, Bash, Java, CSS, HTML, JSON. New commands: languages, servers, shutdown <lang>.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bce6b51b01e87bf83c5d2b2216c2aa5b9ba83176f399db9721973c3f2ecdd54b"
+}

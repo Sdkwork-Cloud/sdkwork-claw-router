@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 61585,
+  "uuid": "skill-clawhub-xiaoming-calendar-manager",
+  "skillKey": "clawhub-xiaoming-calendar-manager",
+  "name": "Calendar Manager",
+  "summary": "日历管理 - 日程安排、会议提醒、冲突检测",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_calendar_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "日程安排、会议提醒、冲突检测"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoming-calendar-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoming-calendar-manager",
+      "url": "https://clawhub.ai/skills/xiaoming-calendar-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-calendar-manager",
+    "url": "https://clawhub.ai/skills/xiaoming-calendar-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-calendar-manager-8b4fc1fe32a1a06e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoming-calendar-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoming-calendar-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3b0730a863b5a619767198d5c19ddd85eff41c233f24d5c014a25d4b7b63863c",
+      "artifactSizeBytes": 1871
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T13:29:42.533Z"
+}

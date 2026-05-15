@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "xiaoyuzhou-asr",
+    "displayName": "xiaoyuzhou-asr",
+    "summary": "Transcribe 小宇宙 (Xiaoyuzhou) podcast episodes to text using local Qwen3-ASR speech recognition. Combines xyz API (小宇宙FM API) to fetch episode metadata and aud...",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 107,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1777652716315,
+    "updatedAt": 1777653408408
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1777652716315,
+    "changelog": "Initial release: Local speech-to-text for 小宇宙 podcasts using Qwen3-ASR\n\n- Transcribe 小宇宙 (Xiaoyuzhou) podcast episodes to text locally with Qwen3-ASR (Metal/CUDA accelerated).\n- Integrates xyz API to fetch episode metadata and audio URLs.\n- Supports keyword search, single/batch episode download, and batch transcription.\n- Provides full workflow: search, download, split audio, transcribe, and format output as markdown.\n- Requires local xyz API server, ffmpeg for audio processing, and a built-from-source qwen3-asr-rs binary.\n- Enforces audio segment length limits (≤3 minutes) for GPU stability; all data is processed locally, ensuring privacy.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "worldwonderer",
+    "userId": "s1748rsha25rh871z39a8xdg9n85tqyh",
+    "displayName": "worldwonderer",
+    "image": "https://avatars.githubusercontent.com/u/49583093?v=4"
+  },
+  "moderation": null
+}

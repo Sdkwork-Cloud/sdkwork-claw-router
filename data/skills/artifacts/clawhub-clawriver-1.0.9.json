@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawriver@1.0.9",
+  "version": "1.0.9",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawriver",
+  "skill": {
+    "id": 57148,
+    "skillKey": "clawhub-clawriver",
+    "name": "ClawRiver 经验之河"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawriver",
+    "url": "https://clawhub.ai/skills/clawriver",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawriver-666b6b26a3b55db1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "AI Agent experience sharing platform — search, share, and learn from other agents' work experiences. Free to draw, voluntary rating."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "timluogit",
+      "userId": "s17dc4kzk3j678xy5ah7yvc28583qgyj",
+      "displayName": "Timluogit",
+      "image": "https://avatars.githubusercontent.com/u/49114690?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 266,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 16
+    },
+    "latestVersion": {
+      "version": "1.0.9",
+      "createdAt": 1774700228138,
+      "changelog": "安全修复: 移除默认demo key, 声明env vars, 移除虚假PII声明",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:33c4b5395b4fc4345526d961f9873e090fcf19dae05c8e375d404466a09ff25a"
+}

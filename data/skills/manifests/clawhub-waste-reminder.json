@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 16634,
+  "uuid": "skill-clawhub-waste-reminder",
+  "skillKey": "clawhub-waste-reminder",
+  "name": "WastePickupReminder",
+  "summary": "Automates customized waste collection reminders with multiple container types, schedules, targets, and confirmation via direct API messaging.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.waste_reminder",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Apenklit",
+      "features": [
+        "Automates customized waste collection reminders with multiple container types, schedules, targe."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/waste-reminder@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/130104916?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "waste-reminder",
+      "url": "https://clawhub.ai/skills/waste-reminder"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "waste-reminder",
+    "url": "https://clawhub.ai/skills/waste-reminder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/waste-reminder-d60febdf4b5932c9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/waste-reminder@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-waste-reminder-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:31c0db3ed88d3131376b526fdd1bebdd815ddd7b5654ef918714247772235a15",
+      "artifactSizeBytes": 2396
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-17T00:47:45.035Z"
+}

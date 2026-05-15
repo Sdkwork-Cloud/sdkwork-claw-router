@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 53971,
+  "uuid": "skill-clawhub-deadcode",
+  "skillKey": "clawhub-deadcode",
+  "name": "deadcode",
+  "summary": "Dead code and unused export detector — scans JavaScript/TypeScript, Python, Go, Java, and CSS for dead code, orphan files, unused exports, and code cruft",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.deadcode",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "suhteevah",
+      "features": [
+        "Dead code and unused export detector — scans JavaScript/TypeScript, Python, Go, Java, and CSS f."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "TypeScript",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/deadcode@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2342183?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "deadcode",
+      "url": "https://clawhub.ai/skills/deadcode"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "deadcode",
+    "url": "https://clawhub.ai/skills/deadcode",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/deadcode-d929e3829b0993a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/deadcode@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-deadcode-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:94f2ec4aac8293ec03a1be0ff36d913d630b1a19076917424bbe120cf2309935",
+      "artifactSizeBytes": 1876
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-14T16:22:15.317Z"
+}

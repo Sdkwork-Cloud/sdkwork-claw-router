@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67100,
+  "uuid": "skill-clawhub-peter-code-review",
+  "skillKey": "clawhub-peter-code-review",
+  "name": "Peter Code Review",
+  "summary": "提交前质量闸门。快速完成本地测试、静态检查和风险审查，判断“是否可提交”。",
+  "version": "1.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.peter_code_review",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "chinasilva",
+      "features": [
+        "提交前质量闸门。快速完成本地测试、静态检查和风险审查，判断“是否可提交”。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/peter-code-review@1.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16743182?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "peter-code-review",
+      "url": "https://clawhub.ai/skills/peter-code-review"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "peter-code-review",
+    "url": "https://clawhub.ai/skills/peter-code-review",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/peter-code-review-8e0aa70179c63aa3.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/peter-code-review@1.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-peter-code-review-1.5.0.json",
+      "version": "1.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e157b16d62fa90d0dcf316c7ffc462ff70642d69800458ce8c14f205d2cdae9c",
+      "artifactSizeBytes": 2446
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-03T06:55:59.544Z"
+}

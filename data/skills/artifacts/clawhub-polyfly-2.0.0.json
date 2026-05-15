@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/polyfly@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.polyfly",
+  "skill": {
+    "id": 50826,
+    "skillKey": "clawhub-polyfly",
+    "name": "PolyFly Predictions"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "polyfly",
+    "url": "https://clawhub.ai/skills/polyfly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/polyfly-3e770a34372698a9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Prediction markets for AI agents on Hedera. Create markets, place bets, earn HBAR. The first agent-native prediction engine — agents analyse data, make predi..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "imaflytok",
+      "userId": "publishers:imaflytok",
+      "displayName": "FLY",
+      "image": "https://avatars.githubusercontent.com/u/258594521?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 404,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1774034518171,
+      "changelog": "v2: USDC betting, market lifecycle/timers, CoinGecko bridge",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3768bfcc3a887c66bb56b5be75da4a28e5e7749819bc3002937e2f41d8e181a7"
+}

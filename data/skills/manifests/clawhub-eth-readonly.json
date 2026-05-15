@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38229,
+  "uuid": "skill-clawhub-eth-readonly",
+  "skillKey": "clawhub-eth-readonly",
+  "name": "Ethereum Readonly",
+  "summary": "Read-only Ethereum blockchain queries — blocks, transactions, balances, contracts, logs via RPC and Etherscan APIs",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.eth_readonly",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "J. Campbell",
+      "features": [
+        "Read-only Ethereum blockchain queries — blocks, transactions, balances, contracts, logs via RPC."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/eth-readonly@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/363026?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "eth-readonly",
+      "url": "https://clawhub.ai/skills/eth-readonly"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "eth-readonly",
+    "url": "https://clawhub.ai/skills/eth-readonly",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/eth-readonly-41c1bcb1cccea534.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/eth-readonly@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-eth-readonly-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:af1787e919704f1cd304f84c38409f7c16a01d43f73e11e07e13636a79d10164",
+      "artifactSizeBytes": 2365
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T05:20:29.389Z"
+}

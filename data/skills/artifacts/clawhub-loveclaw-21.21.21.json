@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/loveclaw@21.21.21",
+  "version": "21.21.21",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.loveclaw",
+  "skill": {
+    "id": 69723,
+    "skillKey": "clawhub-loveclaw",
+    "name": "LoveClaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "loveclaw",
+    "url": "https://clawhub.ai/skills/loveclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/loveclaw-9bc09becfc6e0846.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "LoveClaw 八字缘分匹配：云端档案、照片、每日匹配与晚间报告。 用户唤醒：发送「启动爱情龙虾」进入报名。 安全设计：匹配运算与报告生成在 FC 服务端完成；skill 端仅做用户交互与通知路由，每个用户只能访问自己的数据。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jackysly88",
+      "userId": "s17205zasx4anj0pwknnpfqx8x83g2ng",
+      "displayName": "jackysly88",
+      "image": "https://avatars.githubusercontent.com/u/258196980?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 632,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 1,
+      "versions": 166
+    },
+    "latestVersion": {
+      "version": "21.21.21",
+      "createdAt": 1775046286540,
+      "changelog": "LoveClaw 21.21.21 is a streamlined update focusing on clarity, safety, and reduced complexity:\n\n- 精简并聚焦文档，移除运维面、全量风险披露与详细内部实现说明，仅强调用户可见交互与安全边界。\n- 明确 skill 端仅做用户交互与推送路由，所有八字/匹配/报告逻辑均在云端服务完成，skill 端无法访问其他用户数据。\n- 删除对高敏感管理密钥（如 ADMIN/ACCESS_KEY）和 deploy/ 相关内容的依赖及说明，仅保留 `LOVECLAW_API_TOKEN`。\n- 环境变量严格允许名单注入，仅保留关键项。\n- 保留核心安装指引、命令触发词、流程摘要和极简安全说明。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:6105208a9697c740c0ab6efc4f8ee6f0cf1f5c1a559cf7f870aa1e96bc55294c"
+}

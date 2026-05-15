@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12506,
+  "uuid": "skill-clawhub-sponge-wallet",
+  "skillKey": "clawhub-sponge-wallet",
+  "name": "Sponge Wallet",
+  "summary": "Manages crypto wallets, transfers tokens, swaps on DEXes, checks balances, and accesses paid APIs (search, image gen, prediction markets, web scraping, document parsing, sales prospecting) via x402 micropayments. Use when the user asks abo.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.sponge_wallet",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Rishab Luthra",
+      "features": [
+        "Manages crypto wallets, transfers tokens, swaps on DEXes, checks balances, and accesses paid AP.",
+        "Use when the user asks about wallet balances, token transfers, swaps, blockchain payments, or p."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/sponge-wallet@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/12266349?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "sponge-wallet",
+      "url": "https://clawhub.ai/skills/sponge-wallet"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "sponge-wallet",
+    "url": "https://clawhub.ai/skills/sponge-wallet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/sponge-wallet-c0c04b87af9f17a7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/sponge-wallet@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-sponge-wallet-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:1233801a4cfeab8161379aa4ac8b785996b2b905c7e5ec231d205ffeaec423b8",
+      "artifactSizeBytes": 1965
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-28T19:05:57.942Z"
+}

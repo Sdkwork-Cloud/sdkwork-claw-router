@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33215,
+  "uuid": "skill-clawhub-gdpr-pci-checklist",
+  "skillKey": "clawhub-gdpr-pci-checklist",
+  "name": "GDPR PCI Checklist",
+  "summary": "Generate customized compliance checklists for GDPR and PCI-DSS standards based on company type.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gdpr_pci_checklist",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ToolWeb",
+      "features": [
+        "Generate customized compliance checklists for GDPR and PCI-DSS standards based on company type."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/gdpr-pci-checklist@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/245780162?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "gdpr-pci-checklist",
+      "url": "https://clawhub.ai/skills/gdpr-pci-checklist"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gdpr-pci-checklist",
+    "url": "https://clawhub.ai/skills/gdpr-pci-checklist",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gdpr-pci-checklist-bd55cb50667111a8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/gdpr-pci-checklist@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-gdpr-pci-checklist-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b575f7942ce8ed977d4378f5f59f8d649e11aa25867abbd05112c4765a8475b7",
+      "artifactSizeBytes": 2331
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-21T07:18:23.139Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/shopline-builder@2.2.1",
+  "version": "2.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shopline_builder",
+  "skill": {
+    "id": 61610,
+    "skillKey": "clawhub-shopline-builder",
+    "name": "Shopline Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shopline-builder",
+    "url": "https://clawhub.ai/skills/shopline-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shopline-builder-d217ac73c339c880.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "SHOPLINE 建站助手 — AI 全程帮用户完成 SHOPLINE 独立站注册和配置，包括自动填写注册表单、配置店铺基础设置、选主题，以及从 Shopify / WooCommerce / Shoplazza 的搬迁引导。北极星指标：首单时间（新手 ≤7 天，搬迁 ≤3 天）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "zhangsicong-debug",
+      "userId": "s17fnfrtfvjp8q35jv8ndymk7583jz9b",
+      "displayName": "zhangsicong-debug",
+      "image": "https://avatars.githubusercontent.com/u/264083240?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 438,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 3,
+      "versions": 6
+    },
+    "latestVersion": {
+      "version": "2.2.1",
+      "createdAt": 1773808842178,
+      "changelog": "v2.2.1: 路由修正（实测验证）— 主题入口改为 /admin/website/shopSetting，AI Builder 为 /aiBuild；/admin/themes 已标注为 404 无效路由；Step A 流程步骤全面更新，加入辅助页面全选逻辑",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:b4da132fbb69d6975360be14b83ee30e0dc67e3f87b8de1018d01b1e77aa6766"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ub2-csv-data-analyzer@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ub2_csv_data_analyzer",
+  "skill": {
+    "id": 15394,
+    "skillKey": "clawhub-ub2-csv-data-analyzer",
+    "name": "CSV Data Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ub2-csv-data-analyzer",
+    "url": "https://clawhub.ai/skills/ub2-csv-data-analyzer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ub2-csv-data-analyzer-02bd87edab6299b5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Load, explore, clean, analyze, and visualize CSV data to provide statistical summaries, correlations, filtered views, and charts for insights."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "underbench2-gif",
+      "userId": "publishers:underbench2-gif",
+      "displayName": "underbench2-gif",
+      "image": "https://avatars.githubusercontent.com/u/224172328?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 985,
+      "installsAllTime": 5,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771092543013,
+      "changelog": "Initial release of the CSV Data Analyzer skill:\n\n- Load and inspect CSV files, detecting column types and displaying structure.\n- Clean data by handling missing values, duplicates, and type inconsistencies.\n- Generate descriptive statistics (mean, median, mode, etc.) for numeric columns.\n- Filter and group data, including aggregation by categories.\n- Perform correlation analysis between numeric variables.\n- Create visualizations (bar, line, scatter, histogram) and save charts as PNG files.\n- Export cleaned datasets as new CSV files and provide key insights in plain language.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:99bc33e00d644f04cca3f7dbfeef45e43ba4d1aea871e4891d075bb33fa38caa"
+}

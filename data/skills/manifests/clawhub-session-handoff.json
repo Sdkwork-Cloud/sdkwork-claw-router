@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 14889,
+  "uuid": "skill-clawhub-session-handoff",
+  "skillKey": "clawhub-session-handoff",
+  "name": "Session Handoff",
+  "summary": "WHAT: Create comprehensive handoff documents that enable fresh AI agents to seamlessly continue work with zero ambiguity. Solves long-running agent context exhaustion problem. WHEN: (1) User requests handoff/memory/context save, (2) Contex.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_handoff",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "wpank",
+      "features": [
+        "WHAT: Create comprehensive handoff documents that enable fresh AI agents to seamlessly continue.",
+        "Solves long-running agent context exhaustion problem",
+        "WHEN: (1) User requests handoff/memory/context save, (2) Context window approaches capacity, (3.",
+        "KEYWORDS: \"save state\", \"create handoff\", \"context is full\", \"I need to pause\", \"resume from\",."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/session-handoff@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/9498646?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "session-handoff",
+      "url": "https://clawhub.ai/skills/session-handoff"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-handoff",
+    "url": "https://clawhub.ai/skills/session-handoff",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-handoff-bf299f37279221e1.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/session-handoff@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-session-handoff-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ecb4999478abf8eb8e5bb59d070fa5e57547cdc24fb96f3d23853e219ff5ab09",
+      "artifactSizeBytes": 2492
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-10T13:30:24.592Z"
+}

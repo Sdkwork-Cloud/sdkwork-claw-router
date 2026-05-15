@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/command-flow@1.0.3",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.command_flow",
+  "skill": {
+    "id": 66812,
+    "skillKey": "clawhub-command-flow",
+    "name": "Command Flow"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "command-flow",
+    "url": "https://clawhub.ai/skills/command-flow",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/command-flow-2ba6855fd351a342.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "让命令像说话一样自然——中文解释、安全分级、一键执行"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "largetool",
+      "userId": "s174h1rvndzxpg052914dvpjjs83xj3a",
+      "displayName": "largetool",
+      "image": "https://avatars.githubusercontent.com/u/128457415?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 679,
+      "installsAllTime": 3,
+      "installsCurrent": 3,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.3",
+      "createdAt": 1774866399714,
+      "changelog": "- 新增自动添加、同步、生成命令的脚本，扩展命令流自动化能力\n- 增加对 Telegram Inline 模式的支持\n- 丰富触发关键词，包含 \"//\"、“命令 1”、“命令 2”等分页控制\n- 优化部分核心文件，提升命令渲染与交互体验",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:814b09e4918d6a66e5b204565ea8f0200ba0eb4250b1314558e003f86975cd03"
+}

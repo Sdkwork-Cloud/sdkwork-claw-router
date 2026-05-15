@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/gh-skillguard@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.gh_skillguard",
+  "skill": {
+    "id": 42681,
+    "skillKey": "clawhub-gh-skillguard",
+    "name": "Skillguard"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "gh-skillguard",
+    "url": "https://clawhub.ai/skills/gh-skillguard",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/gh-skillguard-5f07458c2ae577a5.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Run a complete security audit on any OpenClaw SKILL.md in one call. Combines malware scanning (SkillScan), permission scope analysis (ScopeCheck), and prompt..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mirni",
+      "userId": "s1711srsc0t5e7tx4tkwpmygw584bfmq",
+      "displayName": "mirni",
+      "image": "https://avatars.githubusercontent.com/u/13551232?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 155,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776067600268,
+      "changelog": "Initial public release of gh-skillguard with streamlined documentation and improved metadata.\n\n- Clarified and shortened the SKILL.md description for easier understanding\n- Updated metadata with emoji, improved install section, and structured requirements\n- Simplified usage instructions and included direct example for curl with jq\n- Clearly explained the unified reporting and combined verdict logic\n- Removed redundant/verbose request and response tables for readability",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:20cb86671ccc2e69aa5d3fb5c6ee1e8ed70d82636f9280ae5b771a73bf83e760"
+}

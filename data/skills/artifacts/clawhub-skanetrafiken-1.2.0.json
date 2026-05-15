@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/skanetrafiken@1.2.0",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skanetrafiken",
+  "skill": {
+    "id": 13840,
+    "skillKey": "clawhub-skanetrafiken",
+    "name": "Skanetrafiken Trip Planner"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skanetrafiken",
+    "url": "https://clawhub.ai/skills/skanetrafiken",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skanetrafiken-400e8a5d38fef6ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skåne public transport trip planner (Skånetrafiken). Plans bus/train journeys with real-time delays. Supports stations, addresses, landmarks, and cross-border trips to Copenhagen."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rezkam",
+      "userId": "publishers:rezkam",
+      "displayName": "rezkam",
+      "image": "https://avatars.githubusercontent.com/u/1498074?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2113,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.2.0",
+      "createdAt": 1768497876687,
+      "changelog": "Expose search-location and journey as separate entry points for LLM control. Adds time intent parsing (now/later/arrive by/around time), emoji response formatting, walking distance details, Metro support for Copenhagen, and clarifying question guidance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9ee74bfe072c0d8791aa9a2ea6fe9a7550f2dddef3725df9d4182931117f5228"
+}

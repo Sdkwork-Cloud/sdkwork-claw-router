@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62665,
+  "uuid": "skill-clawhub-clawhub-skill-test-api",
+  "skillKey": "clawhub-clawhub-skill-test-api",
+  "name": "Weaver E10 Api",
+  "summary": "泛微 E10 系统 API 调用工具，支持流程创建、待办查询、审批提交、流程退回等操作。使用 OAuth2.0 认证，自动管理 token 刷新。",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawhub_skill_test_api",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "老练的小四",
+      "features": [
+        "泛微 E10 系统 API 调用工具，支持流程创建、待办查询、审批提交、流程退回等操作。使用 OAuth2.0 认证，自动管理 token 刷新。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawhub-skill-test-api@0.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/735920?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawhub-skill-test-api",
+      "url": "https://clawhub.ai/skills/clawhub-skill-test-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawhub-skill-test-api",
+    "url": "https://clawhub.ai/skills/clawhub-skill-test-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawhub-skill-test-api-0e4275edb5f5c649.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawhub-skill-test-api@0.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawhub-skill-test-api-0.1.1.json",
+      "version": "0.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bede0fad416f9697db26de08f229accdae071bf50bd3e2e3a7fb948e272b9b30",
+      "artifactSizeBytes": 2031
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-13T07:03:07.075Z"
+}

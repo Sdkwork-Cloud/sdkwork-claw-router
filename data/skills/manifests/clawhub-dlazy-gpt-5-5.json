@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49395,
+  "uuid": "skill-clawhub-dlazy-gpt-5-5",
+  "skillKey": "clawhub-dlazy-gpt-5-5",
+  "name": "Dlazy Gpt 5.5",
+  "summary": "OpenAI's general-purpose model balancing reasoning quality with response speed. Suitable for chat, writing, planning, and multimodal analysis.",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.dlazy_gpt_5_5",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "dlazy",
+      "features": [
+        "OpenAI's general-purpose model balancing reasoning quality with response speed",
+        "Suitable for chat, writing, planning, and multimodal analysis."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/dlazy-gpt-5-5@1.1.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/274158181?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "dlazy-gpt-5-5",
+      "url": "https://clawhub.ai/skills/dlazy-gpt-5-5"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "dlazy-gpt-5-5",
+    "url": "https://clawhub.ai/skills/dlazy-gpt-5-5",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/dlazy-gpt-5-5-3fb6d44140d35862.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/dlazy-gpt-5-5@1.1.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-dlazy-gpt-5-5-1.1.1.json",
+      "version": "1.1.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:48d7d203b10aed84607bcbd80ab7604909c0a289df1d930ae2f70f2c97a63e70",
+      "artifactSizeBytes": 2180
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T14:04:20.920Z"
+}

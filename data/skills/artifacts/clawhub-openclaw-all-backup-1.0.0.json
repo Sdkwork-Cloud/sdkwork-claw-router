@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-all-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_all_backup",
+  "skill": {
+    "id": 62237,
+    "skillKey": "clawhub-openclaw-all-backup",
+    "name": "openclaw-all-backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-all-backup",
+    "url": "https://clawhub.ai/skills/openclaw-all-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-all-backup-bf1e89d4978f62ae.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "完整备份 OpenClaw 配置目录 (.openclaw) 到同名带时间戳的目录，包括所有文件和隐藏文件。当用户需要备份 OpenClaw 配置、数据或创建配置快照时使用。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "lijiangtai",
+      "userId": "publishers:lijiangtai",
+      "displayName": "lijiangtai",
+      "image": "https://avatars.githubusercontent.com/u/23158925?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 355,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773595481126,
+      "changelog": "Initial release of openclaw-backup.\n\n- Provides a script to fully back up the .openclaw configuration directory, including all files and hidden files.\n- Backup directories are timestamped for easy snapshot management.\n- Preserves file permissions and timestamps.\n- Uses rsync (if available) or cp -a to ensure data integrity.\n- Includes instructions for both automated and manual backup and restore.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:23b142c16c87b1a73369e05cd3dd64de802a825d647417f814d6ade3c28d1dab"
+}

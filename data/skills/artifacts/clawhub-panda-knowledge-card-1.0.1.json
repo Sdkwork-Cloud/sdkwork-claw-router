@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/panda-knowledge-card@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.panda_knowledge_card",
+  "skill": {
+    "id": 64792,
+    "skillKey": "clawhub-panda-knowledge-card",
+    "name": "panda-knowledge-card"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "panda-knowledge-card",
+    "url": "https://clawhub.ai/skills/panda-knowledge-card",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/panda-knowledge-card-fad129145fb66874.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "将知识内容转化为精美的知识卡片图片系列。 支持从文章自动提取知识点拆分为多张卡片，也支持直接输入知识点生成。 卡片类型(Layout) × 视觉风格(Style) 二维组合，可选角色融合。 触发词：\"知识卡片\"、\"knowledge card\"、\"生成卡片\"、\"知识图\"、 \"做成卡片\"、\"卡片系列\"。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hash-panda",
+      "userId": "s170a8h7mm0ky2sr1jkvtz8std83zx62",
+      "displayName": "hash panda",
+      "image": "https://avatars.githubusercontent.com/u/110599333?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 182,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775039933706,
+      "changelog": "init",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:f76184a7ed5e1d353d10c407bacc6cb94b11dfeed69d541124bb278985142b67"
+}

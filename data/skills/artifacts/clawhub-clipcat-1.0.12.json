@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clipcat@1.0.12",
+  "version": "1.0.12",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clipcat",
+  "skill": {
+    "id": 16043,
+    "skillKey": "clawhub-clipcat",
+    "name": "Clipcat - AI Viral Video Maker for TikTok Shop"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clipcat",
+    "url": "https://clawhub.ai/skills/clipcat",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clipcat-a97757e759ffae95.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Clipcat - TikTok e-commerce video creation skill. Video search, product insights, viral replication, product-to-video generation, breakdown analysis, and vid..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "a2888409",
+      "userId": "s170hqqvyf7k3yzyvye2y7rdc983k940",
+      "displayName": "a2888409",
+      "image": "https://avatars.githubusercontent.com/u/11365761?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 735,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 11
+    },
+    "latestVersion": {
+      "version": "1.0.12",
+      "createdAt": 1777731383404,
+      "changelog": "- Updated CLI binary download URLs to version 1.0.12 for all platforms.\n- Clarified async task flow: tasks always return immediately, with status polling done across turns—never block inside a single call.\n- Added typical task durations for image, breakdown, product_video, and replicate commands.\n- Recommended polling intervals for task status: ~30s for images, ~1-2 min for video-related tasks.\n- Reinforced best practices for agents using the skill in automated workflows.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:889a9e9e705577a9da3259763d1e4ac0f65051ca8ff9e588682e0d3ce3aa9e2d"
+}

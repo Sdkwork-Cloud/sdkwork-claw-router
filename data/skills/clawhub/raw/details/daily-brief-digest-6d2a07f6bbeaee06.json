@@ -1,0 +1,45 @@
+{
+  "skill": {
+    "slug": "daily-brief-digest",
+    "displayName": "Daily Brief Digest",
+    "summary": "Generates a daily brief including urgent emails (himalaya), upcoming calendar events (gog), and relevant news. Use when the user asks for a morning summary, daily briefing, or a status update on their day.",
+    "tags": {
+      "latest": "1.0.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1169,
+      "installsAllTime": 8,
+      "installsCurrent": 8,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1770982946332,
+    "updatedAt": 1778385563686
+  },
+  "latestVersion": {
+    "version": "1.0.0",
+    "createdAt": 1770982946332,
+    "changelog": "Initial release of daily-digest with major updates to workflow and functionality:\n\n- Switched from a Python script to a Node.js-based system (`scripts/digest- Initial Release: Automated morning briefing workflow.\n- Cross-Platform Logic: Specifically optimized for Windows users—uses himalaya and gog CLIs so there is no need to install Homebrew or complex Linux dependencies to check Gmail/Calendar.\n- Premium Reporting: Generates a high-quality, stylized HTML report saved locally to .openclaw/cron/DailyDigest_logs/ for permanent record-keeping.\n- Smart Triage: Scans top 20 emails and syncs both calendar events and tasks.\n- Proactive Notifications: Automatically pings your registered channel (Telegram/Webchat) with a summary when the report is ready..js`).\n- Fully redesigned workflow: integrates urgent emails, calendar events, and news into a daily briefing.\n- Added reference documentation for cron setup and template usage.\n- Output is now saved automatically to `.openclaw/cron/DailyDigest_logs/` for historical tracking.\n- Deprecated the old README and Python script in favor of structured, tool-driven documentation and automation.",
+    "license": null
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "rajtejani61",
+    "userId": "s177gcm6ngwpdnbcjfjc498pn984101q",
+    "displayName": "RajTejani",
+    "image": "https://avatars.githubusercontent.com/u/140295772?v=4"
+  },
+  "moderation": {
+    "isSuspicious": true,
+    "isMalwareBlocked": false,
+    "verdict": "suspicious",
+    "reasonCodes": [
+      "suspicious.dangerous_exec",
+      "suspicious.llm_suspicious"
+    ],
+    "summary": "Detected: suspicious.dangerous_exec, suspicious.llm_suspicious",
+    "engineVersion": "v2.4.22",
+    "updatedAt": 1778385563686
+  }
+}

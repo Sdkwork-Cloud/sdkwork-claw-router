@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/persona-knowledge@0.2.2",
+  "version": "0.2.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.persona_knowledge",
+  "skill": {
+    "id": 41488,
+    "skillKey": "clawhub-persona-knowledge",
+    "name": "persona-knowledge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "persona-knowledge",
+    "url": "https://clawhub.ai/skills/persona-knowledge",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/persona-knowledge-2a9aed8da5f9054b.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Persistent, incremental, searchable persona knowledge base. Ingests data from Obsidian vaults, chat exports, X/Twitter archives, and more into a MemPalace-ba..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "neiljo-gy",
+      "userId": "s179vn1xk5bsc9jy98a9j2brkh83gtgg",
+      "displayName": "acnlabs",
+      "image": "https://avatars.githubusercontent.com/u/43027886?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 163,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.2.2",
+      "createdAt": 1776163607754,
+      "changelog": "Rename storage path datasets→knowledge, env var OPENPERSONA_DATASETS→OPENPERSONA_KNOWLEDGE, init_dataset.py→init_knowledge.py",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8e112c7d95ee883d39afb26c7947337ccfd52f39e6d629b1363c5b80f72e1410"
+}

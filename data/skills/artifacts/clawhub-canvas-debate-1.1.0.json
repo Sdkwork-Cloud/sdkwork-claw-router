@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/canvas-debate@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.canvas_debate",
+  "skill": {
+    "id": 34464,
+    "skillKey": "clawhub-canvas-debate",
+    "name": "Canvas Debate"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "canvas-debate",
+    "url": "https://clawhub.ai/skills/canvas-debate",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/canvas-debate-d73704be61404589.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Adversarial debate between a YC Partner (challenger) and a Business Strategist (defender) to stress-test and improve a business model. Uses two independent s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qianen6",
+      "userId": "s17708fhq0bfd8g44n6q5g35pd854r0k",
+      "displayName": "qianen6",
+      "image": "https://avatars.githubusercontent.com/u/153802344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 224,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776661654840,
+      "changelog": "Add depth modes (Fast/Thorough/Red Team), tension table, minority report, archive INDEX with longitudinal tracking",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:13748074817702ca88764c479588fb78255292e7017bf5f421ad9b1e694fbe41"
+}

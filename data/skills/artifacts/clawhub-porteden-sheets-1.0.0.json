@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/porteden-sheets@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.porteden_sheets",
+  "skill": {
+    "id": 26170,
+    "skillKey": "clawhub-porteden-sheets",
+    "name": "Secure Google Sheets Access for OpenClaw by PortEden"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "porteden-sheets",
+    "url": "https://clawhub.ai/skills/porteden-sheets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/porteden-sheets-b37a1141349b5646.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Secure Google Sheets Management - permission-based create, read, write, and append spreadsheet data, plus file management (share, permissions, rename, delete)."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "porteden",
+      "userId": "s17bsdgb41z4bpwzdr5zqz5pah83xy13",
+      "displayName": "PortEden",
+      "image": "https://avatars.githubusercontent.com/u/258120807?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 373,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773796053132,
+      "changelog": "Initial release of porteden-sheets: Secure, permission-driven Google Sheets management via CLI.\n\n- Create, read, write, and append spreadsheet data using `porteden sheets`\n- Manage file permissions: share, rename, delete, and list access\n- Supports both JSON and CSV for data input/output\n- AI-friendly output with `-jc` flag for compact, structured results\n- Simple authentication via browser login, token, or environment variable\n- All commands require provider-prefixed file IDs (e.g., `google:SHEETID`)\n- CLI installation supported via Homebrew or Go",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7be144aa9a33f6c90d667a2ba7147b438a75a84dca308a852e246772f180ee41"
+}

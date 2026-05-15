@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/moltmarkets-trading@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.moltmarkets_trading",
+  "skill": {
+    "id": 13189,
+    "skillKey": "clawhub-moltmarkets-trading",
+    "name": "MoltMarkets Trading Agent"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "moltmarkets-trading",
+    "url": "https://clawhub.ai/skills/moltmarkets-trading",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/moltmarkets-trading-73aa50cc847dbf3f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Complete MoltMarkets trading agent setup with autonomous trader, market creator, and resolution crons. Use when setting up a new MoltMarkets agent, configuring trading bots, or replicating the bicep agent architecture. Includes Kelly crite."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "shirtlessfounder",
+      "userId": "publishers:shirtlessfounder",
+      "displayName": "shirtlessfounder",
+      "image": "https://avatars.githubusercontent.com/u/127783485?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1527,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770312525850,
+      "changelog": "Initial release: fully autonomous MoltMarkets trading agent with modular trader, creator, and resolution crons.\n\n- Sets up trader agent (Kelly criterion, learning loop, degenerate-style comments), creator agent (ROI-focused market creation), and resolution agent (auto-resolution using Binance/HN).\n- Provides memory file structure and templates for learning loops and shared state.\n- Includes setup instructions, configuration options, and notification controls.\n- Explains core concepts: Kelly betting logic, market categories, and adaptive strategies.\n- Describes architecture, cron schedules, troubleshooting, and customization paths.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4379507b0ef4deb9d86ee02cddf9e48dba1b7626de68ae364eccced265b6861f"
+}

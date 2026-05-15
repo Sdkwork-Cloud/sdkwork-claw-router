@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12749,
+  "uuid": "skill-clawhub-skill-hub",
+  "skillKey": "clawhub-skill-hub",
+  "name": "Skill Hub",
+  "summary": "OpenClaw skill discovery, security vetting & install. Searches 3000+ curated skills from ClawHub registry and awesome-openclaw-skills catalog. Scores credibility, detects prompt injection & malicious patterns, manages installations. Quick-.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.skill_hub",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "PhenixStar",
+      "features": [
+        "OpenClaw skill discovery, security vetting & install",
+        "Searches 3000+ curated skills from ClawHub registry and awesome-openclaw-skills catalog",
+        "Scores credibility, detects prompt injection & malicious patterns, manages installations",
+        "Quick-checks GitHub for new skills."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/skill-hub@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14149927?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "skill-hub",
+      "url": "https://clawhub.ai/skills/skill-hub"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "skill-hub",
+    "url": "https://clawhub.ai/skills/skill-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/skill-hub-142d52c064efb00e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/skill-hub@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-skill-hub-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:42a5d807186dcf43fa9f230604c26bee078c26b83d6eb715711aa86baa7112ea",
+      "artifactSizeBytes": 1921
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-08T23:57:29.335Z"
+}

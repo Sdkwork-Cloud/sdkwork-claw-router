@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62186,
+  "uuid": "skill-clawhub-xiaoming-contact-manager",
+  "skillKey": "clawhub-xiaoming-contact-manager",
+  "name": "Contact Manager",
+  "summary": "联系人管理 - 名片存储、分组管理、快速搜索",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xiaoming_contact_manager",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "kaising-openclaw1",
+      "features": [
+        "名片存储、分组管理、快速搜索"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xiaoming-contact-manager@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/266910723?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xiaoming-contact-manager",
+      "url": "https://clawhub.ai/skills/xiaoming-contact-manager"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xiaoming-contact-manager",
+    "url": "https://clawhub.ai/skills/xiaoming-contact-manager",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xiaoming-contact-manager-f1c7c7ba7624c14d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xiaoming-contact-manager@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xiaoming-contact-manager-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:764f7343d4c6430d63b0256d13e5c940aaa1b6c2e31d13f64fa6a4b6397f5b41",
+      "artifactSizeBytes": 1870
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-17T13:29:51.448Z"
+}

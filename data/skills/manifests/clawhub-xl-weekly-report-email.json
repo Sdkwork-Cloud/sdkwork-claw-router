@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66982,
+  "uuid": "skill-clawhub-xl-weekly-report-email",
+  "skillKey": "clawhub-xl-weekly-report-email",
+  "name": "Weekly Report Email",
+  "summary": "通用周报收集和邮件推送技能，支持交互式填写周报内容，自动计算周数和日期范围，生成美观的HTML格式邮件。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.xl_weekly_report_email",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "zq62191161-ai",
+      "features": [
+        "通用周报收集和邮件推送技能，支持交互式填写周报内容，自动计算周数和日期范围，生成美观的HTML格式邮件。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/xl-weekly-report-email@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/246419670?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "xl-weekly-report-email",
+      "url": "https://clawhub.ai/skills/xl-weekly-report-email"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "xl-weekly-report-email",
+    "url": "https://clawhub.ai/skills/xl-weekly-report-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/xl-weekly-report-email-6f077454ebd25f33.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/xl-weekly-report-email@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-xl-weekly-report-email-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:5b05bfdb7688680cb282840b00414159fe6e2fa4d667daee51040cafc407c8fa",
+      "artifactSizeBytes": 1976
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-27T03:10:25.342Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/reddit-to-pr@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.reddit_to_pr",
+  "skill": {
+    "id": 53342,
+    "skillKey": "clawhub-reddit-to-pr",
+    "name": "Reddit to PR"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "reddit-to-pr",
+    "url": "https://clawhub.ai/skills/reddit-to-pr",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/reddit-to-pr-6e7b9892771e4f7a.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Scan Reddit for pain points in a product’s niche, identify a real user complaint worth fixing, and prepare an approved patch or PR workflow for a target repo..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mcnutt1414",
+      "userId": "s177caxgq1zq4d8de1f6evcjnh83zga4",
+      "displayName": "Ryan McNutt",
+      "image": "https://avatars.githubusercontent.com/u/6811527?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1774995561081,
+      "changelog": "Default to analysis-only; add explicit approval gate for edits, commits, pushes, and PRs",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4404c383ecc05f2d3e7ea24225259acd4b7b341bf3db1cda5d3340d7cbd6bac1"
+}

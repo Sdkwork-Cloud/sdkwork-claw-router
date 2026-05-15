@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/defi-position-tracker@2.0.0",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.defi_position_tracker",
+  "skill": {
+    "id": 27737,
+    "skillKey": "clawhub-defi-position-tracker",
+    "name": "DeFi Position Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "defi-position-tracker",
+    "url": "https://clawhub.ai/skills/defi-position-tracker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/defi-position-tracker-a1c461a3e5c15f13.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Monitor and analyze DeFi positions across protocols and chains. Track LP (liquidity provider) positions, staking rewards, yield farming returns, impermanent..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "samledger67-dotcom",
+      "userId": "s17e6161jqcyaq82bkvewk1rz583ndyf",
+      "displayName": "samledger67-dotcom",
+      "image": "https://avatars.githubusercontent.com/u/261800271?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 332,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 12
+    },
+    "latestVersion": {
+      "version": "2.0.0",
+      "createdAt": 1773926332341,
+      "changelog": "Fix display name from test to DeFi Position Tracker",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:736a92e5d05362444017ae6e52dc1252166b73b44d64868f8cdef230c78f0ff8"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 30735,
+  "uuid": "skill-clawhub-context-optimizer-pro",
+  "skillKey": "clawhub-context-optimizer-pro",
+  "name": "Context Optimizer Pro",
+  "summary": "Monitors token usage in long sessions, extracts key info, and creates continuation sessions to manage context limits automatically.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.context_optimizer_pro",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Ericgogogogogo",
+      "features": [
+        "Monitors token usage in long sessions, extracts key info, and creates continuation sessions to."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/context-optimizer-pro@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/149366777?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "context-optimizer-pro",
+      "url": "https://clawhub.ai/skills/context-optimizer-pro"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "context-optimizer-pro",
+    "url": "https://clawhub.ai/skills/context-optimizer-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/context-optimizer-pro-38e2d8822456763f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/context-optimizer-pro@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-context-optimizer-pro-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:081a6a3aed8dd765838525f55400269cd3670ff8acc6d4f138e365bd3781c8e0",
+      "artifactSizeBytes": 1964
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-17T06:38:43.877Z"
+}

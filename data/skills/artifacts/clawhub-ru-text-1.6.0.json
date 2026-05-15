@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/ru-text@1.6.0",
+  "version": "1.6.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ru_text",
+  "skill": {
+    "id": 27353,
+    "skillKey": "clawhub-ru-text",
+    "name": "ru-text"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ru-text",
+    "url": "https://clawhub.ai/skills/ru-text",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ru-text-cdf404a91b630b88.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when writing, editing, or reviewing Russian-language text, or when user mentions ru-text. Covers typography, info-style, editorial, UX writing, business..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "talkstream",
+      "userId": "s176pn5yqc7yg16tbft9afpha984fzwm",
+      "displayName": "Arseniy Kamyshev",
+      "image": "https://avatars.githubusercontent.com/u/31889632?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 250,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.6.0",
+      "createdAt": 1775689077209,
+      "changelog": "Initial ClawHub release: Russian text quality skill",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1f09d1227a7c54fe67c347a73a942c505a4d9b3585cef7d0ca6c3ae0992f9a3f"
+}

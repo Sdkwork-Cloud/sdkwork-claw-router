@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/awesome-design@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.awesome_design",
+  "skill": {
+    "id": 38742,
+    "skillKey": "clawhub-awesome-design",
+    "name": "Awesome Design Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "awesome-design",
+    "url": "https://clawhub.ai/skills/awesome-design",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/awesome-design-29f4a361e40f71f4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use when user asks about design skills, UI skills, design tools, \"what design skills are available\", \"help me design\", \"recommend a design skill\", \"UI/UX ski..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "futurizerush",
+      "userId": "s174ks6c53yjm9ez7sh6ckryf984dsd6",
+      "displayName": "Futurize Rush",
+      "image": "https://avatars.githubusercontent.com/u/122273125?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1775926619639,
+      "changelog": "Fact-check corrections: fix Taste variant count, Impeccable check count, Interface Design description, CSS Animation dependency claim.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:14f4be696f98e0ef7a0e1326e2fe5e7cc9a496c247d6ec611f5ec560e30b8aab"
+}

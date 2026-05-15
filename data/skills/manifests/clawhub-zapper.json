@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11055,
+  "uuid": "skill-clawhub-zapper",
+  "skillKey": "clawhub-zapper",
+  "name": "Zapper",
+  "summary": "Query DeFi portfolio data across 50+ chains via Zapper's GraphQL API. Use when the user wants to check wallet balances, DeFi positions, NFT holdings, token prices, or transaction history. Supports Base, Ethereum, Polygon, Arbitrum, Optimis.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zapper",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Spiros Raptis",
+      "features": [
+        "Query DeFi portfolio data across 50+ chains via Zapper's GraphQL API",
+        "Use when the user wants to check wallet balances, DeFi positions, NFT holdings, token prices, o.",
+        "Supports Base, Ethereum, Polygon, Arbitrum, Optimism, and more",
+        "Requires ZAPPER_API_KEY."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zapper@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1444577?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zapper",
+      "url": "https://clawhub.ai/skills/zapper"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zapper",
+    "url": "https://clawhub.ai/skills/zapper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zapper-ac83a1c781d58e84.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zapper@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-zapper-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:e6b5324a8b35fce278f4e527e54fe8d619ce573af2879d4a49cd516f9fc25e04",
+      "artifactSizeBytes": 1927
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-02T15:41:11.523Z"
+}

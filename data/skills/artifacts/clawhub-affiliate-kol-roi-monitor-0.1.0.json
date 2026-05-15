@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/affiliate-kol-roi-monitor@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.affiliate_kol_roi_monitor",
+  "skill": {
+    "id": 50914,
+    "skillKey": "clawhub-affiliate-kol-roi-monitor",
+    "name": "Affiliate Kol Roi Monitor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "affiliate-kol-roi-monitor",
+    "url": "https://clawhub.ai/skills/affiliate-kol-roi-monitor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/affiliate-kol-roi-monitor-34a4cdb79cd4fa27.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automate affiliate and KOL reconciliation, attribution, true ROAS, commission math, and renewal strategy. Use when the user has more than ~5 KOL or affiliate..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "rijoyai",
+      "userId": "s17968d4vetrx5cj2yx3105heh83hrb4",
+      "displayName": "RIJOY-AI",
+      "image": "https://avatars.githubusercontent.com/u/219251023?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 356,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773479100500,
+      "changelog": "- Initial release of affiliate-kol-roi-monitor.\n- Automates reconciliation, attribution, and commission calculations for affiliate and KOL campaigns with more than ~5 partners.\n- Accurately matches orders to creators using discount codes, UTM parameters, and platform data, with clear attribution rules.\n- Excludes refunded/chargeback orders and calculates profit and true CAC per creator.\n- Generates a master table with per-creator metrics and renewal rating, supporting fraud detection and renewal strategy.\n- Outlines a repeatable workflow, mandatory deliverables, and rules for when to apply or not apply the skill.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:bb9ccf2f73c968f0599e65dd79f1a4b40953191b5c203c2e8bcf0f0717a9c594"
+}

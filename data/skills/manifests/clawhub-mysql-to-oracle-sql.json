@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 63995,
+  "uuid": "skill-clawhub-mysql-to-oracle-sql",
+  "skillKey": "clawhub-mysql-to-oracle-sql",
+  "name": "将 MySQL SQL（尤其是建表 DDL）转换为 Oracle SQL。用户提到“转为oracle”或“转换oracle”，或明确要求把 MySQL 语句改成 Oracle 语句时必须使用此技能。转换时强制执行类型、默认值和主键约束命名规则。",
+  "summary": "将 MySQL SQL（尤其是建表 DDL）转换为 Oracle SQL。用户提到“转为oracle”或“转换oracle”，或明确要求把 MySQL 语句改成 Oracle 语句时必须使用此技能。转换时强制执行类型、默认值和主键约束命名规则。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mysql_to_oracle_sql",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "itxonjoe",
+      "features": [
+        "将 MySQL SQL（尤其是建表 DDL）转换为 Oracle SQL。用户提到“转为oracle”或“转换oracle”，或明确要求把 MySQL 语句改成 Oracle 语句时必须使用."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mysql-to-oracle-sql@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/26762065?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mysql-to-oracle-sql",
+      "url": "https://clawhub.ai/skills/mysql-to-oracle-sql"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mysql-to-oracle-sql",
+    "url": "https://clawhub.ai/skills/mysql-to-oracle-sql",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mysql-to-oracle-sql-9a8988125302d271.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mysql-to-oracle-sql@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-mysql-to-oracle-sql-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:bb842433b3e6d9b0d4553e57dcab956d7b084fcc16502ebcf5f88702f50cc09a",
+      "artifactSizeBytes": 2743
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-07T07:29:15.087Z"
+}

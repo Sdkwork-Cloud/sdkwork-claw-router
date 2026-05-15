@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27500,
+  "uuid": "skill-clawhub-pay-with-any-token",
+  "skillKey": "clawhub-pay-with-any-token",
+  "name": "Pay With Any Token",
+  "summary": "Pay HTTP 402 payment challenges using tokens via the Tempo CLI and Uniswap Trading API. Use when the user encounters a 402 Payment Required response, needs t...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pay_with_any_token",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "samledger67-dotcom",
+      "features": [
+        "Pay HTTP 402 payment challenges using tokens via the Tempo CLI and Uniswap Trading API",
+        "Use when the user encounters a 402 Payment Required response, needs t..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pay-with-any-token@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/261800271?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pay-with-any-token",
+      "url": "https://clawhub.ai/skills/pay-with-any-token"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pay-with-any-token",
+    "url": "https://clawhub.ai/skills/pay-with-any-token",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pay-with-any-token-9e0cf5c933e2c55d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pay-with-any-token@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pay-with-any-token-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a9500b0a2464749f79fe7cd9824bd200e206a50b84498c706f107e5ab5a475fa",
+      "artifactSizeBytes": 2007
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T05:14:32.520Z"
+}

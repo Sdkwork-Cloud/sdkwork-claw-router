@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 10688,
+  "uuid": "skill-clawhub-pihole",
+  "skillKey": "clawhub-pihole",
+  "name": "Pi-hole Control",
+  "summary": "Control Pi-hole v6 DNS ad blocker: check status, view stats, enable/disable block, and analyze blocked domains via API.",
+  "version": "2.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pihole",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Aanish Bhirud",
+      "features": [
+        "Control Pi-hole v6 DNS ad blocker: check status, view stats, enable/disable block, and analyze."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pihole@2.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/47579874?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pihole",
+      "url": "https://clawhub.ai/skills/pihole"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pihole",
+    "url": "https://clawhub.ai/skills/pihole",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pihole-7220ce3ef224faa8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pihole@2.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-pihole-2.0.1.json",
+      "version": "2.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8f8b77d2d82b8464ede0c2cae20c4184f0790e69e92150821d33d2e933f380e6",
+      "artifactSizeBytes": 1918
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-01-14T04:45:32.139Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27308,
+  "uuid": "skill-clawhub-spidershield",
+  "skillKey": "clawhub-spidershield",
+  "name": "SpiderShield Security Scanner",
+  "summary": "Security scanning and trust scoring for OpenClaw skills with commands for trust lookup, malware detection, config audit and auto-fix, rug pull detection, and...",
+  "version": "0.3.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.spidershield",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "teehooai",
+      "features": [
+        "Security scanning and trust scoring for OpenClaw skills with commands for trust lookup, malware."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/spidershield@0.3.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/247280855?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "spidershield",
+      "url": "https://clawhub.ai/skills/spidershield"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "spidershield",
+    "url": "https://clawhub.ai/skills/spidershield",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/spidershield-03d23771624e649b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/spidershield@0.3.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-spidershield-0.3.0.json",
+      "version": "0.3.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:edeb265d4241e2ef01717f218118c834c8df2913afe300f1b92b7e6839e7f316",
+      "artifactSizeBytes": 1951
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T03:14:36.843Z"
+}

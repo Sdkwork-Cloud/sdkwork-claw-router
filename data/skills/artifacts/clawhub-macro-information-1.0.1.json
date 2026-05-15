@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/macro-information@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.macro_information",
+  "skill": {
+    "id": 71095,
+    "skillKey": "clawhub-macro-information",
+    "name": "Macro-Information"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "macro-information",
+    "url": "https://clawhub.ai/skills/macro-information",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/macro-information-c2dc586387ee9fd3.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "宏观资讯技能。基于全网信息查询国内外宏观经济相关新闻资讯， 支持情感分析（正面/负面/中性）、事件标签分类、热度分析和时间范围筛选。 使用场景：用户询问宏观经济形势、政策影响、经济数据（GDP/CPI/利率等）、央行政策（美联储/人民银行）、国际贸易、金融市场动态、通胀通缩、经济事件影响等话题时调用。 触发示例：..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "longgggggg",
+      "userId": "s17cry3f92e03vxw9k9c7s1tth843fbp",
+      "displayName": "longGGGGGG",
+      "image": "https://avatars.githubusercontent.com/u/40319383?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 151,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1775195311496,
+      "changelog": "- No functional or documentation changes in this version.\n- The SKILL.md file remains unchanged; no updates were detected.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:72af6d5f88789a73480088516c83f78bfda4709b99108fc6b9a83606b0044242"
+}

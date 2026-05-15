@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12978,
+  "uuid": "skill-clawhub-avatar",
+  "skillKey": "clawhub-avatar",
+  "name": "Avatar",
+  "summary": "Interactive AI avatar with Simli video rendering and ElevenLabs TTS",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.avatar",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Johannes-Berggren",
+      "features": [
+        "Interactive AI avatar with Simli video rendering and ElevenLabs TTS"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/avatar@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/10260888?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "avatar",
+      "url": "https://clawhub.ai/skills/avatar"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "avatar",
+    "url": "https://clawhub.ai/skills/avatar",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/avatar-87bbe879c7a5f578.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/avatar@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-avatar-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6e7dd39af520c88f6f51462eca8423fd70f0979b0a17f651779001188947a58e",
+      "artifactSizeBytes": 1807
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-07T22:39:27.734Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 42960,
+  "uuid": "skill-clawhub-file-exchange-via-qiniu-kodo",
+  "skillKey": "clawhub-file-exchange-via-qiniu-kodo",
+  "name": "File Exchange via Qiniu Kodo",
+  "summary": "Transfer files exclusively through Qiniu Kodo using qshell commands for downloading and uploading with timestamped filenames in specific directories.",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.file_exchange_via_qiniu_kodo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "宁伟",
+      "features": [
+        "Transfer files exclusively through Qiniu Kodo using qshell commands for downloading and uploadi."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/file-exchange-via-qiniu-kodo@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/1631544?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "file-exchange-via-qiniu-kodo",
+      "url": "https://clawhub.ai/skills/file-exchange-via-qiniu-kodo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "file-exchange-via-qiniu-kodo",
+    "url": "https://clawhub.ai/skills/file-exchange-via-qiniu-kodo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/file-exchange-via-qiniu-kodo-f26248435f9d50bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/file-exchange-via-qiniu-kodo@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-file-exchange-via-qiniu-kodo-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b714b273c6fb2d39afc3c780a8cefa980215977be32774bb12dbd96d0eb473ab",
+      "artifactSizeBytes": 2803
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T08:16:20.058Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60511,
+  "uuid": "skill-clawhub-cross-agent-mailbox",
+  "skillKey": "clawhub-cross-agent-mailbox",
+  "name": "Cross Agent Mailbox",
+  "summary": "文件信箱方案 - 跨框架Agent通信（适用于任何框架）",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cross_agent_mailbox",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AmeyLover",
+      "features": [
+        "跨框架Agent通信（适用于任何框架）"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/cross-agent-mailbox@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/46668589?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "cross-agent-mailbox",
+      "url": "https://clawhub.ai/skills/cross-agent-mailbox"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cross-agent-mailbox",
+    "url": "https://clawhub.ai/skills/cross-agent-mailbox",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cross-agent-mailbox-42d6ef944e5f268e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/cross-agent-mailbox@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-cross-agent-mailbox-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b71abccfa7320833ad1e17ac0c1431998448c474d80ae79f7510cb062247af82",
+      "artifactSizeBytes": 1866
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T17:55:56.068Z"
+}

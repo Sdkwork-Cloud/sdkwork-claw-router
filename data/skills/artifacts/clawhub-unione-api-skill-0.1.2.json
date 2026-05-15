@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/unione-api-skill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.unione_api_skill",
+  "skill": {
+    "id": 13540,
+    "skillKey": "clawhub-unione-api-skill",
+    "name": "Unione - Email API"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "unione-api-skill",
+    "url": "https://clawhub.ai/skills/unione-api-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/unione-api-skill-dcf88c5028f2ce15.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Send transactional and marketing emails via UniOne Email API. Manage email templates, validate email addresses, check delivery statistics, manage suppression..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "unione-repo",
+      "userId": "publishers:unione-repo",
+      "displayName": "UniOne",
+      "image": "https://avatars.githubusercontent.com/u/65599616?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 628,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 8,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1771501793152,
+      "changelog": "unione-api-skill v0.1.2\n\n- Documentation and metadata updates only.\n- README.md, SKILL.md, and manifest.json modified with no functional/API changes.\n- No code or API behavior changes in this release.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ca0bd98268d7ec4ae772f37791dabbb16d7d933e946b91635d446fc4c0e83d68"
+}

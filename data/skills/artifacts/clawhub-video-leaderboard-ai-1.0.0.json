@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-leaderboard-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_leaderboard_ai",
+  "skill": {
+    "id": 48317,
+    "skillKey": "clawhub-video-leaderboard-ai",
+    "name": "Video Leaderboard Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-leaderboard-ai",
+    "url": "https://clawhub.ai/skills/video-leaderboard-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-leaderboard-ai-af6fdc5a9be0a671.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn a batch of 10 short marketing video clips into 1080p ranked video results just by typing what you need. Whether it's comparing and ranking videos by AI-..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vcarolxhberger",
+      "userId": "s17ax1dvqhzz367chnjyx72jv583xtdp",
+      "displayName": "vcarolxhberger",
+      "image": "https://avatars.githubusercontent.com/u/210890217?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 102,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777393862968,
+      "changelog": "Initial release of Video Leaderboard AI — Rank and Compare Video Performance.\n\n- Instantly rank and compare up to 10 short marketing video clips via AI performance metrics, with automated 1080p MP4 exports.\n- Automatic setup: connects to a cloud backend, manages tokens, sessions, and lets users know when ready.\n- Supports simple, natural prompts to upload, rank, export, and check credits without timeline editing or manual export settings.\n- Accepts a wide range of video, audio, and image formats up to 500MB per file.\n- Guides users through upload, ranking, credits, and export workflows; handles backend session and error logic transparently.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:698b4b7dc4724e22be09f8a7f44875b83d2de8da1bd500d499bbc33ae1365847"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/prompt-crafting-lab@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.prompt_crafting_lab",
+  "skill": {
+    "id": 49702,
+    "skillKey": "clawhub-prompt-crafting-lab",
+    "name": "Prompt Crafting Lab"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "prompt-crafting-lab",
+    "url": "https://clawhub.ai/skills/prompt-crafting-lab",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/prompt-crafting-lab-2d021c895ff36dfe.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Hands-on coaching to write effective, precise AI prompts for real-world tasks."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "harrylabsj",
+      "userId": "s17a8m9q4jybb46cv60h4fxard83hmsn",
+      "displayName": "haidong",
+      "image": "https://avatars.githubusercontent.com/u/144880725?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 70,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778122697492,
+      "changelog": "Prompt Crafting Lab 1.0.0 – Initial Release\n\n- Launches an interactive, educational skill focused on hands-on coaching to refine AI prompts.\n- Guides users through a structured, multi-step workflow to improve prompts for tools like ChatGPT or Claude.\n- Explains core prompt engineering principles (role-setting, specificity, constraints, output formatting, chain-of-thought).\n- Provides iterative feedback and annotated revisions of user prompts, plus alternatives for different scenarios.\n- Ensures safety by refusing tasks related to harm, cheating, or bypassing AI guardrails and does not test prompts live.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ff09ae62d939720e039fd3d126bb1d16b1db411f0d1a405f86f8173131534470"
+}

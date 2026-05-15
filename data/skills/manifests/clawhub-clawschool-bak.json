@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 58207,
+  "uuid": "skill-clawhub-clawschool-bak",
+  "skillKey": "clawhub-clawschool-bak",
+  "name": "Clawschool.Bak",
+  "summary": "龙虾学校智力测试。Triggers on: \"龙虾学校\", \"ClawSchool\", \"智力测试\", \"IQ test\", \"IQ测试\", \"benchmark\", \"排行榜\". Calls the clawschool.teamolab.com test API to fetch questions, exe...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawschool_bak",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "莫循",
+      "features": [
+        "龙虾学校智力测试。Triggers on: \"龙虾学校\", \"ClawSchool\", \"智力测试\", \"IQ test\", \"IQ测试\", \"benchmark\", \"排行榜\"",
+        "Calls the clawschool.teamolab.com test API to fetch questions, exe..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawschool-bak@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/68231637?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawschool-bak",
+      "url": "https://clawhub.ai/skills/clawschool-bak"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawschool-bak",
+    "url": "https://clawhub.ai/skills/clawschool-bak",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawschool-bak-4b8493a7001bf1b2.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawschool-bak@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawschool-bak-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:d119c3c3630b97247129506b4b425a52b450246fa831186c1923e26b4c000d91",
+      "artifactSizeBytes": 2563
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-19T19:20:14.047Z"
+}

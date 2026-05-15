@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 67637,
+  "uuid": "skill-clawhub-shike-self-evolve",
+  "skillKey": "clawhub-shike-self-evolve",
+  "name": "Self-Evolve Skill",
+  "summary": "Agent自进化机制。三层架构（记忆→技能→规范），三种触发（关键词+踩坑+复盘），用户审批+Darwin评分双重质控。用得越多越懂你。触发词：自进化、进化、evolve、记住、以后、永远、下次、踩坑经验。",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.shike_self_evolve",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sjj2026",
+      "features": [
+        "Agent自进化机制。三层架构（记忆→技能→规范），三种触发（关键词+踩坑+复盘），用户审批+Darwin评分双重质控。用得越多越懂你。触发词：自进化、进化、evolve、记住、以后、永远、."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/shike-self-evolve@2.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/271952160?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "shike-self-evolve",
+      "url": "https://clawhub.ai/skills/shike-self-evolve"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "shike-self-evolve",
+    "url": "https://clawhub.ai/skills/shike-self-evolve",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/shike-self-evolve-e6ae7960737e64e9.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/shike-self-evolve@2.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-shike-self-evolve-2.1.0.json",
+      "version": "2.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:10852bce33d2106433150a95516823ab76e3d9620b0e74796a273ea1644a638d",
+      "artifactSizeBytes": 2088
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T22:46:42.515Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nvidia-agent-fleet@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nvidia_agent_fleet",
+  "skill": {
+    "id": 58563,
+    "skillKey": "clawhub-nvidia-agent-fleet",
+    "name": "Nvidia Agent Fleet"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nvidia-agent-fleet",
+    "url": "https://clawhub.ai/skills/nvidia-agent-fleet",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nvidia-agent-fleet-c3de68965d664d2c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "NVIDIA Agent Fleet — 19个模型Agent + 智能调度引擎 + 并行协作"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clementgu",
+      "userId": "s17fsz3rx9wrnw593kpx5w87jn85c6qc",
+      "displayName": "Clement Gu",
+      "image": "https://avatars.githubusercontent.com/u/16643417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 209,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 5
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1777862590782,
+      "changelog": "nvidia-agent-fleet 1.1.1\n\n- Minor code updates in agents/registry.py and dispatcher/fleet.py\n- No user-facing feature changes documented\n- SKILL.md unchanged\n\n(Note: This version contains internal or maintenance improvements.)",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:a215ee64e17fc5ee257fe16d79980648af6043788f1c70489ea62ebc2ef13464"
+}

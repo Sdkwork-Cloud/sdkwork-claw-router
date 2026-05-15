@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/paper-recommendation@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_recommendation",
+  "skill": {
+    "id": 9429,
+    "skillKey": "clawhub-paper-recommendation",
+    "name": "Paper Recommendation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-recommendation",
+    "url": "https://clawhub.ai/skills/paper-recommendation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-recommendation-76ca7c7d18429525.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automates discovery, parallel review, scoring, and briefing generation of AI research papers from arXiv, supporting daily updates and PDF analysis."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sjf-ecnu",
+      "userId": "publishers:sjf-ecnu",
+      "displayName": "SJF-ECNU",
+      "image": "https://avatars.githubusercontent.com/u/136095349?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 3364,
+      "installsAllTime": 8,
+      "installsCurrent": 7,
+      "stars": 6,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1769715250355,
+      "changelog": "Add skill summary description",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:1dceac47b26b28e99bdab6b8ef1c690d49da3f86317284d10f40f4ea0fa8bbd1"
+}

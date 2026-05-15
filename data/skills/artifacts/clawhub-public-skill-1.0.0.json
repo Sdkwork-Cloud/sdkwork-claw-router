@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/public-skill@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.public_skill",
+  "skill": {
+    "id": 70090,
+    "skillKey": "clawhub-public-skill",
+    "name": "Public Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "public-skill",
+    "url": "https://clawhub.ai/skills/public-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/public-skill-3649feee0c385c6d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "平台公邮：用于将天气、日报、报告、提醒等内容推送到用户自己的邮箱，零配置完成消息留存"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sky-lv",
+      "userId": "s17fgkeb63szvtadtmm753m0gd84e4vz",
+      "displayName": "SKY-lv",
+      "image": "https://avatars.githubusercontent.com/u/259750852?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 52,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1778348445940,
+      "changelog": "Public-skill 2.0 introduces a specialized email push channel for platform notifications with streamlined configuration.\n\n- 新增方便推送天气、日报、报告、提醒等内容到用户本人已绑定邮箱，零配置即用。\n- 明确能力边界：仅支持推送到自己的邮箱，纯文本格式，不支持附件、抄送、HTML等高级功能。\n- 推荐调用流程：先自动检测绑定邮箱，再直接发送邮件，未绑定时自动引导手动绑定。\n- 增加详细错误处理和安全规则说明，明确与 email-skill 的集成及自动回退机制。\n- 用于消息留存、通知推送等平台场景，不适用于发信给第三方。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8cece2089bfc9319dceabd74e0665b10d231649e9c3dae0d0fb141271117c12c"
+}

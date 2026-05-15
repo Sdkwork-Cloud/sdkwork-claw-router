@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 12307,
+  "uuid": "skill-clawhub-repomedic",
+  "skillKey": "clawhub-repomedic",
+  "name": "RepoMedic",
+  "summary": "Safely triage and remediate GitHub dependency hygiene issues with explicit guardrails. Use when Dependabot PRs fail, pnpm lockfiles break, transitive vulnerabilities appear (e.g., glob/lodash/brace-expansion), or CI/Vercel fails due to dep.",
+  "version": "1.0.6",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.repomedic",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Marcus Rummler",
+      "features": [
+        "Safely triage and remediate GitHub dependency hygiene issues with explicit guardrails",
+        "Use when Dependabot PRs fail, pnpm lockfiles break, transitive vulnerabilities appear (e.g., gl.",
+        "Prioritize low-risk fixes, branch+PR workflow, and plain-English explanations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/repomedic@1.0.6",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/183958031?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "repomedic",
+      "url": "https://clawhub.ai/skills/repomedic"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "repomedic",
+    "url": "https://clawhub.ai/skills/repomedic",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/repomedic-d50889f3c6d2f82e.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/repomedic@1.0.6",
+      "artifactUrl": "data/skills/artifacts/clawhub-repomedic-1.0.6.json",
+      "version": "1.0.6",
+      "runtime": "metadata",
+      "checksumHash": "sha256:8bd95a11dba14327a2be75e79cdccbb4661c8f36431fdcaffd9e8eb916ba0ac3",
+      "artifactSizeBytes": 2527
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-13T14:26:42.343Z"
+}

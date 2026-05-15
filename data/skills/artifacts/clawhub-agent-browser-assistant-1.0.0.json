@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-browser-assistant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_browser_assistant",
+  "skill": {
+    "id": 42481,
+    "skillKey": "clawhub-agent-browser-assistant",
+    "name": "Agent Browser Assistant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-browser-assistant",
+    "url": "https://clawhub.ai/skills/agent-browser-assistant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-browser-assistant-bbc2a13bfa5780e4.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "For browser automation tasks, web data scraping, form filling, page screenshots, UI testing, and more."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "openlark",
+      "userId": "s1727wv2g20pc729snzcm4nf8183hy72",
+      "displayName": "OpenLark",
+      "image": "https://avatars.githubusercontent.com/u/260858787?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 156,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777165453125,
+      "changelog": "Agent Browser Assistant 1.0.0 – Initial Release\n\n- Provides browser automation for opening pages, clicking, form filling, scrolling, and more.\n- Supports web data scraping, page structure analysis, and table data export.\n- Includes tools for UI testing, regression testing, and performance checks.\n- Offers screenshot, recording, PDF export, file upload, and automated batch operations.\n- Features configurable browser profiles, targets, timeout settings, and slow motion mode.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:85e5194b42c4e37b3daf84274c7b57b02526b7a65fc114c0f398a80c343c8d51"
+}

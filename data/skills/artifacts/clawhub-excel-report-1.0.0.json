@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/excel-report@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.excel_report",
+  "skill": {
+    "id": 67184,
+    "skillKey": "clawhub-excel-report",
+    "name": "Excel Report"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "excel-report",
+    "url": "https://clawhub.ai/skills/excel-report",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/excel-report-e50c16de1c33e504.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "生成包含专业配色、公式自动刷新的多行业Excel可视化报表，支持批量处理与邮件发送。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "sqlskills",
+      "userId": "s1774kyr593ezfy7qtq3g4k9t983g3a1",
+      "displayName": "SQLSkills",
+      "image": "https://avatars.githubusercontent.com/u/199218417?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 168,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774958396896,
+      "changelog": "- Initial release: Excel可视化报表生成器 Skill v1.0.0\n- 支持大厂级别Excel报表一键生成，含丰富行业模板与自动配色\n- 完善命令行工具、数据格式兼容、报表输出结构明晰\n- 简明上手说明，涵盖模板调用、批量生成和邮件发送\n- 输出专业风格报表，内置KPI公式与智能列名映射",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:e6f38775ffead51f89b67805b3aa3955fdf6e3554f753603f12345696ea885f7"
+}

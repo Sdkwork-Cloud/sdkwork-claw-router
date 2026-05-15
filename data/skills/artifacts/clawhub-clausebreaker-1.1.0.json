@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clausebreaker@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clausebreaker",
+  "skill": {
+    "id": 55604,
+    "skillKey": "clawhub-clausebreaker",
+    "name": "Clausebreaker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clausebreaker",
+    "url": "https://clawhub.ai/skills/clausebreaker",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clausebreaker-8c16531fa7938459.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes any legal document — leases, contracts, NDAs, terms of service, employment agreements — and breaks every clause into plain English with risk ratings..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dglassman12",
+      "userId": "s172q44wz6k53c1kdsyaexdzh984tb07",
+      "displayName": "dglassman12",
+      "image": "https://avatars.githubusercontent.com/u/66267849?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 158,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776138704567,
+      "changelog": "**ClauseBreaker 1.1.0 Changelog**\n\n- Added new **Privacy note** in the skill introduction, reminding users not to share documents with sensitive personal data and clarifying platform privacy.\n- Added **Capability note** clarifying the skill only performs text analysis and does not execute transactions or connect to external services.\n- Adjusted the rules: now instructs to \"never tell the user whether to execute or not execute the agreement\" (previously: \"sign or not sign\").\n- Small update to disclaimer wording for clarity.\n- Minor clarifications in policy and workflow text for accuracy and safety.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:7b8de08a231145edcd4e595a3358c04866b9f401c6a67f27c3ee93a5244027dd"
+}

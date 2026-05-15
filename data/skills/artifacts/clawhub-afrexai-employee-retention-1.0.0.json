@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/afrexai-employee-retention@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.afrexai_employee_retention",
+  "skill": {
+    "id": 20095,
+    "skillKey": "clawhub-afrexai-employee-retention",
+    "name": "Employee Retention & Turnover Risk Analyzer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "afrexai-employee-retention",
+    "url": "https://clawhub.ai/skills/afrexai-employee-retention",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/afrexai-employee-retention-ce465ea44796f101.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Analyzes employee retention risk across 8 dimensions, identifies flight risks, estimates turnover costs, and provides a 90-day retention action plan with pri..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "1kalin",
+      "userId": "s17e1q0nx23qnh4n429zzqc05x83hvsw",
+      "displayName": "1kalin",
+      "image": "https://avatars.githubusercontent.com/u/15705344?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 573,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771701257352,
+      "changelog": "- Initial release: Employee Retention & Turnover Risk Analyzer launched.\n- Performs 8-dimension retention risk assessment, with 0-100 scores per area.\n- Identifies at-risk employees/departments, estimates turnover costs by role level, and benchmarks against 2026 industry metrics.\n- Generates a tailored 90-day action plan and flags top ROI interventions.\n- Includes cost formulas, modern retention benchmarks, and AI-specific risk factors for 2026.\n- Offers links to related tools for broader workforce transformation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:fa825de04637acaeada6264c5ec9b3fd726c1b9a64c3fb8e04425a7be97def18"
+}

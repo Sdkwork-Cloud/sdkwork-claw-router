@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59288,
+  "uuid": "skill-clawhub-claude-code-dev",
+  "skillKey": "clawhub-claude-code-dev",
+  "name": "Claude Code Dev Workflow",
+  "summary": "OpenClaw + Claude Code 编程工作流。当用户想用 Claude Code 写代码、调试、重构、做 PR review 时激活。支持两种模式：ACP 集成（推荐，通过飞书/Telegram/Discord 直接对话 Claude Code）和 PTY 后台模式（通过 exec 控制 Claude...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_dev",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xwz119",
+      "features": [
+        "OpenClaw + Claude Code 编程工作流。当用户想用 Claude Code 写代码、调试、重构、做 PR review 时激活。支持两种模式：ACP 集成（推荐，通过飞书/."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/claude-code-dev@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14540221?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "claude-code-dev",
+      "url": "https://clawhub.ai/skills/claude-code-dev"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-dev",
+    "url": "https://clawhub.ai/skills/claude-code-dev",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-dev-a1cf2a14cf2fdd1b.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/claude-code-dev@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-claude-code-dev-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:747942326d94ebece14b259c7a80a7ba8ee3218696e33a6a90fe95956b936c7b",
+      "artifactSizeBytes": 2109
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-03T12:57:31.027Z"
+}

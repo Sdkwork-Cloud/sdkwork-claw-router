@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 18431,
+  "uuid": "skill-clawhub-editor",
+  "skillKey": "clawhub-editor",
+  "name": "editor",
+  "summary": "The final publishing layer for anything you write. Paste messy text and get something clear, strong, and ready to send.",
+  "version": "2.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "AGIstack",
+      "features": [
+        "The final publishing layer for anything you write",
+        "Paste messy text and get something clear, strong, and ready to send."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/editor@2.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/258523997?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "editor",
+      "url": "https://clawhub.ai/skills/editor"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor",
+    "url": "https://clawhub.ai/skills/editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-1553cc62ff246044.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/editor@2.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-editor-2.2.0.json",
+      "version": "2.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9d8348e684c30662f79a675fa6eee48dad631f6fa38023bc112c52906ad88fcb",
+      "artifactSizeBytes": 1935
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-12T06:43:15.229Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 24047,
+  "uuid": "skill-clawhub-incident-triage-playbook",
+  "skillKey": "clawhub-incident-triage-playbook",
+  "name": "1.2.0",
+  "summary": "Runbook-first incident triage workflow for service outages and high-error alerts.",
+  "version": "1.2.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.incident_triage_playbook",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Yikun Fu",
+      "features": [
+        "Runbook-first incident triage workflow for service outages and high-error alerts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/incident-triage-playbook@1.2.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/121741034?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "incident-triage-playbook",
+      "url": "https://clawhub.ai/skills/incident-triage-playbook"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "incident-triage-playbook",
+    "url": "https://clawhub.ai/skills/incident-triage-playbook",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/incident-triage-playbook-4c5b32520c436fdf.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/incident-triage-playbook@1.2.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-incident-triage-playbook-1.2.0.json",
+      "version": "1.2.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:163f8af83646dbef19af6ee7d7d66f1298304fd0d3d809c53225c9b3588cda03",
+      "artifactSizeBytes": 2173
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-07T11:00:59.887Z"
+}

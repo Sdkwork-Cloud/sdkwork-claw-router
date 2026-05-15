@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 59023,
+  "uuid": "skill-clawhub-python-script-generator",
+  "skillKey": "clawhub-python-script-generator",
+  "name": "Python Script Generator",
+  "summary": "生成专业的 Python 脚本和应用模板，支持 CLI 工具、Flask API、FastAPI、Django Command、Scraper 等，一键生成完整项目代码。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.python_script_generator",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Sunshine-del-ux",
+      "features": [
+        "生成专业的 Python 脚本和应用模板，支持 CLI 工具、Flask API、FastAPI、Django Command、Scraper 等，一键生成完整项目代码。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/python-script-generator@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/83053073?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "python-script-generator",
+      "url": "https://clawhub.ai/skills/python-script-generator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "python-script-generator",
+    "url": "https://clawhub.ai/skills/python-script-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/python-script-generator-a93a2267539930ad.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/python-script-generator@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-python-script-generator-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:58f23b59fc3f11e239413efedf28aea0d96d711be29fecdf726453d7af649a76",
+      "artifactSizeBytes": 2266
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-02T13:12:15.887Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/domain-agent-hub@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.domain_agent_hub",
+  "skill": {
+    "id": 66475,
+    "skillKey": "clawhub-domain-agent-hub",
+    "name": "DomainAgentHub"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "domain-agent-hub",
+    "url": "https://clawhub.ai/skills/domain-agent-hub",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/domain-agent-hub-d658f4027de6e8b2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "领域专家枢纽 - 智能判断任务领域，优先推荐成熟方案，无成熟方案时扩展创建"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "yangdaowan",
+      "userId": "publishers:yangdaowan",
+      "displayName": "DaYu",
+      "image": "https://avatars.githubusercontent.com/u/30426257?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 372,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1772682051606,
+      "changelog": "新增双重角色原则、Gateway依赖说明、飞书任务分发工作流",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:49139dca6723195e3e30ade2923bcde4403b615f243b7f78eea3a16de6a2d859"
+}

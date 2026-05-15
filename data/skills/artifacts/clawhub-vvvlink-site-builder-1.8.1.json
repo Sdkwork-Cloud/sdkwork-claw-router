@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/vvvlink-site-builder@1.8.1",
+  "version": "1.8.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vvvlink_site_builder",
+  "skill": {
+    "id": 32644,
+    "skillKey": "clawhub-vvvlink-site-builder",
+    "name": "VVVLINK Site Builder"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vvvlink-site-builder",
+    "url": "https://clawhub.ai/skills/vvvlink-site-builder",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vvvlink-site-builder-5092f8e58a17b6d8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Build and publish websites on vvvlink.com. Creates HTML sites, uploads to VVVLink API, publishes with unique subdomain URLs. Triggers on: \"create a site\", \"b..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vladlat",
+      "userId": "s1758dr3v2mv9tke2bh6q82z5x83jhy5",
+      "displayName": "vladlat",
+      "image": "https://avatars.githubusercontent.com/u/252355414?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 249,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.8.1",
+      "createdAt": 1773852259117,
+      "changelog": "v1.8.1 – Maintenance release, streamlining scope and simplifying triggers.\n\n- Scope narrowed: General coding priority language and detailed trigger lists have been removed for clarity.\n- Description and triggers clarified, focusing on website/landing/page creation and publishing.\n- Configuration and persistence sections added for improved documentation.\n- Russian-language trigger coverage removed for simplicity.\n- Flow and user experience steps now reference shorter, more focused explanations.\n- Existing core flow and announcements preserved; no functional changes to tool behavior.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:668b41b70f54df114302e6cfabcc722765af5de2294567dd0f048a359f1b4ba5"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clarity-variant@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clarity_variant",
+  "skill": {
+    "id": 24861,
+    "skillKey": "clawhub-clarity-variant",
+    "name": "Clarity Variant"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clarity-variant",
+    "url": "https://clawhub.ai/skills/clarity-variant",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clarity-variant-df2e93ccd81ded6c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Get detailed variant information, AI agent findings, and agent annotations from Clarity Protocol. Use when the user asks to get variant details, fold quality..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "clarityprotocol",
+      "userId": "publishers:clarityprotocol",
+      "displayName": "clarityprotocol",
+      "image": "https://avatars.githubusercontent.com/u/255743260?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 401,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772055692124,
+      "changelog": "- Initial release of the clarity-variant skill with version 1.0.0.\n- Retrieve detailed information and AI-generated summaries for specific protein variants from Clarity Protocol, including AlphaFold data.\n- Access and filter agent findings by type (structural, clinical, literature, synthesis) and receive human-readable summaries.\n- Fetch agent annotations, filterable by agent or annotation type, with confidence levels.\n- Includes error handling for not found, rate limit, server error, and timeout cases.\n- Supports up to 100 requests/min with API key and 10/min without.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:b860130b748f2987ec122aed6e995d23800d573ca01bb6e1d825ef9eb4202138"
+}

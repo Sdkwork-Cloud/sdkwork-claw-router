@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31664,
+  "uuid": "skill-clawhub-zoho-forms",
+  "skillKey": "clawhub-zoho-forms",
+  "name": "Zoho Forms",
+  "summary": "Zoho Forms integration. Manage data, records, and automate workflows. Use when the user wants to interact with Zoho Forms data.",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.zoho_forms",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Zoho Forms integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Zoho Forms data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/zoho-forms@1.0.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "zoho-forms",
+      "url": "https://clawhub.ai/skills/zoho-forms"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "zoho-forms",
+    "url": "https://clawhub.ai/skills/zoho-forms",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/zoho-forms-13365254db6b6084.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/zoho-forms@1.0.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-zoho-forms-1.0.2.json",
+      "version": "1.0.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ba0164ecdc87459bba112c1dec2434121e406da66a2cccf8be357b8af4baa20f",
+      "artifactSizeBytes": 1856
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:13:34.311Z"
+}

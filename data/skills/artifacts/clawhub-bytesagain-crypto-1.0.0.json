@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bytesagain-crypto@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bytesagain_crypto",
+  "skill": {
+    "id": 58194,
+    "skillKey": "clawhub-bytesagain-crypto",
+    "name": "Bytesagain Crypto"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bytesagain-crypto",
+    "url": "https://clawhub.ai/skills/bytesagain-crypto",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bytesagain-crypto-43f26b31fb58449c.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Real-time crypto prices and 100+ technical indicators (RSI, MACD, etc.) using Binance API. 支持实时行情监控、指标计算及全网资产扫描。Pure technical reference, zero external ads."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "xueyetianya",
+      "userId": "s1716dgb4pf37kmebjdxfdexmh83ehwx",
+      "displayName": "bytesagain4",
+      "image": "https://avatars.githubusercontent.com/u/218210530?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 184,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774633573328,
+      "changelog": "Initial launch of the new branded crypto engine.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:267c054241a449bd3bbc18c78a73ce885c5610bb87a1c87e58c19b95e1ce4d15"
+}

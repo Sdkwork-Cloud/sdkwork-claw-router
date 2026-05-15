@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-clip-maker-app@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_clip_maker_app",
+  "skill": {
+    "id": 55560,
+    "skillKey": "clawhub-video-clip-maker-app",
+    "name": "Video Clip Maker App"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-clip-maker-app",
+    "url": "https://clawhub.ai/skills/video-clip-maker-app",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-clip-maker-app-d0d83806d76e9722.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim the best 30 seconds, add background music and text overlay — and get..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "whitejohnk-26",
+      "userId": "s17cbeztzgrmcbypnjrtzhanfn83webr",
+      "displayName": "whitejohnk-26",
+      "image": "https://avatars.githubusercontent.com/u/210889495?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 128,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776108755298,
+      "changelog": "Video Clip Maker App 1.0.0 — Initial Release\n\n- Instantly trim, add music, and overlay text on videos by describing your edit—no editing skills required.\n- Upload raw MP4, MOV, AVI, or WebM files up to 500MB for automatic AI processing.\n- Fast cloud rendering: returns ready-to-download, 1080p MP4 files in 30-90 seconds.\n- Easy setup with free, anonymous tokens (100 credits/7 days).\n- Supports session-based workflows, batch file processing, and iterative edits with preview and export.\n- Built-in credit, status, and error handling for a smooth user experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8942f3f04e8cb3da07138c932d22bfa44c3456081e21ceac55b8405c3ce1a376"
+}

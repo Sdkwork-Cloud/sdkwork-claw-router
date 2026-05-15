@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 71643,
+  "uuid": "skill-clawhub-ht-skills",
+  "skillKey": "clawhub-ht-skills",
+  "name": "ht-skills",
+  "summary": "管理灏天文库文集和文档，支持新建文集、新建文档、查询文集/文档、更新文档、修改文档归属、管理文档层级、查询个人花园限制与用量；支持图片上传到 COS、图片分组、查询图片列表/详情与图片额度。适用于 OpenClaw 自主写文章并上传、文集创建、文档入库、文档移动、插图上传与外链等场景。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.ht_skills",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "天山老霸王",
+      "features": [
+        "管理灏天文库文集和文档，支持新建文集、新建文档、查询文集/文档、更新文档、修改文档归属、管理文档层级、查询个人花园限制与用量；支持图片上传到 COS、图片分组、查询图片列表/详情与图片额度。."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/ht-skills@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/44575234?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "ht-skills",
+      "url": "https://clawhub.ai/skills/ht-skills"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "ht-skills",
+    "url": "https://clawhub.ai/skills/ht-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/ht-skills-5c4682067ea8c217.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/ht-skills@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-ht-skills-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f3d322690b5de40f0b2577e83488f9dadf81e499e912ddc203e70bed436cd4cf",
+      "artifactSizeBytes": 4074
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-21T03:59:53.167Z"
+}

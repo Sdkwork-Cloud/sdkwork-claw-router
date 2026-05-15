@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hihired-resume@0.1.1",
+  "version": "0.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hihired_resume",
+  "skill": {
+    "id": 45286,
+    "skillKey": "clawhub-hihired-resume",
+    "name": "HiHired Resume"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hihired-resume",
+    "url": "https://clawhub.ai/skills/hihired-resume",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hihired-resume-c1d470d87ba2ef4d.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Turn HiHired (hihired.org) into a resume copilot workflow. Use when a user wants help building, importing, rewriting, tailoring, or improving a resume, gener..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "flychicken123",
+      "userId": "s177rtzvnpa1pe0126er6qtneh8635w9",
+      "displayName": "flychicken",
+      "image": "https://avatars.githubusercontent.com/u/37197214?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "0.1.1",
+      "createdAt": 1778013272225,
+      "changelog": "Clarify Chrome autofill is not officially launched; focus skill on resume, cover letter, and saved profile workflows",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:da7da72f91d05d2d5dacd628572c537da13b73206dad5646904e32cb6a033b22"
+}

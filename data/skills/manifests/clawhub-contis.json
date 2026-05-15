@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 28125,
+  "uuid": "skill-clawhub-contis",
+  "skillKey": "clawhub-contis",
+  "name": "Contis",
+  "summary": "Contis integration. Manage data, records, and automate workflows. Use when the user wants to interact with Contis data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.contis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Contis integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Contis data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/contis@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "contis",
+      "url": "https://clawhub.ai/skills/contis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "contis",
+    "url": "https://clawhub.ai/skills/contis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/contis-fa2b4f6a15125080.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/contis@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-contis-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:a78c3cef79d013af5eba0ed6696db100870c151821ee01fb3f3fe06d206bc292",
+      "artifactSizeBytes": 1812
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:34:33.620Z"
+}

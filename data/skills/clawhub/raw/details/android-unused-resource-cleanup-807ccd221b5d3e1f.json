@@ -1,0 +1,34 @@
+{
+  "skill": {
+    "slug": "android-unused-resource-cleanup",
+    "displayName": "Android Unused Resource Cleanup",
+    "summary": "分析 Android 项目 Git 改动，找出本次修改后不再使用的资源文件（drawable、layout、string、color 等），并检查这些资源是否还在项目其他位置被引用。当用户需要清理 Android 项目中因代码改动而变得无用的资源文件时使用此 skill。支持分析暂存区、工作区或历史提交的改动。",
+    "tags": {
+      "latest": "0.1.0"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 310,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "createdAt": 1773194546756,
+    "updatedAt": 1777618341055
+  },
+  "latestVersion": {
+    "version": "0.1.0",
+    "createdAt": 1773194546756,
+    "changelog": "Initial release – analyze git changes in Android projects to detect unused resources for cleanup.\n\n- Identifies unused Android resources (drawable, layout, string, color, etc.) resulting from recent git changes.\n- Checks whether these resources are still referenced elsewhere in the project.\n- Supports analyzing changes in the staging area, working tree, or historical commits.\n- Provides a suggested list of resources safe to delete, with detailed output.\n- Designed to prevent accidental deletion by encouraging manual confirmation.\n- Supports multiple resource types and both code and XML reference patterns.",
+    "license": "MIT-0"
+  },
+  "metadata": null,
+  "owner": {
+    "handle": "opoojkk",
+    "userId": "s17d3cw25v9j850vzp90q7g9as83h3x4",
+    "displayName": "opoojkk",
+    "image": "https://avatars.githubusercontent.com/u/33021407?v=4"
+  },
+  "moderation": null
+}

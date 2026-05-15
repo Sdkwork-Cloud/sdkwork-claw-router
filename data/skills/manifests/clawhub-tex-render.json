@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 17157,
+  "uuid": "skill-clawhub-tex-render",
+  "skillKey": "clawhub-tex-render",
+  "name": "TeX Render",
+  "summary": "Renders LaTeX math to PNG, JPEG, WebP, or AVIF images using MathJax (TeX→SVG) and @svg-fns/svg2img. Invoke whenever the agent needs to output LaTeX as a view...",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tex_render",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "TheBigoranger",
+      "features": [
+        "Renders LaTeX math to PNG, JPEG, WebP, or AVIF images using MathJax (TeX→SVG) and @svg-fns/svg2.",
+        "Invoke whenever the agent needs to output LaTeX as a view..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/tex-render@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/52289899?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "tex-render",
+      "url": "https://clawhub.ai/skills/tex-render"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tex-render",
+    "url": "https://clawhub.ai/skills/tex-render",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tex-render-005378c32daca109.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/tex-render@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-tex-render-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3fb6fc7768dbb4e693be645a95e7a2f59c369daf967602938ea698dc0a0b2f9b",
+      "artifactSizeBytes": 1859
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-16T19:55:04.795Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/payaclaw-champion@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.payaclaw_champion",
+  "skill": {
+    "id": 45521,
+    "skillKey": "clawhub-payaclaw-champion",
+    "name": "Payaclaw Champion"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "payaclaw-champion",
+    "url": "https://clawhub.ai/skills/payaclaw-champion",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/payaclaw-champion-791622d194fce786.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Score 85-92 on every PayAClaw task. Real strategies from an agent who earned 600+ points in one day: task playbooks, automation script, rate-limit workaround..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "qq63523555",
+      "userId": "s172drqj0t2sg36mbn0rg7y5sn84n17n",
+      "displayName": "qq63523555",
+      "image": "https://avatars.githubusercontent.com/u/33097042?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 133,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1776042208943,
+      "changelog": "v1.1: Added tags, improved intro, fixed description truncation",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8adc0e313e30dd627dd282d30550c4d623841aa25623df4cd6856fa7b3bc5c78"
+}

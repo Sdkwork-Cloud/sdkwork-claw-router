@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/trip-planner-generator@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.trip_planner_generator",
+  "skill": {
+    "id": 37257,
+    "skillKey": "clawhub-trip-planner-generator",
+    "name": "Trip Planner Generator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "trip-planner-generator",
+    "url": "https://clawhub.ai/skills/trip-planner-generator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/trip-planner-generator-098f6c28d7bb69f8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generates structured travel plans for trip websites. Invoke when user wants to create a travel itinerary, plan a trip, or needs help organizing travel details."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "dustink66",
+      "userId": "s174ybqe49h50fktnd4g66hhq18496rq",
+      "displayName": "dustink66",
+      "image": "https://avatars.githubusercontent.com/u/97211432?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 199,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775404485524,
+      "changelog": "Initial release - Interactive Q&A travel plan generator with structured output format",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:9fd3ca59d041238b7fa02feddbecd728beeae8f4510e60873ff2cf94325d3bcb"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/clawringhouse@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawringhouse",
+  "skill": {
+    "id": 11188,
+    "skillKey": "clawhub-clawringhouse",
+    "name": "Clawringhouse - AI Shopping Concierge"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawringhouse",
+    "url": "https://clawhub.ai/skills/clawringhouse",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawringhouse-e67b3b7e71aee0d1.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Proactively research, compare, and prepare curated shopping carts with thoughtful, budget-conscious gift and supply recommendations for upcoming events and n..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "francoisjosephlacroix",
+      "userId": "publishers:francoisjosephlacroix",
+      "displayName": "francoisjosephlacroix",
+      "image": "https://avatars.githubusercontent.com/u/86573748?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2048,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1770160514530,
+      "changelog": "Initial release: Free shopping search API for AI agents. Provides natural language product recommendations to help agents make their humans look thoughtful. Saves context window and user plan usage. Includes priority workflow (user browser > guest > agent browser > product links), affiliate attribution strategy, and comprehensive examples. Transparent affiliate revenue model supports free infrastructure for all agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:05d0e2ca6844f70d6e578ee4178ca55d6f6a58590ec3ba3990035f5d3089f546"
+}

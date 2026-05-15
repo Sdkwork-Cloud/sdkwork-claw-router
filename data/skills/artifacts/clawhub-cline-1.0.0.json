@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cline@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cline",
+  "skill": {
+    "id": 20896,
+    "skillKey": "clawhub-cline",
+    "name": "Cline"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cline",
+    "url": "https://clawhub.ai/skills/cline",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cline-84829dbd81531188.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Automation skill for Cline."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "elathoxu-crypto",
+      "userId": "publishers:elathoxu-crypto",
+      "displayName": "elathoxu-crypto",
+      "image": "https://avatars.githubusercontent.com/u/260733512?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 522,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772649830539,
+      "changelog": "cline 1.0.0\n\n- Initial release.\n- Allows running the local Cline CLI for coding, scaffolding, debugging, and multistep planning.\n- Added usage instructions and examples for typical commands.\n- Includes safety notes to never paste secrets and to confirm destructive actions.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:ed44f95ab4d52ed792985c76a341c871bdce67435c4cd9f99c9ed7cdceff04d7"
+}

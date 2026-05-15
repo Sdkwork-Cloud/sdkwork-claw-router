@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 11521,
+  "uuid": "skill-clawhub-clawstin",
+  "skillKey": "clawhub-clawstin",
+  "name": "Skill",
+  "summary": "Inform users about Clawstin (OpenClaw meetups in Austin), show upcoming events, handle RSVP and mailing list signup via API. \"Keep Austin Clawd.\"",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.clawstin",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "youens",
+      "features": [
+        "Inform users about Clawstin (OpenClaw meetups in Austin), show upcoming events, handle RSVP and.",
+        "\"Keep Austin Clawd.\""
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/clawstin@1.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/227123?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "clawstin",
+      "url": "https://clawhub.ai/skills/clawstin"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "clawstin",
+    "url": "https://clawhub.ai/skills/clawstin",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/clawstin-6bf0f535aa02eda8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/clawstin@1.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-clawstin-1.1.0.json",
+      "version": "1.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f97e0e5dc43599ef74810bad0e981a2f35e07227c5a4439525ed340718d0a013",
+      "artifactSizeBytes": 1873
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-06T05:11:02.502Z"
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 55956,
+  "uuid": "skill-clawhub-pipeworx-marine",
+  "skillKey": "clawhub-pipeworx-marine",
+  "name": "Pipeworx marine",
+  "summary": "Marine MCP — wraps marine-api.open-meteo.com (free, no auth)",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.pipeworx_marine",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Bruce Gutman",
+      "features": [
+        "Marine MCP — wraps marine-api.open-meteo.com (free, no auth)"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/pipeworx-marine@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/270792185?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "pipeworx-marine",
+      "url": "https://clawhub.ai/skills/pipeworx-marine"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "pipeworx-marine",
+    "url": "https://clawhub.ai/skills/pipeworx-marine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/pipeworx-marine-c13a5ef75655ed0f.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/pipeworx-marine@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-pipeworx-marine-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c01d258f8c97e1b014cfc7cfac24b77f301fc1b35e5b7912de47412180b61699",
+      "artifactSizeBytes": 1799
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-13T17:28:27.291Z"
+}

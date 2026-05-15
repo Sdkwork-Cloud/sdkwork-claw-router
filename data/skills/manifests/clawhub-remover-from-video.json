@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 48000,
+  "uuid": "skill-clawhub-remover-from-video",
+  "skillKey": "clawhub-remover-from-video",
+  "name": "Remover From Video",
+  "summary": "edit video clips into cleaned video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators, marketers, YouTubers use it fo...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.remover_from_video",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "vcarolxhberger",
+      "features": [
+        "edit video clips into cleaned video clips with this skill",
+        "Works with MP4, MOV, AVI, WebM files up to 500MB",
+        "content creators, marketers, YouTubers use it fo..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/remover-from-video@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/210890217?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "remover-from-video",
+      "url": "https://clawhub.ai/skills/remover-from-video"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "remover-from-video",
+    "url": "https://clawhub.ai/skills/remover-from-video",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/remover-from-video-41fde7c78a1ec207.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/remover-from-video@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-remover-from-video-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:0dd1d8beba6957cbb03a3290e22e91de0d21bc2e80a5ee7b91194f023283214f",
+      "artifactSizeBytes": 2430
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-28T00:19:48.677Z"
+}

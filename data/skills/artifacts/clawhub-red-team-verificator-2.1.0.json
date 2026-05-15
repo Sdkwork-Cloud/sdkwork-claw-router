@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/red-team-verificator@2.1.0",
+  "version": "2.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.red_team_verificator",
+  "skill": {
+    "id": 66962,
+    "skillKey": "clawhub-red-team-verificator",
+    "name": "Red Team Verificator"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "red-team-verificator",
+    "url": "https://clawhub.ai/skills/red-team-verificator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/red-team-verificator-2c84203cecea88f2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Аудит стратегических анализов стартапов с фокусом на поиск ошибок, галлюцинаций и искажений в данных и Red Team-отчетах."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "reactlab23",
+      "userId": "s170e42y8vh5s9y8vc4f7ey8zd85z0f3",
+      "displayName": "reactlab23",
+      "image": "https://avatars.githubusercontent.com/u/72496944?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 154,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "2.1.0",
+      "createdAt": 1777754584957,
+      "changelog": "v2.1 — improved audit logic",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:4576512d1de5be3a864ce171ebc70b6df84fc74bb18317a7f5823c495b159b80"
+}

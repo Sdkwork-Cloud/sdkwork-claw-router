@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 20040,
+  "uuid": "skill-clawhub-drawio-skill",
+  "skillKey": "clawhub-drawio-skill",
+  "name": "Draw.io Skill",
+  "summary": "Create and edit draw.io diagrams through the configured drawio MCP server, including flowcharts, architecture diagrams, ML model diagrams, Chinese labels, an...",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.drawio_skill",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "mcp.discovery"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "yyq2024",
+      "features": [
+        "Create and edit draw.io diagrams through the configured drawio MCP server, including flowcharts."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "MCP"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/drawio-skill@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/165767437?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "drawio-skill",
+      "url": "https://clawhub.ai/skills/drawio-skill"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "drawio-skill",
+    "url": "https://clawhub.ai/skills/drawio-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/drawio-skill-08c8ef372c778d75.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/drawio-skill@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-drawio-skill-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f71059bd95e734f6e6d32684ac63f05b2e15ee0a7a8b78003021375d85f4065",
+      "artifactSizeBytes": 2177
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T05:49:16.196Z"
+}

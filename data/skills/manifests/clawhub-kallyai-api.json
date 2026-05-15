@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 50281,
+  "uuid": "skill-clawhub-kallyai-api",
+  "skillKey": "clawhub-kallyai-api",
+  "name": "KallyAI Executive Assistant (Claude Code)",
+  "summary": "KallyAI Executive Assistant — AI that handles phone calls (outbound + inbound), email, bookings, research, errands, multi-channel messaging, and phone number...",
+  "version": "2.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kallyai_api",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "sltelitsyn",
+      "features": [
+        "KallyAI Executive Assistant — AI that handles phone calls (outbound + inbound), email, bookings."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/kallyai-api@2.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/31917291?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "kallyai-api",
+      "url": "https://clawhub.ai/skills/kallyai-api"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kallyai-api",
+    "url": "https://clawhub.ai/skills/kallyai-api",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kallyai-api-ed3ff97f35a93c45.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/kallyai-api@2.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-kallyai-api-2.0.0.json",
+      "version": "2.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:9f0202bac4859c9a0bd2dcc0bd7d646c535d18d635aa76f6983f797e298dcc25",
+      "artifactSizeBytes": 2165
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-02-24T18:51:34.328Z"
+}

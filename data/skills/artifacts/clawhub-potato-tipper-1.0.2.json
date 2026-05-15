@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/potato-tipper@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.potato_tipper",
+  "skill": {
+    "id": 18880,
+    "skillKey": "clawhub-potato-tipper",
+    "name": "Potato Tipper"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "potato-tipper",
+    "url": "https://clawhub.ai/skills/potato-tipper",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/potato-tipper-6c224b0680051b1e.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skill for AI agents to setup the Potato Tipper on a Universal Profile on LUKSO (requires private key), and learn to build innovative tip-on-follow solutions."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "cj42",
+      "userId": "publishers:cj42",
+      "displayName": "Jean Cvllr",
+      "image": "https://avatars.githubusercontent.com/u/31145285?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 553,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772113496983,
+      "changelog": "- Simplified and clarified the skill description and audience.\n- Refocused on setup, configuration, and technical guidance for Potato Tipper on LUKSO Universal Profiles.\n- Highlighted core learning areas: protocol understanding, troubleshooting, configuring permissions/data keys, and tip-on-follow integrations.\n- Explicitly stated TypeScript and Solidity code example support.\n- Non-essential/overly detailed architectural explanations trimmed for brevity.\n- No file or functional changes to code; documentation only.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd37ef9f9c387f54601986d6ce7333ea938106b9118d6de3caec46f4deb522de"
+}

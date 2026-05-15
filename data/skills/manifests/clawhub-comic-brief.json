@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 38879,
+  "uuid": "skill-clawhub-comic-brief",
+  "skillKey": "clawhub-comic-brief",
+  "name": "Comic Brief",
+  "summary": "Generate vintage comic-book style illustrations from topics, briefings, or meeting notes. Produces hero banners, 4-panel stories, and newspaper-style briefin...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.comic_brief",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Adebayo Dawodu",
+      "features": [
+        "Generate vintage comic-book style illustrations from topics, briefings, or meeting notes",
+        "Produces hero banners, 4-panel stories, and newspaper-style briefin..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/comic-brief@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4356024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "comic-brief",
+      "url": "https://clawhub.ai/skills/comic-brief"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "comic-brief",
+    "url": "https://clawhub.ai/skills/comic-brief",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/comic-brief-ad0222cd816668b8.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/comic-brief@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-comic-brief-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:7f15af82c61fc374681bc2d98e75b88cafc89b0b2b7cc6bea7d0d035ebf6b44d",
+      "artifactSizeBytes": 2005
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T01:25:35.705Z"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 44429,
+  "uuid": "skill-clawhub-paper-translator",
+  "skillKey": "clawhub-paper-translator",
+  "name": "Paper Translator",
+  "summary": "Translates academic PDFs from English to Chinese, preserving formulas and layout, producing bilingual, Chinese-only versions, and a glossary.",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.paper_translator",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "xingxing",
+      "features": [
+        "Translates academic PDFs from English to Chinese, preserving formulas and layout, producing bil."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/paper-translator@0.1.2",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/71656176?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "paper-translator",
+      "url": "https://clawhub.ai/skills/paper-translator"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "paper-translator",
+    "url": "https://clawhub.ai/skills/paper-translator",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/paper-translator-7e863168347d7c5c.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/paper-translator@0.1.2",
+      "artifactUrl": "data/skills/artifacts/clawhub-paper-translator-0.1.2.json",
+      "version": "0.1.2",
+      "runtime": "metadata",
+      "checksumHash": "sha256:ab5fd3e5571801ae81d2566508d4cfc8eeec967359c24be1643bf133e3ed6a5c",
+      "artifactSizeBytes": 1936
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-18T01:38:03.806Z"
+}

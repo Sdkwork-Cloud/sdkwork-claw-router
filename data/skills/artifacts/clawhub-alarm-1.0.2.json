@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/alarm@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alarm",
+  "skill": {
+    "id": 70236,
+    "skillKey": "clawhub-alarm",
+    "name": "alarm"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alarm",
+    "url": "https://clawhub.ai/skills/alarm",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alarm-5e94ec139442cfe9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "读取飞书/lark 的文本或语音消息，识别是否包含需要提醒的待办和截止时间，并根据消息语义和时间跨度自动判断一个偏宽松的提醒时间。适用于飞书机器人处理“今天 5 点前给我”“明天下午三点提醒我”“发语音说周五前记得提交”这类消息。支持先用 senseaudio asr 把语音转文字，再分析并建立提醒；启用 asr..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "hei-maom",
+      "userId": "publishers:hei-maom",
+      "displayName": "HeiMaoM",
+      "image": "https://avatars.githubusercontent.com/u/145641200?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 314,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1773771781510,
+      "changelog": "**Skill: alarm – Version 1.0.2 Changelog**\n\n- 增加对数据持久化和凭证策略的明确说明，强调所有提醒内容持久化到本地 SQLite、本地音频转写需上传 SenseAudio、仅通过进程环境变量读取凭证。\n- 在描述中补充 ASR 时音频上传、提醒/确认消息下发到 API，以及数据库、时区等配置项默认值。\n- 新增 skill metadata，结构化说明必须/可选环境变量，外部依赖（API 上传、消息发送），数据持久化方式，以及凭证读取政策。\n- 原有功能与接口保持一致，没有新增命令或变更主流程，仅强化文档表述和可集成性描述。",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78f07eecf8ca316a381de40ea2188bdee9a3dddd30e55a56d77a928df81a9968"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66062,
+  "uuid": "skill-clawhub-quick-sysinfo",
+  "skillKey": "clawhub-quick-sysinfo",
+  "name": "快速信息查询",
+  "summary": "快速查询本机系统信息和OpenClaw配置。包括CPU、内存、磁盘、网络、环境配置、硬件资源占用、Docker容器、OpenClaw配置/频道/插件/服务状态。当用户询问\"系统状态\"、\"CPU使用率\"、\"内存占用\"、\"磁盘空间\"、\"网络信息\"、\"硬件配置\"、\"进程状态\"、\"Docker状态\"、\"系统负载\"、\"配置...",
+  "version": "1.0.3",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.quick_sysinfo",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Asuka",
+      "features": [
+        "快速查询本机系统信息和OpenClaw配置。包括CPU、内存、磁盘、网络、环境配置、硬件资源占用、Docker容器、OpenClaw配置/频道/插件/服务状态。当用户询问\"系统状态\"、\"CP."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill",
+        "Python"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/quick-sysinfo@1.0.3",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32991809?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "quick-sysinfo",
+      "url": "https://clawhub.ai/skills/quick-sysinfo"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "quick-sysinfo",
+    "url": "https://clawhub.ai/skills/quick-sysinfo",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/quick-sysinfo-316f856202d91527.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/quick-sysinfo@1.0.3",
+      "artifactUrl": "data/skills/artifacts/clawhub-quick-sysinfo-1.0.3.json",
+      "version": "1.0.3",
+      "runtime": "metadata",
+      "checksumHash": "sha256:fd8a3e32f0d34c443d37c4a3b6593bcf2cbff3d99875bd4219ca8610b1eb7f4d",
+      "artifactSizeBytes": 2283
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-08T06:13:18.776Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/hide-my-email@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.hide_my_email",
+  "skill": {
+    "id": 17164,
+    "skillKey": "clawhub-hide-my-email",
+    "name": "Hide My Email"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "hide-my-email",
+    "url": "https://clawhub.ai/skills/hide-my-email",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/hide-my-email-ad9f59c80e861a34.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Generate Apple Hide My Email addresses on macOS terminal and copy them to clipboard using the hme CLI tool."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "manikal",
+      "userId": "publishers:manikal",
+      "displayName": "Mijo Kaliger",
+      "image": "https://avatars.githubusercontent.com/u/983154?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 808,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1771871470157,
+      "changelog": "- Added a recommended git-based installation option with updated instructions.\n- Curl-based install now pins to version 1.0.1 for better reliability.\n- Updated documentation and metadata to reflect new installation methods.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:dd35962bc786a594d1ee8573aba6d6ada6698318c488012c442e2ed81d4237ac"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/figma-code-optimizer@1.0.4",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.figma_code_optimizer",
+  "skill": {
+    "id": 63395,
+    "skillKey": "clawhub-figma-code-optimizer",
+    "name": "figma-optimizer"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "figma-code-optimizer",
+    "url": "https://clawhub.ai/skills/figma-code-optimizer",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/figma-code-optimizer-6cad6d2b62cd4589.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "从Figma设计稿生成符合项目组件库和设计规范的高质量前端代码"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "garvin131",
+      "userId": "s17cpv90eapqywnvs4pvpz18dd83k0ky",
+      "displayName": "Garvin131",
+      "image": "https://avatars.githubusercontent.com/u/172601094?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 365,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 2,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.0.4",
+      "createdAt": 1774530394300,
+      "changelog": "- Removed the _meta.json file.\n- No changes to skill functionality or documentation.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:181e58120f758eb55cb1e1b3612b5e95fda3b94588c87deee9a36a355fad12b6"
+}

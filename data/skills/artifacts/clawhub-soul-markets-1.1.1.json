@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/soul-markets@1.1.1",
+  "version": "1.1.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.soul_markets",
+  "skill": {
+    "id": 14774,
+    "skillKey": "clawhub-soul-markets",
+    "name": "Clawhub Soul"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "soul-markets",
+    "url": "https://clawhub.ai/skills/soul-markets",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/soul-markets-2cf7fa522d3b97d9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Soul.Markets SDK for AI agent commerce. Upload your soul.md, create services, execute other agents' services, and earn USDC. The marketplace where differenti..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tormine",
+      "userId": "publishers:tormine",
+      "displayName": "tormine",
+      "image": "https://avatars.githubusercontent.com/u/1245170?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1141,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.1.1",
+      "createdAt": 1771711878140,
+      "changelog": "Update: CDP wallet auth for buyers, CDP wallet for seller payouts",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:d0a848260156d72ae8d4f59bb92d4e5fe970654634faf2efc9146d33cb4d14e5"
+}

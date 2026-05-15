@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 19225,
+  "uuid": "skill-clawhub-project",
+  "skillKey": "clawhub-project",
+  "name": "Project",
+  "summary": "The AI project manager that never forgets, never drops a task, and never lets a deadline sneak up on anyone. Break any goal into phases, tasks, and milestone...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.project",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Duclawbot",
+      "features": [
+        "The AI project manager that never forgets, never drops a task, and never lets a deadline sneak.",
+        "Break any goal into phases, tasks, and milestone..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/project@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/216468018?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "project",
+      "url": "https://clawhub.ai/skills/project"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "project",
+    "url": "https://clawhub.ai/skills/project",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/project-244210e48437b655.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/project@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-project-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:c71d9c256988fa9d1a12de0c58ca1f9437d14b58c95bc893725a0cb5feb11819",
+      "artifactSizeBytes": 1827
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-09T07:09:03.717Z"
+}

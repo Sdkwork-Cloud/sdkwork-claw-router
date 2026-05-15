@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 49076,
+  "uuid": "skill-clawhub-score-agent-response-quality",
+  "skillKey": "clawhub-score-agent-response-quality",
+  "name": "Score Agent Response Quality",
+  "summary": "Score an AI agent response 0-100 across 6 quality dimensions (depth, recommendations, citations, formatting, trust, monetization-readiness) with improvement...",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.score_agent_response_quality",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Operon",
+      "features": [
+        "Score an AI agent response 0-100 across 6 quality dimensions (depth, recommendations, citations."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/score-agent-response-quality@1.0.0",
+      "screenshots": [
+        "https://operon.so/assets/logo-wordmark.svg"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "score-agent-response-quality",
+      "url": "https://clawhub.ai/skills/score-agent-response-quality"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "score-agent-response-quality",
+    "url": "https://clawhub.ai/skills/score-agent-response-quality",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/score-agent-response-quality-efbd067bdc1a11c0.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/score-agent-response-quality@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-score-agent-response-quality-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:6c7740394019dff7dab8e5024b903febbded59ba00a8e26efb60d2a126a523bb",
+      "artifactSizeBytes": 2630
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-05-06T17:59:21.292Z"
+}

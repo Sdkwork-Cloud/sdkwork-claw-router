@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60142,
+  "uuid": "skill-clawhub-vidu-anime-production",
+  "skillKey": "clawhub-vidu-anime-production",
+  "name": "Vidu API comic strip short film generation capability, with built-in AI-generated videos, images, and TTS.",
+  "summary": "将用户创意或剧本转化为完整动漫成片，从剧本创作到自动拼接全流程使用 Vidu API 完成生图、生视频与 TTS，且禁止使用任何非 Vidu 模型。在用户需要制作动漫/动画短片、提供创意主题或详细剧本需求时使用；依赖 ffmpeg 与已配置的 Vidu API 凭证。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.vidu_anime_production",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata",
+    "api.integration"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vidu AI",
+      "features": [
+        "将用户创意或剧本转化为完整动漫成片，从剧本创作到自动拼接全流程使用 Vidu API 完成生图、生视频与 TTS，且禁止使用任何非 Vidu 模型。在用户需要制作动漫/动画短片、提供创意主题."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/vidu-anime-production@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/25274975?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "vidu-anime-production",
+      "url": "https://clawhub.ai/skills/vidu-anime-production"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "vidu-anime-production",
+    "url": "https://clawhub.ai/skills/vidu-anime-production",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/vidu-anime-production-c7ad8b4ce20db71d.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/vidu-anime-production@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-vidu-anime-production-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2489b040ce642c2744c89da0162d4e062a2e1e3a42f146ebb7a63e6ff5e2e543",
+      "artifactSizeBytes": 2781
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T11:50:33.827Z"
+}

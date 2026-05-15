@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 27450,
+  "uuid": "skill-clawhub-openclaw-gateway-watchdog",
+  "skillKey": "clawhub-openclaw-gateway-watchdog",
+  "name": "Gateway Watchdog",
+  "summary": "Automatically installs and configures Gateway Watchdog to monitor Gateway status, enable DingTalk alerts, set up auto-start, and run the monitoring service.",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_gateway_watchdog",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Anonymous",
+      "features": [
+        "Automatically installs and configures Gateway Watchdog to monitor Gateway status, enable DingTa."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/openclaw-gateway-watchdog@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/32920883?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "openclaw-gateway-watchdog",
+      "url": "https://clawhub.ai/skills/openclaw-gateway-watchdog"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-gateway-watchdog",
+    "url": "https://clawhub.ai/skills/openclaw-gateway-watchdog",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-gateway-watchdog-92aac467ee021c72.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/openclaw-gateway-watchdog@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-openclaw-gateway-watchdog-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:eb0b8c21ed4ae64a70a113bc045861b49047f9dfb92b7983ae0bcddac2c8d851",
+      "artifactSizeBytes": 2424
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-18T05:35:59.874Z"
+}

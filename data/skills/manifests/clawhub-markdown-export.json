@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26702,
+  "uuid": "skill-clawhub-markdown-export",
+  "skillKey": "clawhub-markdown-export",
+  "name": "markdown-export",
+  "summary": "Convert a Markdown file or raw Markdown string into polished DOCX or HTML output from one unified skill. Supports custom DOCX reference templates, custom Pan...",
+  "version": "0.5.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.markdown_export",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "King",
+      "features": [
+        "Convert a Markdown file or raw Markdown string into polished DOCX or HTML output from one unifi.",
+        "Supports custom DOCX reference templates, custom Pan..."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/markdown-export@0.5.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/2281525?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "markdown-export",
+      "url": "https://clawhub.ai/skills/markdown-export"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "markdown-export",
+    "url": "https://clawhub.ai/skills/markdown-export",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/markdown-export-5a620193e6829dfe.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/markdown-export@0.5.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-markdown-export-0.5.0.json",
+      "version": "0.5.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:b1508eade0575492330106fbc3cba4869f7e38d8691e324acbe6b8b69678fb12",
+      "artifactSizeBytes": 2353
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-11T10:29:58.801Z"
+}

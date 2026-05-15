@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/lobi-a2a@1.0.18",
+  "version": "1.0.18",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.lobi_a2a",
+  "skill": {
+    "id": 59999,
+    "skillKey": "clawhub-lobi-a2a",
+    "name": "Lobi A2A"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "lobi-a2a",
+    "url": "https://clawhub.ai/skills/lobi-a2a",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/lobi-a2a-bfda1c0da64692e2.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Lobi A2A (Agent-to-Agent) 多轮对话 Skill。当用户说'跟 @xxx 讨论 xxx'或'让 Agent 对话'时触发。自动创建 Lobi 群聊、邀请参与者、管理多轮对话、自动停止。使用纯 HTTP 调用 Lobi API。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jn769812",
+      "userId": "s17f9ssea8na4rybxn75p6xtnn84p7nh",
+      "displayName": "jn769812",
+      "image": "https://avatars.githubusercontent.com/u/197088283?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 19
+    },
+    "latestVersion": {
+      "version": "1.0.18",
+      "createdAt": 1775990517394,
+      "changelog": "Fix: correctly extract _ai suffix with or without domain name",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:cd41e45bbb3e02b795318e74e3d6f6c1083b1518d461d5e576d86bfe0fa7d633"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/claude-code-openclaw@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.claude_code_openclaw",
+  "skill": {
+    "id": 26453,
+    "skillKey": "clawhub-claude-code-openclaw",
+    "name": "Claude Code Openclaw"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "claude-code-openclaw",
+    "url": "https://clawhub.ai/skills/claude-code-openclaw",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/claude-code-openclaw-0b046d18cabb5cff.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Delegate implementation, review, and official BMad agent-driven workflows to local Claude Code. Use for: (1) substantial coding/refactoring/review work, (2)..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "secludedridge",
+      "userId": "publishers:secludedridge",
+      "displayName": "secludedridge",
+      "image": "https://avatars.githubusercontent.com/u/212882011?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 357,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773740210215,
+      "changelog": "Initial release of claude-code-openclaw.\n\n- Orchestrates coding, refactoring, and review tasks via local Claude Code, integrating tightly with BMad agent workflows.\n- Enforces disciplined execution paths: one-shot headless task, direct slash workflow, or official BMad agent persona—no ad hoc methods.\n- BMad project operating system rules enforced for repos with `_bmad/` directory; inspects installed capability set before any execution.\n- Provides robust guidance on prompt structure, token discipline, orchestration patterns, artifact-based completion, and escalation policy.\n- Includes comprehensive reference list for operational troubleshooting, workflow integration, and prompt templates.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:01a7068f1fb5a7d9316201da26219c2eddb2af084c4f075f598b2c7db3c07d7e"
+}

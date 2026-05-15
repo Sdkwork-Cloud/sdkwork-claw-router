@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/editor-de-video-gratis@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.editor_de_video_gratis",
+  "skill": {
+    "id": 46929,
+    "skillKey": "clawhub-editor-de-video-gratis",
+    "name": "Editor De Video Gratis"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "editor-de-video-gratis",
+    "url": "https://clawhub.ai/skills/editor-de-video-gratis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/editor-de-video-gratis-c03618d1ed6c91ec.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "edit video clips into edited video clips with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators and students use it for editing..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "vynbosserman65",
+      "userId": "s175xbynxxje7z8y8jbn28x5vx84dckp",
+      "displayName": "vynbosserman65",
+      "image": "https://avatars.githubusercontent.com/u/208823770?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 120,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1776438967904,
+      "changelog": "Editor de Video Gratis — Edit and export videos for free on cloud GPUs\n\n- First release: edit, process, and export video clips up to 500MB (MP4, MOV, AVI, WebM) into 1080p MP4s.\n- Easy onboarding: connect instantly with a free starter token (100 credits, 7-day expiry) — no registration required.\n- Upload, edit, check credits/status, and export videos from chat; works for content creators and students.\n- 1–2 minute cloud render pipeline with clear status, timeline preview, and automatic error handling.\n- Supports adding/removing video, audio, and text tracks with intent classification of user messages.\n- Guidance and troubleshooting included for common errors, file types, and workflow improvements.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:38cd710b664aef6e2ae612f7ef0e74ffe486d61961481f8dd951ae4a7e5fce89"
+}

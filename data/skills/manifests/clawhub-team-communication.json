@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 62400,
+  "uuid": "skill-clawhub-team-communication",
+  "skillKey": "clawhub-team-communication",
+  "name": "Team Communication",
+  "summary": "团队内部沟通技能。当需要与其他 team members（agents）沟通、协调任务、请求帮助或发送消息时使用。提供团队成员目录、sessions_send 用法和最佳实践。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.team_communication",
+  "provider": "ClawHub",
+  "licenseName": "ClawHub Community",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "ebly",
+      "features": [
+        "团队内部沟通技能。当需要与其他 team members（agents）沟通、协调任务、请求帮助或发送消息时使用。提供团队成员目录、sessions_send 用法和最佳实践。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/team-communication@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/5242545?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "team-communication",
+      "url": "https://clawhub.ai/skills/team-communication"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "team-communication",
+    "url": "https://clawhub.ai/skills/team-communication",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/team-communication-8e9548379add18e7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/team-communication@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-team-communication-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:2649f14c6bbdc3af34cb0a8d92dfacbe042ea51f3d3ac3792f5d21003ffeb4e5",
+      "artifactSizeBytes": 1982
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-08T19:24:47.322Z"
+}

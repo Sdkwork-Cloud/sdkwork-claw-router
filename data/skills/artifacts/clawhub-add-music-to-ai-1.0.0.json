@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/add-music-to-ai@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.add_music_to_ai",
+  "skill": {
+    "id": 40219,
+    "skillKey": "clawhub-add-music-to-ai",
+    "name": "Add Music To Ai"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "add-music-to-ai",
+    "url": "https://clawhub.ai/skills/add-music-to-ai",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/add-music-to-ai-01f462df441e1510.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "add silent AI video into music-backed videos with this skill. Works with MP4, MOV, AVI, WebM files up to 500MB. content creators use it for adding background..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tk8544-b",
+      "userId": "s177dcyeps18chywxsajwt5hrn83x2y9",
+      "displayName": "tk8544-b",
+      "image": "https://avatars.githubusercontent.com/u/210889262?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 171,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1775943386243,
+      "changelog": "Add Music to AI Video — v1.0.0\n\n- Initial release.\n- Add background music to AI-generated silent videos; supports MP4, MOV, AVI, WebM files up to 500MB.\n- Cloud-based processing returns 1080p MP4 videos in 20–40 seconds.\n- Automatic token and session management for quick setup.\n- Simple user commands: upload, edit, check credits, export, and download.\n- Error handling and usage tips included for a smooth experience.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:1de6458039cc101500dd6230404a1882ffbc9318393d5d515d23caac96d2aba2"
+}

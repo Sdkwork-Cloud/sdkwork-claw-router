@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/youtube-ai-video-editor@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.youtube_ai_video_editor",
+  "skill": {
+    "id": 55512,
+    "skillKey": "clawhub-youtube-ai-video-editor",
+    "name": "Youtube Ai Video Editor"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "youtube-ai-video-editor",
+    "url": "https://clawhub.ai/skills/youtube-ai-video-editor",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/youtube-ai-video-editor-76f4352572ce0149.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Skip the learning curve of professional editing software. Describe what you want — trim dead air, add transitions, and generate auto-captions in English — an..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mhogan2013-9",
+      "userId": "s1734kgyh0j16a86enc51zqp6184cy81",
+      "displayName": "mhogan2013-9",
+      "image": "https://avatars.githubusercontent.com/u/208827708?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 115,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1777164271843,
+      "changelog": "YouTube AI Video Editor 1.0.0 — Initial Release\n\n- Instantly edit and export YouTube-ready videos by describing your needs (e.g., trim dead air, add transitions, auto-captions).\n- Upload MP4, MOV, AVI, or WebM files up to 500MB; AI handles the editing in 1-2 minutes.\n- Automatic cloud rendering and GPU processing with no need to install local software.\n- Includes simple prompt-based workflow, session management, and credit tracking.\n- Built-in support for quick edits, batch processing, and iterative refinement.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:ee63b474c880ca1992a35916069edee10417c6267cdf778701acd67e8d9b96ae"
+}

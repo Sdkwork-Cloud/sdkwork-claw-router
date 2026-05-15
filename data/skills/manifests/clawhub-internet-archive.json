@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 60387,
+  "uuid": "skill-clawhub-internet-archive",
+  "skillKey": "clawhub-internet-archive",
+  "name": "Internet Archive Skill",
+  "summary": "搜索、下载、上传并管理 Internet Archive (archive.org) 公开和私有存档项目及其元数据，支持高级查询和文件操作。",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.internet_archive",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "grill-glitch",
+      "features": [
+        "搜索、下载、上传并管理 Internet Archive (archive.org) 公开和私有存档项目及其元数据，支持高级查询和文件操作。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/internet-archive@1.0.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/209115024?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "internet-archive",
+      "url": "https://clawhub.ai/skills/internet-archive"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "internet-archive",
+    "url": "https://clawhub.ai/skills/internet-archive",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/internet-archive-015a0f8e27eca8bc.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/internet-archive@1.0.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-internet-archive-1.0.0.json",
+      "version": "1.0.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:454248c93ac683693be144ecfc742f7c09696f6357591be29824a5397f70590c",
+      "artifactSizeBytes": 2445
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-29T12:20:43.419Z"
+}

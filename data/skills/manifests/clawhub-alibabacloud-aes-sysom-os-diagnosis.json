@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 39594,
+  "uuid": "skill-clawhub-alibabacloud-aes-sysom-os-diagnosis",
+  "skillKey": "clawhub-alibabacloud-aes-sysom-os-diagnosis",
+  "name": "Alibabacloud Aes Sysom Os Diagnosis",
+  "summary": "Perform SysOM deep OS-level diagnosis on Alibaba Cloud ECS instances to identify root causes of performance issues (CPU spikes, memory leaks, IO latency, etc...",
+  "version": "0.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.alibabacloud_aes_sysom_os_diagnosis",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "alibabacloud-skills-team",
+      "features": [
+        "Perform SysOM deep OS-level diagnosis on Alibaba Cloud ECS instances to identify root causes of."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/alibabacloud-aes-sysom-os-diagnosis@0.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/49941014?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "alibabacloud-aes-sysom-os-diagnosis",
+      "url": "https://clawhub.ai/skills/alibabacloud-aes-sysom-os-diagnosis"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "alibabacloud-aes-sysom-os-diagnosis",
+    "url": "https://clawhub.ai/skills/alibabacloud-aes-sysom-os-diagnosis",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/alibabacloud-aes-sysom-os-diagnosis-2533908144612cc7.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/alibabacloud-aes-sysom-os-diagnosis@0.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-alibabacloud-aes-sysom-os-diagnosis-0.0.1.json",
+      "version": "0.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:84827033ef2c6d59f71a6cf7e5c9df64dfc700903339a139dd6674e33d5bd09b",
+      "artifactSizeBytes": 2603
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-20T10:48:13.463Z"
+}

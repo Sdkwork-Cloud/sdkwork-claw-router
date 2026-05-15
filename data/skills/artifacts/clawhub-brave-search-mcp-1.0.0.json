@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/brave-search-mcp@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.brave_search_mcp",
+  "skill": {
+    "id": 14642,
+    "skillKey": "clawhub-brave-search-mcp",
+    "name": "Brave Search MCP Server"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "brave-search-mcp",
+    "url": "https://clawhub.ai/skills/brave-search-mcp",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/brave-search-mcp-6b66c0e9cbdf75d0.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Privacy-first Brave Search MCP Server offers AI-powered web, image, video, news, and local POI search with summarization and no tracking for agent use."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "buddhasource",
+      "userId": "s170rz9nkcfvx4ykg06kwfmtmn83x20q",
+      "displayName": "Siddharth Menon",
+      "image": "https://avatars.githubusercontent.com/u/609407?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 1111,
+      "installsAllTime": 6,
+      "installsCurrent": 6,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1771084949653,
+      "changelog": "Initial release: Official Brave Search MCP integration. Web, image, video, news, and local POI search with AI summarization. Privacy-first search for AI agents.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:68e77cf6365580f2ff09317e87a0ffce87f58d483baca72cdbbc75aea2d9421b"
+}

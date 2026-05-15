@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nanobanana-ppt-skills@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nanobanana_ppt_skills",
+  "skill": {
+    "id": 63420,
+    "skillKey": "clawhub-nanobanana-ppt-skills",
+    "name": "NanoBanana PPT Skills"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nanobanana-ppt-skills",
+    "url": "https://clawhub.ai/skills/nanobanana-ppt-skills",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nanobanana-ppt-skills-d0f5128d8ec7a696.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "基于 AI 自动分析文档内容，智能规划并生成多风格高清 PPT 图片，支持可选转场视频和交互式播放体验。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "itrocker",
+      "userId": "publishers:itrocker",
+      "displayName": "ITRocker",
+      "image": "https://avatars.githubusercontent.com/u/16250860?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2995,
+      "installsAllTime": 10,
+      "installsCurrent": 7,
+      "stars": 2,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1769508616256,
+      "changelog": "PPT Generator Pro major release 2.0 adds AI-powered PPT, video, and interactive features.\n\n- 全新支持 AI 自动规划、提取文档要点并生成高质量 PPT 图片（16:9 比例，多风格选择）\n- 新增转场视频生成，首页循环动画预览，完整视频与交互式播放网页\n- 多风格系统（渐变毛玻璃、矢量插画），自动检测可选风格\n- 分辨率、页数、风格、视频模式等引导式交互\n- 自动管理环境变量，详细执行流程和错误提示\n- 可选 AI 转场视频（需可灵 API 密钥），并自动合成完整演示视频",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:80a194143fb649e80e49ecfc90ab532ee5167c8fb488abc831c70ab32557a1b3"
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66539,
+  "uuid": "skill-clawhub-robinhood",
+  "skillKey": "clawhub-robinhood",
+  "name": "Robinhood",
+  "summary": "提供Robinhood官网公开的产品说明、费率规则及帮助信息整理，不含账户操作或投资建议。",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.robinhood",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "mike47512",
+      "features": [
+        "提供Robinhood官网公开的产品说明、费率规则及帮助信息整理，不含账户操作或投资建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/robinhood@0.1.0",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/199718167?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "robinhood",
+      "url": "https://clawhub.ai/skills/robinhood"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "robinhood",
+    "url": "https://clawhub.ai/skills/robinhood",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/robinhood-5815755fc6efaccd.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/robinhood@0.1.0",
+      "artifactUrl": "data/skills/artifacts/clawhub-robinhood-0.1.0.json",
+      "version": "0.1.0",
+      "runtime": "metadata",
+      "checksumHash": "sha256:f39035b88c4e994efe6e829c135be9727fd5cb271a43096fe5421a0689e05984",
+      "artifactSizeBytes": 2321
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-03-20T01:23:27.771Z"
+}

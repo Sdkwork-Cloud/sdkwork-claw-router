@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 31488,
+  "uuid": "skill-clawhub-mctime",
+  "skillKey": "clawhub-mctime",
+  "name": "Mctime",
+  "summary": "McTime integration. Manage TimeSheets, Projects, Clients, Users. Use when the user wants to interact with McTime data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.mctime",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "McTime integration",
+        "Manage TimeSheets, Projects, Clients, Users",
+        "Use when the user wants to interact with McTime data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/mctime@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "mctime",
+      "url": "https://clawhub.ai/skills/mctime"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "mctime",
+    "url": "https://clawhub.ai/skills/mctime",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/mctime-d5e7ef9f79d9f76a.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/mctime@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-mctime-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:3d8ef7b61b89dc558e49452b50bf1faf5531c993d73d28e06dcb020a2cd167af",
+      "artifactSizeBytes": 1811
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T17:12:10.905Z"
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/bahn@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.bahn",
+  "skill": {
+    "id": 11907,
+    "skillKey": "clawhub-bahn",
+    "name": "Deutsche Bahn CLI"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "bahn",
+    "url": "https://clawhub.ai/skills/bahn",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/bahn-857e192cac5d5533.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Search Deutsche Bahn train connections using the bahn-cli tool. Use when you need to find train connections between German stations, check departure times, or help with travel planning. Works with station names like \"Berlin Hbf\", \"München\"."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "tobiasbischoff",
+      "userId": "publishers:tobiasbischoff",
+      "displayName": "tobiasbischoff",
+      "image": "https://avatars.githubusercontent.com/u/711564?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2340,
+      "installsAllTime": 1,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769404815120,
+      "changelog": "Initial release: Search DB train connections with bahn-cli tool",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:6588f81d9bb1083b0e23938aa5e95e57fcd846b088f9d4f790916aafbccdd631"
+}

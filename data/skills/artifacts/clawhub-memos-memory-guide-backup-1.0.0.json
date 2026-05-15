@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/memos-memory-guide-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.memos_memory_guide_backup",
+  "skill": {
+    "id": 36368,
+    "skillKey": "clawhub-memos-memory-guide-backup",
+    "name": "Memos Memory Guide Backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "memos-memory-guide-backup",
+    "url": "https://clawhub.ai/skills/memos-memory-guide-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/memos-memory-guide-backup-cbcd828bddb42f05.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Use the MemOS Lite memory system to search and use the user's past conversations. Use this skill whenever the user refers to past chats, their own preference..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "andy27725",
+      "userId": "s1771zaa2s144y84bcq90bv6h183h8km",
+      "displayName": "Andy27725",
+      "image": "https://avatars.githubusercontent.com/u/259773669?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 196,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774375989013,
+      "changelog": "Initial release of MemOS Lite memory skill.  \n- Provides tools to search and use the user's past conversation history.\n- Includes auto-recall, manual memory search, full task summaries, experience guide retrieval, and skill installation.\n- Allows timeline expansion around memory hits for greater context.\n- Offers a Memory Viewer URL for user browsing and management.\n- Detailed usage guide and decision flow for when to call each tool.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d94e808e22d454851f73d113694d22da527037f733b69b1c205d428ffea750fc"
+}

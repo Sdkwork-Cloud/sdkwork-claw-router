@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 66566,
+  "uuid": "skill-clawhub-keychron",
+  "skillKey": "clawhub-keychron",
+  "name": "Keychron",
+  "summary": "提供 Keychron 机械键盘产品信息、轴体与配列介绍、价格查询、技术支持及定制选购建议。",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.keychron",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "hanxueyuan",
+      "features": [
+        "提供 Keychron 机械键盘产品信息、轴体与配列介绍、价格查询、技术支持及定制选购建议。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/keychron@1.0.1",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/16717383?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "keychron",
+      "url": "https://clawhub.ai/skills/keychron"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "keychron",
+    "url": "https://clawhub.ai/skills/keychron",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/keychron-dde7e12aa0621bda.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/keychron@1.0.1",
+      "artifactUrl": "data/skills/artifacts/clawhub-keychron-1.0.1.json",
+      "version": "1.0.1",
+      "runtime": "metadata",
+      "checksumHash": "sha256:abddb9d18b4a0cea78dce282b3de157c7d7570a8bd20b6c364592bebedb4d0c9",
+      "artifactSizeBytes": 2056
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-15T13:51:52.359Z"
+}

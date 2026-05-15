@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/agent-stability-framework@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.agent_stability_framework",
+  "skill": {
+    "id": 21059,
+    "skillKey": "clawhub-agent-stability-framework",
+    "name": "Agent Stability Framework"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "agent-stability-framework",
+    "url": "https://clawhub.ai/skills/agent-stability-framework",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/agent-stability-framework-f034401b0bfc4bdd.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Provides a framework to prevent agent drift, catch faults, and maintain consistent on-character behavior across sessions and models."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "donovanpankratz-del",
+      "userId": "s171g2r7jkvrtmp9mdgk8dk12h83fqed",
+      "displayName": "dp-del",
+      "image": "https://avatars.githubusercontent.com/u/262228646?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 515,
+      "installsAllTime": 1,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772024484612,
+      "changelog": "Initial release of Agent Stability Framework (ASF):\n\n- Provides a unified framework to prevent agent drift, catch faults, and ensure soul alignment.\n- Includes comprehensive documentation, file templates, and ready-to-use system prompt additions.\n- Features detection checklists, scoring system, and daily self-audit tools.\n- Compatible with all major LLMs and agent use cases.\n- Designed for quick setup and minimal maintenance.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:9c955dad6d36286fb49f305d6ace275920da4ff281ca721483e30ebde06fe9ae"
+}

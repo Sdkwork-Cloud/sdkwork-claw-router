@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/nexus-fitness@1.1.0",
+  "version": "1.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.nexus_fitness",
+  "skill": {
+    "id": 53714,
+    "skillKey": "clawhub-nexus-fitness",
+    "name": "Nexus — Workout & Nutrition Tracker"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "nexus-fitness",
+    "url": "https://clawhub.ai/skills/nexus-fitness",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/nexus-fitness-2aeb175f9b8b6308.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Log and track workouts, meals, weight, and fitness friends with OAuth-secured cloud storage and conversational queries in Nexus."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "kiluazen",
+      "userId": "s17c5v36mh503hnz5a1c2qae2n84grx4",
+      "displayName": "Kushal",
+      "image": "https://avatars.githubusercontent.com/u/114013186?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 160,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.1.0",
+      "createdAt": 1775740630700,
+      "changelog": "Rewrite SKILL.md to focus on the Nexus CLI (uv tool install nexus-fitness) — covers all commands: log, history, update, friends, auth. Removed MCP server references.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:8223b62be37f78e87a0aac8818659cc8a6d0038a254dce054d9fa1a7c55a1407"
+}

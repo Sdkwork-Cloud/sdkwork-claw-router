@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/session-archive-backup@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.session_archive_backup",
+  "skill": {
+    "id": 64236,
+    "skillKey": "clawhub-session-archive-backup",
+    "name": "backup"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "session-archive-backup",
+    "url": "https://clawhub.ai/skills/session-archive-backup",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/session-archive-backup-ce1be38375cbb8e9.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "OpenClaw 会话重置-存档-备份完整工作流管理。自动化处理 Token 超限、闲置超时、手动重置时的四层数据存档体系，支持 GitHub/OneDrive 双备份。 TRIGGERS: - 用户说\"设置存档工作流\"、\"配置自动备份\" - 需要建立会话生命周期管理机制 - 想要自动化重置-存档-备份流程"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "nevereven619",
+      "userId": "s17ememqv9mpm5fw9cfna5fmdh83mka6",
+      "displayName": "NevereveN619",
+      "image": "https://avatars.githubusercontent.com/u/62365977?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 461,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1772688905617,
+      "changelog": "Initial release of session-archive-backup.\n\n- Provides a full OpenClaw session reset–archive–backup workflow with four data layers.\n- Automates token-overrun, idle timeout, manual reset triggers, and backup to GitHub/OneDrive.\n- Introduces a 3-phase setup (requirement confirmation, environment check, configuration execution) with user confirmation required between phases.\n- Implements AI-powered session summarization, structured archiving, raw history capture, comprehensive indexing, and configurable backup scripts.\n- Includes detailed instructions, templates, and troubleshooting guides for smooth setup and use.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:2f382f8978846329bcecc9bff838679c4d2b3ac48f9e067d99846378d5d3f3fe"
+}

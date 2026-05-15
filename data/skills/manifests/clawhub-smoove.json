@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 26425,
+  "uuid": "skill-clawhub-smoove",
+  "skillKey": "clawhub-smoove",
+  "name": "Smoove",
+  "summary": "Smoove integration. Manage Organizations, Pipelines, Users, Goals, Filters. Use when the user wants to interact with Smoove data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.smoove",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Membrane Dev",
+      "features": [
+        "Smoove integration",
+        "Manage Organizations, Pipelines, Users, Goals, Filters",
+        "Use when the user wants to interact with Smoove data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/smoove@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/147116108?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "smoove",
+      "url": "https://clawhub.ai/skills/smoove"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "smoove",
+    "url": "https://clawhub.ai/skills/smoove",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/smoove-8f6a2593872c92ef.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/smoove@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-smoove-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:019e120d1c05811ef100a7ed4121751e5a9b160dda299b9277909908d14b1628",
+      "artifactSizeBytes": 1830
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:01:21.060Z"
+}

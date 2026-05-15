@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/video-recommendation@0.1.0",
+  "version": "0.1.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.video_recommendation",
+  "skill": {
+    "id": 30554,
+    "skillKey": "clawhub-video-recommendation",
+    "name": "Video Recommendation"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "video-recommendation",
+    "url": "https://clawhub.ai/skills/video-recommendation",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/video-recommendation-4ee37be04d8eacd7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Recommend precise, context-aware videos with direct links and curated watchlists based on your current mood, project, or recent chat topics."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "fischerlam",
+      "userId": "s175gts36jrk6k1qvqehh2d0v583fwg7",
+      "displayName": "fischerlam",
+      "image": "https://avatars.githubusercontent.com/u/168167263?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 281,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "0.1.0",
+      "createdAt": 1773417018141,
+      "changelog": "Initial release: a context-aware, taste-driven video recommendation skill that recommends videos with precision, not addiction. Includes direct-link workflows, source curation, testing, and quality calibration.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:d54390af57893beec9a4f71a65248fe9f87bb0a521660cb120219c665c27bfd6"
+}

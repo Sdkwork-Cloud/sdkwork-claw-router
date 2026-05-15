@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/kb-collector@1.2.1",
+  "version": "1.2.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.kb_collector",
+  "skill": {
+    "id": 20007,
+    "skillKey": "clawhub-kb-collector",
+    "name": "Kb Collector"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "kb-collector",
+    "url": "https://clawhub.ai/skills/kb-collector",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/kb-collector-b0b9f7601ee8c249.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Knowledge Base Collector - save YouTube, URLs, text to Obsidian with AI summarization. Auto-transcribes videos, fetches pages, supports weekly/monthly digest..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "arbiger",
+      "userId": "s1732cq4rp0w069f4r17c1gerx83kb98",
+      "displayName": "arbiger",
+      "image": "https://avatars.githubusercontent.com/u/4034191?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 558,
+      "installsAllTime": 2,
+      "installsCurrent": 1,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "1.2.1",
+      "createdAt": 1772971263622,
+      "changelog": "- Minor update to nightly-research.sh script.\n- No user-facing changes to documentation or features.\n- Maintains all existing functionalities for nightly research automation.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:bc2acc25bbebf8effbb723969ea3293eb94784cc23440c93df4db3898fa2a25e"
+}

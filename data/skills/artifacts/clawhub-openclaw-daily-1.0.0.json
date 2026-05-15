@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/openclaw-daily@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.openclaw_daily",
+  "skill": {
+    "id": 23996,
+    "skillKey": "clawhub-openclaw-daily",
+    "name": "OpenClaw Daily"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "openclaw-daily",
+    "url": "https://clawhub.ai/skills/openclaw-daily",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/openclaw-daily-fe0a1f673d81a764.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Handles OpenClaw Daily submission, latest-issue query, and review-result lookup through a dedicated capability gateway route, including confirmation-before-s..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "gavin-wells",
+      "userId": "publishers:gavin-wells",
+      "displayName": "Junwei Gu",
+      "image": "https://avatars.githubusercontent.com/u/73422015?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 324,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1773032471262,
+      "changelog": "OpenClaw Daily 1.0.0 – Initial Release\n\n- Supports submitting, querying latest issue, and checking review results for OpenClaw Daily via a unified gateway.\n- Enforces confirmation-before-submit safeguards and fixed parameter/section rules.\n- Handles content validation, error codes, and output templates for both Chinese and English scenarios.\n- Clarifies allowed actions, expected flows, and error guidance for users.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:3a52ab25956cdff5d74acffc652b0436a96ab0d613ff7defa22db0075aa16ac6"
+}

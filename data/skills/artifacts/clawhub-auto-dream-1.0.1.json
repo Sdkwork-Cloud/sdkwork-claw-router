@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/auto-dream@1.0.1",
+  "version": "1.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.auto_dream",
+  "skill": {
+    "id": 56203,
+    "skillKey": "clawhub-auto-dream",
+    "name": "Auto Dream"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "auto-dream",
+    "url": "https://clawhub.ai/skills/auto-dream",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/auto-dream-0744918158bf41a8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Consolidate long-running agent memory with a 4-phase Orient → Gather → Merge → Prune pass. Use when memory/context is stale, duplicated, contradictory, too l..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "brasco05",
+      "userId": "s177sz08tyrpncx75y5y4em2rn83v35v",
+      "displayName": "brasco05",
+      "image": "https://avatars.githubusercontent.com/u/256532966?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 220,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 2
+    },
+    "latestVersion": {
+      "version": "1.0.1",
+      "createdAt": 1778140727021,
+      "changelog": "Polish memory hygiene positioning, clarify Orient-Gather-Merge-Prune workflow, guardrails, and outputs.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:fa385013a1dfa11729befa866ae98aae9ce3c0c2a8e157283ea162daac580995"
+}

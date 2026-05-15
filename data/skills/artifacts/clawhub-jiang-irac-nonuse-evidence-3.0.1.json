@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/jiang-irac-nonuse-evidence@3.0.1",
+  "version": "3.0.1",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.jiang_irac_nonuse_evidence",
+  "skill": {
+    "id": 64992,
+    "skillKey": "clawhub-jiang-irac-nonuse-evidence",
+    "name": "蒋道理｜撤三证据链与风险审核引擎（SJ-IRAC）"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "jiang-irac-nonuse-evidence",
+    "url": "https://clawhub.ai/skills/jiang-irac-nonuse-evidence",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/jiang-irac-nonuse-evidence-c5191de6f6ae1ad7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "CNIPA撤三（连续三年不使用）双轨证据引擎：答辩证据链构建 + 质证审计（SJ-6 + IRAC + 风险A–E）。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "jisngzhongling",
+      "userId": "s17ctvc3830j0xf3regb3jsez9857xg2",
+      "displayName": "Jiang Zhongling｜SJ-IRAC Trademark Systems",
+      "image": "https://avatars.githubusercontent.com/u/188891781?v=4"
+    },
+    "stats": {
+      "comments": 1,
+      "downloads": 2030,
+      "installsAllTime": 2,
+      "installsCurrent": 2,
+      "stars": 0,
+      "versions": 4
+    },
+    "latestVersion": {
+      "version": "3.0.1",
+      "createdAt": 1770972036897,
+      "changelog": "- Major codebase update: introduced new utilities, agents, and workflow scripts.\n- Added multiple new files for automation, rule configuration, and supporting utilities.\n- Removed legacy documentation and core engine data files.\n- Improved modularity by separating risk, score, and time rules into dedicated YAML files.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:4a5d8d3472ffed1e676d1ce38f6181efebd92f3a1d7645c8c11c150d92aff146"
+}

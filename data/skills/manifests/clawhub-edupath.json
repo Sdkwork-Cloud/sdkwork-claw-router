@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 70189,
+  "uuid": "skill-clawhub-edupath",
+  "skillKey": "clawhub-edupath",
+  "name": "Edupath",
+  "summary": "接收用户输入的【本科专业】，输出一份\"总-分-总\"结构的考研专业与院校方向选择指导报告。",
+  "version": "1.1.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.edupath",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Tsingliu",
+      "features": [
+        "接收用户输入的【本科专业】，输出一份\"总-分-总\"结构的考研专业与院校方向选择指导报告。"
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/edupath@1.1.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/14992305?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "edupath",
+      "url": "https://clawhub.ai/skills/edupath"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "edupath",
+    "url": "https://clawhub.ai/skills/edupath",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/edupath-16f71854e9f06301.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/edupath@1.1.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-edupath-1.1.4.json",
+      "version": "1.1.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:97d22b682d2b4c3c026a380a4358da031f4b3e76dbd46c6c59ba0972fef9ed01",
+      "artifactSizeBytes": 2307
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-24T08:40:55.951Z"
+}

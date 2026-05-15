@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/insta-content-engine@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.insta_content_engine",
+  "skill": {
+    "id": 40985,
+    "skillKey": "clawhub-insta-content-engine",
+    "name": "Insta Content Engine"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "insta-content-engine",
+    "url": "https://clawhub.ai/skills/insta-content-engine",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/insta-content-engine-b4f9b728169c421f.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Find trending topics, create editorial-style social media graphics, and post to X/Twitter and Instagram. Includes image generation with photographic backgrou..."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "ashmonmc",
+      "userId": "s176f2m2pwp298dw8wwbyd7wfd83rrh8",
+      "displayName": "kash",
+      "image": "https://avatars.githubusercontent.com/u/12628898?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 166,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1774685289870,
+      "changelog": "Your AI-powered Instagram content team. Research viral topics, generate editorial carousel graphics, post to Instagram and X.",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:468940dff9474c5b3cb08cc26c8ea6611f04e628b0cf9bde17c0e8bdac38744f"
+}

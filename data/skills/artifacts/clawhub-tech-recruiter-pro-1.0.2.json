@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/tech-recruiter-pro@1.0.2",
+  "version": "1.0.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.tech_recruiter_pro",
+  "skill": {
+    "id": 67821,
+    "skillKey": "clawhub-tech-recruiter-pro",
+    "name": "tech recruiter pro"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "tech-recruiter-pro",
+    "url": "https://clawhub.ai/skills/tech-recruiter-pro",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/tech-recruiter-pro-226aa107c37d9cc7.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "智能搜索和分析算法及研发工程师多平台技术画像，生成个性化招聘邮件并管理候选人招聘流程。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "biancabian77",
+      "userId": "s176w495esg6bsfz1yq6qnnszx83j645",
+      "displayName": "Bianca77",
+      "image": "https://avatars.githubusercontent.com/u/205265296?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 407,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "1.0.2",
+      "createdAt": 1772608026863,
+      "changelog": "Initial release of TechRecruiter Pro:\n\n- Multi-platform candidate search (GitHub, Google Scholar, AMiner, arXiv) with support for filtering by research area, company, education, and more\n- Integrated candidate profile analysis combining academic, technical, and career data\n- Matching score calculation based on research, academic impact, tech contributions, company, and education background\n- Automated, personalized outreach email generation based on candidates’ research and projects\n- Candidate pipeline (ATS) management support (requires Feishu Bitable configuration)\n- Required integrations: feishu_bitable, feishu_doc, browser, web_fetch, web_search\n\nBilingual documentation and all functions focus on algorithm/R&D talent recruiting use cases.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:a44af0fc877740e45a16ffadd3146c8ee6cdb85d31e4ec411044655602c3ee19"
+}

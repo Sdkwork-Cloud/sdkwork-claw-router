@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "agent-skill-manifest.v1",
+  "id": 33354,
+  "uuid": "skill-clawhub-built-accounting",
+  "skillKey": "clawhub-built-accounting",
+  "name": "Built Accounting",
+  "summary": "Built Accounting integration. Manage data, records, and automate workflows. Use when the user wants to interact with Built Accounting data.",
+  "version": "1.0.4",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.built_accounting",
+  "provider": "ClawHub",
+  "licenseName": "MIT-0",
+  "capabilities": [
+    "clawhub.metadata"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "defaultConfig": {
+    "portal": {
+      "developer": "Vlad Ursul",
+      "features": [
+        "Built Accounting integration",
+        "Manage data, records, and automate workflows",
+        "Use when the user wants to interact with Built Accounting data."
+      ],
+      "frameworks": [
+        "ClawHub",
+        "Agent Skill"
+      ],
+      "sizeText": "Metadata",
+      "clawhubImage": "clawhub://skills/built-accounting@1.0.4",
+      "screenshots": [
+        "https://avatars.githubusercontent.com/u/4161345?v=4"
+      ]
+    },
+    "source": {
+      "vendor": "clawhub",
+      "slug": "built-accounting",
+      "url": "https://clawhub.ai/skills/built-accounting"
+    }
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "built-accounting",
+    "url": "https://clawhub.ai/skills/built-accounting",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/built-accounting-3afd5c338ef83e49.json"
+  },
+  "artifacts": [
+    {
+      "artifactRef": "clawhub://skills/built-accounting@1.0.4",
+      "artifactUrl": "data/skills/artifacts/clawhub-built-accounting-1.0.4.json",
+      "version": "1.0.4",
+      "runtime": "metadata",
+      "checksumHash": "sha256:27cfb6cc6399652c4eecb383060ff28913e044783bcc1ce715fe1e54da7c8ffb",
+      "artifactSizeBytes": 1902
+    }
+  ],
+  "permissions": {
+    "network": false,
+    "filesystem": "none",
+    "secrets": []
+  },
+  "publishedAt": "2026-04-30T16:26:28.206Z"
+}

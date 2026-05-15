@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/email-summary@1.0.0",
+  "version": "1.0.0",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.email_summary",
+  "skill": {
+    "id": 11236,
+    "skillKey": "clawhub-email-summary",
+    "name": "Daily Email Summary"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "email-summary",
+    "url": "https://clawhub.ai/skills/email-summary",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/email-summary-26b1fad27fa846e8.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "Fetches recent emails from Gmail and provides concise summaries. Use when the user wants to check emails, get email summaries, or review their inbox."
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "bbdyno",
+      "userId": "publishers:bbdyno",
+      "displayName": "bbdyno",
+      "image": "https://avatars.githubusercontent.com/u/12597179?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 2094,
+      "installsAllTime": 5,
+      "installsCurrent": 5,
+      "stars": 1,
+      "versions": 1
+    },
+    "latestVersion": {
+      "version": "1.0.0",
+      "createdAt": 1769997163800,
+      "changelog": "- Initial release of the Email Summary skill.\n- Fetches recent emails from Gmail and provides concise, AI-powered summaries.\n- Summaries include sender, subject, key points, and recommended actions.\n- Supports custom email count and all unread emails via command-line arguments.\n- Requires Gmail API credentials and the `GMAIL_CREDENTIALS_PATH` environment variable.\n- Compatible with macOS, Linux, and Windows.",
+      "license": null
+    }
+  },
+  "checksumHash": "sha256:efa4dc4a354ede594289184cfa102394f3ea4bb7ec3f54d938f3162279b050a3"
+}

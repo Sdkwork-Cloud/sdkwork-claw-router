@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "agent-skill-artifact.v1",
+  "artifactRef": "clawhub://skills/cofco-futures-skill@0.1.2",
+  "version": "0.1.2",
+  "runtime": "metadata",
+  "entrypoint": "clawhub.skills.cofco_futures_skill",
+  "skill": {
+    "id": 70760,
+    "skillKey": "clawhub-cofco-futures-skill",
+    "name": "Cofco Futures Skill"
+  },
+  "source": {
+    "vendor": "clawhub",
+    "slug": "cofco-futures-skill",
+    "url": "https://clawhub.ai/skills/cofco-futures-skill",
+    "fetchedAt": "2026-05-10T04:28:40.573Z",
+    "rawDetailPath": "data/skills/clawhub/raw/details/cofco-futures-skill-6b22313a41df81a6.json"
+  },
+  "instructions": [
+    "Display this bundled ClawHub metadata entry from the local SDKWork Skills seed.",
+    "Do not execute remote code from this artifact until the community package has passed SDKWork review.",
+    "中粮期货官方助手。提供公司背景及营业部信息查询，交易日历查询，交割备忘录查询，支持开户咨询及客户预约开户服务，支持期货交易下单、撤单、查询等交易功能。"
+  ],
+  "inputSchema": {
+    "type": "object",
+    "additionalProperties": false
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "sourceUrl": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  },
+  "metadata": {
+    "owner": {
+      "handle": "mengxj96",
+      "userId": "s171ny97zq9n7s4vtv12rq85xn85daz8",
+      "displayName": "mengxj96",
+      "image": "https://avatars.githubusercontent.com/u/102900623?v=4"
+    },
+    "stats": {
+      "comments": 0,
+      "downloads": 134,
+      "installsAllTime": 0,
+      "installsCurrent": 0,
+      "stars": 0,
+      "versions": 3
+    },
+    "latestVersion": {
+      "version": "0.1.2",
+      "createdAt": 1778233125609,
+      "changelog": "- No file changes detected in this version.\n- Functionality and documentation remain the same as previous version (1.0.5).",
+      "license": "MIT-0"
+    }
+  },
+  "checksumHash": "sha256:78d3aa32f36367acab189582e1e5c888355ebd3c754833594fa1c98d49184482"
+}
